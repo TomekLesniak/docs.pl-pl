@@ -1,19 +1,20 @@
 ---
-title: Jak serializować za pomocą XmlSerializer (C#)
+title: Jak serializować przy użyciu elementu XmlSerializer (C#)
+description: Dowiedz się, jak serializować obiekty przy użyciu elementu XmlSerializer. Zapoznaj się z przykładem, który tworzy obiekty, serializować je do strumienia pamięci, a następnie deserializacji.
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
-ms.openlocfilehash: 0ec19e964471382c6f10f07d6d4bb25f88fd532f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29c8c7170af8a24292892862dc89cfe101d24f15
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347395"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301518"
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a><span data-ttu-id="e4721-102">Jak serializować za pomocą XmlSerializer (C#)</span><span class="sxs-lookup"><span data-stu-id="e4721-102">How to serialize using XmlSerializer (C#)</span></span>
-<span data-ttu-id="e4721-103">W tym temacie przedstawiono przykład serializacji i deserializacji przy użyciu <xref:System.Xml.Serialization.XmlSerializer>.</span><span class="sxs-lookup"><span data-stu-id="e4721-103">This topic shows an example that serializes and deserializes using <xref:System.Xml.Serialization.XmlSerializer>.</span></span>  
+# <a name="how-to-serialize-using-xmlserializer-c"></a><span data-ttu-id="ab4c9-104">Jak serializować przy użyciu elementu XmlSerializer (C#)</span><span class="sxs-lookup"><span data-stu-id="ab4c9-104">How to serialize using XmlSerializer (C#)</span></span>
+<span data-ttu-id="ab4c9-105">W tym temacie przedstawiono przykład serializacji i deserializacji przy użyciu <xref:System.Xml.Serialization.XmlSerializer> .</span><span class="sxs-lookup"><span data-stu-id="ab4c9-105">This topic shows an example that serializes and deserializes using <xref:System.Xml.Serialization.XmlSerializer>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e4721-104">Przykład</span><span class="sxs-lookup"><span data-stu-id="e4721-104">Example</span></span>  
- <span data-ttu-id="e4721-105">Poniższy przykład tworzy liczbę obiektów, <xref:System.Xml.Linq.XElement> które zawierają obiekty.</span><span class="sxs-lookup"><span data-stu-id="e4721-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="e4721-106">Następnie serializuje je do strumienia pamięci, a następnie deserializuje je ze strumienia pamięci.</span><span class="sxs-lookup"><span data-stu-id="e4721-106">It then serializes them to a memory stream, and then deserializes them from the memory stream.</span></span>  
+## <a name="example"></a><span data-ttu-id="ab4c9-106">Przykład</span><span class="sxs-lookup"><span data-stu-id="ab4c9-106">Example</span></span>  
+ <span data-ttu-id="ab4c9-107">Poniższy przykład tworzy wiele obiektów, które zawierają <xref:System.Xml.Linq.XElement> obiekty.</span><span class="sxs-lookup"><span data-stu-id="ab4c9-107">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="ab4c9-108">Następnie deserializacji je do strumienia pamięci, a następnie deserializacji je ze strumienia pamięci.</span><span class="sxs-lookup"><span data-stu-id="ab4c9-108">It then serializes them to a memory stream, and then deserializes them from the memory stream.</span></span>  
   
 ```csharp  
 using System;  
@@ -78,7 +79,7 @@ class XLinqTest
 }  
 ```  
   
- <span data-ttu-id="e4721-107">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="e4721-107">This example produces the following output:</span></span>  
+ <span data-ttu-id="ab4c9-109">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="ab4c9-109">This example produces the following output:</span></span>  
   
 ```output  
 Testing for type: XElementNullContainer  
