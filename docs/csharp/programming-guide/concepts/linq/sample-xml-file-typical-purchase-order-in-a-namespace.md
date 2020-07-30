@@ -1,16 +1,17 @@
 ---
 title: 'Przykładowy plik XML: typowe zamówienie zakupu w przestrzeni nazw'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Ten plik jest typowym porządkiem zakupu. KOD XML znajduje się w przestrzeni nazw.
 ms.date: 07/20/2015
 ms.assetid: 84dc3339-ea32-4ccc-9af6-ab38ddfecced
-ms.openlocfilehash: 001a12210c2252d9718425d0d4013bdbdf25b996
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 698fb8711ad86e2739f1d8485747d3c56eb71d46
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167967"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302454"
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>Przykładowy plik XML: typowe zamówienie zakupu w przestrzeni nazw
-Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji. Ten plik jest typowym zamówieniem zakupu. Kod XML znajduje się w obszarze nazw.  
+Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji. Ten plik jest typowym porządkiem zakupu. KOD XML znajduje się w przestrzeni nazw.  
   
 ## <a name="purchaseorderinnamespacexml"></a>PurchaseOrderInNamespace.xml  
   

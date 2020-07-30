@@ -1,16 +1,17 @@
 ---
 title: Jak korzystać z funkcji dokumentacji XML — Przewodnik programowania w języku C#
+description: Dowiedz się, jak korzystać z funkcji dokumentacji XML. Zobacz przykłady kodu i Wyświetl dodatkowe dostępne zasoby.
 ms.date: 06/01/2018
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: b7c5a8a895271f067505496c0d13f98b66a393d9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9ad2cfe62c70174eec9020ad4c8ce11608aca36d
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287366"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380673"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Używanie funkcji dokumentacji XML
 
@@ -112,7 +113,7 @@ Aby skompilować przykład, wprowadź następujące polecenie:
 
 `csc XMLsample.cs /doc:XMLsample.xml`
 
-To polecenie tworzy plik XML *xmlsample. XML*, który można wyświetlić w przeglądarce lub przy użyciu `TYPE` polecenia.
+To polecenie tworzy plik XML *XMLsample.xml*, który można wyświetlić w przeglądarce lub przy użyciu `TYPE` polecenia.
 
 ## <a name="robust-programming"></a>Niezawodne programowanie
 
@@ -131,7 +132,7 @@ Dokumentacja XML zaczyna się od `///` . Podczas tworzenia nowego projektu kreat
     > [!NOTE]
     > Plik XML nie zawiera pełnych informacji o typie i elementach członkowskich (na przykład nie zawierają żadnych informacji o typie). Aby uzyskać pełne informacje na temat typu lub elementu członkowskiego, należy użyć pliku dokumentacji wraz z odbiciem w rzeczywistym typie lub elemencie członkowskim.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [-doc (opcje kompilatora C#)](../../language-reference/compiler-options/doc-compiler-option.md)

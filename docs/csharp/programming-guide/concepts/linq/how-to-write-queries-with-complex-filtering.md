@@ -1,23 +1,24 @@
 ---
 title: Jak pisać zapytania ze złożonym filtrowaniem (C#)
+description: Dowiedz się, jak pisać zapytania LINQ to XML przy użyciu złożonych filtrów. Zobacz przykłady kodu i wyświetlaj dodatkowe zasoby.
 ms.date: 07/20/2015
 ms.assetid: 4065d901-cf89-4e47-8bf9-abb65acfb003
-ms.openlocfilehash: bc85d7f1e5c5305407ad22f3ada908523313d964
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5d2c1aafc210b35d4d6b1f1b2d74b11966d90c80
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168521"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303429"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-c"></a>Jak pisać zapytania ze złożonym filtrowaniem (C#)
-Czasami chcesz napisać LINQ do zapytań XML ze złożonymi filtrami. Na przykład może być konieczne znalezienie wszystkich elementów, które mają element podrzędny o określonej nazwie i wartości. W tym temacie podano przykład pisania kwerendy ze złożonym filtrowaniem.  
+Czasami chcesz pisać zapytania LINQ to XML ze złożonymi filtrami. Na przykład może być konieczne znalezienie wszystkich elementów, które mają element podrzędny o określonej nazwie i wartości. Ten temat zawiera przykład tworzenia zapytania z skomplikowanym filtrowaniem.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie pokazano, jak `PurchaseOrder` `Address` znaleźć wszystkie `Type` elementy, które mają element `State` podrzędny, który ma atrybut równy "Wysyłka" i element podrzędny równy "NY". Używa zagnieżdżonej kwerendy `Any` w `true` klauzuli, `Where` a operator zwraca, jeśli kolekcja ma żadnych elementów w nim. Aby uzyskać informacje dotyczące używania składni kwerend opartych na metodach, zobacz [Składnia kwerend i Składnia metody w pliku LINQ](./query-syntax-and-method-syntax-in-linq.md).  
+ Ten przykład pokazuje, jak znaleźć wszystkie `PurchaseOrder` elementy, które mają `Address` element podrzędny, który ma `Type` atrybut równy "wysyłce" i `State` element podrzędny równy "NY". Używa zapytania zagnieżdżonego w `Where` klauzuli i `Any` operator zwraca, `true` Jeśli kolekcja zawiera jakiekolwiek elementy. Aby uzyskać informacje o używaniu składni zapytania opartej na metodzie, zobacz [składnia zapytań i składnia metod w LINQ](./query-syntax-and-method-syntax-in-linq.md).  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: wiele zamówień zakupu (LINQ do XML).](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: wiele zamówień zakupu (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
- Aby uzyskać więcej `Any` informacji na temat operatora, zobacz [Operacje kwantyfikatora (C#)](./quantifier-operations.md).  
+ Aby uzyskać więcej informacji na temat `Any` operatora, zobacz [Operacje kwantyfikatora (C#)](./quantifier-operations.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrders.xml");  
@@ -35,16 +36,16 @@ foreach (XElement el in purchaseOrders)
     Console.WriteLine((string)el.Attribute("PurchaseOrderNumber"));  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 99505  
 ```  
   
 ## <a name="example"></a>Przykład  
- W poniższym przykładzie przedstawiono tę samą kwerendę dla języka XML, która znajduje się w obszarze nazw. Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ W poniższym przykładzie pokazano to samo zapytanie dla kodu XML, który znajduje się w przestrzeni nazw. Aby uzyskać więcej informacji, zobacz temat [przestrzenie nazw — omówienie (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: wiele zamówień zakupu w obszarze nazw](./sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: wiele zamówień zakupu w przestrzeni nazw](./sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrdersInNamespace.xml");  
@@ -63,7 +64,7 @@ foreach (XElement el in purchaseOrders)
     Console.WriteLine((string)el.Attribute(aw + "PurchaseOrderNumber"));  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 99505  

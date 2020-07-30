@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat wersji programu macOS, na których mo
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 2900d98dbd30c51f689cdce37ea273ccc4f598b5
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 951e9b6a64d55274729e233b4a2d7728c75d05d4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308926"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302935"
 ---
 # <a name="install-net-core-on-macos"></a>Zainstaluj platformę .NET Core w systemie macOS
 
@@ -186,7 +186,7 @@ Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platfo
 > [!NOTE]
 > Powyższe polecenie instaluje środowisko uruchomieniowe ASP.NET Core, aby uzyskać maksymalną zgodność. Środowisko uruchomieniowe ASP.NET Core obejmuje również standardowe środowisko uruchomieniowe programu .NET Core.
 
-## <a name="docker"></a>Docker
+## <a name="docker"></a>Platforma Docker
 
 Kontenery zapewniają lekki sposób izolowania aplikacji od pozostałej części systemu hosta. Kontenery na tym samym komputerze udostępniają tylko jądro i używają zasobów przyznanych aplikacji.
 
@@ -200,7 +200,7 @@ Aby uzyskać więcej informacji na temat korzystania z platformy .NET Core w kon
 
 - [Jak sprawdzić, czy program .NET Core jest już zainstalowany](how-to-detect-installed-versions.md?pivots=os-macos).
 - [Praca z MacOS Catalina notarization](macos-notarization-issues.md).
-- [Samouczek: Rozpoczynanie pracy w witrynie macOS](../tutorials/using-on-mac-vs.md).
+- [Samouczek: Rozpoczynanie pracy w witrynie macOS](../tutorials/with-visual-studio-mac.md).
 - [Samouczek: Tworzenie nowej aplikacji przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md).
 - [Samouczek: konteneryzowanie aplikacji .NET Core](../docker/build-container.md).
 

@@ -1,16 +1,17 @@
 ---
 title: Korzystanie z typu Dynamic-C# — Przewodnik programowania
+description: Dowiedz się, jak używać typu dynamicznego. Typ dynamiczny jest typem statycznym, ale obiekty dynamiczne pomijają sprawdzanie typu statycznego.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 24d48605e560038d70f1818611f339a94ecc2bba
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 9904f0452feca388704067b1fd5432f74d0df86b
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241971"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381583"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Korzystanie z typu dynamicznego (Przewodnik programowania w języku C#)
 
@@ -75,7 +76,7 @@ Wiele metod COM pozwala na odchylenia typów argumentów i zwracanego typu przez
 
 |Tytuł|Opis|
 |-----------|-----------------|
-|[dynamiczna](../../language-reference/builtin-types/reference-types.md)|Opisuje użycie `dynamic` słowa kluczowego.|
+|[dynamic](../../language-reference/builtin-types/reference-types.md)|Opisuje użycie `dynamic` słowa kluczowego.|
 |[Omówienie środowiska uruchomieniowego języka dynamicznego](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Zawiera omówienie DLR, czyli środowisko uruchomieniowe, które dodaje zestaw usług dla języków dynamicznych do środowiska uruchomieniowego języka wspólnego (CLR).|
 |[Przewodnik: Tworzenie obiektów dynamicznych i korzystanie z nich](walkthrough-creating-and-using-dynamic-objects.md)|Zawiera instrukcje krok po kroku dotyczące tworzenia niestandardowego obiektu dynamicznego i tworzenia projektu, który uzyskuje dostęp do `IronPython` biblioteki.|
 |[Uzyskiwanie dostępu do obiektów międzyoperacyjności pakietu Office za pomocą funkcji języka C#](../interop/how-to-access-office-onterop-objects.md)|Pokazuje, jak utworzyć projekt, który używa argumentów nazwanych i opcjonalnych, `dynamic` typu i innych ulepszeń, które upraszczają dostęp do obiektów interfejsu API pakietu Office.|

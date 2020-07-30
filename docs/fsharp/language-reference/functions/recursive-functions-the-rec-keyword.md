@@ -1,17 +1,17 @@
 ---
-title: 'Funkcje cykliczne: Rec — słowo kluczowe'
-description: Dowiedz się F# , w jaki sposób słowo kluczowe "Rec" jest używane z słowem kluczowym "let" w celu zdefiniowania funkcji cyklicznej.
+title: 'Funkcje rekurencyjne: rec — Słowo kluczowe'
+description: 'Dowiedz się, w jaki sposób słowo kluczowe "Rec" języka F # jest używane z słowem kluczowym "let" w celu zdefiniowania funkcji cyklicznej.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 7edaa7206b2109c7b1a405624b9b2330968f9c52
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c9a3b7dc27f4ed86948a08b7783d7e8e8b60e57f
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630651"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426979"
 ---
-# <a name="recursive-functions-the-rec-keyword"></a>Funkcje cykliczne: Rec — słowo kluczowe
+# <a name="recursive-functions-the-rec-keyword"></a>Funkcje rekurencyjne: rec — Słowo kluczowe
 
-Słowo kluczowe jest używane razem `let` ze słowem kluczowym w celu zdefiniowania funkcji cyklicznej. `rec`
+`rec`Słowo kluczowe jest używane razem ze `let` słowem kluczowym w celu zdefiniowania funkcji cyklicznej.
 
 ## <a name="syntax"></a>Składnia
 
@@ -30,25 +30,52 @@ function2-body
 
 ## <a name="remarks"></a>Uwagi
 
-Funkcje cykliczne, funkcje, które wywołują siebie, są jawnie F# identyfikowane w języku. Dzięki temu identyfikator jest definiowany w zakresie funkcji.
+Funkcje cykliczne, funkcje, które wywołuje siebie, są jawnie identyfikowane w języku F #. Dzięki temu identyfikator jest definiowany w zakresie funkcji.
 
-Poniższy kod ilustruje funkcję cykliczną, która oblicza n-<sup>ty</sup> numer Fibonacci.
+Poniższy kod ilustruje funkcję cykliczną, która oblicza n- *n*<sup>ty</sup> numer Fibonacci przy użyciu definicji matematycznej.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
 
 > [!NOTE]
-> W praktyce kod taki jak powyżej to wasteful pamięci i czasu procesora, ponieważ obejmuje on ponownie obliczenie poprzednio obliczonych wartości.
+> W ćwiczenia, kod, taki jak poprzedni przykład, nie jest idealnym rozwiązaniem, ponieważ unecessarily ponownie oblicza wartości, które zostały już obliczone. Jest to spowodowane tym, że nie jest to cykliczne zakończenie, co zostało wyjaśnione w dalszej części tego artykułu.
 
 Metody są niejawnie cykliczne w obrębie typu; nie ma potrzeby dodawania `rec` słowa kluczowego. Zezwól na powiązania w klasach niejawnie cyklicznie.
 
+## <a name="tail-recursion"></a>Rekursja ogona
+
+W przypadku niektórych funkcji cyklicznych należy resłużyć do refaktoryzacji bardziej "czystej" definicji dla jednej, która jest [cykliczna](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion). Zapobiega to ponownemu obliczaniu Unecessary. Na przykład poprzedni generator numerów Fibonacci można napisać ponownie w następujący sposób:
+
+```fsharp
+let fib n =
+    let rec loop acc1 acc2 n =
+        match n with
+        | 0 -> acc1
+        | 1 -> acc2
+        | _ ->
+            loop acc2 (acc1 + acc2) (n - 1)
+    loop 0 1 n
+```
+
+Jest to bardziej skomplikowana implementacja. Generowanie numeru Fibonacci to doskonały przykład algorytmu "algorytmie", który jest matematycznie czysty, ale niewydajny. Kilka aspektów sprawia, że jest to wydajne w języku F #, a pozostałe zdefiniowane cyklicznie:
+
+* Cykliczna funkcja wewnętrzna o nazwie `loop` , która jest wzorcem języka F # idiomatyczne.
+* Dwa parametry modułu, które są przekazywane wartości do wywołań cyklicznych.
+* Sprawdzenie wartości `n` w celu zwrócenia określonego akumulacji.
+
+Jeśli ten przykład został zapisaną iteracyjnie przy użyciu pętli, kod będzie wyglądać podobnie z dwoma różnymi wartościami sumowania liczb do momentu spełnienia określonego warunku.
+
+Powód, dla którego jest to cykliczne, jest spowodowane tym, że wywołanie cykliczne nie musi zapisywać żadnych wartości w stosie wywołań. Wszystkie obliczane wartości pośrednie są sumowane za pośrednictwem danych wejściowych funkcji wewnętrznej. Pozwala to również kompilatorowi języka F # zoptymalizować kod tak szybko, jakby Zapisano coś takiego jak `while` pętla.
+
+Często należy napisać kod języka F #, który cyklicznie przetwarza coś przy użyciu funkcji wewnętrznej i zewnętrznej, jak pokazano w poprzednim przykładzie. Funkcja wewnętrzna używa rekursji tail, natomiast funkcja zewnętrzna ma lepszy interfejs dla wywołań.
+
 ## <a name="mutually-recursive-functions"></a>Funkcje wzajemnie cykliczne
 
-Czasami funkcje są *wzajemnie cykliczne*, co oznacza, że wywołuje postać okręgu, w którym jedna funkcja wywołuje inną funkcję, która z kolei wywołuje pierwszy, z dowolną liczbą wywołań między. Należy zdefiniować takie funkcje razem w jednym `let` powiązaniu, `and` używając słowa kluczowego, aby połączyć je ze sobą.
+Czasami funkcje są *wzajemnie cykliczne*, co oznacza, że wywołuje postać okręgu, w którym jedna funkcja wywołuje inną funkcję, która z kolei wywołuje pierwszy, z dowolną liczbą wywołań między. Należy zdefiniować takie funkcje razem w jednym `let` powiązaniu, używając `and` słowa kluczowego, aby połączyć je ze sobą.
 
 Poniższy przykład pokazuje dwie funkcje wzajemnie cykliczne.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Funkcje](index.md)

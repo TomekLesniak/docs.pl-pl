@@ -1,19 +1,20 @@
 ---
 title: Jak serializować przy użyciu DataContractSerializer (C#)
+description: Dowiedz się, jak serializować obiekty przy użyciu funkcji DataContractSerializer. Zapoznaj się z przykładem, który tworzy obiekty, serializować je do plików tekstowych, a następnie deserializacji.
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: 0b6d35a2f73ac512f05341f5aaffa61484657576
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b713f36cde594f7cd7011073345d33c6f46585e0
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168703"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301531"
 ---
 # <a name="how-to-serialize-using-datacontractserializer-c"></a>Jak serializować przy użyciu DataContractSerializer (C#)
-W tym temacie przedstawiono przykład serializacji i deserializacji przy użyciu <xref:System.Runtime.Serialization.DataContractSerializer>.  
+W tym temacie przedstawiono przykład serializacji i deserializacji przy użyciu <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład tworzy liczbę obiektów, <xref:System.Xml.Linq.XElement> które zawierają obiekty. Następnie serializuje je do plików tekstowych, a następnie deserializuje je z plików tekstowych.  
+ Poniższy przykład tworzy wiele obiektów, które zawierają <xref:System.Xml.Linq.XElement> obiekty. Następnie serializować je do plików tekstowych, a następnie deserializacji ich z plików tekstowych.  
   
 ```csharp  
 using System;  

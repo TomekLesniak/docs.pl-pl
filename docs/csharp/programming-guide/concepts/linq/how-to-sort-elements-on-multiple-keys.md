@@ -1,23 +1,24 @@
 ---
-title: Jak sortować elementy na wielu klawiszach (C#)
+title: Jak sortować elementy w wielu kluczach (C#)
+description: Dowiedz się, jak sortować elementy w wielu kluczach. Zobacz przykłady dla elementów do sortowania, które używają przykładowych dokumentów XML.
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
-ms.openlocfilehash: ddfeab4bf9b67231296ca90df1244a3b8a441440
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 486aac38a27cf064553894a548722a54c58c21b6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347379"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301505"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Jak sortować elementy na wielu klawiszach (C#)
+# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Jak sortować elementy w wielu kluczach (C#)
 
-W tym temacie pokazano, jak sortować na wielu klawiszach.
+W tym temacie pokazano, jak sortować według wielu kluczy.
 
 ## <a name="example"></a>Przykład
 
-W tym przykładzie wyniki są uporządkowane najpierw przez kod pocztowy wysyłki, a następnie według daty zamówienia.
+W tym przykładzie wyniki są uporządkowane najpierw według kodu pocztowego wysyłki, a następnie według daty zamówienia.
 
-W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Klienci i zamówienia (LINQ do XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)
+W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: Customers i Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -36,7 +37,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-Ten kod generuje następujące dane wyjściowe:
+Ten kod spowoduje wygenerowanie następujących danych wyjściowych:
 
 ```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997
@@ -65,9 +66,9 @@ CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 
 ## <a name="example"></a>Przykład
 
-W poniższym przykładzie przedstawiono tę samą kwerendę dla języka XML, która znajduje się w obszarze nazw. Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md).
+W poniższym przykładzie pokazano to samo zapytanie dla kodu XML, który znajduje się w przestrzeni nazw. Aby uzyskać więcej informacji, zobacz temat [przestrzenie nazw — omówienie (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).
 
-W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Klienci i zamówienia w obszarze nazw](./sample-xml-file-customers-and-orders-in-a-namespace.md).
+W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: klienci i zamówienia w przestrzeni nazw](./sample-xml-file-customers-and-orders-in-a-namespace.md).
 
 ```csharp
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");
@@ -88,7 +89,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-Ten kod generuje następujące dane wyjściowe:
+Ten kod spowoduje wygenerowanie następujących danych wyjściowych:
 
 ```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997

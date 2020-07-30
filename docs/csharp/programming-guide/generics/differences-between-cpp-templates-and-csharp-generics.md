@@ -1,39 +1,40 @@
 ---
-title: Różnice między szablonami C++ i generykami Języka C# — przewodnik programowania C#
+title: Różnice między szablonami C++ i typami ogólnymi C# — Przewodnik programowania w języku C#
+description: Dowiedz się więcej o różnicach między szablonami C++ i typami ogólnymi języka C#. Obie są funkcjami językowymi, które zapewniają obsługę typów sparametryzowanych.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], vs. C++ templates
 ms.assetid: 1da6beeb-d4a4-4da0-87b7-0cfbe04920b7
-ms.openlocfilehash: e44f67353410c58c406620109270972df17f9f86
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f405e2d4bef730317703b3b8470edef5b89f0bed
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75703536"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301934"
 ---
 # <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>Różnice między szablonami C++ i typami ogólnymi C# (Przewodnik programowania w języku C#)
-C# Generics i C++ szablony są zarówno funkcje języka, które zapewniają obsługę typów sparametryzowanych. Istnieje jednak wiele różnic między nimi. Na poziomie składni generycznych C# są prostsze podejście do typów sparametryzowanych bez złożoności szablonów C++. Ponadto C# nie próbuje zapewnić wszystkie funkcje, które zapewniają szablony Języka C++. Na poziomie implementacji podstawową różnicą jest to, że substytucje typów ogólnych języka C# są wykonywane w czasie wykonywania, a informacje o typie ogólnym są zachowywane dla obiektów wystąpienia. Aby uzyskać więcej informacji, zobacz [Ogólne w czasie wykonywania](./generics-in-the-run-time.md).  
+Typy ogólne języka C# i szablony języka C++ są funkcjami językowymi, które zapewniają obsługę typów sparametryzowanych. Istnieje jednak wiele różnic między nimi. Na poziomie składni, typy ogólne języka C# to prostsze podejście do typów sparametryzowanych bez złożoności szablonów języka C++. Ponadto w języku C# nie jest podejmowana próba udostępnienia wszystkich funkcji udostępnianych przez szablony języka C++. Na poziomie implementacji podstawowa różnica polega na tym, że podstawienia typów ogólnych C# są wykonywane w czasie wykonywania, a ogólne informacje o typie są zachowywane w przypadku obiektów wystąpień. Aby uzyskać więcej informacji, zobacz [typy ogólne w czasie wykonywania](./generics-in-the-run-time.md).  
   
- Poniżej przedstawiono kluczowe różnice między szablonami C# Generics i C++:  
+ Poniżej przedstawiono kluczowe różnice między typami ogólnymi C# i szablonami języka C++:  
   
-- Generykczna języka C# nie zapewniają taką samą elastyczność jak szablony Języka C++. Na przykład nie jest możliwe wywołanie operatorów arytmetycznych w klasie ogólnej Języka C#, chociaż można wywołać operatory zdefiniowane przez użytkownika.  
+- Typy ogólne języka C# nie zapewniają takiej samej elastyczności jak szablony języka C++. Na przykład nie jest możliwe wywołanie operatorów arytmetycznych w klasie generycznej języka C#, chociaż istnieje możliwość wywołania operatorów zdefiniowanych przez użytkownika.  
   
-- C# nie zezwala na parametry szablonu `template C<int i> {}`nietypu, takie jak .  
+- Język C# nie zezwala na parametry szablonu bez typu, takie jak `template C<int i> {}` .  
   
-- C# nie obsługuje jawnej specjalizacji; oznacza to, że implementacja niestandardowa szablonu dla określonego typu.  
+- Język C# nie obsługuje jawnej specjalizacji; oznacza to, że niestandardowa implementacja szablonu dla określonego typu.  
   
-- C# nie obsługuje częściowej specjalizacji: implementacja niestandardowa dla podzbioru argumentów typu.  
+- Język C# nie obsługuje specjalizacji częściowej: niestandardowej implementacji dla podzbioru argumentów typu.  
   
-- C# nie zezwala na parametr typu, który ma być używany jako klasa podstawowa dla typu ogólnego.  
+- Język C# nie zezwala na użycie parametru typu jako klasy bazowej dla typu ogólnego.  
   
-- C# nie zezwala na parametry typu mają typy domyślne.  
+- Język C# nie zezwala na używanie parametrów typu w typach domyślnych.  
   
-- W języku C#, parametr typu ogólnego sam nie może być rodzajowy, chociaż typy konstruowane mogą służyć jako generycznych. C++ zezwala na parametry szablonu.  
+- W języku C# parametr typu generycznego nie może być typem ogólnym, chociaż skonstruowane typy mogą służyć jako generyczne. Język C++ zezwala na parametry szablonu.  
   
-- C++ umożliwia kod, który może nie być prawidłowy dla wszystkich parametrów typu w szablonie, który jest następnie sprawdzany dla określonego typu używanego jako parametr typu. C# wymaga kodu w klasie, które mają być napisane w taki sposób, że będzie działać z dowolnego typu, który spełnia ograniczenia. Na przykład w języku C++ można napisać funkcję, która `+` używa `-` operatorów arytmetycznych i obiektów parametru typu, który spowoduje błąd w momencie wystąpienia szablonu z typem, który nie obsługuje tych operatorów. C# nie zezwala na to; tylko konstrukcje języka dozwolone są te, które można wywnioskować z ograniczeń.  
+- Język C++ umożliwia kod, który może być nieprawidłowy dla wszystkich parametrów typu w szablonie, który jest sprawdzany pod kątem określonego typu, który jest używany jako parametr typu. Język C# wymaga, aby kod w klasie był pisany w taki sposób, że będzie działać z dowolnym typem, który spełnia ograniczenia. Na przykład w języku C++ można napisać funkcję, która używa operatorów arytmetycznych `+` i `-` obiektów parametru typu, co spowoduje błąd w czasie tworzenia wystąpienia szablonu z typem, który nie obsługuje tych operatorów. Język C# nie zezwala na to; Jedyne konstrukcje języka dozwolone są te, które można wywnioskować na podstawie ograniczeń.  
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Przewodnik programowania języka C#](../index.md)
+- [Przewodnik programowania w języku C#](../index.md)
 - [Wprowadzenie do typów ogólnych](./index.md)
 - [Szablony](/cpp/cpp/templates-cpp)

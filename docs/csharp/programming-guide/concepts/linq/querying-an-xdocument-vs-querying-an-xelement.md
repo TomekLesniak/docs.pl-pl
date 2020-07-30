@@ -1,21 +1,22 @@
 ---
-title: Wykonywanie zapytań dotyczących dokumentu XDocument a wykonywanie zapytań dotyczących elementu XElement (C#)
+title: Wykonywanie zapytania dotyczącego elementu XDocument a zapytania dotyczącego elementu XElement (C#)
+description: Dowiedz się więcej o różnicach między wykonywaniem zapytań dotyczących elementu XDocument i wykonywaniem zapytania dotyczącego elementu XElement. Zapoznaj się z przykładami kodu, które przedstawiają te różnice.
 ms.date: 07/20/2015
 ms.assetid: 46221ff5-62ee-4de8-93ba-66465facb5c1
-ms.openlocfilehash: 475c77934ad535bad9ef79ff58bbddf991dc8f5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c81768f06148308a639f96f4041e464b24edd33
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253141"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300322"
 ---
-# <a name="querying-an-xdocument-vs-querying-an-xelement-c"></a>Wykonywanie zapytań dotyczących dokumentu XDocument a wykonywanie zapytań dotyczących elementu XElement (C#)
-Podczas ładowania dokumentu <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>za pośrednictwem , można zauważyć, że trzeba napisać <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>zapytania nieco inaczej niż podczas ładowania za pośrednictwem .  
+# <a name="querying-an-xdocument-vs-querying-an-xelement-c"></a>Wykonywanie zapytania dotyczącego elementu XDocument a zapytania dotyczącego elementu XElement (C#)
+Podczas ładowania dokumentu za pośrednictwem programu należy <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> zauważyć, że trzeba pisać zapytania nieco inaczej niż podczas ładowania za pośrednictwem <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> .  
   
-## <a name="comparison-of-xdocumentload-and-xelementload"></a>Porównanie XDocument.Load i XElement.Load  
- Po załadowaniu dokumentu XML <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>do <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XElement> via, w katalogu głównym drzewa XML zawiera element główny załadowanego dokumentu. Jednak po załadowaniu tego samego <xref:System.Xml.Linq.XDocument> dokumentu <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>XML do via <xref:System.Xml.Linq.XDocument> , katalog główny drzewa jest węzłem, a <xref:System.Xml.Linq.XElement> elementem głównym <xref:System.Xml.Linq.XDocument>załadowanego dokumentu jest jeden dozwolony węzeł podrzędny . Osie [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] działają względem węzła głównego.  
+## <a name="comparison-of-xdocumentload-and-xelementload"></a>Porównanie elementów XDocument. Load i XElement. Load  
+ Podczas ładowania dokumentu XML do elementu <xref:System.Xml.Linq.XElement> za pośrednictwem <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> <xref:System.Xml.Linq.XElement> katalog główny drzewa XML zawiera element główny załadowanego dokumentu. Jednak podczas ładowania tego samego dokumentu XML do elementu <xref:System.Xml.Linq.XDocument> za pośrednictwem <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> katalog główny drzewa jest <xref:System.Xml.Linq.XDocument> węzłem, a głównym elementem załadowanego dokumentu jest jeden dozwolony <xref:System.Xml.Linq.XElement> węzeł podrzędny <xref:System.Xml.Linq.XDocument> . [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Osie działają względem węzła głównego.  
   
- W tym pierwszym przykładzie wczytuje drzewo XML przy użyciu . <xref:System.Xml.Linq.XElement.Load%2A> Następnie kwerendy dla elementów podrzędnych katalogu głównego drzewa.  
+ Ten pierwszy przykład ładuje drzewo XML przy użyciu <xref:System.Xml.Linq.XElement.Load%2A> . Następnie wykonuje zapytanie dotyczące elementów podrzędnych katalogu głównego drzewa.  
   
 ```csharp  
 // Create a simple document and write it to a file  
@@ -35,7 +36,7 @@ foreach (XElement e in childList)
     Console.WriteLine(e);  
 ```  
   
- Zgodnie z oczekiwaniami w tym przykładzie daje następujące dane wyjściowe:  
+ Zgodnie z oczekiwaniami ten przykład generuje następujące dane wyjściowe:  
   
 ```output  
 Querying tree loaded with XElement.Load  
@@ -45,7 +46,7 @@ Querying tree loaded with XElement.Load
 <Child3>3</Child3>  
 ```  
   
- Poniższy przykład jest taki sam jak powyżej, z wyjątkiem drzewa XML <xref:System.Xml.Linq.XDocument> jest <xref:System.Xml.Linq.XElement>ładowany do zamiast .  
+ Poniższy przykład jest taki sam jak powyżej, z wyjątkiem tego, że drzewo XML jest załadowane do elementu <xref:System.Xml.Linq.XDocument> zamiast <xref:System.Xml.Linq.XElement> .  
   
 ```csharp  
 // Create a simple document and write it to a file  
@@ -77,9 +78,9 @@ Querying tree loaded with XDocument.Load
 </Root>  
 ```  
   
- Należy zauważyć, że ta `Root` sama kwerenda zwróciła jeden węzeł zamiast trzech węzłów podrzędnych.  
+ Zwróć uwagę, że to samo zapytanie zwróciło jeden `Root` węzeł zamiast trzech węzłów podrzędnych.  
   
- Jednym z podejść do radzenia <xref:System.Xml.Linq.XDocument.Root%2A> sobie z tym jest użycie właściwości przed dostępem do metod osi, w następujący sposób:  
+ Jednym z metod postępowania z tym jest użycie <xref:System.Xml.Linq.XDocument.Root%2A> Właściwości przed uzyskaniem dostępu do metody osi w następujący sposób:  
   
 ```csharp  
 // Create a simple document and write it to a file  
@@ -99,7 +100,7 @@ foreach (XElement e in childList)
     Console.WriteLine(e);  
 ```  
   
- Ta kwerenda jest teraz wykonywana w taki sam <xref:System.Xml.Linq.XElement>sposób, jak kwerenda na drzewie zakorzenionym w programie . W przykładzie przedstawiono następujące dane wyjściowe:  
+ To zapytanie jest teraz wykonywane w taki sam sposób, jak zapytanie w drzewie w katalogu głównym <xref:System.Xml.Linq.XElement> . Przykład generuje następujące dane wyjściowe:  
   
 ```output  
 Querying tree loaded with XDocument.Load  

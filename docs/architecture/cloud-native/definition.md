@@ -3,12 +3,12 @@ title: Definiowanie rozwiązań natywnych dla chmury
 description: Poznaj filary podstawowe, które zapewniają nimi dla systemów natywnych w chmurze
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: e8b07fe7758d90f6ba97b81d0efa9d2fb5058d49
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f50c144d99fae0c4702965342fd76ec22e8bd8c8
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614183"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427037"
 ---
 # <a name="defining-cloud-native"></a>Definiowanie natywnego chmury
 
@@ -34,7 +34,7 @@ Oto kilka firm, które wdrożyły te techniki. Pomyśl o szybkości, elastyczno�
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | Ma ponad 600 usług w środowisku produkcyjnym. Wdraża setki razy dziennie. |
 | [Uber](https://eng.uber.com/micro-deploy/) | Ma 1000 usług w środowisku produkcyjnym. Wdraża kilka tysięcy razy w każdym tygodniu. |
-| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Obejmuje 300 usług w środowisku produkcyjnym. Wdraża 1 000 razy dziennie. |
+| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Ma 3000 usług w środowisku produkcyjnym. Wdraża 1 000 razy dziennie. |
 
 Jak widzisz, Netflix, Uber i WeChat uwidaczniają systemy, które składają się z setek niezależnych mikrousług. Ten styl architektoniczny umożliwia im szybkie reagowanie na warunki rynkowe. Mogą natychmiast aktualizować małe obszary aplikacji działającej na żywo, złożonej i indywidualnie skalować te obszary zgodnie z wymaganiami.
 
@@ -74,7 +74,7 @@ W przypadku aplikacji opartych na sieci Web wiele lekarzy uważa się jako solid
 
 W poniższej tabeli przedstawiono metodologię 12-czynnikową:
 
-|    |  1U | Wyjaśnienie  |
+|    |  Czynnik | Wyjaśnienie  |
 | :-------- | :-------- | :-------- |
 | 1 | Baza kodu | Pojedyncza baza kodu dla każdej mikrousługi, przechowywana we własnym repozytorium. Śledzone przy użyciu kontroli wersji, można je wdrożyć w wielu środowiskach (pytań i odpowiedzi, w środowisku produkcyjnym). |
 | 2 | Zależności | Każda mikrousługa izoluje i pakuje własne zależności, wdrażając zmiany bez wpływu na cały system. |
@@ -94,7 +94,7 @@ W książce [poza aplikacją 12-składnikową](https://content.pivotal.io/blog/
 |    |  Nowy czynnik | Wyjaśnienie  |
 | :-------- | :-------- | :-------- |
 | 13 | Priorytetyzowanie interfejsu API | Utwórz wszystko jako usługę. Załóżmy, że kod będzie używany przez klienta frontonu, bramę lub inną usługę. |
-| 14 | Telemetria | Na stacji roboczej masz wgląd w aplikację i jej zachowanie. W chmurze nie masz. Upewnij się, że projekt zawiera kolekcję monitorowanie, specyficzne dla domeny i kondycję/dane systemowe. |
+| 14 | Telemetry | Na stacji roboczej masz wgląd w aplikację i jej zachowanie. W chmurze nie masz. Upewnij się, że projekt zawiera kolekcję monitorowanie, specyficzne dla domeny i kondycję/dane systemowe. |
 | 15 | Uwierzytelnianie/autoryzacja  | Zaimplementuj tożsamość z poziomu uruchomienia. Zapoznaj się z funkcjami [RBAC (kontrola dostępu opartą na rolach)](https://docs.microsoft.com/azure/role-based-access-control/overview) dostępnymi w chmurach publicznych.  |
 
 Odwołujemy się do wielu czynników 12 + w tym rozdziale i w całej książce.
@@ -173,7 +173,7 @@ Mikrousługi można tworzyć przy użyciu dowolnej nowoczesnej platformy program
 
 Platforma Microsoft .NET Core to doskonały wybór. Bezpłatna i open source ma wiele wbudowanych funkcji upraszczających programowanie mikrousług. Platforma .NET Core jest dla wielu platform. Aplikacje można budować i uruchamiać w systemach Windows, macOS i większości systemów Linux.
 
-Program .NET Core jest wysoce wydajny i został dobrze oceniony w porównaniu do środowiska Node. js i innych konkurujących platform. Z tego względu [TechEmpower](https://www.techempower.com/) przeprowadził rozbudowany zestaw [testów wydajności](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) na wielu platformach aplikacji sieci Web i strukturach. Platforma .NET Core została oceniona w 10 najlepszych ponad platformie Node. js i innych konkurencyjnych platformach.
+Program .NET Core jest wysoce wydajny i został wyliczony w porównaniu do Node.js i innych konkurujących platform. Z tego względu [TechEmpower](https://www.techempower.com/) przeprowadził rozbudowany zestaw [testów wydajności](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) na wielu platformach aplikacji sieci Web i strukturach. Platforma .NET Core została oceniona w 10 najlepszych ponad Node.js i innych konkurencyjnych platformach.
 
 Platforma .NET Core jest obsługiwana przez firmę Microsoft i społeczność programu .NET w witrynie GitHub.
 
@@ -276,7 +276,7 @@ Dostawcy chmury dostarczają interfejsy API umożliwiające komunikowanie się z
 
 Usługi zapasowe zostały omówione szczegółowo w rozdziale 5, *wzorcach danych natywnych w chmurze*i rozdziale 4 w *natywnych wzorcach komunikacji w chmurze*.
 
-## <a name="automation"></a>Automatyzacja
+## <a name="automation"></a>Automation
 
 Jak widać, systemy natywne w chmurze uwzględniają mikrousługi, kontenery i nowoczesne projektowanie systemu, aby osiągnąć szybkość i elastyczność. Ale jest to tylko część wątku. Jak można zainicjować obsługę środowisk w chmurze, na których są uruchamiane te systemy? Jak szybko wdrażać funkcje i aktualizacje aplikacji? Jak zaokrąglić pełny obraz?
 
@@ -331,7 +331,7 @@ Azure Pipelines to usługa w chmurze, która łączy ciągłą integrację (CI) 
 Możesz zdefiniować potok w kodzie w pliku YAML, obok pozostałej części kodu aplikacji.
 
 - Potok jest zgodny z kodem i ma tę samą strukturę rozgałęziania.
-- Sprawdzanie poprawności zmian odbywa się za poorednictwem przeglądów kodu w ramach żądań ściągnięcia i zasad tworzenia gałęzi.
+- Sprawdzanie poprawności zmian odbywa się za pośrednictwem przeglądów kodu w ramach żądań ściągnięcia i zasad tworzenia rozgałęzień.
 - Wszystkie używane gałęzie mogą dostosować zasady kompilacji, modyfikując plik Azure-Pipelines. yml.
 - Plik potoku jest sprawdzany w kontroli wersji i można go zbadać, jeśli wystąpił problem.
 

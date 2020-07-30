@@ -1,26 +1,27 @@
 ---
-title: Jak przesyłać strumieniowo fragmenty XML z dostępem do informacji nagłówka (C#)
+title: Jak przesyłać fragmenty XML z dostępem do informacji nagłówka (C#)
+description: Dowiedz się, jak przesyłać fragmenty XML z dostępem do informacji nagłówka. Techniki przesyłania strumieniowego pomagają uniknąć nadmiernego użycia pamięci.
 ms.date: 07/20/2015
 ms.assetid: 7f242770-b0c7-418d-894b-643215e1f8aa
-ms.openlocfilehash: 5bc10bcadae0e33ee63f953608ca841d44dd6527
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8bfded96ea1fa6b096d56ae0736002b9062d58b6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712393"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303221"
 ---
-# <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Jak przesyłać strumieniowo fragmenty XML z dostępem do informacji nagłówka (C#)
-Czasami trzeba odczytać arbitralnie dużych plików XML i napisać aplikację, tak aby rozmiar pamięci aplikacji jest przewidywalny. Jeśli spróbujesz wypełnić drzewo XML dużym plikiem XML, użycie pamięci będzie proporcjonalne do rozmiaru pliku — czyli nadmiernego. W związku z tym należy użyć techniki przesyłania strumieniowego zamiast tego.  
+# <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Jak przesyłać fragmenty XML z dostępem do informacji nagłówka (C#)
+Czasami konieczne jest odczytanie arbitralnie dużych plików XML i zapisanie aplikacji w celu przewidzenia rozmiaru pamięci aplikacji. W przypadku próby wypełnienia drzewa XML przy użyciu dużego pliku XML użycie pamięci będzie proporcjonalne do rozmiaru pliku, czyli nadmierne. W związku z tym należy zamiast tego użyć techniki przesyłania strumieniowego.  
   
-Jedną z opcji jest <xref:System.Xml.XmlReader>napisanie aplikacji za pomocą . Można jednak użyć LINQ do wykonywania zapytań do drzewa XML. W takim przypadku można napisać własną metodę osi niestandardowej. Aby uzyskać więcej informacji, zobacz [Jak napisać linq do metody osi XML (C#)](./how-to-write-a-linq-to-xml-axis-method.md).
+Jedną z opcji jest zapisanie aplikacji przy użyciu programu <xref:System.Xml.XmlReader> . Można jednak użyć LINQ do wykonywania zapytań w drzewie XML. W takim przypadku można napisać własną metodę osi niestandardowej. Aby uzyskać więcej informacji, zobacz [jak napisać metodę osi LINQ to XML (C#)](./how-to-write-a-linq-to-xml-axis-method.md).
   
- Aby napisać własną metodę osi, należy napisać <xref:System.Xml.XmlReader> małą metodę, która używa do odczytu węzłów, dopóki nie osiągnie jeden z węzłów, w którym jesteś zainteresowany. Metoda następnie <xref:System.Xml.Linq.XNode.ReadFrom%2A>wywołuje , który <xref:System.Xml.XmlReader> odczytuje z i tworzy fragment XML. Następnie daje każdy fragment `yield return` do metody, która wylicza metodę osi niestandardowej. Następnie można napisać zapytania LINQ na niestandardowej metody osi.  
+ Aby napisać własną metodę osi, napisz małą metodę, która używa <xref:System.Xml.XmlReader> do odczytu węzłów do momentu osiągnięcia jednego z węzłów, w których Cię interesują. Metoda następnie wywołuje <xref:System.Xml.Linq.XNode.ReadFrom%2A> , który odczytuje z <xref:System.Xml.XmlReader> i tworzy wystąpienie fragmentu XML. Następnie przekazuje każdy fragment `yield return` do metody, która wylicza metodę osi niestandardowej. Następnie można napisać zapytania LINQ na niestandardowej metodzie osi.  
   
- Techniki przesyłania strumieniowego są najlepiej stosowane w sytuacjach, w których trzeba przetworzyć dokument źródłowy tylko raz i można przetwarzać elementy w kolejności dokumentu. Niektóre standardowe operatory <xref:System.Linq.Enumerable.OrderBy%2A>zapytań, takie jak , iterate ich źródła, zbierać wszystkie dane, sortować go, a następnie wreszcie przynieść pierwszy element w sekwencji. Jeśli używasz operatora kwerendy, który materializuje jego źródła przed uzyskaniem pierwszego elementu, nie zachowa małej pamięci.  
+ Techniki przesyłania strumieniowego najlepiej zastosować w sytuacjach, gdy trzeba przetwarzać dokument źródłowy tylko raz i można przetwarzać elementy w kolejności dokumentu. Niektóre standardowe operatory zapytań, takie jak <xref:System.Linq.Enumerable.OrderBy%2A> , iteruje źródło, zbierają wszystkie dane, sortują je, a następnie zwracają pierwszy element w sekwencji. Jeśli używasz operatora zapytania, który materializuje jego źródło przed uzyskaniem pierwszego elementu, nie zostanie zachowana mała ilość pamięci.  
   
 ## <a name="example"></a>Przykład  
 
-Czasami problem staje się nieco bardziej interesujący. W poniższym dokumencie XML konsument metody osi niestandardowej musi również znać nazwę odbiorcy, do którego należy każdy element.  
+Czasami problem jest znacznie bardziej interesujący. W poniższym dokumencie XML konsument niestandardowej metody osi musi znać nazwę klienta, do którego należy każdy element.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -67,11 +68,11 @@ Czasami problem staje się nieco bardziej interesujący. W poniższym dokumencie
 </Root>  
 ```  
   
- Podejście, które przyjmuje w tym przykładzie jest również obserwować dla tych informacji nagłówka, zapisać informacje nagłówka, a następnie utworzyć małe drzewo XML, który zawiera zarówno informacje nagłówka i szczegóły, które są wyliczane. Metoda osi następnie daje to nowe, małe drzewo XML. Kwerenda ma dostęp do informacji nagłówka, a także informacji szczegółowych.  
+ Podejście, które ten przykład przyjmuje, ma również na celu śledzenie informacji o tym nagłówku, zapisanie informacji nagłówka, a następnie utworzenie małego drzewa XML zawierającego zarówno informacje nagłówka, jak i szczegóły wyliczane. Następnie metoda osi daje nowe, małe drzewo XML. Następnie zapytanie ma dostęp do informacji nagłówka oraz informacji szczegółowych.  
   
- Takie podejście ma niewielki rozmiar pamięci. Jak każdy fragment XML szczegółu jest pled, żadne odwołania są przechowywane do poprzedniego fragmentu i jest dostępna dla wyrzucania elementów bezużytecznych. Ta technika tworzy wiele krótkotrwałych obiektów na stercie.  
+ Takie podejście ma niewielkie rozmiary pamięci. Ze względu na to, że każdy szczegółowy fragment kodu XML jest przewidziany, żadne odwołania nie są przechowywane w poprzednim fragmencie i jest dostępny do wyrzucania elementów bezużytecznych. Ta technika tworzy wiele krótkoterminowych obiektów na stercie.  
   
- W poniższym przykładzie pokazano, jak zaimplementować i używać metody osi niestandardowej, która przesyła strumienifragmenty XML z pliku określonego przez identyfikator URI. Ta oś niestandardowa jest napisana w `Customer` `Name`taki `Item` sposób, że oczekuje dokumentu, który ma `Source.xml` , i elementy, i że te elementy zostaną rozmieszczone, jak w powyższym dokumencie. Jest to uproszczone wdrożenie. Bardziej niezawodne wdrożenie byłoby przygotowane do analizy nieprawidłowego dokumentu.  
+ Poniższy przykład przedstawia sposób implementacji i używania niestandardowej metody osi, która strumieniuje fragmenty XML z pliku określonego przez identyfikator URI. Ta niestandardowa oś jest zapisywana w taki sposób, że oczekuje dokumentu, `Customer` `Name` , i `Item` elementy, i że te elementy będą ułożone jak w powyższym `Source.xml` dokumencie. Jest to implementacja uproszczony. Bardziej niezawodna implementacja zostanie przygotowana do analizy nieprawidłowego dokumentu.  
   
 ```csharp  
 static IEnumerable<XElement> StreamCustomerItem(string uri)  
@@ -140,7 +141,7 @@ static void Main(string[] args)
 }  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```xml  
 <Root>  

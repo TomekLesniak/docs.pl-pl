@@ -1,24 +1,25 @@
 ---
-title: Serializacja za pomocą deklaracji XML (C#)
+title: Serializacja przy użyciu deklaracji XML (C#)
+description: Informacje o konfiguracjach, w których Serializacja w języku C# generuje deklarację XML, łącznie z serializowaniem do pliku, TextWriter i XmlWriter.
 ms.date: 07/20/2015
 ms.assetid: c237fa4a-a042-40fd-886f-17b54c66bb75
-ms.openlocfilehash: 4533d69f2b0bee68b4adee6e18fe28dde18078ae
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7e91b61f037d28149f7c2355f4233dc319b54627
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483485"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302363"
 ---
-# <a name="serializing-with-an-xml-declaration-c"></a>Serializacja za pomocą deklaracji XML (C#)
-W tym temacie opisano, jak kontrolować, czy serializacja generuje deklarację XML.  
+# <a name="serializing-with-an-xml-declaration-c"></a>Serializacja przy użyciu deklaracji XML (C#)
+W tym temacie opisano sposób kontrolowania, czy Serializacja generuje deklarację XML.  
   
 ## <a name="xml-declaration-generation"></a>Generowanie deklaracji XML  
- Serializacji do <xref:System.IO.File> lub <xref:System.IO.TextWriter> przy <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> użyciu <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> metody lub metody generuje deklarację XML. Podczas serializacji do <xref:System.Xml.XmlWriter>, ustawienia modułu zapisu <xref:System.Xml.XmlWriterSettings> (określone w obiekcie) określić, czy deklaracja XML jest generowany, czy nie.  
+ Serializacja do metody lub metody, <xref:System.IO.File> <xref:System.IO.TextWriter> <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> lub <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> Metoda generuje deklarację XML. Podczas serializacji do <xref:System.Xml.XmlWriter> , ustawienia składnika zapisywania (określone w <xref:System.Xml.XmlWriterSettings> obiekcie) określają, czy deklaracja XML jest generowana, czy nie.  
   
- Jeśli serializacji do ciągu przy `ToString` użyciu metody, wynikowy Kod XML nie będzie zawierać deklarację XML.  
+ W przypadku serializacji do ciągu przy użyciu `ToString` metody, otrzymany kod XML nie będzie zawierał deklaracji XML.  
   
 ### <a name="serializing-with-an-xml-declaration"></a>Serializowanie przy użyciu deklaracji XML  
- Poniższy przykład tworzy <xref:System.Xml.Linq.XElement>plik , zapisuje dokument w pliku, a następnie drukuje plik na konsoli:  
+ Poniższy przykład tworzy <xref:System.Xml.Linq.XElement> , zapisuje dokument do pliku, a następnie drukuje plik do konsoli programu:  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -39,7 +40,7 @@ Console.WriteLine(str);
 ```  
   
 ### <a name="serializing-without-an-xml-declaration"></a>Serializacja bez deklaracji XML  
- W poniższym przykładzie pokazano, jak zapisać do <xref:System.Xml.Linq.XElement> . <xref:System.Xml.XmlWriter>  
+ Poniższy przykład pokazuje, jak zapisać element <xref:System.Xml.Linq.XElement> w <xref:System.Xml.XmlWriter> .  
   
 ```csharp  
 StringBuilder sb = new StringBuilder();  
@@ -63,4 +64,4 @@ Console.WriteLine(sb.ToString());
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Serializujące drzewa XML (C#)](serializing-to-files-textwriters-and-xmlwriters.md)
+- [Serializowanie drzew XML (C#)](serializing-to-files-textwriters-and-xmlwriters.md)

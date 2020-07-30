@@ -1,5 +1,6 @@
 ---
 title: Hello world — pierwszy program korzystający z programu Visual Studio w systemie Windows lub Mac — Przewodnik programowania w języku C#
+description: Program Visual Studio to profesjonalne środowisko programistyczne z wieloma funkcjami programistycznymi dla platformy .NET. Użyj programu Visual Studio, aby utworzyć wersję C# Hello world!
 ms.date: 09/12/2019
 f1_keywords:
 - cs.program
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 6d78ec83fec72b30f5cee398af1816d0cac35886
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b78937b8ba1c7d4718bfb6252dac705945336d2a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241867"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301830"
 ---
 # <a name="hello-world----your-first-program"></a>Hello world — pierwszy program
 

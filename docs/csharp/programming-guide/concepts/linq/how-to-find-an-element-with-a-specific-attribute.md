@@ -1,21 +1,22 @@
 ---
 title: Jak znaleźć element z określonym atrybutem (C#)
+description: Dowiedz się, jak znaleźć element, który ma atrybut o określonej wartości. Zobacz przykłady kodu i dodatkowe zasoby.
 ms.date: 07/20/2015
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: 106885b8658c493caab3101e6b4ce921589076eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44875ca2104e7a8f83e83da983af49ef85c89f0a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141160"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303286"
 ---
 # <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>Jak znaleźć element z określonym atrybutem (C#)
-W tym temacie pokazano, jak znaleźć element, który ma atrybut, który ma określoną wartość.  
+W tym temacie pokazano, jak znaleźć element, który ma atrybut o określonej wartości.  
   
 ## <a name="example"></a>Przykład  
- W przykładzie pokazano, `Address` jak znaleźć `Type` element, który ma atrybut o wartości "Billing".  
+ W przykładzie pokazano, jak znaleźć `Address` element, który ma `Type` atrybut o wartości "rozliczenia".  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Typowe zamówienie zakupu (LINQ do XML).](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md)  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: typowe zamówienie zakupu (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrder.xml");  
@@ -27,7 +28,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```xml  
 <Address Type="Billing">  
@@ -41,9 +42,9 @@ foreach (XElement el in address)
 ```  
   
 ## <a name="example"></a>Przykład  
- W poniższym przykładzie przedstawiono tę samą kwerendę dla języka XML, która znajduje się w obszarze nazw. Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ W poniższym przykładzie pokazano to samo zapytanie dla kodu XML, który znajduje się w przestrzeni nazw. Aby uzyskać więcej informacji, zobacz temat [przestrzenie nazw — omówienie (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Typowe zamówienie zakupu w obszarze nazw](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: typowe zamówienie zakupu w przestrzeni nazw](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrderInNamespace.xml");  
@@ -56,7 +57,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```xml  
 <aw:Address aw:Type="Billing" xmlns:aw="http://www.adventure-works.com">  
@@ -73,5 +74,5 @@ foreach (XElement el in address)
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Omówienie standardowych operatorów zapytań (C#)](./standard-query-operators-overview.md)
+- [Standardowe operatory zapytań — Omówienie (C#)](./standard-query-operators-overview.md)
 - [Operacje projekcji (C#)](./projection-operations.md)

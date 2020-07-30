@@ -1,18 +1,19 @@
 ---
 title: 'Przykładowy plik XML: konfiguracja testowa (LINQ to XML)'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Plik jest plikiem konfiguracji testu.
 ms.date: 07/20/2015
 ms.assetid: 45bfb509-c1d4-4b4f-9690-1cb0c9816516
-ms.openlocfilehash: 713e0b69ea896d9f4198ae68f1a3a258d74f24f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14402a4d7988e767464a53a159bcb25661dc82f8
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66487237"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302467"
 ---
 # <a name="sample-xml-file-test-configuration-linq-to-xml"></a>Przykładowy plik XML: konfiguracja testowa (LINQ to XML)
-Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji. Jest to plik konfiguracji testu.  
+Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji. To jest plik konfiguracji testu.  
   
-## <a name="testconfigxml"></a>Plik TestConfig.xml  
+## <a name="testconfigxml"></a>TestConfig.xml  
   
 ```xml  
 <?xml version="1.0"?>  

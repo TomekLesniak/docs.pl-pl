@@ -1,27 +1,28 @@
 ---
-title: Jak znaleźć elementy podrzędne na podstawie pozycji (XPath-LINQ do XML) (C#)
+title: Jak znaleźć elementy podrzędne na podstawie pozycji (XPath-LINQ to XML) (C#)
+description: Dowiedz się, jak znaleźć elementy podrzędne na podstawie pozycji przy użyciu wyrażenia XPath. Przejrzyj przykład kodu, który używa przykładowego pliku XML.
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
-ms.openlocfilehash: cc0ff5639345d36ebb0423a12b66de8f1a70ade1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2603d3ac94ace645bde1ce85a43a43af7321014e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141120"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301674"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Jak znaleźć elementy podrzędne na podstawie pozycji (XPath-LINQ do XML) (C#)
-Czasami chcesz znaleźć elementy na podstawie ich pozycji. Możesz chcieć znaleźć drugi element lub możesz chcieć znaleźć trzeci za pośrednictwem piątego elementu.  
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Jak znaleźć elementy podrzędne na podstawie pozycji (XPath-LINQ to XML) (C#)
+Czasami chcesz znaleźć elementy na podstawie ich położenia. Może być konieczne znalezienie drugiego elementu lub znalezienie trzeciej przez piąty element.  
   
- Wyrażenie XPath jest następujące:  
+ Wyrażenie XPath:  
   
  `Test[position() >= 2 and position() <= 4]`  
   
- Istnieją dwa podejścia do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pisania tej kwerendy w sposób leniwy. Można użyć <xref:System.Linq.Enumerable.Skip%2A> i <xref:System.Linq.Enumerable.Take%2A> operatorów lub można <xref:System.Linq.Enumerable.Where%2A> użyć przeciążenia, który ma indeks. Korzystając z <xref:System.Linq.Enumerable.Where%2A> przeciążenia, należy użyć wyrażenia lambda, który przyjmuje dwa argumenty. W poniższym przykładzie przedstawiono obie metody wybierania na podstawie pozycji.  
+ Istnieją dwa podejścia do pisania tego [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zapytania w sposób opóźniony. Można użyć <xref:System.Linq.Enumerable.Skip%2A> <xref:System.Linq.Enumerable.Take%2A> operatorów i lub użyć <xref:System.Linq.Enumerable.Where%2A> przeciążenia, które przyjmuje indeks. Używając <xref:System.Linq.Enumerable.Where%2A> przeciążenia, należy użyć wyrażenia lambda, które przyjmuje dwa argumenty. W poniższym przykładzie przedstawiono obie metody wyboru na podstawie pozycji.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie znajduje `Test` drugi przez czwarty element. Wynik jest zbiorem elementów.  
+ Ten przykład wyszukuje sekundę za pomocą czwartego `Test` elementu. Wynik jest kolekcją elementów.  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Konfiguracja testu (LINQ do XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: Konfiguracja testu (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  

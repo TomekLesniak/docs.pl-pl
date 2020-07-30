@@ -1,27 +1,28 @@
 ---
-title: Dokument WordprocessingML ze stylem3
+title: Dokument WordprocessingML ze stylami
+description: Ten przykład dokumentu WordprocessingML zawiera akapity sformatowane przy użyciu stylów. Dowiedz się więcej o częściach dokumentu odnoszących się do stylów.
 ms.date: 07/20/2015
 ms.assetid: 40e35de6-ac93-4bba-88ab-a018cbe93873
-ms.openlocfilehash: 10697744680276a40fb7a175e4c04920c9e3c243
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b799c1bee95d7d638e6a3210b4876ff036e088eb
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167871"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302207"
 ---
 # <a name="wordprocessingml-document-with-styles"></a>Dokument WordprocessingML ze stylami
-Bardziej skomplikowane dokumenty WordprocessingML mają akapity sformatowane za pomocą stylów.  
+Bardziej skomplikowane dokumenty WordprocessingML mają akapity sformatowane przy użyciu stylów.  
   
- Kilka uwag na temat makijażu dokumentów WordprocessingML są pomocne. Dokumenty WordprocessingML są przechowywane w opakowaniach. Pakiety mają wiele części (części mają wyraźne znaczenie, gdy są używane w kontekście pakietów; zasadniczo części są plikami, które są spakowane razem, aby składać się z pakietu). Jeśli dokument zawiera akapity sformatowane za pomocą stylów, będzie istniała część dokumentu zawierająca akapity, które mają zastosowane do nich style. Będzie również część stylu, która zawiera style, które są określone przez dokument.  
+ Przydatne są kilka informacji na temat korzeń dokumentów WordprocessingML. Dokumenty WordprocessingML są przechowywane w pakietach. Pakiety mają wiele części (części mają jawne znaczenie, gdy są używane w kontekście pakietów; zasadniczo części są plikami, które są spakowane razem w celu podzielenia pakietu). Jeśli dokument zawiera akapity sformatowane za pomocą stylów, będzie to część dokumentu zawierająca akapity, do których zastosowano style. Będzie również częścią stylu, która zawiera style, do których odwołuje się dokument.  
   
- Podczas uzyskiwania dostępu do pakietów, ważne jest, aby to zrobić za pośrednictwem relacji między częściami, a nie przy użyciu dowolnej ścieżki. Ten problem wykracza poza zakres manipulowania zawartościw samouczku dokumentu WordprocessingML, ale przykładowe programy, które są zawarte w tym samouczku wykazać poprawne podejście.  
+ Podczas uzyskiwania dostępu do pakietów ważne jest, aby wykonać tę czynność poprzez relacje między częściami, zamiast korzystać z dowolnej ścieżki. Ten problem jest poza zakresem manipulowania zawartością w samouczku dokumentu WordprocessingML, ale przykładowe programy, które są zawarte w tym samouczku, przedstawiają odpowiednie podejście.  
   
 ## <a name="a-document-that-uses-styles"></a>Dokument, który używa stylów  
- Przykład wordml przedstawiony w [kształt dokumentów WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md) jest bardzo prosty. Poniższy dokument jest bardziej skomplikowany: zawiera akapity, które są sformatowane za pomocą stylów. Najprostszym sposobem wyświetlenie pliku XML, który składa się na dokument XML pakietu Office Open, jest uruchomienie [przykładu, który wprowadza otwarte części dokumentów XML pakietu Office (C#).](./example-that-outputs-office-open-xml-document-parts.md)  
+ Przykład elementu WordML przedstawiony w [kształcie WordprocessingML Documents (C#)](./shape-of-wordprocessingml-documents.md) jest bardzo prosty. Następujący dokument jest bardziej skomplikowany: zawiera akapity sformatowane za pomocą stylów. Najprostszym sposobem wyświetlenia kodu XML, który stanowi dokument pakietu Office Open XML, jest uruchomienie [przykładu, który wyprowadza składniki Office Open XML Document Part (C#)](./example-that-outputs-office-open-xml-document-parts.md).  
   
- W poniższym dokumencie akapit pierwszy `Heading1`ma styl . Istnieje kilka akapitów, które mają domyślny styl. Istnieje również kilka akapitów, które `Code`mają styl . Ze względu na tę względną złożoność jest to bardziej interesujący dokument do analizy z LINQ do XML.  
+ W poniższym dokumencie pierwszy akapit ma styl `Heading1` . Istnieje kilka akapitów z stylem domyślnym. Istnieje również kilka akapitów, które mają styl `Code` . Z powodu tej względnej złożoności jest to bardziej interesujący dokument, który można analizować za pomocą LINQ to XML.  
   
- W tych akapitach ze stylami innymi niż domyślne `w:pPr`elementy akapitu mają element `w:pStyle`podrzędny o nazwie , który z kolei ma element podrzędny. Ten element ma `w:val`atrybut, który zawiera nazwę stylu. Jeśli akapit ma styl domyślny, oznacza to, że `w:p.Pr` element akapitu nie ma elementu podrzędnego.  
+ W tych akapitach o stylach innych niż domyślne elementy akapitu mają element podrzędny o nazwie `w:pPr` , który z kolei ma element podrzędny `w:pStyle` . Ten element ma atrybut, `w:val` który zawiera nazwę stylu. Jeśli akapit ma styl domyślny, oznacza to, że element akapitu nie ma `w:p.Pr` elementu podrzędnego.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

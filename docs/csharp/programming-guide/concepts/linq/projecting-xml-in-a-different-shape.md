@@ -1,25 +1,26 @@
 ---
-title: Projekcja xml w innym kształcie (C#)
+title: Projekcja XML w innym kształcie (C#)
+description: Dowiedz się, jak projektować XML w innym kształcie niż źródłowy kod XML. Przejrzyj przykład kodu, który używa klas z zestawu 'Windowsbase.
 ms.date: 07/20/2015
 ms.assetid: 4cb6b14a-32dc-4a2a-813e-bf9368fa8d86
-ms.openlocfilehash: 1377df1ce7f54bc9a0f58836d7df5e5b7b54a69a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 492c0671b6a81f7e6b8d5f93698f84b88b14bd23
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591537"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299100"
 ---
-# <a name="projecting-xml-in-a-different-shape-c"></a>Projekcja xml w innym kształcie (C#)
-W tym temacie przedstawiono przykład projekcji XML, który jest w innym kształcie niż źródłowy kod XML.  
+# <a name="projecting-xml-in-a-different-shape-c"></a>Projekcja XML w innym kształcie (C#)
+W tym temacie przedstawiono przykład projektu XML, który znajduje się w innym kształcie niż źródłowy kod XML.  
   
- Wiele typowych przekształceń XML składa się z zapytań łańcuchowych, jak w tym przykładzie. Często można rozpocząć od jakiejś formy XML, wyników pośrednich projektu jako kolekcji typów anonimowych lub nazwanych typów, a następnie na koniec do projektu wyniki z powrotem do Języka XML, który jest w zupełnie innym kształcie niż źródłowy XML.  
+ Wiele typowych transformacji XML składają się z kwerend łańcucha, jak w tym przykładzie. Często zaczynają się od pewnego formatu XML, wyniki pośredniego projektu jako kolekcje typów anonimowych lub nazwanych typów, a następnie na końcu projektuje wyniki z powrotem do pliku XML, który znajduje się w całkowicie innym kształcie niż źródłowy kod XML.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie przetwarza dokument WordprocessingML, pobierając węzły akapitu z dokumentu WordprocessingML. Identyfikuje również styl i tekst każdego akapitu. Na koniec przykład projektów XML o innym kształcie. W tym przykładzie opiera się na poprzednich przykładach w tym samouczku. Nowa instrukcja, która wykonuje projekcji jest wywoływana w komentarzach w kodzie poniżej.  
+ Ten przykład przetwarza dokument WordprocessingML, pobierając węzły akapitu z dokumentu WordprocessingML. Identyfikuje także styl i tekst każdego akapitu. Na koniec przykładowe projekty XML z innym kształtem. Ten przykład kompiluje się zgodnie z poprzednimi przykładami w tym samouczku. Nowa instrukcja, która wykonuje projekcję, jest wywoływana w komentarzach w kodzie poniżej.  
   
- Aby uzyskać instrukcje dotyczące tworzenia dokumentu źródłowego dla tego [przykładu, zobacz Tworzenie dokumentu XML open pakietu Source Office (C#).](./creating-the-source-office-open-xml-document.md)  
+ Aby uzyskać instrukcje dotyczące tworzenia dokumentu źródłowego dla tego przykładu, zobacz [Tworzenie źródłowego dokumentu Office Open XML (C#)](./creating-the-source-office-open-xml-document.md).  
   
- W tym przykładzie użyto klas z zestawu WindowsBase. Używa typów w <xref:System.IO.Packaging?displayProperty=nameWithType> obszarze nazw.  
+ W tym przykładzie zastosowano klasy z zestawu 'Windowsbase. Używa typów w <xref:System.IO.Packaging?displayProperty=nameWithType> przestrzeni nazw.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -231,7 +232,7 @@ class Program
 ```  
   
 ## <a name="next-steps"></a>Następne kroki  
- W następnym przykładzie zapytanie o znalezienie całego tekstu w dokumencie programu Word:  
+ W następnym przykładzie utworzysz zapytanie, aby znaleźć cały tekst w dokumencie programu Word:  
   
 - [Znajdowanie tekstu w dokumentach programu Word (C#)](./finding-text-in-word-documents.md)  
   

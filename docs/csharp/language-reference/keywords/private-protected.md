@@ -1,24 +1,26 @@
 ---
-title: private protected - C# Reference
+title: Private Protected — Dokumentacja języka C#
 ms.date: 11/15/2017
+f1_keywords:
+- privateprotected_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 03fa90582d096919f2e6546fae2fde28e486fe41
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 94ef55d7e13841f81b036f52659b215e22a3a0d7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463053"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301804"
 ---
-# <a name="private-protected-c-reference"></a>private protected (c# Reference)
+# <a name="private-protected-c-reference"></a>Private Protected (odwołanie w C#)
 
-Kombinacja `private protected` słów kluczowych jest modyfikatorem dostępu do członków. Prywatny chroniony element członkowski jest dostępny dla typów pochodzących z klasy zawierającej, ale tylko w ramach jego zestawu zawierającego. Aby zapoznać `private protected` się z innymi modyfikatorami dostępu, zobacz [Poziomy ułatwień dostępu](accessibility-levels.md).
+`private protected`Kombinacja słowa kluczowego jest modyfikatorem dostępu składowej. Prywatna chroniona składowa jest dostępna dla typów pochodzących od klasy zawierającej, ale tylko w obrębie zawartego zestawu. Aby uzyskać porównanie `private protected` z innymi modyfikatorami dostępu, zobacz [poziomy dostępności](accessibility-levels.md).
 
 > [!NOTE]
-> Modyfikator `private protected` dostępu jest prawidłowy w języku C# w wersji 7.2 i nowszych.
+> `private protected`Modyfikator dostępu jest prawidłowy w języku C# w wersji 7,2 i nowszych.
 
 ## <a name="example"></a>Przykład
 
-Prywatny chroniony element członkowski klasy podstawowej jest dostępny z typów pochodnych w zestawie zawierającym tylko wtedy, gdy typ statyczny zmiennej jest typem klasy pochodnej. Rozważmy na przykład następujący segment kodu:
+Prywatna chroniona składowa klasy bazowej jest dostępna z typów pochodnych w jego zestawie zawierającym tylko wtedy, gdy typ statyczny zmiennej jest typem klasy pochodnej. Rozważmy na przykład następujący segment kodu:
 
 ```csharp
 public class BaseClass
@@ -56,14 +58,14 @@ class DerivedClass2 : BaseClass
 }
 ```
 
-W tym przykładzie `Assembly1.cs` `Assembly2.cs`znajdują się dwa pliki i .
-Pierwszy plik zawiera publiczną `BaseClass`klasę podstawową i typ `DerivedClass1`pochodną. `BaseClass`jest właścicielem prywatnego chronionego `myValue` `DerivedClass1` członka, który próbuje uzyskać dostęp na dwa sposoby. Pierwsza próba uzyskania `myValue` dostępu za `BaseClass` pośrednictwem wystąpienia spowoduje błąd. Jednak próba użycia go jako dziedziczonego `DerivedClass1` elementu członkowskiego w zakończy się pomyślnie.
+Ten przykład zawiera dwa pliki `Assembly1.cs` i `Assembly2.cs` .
+Pierwszy plik zawiera publiczną klasę bazową, `BaseClass` i typ pochodzący od niej `DerivedClass1` . `BaseClass`jest właścicielem prywatnej, chronionej składowej, `myValue` która `DerivedClass1` próbuje uzyskać dostęp na dwa sposoby. Pierwsza próba uzyskania dostępu `myValue` za pomocą wystąpienia `BaseClass` spowoduje wystąpienie błędu. Jednak próba użycia jej jako dziedziczonego elementu członkowskiego w programie powiedzie `DerivedClass1` się.
 
-W drugim pliku próba dostępu `myValue` jako dziedziczony `DerivedClass2` element członkowski spowoduje błąd, ponieważ jest dostępny tylko dla typów pochodnych w Assembly1.
+W drugim pliku próba uzyskania dostępu `myValue` jako dziedziczonego elementu członkowskiego `DerivedClass2` spowoduje wystąpienie błędu, ponieważ jest on dostępny tylko dla typów pochodnych w assembly1.
 
-Jeśli `Assembly1.cs` zawiera <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> tę `Assembly2`nazwy, klasa `DerivedClass1` pochodna `private protected` będzie miała `BaseClass`dostęp do elementów członkowskich zadeklarowanych w programie . `InternalsVisibleTo`sprawia, że `private protected` elementy członkowskie są widoczne dla klas pochodnych w innych zestawach.
+Jeśli `Assembly1.cs` zawiera <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> te nazwy `Assembly2` , Klasa pochodna `DerivedClass1` będzie miała dostęp do `private protected` elementów członkowskich zadeklarowanych w elemencie `BaseClass` . `InternalsVisibleTo`sprawia `private protected` , że elementy członkowskie są widoczne dla klas pochodnych w innych zestawach.
 
-Struct elementów `private protected` członkowskich nie może być, ponieważ struktura nie może być dziedziczona.
+Elementy członkowskie struktury nie mogą być takie same `private protected` , ponieważ struktura nie może być dziedziczona.
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
@@ -71,13 +73,13 @@ Struct elementów `private protected` członkowskich nie może być, ponieważ s
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [C# Przewodnik programowania](../../programming-guide/index.md)
-- [C# Słowa kluczowe](index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
+- [Słowa kluczowe języka C#](index.md)
 - [Modyfikatory dostępu](access-modifiers.md)
 - [Poziomy ułatwień dostępu](accessibility-levels.md)
 - [Modyfikatory](index.md)
 - [public](public.md)
-- [private](private.md)
+- [użytek](private.md)
 - [internal](internal.md)
-- [Kwestie bezpieczeństwa wewnętrznych wirtualnych słów kluczowych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Zagadnienia dotyczące zabezpieczeń wewnętrznych wirtualnych słów kluczowych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

@@ -1,5 +1,6 @@
 ---
-title: Instrukcje, wyrażenia i operatory — przewodnik programowania języka C#
+title: Instrukcje, wyrażenia i operatory — Przewodnik programowania w języku C#
+description: Wprowadzenie do podstawowych elementów instrukcji, wyrażeń i operatorów w programowaniu języka C#.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - expressions [C#]
@@ -9,16 +10,16 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: b339158848dac30f8c87a372b44574f6114a6aed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 08692cbe583feb534315b637492adedb1254bc38
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75698641"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381622"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Instrukcje, wyrażenia i operatory (Przewodnik programowania w języku C#)
 
-Kod Języka C#, który składa się z aplikacji składa się z instrukcji składających się ze słów kluczowych, wyrażeń i operatorów. Ta sekcja zawiera informacje dotyczące tych podstawowych elementów programu C#.
+Kod w języku C#, który składa się z aplikacji, składa się z instrukcji zawierających słowa kluczowe, wyrażenia i operatory. Ta sekcja zawiera informacje dotyczące tych podstawowych elementów programu w języku C#.
 
  Aby uzyskać więcej informacji, zobacz:
 
@@ -38,5 +39,5 @@ Kod Języka C#, który składa się z aplikacji składa się z instrukcji skład
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Przewodnik programowania języka C#](../index.md)
+- [Przewodnik programowania w języku C#](../index.md)
 - [Rzutowanie i konwersje typów](../types/casting-and-type-conversions.md)

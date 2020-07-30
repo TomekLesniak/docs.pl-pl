@@ -1,27 +1,28 @@
 ---
-title: Refaktoryzacja przy użyciu metody rozszerzenia (C#)
+title: Refaktoryzacja przy użyciu metody rozszerzającej (C#)
+description: Dowiedz się, jak Refaktoryzacja kodu przy użyciu metody rozszerzenia. Zobacz przykłady kodu i Wyświetl dodatkowe dostępne zasoby.
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
-ms.openlocfilehash: 8546c2cb834107cf2e099af40f9a7df4d5858b4b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e786f0e1514156535fd6a6033e37ed8879e99709
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253099"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381947"
 ---
-# <a name="refactoring-using-an-extension-method-c"></a>Refaktoryzacja przy użyciu metody rozszerzenia (C#)
-W tym przykładzie opiera się na poprzednim przykładzie [Pobieranie tekstu akapitów (C#)](./retrieving-the-text-of-the-paragraphs.md)przez refaktoryzacji łączenia ciągów przy użyciu czystej funkcji, która jest implementowana jako metoda rozszerzenia.  
+# <a name="refactoring-using-an-extension-method-c"></a>Refaktoryzacja przy użyciu metody rozszerzającej (C#)
+Ten przykład kompiluje się w poprzednim przykładzie, [pobierając tekst akapitów (C#)](./retrieving-the-text-of-the-paragraphs.md)przez refaktoryzację łączenia ciągów przy użyciu czystej funkcji, która jest zaimplementowana jako Metoda rozszerzenia.  
   
- W poprzednim przykładzie <xref:System.Linq.Enumerable.Aggregate%2A> użyto standardowego operatora kwerendy do łączenia wielu ciągów w jeden ciąg. Jednak jest to bardziej wygodne, aby napisać metodę rozszerzenia, aby to zrobić, ponieważ wynikowe zapytanie mniejsze i bardziej proste.  
+ W poprzednim przykładzie użyto <xref:System.Linq.Enumerable.Aggregate%2A> standardowego operatora zapytania do łączenia wielu ciągów w jeden ciąg. Jednak bardziej wygodne jest zapisanie metody rozszerzającej, ponieważ wyniki zapytania są mniejsze i prostsze.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie przetwarza dokument WordprocessingML, pobierając akapity, styl każdego akapitu i tekst każdego akapitu. W tym przykładzie opiera się na poprzednich przykładach w tym samouczku.  
+ Ten przykład przetwarza dokument WordprocessingML, pobierając akapity, styl każdego akapitu i tekst każdego akapitu. Ten przykład kompiluje się zgodnie z poprzednimi przykładami w tym samouczku.  
   
  Przykład zawiera wiele przeciążeń `StringConcatenate` metody.  
   
- Instrukcje dotyczące tworzenia dokumentu źródłowego dla tego przykładu można znaleźć w [dokumencie Tworzenie dokumentu XML open pakietu Source Office (C#).](./creating-the-source-office-open-xml-document.md)  
+ Instrukcje dotyczące tworzenia dokumentu źródłowego dla tego przykładu można znaleźć w temacie [Tworzenie źródłowego dokumentu Office Open XML (C#)](./creating-the-source-office-open-xml-document.md).  
   
- W tym przykładzie użyto klas z zestawu WindowsBase. Używa typów w <xref:System.IO.Packaging?displayProperty=nameWithType> obszarze nazw.  
+ W tym przykładzie zastosowano klasy z zestawu 'Windowsbase. Używa typów w <xref:System.IO.Packaging?displayProperty=nameWithType> przestrzeni nazw.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -63,7 +64,7 @@ public static class LocalExtensions
 ```  
   
 ## <a name="example"></a>Przykład  
- Istnieją cztery przeciążenia `StringConcatenate` metody. Jedno przeciążenie po prostu pobiera kolekcję ciągów i zwraca pojedynczy ciąg. Inne przeciążenie może podjąć kolekcji dowolnego typu i delegata, który projektów z singleton kolekcji do ciągu. Istnieją dwa więcej przeciążeń, które umożliwiają określenie ciągu separatora.  
+ Istnieją cztery przeciążenia `StringConcatenate` metody. Jedno Przeciążenie po prostu Pobiera kolekcję ciągów i zwraca jeden ciąg. Inne Przeciążenie może pobrać kolekcję dowolnego typu i delegata, który projektuje z pojedynczej kolekcji do ciągu. Istnieją dwa więcej przeciążenia, które umożliwiają określenie ciągu separatora.  
   
  Poniższy kod używa wszystkich czterech przeciążeń.  
   
@@ -88,7 +89,7 @@ one:two:three:
 ```  
   
 ## <a name="example"></a>Przykład  
- Teraz przykład można zmodyfikować, aby skorzystać z nowej metody rozszerzenia:  
+ Teraz można zmodyfikować przykład, aby skorzystać z nowej metody rozszerzenia:  
   
 ```csharp  
 public static class LocalExtensions  
@@ -219,7 +220,7 @@ class Program
 }  
 ```  
   
- W tym przykładzie po zastosowaniu do dokumentu opisanego w [dokumencie Tworzenie dokumentu XML pakietu Source Office Open (C#).](./creating-the-source-office-open-xml-document.md)  
+ Ten przykład generuje następujące dane wyjściowe w przypadku zastosowania do dokumentu opisanego w temacie [Tworzenie źródłowego dokumentu Office Open XML (C#)](./creating-the-source-office-open-xml-document.md).  
   
 ```output  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -239,12 +240,12 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
- Należy zauważyć, że to refaktoryzacji jest wariant refaktoryzacji w czystej funkcji. Następny temat wprowadzi ideę faktoringu do czystych funkcji bardziej szczegółowo.  
+ Należy zauważyć, że Refaktoryzacja jest odmianą refaktoryzacji w czystej funkcji. W następnym temacie zawarto informacje na temat sposobu refaktoryzacji do czystych funkcji.  
   
 ## <a name="next-steps"></a>Następne kroki  
- W następnym przykładzie pokazano, jak refaktoryzacji tego kodu w inny sposób, przy użyciu czystych funkcji:  
+ W następnym przykładzie pokazano, jak refaktoryzacji ten kod w inny sposób przy użyciu czystych funkcji:  
   
-- [Refaktoryzacja przy użyciu czystej funkcji (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [Refaktoryzacja przy użyciu czystej funkcji (C#)](./refactoring-using-a-pure-function.md)
   
 ## <a name="see-also"></a>Zobacz też
 

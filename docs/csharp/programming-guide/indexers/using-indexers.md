@@ -1,15 +1,16 @@
 ---
 title: Korzystanie z indeksatorów — Przewodnik programowania w języku C#
+description: Dowiedz się, jak zadeklarować indeksator i używać go dla klasy, struktury lub interfejsu w języku C#. Ten artykuł zawiera przykładowy kod.
 ms.date: 07/15/2020
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: e742e4dd5ea92ec3baf37c915e024e713022b7b6
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: a8a9e05c1d2e44841177a924c6ff51c6c9e6a05a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416242"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301869"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Używanie indeksatorów (Przewodnik programowania w języku C#)
 
@@ -93,8 +94,8 @@ Istnieją dwa główne sposoby, w których można ulepszyć zabezpieczenia i nie
 
 - Ustaw dostępność metod dostępu [Get](../../language-reference/keywords/get.md) i [Set](../../language-reference/keywords/set.md) tak, aby były tak restrykcyjne, jak to uzasadnione. Jest to ważne w przypadku `set` metody dostępu w szczególności. Aby uzyskać więcej informacji, zobacz [ograniczanie dostępności metody](../classes-and-structs/restricting-accessor-accessibility.md)dostępu.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
-- [Indeksatory](./index.md)
+- [Indexers (Indeksatory)](./index.md)
 - [Właściwości](../classes-and-structs/properties.md)

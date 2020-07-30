@@ -1,22 +1,22 @@
 ---
-title: Porównanie Project. JSON i csproj
-description: Zobacz mapowanie między elementami Project. JSON i csproj.
+title: project.jsporównanie i csproj
+description: Zobacz mapowanie między elementami project.json i csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: a997b48f645ed58d15610a68aee7c67411f9763f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c8638bc30ba09d8e8d464159aded60dcde4b8dc0
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205837"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427024"
 ---
-# <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapowanie między właściwościami Project. JSON i csproj
+# <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapowanie między project.jswłaściwościami i csproj
 
 Według [McMaster](https://github.com/natemcmaster)
 
-Podczas opracowywania narzędzi programu .NET Core wprowadzono ważną zmianę projektową, która nie obsługuje już plików *Project. JSON* , a zamiast tego przenosi projekty .NET Core do formatu MSBuild/csproj.
+Podczas opracowywania narzędzi programu .NET Core wprowadzono ważną zmianę projektową, która nie obsługuje już *project.jsw* plikach i zamiast tego przenosi projekty .NET Core do formatu MSBuild/csproj.
 
-W tym artykule przedstawiono sposób, w jaki ustawienia w pliku *Project. JSON* są reprezentowane w formacie MSBuild/csproj, dzięki czemu można dowiedzieć się, jak używać nowego formatu i zrozumieć zmiany wprowadzone przez narzędzia migracji w przypadku uaktualniania projektu do najnowszej wersji narzędzi.
+W tym artykule przedstawiono sposób, w jaki ustawienia w *project.jsna* są reprezentowane w formacie MSBuild/csproj, dzięki czemu można dowiedzieć się, jak używać nowego formatu i zrozumieć zmiany wprowadzone przez narzędzia migracji w przypadku uaktualniania projektu do najnowszej wersji narzędzi.
 
 ## <a name="the-csproj-format"></a>Format csproj
 
@@ -49,7 +49,7 @@ Domyślnie nazwa pliku projektu określa również wartość `<AssemblyName>` `<
 </PropertyGroup>
 ```
 
-`<AssemblyName>`Właściwość będzie miała inną wartość niż `<PackageId>` w pliku `buildOptions\outputName` Project. JSON.
+`<AssemblyName>`Właściwość ma inną wartość niż `<PackageId>` `buildOptions\outputName` w przypadku zdefiniowania właściwości w project.js.
 Aby uzyskać więcej informacji, zobacz [inne typowe opcje kompilacji](#other-common-build-options).
 
 ### <a name="version"></a>version
@@ -332,7 +332,7 @@ Nie ma odpowiednika w csproj.
 
 ### <a name="standalone-apps-self-contained-deployment"></a>Aplikacje autonomiczne (wdrażanie samodzielne)
 
-W pliku Project. JSON Definiowanie `runtimes` sekcji oznacza, że aplikacja była autonomiczna podczas kompilowania i publikowania.
+W project.jsna definiowanie `runtimes` sekcji oznacza, że aplikacja była autonomiczna podczas kompilowania i publikowania.
 W programie MSBuild wszystkie projekty są *przenośne* podczas kompilacji, ale można je opublikować jako autonomiczną.
 
 `dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
@@ -475,7 +475,7 @@ Zobacz również [pliki](#files).
   <!-- summary is not migrated from project.json, but you can use the <Description> property for that if needed. -->
   <PackageTags>machine learning;framework</PackageTags>
   <PackageReleaseNotes>Version 0.9.12-beta</PackageReleaseNotes>
-  <PackageIconUrl>http://numl.net/images/ico.png</PackageIconUrl>
+  <PackageIcon>ico.png</PackageIcon>
   <PackageProjectUrl>http://numl.net</PackageProjectUrl>
   <PackageLicenseUrl>https://raw.githubusercontent.com/sethjuarez/numl/master/LICENSE.md</PackageLicenseUrl>
   <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -485,7 +485,7 @@ Zobacz również [pliki](#files).
 </PropertyGroup>
 ```
 
-Nie ma odpowiednika dla `owners` elementu w programie MSBuild. W przypadku programu `summary` można użyć właściwości programu MSBuild `<Description>` . Wartość `summary` nie jest automatycznie migrowana do tej właściwości, ponieważ ta właściwość jest zamapowana na [`description`](#other-common-root-level-options) element.
+Nie ma odpowiednika dla `owners` elementu w programie MSBuild. W przypadku programu `summary` można użyć właściwości programu MSBuild `<Description>` . Wartość `summary` nie jest automatycznie migrowana do tej właściwości, ponieważ ta właściwość jest zamapowana na [`description`](#other-common-root-level-options) element.  [PackageIconUrl jest przestarzała](/nuget/reference/msbuild-targets#packageiconurl) na rzecz PackageIcon.
 
 ## <a name="scripts"></a>skrypty
 
@@ -527,7 +527,7 @@ Ich odpowiedniki w programie MSBuild są [obiektami docelowymi](/visualstudio/ms
 }
 ```
 
-Wszystkie ustawienia w tej grupie, z wyjątkiem `System.GC.Server` właściwości, są umieszczane w pliku o nazwie *runtimeconfig. Template. JSON* w folderze projektu, z opcjami podniesionymi do obiektu głównego podczas procesu migracji:
+Wszystkie ustawienia w tej grupie, z wyjątkiem `System.GC.Server` właściwości, są umieszczane w pliku o nazwie *runtimeconfig.template.jsw* folderze projektu, z opcjami podniesionymi do obiektu głównego podczas procesu migracji:
 
 ```json
 {
@@ -573,7 +573,7 @@ Aby uzyskać więcej informacji, zobacz [Dołączanie plików zawartości](/nuge
 
 ## <a name="files"></a>files
 
-W pliku *Project. JSON*można rozszerzyć kompilację i pakiet, aby kompilować i osadzać z różnych folderów.
+W *project.jsw systemie*kompilacja i pakiet można rozszerzyć, aby kompilować i osadzać z różnych folderów.
 W programie MSBuild odbywa się to za pomocą [elementów](/visualstudio/msbuild/common-msbuild-project-items). Poniższy przykład jest wspólną konwersją:
 
 ```json

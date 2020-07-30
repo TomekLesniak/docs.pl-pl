@@ -1,12 +1,13 @@
 ---
 title: 'Przewodnik: utrwalanie obiektu przy użyciu języka C #'
+description: W tym przykładzie tworzony jest podstawowy obiekt pożyczek w języku C# i utrwalał dane w pliku, a następnie tworzony jest nowy obiekt z danymi z pliku.
 ms.date: 04/26/2018
-ms.openlocfilehash: bbe239008629d687084af7e28a75fa68560ca0ab
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 9f165addc5b9b0d056936458e8529ec1912c417b
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796070"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302766"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Przewodnik: utrwalanie obiektu przy użyciu języka C\#
 

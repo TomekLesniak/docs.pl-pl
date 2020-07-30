@@ -1,19 +1,20 @@
 ---
-title: Jak znaleźć wszystkie węzły w obszarze nazw (C#)
+title: Jak znaleźć wszystkie węzły w przestrzeni nazw (C#)
+description: Dowiedz się, jak filtrować według przestrzeni nazw każdego elementu lub atrybutu, aby znaleźć wszystkie węzły w tej przestrzeni nazw.
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: 408f4207798720428d0dd3821d33fd3edf2f897e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf739480c6b4e2c53d5c430d47ff833e8995f6a4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141180"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303312"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Jak znaleźć wszystkie węzły w obszarze nazw (C#)
-Można filtrować w obszarze nazw każdego elementu lub atrybutu, aby znaleźć wszystkie węzły w tym określonym obszarze nazw.  
+# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Jak znaleźć wszystkie węzły w przestrzeni nazw (C#)
+Można filtrować według przestrzeni nazw każdego elementu lub atrybutu, aby znaleźć wszystkie węzły w danej przestrzeni nazw.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład tworzy drzewo XML z dwoma obszarami nazw. Następnie iteruje przez drzewo i drukuje nazwy wszystkich elementów i atrybutów w jednym z tych obszarów nazw.  
+ Poniższy przykład tworzy drzewo XML z dwoma przestrzeniami nazw. Następnie wykonuje iterację w drzewie i drukuje nazwy wszystkich elementów i atrybutów w jednej z tych przestrzeni nazw.  
   
 ```csharp  
 string markup = @"<aw:Root xmlns:aw='http://www.adventure-works.com' xmlns:fc='www.fourthcoffee.com'>  
@@ -35,7 +36,7 @@ foreach (XElement el in awElements)
     Console.WriteLine(el.Name.ToString());  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 Nodes in the http://www.adventure-works.com namespace  
@@ -44,9 +45,9 @@ Nodes in the http://www.adventure-works.com namespace
 ```  
   
 ## <a name="example"></a>Przykład  
- Plik XML, do który uzyskano dostęp, korzystając z następującej kwerendy, zawiera zamówienia zakupu w dwóch różnych przestrzeniach nazw. Kwerenda tworzy nowe drzewo tylko z elementami w jednym z obszarów nazw.  
+ Plik XML, do którego uzyskuje się następujące zapytanie, zawiera zamówienia zakupu w dwóch różnych przestrzeniach nazw. Zapytanie tworzy nowe drzewo zawierające tylko elementy w jednej z przestrzeni nazw.  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Skonsolidowane zamówienia zakupu](./sample-xml-file-consolidated-purchase-orders.md).  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: skonsolidowane zamówienia zakupu](./sample-xml-file-consolidated-purchase-orders.md).  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  
@@ -59,7 +60,7 @@ XElement newTree = new XElement("Root",
 Console.WriteLine(newTree);  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```xml  
 <Root>  

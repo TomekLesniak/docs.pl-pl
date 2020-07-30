@@ -1,23 +1,24 @@
 ---
-title: Jak znaleźć elementy podrzędne elementu podrzędnego (XPath-LINQ do XML) (C#)
+title: Jak znaleźć elementy podrzędne elementu podrzędnego (XPath-LINQ to XML) (C#)
+description: Dowiedz się, jak znaleźć elementy podrzędne elementu podrzędnego z określoną nazwą przy użyciu wyrażenia XPath.
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
-ms.openlocfilehash: fb3e20ce21c1f6d2a71f2f71b8acec7cecf0f3ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b8e110abc2e0df99c3fdf6d2846c7cbbc4736c1a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141098"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303260"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Jak znaleźć elementy podrzędne elementu podrzędnego (XPath-LINQ do XML) (C#)
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Jak znaleźć elementy podrzędne elementu podrzędnego (XPath-LINQ to XML) (C#)
 W tym temacie pokazano, jak uzyskać elementy podrzędne elementu podrzędnego o określonej nazwie.  
   
- Wyrażenie XPath jest następujące:  
+ Wyrażenie XPath:  
   
  `./Paragraph//Text/text()`  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie symuluje problemy z wyodrębnianiem tekstu z reprezentacji XML dokumentu edytora tekstu. Najpierw zaznacza `Paragraph` wszystkie elementy, a następnie `Text` wybiera wszystkie `Paragraph` elementy podrzędne każdego elementu. Nie oznacza to wybrania elementów `Comment` podrzędnych `Text` elementu.  
+ Ten przykład symuluje problemy związane z wyodrębnianiem tekstu z reprezentacji XML dokumentu przetwarzania tekstów. Najpierw zaznacza wszystkie `Paragraph` elementy, a następnie wybiera wszystkie elementy `Text` zależne każdego `Paragraph` elementu. Nie wybrano elementów potomnych `Text` `Comment` elementu.  
   
 ```csharp  
 XElement root = XElement.Parse(  

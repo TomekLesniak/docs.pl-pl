@@ -1,5 +1,6 @@
 ---
 title: <include> — Przewodnik programowania w języku C#
+description: Dowiedz się więcej o kodzie XML <include> seryjn. Ten tag umożliwia odwoływanie się do komentarzy w innym pliku, które opisują typy i elementy członkowskie w kodzie źródłowym.
 ms.date: 07/20/2015
 f1_keywords:
 - include
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: bf41019c775fed25afe4bdb9453a8e52f44856b5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 15a99444d464594cc91a7c8805c564c703c3b608
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287353"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381908"
 ---
 # <a name="include-c-programming-guide"></a>\<include>(Przewodnik programowania w języku C#)
 
@@ -53,7 +54,7 @@ Jest to przykład wieloplikowy. Poniżej znajduje się pierwszy plik, który uż
 
 [!code-csharp[csProgGuideDocComments#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#5)]
 
-Drugi plik, *xml_include_tag. doc*, zawiera następujące Komentarze do dokumentacji.
+Drugi plik, *xml_include_tag.doc*, zawiera następujące komentarze dokumentacji.
 
 ```xml
 <MyDocs>
@@ -75,7 +76,7 @@ The summary for this other type.
 
 ## <a name="program-output"></a>Dane wyjściowe programu
 
-Następujące dane wyjściowe są generowane, gdy kompilujesz klasy test i TEST2 z następującym wierszem polecenia: `-doc:DocFileName.xml.` w programie Visual Studio należy określić opcję komentarzy w dokumencie XML w okienku kompilacja projektanta projektu. Gdy kompilator języka C# widzi `<include>` tag, szuka komentarzy do dokumentacji w *xml_include_tag. doc* zamiast bieżącego pliku źródłowego. Następnie kompilator generuje *DocFileName. XML*i jest to plik, który jest używany przez narzędzia dokumentacji, takie jak [DocFX](https://dotnet.github.io/docfx/) i [Sandcastle](https://github.com/EWSoftware/SHFB) , aby utworzyć ostateczną dokumentację.  
+Następujące dane wyjściowe są generowane, gdy kompilujesz klasy test i TEST2 z następującym wierszem polecenia: `-doc:DocFileName.xml.` w programie Visual Studio należy określić opcję komentarzy w dokumencie XML w okienku kompilacja projektanta projektu. Gdy kompilator języka C# widzi `<include>` tag, wyszukuje komentarze dokumentacji w *xml_include_tag.doc* zamiast bieżącego pliku źródłowego. Następnie kompilator generuje *DocFileName.xml*i jest to plik, który jest używany przez narzędzia dokumentacji, takie jak [Sandcastle](https://github.com/EWSoftware/SHFB) , aby utworzyć ostateczną dokumentację.  
   
 ```xml
 <?xml version="1.0"?>
@@ -98,7 +99,7 @@ The summary for this other type.
 </doc>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Zalecane Tagi dla komentarzy dokumentacji](./recommended-tags-for-documentation-comments.md)

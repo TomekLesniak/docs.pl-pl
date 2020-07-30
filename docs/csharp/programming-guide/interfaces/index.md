@@ -1,16 +1,17 @@
 ---
 title: Interfejsy — Przewodnik programowania w języku C#
+description: Interfejs w języku C# zawiera definicje dla grupy powiązanych funkcji, których Klasa nieabstrakcyjna lub struktura musi być zaimplementowana.
 ms.date: 02/20/2020
 helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 50f2c5fc3570b6d66ed83206660caf4bd02f1f5b
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 4485a9f8e3581aa80ed65221258dc40310b3a695
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441339"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303052"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfejsy (Przewodnik programowania w języku C#)
 
@@ -67,9 +68,9 @@ Interfejs ma następujące właściwości:
 - [Klasy abstrakcyjne i zapieczętowane oraz członkowie klas](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
 - [Właściwości](../classes-and-structs/properties.md)  
 - [Zdarzenia](../events/index.md)  
-- [Indeksatory](../indexers/index.md)
+- [Indexers (Indeksatory)](../indexers/index.md)
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Dziedziczenie](../classes-and-structs/inheritance.md)

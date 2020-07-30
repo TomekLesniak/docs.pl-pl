@@ -1,16 +1,17 @@
 ---
-title: 'Przykładowy plik XML: dane liczbowe w obszarze nazw3'
+title: 'Przykładowy plik XML: dane liczbowe w Namespace3'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Zawiera dane do sumowania, uśredniania i grupowania. KOD XML znajduje się w przestrzeni nazw.
 ms.date: 07/20/2015
 ms.assetid: 51750cab-3c66-4511-90fb-b9d211308d31
-ms.openlocfilehash: 02788b73a7af9922b5a50237f2d2e401cba8abe2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fe467604840851c2af2533a620f9b7e32367fbb3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483705"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302506"
 ---
 # <a name="sample-xml-file-numerical-data-in-a-namespace"></a>Przykładowy plik XML: dane liczbowe w przestrzeni nazw
-Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji. Ten plik zawiera dane liczbowe do sumowania, uśredniania i grupowania. Kod XML znajduje się w obszarze nazw.  
+Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji. Ten plik zawiera dane liczbowe dla sumowania, uśredniania i grupowania. KOD XML znajduje się w przestrzeni nazw.  
   
 ## <a name="data"></a>Dane  
   

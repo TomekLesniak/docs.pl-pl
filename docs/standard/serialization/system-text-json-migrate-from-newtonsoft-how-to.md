@@ -11,14 +11,14 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 78a47b01cc8fba4cb45a686adad901784552c1c1
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: fbd3c8062892f106ec17d0fef86d5ad7f1207d20
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865336"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303481"
 ---
-# <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Jak przeprowadzić migrację z Newtonsoft.Json do programuSystem.Text.Json
+# <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Jak przeprowadzić migrację z Newtonsoft.Json do programuSystem.Text.Json
 
 W tym artykule przedstawiono sposób migracji programu [Newtonsoft.Json](https://www.newtonsoft.com/json) do programu <xref:System.Text.Json> .
 
@@ -34,7 +34,7 @@ W tym artykule przedstawiono sposób migracji programu [Newtonsoft.Json](https:/
 
 W większości tego artykułu zawarto informacje dotyczące korzystania z <xref:System.Text.Json.JsonSerializer> interfejsu API, ale również wskazówki dotyczące sposobu korzystania z programu <xref:System.Text.Json.JsonDocument> (który reprezentuje Document Object Model lub dom), <xref:System.Text.Json.Utf8JsonReader> i <xref:System.Text.Json.Utf8JsonWriter> .
 
-## <a name="table-of-differences-between-newtonsoftjson-and-systemtextjson"></a>Tabela różnic między Newtonsoft.Json iSystem.Text.Json
+## <a name="table-of-differences-between-no-locnewtonsoftjson-and-no-locsystemtextjson"></a>Tabela różnic między Newtonsoft.Json iSystem.Text.Json
 
 W poniższej tabeli wymieniono `Newtonsoft.Json` funkcje i `System.Text.Json` odpowiedniki. Równoważne są następujące kategorie:
 
@@ -73,17 +73,17 @@ W poniższej tabeli wymieniono `Newtonsoft.Json` funkcje i `System.Text.Json` od
 | Metoda `JsonConvert.PopulateObject`                   | ⚠️[Nieobsługiwane, obejście](#populate-existing-objects) |
 | `ObjectCreationHandling`ustawienie globalne               | ⚠️[Nieobsługiwane, obejście](#reuse-rather-than-replace-properties) |
 | Dodaj do kolekcji bez metod ustawiających                    | ⚠️[Nieobsługiwane, obejście](#add-to-collections-without-setters) |
-| `PreserveReferencesHandling`ustawienie globalne           | ❌[Nieobsługiwane](#preserve-object-references-and-handle-loops) |
-| `ReferenceLoopHandling`ustawienie globalne                | ❌[Nieobsługiwane](#preserve-object-references-and-handle-loops) |
-| Obsługa `System.Runtime.Serialization` atrybutów | ❌[Nieobsługiwane](#systemruntimeserialization-attributes) |
-| `MissingMemberHandling`ustawienie globalne                | ❌[Nieobsługiwane](#missingmemberhandling) |
-| Zezwalaj na nazwy właściwości bez cudzysłowów                   | ❌[Nieobsługiwane](#json-strings-property-names-and-string-values) |
-| Zezwalaj na pojedyncze cudzysłowy wokół wartości ciągu              | ❌[Nieobsługiwane](#json-strings-property-names-and-string-values) |
-| Zezwalaj na wartości niebędące ciągami JSON dla właściwości ciągu    | ❌[Nieobsługiwane](#non-string-values-for-string-properties) |
+| `PreserveReferencesHandling`ustawienie globalne           | ❌ [Nieobsługiwane](#preserve-object-references-and-handle-loops) |
+| `ReferenceLoopHandling`ustawienie globalne                | ❌ [Nieobsługiwane](#preserve-object-references-and-handle-loops) |
+| Obsługa `System.Runtime.Serialization` atrybutów | ❌ [Nieobsługiwane](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling`ustawienie globalne                | ❌ [Nieobsługiwane](#missingmemberhandling) |
+| Zezwalaj na nazwy właściwości bez cudzysłowów                   | ❌ [Nieobsługiwane](#json-strings-property-names-and-string-values) |
+| Zezwalaj na pojedyncze cudzysłowy wokół wartości ciągu              | ❌ [Nieobsługiwane](#json-strings-property-names-and-string-values) |
+| Zezwalaj na wartości niebędące ciągami JSON dla właściwości ciągu    | ❌ [Nieobsługiwane](#non-string-values-for-string-properties) |
 
 Nie jest to pełna lista `Newtonsoft.Json` funkcji. Lista zawiera wiele scenariuszy, które zostały zażądane w przypadku problemów z usługą [GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) lub wpisów [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) . Jeśli zaimplementowano obejście dla jednego z wymienionych poniżej scenariuszy, które nie ma obecnie przykładowego kodu, a jeśli chcesz udostępnić swoje rozwiązanie, wybierz **Tę stronę** w sekcji **opinia** w dolnej części tej strony. Spowoduje to utworzenie problemu w repozytorium GitHub tej dokumentacji i wyświetlenie go w sekcji **opinii** na tej stronie.
 
-## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>Różnice dotyczące domyślnego zachowania JsonSerializer w porównaniu zNewtonsoft.Json
+## <a name="differences-in-default-jsonserializer-behavior-compared-to-no-locnewtonsoftjson"></a>Różnice dotyczące domyślnego zachowania JsonSerializer w porównaniu zNewtonsoft.Json
 
 <xref:System.Text.Json>jest domyślnie rygorystyczne i pozwala uniknąć wszelkich odgadnąć lub interpretacji w imieniu obiektu wywołującego, podkreślając deterministyczne zachowanie. Biblioteka jest celowo zaprojektowana w taki sposób, aby uzyskać wydajność i bezpieczeństwo. `Newtonsoft.Json`jest elastycznie domyślnie. Ta podstawowa różnica w projekcie jest zbyt wiele z poniższych konkretnych różnic w domyślnym zachowaniu.
 
@@ -402,12 +402,14 @@ W programie <xref:System.Text.Json> można symulować wywołania zwrotne, piszą
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastCallbacksConverter.cs)]
 
-Zarejestrowanie tego konwertera niestandardowego przy [użyciu atrybutu klasy](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) lub przez [dodanie konwertera](system-text-json-converters-how-to.md#registration-sample---converters-collection) do <xref:System.Text.Json.JsonSerializerOptions.Converters> kolekcji.
+Zarejestruj ten konwerter niestandardowy, [dodając konwerter](system-text-json-converters-how-to.md#registration-sample---converters-collection) do <xref:System.Text.Json.JsonSerializerOptions.Converters> kolekcji.
 
 Jeśli używasz niestandardowego konwertera, który następuje po powyższym przykładzie:
 
 * `OnDeserializing`Kod nie ma dostępu do nowego wystąpienia poco. Aby manipulować nowym wystąpieniem POCO na początku deserializacji, Umieść ten kod w konstruktorze POCO.
-* Unikaj pętli nieskończonej przez zarejestrowanie konwertera w obiekcie Options i nieprzekazywanie w obiekcie Options podczas cyklicznego wywoływania `Serialize` lub `Deserialize` . Aby uzyskać więcej informacji, zapoznaj się z sekcją [wymagane właściwości](#required-properties) we wcześniejszej części tego artykułu.
+* Unikaj pętli nieskończonej przez zarejestrowanie konwertera w obiekcie Options i nieprzekazywanie w obiekcie Options podczas cyklicznego wywoływania `Serialize` lub `Deserialize` .
+
+Aby uzyskać więcej informacji na temat konwerterów niestandardowych, które rekursywnie wywołuje `Serialize` lub `Deserialize` , zapoznaj się z sekcją [wymagane właściwości](#required-properties) wcześniej w tym artykule.
 
 ### <a name="public-and-non-public-fields"></a>Pola publiczne i niepubliczne
 

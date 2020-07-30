@@ -1,5 +1,6 @@
 ---
-title: <typeparam> - Przewodnik programowania C#
+title: <typeparam> — Przewodnik programowania w języku C#
+description: Dowiedz się więcej o kodzie XML <typeparam> seryjn. Ten tag jest używany w komentarzu dla typu ogólnego lub deklaracji metody do opisywania parametru typu.
 ms.date: 07/20/2015
 f1_keywords:
 - typeparam
@@ -7,14 +8,14 @@ helpviewer_keywords:
 - <typeparam> C# XML tag
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
-ms.openlocfilehash: 867ecacf58f95533395ded203a8f17bc92558ccf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e5333e384e8c77b500f74ab7c6038146df6e2c0
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76793366"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380790"
 ---
-# <a name="typeparam-c-programming-guide"></a>\<typeparam> (przewodnik programowania C#)
+# <a name="typeparam-c-programming-guide"></a>\<typeparam>(Przewodnik programowania w języku C#)
 
 ## <a name="syntax"></a>Składnia
 
@@ -26,7 +27,7 @@ ms.locfileid: "76793366"
 
 - `name`
 
-  Nazwa parametru typu. Nazwę ująć w podwójne cudzysłowy (" ").
+  Nazwa parametru typu. Ujmij nazwę w znaki podwójnego cudzysłowu ("").
 
 - `description`
 
@@ -34,13 +35,13 @@ ms.locfileid: "76793366"
 
 ## <a name="remarks"></a>Uwagi
 
-Tag `<typeparam>` powinien być używany w komentarzu dla typu ogólnego lub deklaracji metody do opisania parametru typu. Dodaj znacznik dla każdego parametru typu typu ogólnego lub metody.
+`<typeparam>`Tag powinien być używany w komentarzu dla typu ogólnego lub deklaracji metody, aby opisać parametr typu. Dodaj tag dla każdego parametru typu ogólnego typu lub metody.
 
-Aby uzyskać więcej informacji, zobacz [Generyk .](../generics/index.md)
+Aby uzyskać więcej informacji, zobacz [Ogólne](../generics/index.md).
 
-Tekst znacznika `<typeparam>` będzie wyświetlany w raporcie internetowym IntelliSense, w raporcie internetowym [kodu okna przeglądarki obiektów.](/visualstudio/ide/viewing-the-structure-of-code#BKMK_ObjectBrowser)
+Tekst dla `<typeparam>` tagu będzie wyświetlany w IntelliSense, raport sieci web [przeglądarka obiektówgo](/visualstudio/ide/viewing-the-structure-of-code#BKMK_ObjectBrowser) komentarza do kodu okna.
 
-Skompiluj za pomocą [-doc,](../../language-reference/compiler-options/doc-compiler-option.md) aby przetworzyć komentarze dokumentacji do pliku.
+Kompiluj z [-doc](../../language-reference/compiler-options/doc-compiler-option.md) , aby przetwarzać komentarze dokumentacji do pliku.
 
 ## <a name="example"></a>Przykład
 

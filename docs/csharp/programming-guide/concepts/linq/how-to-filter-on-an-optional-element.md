@@ -1,19 +1,20 @@
 ---
-title: Jak filtrować na opcjonalnym elemencie (C#)
+title: Jak odfiltrować element opcjonalny (C#)
+description: Dowiedz się, jak odfiltrować element opcjonalny nawet wtedy, gdy nie masz pewności, że istnieje w dokumencie XML.
 ms.date: 07/20/2015
 ms.assetid: f99e2f93-fca5-403f-8a0c-770761d4905a
-ms.openlocfilehash: c9f844619cbb3d7a66ca66989baa900e0fd7bc2f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a1cd93b70ea2c077437b58bd341f51f15f014871
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141255"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302870"
 ---
-# <a name="how-to-filter-on-an-optional-element-c"></a>Jak filtrować na opcjonalnym elemencie (C#)
-Czasami chcesz filtrować dla elementu, nawet jeśli nie masz pewności, że istnieje w dokumencie XML. Wyszukiwanie powinno być wykonywane tak, aby jeśli określony element nie ma elementu podrzędnego, nie wyzwolić wyjątek odwołania zerowego przez filtrowanie dla niego. W poniższym `Child5` przykładzie element nie `Type` ma elementu podrzędnego, ale kwerenda nadal wykonuje poprawnie.  
+# <a name="how-to-filter-on-an-optional-element-c"></a>Jak odfiltrować element opcjonalny (C#)
+Czasami chcesz odfiltrować element, chociaż nie masz pewności, że istnieje w dokumencie XML. Wyszukiwanie powinno zostać wykonane, aby Jeśli określony element nie ma elementu podrzędnego, nie zostanie wyzwolony wyjątek odwołania o wartości null przez filtrowanie dla niego. W poniższym przykładzie `Child5` element nie ma `Type` elementu podrzędnego, ale zapytanie jest nadal wykonywane poprawnie.  
   
 ## <a name="example"></a>Przykład  
- W tym <xref:System.Xml.Linq.Extensions.Elements%2A> przykładzie użyto metody rozszerzenia.  
+ Ten przykład używa <xref:System.Xml.Linq.Extensions.Elements%2A> metody rozszerzenia.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root>  
@@ -45,7 +46,7 @@ foreach(string str in cList)
     Console.WriteLine(str);  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 Child One Text  
@@ -54,7 +55,7 @@ Child Four Text
 ```  
   
 ## <a name="example"></a>Przykład  
- W poniższym przykładzie przedstawiono tę samą kwerendę dla języka XML, która znajduje się w obszarze nazw. Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ W poniższym przykładzie pokazano to samo zapytanie dla kodu XML, który znajduje się w przestrzeni nazw. Aby uzyskać więcej informacji, zobacz temat [przestrzenie nazw — omówienie (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root xmlns='http://www.adatum.com'>  
@@ -87,7 +88,7 @@ foreach (string str in cList)
     Console.WriteLine(str);  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 Child One Text  
@@ -100,5 +101,5 @@ Child Four Text
 - <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>
-- [Omówienie standardowych operatorów zapytań (C#)](./standard-query-operators-overview.md)
+- [Standardowe operatory zapytań — Omówienie (C#)](./standard-query-operators-overview.md)
 - [Operacje projekcji (C#)](./projection-operations.md)

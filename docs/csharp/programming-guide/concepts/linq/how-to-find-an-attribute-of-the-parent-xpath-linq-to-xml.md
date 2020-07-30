@@ -1,27 +1,28 @@
 ---
-title: Jak znaleźć atrybut nadrzędnego (XPath-LINQ do XML) (C#)
+title: Jak znaleźć atrybut elementu nadrzędnego (XPath-LINQ to XML) (C#)
+description: Dowiedz się, jak znaleźć atrybut elementu nadrzędnego. Zobacz przykład kodu, który używa przykładowego dokumentu XML.
 ms.date: 07/20/2015
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-ms.openlocfilehash: bfe7554a5c767adde5e7170c8e1ea0537155f6df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 03344bb66f617970d9598c91366eb7d69514397a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141179"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303299"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Jak znaleźć atrybut nadrzędnego (XPath-LINQ do XML) (C#)
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Jak znaleźć atrybut elementu nadrzędnego (XPath-LINQ to XML) (C#)
 
 W tym temacie pokazano, jak przejść do elementu nadrzędnego i znaleźć jego atrybut.
 
-Wyrażenie XPath jest następujące:
+Wyrażenie XPath:
 
 `../@id`
 
 ## <a name="example"></a>Przykład
 
-W tym przykładzie `Author` najpierw znajduje element. Następnie znajduje `id` atrybut elementu nadrzędnego.
+Ten przykład najpierw znajduje `Author` element. Następnie znajduje `id` atrybut elementu nadrzędnego.
 
-W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Książki (LINQ do XML)](./sample-xml-file-books-linq-to-xml.md).
+Ten przykład używa następującego dokumentu XML: [przykładowy plik XML: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).
 
 ```csharp
 XDocument books = XDocument.Load("Books.xml");

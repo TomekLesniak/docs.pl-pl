@@ -1,26 +1,26 @@
 ---
-title: Polecenie przywracanie narzędzia dotnet
-description: Polecenie przywracania narzędzia dotnet instaluje na komputerze narzędzia lokalne .NET Core, które są w zakresie dla bieżącego katalogu.
+title: polecenie Narzędzia dotnet
+description: Polecenie programu dotnet narzędzie do przywracania instaluje na komputerze środowisko .NET Core Local Tools znajdujące się w zakresie dla bieżącego katalogu.
 ms.date: 02/14/2020
-ms.openlocfilehash: a518c2d45bbe9522bddfed4bbef61b30f1ad634b
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: ceef3274ec9d337f8c51009d5a8c27e808b14035
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463332"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302675"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
-**Ten artykuł dotyczy:** ✔️.NET Core 3.0 SDK i nowszych wersjach
+**Ten artykuł ma zastosowanie do:** ✔️ .net Core 3,0 SDK i nowszych wersjach
 
 ## <a name="name"></a>Nazwa
 
-`dotnet tool restore`- Instaluje na komputerze narzędzia lokalne .NET Core, które są w zakresie dla bieżącego katalogu.
+`dotnet tool restore`-Instaluje na komputerze lokalne narzędzia platformy .NET Core, które znajdują się w zakresie dla bieżącego katalogu.
 
 ## <a name="synopsis"></a>Streszczenie
 
 ```dotnetcli
-dotnet tool restore <PACKAGE_NAME>
+dotnet tool restore
     [--configfile <FILE>] [--add-source <SOURCE>]
     [tool-manifest <PATH_TO_MANIFEST_FILE>] [--disable-parallel]
     [--ignore-failed-sources] [--no-cache] [--interactive]
@@ -31,23 +31,17 @@ dotnet tool restore -h|--help
 
 ## <a name="description"></a>Opis
 
-Polecenie `dotnet tool restore` znajduje plik manifestu narzędzia, który znajduje się w zakresie bieżącego katalogu i instaluje narzędzia, które są w nim wymienione. Aby uzyskać informacje o plikach manifestu, zobacz [Instalowanie narzędzia lokalnego](global-tools.md#install-a-local-tool) i [Wywoływanie narzędzia lokalnego](global-tools.md#invoke-a-local-tool).
-
-## <a name="arguments"></a>Argumenty
-
-- **`PACKAGE_NAME`**
-
-Nazwa/identyfikator pakietu NuGet, który zawiera narzędzie .NET Core do zainstalowania.
+`dotnet tool restore`Polecenie znajduje plik manifestu narzędzia, który znajduje się w zakresie dla bieżącego katalogu i instaluje narzędzia, które są w nim wymienione. Aby uzyskać informacje na temat plików manifestu, zobacz [Instalowanie narzędzia lokalnego](global-tools.md#install-a-local-tool) i [wywoływanie narzędzia lokalnego](global-tools.md#invoke-a-local-tool).
 
 ## <a name="options"></a>Opcje
 
 - **`--configfile <FILE>`**
 
-  Plik konfiguracji NuGet (*nuget.config*).
+  Plik konfiguracji NuGet (*nuget.config*) do użycia.
 
 - **`--add-source <SOURCE>`**
 
-  Dodaje dodatkowe źródło pakietu NuGet do użycia podczas instalacji.
+  Dodaje dodatkowe źródło pakietów NuGet do użycia podczas instalacji.
 
 - **`--tool-manifest <PATH>`**
 
@@ -55,19 +49,19 @@ Nazwa/identyfikator pakietu NuGet, który zawiera narzędzie .NET Core do zainst
 
 - **`--disable-parallel`**
 
-  Zapobiegaj przywracaniu wielu projektów równolegle.
+  Zapobiegaj równoległemu przywracaniu wielu projektów.
 
 - **`--ignore-failed-sources`**
 
-  Traktuj błędy źródła pakietu jako ostrzeżenia.
+  Traktuj błędy źródłowe pakietu jako ostrzeżenia.
 
 - **`--no-cache`**
 
-  Nie buforuj pakietów i żądań http.
+  Nie Buforuj pakietów i żądań HTTP.
 
 - **`--interactive`**
 
-  Umożliwia zatrzymywania polecenia i oczekiwania na dane wejściowe lub akcję użytkownika (na przykład w celu ukończenia uwierzytelniania).
+  Umożliwia zatrzymanie polecenia i oczekiwanie na dane wejściowe użytkownika lub akcję (na przykład zakończenie uwierzytelniania).
 
 - **`-h|--help`**
 
@@ -75,15 +69,15 @@ Nazwa/identyfikator pakietu NuGet, który zawiera narzędzie .NET Core do zainst
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Ustawia poziom szczegółowości polecenia. Dozwolone wartości `q[uiet]`to `m[inimal]` `n[ormal]`, `d[etailed]`, `diag[nostic]`, i .
+  Ustawia poziom szczegółowości polecenia. Dozwolone wartości to `q[uiet]` , `m[inimal]` , `n[ormal]` , `d[etailed]` i `diag[nostic]` .
 
 ## <a name="example"></a>Przykład
 
 - **`dotnet tool restore`**
 
-  Przywraca narzędzia lokalne dla bieżącego katalogu.
+  Przywraca lokalne narzędzia dla bieżącego katalogu.
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Narzędzia .NET Core](global-tools.md)
-- [Samouczek: Instalowanie i używanie narzędzia lokalnego .NET Core przy użyciu interfejsu wiersza polecenia .NET Core](local-tools-how-to-use.md)
+- [Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core](local-tools-how-to-use.md)

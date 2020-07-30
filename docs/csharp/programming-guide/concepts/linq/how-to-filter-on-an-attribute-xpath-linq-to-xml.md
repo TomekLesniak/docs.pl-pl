@@ -1,25 +1,26 @@
 ---
-title: Jak filtrować atrybut (XPath-LINQ do XML) (C#)
+title: Jak filtrować atrybut (XPath-LINQ to XML) (C#)
+description: Dowiedz się, jak filtrować elementy podrzędne z określoną nazwą i wartością atrybutu dla XPath-LINQ to XML.
 ms.date: 07/20/2015
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-ms.openlocfilehash: ab2cd439f4dd1454de4fa565658ef5dac14b8c22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 80c43b8485314c6a711b574b5d6c23b56533833d
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141274"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302896"
 ---
-# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Jak filtrować atrybut (XPath-LINQ do XML) (C#)
+# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Jak filtrować atrybut (XPath-LINQ to XML) (C#)
 W tym temacie pokazano, jak uzyskać elementy podrzędne o określonej nazwie i z atrybutem o określonej wartości.  
   
- Wyrażenie XPath jest następujące:  
+ Wyrażenie XPath:  
   
  `.//Address[@Type='Shipping']`  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie znajduje wszystkie elementy `Address`podrzędne `Type` o nazwie i z atrybutem o wartości "Wysyłka".  
+ Ten przykład umożliwia znalezienie wszystkich elementów potomnych o nazwie `Address` i z `Type` atrybutem o wartości "wysyłka".  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: wiele zamówień zakupu (LINQ do XML).](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: wiele zamówień zakupu (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  

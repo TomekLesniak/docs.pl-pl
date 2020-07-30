@@ -1,27 +1,28 @@
 ---
 title: Zakres domyślnych przestrzeni nazw w języku C#
+description: Dowiedz się, jak zapytania w domyślnych przestrzeniach nazw XML w LINQ to XML w języku C#. Użyj zmiennej XNamespace i nazwy lokalnej, aby utworzyć kwalifikowaną nazwę zapytania.
 ms.date: 07/20/2015
 ms.assetid: fe826236-830f-457a-9027-7ad62c909fae
-ms.openlocfilehash: 7615351f6e5f8b18bd6466a83d54aa65a6c99b50
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 912e47099f89daa9b80ac58b422d39d598509ac9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253041"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302402"
 ---
-# <a name="scope-of-default-namespaces-in-c"></a>Zakres domyślnych obszarów nazw w języku C\#
-Domyślne obszary nazw reprezentowane w drzewie XML nie znajdują się w zakresie kwerend. Jeśli masz XML, który znajduje się w domyślnym <xref:System.Xml.Linq.XNamespace> obszarze nazw, nadal należy zadeklarować zmienną i połączyć ją z nazwą lokalną, aby kwalifikowana nazwa była używana w kwerendzie.  
+# <a name="scope-of-default-namespaces-in-c"></a>Zakres domyślnych przestrzeni nazw w języku C\#
+Domyślne przestrzenie nazw reprezentowane w drzewie XML nie znajdują się w zakresie zapytań. Jeśli masz kod XML, który znajduje się w domyślnym obszarze nazw, nadal musisz zadeklarować <xref:System.Xml.Linq.XNamespace> zmienną i połączyć ją z nazwą lokalną, aby określić kwalifikowaną nazwę do użycia w zapytaniu.  
   
- Jednym z najczęstszych problemów podczas wykonywania zapytań drzew XML jest to, że jeśli drzewo XML ma domyślny obszar nazw, deweloper czasami zapisuje kwerendę tak, jakby XML nie znajdował się w przestrzeni nazw.  
+ Jednym z najczęstszych problemów związanych z kwerendą drzewa XML jest to, że jeśli drzewo XML ma domyślną przestrzeń nazw, deweloper czasami zapisuje zapytanie tak, jakby kod XML nie był w przestrzeni nazw.  
   
- Pierwszy zestaw przykładów w tym temacie pokazuje typowy sposób, że XML w domyślnym obszarze nazw jest ładowany, ale jest przeszukiwany nieprawidłowo.  
+ Pierwszy zestaw przykładów w tym temacie przedstawia typowy sposób ładowania kodu XML w domyślnej przestrzeni nazw, ale jest ono nieprawidłowo wykonywane.  
   
- Drugi zestaw przykładów pokazuje niezbędne poprawki, dzięki czemu można wysyłać zapytania do języka XML w obszarze nazw.  
+ Drugi zestaw przykładów pokazuje niezbędne poprawki, aby można było zbadać kod XML w przestrzeni nazw.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie przedstawiono utworzenie języka XML w obszarze nazw i kwerendę, która zwraca pusty zestaw wyników.  
+ Ten przykład pokazuje tworzenie XML w przestrzeni nazw i zapytanie zwracające pusty zestaw wyników.  
   
-### <a name="code"></a>Code  
+### <a name="code"></a>Kod  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -43,7 +44,7 @@ Console.WriteLine("End of result set");
 ```  
   
 ### <a name="comments"></a>Komentarze  
- W tym przykładzie daje następujący wynik:  
+ Ten przykład generuje następujący wynik:  
   
 ```output  
 Result set follows:  
@@ -51,11 +52,11 @@ End of result set
 ```  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie przedstawiono tworzenie języka XML w obszarze nazw i kwerendę, która jest poprawnie zakodowana.  
+ Ten przykład pokazuje tworzenie kodu XML w przestrzeni nazw oraz zakodowane prawidłowo zapytanie.  
   
- W przeciwieństwie do niepoprawnie zakodowane powyżej, poprawne podejście podczas korzystania z <xref:System.Xml.Linq.XNamespace> Języka C# jest zadeklarować <xref:System.Xml.Linq.XName> i zainicjować obiekt i używać go podczas określania obiektów. W takim przypadku argument <xref:System.Xml.Linq.XContainer.Elements%2A> metody jest <xref:System.Xml.Linq.XName> obiektem.  
+ W odróżnieniu od nieprawidłowo zakodowanego przykładu, poprawne podejście w przypadku użycia języka C# to zadeklarowanie i Inicjalizacja <xref:System.Xml.Linq.XNamespace> obiektu oraz użycie go podczas określania <xref:System.Xml.Linq.XName> obiektów. W tym przypadku argument <xref:System.Xml.Linq.XContainer.Elements%2A> metody jest <xref:System.Xml.Linq.XName> obiektem.  
   
-### <a name="code"></a>Code  
+### <a name="code"></a>Kod  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -78,7 +79,7 @@ Console.WriteLine("End of result set");
 ```  
   
 ### <a name="comments"></a>Komentarze  
- W tym przykładzie daje następujący wynik:  
+ Ten przykład generuje następujący wynik:  
   
 ```output  
 Result set follows:  
@@ -90,4 +91,4 @@ End of result set
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md)
+- [Przegląd przestrzeni nazw (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)

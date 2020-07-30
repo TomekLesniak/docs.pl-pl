@@ -1,27 +1,28 @@
 ---
-title: atrybut cref - przewodnik programowania C#
+title: cref — atrybut — Przewodnik programowania w języku C#
+description: Dowiedz się więcej o atrybucie cref. Atrybut cref oznacza "odwołanie do kodu" i określa, że wewnętrzny tekst znacznika jest elementem kodu.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: b06d0c9d447124dec7d8cf3c0cbbfd0daca78fe3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 31fa1a3f182d7b72a1dfbe1ce47386f87fbbff75
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157016"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381999"
 ---
-# <a name="cref-attribute-c-programming-guide"></a>atrybut cref (przewodnik programowania C#)
+# <a name="cref-attribute-c-programming-guide"></a>cref — atrybut (Przewodnik programowania w języku C#)
 
-Atrybut `cref` w tagu dokumentacji XML oznacza "odwołanie do kodu". Określa, że wewnętrzny tekst znacznika jest elementem kodu, takim jak typ, metoda lub właściwość. Narzędzia dokumentacji, takie jak [DocFX](https://dotnet.github.io/docfx/) i [Sandcastle,](https://github.com/EWSoftware/SHFB) używają atrybutów do automatycznego `cref` generowania hiperłączy do strony, na której typ lub element członkowski jest udokumentowany.
+`cref`Atrybut w tagu dokumentacji XML oznacza "odwołanie do kodu". Określa, że wewnętrznym tekstem znacznika jest element kodu, taki jak typ, metoda lub właściwość. Narzędzia do dokumentacji, takie jak [DocFX](https://dotnet.github.io/docfx/) i [Sandcastle](https://github.com/EWSoftware/SHFB) , używają `cref` atrybutów do automatycznego generowania hiperłączy do strony, na której jest udokumentowany typ lub element członkowski.
 
 ## <a name="example"></a>Przykład
 
-W poniższym `cref` przykładzie przedstawiono atrybuty używane w [ \<znacznikach>.](./see.md)
+W poniższym przykładzie pokazano `cref` atrybuty używane w [\<see>](./see.md) tagach.
 
 [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]
 
-Po skompilowaniu program tworzy następujący plik XML. Należy zauważyć, `cref` że `GetZero` atrybut dla metody, na przykład, został `"M:TestNamespace.TestClass.GetZero"`przekształcony przez kompilator do . Przedrostek "M:" oznacza "metoda" i jest konwencją rozpoznawaną przez narzędzia dokumentacji, takie jak DocFX i Sandcastle. Aby uzyskać pełną listę prefiksów, zobacz [Przetwarzanie pliku XML](./processing-the-xml-file.md).
+Po skompilowaniu program tworzy następujący plik XML. Zwróć uwagę, że `cref` atrybut `GetZero` metody, na przykład, został przekształcony przez kompilator na `"M:TestNamespace.TestClass.GetZero"` . Prefiks "M:" oznacza "metodę" i jest konwencją, która jest rozpoznawana przez narzędzia dokumentacji, takie jak DocFX i Sandcastle. Aby uzyskać pełną listę prefiksów, zobacz [przetwarzanie pliku XML](./processing-the-xml-file.md).
 
 ```xml  
 <?xml version="1.0"?>

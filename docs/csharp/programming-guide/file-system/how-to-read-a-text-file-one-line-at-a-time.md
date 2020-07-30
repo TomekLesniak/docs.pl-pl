@@ -1,17 +1,18 @@
 ---
 title: Jak czytać plik tekstowy jeden wiersz w przewodniku programowania w języku C#
+description: Dowiedz się, jak czytać plik tekstowy jeden wiersz jednocześnie. Zobacz przykładowy kod i Wyświetl dodatkowe dostępne zasoby.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ReadLine method [C#]
 - reading text files, line by line
 - text files [C#]
 ms.assetid: d62e22c5-a13c-48db-af9b-f10c801b0cb1
-ms.openlocfilehash: b54d072ce9837f9b15694f2d7100817de62e9762
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 1e29013b1008e1000c23804dc3056014cc7c104b
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241776"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301960"
 ---
 # <a name="how-to-read-a-text-file-one-line-at-a-time-c-programming-guide"></a>Jak czytać plik tekstowy po jednym wierszu (Przewodnik programowania w języku C#)
 Ten przykład odczytuje zawartość pliku tekstowego, jeden wiersz naraz, do ciągu przy użyciu `ReadLine` metody `StreamReader` klasy. Każdy wiersz tekstu jest przechowywany w ciągu `line` i wyświetlany na ekranie.  

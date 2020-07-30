@@ -1,5 +1,6 @@
 ---
 title: Jak utworzyć plik lub folder — Przewodnik programowania w języku C#
+description: Dowiedz się, jak utworzyć plik lub folder programowo. Można utworzyć folder, podfolder, plik w podfolderze i zapisać dane w tym pliku.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders [C#]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: 5efe3b7dc600645488816d6f931df57fc236efc9
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: f5641dc765b1a2d62adb76babe3f111730d4550b
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241646"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302688"
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Jak utworzyć plik lub folder (Przewodnik programowania w języku C#)
 Można programowo utworzyć folder na komputerze, utworzyć podfolder, utworzyć plik w podfolderze i zapisać dane do pliku.  

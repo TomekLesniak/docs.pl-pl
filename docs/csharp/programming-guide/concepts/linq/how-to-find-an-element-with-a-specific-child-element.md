@@ -1,21 +1,22 @@
 ---
 title: Jak znaleźć element z określonym elementem podrzędnym (C#)
+description: Dowiedz się, jak znaleźć element, który ma określony element podrzędny. Zobacz przykłady kodu i dodatkowe zasoby.
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: 0536b1b92d4d7fc18b5d406bbcd24aefc6a840c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1d02f3d3af0a3711a5361941727e2e0b6c8bbdc9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141144"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301713"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Jak znaleźć element z określonym elementem podrzędnym (C#)
-W tym temacie pokazano, jak znaleźć określony element, który ma element podrzędny o określonej wartości.  
+W tym temacie pokazano, jak znaleźć konkretny element, który ma element podrzędny o określonej wartości.  
   
 ## <a name="example"></a>Przykład  
- Przykład znajduje `Test` element, który `CommandLine` ma element podrzędny o wartości "Examp2.EXE".  
+ Przykład `Test` umożliwia znalezienie elementu, który ma `CommandLine` element podrzędny o wartości "Examp2.EXE".  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Konfiguracja testu (LINQ do XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: Konfiguracja testu (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Load("TestConfig.xml");  
@@ -27,7 +28,7 @@ foreach (XElement el in tests)
     Console.WriteLine((string)el.Attribute("TestId"));  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 0002  
@@ -35,9 +36,9 @@ foreach (XElement el in tests)
 ```  
   
 ## <a name="example"></a>Przykład  
- W poniższym przykładzie przedstawiono tę samą kwerendę dla języka XML, która znajduje się w obszarze nazw. Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ W poniższym przykładzie pokazano to samo zapytanie dla kodu XML, który znajduje się w przestrzeni nazw. Aby uzyskać więcej informacji, zobacz temat [przestrzenie nazw — omówienie (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Konfiguracja testu w obszarze nazw](./sample-xml-file-test-configuration-in-a-namespace1.md).  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: Konfiguracja testowa w przestrzeni nazw](./sample-xml-file-test-configuration-in-a-namespace1.md).  
   
 ```csharp  
 XElement root = XElement.Load("TestConfigInNamespace.xml");  
@@ -50,7 +51,7 @@ foreach (XElement el in tests)
     Console.WriteLine((string)el.Attribute("TestId"));  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 0002  
@@ -61,5 +62,5 @@ foreach (XElement el in tests)
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Omówienie standardowych operatorów zapytań (C#)](./standard-query-operators-overview.md)
+- [Standardowe operatory zapytań — Omówienie (C#)](./standard-query-operators-overview.md)
 - [Operacje projekcji (C#)](./projection-operations.md)

@@ -1,12 +1,13 @@
 ---
 title: Serializacja (C#)
+description: Serializacja Konwertuje obiekt na strumień bajtów w celu przechowywania obiektu lub przesyłania go do pamięci, bazy danych lub pliku.
 ms.date: 01/02/2020
-ms.openlocfilehash: b2532ccf281fdfaa951d56675066f1e239f9f480
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b2b3105887ad6f000fcba895452a483881ae5a09
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241984"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302779"
 ---
 # <a name="serialization-c"></a>Serializacja (C#)
 
@@ -77,7 +78,7 @@ Serializacja projektanta jest specjalną formą serializacji, która obejmuje ro
 
 ## <a name="related-topics-and-examples"></a><a name="BKMK_RelatedTopics"></a>Tematy pokrewne i przykłady  
 
-[System. Text. JSON — Omówienie](../../../../standard/serialization/system-text-json-overview.md) Pokazuje, jak uzyskać `System.Text.Json` bibliotekę.
+[System.Text.Jsna przegląd](../../../../standard/serialization/system-text-json-overview.md) Pokazuje, jak uzyskać `System.Text.Json` bibliotekę.
 
 [Jak serializować i deserializować kod JSON w programie .NET](../../../../standard/serialization/system-text-json-how-to.md).
 Pokazuje, jak odczytywać i zapisywać dane obiektów do i z formatu JSON przy użyciu <xref:System.Text.Json.JsonSerializer> klasy.

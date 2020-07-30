@@ -1,30 +1,31 @@
 ---
-title: Jak przesyłać strumieniowo fragmenty XML z czytnika XmlReader (C#)
+title: Jak przesyłać fragmenty XML z elementu XmlReader (C#)
+description: Dowiedz się, jak przesyłać fragmenty XML z elementu XmlReader. Ta metoda służy do przetwarzania dużych plików XML.
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
-ms.openlocfilehash: f7914d33622518f983a685dd2e844a25fd3ca15f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e35322724712816180d48c1957719cf87079aedd
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714651"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301024"
 ---
-# <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Jak przesyłać strumieniowo fragmenty XML z czytnika XmlReader (C#)
+# <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Jak przesyłać fragmenty XML z elementu XmlReader (C#)
 
-Gdy trzeba przetworzyć duże pliki XML, może nie być możliwe załadowanie całego drzewa XML do pamięci. W tym temacie pokazano, <xref:System.Xml.XmlReader>jak przesyłać strumieniowo fragmenty przy użyciu pliku .  
+W przypadku konieczności przetworzenia dużych plików XML może nie być możliwe załadowanie całego drzewa XML do pamięci. W tym temacie pokazano, jak przesyłać fragmenty strumieni przy użyciu <xref:System.Xml.XmlReader> .  
   
- Jednym z najbardziej skutecznych <xref:System.Xml.XmlReader> sposobów <xref:System.Xml.Linq.XElement> używania do odczytu obiektów jest napisać własną metodę osi niestandardowej. Metoda osi zazwyczaj zwraca kolekcję, takich jak <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, jak pokazano w przykładzie w tym temacie. W metodzie osi niestandardowej po utworzeniu fragmentu XML przez wywołanie <xref:System.Xml.Linq.XNode.ReadFrom%2A> metody, zwróć kolekcję przy użyciu . `yield return` Zapewnia to semantyki odroczonego wykonania do metody osi niestandardowej.  
+ Jednym z najbardziej skutecznych sposobów używania <xref:System.Xml.XmlReader> do odczytu <xref:System.Xml.Linq.XElement> obiektów jest napisanie własnej niestandardowej metody osi. Metoda osi zwykle zwraca kolekcję, taką jak <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> , jak pokazano w przykładzie w tym temacie. W metodzie osi niestandardowej po utworzeniu fragmentu kodu XML przez wywołanie <xref:System.Xml.Linq.XNode.ReadFrom%2A> metody Zwróć kolekcję przy użyciu `yield return` . Zapewnia to odroczoną semantykę wykonania do niestandardowej metody osi.  
   
- Podczas tworzenia drzewa XML <xref:System.Xml.XmlReader> z obiektu, <xref:System.Xml.XmlReader> musi być umieszczony na elemencie. Metoda <xref:System.Xml.Linq.XNode.ReadFrom%2A> nie zwraca, dopóki nie odczytał tag zamknięcia elementu.  
+ Podczas tworzenia drzewa XML na podstawie <xref:System.Xml.XmlReader> obiektu, <xref:System.Xml.XmlReader> musi on być umieszczony w elemencie. <xref:System.Xml.Linq.XNode.ReadFrom%2A>Metoda nie zwraca do momentu odczytania tagu zamknięcia elementu.  
   
- Jeśli chcesz utworzyć częściowe drzewo, możesz utworzyć wystąpienie <xref:System.Xml.XmlReader>czytnika w węźle, który chcesz <xref:System.Xml.Linq.XElement> przekonwertować na <xref:System.Xml.Linq.XElement> drzewo, a następnie utworzyć obiekt.  
+ Jeśli chcesz utworzyć drzewo częściowe, można stworzyć wystąpienie obiektu <xref:System.Xml.XmlReader> , umieścić go na węźle, który ma zostać przekonwertowany na <xref:System.Xml.Linq.XElement> drzewo, a następnie utworzyć <xref:System.Xml.Linq.XElement> obiekt.  
   
-Temat [Jak przesyłać strumieniowo fragmenty XML z dostępem do informacji nagłówka (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md) zawiera informacje i przykład sposobu przesyłania strumieniowego bardziej złożonego dokumentu.
+Temat [jak przesyłać fragmenty XML z dostępem do informacji nagłówka (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md) zawiera informacje i przykład na potrzeby przesyłania strumieniowego bardziej złożonego dokumentu.
   
- Temat [Jak wykonać transformację przesyłania strumieniowego dużych dokumentów XML (C#)](./how-to-perform-streaming-transform-of-large-xml-documents.md) zawiera przykład użycia LINQ do XML do przekształcania bardzo dużych dokumentów XML przy zachowaniu małej ilości pamięci.  
+ Temat [jak wykonywać transformację strumieniową dużych dokumentów XML (C#)](./how-to-perform-streaming-transform-of-large-xml-documents.md) zawiera przykład użycia LINQ to XML do przekształcania bardzo dużych dokumentów XML przy zachowaniu małej ilości pamięci.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie tworzy metodę osi niestandardowej. Można go zbadać za pomocą kwerendy LINQ. Metoda osi niestandardowej , jest metodą, `StreamRootChildDoc`która jest przeznaczona specjalnie do `Child` odczytu dokumentu, który ma element powtarzający.  
+ W tym przykładzie jest tworzona Metoda osi niestandardowej. Zapytanie można wykonać za pomocą zapytania LINQ. Metoda osi niestandardowej, `StreamRootChildDoc` , jest metodą, która jest przeznaczona specjalnie do odczytywania dokumentu, który ma powtarzalny `Child` element.  
   
 ```csharp  
 static IEnumerable<XElement> StreamRootChildDoc(StringReader stringReader)  
@@ -81,4 +82,4 @@ bbb
 ccc  
 ```  
   
- W tym przykładzie dokument źródłowy jest bardzo mały. Jednak nawet jeśli istnieją `Child` miliony elementów, w tym przykładzie nadal będzie miał niewielki rozmiar pamięci.  
+ W tym przykładzie dokument źródłowy jest bardzo mały. Jednak nawet w przypadku milionów `Child` elementów ten przykład nadal ma niewielki rozmiar pamięci.  

@@ -1,16 +1,17 @@
 ---
 title: Indeksatory w interfejsach — Przewodnik programowania w języku C#
+description: Indeksatory mogą być deklarowane w interfejsie w języku C#. Dowiedz się, jak metody dostępu indeksatorów interfejsów różnią się od metod dostępu indeksatorów klas.
 ms.date: 02/08/2020
 helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: 9ce6e4f0e0533c2880c6241f44409435248a336a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec77843bdf3181a543bd6c02cfb034b21ded1ae7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287483"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303104"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indeksatory w interfejsach (Przewodnik programowania w języku C#)
 
@@ -35,7 +36,7 @@ Poniższy przykład pokazuje, jak zaimplementować indeksatory interfejsów.
 
 [!code-csharp[DefineInterface](~/samples/snippets/csharp/interfaces/indexers.cs#ExampleCode)]
 
-W powyższym przykładzie można użyć jawnej implementacji elementu członkowskiego interfejsu przy użyciu w pełni kwalifikowanej nazwy elementu członkowskiego interfejsu. Na przykład:
+W powyższym przykładzie można użyć jawnej implementacji elementu członkowskiego interfejsu przy użyciu w pełni kwalifikowanej nazwy elementu członkowskiego interfejsu. Na przykład
 
 ```csharp
 string IIndexInterface.this[int index]
@@ -61,9 +62,9 @@ string ICitizen.this[int index]
 
 implementuje indeksator w `ICitizen` interfejsie.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
-- [Indeksatory](./index.md)
+- [Indexers (Indeksatory)](./index.md)
 - [Właściwości](../classes-and-structs/properties.md)
 - [Interfejsy](../interfaces/index.md)

@@ -1,22 +1,23 @@
 ---
-title: Metody ogólne — przewodnik programowania języka C#
+title: Metody ogólne — Przewodnik programowania w języku C#
+description: Dowiedz się więcej na temat metod zadeklarowanych za pomocą parametrów typu, znanych jako metody ogólne. Zobacz przykłady kodu i Wyświetl dodatkowe dostępne zasoby.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], methods
 ms.assetid: 673eeea2-4b48-4faa-9c4e-2e89449221b9
-ms.openlocfilehash: 5f066ca39c97b70554886e423c37c4ee47d49158
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 77b81de26961a8b59644643bf043ed723dbf374f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712198"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301882"
 ---
 # <a name="generic-methods-c-programming-guide"></a>Metody ogólne (Przewodnik programowania w języku C#)
-Metoda ogólna jest metodą, która jest zadeklarowana z parametrami typu, w następujący sposób:  
+Metoda generyczna jest metodą zadeklarowaną z parametrami typu w następujący sposób:  
   
  [!code-csharp[csProgGuideGenerics#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#22)]  
   
- Poniższy przykład kodu pokazuje jeden sposób wywołania metody przy użyciu `int` argumentu typu:  
+ Poniższy przykład kodu pokazuje jeden ze sposobów wywoływania metody przy użyciu `int` dla argumentu typu:  
   
  [!code-csharp[csProgGuideGenerics#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#23)]  
   
@@ -24,21 +25,21 @@ Metoda ogólna jest metodą, która jest zadeklarowana z parametrami typu, w nas
   
  [!code-csharp[csProgGuideGenerics#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#24)]  
   
- Te same reguły wnioskowania o typie mają zastosowanie do metod statycznych i metod wystąpienia. Kompilator można wywnioskować parametry typu na podstawie argumentów metody, które można przekazać w; nie można wywnioskować parametrów typu tylko z ograniczenia lub wartości zwracanej. W związku z tym wnioskowanie o typie nie działa z metodami, które nie mają parametrów. Wnioskowanie o typie występuje w czasie kompilacji, zanim kompilator spróbuje rozwiązać przeciążone podpisy metody. Kompilator stosuje logikę wnioskowania o typie do wszystkich metod ogólnych, które mają tę samą nazwę. W kroku rozpoznawania przeciążenia kompilator zawiera tylko te metody ogólne, na których wnioskowanie typu powiodło się.  
+ Te same reguły wnioskowania o typie mają zastosowanie do metod statycznych i metod wystąpień. Kompilator może wywnioskować parametry typu na podstawie argumentów metody, które są przekazywane; nie można wywnioskować parametrów typu tylko z ograniczenia lub wartości zwracanej. W związku z tym, wnioskowanie typu nie działa z metodami, które nie mają parametrów. Wnioskowanie o typie występuje w czasie kompilacji, zanim kompilator próbuje rozpoznać przeciążone sygnatury metod. Kompilator stosuje logikę wnioskowania typu do wszystkich metod ogólnych, które mają taką samą nazwę. W kroku rozwiązywanie przeciążenia kompilator zawiera tylko te metody ogólne, dla których wnioskowanie typu zostało zakończone powodzeniem.  
   
- W klasie ogólnej metody nieogólne mogą uzyskiwać dostęp do parametrów typu na poziomie klasy w następujący sposób:  
+ W ramach klasy generycznej metody niegeneryczne mogą uzyskać dostęp do parametrów typu poziomu klasy w następujący sposób:  
   
  [!code-csharp[csProgGuideGenerics#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#25)]  
   
- Jeśli zdefiniujesz metodę rodzajową, która przyjmuje parametry tego samego typu, co klasa zawierająca, kompilator generuje ostrzeżenie `T` [CS0693,](../../misc/cs0693.md) ponieważ w zakresie metody argument podany dla wewnętrznej ukrywa argument dostarczony dla zewnętrznego `T`. Jeśli potrzebujesz elastyczności wywoływania metody klasy ogólnej z argumentami typu innymi niż te podane, gdy klasa została uprzedzona, należy `GenericList2<T>` rozważyć podanie innego identyfikatora parametru typu metody, jak pokazano w poniższym przykładzie.  
+ W przypadku zdefiniowania metody ogólnej, która przyjmuje takie same parametry typu jak Klasa zawierająca, kompilator generuje ostrzeżenie [CS0693](../../misc/cs0693.md) , ponieważ w zakresie metody argument dostarczony dla elementu wewnętrznego `T` ukrywa argument podany dla elementu zewnętrznego `T` . Jeśli wymagana jest elastyczność wywoływania metody klasy generycznej z argumentami typu innym niż podane podczas tworzenia wystąpienia klasy, należy rozważyć dostarczenie innego identyfikatora dla parametru typu metody, jak pokazano w `GenericList2<T>` poniższym przykładzie.  
   
  [!code-csharp[csProgGuideGenerics#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#26)]  
   
- Użyj ograniczeń, aby włączyć bardziej wyspecjalizowane operacje parametrów typu w metodach. Ta wersja `Swap<T>`, `SwapIfGreater<T>`teraz o nazwie , może <xref:System.IComparable%601>być używana tylko z argumentami typu, które implementują .  
+ Użyj ograniczeń, aby włączyć bardziej wyspecjalizowane operacje dotyczące parametrów typu w metodach. Ta wersja programu o `Swap<T>` nazwie `SwapIfGreater<T>` może być używana tylko z argumentami typu, które implementują <xref:System.IComparable%601> .  
   
  [!code-csharp[csProgGuideGenerics#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#27)]  
   
- Metody ogólne mogą być przeciążone na kilka parametrów typu. Na przykład wszystkie następujące metody mogą znajdować się w tej samej klasie:  
+ Metody generyczne mogą być przeciążone dla kilku parametrów typu. Na przykład następujące metody mogą znajdować się w tej samej klasie:  
   
  [!code-csharp[csProgGuideGenerics#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#28)]  
   
@@ -48,6 +49,6 @@ Metoda ogólna jest metodą, która jest zadeklarowana z parametrami typu, w nas
 ## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Collections.Generic>
-- [Przewodnik programowania języka C#](../index.md)
+- [Przewodnik programowania w języku C#](../index.md)
 - [Wprowadzenie do typów ogólnych](./index.md)
 - [Metody](../classes-and-structs/methods.md)

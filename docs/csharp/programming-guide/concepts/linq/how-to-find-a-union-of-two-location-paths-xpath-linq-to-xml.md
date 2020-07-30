@@ -1,27 +1,28 @@
 ---
-title: Jak znaleźć połączenie dwóch ścieżek lokalizacji (XPath-LINQ do XML) (C#)
+title: Jak znaleźć Unię dwóch ścieżek lokalizacji (XPath-LINQ to XML) (C#)
+description: Dowiedz się, jak znaleźć Unię dwóch ścieżek lokalizacji XPath przy użyciu wyrażenia XPath. Przejrzyj przykład kodu, który używa przykładowego pliku XML.
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: 17a3310f367cb68b3b80b1a3f30af40428f6d2c7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 65b20fe25a0990fd82ce3bd08c3433499e728512
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141209"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303325"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Jak znaleźć połączenie dwóch ścieżek lokalizacji (XPath-LINQ do XML) (C#)
-XPath umożliwia znalezienie unii wyników dwóch ścieżek lokalizacji XPath.  
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Jak znaleźć Unię dwóch ścieżek lokalizacji (XPath-LINQ to XML) (C#)
+Wyrażenie XPath umożliwia znalezienie związku z wynikami dwóch ścieżek lokalizacji XPath.  
   
- Wyrażenie XPath jest następujące:  
+ Wyrażenie XPath:  
   
  `//Category|//Price`  
   
- Można osiągnąć te same wyniki <xref:System.Linq.Enumerable.Concat%2A> przy użyciu standardowego operatora kwerendy.  
+ Można osiągnąć te same wyniki przy użyciu <xref:System.Linq.Enumerable.Concat%2A> standardowego operatora zapytań.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie `Category` znajduje wszystkie elementy `Price` i wszystkie elementy i łączy je w jednej kolekcji. Należy zauważyć, że kwerenda [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] wywołuje, <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> aby zamówić wyniki. Wyniki oceny wyrażenia XPath są również w kolejności dokumentu.  
+ Ten przykład umożliwia znalezienie wszystkich `Category` elementów i wszystkich `Price` elementów i połączenie ich w jedną kolekcję. Należy zauważyć, że [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zapytanie wywołuje w celu <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> uporządkowania wyników. Wyniki obliczania wyrażenia XPath również są w kolejności dokumentu.  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Dane numeryczne (LINQ do XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
+ Ten przykład używa następującego dokumentu XML: [przykładowy plik XML: dane liczbowe (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```csharp  
 XDocument data = XDocument.Load("Data.xml");  

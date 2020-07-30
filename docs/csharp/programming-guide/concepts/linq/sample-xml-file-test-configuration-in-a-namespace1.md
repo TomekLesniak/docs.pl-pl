@@ -1,18 +1,19 @@
 ---
 title: 'Przykładowy plik XML: konfiguracja testowa w przestrzeni nazw'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Plik jest plikiem konfiguracji testu. KOD XML znajduje się w przestrzeni nazw.
 ms.date: 07/20/2015
 ms.assetid: e75ad1bc-5636-4623-9a34-a286a8c485d6
-ms.openlocfilehash: ed25a8608977070e0db5f4cdee8a44a3c347cc8e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e08bc476eda39b6e9ff3e2958a49a0d9e5dc303a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168005"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302480"
 ---
 # <a name="sample-xml-file-test-configuration-in-a-namespace"></a>Przykładowy plik XML: konfiguracja testowa w przestrzeni nazw
-Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji. Jest to plik konfiguracji testu. Kod XML znajduje się w obszarze nazw.  
+Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji. To jest plik konfiguracji testu. KOD XML znajduje się w przestrzeni nazw.  
   
-## <a name="testconfiginnamespacexml"></a>Plik TestConfigInNamespace.xml  
+## <a name="testconfiginnamespacexml"></a>TestConfigInNamespace.xml  
   
 ```xml  
 <?xml version="1.0"?>  

@@ -1,5 +1,6 @@
 ---
 title: Korzystanie z przestrzeni nazw — Przewodnik programowania w języku C#
+description: Dowiedz się, jak używać przestrzeni nazw w programowaniu języka C#, takich jak uzyskiwanie dostępu do przestrzeni nazw, aliasów przestrzeni nazw i używanie przestrzeni nazw do sterowania zakresem.
 ms.date: 07/20/2015
 f1_keywords:
 - cs.names
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: 71d97f7c1c0c3ece0cdce3de4318d8a9d65baed3
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 86892f50e059c16ee9c133d7ba9f2716e11a8e56
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241932"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381700"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Używanie przestrzeni nazw (Przewodnik programowania w języku C#)
 
@@ -70,7 +71,7 @@ Przestrzenie nazw są intensywnie używane w programach C# na dwa sposoby. Po pi
   
  Ogólnie rzecz biorąc, użyj [kwalifikatora `::` aliasu przestrzeni nazw](../../language-reference/operators/namespace-alias-qualifier.md) , aby odwołać się do aliasu przestrzeni nazw lub `global::` odwoływać się do globalnej przestrzeni nazw oraz `.` do kwalifikowania typów lub członków.  
   
- Jest to błąd używany `::` z aliasem, który odwołuje się do typu zamiast przestrzeni nazw. Przykład:  
+ Jest to błąd używany `::` z aliasem, który odwołuje się do typu zamiast przestrzeni nazw. Na przykład:  
   
  [!code-csharp[csProgGuideNamespaces#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#11)]  
   

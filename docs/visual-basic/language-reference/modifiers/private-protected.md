@@ -1,15 +1,17 @@
 ---
 title: Private Protected
 ms.date: 05/10/2018
+f1_keywords:
+- vb.PrivateProtected
 helpviewer_keywords:
 - Private Protected keyword [Visual Basic]
 - Private Protected keyword [Visual Basic], syntax
-ms.openlocfilehash: b7d9f81e41950b92c787e2e50fb94fe3d7c07559
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8ad1509da71bc80b33700d363ddd4569a0965dff
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84362232"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303468"
 ---
 # <a name="private-protected-visual-basic"></a>Prywatna chroniona (Visual Basic)
 
@@ -68,10 +70,10 @@ Aby uzyskać więcej informacji [, zobacz Ustawianie wersji językowej Visual Ba
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Społeczeństwo](public.md)
+- [Publiczne](public.md)
 - [Chronione](protected.md)
 - [Osoby](friend.md)
-- [Użytek](private.md)
+- [Prywatne](private.md)
 - [Protected Friend](./protected-friend.md)
 - [Poziomy dostępu w Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../programming-guide/language-features/procedures/index.md)

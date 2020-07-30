@@ -1,13 +1,14 @@
 ---
 title: Standardowe operatory zapytań — Omówienie (C#)
+description: Standardowe operatory zapytań LINQ zapewniają możliwości zapytań, w tym filtrowanie, projekcję, agregację i sortowanie w języku C#.
 ms.date: 07/20/2015
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-ms.openlocfilehash: 095a0b7a7a8265f235d28a4634ea82cdcd7a60c0
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 8a399f52881e10f8d94263843b5992101f96a5ea
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990006"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302324"
 ---
 # <a name="standard-query-operators-overview-c"></a>Standardowe operatory zapytań — Omówienie (C#)
 *Standardowe operatory zapytań* to metody, które tworzą wzorzec LINQ. Większość z tych metod operuje na sekwencjach, gdzie sekwencja jest obiektem, którego typ implementuje <xref:System.Collections.Generic.IEnumerable%601> interfejs lub <xref:System.Linq.IQueryable%601> interfejs. Standardowe operatory zapytań zapewniają możliwości zapytań, w tym filtrowanie, projekcję, agregację, sortowanie i inne.  

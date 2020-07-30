@@ -1,21 +1,22 @@
 ---
-title: Jak utworzyć drzewo z czytnika XmlReader (C#)
+title: Jak utworzyć drzewo na podstawie elementu XmlReader (C#)
+description: Dowiedz się, jak utworzyć drzewo XML bezpośrednio z elementu XmlReader. Zobacz przykład pokazujący, jak utworzyć obiekt czytnika T:System.Xml.Xml.
 ms.date: 07/20/2015
 ms.assetid: 60951c9c-7087-406c-b5bb-c60e58609b21
-ms.openlocfilehash: 9ead6352112d9e1b56bd70699c90133e432f96b3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3801177e664d142652d38748d44eaf3f274239dd
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169275"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302662"
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Jak utworzyć drzewo z czytnika XmlReader (C#)
-W tym temacie pokazano, jak utworzyć <xref:System.Xml.XmlReader>drzewo XML bezpośrednio z pliku . Aby utworzyć <xref:System.Xml.Linq.XElement> z <xref:System.Xml.XmlReader>, należy <xref:System.Xml.XmlReader> umieścić na węźle elementu. Pominie <xref:System.Xml.XmlReader> komentarze i instrukcje przetwarzania, ale jeśli <xref:System.Xml.XmlReader> jest umieszczony w węźle tekstowym, zostanie wygenerowany błąd. Aby uniknąć takich błędów, <xref:System.Xml.XmlReader> zawsze umieść na elemencie <xref:System.Xml.XmlReader>przed utworzeniem drzewa XML z pliku .  
+# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Jak utworzyć drzewo na podstawie elementu XmlReader (C#)
+W tym temacie pokazano, jak utworzyć drzewo XML bezpośrednio z programu <xref:System.Xml.XmlReader> . Aby utworzyć obiekt <xref:System.Xml.Linq.XElement> z poziomu <xref:System.Xml.XmlReader> , należy umieścić <xref:System.Xml.XmlReader> w węźle elementu. <xref:System.Xml.XmlReader>Program pominie Komentarze i instrukcje przetwarzania, ale jeśli <xref:System.Xml.XmlReader> jest umieszczony w węźle tekstowym, zostanie wygenerowany błąd. Aby uniknąć takich błędów, należy zawsze umieścić <xref:System.Xml.XmlReader> element na elemencie przed utworzeniem drzewa XML z <xref:System.Xml.XmlReader> .  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Książki (LINQ do XML)](./sample-xml-file-books-linq-to-xml.md).  
+ Ten przykład używa następującego dokumentu XML: [przykładowy plik XML: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
   
- Poniższy kod tworzy `T:System.Xml.XmlReader` obiekt, a następnie odczytuje węzły, dopóki nie znajdzie węzła pierwszego elementu. Następnie ładuje <xref:System.Xml.Linq.XElement> obiekt.  
+ Poniższy kod tworzy `T:System.Xml.XmlReader` obiekt, a następnie odczytuje węzły do momentu znalezienia węzła pierwszego elementu. Następnie ładuje <xref:System.Xml.Linq.XElement> obiekt.  
   
 ```csharp  
 XmlReader r = XmlReader.Create("books.xml");  
@@ -53,4 +54,4 @@ Console.WriteLine(e);
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Analizowanie języka XML (C#)](how-to-parse-a-string.md)
+- [Analizowanie pliku XML (C#)](how-to-parse-a-string.md)

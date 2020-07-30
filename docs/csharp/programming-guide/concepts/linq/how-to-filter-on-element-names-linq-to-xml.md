@@ -1,21 +1,22 @@
 ---
-title: Jak filtrować nazwy elementów (LINQ do XML) (C#)
+title: Jak filtrować nazwy elementów (LINQ to XML) (C#)
+description: Dowiedz się, jak filtrować według nazwy elementu po wywołaniu metody, która zwraca interfejs IEnumerable of XElement.
 ms.date: 07/20/2015
 ms.assetid: 1849fb03-f075-421f-863c-e8fb32773cdf
-ms.openlocfilehash: 74efb19ef5ec77ca29145d27a8e5aa977530b68b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: be660a69b8d860ad907661ce17002379b8842121
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141265"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301752"
 ---
-# <a name="how-to-filter-on-element-names-linq-to-xml-c"></a>Jak filtrować nazwy elementów (LINQ do XML) (C#)
-Po wywołaniu jednej z metod, które zwracają <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, można filtrować na nazwę elementu.  
+# <a name="how-to-filter-on-element-names-linq-to-xml-c"></a>Jak filtrować nazwy elementów (LINQ to XML) (C#)
+Po wywołaniu jednej z metod zwracanych przez <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> , można filtrować według nazwy elementu.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie pobiera kolekcję elementów podrzędnych, który jest filtrowany, aby zawierać tylko elementy podrzędne o określonej nazwie.  
+ Ten przykład pobiera kolekcję elementów podrzędnych, które są filtrowane w celu zawiera tylko elementy podrzędne o określonej nazwie.  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Typowe zamówienie zakupu (LINQ do XML).](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md)  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: typowe zamówienie zakupu (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 XElement po = XElement.Load("PurchaseOrder.xml");  
@@ -26,14 +27,14 @@ foreach(XElement prdName in items)
     Console.WriteLine(prdName.Name + ":" + (string) prdName);  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 ProductName:Lawnmower  
 ProductName:Baby Monitor  
 ```  
   
- Inne metody, które <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> zwracają kolekcje postępują zgodnie z tym samym wzorcem. Ich podpisy są <xref:System.Xml.Linq.XContainer.Elements%2A> <xref:System.Xml.Linq.XContainer.Descendants%2A>podobne i . Poniżej znajduje się pełna lista metod, które mają podobne podpisy metod:  
+ Inne metody, które zwracają <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> kolekcje, są zgodne z tym samym wzorcem. Ich podpisy są podobne do <xref:System.Xml.Linq.XContainer.Elements%2A> i <xref:System.Xml.Linq.XContainer.Descendants%2A> . Poniżej znajduje się kompletna lista metod, które mają podobne sygnatury metod:  
   
 - <xref:System.Xml.Linq.XNode.Ancestors%2A>  
   
@@ -50,9 +51,9 @@ ProductName:Baby Monitor
 - <xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A>  
   
 ## <a name="example"></a>Przykład  
- W poniższym przykładzie przedstawiono tę samą kwerendę dla języka XML, która znajduje się w obszarze nazw. Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ W poniższym przykładzie pokazano to samo zapytanie dla kodu XML, który znajduje się w przestrzeni nazw. Aby uzyskać więcej informacji, zobacz temat [przestrzenie nazw — omówienie (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Typowe zamówienie zakupu w obszarze nazw](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
+ W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: typowe zamówienie zakupu w przestrzeni nazw](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -64,7 +65,7 @@ foreach (XElement prdName in items)
     Console.WriteLine(prdName.Name + ":" + (string)prdName);  
 ```  
   
- Ten kod generuje następujące dane wyjściowe:  
+ Ten kod spowoduje wygenerowanie następujących danych wyjściowych:  
   
 ```output  
 {http://www.adventure-works.com}ProductName:Lawnmower  
@@ -73,4 +74,4 @@ foreach (XElement prdName in items)
   
 ## <a name="see-also"></a>Zobacz też
 
-- [LINQ do osi XML (C#)](./linq-to-xml-axes-overview.md)
+- [Osie LINQ to XML (C#)](./linq-to-xml-axes-overview.md)

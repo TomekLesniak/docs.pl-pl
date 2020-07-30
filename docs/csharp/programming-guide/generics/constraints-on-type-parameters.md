@@ -1,17 +1,18 @@
 ---
 title: Ograniczenia dotyczące parametrów typu — Przewodnik programowania w języku C#
+description: Poznaj ograniczenia dotyczące parametrów typu. Ograniczenia informują kompilator, jakie możliwości musi mieć argument typu.
 ms.date: 04/12/2018
 helpviewer_keywords:
 - generics [C#], type constraints
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 4c4554c808ab15776f3217c257e0a60119ea2338
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 91807fa05ce49b8507ee6913ff2620452fcbfab5
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84368364"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301947"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Ograniczenia dotyczące parametrów typu (Przewodnik programowania w języku C#)
 

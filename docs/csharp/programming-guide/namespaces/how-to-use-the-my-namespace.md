@@ -1,15 +1,16 @@
 ---
 title: Jak używać mojej przestrzeni nazw — Przewodnik programowania w języku C#
+description: Dowiedz się, jak nam w naszym obszarze nazw "my". Przestrzeń nazw "my" zapewnia łatwy i intuicyjny dostęp do kilku klas platformy .NET.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, My namespace access
 ms.assetid: e7152414-0ea5-4c8e-bf02-c8d5bbe45ff4
-ms.openlocfilehash: 268543980ba891b0b30f393ee8982f2863ba9a71
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 7abd5049a979d5a15d123052cba0cfdb35bf3fb7
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241945"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381713"
 ---
 # <a name="how-to-use-the-my-namespace-c-programming-guide"></a>Jak używać przestrzeni nazw my (Przewodnik programowania w języku C#)
 
@@ -25,18 +26,18 @@ ms.locfileid: "84241945"
   
 1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy węzeł **odwołania** i wybierz polecenie **Dodaj odwołanie**.  
   
-2. Gdy pojawi się okno dialogowe **odwołania** , przewiń w dół listy i wybierz pozycję Microsoft. VisualBasic. dll.  
+2. Gdy pojawi się okno dialogowe **odwołania** , przewiń w dół listy i wybierz pozycję Microsoft.VisualBasic.dll.  
   
      W sekcji na początku programu może być również uwzględniona następująca linia `using` .  
   
      [!code-csharp[csProgGuideNamespaces#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces3.cs#18)]  
   
 ## <a name="example"></a>Przykład  
- Ten przykład wywołuje różne metody statyczne zawarte w `MyServices` przestrzeni nazw. Dla tego kodu do skompilowania do projektu należy dodać odwołanie do Microsoft. VisualBasic. DLL.  
+ Ten przykład wywołuje różne metody statyczne zawarte w `MyServices` przestrzeni nazw. Dla tego kodu do skompilowania do projektu należy dodać odwołanie do Microsoft.VisualBasic.DLL.  
   
  [!code-csharp[csProgGuideNamespaces#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces3.cs#19)]  
   
- Nie wszystkie klasy w `MyServices` przestrzeni nazw mogą być wywoływane z poziomu aplikacji C#: na przykład <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> Klasa nie jest zgodna. W tym konkretnym przypadku zamiast tego można użyć metod statycznych, które są częścią <xref:Microsoft.VisualBasic.FileIO.FileSystem> , które są również zawarte w pliku VisualBasic. dll. Na przykład poniżej przedstawiono sposób korzystania z jednej z tych metod do duplikowania katalogu:  
+ Nie wszystkie klasy w `MyServices` przestrzeni nazw mogą być wywoływane z poziomu aplikacji C#: na przykład <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> Klasa nie jest zgodna. W tym konkretnym przypadku metody statyczne, które są częścią <xref:Microsoft.VisualBasic.FileIO.FileSystem> , które są również zawarte w VisualBasic.dll, można zamiast nich użyć. Na przykład poniżej przedstawiono sposób korzystania z jednej z tych metod do duplikowania katalogu:  
   
  [!code-csharp[csProgGuideNamespaces#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces3.cs#20)]  
   

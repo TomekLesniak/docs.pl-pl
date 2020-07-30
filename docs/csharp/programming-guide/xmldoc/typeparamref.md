@@ -1,5 +1,6 @@
 ---
-title: <typeparamref>- Przewodnik programowania C#
+title: <typeparamref>— Przewodnik programowania w języku C#
+description: Dowiedz się więcej o <typeparamref> tagu XML. Ten tag umożliwia użytkownikom pliku dokumentacji formatowanie wyrazu w niektórych odrębnych sposóbch, na przykład kursywą.
 ms.date: 07/20/2015
 f1_keywords:
 - typeparamref
@@ -7,14 +8,14 @@ helpviewer_keywords:
 - typeparamref C# XML tag
 - <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
-ms.openlocfilehash: 266eadad322fd3c4167c7a911cb57ef1e1333012
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a39e896f1242452c7bcc94faa1e7ef3086ae2149
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789659"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380725"
 ---
-# <a name="typeparamref-c-programming-guide"></a>\<typeparamref> (przewodnik programowania C#)
+# <a name="typeparamref-c-programming-guide"></a>\<typeparamref>(Przewodnik programowania w języku C#)
 
 ## <a name="syntax"></a>Składnia
 
@@ -26,15 +27,15 @@ ms.locfileid: "76789659"
 
 - `name`
 
-  Nazwa parametru typu. Nazwę ująć w podwójne cudzysłowy (" ").
+  Nazwa parametru typu. Ujmij nazwę w znaki podwójnego cudzysłowu ("").
 
 ## <a name="remarks"></a>Uwagi
 
-Aby uzyskać więcej informacji na temat parametrów typu w typach ogólnych i metodach, zobacz [Generyk.](../generics/index.md)
+Aby uzyskać więcej informacji na temat parametrów typu w typach ogólnych i metodach, zobacz [Generics](../generics/index.md).
 
-Użyj tego tagu, aby umożliwić konsumentom pliku dokumentacji formatowanie wyrazu w różny sposób, na przykład kursywą.
+Ten tag umożliwia użytkownikom pliku dokumentacji formatowanie wyrazu w niektórych odrębnych przypadkach, na przykład kursywą.
 
-Skompiluj za pomocą [-doc,](../../language-reference/compiler-options/doc-compiler-option.md) aby przetworzyć komentarze dokumentacji do pliku.
+Kompiluj z [-doc](../../language-reference/compiler-options/doc-compiler-option.md) , aby przetwarzać komentarze dokumentacji do pliku.
 
 ## <a name="example"></a>Przykład
 
