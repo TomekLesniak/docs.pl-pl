@@ -1,23 +1,24 @@
 ---
-title: Jak znaleźć elementy podrzędne (XPath-LINQ do XML) (C#)
+title: Jak znaleźć elementy zależne (XPath-LINQ to XML) (C#)
+description: Dowiedz się, jak znaleźć elementy podrzędne o określonej nazwie przy użyciu wyrażenia XPath. Przejrzyj przykład kodu, który używa przykładowego pliku XML.
 ms.date: 07/20/2015
 ms.assetid: b318da39-bb8b-4c56-a019-e13b12b01831
-ms.openlocfilehash: c90651502629284c67cc16de8a1aa59c392ae178
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5a998a05f866203f3b684b8847a4a5647c12e5b
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141104"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303273"
 ---
-# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-c"></a><span data-ttu-id="383d9-102">Jak znaleźć elementy podrzędne (XPath-LINQ do XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="383d9-102">How to find descendant elements (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="383d9-103">W tym temacie pokazano, jak uzyskać elementy podrzędne o określonej nazwie.</span><span class="sxs-lookup"><span data-stu-id="383d9-103">This topic shows how to get the descendant elements with a particular name.</span></span>  
+# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-c"></a><span data-ttu-id="5dae8-104">Jak znaleźć elementy zależne (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="5dae8-104">How to find descendant elements (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="5dae8-105">W tym temacie pokazano, jak uzyskać elementy podrzędne o określonej nazwie.</span><span class="sxs-lookup"><span data-stu-id="5dae8-105">This topic shows how to get the descendant elements with a particular name.</span></span>  
   
- <span data-ttu-id="383d9-104">Wyrażenie XPath `//Name`jest .</span><span class="sxs-lookup"><span data-stu-id="383d9-104">The XPath expression is `//Name`.</span></span>  
+ <span data-ttu-id="5dae8-106">Wyrażenie XPath ma wartość `//Name` .</span><span class="sxs-lookup"><span data-stu-id="5dae8-106">The XPath expression is `//Name`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="383d9-105">Przykład</span><span class="sxs-lookup"><span data-stu-id="383d9-105">Example</span></span>  
- <span data-ttu-id="383d9-106">W tym przykładzie znajduje `Name`się wszystkie elementy podrzędne o nazwie .</span><span class="sxs-lookup"><span data-stu-id="383d9-106">This example finds all descendants named `Name`.</span></span>  
+## <a name="example"></a><span data-ttu-id="5dae8-107">Przykład</span><span class="sxs-lookup"><span data-stu-id="5dae8-107">Example</span></span>  
+ <span data-ttu-id="5dae8-108">Ten przykład umożliwia znalezienie wszystkich elementów podrzędnych o nazwie `Name` .</span><span class="sxs-lookup"><span data-stu-id="5dae8-108">This example finds all descendants named `Name`.</span></span>  
   
- <span data-ttu-id="383d9-107">W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: wiele zamówień zakupu (LINQ do XML).](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)</span><span class="sxs-lookup"><span data-stu-id="383d9-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="5dae8-109">W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: wiele zamówień zakupu (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="5dae8-109">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -37,7 +38,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="383d9-108">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="383d9-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="5dae8-110">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="5dae8-110">This example produces the following output:</span></span>  
   
 ```output  
 Results are identical  

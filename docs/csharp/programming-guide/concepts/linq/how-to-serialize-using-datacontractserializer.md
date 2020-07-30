@@ -1,19 +1,20 @@
 ---
 title: Jak serializować przy użyciu DataContractSerializer (C#)
+description: Dowiedz się, jak serializować obiekty przy użyciu funkcji DataContractSerializer. Zapoznaj się z przykładem, który tworzy obiekty, serializować je do plików tekstowych, a następnie deserializacji.
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: 0b6d35a2f73ac512f05341f5aaffa61484657576
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b713f36cde594f7cd7011073345d33c6f46585e0
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168703"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301531"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-c"></a><span data-ttu-id="c6fac-102">Jak serializować przy użyciu DataContractSerializer (C#)</span><span class="sxs-lookup"><span data-stu-id="c6fac-102">How to serialize using DataContractSerializer (C#)</span></span>
-<span data-ttu-id="c6fac-103">W tym temacie przedstawiono przykład serializacji i deserializacji przy użyciu <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="c6fac-103">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
+# <a name="how-to-serialize-using-datacontractserializer-c"></a><span data-ttu-id="b0458-104">Jak serializować przy użyciu DataContractSerializer (C#)</span><span class="sxs-lookup"><span data-stu-id="b0458-104">How to serialize using DataContractSerializer (C#)</span></span>
+<span data-ttu-id="b0458-105">W tym temacie przedstawiono przykład serializacji i deserializacji przy użyciu <xref:System.Runtime.Serialization.DataContractSerializer> .</span><span class="sxs-lookup"><span data-stu-id="b0458-105">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c6fac-104">Przykład</span><span class="sxs-lookup"><span data-stu-id="c6fac-104">Example</span></span>  
- <span data-ttu-id="c6fac-105">Poniższy przykład tworzy liczbę obiektów, <xref:System.Xml.Linq.XElement> które zawierają obiekty.</span><span class="sxs-lookup"><span data-stu-id="c6fac-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="c6fac-106">Następnie serializuje je do plików tekstowych, a następnie deserializuje je z plików tekstowych.</span><span class="sxs-lookup"><span data-stu-id="c6fac-106">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
+## <a name="example"></a><span data-ttu-id="b0458-106">Przykład</span><span class="sxs-lookup"><span data-stu-id="b0458-106">Example</span></span>  
+ <span data-ttu-id="b0458-107">Poniższy przykład tworzy wiele obiektów, które zawierają <xref:System.Xml.Linq.XElement> obiekty.</span><span class="sxs-lookup"><span data-stu-id="b0458-107">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="b0458-108">Następnie serializować je do plików tekstowych, a następnie deserializacji ich z plików tekstowych.</span><span class="sxs-lookup"><span data-stu-id="b0458-108">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
   
 ```csharp  
 using System;  
@@ -80,7 +81,7 @@ public class XElementNullContainer
 }  
 ```  
   
- <span data-ttu-id="c6fac-107">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="c6fac-107">This example produces the following output:</span></span>  
+ <span data-ttu-id="b0458-109">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="b0458-109">This example produces the following output:</span></span>  
   
 ```output  
 Testing for type: System.Xml.Linq.XElement  

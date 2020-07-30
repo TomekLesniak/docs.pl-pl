@@ -1,18 +1,19 @@
 ---
 title: 'Przykładowy plik XML: książki (LINQ to XML)'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Plik zawiera informacje o książkach.
 ms.date: 07/20/2015
 ms.assetid: b75ab1a2-fb76-4df9-bd01-c45ec22a29ef
-ms.openlocfilehash: bcdc402fc32278a1cd3ddde52a0b102f0d939005
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2ff47dada19c63e037d64db6c48783811bc9c8f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168275"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302584"
 ---
-# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="126c4-102">Przykładowy plik XML: książki (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="126c4-102">Sample XML File: Books (LINQ to XML)</span></span>
-<span data-ttu-id="126c4-103">Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="126c4-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="126c4-104">Plik zawiera informacje o książkach.</span><span class="sxs-lookup"><span data-stu-id="126c4-104">The file contains information about books.</span></span>  
+# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="8b23f-104">Przykładowy plik XML: książki (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="8b23f-104">Sample XML File: Books (LINQ to XML)</span></span>
+<span data-ttu-id="8b23f-105">Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="8b23f-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="8b23f-106">Plik zawiera informacje o książkach.</span><span class="sxs-lookup"><span data-stu-id="8b23f-106">The file contains information about books.</span></span>  
   
-## <a name="booksxml"></a><span data-ttu-id="126c4-105">books.xml</span><span class="sxs-lookup"><span data-stu-id="126c4-105">books.xml</span></span>  
+## <a name="booksxml"></a><span data-ttu-id="8b23f-107">books.xml</span><span class="sxs-lookup"><span data-stu-id="8b23f-107">books.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  

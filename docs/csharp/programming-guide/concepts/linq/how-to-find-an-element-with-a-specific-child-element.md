@@ -1,21 +1,22 @@
 ---
 title: Jak znaleźć element z określonym elementem podrzędnym (C#)
+description: Dowiedz się, jak znaleźć element, który ma określony element podrzędny. Zobacz przykłady kodu i dodatkowe zasoby.
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: 0536b1b92d4d7fc18b5d406bbcd24aefc6a840c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1d02f3d3af0a3711a5361941727e2e0b6c8bbdc9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141144"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301713"
 ---
-# <a name="how-to-find-an-element-with-a-specific-child-element-c"></a><span data-ttu-id="1caa6-102">Jak znaleźć element z określonym elementem podrzędnym (C#)</span><span class="sxs-lookup"><span data-stu-id="1caa6-102">How to find an element with a specific child element (C#)</span></span>
-<span data-ttu-id="1caa6-103">W tym temacie pokazano, jak znaleźć określony element, który ma element podrzędny o określonej wartości.</span><span class="sxs-lookup"><span data-stu-id="1caa6-103">This topic shows how to find a particular element that has a child element with a specific value.</span></span>  
+# <a name="how-to-find-an-element-with-a-specific-child-element-c"></a><span data-ttu-id="c318b-104">Jak znaleźć element z określonym elementem podrzędnym (C#)</span><span class="sxs-lookup"><span data-stu-id="c318b-104">How to find an element with a specific child element (C#)</span></span>
+<span data-ttu-id="c318b-105">W tym temacie pokazano, jak znaleźć konkretny element, który ma element podrzędny o określonej wartości.</span><span class="sxs-lookup"><span data-stu-id="c318b-105">This topic shows how to find a particular element that has a child element with a specific value.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="1caa6-104">Przykład</span><span class="sxs-lookup"><span data-stu-id="1caa6-104">Example</span></span>  
- <span data-ttu-id="1caa6-105">Przykład znajduje `Test` element, który `CommandLine` ma element podrzędny o wartości "Examp2.EXE".</span><span class="sxs-lookup"><span data-stu-id="1caa6-105">The example finds the `Test` element that has a `CommandLine` child element with the value of "Examp2.EXE".</span></span>  
+## <a name="example"></a><span data-ttu-id="c318b-106">Przykład</span><span class="sxs-lookup"><span data-stu-id="c318b-106">Example</span></span>  
+ <span data-ttu-id="c318b-107">Przykład `Test` umożliwia znalezienie elementu, który ma `CommandLine` element podrzędny o wartości "Examp2.EXE".</span><span class="sxs-lookup"><span data-stu-id="c318b-107">The example finds the `Test` element that has a `CommandLine` child element with the value of "Examp2.EXE".</span></span>  
   
- <span data-ttu-id="1caa6-106">W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Konfiguracja testu (LINQ do XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="1caa6-106">This example uses the following XML document: [Sample XML File: Test Configuration (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="c318b-108">W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: Konfiguracja testu (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="c318b-108">This example uses the following XML document: [Sample XML File: Test Configuration (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement root = XElement.Load("TestConfig.xml");  
@@ -27,17 +28,17 @@ foreach (XElement el in tests)
     Console.WriteLine((string)el.Attribute("TestId"));  
 ```  
   
- <span data-ttu-id="1caa6-107">Ten kod generuje następujące dane wyjściowe:</span><span class="sxs-lookup"><span data-stu-id="1caa6-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="c318b-109">Ten kod spowoduje wygenerowanie następujących danych wyjściowych:</span><span class="sxs-lookup"><span data-stu-id="c318b-109">This code produces the following output:</span></span>  
   
 ```output  
 0002  
 0006  
 ```  
   
-## <a name="example"></a><span data-ttu-id="1caa6-108">Przykład</span><span class="sxs-lookup"><span data-stu-id="1caa6-108">Example</span></span>  
- <span data-ttu-id="1caa6-109">W poniższym przykładzie przedstawiono tę samą kwerendę dla języka XML, która znajduje się w obszarze nazw.</span><span class="sxs-lookup"><span data-stu-id="1caa6-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="1caa6-110">Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw (LINQ do XML) (C#)](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="1caa6-110">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="c318b-110">Przykład</span><span class="sxs-lookup"><span data-stu-id="c318b-110">Example</span></span>  
+ <span data-ttu-id="c318b-111">W poniższym przykładzie pokazano to samo zapytanie dla kodu XML, który znajduje się w przestrzeni nazw.</span><span class="sxs-lookup"><span data-stu-id="c318b-111">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="c318b-112">Aby uzyskać więcej informacji, zobacz temat [przestrzenie nazw — omówienie (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="c318b-112">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="1caa6-111">W tym przykładzie użyto następującego dokumentu XML: [Przykładowy plik XML: Konfiguracja testu w obszarze nazw](./sample-xml-file-test-configuration-in-a-namespace1.md).</span><span class="sxs-lookup"><span data-stu-id="1caa6-111">This example uses the following XML document: [Sample XML File: Test Configuration in a Namespace](./sample-xml-file-test-configuration-in-a-namespace1.md).</span></span>  
+ <span data-ttu-id="c318b-113">W tym przykładzie zastosowano następujący dokument XML: [przykładowy plik XML: Konfiguracja testowa w przestrzeni nazw](./sample-xml-file-test-configuration-in-a-namespace1.md).</span><span class="sxs-lookup"><span data-stu-id="c318b-113">This example uses the following XML document: [Sample XML File: Test Configuration in a Namespace](./sample-xml-file-test-configuration-in-a-namespace1.md).</span></span>  
   
 ```csharp  
 XElement root = XElement.Load("TestConfigInNamespace.xml");  
@@ -50,16 +51,16 @@ foreach (XElement el in tests)
     Console.WriteLine((string)el.Attribute("TestId"));  
 ```  
   
- <span data-ttu-id="1caa6-112">Ten kod generuje następujące dane wyjściowe:</span><span class="sxs-lookup"><span data-stu-id="1caa6-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="c318b-114">Ten kod spowoduje wygenerowanie następujących danych wyjściowych:</span><span class="sxs-lookup"><span data-stu-id="c318b-114">This code produces the following output:</span></span>  
   
 ```output  
 0002  
 0006  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1caa6-113">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="1caa6-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c318b-115">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="c318b-115">See also</span></span>
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [<span data-ttu-id="1caa6-114">Omówienie standardowych operatorów zapytań (C#)</span><span class="sxs-lookup"><span data-stu-id="1caa6-114">Standard Query Operators Overview (C#)</span></span>](./standard-query-operators-overview.md)
-- [<span data-ttu-id="1caa6-115">Operacje projekcji (C#)</span><span class="sxs-lookup"><span data-stu-id="1caa6-115">Projection Operations (C#)</span></span>](./projection-operations.md)
+- [<span data-ttu-id="c318b-116">Standardowe operatory zapytań — Omówienie (C#)</span><span class="sxs-lookup"><span data-stu-id="c318b-116">Standard Query Operators Overview (C#)</span></span>](./standard-query-operators-overview.md)
+- [<span data-ttu-id="c318b-117">Operacje projekcji (C#)</span><span class="sxs-lookup"><span data-stu-id="c318b-117">Projection Operations (C#)</span></span>](./projection-operations.md)

@@ -1,18 +1,19 @@
 ---
 title: 'Przykładowy plik XML: wiele zamówień zakupu (LINQ to XML)'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Plik zawiera kilka zamówień zakupu.
 ms.date: 07/20/2015
 ms.assetid: 2d29fcaa-60df-43d4-8ccc-6cdba7c013e9
-ms.openlocfilehash: d73887308c07b161887716ccf2194eeb3918ff51
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8902b262e838c385581fc221d210f2b7ec11cd47
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168144"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302519"
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a><span data-ttu-id="0ae70-102">Przykładowy plik XML: wiele zamówień zakupu (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0ae70-102">Sample XML File: Multiple Purchase Orders (LINQ to XML)</span></span>
-<span data-ttu-id="0ae70-103">Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="0ae70-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="0ae70-104">Ten plik zawiera kilka zamówień zakupu.</span><span class="sxs-lookup"><span data-stu-id="0ae70-104">This file contains several purchase orders.</span></span>  
+# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a><span data-ttu-id="a19be-104">Przykładowy plik XML: wiele zamówień zakupu (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="a19be-104">Sample XML File: Multiple Purchase Orders (LINQ to XML)</span></span>
+<span data-ttu-id="a19be-105">Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="a19be-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="a19be-106">Ten plik zawiera kilka zamówień zakupu.</span><span class="sxs-lookup"><span data-stu-id="a19be-106">This file contains several purchase orders.</span></span>  
   
-## <a name="purchaseordersxml"></a><span data-ttu-id="0ae70-105">Zamówienia zakupu.xml</span><span class="sxs-lookup"><span data-stu-id="0ae70-105">PurchaseOrders.xml</span></span>  
+## <a name="purchaseordersxml"></a><span data-ttu-id="a19be-107">PurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="a19be-107">PurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  

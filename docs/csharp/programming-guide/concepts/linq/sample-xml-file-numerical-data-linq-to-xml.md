@@ -1,18 +1,19 @@
 ---
 title: 'Przykładowy plik XML: dane liczbowe (LINQ to XML)'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Plik zawiera dane liczbowe dla sumowania, uśredniania i grupowania.
 ms.date: 07/20/2015
 ms.assetid: 365cae86-a166-46df-b56a-0209d9771c27
-ms.openlocfilehash: 921d2a42d0d553b08ecd291b3480d040dd379a96
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c3cc2c47425d2eabba7a0967d7ecc25a79291eb6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168106"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302493"
 ---
-# <a name="sample-xml-file-numerical-data-linq-to-xml"></a><span data-ttu-id="8fb5f-102">Przykładowy plik XML: dane liczbowe (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="8fb5f-102">Sample XML File: Numerical Data (LINQ to XML)</span></span>
-<span data-ttu-id="8fb5f-103">Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="8fb5f-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="8fb5f-104">Ten plik zawiera dane liczbowe do sumowania, uśredniania i grupowania.</span><span class="sxs-lookup"><span data-stu-id="8fb5f-104">This file contains numerical data for summing, averaging, and grouping.</span></span>  
+# <a name="sample-xml-file-numerical-data-linq-to-xml"></a><span data-ttu-id="f784d-104">Przykładowy plik XML: dane liczbowe (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="f784d-104">Sample XML File: Numerical Data (LINQ to XML)</span></span>
+<span data-ttu-id="f784d-105">Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="f784d-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="f784d-106">Ten plik zawiera dane liczbowe dla sumowania, uśredniania i grupowania.</span><span class="sxs-lookup"><span data-stu-id="f784d-106">This file contains numerical data for summing, averaging, and grouping.</span></span>  
   
-## <a name="dataxml"></a><span data-ttu-id="8fb5f-105">Data.xml</span><span class="sxs-lookup"><span data-stu-id="8fb5f-105">Data.xml</span></span>  
+## <a name="dataxml"></a><span data-ttu-id="f784d-107">Data.xml</span><span class="sxs-lookup"><span data-stu-id="f784d-107">Data.xml</span></span>  
   
 ```xml  
 <Root>  

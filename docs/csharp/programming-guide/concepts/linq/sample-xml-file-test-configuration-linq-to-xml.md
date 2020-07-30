@@ -1,18 +1,19 @@
 ---
 title: 'Przykładowy plik XML: konfiguracja testowa (LINQ to XML)'
+description: Ten plik XML jest używany w różnych przykładach w dokumentacji LINQ to XML. Plik jest plikiem konfiguracji testu.
 ms.date: 07/20/2015
 ms.assetid: 45bfb509-c1d4-4b4f-9690-1cb0c9816516
-ms.openlocfilehash: 713e0b69ea896d9f4198ae68f1a3a258d74f24f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14402a4d7988e767464a53a159bcb25661dc82f8
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66487237"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302467"
 ---
-# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="57719-102">Przykładowy plik XML: konfiguracja testowa (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="57719-102">Sample XML File: Test Configuration (LINQ to XML)</span></span>
-<span data-ttu-id="57719-103">Poniższy plik XML jest używany w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] różnych przykładach w dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="57719-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="57719-104">Jest to plik konfiguracji testu.</span><span class="sxs-lookup"><span data-stu-id="57719-104">This is a test configuration file.</span></span>  
+# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="0abc5-104">Przykładowy plik XML: konfiguracja testowa (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0abc5-104">Sample XML File: Test Configuration (LINQ to XML)</span></span>
+<span data-ttu-id="0abc5-105">Następujący plik XML jest używany w różnych przykładach w [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentacji.</span><span class="sxs-lookup"><span data-stu-id="0abc5-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="0abc5-106">To jest plik konfiguracji testu.</span><span class="sxs-lookup"><span data-stu-id="0abc5-106">This is a test configuration file.</span></span>  
   
-## <a name="testconfigxml"></a><span data-ttu-id="57719-105">Plik TestConfig.xml</span><span class="sxs-lookup"><span data-stu-id="57719-105">TestConfig.xml</span></span>  
+## <a name="testconfigxml"></a><span data-ttu-id="0abc5-107">TestConfig.xml</span><span class="sxs-lookup"><span data-stu-id="0abc5-107">TestConfig.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
