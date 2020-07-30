@@ -1,5 +1,6 @@
 ---
 title: Przegląd współdziałania — Przewodnik programowania w języku C#
+description: Dowiedz się więcej na temat współdziałania między językiem C# i niezarządzanym kodem, w tym wywołania platformy, międzyoperacyjności języka C++, udostępniania składników COM do języka C# i uwidaczniania języka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 6546a379d6d851aafbced0931221dc19ca022a72
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6b1dec96dfb3fc354c614983ed1dafab66c5b007
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241737"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302961"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Przegląd współdziałania (Przewodnik programowania w języku C#)
 W tym temacie opisano metody umożliwiające współdziałanie między kodem zarządzanym C# i niezarządzanym kodem.  
@@ -32,11 +33,11 @@ Aby uzyskać więcej informacji, zobacz Korzystanie z [niezarządzanych funkcji 
 ## <a name="exposing-com-components-to-c"></a>Udostępnianie składników COM w języku C\#
  Można wykorzystać składnik COM z projektu C#. Ogólne kroki są następujące:  
   
-1. Znajdź składnik COM, który ma być używany, i zarejestruj go. Użyj programu Regsvr32. exe do zarejestrowania lub wyrejestrowania biblioteki DLL COM.  
+1. Znajdź składnik COM, który ma być używany, i zarejestruj go. Użyj regsvr32.exe, aby zarejestrować lub wyrejestrować bibliotekę DLL COM.  
   
 2. Dodaj do projektu odwołanie do składnika modelu COM lub biblioteki typów.  
   
-     Po dodaniu odwołania program Visual Studio używa programu [Tlbimp. exe (Importer biblioteki typów)](../../../framework/tools/tlbimp-exe-type-library-importer.md), który przyjmuje bibliotekę typów jako dane wejściowe, aby wyprowadzić zestaw .NET Interop. Zestaw, nazywany również otoką (otoka czasowa środowiska uruchomieniowego), zawiera zarządzane klasy i interfejsy, które zawijają klasy COM i interfejsy, które znajdują się w bibliotece typów. Program Visual Studio dodaje do projektu odwołanie do wygenerowanego zestawu.  
+     Po dodaniu odwołania program Visual Studio używa [Tlbimp.exe (Importer biblioteki typów)](../../../framework/tools/tlbimp-exe-type-library-importer.md), który przyjmuje bibliotekę typów jako dane wejściowe w celu wyprowadzenia zestawu .NET międzyoperacyjnego. Zestaw, nazywany również otoką (otoka czasowa środowiska uruchomieniowego), zawiera zarządzane klasy i interfejsy, które zawijają klasy COM i interfejsy, które znajdują się w bibliotece typów. Program Visual Studio dodaje do projektu odwołanie do wygenerowanego zestawu.  
   
 3. Utwórz wystąpienie klasy, która jest zdefiniowana w OTOKi. To z kolei tworzy wystąpienie obiektu COM.  
   
@@ -53,11 +54,11 @@ Aby uzyskać więcej informacji, zobacz Korzystanie z [niezarządzanych funkcji 
   
 2. Wygeneruj bibliotekę typów modelu COM i zarejestruj ją pod kątem użycia COM.  
   
-     Możesz zmodyfikować właściwości projektu Visual C#, aby automatycznie zarejestrować zestaw C# dla współdziałania z modelem COM. Program Visual Studio używa programu [Regasm. exe (Narzędzie rejestracji zestawów)](../../../framework/tools/regasm-exe-assembly-registration-tool.md)przy użyciu `/tlb` przełącznika wiersza polecenia, który pobiera zarządzany zestaw jako dane wejściowe, aby wygenerować bibliotekę typów. Ta biblioteka typów opisuje `public` typy w zestawie i dodaje wpisy rejestru, aby klienci modelu COM mogli tworzyć klasy zarządzane.  
+     Możesz zmodyfikować właściwości projektu Visual C#, aby automatycznie zarejestrować zestaw C# dla współdziałania z modelem COM. Program Visual Studio używa [Regasm.exe (narzędzia do rejestracji zestawów)](../../../framework/tools/regasm-exe-assembly-registration-tool.md)przy użyciu `/tlb` przełącznika wiersza polecenia, który pobiera zarządzany zestaw jako dane wejściowe, aby wygenerować bibliotekę typów. Ta biblioteka typów opisuje `public` typy w zestawie i dodaje wpisy rejestru, aby klienci modelu COM mogli tworzyć klasy zarządzane.  
   
  Aby uzyskać więcej informacji, zobacz [Udostępnianie składników .NET Framework do modelu COM](../../../framework/interop/exposing-dotnet-components-to-com.md) i [przykładowej klasy com](./example-com-class.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Poprawianie wydajności międzyoperacyjności](https://docs.microsoft.com/previous-versions/msp-n-p/ff647812%28v=pandp.10%29)
 - [Wprowadzenie do współdziałania między modelami COM i .NET](/office/client-developer/outlook/pia/introduction-to-interoperability-between-com-and-net)

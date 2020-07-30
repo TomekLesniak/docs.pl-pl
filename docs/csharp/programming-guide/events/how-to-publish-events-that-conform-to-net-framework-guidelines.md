@@ -1,15 +1,16 @@
 ---
 title: Publikuj zdarzenia zgodne z zaleceniami platformy .NET — Przewodnik programowania w języku C#
+description: Dowiedz się, jak publikować zdarzenia zgodne z zaleceniami dotyczącymi platformy .NET. Wszystkie zdarzenia w bibliotece klas .NET Framework są oparte na delegatze EventHandler.
 ms.date: 05/26/2020
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: df2f643f867b93b74d04d8fbd673df545c28938e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 1b802e236026911b55bafcb3f48d487c43bba174
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240749"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302116"
 ---
 # <a name="how-to-publish-events-that-conform-to-net-guidelines-c-programming-guide"></a>Jak opublikować zdarzenia zgodne z zaleceniami dotyczącymi platformy .NET (Przewodnik programowania w języku C#)
 
@@ -74,7 +75,7 @@ Poniższy przykład demonstruje poprzednie kroki przy użyciu niestandardowej kl
 
 [!code-csharp[csProgGuideEvents#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#2)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Delegate>
 - [Przewodnik programowania w języku C#](../index.md)

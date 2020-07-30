@@ -1,15 +1,16 @@
 ---
 title: Jak uzyskać informacje o plikach, folderach i dyskach — Przewodnik programowania w języku C#
+description: Dowiedz się, jak uzyskać informacje o plikach, folderach i dyskach. Zobacz przykład kodu i dodatkowe dostępne zasoby.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
-ms.openlocfilehash: 32aced17634a1406e2fce0af9c2a92f7a5eb9b40
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: f696cd90f197bede1a64949d211a563ce9a18376
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241620"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299932"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Jak uzyskać informacje o plikach, folderach i dyskach (Przewodnik programowania w języku C#)
 W programie .NET można uzyskać dostęp do informacji o systemie plików przy użyciu następujących klas:  
@@ -52,7 +53,7 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
   
  Jeśli aplikacja nie ma wystarczających uprawnień do odczytu określonego pliku, `Exists` Metoda zwraca `false` bez względu na to, czy ścieżka istnieje; metoda nie zgłasza wyjątku.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IO?displayProperty=nameWithType>
 - [Przewodnik programowania w języku C#](../index.md)

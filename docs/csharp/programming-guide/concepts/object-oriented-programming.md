@@ -1,13 +1,14 @@
 ---
 title: Programowanie zorientowane obiektowo (C#)
+description: Język C# zapewnia pełną obsługę programowania zorientowanego obiektowo, w tym abstrakcję, hermetyzację, dziedziczenie i polimorfizm.
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 83140a9dbd16f60f04f50ba18c71099cdd862f15
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 0c5495aefad73a2916ad6e2bd2bf3701d0868f24
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226637"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302818"
 ---
 # <a name="object-oriented-programming-c"></a>Programowanie zorientowane obiektowo (C#)
 
