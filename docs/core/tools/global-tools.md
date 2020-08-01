@@ -3,12 +3,12 @@ title: " Narzędzia programu .NET Core"
 description: Jak instalować, używać, aktualizować i usuwać narzędzia .NET Core. Obejmuje narzędzia globalne, narzędzia ścieżki narzędzi i narzędzia lokalne.
 author: KathleenDollard
 ms.date: 02/12/2020
-ms.openlocfilehash: 583dbb461543d1efb7328d55f6ecce4a99afcaca
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 75bdedcbc3ebe9c23477795415076d160ab9a642
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226611"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455725"
 ---
 # <a name="how-to-manage-net-core-tools"></a>Jak zarządzać narzędziami programu .NET Core
 
@@ -37,11 +37,11 @@ Narzędzie .NET Core jest specjalnym pakietem NuGet, który zawiera aplikację k
 
 Obecnie platforma .NET Core nie ma funkcji wyszukiwania w narzędziu. Oto kilka sposobów znajdowania narzędzi:
 
+* Przeszukaj witrynę sieci Web [NuGet](https://www.nuget.org) przy użyciu filtru typu pakietu "narzędzie .NET". Aby uzyskać więcej informacji, zobacz [Znajdowanie i wybieranie pakietów](/nuget/consume-packages/finding-and-choosing-packages).
 * Zobacz listę narzędzi w repozytorium GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
 * Użyj [ToolGet](https://www.toolget.net/) , aby wyszukać narzędzia platformy .NET.
 * Zobacz kod źródłowy narzędzi utworzonych przez zespół ASP.NET Core w [katalogu Tools w repozytorium GitHub/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
 * Informacje o narzędziach diagnostycznych w [programie .NET Core dotnet Diagnostic Tools](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
-* Przeszukaj witrynę sieci Web [NuGet](https://www.nuget.org) . Jednak witryna NuGet nie ma jeszcze funkcji umożliwiającej wyszukiwanie tylko pakietów narzędzi.
 
 ## <a name="check-the-author-and-statistics"></a>Sprawdź autora i statystyki
 

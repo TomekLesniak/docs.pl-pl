@@ -2,12 +2,12 @@
 title: 'Funkcje rekurencyjne: rec — Słowo kluczowe'
 description: 'Dowiedz się, w jaki sposób słowo kluczowe "Rec" języka F # jest używane z słowem kluczowym "let" w celu zdefiniowania funkcji cyklicznej.'
 ms.date: 05/16/2016
-ms.openlocfilehash: c9a3b7dc27f4ed86948a08b7783d7e8e8b60e57f
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426979"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455654"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Funkcje rekurencyjne: rec — Słowo kluczowe
 
@@ -43,7 +43,7 @@ Metody są niejawnie cykliczne w obrębie typu; nie ma potrzeby dodawania `rec` 
 
 ## <a name="tail-recursion"></a>Rekursja ogona
 
-W przypadku niektórych funkcji cyklicznych należy resłużyć do refaktoryzacji bardziej "czystej" definicji dla jednej, która jest [cykliczna](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion). Zapobiega to ponownemu obliczaniu Unecessary. Na przykład poprzedni generator numerów Fibonacci można napisać ponownie w następujący sposób:
+W przypadku niektórych funkcji cyklicznych należy resłużyć do refaktoryzacji bardziej "czystej" definicji dla jednej, która jest [cykliczna](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion). Zapobiega to niepotrzebnemu ponownemu obliczaniu. Na przykład poprzedni generator numerów Fibonacci można napisać ponownie w następujący sposób:
 
 ```fsharp
 let fib n =
@@ -76,6 +76,6 @@ Poniższy przykład pokazuje dwie funkcje wzajemnie cykliczne.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Funkcje](index.md)

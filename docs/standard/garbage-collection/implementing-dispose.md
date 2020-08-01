@@ -10,16 +10,16 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: c8b4b9a79577776bc049ef77e222d63374178708
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4f0cc9b88947d60638057ca83adb7f2e141c5d14
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447176"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455731"
 ---
 # <a name="implement-a-dispose-method"></a>Implementacja metody Dispose
 
-Implementowanie <xref:System.IDisposable.Dispose%2A> metody jest przede wszystkim przeznaczone do zwalniania niezarządzanych zasobów używanych przez kod. Podczas pracy z elementami członkowskimi wystąpień <xref:System.IDisposable> , które są implementacjami, często są to wywołania kaskadowe <xref:System.IDisposable.Dispose%2A> . Istnieją dodatkowe przyczyny implementacji <xref:System.IDisposable.Dispose%2A> , takie jak cofnięcie wcześniej wykonanego działania. Na przykład zwalnianie pamięci, która została przypisana, usunięcie elementu z kolekcji, która została dodana, sygnalizowanie wydania blokady, która została pobrana itd.
+Implementowanie <xref:System.IDisposable.Dispose%2A> metody jest przede wszystkim przeznaczone do zwalniania niezarządzanych zasobów. Podczas pracy z elementami członkowskimi wystąpień <xref:System.IDisposable> , które są implementacjami, często są to wywołania kaskadowe <xref:System.IDisposable.Dispose%2A> . Istnieją dodatkowe powody wdrożenia <xref:System.IDisposable.Dispose%2A> , na przykład w celu zwolnienia pamięci, która została przypisana, usunąć element, który został dodany do kolekcji lub sygnalizować wykorzystaną blokadę.
 
 [Moduł wyrzucania elementów bezużytecznych platformy .NET](index.md) nie przydziela lub nie zwalnia pamięci niezarządzanej. Wzorzec do usuwania obiektu, nazywany wzorcem usuwania, nakłada kolejność na okres istnienia obiektu. Wzorzec Dispose jest używany dla obiektów implementujących <xref:System.IDisposable> interfejs i jest powszechny w przypadku współpracy z uchwytami plików i potoków, dojściami do rejestru, dojściami oczekiwania lub wskaźnikami do bloków pamięci niezarządzanej. Dzieje się tak, ponieważ moduł wyrzucania elementów bezużytecznych nie może odzyskiwać obiektów niezarządzanych.
 

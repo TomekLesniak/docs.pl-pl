@@ -2,13 +2,13 @@
 title: Używanie języka F# na platformie Azure
 description: 'Przewodnik dotyczący korzystania z usług platformy Azure w języku F #'
 author: sylvanc
-ms.date: 09/22/2016
-ms.openlocfilehash: f074ac192f6dedbadf8132430cf27dc5865e6371
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.date: 07/29/2020
+ms.openlocfilehash: ebf94d724db2c503f27581bf1352bf4fa90f5e2a
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501823"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455712"
 ---
 # <a name="using-f-on-azure"></a>Używanie języka F# na platformie Azure
 
@@ -55,12 +55,14 @@ Usługi Azure Storage można także używać w połączeniu z Azure Functions za
 * [Przykład interfejsu API sieci Web platformy Azure w języku F #](https://github.com/fsprojects/azure-webapi-example)
 * [Hosting języka F # w aplikacji sieci Web na platformie Azure](https://github.com/isaacabraham/fsharp-demonstrator)
 
-## <a name="using-apache-spark-with-f-with-azure-hdinsight"></a>Korzystanie z Apache Spark w języku F # z usługą Azure HDInsight
+## <a name="using-apache-spark-with-f-on-azure-hdinsight-or-azure-databricks"></a>Używanie Apache Spark z językiem F # w usłudze Azure HDInsight lub Azure Databricks
 
-[Apache Spark dla usługi Azure HDInsight](https://azure.microsoft.com/services/hdinsight/apache-spark/) to platforma przetwarzania Open Source, która uruchamia aplikacje do analizy danych na dużą skalę. Platforma Azure sprawia, że wdrożenie Apache Spark łatwe i ekonomiczne. Tworzenie aplikacji platformy Spark w języku F # za pomocą [Mobius](https://github.com/Microsoft/Mobius), interfejsu API platformy .NET dla platformy Spark.
+[Apache Spark dla usługi Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) to platforma przetwarzania Open Source, która uruchamia aplikacje do analizy danych na dużą skalę. [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) to platforma analizy oparta na usłudze Apache Spark i zoptymalizowana pod kątem platformy usług w chmurze Microsoft Azure. Platforma Azure sprawia, że wdrożenie Apache Spark łatwe i ekonomiczne. Tworzenie aplikacji platformy Spark w języku F # przy użyciu [platformy .NET dla Apache Spark](../../spark/what-is-apache-spark-dotnet.md), zestaw powiązań platformy .net dla Apache Spark.
 
-* [Implementowanie aplikacji platformy Spark w języku F # przy użyciu Mobius](https://github.com/Microsoft/Mobius/blob/master/notes/spark-fsharp-mobius.md)
-* [Przykład aplikacji języka F # Spark przy użyciu Mobius](https://github.com/Microsoft/Mobius/tree/master/examples/fsharp)
+* [.NET for Apache Spark — przykłady dla języka F #](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.FSharp.Examples)
+* [Instalowanie notesów programu .NET Interactive Jupyter w usłudze Azure HDInsight](../../spark/how-to-guides/hdinsight-notebook-installation.md)
+* [Przesyłanie Apache Spark zadań do usługi Azure HDInsight](../../spark/how-to-guides/hdinsight-deploy-methods.md)
+* [Prześlij Apache Spark zadania do Azure Databricks](../../spark/how-to-guides/databricks-deploy-methods.md)
 
 ## <a name="using-azure-cosmos-db-with-f"></a>Używanie Azure Cosmos DB z F\#
 
