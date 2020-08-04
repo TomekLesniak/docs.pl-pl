@@ -3,12 +3,12 @@ title: Używanie języka F# na platformie Azure
 description: 'Przewodnik dotyczący korzystania z usług platformy Azure w języku F #'
 author: sylvanc
 ms.date: 07/29/2020
-ms.openlocfilehash: ebf94d724db2c503f27581bf1352bf4fa90f5e2a
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 24ef3fd14a4d0173935fac3e67aadf86110fa6d8
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455712"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517376"
 ---
 # <a name="using-f-on-azure"></a>Używanie języka F# na platformie Azure
 
@@ -113,7 +113,7 @@ Czasomierze mogą być implementowane w języku F # i hostowane na platformie Az
 
 Maszyny wirtualne platformy Azure można programistycznie wdrażać i zarządzać nimi ze skryptów języka F # przy użyciu pakietów i interfejsów API Microsoft. Azure. Management. Na przykład zobacz [wprowadzenie do bibliotek zarządzania dla platformy .NET](https://msdn.microsoft.com/library/dn722415.aspx) i korzystanie z [Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
 
-Podobnie inne zasoby platformy Azure mogą być również wdrażane i zarządzane ze skryptów języka F # przy użyciu tych samych składników. Można na przykład utworzyć konta magazynu, wdrożyć usługę Azure Cloud Services, utworzyć wystąpienia Azure Cosmos DB i programowo zarządzać centrami usługi Azure powiadamiania za pomocą skryptów języka F #.
+Podobnie inne zasoby platformy Azure mogą być również wdrażane i zarządzane ze skryptów języka F # przy użyciu tych samych składników. Można na przykład utworzyć konta magazynu, wdrożyć usługę Azure Cloud Services, utworzyć wystąpienia Azure Cosmos DB i programowo zarządzać Notification Hubs platformy Azure ze skryptów języka F #.
 
 Używanie skryptów języka F # do wdrażania zasobów i zarządzania nimi nie jest zwykle konieczne. Na przykład zasoby platformy Azure mogą być również wdrażane bezpośrednio w opisach szablonów JSON, które mogą być sparametryzowane. Zobacz [szablony Azure Resource Manager](/azure/azure-resource-manager/resource-manager-template-best-practices) , w tym przykłady [szablonów szybkiego startu platformy Azure](https://azure.microsoft.com/resources/templates/).
 

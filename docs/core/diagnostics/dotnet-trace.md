@@ -2,12 +2,12 @@
 title: dotnet-Trace Tool-.NET Core
 description: Instalowanie i używanie narzędzia wiersza polecenia do śledzenia dotnet.
 ms.date: 11/21/2019
-ms.openlocfilehash: 6dd968dc49522229dca02c0dc6f3de898026dd82
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 25178a0e59ce9edb69d15ee761c1b9e56aa5eb3a
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924854"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517311"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>Narzędzie do analizy wydajności śledzenia dotnet
 
@@ -38,13 +38,13 @@ dotnet-trace [-h, --help] [--version] <command>
 
 ## <a name="options"></a>Opcje
 
-- **`--version`**
-
-  Wyświetla wersję narzędzia do śledzenia dotnet.
-
 - **`-h|--help`**
 
   Wyświetla pomoc w wierszu polecenia.
+
+- **`--version`**
+
+  Wyświetla wersję narzędzia do śledzenia dotnet.
 
 ## <a name="commands"></a>Polecenia
 
@@ -62,23 +62,45 @@ Zbiera dane śledzenia diagnostycznego z uruchomionego procesu.
 ### <a name="synopsis"></a>Streszczenie
 
 ```console
-dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--output]
-    [--providers] [--profile <profile-name>] [--format]
+dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--clrevents <clrevents>]
+    [--format <Chromium|NetTrace|Speedscope>] [-h|--help]
+    [-n, --name <name>]  [-o|--output <trace-file-path>] [-p|--process-id <pid>]
+    [--profile <profile-name>] [--providers <list-of-comma-separated-providers>]
 ```
 
 ### <a name="options"></a>Opcje
-
-- **`-p|--process-id <PID>`**
-
-  Proces zbierania danych śledzenia z programu.
 
 - **`--buffersize <size>`**
 
   Ustawia rozmiar buforu cyklicznego w pamięci (w megabajtach). Wartość domyślna to 256 MB.
 
+- **`--clreventlevel <clreventlevel>`**
+
+  Poziom szczegółowości zdarzeń CLR do wyemitowania.
+
+- **`--clrevents <clrevents>`**
+
+  Lista zdarzeń środowiska uruchomieniowego CLR do emisji.
+
+- **`--format {Chromium|NetTrace|Speedscope}`**
+
+  Ustawia format danych wyjściowych dla konwersji pliku śledzenia. Wartość domyślna to `NetTrace`.
+
+- **`-n, --name <name>`**
+
+  Nazwa procesu, z którego ma zostać zebrane śledzenie.
+
 - **`-o|--output <trace-file-path>`**
 
-  Ścieżka wyjściowa zebranych danych śledzenia. Jeśli nie zostanie określony, wartość domyślna to `trace.nettrace` .
+  Ścieżka wyjściowa zebranych danych śledzenia. Jeśli nie zostanie określony, jego wartość domyślna to `trace.nettrace` .
+
+- **`-p|--process-id <PID>`**
+
+  Identyfikator procesu, z którego ma zostać zebrane śledzenie.
+
+- **`--profile <profile-name>`**
+
+  Nazwany wstępnie zdefiniowany zestaw konfiguracji dostawcy, który umożliwia zwięzłe Określanie typowych scenariuszy śledzenia.
 
 - **`--providers <list-of-comma-separated-providers>`**
 
@@ -90,14 +112,6 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
   - `Provider`ma postać: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]` .
   - `KeyValueArgs`ma postać: `[key1=value1][;key2=value2]` .
 
-- **`--profile <profile-name>`**
-
-  Nazwany wstępnie zdefiniowany zestaw konfiguracji dostawcy, który umożliwia zwięzłe Określanie typowych scenariuszy śledzenia.
-
-- **`--format {NetTrace|Speedscope}`**
-
-  Ustawia format danych wyjściowych dla konwersji pliku śledzenia. Wartość domyślna to `NetTrace`.
-
 ## <a name="dotnet-trace-convert"></a>Konwersja dotnet-Trace
 
 Konwertuje `nettrace` ślady na formaty alternatywne do użycia z alternatywnymi narzędziami do analizy śledzenia.
@@ -105,7 +119,7 @@ Konwertuje `nettrace` ślady na formaty alternatywne do użycia z alternatywnymi
 ### <a name="synopsis"></a>Streszczenie
 
 ```console
-dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
+dotnet-trace convert [<input-filename>] [--format <Chromium|NetTrace|Speedscope>] [-h|--help] [-o|--output <output-filename>]
 ```
 
 ### <a name="arguments"></a>Argumenty
@@ -116,7 +130,7 @@ dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 
 ### <a name="options"></a>Opcje
 
-- **`--format <NetTrace|Speedscope>`**
+- **`--format <Chromium|NetTrace|Speedscope>`**
 
   Ustawia format danych wyjściowych dla konwersji pliku śledzenia.
 
@@ -126,7 +140,7 @@ dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 
 ## <a name="dotnet-trace-ps"></a>dotnet-Trace — śledzenie
 
-Wyświetla listę procesów dotnet, które mogą być dołączone do programu.
+ Wyświetla listę procesów dotnet, z których można zbierać dane śledzenia.
 
 ### <a name="synopsis"></a>Streszczenie
 
@@ -208,7 +222,7 @@ Poprzednie polecenie powoduje wyłączenie zdarzeń środowiska uruchomieniowego
 
 Środowisko uruchomieniowe platformy .NET Core obsługuje następujących dostawców platformy .NET. .NET Core używa tych samych słów kluczowych do włączenia obu `Event Tracing for Windows (ETW)` i `EventPipe` śladów.
 
-| Nazwa dostawcy                            | Informacyjny |
+| Nazwa dostawcy                            | Informacje |
 |------------------------------------------|-------------|
 | `Microsoft-Windows-DotNETRuntime`        | [Dostawca środowiska uruchomieniowego](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Słowa kluczowe środowiska uruchomieniowego CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
 | `Microsoft-Windows-DotNETRuntimeRundown` | [Dostawca uwalniania](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Słowa kluczowe uwalniania CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |

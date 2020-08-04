@@ -1,5 +1,6 @@
 ---
 title: Resgen.exe (Generator pliku zasobów)
+description: Użyj Resgen.exe, Generator plików zasobów. Przekonwertuj pliki tekstowe (. txt,. restext) i plików XML (. resx) na osadzane dane binarne środowiska uruchomieniowego CLR (. resources).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - resource files, .resources files
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - binary resources files
 - embedding files in runtime binary executable
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
-ms.openlocfilehash: b9be030689ecf78b3482743e486e32012e9ca5d4
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: f51ee6c8537abafc82017f3cc29d734e939a254f
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201105"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517233"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (Generator pliku zasobów)
 Generator plików zasobów (Resgen.exe) konwertuje pliki tekstowe (txt lub restext) i pliki zasobów w formacie XML (resx) na pliki binarne (resources) środowiska uruchomieniowego języka wspólnego, które można osadzić w binarnym pliku wykonywalnym środowiska uruchomieniowego lub zestawie satelickim. (Zobacz [Tworzenie plików zasobów](../resources/creating-resource-files-for-desktop-apps.md)).  
@@ -39,7 +40,7 @@ Generator plików zasobów (Resgen.exe) konwertuje pliki tekstowe (txt lub reste
   
  Jeśli działanie programu Resgen.exe kończy się niepowodzeniem z dowolnej przyczyny, zwracaną wartością jest -1.  
   
- Aby uzyskać pomoc dotyczącą programu Resgen. exe, można użyć następującego polecenia bez określonych opcji, aby wyświetlić składnię polecenia i opcje dla Resgen. exe:  
+ Aby uzyskać pomoc dotyczącą Resgen.exe, można użyć następującego polecenia bez określonych opcji, aby wyświetlić składnię polecenia i opcje dla Resgen.exe:  
   
 ```console  
 resgen  
@@ -51,7 +52,7 @@ resgen
 resgen /?  
 ```  
   
- Jeśli używasz programu Resgen. exe do generowania plików binarnych. resources, możesz użyć kompilatora języka do osadzenia plików binarnych w zestawach wykonywalnych lub użyć [konsolidatora zestawu (Al. exe)](al-exe-assembly-linker.md) , aby skompilować je do zestawów satelickich.  
+ Jeśli używasz Resgen.exe do generowania plików binarnych. resources, możesz użyć kompilatora języka do osadzenia plików binarnych w zestawach wykonywalnych lub użyć [konsolidatora zestawu (Al.exe)](al-exe-assembly-linker.md) do skompilowania ich do zestawów satelickich.  
   
  To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7). Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).  
   
@@ -76,7 +77,7 @@ resgen filename.extension [outputDirectory]
 |`/compile`|Umożliwia określenie wielu plików tekstowych lub resx w celu konwersji na wiele plików resources w pojedynczej zbiorczej operacji. Jeśli ta opcja nie jest określona, można określić tylko jeden argument pliku wejściowego. Pliki wyjściowe mają nazwę *filename*. resources.<br /><br /> Tej opcji nie można używać z `/str:` opcją.<br /><br /> Aby uzyskać więcej informacji na temat tej opcji, zobacz [Kompilowanie lub konwertowanie wielu plików](#Multiple) w dalszej części tego tematu.|  
 |`/r:` `assembly`|Odwołuje się do metadanych z określonego zestawu. Jest używana podczas konwersji plików resx i zezwala programowi Resgen.exe na serializację lub deserializację zasobów obiektu. Jest podobna do `/reference:` `/r:` opcji lub dla kompilatorów C# i Visual Basic.|  
 |`filename.extension`|Określa nazwę pliku wejściowego do konwersji. Jeśli używasz pierwszej dłuższa składni wiersza polecenia przedstawionej przed tą tabelą, `extension` musi to być jedna z następujących:<br /><br /> .txt lub .restext<br /> Plik tekstowy do konwersji na plik resources lub resx. Pliki tekstowe mogą zawierać tylko zasoby w postaci ciągów. Aby uzyskać informacje o formacie pliku, zobacz sekcję "zasoby w plikach tekstowych" w temacie [Tworzenie plików zasobów](../resources/creating-resource-files-for-desktop-apps.md).<br /><br /> .resx<br /> Plik zasobów w języku XML do konwersji na plik .resources lub plik tekstowy (txt lub restext).<br /><br /> .resources<br /> Plik binarny zasobów do konwersji na plik resx lub plik tekstowy (txt lub restext).<br /><br /> Jeśli używasz drugiej, krótszej składni wiersza polecenia przedstawionej przed tą tabelą, `extension` należy wykonać następujące czynności:<br /><br /> .exe lub .dll<br /> Zestaw .NET Framework (plik wykonywalny lub biblioteka), którego zasoby ciągu mają zostać wyodrębnione do pliku. resw, aby można było ich używać w tworzeniu aplikacji ze sklepu Windows 8. x.|  
-|`outputFilename.extension`|Określa nazwę i typ tworzonego pliku zasobów.<br /><br /> Ten argument jest opcjonalny podczas konwersji z pliku txt, restext lub resx na plik resources. Jeśli nie określisz `outputFilename` , Resgen. exe dołącza rozszerzenie. resources do danych wejściowych `filename` i zapisuje plik w katalogu, który zawiera `filename,extension` .<br /><br /> `outputFilename.extension`Argument jest obowiązkowy podczas konwersji z pliku Resources. Określa nazwę pliku z rozszerzeniem resx podczas konwersji pliku resources na plik zasobów w formacie XML. Określa nazwę pliku z rozszerzeniem txt lub restext podczas konwersji na plik resources lub plik tekstowy. Plik resources należy konwertować na plik txt tylko wtedy, gdy plik resources zawiera wyłącznie wartości w postaci ciągów.|  
+|`outputFilename.extension`|Określa nazwę i typ tworzonego pliku zasobów.<br /><br /> Ten argument jest opcjonalny podczas konwersji z pliku txt, restext lub resx na plik resources. Jeśli nie określisz `outputFilename` , Resgen.exe dołącza rozszerzenie. resources do danych wejściowych `filename` i zapisuje plik w katalogu, który zawiera `filename,extension` .<br /><br /> `outputFilename.extension`Argument jest obowiązkowy podczas konwersji z pliku Resources. Określa nazwę pliku z rozszerzeniem resx podczas konwersji pliku resources na plik zasobów w formacie XML. Określa nazwę pliku z rozszerzeniem txt lub restext podczas konwersji na plik resources lub plik tekstowy. Plik resources należy konwertować na plik txt tylko wtedy, gdy plik resources zawiera wyłącznie wartości w postaci ciągów.|  
 |`outputDirectory`|W przypadku aplikacji ze sklepu Windows 8. x, określa katalog, w którym zostanie zapisany plik. resw zawierający zasoby ciągu `filename.extension` . `outputDirectory`musi już istnieć.|  
 |`/str:` `language[,namespace[,classname[,filename]]]`|Tworzy plik klasy zasobów o jednoznacznie określonym typie w języku programowania określonym w `language` opcji. `language`może składać się z jednego z następujących literałów:<br /><br /> — Dla języka C#: `c#` , `cs` , lub `csharp` .<br />-Dla Visual Basic: `vb` lub `visualbasic` .<br />— Dla języka VBScript: `vbs` lub `vbscript` .<br />— Dla języka C++: `c++` , `mc` , lub `cpp` .<br />— W przypadku języka JavaScript: `js` , `jscript` lub `javascript` .<br /><br /> `namespace`Opcja określa domyślną przestrzeń nazw projektu, `classname` opcja określa nazwę wygenerowanej klasy, a `filename` opcja określa nazwę pliku klasy.<br /><br /> `/str:`Opcja zezwala na tylko jeden plik wejściowy, dlatego nie można jej używać z `/compile` opcją.<br /><br /> Jeśli `namespace` jest określony `classname` , ale nie jest, nazwa klasy pochodzi od nazwy pliku wyjściowego (na przykład podkreślenia są zastępowane dla kropek). Zasoby silnie typizowane mogą nie działać poprawnie jako wynik. Aby tego uniknąć, należy określić zarówno nazwę klasy, jak i nazwę pliku wyjściowego.<br /><br /> Aby uzyskać więcej informacji na temat tej opcji, zobacz [Generowanie klasy zasobów o jednoznacznie określonym typie](#Strong) w dalszej części tego tematu.|  
 |`/publicClass`|Tworzy silnie typizowaną klasę zasobu jako klasę publiczną. Domyślnie Klasa zasobów jest `internal` w języku C# i `Friend` w Visual Basic.<br /><br /> Ta opcja jest ignorowana, jeśli `/str:` opcja nie jest używana.|  
@@ -97,7 +98,7 @@ resgen filename.extension [outputDirectory]
 ### <a name="resx-files"></a>Pliki resx  
  Format plików zasobów resx składa się z wpisów XML. Można określić zasoby w postaci ciągów w tych wpisach XML, tak jak w plikach tekstowych. Główną zaletą plików resx w porównaniu z plikami tekstowymi jest to, że można określić lub osadzić w nich obiekty. Podczas przeglądania pliku resx można zobaczyć binarną formę osadzonego obiektu (na przykład obrazka), gdy te informacje binarne są częścią manifestu zasobu. Tak jak w przypadku plików tekstowych, plik resx można otworzyć za pomocą edytora tekstów (takiego jak Notatnik lub program Microsoft Word), a następnie można pisać i analizować jego zawartość, a także wykonywać na niej różne operacje. Należy zauważyć, że wymaga to dobrej znajomości tagów XML i struktury pliku resx. Aby uzyskać więcej informacji o formacie pliku resx, zobacz sekcję "zasoby w plikach resx" tematu [Tworzenie plików zasobów](../resources/creating-resource-files-for-desktop-apps.md).  
   
- Aby utworzyć plik resources zawierający osadzone obiekty niebędące ciągami, musisz użyć Resgen. exe do przekonwertowania pliku resx zawierającego obiekty lub dodać zasoby obiektów do pliku bezpośrednio z kodu, wywołując metody dostarczone przez <xref:System.Resources.ResourceWriter> klasę.  
+ Aby utworzyć plik resources, który zawiera osadzone obiekty niebędące ciągami, musisz użyć Resgen.exe do przekonwertowania pliku resx zawierającego obiekty lub dodać zasoby obiektów do pliku bezpośrednio z kodu, wywołując metody dostarczone przez <xref:System.Resources.ResourceWriter> klasę.  
   
  Jeśli plik resx lub resources zawiera obiekty i zostanie użyty program Resgen.exe w celu przekonwertowania go na plik tekstowy, wszystkie zasoby w postaci ciągów zostaną przekonwertowane poprawnie, ale typy danych obiektów niebędących ciągami również zostaną zapisane w pliku jako ciągi. W wyniku konwersji obiekty osadzone zostaną utracone, a program Resgen.exe zgłosi, że wystąpił błąd podczas pobierania zasobów.  
   
@@ -112,7 +113,7 @@ resgen filename.extension [outputDirectory]
 |Zestaw exe lub dll|Nieobsługiwane|Nieobsługiwane|Tylko zasoby w postaci ciągów (w tym nazwy ścieżek) są rozpoznawane jako zasoby|Nieobsługiwane|  
   
 ## <a name="performing-specific-resgenexe-tasks"></a>Wykonywanie określonych zadań w programie Resgen.exe  
- Programu Resgen. exe można używać na różne sposoby: do kompilowania pliku zasobów tekstowego lub XML do pliku binarnego, konwersji między formatami plików zasobów i generowania klasy, która zawija <xref:System.Resources.ResourceManager> funkcjonalność i zapewnia dostęp do zasobów. Ta sekcja zawiera szczegółowe informacje dotyczące każdego zadania:  
+ Resgen.exe można używać na różne sposoby: do kompilowania pliku zasobów tekstowego lub XML w pliku binarnym, do konwersji między formatami plików zasobów, a także do generowania klasy, która zawija <xref:System.Resources.ResourceManager> funkcjonalność i zapewnia dostęp do zasobów. Ta sekcja zawiera szczegółowe informacje dotyczące każdego zadania:  
   
 - [Kompilowanie zasobów do pliku binarnego](resgen-exe-resource-file-generator.md#Compiling)  
   
@@ -128,7 +129,7 @@ resgen filename.extension [outputDirectory]
   
 <a name="Compiling"></a>
 ### <a name="compiling-resources-into-a-binary-file"></a>Kompilowanie zasobów do pliku binarnego  
- Najbardziej powszechnym zastosowaniem programu Resgen.exe jest kompilacja pliku zasobów w formacie tekstowym (pliku txt lub restext) lub w formacie XML (pliku resx) do pliku binarnego resources. Plik wyjściowy może zostać osadzony w zestawie głównym przez kompilator języka lub w zestawie satelickim przez [konsolidator zestawu (Al. exe)](al-exe-assembly-linker.md).  
+ Najbardziej powszechnym zastosowaniem programu Resgen.exe jest kompilacja pliku zasobów w formacie tekstowym (pliku txt lub restext) lub w formacie XML (pliku resx) do pliku binarnego resources. Plik wyjściowy może zostać osadzony w zestawie głównym przez kompilator języka lub w zestawie satelickim przez [konsolidator zestawu (AL.exe)](al-exe-assembly-linker.md).  
   
  Składnia służąca do kompilacji pliku zasobów jest następująca:  
   
@@ -142,7 +143,7 @@ resgen inputFilename [outputFilename]
  Nazwa pliku zasobów, łącznie z rozszerzeniem, który należy skompilować. Program Resgen.exe kompiluje tylko pliki z rozszerzeniem txt, restext lub resx.  
   
  `outputFilename`  
- Nazwa pliku wyjściowego. Jeśli pominięto `outputFilename` , Resgen. exe tworzy plik resources o nazwie pliku głównego w tym `inputFilename` samym katalogu, co `inputFilename` . Jeśli `outputFilename` zawiera ścieżkę katalogu, katalog musi istnieć.  
+ Nazwa pliku wyjściowego. W przypadku pominięcia `outputFilename` Resgen.exe tworzy plik resources o nazwie pliku głównego `inputFilename` w tym samym katalogu, co `inputFilename` . Jeśli `outputFilename` zawiera ścieżkę katalogu, katalog musi istnieć.  
   
  Należy podać w pełni kwalifikowaną przestrzeń nazw dla pliku resources, określając ją w nazwie pliku i oddzielając od głównej nazwy plików kropką. Na przykład, jeśli `outputFilename` jest `MyCompany.Libraries.Strings.resources` , przestrzeń nazw to webcompany. librarys.  
   
@@ -178,7 +179,7 @@ resgen Resources.resx Resources.resources
   
  Składnia jest taka sama, jak pokazana w poprzedniej sekcji.  
   
- Ponadto można użyć programu Resgen. exe do przekonwertowania osadzonych zasobów w zestawie .NET Framework na plik. resw.  
+ Ponadto można użyć Resgen.exe do przekonwertowania osadzonych zasobów w zestawie .NET Framework do pliku RESW.  
   
  Poniższe polecenie odczytuje binarny plik zasobów Resources.resources i zapisuje plik wyjściowy w formacie XML o nazwie Resources.resx.  
   
@@ -215,10 +216,10 @@ resgen /compile StringResources.txt TableResources.resx ImageResources.resx
   
 <a name="Exporting"></a>
 ### <a name="exporting-resources-to-a-resw-file"></a>Eksportowanie zasobów do pliku resw  
- Jeśli tworzysz aplikację ze sklepu Windows 8. x, możesz chcieć używać zasobów z istniejącej aplikacji klasycznej. Jednak te dwa rodzaje aplikacji obsługują różne formaty plików. W aplikacjach komputerowych zasoby w plikach tekstowych (txt lub restex) lub w plikach resx są kompilowane do binarnych plików resources. W aplikacjach ze sklepu Windows 8. x pliki. resw są kompilowane do plików binarnych (PRI) pakietu. Można użyć Resgen. exe do mostkowania tej przerwy przez wyodrębnienie zasobów z pliku wykonywalnego lub zestawu satelickiego i zapisanie ich do jednego lub więcej plików. resw, które mogą być używane podczas tworzenia aplikacji do sklepu Windows 8. x.  
+ Jeśli tworzysz aplikację ze sklepu Windows 8. x, możesz chcieć używać zasobów z istniejącej aplikacji klasycznej. Jednak te dwa rodzaje aplikacji obsługują różne formaty plików. W aplikacjach komputerowych zasoby w plikach tekstowych (txt lub restex) lub w plikach resx są kompilowane do binarnych plików resources. W aplikacjach ze sklepu Windows 8. x pliki. resw są kompilowane do plików binarnych (PRI) pakietu. Możesz użyć Resgen.exe do mostkowania tej przerwy przez wyodrębnienie zasobów z pliku wykonywalnego lub zestawu satelickiego i zapisanie ich do jednego lub więcej plików. resw, które mogą być używane podczas tworzenia aplikacji do sklepu Windows 8. x.  
   
 > [!IMPORTANT]
-> Program Visual Studio automatycznie obsługuje wszystkie konwersje niezbędne do włączenia zasobów w bibliotece przenośnej do aplikacji ze sklepu Windows 8. x. Używanie programu Resgen. exe bezpośrednio do konwertowania zasobów w zestawie na format pliku RESW jest istotne tylko dla deweloperów, którzy chcą opracowywać aplikację ze sklepu Windows 8. x poza programem Visual Studio.  
+> Program Visual Studio automatycznie obsługuje wszystkie konwersje niezbędne do włączenia zasobów w bibliotece przenośnej do aplikacji ze sklepu Windows 8. x. Używanie Resgen.exe bezpośrednio do konwertowania zasobów w zestawie na format pliku. resw jest istotne tylko dla deweloperów, którzy chcą opracowywać aplikację ze sklepu Windows 8. x poza programem Visual Studio.  
   
  Składnia służąca do generowania plików resw z zestawu jest następująca:  
   
@@ -242,7 +243,7 @@ resgen MyApp.exe Win8Resources
   
 <a name="Conditional"></a>
 ### <a name="conditionally-compiling-resources"></a>Warunkowe kompilowanie zasobów  
- Począwszy od .NET Framework 4,5, Resgen. exe obsługuje kompilację warunkową zasobów ciągów w plikach tekstowych (txt i. restext). Dzięki temu można używać pojedynczego pliku zasobów w formacie tekstowym w wielu konfiguracjach kompilacji.  
+ Począwszy od .NET Framework 4,5, Resgen.exe obsługuje warunkową kompilację zasobów ciągów w plikach tekstowych (txt i. restext). Dzięki temu można używać pojedynczego pliku zasobów w formacie tekstowym w wielu konfiguracjach kompilacji.  
   
  W pliku txt lub. restext używasz `#ifdef` ...`#endif` konstrukcja do uwzględnienia zasobu w pliku Binary. resources, jeśli jest zdefiniowany symbol, i używasz `#if !` konstrukcji... `#endif` konstrukcja, aby dołączyć zasób, jeśli nie zdefiniowano symbolu. W czasie kompilacji można definiować symbole przy użyciu `/define:` opcji, a po niej rozdzielone przecinkami listę symboli. Porównanie uwzględnia wielkość liter; przypadek symboli zdefiniowany przez `/define` musi odpowiadać wielkości liter symboli w plikach tekstowych do skompilowania.  
   
@@ -271,7 +272,7 @@ resgen /define:CONSULT UIResources.restext
   
 <a name="Strong"></a>
 ### <a name="generating-a-strongly-typed-resource-class"></a>Generowanie silnie typizowanej klasy zasobów  
- Program Resgen.exe obsługuje silnie typizowane zasoby, które hermetyzują dostęp do zasobów przez tworzenie klas zawierających zestaw statycznych właściwości tylko do odczytu. Zapewnia to alternatywę do wywoływania metod <xref:System.Resources.ResourceManager> klasy bezpośrednio w celu pobierania zasobów. Obsługę zasobów o jednoznacznie określonym typie można włączyć przy użyciu `/str` opcji w programie Resgen. exe, która otacza funkcjonalność <xref:System.Resources.Tools.StronglyTypedResourceBuilder> klasy. Po określeniu `/str` opcji dane wyjściowe programu Resgen. exe to Klasa, która zawiera właściwości o jednoznacznie określonym typie, które pasują do zasobów, do których odwołuje się parametr wejściowy. Ta klasa dostarcza silnie typizowany dostęp tylko do odczytu do zasobów, które są dostępne w przetwarzanym pliku.  
+ Program Resgen.exe obsługuje silnie typizowane zasoby, które hermetyzują dostęp do zasobów przez tworzenie klas zawierających zestaw statycznych właściwości tylko do odczytu. Zapewnia to alternatywę do wywoływania metod <xref:System.Resources.ResourceManager> klasy bezpośrednio w celu pobierania zasobów. Obsługę zasobów o jednoznacznie określonym typie można włączyć przy użyciu `/str` opcji w Resgen.exe, która zawija funkcjonalność <xref:System.Resources.Tools.StronglyTypedResourceBuilder> klasy. Po określeniu `/str` opcji dane wyjściowe Resgen.exe jest klasą zawierającą jednoznacznie wpisane właściwości, które pasują do zasobów, do których odwołuje się parametr wejściowy. Ta klasa dostarcza silnie typizowany dostęp tylko do odczytu do zasobów, które są dostępne w przetwarzanym pliku.  
   
  Składania służąca do tworzenia silnie typizowanych zasobów jest następująca:  
   
@@ -285,11 +286,11 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  Nazwa pliku zasobów, łącznie z rozszerzeniem, dla którego należy wygenerować silnie typizowaną klasę zasobów. Plik może być plikiem tekstowym, plikiem w formacie XML lub binarnym plikiem resources; może mieć rozszerzenie txt, restext, resw lub resources.  
   
  `outputFilename`  
- Nazwa pliku wyjściowego. Jeśli `outputFilename` zawiera ścieżkę katalogu, katalog musi istnieć. Jeśli pominięto `outputFilename` , Resgen. exe tworzy plik resources o nazwie pliku głównego w tym `inputFilename` samym katalogu, co `inputFilename` .  
+ Nazwa pliku wyjściowego. Jeśli `outputFilename` zawiera ścieżkę katalogu, katalog musi istnieć. W przypadku pominięcia `outputFilename` Resgen.exe tworzy plik resources o nazwie pliku głównego `inputFilename` w tym samym katalogu, co `inputFilename` .  
   
- `outputFilename`może to być plik tekstowy, oparty na języku XML lub binarny. resources. Jeśli rozszerzenie pliku `outputFilename` jest inne niż rozszerzenie pliku `inputFilename` , program Resgen. exe wykonuje konwersję plików.  
+ `outputFilename`może to być plik tekstowy, oparty na języku XML lub binarny. resources. Jeśli rozszerzenie pliku `outputFilename` różni się od rozszerzenia pliku `inputFilename` , Resgen.exe wykonuje konwersję plików.  
   
- Jeśli `inputFilename` jest to plik resources, Resgen. exe kopiuje plik resources, jeśli `outputFilename` również jest to plik resources. W przypadku `outputFilename` pominięcia programu Resgen. exe zastępuje ten `inputFilename` sam plik resources.  
+ Jeśli `inputFilename` jest to plik resources, Resgen.exe kopiuje plik resources, jeśli `outputFilename` również jest to plik resources. `outputFilename`W przypadku pominięcia Resgen.exe nadpisać `inputFilename` przy użyciu identycznego pliku Resources.  
   
  *językowe*  
  Język, w którym ma zostać wygenerowany kod źródłowy klasy zasobów o jednoznacznie określonym typie. Możliwe wartości to `cs` , `C#` , i `csharp` dla kodu w języku C# `vb` oraz `visualbasic` dla kodu Visual Basic, `vbs` a `vbscript` w przypadku kodu VBScript, i `c++` , `mc` oraz `cpp` dla kodu C++.  
@@ -300,7 +301,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  *nazwą*  
  Nazwa silnie typizowanej klasy zasobów. Powinna odpowiadać głównej nazwie pliku resources. Na przykład jeśli program Resgen.exe generuje plik resources o nazwie MyCompany.Libraries.Strings.resources, nazwa silnie typizowanej klasy zasobów to Strings. Jeśli *ClassName* zostanie pominięty, wygenerowana Klasa jest pochodną nazwy głównej `outputFilename` . `outputFilename`W przypadku pominięcia wygenerowana Klasa jest pochodną nazwy głównej `inputFilename` .  
   
- *ClassName* nie może zawierać nieprawidłowych znaków, takich jak spacje osadzone. Jeśli *ClassName* zawiera osadzone spacje lub jeśli *ClassName* jest generowana domyślnie z *inputFilename*, a *inputFilename* zawiera osadzone spacje, Resgen. exe zastępuje wszystkie nieprawidłowe znaki znakiem podkreślenia ( \_ ).  
+ *ClassName* nie może zawierać nieprawidłowych znaków, takich jak spacje osadzone. Jeśli *ClassName* zawiera osadzone spacje lub jeśli *ClassName* jest generowana domyślnie z *inputFilename*, a *inputFilename* zawiera osadzone spacje, Resgen.exe zastępuje wszystkie nieprawidłowe znaki znakiem podkreślenia ( \_ ).  
   
  *Nazwa pliku*  
  Nazwa pliku klasy.  
@@ -321,7 +322,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
   
 - Jedna `static` (C#) lub `Shared` (Visual Basic) i właściwość tylko do odczytu dla każdego zasobu w pliku Resources. Nazwa właściwości to nazwa zasobu.  
   
- Na przykład następujące polecenie kompiluje plik zasobów o nazwie StringResources. txt do StringResources. resources i generuje klasę o nazwie `StringResources` w pliku z kodem źródłowym Visual Basic o nazwie StringResources. vb, która może być używana do uzyskiwania dostępu do Menedżer zasobów.  
+ Na przykład następujące polecenie kompiluje plik zasobów o nazwie StringResources.txt w StringResources. resources i generuje klasę o nazwie `StringResources` w Visual Basic źródłowym pliku o nazwie StringResources. vb, która może być używana do uzyskiwania dostępu do Menedżer zasobów.  
   
 ```console  
 resgen StringResources.txt /str:vb,,StringResources
@@ -332,5 +333,5 @@ resgen StringResources.txt /str:vb,,StringResources
 - [Narzędzia](index.md)
 - [Zasoby w aplikacjach klasycznych](../resources/index.md)
 - [Tworzenie plików zasobów](../resources/creating-resource-files-for-desktop-apps.md)
-- [Al. exe (Konsolidator zestawu)](al-exe-assembly-linker.md)
+- [Al.exe (Konsolidator zestawu)](al-exe-assembly-linker.md)
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)
