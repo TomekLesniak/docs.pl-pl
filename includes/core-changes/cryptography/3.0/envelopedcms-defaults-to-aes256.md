@@ -1,22 +1,22 @@
 ---
-ms.openlocfilehash: d23c6cc9f8ee9c912ce5c9509d157692d1a18f90
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: e0cdcce9b8c7d591925b08635e3354dadaf22b7b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721622"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556033"
 ---
-### <a name="envelopedcms-defaults-to-aes-256-encryption"></a><span data-ttu-id="584b0-101">EnvelopedCms domyślnie szyfrowanie AES-256</span><span class="sxs-lookup"><span data-stu-id="584b0-101">EnvelopedCms defaults to AES-256 encryption</span></span>
+### <a name="envelopedcms-defaults-to-aes-256-encryption"></a><span data-ttu-id="39018-101">EnvelopedCms domyślnie szyfrowanie AES-256</span><span class="sxs-lookup"><span data-stu-id="39018-101">EnvelopedCms defaults to AES-256 encryption</span></span>
 
-<span data-ttu-id="584b0-102">Domyślny algorytm szyfrowania symetrycznego używany przez program `EnvelopedCms` został zmieniony z TripleDES na AES-256.</span><span class="sxs-lookup"><span data-stu-id="584b0-102">The default symmetric encryption algorithm used by `EnvelopedCms` has changed from TripleDES to AES-256.</span></span>
+<span data-ttu-id="39018-102">Domyślny algorytm szyfrowania symetrycznego używany przez program `EnvelopedCms` został zmieniony z TripleDES na AES-256.</span><span class="sxs-lookup"><span data-stu-id="39018-102">The default symmetric encryption algorithm used by `EnvelopedCms` has changed from TripleDES to AES-256.</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="584b0-103">Zmień opis</span><span class="sxs-lookup"><span data-stu-id="584b0-103">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="39018-103">Zmień opis</span><span class="sxs-lookup"><span data-stu-id="39018-103">Change description</span></span>
 
-<span data-ttu-id="584b0-104">W programie .NET Core w wersji zapoznawczej 7 i starszych wersjach, gdy <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> jest używany do szyfrowania danych bez określania algorytmu szyfrowania symetrycznego za pośrednictwem przeciążenia konstruktora, dane były szyfrowane przy użyciu algorytmu TripleDES/3DES/3DEA/DES3-Ede.</span><span class="sxs-lookup"><span data-stu-id="584b0-104">In .NET Core Preview 7 and earlier versions, when <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> is used to encrypt data without specifying a symmetric encryption algorithm via a constructor overload, the data was encrypted with the TripleDES/3DES/3DEA/DES3-EDE algorithm.</span></span>
+<span data-ttu-id="39018-104">W poprzednich wersjach, gdy <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> jest używany do szyfrowania danych bez określania algorytmu szyfrowania symetrycznego za pośrednictwem przeciążenia konstruktora, dane są szyfrowane przy użyciu algorytmu TripleDES/3DES/3DEA/DES3-Ede.</span><span class="sxs-lookup"><span data-stu-id="39018-104">In previous versions, when <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> is used to encrypt data without specifying a symmetric encryption algorithm via a constructor overload, the data is encrypted with the TripleDES/3DES/3DEA/DES3-EDE algorithm.</span></span>
 
-<span data-ttu-id="584b0-105">Począwszy od programu .NET Core 3,0 wersja zapoznawcza 8 (za pośrednictwem wersji 4.6.0 pliku [System. Security. Cryptography. PKCS](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) NuGet), domyślny algorytm został zmieniony na AES-256 na potrzeby modernizacji algorytmu oraz poprawić zabezpieczenia opcji domyślnych.</span><span class="sxs-lookup"><span data-stu-id="584b0-105">Starting with .NET Core 3.0 Preview 8 (via version 4.6.0 of the [System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) NuGet package), the default algorithm has been changed to AES-256 for algorithm modernization and to improve the security of default options.</span></span> <span data-ttu-id="584b0-106">Jeśli certyfikat odbiorcy wiadomości ma klucz publiczny (poza EC), operacja szyfrowania może zakończyć się niepowodzeniem z <xref:System.Security.Cryptography.CryptographicException> powodu ograniczeń na platformie podstawowej.</span><span class="sxs-lookup"><span data-stu-id="584b0-106">If a message recipient certificate has a (non-EC) Diffie-Hellman public key, the encryption operation may fail with a <xref:System.Security.Cryptography.CryptographicException> due to limitations in the underlying platform.</span></span>
+<span data-ttu-id="39018-105">Począwszy od platformy .NET Core 3,0 (za pośrednictwem wersji 4.6.0 pakietu NuGet [System. Security. Cryptography. PKCS](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) ), domyślny algorytm został zmieniony na AES-256 na potrzeby modernizacji algorytmu oraz w celu poprawy bezpieczeństwa opcji domyślnych.</span><span class="sxs-lookup"><span data-stu-id="39018-105">Starting with .NET Core 3.0 (via version 4.6.0 of the [System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) NuGet package), the default algorithm has been changed to AES-256 for algorithm modernization and to improve the security of default options.</span></span> <span data-ttu-id="39018-106">Jeśli certyfikat odbiorcy wiadomości ma klucz publiczny (poza EC), operacja szyfrowania może zakończyć się niepowodzeniem z <xref:System.Security.Cryptography.CryptographicException> powodu ograniczeń na platformie podstawowej.</span><span class="sxs-lookup"><span data-stu-id="39018-106">If a message recipient certificate has a (non-EC) Diffie-Hellman public key, the encryption operation may fail with a <xref:System.Security.Cryptography.CryptographicException> due to limitations in the underlying platform.</span></span>
 
-<span data-ttu-id="584b0-107">W poniższym przykładowym kodzie dane są szyfrowane przy użyciu TripleDES, jeśli uruchomiono w programie .NET Core 3,0 w wersji zapoznawczej 7 lub starszym.</span><span class="sxs-lookup"><span data-stu-id="584b0-107">In the following sample code, the data is encrypted with TripleDES if running on .NET Core 3.0 Preview 7 or earlier.</span></span> <span data-ttu-id="584b0-108">W przypadku korzystania z programu .NET Core 3,0 w wersji zapoznawczej 8 lub nowszej jest on szyfrowany przy użyciu algorytmu AES-256.</span><span class="sxs-lookup"><span data-stu-id="584b0-108">If running on .NET Core 3.0 Preview 8 or later, it is encrypted with AES-256.</span></span>
+<span data-ttu-id="39018-107">W poniższym przykładowym kodzie dane są szyfrowane przy użyciu TripleDES w przypadku uruchamiania na platformie .NET Core 2,2 lub starszym.</span><span class="sxs-lookup"><span data-stu-id="39018-107">In the following sample code, the data is encrypted with TripleDES if running on .NET Core 2.2 or earlier.</span></span> <span data-ttu-id="39018-108">W przypadku uruchamiania w środowisku .NET Core 3,0 lub nowszym jest on szyfrowany przy użyciu algorytmu AES-256.</span><span class="sxs-lookup"><span data-stu-id="39018-108">If running on .NET Core 3.0 or later, it's encrypted with AES-256.</span></span>
 
 ```csharp
 EnvelopedCms cms = new EnvelopedCms(content);
@@ -24,13 +24,13 @@ cms.Encrypt(recipient);
 return cms.Encode();
 ```
 
-#### <a name="version-introduced"></a><span data-ttu-id="584b0-109">Wprowadzona wersja</span><span class="sxs-lookup"><span data-stu-id="584b0-109">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="39018-109">Wprowadzona wersja</span><span class="sxs-lookup"><span data-stu-id="39018-109">Version introduced</span></span>
 
-<span data-ttu-id="584b0-110">3,0 wersja zapoznawcza 8</span><span class="sxs-lookup"><span data-stu-id="584b0-110">3.0 Preview 8</span></span>
+<span data-ttu-id="39018-110">3.0</span><span class="sxs-lookup"><span data-stu-id="39018-110">3.0</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="584b0-111">Zalecana akcja</span><span class="sxs-lookup"><span data-stu-id="584b0-111">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="39018-111">Zalecana akcja</span><span class="sxs-lookup"><span data-stu-id="39018-111">Recommended action</span></span>
 
-<span data-ttu-id="584b0-112">Jeśli zmiana ma negatywny wpływ na zmiany, można przywrócić szyfrowanie TripleDES przez jawne określenie identyfikatora algorytmu szyfrowania w <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> konstruktorze, który zawiera parametr typu <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier> , taki jak:</span><span class="sxs-lookup"><span data-stu-id="584b0-112">If you are negatively impacted by the change, you can restore TripleDES encryption by explicitly specifying the encryption algorithm identifier in an <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> constructor that includes a parameter of type <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>, such as:</span></span>
+<span data-ttu-id="39018-112">Jeśli zmiana ma negatywny wpływ na zmiany, można przywrócić szyfrowanie TripleDES przez jawne określenie identyfikatora algorytmu szyfrowania w <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> konstruktorze, który zawiera parametr typu <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier> , taki jak:</span><span class="sxs-lookup"><span data-stu-id="39018-112">If you are negatively impacted by the change, you can restore TripleDES encryption by explicitly specifying the encryption algorithm identifier in an <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> constructor that includes a parameter of type <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>, such as:</span></span>
 
 ```csharp
 Oid tripleDesOid = new Oid("1.2.840.113549.3.7", null);
@@ -41,11 +41,11 @@ cms.Encrypt(recipient);
 return cms.Encode()l
 ```
 
-#### <a name="category"></a><span data-ttu-id="584b0-113">Kategoria</span><span class="sxs-lookup"><span data-stu-id="584b0-113">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="39018-113">Kategoria</span><span class="sxs-lookup"><span data-stu-id="39018-113">Category</span></span>
 
-<span data-ttu-id="584b0-114">Kryptografia</span><span class="sxs-lookup"><span data-stu-id="584b0-114">Cryptography</span></span>
+<span data-ttu-id="39018-114">Kryptografia</span><span class="sxs-lookup"><span data-stu-id="39018-114">Cryptography</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="584b0-115">Dotyczy interfejsów API</span><span class="sxs-lookup"><span data-stu-id="584b0-115">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="39018-115">Dotyczy interfejsów API</span><span class="sxs-lookup"><span data-stu-id="39018-115">Affected APIs</span></span>
 
 - <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.%23ctor>
 - <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.%23ctor(System.Security.Cryptography.Pkcs.ContentInfo)>

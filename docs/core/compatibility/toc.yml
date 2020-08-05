@@ -44,6 +44,8 @@
       href: msbuild.md
     - name: Obsługa sieci
       href: networking.md
+    - name: Serializacja
+      href: serialization.md
     - name: Visual Basic
       href: visualbasic.md
     - name: Windows Forms

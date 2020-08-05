@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: c9720f51e40ada4cd2cf6997ba7006a232893553
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d3bfeda8309af83d8e4199999ed91263a17caeea
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702466"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556256"
 ---
-### <a name="removed-status-bar-controls"></a><span data-ttu-id="6113d-101">Usunięto kontrolki paska stanu</span><span class="sxs-lookup"><span data-stu-id="6113d-101">Removed status bar controls</span></span>
+### <a name="removed-status-bar-controls"></a><span data-ttu-id="528a2-101">Usunięto kontrolki paska stanu</span><span class="sxs-lookup"><span data-stu-id="528a2-101">Removed status bar controls</span></span>
 
-<span data-ttu-id="6113d-102">Począwszy od programu .NET 5,0 w wersji zapoznawczej 1, niektóre kontrolki Windows Forms nie są już dostępne.</span><span class="sxs-lookup"><span data-stu-id="6113d-102">Starting in .NET 5.0 Preview 1, some Windows Forms controls are no longer available.</span></span>
+<span data-ttu-id="528a2-102">Począwszy od platformy .NET 5,0, niektóre kontrolki Windows Forms nie są już dostępne.</span><span class="sxs-lookup"><span data-stu-id="528a2-102">Starting in .NET 5.0, some Windows Forms controls are no longer available.</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="6113d-103">Zmień opis</span><span class="sxs-lookup"><span data-stu-id="6113d-103">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="528a2-103">Zmień opis</span><span class="sxs-lookup"><span data-stu-id="528a2-103">Change description</span></span>
 
-<span data-ttu-id="6113d-104">Począwszy od programu .NET 5,0 w wersji zapoznawczej 1, niektóre kontrolki Windows Forms powiązane z paskiem stanu nie są już dostępne.</span><span class="sxs-lookup"><span data-stu-id="6113d-104">Starting with .NET 5.0 Preview 1, some of the status bar-related Windows Forms controls are no longer available.</span></span> <span data-ttu-id="6113d-105">Kontrolki zamiany, które mają lepszy projekt i pomoc techniczną, zostały wprowadzone w .NET Framework 2,0.</span><span class="sxs-lookup"><span data-stu-id="6113d-105">Replacement controls that have better design and support were introduced in .NET Framework 2.0.</span></span> <span data-ttu-id="6113d-106">Przestarzałe formanty zostały wcześniej usunięte z przyborników projektanta, ale były nadal dostępne do użycia.</span><span class="sxs-lookup"><span data-stu-id="6113d-106">The deprecated controls were previously removed from designer toolboxes but were still available to be used.</span></span> <span data-ttu-id="6113d-107">Teraz zostały całkowicie usunięte.</span><span class="sxs-lookup"><span data-stu-id="6113d-107">Now, they have been completely removed.</span></span>
+<span data-ttu-id="528a2-104">Począwszy od platformy .NET 5,0, niektóre kontrolki Windows Forms powiązane z paskiem stanu nie są już dostępne.</span><span class="sxs-lookup"><span data-stu-id="528a2-104">Starting with .NET 5.0, some of the status bar-related Windows Forms controls are no longer available.</span></span> <span data-ttu-id="528a2-105">Kontrolki zamiany, które mają lepszy projekt i pomoc techniczną, zostały wprowadzone w .NET Framework 2,0.</span><span class="sxs-lookup"><span data-stu-id="528a2-105">Replacement controls that have better design and support were introduced in .NET Framework 2.0.</span></span> <span data-ttu-id="528a2-106">Przestarzałe formanty zostały wcześniej usunięte z przyborników projektanta, ale były nadal dostępne do użycia.</span><span class="sxs-lookup"><span data-stu-id="528a2-106">The deprecated controls were previously removed from designer toolboxes but were still available to be used.</span></span> <span data-ttu-id="528a2-107">Teraz zostały całkowicie usunięte.</span><span class="sxs-lookup"><span data-stu-id="528a2-107">Now, they have been completely removed.</span></span>
 
-<span data-ttu-id="6113d-108">Następujące typy nie są już dostępne:</span><span class="sxs-lookup"><span data-stu-id="6113d-108">The following types are no longer available:</span></span>
+<span data-ttu-id="528a2-108">Następujące typy nie są już dostępne:</span><span class="sxs-lookup"><span data-stu-id="528a2-108">The following types are no longer available:</span></span>
 
 * `StatusBar`
 * `StatusBarDrawItemEventArgs`
@@ -26,24 +26,24 @@ ms.locfileid: "83702466"
 * `StatusBarPanelClickEventHandler`
 * `StatusBarPanelStyle`
 
-#### <a name="version-introduced"></a><span data-ttu-id="6113d-109">Wprowadzona wersja</span><span class="sxs-lookup"><span data-stu-id="6113d-109">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="528a2-109">Wprowadzona wersja</span><span class="sxs-lookup"><span data-stu-id="528a2-109">Version introduced</span></span>
 
-<span data-ttu-id="6113d-110">5,0 wersja zapoznawcza 1</span><span class="sxs-lookup"><span data-stu-id="6113d-110">5.0 Preview 1</span></span>
+<span data-ttu-id="528a2-110">5,0 wersja zapoznawcza 1</span><span class="sxs-lookup"><span data-stu-id="528a2-110">5.0 Preview 1</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="6113d-111">Zalecana akcja</span><span class="sxs-lookup"><span data-stu-id="6113d-111">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="528a2-111">Zalecana akcja</span><span class="sxs-lookup"><span data-stu-id="528a2-111">Recommended action</span></span>
 
-<span data-ttu-id="6113d-112">Przejdź do zastępczych interfejsów API dla tych formantów i ich scenariuszy:</span><span class="sxs-lookup"><span data-stu-id="6113d-112">Move to the replacement APIs for these controls and their scenarios:</span></span>
+<span data-ttu-id="528a2-112">Przejdź do zastępczych interfejsów API dla tych formantów i ich scenariuszy:</span><span class="sxs-lookup"><span data-stu-id="528a2-112">Move to the replacement APIs for these controls and their scenarios:</span></span>
 
-| <span data-ttu-id="6113d-113">Stara kontrolka (API)</span><span class="sxs-lookup"><span data-stu-id="6113d-113">Old Control (API)</span></span> | <span data-ttu-id="6113d-114">Zalecane zastąpienie</span><span class="sxs-lookup"><span data-stu-id="6113d-114">Recommended Replacement</span></span>                          |
+| <span data-ttu-id="528a2-113">Stara kontrolka (API)</span><span class="sxs-lookup"><span data-stu-id="528a2-113">Old Control (API)</span></span> | <span data-ttu-id="528a2-114">Zalecane zastąpienie</span><span class="sxs-lookup"><span data-stu-id="528a2-114">Recommended Replacement</span></span>                          |
 |-------------------|--------------------------------------------------|
-| <span data-ttu-id="6113d-115">StatusBar</span><span class="sxs-lookup"><span data-stu-id="6113d-115">StatusBar</span></span>         | <xref:System.Windows.Forms.StatusStrip>          |
-| <span data-ttu-id="6113d-116">StatusBarPanel</span><span class="sxs-lookup"><span data-stu-id="6113d-116">StatusBarPanel</span></span>    | <xref:System.Windows.Forms.ToolStripStatusLabel> |
+| <span data-ttu-id="528a2-115">StatusBar</span><span class="sxs-lookup"><span data-stu-id="528a2-115">StatusBar</span></span>         | <xref:System.Windows.Forms.StatusStrip>          |
+| <span data-ttu-id="528a2-116">StatusBarPanel</span><span class="sxs-lookup"><span data-stu-id="528a2-116">StatusBarPanel</span></span>    | <xref:System.Windows.Forms.ToolStripStatusLabel> |
 
-#### <a name="category"></a><span data-ttu-id="6113d-117">Kategoria</span><span class="sxs-lookup"><span data-stu-id="6113d-117">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="528a2-117">Kategoria</span><span class="sxs-lookup"><span data-stu-id="528a2-117">Category</span></span>
 
-<span data-ttu-id="6113d-118">Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6113d-118">Windows Forms</span></span>
+<span data-ttu-id="528a2-118">Windows Forms</span><span class="sxs-lookup"><span data-stu-id="528a2-118">Windows Forms</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="6113d-119">Dotyczy interfejsów API</span><span class="sxs-lookup"><span data-stu-id="6113d-119">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="528a2-119">Dotyczy interfejsów API</span><span class="sxs-lookup"><span data-stu-id="528a2-119">Affected APIs</span></span>
 
 - <xref:System.Windows.Forms.StatusBar?displayProperty=fullName>
 - <xref:System.Windows.Forms.StatusBarDrawItemEventArgs?displayProperty=fullName>
