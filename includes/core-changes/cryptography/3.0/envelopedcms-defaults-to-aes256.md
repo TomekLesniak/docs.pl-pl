@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d23c6cc9f8ee9c912ce5c9509d157692d1a18f90
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: e0cdcce9b8c7d591925b08635e3354dadaf22b7b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721622"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556033"
 ---
 ### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>EnvelopedCms domyślnie szyfrowanie AES-256
 
@@ -12,11 +12,11 @@ Domyślny algorytm szyfrowania symetrycznego używany przez program `EnvelopedCm
 
 #### <a name="change-description"></a>Zmień opis
 
-W programie .NET Core w wersji zapoznawczej 7 i starszych wersjach, gdy <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> jest używany do szyfrowania danych bez określania algorytmu szyfrowania symetrycznego za pośrednictwem przeciążenia konstruktora, dane były szyfrowane przy użyciu algorytmu TripleDES/3DES/3DEA/DES3-Ede.
+W poprzednich wersjach, gdy <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> jest używany do szyfrowania danych bez określania algorytmu szyfrowania symetrycznego za pośrednictwem przeciążenia konstruktora, dane są szyfrowane przy użyciu algorytmu TripleDES/3DES/3DEA/DES3-Ede.
 
-Począwszy od programu .NET Core 3,0 wersja zapoznawcza 8 (za pośrednictwem wersji 4.6.0 pliku [System. Security. Cryptography. PKCS](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) NuGet), domyślny algorytm został zmieniony na AES-256 na potrzeby modernizacji algorytmu oraz poprawić zabezpieczenia opcji domyślnych. Jeśli certyfikat odbiorcy wiadomości ma klucz publiczny (poza EC), operacja szyfrowania może zakończyć się niepowodzeniem z <xref:System.Security.Cryptography.CryptographicException> powodu ograniczeń na platformie podstawowej.
+Począwszy od platformy .NET Core 3,0 (za pośrednictwem wersji 4.6.0 pakietu NuGet [System. Security. Cryptography. PKCS](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) ), domyślny algorytm został zmieniony na AES-256 na potrzeby modernizacji algorytmu oraz w celu poprawy bezpieczeństwa opcji domyślnych. Jeśli certyfikat odbiorcy wiadomości ma klucz publiczny (poza EC), operacja szyfrowania może zakończyć się niepowodzeniem z <xref:System.Security.Cryptography.CryptographicException> powodu ograniczeń na platformie podstawowej.
 
-W poniższym przykładowym kodzie dane są szyfrowane przy użyciu TripleDES, jeśli uruchomiono w programie .NET Core 3,0 w wersji zapoznawczej 7 lub starszym. W przypadku korzystania z programu .NET Core 3,0 w wersji zapoznawczej 8 lub nowszej jest on szyfrowany przy użyciu algorytmu AES-256.
+W poniższym przykładowym kodzie dane są szyfrowane przy użyciu TripleDES w przypadku uruchamiania na platformie .NET Core 2,2 lub starszym. W przypadku uruchamiania w środowisku .NET Core 3,0 lub nowszym jest on szyfrowany przy użyciu algorytmu AES-256.
 
 ```csharp
 EnvelopedCms cms = new EnvelopedCms(content);
@@ -26,7 +26,7 @@ return cms.Encode();
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0 wersja zapoznawcza 8
+3.0
 
 #### <a name="recommended-action"></a>Zalecana akcja
 

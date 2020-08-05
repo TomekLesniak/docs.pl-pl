@@ -7,25 +7,28 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- cryptography [.NET Framework], asymmetric keys
+- cryptography [.NET], asymmetric keys
 - storing asymmetric keys
 - keys, asymmetric
 - encryption keys
 - keys, storing in key containers
-- asymmetric keys [.NET Framework]
-- encryption [.NET Framework], asymmetric keys
+- asymmetric keys [.NET]
+- encryption [.NET], asymmetric keys
 - decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-ms.openlocfilehash: a0fbde37491043cc1aab71e9733087bf410b997d
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: aa6fad815338cbd6316deca7be0a23286630fa56
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769032"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556296"
 ---
 # <a name="store-asymmetric-keys-in-a-key-container"></a>Przechowywanie kluczy asymetrycznych w kontenerze kluczy
 
 Asymetryczne klucze prywatne nigdy nie powinny być przechowywane Verbatim ani w postaci zwykłego tekstu na komputerze lokalnym. Jeśli musisz zapisać klucz prywatny, Użyj kontenera kluczy. Aby uzyskać więcej informacji na temat kontenerów kluczy, zobacz temat [Omówienie kontenerów kluczy RSA na poziomie komputera i użytkownika](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100)).
+
+> [!NOTE]
+> Kod w tym artykule ma zastosowanie do systemu Windows.
 
 ## <a name="create-an-asymmetric-key-and-save-it-in-a-key-container"></a>Tworzenie klucza asymetrycznego i zapisywanie go w kontenerze kluczy
 
@@ -244,7 +247,10 @@ Key deleted.
 
 ## <a name="see-also"></a>Zobacz też
 
+- [Model kryptografii](cryptography-model.md)
+- [Usługi kryptograficzne](cryptographic-services.md)
+- [Kryptografia międzyplatformowa](cross-platform-cryptography.md)
 - [Generowanie kluczy szyfrowania i odszyfrowywania](generating-keys-for-encryption-and-decryption.md)
 - [Szyfrowanie danych](encrypting-data.md)
 - [Odszyfrowywanie danych](decrypting-data.md)
-- [Usługi kryptograficzne](cryptographic-services.md)
+- [Ochrona danych ASP.NET Core](/aspnet/core/security/data-protection/introduction)

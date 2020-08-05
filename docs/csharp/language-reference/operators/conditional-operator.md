@@ -1,5 +1,5 @@
 ---
-title: '?: operator — odwołanie do języka C#'
+title: '?: operator-Dokumentacja języka C#'
 ms.date: 03/06/2020
 f1_keywords:
 - ?:_CSharpKeyword
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 1a17ba092d4228ba909c8774a2f7e15c2c50cfdc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e6753a08bbd96f980b3c5901e763f2dfad055c6
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399519"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555360"
 ---
-# <a name="-operator-c-reference"></a>?: operator (odwołanie do języka C#)
+# <a name="-operator-c-reference"></a>?: — operator (odwołanie w C#)
 
-Operator `?:`warunkowy `true` `false`, znany również jako operator warunkowy wzięcia wt.
+Operator warunkowy `?:` , znany również jako operator warunkowy Trzyelementowy, oblicza wyrażenie logiczne i zwraca wynik jednego z dwóch wyrażeń, w zależności od tego, czy wyrażenie logiczne oblicza wartość `true` lub `false` .
 
 Składnia operatora warunkowego jest następująca:
 
@@ -26,72 +26,72 @@ Składnia operatora warunkowego jest następująca:
 condition ? consequent : alternative
 ```
 
-Wyrażenie `condition` musi oceniać do `true` lub `false`. Jeśli `condition` zostanie `true`obliczona `consequent` wartość , wyrażenie zostanie obliczone, a jego wynik stanie się wynikiem operacji. Jeśli `condition` zostanie `false`obliczona `alternative` wartość , wyrażenie zostanie obliczone, a jego wynik stanie się wynikiem operacji. Tylko `consequent` `alternative` lub jest oceniana.
+`condition`Wyrażenie musi być szacowane do `true` lub `false` . Jeśli `condition` jest wynikiem obliczenia `true` , `consequent` wyrażenie jest oceniane, a jego wynik zmieni się na wynik operacji. Jeśli `condition` jest wynikiem obliczenia `false` , `alternative` wyrażenie jest oceniane, a jego wynik zmieni się na wynik operacji. Tylko `consequent` lub `alternative` jest oceniane.
 
-Typ `consequent` i `alternative` musi być taka sama lub musi istnieć niejawna konwersja z jednego typu na drugi.
+Typ `consequent` i `alternative` musi być taki sam lub musi być niejawną konwersją z jednego typu na drugi.
 
-Operator warunkowy ma charakter asocjatywny, to oznacza, że jest wyrazem formy
+Operator warunkowy jest prawym przyciskiem asocjacyjnym, czyli wyrażeniem formularza
 
 ```csharp
 a ? b : c ? d : e
 ```
 
-jest oceniana jako
+jest oceniane jako
 
 ```csharp
 a ? b : (c ? d : e)
 ```
 
 > [!TIP]
-> Za pomocą następującego urządzenia mnemonic można zapamiętać sposób oceny operatora warunkowego:
+> Poniższego urządzenia można użyć do zapamiętania, jak jest oceniany operator warunkowy:
 >
 > ```text
 > is this condition true ? yes : no
 > ```
 
-W poniższym przykładzie przedstawiono użycie operatora warunkowego:
+Poniższy przykład ilustruje użycie operatora warunkowego:
 
 [!code-csharp-interactive[non ref conditional](snippets/ConditionalOperator.cs#ConditionalValue)]
 
-## <a name="conditional-ref-expression"></a>Warunkowe wyrażenie ref
+## <a name="conditional-ref-expression"></a>Wyrażenie warunkowe ref
 
-Począwszy od C# 7.2 ref [lokalnej](../keywords/ref.md#ref-locals) lub [ref odczytu tylko](../keywords/ref.md#ref-readonly-locals) zmienna lokalna może być przypisana warunkowo z warunkowego wyrażenia ref. Można również użyć wyrażenia warunkowego ref jako [wartości zwracanej odwołania](../keywords/ref.md#reference-return-values) lub jako [ `ref` argumentu metody](../keywords/ref.md#passing-an-argument-by-reference).
+Począwszy od języka C# 7,2, [lokalna](../keywords/ref.md#ref-locals) zmienna lokalna lub [ref tylko do odczytu](../keywords/ref.md#ref-readonly-locals) można przypisać warunkowo warunkowo wyrażenie ref. Można również użyć wyrażenia ref warunkowego jako [wartości zwracanej przez odwołanie](../keywords/ref.md#reference-return-values) lub jako [ `ref` argumentu metody](../keywords/ref.md#passing-an-argument-by-reference).
 
-Składnia wyrażenia warunkowego ref jest następująca:
+Składnia wyrażenia ref warunkowego jest następująca:
 
 ```csharp
 condition ? ref consequent : ref alternative
 ```
 
-Podobnie jak oryginalny operator warunkowy, warunkowe wyrażenie ref oblicza `consequent` tylko `alternative`jedno z dwóch wyrażeń: albo .
+Podobnie jak w przypadku oryginalnego operatora warunkowego wyrażenie ref oblicza tylko jedno z dwóch wyrażeń: albo `consequent` lub `alternative` .
 
-W przypadku wyrażenia warunkowego ref typ `consequent` `alternative` i musi być taki sam.
+W przypadku warunkowego wyrażenia ref typ `consequent` i `alternative` musi być taki sam.
 
-W poniższym przykładzie przedstawiono użycie wyrażenia warunkowego ref:
+Poniższy przykład demonstruje użycie warunkowego wyrażenia ref:
 
 [!code-csharp-interactive[conditional ref](snippets/ConditionalOperator.cs#ConditionalRef)]
 
-## <a name="conditional-operator-and-an-ifelse-statement"></a>Operator warunkowy i oświadczenie `if..else`
+## <a name="conditional-operator-and-an-ifelse-statement"></a>Operator warunkowy i `if..else` instrukcja
 
-Użycie operatora warunkowego zamiast [instrukcji if-else](../keywords/if-else.md) może spowodować bardziej zwięzły kod w przypadkach, gdy trzeba warunkowo obliczyć wartość. W poniższym przykładzie przedstawiono dwa sposoby klasyfikacji liczby całkowitej jako ujemnej lub nienegatywnej:
+Użycie operatora warunkowego zamiast instrukcji [if-else](../keywords/if-else.md) może spowodować bardziej zwięzły kod w przypadkach, gdy konieczne jest warunkowe obliczenie wartości. Poniższy przykład ilustruje dwa sposoby klasyfikowania liczby całkowitej jako ujemnej lub nieujemnej:
 
 [!code-csharp[conditional and if-else](snippets/ConditionalOperator.cs#CompareWithIf)]
 
-## <a name="operator-overloadability"></a>Przeciążenie operatora
+## <a name="operator-overloadability"></a>Przeciążanie operatora
 
 Typ zdefiniowany przez użytkownika nie może przeciążać operatora warunkowego.
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji, zobacz [sekcję Operator warunkowy](~/_csharplang/spec/expressions.md#conditional-operator) [specyfikacji języka Języka C#.](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji, zobacz sekcję [warunkowego operatora](~/_csharplang/spec/expressions.md#conditional-operator) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-Aby uzyskać więcej informacji na temat wyrażenia warunkowego ref, zobacz [notę propozycji funkcji](~/_csharplang/proposals/csharp-7.2/conditional-ref.md).
+Aby uzyskać więcej informacji na temat wyrażenia ref warunkowego, zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-7.2/conditional-ref.md).
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
-- [instrukcja if-else](../keywords/if-else.md)
-- [?. I? [] operatorzy](member-access-operators.md#null-conditional-operators--and-)
-- [?? I?? = operatorzy](null-coalescing-operator.md)
+- [Operatory i wyrażenia języka C#](index.md)
+- [if-else, instrukcja](../keywords/if-else.md)
+- [?. lub? operator []](member-access-operators.md#null-conditional-operators--and-)
+- [?? i? = — Operatory](null-coalescing-operator.md)
 - [ref — słowo kluczowe](../keywords/ref.md)

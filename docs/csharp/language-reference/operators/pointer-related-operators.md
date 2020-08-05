@@ -1,6 +1,6 @@
 ---
-title: Operatory powiązane ze wskaźnikiem — odwołanie do języka C#
-description: Dowiedz się więcej o operatorach języka C#, których można używać podczas pracy ze wskaźnikami.
+title: Operatory powiązane ze wskaźnikiem — odwołanie w C#
+description: Dowiedz się więcej na temat operatorów języka C#, których można używać podczas pracy ze wskaźnikami.
 ms.date: 05/20/2019
 author: pkulikov
 f1_keywords:
@@ -20,57 +20,57 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 7eb6666d10c44c342f69c7cfc763feb1b7b98c9d
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 05bc6ce00adc8c874b88ccc8da5afbcfc702585b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738602"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555293"
 ---
-# <a name="pointer-related-operators-c-reference"></a>Operatory powiązane ze wskaźnikiem (odwołanie do języka C#)
+# <a name="pointer-related-operators-c-reference"></a>Operatory pokrewne wskaźnika (odwołanie w C#)
 
-Do pracy ze wskaźnikami można używać następujących operatorów:
+Można użyć następujących operatorów do pracy ze wskaźnikami:
 
-- Operator [ `&` dwuaryjny (adres:](#address-of-operator-) aby uzyskać adres zmiennej
-- Operator unary [ `*` (pośredni wskaźnik):](#pointer-indirection-operator-) aby uzyskać zmienną wskazywana przez wskaźnik
+- Operator jednoargumentowy [ `&` (Address-of)](#address-of-operator-) : Aby uzyskać adres zmiennej
+- Operator jednoargumentowy [ `*` (pośredni wskaźnik)](#pointer-indirection-operator-) : Aby uzyskać zmienną wskazywaną przez wskaźnik
 - Operatory [ `->` (dostęp do elementów członkowskich)](#pointer-member-access-operator--) i [ `[]` (dostęp do elementów)](#pointer-element-access-operator-)
-- Operatory [ `+` `-`arytmetyczne `++`, , i`--`](#pointer-arithmetic-operators)
-- Operatory [ `==` `!=`porównawcze `>` `<=`, `<`, , , i`>=`](#pointer-comparison-operators)
+- Operatory arytmetyczne [ `+` , `-` , `++` i `--` ](#pointer-arithmetic-operators)
+- Operatory porównania,,,, [ `==` `!=` `<` `>` `<=` i `>=` ](#pointer-comparison-operators)
 
-Aby uzyskać informacje o typach wskaźników, zobacz [Typy wskaźników](../../programming-guide/unsafe-code-pointers/pointer-types.md).
+Aby uzyskać informacje na temat typów wskaźnikowych, zobacz [typy wskaźnika](../../programming-guide/unsafe-code-pointers/pointer-types.md).
 
 > [!NOTE]
-> Każda operacja ze wskaźnikami wymaga [niebezpiecznego](../keywords/unsafe.md) kontekstu. Kod, który zawiera niebezpieczne bloki muszą [`-unsafe`](../compiler-options/unsafe-compiler-option.md) być skompilowane z opcją kompilatora.
+> Wszystkie operacje ze wskaźnikami wymagają [niebezpiecznego](../keywords/unsafe.md) kontekstu. Kod, który zawiera niebezpieczne bloki, musi być skompilowany przy użyciu [`-unsafe`](../compiler-options/unsafe-compiler-option.md) opcji kompilatora.
 
-## <a name="address-of-operator-amp"></a><a name="address-of-operator-"></a>Adres operatora&amp;
+## <a name="address-of-operator-amp"></a><a name="address-of-operator-"></a>Operator address-of&amp;
 
-Operator unary `&` zwraca adres swojego operandu:
+Operator jednoargumentowy `&` zwraca adres tego operandu:
 
 [!code-csharp[address of local](snippets/PointerOperators.cs#AddressOf)]
 
-Operand `&` operatora musi być zmienną stałą. *Stałe* zmienne to zmienne, które znajdują się w lokalizacjach magazynu, na które nie ma wpływu działanie modułu zbierającego [elementy bezużyteczne.](../../../standard/garbage-collection/index.md) W poprzednim przykładzie zmienna `number` lokalna jest zmienną stałą, ponieważ znajduje się na stosie. Zmienne, które znajdują się w lokalizacjach magazynu, które mogą mieć wpływ na moduł zbierający elementy bezużyteczne (na przykład przeniesiony) są *nazywane* zmiennymi ruchomymi. Pola obiektów i elementy tablicy są przykładami zmiennych ruchomych. Możesz uzyskać adres zmiennej ruchomej, jeśli "naprawić" lub "przypiąć", to z [ `fixed` instrukcją](../keywords/fixed-statement.md). Uzyskany adres jest prawidłowy tylko `fixed` wewnątrz bloku instrukcji. W poniższym `fixed` przykładzie pokazano, `&` jak używać instrukcji i operatora:
+Operand `&` operatora musi być zmienną stałą. Zmienne *stałe* są zmiennymi, które znajdują się w lokalizacjach magazynu, które nie mają wpływ na działanie [modułu wyrzucania elementów bezużytecznych](../../../standard/garbage-collection/index.md). W poprzednim przykładzie zmienna lokalna `number` to stała zmienna, ponieważ znajduje się ona na stosie. Zmienne, które znajdują się w lokalizacjach magazynu, na które może mieć wpływ Moduł wyrzucania elementów bezużytecznych (na przykład rezlokalizowane), *są nazywane* zmiennymi zmiennych. Pola obiektów i elementy tablicy to przykłady ruchomych zmiennych. Adres ruchomej zmiennej można pobrać, jeśli "Napraw" lub "PIN", za pomocą [ `fixed` instrukcji](../keywords/fixed-statement.md). Uzyskany adres jest prawidłowy tylko wewnątrz bloku `fixed` instrukcji. Poniższy przykład pokazuje, jak używać `fixed` instrukcji i `&` operatora:
 
 [!code-csharp[address of fixed](snippets/PointerOperators.cs#AddressOfFixed)]
 
-Nie można uzyskać adresu stałej lub wartości.
+Nie można uzyskać adresu stałej ani wartości.
 
-Aby uzyskać więcej informacji na temat zmiennych stałych i ruchomych, zobacz sekcję [Stałe i ruchome zmienne](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables) [specyfikacji języka C#.](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji na temat zmiennych stałych i przenośnych, zobacz sekcję [zmienne stałe i ruchome](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-Operator `&` binarny oblicza [logiczne i](boolean-logical-operators.md#logical-and-operator-) jego boolean operands lub [bitowe logiczne i](bitwise-and-shift-operators.md#logical-and-operator-) jego integralną operands.
+Operator binarny `&` oblicza wartość [logiczną i](boolean-logical-operators.md#logical-and-operator-) jej operandy logiczne oraz [koniunkcję bitową i](bitwise-and-shift-operators.md#logical-and-operator-) jej całkowite argumenty operacji.
 
-## <a name="pointer-indirection-operator-"></a>Operator pośredni wskaźnik *
+## <a name="pointer-indirection-operator-"></a>Operator pośredni wskaźnika *
 
-Operator pośredni wskaźnika `*` ujednawczy uzyskuje zmienną, do której wskazuje jego operand. Jest również znany jako operator dereference. Operand `*` operatora musi być typu wskaźnika.
+Operator operatora bezoperatorowego pośredni `*` uzyskuje zmienną, do której odwołuje się argument operacji. Jest on również znany jako operator dereferencji. Operand `*` operatora musi być typu wskaźnika.
 
 [!code-csharp[pointer indirection](snippets/PointerOperators.cs#PointerIndirection)]
 
-Nie można `*` zastosować operatora do `void*`wyrażenia typu .
+Nie można zastosować `*` operatora do wyrażenia typu `void*` .
 
-Operator `*` binarny oblicza [iloczyn](arithmetic-operators.md#multiplication-operator-) jego argumentów liczbowych.
+Operator binarny `*` oblicza [iloczyn](arithmetic-operators.md#multiplication-operator-) argumentów liczbowych.
 
-## <a name="pointer-member-access-operator--"></a>Operator dostępu do elementu członkowskiego wskaźnika ->
+## <a name="pointer-member-access-operator--"></a>Operator dostępu do elementów członkowskich wskaźnika — >
 
-Operator `->` łączy [pośredni wskaźnik](#pointer-indirection-operator-) i [dostęp do elementu członkowskiego](member-access-operators.md#member-access-expression-). Oznacza to, `x` że jeśli `T*` jest `y` wskaźnikiem typu `T`i jest dostępnym elementem członkowskim typu, wyrażenie formularza
+`->`Operator łączy [pośredni wskaźnik](#pointer-indirection-operator-) i [dostęp do elementów członkowskich](member-access-operators.md#member-access-expression-). Oznacza to, że jeśli `x` jest wskaźnikiem typu `T*` i `y` jest dostępnym elementem członkowskim typu `T` , wyrażenie formularza
 
 ```csharp
 x->y
@@ -82,115 +82,115 @@ jest równoważny
 (*x).y
 ```
 
-Poniższy przykład pokazuje użycie `->` operatora:
+Poniższy przykład ilustruje użycie `->` operatora:
 
 [!code-csharp[pointer member access](snippets/PointerOperators.cs#MemberAccess)]
 
-Nie można `->` zastosować operatora do `void*`wyrażenia typu .
+Nie można zastosować `->` operatora do wyrażenia typu `void*` .
 
-## <a name="pointer-element-access-operator-"></a>Operator dostępu do elementu wskaźnika []
+## <a name="pointer-element-access-operator-"></a>Operator dostępu do elementów wskaźnika []
 
-W przypadku `p` wyrażenia typu wskaźnika dostęp do `p[n]` elementu wskaźnika formularza jest oceniany jako `*(p + n)`, `int`gdzie `long` `n` musi `ulong`być typu niejawnie konwertowane na , `uint`, lub . Aby uzyskać informacje na `+` temat zachowania operatora ze wskaźnikami, zobacz [Dodawanie lub odejmowanie wartości integralnej do lub z sekcji wskaźnika.](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer)
+Dla wyrażenia `p` typu wskaźnika dostęp do elementu wskaźnika `p[n]` jest oceniany jako `*(p + n)` , gdzie `n` musi być typem niejawnie konwertowanym na `int` , `uint` , `long` , lub `ulong` . Aby uzyskać informacje o zachowaniu `+` operatora ze wskaźnikami, zobacz [Dodawanie lub odejmowanie wartości całkowitej do lub z sekcji wskaźnika](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) .
 
-W poniższym przykładzie pokazano, jak uzyskać `[]` dostęp do elementów tablicy za pomocą wskaźnika i operatora:
+W poniższym przykładzie pokazano, jak uzyskać dostęp do elementów tablicy za pomocą wskaźnika i `[]` operatora:
 
 [!code-csharp[pointer element access](snippets/PointerOperators.cs#ElementAccess)]
 
 W poprzednim przykładzie [ `stackalloc` wyrażenie](stackalloc.md) przydziela blok pamięci na stosie.
 
 > [!NOTE]
-> Operator dostępu do elementu wskaźnika nie sprawdza błędów poza granicami.
+> Operator dostępu do elementów wskaźnika nie sprawdza występowania błędów poza granicami.
 
-Nie można `[]` używać dostępu do elementu `void*`wskaźnika z wyrażeniem typu .
+Nie można użyć `[]` do uzyskania dostępu do elementu wskaźnika z wyrażeniem typu `void*` .
 
-Można również użyć `[]` operatora dla [elementu tablicy lub dostępu do indeksatora](member-access-operators.md#indexer-operator-).
+Można również użyć `[]` operatora dla [elementu tablicy lub dostępu indeksatora](member-access-operators.md#indexer-operator-).
 
 ## <a name="pointer-arithmetic-operators"></a>Operatory arytmetyczne wskaźnika
 
 Za pomocą wskaźników można wykonywać następujące operacje arytmetyczne:
 
-- Dodawanie lub odejmowanie wartości integralnej do lub ze wskaźnika
+- Dodaj lub Odejmij wartość całkowitą do lub ze wskaźnika
 - Odejmij dwa wskaźniki
-- Zwiększanie lub zmniejszanie wskaźnika
+- Zwiększ lub Zmniejsz wskaźnik
 
-Nie można wykonywać tych operacji `void*`ze wskaźnikami typu .
+Nie można wykonać tych operacji ze wskaźnikami typu `void*` .
 
-Aby uzyskać informacje na temat obsługiwanych operacji arytmetycznych z typami liczbowymi, zobacz [Operatory arytmetyczne](arithmetic-operators.md).
+Aby uzyskać informacje o obsługiwanych operacjach arytmetycznych o typach liczbowych, zobacz [Operatory arytmetyczne](arithmetic-operators.md).
 
-### <a name="addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer"></a>Dodawanie lub odejmowanie wartości integralnej do lub ze wskaźnika
+### <a name="addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer"></a>Dodanie lub odjęcie wartości całkowitej do lub ze wskaźnika
 
-Dla wskaźnika `p` `T*` typu i `n` wyrażenia typu niejawnie `int` `uint`konwertowane na , `long`, lub `ulong`, dodawanie i odejmowanie są zdefiniowane w następujący sposób:
+Dla wskaźnika `p` typu `T*` i wyrażenia `n` typu niejawnie konwertowany na `int` , `uint` , `long` , lub `ulong` , Dodawanie i odejmowanie są zdefiniowane w następujący sposób:
 
-- Zarówno `p + n` `n + p` wyrażenia, jak i `T*` wyrażenia dają `n * sizeof(T)` wskaźnik typu, `p`który wynika z dodania do adresu podanego przez program .
-- Wyrażenie `p - n` tworzy wskaźnik typu, `T*` który wynika z `n * sizeof(T)` odejmowania `p`od adresu podanego przez .
+- Oba `p + n` i `n + p` wyrażenia tworzą wskaźnik typu `T*` , który wynika z dodania `n * sizeof(T)` do adresu podanego przez `p` .
+- `p - n`Wyrażenie generuje wskaźnik typu `T*` , który wynika z odejmowania `n * sizeof(T)` od adresu podanych przez `p` .
 
 [ `sizeof` Operator](sizeof.md) uzyskuje rozmiar typu w bajtach.
 
-Poniższy przykład pokazuje użycie `+` operatora ze wskaźnikiem:
+Poniższy przykład ilustruje użycie `+` operatora ze wskaźnikiem:
 
 [!code-csharp[pointer addition](snippets/PointerOperators.cs#AddNumber)]
 
 ### <a name="pointer-subtraction"></a>Odejmowanie wskaźnika
 
-Dla dwóch `p1` wskaźników `p2` i `T*`typu `p1 - p2` wyrażenie tworzy różnicę między adresami `p2` podanymi `sizeof(T)`przez `p1` i podzielonymi przez . Typem wyniku jest `long`. Oznacza to, `p1 - p2` że `((long)(p1) - (long)(p2)) / sizeof(T)`jest obliczany jako .
+W przypadku dwóch wskaźników `p1` i `p2` typu `T*` wyrażenie `p1 - p2` tworzy różnicę między adresami podaną przez `p1` i `p2` podzieloną przez `sizeof(T)` . Typ wyniku to `long` . Oznacza to, że `p1 - p2` jest obliczana jako `((long)(p1) - (long)(p2)) / sizeof(T)` .
 
-W poniższym przykładzie pokazano odejmowanie wskaźnika:
+Poniższy przykład ilustruje odejmowanie wskaźnika:
 
 [!code-csharp[pointer subtraction](snippets/PointerOperators.cs#SubtractPointers)]
 
-### <a name="pointer-increment-and-decrement"></a>Zwiększanie i zmniejszanie wskaźnika
+### <a name="pointer-increment-and-decrement"></a>Zwiększenie i zmniejszenie wskaźnika
 
-Operator `++` przyrostu [dodaje](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 do jego operand wskaźnika. Operator `--` dekrementacji [odejmuje](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 od jego operand wskaźnika.
+`++`Operator przyrostu [dodaje](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 do jego operandu wskaźnika. `--`Operator zmniejszania [odejmuje](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 od jego operandu wskaźnika.
 
-Oba operatory są obsługiwane w dwóch`p++` `p--`formach: postfix ( i ) i prefiks (`++p` i `--p`). Wynik `p++` i `p--` jest wartością `p` *przed* operacją. Wynik `++p` i `--p` jest wartością `p` *po* operacji.
+Oba operatory są obsługiwane w dwóch formach: przyrostka ( `p++` i `p--` ) oraz prefiks ( `++p` i `--p` ). Wynik `p++` i `p--` jest wartością `p` *przed* operacją. Wynik `++p` i `--p` jest wartością `p` *po* operacji.
 
-Poniższy przykład pokazuje zachowanie operatorów przyrostu postfix i prefiksu:
+W poniższym przykładzie przedstawiono zachowanie operatorów przyrostu przyrostkowego i powiększania:
 
 [!code-csharp[pointer increment](snippets/PointerOperators.cs#Increment)]
 
-## <a name="pointer-comparison-operators"></a>Operatory porównania wskaźników
+## <a name="pointer-comparison-operators"></a>Operatory porównania wskaźnika
 
-`==`Operatory można `!=`użyć `<` `>`, `<=`, `>=` , i operatorów, aby porównać argumenty dowolnego typu wskaźnika, w tym `void*`. Operatorzy ci porównują adresy podane przez dwa argumenty tak, jakby były niepodpisanymi liczbami całkowitymi.
+`==` `!=` Operatory,,,, i służą `<` `>` `<=` `>=` do porównywania operandów dowolnego typu wskaźnika, w tym `void*` . Te operatory porównują adresy podane przez dwa operandy, tak jakby były to liczby całkowite bez znaku.
 
-Aby uzyskać informacje na temat zachowania tych operatorów dla operandów innych typów, zobacz [równości operatorów](equality-operators.md) i [porównania operatorów](comparison-operators.md) artykułów.
+Aby uzyskać informacje o zachowaniu tych operatorów dla operandów innych typów, zobacz artykuły [Operatory równości](equality-operators.md) i [Operatory porównania](comparison-operators.md) .
 
 ## <a name="operator-precedence"></a>Pierwszeństwo operatorów
 
-Następująca lista porządkuuje operatorów powiązanych wskaźnik, począwszy od najwyższego pierwszeństwa do najniższego:
+Poniższa lista kolejności pokrewnych operatorów, rozpoczynając od najwyższego priorytetu do najniższego:
 
-- Operatory przyrostu `x++` i `x--` dekrementacji `->` `[]` poprawek oraz operatorzy i operatorzy
-- Operatory przyrostu `++x` i `--x` dekrementacji `&` `*` prefiksów oraz operatory i operatory
-- Dodatki `+` `-` i podmioty gospodarcze
-- Porównanie `<` `>`, `<=`, `>=` i operatorów
-- `==` Równość `!=` i operatorzy
+- Operatory przyrostka i zmniejszanie przyrostkowe oraz `x++` `x--` `->` `[]` Operatory i
+- Operatory przyrostu `++x` i zmniejszania prefiksu oraz `--x` `&` `*` Operatory i
+- Dodatek `+` i `-` Operatory
+- Porównanie `<` , `>` , `<=` i `>=` Operatory
+- Równość `==` i `!=` Operatory
 
-Użyj nawiasów, `()`aby zmienić kolejność oceny narzuconą przez pierwszeństwo operatora.
+Użyj nawiasów, `()` , aby zmienić kolejność oceny nałożona przez pierwszeństwo operatorów.
 
-Aby uzyskać pełną listę operatorów języka C# uporządkowanych według poziomu [pierwszeństwa, zobacz sekcję pierwszeństwo operatora](index.md#operator-precedence) w artykule [Operatory języka C#.](index.md)
+Aby uzyskać pełną listę operatorów języka C# uporządkowanych według poziomu pierwszeństwa, zobacz sekcję [pierwszeństwo](index.md#operator-precedence) operatorów w artykule [operatory języka c#](index.md) .
 
-## <a name="operator-overloadability"></a>Przeciążenie operatora
+## <a name="operator-overloadability"></a>Przeciążanie operatora
 
-Typ zdefiniowany przez użytkownika nie może `&` `*`przeciążać operatorów powiązanych ze wskaźnikiem , `->`i `[]`.
+Typ zdefiniowany przez użytkownika nie może przeciążać operatorów powiązanych ze wskaźnikiem, `&` `*` , `->` i `[]` .
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języka języka C#:](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języka C#](~/_csharplang/spec/introduction.md):
 
-- [Stałe i ruchome zmienne](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables)
-- [Adres operatora](~/_csharplang/spec/unsafe-code.md#the-address-of-operator)
+- [Zmienne stałe i ruchome](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables)
+- [Operator address-of](~/_csharplang/spec/unsafe-code.md#the-address-of-operator)
 - [Pośredni wskaźnik](~/_csharplang/spec/unsafe-code.md#pointer-indirection)
 - [Dostęp do elementu członkowskiego wskaźnika](~/_csharplang/spec/unsafe-code.md#pointer-member-access)
 - [Dostęp do elementu wskaźnika](~/_csharplang/spec/unsafe-code.md#pointer-element-access)
 - [Arytmetyczny wskaźnik](~/_csharplang/spec/unsafe-code.md#pointer-arithmetic)
-- [Zwiększanie i zmniejszanie wskaźnika](~/_csharplang/spec/unsafe-code.md#pointer-increment-and-decrement)
+- [Zwiększenie i zmniejszenie wskaźnika](~/_csharplang/spec/unsafe-code.md#pointer-increment-and-decrement)
 - [Porównanie wskaźników](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
+- [Operatory i wyrażenia języka C#](index.md)
 - [Typy wskaźnika](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [niebezpieczne słowo kluczowe](../keywords/unsafe.md)
-- [stałe słowo kluczowe](../keywords/fixed-statement.md)
+- [unsafe — słowo kluczowe](../keywords/unsafe.md)
+- [FIXED — słowo kluczowe](../keywords/fixed-statement.md)
 - [stackalloc](stackalloc.md)
-- [sizeof — Operator](sizeof.md)
+- [sizeof, operator](sizeof.md)

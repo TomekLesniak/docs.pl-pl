@@ -1,5 +1,5 @@
 ---
-title: ?? I?? = operatory - odwołanie c#
+title: ?? i? = Operatory — odwołanie w C#
 ms.date: 09/10/2019
 f1_keywords:
 - ??_CSharpKeyword
@@ -10,28 +10,28 @@ helpviewer_keywords:
 - null-coalescing assignment [C#]
 - ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 69294f0fb706868b48b8d7fe8b95fa345af169b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d3d6a5032a5b4fb7059eb93b0024fd292b74fb70
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847316"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555243"
 ---
-# <a name="-and--operators-c-reference"></a>?? I?? = operatory (odwołanie do Języka C#)
+# <a name="-and--operators-c-reference"></a>?? i? = — Operatory (odwołanie w C#)
 
-Operator `??` null-łączenie zwraca wartość jego operand po lewej stronie, jeśli `null`nie jest ; w przeciwnym razie ocenia argument po prawej stronie i zwraca jego wynik. Operator `??` nie ocenia jego prawostronny operand, jeśli po lewej stronie operand ocenia non-null.
+Operator łączenia wartości null `??` zwraca wartość operandu po lewej stronie, jeśli nie jest `null` ; w przeciwnym razie oblicza argument operacji po prawej stronie i zwraca wynik. `??`Operator nie oblicza swojego operandu po prawej stronie, jeśli argument operacji po lewej stronie ma wartość różną od null.
 
-Dostępne w języku C# 8.0 i nowszych `??=` operator przypisania null-łączenie przypisuje wartość jego operand po prawej stronie do jego operand po lewej stronie tylko wtedy, gdy po lewej stronie operand ocenia . `null` Operator `??=` nie ocenia jego prawostronny operand, jeśli po lewej stronie operand ocenia non-null.
+W języku C# 8,0 i nowszych operator przypisania łączenia wartości null `??=` przypisuje wartość jego operandu po lewej stronie tylko wtedy, gdy argument operacji po lewej stronie jest obliczany do `null` . `??=`Operator nie oblicza swojego operandu po prawej stronie, jeśli argument operacji po lewej stronie ma wartość różną od null.
 
 [!code-csharp[null-coalescing assignment](snippets/NullCoalescingOperator.cs#Assignment)]
 
-Operand po lewej stronie `??=` operatora musi być zmienną, [właściwością](../../programming-guide/classes-and-structs/properties.md)lub elementem [indeksatora.](../../programming-guide/indexers/index.md)
+Argument operacji po lewej stronie `??=` operatora musi być zmienną, [właściwością](../../programming-guide/classes-and-structs/properties.md)lub elementem [indeksatora](../../programming-guide/indexers/index.md) .
 
-W języku C# 7.3 i wcześniejszych typ operandu po lewej stronie `??` operatora musi być [typem odwołania](../keywords/reference-types.md) lub [typem wartości nullable](../builtin-types/nullable-value-types.md). Począwszy od Języka C# 8.0, to wymaganie jest zastępowane następującymi: typ operand po lewej stronie `??` i `??=` operatorów nie może być typem wartości niedopuszczająca wartości. W szczególności, począwszy od Języka C# 8.0, można użyć null-łączenie operatorów z nieograniczonymi parametrami typu:
+W języku C# 7,3 i starszych typ operandu po lewej stronie `??` operatora musi być typem [referencyjnym](../keywords/reference-types.md) lub [typem wartości null](../builtin-types/nullable-value-types.md). Począwszy od języka C# 8,0, ten wymóg jest zastępowany przez następujący: typ operandu po lewej stronie `??` `??=` operatora and nie może być typem wartości niedopuszczających wartości null. W szczególności, począwszy od języka C# 8,0, można użyć operatorów łączenia wartości null z nieokreślonymi parametrami typu:
 
 [!code-csharp[unconstrained type parameter](snippets/NullCoalescingOperator.cs#UnconstrainedType)]
 
-Operatory null-łączenia są zasocjałe. Oznacza to, że wyrażenia formy
+Operatory łączenia wartości null są z prawej strony skojarzenia. To jest wyrażenie w postaci
 
 ```csharp
 a ?? b ?? c
@@ -47,25 +47,25 @@ d ??= (e ??= f)
 
 ## <a name="examples"></a>Przykłady
 
-`??` Operatory `??=` i mogą być przydatne w następujących scenariuszach:
+`??`Operatory i `??=` mogą być przydatne w następujących scenariuszach:
 
-- W wyrażeniach z [operatorami warunkowymi zerowymi ?. i ?[]](member-access-operators.md#null-conditional-operators--and-)można użyć `??` operatora, aby zapewnić wyrażenie alternatywne `null`do oceny w przypadku, gdy wynik wyrażenia z operacjami warunkowymi zerowymi jest:
+- W wyrażeniach zawierających [Operatory warunkowe o wartości null?. i? []](member-access-operators.md#null-conditional-operators--and-)można użyć `??` operatora, aby podać alternatywne wyrażenie do obliczenia w przypadku, gdy wynik wyrażenia z operacjami warunkowymi o wartości null jest `null` :
 
   [!code-csharp-interactive[with null-conditional](snippets/NullCoalescingOperator.cs#WithNullConditional)]
 
-- Podczas pracy z [typami wartości nullable](../builtin-types/nullable-value-types.md) i trzeba podać wartość podstawowego typu wartości, należy użyć `??` operatora, aby `null`określić wartość, aby podać w przypadku wartości typu nullable jest:
+- Podczas pracy z [typami wartości null](../builtin-types/nullable-value-types.md) i musi podać wartość bazowego typu wartości, użyj `??` operatora, aby określić wartość, która ma zostać podana na wypadek, gdy wartość typu dopuszczająca wartości null to `null` :
 
   [!code-csharp-interactive[with nullable types](snippets/NullCoalescingOperator.cs#WithNullableTypes)]
 
-  Użyj <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> metody, jeśli wartość, która ma być `null` używana, gdy wartość typu nulljest powinna być wartością domyślną podstawowego typu wartości.
+  Użyj <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> metody, jeśli wartość, która ma zostać użyta, gdy wartość typu dopuszczająca wartości null ma `null` być wartością domyślną dla bazowego typu wartości.
 
-- Począwszy od języka C# 7.0, można użyć [ `throw` wyrażenia](../keywords/throw.md#the-throw-expression) jako `??` operand po prawej stronie operatora, aby kod sprawdzania argumentów bardziej zwięzły:
+- Począwszy od języka C# 7,0, można użyć [ `throw` wyrażenia](../keywords/throw.md#the-throw-expression) jako argumentu operacji po prawej stronie `??` operatora, aby kod sprawdzania argumentów był bardziej zwięzły:
 
   [!code-csharp[with throw expression](snippets/NullCoalescingOperator.cs#WithThrowExpression)]
 
-  W poprzednim przykładzie pokazano również, jak używać [elementów członkowskich zabudowanych wyrażeniem](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) do definiowania właściwości.
+  W powyższym przykładzie pokazano również, jak używać [składowych wyrażeń](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) w celu zdefiniowania właściwości.
 
-- Począwszy od języka C# 8.0, można użyć `??=` operatora, aby zastąpić kod formularza
+- Począwszy od języka C# 8,0, można użyć `??=` operatora, aby zamienić kod formularza
 
   ```csharp
   if (variable is null)
@@ -74,25 +74,25 @@ d ??= (e ??= f)
   }
   ```
 
-  z następującym kodem:
+  przy użyciu następującego kodu:
 
   ```csharp
   variable ??= expression;
   ```
 
-## <a name="operator-overloadability"></a>Przeciążenie operatora
+## <a name="operator-overloadability"></a>Przeciążanie operatora
 
-Operatory `??` `??=` i nie mogą być przeciążone.
+Operatory `??` i `??=` nie mogą być przeciążone.
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej `??` informacji na temat operatora, zobacz [null coalescing operator](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) sekcji [specyfikacji języka C#.](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji na temat `??` operatora, zobacz sekcję [operator łączenia wartości null](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-Aby uzyskać więcej `??=` informacji na temat operatora, zobacz [notę propozycji funkcji](~/_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md).
+Aby uzyskać więcej informacji na temat `??=` operatora, zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md).
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
-- [?. I? [] operatorzy](member-access-operators.md#null-conditional-operators--and-)
-- [?: operator](conditional-operator.md)
+- [Operatory i wyrażenia języka C#](index.md)
+- [?. lub? operator []](member-access-operators.md#null-conditional-operators--and-)
+- [?: — operator](conditional-operator.md)

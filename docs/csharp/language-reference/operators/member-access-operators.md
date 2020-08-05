@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 59e01b17d78032714803629d503a92ba86a20fdc
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 242442e9b0ad41a4945c66421bb537cb6cb9b6c0
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394639"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556478"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Operatory i wyrażenia dostępu do składowych (odwołanie w C#)
 
@@ -220,9 +220,9 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języ
 
 Aby uzyskać więcej informacji na temat indeksów i zakresów, zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-8.0/ranges.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
+- [Operatory i wyrażenia języka C#](index.md)
 - [?? (operator łączenia wartości null)](null-coalescing-operator.md)
 - [:: — Operator](namespace-alias-qualifier.md)

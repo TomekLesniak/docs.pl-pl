@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: a2fc2c56eeb29f5e89dc0b9f94636408ff10700f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4788c84be76a5cc9a9a6327fcd054e08db4d1872
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446369"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556803"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Język wyrażeń regularnych — podręczny wykaz
 
@@ -49,7 +49,7 @@ Znak ukośnika odwrotnego ( \\ ) w wyrażeniu regularnym wskazuje, że znak, kt�
 |`\e`|Dopasowuje znak escape, \u001B.|`\e`|`"\x001B"` w elemencie `"\x001B"`|
 |`\`*nnn*|Używa reprezentacji ósemkowej do określenia znaku (*nnn* składa się z dwóch lub trzech cyfr).|`\w\040\w`|`"a b"`, `"c d"` w`"a bc d"`|
 |`\x`*NN*|Używa reprezentacji szesnastkowej w celu określenia znaku (*NN* składa się z dokładnie dwóch cyfr).|`\w\x20\w`|`"a b"`, `"c d"` w`"a bc d"`|
-|`\c` *X*<br /><br /> `\c` *x*|Dopasowuje znak kontrolny ASCII, który jest określony przez *x* lub *x*, gdzie *x* lub *x* jest literą znaku kontrolnego.|`\cC`|`"\x0003"`w `"\x0003"` (Ctrl-C)|
+|`\c`*X*<br /><br /> `\c` *x*|Dopasowuje znak kontrolny ASCII, który jest określony przez *x* lub *x*, gdzie *x* lub *x* jest literą znaku kontrolnego.|`\cC`|`"\x0003"`w `"\x0003"` (Ctrl-C)|
 |`\u`*nnnn*|Dopasowuje znak Unicode przy użyciu reprezentacji szesnastkowej (dokładnie cztery cyfry, reprezentowane przez *nnnn*).|`\w\u0020\w`|`"a b"`, `"c d"` w`"a bc d"`|
 |`\`|Kiedy następuje po nim znak, który nie jest rozpoznawany jako znak ucieczki w tej lub innej tabeli zawartej w tym temacie, dopasowuje ten znak. Na przykład `\*` jest taka sama jak `\x2A` , i jest taka `\.` sama jak `\x2E` . Dzięki temu aparat wyrażeń regularnych może odróżnić elementy języka (takie jak \* lub?) i literały znakowe (reprezentowane przez `\*` lub `\?` ).|`\d+[\+-x\*]\d+`|`"2+2"` i `"3*9"` w elemencie `"(2+2) * 3*9"`|
 
@@ -94,8 +94,8 @@ Konstrukcje grupujące wyznaczają podwyrażenia wyrażeń regularnych i często
 |Konstrukcja grupująca|Opis|Wzorce|Jest zgodny z|
 |------------------------|-----------------|-------------|-------------|
 |`(`*Podwyrażenie*`)`|Przechwytuje dopasowane podwyrażenia i przypisuje mu liczbę porządkową (liczone od zera).|`(\w)\1`|`"ee"` w elemencie `"deep"`|
-|`(?<`*Nazwa* `>` *Podwyrażenie*`)`|Przechwytuje dopasowane podwyrażenie do nazwanej grupy.|`(?<double>\w)\k<double>`|`"ee"` w elemencie `"deep"`|
-|`(?<`*Name1* `-` *NAME2* `>` *Podwyrażenie*`)`|Określa definicję grupy równoważącej. Aby uzyskać więcej informacji, zobacz sekcję "Definicja grupy równoważenia" w temacie [grupowanie konstrukcji](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` w elemencie `"3+2^((1-3)*(3-1))"`|
+|`(?<`*Nazwa* `>` *Podwyrażenie*`)`<br /> lub <br />`(?'`*Nazwa* `'` *Podwyrażenie*`)`|Przechwytuje dopasowane podwyrażenie do nazwanej grupy.|`(?<double>\w)\k<double>`|`"ee"` w elemencie `"deep"`|
+|`(?<`*Name1* `-` *NAME2* `>` *Podwyrażenie*`)` <br /> lub <br /> `(?'`*Name1* `-` *NAME2* `'` *Podwyrażenie*`)`|Określa definicję grupy równoważącej. Aby uzyskać więcej informacji, zobacz sekcję "Definicja grupy równoważenia" w temacie [grupowanie konstrukcji](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` w elemencie `"3+2^((1-3)*(3-1))"`|
 |`(?:`*Podwyrażenie*`)`|Definiuje nieprzechwytywaną grupę.|`Write(?:Line)?`|`"WriteLine"` w elemencie `"Console.WriteLine()"`<br /><br /> `"Write"` w elemencie `"Console.Write(value)"`|
 |`(?imnsx-imnsx:`*Podwyrażenie*`)`|Stosuje lub wyłącza określone opcje w ramach *podwyrażenia*. Aby uzyskać więcej informacji, zobacz [Opcje wyrażenia regularnego](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` w`"A12xl A12XL a12xl"`|
 |`(?=`*Podwyrażenie*`)`|Pozytywna asercja wyprzedzająca o zerowej szerokości.|`\w+(?=\.)`|`"is"`, `"ran"` i `"out"` w`"He is. The dog ran. The sun is out."`|
@@ -129,7 +129,7 @@ Dopasowywanie wsteczne umożliwia kolejne identyfikacje uprzednio dopasowanego p
 
 |Konstrukcja dopasowywania wstecznego|Opis|Wzorce|Jest zgodny z|
 |-----------------------------|-----------------|-------------|-------------|
-|`\`*Liczba*|Dopasowanie wsteczne. Dopasowuje wartość numerowanego podwyrażenia.|`(\w)\1`|`"ee"` w elemencie `"seek"`|
+|`\` *liczba*|Dopasowanie wsteczne. Dopasowuje wartość numerowanego podwyrażenia.|`(\w)\1`|`"ee"` w elemencie `"seek"`|
 |`\k<`*Nazwa*`>`|Nazwane dopasowanie wsteczne. Dopasowuje wartość nazwanego wyrażenia.|`(?<char>\w)\k<char>`|`"ee"` w elemencie `"seek"`|
 
 ## <a name="alternation-constructs"></a>Konstrukty naprzemienne
@@ -148,7 +148,7 @@ Podstawienia są elementami języka wyrażeń regularnych, które są obsługiwa
 
 |Znak|Opis|Wzorce|Wzorzec zamieniania|Ciąg wejściowy|Ciąg wynikowy|
 |---------------|-----------------|-------------|-------------------------|------------------|-------------------|
-|`$`*Liczba*|Zastępuje podciąg dopasowany przez *numer*grupy.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
+|`$` *liczba*|Zastępuje podciąg dopasowany przez *numer*grupy.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
 |`${`*Nazwa*`}`|Podstawia podciąg dopasowany przez *nazwę grupy nazwanej*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
 |`$$`|Podstawia literał „$”.|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|
 |`$&`|Podstawia kopię całego dopasowania.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|
@@ -186,7 +186,7 @@ Konstrukcje inne służą do modyfikowania wzorca wyrażenia regularnego lub dos
 |`(?#`*komentarz*`)`|Komentarz w tekście. Komentarz kończy się przy pierwszym nawiasie zamykającym.|`\bA(?#Matches words starting with A)\w+\b`|
 |`#`[do końca wiersza]|Komentarz trybu X. Komentarz zaczyna się od znaku ucieczki `#` i przechodzi do końca wiersza.|`(?x)\bA\w+\b#Matches words starting with A`|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>

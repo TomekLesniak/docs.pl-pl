@@ -10,12 +10,12 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: 08692cbe583feb534315b637492adedb1254bc38
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 5cbebe1c7f56604b1b058452bdf2126b87bd3f97
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381622"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556790"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Instrukcje, wyrażenia i operatory (Przewodnik programowania w języku C#)
 
@@ -25,9 +25,9 @@ Kod w języku C#, który składa się z aplikacji, składa się z instrukcji zaw
 
 - [Instrukcje](statements.md)
 
-- [Wyrażenia](expressions.md)
+- [Operatory i wyrażenia](../../language-reference/operators/index.md)
 
-  - [Składowe z wyrażeniem w treści](expression-bodied-members.md)
+- [Składowe z wyrażeniem w treści](expression-bodied-members.md)
 
 - [Funkcje anonimowe](anonymous-functions.md)
 

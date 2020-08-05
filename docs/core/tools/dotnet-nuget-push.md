@@ -3,12 +3,12 @@ title: polecenia wypychania NuGet dotnet
 description: Polecenie polecenia push NuGet narzędzia dotnet wypycha pakiet do serwera i opublikuje go.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 608cd05d94dd6b5cdc53d582cfaa0407f011ff37
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 50a4a542c2d192bfbd927845489d04fd1b6c6cf3
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925517"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555126"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -133,23 +133,26 @@ Polecenie wypycha istniejący pakiet. Nie tworzy pakietu. Aby utworzyć pakiet, 
 - Wypchnij wszystkie pliki *. nupkg* w bieżącym katalogu do domyślnego źródła push:
 
   ```dotnetcli
-  dotnet nuget push *.nupkg
+  dotnet nuget push "*.nupkg"
   ```
 
   > [!NOTE]
   > Jeśli to polecenie nie działa, może to być spowodowane usterką, która istniała we wcześniejszych wersjach zestawu SDK (zestaw SDK programu .NET Core 2,1 i wcześniejsze wersje).
-  > Aby rozwiązać ten problem, Uaktualnij wersję zestawu SDK lub zamiast tego Uruchom następujące polecenie:`dotnet nuget push **/*.nupkg`
+  > Aby rozwiązać ten problem, Uaktualnij wersję zestawu SDK lub zamiast tego Uruchom następujące polecenie:`dotnet nuget push "**/*.nupkg"`
+  
+  > [!NOTE]
+  > Otaczające cudzysłowy są wymagane dla powłok, takich jak bash, które wykonują obsługi symboli wieloznacznych pliku. Aby uzyskać więcej informacji, zobacz [NuGet/Home # 4393](https://github.com/NuGet/Home/issues/4393#issuecomment-667618120).
 
 - Wypchnij wszystkie pliki *NUPKG* , nawet jeśli odpowiedź na 409 jest zwracana przez serwer http (S):
 
   ```dotnetcli
-  dotnet nuget push *.nupkg --skip-duplicate
+  dotnet nuget push "*.nupkg" --skip-duplicate
   ```
 
 - Wypchnij wszystkie pliki *. nupkg* w bieżącym katalogu do katalogu lokalnego źródła danych:
 
   ```dotnetcli
-  dotnet nuget push *.nupkg -s c:\mydir
+  dotnet nuget push "*.nupkg" -s c:\mydir
   ```
 
   To polecenie nie przechowuje pakietów w hierarchicznej strukturze folderów, co jest zalecane w celu zoptymalizowania wydajności. Aby uzyskać więcej informacji, zobacz [lokalne źródła danych](/nuget/hosting-packages/local-feeds).  

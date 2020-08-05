@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: d004ab466bc053ed286d85bcbee2766d8a087286
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 03bf7f246884fc8cd0095f0dd1375389a95e1ef0
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207239"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555477"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Operatory arytmetyczne (odwołanie w C#)
 
@@ -267,7 +267,7 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języ
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
+- [Operatory i wyrażenia języka C#](index.md)
 - <xref:System.Math?displayProperty=nameWithType>
 - <xref:System.MathF?displayProperty=nameWithType>
 - [Wartości numeryczne na platformie .NET](../../../standard/numerics.md)

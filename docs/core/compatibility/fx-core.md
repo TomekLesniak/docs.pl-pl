@@ -3,12 +3,12 @@ title: Istotne zmiany — .NET Framework do platformy .NET Core
 titleSuffix: ''
 description: Wyświetla listę istotnych zmian z .NET Framework do programu .NET Core.
 ms.date: 05/05/2020
-ms.openlocfilehash: f830d4571f21752900b35a7462bf0881673d6d2e
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 5f7424fdd959044b729dfb04f4f0147fbc946bfd
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420451"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556309"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Istotne zmiany dotyczące migracji z .NET Framework do platformy .NET Core
 
@@ -69,7 +69,7 @@ W przypadku migrowania aplikacji z programu .NET Framework do programu .NET Core
 
 ***
 
-## <a name="networking"></a>Networking
+## <a name="networking"></a>Sieć
 
 - [Klient WebClient. CancelAsync nie zawsze anuluje natychmiast](#webclientcancelasync-doesnt-always-cancel-immediately)
 
@@ -96,8 +96,6 @@ Obsługa Windows Forms została dodana do programu .NET Core w wersji 3,0. W prz
 - [Nieobsługiwany przełącznik zgodności EnableVisualStyleValidation](#enablevisualstylevalidation-compatibility-switch-not-supported)
 - [Nieobsługiwany przełącznik zgodności UseLegacyContextMenuStripSourceControlValue](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
 - [Nieobsługiwany przełącznik zgodności UseLegacyImages](#uselegacyimages-compatibility-switch-not-supported)
-- [Zmiana dostępu do elementu AccessibleObject. RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
-- [Zduplikowane interfejsy API zostały usunięte z Windows Forms](#duplicated-apis-removed-from-windows-forms)
 
 ### <a name="net-core-31"></a>.NET Core 3,1
 
@@ -155,15 +153,7 @@ Obsługa Windows Forms została dodana do programu .NET Core w wersji 3,0. W prz
 
 ***
 
-[!INCLUDE[Change of access for AccessibleObject.RuntimeIDFirstItem](~/includes/core-changes/windowsforms/3.0/changed-access-for-runtimeidfirstitem.md)]
-
-***
-
-[!INCLUDE[Duplicated APIs removed from Windows Forms](~/includes/core-changes/windowsforms/3.0/remove-duplicated-apis.md)]
-
-***
-
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Interfejsy API, które zawsze generują wyjątki w programie .NET Core](unsupported-apis.md)
 - [Technologie .NET Framework niedostępne w programie .NET Core](../porting/net-framework-tech-unavailable.md)

@@ -1,32 +1,36 @@
 ---
-title: 'Porady: odszyfrowywanie elementów XML przy użyciu kluczy asymetrycznych'
-ms.date: 03/30/2017
+title: 'Instrukcje: Odszyfrowywanie elementów XML przy użyciu kluczy asymetrycznych'
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- System.Security.Cryptography.RSACryptoServiceProvider class
+- System.Security.Cryptography.RSA class
 - asymmetric keys
 - System.Security.Cryptography.EncryptedXml class
 - XML encryption
 - decryption
 ms.assetid: dd5de491-dafe-4b94-966d-99714b2e754a
-ms.openlocfilehash: b3d5d91ff8cf268e4e7a1330ff596a97924dfe55
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4a06628ddde0920133bfd74568786fbca6d5cf09
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290853"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556777"
 ---
-# <a name="how-to-decrypt-xml-elements-with-asymmetric-keys"></a>Porady: odszyfrowywanie elementów XML przy użyciu kluczy asymetrycznych
+# <a name="how-to-decrypt-xml-elements-with-asymmetric-keys"></a>Instrukcje: Odszyfrowywanie elementów XML przy użyciu kluczy asymetrycznych
+
 Można użyć klas w <xref:System.Security.Cryptography.Xml> przestrzeni nazw do szyfrowania i odszyfrowywania elementu w dokumencie XML.  Szyfrowanie XML jest standardowym sposobem wymiany i przechowywania zaszyfrowanych danych XML bez obaw o dane, które są łatwo odczytywane.  Aby uzyskać więcej informacji na temat standardu szyfrowania XML, zobacz [składnię i przetwarzanie podpisu XML](https://www.w3.org/TR/xmldsig-core/)zalecenia organizacja World Wide Web Consortium (W3C).  
+
+> [!NOTE]
+> Kod w tym artykule ma zastosowanie do systemu Windows.
+
+Przykład w tej procedurze odszyfrowuje element XML, który został zaszyfrowany przy użyciu metod opisanych w artykule [jak: szyfrowanie elementów XML przy użyciu kluczy asymetrycznych](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  Znajduje `EncryptedData` element> <, odszyfrowuje element, a następnie zamienia element na oryginalny element XML w formacie zwykłego tekstu.  
   
- Przykład w tej procedurze odszyfrowuje element XML, który został zaszyfrowany przy użyciu metod opisanych w artykule [jak: szyfrowanie elementów XML przy użyciu kluczy asymetrycznych](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  Znajduje `EncryptedData` element> <, odszyfrowuje element, a następnie zamienia element na oryginalny element XML w formacie zwykłego tekstu.  
+Ten przykład odszyfrowuje element XML przy użyciu dwóch kluczy.  Pobiera on wcześniej wygenerowany klucz prywatny RSA z kontenera kluczy, a następnie używa klucza RSA do odszyfrowania klucza sesji przechowywanego w <`EncryptedKey`> elementu <`EncryptedData`>.  W przykładzie zostanie użyty klucz sesji do odszyfrowania elementu XML.  
   
- Ten przykład odszyfrowuje element XML przy użyciu dwóch kluczy.  Pobiera on wcześniej wygenerowany klucz prywatny RSA z kontenera kluczy, a następnie używa klucza RSA do odszyfrowania klucza sesji przechowywanego w <`EncryptedKey`> elementu <`EncryptedData`>.  W przykładzie zostanie użyty klucz sesji do odszyfrowania elementu XML.  
-  
- Ten przykład jest odpowiedni dla sytuacji, w których wiele aplikacji musi udostępniać zaszyfrowane dane lub w przypadku, gdy aplikacja ma zapisywać zaszyfrowane dane między uruchomionymi danymi.  
+Ten przykład jest odpowiedni dla sytuacji, w których wiele aplikacji musi udostępniać zaszyfrowane dane lub w przypadku, gdy aplikacja ma zapisywać zaszyfrowane dane między uruchomionymi danymi.  
   
 ### <a name="to-decrypt-an-xml-element-with-an-asymmetric-key"></a>Aby odszyfrować element XML za pomocą klucza asymetrycznego  
   
@@ -60,26 +64,34 @@ Można użyć klas w <xref:System.Security.Cryptography.Xml> przestrzeni nazw do
      [!code-csharp[HowToDecryptXMLElementAsymmetric#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#8)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#8)]  
   
-## <a name="example"></a>Przykład  
- W tym przykładzie przyjęto założenie, że plik o nazwie `test.xml` istnieje w tym samym katalogu co skompilowany program.  Przyjęto również założenie, że `test.xml` zawiera element XML, który został zaszyfrowany przy użyciu technik opisanych w [instrukcje: szyfrowanie elementów XML przy użyciu kluczy asymetrycznych](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  
+## <a name="example"></a>Przykład
+
+W tym przykładzie przyjęto założenie, że plik o nazwie `test.xml` istnieje w tym samym katalogu co skompilowany program.  Przyjęto również założenie, że `test.xml` zawiera element XML, który został zaszyfrowany przy użyciu technik opisanych w [instrukcje: szyfrowanie elementów XML przy użyciu kluczy asymetrycznych](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  
   
- [!code-csharp[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#1)]
- [!code-vb[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#1)]  
+[!code-csharp[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#1)]
+[!code-vb[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
   
-- Aby skompilować ten przykład, należy dołączyć odwołanie do `System.Security.dll` .  
+- W projekcie, który jest przeznaczony dla .NET Framework, należy dołączyć odwołanie do `System.Security.dll` .
+
+- W projekcie przeznaczonym dla platformy .NET Core lub .NET 5 Zainstaluj pakiet NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Uwzględnij następujące przestrzenie nazw: <xref:System.Xml> , <xref:System.Security.Cryptography> , i <xref:System.Security.Cryptography.Xml> .  
   
-## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
- Nigdy nie przechowuj symetrycznego klucza kryptograficznego w postaci zwykłego tekstu lub przesyłaj klucz symetryczny między maszynami w postaci zwykłego tekstu.  Ponadto nigdy nie należy przechowywać ani przenosić klucza prywatnego pary kluczy asymetrycznych w postaci zwykłego tekstu.  Aby uzyskać więcej informacji na temat symetrycznych i asymetrycznych kluczy kryptograficznych, zobacz [generowanie kluczy do szyfrowania i odszyfrowywania](generating-keys-for-encryption-and-decryption.md).  
+## <a name="net-security"></a>Zabezpieczenia platformy .NET  
+
+Nigdy nie przechowuj symetrycznego klucza kryptograficznego w postaci zwykłego tekstu lub przesyłaj klucz symetryczny między maszynami w postaci zwykłego tekstu.  Ponadto nigdy nie należy przechowywać ani przenosić klucza prywatnego pary kluczy asymetrycznych w postaci zwykłego tekstu.  Aby uzyskać więcej informacji na temat symetrycznych i asymetrycznych kluczy kryptograficznych, zobacz [generowanie kluczy do szyfrowania i odszyfrowywania](generating-keys-for-encryption-and-decryption.md).  
   
- Nigdy nie osadzaj klucza bezpośrednio w kodzie źródłowym.  Klucze osadzone można łatwo odczytywać z zestawu przy użyciu [Ildasm. exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) lub otwierając zestaw w edytorze tekstu, takim jak Notatnik.  
+ Nigdy nie osadzaj klucza bezpośrednio w kodzie źródłowym.  Klucze osadzone można łatwo odczytywać z zestawu przy użyciu [Ildasm.exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) lub otwierając zestaw w edytorze tekstu, takim jak Notatnik.  
   
  Gdy skończysz korzystać z klucza kryptograficznego, usuń go z pamięci przez ustawienie każdego bajtu na zero lub przez wywołanie <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> metody zarządzanej klasy kryptografii.  Klucze kryptograficzne mogą być czasami odczytywane z pamięci przez debuger lub odczytywane z dysku twardego, jeśli lokalizacja pamięci jest stronicowana na dysku.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
+- [Model kryptografii](cryptography-model.md)
+- [Usługi kryptograficzne](cryptographic-services.md)
+- [Kryptografia międzyplatformowa](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
-- [Porady: szyfrowanie elementów XML przy użyciu kluczy asymetrycznych](how-to-encrypt-xml-elements-with-asymmetric-keys.md)
+- [Instrukcje: Szyfrowanie elementów XML przy użyciu kluczy asymetrycznych](how-to-encrypt-xml-elements-with-asymmetric-keys.md)
+- [Ochrona danych ASP.NET Core](/aspnet/core/security/data-protection/introduction)

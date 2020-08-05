@@ -1,43 +1,46 @@
 ---
-title: 'Porady: szyfrowanie elementów XML za pomocą certyfikatów X.509'
-ms.date: 03/30/2017
+title: 'Instrukcje: Szyfrowanie elementów XML za pomocą certyfikatów X.509'
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- encryption [.NET Framework], X.509 certificates
-- cryptography [.NET Framework], X.509 certificates
+- encryption [.NET], X.509 certificates
+- cryptography [.NET], X.509 certificates
 - System.Security.Cryptography.EncryptedXml class
 - XML encryption
 - System.Security.Cryptography.X509Certificate2 class
 - X.509 certificates
 - certificates, X.509 certificates
 ms.assetid: 761f1c66-631c-47af-aa86-ad9c50cfa453
-ms.openlocfilehash: 9cdd8e52be11eeba86ec406510f40f1a08809ff8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c978bea7336e64d6622aca4d21c7ef3317d73957
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277222"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555724"
 ---
-# <a name="how-to-encrypt-xml-elements-with-x509-certificates"></a>Porady: szyfrowanie elementów XML za pomocą certyfikatów X.509
+# <a name="how-to-encrypt-xml-elements-with-x509-certificates"></a>Instrukcje: Szyfrowanie elementów XML za pomocą certyfikatów X.509
+
 Można użyć klas w <xref:System.Security.Cryptography.Xml> przestrzeni nazw do szyfrowania elementu w dokumencie XML.  Szyfrowanie XML jest standardowym sposobem wymiany i przechowywania zaszyfrowanych danych XML bez obaw o dane, które są łatwo odczytywane.  Aby uzyskać więcej informacji na temat standardu szyfrowania XML, zapoznaj się z artykułem Specyfikacja organizacja World Wide Web Consortium (W3C) dla szyfrowania XML znajdującego się w temacie <https://www.w3.org/TR/xmldsig-core/> .  
   
  Możesz użyć szyfrowania XML, aby zamienić dowolny element XML lub dokument z <`EncryptedData`> element, który zawiera zaszyfrowane dane XML. `EncryptedData`Element> <może zawierać elementy podrzędne, które zawierają informacje o kluczach i procesach używanych podczas szyfrowania.  Szyfrowanie XML pozwala dokument może zawierać wiele zaszyfrowanych elementów i umożliwia wielokrotne szyfrowanie elementu.  Przykład kodu w tej procedurze pokazuje, jak utworzyć <`EncryptedData` element> wraz z kilkoma innymi elementami podrzędnymi, które można później użyć podczas odszyfrowywania.  
   
- Ten przykład szyfruje element XML przy użyciu dwóch kluczy. Generuje certyfikat testu X. 509 za pomocą narzędzia do [tworzenia certyfikatów (Makecert. exe)](/windows/desktop/SecCrypto/makecert) i zapisuje certyfikat w magazynie certyfikatów. Przykładowo program programowo pobiera certyfikat i używa go do szyfrowania elementu XML przy użyciu <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metody. Wewnętrznie <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> Metoda tworzy osobny klucz sesji i używa jej do szyfrowania dokumentu XML. Ta metoda szyfruje klucz sesji i zapisuje go wraz z zaszyfrowanym kodem XML w ramach nowego `EncryptedData` elementu <>.  
+Ten przykład szyfruje element XML przy użyciu dwóch kluczy. Przykład programowo pobiera certyfikat i używa go do szyfrowania elementu XML przy użyciu <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metody. Wewnętrznie <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> Metoda tworzy osobny klucz sesji i używa jej do szyfrowania dokumentu XML. Ta metoda szyfruje klucz sesji i zapisuje go wraz z zaszyfrowanym kodem XML w ramach nowego `EncryptedData` elementu <>.  
+
+Aby odszyfrować element XML, wywołaj <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metodę, która automatycznie pobiera certyfikat X. 509 ze sklepu i wykonuje wymagane odszyfrowywanie.  Aby uzyskać więcej informacji na temat odszyfrowywania elementu XML, który został zaszyfrowany przy użyciu tej procedury, zobacz [How to: Deszyfruj elementy XML za pomocą certyfikatów X. 509](how-to-decrypt-xml-elements-with-x-509-certificates.md).  
   
- Aby odszyfrować element XML, po prostu wywołaj <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metodę, która automatycznie pobiera certyfikat X. 509 ze sklepu i wykonuje wymagane odszyfrowywanie.  Aby uzyskać więcej informacji na temat odszyfrowywania elementu XML, który został zaszyfrowany przy użyciu tej procedury, zobacz [How to: Deszyfruj elementy XML za pomocą certyfikatów X. 509](how-to-decrypt-xml-elements-with-x-509-certificates.md).  
-  
- Ten przykład jest odpowiedni dla sytuacji, w których wiele aplikacji musi udostępniać zaszyfrowane dane lub w przypadku, gdy aplikacja wymaga zapisywania zaszyfrowanych danych między uruchomionymi danymi.  
+Ten przykład jest odpowiedni dla sytuacji, w których wiele aplikacji musi udostępniać zaszyfrowane dane lub w przypadku, gdy aplikacja wymaga zapisywania zaszyfrowanych danych między uruchomionymi danymi.  
   
 ### <a name="to-encrypt-an-xml-element-with-an-x509-certificate"></a>Aby zaszyfrować element XML z certyfikatem X.509  
-  
-1. Użyj [Narzędzia do tworzenia certyfikatów (Makecert. exe)](/windows/desktop/SecCrypto/makecert) w celu wygenerowania testowego certyfikatu X. 509 i umieszczenie go w lokalnym magazynie użytkowników. Musisz wygenerować klucz wymiany i należy dokonać eksportu klucza. Uruchom następujące polecenie:  
+
+Aby uruchomić ten przykład, należy utworzyć certyfikat testowy i zapisać go w magazynie certyfikatów. Instrukcje dotyczące tego zadania są dostępne tylko dla narzędzia do [tworzenia certyfikatów systemu Windows (Makecert.exe)](/windows/desktop/SecCrypto/makecert).
+
+1. Użyj [Makecert.exe](/windows/desktop/SecCrypto/makecert) do wygenerowania certyfikatu test X. 509 i umieść go w lokalnym magazynie użytkowników. Musisz wygenerować klucz wymiany i należy dokonać eksportu klucza. Uruchom następujące polecenie:  
   
     ```console  
-    makecert -r -pe -n "CN=XML_ENC_TEST_CERT" -b 01/01/2005 -e 01/01/2010 -sky exchange -ss my  
+    makecert -r -pe -n "CN=XML_ENC_TEST_CERT" -b 01/01/2020 -e 01/01/2025 -sky exchange -ss my  
     ```  
   
 2. Utwórz <xref:System.Security.Cryptography.X509Certificates.X509Store> obiekt i zainicjuj go, aby otworzyć bieżący magazyn użytkowników.  
@@ -107,14 +110,21 @@ Można użyć klas w <xref:System.Security.Cryptography.Xml> przestrzeni nazw do
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
   
-- Aby skompilować ten przykład, należy dołączyć odwołanie do `System.Security.dll` .  
+- W projekcie, który jest przeznaczony dla .NET Framework, należy dołączyć odwołanie do `System.Security.dll` .
+
+- W projekcie przeznaczonym dla platformy .NET Core lub .NET 5 Zainstaluj pakiet NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Uwzględnij następujące przestrzenie nazw: <xref:System.Xml> , <xref:System.Security.Cryptography> , i <xref:System.Security.Cryptography.Xml> .  
   
-## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
- Certyfikat X. 509 użyty w tym przykładzie służy tylko do celów testowych.  Aplikacje powinny używać certyfikatu X. 509 wygenerowanego przez zaufany urząd certyfikacji lub użyć certyfikatu wygenerowanego przez serwer certyfikatów systemu Microsoft Windows.  
+## <a name="net-security"></a>Zabezpieczenia platformy .NET
   
-## <a name="see-also"></a>Zobacz także
+Certyfikat X. 509 użyty w tym przykładzie służy tylko do celów testowych.  Aplikacje powinny używać certyfikatu X. 509 wygenerowanego przez zaufany urząd certyfikacji.  
+  
+## <a name="see-also"></a>Zobacz też
 
+- [Model kryptografii](cryptography-model.md)
+- [Usługi kryptograficzne](cryptographic-services.md)
+- [Kryptografia międzyplatformowa](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
-- [Porady: odszyfrowywanie elementów XML za pomocą certyfikatów X.509](how-to-decrypt-xml-elements-with-x-509-certificates.md)
+- [Instrukcje: Odszyfrowywanie elementów XML za pomocą certyfikatów X.509](how-to-decrypt-xml-elements-with-x-509-certificates.md)
+- [Ochrona danych ASP.NET Core](/aspnet/core/security/data-protection/introduction)

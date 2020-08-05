@@ -1,56 +1,60 @@
 ---
-title: Model kryptografii programu .NET Framework
+title: Model kryptografii .NET
 description: Przejrzyj implementacje zwykłych algorytmów kryptograficznych w programie .NET. Zapoznaj się z rozszerzalnym modelem kryptografii dziedziczenia obiektów, projektem strumienia i konfiguracją &.
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
-- cryptography [.NET Framework], model
-- encryption [.NET Framework], model
+- cryptography [.NET], model
+- encryption [.NET], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: 11af4c15c8b291df898a3c2416faa15875eab70b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0b3e07238bf0932572c222f7b947cfa7ae0221a9
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596322"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556998"
 ---
-# <a name="net-framework-cryptography-model"></a>Model kryptografii programu .NET Framework
+# <a name="net-cryptography-model"></a>Model kryptografii .NET
 
-.NET Framework udostępnia implementacje wielu standardowych algorytmów kryptograficznych. Te algorytmy są łatwe w użyciu i mają najbezpieczniejsze możliwe właściwości domyślne. Dodatkowo rozszerzalny model dziedziczenia obiektów, projektu i konfiguracji .NET Framework
+Platforma .NET udostępnia implementacje wielu standardowych algorytmów kryptograficznych, a model kryptografii .NET jest rozszerzalny.
 
 ## <a name="object-inheritance"></a>Dziedziczenie obiektu
 
-System zabezpieczeń .NET Framework implementuje rozszerzalny wzorzec dziedziczenia klasy pochodnej. Hierarchia jest następująca:
+System kryptograficzny platformy .NET implementuje rozszerzalny wzorzec dziedziczenia klasy pochodnej. Hierarchia jest następująca:
 
-- Klasa typu algorytmu, taka jak <xref:System.Security.Cryptography.SymmetricAlgorithm> , <xref:System.Security.Cryptography.AsymmetricAlgorithm> lub <xref:System.Security.Cryptography.HashAlgorithm> . Ten poziom jest abstrakcyjny.
+- Klasa typu algorytmu, taka jak <xref:System.Security.Cryptography.SymmetricAlgorithm> , <xref:System.Security.Cryptography.AsymmetricAlgorithm> , lub <xref:System.Security.Cryptography.HashAlgorithm> . Ten poziom jest abstrakcyjny.
 
-- Klasa algorytmu, która dziedziczy z klasy typu algorytmu; na przykład, <xref:System.Security.Cryptography.Aes> , <xref:System.Security.Cryptography.RC2> lub <xref:System.Security.Cryptography.ECDiffieHellman> . Ten poziom jest abstrakcyjny.
+- Klasa algorytmu, która dziedziczy z klasy typu algorytmu; na przykład, <xref:System.Security.Cryptography.Aes> , <xref:System.Security.Cryptography.RSA> lub <xref:System.Security.Cryptography.ECDiffieHellman> . Ten poziom jest abstrakcyjny.
 
 - Implementacja klasy algorytmu, która dziedziczy z klasy algorytmu; na przykład, <xref:System.Security.Cryptography.AesManaged> , <xref:System.Security.Cryptography.RC2CryptoServiceProvider> lub <xref:System.Security.Cryptography.ECDiffieHellmanCng> . Ten poziom jest w pełni zaimplementowany.
 
-Korzystając z tego wzorca klas pochodnych, można łatwo dodać nowy algorytm lub nową implementację istniejącego algorytmu. Na przykład, aby utworzyć nowy algorytm klucza publicznego, można dziedziczyć z <xref:System.Security.Cryptography.AsymmetricAlgorithm> klasy. Aby utworzyć nową implementację określonego algorytmu, należy utworzyć nieabstrakcyjną klasę pochodną tego algorytmu.
+Ten wzorzec klas pochodnych pozwala dodać nowy algorytm lub nową implementację istniejącego algorytmu. Na przykład, aby utworzyć nowy algorytm klucza publicznego, można dziedziczyć z <xref:System.Security.Cryptography.AsymmetricAlgorithm> klasy. Aby utworzyć nową implementację określonego algorytmu, należy utworzyć nieabstrakcyjną klasę pochodną tego algorytmu.
 
-## <a name="how-algorithms-are-implemented-in-the-net-framework"></a>Jak zaimplementowane są algorytmy w .NET Framework
+## <a name="how-algorithms-are-implemented-in-net"></a>Jak zaimplementowane są algorytmy w programie .NET
 
-Przykładem różnych implementacji dla algorytmu, należy wziąć pod uwagę Algorytmy symetryczne. Podstawowa dla wszystkich algorytmów symetrycznych jest <xref:System.Security.Cryptography.SymmetricAlgorithm> dziedziczona przez następujące algorytmy:
+Przykładem różnych implementacji dla algorytmu, należy wziąć pod uwagę Algorytmy symetryczne. Podstawą dla wszystkich algorytmów symetrycznych jest <xref:System.Security.Cryptography.SymmetricAlgorithm> , która jest dziedziczona przez <xref:System.Security.Cryptography.Aes> , <xref:System.Security.Cryptography.TripleDES> i inne, które nie są już zalecane.
 
-* <xref:System.Security.Cryptography.Aes>
-* <xref:System.Security.Cryptography.DES>
-* <xref:System.Security.Cryptography.RC2>
-* <xref:System.Security.Cryptography.Rijndael>
-* <xref:System.Security.Cryptography.TripleDES>
+<xref:System.Security.Cryptography.Aes>jest dziedziczona przez <xref:System.Security.Cryptography.AesCryptoServiceProvider> , <xref:System.Security.Cryptography.AesCng> , i <xref:System.Security.Cryptography.AesManaged> .
 
-<xref:System.Security.Cryptography.Aes>jest dziedziczona przez dwie klasy: <xref:System.Security.Cryptography.AesCryptoServiceProvider> i <xref:System.Security.Cryptography.AesManaged> . <xref:System.Security.Cryptography.AesCryptoServiceProvider>Klasa jest otoką opartą na implementacji AES interfejsu API (CAPI) systemu Windows, podczas gdy <xref:System.Security.Cryptography.AesManaged> Klasa jest zapisywana w całości w kodzie zarządzanym. Oprócz implementacji zarządzanych i CAPI istnieje również trzeci typ implementacji, Kryptografia nowej generacji (CNG). Przykładem algorytmu CNG jest <xref:System.Security.Cryptography.ECDiffieHellmanCng> . Algorytmy CNG są dostępne w systemie Windows Vista i nowszych.
+W .NET Framework w systemie Windows:
 
-Możesz wybrać, która implementacja jest dla Ciebie najlepsza. Zarządzane wdrożenia są dostępne na wszystkich platformach, które obsługują .NET Framework. Implementacje CAPI są dostępne w starszych systemach operacyjnych i nie są już opracowywane. CNG to najnowsza implementacja, w której nastąpi nowe programowanie. Jednak implementacje zarządzane nie są certyfikowane przez standardy FIPS (Federal Information Processing Standards) i mogą być wolniejsze niż klasy otoki.
+* `*CryptoServiceProvider`klasy algorytmu, takie jak <xref:System.Security.Cryptography.AesCryptoServiceProvider> , są otokami wokół implementacji algorytmu Windows CRYPTOGRAPHY API (CAPI).
+* `*Cng`klasy algorytmu, takie jak <xref:System.Security.Cryptography.ECDiffieHellmanCng> są otokami wokół implementacji Windows Cryptography Next Generation (CNG).
+* `*Managed`klasy, takie jak <xref:System.Security.Cryptography.AesManaged> , są zapisywane w całości w kodzie zarządzanym. `*Managed`implementacje nie są certyfikowane przez standardy FIPS (Federal Information Processing Standards) i mogą być wolniejsze niż `*CryptoServiceProvider` `*Cng` klasy otoki i.
 
-## <a name="stream-design"></a>Projekt strumienia
+W przypadku programów .NET Core i .NET 5 i nowszych wersje wszystkie klasy implementacji ( `*CryptoServiceProvider` , `*Managed` i `*Cng` ) są otokami dla algorytmów systemu operacyjnego (OS). Jeśli algorytmy systemu operacyjnego są certyfikowane pod kątem zgodności ze standardem FIPS, .NET używa algorytmów certyfikowanych przez FIPS. Aby uzyskać więcej informacji, zobacz [Kryptografia międzyplatformowa](cross-platform-cryptography.md).
 
-Środowisko uruchomieniowe języka wspólnego używa projektu zorientowanego na strumień do implementowania algorytmów symetrycznych i algorytmów wyznaczania wartości skrótu. Rdzeń tego projektu jest <xref:System.Security.Cryptography.CryptoStream> klasą, która pochodzi od <xref:System.IO.Stream> klasy. Obiekty kryptograficzne oparte na strumieniach obsługują pojedynczy standardowy interfejs ( `CryptoStream` ) do obsługi częściowego transferu danych obiektu. Ze względu na to, że wszystkie obiekty są oparte na standardowym interfejsie, można połączyć wiele obiektów (takich jak obiekt skrótu, po którym następuje obiekt szyfrowania) i można wykonać wiele operacji na danych bez potrzeby przechowywania pośredniego. Model przesyłania strumieniowego umożliwia również Kompilowanie obiektów z mniejszych obiektów. Na przykład połączone szyfrowanie i algorytm wyznaczania wartości skrótu można wyświetlić jako obiekt pojedynczego strumienia, chociaż ten obiekt może być skompilowany na podstawie zestawu obiektów strumienia.
+W większości przypadków nie trzeba bezpośrednio odwoływać się do klasy implementacji algorytmu, takiej jak `AesCryptoServiceProvider` . Metody i właściwości, które zazwyczaj są potrzebne, znajdują się w klasie algorytmu podstawowego, na przykład `Aes` . Utwórz wystąpienie domyślnej klasy implementacji przy użyciu metody fabryki w klasie algorytmu podstawowego i zapoznaj się z klasą algorytmu podstawowego. Na przykład zobacz wyróżniony wiersz kodu w następującym przykładzie:
+
+:::code language="csharp" source="snippets/encrypting-data/csharp/aes-encrypt.cs" highlight="16":::
+:::code language="vb" source="snippets/encrypting-data/vb/aes-encrypt.vb" highlight="12":::
 
 ## <a name="cryptographic-configuration"></a>Konfiguracja kryptograficzna
 
-Konfiguracja kryptograficzna pozwala rozpoznać określoną implementację algorytmu do nazwy algorytmu, co pozwala na rozszerzanie klas kryptografii .NET Framework. Możesz dodać własną implementację sprzętu lub oprogramowania do algorytmu i zmapować implementację do wybranej nazwy algorytmu. Jeśli w pliku konfiguracji nie określono algorytmu, zostaną użyte ustawienia domyślne. Aby uzyskać więcej informacji na temat konfiguracji kryptograficznej, zobacz [Konfigurowanie klas kryptograficznych](../../framework/configure-apps/configure-cryptography-classes.md).
+Konfiguracja kryptograficzna pozwala rozwiązać konkretną implementację algorytmu do nazwy algorytmu, umożliwiając rozszerzanie klas kryptografii platformy .NET. Możesz dodać własną implementację sprzętu lub oprogramowania do algorytmu i zmapować implementację do wybranej nazwy algorytmu. Jeśli w pliku konfiguracji nie określono algorytmu, zostaną użyte ustawienia domyślne.
 
 ## <a name="choosing-an-algorithm"></a>Wybieranie algorytmu
 
@@ -70,11 +74,12 @@ Poniżej znajduje się lista zalecanych algorytmów według aplikacji:
   - <xref:System.Security.Cryptography.ECDiffieHellman>
   - <xref:System.Security.Cryptography.RSA>
 - Generowanie liczb losowych:
-  - <xref:System.Security.Cryptography.RNGCryptoServiceProvider>
+  - <xref:System.Security.Cryptography.RandomNumberGenerator.Create%2A?displayProperty=nameWithType>
 - Generowanie klucza przy użyciu hasła:
   - <xref:System.Security.Cryptography.Rfc2898DeriveBytes>
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Usługi kryptograficzne](cryptographic-services.md)
-- [Zastosowano protokoły kryptografii, algorytmy i kod źródłowy w C, przez Bruce Schneier](https://www.schneier.com/books/applied_cryptography/)
+- [Kryptografia międzyplatformowa](cross-platform-cryptography.md)
+- [Ochrona danych ASP.NET Core](/aspnet/core/security/data-protection/introduction)

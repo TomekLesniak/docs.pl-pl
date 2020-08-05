@@ -1,43 +1,43 @@
 ---
 title: Podpisy kryptograficzne
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - digital signatures
-- cryptography [.NET Framework], signatures
+- cryptography [.NET], signatures
 - digital signatures, XML signing
 - signatures, cryptographic
 - digital signatures, generating
 - verifying signatures
 - generating signatures
 - digital signatures, about
-- encryption [.NET Framework], signatures
-- security [.NET Framework], signatures
+- encryption [.NET], signatures
+- security [.NET], signatures
 - XML signing
 - digital signatures, verifying
 - signing XML
 ms.assetid: aa87cb7f-e608-4a81-948b-c9b8a1225783
-ms.openlocfilehash: 9e69578ceffeeacb73cf059f5b577fe7c137b599
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ce2be1d509da4e399bf87e1c8df7ba061fc2707c
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288397"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557011"
 ---
 # <a name="cryptographic-signatures"></a>Podpisy kryptograficzne
 
 Kryptograficzne podpisy cyfrowe korzystają z algorytmów kluczy publicznych w celu zapewnienia integralności danych. Po podpisaniu danych za pomocą podpisu cyfrowego ktoś inny może zweryfikować podpis i może udowodnić, że dane pochodzą od Ciebie i nie zostały zmienione po podpisaniu. Aby uzyskać więcej informacji na temat podpisów cyfrowych, zobacz [usługi kryptograficzne](cryptographic-services.md).
 
-W tym temacie wyjaśniono, jak generować i weryfikować podpisy cyfrowe przy użyciu klas w <xref:System.Security.Cryptography?displayProperty=nameWithType> przestrzeni nazw.
+W tym temacie wyjaśniono, jak generować i weryfikować podpisy cyfrowe przy użyciu klas w <xref:System.Security.Cryptography> przestrzeni nazw.
 
 ## <a name="generating-signatures"></a>Generowanie podpisów
 
-Podpisy cyfrowe są zwykle stosowane do wartości skrótu, które reprezentują większe dane. Poniższy przykład stosuje podpis cyfrowy do wartości skrótu. Najpierw tworzone jest nowe wystąpienie <xref:System.Security.Cryptography.RSACryptoServiceProvider> klasy w celu wygenerowania pary kluczy publicznych/prywatnych. Następnie <xref:System.Security.Cryptography.RSACryptoServiceProvider> jest przenoszona do nowego wystąpienia <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> klasy. Spowoduje to przeniesienie klucza prywatnego do programu <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> , co w rzeczywistości wykonuje podpis cyfrowy. Przed podpisaniem kodu skrótu należy określić algorytm wyznaczania wartości skrótu. W tym przykładzie zastosowano algorytm SHA1. Na koniec <xref:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature%2A> Metoda jest wywoływana w celu przeprowadzenia podpisywania.
+Podpisy cyfrowe są zwykle stosowane do wartości skrótu, które reprezentują większe dane. Poniższy przykład stosuje podpis cyfrowy do wartości skrótu. Najpierw tworzone jest nowe wystąpienie <xref:System.Security.Cryptography.RSA> klasy w celu wygenerowania pary kluczy publicznych/prywatnych. Następnie <xref:System.Security.Cryptography.RSA> jest przenoszona do nowego wystąpienia <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> klasy. Spowoduje to przeniesienie klucza prywatnego do programu <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> , co w rzeczywistości wykonuje podpis cyfrowy. Przed podpisaniem kodu skrótu należy określić algorytm wyznaczania wartości skrótu. W tym przykładzie zastosowano algorytm SHA1. Na koniec <xref:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature%2A> Metoda jest wywoływana w celu przeprowadzenia podpisywania.
 
-Ze względu na kolizje problemów z algorytmem SHA1 firma Microsoft zaleca SHA256ą lub lepszą.
+Ze względu na kolizje problemów z algorytmem SHA1 zalecamy SHA256 lub lepszą.
 
 ```vb
 Imports System.Security.Cryptography
@@ -51,10 +51,10 @@ Module Module1
         Dim signedHashValue() As Byte
 
         'Generate a public/private key pair.
-        Dim rsa As New RSACryptoServiceProvider()
+        Dim rsa As RSA = RSA.Create()
 
         'Create an RSAPKCS1SignatureFormatter object and pass it
-        'the RSACryptoServiceProvider to transfer the private key.
+        'the RSA instance to transfer the private key.
         Dim rsaFormatter As New RSAPKCS1SignatureFormatter(rsa)
 
         'Set the hash algorithm to SHA1.
@@ -82,10 +82,10 @@ class Class1
       byte[] signedHashValue;
 
       //Generate a public/private key pair.
-      RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+      RSA rsa = RSA.Create();
 
       //Create an RSAPKCS1SignatureFormatter object and pass it the
-      //RSACryptoServiceProvider to transfer the private key.
+      //RSA instance to transfer the private key.
       RSAPKCS1SignatureFormatter rsaFormatter = new RSAPKCS1SignatureFormatter(rsa);
 
       //Set the hash algorithm to SHA1.
@@ -97,12 +97,6 @@ class Class1
    }
 }
 ```
-
-### <a name="signing-xml-files"></a>Podpisywanie plików XML
-
-.NET Framework udostępnia <xref:System.Security.Cryptography.Xml> przestrzeń nazw, co umożliwia podpisywanie kodu XML. Podpisywanie kodu XML jest ważne, gdy chcesz sprawdzić, czy dane XML pochodzą z określonego źródła. Jeśli na przykład korzystasz z usługi notowań giełdowych korzystającej z kodu XML, możesz sprawdzić źródło kodu XML, jeśli jest on podpisany.
-
-Klasy w tej przestrzeni nazw są zgodne ze [składnią podpisu XML i zaleceniem do przetwarzania](https://www.w3.org/TR/xmldsig-core/) z organizacja World Wide Web Consortium.
 
 ## <a name="verifying-signatures"></a>Weryfikowanie podpisów
 
@@ -116,7 +110,7 @@ Aby sprawdzić, czy dane zostały podpisane przez określoną stronę, musisz dy
 
 - Algorytm wyznaczania wartości skrótu używany przez program podpisujący.
 
-Aby sprawdzić podpis podpisany przez <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> klasę, użyj <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> klasy. <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter>Klasa musi być dostarczona z kluczem publicznym osoby podpisującej. Do określenia klucza publicznego potrzebne będą wartości z modułu i wykładnika. (Strona, która wygenerowała parę kluczy publiczny/prywatny powinna podawać te wartości). Najpierw Utwórz <xref:System.Security.Cryptography.RSACryptoServiceProvider> obiekt przechowujący klucz publiczny, który będzie weryfikować podpis, a następnie zainicjuj <xref:System.Security.Cryptography.RSAParameters> strukturę do wartości modulo i wykładnik, które określają klucz publiczny.
+Aby sprawdzić podpis podpisany przez <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> klasę, użyj <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> klasy. <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter>Klasa musi być dostarczona z kluczem publicznym osoby podpisującej. W przypadku algorytmu RSA do określenia klucza publicznego będą potrzebne wartości z modułu i wykładnika. (Strona, która wygenerowała parę kluczy publiczny/prywatny powinna podawać te wartości). Najpierw Utwórz <xref:System.Security.Cryptography.RSA> obiekt przechowujący klucz publiczny, który będzie weryfikować podpis, a następnie zainicjuj <xref:System.Security.Cryptography.RSAParameters> strukturę do wartości modulo i wykładnik, które określają klucz publiczny.
 
 Poniższy kod przedstawia tworzenie <xref:System.Security.Cryptography.RSAParameters> struktury. `Modulus`Właściwość jest ustawiona na wartość tablicy bajtowej o nazwie `modulusData` i `Exponent` Właściwość jest ustawiona na wartość tablicy bajtowej o nazwie `exponentData` .
 
@@ -132,12 +126,14 @@ rsaKeyInfo.Modulus = modulusData;
 rsaKeyInfo.Exponent = exponentData;
 ```
 
-Po utworzeniu <xref:System.Security.Cryptography.RSAParameters> obiektu można zainicjować nowe wystąpienie <xref:System.Security.Cryptography.RSACryptoServiceProvider> klasy do wartości określonych w <xref:System.Security.Cryptography.RSAParameters> . <xref:System.Security.Cryptography.RSACryptoServiceProvider>To z kolei jest przekazywane do konstruktora elementu, <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> Aby przenieść klucz.
+Po utworzeniu <xref:System.Security.Cryptography.RSAParameters> obiektu można zainicjować nowe wystąpienie <xref:System.Security.Cryptography.RSA> klasy implementacji do wartości określonych w <xref:System.Security.Cryptography.RSAParameters> . <xref:System.Security.Cryptography.RSA>Wystąpienie jest z kolei przekazywane do konstruktora elementu, <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> Aby przetransferować klucz.
 
 Poniższy przykład ilustruje ten proces. W tym przykładzie `hashValue` i `signedHashValue` są tablicami bajtów dostarczanych przez stronę zdalną. Strona zdalna podpisała `hashValue` przy użyciu algorytmu SHA1, generując podpis cyfrowy `signedHashValue` . <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType>Metoda weryfikuje, czy podpis cyfrowy jest prawidłowy i został użyty do podpisania `hashValue` .
 
+Ze względu na kolizje problemów z algorytmem SHA1 zalecamy SHA256 lub lepszą.  Jeśli jednak do utworzenia podpisu użyto algorytmu SHA1, należy użyć algorytmu SHA1 do zweryfikowania podpisu.
+
 ```vb
-Dim rsa As New RSACryptoServiceProvider()
+Dim rsa As RSA = RSA.Create()
 rsa.ImportParameters(rsaKeyInfo)
 Dim rsaDeformatter As New RSAPKCS1SignatureDeformatter(rsa)
 rsaDeformatter.SetHashAlgorithm("SHA1")
@@ -149,7 +145,7 @@ End If
 ```
 
 ```csharp
-RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+RSA rsa = RSA.Create();
 rsa.ImportParameters(rsaKeyInfo);
 RSAPKCS1SignatureDeformatter rsaDeformatter = new RSAPKCS1SignatureDeformatter(rsa);
 rsaDeformatter.SetHashAlgorithm("SHA1");
@@ -165,6 +161,9 @@ else
 
 W tym fragmencie kodu zostanie wyświetlony element " `The signature is valid` ", jeśli sygnatura jest prawidłowa i " `The signature is not valid` ", jeśli nie jest.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Usługi kryptograficzne](cryptographic-services.md)
+- [Model kryptografii](cryptography-model.md)
+- [Kryptografia międzyplatformowa](cross-platform-cryptography.md)
+- [Ochrona danych ASP.NET Core](/aspnet/core/security/data-protection/introduction)

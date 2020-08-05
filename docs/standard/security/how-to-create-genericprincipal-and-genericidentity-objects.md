@@ -1,6 +1,6 @@
 ---
-title: 'Porady: tworzenie obiektów GenericPrincipal i GenericIdentity'
-ms.date: 03/30/2017
+title: 'Instrukcje: Tworzenie obiektów GenericPrincipal i GenericIdentity'
+ms.date: 07/15/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -11,14 +11,19 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-ms.openlocfilehash: 10a71185db3359cda1c3bf7a12f5698929c98296
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 903d636938c47850951330d7936d95470441607e
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290866"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557219"
 ---
-# <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Porady: tworzenie obiektów GenericPrincipal i GenericIdentity
+# <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Instrukcje: Tworzenie obiektów GenericPrincipal i GenericIdentity
+
+> [!NOTE]
+> Ten artykuł dotyczy systemu Windows.
+>
+> Aby uzyskać informacje na temat ASP.NET Core, zobacz [Omówienie zabezpieczeń ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/).
 
 Można użyć <xref:System.Security.Principal.GenericIdentity> klasy w połączeniu z <xref:System.Security.Principal.GenericPrincipal> klasą, aby utworzyć schemat autoryzacji, który istnieje niezależnie od domeny systemu Windows.
 
@@ -139,10 +144,10 @@ The IsAuthenticated is: True
 Is this a Manager? True
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Security.Principal.GenericIdentity>
 - <xref:System.Security.Principal.GenericPrincipal>
 - <xref:System.Security.Permissions.PrincipalPermission>
-- [Zastępowanie obiektu podmiotu zabezpieczeń](replacing-a-principal-object.md)
+- [Zastępowanie obiektu głównego](replacing-a-principal-object.md)
 - [Obiekty główne i obiekty tożsamości](principal-and-identity-objects.md)

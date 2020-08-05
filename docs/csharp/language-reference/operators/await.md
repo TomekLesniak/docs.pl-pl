@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 76c6b24c1cd061585c7a6964d30bc81cc5fc5975
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: f4b0ef501a30d3dffc1346c805ce0161ca4cac90
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308848"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555438"
 ---
 # <a name="await-operator-c-reference"></a>await — operator (odwołanie w C#)
 
@@ -54,7 +54,7 @@ Aby uzyskać więcej informacji, zobacz sekcję [await Expressions](~/_csharplan
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
+- [Operatory i wyrażenia języka C#](index.md)
 - [async](../keywords/async.md)
 - [Model programowania asynchronicznego zadań (APM)](../../programming-guide/concepts/async/task-asynchronous-programming-model.md)
 - [Programowanie asynchroniczne](../../async.md)

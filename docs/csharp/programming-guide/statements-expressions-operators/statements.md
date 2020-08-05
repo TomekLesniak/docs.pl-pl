@@ -6,12 +6,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: b941e46f959167f78f1366a3863aca4240810013
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 3f8ac88525c44f9572f4f647145ad251537aba57
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381765"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556751"
 ---
 # <a name="statements-c-programming-guide"></a>Instrukcje (Przewodnik programowania w języku C#)
 
@@ -28,10 +28,10 @@ W poniższej tabeli wymieniono różne typy instrukcji w języku C# i powiązane
 |Kategoria|Słowa kluczowe języka C#/uwagi|
 |--------------|---------------------------|
 |[Deklaracje deklaracji](#declaration-statements)|Instrukcja deklaracji wprowadza nową zmienną lub stałą. Deklaracja zmiennej może opcjonalnie przypisać wartość do zmiennej. W deklaracji stałej jest wymagane przypisanie.|
-|[Instrukcje wyrażeń](expressions.md)|Instrukcje wyrażenia, które obliczają wartość, muszą przechowywać wartość w zmiennej. Aby uzyskać więcej informacji, zobacz [instrukcje wyrażeń](#expression-statements).|
+|[Instrukcje wyrażeń](#expression-statements)|Instrukcje wyrażenia, które obliczają wartość, muszą przechowywać wartość w zmiennej.|
 |Instrukcje wyboru|Instrukcje wyboru umożliwiają rozgałęzienie z różnymi sekcjami kodu, w zależności od jednego lub większej liczby określonych warunków. Aby uzyskać więcej informacji, zobacz następujące tematy: <ul><li>[if](../../language-reference/keywords/if-else.md)</li><li>[else](../../language-reference/keywords/if-else.md)</li><li>[przełącznika](../../language-reference/keywords/switch.md)</li><li>[spraw](../../language-reference/keywords/switch.md)</li></ul>|
 |Instrukcje iteracji|Instrukcje iteracji umożliwiają pętlę za pomocą kolekcji, takich jak tablice, lub wielokrotne wykonywanie tego samego zestawu instrukcji do czasu spełnienia określonego warunku. Aby uzyskać więcej informacji, zobacz następujące tematy: <ul><li>[do](../../language-reference/keywords/do.md)</li><li>[dla](../../language-reference/keywords/for.md)</li><li>[foreach](../../language-reference/keywords/foreach-in.md)</li><li>[podczas](../../language-reference/keywords/foreach-in.md)</li><li>[while](../../language-reference/keywords/while.md)</li></ul>|
-|Instrukcje skoku|Przeskocz kontrolę transferu do innej sekcji kodu. Aby uzyskać więcej informacji, zobacz następujące tematy: <ul><li>[break](../../language-reference/keywords/break.md)</li><li>[utrzymać](../../language-reference/keywords/continue.md)</li><li>[default](../../language-reference/keywords/switch.md)</li><li>[goto](../../language-reference/keywords/goto.md)</li><li>[return](../../language-reference/keywords/return.md)</li><li>[yield](../../language-reference/keywords/yield.md)</li></ul>|
+|Instrukcje skoku|Przeskocz kontrolę transferu do innej sekcji kodu. Aby uzyskać więcej informacji, zobacz następujące tematy: <ul><li>[break](../../language-reference/keywords/break.md)</li><li>[utrzymać](../../language-reference/keywords/continue.md)</li><li>[wartooć](../../language-reference/keywords/switch.md)</li><li>[goto](../../language-reference/keywords/goto.md)</li><li>[return](../../language-reference/keywords/return.md)</li><li>[yield](../../language-reference/keywords/yield.md)</li></ul>|
 |Instrukcje obsługi wyjątków|Instrukcje obsługi wyjątków umożliwiają bezpieczne odzyskiwanie z wyjątkowych warunków występujących w czasie wykonywania. Aby uzyskać więcej informacji, zobacz następujące tematy: <ul><li>[throw](../../language-reference/keywords/throw.md)</li><li>[try-catch](../../language-reference/keywords/try-catch.md)</li><li>[try-finally](../../language-reference/keywords/try-finally.md)</li><li>[try-catch-finally](../../language-reference/keywords/try-catch-finally.md)</li></ul>|
 |[Zaznaczone i niezaznaczone](../../language-reference/keywords/checked-and-unchecked.md)|Instrukcje sprawdzone i niesprawdzone umożliwiają określenie, czy operacje numeryczne mogą spowodować przepełnienie, gdy wynik jest przechowywany w zmiennej, która jest zbyt mała, aby pomieścić wynikową wartość. Aby uzyskać więcej informacji, zobacz [zaznaczone](../../language-reference/keywords/checked.md) i [niezaznaczone](../../language-reference/keywords/unchecked.md).|
 |`await`Instrukcja|Jeśli oznaczesz metodę za pomocą modyfikatora [asynchronicznego](../../language-reference/keywords/async.md) , możesz użyć operatora [await](../../language-reference/operators/await.md) w metodzie. Gdy kontrolka osiągnie `await` wyrażenie w metodzie asynchronicznej, sterowanie powraca do obiektu wywołującego, a postęp w metodzie jest zawieszony do momentu zakończenia zadania oczekiwania. Po zakończeniu zadania wykonywanie może zostać wznowione w metodzie.<br /><br /> Aby zapoznać się z prostym przykładem, zobacz sekcję "metody asynchroniczne" w temacie [metody](../classes-and-structs/methods.md). Aby uzyskać więcej informacji, zobacz [programowanie asynchroniczne z Async i await](../concepts/async/index.md).|
@@ -92,5 +92,5 @@ Aby uzyskać więcej informacji, zobacz sekcję [instrukcje](~/_csharplang/spec/
 ## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
-- [Słowa kluczowe instrukcji](../../language-reference/keywords/statement-keywords.md)  
-- [Wyrażenia](expressions.md)  
+- [Słowa kluczowe instrukcji](../../language-reference/keywords/statement-keywords.md)
+- [Operatory i wyrażenia języka C#](../../language-reference/operators/index.md)

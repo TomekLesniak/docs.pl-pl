@@ -4,18 +4,18 @@ description: W tym samouczku przedstawiono sposób tworzenia aplikacji konsolowe
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: de8ea511b3d421e391b182a6de079b854d3f2390
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: da972d793570a8dd6b906762640bd6bfe5531a5b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281761"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557167"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Samouczek: analizowanie tonacji komentarzy w witrynie sieci Web za pomocą klasyfikacji binarnej w ML.NET
 
 W tym samouczku przedstawiono sposób tworzenia aplikacji konsolowej .NET Core, która klasyfikuje tonacji z komentarzy w witrynie sieci Web i podejmuje odpowiednie działania. Tonacji klasyfikator binarny używa języka C# w programie Visual Studio 2017.
 
-Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
+Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
 > [!div class="checklist"]
 >
 > - Tworzenie aplikacji konsolowej
@@ -212,7 +212,7 @@ Metoda [dopasowywania ()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.
 
 ## <a name="evaluate-the-model"></a>Ocena modelu
 
-Po przeszkoleniu modelu Użyj danych testowych, aby sprawdzić wydajność modelu.
+Po przeszkoleniu modelu Użyj danych testowych do sprawdzenia wydajności modelu.
 
 1. Utwórz `Evaluate()` metodę, tuż po `BuildAndTrainModel()` , przy użyciu następującego kodu:
 

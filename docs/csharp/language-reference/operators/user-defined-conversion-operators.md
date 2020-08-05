@@ -1,6 +1,6 @@
 ---
-title: Operatory konwersji zdefiniowane przez użytkownika — odwołanie do języka C#
-description: Dowiedz się, jak zdefiniować niestandardowe konwersje typu niejawnego i jawnego w języku C#.
+title: Operatory konwersji zdefiniowane przez użytkownika — odwołanie w C#
+description: Dowiedz się, jak definiować niestandardowe niejawne i jawne konwersje typów w języku C#.
 ms.date: 07/09/2019
 f1_keywords:
 - explicit_CSharpKeyword
@@ -10,32 +10,32 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: b59fc27be31f1a38e2a6c3cabd82598933b5ed53
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: ab3598b8158d0a789e8583403389df657ae01aed
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121406"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556283"
 ---
-# <a name="user-defined-conversion-operators-c-reference"></a>Operatory konwersji zdefiniowane przez użytkownika (odwołanie do języka C#)
+# <a name="user-defined-conversion-operators-c-reference"></a>Operatory konwersji zdefiniowane przez użytkownika (odwołanie w C#)
 
-Typ zdefiniowany przez użytkownika można zdefiniować niestandardowe niejawne lub jawne konwersji z lub do innego typu.
+Typ zdefiniowany przez użytkownika może definiować niestandardową lub niejawną konwersję z lub do innego typu.
 
-Konwersje niejawne nie wymagają specjalnej składni do wywoływania i mogą wystąpić w różnych sytuacjach, na przykład w przypisaniach i wywołaniach metod. Wstępnie zdefiniowane konwersje niejawne języka C# zawsze powiedzie się i nigdy nie zgłaszają wyjątku. Konwersje niejawne zdefiniowane przez użytkownika powinny zachowywać się również w ten sposób. Jeśli konwersja niestandardowa może zgłosić wyjątek lub utracić informacje, zdefiniuj ją jako konwersję jawną.
+Konwersje niejawne nie wymagają wywoływania specjalnej składni i mogą wystąpić w różnych sytuacjach, na przykład w przypisaniach i metodach wywołania. Wstępnie zdefiniowane konwersje niejawne języka C# zawsze kończą się powodzeniem i nigdy nie generują wyjątku. Niejawne konwersje zdefiniowane przez użytkownika powinny również działać w ten sposób. Jeśli niestandardowa konwersja może zgłosić wyjątek lub utracić informacje, zdefiniuj ją jako konwersję jawną.
 
-Konwersje zdefiniowane przez użytkownika nie są uwzględniane przez [operatorów is](type-testing-and-cast.md#is-operator) i [as.](type-testing-and-cast.md#as-operator) Użyj [wyrażenia rzutowego,](type-testing-and-cast.md#cast-expression) aby wywołać konwersję jawną zdefiniowaną przez użytkownika.
+Konwersje zdefiniowane przez użytkownika nie są uwzględniane przez operatory [is](type-testing-and-cast.md#is-operator) i [as](type-testing-and-cast.md#as-operator) . Użyj [wyrażenia Cast](type-testing-and-cast.md#cast-expression) do wywołania jawnej konwersji zdefiniowanej przez użytkownika.
 
-Użyj `operator` i `implicit` `explicit` lub słowa kluczowe, aby zdefiniować konwersji niejawnej lub jawnej, odpowiednio. Typ definiujący konwersję musi być typem źródłowym lub typem docelowym tej konwersji. Konwersja między dwoma typami zdefiniowanymi przez użytkownika może być zdefiniowana w jednym z dwóch typów.
+Użyj `operator` `implicit` `explicit` słów kluczowych i lub, aby zdefiniować odpowiednio niejawną lub jawną konwersję. Typ, który definiuje konwersję, musi być typem źródłowym lub typem docelowym tej konwersji. Konwersję między dwoma typami zdefiniowanymi przez użytkownika można zdefiniować w jeden z dwóch typów.
 
-W poniższym przykładzie pokazano, jak zdefiniować konwersję niejawną i jawną:
+Poniższy przykład ilustruje sposób definiowania konwersji niejawnej i jawnej:
 
 [!code-csharp[implicit an explicit conversions](snippets/UserDefinedConversions.cs)]
 
-Służy również `operator` słowo kluczowe przeciążenie wstępnie zdefiniowanego operatora języka C#. Aby uzyskać więcej informacji, zobacz [Przeciążanie operatora](operator-overloading.md).
+Możesz również użyć `operator` słowa kluczowego do przeciążenia wstępnie zdefiniowanego operatora języka C#. Aby uzyskać więcej informacji, zobacz [przeciążanie operatora](operator-overloading.md).
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języka języka C#:](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języka C#](~/_csharplang/spec/introduction.md):
 
 - [Operatory konwersji](~/_csharplang/spec/classes.md#conversion-operators)
 - [Konwersje zdefiniowane przez użytkownika](~/_csharplang/spec/conversions.md#user-defined-conversions)
@@ -45,9 +45,9 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języ
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
+- [Operatory i wyrażenia języka C#](index.md)
 - [Przeładowanie operatora](operator-overloading.md)
 - [Operatory testowania typu i rzutowania](type-testing-and-cast.md)
-- [Odlewanie i konwersja typu](../../programming-guide/types/casting-and-type-conversions.md)
+- [Rzutowanie i Konwersja typów](../../programming-guide/types/casting-and-type-conversions.md)
 - [Wytyczne dotyczące projektowania — operatory konwersji](../../../standard/design-guidelines/operator-overloads.md#conversion-operators)
-- [Konwersje jawne zdefiniowane przez użytkownika w łańcuchu w języku C #](https://docs.microsoft.com/archive/blogs/ericlippert/chained-user-defined-explicit-conversions-in-c)
+- [Jawne konwersje zdefiniowane przez użytkownika w języku C #](https://docs.microsoft.com/archive/blogs/ericlippert/chained-user-defined-explicit-conversions-in-c)

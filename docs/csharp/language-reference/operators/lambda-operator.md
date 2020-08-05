@@ -1,5 +1,5 @@
 ---
-title: = operator> - odwołanie do języka C#
+title: Operator> — odwołanie w C#
 ms.date: 01/22/2019
 f1_keywords:
 - =>_CSharpKeyword
@@ -7,46 +7,46 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: 15c02e11610866f359e3e3a7e2751ded918154b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a809a2c70cd2932870ed365bcaeb0edf838b679
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846259"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556530"
 ---
-# <a name="-operator-c-reference"></a>= operator> (odwołanie do języka C#)
+# <a name="-operator-c-reference"></a>=> — operator (odwołanie w C#)
 
-Token `=>` jest obsługiwany w dwóch formach: jako [operator lambda](#lambda-operator) i jako separator nazwy elementu członkowskiego i implementacji elementu członkowskiego w [definicji treści wyrażenia](#expression-body-definition).
+`=>`Token jest obsługiwany w dwóch formach: jako [operator lambda](#lambda-operator) oraz jako separator nazwy elementu członkowskiego i implementacji elementu członkowskiego w [definicji treści wyrażenia](#expression-body-definition).
 
-## <a name="lambda-operator"></a>Operator Lambda
+## <a name="lambda-operator"></a>Operator lambda
 
-W [wyrażeniach lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)operator `=>` lambda oddziela parametry wejściowe po lewej stronie od obiektu lambda po prawej stronie.
+W [wyrażeniach lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)operator lambda `=>` oddziela parametry wejściowe po lewej stronie od treści lambda po prawej stronie.
 
-W poniższym przykładzie użyto funkcji [LINQ](../../programming-guide/concepts/linq/index.md) ze składnią metody w celu zademonstrowania użycia wyrażeń lambda:
+W poniższym przykładzie użyto funkcji [LINQ](../../programming-guide/concepts/linq/index.md) z składnią metody, aby pokazać użycie wyrażeń lambda:
 
 [!code-csharp-interactive[infer types of input variables](snippets/LambdaOperator.cs#InferredTypes)]
 
-Parametry wejściowe wyrażenia lambda są silnie typowane w czasie kompilacji. Gdy kompilator można wywnioskować typy parametrów wejściowych, jak w poprzednim przykładzie, można pominąć deklaracje typu. Jeśli trzeba określić typ parametrów wejściowych, należy to zrobić dla każdego parametru, jak pokazano w poniższym przykładzie:
+Parametry wejściowe wyrażenia lambda są silnie wpisywane w czasie kompilacji. Gdy kompilator może wywnioskować typy parametrów wejściowych, jak w poprzednim przykładzie, można pominąć deklaracje typu. Jeśli musisz określić typ parametrów wejściowych, należy to zrobić dla każdego parametru, jak pokazano w poniższym przykładzie:
 
 [!code-csharp-interactive[specify types of input variables](snippets/LambdaOperator.cs#ExplicitTypes)]
 
-W poniższym przykładzie pokazano, jak zdefiniować wyrażenie lambda bez parametrów wejściowych:
+Poniższy przykład pokazuje, jak zdefiniować wyrażenie lambda bez parametrów wejściowych:
 
 [!code-csharp-interactive[without input variables](snippets/LambdaOperator.cs#WithoutInput)]
 
-Aby uzyskać więcej informacji, zobacz [Wyrażenia Lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).
+Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).
 
-## <a name="expression-body-definition"></a>Definicja treści wyrażeń
+## <a name="expression-body-definition"></a>Definicja treści wyrażenia
 
-Definicja treści wyrażenia ma następującą ogólną składnię:
+Definicja treści wyrażenia ma następującą składnię ogólną:
 
 ```csharp
 member => expression;
 ```
 
-gdzie `expression` jest prawidłowe wyrażenie. Typ zwracany `expression` musi być niejawnie konwertowalny do typu zwracanego elementu członkowskiego. Jeśli typ zwracany elementu `void` członkowskiego jest lub jeśli element członkowski `set` jest konstruktorem, finalizatorem lub akcesorem właściwości, `expression` musi być [*wyrażeniem instrukcji*](~/_csharplang/spec/statements.md#expression-statements), które może być dowolnego typu.
+gdzie `expression` jest prawidłowym wyrażeniem. Zwracany typ elementu `expression` musi być niejawnie konwertowany na typ zwracany elementu członkowskiego. Jeśli typem zwracanym elementu członkowskiego jest `void` lub, jeśli element członkowski jest konstruktorem, finalizatorem lub właściwością, lub typem `set` dostępu indeksatora, `expression` musi być [*wyrażeniem instrukcji*](~/_csharplang/spec/statements.md#expression-statements). Ze względu na to, że wynik wyrażenia jest odrzucany, zwracany typ wyrażenia może być dowolnym typem.
 
-W poniższym przykładzie przedstawiono definicję treści wyrażeń `Person.ToString` dla metody:
+W poniższym przykładzie przedstawiono definicję treści wyrażenia dla `Person.ToString` metody:
 
 ```csharp
 public override string ToString() => $"{fname} {lname}".Trim();
@@ -61,19 +61,19 @@ public override string ToString()
 }
 ```
 
-Definicje treści wyrażeń dla metod, operatorów i właściwości tylko do odczytu są obsługiwane począwszy od języka C# 6. Definicje treści wyrażeń dla konstruktorów, finalizatorów oraz akcesorów właściwości i indeksatora są obsługiwane począwszy od języka C# 7.0.
+Definicje treści wyrażenia dla metod, operatorów i właściwości tylko do odczytu są obsługiwane począwszy od języka C# 6. Definicje treści wyrażenia dla konstruktorów, finalizatorów i metod dostępu właściwości i indeksatora są obsługiwane począwszy od języka C# 7,0.
 
-Aby uzyskać więcej informacji, zobacz [Elementy członkowskie zabudowane wyrażeniem](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
+Aby uzyskać więcej informacji, zobacz [elementy członkowskie z wyrażeniami](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
 
-## <a name="operator-overloadability"></a>Przeciążenie operatora
+## <a name="operator-overloadability"></a>Przeciążanie operatora
 
-Operator `=>` nie może być przeciążony.
+`=>`Operator nie może być przeciążony.
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji na temat operatora lambda, zobacz [anonimowe wyrażenia funkcji](~/_csharplang/spec/expressions.md#anonymous-function-expressions) sekcji [specyfikacji języka Języka C#.](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji na temat operatora lambda, zobacz sekcję [wyrażenia funkcji anonimowej](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
+- [Operatory i wyrażenia języka C#](index.md)

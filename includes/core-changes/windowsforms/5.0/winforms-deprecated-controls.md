@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: c9720f51e40ada4cd2cf6997ba7006a232893553
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d3bfeda8309af83d8e4199999ed91263a17caeea
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702466"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556256"
 ---
 ### <a name="removed-status-bar-controls"></a>Usunięto kontrolki paska stanu
 
-Począwszy od programu .NET 5,0 w wersji zapoznawczej 1, niektóre kontrolki Windows Forms nie są już dostępne.
+Począwszy od platformy .NET 5,0, niektóre kontrolki Windows Forms nie są już dostępne.
 
 #### <a name="change-description"></a>Zmień opis
 
-Począwszy od programu .NET 5,0 w wersji zapoznawczej 1, niektóre kontrolki Windows Forms powiązane z paskiem stanu nie są już dostępne. Kontrolki zamiany, które mają lepszy projekt i pomoc techniczną, zostały wprowadzone w .NET Framework 2,0. Przestarzałe formanty zostały wcześniej usunięte z przyborników projektanta, ale były nadal dostępne do użycia. Teraz zostały całkowicie usunięte.
+Począwszy od platformy .NET 5,0, niektóre kontrolki Windows Forms powiązane z paskiem stanu nie są już dostępne. Kontrolki zamiany, które mają lepszy projekt i pomoc techniczną, zostały wprowadzone w .NET Framework 2,0. Przestarzałe formanty zostały wcześniej usunięte z przyborników projektanta, ale były nadal dostępne do użycia. Teraz zostały całkowicie usunięte.
 
 Następujące typy nie są już dostępne:
 

@@ -13,16 +13,16 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: 18364d80b8117fd4074c2c4231eac07c76829bb3
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: dac13e9e92a0fffa4aeba1053d07f832e245ca95
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135740"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555490"
 ---
 # <a name="-and--operators-c-reference"></a>Operatory + i + = (odwołanie w C#)
 
-Operatory `+` i `+=` są obsługiwane przez wbudowane typy liczbowe [całkowite](../builtin-types/integral-numeric-types.md) i [zmiennoprzecinkowe](../builtin-types/floating-point-numeric-types.md) , typ [ciągu](../builtin-types/reference-types.md#the-string-type) i typy [delegatów](../builtin-types/reference-types.md#the-delegate-type) .
+`+`Operatory i `+=` są obsługiwane przez wbudowane typy liczbowe [całkowite](../builtin-types/integral-numeric-types.md) i [zmiennoprzecinkowe](../builtin-types/floating-point-numeric-types.md) , typ [ciągu](../builtin-types/reference-types.md#the-string-type) i typy [delegatów](../builtin-types/reference-types.md#the-delegate-type) .
 
 Aby uzyskać informacje o `+` operatorze arytmetycznym, zobacz [operatory jednoargumentowe Plus i minus](arithmetic-operators.md#unary-plus-and-minus-operators) oraz [operator dodawania +](arithmetic-operators.md#addition-operator-) sekcje w artykule [Operatory arytmetyczne](arithmetic-operators.md) .
 
@@ -38,7 +38,7 @@ Począwszy od języka C# 6, [Interpolacja ciągów](../tokens/interpolated.md) z
 
 ## <a name="delegate-combination"></a>Połączenie delegata
 
-W przypadku operandów tego samego typu [delegata](../builtin-types/reference-types.md#the-delegate-type) `+` operator zwraca nowe wystąpienie delegata, które po wywołaniu wywołuje argument operacji po lewej stronie, a następnie wywołuje operand z prawej strony. Jeśli którykolwiek z operandów jest `null`, `+` operator zwraca wartość innego operandu (co również może być `null`). Poniższy przykład pokazuje, `+` jak można łączyć delegatów z operatorem:
+W przypadku operandów tego samego typu [delegata](../builtin-types/reference-types.md#the-delegate-type) `+` operator zwraca nowe wystąpienie delegata, które po wywołaniu wywołuje argument operacji po lewej stronie, a następnie wywołuje operand z prawej strony. Jeśli którykolwiek z operandów jest `null` , `+` operator zwraca wartość innego operandu (co również może być `null` ). Poniższy przykład pokazuje, jak można łączyć delegatów z `+` operatorem:
 
 [!code-csharp-interactive[delegate combination](snippets/AdditionOperator.cs#AddDelegates)]
 
@@ -60,13 +60,13 @@ jest równoważny
 x = x + y
 ```
 
-z tą `x` różnicą, że jest obliczana tylko raz.
+z tą różnicą, że `x` jest obliczana tylko raz.
 
 Poniższy przykład ilustruje użycie `+=` operatora:
 
 [!code-csharp-interactive[+= examples](snippets/AdditionOperator.cs#AddAndAssign)]
 
-Możesz również użyć operatora `+=` , aby określić metodę procedury obsługi zdarzeń podczas subskrybowania [zdarzenia](../keywords/event.md). Aby uzyskać więcej informacji, zobacz [How to: subskrybowanie i anulowanie subskrypcji zdarzeń](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Możesz również użyć `+=` operatora, aby określić metodę procedury obsługi zdarzeń podczas subskrybowania [zdarzenia](../keywords/event.md). Aby uzyskać więcej informacji, zobacz [How to: subskrybowanie i anulowanie subskrypcji zdarzeń](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
 ## <a name="operator-overloadability"></a>Przeciążanie operatora
 
@@ -79,7 +79,7 @@ Aby uzyskać więcej informacji, zobacz sekcje [jednoargumentowe Plus](~/_csharp
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Operatory języka C#](index.md)
+- [Operatory i wyrażenia języka C#](index.md)
 - [Jak połączyć wiele ciągów](../../how-to/concatenate-multiple-strings.md)
 - [Zdarzenia](../../programming-guide/events/index.md)
 - [Operatory arytmetyczne](arithmetic-operators.md)

@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: 55c13aa70a03bcc548ce1d096cca8f40de6cda84
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 95aa243a5790d4201c7871e617dbe4ccafb7c1a1
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721129"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556247"
 ---
 ### <a name="dontsupportreentrantfiltermessage-compatibility-switch-not-supported"></a>Nieobsługiwany przełącznik zgodności DontSupportReentrantFilterMessage
 
-`Switch.System.Windows.Forms.DontSupportReentrantFilterMessage`Przełącznik zgodności, który został wprowadzony w .NET Framework 4.6.1, nie jest obsługiwany w Windows Forms na platformie .NET Core 3,0.
+`Switch.System.Windows.Forms.DontSupportReentrantFilterMessage`Przełącznik zgodności, który został wprowadzony w .NET Framework 4.6.1, nie jest obsługiwany w Windows Forms na platformie .NET Core i .net 5,0 i nowszych.
 
 #### <a name="change-description"></a>Zmień opis
 
 Począwszy od .NET Framework 4.6.1, `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` przełącznik zgodności rozwiązuje możliwe wyjątki, <xref:System.IndexOutOfRangeException> gdy <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> komunikat jest wywoływany z implementacją niestandardową <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> . Aby uzyskać więcej informacji, zobacz Rozwiązywanie [problemów z niestandardowymi implementacjami IMessageFilter. PreFilterMessage](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md).
 
-W przypadku platformy .NET Core `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` przełącznik nie jest obsługiwany.
+W przypadku programów .NET Core i .NET 5,0 i nowszych `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` przełącznik nie jest obsługiwany.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0 wersja zapoznawcza 9
+3.0
 
 #### <a name="recommended-action"></a>Zalecana akcja
 

@@ -1,6 +1,7 @@
 ---
-title: Operatory języka c# — odwołanie w C#
-ms.date: 04/28/2020
+title: Operatory i wyrażenia języka c# — odwołanie w C#
+description: Więcej informacji na temat operatorów i wyrażeń języka C#, pierwszeństwa operatorów i łączność operatora
+ms.date: 08/04/2020
 f1_keywords:
 - cs.operators
 helpviewer_keywords:
@@ -9,18 +10,52 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 96bb97690f8954cce2cc75cad921e21985972798
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 19b5683a7cd334e1203c57fa90d275b659eac873
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301778"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556556"
 ---
-# <a name="c-operators-c-reference"></a>Operatory języka c# (odwołanie w C#)
+# <a name="c-operators-and-expressions-c-reference"></a>Operatory i wyrażenia języka c# (odwołanie w C#)
 
-Język C# zawiera wiele operatorów obsługiwanych przez typy wbudowane. Na przykład [Operatory arytmetyczne](arithmetic-operators.md) wykonują operacje arytmetyczne przy użyciu liczbowych argumentów operacji, a [Operatory logiczne Boolean](boolean-logical-operators.md) wykonują operacje logiczne przy użyciu operandów [bool](../builtin-types/bool.md) . Niektóre operatory mogą być [przeciążone](operator-overloading.md). Dzięki przeciążeniu operatora można określić zachowanie operatora dla argumentów operacji typu zdefiniowanego przez użytkownika.
+Język C# zawiera wiele operatorów. Wiele z nich jest obsługiwanych przez [typy wbudowane](../builtin-types/built-in-types.md) i umożliwiają wykonywanie podstawowych operacji przy użyciu wartości tych typów. Te operatory obejmują następujące grupy:
 
-W [wyrażeniu](../../programming-guide/statements-expressions-operators/expressions.md)pierwszeństwo operatorów i łączność określają kolejność wykonywania operacji. Możesz użyć nawiasów, aby zmienić kolejność oceny nałożona przez pierwszeństwo operatorów i łączność.
+- [Operatory arytmetyczne](arithmetic-operators.md) , które wykonują operacje arytmetyczne przy użyciu liczbowych argumentów operacji
+- [Operatory porównania](comparison-operators.md) , które porównują argumenty operacji numerycznych
+- Logiczne [operatorów logicznych](boolean-logical-operators.md) , które wykonują operacje logiczne z [`bool`](../builtin-types/bool.md) operandami
+- [Operatory bitowe i przesunięcia](bitwise-and-shift-operators.md) , które wykonują operacje bitowe lub przesunięcia przy użyciu operandów typów całkowitych
+- [Operatory równości](equality-operators.md) , które sprawdzają, czy ich operandy są równe
+
+Zazwyczaj można [przeciążać](operator-overloading.md) te operatory, czyli określić zachowanie operatora dla argumentów operacji typu zdefiniowanego przez użytkownika.
+
+Najprostszymi wyrażeniami języka C# są literały (na przykład liczby [całkowite](../builtin-types/integral-numeric-types.md#integer-literals) i [rzeczywiste](../builtin-types/floating-point-numeric-types.md#real-literals) ) oraz nazwy zmiennych. Można połączyć je w wyrażenia złożone przy użyciu operatorów. [Pierwszeństwo](#operator-precedence) operatorów i [łączność](#operator-associativity) określają kolejność wykonywania operacji w wyrażeniu. Możesz użyć nawiasów, aby zmienić kolejność oceny nałożona przez pierwszeństwo operatorów i łączność.
+
+W poniższym kodzie Przykłady wyrażeń znajdują się po prawej stronie przypisań:
+
+[!code-csharp[expression examples](snippets/Overview.cs#Expressions)]
+
+Zwykle wyrażenie generuje wynik i może być zawarte w innym wyrażeniu. [`void`](../builtin-types/void.md)Wywołanie metody jest przykładem wyrażenia, które nie tworzy wyniku. Może być używana tylko jako [instrukcja](../../programming-guide/statements-expressions-operators/statements.md), jak pokazano w poniższym przykładzie:
+
+```csharp
+Console.WriteLine("Hello, world!");
+```
+
+Poniżej przedstawiono niektóre inne rodzaje wyrażeń, które zapewnia język C#:
+
+- [Interpolowane wyrażenia ciągów](../tokens/interpolated.md) , które zapewniają wygodną składnię do tworzenia sformatowanych ciągów:
+
+  [!code-csharp-interactive[interpolated string](snippets/Overview.cs#InterpolatedString)]
+
+- [Wyrażenia lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) , które umożliwiają tworzenie funkcji anonimowych:
+
+  [!code-csharp-interactive[lambda expression](snippets/Overview.cs#Lambda)]
+
+- [Wyrażenia zapytań](../keywords/query-keywords.md) , które umożliwiają korzystanie z funkcji zapytań bezpośrednio w języku C#:
+
+  [!code-csharp-interactive[query expression](snippets/Overview.cs#Query)]
+
+Możesz użyć [definicji treści wyrażenia](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) , aby podać zwięzłą definicję dla metody, konstruktora, właściwości, indeksatora lub finalizatora.
 
 ## <a name="operator-precedence"></a>Pierwszeństwo operatorów
 
@@ -90,9 +125,13 @@ Zazwyczaj są oceniane wszystkie operandy operatora. Jednak niektóre operatory 
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji, zobacz sekcję [operatorów](~/_csharplang/spec/expressions.md#operators) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
+Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języka C#](~/_csharplang/spec/introduction.md):
+
+- [Wyrażenia](~/_csharplang/spec/expressions.md)
+- [Operatory](~/_csharplang/spec/expressions.md#operators)
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Wyrażenia](../../programming-guide/statements-expressions-operators/expressions.md)
+- [Przeładowanie operatora](operator-overloading.md)
+- [Drzewa wyrażeń](../../programming-guide/concepts/expression-trees/index.md)

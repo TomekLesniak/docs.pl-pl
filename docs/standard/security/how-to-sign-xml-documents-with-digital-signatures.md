@@ -1,7 +1,7 @@
 ---
-title: 'Porady: podpisywanie dokumentów XML za pomocą podpisów cyfrowych'
-description: Dowiedz się, jak podpisywać dokumenty XML za pomocą podpisów cyfrowych. Użyj klas w przestrzeni nazw System. Security. Cryptography. XML w programie .NET.
-ms.date: 03/30/2017
+title: 'Instrukcje: Podpisywanie dokumentów XML za pomocą podpisów cyfrowych'
+description: Dowiedz się, jak podpisywać dokumenty XML za pomocą podpisów cyfrowych. Użyj klas w przestrzeni nazw System.Security.Cryptography.Xml w programie .NET.
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -10,24 +10,28 @@ helpviewer_keywords:
 - signatures, XML signing
 - System.Security.Cryptography.SignedXml class
 - digital signatures, XML signing
-- System.Security.Cryptography.RSACryptoServiceProvider class
+- System.Security.Cryptography.RSA class
 - XML digital signatures
 - XML signing
 - signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-ms.openlocfilehash: 97bd23182ed54b899b76dbf43e179fe0c94b011d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e1457fd659ab63489bd4cfafd7731a4b098a2791
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598570"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557076"
 ---
-# <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Porady: podpisywanie dokumentów XML za pomocą podpisów cyfrowych
+# <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Instrukcje: Podpisywanie dokumentów XML za pomocą podpisów cyfrowych
+
 Możesz użyć klas w <xref:System.Security.Cryptography.Xml> przestrzeni nazw, aby podpisać dokument XML lub część dokumentu XML z podpisem cyfrowym.  Podpisy cyfrowe XML (XMLDSIG) pozwalają sprawdzić, czy dane nie zostały zmienione po podpisaniu.  Aby uzyskać więcej informacji na temat standardu XMLDSIG, zobacz [składnia i przetwarzanie w formacie XML](https://www.w3.org/TR/xmldsig-core/)zalecenia dotyczące organizacja World Wide Web Consortium (W3C).  
   
- Przykład kodu w tej procedurze pokazuje, jak cyfrowo podpisać cały dokument XML i dołączyć podpis do dokumentu w <`Signature`> elementu.  Przykład tworzy klucz podpisywania RSA, dodaje klucz do kontenera klucza zabezpieczeń, a następnie używa klucza do cyfrowego podpisywania dokumentu XML.  Następnie można pobrać klucz w celu zweryfikowania podpisu cyfrowego XML lub można go użyć do podpisania innego dokumentu XML.  
+> [!NOTE]
+> Kod w tym artykule ma zastosowanie do systemu Windows.
+
+Przykład kodu w tej procedurze pokazuje, jak cyfrowo podpisać cały dokument XML i dołączyć podpis do dokumentu w <`Signature`> elementu.  Przykład tworzy klucz podpisywania RSA, dodaje klucz do kontenera klucza zabezpieczeń, a następnie używa klucza do cyfrowego podpisywania dokumentu XML.  Następnie można pobrać klucz w celu zweryfikowania podpisu cyfrowego XML lub można go użyć do podpisania innego dokumentu XML.  
   
- Aby uzyskać informacje na temat weryfikowania podpisu cyfrowego XML, który został utworzony przy użyciu tej procedury, zobacz [How to: Verify Digital Signatures of XML Documents](how-to-verify-the-digital-signatures-of-xml-documents.md).  
+Aby uzyskać informacje na temat weryfikowania podpisu cyfrowego XML, który został utworzony przy użyciu tej procedury, zobacz [How to: Verify Digital Signatures of XML Documents](how-to-verify-the-digital-signatures-of-xml-documents.md).  
   
 ### <a name="to-digitally-sign-an-xml-document"></a>Aby podpisać cyfrowo dokument XML  
   
@@ -108,16 +112,23 @@ Możesz użyć klas w <xref:System.Security.Cryptography.Xml> przestrzeni nazw, 
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
   
-- Aby skompilować ten przykład, należy dołączyć odwołanie do `System.Security.dll` .  
+- W projekcie, który jest przeznaczony dla .NET Framework, należy dołączyć odwołanie do `System.Security.dll` .
+
+- W projekcie przeznaczonym dla platformy .NET Core lub .NET 5 Zainstaluj pakiet NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Uwzględnij następujące przestrzenie nazw: <xref:System.Xml> , <xref:System.Security.Cryptography> , i <xref:System.Security.Cryptography.Xml> .  
   
-## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
- Nigdy nie przechowuj ani nie przesyłaj klucza prywatnego pary kluczy asymetrycznych w postaci zwykłego tekstu.  Aby uzyskać więcej informacji na temat symetrycznych i asymetrycznych kluczy kryptograficznych, zobacz [generowanie kluczy do szyfrowania i odszyfrowywania](generating-keys-for-encryption-and-decryption.md).  
+## <a name="net-security"></a>Zabezpieczenia platformy .NET
+
+Nigdy nie przechowuj ani nie przesyłaj klucza prywatnego pary kluczy asymetrycznych w postaci zwykłego tekstu.  Aby uzyskać więcej informacji na temat symetrycznych i asymetrycznych kluczy kryptograficznych, zobacz [generowanie kluczy do szyfrowania i odszyfrowywania](generating-keys-for-encryption-and-decryption.md).  
   
- Nie osadzaj klucza prywatnego bezpośrednio w kodzie źródłowym.  Klucze osadzone można łatwo odczytywać z zestawu przy użyciu [Ildasm. exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) lub otwierając zestaw w edytorze tekstu, takim jak Notatnik.  
+Nie osadzaj klucza prywatnego bezpośrednio w kodzie źródłowym.  Klucze osadzone można łatwo odczytywać z zestawu przy użyciu [Ildasm.exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) lub otwierając zestaw w edytorze tekstu, takim jak Notatnik.  
   
 ## <a name="see-also"></a>Zobacz też
 
+- [Model kryptografii](cryptography-model.md)
+- [Usługi kryptograficzne](cryptographic-services.md)
+- [Kryptografia międzyplatformowa](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
-- [Instrukcje: sprawdzanie podpisów cyfrowych w dokumentach XML](how-to-verify-the-digital-signatures-of-xml-documents.md)
+- [Instrukcje: Sprawdzanie podpisów cyfrowych w dokumentach XML](how-to-verify-the-digital-signatures-of-xml-documents.md)
+- [Ochrona danych ASP.NET Core](/aspnet/core/security/data-protection/introduction)
