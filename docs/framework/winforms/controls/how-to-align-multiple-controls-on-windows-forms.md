@@ -1,6 +1,8 @@
 ---
 title: Wyrównywanie wielu kontrolek
 ms.date: 03/30/2017
+f1_keywords:
+- Designer_Microsoft.VisualStudio.Windows.Forms.Design.DocumentDesigner
 helpviewer_keywords:
 - forms [Windows Forms], aligning controls
 - Windows Forms, aligning controls
@@ -10,12 +12,12 @@ ms.assetid: b7175656-f532-49e9-b0b1-177d1b40af3e
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 5593c20e0e00e646949bf7357ecd126cbd1271f4
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 4bde1926b89fe553ec9eda29ca5dfc1f3373af52
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76747194"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855624"
 ---
 # <a name="how-to-align-multiple-controls-on-windows-forms"></a>Porady: wyrównywanie formantów na formularzach systemu Windows
 
@@ -31,11 +33,11 @@ Aby znormalizować układ interfejsu użytkownika aplikacji opartej na systemie 
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Kontrolki formularzy Windows Forms](index.md)
-- [Instrukcje: dodawanie kontrolek do formularzy Windows Forms](how-to-add-controls-to-windows-forms.md)
-- [Kontrolki do użycia w formularzach Windows Forms](controls-to-use-on-windows-forms.md)
-- [Kontrolki formularzy Windows Forms według funkcji](windows-forms-controls-by-function.md)
-- [Przewodnik: rozmieszczanie kontrolek na formularzach Windows Forms za pomocą linii przyciągania](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
-- [Przewodnik: rozmieszczanie kontrolek w aplikacji Windows Forms za pomocą kontrolki TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
-- [Przewodnik: rozmieszczanie kontrolek w formularzach Windows Forms za pomocą kontrolki FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
+- [Kontrolki Windows Forms](index.md)
+- [Porady: dodawanie formantów do formularzy systemu Windows](how-to-add-controls-to-windows-forms.md)
+- [Formanty do użycia w formularzach systemu Windows](controls-to-use-on-windows-forms.md)
+- [Formanty formularzy systemu Windows według funkcji](windows-forms-controls-by-function.md)
+- [Wskazówki: rozmieszczanie formantów w formularzach systemu Windows za pomocą linii przyciągania](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
+- [Przewodnik: rozmieszczanie kontrolek w aplikacji formularzy systemu Windows za pomocą TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
+- [Przewodnik: rozmieszczanie kontrolek w aplikacji formularzy systemu Windows za pomocą FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
 - [Instrukcje: ponowne przypisywanie istniejących kontrolek do innego elementu nadrzędnego](how-to-reassign-existing-controls-to-a-different-parent.md)

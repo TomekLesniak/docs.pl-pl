@@ -10,14 +10,15 @@ helpviewer_keywords:
 - security-transparent code
 - security [.NET Framework], security-transparent code
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
-ms.openlocfilehash: c44fe3339f3bf24d266fa97487868ce090d51bb1
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 75cf38412f3ba21832c5e63898b10bcf681f5904
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309097"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855702"
 ---
 # <a name="security-transparent-code-level-1"></a>Kod przezroczysty pod względem zabezpieczeń, poziom 1
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Przejrzystość ułatwia deweloperom pisanie bardziej bezpiecznych bibliotek .NET Framework, które uwidaczniają funkcjonalność do częściowo zaufanego kodu. Przejrzystość poziomu 1 została wprowadzona w .NET Framework w wersji 2,0 i była używana głównie tylko w firmie Microsoft. Począwszy od .NET Framework 4, można użyć [przezroczystości poziomu 2](security-transparent-code-level-2.md). Przejrzystość poziomu 1 została jednak zachowana, aby można było zidentyfikować starszy kod, który musi zostać uruchomiony przy użyciu wcześniejszych reguł zabezpieczeń.  
@@ -129,7 +130,7 @@ public class B
   
  Poprzedni kod jest przezroczysty z wyjątkiem `Critical` metody, która jest jawnie oznaczona jako krytyczna dla zabezpieczeń. Przezroczystość jest ustawieniem domyślnym, nawet z atrybutem na poziomie zestawu <xref:System.Security.SecurityCriticalAttribute> .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kod o przezroczystym poziomie bezpieczeństwa, poziom 2](security-transparent-code-level-2.md)
 - [Zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)

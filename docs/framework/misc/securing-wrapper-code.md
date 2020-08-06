@@ -8,21 +8,22 @@ helpviewer_keywords:
 - secure coding, wrapper code
 - code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-ms.openlocfilehash: 4338b3d0ab306501ea252407f386bdf89d191d6d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: f448cbf55f3ad992ba9dcc53d5be70b364038744
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309381"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855754"
 ---
 # <a name="securing-wrapper-code"></a>Zabezpieczanie kodu otoki
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Kod otoki, szczególnie w przypadku, gdy otoka ma wyższy poziom zaufania niż kod, który go używa, może otwierać unikatowy zestaw słabych zabezpieczeń. Wszystkie elementy wykonywane w imieniu obiektu wywołującego, w którym ograniczone uprawnienia obiektu wywołującego nie są uwzględnione w odpowiednim sprawdzaniu zabezpieczeń, to potencjalna słaba próba wykorzystania.  
   
  Nigdy nie należy włączać elementu przez otokę, której obiekt wywołujący nie może sam wykonać. Jest to specjalne zagrożenie podczas wykonywania czynności obejmujących ograniczone sprawdzanie zabezpieczeń, w przeciwieństwie do żądania pełnego przechodzenia stosu. Gdy są wykorzystywane kontrole na jednym poziomie, zaproponowanie kodu otoki między rzeczywistym obiektem wywołującym i elementem interfejsu API w danej sytuacji może być w stanie łatwo spowodować pomyślne sprawdzenie zabezpieczeń, gdy nie będzie to miało wpływu na zabezpieczenia.  
   
-## <a name="delegates"></a>Delegaci  
+## <a name="delegates"></a>Delegaty  
  Delegowanie zabezpieczeń różni się między wersjami .NET Framework.  W tej sekcji opisano różne zachowania delegata i powiązane zagadnienia dotyczące zabezpieczeń.  
   
 ### <a name="in-version-10-and-11-of-the-net-framework"></a>W wersji 1,0 i 1,1 .NET Framework  
@@ -100,6 +101,6 @@ ms.locfileid: "86309381"
   
 - Typy i interfejsy, które implementują. Należy spójnie stosować wymagania dotyczące linków.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wytyczne dotyczące bezpiecznego programowania](../../standard/security/secure-coding-guidelines.md)
