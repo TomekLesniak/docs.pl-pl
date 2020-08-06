@@ -1,75 +1,168 @@
 ---
 title: Opcje interaktywne
-description: Dowiedz się więcej na temat opcji wiersza polecenia F# obsługiwanych przez program Interactive, FSI. exe.
-ms.date: 05/16/2016
-ms.openlocfilehash: cceb8fb50434f3525ebb2ede16e84720d10d320c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+description: Dowiedz się więcej na temat opcji wiersza polecenia obsługiwanych przez F# Interactive, fsi.exe.
+ms.date: 07/22/2020
+ms.openlocfilehash: f9932cac24fad187c332306968fb13981912e80a
+ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348223"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795466"
 ---
-# <a name="f-interactive-options"></a>Opcje interakcyjne F#
+# <a name="f-interactive-options"></a>Opcje F# Interactive
 
-> [!NOTE]
-> W tym artykule opisano obecnie tylko środowisko dla systemu Windows.  Zostanie on ponownie zapisany.
+W tym artykule opisano opcje wiersza polecenia obsługiwane przez F# Interactive, `fsi.exe` . F# Interactive akceptuje wiele z tych samych opcji wiersza polecenia co kompilator języka F #, ale również akceptuje pewne dodatkowe opcje.
 
-W tym temacie opisano opcje wiersza polecenia obsługiwane przez F# program Interactive, `fsi.exe`. F#Interaktywnie akceptuje wiele z tych samych opcji wiersza polecenia co F# kompilator, ale również akceptuje pewne dodatkowe opcje.
+## <a name="use-f-interactive-for-scripting"></a>Używanie F# Interactive do obsługi skryptów
 
-## <a name="using-f-interactive-for-scripting"></a>Korzystanie F# z programu Interactive for scripting
+F# Interactive, `dotnet fsi` , może być uruchamiany interaktywnie lub można uruchomić z wiersza polecenia, aby uruchomić skrypt. Składnia wiersza polecenia jest
 
-F#Interaktywny, `fsi.exe`, może być uruchamiany interakcyjnie lub można go uruchomić z poziomu wiersza polecenia, aby uruchomić skrypt. Składnia wiersza polecenia jest
-
-```console
-> fsi.exe [options] [ script-file [arguments] ]
+```dotnetcli
+dotnet fsi [options] [ script-file [arguments] ]
 ```
 
-Rozszerzenie pliku dla F# plików skryptów jest `.fsx`.
+Rozszerzenie pliku dla plików skryptów języka F # to `.fsx` .
 
-## <a name="table-of-f-interactive-options"></a>Tabela opcji F# interaktywnych
+## <a name="table-of-f-interactive-options"></a>Tabela opcji F# Interactive
 
-Poniższa tabela zawiera podsumowanie opcji obsługiwanych przez F# program interaktywny. Można ustawić te opcje w wierszu polecenia lub w środowisku IDE programu Visual Studio. Aby ustawić te opcje w środowisku IDE programu Visual Studio, otwórz menu **Narzędzia** , wybierz pozycję **Opcje...** , rozwiń węzeł  **F# narzędzia** i wybierz pozycję  **F# interaktywny**.
+Poniższa tabela zawiera podsumowanie opcji obsługiwanych przez F# Interactive. Można ustawić te opcje w wierszu polecenia lub w środowisku IDE programu Visual Studio. Aby ustawić te opcje w środowisku IDE programu Visual Studio, otwórz menu **Narzędzia** , wybierz pozycję **Opcje...**, a następnie rozwiń węzeł **narzędzia F #** i wybierz **F# Interactive**.
 
-Gdzie listy pojawiają F# się w argumentach opcji interaktywnych, elementy listy są oddzielone średnikami (`;`).
+Gdy listy pojawiają się w F# Interactive argumenty opcji, elementy listy są oddzielone średnikami ( `;` ).
 
 |Opcja|Opis|
 |------|-----------|
-|**--**|Służy do Poinstruuj F# interaktywnie, aby traktować pozostałe argumenty jako argumenty wiersza F# polecenia do programu lub skryptu, do którego można uzyskać dostęp w kodzie przy użyciu listy **FSI. CommandLineArgs —** .|
-|**--checked**[ **+** &#124; **-** ]|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--CodePage:&lt;int&gt;**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--consolecolors**[ **+** &#124; **-** ]|Wyświetla ostrzeżenia i komunikaty o błędach w kolorze.|
-|**--crossoptimize**[ **+** &#124; **-** ]|Włączać lub wyłączać optymalizacje między modułami.|
-|**--debug**[ **+** &#124; **-** ]<br /><br />**--debug:** [**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]<br /><br />**-g**[ **+** &#124; **-** ]<br /><br />**-g:** [**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--define:&lt;ciąg&gt;**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--deterministic**[ **+** &#124; **-** ]|Tworzy deterministyczny zestaw (w tym identyfikator GUID i sygnaturę czasową wersji modułu).|
-|**--exec**|Instruuje F# interaktywny, aby wyjść po załadowaniu plików lub uruchomieniu pliku skryptu podanym w wierszu polecenia.|
-|**--fullpaths**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--gui**[ **+** &#124; **-** ]|Włącza lub wyłącza pętlę zdarzeń Windows Forms. Wartość domyślna jest włączona.|
-|**--help**<br /><br />**-?**|Służy do wyświetlania składni wiersza polecenia i krótkiego opisu każdej opcji.|
-|**--lib:&lt;folder-list&gt;**<br /><br />**-I:&lt;folder-list&gt;**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--Load:&lt;filename&gt;**|Kompiluje dany kod źródłowy przy uruchamianiu i ładuje skompilowane F# konstrukcje do sesji. Jeśli źródło docelowe zawiera dyrektywy skryptów, takie jak **#use** lub **#load**, należy użyć polecenia **--use** lub **#use** zamiast **--Load** lub **#load**.|
-|**--mlcompatibility**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--noframework**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md)|
-|**--nologo**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--nowarn:&lt;list ostrzeżeń&gt;**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--optimize**[ **+** &#124; **-** ]|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--preferreduilang:&lt;lang&gt;**| Określa nazwę preferowanej kultury języka wyjściowego (na przykład es-ES, ja-JP). |
-|**--quiet**|Pomijaj F# interaktywne dane wyjściowe do strumienia **stdout** .|
-|**--quotations-debug**|Określa, że powinny być emitowane dodatkowe informacje o debugowaniu dla wyrażeń, F# które pochodzą z literałów cudzysłowu i odbitej definicji. Informacje debugowania są dodawane do atrybutów niestandardowych węzła drzewa F# wyrażenia. Zobacz [cytaty kodu](code-quotations.md) i [expr. CustomAttributes —](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
-|**--readline**[ **+** &#124; **-** ]|Włącza lub wyłącza uzupełnianie kart w trybie interaktywnym.|
-|**--Reference:&lt;filename&gt;**<br /><br />**-r:&lt;filename&gt;**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--shadowcopyreferences**[ **+** &#124; **-** ]|Uniemożliwia blokowanie odwołań przez proces F# interaktywny.|
-|**--simpleresolution**|Rozwiązuje odwołania do zestawów przy użyciu reguł opartych na katalogu, a nie rozpoznawania MSBuild.|
-|**--tailcalls**[ **+** &#124; **-** ]|Włącza lub wyłącza użycie instrukcji "tail IL", która powoduje, że ramka stosu będzie ponownie używana na potrzeby funkcji cyklicznych. Ta opcja jest domyślnie włączona.|
-|**--targetprofile:&lt;ciąg&gt;**|Określa Profil platformy docelowej tego zestawu. Prawidłowe wartości to mscorlib, Core lub standard.  Wartość domyślna to mscorlib.|
-|**--Użyj:&lt;filename&gt;**|Instruuje interpretera, aby używał danego pliku przy uruchamianiu jako początkowej danych wejściowych.|
-|**--utf8output**|Analogicznie jak opcja kompilatora Urząd nadzoru. exe. Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--WARN:&lt;poziom ostrzeżeń&gt;**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--warnaserror**[ **+** &#124; **-** ]|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--warnaserror**[ **+** &#124; **-** ]: **&lt;int-list&gt;**|Analogicznie jak opcja kompilatora **Urząd nadzoru. exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--**|Służy do Poinstruuj F# Interactive, aby traktować pozostałe argumenty jako argumenty wiersza polecenia do programu lub skryptu języka F #, do którego można uzyskać dostęp w kodzie przy użyciu listy **FSI. CommandLineArgs —**.|
+|**--zaewidencjonowano**[ **+**&#124;**-** ]|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--CodePage: &lt; int&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--consolecolors**[ **+**&#124;**-** ]|Wyświetla ostrzeżenia i komunikaty o błędach w kolorze.|
+|**--crossoptimize**[ **+**&#124;**-** ]|Włączać lub wyłączać optymalizacje między modułami.|
+|**--Debug**[ **+**&#124;**-** ]<br /><br />**--Debug:**[**full**&#124;**pdbonly**&#124;**Portable**&#124;**Embedded**]<br /><br />**-g**[ **+**&#124;**-** ]<br /><br />**-g:**[**pełna**&#124;**pdbonly**&#124;**przenośny**&#124;**Embedded**]|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--define: &lt; ciąg&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--deterministyczny**[ **+**&#124;**-** ]|Tworzy deterministyczny zestaw (w tym identyfikator GUID i sygnaturę czasową wersji modułu).|
+|**--exec**|Nakazuje programowi F # Interactive Kończenie po załadowaniu plików lub uruchomieniu pliku skryptu podanym w wierszu polecenia.|
+|**--fullpaths —**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--GUI**[ **+**&#124;**-** ]|Włącza lub wyłącza pętlę zdarzeń Windows Forms. Wartość domyślna jest włączona.|
+|**--Pomoc**<br /><br />**-?**|Służy do wyświetlania składni wiersza polecenia i krótkiego opisu każdej opcji.|
+|**--lib: &lt; Lista folderów&gt;**<br /><br />**-I: &lt; Lista folderów&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--Load: &lt; filename&gt;**|Kompiluje dany kod źródłowy przy uruchamianiu i ładuje skompilowane konstrukcje F # do sesji. Jeśli źródło docelowe zawiera dyrektywy skryptów, takie jak **#use** lub **#load**, należy użyć polecenia **--use** lub **#use** zamiast **--Load** lub **#load**.|
+|**--mlcompatibility**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--noframework**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md)|
+|**--nologo**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--nowarn: &lt; Ostrzeżenie-lista&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--Optymalizuj**[ **+**&#124;**-** ]|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--preferreduilang: &lt; lang&gt;**| Określa nazwę preferowanej kultury języka wyjściowego (na przykład es-ES, ja-JP). |
+|**--quiet**|Pomiń dane wyjściowe F# Interactive strumienia **stdout** .|
+|**--Cytaty-debugowanie**|Określa, że powinny być emitowane dodatkowe informacje o debugowaniu dla wyrażeń, które pochodzą z literałów cytatu w języku F # i odbitej definicji. Informacje debugowania są dodawane do atrybutów niestandardowych węzła drzewa wyrażenia języka F #. Zobacz [cytaty kodu](code-quotations.md) i [expr. CustomAttributes —](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
+|**--ReadLine**[ **+**&#124;**-** ]|Włącza lub wyłącza uzupełnianie kart w trybie interaktywnym.|
+|**--Reference: &lt; filename&gt;**<br /><br />**-r: &lt; filename&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--tailcalls**[ **+**&#124;**-** ]|Włącza lub wyłącza użycie instrukcji "tail IL", która powoduje, że ramka stosu będzie ponownie używana na potrzeby funkcji cyklicznych. Ta opcja jest domyślnie włączona.|
+|**--targetprofile: &lt; ciąg&gt;**|Określa Profil platformy docelowej tego zestawu. Prawidłowe wartości to mscorlib, Core lub standard.  Wartość domyślna to mscorlib.|
+|**--Użyj: &lt; filename&gt;**|Instruuje interpretera, aby używał danego pliku przy uruchamianiu jako początkowej danych wejściowych.|
+|**--utf8output —**|Taka sama jak opcja kompilatora fsc.exe. Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--WARN: &lt; ostrzeżenie-poziom&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--warnaserror —**[ **+**&#124;**-** ]|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
+|**--warnaserror —**[ **+**&#124;**-** ]:** &lt; int-list &gt; **|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
 
-## <a name="related-topics"></a>Tematy pokrewne
+## <a name="f-interactive-structured-printing"></a>F# Interactive drukowanie strukturalne
+
+F# Interactive ( `dotnet fsi` ) używa rozszerzonej wersji [prostego formatowania tekstu](plaintext-formatting.md) do raportowania wartości.
+
+1. `%A`Obsługiwane są wszystkie funkcje formatowania zwykłego tekstu, a niektóre można dodatkowo dostosować.
+
+2. Drukowanie jest kolorowe, jeśli kolory są obsługiwane przez konsolę wyjściową.
+
+3. Limit jest umieszczany w pokazanych długośćch ciągów, chyba że jawnie przeznaczysz ten ciąg.
+
+4. Zestaw ustawień definiowanych przez użytkownika jest dostępny za pośrednictwem `fsi` obiektu.
+
+Dostępne ustawienia umożliwiające dostosowanie drukowania zwykłego tekstu dla raportowanych wartości to:
+
+```fsharp
+open System.Globalization
+
+fsi.FormatProvider <- CultureInfo("de-DE")  // control the default culture for primitives
+
+fsi.PrintWidth <- 120        // Control the width used for structured printing
+
+fsi.PrintDepth <- 10         // Control the maximum depth of nested printing
+
+fsi.PrintLength <- 10        // Control the length of lists and arrays
+
+fsi.PrintSize <- 100         // Control the maximum overall object count
+
+fsi.ShowProperties <- false  // Control whether properties of .NET objects are shown by default
+
+fsi.ShowIEnumerable <- false // Control whether sequence values are expanded by default
+
+fsi.ShowDeclarationValues <- false // Control whether values are shown for declaration outputs
+```
+
+### <a name="customize-with-addprinter-and-addprinttransformer"></a>Dostosuj przy użyciu programu `AddPrinter` i`AddPrintTransformer`
+
+Drukowanie w danych wyjściowych F# Interactive można dostosować za pomocą `fsi.AddPrinter` i `fsi.AddPrintTransformer` .
+Pierwsza funkcja daje tekst, aby zastąpić drukowanie obiektu. Druga funkcja zwraca obiekt surogatu do wyświetlenia. Rozważmy na przykład następujący kod F #:
+
+```fsharp
+open System
+
+fsi.AddPrinter<DateTime>(fun dt -> dt.ToString("s"))
+
+type DateAndLabel =
+    { Date: DateTime
+      Label: string  }
+
+let newYearsDay1999 =
+    { Date = DateTime(1999, 1, 1)
+      Label = "New Year" }
+```
+
+W przypadku uruchomienia przykładu w F# Interactive dane wyjściowe w oparciu o zestaw opcji formatowania. W takim przypadku ma wpływ na formatowanie daty i godziny:
+
+```console
+type DateAndLabel =
+  { Date: DateTime
+    Label: string }
+val newYearsDay1999 : DateAndLabel = { Date = 1999-01-01T00:00:00
+                                       Label = "New Year" }
+```
+
+`fsi.AddPrintTransformer`może służyć do nadawania obiektu zastępczego do drukowania:
+
+```fsharp
+type MyList(values: int list) =
+    member _.Values = values
+
+fsi.AddPrintTransformer(fun (x:MyList) -> box x.Values)
+
+let x = MyList([1..10])
+```
+
+Te dane wyjściowe:
+
+```console
+val x : MyList = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
+```
+
+Jeśli funkcja Transformer przekazała `fsi.AddPrintTransformer` wartość Returns `null` , transformator wydruku jest ignorowany.
+Można go użyć do filtrowania dowolnej wartości wejściowej, zaczynając od typu `obj` .  Na przykład:
+
+```fsharp
+fsi.AddPrintTransformer(fun (x:obj) ->
+    match x with
+    | :? string as s when s = "beep" -> box ["quack"; "quack"; "quack"]
+    | _ -> null)
+
+let y = "beep"
+```
+
+Te dane wyjściowe:
+
+```console
+val y : string = ["quack"; "quack"; "quack"]
+```
+
+## <a name="related-topics"></a>Powiązane tematy
 
 |Tytuł|Opis|
 |-----|-----------|
-|[Opcje kompilatora](compiler-options.md)|Opisuje opcje wiersza polecenia dostępne dla F# kompilatora, **Urząd nadzoru. exe**.|
+|[Opcje kompilatora](compiler-options.md)|Opisuje opcje wiersza polecenia dostępne dla kompilatora F #, **fsc.exe**.|

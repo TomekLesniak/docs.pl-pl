@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 3c8fc7c4702b786c05e14397dc36d994c77e114d
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: fbe0b3491260e787c08b98b320b19408f2c897eb
+ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811653"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795388"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Samouczek: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu programu Visual Studio
 
@@ -23,7 +23,7 @@ W tym samouczku przedstawiono sposób tworzenia i uruchamiania aplikacji konsolo
 
   Aby uzyskać więcej informacji, zobacz [instalowanie zestaw .NET Core SDK w programie Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio).
 
-## <a name="create-the-app"></a>Tworzymy aplikację.
+## <a name="create-the-app"></a>Tworzenie aplikacji
 
 Utwórz projekt aplikacji konsolowej .NET Core o nazwie "HelloWorld".
 
@@ -77,9 +77,9 @@ End Module
 
 Jeśli język, którego chcesz użyć, nie jest wyświetlany, Zmień selektor języka w górnej części strony.
 
-## <a name="run-the-app"></a>Uruchomienie aplikacji
+## <a name="run-the-app"></a>Uruchamianie aplikacji
 
-1. Naciśnij klawisz <kbd>SHIFT</kbd> + <kbd>F5</kbd> , aby uruchomić program bez debugowania.
+1. Naciśnij klawisz <kbd>Ctrl</kbd> + <kbd>F5</kbd> , aby uruchomić program bez debugowania.
 
    Zostanie otwarte okno konsoli z tekstem "Hello world!" Wydrukowano na ekranie i niektóre informacje debugowania programu Visual Studio.
 
@@ -102,7 +102,7 @@ Podnieś poziom aplikacji, aby monitować użytkownika o jego nazwę i wyświetl
 
    Znak dolara ( `$` ) przed ciągiem umożliwia umieszczenie wyrażeń takich jak nazwy zmiennych w nawiasach klamrowych w ciągu. Wartość wyrażenia jest wstawiana do ciągu zamiast wyrażenia. Ta składnia jest określana mianem [ciągów interpolowanych](../../csharp/language-reference/tokens/interpolated.md).
 
-1. Naciśnij klawisz <kbd>SHIFT</kbd> + <kbd>F5</kbd> , aby uruchomić program bez debugowania.
+1. Naciśnij klawisz <kbd>Ctrl</kbd> + <kbd>F5</kbd> , aby uruchomić program bez debugowania.
 
 1. Odpowiedz na monit, wprowadzając nazwę i naciskając klawisz <kbd>Enter</kbd> .
 
