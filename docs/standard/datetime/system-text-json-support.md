@@ -1,6 +1,6 @@
 ---
 title: Obsługa elementów DateTime i DateTimeOffset w pliku System.Text.Json
-description: Omówienie sposobu, w jaki typy DateTime i DateTimeOffset są obsługiwane w bibliotece system. Text. JSON.
+description: Przegląd sposobu, w jaki typy DateTime i DateTimeOffset są obsługiwane w System.Text.Jsw bibliotece.
 ms.technology: dotnet-standard
 author: layomia
 ms.author: laakinri
@@ -13,124 +13,126 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: fb8836d9c556b317c50b6b34a9dde4e42c6486b5
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 1c573712f458d3e22cd59112b9e79e85391270c1
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867350"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854896"
 ---
 # <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Obsługa elementów DateTime i DateTimeOffset w pliku System.Text.Json
 
-Biblioteka system. Text. JSON analizuje i zapisuje <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości zgodnie z rozszerzonym profilem ISO 8601:-2019.
-[Konwertery](xref:System.Text.Json.Serialization.JsonConverter%601) zapewniają obsługę niestandardową do serializacji i deserializacji za pomocą <xref:System.Text.Json.JsonSerializer>.
-Obsługę niestandardową można również zaimplementować przy użyciu <xref:System.Text.Json.Utf8JsonReader> i <xref:System.Text.Json.Utf8JsonWriter>.
+System.Text.Jsw bibliotece analizuje i zapisuje dane <xref:System.DateTime> oraz <xref:System.DateTimeOffset> wartości zgodnie z rozszerzonym profilem ISO 8601:-2019.
+[Konwertery](xref:System.Text.Json.Serialization.JsonConverter%601) zapewniają obsługę niestandardową do serializacji i deserializacji za pomocą <xref:System.Text.Json.JsonSerializer> .
+Obsługę niestandardową można również zaimplementować przy użyciu <xref:System.Text.Json.Utf8JsonReader> i <xref:System.Text.Json.Utf8JsonWriter> .
 
 ## <a name="support-for-the-iso-8601-12019-format"></a>Obsługa formatu ISO 8601-1:2019
 
-Typy <xref:System.Text.Json.JsonSerializer>, <xref:System.Text.Json.Utf8JsonReader>, <xref:System.Text.Json.Utf8JsonWriter>i <xref:System.Text.Json.JsonElement> analizują i zapisują <xref:System.DateTime> i <xref:System.DateTimeOffset> reprezentacje tekstowe zgodnie z rozszerzonym profilem formatu ISO 8601-1:2019; na przykład 2019-07-26T16:59:57-05:00.
+<xref:System.Text.Json.JsonSerializer>,, <xref:System.Text.Json.Utf8JsonReader> <xref:System.Text.Json.Utf8JsonWriter> , I <xref:System.Text.Json.JsonElement> typy przeanalizują i zapisują <xref:System.DateTime> <xref:System.DateTimeOffset> reprezentacje, zgodnie z rozszerzonym profilem formatu ISO 8601-1:2019, na przykład 2019-07-26T16:59:57-05:00.
 
-<xref:System.DateTime> i <xref:System.DateTimeOffset> dane można serializować przy użyciu <xref:System.Text.Json.JsonSerializer>:
+<xref:System.DateTime>i <xref:System.DateTimeOffset> można serializować dane przy użyciu <xref:System.Text.Json.JsonSerializer> :
 
 [!code-csharp[example-serializing-with-jsonserializer](~/samples/snippets/standard/datetime/json/csharp/serializing-with-jsonserializer/Program.cs)]
 
-Można je również zdeserializować przy użyciu <xref:System.Text.Json.JsonSerializer>:
+Można je również zdeserializować przy użyciu <xref:System.Text.Json.JsonSerializer> :
 
 [!code-csharp[example-deserializing-with-jsonserializer-valid](~/samples/snippets/standard/datetime/json/csharp/deserializing-with-jsonserializer-valid/Program.cs)]
 
-Z opcjami domyślnymi dane wejściowe <xref:System.DateTime> i <xref:System.DateTimeOffset> reprezentacje tekstowe muszą być zgodne z profilem rozszerzonego ISO 8601-1:2019.
-Próba deserializacji reprezentacji, które nie są zgodne z profilem, spowoduje, że <xref:System.Text.Json.JsonSerializer> zgłosić <xref:System.Text.Json.JsonException>:
+Z opcjami domyślnymi <xref:System.DateTime> <xref:System.DateTimeOffset> reprezentacje wejściowe i tekstowe muszą być zgodne z rozszerzonym profilem ISO 8601-1:2019.
+Próba deserializacji reprezentacji, które nie są zgodne z profilem, spowoduje <xref:System.Text.Json.JsonSerializer> wygenerowanie <xref:System.Text.Json.JsonException> :
 
 [!code-csharp[example-deserializing-with-jsonserializer-error](~/samples/snippets/standard/datetime/json/csharp/deserializing-with-jsonserializer-error/Program.cs)]
 
-<xref:System.Text.Json.JsonDocument> zapewnia strukturalny dostęp do zawartości ładunku JSON, w tym <xref:System.DateTime> i <xref:System.DateTimeOffset> reprezentacje. W poniższym przykładzie pokazano, jak w przypadku zbierania temperatury można obliczyć średnią temperaturę w poniedziałek:
+<xref:System.Text.Json.JsonDocument>Zapewnia strukturalny dostęp do zawartości ładunku JSON, w tym <xref:System.DateTime> i <xref:System.DateTimeOffset> reprezentacje. W poniższym przykładzie pokazano, jak w przypadku zbierania temperatury można obliczyć średnią temperaturę w poniedziałek:
 
 [!code-csharp[example-computing-with-jsondocument-valid](~/samples/snippets/standard/datetime/json/csharp/computing-with-jsondocument-valid/Program.cs)]
 
-Próba obliczenia średniej temperatury danego ładunku z niezgodnymi reprezentacjami <xref:System.DateTime> spowoduje, że <xref:System.Text.Json.JsonDocument> zgłosić <xref:System.FormatException>:
+Próba obliczenia średniej temperatury danego ładunku z niezgodnymi <xref:System.DateTime> reprezentacjami spowoduje <xref:System.Text.Json.JsonDocument> wygenerowanie <xref:System.FormatException> :
 
 [!code-csharp[example-computing-with-jsondocument-error](~/samples/snippets/standard/datetime/json/csharp/computing-with-jsondocument-error/Program.cs)]
 
-<xref:System.Text.Json.Utf8JsonWriter> niższego poziomu zapisuje <xref:System.DateTime> i <xref:System.DateTimeOffset> dane:
+<xref:System.Text.Json.Utf8JsonWriter>Zapisy i dane niższego poziomu <xref:System.DateTime> <xref:System.DateTimeOffset> :
 
 [!code-csharp[example-writing-with-utf8jsonwriter](~/samples/snippets/standard/datetime/json/csharp/writing-with-utf8jsonwriter/Program.cs)]
 
-<xref:System.Text.Json.Utf8JsonReader> analizuje <xref:System.DateTime> i <xref:System.DateTimeOffset> dane:
+<xref:System.Text.Json.Utf8JsonReader>analizowanie <xref:System.DateTime> i <xref:System.DateTimeOffset> dane:
 
 [!code-csharp[example-reading-with-utf8jsonreader-valid](~/samples/snippets/standard/datetime/json/csharp/reading-with-utf8jsonreader-valid/Program.cs)]
 
-Próba odczytania niezgodnych formatów z <xref:System.Text.Json.Utf8JsonReader> spowoduje zgłoszenie <xref:System.FormatException>:
+Próba odczytania niezgodnych formatów w programie <xref:System.Text.Json.Utf8JsonReader> spowoduje wygenerowanie <xref:System.FormatException> :
 
 [!code-csharp[example-reading-with-utf8jsonreader-error](~/samples/snippets/standard/datetime/json/csharp/reading-with-utf8jsonreader-error/Program.cs)]
 
-## <a name="custom-support-for-xrefsystemdatetime-and-xrefsystemdatetimeoffset"></a>Obsługa niestandardowych <xref:System.DateTime> i <xref:System.DateTimeOffset>
+## <a name="custom-support-for-xrefsystemdatetime-and-xrefsystemdatetimeoffset"></a>Obsługa niestandardowa dla programu <xref:System.DateTime> i<xref:System.DateTimeOffset>
 
-### <a name="when-using-xrefsystemtextjsonjsonserializer"></a>Przy użyciu <xref:System.Text.Json.JsonSerializer>
+### <a name="when-using-xrefsystemtextjsonjsonserializer"></a>W przypadku korzystania z<xref:System.Text.Json.JsonSerializer>
 
 Jeśli chcesz, aby serializator wykonywał niestandardowe analizy lub formatowanie, możesz zaimplementować [niestandardowe konwertery](xref:System.Text.Json.Serialization.JsonConverter%601).
 Oto kilka przykładów:
 
-#### <a name="using-datetimeoffsetparse-and-datetimeoffsettostring"></a>Używanie `DateTime(Offset).Parse` i `DateTime(Offset).ToString`
+#### <a name="using-datetimeoffsetparse-and-datetimeoffsettostring"></a>Korzystanie z `DateTime(Offset).Parse` i`DateTime(Offset).ToString`
 
-Jeśli nie możesz określić formatów danych wejściowych <xref:System.DateTime> lub <xref:System.DateTimeOffset> reprezentacje tekstu, możesz użyć metody `DateTime(Offset).Parse` w logice odczytu konwertera. Umożliwia to korzystanie z programu. Rozległa pomoc techniczna w sieci na potrzeby analizowania różnych <xref:System.DateTime> i <xref:System.DateTimeOffset> formatów tekstu, w tym ciągów z niestandardem ISO 8601 i formatów ISO 8601, które nie są zgodne z rozszerzonym profilem ISO 8601-1:2019. Ta metoda jest znacznie mniej wydajna niż użycie natywnej implementacji serializatora.
+Jeśli nie możesz określić formatów reprezentacji danych wejściowych <xref:System.DateTime> lub <xref:System.DateTimeOffset> tekstowych, możesz użyć `DateTime(Offset).Parse` metody z logiki odczytu konwertera. Umożliwia to korzystanie z programu. Rozległa pomoc techniczna w sieci na potrzeby analizowania różnych <xref:System.DateTime> <xref:System.DateTimeOffset> formatów i formatu tekstu, w tym ciągów z niestandardem ISO 8601 i formatów ISO 8601, które nie są zgodne z rozszerzonym profilem ISO 8601-1:2019. Ta metoda jest znacznie mniej wydajna niż użycie natywnej implementacji serializatora.
 
-Do serializacji można użyć metody `DateTime(Offset).ToString` w logice zapisu konwertera. Dzięki temu można pisać <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości przy użyciu dowolnych [standardowych formatów daty i godziny](../base-types/standard-date-and-time-format-strings.md)oraz [niestandardowych formatów daty i godziny](../base-types/custom-date-and-time-format-strings.md).
+Do serializacji można użyć `DateTime(Offset).ToString` metody z logiki zapisu konwertera. Pozwala to pisać <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości przy użyciu dowolnych [standardowych formatów daty i godziny](../base-types/standard-date-and-time-format-strings.md)oraz [niestandardowych formatów daty i godziny](../base-types/custom-date-and-time-format-strings.md).
 Jest to również znacznie mniej wydajne niż użycie natywnej implementacji serializatora.
 
 [!code-csharp[example-showing-datetime-parse](~/samples/snippets/standard/datetime/json/csharp/datetime-converter-examples/example1/Program.cs)]
 
 > [!NOTE]
-> Podczas implementowania <xref:System.Text.Json.Serialization.JsonConverter%601>, a `T` jest <xref:System.DateTime>, parametr `typeToConvert` będzie zawsze `typeof(DateTime)`.
-Parametr jest przydatny do obsługi przypadków polimorficznych i używania typów ogólnych do uzyskiwania `typeof(T)` w sposób efektywny.
+> Podczas implementowania <xref:System.Text.Json.Serialization.JsonConverter%601> i `T` jest <xref:System.DateTime> `typeToConvert` parametr zawsze będzie `typeof(DateTime)` .
+Parametr jest przydatny do obsługi przypadków polimorficznych i korzystania z typów ogólnych do uzyskania `typeof(T)` w sposób efektywny.
 
-#### <a name="using-xrefsystembufferstextutf8parser-and-xrefsystembufferstextutf8formatter"></a>Używanie <xref:System.Buffers.Text.Utf8Parser> i <xref:System.Buffers.Text.Utf8Formatter>
+#### <a name="using-xrefsystembufferstextutf8parser-and-xrefsystembufferstextutf8formatter"></a>Korzystanie z <xref:System.Buffers.Text.Utf8Parser> i<xref:System.Buffers.Text.Utf8Formatter>
 
-W logice konwertera można używać szybkich metod analizy i formatowania opartych na kodowaniu UTF-8, jeśli dane wejściowe <xref:System.DateTime> lub <xref:System.DateTimeOffset> są zgodne z jednym z ciągów "R", "l", "O" lub "G" [standardowego formatu daty i godziny](../base-types/standard-date-and-time-format-strings.md), lub chcesz pisać według jednego z tych formatów. Jest to znacznie szybsze niż używanie `DateTime(Offset).Parse` i `DateTime(Offset).ToString`.
+W logice konwertera można używać szybkich metod analizy i formatowania opartych na kodowaniu UTF-8 <xref:System.DateTime> , jeśli prezentacje wejściowe lub <xref:System.DateTimeOffset> tekstowe są zgodne z jednym z [ciągów standardowego formatu daty i godziny](../base-types/standard-date-and-time-format-strings.md)"R", "l", "O" lub "G", lub chcesz pisać według jednego z tych formatów. Jest to znacznie szybsze niż użycie `DateTime(Offset).Parse` i `DateTime(Offset).ToString` .
 
-W tym przykładzie przedstawiono niestandardowy konwerter, który serializować i deserializacji wartości <xref:System.DateTime> zgodnie z [formatem standardowym "R"](../base-types/standard-date-and-time-format-strings.md#the-rfc1123-r-r-format-specifier):
+Ten przykład pokazuje niestandardowy konwerter, który serializować i deserializacji <xref:System.DateTime> wartości zgodnie z [formatem standardowym "R"](../base-types/standard-date-and-time-format-strings.md#the-rfc1123-r-r-format-specifier):
 
 [!code-csharp[example-showing-utf8-parser-and-formatter](~/samples/snippets/standard/datetime/json/csharp/datetime-converter-examples/example2/Program.cs)]
 
 > [!NOTE]
 > Standardowy format "R" będzie zawsze zawierać 29 znaków.
+>
+> Format "l" (mała litera "L") nie jest udokumentowany innymi [ciągami standardowego formatu daty i godziny](../base-types/standard-date-and-time-format-strings.md) , ponieważ jest obsługiwany tylko przez `Utf8Parser` typy i `Utf8Formatter` . Format jest małymi literami RFC 1123 (mała wersja formatu "R"), na przykład: "czwartek, 25 lip 2019 06:36:07 GMT".
 
-#### <a name="using-datetimeoffsetparse-as-a-fallback-to-the-serializers-native-parsing"></a>Używanie `DateTime(Offset).Parse` jako powrotu do analizy natywnej serializatora
+#### <a name="using-datetimeoffsetparse-as-a-fallback-to-the-serializers-native-parsing"></a>Używanie `DateTime(Offset).Parse` jako rezerwy do analizy natywnej serializatora
 
-Jeśli zwykle oczekujesz, że dane wejściowe <xref:System.DateTime> lub <xref:System.DateTimeOffset> są zgodne z rozszerzonym profilem ISO 8601-1:2019, możesz użyć natywnej logiki analizy serializatora. Można również zaimplementować mechanizm rezerwowy tylko w przypadku.
-Ten przykład pokazuje, że po niepowodzeniu analizy <xref:System.DateTime> reprezentacji tekstowej przy użyciu <xref:System.Text.Json.Utf8JsonReader.TryGetDateTime(System.DateTime@)>, konwerter pomyślnie przeanalizuje dane przy użyciu <xref:System.DateTime.Parse(System.String)>.
+Jeśli zazwyczaj oczekujesz, że <xref:System.DateTime> dane wejściowe lub <xref:System.DateTimeOffset> zgodne z rozszerzonym profilem ISO 8601-1:2019, możesz użyć natywnej logiki analizy serializatora. Można również zaimplementować mechanizm rezerwowy tylko w przypadku.
+Ten przykład pokazuje, że po niepowodzeniu analizy <xref:System.DateTime> reprezentacji tekstowej przy użyciu <xref:System.Text.Json.Utf8JsonReader.TryGetDateTime(System.DateTime@)> konwertera pomyślnie przeanalizuje dane przy użyciu <xref:System.DateTime.Parse(System.String)> .
 
 [!code-csharp[example-showing-datetime-parse-as-fallback](~/samples/snippets/standard/datetime/json/csharp/datetime-converter-examples/example3/Program.cs)]
 
-### <a name="when-writing-with-xrefsystemtextjsonutf8jsonwriter"></a>Podczas pisania przy użyciu <xref:System.Text.Json.Utf8JsonWriter>
+### <a name="when-writing-with-xrefsystemtextjsonutf8jsonwriter"></a>Podczas pisania przy użyciu<xref:System.Text.Json.Utf8JsonWriter>
 
-Jeśli chcesz napisać niestandardowy <xref:System.DateTime> lub <xref:System.DateTimeOffset> reprezentację tekstową za pomocą <xref:System.Text.Json.Utf8JsonWriter>, możesz sformatować swoją niestandardową reprezentację do <xref:System.String>, `ReadOnlySpan<Byte>`, `ReadOnlySpan<Char>`lub <xref:System.Text.Json.JsonEncodedText>, a następnie przekazać ją do odpowiedniej metody <xref:System.Text.Json.Utf8JsonWriter.WriteStringValue%2A?displayProperty=nameWithType> lub <xref:System.Text.Json.Utf8JsonWriter.WriteString%2A?displayProperty=nameWithType>.
+Jeśli chcesz napisać niestandardową <xref:System.DateTime> lub <xref:System.DateTimeOffset> tekstową reprezentację za pomocą <xref:System.Text.Json.Utf8JsonWriter> , możesz sformatować swoją niestandardową reprezentację do <xref:System.String> ,, `ReadOnlySpan<Byte>` `ReadOnlySpan<Char>` , lub <xref:System.Text.Json.JsonEncodedText> , przekazać ją do odpowiedniej <xref:System.Text.Json.Utf8JsonWriter.WriteStringValue%2A?displayProperty=nameWithType> lub <xref:System.Text.Json.Utf8JsonWriter.WriteString%2A?displayProperty=nameWithType> metody.
 
-Poniższy przykład pokazuje, jak <xref:System.DateTime> format niestandardowy można utworzyć za pomocą <xref:System.DateTime.ToString(System.String,System.IFormatProvider)>, a następnie napisać przy użyciu metody <xref:System.Text.Json.Utf8JsonWriter.WriteStringValue(System.String)>:
+Poniższy przykład pokazuje, jak format niestandardowy <xref:System.DateTime> można utworzyć za pomocą <xref:System.DateTime.ToString(System.String,System.IFormatProvider)> , a następnie napisać przy użyciu <xref:System.Text.Json.Utf8JsonWriter.WriteStringValue(System.String)> metody:
 
 [!code-csharp[example-custom-writing-with-utf8jsonwriter](~/samples/snippets/standard/datetime/json/csharp/custom-writing-with-utf8jsonwriter/Program.cs)]
 
-### <a name="when-reading-with-xrefsystemtextjsonutf8jsonreader"></a>Podczas czytania przy użyciu <xref:System.Text.Json.Utf8JsonReader>
+### <a name="when-reading-with-xrefsystemtextjsonutf8jsonreader"></a>Podczas czytania z<xref:System.Text.Json.Utf8JsonReader>
 
-Jeśli chcesz odczytać niestandardowy <xref:System.DateTime> lub <xref:System.DateTimeOffset> reprezentację tekstową za pomocą <xref:System.Text.Json.Utf8JsonReader>, możesz pobrać wartość bieżącego tokenu JSON jako <xref:System.String> przy użyciu <xref:System.Text.Json.Utf8JsonReader.GetString>, a następnie przeanalizować wartość przy użyciu logiki niestandardowej.
+Jeśli chcesz odczytać niestandardową <xref:System.DateTime> lub <xref:System.DateTimeOffset> tekstową reprezentację z <xref:System.Text.Json.Utf8JsonReader> , możesz pobrać wartość bieżącego tokenu JSON jako <xref:System.String> użycie <xref:System.Text.Json.Utf8JsonReader.GetString> , a następnie przeanalizować wartość przy użyciu logiki niestandardowej.
 
-Poniższy przykład pokazuje, jak można pobrać niestandardową reprezentację tekstu <xref:System.DateTimeOffset> przy użyciu <xref:System.Text.Json.Utf8JsonReader.GetString>, a następnie przeanalizować ją przy użyciu <xref:System.DateTimeOffset.ParseExact(System.String,System.String,System.IFormatProvider)>:
+Poniższy przykład pokazuje, jak można pobrać niestandardową <xref:System.DateTimeOffset> reprezentację tekstową przy użyciu <xref:System.Text.Json.Utf8JsonReader.GetString> , a następnie przeanalizować ją przy użyciu <xref:System.DateTimeOffset.ParseExact(System.String,System.String,System.IFormatProvider)> :
 
 [!code-csharp[example-custom-reading-with-utf8jsonreader](~/samples/snippets/standard/datetime/json/csharp/custom-reading-with-utf8jsonreader/Program.cs)]
 
-## <a name="the-extended-iso-8601-12019-profile-in-systemtextjson"></a>Profil rozszerzonego ISO 8601-1:2019 w pliku System. Text. JSON
+## <a name="the-extended-iso-8601-12019-profile-in-systemtextjson"></a>Profil rozszerzonego ISO 8601-1:2019 w System.Text.Jsna
 
 ### <a name="date-and-time-components"></a>Składniki daty i godziny
 
-Profil rozszerzonego ISO 8601-1:2019 zaimplementowany w <xref:System.Text.Json> definiuje następujące składniki dla reprezentacji daty i godziny. Te składniki są używane do definiowania różnych poziomów szczegółowości, które są obsługiwane podczas analizowania i formatowania <xref:System.DateTime> i <xref:System.DateTimeOffset> reprezentacji.
+Profil rozszerzonego ISO 8601-1:2019 zaimplementowany w programie <xref:System.Text.Json> definiuje następujące składniki dla reprezentacji daty i godziny. Te składniki służą do definiowania różnych poziomów szczegółowości, które są obsługiwane podczas analizowania i formatowania <xref:System.DateTime> i <xref:System.DateTimeOffset> reprezentacji.
 
 | Składnik       | Format                      | Opis                                                                     |
 |-----------------|-----------------------------|---------------------------------------------------------------------------------|
 | Rok            | „yyyy”                      | 0001-9999                                                                       |
-| Bieżącym           | „MM”                        | 01-12                                                                           |
+| Miesiąc           | „MM”                        | 01-12                                                                           |
 | Dzień             | „dd”                        | 01-28, 01-29, 01-30, 01-31 w oparciu o miesiąc/rok                                  |
 | Godzina            | „HH”                        | 00-23                                                                           |
 | Minuta          | „mm”                        | 00-59                                                                           |
-| Sekunda          | „ss”                        | 00-59                                                                           |
+| Second          | „ss”                        | 00-59                                                                           |
 | Druga część | „FFFFFFF”                   | Co najmniej jedna cyfra, maksymalnie 16 cyfr                                      |
 | Przesunięcie czasu     | „K”                         | "Z" lub "(" + "/"-") gg": "mm"                                                |
 | Czas częściowy    | "Gg": "mm": "SS [FFFFFFF]"     | Czas bez informacji o przesunięciu czasu UTC                                             |
@@ -162,10 +164,10 @@ Następujące poziomy szczegółowości są zdefiniowane do analizy:
     3. "yyyy'-'MM'-'dd'T'HH": "mm": "SS" + "/"-") gg": "mm"
     4. "yyyy'-'MM'-'dd'T'HH": "mm": "SS". " FFFFFFF (' + '/'-') gg ': ' mm '
 
-Jeśli istnieją ułamki dziesiętne dla sekund, musi zawierać co najmniej jedną cyfrę; `2019-07-26T00:00:00.` jest niedozwolony.
+Jeśli istnieją ułamki dziesiętne dla sekund, musi zawierać co najmniej jedną cyfrę; `2019-07-26T00:00:00.`nie jest dozwolone.
 Gdy dozwolone są maksymalnie 16 cyfr ułamkowych, analizowane są tylko pierwsze siedem. Wszystko, co jest traktowane jako zero.
-Na przykład `2019-07-26T00:00:00.1234567890` zostanie przeanalizowany, jeśli jest `2019-07-26T00:00:00.1234567`.
-Jest to zgodne z implementacją <xref:System.DateTime>, która jest ograniczona do tego rozwiązania.
+Na przykład program `2019-07-26T00:00:00.1234567890` zostanie przeanalizowany tak, jakby był `2019-07-26T00:00:00.1234567` .
+Jest to tak, aby zachować zgodność z <xref:System.DateTime> implementacją, która jest ograniczona do tego rozwiązania.
 
 Sekundy przestępne nie są obsługiwane.
 
@@ -180,31 +182,31 @@ Następujące poziomy szczegółowości są zdefiniowane na potrzeby formatowani
 
     2. "yyyy'-'MM'-'dd'T'HH": "mm": "SS". " FFFFFFF
 
-        Służy do formatowania <xref:System.DateTime> za pomocą ułamków sekund, ale bez informacji o przesunięciu.
+        Służy do formatowania <xref:System.DateTime> z ułamkami sekund, ale bez informacji o przesunięciu.
 
 2. "Data i godzina"
     1. "yyyy'-'MM'-'dd'T'HH": "mm": "SSS"
 
-        Służy do formatowania <xref:System.DateTime> bez ułamków sekund, ale z przesunięciem czasu UTC.
+        Służy do formatowania <xref:System.DateTime> bez ułamków sekund, ale z przesunięciem UTC.
 
     2. "yyyy'-'MM'-'dd'T'HH": "mm": "SS". " FFFFFFFZ"
 
-        Służy do formatowania <xref:System.DateTime> za pomocą ułamków sekund i przesunięcia czasu UTC.
+        Służy do formatowania <xref:System.DateTime> z ułamkami sekund i przesunięciem czasu UTC.
 
     3. "yyyy'-'MM'-'dd'T'HH": "mm": "SS" + "/"-") gg": "mm"
 
-        Służy do formatowania <xref:System.DateTime> lub <xref:System.DateTimeOffset> bez ułamków sekund, ale z przesunięciem lokalnym.
+        Używane do formatowania <xref:System.DateTime> lub <xref:System.DateTimeOffset> bez ułamków sekund, ale z przesunięciem lokalnym.
 
     4. "yyyy'-'MM'-'dd'T'HH": "mm": "SS". " FFFFFFF (' + '/'-') gg ': ' mm '
 
-        Służy do formatowania <xref:System.DateTime> lub <xref:System.DateTimeOffset> za pomocą ułamków sekund i przesunięcia lokalnego.
+        Służy do formatowania <xref:System.DateTime> lub <xref:System.DateTimeOffset> z ułamkami sekund i przesunięcia lokalnego.
 
-Jeśli reprezentacja w [formacie rundy](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) dla <xref:System.DateTime> lub <xref:System.DateTimeOffset> ma końcowe zera w ułamkach sekund, wówczas <xref:System.Text.Json.JsonSerializer> i <xref:System.Text.Json.Utf8JsonWriter> będą formatować reprezentację wystąpienia bez końcowych zer.
-Na przykład wystąpienie <xref:System.DateTime>, którego reprezentacja [formatu rundy](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) jest `2019-04-24T14:50:17.1010000Z`, zostanie sformatowane jako `2019-04-24T14:50:17.101Z` przez <xref:System.Text.Json.JsonSerializer> i <xref:System.Text.Json.Utf8JsonWriter>.
+Jeśli reprezentacja w [formacie rundy](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) <xref:System.DateTime> lub <xref:System.DateTimeOffset> ma końcowe zera w częściach sekund, <xref:System.Text.Json.JsonSerializer> a następnie <xref:System.Text.Json.Utf8JsonWriter> sformatuje reprezentację wystąpienia bez końcowych zer.
+Na przykład wystąpienie, <xref:System.DateTime> którego reprezentacja [formatu okrężnego](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) ma wartość `2019-04-24T14:50:17.1010000Z` , zostanie sformatowane w taki sposób, jak `2019-04-24T14:50:17.101Z` <xref:System.Text.Json.JsonSerializer> i <xref:System.Text.Json.Utf8JsonWriter> .
 
-Jeśli reprezentacja w [formacie rundy](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) <xref:System.DateTime> lub <xref:System.DateTimeOffset> ma wszystkie zera w ułamkach sekund, wówczas <xref:System.Text.Json.JsonSerializer> i <xref:System.Text.Json.Utf8JsonWriter> będą sformatować reprezentację wystąpienia bez ułamków sekund.
-Na przykład wystąpienie <xref:System.DateTime>, którego reprezentacja [formatu rundy](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) jest `2019-04-24T14:50:17.0000000+02:00`, zostanie sformatowane jako `2019-04-24T14:50:17+02:00` przez <xref:System.Text.Json.JsonSerializer> i <xref:System.Text.Json.Utf8JsonWriter>.
+Jeśli reprezentacja w [formacie rundy](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) <xref:System.DateTime> or <xref:System.DateTimeOffset> ma wszystkie zera w jego ułamkach sekund, <xref:System.Text.Json.JsonSerializer> a następnie <xref:System.Text.Json.Utf8JsonWriter> sformatuje reprezentację wystąpienia bez ułamków sekund.
+Na przykład wystąpienie, <xref:System.DateTime> którego reprezentacja [formatu okrężnego](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) ma wartość `2019-04-24T14:50:17.0000000+02:00` , zostanie sformatowane w taki sposób, jak `2019-04-24T14:50:17+02:00` <xref:System.Text.Json.JsonSerializer> i <xref:System.Text.Json.Utf8JsonWriter> .
 
 Obcinanie zer w cyfrach dziesiętnych umożliwia najmniejsze dane wyjściowe, które są konieczne, aby zachować informacje o liczbie, która ma być zapisywana.
 
-Zapisywane są maksymalnie 7 cyfr dziesiętnych. Jest to zgodne z implementacją <xref:System.DateTime>, która jest ograniczona do tego rozwiązania.
+Zapisywane są maksymalnie 7 cyfr dziesiętnych. Jest to zgodne z <xref:System.DateTime> implementacją, która jest ograniczona do tego rozwiązania.
