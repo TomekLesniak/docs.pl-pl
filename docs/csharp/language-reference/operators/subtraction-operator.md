@@ -12,12 +12,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: 0475e1be74af0b367785443224cd2e737d2f7301
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: a00957c8d36a96b5ee23b9e5a309b6139b33fd36
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555596"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916691"
 ---
 # <a name="--and---operators-c-reference"></a>Operatory-and-= (odwołanie w C#)
 
@@ -31,17 +31,17 @@ Dla operandów tego samego typu [delegata](../builtin-types/reference-types.md#t
 
 - Jeśli oba operandy mają wartość inną niż null, a lista wywołań operandu po prawej stronie jest poprawną, ciągłą podlistą listy wywołań operandu po lewej stronie, wynik operacji jest nową listą wywołań, która jest uzyskiwana przez usunięcie wpisów operandu po prawej stronie z listy wywołań dla operandu z lewej strony. Jeśli lista argumentów operacji po prawej stronie jest zgodna z wieloma ciągłymi podlistami na liście operandów po lewej stronie, usuwana jest tylko podlista dopasowania do prawej. Jeśli usunięcie spowoduje powstanie pustej listy, wynik jest `null` .
 
-  [!code-csharp-interactive[delegate removal](snippets/SubtractionOperator.cs#DelegateRemoval)]
+  [!code-csharp-interactive[delegate removal](snippets/shared/SubtractionOperator.cs#DelegateRemoval)]
 
 - Jeśli lista wywołań operandu po prawej stronie nie jest prawidłową ciągłą podlistą listy wywołań operandu po lewej stronie, wynik operacji jest argumentem po lewej stronie. Na przykład usunięcie delegata, który nie jest częścią delegata multiemisji, ma wartość Nothing i skutkuje niezmienionym delegatem multiemisji.
 
-  [!code-csharp-interactive[delegate removal with no effect](snippets/SubtractionOperator.cs#DelegateRemovalNoChange)]
+  [!code-csharp-interactive[delegate removal with no effect](snippets/shared/SubtractionOperator.cs#DelegateRemovalNoChange)]
 
   W poprzednim przykładzie pokazano również, że podczas porównywania wystąpień delegatów usuwania delegatów. Na przykład Delegaty wytwarzane z oceny identycznych [wyrażeń lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nie są równe. Aby uzyskać więcej informacji o równość delegowania, zobacz sekcję [delegowanie operatorów równości](~/_csharplang/spec/expressions.md#delegate-equality-operators) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
 - Jeśli argument operacji po lewej stronie jest `null` , wynikiem operacji jest `null` . Jeśli argument operacji po prawej stronie jest `null` , wynikiem operacji jest operand z lewej strony.
 
-  [!code-csharp-interactive[delegate removal and null](snippets/SubtractionOperator.cs#DelegateRemovalAndNull)]
+  [!code-csharp-interactive[delegate removal and null](snippets/shared/SubtractionOperator.cs#DelegateRemovalAndNull)]
 
 Aby połączyć delegatów, użyj [ `+` operatora](addition-operator.md#delegate-combination).
 
@@ -65,7 +65,7 @@ z tą różnicą, że `x` jest obliczana tylko raz.
 
 Poniższy przykład ilustruje użycie `-=` operatora:
 
-[!code-csharp-interactive[-= examples](snippets/SubtractionOperator.cs#SubtractAndAssign)]
+[!code-csharp-interactive[-= examples](snippets/shared/SubtractionOperator.cs#SubtractAndAssign)]
 
 Możesz również użyć `-=` operatora, aby określić metodę procedury obsługi zdarzeń do usunięcia podczas anulowania subskrypcji [zdarzenia](../keywords/event.md). Aby uzyskać więcej informacji, zobacz [subskrybowanie i anulowanie subskrypcji zdarzeń](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
@@ -77,7 +77,7 @@ Typ zdefiniowany przez użytkownika może [przeciążać](operator-overloading.m
 
 Aby uzyskać więcej informacji, zobacz sekcje [jednoargumentowe minus](~/_csharplang/spec/expressions.md#unary-minus-operator) i [operator odejmowania](~/_csharplang/spec/expressions.md#subtraction-operator) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

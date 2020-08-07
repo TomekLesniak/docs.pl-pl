@@ -1,13 +1,13 @@
 ---
 title: Środowisko deweloperskie dla aplikacji platformy Docker
 description: Poznaj najważniejsze opcje narzędzia deweloperskiego, które obsługują cykl życia platformy Docker.
-ms.date: 04/16/2020
-ms.openlocfilehash: b1df16db88fa85f794407c989f5428030c4cddf7
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 08/06/2020
+ms.openlocfilehash: 07b42b2bd05ab16ba0fbf61863b050ee2c9e242b
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394889"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916029"
 ---
 # <a name="development-environment-for-docker-apps"></a>Środowisko deweloperskie dla aplikacji platformy Docker
 
@@ -26,7 +26,7 @@ Jeśli wolisz lekki Edytor Międzyplatformowy obsługujący dowolny język progr
 
 ### <a name="visual-studio-with-docker-tools-windows-development-machine"></a>Visual Studio z narzędziami platformy Docker (komputer deweloperski systemu Windows)
 
-Zalecamy używanie programu Visual Studio 2019 z włączonymi wbudowanymi narzędziami platformy Docker. Za pomocą programu Visual Studio można opracowywać, uruchamiać i weryfikować aplikacje bezpośrednio w wybranym środowisku platformy Docker. Naciśnij klawisz F5, aby debugować aplikację (pojedynczy kontener lub wiele kontenerów) bezpośrednio na hoście platformy Docker lub naciśnij klawisze CTRL + F5, aby edytować i odświeżyć aplikację bez konieczności ponownego kompilowania kontenera. Jest to najprostszy i najbardziej zaawansowany wybór dla deweloperów systemu Windows do tworzenia kontenerów platformy Docker dla systemu Linux lub Windows.
+Zaleca się używanie programu Visual Studio 2019 z włączonymi wbudowanymi narzędziami platformy Docker. Za pomocą programu Visual Studio można opracowywać, uruchamiać i weryfikować aplikacje bezpośrednio w wybranym środowisku platformy Docker. Naciśnij klawisz F5, aby debugować aplikację (pojedynczy kontener lub wiele kontenerów) bezpośrednio na hoście platformy Docker lub naciśnij klawisze CTRL + F5, aby edytować i odświeżyć aplikację bez konieczności ponownego kompilowania kontenera. Jest to najprostszy i najbardziej zaawansowany wybór dla deweloperów systemu Windows do tworzenia kontenerów platformy Docker dla systemu Linux lub Windows.
 
 ### <a name="visual-studio-for-mac-mac-development-machine"></a>Visual Studio dla komputerów Mac (komputer deweloperski dla komputerów Mac)
 

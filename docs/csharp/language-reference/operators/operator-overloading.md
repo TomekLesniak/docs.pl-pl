@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 8b15d8d3abdfc9318baaba60ee0d6d1bb18fcf27
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 4fde25cac21b2cb32efc9282578f32102a0f607f
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855078"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916728"
 ---
 # <a name="operator-overloading-c-reference"></a>Przeciążanie operatora (odwołanie w C#)
 
@@ -26,7 +26,7 @@ Użyj `operator` słowa kluczowego, aby zadeklarować operator. Deklaracja opera
 
 Poniższy przykład definiuje uproszczoną strukturę do reprezentowania liczby wymiernej. Struktura przeciąża niektóre [Operatory arytmetyczne](arithmetic-operators.md):
 
-[!code-csharp[fraction example](snippets/OperatorOverloading.cs)]
+[!code-csharp[fraction example](snippets/shared/OperatorOverloading.cs)]
 
 Możesz poszerzyć poprzedni przykład, [definiując niejawną konwersję](user-defined-conversion-operators.md) z `int` na `Fraction` . Następnie przeciążone operatory obsługują argumenty tych dwóch typów. Oznacza to, że można dodać liczbę całkowitą do ułamka i uzyskać ułamek jako wynik.
 

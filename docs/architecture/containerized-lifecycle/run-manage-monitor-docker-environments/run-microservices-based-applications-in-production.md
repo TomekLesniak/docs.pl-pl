@@ -1,36 +1,36 @@
 ---
 title: Uruchamianie aplikacji złożonych i opartych na mikrousługach w środowiskach produkcyjnych
-description: Poznaj kluczowe składniki do uruchamiania aplikacji opartych na kontenerach w środowisku produkcyjnym
-ms.date: 02/15/2019
-ms.openlocfilehash: 69df3d39a00b91cbe59c96e5fcab841a60943bcc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+description: Poznaj najważniejsze składniki do uruchamiania aplikacji opartych na kontenerach w środowisku produkcyjnym
+ms.date: 08/06/2020
+ms.openlocfilehash: a045804e2e40dcf401a697d3e58b13f05ca61b94
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70295464"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915053"
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Uruchamianie aplikacji złożonych i opartych na mikrousługach w środowiskach produkcyjnych
 
-Aplikacje składające się z wielu mikrousług muszą zostać wdrożone w klastrach aranżatora w celu uproszczenia złożoności wdrożenia i zwiększenia rentowności z punktu widzenia IT. Bez klastra koordynatora byłoby trudne do wdrożenia i skalowania w poziomie złożonych aplikacji mikrousług.
+Aplikacje składające się z wielu mikrousług muszą zostać wdrożone w klastrach programu Orchestrator w celu uproszczenia złożoności wdrożenia i zapewnienia jej działania z punktu widzenia IT. Bez klastra programu Orchestrator nie można wdrożyć i skalować złożonej aplikacji mikrousług.
 
-## <a name="introduction-to-orchestrators-schedulers-and-container-clusters"></a>Wprowadzenie do koordynatorów, planistów i klastrów kontenerów
+## <a name="introduction-to-orchestrators-schedulers-and-container-clusters"></a>Wprowadzenie do koordynatorów, harmonogramów i klastrów kontenerów
 
-Wcześniej w tym e-book, *klastry* i *harmonogramy* zostały wprowadzone w ramach dyskusji na temat architektury oprogramowania i rozwoju. Kubernetes i sieci szkieletowej usług są przykładami klastrów platformy Docker. Oba te koordynatorów można uruchomić jako część infrastruktury świadczonej przez usługę Kubernetes platformy Microsoft Azure.
+Wcześniej w tej książce elektronicznej, *klastry* i *harmonogramy* zostały wprowadzone w ramach dyskusji na temat architektury oprogramowania i programowania. Kubernetes i Service Fabric są przykładami klastrów platformy Docker. Oba te koordynatorzy mogą działać jako część infrastruktury udostępnianej przez usługę Microsoft Azure Kubernetes.
 
-Gdy aplikacje są skalowane w sposób skalowany w sposób skalowany w czasie w wielu systemach hosta, możliwość zarządzania każdym systemem hosta i abstrakcyjne od złożoności platformy podstawowej staje się atrakcyjna. To jest dokładnie to, co zapewniają koordynatorzy i planiści. Przyjrzyjmy się im pokrótce:
+Gdy aplikacje są skalowane w wielu systemach hosta, możliwość zarządzania każdym systemem hosta i nieabstrakcyjna złożoność podstawowej platformy staną się atrakcyjne. To dokładnie, co zapewnia koordynatorów i harmonogramów. Na koniec Przyjrzyjmy się tutaj:
 
-- **Harmonogramy**."Planowanie" odnosi się do możliwości załadowania przez administratora pliku usługi do systemu hosta, który określa sposób uruchamiania określonego kontenera. Uruchamianie kontenerów w klastrze platformy Docker jest zwykle nazywane planowaniem. Chociaż planowanie odnosi się do określonego aktu ładowania definicji usługi, w sensie bardziej ogólnym, planiści są odpowiedzialni za podłączanie do systemu init hosta w celu zarządzania usługami w dowolnej pojemności potrzebnej.
+- **Harmonogramy**."Planowanie" oznacza możliwość, aby administrator ładował plik usługi do systemu hosta, który ustanawia sposób uruchamiania określonego kontenera. Uruchamianie kontenerów w klastrze platformy Docker jest nazywane planowaniem. Chociaż planowanie odnosi się do konkretnego aktu załadowania definicji usługi, w bardziej ogólnym sensie, harmonogramy są odpowiedzialne za Podłączanie do systemu inicjowania hosta w celu zarządzania usługami w dowolnej wymaganej pojemności.
 
-   Harmonogram klastrów ma wiele celów: efektywne korzystanie z zasobów klastra, praca z ograniczeniami umieszczania dostarczonymi przez użytkownika, szybkie planowanie aplikacji, aby nie pozostawiać ich w stanie oczekiwania, posiadanie pewnego stopnia "uczciwości", niezawodne błędy i zawsze dostępne.
+   Harmonogram klastrów ma wiele celów: wydajnie korzysta z zasobów klastra, pracując z ograniczeniami umieszczania podaną przez użytkownika, planując aplikacje szybko, aby nie pozostawić ich w stanie oczekiwania, mając stopień "godziwości", które są niezawodne dla błędów i są zawsze dostępne.
 
-- **Orkiestratorzy**.Platformy rozszerzają możliwości zarządzania cyklem życia na złożone obciążenia wielokontenerowe wdrożone w klastrze hostów. Przez abstrakcję infrastruktury hosta, narzędzia aranżacji dać użytkownikom sposób traktowania całego klastra jako jeden cel wdrożenia.
+- **Koordynatorzy**.Platformy zwiększają możliwości zarządzania cyklem życia w przypadku złożonych obciążeń wielokontenerowych wdrożonych w klastrze hostów. Dzięki abstrakcji infrastruktury hosta narzędzia aranżacji zapewniają użytkownikom sposób traktowania całego klastra jako jednego celu wdrożenia.
 
-   Proces aranżacji obejmuje narzędzia i platformę, która może zautomatyzować wszystkie aspekty zarządzania aplikacjami z początkowego rozmieszczenia lub wdrożenia na kontener; przenoszenie kontenerów do różnych hostów w zależności od kondycji lub wydajności jego hosta; przechowywanie wersji i stopniowe aktualizacje oraz funkcje monitorowania kondycji, które obsługują skalowanie i praca awaryjna; i wiele innych.
+   Proces aranżacji obejmuje narzędzia i platformę, która umożliwia automatyzację wszystkich aspektów zarządzania aplikacjami od początkowej rozmieszczenia lub wdrożenia na kontener; przeniesienie kontenerów na różne hosty w zależności od jego kondycji lub wydajności hosta; wersje i aktualizacje stopniowe oraz funkcje monitorowania kondycji obsługujące skalowanie i przełączanie w tryb failover; i wiele innych.
 
-   Aranżacja to szerokie określenie, które odnosi się do planowania kontenerów, zarządzania klastrami i ewentualnie inicjowania obsługi administracyjnej dodatkowych hostów.
+   Aranżacja to obszerny termin, który odnosi się do planowania kontenerów, zarządzania klastrami i ewentualnej aprowizacji dodatkowych hostów.
 
-Możliwości dostarczane przez koordynatorów i planistów są złożone do opracowania i tworzenia od podstaw, dlatego zwykle chcesz użyć rozwiązań aranżacyjnych oferowanych przez dostawców.
+Możliwości zapewniane przez koordynatorów i harmonogramów są skomplikowane do tworzenia i opracowywania od podstaw, dlatego zazwyczaj warto używać rozwiązań aranżacji oferowanych przez dostawców.
 
 >[!div class="step-by-step"]
->[Poprzedni](index.md)
->[następny](manage-production-docker-environments.md)
+>[Poprzedni](index.md) 
+> [Dalej](manage-production-docker-environments.md)

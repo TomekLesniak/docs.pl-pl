@@ -1,94 +1,93 @@
 ---
-title: Narzędzia programu Visual Studio dla platformy Docker w systemie Windows
-description: Poznaj narzędzia platformy Docker dostępne w programie Visual Studio 2017 w wersji 15.7 i nowszych.
-ms.date: 02/15/2019
+title: Visual Studio Tools for Docker w systemie Windows
+description: Poznaj narzędzia platformy Docker dostępne w programie Visual Studio 2017 w wersji 15,7 lub nowszej.
+ms.date: 08/06/2020
 ms.custom: vs-dotnet
-ms.openlocfilehash: 2b6fdc33f9cf850cf9e52fca4a1a9754cd412567
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74cffaae5885a7079ec774b1e8c68241cddda99a
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70295809"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915295"
 ---
-# <a name="use-docker-tools-in-visual-studio-2017-on-windows"></a>Korzystanie z narzędzi platformy Docker w programie Visual Studio 2017 w systemie Windows
+# <a name="use-docker-tools-in-visual-studio-on-windows"></a>Korzystanie z narzędzi platformy Docker w programie Visual Studio w systemie Windows
 
-Przepływ pracy dewelopera podczas korzystania z narzędzi platformy Docker zawartych w programie Visual Studio 2017 w wersji 15.7 i nowszych jest podobny do korzystania z kodu programu Visual Studio i interfejsu interfejsu i ze siatek platformy Docker (w rzeczywistości jest on oparty na tym samym platformie Docker CLI), ale łatwiej jest rozpocząć, upraszcza proces i zapewnia większą wydajność zadań kompilacji, uruchamiania i komponowania. Można również uruchamiać i debugować `F5` `Ctrl+F5` kontenery za pośrednictwem zwykłych i kluczy z programu Visual Studio. Można nawet debugować całe rozwiązanie, jeśli jego `docker-compose.yml` kontenery są zdefiniowane w tym samym pliku na poziomie rozwiązania.
+Przepływ pracy dla deweloperów korzystający z narzędzi platformy Docker zawartych w programie Visual Studio 2017 w wersji 15,7 lub nowszej jest podobny do używania Visual Studio Code i interfejsu wiersza polecenia platformy Docker (w rzeczywistości opiera się na tym samym interfejsie wiersza polecenia platformy Docker), ale ułatwia rozpoczęcie pracy, upraszcza proces i zapewnia większą produktywność kompilowania, uruchamiania i tworzenia zadań. Może również uruchamiać i debugować kontenery za pośrednictwem typowych `F5` `Ctrl+F5` kluczy z programu Visual Studio. Można nawet debugować całe rozwiązanie, jeśli jego kontenery są zdefiniowane w tym samym `docker-compose.yml` pliku na poziomie rozwiązania.
 
 ## <a name="configure-your-local-environment"></a>Konfigurowanie środowiska lokalnego
 
-W najnowszych wersjach platformy Docker dla systemu Windows tworzenie aplikacji platformy Docker jest łatwiejsze niż kiedykolwiek wcześniej, ponieważ konfiguracja jest prosta, jak wyjaśniono w poniższych odwołaniach.
+Najnowsze wersje Docker for Windows ułatwiają tworzenie aplikacji platformy Docker, ponieważ konfiguracja jest prosta, zgodnie z opisem w poniższych odwołaniach.
 
 > [!TIP]
-> Aby dowiedzieć się więcej o instalowaniu<https://docs.docker.com/docker-for-windows/>platformy Docker dla systemu Windows, przejdź do ( ).
+> Aby dowiedzieć się więcej o instalowaniu Docker for Windows, przejdź do ( <https://docs.docker.com/docker-for-windows/> ).
 
-## <a name="docker-support-in-visual-studio-2017"></a>Obsługa platformy Docker w programie Visual Studio 2017
+## <a name="docker-support-in-visual-studio"></a>Obsługa platformy Docker w programie Visual Studio
 
-Istnieją dwa poziomy obsługi platformy Docker, które można dodać do projektu. W ASP.NET projektów Core można `Dockerfile` po prostu dodać plik do projektu, włączając obsługę platformy Docker. Następny poziom jest obsługa aranżacji `Dockerfile` kontenera, który dodaje do projektu (jeśli jeszcze nie istnieje) i `docker-compose.yml` plik na poziomie rozwiązania. Obsługa aranżacji kontenerów za pośrednictwem platformy Docker Compose jest domyślnie dodawana w programie Visual Studio 2017 w wersjach od 15.0 do 15.7. Obsługa aranżacji kontenerów to funkcja opt-in w programie Visual Studio 2017 w wersji 15.8 lub nowszej. Wersja 15.8 później obsługuje docker compose i sieci szkieletowej usług.
+Istnieją dwa poziomy obsługi platformy Docker, które można dodać do projektu. W projektach ASP.NET Core można po prostu dodać `Dockerfile` plik do projektu, włączając obsługę platformy Docker. Następnym poziomem jest obsługa aranżacji kontenerów, która dodaje `Dockerfile` do projektu (jeśli jeszcze nie istnieje) i `docker-compose.yml` plik na poziomie rozwiązania. Obsługa aranżacji kontenerów za pośrednictwem Docker Compose jest domyślnie dodawana w programie Visual Studio 2017 w wersji 15,0 do 15,7. Obsługa aranżacji kontenerów to funkcja opcjonalna w programie Visual Studio 2017 w wersji 15,8 lub nowszej. Program Visual Studio 2019 lub nowszy obsługuje również wdrożenie **Kubernetes/Helm** .
 
-Polecenia **Dodaj > docker Support** i Add > Container **Orchestrator Support** polecenia znajdują się w menu prawym przyciskiem myszy (lub menu kontekstowym) węzła projektu dla projektu ASP.NET Core w **Eksploratorze rozwiązań**, jak pokazano na rysunku 4-31:
+Polecenia **dodaj > Docker support** i **Dodawanie > kontenerów pomocy technicznej Orchestrator** znajdują się w menu rozwijanym prawym przyciskiem myszy (lub w menu kontekstowym) węzła projektu dla projektu ASP.NET Core w **Eksplorator rozwiązań**, jak pokazano na rysunku 4-31:
 
-![Opcja menu Dodawanie platformy Docker w programie Visual Studio](./media/add-docker-support-menu.png)
+![Opcja menu Dodaj obsługę platformy Docker w programie Visual Studio](media/add-docker-support-menu.png)
 
-**Rysunek 4-31**. Dodawanie obsługi platformy Docker do projektu programu Visual Studio 2017
+**Rysunek 4-31**. Dodawanie obsługi platformy Docker do projektu programu Visual Studio 2019
 
 ### <a name="add-docker-support"></a>Dodawanie obsługi platformy Docker
 
-Obsługę platformy Docker można dodać do istniejącego projektu ASP.NET Core, wybierając pozycję **Dodaj** > **obsługę platformy Docker** w **Eksploratorze rozwiązań**. Podczas tworzenia projektu można również włączyć obsługę platformy Docker, wybierając opcję **Włącz obsługę platformy Docker** w oknie dialogowym **Nowa ASP.NET Podstawowa aplikacja sieci Web,** które zostanie otwarte po kliknięciu przycisku **OK** w oknie dialogowym **Nowy projekt,** jak pokazano na rysunku 4–32.
+Oprócz opcji dodawania obsługi platformy Docker do istniejącej aplikacji, jak pokazano w poprzedniej sekcji, można również włączyć obsługę platformy Docker podczas tworzenia projektu, wybierając opcję **Włącz obsługę platformy Docker** w oknie dialogowym **Nowa aplikacja sieci Web ASP.NET Core** , które jest otwierane po kliknięciu przycisku **OK** w oknie dialogowym **nowy projekt** , jak pokazano na rysunku 4-32.
 
-![Włącz obsługę platformy Docker dla nowej aplikacji sieci web ASP.NET Core w programie Visual Studio](./media/enable-docker-support-visual-studio.png)
+![Włącz obsługę platformy Docker dla nowej aplikacji internetowej ASP.NET Core w programie Visual Studio](media/enable-docker-support-visual-studio.png)
 
-**Rysunek 4-32**. Włącz obsługę platformy Docker podczas tworzenia projektu w programie Visual Studio 2017
+**Rysunek 4-32**. Włącz obsługę platformy Docker podczas tworzenia projektu w programie Visual Studio 2019
 
-Po dodaniu lub włączeniu obsługi platformy Docker program Visual Studio dodaje plik *Dockerfile* do projektu.
+Po dodaniu lub włączeniu obsługi platformy Docker program Visual Studio dodaje do projektu plik _pliku dockerfile_ , który zawiera odwołania do wszystkich wymaganych projektów z rozwiązania.
 
-> [!NOTE]
-> Po włączeniu docker compose support podczas tworzenia projektu dla ASP.NET projektu (.NET Framework, a nie .NET Core projektu), jak pokazano na rysunku 4-33, obsługa aranżacji kontenera jest również dodawany.
+### <a name="add-container-orchestration-support"></a>Dodawanie obsługi aranżacji kontenera
 
-![Włączanie obsługi platformy Docker w celu skomponowania projektu ASP.NET](media/enable-docker-compose-support.png)
+Jeśli chcesz utworzyć rozwiązanie z obsługą kilku kontenerów, Dodaj obsługę aranżacji kontenera do projektów. Dzięki temu można uruchamiać i debugować grupę kontenerów (całe rozwiązanie) w tym samym czasie, jeśli są one zdefiniowane w tym samym pliku _Docker-Compose. yml_ .
 
-**Rysunek 4-33**. Włączanie obsługi platformy Docker Compose dla ASP.NET projektu w programie Visual Studio 2017
+Aby dodać obsługę aranżacji kontenera, kliknij prawym przyciskiem myszy węzeł rozwiązania lub projektu w **Eksplorator rozwiązań**i wybierz polecenie **Dodaj obsługę aranżacji kontenerów >**. Następnie wybierz pozycję **Kubernetes/Helm** lub **Docker Compose** , aby zarządzać kontenerami.
 
-### <a name="add-container-orchestration-support"></a>Dodawanie obsługi aranżacji kontenerów
+Po dodaniu obsługi aranżacji kontenera do projektu zobaczysz pliku dockerfile dodaną do projektu i folderem **Docker-Zredaguj** do rozwiązania w **Eksplorator rozwiązań**, jak pokazano na rysunku 4-33:
 
-Jeśli chcesz skomponować rozwiązanie wielokontenerowe, dodaj obsługę aranżacji kontenerów do swoich projektów. Dzięki temu można uruchomić i debugować grupę kontenerów (całe rozwiązanie) w tym samym czasie, jeśli są one zdefiniowane w tym samym pliku *docker-compose.yml.*
+![Pliki platformy Docker w Eksplorator rozwiązań w programie Visual Studio](media/docker-support-solution-explorer.png)
 
-Aby dodać obsługę aranżacji kontenerów, kliknij prawym przyciskiem myszy węzeł rozwiązania lub projektu w **Eksploratorze rozwiązań**i wybierz polecenie **Dodaj > obsługę aranżacji kontenerów**. Następnie wybierz **opcję Docker Compose** lub **Service Fabric** do zarządzania kontenerami.
+**Rysunek 4-33**. Pliki platformy Docker w Eksplorator rozwiązań w programie Visual Studio 2019
 
-Po dodaniu obsługi aranżacji kontenerów do projektu zostanie wyświetlony plik Dockerfile dodany do projektu oraz folder **docker-compose** dodany do rozwiązania w **Eksploratorze rozwiązań**, jak pokazano na rysunku 4–34:
+Jeśli _Docker-Compose. yml_ już istnieje, Visual Studio dodaje do niego wymagane wiersze kodu konfiguracji.
 
-![Pliki platformy Docker w Eksploratorze rozwiązań w programie Visual Studio](media/docker-support-solution-explorer.png)
+## <a name="configure-docker-tools"></a>Konfigurowanie narzędzi platformy Docker
 
-**Rysunek 4-34**. Pliki platformy Docker w Eksploratorze rozwiązań w programie Visual Studio 2017
+Z menu głównego wybierz polecenie **narzędzia > opcje**i rozwiń węzeł **Narzędzia kontenera > ustawienia**. Zostaną wyświetlone ustawienia narzędzi kontenerów.
 
-Jeśli *docker-compose.yml* już istnieje, Visual Studio po prostu dodaje wymagane wiersze kodu konfiguracji do niego.
+![Opcje narzędzi platformy Docker programu Visual Studio, pokazujące trzy strony: ogólne, pojedynczy projekt i Docker Compose, szczegóły w tekście artykułu.](media/visual-studio-docker-tools-options.png)
 
-## <a name="configure-docker-tools"></a>Konfigurowanie narzędzi do platformy Docker
+**Rysunek 4-34**. Opcje narzędzi platformy Docker
 
-Z menu głównego wybierz polecenie **Narzędzia > opcje**i rozwiń pozycję Narzędzia **kontenerów > Ustawienia**. Zostaną wyświetlone ustawienia narzędzi kontenera.
+Poniższa tabela może pomóc określić, jak ustawić te opcje.
 
-![Opcje narzędzi platformy Docker programu Visual Studio, pokazujące: Automatycznie ściąganie wymaganych obrazów platformy Docker przy obciążeniu projektu, automatyczne uruchamianie kontenerów w tle, automatyczne zabijanie kontenerów przy zamknięciu rozwiązania i nie monitowanie o ufanie certyfikatowi SSL.](./media/visual-studio-docker-tools-options.png)
-
-**Rysunek 4-35**. Opcje narzędzi platformy Docker
-
-Poniższa tabela może pomóc w podjęciu decyzji, jak ustawić te opcje.
-
-| Nazwa | Ustawienie domyślne | Dotyczy: | Opis |
-| -----|:---------------:|:----------:| ----------- |
-| Automatyczne ściąganie wymaganych obrazów platformy Docker przy obciążeniu projektu | Włączone | Docker Compose | Aby zwiększyć wydajność podczas ładowania projektów, visual studio rozpocznie operację ściągania platformy Docker w tle, tak aby gdy wszystko będzie gotowe do uruchomienia kodu, obraz jest już pobrany lub w trakcie pobierania. Jeśli dopiero ładujesz projekty i kod przeglądania, możesz wyłączyć tę możliwość, aby uniknąć pobierania obrazów kontenerów, których nie potrzebujesz. |
-| Automatyczne uruchamianie kontenerów w tle | Włączone | Docker Compose | Ponownie dla zwiększenia wydajności, Visual Studio tworzy kontener z instalacji woluminu gotowy do tworzenia i uruchamiania kontenera. Jeśli chcesz kontrolować, kiedy kontener jest tworzony, wyłącz tę możliwość. |
-| Automatyczne zabijanie pojemników na zamknięciu rozwiązania | Włączone | Docker Compose | Wyłącz tę możliwość, jeśli chcesz kontenery dla rozwiązania, aby kontynuować po zamknięciu rozwiązania lub zamknięcia programu Visual Studio. |
-| Nie monituj o zaufanie certyfikatu SSL hosta lokalnego | Wyłączone | ASP.NET projekty Core 2.2 | Jeśli certyfikat SSL hosta lokalnego nie jest zaufany, program Visual Studio będzie monitować przy każdym uruchomieniu projektu, chyba że to pole wyboru jest zaznaczone. |
+| Strona/ustawienie                                |  Ustawienie domyślne   | Opis                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------------------- | :----------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Strona ogólna**                            |
+| Zainstaluj program Docker Desktop w razie konieczności            |     Monituj      |
+| Uruchom pulpit platformy Docker w razie konieczności              |     Monituj      |
+| Certyfikat SSL ASP.NET Core zaufania          |     Monituj      | Jeśli certyfikat protokołu SSL hosta lokalnego nie został oznaczony jako zaufany (z `dotnet dev-certs https --trust` ), program Visual Studio wyświetli monit za każdym razem, gdy uruchomisz projekt.                                                                                                                                                                                                                                                    |
+| **Strona pojedynczego projektu**                     |
+| Ściągnij wymagane obrazy platformy Docker w otwartym projekcie |        Prawda        | W celu zwiększenia wydajności podczas uruchamiania projektu program Visual Studio rozpocznie operację ściągania platformy Docker w tle, dzięki czemu gdy wszystko będzie gotowe do uruchomienia kodu, obraz jest już pobrany lub proces pobierania. Jeśli właśnie ładujesz projekty i przeglądasz kod, możesz je wyłączyć, aby uniknąć pobierania niepotrzebnych obrazów kontenerów. Może to spowolnić otwarty projekt środowiska użytkownika. |
+| Ściąganie zaktualizowanych obrazów platformy Docker przy ładowaniu projektu  | Projekty .NET Core | Pobierz aktualizacje do istniejących obrazów, aby uzyskać najnowsze aktualizacje w otwartym projekcie. Może to spowolnić otwarty projekt środowiska użytkownika.                                                                                                                                                                                                                                                                                          |
+| Usuń kontenery po zamknięciu projektu          |        Prawda        | Oczyść po zamknięciu projektu, co może spowolnić środowisko pracy użytkownika projektu, ale zazwyczaj jest to zwykle szybkie.                                                                                                                                                                                                                                                                                                            |
+| Uruchom kontenery przy otwartym projekcie              |        Prawda        | W celu zwiększenia wydajności podczas uruchamiania projektu program Visual Studio rozpocznie pracę ze wszystkimi kontenerami w rozwiązaniu. Może to spowolnić otwarty projekt środowiska użytkownika.                                                                                                                                                                                                                                                        |
+| **Docker Compose**                          |                    | Strona Docker Compose zawiera te same ustawienia co strona pojedynczego projektu, ale mają zastosowanie do rozwiązań obejmujących wiele kontenerów.                                                                                                                                                                                                                                                                                           |
 
 > [!WARNING]
-> Jeśli certyfikat SSL hosta lokalnego nie jest zaufany i zaznaczysz to pole, aby pominąć monitowanie, żądania sieci Web HTTPS mogą zakończyć się niepowodzeniem w czasie wykonywania w aplikacji lub usłudze. W takim przypadku należy odznaczyć pole wyboru **Nie monituj,** uruchom projekt i wskaż zaufanie w wierszu polecenia.
+> Jeśli certyfikat protokołu SSL hosta lokalnego nie jest zaufany i ustawisz opcję na **nigdy**, żądania sieci Web HTTPS mogą kończyć się niepowodzeniem w czasie wykonywania w aplikacji lub usłudze. W takim przypadku należy ponownie ustawić wartość z powrotem, aby **monitować** lub jeszcze lepiej ufać certyfikatom na komputerze deweloperskim przy użyciu polecenia `dotnet dev-certs https --trust` .
 
 > [!TIP]
-> Aby uzyskać więcej informacji na temat implementacji usług i korzystania z narzędzi programu Visual Studio dla platformy Docker, przeczytaj następujące artykuły:
+> Aby uzyskać więcej informacji na temat implementacji usług i używania Visual Studio Tools for Docker, przeczytaj następujące artykuły:
 >
->Debugowanie aplikacji w lokalnym kontenerze platformy Docker:<https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh>
+> Debuguj aplikacje w lokalnym kontenerze platformy Docker:<https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh>
 >
->Wdrażanie kontenera ASP.NET w rejestrze kontenerów przy użyciu programu Visual Studio:<https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
+> Wdróż kontener ASP.NET w rejestrze kontenerów przy użyciu programu Visual Studio:<https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
 
->[!div class="step-by-step"]
->[Poprzedni](docker-apps-inner-loop-workflow.md)
->[następny](set-up-windows-containers-with-powershell.md)
+> [!div class="step-by-step"]
+> [Poprzedni](docker-apps-inner-loop-workflow.md) 
+>  [Dalej](set-up-windows-containers-with-powershell.md)

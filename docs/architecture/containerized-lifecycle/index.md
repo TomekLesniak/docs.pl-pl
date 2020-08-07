@@ -1,31 +1,89 @@
 ---
-title: Wprowadzenie do kontenerów i platformy Docker
-description: Uzyskaj ogólny przegląd głównych zalet korzystania z platformy Docker.
-ms.date: 02/15/2019
-ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+title: Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
+description: Zapoznaj się z ogólnym omówieniem procesu opracowywania i wdrażania na potrzeby tworzenia i wdrażania aplikacji kontenerowych przy użyciu platformy Docker i platform i narzędzi firmy Microsoft.
+ms.date: 07/30/2020
+ms.openlocfilehash: d8055315b25f73d7b0b355026ab6b2c4767f9d89
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73738177"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915170"
 ---
-# <a name="introduction-to-containers-and-docker"></a>Wprowadzenie do kontenerów i platformy Docker
+# <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a>Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
 
-*Konteneryzacja jest podejście do tworzenia oprogramowania, w którym aplikacji lub usługi, jego zależności i jego konfiguracji (abstrakcjonowane jako pliki manifestu wdrożenia) są pakowane razem jako obraz kontenera. Następnie można przetestować konteneryzowaną aplikację jako jednostkę i wdrożyć ją jako wystąpienie obrazu kontenera w systemie operacyjnym hosta (OS).*
+![Pokrycie książki](./media/devops-book-cover-large-we.png)
 
-Podobnie jak kontenery wysyłkowe umożliwiają transport towarów statkiem, pociągiem lub ciężarówką niezależnie od ładunku w środku, kontenery oprogramowania działają jako standardowa jednostka wdrażania oprogramowania, która może zawierać inny kod i zależności. Konteneryzowanie oprogramowania w ten sposób umożliwia programistom i specjalistom IT wdrażanie ich w różnych środowiskach z niewielkimi lub żadnymi modyfikacjami.
+**Edition w wersji 3.1** — zaktualizowany do ASP.NET Core 3,1
 
-Kontenery również izolować aplikacje od siebie na wspólnym os. Konteneryzowane aplikacje działają na serwerze kontenera, który z kolei działa w systemie operacyjnym (Linux lub Windows). Kontenery mają zatem znacznie mniejszy rozmiar niż obrazy maszyny wirtualnej (VM).
+Ten przewodnik jest ogólnym omówieniem tworzenia i wdrażania kontenerów ASP.NET Core aplikacji z platformą Docker przy użyciu platformy i narzędzi firmy Microsoft. Przewodnik zawiera ogólne wprowadzenie do usługi Azure DevOps w celu zaimplementowania potoków ciągłej integracji/ciągłego wdrażania, a także Azure Container Registry (ACR) i Azure Kubernetes Services AKS do wdrożenia.
 
-Każdy kontener można uruchomić całą aplikację sieci web lub usługi, jak pokazano na rysunku 1-1. W tym przykładzie host platformy Docker jest hostem kontenerów, a App1, App2, Svc1 i Svc2 są konteneryzowanymi aplikacjami lub usługami.
+W przypadku szczegółowych informacji związanych z programowaniem można zobaczyć [mikrousługi platformy .NET: architektura dla Zakontenerów aplikacji .NET](https://docs.microsoft.com/dotnet/architecture/microservices/) i powiązanych z nią aplikacji referencyjnych [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers).
 
-![Diagram przedstawiający cztery kontenery działające na maszynie wirtualnej lub serwerze.](./media/index/multiple-containers-single-host.png)
+## <a name="send-us-your-feedback"></a>Wyślij nam swoją opinię.
 
-**Rysunek 1-1**. Wiele kontenerów działających na hoście kontenera
+Utworzyliśmy ten przewodnik, aby ułatwić zrozumienie architektury aplikacji i mikrousług w programie .NET. Przewodnik i powiązana aplikacja referencyjna będą rozwijane, więc będziemy nam powitać Twoją opinię. Jeśli masz komentarze dotyczące tego, jak można ulepszyć ten przewodnik, Prześlij opinię na temat <https://aka.ms/ebookfeedback> .
 
-Inną korzyścią, którą można czerpać z konteneryzacji jest skalowalność. Można szybko skalować w sposób skalowany w sposób skalowany w sposób skalowany w sposób skalowany w sposób skalowany w sposób skalowany w sposób określony, tworząc nowe kontenery do zadań krótkoterminowych. Z punktu widzenia aplikacji tworzenie wystąpienia obrazu (tworzenie kontenera) jest podobne do tworzenia procesu, takiego jak usługa lub aplikacja sieci Web. Jednak po uruchomieniu wielu wystąpień tego samego obrazu na wielu serwerach hosta zazwyczaj każdy kontener (wystąpienie obrazu) ma być uruchamiany na innym serwerze hosta lub maszynie wirtualnej w różnych domenach błędów.
+## <a name="credits"></a>Środki
 
-Krótko mówiąc, kontenery oferują korzyści z izolacji, przenośności, elastyczności, skalowalności i kontroli w całym przepływie pracy cyklu życia aplikacji. Najważniejszą korzyścią jest izolacja środowiska między dev i ops.
+Autor:
+
+> **Cesar de La Torre**, SR. PM, zespół produktu .NET, Microsoft Corp.
+
+Edytor pozyskiwania:
+
+> **Janine Patryk**
+
+Edytor programistyczny:
+
+> **Robert Russell**, Solutions Professional w firmie Microsoft
+>
+> [**Publikacja ósemkowa, Inc.**](http://www.octalpub.com/)
+
+Produkcja redakcyjna:
+
+> [Dianne Russell](http://www.octalpub.com/)
+>
+> **Publikacja ósemkowa, Inc.**
+
+Copyeditor:
+
+> **Robert Russell**, Solutions Professional w firmie Microsoft
+
+Uczestnicy i recenzenci:
+
+> **Nish Anil**, SR. Program Manager, .NET Team, Microsoft
+>
+> **Miguel Veloso**, inżynier ds. opracowywania oprogramowania z zwykłymi pojęciami
+>
+> **Sumit Ghosh**, główny konsultant w firmie Neudesic
+
+## <a name="copyright"></a>Prawa autorskie
+
+OPUBLIKOWANA PRZEZ
+
+Dział deweloperów firmy Microsoft, zespoły produktów .NET i Visual Studio
+
+Dział firmy Microsoft Corporation
+
+One Microsoft Way
+
+Redmond, Waszyngton 98052-6399
+
+Copyright &copy; 2020 od firmy Microsoft Corporation
+
+All rights reserved. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
+
+Ta książka jest świadczona w postaci "AS-IS" i zawiera widoki i opinie autora. Widoki, opinie i informacje wyrażone w tej książce, w tym adresy URL i inne odwołania do witryn internetowych, mogą ulec zmianie bez powiadomienia.
+
+Niektóre z przykładów przedstawiono wyłącznie do celów informacyjnych i są one fikcyjne. Żadne rzeczywiste skojarzenia lub związki nie są zamierzone ani wnioskowane.
+
+Firma Microsoft i znaki towarowe wymienione na <https://www.microsoft.com> stronie "znaki towarowe" są znakami towarowymi grupy firm Microsoft.
+
+Komputery Mac i macOS są znakami towarowymi firmy Apple Inc.
+
+Logo Docker Whale jest zastrzeżonym znakiem towarowym platformy Docker, Inc. używanym przez uprawnienie.
+
+Wszystkie inne znaczniki i logo są własnością odpowiednich właścicieli.
 
 >[!div class="step-by-step"]
->[Dalej](what-is-docker.md)
+>[Dalej](introduction-to-containers-and-docker.md)

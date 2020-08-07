@@ -1,13 +1,13 @@
 ---
 title: Monitorowanie usług konteneryzowanych aplikacji
 description: Poznaj kluczowe aspekty architektury kontenerów monitorowania
-ms.date: 02/15/2019
-ms.openlocfilehash: e41df53ad94784436442c3cf7defed3fab510455
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.date: 08/06/2020
+ms.openlocfilehash: 5fcb5065d02018ab3c2d3ad71cf507bd43b53446
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374445"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914949"
 ---
 # <a name="monitor-containerized-application-services"></a>Monitorowanie usług konteneryzowanych aplikacji
 
@@ -17,7 +17,7 @@ Najważniejsze dla aplikacji, które dzielą się na wiele kontenerów i mikrous
 
 [Azure monitor](https://azure.microsoft.com/services/monitor/) to rozszerzalna Usługa analityczna, która monitoruje działającą aplikację. Pomaga wykrywać i diagnozować problemy z wydajnością oraz dowiedzieć się, co użytkownicy faktycznie robią z Twoją aplikacją. Jest on przeznaczony dla deweloperów, z zamiarem ułatwienia ciągłego ulepszania wydajności i użyteczności usług lub aplikacji. Azure Monitor współpracuje z aplikacjami sieci Web/usług i aplikacji autonomicznymi na różnych platformach, takich jak .NET, Java, Node.js i wiele innych platform hostowanych lokalnie lub w chmurze.
 
-### <a name="additional-resources"></a>Dodatkowe zasoby
+### <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Omówienie Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/overview>

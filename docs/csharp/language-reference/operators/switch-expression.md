@@ -2,12 +2,12 @@
 title: wyrażenie Switch — odwołanie w C#
 description: Dowiedz się, jak używać wyrażenia przełącznika C# na potrzeby dopasowywania wzorców i innych danych introspekcji
 ms.date: 03/19/2020
-ms.openlocfilehash: e20257e32938b6b49fefd0a4167f6f1588e19b1c
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 2249afc1ff1cc81e9ad423d910ebb95df8c787d4
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555568"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916663"
 ---
 # <a name="switch-expression-c-reference"></a>Switch — wyrażenie (odwołanie w C#)
 
@@ -17,7 +17,7 @@ W tym artykule opisano `switch` wyrażenie wprowadzone w języku C# 8,0. Aby uzy
 
 `switch`Wyrażenie zapewnia `switch` semantykę podobną w kontekście wyrażenia. Zapewnia zwięzłą składnię, gdy broń przełączania wygenerowała wartość. Poniższy przykład pokazuje strukturę wyrażenia przełącznika. Tłumaczy wartości z `enum` reprezentujących kierunków wizualizacji w mapie online na odpowiedni kierunek kardynalny:
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetBasicStructure":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetBasicStructure":::
 
 Powyższy przykład pokazuje podstawowe elementy wyrażenia przełącznika:
 
@@ -30,28 +30,28 @@ Wynik *wyrażenia Switch* jest wartością wyrażenia pierwszego *przełącznika
 
 ## <a name="patterns-and-case-guards"></a>Wzorce i osłony przypadków
 
-Wiele wzorców jest obsługiwanych w przypadku zamiany wyrazów wyrażeń. W poprzednim przykładzie użyto *wzorca wartości*. *Wzorzec wartości* porównuje wyrażenie zakresu z wartością. Ta wartość musi być stałą czasu kompilacji. *Wzorzec typu* porównuje wyrażenie zakresu z znanym typem. Poniższy przykład pobiera trzeci element z sekwencji. Używa różnych metod opartych na typie sekwencji:
+Wiele wzorców jest obsługiwanych w przypadku zamiany wyrazów wyrażeń. Poprzedni przykład używa *stałego wzorca*. *Wzorzec stały* porównuje wyrażenie zakresu z wartością. Ta wartość musi być stałą czasu kompilacji. *Wzorzec typu* porównuje wyrażenie zakresu z znanym typem. Poniższy przykład pobiera trzeci element z sekwencji. Używa różnych metod opartych na typie sekwencji:
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetTypePattern":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetTypePattern":::
 
 Wzorce mogą być cykliczne, gdzie wzorzec testuje typ, a jeśli ten typ pasuje, wzorzec dopasowuje co najmniej jedną wartość właściwości w wyrażeniu zakresu. Możesz użyć wzorców cyklicznych, aby zwiększyć poprzedni przykład. Należy dodać broń wyrażenia przełącznika dla tablic, które mają mniej niż 3 elementy. Wzorce cykliczne są wyświetlane w następującym przykładzie:
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetRecursivePattern":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetRecursivePattern":::
 
 Wzorce cykliczne mogą przebadać właściwości wyrażenia zakresu, ale nie mogą wykonać dowolnego kodu. *case guard* `when` Aby zapewnić podobne sprawdzenia dla innych typów sekwencji, można użyć funkcji Case, określonej w klauzuli.
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetGuardCase":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetGuardCase":::
 
 Na koniec można dodać `_` wzorzec i `null` wzorzec do przechwytywania argumentów, które nie są przetwarzane przez żadną inną pozycję wyrażenia Switch ARM. Powoduje to, że wyrażenie Switch jest *wyczerpujące*, co oznacza, że jest obsługiwana jakakolwiek możliwa wartość wyrażenia zakresu. Poniższy przykład dodaje te broń dla wyrażeń:
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetExhaustive":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetExhaustive":::
 
 Poprzedni przykład dodaje `null` wzorzec i zmienia `IEnumerable<T>` wzorzec typu do `_` wzorca. `null`Wzorzec zawiera sprawdzanie wartości null jako rolę Switch ARM. Wyrażenie dla tego ARM zgłasza <xref:System.ArgumentNullException> . `_`Wzorzec dopasowuje wszystkie dane wejściowe, które nie zostały dopasowane przez poprzednie poręcze. Musi występować po `null` sprawdzeniu lub będzie pasować do `null` danych wejściowych.
 
 Więcej informacji można znaleźć w temacie Specyfikacja języka C# dla [wzorców cyklicznych](~/_csharplang/proposals/csharp-8.0/patterns.md#switch-expression).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)
-- [Dopasowanie wzorca](../../pattern-matching.md)
+- [Dopasowanie do wzorca](../../pattern-matching.md)

@@ -1,24 +1,24 @@
 ---
 title: Aplikacje SOA
-description: Należy pamiętać, że kontenery mogą być również użyteczną opcją wdrażania dla aplikacji SOA.
-ms.date: 02/15/2019
-ms.openlocfilehash: f8619cb50a7d90b911db9ff2c8ef37c3c5fde210
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+description: Należy pamiętać, że kontenery mogą być również przydatną opcją wdrażania dla aplikacji SOA.
+ms.date: 08/06/2020
+ms.openlocfilehash: 5cc616eaf3be31ae704320df6ec54deed9529989
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738383"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915259"
 ---
-# <a name="service-oriented-applications"></a>Aplikacje zorientowane na usługi
+# <a name="service-oriented-applications"></a>Aplikacje zorientowane na usługę
 
-Architektura zorientowana na usługi (SOA) była nadużywanym terminem, który oznaczał wiele różnych rzeczy dla różnych ludzi. Ale jako wspólny mianownik SOA oznacza, że struktura architektury aplikacji przez rozkładanie go na kilka usług (najczęściej jako usługi HTTP), które mogą być klasyfikowane w różnych typach, takich jak podsystemy lub, w innych przypadkach, jako warstwy.
+Architektura zorientowana na usługi (SOA) była nieużywanym terminem, który ma wiele różnych rzeczy. Jednak jako typowy mianownik, Metoda SOA oznacza strukturę architektury aplikacji, przez złożenie jej w kilku usługach (najczęściej jako usługi HTTP), które mogą być klasyfikowane w różnych typach, takich jak podsystemy lub, w innych przypadkach, jako warstwy.
 
-Obecnie można wdrożyć te usługi jako kontenery platformy Docker, które rozwiązują problemy związane z wdrażaniem, ponieważ wszystkie zależności są zawarte w obrazie kontenera. Jednak gdy trzeba skalować w poziomie SOA, mogą wystąpić problemy, jeśli wdrażasz na podstawie pojedynczych wystąpień. To wyzwanie można obsługiwać za pomocą oprogramowania klastrowego platformy Docker lub koordynatora. Przyjrzymy się koordynatorów bardziej szczegółowo w następnej sekcji, podczas eksplorowania mikrousług podejścia.
+Obecnie te usługi można wdrożyć jako kontenery platformy Docker, co rozwiązuje problemy związane z wdrażaniem, ponieważ wszystkie zależności są zawarte w obrazie kontenera. Jeśli jednak chcesz skalować w poziomie SOAs, mogą wystąpić problemy, Jeśli wdrażasz je na podstawie pojedynczych wystąpień. To wyzwanie można obsłużyć przy użyciu oprogramowania Docker clusterer lub programu Orchestrator. Aby poznać podejścia mikrousług, Zobacz więcej szczegółów w kolejnych sekcjach.
 
-Kontenery platformy Docker są przydatne (ale nie są wymagane) zarówno dla tradycyjnych architektur zorientowanych na usługi, jak i bardziej zaawansowanych architektur mikrousług.
+Kontenery platformy Docker są przydatne (ale nie są wymagane) dla tradycyjnych architektur zorientowanych na usługę i bardziej zaawansowanych architektur mikrousług.
 
-Na koniec dnia rozwiązania klastrowania kontenerów są przydatne zarówno dla tradycyjnej architektury SOA, jak i dla bardziej zaawansowanej architektury mikrousług, w której każda mikrousługa jest właścicielem swojego modelu danych. Dzięki wielu bazom danych można również skalować warstwę danych w poziomie zamiast pracować z monolitycznymi bazami danych współużytku udostępnianymi przez usługi SOA. Jednak dyskusja na temat podziału danych dotyczy wyłącznie architektury i projektowania.
+Na koniec dnia rozwiązania klastrowania kontenerów są przydatne dla tradycyjnej architektury SOA i bardziej zaawansowanej architektury mikrousług, w której każda mikrousługa jest właścicielem modelu danych. Dzięki wielu baz danych można także skalować warstwę danych zamiast pracować z monolitycznymi bazami danych udostępnionymi przez usługi SOA. Jednak dyskusja dotycząca podziału danych ma wyłącznie na celu architekturę i projektowanie.
 
 >[!div class="step-by-step"]
->[Poprzedni](state-and-data-in-docker-applications.md)
->[następny](orchestrate-high-scalability-availability.md)
+>[Poprzedni](state-and-data-in-docker-applications.md) 
+> [Dalej](orchestrate-high-scalability-availability.md)

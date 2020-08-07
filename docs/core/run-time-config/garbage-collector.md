@@ -3,12 +3,12 @@ title: Ustawienia konfiguracji modułu wyrzucania elementów bezużytecznych
 description: Informacje o ustawieniach czasu wykonywania w celu skonfigurowania sposobu, w jaki moduł zbierający elementy bezużyteczne zarządza pamięcią dla aplikacji platformy .NET Core.
 ms.date: 07/10/2020
 ms.topic: reference
-ms.openlocfilehash: 6ae5b7447fb0df4978ea9dcaa5e76fcc7a6cc4ca
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 91d155b638c7e69b3d2c0216266a7c0c0410db4c
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441413"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915992"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Opcje konfiguracji czasu wykonywania dla wyrzucania elementów bezużytecznych
 
@@ -30,7 +30,10 @@ Podelementy wyrzucania elementów bezużytecznych są tła i niewspółbieżne.
 
 Użyj następujących ustawień, aby wybrać typy wyrzucania elementów bezużytecznych:
 
-### <a name="systemgcservercomplus_gcserver"></a>System. GC. Server/COMPlus_gcServer
+- [Stacja robocza a serwer GC](#workstation-vs-server)
+- [Odzyskiwanie pamięci w tle](#background-gc)
+
+### <a name="workstation-vs-server"></a>Stacja robocza a serwer
 
 - Określa, czy aplikacja używa wyrzucania elementów bezużytecznych stacji roboczej lub odzyskiwania pamięci serwera.
 - Domyślnie: wyrzucanie elementów bezużytecznych stacji roboczej. Jest to równoznaczne z ustawieniem wartości `false` .
@@ -42,7 +45,7 @@ Użyj następujących ustawień, aby wybrać typy wyrzucania elementów bezużyt
 | **Zmienna środowiskowa** | `COMPlus_gcServer` | `0`-Stacja robocza<br/>`1`— serwer | .NET Core 1,0 |
 | **app.config .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false`-Stacja robocza<br/>`true`— serwer |  |
 
-### <a name="examples"></a>Przykłady
+#### <a name="examples"></a>Przykłady
 
 *runtimeconfig.js* pliku:
 
@@ -68,7 +71,7 @@ Plik projektu:
 </Project>
 ```
 
-### <a name="systemgcconcurrentcomplus_gcconcurrent"></a>System. GC. współbieżne/COMPlus_gcConcurrent
+### <a name="background-gc"></a>Odzyskiwanie pamięci w tle
 
 - Określa, czy jest włączone wyrzucanie elementów bezużytecznych w tle.
 - Domyślne: Użyj w tle GC. Jest to równoznaczne z ustawieniem wartości `true` .
@@ -81,7 +84,7 @@ Plik projektu:
 | **Zmienna środowiskowa** | `COMPlus_gcConcurrent` | `1`-w tle GC<br/>`0`-niewspółbieżne GC | .NET Core 1,0 |
 | **app.config .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true`-w tle GC<br/>`false`-niewspółbieżne GC |  |
 
-### <a name="examples"></a>Przykłady
+#### <a name="examples"></a>Przykłady
 
 *runtimeconfig.js* pliku:
 
@@ -109,16 +112,28 @@ Plik projektu:
 
 ## <a name="manage-resource-usage"></a>Zarządzanie użyciem zasobów
 
-Ustawienia opisane w tej sekcji służą do zarządzania użyciem pamięci i procesora modułu wyrzucania elementów bezużytecznych.
+Użyj następujących ustawień, aby zarządzać pamięcią i użyciem procesora przez moduł wyrzucania elementów bezużytecznych:
+
+- [Koligacji](#affinitize)
+- [Koligacji, maska](#affinitize-mask)
+- [Zakresy koligacji](#affinitize-ranges)
+- [Grupy CPU](#cpu-groups)
+- [Liczba stert](#heap-count)
+- [Limit sterty](#heap-limit)
+- [Procent limitu sterty](#heap-limit-percent)
+- [Duża ilość pamięci (%)](#high-memory-percent)
+- [Limity sterty dla poszczególnych obiektów](#per-object-heap-limits)
+- [Procent limitów sterty dla poszczególnych obiektów](#per-object-heap-limit-percents)
+- [Zachowaj maszynę wirtualną](#retain-vm)
 
 Aby uzyskać więcej informacji na temat niektórych z tych ustawień, zapoznaj się z wpisem na blogu centrum [robocze i serwer GC](https://devblogs.microsoft.com/dotnet/middle-ground-between-server-and-workstation-gc/) .
 
-### <a name="systemgcheapcountcomplus_gcheapcount"></a>System. GC. HeapCount/COMPlus_GCHeapCount
+### <a name="heap-count"></a>Liczba stert
 
 - Ogranicza liczbę stert utworzonych przez moduł wyrzucania elementów bezużytecznych.
 - Dotyczy tylko wyrzucania elementów bezużytecznych serwera.
-- Jeśli [koligacja procesora GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) jest włączona, co jest ustawieniem domyślnym, licznik sterty ustawia `n` sterty/wątki skoligacony GC na pierwszy `n` procesor. (Użyj [koligacji maska](#systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask) lub ustawienia [zakresów koligacji](#systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges) , aby określić, które procesory mają być koligacji).
-- Jeśli [koligacja procesora GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) jest wyłączona, to ustawienie ogranicza liczbę stert GC.
+- Jeśli [koligacja procesora GC](#affinitize) jest włączona, co jest ustawieniem domyślnym, licznik sterty ustawia `n` sterty/wątki skoligacony GC na pierwszy `n` procesor. (Użyj [koligacji maska](#affinitize-mask) lub ustawienia [zakresów koligacji](#affinitize-ranges) , aby określić, które procesory mają być koligacji).
+- Jeśli [koligacja procesora GC](#affinitize) jest wyłączona, to ustawienie ogranicza liczbę stert GC.
 - Aby uzyskać więcej informacji, zobacz [uwagi GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md#remarks).
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
@@ -142,10 +157,10 @@ Przykład:
 > [!TIP]
 > Jeśli ustawiasz opcję w *runtimeconfig.jsna*, określ wartość dziesiętną. Jeśli ustawiasz opcję jako zmienną środowiskową, określ wartość szesnastkową. Na przykład aby ograniczyć liczbę stert do 16, wartości dla pliku JSON i 0x10 lub 10 dla zmiennej środowiskowej.
 
-### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System. GC. HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
+### <a name="affinitize-mask"></a>Koligacji, maska
 
 - Określa dokładne procesory, które powinny być używane przez wątki modułu wyrzucania elementów bezużytecznych.
-- Jeśli [koligacja procesora GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) jest wyłączona, to ustawienie jest ignorowane.
+- Jeśli [koligacja procesora GC](#affinitize) jest wyłączona, to ustawienie jest ignorowane.
 - Dotyczy tylko wyrzucania elementów bezużytecznych serwera.
 - Wartość jest maską bitową, która definiuje procesory, które są dostępne dla procesu. Na przykład wartość dziesiętna 1023 (lub wartość szesnastkowa 0x3FF lub 3FF, jeśli używana jest zmienna środowiskowa) to 0011 1111 1111 w notacji binarnej. Oznacza to, że pierwsze 10 procesorów ma być używany. Aby określić następne 10 procesorów, czyli procesorów 10-19, określ wartość dziesiętną 1047552 (lub wartość szesnastkową 0xFFC00 lub FFC00), która jest równoważna z wartością binarną 1111 1111 1100 0000 0000.
 
@@ -167,12 +182,12 @@ Przykład:
 }
 ```
 
-### <a name="systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges"></a>System. GC. GCHeapAffinitizeRanges/COMPlus_GCHeapAffinitizeRanges
+### <a name="affinitize-ranges"></a>Zakresy koligacji
 
 - Określa listę procesorów, które mają być używane na potrzeby wątków modułu wyrzucania elementów bezużytecznych.
-- To ustawienie jest podobne do [System. GC. HeapAffinitizeMask](#systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask), z tą różnicą, że umożliwia określenie więcej niż 64 procesorów.
+- To ustawienie jest podobne do [System. GC. HeapAffinitizeMask](#affinitize-mask), z tą różnicą, że umożliwia określenie więcej niż 64 procesorów.
 - W przypadku systemów operacyjnych Windows należy prefiksować numer procesora lub zakres z odpowiednią [grupą procesorów CPU](/windows/win32/procthread/processor-groups), na przykład "0:1-10, 0:12, 1:50-52, 1:70".
-- Jeśli [koligacja procesora GC](#systemgcnoaffinitizecomplus_gcnoaffinitize) jest wyłączona, to ustawienie jest ignorowane.
+- Jeśli [koligacja procesora GC](#affinitize) jest wyłączona, to ustawienie jest ignorowane.
 - Dotyczy tylko wyrzucania elementów bezużytecznych serwera.
 - Aby uzyskać więcej informacji, zobacz temat [Zapewnianie lepszej konfiguracji procesora dla GC na maszynach z > 64 procesorów CPU](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) na blogu Maoni Stephens.
 
@@ -193,7 +208,7 @@ Przykład:
 }
 ```
 
-### <a name="complus_gccpugroup"></a>COMPlus_GCCpuGroup
+### <a name="cpu-groups"></a>Grupy CPU
 
 - Określa, czy moduł wyrzucania elementów bezużytecznych używa [grup CPU](/windows/win32/procthread/processor-groups) , czy nie.
 
@@ -205,14 +220,14 @@ Przykład:
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
-| **runtimeconfig.jsna** | Brak | Brak | Brak |
+| **runtimeconfig.jsna** | `System.GC.CpuGroup` | `0`-wyłączone<br/>`1`-włączone | .NET 5,0 |
 | **Zmienna środowiskowa** | `COMPlus_GCCpuGroup` | `0`-wyłączone<br/>`1`-włączone | .NET Core 1,0 |
 | **app.config .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`-wyłączone<br/>`true`-włączone |  |
 
 > [!NOTE]
 > Aby skonfigurować środowisko uruchomieniowe języka wspólnego (CLR) do dystrybucji wątków z puli wątków we wszystkich grupach procesora, Włącz opcję [Thread_UseAllCpuGroups elementu](../../framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) . W przypadku aplikacji platformy .NET Core można włączyć tę opcję, ustawiając wartość `COMPlus_Thread_UseAllCpuGroups` zmiennej środowiskowej na `1` .
 
-### <a name="systemgcnoaffinitizecomplus_gcnoaffinitize"></a>System. GC. NoAffinitize/COMPlus_GCNoAffinitize
+### <a name="affinitize"></a>Koligacji
 
 - Określa, czy *koligacji* wątki odzyskiwania pamięci z procesorami. Aby koligacji wątek GC, oznacza to, że można go uruchomić tylko w określonym procesorze CPU. Sterta jest tworzona dla każdego wątku GC.
 - Dotyczy tylko wyrzucania elementów bezużytecznych serwera.
@@ -236,7 +251,7 @@ Przykład:
 }
 ```
 
-### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System. GC. HeapHardLimit/COMPlus_GCHeapHardLimit
+### <a name="heap-limit"></a>Limit sterty
 
 - Określa maksymalny rozmiar zatwierdzeń w bajtach dla sterty GC i księgowości GC.
 - To ustawienie dotyczy tylko komputerów 64-bitowych.
@@ -244,7 +259,7 @@ Przykład:
 - Wartość domyślna, która stosuje się tylko w niektórych przypadkach, jest większa niż 20 MB lub 75% limitu pamięci w kontenerze. Wartość domyślna ma zastosowanie, jeśli:
 
   - Proces jest uruchomiony wewnątrz kontenera o określonym limicie pamięci.
-  - Nie ustawiono wartości [System. GC. HeapHardLimitPercent](#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) .
+  - Nie ustawiono wartości [System. GC. HeapHardLimitPercent](#heap-limit-percent) .
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
@@ -266,17 +281,17 @@ Przykład:
 > [!TIP]
 > Jeśli ustawiasz opcję w *runtimeconfig.jsna*, określ wartość dziesiętną. Jeśli ustawiasz opcję jako zmienną środowiskową, określ wartość szesnastkową. Na przykład aby określić stały limit sterty wynoszący 200 mebibytes (MiB), wartości byłyby 209715200 dla pliku JSON i 0xC800000 lub C800000 dla zmiennej środowiskowej.
 
-### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System. GC. HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
+### <a name="heap-limit-percent"></a>Procent limitu sterty
 
 - Określa dozwolone użycie sterty GC jako procent całkowitej ilości pamięci fizycznej.
-- Jeśli zostanie również ustawiona wartość [System. GC. HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) , to ustawienie jest ignorowane.
+- Jeśli zostanie również ustawiona wartość [System. GC. HeapHardLimit](#heap-limit) , to ustawienie jest ignorowane.
 - To ustawienie dotyczy tylko komputerów 64-bitowych.
 - Jeśli proces jest uruchomiony wewnątrz kontenera o określonym limicie pamięci, wartość procentowa jest obliczana jako wartość procentowa tego limitu pamięci.
 - To ustawienie jest ignorowane, jeśli skonfigurowano [limity sterty dla poszczególnych obiektów](#per-object-heap-limits) .
 - Wartość domyślna, która jest stosowana tylko w niektórych przypadkach, jest mniejsza z 20 MB lub 75% limitu pamięci dla kontenera. Wartość domyślna ma zastosowanie, jeśli:
 
   - Proces jest uruchomiony wewnątrz kontenera o określonym limicie pamięci.
-  - Nie ustawiono wartości [System. GC. HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) .
+  - Nie ustawiono wartości [System. GC. HeapHardLimit](#heap-limit) .
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
@@ -302,21 +317,30 @@ Przykład:
 
 Można określić możliwość użycia sterty w pamięci podręcznej na podstawie sterty dla poszczególnych obiektów. Różne sterty to sterta dużego obiektu (LOH), sterta małego obiektu (raport o niewielkich obiektach) i przypięty stos obiektów (POH).
 
-#### <a name="complus_gcheaphardlimitsoh-complus_gcheaphardlimitloh-complus_gcheaphardlimitpoh"></a>COMPLUS_GCHeapHardLimitSOH, COMPLUS_GCHeapHardLimitLOH, COMPLUS_GCHeapHardLimitPOH
-
 - W przypadku określenia wartości dla dowolnego z parametrów, `COMPLUS_GCHeapHardLimitSOH` `COMPLUS_GCHeapHardLimitLOH` lub `COMPLUS_GCHeapHardLimitPOH` , należy również określić wartość dla `COMPLUS_GCHeapHardLimitSOH` i `COMPLUS_GCHeapHardLimitLOH` . Jeśli tego nie zrobisz, nie będzie można zainicjować środowiska uruchomieniowego.
 - Wartość domyślna dla `COMPLUS_GCHeapHardLimitPOH` jest równa 0. `COMPLUS_GCHeapHardLimitSOH`i `COMPLUS_GCHeapHardLimitLOH` nie mają wartości domyślnych.
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimitSOH` | *wartość dziesiętna* | .NET 5,0 |
 | **Zmienna środowiskowa** | `COMPLUS_GCHeapHardLimitSOH` | *wartość szesnastkowa* | .NET 5,0 |
+
+| | Nazwa ustawienia | Wartości | Wprowadzona wersja |
+| - | - | - | - |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimitLOH` | *wartość dziesiętna* | .NET 5,0 |
 | **Zmienna środowiskowa** | `COMPLUS_GCHeapHardLimitLOH` | *wartość szesnastkowa* | .NET 5,0 |
+
+| | Nazwa ustawienia | Wartości | Wprowadzona wersja |
+| - | - | - | - |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimitPOH` | *wartość dziesiętna* | .NET 5,0 |
 | **Zmienna środowiskowa** | `COMPLUS_GCHeapHardLimitPOH` | *wartość szesnastkowa* | .NET 5,0 |
 
 > [!TIP]
-> Jeśli ustawiasz opcję jako zmienną środowiskową, określ wartość szesnastkową. Na przykład, aby określić stały limit sterty wynoszący 200 mebibytes (MiB), wartość będzie 0xC800000 lub C800000.
+> Jeśli ustawiasz opcję w *runtimeconfig.jsna*, określ wartość dziesiętną. Jeśli ustawiasz opcję jako zmienną środowiskową, określ wartość szesnastkową. Na przykład aby określić stały limit sterty wynoszący 200 mebibytes (MiB), wartości byłyby 209715200 dla pliku JSON i 0xC800000 lub C800000 dla zmiennej środowiskowej.
 
-#### <a name="complus_gcheaphardlimitsohpercent-complus_gcheaphardlimitlohpercent-complus_gcheaphardlimitpohpercent"></a>COMPLUS_GCHeapHardLimitSOHPercent, COMPLUS_GCHeapHardLimitLOHPercent, COMPLUS_GCHeapHardLimitPOHPercent
+### <a name="per-object-heap-limit-percents"></a>Procent limitów sterty dla poszczególnych obiektów
+
+Można określić możliwość użycia sterty w pamięci podręcznej na podstawie sterty dla poszczególnych obiektów. Różne sterty to sterta dużego obiektu (LOH), sterta małego obiektu (raport o niewielkich obiektach) i przypięty stos obiektów (POH).
 
 - W przypadku określenia wartości dla dowolnego z parametrów, `COMPLUS_GCHeapHardLimitSOHPercent` `COMPLUS_GCHeapHardLimitLOHPercent` lub `COMPLUS_GCHeapHardLimitPOHPercent` , należy również określić wartość dla `COMPLUS_GCHeapHardLimitSOHPercent` i `COMPLUS_GCHeapHardLimitLOHPercent` . Jeśli tego nie zrobisz, nie będzie można zainicjować środowiska uruchomieniowego.
 - Te ustawienia są ignorowane `COMPLUS_GCHeapHardLimitSOH` w przypadku, gdy `COMPLUS_GCHeapHardLimitLOH` `COMPLUS_GCHeapHardLimitPOH` są określone.
@@ -325,14 +349,40 @@ Można określić możliwość użycia sterty w pamięci podręcznej na podstawi
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimitSOHPercent` | *wartość dziesiętna* | .NET 5,0 |
 | **Zmienna środowiskowa** | `COMPLUS_GCHeapHardLimitSOHPercent` | *wartość szesnastkowa* | .NET 5,0 |
+
+| | Nazwa ustawienia | Wartości | Wprowadzona wersja |
+| - | - | - | - |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimitLOHPercent` | *wartość dziesiętna* | .NET 5,0 |
 | **Zmienna środowiskowa** | `COMPLUS_GCHeapHardLimitLOHPercent` | *wartość szesnastkowa* | .NET 5,0 |
+
+| | Nazwa ustawienia | Wartości | Wprowadzona wersja |
+| - | - | - | - |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimitPOHPercent` | *wartość dziesiętna* | .NET 5,0 |
 | **Zmienna środowiskowa** | `COMPLUS_GCHeapHardLimitPOHPercent` | *wartość szesnastkowa* | .NET 5,0 |
 
 > [!TIP]
-> Jeśli ustawiasz opcję jako zmienną środowiskową, określ wartość szesnastkową. Na przykład, aby ograniczyć użycie sterty do 30%, wartość będzie 0x1E lub 1E.
+> Jeśli ustawiasz opcję w *runtimeconfig.jsna*, określ wartość dziesiętną. Jeśli ustawiasz opcję jako zmienną środowiskową, określ wartość szesnastkową. Na przykład aby ograniczyć użycie sterty do 30%, wartości byłyby 30 dla pliku JSON i 0x1E lub 1E dla zmiennej środowiskowej.
 
-### <a name="systemgcretainvmcomplus_gcretainvm"></a>System. GC. RetainVM/COMPlus_GCRetainVM
+### <a name="high-memory-percent"></a>Duża ilość pamięci (%)
+
+Obciążenie pamięci jest wskazywane przez procent używanej pamięci fizycznej. Domyślnie, gdy obciążenie pamięci fizycznej osiągnie **90%**, wyrzucanie elementów bezużytecznych jest bardziej agresywne na potrzeby tworzenia pełnych, kompaktowych kolekcji elementów bezużytecznych w celu uniknięcia stronicowania. Gdy obciążenie pamięci jest poniżej 90%, system GC preferuje kolekcje w tle dla pełnych kolekcji elementów bezużytecznych, które mają krótsze przerwy, ale nie zmniejszają łącznego rozmiaru sterty o wiele. Na maszynach ze znaczną ilością pamięci (80 GB lub więcej) domyślny próg obciążenia wynosi od 90% do 97%.
+
+Próg dużego obciążenia pamięci można dostosować za pomocą `COMPlus_GCHighMemPercent` Ustawienia zmienna środowiskowa lub `System.GC.HighMemoryPercent` Konfiguracja JSON. Należy rozważyć dostosowanie progu, jeśli chcesz kontrolować rozmiar sterty. Na przykład w przypadku procesu dominującego na komputerze z 64 GB pamięci jest uzasadnione, aby system GC uruchomił odzyskiwanie, gdy jest dostępnych 10% pamięci. Jednak w przypadku mniejszych procesów, na przykład proces, który zużywa tylko 1 GB pamięci, wykaz globalny może wygodnie działać z mniej niż 10% dostępnej pamięci. W przypadku tych mniejszych procesów należy rozważyć ustawienie progu wyższego poziomu. Z drugiej strony, jeśli chcesz, aby większa liczba procesów miała mniejsze rozmiary sterty (nawet w przypadku dużej ilości dostępnej pamięci fizycznej), obniżenie tego progu jest skutecznym sposobem, aby system GC mógł już reagować na kompaktowanie sterty.
+
+> [!NOTE]
+> W przypadku procesów uruchomionych w kontenerze GC traktuje pamięć fizyczną na podstawie limitu kontenerów.
+
+| | Nazwa ustawienia | Wartości | Wprowadzona wersja |
+| - | - | - | - |
+| **runtimeconfig.jsna** | `System.GC.HighMemoryPercent` | *wartość dziesiętna* | .NET 5,0 |
+| **Zmienna środowiskowa** | `COMPlus_GCHighMemPercent` | *wartość szesnastkowa* | |
+
+> [!TIP]
+> Jeśli ustawiasz opcję w *runtimeconfig.jsna*, określ wartość dziesiętną. Jeśli ustawiasz opcję jako zmienną środowiskową, określ wartość szesnastkową. Na przykład, aby ustawić wysoki próg pamięci na 75%, wartości byłyby 75 dla pliku JSON i 0x4B lub 4B dla zmiennej środowiskowej.
+
+### <a name="retain-vm"></a>Zachowaj maszynę wirtualną
 
 - Określa, czy segmenty, które mają zostać usunięte, są umieszczane na liście gotowości do użycia w przyszłości lub są wyłączane z powrotem do systemu operacyjnego (OS).
 - Domyślnie: segmenty wydań z powrotem do systemu operacyjnego. Jest to równoznaczne z ustawieniem wartości `false` .
@@ -343,7 +393,7 @@ Można określić możliwość użycia sterty w pamięci podręcznej na podstawi
 | **Właściwość programu MSBuild** | `RetainVMGarbageCollection` | `false`— wydanie do systemu operacyjnego<br/>`true`— Umieść w stanie wstrzymania | .NET Core 1,0 |
 | **Zmienna środowiskowa** | `COMPlus_GCRetainVM` | `0`— wydanie do systemu operacyjnego<br/>`1`— Umieść w stanie wstrzymania | .NET Core 1,0 |
 
-### <a name="examples"></a>Przykłady
+#### <a name="examples"></a>Przykłady
 
 *runtimeconfig.js* pliku:
 
@@ -371,20 +421,16 @@ Plik projektu:
 
 ## <a name="large-pages"></a>Duże strony
 
-### <a name="complus_gclargepages"></a>COMPlus_GCLargePages
-
 - Określa, czy mają być używane duże strony, gdy jest ustawiony limit sztywny sterty.
 - Domyślnie: nie używaj dużych stron, gdy jest ustawiony limit sztywny sterty. Jest to równoznaczne z ustawieniem wartości `0` .
 - Jest to ustawienie eksperymentalne.
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
-| **runtimeconfig.jsna** | Brak | Brak | Brak |
+| **runtimeconfig.jsna** | NIE DOTYCZY | NIE DOTYCZY | NIE DOTYCZY |
 | **Zmienna środowiskowa** | `COMPlus_GCLargePages` | `0`-wyłączone<br/>`1`-włączone | .NET Core 3.0 |
 
-## <a name="large-objects"></a>Duże obiekty
-
-### <a name="complus_gcallowverylargeobjects"></a>COMPlus_gcAllowVeryLargeObjects
+## <a name="allow-large-objects"></a>Zezwalaj na duże obiekty
 
 - Konfiguruje obsługę modułu wyrzucania elementów bezużytecznych na platformach 64-bitowych dla tablic, które są większe niż 2 gigabajty (GB) w łącznym rozmiarze.
 - Domyślnie: GLOBALna obsługa tablic o pojemności większej niż 2 GB. Jest to równoznaczne z ustawieniem wartości `1` .
@@ -392,13 +438,11 @@ Plik projektu:
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
-| **runtimeconfig.jsna** | Brak | Brak | Brak |
+| **runtimeconfig.jsna** | NIE DOTYCZY | NIE DOTYCZY | NIE DOTYCZY |
 | **Zmienna środowiskowa** | `COMPlus_gcAllowVeryLargeObjects` | `1`-włączone<br/> `0`-wyłączone | .NET Core 1,0 |
 | **app.config .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1`-włączone<br/> `0`-wyłączone | .NET Framework 4.5 |
 
 ## <a name="large-object-heap-threshold"></a>Próg sterty dla dużego obiektu
-
-### <a name="systemgclohthresholdcomplus_gclohthreshold"></a>System. GC. LOHThreshold/COMPlus_GCLOHThreshold
 
 - Określa rozmiar progu (w bajtach), który powoduje, że obiekty są na stosie dużego obiektu (LOH).
 - Domyślny próg to 85 000 bajtów.
@@ -427,12 +471,10 @@ Przykład:
 
 ## <a name="standalone-gc"></a>Autonomiczna GC
 
-### <a name="complus_gcname"></a>COMPlus_GCName
-
 - Określa ścieżkę do biblioteki zawierającej Moduł wyrzucania elementów bezużytecznych, który środowisko uruchomieniowe zamierza załadować.
 - Aby uzyskać więcej informacji, zobacz [prekonstrukcja modułu ładującego GC](https://github.com/dotnet/runtime/blob/master/docs/design/features/standalone-gc-loading.md).
 
 | | Nazwa ustawienia | Wartości | Wprowadzona wersja |
 | - | - | - | - |
-| **runtimeconfig.jsna** | Brak | Brak | Brak |
+| **runtimeconfig.jsna** | NIE DOTYCZY | NIE DOTYCZY | NIE DOTYCZY |
 | **Zmienna środowiskowa** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |

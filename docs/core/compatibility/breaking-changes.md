@@ -2,12 +2,12 @@
 title: Fundamentalne zmiany
 description: Dowiedz się więcej o istotnych zmianach w każdej wersji platformy .NET Core.
 ms.date: 11/27/2019
-ms.openlocfilehash: bc7faae3b00d412aa8d50fe181a26873232a0939
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: 550553ef14cd0635fbe4a5346c457a41264a4b82
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415735"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916264"
 ---
 # <a name="breaking-change-selectors"></a>Selektory zmiany przerywania
 
@@ -17,13 +17,31 @@ Poniższe wersje i selektory obszarów zapewniają przefiltrowaną listę mając
 
 Wybierz aktualnie docelową wersję platformy .NET, a następnie wersję platformy .NET Core, do której chcesz przeprowadzić migrację:
 
-[!INCLUDE[versionselector](~/includes/core-changes/versionselector.md)]
+> [!div class="op_multi_selector" title1="Z wersji docelowej" title2="Do zmigrowanej wersji"]
+>
+> - [(3,1 | 5,0)](3.1-5.0.md)
+> - [(3,0 | 3,1)](3.0-3.1.md)
+> - [(2,2 | 3,1)](2.2-3.1.md)
+> - [(2,2 | 3,0)](2.2-3.0.md)
+> - [(2,0 | 2,1)](2.0-2.1.md)
+> - [(.NET Framework | .NET Core)](fx-core.md)
 
 ## <a name="by-technology-area"></a>Według obszaru technologii
 
 Wybierz obszar technologii .NET Core, który Cię interesuje. Indywidualne zmiany są uporządkowane według wersji platformy .NET Core.
 
-[!INCLUDE[categoryselector](~/includes/core-changes/categoryselector.md)]
+> [!div class="op_single_selector"]
+>
+> - [ASP.NET Core](aspnetcore.md)
+> - [Podstawowe biblioteki platformy .NET](corefx.md)
+> - [Kryptografia](cryptography.md)
+> - [EF Core](/ef/core/what-is-new/ef-core-3.0/breaking-changes)
+> - [Globalizacja](globalization.md)
+> - [Interop](interop.md)
+> - [Sieć](networking.md)
+> - [Serializacja](serialization.md)
+> - [Visual Basic](visualbasic.md)
+> - [Windows Forms](winforms.md)
 
 ## <a name="github-issues-and-announcements"></a>Problemy i anonse w usłudze GitHub
 
@@ -33,6 +51,6 @@ Można również wyświetlić poszczególne problemy, które opisują istotne zm
 - Dla ASP.NET Core, repozytorium [ASPNET/anonsów](https://github.com/aspnet/Announcements/issues?q=is%3Aissue+is%3Aopen+label%3A%22Breaking+change%22+label%3A3.0.0) .
 - W przypadku Entity Framework Core, repozytorium [dotnet/efcore](https://github.com/dotnet/efcore/issues?q=is%3Aopen+is%3Aissue+label%3Abreaking-change) .
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Migrowanie z .NET Framework do platformy .NET Core](../porting/index.md)

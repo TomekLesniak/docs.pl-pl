@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: d57f96b9c80bdc5f40169180b40326ffed91cf10
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 9fa739d8b5461d4043f3ae51f5d14949a95c68e5
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555372"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916878"
 ---
 # <a name="comparison-operators-c-reference"></a>Operatory porównania (odwołanie w C#)
 
@@ -43,25 +43,25 @@ Typy wyliczeniowe obsługują również operatory porównania. Dla operandów te
 
 `<`Operator zwraca `true` , jeśli jego lewy argument operacji jest mniejszy niż jego prawy operand, `false` w przeciwnym razie:
 
-[!code-csharp-interactive[less than example](snippets/ComparisonOperators.cs#Less)]
+[!code-csharp-interactive[less than example](snippets/shared/ComparisonOperators.cs#Less)]
 
 ## <a name="greater-than-operator-"></a>Więcej niż > operatora
 
 `>`Operator zwraca `true` , jeśli jego argument operacji po lewej stronie jest większy niż jego prawy operand, `false` w przeciwnym razie:
 
-[!code-csharp-interactive[greater than example](snippets/ComparisonOperators.cs#Greater)]
+[!code-csharp-interactive[greater than example](snippets/shared/ComparisonOperators.cs#Greater)]
 
 ## <a name="less-than-or-equal-operator-"></a>Operator mniejszości lub równości\<=
 
 `<=`Operator zwraca `true` , jeśli jego lewy argument operacji jest mniejszy lub równy jego operandu po prawej stronie, `false` w przeciwnym razie:
 
-[!code-csharp-interactive[less than or equal example](snippets/ComparisonOperators.cs#LessOrEqual)]
+[!code-csharp-interactive[less than or equal example](snippets/shared/ComparisonOperators.cs#LessOrEqual)]
 
 ## <a name="greater-than-or-equal-operator-"></a>Większe niż lub równe >operatora =
 
 `>=`Operator zwraca `true` , jeśli jego argument operacji po lewej stronie jest większy lub równy jego operandu po prawej stronie, `false` w przeciwnym razie:
 
-[!code-csharp-interactive[greater than or equal example](snippets/ComparisonOperators.cs#GreaterOrEqual)]
+[!code-csharp-interactive[greater than or equal example](snippets/shared/ComparisonOperators.cs#GreaterOrEqual)]
 
 ## <a name="operator-overloadability"></a>Przeciążanie operatora
 
@@ -73,7 +73,7 @@ Jeśli typ przeciąża jeden z `<` `>` operatorów lub, musi przeciążać jedno
 
 Aby uzyskać więcej informacji, zobacz sekcję [Operatory relacyjne i testowe typu](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

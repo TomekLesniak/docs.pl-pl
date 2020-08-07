@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 438188b6d694bdeab772c43ef92e5621c68facff
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 322e079a1be556efb536b24e216e480c1950bd8c
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990214"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917024"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Podstawowe informacje dotyczące wyrzucania elementów bezużytecznych
 
@@ -53,7 +53,7 @@ Poniższa lista zawiera podsumowanie ważnych pojęć dotyczących pamięci śro
   | Stan | Opis |
   |---------|---------|
   | Bezpłatna | Blok pamięci nie ma odwołań do niego i jest dostępny do alokacji. |
-  | Zarezerwowano | Blok pamięci jest dostępny do użycia i nie może być używany w żadnym innym żądaniu alokacji. Nie można jednak przechowywać danych w tym bloku pamięci, dopóki nie zostanie on zatwierdzony. |
+  | Zarezerwowany | Blok pamięci jest dostępny do użycia i nie może być używany w żadnym innym żądaniu alokacji. Nie można jednak przechowywać danych w tym bloku pamięci, dopóki nie zostanie on zatwierdzony. |
   | Committed | Blok pamięci jest przypisany do magazynu fizycznego. |
 
 - Wirtualne przestrzenie adresowe mogą zostać pofragmentowane. Oznacza to, że w przestrzeni adresowej istnieją wolne bloki, znane także jako otwory. Po zażądaniu alokacji pamięci wirtualnej Menedżer pamięci wirtualnej musi znaleźć pojedynczy bezpłatny blok, który jest wystarczająco duży, aby spełnić to żądanie alokacji. Nawet jeśli masz 2 GB wolnego miejsca, alokacja, która wymaga 2 GB, nie powiedzie się, chyba że wszystkie te wolne miejsca znajdują się w jednym bloku adresów.
@@ -186,7 +186,7 @@ Wyrzucanie elementów bezużytecznych ma następujące fazy:
   Zwykle sterta dużego obiektu (LOH) nie jest kompaktowa, ponieważ kopiowanie dużych obiektów nakłada spadek wydajności. Jednak w programie .NET Core i w .NET Framework 4.5.1 i nowszych można użyć <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> właściwości, aby skompaktować stertę dużego obiektu na żądanie. Ponadto LOH jest automatycznie kompaktowana, gdy ustalono limit, określając jedną z:
 
   - Limit pamięci dla kontenera.
-  - Opcje konfiguracji [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitcomplus_gcheaphardlimit) lub [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) Run-Time.
+  - Opcje konfiguracji [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#heap-limit) lub [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#heap-limit-percent) Run-Time.
 
 Moduł wyrzucania elementów bezużytecznych używa następujących informacji, aby określić, czy obiekty są aktywne:
 
@@ -212,7 +212,7 @@ Należy również udostępnić sposób, aby niezarządzane zasoby były udostęp
 
 Aby uzyskać więcej informacji na temat oczyszczania zasobów niezarządzanych, zobacz [Oczyszczanie zasobów niezarządzanych](unmanaged.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Stacja robocza i odzyskiwanie pamięci serwera](workstation-server-gc.md)
 - [Odzyskiwanie pamięci w tle](background-gc.md)

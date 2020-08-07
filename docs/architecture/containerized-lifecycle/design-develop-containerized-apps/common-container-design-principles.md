@@ -1,24 +1,24 @@
 ---
 title: Wspólne zasady projektowania kontenera
-description: Naucz się podstawowej zasady dobrego projektowania kontenerów, jest to, że kontener powinien obsługiwać tylko jeden proces.
-ms.date: 02/15/2019
-ms.openlocfilehash: 69f3ff6c9303f0c4082695d861a8c90031295b6a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+description: Zapoznaj się z podstawową zasadą dobrego projektowania kontenerów, że kontener powinien obsługiwać tylko jeden proces.
+ms.date: 08/06/2020
+ms.openlocfilehash: 7dcf4b4af3385a2a500c5bc16a889b56fa2c25d5
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70295330"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916001"
 ---
 # <a name="common-container-design-principles"></a>Wspólne zasady projektowania kontenera
 
-Przed przejściem do procesu rozwoju istnieje kilka podstawowych pojęć, o których warto wspomnieć w odniesieniu do sposobu korzystania z kontenerów.
+Przed rozpoczęciem procesu tworzenia programu istnieje kilka podstawowych koncepcji dotyczących sposobu korzystania z kontenerów.
 
 ## <a name="container-equals-a-process"></a>Kontener jest równy procesowi
 
-W modelu kontenera kontenera reprezentuje pojedynczy proces. Definiując kontener jako granicę procesu, należy rozpocząć tworzenie elementów pierwotnych używanych do skalowania lub wysypywania procesów. Po uruchomieniu kontenera platformy Docker zobaczysz definicję [ENTRYPOINT.](https://docs.docker.com/engine/reference/builder/#/entrypoint) Definiuje proces i okres istnienia kontenera. Po zakończeniu procesu kończy się cykl życia kontenera. Istnieją długotrwałe procesy, takie jak serwery sieci web i procesy krótkotrwałe, takie jak zadania wsadowe, które mogły zostać zaimplementowane jako Microsoft Azure [WebJobs](https://azure.microsoft.com/documentation/articles/websites-webjobs-resources/). Jeśli proces nie powiedzie się, kontener kończy się, a koordynator przejmuje. Jeśli koordynator został poinstruowany, aby zachować pięć wystąpień uruchomiony i jeden nie powiedzie się, koordynator utworzy inny kontener, aby zastąpić proces nie powiodło się. W zadaniu wsadowym proces jest uruchamiany z parametrami. Po zakończeniu procesu praca zostanie zakończona.
+W modelu kontenera kontener reprezentuje pojedynczy proces. Definiując kontener jako granicę procesu, zaczynasz tworzyć elementy pierwotne służące do skalowania lub tworzenia partii procesów. Po uruchomieniu kontenera Docker zostanie wyświetlona definicja [punktu wejścia](https://docs.docker.com/engine/reference/builder/#entrypoint) . Definiuje proces i okres istnienia kontenera. Po zakończeniu procesu cykl życia kontenera kończy się. Istnieją długotrwałe procesy, takie jak serwery sieci Web i procesy krótkoterminowe, takie jak zadania wsadowe, które mogły zostać zaimplementowane jako Microsoft Azure [Zadania WebJob](https://azure.microsoft.com/documentation/articles/websites-webjobs-resources/). Jeśli proces zakończy się niepowodzeniem, kontener kończy się, a koordynator zajmie się. Jeśli w programie Orchestrator zawarto zachowanie pięciu wystąpień i jeden z nich nie powiedzie się, program Orchestrator utworzy inny kontener, aby zastąpić proces zakończony niepowodzeniem. W zadaniu wsadowym proces jest uruchamiany z parametrami. Po zakończeniu procesu pracy zostanie zakończona.
 
-Może się okazać scenariusz, w którym chcesz wiele procesów uruchomionych w jednym kontenerze. W każdym dokumencie architektury nigdy nie ma "nigdy", ani nie zawsze istnieje "zawsze". W przypadku scenariuszy wymagających wielu procesów typowym wzorcem jest użycie [inspektora.](http://supervisord.org/)
+Możesz znaleźć scenariusz, w którym wiele procesów działa w jednym kontenerze. W dowolnym dokumencie architektury nigdy nie jest "nigdy", ani nie zawsze jest "zawsze". W przypadku scenariuszy wymagających wielu procesów typowym wzorcem jest użycie [opiekuna](http://supervisord.org/).
 
 >[!div class="step-by-step"]
->[Poprzedni](design-docker-applications.md)
->[następny](monolithic-applications.md)
+>[Poprzedni](design-docker-applications.md) 
+> [Dalej](monolithic-applications.md)

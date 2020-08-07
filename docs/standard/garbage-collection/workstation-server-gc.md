@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection, server
 - workstation garbage collection
 - server garbage collection
-ms.openlocfilehash: 5ff2b1fe2f997913e071f35ec5abb167ed757608
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 640b5f42c1f841c2537284e4721e827248e3d300
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306698"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917009"
 ---
 # <a name="workstation-and-server-garbage-collection"></a>Stacja robocza i odzyskiwanie pamięci serwera
 
@@ -40,7 +40,7 @@ Poniżej przedstawiono zagadnienia dotyczące wątkowości i wydajności dotycz�
 
 - Kolekcja odbywa się w wątku użytkownika, który wyzwolił wyrzucanie elementów bezużytecznych i pozostaje na tym samym priorytecie. Ponieważ wątki użytkownika zwykle działają przy normalnym priorytecie, Moduł wyrzucania elementów bezużytecznych (który jest uruchamiany w wątku o normalnym priorytecie) musi konkurować z innymi wątkami czasu procesora CPU. (Wątki, które uruchamiają kod natywny nie są zawieszone na serwerze lub w wyrzucaniu elementów bezużytecznych stacji roboczych).
 
-- Wyrzucanie elementów bezużytecznych stacji roboczej jest zawsze używane na komputerze z tylko jednym procesorem, niezależnie od [Ustawienia konfiguracji](../../core/run-time-config/garbage-collector.md#systemgcservercomplus_gcserver).
+- Wyrzucanie elementów bezużytecznych stacji roboczej jest zawsze używane na komputerze z tylko jednym procesorem, niezależnie od [Ustawienia konfiguracji](../../core/run-time-config/garbage-collector.md#workstation-vs-server).
 
 ### <a name="server-gc"></a>Serwer GC
 
@@ -58,7 +58,7 @@ Poniżej przedstawiono zagadnienia związane z wątkami i wydajnością dla wyrz
 
 Jeśli używasz setek wystąpień aplikacji, rozważ użycie wyrzucania elementów bezużytecznych stacji roboczej z wyłączonym współbieżnym wyrzucaniem elementów bezużytecznych. Spowoduje to przełączenie do mniej kontekstu, co może poprawić wydajność.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odzyskiwanie pamięci w tle](background-gc.md)
 - [Opcje konfiguracji czasu wykonywania dla wyrzucania elementów bezużytecznych](../../core/run-time-config/garbage-collector.md)

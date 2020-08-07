@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fbd3c8062892f106ec17d0fef86d5ad7f1207d20
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 4390f46492ada4b15d187be4c43a4f7865f64a80
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87303481"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916969"
 ---
 # <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Jak przeprowadzić migrację z Newtonsoft.Json do programuSystem.Text.Json
 
@@ -91,7 +91,7 @@ Nie jest to pełna lista `Newtonsoft.Json` funkcji. Lista zawiera wiele scenariu
 
 Podczas deserializacji, program `Newtonsoft.Json` Domyślnie dopasowuje nazwy właściwości bez uwzględniania wielkości liter. Wartość <xref:System.Text.Json> Domyślna uwzględnia wielkość liter, co zapewnia lepszą wydajność, ponieważ wykonuje dokładne dopasowanie. Aby uzyskać informacje o sposobie dopasowywania wielkości liter, zobacz dopasowanie do [wielkości](system-text-json-how-to.md#case-insensitive-property-matching)liter.
 
-Jeśli używasz pośrednio przy `System.Text.Json` użyciu ASP.NET Core, nie musisz nic robić, aby uzyskać zachowanie takie jak `Newtonsoft.Json` . ASP.NET Core określa ustawienia [nazw właściwości notacji CamelCase](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) i bez uwzględniania wielkości liter podczas korzystania z programu `System.Text.Json` .
+Jeśli używasz pośrednio przy `System.Text.Json` użyciu ASP.NET Core, nie musisz nic robić, aby uzyskać zachowanie takie jak `Newtonsoft.Json` . ASP.NET Core określa ustawienia [nazw właściwości notacji CamelCase](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) i bez uwzględniania wielkości liter podczas korzystania z programu `System.Text.Json` . Wartości domyślne są ustawiane w [klasie JsonOptions](https://github.com/dotnet/aspnetcore/blob/1f56888ea03f6a113587a6c4ac4d8b2ded326ffa/src/Mvc/Mvc.Core/src/JsonOptions.cs#L22-L28).
 
 ### <a name="minimal-character-escaping"></a>Znak ucieczki minimalnej
 
@@ -128,6 +128,8 @@ Aby uzyskać więcej informacji na temat rejestrowania niestandardowego konwerte
 ### <a name="maximum-depth"></a>Maksymalna głębokość
 
 `Newtonsoft.Json`Domyślnie nie ma maksymalnego limitu głębokości. Jest <xref:System.Text.Json> to domyślny limit 64 i jest konfigurowalny przez ustawienie <xref:System.Text.Json.JsonSerializerOptions.MaxDepth?displayProperty=nameWithType> .
+
+Jeśli używasz pośrednio przy `System.Text.Json` użyciu ASP.NET Core, domyślny maksymalny limit głębokości to 32. Wartość domyślna jest taka sama jak w przypadku powiązania modelu i jest ustawiana w [klasie JsonOptions](https://github.com/dotnet/aspnetcore/blob/1f56888ea03f6a113587a6c4ac4d8b2ded326ffa/src/Mvc/Mvc.Core/src/JsonOptions.cs#L17-L20).
 
 ### <a name="json-strings-property-names-and-string-values"></a>Ciągi JSON (nazwy właściwości i wartości ciągów)
 
@@ -490,7 +492,7 @@ public JsonElement LookAndLoad(JsonElement source)
 
 Poprzedzający kod oczekuje `JsonElement` , że zawiera `fileName` Właściwość. Plik JSON zostanie otwarty i zostanie utworzony `JsonDocument` . Metoda zakłada, że obiekt wywołujący chce współpracować z całym dokumentem, dlatego zwraca wartość `Clone` `RootElement` .
 
-Jeśli otrzymasz `JsonElement` i zwrócisz podrzędny element, nie trzeba zwracać `Clone` elementu podrzędnego. Obiekt wywołujący jest odpowiedzialny za utrzymanie aktywności, `JsonDocument` do której należy ten element `JsonElement` . Na przykład:
+Jeśli otrzymasz `JsonElement` i zwrócisz podrzędny element, nie trzeba zwracać `Clone` elementu podrzędnego. Obiekt wywołujący jest odpowiedzialny za utrzymanie aktywności, `JsonDocument` do której należy ten element `JsonElement` . Przykład:
 
 ```csharp
 public JsonElement ReturnFileName(JsonElement source)

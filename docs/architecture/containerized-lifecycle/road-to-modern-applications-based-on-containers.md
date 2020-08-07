@@ -1,32 +1,32 @@
 ---
 title: Droga do nowoczesnych aplikacji opartych na kontenerach
-description: Należy pamiętać, że platformy Docker, kontenery i architektura mikrousług nie są rozwiązaniem uniwersalnym. Tutaj znajdziesz kilka referencji, które pomogą Ci podjąć decyzję.
-ms.date: 11/23/2018
-ms.openlocfilehash: 0bc1adcd89c19b512032ee8fdf1a6e28cea96ee8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+description: Zapoznaj się z tym, że platforma Docker, kontenery i architektura mikrousług nie są rozwiązaniem o jednym rozmiarze. Tutaj znajdziesz pewne informacje, które pomogą Ci w podjęciu decyzji.
+ms.date: 08/06/2020
+ms.openlocfilehash: 7c18bc2ce1face4a5419305a48a16f23fcdc2735
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72770707"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914990"
 ---
 # <a name="road-to-modern-applications-based-on-containers"></a>Droga do nowoczesnych aplikacji opartych na kontenerach
 
-Prawdopodobnie czytasz tę książkę, ponieważ planujesz tworzenie nowych aplikacji lub oceniasz wpływ używania platformy Docker, Kontenery i nowych metod, takich jak mikrousługi w firmie.
+Prawdopodobnie odczytasz tę książkę, ponieważ planujesz opracowywanie nowych aplikacji lub oceniasz wpływ używania platformy Docker, kontenerów i nowych metod, takich jak mikrousługi w firmie.
 
-Przyjęcie nowych paradygmatów rozwoju należy zachować ostrożność przed rozpoczęciem projektu, aby ocenić wpływ na zespoły deweloperów, budżet lub infrastrukturę.
+Przed rozpoczęciem projektu należy zachować ostrożność podczas wdrażania nowych odmian programistycznych, aby ocenić wpływ na zespoły deweloperów, budżet lub infrastrukturę.
 
-Firma Microsoft pracuje nad bogatymi wskazówkami, przykładowymi aplikacjami i pakietem e-booków, które pomogą Ci podjąć świadomą decyzję i poprowadzić zespół przez pomyślne tworzenie, wdrażanie i operacje nowych aplikacji.
+Firma Microsoft pracuje nad rozbudowanymi wskazówkami, przykładowymi aplikacjami i zestawem książek elektronicznych, które mogą pomóc w podejmowaniu świadomej decyzji i pomyślnym rozwiązaniu zespołu przez pomyślne tworzenie, wdrażanie i eksploatację nowych aplikacji.
 
-Ta książka należy do pakietu przewodników firmy Microsoft, które obejmują wiele potrzeb i wyzwań, z którymi będziesz musiał się zmierzyć podczas procesu opracowywania nowych nowoczesnych aplikacji opartych na kontenerach.
+Ta książka należy do pakietu przewodników firmy Microsoft, który obejmuje wiele potrzeb i wyzwań, które należy uwzględnić podczas opracowywania nowych nowoczesnych aplikacji opartych na kontenerach.
 
-Dodatkowe e-booki firmy Microsoft związane z kontenerami platformy Docker można znaleźć na poniższej liście:
+Dodatkowe książki elektroniczne firmy Microsoft dotyczące kontenerów platformy Docker można znaleźć na poniższej liście:
 
-- **Microservices .NET: Architektura konteneryzowanych aplikacji .NET** \
+- **Mikrousługi platformy .NET: architektura dla kontenerów aplikacji .NET** \
   [https://docs.microsoft.com/dotnet/architecture/microservices/](../microservices/index.md)
 
 - **Modernizacja istniejących aplikacji .NET za pomocą chmury platformy Azure i kontenerów systemu Windows** \
   [https://docs.microsoft.com/dotnet/architecture/modernize-with-azure-containers/](../modernize-with-azure-containers/index.md)
 
 >[!div class="step-by-step"]
->[Poprzedni](docker-containers-images-and-registries.md)
->[następny](docker-application-lifecycle/index.md)
+>[Poprzedni](docker-containers-images-and-registries.md) 
+> [Dalej](docker-application-lifecycle/index.md)

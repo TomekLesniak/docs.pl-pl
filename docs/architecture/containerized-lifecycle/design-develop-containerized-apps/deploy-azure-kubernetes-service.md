@@ -1,83 +1,77 @@
 ---
 title: Organizowanie aplikacji mikrousług i aplikacji z wieloma kontenerami w celu zapewnienia wysokiej skalowalności i dostępności
 description: Dowiedz się, jak wdrożyć aplikację przy użyciu usługi Azure Kubernetes Service.
-ms.date: 02/15/2019
-ms.openlocfilehash: 0aa2f83fbf8f9a8815d65730002943cca748643d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: b4deb9906e0fece7fb611b6988df576e8b07fe46
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "71182374"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916089"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks"></a>Wdrażanie w usłudze Azure Kubernetes Service (AKS)
 
-Możesz wchodzić w interakcje z AKS za pomocą preferowanego systemu operacyjnego klienta, tutaj pokazujemy, jak to zrobić z Microsoft Windows i osadzoną wersją Ubuntu Linux w systemie Windows, za pomocą poleceń Bash.
-
-Wymagania wstępne, które mają przed użyciem AKS są:
-
-- Maszyna deweloperska Linux lub Mac
-- Maszyna deweloperska systemu Windows
-  - Tryb dewelopera włączony w systemie Windows
-  - Podsystem Windows dla systemu Linux
-- Usługa Azure-CLI zainstalowana w [systemach Windows, Mac lub Linux](https://docs.microsoft.com/cli/azure/install-azure-cli)
-
-> [!NOTE]
-> Aby znaleźć pełne informacje na temat:
->
-> Azure-CLI:<https://docs.microsoft.com/cli/azure/index>
->
-> Podsystem Windows dla systemu Linux:<https://docs.microsoft.com/windows/wsl/about>
+Można korzystać z AKS przy użyciu preferowanego systemu operacyjnego klienta (Windows, macOS lub Linux) z zainstalowanym interfejsem wiersza polecenia platformy Azure (Azure CLI). Aby uzyskać więcej informacji, zapoznaj się z [dokumentacją interfejsu wiersza polecenia platformy Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) i [Podręcznikiem instalacji](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) dla dostępnych środowisk.
 
 ## <a name="create-the-aks-environment-in-azure"></a>Tworzenie środowiska AKS na platformie Azure
 
-Istnieje kilka sposobów tworzenia środowiska AKS. Można to zrobić za pomocą poleceń azure-CLI lub za pomocą witryny Azure portal.
+Istnieje kilka sposobów tworzenia środowiska AKS. Można to zrobić za pomocą poleceń interfejsu wiersza polecenia platformy Azure lub przy użyciu Azure Portal.
 
-W tym miejscu można zapoznać się z przykładami przy użyciu interfejsu azure-CLI do tworzenia klastra i witryny Azure portal do przeglądania wyników. W komputerze deweloperskim musisz również mieć Kubectl i Docker.  
+W tym miejscu możesz zapoznać się z przykładami za pomocą interfejsu wiersza polecenia platformy Azure, aby utworzyć klaster i Azure Portal, aby przejrzeć wyniki. Musisz również mieć polecenia kubectl i Docker na komputerze deweloperskim.
 
 ## <a name="create-the-aks-cluster"></a>Tworzenie klastra AKS
 
-Utwórz klaster AKS za pomocą tego polecenia:
+Utwórz klaster AKS przy użyciu tego polecenia (Grupa zasobów musi istnieć):
 
 ```console
-az aks create --resource-group MSSampleResourceGroup --name MSSampleClusterK801 --agent-count 1 --generate-ssh-keys --location westus2
+az aks create --resource-group explore-docker-aks-rg --name explore-docker-aks --node-vm-size Standard_B2s --node-count 1 --generate-ssh-keys --location westeurope
 ```
 
-Po zakończeniu zadania tworzenia można zobaczyć usługi AKS utworzone w witrynie Azure portal:
+> [!NOTE]
+> `--node-vm-size` `--node-count` Wartości parametrów i są wystarczające dla aplikacji przykładowej/deweloperskiej.
 
-Grupa zasobów:
+Po zakończeniu zadania tworzenia można zobaczyć:
 
-![Widok przeglądarki grupy zasobów usługi Azure AKS.](media/aks-resource-group-view.png)
+- Klaster AKS utworzony w początkowej grupie zasobów
+- Nowa, powiązana Grupa zasobów zawierająca zasoby związane z klastrem AKS, jak pokazano na poniższych ilustracjach.
 
-**Rysunek 4-17**. Widok grupy zasobów Usługi AKS z platformy Azure.
+Początkowa Grupa zasobów z klastrem AKS:
 
-Klaster AKS:
+![Widok przeglądarki grupy zasobów AKS.](media/deploy-azure-kubernetes-service/aks-cluster-view.png)
 
-![Widok przeglądarki grupy zasobów AKS.](media/aks-cluster-view.png)
+**Rysunek 4-17**. AKS widok grupy zasobów na platformie Azure.
 
-**Rysunek 4-18**. Widok AKS z platformy Azure.
+Grupa zasobów klastra AKS:
 
-Można również wyświetlić węzeł utworzony `Azure-CLI` przy `Kubectl`użyciu i .
+![Widok przeglądarki grupy zasobów usługi Azure AKS.](media/deploy-azure-kubernetes-service/aks-resource-group-view.png)
 
-Najpierw pobieranie poświadczeń:
+**Rysunek 4-18**. Widok AKS na platformie Azure.
+
+> [!IMPORTANT]
+> Ogólnie rzecz biorąc nie trzeba modyfikować zasobów w grupie zasobów klastra AKS. Na przykład grupa zasobów jest usuwana po usunięciu klastra AKS.
+
+Można również wyświetlić węzeł utworzony przy użyciu `Azure CLI` i `Kubectl` .
+
+Po pierwsze, pobieranie poświadczeń:
 
 ```console
-az aks get-credentials --resource-group MSSampleK8ClusterRG --name MSSampleK8Cluster
+az aks get-credentials --resource-group explore-docker-aks-rg --name explore-docker-aks
 ```
 
-![Dane wyjściowe konsoli z powyższego polecenia: Scalono "MsSampleK8Cluster jako bieżący kontekst w /root/.kube/config.](media/get-credentials-command-result.png)
+![Dane wyjściowe konsoli z powyższego polecenia: scalono "Eksploruj-Docker-AKS" jako bieżący kontekst w/Home/Miguel/.Kube/config.](media/deploy-azure-kubernetes-service/get-credentials-command-result.png)
 
 **Rysunek 4-19**. `aks get-credentials`wynik polecenia.
 
-A potem, coraz węzłów z Kubectl:
+A następnie pobieranie węzłów z polecenia kubectl:
 
 ```console
 kubectl get nodes
 ```
 
-![Dane wyjściowe konsoli z powyższego polecenia: Lista węzłów ze stanem, wiekiem (czas pracy) i wersją](media/kubectl-get-nodes-command-result.png)
+![Dane wyjściowe konsoli z powyższego polecenia: lista węzłów ze stanem, wiek (czas działania) i wersja](media/deploy-azure-kubernetes-service/kubectl-get-nodes-command-result.png)
 
 **Rysunek 4-20**. `kubectl get nodes`wynik polecenia.
 
->[!div class="step-by-step"]
->[Poprzedni](orchestrate-high-scalability-availability.md)
->[następny](docker-apps-development-environment.md)
+> [!div class="step-by-step"]
+> [Poprzedni](orchestrate-high-scalability-availability.md) 
+>  [Dalej](docker-apps-development-environment.md)

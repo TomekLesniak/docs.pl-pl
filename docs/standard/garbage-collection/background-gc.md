@@ -5,18 +5,18 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: 780503288d3474cd99a595bdbd52c3a5abba5308
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: bf88c14b2aeed94a548b6116749fa8669576afe1
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990230"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917000"
 ---
 # <a name="background-garbage-collection"></a>Odzyskiwanie pamięci w tle
 
 W wyrzucaniu elementów bezużytecznych w tle (GC), generacji tymczasowe (0 i 1) są zbierane zgodnie z wymaganiami, gdy trwa zbieranie danych generacji 2. Wyrzucanie elementów bezużytecznych w tle jest wykonywane na co najmniej jednym dedykowanym wątku, w zależności od tego, czy jest to tło czy serwer GC, i ma zastosowanie tylko do kolekcji generacji 2.
 
-Wyrzucanie elementów bezużytecznych w tle jest domyślnie włączone. Można ją włączyć lub wyłączyć za pomocą ustawienia konfiguracji [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) w aplikacjach .NET Framework lub ustawienia [System. GC. współbieżne](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) w aplikacjach .NET Core.
+Wyrzucanie elementów bezużytecznych w tle jest domyślnie włączone. Można ją włączyć lub wyłączyć za pomocą ustawienia konfiguracji [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) w aplikacjach .NET Framework lub w ramach ustawienia [System. GC. współbieżne](../../core/run-time-config/garbage-collector.md#background-gc) w aplikacjach .NET Core i .NET 5 i nowszych.
 
 > [!NOTE]
 > Wyrzucanie elementów bezużytecznych w tle zastępuje [współbieżne odzyskiwanie pamięci](#concurrent-garbage-collection) i jest dostępne w .NET Framework 4 i nowszych wersjach. W .NET Framework 4 jest obsługiwana tylko dla wyrzucania elementów bezużytecznych *stacji roboczej* . Począwszy od .NET Framework 4,5, wyrzucanie elementów bezużytecznych w tle jest dostępne zarówno dla *stacji roboczej* , jak i *serwera* .
@@ -65,7 +65,7 @@ Na poniższej ilustracji przedstawiono współbieżne wyrzucanie elementów bezu
 
 ![Współbieżne wątki odzyskiwania pamięci](media/gc-concurrent.png)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Stacja robocza i odzyskiwanie pamięci serwera](workstation-server-gc.md)
 - [Opcje konfiguracji czasu wykonywania dla wyrzucania elementów bezużytecznych](../../core/run-time-config/garbage-collector.md)

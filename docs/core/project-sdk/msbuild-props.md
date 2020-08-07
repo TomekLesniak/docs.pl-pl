@@ -3,12 +3,12 @@ title: Właściwości programu MSBuild dla Microsoft. NET. Sdk
 description: Odwołanie do właściwości i elementów programu MSBuild, które są zrozumiałe dla zestaw .NET Core SDK.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 115c4f32e856dee64abe0c607b8ee595a65692e6
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 7980369b87d606d3876fe043e929a65da1d0d92b
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164384"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916257"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Dokumentacja programu MSBuild dla projektów zestaw .NET Core SDK
 
@@ -182,7 +182,7 @@ Niektóre zachowania w czasie wykonywania można skonfigurować, określając w�
 
 ### <a name="concurrentgarbagecollection"></a>ConcurrentGarbageCollection
 
-`ConcurrentGarbageCollection`Właściwość określa, czy jest włączone [wyrzucanie elementów bezużytecznych w tle](../../standard/garbage-collection/background-gc.md) . Ustaw wartość na `false` , aby wyłączyć wyrzucanie elementów bezużytecznych w tle. Aby uzyskać więcej informacji, zobacz [System. GC. współbieżne/COMPlus_gcConcurrent](../run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent).
+`ConcurrentGarbageCollection`Właściwość określa, czy jest włączone [wyrzucanie elementów bezużytecznych w tle](../../standard/garbage-collection/background-gc.md) . Ustaw wartość na `false` , aby wyłączyć wyrzucanie elementów bezużytecznych w tle. Aby uzyskać więcej informacji, zobacz w [tle GC](../run-time-config/garbage-collector.md#background-gc).
 
 ```xml
 <PropertyGroup>
@@ -202,7 +202,7 @@ Niektóre zachowania w czasie wykonywania można skonfigurować, określając w�
 
 ### <a name="retainvmgarbagecollection"></a>RetainVMGarbageCollection
 
-`RetainVMGarbageCollection`Właściwość konfiguruje moduł wyrzucania elementów bezużytecznych w celu umieszczenia usuniętych segmentów pamięci na liście gotowości do użycia w przyszłości lub zwolnienia. Ustawienie wartości `true` informującej Moduł wyrzucania elementów bezużytecznych w celu umieszczenia segmentów na liście gotowości. Aby uzyskać więcej informacji, zobacz [System. GC. RetainVM/COMPlus_GCRetainVM](../run-time-config/garbage-collector.md#systemgcretainvmcomplus_gcretainvm).
+`RetainVMGarbageCollection`Właściwość konfiguruje moduł wyrzucania elementów bezużytecznych w celu umieszczenia usuniętych segmentów pamięci na liście gotowości do użycia w przyszłości lub zwolnienia. Ustawienie wartości `true` informującej Moduł wyrzucania elementów bezużytecznych w celu umieszczenia segmentów na liście gotowości. Aby uzyskać więcej informacji, zobacz temat [zachowywanie maszyny wirtualnej](../run-time-config/garbage-collector.md#retain-vm).
 
 ```xml
 <PropertyGroup>
@@ -212,7 +212,7 @@ Niektóre zachowania w czasie wykonywania można skonfigurować, określając w�
 
 ### <a name="servergarbagecollection"></a>ServerGarbageCollection
 
-`ServerGarbageCollection`Właściwość określa, czy aplikacja używa [wyrzucania elementów bezużytecznych stacji roboczej lub odzyskiwania pamięci serwera](../../standard/garbage-collection/workstation-server-gc.md). Ustaw wartość na, aby `true` użyć wyrzucania elementów bezużytecznych serwera. Aby uzyskać więcej informacji, zobacz [System. GC. Server/COMPlus_gcServer](../run-time-config/garbage-collector.md#systemgcservercomplus_gcserver).
+`ServerGarbageCollection`Właściwość określa, czy aplikacja używa [wyrzucania elementów bezużytecznych stacji roboczej lub odzyskiwania pamięci serwera](../../standard/garbage-collection/workstation-server-gc.md). Ustaw wartość na, aby `true` użyć wyrzucania elementów bezużytecznych serwera. Aby uzyskać więcej informacji, zobacz [stacja robocza a serwer](../run-time-config/garbage-collector.md#workstation-vs-server).
 
 ```xml
 <PropertyGroup>

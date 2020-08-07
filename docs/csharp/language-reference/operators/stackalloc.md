@@ -5,12 +5,12 @@ f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc expression [C#]
-ms.openlocfilehash: 32ac85f678912cb7e5f506244265b1bf57d0b4aa
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 4f20f3262b77cc2fe16480e53d13960e68d230b5
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555609"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916668"
 ---
 # <a name="stackalloc-expression-c-reference"></a>wyrażenie stackalloc (odwołanie w C#)
 
@@ -20,24 +20,24 @@ Wynik wyrażenia można przypisać `stackalloc` do zmiennej jednego z następuj�
 
 - Począwszy od języka C# 7,2 <xref:System.Span%601?displayProperty=nameWithType> lub <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , jak pokazano na poniższym przykładzie:
 
-  [!code-csharp[stackalloc span](snippets/StackallocOperator.cs#AssignToSpan)]
+  [!code-csharp[stackalloc span](snippets/shared/StackallocOperator.cs#AssignToSpan)]
 
   Nie trzeba używać [niebezpiecznego](../keywords/unsafe.md) kontekstu, gdy przypiszesz blok pamięci przydzielony przez stos do <xref:System.Span%601> <xref:System.ReadOnlySpan%601> zmiennej lub.
 
   Podczas pracy z tymi typami można użyć `stackalloc` wyrażenia w wyrażeniach [warunkowych](conditional-operator.md) lub przypisywania, jak pokazano na poniższym przykładzie:
 
-  [!code-csharp[stackalloc expression](snippets/StackallocOperator.cs#AsExpression)]
+  [!code-csharp[stackalloc expression](snippets/shared/StackallocOperator.cs#AsExpression)]
 
   Począwszy od języka C# 8,0, można użyć `stackalloc` wyrażenia wewnątrz innych wyrażeń za każdym razem <xref:System.Span%601> <xref:System.ReadOnlySpan%601> , gdy zmienna lub jest dozwolona, jak pokazano w poniższym przykładzie:
 
-  [!code-csharp[stackalloc in nested expressions](snippets/StackallocOperator.cs#Nested)]
+  [!code-csharp[stackalloc in nested expressions](snippets/shared/StackallocOperator.cs#Nested)]
 
   > [!NOTE]
   > Zalecamy używanie <xref:System.Span%601> lub <xref:System.ReadOnlySpan%601> typy do pracy z przydzieloną pamięcią stosu, jeśli jest to możliwe.
 
 - [Typ wskaźnika](../../programming-guide/unsafe-code-pointers/pointer-types.md), jak pokazano na poniższym przykładzie:
 
-  [!code-csharp[stackalloc pointer](snippets/StackallocOperator.cs#AssignToPointer)]
+  [!code-csharp[stackalloc pointer](snippets/shared/StackallocOperator.cs#AssignToPointer)]
 
   Jak pokazano w powyższym przykładzie, należy użyć `unsafe` kontekstu podczas pracy z typami wskaźników.
 
@@ -47,7 +47,7 @@ Ilość pamięci dostępnej na stosie jest ograniczona. W przypadku przydzieleni
 
 - Ogranicz ilość pamięci do przydzielenia `stackalloc` :
 
-  [!code-csharp[limit stackalloc](snippets/StackallocOperator.cs#LimitStackalloc)]
+  [!code-csharp[limit stackalloc](snippets/shared/StackallocOperator.cs#LimitStackalloc)]
 
   Ponieważ ilość pamięci dostępnej na stosie zależy od środowiska, w którym wykonywany jest kod, należy ją wyrównać podczas definiowania rzeczywistej wartości limitu.
 
@@ -57,7 +57,7 @@ Zawartość nowo przydzieloną pamięci jest niezdefiniowana. Należy ją zainic
 
 Począwszy od języka C# 7,3, można użyć składni inicjatora tablicy do zdefiniowania zawartości nowo przydzieloną pamięć. Poniższy przykład ilustruje różne sposoby, aby to zrobić:
 
-[!code-csharp[stackalloc initialization](snippets/StackallocOperator.cs#StackallocInit)]
+[!code-csharp[stackalloc initialization](snippets/shared/StackallocOperator.cs#StackallocInit)]
 
 W wyrażeniu `stackalloc T[E]` `T` musi być [typem niezarządzanym](../builtin-types/unmanaged-types.md) i `E` musi być wynikiem obliczenia nieujemnej wartości [int](../builtin-types/integral-numeric-types.md) .
 
@@ -69,7 +69,7 @@ Korzystanie z programu `stackalloc` automatycznie włącza funkcje wykrywania pr
 
 Aby uzyskać więcej informacji, zobacz sekcję [Alokacja stosu](~/_csharplang/spec/unsafe-code.md#stack-allocation) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md) i zapoznaj się z propozycją oferta funkcji [w przypadku `stackalloc` zagnieżdżonych kontekstów](~/_csharplang/proposals/csharp-8.0/nested-stackalloc.md) .
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

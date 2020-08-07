@@ -5,12 +5,12 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: efba2c1c921d867725db90a1879cc9dee1a22b4e
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 15342c3d9cd66195639e38265875a7ed4008dd51
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555524"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916618"
 ---
 # <a name="true-and-false-operators-c-reference"></a>Operatory true i false (odwołanie w C#)
 
@@ -31,7 +31,7 @@ Jeśli typ ze zdefiniowanymi `true` `false` operatorami i operatory [przeciąż�
 
 Poniższy przykład przedstawia typ, który definiuje `true` `false` Operatory i. Typ również przeciąża operatora logicznego i `&` w taki sposób, że `&&` operator może również być obliczany dla operandów tego typu.
 
-[!code-csharp[true and false operators example](snippets/TrueFalseOperators.cs)]
+[!code-csharp[true and false operators example](snippets/shared/TrueFalseOperators.cs)]
 
 Zwróć uwagę na zachowanie w krótkim obwodzie `&&` operatora. Gdy `GetFuelLaunchStatus` Metoda zwraca `LaunchStatus.Red` , `&&` nie jest oceniane prawo operandu operatora. Oznacza to, że `LaunchStatus.Red` jest to wartość false. Następnie wynik logiczny i nie zależy od wartości operandu po prawej stronie. Dane wyjściowe przykładu są następujące:
 
@@ -40,7 +40,7 @@ Getting fuel launch status...
 Wait!
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

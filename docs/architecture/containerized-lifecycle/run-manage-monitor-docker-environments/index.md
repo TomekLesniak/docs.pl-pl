@@ -1,24 +1,24 @@
 ---
-title: Uruchamianie środowisk produkcyjnych platformy Docker, zarządzanie nimi i monitorowanie ich
+title: Uruchamianie i monitorowanie środowisk produkcyjnych platformy Docker oraz zarządzanie nimi
 description: Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
-ms.date: 02/15/2019
-ms.openlocfilehash: 900c361d5604f7fdaf41613287aa48c5381a9af7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 013918a5b3f0b9dc6c60416af186dc3e51a29a98
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70295630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914919"
 ---
-# <a name="run-manage-and-monitor-docker-production-environments"></a>Uruchamianie środowisk produkcyjnych platformy Docker, zarządzanie nimi i monitorowanie ich
+# <a name="run-manage-and-monitor-docker-production-environments"></a>Uruchamianie i monitorowanie środowisk produkcyjnych platformy Docker oraz zarządzanie nimi
 
-Wizja: Aplikacje dla przedsiębiorstw muszą działać z wysoką dostępnością i wysoką skalowalnością; Operacje IT muszą być w stanie zarządzać środowiskami i samymi aplikacjami i monitorować je.
+Wizja: aplikacje dla przedsiębiorstw muszą działać z wysoką dostępnością i wysoką skalowalnością; Operacje IT muszą być w stanie zarządzać środowiskami i aplikacjami oraz monitorować je.
 
-Ten ostatni filar w konteneryzowanym cyklu życia aplikacji platformy Docker koncentruje się na tym, jak można uruchamiać, zarządzać aplikacjami i monitorować je w skalowalnych środowiskach produkcyjnych o wysokiej dostępności.
+Ten ostatni filar w cyklu życia aplikacji platformy Docker zawiera informacje na temat sposobu uruchamiania, zarządzania i monitorowania aplikacji w środowiskach produkcyjnych skalowalnych i wysokiej dostępności (HA).
 
-Sposób uruchamiania konteneryzowanych aplikacji w środowisku produkcyjnym (architektura infrastruktury i technologie platformy) jest bardzo powiązany i oparty na wybranych platformach architektury i rozwoju omówionych w rozdziale 1 tego e-booka.
+Sposób uruchamiania aplikacji kontenerowych w środowisku produkcyjnym (architektura infrastruktury i technologie platformy) jest bardzo znaczący i oparty na wybranej architekturze i platformach programistycznych omówionych w rozdziale 1 tej książki elektronicznej.
 
-W tym rozdziale przeanalizowano określone produkty i technologie firmy Microsoft i innych dostawców, za pomocą których można skutecznie uruchamiać skalowalne aplikacje rozproszone w zakresie wysokiej klasy oraz sposób zarządzania nimi i monitorowania ich z perspektywy IT.
+Ten rozdział analizuje konkretne produkty i technologie firmy Microsoft i innych dostawców, których można użyć do wydajnego uruchamiania skalowalnych aplikacji rozproszonych o wysokiej dostępności, a także sposobu zarządzania nimi i monitorowania ich z perspektywy INFORMATYCZNej.
 
 >[!div class="step-by-step"]
->[Poprzedni](../docker-devops-workflow/create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md)
->[następny](run-microservices-based-applications-in-production.md)
+>[Poprzedni](../docker-devops-workflow/create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md) 
+> [Dalej](run-microservices-based-applications-in-production.md)

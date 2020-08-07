@@ -3,18 +3,18 @@ title: Informacje o uwierzytelnianiu w bibliotekach platformy Azure dla platform
 description: Wyjaśnia różne sposoby uwierzytelniania przy użyciu zestawu Azure SDK dla platformy .NET.
 ms.date: 06/19/2020
 ms.custom: azure-sdk-dotnet
-ms.openlocfilehash: 727842b34faa37558220a3035ac5228fae196201
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: e588499a789fc5e7da7eb51009f97090ca75e562
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301622"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916613"
 ---
 # <a name="authenticate-with-the-azure-sdk-for-net"></a>Uwierzytelnianie za pomocą zestawu Azure SDK dla platformy .NET
 
 ## <a name="recommended-azureidentity"></a>Zalecane: Azure. Identity
 
-Najnowsze pakiety w zestawie Azure SDK dla platformy .NET używają wspólnego pakietu uwierzytelniania do uwierzytelniania `Azure.Identity` . Użycie `Azure.Identity` jest zalecane w porównaniu z innymi mechanizmami uwierzytelniania opisanymi w dalszej części tego dokumentu. Pakiety obsługujące poświadczenia dostarczone przez `Azure.Identity` program mają identyfikatory pakietów rozpoczynające się od *platformy Azure.* [Aby uzyskać więcej informacji, zobacz najnowsze wersje zestawu Azure SDK dla platformy .NET](https://azure.github.io/azure-sdk/releases/latest/index.html#net).
+Najnowsze pakiety w zestawie Azure SDK dla platformy .NET używają wspólnego pakietu uwierzytelniania do uwierzytelniania `Azure.Identity` . Użycie `Azure.Identity` jest zalecane w porównaniu z innymi mechanizmami uwierzytelniania opisanymi w dalszej części tego dokumentu. Pakiety obsługujące poświadczenia udostępniane przez `Azure.Identity` program są oparte na systemie `Azure.Core` i mają identyfikatory pakietów rozpoczynające się od *platformy Azure.* [Lista pakietów zawiera](packages.md) spis pakietów używanych przez program `Azure.Core` .
 
 Aby uzyskać pełne instrukcje dotyczące korzystania `Azure.Identity` z programu w projekcie, zapoznaj się z dokumentacją [klienta tożsamości platformy Azure dla platformy .NET](/dotnet/api/overview/azure/identity-readme).
 

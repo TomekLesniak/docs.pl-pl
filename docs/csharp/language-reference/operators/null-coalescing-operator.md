@@ -10,12 +10,12 @@ helpviewer_keywords:
 - null-coalescing assignment [C#]
 - ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: d3d6a5032a5b4fb7059eb93b0024fd292b74fb70
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 58c60dad3badc62f850f737a3d210ec486809272
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555243"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916743"
 ---
 # <a name="-and--operators-c-reference"></a>?? i? = — Operatory (odwołanie w C#)
 
@@ -23,13 +23,13 @@ Operator łączenia wartości null `??` zwraca wartość operandu po lewej stron
 
 W języku C# 8,0 i nowszych operator przypisania łączenia wartości null `??=` przypisuje wartość jego operandu po lewej stronie tylko wtedy, gdy argument operacji po lewej stronie jest obliczany do `null` . `??=`Operator nie oblicza swojego operandu po prawej stronie, jeśli argument operacji po lewej stronie ma wartość różną od null.
 
-[!code-csharp[null-coalescing assignment](snippets/NullCoalescingOperator.cs#Assignment)]
+[!code-csharp[null-coalescing assignment](snippets/shared/NullCoalescingOperator.cs#Assignment)]
 
 Argument operacji po lewej stronie `??=` operatora musi być zmienną, [właściwością](../../programming-guide/classes-and-structs/properties.md)lub elementem [indeksatora](../../programming-guide/indexers/index.md) .
 
 W języku C# 7,3 i starszych typ operandu po lewej stronie `??` operatora musi być typem [referencyjnym](../keywords/reference-types.md) lub [typem wartości null](../builtin-types/nullable-value-types.md). Począwszy od języka C# 8,0, ten wymóg jest zastępowany przez następujący: typ operandu po lewej stronie `??` `??=` operatora and nie może być typem wartości niedopuszczających wartości null. W szczególności, począwszy od języka C# 8,0, można użyć operatorów łączenia wartości null z nieokreślonymi parametrami typu:
 
-[!code-csharp[unconstrained type parameter](snippets/NullCoalescingOperator.cs#UnconstrainedType)]
+[!code-csharp[unconstrained type parameter](snippets/shared/NullCoalescingOperator.cs#UnconstrainedType)]
 
 Operatory łączenia wartości null są z prawej strony skojarzenia. To jest wyrażenie w postaci
 
@@ -51,17 +51,17 @@ d ??= (e ??= f)
 
 - W wyrażeniach zawierających [Operatory warunkowe o wartości null?. i? []](member-access-operators.md#null-conditional-operators--and-)można użyć `??` operatora, aby podać alternatywne wyrażenie do obliczenia w przypadku, gdy wynik wyrażenia z operacjami warunkowymi o wartości null jest `null` :
 
-  [!code-csharp-interactive[with null-conditional](snippets/NullCoalescingOperator.cs#WithNullConditional)]
+  [!code-csharp-interactive[with null-conditional](snippets/shared/NullCoalescingOperator.cs#WithNullConditional)]
 
 - Podczas pracy z [typami wartości null](../builtin-types/nullable-value-types.md) i musi podać wartość bazowego typu wartości, użyj `??` operatora, aby określić wartość, która ma zostać podana na wypadek, gdy wartość typu dopuszczająca wartości null to `null` :
 
-  [!code-csharp-interactive[with nullable types](snippets/NullCoalescingOperator.cs#WithNullableTypes)]
+  [!code-csharp-interactive[with nullable types](snippets/shared/NullCoalescingOperator.cs#WithNullableTypes)]
 
   Użyj <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> metody, jeśli wartość, która ma zostać użyta, gdy wartość typu dopuszczająca wartości null ma `null` być wartością domyślną dla bazowego typu wartości.
 
 - Począwszy od języka C# 7,0, można użyć [ `throw` wyrażenia](../keywords/throw.md#the-throw-expression) jako argumentu operacji po prawej stronie `??` operatora, aby kod sprawdzania argumentów był bardziej zwięzły:
 
-  [!code-csharp[with throw expression](snippets/NullCoalescingOperator.cs#WithThrowExpression)]
+  [!code-csharp[with throw expression](snippets/shared/NullCoalescingOperator.cs#WithThrowExpression)]
 
   W powyższym przykładzie pokazano również, jak używać [składowych wyrażeń](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) w celu zdefiniowania właściwości.
 
@@ -90,7 +90,7 @@ Aby uzyskać więcej informacji na temat `??` operatora, zobacz sekcję [operato
 
 Aby uzyskać więcej informacji na temat `??=` operatora, zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

@@ -1,13 +1,13 @@
 ---
 title: Organizowanie aplikacji mikrousług i aplikacji z wieloma kontenerami w celu zapewnienia wysokiej skalowalności i dostępności
 description: Rzeczywiste aplikacje produkcyjne muszą być wdrażane i zarządzane przy użyciu programu Orchestrator, które obsługują kondycję, obciążenie i cykle życia wszystkich kontenerów.
-ms.date: 02/15/2019
-ms.openlocfilehash: 459a445258a8d66834814f7b084fd969d005ff45
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.date: 08/06/2020
+ms.openlocfilehash: 61c66e1f3835df543cbc9ba23d9c098ad52c90cd
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374484"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915472"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Organizowanie aplikacji mikrousług i aplikacji z wieloma kontenerami w celu zapewnienia wysokiej skalowalności i dostępności
 
@@ -62,7 +62,7 @@ Rysunek 4-7 przedstawia strukturę klastra Kubernetes, w którym węzeł główn
 
 ## <a name="development-environment-for-kubernetes"></a>Środowisko programistyczne dla Kubernetes
 
-W środowisku programistycznym [ogłoszonym przez platformę Docker w lipcu 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/)Kubernetes można również uruchomić na jednym komputerze deweloperskim (Windows 10 lub macOS), instalując program [Docker Desktop](https://www.docker.com/community-edition). Później można wykonać wdrożenie w chmurze (AKS) w celu przeprowadzenia dalszych testów integracji, jak pokazano na rysunku 4-8.
+W środowisku programistycznym [ogłoszonym przez platformę Docker w lipcu 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/)Kubernetes można również uruchomić na jednym komputerze deweloperskim (Windows 10 lub macOS), instalując program [Docker Desktop](https://www.docker.com/products/docker-desktop). Później można wykonać wdrożenie w chmurze (AKS) w celu przeprowadzenia dalszych testów integracji, jak pokazano na rysunku 4-8.
 
 ![Diagram przedstawiający Kubernetes na komputerze deweloperskim wdrożony w AKS.](./media/orchestrate-high-scalability-availability/kubernetes-development-environment.png)
 
@@ -110,7 +110,7 @@ Konkretny przykład można znaleźć na [stronie eShopOnContainers wiki na Azure
 
 Aby uzyskać więcej informacji, zobacz [programowanie zespołów w Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore).
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Wprowadzenie do usługi Azure Kubernetes Service (AKS)** \
   <https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal>
