@@ -1,13 +1,15 @@
 ---
 title: Dyrektywy kompilatora
-description: Dowiedz F# się więcej o dyrektywach preprocesora języka, dyrektywach kompilacji warunkowej, dyrektywach i dyrektywach kompilatora.
+description: 'Poznaj dyrektywy preprocesora języka F #, dyrektywy warunkowej kompilacji, dyrektywy wiersza i dyrektywy kompilatora.'
 ms.date: 12/10/2018
-ms.openlocfilehash: 16db2efb2fee2c2c5e94aa98eb0a13183a4e0e0b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+f1_keywords:
+- '#endif_FS'
+ms.openlocfilehash: aee307eb7bccc8d91b5162f3f43db3b806b761d0
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630402"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855377"
 ---
 # <a name="compiler-directives"></a>Dyrektywy kompilatora
 
@@ -17,14 +19,14 @@ W tym temacie opisano dyrektywy procesora i dyrektywy kompilatora.
 
 Dyrektywa preprocesora jest poprzedzona znakiem # symbol i jest wyświetlana w wierszu. Jest on interpretowany przez preprocesor, który jest uruchamiany przed samym kompilatorem.
 
-W poniższej tabeli wymieniono dyrektywy preprocesora, które są dostępne w F#programie.
+W poniższej tabeli wymieniono dyrektywy preprocesora, które są dostępne w języku F #.
 
-|— Dyrektywa|Opis|
+|Dyrektywę|Opis|
 |---------|-----------|
-|`#if`*symbol*|Obsługuje kompilację warunkową. Kod w sekcji po `#if` zostanie uwzględniony, jeśli *symbol* jest zdefiniowany. Symbol może być również negacją `!`.|
+|`#if` * — symbol*|Obsługuje kompilację warunkową. Kod w sekcji po `#if` zostanie uwzględniony, jeśli *symbol* jest zdefiniowany. Symbol może być również negacją `!` .|
 |`#else`|Obsługuje kompilację warunkową. Oznacza sekcję kodu do dołączenia, jeśli symbol używany z poprzednim `#if` nie został zdefiniowany.|
 |`#endif`|Obsługuje kompilację warunkową. Oznacza koniec sekcji warunkowej kodu.|
-|`#`liniow *int*,<br/>`#`liniow liczba *całkowita* *ciąg*,<br/>`#`liniow liczba *całkowita* *Verbatim — ciąg*|Wskazuje pierwotny wiersz kodu źródłowego i nazwę pliku na potrzeby debugowania. Ta funkcja jest dostępna dla narzędzi generujących F# kod źródłowy.|
+|`#`liniow *int*,<br/>`#`liniow *int* *ciąg*int,<br/>`#`liniow *int* *Verbatim — ciąg*|Wskazuje pierwotny wiersz kodu źródłowego i nazwę pliku na potrzeby debugowania. Ta funkcja jest dostępna dla narzędzi generujących kod źródłowy języka F #.|
 |`#nowarn`*WarningCode*|Wyłącza ostrzeżenie lub ostrzeżenia kompilatora. Aby wyłączyć ostrzeżenie, Znajdź jego numer z danych wyjściowych kompilatora i umieść go w cudzysłowie. Pomiń prefiks "FS". Aby wyłączyć wiele numerów ostrzeżeń w tym samym wierszu, należy uwzględnić każdą liczbę w cudzysłowie i oddzielić każdy ciąg znaków spacją. Na przykład:
 
 `#nowarn "9" "40"`
@@ -36,17 +38,17 @@ Efekt wyłączenia ostrzeżenia dotyczy całego pliku, w tym części pliku, kt�
 Kod zdezaktywowany przez jedną z tych dyrektyw jest wyszarzony w edytorze Visual Studio Code.
 
 > [!NOTE]
-> Zachowanie dyrektyw kompilacji warunkowej nie jest takie samo, jak w innych językach. Na przykład nie można używać wyrażeń logicznych obejmujących symbole i `true` i `false` nie mają specjalnego znaczenia. Symbole, które są `if` używane w dyrektywie, muszą być zdefiniowane w wierszu polecenia lub w ustawieniach projektu; nie `define` istnieje dyrektywa preprocesora.
+> Zachowanie dyrektyw kompilacji warunkowej nie jest takie samo, jak w innych językach. Na przykład nie można używać wyrażeń logicznych obejmujących symbole i `true` i `false` nie mają specjalnego znaczenia. Symbole, które są używane w `if` dyrektywie, muszą być zdefiniowane w wierszu polecenia lub w ustawieniach projektu; nie istnieje `define` dyrektywa preprocesora.
 
-Poniższy kod ilustruje użycie `#if`dyrektyw, `#else`i `#endif` . W tym przykładzie kod zawiera dwie wersje definicji `function1`. Gdy `VERSION1` jest zdefiniowany przy użyciu [opcji-define kompilatora](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04), jest uaktywniany kod między `#if` dyrektywą i `#else` dyrektywą. W przeciwnym razie kod między `#else` i `#endif` jest aktywowany.
+Poniższy kod ilustruje użycie `#if` `#else` dyrektyw, i `#endif` . W tym przykładzie kod zawiera dwie wersje definicji `function1` . Gdy `VERSION1` jest zdefiniowany przy użyciu [opcji-define kompilatora](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04), `#if` jest uaktywniany kod między dyrektywą i `#else` dyrektywą. W przeciwnym razie kod między `#else` i `#endif` jest aktywowany.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7301.fs)]
 
-Brak `#define` dyrektywy preprocesora w F#. Aby zdefiniować symbole używane przez `#if` dyrektywę, należy użyć opcji kompilatora lub ustawienia projektu.
+Brak `#define` dyrektywy preprocesora w języku F #. Aby zdefiniować symbole używane przez dyrektywę, należy użyć opcji kompilatora lub ustawienia projektu `#if` .
 
 Dyrektywy kompilacji warunkowej mogą być zagnieżdżane. Wcięcia nie są znaczące w przypadku dyrektyw preprocesora.
 
-Możesz również Negate symbol z `!`. W tym przykładzie wartość ciągu jest coś tylko wtedy, gdy _nie_ jest debugowana:
+Możesz również Negate symbol z `!` . W tym przykładzie wartość ciągu jest coś tylko wtedy, gdy _nie_ jest debugowana:
 
 ```fsharp
 #if !DEBUG
@@ -58,27 +60,27 @@ let str = "Debugging!"
 
 ## <a name="line-directives"></a>Dyrektywy linii
 
-Podczas kompilowania kompilator zgłasza błędy w F# kodzie, odwołując się do numerów wierszy, na których występuje każdy błąd. Te numery wierszy zaczynają się od 1 dla pierwszego wiersza w pliku. Jednak w przypadku generowania F# kodu źródłowego za pomocą innego narzędzia numery wierszy w wygenerowanym kodzie nie są generalnie przydatne, ponieważ błędy w generowanym F# kodzie najprawdopodobniej wynikają z innego źródła. Dyrektywa umożliwia autorom narzędzi generujących F# kod źródłowy w celu przekazywania informacji o oryginalnych numerach wierszy i plikach źródłowych do wygenerowanego F# kodu. `#line`
+Podczas kompilowania kompilator zgłasza błędy w kodzie języka F # przez odwołujące się do nich numery wierszy, na których występuje każdy błąd. Te numery wierszy zaczynają się od 1 dla pierwszego wiersza w pliku. Jeśli jednak generujesz kod źródłowy języka F # z innego narzędzia, numery wierszy w wygenerowanym kodzie nie są generalnie przydatne, ponieważ błędy w generowanym kodzie F # prawdopodobnie powstają z innego źródła. `#line`Dyrektywa zawiera sposób tworzenia przez autorów narzędzi, które generują kod źródłowy języka f # w celu przekazywania informacji o oryginalnych numerach wierszy i plikach źródłowych do wygenerowanego kodu f #.
 
-W przypadku używania `#line` dyrektywy nazwy plików muszą być ujęte w cudzysłów. Chyba że token Verbatim (`@`) pojawia się przed ciągiem, należy wypróbować odwrotne ukośniki, używając dwóch ukośników odwrotnych zamiast jednego, aby użyć ich w ścieżce. Poniżej podano prawidłowe tokeny wiersza. W tych przykładach Załóżmy, że oryginalny plik `Script1` powoduje automatyczne wygenerowanie F# pliku kodu, gdy jest uruchamiany za pośrednictwem narzędzia i że kod w lokalizacji tych dyrektyw jest generowany na podstawie niektórych tokenów w wierszu 25 w pliku `Script1`.
+W przypadku używania `#line` dyrektywy nazwy plików muszą być ujęte w cudzysłów. Chyba że token Verbatim ( `@` ) pojawia się przed ciągiem, należy wypróbować odwrotne ukośniki, używając dwóch ukośników odwrotnych zamiast jednego, aby użyć ich w ścieżce. Poniżej podano prawidłowe tokeny wiersza. W tych przykładach Załóżmy, że oryginalny plik `Script1` powoduje automatyczne wygenerowanie pliku kodu F #, gdy jest uruchamiany za pośrednictwem narzędzia i że kod w lokalizacji tych dyrektyw jest generowany na podstawie niektórych tokenów w wierszu 25 w pliku `Script1` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7303.fs)]
 
-Te tokeny wskazują, F# że kod wygenerowany w tej lokalizacji pochodzi od niektórych konstrukcji w lub w okolicach `Script1`w wierszu `25` .
+Te tokeny wskazują, że kod języka F # wygenerowany w tej lokalizacji pochodzi od niektórych konstrukcji w lub blisko wiersza `25` w `Script1` .
 
 ## <a name="compiler-directives"></a>Dyrektywy kompilatora
 
 Dyrektywy kompilatora przypominają dyrektywy preprocesora, ponieważ są poprzedzone znakiem #, ale zamiast nie są interpretowane przez preprocesor, są pozostawiane dla kompilatora, który interpretuje i działa.
 
-W poniższej tabeli wymieniono dyrektywy kompilatora, które są dostępne F#w programie.
+W poniższej tabeli wymieniono dyrektywy kompilatora, które są dostępne w języku F #.
 
-|— Dyrektywa|Opis|
+|Dyrektywę|Opis|
 |---------|-----------|
-|`#light` ["on"&#124;"off"]|Włącza lub wyłącza uproszczoną składnię w celu zapewnienia zgodności z innymi wersjami ML. Domyślnie uproszczona składnia jest włączona. Pełna składnia jest zawsze włączona. W związku z tym można użyć składni uproszczonej i pełnej składni. Sama dyrektywa `#light` jest równoważna z `#light "on"`. Jeśli określisz `#light "off"`, musisz użyć pełnej składni dla wszystkich konstrukcji językowych. Składnia w dokumentacji programu F# jest prezentowana z założeniem, że używana jest składnia uproszczona. Aby uzyskać więcej informacji, zobacz [verbose Syntax](verbose-syntax.md).|
+|`#light`["on" &#124; "off"]|Włącza lub wyłącza uproszczoną składnię w celu zapewnienia zgodności z innymi wersjami ML. Domyślnie uproszczona składnia jest włączona. Pełna składnia jest zawsze włączona. W związku z tym można użyć składni uproszczonej i pełnej składni. Sama dyrektywa `#light` jest równoważna z `#light "on"` . Jeśli określisz `#light "off"` , musisz użyć pełnej składni dla wszystkich konstrukcji językowych. Składnia w dokumentacji języka F # jest prezentowana z założeniem, że używana jest składnia uproszczona. Aby uzyskać więcej informacji, zobacz [verbose Syntax](verbose-syntax.md).|
 
-Aby poznać dyrektywy interpretera (fsi. exe), zobacz [interaktywne programowanie F#przy użyciu programu ](../tutorials/fsharp-interactive/index.md).
+Aby poznać dyrektywy interpretera (fsi.exe), zobacz [programowanie interaktywne przy użyciu języka F #](../tutorials/fsharp-interactive/index.md).
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Dokumentacja języka F#](index.md)
+- [Dokumentacja języka F #](index.md)
 - [Opcje kompilatora](compiler-options.md)

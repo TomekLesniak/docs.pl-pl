@@ -2,12 +2,12 @@
 title: Formatowanie zwykłego tekstu
 description: 'Dowiedz się, jak używać printf i innego formatowania zwykłego tekstu w aplikacjach i skryptach w języku F #.'
 ms.date: 07/22/2020
-ms.openlocfilehash: a0f2c52431be894c4f74dd2940345a518f620589
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795749"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854922"
 ---
 # <a name="plain-text-formatting"></a>Formatowanie zwykłego tekstu
 
@@ -81,15 +81,15 @@ Specyfikacje formatu dla `printf` formatów są ciągami ze `%` znacznikami wska
 | `%f`               | podstawowy typ zmiennoprzecinkowy | Sformatowana jako podpisana wartość mająca postać `[-]dddd.dddd` , gdzie `dddd` jest co najmniej jedną cyfrą dziesiętną. Liczba cyfr przed punktem dziesiętnym zależy od wielkości liczby, a liczba cyfr po przecinku jest zależna od wymaganej precyzji. |
 | `%g`, `%G` | podstawowy typ zmiennoprzecinkowy |  Sformatowana przy użyciu jako wartości ze znakiem `%f` `%e` , która jest drukowana w formacie lub format, w zależności od tego, co jest bardziej zwarte dla danej wartości i dokładności. |
 | `%M` | `System.Decimal`wartość  |    Sformatowane przy użyciu `"G"` specyfikatora formatu dla`System.Decimal.ToString(format)` |
-| `%O` | dowolna wartość  |   Sformatowana przez opakowanie obiektu i valling jego `System.Object.ToString()` metody |
+| `%O` | dowolna wartość  |   Sformatowana przez opakowanie obiektu i wywołanie jego `System.Object.ToString()` metody |
 | `%A` | dowolna wartość  |   Sformatowane przy użyciu [zwykłego formatowania tekstu strukturalnego](plaintext-formatting.md) z domyślnymi ustawieniami układu |
-| `%a` | dowolna wartość  |   Wymaga dwóch argumentów — funkcja formatowania akceptująca parametr kontekstowy i wartość oraz określoną wartość do wydrukowania |
-| `%t` | dowolna wartość  |   Wymaga jednego argumentu, funkcja formatowania akceptująca parametr kontekstowy, który wyprowadza lub zwraca odpowiedni tekst |
+| `%a` | dowolna wartość  |   Wymaga dwóch argumentów: funkcja formatowania akceptująca parametr kontekstowy i wartość oraz określoną wartość do wydrukowania |
+| `%t` | dowolna wartość  |   Wymaga jednego argumentu: funkcja formatowania akceptująca parametr kontekstowy, który wyprowadza lub zwraca odpowiedni tekst |
 
 Podstawowe typy całkowite to `byte` ( `System.Byte` ), (), (), `sbyte` `System.SByte` `int16` `System.Int16` `uint16` ( `System.UInt16` ), `int32` `System.Int32` `uint32` `System.UInt32` `int64` `System.Int64` `uint64` `System.UInt64` `nativeint` `System.IntPtr` `unativeint` `System.UIntPtr` (), (), (), (), () i ().
 Podstawowe typy zmiennoprzecinkowe to `float` ( `System.Double` ) i `float32` ( `System.Single` ).
 
-Opcjonalna szerokość jest liczbą całkowitą wskazującą minimalną szerokość wyniku. Na przykład program `%6d` drukuje liczbę całkowitą, poprzedź ją spacjami, aby wypełnić co najmniej 6 znaków. Jeśli szerokość to `*` , wówczas do określenia odpowiedniej szerokości zostanie podjęta dodatkowa wartość argumentu.
+Opcjonalna szerokość jest liczbą całkowitą wskazującą minimalną szerokość wyniku. Na przykład program `%6d` drukuje liczbę całkowitą, dodając prefiks do spacji, aby wypełnić co najmniej sześć znaków. Jeśli szerokość to `*` , wówczas do określenia odpowiedniej szerokości zostanie podjęta dodatkowa wartość argumentu.
 
 Prawidłowe flagi to:
 
@@ -161,7 +161,7 @@ Culture 2: 12/31/1999 12:00:00 AM
 
 ### <a name="structured-values"></a>Wartości strukturalne
 
-Podczas formatowania zwykłego tekstu przy użyciu `%A` specyfikatora, wcięcie bloku jest używane dla list i krotek języka F #. Jest to pokazane w poprzednim przykładzie.
+Podczas formatowania zwykłego tekstu przy użyciu `%A` specyfikatora, wcięcie bloku jest używane dla list i krotek języka F #. Pokazano to w poprzednim przykładzie.
 Struktura tablic jest również używana, w tym wielowymiarowych tablic.  Tablice jednowymiarowe są wyświetlane ze `[| ... |]` składnią. Przykład:
 
 ```fsharp
@@ -200,12 +200,12 @@ Wyświetla
 [|(1, 1); (2, 4); (3, 9); (4, 16); (5, 25)|]
 ```
 
-Określanie szerokości wydruku 0 spowoduje, że nie jest używana szerokość wydruku. Zostanie wyznaczony pojedynczy wiersz tekstu, z wyjątkiem tego, gdzie osadzone ciągi w danych wyjściowych zawierają linebreaks.  Na przykład
+Określanie szerokości wydruku 0 spowoduje, że nie jest używana szerokość wydruku. Zostanie wyznaczony pojedynczy wiersz tekstu, z wyjątkiem tego, gdzie osadzone ciągi w danych wyjściowych zawierają podziały wierszy.  Na przykład
 
 ```fsharp
 printfn "%0A" [| for i in 1 .. 5 -> (i, i*i) |]
 
-printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef |]
+printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef" |]
 ```
 
 Wyświetla
@@ -318,7 +318,7 @@ Wyświetla
 
 Wartości opóźnione są drukowane jako `Value is not created` lub równoważne tekst, gdy wartość nie została jeszcze oceniona.
 
-Wartości null są drukowane jako, `null` chyba że typ statyczny wartości jest określony jako typ złożenia, gdzie `null` jest dozwolony represenation.
+Wartości null są drukowane jako, `null` chyba że typ statyczny wartości jest określony jako typ złożenia, gdzie `null` jest dozwolonym reprezentacją.
 
 Wartości funkcji języka F # są drukowane jako ich wewnętrznie wygenerowane nazwy zamknięcia, na przykład `<fun:it@43-7>` .
 

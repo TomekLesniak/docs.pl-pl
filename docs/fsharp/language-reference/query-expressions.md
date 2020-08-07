@@ -2,19 +2,18 @@
 title: Wyrażenia kwerend
 description: 'Dowiedz się więcej o obsłudze wyrażeń zapytania dla LINQ w języku programowania F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: bbd15352aa89bd1891b409177921a675784a0227
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419190"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855039"
 ---
-# <a name="query-expressions"></a>Wyrażenia kwerend
-
-> [!NOTE]
-> Linki do odwołań do interfejsów API w tym artykule przeprowadzą Cię do subskrypcji MSDN.  Dokumentacja interfejsu API docs.microsoft.com nie została ukończona.
+# <a name="query-expressions"></a>Wyrażenia zapytań
 
 Wyrażenia zapytań umożliwiają wykonywanie zapytań względem źródła danych i umieszczanie danych w żądanym formularzu. Wyrażenia zapytań zapewniają obsługę LINQ w języku F #.
+> [!NOTE]
+> Dokumentacja interfejsu API docs.microsoft.com dla języka F # nie została ukończona. Jeśli wystąpią jakieś przerwane linki, należy odwołać się do [dokumentacji podstawowej biblioteki języka F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="syntax"></a>Składnia
 
