@@ -7,52 +7,52 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: 5a809a2c70cd2932870ed365bcaeb0edf838b679
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: b72b058c1709e7a643a70233cc3289d5d9165ca4
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556530"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916806"
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="90295-102">=> — operator (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="90295-102">=> operator (C# reference)</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="c6c16-102">=> — operator (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="c6c16-102">=> operator (C# reference)</span></span>
 
-<span data-ttu-id="90295-103">`=>`Token jest obsługiwany w dwóch formach: jako [operator lambda](#lambda-operator) oraz jako separator nazwy elementu członkowskiego i implementacji elementu członkowskiego w [definicji treści wyrażenia](#expression-body-definition).</span><span class="sxs-lookup"><span data-stu-id="90295-103">The `=>` token is supported in two forms: as the [lambda operator](#lambda-operator) and as a separator of a member name and the member implementation in an [expression body definition](#expression-body-definition).</span></span>
+<span data-ttu-id="c6c16-103">`=>`Token jest obsługiwany w dwóch formach: jako [operator lambda](#lambda-operator) oraz jako separator nazwy elementu członkowskiego i implementacji elementu członkowskiego w [definicji treści wyrażenia](#expression-body-definition).</span><span class="sxs-lookup"><span data-stu-id="c6c16-103">The `=>` token is supported in two forms: as the [lambda operator](#lambda-operator) and as a separator of a member name and the member implementation in an [expression body definition](#expression-body-definition).</span></span>
 
-## <a name="lambda-operator"></a><span data-ttu-id="90295-104">Operator lambda</span><span class="sxs-lookup"><span data-stu-id="90295-104">Lambda operator</span></span>
+## <a name="lambda-operator"></a><span data-ttu-id="c6c16-104">Operator lambda</span><span class="sxs-lookup"><span data-stu-id="c6c16-104">Lambda operator</span></span>
 
-<span data-ttu-id="90295-105">W [wyrażeniach lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)operator lambda `=>` oddziela parametry wejściowe po lewej stronie od treści lambda po prawej stronie.</span><span class="sxs-lookup"><span data-stu-id="90295-105">In [lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md), the lambda operator `=>` separates the input parameters on the left side from the lambda body on the right side.</span></span>
+<span data-ttu-id="c6c16-105">W [wyrażeniach lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)operator lambda `=>` oddziela parametry wejściowe po lewej stronie od treści lambda po prawej stronie.</span><span class="sxs-lookup"><span data-stu-id="c6c16-105">In [lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md), the lambda operator `=>` separates the input parameters on the left side from the lambda body on the right side.</span></span>
 
-<span data-ttu-id="90295-106">W poniższym przykładzie użyto funkcji [LINQ](../../programming-guide/concepts/linq/index.md) z składnią metody, aby pokazać użycie wyrażeń lambda:</span><span class="sxs-lookup"><span data-stu-id="90295-106">The following example uses the [LINQ](../../programming-guide/concepts/linq/index.md) feature with method syntax to demonstrate the usage of lambda expressions:</span></span>
+<span data-ttu-id="c6c16-106">W poniższym przykładzie użyto funkcji [LINQ](../../programming-guide/concepts/linq/index.md) z składnią metody, aby pokazać użycie wyrażeń lambda:</span><span class="sxs-lookup"><span data-stu-id="c6c16-106">The following example uses the [LINQ](../../programming-guide/concepts/linq/index.md) feature with method syntax to demonstrate the usage of lambda expressions:</span></span>
 
-[!code-csharp-interactive[infer types of input variables](snippets/LambdaOperator.cs#InferredTypes)]
+[!code-csharp-interactive[infer types of input variables](snippets/shared/LambdaOperator.cs#InferredTypes)]
 
-<span data-ttu-id="90295-107">Parametry wejściowe wyrażenia lambda są silnie wpisywane w czasie kompilacji.</span><span class="sxs-lookup"><span data-stu-id="90295-107">Input parameters of a lambda expression are strongly typed at compile time.</span></span> <span data-ttu-id="90295-108">Gdy kompilator może wywnioskować typy parametrów wejściowych, jak w poprzednim przykładzie, można pominąć deklaracje typu.</span><span class="sxs-lookup"><span data-stu-id="90295-108">When the compiler can infer the types of input parameters, like in the preceding example, you may omit type declarations.</span></span> <span data-ttu-id="90295-109">Jeśli musisz określić typ parametrów wejściowych, należy to zrobić dla każdego parametru, jak pokazano w poniższym przykładzie:</span><span class="sxs-lookup"><span data-stu-id="90295-109">If you need to specify the type of input parameters, you must do that for each parameter, as the following example shows:</span></span>
+<span data-ttu-id="c6c16-107">Parametry wejściowe wyrażenia lambda są silnie wpisywane w czasie kompilacji.</span><span class="sxs-lookup"><span data-stu-id="c6c16-107">Input parameters of a lambda expression are strongly typed at compile time.</span></span> <span data-ttu-id="c6c16-108">Gdy kompilator może wywnioskować typy parametrów wejściowych, jak w poprzednim przykładzie, można pominąć deklaracje typu.</span><span class="sxs-lookup"><span data-stu-id="c6c16-108">When the compiler can infer the types of input parameters, like in the preceding example, you may omit type declarations.</span></span> <span data-ttu-id="c6c16-109">Jeśli musisz określić typ parametrów wejściowych, należy to zrobić dla każdego parametru, jak pokazano w poniższym przykładzie:</span><span class="sxs-lookup"><span data-stu-id="c6c16-109">If you need to specify the type of input parameters, you must do that for each parameter, as the following example shows:</span></span>
 
-[!code-csharp-interactive[specify types of input variables](snippets/LambdaOperator.cs#ExplicitTypes)]
+[!code-csharp-interactive[specify types of input variables](snippets/shared/LambdaOperator.cs#ExplicitTypes)]
 
-<span data-ttu-id="90295-110">Poniższy przykład pokazuje, jak zdefiniować wyrażenie lambda bez parametrów wejściowych:</span><span class="sxs-lookup"><span data-stu-id="90295-110">The following example shows how to define a lambda expression without input parameters:</span></span>
+<span data-ttu-id="c6c16-110">Poniższy przykład pokazuje, jak zdefiniować wyrażenie lambda bez parametrów wejściowych:</span><span class="sxs-lookup"><span data-stu-id="c6c16-110">The following example shows how to define a lambda expression without input parameters:</span></span>
 
-[!code-csharp-interactive[without input variables](snippets/LambdaOperator.cs#WithoutInput)]
+[!code-csharp-interactive[without input variables](snippets/shared/LambdaOperator.cs#WithoutInput)]
 
-<span data-ttu-id="90295-111">Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="90295-111">For more information, see [Lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>
+<span data-ttu-id="c6c16-111">Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="c6c16-111">For more information, see [Lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>
 
-## <a name="expression-body-definition"></a><span data-ttu-id="90295-112">Definicja treści wyrażenia</span><span class="sxs-lookup"><span data-stu-id="90295-112">Expression body definition</span></span>
+## <a name="expression-body-definition"></a><span data-ttu-id="c6c16-112">Definicja treści wyrażenia</span><span class="sxs-lookup"><span data-stu-id="c6c16-112">Expression body definition</span></span>
 
-<span data-ttu-id="90295-113">Definicja treści wyrażenia ma następującą składnię ogólną:</span><span class="sxs-lookup"><span data-stu-id="90295-113">An expression body definition has the following general syntax:</span></span>
+<span data-ttu-id="c6c16-113">Definicja treści wyrażenia ma następującą składnię ogólną:</span><span class="sxs-lookup"><span data-stu-id="c6c16-113">An expression body definition has the following general syntax:</span></span>
 
 ```csharp
 member => expression;
 ```
 
-<span data-ttu-id="90295-114">gdzie `expression` jest prawidłowym wyrażeniem.</span><span class="sxs-lookup"><span data-stu-id="90295-114">where `expression` is a valid expression.</span></span> <span data-ttu-id="90295-115">Zwracany typ elementu `expression` musi być niejawnie konwertowany na typ zwracany elementu członkowskiego.</span><span class="sxs-lookup"><span data-stu-id="90295-115">The return type of `expression` must be implicitly convertible to the member's return type.</span></span> <span data-ttu-id="90295-116">Jeśli typem zwracanym elementu członkowskiego jest `void` lub, jeśli element członkowski jest konstruktorem, finalizatorem lub właściwością, lub typem `set` dostępu indeksatora, `expression` musi być [*wyrażeniem instrukcji*](~/_csharplang/spec/statements.md#expression-statements).</span><span class="sxs-lookup"><span data-stu-id="90295-116">If the member's return type is `void` or if the member is a constructor, a finalizer, or a property or indexer `set` accessor, `expression` must be a [*statement expression*](~/_csharplang/spec/statements.md#expression-statements).</span></span> <span data-ttu-id="90295-117">Ze względu na to, że wynik wyrażenia jest odrzucany, zwracany typ wyrażenia może być dowolnym typem.</span><span class="sxs-lookup"><span data-stu-id="90295-117">Because the expression's result is discarded, the return type of that expression can be any type.</span></span>
+<span data-ttu-id="c6c16-114">gdzie `expression` jest prawidłowym wyrażeniem.</span><span class="sxs-lookup"><span data-stu-id="c6c16-114">where `expression` is a valid expression.</span></span> <span data-ttu-id="c6c16-115">Zwracany typ elementu `expression` musi być niejawnie konwertowany na typ zwracany elementu członkowskiego.</span><span class="sxs-lookup"><span data-stu-id="c6c16-115">The return type of `expression` must be implicitly convertible to the member's return type.</span></span> <span data-ttu-id="c6c16-116">Jeśli typem zwracanym elementu członkowskiego jest `void` lub, jeśli element członkowski jest konstruktorem, finalizatorem lub właściwością, lub typem `set` dostępu indeksatora, `expression` musi być [*wyrażeniem instrukcji*](~/_csharplang/spec/statements.md#expression-statements).</span><span class="sxs-lookup"><span data-stu-id="c6c16-116">If the member's return type is `void` or if the member is a constructor, a finalizer, or a property or indexer `set` accessor, `expression` must be a [*statement expression*](~/_csharplang/spec/statements.md#expression-statements).</span></span> <span data-ttu-id="c6c16-117">Ze względu na to, że wynik wyrażenia jest odrzucany, zwracany typ wyrażenia może być dowolnym typem.</span><span class="sxs-lookup"><span data-stu-id="c6c16-117">Because the expression's result is discarded, the return type of that expression can be any type.</span></span>
 
-<span data-ttu-id="90295-118">W poniższym przykładzie przedstawiono definicję treści wyrażenia dla `Person.ToString` metody:</span><span class="sxs-lookup"><span data-stu-id="90295-118">The following example shows an expression body definition for a `Person.ToString` method:</span></span>
+<span data-ttu-id="c6c16-118">W poniższym przykładzie przedstawiono definicję treści wyrażenia dla `Person.ToString` metody:</span><span class="sxs-lookup"><span data-stu-id="c6c16-118">The following example shows an expression body definition for a `Person.ToString` method:</span></span>
 
 ```csharp
 public override string ToString() => $"{fname} {lname}".Trim();
 ```
 
-<span data-ttu-id="90295-119">Jest to skrócona wersja następującej definicji metody:</span><span class="sxs-lookup"><span data-stu-id="90295-119">It's a shorthand version of the following method definition:</span></span>
+<span data-ttu-id="c6c16-119">Jest to skrócona wersja następującej definicji metody:</span><span class="sxs-lookup"><span data-stu-id="c6c16-119">It's a shorthand version of the following method definition:</span></span>
 
 ```csharp
 public override string ToString()
@@ -61,19 +61,19 @@ public override string ToString()
 }
 ```
 
-<span data-ttu-id="90295-120">Definicje treści wyrażenia dla metod, operatorów i właściwości tylko do odczytu są obsługiwane począwszy od języka C# 6.</span><span class="sxs-lookup"><span data-stu-id="90295-120">Expression body definitions for methods, operators, and read-only properties are supported beginning with C# 6.</span></span> <span data-ttu-id="90295-121">Definicje treści wyrażenia dla konstruktorów, finalizatorów i metod dostępu właściwości i indeksatora są obsługiwane począwszy od języka C# 7,0.</span><span class="sxs-lookup"><span data-stu-id="90295-121">Expression body definitions for constructors, finalizers, and property and indexer accessors are supported beginning with C# 7.0.</span></span>
+<span data-ttu-id="c6c16-120">Definicje treści wyrażenia dla metod, operatorów i właściwości tylko do odczytu są obsługiwane począwszy od języka C# 6.</span><span class="sxs-lookup"><span data-stu-id="c6c16-120">Expression body definitions for methods, operators, and read-only properties are supported beginning with C# 6.</span></span> <span data-ttu-id="c6c16-121">Definicje treści wyrażenia dla konstruktorów, finalizatorów i metod dostępu właściwości i indeksatora są obsługiwane począwszy od języka C# 7,0.</span><span class="sxs-lookup"><span data-stu-id="c6c16-121">Expression body definitions for constructors, finalizers, and property and indexer accessors are supported beginning with C# 7.0.</span></span>
 
-<span data-ttu-id="90295-122">Aby uzyskać więcej informacji, zobacz [elementy członkowskie z wyrażeniami](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span><span class="sxs-lookup"><span data-stu-id="90295-122">For more information, see [Expression-bodied members](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span></span>
+<span data-ttu-id="c6c16-122">Aby uzyskać więcej informacji, zobacz [elementy członkowskie z wyrażeniami](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span><span class="sxs-lookup"><span data-stu-id="c6c16-122">For more information, see [Expression-bodied members](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span></span>
 
-## <a name="operator-overloadability"></a><span data-ttu-id="90295-123">Przeciążanie operatora</span><span class="sxs-lookup"><span data-stu-id="90295-123">Operator overloadability</span></span>
+## <a name="operator-overloadability"></a><span data-ttu-id="c6c16-123">Przeciążanie operatora</span><span class="sxs-lookup"><span data-stu-id="c6c16-123">Operator overloadability</span></span>
 
-<span data-ttu-id="90295-124">`=>`Operator nie może być przeciążony.</span><span class="sxs-lookup"><span data-stu-id="90295-124">The `=>` operator cannot be overloaded.</span></span>
+<span data-ttu-id="c6c16-124">`=>`Operator nie może być przeciążony.</span><span class="sxs-lookup"><span data-stu-id="c6c16-124">The `=>` operator cannot be overloaded.</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="90295-125">specyfikacja języka C#</span><span class="sxs-lookup"><span data-stu-id="90295-125">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="c6c16-125">specyfikacja języka C#</span><span class="sxs-lookup"><span data-stu-id="c6c16-125">C# language specification</span></span>
 
-<span data-ttu-id="90295-126">Aby uzyskać więcej informacji na temat operatora lambda, zobacz sekcję [wyrażenia funkcji anonimowej](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="90295-126">For more information about the lambda operator, see the [Anonymous function expressions](~/_csharplang/spec/expressions.md#anonymous-function-expressions) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+<span data-ttu-id="c6c16-126">Aby uzyskać więcej informacji na temat operatora lambda, zobacz sekcję [wyrażenia funkcji anonimowej](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="c6c16-126">For more information about the lambda operator, see the [Anonymous function expressions](~/_csharplang/spec/expressions.md#anonymous-function-expressions) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="90295-127">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="90295-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c6c16-127">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="c6c16-127">See also</span></span>
 
-- [<span data-ttu-id="90295-128">Dokumentacja języka C#</span><span class="sxs-lookup"><span data-stu-id="90295-128">C# reference</span></span>](../index.md)
-- [<span data-ttu-id="90295-129">Operatory i wyrażenia języka C#</span><span class="sxs-lookup"><span data-stu-id="90295-129">C# operators and expressions</span></span>](index.md)
+- [<span data-ttu-id="c6c16-128">Dokumentacja języka C#</span><span class="sxs-lookup"><span data-stu-id="c6c16-128">C# reference</span></span>](../index.md)
+- [<span data-ttu-id="c6c16-129">Operatory i wyrażenia języka C#</span><span class="sxs-lookup"><span data-stu-id="c6c16-129">C# operators and expressions</span></span>](index.md)

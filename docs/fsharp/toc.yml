@@ -1,21 +1,21 @@
-- name: 'Dokumentacja języka F#'
+- name: Dokumentacja języka F#
   href: index.yml
-- name: 'Co to jest F#'
+- name: Co to jest F#
   href: what-is-fsharp.md
 - name: Wprowadzenie
   href: get-started/index.md
   items:
-    - name: 'Instalowanie języka F#'
+    - name: Instalowanie języka F#
       href: get-started/install-fsharp.md
-    - name: 'Język F# w programie Visual Studio'
+    - name: Język F# w programie Visual Studio
       href: get-started/get-started-visual-studio.md
-    - name: 'Język F# w programie Visual Studio Code'
+    - name: Język F# w programie Visual Studio Code
       href: get-started/get-started-vscode.md
-    - name: 'Język F# w interfejsie wiersza polecenia platformy .NET Core'
+    - name: Język F# w interfejsie wiersza polecenia platformy .NET Core
       href: get-started/get-started-command-line.md
-    - name: 'Język F# w programie Visual Studio dla komputerów Mac'
+    - name: Język F# w programie Visual Studio dla komputerów Mac
       href: get-started/get-started-with-visual-studio-for-mac.md
-- name: 'Przewodnik po środowisku F#'
+- name: Przewodnik po środowisku F#
   href: tour.md
 - name: Samouczki
   items:
@@ -37,17 +37,17 @@
           href: tutorials/type-providers/type-provider-security.md
         - name: Rozwiązywanie problemów z dostawcami typów
           href: tutorials/type-providers/troubleshooting-type-providers.md
-    - name: 'Interaktywny F#'
+    - name: Interaktywny F#
       href: tutorials/fsharp-interactive/index.md
-- name: 'Co nowego w języku F#'
+- name: Co nowego w języku F#
   items:
-    - name: 'F# 4.7'
+    - name: F# 4.7
       href: whats-new/fsharp-47.md
-    - name: 'F# 4.6'
+    - name: F# 4.6
       href: whats-new/fsharp-46.md
-    - name: 'F# 4.5'
+    - name: F# 4.5
       href: whats-new/fsharp-45.md
-- name: 'Materiały referencyjne dotyczące języka F#'
+- name: Materiały referencyjne dotyczące języka F#
   href: language-reference/index.md
   items:
     - name: Odwołanie do słowa kluczowego
@@ -87,7 +87,7 @@
           href: language-reference/values/null-values.md
     - name: Literały
       href: language-reference/literals.md
-    - name: 'Typy F#'
+    - name: Typy F#
       href: language-reference/fsharp-types.md
     - name: Wnioskowanie o typie
       href: language-reference/type-inference.md
@@ -99,7 +99,7 @@
       href: language-reference/strings.md
     - name: Krotki
       href: language-reference/tuples.md
-    - name: 'Typy kolekcji F#'
+    - name: Typy kolekcji F#
       href: language-reference/fsharp-collection-types.md
     - name: Listy
       href: language-reference/lists.md
@@ -181,7 +181,7 @@
       href: language-reference/casting-and-conversions.md
     - name: Kontrola dostępu
       href: language-reference/access-control.md
-    - name: 'Wyrażenia warunkowe: if...then...else'
+    - name: 'Wyrażenie warunkowe: if... then...else'
       href: language-reference/conditional-expressions-if-then-else.md
     - name: Wyrażenia dopasowania
       href: language-reference/match-expressions.md
@@ -220,12 +220,14 @@
       href: language-reference/namespaces.md
     - name: Moduły
       href: language-reference/modules.md
-    - name: 'Deklaracje importowania: słowo kluczowe open'
+    - name: 'Deklaracje importowania: open — Słowo kluczowe'
       href: language-reference/import-declarations-the-open-keyword.md
     - name: Pliki podpisów
       href: language-reference/signature-files.md
     - name: Jednostki miary
       href: language-reference/units-of-measure.md
+    - name: Format zwykłego tekstu
+      href: language-reference/plaintext-formatting.md
     - name: Dokumentacja XML
       href: language-reference/xml-documentation.md
     - name: Wyrażenia z opóźnionym obliczaniem
@@ -248,7 +250,7 @@
       href: language-reference/compiler-directives.md
     - name: Opcje kompilatora
       href: language-reference/compiler-options.md
-    - name: 'Opcje interakcyjne F#'
+    - name: Opcje interakcyjne F#
       href: language-reference/fsharp-interactive-options.md
     - name: 'Identyfikatory wiersza źródłowego, pliku i ścieżki'
       href: language-reference/source-line-file-path-identifiers.md
@@ -258,25 +260,25 @@
       href: language-reference/verbose-syntax.md
     - name: Błędy i ostrzeżenia kompilatora
       href: language-reference/compiler-messages/index.md
-- name: 'F# — przewodnik dotyczący stylu'
+- name: F# — przewodnik dotyczący stylu
   href: style-guide/index.md
   items:
-    - name: 'Wskazówki dotyczące formatowania kodu F#'
+    - name: Wskazówki dotyczące formatowania kodu F#
       href: style-guide/formatting.md
-    - name: 'C# — konwencje kodowania'
+    - name: C# — konwencje kodowania
       href: style-guide/conventions.md
-    - name: 'F# — wytyczne dotyczące projektowania składników'
+    - name: F# — wytyczne dotyczące projektowania składników
       href: style-guide/component-design-guidelines.md
-- name: 'Używanie języka F# na platformie Azure'
+- name: Używanie języka F# na platformie Azure
   href: using-fsharp-on-azure/index.md
   items:
-    - name: 'Rozpoczynanie pracy z usługą Azure Blob Storage przy użyciu języka F#'
+    - name: Rozpoczynanie pracy z usługą Azure Blob Storage przy użyciu języka F#
       href: using-fsharp-on-azure/blob-storage.md
-    - name: 'Rozpoczynanie pracy z usługą Azure File Storage przy użyciu języka F#'
+    - name: Rozpoczynanie pracy z usługą Azure File Storage przy użyciu języka F#
       href: using-fsharp-on-azure/file-storage.md
-    - name: 'Rozpoczynanie pracy z usługą Azure Queue Storage przy użyciu języka F#'
+    - name: Rozpoczynanie pracy z usługą Azure Queue Storage przy użyciu języka F#
       href: using-fsharp-on-azure/queue-storage.md
-    - name: 'Rozpoczynanie pracy z usługą Azure Table Storage przy użyciu języka F#'
+    - name: Rozpoczynanie pracy z usługą Azure Table Storage przy użyciu języka F#
       href: using-fsharp-on-azure/table-storage.md
-    - name: 'Zarządzanie pakietami dla zależności platformy Azure w języku F#'
+    - name: Zarządzanie pakietami dla zależności platformy Azure w języku F#
       href: using-fsharp-on-azure/package-management.md
