@@ -10,6 +10,8 @@ f1_keywords:
 - '&_CSharpKeyword'
 - ^_CSharpKeyword
 - '|_CSharpKeyword'
+- <<=_CSharpKeyword
+- '>>=_CSharpKeyword'
 helpviewer_keywords:
 - bitwise logical operators [C#]
 - shift operators [C#]
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 87cfbf6d74b61b5485599afa7e0aff9ecccad9d4
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 40cca0ed906765e3a55356f8de0f280cf03a9d14
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555425"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855195"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Operatory bitowe i przesunięcia (odwołanie w C#)
 
@@ -195,7 +197,7 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języ
 - [Przypisanie złożone](~/_csharplang/spec/expressions.md#compound-assignment)
 - [Promocje numeryczne](~/_csharplang/spec/expressions.md#numeric-promotions)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)
