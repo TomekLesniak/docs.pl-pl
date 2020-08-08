@@ -11,6 +11,8 @@
       href: authentication.md
     - name: Rejestrowanie
       href: logging.md
+    - name: Pakiety
+      href: packages.md
     - name: Przykład zestawu SDK
       href: /samples/dotnet/samples/azure-identity-resource-management-storage/
 - name: Migracja na platformę Azure
