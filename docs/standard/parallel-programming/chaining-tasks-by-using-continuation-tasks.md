@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 53457f7f99d96c288b002f58c9db36f431ba863a
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 132518b9d8d22efecfcf3ed14e8b5969aa768cd4
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381310"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024592"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>Tworzenie łańcuchów zadań przy użyciu zadań kontynuacji
 
@@ -145,7 +145,7 @@ Czasami może być konieczne przetworzenie łańcucha kontynuacji zwracającej <
 Poniższy przykład pokazuje, jak używać kontynuacji, które zawijają dodatkowe funkcje zwracające zadania. Każdą kontynuację można rozpakowany, uwidaczniając wewnętrzne zadanie, które zostało opakowane.
 
 :::code language="csharp" source="snippets/cs/unwrap.cs":::
-:::code language="csharp" source="snippets/vb/unwrap.vb":::
+:::code language="vb" source="snippets/vb/unwrap.vb":::
 
 Aby uzyskać więcej informacji na temat korzystania z programu <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> , zobacz [How to: unnesting a zagnieżdżone zadanie](how-to-unwrap-a-nested-task.md).
 
@@ -175,6 +175,6 @@ Aby uzyskać więcej informacji, zobacz [Obsługa wyjątków](exception-handling
 
 - Jeśli kontynuacja jest dołączonym zadaniem podrzędnym, które zostało utworzone przy użyciu <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> opcji, jego wyjątki będą propagowane przez element nadrzędny z powrotem do wątku wywołującego, podobnie jak w przypadku dowolnego innego dołączonego elementu podrzędnego. Aby uzyskać więcej informacji, zobacz [dołączone i odłączone zadania podrzędne](attached-and-detached-child-tasks.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Biblioteka zadań równoległych (TPL)](task-parallel-library-tpl.md)
