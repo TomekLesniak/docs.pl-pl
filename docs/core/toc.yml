@@ -290,6 +290,8 @@ items:
         href: diagnostics/index.md
       - name: Debugery zarządzane
         href: diagnostics/managed-debuggers.md
+      - name: EventCounters
+        href: diagnostics/event-counters.md
       - name: Rejestrowanie i śledzenie
         href: diagnostics/logging-tracing.md
       - name: Narzędzia globalne interfejsu wiersza polecenia platformy .NET Core
@@ -302,6 +304,8 @@ items:
             href: diagnostics/dotnet-trace.md
       - name: Samouczki dotyczące diagnostyki platformy .NET Core
         items:
+          - name: Pobieranie metryk wydajności za pomocą obiektów EventCounter
+            href: diagnostics/event-counter-perf.md
           - name: Debugowanie przecieku pamięci
             href: diagnostics/debug-memory-leak.md
           - name: Debugowanie wysokiego użycia procesora

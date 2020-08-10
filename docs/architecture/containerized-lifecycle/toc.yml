@@ -1,14 +1,17 @@
 - name: Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
   href: index.md
   items:
-    - name: Co to jest Docker?
-      href: what-is-docker.md
-    - name: Terminologia platformy Docker
-      href: docker-terminology.md
-    - name: 'Kontenery, obrazy i rejestry platformy Docker'
-      href: docker-containers-images-and-registries.md
-    - name: Droga do nowoczesnych aplikacji opartych na kontenerach
-      href: road-to-modern-applications-based-on-containers.md
+    - name: Wprowadzenie do kontenerów i platformy Docker
+      href: introduction-to-containers-and-docker.md
+      items:
+        - name: Co to jest Docker?
+          href: what-is-docker.md
+        - name: Terminologia platformy Docker
+          href: docker-terminology.md
+        - name: 'Kontenery, obrazy i rejestry platformy Docker'
+          href: docker-containers-images-and-registries.md
+        - name: Droga do nowoczesnych aplikacji opartych na kontenerach
+          href: road-to-modern-applications-based-on-containers.md
     - name: Wprowadzenie do cyklu życia aplikacji platformy Docker
       href: Docker-application-lifecycle/index.md
       items:
@@ -41,14 +44,14 @@
           href: design-develop-containerized-apps/visual-studio-tools-for-docker.md
         - name: Używanie poleceń programu Windows PowerShell w pliku DockerFile do konfigurowania kontenerów systemu Windows (opartych na standardzie platformy Docker)
           href: design-develop-containerized-apps/set-up-windows-containers-with-powershell.md
-        - name: Tworzenie aplikacji ASP.NET Core 2.0 wdrażanych jako kontenery systemu Linux do koordynatora usługi AKS/Kubernetes
+        - name: Tworzenie aplikacji ASP.NET Core wdrażanych jako kontenery systemu Linux w orkiestratorze usługi AKS/Kubernetes
           href: design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md
     - name: Przepływ pracy DevOps dla aplikacji platformy Docker z wykorzystaniem narzędzi firmy Microsoft
       href: docker-devops-workflow/index.md
       items:
         - name: Kroki przepływu pracy DevOps w zewnętrznej pętli dla aplikacji platformy Docker
           href: docker-devops-workflow/docker-application-outer-loop-devops-workflow.md
-        - name: Tworzenie potoków ciągłej integracji/ciągłego wdrażania w usługach Azure DevOps Services dla aplikacji .NET Core 2.0 na kontenerach i wdrażanie w klastrze Kubernetes
+        - name: Tworzenie potoków ciągłej integracji/ciągłego wdrażania w usługach Azure DevOps Services dla aplikacji ASP.NET Core w kontenerach i wdrażanie w klastrze Kubernetes
           href: docker-devops-workflow/create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md
     - name: Uruchamianie i monitorowanie środowisk produkcyjnych platformy Docker oraz zarządzanie nimi
       href: run-manage-monitor-docker-environments/index.md

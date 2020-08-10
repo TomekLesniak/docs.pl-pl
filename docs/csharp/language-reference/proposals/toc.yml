@@ -82,3 +82,35 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
         - name: Zagnieżdżony operator stackalloc
           href: ../../../../_csharplang/proposals/csharp-8.0/nested-stackalloc.md
+    - name: Propozycja specyfikacji języka C# 9.0
+      items:
+        - name: Rekordy
+          href: ../../../../_csharplang/proposals/csharp-9.0/records.md
+        - name: Instrukcje najwyższego poziomu
+          href: ../../../../_csharplang/proposals/csharp-9.0/top-level-statements.md
+        - name: Ulepszenia dopasowania wzorców
+          href: ../../../../_csharplang/proposals/csharp-9.0/patterns3.md
+        - name: Metody ustawiające tylko do inicjowania
+          href: ../../../../_csharplang/proposals/csharp-9.0/init.md
+        - name: Nowe wyrażenia z typem docelowym
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-new.md
+        - name: Inicjatory modułów
+          href: ../../../../_csharplang/proposals/csharp-9.0/module-initializers.md
+        - name: Rozszerzanie metod częściowych
+          href: ../../../../_csharplang/proposals/csharp-9.0/extending-partial-methods.md
+        - name: Statyczne funkcje anonimowe
+          href: ../../../../_csharplang/proposals/csharp-9.0/static-anonymous-functions.md
+        - name: Wyrażenie warunkowe z typami docelowymi
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md
+        - name: Kowariantne typy zwracane
+          href: ../../../../_csharplang/proposals/csharp-9.0/covariant-returns.md
+        - name: Parametry odrzucania wyrażenia lambda
+          href: ../../../../_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md
+        - name: Atrybuty funkcji lokalnych
+          href: ../../../../_csharplang/proposals/csharp-9.0/local-function-attributes.md
+        - name: Liczby całkowite o wielkości natywnej
+          href: ../../../../_csharplang/proposals/csharp-9.0/native-integers.md
+        - name: Wskaźniki funkcji
+          href: ../../../../_csharplang/proposals/csharp-9.0/function-pointers.md
+        - name: Pomijanie emitowania flagi localsinit
+          href: ../../../../_csharplang/proposals/csharp-9.0/skip-localsinit.md
