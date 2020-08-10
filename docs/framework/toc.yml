@@ -678,3 +678,39 @@
           href: whats-new/obsolete-types.md
         - name: Przestarzałe elementy członkowskie
           href: whats-new/obsolete-members.md
+- name: Zabezpieczenia dostępu kodu
+  items:
+    - name: Omówienie
+      href: misc/code-access-security.md
+    - name: Podstawy zabezpieczeń dostępu kodu
+      href: misc/code-access-security-basics.md
+    - name: Zgodność i migracja zasad zabezpieczenia dostępu kodu
+      href: misc/code-access-security-policy-compatibility-and-migration.md
+    - name: Niebezpieczne uprawnienia i administrowanie zasadami
+      href: misc/dangerous-permissions-and-policy-administration.md
+    - name: Jak uruchamiać częściowo zaufany kod w piaskownicy
+      href: misc/how-to-run-partially-trusted-code-in-a-sandbox.md
+    - name: Żądania połączeń
+      href: misc/link-demands.md
+    - name: Zabezpieczanie obsługi wyjątków
+      href: misc/securing-exception-handling.md
+    - name: Zabezpieczanie dostępu metody
+      href: misc/securing-method-access.md
+    - name: Zabezpieczanie kodu otoki
+      href: misc/securing-wrapper-code.md
+    - name: Bezpieczeństwo i publiczne pola tablicy tylko do odczytu
+      href: misc/security-and-public-read-only-array-fields.md
+    - name: Zagadnienia dotyczące zabezpieczeń internetowych i zdalnego dostępu
+      href: misc/security-and-remoting-considerations.md
+    - name: Zabezpieczenia i serializacja
+      href: misc/security-and-serialization.md
+    - name: 'Kod przezroczysty pod względem zabezpieczeń, poziom 1'
+      href: misc/security-transparent-code-level-1.md
+    - name: 'Kod o przezroczystym poziomie bezpieczeństwa, poziom 2'
+      href: misc/security-transparent-code-level-2.md
+    - name: Kod o przezroczystym poziomie bezpieczeństwa
+      href: misc/security-transparent-code.md
+    - name: Używanie bibliotek pochodzących z częściowo zaufanego kodu
+      href: misc/using-libraries-from-partially-trusted-code.md
+    - name: Korzystanie z metody Assert
+      href: misc/using-the-assert-method.md
