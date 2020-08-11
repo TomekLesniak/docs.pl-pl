@@ -1,32 +1,97 @@
 ---
 title: Zarządzanie stanem
-description: Poznaj różne podejścia do zarządzania stanem w formularzach sieci Web ASP.NET i Blazor .
-author: danroth27
-ms.author: daroth
-no-loc:
-- Blazor
-ms.date: 09/11/2019
-ms.openlocfilehash: 390822ff93a928c84540505687472a361a0c5f4b
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+description: Poznaj różne podejścia do zarządzania stanem w ASP.NET Web Forms i Blazor.
+author: csharpfritz
+ms.author: jefritz
+ms.date: 05/15/2020
+ms.openlocfilehash: bac2f00330113725f09259ca31bdf857a8769f24
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173097"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062343"
 ---
-# <a name="state-management"></a><span data-ttu-id="448b5-103">Zarządzanie stanem</span><span class="sxs-lookup"><span data-stu-id="448b5-103">State management</span></span>
+# <a name="state-management"></a><span data-ttu-id="3d264-103">Zarządzanie stanem</span><span class="sxs-lookup"><span data-stu-id="3d264-103">State management</span></span>
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-<span data-ttu-id="448b5-104">*Ta zawartość zostanie wkrótce udostępniona.*</span><span class="sxs-lookup"><span data-stu-id="448b5-104">*This content is coming soon.*</span></span>
+<span data-ttu-id="3d264-104">Zarządzanie stanem to kluczowa koncepcja aplikacji formularzy sieci Web, ułatwiająca Wyświetlanie stanu widoku, stanu sesji, stanu aplikacji i funkcji ogłaszania zwrotnego.</span><span class="sxs-lookup"><span data-stu-id="3d264-104">State management is a key concept of Web Forms applications, facilitated through View State, Session State, Application State, and Postback features.</span></span> <span data-ttu-id="3d264-105">Te funkcje stanowe platformy umożliwiają ukrycie zarządzania stanem wymaganego dla aplikacji i umożliwiają deweloperom aplikacji skoncentrowanie się na dostarczaniu ich funkcjonalności.</span><span class="sxs-lookup"><span data-stu-id="3d264-105">These stateful features of the framework helped to hide the state management required for an application and allow application developers to focus on delivering their functionality.</span></span> <span data-ttu-id="3d264-106">W przypadku ASP.NET Core i Blazor niektóre z tych funkcji zostały odłożone, a niektóre zostały całkowicie usunięte.</span><span class="sxs-lookup"><span data-stu-id="3d264-106">With ASP.NET Core and Blazor, some of these features have been relocated and some have been removed altogether.</span></span> <span data-ttu-id="3d264-107">W tym rozdziale opisano, jak zachować stan i zapewnić te same funkcje przy użyciu nowych funkcji w programie Blazor.</span><span class="sxs-lookup"><span data-stu-id="3d264-107">This chapter reviews how to maintain state and deliver the same functionality with the new features in Blazor.</span></span>
 
-<!--
-- View state
-- Session state
-- Local storage
-- App state
--->
+## <a name="request-state-management-with-viewstate"></a><span data-ttu-id="3d264-108">Zażądaj zarządzania stanem za pomocą elementu ViewState</span><span class="sxs-lookup"><span data-stu-id="3d264-108">Request state management with ViewState</span></span>
+
+<span data-ttu-id="3d264-109">Podczas omawiania zarządzania stanami w aplikacji formularzy sieci Web wiele deweloperów będzie od razu traktować stan wyświetlania.</span><span class="sxs-lookup"><span data-stu-id="3d264-109">When discussing state management in Web Forms application, many developers will immediately think of ViewState.</span></span> <span data-ttu-id="3d264-110">W formularzach sieci Web stan wyświetlania służy do zarządzania stanem zawartości między żądaniami HTTP przez wysyłanie dużego zakodowanego bloku tekstu z powrotem do przeglądarki.</span><span class="sxs-lookup"><span data-stu-id="3d264-110">In Web Forms, ViewState manages the state of the content between HTTP requests by sending a large encoded block of text back and forth to the browser.</span></span> <span data-ttu-id="3d264-111">Pole elementu ViewState może być przeciążone z zawartością strony zawierającej wiele elementów, co może potrwać kilka megabajtów.</span><span class="sxs-lookup"><span data-stu-id="3d264-111">The ViewState field could be overwhelmed with content from a page containing many elements, potentially expanding to several megabytes in size.</span></span>
+
+<span data-ttu-id="3d264-112">W przypadku serwera Blazor aplikacja utrzymuje ciągłe połączenie z serwerem.</span><span class="sxs-lookup"><span data-stu-id="3d264-112">With Blazor Server, the app maintains an ongoing connection with the server.</span></span> <span data-ttu-id="3d264-113">Stan aplikacji nazywany *obwodem*jest przechowywany w pamięci serwera, gdy połączenie jest uznawane za aktywne.</span><span class="sxs-lookup"><span data-stu-id="3d264-113">The app's state, called a *circuit*, is held in server memory while the connection is considered active.</span></span> <span data-ttu-id="3d264-114">Stan zostanie usunięty tylko wtedy, gdy użytkownik nawiguje do aplikacji lub konkretnej strony w aplikacji.</span><span class="sxs-lookup"><span data-stu-id="3d264-114">State will only be disposed when the user navigates away from the app or a particular page in the app.</span></span> <span data-ttu-id="3d264-115">Wszystkie elementy członkowskie aktywnych składników są dostępne między interakcjami z serwerem.</span><span class="sxs-lookup"><span data-stu-id="3d264-115">All members of the active components are available between interactions with the server.</span></span>
+
+<span data-ttu-id="3d264-116">Ta funkcja ma kilka zalet:</span><span class="sxs-lookup"><span data-stu-id="3d264-116">There are several advantages of this feature:</span></span>
+
+- <span data-ttu-id="3d264-117">Stan składnika jest łatwo dostępny i nie został odbudowany między interakcjami.</span><span class="sxs-lookup"><span data-stu-id="3d264-117">Component state is readily available and not rebuilt between interactions.</span></span>
+- <span data-ttu-id="3d264-118">Stan nie jest przesyłany do przeglądarki.</span><span class="sxs-lookup"><span data-stu-id="3d264-118">State isn't transmitted to the browser.</span></span>
+
+<span data-ttu-id="3d264-119">Istnieją jednak pewne wady dotyczące trwałości stanu składnika w pamięci, które należy wziąć pod uwagę:</span><span class="sxs-lookup"><span data-stu-id="3d264-119">However, there are some disadvantages to in-memory component state persistence to be aware of:</span></span>
+
+- <span data-ttu-id="3d264-120">Jeśli serwer zostanie ponownie uruchomiony między żądaniem, stan zostanie utracony.</span><span class="sxs-lookup"><span data-stu-id="3d264-120">If the server restarts between request, state is lost.</span></span>
+- <span data-ttu-id="3d264-121">Rozwiązanie równoważenia obciążenia serwera sieci Web aplikacji musi zawierać sesje programu Sticky, aby upewnić się, że wszystkie żądania z tej samej przeglądarki zwracają do tego samego serwera.</span><span class="sxs-lookup"><span data-stu-id="3d264-121">Your application web server load-balancing solution must include sticky sessions to ensure that all requests from the same browser return to the same server.</span></span> <span data-ttu-id="3d264-122">Jeśli żądanie przejdzie do innego serwera, stan zostanie utracony.</span><span class="sxs-lookup"><span data-stu-id="3d264-122">If a request goes to a different server, state will be lost.</span></span>
+- <span data-ttu-id="3d264-123">Trwałość stanu składnika na serwerze może prowadzić do wykorzystania pamięci na serwerze sieci Web.</span><span class="sxs-lookup"><span data-stu-id="3d264-123">Persistence of component state on the server can lead to memory pressure on the web server.</span></span>
+
+<span data-ttu-id="3d264-124">Z powyższych powodów nie należy polegać tylko na stanie składnika, który znajduje się w pamięci na serwerze.</span><span class="sxs-lookup"><span data-stu-id="3d264-124">For the preceding reasons, don't rely on just the state of the component to reside in-memory on the server.</span></span> <span data-ttu-id="3d264-125">Aplikacja powinna również zawierać zapasowe magazyny danych dla danych między żądaniami.</span><span class="sxs-lookup"><span data-stu-id="3d264-125">Your application should also include some backing data store for data between requests.</span></span> <span data-ttu-id="3d264-126">Niektóre proste przykłady tej strategii:</span><span class="sxs-lookup"><span data-stu-id="3d264-126">Some simple examples of this strategy:</span></span>
+
+- <span data-ttu-id="3d264-127">W aplikacji koszyka zakupów Utrwalaj zawartość nowych elementów dodanych do koszyka w rekordzie bazy danych.</span><span class="sxs-lookup"><span data-stu-id="3d264-127">In a shopping cart application, persist the content of new items added to the cart in a database record.</span></span> <span data-ttu-id="3d264-128">Jeśli stan serwera zostanie utracony, można go odtworzyć z rekordów bazy danych.</span><span class="sxs-lookup"><span data-stu-id="3d264-128">If the state on the server is lost, you can reconstitute it from the database records.</span></span>
+- <span data-ttu-id="3d264-129">W wieloczęściowym formularzu sieci Web użytkownicy będą oczekiwać, że aplikacja zapamięta wartości między każdym żądaniem.</span><span class="sxs-lookup"><span data-stu-id="3d264-129">In a multi-part web form, your users will expect your application to remember values between each request.</span></span> <span data-ttu-id="3d264-130">Zapisz dane między każdym z wpisów użytkownika w magazynie danych, tak aby mogły być pobierane i zmontowane do struktury odpowiedzi w postaci końcowej w przypadku zakończenia formularza wieloczęściowego.</span><span class="sxs-lookup"><span data-stu-id="3d264-130">Write the data between each of your user's posts to a data store so that they can be fetched and assembled into the final form response structure when the multi-part form is completed.</span></span>
+
+<span data-ttu-id="3d264-131">Aby uzyskać dodatkowe informacje na temat zarządzania stanem w aplikacjach Blazor, zobacz [ASP.NET Core Blazor State Management](/aspnet/core/blazor/state-management).</span><span class="sxs-lookup"><span data-stu-id="3d264-131">For additional details on managing state in Blazor apps, see [ASP.NET Core Blazor state management](/aspnet/core/blazor/state-management).</span></span>
+
+## <a name="maintain-state-with-session"></a><span data-ttu-id="3d264-132">Obsługa stanu przy użyciu sesji</span><span class="sxs-lookup"><span data-stu-id="3d264-132">Maintain state with Session</span></span>
+
+<span data-ttu-id="3d264-133">Deweloperzy formularzy sieci Web mogą obsługiwać informacje o aktualnie działającym użytkowniku z <xref:Microsoft.AspNetCore.Http.ISession?displayProperty=nameWithType> obiektem dictionary.</span><span class="sxs-lookup"><span data-stu-id="3d264-133">Web Forms developers could maintain information about the currently acting user with the <xref:Microsoft.AspNetCore.Http.ISession?displayProperty=nameWithType> dictionary object.</span></span> <span data-ttu-id="3d264-134">Wystarczy dodać obiekt z kluczem ciągu do `Session` , a ten obiekt będzie dostępny w późniejszym czasie podczas interakcji użytkownika z aplikacją.</span><span class="sxs-lookup"><span data-stu-id="3d264-134">It's easy enough to add an object with a string key to the `Session`, and that object would be available at a later time during the user's interactions with the application.</span></span> <span data-ttu-id="3d264-135">Przy próbie wyeliminowania zarządzania współpracującego z protokołem HTTP, `Session` obiekt ułatwiający zachowanie stanu.</span><span class="sxs-lookup"><span data-stu-id="3d264-135">In an attempt to eliminate managing interacting with HTTP, the `Session` object made it easy to maintain state.</span></span>
+
+<span data-ttu-id="3d264-136">Sygnatura .NET Framework `Session` obiektu nie jest taka sama jak `Session` obiekt ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="3d264-136">The signature of the .NET Framework `Session` object isn't the same as the ASP.NET Core `Session` object.</span></span> <span data-ttu-id="3d264-137">Przed podjęciem decyzji o migracji i użyciu nowej funkcji stanu sesji należy wziąć pod uwagę [dokumentację nowej sesji ASP.NET Core](/dotnet/api/microsoft.aspnetcore.http.isession) .</span><span class="sxs-lookup"><span data-stu-id="3d264-137">Consider [the documentation for the new ASP.NET Core Session](/dotnet/api/microsoft.aspnetcore.http.isession) before deciding to migrate and use the new session state feature.</span></span>
+
+<span data-ttu-id="3d264-138">Sesja jest dostępna na serwerze ASP.NET Core i Blazor, ale nie zaleca się ich używania na rzecz przechowywania danych w repozytorium danych.</span><span class="sxs-lookup"><span data-stu-id="3d264-138">Session is available in ASP.NET Core and Blazor Server, but is discouraged from use in favor of storing data in a data repository appropriately.</span></span> <span data-ttu-id="3d264-139">Stan sesji nie działa również, gdy osoby odwiedzające odrzuciją używanie plików cookie protokołu HTTP w aplikacji ze względu na kwestie związane z ochroną prywatności.</span><span class="sxs-lookup"><span data-stu-id="3d264-139">Session state is also not functional if visitors decline the use HTTP cookies in your application due to privacy concerns.</span></span>
+
+<span data-ttu-id="3d264-140">Konfiguracja ASP.NET Core i stanu sesji jest dostępna w temacie [Zarządzanie sesjami i Stanami w ASP.NET Core artykule](/aspnet/core/fundamentals/app-state#session-state).</span><span class="sxs-lookup"><span data-stu-id="3d264-140">Configuration for ASP.NET Core and Session state is available in the [Session and state management in ASP.NET Core article](/aspnet/core/fundamentals/app-state#session-state).</span></span>
+
+## <a name="application-state"></a><span data-ttu-id="3d264-141">Stan aplikacji</span><span class="sxs-lookup"><span data-stu-id="3d264-141">Application state</span></span>
+
+<span data-ttu-id="3d264-142">`Application`Obiekt w strukturze formularzy sieci Web zawiera ogromne repozytorium żądania dla wielu żądań na potrzeby współpracy z konfiguracją i stanem zakresu aplikacji.</span><span class="sxs-lookup"><span data-stu-id="3d264-142">The `Application` object in the Web Forms framework provides a massive, cross-request repository for interacting with application-scope configuration and state.</span></span> <span data-ttu-id="3d264-143">Stan aplikacji to idealne miejsce do przechowywania różnych właściwości konfiguracji aplikacji, do których odwołują się wszystkie żądania, niezależnie od użytkownika wysyłającego żądanie.</span><span class="sxs-lookup"><span data-stu-id="3d264-143">Application state was an ideal place to store various application configuration properties that would be referenced by all requests, regardless of the user making the request.</span></span> <span data-ttu-id="3d264-144">Problem z `Application` obiektem był nietrwały na wielu serwerach.</span><span class="sxs-lookup"><span data-stu-id="3d264-144">The problem with the `Application` object was that data didn't persist across multiple servers.</span></span> <span data-ttu-id="3d264-145">Stan obiektu aplikacji został utracony między ponownymi uruchomieniami.</span><span class="sxs-lookup"><span data-stu-id="3d264-145">The state of the application object was lost between restarts.</span></span>
+
+<span data-ttu-id="3d264-146">W programie `Session` zaleca się, aby dane były przenoszone do trwałego magazynu zapasowego, do którego można uzyskać dostęp za pomocą wielu wystąpień serwera.</span><span class="sxs-lookup"><span data-stu-id="3d264-146">As with `Session`, it's recommended that data move to a persistent backing store that could be accessed by multiple server instances.</span></span> <span data-ttu-id="3d264-147">Jeśli istnieją nietrwałe dane, które mają być dostępne między żądaniami i użytkownikami, można je łatwo zapisać w pojedynczej usłudze, która może zostać wprowadzona do składników, które wymagają tych informacji lub interakcji.</span><span class="sxs-lookup"><span data-stu-id="3d264-147">If there is volatile data that you would like to be able to access across requests and users, you could easily store it in a singleton service that can be injected into components that require this information or interaction.</span></span>
+
+<span data-ttu-id="3d264-148">Konstrukcja obiektu do obsługi stanu aplikacji i jego zużycia może wyglądać podobnie do następującej implementacji:</span><span class="sxs-lookup"><span data-stu-id="3d264-148">The construction of an object to maintain application state and its consumption could resemble the following implementation:</span></span>
+
+```csharp
+public class MyApplicationState
+{
+    public int VisitorCounter { get; private set; } = 0;
+
+    public void IncrementCounter() => VisitorCounter += 1;
+}
+```
+
+```csharp
+app.AddSingleton<MyApplicationState>();
+```
+
+```razor
+@inject MyApplicationState AppState
+
+<label>Total Visitors: @AppState.VisitorCounter</label>
+```
+
+<span data-ttu-id="3d264-149">`MyApplicationState`Obiekt jest tworzony tylko raz na serwerze, a wartość `VisitorCounter` jest pobierana i wyprowadzana w etykiecie składnika.</span><span class="sxs-lookup"><span data-stu-id="3d264-149">The `MyApplicationState` object is created only once on the server, and the value `VisitorCounter` is fetched and output in the component's label.</span></span> <span data-ttu-id="3d264-150">`VisitorCounter`Wartość powinna być utrwalana i pobierana z magazynu danych zapasowych w celu zapewnienia trwałości i skalowalności.</span><span class="sxs-lookup"><span data-stu-id="3d264-150">The `VisitorCounter` value should be persisted and retrieved from a backing data store for durability and scalability.</span></span>
+
+## <a name="in-the-browser"></a><span data-ttu-id="3d264-151">W przeglądarce</span><span class="sxs-lookup"><span data-stu-id="3d264-151">In the browser</span></span>
+
+<span data-ttu-id="3d264-152">Dane aplikacji mogą być również przechowywane po stronie klienta na urządzeniu użytkownika, aby były dostępne w przyszłości.</span><span class="sxs-lookup"><span data-stu-id="3d264-152">Application data can also be stored client-side on the user's device so that is available later.</span></span> <span data-ttu-id="3d264-153">Istnieją dwie funkcje przeglądarki, które umożliwiają trwałość danych w różnych zakresach przeglądarki użytkownika:</span><span class="sxs-lookup"><span data-stu-id="3d264-153">There are two browser features that allow for persistence of data in different scopes of the user's browser:</span></span>
+
+- <span data-ttu-id="3d264-154">`localStorage`— zakres do całej przeglądarki użytkownika.</span><span class="sxs-lookup"><span data-stu-id="3d264-154">`localStorage` - scoped to the user's entire browser.</span></span> <span data-ttu-id="3d264-155">Jeśli strona zostanie ponownie załadowana, przeglądarka zostanie zamknięta i ponownie otwarta lub zostanie otwarta inna karta z tym samym adresem URL, a następnie `localStorage` jest on dostarczany przez przeglądarkę.</span><span class="sxs-lookup"><span data-stu-id="3d264-155">If the page is reloaded, the browser is closed and reopened, or another tab is opened with the same URL then the same `localStorage` is provided by the browser</span></span>
+- <span data-ttu-id="3d264-156">`sessionStorage`— zakres na bieżącą kartę przeglądarki użytkownika. Po ponownym załadowaniu karty stan będzie się utrzymywał.</span><span class="sxs-lookup"><span data-stu-id="3d264-156">`sessionStorage` - scoped to the user's current browser tab. If the tab is reloaded, the state persists.</span></span> <span data-ttu-id="3d264-157">Jednak jeśli użytkownik otworzy kolejną kartę do aplikacji lub zamknie i ponownie otworzy przeglądarkę, stan zostanie utracony.</span><span class="sxs-lookup"><span data-stu-id="3d264-157">However, if the user opens another tab to your application or closes and reopens the browser the state is lost.</span></span>
+
+<span data-ttu-id="3d264-158">Można napisać niestandardowy kod JavaScript w celu współdziałania z tymi funkcjami lub wiele pakietów NuGet, których można użyć w celu zapewnienia tej funkcji.</span><span class="sxs-lookup"><span data-stu-id="3d264-158">You can write some custom JavaScript code to interact with these features, or there are a number of NuGet packages that you can use that provide this functionality.</span></span> <span data-ttu-id="3d264-159">Jeden taki pakiet to [Microsoft. AspNetCore. ProtectedBrowserStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.ProtectedBrowserStorage).</span><span class="sxs-lookup"><span data-stu-id="3d264-159">One such package is [Microsoft.AspNetCore.ProtectedBrowserStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.ProtectedBrowserStorage).</span></span>
+
+<span data-ttu-id="3d264-160">Aby uzyskać instrukcje dotyczące korzystania z tego pakietu do współpracy z programem `localStorage` i `sessionStorage` , zobacz artykuł dotyczący [zarządzania stanem Blazor](/aspnet/core/blazor/state-management#protected-browser-storage-experimental-package) .</span><span class="sxs-lookup"><span data-stu-id="3d264-160">For instructions on utilizing this package to interact with `localStorage` and `sessionStorage`, see the [Blazor State Management](/aspnet/core/blazor/state-management#protected-browser-storage-experimental-package) article.</span></span>
 
 >[!div class="step-by-step"]
-><span data-ttu-id="448b5-105">[Poprzedni](pages-routing-layouts.md) 
-> [Dalej](forms-validation.md)</span><span class="sxs-lookup"><span data-stu-id="448b5-105">[Previous](pages-routing-layouts.md)
+><span data-ttu-id="3d264-161">[Poprzedni](pages-routing-layouts.md) 
+> [Dalej](forms-validation.md)</span><span class="sxs-lookup"><span data-stu-id="3d264-161">[Previous](pages-routing-layouts.md)
 [Next](forms-validation.md)</span></span>
