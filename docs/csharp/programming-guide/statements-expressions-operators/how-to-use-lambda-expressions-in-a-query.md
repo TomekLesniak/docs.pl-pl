@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
-ms.openlocfilehash: 501e67011707e2d165a3b9c1ff9f206db7f55448
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: ef8a7e3b4cd5302d6c928ad7ad81811797777b4a
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381635"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063253"
 ---
 # <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>Jak używać wyrażeń lambda w kwerendzie (Przewodnik programowania w języku C#)
 Wyrażenia lambda nie są używane bezpośrednio w składni zapytania, ale są używane w wywołaniach metod, a wyrażenia zapytań mogą zawierać wywołania metody. W rzeczywistości niektóre operacje zapytań można wyrazić tylko w składni metody. Aby uzyskać więcej informacji o różnicach między składnią zapytania i składnią metody, zobacz [składnia zapytań i składnia metod w LINQ](../concepts/linq/query-syntax-and-method-syntax-in-linq.md).  
@@ -30,7 +30,7 @@ Wyrażenia lambda nie są używane bezpośrednio w składni zapytania, ale są u
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
  Aby uruchomić ten kod, skopiuj i wklej metodę do `StudentClass` , która jest określona w [zapytaniu kolekcji obiektów](../../linq/query-a-collection-of-objects.md) i Wywołaj ją z `Main` metody.
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Wyrażenia lambda](./lambda-expressions.md)
+- [Wyrażenia lambda](../../language-reference/operators/lambda-expressions.md)
 - [Drzewa wyrażeń (C#)](../concepts/expression-trees/index.md)

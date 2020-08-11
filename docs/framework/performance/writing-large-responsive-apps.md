@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8b1c9ab25299fcbafca6aba7b13217713a941ce8
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 4a9f5d50ad78b2b0bef0ece3c4fce47d2925aca5
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475193"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063760"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Pisanie dużych i sprawnie działających aplikacji platformy .NET Framework
 
@@ -306,7 +306,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- W pierwszym wierszu [wyrażenie lambda](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) jest `s => s.Name == name` [zamykane](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures) na zmiennej lokalnej `name` . Oznacza to, że oprócz przydzielenia obiektu [delegata](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) `predicate` , który przechowuje, kod przydziela klasę statyczną do przechowywania środowiska, które przechwytuje wartość `name` . Kompilator generuje kod podobny do następującego:  
+ W pierwszym wierszu [wyrażenie lambda](../../csharp/language-reference/operators/lambda-expressions.md) jest `s => s.Name == name` [zamykane](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures) na zmiennej lokalnej `name` . Oznacza to, że oprócz przydzielenia obiektu [delegata](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) `predicate` , który przechowuje, kod przydziela klasę statyczną do przechowywania środowiska, które przechwytuje wartość `name` . Kompilator generuje kod podobny do następującego:  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  

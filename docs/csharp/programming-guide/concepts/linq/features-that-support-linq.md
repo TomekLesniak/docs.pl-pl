@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: f72b82180d794086dcea9f11a7a057dc26ab0b26
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 13254c69193e04ffcf11e3e23f1deb460063a6c1
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105422"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063695"
 ---
 # <a name="c-features-that-support-linq"></a>Funkcje C# obsługujące LINQ
 
@@ -83,7 +83,7 @@ select new {name = cust.Name, phone = cust.Phone};
 
 Aby uzyskać więcej informacji, zobacz [Typy anonimowe](../../classes-and-structs/anonymous-types.md).
 
-## <a name="extension-methods"></a>Metody rozszerzania
+## <a name="extension-methods"></a>Metody rozszerzeń
 
 Metoda rozszerzenia to metoda statyczna, która może być skojarzona z typem, tak aby można ją było wywołać tak, jakby była metodą wystąpienia w typie. Ta funkcja umożliwia, w efekcie, "dodać" nowe metody do istniejących typów bez ich faktycznego modyfikowania. Standardowe operatory zapytań to zestaw metod rozszerzających, które udostępniają funkcje zapytań LINQ dla dowolnego typu, który implementuje <xref:System.Collections.Generic.IEnumerable%601> .
 
@@ -97,10 +97,10 @@ Aby uzyskać więcej informacji, zobacz:
 
 - [Funkcje anonimowe](../../statements-expressions-operators/anonymous-functions.md)
 
-- [Wyrażenia lambda](../../statements-expressions-operators/lambda-expressions.md)
+- [Wyrażenia lambda](../../../language-reference/operators/lambda-expressions.md)
 
 - [Drzewa wyrażeń (C#)](../expression-trees/index.md)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Language-Integrated Query (LINQ) (C#)](./index.md)

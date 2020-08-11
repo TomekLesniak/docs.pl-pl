@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: 94e7c130bd5d8e136d03ccdbaed643bc1a47d112
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 2c1be56b67528c17a6cf1d8d8517817ff93b2aa5
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302168"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063641"
 ---
 # <a name="delegates-c-programming-guide"></a>Delegaty (Przewodnik programowania w języku C#)
 [Delegat](../../language-reference/builtin-types/reference-types.md) jest typem, który reprezentuje odwołania do metod z określoną listą parametrów i zwracanym typem. Podczas tworzenia wystąpienia delegata można skojarzyć jego wystąpienie z dowolną metodą mającą zgodny podpis i zwracany typ. Za pośrednictwem wystąpienia delegata można wywołać metodę.  
@@ -40,7 +40,7 @@ ms.locfileid: "87302168"
   
 - Metody nie muszą dokładnie pasować do typu delegata. Aby uzyskać więcej informacji, zobacz [Korzystanie z wariancji w delegatach](../concepts/covariance-contravariance/using-variance-in-delegates.md).  
   
-- W języku C# w wersji 2,0 wprowadzono koncepcję [metod anonimowych](../../language-reference/operators/delegate-operator.md), która umożliwia przekazywanie bloków kodu jako parametrów zamiast oddzielnie zdefiniowanej metody. W języku C# 3.0 wprowadzono wyrażenia lambda, które stanową wygodniejszy sposób pisania bloków kodu w tekście. Zarówno metody anonimowe, jak i wyrażenia lambda (w pewnych kontekstach) są kompilowane na typy delegatów. Te funkcje są obecnie nazywane łącznie funkcjami anonimowymi. Aby uzyskać więcej informacji na temat wyrażeń lambda, zobacz [lambda Expressions](../statements-expressions-operators/lambda-expressions.md).
+- W języku C# w wersji 2,0 wprowadzono koncepcję [metod anonimowych](../../language-reference/operators/delegate-operator.md), która umożliwia przekazywanie bloków kodu jako parametrów zamiast oddzielnie zdefiniowanej metody. W języku C# 3.0 wprowadzono wyrażenia lambda, które stanową wygodniejszy sposób pisania bloków kodu w tekście. Zarówno metody anonimowe, jak i wyrażenia lambda (w pewnych kontekstach) są kompilowane na typy delegatów. Te funkcje są obecnie nazywane łącznie funkcjami anonimowymi. Aby uzyskać więcej informacji na temat wyrażeń lambda, zobacz [lambda Expressions](../../language-reference/operators/lambda-expressions.md).
   
 ## <a name="in-this-section"></a>W tej sekcji  
   
@@ -65,7 +65,7 @@ Aby uzyskać więcej informacji, zobacz [Delegaty](~/_csharplang/spec/delegates.
   
  [Delegaty i zdarzenia](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) w [uczeniu C# 3,0: główne podstawy języka c# 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Delegate>
 - [Przewodnik programowania w języku C#](../index.md)

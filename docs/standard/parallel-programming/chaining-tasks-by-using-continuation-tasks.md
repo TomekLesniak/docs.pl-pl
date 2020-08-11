@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 132518b9d8d22efecfcf3ed14e8b5969aa768cd4
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: d42d244e644bf3ee1f45b25a71d60bbb2ef8e590
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024592"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063838"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>Tworzenie łańcuchów zadań przy użyciu zadań kontynuacji
 
@@ -52,7 +52,7 @@ Należy utworzyć kontynuację, która jest wykonywana po zakończeniu poprzedza
 
 Możesz również utworzyć kontynuację, która będzie uruchamiana po zakończeniu dowolnej lub wszystkich grup zadań. Aby wykonać kontynuację po zakończeniu wszystkich zadań poprzedzających, należy wywołać metodę static ( `Shared` in Visual Basic) <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> lub <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> metodę wystąpienia. Aby wykonać kontynuację, gdy którekolwiek z zadań poprzedzających zostało zakończone, należy wywołać metodę static ( `Shared` in Visual Basic) <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> lub metodę wystąpienia <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A?displayProperty=nameWithType> .
 
-Należy zauważyć, że wywołania <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> i <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> przeciążenia nie blokują wątku wywołującego. Jednak zazwyczaj wywołują wszystkie metody, ale <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> i, <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> Aby pobrać zwracaną <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> Właściwość, która blokuje wątek wywołujący.
+Wywołania <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> i <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> przeciążenia nie blokują wątku wywołującego. Jednak zazwyczaj wywołują wszystkie metody, ale <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> i, <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> Aby pobrać zwracaną <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> Właściwość, która blokuje wątek wywołujący.
 
 Poniższy przykład wywołuje <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> metodę w celu utworzenia zadania kontynuacji, które odzwierciedla wyniki jego 10 poprzedzających zadań. Każde zadanie poprzedzające ma wartość indeksu, która należy do zakresu od 1 do 10. Jeśli poprzedzające pomyślne zakończenie (ich <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> Właściwość to <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> ), <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> Właściwość kontynuacji jest tablicą <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> wartości zwracanych przez każde poprzedzające. Przykład dodaje je do obliczenia sumy kwadratów dla wszystkich liczb z zakresu od 1 do 10.
 
@@ -88,7 +88,7 @@ Jeśli chcesz, aby kontynuacja była uruchamiana, nawet jeśli poprzednik nie zo
 
 <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType>Właściwość kontynuacji jest ustawiana na <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> w następujących sytuacjach:
 
-- Zgłasza <xref:System.OperationCanceledException> wyjątek w odpowiedzi na żądanie anulowania. Podobnie jak w przypadku każdego zadania, jeśli wyjątek zawiera ten sam token, który został przekazano do kontynuacji, jest traktowany jako potwierdzenie dla spółdzielni.
+- Zgłasza <xref:System.OperationCanceledException> wyjątek w odpowiedzi na żądanie anulowania. Podobnie jak w przypadku każdego zadania, jeśli wyjątek zawiera ten sam token, który został przekazano do kontynuacji, jest traktowany jako potwierdzenie anulowania spółdzielni.
 - Kontynuacja jest przenoszona, <xref:System.Threading.CancellationToken?displayProperty=nameWithType> której <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> Właściwość jest `true` . W takim przypadku kontynuacja nie zostanie uruchomiona i przechodzi do <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stanu.
 - Kontynuacja nigdy nie działa, ponieważ warunek ustawiony przez jego <xref:System.Threading.Tasks.TaskContinuationOptions> argument nie został spełniony. Na przykład jeśli poprzednika przejdzie do <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> stanu, jego kontynuacja, która została przeniesiona, <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnFaulted?displayProperty=nameWithType> nie zostanie uruchomiona, ale przejdzie do <xref:System.Threading.Tasks.TaskStatus.Canceled> stanu.
 

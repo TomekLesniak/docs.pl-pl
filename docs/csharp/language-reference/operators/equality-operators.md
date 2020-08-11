@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 47e550226cdef31c82b30348d779207200f32b90
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 33215e2440b14fb888a6f0df5c220c891ebed0e2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916840"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063097"
 ---
 # <a name="equality-operators-c-reference"></a>Operatory równości (odwołanie w C#)
 
@@ -69,7 +69,7 @@ Dwa operandy [delegatów](../../programming-guide/delegates/index.md) tego sameg
 
 Aby uzyskać więcej informacji, zobacz sekcję [delegowanie operatorów równości](~/_csharplang/spec/expressions.md#delegate-equality-operators) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-Delegaty wytwarzane z oceny semantycznie identycznych [wyrażeń lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nie są równe, jak pokazano w poniższym przykładzie:
+Delegaty wytwarzane z oceny semantycznie identycznych [wyrażeń lambda](lambda-expressions.md) nie są równe, jak pokazano w poniższym przykładzie:
 
 [!code-csharp-interactive[from identical lambdas](snippets/shared/EqualityOperators.cs#IdenticalLambdas)]
 

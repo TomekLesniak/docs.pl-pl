@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: bf4725f3f636bb208450cb9b5c58766d84947f86
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 76f0e2eccb5d1a59d9aaa3eed11b25dd2dd9cac3
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302948"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063006"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Przewodnik: Programowanie Office (C# i Visual Basic)
 
@@ -125,7 +125,7 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 
 ### <a name="to-invoke-displayinexcel"></a>Aby wywołać DisplayInExcel
 
-1. Dodaj następujący kod na końcu `ThisAddIn_StartUp` metody. Wywołanie `DisplayInExcel` zawiera dwa argumenty. Pierwszy argument to nazwa listy kont do przetworzenia. Drugi argument jest wielowierszowym wyrażeniem lambda, które definiuje sposób przetwarzania danych. `ID`Wartości i `balance` dla każdego konta są wyświetlane w sąsiednich komórkach, a wiersz jest wyświetlany na czerwono, jeśli saldo jest mniejsze od zera. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+1. Dodaj następujący kod na końcu `ThisAddIn_StartUp` metody. Wywołanie `DisplayInExcel` zawiera dwa argumenty. Pierwszy argument to nazwa listy kont do przetworzenia. Drugi argument jest wielowierszowym wyrażeniem lambda, które definiuje sposób przetwarzania danych. `ID`Wartości i `balance` dla każdego konta są wyświetlane w sąsiednich komórkach, a wiersz jest wyświetlany na czerwono, jeśli saldo jest mniejsze od zera. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../language-reference/operators/lambda-expressions.md).
 
      [!code-csharp[csOfficeWalkthrough#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#9)]
 
@@ -190,7 +190,7 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 
 8. W programie Visual Studio kliknij pozycję **Wyczyść rozwiązanie** w menu **kompilacja** , aby wyczyścić ukończony projekt.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Właściwości zaimplementowane automatycznie (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
 - [Właściwości zaimplementowane przez autoimplementację (C#)](../classes-and-structs/auto-implemented-properties.md)
@@ -200,10 +200,10 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 - [Przekazywanie argumentów według pozycji i według nazwy](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)
 - [Argumenty nazwane i opcjonalne](../classes-and-structs/named-and-optional-arguments.md)
 - [Wczesne i późne powiązania](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [dynamic](../../language-reference/builtin-types/reference-types.md)
+- [dynamiczna](../../language-reference/builtin-types/reference-types.md)
 - [Używanie typu dynamicznego](../types/using-type-dynamic.md)
 - [Lambda — Wyrażenia (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
-- [Wyrażenia lambda (C#)](../statements-expressions-operators/lambda-expressions.md)
+- [Wyrażenia lambda (C#)](../../language-reference/operators/lambda-expressions.md)
 - [Używanie właściwości indeksowanych w programowaniu usługi międzyoperacyjnej modelu COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
 - [Przewodnik: osadzanie informacji o typie z zestawów Microsoft Office w programie Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
 - [Przewodnik: osadzanie typów z zarządzanych zestawów](../../../standard/assembly/embed-types-visual-studio.md)

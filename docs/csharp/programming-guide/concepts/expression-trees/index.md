@@ -3,12 +3,12 @@ title: Drzewa wyrażeń (C#)
 description: Dowiedz się więcej na temat drzew wyrażeń. Zapoznaj się z tematem kompilowania i uruchamiania kodu reprezentowanego przez te struktury danych, gdzie każdy węzeł jest wyrażeniem.
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: 2fa8577dd945650edebf84459de10c0c3bd04225
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a5c84673f0b45b92be18b955a6d1e7268bb73c26
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105577"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063318"
 ---
 # <a name="expression-trees-c"></a>Drzewa wyrażeń (C#)
 Drzewa wyrażeń reprezentują kod w strukturze danych przypominającej drzewo, gdzie każdy węzeł jest wyrażeniem, na przykład wywołaniem metody lub operacją binarną, taką jak `x < y` .  
@@ -22,7 +22,7 @@ Drzewa wyrażeń reprezentują kod w strukturze danych przypominającej drzewo, 
 ## <a name="creating-expression-trees-from-lambda-expressions"></a>Tworzenie drzew wyrażeń na podstawie wyrażeń lambda  
  Gdy wyrażenie lambda jest przypisane do zmiennej typu <xref:System.Linq.Expressions.Expression%601> , kompilator emituje kod w celu skompilowania drzewa wyrażenia, które reprezentuje wyrażenie lambda.  
   
- Kompilator języka C# może generować drzewa wyrażeń tylko z wyrażeń lambda (lub jednowierszowych wyrażeń lambda). Nie można analizować instrukcji lambda (lub wielowierszowych wyrażeń lambda). Aby uzyskać więcej informacji na temat wyrażeń lambda w języku C#, zobacz [lambda Expressions](../../statements-expressions-operators/lambda-expressions.md).  
+ Kompilator języka C# może generować drzewa wyrażeń tylko z wyrażeń lambda (lub jednowierszowych wyrażeń lambda). Nie można analizować instrukcji lambda (lub wielowierszowych wyrażeń lambda). Aby uzyskać więcej informacji na temat wyrażeń lambda w języku C#, zobacz [lambda Expressions](../../../language-reference/operators/lambda-expressions.md).  
   
  W poniższym przykładzie kodu pokazano, jak utworzyć kompilator języka C#, który reprezentuje wyrażenie lambda `num => num < 5` .  
   
@@ -148,11 +148,11 @@ Console.WriteLine(expr.Compile()(4));
   
  Aby uzyskać więcej informacji, zobacz [jak wykonywać drzewa wyrażeń (C#)](./how-to-execute-expression-trees.md).
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Linq.Expressions>
 - [Wykonywanie drzew wyrażeń (C#)](./how-to-execute-expression-trees.md)
 - [Jak zmodyfikować drzewa wyrażeń (C#)](./how-to-modify-expression-trees.md)
-- [Wyrażenia lambda](../../statements-expressions-operators/lambda-expressions.md)
+- [Wyrażenia lambda](../../../language-reference/operators/lambda-expressions.md)
 - [Omówienie środowiska uruchomieniowego języka dynamicznego](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
 - [Koncepcje programowania (C#)](../index.md)

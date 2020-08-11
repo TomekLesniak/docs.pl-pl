@@ -3,12 +3,12 @@ title: Historia języka C# — Przewodnik c#
 description: Jak wygląda ten język we wcześniejszych wersjach i jak został on rozwijający od?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: 96d6e07d5553d65e95144a0cede7cab86b4c5ef7
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: b5c320e4c55803547fa44793a46e4a3da65bd0cb
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556856"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063474"
 ---
 # <a name="the-history-of-c"></a>Historia języka C\#
 
@@ -41,7 +41,7 @@ Główne funkcje języka C# 1,0:
 - [Interfejsy](../programming-guide/interfaces/index.md)
 - [Zdarzenia](../events-overview.md)
 - [Właściwości](../properties.md)
-- [Delegaci](../delegates-overview.md)
+- [Delegaty](../delegates-overview.md)
 - [Operatory i wyrażenia](../language-reference/operators/index.md)
 - [Instrukcje](../programming-guide/statements-expressions-operators/statements.md)
 - [Atrybuty](../programming-guide/concepts/attributes/index.md)
@@ -83,7 +83,7 @@ Język C# w wersji 3,0 znajduje się w późnej 2007, wraz z programem Visual St
 - [Właściwości zaimplementowane wstępnie](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [Typy anonimowe](../programming-guide/classes-and-structs/anonymous-types.md)
 - [Wyrażenia zapytań](../linq/query-expression-basics.md)
-- [Wyrażenia lambda](../programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [Wyrażenia lambda](../language-reference/operators/lambda-expressions.md)
 - [Drzewa wyrażeń](../expression-trees.md)
 - [Metody rozszerzające](../programming-guide/classes-and-structs/extension-methods.md)
 - [Niejawnie wpisane zmienne lokalne](../language-reference/keywords/var.md)

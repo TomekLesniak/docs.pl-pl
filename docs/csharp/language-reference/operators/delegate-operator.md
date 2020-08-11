@@ -4,12 +4,12 @@ ms.date: 07/18/2019
 helpviewer_keywords:
 - delegate [C#]
 - anonymous method [C#]
-ms.openlocfilehash: f7cd7caf11d9f076a5d6e82aae696c914bd60e44
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 33c438b88f1e993f4648786da9b20b91961b7ee1
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916847"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062993"
 ---
 # <a name="delegate-operator-c-reference"></a>Delegate — operator (odwołanie w C#)
 
@@ -22,7 +22,7 @@ ms.locfileid: "87916847"
 >
 > [!code-csharp-interactive[lambda expression](snippets/shared/DelegateOperator.cs#Lambda)]
 >
-> Aby uzyskać więcej informacji na temat funkcji wyrażeń lambda, na przykład przechwytywania zmiennych zewnętrznych, zobacz [lambda Expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md).
+> Aby uzyskać więcej informacji na temat funkcji wyrażeń lambda, na przykład przechwytywania zmiennych zewnętrznych, zobacz [lambda Expressions](lambda-expressions.md).
 
 Gdy używasz `delegate` operatora, możesz pominąć listę parametrów. W takim przypadku utworzona Metoda anonimowa może zostać przekonwertowana na typ delegata z dowolną listą parametrów, co ilustruje poniższy przykład:
 

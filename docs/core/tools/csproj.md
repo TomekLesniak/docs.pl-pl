@@ -1,13 +1,14 @@
 ---
 title: Dodatki do formatu csproj dla platformy .NET Core
 description: Dowiedz się więcej o różnicach między istniejącymi a plikami csproj programu .NET Core
+ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: a0cbead27e52af3114d9c44fd19c966e665a2850
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: 4f45362fbb3df053b95156b8e633903f011a85ad
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87427011"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062876"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatki do formatu csproj dla platformy .NET Core
 
@@ -43,7 +44,7 @@ Ponieważ `Microsoft.NETCore.App` lub `NETStandard.Library` pakiety są niejawni
 
 Większość zastosowań [`<PackageReference>`](#packagereference) wymaga ustawienia `Version` atrybutu w celu określenia wersji pakietu NuGet do użycia. W przypadku korzystania z platformy .NET Core 2,1 lub 2,2 i odwoływania się do [Microsoft. AspNetCore. app](/aspnet/core/fundamentals/metapackage-app) lub [Microsoft. AspNetCore. All](/aspnet/core/fundamentals/metapackage), jednak atrybut jest zbędny. Zestaw .NET Core SDK może automatycznie wybrać wersję tych pakietów, które mają być używane.
 
-### <a name="recommendation"></a>Zalecenie
+### <a name="recommendation"></a>Rekomendacja
 
 W przypadku odwoływania się do `Microsoft.AspNetCore.App` `Microsoft.AspNetCore.All` pakietów lub nie należy określać ich wersji. Jeśli określona jest wersja, zestaw SDK może generować ostrzeżenie NETSDK1071. Aby usunąć to ostrzeżenie, Usuń wersję pakietu, taką jak w poniższym przykładzie:
 
@@ -72,8 +73,8 @@ W poniższej tabeli przedstawiono, który element i które [elementy globalne](h
 
 | Element           | Uwzględnij globalizowania                              | Wyklucz globalizowania                                                  | Usuń globalizowania              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Opracowania           | \*\*/\*. cs (lub inne rozszerzenia językowe) | \*\*/\*Użytkownicy  \*\*/\*.\* proj  \*\*/\*. sln  \*\*/\*. vssscc  | Brak                      |
-| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*Użytkownicy \*\*/\*.\* proj \*\*/\*. sln \*\*/\*. vssscc     | Brak                      |
+| Opracowania           | \*\*/\*. cs (lub inne rozszerzenia językowe) | \*\*/\*Użytkownicy  \*\*/\*.\* proj  \*\*/\*. sln  \*\*/\*. vssscc  | Nie dotyczy                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*Użytkownicy \*\*/\*.\* proj \*\*/\*. sln \*\*/\*. vssscc     | Nie dotyczy                      |
 | Brak              | \*\*/\*                                   | \*\*/\*Użytkownicy \*\*/\*.\* proj \*\*/\*. sln \*\*/\*. vssscc     | \*\*/\*Rejestr \*\*/\*. resx   |
 
 > [!NOTE]

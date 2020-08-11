@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: e2127b91efb5a77497ce22e0f2934fab98f015af
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 6db16a86e949fb50254c301f5e5ac0904a6072a4
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473880"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063602"
 ---
 # <a name="c-programming-guide"></a>Przewodnik programowania w języku C#
 
@@ -35,13 +35,13 @@ Ta sekcja zawiera szczegółowe informacje na temat kluczowych funkcji języka C
 
 [Instrukcje, wyrażenia i operatory](./statements-expressions-operators/index.md)  
 
- [Typy](./types/index.md)  
+ [Types](./types/index.md)  
 
  [Klasy i struktury](./classes-and-structs/index.md)  
   
  [Interfejsy](./interfaces/index.md)  
 
- [Delegaci](./delegates/index.md)  
+ [Delegaty](./delegates/index.md)  
 
  [Tablice](./arrays/index.md)  
   
@@ -59,9 +59,7 @@ Ta sekcja zawiera szczegółowe informacje na temat kluczowych funkcji języka C
   
  [Wyrażenia zapytania LINQ](../linq/index.md)  
   
- [Wyrażenia lambda](./statements-expressions-operators/lambda-expressions.md)  
-  
- [Przestrzenie nazw](./namespaces/index.md)  
+ [Namespaces](./namespaces/index.md)  
   
  [Niebezpieczny kod i wskaźniki](./unsafe-code-pointers/index.md)  
   

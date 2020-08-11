@@ -1,5 +1,5 @@
 ---
-title: Typy struktury — odwołanie do języka C#
+title: Typy struktur — odwołanie w C#
 ms.date: 04/21/2020
 f1_keywords:
 - struct_CSharpKeyword
@@ -8,140 +8,140 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: dbe9b47625589de834b7a8021640885ca0920b96
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 515b8d9adc1359581625f0d822e254d2c1df3b58
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "82021271"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062499"
 ---
-# <a name="structure-types-c-reference"></a>Typy struktury (odwołanie do języka C#)
+# <a name="structure-types-c-reference"></a>Typy struktur (odwołanie w C#)
 
-*Typ struktury* (lub *typ struktury*) jest [typem wartości,](value-types.md) który może hermetyzować dane i powiązane funkcje. Słowo `struct` kluczowe służy do definiowania typu struktury:
+*Typ struktury* (lub *Typ struktury*) jest [typem wartości](value-types.md) , który może hermetyzować dane i powiązane funkcje. Użyj `struct` słowa kluczowego, aby zdefiniować typ struktury:
 
 [!code-csharp[struct example](snippets/StructType.cs#StructExample)]
 
-Typy struktur mają *semantykę wartości*. Oznacza to, że zmienna typu struktury zawiera wystąpienie typu. Domyślnie wartości zmiennych są kopiowane przy przypisywaniu, przekazywaniu argumentu do metody i zwracaniu wyniku metody. W przypadku zmiennej typu struktury kopiowane jest wystąpienie typu. Aby uzyskać więcej informacji, zobacz [Typy wartości](value-types.md).
+Typy struktury mają *semantykę wartości*. Oznacza to, że zmienna typu struktury zawiera wystąpienie typu. Domyślnie wartości zmiennych są kopiowane przy przypisywaniu, przekazywanie argumentu do metody i zwracanie wyniku metody. W przypadku zmiennej typu struktury jest kopiowane wystąpienie typu. Aby uzyskać więcej informacji, zobacz [typy wartości](value-types.md).
 
-Zazwyczaj typy struktury służy do projektowania małych typów zorientowanych na dane, które zapewniają niewielkie lub żadne zachowanie. Na przykład .NET używa typów struktury do reprezentowania liczby [(zarówno liczby całkowitej,](integral-numeric-types.md) jak i [rzeczywistej),](floating-point-numeric-types.md) [wartości logicznej,](bool.md) [znaku Unicode,](char.md) [wystąpienia czasu](xref:System.DateTime). Jeśli koncentrujesz się na zachowaniu typu, rozważ zdefiniowanie [klasy](../keywords/class.md). Typy klas mają *semantykę odwołań*. Oznacza to, że zmienna typu klasy zawiera odwołanie do wystąpienia typu, a nie samego wystąpienia.
+Zwykle typy struktury umożliwiają projektowanie małych typów skoncentrowanych na danych, które zapewniają niewielki lub nie zachowanie. Na przykład program .NET używa typów struktury do reprezentowania liczby (zarówno [liczby całkowitej](integral-numeric-types.md) , jak i [rzeczywistej](floating-point-numeric-types.md)), [wartości logicznej](bool.md), [znaku Unicode](char.md)i [wystąpienia czasu](xref:System.DateTime). Jeśli planujesz zachowanie typu, rozważ zdefiniowanie [klasy](../keywords/class.md). Typy klas mają *semantykę odwołań*. Oznacza to, że zmienna typu klasy zawiera odwołanie do wystąpienia typu, a nie samego wystąpienia.
 
-Ponieważ typy struktur mają semantykę wartości, zaleca się definiowanie typów struktur *niezmiennych.*
+Ponieważ typy struktury mają semantykę wartości, zalecamy zdefiniowanie *niezmiennych* typów struktury.
 
-## <a name="readonly-struct"></a>`readonly`Struct
+## <a name="readonly-struct"></a>`readonly`konstrukcja
 
-Począwszy od języka C# 7.2, można użyć `readonly` modyfikatora, aby zadeklarować, że typ struktury jest niezmienne:
+Począwszy od języka C# 7,2, używasz `readonly` modyfikatora, aby zadeklarować, że typ struktury jest niezmienny:
 
 [!code-csharp[readonly struct](snippets/StructType.cs#ReadonlyStruct)]
 
-Wszystkie elementy członkowskie `readonly` danych struktury muszą być tylko do odczytu w następujący sposób:
+Wszystkie elementy członkowskie danych `readonly` struktury muszą być tylko do odczytu w następujący sposób:
 
-- Każda deklaracja pola musi mieć [ `readonly` modyfikator](../keywords/readonly.md)
-- Wszelkie właściwości, w tym te zaimplementowane automatycznie, muszą być
+- Dowolna deklaracja pola musi mieć [ `readonly` modyfikator](../keywords/readonly.md)
+- Wszystkie właściwości, w tym implementowane przez siebie, muszą być tylko do odczytu
 
-Gwarantuje to, że `readonly` żaden element członkowski struktury modyfikuje stan struktury.
+Gwarantuje to, że żaden element członkowski `readonly` struktury nie modyfikuje stanu struktury.
 
 > [!NOTE]
-> `readonly` W strukturze element członkowski danych typu odwołania modyfikowalne nadal można mutować swój własny stan. Na przykład nie można zastąpić <xref:System.Collections.Generic.List%601> wystąpienia, ale można dodać do niego nowe elementy.
+> W `readonly` strukturze element członkowski danych modyfikowalnego typu referencyjnego nadal może mieć własny stan. Na przykład nie można zastąpić <xref:System.Collections.Generic.List%601> wystąpienia, ale można dodać do niego nowe elementy.
 
 ## <a name="readonly-instance-members"></a>`readonly`elementy członkowskie wystąpienia
 
-Począwszy od języka C# 8.0, można również użyć `readonly` modyfikatora do deklarowania, że element członkowski wystąpienia nie modyfikuje stanu struktury. Jeśli nie można zadeklarować cały `readonly`typ struktury `readonly` jako , użyj modyfikatora, aby oznaczyć elementy członkowskie wystąpienia, które nie modyfikują stan struktury. W `readonly` strukturze każdy element członkowski `readonly`instancji jest niejawnie .
+Począwszy od języka C# 8,0, można również użyć `readonly` modyfikatora, aby zadeklarować, że element członkowski wystąpienia nie modyfikuje stanu struktury. Jeśli nie można zadeklarować całościowego typu struktury jako `readonly` , użyj `readonly` modyfikatora, aby oznaczyć elementy członkowskie wystąpienia, które nie modyfikują stanu struktury. W `readonly` strukturze każdy element członkowski wystąpienia jest niejawnie `readonly` .
 
-W `readonly` obrębie elementu członkowskiego wystąpienia nie można przypisać do pól wystąpienia struktury. Jednak `readonly` członek może wywołać`readonly` non-element członkowski. W takim przypadku kompilator tworzy kopię wystąpienia struktury`readonly` i wywołuje non-element członkowski na tej kopii. W rezultacie oryginalne wystąpienie struktury nie jest modyfikowany.
+W obrębie `readonly` elementu członkowskiego wystąpienia nie można przypisać do pól wystąpienia struktury. Jednak `readonly` element członkowski może wywołać element niebędący `readonly` członkiem. W takim przypadku kompilator tworzy kopię wystąpienia struktury i wywołuje element, który nie należy do `readonly` tej kopii. W związku z tym oryginalne wystąpienie struktury nie jest modyfikowane.
 
-Zazwyczaj `readonly` modyfikator jest stosowany do następujących rodzajów elementów członkowskich wystąpienia:
+Zazwyczaj należy zastosować `readonly` modyfikator do następujących rodzajów elementów członkowskich wystąpienia:
 
-- Metody:
+- form
 
   [!code-csharp[readonly method](snippets/StructType.cs#ReadonlyMethod)]
 
-  `readonly` Modyfikator można również zastosować do metod, które <xref:System.Object?displayProperty=nameWithType>zastępują metody zadeklarowane w:
+  Można również zastosować `readonly` modyfikator do metod, które zastępują metody zadeklarowane w <xref:System.Object?displayProperty=nameWithType> :
 
   [!code-csharp[readonly override](snippets/StructType.cs#ReadonlyOverride)]
 
-- właściwości i indeksatory:
+- Właściwości i indeksatory:
 
   [!code-csharp[readonly property get](snippets/StructType.cs#ReadonlyProperty)]
 
-  Jeśli musisz zastosować `readonly` modyfikator do obu akcesorów właściwości lub indeksatora, zastosuj go w oświadczeniu właściwości lub indeksatora.
+  Jeśli musisz zastosować `readonly` modyfikator do obu metod dostępu właściwości lub indeksatora, zastosuj go w deklaracji właściwości lub indeksatora.
 
   > [!NOTE]
-  > Kompilator deklaruje `get` akcesor [właściwości automatycznie implementowane](../../programming-guide/classes-and-structs/auto-implemented-properties.md) jako `readonly`, `readonly` niezależnie od obecności modyfikatora w deklaracji właściwości.
+  > Kompilator deklaruje `get` metodę dostępu do właściwości, która jest [zaimplementowana](../../programming-guide/classes-and-structs/auto-implemented-properties.md) `readonly` , niezależnie od obecności `readonly` modyfikatora w deklaracji właściwości.
 
-`readonly` Modyfikator nie może być stosowany do statycznych elementów członkowskich typu struktury.
+Nie można zastosować `readonly` modyfikatora do statycznych elementów członkowskich typu struktury.
 
-Kompilator może korzystać `readonly` z modyfikatora do optymalizacji wydajności. Aby uzyskać więcej informacji, zobacz [Pisanie bezpiecznego i wydajnego kodu języka C#.](../../write-safe-efficient-code.md)
+Kompilator może używać `readonly` modyfikatora na potrzeby optymalizacji wydajności. Aby uzyskać więcej informacji, zobacz [Zapisywanie bezpiecznego i wydajnego kodu w języku C#](../../write-safe-efficient-code.md).
 
-## <a name="limitations-with-the-design-of-a-structure-type"></a>Ograniczenia związane z projektowaniem typu konstrukcji
+## <a name="limitations-with-the-design-of-a-structure-type"></a>Ograniczenia dotyczące projektowania typu struktury
 
-Podczas projektowania typu struktury, masz takie same możliwości jak w przypadku typu [klasy,](../keywords/class.md) z następującymi wyjątkami:
+Podczas projektowania typu struktury można korzystać z takich samych możliwości jak w przypadku typu [klasy](../keywords/class.md) , z następującymi wyjątkami:
 
-- Nie można zadeklarować konstruktora bez parametrów. Każdy typ struktury już zapewnia niejawne bez parametrów konstruktora, który tworzy [wartość domyślną](default-values.md) typu.
+- Nie można zadeklarować konstruktora bez parametrów. Każdy typ struktury zawiera już niejawny Konstruktor bez parametrów, który generuje [wartość domyślną](default-values.md) typu.
 
-- Nie można zainicjować pola wystąpienia lub właściwości w jego deklaracji. Można jednak zainicjować pole [statyczne](../keywords/static.md) lub [const](../keywords/const.md) lub właściwość statyczną w jego deklaracji.
+- Nie można zainicjować pola wystąpienia lub właściwości w swojej deklaracji. Można jednak zainicjować pole [static](../keywords/static.md) lub [const](../keywords/const.md) lub właściwość statyczną w swojej deklaracji.
 
-- Konstruktor typu struktury musi zainicjować wszystkie pola wystąpienia typu.
+- Konstruktor typu struktury musi inicjować wszystkie pola wystąpienia typu.
 
-- Typ struktury nie może dziedziczyć z innej klasy lub typu struktury i nie może być podstawą klasy. Jednak typ struktury można zaimplementować [interfejsy](../keywords/interface.md).
+- Typ struktury nie może dziedziczyć z innego typu klasy lub struktury i nie może być podstawą klasy. Jednak typ struktury może implementować [interfejsy](../keywords/interface.md).
 
-- Nie można zadeklarować [finalizatora](../../programming-guide/classes-and-structs/destructors.md) w ramach typu struktury.
+- Nie można zadeklarować [finalizatora](../../programming-guide/classes-and-structs/destructors.md) w obrębie typu struktury.
 
 ## <a name="instantiation-of-a-structure-type"></a>Tworzenie wystąpienia typu struktury
 
-W języku C#należy zainicjować zadeklarowaną zmienną, zanim będzie można jej użyć. Ponieważ zmienna typu struktury nie `null` może być (chyba że jest to zmienna [typu wartości nullable),](nullable-value-types.md)należy utworzyć wystąpienie odpowiedniego typu. Istnieje kilka sposobów, aby to zrobić.
+W języku C# należy zainicjować zadeklarowaną zmienną, zanim będzie można jej użyć. Ponieważ zmienna typu struktury nie może być `null` (chyba że jest to zmienna [typu wartości null](nullable-value-types.md)), należy utworzyć wystąpienie odpowiedniego typu. Istnieje kilka sposobów, aby to zrobić.
 
-Zazwyczaj można utworzyć wystąpienia typu struktury, wywołując odpowiedni konstruktor z operatorem. [`new`](../operators/new-operator.md) Każdy typ struktury ma co najmniej jeden konstruktor. Jest to niejawny konstruktor bez parametrów, który tworzy [wartość domyślną](default-values.md) typu. Można również użyć [wyrażenia wartości domyślnej,](../operators/default.md) aby utworzyć wartość domyślną typu.
+Zazwyczaj tworzysz typ struktury, wywołując odpowiedni Konstruktor z [`new`](../operators/new-operator.md) operatorem. Każdy typ struktury ma co najmniej jednego konstruktora. Jest to niejawny Konstruktor bez parametrów, który tworzy [wartość domyślną](default-values.md) typu. Można również użyć [domyślnego wyrażenia wartości](../operators/default.md) , aby utworzyć wartość domyślną typu.
 
-Jeśli wszystkie pola wystąpienia typu struktury są dostępne, można również `new` utworzyć wystąpienia bez operatora. W takim przypadku należy zainicjować wszystkie pola wystąpienia przed pierwszym użyciem wystąpienia. W poniższym przykładzie pokazano, jak to zrobić:
+Jeśli wszystkie pola wystąpienia typu struktury są dostępne, można również utworzyć wystąpienie go bez `new` operatora. W takim przypadku należy zainicjować wszystkie pola wystąpienia przed pierwszym użyciem wystąpienia. Poniższy przykład pokazuje, jak to zrobić:
 
 [!code-csharp[without new](snippets/StructType.cs#WithoutNew)]
 
-W przypadku [wbudowanych typów wartości](value-types.md#built-in-value-types)użyj odpowiednich literałów, aby określić wartość typu.
+W przypadku [wbudowanych typów wartości](value-types.md#built-in-value-types)Użyj odpowiednich literałów, aby określić wartość typu.
 
 ## <a name="passing-structure-type-variables-by-reference"></a>Przekazywanie zmiennych typu struktury przez odwołanie
 
-Po przedaniu zmiennej typu struktury do metody jako argument lub zwracaniu wartości typu struktury z metody, kopiowane jest całe wystąpienie typu struktury. Może to mieć wpływ na wydajność kodu w scenariuszach o wysokiej wydajności, które obejmują duże typy struktur. Można uniknąć kopiowania wartości, przekazując zmienną typu struktury przez odwołanie. Użyj [`ref`](../keywords/ref.md#passing-an-argument-by-reference)modyfikatorów parametrów , [`out`](../keywords/out-parameter-modifier.md)lub [`in`](../keywords/in-parameter-modifier.md) metody, aby wskazać, że argument musi być przekazywany przez odwołanie. Użyj [ref zwraca,](../../programming-guide/classes-and-structs/ref-returns.md) aby zwrócić wynik metody przez odwołanie. Aby uzyskać więcej informacji, zobacz [Pisanie bezpiecznego i wydajnego kodu języka C#.](../../write-safe-efficient-code.md)
+W przypadku przekazania zmiennej typu struktury do metody jako argumentu lub zwrócenia wartości typu struktury z metody, kopiowane jest całe wystąpienie typu struktury. To może mieć wpływ na wydajność kodu w scenariuszach o wysokiej wydajności, które obejmują duże typy struktury. Można uniknąć kopiowania wartości przez przekazanie zmiennej typu struktury przez odwołanie. Użyj [`ref`](../keywords/ref.md#passing-an-argument-by-reference) [`out`](../keywords/out-parameter-modifier.md) [`in`](../keywords/in-parameter-modifier.md) modyfikatorów parametrów,, lub metody, aby wskazać, że argument musi być przekazaniem przez odwołanie. Użyj funkcji [ref](../../programming-guide/classes-and-structs/ref-returns.md) Returns, aby zwrócić wynik metody przez odwołanie. Aby uzyskać więcej informacji, zobacz [Zapisywanie bezpiecznego i wydajnego kodu w języku C#](../../write-safe-efficient-code.md).
 
-## <a name="ref-struct"></a>`ref`Struct
+## <a name="ref-struct"></a>`ref`konstrukcja
 
-Począwszy od C# 7.2, `ref` można użyć modyfikatora w deklaracji typu struktury. `ref` Wystąpienia typu struktury są przydzielane na stosie i nie można uciec do zarządzanego stosu. Aby upewnić się, że kompilator ogranicza użycie `ref` typów struktury w następujący sposób:
+Począwszy od języka C# 7,2, można użyć `ref` modyfikatora w deklaracji typu struktury. Wystąpienia `ref` typu struktury są przydzielane na stosie i nie można wyjść do sterty zarządzanej. W celu zapewnienia, że kompilator ogranicza użycie `ref` typów struktur w następujący sposób:
 
-- Struktura `ref` nie może być typem elementu tablicy.
-- Struktura `ref` nie może być zadeklarowanym typem pola klasy lub`ref` niestrukturą.
-- Struktura `ref` nie można zaimplementować interfejsów.
-- Nie `ref` można zapakować struktury <xref:System.ValueType?displayProperty=nameWithType> do <xref:System.Object?displayProperty=nameWithType>lub .
-- Struktura `ref` nie może być argumentem typu.
-- Zmienna `ref` struktury nie może zostać [przechwycona przez wyrażenie lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) lub funkcję [lokalną](../../programming-guide/classes-and-structs/local-functions.md).
-- Zmiennej `ref` struktury nie można użyć [`async`](../keywords/async.md) w metodzie. Można jednak użyć `ref` zmiennych struktury w metodach synchronicznych, na <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601>przykład w tych, które zwracają lub .
-- Zmiennej `ref` struktury nie można używać w [iteratorach](../../iterators.md).
+- `ref`Struktura nie może być typem elementu tablicy.
+- `ref`Struktura nie może być zadeklarowanym typem pola klasy lub bez `ref` struktury.
+- `ref`Struktura nie może implementować interfejsów.
+- `ref`Struktura nie może być opakowana do <xref:System.ValueType?displayProperty=nameWithType> ani <xref:System.Object?displayProperty=nameWithType> .
+- `ref`Struktura nie może być argumentem typu.
+- `ref`Nie można przechwycić zmiennej struktury za pomocą [wyrażenia lambda](../operators/lambda-expressions.md) lub [funkcji lokalnej](../../programming-guide/classes-and-structs/local-functions.md).
+- `ref`Zmienna struktury nie może być używana w [`async`](../keywords/async.md) metodzie. Można jednak używać `ref` zmiennych struktury w metodach synchronicznych, na przykład w tych, które zwracają <xref:System.Threading.Tasks.Task> lub <xref:System.Threading.Tasks.Task%601> .
+- `ref`Zmienna struktury nie może być używana w [iteratorach](../../iterators.md).
 
-Zazwyczaj typ struktury `ref` jest definiowany, gdy potrzebny jest typ, `ref` który zawiera również elementy członkowskie danych typów struktury:
+Typowo, należy zdefiniować `ref` Typ struktury, gdy potrzebny jest również element członkowski danych `ref` typów struktury:
 
 [!code-csharp[ref struct](snippets/StructType.cs#RefStruct)]
 
-Aby zadeklarować `ref` strukturę jako `readonly` `ref` `readonly` `ref` [`readonly`](#readonly-struct), połączyć i modyfikatorów w deklaracji typu (modyfikator musi pochodzić przed modyfikatorem):
+Aby zadeklarować `ref` strukturę jako [`readonly`](#readonly-struct) , Połącz `readonly` `ref` modyfikatory i w deklaracji typu ( `readonly` modyfikator musi występować przed `ref` modyfikatorem):
 
 [!code-csharp[readonly ref struct](snippets/StructType.cs#ReadonlyRef)]
 
-W .NET przykłady `ref` struktury są <xref:System.Span%601?displayProperty=nameWithType> <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>i .
+W programie .NET przykłady `ref` struktury są <xref:System.Span%601?displayProperty=nameWithType> i <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> .
 
 ## <a name="conversions"></a>Konwersje
 
-Dla każdego typu struktury (z <xref:System.ValueType?displayProperty=nameWithType> wyjątkiem <xref:System.Object?displayProperty=nameWithType> [ `ref` ](#ref-struct) typów struktury), istnieje [boks i unboxing](../../programming-guide/types/boxing-and-unboxing.md) konwersji do iz typów. Istnieją również konwersje boksu i rozpakowywania między typem struktury a dowolnym interfejsem, który implementuje.
+Dla dowolnego typu struktury (z wyjątkiem typów [ `ref` struktury](#ref-struct) ) istnieje konwersja [opakowania i rozpakowywanie](../../programming-guide/types/boxing-and-unboxing.md) do i z <xref:System.ValueType?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType> typów i. Istnieje również możliwość pakowania i rozpakowywania konwersji między typem struktury i dowolnym interfejsem, który implementuje.
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji, zobacz sekcję [Struktury](~/_csharplang/spec/structs.md) [specyfikacji języka języka języka C#.](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji, zobacz sekcję [struktury](~/_csharplang/spec/structs.md) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-Aby uzyskać więcej informacji na temat funkcji wprowadzonych w języku C# 7.2 i nowszych, zobacz następujące uwagi dotyczące propozycji funkcji:
+Aby uzyskać więcej informacji o funkcjach wprowadzonych w języku C# 7,2 i nowszych, zobacz następujące uwagi dotyczące propozycji funkcji:
 
-- [Tylko do odczytywanie struktur](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs)
+- [Struktury tylko do odczytu](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs)
 - [Elementy członkowskie wystąpień tylko do odczytu](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
 - [Bezpieczeństwo czasu kompilowania dla typów zbliżonych do odwołań](~/_csharplang/proposals/csharp-7.2/span-safety.md)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
-- [Wskazówki dotyczące projektowania — wybór między klasą a strukturą](../../../standard/design-guidelines/choosing-between-class-and-struct.md)
-- [Wskazówki dotyczące projektowania — projektowanie konstrukcji](../../../standard/design-guidelines/struct.md)
+- [Wytyczne dotyczące projektowania — wybór między klasą a strukturą](../../../standard/design-guidelines/choosing-between-class-and-struct.md)
+- [Wytyczne dotyczące projektowania — projekt struktury](../../../standard/design-guidelines/struct.md)
 - [Klasy i struktury](../../programming-guide/classes-and-structs/index.md)

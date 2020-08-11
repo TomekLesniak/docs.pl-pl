@@ -1,29 +1,29 @@
 ---
 title: Tworzenie biblioteki klas .NET Standard przy użyciu programu Visual Studio
 description: Dowiedz się, jak utworzyć .NET Standard bibliotekę klas przy użyciu programu Visual Studio.
-ms.date: 06/08/2020
+ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 69259b1d47a8e30945c578db10c6d697c81fa261
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 07cc1bd7b9892f7cbee7a82998093718cd311b92
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164404"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062671"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Samouczek: Tworzenie biblioteki .NET Standard przy użyciu programu Visual Studio
 
-W tym samouczku utworzysz prostą bibliotekę narzędzi, która zawiera pojedynczą metodę obsługi ciągów. Implementuje ją jako [metodę rozszerzenia](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , aby można było wywołać ją tak, jakby była elementem członkowskim <xref:System.String> klasy.
+W tym samouczku utworzysz prostą bibliotekę klas, która zawiera pojedynczą metodę obsługi ciągów.
 
-*Biblioteka klas* definiuje typy i metody, które są wywoływane przez aplikację. Biblioteka klas, która jest przeznaczona dla .NET Standard 2,0 umożliwia wywoływanie biblioteki przez dowolną implementację platformy .NET, która obsługuje tę wersję .NET Standard. Po zakończeniu biblioteki klas można ją rozpowszechnić jako składnik innej firmy lub jako składnik pakietu z jedną lub wieloma aplikacjami.
+*Biblioteka klas* definiuje typy i metody, które są wywoływane przez aplikację. Biblioteka klas, która jest przeznaczona dla .NET Standard 2,0 umożliwia wywoływanie biblioteki przez dowolną implementację platformy .NET, która obsługuje tę wersję .NET Standard.
+
+Po zakończeniu biblioteki klas można ją rozpowszechnić jako pakiet NuGet lub jako składnik powiązany z aplikacją, która go używa.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - [Program Visual Studio 2019 w wersji 16,6 lub nowszej](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) z zainstalowanym **wieloplatformowym obciążeniem programistycznym dla platformy .NET Core** . Zestaw .NET Core 3,1 SDK jest instalowany automatycznie po wybraniu tego obciążenia.
-
-  Aby uzyskać więcej informacji, zobacz sekcję [Install with Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) w artykule [Instalowanie zestaw .NET Core SDK](../install/sdk.md?pivots=os-windows) .
 
 ## <a name="create-a-solution"></a>Tworzenie rozwiązania
 
@@ -67,6 +67,8 @@ Aby utworzyć puste rozwiązanie:
    :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibrary/Class1.vb":::
 
    Biblioteka klas, `UtilityLibraries.StringLibrary` ,,, zawiera metodę o nazwie `StartsWithUpper` . Ta metoda zwraca <xref:System.Boolean> wartość wskazującą, czy bieżące wystąpienie ciągu zaczyna się od wielkiej litery. Standard Unicode rozróżnia wielkie litery od małych liter. <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType>Metoda zwraca `true` czy znak jest pisany wielką literą.
+
+   `StartsWithUpper`jest zaimplementowany jako [Metoda rozszerzająca](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , aby można było wywołać ją tak, jakby była elementem członkowskim <xref:System.String> klasy.
 
 1. Na pasku menu wybierz opcję **Kompiluj**  >  **rozwiązanie kompilacji** , aby sprawdzić, czy projekt kompiluje się bez błędu.
 
@@ -126,7 +128,17 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
 
 ## <a name="next-steps"></a>Następne kroki
 
-W tym samouczku utworzono rozwiązanie, dodano projekt biblioteki i dodano projekt aplikacji konsolowej, który używa biblioteki. W następnym samouczku dodasz projekt testu jednostkowego do rozwiązania.
+W tym samouczku utworzono bibliotekę klas. W następnym samouczku dowiesz się, jak jednostkowo testować bibliotekę klas.
 
 > [!div class="nextstepaction"]
-> [Testowanie biblioteki .NET Standard za pomocą platformy .NET Core przy użyciu programu Visual Studio](testing-library-with-visual-studio.md)
+> [Testowanie jednostkowe biblioteki .NET Standard przy użyciu programu Visual Studio](testing-library-with-visual-studio.md)
+
+Możesz też pominąć zautomatyzowane testowanie jednostkowe i dowiedzieć się, jak udostępnić bibliotekę, tworząc pakiet NuGet:
+
+> [!div class="nextstepaction"]
+> [Tworzenie i publikowanie pakietu przy użyciu programu Visual Studio](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)
+
+Lub Dowiedz się, jak opublikować aplikację konsolową. Jeśli opublikujesz aplikację konsolową z rozwiązania utworzonego w tym samouczku, Biblioteka klas przejdzie z nim jako plik *. dll* .
+
+> [!div class="nextstepaction"]
+> [Publikowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio](publishing-with-visual-studio.md)

@@ -1,50 +1,51 @@
 ---
-title: 'Samouczek: Instalowanie i używanie narzędzi lokalnych .NET Core'
-description: Dowiedz się, jak zainstalować narzędzie .NET i używać go jako narzędzia lokalnego.
+title: 'Samouczek: Instalowanie i używanie lokalnych narzędzi platformy .NET Core'
+description: Dowiedz się, jak zainstalować narzędzie .NET i korzystać z niego jako narzędzia lokalnego.
+ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: a4355886513040e2436bdbd87905e5baee2dd7a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 555497a71d54713e62e54f8f293afdf74ead1743
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156702"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062680"
 ---
-# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Samouczek: Instalowanie i używanie lokalnego narzędzia .NET Core przy użyciu procesora CLI .NET Core
+# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core
 
-**Ten artykuł dotyczy:** ✔️ .NET Core 3.0 SDK i nowszych wersji
+**Ten artykuł ma zastosowanie do:** ✔️ .net Core 3,0 SDK i nowszych wersjach
 
-W tym samouczku nauczycię, jak zainstalować i używać lokalnego narzędzia. Używasz narzędzia, które tworzysz w [pierwszym samouczku tej serii](global-tools-how-to-create.md).
+W tym samouczku przedstawiono sposób instalowania i używania narzędzia lokalnego. Używasz narzędzia, które tworzysz w [pierwszym samouczku tej serii](global-tools-how-to-create.md).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-* Ukończ [pierwszy samouczek z tej serii](global-tools-how-to-create.md).
-* Zainstaluj program .NET Core 2.1.
+* Wykonaj [pierwszy samouczek tej serii](global-tools-how-to-create.md).
+* Zainstaluj środowisko uruchomieniowe programu .NET Core 2,1.
 
-  W tym samouczku należy zainstalować i użyć narzędzia przeznaczonego dla programu .NET Core 2.1, więc musisz zainstalować ten czas uruchomieniowy na komputerze. Aby zainstalować czas uruchomieniowy 2.1, przejdź do [strony pobierania .NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1) i znajdź łącze instalacji programu Run w kolumnie **Uruchom aplikacje — Czas wykonywania.**
+  W tym samouczku zainstalujesz narzędzie, które jest przeznaczone dla platformy .NET Core 2,1, i użyjesz go, więc musisz mieć zainstalowane na maszynie środowisko uruchomieniowe. Aby zainstalować środowisko uruchomieniowe 2,1, przejdź do [strony pobierania programu .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1) i Znajdź link instalacja środowiska uruchomieniowego w kolumnie **Uruchamianie aplikacji — środowisko uruchomieniowe** .
 
-## <a name="create-a-manifest-file"></a>Tworzenie pliku manifestu
+## <a name="create-a-manifest-file"></a>Utwórz plik manifestu
 
-Aby zainstalować narzędzie tylko dla dostępu lokalnego (dla bieżącego katalogu i podkatalogów), należy je dodać do pliku manifestu.
+Aby zainstalować narzędzie tylko do dostępu lokalnego (dla bieżącego katalogu i podkatalogów), należy dodać je do pliku manifestu.
 
-Z folderu *microsoft.botsay* przejdź do jednego poziomu do folderu *repozytorium:*
+W folderze *Microsoft. botsay* przejdź do folderu *repozytorium* w górę o jeden poziom:
 
 ```console
 cd ..
 ```
 
-Utwórz plik manifestu, uruchamiając [polecenie dotnet nowe:](dotnet-new.md)
+Utwórz plik manifestu, uruchamiając polecenie [dotnet New](dotnet-new.md) :
 
 ```dotnetcli
 dotnet new tool-manifest
 ```
 
-Dane wyjściowe wskazują na pomyślne utworzenie pliku.
+Dane wyjściowe wskazują pomyślne utworzenie pliku.
 
 ```console
 The template "Dotnet local tool manifest file" was created successfully.
 ```
 
-Plik *.config/dotnet-tools.json* nie zawiera jeszcze żadnych narzędzi:
+Plik *. config/dotnet-tools.jsw* pliku nie zawiera jeszcze żadnych narzędzi:
 
 ```json
 {
@@ -54,11 +55,11 @@ Plik *.config/dotnet-tools.json* nie zawiera jeszcze żadnych narzędzi:
 }
 ```
 
-Narzędzia wymienione w pliku manifestu są dostępne dla bieżącego katalogu i podkatalogów. Bieżący katalog to katalog zawierający katalog *konfiguracyjny* z plikiem manifestu.
+Narzędzia wymienione w pliku manifestu są dostępne dla bieżącego katalogu i podkatalogów. Bieżącym katalogiem jest ten, który zawiera katalog *. config* z plikiem manifestu.
 
-Korzystając z polecenia wiersza polecenia, które odwołuje się do narzędzia lokalnego, zestaw SDK wyszukuje plik manifestu w bieżącym katalogu i katalogach nadrzędnych. Jeśli znajdzie plik manifestu, ale plik nie zawiera narzędzia, do którego do której dowołuje się, kontynuuje wyszukiwanie w górę za pośrednictwem katalogów nadrzędnych. Wyszukiwanie kończy się, gdy znajdzie narzędzie, do którego `isRoot` istnieje `true`odwołanie, lub znajdzie plik manifestu z ustawieniem .
+W przypadku korzystania z polecenia CLI odwołującego się do narzędzia lokalnego zestaw SDK wyszukuje plik manifestu w bieżącym katalogu i katalogach nadrzędnych. Jeśli odnajdzie plik manifestu, ale plik nie zawiera narzędzia, którego dotyczy odwołanie, kontynuuje wyszukiwanie za pomocą katalogów nadrzędnych. Wyszukiwanie zostanie zakończone, gdy odnajdzie przywoływane narzędzie lub odnajdzie plik manifestu z `isRoot` ustawionym na `true` .
 
-## <a name="install-botsay-as-a-local-tool"></a>Zainstaluj botsay jako narzędzie lokalne
+## <a name="install-botsay-as-a-local-tool"></a>Instalowanie botsay jako narzędzia lokalnego
 
 Zainstaluj narzędzie z pakietu utworzonego w pierwszym samouczku:
 
@@ -66,7 +67,7 @@ Zainstaluj narzędzie z pakietu utworzonego w pierwszym samouczku:
 dotnet tool install --add-source ./microsoft.botsay/nupkg microsoft.botsay
 ```
 
-To polecenie dodaje narzędzie do pliku manifestu utworzonego w poprzednim kroku. Dane wyjściowe polecenia pokazuje, w którym pliku manifestu znajduje się nowo zainstalowane narzędzie:
+To polecenie dodaje narzędzie do pliku manifestu, który został utworzony w poprzednim kroku. Dane wyjściowe polecenia pokazują plik manifestu, w którym znajduje się nowo zainstalowane narzędzie:
 
  ```console
  You can invoke the tool from this directory using the following command:
@@ -75,7 +76,7 @@ To polecenie dodaje narzędzie do pliku manifestu utworzonego w poprzednim kroku
  Entry is added to the manifest file /home/name/repository/.config/dotnet-tools.json
  ```
 
-Plik *.config/dotnet-tools.json* ma teraz jedno narzędzie:
+Plik *. config/dotnet-tools.jsw* pliku ma teraz jedno narzędzie:
 
 ```json
 {
@@ -94,7 +95,7 @@ Plik *.config/dotnet-tools.json* ma teraz jedno narzędzie:
 
 ## <a name="use-the-tool"></a>Korzystanie z narzędzia
 
-Wywołaj narzędzie, uruchamiając `dotnet tool run` polecenie z folderu *repozytorium:*
+Wywołaj narzędzie, uruchamiając `dotnet tool run` polecenie z folderu *repozytorium* :
 
 ```dotnetcli
 dotnet tool run botsay hello from the bot
@@ -102,9 +103,9 @@ dotnet tool run botsay hello from the bot
 
 ## <a name="restore-a-local-tool-installed-by-others"></a>Przywracanie lokalnego narzędzia zainstalowanego przez inne osoby
 
-Zazwyczaj instalujesz narzędzie lokalne w katalogu głównym repozytorium. Po zaewidencjonowanie pliku manifestu do repozytorium, inni deweloperzy mogą uzyskać najnowszy plik manifestu. Aby zainstalować wszystkie narzędzia wymienione w pliku manifestu, `dotnet tool restore` można uruchomić jedno polecenie.
+Zazwyczaj instalowane jest narzędzie lokalne w katalogu głównym repozytorium. Po zaewidencjonowaniu pliku manifestu do repozytorium inni deweloperzy mogą uzyskać najnowszy plik manifestu. Aby zainstalować wszystkie narzędzia wymienione w pliku manifestu, można uruchomić pojedyncze `dotnet tool restore` polecenie.
 
-1. Otwórz plik *.config/dotnet-tools.json* i zastąp zawartość następującym plikiem JSON:
+1. Otwórz plik *config/dotnet-tools.jsw* pliku i Zastąp jego zawartość następującym kodem JSON:
 
    ```json
    {
@@ -127,11 +128,11 @@ Zazwyczaj instalujesz narzędzie lokalne w katalogu głównym repozytorium. Po z
    }
    ```
 
-1. Zastąp `<name>` nazwę użytą do utworzenia projektu.
+1. Zamień na `<name>` nazwę użytą podczas tworzenia projektu.
 
 1. Zapisz zmiany.
 
-   Wprowadzenie tej zmiany jest taka sama jak uzyskanie najnowszej wersji z repozytorium po zainstalowaniu pakietu `dotnetsay` dla katalogu projektu przez inną osobę.
+   Wprowadzanie tej zmiany jest takie samo jak w przypadku pobierania najnowszej wersji z repozytorium, gdy ktoś inny zainstalował pakiet `dotnetsay` dla katalogu projektu.
 
 1. Uruchom polecenie `dotnet tool restore`.
 
@@ -139,7 +140,7 @@ Zazwyczaj instalujesz narzędzie lokalne w katalogu głównym repozytorium. Po z
    dotnet tool restore
    ```
 
-   Polecenie generuje dane wyjściowe, takie jak w poniższym przykładzie:
+   Polecenie generuje dane wyjściowe podobne do następującego przykładu:
 
    ```console
    Tool 'microsoft.botsay' (version '1.0.0') was restored. Available commands: botsay
@@ -153,7 +154,7 @@ Zazwyczaj instalujesz narzędzie lokalne w katalogu głównym repozytorium. Po z
    dotnet tool list
    ```
 
-   Dane wyjściowe to lista pakietów i poleceń, podobna do następującego przykładu:
+   Dane wyjściowe to lista pakietów i poleceń, podobnie jak w poniższym przykładzie:
 
    ```console
    Package Id      Version      Commands       Manifest
@@ -171,7 +172,7 @@ Zazwyczaj instalujesz narzędzie lokalne w katalogu głównym repozytorium. Po z
 
 ## <a name="update-a-local-tool"></a>Aktualizowanie narzędzia lokalnego
 
-Zainstalowana wersja narzędzia `dotnetsay` lokalnego to 2.1.3.  Najnowsza wersja to 2.1.4. Użyj polecenia [dotnet tool update,](dotnet-tool-update.md) aby zaktualizować narzędzie do najnowszej wersji.
+Zainstalowana wersja narzędzia lokalnego `dotnetsay` to 2.1.3.  Najnowsza wersja to 2.1.4. Aby zaktualizować narzędzie do najnowszej wersji, użyj polecenia [aktualizacji narzędzia dotnet](dotnet-tool-update.md) .
 
 ```dotnetcli
 dotnet tool update dotnetsay
@@ -184,11 +185,11 @@ Tool 'dotnetsay' was successfully updated from version '2.1.3' to version '2.1.4
 (manifest file /home/name/repository/.config/dotnet-tools.json).
 ```
 
-Polecenie update znajdzie pierwszy plik manifestu, który zawiera identyfikator pakietu i aktualizuje go. Jeśli nie ma takiego identyfikatora pakietu w żadnym pliku manifestu, który znajduje się w zakresie wyszukiwania, zestaw SDK dodaje nowy wpis do najbliższego pliku manifestu. Zakres wyszukiwania jest za pośrednictwem katalogów `isRoot = true` nadrzędnych, dopóki nie zostanie znaleziony plik manifestu.
+Polecenie Update wyszukuje pierwszy plik manifestu zawierający identyfikator pakietu i aktualizuje go. Jeśli nie ma takiego identyfikatora pakietu w żadnym pliku manifestu, który znajduje się w zakresie wyszukiwania, zestaw SDK dodaje nowy wpis do najbliższego pliku manifestu. Zakres wyszukiwania znajduje się w katalogu nadrzędnym, dopóki nie `isRoot = true` zostanie znaleziony plik manifestu.
 
-## <a name="remove-local-tools"></a>Usuwanie narzędzi lokalnych
+## <a name="remove-local-tools"></a>Usuń narzędzia lokalne
 
-Usuń zainstalowane narzędzia, uruchamiając polecenie [odinstalowywania narzędzia dotnet:](dotnet-tool-uninstall.md)
+Aby usunąć zainstalowane narzędzia, należy uruchomić polecenie [Narzędzia dotnet](dotnet-tool-uninstall.md) :
 
 ```dotnetcli
 dotnet tool uninstall microsoft.botsay
@@ -200,8 +201,8 @@ dotnet tool uninstall dotnetsay
 
 ## <a name="troubleshoot"></a>Rozwiązywanie problemów
 
-Jeśli podczas korzystania z samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z używaniem narzędzia .NET Core](troubleshoot-usage-issues.md).
+Jeśli podczas wykonywania samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z użyciem narzędzia .NET Core](troubleshoot-usage-issues.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-Aby uzyskać więcej informacji, zobacz [narzędzia .NET Core](global-tools.md)
+Aby uzyskać więcej informacji, zobacz [Narzędzia platformy .NET Core](global-tools.md)

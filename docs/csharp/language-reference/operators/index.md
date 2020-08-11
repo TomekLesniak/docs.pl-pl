@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 9ada39a2144e5565a76a25df0f83424710ad939f
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 854d7c1278319869104e1758ba91eb3594741126
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916821"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063188"
 ---
 # <a name="c-operators-and-expressions-c-reference"></a>Operatory i wyrażenia języka c# (odwołanie w C#)
 
@@ -47,7 +47,7 @@ Poniżej przedstawiono niektóre inne rodzaje wyrażeń, które zapewnia język 
 
   [!code-csharp-interactive[interpolated string](snippets/shared/Overview.cs#InterpolatedString)]
 
-- [Wyrażenia lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) , które umożliwiają tworzenie funkcji anonimowych:
+- [Wyrażenia lambda](lambda-expressions.md) , które umożliwiają tworzenie funkcji anonimowych:
 
   [!code-csharp-interactive[lambda expression](snippets/shared/Overview.cs#Lambda)]
 

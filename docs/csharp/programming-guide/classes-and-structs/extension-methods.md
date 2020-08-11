@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: e57447c89749451862bbb80047ed74135a0eb752
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 116087ac1aab57f2869b05f436801c7861c56eca
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474816"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063708"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozszerzeń (Przewodnik programowania w języku C#)
 
@@ -22,7 +22,7 @@ Najbardziej typowymi metodami rozszerzenia są operatory standardowych zapytań 
 
 ### <a name="orderby-example"></a>Przykład OrderBy
 
-Poniższy przykład pokazuje, jak wywołać metodę standardowego operatora zapytania `OrderBy` w tablicy liczb całkowitych. Wyrażenie w nawiasach to wyrażenie lambda. Wiele standardowych operatorów zapytań przyjmuje wyrażenia lambda jako parametry, ale nie jest to wymagane dla metod rozszerzających. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../statements-expressions-operators/lambda-expressions.md).
+Poniższy przykład pokazuje, jak wywołać metodę standardowego operatora zapytania `OrderBy` w tablicy liczb całkowitych. Wyrażenie w nawiasach to wyrażenie lambda. Wiele standardowych operatorów zapytań przyjmuje wyrażenia lambda jako parametry, ale nie jest to wymagane dla metod rozszerzających. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../language-reference/operators/lambda-expressions.md).
 
 [!code-csharp[csProgGuideExtensionMethods#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#3)]
 
@@ -121,7 +121,7 @@ Dla zaimplementowanej biblioteki klas nie należy używać metod rozszerzenia, a
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Równoległe przykłady programowania (zawierają wiele przykładowych metod rozszerzających)](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
-- [Wyrażenia lambda](../statements-expressions-operators/lambda-expressions.md)
+- [Wyrażenia lambda](../../language-reference/operators/lambda-expressions.md)
 - [Standardowe operatory zapytań — Omówienie](../concepts/linq/standard-query-operators-overview.md)
 - [Reguły konwersji dla parametrów wystąpienia i ich wpływu](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
 - [Metody rozszerzające współdziałanie między językami](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)

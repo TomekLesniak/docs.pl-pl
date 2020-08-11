@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: 1765a15347aeedb9cc5fa6784abdfad6fafe4016
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 46b0e44182d22158aa5fa54a0f44bae70aa8ddd9
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87300764"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063045"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Składnia zapytania i metody w technologii LINQ (C#)
 Większość zapytań w dokumentacji języka wprowadzającego Integrated Query (LINQ) jest zapisywana przy użyciu składni zapytania deklaracyjnego LINQ. Jednak Składnia zapytania musi być przetłumaczona na wywołania metody dla środowiska uruchomieniowego języka wspólnego (CLR) platformy .NET podczas kompilowania kodu. Te wywołania metody wywołują standardowe operatory zapytań, które mają nazwy takie jak `Where` , `Select` , `GroupBy` , `Join` , `Max` i `Average` . Można wywołać je bezpośrednio przy użyciu składni metody zamiast składni zapytania.  
@@ -38,7 +38,7 @@ Większość zapytań w dokumentacji języka wprowadzającego Integrated Query (
 ## <a name="lambda-expressions"></a>Wyrażenia lambda  
  W poprzednim przykładzie należy zauważyć, że wyrażenie warunkowe ( `num % 2 == 0` ) jest przekazywany jako argument w wierszu do `Where` metody: `Where(num => num % 2 == 0).` to wyrażenie wbudowane jest nazywane wyrażeniem lambda. Jest to wygodny sposób pisania kodu, który w przeciwnym razie musi być napisany w bardziej skomplikowany sposób jako metoda anonimowa lub Delegat ogólny lub drzewo wyrażenia. W języku C# `=>` jest operatorem lambda, który jest odczytywany jako "przechodzi do". Po `num` lewej stronie operatora jest zmienną wejściową, która odnosi się do `num` w wyrażeniu zapytania. Kompilator może wywnioskować typ, `num` ponieważ wie, że `numbers` jest typem ogólnym <xref:System.Collections.Generic.IEnumerable%601> . Treść wyrażenia lambda jest taka sama jak wyrażenie w składni zapytania lub w dowolnym innym wyrażeniu lub instrukcji języka C#. może obejmować wywołania metod i inne złożone logiki. "Zwracana wartość" jest tylko wynikiem wyrażenia.  
   
- Aby rozpocząć korzystanie z LINQ, nie musisz używać wyrażeń lambda w szerokim stopniu. Jednak niektóre zapytania można wyrazić tylko w składni metody, a niektóre z nich wymagają wyrażenia lambda. Po poznaniu się z wyrażeniami lambda można sprawdzić, czy są one zaawansowanym i elastycznym narzędziem w przyborniku LINQ. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../statements-expressions-operators/lambda-expressions.md).  
+ Aby rozpocząć korzystanie z LINQ, nie musisz używać wyrażeń lambda w szerokim stopniu. Jednak niektóre zapytania można wyrazić tylko w składni metody, a niektóre z nich wymagają wyrażenia lambda. Po poznaniu się z wyrażeniami lambda można sprawdzić, czy są one zaawansowanym i elastycznym narzędziem w przyborniku LINQ. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../../language-reference/operators/lambda-expressions.md).  
   
 ## <a name="composability-of-queries"></a>Możliwości tworzenia zapytań  
  W poprzednim przykładzie kodu należy zauważyć, że `OrderBy` Metoda jest wywoływana przy użyciu operatora kropki w wywołaniu `Where` . `Where`tworzy filtrowaną sekwencję, a następnie `Orderby` działa w tej sekwencji, sortując ją. Ponieważ zapytania zwracają `IEnumerable` , należy je złożyć w składni metody przez łańcuch wywołań metod. Jest to działanie kompilatora w tle podczas pisania zapytań przy użyciu składni zapytania. A ponieważ zmienna zapytania nie przechowuje wyników zapytania, można je zmodyfikować lub użyć jako podstawy dla nowego zapytania w dowolnym momencie, nawet po jego wykonaniu.  

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: b72b058c1709e7a643a70233cc3289d5d9165ca4
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 30e1a3546f83a0a1ba5b1363238878868e94ab93
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916806"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063136"
 ---
 # <a name="-operator-c-reference"></a>=> — operator (odwołanie w C#)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87916806"
 
 ## <a name="lambda-operator"></a>Operator lambda
 
-W [wyrażeniach lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)operator lambda `=>` oddziela parametry wejściowe po lewej stronie od treści lambda po prawej stronie.
+W [wyrażeniach lambda](lambda-expressions.md)operator lambda `=>` oddziela parametry wejściowe po lewej stronie od treści lambda po prawej stronie.
 
 W poniższym przykładzie użyto funkcji [LINQ](../../programming-guide/concepts/linq/index.md) z składnią metody, aby pokazać użycie wyrażeń lambda:
 
@@ -34,7 +34,7 @@ Poniższy przykład pokazuje, jak zdefiniować wyrażenie lambda bez parametrów
 
 [!code-csharp-interactive[without input variables](snippets/shared/LambdaOperator.cs#WithoutInput)]
 
-Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).
+Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](lambda-expressions.md).
 
 ## <a name="expression-body-definition"></a>Definicja treści wyrażenia
 

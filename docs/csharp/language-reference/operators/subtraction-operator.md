@@ -12,12 +12,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: a00957c8d36a96b5ee23b9e5a309b6139b33fd36
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: c126837309b5fe3495a5e9e6af589892670b62c3
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916691"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063084"
 ---
 # <a name="--and---operators-c-reference"></a>Operatory-and-= (odwołanie w C#)
 
@@ -37,7 +37,7 @@ Dla operandów tego samego typu [delegata](../builtin-types/reference-types.md#t
 
   [!code-csharp-interactive[delegate removal with no effect](snippets/shared/SubtractionOperator.cs#DelegateRemovalNoChange)]
 
-  W poprzednim przykładzie pokazano również, że podczas porównywania wystąpień delegatów usuwania delegatów. Na przykład Delegaty wytwarzane z oceny identycznych [wyrażeń lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nie są równe. Aby uzyskać więcej informacji o równość delegowania, zobacz sekcję [delegowanie operatorów równości](~/_csharplang/spec/expressions.md#delegate-equality-operators) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
+  W poprzednim przykładzie pokazano również, że podczas porównywania wystąpień delegatów usuwania delegatów. Na przykład Delegaty wytwarzane z oceny identycznych [wyrażeń lambda](lambda-expressions.md) nie są równe. Aby uzyskać więcej informacji o równość delegowania, zobacz sekcję [delegowanie operatorów równości](~/_csharplang/spec/expressions.md#delegate-equality-operators) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
 - Jeśli argument operacji po lewej stronie jest `null` , wynikiem operacji jest `null` . Jeśli argument operacji po prawej stronie jest `null` , wynikiem operacji jest operand z lewej strony.
 

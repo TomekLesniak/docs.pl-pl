@@ -2,12 +2,12 @@
 title: EventCounters na platformie .NET Core
 description: W tym artykule dowiesz się, co EventCounters, jak je wdrożyć i jak je wykorzystać.
 ms.date: 08/07/2020
-ms.openlocfilehash: 68868ff8b4e1393fc3b23af2bc8eef239ac56975
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: fc2f945e3de732a81b9ce3fd82eff10e455cae87
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88025023"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062967"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters na platformie .NET Core
 
@@ -177,7 +177,9 @@ EventCounters mogą być używane przez Azure Monitor, w tym Application Insight
 
 #### <a name="dotnet-monitor"></a>dotnet-monitor
 
-`dotnet-monitor`To narzędzie eksperymentalne, które ułatwia uzyskiwanie dostępu do informacji diagnostycznych w procesie platformy .NET. Aby uzyskać więcej informacji, zobacz [wprowadzenie do monitora dotnet-monitor, narzędzia eksperymentalne](https://devblogs.microsoft.com/dotnet/introducing-dotnet-monitor).
+`dotnet-monitor`Narzędzie to eksperymentalne narzędzie, które ułatwia uzyskiwanie dostępu do informacji diagnostycznych w procesie platformy .NET. Narzędzie służy jako nadzbiór wszystkich narzędzi diagnostycznych. Oprócz śledzenia można monitorować metryki, zbierać zrzuty pamięci i zbierać zrzuty GC. Jest dystrybuowany jako narzędzie interfejsu wiersza polecenia i obraz platformy Docker. Udostępnia interfejs API REST, a kolekcja artefaktów diagnostycznych odbywa się za pomocą wywołań REST.
+
+Aby uzyskać więcej informacji, zobacz [wprowadzenie do monitora dotnet-monitor, narzędzia eksperymentalne](https://devblogs.microsoft.com/dotnet/introducing-dotnet-monitor).
 
 ### <a name="consume-in-proc"></a>Używanie w procesie
 

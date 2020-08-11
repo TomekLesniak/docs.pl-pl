@@ -2,13 +2,14 @@
 title: Interfejs wiersza polecenia platformy .NET Core
 titleSuffix: ''
 description: Przegląd interfejs wiersza polecenia platformy .NET Core i jego funkcji.
+ms.topic: overview
 ms.date: 02/13/2020
-ms.openlocfilehash: f92151c85b4816fef1859e84ad94945445db1854
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 18dde384058206f437b53572b2f8331d65324482
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415971"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062694"
 ---
 # <a name="net-core-cli-overview"></a>Omówienie interfejsu wiersza polecenia platformy .NET Core
 
@@ -81,7 +82,7 @@ Sterownik nosi nazwę [dotnet](dotnet.md) i ma dwie obowiązki, uruchamiają [ap
 
 Aby uruchomić aplikację zależną od platformy, należy określić aplikację po stronie sterownika, na przykład `dotnet /path/to/my_app.dll` . Gdy wykonujesz polecenie z folderu, w którym znajduje się biblioteka DLL aplikacji, po prostu wykonaj `dotnet my_app.dll` . Jeśli chcesz użyć określonej wersji środowiska uruchomieniowego platformy .NET Core, użyj `--fx-version <VERSION>` opcji (zobacz informacje dotyczące [polecenia dotnet](dotnet.md) ).
 
-Po podaniu polecenia do sterownika program `dotnet.exe` uruchamia proces wykonywania poleceń interfejsu wiersza polecenia. Przykład:
+Po podaniu polecenia do sterownika program `dotnet.exe` uruchamia proces wykonywania poleceń interfejsu wiersza polecenia. Na przykład:
 
 ```dotnetcli
 dotnet build

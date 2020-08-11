@@ -3,12 +3,12 @@ title: Zapytania w składniku LINQ to Entities
 description: Dowiedz się, w jaki sposób LINQ oferuje prosty, spójny model służący do pracy z danymi w różnych rodzajach źródeł danych i formatach przy użyciu obiektów programistycznych.
 ms.date: 03/30/2017
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
-ms.openlocfilehash: 048fd56fc687dd715292fb3bb09405130de09779
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: eaf44cf6c995be335c6127f42d7aaec0dd98527c
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286821"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063734"
 ---
 # <a name="queries-in-linq-to-entities"></a>Zapytania w składniku LINQ to Entities
 Zapytanie jest wyrażeniem, które pobiera dane ze źródła danych. Zapytania są zwykle wyrażane w wyspecjalizowanym języku zapytań, takim jak SQL dla relacyjnych baz danych i XQuery for XML. W związku z tym deweloperzy musieli poznać nowy język zapytań dla każdego typu źródła danych lub formatu danych, który wykonuje zapytanie. Program Query Integrated Language (LINQ) oferuje prostszy, spójny model służący do pracy z danymi w różnych rodzajach źródeł danych i formatach. W zapytaniu LINQ zawsze pracujesz z obiektami programowania.  
@@ -44,7 +44,7 @@ Zapytanie jest wyrażeniem, które pobiera dane ze źródła danych. Zapytania s
 - [Przykłady składni wyrażeń zapytania, nawigowanie po relacjach](query-expression-syntax-examples-navigating-relationships.md)  
   
 ### <a name="method-based-query-syntax"></a>Składnia zapytania oparta na metodzie  
- Innym sposobem tworzenia zapytań LINQ to Entities jest użycie zapytań opartych na metodzie. Składnia zapytania oparta na metodzie jest sekwencją wywołań metod bezpośrednich do metod operatora LINQ, przekazując wyrażenia lambda jako parametry. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md). Przykłady, które pokazują, jak używać składni opartej na metodzie, można znaleźć w następujących tematach:  
+ Innym sposobem tworzenia zapytań LINQ to Entities jest użycie zapytań opartych na metodzie. Składnia zapytania oparta na metodzie jest sekwencją wywołań metod bezpośrednich do metod operatora LINQ, przekazując wyrażenia lambda jako parametry. Aby uzyskać więcej informacji, zobacz [wyrażenia lambda](../../../../../csharp/language-reference/operators/lambda-expressions.md). Przykłady, które pokazują, jak używać składni opartej na metodzie, można znaleźć w następujących tematach:  
   
 - [Przykłady składni zapytania oparte na metodzie, projekcja](method-based-query-syntax-examples-projection.md)  
   

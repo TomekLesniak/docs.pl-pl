@@ -4,19 +4,19 @@ description: Funkcje lokalne w języku C# to metody prywatne, które są zagnie�
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 9987d6d5ad57c1dceb3a4bffbae22a81c240c794
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 854ec7ab4a4cc637c0a5ad03e0344d2f1f7679d2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864530"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063305"
 ---
 # <a name="local-functions-c-programming-guide"></a>Funkcje lokalne (Przewodnik programowania w języku C#)
 
 Począwszy od języka C# 7,0, C# obsługuje *funkcje lokalne*. Funkcje lokalne są prywatnymi metodami typu, które są zagnieżdżone w innym elemencie członkowskim. Mogą być wywoływane tylko z ich składowych. Funkcje lokalne można zadeklarować w i wywołać z:
 
 - Metody, zwłaszcza metody iteratorów i metody asynchroniczne
-- Konstruktory
+- Konstruktorów
 - Metody dostępu do właściwości
 - Metody dostępu zdarzeń
 - Metody anonimowe
@@ -78,7 +78,7 @@ Podobnie jak w iteratorze metody, możemy resłużyć kod z tego przykładu, aby
 
 ## <a name="local-functions-vs-lambda-expressions"></a>Funkcje lokalne a wyrażenia lambda
 
-Na pierwszy rzut oka funkcje lokalne i [wyrażenia lambda](../statements-expressions-operators/lambda-expressions.md) są bardzo podobne. W wielu przypadkach wybór między wyrażeniami lambda i funkcjami lokalnymi jest kwestią stylu i preferencji osobistych. Istnieją jednak rzeczywiste różnice w tym, gdzie można korzystać z jednej z nich lub drugiej.
+Na pierwszy rzut oka funkcje lokalne i [wyrażenia lambda](../../language-reference/operators/lambda-expressions.md) są bardzo podobne. W wielu przypadkach wybór między wyrażeniami lambda i funkcjami lokalnymi jest kwestią stylu i preferencji osobistych. Istnieją jednak rzeczywiste różnice w tym, gdzie można korzystać z jednej z nich lub drugiej.
 
 Sprawdźmy różnice między funkcją lokalną a implementacją wyrażenia lambda algorytmu silnia. Pierwsza wersja przy użyciu funkcji lokalnej:
 

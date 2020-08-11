@@ -1,29 +1,29 @@
 ---
-title: System.Delegate i `delegate` słowo kluczowe
-description: Dowiedz się więcej o klasach w .NET, które obsługują delegatów i jak te mapy do "delegata" słowa kluczowego.
+title: System. Delegate i `delegate` słowo kluczowe
+description: Dowiedz się więcej na temat klas w programie .NET, które obsługują delegatów i jak te są mapowane na słowo kluczowe "Delegate".
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 87fdf19c4ea810c5ac4409fe16c3cba9d5fc6574
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9df8ad68f6bfa62863ee047875b6419fc81ad779
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146284"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062468"
 ---
-# <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate i `delegate` słowo kluczowe
+# <a name="systemdelegate-and-the-delegate-keyword"></a>System. Delegate i `delegate` słowo kluczowe
 
-[Wstecz](delegates-overview.md)
+[Poprzednie](delegates-overview.md)
 
-W tym artykule omówiono klasy w .NET, które `delegate` obsługują delegatów i jak te mapy do słowa kluczowego.
+W tym artykule opisano klasy w programie .NET, które obsługują delegatów i jak te są mapowane na `delegate` słowo kluczowe.
 
-## <a name="define-delegate-types"></a>Definiowanie typów pełnomocników
+## <a name="define-delegate-types"></a>Definiowanie typów delegatów
 
-Zacznijmy od słowa kluczowego "delegować", ponieważ jest to przede wszystkim to, co będzie używane podczas pracy z delegatami. Kod, który kompilator generuje `delegate` podczas korzystania ze słowa kluczowego zostanie <xref:System.Delegate> <xref:System.MulticastDelegate> mapowany do wywołania metody, które wywołają członków i klas.
+Zacznijmy od słowa kluczowego "Delegate", ponieważ jest to przede wszystkim, czego będziesz używać podczas pracy z delegatami. Kod generowany przez kompilator, gdy użycie `delegate` słowa kluczowego zostanie zmapowane na wywołania metody, które wywołują elementy członkowskie <xref:System.Delegate> <xref:System.MulticastDelegate> klas i.
 
-Typ delegata można zdefiniować przy użyciu składni, która jest podobna do definiowania podpisu metody. Wystarczy dodać `delegate` słowo kluczowe do definicji.
+Należy zdefiniować typ delegata przy użyciu składni podobnej do definiowania sygnatury metody. Wystarczy dodać `delegate` słowo kluczowe do definicji.
 
-Użyjmy metody List.Sort() jako naszego przykładu. Pierwszym krokiem jest utworzenie typu dla delegata porównania:
+Kontynuujmy używanie metody list. Sort () jako przykładu. Pierwszym krokiem jest utworzenie typu dla delegata porównania:
 
 ```csharp
 // From the .NET Core library
@@ -32,19 +32,19 @@ Użyjmy metody List.Sort() jako naszego przykładu. Pierwszym krokiem jest utwor
 public delegate int Comparison<in T>(T left, T right);
 ```
 
-Kompilator generuje klasę, wywodzącą się z `System.Delegate` tej zgodności z użytą sygnaturą (w tym przypadku metodę, która zwraca wartość całkowitą i ma dwa argumenty). Typem tego pełnomocnika `Comparison`jest . Typ `Comparison` delegata jest typem ogólnym. Szczegółowe informacje na temat leków generycznych można znaleźć [tutaj](programming-guide/generics/index.md).
+Kompilator generuje klasę pochodną, `System.Delegate` która jest zgodna z używanym podpisem (w tym przypadku metoda zwraca liczbę całkowitą i ma dwa argumenty). Typ tego delegata to `Comparison` . `Comparison`Typ delegata jest typem ogólnym. Aby uzyskać szczegółowe informacje na temat typów ogólnych, zobacz [tutaj](programming-guide/generics/index.md).
 
-Należy zauważyć, że składnia może wyglądać tak, jakby deklaruje zmienną, ale w rzeczywistości deklaruje *typ*. Można zdefiniować typy delegatów wewnątrz klas, bezpośrednio wewnątrz obszarów nazw, a nawet w globalnej przestrzeni nazw.
+Zauważ, że składnia może wyglądać tak, jakby deklaruje zmienną, ale faktycznie deklaruje *Typ*. Można definiować typy delegatów wewnątrz klas, bezpośrednio w przestrzeniach nazw, a nawet w globalnej przestrzeni nazw.
 
 > [!NOTE]
 > Deklarowanie typów delegatów (lub innych typów) bezpośrednio w globalnej przestrzeni nazw nie jest zalecane.
 
-Kompilator generuje również dodawanie i usuwanie programów obsługi dla tego nowego typu, dzięki czemu klienci tej klasy można dodawać i usuwać metody z listy wywołania wystąpienia. Kompilator wymusi, że podpis dodawanej lub usuwanej metody jest zgodny z podpisem używanym podczas deklarowania metody.
+Kompilator generuje również procedury obsługi dodawania i usuwania dla tego nowego typu, tak aby klienci tej klasy mogli dodawać i usuwać metody z listy wywołań wystąpienia. Kompilator wymusza, że podpis metody dodawanej lub usuwanej jest zgodny z podpisem używanym podczas deklarowania metody.
 
 ## <a name="declare-instances-of-delegates"></a>Deklarowanie wystąpień delegatów
 
-Po zdefiniowaniu pełnomocnika można utworzyć wystąpienie tego typu.
-Podobnie jak wszystkie zmienne w języku C#, nie można zadeklarować wystąpień delegata bezpośrednio w obszarze nazw lub w globalnej przestrzeni nazw.
+Po zdefiniowaniu delegata można utworzyć wystąpienie tego typu.
+Podobnie jak w przypadku wszystkich zmiennych w języku C#, nie można zadeklarować wystąpień delegatów bezpośrednio w przestrzeni nazw lub w globalnej przestrzeni nazw.
 
 ```csharp
 // inside a class definition:
@@ -53,84 +53,84 @@ Podobnie jak wszystkie zmienne w języku C#, nie można zadeklarować wystąpie�
 public Comparison<T> comparator;
 ```
 
-Typ zmiennej to `Comparison<T>`typ delegata zdefiniowany wcześniej. Nazwa zmiennej to `comparator`.
+Typ zmiennej to `Comparison<T>` , zdefiniowany wcześniej typ delegata. Nazwa zmiennej to `comparator` .
 
- Ten fragment kodu powyżej zadeklarowane zmiennej składowej wewnątrz klasy. Można również zadeklarować zmienne delegata, które są zmiennymi lokalnymi lub argumentami do metod.
+ Ten fragment kodu jest zadeklarowany jako zmienna członkowska wewnątrz klasy. Można również zadeklarować zmienne delegatów, które są zmiennymi lokalnymi lub argumenty metod.
 
-## <a name="invoke-delegates"></a>Wywoływanie delegatów
+## <a name="invoke-delegates"></a>Wywołaj delegatów
 
-Można wywołać metody, które znajdują się na liście wywołania delegata, wywołując tego delegata. Wewnątrz `Sort()` metody kod wywoła metodę porównania, aby określić, która kolejność umieszczać obiekty:
+Metody, które znajdują się na liście wywołań delegata, są wywoływane przez wywołanie tego delegata. Wewnątrz `Sort()` metody kod wywoła metodę porównania, aby określić, która kolejność umieszczania obiektów:
 
 ```csharp
 int result = comparator(left, right);
 ```
 
-W wierszu powyżej kod *wywołuje* metodę dołączony do delegata.
-Zmienną należy traktować jako nazwę metody i wywołać ją przy użyciu składni wywołania metody normalnej.
+W wierszu powyżej kod *wywołuje* metodę dołączoną do delegata.
+Zmienna jest traktowana jako nazwa metody i wywołuje ją przy użyciu standardowej składni wywołania metody.
 
-Ten wiersz kodu sprawia, że niebezpieczne założenie: Nie ma żadnej gwarancji, że obiekt docelowy został dodany do delegata. Jeśli nie zostały dołączone żadne cele, `NullReferenceException` powyższa linia spowoduje wyrzucenie. Idiomy używane do rozwiązania tego problemu są bardziej skomplikowane niż proste sprawdzanie wartości null i są omówione w [dalszej](delegates-patterns.md)części tej serii .
+Ten wiersz kodu powoduje niebezpieczne założenie: nie ma gwarancji, że element docelowy został dodany do delegata. Jeśli nie dołączono żadnych elementów docelowych, wiersz powyżej mógłby `NullReferenceException` zostać zgłoszony. Idiomy używany do rozwiązywania tego problemu są bardziej skomplikowane niż proste sprawdzenie wartości null i zostały omówione w dalszej części tej [serii](delegates-patterns.md).
 
-## <a name="assign-add-and-remove-invocation-targets"></a>Przypisywanie, dodawanie i usuwanie celów wywołania
+## <a name="assign-add-and-remove-invocation-targets"></a>Przypisywanie, Dodawanie i usuwanie elementów docelowych wywołań
 
-W ten sposób typ delegata jest zdefiniowany i jak są deklarowane i wywoływane wystąpienia delegata.
+Jest to sposób definiowania typu delegata oraz sposobu deklarowania i wywołania delegatów.
 
-Deweloperzy, którzy `List.Sort()` chcą użyć metody należy zdefiniować metodę, której podpis pasuje do definicji typu delegata i przypisać go do delegata używanego przez metodę sortowania. To przypisanie dodaje metodę do listy wywołania tego obiektu delegata.
+Deweloperzy, którzy chcą korzystać z `List.Sort()` metody, muszą zdefiniować metodę, której sygnatura jest zgodna z definicją typu delegata, i przypisać ją do delegata używanego przez metodę Sort. To przypisanie dodaje metodę do listy wywołań tego obiektu delegowanego.
 
-Załóżmy, że chcesz posortować listę ciągów według ich długości. Funkcja porównywania może być następująca:
+Załóżmy, że chcemy sortować listę ciągów według ich długości. Funkcja porównania może być następująca:
 
 ```csharp
 private static int CompareLength(string left, string right) =>
     left.Length.CompareTo(right.Length);
 ```
 
-Metoda jest zadeklarowana jako metoda prywatna. To dobrze. Ta metoda może nie być częścią interfejsu publicznego. Nadal może służyć jako metoda porównania po dołączeniu do delegata. Kod wywołujący będzie miał tę metodę dołączony do listy docelowej obiektu delegata i można uzyskać do niego dostęp za pośrednictwem tego pełnomocnika.
+Metoda jest zadeklarowana jako Metoda prywatna. To dobrze. Nie można chcieć, aby ta metoda była częścią interfejsu publicznego. Nadal może być używana jako metoda porównania w przypadku dołączenia do delegata. Kod wywołujący będzie miał tę metodę dołączoną do listy docelowej obiektu delegowanego i może uzyskać do niej dostęp za pomocą tego delegata.
 
-Tę relację tworzymy, przekazując tę metodę do `List.Sort()` metody:
+Ta relacja jest tworzona przez przekazanie tej metody do `List.Sort()` metody:
 
 ```csharp
 phrases.Sort(CompareLength);
 ```
 
-Należy zauważyć, że nazwa metody jest używana, bez nawiasów. Za pomocą metody jako argument informuje kompilator do konwersji odwołania do metody do odwołania, które mogą być używane jako obiekt docelowy wywołania delegata i dołączyć tę metodę jako miejsce docelowe wywołania.
+Zauważ, że nazwa metody jest używana, bez nawiasów. Użycie metody jako argumentu instruuje kompilator, aby przekonwertował odwołanie do metody na odwołanie, które może być użyte jako obiekt docelowy wywołania delegata i dołączyć tę metodę jako obiekt docelowy wywołania.
 
-Można również jawne, deklarując zmienną `Comparison<string>` typu i wykonując przypisanie:
+Można było również jawnie, deklarując zmienną typu `Comparison<string>` i wykonując przypisanie:
 
 ```csharp
 Comparison<string> comparer = CompareLength;
 phrases.Sort(comparer);
 ```
 
-W zastosowaniach, w których metoda używana jako obiekt docelowy delegata jest małą metodą, często używa się składni [wyrażenia lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) do wykonywania przypisania:
+W używanym miejscu, gdzie Metoda używana jako obiekt docelowy delegata jest małą metodą, często jest używana składnia [wyrażenia lambda](language-reference/operators/lambda-expressions.md) do wykonania przypisania:
 
 ```csharp
 Comparison<string> comparer = (left, right) => left.Length.CompareTo(right.Length);
 phrases.Sort(comparer);
 ```
 
-Za pomocą wyrażeń lambda dla obiektów docelowych delegata jest omówiona bardziej w [dalszej sekcji](delegates-patterns.md).
+Użycie wyrażeń lambda dla obiektów docelowych delegatów zostało omówione w [dalszej części](delegates-patterns.md).
 
-Przykład Sort() zazwyczaj dołącza jedną metodę docelową do delegata. Jednak delegować obiekty obsługują listy wywołań, które mają wiele metod docelowych dołączonych do obiektu delegata.
+Przykład Sort () zazwyczaj dołącza jedną metodę docelową do delegata. Obiekty delegatów obsługują jednak listy wywołań, które mają wiele metod docelowych dołączonych do obiektu delegowanego.
 
-## <a name="delegate-and-multicastdelegate-classes"></a>Delegowanie i MulticastDelegate klasy
+## <a name="delegate-and-multicastdelegate-classes"></a>Klasy delegatów i MulticastDelegate
 
-Obsługa języka opisana powyżej zapewnia funkcje i wsparcie, które zazwyczaj będą potrzebne do pracy z pełnomocnikami. Te funkcje są zbudowane na dwóch klasach <xref:System.Delegate> <xref:System.MulticastDelegate>w ramach .NET Core: i .
+Opisana powyżej obsługa języka udostępnia funkcje i pomoc techniczną, które zwykle muszą współpracować z delegatami. Te funkcje są oparte na dwóch klasach w .NET Core Framework: <xref:System.Delegate> i <xref:System.MulticastDelegate> .
 
-Klasa `System.Delegate` i jej pojedynczej `System.MulticastDelegate`bezpośredniej podklasy, zapewniają wsparcie framework do tworzenia delegatów, rejestrowanie metod jako delegat obiektów docelowych i wywoływania wszystkich metod, które są zarejestrowane jako miejsce docelowe delegata.
+`System.Delegate`Klasy i jej pojedynczej podklasy bezpośredniej, `System.MulticastDelegate` ,,,, zapewniają obsługę struktury do tworzenia delegatów, rejestrowania metod jako obiektów docelowych delegatów i wywoływania wszystkich metod, które są zarejestrowane jako obiekt docelowy delegata.
 
-Co ciekawe, `System.Delegate` `System.MulticastDelegate` i klasy nie są same typy delegatów. Stanowią one podstawę dla wszystkich określonych typów delegatów. Ten sam proces projektowania języka upoważnił, że `Delegate` nie `MulticastDelegate`można zadeklarować klasy, która pochodzi od lub . Reguły języka Języka C# go zabronić.
+W interesującej `System.Delegate` klasie i `System.MulticastDelegate` nie są sami typami delegatów. Zapewniają one podstawę dla wszystkich określonych typów delegatów. Ten sam proces projektowania języka nie może zadeklarować klasy, która dziedziczy z `Delegate` lub `MulticastDelegate` . Reguły języka C# zabraniają tego.
 
-Zamiast tego kompilator C# tworzy wystąpienia `MulticastDelegate` klasy pochodzące z podczas używania języka C# — słowo kluczowe do deklarowania typów delegatów.
+Zamiast tego kompilator języka C# tworzy wystąpienia klasy pochodnej `MulticastDelegate` przy użyciu słowa kluczowego języka c# do deklarowania typów delegatów.
 
-Ten projekt ma swoje korzenie w pierwszej wersji C# i .NET. Jednym z celów dla zespołu projektowego było zapewnienie, że język wymuszał bezpieczeństwo typów podczas korzystania z delegatów. Oznaczało to zapewnienie, że delegaci zostali powołani z odpowiednim typem i liczbą argumentów. I, że każdy typ zwracany został poprawnie wskazany w czasie kompilacji. Delegaci byli częścią wersji .NET 1.0, która była przed generykami.
+Ten projekt zawiera elementy główne w pierwszej wersji języka C# i .NET. Jednym z celów zespołu projektowego jest upewnienie się, że język wymusza bezpieczeństwo typów podczas korzystania z delegatów. Ma to na celu zapewnienie, że Delegaty zostały wywołane z odpowiednim typem i liczbą argumentów. I, że każdy typ zwracany został prawidłowo wskazany w czasie kompilacji. Delegaty były częścią wersji 1,0 .NET, która była wcześniejsza niż ogólna.
 
-Najlepszym sposobem, aby wymusić bezpieczeństwo tego typu było dla kompilatora, aby utworzyć konkretne klasy delegata, który reprezentował podpis metody używane.
+Najlepszym sposobem wymuszenia zapewnienia bezpieczeństwa tego typu był kompilator w celu utworzenia konkretnych klas delegatów, które reprezentują używany podpis metody.
 
-Nawet jeśli nie można utworzyć klas pochodnych bezpośrednio, będzie używać metod zdefiniowanych w tych klasach. Przejdźmy przez najbardziej typowe metody, które będą używane podczas pracy z delegatów.
+Mimo że nie można bezpośrednio tworzyć klas pochodnych, należy użyć metod zdefiniowanych dla tych klas. Przejdźmy do najpopularniejszych metod, które będą używane podczas pracy z delegatami.
 
-Pierwszym, najważniejszym faktem do zapamiętania jest to, że `MulticastDelegate`każdy delegat, z którym pracujesz, pochodzi od . Delegat multiemisji oznacza, że podczas wywoływania za pośrednictwem pełnomocnika można wywołać więcej niż jeden obiekt docelowy metody. Oryginalny projekt rozważadokonywanie rozróżnienia między delegatów, gdzie można dołączyć i wywołać tylko jedną metodę docelową, a delegatów, gdzie wiele metod docelowych można dołączyć i wywołać. Rozróżnienie to okazało się mniej użyteczne w praktyce niż początkowo sądzono. Dwie różne klasy zostały już utworzone i zostały w ramach od jego pierwszego publicznego wydania.
+Pierwszy z najważniejszych faktów, z których Pamiętaj, że każdy delegat, z którym pracujesz, pochodzi od `MulticastDelegate` . Delegat multiemisji oznacza, że można wywołać więcej niż jeden obiekt docelowy metody podczas wywoływania za pośrednictwem delegata. Oryginalny projekt uwzględniał rozróżnienie między delegatami, w których można dołączać i wywoływać tylko jedną metodę docelową, oraz delegatów, gdzie można dołączać i wywoływać wiele metod docelowych. Takie rozróżnienie okazało się mniej użyteczne w rzeczywistości niż pierwotnie przemyślane. Dwie różne klasy zostały już utworzone i zostały w strukturze od momentu jego początkowej wersji publicznej.
 
-Metody, które będą używane najbardziej z `Invoke()` `BeginInvoke()`  /  `EndInvoke()`delegatów są i . `Invoke()`wywoła wszystkie metody, które zostały dołączone do wystąpienia określonego delegata. Jak widać powyżej, zazwyczaj wywołać delegatów przy użyciu składni wywołania metody na zmiennej delegata. Jak zobaczysz [w dalszej części tej serii,](delegates-patterns.md)istnieją wzorce, które działają bezpośrednio z tymi metodami.
+Metody, które będą używane najbardziej z delegatów, to `Invoke()` i `BeginInvoke()`  /  `EndInvoke()` . `Invoke()`wywoła wszystkie metody, które zostały dołączone do określonego wystąpienia delegata. Jak wspomniano powyżej, zazwyczaj wywołuje się delegatów przy użyciu składni wywołania metody w zmiennej delegat. Jak widać [w dalszej części tej serii](delegates-patterns.md), istnieją wzorce, które współpracują bezpośrednio z tymi metodami.
 
-Teraz, gdy widzieliście składnię języka i klas, które obsługują delegatów, zbadajmy, jak silnie typowane delegatów są używane, tworzone i wywoływane.
+Teraz, gdy znasz składnię języka i klasy, które obsługują delegatów, sprawdźmy, jak są używane, tworzone i wywoływane delegatów o jednoznacznie określonym typie.
 
 [Dalej](delegates-strongly-typed.md)

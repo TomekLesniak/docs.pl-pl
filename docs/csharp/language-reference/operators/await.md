@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 20fc492e45b2d248602de59682e752026d421e06
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 1941174d7e8d1676d11a13fa3ee6c7b84fe3952c
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916926"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063240"
 ---
 # <a name="await-operator-c-reference"></a>await — operator (odwołanie w C#)
 
@@ -27,7 +27,7 @@ Poprzedni przykład używa [ `Main` metody asynchronicznej](../../programming-gu
 > [!NOTE]
 > Aby zapoznać się z wprowadzeniem do programowania asynchronicznego, zobacz [programowanie asynchroniczne z Async i await](../../programming-guide/concepts/async/index.md). Programowanie asynchroniczne przy użyciu `async` i `await` następuje po [wzorcu asynchronicznym opartym na zadaniach](../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
 
-Operatora można używać `await` tylko w metodzie, [wyrażeniu lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)lub [metodzie anonimowej](delegate-operator.md) , która jest modyfikowana przez słowo kluczowe [Async](../keywords/async.md) . W metodzie asynchronicznej nie można użyć `await` operatora w treści funkcji synchronicznej, wewnątrz bloku [instrukcji lock](../keywords/lock-statement.md)i w [niebezpiecznym](../keywords/unsafe.md) kontekście.
+Operatora można używać `await` tylko w metodzie, [wyrażeniu lambda](lambda-expressions.md)lub [metodzie anonimowej](delegate-operator.md) , która jest modyfikowana przez słowo kluczowe [Async](../keywords/async.md) . W metodzie asynchronicznej nie można użyć `await` operatora w treści funkcji synchronicznej, wewnątrz bloku [instrukcji lock](../keywords/lock-statement.md)i w [niebezpiecznym](../keywords/unsafe.md) kontekście.
 
 Operand `await` operatora ma zwykle jeden z następujących typów .NET: <xref:System.Threading.Tasks.Task> , <xref:System.Threading.Tasks.Task%601> , <xref:System.Threading.Tasks.ValueTask> , lub <xref:System.Threading.Tasks.ValueTask%601> . Jednak każde oczekiwane wyrażenie może być argumentem operacji `await` operatora. Aby uzyskać więcej informacji, zobacz sekcję [oczekiwane wyrażenia](~/_csharplang/spec/expressions.md#awaitable-expressions) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 

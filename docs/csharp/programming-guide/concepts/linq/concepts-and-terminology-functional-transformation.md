@@ -3,12 +3,12 @@ title: Pojęcia i terminologia (transformacja funkcjonalna) (C#)
 description: Funkcje programowania funkcjonalnego ułatwiają Przekształcanie kodu XML. Zapoznaj się z pojęciami i terminologią czystych transformacji funkcjonalnych w języku C#.
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: ee972b376f0d0898b7681049b9641b43780ed353
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: ca05a914f6156730e773d1effebfc72626b16507
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103974"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063279"
 ---
 # <a name="concepts-and-terminology-functional-transformation-c"></a>Pojęcia i terminologia (transformacja funkcjonalna) (C#)
 
@@ -55,7 +55,7 @@ Aby uzyskać więcej informacji, zobacz [standardowe operatory zapytań — Omó
 wyrażenie lambda \
 Zasadniczo Wbudowana funkcja anonimowa, która może być używana wszędzie tam, gdzie jest oczekiwany typ delegata. Jest to uproszczona definicja wyrażeń lambda, ale jest ona odpowiednia do celów tego samouczka.
 
-Aby uzyskać więcej informacji na temat, zobacz [lambda Expressions](../../statements-expressions-operators/lambda-expressions.md).
+Aby uzyskać więcej informacji na temat, zobacz [lambda Expressions](../../../language-reference/operators/lambda-expressions.md).
 
 zbiera
 Strukturalny zestaw danych, zazwyczaj o jednolitym typie. Aby była zgodna z LINQ, kolekcja musi implementować <xref:System.Collections.IEnumerable> interfejs lub <xref:System.Linq.IQueryable> interfejs (lub jeden z ich rodzajowych odpowiedników <xref:System.Collections.Generic.IEnumerator%601> lub <xref:System.Linq.IQueryable%601> ).
@@ -77,7 +77,7 @@ Aby uzyskać więcej informacji, zobacz [wprowadzenie do zapytań LINQ (C#)](./i
 
 Te funkcje języka będą używane w przykładach kodu w tej sekcji.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie do czystych transformacji funkcjonalnych (C#)](./introduction-to-pure-functional-transformations.md)
 - [Programowanie funkcjonalne a programowanie bezwzględne (C#)](./functional-programming-vs-imperative-programming.md)

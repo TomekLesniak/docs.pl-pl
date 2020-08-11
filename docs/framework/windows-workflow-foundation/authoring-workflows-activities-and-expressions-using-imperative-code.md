@@ -3,12 +3,12 @@ title: Tworzenie przepływów pracy, działań i wyrażeń przy użyciu kodu imp
 description: Definicja przepływu pracy programu Workflow Foundation to drzewo skonfigurowanych obiektów aktywności. Użyj kodu, aby utworzyć definicje, działania i wyrażenia przepływu pracy.
 ms.date: 03/30/2017
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
-ms.openlocfilehash: d8b4cb8b85d3ea3759d58e15df823a72146772e8
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: d169049c47c154858a2e653b5f286fa6b66ba44d
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421556"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063799"
 ---
 # <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>Tworzenie przepływów pracy, działań i wyrażeń przy użyciu kodu imperatywnego
 Definicja przepływu pracy jest drzewem skonfigurowanych obiektów działania. To drzewo działań można zdefiniować na wiele sposobów, w tym poprzez ręczne edytowanie kodu XAML lub użycie Projektant przepływu pracy do tworzenia kodu XAML. Jednak użycie języka XAML nie jest wymagane. Definicje przepływów pracy można także tworzyć programowo. Ten temat zawiera omówienie tworzenia definicji przepływu pracy, działań i wyrażeń przy użyciu kodu. Aby zapoznać się z przykładami pracy z przepływami pracy XAML przy użyciu kodu, zobacz [Serializowanie przepływów pracy i działań do i z języka XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
@@ -62,7 +62,7 @@ new Assign<int>
   
  [!code-csharp[CFX_WorkflowApplicationExample#52](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#52)]  
   
- Aby uzyskać więcej informacji na temat wyrażeń lambda, zobacz [wyrażenia lambda (Przewodnik programowania w języku C#)](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) lub [wyrażenia lambda (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Aby uzyskać więcej informacji na temat wyrażeń lambda, zobacz [wyrażenia lambda (odwołanie w C#)](../../csharp/language-reference/operators/lambda-expressions.md) lub [wyrażenia lambda (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
  Wyrażenia lambda nie są możliwe do serializacji na format XAML. Jeśli zostanie podjęta próba serializacji przepływu pracy z wyrażeniami lambda, <xref:System.Activities.Expressions.LambdaSerializationException> zostanie zgłoszony następujący komunikat: "ten przepływ pracy zawiera wyrażenia lambda określone w kodzie. Te wyrażenia nie są możliwym do serializacji XAML. Aby można było serializować kod XAML przepływu pracy, należy użyć VisualBasicValue/VisualBasicReference lub ExpressionServices. Convert (lambda). Spowoduje to przekonwertowanie wyrażeń lambda na działania wyrażeń. " Aby to wyrażenie było zgodne z XAML, użyj <xref:System.Activities.Expressions.ExpressionServices> i <xref:System.Activities.Expressions.ExpressionServices.Convert%2A> , jak pokazano w poniższym przykładzie.  
   

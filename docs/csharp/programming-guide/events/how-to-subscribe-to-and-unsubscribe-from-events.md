@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: f228cc2e4fd719f4d79c56d65aa45b2a3031cba7
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 4aecbbd58268e7b50a34f503160edd1eca4fe659
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302090"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063628"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Subskrybowanie i anulowanie subskrypcji zdarzeń (Przewodnik programowania w języku C#)
 Zasubskrybujesz zdarzenie, które jest publikowane przez inną klasę, gdy chcesz napisać niestandardowy kod, który jest wywoływany, gdy zdarzenie jest zgłaszane. Na przykład można subskrybować zdarzenie przycisku, `click` Aby aplikacja była przydatna, gdy użytkownik kliknie przycisk.  
@@ -58,7 +58,7 @@ Zasubskrybujesz zdarzenie, które jest publikowane przez inną klasę, gdy chces
     publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent);  
     ```  
   
-     Można również użyć [wyrażenia lambda](../statements-expressions-operators/lambda-expressions.md) do określenia programu obsługi zdarzeń:
+     Można również użyć [wyrażenia lambda](../../language-reference/operators/lambda-expressions.md) do określenia programu obsługi zdarzeń:
   
     ```csharp
     public Form1()  
@@ -98,10 +98,10 @@ Zasubskrybujesz zdarzenie, które jest publikowane przez inną klasę, gdy chces
   
      Gdy Wszyscy subskrybenci nie subskrybują zdarzenia, wystąpienie zdarzenia w klasie wydawcy jest ustawione na `null` .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zdarzenia](./index.md)
-- [wydarzen](../../language-reference/keywords/event.md)
+- [event](../../language-reference/keywords/event.md)
 - [Jak opublikować zdarzenia zgodne z zaleceniami dotyczącymi platformy .NET](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 - [Operatory-and-=](../../language-reference/operators/subtraction-operator.md)
 - [Operatory + i + =](../../language-reference/operators/addition-operator.md)

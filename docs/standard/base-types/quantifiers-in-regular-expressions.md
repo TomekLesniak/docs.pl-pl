@@ -15,12 +15,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 2fc47a834f8f5b18021aa4f321345b8d7e4e8459
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 3ffdd481ac001b4e1bd229c6f5fa0bf285b508b2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662891"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063812"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kwantyfikatory w wyrażeniach regularnych
 Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi być obecne w danych wejściowych, aby można było znaleźć dopasowanie.  W poniższej tabeli wymieniono Kwantyfikatory obsługiwane przez platformę .NET.  
@@ -48,7 +48,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 ### <a name="match-zero-or-more-times-"></a>Dopasowanie zero lub więcej razy: *  
  `*`Kwantyfikator dopasowuje poprzedni element zero lub więcej razy. Jest to odpowiednik `{0,}` kwantyfikatora. `*`jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `*?` .  
   
- Poniższy przykład ilustruje to wyrażenie regularne. Dziewięć cyfr w ciągu wejściowym, pięć pasuje do wzorca i cztery (,, `95` `929` `9219` i `9919` ) nie.  
+ Poniższy przykład ilustruje to wyrażenie regularne. Dziewięciu grup cyfr w ciągu wejściowym, pięć dopasowuje wzorzec i cztery ( `95` ,,, `929` `9219` i) nie `9919` .  
   
  [!code-csharp[RegularExpressions.Quantifiers#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#1)]  
