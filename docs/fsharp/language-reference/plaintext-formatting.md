@@ -1,13 +1,13 @@
 ---
-title: Formatowanie zwykłego tekstu
+title: Format zwykłego tekstu
 description: 'Dowiedz się, jak używać printf i innego formatowania zwykłego tekstu w aplikacjach i skryptach w języku F #.'
 ms.date: 07/22/2020
-ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 90a861736dae69dfbc199a19e24f587c42404737
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854922"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063786"
 ---
 # <a name="plain-text-formatting"></a>Formatowanie zwykłego tekstu
 
@@ -70,8 +70,8 @@ Specyfikacje formatu dla `printf` formatów są ciągami ze `%` znacznikami wska
 
 | Specyfikator formatu   | Liczba typów:        | Uwagi                      |
 |:-------------------|:---------------|:-----------------------------|
-| `%b`               | wartość logiczna      | Sformatowane jako `true` lub`false`                |
-| `%s`               | ciąg    | Sformatowana jako niezmieniona zawartość         |
+| `%b`               | bool      | Sformatowane jako `true` lub`false`                |
+| `%s`               | string    | Sformatowana jako niezmieniona zawartość         |
 | `%c`               | char      | Sformatowane jako literał znakowy  |
 | `%d`, `%i`         | podstawowy typ Integer | Sformatowana jako dziesiętna liczba całkowita, podpisana, jeśli podstawowy typ Integer jest podpisany |
 | `%u`               | podstawowy typ Integer | Sformatowane jako liczba całkowita dziesiętna bez znaku   |
@@ -85,6 +85,7 @@ Specyfikacje formatu dla `printf` formatów są ciągami ze `%` znacznikami wska
 | `%A` | dowolna wartość  |   Sformatowane przy użyciu [zwykłego formatowania tekstu strukturalnego](plaintext-formatting.md) z domyślnymi ustawieniami układu |
 | `%a` | dowolna wartość  |   Wymaga dwóch argumentów: funkcja formatowania akceptująca parametr kontekstowy i wartość oraz określoną wartość do wydrukowania |
 | `%t` | dowolna wartość  |   Wymaga jednego argumentu: funkcja formatowania akceptująca parametr kontekstowy, który wyprowadza lub zwraca odpowiedni tekst |
+| `%%` | (brak)  |   Nie wymaga żadnych argumentów i drukuje zwykły znak procentu:`%` |
 
 Podstawowe typy całkowite to `byte` ( `System.Byte` ), (), (), `sbyte` `System.SByte` `int16` `System.Int16` `uint16` ( `System.UInt16` ), `int32` `System.Int32` `uint32` `System.UInt32` `int64` `System.Int64` `uint64` `System.UInt64` `nativeint` `System.IntPtr` `unativeint` `System.UIntPtr` (), (), (), (), () i ().
 Podstawowe typy zmiennoprzecinkowe to `float` ( `System.Double` ) i `float32` ( `System.Single` ).
@@ -419,4 +420,4 @@ Te atrybuty są ignorowane w formacie zwykłego tekstu F #, ale mogą być przyd
 - [Ciągi](strings.md)
 - [Rekordy](records.md)
 - [Sumy rozłączne](discriminated-unions.md)
-- [F# Interactive](fsharp-interactive-options.md)
+- [Interaktywny F#](fsharp-interactive-options.md)
