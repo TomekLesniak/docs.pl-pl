@@ -72,24 +72,12 @@
   items:
     - name: Wprowadzenie
       href: tour-of-csharp/index.md
-    - name: Struktura programu
-      href: tour-of-csharp/program-structure.md
-    - name: Typy i zmienne
-      href: tour-of-csharp/types-and-variables.md
-    - name: Wyrażenia
-      href: tour-of-csharp/expressions.md
-    - name: Instrukcje
-      href: tour-of-csharp/statements.md
-    - name: Klasy i obiekty
-      href: tour-of-csharp/classes-and-objects.md
-    - name: Tablice
-      href: tour-of-csharp/arrays.md
-    - name: Interfejsy
-      href: tour-of-csharp/interfaces.md
-    - name: Delegaty
-      href: tour-of-csharp/delegates.md
-    - name: Atrybuty
-      href: tour-of-csharp/attributes.md
+    - name: Types
+      href: tour-of-csharp/types.md
+    - name: Bloki konstrukcyjne programu
+      href: tour-of-csharp/program-building-blocks.md
+    - name: Główne obszary języka
+      href: tour-of-csharp/features.md
 - name: Co nowego w języku C#
   items:
     - name: C# 8.0
@@ -133,8 +121,6 @@
       href: programming-guide/interfaces/index.md
     - name: Metody
       href: methods.md
-    - name: Wyrażenia lambda
-      href: programming-guide/statements-expressions-operators/lambda-expressions.md
     - name: Właściwości
       href: properties.md
     - name: Indeksatory
@@ -882,8 +868,6 @@
           items:
             - name: Omówienie
               href: programming-guide/statements-expressions-operators/anonymous-functions.md
-            - name: Wyrażenia lambda
-              href: programming-guide/statements-expressions-operators/lambda-expressions.md
             - name: Użycie wyrażeń lambda w zapytaniu
               href: programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md
         - name: Równość i porównywanie równości
@@ -1590,6 +1574,9 @@
         - name: Operatory przypisania
           href: language-reference/operators/assignment-operator.md
           displayName: '=, ref, compound'
+        - name: Wyrażenia lambda
+          href: language-reference/operators/lambda-expressions.md
+          displayName: anonymous functions
         - name: '+ and +=, operatory'
           href: language-reference/operators/addition-operator.md
           displayName: 'string concatenation, delegate combination, event subscription'
