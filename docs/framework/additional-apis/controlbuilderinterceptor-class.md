@@ -1,5 +1,5 @@
 ---
-title: Klasa ControlBuilderInterceptor
+title: ControlBuilderInterceptor, klasa
 ms.date: 08/11/2020
 api_name:
 - System.Web.Compilation.ControlBuilderInterceptor
@@ -9,14 +9,14 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 312d977f832d262b1bebc6638280b67b133babdf
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.openlocfilehash: 0cd7409deb9cb84783cfa70600999fa4b2a2d2e2
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88084398"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187990"
 ---
-# <a name="controlbuilderinterceptor-class"></a>Klasa ControlBuilderInterceptor
+# <a name="controlbuilderinterceptor-class"></a>ControlBuilderInterceptor, klasa
 
 `ControlBuilderInterceptor`Klasa umożliwia dostosowanie lub sterowanie procesem kompilacji.
 
@@ -57,8 +57,9 @@ Zarejestruj typ interceptora przy użyciu `aspnet:20ControlBuilderInterceptor` k
          value="Fabrikam.Interceptor, Fabrikam, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b3831f2f2b744f7" />
   </appSettings>
 </configuration>
+```
 
-To retrieve the assembly-qualified name of a type, use the <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> property, as demonstrated in the following code.
+Aby pobrać kwalifikowaną nazwę zestawu typu, użyj <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> właściwości, jak pokazano w poniższym kodzie.
 
 ```csharp
 string assemblyQualifiedName = typeof(Fabrikam.Interceptor).AssemblyQualifiedName;

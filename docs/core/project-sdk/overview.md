@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Dowiedz się więcej o zestawach SDK projektu .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9db62ab7774e3dd71412fa346d78ae0c62a2f81f
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 873c06007307c5892c4828f987486b4dd98dc9ae
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803044"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187919"
 ---
 # <a name="net-core-project-sdks"></a>Zestawy SDK projektu .NET Core
 
@@ -22,7 +22,7 @@ Dostępne są następujące zestawy SDK dla platformy .NET Core:
 | ID | Opis | Repozytorium|
 | - | - | - |
 | `Microsoft.NET.Sdk` | Zestaw .NET Core SDK | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Web` | [Zestaw SDK sieci Web](/aspnet/core/razor-pages/web-sdk) platformy .NET Core | <https://github.com/aspnet/websdk> |
+| `Microsoft.NET.Sdk.Web` | [Zestaw SDK sieci Web](/aspnet/core/razor-pages/web-sdk) platformy .NET Core | <https://github.com/dotnet/sdk> |
 | `Microsoft.NET.Sdk.Razor` | [Zestaw SDK](/aspnet/core/razor-pages/sdk) programu .NET Core Razor |
 | `Microsoft.NET.Sdk.Worker` | Zestaw SDK usługi procesu roboczego platformy .NET Core |
 | `Microsoft.NET.Sdk.WindowsDesktop` | Podstawowe WinForms i zestaw WPF SDK platformy .NET |
@@ -77,7 +77,7 @@ Odwołujące się do zestawu SDK w jednym z tych sposobów znacznie upraszczają
 
 Można zobaczyć w pełni rozwinięty projekt, gdy program MSBuild widzi go po zestawie SDK i jego obiektach docelowych za pomocą `dotnet msbuild -preprocess` polecenia. Przełącznik [preprocesora](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) [`dotnet msbuild`](../tools/dotnet-msbuild.md) polecenia pokazuje, które pliki są importowane, ich źródła i ich wkłady do kompilacji bez faktycznego kompilowania projektu.
 
-Jeśli projekt ma wiele platform docelowych, należy skoncentrować wyniki polecenia tylko dla jednej struktury, określając ją jako właściwość programu MSBuild. Przykład:
+Jeśli projekt ma wiele platform docelowych, należy skoncentrować wyniki polecenia tylko dla jednej struktury, określając ją jako właściwość programu MSBuild. Na przykład:
 
 `dotnet msbuild -property:TargetFramework=netcoreapp2.0 -preprocess:output.xml`
 
@@ -174,7 +174,7 @@ Aby użyć niestandardowego obiektu docelowego w projekcie, Dodaj element wskazu
 
 Można skonfigurować sposób używania niestandardowego obiektu docelowego. Ponieważ jest to element docelowy programu MSBuild, może on zależeć od danego elementu docelowego, działać po innym elemencie docelowym lub być wywoływana ręcznie przy użyciu `dotnet msbuild -t:<target-name>` polecenia. Aby jednak zapewnić lepsze środowisko użytkownika, można połączyć narzędzia dla poszczególnych projektów i niestandardowe elementy docelowe. W tym scenariuszu narzędzie dla projektu akceptuje wszelkie parametry, które są potrzebne, i tłumaczy je na wymagane [`dotnet msbuild`](../tools/dotnet-msbuild.md) wywołanie, które wykonuje miejsce docelowe. Możesz zobaczyć przykład tego rodzaju synergii w repozytorium [przykładów Hackathonych](https://github.com/dotnet/MVPSummitHackathon2016) w projekcie programu 2016 MVP [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Instalowanie programu .NET Core](../install/index.yml)
 - [Jak używać zestawów SDK projektu MSBuild](/visualstudio/msbuild/how-to-use-project-sdk)

@@ -2,12 +2,12 @@
 title: polecenie dotnet publish
 description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
 ms.date: 02/24/2020
-ms.openlocfilehash: 59fdbfa875dad13963ae198acc6a31b537279dfe
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: 4ff49452e4d941b3e06ad511507b1dc429ab459f
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251182"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187978"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -15,7 +15,7 @@ ms.locfileid: "87251182"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet publish`-Publikuje aplikację i jej zależności do folderu wdrożenia w systemie hostingu.
+`dotnet publish` -Publikuje aplikację i jej zależności do folderu wdrożenia w systemie hostingu.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -34,7 +34,7 @@ dotnet publish -h|--help
 
 ## <a name="description"></a>Opis
 
-`dotnet publish`kompiluje aplikację, odczytuje ją z zależności określonych w pliku projektu i publikuje zestaw plików w katalogu. Dane wyjściowe obejmują następujące zasoby:
+`dotnet publish` kompiluje aplikację, odczytuje ją z zależności określonych w pliku projektu i publikuje zestaw plików w katalogu. Dane wyjściowe obejmują następujące zasoby:
 
 - Kod języka pośredniego (IL) w zestawie z rozszerzeniem *dll* .
 - *.deps.jsw* pliku, który zawiera wszystkie zależności projektu.
@@ -51,7 +51,9 @@ dotnet publish -h|--help
 
 `dotnet publish`Polecenie wywołuje program MSBuild, który wywołuje `Publish` element docelowy. Wszystkie parametry przesłane do `dotnet publish` są przesyłane do programu MSBuild. `-c`Parametry i są `-o` mapowane odpowiednio do programu MSBuild `Configuration` i `PublishDir` właściwości.
 
-`dotnet publish`Polecenie akceptuje Opcje programu MSBuild, takie jak `-p` Ustawienia właściwości i `-l` definiowania rejestratora. Na przykład można ustawić właściwość programu MSBuild przy użyciu formatu: `-p:<NAME>=<VALUE>` . Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* , na przykład:
+`dotnet publish`Polecenie akceptuje Opcje programu MSBuild, takie jak `-p` Ustawienia właściwości i `-l` definiowania rejestratora. Na przykład można ustawić właściwość programu MSBuild przy użyciu formatu: `-p:<NAME>=<VALUE>` .
+
+Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Na przykład:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -71,9 +73,9 @@ Więcej informacji można znaleźć w następujących zasobach:
 
   Projekt lub rozwiązanie do opublikowania.
   
-  * `PROJECT`jest ścieżką i nazwą pliku projektu [c#](csproj.md), f # lub Visual Basic lub ścieżką do katalogu, który zawiera plik projektu C#, f # lub Visual Basic. Jeśli katalog nie jest określony, domyślnie jest bieżącym katalogiem.
+  * `PROJECT` jest ścieżką i nazwą pliku projektu [c#](csproj.md), f # lub Visual Basic lub ścieżką do katalogu, który zawiera plik projektu C#, f # lub Visual Basic. Jeśli katalog nie jest określony, domyślnie jest bieżącym katalogiem.
 
-  * `SOLUTION`jest ścieżką i nazwą pliku rozwiązania (rozszerzeniem*sln* ) lub ścieżką do katalogu zawierającego plik rozwiązania. Jeśli katalog nie jest określony, domyślnie jest bieżącym katalogiem. Dostępne od wersji .NET Core 3,0 SDK.
+  * `SOLUTION` jest ścieżką i nazwą pliku rozwiązania (rozszerzeniem*sln* ) lub ścieżką do katalogu zawierającego plik rozwiązania. Jeśli katalog nie jest określony, domyślnie jest bieżącym katalogiem. Dostępne od wersji .NET Core 3,0 SDK.
 
 ## <a name="options"></a>Opcje
 
@@ -227,7 +229,7 @@ Więcej informacji można znaleźć w następujących zasobach:
   dotnet publish --no-dependencies
   ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie publikowania aplikacji .NET Core](../deploying/index.md)
 - [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](../deploying/deploy-with-cli.md)
