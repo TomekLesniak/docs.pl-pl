@@ -3,6 +3,7 @@ title: Niestandardowe ciągi formatujące datę i godzinę
 description: Dowiedz się, jak używać niestandardowych ciągów formatu daty i godziny w celu przeprowadzenia konwersji wartości DateTime lub DateTimeOffset na reprezentacje tekstowe lub do analizowania ciągów dat & razy.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
+ms.topic: reference
 dev_langs:
 - csharp
 - vb
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: 89601d0628e4f5f00ec02d5cdd6fb79216b1469d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 48e1b40ddd4bc7fae7d65660adf216756d7c83f7
+ms.sourcegitcommit: 2987e241e2f76c9248d2146bf2761a33e2c7a882
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447254"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228747"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Niestandardowe ciągi formatujące datę i godzinę
 
@@ -33,7 +34,7 @@ Niestandardowe ciągi formatujące datę i godzinę mogą być używane z obu <x
 
 [!INCLUDE[C# interactive-note](~/includes/csharp-interactive-with-utc-partial-note.md)]
 
-<a name="table"></a>W operacjach formatowania niestandardowe ciągi formatujące datę i czas mogą być używane z `ToString` metodą wystąpienia daty i godziny lub z metodą, która obsługuje formatowanie złożone. W poniższym przykładzie pokazano oba te zastosowania.
+<a name="table"></a> W operacjach formatowania niestandardowe ciągi formatujące datę i czas mogą być używane z `ToString` metodą wystąpienia daty i godziny lub z metodą, która obsługuje formatowanie złożone. W poniższym przykładzie pokazano oba te zastosowania.
 
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#17](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/custandformatting1.cs#17)]
 [!code-vb[Formatting.DateAndTime.Custom#17](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/custandformatting1.vb#17)]
@@ -46,59 +47,61 @@ W operacjach analizy niestandardowe ciągi formatujące datę i czas mogą być 
 W poniższej tabeli opisano specyfikatory niestandardowego formatu daty i godziny oraz pokazano ciąg wynikowy utworzony przez każdy specyfikator formatu. Domyślnie ciągi wynikowe odzwierciedlają konwencje formatowania kultury en-US. Jeśli określony specyfikator formatu generuje zlokalizowany ciąg wynikowy, w przykładzie wymieniono też kulturę, której dotyczy ciąg wynikowy. Aby uzyskać więcej informacji na temat używania niestandardowych ciągów formatu daty i godziny, zobacz sekcję [uwagi](#notes) .
 
 | Specyfikator formatu | Opis | Przykłady |
-| ---------------------- | ----------------- | -------------- |
-|„d”|Dzień miesiąca z zakresu od 1 do 31.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "d"](#dSpecifier).|2009-06-01T13:45:30-> 1<br /><br /> 2009-06-15T13:45:30-> 15|
-|„dd”|Dzień miesiąca z zakresu od 01 do 31.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "DD"](#ddSpecifier).|2009-06-01T13:45:30-> 01<br /><br /> 2009-06-15T13:45:30-> 15|
-|„ddd”|Skrócona nazwa dnia tygodnia.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "ddd"](#dddSpecifier).|2009-06-15T13:45:30-> PN (EN-US)<br /><br /> 2009-06-15T13:45:30-> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30 > jednostki LUN. (fr-FR)|
-|„dddd”|Pełna nazwa dnia tygodnia.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "dddd"](#ddddSpecifier).|2009-06-15T13:45:30-> poniedziałek (pl-US)<br /><br /> 2009-06-15T13:45:30-> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30-> Lundi (fr-FR)|
-|„f”|Liczba dziesiątych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "f"](#fSpecifier).|2009-06-15T13:45:30.6170000-> 6<br /><br /> 2009-06-15T13:45:30.05-> 0|
-|„ff”|Liczba setnych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FF"](#ffSpecifier).|2009-06-15T13:45:30.6170000-> 61<br /><br /> 2009-06-15T13:45:30.0050000-> 00|
-|„fff”|Liczba milisekund w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFF"](#fffSpecifier).|6/15/2009 13:45:30.617-> 617<br /><br /> 6/15/2009 13:45:30.0005-> 000|
-|„ffff”|Liczba dziesięciotysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFF"](#ffffSpecifier).|2009-06-15T13:45:30.6175000-> 6175<br /><br /> 2009-06-15T13:45:30.0000500-> 0000|
-|„fffff”|Liczba stutysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffff"](#fffffSpecifier).|2009-06-15T13:45:30.6175400-> 61754<br /><br /> 6/15/2009 13:45:30.000005 > 00000|
-|„ffffff”|Liczba milionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFF"](#ffffffSpecifier).|2009-06-15T13:45:30.6175420-> 617542<br /><br /> 2009-06-15T13:45:30.0000005-> 000000|
-|„fffffff”|Liczba dziesięciomilionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffffff"](#fffffffSpecifier).|2009-06-15T13:45:30.6175425-> 6175425<br /><br /> 2009-06-15T13:45:30.0001150-> 0001150|
-|„F”|Jeśli wartość jest różna od zera, liczba dziesiątych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "F"](#F_Specifier).|2009-06-15T13:45:30.6170000-> 6<br /><br /> 2009-06-15T13:45:30.0500000-> (Brak danych wyjściowych)|
-|„FF”|Jeśli wartość jest różna od zera, liczba setnych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FF"](#FF_Specifier).|2009-06-15T13:45:30.6170000-> 61<br /><br /> 2009-06-15T13:45:30.0050000-> (Brak danych wyjściowych)|
-|„FFF”|Jeśli wartość jest różna od zera, liczba milisekund w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFF"](#FFF_Specifier).|2009-06-15T13:45:30.6170000-> 617<br /><br /> 2009-06-15T13:45:30.0005000-> (Brak danych wyjściowych)|
-|„FFFF”|Jeśli wartość jest różna od zera, liczba dziesięciotysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFF"](#FFFF_Specifier).|2009-06-15T13:45:30.5275000-> 5275<br /><br /> 2009-06-15T13:45:30.0000500-> (Brak danych wyjściowych)|
-|„FFFFF”|Jeśli wartość jest różna od zera, liczba stutysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffff"](#FFFFF_Specifier).|2009-06-15T13:45:30.6175400-> 61754<br /><br /> 2009-06-15T13:45:30.0000050-> (Brak danych wyjściowych)|
-|„FFFFFF”|Jeśli wartość jest różna od zera, liczba milionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFF"](#FFFFFF_Specifier).|2009-06-15T13:45:30.6175420-> 617542<br /><br /> 2009-06-15T13:45:30.0000005-> (Brak danych wyjściowych)|
-|„FFFFFFF”|Jeśli wartość jest różna od zera, liczba dziesięciomilionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFFF"](#FFFFFFF_Specifier).|2009-06-15T13:45:30.6175425-> 6175425<br /><br /> 2009-06-15T13:45:30.0001150-> 000115|
-|„g”, „gg”|Okres lub era.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "g" lub "gg"](#gSpecifier).|2009-06-15T13:45:30.6170000-> N.E.|
-|„h”|Godzina; używany jest zegar 12-godzinny (wartości od 1 do 12).<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "h"](#hSpecifier).|2009-06-15T01:45:30-> 1<br /><br /> 2009-06-15T13:45:30-> 1|
-|„hh”|Godzina; używany jest zegar 12-godzinny (wartości od 01 do 12).<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "HH"](#hhSpecifier).|2009-06-15T01:45:30-> 01<br /><br /> 2009-06-15T13:45:30-> 01|
-|„H”|Godzina przy użyciu 24-godzinnego zegara od 0 do 23.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "H"](#H_Specifier).|2009-06-15T01:45:30-> 1<br /><br /> 2009-06-15T13:45:30-> 13|
-|„HH”|Godzina; używany jest zegar 24-godzinny (wartości od 00 do 23).<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "HH"](#HH_Specifier).|2009-06-15T01:45:30-> 01<br /><br /> 2009-06-15T13:45:30-> 13|
-|„K”|Informacje o strefie czasowej.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "K"](#KSpecifier).|Z <xref:System.DateTime> wartościami:<br /><br /> 2009-06-15T13:45:30, rodzaj nieokreślony-><br /><br /> 2009-06-15T13:45:30, rodzaj UTC-> Z<br /><br /> 2009-06-15T13:45:30, rodzaj lokalny->-07:00 (zależy od ustawień komputera lokalnego)<br /><br /> Z <xref:System.DateTimeOffset> wartościami:<br /><br /> 2009-06-15T01:45:30-07:00-->-07:00<br /><br /> 2009-06-15T08:45:30 + 00:00--> + 00:00|
-|„m”|Minuta; wartości z zakresu od 0 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "m"](#mSpecifier).|2009 — 06-15T01:09:30-> 9<br /><br /> 2009 — 06-15T13:29:30-> 29|
-|„mm”|Minuta; wartości z zakresu od 00 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "mm"](#mmSpecifier).|2009 — 06-15T01:09:30-> 09<br /><br /> 2009-06-15T01:45:30-> 45|
-|„M”|Miesiąc; wartości z zakresu od 1 do 12.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "M"](#M_Specifier).|2009-06-15T13:45:30-> 6|
-|„MM”|Miesiąc; wartości z zakresu od 01 do 12.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "mm"](#MM_Specifier).|2009 — 06-15T13:45:30 — > 06|
-|„MMM”|Skrócona nazwa miesiąca.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "MMM"](#MMM_Specifier).|2009-06-15T13:45:30-> Jun (pl-US)<br /><br /> 2009-06-15T13:45:30-> juin (fr-FR)<br /><br /> 2009-06-15T13:45:30-> Jun (zu-za)|
-|„MMMM”|Pełna nazwa miesiąca.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "MMMM"](#MMMM_Specifier).|2009-06-15T13:45:30-> czerwiec (pl-US)<br /><br /> 2009-06-15T13:45:30-> Juni (da-DK)<br /><br /> 2009-06-15T13:45:30-> uJuni (zu-za)|
-|„s”|Sekunda; wartości z zakresu od 0 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "s"](#sSpecifier).|2009 — 06-15T13:45:09-> 9|
-|„ss”|Sekunda; wartości z zakresu od 00 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "SS"](#ssSpecifier).|2009 — 06-15T13:45:09-> 09|
-|„t”|Pierwszy znak oznaczenia AM/PM.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "t"](#tSpecifier).|2009-06-15T13:45:30-> P (EN-US)<br /><br /> 2009-06-15T13:45:30-> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR)|
-|„tt”|Oznaczenie AM/PM.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "tt"](#ttSpecifier).|2009-06-15T13:45:30-> PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR)|
-|„y”|Rok; wartości z zakresu od 0 do 99.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "y"](#ySpecifier).|0,001-01-01T00:00:00-> 1<br /><br /> 0900-01-01T00:00:00-> 0<br /><br /> 1900-01-01T00:00:00-> 0<br /><br /> 2009 — 06-15T13:45:30-> 9<br /><br /> 2019-06-15T13:45:30-> 19|
-|„yy”|Rok; wartości z zakresu od 00 do 99.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "YY"](#yySpecifier).|0,001-01-01T00:00:00-> 01<br /><br /> 0900-01-01T00:00:00-> 00<br /><br /> 1900-01-01T00:00:00-> 00<br /><br /> 2019-06-15T13:45:30-> 19|
-|„yyy”|Rok; co najmniej trzy cyfry.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "yyy"](#yyySpecifier).|0,001-01-01T00:00:00-> 001<br /><br /> 0900-01-01T00:00:00-> 900<br /><br /> 1900-01-01T00:00:00-> 1900<br /><br /> 2009-06-15T13:45:30-> 2009|
-|„yyyy”|Rok jako liczba czterocyfrowa.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "RRRR"](#yyyySpecifier).|0,001-01-01T00:00:00-> 0,001<br /><br /> 0900-01-01T00:00:00-> 0900<br /><br /> 1900-01-01T00:00:00-> 1900<br /><br /> 2009-06-15T13:45:30-> 2009|
-|„yyyyy”|Rok jako liczba pięciocyfrowa.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "RRRR"](#yyyyySpecifier).|0,001-01-01T00:00:00-> 00001<br /><br /> 2009-06-15T13:45:30-> 02009|
-|„z”|Przesunięcie godzinowe względem czasu UTC, bez zer wiodących.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "z"](#zSpecifier).|2009-06-15T13:45:30-07:00->-7|
-|„zz”|Przesunięcie godzinowe względem czasu UTC, z zerem wiodącym dla wartości jednocyfrowych.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "ZZ"](#zzSpecifier).|2009-06-15T13:45:30-07:00->-07|
-|„zzz”|Godzinowe i minutowe przesunięcie względem czasu UTC.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "ZZZ"](#zzzSpecifier).|2009-06-15T13:45:30-07:00->-07:00|
-|":"|Separator godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego ":"](#timeSeparator).|2009-06-15T13:45:30->: (EN-US)<br /><br /> 2009-06-15T13:45:30->. (it-IT)<br /><br /> 2009-06-15T13:45:30->: (ja-JP)|
-|"/"|Separator daty.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "/"](#dateSeparator).|2009-06-15T13:45:30->/(EN-US)<br /><br /> 2009-06-15T13:45:30->-(AR-DZ)<br /><br /> 2009-06-15T13:45:30->. (tr-TR)|
-|"*String*"<br /><br /> "*String*"|Ogranicznik ciągu literału.<br /><br /> Więcej informacji: [literały znakowe](#Literals).|2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P<br /><br /> 2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P|
-|%|Definiuje następujący znak jako specyfikator formatu niestandardowego.<br /><br /> Więcej informacji:[Używanie pojedynczego specyfikatora formatu niestandardowego](#UsingSingleSpecifiers).|2009-06-15T13:45:30 (% h) — > 1|
-|&#92;|Znak ucieczki.<br /><br /> Więcej informacji: [literały znakowe](#Literals) i [Używanie znaku ucieczki](#escape).|2009-06-15T13:45:30 (h \h) — > 1 h|
-|Jakikolwiek inny znak|Znak jest kopiowany do ciągu wynikowego bez zmian.<br /><br /> Więcej informacji: [literały znakowe](#Literals).|2009-06-15T01:45:30 (ARR hh: mm t)-> ARR 01:45 A|
+|--|--|--|
+| „d” | Dzień miesiąca z zakresu od 1 do 31.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "d"](#dSpecifier). | 2009-06-01T13:45:30-> 1<br /><br /> 2009-06-15T13:45:30-> 15 |
+| „dd” | Dzień miesiąca z zakresu od 01 do 31.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "DD"](#ddSpecifier). | 2009-06-01T13:45:30-> 01<br /><br /> 2009-06-15T13:45:30-> 15 |
+| „ddd” | Skrócona nazwa dnia tygodnia.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "ddd"](#dddSpecifier). | 2009-06-15T13:45:30-> PN (EN-US)<br /><br /> 2009-06-15T13:45:30-> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30 > jednostki LUN. (fr-FR) |
+| „dddd” | Pełna nazwa dnia tygodnia.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "dddd"](#ddddSpecifier). | 2009-06-15T13:45:30-> poniedziałek (pl-US)<br /><br /> 2009-06-15T13:45:30-> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30-> Lundi (fr-FR) |
+| „f” | Liczba dziesiątych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "f"](#fSpecifier). | 2009-06-15T13:45:30.6170000-> 6<br /><br /> 2009-06-15T13:45:30.05-> 0 |
+| „ff” | Liczba setnych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FF"](#ffSpecifier). | 2009-06-15T13:45:30.6170000-> 61<br /><br /> 2009-06-15T13:45:30.0050000-> 00 |
+| „fff” | Liczba milisekund w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFF"](#fffSpecifier). | 6/15/2009 13:45:30.617-> 617<br /><br /> 6/15/2009 13:45:30.0005-> 000 |
+| „ffff” | Liczba dziesięciotysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFF"](#ffffSpecifier). | 2009-06-15T13:45:30.6175000-> 6175<br /><br /> 2009-06-15T13:45:30.0000500-> 0000 |
+| „fffff” | Liczba stutysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffff"](#fffffSpecifier). | 2009-06-15T13:45:30.6175400-> 61754<br /><br /> 6/15/2009 13:45:30.000005 > 00000 |
+| „ffffff” | Liczba milionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFF"](#ffffffSpecifier). | 2009-06-15T13:45:30.6175420-> 617542<br /><br /> 2009-06-15T13:45:30.0000005-> 000000 |
+| „fffffff” | Liczba dziesięciomilionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffffff"](#fffffffSpecifier). | 2009-06-15T13:45:30.6175425-> 6175425<br /><br /> 2009-06-15T13:45:30.0001150-> 0001150 |
+| „F” | Jeśli wartość jest różna od zera, liczba dziesiątych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "F"](#F_Specifier). | 2009-06-15T13:45:30.6170000-> 6<br /><br /> 2009-06-15T13:45:30.0500000-> (Brak danych wyjściowych) |
+| „FF” | Jeśli wartość jest różna od zera, liczba setnych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FF"](#FF_Specifier). | 2009-06-15T13:45:30.6170000-> 61<br /><br /> 2009-06-15T13:45:30.0050000-> (Brak danych wyjściowych) |
+| „FFF” | Jeśli wartość jest różna od zera, liczba milisekund w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFF"](#FFF_Specifier). | 2009-06-15T13:45:30.6170000-> 617<br /><br /> 2009-06-15T13:45:30.0005000-> (Brak danych wyjściowych) |
+| „FFFF” | Jeśli wartość jest różna od zera, liczba dziesięciotysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFF"](#FFFF_Specifier). | 2009-06-15T13:45:30.5275000-> 5275<br /><br /> 2009-06-15T13:45:30.0000500-> (Brak danych wyjściowych) |
+| „FFFFF” | Jeśli wartość jest różna od zera, liczba stutysięcznych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffff"](#FFFFF_Specifier). | 2009-06-15T13:45:30.6175400-> 61754<br /><br /> 2009-06-15T13:45:30.0000050-> (Brak danych wyjściowych) |
+| „FFFFFF” | Jeśli wartość jest różna od zera, liczba milionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFF"](#FFFFFF_Specifier). | 2009-06-15T13:45:30.6175420-> 617542<br /><br /> 2009-06-15T13:45:30.0000005-> (Brak danych wyjściowych) |
+| „FFFFFFF” | Jeśli wartość jest różna od zera, liczba dziesięciomilionowych części sekundy w wartości daty i godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFFF"](#FFFFFFF_Specifier). | 2009-06-15T13:45:30.6175425-> 6175425<br /><br /> 2009-06-15T13:45:30.0001150-> 000115 |
+| „g”, „gg” | Okres lub era.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "g" lub "gg"](#gSpecifier). | 2009-06-15T13:45:30.6170000-> N.E. |
+| „h” | Godzina; używany jest zegar 12-godzinny (wartości od 1 do 12).<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "h"](#hSpecifier). | 2009-06-15T01:45:30-> 1<br /><br /> 2009-06-15T13:45:30-> 1 |
+| „hh” | Godzina; używany jest zegar 12-godzinny (wartości od 01 do 12).<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "HH"](#hhSpecifier). | 2009-06-15T01:45:30-> 01<br /><br /> 2009-06-15T13:45:30-> 01 |
+| „H” | Godzina przy użyciu 24-godzinnego zegara od 0 do 23.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "H"](#H_Specifier). | 2009-06-15T01:45:30-> 1<br /><br /> 2009-06-15T13:45:30-> 13 |
+| „HH” | Godzina; używany jest zegar 24-godzinny (wartości od 00 do 23).<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "HH"](#HH_Specifier). | 2009-06-15T01:45:30-> 01<br /><br /> 2009-06-15T13:45:30-> 13 |
+| „K” | Informacje o strefie czasowej.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "K"](#KSpecifier). | Z <xref:System.DateTime> wartościami:<br /><br /> 2009-06-15T13:45:30, rodzaj nieokreślony-><br /><br /> 2009-06-15T13:45:30, rodzaj UTC-> Z<br /><br /> 2009-06-15T13:45:30, rodzaj lokalny->-07:00 (zależy od ustawień komputera lokalnego)<br /><br /> Z <xref:System.DateTimeOffset> wartościami:<br /><br /> 2009-06-15T01:45:30-07:00-->-07:00<br /><br /> 2009-06-15T08:45:30 + 00:00--> + 00:00 |
+| „m” | Minuta; wartości z zakresu od 0 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "m"](#mSpecifier). | 2009 — 06-15T01:09:30-> 9<br /><br /> 2009 — 06-15T13:29:30-> 29 |
+| „mm” | Minuta; wartości z zakresu od 00 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "mm"](#mmSpecifier). | 2009 — 06-15T01:09:30-> 09<br /><br /> 2009-06-15T01:45:30-> 45 |
+| „M” | Miesiąc; wartości z zakresu od 1 do 12.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "M"](#M_Specifier). | 2009-06-15T13:45:30-> 6 |
+| „MM” | Miesiąc; wartości z zakresu od 01 do 12.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "mm"](#MM_Specifier). | 2009 — 06-15T13:45:30 — > 06 |
+| „MMM” | Skrócona nazwa miesiąca.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "MMM"](#MMM_Specifier). | 2009-06-15T13:45:30-> Jun (pl-US)<br /><br /> 2009-06-15T13:45:30-> juin (fr-FR)<br /><br /> 2009-06-15T13:45:30-> Jun (zu-za) |
+| „MMMM” | Pełna nazwa miesiąca.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "MMMM"](#MMMM_Specifier). | 2009-06-15T13:45:30-> czerwiec (pl-US)<br /><br /> 2009-06-15T13:45:30-> Juni (da-DK)<br /><br /> 2009-06-15T13:45:30-> uJuni (zu-za) |
+| „s” | Sekunda; wartości z zakresu od 0 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "s"](#sSpecifier). | 2009 — 06-15T13:45:09-> 9 |
+| „ss” | Sekunda; wartości z zakresu od 00 do 59.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "SS"](#ssSpecifier). | 2009 — 06-15T13:45:09-> 09 |
+| „t” | Pierwszy znak oznaczenia AM/PM.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "t"](#tSpecifier). | 2009-06-15T13:45:30-> P (EN-US)<br /><br /> 2009-06-15T13:45:30-> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR) |
+| „tt” | Oznaczenie AM/PM.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "tt"](#ttSpecifier). | 2009-06-15T13:45:30-> PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR) |
+| „y” | Rok; wartości z zakresu od 0 do 99.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "y"](#ySpecifier). | 0,001-01-01T00:00:00-> 1<br /><br /> 0900-01-01T00:00:00-> 0<br /><br /> 1900-01-01T00:00:00-> 0<br /><br /> 2009 — 06-15T13:45:30-> 9<br /><br /> 2019-06-15T13:45:30-> 19 |
+| „yy” | Rok; wartości z zakresu od 00 do 99.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "YY"](#yySpecifier). | 0,001-01-01T00:00:00-> 01<br /><br /> 0900-01-01T00:00:00-> 00<br /><br /> 1900-01-01T00:00:00-> 00<br /><br /> 2019-06-15T13:45:30-> 19 |
+| „yyy” | Rok; co najmniej trzy cyfry.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "yyy"](#yyySpecifier). | 0,001-01-01T00:00:00-> 001<br /><br /> 0900-01-01T00:00:00-> 900<br /><br /> 1900-01-01T00:00:00-> 1900<br /><br /> 2009-06-15T13:45:30-> 2009 |
+| „yyyy” | Rok jako liczba czterocyfrowa.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "RRRR"](#yyyySpecifier). | 0,001-01-01T00:00:00-> 0,001<br /><br /> 0900-01-01T00:00:00-> 0900<br /><br /> 1900-01-01T00:00:00-> 1900<br /><br /> 2009-06-15T13:45:30-> 2009 |
+| „yyyyy” | Rok jako liczba pięciocyfrowa.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "RRRR"](#yyyyySpecifier). | 0,001-01-01T00:00:00-> 00001<br /><br /> 2009-06-15T13:45:30-> 02009 |
+| „z” | Przesunięcie godzinowe względem czasu UTC, bez zer wiodących.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "z"](#zSpecifier). | 2009-06-15T13:45:30-07:00->-7 |
+| „zz” | Przesunięcie godzinowe względem czasu UTC, z zerem wiodącym dla wartości jednocyfrowych.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "ZZ"](#zzSpecifier). | 2009-06-15T13:45:30-07:00->-07 |
+| „zzz” | Godzinowe i minutowe przesunięcie względem czasu UTC.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "ZZZ"](#zzzSpecifier). | 2009-06-15T13:45:30-07:00->-07:00 |
+| ":" | Separator godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego ":"](#timeSeparator). | 2009-06-15T13:45:30->: (EN-US)<br /><br /> 2009-06-15T13:45:30->. (it-IT)<br /><br /> 2009-06-15T13:45:30->: (ja-JP) |
+| "/" | Separator daty.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "/"](#dateSeparator). | 2009-06-15T13:45:30->/(EN-US)<br /><br /> 2009-06-15T13:45:30->-(AR-DZ)<br /><br /> 2009-06-15T13:45:30->. (tr-TR) |
+| "*String*"<br /><br /> "*String*" | Ogranicznik ciągu literału.<br /><br /> Więcej informacji: [literały znakowe](#Literals). | 2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P<br /><br /> 2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P |
+| % | Definiuje następujący znak jako specyfikator formatu niestandardowego.<br /><br /> Więcej informacji:[Używanie pojedynczego specyfikatora formatu niestandardowego](#UsingSingleSpecifiers). | 2009-06-15T13:45:30 (% h) — > 1 |
+| &#92; | Znak ucieczki.<br /><br /> Więcej informacji: [literały znakowe](#Literals) i [Używanie znaku ucieczki](#escape). | 2009-06-15T13:45:30 (h \h) — > 1 h |
+| Jakikolwiek inny znak | Znak jest kopiowany do ciągu wynikowego bez zmian.<br /><br /> Więcej informacji: [literały znakowe](#Literals). | 2009-06-15T01:45:30 (ARR hh: mm t)-> ARR 01:45 A |
 
 W poniższych sekcjach przedstawiono dodatkowe informacje dotyczące poszczególnych specyfikatorów niestandardowego formatu daty i godziny. O ile nie zaznaczono inaczej, każdy specyfikator tworzy identyczną reprezentację ciągu bez względu na to, czy jest on używany z <xref:System.DateTime> wartością lub <xref:System.DateTimeOffset> wartością.
 
-## <a name="the-d-custom-format-specifier"></a><a name="dSpecifier"></a>Specyfikator formatu niestandardowego "d"
+## <a name="day-d-format-specifier"></a>Specyfikator formatu dnia "d"
+
+### <a name="the-d-custom-format-specifier"></a><a name="dSpecifier"></a> Specyfikator formatu niestandardowego "d"
 
 Specyfikator formatu niestandardowego „d” oznacza dzień miesiąca w postaci liczby z zakresu od 1 do 31. Dzień oznaczony jedną cyfrą jest formatowany bez zera wiodącego.
 
@@ -111,7 +114,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „d” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-dd-custom-format-specifier"></a><a name="ddSpecifier"></a>Specyfikator formatu niestandardowego "DD"
+### <a name="the-dd-custom-format-specifier"></a><a name="ddSpecifier"></a> Specyfikator formatu niestandardowego "DD"
 
 Ciąg formatu niestandardowego „dd” przedstawia dzień miesiąca w postaci liczby z zakresu od 01 do 31. Dzień oznaczony jedną cyfrą jest formatowany z zerem wiodącym.
 
@@ -122,7 +125,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „dd” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ddd-custom-format-specifier"></a><a name="dddSpecifier"></a>Specyfikator formatu niestandardowego "ddd"
+### <a name="the-ddd-custom-format-specifier"></a><a name="dddSpecifier"></a> Specyfikator formatu niestandardowego "ddd"
 
 Specyfikator formatu niestandardowego „ddd” przedstawia skróconą nazwę dnia tygodnia. Zlokalizowana Skrócona nazwa dnia tygodnia jest pobierana z <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury.
 
@@ -133,7 +136,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „ddd” jest u
 
 [Wróć do tabeli](#table)
 
-## <a name="the-dddd-custom-format-specifier"></a><a name="ddddSpecifier"></a>Specyfikator formatu niestandardowego "dddd"
+### <a name="the-dddd-custom-format-specifier"></a><a name="ddddSpecifier"></a> Specyfikator formatu niestandardowego "dddd"
 
 Specyfikator formatu niestandardowego „dddd” (plus dowolna liczba dodatkowych specyfikatorów „d”) oznacza pełną nazwę dnia tygodnia. Zlokalizowana nazwa dnia tygodnia jest pobierana z <xref:System.Globalization.DateTimeFormatInfo.DayNames%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury.
 
@@ -144,7 +147,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „dddd” jest 
 
 [Wróć do tabeli](#table)
 
-## <a name="the-f-custom-format-specifier"></a><a name="fSpecifier"></a>Specyfikator formatu niestandardowego "f"
+## <a name="lowercase-seconds-f-fraction-specifier"></a>Mała litera sekund "f" specyfikatora ułamka
+
+### <a name="the-f-custom-format-specifier"></a><a name="fSpecifier"></a> Specyfikator formatu niestandardowego "f"
 
 Specyfikator formatu niestandardowego „f” przedstawia najbardziej znaczącą cyfrę części sekund, czyli przedstawia liczbę dziesiątych części sekundy w wartości daty i godziny.
 
@@ -159,7 +164,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „f” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ff-custom-format-specifier"></a><a name="ffSpecifier"></a>Specyfikator formatu niestandardowego "FF"
+### <a name="the-ff-custom-format-specifier"></a><a name="ffSpecifier"></a> Specyfikator formatu niestandardowego "FF"
 
 Specyfikator formatu niestandardowego „ff” przedstawia dwie najbardziej znaczące cyfry części sekund, czyli przedstawia liczbę setnych części sekundy w wartości daty i godziny.
 
@@ -170,7 +175,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „fff” jest u
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fff-custom-format-specifier"></a><a name="fffSpecifier"></a>Specyfikator formatu niestandardowego "FFF"
+### <a name="the-fff-custom-format-specifier"></a><a name="fffSpecifier"></a> Specyfikator formatu niestandardowego "FFF"
 
 Specyfikator formatu niestandardowego „fff” przedstawia trzy najbardziej znaczące cyfry części sekund, czyli przedstawia liczbę milisekund w wartości daty i godziny.
 
@@ -181,7 +186,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „fff” jest u
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffff-custom-format-specifier"></a><a name="ffffSpecifier"></a>Specyfikator formatu niestandardowego "FFFF"
+### <a name="the-ffff-custom-format-specifier"></a><a name="ffffSpecifier"></a> Specyfikator formatu niestandardowego "FFFF"
 
 Specyfikator formatu niestandardowego „ffff” przedstawia cztery najbardziej znaczące cyfry części sekund, czyli przedstawia liczbę dziesięciotysięcznych części sekundy w wartości daty i godziny.
 
@@ -189,7 +194,7 @@ Chociaż istnieje możliwość wyświetlenia dziesięciu stutysięcznych drugieg
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffff-custom-format-specifier"></a><a name="fffffSpecifier"></a>Specyfikator formatu niestandardowego "fffff"
+### <a name="the-fffff-custom-format-specifier"></a><a name="fffffSpecifier"></a> Specyfikator formatu niestandardowego "fffff"
 
 Specyfikator formatu niestandardowego „fffff” przedstawia pięć najbardziej znaczących cyfr części sekund, czyli przedstawia liczbę stutysięcznych części sekundy w wartości daty i godziny.
 
@@ -197,7 +202,7 @@ Chociaż istnieje możliwość wyświetlenia setek stutysięcznych drugiego skł
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffffff-custom-format-specifier"></a><a name="ffffffSpecifier"></a>Specyfikator formatu niestandardowego "FFFFFF"
+### <a name="the-ffffff-custom-format-specifier"></a><a name="ffffffSpecifier"></a> Specyfikator formatu niestandardowego "FFFFFF"
 
 Specyfikator formatu niestandardowego „ffffff” przedstawia sześć najbardziej znaczących cyfr części sekund, czyli przedstawia liczbę milionowych części sekundy w wartości daty i godziny.
 
@@ -205,7 +210,7 @@ Chociaż istnieje możliwość wyświetlenia dziesięciomilionowych drugiego sk�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffffff-custom-format-specifier"></a><a name="fffffffSpecifier"></a>Specyfikator formatu niestandardowego "fffffff"
+### <a name="the-fffffff-custom-format-specifier"></a><a name="fffffffSpecifier"></a> Specyfikator formatu niestandardowego "fffffff"
 
 Specyfikator formatu niestandardowego „fffffff” przedstawia siedem najbardziej znaczących cyfr części sekund, czyli przedstawia liczbę dziesięciomilionowych części sekundy w wartości daty i godziny.
 
@@ -213,7 +218,9 @@ Chociaż istnieje możliwość wyświetlenia dziesięciu dziesięciomilionowych 
 
 [Wróć do tabeli](#table)
 
-## <a name="the-f-custom-format-specifier"></a><a name="F_Specifier"></a>Specyfikator formatu niestandardowego "F"
+## <a name="uppercase-seconds-f-fraction-specifier"></a>Wielkie litery "F" specyfikator ułameku
+
+### <a name="the-f-custom-format-specifier"></a><a name="F_Specifier"></a> Specyfikator formatu niestandardowego "F"
 
 Specyfikator formatu niestandardowego „F” przedstawia najbardziej znaczącą cyfrę części sekund, czyli przedstawia liczbę dziesiątych części sekundy w wartości daty i godziny. Nic nie jest wyświetlane, jeśli cyfra jest równa zero.
 
@@ -228,7 +235,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „F” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ff-custom-format-specifier"></a><a name="FF_Specifier"></a>Specyfikator formatu niestandardowego "FF"
+### <a name="the-ff-custom-format-specifier"></a><a name="FF_Specifier"></a> Specyfikator formatu niestandardowego "FF"
 
 Specyfikator formatu niestandardowego „FF” przedstawia dwie najbardziej znaczące cyfry części sekund, czyli przedstawia liczbę setnych części sekundy w wartości daty i godziny. Jednak końcowe zera lub dwie cyfry zerowe nie są wyświetlane.
 
@@ -239,7 +246,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „FF” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fff-custom-format-specifier"></a><a name="FFF_Specifier"></a>Specyfikator formatu niestandardowego "FFF"
+### <a name="the-fff-custom-format-specifier"></a><a name="FFF_Specifier"></a> Specyfikator formatu niestandardowego "FFF"
 
 Specyfikator formatu niestandardowego „FFF” przedstawia trzy najbardziej znaczące cyfry części sekund, czyli przedstawia liczbę milisekund w wartości daty i godziny. Jednak końcowe zera lub trzy cyfry zerowe nie są wyświetlane.
 
@@ -250,7 +257,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „FFF” jest u
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffff-custom-format-specifier"></a><a name="FFFF_Specifier"></a>Specyfikator formatu niestandardowego "FFFF"
+### <a name="the-ffff-custom-format-specifier"></a><a name="FFFF_Specifier"></a> Specyfikator formatu niestandardowego "FFFF"
 
 Specyfikator formatu niestandardowego „FFFF” przedstawia cztery najbardziej znaczące cyfry części sekund, czyli przedstawia liczbę dziesięciotysięcznych części sekundy w wartości daty i godziny. Jednak końcowe zera lub cztery cyfry zero nie są wyświetlane.
 
@@ -258,7 +265,7 @@ Chociaż istnieje możliwość wyświetlenia dziesięciu stutysięcznych drugieg
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffff-custom-format-specifier"></a><a name="FFFFF_Specifier"></a>Specyfikator formatu niestandardowego "FFFFF"
+### <a name="the-fffff-custom-format-specifier"></a><a name="FFFFF_Specifier"></a> Specyfikator formatu niestandardowego "FFFFF"
 
 Specyfikator formatu niestandardowego „FFFFF” przedstawia pięć najbardziej znaczących cyfr części sekund, czyli przedstawia liczbę stutysięcznych części sekundy w wartości daty i godziny. Jednak końcowe zera lub pięć cyfr zero nie są wyświetlane.
 
@@ -266,7 +273,7 @@ Chociaż istnieje możliwość wyświetlenia setek stutysięcznych drugiego skł
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffffff-custom-format-specifier"></a><a name="FFFFFF_Specifier"></a>Specyfikator formatu niestandardowego "FFFFFF"
+### <a name="the-ffffff-custom-format-specifier"></a><a name="FFFFFF_Specifier"></a> Specyfikator formatu niestandardowego "FFFFFF"
 
 Specyfikator formatu niestandardowego „FFFFFF” przedstawia sześć najbardziej znaczących cyfr części sekund, czyli przedstawia liczbę milionowych części sekundy w wartości daty i godziny. Jednak końcowe zera lub sześć cyfr zero nie są wyświetlane.
 
@@ -274,7 +281,7 @@ Chociaż istnieje możliwość wyświetlenia dziesięciomilionowych drugiego sk�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffffff-custom-format-specifier"></a><a name="FFFFFFF_Specifier"></a>Specyfikator formatu niestandardowego "FFFFFFF"
+### <a name="the-fffffff-custom-format-specifier"></a><a name="FFFFFFF_Specifier"></a> Specyfikator formatu niestandardowego "FFFFFFF"
 
 Specyfikator formatu niestandardowego „FFFFFFF” przedstawia siedem najbardziej znaczących cyfr części sekund, czyli przedstawia liczbę dziesięciomilionowych części sekundy w wartości daty i godziny. Jednak końcowe zera lub siedem zero cyfr nie są wyświetlane.
 
@@ -282,7 +289,9 @@ Chociaż istnieje możliwość wyświetlenia dziesięciu dziesięciomilionowych 
 
 [Wróć do tabeli](#table)
 
-## <a name="the-g-or-gg-custom-format-specifier"></a><a name="gSpecifier"></a>Specyfikator formatu niestandardowego "g" lub "gg"
+## <a name="era-g-format-specifier"></a>Specyfikator formatu ery "g"
+
+### <a name="the-g-or-gg-custom-format-specifier"></a><a name="gSpecifier"></a> Specyfikator formatu niestandardowego "g" lub "gg"
 
 Specyfikator formatu niestandardowego „g” lub „gg” (plus dowolna liczba dodatkowych specyfikatorów „g”) przedstawia okres lub erę, taką jak n.e. Operacja formatowania ignoruje ten specyfikator, jeśli data do sformatowania nie ma skojarzonego okresu lub ciągu ery.
 
@@ -295,7 +304,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „g” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-h-custom-format-specifier"></a><a name="hSpecifier"></a>Specyfikator formatu niestandardowego "h"
+## <a name="lowercase-hour-h-format-specifier"></a>Specyfikator formatu "h" z małymi literami
+
+### <a name="the-h-custom-format-specifier"></a><a name="hSpecifier"></a> Specyfikator formatu niestandardowego "h"
 
 Specyfikator formatu niestandardowego „h” przedstawia godzinę jako liczbę z zakresu od 1 do 12, czyli godzina jest przedstawiana za pomocą zegara 12-godzinnego, który zlicza pełne godziny od północy lub południa. Określonej godziny po północy nie można odróżnić od tej samej godziny po południu. Godzina nie jest zaokrąglona, a godzina oznaczona jedną cyfrą jest formatowana bez zera wiodącego. Na przykład w przypadku godziny 5:43 rano lub po południu użycie tego specyfikatora formatu niestandardowego spowoduje wyświetlenie wartości „5”.
 
@@ -308,7 +319,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „h” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-hh-custom-format-specifier"></a><a name="hhSpecifier"></a>Specyfikator formatu niestandardowego "HH"
+### <a name="the-hh-custom-format-specifier"></a><a name="hhSpecifier"></a> Specyfikator formatu niestandardowego "HH"
 
 Specyfikator formatu niestandardowego „hh” (plus dowolna liczba dodatkowych specyfikatorów „h”) przedstawia godzinę jako liczbę z zakresu od 01 do 12, czyli godzina jest przedstawiana za pomocą zegara 12-godzinnego, który zlicza pełne godziny od północy lub południa. Określonej godziny po północy nie można odróżnić od tej samej godziny po południu. Godzina nie jest zaokrąglona, a godzina oznaczona jedną cyfrą jest formatowana z zerem wiodącym. Na przykład w przypadku godziny 5:43 rano lub po południu użycie tego specyfikatora formatu niestandardowego spowoduje wyświetlenie wartości „05”.
 
@@ -319,7 +330,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „hh” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-h-custom-format-specifier"></a><a name="H_Specifier"></a>Specyfikator formatu niestandardowego "H"
+## <a name="uppercase-hour-h-format-specifier"></a>Specyfikator formatu wielką literą "H"
+
+### <a name="the-h-custom-format-specifier"></a><a name="H_Specifier"></a> Specyfikator formatu niestandardowego "H"
 
 Specyfikator formatu niestandardowego „H” przedstawia godzinę jako liczbę z zakresu od 0 do 23, czyli godzina jest przedstawiana za pomocą zawierającego zero zegara 24-godzinnego, który zlicza pełne godziny od północy. Godzina oznaczona jedną cyfrą jest formatowana bez zera wiodącego.
 
@@ -332,7 +345,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „H” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-hh-custom-format-specifier"></a><a name="HH_Specifier"></a>Specyfikator formatu niestandardowego "HH"
+### <a name="the-hh-custom-format-specifier"></a><a name="HH_Specifier"></a> Specyfikator formatu niestandardowego "HH"
 
 Specyfikator formatu niestandardowego „HH” (plus dowolna liczba dodatkowych specyfikatorów „H”) przedstawia godzinę jako liczbę z zakresu od 00 do 23, czyli godzina jest przedstawiana za pomocą zawierającego zero zegara 24-godzinnego, który zlicza pełne godziny od północy. Godzina oznaczona jedną cyfrą jest formatowana z zerem wiodącym.
 
@@ -343,7 +356,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „HH” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-k-custom-format-specifier"></a><a name="KSpecifier"></a>Specyfikator formatu niestandardowego "K"
+## <a name="time-zone-k-format-specifier"></a>Specyfikator formatu strefy czasowej "K"
+
+### <a name="the-k-custom-format-specifier"></a><a name="KSpecifier"></a> Specyfikator formatu niestandardowego "K"
 
 Specyfikator formatu niestandardowego „K” przedstawia informacje o strefie czasowej z wartości daty i godziny. Gdy ten specyfikator formatu jest używany z <xref:System.DateTime> wartościami, ciąg wynikowy jest definiowany przez wartość <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Właściwości:
 
@@ -364,7 +379,9 @@ Poniższy przykład wyświetla ciąg, który powoduje użycie specyfikatora form
 
 [Wróć do tabeli](#table)
 
-## <a name="the-m-custom-format-specifier"></a><a name="mSpecifier"></a>Specyfikator formatu niestandardowego "m"
+## <a name="minute-m-format-specifier"></a>Specyfikator formatu minuty "m"
+
+### <a name="the-m-custom-format-specifier"></a><a name="mSpecifier"></a> Specyfikator formatu niestandardowego "m"
 
 Specyfikator formatu niestandardowego „m” przedstawia minutę jako liczbę z zakresu od 0 do 59. Wynik to liczba pełnych minut, które upłynęły od ostatniej godziny. Minuta oznaczona jedną cyfrą jest formatowana bez zera wiodącego.
 
@@ -377,7 +394,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „m” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-mm-custom-format-specifier"></a><a name="mmSpecifier"></a>Specyfikator formatu niestandardowego "mm"
+### <a name="the-mm-custom-format-specifier"></a><a name="mmSpecifier"></a> Specyfikator formatu niestandardowego "mm"
 
 Specyfikator formatu niestandardowego „mm” (plus dowolna liczba dodatkowych specyfikatorów „m”) przedstawia minutę jako liczbę z zakresu od 00 do 59. Wynik to liczba pełnych minut, które upłynęły od ostatniej godziny. Minuta oznaczona jedną cyfrą jest formatowana z zerem wiodącym.
 
@@ -388,7 +405,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „mm” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-m-custom-format-specifier"></a><a name="M_Specifier"></a>Specyfikator formatu niestandardowego "M"
+## <a name="month-m-format-specifier"></a>Specyfikator formatu miesiąca "M"
+
+### <a name="the-m-custom-format-specifier"></a><a name="M_Specifier"></a> Specyfikator formatu niestandardowego "M"
 
 Specyfikator formatu niestandardowego „M” przedstawia miesiąc jako liczbę z zakresu od 1 do 12 (lub od 1 do 13 w przypadku kalendarzy 13-miesięcznych). Miesiąc oznaczony jedną cyfrą jest formatowany bez zera wiodącego.
 
@@ -401,7 +420,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „M” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-mm-custom-format-specifier"></a><a name="MM_Specifier"></a>Specyfikator formatu niestandardowego "MM"
+### <a name="the-mm-custom-format-specifier"></a><a name="MM_Specifier"></a> Specyfikator formatu niestandardowego "MM"
 
 Specyfikator formatu niestandardowego „MM” przedstawia miesiąc jako liczbę z zakresu od 01 do 12 (lub od 01 do 13 w przypadku kalendarzy 13-miesięcznych). Miesiąc oznaczony jedną cyfrą jest formatowany z zerem wiodącym.
 
@@ -412,7 +431,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „MM” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-mmm-custom-format-specifier"></a><a name="MMM_Specifier"></a>Specyfikator formatu niestandardowego "MMM"
+### <a name="the-mmm-custom-format-specifier"></a><a name="MMM_Specifier"></a> Specyfikator formatu niestandardowego "MMM"
 
 Specyfikator formatu niestandardowego „MMM” przedstawia skróconą nazwę miesiąca. Zlokalizowana Skrócona nazwa miesiąca jest pobierana z <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury.
 
@@ -423,7 +442,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „MMM” jest u
 
 [Wróć do tabeli](#table)
 
-## <a name="the-mmmm-custom-format-specifier"></a><a name="MMMM_Specifier"></a>Specyfikator formatu niestandardowego "MMMM"
+### <a name="the-mmmm-custom-format-specifier"></a><a name="MMMM_Specifier"></a> Specyfikator formatu niestandardowego "MMMM"
 
 Specyfikator formatu niestandardowego „MMMM” przedstawia pełną nazwę miesiąca. Zlokalizowana nazwa miesiąca jest pobierana z <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury.
 
@@ -434,7 +453,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „MMMM” jest 
 
 [Wróć do tabeli](#table)
 
-## <a name="the-s-custom-format-specifier"></a><a name="sSpecifier"></a>Specyfikator formatu niestandardowego "s"
+## <a name="seconds-s-format-specifier"></a>Specyfikator formatu sekund "s"
+
+### <a name="the-s-custom-format-specifier"></a><a name="sSpecifier"></a> Specyfikator formatu niestandardowego "s"
 
 Specyfikator formatu niestandardowego „s” przedstawia sekundy jako liczbę z zakresu od 0 do 59. Wynik przedstawia pełne sekundy, które upłynęły od ostatniej minuty. Sekunda oznaczona jedną cyfrą jest formatowana bez zera wiodącego.
 
@@ -447,7 +468,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „s” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ss-custom-format-specifier"></a><a name="ssSpecifier"></a>Specyfikator formatu niestandardowego "SS"
+### <a name="the-ss-custom-format-specifier"></a><a name="ssSpecifier"></a> Specyfikator formatu niestandardowego "SS"
 
 Specyfikator formatu niestandardowego „s” (plus dowolna liczba dodatkowych specyfikatorów „s”) przedstawia sekundy jako liczbę z zakresu od 00 do 59. Wynik przedstawia pełne sekundy, które upłynęły od ostatniej minuty. Sekunda oznaczona jedną cyfrą jest formatowana z zerem wiodącym.
 
@@ -458,7 +479,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „ss” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-t-custom-format-specifier"></a><a name="tSpecifier"></a>Specyfikator formatu niestandardowego "t"
+## <a name="meridiem-t-format-specifier"></a>Specyfikator formatu meridiem "t"
+
+### <a name="the-t-custom-format-specifier"></a><a name="tSpecifier"></a> Specyfikator formatu niestandardowego "t"
 
 Specyfikator formatu niestandardowego „t” przedstawia pierwszy znak oznaczenia AM/PM. Odpowiednie zlokalizowane oznaczenie jest pobierane z <xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A?displayProperty=nameWithType> lub <xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury. Oznaczenie AM jest stosowanie do wszystkich godzin z zakresu od 0:00:00 (północ) do 11:59:59.999. Oznaczenie PM jest stosowane do wszystkich godzin z zakresu od 12:00:00 (południe) do 23:59:59.999.
 
@@ -471,7 +494,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „t” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-tt-custom-format-specifier"></a><a name="ttSpecifier"></a>Specyfikator formatu niestandardowego "tt"
+### <a name="the-tt-custom-format-specifier"></a><a name="ttSpecifier"></a> Specyfikator formatu niestandardowego "tt"
 
 Specyfikator formatu niestandardowego „tt” (plus dowolna liczba dodatkowych specyfikatorów „t”) przedstawia całe oznaczenie AM/PM. Odpowiednie zlokalizowane oznaczenie jest pobierane z <xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A?displayProperty=nameWithType> lub <xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury. Oznaczenie AM jest stosowanie do wszystkich godzin z zakresu od 0:00:00 (północ) do 11:59:59.999. Oznaczenie PM jest stosowane do wszystkich godzin z zakresu od 12:00:00 (południe) do 23:59:59.999.
 
@@ -484,7 +507,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „tt” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-y-custom-format-specifier"></a><a name="ySpecifier"></a>Specyfikator formatu niestandardowego "y"
+## <a name="year-y-format-specifier"></a>Specyfikator formatu "y" roku
+
+### <a name="the-y-custom-format-specifier"></a><a name="ySpecifier"></a> Specyfikator formatu niestandardowego "y"
 
 Specyfikator formatu niestandardowego „y” przedstawia rok jako jedno- lub dwucyfrową liczbę. Jeśli rok ma więcej niż dwie cyfry, w wyniku pojawią się tylko dwie ostatnie cyfry. Jeżeli pierwsza cyfra roku dwucyfrowego rozpoczyna się od zera (na przykład, 2008), liczba jest formatowana bez zera wiodącego.
 
@@ -497,7 +522,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „y” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-yy-custom-format-specifier"></a><a name="yySpecifier"></a>Specyfikator formatu niestandardowego "YY"
+### <a name="the-yy-custom-format-specifier"></a><a name="yySpecifier"></a> Specyfikator formatu niestandardowego "YY"
 
 Specyfikator formatu niestandardowego „yy” przedstawia rok jako liczbę dwucyfrową. Jeśli rok ma więcej niż dwie cyfry, w wyniku pojawią się tylko dwie ostatnie cyfry. Jeśli rok dwucyfrowy ma mniej niż dwie cyfry znaczące, liczba jest dopełniana wiodącymi zerami w celu utworzenia dwóch cyfr.
 
@@ -513,7 +538,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „yy” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-yyy-custom-format-specifier"></a><a name="yyySpecifier"></a>Specyfikator formatu niestandardowego "yyy"
+### <a name="the-yyy-custom-format-specifier"></a><a name="yyySpecifier"></a> Specyfikator formatu niestandardowego "yyy"
 
 Specyfikator formatu niestandardowego „yyy” przedstawia rok za pomocą co najmniej trzech cyfr. Jeśli rok ma więcej niż trzy cyfry znaczące, są one uwzględnione w ciągu wynikowym. Jeśli rok ma mniej niż trzy cyfry, liczba jest dopełniana wiodącymi zerami w celu utworzenia trzech cyfr.
 
@@ -527,7 +552,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „yyy” jest u
 
 [Wróć do tabeli](#table)
 
-## <a name="the-yyyy-custom-format-specifier"></a><a name="yyyySpecifier"></a>Specyfikator formatu niestandardowego "RRRR"
+### <a name="the-yyyy-custom-format-specifier"></a><a name="yyyySpecifier"></a> Specyfikator formatu niestandardowego "RRRR"
 
 Specyfikator formatu niestandardowego „yyyy” przedstawia rok za pomocą co najmniej czterech cyfr. Jeśli rok ma więcej niż cztery cyfry znaczące, są one uwzględnione w ciągu wynikowym. Jeśli rok ma mniej niż cztery cyfry, liczba jest dopełniana wiodącymi zerami w celu utworzenia czterech cyfr.
 
@@ -541,7 +566,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „yyyy” jest 
 
 [Wróć do tabeli](#table)
 
-## <a name="the-yyyyy-custom-format-specifier"></a><a name="yyyyySpecifier"></a>Specyfikator formatu niestandardowego "RRRR"
+### <a name="the-yyyyy-custom-format-specifier"></a><a name="yyyyySpecifier"></a> Specyfikator formatu niestandardowego "RRRR"
 
 Specyfikator formatu niestandardowego „yyyyy” (plus dowolna liczba dodatkowych specyfikatorów „y”) przedstawia rok za pomocą co najmniej pięciu cyfr. Jeśli rok ma więcej niż pięć cyfr znaczących, są one uwzględnione w ciągu wynikowym. Jeśli rok ma mniej niż pięć cyfr, liczba jest dopełniana zerami wiodącymi w celu utworzenia pięciu cyfr.
 
@@ -554,7 +579,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „yyyyy” jest
 
 [Wróć do tabeli](#table)
 
-## <a name="the-z-custom-format-specifier"></a><a name="zSpecifier"></a>Specyfikator formatu niestandardowego "z"
+## <a name="offset-z-format-specifier"></a>Przesunięty specyfikator formatu "z"
+
+### <a name="the-z-custom-format-specifier"></a><a name="zSpecifier"></a> Specyfikator formatu niestandardowego "z"
 
 W przypadku <xref:System.DateTime> wartości specyfikator formatu niestandardowego "z" przedstawia podpisane przesunięcie strefy czasowej lokalnego systemu operacyjnego od uniwersalnego czasu koordynowanego (UTC), mierzoną w godzinach. Nie odzwierciedla wartości <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Właściwości wystąpienia. Z tego powodu specyfikator formatu "z" nie jest zalecany do używania z <xref:System.DateTime> wartościami.
 
@@ -571,7 +598,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „z” jest uż
 
 [Wróć do tabeli](#table)
 
-## <a name="the-zz-custom-format-specifier"></a><a name="zzSpecifier"></a>Specyfikator formatu niestandardowego "ZZ"
+### <a name="the-zz-custom-format-specifier"></a><a name="zzSpecifier"></a> Specyfikator formatu niestandardowego "ZZ"
 
 W przypadku <xref:System.DateTime> wartości specyfikator formatu niestandardowego "ZZ" przedstawia podpisane przesunięcie strefy czasowej lokalnego systemu operacyjnego od czasu UTC (w godzinach). Nie odzwierciedla wartości <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Właściwości wystąpienia. Z tego powodu specyfikator formatu "ZZ" nie jest zalecany do używania z <xref:System.DateTime> wartościami.
 
@@ -586,7 +613,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „zz” jest u�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-zzz-custom-format-specifier"></a><a name="zzzSpecifier"></a>Specyfikator formatu niestandardowego "ZZZ"
+### <a name="the-zzz-custom-format-specifier"></a><a name="zzzSpecifier"></a> Specyfikator formatu niestandardowego "ZZZ"
 
 W przypadku <xref:System.DateTime> wartości specyfikator formatu niestandardowego "ZZZ" reprezentuje podpisane przesunięcie strefy czasowej lokalnego systemu operacyjnego od czasu UTC, mierzoną w godzinach i minutach. Nie odzwierciedla wartości <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Właściwości wystąpienia. Z tego powodu specyfikator formatu "ZZZ" nie jest zalecany do używania z <xref:System.DateTime> wartościami.
 
@@ -601,7 +628,9 @@ W poniższym przykładzie specyfikator formatu niestandardowego „zzz” jest u
 
 [Wróć do tabeli](#table)
 
-## <a name="the--custom-format-specifier"></a><a name="timeSeparator"></a>Specyfikator formatu niestandardowego ":"
+## <a name="date-and-time-separator-specifiers"></a>Specyfikatory separatora daty i godziny
+
+### <a name="the--custom-format-specifier"></a><a name="timeSeparator"></a> Specyfikator formatu niestandardowego ":"
 Specyfikator formatu niestandardowego „:” przedstawia separator godzin, który jest używany do odróżnienia godzin, minut i sekund. Odpowiedni zlokalizowany separator czasu jest pobierany z <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury.
 
 > [!NOTE]
@@ -611,7 +640,7 @@ Jeśli specyfikator formatu ":" jest używany bez innych niestandardowych specyf
 
 [Wróć do tabeli](#table)
 
-## <a name="the--custom-format-specifier"></a><a name="dateSeparator"></a>Specyfikator formatu niestandardowego "/"
+### <a name="the--custom-format-specifier"></a><a name="dateSeparator"></a> Specyfikator formatu niestandardowego "/"
 
 Specyfikator formatu niestandardowego „/” oznacza separator daty, który jest używany do odróżnienia lat, miesięcy i dni. Odpowiedni zlokalizowany separator daty jest pobierany z <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury.
 
@@ -622,16 +651,16 @@ Jeśli specyfikator formatu "/" jest używany bez innych specyfikatorów formatu
 
 [Wróć do tabeli](#table)
 
-## <a name="character-literals"></a><a name="Literals"></a>Literały znaków
+## <a name="character-literals"></a><a name="Literals"></a> Literały znaków
 
-Następujące znaki w niestandardowym ciągu formatu daty i godziny są zastrzeżone i są zawsze interpretowane jako znaki formatowania lub, w przypadku znaku ",",/, i \\ , jako znaki specjalne.
+Następujące znaki w niestandardowym ciągu formatu daty i godziny są zastrzeżone i są zawsze interpretowane jako znaki formatowania lub, w przypadku `"` ,, `'` `/` , i `\` , jako znaki specjalne.
 
-||||||
-|-|-|-|-|-|
-|F|H|K|M|d|
-|k|g|h|m|s|
-|t|Y|z|%|:|
-|/|"|'|&#92;||
+|     |     |     |     |     |
+|-----|-----|-----|-----|-----|
+| `F` | `H` | `K` | `M` | `d` |
+| `f` | `g` | `h` | `m` | `s` |
+| `t` | `y` | `z` | `%` | `:` |
+| `/` | `"` | `'` | `\` |     |
 
 Wszystkie inne znaki są zawsze interpretowane jako literały znakowe, a w operacji formatowania są uwzględniane w niezmienionym ciągu wynikowym.  W operacji analizowania muszą one dokładnie pasować do znaków w ciągu wejściowym; w porównaniu z rozróżnianiem wielkości liter.
 
@@ -656,7 +685,7 @@ Poniższy przykład zawiera znaki literału "PST" (w przypadku standardowego cza
 
 ## <a name="notes"></a>Uwagi
 
-### <a name="using-single-custom-format-specifiers"></a><a name="UsingSingleSpecifiers"></a>Używanie pojedynczego specyfikatora formatu niestandardowego
+### <a name="using-single-custom-format-specifiers"></a><a name="UsingSingleSpecifiers"></a> Używanie pojedynczego specyfikatora formatu niestandardowego
 
 Ciąg niestandardowego formatu daty i godziny składa się z co najmniej dwóch znaków. Metody formatowania daty i godziny interpretują każdy jednoznakowy ciąg jako ciąg standardowego formatu daty i godziny. Jeśli nie rozpoznają znaku jako prawidłowego specyfikatora formatu, generują <xref:System.FormatException> . Na przykład ciąg formatu, który składa się tylko ze specyfikatora „h”, jest interpretowany jako ciąg standardowego formatu daty i godziny. Jednak w tym konkretnym przypadku wyjątek jest zgłaszany z powodu braku standardowego specyfikatora daty i TimeFormat "h".
 
@@ -667,7 +696,7 @@ Na przykład " `%h"` jest interpretowany jako ciąg niestandardowego formatu dat
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#16](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/literal1.cs#16)]
 [!code-vb[Formatting.DateAndTime.Custom#16](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/literal1.vb#16)]
 
-### <a name="using-the-escape-character"></a><a name="escape"></a>Używanie znaku ucieczki
+#### <a name="using-the-escape-character"></a><a name="escape"></a> Używanie znaku ucieczki
 
 Znaki „D”, „f”, „F”, „G”, „g”, „H”, „K”, „m”, „M”, „s”, „t”, „y”, „z”, „:”, lub „/” w ciągu formatu są interpretowane jako specyfikatory formatu niestandardowego, a nie jako znaki literału. Aby zapobiec interpretacji znaku jako specyfikatora formatu, można poprzedzić go ukośnikiem odwrotnym ( \\ ), który jest znakiem ucieczki. Znak ucieczki oznacza, że następnym znakiem jest znak literału, który należy bez zmian umieścić w ciągu wynikowym.
 
@@ -693,7 +722,7 @@ Na formatowanie mają wpływ właściwości bieżącego <xref:System.Globalizati
 
 Ciąg wynikowy utworzony przez wiele specyfikatorów niestandardowego formatu daty i godziny zależy również od właściwości bieżącego <xref:System.Globalization.DateTimeFormatInfo> obiektu. Aplikacja może zmienić wynik tworzony przez niektóre specyfikatory niestandardowego formatu daty i godziny przez zmianę odpowiedniej <xref:System.Globalization.DateTimeFormatInfo> właściwości. Na przykład specyfikator formatu "ddd" dodaje skróconą nazwę dnia tygodnia znalezioną w <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A> tablicy ciągów do ciągu wynikowego. Podobnie, specyfikator formatu "MMMM" dodaje pełną nazwę miesiąca znalezioną w <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A> tablicy ciągów do ciągu wynikowego.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.IFormatProvider?displayProperty=nameWithType>

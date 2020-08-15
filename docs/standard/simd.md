@@ -5,12 +5,12 @@ author: FIVIL
 ms.author: tagoo
 ms.date: 04/28/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 27263931ff0338e194c8fd3d9ec5ba59bfafd9fe
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 5c1ad01ea15a9c4352cf7f87e5fba3bf74b4679c
+ms.sourcegitcommit: 2987e241e2f76c9248d2146bf2761a33e2c7a882
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507783"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228736"
 ---
 # <a name="use-simd-accelerated-numeric-types"></a>Użyj SIMD — przyspieszone typy liczbowe
 
@@ -20,48 +20,48 @@ SIMD (pojedyncza instrukcja, wiele danych) zapewnia obsługę sprzętu na potrze
 
 Typy przyspieszone dla programu .NET SIMD obejmują następujące typy:
 
-- Typy <xref:System.Numerics.Vector2>, <xref:System.Numerics.Vector3>i <xref:System.Numerics.Vector4> , które reprezentują wektory z 2, 3 i 4 <xref:System.Single> wartościami.
+- <xref:System.Numerics.Vector2>Typy, <xref:System.Numerics.Vector3> i <xref:System.Numerics.Vector4> , które reprezentują wektory z 2, 3 i 4 <xref:System.Single> wartościami.
 
-- Dwa typy macierzy, <xref:System.Numerics.Matrix3x2>, które reprezentują macierz 3 x 2, i <xref:System.Numerics.Matrix4x4>, która reprezentuje macierz 4x4 <xref:System.Single> wartości.
+- Dwa typy macierzy, <xref:System.Numerics.Matrix3x2> , które reprezentują macierz 3 x 2, i <xref:System.Numerics.Matrix4x4> , która reprezentuje macierz 4x4 <xref:System.Single> wartości.
 
-- <xref:System.Numerics.Plane> Typ, który reprezentuje płaszczyznę w trójwymiarowym miejscu przy użyciu <xref:System.Single> wartości.
+- <xref:System.Numerics.Plane>Typ, który reprezentuje płaszczyznę w trójwymiarowym miejscu przy użyciu <xref:System.Single> wartości.
 
-- <xref:System.Numerics.Quaternion> Typ, który reprezentuje wektor, który jest używany do kodowania trójwymiarowych obrotów fizycznych przy użyciu <xref:System.Single> wartości.
+- <xref:System.Numerics.Quaternion>Typ, który reprezentuje wektor, który jest używany do kodowania trójwymiarowych obrotów fizycznych przy użyciu <xref:System.Single> wartości.
 
-- <xref:System.Numerics.Vector%601> Typ, który reprezentuje wektor określonego typu liczbowego i zawiera szeroki zestaw operatorów, które korzystają z obsługi SIMD. Liczba <xref:System.Numerics.Vector%601> wystąpień jest ustalona przez okres istnienia aplikacji, ale jej wartość <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> zależy od procesora komputera, na którym uruchomiono kod.
+- <xref:System.Numerics.Vector%601>Typ, który reprezentuje wektor określonego typu liczbowego i zawiera szeroki zestaw operatorów, które korzystają z obsługi SIMD. Liczba <xref:System.Numerics.Vector%601> wystąpień jest ustalona przez okres istnienia aplikacji, ale jej wartość <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> zależy od procesora komputera, na którym uruchomiono kod.
 
   > [!NOTE]
-  > <xref:System.Numerics.Vector%601> Typ nie jest uwzględniony w .NET Framework. Musisz zainstalować pakiet NuGet [System. Numerics. Vectors](https://www.nuget.org/packages/System.Numerics.Vectors) , aby uzyskać dostęp do tego typu.
+  > <xref:System.Numerics.Vector%601>Typ nie jest uwzględniony w .NET Framework. Musisz zainstalować pakiet NuGet [System. Numerics. Vectors](https://www.nuget.org/packages/System.Numerics.Vectors) , aby uzyskać dostęp do tego typu.
   
 Typy SIMD-przyspieszone są implementowane w taki sposób, że mogą być używane z akceleratorami sprzętu lub kompilatorów JIT nieSIMDymi. Aby skorzystać z instrukcji SIMD, aplikacje 64-bitowe muszą być uruchamiane przez środowisko uruchomieniowe, które używa kompilatora **RyuJIT** . Kompilator **RyuJIT** jest dołączany do oprogramowania .NET Core i w .NET Framework 4,6 i nowszych. Obsługa SIMD jest zapewniana tylko w przypadku procesorów 64-bitowych.
 
 ## <a name="how-to-use-simd"></a>Jak używać SIMD?
 
-Przed wykonaniem niestandardowych algorytmów SIMD można sprawdzić, czy maszyna hosta obsługuje SIMD przy użyciu <xref:System.Numerics.Vector.IsHardwareAccelerated?displayProperty=nameWithType>, która zwraca. <xref:System.Boolean> Nie gwarantuje to, że przyspieszenie SIMD jest włączone dla określonego typu, ale jest wskaźnikiem, który jest obsługiwany przez niektóre typy.
+Przed wykonaniem niestandardowych algorytmów SIMD można sprawdzić, czy maszyna hosta obsługuje SIMD przy użyciu <xref:System.Numerics.Vector.IsHardwareAccelerated?displayProperty=nameWithType> , która zwraca <xref:System.Boolean> . Nie gwarantuje to, że przyspieszenie SIMD jest włączone dla określonego typu, ale jest wskaźnikiem, który jest obsługiwany przez niektóre typy.
 
 ## <a name="simple-vectors"></a>Proste wektory
 
-Najbardziej pierwotne typy SIMD-przyspieszone w programie .NET to <xref:System.Numerics.Vector2>, <xref:System.Numerics.Vector3>i <xref:System.Numerics.Vector4> typy, które reprezentują wektory z 2, 3 i 4 <xref:System.Single> wartościami. Poniższy przykład używa <xref:System.Numerics.Vector2> do dodawania dwóch wektorów.
+Najbardziej pierwotne typy SIMD-przyspieszone w programie .NET to <xref:System.Numerics.Vector2> , <xref:System.Numerics.Vector3> i <xref:System.Numerics.Vector4> typy, które reprezentują wektory z 2, 3 i 4 <xref:System.Single> wartościami. Poniższy przykład używa <xref:System.Numerics.Vector2> do dodawania dwóch wektorów.
 
 ```csharp
 var v1 = new Vector2(0.1f, 0.2f);
 var v2 = new Vector2(1.1f, 2.2f);
-var vResutl = v1 + v2;
+var vResult = v1 + v2;
 ```
 
-Istnieje również możliwość użycia wektorów .NET do obliczenia innych właściwości matematycznych wektorów, takich jak `Dot product`, `Transform`, `Clamp` i tak dalej.
+Istnieje również możliwość użycia wektorów .NET do obliczenia innych właściwości matematycznych wektorów, takich jak `Dot product` , `Transform` , `Clamp` i tak dalej.
 
 ```csharp
 var v1 = new Vector2(0.1f, 0.2f);
 var v2 = new Vector2(1.1f, 2.2f);
-var vResutl1 = Vector2.Dot(v1, v2);
-var vResutl2 = Vector2.Distance(v1, v2);
-var vResutl3 = Vector2.Clamp(v1, Vector2.Zero, Vector2.One);
+var vResult1 = Vector2.Dot(v1, v2);
+var vResult2 = Vector2.Distance(v1, v2);
+var vResult3 = Vector2.Clamp(v1, Vector2.Zero, Vector2.One);
 ```
 
-## <a name="matrix"></a>Matrix
+## <a name="matrix"></a>Macierz
 
-<xref:System.Numerics.Matrix3x2>, która reprezentuje macierz 3 x 2, i <xref:System.Numerics.Matrix4x4>reprezentuje macierz 4x4. Może służyć do obliczeń dotyczących macierzy. W poniższym przykładzie pokazano mnożenie macierzy do macierzy transtransponowanej przy użyciu SIMD.
+<xref:System.Numerics.Matrix3x2>, która reprezentuje macierz 3 x 2, i <xref:System.Numerics.Matrix4x4> reprezentuje macierz 4x4. Może służyć do obliczeń dotyczących macierzy. W poniższym przykładzie pokazano mnożenie macierzy do macierzy transtransponowanej przy użyciu SIMD.
 
 ```csharp
 var m1 = new Matrix4x4(
@@ -74,11 +74,11 @@ var m2 = Matrix4x4.Transpose(m1);
 var mResult = Matrix4x4.Multiply(m1, m2);
 ```
 
-## <a name="vectort"></a>>\<wektor T
+## <a name="vectort"></a>Niemożliwe\<T>
 
-<xref:System.Numerics.Vector%601> Daje możliwość użycia dłuższych wektorów. Licznik <xref:System.Numerics.Vector%601> wystąpienia został naprawiony, ale jego wartość <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> zależy od procesora komputera, na którym uruchomiono kod.
+<xref:System.Numerics.Vector%601>Daje możliwość użycia dłuższych wektorów. Licznik <xref:System.Numerics.Vector%601> wystąpienia został naprawiony, ale jego wartość <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> zależy od procesora komputera, na którym uruchomiono kod.
 
-W poniższym przykładzie pokazano Dodawanie długich elementów tablic za <xref:System.Numerics.Vector%601>pomocą.
+W poniższym przykładzie pokazano Dodawanie długich elementów tablic za pomocą <xref:System.Numerics.Vector%601> .
 
 ```csharp
 double[] SimdVectorProd(double[] left, double[] right)
