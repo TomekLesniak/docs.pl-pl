@@ -7,16 +7,17 @@ metadata:
   level: Beginner
   ms.custom: mvc
   ms.date: 08/24/2018
+  ms.topic: interactive-tutorial
   displayType: two-column
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: Kolekcja list
-  ms.openlocfilehash: e7679c511cf67eed55687c5815bcf7faf4e1e624
-  ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+  ms.openlocfilehash: 596dfeca6e8910bd954b63364af958b7bef1580a
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 05/14/2020
-  ms.locfileid: "83396859"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88267545"
 items:
 - durationInMinutes: 1
   content: >
@@ -67,7 +68,7 @@ items:
     Ten proces sprawdzania warunków i wykonywania instrukcji na podstawie tych warunków jest zaawansowany. Dowiedzmy się więcej.
 - title: Łączenie działania instrukcji if i else
   durationInMinutes: 10
-  content: "\nAby wykonać różny kod w gałęziach dla wartości true i false, należy utworzyć gałąź `else` wykonywaną, jeśli wartość warunku to false. Spróbuj tego:\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\nInstrukcja po słowie kluczowym `else` jest wykonywana tylko wtedy, gdy testowany warunek ma wartość `false`. Połączenie instrukcji `if` i `else` za pomocą warunków logicznych daje wszelkie potrzebne możliwości.\n\n> [!IMPORTANT]\n> Wcięcia pod instrukcjami `if` i `else` służą tylko do zwiększenia czytelności.\n> Język C# nie traktuje wcięcia ani odstępu jako znaczącego.\n> Instrukcja po słowie kluczowym `if` lub `else` zostanie wykonana w zależności od warunku. Wszystkie przykłady w tym samouczku są zgodne ze wspólną metodą tworzenia wcięć wierszy na podstawie przepływu sterowania instrukcji.\n\nPonieważ wcięcia nie są istotne, należy użyć `{` i, `}` Aby wskazać, Kiedy chcesz, aby więcej niż jedna instrukcja była częścią bloku, który jest wykonywany warunkowo. Programiści języka C# zazwyczaj używają nawiasów klamrowych we wszystkich klauzulach `if` i `else`. Poniższy przykład jest taki sam jak utworzony przez Ciebie. Wypróbuj go.\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> W pozostałej części tego samouczka wszystkie przykłady kodu zawierają nawiasy klamrowe, po zastosowaniu zaakceptowanych praktyk.\n\nIstnieje możliwość testowania bardziej skomplikowanych warunków:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\n`==`Symbol sprawdza *równość*. Użycie `==` odróżnia test pod kątem równości przed przypisaniem `a = 5` .\n\nZnaki `&&` określają warunek „i”. Oznacza to, że instrukcja w gałęzi dla wartości true zostanie wykonana tylko wtedy, gdy oba warunki będą mieć wartość true.  Te przykłady przedstawiają także, że można użyć wielu instrukcji w każdej gałęzi warunkowej, jeśli zostaną umieszczone między znakami `{` i `}`.\n\nIstnieje także możliwość użycia znaków `||` reprezentujących warunek „lub”:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\nZmodyfikuj wartości `a` , `b` i `c` i przełączenie między `&&` i `||` do Eksploruj. Dowiesz się, jak `&&` `||` działają operatory i.\n"
+  content: "\nAby wykonać różny kod w gałęziach dla wartości true i false, należy utworzyć gałąź `else` wykonywaną, jeśli wartość warunku to false. Wypróbuj te metody:\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\nInstrukcja po słowie kluczowym `else` jest wykonywana tylko wtedy, gdy testowany warunek ma wartość `false`. Połączenie instrukcji `if` i `else` za pomocą warunków logicznych daje wszelkie potrzebne możliwości.\n\n> [!IMPORTANT]\n> Wcięcia pod instrukcjami `if` i `else` służą tylko do zwiększenia czytelności.\n> Język C# nie traktuje wcięcia ani odstępu jako znaczącego.\n> Instrukcja po słowie kluczowym `if` lub `else` zostanie wykonana w zależności od warunku. Wszystkie przykłady w tym samouczku są zgodne ze wspólną metodą tworzenia wcięć wierszy na podstawie przepływu sterowania instrukcji.\n\nPonieważ wcięcia nie są istotne, należy użyć `{` i, `}` Aby wskazać, Kiedy chcesz, aby więcej niż jedna instrukcja była częścią bloku, który jest wykonywany warunkowo. Programiści języka C# zazwyczaj używają nawiasów klamrowych we wszystkich klauzulach `if` i `else`. Poniższy przykład jest taki sam jak utworzony przez Ciebie. Wypróbuj go.\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> W pozostałej części tego samouczka wszystkie przykłady kodu zawierają nawiasy klamrowe, po zastosowaniu zaakceptowanych praktyk.\n\nIstnieje możliwość testowania bardziej skomplikowanych warunków:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\n`==`Symbol sprawdza *równość*. Użycie `==` odróżnia test pod kątem równości przed przypisaniem `a = 5` .\n\nZnaki `&&` określają warunek „i”. Oznacza to, że instrukcja w gałęzi dla wartości true zostanie wykonana tylko wtedy, gdy oba warunki będą mieć wartość true.  Te przykłady przedstawiają także, że można użyć wielu instrukcji w każdej gałęzi warunkowej, jeśli zostaną umieszczone między znakami `{` i `}`.\n\nIstnieje także możliwość użycia znaków `||` reprezentujących warunek „lub”:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\nZmodyfikuj wartości `a` , `b` i `c` i przełączenie między `&&` i `||` do Eksploruj. Dowiesz się, jak `&&` `||` działają operatory i.\n"
 - title: Użycie pętli do powtarzania operacji
   durationInMinutes: 6
   content: >
@@ -99,7 +100,7 @@ items:
     > Upewnij się, że warunek pętli `while` przyjmie wartość false podczas wykonywania kodu. W przeciwnym razie wystąpi **pętla nieskończona**, czyli wykonywanie programu nigdy się nie skończy. Nie będziemy tego przedstawiać, ponieważ aparat uruchamiający kod przekroczy limit czasu i żadne dane wyjściowe programu nie zostaną wyświetlone.
 
 
-    Pętla `while` testuje warunek przed wykonaniem kodu po instrukcji `while`. Pętla `do`...`while` najpierw wykonuje kod, a następnie sprawdza warunek. Wygląda to w ten sposób:
+    Pętla `while` testuje warunek przed wykonaniem kodu po instrukcji `while`. Pętla `do`...`while` najpierw wykonuje kod, a następnie sprawdza warunek. Wygląda ona następująco:
 
 
     ```csharp

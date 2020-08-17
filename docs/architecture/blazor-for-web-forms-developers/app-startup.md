@@ -4,16 +4,14 @@ description: Dowiedz się, jak zdefiniować logikę uruchamiania dla aplikacji.
 author: csharpfritz
 ms.author: jefritz
 ms.date: 02/25/2020
-ms.openlocfilehash: 3d460750c36f64b8ad343755bd63b47af5c310d9
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: ea2ea458011d8351a834aa12db02e5d2bac2dc65
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87914883"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267701"
 ---
 # <a name="app-startup"></a>Uruchamianie aplikacji
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Aplikacje, które są przeznaczone dla ASP.NET zazwyczaj mają `global.asax.cs` plik, który definiuje `Application_Start` zdarzenie kontrolujące, które usługi są skonfigurowane i udostępniane do obsługi renderowania HTML i przetwarzania .NET. W tym rozdziale przedstawiono, jak nieco różnią się różnice między ASP.NET Core i serwerem Blazor.
 
@@ -21,10 +19,10 @@ Aplikacje, które są przeznaczone dla ASP.NET zazwyczaj mają `global.asax.cs` 
 
 Domyślna metoda formularzy sieci Web `Application_Start` została wyhodowana w celu przekroczenia lat w celu obsługi wielu zadań konfiguracyjnych.  Nowy projekt formularzy sieci Web z domyślnym szablonem w programie Visual Studio 2019 zawiera teraz następującą logikę konfiguracji:
 
-- `RouteConfig`-Routing adresów URL aplikacji
-- `BundleConfig`-CSS i JavaScript i minifikacja
+- `RouteConfig` -Routing adresów URL aplikacji
+- `BundleConfig` -CSS i JavaScript i minifikacja
 
-Każdy z tych pojedynczych plików znajduje się w `App_Start` folderze i uruchamiany tylko raz na początku naszej aplikacji.  `RouteConfig`w domyślnym szablonie projektu dodaje `FriendlyUrlSettings` formularze for Web Forms, aby zezwolić na adresy URL aplikacji, aby pominąć `.ASPX` rozszerzenie pliku.  Szablon domyślny zawiera również dyrektywę, która dostarcza stałe kody stanu przekierowywania HTTP (HTTP 301) dla `.ASPX` stron do przyjaznego adresu URL z nazwą pliku, który pomija rozszerzenie.
+Każdy z tych pojedynczych plików znajduje się w `App_Start` folderze i uruchamiany tylko raz na początku naszej aplikacji.  `RouteConfig` w domyślnym szablonie projektu dodaje `FriendlyUrlSettings` formularze for Web Forms, aby zezwolić na adresy URL aplikacji, aby pominąć `.ASPX` rozszerzenie pliku.  Szablon domyślny zawiera również dyrektywę, która dostarcza stałe kody stanu przekierowywania HTTP (HTTP 301) dla `.ASPX` stron do przyjaznego adresu URL z nazwą pliku, który pomija rozszerzenie.
 
 W przypadku ASP.NET Core i Blazor te metody są uproszczone i skonsolidowane w `Startup` klasie lub są eliminowane na rzecz wspólnych technologii sieci Web.
 

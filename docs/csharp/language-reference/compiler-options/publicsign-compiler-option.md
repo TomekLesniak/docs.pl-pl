@@ -1,5 +1,5 @@
 ---
-title: -publicsign (Opcje kompilatora C#)
+title: -publicsign (opcje kompilatora C#)
 ms.date: 05/15/2018
 f1_keywords:
 - /publicsign
@@ -7,16 +7,16 @@ helpviewer_keywords:
 - -publicsign compiler option [C#]
 - publicsign compiler option [C#]
 - /publicsign compiler option [C#]
-ms.openlocfilehash: de7d9c98b0f279b52bc93711c5b986a2b2e57215
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2655e0216a412053e052ab2ec2fcc8c68ea4f968
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "61662533"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88268052"
 ---
-# <a name="-publicsign-c-compiler-options"></a>-publicsign (Opcje kompilatora C#)
+# <a name="-publicsign-c-compiler-options"></a>-publicsign (opcje kompilatora C#)
 
-Ta opcja powoduje, że kompilator zastosować klucz publiczny, ale faktycznie nie podpisuje zestawu. Opcja **-publicsign** ustawia również nieco w zestawie, który informuje, że plik jest faktycznie podpisany.
+Ta opcja powoduje, że kompilator zastosuje klucz publiczny, ale w rzeczywistości nie podpisze zestawu. Opcja **-publicsign** ustawia również bit w zestawie, który informuje środowisko uruchomieniowe, że plik jest rzeczywiście podpisany.
 
 ## <a name="syntax"></a>Składnia
 
@@ -30,21 +30,24 @@ Brak.
 
 ## <a name="remarks"></a>Uwagi
 
-Opcja **-publicsign** wymaga użycia [pliku -keyfile](keyfile-compiler-option.md) lub [-keycontainer.](keycontainer-compiler-option.md) Opcje **pliku kluczy** lub **kontenera kluczy** określają klucz publiczny.
+Opcja **-publicsign** wymaga użycia elementu [-KeyFile](keyfile-compiler-option.md) lub [-containerer](keycontainer-compiler-option.md). Opcje **KeyFile** lub **containerer** określają klucz publiczny.
 
-Opcje **-publicsign** i **-delaysign** wzajemnie się wykluczają.
+Opcje **-publicsign** i **-delaysign** wykluczają się wzajemnie.
 
-Czasami nazywany "fałszywy znak" lub "znak OSS", podpisywanie publiczne zawiera klucz publiczny w zestawie wyjściowym i ustawia flagę "signed", ale w rzeczywistości nie podpisuje zestawu kluczem prywatnym. Jest to przydatne w przypadku projektów typu open source, w których ludzie chcą tworzyć zestawy, które są zgodne z wydanymi zestawami "w pełni podpisanymi", ale nie mają dostępu do klucza prywatnego używanego do podpisywania zestawów. Ponieważ prawie nie konsumenci rzeczywiście trzeba sprawdzić, czy zestaw jest w pełni podpisany, te publicznie zbudowane zestawy są użyteczne w prawie każdym scenariuszu, w którym w pełni podpisany jeden będzie używany.
+Czasami nazywane "fałszywym znakiem" lub "OSS Sign", podpisywanie publiczne obejmuje klucz publiczny w zestawie danych wyjściowych i ustawia flagę "podpisane", ale w rzeczywistości nie podpisuje zestawu przy użyciu klucza prywatnego. Jest to przydatne w przypadku projektów open source, w których osoby chcą tworzyć zestawy, które są zgodne z opublikowanymi "w pełni podpisanymi", ale nie mają dostępu do klucza prywatnego używanego do podpisywania zestawów. Ponieważ niemal żaden konsument nie musi sprawdzić, czy zestaw jest w pełni podpisany, te publicznie skompilowane zestawy są dostępne w prawie każdym scenariuszu, w którym zostanie użyty całkowicie podpisany.
 
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Aby ustawić tę opcję kompilatora w środowisku programowania Visual Studio
+### <a name="to-set-this-compiler-option-in-a-csproj-file"></a>Aby ustawić tę opcję kompilatora w pliku csproj
 
-1. Otwórz stronę **Właściwości** projektu.
-1. Zmodyfikuj **tylko znak opóźnienia.**
+Otwórz plik. csproj projektu i Dodaj następujący element:
 
-## <a name="see-also"></a>Zobacz też
+```xml
+<PublicSign>true</PublicSign>
+```
 
-- [C# Kompilator -delaysign opcja](delaysign-compiler-option.md)
-- [C# Kompilator -keyfile opcja](keyfile-compiler-option.md)
-- [Opcja Kompilator c# - keycontainer](keycontainer-compiler-option.md)
-- [Opcje kompilatora Języka C#](index.md)
+## <a name="see-also"></a>Zobacz także
+
+- [Kompilator języka C# — opcja delaysign](delaysign-compiler-option.md)
+- [Kompilator języka C# — opcja keyfile](keyfile-compiler-option.md)
+- [Kompilator języka C# — opcja kontenera](keycontainer-compiler-option.md)
+- [Opcje kompilatora C#](index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

@@ -6,22 +6,20 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/19/2019
-ms.openlocfilehash: fc1f6f9420c7149b6e67123f2f68bef75667aa0c
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 714ba0be7c2014895a75250a47e6ce448863eb6c
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173110"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267792"
 ---
 # <a name="pages-routing-and-layouts"></a>Strony, routing i układy
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Aplikacje ASP.NET Web Forms składają się ze stron zdefiniowanych w plikach *. aspx* . Adres każdej strony jest oparty na fizycznej ścieżce pliku w projekcie. Gdy przeglądarka wysyła żądanie do strony, zawartość strony jest dynamicznie renderowana na serwerze. Konta renderowania zarówno dla znacznika HTML strony, jak i jego formantów serwerowych.
 
 W programie Blazor każda Strona w aplikacji jest składnikiem, zazwyczaj zdefiniowanym w pliku *. Razor* , z co najmniej jedną określoną trasą. Routing głównie odbywa się po stronie klienta bez udziału określonego żądania serwera. Przeglądarka najpierw wysyła żądanie do adresu głównego aplikacji. Składnik główny `Router` w aplikacji, Blazor a następnie obsługuje przechwycone żądania nawigacji i są do poprawnego składnika.
 
-Blazorobsługuje również *głębokie łączenie*. Głębokie łączenie występuje, gdy przeglądarka wysyła żądanie do określonej trasy innej niż główna aplikacji. Żądania linków bezpośrednich wysyłanych do serwera są kierowane do Blazor aplikacji, która następnie kieruje żądanie po stronie klienta do właściwego składnika.
+Blazor obsługuje również *głębokie łączenie*. Głębokie łączenie występuje, gdy przeglądarka wysyła żądanie do określonej trasy innej niż główna aplikacji. Żądania linków bezpośrednich wysyłanych do serwera są kierowane do Blazor aplikacji, która następnie kieruje żądanie po stronie klienta do właściwego składnika.
 
 Prosta strona w formularzach sieci Web ASP.NET może zawierać następujące znaczniki:
 
@@ -94,7 +92,7 @@ Aby utworzyć stronę w programie Blazor , Utwórz składnik i Dodaj `@page` dyr
 
 Wymagany jest parametr szablonu trasy. W przeciwieństwie do ASP.NET formularzy sieci Web, trasy do Blazor składnika *nie są* wywnioskowane z jego lokalizacji pliku (chociaż może to być funkcja dodana w przyszłości).
 
-Składnia szablonu trasy jest tą samą składnią podstawową używaną do routingu w ASP.NET Web Forms. Parametry trasy są określone w szablonie za pomocą nawiasów klamrowych. Blazorspowoduje powiązanie wartości tras z parametrami składnika o tej samej nazwie (bez uwzględniania wielkości liter).
+Składnia szablonu trasy jest tą samą składnią podstawową używaną do routingu w ASP.NET Web Forms. Parametry trasy są określone w szablonie za pomocą nawiasów klamrowych. Blazor spowoduje powiązanie wartości tras z parametrami składnika o tej samej nazwie (bez uwzględniania wielkości liter).
 
 ```razor
 @page "/product/{id}"
@@ -156,9 +154,9 @@ protected void NavigateButton_Click(object sender, EventArgs e)
 }
 ```
 
-Zwracanie odpowiedzi przekierowania nie jest zazwyczaj możliwe w Blazor . Blazornie używa modelu żądanie-odpowiedź. Można jednak bezpośrednio wyzwalać nawigację przeglądarki, podobnie jak w przypadku języka JavaScript.
+Zwracanie odpowiedzi przekierowania nie jest zazwyczaj możliwe w Blazor . Blazor nie używa modelu żądanie-odpowiedź. Można jednak bezpośrednio wyzwalać nawigację przeglądarki, podobnie jak w przypadku języka JavaScript.
 
-Blazorzapewnia `NavigationManager` usługę, która może służyć do:
+Blazor zapewnia `NavigationManager` usługę, która może służyć do:
 
 - Pobierz bieżący adres przeglądarki
 - Pobierz adres podstawowy

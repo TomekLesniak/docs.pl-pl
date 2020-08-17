@@ -7,16 +7,14 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 8ef2c7d66d50abb34e536b6333e3aa68ee2bb07d
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: a5aae6cf02ccec84ac8642b6ce8d9c919755e868
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173136"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267571"
 ---
-# <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>Wprowadzenie do usługi Blazor ASP.NET Web Forms Developers
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="an-introduction-to-no-locblazor-for-aspnet-web-forms-developers"></a>Wprowadzenie do usługi Blazor ASP.NET Web Forms Developers
 
 ASP.NET Web Forms Framework to zszywanie programu .NET Web Development od momentu .NET Framework pierwszego wysłania w 2002. Z powrotem, gdy sieć Web była w znacznym stopniu nieprogramistyczna, ASP.NET Web Forms tworzy aplikacje sieci Web w prosty i wydajny sposób, wdrażając wiele wzorców, które były używane do tworzenia aplikacji klasycznych. W formularzach sieci Web ASP.NET strony sieci Web mogą szybko składać się z kontrolek interfejsu użytkownika wielokrotnego użytku. Interakcje użytkowników są obsługiwane naturalnie jako zdarzenia. Istnieje bogaty ekosystem formantów interfejsu użytkownika formularzy sieci Web udostępnianych przez firmę Microsoft i dostawców kontroli. Kontrolki ułatwiają podejmowanie połączeń ze źródłami danych i wyświetlanie bogatych wizualizacji danych. Dla wizualizacji, Projektant formularzy sieci Web udostępnia prosty interfejs przeciągania i upuszczania służący do zarządzania kontrolkami.
 
@@ -49,21 +47,21 @@ Jednak istnieje inny trend rozważania i jest to zmiana na klienta.
 
 Wszystkie. Platformy sieci Web oparte na protokole NET, w tym formularze sieci Web ASP.NET, mają w historyczny sposób wspólne: te, które są *renderowane na serwerze*. W przypadku aplikacji sieci Web renderowanych na serwerze przeglądarka wysyła żądanie do serwera, który wykonuje kod (kod platformy .NET w aplikacjach ASP.NET) w celu utworzenia odpowiedzi. Ta odpowiedź jest wysyłana z powrotem do przeglądarki w celu obsługi. W tym modelu przeglądarka jest używana jako aparat renderowania cienkiego. Na serwerze występuje poprawność tworzenia interfejsu użytkownika, uruchamiania logiki biznesowej i zarządzania stanem.
 
-Jednak przeglądarki stają się uniwersalną platformą. Implementują one coraz większą liczbę otwartych standardów sieci Web, które zapewniają dostęp do możliwości komputera użytkownika. Dlaczego nie należy korzystać z mocy obliczeniowej, magazynu, pamięci i innych zasobów urządzenia klienckiego? Interakcje interfejsu użytkownika w szczególności mogą korzystać z bogatszego i bardziej interaktywnego działania, gdy jest obsługiwany co najmniej częściowo lub całkowicie po stronie klienta. Logika i dane, które powinny być obsługiwane na serwerze, nadal mogą być obsługiwane po stronie serwera. Mogą być używane wywołania interfejsu API sieci Web lub nawet za pośrednictwem protokołów w czasie rzeczywistym, takich jak WebSockets. Te korzyści są dostępne dla deweloperów sieci Web bezpłatnie, jeśli chcą pisać kod JavaScript. Struktury interfejsu użytkownika po stronie klienta, takie jak kątowy, reagowanie i Vue, upraszczają Programowanie aplikacji sieci Web po stronie klienta i osiągnęły popularność. Deweloperzy ASP.NET Web Forms mogą również korzystać z klienta programu, a nawet korzystać z wbudowanych platform języka JavaScript, takich jak ASP.NET AJAX.
+Jednak przeglądarki stają się uniwersalną platformą. Implementują one coraz większą liczbę otwartych standardów sieci Web, które zapewniają dostęp do możliwości komputera użytkownika. Dlaczego nie należy korzystać z mocy obliczeniowej, magazynu, pamięci i innych zasobów urządzenia klienckiego? Interakcje interfejsu użytkownika w szczególności mogą korzystać z bogatszego i bardziej interaktywnego działania, gdy jest obsługiwany co najmniej częściowo lub całkowicie po stronie klienta. Logika i dane, które powinny być obsługiwane na serwerze, nadal mogą być obsługiwane po stronie serwera. Można używać wywołań interfejsu API sieci Web lub nawet protokołów w czasie rzeczywistym, takich jak WebSockets. Te korzyści są dostępne dla deweloperów sieci Web bezpłatnie, jeśli chcą pisać kod JavaScript. Struktury interfejsu użytkownika po stronie klienta, takie jak kątowy, reagowanie i Vue, upraszczają Programowanie aplikacji sieci Web po stronie klienta i osiągnęły popularność. Deweloperzy ASP.NET Web Forms mogą również korzystać z klienta programu, a nawet korzystać z wbudowanych platform języka JavaScript, takich jak ASP.NET AJAX.
 
 Mostkowanie obejmuje dwie różne platformy i ekosystemy (.NET i JavaScript). Wiedza jest wymagana w dwóch równoległych światach z różnymi językami, strukturami i narzędziami. Kod i logika nie mogą być łatwo udostępniane między klientem i serwerem, co skutkuje duplikowaniem i pracą inżynieryjną. Może być również trudne do utrzymania w ekosystemie JavaScript, który ma historię rozwoju na szybkości breakneck. Narzędzia platformy frontonu i preferencji narzędzi do kompilacji szybko zmieniają się. Branża zaobserwowano postęp od grunt do Gulp z pakietem WebPack i tak dalej. Te same Restless zmiany wystąpiły z platformami frontonu, takimi jak jQuery, odcinanie, kątowe, reagowanie i Vue. Jednak podano nieznaczny monopol przeglądarki JavaScript. Oznacza to, że do momentu, aż społeczność internetowa się nie *pomiraclea* .
 
-## <a name="webassembly-fulfills-a-need"></a>WebAssemblyspełnia potrzeby
+## <a name="no-locwebassembly-fulfills-a-need"></a>WebAssembly spełnia potrzeby
 
-W 2015, głównym dostawcom przeglądarki przyłączono siły w grupie społeczność W3C, aby utworzyć nowy otwarty standard sieci Web o nazwie WebAssembly . WebAssemblyjest kodem bajtowym dla sieci Web. Jeśli możesz skompilować swój kod do WebAssembly programu, można go uruchomić w dowolnej przeglądarce na dowolnej platformie, w niemal większej szybkości. Początkowe wysiłki skupiające się na C/C++. Wynikiem jest znaczną prezentację uruchamiania natywnych aparatów graficznych 3W bezpośrednio w przeglądarce bez wtyczek. WebAssemblyczy zostały ustandaryzowane i zaimplementowane przez wszystkie główne przeglądarki.
+W 2015, głównym dostawcom przeglądarki przyłączono siły w grupie społeczność W3C, aby utworzyć nowy otwarty standard sieci Web o nazwie WebAssembly . WebAssembly jest kodem bajtowym dla sieci Web. Jeśli możesz skompilować swój kod do WebAssembly programu, można go uruchomić w dowolnej przeglądarce na dowolnej platformie, w niemal większej szybkości. Początkowe wysiłki skupiające się na C/C++. Wynikiem jest znaczną prezentację uruchamiania natywnych aparatów graficznych 3W bezpośrednio w przeglądarce bez wtyczek. WebAssembly czy zostały ustandaryzowane i zaimplementowane przez wszystkie główne przeglądarki.
 
 Działanie na uruchomionej platformie .NET WebAssembly zostało ogłoszone w późnej 2017 i oczekuje się, że jest on dostarczany w 2020, włącznie z wsparciem z platformy .NET 5. Możliwość uruchamiania kodu platformy .NET bezpośrednio w przeglądarce umożliwia tworzenie aplikacji sieci Web na całym stosie przy użyciu platformy .NET.
 
-## <a name="blazor-full-stack-web-development-with-net"></a>Blazor: Programowanie aplikacji sieci Web w pełnym stosie przy użyciu platformy .NET
+## <a name="no-locblazor-full-stack-web-development-with-net"></a>Blazor: Programowanie aplikacji sieci Web w pełnym stosie przy użyciu platformy .NET
 
-Ponadto możliwość uruchamiania kodu platformy .NET w przeglądarce nie zapewnia kompleksowego środowiska tworzenia aplikacji sieci Web po stronie klienta. Jest to miejsce, w którym się Blazor znajduje. Blazorto struktura interfejsu użytkownika sieci Web po stronie klienta oparta na języku C# zamiast języka JavaScript. Blazormożna uruchamiać bezpośrednio w przeglądarce za pośrednictwem programu WebAssembly . Nie są wymagane żadne wtyczki przeglądarki. Alternatywnie Blazor aplikacje mogą uruchamiać serwer w środowisku .NET Core i obsługiwać wszystkie interakcje użytkowników w czasie rzeczywistym z przeglądarką.
+Ponadto możliwość uruchamiania kodu platformy .NET w przeglądarce nie zapewnia kompleksowego środowiska tworzenia aplikacji sieci Web po stronie klienta. Jest to miejsce, w którym się Blazor znajduje. Blazor to struktura interfejsu użytkownika sieci Web po stronie klienta oparta na języku C# zamiast języka JavaScript. Blazor można uruchamiać bezpośrednio w przeglądarce za pośrednictwem programu WebAssembly . Nie są wymagane żadne wtyczki przeglądarki. Alternatywnie Blazor aplikacje mogą uruchamiać serwer w środowisku .NET Core i obsługiwać wszystkie interakcje użytkowników w czasie rzeczywistym z przeglądarką.
 
-Blazorma wspaniałe narzędzia obsługiwane w programie Visual Studio i Visual Studio Code. Struktura zawiera również pełny model składników interfejsu użytkownika i oferuje wbudowane funkcje programu:
+Blazor ma wspaniałe narzędzia obsługiwane w programie Visual Studio i Visual Studio Code. Struktura zawiera również pełny model składników interfejsu użytkownika i oferuje wbudowane funkcje programu:
 
 - Formularze i walidacja
 - Wstrzykiwanie zależności
@@ -72,7 +70,7 @@ Blazorma wspaniałe narzędzia obsługiwane w programie Visual Studio i Visual S
 - Debugowanie w przeglądarce
 - Międzyoperacyjność w języku JavaScript
 
-Blazorma dużą wspólną postać ASP.NET Web Forms. Obie te platformy oferują modele programowania opartego na składnikach, sterowanych zdarzeniami. Główną różnicą architektury jest to, że ASP.NET Web Forms działa tylko na serwerze. Blazormożna uruchomić na kliencie programu w przeglądarce. Ale jeśli korzystasz z tła ASP.NET formularzy sieci Web, istnieje wiele, Blazor co będzie znane. Blazorto rozwiązanie naturalne przeznaczone dla deweloperów ASP.NET Web Forms, który umożliwia korzystanie z funkcji tworzenia po stronie klienta i środowiska typu open-source w przyszłości dla platformy .NET.
+Blazor ma dużą wspólną postać ASP.NET Web Forms. Obie te platformy oferują modele programowania opartego na składnikach, sterowanych zdarzeniami. Główną różnicą architektury jest to, że ASP.NET Web Forms działa tylko na serwerze. Blazor można uruchomić na kliencie programu w przeglądarce. Ale jeśli korzystasz z tła ASP.NET formularzy sieci Web, istnieje wiele, Blazor co będzie znane. Blazor to rozwiązanie naturalne przeznaczone dla deweloperów ASP.NET Web Forms, który umożliwia korzystanie z funkcji tworzenia po stronie klienta i środowiska typu open-source w przyszłości dla platformy .NET.
 
 Ta książka zawiera wprowadzenie do programu Blazor , który jest przeznaczony dla deweloperów ASP.NET Web Forms. Każde Blazor pojęcie koncepcji jest prezentowane w kontekście analogicznych funkcji i praktyk formularzy sieci Web ASP.NET. Na koniec tej książki znajdziesz następujące informacje:
 
@@ -81,7 +79,7 @@ Ta książka zawiera wprowadzenie do programu Blazor , który jest przeznaczony 
 - BlazorOdnosi się do programu .NET Core.
 - Rozsądne strategie migracji istniejących aplikacji ASP.NET Web Forms do Blazor odpowiednich potrzeb.
 
-## <a name="get-started-with-blazor"></a>Wprowadzenie doBlazor
+## <a name="get-started-with-no-locblazor"></a>Wprowadzenie do Blazor
 
 Wprowadzenie do programu Blazor jest proste. Przejdź do <https://blazor.net> i postępuj zgodnie z linkami, aby zainstalować odpowiednie zestaw .NET Core SDK i Blazor Szablony projektów. Znajdziesz również instrukcje dotyczące konfigurowania Blazor narzędzi w programie Visual Studio lub Visual Studio Code.
 

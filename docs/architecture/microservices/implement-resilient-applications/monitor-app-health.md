@@ -1,37 +1,37 @@
 ---
 title: Monitorowanie kondycji
-description: Poznaj jeden ze sposobów wdrażania monitorowania kondycji.
+description: Poznaj jeden ze sposobów implementacji monitorowania kondycji.
 ms.date: 03/02/2020
-ms.openlocfilehash: 88354ae0ae59dbfbe40dbe1b25320f8f93d042ce
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 3e3e8ec41de1469f0c397d8d80d224dd2f7a2bd2
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988859"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267896"
 ---
 # <a name="health-monitoring"></a>Monitorowanie kondycji
 
-Monitorowanie kondycji może zezwolić w czasie zbliżonym do rzeczywistego informacji o stanie kontenerów i mikrousług. Monitorowanie kondycji ma kluczowe znaczenie dla wielu aspektów mikrousług operacyjnych i jest szczególnie ważne, gdy koordynatorzy wykonują częściowe uaktualnienia aplikacji w fazach, jak wyjaśniono później.
+Monitorowanie kondycji może umożliwić niemal w czasie rzeczywistym informacje o stanie kontenerów i mikrousług. Monitorowanie kondycji ma kluczowe znaczenie dla wielu aspektów mikrousług operacyjnych i jest szczególnie ważne, gdy koordynator wykonuje częściowe uaktualnienia aplikacji w fazach, jak wyjaśniono później.
 
-Aplikacje oparte na mikrousługach często używają pulsu lub kontroli kondycji, aby umożliwić ich monitory wydajności, harmonogramy i koordynatorów, aby śledzić wiele usług. Jeśli usługi nie mogą wysłać jakiegoś sygnału "Żyję", na żądanie lub zgodnie z harmonogramem, aplikacja może napotkać ryzyko podczas wdrażania aktualizacji lub może po prostu wykryć awarie zbyt późno i nie być w stanie zatrzymać kaskadowych awarii, które mogą skończyć się poważnymi awariami.
+Aplikacje oparte na mikrousługach często używają pulsu lub kontroli kondycji, aby umożliwić ich monitorom wydajności, harmonogramom i programom Orchestrator śledzenie wielu usług. Jeśli usługi nie mogą wysyłać niektórych rodzajów sygnałów "jestem aktywny", na żądanie lub zgodnie z harmonogramem, aplikacja może stanowić zagrożenie podczas wdrażania aktualizacji lub po prostu wykryć błędy zbyt późne i nie może zatrzymać błędów kaskadowych, które mogą zakończyć się w trakcie poważnych awarii.
 
-W typowym modelu usługi wysyłają raporty dotyczące ich stanu, a informacje są agregowane w celu zapewnienia ogólnego widoku stanu kondycji aplikacji. Jeśli używasz koordynatora, można podać informacje o kondycji do klastra koordynatora, dzięki czemu klaster może działać odpowiednio. Jeśli zainwestujesz w wysokiej jakości raportowanie kondycji dostosowane do aplikacji, można znacznie łatwiej wykryć i rozwiązać problemy dla uruchomionej aplikacji.
+W typowym modelu usługi wysyłają raporty dotyczące ich stanu, a informacje te są agregowane w celu zapewnienia ogólnego widoku stanu kondycji aplikacji. Jeśli używasz programu Orchestrator, możesz podać informacje o kondycji w klastrze programu Orchestrator, aby klaster mógł odpowiednio działać. Jeśli zainwestowano w Raportowanie kondycji o wysokiej jakości dostosowane do Twojej aplikacji, można łatwiej wykrywać i rozwiązywać problemy związane z uruchomioną aplikacją.
 
-## <a name="implement-health-checks-in-aspnet-core-services"></a>Wdrażanie kontroli kondycji w usługach ASP.NET Core
+## <a name="implement-health-checks-in-aspnet-core-services"></a>Implementowanie kontroli kondycji w usługach ASP.NET Core Services
 
-Podczas tworzenia mikrousługi ASP.NET Core lub aplikacji sieci web można użyć wbudowanej funkcji kontroli kondycji, która została wydana w programie ASP .NET Core 2.2 ([Microsoft.Extensions.Diagnostics.HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks)). Podobnie jak wiele ASP.NET podstawowych funkcji, kontrole kondycji są wyposażone w zestaw usług i oprogramowanie pośredniczące.
+Podczas tworzenia ASP.NET Core mikrousług lub aplikacji sieci Web można użyć wbudowanej funkcji kontroli kondycji wydanej w ASP .NET Core 2,2 ([Microsoft. Extensions. Diagnostics. HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks)). Podobnie jak w przypadku wielu funkcji ASP.NET Core, sprawdzanie kondycji obejmuje zestaw usług i oprogramowanie pośredniczące.
 
-Usługi sprawdzania kondycji i oprogramowanie pośredniczące są łatwe w użyciu i zapewniają możliwości, które umożliwiają sprawdzanie poprawności, czy dowolny zasób zewnętrzny potrzebny dla aplikacji (takiej jak baza danych programu SQL Server lub zdalny interfejs API) działa poprawnie. Korzystając z tej funkcji, można również zdecydować, co to znaczy, że zasób jest w dobrej kondycji, jak wyjaśniamy później.
+Usługi sprawdzania kondycji i oprogramowanie pośredniczące są łatwe w użyciu i zapewniają możliwości umożliwiające sprawdzenie, czy dowolny zasób zewnętrzny wymagany dla aplikacji (na przykład baza danych SQL Server lub zdalny interfejs API) działa poprawnie. Korzystając z tej funkcji, można także zdecydować, co oznacza, że zasób jest w dobrej kondycji, jak wyjaśniono w przyszłości.
 
-Aby skutecznie korzystać z tej funkcji, należy najpierw skonfigurować usługi w mikrousługach. Po drugie, potrzebujesz aplikacji frontonu, która wysyła zapytania do raportów kondycji. Ta aplikacja frontonu może być niestandardową aplikacją raportowania lub może być sama koordynatorem, który może odpowiednio reagować na stany kondycji.
+Aby efektywnie korzystać z tej funkcji, należy najpierw skonfigurować usługi w mikrousługach. Po drugie potrzebna jest aplikacja frontonu, która wykonuje zapytania dotyczące raportów kondycji. Aplikacja frontonu może być niestandardową aplikacją raportowania lub być samą koordynatorem, który może reagować odpowiednio do Stanów kondycji.
 
-### <a name="use-the-healthchecks-feature-in-your-back-end-aspnet-microservices"></a>Korzystanie z funkcji HealthChecks w zapleczu ASP.NET mikrousług
+### <a name="use-the-healthchecks-feature-in-your-back-end-aspnet-microservices"></a>Korzystanie z funkcji HealthChecks w mikrousługach ASP.NET zaplecza
 
-W tej sekcji dowiesz się, jak zaimplementować funkcję HealthChecks w przykładzie ASP.NET aplikacji interfejsu API sieci Web Core 3.1 podczas korzystania z pakietu [Microsoft.Extensions.Diagnostics.HealthChecks.](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks) Implementacja tej funkcji w mikrousług na dużą skalę, takich jak eShopOnContainers jest wyjaśnione w następnej sekcji.
+W tej sekcji dowiesz się, jak zaimplementować funkcję HealthChecks w przykładowej aplikacji internetowego interfejsu API ASP.NET Core 3,1 podczas korzystania z pakietu [Microsoft. Extensions. Diagnostics. HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks) . Implementacja tej funkcji w mikrousługach o dużej skali, podobnie jak eShopOnContainers, została opisana w następnej sekcji.
 
-Aby rozpocząć, należy zdefiniować, co stanowi stan w dobrej kondycji dla każdej mikrousługi. W przykładowej aplikacji definiujemy mikrousługi jest w dobrej kondycji, jeśli jego interfejs API jest dostępny za pośrednictwem protokołu HTTP i jego powiązanej bazy danych programu SQL Server jest również dostępna.
+Aby rozpocząć, należy określić, co stanowi prawidłowy stan dla każdej mikrousługi. W przykładowej aplikacji definiujemy, że mikrousługa jest w dobrej kondycji, jeśli jej interfejs API jest dostępny za pośrednictwem protokołu HTTP, a jego powiązana SQL Server baza danych jest również dostępna.
 
-W programie .NET Core 3.1 z wbudowanymi interfejsami API można skonfigurować usługi, dodać sprawdzanie kondycji mikrousługi i zależną bazę danych programu SQL Server w ten sposób:
+W programie .NET Core 3,1 z wbudowanymi interfejsami API można skonfigurować usługi, dodać kontrolę kondycji dla mikrousługi i jej zależną SQL Server bazę danych w następujący sposób:
 
 ```csharp
 // Startup.cs from .NET Core 3.1 Web API sample
@@ -50,11 +50,11 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-W poprzednim kodzie `services.AddHealthChecks()` metoda konfiguruje podstawowe sprawdzanie HTTP, który zwraca kod stanu **200** z "Zdrowy".  Ponadto metoda `AddCheck()` rozszerzenia konfiguruje `SqlConnectionHealthCheck` niestandardowe, które sprawdza kondycję powiązanej bazy danych SQL.
+W poprzednim kodzie `services.AddHealthChecks()` Metoda konfiguruje podstawową kontrolę http, która zwraca kod stanu **200** z "dobra".  Ponadto `AddCheck()` Metoda rozszerzania konfiguruje niestandardowy `SqlConnectionHealthCheck` , który sprawdza kondycję powiązanej SQL Database.
 
-Metoda `AddCheck()` dodaje nowe sprawdzanie kondycji o określonej nazwie `IHealthCheck`i implementacji typu . Można dodać wiele kontroli kondycji przy użyciu AddCheck metody, więc mikrousługi nie zapewni stan "w dobrej kondycji", dopóki wszystkie jego kontrole są w dobrej kondycji.
+`AddCheck()`Metoda dodaje nową kontrolę kondycji z określoną nazwą i implementacją typu `IHealthCheck` . Można dodać wiele kontroli kondycji za pomocą metody ADDCHECK, aby mikrousługa nie zapewniała stanu "zdrowy" do momentu, gdy wszystkie jego sprawdzenia nie będą w dobrej kondycji.
 
-`SqlConnectionHealthCheck`jest klasą niestandardową, która implementuje `IHealthCheck`, która przyjmuje parametry połączenia jako parametr konstruktora i wykonuje proste zapytanie, aby sprawdzić, czy połączenie z bazą danych SQL zakończy się pomyślnie. Zwraca, `HealthCheckResult.Healthy()` jeśli kwerenda została `FailureStatus` wykonana pomyślnie i z rzeczywistym wyjątkiem, gdy nie powiedzie się.
+`SqlConnectionHealthCheck` jest klasą niestandardową `IHealthCheck` , która implementuje, która przyjmuje parametry połączenia jako parametr konstruktora i wykonuje proste zapytanie, aby sprawdzić, czy połączenie z bazą danych SQL zostało pomyślnie zakończone. Zwraca, `HealthCheckResult.Healthy()` jeśli zapytanie zostało wykonane pomyślnie, a `FailureStatus` z faktycznym wyjątkiem, gdy zakończy się niepowodzeniem.
 
 ```csharp
 // Sample SQL Connection Health Check
@@ -104,9 +104,9 @@ public class SqlConnectionHealthCheck : IHealthCheck
 }
 ```
 
-Należy zauważyć, `Select 1` że w poprzednim kodzie jest kwerenda używana do sprawdzania kondycji bazy danych. Aby monitorować dostępność mikrousług, orchestrators jak Kubernetes okresowo wykonywać kontrole kondycji, wysyłając żądania do testowania mikrousług. Ważne jest, aby zachować efektywne zapytania bazy danych, tak aby te operacje są szybkie i nie powodują większego wykorzystania zasobów.
+Należy zauważyć, że w poprzednim kodzie `Select 1` jest zapytanie używane do sprawdzania kondycji bazy danych. Aby monitorować dostępność mikrousług, program Orchestrator, taki jak Kubernetes okresowo przeprowadza kontrolę kondycji, wysyłając żądania przetestowania mikrousług. Ważne jest, aby zachować wydajność zapytań bazy danych, aby te operacje były szybkie i nie powodowały większego użycia zasobów.
 
-Na koniec dodaj oprogramowanie pośredniczące, które `/hc`odpowiada na ścieżkę adresu URL:
+Na koniec Dodaj oprogramowanie pośredniczące, które odpowiada na ścieżkę URL `/hc` :
 
 ```csharp
 // Startup.cs from .NET Core 3.1 Web Api sample
@@ -124,21 +124,21 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-Po wywołaniu `<yourmicroservice>/hc` punktu końcowego uruchamia wszystkie kontrole kondycji, które `AddHealthChecks()` są skonfigurowane w metodzie w klasie Uruchamianie i pokazuje wynik.
+Gdy punkt końcowy `<yourmicroservice>/hc` jest wywoływany, uruchamia wszystkie kontrole kondycji, które są skonfigurowane w `AddHealthChecks()` metodzie klasy uruchomieniowej i wyświetla wynik.
 
 ### <a name="healthchecks-implementation-in-eshoponcontainers"></a>Implementacja HealthChecks w eShopOnContainers
 
-Mikrousługi w eShopOnContainers polegać na wielu usług do wykonywania swoich zadań. Na przykład `Catalog.API` mikrousługi z eShopOnContainers zależy od wielu usług, takich jak Usługi Azure Blob Storage, SQL Server i RabbitMQ. W związku z tym ma kilka `AddCheck()` kontroli kondycji dodane przy użyciu metody. Dla każdej usługi zależnej należy dodać niestandardową `IHealthCheck` implementację definiują jej odpowiedni stan kondycji.
+Mikrousługi w eShopOnContainers polegają na wielu usługach do wykonywania zadań. Na przykład `Catalog.API` mikrousługa z eShopOnContainers zależy od wielu usług, takich jak Azure Blob Storage, SQL Server i RabbitMQ. W związku z tym ma kilka testów kondycji dodanych za pomocą `AddCheck()` metody. Dla każdej usługi zależnej `IHealthCheck` należy dodać implementację niestandardową, która definiuje jej odpowiedni stan kondycji.
 
-Projekt open-source [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) rozwiązuje ten problem, udostępniając niestandardowe implementacje sprawdzania kondycji dla każdej z tych usług dla przedsiębiorstwa, które są oparte na programie .NET Core 3.1. Każda kontrola kondycji jest dostępna jako pojedynczy pakiet NuGet, który można łatwo dodać do projektu. eShopOnContainers używa ich szeroko we wszystkich swoich mikrousług.
+Projekt Open Source [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) rozwiązuje ten problem, dostarczając niestandardowe implementacje sprawdzania kondycji dla każdej z tych usług przedsiębiorstwa, które są oparte na platformie .net Core 3,1. Każde Sprawdzanie kondycji jest dostępne jako pojedynczy pakiet NuGet, który można łatwo dodać do projektu. eShopOnContainers używa ich w szerokim stopniu we wszystkich mikrousługach.
 
-Na przykład w `Catalog.API` mikrousługi dodano następujące pakiety NuGet:
+Na przykład w `Catalog.API` mikrousłudze dodano następujące pakiety NuGet:
 
-![Zrzut ekranu przedstawiający pakiety AspNetCore.Diagnostics.HealthChecks NuGet.](./media/monitor-app-health/aspnet-core-diagnostics-health-checks.png)
+![Zrzut ekranu przedstawiający pakiety NuGet AspNetCore. Diagnostics. HealthChecks.](./media/monitor-app-health/aspnet-core-diagnostics-health-checks.png)
 
-**Rysunek 8-7**. Niestandardowe kontrole kondycji zaimplementowane w pliku Catalog.API przy użyciu aspNetCore.Diagnostics.HealthChecks
+**Rysunek 8-7**. Niestandardowe kontrole kondycji zaimplementowane w wykazie. interfejs API przy użyciu AspNetCore. Diagnostics. HealthChecks
 
-W poniższym kodzie implementacje sprawdzania kondycji są dodawane dla każdej usługi zależnej, a następnie oprogramowanie pośredniczące jest skonfigurowane:
+W poniższym kodzie są dodawane implementacje sprawdzania kondycji dla poszczególnych usług zależnych, a następnie oprogramowanie pośredniczące jest skonfigurowane:
 
 ```csharp
 // Startup.cs from Catalog.api microservice
@@ -186,7 +186,7 @@ public static IServiceCollection AddCustomHealthCheck(this IServiceCollection se
 }
 ```
 
-Na koniec dodaj oprogramowanie pośredniczące HealthCheck, aby słuchać punktu końcowego "/hc":
+Na koniec Dodaj oprogramowanie pośredniczące HealthCheck, aby nasłuchiwać punktu końcowego "/HC":
 
 ```csharp
 // HealthCheck middleware
@@ -195,34 +195,33 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
     Predicate = _ => true,
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
-}
 ```
 
-### <a name="query-your-microservices-to-report-about-their-health-status"></a>Zapytanie do mikrousług, aby raportować o ich stanie zdrowia
+### <a name="query-your-microservices-to-report-about-their-health-status"></a>Zbadaj mikrousługi, aby zgłosić ich stan kondycji
 
-Po skonfigurowaniu kontroli kondycji zgodnie z opisem w tym artykule i masz mikrousługi uruchomione w docker, można bezpośrednio sprawdzić z przeglądarki, czy jest w dobrej kondycji. Musisz opublikować port kontenera na hoście platformy Docker, dzięki czemu można uzyskać `localhost`dostęp do kontenera za pośrednictwem zewnętrznego adresu IP hosta platformy Docker lub za pośrednictwem , jak pokazano na rysunku 8-8.
+Po skonfigurowaniu kontroli kondycji zgodnie z opisem w tym artykule, gdy w programie Docker jest uruchomiona mikrousługa, możesz bezpośrednio sprawdzić ją z poziomu przeglądarki, jeśli jest w dobrej kondycji. Należy opublikować port kontenera na hoście platformy Docker, aby można było uzyskać dostęp do kontenera za pomocą adresu IP zewnętrznego hosta platformy Docker lub przez `localhost` program, jak pokazano na rysunku 8-8.
 
-![Zrzut ekranu odpowiedzi JSON zwrócony przez sprawdzenie kondycji.](./media/monitor-app-health/health-check-json-response.png)
+![Zrzut ekranu przedstawiający odpowiedź JSON zwróconą przez kontrolę kondycji.](./media/monitor-app-health/health-check-json-response.png)
 
-**Rysunek 8-8**. Sprawdzanie stanu kondycji pojedynczej usługi z przeglądarki
+**Rysunek 8-8**. Sprawdzanie stanu kondycji pojedynczej usługi z poziomu przeglądarki
 
-W tym teście widać, `Catalog.API` że mikrousługa (uruchomiona na porcie 5101) jest w dobrej kondycji, zwracając stan HTTP 200 i informacje o stanie w JSON. Usługa sprawdziła również kondycję zależności bazy danych programu SQL Server i rabbitmq, więc sprawdzanie kondycji zgłosiło się jako w dobrej kondycji.
+W tym teście można zobaczyć, że `Catalog.API` mikrousługa (uruchomiona na porcie 5101) jest w dobrej kondycji, zwracająca stan HTTP 200 i informacje o stanie w formacie JSON. Usługa sprawdza również kondycję SQL Server zależność bazy danych i RabbitMQ, więc Sprawdzenie kondycji zgłoszone w dobrej kondycji.
 
-## <a name="use-watchdogs"></a>Korzystanie z watchdogs
+## <a name="use-watchdogs"></a>Użyj licznika alarmów
 
-Watchdog jest oddzielną usługą, która może obserwować kondycję i obciążenia między usługami `HealthChecks` i raportować kondycję mikrousług, korzystając z zapytań z biblioteki wprowadzonej wcześniej. Może to pomóc w zapobieganiu błędom, które nie zostaną wykryte na podstawie widoku pojedynczej usługi. Watchdogs również są dobrym miejscem do hostowania kodu, który może wykonywać akcje korygujące dla znanych warunków bez interakcji z użytkownikiem.
+Licznik alarm jest oddzielną usługą, która może oglądać kondycję i ładować różne usługi, a także zgłaszać kondycję dotyczącą mikrousług, wykonując zapytania z przemieszczoną `HealthChecks` wcześniej biblioteką. Może to pomóc zapobiec błędom, które nie zostaną wykryte w oparciu o Widok jednej usługi. Licznik alarmy jest również dobrym miejscem do kodu hosta, który może wykonywać akcje naprawcze dla znanych warunków bez interakcji z użytkownikiem.
 
-Przykład eShopOnContainers zawiera stronę sieci web, która wyświetla przykładowe raporty kontroli kondycji, jak pokazano na rysunku 8-9. Jest to najprostszy watchdog można mieć, ponieważ pokazuje tylko stan mikrousług i aplikacji sieci web w eShopOnContainers. Zazwyczaj watchdog również wykonuje działania, gdy wykryje niezdrowe stany.
+Przykład eShopOnContainers zawiera stronę sieci Web, która wyświetla przykładowe raporty sprawdzania kondycji, jak pokazano na rysunku 8-9. Jest to najprostsza wartość licznika alarmowego, która może być dostępna, ponieważ pokazuje jedynie stan mikrousług i aplikacji sieci Web w eShopOnContainers. Zazwyczaj licznik alarmowy wykonuje także akcje w przypadku wykrycia stanu złej kondycji.
 
-Na szczęście [aspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) zapewnia również [aspNetCore.HealthChecks.UI](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI/) NuGet pakiet, który może służyć do wyświetlania wyników kontroli kondycji ze skonfigurowanych identyfikatorów URI.
+Na szczęście [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) udostępnia również pakiet NuGet [AspNetCore. HealthChecks. UI](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI/) , który może służyć do wyświetlania wyników kontroli kondycji ze skonfigurowanych identyfikatorów URI.
 
-![Zrzut ekranu przedstawiający stan kondycji interfejsu użytkownika interfejsu użytkownika interfejsu użytkownika eShopOnContainers.](./media/monitor-app-health/health-check-status-ui.png)
+![Zrzut ekranu stanu eShopOnContainers kondycji interfejsu użytkownika kontroli kondycji.](./media/monitor-app-health/health-check-status-ui.png)
 
-**Rysunek 8-9**. Przykładowy raport kontroli kondycji w eShopOnContainers
+**Rysunek 8-9**. Przykładowy raport sprawdzania kondycji w eShopOnContainers
 
-Podsumowując, ta usługa watchdog wysyła zapytanie do punktu końcowego "/hc" każdej mikrousługi. Spowoduje to wykonanie wszystkich kontroli kondycji zdefiniowanych w nim i zwróci ogólny stan kondycji w zależności od wszystkich tych kontroli. HealthChecksUI jest łatwy do użycia z kilku wpisów konfiguracji i dwa wiersze kodu, które muszą zostać dodane do Startup.cs usługi watchdog.
+Podsumowując, ta usługa alarm wysyła zapytanie do każdego punktu końcowego mikrousługi "/HC". Spowoduje to wykonanie wszystkich kontroli kondycji zdefiniowanych w ramach tego programu i zwrócenie ogólnej kondycji w zależności od wszystkich tych sprawdzeń. HealthChecksUI jest łatwe do użycia w kilku wpisach konfiguracji i dwóch wierszach kodu, które należy dodać do *Startup.cs* usługi alarm.
 
-Przykładowy plik konfiguracyjny dla interfejsu użytkownika sprawdzania kondycji:
+Przykładowy plik konfiguracji dla interfejsu użytkownika sprawdzania kondycji:
 
 ```json
 // Configuration
@@ -242,7 +241,7 @@ Przykładowy plik konfiguracyjny dla interfejsu użytkownika sprawdzania kondycj
 }
 ```
 
-Startup.cs plik, który dodaje HealthChecksUI:
+Plik *Startup.cs* , który dodaje HealthChecksUI:
 
 ```csharp
 // Startup.cs from WebStatus(Watch Dog) service
@@ -257,42 +256,42 @@ public void ConfigureServices(IServiceCollection services)
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     //…
-    app.UseHealthChecksUI(config=> config.UIPath = "/hc-ui");
+    app.UseHealthChecksUI(config => config.UIPath = "/hc-ui");
     //…
 }
 ```
 
-## <a name="health-checks-when-using-orchestrators"></a>Kontrole kondycji podczas korzystania z koordynatorów
+## <a name="health-checks-when-using-orchestrators"></a>Sprawdzanie kondycji w przypadku korzystania z programu Orchestrator
 
-Aby monitorować dostępność mikrousług, orchestrators jak Kubernetes i service fabric okresowo wykonywać kontrole kondycji, wysyłając żądania do testowania mikrousług. Gdy koordynator stwierdzi, że usługa/kontener jest w złej kondycji, zatrzymuje routingu żądań do tego wystąpienia. Zwykle tworzy również nowe wystąpienie tego kontenera.
+Aby monitorować dostępność mikrousług, program Orchestrator, taki jak Kubernetes, i Service Fabric okresowo przeprowadza kontrolę kondycji, wysyłając żądania przetestowania mikrousług. Gdy koordynator ustali, że usługa/kontener jest w złej kondycji, zatrzyma żądania routingu do tego wystąpienia. Zwykle tworzy również nowe wystąpienie tego kontenera.
 
-Na przykład większość koordynatorów może używać kontroli kondycji do zarządzania wdrożeniami o zerowym przestoju. Tylko wtedy, gdy stan usługi/kontenera zmieni się w dobrej kondycji, koordynator rozpocznie routing ruchu do wystąpień usługi/kontenera.
+Na przykład większość programów Orchestrator może korzystać z kontroli kondycji w celu zarządzania wdrożeniami bez przestojów. Tylko wtedy, gdy stan usługi/kontenera zmienia się w dobrej kondycji, program Orchestrator rozpocznie kierowanie ruchu do wystąpień usługi/kontenera.
 
-Monitorowanie kondycji jest szczególnie ważne, gdy koordynator wykonuje uaktualnienie aplikacji. Niektóre orchestrators (jak azure service fabric) aktualizacji usług w fazach — na przykład mogą zaktualizować jedną piątą powierzchni klastra dla każdego uaktualnienia aplikacji. Zestaw węzłów, które są uaktualniane w tym samym czasie, jest określany jako *domena uaktualnienia*. Po każdej domenie uaktualnienia został uaktualniony i jest dostępny dla użytkowników, że domena uaktualnienia musi przejść kontroli kondycji przed wdrożeniem przenosi się do następnej domeny uaktualnienia.
+Monitorowanie kondycji jest szczególnie ważne, gdy koordynator wykonuje uaktualnienie aplikacji. Niektóre programu Orchestrator (takie jak Azure Service Fabric) Update Services w fazach — na przykład mogą zaktualizować jedną piątą powierzchnię klastra dla każdej aktualizacji aplikacji. Zestaw węzłów, które są uaktualnione w tym samym czasie, jest określany jako *domena uaktualnienia*. Po uaktualnieniu każdej domeny uaktualnienia i udostępnieniu jej użytkownikom ta domena uaktualnienia musi przekazywać kontrolę kondycji, zanim wdrożenie przejdzie do następnej domeny uaktualnienia.
 
-Innym aspektem kondycji usługi jest raportowanie metryk z usługi. Jest to zaawansowana funkcja modelu kondycji niektórych koordynatorów, takich jak sieci szkieletowej usług. Metryki są ważne podczas korzystania z orchestrator, ponieważ są one używane do równoważenia użycia zasobów. Metryki mogą być również wskaźnikiem kondycji systemu. Na przykład może mieć aplikację, która ma wiele mikrousług, a każde wystąpienie zgłasza żądania na sekundę (RPS) metryki. Jeśli jedna usługa używa więcej zasobów (pamięci, procesora itp.) niż inna usługa, orchestrator może przenieść wystąpienia usługi w klastrze, aby spróbować utrzymać równomierne wykorzystanie zasobów.
+Innym aspektem kondycji usługi jest raportowanie metryk z usługi. Jest to zaawansowana funkcja modelu kondycji niektórych koordynatorów, taka jak Service Fabric. Metryki są ważne w przypadku korzystania z programu Orchestrator, ponieważ służą do zrównoważenia użycia zasobów. Metryki mogą również stanowić wskaźnik kondycji systemu. Przykładowo może istnieć aplikacja, która ma wiele mikrousług, a każde wystąpienie raportuje metrykę żądań na sekundę (RPS pliku). Jeśli jedna usługa korzysta z większej liczby zasobów (pamięci, procesora itp.) niż inna usługa, program Orchestrator może przenieść wystąpienia usługi w klastrze, aby spróbować zachować nawet wykorzystanie zasobów.
 
-Należy zauważyć, że usługa Azure Service Fabric udostępnia własny [model monitorowania kondycji,](/azure/service-fabric/service-fabric-health-introduction)który jest bardziej zaawansowany niż proste kontrole kondycji.
+Należy pamiętać, że usługa Azure Service Fabric oferuje własny [model monitorowania kondycji](/azure/service-fabric/service-fabric-health-introduction), który jest bardziej zaawansowany niż proste kontrole kondycji.
 
 ## <a name="advanced-monitoring-visualization-analysis-and-alerts"></a>Zaawansowane monitorowanie: wizualizacja, analiza i alerty
 
-Ostatnią częścią monitorowania jest wizualizacja strumienia zdarzeń, raportowanie wydajności usługi i alerty po wykryciu problemu. Można użyć różnych rozwiązań dla tego aspektu monitorowania.
+Ostatnia część monitorowania polega na wizualizowaniu strumienia zdarzeń, raportowaniu wydajności usługi i wysyłaniu alertów w przypadku wykrycia problemu. Do tego aspektu monitorowania można użyć różnych rozwiązań.
 
-Można użyć prostych aplikacji niestandardowych pokazujących stan usług, takich jak strona niestandardowa wyświetlana podczas wyjaśniania [aspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). Możesz też użyć bardziej zaawansowanych narzędzi, takich jak [Usługa Azure Monitor,](https://azure.microsoft.com/services/monitor/) aby zgłaszać alerty na podstawie strumienia zdarzeń.
+Możesz użyć prostych aplikacji niestandardowych pokazujących stan usług, takich jak niestandardowa strona wyświetlana przy objaśnianiu [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). Można też użyć bardziej zaawansowanych narzędzi, takich jak [Azure monitor](https://azure.microsoft.com/services/monitor/) , aby zgłosić alerty na podstawie strumienia zdarzeń.
 
-Na koniec, jeśli przechowujesz wszystkie strumienie zdarzeń, możesz użyć usługi Microsoft Power BI lub innych rozwiązań, takich jak Kibana lub Splunk, aby wizualizować dane.
+Na koniec, Jeśli przechowujesz wszystkie strumienie zdarzeń, możesz użyć programu Microsoft Power BI lub innych rozwiązań, takich jak Kibana lub Splunk, aby wizualizować dane.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 
-- **HealthChecks i HealthChecks UI dla ASP.NET Core** \
+- **Interfejs użytkownika HealthChecks i HealthChecks dla ASP.NET Core** \
   <https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks>
 
-- **Wprowadzenie do monitorowania kondycji sieci szkieletowej usług** \
+- **Wprowadzenie do monitorowania kondycji Service Fabric** \
   [https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction](/azure/service-fabric/service-fabric-health-introduction)
 
 - **Azure Monitor** \
   <https://azure.microsoft.com/services/monitor/>
 
 >[!div class="step-by-step"]
->[Poprzedni](implement-circuit-breaker-pattern.md)
->[następny](../secure-net-microservices-web-applications/index.md)
+>[Poprzedni](implement-circuit-breaker-pattern.md) 
+> [Dalej](../secure-net-microservices-web-applications/index.md)

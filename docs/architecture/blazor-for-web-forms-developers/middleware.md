@@ -6,20 +6,18 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 10/11/2019
-ms.openlocfilehash: ff2b3fd41316a1c8c20a0eed9a585e5fd2733af3
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 639755dd78892df1b70ea5245a9584e575fbf691
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173188"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267883"
 ---
 # <a name="modules-handlers-and-middleware"></a>Moduły, programy obsługi i oprogramowanie pośredniczące
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 Aplikacja ASP.NET Core jest oparta na serii *oprogramowania pośredniczącego*. Oprogramowanie pośredniczące to programy obsługi, które są rozmieszczone w potoku, aby obsługiwać żądania i odpowiedzi. W aplikacji formularzy sieci Web programy obsługi HTTP i moduły rozwiązują podobne problemy. W ASP.NET Core, moduły, programy obsługi, *Global.asax.cs*i cykl życia aplikacji są zastępowane przez oprogramowanie pośredniczące. W tym rozdziale opisano, co to jest oprogramowanie pośredniczące w kontekście Blazor aplikacji.
 
-## <a name="overview"></a>Przegląd
+## <a name="overview"></a>Omówienie
 
 Potok żądania ASP.NET Core składa się z sekwencji delegatów żądań o nazwie jeden po drugim. Na poniższym diagramie przedstawiono koncepcję. Wątek wykonywania jest zgodny z czarnym strzałką.
 

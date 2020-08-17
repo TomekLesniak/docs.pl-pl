@@ -1,5 +1,5 @@
 ---
-title: Blazordla deweloperów ASP.NET Web Forms
+title: Blazor dla deweloperów ASP.NET Web Forms
 description: Dowiedz się, jak tworzyć aplikacje sieci Web w pełnym stosie przy użyciu platformy .NET Blazor i platformy .NET Core w prosty i znany sposób.
 author: danroth27
 ms.author: daroth
@@ -7,20 +7,18 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 779eb47d9796c61df9939d0e7de287443870576e
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 1c869cce6ab8a0ab7c4b83817fe1afc3d6a4a7fd
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173253"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267476"
 ---
-# <a name="blazor-for-aspnet-web-forms-developers"></a>Blazordla deweloperów ASP.NET Web Forms
+# <a name="no-locblazor-for-aspnet-web-forms-developers"></a>Blazor dla deweloperów ASP.NET Web Forms
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+![Zrzut ekranu przedstawiający centrum poczty elektronicznej aplikacji bezserwerowych.](./media/index/blazor-for-aspnet-web-forms-developers.png)
 
-![Zrzut ekranu przedstawiający centrum poczty elektronicznej aplikacji bezserwerowych.](./media/index/blazor-for-web-forms-developers-cover.png)
-
-> Pobieranie dostępne o:<https://aka.ms/blazor-ebook>
+> Pobieranie dostępne o: <https://aka.ms/blazor-ebook>
 
 OPUBLIKOWANA PRZEZ
 
@@ -32,9 +30,9 @@ One Microsoft Way
 
 Redmond, Waszyngton 98052-6399
 
-Prawa autorskie © 2019 przez firmę Microsoft Corporation
+Prawa autorskie © 2020 przez firmę Microsoft Corporation
 
-Wszelkie prawa zastrzeżone. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
+All rights reserved. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
 
 Ta książka jest świadczona w postaci "AS-IS" i zawiera widoki i opinie autora. Widoki, opinie i informacje wyrażone w tej książce, w tym adresy URL i inne odwołania do witryn internetowych, mogą ulec zmianie bez powiadomienia.
 
@@ -56,11 +54,13 @@ Autorów
 
 > **[Scott Addie](https://github.com/scottaddie)**, Starszy programista ds. zawartości, Microsoft Corp.
 
+> **[Steve "ardalis" Smith](https://ardalis.com)**, architekt oprogramowania i Trainer, ARDALIS Services LLC
+
 ## <a name="introduction"></a>Wprowadzenie
 
 Platforma .NET ma długotrwałe Programowanie aplikacji sieci Web za pomocą ASP.NET, kompleksowego zestawu Platform i narzędzi do tworzenia dowolnego rodzaju aplikacji sieci Web. ASP.NET ma własne elementy platformy sieci Web i technologii, które zaczynają cały sposób z klasycznymi Active Server stronami (ASP). Struktury, takie jak ASP.NET Web Forms, ASP.NET MVC, ASP.NET Web Pages i ostatnio ASP.NET Core, zapewniają wydajny i wydajny sposób kompilowania aplikacji sieci Web *renderowanych na serwerze* , w przypadku których zawartość interfejsu użytkownika jest generowana dynamicznie na serwerze w odpowiedzi na żądania HTTP. Każdy ASP.NET Framework jest przeznaczony dla różnych grup odbiorców i tworzenia aplikacji. ASP.NET formularze sieci Web dostarczane z oryginalną wersją .NET Framework i obsługują programowanie w sieci Web przy użyciu wielu wzorców, które są znane dla deweloperów komputerów, takich jak kontrolki interfejsu użytkownika wielokrotnego użytku z prostą obsługą zdarzeń. Żadna z ofert ASP.NET nie umożliwia jednak uruchamiania kodu, który jest wykonywany w przeglądarce użytkownika. Aby to zrobić, należy napisać kod JavaScript i korzystać z dowolnej z wielu platform i narzędzi języka JavaScript, które są stopniowane i niepopularne w latach: jQuery, odcinania, kątowy, reagowanie i tak dalej.
 
-[Blazor](https://blazor.net)to nowa platforma sieci Web, która zmienia możliwości podczas kompilowania aplikacji sieci Web za pomocą platformy .NET. Blazorto struktura interfejsu użytkownika sieci Web po stronie klienta oparta na języku C# zamiast języka JavaScript. Za pomocą Blazor programu można napisać składniki logiki i interfejsu użytkownika po stronie klienta w języku C#, skompilować je do normalnych zestawów .NET, a następnie uruchomić je bezpośrednio w przeglądarce przy użyciu nowego otwartego standardu sieci Web o nazwie WebAssembly . Program może również Blazor uruchamiać składniki interfejsu użytkownika platformy .NET na serwerze i obsługiwać wszystkie interakcje interfejsu użytkownika w czasie rzeczywistym za pośrednictwem przeglądarki. W przypadku sparowania z platformą .NET działającą na serwerze program Blazor umożliwia tworzenie aplikacji sieci Web na całym stosie przy użyciu platformy .NET. BlazorUdziały wielu commonalities z formularzami ASP.NET sieci Web, takimi jak posiadanie modelu składników wielokrotnego użytku, i prosty sposób obsługi zdarzeń użytkowników, również kompilują się z podstaw platformy .NET Core, aby zapewnić nowoczesne i wysoce wydajne środowisko programistyczne dla sieci Web.
+[Blazor](https://blazor.net) to nowa platforma sieci Web, która zmienia możliwości podczas kompilowania aplikacji sieci Web za pomocą platformy .NET. Blazor to struktura interfejsu użytkownika sieci Web po stronie klienta oparta na języku C# zamiast języka JavaScript. Za pomocą Blazor programu można napisać składniki logiki i interfejsu użytkownika po stronie klienta w języku C#, skompilować je do normalnych zestawów .NET, a następnie uruchomić je bezpośrednio w przeglądarce przy użyciu nowego otwartego standardu sieci Web o nazwie WebAssembly . Program może również Blazor uruchamiać składniki interfejsu użytkownika platformy .NET na serwerze i obsługiwać wszystkie interakcje interfejsu użytkownika w czasie rzeczywistym za pośrednictwem przeglądarki. W przypadku sparowania z platformą .NET działającą na serwerze program Blazor umożliwia tworzenie aplikacji sieci Web na całym stosie przy użyciu platformy .NET. BlazorUdziały wielu commonalities z formularzami ASP.NET sieci Web, takimi jak posiadanie modelu składników wielokrotnego użytku, i prosty sposób obsługi zdarzeń użytkowników, również kompilują się z podstaw platformy .NET Core, aby zapewnić nowoczesne i wysoce wydajne środowisko programistyczne dla sieci Web.
 
 W tej książce wprowadzono ASP.NET deweloperów formularzy sieci Web Blazor w sposób, który jest znany i wygodny. Wprowadzają one Blazor koncepcje równolegle z podobnymi koncepcjami w formularzach sieci Web ASP.NET, a także objaśniają nowe koncepcje, które mogą być mniej znane. Obejmuje szeroki zakres tematów i problemów, w tym Tworzenie składników, kierowanie, układ, konfigurację i zabezpieczenia. Natomiast zawartość tej książki jest przede wszystkim przeznaczona do włączenia nowego opracowywania, a także zawiera wytyczne i strategie dotyczące migrowania istniejących formularzy sieci Web ASP.NET do Blazor programu, gdy użytkownik chce przeprowadzić modernizację istniejącej aplikacji.
 
@@ -76,7 +76,7 @@ Pierwsza część tej książki obejmuje co Blazor to jest i porównuje ją z pr
 
 Ta książka stanowi wprowadzenie do Blazor , a nie kompleksowego przewodnika migracji. Chociaż zawiera ona wskazówki dotyczące sposobu podejścia do migracji projektu z formularzy sieci Web ASP.NET do programu Blazor , nie jest podejmowana próba pozyskania wszystkich Nuance i szczegółów. Aby uzyskać bardziej ogólne wskazówki dotyczące migracji z programu ASP.NET do ASP.NET Core, zapoznaj się ze [wskazówkami](https://docs.microsoft.com/aspnet/core/migration/proper-to-2x/) dotyczącymi migracji w dokumentacji ASP.NET Core.
 
-### <a name="additional-resources"></a>Dodatkowe zasoby
+### <a name="additional-resources"></a>Zasoby dodatkowe
 
 Oficjalną Blazor stronę główną i dokumentację można znaleźć pod adresem <https://blazor.net> .
 

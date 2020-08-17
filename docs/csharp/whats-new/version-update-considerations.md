@@ -1,37 +1,38 @@
 ---
 title: Zagadnienia dotyczące wersji i aktualizacji dla deweloperów języka C#
 description: Wprowadzenie nowych funkcji języków w bibliotece może mieć wpływ na kod, który go używa.
+ms.topic: reference
 ms.date: 09/19/2018
-ms.openlocfilehash: 3ffe2f6fd64a391fddf28233dccb022c95851884
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f7db7c79792d04bcf592bc1858e1f0f05cb34402
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399386"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88268130"
 ---
 # <a name="version-and-update-considerations-for-c-developers"></a>Zagadnienia dotyczące wersji i aktualizacji dla deweloperów języka C#
 
-Zgodność jest bardzo ważnym celem, ponieważ nowe funkcje są dodawane do języka C#. W prawie wszystkich przypadkach istniejący kod można ponownie skompilować z nową wersją kompilatora bez żadnego problemu.
+Zgodność to istotny cel, ponieważ nowe funkcje są dodawane do języka C#. W prawie wszystkich przypadkach istniejący kod można ponownie skompilować przy użyciu nowej wersji kompilatora bez jakiegokolwiek problemu.
 
-Podczas przyjmowania nowych funkcji języka w bibliotece może być wymagana większa ostrożność. Być może tworzysz nową bibliotekę z funkcjami znalezionymi w najnowszej wersji i musisz upewnić się, że aplikacje utworzone przy użyciu poprzednich wersji kompilatora mogą z niej korzystać. Możesz też uaktualnić istniejącą bibliotekę, a wielu użytkowników może nie mieć jeszcze uaktualnionych wersji. Podejmując decyzje dotyczące przyjmowania nowych funkcji, musisz wziąć pod uwagę dwie odmiany zgodności: kompatybilność ze źródłem i zgodna z plikami binarnymi.
+W przypadku przyjmowania nowych funkcji języka w bibliotece może być wymagana większa ostrożność. Być może tworzysz nową bibliotekę z funkcjami znajdującymi się w najnowszej wersji i musisz upewnić się, że aplikacje skompilowane przy użyciu poprzednich wersji kompilatora mogą go używać. Może też być uaktualniana istniejąca biblioteka, a wielu użytkowników może nie mieć jeszcze uaktualnionych wersji. Podczas podejmowania decyzji o przyjęciu nowych funkcji należy wziąć pod uwagę dwie zmiany zgodności: zgodne ze źródłem i dane binarne.
 
-## <a name="binary-compatible-changes"></a>Zmiany zgodne z binarnymi
+## <a name="binary-compatible-changes"></a>Zgodne zmiany binarne
 
-Zmiany w bibliotece są **zgodne z plikami binarnymi,** gdy zaktualizowana biblioteka może być używana bez odbudowy aplikacji i bibliotek, które jej używają. Zestawy zależne nie są wymagane do przebudowy, ani nie są wymagane żadne zmiany kodu źródłowego. Zmiany zgodne z binarnymi są również źródłem zmian zgodnych.
+Zmiany w bibliotece są **zgodne ze standardami binarnymi** , gdy zaktualizowana biblioteka może być używana bez konieczności ponownego kompilowania aplikacji i bibliotek, które go używają. Zestawy zależne nie są wymagane do odbudowania ani nie są wymagane żadne zmiany kodu źródłowego. Zmiany zgodne z binarnymi są również zgodnymi ze źródłami.
 
 ## <a name="source-compatible-changes"></a>Zmiany zgodne ze źródłem
 
-Zmiany w bibliotece są **zgodne ze źródłem,** gdy aplikacje i biblioteki korzystające z biblioteki nie wymagają zmian kodu źródłowego, ale źródło musi zostać ponownie skompilowane względem nowej wersji, aby działała poprawnie.
+Zmiany w bibliotece są **zgodne ze źródłem** , gdy aplikacje i biblioteki korzystające z biblioteki nie wymagają zmian w kodzie źródłowym, ale źródło musi zostać ponownie skompilowane w celu poprawnego działania.
 
-## <a name="incompatible-changes"></a>Niekompatybilne zmiany
+## <a name="incompatible-changes"></a>Niezgodne zmiany
 
-Jeśli zmiana nie jest **zgodna ze źródłem** ani **zgodnym z plikami binarnymi,** zmiany kodu źródłowego wraz z ponowną kompilacją są wymagane w bibliotekach zależnych i aplikacjach.
+Jeśli zmiana nie jest **zgodna ze źródłem** ani za pomocą elementów **binarnych**, zmiany kodu źródłowego wraz z ponowną kompilacją są wymagane w bibliotekach zależnych i aplikacjach.
 
-## <a name="evaluate-your-library"></a>Ocena biblioteki
+## <a name="evaluate-your-library"></a>Oceń bibliotekę
 
-Te pojęcia zgodności wpływają na publiczne i chronione deklaracje dla biblioteki, a nie jej implementacji wewnętrznej. Przyjęcie jakichkolwiek nowych funkcji wewnętrznie są zawsze **binarne kompatybilne**.  
+Te koncepcje zgodności mają wpływ na publiczną i chronioną deklarację biblioteki, a nie jej wewnętrzną implementację. Stosowanie wszystkich nowych funkcji wewnętrznie jest zawsze **zgodne ze standardem binarnym**.  
 
-Zmiany **zgodne z plikami binarnymi** zapewniają nową składnię, która generuje ten sam skompilowany kod dla deklaracji publicznych, co starsza składnia. Na przykład zmiana metody na element członkowski zabudowany wyrażenie jest zmiana **zgodna z binarnymi:**
+**Zgodne zmiany binarne** zawierają nową składnię, która generuje ten sam skompilowany kod dla deklaracji publicznych jako starszą składnię. Na przykład zmiana metody do elementu członkowskiego z wyrażeniem jest **zgodna z binarną** zmianą:
 
 Oryginalny kod:
 
@@ -48,7 +49,7 @@ Nowy kod:
 public double CalculateSquare(double value) => value * value;
 ```
 
-**Zmiany zgodne ze źródłem** wprowadzają składnię, która zmienia skompilowany kod dla publicznego elementu członkowskiego, ale w sposób zgodny z istniejącymi witrynami wywołań. Na przykład zmiana podpisu metody z parametru według wartości na `in` parametr odniesienia jest zgodna ze źródłem, ale nie zgodna z plikami binarnymi:
+Zmiany **zgodne ze źródłem** wprowadzają składnię, która zmienia skompilowany kod dla publicznej składowej, ale w sposób zgodny z istniejącymi lokacjami wywołań. Na przykład zmiana sygnatury metody z parametru przez wartość na `in` parametr przez odwołanie jest zgodne ze źródłem, ale nie jest zgodne z binarną:
 
 Oryginalny kod:
 
@@ -62,4 +63,4 @@ Nowy kod:
 public double CalculateSquare(in double value) => value * value;
 ```
 
-[Co nowego](index.md) artykułu zanotować, jeśli wprowadzenie funkcji, która wpływa na deklaracje publiczne jest zgodne ze źródłem lub binarne zgodne.
+W [artykułach nowości należy](index.md) zauważyć, że wprowadzenie funkcji, która ma wpływ na deklaracje publiczne jest zgodne ze źródłem lub plikiem binarnym.

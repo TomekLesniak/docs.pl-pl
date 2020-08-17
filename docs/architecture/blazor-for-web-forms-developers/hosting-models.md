@@ -1,5 +1,5 @@
 ---
-title: Blazormodele hostingu aplikacji
+title: Blazor modele hostingu aplikacji
 description: Poznaj różne sposoby hostowania Blazor aplikacji, w tym przeglądarki w systemie WebAssembly lub na serwerze.
 author: danroth27
 ms.author: daroth
@@ -7,47 +7,45 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: a0d37392a65cfcbff9642476d9fdb1e5c662e66a
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 2ebb021d2fce46a91a006227ccf9ba0cbcc5eea5
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173266"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267610"
 ---
-# <a name="blazor-app-hosting-models"></a>Blazormodele hostingu aplikacji
+# <a name="no-locblazor-app-hosting-models"></a>Blazor modele hostingu aplikacji
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-Blazoraplikacje mogą być hostowane w usługach IIS, podobnie jak aplikacje ASP.NET Web Forms. Blazoraplikacje mogą być również hostowane w jeden z następujących sposobów:
+Blazor aplikacje mogą być hostowane w usługach IIS, podobnie jak aplikacje ASP.NET Web Forms. Blazor aplikacje mogą być również hostowane w jeden z następujących sposobów:
 
 - Po stronie klienta w przeglądarce WebAssembly .
 - Po stronie serwera w aplikacji ASP.NET Core.
 
-## <a name="blazor-webassembly-apps"></a>BlazorWebAssemblyaplikacje
+## <a name="no-locblazor-no-locwebassembly-apps"></a>BlazorWebAssemblyaplikacje
 
 BlazorWebAssemblyaplikacje są wykonywane bezpośrednio w przeglądarce w WebAssembly środowisku uruchomieniowym .NET opartym na systemie. BlazorWebAssemblyFunkcja Apps w podobny sposób do platform języka JavaScript frontonu, takich jak kątowy lub reagowanie. Jednak zamiast pisania kodu JavaScript napisanego w języku C#. Środowisko uruchomieniowe platformy .NET jest pobierane wraz z aplikacją wraz z zestawem aplikacji i wszystkimi wymaganymi zależnościami. Nie są wymagane żadne wtyczki ani rozszerzenia przeglądarki.
 
 Pobrane zestawy są normalnymi zestawami .NET, tak jak w przypadku innych aplikacji platformy .NET. Ponieważ środowisko uruchomieniowe obsługuje .NET Standard, możesz użyć istniejących bibliotek .NET Standard z Blazor WebAssembly aplikacją. Jednak te zestawy będą nadal wykonywane w piaskownicy zabezpieczeń przeglądarki. Niektóre funkcje mogą zgłosić <xref:System.PlatformNotSupportedException> , takie jak próba uzyskania dostępu do systemu plików lub otwarcie dowolnych połączeń sieciowych.
 
-Po załadowaniu aplikacji środowisko uruchomieniowe platformy .NET jest uruchamiane i wskazywane w zestawie aplikacji. Zostanie uruchomiona logika uruchamiania aplikacji i są renderowane składniki główne. Blazoroblicza aktualizacje interfejsu użytkownika w oparciu o renderowane dane wyjściowe ze składników. Następnie są stosowane aktualizacje modelu DOM.
+Po załadowaniu aplikacji środowisko uruchomieniowe platformy .NET jest uruchamiane i wskazywane w zestawie aplikacji. Zostanie uruchomiona logika uruchamiania aplikacji i są renderowane składniki główne. Blazor oblicza aktualizacje interfejsu użytkownika w oparciu o renderowane dane wyjściowe ze składników. Następnie są stosowane aktualizacje modelu DOM.
 
-![Blazor WebAssembly](media/hosting-models/blazor-webassembly.png)
+![::: No-Loc (Blazor):::;:: No-Loc (webassembly)::](media/hosting-models/blazor-webassembly.png)
 
 BlazorWebAssemblyaplikacje są uruchamiane czysto po stronie klienta. Takie aplikacje można wdrażać w ramach rozwiązań do hostingu witryn statycznych, takich jak strony usługi GitHub lub hostowanie statycznej witryny sieci Web platformy Azure. Platforma .NET nie jest wymagana na serwerze. Głębokie łączenie z częściami aplikacji zwykle wymaga rozwiązania routingu na serwerze. Rozwiązanie do routingu przekierowuje żądania do katalogu głównego aplikacji. Na przykład to przekierowanie może być obsługiwane przy użyciu reguł ponownego zapisywania adresów URL w usługach IIS.
 
-Aby uzyskać wszystkie zalety Blazor platformy .NET Web Development i pełnego stosu, zapoznaj Blazor WebAssembly się z aplikacją za pomocą ASP.NET Core. Korzystając z platformy .NET zarówno na kliencie, jak i na serwerze, można łatwo udostępniać kod i kompilować swoją aplikację przy użyciu jednego spójnego zestawu języków, struktur i narzędzi. Blazoroferuje wygodne szablony służące do konfigurowania rozwiązania, które zawiera zarówno Blazor WebAssembly aplikację, jak i projekt hosta ASP.NET Core. Po skompilowaniu rozwiązania skompilowane pliki statyczne z Blazor aplikacji są hostowane przez aplikację ASP.NET Core przy użyciu już skonfigurowanego routingu rezerwowego.
+Aby uzyskać wszystkie zalety Blazor platformy .NET Web Development i pełnego stosu, zapoznaj Blazor WebAssembly się z aplikacją za pomocą ASP.NET Core. Korzystając z platformy .NET zarówno na kliencie, jak i na serwerze, można łatwo udostępniać kod i kompilować swoją aplikację przy użyciu jednego spójnego zestawu języków, struktur i narzędzi. Blazor oferuje wygodne szablony służące do konfigurowania rozwiązania, które zawiera zarówno Blazor WebAssembly aplikację, jak i projekt hosta ASP.NET Core. Po skompilowaniu rozwiązania skompilowane pliki statyczne z Blazor aplikacji są hostowane przez aplikację ASP.NET Core przy użyciu już skonfigurowanego routingu rezerwowego.
 
-## <a name="blazor-server-apps"></a>BlazorAplikacje serwera
+## <a name="no-locblazor-server-apps"></a>Blazor Aplikacje serwera
 
-Odwołaj się z dyskusji o [ Blazor architekturze](architecture-comparison.md#blazor) , że Blazor składniki renderują swoje dane wyjściowe do pośredniego abstrakcji o nazwie a `RenderTree` . BlazorStruktura następnie porównuje elementy renderowane z wcześniej renderowanymi informacjami. Różnice są stosowane do modelu DOM. Blazorskładniki są oddzielone od sposobu zastosowania ich renderowanych danych wyjściowych. W związku z tym same składniki nie muszą działać w tym samym procesie co proces aktualizowania interfejsu użytkownika. W rzeczywistości nie trzeba nawet uruchamiać ich na tym samym komputerze.
+Odwołaj się z dyskusji o [ Blazor architekturze](architecture-comparison.md#blazor) , że Blazor składniki renderują swoje dane wyjściowe do pośredniego abstrakcji o nazwie a `RenderTree` . BlazorStruktura następnie porównuje elementy renderowane z wcześniej renderowanymi informacjami. Różnice są stosowane do modelu DOM. Blazor składniki są oddzielone od sposobu zastosowania ich renderowanych danych wyjściowych. W związku z tym same składniki nie muszą działać w tym samym procesie co proces aktualizowania interfejsu użytkownika. W rzeczywistości nie trzeba nawet uruchamiać ich na tym samym komputerze.
 
 W obszarze Blazor aplikacje serwera składniki są uruchamiane na serwerze, a nie po stronie klienta w przeglądarce. Zdarzenia interfejsu użytkownika, które wystąpiły w przeglądarce, są wysyłane do serwera przez połączenie w czasie rzeczywistym. Zdarzenia są wysyłane do poprawnych wystąpień składników. Składniki są renderowane i obliczeniowy różnic interfejsu użytkownika jest serializowany i wysyłany do przeglądarki, w której jest zastosowany do modelu DOM.
 
-![BlazorServer](media/hosting-models/blazor-server.png)
+![::: No-Loc (Blazor)::: serwer](media/hosting-models/blazor-server.png)
 
-BlazorModel hostingu serwera może dźwiękować, jeśli użyto ASP.NET AJAX i <xref:System.Web.UI.UpdatePanel> kontrolki. `UpdatePanel`Kontrolka obsługuje stosowanie aktualizacji stron częściowych w odpowiedzi na zdarzenia wyzwalające na stronie. Gdy jest wyzwalane, `UpdatePanel` żąda aktualizacji częściowej, a następnie stosuje ją bez konieczności odświeżania strony. Stan interfejsu użytkownika jest zarządzany przy użyciu programu `ViewState` . BlazorAplikacje serwera różnią się nieco w zależności od tego, że aplikacja wymaga aktywnego połączenia z klientem. Ponadto na serwerze jest zachowywany cały stan interfejsu użytkownika. Oprócz tych różnic te dwa modele są koncepcyjnie podobne.
+BlazorModel hostingu serwera może dźwiękować, jeśli użyto ASP.NET AJAX i <xref:System.Web.UI.UpdatePanel> kontrolki. `UpdatePanel`Kontrolka obsługuje stosowanie aktualizacji stron częściowych w odpowiedzi na zdarzenia wyzwalające na stronie. Gdy jest wyzwalane, `UpdatePanel` żąda aktualizacji częściowej, a następnie stosuje ją bez konieczności odświeżania strony. Stan interfejsu użytkownika jest zarządzany przy użyciu programu `ViewState` . Blazor Aplikacje serwera różnią się nieco w zależności od tego, że aplikacja wymaga aktywnego połączenia z klientem. Ponadto na serwerze jest zachowywany cały stan interfejsu użytkownika. Oprócz tych różnic te dwa modele są koncepcyjnie podobne.
 
-## <a name="how-to-choose-the-right-blazor-hosting-model"></a>Jak wybrać odpowiedni Blazor model hostingu
+## <a name="how-to-choose-the-right-no-locblazor-hosting-model"></a>Jak wybrać odpowiedni Blazor model hostingu
 
 Zgodnie z opisem w dokumentacji dotyczącej [ Blazor modelu hostingu](/aspnet/core/blazor/hosting-models)różne Blazor modele hostingu mają różne kompromisy.
 
@@ -84,7 +82,7 @@ Poprzednia lista zalet może być zastraszanie, ale model hostingu można późn
 
 ## <a name="deploy-your-app"></a>Wdrażanie aplikacji
 
-Aplikacje ASP.NET Web Forms są zwykle hostowane w usługach IIS na komputerze lub w klastrze z systemem Windows Server. Blazoraplikacje mogą również:
+Aplikacje ASP.NET Web Forms są zwykle hostowane w usługach IIS na komputerze lub w klastrze z systemem Windows Server. Blazor aplikacje mogą również:
 
 - Być hostowane w usługach IIS, jako pliki statyczne lub jako aplikacja ASP.NET Core.
 - Skorzystaj z elastyczności ASP.NET Core, która ma być hostowana na różnych platformach i infrastrukturach serwerów. Na przykład możesz hostować Blazor aplikację przy użyciu usługi [Nginx](/aspnet/core/host-and-deploy/linux-nginx) lub [Apache](/aspnet/core/host-and-deploy/linux-apache) w systemie Linux. Więcej informacji o sposobach publikowania i wdrażania Blazor aplikacji znajduje się w dokumentacji Blazor [hostingu i wdrażania](/aspnet/core/host-and-deploy/blazor/) .

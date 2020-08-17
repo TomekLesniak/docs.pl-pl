@@ -1,21 +1,19 @@
 ---
-title: Porównanie architektury formularzy sieci Web ASP.NET iBlazor
+title: Porównanie architektury formularzy sieci Web ASP.NET i Blazor
 description: Dowiedz się, jak architektury ASP.NET Web Forms i Blazor Compare.
 author: danroth27
 ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/11/2019
-ms.openlocfilehash: 51b114c842e131ad9b9a589bf5137a522e135082
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 9a8e78338aff53002647a10ed9007296e4682b5a
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173435"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267714"
 ---
-# <a name="architecture-comparison-of-aspnet-web-forms-and-blazor"></a>Porównanie architektury formularzy sieci Web ASP.NET iBlazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="architecture-comparison-of-aspnet-web-forms-and-no-locblazor"></a>Porównanie architektury formularzy sieci Web ASP.NET i Blazor
 
 Chociaż ASP.NET formularze sieci Web i Blazor mają wiele podobnych koncepcji, istnieją różnice w sposobie ich działania. Ten rozdział analizuje wewnętrzne działania i architektury formularzy sieci Web ASP.NET oraz Blazor .
 
@@ -40,21 +38,21 @@ Kontrolki na stronie są zwykle umieszczane na tej samej stronie, która przedst
 
 ## Blazor
 
-Blazorjest strukturą internetowego interfejsu użytkownika po stronie klienta podobną do platformy języka Java frontonu, takiej jak kątowy lub reaguje. Blazorobsługuje Interakcje użytkownika i renderuje niezbędne aktualizacje interfejsu użytkownika. Blazor*nie* bazuje na modelu typu żądanie-odpowiedź. Interakcje użytkownika są obsługiwane jako zdarzenia, które nie znajdują się w kontekście określonego żądania HTTP.
+Blazor jest strukturą internetowego interfejsu użytkownika po stronie klienta podobną do platformy języka Java frontonu, takiej jak kątowy lub reaguje. Blazor obsługuje Interakcje użytkownika i renderuje niezbędne aktualizacje interfejsu użytkownika. Blazor*nie* bazuje na modelu typu żądanie-odpowiedź. Interakcje użytkownika są obsługiwane jako zdarzenia, które nie znajdują się w kontekście określonego żądania HTTP.
 
-Blazoraplikacje składają się z jednego lub większej liczby składników głównych, które są renderowane na stronie HTML.
+Blazor aplikacje składają się z jednego lub większej liczby składników głównych, które są renderowane na stronie HTML.
 
-![Blazorskładniki w kodzie HTML](./media/architecture-comparison/blazor-components-in-html.png)
+![::: No-Loc (Blazor)::: Components w kodzie HTML](./media/architecture-comparison/blazor-components-in-html.png)
 
 Sposób, w jaki użytkownik określa, gdzie mają być renderowane składniki, oraz jak są rozłączone składniki, aby Interakcje użytkownika były [hostem](hosting-models.md) specyficznym dla modelu.
 
 Blazor[składniki](components.md) to klasy .NET, które reprezentują element interfejsu użytkownika wielokrotnego użytku. Każdy składnik utrzymuje własny stan i określa własną logikę renderowania, która może obejmować renderowanie innych składników. Składniki określają programy obsługi zdarzeń dla konkretnych interakcji użytkowników w celu zaktualizowania stanu składnika.
 
-Gdy składnik obsługuje zdarzenie, Blazor renderuje składnik i śledzi zmiany w renderowanych danych wyjściowych. Składniki nie są renderowane bezpośrednio do Document Object Model (DOM). Zamiast tego renderuje do reprezentacji w pamięci modelu DOM o nazwie a, `RenderTree` Aby Blazor można było śledzić zmiany. Blazorporównuje nowo renderowane dane wyjściowe z poprzednimi danymi wyjściowymi w celu obliczenia różnic między interfejsem użytkownika, który następnie jest wydajnie stosowany do modelu DOM.
+Gdy składnik obsługuje zdarzenie, Blazor renderuje składnik i śledzi zmiany w renderowanych danych wyjściowych. Składniki nie są renderowane bezpośrednio do Document Object Model (DOM). Zamiast tego renderuje do reprezentacji w pamięci modelu DOM o nazwie a, `RenderTree` Aby Blazor można było śledzić zmiany. Blazor porównuje nowo renderowane dane wyjściowe z poprzednimi danymi wyjściowymi w celu obliczenia różnic między interfejsem użytkownika, który następnie jest wydajnie stosowany do modelu DOM.
 
-![BlazorInterakcja DOM](./media/architecture-comparison/blazor-dom-interaction.png)
+![::: No-Loc (Blazor)::: DOM — interakcja](./media/architecture-comparison/blazor-dom-interaction.png)
 
-Składniki mogą również ręcznie wskazywać, że powinny być renderowane, jeśli ich stan zmieni się poza normalnym zdarzeniem interfejsu użytkownika. Blazorużywa `SynchronizationContext` do wymuszania pojedynczego wątku logicznego wykonywania. Metody cyklu życia składnika i wszelkie wywołania zwrotne zdarzeń, które są wywoływane przez Blazor są wykonywane na tym serwerze `SynchronizationContext` .
+Składniki mogą również ręcznie wskazywać, że powinny być renderowane, jeśli ich stan zmieni się poza normalnym zdarzeniem interfejsu użytkownika. Blazor używa `SynchronizationContext` do wymuszania pojedynczego wątku logicznego wykonywania. Metody cyklu życia składnika i wszelkie wywołania zwrotne zdarzeń, które są wywoływane przez Blazor są wykonywane na tym serwerze `SynchronizationContext` .
 
 >[!div class="step-by-step"]
 >[Poprzedni](introduction.md) 

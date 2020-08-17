@@ -2,12 +2,12 @@
 title: Bloki konstrukcyjne programów C# "
 description: Dowiedz się więcej o elementach członkowskich, wyrażeniach i instrukcjach języka C#. Typy zawierają składowe, które są zapisywane. Te elementy członkowskie są kompilowane z instrukcji i wyrażeń.
 ms.date: 08/06/2020
-ms.openlocfilehash: de9f634db129ea2ec6f692cabb657f9fe41b2f9c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 142fe7b5a3424a8925638bfb4e4437392347f4c6
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068552"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88268143"
 ---
 # <a name="program-building-blocks"></a>Bloki konstrukcyjne programu
 
@@ -30,7 +30,7 @@ Poniższa lista zawiera przegląd rodzajów elementów członkowskich, które mo
 - **Finalizatory**: akcje wykonywane przed wystąpieniem klasy są trwale odrzucone
 - **Typy**: typy zagnieżdżone zadeklarowane przez klasę
 
-## <a name="accessibility"></a>Ułatwienia dostępu
+## <a name="accessibility"></a>Dostępność
 
 Każdy element członkowski klasy ma skojarzoną dostępność, która kontroluje regiony tekstu programu, które mogą uzyskać dostęp do elementu członkowskiego. Istnieje sześć możliwych form ułatwień dostępu. Modyfikatory dostępu są zestawione poniżej.
 
@@ -209,7 +209,7 @@ Metody dostępu właściwości mogą być wirtualne. Gdy Deklaracja właściwoś
 
 `MyList<T>`Klasa deklaruje pojedynczy indeksator do odczytu i zapisu, który pobiera `int` parametr. Indeksator umożliwia indeksowanie `MyList<T>` wystąpień z `int` wartościami. Na przykład:
 
-:::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAddition":::
+:::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAccess":::
 
 Indeksatory mogą być przeciążone. Klasa może deklarować wiele indeksatorów, o ile liczba lub typy ich parametrów różnią się.
 
@@ -284,21 +284,21 @@ Poniżej wymieniono rodzaje instrukcji, które mogą być używane:
 * Deklaracja zmiennej lokalnej.
 * Lokalna deklaracja stała.
 * Instrukcja wyrażenia.
-* `if`Merge.
-* `switch`Merge.
-* `while`Merge.
-* `do`Merge.
-* `for`Merge.
-* `foreach`Merge.
-* `break`Merge.
-* `continue`Merge.
-* `goto`Merge.
-* `return`Merge.
-* `yield`Merge.
-* `throw`instrukcje i `try` instrukcje.
-* `checked`i `unchecked` instrukcji.
-* `lock`Merge.
-* `using`Merge.
+* `if` Merge.
+* `switch` Merge.
+* `while` Merge.
+* `do` Merge.
+* `for` Merge.
+* `foreach` Merge.
+* `break` Merge.
+* `continue` Merge.
+* `goto` Merge.
+* `return` Merge.
+* `yield` Merge.
+* `throw` instrukcje i `try` instrukcje.
+* `checked` i `unchecked` instrukcji.
+* `lock` Merge.
+* `using` Merge.
 
 >[!div class="step-by-step"]
 >[Poprzedni](types.md) 

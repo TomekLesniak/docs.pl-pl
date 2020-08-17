@@ -6,16 +6,14 @@ ms.author: jefritz
 no-loc:
 - Blazor
 ms.date: 04/01/2020
-ms.openlocfilehash: a13f663c2c6908ba906e42cb939c3b8707b8cccd
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 6154b4f8c7a5bff42e603b12d5ef85468b80224e
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173318"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267506"
 ---
 # <a name="app-configuration"></a>Konfiguracja aplikacji
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Podstawowym sposobem ładowania konfiguracji aplikacji w formularzach sieci Web jest wprowadzenie wpisów w pliku *web.config* &mdash; na serwerze lub związanym pliku konfiguracji, do którego odwołuje się *web.config*. Można użyć obiektu statycznego `ConfigurationManager` do współpracy z ustawieniami aplikacji, parametrami połączenia repozytorium danych i innymi dostawcami konfiguracji rozszerzonej, które są dodawane do aplikacji. Typowym sposobem jest wyświetlenie interakcji z konfiguracją aplikacji, jak pokazano w poniższym kodzie:
 

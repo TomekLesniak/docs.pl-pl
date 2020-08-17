@@ -6,16 +6,14 @@ ms.author: jefritz
 no-loc:
 - Blazor
 ms.date: 04/26/2020
-ms.openlocfilehash: 4bf9bee21ce1db828dbe0aeb156d5e15cae4f703
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 8bd326e6952708b2099c3a575d6811990335df17
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173307"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267597"
 ---
 # <a name="work-with-data"></a>Praca z danymi
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Dostęp do danych to szkielet aplikacji ASP.NET Web Forms. W przypadku kompilowania formularzy dla sieci Web, co się dzieje z tymi danymi? Korzystając z formularzy sieci Web, istniały wiele technik dostępu do danych, których można użyć do współpracy z bazą danych:
 
@@ -57,8 +55,8 @@ public class Product
 Produkt ma klucz podstawowy i trzy dodatkowe pola, które zostałyby utworzone w bazie danych:  
 
 - EF zidentyfikuje `Id` Właściwość jako klucz podstawowy według Konwencji.
-- `Name`będą przechowywane w kolumnie skonfigurowanej do przechowywania tekstu. `[Required]`Atrybut dekorowania nazwy tej właściwości spowoduje dodanie ograniczenia, `not null` które pomoże wymusić to zadeklarowane zachowanie właściwości.
-- `Description`będą przechowywane w kolumnie skonfigurowanej do przechowywania tekstu i mają maksymalną długość skonfigurowaną 4000 znaków zgodnie z `[MaxLength]` atrybutem. Schemat bazy danych zostanie skonfigurowany z kolumną o nazwie `MaxLength` przy użyciu typu danych `varchar(4000)` .
+- `Name` będą przechowywane w kolumnie skonfigurowanej do przechowywania tekstu. `[Required]`Atrybut dekorowania nazwy tej właściwości spowoduje dodanie ograniczenia, `not null` które pomoże wymusić to zadeklarowane zachowanie właściwości.
+- `Description` będą przechowywane w kolumnie skonfigurowanej do przechowywania tekstu i mają maksymalną długość skonfigurowaną 4000 znaków zgodnie z `[MaxLength]` atrybutem. Schemat bazy danych zostanie skonfigurowany z kolumną o nazwie `MaxLength` przy użyciu typu danych `varchar(4000)` .
 - `Price`Właściwość będzie przechowywana jako waluta. Ten `[Range]` atrybut generuje odpowiednie ograniczenia, aby zapobiec przechowywaniu danych poza minimalnym i maksymalnym zadeklarowanymi wartościami.
 
 Musimy dodać tę `Product` klasę do klasy kontekstu bazy danych, która definiuje operacje połączenia i translacji z naszą bazą danych.

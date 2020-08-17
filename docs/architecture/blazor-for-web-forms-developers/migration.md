@@ -1,5 +1,5 @@
 ---
-title: Migrowanie z formularzy sieci Web ASP.NET doBlazor
+title: Migrowanie z formularzy sieci Web ASP.NET do Blazor
 description: Dowiedz się, jak podejście do migracji istniejącej aplikacji ASP.NET Web Forms do programu Blazor .
 author: twsouthwick
 ms.author: tasou
@@ -7,16 +7,14 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: 464d2f535acd3b9774fe240b4feeda1875f98022
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: ca3d8747b02602c89aec187ea0826e658fb0cbc4
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173149"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267805"
 ---
-# <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrowanie z formularzy sieci Web ASP.NET doBlazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="migrate-from-aspnet-web-forms-to-no-locblazor"></a>Migrowanie z formularzy sieci Web ASP.NET do Blazor
 
 Migrowanie bazy kodu z formularzy sieci Web ASP.NET do Blazor programu to czasochłonne zadanie, które wymaga planowania. W tym rozdziale opisano proces. Oto, co może ułatwić przejście aplikacji do architektury *N-warstwowej* , co w przypadku, gdy model aplikacji (w tym przypadku formularzy sieci Web) jest oddzielony od logiki biznesowej. To logiczne rozdzielenie warstw sprawia, że musi on zostać przeniesiony do platformy .NET Core i Blazor .
 
@@ -24,8 +22,8 @@ W tym przykładzie jest używana aplikacja eShop dostępna w witrynie [GitHub](h
 
 Dlaczego należy zmigrować działającą aplikację Blazor ? Wiele razy nie jest potrzebne. Formularze sieci Web ASP.NET będą nadal obsługiwane przez wiele lat. Jednak wiele funkcji, które zapewnia, Blazor jest obsługiwanych tylko w zmigrowanej aplikacji. Takie funkcje obejmują:
 
-- Ulepszenia wydajności w ramach platformy, takie jak`Span<T>`
-- Możliwość uruchamiania jakoWebAssembly
+- Ulepszenia wydajności w ramach platformy, takie jak `Span<T>`
+- Możliwość uruchamiania jako WebAssembly
 - Obsługa wielu platform dla systemów Linux i macOS
 - Wdrożenie lokalne aplikacji lub wdrożenie platformy udostępnionej bez wpływu na inne aplikacje
 
@@ -525,7 +523,7 @@ W przypadku przekonwertowania na Blazor , Strona formularzy sieci Web tłumaczy 
 
 Zauważ, że kod i znaczniki są w tym samym pliku. Wszystkie wymagane usługi są udostępniane przy użyciu `@inject` atrybutu. Na `@page` Tę stronę można uzyskać dostęp do tej strony na `Catalog/Details/{id}` trasie. Wartość `{id}` symbolu zastępczego trasy została ograniczona do liczby całkowitej. Zgodnie z opisem w sekcji [Routing](pages-routing-layouts.md) , w przeciwieństwie do formularzy sieci Web, składnik Razor jawnie określa swoją trasę i wszystkie parametry, które są zawarte. Wiele kontrolek formularzy sieci Web może nie mieć dokładnych odpowiedników w Blazor . Często istnieje odpowiednik fragmentu kodu HTML, który będzie służyć do tego samego celu. Na przykład `<asp:Label />` formant może zostać zamieniony na `<label>` element HTML.
 
-### <a name="model-validation-in-blazor"></a>Walidacja modelu wBlazor
+### <a name="model-validation-in-no-locblazor"></a>Walidacja modelu w Blazor
 
 Jeśli kod formularzy sieci Web zawiera walidację, można przekazać wiele z nich, aby nie było zmian. Korzyścią uruchomienia programu w programie Blazor jest taka sama logika walidacji, bez konieczności wykonywania niestandardowych skryptów języka JavaScript. Adnotacje danych umożliwiają łatwe sprawdzanie poprawności modeli.
 
@@ -657,4 +655,4 @@ Wiele operacji w ASP.NET Core jest asynchronicznych, co umożliwia łatwiejsze �
 W tym momencie zobaczysz wiele przykładów potrzebnych do przeniesienia projektu formularzy sieci Web do programu Blazor . Pełny przykład można znaleźć w projekcie [eShopOn Blazor ](https://github.com/dotnet-architecture/eShopOnBlazor) .
 
 >[!div class="step-by-step"]
->[Poprzednie](security-authentication-authorization.md)
+>[Poprzednio](security-authentication-authorization.md)

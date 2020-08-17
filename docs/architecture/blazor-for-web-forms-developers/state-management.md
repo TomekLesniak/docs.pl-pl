@@ -4,16 +4,14 @@ description: Poznaj różne podejścia do zarządzania stanem w ASP.NET Web Form
 author: csharpfritz
 ms.author: jefritz
 ms.date: 05/15/2020
-ms.openlocfilehash: bac2f00330113725f09259ca31bdf857a8769f24
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 2ca811f886c6a245ac16c2bd66a68ff16e5bfc44
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062343"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267727"
 ---
 # <a name="state-management"></a>Zarządzanie stanem
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Zarządzanie stanem to kluczowa koncepcja aplikacji formularzy sieci Web, ułatwiająca Wyświetlanie stanu widoku, stanu sesji, stanu aplikacji i funkcji ogłaszania zwrotnego. Te funkcje stanowe platformy umożliwiają ukrycie zarządzania stanem wymaganego dla aplikacji i umożliwiają deweloperom aplikacji skoncentrowanie się na dostarczaniu ich funkcjonalności. W przypadku ASP.NET Core i Blazor niektóre z tych funkcji zostały odłożone, a niektóre zostały całkowicie usunięte. W tym rozdziale opisano, jak zachować stan i zapewnić te same funkcje przy użyciu nowych funkcji w programie Blazor.
 
@@ -84,8 +82,8 @@ app.AddSingleton<MyApplicationState>();
 
 Dane aplikacji mogą być również przechowywane po stronie klienta na urządzeniu użytkownika, aby były dostępne w przyszłości. Istnieją dwie funkcje przeglądarki, które umożliwiają trwałość danych w różnych zakresach przeglądarki użytkownika:
 
-- `localStorage`— zakres do całej przeglądarki użytkownika. Jeśli strona zostanie ponownie załadowana, przeglądarka zostanie zamknięta i ponownie otwarta lub zostanie otwarta inna karta z tym samym adresem URL, a następnie `localStorage` jest on dostarczany przez przeglądarkę.
-- `sessionStorage`— zakres na bieżącą kartę przeglądarki użytkownika. Po ponownym załadowaniu karty stan będzie się utrzymywał. Jednak jeśli użytkownik otworzy kolejną kartę do aplikacji lub zamknie i ponownie otworzy przeglądarkę, stan zostanie utracony.
+- `localStorage` — zakres do całej przeglądarki użytkownika. Jeśli strona zostanie ponownie załadowana, przeglądarka zostanie zamknięta i ponownie otwarta lub zostanie otwarta inna karta z tym samym adresem URL, a następnie `localStorage` jest on dostarczany przez przeglądarkę.
+- `sessionStorage` — zakres na bieżącą kartę przeglądarki użytkownika. Po ponownym załadowaniu karty stan będzie się utrzymywał. Jednak jeśli użytkownik otworzy kolejną kartę do aplikacji lub zamknie i ponownie otworzy przeglądarkę, stan zostanie utracony.
 
 Można napisać niestandardowy kod JavaScript w celu współdziałania z tymi funkcjami lub wiele pakietów NuGet, których można użyć w celu zapewnienia tej funkcji. Jeden taki pakiet to [Microsoft. AspNetCore. ProtectedBrowserStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.ProtectedBrowserStorage).
 

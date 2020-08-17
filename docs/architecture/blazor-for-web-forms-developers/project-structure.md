@@ -7,16 +7,14 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 473b708a9b58fa88844bc6f79a898943d5a7db71
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 225ebbdd5e23516ae7d5465371e95c73c440c82b
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173045"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267779"
 ---
-# <a name="project-structure-for-blazor-apps"></a>Struktura projektu dla Blazor aplikacji
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="project-structure-for-no-locblazor-apps"></a>Struktura projektu dla Blazor aplikacji
 
 Pomimo znaczących różnic struktury projektu, ASP.NET formularzy sieci Web i Blazor udostępniają wiele podobnych koncepcji. Tutaj Przyjrzyjmy się strukturze Blazor projektu i porównać go z projektem formularzy sieci Web ASP.NET.
 
@@ -24,7 +22,7 @@ Aby utworzyć swoją pierwszą Blazor aplikację, postępuj zgodnie z instrukcja
 
 ## <a name="project-file"></a>Plik projektu
 
-BlazorAplikacje serwera to projekty platformy .NET Core. Plik projektu dla Blazor aplikacji serwerowej jest bardzo prosty, ponieważ może uzyskać następujące informacje:
+Blazor Aplikacje serwera to projekty platformy .NET Core. Plik projektu dla Blazor aplikacji serwerowej jest bardzo prosty, ponieważ może uzyskać następujące informacje:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -95,15 +93,15 @@ public class Program
 
 BlazorWebAssemblyaplikacje definiują również punkt wejścia w *program.cs*. Kod wygląda nieco inaczej. Kod jest podobny w przypadku konfigurowania hosta aplikacji w celu zapewnienia tej samej aplikacji na poziomie hosta. WebAssemblyHost aplikacji nie jest jednak skonfigurowany jako serwer http, ponieważ jest wykonywany bezpośrednio w przeglądarce.
 
-Blazoraplikacje mają `Startup` klasę zamiast pliku *Global. asax* do definiowania logiki uruchamiania aplikacji. `Startup`Klasa służy do konfigurowania aplikacji i wszystkich usług specyficznych dla aplikacji. W Blazor aplikacji serwerowej Klasa służy `Startup` do konfigurowania punktu końcowego dla połączenia w czasie rzeczywistym używanego przez Blazor między przeglądarkami klienta a serwerem. W Blazor WebAssembly aplikacji `Startup` Klasa definiuje główne składniki aplikacji i miejsce, w którym powinny być renderowane. Zajmiemy się bardziej szczegółowymi `Startup` klasami w sekcji [uruchamiania aplikacji](./app-startup.md) .
+Blazor aplikacje mają `Startup` klasę zamiast pliku *Global. asax* do definiowania logiki uruchamiania aplikacji. `Startup`Klasa służy do konfigurowania aplikacji i wszystkich usług specyficznych dla aplikacji. W Blazor aplikacji serwerowej Klasa służy `Startup` do konfigurowania punktu końcowego dla połączenia w czasie rzeczywistym używanego przez Blazor między przeglądarkami klienta a serwerem. W Blazor WebAssembly aplikacji `Startup` Klasa definiuje główne składniki aplikacji i miejsce, w którym powinny być renderowane. Zajmiemy się bardziej szczegółowymi `Startup` klasami w sekcji [uruchamiania aplikacji](./app-startup.md) .
 
 ## <a name="static-files"></a>Pliki statyczne
 
 W przeciwieństwie do projektów ASP.NET Web Forms, nie wszystkie pliki w Blazor projekcie mogą być żądane jako pliki statyczne. Tylko pliki w folderze *wwwroot* są adresami sieci Web. Ten folder jest określany jako "katalog główny sieci Web" aplikacji. Wszystkie elementy poza elementem głównym sieci Web aplikacji *nie są* adresami sieci Web. Ta konfiguracja zapewnia dodatkowy poziom zabezpieczeń, który uniemożliwia przypadkowe ujawnienie plików projektu za pośrednictwem sieci Web.
 
-## <a name="configuration"></a>Konfiguracja
+## <a name="configuration"></a>Konfigurowanie
 
-Konfiguracja w aplikacjach ASP.NET Web Forms jest zwykle obsługiwana przy użyciu co najmniej jednego pliku *web.config* . Blazoraplikacje nie mają zwykle plików *web.config* . Jeśli tak, plik jest używany tylko do konfigurowania ustawień specyficznych dla usług IIS, które są hostowane w usługach IIS. Zamiast tego Blazor aplikacje serwera używają abstrakcji konfiguracji ASP.NET Core ( Blazor WebAssembly aplikacje nie obsługują obecnie tych samych abstrakcji konfiguracji, ale mogą to być funkcje dodane w przyszłości). Na przykład domyślna Blazor aplikacja serwerowa przechowuje niektóre ustawienia w *appsettings.js*.
+Konfiguracja w aplikacjach ASP.NET Web Forms jest zwykle obsługiwana przy użyciu co najmniej jednego pliku *web.config* . Blazor aplikacje nie mają zwykle plików *web.config* . Jeśli tak, plik jest używany tylko do konfigurowania ustawień specyficznych dla usług IIS, które są hostowane w usługach IIS. Zamiast tego Blazor aplikacje serwera używają abstrakcji konfiguracji ASP.NET Core ( Blazor WebAssembly aplikacje nie obsługują obecnie tych samych abstrakcji konfiguracji, ale mogą to być funkcje dodane w przyszłości). Na przykład domyślna Blazor aplikacja serwerowa przechowuje niektóre ustawienia w *appsettings.js*.
 
 ```json
 {
@@ -142,7 +140,7 @@ Pliki *_Imports. Razor* nie są plikami składników Razor. Zamiast tego definiu
 
 ## <a name="pages"></a>Strony
 
-Gdzie znajdują się strony w Blazor aplikacjach? Blazornie definiuje oddzielnego rozszerzenia pliku dla stron adresowanych, takich jak pliki *aspx* w aplikacjach ASP.NET Web Forms. Zamiast tego strony są definiowane przez przypisanie tras do składników programu. Trasa jest zwykle przypisana przy użyciu `@page` dyrektywy Razor. Na przykład `Counter` składnik utworzony w pliku *Pages/Counter. Razor* definiuje następującą trasę:
+Gdzie znajdują się strony w Blazor aplikacjach? Blazor nie definiuje oddzielnego rozszerzenia pliku dla stron adresowanych, takich jak pliki *aspx* w aplikacjach ASP.NET Web Forms. Zamiast tego strony są definiowane przez przypisanie tras do składników programu. Trasa jest zwykle przypisana przy użyciu `@page` dyrektywy Razor. Na przykład `Counter` składnik utworzony w pliku *Pages/Counter. Razor* definiuje następującą trasę:
 
 ```razor
 @page "/counter"
@@ -158,7 +156,7 @@ Więcej szczegółów na temat routingu znajduje się w Blazor sekcji [strony, R
 
 W aplikacjach formularzy sieci Web ASP.NET wspólny układ strony jest obsługiwany przy użyciu stron wzorcowych (*site. Master*). W obszarze Blazor aplikacje układ strony jest obsługiwany przy użyciu składników układu (*Shared/MainLayout. Razor*). Składniki układu zostaną omówione bardziej szczegółowo w sekcji [strony, routingu i układów](./pages-routing-layouts.md) .
 
-## <a name="bootstrap-blazor"></a>BootstrapBlazor
+## <a name="bootstrap-no-locblazor"></a>Bootstrap Blazor
 
 Aby załadować Blazor aplikację, należy wykonać następujące polecenie:
 
@@ -243,7 +241,7 @@ Po Blazor skompilowaniu projektu wszystkie składniki i pliki kodu Razor są kom
 
 ## <a name="run-the-app"></a>Uruchamianie aplikacji
 
-Aby uruchomić Blazor aplikację serwerową, naciśnij klawisz `F5` w programie Visual Studio. Blazoraplikacje nie obsługują kompilacji w czasie wykonywania. Aby zobaczyć wyniki zmian kodu i znaczników składnika, ponownie skompiluj i ponownie uruchom aplikację z dołączonym debugerem. Jeśli uruchomisz bez dołączonego debugera ( `Ctrl+F5` ), program Visual Studio przeczujuje się pod kątem zmian plików i ponownie uruchomi aplikację w miarę wprowadzania zmian. Przeglądarka ręcznie jest odświeżana w miarę wprowadzania zmian.
+Aby uruchomić Blazor aplikację serwerową, naciśnij klawisz `F5` w programie Visual Studio. Blazor aplikacje nie obsługują kompilacji w czasie wykonywania. Aby zobaczyć wyniki zmian kodu i znaczników składnika, ponownie skompiluj i ponownie uruchom aplikację z dołączonym debugerem. Jeśli uruchomisz bez dołączonego debugera ( `Ctrl+F5` ), program Visual Studio przeczujuje się pod kątem zmian plików i ponownie uruchomi aplikację w miarę wprowadzania zmian. Przeglądarka ręcznie jest odświeżana w miarę wprowadzania zmian.
 
 Aby uruchomić Blazor WebAssembly aplikację, wybierz jedną z następujących metod:
 

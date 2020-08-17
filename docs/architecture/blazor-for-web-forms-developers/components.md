@@ -1,25 +1,23 @@
 ---
-title: Kompiluj składniki interfejsu użytkownika wielokrotnego użytku zBlazor
+title: Kompiluj składniki interfejsu użytkownika wielokrotnego użytku z Blazor
 description: Dowiedz się, jak tworzyć składniki interfejsu użytkownika wielokrotnego użytku z Blazor i jak są one porównywane z kontrolkami formularzy Web Forms ASP.NET.
 author: danroth27
 ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/18/2019
-ms.openlocfilehash: 9577fc916bb11783b885b2641242820865c0b115
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 4fdf062fb719e62b53e47f79db1e93d0bf079350
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173345"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267688"
 ---
-# <a name="build-reusable-ui-components-with-blazor"></a>Kompiluj składniki interfejsu użytkownika wielokrotnego użytku zBlazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="build-reusable-ui-components-with-no-locblazor"></a>Kompiluj składniki interfejsu użytkownika wielokrotnego użytku z Blazor
 
 Jednym z atrakcyjnych elementów formularzy sieci Web ASP.NET jest to, jak umożliwia hermetyzację fragmentów kodu interfejsu użytkownika do wielokrotnego użytku. Niestandardowe kontrolki użytkownika można definiować w znacznikach przy użyciu plików *. ascx* . Można również tworzyć rozbudowane kontrolki serwera w kodzie za pomocą pełnego wsparcia projektanta.
 
-Blazorobsługuje także hermetyzację interfejsu użytkownika za poorednictwem *składników*. Składnik:
+Blazor obsługuje także hermetyzację interfejsu użytkownika za poorednictwem *składników*. Składnik:
 
 - Jest samodzielnym fragmentem interfejsu użytkownika.
 - Utrzymuje własny stan i logikę renderowania.
@@ -112,11 +110,11 @@ Różne atrybuty dyrektywy używane przez Blazor ( `@onclick` , `@bind` , `@ref`
 
 Wiele składni używanych w plikach *. aspx* i *. ascx* ma składnie równoległe w Razor. Poniżej znajduje się proste porównanie składni dla ASP.NET Web Forms i Razor.
 
-|Cecha                      |Formularze sieci Web           |Składnia               |Razor         |Składnia |
+|Cechy                      |Formularze sieci Web           |Składnia               |Razor         |Składnia |
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |Dyrektyw                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |Bloki kodu                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
-|Wyrażenia<br>(Kodowane HTML)|`<%: %>`            |`<%:DateTime.Now %>` |Konwersja`@`<br>Wprost`@()`|`@DateTime.Now`<br>`@(DateTime.Now)`|
+|Wyrażenia<br>(Kodowane HTML)|`<%: %>`            |`<%:DateTime.Now %>` |Konwersja `@`<br>Wprost `@()`|`@DateTime.Now`<br>`@(DateTime.Now)`|
 |Komentarze                     |`<%-- --%>`         |`<%-- Commented --%>`|`@* *@`       |`@* Commented *@`|
 |Powiązanie danych                 |`<%# %>`            |`<%# Bind("Name") %>`|`@bind`       |`<input @bind="username" />`|
 
@@ -168,7 +166,7 @@ Jeśli przestrzeń nazw składnika nie znajduje się w zakresie, można określi
 
 ## <a name="component-parameters"></a>Parametry składnika
 
-W formularzach sieci Web ASP.NET można przepływać parametry i dane do kontrolek przy użyciu właściwości publicznych. Te właściwości można ustawić w znacznikach przy użyciu atrybutów lub ustawionych bezpośrednio w kodzie. Blazorskładniki działają w podobny sposób, chociaż właściwości składnika również muszą być oznaczone `[Parameter]` atrybutem, który ma być traktowany jako parametry składnika.
+W formularzach sieci Web ASP.NET można przepływać parametry i dane do kontrolek przy użyciu właściwości publicznych. Te właściwości można ustawić w znacznikach przy użyciu atrybutów lub ustawionych bezpośrednio w kodzie. Blazor składniki działają w podobny sposób, chociaż właściwości składnika również muszą być oznaczone `[Parameter]` atrybutem, który ma być traktowany jako parametry składnika.
 
 Poniższy `Counter` składnik definiuje parametr składnika o nazwie `IncrementAmount` , który może służyć do określenia kwoty, którą `Counter` należy zwiększyć przy każdym kliknięciu przycisku.
 
@@ -311,7 +309,7 @@ Składniki mogą także definiować własne zdarzenia przez zdefiniowanie parame
 
 ## <a name="data-binding"></a>Powiązanie danych
 
-Blazorzapewnia prosty mechanizm wiązania danych ze składnika interfejsu użytkownika ze stanem składnika. Takie podejście różni się od funkcji w formularzach sieci Web ASP.NET w celu powiązania danych ze źródeł danych z kontrolkami interfejsu użytkownika. Będziemy odkrywać dane obsługi z różnych źródeł danych w sekcji [dotyczącej danych](data.md) .
+Blazor zapewnia prosty mechanizm wiązania danych ze składnika interfejsu użytkownika ze stanem składnika. Takie podejście różni się od funkcji w formularzach sieci Web ASP.NET w celu powiązania danych ze źródeł danych z kontrolkami interfejsu użytkownika. Będziemy odkrywać dane obsługi z różnych źródeł danych w sekcji [dotyczącej danych](data.md) .
 
 Aby utworzyć dwukierunkowe powiązanie danych ze składnika interfejsu użytkownika ze stanem składnika, użyj `@bind` atrybutu dyrektywy. W poniższym przykładzie wartość pola wyboru jest powiązana z `isChecked` polem.
 
@@ -433,7 +431,7 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-Blazorskładniki mają również dobrze zdefiniowany cykl życia. Cykl życia składnika może służyć do inicjowania stanu składnika i implementowania zaawansowanych zachowań składników.
+Blazor składniki mają również dobrze zdefiniowany cykl życia. Cykl życia składnika może służyć do inicjowania stanu składnika i implementowania zaawansowanych zachowań składników.
 
 Wszystkie Blazor metody cyklu życia składników są dostępne zarówno w wersji synchronicznej, jak i asynchronicznej. Renderowanie składnika jest synchroniczne. Nie można uruchomić logiki asynchronicznej jako części renderowania składnika. Wszystkie logiki asynchroniczne muszą zostać wykonane w ramach `async` metody cyklu życia.
 
@@ -476,13 +474,13 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
 }
 ```
 
-`OnAfterRender`i `OnAfterRenderAsync` *nie są wywoływane podczas renderowania na serwerze*.
+`OnAfterRender` i `OnAfterRenderAsync` *nie są wywoływane podczas renderowania na serwerze*.
 
 `firstRender`Parametr jest `true` przy pierwszym renderowaniu składnika; w przeciwnym razie jego wartość to `false` .
 
 ### <a name="idisposable"></a>IDisposable
 
-Blazorskładniki można zaimplementować `IDisposable` do usuwania zasobów, gdy składnik zostanie usunięty z interfejsu użytkownika. Składnik Razor można zaimplementować przy `IDispose` użyciu `@implements` dyrektywy:
+Blazor składniki można zaimplementować `IDisposable` do usuwania zasobów, gdy składnik zostanie usunięty z interfejsu użytkownika. Składnik Razor można zaimplementować przy `IDispose` użyciu `@implements` dyrektywy:
 
 ```razor
 @using System
@@ -523,17 +521,17 @@ Manipulowanie stanem składnika bezpośrednio przy użyciu odwołań do składni
 
 ## <a name="capture-element-references"></a>Przechwyć odwołania do elementów
 
-Blazorskładniki mogą przechwytywać odwołania do elementu. W przeciwieństwie do kontrolek serwera HTML w formularzach sieci Web ASP.NET nie można manipulować modelem DOM bezpośrednio przy użyciu odwołania do elementu w Blazor . Blazorobsługuje większość interakcji z modelem DOM przy użyciu algorytmu różnicowania modelu DOM. Przechwycone odwołania do elementów w programie Blazor są nieprzezroczyste. Są one jednak używane do przekazywania określonego odwołania do elementu w wywołaniu JavaScript Interop. Aby uzyskać więcej informacji na temat międzyoperacyjności języka JavaScript, zobacz [ASP.NET Core Blazor międzyoperacyjności JavaScript](/aspnet/core/blazor/javascript-interop).
+Blazor składniki mogą przechwytywać odwołania do elementu. W przeciwieństwie do kontrolek serwera HTML w formularzach sieci Web ASP.NET nie można manipulować modelem DOM bezpośrednio przy użyciu odwołania do elementu w Blazor . Blazor obsługuje większość interakcji z modelem DOM przy użyciu algorytmu różnicowania modelu DOM. Przechwycone odwołania do elementów w programie Blazor są nieprzezroczyste. Są one jednak używane do przekazywania określonego odwołania do elementu w wywołaniu JavaScript Interop. Aby uzyskać więcej informacji na temat międzyoperacyjności języka JavaScript, zobacz [ASP.NET Core Blazor międzyoperacyjności JavaScript](/aspnet/core/blazor/javascript-interop).
 
 ## <a name="templated-components"></a>Składniki z szablonami
 
 W formularzach sieci Web ASP.NET można tworzyć *kontrolki z szablonami*. Kontrolki z szablonami umożliwiają deweloperowi określenie fragmentu kodu HTML służącego do renderowania kontrolki kontenera. Mechanics kompilowania formantów serwera są złożone, ale zapewniają zaawansowane scenariusze renderowania danych w sposób dostosowywalny przez użytkownika. Przykłady formantów z szablonami obejmują `Repeater` i `DataList` .
 
-Blazorskładniki można także definiować za pomocą definiowania parametrów składnika typu `RenderFragment` lub `RenderFragment<T>` . `RenderFragment`Reprezentuje fragment znacznika Razor, który będzie następnie renderowany przez składnik. A `RenderFragment<T>` to fragment znacznika Razor, który przyjmuje parametr, który można określić podczas renderowania fragmentu renderowania.
+Blazor składniki można także definiować za pomocą definiowania parametrów składnika typu `RenderFragment` lub `RenderFragment<T>` . `RenderFragment`Reprezentuje fragment znacznika Razor, który będzie następnie renderowany przez składnik. A `RenderFragment<T>` to fragment znacznika Razor, który przyjmuje parametr, który można określić podczas renderowania fragmentu renderowania.
 
 ### <a name="child-content"></a>Zawartość podrzędna
 
-Blazorskładniki mogą przechwytywać zawartość podrzędną jako `RenderFragment` i renderować tę zawartość w ramach renderowania składników. Aby przechwycić zawartość podrzędną, zdefiniuj parametr składnika typu `RenderFragment` i nadaj mu nazwę `ChildContent` .
+Blazor składniki mogą przechwytywać zawartość podrzędną jako `RenderFragment` i renderować tę zawartość w ramach renderowania składników. Aby przechwycić zawartość podrzędną, zdefiniuj parametr składnika typu `RenderFragment` i nadaj mu nazwę `ChildContent` .
 
 *ChildContentComponent. Razor*
 
@@ -641,7 +639,7 @@ public class CounterBase : ComponentBase
 
 Widoczność elementów członkowskich składnika w klasie bazowej musi być `protected` lub `public` widoczna dla klasy składnika.
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 Powyższe nie jest wyczerpujące dla wszystkich aspektów Blazor składników. Aby uzyskać więcej informacji na temat [tworzenia i używania ASP.NET Core składników Razor](/aspnet/core/blazor/components), zobacz Blazor dokumentację.
 

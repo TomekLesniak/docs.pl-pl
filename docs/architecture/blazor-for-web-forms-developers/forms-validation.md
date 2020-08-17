@@ -7,22 +7,20 @@ no-loc:
 - Blazor
 - Blazor WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: 1a99719f59415872510aef051d1f3c73daf53e15
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: d2dce23996e996a736b04c9cdd1ccf3b549ff3ff
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173279"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267558"
 ---
 # <a name="forms-and-validation"></a>Formularze i walidacja
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 Struktura formularzy sieci Web ASP.NET zawiera zestaw kontrolek serwera weryfikacji, które obsługują sprawdzanie poprawności danych wprowadzonych przez użytkownika do formularza ( `RequiredFieldValidator` ,,, itd `CompareValidator` `RangeValidator` .). Struktura formularzy sieci Web ASP.NET obsługuje również powiązanie modelu i sprawdzanie poprawności modelu na podstawie adnotacji danych ( `[Required]` ,,, itd `[StringLength]` `[Range]` .). Logikę walidacji można wymusić zarówno na serwerze, jak i na kliencie przy użyciu niezauważalnej weryfikacji opartej na języku JavaScript. `ValidationSummary`Formant serwera służy do wyświetlania podsumowania błędów walidacji dla użytkownika.
 
-BlazorProgram obsługuje udostępnianie logiki walidacji między klientem a serwerem. ASP.NET zapewnia wstępnie skompilowane implementacje języka JavaScript wielu typowych walidacji serwera. W wielu przypadkach deweloper nadal musi napisać kod JavaScript w celu pełnego zaimplementowania logiki walidacji specyficznej dla aplikacji. Te same typy modeli, adnotacje danych i logikę walidacji mogą być używane zarówno na serwerze, jak i na komputerze klienckim.
+Blazor Program obsługuje udostępnianie logiki walidacji między klientem a serwerem. ASP.NET zapewnia wstępnie skompilowane implementacje języka JavaScript wielu typowych walidacji serwera. W wielu przypadkach deweloper nadal musi napisać kod JavaScript w celu pełnego zaimplementowania logiki walidacji specyficznej dla aplikacji. Te same typy modeli, adnotacje danych i logikę walidacji mogą być używane zarówno na serwerze, jak i na komputerze klienckim.
 
-Blazorzawiera zestaw składników wejściowych. Składniki wejściowe obsługują dane pól powiązań z modelem i sprawdzają poprawność danych wejściowych użytkownika podczas przesyłania formularza.
+Blazor zawiera zestaw składników wejściowych. Składniki wejściowe obsługują dane pól powiązań z modelem i sprawdzają poprawność danych wejściowych użytkownika podczas przesyłania formularza.
 
 |Składnik wejściowy|Renderowany element HTML    |
 |---------------|-------------------------|
@@ -128,7 +126,7 @@ Poniższy składnik ilustruje Kompilowanie formularza w Blazor oparciu o `Starsh
 
 Po przesłaniu formularza dane powiązane z modelem nie zostały zapisane w żadnym magazynie danych, takim jak baza danych. W Blazor WebAssembly aplikacji dane muszą być wysyłane do serwera. Na przykład za pomocą żądania HTTP POST. W Blazor aplikacji serwerowej dane są już na serwerze, ale muszą być utrwalone. Obsługa dostępu do danych w Blazor aplikacjach jest przedmiotem sekcji dotyczącej [danych](data.md) .
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 Aby uzyskać więcej informacji na temat [formularzy i walidacji](/aspnet/core/blazor/forms-validation) w Blazor aplikacjach, zobacz Blazor dokumentację.
 

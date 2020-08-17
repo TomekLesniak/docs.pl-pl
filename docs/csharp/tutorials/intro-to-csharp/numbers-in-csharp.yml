@@ -6,17 +6,18 @@ metadata:
   audience: Developer
   ms.custom: mvc
   ms.date: 08/24/2018
+  ms.topic: interactive-tutorial
   level: Beginner
   nextTutorialHref: branches-and-loops.yml
   nextTutorialTitle: Gałęzie i pętle w języku C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 87ffc9668191a52774f21470dbc415bba3579a49
-  ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+  ms.openlocfilehash: f9cfdf852546c30307f818418d7ff610b210d6f4
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85853909"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88267935"
 items:
 - durationInMinutes: 1
   content: >
@@ -240,7 +241,7 @@ items:
     Istnieją inne typy liczbowe z innymi limitami i precyzją, których możesz użyć, jeśli typ `int` nie spełnia wymagań. Przejrzyjmy te typy numerów dalej.
 - title: Praca z typem double
   durationInMinutes: 5
-  content: "Typ liczbowy `double` reprezentuje liczbę zmiennoprzecinkową o podwójnej precyzji. Te pojęcia mogą być dla Ciebie nowe. Liczby **zmiennoprzecinkowe** są przydatne do reprezentowania bardzo małych lub bardzo dużych liczb innych niż liczby całkowite. **Podwójna precyzja** jest terminem względnym opisującym liczbę cyfr binarnych używanych do przechowywania wartości. Numer **podwójnej precyzji** ma dwukrotnie liczbę cyfr binarnych jako **pojedynczą precyzję**. W przypadku współczesnych komputerów częściej są używane liczby podwójnej precyzji niż pojedynczej precyzji. Liczby o **pojedynczej precyzji** są deklarowane za pomocą `float` słowa kluczowego.\nPrzyjrzyjmy się im. Wypróbuj poniższy kod w oknie interaktywnym i zobacz wynik:\n\n```csharp\ndouble a = 5;\ndouble b = 4;\ndouble c = 2;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nZwróć uwagę, że odpowiedź obejmuje część dziesiętną ilorazu. Spróbuj nieco bardziej skomplikowanego wyrażenia z liczbami podwójnej precyzji:\n\n```csharp\ndouble a = 19;\ndouble b = 23;\ndouble c = 8;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nZakres wartości liczb podwójnej precyzji jest dużo większy niż liczb całkowitych. Wypróbuj poniższy kod w oknie interaktywnym:\n\n```csharp\ndouble max = double.MaxValue;\ndouble min = double.MinValue;\nConsole.WriteLine($\"The range of double is {min} to {max}\");\n```\n\nWartości zostaną wyświetlone za pomocą notacji naukowej. Liczba po lewej stronie znaku `E` to mantysa. Liczba po jego prawej stronie to wykładnik jako potęga 10.\n\nPodobnie jak w przypadku liczb dziesiętnych w matematyce, przy używaniu liczb podwójnej precyzji w języku C# mogą wystąpić błędy zaokrąglania. Wypróbuj ten kod:\n\n```csharp\ndouble third = 1.0 / 3.0;\nConsole.WriteLine(third);\n```\n\nWiadomo, że `0.3` `3/10` nie jest dokładnie taka sama jak `1/3` . Analogicznie, `0.33` to `33/100` . Jest to bliżej `1/3` , ale nadal nie jest dokładne. \n\n***Wyzwanie***\n\nWypróbuj inne obliczenia z dużymi liczbami, małymi liczbami, mnożeniem i dzieleniem przy użyciu `double` typu.  Spróbuj bardziej skomplikowanych obliczeń.\n"
+  content: "Typ liczbowy `double` reprezentuje liczbę zmiennoprzecinkową o podwójnej precyzji. Te pojęcia mogą być dla Ciebie nowe. Liczby **zmiennoprzecinkowe** są przydatne do reprezentowania bardzo małych lub bardzo dużych liczb innych niż liczby całkowite. **Podwójna precyzja** jest terminem względnym opisującym liczbę cyfr binarnych używanych do przechowywania wartości. Numer **podwójnej precyzji** ma dwukrotnie liczbę cyfr binarnych jako **pojedynczą precyzję**. W przypadku współczesnych komputerów częściej są używane liczby podwójnej precyzji niż pojedynczej precyzji. Liczby o **pojedynczej precyzji** są deklarowane za pomocą `float` słowa kluczowego.\nPrzyjrzyjmy się im. Wypróbuj poniższy kod w oknie interaktywnym i zobacz wynik:\n\n```csharp\ndouble a = 5;\ndouble b = 4;\ndouble c = 2;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nZwróć uwagę, że odpowiedź obejmuje część dziesiętną ilorazu. Spróbuj nieco bardziej skomplikowanego wyrażenia z liczbami podwójnej precyzji:\n\n```csharp\ndouble a = 19;\ndouble b = 23;\ndouble c = 8;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nZakres wartości liczb podwójnej precyzji jest dużo większy niż liczb całkowitych. Wypróbuj poniższy kod w oknie interaktywnym:\n\n```csharp\ndouble max = double.MaxValue;\ndouble min = double.MinValue;\nConsole.WriteLine($\"The range of double is {min} to {max}\");\n```\n\nWartości zostaną wyświetlone za pomocą notacji naukowej. Liczba po lewej stronie znaku `E` to mantysa. Liczba po jego prawej stronie to wykładnik jako potęga 10.\n\nPodobnie jak w przypadku liczb dziesiętnych w matematyce, przy używaniu liczb podwójnej precyzji w języku C# mogą wystąpić błędy zaokrąglania. Wypróbuj ten kod:\n\n```csharp\ndouble third = 1.0 / 3.0;\nConsole.WriteLine(third);\n```\n\nWiadomo, że `0.3` `3/10` nie jest dokładnie taka sama jak `1/3` . Analogicznie, `0.33` to `33/100` . Jest to bliżej `1/3` , ale nadal nie jest dokładne. \n\n***Zadanie***\n\nWypróbuj inne obliczenia z dużymi liczbami, małymi liczbami, mnożeniem i dzieleniem przy użyciu `double` typu.  Spróbuj bardziej skomplikowanych obliczeń.\n"
 - title: Pracuj z typami dziesiętnymi
   durationInMinutes: 8
   content: >
@@ -293,7 +294,7 @@ items:
     > Litera `M` została wybrana jako najbardziej wizualnie odrębna litera między `double` `decimal` słowami kluczowymi i.
 
 
-    ***Wyzwanie***
+    ***Zadanie***
 
 
     Teraz, gdy różne typy liczbowe zostały już przedstawione, napisz kod obliczający pole koła o promieniu 2,5 cm. Pole koła to promień pomnożony przez liczbę pi do kwadratu. Wskazówka: platforma .NET zawiera stałą dla liczby pi — <xref:System.Math.PI?displayProperty=nameWithType> — której możesz użyć. <xref:System.Math.PI?displayProperty=nameWithType>, podobnie jak wszystkie stałe zadeklarowane w `System.Math` przestrzeni nazw, jest `double` wartością. Z tego powodu należy użyć `double` zamiast `decimal` wartości dla tego wyzwania.

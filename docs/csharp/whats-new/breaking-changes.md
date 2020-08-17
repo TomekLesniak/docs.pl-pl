@@ -1,20 +1,21 @@
 ---
-title: Krytyczne zmiany w kompilatorze Języka C#
-description: Znajdź wszelkie zmiany dotyczące łamania w kompilatorze Języka C#, którego używasz.
+title: Zmiany powodujące niezgodność w kompilatorze języka C#
+description: Znajdź wszelkie istotne zmiany w kompilatorze C#, którego używasz.
+ms.topic: troubleshooting
 ms.date: 12/12/2019
-ms.openlocfilehash: 1b1f5d57c5fa6e86878d8aa59f602a92f59288d9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 539282441a407e348f214981e4117c357effa682
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75444334"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267974"
 ---
-# <a name="learn-about-any-breaking-changes-in-the-c-compiler"></a>Dowiedz się więcej o wszelkich krytycznych zmianach w kompilatorze Języka C#
+# <a name="learn-about-any-breaking-changes-in-the-c-compiler"></a>Dowiedz się więcej o istotnych zmianach w kompilatorze języka C#
 
-Zespół [Roslyn](https://github.com/dotnet/roslyn) prowadzi listę zmian w kompilach Języka C# i Visual Basic. Informacje na temat tych zmian można znaleźć w tych linkach w reppo GitHub:
+Zespół [Roslyn](https://github.com/dotnet/roslyn) zachowuje listę istotnych zmian w kompilatorach C# i Visual Basic. Informacje o tych zmianach można znaleźć w następujących linkach w repozytorium GitHub:
 
-- [Przełomowe zmiany w aktualizacji 1 VS2019 i w kolejnych latach w porównaniu z VS2019](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2019.md)
-- [Przełomowe zmiany od VS2017 (C# 7)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2017.md)
-- [Przełomowe zmiany w Roslyn 3.0 (VS2019) od Roslyn 2.* (VS2017)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2019.md)
-- [Przełomowe zmiany w Roslyn 2.0 (VS2017) z Roslyn 1.* (VS2015) i macierzystym kompilatorze C# (VS2013 i poprzedni).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2017.md)
-- [Krytyczne zmiany w języku Roslyn 1.0 (VS2015) z macierzystego kompilatora C# (VS2013 i poprzedni).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2015.md)
+- [Istotne zmiany w VS2019 Update 1 i wykraczają poza porównanie z VS2019](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2019.md)
+- [Istotne zmiany od program VS2017 (C# 7)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2017.md)
+- [Istotne zmiany w Roslyn 3,0 (VS2019) z Roslyn 2. * (program VS2017)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2019.md)
+- [Istotne zmiany w Roslyn 2,0 (program VS2017) z Roslyn 1. * (programu VS2015) i natywny kompilator języka C# (VS2013 i Previous).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2017.md)
+- [Istotne zmiany w Roslyn 1,0 (programu VS2015) z natywnego kompilatora języka C# (VS2013 i Previous).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2015.md)
