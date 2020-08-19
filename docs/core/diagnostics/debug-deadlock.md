@@ -3,12 +3,12 @@ title: Zakleszczenie debugowania — .NET Core
 description: Samouczek, który przeprowadzi Cię przez debugowanie problemu blokowania w programie .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 247521176297254180d794d4d4fc850f30e343b0
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926421"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557883"
 ---
 # <a name="debug-a-deadlock-in-net-core"></a>Debugowanie zakleszczenia w programie .NET Core
 
@@ -51,7 +51,7 @@ dotnet-trace ps
 
 Zanotuj identyfikator procesu z danych wyjściowych polecenia. Nasz identyfikator procesu został utworzony `4807` , ale będzie się różnić. Przejdź do następującego adresu URL, który jest punktem końcowym interfejsu API w witrynie przykładowej:
 
-[https://localhost:5001/api/diagscenario/deadlock](https://localhost:5001/api/diagscenario/deadlock)
+`https://localhost:5001/api/diagscenario/deadlock`
 
 Żądanie interfejsu API do witryny zostanie zawieszone i nie będzie odpowiadać. Pozwól na uruchamianie żądania przez około 10-15 sekund. Następnie Utwórz zrzut rdzenia przy użyciu następującego polecenia:
 
@@ -262,7 +262,7 @@ OS Thread Id: 0x5634 (28)
 
 Drugi wątek jest podobny. Próbuje on również uzyskać blokadę, która jest już własnością. Pozostałe 300 wątków, które oczekują na to, najprawdopodobniej czekają na jedną z blokad, które spowodowały zakleszczenie.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [dotnet-Trace](dotnet-trace.md) do procesów list
 - [dotnet-Counters](dotnet-counters.md) , aby sprawdzić użycie pamięci zarządzanej

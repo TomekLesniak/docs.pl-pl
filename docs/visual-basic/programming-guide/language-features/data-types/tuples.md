@@ -4,12 +4,12 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: 378ee4e7d3a3b106b719e5da819b09f336ff218e
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: b169a1c13b3f20d7b5e2a1386cfb28a9cc093dcd
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226663"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559092"
 ---
 # <a name="tuples-visual-basic"></a>Krotki (Visual Basic)
 
@@ -72,7 +72,7 @@ Gdy wnioskowanie o nazwie pola nie powiedzie się, Visual Basic nie generuje bł
 
 ## <a name="tuples-versus-structures"></a>Krotki i struktury
 
-Krotka Visual Basic jest typem wartości, który jest wystąpieniem jednego z typów ogólnych **System. ValueTuple** . Na przykład `holiday` krotka zdefiniowana w poprzednim przykładzie jest wystąpieniem <xref:System.ValueTuple%603> struktury. Jest on przeznaczony do uproszczonego kontenera dla danych. Ponieważ krotka ma ułatwić tworzenie obiektu z wieloma elementami danych, nie ma niektórych funkcji, które mogą mieć niestandardową strukturę. Są to moduły:
+Krotka Visual Basic jest typem wartości, który jest wystąpieniem jednego z typów ogólnych **System. ValueTuple** . Na przykład `holiday` krotka zdefiniowana w poprzednim przykładzie jest wystąpieniem <xref:System.ValueTuple%603> struktury. Jest on przeznaczony do uproszczonego kontenera dla danych. Ponieważ krotka ma ułatwić tworzenie obiektu z wieloma elementami danych, nie ma niektórych funkcji, które mogą mieć niestandardową strukturę. Należą do nich:
 
 - Niestandardowe elementy członkowskie. Nie można definiować własnych właściwości, metod lub zdarzeń dla krotki.
 
@@ -84,14 +84,14 @@ Jeśli niestandardowe elementy członkowskie, walidacja właściwości i pól lu
 
 Krotka Visual Basic dziedziczy elementy członkowskie jego typu **ValueTuple** . Oprócz pól te elementy obejmują następujące metody:
 
-| Członek | Opis |
+| Metoda | Opis |
 | ---|---|
 | CompareTo | Porównuje bieżącą krotkę z inną krotką o tej samej liczbie elementów. |
 | Równa się | Określa, czy bieżąca Krotka jest równa innej kolekcji lub obiektowi. |
 | GetHashCode | Oblicza wartość skrótu dla bieżącego wystąpienia. |
 | ToString | Zwraca ciąg reprezentujący tę krotkę, która przyjmuje formularz `(Item1, Item2...)` , gdzie `Item1` i `Item2` reprezentuje wartości pól krotki. |
 
-Ponadto typy **ValueTuple** implementują <xref:System.Collections.IStructuralComparable> i <xref:System.Collections.IStructuralEquatable> interfejsy, które umożliwiają definiowanie porównywania klientów.
+Ponadto typy **ValueTuple** implementują <xref:System.Collections.IStructuralComparable> i <xref:System.Collections.IStructuralEquatable> interfejsy, które umożliwiają definiowanie niestandardowych.
 
 ## <a name="assignment-and-tuples"></a>Przypisanie i krotki
 
@@ -101,7 +101,7 @@ Visual Basic obsługuje przypisanie między typami krotek, które mają taką sa
 
 - Zdefiniowano niejawną konwersję typu źródłowego na typ docelowy.
 
-- `Option Strict`jest `On` i jest zdefiniowany Zawężanie (lub jawne) konwersji typu źródłowego na typ docelowy. Ta konwersja może zgłosić wyjątek, jeśli wartość źródłowa znajduje się poza zakresem typu docelowego.
+- `Option Strict` jest `On` i jest zdefiniowany Zawężanie (lub jawne) konwersji typu źródłowego na typ docelowy. Ta konwersja może zgłosić wyjątek, jeśli wartość źródłowa znajduje się poza zakresem typu docelowego.
 
 Inne konwersje nie są brane pod uwagę w przypisaniach. Przyjrzyjmy się typom przypisań, które są dozwolone między typami krotek.
 
@@ -171,6 +171,6 @@ Poniższy przykład tworzy krotkę, konwertuje ją na obiekt **krotki** .NET i k
 
 [!code-vb[Convert](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple2.vb#1)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka Visual Basic](index.md)

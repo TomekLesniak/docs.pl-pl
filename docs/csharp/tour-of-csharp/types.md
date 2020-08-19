@@ -2,12 +2,12 @@
 title: 'Definiowanie typów i ich członków — Przewodnik po języku C #'
 description: Bloki konstrukcyjne programów są typami. Dowiedz się, jak tworzyć klasy, struktury, interfejsy i inne w języku C#.
 ms.date: 08/06/2020
-ms.openlocfilehash: 69d6f0fe1e11f287fb5e385761fc210a61929d10
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: efd353fe8c1e6a57952bcb2586a05ad38ecd52b9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068546"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559118"
 ---
 # <a name="types-and-members"></a>Typy i elementy członkowskie
 
@@ -97,7 +97,7 @@ W poniższym przykładzie przedstawiono deklaracje obu powyższych typów wylicz
 
 ## <a name="nullable-types"></a>Typy dopuszczające wartości null
 
-Zmienne dowolnego typu mogą być deklarowane jako ***niedopuszczające wartości null*** lub ***dopuszczające wartości null***. Zmienna dopuszczający wartości null może zawierać dodatkową `null` wartość wskazującą brak wartości. Typy wartości null (struktury lub wyliczenia) są reprezentowane przez <xref:System.Nullable%601?displayProperty=nameWithType> . Typy referencyjne niedopuszczające wartości null i dopuszczające wartość null są reprezentowane przez odpowiedni typ referencyjny. Rozróżnienie jest reprezentowane przez metadane odczytywane przez kompilator i niektóre biblioteki. Kompilator zawiera ostrzeżenia, gdy odwołania do wartości null są wyłączane bez uprzedniego sprawdzenia ich wartości `null` . Kompilator zawiera również ostrzeżenia, gdy odwołania niedopuszczające wartości null są przypisywane do wartości, która może być `null` . Poniższy przykład deklaruje ***wartość null int***, inicjując ją do `null` . Następnie ustawia wartość na `5` . Pokazuje to samo pojęcie z ***niezerowym ciągiem***. Aby uzyskać więcej informacji, zobacz [typy wartości null](../language-reference/builtin-types/nullable-value-types.md) i [typy referencyjne dopuszczające wartość null](../nullable-references.md).
+Zmienne dowolnego typu mogą być deklarowane jako ***niedopuszczające wartości null*** lub ***dopuszczające wartości null***. Zmienna dopuszczający wartości null może zawierać dodatkową `null` wartość wskazującą brak wartości. Typy wartości null (struktury lub wyliczenia) są reprezentowane przez <xref:System.Nullable%601?displayProperty=nameWithType> . Typy referencyjne niedopuszczające wartości null i dopuszczające wartość null są reprezentowane przez odpowiedni typ referencyjny. Rozróżnienie jest reprezentowane przez metadane odczytywane przez kompilator i niektóre biblioteki. Kompilator zawiera ostrzeżenia, gdy odwołania do wartości null są wyłączane bez uprzedniego sprawdzenia ich wartości `null` . Kompilator zawiera również ostrzeżenia, gdy do odwołań nie dopuszczających wartości null są przypisywane wartości, które mogą być `null` . Poniższy przykład deklaruje ***wartość null int***, inicjując ją do `null` . Następnie ustawia wartość na `5` . Pokazuje to samo pojęcie z ***niezerowym ciągiem***. Aby uzyskać więcej informacji, zobacz [typy wartości null](../language-reference/builtin-types/nullable-value-types.md) i [typy referencyjne dopuszczające wartość null](../nullable-references.md).
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareNullable":::
 

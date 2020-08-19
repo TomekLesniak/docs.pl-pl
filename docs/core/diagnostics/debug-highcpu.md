@@ -3,12 +3,12 @@ title: Debugowanie wysokiego użycia procesora CPU — .NET Core
 description: Samouczek, który przeprowadzi Cię przez debugowanie wysokiego użycia procesora CPU w programie .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: e69585d0eb6f04bf37d0c023a1956be62c2a1cf3
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 93076bbce3baf3a219b25c927d2aba3d2d57456f
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926418"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557805"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>Debugowanie wysokiego użycia procesora CPU w programie .NET Core
 
@@ -85,7 +85,7 @@ Press p to pause, r to resume, q to quit.
 
 Gdy aplikacja sieci Web działa natychmiast po uruchomieniu, procesor CPU nie jest zużywany w ogóle i jest raportowany pod adresem `0%` . Przejdź do `api/diagscenario/highcpu` trasy `60000` jako parametr trasy:
 
-[https://localhost:5001/api/diagscenario/highcpu/60000](https://localhost:5001/api/diagscenario/highcpu/60000)
+`https://localhost:5001/api/diagscenario/highcpu/60000`
 
 Teraz ponownie uruchom polecenie [dotnet-Counters](dotnet-counters.md) . Aby monitorować tylko `cpu-usage` , określ `System.Runtime[cpu-usage]` jako część polecenia.
 
@@ -127,7 +127,7 @@ export COMPlus_PerfMapEnabled=1
 dotnet run
 ```
 
-Ponownie Wykorzystaj wysoki punkt końcowy interfejsu API ( <https://localhost:5001/api/diagscenario/highcpu/60000> ). Gdy jest uruchomiona w ramach żądania 1-minutowego, uruchom `perf` polecenie z identyfikatorem procesu:
+Wykorzystaj ponownie wysoki punkt końcowy interfejsu API procesora CPU ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Gdy jest uruchomiona w ramach żądania 1-minutowego, uruchom `perf` polecenie z identyfikatorem procesu:
 
 ```bash
 sudo perf record -p 2266 -g
@@ -152,7 +152,7 @@ To polecenie spowoduje wygenerowanie elementu `flamegraph.svg` , który można w
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-W systemie Windows można użyć narzędzia do [śledzenia dotnet](dotnet-trace.md) jako profilera. Korzystając z poprzedniego [przykładowego celu debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios), należy ponownie wykonać wysoki <https://localhost:5001/api/diagscenario/highcpu/60000> punkt końcowy procesora (). Gdy jest uruchomiona w ramach żądania 1-minutowego, użyj `collect` polecenia w następujący sposób:
+W systemie Windows można użyć narzędzia do [śledzenia dotnet](dotnet-trace.md) jako profilera. Korzystając z poprzedniego [przykładowego celu debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios), należy ponownie wykonać wysoki punkt końcowy procesora CPU ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Gdy jest uruchomiona w ramach żądania 1-minutowego, użyj `collect` polecenia w następujący sposób:
 
 ```dotnetcli
 dotnet-trace collect -p 22884 --providers Microsoft-DotNETCore-SampleProfiler
@@ -166,7 +166,7 @@ Otwórz `nettrace` program, [`PerfView`](https://github.com/microsoft/perfview/b
 
 ---
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [dotnet-Trace](dotnet-trace.md) do procesów list
 - [dotnet-Counters](dotnet-counters.md) , aby sprawdzić użycie pamięci zarządzanej

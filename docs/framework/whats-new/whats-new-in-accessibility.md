@@ -1,19 +1,18 @@
 ---
 title: Co nowego w ułatwieniach dostępu w .NET Framework
 description: Zobacz, co nowego w programie .NET Accessibility, począwszy od .NET Framework 4.7.1. Funkcje ułatwień dostępu pozwalają aplikacji zapewnić odpowiednie środowisko dla użytkowników technologii pomocniczej.
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 593591ca340cc130a3a6d1daa015a849b8eca0f8
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: df9188c4f7c2af77f5dc87309880a41724254c5c
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925842"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558962"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co nowego w ułatwieniach dostępu w .NET Framework
 
@@ -194,7 +193,7 @@ Można połączyć użycie `SelectionBrush` właściwości i, `SelectionTextBrus
 
 **Obsługa właściwości UIAutomation ControllerFor**
 
-Właściwość UIAutomation `ControllerFor` zwraca tablicę elementów automatyzacji, które są manipulowane przez element automatyzacji, który obsługuje tę właściwość. Ta właściwość jest często używana do automatycznego sugerowania ułatwień dostępu. `ControllerFor`jest używany, gdy element automatyzacji ma wpływ na jeden lub więcej segmentów interfejsu użytkownika aplikacji lub pulpitu. W przeciwnym razie trudno jest powiązać wpływ operacji sterowania z elementami interfejsu użytkownika. Ta funkcja dodaje możliwość kontroli w celu udostępnienia wartości `ControllerFor` właściwości.
+Właściwość UIAutomation `ControllerFor` zwraca tablicę elementów automatyzacji, które są manipulowane przez element automatyzacji, który obsługuje tę właściwość. Ta właściwość jest często używana do automatycznego sugerowania ułatwień dostępu. `ControllerFor` jest używany, gdy element automatyzacji ma wpływ na jeden lub więcej segmentów interfejsu użytkownika aplikacji lub pulpitu. W przeciwnym razie trudno jest powiązać wpływ operacji sterowania z elementami interfejsu użytkownika. Ta funkcja dodaje możliwość kontroli w celu udostępnienia wartości `ControllerFor` właściwości.
 
 .NET Framework 4,8 dodaje nową metodę wirtualną, <xref:System.Windows.Automation.Peers.AutomationPeer.GetControlledPeersCore?displayProperty=nameWithType?displayProperty=nameWithType> . Aby podać wartość `ControllerFor` właściwości, wystarczy przesłonić tę metodę i zwrócić `List<AutomationPeer>` do kontrolek manipulowanych przez ten element <xref:System.Windows.Automation.Peers.AutomationPeer> :
 
@@ -475,9 +474,9 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 Począwszy od .NET Framework 4.7.1, wprowadzono ulepszenia w różnych kontrolkach WPF. Są one teraz widoczne po <xref:System.Windows.SystemParameters.HighContrast%2A> ustawieniu motywu. Należą do nich:
 
-- <xref:System.Windows.Controls.Expander>kontroli
+- <xref:System.Windows.Controls.Expander> kontroli
 
-  Wizualizacja fokusu dla <xref:System.Windows.Controls.Expander> kontrolki jest teraz widoczna. Wizualizacje klawiatury dla <xref:System.Windows.Controls.ComboBox> , <xref:System.Windows.Controls.ListBox> i <xref:System.Windows.Controls.RadioButton> kontrolki są również widoczne. Na przykład:
+  Wizualizacja fokusu dla  <xref:System.Windows.Controls.Expander> kontrolki jest teraz widoczna. Wizualizacje klawiatury dla <xref:System.Windows.Controls.ComboBox> , <xref:System.Windows.Controls.ListBox> i <xref:System.Windows.Controls.RadioButton> kontrolki są również widoczne. Na przykład:
 
   Przed:
 
@@ -487,7 +486,7 @@ Począwszy od .NET Framework 4.7.1, wprowadzono ulepszenia w różnych kontrolka
 
   ![Zrzut ekranu kontrolki ekspandera z fokusem pokazującą kropkowaną linię wokół tekstu kontrolki.](./media/whats-new-in-accessibility/expander-control-after.png)
 
-- <xref:System.Windows.Controls.CheckBox>i <xref:System.Windows.Controls.RadioButton> kontrolki
+- <xref:System.Windows.Controls.CheckBox> i <xref:System.Windows.Controls.RadioButton> kontrolki
 
   Tekst w <xref:System.Windows.Controls.CheckBox> <xref:System.Windows.Controls.RadioButton> kontrolkach i jest teraz łatwiejszy do sprawdzenia, gdy wybrane są motywy o dużym kontraście. Na przykład:
 
@@ -499,7 +498,7 @@ Począwszy od .NET Framework 4.7.1, wprowadzono ulepszenia w różnych kontrolka
 
   ![Zrzut ekranu przycisków radiowych i kontrolek z lepszą widocznością tekstu w motywach o wysokim kontraście.](./media/whats-new-in-accessibility/high-contrast-radio-button-after.png)
 
-- <xref:System.Windows.Controls.ComboBox>kontroli
+- <xref:System.Windows.Controls.ComboBox> kontroli
 
   Począwszy od .NET Framework 4.7.1, obramowanie wyłączonej <xref:System.Windows.Controls.ComboBox> kontrolki ma taki sam kolor jak wyłączony tekst. Na przykład:
 
@@ -531,7 +530,7 @@ Począwszy od .NET Framework 4.7.1, wprowadzono ulepszenia w różnych kontrolka
 
   ![Zrzut ekranu przedstawiający formant ComboBox wyświetlający strzałkę listy rozwijanej.](./media/whats-new-in-accessibility/combo-box-style-key-after.png)
 
-- <xref:System.Windows.Controls.DataGrid>kontroli
+- <xref:System.Windows.Controls.DataGrid> kontroli
 
   Począwszy od .NET Framework 4.7.1, strzałka sortowania w <xref:System.Windows.Controls.DataGrid> kontrolkach używa teraz poprawnych kolorów motywu. Na przykład:
 
@@ -708,6 +707,6 @@ Zmiany ułatwień dostępu w Projektant przepływu pracy obejmują następujące
 
 - Użytkownicy, którzy wybierają duży kontrast motywy zobaczą wiele ulepszeń w zakresie widoczności Projektant przepływu pracy i jej kontrolek, takich jak lepsze współczynniki kontrastu między elementami i bardziej zauważalne pola wyboru używane do elementów fokusu.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Co nowego w programie .NET Framework](index.md)

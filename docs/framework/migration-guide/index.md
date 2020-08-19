@@ -1,18 +1,17 @@
 ---
-title: 'Przewodnik migracji do .NET Framework 4,8, 4,7, 4,6 i 4,5 '
+title: Przewodnik migracji do .NET Framework 4,8, 4,7, 4,6 i 4,5
 description: Przewodnik migracji do nowszych wersji .NET Framework, które obejmują zasoby dla nowych funkcji i zgodności aplikacji.
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 helpviewer_keywords:
 - .NET Framework, migrating applications to
 - migration, .NET Framework
 ms.assetid: 02d55147-9b3a-4557-a45f-fa936fadae3b
-ms.openlocfilehash: a5b632824efacdb5e99228727b8751dc7f17d363
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: c597f6e7b67e190ffe61a425506a1a34f254942c
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86443419"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558507"
 ---
 # <a name="migrate-to-net-framework-48-47-46-and-45"></a>Migrowanie do .NET Framework 4,8, 4,7, 4,6 i 4,5
 
@@ -32,7 +31,7 @@ Przed przeprowadzeniem migracji aplikacji z wcześniejszych wersji .NET Framewor
 
 - Zobacz, [co nowego](../whats-new/index.md) w opisach nowych funkcji, które można chcieć dodać do aplikacji.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zgodność aplikacji](application-compatibility.md)
 - [Migracja z programu .NET Framework 1.1](migrating-from-the-net-framework-1-1.md)

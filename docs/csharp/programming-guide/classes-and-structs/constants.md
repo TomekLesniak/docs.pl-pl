@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: dd42dcd62bb46898c20f14cdc893b8f5801894f2
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 1252e214be03f8a180fadb7667ee59f36a862040
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474985"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558429"
 ---
 # <a name="constants-c-programming-guide"></a>Stałe (Przewodnik programowania w języku C#)
 Stałe są niezmienne wartości, które są znane w czasie kompilacji i nie zmieniają się w okresie istnienia programu. Stałe są zadeklarowane za pomocą modyfikatora [const](../../language-reference/keywords/const.md) . Tylko [typy wbudowane](../../language-reference/builtin-types/built-in-types.md) języka C# (z wyjątkiem <xref:System.Object?displayProperty=nameWithType> ) mogą być zadeklarowane jako `const` . Typy zdefiniowane przez użytkownika, w tym klasy, struktury i tablice, nie mogą być `const` . Użyj modyfikatora [tylko do odczytu](../../language-reference/keywords/readonly.md) , aby utworzyć klasę, strukturę lub tablicę, która jest inicjowana jednokrotnie w czasie wykonywania (na przykład w konstruktorze) i nie można jej zmienić.  
@@ -24,7 +24,7 @@ Stałe są niezmienne wartości, które są znane w czasie kompilacji i nie zmie
   
  [!code-csharp[csProgGuideObjects#64](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#64)]  
   
- W tym przykładzie stała `months` jest zawsze 12 i nie może być zmieniana nawet przez samą klasę. W rzeczywistości, gdy kompilator napotyka stały identyfikator w kodzie źródłowym języka C# (na przykład `months` ), zastępuje wartość literału bezpośrednio do kodu języka pośredniego (IL), który tworzy. Ze względu na to, że żaden adres zmiennej nie jest skojarzony ze stałą w czasie wykonywania, `const` pola nie mogą być przesyłane przez odwołanie i nie mogą występować jako l-wartość w wyrażeniu.  
+ W tym przykładzie stała `Months` jest zawsze 12 i nie może być zmieniana nawet przez samą klasę. W rzeczywistości, gdy kompilator napotyka stały identyfikator w kodzie źródłowym języka C# (na przykład `Months` ), zastępuje wartość literału bezpośrednio do kodu języka pośredniego (IL), który tworzy. Ze względu na to, że żaden adres zmiennej nie jest skojarzony ze stałą w czasie wykonywania, `const` pola nie mogą być przesyłane przez odwołanie i nie mogą występować jako l-wartość w wyrażeniu.  
   
 > [!NOTE]
 > Należy zachować ostrożność w przypadku odwoływania się do wartości stałych zdefiniowanych w innym kodzie, takim jak dll. Jeśli nowa wersja biblioteki DLL definiuje nową wartość dla stałej, program będzie nadal przechowywać starą wartość literału, dopóki nie zostanie ponownie skompilowana względem nowej wersji.  
@@ -46,7 +46,7 @@ Stałe są niezmienne wartości, które są znane w czasie kompilacji i nie zmie
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)

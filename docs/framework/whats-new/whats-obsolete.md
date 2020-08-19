@@ -1,19 +1,18 @@
 ---
 title: Co jest przestarzałe w .NET Framework
 description: Zobacz, jak Biblioteka klas .NET oznacza składowe jako przestarzałe. Poznaj atrybut ObsoleteAttribute, sposób obsługi przestarzałych typów i elementów członkowskich.
-ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - obsolete [.NET Framework]
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: 2f39f5ec614b669f3a0f63677cb6f8a6f9ed11cf
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 188d9184476e58fb679421467cd68e2ea8a8a101
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925803"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558871"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Co jest przestarzałe w bibliotece klas .NET Framework
 
@@ -58,7 +57,7 @@ Możesz zrezygnować z ponownego kompilowania istniejącego kodu do nowszej wers
 
 Aby określić wersję docelową .NET Framework, należy przypisać jedną z następujących wartości ciągu do `version` atrybutu:
 
-|Wersja programu .NET Framework|`version`parametry|
+|Wersja programu .NET Framework|`version` parametry|
 |-|-|
 |4,8|wersja|
 |4,7 (w tym 4.7.1 i 4.7.2)|wersja|
@@ -82,6 +81,6 @@ Aby określić wersję docelową .NET Framework, należy przypisać jedną z nas
 - [Nieaktualna lista .NET Framework 3,5](https://docs.microsoft.com/previous-versions/cc835481(v=msdn.10))
 - [Nieaktualna lista .NET Framework 2,0](https://docs.microsoft.com/previous-versions/aa497286(v=msdn.10))
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<supportedRuntime>Postaci](../configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<supportedRuntime> Postaci](../configure-apps/file-schema/startup/supportedruntime-element.md)

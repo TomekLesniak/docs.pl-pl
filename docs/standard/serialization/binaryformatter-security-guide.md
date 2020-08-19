@@ -1,17 +1,17 @@
 ---
-title: Przewodnik po zabezpieczeniach BinaryFormatter
+title: Przewodnik po zabezpieczeniach elementu BinaryFormatter
 description: W tym artykule opisano zagrożenia bezpieczeństwa związane z typem BinaryFormatter i zalecenia dla różnych serializatorów do użycia.
 ms.date: 07/11/2020
 ms.author: levib
 author: GrabYourPitchforks
-ms.openlocfilehash: f6a54b34bbf1e19212fe37aadb448a1722fe9ff0
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: ac01fe78c9577563641a8b06a232ed614ed8520a
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86444767"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558845"
 ---
-# <a name="binaryformatter-security-guide"></a>Przewodnik po zabezpieczeniach BinaryFormatter
+# <a name="binaryformatter-security-guide"></a>Przewodnik po zabezpieczeniach elementu BinaryFormatter
 
 Ten artykuł ma zastosowanie do następujących implementacji platformy .NET:
 
@@ -22,7 +22,7 @@ Ten artykuł ma zastosowanie do następujących implementacji platformy .NET:
 ## <a name="background"></a>Tło
 
 > [!WARNING]
-> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ jest niebezpieczny i ***nie*** jest zalecany do przetwarzania danych. Aplikacje powinny przestać korzystać z programu `BinaryFormatter` tak szybko, jak to możliwe, nawet jeśli uważają, że dane są przez nie przetwarzane. `BinaryFormatter`nie może być zabezpieczony.
+> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ jest niebezpieczny i ***nie*** jest zalecany do przetwarzania danych. Aplikacje powinny przestać korzystać z programu `BinaryFormatter` tak szybko, jak to możliwe, nawet jeśli uważają, że dane są przez nie przetwarzane. `BinaryFormatter` nie może być zabezpieczony.
 
 Ten artykuł dotyczy również następujących typów:
 
@@ -33,7 +33,7 @@ Ten artykuł dotyczy również następujących typów:
 
 Luki deserializacji stanowią kategorię zagrożeń, w której ładunki żądań są niezabezpieczone. Osoba atakująca, która pomyślnie wykorzystuje te luki w zabezpieczeniach, może spowodować odmowę usługi (DoS), ujawnienie informacji lub zdalne wykonanie kodu w aplikacji docelowej. Ta kategoria ryzyka spójnie [OWASP 10](https://owasp.org/www-project-top-ten/). Elementy docelowe obejmują aplikacje w [różnych językach](https://owasp.org/www-community/vulnerabilities/Deserialization_of_untrusted_data), w tym C/C++, Java i C#.
 
-W programie .NET największy cel ryzyka to aplikacje, które używają <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> typu do deserializacji danych. `BinaryFormatter`jest szeroko wykorzystywana w całym ekosystemie .NET ze względu na jego moc i łatwość użycia. Jednak ta sama moc zapewnia atakującemu możliwość wpływu na przepływ sterowania w aplikacji docelowej. Pomyślne ataki mogą spowodować, że osoba atakująca będzie mogła uruchomić kod w kontekście procesu docelowego.
+W programie .NET największy cel ryzyka to aplikacje, które używają <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> typu do deserializacji danych. `BinaryFormatter` jest szeroko wykorzystywana w całym ekosystemie .NET ze względu na jego moc i łatwość użycia. Jednak ta sama moc zapewnia atakującemu możliwość wpływu na przepływ sterowania w aplikacji docelowej. Pomyślne ataki mogą spowodować, że osoba atakująca będzie mogła uruchomić kod w kontekście procesu docelowego.
 
 W miarę uproszczenia należy założyć, że wywołanie `BinaryFormatter.Deserialize` przez ładunek jest odpowiednikiem interpretacji tego ładunku jako autonomicznego pliku wykonywalnego i uruchomienia go.
 
@@ -42,9 +42,9 @@ W miarę uproszczenia należy założyć, że wywołanie `BinaryFormatter.Deseri
 > [!WARNING]
 > `BinaryFormatter.Deserialize`Metoda __nigdy nie__ jest bezpieczna, gdy jest używana z niezaufanymi danymi wejściowymi. Zdecydowanie zalecamy, aby zamiast tego rozważyć użycie jednego z alternatyw opisanych w dalszej części tego artykułu.
 
-`BinaryFormatter`został zaimplementowany przed deserializacji luk w zabezpieczeniach była dobrze zrozumiałą kategorią zagrożeń. W związku z tym kod nie jest zgodny z nowoczesnymi najlepszymi rozwiązaniami. `Deserialize`Metoda może być używana jako wektor, aby osoby atakujące wykonywały ataki w systemie DOS przy użyciu aplikacji. Ataki te mogą spowodować, że aplikacja nie odpowiada lub spowodować zakończenie nieoczekiwanego procesu. Tej kategorii ataku nie można złagodzić przy użyciu `SerializationBinder` ani żadnego innego `BinaryFormatter` przełącznika konfiguracji. Platforma .NET uważa, że to zachowanie jest ***zaprojektowane*** i nie wystawia aktualizacji kodu w celu zmodyfikowania zachowania.
+`BinaryFormatter` został zaimplementowany przed deserializacji luk w zabezpieczeniach była dobrze zrozumiałą kategorią zagrożeń. W związku z tym kod nie jest zgodny z nowoczesnymi najlepszymi rozwiązaniami. `Deserialize`Metoda może być używana jako wektor, aby osoby atakujące wykonywały ataki w systemie DOS przy użyciu aplikacji. Ataki te mogą spowodować, że aplikacja nie odpowiada lub spowodować zakończenie nieoczekiwanego procesu. Tej kategorii ataku nie można złagodzić przy użyciu `SerializationBinder` ani żadnego innego `BinaryFormatter` przełącznika konfiguracji. Platforma .NET uważa, że to zachowanie jest ***zaprojektowane*** i nie wystawia aktualizacji kodu w celu zmodyfikowania zachowania.
 
-`BinaryFormatter.Deserialize`może być narażony na inne kategorie ataków, takie jak ujawnienie informacji lub zdalne wykonywanie kodu. Korzystanie z funkcji, takich jak niestandardowa, <xref:System.Runtime.Serialization.SerializationBinder> może być niewystarczające do prawidłowego ograniczenia tych zagrożeń. Istnieje możliwość, że zostanie wykryta Nowa Luka w zabezpieczeniach, dla której platforma .NET nie może praktycznie opublikować aktualizacji zabezpieczeń. Konsumenci powinni ocenić swoje poszczególne scenariusze i rozważyć ich potencjalną ekspozycję na te zagrożenia.
+`BinaryFormatter.Deserialize` może być narażony na inne kategorie ataków, takie jak ujawnienie informacji lub zdalne wykonywanie kodu. Korzystanie z funkcji, takich jak niestandardowa, <xref:System.Runtime.Serialization.SerializationBinder> może być niewystarczające do prawidłowego ograniczenia tych zagrożeń. Istnieje możliwość, że zostanie wykryta Nowa Luka w zabezpieczeniach, dla której platforma .NET nie może praktycznie opublikować aktualizacji zabezpieczeń. Konsumenci powinni ocenić swoje poszczególne scenariusze i rozważyć ich potencjalną ekspozycję na te zagrożenia.
 
 Zalecamy, aby `BinaryFormatter` klienci wykonywały indywidualne oceny ryzyka w aplikacjach. Jedyną odpowiedzialnością dla użytkownika jest określenie, czy należy korzystać z programu `BinaryFormatter` . Konsumenci powinni ocenić wymagania dotyczące bezpieczeństwa, technicznego, reputacji, prawne i przepisów prawnych dotyczących używania programu `BinaryFormatter` .
 
@@ -52,8 +52,8 @@ Zalecamy, aby `BinaryFormatter` klienci wykonywały indywidualne oceny ryzyka w 
 
 Platforma .NET oferuje kilka serializatorów wbudowanych, które mogą bezpiecznie obsłużyć dane niezaufane:
 
-* <xref:System.Xml.Serialization.XmlSerializer>i <xref:System.Runtime.Serialization.DataContractSerializer> do serializacji grafów obiektów do i z XML. Nie należy mylić `DataContractSerializer` z <xref:System.Runtime.Serialization.NetDataContractSerializer> .
-* <xref:System.IO.BinaryReader>oraz <xref:System.IO.BinaryWriter> dla plików XML i JSON.
+* <xref:System.Xml.Serialization.XmlSerializer> i <xref:System.Runtime.Serialization.DataContractSerializer> do serializacji grafów obiektów do i z XML. Nie należy mylić `DataContractSerializer` z  <xref:System.Runtime.Serialization.NetDataContractSerializer> .
+* <xref:System.IO.BinaryReader> oraz <xref:System.IO.BinaryWriter> dla plików XML i JSON.
 * <xref:System.Text.Json>Interfejsy API do serializacji grafów obiektów do formatu JSON.
 
 ## <a name="dangerous-alternatives"></a>Niebezpieczne alternatywy
@@ -87,7 +87,6 @@ __Rozważmy aplikację przenoszącą się z modelu instalacji klasycznej do mode
 ## <a name="further-resources"></a>Dalsze zasoby
 
 * [YSoSerial.NET](https://github.com/pwntester/ysoserial.net) na to, w jaki sposób aplikacje atakujące źródłami ataków korzystają z programu `BinaryFormatter` .
-* [Modelowanie zagrożeń](/securityengineering/sdl/threatmodeling) na potrzeby informacji dotyczących aplikacji i usług modelowania zagrożeń.
 * Ogólne w przypadku luk deserializacji:
   * [OWASP 10-A8:2017 — niezabezpieczona deserializacja](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A8-Insecure_Deserialization)
   * [CWE-502: deserializacja niezaufanych danych](https://cwe.mitre.org/data/definitions/502.html)

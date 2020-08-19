@@ -1,25 +1,24 @@
 ---
 title: Zgodność wersji w .NET Framework
 description: Informacje o zgodności między wersjami .NET Framework, w tym zgodność z poprzednimi wersjami i wykonywanie równoczesne.
-ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - .NET Framework, version compatibility
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: dfdc5a977b69af8aa3a0d33ed8b833745cf6bf11
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 92cfdc1a2a530f9790a693d0aa1ca5f65ff1af9f
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475505"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558767"
 ---
 # <a name="version-compatibility"></a>Zgodność wersji
 
 Zgodność z poprzednimi wersjami oznacza, że aplikacja opracowana dla konkretnej wersji platformy będzie działać w nowszych wersjach tej platformy. .NET Framework próbuje zmaksymalizować zgodność z poprzednimi wersjami: kod źródłowy zapisany dla jednej wersji .NET Framework powinien zostać skompilowany w nowszych wersjach .NET Framework, a pliki binarne, które działają w jednej wersji .NET Framework, powinny zachowywać się identycznie w nowszych wersjach .NET Framework.
 
-## <a name="version-compatibility-for-apps"></a><a name="Apps"></a>Zgodność wersji aplikacji
+## <a name="version-compatibility-for-apps"></a><a name="Apps"></a> Zgodność wersji aplikacji
 
 Domyślnie aplikacja jest uruchamiana w wersji .NET Framework, dla której została skompilowana. Jeśli ta wersja nie jest obecna, a plik konfiguracji aplikacji nie definiuje obsługiwanych wersji, może wystąpić błąd inicjalizacji .NET Framework. W takim przypadku próba uruchomienia aplikacji nie powiedzie się.
 
@@ -68,7 +67,7 @@ Jeśli aplikacja lub składnik nie działa zgodnie z oczekiwaniami w .NET Framew
 
 Jeśli nie możesz znaleźć odpowiedniego obejścia problemu, pamiętaj, że .NET Framework 4,5 (lub jeden z jego wydań punktów) działa równolegle z wersjami 1,1, 2,0 i 3,5, i jest aktualizacją w miejscu, która zastępuje wersję 4. W przypadku aplikacji przeznaczonych dla wersji 1,1, 2,0 i 3,5 można zainstalować odpowiednią wersję .NET Framework na komputerze docelowym, aby uruchomić aplikację w jej najlepszym środowisku. Aby uzyskać więcej informacji na temat wykonywania równoczesnego, zobacz [Wykonywanie równoczesne](../deployment/side-by-side-execution.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Co nowego](../whats-new/index.md)
 - [Przestarzałe elementy w ułatwieniach dostępu](../whats-new/whats-obsolete.md)
