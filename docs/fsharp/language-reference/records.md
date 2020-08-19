@@ -1,13 +1,13 @@
 ---
 title: Rekordy
-description: Dowiedz F# się, jak rekordy reprezentują proste Agregowanie wartości nazwanych, opcjonalnie z elementami członkowskimi.
-ms.date: 06/09/2019
-ms.openlocfilehash: 874c5fa30a36f2778f7a43266316deb8c59d1d72
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+description: 'Dowiedz się, w jaki sposób rekordy F # reprezentują proste agregowanie nazwanych wartości, opcjonalnie z elementami członkowskimi.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 182b2e83c3940c866197052af102787a96e49c54
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216787"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559053"
 ---
 # <a name="records"></a>Rekordy
 
@@ -26,7 +26,7 @@ type [accessibility-modifier] typename =
 
 ## <a name="remarks"></a>Uwagi
 
-W poprzedniej składni, *TypeName* jest nazwą typu rekordu, *Label1* i *etykiety 2* są nazwami wartości, zwanymi *etykietami*, a *Type1* i *Type2* są typami tych wartości. *Lista elementów członkowskich* jest opcjonalną listą elementów członkowskich typu.  Możesz użyć atrybutu, `[<Struct>]` aby utworzyć rekord struktury, a nie rekord, który jest typem referencyjnym.
+W poprzedniej składni, *TypeName* jest nazwą typu rekordu, *Label1* i *etykiety 2* są nazwami wartości, zwanymi *etykietami*, a *Type1* i *Type2* są typami tych wartości. *Lista elementów członkowskich* jest opcjonalną listą elementów członkowskich typu.  Możesz użyć atrybutu, `[<Struct>]` Aby utworzyć rekord struktury, a nie rekord, który jest typem referencyjnym.
 
 Poniżej przedstawiono kilka przykładów.
 
@@ -34,7 +34,7 @@ Poniżej przedstawiono kilka przykładów.
 
 Gdy każda etykieta znajduje się w osobnym wierszu, średnik jest opcjonalny.
 
-Można ustawić wartości w wyrażeniach nazywanych *wyrażeniami rekordów*. Kompilator wnioskuje typ z użytych etykiet (Jeśli etykiety są wystarczająco odrębne od tych z innych typów rekordów). Nawiasy klamrowe ({}) otaczają wyrażenie rekordu. Poniższy kod przedstawia wyrażenie rekordu, które inicjuje rekord z trzema elementami zmiennoprzecinkowymi z `x`etykietami `y` i `z`.
+Można ustawić wartości w wyrażeniach nazywanych *wyrażeniami rekordów*. Kompilator wnioskuje typ z użytych etykiet (Jeśli etykiety są wystarczająco odrębne od tych z innych typów rekordów). Nawiasy klamrowe ({}) otaczają wyrażenie rekordu. Poniższy kod przedstawia wyrażenie rekordu, które inicjuje rekord z trzema elementami zmiennoprzecinkowymi z etykietami `x` `y` i `z` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
 
@@ -42,7 +42,7 @@ Nie używaj skróconej formy, jeśli może istnieć inny typ, który ma równie�
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
 
-Etykiety ostatnio zadeklarowanego typu mają pierwszeństwo przed poprzednimi zadeklarowanymi typem, więc w poprzednim przykładzie `mypoint3D` jest wywnioskowane. `Point3D` Można jawnie określić typ rekordu, jak w poniższym kodzie.
+Etykiety ostatnio zadeklarowanego typu mają pierwszeństwo przed poprzednimi zadeklarowanymi typem, więc w poprzednim przykładzie `mypoint3D` jest wywnioskowane `Point3D` . Można jawnie określić typ rekordu, jak w poniższym kodzie.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
 
@@ -94,9 +94,9 @@ let rr3 = { defaultRecord1 with Field2 = 42 }
 
 Czasami podczas tworzenia rekordu można zależeć od innego typu, który ma zostać zdefiniowany później. Jest to błąd kompilacji, chyba że zostanie zdefiniowany typ rekordu, który ma być wzajemnie cykliczne.
 
-Definiowanie wzajemnie cyklicznych rekordów odbywa się za `and` pomocą słowa kluczowego. Dzięki temu można połączyć 2 lub więcej typów rekordów jednocześnie.
+Definiowanie wzajemnie cyklicznych rekordów odbywa się za pomocą `and` słowa kluczowego. Dzięki temu można połączyć 2 lub więcej typów rekordów jednocześnie.
 
-Na przykład poniższy kod definiuje `Person` a i `Address` typ jako wzajemnie cyklicznie:
+Na przykład poniższy kod definiuje a `Person` i `Address` Typ jako wzajemnie cyklicznie:
 
 ```fsharp
 // Create a Person type and use the Address type that is not defined
@@ -112,7 +112,7 @@ and Address =
     Occupant: Person }
 ```
 
-Jeśli zdefiniowano poprzedni przykład bez `and` słowa kluczowego, nie zostanie on skompilowany. `and` Słowo kluczowe jest wymagane dla wzajemnie cyklicznych definicji.
+Jeśli zdefiniowano poprzedni przykład bez `and` słowa kluczowego, nie zostanie on skompilowany. `and`Słowo kluczowe jest wymagane dla wzajemnie cyklicznych definicji.
 
 ## <a name="pattern-matching-with-records"></a>Dopasowanie wzorca z rekordami
 
@@ -126,6 +126,39 @@ Dane wyjściowe tego kodu są następujące.
 Point is at the origin.
 Point is on the x-axis. Value is 100.000000.
 Point is at (10.000000, 0.000000, -1.000000).
+```
+
+## <a name="records-and-members"></a>Rekordy i elementy członkowskie
+
+Możesz określić elementy członkowskie dla rekordów, tak jak w przypadku klas. Nie ma obsługi dla pól. Typowym podejściem jest zdefiniowanie `Default` statycznej składowej w celu łatwego konstruowania rekordów:
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    static member Default =
+        { Name = "Phillip"
+          Age = 12
+          Address = "123 happy fun street" }
+
+let defaultPerson = Person.Default
+```
+
+Jeśli używasz samego identyfikatora, identyfikator ten odnosi się do wystąpienia rekordu, którego Członek jest wywoływany:
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    member this.WeirdToString() =
+        this.Name + this.Address + string this.Age
+
+let p = { Name = "a"; Age = 12; Address = "abc123 }
+let weirdString = p.WeirdToString()
 ```
 
 ## <a name="differences-between-records-and-classes"></a>Różnice między rekordami i klasami
@@ -146,10 +179,10 @@ Jeśli piszesz ten sam kod z klasami, obiekty obu klas byłyby nierówne, poniew
 
 Jeśli potrzebujesz równości odwołań dla rekordów, Dodaj atrybut `[<ReferenceEquality>]` powyżej rekordu.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Typy F#](fsharp-types.md)
 - [Klasy](classes.md)
-- [Dokumentacja języka F#](index.md)
+- [Dokumentacja języka F #](index.md)
 - [Odwołanie — równość](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
-- [Dopasowanie do wzorca](pattern-matching.md)
+- [Dopasowanie wzorca](pattern-matching.md)

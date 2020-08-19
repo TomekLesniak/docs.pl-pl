@@ -1,13 +1,13 @@
 ---
 title: Opcje interaktywne
 description: Dowiedz się więcej na temat opcji wiersza polecenia obsługiwanych przez F# Interactive, fsi.exe.
-ms.date: 07/22/2020
-ms.openlocfilehash: abddd1fd990be18ede139ab26ffe80513ba6e0dd
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855351"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558611"
 ---
 # <a name="f-interactive-options"></a>Opcje F# Interactive
 
@@ -44,7 +44,7 @@ Gdy listy pojawiają się w F# Interactive argumenty opcji, elementy listy są o
 |**--GUI**[ **+**&#124;**-** ]|Włącza lub wyłącza pętlę zdarzeń Windows Forms. Wartość domyślna jest włączona.|
 |**--Pomoc**<br /><br />**-?**|Służy do wyświetlania składni wiersza polecenia i krótkiego opisu każdej opcji.|
 |**--lib: &lt; Lista folderów&gt;**<br /><br />**-I: &lt; Lista folderów&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
-|**--Load: &lt; filename&gt;**|Kompiluje dany kod źródłowy przy uruchamianiu i ładuje skompilowane konstrukcje F # do sesji. Jeśli źródło docelowe zawiera dyrektywy skryptów, takie jak **#use** lub **#load**, należy użyć polecenia **--use** lub **#use** zamiast **--Load** lub **#load**.|
+|**--Load: &lt; filename&gt;**|Kompiluje dany kod źródłowy przy uruchamianiu i ładuje skompilowane konstrukcje F # do sesji.|
 |**--mlcompatibility**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
 |**--noframework**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md)|
 |**--nologo**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
@@ -97,7 +97,7 @@ fsi.ShowIEnumerable <- false // Control whether sequence values are expanded by 
 fsi.ShowDeclarationValues <- false // Control whether values are shown for declaration outputs
 ```
 
-### <a name="customize-with-addprinter-and-addprinttransformer"></a>Dostosuj przy użyciu programu `AddPrinter` i`AddPrintTransformer`
+### <a name="customize-with-addprinter-and-addprinttransformer"></a>Dostosuj przy użyciu programu `AddPrinter` i `AddPrintTransformer`
 
 Drukowanie w danych wyjściowych F# Interactive można dostosować za pomocą `fsi.AddPrinter` i `fsi.AddPrintTransformer` .
 Pierwsza funkcja daje tekst, aby zastąpić drukowanie obiektu. Druga funkcja zwraca obiekt surogatu do wyświetlenia. Rozważmy na przykład następujący kod F #:
@@ -126,7 +126,7 @@ val newYearsDay1999 : DateAndLabel = { Date = 1999-01-01T00:00:00
                                        Label = "New Year" }
 ```
 
-`fsi.AddPrintTransformer`może służyć do nadawania obiektu zastępczego do drukowania:
+`fsi.AddPrintTransformer` może służyć do nadawania obiektu zastępczego do drukowania:
 
 ```fsharp
 type MyList(values: int list) =

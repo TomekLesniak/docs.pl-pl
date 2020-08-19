@@ -1,25 +1,25 @@
 ---
 title: Wycinki
-description: Dowiedz się, jak używać wycinków dla istniejących F# typów danych i jak definiować własne wycinki dla innych typów danych.
+description: 'Dowiedz się, jak używać wycinków dla istniejących typów danych F # i jak definiować własne wycinki dla innych typów danych.'
 ms.date: 12/23/2019
-ms.openlocfilehash: 928005f2c63ffe099bb64e11ed29bb625e0a54c6
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: d3ddb2c247c36a85842f565f051372c5f2c9a9e9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980382"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559014"
 ---
 # <a name="slices"></a>Wycinki
 
-W F#programie wycinek jest podzbiorem dowolnego typu danych, który ma metodę `GetSlice` w jej definicji lub w [rozszerzeniu typu](type-extensions.md)w zakresie. Jest najczęściej używany z F# tablicami i listami. W tym artykule wyjaśniono, jak korzystać z F# wycinków z istniejących typów i jak definiować własne wycinki.
+W języku F # wycinek jest podzbiorem dowolnego typu danych, który ma `GetSlice` metodę w definicji lub w [rozszerzeniu typu](type-extensions.md)w zakresie. Jest najczęściej używany z tablicami i listami języka F #. W tym artykule wyjaśniono, jak korzystać z wycinków z istniejących typów języka F # i jak definiować własne wycinki.
 
 Wycinki są podobne do [indeksatorów](./members/indexed-properties.md), ale zamiast zwracać jedną wartość z bazowej struktury danych, uzyskują wiele z nich.
 
-F#obecnie ma wewnętrzną obsługę ciągów wycinków, list, tablic i tablic 2D.
+W języku F # jest obecnie obsługiwana wewnętrzna obsługa ciągów, list, tablic i tablic 2D.
 
-## <a name="basic-slicing-with-f-lists-and-arrays"></a>Podstawowe cięcie z F# listami i tablicami
+## <a name="basic-slicing-with-f-lists-and-arrays"></a>Podstawowe cięcie z listami i tablicami języka F #
 
-Najpopularniejsze typy danych, które są pofragmentowane, F# to listy i tablice. Poniższy przykład ilustruje, jak to zrobić za pomocą list:
+Najpopularniejsze typy danych, które są pofragmentowane, to listy i tablice języka F #. Poniższy przykład ilustruje, jak to zrobić za pomocą list:
 
 ```fsharp
 // Generate a list of 100 integers
@@ -59,7 +59,7 @@ printfn "Unbounded end slice: %A" unboundedEnd
 
 ## <a name="slicing-multidimensional-arrays"></a>Dzielenie tablic wielowymiarowych
 
-F#obsługuje tablice wielowymiarowe w bibliotece F# podstawowej. Podobnie jak w przypadku tablic jednowymiarowych, wycinki tablic wielowymiarowych mogą być również użyteczne. Jednak wprowadzenie dodatkowych wymiarów zezwala na nieznacznie inną składnię, dzięki czemu można przyjmować plasterki określonych wierszy i kolumn.
+Język F # obsługuje tablice wielowymiarowe w podstawowej bibliotece języka F #. Podobnie jak w przypadku tablic jednowymiarowych, wycinki tablic wielowymiarowych mogą być również użyteczne. Jednak wprowadzenie dodatkowych wymiarów zezwala na nieznacznie inną składnię, dzięki czemu można przyjmować plasterki określonych wierszy i kolumn.
 
 W poniższych przykładach pokazano, jak wydzielić tablicę 2D:
 
@@ -89,13 +89,13 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-Biblioteka F# podstawowa nie definiuje obecnie `GetSlice` dla tablic 3W. Jeśli chcesz wydzielić tablice 3D lub inne tablice o większej liczbie wymiarów, zdefiniuj `GetSlice` członka.
+Biblioteka podstawowa F # nie definiuje obecnie `GetSlice` dla tablic 3W. Jeśli chcesz wycinków macierzy 3D lub innych tablic o większej liczbie wymiarów, zdefiniuj `GetSlice` element członkowski samodzielnie.
 
 ## <a name="defining-slices-for-other-data-structures"></a>Definiowanie wycinków dla innych struktur danych
 
-Biblioteka F# podstawowa definiuje wycinki dla ograniczonego zestawu typów. Jeśli chcesz zdefiniować wycinki dla większej liczby typów danych, możesz to zrobić w samej definicji typu lub w rozszerzeniu typu.
+Biblioteka podstawowa F # definiuje wycinki dla ograniczonego zestawu typów. Jeśli chcesz zdefiniować wycinki dla większej liczby typów danych, możesz to zrobić w samej definicji typu lub w rozszerzeniu typu.
 
-Na przykład poniżej przedstawiono sposób definiowania wycinków dla klasy <xref:System.ArraySegment%601>, aby umożliwić manipulowanie danymi:
+Na przykład poniżej przedstawiono sposób definiowania wycinków klasy umożliwiającej <xref:System.ArraySegment%601> wygodne manipulowanie danymi:
 
 ```fsharp
 open System
@@ -110,23 +110,19 @@ let arr = ArraySegment [| 1 .. 10 |]
 let slice = arr.[2..5] //[ 3; 4; 5]
 ```
 
-### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a>Użyj funkcji tworzenia konspektu, aby uniknąć pakowania, jeśli jest to konieczne
-
-W przypadku definiowania wycinków dla typu, który jest w rzeczywistości strukturą zaleca się `inline` członkiem `GetSlice`. F# Kompilator optymalizuje argumenty opcjonalne, unikając wszelkich alokacji sterty w wyniku wycinka. Jest to istotne znaczenie dla konstrukcji wycinków, takich jak <xref:System.Span%601>, których nie można przydzielić na stercie.
+Inny przykład użycia <xref:System.Span%601> typów i <xref:System.ReadOnlySpan%601> :
 
 ```fsharp
 open System
 
 type ReadOnlySpan<'T> with
-    // Note the 'inline' in the member definition
-    member inline sp.GetSlice(startIdx, endIdx) =
+    member sp.GetSlice(startIdx, endIdx) =
         let s = defaultArg startIdx 0
         let e = defaultArg endIdx sp.Length
         sp.Slice(s, e - s)
 
 type Span<'T> with
-    // Note the 'inline' in the member definition
-    member inline sp.GetSlice(startIdx, endIdx) =
+    member sp.GetSlice(startIdx, endIdx) =
         let s = defaultArg startIdx 0
         let e = defaultArg endIdx sp.Length
         sp.Slice(s, e - s)
@@ -142,9 +138,9 @@ printSpan sp.[0..3] // [|1; 2; 3|]
 printSpan sp.[1..3] // |2; 3|]
 ```
 
-## <a name="built-in-f-slices-are-end-inclusive"></a>F# Wycinki wbudowane są gotowe do końca
+## <a name="built-in-f-slices-are-end-inclusive"></a>Wbudowane wycinki języka F # to wszystko końcowe
 
-Wszystkie wycinki wewnętrzne F# w programie są końcami włącznie; oznacza to, że górna granica jest uwzględniona w wycinku. Dla danego wycinka z indeksem początkowym `x` i końcowe `y`indeksu, powstający wycink będzie zawierać wartość *Yth* .
+Wszystkie wycinki wewnętrzne w języku F # są końcowe włącznie; oznacza to, że górna granica jest uwzględniona w wycinku. Dla danego wycinka z indeksem początkowym `x` i końcowym indeksem `y` , powstający wycink będzie zawierać wartość *Yth* .
 
 ```fsharp
 // Define a new list
@@ -153,6 +149,6 @@ let xs = [1 .. 10]
 printfn "%A" xs.[2..5] // Includes the 5th index
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Właściwości indeksowane](./members/indexed-properties.md)

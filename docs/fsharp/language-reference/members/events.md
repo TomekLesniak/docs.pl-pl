@@ -1,20 +1,17 @@
 ---
 title: Zdarzenia
 description: 'Dowiedz się, jak zdarzenia języka F # umożliwiają kojarzenie wywołań funkcji z akcjami użytkownika, które są ważne w programowaniu graficznego interfejsu użytkownika.'
-ms.date: 05/16/2016
-ms.openlocfilehash: 682686ba58d0f7a56e7da2585e6507ccd0156a44
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 42783255412d56c6ff6729694c31d0868ed99633
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854935"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559196"
 ---
 # <a name="events"></a>Zdarzenia
 
 Zdarzenia umożliwiają kojarzenie wywołań funkcji z akcjami użytkownika i są ważne w programowaniu graficznych interfejsów użytkownika. Zdarzenia mogą być też wywoływane przez aplikacje lub system operacyjny.
-
-> [!NOTE]
-> Dokumentacja interfejsu API docs.microsoft.com dla języka F # nie została ukończona. Jeśli wystąpią jakieś przerwane linki, należy odwołać się do [dokumentacji podstawowej biblioteki języka F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="handling-events"></a>Obsługa zdarzeń
 
@@ -28,9 +25,9 @@ Typ `Add` metody to `('a -> unit) -> unit` . W związku z tym metoda obsługi zd
 
 ## <a name="creating-custom-events"></a>Tworzenie zdarzeń niestandardowych
 
-Zdarzenia języka f # są reprezentowane przez klasę [zdarzeń](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) f #, która implementuje interfejs [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) . `IEvent`jest samym interfejsem, który łączy funkcje dwóch innych interfejsów `System.IObservable<'T>` i [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). W związku z tym program `Event` s ma równoważne funkcje delegatów w innych językach oraz dodatkowe funkcje od `IObservable` , co oznacza, że zdarzenia języka f # obsługują filtrowanie zdarzeń oraz funkcje pierwszej klasy języka f # i wyrażenia lambda jako programy obsługi zdarzeń. Ta funkcja jest dostępna w [module Event](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
+Zdarzenia języka f # są reprezentowane przez typ [zdarzenia](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-1.html) języka f #, który implementuje interfejs [IEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html) . `IEvent` jest samym interfejsem, który łączy funkcje dwóch innych interfejsów `System.IObservable<'T>` i [IDelegateEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-idelegateevent-1.html). W związku z tym program `Event` s ma równoważne funkcje delegatów w innych językach oraz dodatkowe funkcje od `IObservable` , co oznacza, że zdarzenia języka f # obsługują filtrowanie zdarzeń oraz funkcje pierwszej klasy języka f # i wyrażenia lambda jako programy obsługi zdarzeń. Ta funkcja jest dostępna w [module Event](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-eventmodule.html).
 
-Aby utworzyć zdarzenie na klasie, która działa podobnie jak wszystkie inne zdarzenia .NET Framework, Dodaj do klasy `let` powiązanie, które definiuje `Event` jako pole w klasie. Odpowiedni typ argumentu zdarzenia można określić jako argument typu, ale można też pozostawić ten typu pusty, co spowoduje, że kompilator wywnioskuje odpowiedni typ. Należy także zdefiniować element członkowski zdarzenia, który będzie uwidaczniał zdarzenie jako zdarzenie CLI. Ten element członkowski powinien mieć atrybut [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) . Jest on zadeklarowany jako właściwość, a jego implementacja jest tylko wywołaniem właściwości [Publish](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) zdarzenia. Użytkownicy klasy mogą korzystać z `Add` metody opublikowanego zdarzenia w celu dodania procedury obsługi. Argument `Add` metody może być wyrażeniem lambda. Możesz użyć `Trigger` właściwości zdarzenia, aby zgłosić zdarzenie, przekazując argumenty do funkcji obsługi. Pokazano to w poniższym przykładzie kodu. W tym przykładzie wywnioskowany argument typu dla zdarzenia to spójna kolekcja, która reprezentuje argumenty wyrażenia lambda.
+Aby utworzyć zdarzenie na klasie, która działa podobnie jak wszystkie inne zdarzenia .NET Framework, Dodaj do klasy `let` powiązanie, które definiuje `Event` jako pole w klasie. Odpowiedni typ argumentu zdarzenia można określić jako argument typu, ale można też pozostawić ten typu pusty, co spowoduje, że kompilator wywnioskuje odpowiedni typ. Należy także zdefiniować element członkowski zdarzenia, który będzie uwidaczniał zdarzenie jako zdarzenie CLI. Ten element członkowski powinien mieć atrybut [CLIEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-clieventattribute.html) . Jest on zadeklarowany jako właściwość, a jego implementacja jest tylko wywołaniem właściwości [Publish](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-1.html#Publish) zdarzenia. Użytkownicy klasy mogą korzystać z `Add` metody opublikowanego zdarzenia w celu dodania procedury obsługi. Argument `Add` metody może być wyrażeniem lambda. Możesz użyć `Trigger` właściwości zdarzenia, aby zgłosić zdarzenie, przekazując argumenty do funkcji obsługi. Pokazano to w poniższym przykładzie kodu. W tym przykładzie wywnioskowany argument typu dla zdarzenia to spójna kolekcja, która reprezentuje argumenty wyrażenia lambda.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3605.fs)]
 
@@ -53,13 +50,13 @@ Given a value: Event occurred.
 
 ## <a name="processing-event-streams"></a>Przetwarzanie strumieni zdarzeń
 
-Zamiast tylko dodać procedurę obsługi zdarzeń dla zdarzenia przy użyciu funkcji [Event. Add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) , można użyć funkcji w `Event` module do przetwarzania strumieni zdarzeń w sposób wysoce dostosowany. W tym celu należy użyć potoku do przodu ( `|>` ) wraz ze zdarzeniem jako pierwszą wartością w szeregu wywołań funkcji, a `Event` moduł działa jako kolejne wywołania funkcji.
+Zamiast tylko dodać procedurę obsługi zdarzeń dla zdarzenia przy użyciu funkcji [Event. Add](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-eventmodule.html#add) , można użyć funkcji w `Event` module do przetwarzania strumieni zdarzeń w sposób wysoce dostosowany. W tym celu należy użyć potoku do przodu ( `|>` ) wraz ze zdarzeniem jako pierwszą wartością w szeregu wywołań funkcji, a `Event` moduł działa jako kolejne wywołania funkcji.
 
 W poniższym przykładzie kodu pokazano, jak skonfigurować zdarzenie, dla którego program obsługi jest wywoływany tylko w określonych warunkach.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3604.fs)]
 
-[Moduł zauważalny](https://msdn.microsoft.com/library/16b8610b-b30a-4df7-aa99-d9d352276227) zawiera podobne funkcje, które działają na obiektach zauważalnych. Widoczne obiekty są podobne do zdarzeń, ale aktywnie subskrybują zdarzenia tylko wtedy, gdy same są subskrybowane.
+[Moduł zauważalny](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-observablemodule.html) zawiera podobne funkcje, które działają na obiektach zauważalnych. Widoczne obiekty są podobne do zdarzeń, ale aktywnie subskrybują zdarzenia tylko wtedy, gdy same są subskrybowane.
 
 ## <a name="implementing-an-interface-event"></a>Implementowanie zdarzenia interfejsu
 
@@ -174,11 +171,8 @@ let appForm = new AppForm()
 Application.Run(appForm)
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Elementy członkowskie](index.md)
 - [Obsługa i wywoływanie zdarzeń](../../../standard/events/index.md)
 - [Wyrażenia lambda: `fun` słowo kluczowe](../functions/lambda-expressions-the-fun-keyword.md)
-- [Control. Event — Moduł](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
-- [Control. Event —&#60;&#62; Klasa](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
-- [Control. Event&#60; "delegat," args&#62; Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

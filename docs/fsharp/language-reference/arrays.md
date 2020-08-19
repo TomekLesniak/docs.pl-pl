@@ -1,20 +1,17 @@
 ---
 title: Tablice
 description: 'Dowiedz się, jak tworzyć i używać tablic w języku programowania F #.'
-ms.date: 05/16/2016
-ms.openlocfilehash: f95ca3274e098fda044973a48205cb591ec30b27
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/13/2020
+ms.openlocfilehash: 93d524046ff93a7f1b04e72d580d9d0e1360ba0b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855611"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558884"
 ---
 # <a name="arrays"></a>Tablice
 
 Tablice są stałymi, niemodyfikowalnymi kolekcjami kolejnych elementów danych, które są tego samego typu.
-
-> [!NOTE]
-> Dokumentacja interfejsu API docs.microsoft.com dla języka F # nie została ukończona. Jeśli wystąpią jakieś przerwane linki, należy odwołać się do [dokumentacji podstawowej biblioteki języka F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="create-arrays"></a>Tworzenie tablic
 
@@ -59,11 +56,11 @@ Gdy jest używana notacja wycinka, tworzona jest nowa kopia tablicy.
 
 Typ wszystkich tablic F # to typ .NET Framework <xref:System.Array?displayProperty=nameWithType> . W związku z tym tablice języka F # obsługują wszystkie funkcje dostępne w programie <xref:System.Array?displayProperty=nameWithType> .
 
-Moduł biblioteki [`Microsoft.FSharp.Collections.Array`](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1) obsługuje operacje na tablicach jednowymiarowych. Moduły `Array2D` , `Array3D` i `Array4D` zawierają funkcje, które obsługują operacje na tablicach odpowiednio dwa, trzy i cztery wymiary. Można utworzyć tablice rangi większe niż cztery przy użyciu <xref:System.Array?displayProperty=nameWithType> .
+[ `Array` Moduł](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html) obsługuje operacje w tablicach jednowymiarowych. Moduły `Array2D` , `Array3D` i `Array4D` zawierają funkcje, które obsługują operacje na tablicach odpowiednio dwa, trzy i cztery wymiary. Można utworzyć tablice rangi większe niż cztery przy użyciu <xref:System.Array?displayProperty=nameWithType> .
 
 ### <a name="simple-functions"></a>Proste funkcje
 
-[`Array.get`](https://msdn.microsoft.com/library/dd93e85d-7e80-4d76-8de0-b6d45bcf07bc)Pobiera element. [`Array.length`](https://msdn.microsoft.com/library/0d775b6a-4a8f-4bd1-83e5-843b3251725f)podaje długość tablicy. [`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)Ustawia element na określoną wartość. Poniższy przykład kodu ilustruje sposób korzystania z tych funkcji.
+[`Array.get`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#get) Pobiera element. [`Array.length`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#length) podaje długość tablicy. [`Array.set`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#set) Ustawia element na określoną wartość. Poniższy przykład kodu ilustruje sposób korzystania z tych funkcji.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet9.fs)]
 
@@ -75,7 +72,7 @@ Dane wyjściowe są następujące:
 
 ### <a name="functions-that-create-arrays"></a>Funkcje tworzące tablice
 
-Kilka funkcji tworzy tablice bez konieczności stosowania istniejącej tablicy. [`Array.empty`](https://msdn.microsoft.com/library/c3694b92-1c16-4c54-9bf2-fe398fadce32)tworzy nową tablicę, która nie zawiera żadnych elementów. [`Array.create`](https://msdn.microsoft.com/library/e848c8d6-1142-4080-9727-8dacc26066be)Tworzy tablicę o określonym rozmiarze i ustawia wszystkie elementy na dostarczone wartości. [`Array.init`](https://msdn.microsoft.com/library/ee898089-63b0-40aa-910c-5ae7e32f6665)Tworzy tablicę z uwzględnieniem wymiaru i funkcji w celu wygenerowania elementów. [`Array.zeroCreate`](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2)Tworzy tablicę, w której wszystkie elementy są inicjowane jako wartość zerowa dla typu tablicy. Poniższy kod ilustruje te funkcje.
+Kilka funkcji tworzy tablice bez konieczności stosowania istniejącej tablicy. [`Array.empty`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#empty) tworzy nową tablicę, która nie zawiera żadnych elementów. [`Array.create`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#create) Tworzy tablicę o określonym rozmiarze i ustawia wszystkie elementy na dostarczone wartości. [`Array.init`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#init) Tworzy tablicę z uwzględnieniem wymiaru i funkcji w celu wygenerowania elementów. [`Array.zeroCreate`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#zeroCreate) Tworzy tablicę, w której wszystkie elementy są inicjowane jako wartość zerowa dla typu tablicy. Poniższy kod ilustruje te funkcje.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet91.fs)]
 
@@ -87,7 +84,7 @@ Area of floats set to 5.0: [|5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0|]
 Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 ```
 
-[`Array.copy`](https://msdn.microsoft.com/library/9d0202f1-1ea0-475e-9d66-4f8ccc3c5b5f)tworzy nową tablicę zawierającą elementy, które są kopiowane z istniejącej tablicy. Należy pamiętać, że kopia jest kopią skróconą, co oznacza, że jeśli typem elementu jest typ referencyjny, kopiowane jest tylko odwołanie, a nie obiekt źródłowy. Pokazano to w poniższym przykładzie kodu.
+[`Array.copy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#copy) tworzy nową tablicę zawierającą elementy, które są kopiowane z istniejącej tablicy. Należy pamiętać, że kopia jest kopią skróconą, co oznacza, że jeśli typem elementu jest typ referencyjny, kopiowane jest tylko odwołanie, a nie obiekt źródłowy. Pokazano to w poniższym przykładzie kodu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet11.fs)]
 
@@ -100,7 +97,7 @@ Dane wyjściowe powyższego kodu są następujące:
 
 Ciąg `Test1` pojawia się tylko w pierwszej tablicy, ponieważ operacja tworzenia nowego elementu zastępuje odwołanie w, `firstArray` ale nie wpływa na pierwotne odwołanie do pustego ciągu, który nadal występuje w `secondArray` . Ciąg `Test2` pojawia się w obu tablicach `Insert` , ponieważ operacja na <xref:System.Text.StringBuilder?displayProperty=nameWithType> typie ma wpływ na <xref:System.Text.StringBuilder?displayProperty=nameWithType> obiekt źródłowy, do którego odwołuje się obie tablice.
 
-[`Array.sub`](https://msdn.microsoft.com/library/40fb12ba-41d7-4ef0-b33a-56727deeef9d)generuje nową tablicę z podzakresu tablicy. Należy określić Podzakres, podając początkowy indeks i długość. Poniższy kod ilustruje użycie `Array.sub` .
+[`Array.sub`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sub) generuje nową tablicę z podzakresu tablicy. Należy określić Podzakres, podając początkowy indeks i długość. Poniższy kod ilustruje użycie `Array.sub` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet12.fs)]
 
@@ -110,7 +107,7 @@ Dane wyjściowe pokazują, że podtablica zaczyna się od elementu 5 i zawiera 1
 [|5; 6; 7; 8; 9; 10; 11; 12; 13; 14|]
 ```
 
-[`Array.append`](https://msdn.microsoft.com/library/08836310-5036-4474-b9a2-2c73e2293911)tworzy nową tablicę przez połączenie dwóch istniejących tablic.
+[`Array.append`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#append) tworzy nową tablicę przez połączenie dwóch istniejących tablic.
 
 Poniższy kod ilustruje **tablicę Array. Append**.
 
@@ -122,7 +119,7 @@ Dane wyjściowe powyższego kodu są następujące.
 [|1; 2; 3; 4; 5; 6|]
 ```
 
-[`Array.choose`](https://msdn.microsoft.com/library/f5c8a5e2-637f-44d4-b35c-be96a6618b09)wybiera elementy tablicy do uwzględnienia w nowej tablicy. Poniższy kod ilustruje `Array.choose` . Należy zauważyć, że typ elementu tablicy nie musi być zgodny z typem wartości zwracanej w typie opcji. W tym przykładzie typ elementu to `int` i opcja jest wynikiem funkcji wielomianu, `elem*elem - 1` jako liczby zmiennoprzecinkowej.
+[`Array.choose`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#choose) wybiera elementy tablicy do uwzględnienia w nowej tablicy. Poniższy kod ilustruje `Array.choose` . Należy zauważyć, że typ elementu tablicy nie musi być zgodny z typem wartości zwracanej w typie opcji. W tym przykładzie typ elementu to `int` i opcja jest wynikiem funkcji wielomianu, `elem*elem - 1` jako liczby zmiennoprzecinkowej.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet14.fs)]
 
@@ -132,7 +129,7 @@ Dane wyjściowe powyższego kodu są następujące.
 [|3.0; 15.0; 35.0; 63.0; 99.0|]
 ```
 
-[`Array.collect`](https://msdn.microsoft.com/library/c3b60c3b-9455-48c9-bc2b-e88f0434342a)uruchamia określoną funkcję dla każdego elementu tablicy istniejącej tablicy, a następnie zbiera elementy wygenerowane przez funkcję i łączy je w nową tablicę. Poniższy kod ilustruje `Array.collect` .
+[`Array.collect`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#collect) uruchamia określoną funkcję dla każdego elementu tablicy istniejącej tablicy, a następnie zbiera elementy wygenerowane przez funkcję i łączy je w nową tablicę. Poniższy kod ilustruje `Array.collect` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet15.fs)]
 
@@ -142,7 +139,7 @@ Dane wyjściowe powyższego kodu są następujące.
 [|0; 1; 0; 1; 2; 3; 4; 5; 0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10|]
 ```
 
-[`Array.concat`](https://msdn.microsoft.com/library/f7219b79-1ec8-4a25-96b1-edbedb358302)wykonuje sekwencję tablic i łączy je w jedną tablicę. Poniższy kod ilustruje `Array.concat` .
+[`Array.concat`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#concat) wykonuje sekwencję tablic i łączy je w jedną tablicę. Poniższy kod ilustruje `Array.concat` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet16.fs)]
 
@@ -153,7 +150,7 @@ Dane wyjściowe powyższego kodu są następujące.
 (3, 2, 6); (3, 3, 9)|]
 ```
 
-[`Array.filter`](https://msdn.microsoft.com/library/b885b214-47fc-4639-9664-b8c183a39ede)przyjmuje funkcję warunku logicznego i generuje nową tablicę zawierającą tylko te elementy z tablicy wejściowej, dla których warunek ma wartość true. Poniższy kod ilustruje `Array.filter` .
+[`Array.filter`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#filter) przyjmuje funkcję warunku logicznego i generuje nową tablicę zawierającą tylko te elementy z tablicy wejściowej, dla których warunek ma wartość true. Poniższy kod ilustruje `Array.filter` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet17.fs)]
 
@@ -163,7 +160,7 @@ Dane wyjściowe powyższego kodu są następujące.
 [|2; 4; 6; 8; 10|]
 ```
 
-[`Array.rev`](https://msdn.microsoft.com/library/1bbf822c-763b-4794-af21-97d2e48ef709)generuje nową tablicę przez odwracanie kolejności istniejącej tablicy. Poniższy kod ilustruje `Array.rev` .
+[`Array.rev`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#rev) generuje nową tablicę przez odwracanie kolejności istniejącej tablicy. Poniższy kod ilustruje `Array.rev` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet18.fs)]
 
@@ -185,11 +182,11 @@ Dane wyjściowe to
 
 ### <a name="multidimensional-arrays"></a>Tablice wielowymiarowe
 
-Można utworzyć tablicę wielowymiarową, ale nie ma składni do pisania wielowymiarowego literału tablicy. Użyj operatora, [`array2D`](https://msdn.microsoft.com/library/1d52503d-2990-49fc-8fd3-6b0e508aa236) Aby utworzyć tablicę z sekwencji sekwencji elementów tablicy. Sekwencje mogą być literałami tablicowymi lub listami. Na przykład poniższy kod tworzy tablicę dwuwymiarową.
+Można utworzyć tablicę wielowymiarową, ale nie ma składni do pisania wielowymiarowego literału tablicy. Użyj operatora, [`array2D`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html) Aby utworzyć tablicę z sekwencji sekwencji elementów tablicy. Sekwencje mogą być literałami tablicowymi lub listami. Na przykład poniższy kod tworzy tablicę dwuwymiarową.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet20.fs)]
 
-Można również użyć funkcji, [`Array2D.init`](https://msdn.microsoft.com/library/9de07e95-bc21-4927-b5b4-08fdec882c7b) Aby zainicjować tablice dwóch wymiarów, a podobne funkcje są dostępne dla tablic trzech i czterech wymiarów. Funkcje te przyjmują funkcję, która jest używana do tworzenia elementów. Aby utworzyć dwuwymiarową tablicę, która zawiera elementy ustawione na wartość początkową zamiast określania funkcji, należy użyć [`Array2D.create`](https://msdn.microsoft.com/library/36c9d980-b241-4a20-bc64-bcfa0205d804) funkcji, która jest również dostępna dla tablic do czterech wymiarów. Poniższy przykład kodu najpierw pokazuje, jak utworzyć tablicę tablic zawierających wymagane elementy, a następnie użyć `Array2D.init` do wygenerowania odpowiedniej tablicy dwuwymiarowej.
+Można również użyć funkcji, [`Array2D.init`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html#init) Aby zainicjować tablice dwóch wymiarów, a podobne funkcje są dostępne dla tablic trzech i czterech wymiarów. Funkcje te przyjmują funkcję, która jest używana do tworzenia elementów. Aby utworzyć dwuwymiarową tablicę, która zawiera elementy ustawione na wartość początkową zamiast określania funkcji, należy użyć [`Array2D.create`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html#create) funkcji, która jest również dostępna dla tablic do czterech wymiarów. Poniższy przykład kodu najpierw pokazuje, jak utworzyć tablicę tablic zawierających wymagane elementy, a następnie użyć `Array2D.init` do wygenerowania odpowiedniej tablicy dwuwymiarowej.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet21.fs)]
 
@@ -199,7 +196,7 @@ Składnia indeksowania tablicy i skalowanie wycinków jest obsługiwana w przypa
 
 Typ tablicy dwuwymiarowej jest zapisywana jako `<type>[,]` (na przykład `int[,]` , `double[,]` ), a typ trójwymiarowej tablicy jest zapisywana jako `<type>[,,]` itd. dla tablic o wyższych wymiarach.
 
-Tylko podzestaw funkcji dostępnych dla tablic jednowymiarowych jest również dostępny dla tablic wielowymiarowych. Aby uzyskać więcej informacji, zobacz [`Collections.Array Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array-module-%5bfsharp%5d) ,, [`Collections.Array2D Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array2d-module-%5bfsharp%5d) [`Collections.Array3D Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array3d-module-%5bfsharp%5d) i [`Collections.Array4D Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array4d-module-%5bfsharp%5d) .
+Tylko podzestaw funkcji dostępnych dla tablic jednowymiarowych jest również dostępny dla tablic wielowymiarowych.
 
 ### <a name="array-slicing-and-multidimensional-arrays"></a>Dzielenie tablic i tablice wielowymiarowe
 
@@ -219,7 +216,7 @@ matrix.[*, 1..3]
 matrix.[1..3, 1..3]
 ```
 
-Od F # 3,1 można rozłożyć tablicę wielowymiarową na podtablice tego samego lub niższego wymiaru. Na przykład można uzyskać wektor z macierzy, określając pojedynczy wiersz lub kolumnę.
+Można rozłożyć tablicę wielowymiarową na podtablice tego samego lub niższego wymiaru. Na przykład można uzyskać wektor z macierzy, określając pojedynczy wiersz lub kolumnę.
 
 ```fsharp
 // Get row 3 from a matrix as a vector:
@@ -300,7 +297,7 @@ module test =
 
 ### <a name="boolean-functions-on-arrays"></a>Funkcje logiczne w tablicach
 
-Elementy Functions [`Array.exists`](https://msdn.microsoft.com/library/8e47ad6c-c065-4876-8cb4-ec960ec3e5c9) i [`Array.exists2`](https://msdn.microsoft.com/library/2e384a6a-f99d-4e23-b677-250ffbc1dd8e) test są odpowiednio w jednej lub dwóch tablicach. Te funkcje przyjmują funkcję testową i zwracają, `true` Jeśli istnieje element (lub para elementów dla `Array.exists2` ), który spełnia warunek.
+Elementy Functions [`Array.exists`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#exists) i [`Array.exists2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#exists2) test są odpowiednio w jednej lub dwóch tablicach. Te funkcje przyjmują funkcję testową i zwracają, `true` Jeśli istnieje element (lub para elementów dla `Array.exists2` ), który spełnia warunek.
 
 Poniższy kod ilustruje użycie `Array.exists` i `Array.exists2` . W tych przykładach nowe funkcje są tworzone przez zastosowanie tylko jednego z argumentów, w takich przypadkach, argumentu funkcji.
 
@@ -315,7 +312,7 @@ false
 true
 ```
 
-Podobnie funkcja [`Array.forall`](https://msdn.microsoft.com/library/d88f2cd0-fa7f-45cf-ac15-31eae9086cc4) testuje tablicę, aby określić, czy każdy element spełnia warunek logiczny. Odmiana [`Array.forall2`](https://msdn.microsoft.com/library/c68f61a1-030c-4024-b705-c4768b6c96b9) wykonuje tę samą czynność przy użyciu funkcji logicznej, która obejmuje elementy dwóch tablic o równej długości. Poniższy kod ilustruje sposób korzystania z tych funkcji.
+Podobnie funkcja [`Array.forall`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#forall) testuje tablicę, aby określić, czy każdy element spełnia warunek logiczny. Odmiana [`Array.forall2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#forall2) wykonuje tę samą czynność przy użyciu funkcji logicznej, która obejmuje elementy dwóch tablic o równej długości. Poniższy kod ilustruje sposób korzystania z tych funkcji.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet24.fs)]
 
@@ -330,7 +327,7 @@ false
 
 ### <a name="search-arrays"></a>Wyszukaj tablice
 
-[`Array.find`](https://msdn.microsoft.com/library/db6d920a-de19-4520-85a4-d83de77c1b33)przyjmuje funkcję logiczną i zwraca pierwszy element, dla którego funkcja zwraca `true` , lub wywołuje <xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType> Jeśli nie zostanie znaleziony żaden element, który spełnia warunek. [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f)jest podobne `Array.find` , z tą różnicą, że zwraca indeks elementu zamiast samego elementu.
+[`Array.find`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#find) przyjmuje funkcję logiczną i zwraca pierwszy element, dla którego funkcja zwraca `true` , lub wywołuje <xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType> Jeśli nie zostanie znaleziony żaden element, który spełnia warunek. [`Array.findIndex`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#findIndex) jest podobne `Array.find` , z tą różnicą, że zwraca indeks elementu zamiast samego elementu.
 
 Poniższy kod używa `Array.find` i, `Array.findIndex` Aby zlokalizować liczbę, która jest idealnym kwadratem i idealnym modułem.
 
@@ -342,7 +339,7 @@ Dane wyjściowe są następujące:
 The first element that is both a square and a cube is 64 and its index is 62.
 ```
 
-[`Array.tryFind`](https://msdn.microsoft.com/library/7bd65f6c-df77-454c-ac3a-6f7baecec9d9)jest podobne `Array.find` , z tą różnicą, że jej wynik jest typem opcji i zwraca, `None` Jeśli nie znaleziono żadnego elementu. `Array.tryFind`powinien być używany zamiast `Array.find` gdy nie wiadomo, czy pasujący element znajduje się w tablicy. Podobnie, [`Array.tryFindIndex`](https://msdn.microsoft.com/library/da82f7fe-95e9-4fd5-a924-cd3c9d10618a) jest taka, jak [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f) z tą różnicą, że typ opcji jest wartością zwracaną. Jeśli nie zostanie znaleziony żaden element, opcja jest `None` .
+[`Array.tryFind`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#tryFind) jest podobne `Array.find` , z tą różnicą, że jej wynik jest typem opcji i zwraca, `None` Jeśli nie znaleziono żadnego elementu. `Array.tryFind` powinien być używany zamiast `Array.find` gdy nie wiadomo, czy pasujący element znajduje się w tablicy. Podobnie, [`Array.tryFindIndex`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#tryFindIndex) jest taka, jak `Array.findIndex` z tą różnicą, że typ opcji jest wartością zwracaną. Jeśli nie zostanie znaleziony żaden element, opcja jest `None` .
 
 Poniższy kod ilustruje użycie `Array.tryFind` . Ten kod zależy od poprzedniego kodu.
 
@@ -356,7 +353,7 @@ Found an element: 729
 Failed to find a matching element.
 ```
 
-Użyj, [`Array.tryPick`](https://msdn.microsoft.com/library/72d45f85-037b-43a9-97fd-17239f72713e) gdy chcesz przekształcić element, a także go znaleźć. Wynikiem jest pierwszy element, dla którego funkcja zwraca przekształcony element jako wartość opcji lub `None` Jeśli nie można znaleźć takiego elementu.
+Użyj, [`Array.tryPick`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#tryPick) gdy chcesz przekształcić element, a także go znaleźć. Wynikiem jest pierwszy element, dla którego funkcja zwraca przekształcony element jako wartość opcji lub `None` Jeśli nie można znaleźć takiego elementu.
 
 Poniższy kod ilustruje użycie `Array.tryPick` . W tym przypadku zamiast wyrażenia lambda, kilka lokalnych funkcji pomocniczych jest zdefiniowanych do uproszczenia kodu.
 
@@ -374,23 +371,23 @@ Did not find an element that is both a perfect square and a perfect cube.
 
 ### <a name="perform-computations-on-arrays"></a>Wykonywanie obliczeń w tablicach
 
-[`Array.average`](https://msdn.microsoft.com/library/7029f2b9-91ea-41cb-be1b-466a5a0db20e)Funkcja zwraca średnią każdego elementu w tablicy. Jest ono ograniczone do typów elementów, które obsługują dokładne dzielenie przez liczbę całkowitą, która obejmuje typy zmiennoprzecinkowe, ale nie typy całkowite. [`Array.averageBy`](https://msdn.microsoft.com/library/e9d64609-06a3-48f0-bc07-226ab0f85c54)Funkcja zwraca średnią wyników wywołania funkcji dla każdego elementu. W przypadku tablicy typu całkowitego można użyć `Array.averageBy` funkcji i przekonwertować każdy element na typ zmiennoprzecinkowy obliczenia.
+[`Array.average`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#average)Funkcja zwraca średnią każdego elementu w tablicy. Jest ono ograniczone do typów elementów, które obsługują dokładne dzielenie przez liczbę całkowitą, która obejmuje typy zmiennoprzecinkowe, ale nie typy całkowite. [`Array.averageBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#averageBy)Funkcja zwraca średnią wyników wywołania funkcji dla każdego elementu. W przypadku tablicy typu całkowitego można użyć `Array.averageBy` funkcji i przekonwertować każdy element na typ zmiennoprzecinkowy obliczenia.
 
-Użyj [`Array.max`](https://msdn.microsoft.com/library/f03fbda0-fce6-40e2-a85d-79c9d81f710b) lub, [`Array.min`](https://msdn.microsoft.com/library/d6b3da5f-bac0-4355-9846-4b72d95bc3fd) Aby uzyskać maksimum lub minimum elementu, jeśli jest obsługiwany przez typ elementu. Podobnie [`Array.maxBy`](https://msdn.microsoft.com/library/18dbe7c5-482e-4766-8e01-12a76f847045) i [`Array.minBy`](https://msdn.microsoft.com/library/24091583-be78-4cc9-9fab-de6d7506af4f) Zezwalaj na wykonywanie funkcji jako pierwszej, na przykład w celu przekształcenia do typu, który obsługuje porównanie.
+Użyj [`Array.max`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#max) lub, [`Array.min`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#min) Aby uzyskać maksimum lub minimum elementu, jeśli jest obsługiwany przez typ elementu. Podobnie [`Array.maxBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#maxBy) i [`Array.minBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#minBy) Zezwalaj na wykonywanie funkcji jako pierwszej, na przykład w celu przekształcenia do typu, który obsługuje porównanie.
 
-[`Array.sum`](https://msdn.microsoft.com/library/4ffdb8c8-cd94-4b0b-9e5c-a7c9c17963c2)dodaje elementy tablicy i [`Array.sumBy`](https://msdn.microsoft.com/library/41698ba6-1adc-4169-8cc5-7a0e3f8de56b) wywołuje funkcję dla każdego elementu i dodaje wyniki ze sobą.
+[`Array.sum`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sum) dodaje elementy tablicy i [`Array.sumBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sumBy) wywołuje funkcję dla każdego elementu i dodaje wyniki ze sobą.
 
-Aby wykonać funkcję dla każdego elementu w tablicy bez przechowywania wartości zwracanych, użyj [`Array.iter`](https://msdn.microsoft.com/library/94eba0f1-ecd7-459f-b89f-ed2a2923e516) . Dla funkcji obejmującej dwie tablice o równej długości Użyj [`Array.iter2`](https://msdn.microsoft.com/library/018aa9b9-f186-4142-be8a-a62462794fdc) . Jeśli trzeba również zachować tablicę wyników funkcji, użyj [`Array.map`](https://msdn.microsoft.com/library/38cbe824-0480-47be-85fd-df3afdd97a45) lub [`Array.map2`](https://msdn.microsoft.com/library/bb7aafe8-4a1f-45b9-92fc-1af9eafbea5c) , która działa w dwóch tablicach w danym momencie.
+Aby wykonać funkcję dla każdego elementu w tablicy bez przechowywania wartości zwracanych, użyj [`Array.iter`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iter) . Dla funkcji obejmującej dwie tablice o równej długości Użyj [`Array.iter2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iter2) . Jeśli trzeba również zachować tablicę wyników funkcji, użyj [`Array.map`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#map) lub [`Array.map2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#map2) , która działa w dwóch tablicach w danym momencie.
 
-Różnice [`Array.iteri`](https://msdn.microsoft.com/library/8bbe2ed4-ada7-4906-ac3e-cb09f9db6486) i [`Array.iteri2`](https://msdn.microsoft.com/library/c041b91f-6080-45b7-867b-2ed983a90405) zezwalają na indeks elementu, który ma być uwzględniony w obliczeniach; taka sama wartość dotyczy [`Array.mapi`](https://msdn.microsoft.com/library/f7e45994-b0a1-49e6-8fb5-5641cea8fde4) i [`Array.mapi2`](https://msdn.microsoft.com/library/5edb33d2-47da-44e1-9290-40c00c47d5b0) .
+Różnice [`Array.iteri`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iteri) i [`Array.iteri2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iteri2) zezwalają na indeks elementu, który ma być uwzględniony w obliczeniach; taka sama wartość dotyczy [`Array.mapi`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#mapi) i [`Array.mapi2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#mapi2) .
 
-[`Array.fold`](https://msdn.microsoft.com/library/5ed9dd3b-3694-4567-94d0-fd9a24474e09)Algorytmy Functions,,,, [`Array.foldBack`](https://msdn.microsoft.com/library/1121a453-dead-4711-a0ca-cc147752989c) [`Array.reduce`](https://msdn.microsoft.com/library/fd62a985-89fe-4f49-a9d4-0c808ac6749d) [`Array.reduceBack`](https://msdn.microsoft.com/library/4fdd4cbe-2238-4c5c-b286-597a7e9036f9) [`Array.scan`](https://msdn.microsoft.com/library/f6893608-9146-450d-9ebb-a0016803fbb0) i Execute, [`Array.scanBack`](https://msdn.microsoft.com/library/7610f406-7a5c-41db-a0ca-8e2a2a4826ad) które obejmują wszystkie elementy tablicy. Podobnie, różnice [`Array.fold2`](https://msdn.microsoft.com/library/5c845087-d041-476e-8cc4-53ae6849ef79) i [`Array.foldBack2`](https://msdn.microsoft.com/library/aa51b405-df20-4c51-9998-a6530f7db862) wykonywanie obliczeń na dwóch tablicach.
+[`Array.fold`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold)Algorytmy Functions,,,, [`Array.foldBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#foldBack) [`Array.reduce`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduce) [`Array.reduceBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduceBack) [`Array.scan`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scan) i Execute, [`Array.scanBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scanBack) które obejmują wszystkie elementy tablicy. Podobnie, różnice [`Array.fold2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold2) i [`Array.foldBack2`](foldBack2) wykonywanie obliczeń na dwóch tablicach.
 
-Te funkcje do wykonywania obliczeń odpowiadają funkcjom o tej samej nazwie w [module list](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788). Aby zapoznać się z przykładami użycia, zobacz [listy](lists.md).
+Te funkcje do wykonywania obliczeń odpowiadają funkcjom o tej samej nazwie w [module list](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html). Aby zapoznać się z przykładami użycia, zobacz [listy](lists.md).
 
 ### <a name="modify-arrays"></a>Modyfikuj tablice
 
-[`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)Ustawia element na określoną wartość. [`Array.fill`](https://msdn.microsoft.com/library/c83c9886-81d9-44f9-a195-61c7b87f7df2)ustawia zakres elementów w tablicy do określonej wartości. Poniższy kod zawiera przykład `Array.fill` .
+[`Array.set`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#set) Ustawia element na określoną wartość. [`Array.fill`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fill) ustawia zakres elementów w tablicy do określonej wartości. Poniższy kod zawiera przykład `Array.fill` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet28.fs)]
 
@@ -400,25 +397,25 @@ Dane wyjściowe są następujące:
 [|1; 2; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 23; 24; 25|]
 ```
 
-Można użyć, [`Array.blit`](https://msdn.microsoft.com/library/675e13e4-7fb9-4e0d-a5be-a112830de667) Aby skopiować podsekcję jednej tablicy do innej tablicy.
+Można użyć, [`Array.blit`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#blit) Aby skopiować podsekcję jednej tablicy do innej tablicy.
 
 ### <a name="convert-to-and-from-other-types"></a>Konwertuj na i z innych typów
 
-[`Array.ofList`](https://msdn.microsoft.com/library/e7225239-f561-45a4-b0b5-69a1cdcae78b)Tworzy tablicę z listy. [`Array.ofSeq`](https://msdn.microsoft.com/library/6bedf5e0-4b22-46da-b09c-6aa09eff220c)Tworzy tablicę z sekwencji. [`Array.toList`](https://msdn.microsoft.com/library/4deff724-0be4-4688-92e7-9d67a1097786)i [`Array.toSeq`](https://msdn.microsoft.com/library/ac28dbab-406c-4fe0-ab08-c1ce5e247af4) Konwertuj na inne typy kolekcji z typu tablicy.
+[`Array.ofList`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#ofList) Tworzy tablicę z listy. [`Array.ofSeq`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#ofSeq) Tworzy tablicę z sekwencji. [`Array.toList`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#toList) i [`Array.toSeq`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#toSeq) Konwertuj na inne typy kolekcji z typu tablicy.
 
 ### <a name="sort-arrays"></a>Sortuj tablice
 
-Użyj, [`Array.sort`](https://msdn.microsoft.com/library/c6679075-e7eb-463c-9be5-c89be140c312) Aby posortować tablicę przy użyciu funkcji porównania generycznej. Użyj, [`Array.sortBy`](https://msdn.microsoft.com/library/144498dc-091d-4575-a229-c0bcbd61426b) Aby określić funkcję, która generuje wartość, która jest określana jako *klucz*, aby sortować przy użyciu funkcji porównywania generycznego w kluczu. Użyj, [`Array.sortWith`](https://msdn.microsoft.com/library/699d3638-4244-4f42-8496-45f53d43ce95) Jeśli chcesz podać niestandardową funkcję porównania. `Array.sort`, `Array.sortBy` i `Array.sortWith` wszystkie zwracają posortowaną tablicę jako nową tablicę. Zmiany [`Array.sortInPlace`](https://msdn.microsoft.com/library/36f39947-8a88-4823-9e9b-e9d838d292e0) , [`Array.sortInPlaceBy`](https://msdn.microsoft.com/library/7fb9d2dd-d461-4c67-8b43-b5c59fc12c3f) i [`Array.sortInPlaceWith`](https://msdn.microsoft.com/library/454f9e11-972d-47a6-a854-8031cb0c7b0b) modyfikują istniejącą tablicę zamiast zwracać nowe.
+Użyj, [`Array.sort`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sort) Aby posortować tablicę przy użyciu funkcji porównania generycznej. Użyj, [`Array.sortBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortBy) Aby określić funkcję, która generuje wartość, która jest określana jako *klucz*, aby sortować przy użyciu funkcji porównywania generycznego w kluczu. Użyj, [`Array.sortWith`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortWith) Jeśli chcesz podać niestandardową funkcję porównania. `Array.sort`, `Array.sortBy` i `Array.sortWith` wszystkie zwracają posortowaną tablicę jako nową tablicę. Zmiany [`Array.sortInPlace`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortInPlace) , [`Array.sortInPlaceBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortInPlaceBy) i [`Array.sortInPlaceWith`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortInPlaceWith) modyfikują istniejącą tablicę zamiast zwracać nowe.
 
 ### <a name="arrays-and-tuples"></a>Tablice i krotki
 
-Funkcje [`Array.zip`](https://msdn.microsoft.com/library/23e086b8-b266-4db2-8b68-e88e6a8e2187) i [`Array.unzip`](https://msdn.microsoft.com/library/a529b47c-2e2b-4f79-ad44-c578432d2f48) konwertują tablice par krotek na krotki tablic i na odwrót. [`Array.zip3`](https://msdn.microsoft.com/library/1745744a-d2ca-4c3e-b825-3f15d9f4000d)i [`Array.unzip3`](https://msdn.microsoft.com/library/bc3e6db0-f334-444f-8c30-813942880677) są podobne, z tą różnicą, że współpracują z krotkami trzech elementów lub krotekmi trzech tablic.
+Funkcje [`Array.zip`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#zip) i [`Array.unzip`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#unzip) konwertują tablice par krotek na krotki tablic i na odwrót. [`Array.zip3`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#zip3) i [`Array.unzip3`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#unzip3) są podobne, z tą różnicą, że współpracują z krotkami trzech elementów lub krotekmi trzech tablic.
 
 ## <a name="parallel-computations-on-arrays"></a>Obliczenia równoległe w tablicach
 
-Moduł [`Array.Parallel`](https://msdn.microsoft.com/library/60f30b77-5af4-4050-9a5c-bcdb3f5cbb09) zawiera funkcje do wykonywania obliczeń równoległych w tablicach. Ten moduł nie jest dostępny w aplikacjach przeznaczonych dla wersji .NET Framework wcześniejszych niż wersja 4.
+Moduł [`Array.Parallel`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule-parallel.html) zawiera funkcje do wykonywania obliczeń równoległych w tablicach. Ten moduł nie jest dostępny w aplikacjach przeznaczonych dla wersji .NET Framework wcześniejszych niż wersja 4.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka F #](index.md)
 - [Typy F#](fsharp-types.md)

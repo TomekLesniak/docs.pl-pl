@@ -2,12 +2,12 @@
 title: Wskazówki dotyczące formatowania kodu F#
 description: 'Poznaj wskazówki dotyczące formatowania kodu F #.'
 ms.date: 11/04/2019
-ms.openlocfilehash: a65600a6c685929aef8582e49caded6340fb09e2
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: fe8da6070e1c92bb5205e9cb408b8ac75372b061
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309706"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558312"
 ---
 # <a name="f-code-formatting-guidelines"></a>Wskazówki dotyczące formatowania kodu F#
 
@@ -100,37 +100,51 @@ let myFun (a: decimal) b c = a + b + c
 let myFunBad (a:decimal)(b)c = a + b + c
 ```
 
-### <a name="place-parameters-on-a-new-line-for-long-member-definitions"></a>Umieść parametry w nowym wierszu dla długich definicji elementu członkowskiego
+### <a name="place-parameters-on-a-new-line-for-long-definitions"></a>Umieść parametry w nowym wierszu dla długich definicji
 
-Jeśli masz bardzo długą definicję elementu członkowskiego, umieść parametry w nowych wierszach i Zwiększ wcięcie w celu dopasowania do poziomu wcięcia kolejnego parametru.
+Jeśli masz bardzo długą definicję funkcji, umieść parametry w nowych wierszach i Zwiększ wcięcie w celu dopasowania do poziomu wcięcia kolejnego parametru.
 
 ```fsharp
-type C() =
-    member _.LongMethodWithLotsOfParameters(aVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aSecondVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aThirdVeryLongType: AVeryLongTypeThatYouNeedToUse) =
+module M =
+    let LongFunctionWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                        (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                        (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                        =
         // ... the body of the method follows
 ```
 
-Dotyczy to również konstruktorów:
+Dotyczy to również członków, konstruktorów i parametrów przy użyciu krotek:
 
 ```fsharp
-type C(aVeryLongType: AVeryLongTypeThatYouNeedToUse,
-       aSecondVeryLongType: AVeryLongTypeThatYouNeedToUse,
-       aThirdVeryLongType: AVeryLongTypeThatYouNeedToUse) =
+type TM() =
+    member _.LongMethodWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse) =
+        // ... the body of the method
+
+type TC(aVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse,
+        aSecondVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse,
+        aThirdVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse) =
     // ... the body of the class follows
 ```
 
-Jeśli istnieje jawna adnotacja typu zwracanego, może być na końcu `)` i przed `=` lub w nowym wierszu. Jeśli typ zwracany ma również długą nazwę, ostatni może być lepszy:
+Jeśli parametry są currified lub określono jawną adnotację typu zwracanego, zaleca się umieszczenie `=` znaku w nowym wierszu:
 
 ```fsharp
 type C() =
-    member _.LongMethodWithLotsOfParameters(aVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aSecondVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aThirdVeryLongType: AVeryLongTypeThatYouNeedToUse)
-                                            : AVeryLongReturnType =
-        // ... the body of the method follows
+    member _.LongMethodWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                            : AReturnType =
+        // ... the body of the method
+    member _.LongMethodWithLotsOfCurrifiedParams(aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                                (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                                (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                                =
+        // ... the body of the method
 ```
+
+Jest to sposób, aby uniknąć zbyt długich wierszy (w przypadku zwracany typ może mieć długą nazwę) i mieć mniej uszkodzeń liniowych podczas dodawania parametrów.
 
 ### <a name="type-annotations"></a>Adnotacje typu
 

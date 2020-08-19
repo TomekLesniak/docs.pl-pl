@@ -1,20 +1,17 @@
 ---
 title: Literały
 description: 'Dowiedz się więcej o typach literałów w języku programowania F #.'
-ms.date: 06/28/2019
-ms.openlocfilehash: 98d609a1cf0beb00c0dd4d45ea343aaa2280b62e
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 15f73db3c36f7c60ab1eeba96c63a28ebc6d7f01
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855026"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559157"
 ---
 # <a name="literals"></a>Literały
 
 Ten artykuł zawiera tabelę, w której pokazano, jak określić typ literału w języku F #.
-
-> [!NOTE]
-> Dokumentacja interfejsu API docs.microsoft.com dla języka F # nie została ukończona. Jeśli wystąpią jakieś przerwane linki, należy odwołać się do [dokumentacji podstawowej biblioteki języka F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="literal-types"></a>Typy literałów
 
@@ -34,19 +31,19 @@ W poniższej tabeli przedstawiono typy literałów języka F #. Znaki reprezentu
 |UInt64|niepodpisany 64-bit liczby naturalnej|UL|`86UL`|
 |Single, float32|32-bitowa liczba zmiennoprzecinkowa|F lub f|`4.14F` lub `4.14f`|
 |||wiersza|`0x00000000lf`|
-|float Double|64-bitowa liczba zmiennoprzecinkowa|brak|`4.14`lub `2.3E+32` lub`2.3e+32`|
+|float Double|64-bitowa liczba zmiennoprzecinkowa|brak|`4.14` lub `2.3E+32` lub `2.3e+32`|
 |||WIERSZA|`0x0000000000000000LF`|
 |bigint|Liczba całkowita nieograniczona do 64-bitowej reprezentacji|I|`9999999999999999999999999999I`|
 |decimal|Liczba ułamkowa reprezentowana jako stały punkt lub liczba wymierna|M lub m|`0.7833M` lub `0.7833m`|
 |Char|znak Unicode|brak|`'a'` lub `'\u0061'`|
-|Ciąg|Ciąg Unicode|brak|`"text\n"`<br /><br />lub<br /><br />`@"c:\filename"`<br /><br />lub<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />lub<br /><br />`"string1" + "string2"`<br /><br />Zobacz również [ciągi](Strings.md).|
+|String|Ciąg Unicode|brak|`"text\n"`<br /><br />lub<br /><br />`@"c:\filename"`<br /><br />lub<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />lub<br /><br />`"string1" + "string2"`<br /><br />Zobacz również [ciągi](Strings.md).|
 |byte|Znak ASCII|B|`'a'B`|
 |Byte []|Ciąg ASCII|B|`"text"B`|
-|Ciąg lub Byte []|ciąg Verbatim|@ prefix|`@"\\server\share"`Unicode<br /><br />`@"\\server\share"B`ASCII|
+|Ciąg lub Byte []|ciąg Verbatim|@ prefix|`@"\\server\share"` Unicode<br /><br />`@"\\server\share"B` ASCII|
 
 ## <a name="named-literals"></a>Nazwane literały
 
-Wartości, które mają być stałymi, mogą być oznaczone atrybutem [literału](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285) . Ten atrybut ma wpływ na sposób kompilowania wartości jako stałej.
+Wartości, które mają być stałymi, mogą być oznaczone atrybutem [literału](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-literalattribute.html) . Ten atrybut ma wpływ na sposób kompilowania wartości jako stałej.
 
 W wyrażeniach dopasowania wzorców identyfikatory zaczynające się od małych liter są zawsze traktowane jako zmienne do powiązania, a nie jako literały, więc zazwyczaj należy używać początkowych wersalików podczas definiowania literałów.
 
@@ -93,7 +90,3 @@ let valueAsBits = 0b1101_1110_1010_1101_1011_1110_1110_1111
 
 let exampleSSN = 123_456_7890
 ```
-
-## <a name="see-also"></a>Zobacz także
-
-- [Core. LiteralAttribute — Klasa](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.literalattribute-class-%5bfsharp%5d)

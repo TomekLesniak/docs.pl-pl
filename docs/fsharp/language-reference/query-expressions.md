@@ -1,19 +1,17 @@
 ---
 title: Wyrażenia kwerend
 description: 'Dowiedz się więcej o obsłudze wyrażeń zapytania dla LINQ w języku programowania F #.'
-ms.date: 05/16/2016
-ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: afcc6e92818b1648a210ad9cfc3f1dcfa46037b5
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855039"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559066"
 ---
 # <a name="query-expressions"></a>Wyrażenia zapytań
 
 Wyrażenia zapytań umożliwiają wykonywanie zapytań względem źródła danych i umieszczanie danych w żądanym formularzu. Wyrażenia zapytań zapewniają obsługę LINQ w języku F #.
-> [!NOTE]
-> Dokumentacja interfejsu API docs.microsoft.com dla języka F # nie została ukończona. Jeśli wystąpią jakieś przerwane linki, należy odwołać się do [dokumentacji podstawowej biblioteki języka F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="syntax"></a>Składnia
 
@@ -45,9 +43,9 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-W poprzednim przykładzie kod wyrażenie zapytania znajduje się w nawiasach klamrowych. Znaczenie kodu w wyrażeniu polega na zwracaniu każdego klienta w tabeli Customers w bazie danych w wynikach zapytania. Wyrażenia zapytania zwracają typ, który implementuje <xref:System.Linq.IQueryable%601> i <xref:System.Collections.Generic.IEnumerable%601> i tak, aby można było wykonać iterację przy użyciu [modułu SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) , jak pokazano w przykładzie.
+W poprzednim przykładzie kod wyrażenie zapytania znajduje się w nawiasach klamrowych. Znaczenie kodu w wyrażeniu polega na zwracaniu każdego klienta w tabeli Customers w bazie danych w wynikach zapytania. Wyrażenia zapytania zwracają typ, który implementuje <xref:System.Linq.IQueryable%601> i <xref:System.Collections.Generic.IEnumerable%601> i tak, aby można było wykonać iterację przy użyciu [modułu SEQ](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html) , jak pokazano w przykładzie.
 
-Każdy typ wyrażenia obliczeń jest kompilowany z klasy konstruktora. Klasa konstruktora dla wyrażenia obliczeń zapytania to `QueryBuilder` . Aby uzyskać więcej informacji, zobacz [wyrażenia obliczeń](computation-expressions.md) i [Klasa LINQ. QueryBuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
+Każdy typ wyrażenia obliczeń jest kompilowany z klasy konstruktora. Klasa konstruktora dla wyrażenia obliczeń zapytania to `QueryBuilder` . Aby uzyskać więcej informacji, zobacz [wyrażenia obliczeń](computation-expressions.md) i [Klasa QueryBuilder](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html).
 
 ## <a name="query-operators"></a>Operatory zapytań
 
@@ -55,7 +53,7 @@ Operatory zapytań umożliwiają określanie szczegółów zapytania, na przykł
 
 W wyrażeniach zapytań można używać tylko wyrażeń, które mogą być tłumaczone na SQL. Na przykład żadne wywołania funkcji nie są dozwolone w wyrażeniach, gdy używasz `where` operatora zapytania.
 
-Tabela 1 zawiera dostępne operatory zapytań. Ponadto należy zapoznać się z tematem tabela2, który porównuje zapytania SQL i równoważne wyrażenia zapytania F # w dalszej części tego tematu. Niektóre operatory zapytań nie są obsługiwane przez niektórych dostawców typów. W szczególności dostawca typu OData jest ograniczony do operatorów zapytań, które obsługuje z powodu ograniczeń w protokole OData. Aby uzyskać więcej informacji, zobacz [ODataService Type Provider (F #)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
+Tabela 1 zawiera dostępne operatory zapytań. Ponadto należy zapoznać się z tematem tabela2, który porównuje zapytania SQL i równoważne wyrażenia zapytania F # w dalszej części tego tematu. Niektóre operatory zapytań nie są obsługiwane przez niektórych dostawców typów. W szczególności dostawca typu OData jest ograniczony do operatorów zapytań, które obsługuje z powodu ograniczeń w protokole OData.
 
 W tej tabeli przyjęto założenie, że baza danych ma następującą postać:
 
@@ -682,7 +680,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code>zestaw określonych wartości<br/>
+<code>IN</code> zestaw określonych wartości<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -705,7 +703,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>i <code>TOP</code> .<br/>
+<code>LIKE</code> i <code>TOP</code> .<br/>
 
 <pre><code class="lang-sql">-- '_e%' matches strings where the second character is 'e'
 SELECT TOP 2 * FROM Student
@@ -723,7 +721,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>z ustawioną dopasowaniem do wzorca.<br/>
+<code>LIKE</code> z ustawioną dopasowaniem do wzorca.<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -740,7 +738,7 @@ WHERE Student.Name LIKE '[abc]%'
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>z ustawieniem wzorzec wykluczenia.<br/>
+<code>LIKE</code> z ustawieniem wzorzec wykluczenia.<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -759,7 +757,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>w jednym polu, ale wybierz inne pole.<br/>
+<code>LIKE</code> w jednym polu, ale wybierz inne pole.<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -809,7 +807,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code>z dwiema tabelami.<br/>
+</td></tr><tr><td><code>LEFT JOIN</code> z dwiema tabelami.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -828,7 +826,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>JOIN</code>się<code>COUNT</code><br/>
+</td></tr><tr><td><code>JOIN</code> się <code>COUNT</code><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -911,7 +909,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code>z porządkowaniem<br/>
+</td></tr><tr><td><code>OR</code> z porządkowaniem<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -951,7 +949,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code>dwóch zapytań.<br/>
+</td></tr><tr><td><code>UNION</code> dwóch zapytań.<br/>
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable no-space-in-emphasis -->
@@ -1006,7 +1004,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code>rozgrzewa.<br/>
+</td></tr><tr><td><code>CASE</code> rozgrzewa.<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -2436,8 +2434,8 @@ module Queries2 = begin
 end
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka F #](index.md)
-- [LINQ. QueryBuilder, Klasa](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+- [Klasa QueryBuilder](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html)
 - [Wyrażenia obliczeń](Computation-Expressions.md)

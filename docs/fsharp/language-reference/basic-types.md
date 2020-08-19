@@ -1,42 +1,41 @@
 ---
 title: Typy podstawowe
-description: Odkryj podstawowych typów podstawowych, które są używane w F# języka.
-ms.date: 07/09/2018
-ms.openlocfilehash: fb9f275490cb402ff36e959774cd65450de77115
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+description: 'Znajdź podstawowe typy podstawowe, które są używane w języku F #.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 659ac8424c62985affcca1741e1b2a74c9c3ee8d
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645589"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557701"
 ---
 # <a name="basic-types"></a>Typy podstawowe
 
-W tym temacie przedstawiono podstawowe typy, które są zdefiniowane w F# języka. Te typy są zasadnicze znaczenie w F#, stanowiący podstawę prawie w każdym F# program. Są one podzbiorem .NET typów pierwotnych.
+W tym temacie wymieniono podstawowe typy, które są zdefiniowane w języku F #. Te typy są najbardziej podstawowe w języku F #, co jest podstawą niemal każdego programu w języku F #. Są one nadzbiorem typów pierwotnych platformy .NET.
 
-|Typ|Typ architektury .NET|Opis|
-|----|---------|-----------|
-|`bool`|<xref:System.Boolean>|Możliwe wartości to `true` i `false`.|
-|`byte`|<xref:System.Byte>|Wartości z zakresu od 0 do 255.|
-|`sbyte`|<xref:System.SByte>|Wartości od -128 do 127 znaków.|
-|`int16`|<xref:System.Int16>|Wartości od -32768 do 32767.|
-|`uint16`|<xref:System.UInt16>|Wartości z zakresu od 0 do 65535.|
-|`int`|<xref:System.Int32>|Wartości od -2,147,483,648 do 2 147 483 647.|
-|`uint32`|<xref:System.UInt32>|Wartości z zakresu od 0 do 4 294 967 295.|
-|`int64`|<xref:System.Int64>|Wartości z-9,223,372,036,854,775,808 9,223,372,036,854,775,807.|
-|`uint64`|<xref:System.UInt64>|Wartości z zakresu od 0 do 18,446,744,073,709,551,615.|
-|`nativeint`|<xref:System.IntPtr>|Wskaźnik natywny jako liczba całkowita ze znakiem.|
-|`unativeint`|<xref:System.UIntPtr>|Wskaźnik natywny jako liczba całkowita bez znaku.|
-|`char`|<xref:System.Char>|Wartości znakowych Unicode.|
-|`string`|<xref:System.String>|Tekst w formacie Unicode.|
-|`decimal`|<xref:System.Decimal>|Zmiennoprzecinkowa typ danych, który ma co najmniej 28 cyfr znaczących.|
-|`unit`|Nie dotyczy|Wskazuje brak rzeczywistej wartości. Typ ma tylko jedną wartość formalny, która jest oznaczona `()`. Wartość jednostki `()`, jest często używana jako symbol zastępczy, której wartość jest wymagana, ale nie rzeczywistą wartość jest dostępna lub ma sens.|
-|`void`|<xref:System.Void>|Wskazuje nie typu lub wartości.|
-|`float32`, `single`|<xref:System.Single>|32-bitowych punktu typ zmiennoprzecinkowy.|
-|`float`, `double`|<xref:System.Double>|64-bitowych punktu typ zmiennoprzecinkowy.|
+|Typ|Typ .NET|Opis|Przykład|
+|----|---------|-----------|-------|
+|`bool`|<xref:System.Boolean>|Możliwe wartości to `true` i `false` .|`true`/`false`|
+|`byte`|<xref:System.Byte>|Wartości od 0 do 255.|`1uy`|
+|`sbyte`|<xref:System.SByte>|Wartości od-128 do 127.|`1y`|
+|`int16`|<xref:System.Int16>|Wartości od-32768 do 32767.|`1s`|
+|`uint16`|<xref:System.UInt16>|Wartości od 0 do 65535.|`1us`|
+|`int`|<xref:System.Int32>|Wartości od-2 147 483 648 do 2 147 483 647.|`1`|
+|`uint`|<xref:System.UInt32>|Wartości od 0 do 4 294 967 295.|`1u`|
+|`int64`|<xref:System.Int64>|Wartości z-zakresu od do 9 223 372 036 854 775 807.|`1L`|
+|`uint64`|<xref:System.UInt64>|Wartości od 0 do 18446744073709551615 są.|`1UL`|
+|`nativeint`|<xref:System.IntPtr>|Natywny wskaźnik jako liczbę całkowitą ze znakiem.|`nativeint 1`|
+|`unativeint`|<xref:System.UIntPtr>|Natywny wskaźnik jako liczbę całkowitą bez znaku.|`unativeint 1`|
+|`decimal`|<xref:System.Decimal>|Zmiennoprzecinkowy typ danych, który ma co najmniej 28 znaczących cyfr.|`1.0`|
+|`float`, `double`|<xref:System.Double>|64-bitowy typ zmiennoprzecinkowy.|`1.0`|
+|`float32`, `single`|<xref:System.Single>|32-bitowy typ zmiennoprzecinkowy.|`1.0f`|
+|`char`|<xref:System.Char>|Wartości znaków Unicode.|`'c'`|
+|`string`|<xref:System.String>|Tekst Unicode.|`"str"`|
+|`unit`|nie dotyczy|Wskazuje brak wartości rzeczywistej. Typ ma tylko jedną wartość formalną, która jest oznaczona `()` . Wartość jednostki, `()` ,, jest często używana jako symbol zastępczy, gdzie wartość jest wymagana, ale żadna wartość rzeczywista nie jest dostępna lub nie ma sensu.|`()`|
 
 > [!NOTE]
-> Można wykonać obliczeń na liczbach całkowitych zbyt duży dla typu 64-bitową liczbę całkowitą, przy użyciu [bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa) typu. `bigint` nie jest uważany za typu podstawowego; jest skrótem `System.Numerics.BigInteger`.
+> Za pomocą typu [bigint](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bigint.html) można wykonać obliczenia z liczbą całkowitą za dużą dla typu 64-bitowego liczby całkowitej. `bigint` nie jest uznawany za typ podstawowy; jest to skrót dla `System.Numerics.BigInteger` .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Dokumentacja języka F#](index.md)
+- [Dokumentacja języka F #](index.md)

@@ -1,17 +1,17 @@
 ---
-title: Fixed — słowo kluczowe
-description: Dowiedz się, jak można przypiąć lokalnego na stosie, aby zapobiec kolekcji z F# — słowo kluczowe "fixed".
-ms.date: 04/24/2017
-ms.openlocfilehash: 7fdf66560f3e2ab7584b00c7e4584d7f6c161858
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+title: FIXED — słowo kluczowe
+description: Dowiedz się, jak za pomocą słowa kluczowego "Fixed" można przypiąć element jako lokalny na stosie.
+ms.date: 08/15/2020
+ms.openlocfilehash: 786ffd706c243fc83f8fb3afc2201d2a34536372
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772661"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559183"
 ---
-# <a name="the-fixed-keyword"></a>Fixed — słowo kluczowe
+# <a name="the-fixed-keyword"></a>FIXED — słowo kluczowe
 
-F#wprowadza 4.1 `fixed` — słowo kluczowe, co pozwala na "przypinając" lokalnej na stosie, aby uniemożliwić jej zebrane lub przeniesione podczas wyrzucania elementów bezużytecznych.  Jest używany w scenariuszach programowania niskiego poziomu.
+`fixed`Słowo kluczowe pozwala na "przypiąć" na stosie, aby uniemożliwić jego zbieranie lub przenoszenie podczas odzyskiwania pamięci.  Jest ona używana w scenariuszach programowania niskiego poziomu.
 
 ## <a name="syntax"></a>Składnia
 
@@ -21,13 +21,13 @@ use ptr = fixed expression
 
 ## <a name="remarks"></a>Uwagi
 
-Spowoduje to rozszerzenie składni wyrażenia, aby umożliwić wyodrębnianie wskaźnik i powiązywanie nazwy, który uniemożliwił są zbierane lub przeniesione podczas wyrzucania elementów bezużytecznych.  
+Rozszerza to składnię wyrażeń, aby umożliwić wyodrębnienie wskaźnika i powiązanie go z nazwą, która nie może być zbierana lub przenoszona podczas zbierania elementów bezużytecznych.  
 
-Wskaźnik z wyrażenia został rozwiązany za pośrednictwem `fixed` — słowo kluczowe jest powiązany z odpowiadającym za pośrednictwem `use` — słowo kluczowe.  Semantyka tego są podobne do zarządzania zasobami za pomocą `use` — słowo kluczowe.  Wskaźnik jest stała, natomiast znajduje się w zakresie, gdy jest poza zakresem, już nie zostanie rozwiązany.  `fixed` Nie można używać poza kontekstem `use` powiązania.  Wskaźnik musi być powiązany z nazwą za pomocą `use`.
+Wskaźnik z wyrażenia jest ustalony za pomocą `fixed` słowa kluczowego jest powiązane z identyfikatorem za pomocą `use` słowa kluczowego.  Semantyka tej metody przypomina zarządzanie zasobami za pomocą `use` słowa kluczowego.  Wskaźnik zostanie naprawiony, gdy znajduje się w zakresie, a poza zakresem, nie jest już naprawiony.  `fixed` nie można użyć poza kontekstem `use` powiązania.  Należy powiązać wskaźnik z nazwą z `use` .
 
-Korzystanie z `fixed` musi wystąpić w wyrażeniu w funkcji lub metody.  Nie można używać w zakresie poziomu skryptów lub poziomie modułu.
+Użycie `fixed` musi następować wewnątrz wyrażenia w funkcji lub metodzie.  Nie można jej użyć w zakresie skryptu lub poziomu modułu.
 
-Podobnie jak cały kod wskaźnika jest funkcją niebezpieczne i wyemitują ostrzeżenia, gdy jest używana.
+Podobnie jak w przypadku wszystkich kodów wskaźnika, jest to niebezpieczna funkcja i emituje ostrzeżenie, gdy zostanie użyta.
 
 ## <a name="example"></a>Przykład
 
@@ -61,6 +61,6 @@ let doPointerWork() =
 doPointerWork()
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Nativeptr — moduł](https://msdn.microsoft.com/visualfsharpdocs/conceptual/nativeinterop.nativeptr-module-%5Bfsharp%5D)
+- [Moduł NativePtr](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop-nativeptrmodule.html)

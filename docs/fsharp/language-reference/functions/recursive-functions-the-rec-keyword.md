@@ -1,13 +1,13 @@
 ---
 title: 'Funkcje rekurencyjne: rec — Słowo kluczowe'
 description: 'Dowiedz się, w jaki sposób słowo kluczowe "Rec" języka F # jest używane z słowem kluczowym "let" w celu zdefiniowania funkcji cyklicznej.'
-ms.date: 05/16/2016
-ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.date: 08/12/2020
+ms.openlocfilehash: 389357bd13cef39b1d07972c1a3167320b61612b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455654"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558715"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Funkcje rekurencyjne: rec — Słowo kluczowe
 
@@ -18,28 +18,44 @@ ms.locfileid: "87455654"
 ```fsharp
 // Recursive function:
 let rec function-nameparameter-list =
-function-body
+    function-body
 
 // Mutually recursive functions:
 let rec function1-nameparameter-list =
-function1-body
+    function1-body
+
 and function2-nameparameter-list =
-function2-body
+    function2-body
 ...
 ```
 
 ## <a name="remarks"></a>Uwagi
 
-Funkcje cykliczne, funkcje, które wywołuje siebie, są jawnie identyfikowane w języku F #. Dzięki temu identyfikator jest definiowany w zakresie funkcji.
+Funkcje cykliczne — funkcje, które wywołują siebie, są jawnie identyfikowane w języku F # ze `rec` słowem kluczowym. `rec`Słowo kluczowe udostępnia nazwę `let` powiązania w treści.
 
-Poniższy kod ilustruje funkcję cykliczną, która oblicza n- *n*<sup>ty</sup> numer Fibonacci przy użyciu definicji matematycznej.
+Poniższy przykład pokazuje funkcję cykliczną, która oblicza n- *n*<sup>ty</sup> numer Fibonacci przy użyciu definicji matematycznej.
 
-[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
+```fsharp
+let fib n =
+    match n with
+    | 0 | 1 -> 1
+    | n -> fib (n-1) + fib (n-2)
+```
 
 > [!NOTE]
 > W ćwiczenia, kod, taki jak poprzedni przykład, nie jest idealnym rozwiązaniem, ponieważ unecessarily ponownie oblicza wartości, które zostały już obliczone. Jest to spowodowane tym, że nie jest to cykliczne zakończenie, co zostało wyjaśnione w dalszej części tego artykułu.
 
-Metody są niejawnie cykliczne w obrębie typu; nie ma potrzeby dodawania `rec` słowa kluczowego. Zezwól na powiązania w klasach niejawnie cyklicznie.
+Metody są niejawnie cykliczne w obrębie typu, w którym są zdefiniowane, co oznacza, że nie ma potrzeby dodawania `rec` słowa kluczowego. Na przykład:
+
+```fsharp
+type MyClass() =
+    member this.Fib(n) =
+        match n with
+        | 0 | 1 -> 1
+        | n -> this.Fib(n-1) + this.Fib(n-2)
+```
+
+Zezwól na powiązania w klasach niejawnie cyklicznie, chociaż. Wszystkie `let` funkcje z ograniczeniami wymagają `rec` słowa kluczowego.
 
 ## <a name="tail-recursion"></a>Rekursja ogona
 
@@ -76,6 +92,14 @@ Poniższy przykład pokazuje dwie funkcje wzajemnie cykliczne.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="recursive-values"></a>Wartości cykliczne
+
+Można również zdefiniować `let` wartość powiązaną z rekursywą. Jest to czasami gotowe do rejestrowania. Za pomocą języka F # 5 i `nameof` funkcji można wykonać następujące czynności:
+
+```fsharp
+let rec nameDoubles = nameof nameDoubles + nameof nameDoubles
+```
+
+## <a name="see-also"></a>Zobacz też
 
 - [Funkcje](index.md)

@@ -1,17 +1,21 @@
 ---
 title: Dokumentacja języka
 description: 'Znajdź informacje o funkcjach języka F # z tego odwołania do tokenów języka, pojęć, typów, wyrażeń i tematów konstrukcyjnych obsługiwanych przez kompilator.'
-ms.date: 05/16/2016
-ms.openlocfilehash: 43272c6684c8fc763e8f99611901f35695f48981
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/13/2020
+ms.openlocfilehash: 02711489c214c1fcdb2da80f30bff63d67769c17
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854961"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558156"
 ---
 # <a name="f-language-reference"></a>Materiały referencyjne dotyczące języka F#
 
 Ta sekcja jest odwołaniem do języka F #, w języku programowania wieloznacznym przeznaczonym dla platformy .NET. Język F # obsługuje funkcjonalne, zorientowane obiektowo i bezwzględne modele programowania.
+
+## <a name="f-core-library-api-reference"></a>Dokumentacja interfejsu API podstawowej biblioteki języka F #
+
+[Dokumentacja interfejsu API biblioteki podstawowej f # (FSharp. Core)](https://fsharp.github.io/fsharp-core-docs/) to odwołanie do wszystkich przestrzeni nazw, modułów, typów i funkcji języka f # Core.
 
 ## <a name="f-tokens"></a>Tokeny języka F #
 
@@ -20,7 +24,7 @@ W poniższej tabeli przedstawiono artykuły referencyjne, które zawierają tabe
 |Tytuł|Opis|
 |-----|-----------|
 |[Odwołanie do słowa kluczowego](keyword-reference.md)|Zawiera linki do informacji o wszystkich słowach kluczowych języka F #.|
-|[Odwołanie do symboli i operatorów](./symbol-and-operator-reference/index.md)|Zawiera tabelę symboli i operatorów, które są używane w języku F #.|
+|[Odwołanie do symbolu i operatora](./symbol-and-operator-reference/index.md)|Zawiera tabelę symboli i operatorów, które są używane w języku F #.|
 |[Literały](literals.md)|Opisuje składnię dla wartości literału w języku F # oraz sposób określania informacji o typie dla literałów języka F #.|
 
 ## <a name="f-language-concepts"></a>Pojęcia dotyczące języka F #
@@ -41,7 +45,7 @@ W poniższej tabeli przedstawiono dostępne tematy dotyczące języka.
 |[Access Control](access-control.md)|Opisuje kontrolę dostępu w języku F #. Kontrola dostępu oznacza, że klienci mogą korzystać z niektórych elementów programu, takich jak typy, metody, funkcje i tak dalej.|
 |[Dopasowanie wzorca](pattern-matching.md)|Opisuje wzorce, które są regułami dotyczącymi przekształcania danych wejściowych i są używane w całym języku F #. Można porównać dane ze wzorcem, rozkładać dane w części składowe lub wyodrębniać informacje z danych na różne sposoby.|
 |[Wzorce aktywne](active-patterns.md)|Opisuje aktywne wzorce. Aktywne wzorce umożliwiają zdefiniowanie nazwanych partycji, które dzielą dane wejściowe. Przy użyciu aktywnych wzorców można rozkładać dane w dostosowany sposób dla każdej partycji.|
-|[Asercje](assertions.md)|Opisuje `assert` wyrażenie, które jest funkcją debugowania, której można użyć do przetestowania wyrażenia. W przypadku niepowodzenia w trybie debugowania potwierdzenie generuje okno dialogowe błędu systemu.|
+|[Potwierdzenia](assertions.md)|Opisuje `assert` wyrażenie, które jest funkcją debugowania, której można użyć do przetestowania wyrażenia. W przypadku niepowodzenia w trybie debugowania potwierdzenie generuje okno dialogowe błędu systemu.|
 |[Obsługa wyjątków](./exception-handling/index.md)|Zawiera informacje dotyczące obsługi wyjątków w języku F #.|
 |[Attributes](attributes.md)|Opisuje atrybuty, które umożliwiają stosowanie metadanych do konstrukcji programistycznej.|
 |[Zarządzanie zasobami: `use` słowo kluczowe](resource-management-the-use-keyword.md)|Opisuje słowa kluczowe `use` i `using` , które mogą kontrolować inicjalizację i wydawanie zasobów|
@@ -51,7 +55,7 @@ W poniższej tabeli przedstawiono dostępne tematy dotyczące języka.
 |[Podpisy](signature-files.md)|Opisuje sygnatury i pliki sygnatur. Plik podpisu zawiera informacje o podpisach publicznych zestawu elementów programu F #, takich jak typy, przestrzenie nazw i moduły. Może służyć do określania dostępności tych elementów programu.|
 |[Dokumentacja XML](xml-documentation.md)|Opisuje obsługę generowania plików dokumentacji dla komentarzy do dokumentów XML, znanych także jako komentarze z potrójnym ukośnikiem. Można utworzyć dokumentację z komentarzy do kodu w języku F #, jak w innych językach .NET.|
 |[Pełna składnia](verbose-syntax.md)|Opisuje składnię dla konstrukcji języka F #, gdy nie jest włączona składnia uproszczona. Składnia verbose jest wskazywana przez `#light "off"` dyrektywę w górnej części pliku kodu.|
-|[Formatowanie zwykłego tekstu](plaintext-formatting.md)|Dowiedz się, jak używać sprintf — i innego formatowania zwykłego tekstu w aplikacjach i skryptach w języku F #.|
+|[Format zwykłego tekstu](plaintext-formatting.md)|Dowiedz się, jak używać sprintf — i innego formatowania zwykłego tekstu w aplikacjach i skryptach w języku F #.|
 
 ## <a name="f-types"></a>Typy F#
 
@@ -62,7 +66,7 @@ W poniższej tabeli przedstawiono dostępne tematy referencyjne opisujące Typy 
 |[wartością](./values/index.md)|Opisuje wartości, które są niezmienne ilości, które mają określony typ; wartości mogą być liczbami całkowitymi lub zmiennoprzecinkowymi, znakami lub tekstem, listami, sekwencjami, tablicami, krotkami, związkami rozłącznych, rekordami, typami klas lub wartościami funkcji.|
 |[Typy podstawowe](basic-types.md)|Zawiera opis podstawowych typów podstawowych, które są używane w języku F #. Zapewnia także odpowiednie typy .NET i minimalne i maksymalne wartości dla każdego typu.|
 |[Typ jednostki](unit-type.md)|Opisuje `unit` Typ, który jest typem, który wskazuje brak określonej wartości; `unit` Typ ma tylko jedną wartość, która działa jako symbol zastępczy, gdy inna wartość nie istnieje lub nie jest wymagana.|
-|[Ciągi](strings.md)|Opisuje ciągi w języku F #. `string`Typ reprezentuje niezmienny tekst, jako sekwencję znaków Unicode. `string`jest aliasem dla `System.String` .NET Framework.|
+|[Ciągi](strings.md)|Opisuje ciągi w języku F #. `string`Typ reprezentuje niezmienny tekst, jako sekwencję znaków Unicode. `string` jest aliasem dla `System.String` .NET Framework.|
 |[Krotki](tuples.md)|Opisuje krotki, które są grupowaniem nienazwanych, ale uporządkowane wartości prawdopodobnie różnych typów.|
 |[Typy kolekcji F#](fsharp-collection-types.md)|Przegląd typów kolekcji funkcjonalnej F #, w tym typów tablic, list, sekwencji (SEQ), map i zestawów.|
 |[Listy](lists.md)|Zawiera opis list. Lista w F # jest uporządkowaną, niemodyfikowalną serią wszystkich elementów tego samego typu.|
@@ -80,7 +84,7 @@ W poniższej tabeli przedstawiono dostępne tematy referencyjne opisujące Typy 
 |[Klasy abstrakcyjne](abstract-classes.md)|Opisuje klasy abstrakcyjne, które są klasami, które opuszczają niektóre lub wszystkie składowe niezaimplementowane, dzięki czemu implementacje mogą być dostarczane przez klasy pochodne.|
 |[Rozszerzenia typu](type-extensions.md)|Opisuje rozszerzenia typów, które umożliwiają dodawanie nowych elementów członkowskich do wcześniej zdefiniowanego typu obiektu.|
 |[Typy elastyczne](flexible-types.md)|Opisuje elastyczne typy. Elastyczna adnotacja typu jest wskazaniem, że parametr, zmienna lub wartość ma typ zgodny z określonym typem, gdzie zgodność jest określana przez położenie w hierarchii obiektów klasy lub interfejsów zorientowanych na obiekty.|
-|[Delegaty](delegates.md)|Opisuje delegatów, które reprezentują wywołanie funkcji jako obiekt.|
+|[Delegaci](delegates.md)|Opisuje delegatów, które reprezentują wywołanie funkcji jako obiekt.|
 |[Jednostki miary](units-of-measure.md)|Opisuje jednostki miary. Wartości zmiennoprzecinkowe w F # mogą mieć skojarzone jednostki miary, które zwykle są używane do wskazywania długości, objętości, masy itd.|
 |[Dostawcy typów](../tutorials/type-providers/index.md)|Opis typu udostępnia i zawiera linki do przewodników dotyczących korzystania z wbudowanych dostawców typów w celu uzyskania dostępu do baz danych i usług sieci Web.|
 
@@ -90,7 +94,7 @@ W poniższej tabeli przedstawiono tematy opisujące wyrażenia języka F #.
 
 |Tytuł|Opis|
 |-----|-----------|
-|[Wyrażenia warunkowe:`if...then...else`](conditional-expressions-if-then-else.md)|Opisuje `if...then...else` wyrażenie, które uruchamia różne gałęzie kodu, a także oblicza inną wartość w zależności od danego wyrażenia logicznego.|
+|[Wyrażenia warunkowe: `if...then...else`](conditional-expressions-if-then-else.md)|Opisuje `if...then...else` wyrażenie, które uruchamia różne gałęzie kodu, a także oblicza inną wartość w zależności od danego wyrażenia logicznego.|
 |[Wyrażenia dopasowania](match-expressions.md)|Opisuje `match` wyrażenie, które zapewnia sterowanie rozgałęzieniem oparte na porównaniu z zestawem wzorców.|
 |[Pętle: `for...to` wyrażenie](loops-for-to-expression.md)|Opisuje `for...to` wyrażenie, które jest używane do iteracji w pętli względem zakresu wartości zmiennej pętli.|
 |[Pętle: `for...in` wyrażenie](loops-for-in-expression.md)|Opisuje `for...in` wyrażenie, konstrukcja pętli, która jest używana do iteracji na dopasowaniach wzorca w wyliczalnej kolekcji, takiej jak wyrażenie zakresu, sekwencja, lista, tablica lub inna konstrukcja, która obsługuje Wyliczenie.|
@@ -100,7 +104,7 @@ W poniższej tabeli przedstawiono tematy opisujące wyrażenia języka F #.
 |[Wyrażenia obliczeń](computation-expressions.md)|Opisuje wyrażenia obliczeń w języku F #, które zapewniają wygodną składnię do pisania obliczeń, które mogą być sekwencjonowane i łączone przy użyciu konstrukcji przepływu sterowania i powiązań. Mogą one służyć do zapewnienia wygodnej składni dla *monads*, funkcji programowania funkcjonalnego, która może służyć do zarządzania danymi, kontrolką i efektami ubocznymi w programach funkcjonalnych. Jeden typ wyrażenia obliczeń, asynchroniczny przepływ pracy, zapewnia obsługę obliczeń asynchronicznych i równoległych. Aby uzyskać więcej informacji, zobacz [asynchroniczne przepływy pracy](asynchronous-workflows.md).|
 |[Asynchroniczne przepływy pracy](asynchronous-workflows.md)|Opisuje asynchroniczne przepływy pracy, funkcję języka, która pozwala pisać kod asynchroniczny w sposób zbliżony do sposobu, w jaki można naturalnie pisać kod synchroniczny.|
 |[Cytaty kodu](code-quotations.md)|Opisuje cytaty kodu, funkcję języka, która umożliwia programowe generowanie i Używanie wyrażeń kodu języka F #.|
-|[Wyrażenia zapytania](query-expressions.md)|Opisuje wyrażenia zapytania, funkcję języka, która implementuje LINQ for F # i umożliwia pisanie zapytań względem źródła danych lub wyliczalnej kolekcji.|
+|[Wyrażenia kwerend](query-expressions.md)|Opisuje wyrażenia zapytania, funkcję języka, która implementuje LINQ for F # i umożliwia pisanie zapytań względem źródła danych lub wyliczalnej kolekcji.|
 
 ## <a name="compiler-supported-constructs"></a>Konstrukcje obsługiwane przez kompilator
 
