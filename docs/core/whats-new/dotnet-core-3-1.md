@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 2373b21e92c6ca68aac33684a9bd0912a2e642b3
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 42d4f7e8800bf2d13d584084f8a41bad2ada534f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324275"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608120"
 ---
 # <a name="whats-new-in-net-core-31"></a>Co nowego w programie .NET Core 3.1
 
@@ -29,7 +29,7 @@ Aby uzyskać więcej informacji o wersji, zobacz [anons programu .NET Core 3,1](
 
 .NET Core 3,1 to wersja LTS z pomocą techniczną firmy Microsoft przez kolejne trzy lata. Zdecydowanie zalecamy, aby przenieść aplikacje do programu .NET Core 3,1. Bieżący cykl życia innych głównych wydań jest następujący:
 
-| Wydanie | Uwaga |
+| Release | Uwaga |
 | ------- | ---- |
 | .NET Core 3.0 | Koniec okresu życia w dniu 3 marca 2020.     |
 | .NET Core 2.2 | Koniec okresu istnienia 23 grudnia 2019. |
@@ -45,7 +45,7 @@ Począwszy od zestaw .NET Core SDK 3,1 dla macOS, ustawienie appHost jest domyś
 
 Gdy ustawienie appHost jest włączone, program .NET Core generuje natywny plik konfiguracji Mach-O podczas kompilowania lub publikowania. Aplikacja jest uruchamiana w kontekście appHost, gdy jest uruchamiana z kodu źródłowego za pomocą `dotnet run` polecenia lub bezpośrednio uruchamiając plik wykonywalny "Mach-O".
 
-Bez appHost jedynym sposobem uruchomienia aplikacji [zależnej od środowiska uruchomieniowego](../deploying/index.md#publish-runtime-dependent) jest `dotnet <filename.dll>` polecenie. AppHost jest zawsze tworzona przy publikowaniu [własnej aplikacji.](../deploying/index.md#publish-self-contained)
+Bez appHost jedynym sposobem uruchomienia aplikacji [zależnej od platformy](../deploying/index.md#publish-framework-dependent) jest `dotnet <filename.dll>` polecenie. AppHost jest zawsze tworzona przy publikowaniu [własnej aplikacji.](../deploying/index.md#publish-self-contained)
 
 Można skonfigurować appHost na poziomie projektu lub przełączać appHost dla określonego `dotnet` polecenia z `-p:UseAppHost` parametrem:
 

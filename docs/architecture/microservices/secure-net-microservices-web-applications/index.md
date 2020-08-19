@@ -3,16 +3,16 @@ title: Zabezpieczanie mikrousług i aplikacji sieci Web platformy .NET
 description: Zabezpieczenia w mikrousługach .NET i aplikacjach sieci Web — Uzyskaj informacje na temat opcji uwierzytelniania w ASP.NET Core aplikacji sieci Web.
 author: mjrousos
 ms.date: 08/07/2020
-ms.openlocfilehash: 9ce62039374f2256cd9adbddbb850aa4135af9f4
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: 1dcdb5d2987360ac583fa700a387d977f498d1d9
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024618"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608099"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Tworzenie bezpiecznych mikrousług i aplikacji sieci Web platformy .NET
 
-Istnieje wiele aspektów dotyczących zabezpieczeń w mikrousługach i aplikacjach sieci Web, które w tym temacie mogą ułatwić przejęcie kilku książek w taki sposób, w tej sekcji omówiono uwierzytelnianie, autoryzację i wpisy tajne aplikacji.
+Istnieje wiele aspektów dotyczących zabezpieczeń w mikrousługach i aplikacjach sieci Web, które w tym temacie mogą łatwo robić kilka książek. W tej sekcji będziemy skupić się na uwierzytelnianiu, autoryzacji i wpisach tajnych aplikacji.
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>Implementowanie uwierzytelniania w mikrousługach i aplikacjach sieci Web platformy .NET
 
@@ -293,9 +293,9 @@ public void ConfigureServices(IServiceCollection services)
 
 Parametry w tym wykorzystaniu są następujące:
 
-- `Audience`reprezentuje odbiorcę przychodzącego tokenu lub zasobu, do którego token udziela dostępu. Jeśli wartość określona w tym parametrze nie pasuje do parametru w tokenie, token zostanie odrzucony.
+- `Audience` reprezentuje odbiorcę przychodzącego tokenu lub zasobu, do którego token udziela dostępu. Jeśli wartość określona w tym parametrze nie pasuje do parametru w tokenie, token zostanie odrzucony.
 
-- `Authority`jest adresem serwera uwierzytelniania wystawiającego tokeny. Oprogramowanie pośredniczące uwierzytelniania okaziciela JWT używa tego identyfikatora URI do uzyskania klucza publicznego, którego można użyć do zweryfikowania podpisu tokenu. Oprogramowanie pośredniczące potwierdza również, że `iss` parametr w tokenie jest zgodny z tym identyfikatorem URI.
+- `Authority` jest adresem serwera uwierzytelniania wystawiającego tokeny. Oprogramowanie pośredniczące uwierzytelniania okaziciela JWT używa tego identyfikatora URI do uzyskania klucza publicznego, którego można użyć do zweryfikowania podpisu tokenu. Oprogramowanie pośredniczące potwierdza również, że `iss` parametr w tokenie jest zgodny z tym identyfikatorem URI.
 
 Inny parametr, `RequireHttpsMetadata` ,, jest przydatny do celów testowych. ten parametr należy ustawić na wartość false, aby można było testować w środowiskach, w których nie masz certyfikatów. W rzeczywistych wdrożeniach tokeny okaziciela JWT powinny zawsze być przesyłane tylko za pośrednictwem protokołu HTTPS.
 
@@ -303,7 +303,7 @@ W przypadku tego oprogramowania pośredniczącego tokeny JWT są automatycznie w
 
 Oprogramowanie pośredniczące uwierzytelniania okaziciela JWT może również obsługiwać bardziej zaawansowane scenariusze, takie jak użycie certyfikatu lokalnego do walidacji tokenu, jeśli Urząd nie jest dostępny. W tym scenariuszu można określić `TokenValidationParameters` obiekt w `JwtBearerOptions` obiekcie.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Udostępnianie plików cookie między aplikacjami** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)

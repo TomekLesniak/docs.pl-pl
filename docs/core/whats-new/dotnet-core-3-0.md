@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 9f553e9af16be0891f208832c5daa444a1b736e2
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: bf712e88d96a5c2c80c3ff50283d44e9c7717abb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281514"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608211"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co nowego w programie .NET Core 3.0
 
@@ -54,7 +54,7 @@ Jeśli używasz programu Visual Studio, potrzebujesz [programu Visual studio 201
 
 ### <a name="default-executables"></a>Domyślne pliki wykonywalne
 
-Platforma .NET Core teraz domyślnie kompiluje [pliki wykonywalne zależne od środowiska uruchomieniowego](../deploying/index.md#publish-runtime-dependent) . To zachowanie jest nowe w przypadku aplikacji korzystających z zainstalowanej globalnie wersji platformy .NET Core. Wcześniej tylko [wstępnie zawarte wdrożenia](../deploying/index.md#publish-self-contained) spowodują utworzenie pliku wykonywalnego.
+Platforma .NET Core teraz domyślnie kompiluje [pliki wykonywalne zależne od platformy](../deploying/index.md#publish-framework-dependent) . To zachowanie jest nowe w przypadku aplikacji korzystających z zainstalowanej globalnie wersji platformy .NET Core. Wcześniej tylko [wstępnie zawarte wdrożenia](../deploying/index.md#publish-self-contained) spowodują utworzenie pliku wykonywalnego.
 
 W trakcie `dotnet build` lub `dotnet publish` , tworzony jest plik wykonywalny (znany jako **appHost**), który odpowiada środowisku i platformie zestawu SDK, którego używasz. Można oczekiwać, że te same elementy wykonywalne są takie same jak w przypadku innych natywnych plików wykonywalnych, takich jak:
 
@@ -69,7 +69,7 @@ Począwszy od zestaw .NET Core SDK 3,0 dla usługi macOS, ustawienie służące 
 
 Gdy ustawienie appHost jest włączone, program .NET Core generuje natywny plik konfiguracji Mach-O podczas kompilowania lub publikowania. Aplikacja jest uruchamiana w kontekście appHost, gdy jest uruchamiana z kodu źródłowego za pomocą `dotnet run` polecenia lub bezpośrednio uruchamiając plik wykonywalny "Mach-O".
 
-Bez appHost jedynym sposobem uruchomienia aplikacji [zależnej od środowiska uruchomieniowego](../deploying/index.md#publish-runtime-dependent) jest `dotnet <filename.dll>` polecenie. AppHost jest zawsze tworzona przy publikowaniu [własnej aplikacji.](../deploying/index.md#publish-self-contained)
+Bez appHost jedynym sposobem uruchomienia aplikacji [zależnej od platformy](../deploying/index.md#publish-framework-dependent) jest `dotnet <filename.dll>` polecenie. AppHost jest zawsze tworzona przy publikowaniu [własnej aplikacji.](../deploying/index.md#publish-self-contained)
 
 Można skonfigurować appHost na poziomie projektu lub przełączać appHost dla określonego `dotnet` polecenia z `-p:UseAppHost` parametrem:
 
@@ -212,10 +212,10 @@ Wyjątki dla wielu elementów docelowych:
 
 W programie .NET Core 3,0 wprowadzono funkcję wyboru, która pozwala aplikacji na przewinięcie do najnowszej wersji programu .NET Core. Ponadto zostało dodane nowe ustawienie służące do kontrolowania sposobu, w jaki przenoszone do przodu jest stosowane do aplikacji. Tę konfigurację można skonfigurować w następujący sposób:
 
-- Właściwość pliku projektu:`RollForward`
-- Właściwość pliku konfiguracji czasu wykonywania:`rollForward`
-- Zmienna środowiskowa:`DOTNET_ROLL_FORWARD`
-- Argument wiersza polecenia:`--roll-forward`
+- Właściwość pliku projektu: `RollForward`
+- Właściwość pliku konfiguracji czasu wykonywania: `rollForward`
+- Zmienna środowiskowa: `DOTNET_ROLL_FORWARD`
+- Argument wiersza polecenia: `--roll-forward`
 
 Należy określić jedną z następujących wartości. Jeśli ustawienie zostanie pominięte, wartością domyślną jest wartość **pomocnicza** .
 
@@ -249,9 +249,9 @@ Istnieją pewne operacje, takie jak łączenie i publikowanie stron Razor, któr
 > [!WARNING]
 > Jeśli podjęto próbę skorzystania z narzędzi lokalnych w programie .NET Core 3,0 w wersji zapoznawczej 1, takiej jak uruchamianie `dotnet tool restore` lub `dotnet tool install` , Usuń folder pamięci podręcznej narzędzi lokalnych W przeciwnym razie narzędzia lokalne nie będą działały w żadnej nowszej wersji. Ten folder znajduje się w lokalizacji:
 >
-> W systemie macOS, Linux:`rm -r $HOME/.dotnet/toolResolverCache`
+> W systemie macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
 >
-> W systemie Windows:`rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
+> W systemie Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
 
 Narzędzia lokalne są zależne od nazwy pliku manifestu `dotnet-tools.json` w bieżącym katalogu. Ten plik manifestu definiuje narzędzia do udostępnienia w tym folderze i poniżej. Plik manifestu można dystrybuować z kodem, aby upewnić się, że każda osoba, która współpracuje z kodem, będzie mogła przywrócić i korzystać z tych samych narzędzi.
 
@@ -481,10 +481,10 @@ Poprawki dotyczące analizowania i formatowania obejmują:
 
 Nowe <xref:System.Math?displayProperty=nameWithType> interfejsy API obejmują:
 
-- <xref:System.Math.BitIncrement(System.Double)>lub<xref:System.Math.BitDecrement(System.Double)>\
+- <xref:System.Math.BitIncrement(System.Double)> lub <xref:System.Math.BitDecrement(System.Double)>\
 Odnosi się do `nextUp` `nextDown` operacji i IEEE. Zwracają one najmniejszą liczbę zmiennoprzecinkową, która porównuje większe lub mniejsze niż dane wejściowe (odpowiednio). Na przykład `Math.BitIncrement(0.0)` zwrócimy `double.Epsilon` .
 
-- <xref:System.Math.MaxMagnitude(System.Double,System.Double)>lub<xref:System.Math.MinMagnitude(System.Double,System.Double)>\
+- <xref:System.Math.MaxMagnitude(System.Double,System.Double)> lub <xref:System.Math.MinMagnitude(System.Double,System.Double)>\
 Odnosi się do `maxNumMag` `minNumMag` operacji i IEEE, zwracają wartość, która jest większa lub mniejsza o wielkości dwóch danych wejściowych (odpowiednio). Na przykład `Math.MaxMagnitude(2.0, -3.0)` zwrócimy `-3.0` .
 
 - <xref:System.Math.ILogB(System.Double)>\
@@ -539,7 +539,7 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>Szybka Wbudowana obsługa JSON
 
-Użytkownicy platformy .NET mogą w dużym stopniu opierać się na [Newtonsoft.Js](https://www.newtonsoft.com/json) i innych popularnych bibliotekach JSON, które nadal są dobrym wyborami. `Newtonsoft.Json`używa ciągów .NET jako podstawowego elementu DataType, który jest UTF-16 pod okapem.
+Użytkownicy platformy .NET mogą w dużym stopniu opierać się na [Newtonsoft.Js](https://www.newtonsoft.com/json) i innych popularnych bibliotekach JSON, które nadal są dobrym wyborami. `Newtonsoft.Json` używa ciągów .NET jako podstawowego elementu DataType, który jest UTF-16 pod okapem.
 
 Nowa Wbudowana obsługa JSON to wysoka wydajność, niska alokacja i współpracuje z tekstem JSON zakodowanym w formacie UTF-8. Aby uzyskać więcej informacji na temat <xref:System.Text.Json> przestrzeni nazw i typów, zobacz następujące artykuły:
 

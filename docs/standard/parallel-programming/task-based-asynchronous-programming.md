@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 57261602c456a6dcf90c03aa044e7d1c0c8c1c6a
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446382"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608029"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programowanie asynchroniczne oparte na zadaniach
 
@@ -66,7 +66,7 @@ Możesz również użyć metody, <xref:System.Threading.Tasks.TaskFactory.StartN
 [!code-csharp[TPL_TaskIntro#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/asyncstate.cs#23)]
 [!code-vb[TPL_TaskIntro#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/asyncstate.vb#23)]
 
-<xref:System.Threading.Tasks.Task>i <xref:System.Threading.Tasks.Task%601> każdy uwidacznia Właściwość statyczną <xref:System.Threading.Tasks.Task.Factory%2A> zwracającą wystąpienie domyślne <xref:System.Threading.Tasks.TaskFactory> , tak aby można było wywołać metodę jako `Task.Factory.StartNew()` . Ponadto, w poniższym przykładzie, ponieważ zadania są typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , każda z nich ma właściwość publiczną <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> zawierającą wynik obliczenia. Zadania są wykonywane asynchroniczne i mogą być kończone w dowolnej kolejności. Jeśli do <xref:System.Threading.Tasks.Task%601.Result%2A> Właściwości uzyskuje się dostęp przed zakończeniem obliczeń, właściwość blokuje wątek wywołujący do momentu, gdy wartość jest dostępna.
+<xref:System.Threading.Tasks.Task> i <xref:System.Threading.Tasks.Task%601> każdy uwidacznia Właściwość statyczną <xref:System.Threading.Tasks.Task.Factory%2A> zwracającą wystąpienie domyślne <xref:System.Threading.Tasks.TaskFactory> , tak aby można było wywołać metodę jako `Task.Factory.StartNew()` . Ponadto, w poniższym przykładzie, ponieważ zadania są typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , każda z nich ma właściwość publiczną <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> zawierającą wynik obliczenia. Zadania są wykonywane asynchroniczne i mogą być kończone w dowolnej kolejności. Jeśli do <xref:System.Threading.Tasks.Task%601.Result%2A> Właściwości uzyskuje się dostęp przed zakończeniem obliczeń, właściwość blokuje wątek wywołujący do momentu, gdy wartość jest dostępna.
 
 [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
 [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]
@@ -96,7 +96,7 @@ Każde zadanie otrzymuje identyfikator w postaci liczby całkowitej, który jedn
 
 Większość interfejsów API, które tworzą zadania, zapewnia przeciążenia, które akceptują <xref:System.Threading.Tasks.TaskCreationOptions> parametr. Określając jedną z poniższych opcji, możesz wskazać harmonogramowi zadań, jak zaplanować zadanie w puli wątków. Poniższa tabela zawiera różne opcje tworzenia zadania.
 
-|<xref:System.Threading.Tasks.TaskCreationOptions>wartość parametru|Opis|
+|<xref:System.Threading.Tasks.TaskCreationOptions> wartość parametru|Opis|
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 |<xref:System.Threading.Tasks.TaskCreationOptions.None>|Domyślna, gdy nie określono żadnej opcji. Harmonogram używa domyślnej heurystyki do zaplanowania zadania.|
 |<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Określa, że zadanie powinno zostać zaplanowane tak, aby zadania utworzone wcześniej były wykonywane wcześniej, a zadania utworzone później były wykonywane później.|
@@ -134,7 +134,7 @@ Aby uzyskać więcej informacji na temat zadań i kultur asynchronicznych, zobac
 
 <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>Metody i <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> umożliwiają określenie zadania do uruchomienia po zakończeniu *zadania poprzedzającego* . Delegat zadania kontynuacji jest przekazywane odwołaniem do zadania poprzedzającego, aby można było przejrzeć stan zadania poprzedzającego i, pobierając wartość <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> właściwości, może użyć danych wyjściowych poprzedzających jako dane wejściowe dla kontynuacji.
 
-W poniższym przykładzie `getData` zadanie jest uruchamiane przez wywołanie <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> metody. `processData`Zadanie jest uruchamiane automatycznie po `getData` zakończeniu i `displayData` jest uruchamiane po `processData` zakończeniu. `getData`Tworzy tablicę liczb całkowitych, która jest dostępna dla `processData` zadania za pomocą `getData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> właściwości zadania. `processData`Zadanie przetwarza tę tablicę i zwraca wynik, którego typ jest wywnioskowany na podstawie zwracanego typu wyrażenia lambda przekazanego do <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType> metody. `displayData`Zadanie jest wykonywane automatycznie po `processData` zakończeniu, a <xref:System.Tuple%603> obiekt zwrócony przez `processData` wyrażenie lambda jest dostępny dla `displayData` zadania za pomocą `processData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> właściwości zadania. `displayData`Zadanie przyjmuje wynik `processData` zadania i tworzy wynik, którego typ jest wnioskowany w podobny sposób i który jest udostępniany dla programu we <xref:System.Threading.Tasks.Task%601.Result%2A> właściwości.
+W poniższym przykładzie `getData` zadanie jest uruchamiane przez wywołanie <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> metody. `processData`Zadanie jest uruchamiane automatycznie po `getData` zakończeniu i `displayData` jest uruchamiane po `processData` zakończeniu. `getData` Tworzy tablicę liczb całkowitych, która jest dostępna dla `processData` zadania za pomocą `getData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> właściwości zadania. `processData`Zadanie przetwarza tę tablicę i zwraca wynik, którego typ jest wywnioskowany na podstawie zwracanego typu wyrażenia lambda przekazanego do <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType> metody. `displayData`Zadanie jest wykonywane automatycznie po `processData` zakończeniu, a <xref:System.Tuple%603> obiekt zwrócony przez `processData` wyrażenie lambda jest dostępny dla `displayData` zadania za pomocą `processData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> właściwości zadania. `displayData`Zadanie przyjmuje wynik `processData` zadania i tworzy wynik, którego typ jest wnioskowany w podobny sposób i który jest udostępniany dla programu we <xref:System.Threading.Tasks.Task%601.Result%2A> właściwości.
 
 [!code-csharp[TPL_TaskIntro#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/continuations1.cs#5)]
 [!code-vb[TPL_TaskIntro#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/continuations1.vb#5)]
@@ -187,7 +187,7 @@ Aby zapoznać się z przykładem, który pokazuje obsługę wyjątków, zobacz t
 
 Niektóre przeciążenia pozwalają określić limit czasu, a inne przyjmują dodatkowy <xref:System.Threading.CancellationToken> jako parametr wejściowy, aby można było anulować odczekanie lub w odpowiedzi na dane wejściowe użytkownika.
 
-Podczas oczekiwania na zadanie, niejawnie poczekaj na wszystkie elementy podrzędne tego zadania, które zostały utworzone przy użyciu <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> opcji. <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>zwraca natychmiast, jeśli zadanie zostało już ukończone. Wszelkie wyjątki wywoływane przez zadanie zostaną zgłoszone przez <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metodę, nawet jeśli <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> Metoda została wywołana po ukończeniu zadania.
+Podczas oczekiwania na zadanie, niejawnie poczekaj na wszystkie elementy podrzędne tego zadania, które zostały utworzone przy użyciu <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> opcji. <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> zwraca natychmiast, jeśli zadanie zostało już ukończone. Wszelkie wyjątki wywoływane przez zadanie zostaną zgłoszone przez <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metodę, nawet jeśli <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> Metoda została wywołana po ukończeniu zadania.
 
 ## <a name="composing-tasks"></a>Tworzenie zadań
 
@@ -269,7 +269,7 @@ TPL ma kilka nowych typów publicznych, które są przydatne w scenariuszach ró
 
 Zalecamy, aby nie dziedziczyć z <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ani <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> . Zamiast tego zalecamy użycie <xref:System.Threading.Tasks.Task.AsyncState%2A> właściwości w celu skojarzenia dodatkowych danych lub stanu z <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> obiektem lub. Można również użyć metod rozszerzających, aby rozszerzać funkcjonalność <xref:System.Threading.Tasks.Task> klas i <xref:System.Threading.Tasks.Task%601> . Aby uzyskać więcej informacji na temat metod rozszerzających, zobacz [metody](../../csharp/programming-guide/classes-and-structs/extension-methods.md) rozszerzania i [metody rozszerzenia](../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
 
-Jeśli musisz dziedziczyć z <xref:System.Threading.Tasks.Task> lub <xref:System.Threading.Tasks.Task%601> , nie można użyć <xref:System.Threading.Tasks.Task.Run%2A> , lub <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> , <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> lub <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> klasy do tworzenia wystąpień niestandardowego typu zadania, ponieważ te mechanizmy tworzą tylko <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> obiekty i. Ponadto nie można używać mechanizmów kontynuacji zadania, które są dostarczane przez <xref:System.Threading.Tasks.Task> ,, <xref:System.Threading.Tasks.Task%601> <xref:System.Threading.Tasks.TaskFactory> i <xref:System.Threading.Tasks.TaskFactory%601> do tworzenia wystąpień niestandardowego typu zadania, ponieważ te mechanizmy również tworzą tylko <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> obiekty i.
+Jeśli musisz dziedziczyć z <xref:System.Threading.Tasks.Task> lub <xref:System.Threading.Tasks.Task%601> , nie można użyć <xref:System.Threading.Tasks.Task.Run%2A> , lub <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> , <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> lub <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> klasy do tworzenia wystąpień niestandardowego typu zadania, ponieważ te mechanizmy tworzą tylko <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> obiekty i. Ponadto nie można używać mechanizmów kontynuacji zadania, które są dostarczane przez <xref:System.Threading.Tasks.Task> ,, <xref:System.Threading.Tasks.Task%601> <xref:System.Threading.Tasks.TaskFactory> i  <xref:System.Threading.Tasks.TaskFactory%601> do tworzenia wystąpień niestandardowego typu zadania, ponieważ te mechanizmy również tworzą tylko <xref:System.Threading.Tasks.Task>  <xref:System.Threading.Tasks.Task%601> obiekty i.
 
 ## <a name="related-topics"></a>Powiązane tematy
 
@@ -288,7 +288,7 @@ Jeśli musisz dziedziczyć z <xref:System.Threading.Tasks.Task> lub <xref:System
 |[Równoległość danych](data-parallelism-task-parallel-library.md)|Opisuje sposób użycia <xref:System.Threading.Tasks.Parallel.For%2A> i <xref:System.Threading.Tasks.Parallel.ForEach%2A> do tworzenia pętli równoległych nad danymi.|
 |[Programowanie równoległe](index.md)|Węzeł najwyższego poziomu dla .NET Framework programowania równoległego.|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Programowanie równoległe](index.md)
 - [Przykłady programowania równoległego przy użyciu programu .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

@@ -3,12 +3,12 @@ title: Dodatki do formatu csproj dla platformy .NET Core
 description: Dowiedz się więcej o różnicach między istniejącymi a plikami csproj programu .NET Core
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 4f45362fbb3df053b95156b8e633903f011a85ad
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 82174b2976abda2337a4a9b5a5a5e1f60a1094fb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062876"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608324"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatki do formatu csproj dla platformy .NET Core
 
@@ -16,7 +16,7 @@ Ten dokument zawiera opis zmian, które zostały dodane do plików projektu w ra
 
 ## <a name="implicit-package-references"></a>Odwołania do pakietów niejawnych
 
-Elementy pakietu są niejawnie przywoływane na podstawie platform docelowych określonych we `<TargetFramework>` `<TargetFrameworks>` właściwości lub pliku projektu. `<TargetFrameworks>`jest ignorowany `<TargetFramework>` , jeśli jest określony, niezależnie od kolejności.
+Elementy pakietu są niejawnie przywoływane na podstawie platform docelowych określonych we `<TargetFramework>` `<TargetFrameworks>` właściwości lub pliku projektu. `<TargetFrameworks>` jest ignorowany `<TargetFramework>` , jeśli jest określony, niezależnie od kolejności.
 
 ```xml
  <PropertyGroup>
@@ -56,7 +56,7 @@ W przypadku odwoływania się do `Microsoft.AspNetCore.App` `Microsoft.AspNetCor
 
 > Znany problem: zestaw SDK platformy .NET Core 2,1 obsługuje tę składnię tylko wtedy, gdy projekt używa także Microsoft. NET. Sdk. Web. Ten problem został rozwiązany w zestawie SDK platformy .NET Core 2,2.
 
-Te odwołania do ASP.NET Core pakietu są nieco inne niż w przypadku większości normalnych pakietów NuGet. Wdrożenia aplikacji korzystających z tych pakietów w [ramach platformy](../deploying/index.md#publish-runtime-dependent) są automatycznie wykorzystywane w ramach platformy udostępnionej ASP.NET Core. W przypadku korzystania z pakietów trwałych nie są wdrażane **żadne** zasoby z przywoływanych ASP.NET Core pakietów NuGet w aplikacji — ASP.NET Core współdzielona architektura zawiera te zasoby. Zasoby w strukturze udostępnionej są zoptymalizowane pod kątem platformy docelowej w celu poprawienia czasu uruchamiania aplikacji. Aby uzyskać więcej informacji na temat platformy udostępnionej, zobacz [pakiet dystrybucji .NET Core](../distribution-packaging.md).
+Te odwołania do ASP.NET Core pakietu są nieco inne niż w przypadku większości normalnych pakietów NuGet. Wdrożenia aplikacji korzystających z tych pakietów w [ramach platformy](../deploying/index.md#publish-framework-dependent) są automatycznie wykorzystywane w ramach platformy udostępnionej ASP.NET Core. W przypadku korzystania z pakietów trwałych nie są wdrażane **żadne** zasoby z przywoływanych ASP.NET Core pakietów NuGet w aplikacji — ASP.NET Core współdzielona architektura zawiera te zasoby. Zasoby w strukturze udostępnionej są zoptymalizowane pod kątem platformy docelowej w celu poprawienia czasu uruchamiania aplikacji. Aby uzyskać więcej informacji na temat platformy udostępnionej, zobacz [pakiet dystrybucji .NET Core](../distribution-packaging.md).
 
 Jeśli określona *jest* wersja, jest ona traktowana jako *minimalna* wersja ASP.NET Core udostępnionej platformy dla wdrożeń zależnych od platformy i jako *dokładna* wersja wdrożeń samodzielnych. Może to mieć następujące konsekwencje:
 
@@ -96,7 +96,7 @@ Ustawienie tej właściwości na wartość `false` spowoduje wyłączenie niejaw
 
 Ta zmiana nie modyfikuje głównej Mechanics innych dołączeń. Jeśli jednak chcesz określić, na przykład niektóre pliki do opublikowania w aplikacji, możesz nadal używać znanych mechanizmów w *csproj* dla tego (na przykład `<Content>` elementu).
 
-`<EnableDefaultCompileItems>`wyłącza tylko `Compile` elementy globalne, ale nie wpływa na inne elementy globalne, takie jak niejawne `None` globalizowania, które również dotyczą \* elementów cs. Z tego powodu, **Eksplorator rozwiązań** będzie kontynuować wyświetlanie \* elementów CS jako części projektu, zawartych jako `None` elementy. W podobny sposób można ustawić `<EnableDefaultNoneItems>` wartość false, aby wyłączyć niejawną `None` globalizowania w następujący sposób:
+`<EnableDefaultCompileItems>` wyłącza tylko `Compile` elementy globalne, ale nie wpływa na inne elementy globalne, takie jak niejawne `None` globalizowania, które również dotyczą \* elementów cs. Z tego powodu, **Eksplorator rozwiązań** będzie kontynuować wyświetlanie \* elementów CS jako części projektu, zawartych jako `None` elementy. W podobny sposób można ustawić `<EnableDefaultNoneItems>` wartość false, aby wyłączyć niejawną `None` globalizowania w następujący sposób:
 
 ```xml
 <PropertyGroup>
@@ -126,11 +126,11 @@ Jeśli projekt ma wiele platform docelowych, wyniki polecenia powinny być skonc
 
 ### <a name="sdk-attribute"></a>Atrybut zestawu SDK
 
-Element główny `<Project>` pliku *. csproj* ma nowy atrybut o nazwie `Sdk` . `Sdk`Określa, który zestaw SDK będzie używany przez ten projekt. Zestaw SDK, zgodnie z opisem w dokumencie zawierającym [warstwy](cli-msbuild-architecture.md) , to zestaw [zadań](/visualstudio/msbuild/msbuild-tasks) i [elementów docelowych](/visualstudio/msbuild/msbuild-targets) programu MSBuild, które mogą kompilować kod platformy .NET Core. Dostępne są następujące zestawy SDK dla platformy .NET Core:
+Element główny `<Project>` pliku *. csproj* ma nowy atrybut o nazwie `Sdk` . `Sdk` Określa, który zestaw SDK będzie używany przez ten projekt. Zestaw SDK, zgodnie z opisem w dokumencie zawierającym [warstwy](cli-msbuild-architecture.md) , to zestaw [zadań](/visualstudio/msbuild/msbuild-tasks) i [elementów docelowych](/visualstudio/msbuild/msbuild-targets) programu MSBuild, które mogą kompilować kod platformy .NET Core. Dostępne są następujące zestawy SDK dla platformy .NET Core:
 
-1. Zestaw .NET Core SDK o IDENTYFIKATORze`Microsoft.NET.Sdk`
-2. Zestaw SDK sieci Web platformy .NET Core o IDENTYFIKATORze`Microsoft.NET.Sdk.Web`
-3. Zestaw SDK biblioteki klas programu .NET Core z IDENTYFIKATORem`Microsoft.NET.Sdk.Razor`
+1. Zestaw .NET Core SDK o IDENTYFIKATORze `Microsoft.NET.Sdk`
+2. Zestaw SDK sieci Web platformy .NET Core o IDENTYFIKATORze `Microsoft.NET.Sdk.Web`
+3. Zestaw SDK biblioteki klas programu .NET Core z IDENTYFIKATORem `Microsoft.NET.Sdk.Razor`
 4. Usługa programu .NET Core Worker o IDENTYFIKATORze `Microsoft.NET.Sdk.Worker` (od programu .net core 3,0)
 5. Podstawowe WinForms i WPF platformy .NET z IDENTYFIKATORem `Microsoft.NET.Sdk.WindowsDesktop` (ponieważ .NET Core 3,0)
 
@@ -150,28 +150,28 @@ Wymagany `Version` atrybut określa wersję pakietu do przywrócenia. Ten atrybu
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets, ExcludeAssets i PrivateAssets
 
-`IncludeAssets`atrybut określa, które zasoby należące do pakietu określonego przez `<PackageReference>` powinny być używane. Domyślnie są uwzględniane wszystkie zasoby pakietu.
+`IncludeAssets` atrybut określa, które zasoby należące do pakietu określonego przez `<PackageReference>` powinny być używane. Domyślnie są uwzględniane wszystkie zasoby pakietu.
 
-`ExcludeAssets`atrybut określa, które zasoby należące do pakietu określonego przez `<PackageReference>` nie powinny być używane.
+`ExcludeAssets` atrybut określa, które zasoby należące do pakietu określonego przez `<PackageReference>` nie powinny być używane.
 
-`PrivateAssets`atrybut określa, które zasoby należące do pakietu określonego przez `<PackageReference>` powinny być zużywane, ale nie można ich przepływać do następnego projektu. `Analyzers` `Build` `ContentFiles` Elementy i są domyślnie prywatne, gdy ten atrybut nie jest obecny.
+`PrivateAssets` atrybut określa, które zasoby należące do pakietu określonego przez `<PackageReference>` powinny być zużywane, ale nie można ich przepływać do następnego projektu. `Analyzers` `Build` `ContentFiles` Elementy i są domyślnie prywatne, gdy ten atrybut nie jest obecny.
 
 > [!NOTE]
 > `PrivateAssets`jest odpowiednikiem *project.jsw* / elemencie*xproj* `SuppressParent` .
 
 Te atrybuty mogą zawierać co najmniej jeden z następujących elementów, oddzielonych znakiem średniego, `;` Jeśli jest wyświetlany więcej niż jeden:
 
-- `Compile`— zawartość folderu *lib* jest dostępna do skompilowania.
-- `Runtime`— zawartość folderu *środowiska uruchomieniowego* jest dystrybuowana.
-- `ContentFiles`— zawartość folderu *contentfiles* jest używana.
-- `Build`— są używane elementy props/targets w folderze *Build* .
-- `Native`— zawartość zasobów natywnych jest kopiowana do folderu *wyjściowego* dla środowiska uruchomieniowego.
-- `Analyzers`– Analizatory są używane.
+- `Compile` — zawartość folderu *lib* jest dostępna do skompilowania.
+- `Runtime` — zawartość folderu *środowiska uruchomieniowego* jest dystrybuowana.
+- `ContentFiles` — zawartość folderu *contentfiles* jest używana.
+- `Build` — są używane elementy props/targets w folderze *Build* .
+- `Native` — zawartość zasobów natywnych jest kopiowana do folderu *wyjściowego* dla środowiska uruchomieniowego.
+- `Analyzers` – Analizatory są używane.
 
 Alternatywnie, atrybut może zawierać:
 
-- `None`— żaden z elementów zawartości nie jest używany.
-- `All`— wszystkie zasoby są używane.
+- `None` — żaden z elementów zawartości nie jest używany.
+- `All` — wszystkie zasoby są używane.
 
 ### <a name="dotnetclitoolreference"></a>DotNetCliToolReference
 
@@ -185,7 +185,7 @@ Należy pamiętać, że `DotNetCliToolReference` obecnie jest ona [przestarzała
 
 #### <a name="version"></a>Wersja
 
-`Version`Określa wersję pakietu do przywrócenia. Ten atrybut przestrzega reguł schematu obsługi wersji programu [NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Domyślnym zachowaniem jest wersja minimalna, włącznie. Na przykład określenie `Version="1.2.3"` jest równoznaczne z notacją NuGet `[1.2.3, )` i oznacza, że rozpoznany pakiet będzie miał wersję 1.2.3, jeśli jest dostępny lub większy w inny sposób.
+`Version` Określa wersję pakietu do przywrócenia. Ten atrybut przestrzega reguł schematu obsługi wersji programu [NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Domyślnym zachowaniem jest wersja minimalna, włącznie. Na przykład określenie `Version="1.2.3"` jest równoznaczne z notacją NuGet `[1.2.3, )` i oznacza, że rozpoznany pakiet będzie miał wersję 1.2.3, jeśli jest dostępny lub większy w inny sposób.
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 
@@ -204,7 +204,7 @@ RID — umożliwia publikowanie wdrożeń samodzielnych.
 <RuntimeIdentifier>ubuntu.16.04-x64</RuntimeIdentifier>
 ```
 
-`<RuntimeIdentifiers>`Zamiast tego użyj (plural), jeśli chcesz opublikować dla wielu środowisk uruchomieniowych. `<RuntimeIdentifier>`może zapewnić szybsze kompilacje, gdy wymagane jest tylko jedno środowisko uruchomieniowe.
+`<RuntimeIdentifiers>`Zamiast tego użyj (plural), jeśli chcesz opublikować dla wielu środowisk uruchomieniowych. `<RuntimeIdentifier>` może zapewnić szybsze kompilacje, gdy wymagane jest tylko jedno środowisko uruchomieniowe.
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
@@ -385,7 +385,7 @@ Określa typ repozytorium. Wartość domyślna to "Git".
 Określa nazwę gałęzi źródłowej w repozytorium. Gdy projekt jest spakowany w pakiecie NuGet, jest dodawany do metadanych pakietu.
 
 ### <a name="repositorycommit"></a>RepositoryCommit
-Opcjonalne zatwierdzenie lub zestaw zmian repozytorium, aby wskazać, z którym źródłem został skompilowany pakiet. `RepositoryUrl`należy również określić, aby ta właściwość została uwzględniona. Gdy projekt jest spakowany w pakiecie NuGet, to zatwierdzenie lub zestaw zmian zostanie dodany do metadanych pakietu.
+Opcjonalne zatwierdzenie lub zestaw zmian repozytorium, aby wskazać, z którym źródłem został skompilowany pakiet. `RepositoryUrl` należy również określić, aby ta właściwość została uwzględniona. Gdy projekt jest spakowany w pakiecie NuGet, to zatwierdzenie lub zestaw zmian zostanie dodany do metadanych pakietu.
 
 ### <a name="nopackageanalysis"></a>NoPackageAnalysis
 
@@ -449,11 +449,11 @@ Jak pokazano w poniższej tabeli, każdy atrybut ma właściwość, która kontr
 
 Uwagi:
 
-- `AssemblyVersion`i `FileVersion` domyślnie przyjmuje wartość `$(Version)` bez sufiksu. Na przykład, jeśli `$(Version)` jest `1.2.3-beta.4` , wartość będzie równa `1.2.3` .
-- `InformationalVersion`wartość domyślna to `$(Version)` .
+- `AssemblyVersion` i `FileVersion` domyślnie przyjmuje wartość `$(Version)` bez sufiksu. Na przykład, jeśli `$(Version)` jest `1.2.3-beta.4` , wartość będzie równa `1.2.3` .
+- `InformationalVersion` wartość domyślna to `$(Version)` .
 - `InformationalVersion``$(SourceRevisionId)`dołącza, jeśli właściwość jest obecna. Można go wyłączyć przy użyciu `IncludeSourceRevisionInInformationalVersion` .
-- `Copyright`i `Description` właściwości są również używane dla metadanych narzędzia NuGet.
-- `Configuration`jest współużytkowany ze wszystkimi procesami kompilacji i ustawiany za pośrednictwem `--configuration` parametru `dotnet` poleceń.
+- `Copyright` i `Description` właściwości są również używane dla metadanych narzędzia NuGet.
+- `Configuration` jest współużytkowany ze wszystkimi procesami kompilacji i ustawiany za pośrednictwem `--configuration` parametru `dotnet` poleceń.
 
 ### <a name="generateassemblyinfo"></a>GenerateAssemblyInfo
 

@@ -2,12 +2,12 @@
 title: polecenie dotnet publish
 description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
 ms.date: 02/24/2020
-ms.openlocfilehash: 4ff49452e4d941b3e06ad511507b1dc429ab459f
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 64a68c97e01bbf962616b31210889eb23d3734f1
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187978"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608287"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -123,7 +123,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
   Określa ścieżkę do katalogu wyjściowego.
   
-  Jeśli nie zostanie określony, domyślna wartość to *[project_file_folder]./bin/[Konfiguracja]/[Framework]/Publish/* dla plików binarnych zależnych od środowiska uruchomieniowego i dla wielu platform. Wartość domyślna to *[project_file_folder]/bin/[Konfiguracja]/[Framework]/[Runtime]/Publish/* dla samodzielnego pliku wykonywalnego.
+  Jeśli nie zostanie określony, domyślna wartość to *[project_file_folder]./bin/[Konfiguracja]/[Framework]/Publish/* dla plików wykonywalnych zależnych od platformy i międzyplatformowych plików binarnych. Wartość domyślna to *[project_file_folder]/bin/[Konfiguracja]/[Framework]/[Runtime]/Publish/* dla samodzielnego pliku wykonywalnego.
 
   W projekcie sieci Web, jeśli folder wyjściowy znajduje się w folderze projektu, kolejne `dotnet publish` polecenia powodują zagnieżdżone foldery wyjściowe. Na przykład, jeśli folder projektu jest typu moje *projekty*, a folder danych wyjściowych publikowanie jest w *projekcie/publikacji*i uruchamiasz `dotnet publish` dwa razy, drugi przebieg umieszcza pliki zawartości, takie jak pliki *config* i *JSON* w programie *WebProject/Publish/Publish*. Aby uniknąć zagnieżdżania folderów publikowania, określ folder publikowania, który nie znajduje się **bezpośrednio** w folderze projektu, lub wyklucz folder publikacji z projektu. Aby wykluczyć folder publikacji o nazwie *publishoutput*, Dodaj następujący element do `PropertyGroup` elementu w pliku *. csproj* :
 
@@ -187,13 +187,13 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 ## <a name="examples"></a>Przykłady
 
-- Utwórz [Międzyplatformowy plik binarny zależny od środowiska uruchomieniowego](../deploying/index.md#produce-a-cross-platform-binary) dla projektu w bieżącym katalogu:
+- Utwórz [zależny od platformy plik binarny](../deploying/index.md#produce-a-cross-platform-binary) dla projektu w bieżącym katalogu:
 
   ```dotnetcli
   dotnet publish
   ```
 
-  Począwszy od zestawu SDK platformy .NET Core 3,0, w tym przykładzie tworzony jest również [plik wykonywalny zależny od środowiska uruchomieniowego](../deploying/index.md#publish-runtime-dependent) dla bieżącej platformy.
+  Począwszy od zestawu SDK platformy .NET Core 3,0, w tym przykładzie tworzony jest również [plik wykonywalny zależny od](../deploying/index.md#publish-framework-dependent) platformy dla bieżącej platformy.
 
 - Utwórz [własny plik wykonywalny](../deploying/index.md#publish-self-contained) dla projektu w bieżącym katalogu dla określonego środowiska uruchomieniowego:
 
@@ -203,7 +203,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
   Identyfikator RID musi znajdować się w pliku projektu.
 
-- Utwórz [plik wykonywalny zależny od środowiska uruchomieniowego](../deploying/index.md#publish-runtime-dependent) dla projektu w bieżącym katalogu dla określonej platformy:
+- Utwórz [plik wykonywalny zależny od platformy](../deploying/index.md#publish-framework-dependent) dla projektu w bieżącym katalogu dla określonej platformy:
 
   ```dotnetcli
   dotnet publish --runtime osx.10.11-x64 --self-contained false

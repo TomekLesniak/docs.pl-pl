@@ -4,12 +4,12 @@ description: Dowiedz się, jak platforma .NET Core automatycznie wyszukuje i wyb
 author: adegeo
 ms.author: adegeo
 ms.date: 03/24/2020
-ms.openlocfilehash: faaa638905bb3c8e9cd4c09af83979d90698df3d
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 82b5522601b0ed5d3f4faf6e6c6c970ba285b11f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803121"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608202"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Wybierz wersję platformy .NET Core do użycia
 
@@ -52,9 +52,9 @@ Poniższy przykład ilustruje *global.js* składni:
 
 Proces wybierania wersji zestawu SDK to:
 
-1. `dotnet`wyszukuje *global.jsw* pliku iteracyjnie odwracanie ścieżki w górę od bieżącego katalogu roboczego.
-1. `dotnet`używa zestawu SDK określonego w pierwszej *global.jsprzy* znalezionym.
-1. `dotnet`program używa najnowszego zainstalowanego zestawu SDK, jeśli nie zostanie znaleziony żaden *global.js* .
+1. `dotnet` wyszukuje *global.jsw* pliku iteracyjnie odwracanie ścieżki w górę od bieżącego katalogu roboczego.
+1. `dotnet` używa zestawu SDK określonego w pierwszej *global.jsprzy* znalezionym.
+1. `dotnet` program używa najnowszego zainstalowanego zestawu SDK, jeśli nie zostanie znaleziony żaden *global.js* .
 
 Więcej informacji na temat wybierania wersji zestawu SDK można znaleźć w sekcji [reguł dopasowania](../tools/global-json.md#matching-rules) w artykule na *global.js*.
 
@@ -78,7 +78,7 @@ Platformy docelowe .NET Standard są również ograniczone do docelowej struktur
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Aplikacje zależne od platformy przekazują
 
-Gdy uruchamiasz aplikację ze źródła z [`dotnet run`](../tools/dotnet-run.md) , z [**wdrożenia zależnego od platformy**](../deploying/index.md#publish-runtime-dependent) z [`dotnet myapp.dll`](../tools/dotnet.md#description) , lub z [**pliku wykonywalnego zależnego od platformy**](../deploying/index.md#publish-runtime-dependent) z `myapp.exe` , `dotnet` plik wykonywalny jest **hostem** aplikacji.
+Gdy uruchamiasz aplikację ze źródła z [`dotnet run`](../tools/dotnet-run.md) , z [**wdrożenia zależnego od platformy**](../deploying/index.md#publish-framework-dependent) z [`dotnet myapp.dll`](../tools/dotnet.md#description) , lub z [**pliku wykonywalnego zależnego od platformy**](../deploying/index.md#publish-framework-dependent) z `myapp.exe` , `dotnet` plik wykonywalny jest **hostem** aplikacji.
 
 Na hoście wybierana jest Najnowsza wersja poprawki zainstalowana na maszynie. Na przykład, jeśli określono `netcoreapp3.0` w pliku projektu i `3.0.2` jest Najnowsza wersja środowiska uruchomieniowego platformy .NET, `3.0.2` jest używane środowisko uruchomieniowe.
 
@@ -87,9 +87,9 @@ Jeśli nie `3.0.*` zostanie znaleziona akceptowalna wersja, `3.*` zostanie użyt
 Kilka przykładów użycia przedstawia zachowanie, jeśli celem jest 3,0:
 
 - określono ✔️ 3,0. 3.0.3 to najwyższa zainstalowana wersja poprawki. 3.0.3.
-- ❌3,0 został określony. Nie zainstalowano żadnych wersji 3,0. *. 2.1.1 to najwyższy zainstalowany środowisko uruchomieniowe. Zostanie wyświetlony komunikat o błędzie.
+- ❌ 3,0 został określony. Nie zainstalowano żadnych wersji 3,0. *. 2.1.1 to najwyższy zainstalowany środowisko uruchomieniowe. Zostanie wyświetlony komunikat o błędzie.
 - określono ✔️ 3,0. Nie zainstalowano żadnych wersji 3,0. *. 3.1.0 to najwyższa zainstalowana wersja środowiska uruchomieniowego. 3.1.0.
-- ❌2,0 został określony. Nie ma zainstalowanych wersji 2. x. 3.0.0 to najwyższe zainstalowane środowisko uruchomieniowe. Zostanie wyświetlony komunikat o błędzie.
+- ❌ 2,0 został określony. Nie ma zainstalowanych wersji 2. x. 3.0.0 to najwyższe zainstalowane środowisko uruchomieniowe. Zostanie wyświetlony komunikat o błędzie.
 
 Wersja pomocnicza — do przodu ma jeden efekt uboczny, który może mieć wpływ na użytkowników końcowych. Poniżej przedstawiono przykładowy scenariusz:
 
@@ -105,7 +105,7 @@ Aplikację można opublikować jako samodzielną [**dystrybucję**](../deploying
 
 Proces publikowania wybiera najnowszą wersję poprawki danej rodziny środowiska uruchomieniowego. Na przykład `dotnet publish` Wybierz pozycję .NET Core 3.0.3, jeśli jest to Najnowsza wersja poprawki w rodzinie środowiska uruchomieniowego programu .NET Core 3,0. Platforma docelowa (łącznie z najnowszymi zainstalowanymi poprawkami zabezpieczeń) jest spakowana z aplikacją.
 
-Jeśli minimalna wersja określona dla aplikacji nie jest spełniona, występuje błąd. `dotnet publish`tworzy powiązanie z najnowszą wersją poprawki środowiska uruchomieniowego (w ramach danej głównej rodziny wersji). `dotnet publish`nie obsługuje semantyki z przekazaniem do przodu `dotnet run` . Aby uzyskać więcej informacji na temat poprawek i wdrożeń samodzielnych, zapoznaj się z artykułem dotyczącym [wyboru poprawek w środowisku uruchomieniowym](../deploying/runtime-patch-selection.md) w temacie Wdrażanie aplikacji .NET Core.
+Jeśli minimalna wersja określona dla aplikacji nie jest spełniona, występuje błąd. `dotnet publish` tworzy powiązanie z najnowszą wersją poprawki środowiska uruchomieniowego (w ramach danej głównej rodziny wersji). `dotnet publish` nie obsługuje semantyki z przekazaniem do przodu `dotnet run` . Aby uzyskać więcej informacji na temat poprawek i wdrożeń samodzielnych, zapoznaj się z artykułem dotyczącym [wyboru poprawek w środowisku uruchomieniowym](../deploying/runtime-patch-selection.md) w temacie Wdrażanie aplikacji .NET Core.
 
 Wdrożenia samodzielne mogą wymagać określonej wersji poprawki. Można zastąpić minimalną wersję poprawki środowiska uruchomieniowego (do nowszej lub niższej wersji) w pliku projektu, jak pokazano w następującym przykładzie:
 
@@ -115,7 +115,7 @@ Wdrożenia samodzielne mogą wymagać określonej wersji poprawki. Można zastą
 
 `RuntimeFrameworkVersion`Element zastępuje domyślne zasady wersji. W przypadku wdrożeń samodzielnych `RuntimeFrameworkVersion` określa *dokładną* wersję struktury środowiska uruchomieniowego. W przypadku aplikacji zależnych od platformy `RuntimeFrameworkVersion` określa *minimalną* wymaganą wersję środowiska uruchomieniowego.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Pobierz i zainstaluj program .NET Core](../install/index.yml).
 - [Jak usunąć środowisko uruchomieniowe programu .NET Core i zestaw SDK](../install/remove-runtime-sdk-versions.md).

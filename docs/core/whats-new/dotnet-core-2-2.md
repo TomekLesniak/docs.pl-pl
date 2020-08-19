@@ -1,34 +1,34 @@
 ---
 title: Co nowego w programie .NET Core 2.2
-description: Dowiedz się więcej o nowych funkcjach znalezionych w .NET Core 2.2.
+description: Dowiedz się więcej o nowych funkcjach dostępnych w programie .NET Core 2,2.
 dev_langs:
 - csharp
 - vb
 ms.date: 12/04/2018
-ms.openlocfilehash: 64cb561acd72ff5d4a11fcae7ce59eaad750f74e
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 656ef9aa2745c935c37b69ae5a54b8d126700e55
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644373"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608305"
 ---
 # <a name="whats-new-in-net-core-22"></a>Co nowego w programie .NET Core 2.2
 
-.NET Core 2.2 zawiera ulepszenia we wdrażaniu aplikacji, obsługa zdarzeń dla usług środowiska wykonawczego, uwierzytelnianie w bazach `Main` danych SQL platformy Azure, wydajność kompilatora JIT i iniekcję kodu przed wykonaniem metody.
+Program .NET Core 2,2 zawiera usprawnienia wdrażania aplikacji, obsługi zdarzeń dla usług środowiska uruchomieniowego, uwierzytelniania do baz danych Azure SQL, wydajności kompilatora JIT i iniekcji kodu przed wykonaniem `Main` metody.
 
 ## <a name="new-deployment-mode"></a>Nowy tryb wdrażania
 
-Począwszy od programu .NET Core 2.2, można wdrażać [pliki wykonywalne zależne od struktury](../deploying/index.md#publish-runtime-dependent), które są plikami **exe** zamiast plików **dll.** Funkcjonalnie podobne do wdrożeń zależnych od struktury, pliki wykonywalne zależne od struktury (FDE) nadal opierają się na obecności udostępnionej wersji systemu .NET Core do uruchomienia. Aplikacja zawiera tylko kod i wszelkie zależności innych firm. W przeciwieństwie do wdrożeń zależnych od struktury, FDEs są specyficzne dla platformy.
+Począwszy od platformy .NET Core 2,2, można wdrożyć pliki [wykonywalne zależne od platformy](../deploying/index.md#publish-framework-dependent), które są plikami **exe** zamiast plików **dll** . Funkcje podobne do wdrożeń zależnych od platformy, zależne od struktury pliki wykonywalne (całego) nadal polegają na obecności udostępnionej wersji systemu .NET Core do uruchomienia. Aplikacja zawiera tylko kod i wszystkie zależności innych firm. W przeciwieństwie do wdrożeń zależnych od struktury FDEs są specyficzne dla platformy.
 
-Ten nowy tryb wdrażania ma wyraźną zaletę tworzenia pliku wykonywalnego zamiast biblioteki, co oznacza, że można uruchomić aplikację bezpośrednio bez wywoływania `dotnet` najpierw.
+Ten nowy tryb wdrożenia ma odrębną zaletę kompilowania pliku wykonywalnego zamiast biblioteki, co oznacza, że można uruchomić aplikację bezpośrednio bez wywoływania funkcji `dotnet` .
 
-## <a name="core"></a>Podstawowe
+## <a name="core"></a>Core
 
 **Obsługa zdarzeń w usługach środowiska uruchomieniowego**
 
-Często można monitorować korzystanie przez aplikację z usług środowiska wykonawczego, takich jak GC, JIT i ThreadPool, aby zrozumieć, jak wpływają one na aplikację.W systemach Windows jest to zwykle wykonywane przez monitorowanie zdarzeń ETW bieżącego procesu.Chociaż nadal działa dobrze, nie zawsze jest możliwe użycie ETW, jeśli pracujesz w środowisku o niskich uprawnieniach lub w systemie Linux lub macOS.
+Często warto monitorować użycie usług środowiska uruchomieniowego w aplikacji, takich jak GC, JIT i wątków, aby zrozumieć, jak wpływają na aplikację.W systemach Windows jest to zwykle wykonywane przez monitorowanie zdarzeń ETW bieżącego procesu.Mimo że ta funkcja nadal działa, nie zawsze jest możliwe korzystanie z funkcji ETW, jeśli jest uruchomiona w środowisku z niskim poziomem uprawnień lub w systemie Linux lub macOS.
 
-Począwszy od .NET Core 2.2, Zdarzenia CoreCLR <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType> można teraz używać przy użyciu klasy. Te zdarzenia opisują zachowanie takich usług środowiska wykonawczego, jak GC, JIT, ThreadPool i interop. Są to te same zdarzenia, które są udostępniane jako część dostawcy CoreCLR ETW.Dzięki temu aplikacje do korzystania z tych zdarzeń lub użyć mechanizmu transportu, aby wysłać je do usługi agregacji telemetrii. Możesz zobaczyć, jak subskrybować zdarzenia w poniższym przykładzie kodu:
+Począwszy od platformy .NET Core 2,2, zdarzenia CoreCLR można teraz wykorzystać przy użyciu <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType> klasy. Te zdarzenia opisują zachowanie takich usług w czasie wykonywania jak GC, JIT, wątków i międzyoperacyjności. Są to te same zdarzenia, które są ujawniane w ramach dostawcy ETW CoreCLR.Dzięki temu aplikacje mogą zużywać te zdarzenia lub korzystać z mechanizmu transportu w celu wysyłania ich do usługi agregacji telemetrii. Możesz zobaczyć, jak subskrybować zdarzenia w następującym przykładzie kodu:
 
 ```csharp
 internal sealed class SimpleEventListener : EventListener
@@ -58,7 +58,7 @@ internal sealed class SimpleEventListener : EventListener
 }
 ```
 
-Ponadto .NET Core 2.2 dodaje następujące dwie <xref:System.Diagnostics.Tracing.EventWrittenEventArgs> właściwości do klasy, aby zapewnić dodatkowe informacje o zdarzeniach ETW:
+Ponadto program .NET Core 2,2 dodaje następujące dwie właściwości do <xref:System.Diagnostics.Tracing.EventWrittenEventArgs> klasy w celu dostarczenia dodatkowych informacji na temat zdarzeń ETW:
 
 - <xref:System.Diagnostics.Tracing.EventWrittenEventArgs.OSThreadId?displayProperty=nameWithType>
 
@@ -66,36 +66,36 @@ Ponadto .NET Core 2.2 dodaje następujące dwie <xref:System.Diagnostics.Tracing
 
 ## <a name="data"></a>Dane
 
-**Uwierzytelnianie AAD w bazach danych SQL Azure za pomocą właściwości SqlConnection.AccessToken**
+**Uwierzytelnianie w usłudze AAD w bazach danych Azure SQL przy użyciu właściwości SQLConnection. AccessToken**
 
-Począwszy od platformy .NET Core 2.2 token dostępu wystawiony przez usługę Azure Active Directory może służyć do uwierzytelniania w bazie danych SQL platformy Azure. Aby obsługiwać tokeny <xref:System.Data.SqlClient.SqlConnection.AccessToken> dostępu, właściwość <xref:System.Data.SqlClient.SqlConnection> została dodana do klasy. Aby skorzystać z uwierzytelniania AAD, pobierz wersję 4.6 pakietu System.Data.SqlClient NuGet. Aby korzystać z tej funkcji, można uzyskać wartość tokenu dostępu przy użyciu [biblioteki uwierzytelniania usługi Active Directory dla platformy .NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet) zawartej w pakiecie [`Microsoft.IdentityModel.Clients.ActiveDirectory`](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) NuGet.
+Począwszy od platformy .NET Core 2,2, token dostępu wystawiony przez Azure Active Directory może służyć do uwierzytelniania w usłudze Azure SQL Database. Aby obsługiwać tokeny dostępu, <xref:System.Data.SqlClient.SqlConnection.AccessToken> Właściwość została dodana do <xref:System.Data.SqlClient.SqlConnection> klasy. Aby skorzystać z uwierzytelniania w usłudze AAD, Pobierz wersję 4,6 pakietu NuGet system. Data. SqlClient. Aby skorzystać z tej funkcji, można uzyskać wartość tokenu dostępu przy użyciu [Active Directory Authentication Library dla platformy .NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet) zawartej w [`Microsoft.IdentityModel.Clients.ActiveDirectory`](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) pakiecie NuGet.
 
-## <a name="jit-compiler-improvements"></a>Ulepszenia kompilatora JIT
+## <a name="jit-compiler-improvements"></a>Udoskonalenia kompilatora JIT
 
-**Kompilacja warstwowa pozostaje funkcją opt-in**
+**Kompilacja warstwowa pozostaje funkcją wyboru**
 
-W .NET Core 2.1 kompilator JIT zaimplementował nową technologię kompilatora, *kompilację warstwową*, jako funkcję opt-in. Celem kompilacji warstwowej jest zwiększona wydajność. Jednym z ważnych zadań wykonywanych przez kompilator JIT jest optymalizacja wykonywania kodu. W przypadku mało używanych ścieżek kodu kompilator może jednak poświęcić więcej czasu na optymalizację kodu niż środowisko wykonawcze spędza wykonywanie nieoptymalizowanego kodu. Kompilacja warstwowa wprowadza dwa etapy kompilacji JIT:
+W programie .NET Core 2,1 kompilator JIT zaimplementował nową technologię kompilatora, *kompilację warstwową*jako funkcję wyboru. Celem kompilacji warstwowej jest zwiększona wydajność. Jednym z ważnych zadań wykonywanych przez kompilator JIT jest optymalizacja wykonywania kodu. Jednak w przypadku niewielkich ścieżek kodu kompilator może poświęcać więcej czasu na optymalizację kodu niż środowisko uruchomieniowe poświęca na wykonywanie niezoptymalizowanego kodu. Kompilacja warstwowa wprowadza dwa etapy kompilacji JIT:
 
 - **Pierwsza warstwa**, która generuje kod tak szybko, jak to możliwe.
 
 - **Druga warstwa**, która generuje zoptymalizowany kod dla tych metod, które są wykonywane często. Druga warstwa kompilacji jest wykonywana równolegle w celu zwiększenia wydajności.
 
-Aby uzyskać informacje na temat poprawy wydajności, która może wynikać z kompilacji warstwowej, zobacz [Ogłaszanie .NET Core 2.2 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-2-preview-2/).
+Aby uzyskać informacje na temat poprawy wydajności, która może wynikać z kompilacji warstwowej, zobacz temat [ogłaszanie programu .NET Core 2,2 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-2-preview-2/).
 
-W .NET Core 2.2 Preview 2 kompilacja warstwowa została domyślnie włączona. Jednak zdecydowaliśmy, że nadal nie jesteśmy gotowi, aby włączyć kompilacji warstwowej domyślnie. Tak więc w .NET Core 2.2 kompilacja warstwowa nadal jest funkcją opt-in. Aby uzyskać informacje na temat wyrażenia zgody na kompilację warstwową, zobacz [ulepszenia kompilatora Jit](dotnet-core-2-1.md#jit-compiler-improvements) w [co nowego w programie .NET Core 2.1](dotnet-core-2-1.md).
+W programie .NET Core 2,2 w wersji zapoznawczej 2 kompilacja warstwowa została włączona domyślnie. Jednak firma Microsoft zdecydowała się, że nadal nie możesz domyślnie włączyć kompilacji warstwowej. Dlatego w przypadku platformy .NET Core 2,2 kompilacja warstwowa nadal jest funkcją wyboru. Aby uzyskać informacje o tym, jak przeprowadzić kompilację warstwową, zobacz [udoskonalenia kompilatora JIT](dotnet-core-2-1.md#jit-compiler-improvements) w artykule [co nowego w programie .NET Core 2,1](dotnet-core-2-1.md).
 
 ## <a name="runtime"></a>Środowisko uruchomieniowe
 
-**Wstrzykiwanie kodu przed wykonaniem Main metody**
+**Wprowadzanie kodu przed wykonaniem metody Main**
 
-Począwszy od .NET Core 2.2, można użyć haka startowego, aby wstrzyknąć kod przed uruchomieniem metody głównej aplikacji. Haki startowe umożliwiają hostowi dostosowanie zachowania aplikacji po ich wdrożeniu bez konieczności ponownej kompilacji lub zmiany aplikacji.
+Począwszy od platformy .NET Core 2,2, można użyć punktu zaczepienia uruchomienia, aby wstrzyknąć kod przed uruchomieniem głównej metody aplikacji. Punkty zaczepienia uruchomienia umożliwiają hostowi dostosowanie zachowania aplikacji po ich wdrożeniu bez konieczności ponownego kompilowania lub zmiany aplikacji.
 
-Oczekujemy, że dostawcy hostingu zdefiniują niestandardową konfigurację i zasady, w <xref:System.Runtime.Loader.AssemblyLoadContext?displayProperty=nameWithType> tym ustawienia, które mogą mieć wpływ na zachowanie obciążenia głównego punktu wejścia, takie jak zachowanie. Hak może służyć do konfigurowania śledzenia lub wtrysku telemetrii, skonfigurować wywołania zwrotne do obsługi lub zdefiniować inne zachowanie zależne od środowiska. Hak jest oddzielony od punktu wejścia, dzięki czemu kod użytkownika nie musi być modyfikowany.
+Oczekujemy, że dostawcy hostingu definiują niestandardową konfigurację i zasady, w tym ustawienia, które mogą mieć wpływ na zachowanie ładowania głównego punktu wejścia, takie jak  <xref:System.Runtime.Loader.AssemblyLoadContext?displayProperty=nameWithType>   zachowanie. Punkt zaczepienia może służyć do konfigurowania iniekcji lub wstrzykiwania danych telemetrycznych, konfigurowania wywołań zwrotnych do obsługi lub definiowania innych zachowań zależnych od środowiska. Punkt zaczepienia jest oddzielony od punktu wejścia, dzięki czemu kod użytkownika nie musi być modyfikowany.
 
-Aby uzyskać więcej informacji, zobacz [hak uruchamiania hosta.](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/host-startup-hook.md)
+Aby uzyskać więcej informacji, zobacz punkt [zaczepienia uruchamiania hosta](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/host-startup-hook.md) .
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Co nowego w programie .NET Core 3.1](dotnet-core-3-1.md)
-- [Co nowego w ASP.NET Core 2.2](/aspnet/core/release-notes/aspnetcore-2.2)
-- [Nowe funkcje w EF Core 2.2](/ef/core/what-is-new/ef-core-2.2)
+- [Co nowego w ASP.NET Core 2,2](/aspnet/core/release-notes/aspnetcore-2.2)
+- [Nowe funkcje w EF Core 2,2](/ef/core/what-is-new/ef-core-2.2)

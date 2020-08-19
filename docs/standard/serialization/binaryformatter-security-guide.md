@@ -4,12 +4,12 @@ description: W tym artykule opisano zagrożenia bezpieczeństwa związane z type
 ms.date: 07/11/2020
 ms.author: levib
 author: GrabYourPitchforks
-ms.openlocfilehash: ac01fe78c9577563641a8b06a232ed614ed8520a
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 2c76a81650e5b83677f6c4df64770bd1ef5f775e
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558845"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607929"
 ---
 # <a name="binaryformatter-security-guide"></a>Przewodnik po zabezpieczeniach elementu BinaryFormatter
 
@@ -22,7 +22,7 @@ Ten artykuł ma zastosowanie do następujących implementacji platformy .NET:
 ## <a name="background"></a>Tło
 
 > [!WARNING]
-> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ jest niebezpieczny i ***nie*** jest zalecany do przetwarzania danych. Aplikacje powinny przestać korzystać z programu `BinaryFormatter` tak szybko, jak to możliwe, nawet jeśli uważają, że dane są przez nie przetwarzane. `BinaryFormatter` nie może być zabezpieczony.
+> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ jest niebezpieczny i ***nie*** jest zalecany do przetwarzania danych. Aplikacje powinny przestać korzystać z programu `BinaryFormatter` tak szybko, jak to możliwe, nawet jeśli uważają, że dane są przez nie przetwarzane. `BinaryFormatter` jest niezabezpieczony i nie może być zabezpieczony.
 
 Ten artykuł dotyczy również następujących typów:
 

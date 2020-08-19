@@ -4,12 +4,12 @@ description: Poznaj typowe problemy występujące podczas uruchamiania narzędzi
 author: kdollard
 ms.topic: troubleshooting
 ms.date: 02/14/2020
-ms.openlocfilehash: b98b2735770c8259c2daf94575fc087b91bb61fd
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: db88958e1605fef589c5dbcb12065a6318183705
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062639"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608316"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Rozwiązywanie problemów z użyciem narzędzia .NET Core
 
@@ -74,7 +74,7 @@ Nazwa pliku wykonywalnego określa sposób wywołania narzędzia. W poniższej t
 
 ### <a name="runtime-not-found"></a>Nie znaleziono środowiska uruchomieniowego
 
-Narzędzia .NET Core są [aplikacjami zależnymi od](../deploying/index.md#publish-runtime-dependent)platformy, co oznacza, że korzystają z środowiska uruchomieniowego .NET Core zainstalowanego na komputerze. Jeśli oczekiwane środowisko uruchomieniowe nie zostanie znalezione, są one zgodne z normalnymi regułami przetaczania w czasie wykonywania w środowisku .NET Core
+Narzędzia .NET Core są [aplikacjami zależnymi od](../deploying/index.md#publish-framework-dependent)platformy, co oznacza, że korzystają z środowiska uruchomieniowego .NET Core zainstalowanego na komputerze. Jeśli oczekiwane środowisko uruchomieniowe nie zostanie znalezione, są one zgodne z normalnymi regułami przetaczania w czasie wykonywania w środowisku .NET Core
 
 * Aplikacja przenosi do przodu do najwyższej wersji poprawki określonej głównej i pomocniczej.
 * Jeśli nie ma pasującego środowiska uruchomieniowego z odpowiadającym mu numerem wersji głównej i pomocniczej, używana jest kolejna wyższa wersja pomocnicza.
@@ -158,6 +158,6 @@ Instalacja narzędzia wymaga dostępu do źródła danych NuGet zawierającego p
 
 Typową przyczyną błędu jest to, że nazwa narzędzia nie jest poprawna. Może się to zdarzyć z powodu błędnego wpisania lub, ponieważ narzędzie zostało przeniesione lub zostało zaniechane. W przypadku narzędzi w systemie NuGet.org należy upewnić się, że nazwa jest poprawna, aby wyszukać narzędzie pod adresem NuGet.org i skopiować polecenie instalacji.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 * [Narzędzia .NET Core](global-tools.md)

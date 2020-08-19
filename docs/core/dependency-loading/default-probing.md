@@ -4,16 +4,16 @@ description: Omówienie elementu System. Runtime. Loader. AssemblyLoadContext. d
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 1e347c716c2d739a1bd03be056b57fdbda6c678f
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 13ce4c7de5f6ce1b76b2e61db810c0f19717540f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82859513"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608415"
 ---
 # <a name="default-probing"></a>Domyślna sonda
 
-<xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> Wystąpienie jest odpowiedzialne za lokalizowanie zależności zestawu. W <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> tym artykule opisano logikę sondowania wystąpienia.
+<xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType>Wystąpienie jest odpowiedzialne za lokalizowanie zależności zestawu. W tym artykule opisano <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> logikę sondowania wystąpienia.
 
 ## <a name="host-configured-probing-properties"></a>Host skonfigurował właściwości sondowania
 
@@ -31,16 +31,18 @@ Każda właściwość sondowania jest opcjonalna. Jeśli jest obecny, Każda wł
 
 ### <a name="how-are-the-properties-populated"></a>Jak są wypełniane właściwości?
 
-Istnieją dwa główne scenariusze wypełniania właściwości w zależności od tego, * \<czy istnieje plik MojaApl>. deps. JSON* .
+Istnieją dwa główne scenariusze wypełniania właściwości w zależności od tego, czy * \<myapp>.deps.jsw* pliku istnieje.
 
-- Gdy plik * \*. deps. JSON* jest obecny, jest analizowany w celu wypełnienia właściwości sondowania.
-- Gdy plik * \*. deps. JSON* nie istnieje, zakłada się, że katalog aplikacji zawiera wszystkie zależności. Zawartość katalogu służy do wypełniania właściwości sondowania.
+- Gdy * \*.deps.jsw* pliku jest obecny, jest analizowany w celu wypełnienia właściwości sondowania.
+- Gdy * \*.deps.jsw* pliku nie istnieje, zakłada się, że katalog aplikacji zawiera wszystkie zależności. Zawartość katalogu służy do wypełniania właściwości sondowania.
 
-Ponadto pliki * \*. deps. JSON* dla wszystkich platform, do których istnieją odwołania, są podobnie analizowane.
+Ponadto * \*.deps.jsw* plikach dla dowolnych struktur, do których istnieją odwołania, są podobnie analizowane.
 
-Na koniec zmienna `ADDITIONAL_DEPS` środowiskowa może służyć do dodawania dodatkowych zależności.
+Na koniec zmienna środowiskowa `ADDITIONAL_DEPS` może służyć do dodawania dodatkowych zależności.  `dotnet.exe` zawiera również `--additional-deps` opcjonalny parametr, aby ustawić tę wartość przy uruchamianiu aplikacji.
 
-Właściwości `APP_PATHS` i `APP_NI_PATHS` nie są domyślnie wypełniane i pomijane w przypadku większości aplikacji.
+`APP_PATHS`Właściwości i `APP_NI_PATHS` nie są domyślnie wypełniane i pomijane w przypadku większości aplikacji.
+
+Do listy wszystkich * \*.deps.js* plików używanych w aplikacji można uzyskać dostęp za pośrednictwem programu `System.AppContext.GetData("APP_CONTEXT_DEPS_FILES")` .
 
 ### <a name="how-do-i-see-the-probing-properties-from-managed-code"></a>Jak mogę wyświetlić właściwości sondowania z kodu zarządzanego?
 
@@ -53,22 +55,22 @@ Host środowiska uruchomieniowego platformy .NET Core będzie wyprowadzać przyd
 |Zmienna środowiskowa        |Opis  |
 |----------------------------|---------|
 |`COREHOST_TRACE=1`          |Włącza śledzenie.|
-|`COREHOST_TRACEFILE=<path>` |Ślady do ścieżki pliku zamiast wartości domyślnej `stderr`.|
+|`COREHOST_TRACEFILE=<path>` |Ślady do ścieżki pliku zamiast wartości domyślnej `stderr` .|
 |`COREHOST_TRACE_VERBOSITY`  |Ustawia poziom szczegółowości od 1 (najniższy) do 4 (najwyższy).|
 
 ## <a name="managed-assembly-default-probing"></a>Domyślna sondowanie zestawu zarządzanego
 
 Podczas sondowania w celu zlokalizowania zestawu zarządzanego <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> wygląd wygląda następująco:
 
-- Pliki pasujące <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> do `TRUSTED_PLATFORM_ASSEMBLIES` programu (po usunięciu rozszerzeń plików).
-- Pliki zestawu obrazów natywnych `APP_NI_PATHS` w programie ze wspólnymi rozszerzeniami plików.
-- Pliki zestawów w `APP_PATHS` programie ze wspólnymi rozszerzeniami plików.
+- Pliki pasujące do programu <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> `TRUSTED_PLATFORM_ASSEMBLIES` (po usunięciu rozszerzeń plików).
+- Pliki zestawu obrazów natywnych w programie `APP_NI_PATHS` ze wspólnymi rozszerzeniami plików.
+- Pliki zestawów w programie `APP_PATHS` ze wspólnymi rozszerzeniami plików.
 
 ## <a name="satellite-resource-assembly-probing"></a>Sonda zestawu (zasobów) dla satelity
 
 Aby znaleźć zestaw satelicki dla określonej kultury, należy utworzyć zestaw ścieżek plików.
 
-Dla każdej ścieżki w `PLATFORM_RESOURCE_ROOTS` , a `APP_PATHS`następnie Dołącz <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> ciąg, separator katalogu, <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> ciąg i rozszerzenie ". dll".
+Dla każdej ścieżki w, `PLATFORM_RESOURCE_ROOTS` a następnie `APP_PATHS` Dołącz <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> ciąg, separator katalogu, <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> ciąg i rozszerzenie ". dll".
 
 Jeśli istnieje odpowiedni plik, spróbuj załadować i zwrócić go.
 

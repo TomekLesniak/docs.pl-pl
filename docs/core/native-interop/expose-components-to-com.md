@@ -1,6 +1,6 @@
 ---
-title: Udostępnianie składników .NET Core w ucho.
-description: W tym samouczku pokazano, jak udostępnić klasę com z platformy .NET Core. Wygenerujesz serwer COM i manifest serwera side-by-side dla com bez rejestru.
+title: Udostępnianie składników .NET Core do modelu COM
+description: W tym samouczku pokazano, jak uwidocznić klasę modelu COM z platformy .NET Core. Generowany jest serwer COM oraz manifest serwera Side-by-Side dla modelu COM bez rejestracji.
 ms.date: 07/12/2019
 helpviewer_keywords:
 - exposing .NET Core components to COM
@@ -9,38 +9,38 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 17d85b9e9734fae0bb69f94da8c08669216ab0ae
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 346776ebae3a6077fd39f26d5bd19d599d163db2
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242871"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608344"
 ---
-# <a name="exposing-net-core-components-to-com"></a>Udostępnianie składników .NET Core w ucho.
+# <a name="exposing-net-core-components-to-com"></a>Udostępnianie składników .NET Core do modelu COM
 
-W .NET Core proces wystawiania obiektów platformy .NET na urządzenie .NET został znacznie usprawniony w porównaniu z programem .NET Framework. Poniższy proces poprowadzi Cię przez jak udostępnić klasę do COM. Ten samouczek przedstawia sposób wykonania następujących czynności:
+W programie .NET Core proces uwidaczniania obiektów .NET do modelu COM został znacznie ulepszony w porównaniu do .NET Framework. Poniższy proces przeprowadzi Cię przez sposób udostępnienia klasy modelowi COM. Ten samouczek przedstawia sposób wykonania następujących czynności:
 
-- Uwidacznianie klasy do com z .NET Core.
-- Generowanie serwera COM w ramach tworzenia biblioteki .NET Core.
-- Automatycznie wygeneruj manifest serwera obok siebie dla com bez rejestru.
+- Uwidocznij klasę modelu COM z platformy .NET Core.
+- Wygeneruj serwer COM w ramach tworzenia biblioteki .NET Core.
+- Automatycznie Generuj manifest serwera Side-by-Side dla modelu COM bez rejestracji.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Zainstaluj [pakiet .NET Core 3.0 SDK](https://dotnet.microsoft.com/download) lub nowszą wersję.
+- Zainstaluj program [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download) lub nowszą wersję.
 
-## <a name="create-the-library"></a>Tworzenie biblioteki
+## <a name="create-the-library"></a>Utwórz bibliotekę
 
 Pierwszym krokiem jest utworzenie biblioteki.
 
-1. Utwórz nowy folder, a w tym folderze uruchom następujące polecenie:
+1. Utwórz nowy folder, a w tym folderze Uruchom następujące polecenie:
 
     ```dotnetcli
     dotnet new classlib
     ```
 
 2. Otwórz plik `Class1.cs`.
-3. Dodaj `using System.Runtime.InteropServices;` do górnej części pliku.
-4. Tworzenie interfejsu `IServer`o nazwie . Przykład:
+3. Dodaj `using System.Runtime.InteropServices;` na początku pliku.
+4. Utwórz interfejs o nazwie `IServer` . Na przykład:
 
    ```csharp
    using System;
@@ -58,41 +58,41 @@ Pierwszym krokiem jest utworzenie biblioteki.
    }
    ```
 
-5. Dodaj `[Guid("<IID>")]` atrybut do interfejsu z identyfikatorem GUID interfejsu interfejsu com, który implementujesz. Na przykład `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Należy zauważyć, że ten identyfikator GUID musi być unikatowy, ponieważ jest jedynym identyfikatorem tego interfejsu dla com. W programie Visual Studio można wygenerować identyfikator GUID, przechodząc do narzędzia > tworzenie identyfikatora GUID, aby otworzyć narzędzie Tworzenie identyfikatora GUID.
-6. Dodaj `[InterfaceType]` atrybut do interfejsu i określ, jakie podstawowe interfejsy COM interfejs powinien zaimplementować.
-7. Utwórz klasę `Server` o `IServer`nazwie, która implementuje .
-8. Dodaj `[Guid("<CLSID>")]` atrybut do klasy z identyfikatorem klasy guiD dla klasy COM, którą implementujesz. Na przykład `[Guid("9f35b6f5-2c05-4e7f-93aa-ee087f6e7ab6")]`. Podobnie jak w interfejsie GUID interfejsu, ten identyfikator GUID musi być unikatowy, ponieważ jest jedynym identyfikatorem tego interfejsu do com.
+5. Dodaj `[Guid("<IID>")]` atrybut do interfejsu przy użyciu identyfikatora GUID interfejsu dla implementowanego interfejsu com. Na przykład `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Należy zauważyć, że ten identyfikator GUID musi być unikatowy, ponieważ jest jedynym identyfikatorem tego interfejsu dla modelu COM. W programie Visual Studio można wygenerować identyfikator GUID, przechodząc do menu Narzędzia > Utwórz GUID, aby otworzyć narzędzie Tworzenie identyfikatora GUID.
+6. Dodaj `[InterfaceType]` atrybut do interfejsu i określ podstawowe interfejsy com, które ma zaimplementować interfejs.
+7. Utwórz klasę o nazwie `Server` implementującej `IServer` .
+8. Dodaj `[Guid("<CLSID>")]` atrybut do klasy przy użyciu identyfikatora klasy GUID dla implementującej klasy com. Na przykład `[Guid("9f35b6f5-2c05-4e7f-93aa-ee087f6e7ab6")]`. Podobnie jak w przypadku identyfikatora GUID interfejsu, ten identyfikator GUID musi być unikatowy, ponieważ jest jedynym identyfikatorem tego interfejsu w modelu COM.
 9. Dodaj `[ComVisible(true)]` atrybut do interfejsu i klasy.
 
 > [!IMPORTANT]
-> W przeciwieństwie do programu .NET Framework program .NET Core wymaga określenia clsid dowolnej klasy, którą chcesz aktywować za pośrednictwem programu COM.
+> W przeciwieństwie do .NET Framework platforma .NET Core wymaga określenia identyfikatora CLSID każdej klasy, która ma być aktywowalnej za pośrednictwem modelu COM.
 
 ## <a name="generate-the-com-host"></a>Generowanie hosta COM
 
-1. Otwórz `.csproj` plik projektu `<EnableComHosting>true</EnableComHosting>` i `<PropertyGroup></PropertyGroup>` dodaj go wewnątrz znacznika.
+1. Otwórz `.csproj` plik projektu i Dodaj `<EnableComHosting>true</EnableComHosting>` wewnątrz `<PropertyGroup></PropertyGroup>` znacznika.
 2. Skompiluj projekt.
 
-Wynikowy wynik będzie `ProjectName.dll`miał `ProjectName.deps.json` `ProjectName.runtimeconfig.json` plik `ProjectName.comhost.dll` , i plik.
+Wynikowe dane wyjściowe będą mieć `ProjectName.dll` `ProjectName.deps.json` plik, `ProjectName.runtimeconfig.json` i `ProjectName.comhost.dll` .
 
-## <a name="register-the-com-host-for-com"></a>Zarejestruj hosta COM dla com
+## <a name="register-the-com-host-for-com"></a>Rejestrowanie hosta COM dla modelu COM
 
-Otwórz wiersz polecenia z `regsvr32 ProjectName.comhost.dll`podwyższonym poziomem uprawnień i uruchom polecenie . Spowoduje to zarejestrowanie wszystkich obiektów platformy .NET w aplikacji COM.
+Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i uruchom polecenie `regsvr32 ProjectName.comhost.dll` . Spowoduje to zarejestrowanie wszystkich uwidocznionych obiektów .NET w modelu COM.
 
-## <a name="enabling-regfree-com"></a>Włączanie regfree COM
+## <a name="enabling-regfree-com"></a>Włączanie nierejestrowanego COM
 
-1. Otwórz `.csproj` plik projektu `<EnableRegFreeCom>true</EnableRegFreeCom>` i `<PropertyGroup></PropertyGroup>` dodaj go wewnątrz znacznika.
+1. Otwórz `.csproj` plik projektu i Dodaj `<EnableRegFreeCom>true</EnableRegFreeCom>` wewnątrz `<PropertyGroup></PropertyGroup>` znacznika.
 2. Skompiluj projekt.
 
-Wynikowe dane wyjściowe będą `ProjectName.X.manifest` teraz również mieć plik. Ten plik jest manifestem side-by-side do użytku z com bez rejestru.
+Wynikowe dane wyjściowe będą teraz również mieć `ProjectName.X.manifest` plik. Ten plik jest manifestem równoległym do użycia z modelem COM bez rejestru.
 
 ## <a name="sample"></a>Przykład
 
-Istnieje w pełni funkcjonalny [przykład serwera COM](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo) w repozytorium dotnet/samples w usłudze GitHub.
+Istnieje w pełni funkcjonalny [przykład serwera com](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo) w repozytorium dotnet/Samples w witrynie GitHub.
 
 ## <a name="additional-notes"></a>Uwagi dodatkowe
 
-W przeciwieństwie do programu .NET Framework w systemie .NET Core nie ma obsługi generowania biblioteki typów COM (TLB) z zestawu .NET Core. Wskazówki są albo ręcznie napisać plik IDL lub nagłówek C/C++ dla natywnych deklaracji interfejsów COM.
+W przeciwieństwie do .NET Framework, nie ma obsługi w programie .NET Core do generowania biblioteki typów modelu COM (TLB) z zestawu .NET Core. Wskazówki dotyczą ręcznego zapisywania pliku IDL lub nagłówka C/C++ dla natywnych deklaracji interfejsów COM.
 
-[Samodzielne wdrożenia](../deploying/index.md#publish-self-contained) składników COM nie są obsługiwane. Obsługiwane są tylko [wdrożenia zależne od środowiska uruchomieniowego](../deploying/index.md#publish-runtime-dependent) składników COM.
+[Samodzielne wdrożenia](../deploying/index.md#publish-self-contained) składników modelu COM nie są obsługiwane. Obsługiwane są tylko [wdrożenia zależne od struktury](../deploying/index.md#publish-framework-dependent) składników com.
 
-Ponadto ładowanie programu .NET Framework i .NET Core do tego samego procesu ma ograniczenia diagnostyczne. Podstawowym ograniczeniem jest debugowanie składników zarządzanych, ponieważ nie jest możliwe debugowanie zarówno platformy .NET Framework, jak i .NET Core w tym samym czasie. Ponadto dwa wystąpienia środowiska uruchomieniowego nie współużytkują zestawy zarządzane. Oznacza to, że nie jest możliwe udostępnianie rzeczywistych typów .NET w dwóch środowiskach wykonywania, a zamiast tego wszystkie interakcje muszą być ograniczone do umów interfejsu COM narażonych.
+Ponadto ładowanie obu .NET Framework i .NET Core do tego samego procesu ma ograniczenia diagnostyczne. Głównym ograniczeniem jest debugowanie składników zarządzanych, ponieważ nie jest możliwe debugowanie jednocześnie .NET Framework i .NET Core. Ponadto dwa wystąpienia środowiska uruchomieniowego nie współdzielą zestawów zarządzanych. Oznacza to, że nie jest możliwe udostępnianie rzeczywistych typów .NET między dwoma środowiskami uruchomieniowymi, a w zamian wszystkie interakcje muszą być ograniczone do umów dotyczących interfejsów COM.
