@@ -1,7 +1,6 @@
 ---
-title: <supportedRuntime>element konfiguracji — platforma .NET
+title: <supportedRuntime> element konfiguracji — platforma .NET
 ms.date: 04/02/2019
-ms.custom: updateeachrelease
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#supportedRuntime
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/startup/supportedRuntime
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: ecbe73593e5b8b87909499f6fff7e865e29b1ec8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cc221c71b68c21b61b5fa27e0972b9e9156dbc3b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "82796044"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558676"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime>, element
 
@@ -63,12 +62,12 @@ Ten `runtime` atrybut określa wersję środowiska uruchomieniowego języka wsp�
 |----------------------------|-------------------------|
 |1.0|"v 1.0.3705"|
 |1.1|"v 1.1.4322"|
-|2.0|"v 2.0.50727"|
+|2,0|"v 2.0.50727"|
 |3.0|"v 2.0.50727"|
 |3,5|"v 2.0.50727"|
 |4.0 — 4.8|"v 4.0"|
 
-## <a name="sku-id-values"></a><a name="sku"></a>wartości "identyfikator jednostki SKU"
+## <a name="sku-id-values"></a><a name="sku"></a> wartości "identyfikator jednostki SKU"
 
 Ten `sku` atrybut używa monikera platformy docelowej (TFM) w celu wskazania wersji .NET Framework, której aplikacja jest przeznaczona do uruchomienia. Poniższa tabela zawiera listę prawidłowych wartości, które są obsługiwane przez `sku` atrybut, począwszy od .NET Framework 4.
 
@@ -85,7 +84,7 @@ Ten `sku` atrybut używa monikera platformy docelowej (TFM) w celu wskazania wer
 |4.5|". NETFramework, wersja = v 4.5|
 |4.5.1|". NETFramework, Version = v 4.5.1|
 |4.5.2|". NETFramework, wersja = v 4.5.2|
-|4.6|". NETFramework, Version = v 4.6|
+|4,6|". NETFramework, Version = v 4.6|
 |4.6.1|". NETFramework, wersja = v 4.6.1|
 |4.6.2|". NETFramework, Version = v 4.6.2 "|
 |4,7|". NETFramework, wersja = v 4.7|
@@ -109,7 +108,7 @@ Poniższy przykład pokazuje, jak określić obsługiwaną wersję środowiska u
 
 Tego elementu można użyć w pliku konfiguracji aplikacji.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień uruchamiania](index.md)
 - [Schemat pliku konfiguracji](../index.md)

@@ -1,7 +1,6 @@
 ---
 title: Co nowego w .NET Framework
 description: Zobacz, co nowego w różnych wersjach .NET Framework. Zapoznaj się z podsumowaniem najważniejszych nowych funkcji i ulepszeń w każdej wersji.
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
 - csharp
@@ -9,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 42f872bba87a88fc92a37879e815ee7068407cf7
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 3eba676a4134415f0e2981d5094c0b0f6a1651be
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925595"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559027"
 ---
 # <a name="whats-new-in-net-framework"></a>Co nowego w .NET Framework
 
@@ -139,20 +138,20 @@ Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania in
 
 Za pomocą parametrów zapytania, takich jak,,,) można zbadać stan kondycji usługi `OnServiceFailure` `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` , a dla każdego parametru zapytania można określić kod odpowiedzi HTTP. Jeśli kod odpowiedzi HTTP zostanie pominięty dla parametru zapytania, domyślnie używany jest kod odpowiedzi HTTP 503. Na przykład:
 
-- OnServiceFailure:`https://contoso:81/Service1?health&OnServiceFailure=450`
+- OnServiceFailure: `https://contoso:81/Service1?health&OnServiceFailure=450`
 
   Kod stanu odpowiedzi HTTP 450 jest zwracany, gdy element [ServiceHost. State](xref:System.ServiceModel.Channels.CommunicationObject.State) jest większy niż <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType> .
 Parametry zapytania i przykłady:
 
-- OnDispatcherFailure:`https://contoso:81/Service1?health&OnDispatcherFailure=455`
+- OnDispatcherFailure: `https://contoso:81/Service1?health&OnDispatcherFailure=455`
 
   Kod stanu odpowiedzi HTTP 455 jest zwracany, gdy stan dowolnego z dyspozytorów kanałów jest większy niż <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType> .
 
-- OnListenerFailure:`https://contoso:81/Service1?health&OnListenerFailure=465`
+- OnListenerFailure: `https://contoso:81/Service1?health&OnListenerFailure=465`
 
   Kod stanu odpowiedzi HTTP 465 jest zwracany, gdy stan dowolnego odbiornika kanałów jest większy niż <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType> .
 
-- OnThrottlePercentExceeded:`https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
+- OnThrottlePercentExceeded: `https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
 
   Określa wartość procentową {1 – 100}, która wyzwala odpowiedź i kod odpowiedzi HTTP {200 – 599}. W tym przykładzie:
 
@@ -325,7 +324,7 @@ Aby uzyskać więcej informacji i przykładów kodu, zobacz "programowe tworzeni
 
 **Nowi członkowie SignerInfo**
 
-Począwszy od .NET Framework 4.7.2, <xref:System.Security.Cryptography.Pkcs.SignerInfo> Klasa ujawnia więcej informacji o sygnaturze. Możesz pobrać wartość <xref:System.Security.Cryptography.Pkcs.SignerInfo.SignatureAlgorithm?displayProperty=fullName> właściwości, aby określić algorytm podpisu używany przez program podpisujący. <xref:System.Security.Cryptography.Pkcs.SignerInfo.GetSignature%2A?displayProperty=nameWithType>można wywołać, aby uzyskać kopię podpisu kryptograficznego dla tej osoby podpisującej.
+Począwszy od .NET Framework 4.7.2, <xref:System.Security.Cryptography.Pkcs.SignerInfo> Klasa ujawnia więcej informacji o sygnaturze. Możesz pobrać wartość <xref:System.Security.Cryptography.Pkcs.SignerInfo.SignatureAlgorithm?displayProperty=fullName> właściwości, aby określić algorytm podpisu używany przez program podpisujący. <xref:System.Security.Cryptography.Pkcs.SignerInfo.GetSignature%2A?displayProperty=nameWithType> można wywołać, aby uzyskać kopię podpisu kryptograficznego dla tej osoby podpisującej.
 
 **Pozostawienie opakowanego strumienia otwartego po usunięciu CryptoStream**
 
@@ -353,12 +352,12 @@ Obsługa dekompresji przy użyciu interfejsów API systemu Windows jest włączo
 
 .NET Framework 4.7.2 dodaje wiele nowych interfejsów API do <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typów i. Należą do nich:
 
-- `TryGetValue`metody, które zwiększają wzorzec try użyty w innych typach kolekcji do tych dwóch typów. Dostępne metody:
+- `TryGetValue` metody, które zwiększają wzorzec try użyty w innych typach kolekcji do tych dwóch typów. Dostępne metody:
 
   - [Public bool HashSet — \<T> . TryGetValue (T equalValue, out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
   - [Public bool SortedSet \<T> . TryGetValue (T equalValue, out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
 
-- `Enumerable.To*`metody rozszerzające, które konwertują kolekcję na <xref:System.Collections.Generic.HashSet%601> :
+- `Enumerable.To*` metody rozszerzające, które konwertują kolekcję na <xref:System.Collections.Generic.HashSet%601> :
 
   - [publiczne statyczne HashSet — \<TSource> ToHashSet \<TSource> (to \<TSource> Źródło IEnumerable)](xref:System.Linq.Enumerable.ToHashSet%2A)
   - [publiczne statyczne HashSet — \<TSource> ToHashSet \<TSource> (Źródło IEnumerable \<TSource> , IEqualityComparer — moduł \<TSource> porównujący)](xref:System.Linq.Enumerable.ToHashSet%2A)
@@ -880,7 +879,7 @@ End Interface
 
 - 18 nowych metod w <xref:System.Web.HttpCachePolicy?displayProperty=nameWithType> klasie. Należą do nich,,,,,,,,,,,,, <xref:System.Web.HttpCachePolicy.GetCacheability%2A> <xref:System.Web.HttpCachePolicy.GetCacheExtensions%2A> <xref:System.Web.HttpCachePolicy.GetETag%2A> <xref:System.Web.HttpCachePolicy.GetETagFromFileDependencies%2A> <xref:System.Web.HttpCachePolicy.GetMaxAge%2A> <xref:System.Web.HttpCachePolicy.GetMaxAge%2A> <xref:System.Web.HttpCachePolicy.GetNoStore%2A> <xref:System.Web.HttpCachePolicy.GetNoTransforms%2A> <xref:System.Web.HttpCachePolicy.GetOmitVaryStar%2A> <xref:System.Web.HttpCachePolicy.GetProxyMaxAge%2A> <xref:System.Web.HttpCachePolicy.GetRevalidation%2A> <xref:System.Web.HttpCachePolicy.GetUtcLastModified%2A> <xref:System.Web.HttpCachePolicy.GetVaryByCustom%2A> <xref:System.Web.HttpCachePolicy.HasSlidingExpiration%2A> , i <xref:System.Web.HttpCachePolicy.IsValidUntilExpires%2A> .
 
-- 2 nowe metody w <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=nameWithType> klasie: <xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> i <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A> .
+- 2 nowe metody w <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=nameWithType> klasie:  <xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> i <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A> .
 
 - 2 nowe metody w <xref:System.Web.HttpCacheVaryByHeaders?displayProperty=nameWithType> klasie: <xref:System.Web.HttpCacheVaryByHeaders.GetHeaders%2A> i <xref:System.Web.HttpCacheVaryByHeaders.SetHeaders%2A> .
 
@@ -954,7 +953,7 @@ End Function
 
 .NET Framework 3,5 dodano obsługę dla uzgadniania klucza diff-Hellmana z trzema różnymi procedurami funkcji wyprowadzania klucza (KDF). Dane wejściowe procedur i same procedury, zostały skonfigurowane za pośrednictwem właściwości <xref:System.Security.Cryptography.ECDiffieHellmanCng> obiektu. Jednak ponieważ nie każda procedura odczytuje każdą właściwość wejściową, istniało bardzo dużo miejsca do mylenia w przeszłości deweloperów.
 
-Aby rozwiązać ten wpływ na .NET Framework 4.6.2, do klasy bazowej dodano następujące trzy metody, <xref:System.Security.Cryptography.ECDiffieHellman> Aby dokładniej przedstawić te procedury KDF i ich dane wejściowe:
+Aby rozwiązać ten wpływ na .NET Framework 4.6.2, do klasy bazowej dodano następujące trzy metody,  <xref:System.Security.Cryptography.ECDiffieHellman> Aby dokładniej przedstawić te procedury KDF i ich dane wejściowe:
 
 |ECDiffieHellman, Metoda|Opis|
 |----------------------------|-----------------|
@@ -1011,7 +1010,7 @@ End Function
 
 Wszystkie stałe identyfikatorów URI są uwidocznione na <xref:System.Security.Cryptography.Xml.SignedXml> :
 
-|Pole SignedXml|Stały|
+|Pole SignedXml|Stała|
 |---------------------|--------------|
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA256Url>|"http://www.w3.org/2001/04/xmlenc#sha256"|
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA256Url>|"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"|
@@ -1104,7 +1103,7 @@ Klienci mogą używać ustawienia konfiguracji aplikacji, aby określić, czy <x
 </runtime>
 ```
 
-Gdy ta funkcja jest włączona, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> obiekt używa <xref:System.TimeZoneInfo> typu zamiast <xref:System.TimeZone> typu do deserializacji danych daty i godziny. <xref:System.TimeZoneInfo>Program obsługuje wiele reguł dostosowawczych, co umożliwia współpracę z danymi strefy czasowej historycznej.   nie <xref:System.TimeZone> .
+Gdy ta funkcja jest włączona, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> obiekt używa <xref:System.TimeZoneInfo> typu zamiast <xref:System.TimeZone> typu do deserializacji danych daty i godziny. <xref:System.TimeZoneInfo> Program obsługuje wiele reguł dostosowawczych, co umożliwia współpracę z danymi strefy czasowej historycznej.   nie   <xref:System.TimeZone> .
 
 Aby uzyskać więcej informacji na temat <xref:System.TimeZoneInfo> struktury i dostosowań strefy czasowej, zobacz [Omówienie strefy czasowej](../../standard/datetime/time-zone-overview.md).
 
@@ -1151,7 +1150,7 @@ Aplikacja, która używa <xref:System.Windows.Data.CollectionView> obiektu do gr
 
 Aby można było obsłużyć sortowanie grup, nowe <xref:System.ComponentModel.GroupDescription.SortDescriptions%2A?displayProperty=nameWithType> i <xref:System.ComponentModel.GroupDescription.CustomSort%2A?displayProperty=nameWithType> Właściwości opisują sposób sortowania kolekcji grup utworzonych przez <xref:System.ComponentModel.GroupDescription> obiekt. Jest to analogiczne do sposobu sortowania elementów danych o identycznych nazwach <xref:System.Windows.Data.ListCollectionView> .
 
-Dwie nowe statyczne właściwości <xref:System.Windows.Data.PropertyGroupDescription> klasy <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A> i <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A> , mogą być używane w przypadku najczęstszych przypadków.
+Dwie nowe statyczne właściwości <xref:System.Windows.Data.PropertyGroupDescription> klasy  <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A> i <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A> , mogą być używane w przypadku najczęstszych przypadków.
 
 Na przykład poniższe dane grup XAML są uporządkowane według wieku, sortowania grupy wiekowe w kolejności rosnącej oraz grupowania elementów w każdej grupie wiekowej według nazwiska.
 
@@ -1199,7 +1198,7 @@ W .NET Framework 4.6.2 Windows Workflow Foundation został ulepszony w następuj
 
 Począwszy od .NET Framework 4,5, WF obsługuje wyrażenia języka C# zarówno w projektancie programu Visual Studio, jak i w przepływach pracy w kodzie. Projektant przepływu pracy przeszukana jest kluczową cechą WF, która umożliwia Projektant przepływu pracy się w aplikacji poza programem Visual Studio (na przykład w WPF).  Windows Workflow Foundation zapewnia możliwość obsługi wyrażeń języka C# i IntelliSense w przemieszczonych Projektant przepływu pracyach. Aby uzyskać więcej informacji, zapoznaj się z [blogiem Windows Workflow Foundation](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
 
-`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`W wersjach .NET Framework wcześniejszych niż 4.6.2 Funkcja IntelliSense projektanta WF jest uszkodzona, gdy klient odbudowuje projekt przepływu pracy z programu Visual Studio. Gdy kompilacja projektu zakończy się pomyślnie, typy przepływu pracy nie są dostępne w projektancie, a w oknie **Lista błędów** są wyświetlane ostrzeżenia z funkcji IntelliSense dotyczące brakujących typów przepływów pracy. .NET Framework 4.6.2 rozwiązuje ten problem i udostępnia funkcję IntelliSense.
+`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` W wersjach .NET Framework wcześniejszych niż 4.6.2 Funkcja IntelliSense projektanta WF jest uszkodzona, gdy klient odbudowuje projekt przepływu pracy z programu Visual Studio. Gdy kompilacja projektu zakończy się pomyślnie, typy przepływu pracy nie są dostępne w projektancie, a w oknie **Lista błędów** są wyświetlane ostrzeżenia z funkcji IntelliSense dotyczące brakujących typów przepływów pracy. .NET Framework 4.6.2 rozwiązuje ten problem i udostępnia funkcję IntelliSense.
 
 **Aplikacje w wersji 1 z funkcją śledzenia przepływu pracy na teraz działaniu w trybie FIPS**
 
@@ -1239,7 +1238,7 @@ Skonwertowane aplikacje klasyczne uzyskują tożsamość aplikacji podobną do t
 
 *Niezarządzany interfejs API debugowania* został ulepszony w .NET Framework 4.6.2 do wykonania dodatkowej analizy, gdy <xref:System.NullReferenceException> zostanie zgłoszony, aby można było określić, która zmienna w jednym wierszu kodu źródłowego to `null` .   Aby obsłużyć ten scenariusz, dodano następujące interfejsy API do niezarządzanego interfejsu API debugowania.
 
-- Interfejsy [ICorDebugCode4](../unmanaged-api/debugging/icordebugcode4-interface.md), [ICorDebugVariableHome](../unmanaged-api/debugging/icordebugvariablehome-interface.md)i [ICorDebugVariableHomeEnum](../unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) , które uwidaczniają natywne domy zmiennych zarządzanych. Dzięki temu debugery mogą wykonywać pewne analizy przepływu kodu, gdy <xref:System.NullReferenceException> wystąpi, i aby przejść do tyłu, aby określić zmienną zarządzaną, która odnosi się do lokalizacji natywnej `null` .
+- Interfejsy [ICorDebugCode4](../unmanaged-api/debugging/icordebugcode4-interface.md), [ICorDebugVariableHome](../unmanaged-api/debugging/icordebugvariablehome-interface.md)i [ICorDebugVariableHomeEnum](../unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) , które uwidaczniają natywne domy zmiennych zarządzanych. Dzięki temu debugery mogą wykonywać pewne analizy przepływu kodu, gdy  <xref:System.NullReferenceException> wystąpi, i aby przejść do tyłu, aby określić zmienną zarządzaną, która odnosi się do lokalizacji natywnej `null` .
 
 - Metoda [ICorDebugType2:: GetTypeId](../unmanaged-api/debugging/icordebugtype2-gettypeid-method.md) zapewnia mapowanie dla ICorDebugType do [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md), co umożliwia debugerowi uzyskanie [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md) bez wystąpienia ICorDebugType. Istniejące interfejsy API w [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md) mogą być następnie używane do określenia układu klasy typu.
 
@@ -1635,7 +1634,7 @@ W programie .NET 2015 wprowadzono .NET Framework 4,6 i .NET Core. Niektóre nowe
     <add key="EnableMultiMonitorDisplayClipping" value="true"/>
     ```
 
-    Dodano obsługę automatycznego ładowania prawego kursora na podstawie ustawienia DPI <xref:System.Windows.Input.Cursor?displayProperty=nameWithType> .
+    Dodano obsługę automatycznego ładowania prawego kursora na podstawie ustawienia DPI  <xref:System.Windows.Input.Cursor?displayProperty=nameWithType> .
 
   - **Lepsza obsługa dotyku**
 
@@ -1817,7 +1816,7 @@ W programie .NET 2015 wprowadzono .NET Framework 4,6 i .NET Core. Niektóre nowe
 
 - **Podwyższanie poziomu transakcji i konwertowanie jej na trwałe rejestracje**
 
-  <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType>jest nowym interfejsem API dodanym do .NET Framework 4.5.2 i 4,6:
+  <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> jest nowym interfejsem API dodanym do .NET Framework 4.5.2 i 4,6:
 
   ```csharp
   [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust")]
@@ -1977,7 +1976,7 @@ ASP.NET 4,5 i 4.5.1 Dodawanie powiązania modelu dla formularzy sieci Web, obsł
 
 - [Rozszerzenie ASP.NET and Web Tools dla programu Visual Studio 2013 — informacje o wersji](/aspnet/visual-studio/overview/2013/release-notes)
 
-### <a name="networking"></a>Sieci<a name="networking"></a>
+### <a name="networking"></a>Sieci <a name="networking"></a>
 
 .NET Framework 4,5 udostępnia nowy interfejs programowania dla aplikacji HTTP. Aby uzyskać więcej informacji, zobacz nowe <xref:System.Net.Http?displayProperty=nameWithType> i <xref:System.Net.Http.Headers?displayProperty=nameWithType> przestrzenie nazw.
 
@@ -2049,7 +2048,7 @@ W .NET Framework 4,5 dodano następujące funkcje, które ułatwiają zapisywani
 
 - Etykietki narzędzi edytora XML.
 
-- <xref:System.ServiceModel.ChannelFactory>Obsługa buforowania.
+- <xref:System.ServiceModel.ChannelFactory> Obsługa buforowania.
 
 - Obsługa kompresji koderów binarnych.
 
@@ -2105,7 +2104,7 @@ W .NET Framework 4,5 dodano kilka nowych funkcji do Windows Workflow Foundation 
 
 - Udoskonalenia wersji:
 
-  - Nowa <xref:System.Activities.WorkflowIdentity> Klasa, która zapewnia mapowanie między utrwalonym wystąpieniem przepływu pracy i jego definicją przepływu pracy.
+  - Nowa  <xref:System.Activities.WorkflowIdentity> Klasa, która zapewnia mapowanie między utrwalonym wystąpieniem przepływu pracy i jego definicją przepływu pracy.
 
   - Wykonywanie równoczesne wielu wersji przepływu pracy na tym samym hoście, włącznie z <xref:System.ServiceModel.Activities.WorkflowServiceHost> .
 
@@ -2121,11 +2120,11 @@ Aby uzyskać więcej informacji, zobacz [co nowego w Windows Workflow Foundation
 
 Aplikacje ze sklepu Windows 8. x są przeznaczone do określonych współczynników i wykorzystują możliwości systemu operacyjnego Windows. Podzestaw .NET Framework 4,5 lub 4.5.1 jest dostępny do kompilowania aplikacji ze sklepu Windows 8. x dla systemu Windows przy użyciu języka C# lub Visual Basic. Ten podzestaw nosi nazwę .NET dla aplikacji ze sklepu Windows 8. x i został omówiony w [przeglądzie](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
-### <a name="portable-class-libraries"></a>Przenośne biblioteki klas<a name="portable"></a>
+### <a name="portable-class-libraries"></a>Przenośne biblioteki klas <a name="portable"></a>
 
 Przenośna biblioteka klas w programie Visual Studio 2012 (i nowszych wersjach) umożliwia pisanie i kompilowanie zestawów zarządzanych, które działają na wielu platformach .NET Framework. Korzystając z projektu biblioteki klas przenośnych, należy wybrać platformy (takie jak Windows Phone i .NET dla systemu Windows 8. x aplikacji do sklepu). Dostępne typy i elementy członkowskie w projekcie są automatycznie ograniczone do wspólnych typów i elementów członkowskich na tych platformach. Aby uzyskać więcej informacji, zobacz [Przenośna biblioteka klas](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Program .NET Framework i wydania poza harmonogramem (OOB)](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co nowego w ułatwieniach dostępu w .NET Framework](whats-new-in-accessibility.md)

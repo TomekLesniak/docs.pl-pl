@@ -7,12 +7,12 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: ca3d8747b02602c89aec187ea0826e658fb0cbc4
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: ba6dbfdf9a4fa9973dfe84cf5d58f1300f5d0cb4
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267805"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557545"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-no-locblazor"></a>Migrowanie z formularzy sieci Web ASP.NET do Blazor
 
@@ -560,10 +560,6 @@ W programie Blazor równoważne znaczniki są podane w pliku *Create. Razor* :
 
 `EditForm`Kontekst zawiera obsługę walidacji i może być zawijany wokół danych wejściowych. Adnotacje danych są typowym sposobem dodawania walidacji. Takie wsparcie sprawdzania poprawności można dodać za pośrednictwem `DataAnnotationsValidator` składnika. Aby uzyskać więcej informacji na temat tego mechanizmu, zobacz [ASP.NET Core Blazor formularzy i walidacji](/aspnet/core/blazor/forms-validation).
 
-## <a name="migrate-built-in-web-forms-controls"></a>Migrowanie wbudowanych formantów formularzy sieci Web
-
-*Ta zawartość zostanie wkrótce udostępniona.*
-
 ## <a name="migrate-configuration"></a>Migruj konfigurację
 
 W projekcie formularzy sieci Web dane konfiguracyjne są najczęściej przechowywane w pliku *web.config* . Dostęp do danych konfiguracyjnych z programu `ConfigurationManager` . Usługi były często wymagane do analizowania obiektów. Dzięki .NET Framework 4.7.2 można redagować do konfiguracji za pośrednictwem `ConfigurationBuilders` . Ci deweloperzy mogą dodawać różne źródła do konfiguracji, która następnie została złożona w czasie wykonywania w celu pobrania niezbędnych wartości.
@@ -655,4 +651,4 @@ Wiele operacji w ASP.NET Core jest asynchronicznych, co umożliwia łatwiejsze �
 W tym momencie zobaczysz wiele przykładów potrzebnych do przeniesienia projektu formularzy sieci Web do programu Blazor . Pełny przykład można znaleźć w projekcie [eShopOn Blazor ](https://github.com/dotnet-architecture/eShopOnBlazor) .
 
 >[!div class="step-by-step"]
->[Poprzednio](security-authentication-authorization.md)
+>[Poprzednie](security-authentication-authorization.md)

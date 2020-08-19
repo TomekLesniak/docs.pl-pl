@@ -2,12 +2,12 @@
 title: Zabezpieczenia platformy Azure dla aplikacji natywnych w chmurze
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Zabezpieczenia platformy Azure dla natywnych aplikacji w chmurze
 ms.date: 05/13/2020
-ms.openlocfilehash: 223d9e77aca611697958981bf2ee3a630fb9fffb
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374497"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557649"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpieczenia platformy Azure dla aplikacji natywnych w chmurze
 
@@ -201,7 +201,7 @@ kubectl apply -f ./secret.yaml
 
 Te klucze tajne można następnie zainstalować na woluminach lub uwidocznić w ramach procesów kontenerów za poorednictwem zmiennych środowiskowych. [Zbliżające się podejście](https://12factor.net/) do kompilowania aplikacji sugeruje użycie najniższego wspólnego mianownika do przesyłania ustawień do aplikacji. Zmienne środowiskowe są najniższym typowym mianownikiem, ponieważ są obsługiwane bez względu na system operacyjny lub aplikację.
 
-Alternatywą dla korzystania z wbudowanych wpisów tajnych Kubernetes jest uzyskanie dostępu do wpisów tajnych w Azure Key Vault z poziomu usługi Kubernetes. Najprostszym sposobem, aby to zrobić, jest przypisanie roli RBAC do kontenera, który ma ładować wpisy tajne. Aplikacja może następnie użyć interfejsów API Azure Key Vault, aby uzyskać dostęp do wpisów tajnych. Jednak takie podejście wymaga modyfikacji kodu i nie jest zgodne ze wzorcem używania zmiennych środowiskowych. Zamiast tego można wstrzyknąć wartości do kontenera poprzez użycie [wtryskiwacza Azure Key Vault](https://mrdevops.io/introducing-azure-key-vault-to-kubernetes-931f82364354). Takie podejście jest faktycznie bezpieczniejsze niż używanie Kubernetes Secret bezpośrednio, ponieważ są one dostępne dla użytkowników w klastrze.
+Alternatywą dla korzystania z wbudowanych wpisów tajnych Kubernetes jest uzyskanie dostępu do wpisów tajnych w Azure Key Vault z poziomu usługi Kubernetes. Najprostszym sposobem, aby to zrobić, jest przypisanie roli RBAC do kontenera, który ma ładować wpisy tajne. Aplikacja może następnie użyć interfejsów API Azure Key Vault, aby uzyskać dostęp do wpisów tajnych. Jednak takie podejście wymaga modyfikacji kodu i nie jest zgodne ze wzorcem używania zmiennych środowiskowych. Zamiast tego można wstrzyknąć wartości do kontenera. Takie podejście jest faktycznie bezpieczniejsze niż używanie Kubernetes Secret bezpośrednio, ponieważ są one dostępne dla użytkowników w klastrze.
 
 ## <a name="encryption-in-transit-and-at-rest"></a>Szyfrowanie podczas przesyłania i w spoczynku
 

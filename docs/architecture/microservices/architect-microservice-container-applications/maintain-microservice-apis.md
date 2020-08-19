@@ -1,39 +1,39 @@
 ---
 title: Tworzenie, rozwijanie i przechowywanie wersji interfejsów API i kontaktów w mikrousługach
-description: Tworzenie mikrousług interfejsów API i kontraktów, biorąc pod uwagę ewolucję i przechowywanie wersji, ponieważ wymaga zmiany.
+description: Tworzenie mikrousług API i kontraktów uwzględniających ewolucję i przechowywanie wersji, ponieważ wymagają zmiany.
 ms.date: 09/20/2018
-ms.openlocfilehash: 1972d02d8bf7935c71bfd383707ae19ea2baded9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9164bfd12df18a88ac187c8962f0afc80b702881
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70295458"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557675"
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Tworzenie, rozwijanie i przechowywanie wersji interfejsów API i kontaktów w mikrousługach
 
-Interfejs API mikrousług jest umową między usługą a jej klientami. Będziesz mógł rozwijać mikrousługi niezależnie tylko wtedy, gdy nie złamiesz jego umowy interfejsu API, dlatego kontrakt jest tak ważne. Jeśli zmienisz umowę, będzie to miało wpływ na aplikacje klienckie lub bramę interfejsu API.
+Interfejs API mikrousług to kontrakt między usługą i jej klientami. Można wypróbować mikrousługi niezależnie tylko wtedy, gdy nie uda się przerwać jej kontraktu interfejsu API, co oznacza, że kontrakt jest tak ważny. Jeśli zmienisz kontrakt, wpłynie to na aplikacje klienckie lub bramę interfejsu API.
 
-Charakter definicji interfejsu API zależy od protokołu, którego używasz. Na przykład jeśli używasz wiadomości (takich jak [AMQP),](https://www.amqp.org/)interfejs API składa się z typów komunikatów. Jeśli używasz usług HTTP i RESTful, interfejs API składa się z adresów URL oraz formatów JSON żądania i odpowiedzi.
+Charakter definicji interfejsu API zależy od używanego protokołu. Na przykład jeśli korzystasz z komunikatów (takich jak [AMQP](http://www.amqp.org/)), interfejs API składa się z typów komunikatów. W przypadku korzystania z usług HTTP i RESTful interfejs API składa się z adresów URL i formatów JSON żądania i odpowiedzi.
 
-Jednak nawet jeśli masz na uwadze początkowej umowy, interfejs API usługi będzie musiał zmienić w czasie. W takim przypadku — a zwłaszcza jeśli interfejs API jest publicznym interfejsem API używanym przez wiele aplikacji klienckich — zazwyczaj nie można wymusić na wszystkich klientach uaktualnienia do nowej umowy interfejsu API. Zazwyczaj należy stopniowo wdrażać nowe wersje usługi w taki sposób, że zarówno stare, jak i nowe wersje umowy serwisowej są uruchomione jednocześnie. Dlatego ważne jest, aby mieć strategię dla wersji usługi.
+Jednak nawet jeśli jesteś przydatnego o początkowym kontrakcie, interfejs API usługi będzie musiał ulec zmianie z upływem czasu. Gdy tak się stanie, a zwłaszcza jeśli interfejs API jest publicznym interfejsem API używanym przez wiele aplikacji klienckich — zazwyczaj nie można wymusić uaktualnienia wszystkich klientów do nowego kontraktu interfejsu API. Zwykle należy wdrożyć nowe wersje usługi w taki sposób, aby jednocześnie działały zarówno stare, jak i nowe wersje kontraktu usługi. W związku z tym ważne jest, aby mieć strategię obsługi wersji usługi.
 
-Gdy zmiany interfejsu API są małe, na przykład w przypadku dodawania atrybutów lub parametrów do interfejsu API, klienci, którzy używają starszego interfejsu API, powinni przełączać się i pracować z nową wersją usługi. Może być możliwe podanie wartości domyślnych dla wszystkich brakujących atrybutów, które są wymagane, a klienci mogą być w stanie zignorować wszelkie dodatkowe atrybuty odpowiedzi.
+Gdy zmiany interfejsu API są niewielkie, podobnie jak w przypadku dodawania atrybutów lub parametrów do interfejsu API, klienci korzystający ze starszego interfejsu API powinni przełączać i korzystać z nowej wersji usługi. Może być możliwe podanie wartości domyślnych dla wszelkich brakujących atrybutów, które są wymagane, a klienci mogą ignorować wszelkie dodatkowe atrybuty odpowiedzi.
 
-Jednak czasami trzeba wprowadzić główne i niezgodne zmiany w interfejsie API usługi. Ponieważ może nie być w stanie wymusić aplikacji klienckich lub usług do natychmiastowego uaktualnienia do nowej wersji, usługa musi obsługiwać starsze wersje interfejsu API przez pewien okres. Jeśli używasz mechanizmu opartego na HTTP, takiego jak REST, jednym z podejść jest osadzanie numeru wersji interfejsu API w adresie URL lub w nagłówku HTTP. Następnie można zdecydować między implementacji obu wersji usługi jednocześnie w ramach tego samego wystąpienia usługi lub wdrażania różnych wystąpień, które każdy obsługuje wersję interfejsu API. Dobrym podejściem do tego jest [wzorzec mediatora](https://en.wikipedia.org/wiki/Mediator_pattern) (na przykład [biblioteka MediatR),](https://github.com/jbogard/MediatR)aby oddzielić różne wersje implementacji do niezależnych programów obsługi.
+Niemniej jednak czasami trzeba wprowadzić istotne i niezgodne zmiany w interfejsie API usługi. Ponieważ nie można wymusić natychmiastowego uaktualnienia aplikacji lub usług klienta do nowej wersji, usługa musi obsługiwać starsze wersje interfejsu API przez pewien okres. Jeśli używasz mechanizmu opartego na protokole HTTP, takiego jak REST, jedno podejście polega na osadzeniu numeru wersji interfejsu API w adresie URL lub w nagłówku HTTP. Następnie można zdecydować się na wdrożenie obu wersji usługi jednocześnie w ramach tego samego wystąpienia usługi lub wdrożenie różnych wystąpień, które obsługują wersję interfejsu API. Dobrym rozwiązaniem dla tego jest [wzorzec mediator](https://en.wikipedia.org/wiki/Mediator_pattern) (na przykład [Biblioteka MediatR](https://github.com/jbogard/MediatR)), aby oddzielić różne wersje implementacji na niezależne programy obsługi.
 
-Na koniec, jeśli używasz architektury REST, [Hypermedia](https://www.infoq.com/articles/mark-baker-hypermedia) jest najlepszym rozwiązaniem do wersji usług i umożliwienie evolvable interfejsów API.
+Na [koniec, jeśli](https://www.infoq.com/articles/mark-baker-hypermedia) używasz architektury REST, najlepszym rozwiązaniem jest udostępnienie wersji usług i umożliwienie rozwijania interfejsów API.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 
-- **Scott Hanselman. ASP.NET Core RESTful Web API przechowywanie wersji łatwe** \
+- **Scott Hanselman. Łatwość ASP.NET Core RESTful internetowego interfejsu API** \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
-- **Przechowywanie wersji internetowego interfejsu API RESTful** \
+- **Przechowywanie wersji interfejsu API sieci Web RESTful** \
   <https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api>
 
-- **Roy Fielding. Przechowywanie wersji, hypermedia i REST** \
+- **Roy. Przechowywanie wersji, nośniki i REST** \
   <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 >[!div class="step-by-step"]
->[Poprzedni](asynchronous-message-based-communication.md)
->[następny](microservices-addressability-service-registry.md)
+>[Poprzedni](asynchronous-message-based-communication.md) 
+> [Dalej](microservices-addressability-service-registry.md)

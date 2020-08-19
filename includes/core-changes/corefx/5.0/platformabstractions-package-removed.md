@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d85fb8df7afdc5f4c3faecebcd24d11677798bc9
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: a635e2ed6a735b5234c92fd8f5ffa1685fe9373e
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365621"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558187"
 ---
 ### <a name="microsoftdotnetplatformabstractions-package-removed"></a>Usunięto pakiet Microsoft. DotNet. PlatformAbstractions
 
@@ -28,7 +28,7 @@ Scenariusze włączane przez <xref:Microsoft.DotNet.PlatformAbstractions?display
 
 - Jeśli starsze wersje nie spełniają Twoich wymagań, Zastąp użycie `PlatformAbstractions` interfejsów API zalecanymi zamiennikami.
 
-  | `PlatformAbstractions`INTERFEJSU API | Zalecane zastąpienie |
+  | `PlatformAbstractions` INTERFEJSU API | Zalecane zastąpienie |
   |-|-|
   | `ApplicationEnvironment.ApplicationBasePath` | <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType> |
   | <xref:Microsoft.DotNet.PlatformAbstractions.HashCodeCombiner> | <xref:System.HashCode?displayProperty=nameWithType> |
@@ -39,7 +39,7 @@ Scenariusze włączane przez <xref:Microsoft.DotNet.PlatformAbstractions?display
   | `RuntimeEnvironment.OperatingSystemVersion` | <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> i <xref:System.Environment.OSVersion?displayProperty=nameWithType> |
 
   > [!NOTE]
-  > Większość przypadków użycia dla `RuntimeEnvironment.OperatingSystem` i służy `RuntimeEnvironment.OperatingSystemVersion` do wyświetlania, na przykład wyświetlania użytkownikowi, rejestrowania i telemetrii. Nie zaleca się przeprowadzania decyzji w czasie wykonywania na podstawie wersji systemu operacyjnego. <xref:System.Environment.OSVersion?displayProperty=nameWithType>teraz zwraca poprawną wersję dla systemów operacyjnych Windows i macOS. Jednak w przypadku większości dystrybucji systemu UNIX, co jest uznawane za "wersję systemu operacyjnego", nie jest tak proste. Może to być na przykład wersja jądra systemu Linux lub wersja dystrybucji. Dla większości platform systemu UNIX <xref:System.Environment.OSVersion?displayProperty=nameWithType> i <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> zwracają wersję zwracaną przez program `uname` . Aby uzyskać informacje o nazwie i wersji systemu Linux, zalecane podejście polega na odczytaniu pliku */etc/OS-Release* .
+  > Większość przypadków użycia dla `RuntimeEnvironment.OperatingSystem` i służy `RuntimeEnvironment.OperatingSystemVersion` do wyświetlania, na przykład wyświetlania użytkownikowi, rejestrowania i telemetrii. Nie zaleca się przeprowadzania decyzji w czasie wykonywania na podstawie wersji systemu operacyjnego. <xref:System.Environment.OSVersion?displayProperty=nameWithType> teraz [zwraca poprawną wersję](../../../../docs/core/compatibility/corefx.md#environmentosversion-returns-the-correct-operating-system-version) dla systemów operacyjnych Windows i macOS. Jednak w przypadku większości dystrybucji systemu UNIX, co jest uznawane za "wersję systemu operacyjnego", nie jest tak proste. Może to być na przykład wersja jądra systemu Linux lub wersja dystrybucji. Dla większości platform systemu UNIX <xref:System.Environment.OSVersion?displayProperty=nameWithType> i <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> zwracają wersję zwracaną przez program `uname` . Aby uzyskać informacje o nazwie i wersji systemu Linux, zalecane podejście polega na odczytaniu pliku */etc/OS-Release* .
 
 #### <a name="category"></a>Kategoria
 

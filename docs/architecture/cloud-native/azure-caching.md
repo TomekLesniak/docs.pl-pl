@@ -3,12 +3,12 @@ title: Buforowanie w aplikacji natywnej dla chmury
 description: Dowiedz się więcej na temat strategii buforowania w aplikacji natywnej w chmurze.
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: a109db59d7b2005ea97922eef07ae4869e4894a7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a33f143499b5f9545493bc4bc757cc3d152f7aa9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614295"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557519"
 ---
 # <a name="caching-in-a-cloud-native-app"></a>Buforowanie w aplikacji natywnej w chmurze
 
@@ -57,7 +57,7 @@ Pamięć podręczna systemu Azure dla Redis jest większa niż prosta pamięć p
   
 W przypadku zaawansowanych scenariuszy kopia danych w pamięci podręcznej może być [utrwalona na dysku](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-persistence). Jeśli zdarzenie katastrofalne wyłącza zarówno podstawową, jak i pamięć podręczną repliki, pamięć podręczną jest tworzona z najnowszej migawki.
 
-Azure Redis Cache jest dostępny w wielu wstępnie zdefiniowanych konfiguracjach i warstwach cenowych.  [Warstwa Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-premium-tier-intro) oferuje wiele funkcji na poziomie przedsiębiorstwa, takich jak klastrowanie, trwałość danych, replikacja geograficzna i izolacja sieci wirtualnej.
+Azure Redis Cache jest dostępny w wielu wstępnie zdefiniowanych konfiguracjach i warstwach cenowych. [Warstwa Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-overview#service-tiers) oferuje wiele funkcji na poziomie przedsiębiorstwa, takich jak klastrowanie, trwałość danych, replikacja geograficzna i izolacja sieci wirtualnej.
 
 >[!div class="step-by-step"]
 >[Poprzedni](relational-vs-nosql-data.md) 

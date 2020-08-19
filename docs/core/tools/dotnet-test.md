@@ -2,12 +2,12 @@
 title: polecenie testu dotnet
 description: Polecenie Test dotnet służy do wykonywania testów jednostkowych w danym projekcie.
 ms.date: 04/29/2020
-ms.openlocfilehash: 9b1e190579902dda71547b01f31dd5adcc22fe9c
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: e5c0ec3423cf98895b49596633c81861bbcf4878
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251195"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557844"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -15,7 +15,7 @@ ms.locfileid: "87251195"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet test`— Sterownik testowy .NET używany do wykonywania testów jednostkowych.
+`dotnet test` — Sterownik testowy .NET używany do wykonywania testów jednostkowych.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -75,27 +75,27 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
   Uruchamia testy w trybie polecenia Blame. Ta opcja jest przydatna do izolowania problematycznych testów, które powodują awarię hosta testowego. Gdy zostanie wykryta awaria, tworzy plik sekwencji w programie `TestResults/<Guid>/<Guid>_Sequence.xml` , który przechwytuje kolejność testów, które zostały uruchomione przed awarią.
 
-- **`--blame-crash`**(Dostępne od wersji .NET 5,0 Preview SDK)
+- **`--blame-crash`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
   Uruchamia testy w trybie polecenia Blame i zbiera zrzut awaryjny, gdy host testowy zostanie nieoczekiwanie zamknięty. Ta opcja jest obsługiwana tylko w systemie Windows. Katalog zawierający *procdump.exe* i *procdump64.exe* musi znajdować się w zmiennej środowiskowej PATH lub PROCDUMP_PATH. [Pobierz narzędzia](https://docs.microsoft.com/sysinternals/downloads/procdump). Oznacza `--blame` .
 
-- **`--blame-crash-dump-type <DUMP_TYPE>`**(Dostępne od wersji .NET 5,0 Preview SDK)
+- **`--blame-crash-dump-type <DUMP_TYPE>`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
   Typ zrzutu awaryjnego do zebrania. Oznacza `--blame-crash` .
 
-- **`--blame-crash-collect-always`**(Dostępne od wersji .NET 5,0 Preview SDK)
+- **`--blame-crash-collect-always`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
   Zbiera dane zrzutu awaryjnego w oczekiwany sposób, jak również nieoczekiwane wyjście hosta testowego.
 
-- **`--blame-hang`**(Dostępne od wersji .NET 5,0 Preview SDK)
+- **`--blame-hang`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
   Uruchom testy w trybie polecenia Blame i zbiera zrzut zawieszenia, gdy test przekroczy określony limit czasu.
 
-- **`--blame-hang-dump-type <DUMP_TYPE>`**(Dostępne od wersji .NET 5,0 Preview SDK)
+- **`--blame-hang-dump-type <DUMP_TYPE>`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
   Typ zrzutu awaryjnego do zebrania. Powinien być `full` , `mini` lub `none` . Gdy `none` jest określony, Host testowy zostaje zakończony po upływie limitu czasu, ale nie jest zbierany żaden zrzut. Oznacza `--blame-hang` .
 
-- **`--blame-hang-timeout <TIMESPAN>`**(Dostępne od wersji .NET 5,0 Preview SDK)
+- **`--blame-hang-timeout <TIMESPAN>`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
   Limit czasu dla testu, po którym zostanie wyzwolony zrzut zawieszenia i proces hosta testowego zostanie przerwany. Wartość limitu czasu jest określona w jednym z następujących formatów:
   
@@ -156,7 +156,7 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Katalog, w którym można znaleźć pliki binarne do uruchomienia. Jeśli nie zostanie określony, ścieżka domyślna to `./bin/<configuration>/<framework>/` .  W przypadku projektów z wieloma platformami docelowymi (za pośrednictwem `TargetFrameworks` Właściwości) należy również zdefiniować, `--framework` kiedy należy określić tę opcję. `dotnet test`zawsze uruchamia testy z katalogu wyjściowego. Można użyć <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> do korzystania z zasobów testowych w katalogu wyjściowym.
+  Katalog, w którym można znaleźć pliki binarne do uruchomienia. Jeśli nie zostanie określony, ścieżka domyślna to `./bin/<configuration>/<framework>/` .  W przypadku projektów z wieloma platformami docelowymi (za pośrednictwem `TargetFrameworks` Właściwości) należy również zdefiniować, `--framework` kiedy należy określić tę opcję. `dotnet test` zawsze uruchamia testy z katalogu wyjściowego. Można użyć <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> do korzystania z zasobów testowych w katalogu wyjściowym.
 
 - **`-r|--results-directory <RESULTS_DIR>`**
 
@@ -237,9 +237,9 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
 `--filter <EXPRESSION>`
 
-`<Expression>`ma format `<property><operator><value>[|&<Expression>]` .
+`<Expression>` ma format `<property><operator><value>[|&<Expression>]` .
 
-`<property>`jest atrybutem klasy `Test Case` . Poniżej przedstawiono właściwości obsługiwane przez popularne struktury testów jednostkowych:
+`<property>` jest atrybutem klasy `Test Case` . Poniżej przedstawiono właściwości obsługiwane przez popularne struktury testów jednostkowych:
 
 | Platforma testowa | Obsługiwane właściwości                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
@@ -256,7 +256,7 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 | `~`      | Contains        |
 | `!~`     | Nie zawiera    |
 
-`<value>`jest ciągiem. Wszystkie wyszukiwania są rozróżniane wielkości liter.
+`<value>` jest ciągiem. Wszystkie wyszukiwania są rozróżniane wielkości liter.
 
 Wyrażenie bez elementu `<operator>` jest automatycznie uznawane za `contains` Właściwość on `FullyQualifiedName` (na przykład `dotnet test --filter xyz` jest takie samo jak `dotnet test --filter FullyQualifiedName~xyz` ).
 
@@ -271,7 +271,7 @@ Wyrażenia można ująć w nawiasy, gdy są używane operatory warunkowe (na prz
 
 Aby uzyskać więcej informacji i zapoznać się z przykładami dotyczącymi używania selektywnego filtrowania testów jednostkowych, zobacz [Uruchamianie selektywnych testów jednostkowych](../testing/selective-unit-tests.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Struktury i elementy docelowe](../../standard/frameworks.md)
 - [Wykaz identyfikatorów środowiska uruchomieniowego platformy .NET Core (RID)](../rid-catalog.md)

@@ -1,18 +1,17 @@
 ---
 title: Wprowadzenie do .NET Framework
 description: Zacznij korzystać z platformy .NET, czyli środowiska wykonawczego środowiska uruchomieniowego, które zarządza aplikacjami. Zawiera środowisko uruchomieniowe języka wspólnego (CLR) i szeroką bibliotekę klas.
-ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: b6ad74d2984443a3b8345c2261996e7ab30acdff
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1d6b1fccd9751180ee096531a34b2afb60547072
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621655"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557324"
 ---
 # <a name="get-started-with-net-framework"></a>Wprowadzenie do .NET Framework
 
@@ -84,7 +83,7 @@ Aby uzyskać więcej informacji na temat tworzenia aplikacji przeznaczonych do .
 | [Dokumentacja platformy .NET Core](../../core/index.yml) | Zawiera dokumentację dotyczącą pojęć i interfejsów API dla platformy .NET Core. |
 | [.NET Standard](../../standard/net-standard.md) | W tym artykule omówiono .NET Standard, specyfikacje wersji, które są obsługiwane przez poszczególne implementacje platformy .NET, aby zagwarantować, że na wielu platformach jest dostępny spójny zestaw interfejsów API.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [.NET framework — przewodnik](../index.yml)
 - [Co nowego](../whats-new/index.md)
