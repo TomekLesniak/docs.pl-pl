@@ -2,12 +2,12 @@
 title: Publikowanie aplikacji
 description: Dowiedz się więcej na temat sposobów publikowania aplikacji platformy .NET Core. Platforma .NET Core może publikować aplikacje zależne od platformy lub dla wielu platform. Można opublikować aplikację jako samodzielną lub zależną od struktury. Każdy tryb ma wpływ na sposób uruchamiania aplikacji przez użytkownika.
 ms.date: 04/01/2020
-ms.openlocfilehash: 57889271ce2f210c0838a54bb793aeb3be5c7272
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: f343e184a7ccca66aaf94533b2d0262478f873f4
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608408"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656589"
 ---
 # <a name="net-core-application-publishing-overview"></a>Omówienie publikowania aplikacji .NET Core
 
@@ -131,8 +131,11 @@ Ponieważ aplikacja zawiera środowisko uruchomieniowe platformy .NET Core i wsz
   > [!TIP]
   > Możesz zmniejszyć rozmiar wdrożenia w systemach Linux o około 28 MB przy użyciu [*trybu niezmiennej globalizacji*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md)platformy .NET Core. Wymusza to aplikacji traktowanie wszystkich kultur, takich jak [Niezmienna kultura](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
+  > [!TIP]
+  > Dostępna jest [Funkcja przycinania wersji zapoznawczej](trim-self-contained.md) , która umożliwia dalsze zmniejszenie rozmiaru wdrożenia.
+
 - **Trudniejsze do zaktualizowania wersji platformy .NET Core**\
-Środowisko uruchomieniowe platformy .NET Core (dystrybuowane z aplikacją) można uaktualnić tylko przez wydanie nowej wersji aplikacji. Użytkownik jest odpowiedzialny za dostarczanie zaktualizowanej wersji aplikacji na potrzeby poprawek zabezpieczeń do środowiska uruchomieniowego .NET Core.
+Środowisko uruchomieniowe platformy .NET Core (dystrybuowane z aplikacją) można uaktualnić tylko przez wydanie nowej wersji aplikacji. Jednak platforma .NET Core zaktualizuje krytyczne poprawki zabezpieczeń zgodnie z potrzebami biblioteki struktury na komputerze, na którym działa aplikacja. Użytkownik jest odpowiedzialny za kompleksową weryfikację tego scenariusza poprawek zabezpieczeń.
 
 ### <a name="examples"></a>Przykłady
 
@@ -148,7 +151,7 @@ Publikuj samodzielną aplikację. Tworzony jest plik wykonywalny systemu Windows
 dotnet publish -r win-x64
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wdrażanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core.](deploy-with-cli.md)
 - [Wdrażanie aplikacji .NET Core za pomocą programu Visual Studio.](deploy-with-vs.md)

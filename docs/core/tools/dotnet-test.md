@@ -2,12 +2,12 @@
 title: polecenie testu dotnet
 description: Polecenie Test dotnet służy do wykonywania testów jednostkowych w danym projekcie.
 ms.date: 04/29/2020
-ms.openlocfilehash: e5c0ec3423cf98895b49596633c81861bbcf4878
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d67521084330b206afca89baf59228b99ca799a1
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557844"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656758"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -104,7 +104,7 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
   - 5400
   - 5400000ms
 
-  Gdy nie jest używana żadna jednostka (na przykład 5400000), przyjmuje się, że wartość jest w milisekundach. W przypadku użycia razem z testami opartymi na danych, zachowanie limitu czasu zależy od używanej karty testowej. Dla xUnit i NUnit limit czasu jest odnawiany po każdym przypadku testowym. W przypadku MSTest limit czasu jest używany dla wszystkich). Ta opcja jest obsługiwana w systemie Windows z systemem netcoreapp 2.1 lub nowszym oraz w systemie Linux z netcoreapp 3.1 lub nowszym. macOS nie jest obsługiwana.
+  Gdy nie jest używana żadna jednostka (na przykład 5400000), przyjmuje się, że wartość jest w milisekundach. W przypadku użycia razem z testami opartymi na danych, zachowanie limitu czasu zależy od używanej karty testowej. Dla xUnit i NUnit limit czasu jest odnawiany po każdym przypadku testowym. W przypadku MSTest limit czasu jest używany dla wszystkich przypadków testowych. Ta opcja jest obsługiwana w systemie Windows z systemem netcoreapp 2.1 lub nowszym oraz w systemie Linux z netcoreapp 3.1 lub nowszym. macOS nie jest obsługiwana.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -271,7 +271,7 @@ Wyrażenia można ująć w nawiasy, gdy są używane operatory warunkowe (na prz
 
 Aby uzyskać więcej informacji i zapoznać się z przykładami dotyczącymi używania selektywnego filtrowania testów jednostkowych, zobacz [Uruchamianie selektywnych testów jednostkowych](../testing/selective-unit-tests.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Struktury i elementy docelowe](../../standard/frameworks.md)
 - [Wykaz identyfikatorów środowiska uruchomieniowego platformy .NET Core (RID)](../rid-catalog.md)

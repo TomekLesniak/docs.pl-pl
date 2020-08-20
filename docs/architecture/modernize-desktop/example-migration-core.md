@@ -2,12 +2,12 @@
 title: Przykład migracji do programu .NET Core 3.1
 description: Przedstawiamy sposób migrowania przykładowych aplikacji przeznaczonych dla .NET Framework do programu .NET Core 3,1.
 ms.date: 05/12/2020
-ms.openlocfilehash: 5e8b1219cf4bd89ada5b71a60ef27eaabb94997c
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6a0311e9aaeb25ac39f3394d3a62e17046fe03d8
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144271"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656767"
 ---
 # <a name="example-of-migrating-to-net-core-31"></a>Przykład migracji do programu .NET Core 3.1
 
@@ -31,11 +31,11 @@ Proces migracji składa się z czterech kolejnych kroków:
 
 ### <a name="preparation"></a>Przygotowanie
 
-#### <a name="migrate-packagesconfig-file"></a>Migruj plik Packages. config
+#### <a name="migrate-packagesconfig-file"></a>Migrowanie pliku packages.config
 
-W aplikacji .NET Framework wszystkie odwołania do pakietów zewnętrznych są deklarowane w pliku *Packages. config* . W programie .NET Core nie ma już potrzeby używania pliku *Packages. config* . Zamiast tego należy użyć właściwości [PackageReference](../../core/project-sdk/msbuild-props.md#packagereference) wewnątrz pliku projektu, aby określić pakiety NuGet dla aplikacji.
+W aplikacji .NET Framework wszystkie odwołania do pakietów zewnętrznych są deklarowane w pliku *packages.config* . W programie .NET Core nie ma już potrzeby używania pliku *packages.config* . Zamiast tego należy użyć właściwości [PackageReference](../../core/project-sdk/msbuild-props.md#packagereference) wewnątrz pliku projektu, aby określić pakiety NuGet dla aplikacji.
 
-Dlatego należy przejść z jednego formatu na inny. Aktualizację można wykonać ręcznie, biorąc pod uwagę zależności zawarte w pliku *Packages. config* i migruje je do pliku projektu `PackageReference` . Możesz również pozwolić programowi Visual Studio na wykonywanie zadań: kliknij prawym przyciskiem myszy plik *Packages. config* i wybierz opcję **Migruj pakiety. config do PackageReference** .
+Dlatego należy przejść z jednego formatu na inny. Aktualizację można wykonać ręcznie, biorąc pod uwagę zależności zawarte w pliku *packages.config* i migruje je do pliku projektu w `PackageReference` formacie. Możesz również pozwolić programowi Visual Studio na wykonywanie pracy: kliknij prawym przyciskiem myszy plik *packages.config* i wybierz opcję **Migruj packages.config do PackageReference** .
 
 #### <a name="verify-every-dependency-compatibility-in-net-core"></a>Weryfikowanie każdej zgodności zależności w programie .NET Core
 
@@ -85,7 +85,7 @@ Zasoby osadzone są uwzględniane automatycznie, ale zasoby nie są, więc nale�
 
 #### <a name="package-references"></a>Odwołania do pakietu
 
-Za pomocą opcji **Migruj pakiety. config do PackageReference** można łatwo przenieść odwołania do pakietów zewnętrznych do nowego formatu, jak wspomniano wcześniej.
+Za pomocą opcji **migrowanie packages.config do PackageReference** można łatwo przenieść odwołania do pakietów zewnętrznych do nowego formatu, jak wspomniano wcześniej.
 
 #### <a name="update-package-references"></a>Aktualizuj odwołania do pakietów
 
@@ -129,7 +129,7 @@ Po skompilowaniu aplikacji bez błędów można uruchomić ostatni krok migracji
 
 W tym ostatnim kroku można znaleźć kilka różnych problemów w zależności od złożoności aplikacji oraz zależności i interfejsów API, których używasz.
 
-Na przykład w przypadku korzystania z plików konfiguracji (*App. config*) mogą wystąpić błędy w czasie wykonywania, podobnie jak w przypadku nieobecnych sekcji konfiguracyjnych. Korzystanie z `Microsoft.Extensions.Configuration` pakietu NuGet powinno rozwiązać ten problem.
+Na przykład w przypadku korzystania z plików konfiguracji (*app.config*) może wystąpić kilka błędów w czasie wykonywania, takich jak nieobecne sekcje konfiguracyjne. Korzystanie z `Microsoft.Extensions.Configuration` pakietu NuGet powinno rozwiązać ten problem.
 
 Kolejną przyczyną błędów jest użycie `BeginInvoke` metod i, `EndInvoke` ponieważ nie są one obsługiwane przez platformę .NET Core. Nie są one obsługiwane przez platformę .NET Core, ponieważ mają one zależność od komunikacji zdalnej, która nie istnieje w programie .NET Core. Aby rozwiązać ten problem, spróbuj użyć `await` słowa kluczowego (jeśli jest dostępne) lub <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metody.
 
@@ -195,7 +195,7 @@ Wybierz przycisk **Zakończ** . Po czasie zobaczysz wygenerowany kod.
 Powinny być widoczne trzy automatycznie generowane pliki:
 
 1. *Wprowadzenie*: link do usługi GitHub w celu udostępnienia pewnych informacji na temat usługi WCF.
-2. *Usługę połączoną. JSON*: parametry konfiguracji do nawiązania połączenia z usługą.
+2. *ConnectedService.js*: parametry konfiguracji do nawiązania połączenia z usługą.
 3. *Reference.cs*: rzeczywisty kod klienta WCF.
 
 ![Zrzut ekranu okna Eksplorator rozwiązań z trzema generowanymi automatycznie plikami](./media/example-migration-core/autogenerated-files.png)
@@ -208,7 +208,7 @@ Po ponownym skompilowaniu projektu i jego wykonaniu nie będą widoczne obrazy p
 string image_name = Environment.CurrentDirectory + "\\..\\..\\Assets\\Images\\Catalog\\" + catalogItems.Picturefilename;
 ```
 
-na
+na wartość
 
 ```csharp
 string image_name = Environment.CurrentDirectory + "\\..\\..\\..\\Assets\\Images\\Catalog\\" + catalogItems.Picturefilename;
@@ -233,7 +233,7 @@ W takim przypadku Usuń całą zawartość pliku *. csproj* i zastąp go następ
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <UseWPF>true</UseWPF>
+        <UseWpf>true</UseWpf>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
 </Project>

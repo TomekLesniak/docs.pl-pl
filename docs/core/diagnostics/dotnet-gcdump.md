@@ -2,12 +2,12 @@
 title: dotnet-gcdump-.NET Core
 description: Instalowanie i używanie narzędzia wiersza polecenia dotnet-gcdump.
 ms.date: 07/26/2020
-ms.openlocfilehash: 10e4c7e9e3a1df5d0eb58e68d38c0af091aeedc1
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: a7b19f4d7487677b975621e7267a17894dae2e3a
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88575684"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656654"
 ---
 # <a name="heap-analysis-tool-dotnet-gcdump"></a>Narzędzie do analizy sterty (dotnet-gcdump)
 
@@ -29,7 +29,7 @@ dotnet-gcdump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Opis
 
-`dotnet-gcdump`Globalnym narzędziem jest sposób zbierania zrzutów GC (Moduł wyrzucania elementów bezużytecznych) procesów .NET na żywo. Używa technologii EventPipe, która jest wieloplatformową alternatywą dla funkcji ETW w systemie Windows. Zrzuty GC są tworzone przez wyzwolenie GC w procesie docelowym, włączenie zdarzeń specjalnych i ponowne wygenerowanie grafu obiektów głównych obiektu ze strumienia zdarzeń. Pozwala to na zbieranie zrzutów GC, gdy proces jest uruchomiony, przy minimalnym obciążeniu. Te zrzuty są przydatne w kilku scenariuszach:
+`dotnet-gcdump`Globalnym narzędziem jest sposób zbierania zrzutów GC (Moduł wyrzucania elementów bezużytecznych) procesów .NET na żywo. Używa technologii EventPipe, która jest wieloplatformową alternatywą dla funkcji ETW w systemie Windows. Zrzuty GC są tworzone przez wyzwolenie GC w procesie docelowym, włączenie zdarzeń specjalnych i ponowne wygenerowanie grafu obiektów głównych obiektu ze strumienia zdarzeń. Ten proces umożliwia zbieranie zrzutów GC, gdy proces jest uruchomiony i z minimalnymi kosztami. Te zrzuty są przydatne w kilku scenariuszach:
 
 - Porównanie liczby obiektów w stercie w kilku punktach w czasie.
 - Analizowanie katalogów głównych obiektów (odpowiedzi na pytania, takie jak nadal ma odwołanie do tego typu?).

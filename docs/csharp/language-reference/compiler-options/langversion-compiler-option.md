@@ -7,13 +7,14 @@ helpviewer_keywords:
 - /langversion compiler option [C#]
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
+ms.custom: updateeachrelease
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 408b2fb1f19f872db675321601ebc1b0c921044b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: fd05802008a20267fea54f14bae4c8deb0e21c65
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802953"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656215"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (opcje kompilatora C#)
 
@@ -54,7 +55,7 @@ Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę 
 | Wersja          | Link                       | Opis                                                             |
 |------------------|----------------------------|-------------------------------------------------------------------------|
 | C# 7,0 i nowsze |                            | Obecnie niedostępne                                                 |
-| C# 6,0           | [Link][csharp-6]           | Specyfikacja języka C# w wersji 6 — nieoficjalne wersje robocze: .NET Foundation |
+| C# 6,0           | [Łącze][csharp-6]           | Specyfikacja języka C# w wersji 6 — nieoficjalne wersje robocze: .NET Foundation |
 | C# 5,0           | [Pobierz plik PDF][csharp-5]   | Standardowa ECMA-334, wersja 5                                           |
 | C# 3,0           | [Pobierz dokument][csharp-3]   | Specyfikacja języka C# wersja 3,0: Microsoft Corporation            |
 | C# 2,0           | [Pobierz plik PDF][csharp-2]   | Standard ECMA-334 czwarta                                           |
@@ -86,7 +87,7 @@ W poniższej tabeli wymieniono minimalne wersje zestawu SDK z kompilatorem C#, k
 | C# 2       | Microsoft Visual Studio/Build Tools 2005 lub z pakietem .NET Framework 2,0      |
 | C# 1.0/1.2 | Narzędzia Microsoft Visual Studio/Build Tools .NET 2002 lub w pakiecie .NET Framework 1,0 |
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora C#](index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

@@ -3,21 +3,21 @@ title: Przykłady i samouczki dotyczące platformy .NET
 description: Informacje na temat przykładów i samouczków dotyczących platformy .NET Core, ASP.NET Core i języka C#, które ułatwiają zapoznanie się z platformą .NET.
 author: BillWagner
 ms.author: wiwagn
-ms.date: 04/11/2017
-ms.openlocfilehash: 367b2cbea24ac0da634051bf815c319f3679f79b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.date: 08/19/2020
+ms.openlocfilehash: 587365aae1c2069c3e94ad0452da9c31dc6e89f0
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86417329"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656960"
 ---
 # <a name="net-samples-and-tutorials"></a>Przykłady i samouczki dotyczące platformy .NET
 
-Dokumentacja platformy .NET zawiera zestaw przykładów i samouczków, które pouczysz się na temat platformy .NET. W tym temacie opisano, jak znajdować, wyświetlać i pobierać przykłady i samouczki dotyczące platformy .NET Core, ASP.NET Core i C#. Znajdź zasoby, aby poznać język programowania F # w [witrynie programu f # Foundation](https://fsharp.org/learn.html). Jeśli interesuje Cię Eksplorowanie języka C# przy użyciu edytora kodu online, Zacznij od [tego interaktywnego samouczka](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1) i Kontynuuj [Interaktywny samouczek języka C#](../csharp/tutorials/intro-to-csharp/index.md). Instrukcje dotyczące sposobu wyświetlania i pobierania przykładowego kodu znajdują się w sekcji [Wyświetlanie i pobieranie przykładów](#viewing-and-downloading-samples) .
+Dokumentacja platformy .NET zawiera zestaw przykładów i samouczków, które pouczysz się na temat platformy .NET. W tym artykule opisano, jak znajdować, wyświetlać i pobierać przykłady i samouczki dotyczące platformy .NET Core, ASP.NET Core i C#. Znajdź zasoby, aby poznać język programowania F # w [witrynie programu f # Foundation](https://fsharp.org/learn/). Jeśli interesuje Cię Eksplorowanie języka C# przy użyciu edytora kodu online, Zacznij od [tego interaktywnego samouczka](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1) i Kontynuuj [Interaktywny samouczek języka C#](../csharp/tutorials/intro-to-csharp/index.md). Instrukcje dotyczące sposobu wyświetlania i pobierania przykładowego kodu znajdują się w sekcji [Wyświetlanie i pobieranie przykładów](#view-and-download-samples) .
 
 ## <a name="net-core"></a>.NET Core
 
-### <a name="samples"></a>Przykłady
+### <a name="samples"></a>Samples
 
 **[Testowanie jednostkowe w programie .NET Core przy użyciu testu dotnet](../core/testing/unit-testing-with-dotnet-test.md)**
 
@@ -25,9 +25,9 @@ W tym przewodniku pokazano, jak utworzyć aplikację sieci Web ASP.NET Core i po
 
 ### <a name="tutorials"></a>Samouczki
 
-**[Pisanie aplikacji konsolowych platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core: Przewodnik krok po kroku](../core/tutorials/cli-create-console-app.md)**
+**[Samouczek: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code](../core/tutorials/with-visual-studio-code.md)**
 
-W tym przewodniku pokazano, jak używać narzędzi interfejs wiersza polecenia platformy .NET Core do kompilowania aplikacji konsolowych dla wielu platform. Rozpoczyna się od podstawowej aplikacji konsolowej i ostatecznie obejmuje wiele projektów, w tym testowania. Możesz dodawać funkcje krok po kroku, tworząc swoją wiedzę. [Ukończony przykład](https://github.com/dotnet/samples/tree/master/core/console-apps) jest dostępny w repozytorium dotnet/Samples w witrynie GitHub.
+W tym samouczku pokazano, jak utworzyć i uruchomić aplikację konsolową .NET Core przy użyciu Visual Studio Code i interfejs wiersza polecenia platformy .NET Core. Zadania projektu, takie jak tworzenie, kompilowanie i uruchamianie projektu, są wykonywane przy użyciu interfejs wiersza polecenia platformy .NET Core.
 
 **[Pisanie bibliotek przy użyciu narzędzi międzyplatformowych](../core/tutorials/libraries.md)**
 
@@ -39,7 +39,7 @@ Zobacz [samouczki ASP.NET Core](/aspnet/core/tutorials/). Wiele artykułów w do
 
 ## <a name="c-language"></a>C# — język
 
-### <a name="samples"></a>Przykłady
+### <a name="samples"></a>Samples
 
 **[Iteratory](../csharp/iterators.md)**
 
@@ -83,7 +83,7 @@ W tym samouczku przedstawiono komunikację sieci Web, serializacji JSON i zorien
 
 W tym samouczku przedstawiono wiele funkcji LINQ i elementów języka, które je obsługują. [Ukończony przykład](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-linq) jest dostępny w repozytorium dotnet/Samples w witrynie GitHub.
 
-**[Rozpoczynanie pracy z platformą .NET Core w systemie macOS przy użyciu Visual Studio dla komputerów Mac](../core/tutorials/using-on-mac-vs.md)**
+**[Samouczek: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac](../core/tutorials/with-visual-studio-mac.md)**
 
 W tym samouczku przedstawiono sposób tworzenia prostej aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac.
 
@@ -101,13 +101,13 @@ W tym samouczku pokazano, jak utworzyć prostą aplikację na platformie .NET Co
 
 W tym samouczku przedstawiono sposób wdrażania istniejącej aplikacji ASP.NET MVC w kontenerze platformy Docker systemu Windows. [Ukończony przykład](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator) jest dostępny w repozytorium dotnet/Samples w witrynie GitHub.
 
-## <a name="viewing-and-downloading-samples"></a>Wyświetlanie i pobieranie przykładów
+## <a name="view-and-download-samples"></a>Wyświetl i Pobierz przykłady
 
 Wiele tematów pokazuje kod źródłowy i przykłady, które są dostępne do wyświetlania lub pobrania z witryny GitHub. Aby wyświetlić przykład, po prostu postępuj zgodnie z przykładowym łączem. Aby pobrać kod, wykonaj następujące instrukcje:
 
 1. Pobierz repozytorium zawierające przykładowy kod, wykonując jedną z następujących procedur:
    * Pobierz plik ZIP repozytorium do systemu lokalnego. Cofnij kod ZIP skompresowanego archiwum.
-   * [Rozwidlenie](https://help.github.com/articles/fork-a-repo/) repozytorium i [klonowanie](https://help.github.com/articles/cloning-a-repository/) rozwidlenia do systemu lokalnego. Rozwidlenie i klonowanie pozwala na wprowadzanie wkładu do dokumentacji przez zatwierdzanie zmian w rozwidleniu, a następnie Tworzenie żądania ściągnięcia dla oficjalnego repozytorium dokumentów. Aby uzyskać więcej informacji, zobacz Przewodnik dotyczący [dokumentacji programu .NET](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute) i Podręcznik dotyczący [ASP.NET Core dokumentów](https://github.com/aspnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
+   * [Rozwidlenie](https://help.github.com/articles/fork-a-repo/) repozytorium i [klonowanie](https://help.github.com/articles/cloning-a-repository/) rozwidlenia do systemu lokalnego. Rozwidlenie i klonowanie pozwala na wprowadzanie wkładu do dokumentacji przez zatwierdzanie zmian w rozwidleniu, a następnie Tworzenie żądania ściągnięcia dla oficjalnego repozytorium dokumentów. Aby uzyskać więcej informacji, zobacz Przewodnik dotyczący [dokumentacji programu .NET](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute) i Podręcznik dotyczący [ASP.NET Core dokumentów](https://github.com/dotnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
    * Sklonuj repozytorium lokalnie. W przypadku sklonowania repozytorium dokumentów bezpośrednio do systemu lokalnego nie będzie można wprowadzać zatwierdzeń bezpośrednio do oficjalnego repozytorium, więc nie będzie można później wprowadzać wkładów do dokumentacji. Użyj opisanej wcześniej procedury rozwidlenia i klonowania, jeśli chcesz zachować możliwość późniejszego współtworzenia do dokumentacji.
 1. Nawigowanie w folderach repozytorium do lokalizacji przykładowej. Ścieżka względna do lokalizacji przykładu pojawia się na pasku adresu przeglądarki, gdy użyjesz linku do przykładu.
 1. Aby uruchomić przykład, masz kilka opcji:

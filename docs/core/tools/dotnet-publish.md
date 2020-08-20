@@ -2,12 +2,12 @@
 title: polecenie dotnet publish
 description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
 ms.date: 02/24/2020
-ms.openlocfilehash: 64a68c97e01bbf962616b31210889eb23d3734f1
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 45bf8504fd882286041794d27ecb56464fc8d13d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608287"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656668"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -159,7 +159,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 - **`-p:PublishTrimmed=true`**
 
-  Przycina nieużywane biblioteki, aby zmniejszyć rozmiar wdrożenia aplikacji podczas publikowania samodzielnego pliku wykonywalnego. Aby uzyskać więcej informacji, zobacz sekcję [przycinanie wdrożeń samodzielnych i plików wykonywalnych](../deploying/trim-self-contained.md). Dostępne od wersji .NET Core 3,0 SDK.
+  Przycina nieużywane biblioteki, aby zmniejszyć rozmiar wdrożenia aplikacji podczas publikowania samodzielnego pliku wykonywalnego. Aby uzyskać więcej informacji, zobacz sekcję [przycinanie wdrożeń samodzielnych i plików wykonywalnych](../deploying/trim-self-contained.md). Dostępne od zestawu .NET Core 3,0 SDK jako funkcji w wersji zapoznawczej.
 
   Zalecamy określenie tej opcji w profilu publikowania, a nie w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [MSBuild](#msbuild).
 
@@ -229,12 +229,12 @@ Więcej informacji można znaleźć w następujących zasobach:
   dotnet publish --no-dependencies
   ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Omówienie publikowania aplikacji .NET Core](../deploying/index.md)
 - [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](../deploying/deploy-with-cli.md)
 - [Platformy docelowe](../../standard/frameworks.md)
-- [Wykaz identyfikatorów środowiska uruchomieniowego (RID)](../rid-catalog.md)
+- [Wykaz identyfikatorów środowisk uruchomieniowych (RID)](../rid-catalog.md)
 - [Praca z macOS Catalina Notarization](../install/macos-notarization-issues.md)
 - [Struktura katalogów opublikowanej aplikacji](/aspnet/core/hosting/directory-structure)
 - [Dokumentacja wiersza polecenia programu MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)

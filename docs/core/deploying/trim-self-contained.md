@@ -1,32 +1,32 @@
 ---
-title: Przycinanie samodzielnych aplikacji
-description: Dowiedz się, jak przycinać samodzielne aplikacje, aby zmniejszyć ich rozmiar. .NET Core pakiety środowiska wykonawczego z aplikacją, która jest publikowana samodzielnie i zazwyczaj zawiera więcej środowiska wykonawczego, a następnie jest konieczne.
+title: Przycinanie aplikacji samodzielnych
+description: Dowiedz się, jak przyciąć aplikacje samodzielne w celu zmniejszenia ich rozmiaru. Platforma .NET Core udostępnia pakiet środowiska uruchomieniowego z aplikacją, która jest publikowana w sposób niezależny i ogólnie zawiera więcej informacji o środowisku uruchomieniowym.
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: bb8ac88c5e16b7fd20a7670e4ad76dbe4b44da1b
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 2bb0f03994468bbad3096ebf0b141bc1f47b867e
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242924"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656719"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Przycinanie samodzielnych wdrożeń i plików wykonywalnych
 
-Podczas publikowania aplikacji samodzielny, .NET Core środowiska uruchomieniowego jest powiązany z aplikacją. Ten pakiet dodaje znaczną ilość zawartości do spakowanej aplikacji. Jeśli chodzi o wdrażanie aplikacji, rozmiar jest często ważnym czynnikiem. Utrzymanie rozmiaru aplikacji pakietu tak małe, jak to możliwe jest zazwyczaj celem dla deweloperów aplikacji.
+[Model wdrożenia zależny od platformy](index.md#publish-framework-dependent) był najbardziej pomyślnym modelem wdrożenia od momentu rozpoczęcia działania programu .NET. W tym scenariuszu Deweloper aplikacji korzysta tylko z aplikacji i zestawów innych firm z oczekiwaniami, gdy środowisko uruchomieniowe platformy .NET i biblioteki struktury będą dostępne na komputerze klienckim. Ten model wdrażania jest nadal jedynym podmiotem w programie .NET Core, ale istnieją pewne scenariusze, w których model zależny od struktury nie jest optymalny. Alternatywą jest opublikowanie [aplikacji samodzielnej](index.md#publish-self-contained), w której środowisko uruchomieniowe i struktura platformy .NET Core są powiązane ze sobą wraz z aplikacjami i zestawami innych firm.
 
-W zależności od złożoności aplikacji do uruchomienia aplikacji wymagany jest tylko podzbiór środowiska wykonawczego. Te nieużywane części środowiska wykonawczego są niepotrzebne i mogą być przycinane z spakowanej aplikacji.
+Niezależny od przycinania model wdrażania to wyspecjalizowana wersja modelu wdrażania, który jest zoptymalizowany pod kątem zmniejszenia rozmiaru wdrożenia. Minimalizacja rozmiaru wdrożenia jest wymaganiem krytycznym dla niektórych scenariuszy po stronie klienta, takich jak aplikacje Blazor. W zależności od złożoności aplikacji do uruchomienia aplikacji są wymagane tylko podzbiór zestawów struktury. Te nieużywane części biblioteki są zbędne i mogą być przycinane z spakowanej aplikacji. Istnieje jednak ryzyko, że analiza czasu kompilacji aplikacji może spowodować błędy w czasie wykonywania, ze względu na to, że nie jest możliwe niezawodne analizowanie różnych niezawodnych wzorców kodu (w przeważającej mierze przy użyciu odbicia). Ponieważ niezawodności nie można zagwarantować, ten model wdrażania jest oferowany jako funkcja w wersji zapoznawczej. Aparat analizy czasu kompilacji zawiera ostrzeżenia dla deweloperów wzorców kodu, które są problematyczne, i oczekuje, że te wzorce kodu zostaną naprawione. Jeśli to możliwe, zalecamy przeniesienie wszelkich zależności odbicia środowiska uruchomieniowego w aplikacji do czasu kompilowania przy użyciu kodu, który spełnia te same wymagania.
 
-Funkcja przycinania działa przez sprawdzenie plików binarnych aplikacji w celu odnajdywania i tworzenia wykresu wymaganych zestawów środowiska wykonawczego. Pozostałe zestawy środowiska wykonawczego, do których nie istnieją odwołania, są wykluczone.
+Tryb przycinania dla aplikacji można skonfigurować za pomocą elementu TRIMMODE i domyślnie (), `copyused` Aby połączyć zestawy, które są używane w aplikacji. Aplikacje webassembly Blazor będą używać bardziej agresywnego trybu ( `link` ), który będzie przycinał nieużywany kod w zestawach. Ostrzeżenia analizy przycinające zapewniają informacje dotyczące wzorców kodu, w których nie było możliwe przeprowadzenie analizy pełnej zależności. Te ostrzeżenia są domyślnie pomijane i można je włączyć, ustawiając flagę, `SuppressTrimAnalysisWarnings` na wartość false. Więcej informacji na temat dostępnych opcji przycinania można znaleźć na [stronie ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
 
 > [!NOTE]
-> Przycinanie jest funkcją eksperymentalną w .NET Core 3.1 i jest dostępne _tylko_ dla aplikacji, które są publikowane samodzielnie.
+> Przycinanie jest funkcją eksperymentalną w programie .NET Core 3,1, 5,0 i jest dostępna _tylko_ dla aplikacji, które są publikowane samodzielnie.
 
-## <a name="prevent-assemblies-from-being-trimmed"></a>Zapobieganie przycinaniu zespołów
+## <a name="prevent-assemblies-from-being-trimmed"></a>Uniemożliwiaj przycinanie zestawów
 
-Istnieją scenariusze, w których funkcja przycinania nie będzie wykryć odwołań. Na przykład gdy odbicie jest używany w zestawie środowiska wykonawczego, przez aplikację lub biblioteki, do którego odwołuje się aplikacja, zestaw nie jest bezpośrednio odwołuje. Przycinanie nie jest świadomy tych pośrednich odwołań i wyklucza bibliotekę z opublikowanego folderu.
+Istnieją scenariusze, w których funkcje przycinania nie będą wykrywać odwołań. Na przykład gdy odbicie jest używane w zestawie czasu wykonywania, przez aplikację lub bibliotekę, do której odwołuje się aplikacja, zestaw nie jest bezpośrednio przywoływany. Przycinanie jest nieświadome tych pośrednich odwołań i wykluczają bibliotekę z opublikowanego folderu.
 
-Gdy kod pośrednio odwołuje się do złożenia za pomocą odbicia, można zapobiec `<TrimmerRootAssembly>` przycinaniu złożenia z ustawieniem. W poniższym przykładzie pokazano, `System.Security` jak zapobiec przycinaniu zestawu o nazwie zestawu:
+Gdy kod jest pośrednio odwołujący się do zestawu poprzez odbicie, można zapobiec przycinaniu zestawu przy użyciu tego `<TrimmerRootAssembly>` Ustawienia. Poniższy przykład pokazuje, jak zapobiec przycinaniu zestawu o nazwie `System.Security` Assembly:
 
 ```xml
 <ItemGroup>
@@ -34,57 +34,69 @@ Gdy kod pośrednio odwołuje się do złożenia za pomocą odbicia, można zapob
 </ItemGroup>
 ```
 
-## <a name="trim-your-app---cli"></a>Przycinanie aplikacji - CLI
+## <a name="trim-your-app---cli"></a>Przytnij aplikację — interfejs wiersza polecenia
 
-Przytnij aplikację za pomocą polecenia [publikowania dotnet.](../tools/dotnet-publish.md) Podczas publikowania aplikacji ustaw następujące trzy ustawienia:
+Przytnij aplikację przy użyciu polecenia [dotnet Publish](../tools/dotnet-publish.md) . Po opublikowaniu aplikacji ustaw następujące trzy ustawienia:
 
-- Publikować jako samodzielne:`--self-contained true`
-- Wyłącz publikowanie pojedynczych plików:`-p:PublishSingleFile=false`
-- Włącz przycinanie:`p:PublishTrimmed=true`
+- Publikuj jako samodzielny: `--self-contained true`
+- Włącz przycinanie: `p:PublishTrimmed=true`
 
-Poniższy przykład publikuje aplikację dla systemu Windows 10 jako samodzielną i przycina dane wyjściowe.
+Poniższy przykład publikuje aplikację dla systemu Windows jako samodzielny i przycina dane wyjściowe.
 
-```dotnetcli
-dotnet publish -c Release -r win10-x64 --self-contained true -p:PublishSingleFile=false -p:PublishTrimmed=true
+```xml
+<ItemGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>true</PublishTrimmed>
+</ItemGroup>
 ```
 
-Aby uzyskać więcej informacji, zobacz [Publikowanie aplikacji .NET Core w pliku .NET Core CLI](deploy-with-cli.md).
+Poniższy przykład publikuje aplikację w trybie agresywnego przycinania, w którym nieużywany kod z zestawami zostanie przycięty i włączono ostrzeżenia dla elementu dostosowującego.
+
+```xml
+<ItemGroup>
+    <TrimMode>link</TrimMode>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+</ItemGroup>
+```
+
+Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).
 
 ## <a name="trim-your-app---visual-studio"></a>Przycinanie aplikacji — Visual Studio
 
-Visual Studio tworzy profile publikowania wielokrotnegoużytnia, które kontrolują sposób publikowania aplikacji.
+Program Visual Studio tworzy Profile publikowania wielokrotnego użytku, które kontrolują sposób publikowania aplikacji.
 
-01. W okienku **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt, który chcesz opublikować. Wybierz **pozycję Publikuj...**.
+01. W okienku **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt, który chcesz opublikować. Wybierz pozycję **Publikuj...**.
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-solution-explorer.png" alt-text="Eksplorator rozwiązań z menu z zaznaczonym prawym przyciskiem myszy z zaznaczoną opcją Publikuj.":::
+    :::image type="content" source="media/trim-self-contained/visual-studio-solution-explorer.png" alt-text="Eksplorator rozwiązań z menu po kliknięciu prawym przyciskiem myszy wyróżnianie opcji Publikuj.":::
 
-    Jeśli nie masz jeszcze profilu publikowania, postępuj zgodnie z instrukcjami, aby go utworzyć i wybrać typ docelowy **folderu.**
+    Jeśli nie masz jeszcze profilu publikowania, postępuj zgodnie z instrukcjami, aby utworzyć jeden, i wybierz typ docelowy **folderu** .
 
-01. Wybierz **pozycję Edytuj**.
+01. Wybierz pozycję **Edytuj**.
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Profil publikowania w programie Visual Studio za pomocą przycisku edycji.":::
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Profil publikacji programu Visual Studio za pomocą przycisku Edytuj.":::
 
 01. W oknie dialogowym **Ustawienia profilu** ustaw następujące opcje:
 
-    - Ustaw **tryb wdrażania** na **samodzielny**.
-    - Ustaw **docelowe środowisko uruchomieniowe** na platformie, na której chcesz opublikować.
-    - Wybierz **pozycję Przytnij nieużywane złożenia (w podglądzie)**.
+    - Ustaw **Tryb wdrożenia** na **własny**.
+    - Ustaw **docelowy środowisko uruchomieniowe** na platformę, w której chcesz publikować.
+    - Wybierz pozycję **Przytnij nieużywane zestawy (w wersji zapoznawczej)**.
 
-    Wybierz **pozycję Zapisz,** aby zapisać ustawienia i powrócić do okna dialogowego **Publikowanie.**
+    Wybierz pozycję **Zapisz** , aby zapisać ustawienia i powrócić do okna dialogowego **Publikowanie** .
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Okno dialogowe Ustawień profilu z wyróżnionym trybem wdrażania, docelowym środowiskiem uruchomieniowym i przycinaniem nieużywanych zestawów.":::
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Opcje okna dialogowego Ustawienia profilu z trybem wdrożenia, cel środowiska uruchomieniowego i nieużywane Zestawy przycinania.":::
 
-01. Wybierz **pozycję Publikuj,** aby opublikować przycięcie aplikacji.
+01. Wybierz pozycję **Publikuj** , aby opublikować aplikację przycięty.
 
-Aby uzyskać więcej informacji, zobacz [Publikowanie aplikacji .NET Core w programie Visual Studio](deploy-with-vs.md).
+Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą programu Visual Studio](deploy-with-vs.md).
 
-## <a name="trim-your-app---visual-studio-for-mac"></a>Przycinanie aplikacji — Visual Studio dla komputerów Mac
+## <a name="trim-your-app---visual-studio-for-mac"></a>Przytnij aplikację — Visual Studio dla komputerów Mac
 
-Program Visual Studio dla komputerów Mac nie udostępnia opcji przycinania aplikacji podczas publikowania. Musisz opublikować ręcznie, postępując zgodnie z instrukcjami z sekcji [Przytnij aplikację — cli.](#trim-your-app---cli) Aby uzyskać więcej informacji, zobacz [Publikowanie aplikacji .NET Core w pliku .NET Core CLI](deploy-with-cli.md).
+Visual Studio dla komputerów Mac nie udostępnia opcji przycinania aplikacji podczas publikowania. Należy opublikować ręcznie, postępując zgodnie z instrukcjami podanymi w sekcji [Trim The App-CLI](#trim-your-app---cli) . Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Wdrożenie aplikacji .NET Core](index.md).
-- [Publikowanie aplikacji .NET Core za pomocą interfejsu wiersza polecenia .NET Core](deploy-with-cli.md).
-- [Publikowanie aplikacji .NET Core w programie Visual Studio](deploy-with-vs.md).
-- [polecenie publikowania dotnet](../tools/dotnet-publish.md).
+- [Wdrażanie aplikacji .NET Core](index.md).
+- [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).
+- [Publikowanie aplikacji platformy .NET Core w programie Visual Studio](deploy-with-vs.md).
+- [dotnet Publish polecenie](../tools/dotnet-publish.md).

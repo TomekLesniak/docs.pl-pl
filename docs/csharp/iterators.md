@@ -4,12 +4,12 @@ description: Dowiedz się, jak używać wbudowanych iteratorów języka C# i jak
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: c2a1dfe38b6a65e382e140541c71e94bb0fc76aa
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: ee72331cb85ba1a03d48e2f58526ad432c7fe6d4
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062486"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656101"
 ---
 # <a name="iterators"></a>Iteratory
 
@@ -24,7 +24,7 @@ Utworzysz również metody iteratorów, które są metodami, które tworzą iter
 
 Język C# zawiera funkcje dla obu tych scenariuszy. Ten artykuł zawiera omówienie tych funkcji.
 
-Ten samouczek zawiera wiele kroków. Po każdym kroku można uruchomić aplikację i postępować według postępu. Możesz również [wyświetlić lub pobrać ukończony przykład](https://github.com/dotnet/samples/blob/master/csharp/iterators) dla tego tematu. Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Ten samouczek zawiera wiele kroków. Po każdym kroku można uruchomić aplikację i postępować według postępu. Możesz również [wyświetlić lub pobrać ukończony przykład](https://github.com/dotnet/samples/blob/master/csharp/iterators) dla tego tematu. Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## <a name="iterating-with-foreach"></a>Iteracja przy użyciu instrukcji foreach
 
@@ -167,7 +167,7 @@ private IEnumerable<int> IteratorMethod()
 
 Zapoznaj się z powyższymi metodami. Pierwszy używa `return` instrukcji standardowej do zwrócenia pustej kolekcji lub iteratora utworzonego przez drugą metodę. Druga metoda używa instrukcji, `yield return` Aby utworzyć żądaną sekwencję.
 
-## <a name="deeper-dive-into-foreach"></a>Dokładniejsze szczegółowe`foreach`
+## <a name="deeper-dive-into-foreach"></a>Dokładniejsze szczegółowe `foreach`
 
 `foreach`Instrukcja rozszerza się do standardowego idiom, który używa `IEnumerable<T>` `IEnumerator<T>` interfejsów i do iteracji dla wszystkich elementów kolekcji. Minimalizuje ona także błędy deweloperów, aby nie zarządzać zasobami.
 

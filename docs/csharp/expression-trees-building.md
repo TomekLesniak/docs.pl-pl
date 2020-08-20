@@ -1,56 +1,56 @@
 ---
-title: Drzewa wyrażeń budowlanych
-description: Dowiedz się więcej o technikach budowania drzew wyrażeń.
+title: Kompilowanie drzew wyrażeń
+description: Dowiedz się więcej na temat technik tworzenia drzew wyrażeń.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: c93eb16ebf2ff66dc0162afb6841f2cadfce174e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c153ca2c75738571c81057364390f489d2decb05
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146050"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656153"
 ---
-# <a name="building-expression-trees"></a>Drzewa wyrażeń budowlanych
+# <a name="building-expression-trees"></a>Kompilowanie drzew wyrażeń
 
-[Poprzedni -- Interpretacja wyrażeń](expression-trees-interpreting.md)
+[Wyrażenia z poprzednią interpretacją](expression-trees-interpreting.md)
 
-Wszystkie drzewa wyrażeń, które widziałeś do tej pory zostały utworzone przez kompilator C#. Wszystko, co musisz zrobić, to utworzyć wyrażenie lambda, który `Expression<Func<T>>` został przypisany do zmiennej wpisane jako lub podobny typ. To nie jedyny sposób tworzenia drzewa wyrażeń. W wielu scenariuszach może się okazać, że należy utworzyć wyrażenie w pamięci w czasie wykonywania.
+Wszystkie drzewa wyrażeń, które były już widoczne, zostały utworzone przez kompilator języka C#. Przede wszystkim należało utworzyć wyrażenie lambda, które zostało przypisane do zmiennej wpisanej jako `Expression<Func<T>>` lub innego typu podobnego. Nie jest to jedyna metoda tworzenia drzewa wyrażenia. W przypadku wielu scenariuszy może się okazać, że trzeba utworzyć wyrażenie w pamięci w czasie wykonywania.
 
-Budowanie drzewa wyrażenia jest skomplikowane przez fakt, że te drzewa wyrażeń są niezmienne. Bycie niezmiennym oznacza, że musisz zbudować drzewo od liści do korzenia. Interfejsy API, których użyjesz do tworzenia drzew wyrażeń, odzwierciedlają ten fakt: Metody, których użyjesz do utworzenia węzła, przyjmują wszystkie jego elementy podrzędne jako argumenty. Przejdźmy przez kilka przykładów, aby pokazać techniki.
+Kompilowanie drzew wyrażeń jest skomplikowane przez fakt, że te drzewa wyrażeń są niezmienne. Niezmienne oznacza, że należy skompilować drzewo od opuszcza do katalogu głównego. Interfejsy API, które będą używane do tworzenia drzew wyrażeń, odzwierciedlają ten fakt: metody, które będą używane do kompilowania węzła, przyjmują wszystkie jego elementy podrzędne jako argumenty. Przechodźmy kilka przykładów, aby wyświetlić te techniki.
 
 ## <a name="creating-nodes"></a>Tworzenie węzłów
 
-Zacznijmy stosunkowo po prostu od nowa. Użyjemy wyrażenia dodawania, z którym pracowałem w tych sekcjach:
+Zacznijmy od samego siebie. Użyjemy wyrażenia dodawania, z którym pracujemy w tych sekcjach:
 
 ```csharp
 Expression<Func<int>> sum = () => 1 + 2;
 ```
 
-Aby skonstruować to drzewo wyrażeń, należy skonstruować węzły liścia.
-Węzły liścia są stałymi, dzięki `Expression.Constant` czemu można użyć metody do utworzenia węzłów:
+Aby skonstruować to drzewo wyrażenia, należy skonstruować węzły liścia.
+Węzły liścia są stałymi, więc można użyć `Expression.Constant` metody do utworzenia węzłów:
 
 ```csharp
 var one = Expression.Constant(1, typeof(int));
 var two = Expression.Constant(2, typeof(int));
 ```
 
-Następnie stworzysz wyrażenie dodawania:
+Następnie utworzysz wyrażenie dodawania:
 
 ```csharp
 var addition = Expression.Add(one, two);
 ```
 
-Po uzyskaniu wyrażenia dodawania można utworzyć wyrażenie lambda:
+Po otrzymaniu wyrażenia dodania można utworzyć wyrażenie lambda:
 
 ```csharp
 var lambda = Expression.Lambda(addition);
 ```
 
 Jest to bardzo proste wyrażenie lambda, ponieważ nie zawiera żadnych argumentów.
-W dalszej części tej sekcji zobaczysz, jak mapować argumenty na parametry i tworzyć bardziej skomplikowane wyrażenia.
+W dalszej części tej sekcji zobaczysz sposób mapowania argumentów na parametry i tworzenia bardziej skomplikowanych wyrażeń.
 
-W przypadku wyrażeń, które są tak proste, jak ten, można połączyć wszystkie wywołania w jednej instrukcji:
+W przypadku wyrażeń, które są tak proste, można połączyć wszystkie wywołania w pojedynczą instrukcję:
 
 ```csharp
 var lambda = Expression.Lambda(
@@ -61,25 +61,25 @@ var lambda = Expression.Lambda(
 );
 ```
 
-## <a name="building-a-tree"></a>Budowanie drzewa
+## <a name="building-a-tree"></a>Kompilowanie drzewa
 
-To podstawy budowania drzewa wyrażeń w pamięci. Bardziej złożone drzewa zazwyczaj oznacza więcej typów węzłów i więcej węzłów w drzewie. Przejdźmy przez jeszcze jeden przykład i pokaż dwa więcej typów węzłów, które zazwyczaj będą tworzyć podczas tworzenia drzew wyrażeń: węzłów argumentów i węzłów wywołania metody.
+Jest to podstawą tworzenia drzewa wyrażenia w pamięci. Bardziej złożone drzewa zwykle oznaczają więcej typów węzłów i więcej węzłów w drzewie. Zacznijmy od jednego przykładu i pokażę dwa typy węzłów, które zwykle utworzysz podczas tworzenia drzew wyrażeń: węzły argumentów i węzły wywołania metody.
 
-Skompilujmy drzewo wyrażeń, aby utworzyć to wyrażenie:
+Skompilujmy drzewo wyrażenia, aby utworzyć to wyrażenie:
 
 ```csharp
 Expression<Func<double, double, double>> distanceCalc =
     (x, y) => Math.Sqrt(x * x + y * y);
 ```
 
-Rozpoczniesz od utworzenia wyrażeń parametrów dla `x` i: `y`
+Zacznij od utworzenia wyrażeń parametrów dla `x` i `y` :
 
 ```csharp
 var xParameter = Expression.Parameter(typeof(double), "x");
 var yParameter = Expression.Parameter(typeof(double), "y");
 ```
 
-Tworzenie wyrażeń mnożenia i dodawania jest zgodne z wzorcem, który już widziałeś:
+Tworzenie wyrażeń mnożenia i dodawania następuje po wzorcu, który był już widoczny:
 
 ```csharp
 var xSquared = Expression.Multiply(xParameter, xParameter);
@@ -87,14 +87,14 @@ var ySquared = Expression.Multiply(yParameter, yParameter);
 var sum = Expression.Add(xSquared, ySquared);
 ```
 
-Następnie należy utworzyć wyrażenie wywołania metody dla `Math.Sqrt`wywołania .
+Następnie należy utworzyć wyrażenie wywołania metody dla wywołania `Math.Sqrt` .
 
 ```csharp
 var sqrtMethod = typeof(Math).GetMethod("Sqrt", new[] { typeof(double) });
 var distance = Expression.Call(sqrtMethod, sum);
 ```
 
-I na koniec, można umieścić wywołanie metody w wyrażeniu lambda i upewnij się, że zdefiniowanie argumentów do wyrażenia lambda:
+A następnie na końcu należy umieścić wywołanie metody w wyrażeniu lambda i upewnić się, że argumenty mają być zdefiniowane w wyrażeniu lambda:
 
 ```csharp
 var distanceLambda = Expression.Lambda(
@@ -103,17 +103,17 @@ var distanceLambda = Expression.Lambda(
     yParameter);
 ```
 
-W tym bardziej skomplikowanym przykładzie zobaczysz kilka technik, które często będą potrzebne do utworzenia drzew wyrażeń.
+W tym bardziej skomplikowanym przykładzie widać kilka dodatkowych technik, które często są potrzebne do tworzenia drzew wyrażeń.
 
-Najpierw należy utworzyć obiekty, które reprezentują parametry lub zmienne lokalne przed ich użyciem. Po utworzeniu tych obiektów można ich używać w drzewie wyrażeń w dowolnym miejscu.
+Najpierw należy utworzyć obiekty, które reprezentują parametry lub zmienne lokalne przed ich użyciem. Po utworzeniu tych obiektów możesz użyć ich w drzewie wyrażenia wszędzie tam, gdzie jest to potrzebne.
 
-Po drugie, należy użyć podzbioru interfejsów API odbicia, aby utworzyć `MethodInfo` obiekt, aby można było utworzyć drzewo wyrażeń w celu uzyskania dostępu do tej metody. Należy ograniczyć się do podzbioru interfejsów API odbicia, które są dostępne na platformie .NET Core. Ponownie, techniki te obejmie inne drzewa wyrażeń.
+Następnie należy użyć podzestawu interfejsów API odbicia w celu utworzenia `MethodInfo` obiektu, aby można było utworzyć drzewo wyrażenia, aby uzyskać dostęp do tej metody. Musisz ograniczyć się do podzbioru interfejsów API odbicia, które są dostępne na platformie .NET Core. Te techniki zostaną rozbudowane do innych drzew wyrażeń.
 
-## <a name="building-code-in-depth"></a>Szczegółowy kod budynku
+## <a name="building-code-in-depth"></a>Kompilowanie kodu na głębokość
 
-Nie są ograniczone w co można tworzyć przy użyciu tych interfejsów API. Jednak bardziej skomplikowane drzewo wyrażeń, które chcesz utworzyć, tym trudniej jest zarządzać i czytać.
+Nie masz ograniczeń, co można skompilować za pomocą tych interfejsów API. Jednak bardziej skomplikowane drzewo wyrażeń, które chcesz skompilować, trudniejsze jest, aby kod był zarządzany i odczytywany.
 
-Skompilujmy drzewo wyrażeń, które jest odpowiednikiem tego kodu:
+Utwórzmy drzewo wyrażenia, które jest odpowiednikiem tego kodu:
 
 ```csharp
 Func<int, int> factorialFunc = (n) =>
@@ -128,7 +128,7 @@ Func<int, int> factorialFunc = (n) =>
 };
 ```
 
-Zauważ powyżej, że nie skompilowałem drzewa wyrażeń, ale po prostu pełnomocnika. Za `Expression` pomocą klasy, nie można utworzyć lambdas instrukcji. Oto kod, który jest wymagany do tworzenia tych samych funkcji. Jest to skomplikowane przez fakt, że nie ma interfejsu `while` API do tworzenia pętli, zamiast tego należy utworzyć pętlę, która zawiera test warunkowy i cel etykiety, aby wyrwać się z pętli.
+Zwróć uwagę na to, że drzewo wyrażenia nie zostało skompilowane, ale po prostu delegat. Korzystając z `Expression` klasy, nie można skompilować instrukcji lambda. Oto kod, który jest wymagany do skompilowania tych samych funkcji. Jest to skomplikowane przez fakt, że nie istnieje interfejs API do kompilowania `while` pętli, zamiast tego należy utworzyć pętlę, która zawiera test warunkowy, oraz miejsce docelowe etykiety, aby przerwać pętlę.
 
 ```csharp
 var nArgument = Expression.Parameter(typeof(int), "n");
@@ -162,14 +162,14 @@ BlockExpression body = Expression.Block(
 );
 ```
 
-Kod do tworzenia drzewa wyrażeń dla funkcji faktorii jest nieco dłuższy, bardziej skomplikowany i jest pełen etykiet i instrukcji break i innych elementów, których chcielibyśmy uniknąć w naszych codziennych zadaniach kodowania.
+Kod służący do kompilowania drzewa wyrażeń dla funkcji silniej jest zbyt długi, bardziej skomplikowany i jest riddled przy użyciu etykiet i instrukcji break oraz innych elementów, które chcemy uniknąć w naszych codziennych zadaniach kodowania.
 
-W tej sekcji zaktualizowałem również kod odwiedzającego, aby odwiedzić każdy węzeł w tym drzewie wyrażeń i zapisać informacje o węzłach utworzonych w tym przykładzie. Przykładowy kod można [wyświetlić lub pobrać w](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) repozytorium GitHub dotnet/docs. Eksperymentuj dla siebie, budując i uruchamiając próbki. Aby uzyskać instrukcje dotyczące pobierania, zobacz [Przykłady i samouczki](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+W tej sekcji Zaktualizowaliśmy również kod gościa, aby odwiedzić każdy węzeł w tym drzewie wyrażenia i napisać informacje o węzłach, które zostały utworzone w tym przykładzie. Możesz [wyświetlić lub pobrać przykładowy kod](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) w repozytorium GitHub/docs w serwisie. Wypróbuj samodzielnie, kompilując i uruchamiając próbki. Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## <a name="examining-the-apis"></a>Badanie interfejsów API
 
-Interfejsy API drzewa wyrażeń są jednymi z trudniejszych do nawigowania w .NET Core, ale to dobrze. Ich celem jest dość złożone przedsięwzięcie: pisanie kodu, który generuje kod w czasie wykonywania. Są one koniecznie skomplikowane, aby zapewnić równowagę między obsługą wszystkich struktur kontroli dostępnych w języku Języka C# i utrzymanie powierzchni interfejsów API tak małe, jak uzasadnione. Ta równowaga oznacza, że wiele struktur kontroli są reprezentowane nie przez ich konstrukcje C#, ale przez konstrukcje, które reprezentują logikę podstawową, że kompilator generuje z tych konstrukcji wyższego poziomu.
+Interfejsy API drzewa wyrażeń są trudniejsze do nawigowania w programie .NET Core, ale jest to odpowiednie. Ich celem jest raczej złożone zobowiązanie: pisanie kodu, który generuje kod w czasie wykonywania. Są one koniecznie skomplikowane, aby zapewnić równowagę między obsługą wszystkich struktur kontroli dostępnych w języku C# i utrzymywaniem obszaru powierzchni interfejsów API w niewielkim zakresie. To saldo oznacza, że wiele struktur kontroli nie są reprezentowane przez ich konstrukcje w języku C#, ale przez konstrukcje reprezentujące podstawową logikę generowaną przez kompilator z tych konstrukcji wyższego poziomu.
 
-Ponadto w tej chwili istnieją wyrażenia C#, które `Expression` nie mogą być budowane bezpośrednio przy użyciu metod klasy. Ogólnie rzecz biorąc będą to najnowsze operatory i wyrażenia dodane w językach C# 5 i C# 6. (Na przykład `async` wyrażenia nie mogą być `?.` budowane i nie można bezpośrednio utworzyć nowego operatora).
+Ponadto w tym momencie istnieją wyrażenia języka C#, których nie można skompilować bezpośrednio przy użyciu `Expression` metod klasy. Ogólnie rzecz biorąc, będą to najnowsze operatory i wyrażenia dodane w językach C# 5 i C# 6. (Na przykład `async` wyrażenia nie mogą być kompilowane i `?.` nie można bezpośrednio utworzyć operatora).
 
-[Dalej - Tłumaczenie wyrażeń](expression-trees-translating.md)
+[Następne--tłumaczenie wyrażeń](expression-trees-translating.md)
