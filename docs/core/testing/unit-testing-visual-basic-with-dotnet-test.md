@@ -4,16 +4,16 @@ description: Poznaj koncepcje testów jednostkowych w oprogramowaniu .NET Core z
 author: billwagner
 ms.author: wiwagn
 ms.date: 05/18/2020
-ms.openlocfilehash: d87550d692e0b7f3bfee1633bd00cbf501cc2e67
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d384bf08f0b6031a519a8430c876eafc05d03a2e
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502759"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656426"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>Testowanie jednostkowe Visual Basic biblioteki .NET Core przy użyciu testu dotnet i xUnit
 
-W tym samouczku pokazano, jak utworzyć rozwiązanie zawierające projekt testu jednostkowego i projekt biblioteki. Aby postępować zgodnie z samouczkiem przy użyciu wstępnie skompilowanego rozwiązania, [Wyświetl lub Pobierz przykładowy kod](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/). Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+W tym samouczku pokazano, jak utworzyć rozwiązanie zawierające projekt testu jednostkowego i projekt biblioteki. Aby postępować zgodnie z samouczkiem przy użyciu wstępnie skompilowanego rozwiązania, [Wyświetl lub Pobierz przykładowy kod](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/). Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## <a name="create-the-solution"></a>Utwórz rozwiązanie
 
@@ -81,7 +81,7 @@ Poniższe instrukcje zawierają opis kroków, które należy wykonać, aby utwor
   dotnet new xunit -o PrimeService.Tests
   ```
 
-* Poprzednie polecenie:
+* Powyższe polecenie ma następujące działanie:
   * Tworzy projekt *PrimeService. Tests* w katalogu *PrimeService. Tests* . Projekt testowy używa [xUnit](https://xunit.net/) jako biblioteki testowej.
   * Konfiguruje moduł uruchamiający testy przez dodanie następujących `<PackageReference />` elementów do pliku projektu:
     * "Microsoft. NET. test. SDK"
@@ -128,7 +128,7 @@ Popularnym podejściem do programowania testowego (TDD) jest napisanie testu prz
 Aktualizowanie projektu *PrimeService. Tests* :
 
 * Usuń *PrimeService. Tests/UnitTest1. vb*.
-* Utwórz plik *PrimeService. Tests/PrimeService_IsPrimeShould. vb* .
+* Utwórz plik *PrimeService. Tests/PrimeService_IsPrimeShould. vb*  .
 * Zastąp kod w *PrimeService_IsPrimeShould. vb* następującym kodem:
 
 ```vb
@@ -154,7 +154,7 @@ Namespace PrimeService.Tests
 End Namespace
 ```
 
-Ten `[Fact]` atrybut deklaruje metodę testową, która jest uruchamiana przez program Test Runner. W folderze *PrimeService. Tests* Uruchom polecenie `dotnet test` . Polecenie [test dotnet](../tools/dotnet-test.md) kompiluje oba projekty i uruchamia testy. Program xUnit Test Runner zawiera punkt wejścia programu do uruchamiania testów. `dotnet test`uruchamia program Test Runner przy użyciu projektu testów jednostkowych.
+Ten `[Fact]` atrybut deklaruje metodę testową, która jest uruchamiana przez program Test Runner. W folderze *PrimeService. Tests* Uruchom polecenie `dotnet test` . Polecenie [test dotnet](../tools/dotnet-test.md) kompiluje oba projekty i uruchamia testy. Program xUnit Test Runner zawiera punkt wejścia programu do uruchamiania testów. `dotnet test` uruchamia program Test Runner przy użyciu projektu testów jednostkowych.
 
 Test zakończy się niepowodzeniem, ponieważ `IsPrime` nie został zaimplementowany. Za pomocą podejścia TDD napisz tylko wystarczający kod, aby ten test zakończył się powodzeniem. Zaktualizuj `IsPrime` przy użyciu następującego kodu:
 
@@ -181,8 +181,8 @@ Assert.False(result, "1 should not be prime")
 
 Kopiowanie kodu testowego w przypadku zmiany tylko parametru powoduje duplikowanie kodu i testowanie przeładowanie. Następujące atrybuty xUnit umożliwiają napisanie zestawu podobnych testów:
 
-- `[Theory]`reprezentuje zestaw testów, które wykonują ten sam kod, ale mają różne argumenty wejściowe.
-- `[InlineData]`atrybut określa wartości dla tych danych wejściowych.
+- `[Theory]` reprezentuje zestaw testów, które wykonują ten sam kod, ale mają różne argumenty wejściowe.
+- `[InlineData]` atrybut określa wartości dla tych danych wejściowych.
 
 Zamiast tworzyć nowe testy, Zastosuj powyższe atrybuty xUnit, aby utworzyć pojedynczy teorii. Zastąp następujący kod:
 

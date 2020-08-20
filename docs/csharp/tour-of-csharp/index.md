@@ -2,12 +2,12 @@
 title: Przewodnik programowania w języku C# — C#
 description: Jesteś nowym w języku C#? Poznaj podstawy języka.
 ms.date: 08/06/2020
-ms.openlocfilehash: 42c4ff59a520a1b99bbb2fb01d79d8902e16bdd5
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 9fa292e8e85832d831f36cf0f21512aa0cf32580
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063552"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656231"
 ---
 # <a name="a-tour-of-the-c-language"></a>Przewodnik po języku C#
 
@@ -15,7 +15,7 @@ C# ("Zobacz Sharp") to nowoczesny, zorientowany obiektowo i bezpieczny dla typu 
 
 C# to zorientowany obiektowo język programowania ***zorientowany na składniki*** . Język c# udostępnia konstrukcje języka, aby bezpośrednio obsługiwać te koncepcje, co pozwala na tworzenie i używanie składników oprogramowania w języku C#. Ze względu na to, że język C# dodał funkcje do obsługi nowych obciążeń i rozwijających się praktyk projektowania oprogramowania.
 
-Kilka funkcji języka C# pomaga w konstruowaniu niezawodnych i trwałych aplikacji. [***Wyrzucanie elementów bezużytecznych***](../../standard/garbage-collection/index.md) automatycznie odzyskuje ilość pamięci zajętą nieosiągalnymi obiektami. [***Obsługa wyjątków***](../programming-guide/exceptions/index.md) zapewnia strukturalne i rozszerzalne podejście do wykrywania błędów i odzyskiwania. [***Wyrażenia lambda***](../programming-guide/statements-expressions-operators/lambda-expressions.md) obsługują techniki programowania funkcjonalnego. [***Składnia zapytania***](../linq/index.md) tworzy wspólny wzorzec do pracy z danymi z dowolnego źródła. Obsługa języka dla [***operacji asynchronicznych***](../programming-guide/concepts/async/index.md) zapewnia składnię tworzenia systemów rozproszonych. [***Dopasowywanie wzorców***](..//pattern-matching.md) zawiera składnię umożliwiającą łatwe oddzielenie danych z algorytmów w nowoczesnych systemach rozproszonych. Język C# ma [***ujednolicony system typów***](../programming-guide/types/index.md). Wszystkie typy C#, w tym typy pierwotne, takie jak `int` i `double` , dziedziczą z jednego `object` typu głównego. Wszystkie typy korzystają z zestawu typowych operacji. Wartości dowolnego typu mogą być przechowywane, transportowane i obsługiwane w spójny sposób. Ponadto w języku C# obsługiwane są zarówno typy odwołań zdefiniowane przez użytkownika, jak i typy wartości. Język C# umożliwia dynamiczne przydzielanie obiektów i przechowywanie w wierszu lekkich struktur.
+Kilka funkcji języka C# pomaga w konstruowaniu niezawodnych i trwałych aplikacji. [***Wyrzucanie elementów bezużytecznych***](../../standard/garbage-collection/index.md) automatycznie odzyskuje ilość pamięci zajętą nieosiągalnymi obiektami. [***Obsługa wyjątków***](../programming-guide/exceptions/index.md) zapewnia strukturalne i rozszerzalne podejście do wykrywania błędów i odzyskiwania. [***Wyrażenia lambda***](../language-reference/operators/lambda-expressions.md) obsługują techniki programowania funkcjonalnego. [***Składnia zapytania***](../linq/index.md) tworzy wspólny wzorzec do pracy z danymi z dowolnego źródła. Obsługa języka dla [***operacji asynchronicznych***](../programming-guide/concepts/async/index.md) zapewnia składnię tworzenia systemów rozproszonych. [***Dopasowywanie wzorców***](..//pattern-matching.md) zawiera składnię umożliwiającą łatwe oddzielenie danych z algorytmów w nowoczesnych systemach rozproszonych. Język C# ma [***ujednolicony system typów***](../programming-guide/types/index.md). Wszystkie typy C#, w tym typy pierwotne, takie jak `int` i `double` , dziedziczą z jednego `object` typu głównego. Wszystkie typy korzystają z zestawu typowych operacji. Wartości dowolnego typu mogą być przechowywane, transportowane i obsługiwane w spójny sposób. Ponadto w języku C# obsługiwane są zarówno typy odwołań zdefiniowane przez użytkownika, jak i typy wartości. Język C# umożliwia dynamiczne przydzielanie obiektów i przechowywanie w wierszu lekkich struktur.
 
 Język C# wyróżnia ***wersje*** , aby zapewnić zgodność programów i bibliotek z upływem czasu. Aspekty projektu języka C#, które miały bezpośrednio wpływ na kwestie związane z obsługą wersji, obejmują oddzielność `virtual` i `override` modyfikatory, reguły rozpoznawania przeciążania metod oraz obsługę jawnych deklaracji elementów członkowskich interfejsu.
 
@@ -43,31 +43,31 @@ Poniższy konspekt zawiera omówienie systemu typów języka C#.
 
 - [Typy wartości](../language-reference/builtin-types/value-types.md)
   - [Typy proste](../language-reference/builtin-types/value-types.md#built-in-value-types)
-    - [Całkowita część ze znakiem](../language-reference/builtin-types/integral-numeric-types.md): `sbyte` ,, `short` `int` ,`long`
-    - [Całka bez znaku](../language-reference/builtin-types/integral-numeric-types.md): `byte` ,, `ushort` `uint` ,`ulong`
-    - [Znaki Unicode](/dotnet/standard/base-types/character-encoding-introduction): `char` , które reprezentuje jednostkę kodu UTF-16
-    - [Binarny zmiennoprzecinkowy IEEE](../language-reference/builtin-types/floating-point-numeric-types.md): `float` ,`double`
-    - [Zmiennoprzecinkowa liczba dziesiętna o dużej precyzji](../language-reference/builtin-types/floating-point-numeric-types.md):`decimal`
-    - Wartość logiczna: `bool` , która reprezentuje wartości logiczne — wartości, które są `true` albo`false`
+    - [Całkowita część ze znakiem](../language-reference/builtin-types/integral-numeric-types.md): `sbyte` ,, `short` `int` , `long`
+    - [Całka bez znaku](../language-reference/builtin-types/integral-numeric-types.md): `byte` ,, `ushort` `uint` , `ulong`
+    - [Znaki Unicode](../../standard/base-types/character-encoding-introduction.md): `char` , które reprezentuje jednostkę kodu UTF-16
+    - [Binarny zmiennoprzecinkowy IEEE](../language-reference/builtin-types/floating-point-numeric-types.md): `float` , `double`
+    - [Zmiennoprzecinkowa liczba dziesiętna o dużej precyzji](../language-reference/builtin-types/floating-point-numeric-types.md): `decimal`
+    - Wartość logiczna: `bool` , która reprezentuje wartości logiczne — wartości, które są `true` albo `false`
   - [Typy wyliczeniowe](../language-reference/builtin-types/enum.md)
     - Typy formularza zdefiniowane przez użytkownika `enum E {...}` . `enum`Typ jest typem odrębnym o nazwanych stałych. Każdy `enum` Typ ma typ podstawowy, który musi być jednym z ośmiu typów całkowitych. Zestaw wartości `enum` typu jest taki sam jak zestaw wartości typu podstawowego.
   - [Typy struktur](../language-reference/builtin-types/struct.md)
-    - Typy formularza zdefiniowane przez użytkownika`struct S {...}`
+    - Typy formularza zdefiniowane przez użytkownika `struct S {...}`
   - [Typy wartości dopuszczające wartość null](../language-reference/builtin-types/nullable-value-types.md)
     - Rozszerzenia wszystkich innych typów wartości z `null` wartością
-  - [Typy wartości krotki](../tuples.md)
-    - Typy formularza zdefiniowane przez użytkownika`(T1, T2, ...)`
+  - [Typy wartości krotki](../language-reference/builtin-types/value-tuples.md)
+    - Typy formularza zdefiniowane przez użytkownika `(T1, T2, ...)`
 - [Typy odwołań](../language-reference/keywords/reference-types.md)
   - [Typy klas](../language-reference/keywords/class.md)
-    - Ostateczna Klasa bazowa dla wszystkich innych typów:`object`
-    - [Ciągi Unicode](/dotnet/standard/base-types/character-encoding-introduction): `string` , które reprezentuje sekwencję jednostek kodu UTF-16
-    - Typy formularza zdefiniowane przez użytkownika`class C {...}`
+    - Ostateczna Klasa bazowa dla wszystkich innych typów: `object`
+    - [Ciągi Unicode](../../standard/base-types/character-encoding-introduction.md): `string` , które reprezentuje sekwencję jednostek kodu UTF-16
+    - Typy formularza zdefiniowane przez użytkownika `class C {...}`
   - [Typy interfejsów](../language-reference/keywords/interface.md)
-    - Typy formularza zdefiniowane przez użytkownika`interface I {...}`
+    - Typy formularza zdefiniowane przez użytkownika `interface I {...}`
   - [Typy tablic](../programming-guide/arrays/index.md)
-    - Pojedyncze i wielowymiarowe i postrzępione, na przykład,, `int[]` `int[,]` i`int[][]`
-  - [Typy delegatów](../language-reference/keywords/delegate.md)
-    - Typy formularza zdefiniowane przez użytkownika`delegate int D(...)`
+    - Pojedyncze i wielowymiarowe i postrzępione, na przykład,, `int[]` `int[,]` i `int[][]`
+  - [Typy delegatów](../language-reference/builtin-types/reference-types.md#the-delegate-type)
+    - Typy formularza zdefiniowane przez użytkownika `delegate int D(...)`
 
 Programy w języku C# używają *deklaracji typów* do tworzenia nowych typów. Deklaracja typu określa nazwę i składowe nowego typu. Pięć kategorii typów języka C# jest definiowanych przez użytkownika: typy klas, typy struktur, typy interfejsów, typy wyliczeniowe i typy delegatów.
 

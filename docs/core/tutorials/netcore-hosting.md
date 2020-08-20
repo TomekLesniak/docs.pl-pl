@@ -4,12 +4,12 @@ description: Dowiedz się, jak hostować środowisko uruchomieniowe platformy .N
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 2324b61bcffb686a455fcfd154284a2b78aa746b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3b24ade694e25040d77e411bead3f454e9d5cdef
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283497"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656179"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Napisz niestandardowego hosta .NET Core, aby kontrolować środowisko uruchomieniowe platformy .NET z kodu natywnego
 
@@ -34,7 +34,7 @@ Istnieją trzy różne interfejsy API, których można używać do hostowania pr
 
 ## <a name="sample-hosts"></a>Przykładowe hosty
 
-[Przykładowe hosty](https://github.com/dotnet/samples/tree/master/core/hosting) pokazujące kroki opisane w poniższych samouczkach są dostępne w repozytorium GitHub/Samples. Komentarze w przykładach jasno kojarzą numerowane kroki z tych samouczków z miejscem, w którym są wykonywane w próbce. Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+[Przykładowe hosty](https://github.com/dotnet/samples/tree/master/core/hosting) pokazujące kroki opisane w poniższych samouczkach są dostępne w repozytorium GitHub/Samples. Komentarze w przykładach jasno kojarzą numerowane kroki z tych samouczków z miejscem, w którym są wykonywane w próbce. Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 Należy pamiętać, że przykładowe hosty są przeznaczone do celów edukacyjnych, dzięki czemu są one jasne przy sprawdzaniu błędów i zostały zaprojektowane w celu wyróżnienia czytelności przez zwiększenie wydajności.
 
@@ -88,7 +88,7 @@ Host współdziałający w [systemie UNIX](https://github.com/dotnet/runtime/tre
 
 ### <a name="step-1---find-and-load-coreclr"></a>Krok 1 — Znajdowanie i ładowanie CoreCLR
 
-Interfejsy API środowiska uruchomieniowego platformy .NET Core są w *CoreCLR. dll* (w systemie Windows), w *libcoreclr.so* (w systemie Linux) lub w *Libcoreclr. DYLIB* (na macOS). Pierwszym krokiem do hostowania programu .NET Core jest załadowanie biblioteki CoreCLR. Niektóre hosty sonduje różne ścieżki lub używają parametrów wejściowych do znajdowania biblioteki, podczas gdy inni wiedzą, aby załadować ją z określonej ścieżki (obok hosta, na przykład lub z lokalizacji na całym komputerze).
+Interfejsy API środowiska uruchomieniowego .NET Core są w *coreclr.dll* (w systemie Windows), w *libcoreclr.so* (w systemie Linux) lub w *Libcoreclr. DYLIB* (na macOS). Pierwszym krokiem do hostowania programu .NET Core jest załadowanie biblioteki CoreCLR. Niektóre hosty sonduje różne ścieżki lub używają parametrów wejściowych do znajdowania biblioteki, podczas gdy inni wiedzą, aby załadować ją z określonej ścieżki (obok hosta, na przykład lub z lokalizacji na całym komputerze).
 
 Po znalezieniu biblioteka jest załadowana do programu `LoadLibraryEx` (w systemie Windows) lub `dlopen` (na platformie Linux/macOS).
 
@@ -114,11 +114,11 @@ Przed uruchomieniem środowiska uruchomieniowego należy przygotować pewne wła
 
 Typowe właściwości obejmują:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES`Jest to lista ścieżek zestawu (rozdzielonych znakami ";" w systemie Windows i ":" w systemie Linux), które środowisko uruchomieniowe będzie w stanie domyślnie rozpoznać. Niektóre hosty mają zakodowane manifesty zawierające listę zestawów, które mogą zostać załadowane. Inne umieściją wszystkie biblioteki w określonych lokalizacjach (obok *CoreCLR. dll*, na przykład) na tej liście.
-* `APP_PATHS`Jest to lista ścieżek do sondowania w przypadku zestawu, jeśli nie można go znaleźć na liście zaufanych platform (TPA). Ponieważ Host ma większą kontrolę nad tym, które zestawy są ładowane przy użyciu listy TPA, najlepszym rozwiązaniem dla hostów jest określenie, które zestawy powinny być ładowane i wyświetlać je jawnie. Jeśli jednak jest wymagana sondowanie w czasie wykonywania, ta właściwość może włączyć ten scenariusz.
-* `APP_NI_PATHS`Ta lista jest podobna do APP_PATHS z tą różnicą, że jest to ścieżka, która będzie sondowana w przypadku obrazów natywnych.
-* `NATIVE_DLL_SEARCH_DIRECTORIES`Ta właściwość jest listą ścieżek, które moduł ładujący powinien sondować podczas wyszukiwania bibliotek natywnych wywoływanych za pomocą p/Invoke.
-* `PLATFORM_RESOURCE_ROOTS`Ta lista zawiera ścieżki do sondowania w przypadku zestawów satelickich zasobów (w podkatalogach specyficznych dla kultury).
+* `TRUSTED_PLATFORM_ASSEMBLIES` Jest to lista ścieżek zestawu (rozdzielonych znakami ";" w systemie Windows i ":" w systemie Linux), które środowisko uruchomieniowe będzie w stanie domyślnie rozpoznać. Niektóre hosty mają zakodowane manifesty zawierające listę zestawów, które mogą zostać załadowane. Inne umieściją dowolną bibliotekę w określonych lokalizacjach (obok *coreclr.dll*, na przykład) na tej liście.
+* `APP_PATHS` Jest to lista ścieżek do sondowania w przypadku zestawu, jeśli nie można go znaleźć na liście zaufanych platform (TPA). Ponieważ Host ma większą kontrolę nad tym, które zestawy są ładowane przy użyciu listy TPA, najlepszym rozwiązaniem dla hostów jest określenie, które zestawy powinny być ładowane i wyświetlać je jawnie. Jeśli jednak jest wymagana sondowanie w czasie wykonywania, ta właściwość może włączyć ten scenariusz.
+* `APP_NI_PATHS` Ta lista jest podobna do APP_PATHS z tą różnicą, że jest to ścieżka, która będzie sondowana w przypadku obrazów natywnych.
+* `NATIVE_DLL_SEARCH_DIRECTORIES` Ta właściwość jest listą ścieżek, które moduł ładujący powinien sondować podczas wyszukiwania bibliotek natywnych wywoływanych za pomocą p/Invoke.
+* `PLATFORM_RESOURCE_ROOTS` Ta lista zawiera ścieżki do sondowania w przypadku zestawów satelickich zasobów (w podkatalogach specyficznych dla kultury).
 
 Na tym przykładowym hoście lista TPA jest tworzona przez wyświetlenie listy wszystkich bibliotek w bieżącym katalogu:
 
@@ -177,11 +177,11 @@ Po odwołującym się do niezbędnych nagłówków (na przykład,[mscoree. h](ht
 [!code-cpp[NetCoreHost#1](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#1)]
 
 ### <a name="step-2---find-and-load-coreclr"></a>Krok 2 — Znajdowanie i ładowanie CoreCLR
-Interfejsy API środowiska uruchomieniowego platformy .NET Core są w *CoreCLR. dll* (w systemie Windows). Aby uzyskać nasz interfejs hostingu ( `ICLRRuntimeHost4` ), konieczne jest znalezienie i załadowanie *CoreCLR. dll*. W celu zdefiniowania Konwencji na potrzeby lokalizowania *biblioteki CoreCLR. dll*na hoście znajduje się na nim. Niektóre hosty oczekują, że plik jest obecny w dobrze znanej lokalizacji na całym komputerze (na przykład *%ProgramFiles%\dotnet\shared\Microsoft.NETCore.App\2.1.6*). Inne oczekują, że *CoreCLR. dll* zostanie załadowany z lokalizacji znajdującej się obok samego hosta lub aplikacji, która ma być hostowana. Nadal inne osoby mogą zapoznać się ze zmienną środowiskową, aby znaleźć bibliotekę.
+Interfejsy API środowiska uruchomieniowego platformy .NET Core znajdują się w *CoreCLR.dll* (w systemie Windows). Aby uzyskać nasz interfejs hostingu ( `ICLRRuntimeHost4` ), konieczne jest znalezienie i załadowanie *CoreCLR.dll*. W celu zdefiniowania Konwencji na potrzeby lokalizowania *CoreCLR.dll*należy do hosta. Niektóre hosty oczekują, że plik jest obecny w dobrze znanej lokalizacji na całym komputerze (na przykład *%ProgramFiles%\dotnet\shared\Microsoft.NETCore.App\2.1.6*). Inne oczekują, że *CoreCLR.dll* zostanie załadowana z lokalizacji znajdującej się obok samego hosta lub aplikacji, która ma być hostowana. Nadal inne osoby mogą zapoznać się ze zmienną środowiskową, aby znaleźć bibliotekę.
 
 W systemie Linux lub macOS podstawowa Biblioteka środowiska uruchomieniowego jest odpowiednio *libcoreclr.so* lub *libcoreclr. DYLIB*.
 
-Nasz przykładowy Host sonduje kilka typowych lokalizacji dla *CoreCLR. dll*. Po znalezieniu należy go załadować za pośrednictwem `LoadLibrary` (lub `dlopen` w systemie Linux/macOS).
+Nasz przykładowy Host sonduje kilka typowych lokalizacji *CoreCLR.dll*. Po znalezieniu należy go załadować za pośrednictwem `LoadLibrary` (lub `dlopen` w systemie Linux/macOS).
 
 [!code-cpp[NetCoreHost#2](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#2)]
 
@@ -212,11 +212,11 @@ Po podjęciu decyzji o tym, które flagi domen aplikacji należy użyć, muszą 
 
 Wspólne właściwości elementu AppDomain obejmują:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES`Jest to lista ścieżek zestawu (rozdzielonych `;` w systemie Windows i w systemie `:` Linux/macOS), dla których domena aplikacji powinna określać priorytety ładowania i zapewniać pełne zaufanie (nawet w przypadku domen częściowo zaufanych). Ta lista ma zawierać zestawy "Framework" i inne zaufane moduły, podobnie jak w przypadku scenariuszy .NET Framework GAC. Niektóre hosty umieściją wszystkie biblioteki obok *CoreCLR. dll* na tej liście, inne mają zakodowane manifesty zawierające listę zaufanych zestawów do swoich celów.
-* `APP_PATHS`Jest to lista ścieżek do sondowania w przypadku zestawu, jeśli nie można go znaleźć na liście zaufanych platform (TPA). Ponieważ Host ma większą kontrolę nad tym, które zestawy są ładowane przy użyciu listy TPA, najlepszym rozwiązaniem dla hostów jest określenie, które zestawy powinny być ładowane i wyświetlać je jawnie. Jeśli jednak jest wymagana sondowanie w czasie wykonywania, ta właściwość może włączyć ten scenariusz.
-* `APP_NI_PATHS`Ta lista jest bardzo podobna do APP_PATHS z tą różnicą, że jest to ścieżka, która będzie sondowana w przypadku obrazów natywnych.
-* `NATIVE_DLL_SEARCH_DIRECTORIES`Ta właściwość jest listą ścieżek, które moduł ładujący powinien sondować podczas wyszukiwania natywnych bibliotek DLL wywoływanych za pośrednictwem p/Invoke.
-* `PLATFORM_RESOURCE_ROOTS`Ta lista zawiera ścieżki do sondowania w przypadku zestawów satelickich zasobów (w podkatalogach specyficznych dla kultury).
+* `TRUSTED_PLATFORM_ASSEMBLIES` Jest to lista ścieżek zestawu (rozdzielonych `;` w systemie Windows i w systemie `:` Linux/macOS), dla których domena aplikacji powinna określać priorytety ładowania i zapewniać pełne zaufanie (nawet w przypadku domen częściowo zaufanych). Ta lista ma zawierać zestawy "Framework" i inne zaufane moduły, podobnie jak w przypadku scenariuszy .NET Framework GAC. Niektóre hosty umieściją dowolną bibliotekę obok *coreclr.dll* na tej liście, inne mają zakodowane manifesty zawierające listę zaufanych zestawów do swoich celów.
+* `APP_PATHS` Jest to lista ścieżek do sondowania w przypadku zestawu, jeśli nie można go znaleźć na liście zaufanych platform (TPA). Ponieważ Host ma większą kontrolę nad tym, które zestawy są ładowane przy użyciu listy TPA, najlepszym rozwiązaniem dla hostów jest określenie, które zestawy powinny być ładowane i wyświetlać je jawnie. Jeśli jednak jest wymagana sondowanie w czasie wykonywania, ta właściwość może włączyć ten scenariusz.
+* `APP_NI_PATHS` Ta lista jest bardzo podobna do APP_PATHS z tą różnicą, że jest to ścieżka, która będzie sondowana w przypadku obrazów natywnych.
+* `NATIVE_DLL_SEARCH_DIRECTORIES` Ta właściwość jest listą ścieżek, które moduł ładujący powinien sondować podczas wyszukiwania natywnych bibliotek DLL wywoływanych za pośrednictwem p/Invoke.
+* `PLATFORM_RESOURCE_ROOTS` Ta lista zawiera ścieżki do sondowania w przypadku zestawów satelickich zasobów (w podkatalogach specyficznych dla kultury).
 
 W naszym [prostym przykładowym hoście](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithMscoree)te właściwości są konfigurowane w następujący sposób:
 
@@ -256,6 +256,6 @@ CoreCLR nie obsługuje zwalniania. Nie zwalniaj biblioteki CoreCLR.
 ## <a name="conclusion"></a>Podsumowanie
 Po skompilowaniu hosta może on być testowany przez uruchomienie go z wiersza polecenia i przekazaniem wszystkich argumentów oczekiwanych przez hosta (takich jak zarządzana aplikacja do uruchomienia dla przykładowego hosta mscoree). Podczas określania aplikacji .NET Core do uruchomienia hosta upewnij się, że korzystasz z biblioteki DLL, która jest generowana przez `dotnet build` . Pliki wykonywalne (. exe) utworzone przez `dotnet publish` dla aplikacji samodzielnych są domyślnym hostem platformy .NET Core (aby można było uruchomić aplikację bezpośrednio z wiersza polecenia w scenariuszach linii głównej); kod użytkownika jest kompilowany do biblioteki DLL o tej samej nazwie.
 
-Jeśli elementy nie działają na początku, należy sprawdzić, czy *CoreCLR. dll* jest dostępny w lokalizacji oczekiwanej przez hosta, że wszystkie niezbędne biblioteki struktury znajdują się na liście TPA, a CoreCLR bitów (32-bitowa lub 64-bitowa) jest zgodna z sposobem kompilowania hosta.
+Jeśli elementy nie działają na początku, należy sprawdzić, czy *coreclr.dll* jest dostępny w lokalizacji oczekiwanej przez hosta, że wszystkie niezbędne biblioteki struktury znajdują się na liście TPA i CoreCLR (32-bitowy lub 64-bitowy) są zgodne z sposobem kompilowania hosta.
 
 Hostowanie środowiska uruchomieniowego .NET Core jest zaawansowanym scenariuszem, który nie jest wymagany dla wielu deweloperów, ale dla tych, którzy muszą uruchamiać kod zarządzany z procesu macierzystego lub którzy potrzebują większej kontroli nad zachowaniem środowiska uruchomieniowego programu .NET Core, może być bardzo przydatna.

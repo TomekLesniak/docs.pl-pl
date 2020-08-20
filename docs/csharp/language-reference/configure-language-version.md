@@ -1,13 +1,14 @@
 ---
 title: Obsługa wersji języka c# — Przewodnik C#
 description: Dowiedz się, w jaki sposób wersja języka C# jest określana na podstawie projektu i przyczyn związanych z tym wyborem. Dowiedz się, jak ręcznie przesłonić wartość domyślną.
+ms.custom: updateeachrelease
 ms.date: 05/20/2020
-ms.openlocfilehash: bbe5b12e378cf47b7c9b2c8576088e949e526a9a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: a27f3210f399f1bed190c18d778cf3824772d576
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803008"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656855"
 ---
 # <a name="c-language-versioning"></a>Przechowywanie wersji języka C#
 
@@ -31,7 +32,7 @@ Kompilator określa wartość domyślną na podstawie następujących reguł:
 | .NET Core        | wersji     | C# 8.0                      |
 | .NET Core        | 2.x     | C# 7.3                      |
 | .NET Standard    | 2.1     | C# 8.0                      |
-| .NET Standard    | 2.0     | C# 7.3                      |
+| .NET Standard    | 2,0     | C# 7.3                      |
 | .NET Standard    | 1.x     | C# 7.3                      |
 | .NET Framework   | all     | C# 7.3                      |
 

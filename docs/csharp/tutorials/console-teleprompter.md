@@ -4,12 +4,12 @@ description: W tym samouczku przedstawiono szereg funkcji platformy .NET Core i 
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 06affa01b67edeea09088834cf131adb55650bbb
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: dbe64fe0a01ddab9e7a3ad0a9118b3fe59fba8aa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794666"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656986"
 ---
 # <a name="console-app"></a>Aplikacja konsolowa
 
@@ -31,7 +31,7 @@ Ten samouczek zawiera wiele funkcji. Kompilujmy je po jednej.
 
 - Zainstaluj swój ulubiony Edytor kodu.
 
-## <a name="create-the-app"></a>Tworzymy aplikację.
+## <a name="create-the-app"></a>Tworzenie aplikacji
 
 Pierwszym krokiem jest utworzenie nowej aplikacji. Otwórz wiersz polecenia i Utwórz nowy katalog dla aplikacji. Upewnij się, że bieżący katalog. Wpisz polecenie `dotnet new console` w wierszu polecenia. Spowoduje to utworzenie plików początkowych dla podstawowej aplikacji "Hello world".
 
@@ -55,7 +55,7 @@ namespace TeleprompterConsole
 
 ## <a name="reading-and-echoing-the-file"></a>Odczytywanie i echo pliku
 
-Pierwsza funkcja do dodania to możliwość odczytywania pliku tekstowego i wyświetlania całego tekstu w konsoli programu. Najpierw Dodajmy plik tekstowy. Skopiuj plik [sampleQuotes. txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) z repozytorium GitHub dla tego [przykładu](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) do katalogu projektu. Będzie to skrypt aplikacji. Jeśli chcesz uzyskać informacje dotyczące sposobu pobierania przykładowej aplikacji dla tego tematu, zobacz instrukcje w temacie [przykłady i samouczki](../../samples-and-tutorials/index.md#viewing-and-downloading-samples) .
+Pierwsza funkcja do dodania to możliwość odczytywania pliku tekstowego i wyświetlania całego tekstu w konsoli programu. Najpierw Dodajmy plik tekstowy. Skopiuj plik [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) z repozytorium GitHub dla tego [przykładu](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) do katalogu projektu. Będzie to skrypt aplikacji. Jeśli chcesz uzyskać informacje dotyczące sposobu pobierania przykładowej aplikacji dla tego tematu, zobacz instrukcje w temacie [przykłady i samouczki](../../samples-and-tutorials/index.md#view-and-download-samples) .
 
 Następnie Dodaj następującą metodę do `Program` klasy (bezpośrednio poniżej `Main` metody):
 
@@ -86,7 +86,7 @@ Ta metoda jest specjalnym typem metody języka C# zwanej *metodą iteratora*. Me
 
 Istnieją dwa inne elementy składni języka C#, które mogą być nowe dla Ciebie. [`using`](../language-reference/keywords/using-statement.md)Instrukcja w tej metodzie zarządza oczyszczaniem zasobów. Zmienna, która została zainicjowana w `using` instrukcji ( `reader` w tym przykładzie) musi implementować <xref:System.IDisposable> interfejs. Ten interfejs definiuje pojedynczą metodę, `Dispose` która powinna być wywoływana, gdy zasób powinien zostać wyznaczony. Kompilator generuje to wywołanie, gdy wykonanie osiągnie zamykający nawias klamrowy `using` instrukcji. Kod wygenerowany przez kompilator zapewnia, że zasób jest wydawany nawet wtedy, gdy wyjątek jest zgłaszany z kodu w bloku zdefiniowanym przez instrukcję using.
 
-`reader`Zmienna jest definiowana przy użyciu `var` słowa kluczowego. [`var`](../language-reference/keywords/var.md)definiuje *niejawnie wpisaną zmienną lokalną*. Oznacza to, że typ zmiennej jest określany przez typ czasu kompilacji obiektu przypisanego do zmiennej. Tutaj jest to wartość zwracana z <xref:System.IO.File.OpenText(System.String)> metody, która jest <xref:System.IO.StreamReader> obiektem.
+`reader`Zmienna jest definiowana przy użyciu `var` słowa kluczowego. [`var`](../language-reference/keywords/var.md) definiuje *niejawnie wpisaną zmienną lokalną*. Oznacza to, że typ zmiennej jest określany przez typ czasu kompilacji obiektu przypisanego do zmiennej. Tutaj jest to wartość zwracana z <xref:System.IO.File.OpenText(System.String)> metody, która jest <xref:System.IO.StreamReader> obiektem.
 
 Teraz uzupełnimy kod w celu odczytania pliku w `Main` metodzie:
 

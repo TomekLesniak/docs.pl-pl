@@ -3,12 +3,12 @@ title: Tworzenie klienta REST przy użyciu platformy .NET Core
 description: W tym samouczku przedstawiono szereg funkcji platformy .NET Core i języka C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 1d1d1bec8c6602e4fe34fa3ce243423290412736
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 8db87440bb6e0995b1cc2c97b0d28995170ada8c
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004858"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656947"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -25,7 +25,7 @@ Utworzysz aplikację, która wystawia żądania HTTP do usługi REST w serwisie 
 
 Ten samouczek zawiera wiele funkcji. Kompilujmy je po jednej.
 
-Jeśli wolisz postępować wraz z [ostatnim przykładem](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) dla tego tematu, możesz go pobrać. Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Jeśli wolisz postępować wraz z [ostatnim przykładem](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) dla tego tematu, możesz go pobrać. Aby uzyskać instrukcje dotyczące pobierania, zobacz [przykłady i samouczki](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -42,7 +42,7 @@ dotnet new console --name WebAPIClient
 
 Spowoduje to utworzenie plików początkowych dla podstawowej aplikacji "Hello world". Nazwa projektu to "WebAPIClient". Ponieważ jest to nowy projekt, żadne zależności nie są stosowane. Pierwsze uruchomienie spowoduje pobranie platformy .NET Core, zainstalowanie certyfikatu deweloperskiego i uruchomienie Menedżera pakietów NuGet w celu przywrócenia brakujących zależności.
 
-Przed rozpoczęciem wprowadzania modyfikacji wpisz `dotnet run` ([Zobacz Uwaga](#dotnet-restore-note)) w wierszu polecenia, aby uruchomić aplikację. `dotnet run`wykonuje automatycznie, `dotnet restore` Jeśli w środowisku nie ma zależności. Wykonuje również, `dotnet build` Jeśli aplikacja musi zostać odbudowana.
+Przed rozpoczęciem wprowadzania modyfikacji wpisz `dotnet run` ([Zobacz Uwaga](#dotnet-restore-note)) w wierszu polecenia, aby uruchomić aplikację. `dotnet run` wykonuje automatycznie, `dotnet restore` Jeśli w środowisku nie ma zależności. Wykonuje również, `dotnet build` Jeśli aplikacja musi zostać odbudowana.
 Po wstępnej konfiguracji wystarczy uruchomić program `dotnet restore` lub tylko `dotnet build` wtedy, gdy jest to zrozumiałe dla projektu.
 
 ## <a name="adding-new-dependencies"></a>Dodawanie nowych zależności

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 530bb54936f97f1d7460d63cfa316c760cbd449d
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 8b54aea1409f2b4c0a3d39d215922ba62c2a3563
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441820"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656973"
 ---
 # <a name="security-considerations-for-data"></a>Zagadnienia związane z zabezpieczeniami danych
 
@@ -48,7 +48,7 @@ Rozważ następujące kwestie:
 
 ## <a name="preventing-denial-of-service-attacks"></a>Zapobieganie atakom typu "odmowa usługi"
 
-### <a name="quotas"></a>Limity przydziału
+### <a name="quotas"></a>Przydziały
 
 Spowodowanie przydzielenia przez stronę otrzymującej znacznej ilości pamięci jest potencjalny atak typu "odmowa usługi". Chociaż ta sekcja koncentruje się na problemach z użyciem pamięci, wynikających z dużych komunikatów, mogą wystąpić inne ataki. Na przykład komunikaty mogą wykorzystywać nieproporcjonalną ilość czasu przetwarzania.
 
@@ -70,7 +70,7 @@ Model zabezpieczeń wokół dużych komunikatów zależy od tego, czy przesyłan
 
 Należy również pamiętać, że nie należy `MaxReceivedMessageSize` górną granicą zużycia pamięci dla poszczególnych komunikatów, ale ogranicza ją do poziomu stałego czynnika. Na przykład, jeśli `MaxReceivedMessageSize` otrzymasz 1 MB i zostanie wyświetlony komunikat 1-MB, a następnie zostanie on rozszeregowany, wymagana jest dodatkowa pamięć, która będzie zawierać deserializowany wykres obiektu, co spowodowało całkowite zużycie pamięci na 1 MB. Z tego powodu należy unikać tworzenia możliwych do serializacji typów, które mogłyby spowodować znaczne użycie pamięci bez dużo danych przychodzących. Na przykład kontrakt danych "Moja Umowa" z 50 opcjonalnymi polami elementu członkowskiego danych i dodatkowymi polami prywatnymi 100 można utworzyć przy użyciu konstrukcji XML " \<MyContract/> ". Ten kod XML powoduje dostęp do pamięci dla 150 pól. Należy pamiętać, że elementy członkowskie danych są domyślnie opcjonalne. Problem jest składany, gdy taki typ jest częścią tablicy.
 
-`MaxReceivedMessageSize`samo nie jest wystarczające, aby zapobiec atakom typu "odmowa usługi". Na przykład Deserializator może być zmuszony do deserializacji wykresu głęboko zagnieżdżonego obiektu (obiektu, który zawiera inny obiekt, który jest jeszcze inny, itd.) przez komunikat przychodzący. <xref:System.Runtime.Serialization.DataContractSerializer>I <xref:System.Xml.Serialization.XmlSerializer> metody wywołania w zagnieżdżonym sposobie deserializacji takich grafów. Głębokie zagnieżdżenie wywołań metod może spowodować nieodwracalne odzyskanie <xref:System.StackOverflowException> . To zagrożenie jest korygowane przez ustawienie limitu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> przydziału w celu ograniczenia poziomu zagnieżdżenia XML, jak opisano w sekcji "używanie bezpiecznego kodu XML" w dalszej części tematu.
+`MaxReceivedMessageSize` samo nie jest wystarczające, aby zapobiec atakom typu "odmowa usługi". Na przykład Deserializator może być zmuszony do deserializacji wykresu głęboko zagnieżdżonego obiektu (obiektu, który zawiera inny obiekt, który jest jeszcze inny, itd.) przez komunikat przychodzący. <xref:System.Runtime.Serialization.DataContractSerializer>I <xref:System.Xml.Serialization.XmlSerializer> metody wywołania w zagnieżdżonym sposobie deserializacji takich grafów. Głębokie zagnieżdżenie wywołań metod może spowodować nieodwracalne odzyskanie <xref:System.StackOverflowException> . To zagrożenie jest korygowane przez ustawienie limitu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> przydziału w celu ograniczenia poziomu zagnieżdżenia XML, jak opisano w sekcji "używanie bezpiecznego kodu XML" w dalszej części tematu.
 
 Ustawienie dodatkowych przydziałów `MaxReceivedMessageSize` jest szczególnie ważne w przypadku korzystania z binarnego kodowania XML. Użycie kodowania binarnego jest nieco równoważne kompresji: niewielka grupa bajtów w komunikacie przychodzącym może reprezentować wiele danych. W ten sposób nawet komunikat dopasowywany do `MaxReceivedMessageSize` limitu może zająć dużo więcej pamięci w pełni rozwiniętej postaci. Aby wyeliminować takie zagrożenia specyficzne dla języka XML, wszystkie przydziały czytnika XML muszą być poprawnie ustawione, jak to opisano w sekcji "Korzystanie z bezpiecznego kodu XML" w dalszej części tego tematu.
 
@@ -90,7 +90,7 @@ Koder komunikatu MTOM również ma `MaxBufferSize` ustawienie. W przypadku korzy
 
 ## <a name="xml-based-streaming-attacks"></a>Ataki strumieniowe oparte na języku XML
 
-`MaxBufferSize`sama nie jest wystarczająca, aby zapewnić, że nie można wymusić buforowania usługi WCF w przypadku, gdy jest oczekiwany strumień. Na przykład czytelnicy XML programu WCF zawsze buforują cały tag początkowy elementu XML przy rozpoczynaniu odczytywania nowego elementu. Dzięki temu obszary nazw i atrybuty są prawidłowo przetwarzane. Jeśli `MaxReceivedMessageSize` Konfiguracja jest duża (na przykład w celu włączenia scenariusza dużego przesyłania strumieniowego plików), złośliwy komunikat może być skonstruowany, gdzie cała treść komunikatu jest dużym tagiem początkowym elementu XML. Próba odczytu powoduje wystąpienie <xref:System.OutOfMemoryException> . Jest to jeden z wielu możliwych ataków typu "odmowa usługi" opartych na języku XML, które można rozwiązać za pomocą przydziałów czytnika XML, omówione w dalszej części tego tematu. W przypadku przesyłania strumieniowego jest szczególnie ważne, aby ustawić wszystkie te limity przydziału.
+`MaxBufferSize` sama nie jest wystarczająca, aby zapewnić, że nie można wymusić buforowania usługi WCF w przypadku, gdy jest oczekiwany strumień. Na przykład czytelnicy XML programu WCF zawsze buforują cały tag początkowy elementu XML przy rozpoczynaniu odczytywania nowego elementu. Dzięki temu obszary nazw i atrybuty są prawidłowo przetwarzane. Jeśli `MaxReceivedMessageSize` Konfiguracja jest duża (na przykład w celu włączenia scenariusza dużego przesyłania strumieniowego plików), złośliwy komunikat może być skonstruowany, gdzie cała treść komunikatu jest dużym tagiem początkowym elementu XML. Próba odczytu powoduje wystąpienie <xref:System.OutOfMemoryException> . Jest to jeden z wielu możliwych ataków typu "odmowa usługi" opartych na języku XML, które można rozwiązać za pomocą przydziałów czytnika XML, omówione w dalszej części tego tematu. W przypadku przesyłania strumieniowego jest szczególnie ważne, aby ustawić wszystkie te limity przydziału.
 
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>Mieszanie modeli programowania przesyłania strumieniowego i buforowania
 
@@ -139,17 +139,17 @@ Bezpieczne czytelnicy XML mają pięć konfigurowalnych limitów przydziału. S�
 
 #### <a name="maxbytesperread"></a>MaxBytesPerRead
 
-Ten limit przydziału ogranicza liczbę bajtów odczytywanych w ramach jednej `Read` operacji podczas odczytywania znacznika początkowego elementu i jego atrybutów. (W przypadku niestrumieniowych przypadków sama sama nazwa elementu nie jest naliczana względem limitu przydziału). <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>jest ważne z następujących powodów:
+Ten limit przydziału ogranicza liczbę bajtów odczytywanych w ramach jednej `Read` operacji podczas odczytywania znacznika początkowego elementu i jego atrybutów. (W przypadku niestrumieniowych przypadków sama sama nazwa elementu nie jest naliczana względem limitu przydziału). <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> jest ważne z następujących powodów:
 
 - Nazwa elementu i jego atrybuty są zawsze buforowane w pamięci, gdy są odczytywane. W związku z tym ważne jest, aby poprawnie ustawić ten limit przydziału w trybie przesyłania strumieniowego, aby zapobiec nadmiernemu buforowaniu, gdy jest oczekiwany strumień strumieniowy. Zapoznaj się z `MaxDepth` sekcją limit przydziału, aby uzyskać informacje na temat rzeczywistej ilości buforowania.
 
-- Zbyt wiele atrybutów XML może korzystać z nieproporcjonalnego czasu przetwarzania, ponieważ nazwy atrybutów muszą być sprawdzane pod kątem unikatowości. `MaxBytesPerRead`ograniczenie tego zagrożenia.
+- Zbyt wiele atrybutów XML może korzystać z nieproporcjonalnego czasu przetwarzania, ponieważ nazwy atrybutów muszą być sprawdzane pod kątem unikatowości. `MaxBytesPerRead` ograniczenie tego zagrożenia.
 
 #### <a name="maxdepth"></a>MaxDepth
 
-Ten limit przydziału ogranicza maksymalną głębokość zagnieżdżenia elementów XML. Na przykład dokument " \<A> \<B> \<C/> \</B> \</A> " ma głębokość zagnieżdżenia trzech. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>jest ważne z następujących powodów:
+Ten limit przydziału ogranicza maksymalną głębokość zagnieżdżenia elementów XML. Na przykład dokument " \<A> \<B> \<C/> \</B> \</A> " ma głębokość zagnieżdżenia trzech. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> jest ważne z następujących powodów:
 
-- `MaxDepth`Interakcja z `MaxBytesPerRead` : czytnik zawsze przechowuje dane w pamięci dla bieżącego elementu i wszystkich jego elementów nadrzędnych, więc maksymalne użycie pamięci przez czytnik jest proporcjonalne do iloczynu tych dwóch ustawień.
+- `MaxDepth` Interakcja z `MaxBytesPerRead` : czytnik zawsze przechowuje dane w pamięci dla bieżącego elementu i wszystkich jego elementów nadrzędnych, więc maksymalne użycie pamięci przez czytnik jest proporcjonalne do iloczynu tych dwóch ustawień.
 
 - Podczas deserializacji wykresu obiektów głęboko zagnieżdżonych, Deserializator jest zmuszony do uzyskania dostępu do całego stosu i wyrzuca nieodwracalne działania <xref:System.StackOverflowException> . Istnieje bezpośrednia korelacja między zagnieżdżeniem XML a zagnieżdżeniem obiektów dla <xref:System.Runtime.Serialization.DataContractSerializer> i <xref:System.Xml.Serialization.XmlSerializer> . Służy `MaxDepth` do ograniczania tego zagrożenia.
 
@@ -191,10 +191,10 @@ Poniższa tabela zawiera podsumowanie wskazówek dotyczących przydziałów.
 
 |Warunek|Ważne przydziały do ustawienia|
 |---------------|-----------------------------|
-|Brak przesyłania strumieniowego lub przesyłania strumieniowego małych komunikatów, tekstu lub kodowania MTOM|`MaxReceivedMessageSize`, `MaxBytesPerRead` i`MaxDepth`|
-|Brak przesyłania strumieniowego i przesyłania strumieniowego małych komunikatów, kodowanie binarne|`MaxReceivedMessageSize`, `MaxSessionSize` i wszystkie`ReaderQuotas`|
-|Przesyłanie strumieniowe dużych komunikatów, tekstu lub kodowania MTOM|`MaxBufferSize`i wszystkie`ReaderQuotas`|
-|Przesyłanie strumieniowe dużych komunikatów, kodowanie binarne|`MaxBufferSize`, `MaxSessionSize` i wszystkie`ReaderQuotas`|
+|Brak przesyłania strumieniowego lub przesyłania strumieniowego małych komunikatów, tekstu lub kodowania MTOM|`MaxReceivedMessageSize`, `MaxBytesPerRead` i `MaxDepth`|
+|Brak przesyłania strumieniowego i przesyłania strumieniowego małych komunikatów, kodowanie binarne|`MaxReceivedMessageSize`, `MaxSessionSize` i wszystkie `ReaderQuotas`|
+|Przesyłanie strumieniowe dużych komunikatów, tekstu lub kodowania MTOM|`MaxBufferSize` i wszystkie `ReaderQuotas`|
+|Przesyłanie strumieniowe dużych komunikatów, kodowanie binarne|`MaxBufferSize`, `MaxSessionSize` i wszystkie `ReaderQuotas`|
 
 - Limity czasu na poziomie transportu muszą zawsze być ustawione i nigdy nie używać synchronicznych operacji odczytu/zapisu, gdy przesyłanie strumieniowe jest w użyciu, niezależnie od tego, czy przesyłasz strumieniowo duże lub małe wiadomości.
 
@@ -224,11 +224,11 @@ W poniższych sekcjach szczegółowo omówiono te klasy zagrożeń.
 
 Ponadto <xref:System.Runtime.Serialization.DataContractSerializer> obsługuje polimorfizm. Element członkowski danych może być zadeklarowany jako <xref:System.Object> , ale dane przychodzące mogą zawierać `Customer` wystąpienie. Jest to możliwe tylko wtedy, gdy `Customer` Typ został "znany" do deserializacji za pomocą jednego z następujących mechanizmów:
 
-- <xref:System.Runtime.Serialization.KnownTypeAttribute>atrybut zastosowany do typu.
+- <xref:System.Runtime.Serialization.KnownTypeAttribute> atrybut zastosowany do typu.
 
-- `KnownTypeAttribute`atrybut określający metodę, która zwraca listę typów.
+- `KnownTypeAttribute` atrybut określający metodę, która zwraca listę typów.
 
-- `ServiceKnownTypeAttribute`przypisane.
+- `ServiceKnownTypeAttribute` przypisane.
 
 - `KnownTypes`Sekcja konfiguracji.
 
@@ -238,7 +238,7 @@ Każdy z tych mechanizmów zwiększa powierzchnię obszaru, wprowadzając więce
 
 Gdy znany typ znajduje się w zakresie, można go załadować w dowolnym momencie, a wystąpienia typu można utworzyć, nawet jeśli kontrakt zakazuje rzeczywiste użycie. Na przykład załóżmy, że typ "unniebezpiecznychtype" zostanie dodany do listy znanych typów przy użyciu jednego z powyższych mechanizmów. Oznacza to, że:
 
-- `MyDangerousType`jest ładowany, a jego Konstruktor klas działa.
+- `MyDangerousType` jest ładowany, a jego Konstruktor klas działa.
 
 - Nawet w przypadku deserializacji kontraktu danych za pomocą elementu członkowskiego danych w postaci ciągu złośliwy komunikat może nadal spowodować wystąpienie `MyDangerousType` do utworzenia. Kod w `MyDangerousType` , taki jak metody ustawiające właściwości, może być uruchamiany. Po wykonaniu tej czynności Deserializator próbuje przypisać to wystąpienie do elementu członkowskiego danych String i niepowodzeniem z wyjątkiem.
 
@@ -284,7 +284,7 @@ Tę sytuację można uniknąć, wiedząc o następujących kwestiach:
 
 <xref:System.Runtime.Serialization.NetDataContractSerializer>Jest to aparat serializacji, który używa ścisłego sprzężenia do typów. Jest to podobne do <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> i <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> . Oznacza to, że określa typ do wystąpienia, odczytując zestaw .NET Framework i nazwę typu z danych przychodzących. Chociaż jest częścią usługi WCF, nie ma żadnego podanego sposobu podłączania w tym aparacie serializacji; należy napisać kod niestandardowy. Usługa `NetDataContractSerializer` jest świadczona głównie w celu ułatwienia migracji .NET Framework komunikacji zdalnej do usługi WCF. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [serializacji i deserializacji](serialization-and-deserialization.md).
 
-Ponieważ sam komunikat może wskazywać, że każdy typ może być ładowany, <xref:System.Runtime.Serialization.NetDataContractSerializer> mechanizm jest z natury niezabezpieczony i powinien być używany tylko z zaufanymi danymi. Aby uzyskać więcej informacji, zobacz [Przewodnik po zabezpieczeniach BinaryFormatter](/dotnet/standard/serialization/binaryformatter-security-guide).
+Ponieważ sam komunikat może wskazywać, że każdy typ może być ładowany, <xref:System.Runtime.Serialization.NetDataContractSerializer> mechanizm jest z natury niezabezpieczony i powinien być używany tylko z zaufanymi danymi. Aby uzyskać więcej informacji, zobacz [Przewodnik po zabezpieczeniach BinaryFormatter](../../../standard/serialization/binaryformatter-security-guide.md).
 
 Nawet w przypadku użycia z zaufanymi danymi dane przychodzące mogą niewystarczająco określić typ do załadowania, zwłaszcza jeśli <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> Właściwość jest ustawiona na <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple> . Każda osoba mająca dostęp do katalogu aplikacji lub globalnej pamięci podręcznej zestawów może zastąpić złośliwy typ zamiast tego, który powinien zostać załadowany. Zawsze upewnij się, że zabezpieczenia katalogu aplikacji i globalnej pamięci podręcznej zestawów zostały prawidłowo ustawione.
 
@@ -322,7 +322,7 @@ Należy zwrócić uwagę na następujące kwestie dotyczące zagrożeń związan
 
 - Fakt, że <xref:System.Runtime.Serialization.ExtensionDataObject> Typ nie ma publicznych składowych, nie oznacza, że dane w niej są bezpieczne. Na przykład w przypadku deserializacji z uprzywilejowanego źródła danych do obiektu, w którym znajdują się pewne dane, następnie należy odczytywać ten obiekt do częściowo zaufanego kodu, częściowo zaufany kod może odczytać dane `ExtensionDataObject` przez Serializowanie obiektu. Rozważ ustawienie <xref:System.Runtime.Serialization.DataContractSerializer.IgnoreExtensionDataObject%2A> do `true` momentu deserializacji z uprzywilejowanego źródła danych do obiektu, który jest później przekazywać do kodu częściowo zaufanego.
 
-- <xref:System.Runtime.Serialization.DataContractSerializer>i <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> obsługują serializację prywatnych, chronionych, wewnętrznych i publicznych składowych w trybie pełnego zaufania. Jednak w częściowej relacji zaufania tylko publiczne składowe mogą być serializowane. <xref:System.Security.SecurityException>Występuje, gdy aplikacja próbuje serializować niepublicznego elementu członkowskiego.
+- <xref:System.Runtime.Serialization.DataContractSerializer> i <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> obsługują serializację prywatnych, chronionych, wewnętrznych i publicznych składowych w trybie pełnego zaufania. Jednak w częściowej relacji zaufania tylko publiczne składowe mogą być serializowane. <xref:System.Security.SecurityException>Występuje, gdy aplikacja próbuje serializować niepublicznego elementu członkowskiego.
 
     Aby zezwolić na Serializowanie wewnętrznych lub chronionych wewnętrznych elementów członkowskich w częściowej relacji zaufania, użyj <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atrybutu Assembly. Ten atrybut umożliwia zestawowi zadeklarować, że jego wewnętrzne elementy członkowskie są widoczne dla innego zestawu. W tym przypadku zestaw, który chce mieć zaszeregowaną wewnętrzną składową, deklaruje, że jego wewnętrzne elementy członkowskie są widoczne do System.Runtime.Serialization.dll.
 

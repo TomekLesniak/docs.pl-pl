@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: b770543eb09ed2edc1a028561e0cf41e74fab1cc
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: a861ee38963f77bffe23bbca19a6f895289e372d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86444498"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656817"
 ---
 # <a name="serialization-and-deserialization"></a>Serializacja i deserializacja
 Windows Communication Foundation (WCF) zawiera nowy aparat serializacji, <xref:System.Runtime.Serialization.DataContractSerializer> . <xref:System.Runtime.Serialization.DataContractSerializer>Tłumaczy między obiektami .NET Framework i XML, w obu kierunkach. W tym temacie wyjaśniono, jak działa serializator.  
@@ -20,9 +20,9 @@ Windows Communication Foundation (WCF) zawiera nowy aparat serializacji, <xref:S
   
  Podczas deserializacji XML, serializator używa <xref:System.Xml.XmlReader> <xref:System.Xml.XmlWriter> klas i. Obsługuje ona również <xref:System.Xml.XmlDictionaryReader> klasy i, <xref:System.Xml.XmlDictionaryWriter> Aby umożliwić jej tworzenie ZOPTYMALIZOWANEGO kodu XML w niektórych przypadkach, na przykład przy użyciu binarnego formatu XML WCF.  
   
- WCF zawiera również serializator pomocnika, <xref:System.Runtime.Serialization.NetDataContractSerializer> . <xref:System.Runtime.Serialization.NetDataContractSerializer>:
+ WCF zawiera również serializator pomocnika, <xref:System.Runtime.Serialization.NetDataContractSerializer> . Pomocnik <xref:System.Runtime.Serialization.NetDataContractSerializer>:
 
-* ***Nie*** jest bezpieczne. Aby uzyskać więcej informacji, zobacz [Przewodnik po zabezpieczeniach BinaryFormatter](/dotnet/standard/serialization/binaryformatter-security-guide).
+* ***Nie*** jest bezpieczne. Aby uzyskać więcej informacji, zobacz [Przewodnik po zabezpieczeniach BinaryFormatter](../../../standard/serialization/binaryformatter-security-guide.md).
 * Jest podobna do <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> i <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> serializatorów, ponieważ również emituje .NET Framework nazw typów jako część serializowanych danych.
 * Jest używany, gdy te same typy są udostępniane na serializacji i zakończenia deserializacji.
 
