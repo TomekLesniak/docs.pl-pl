@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 57261602c456a6dcf90c03aa044e7d1c0c8c1c6a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 968da880fc7e0e811f5e8712ccb43726426a019e
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608029"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720166"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programowanie asynchroniczne oparte na zadaniach
 
@@ -288,7 +288,7 @@ Jeśli musisz dziedziczyć z <xref:System.Threading.Tasks.Task> lub <xref:System
 |[Równoległość danych](data-parallelism-task-parallel-library.md)|Opisuje sposób użycia <xref:System.Threading.Tasks.Parallel.For%2A> i <xref:System.Threading.Tasks.Parallel.ForEach%2A> do tworzenia pętli równoległych nad danymi.|
 |[Programowanie równoległe](index.md)|Węzeł najwyższego poziomu dla .NET Framework programowania równoległego.|
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Programowanie równoległe](index.md)
 - [Przykłady programowania równoległego przy użyciu programu .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

@@ -5,12 +5,12 @@ description: Wyświetla listę istotnych zmian w ASP.NET Core.
 ms.date: 07/17/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 7a07df5194d5dc220b61d55a4457d90881ac9ddf
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 1506e0aa27778d44497252231028689259f48896
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474829"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720244"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core istotne zmiany
 
@@ -28,6 +28,7 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 - [Autoryzacja: implementacje IAuthorizationPolicyProvider wymagają nowej metody](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
 - [Autoryzacja: zasób w routingu punktu końcowego jest obiektem HttpContext](#authorization-resource-in-endpoint-routing-is-httpcontext)
 - [Azure: Usunięto wstępnie ustalone pakiety integracji platformy Azure](#azure-microsoft-prefixed-azure-integration-packages-removed)
+- [Metody serializacji BinaryFormatter są przestarzałe i zabronione w aplikacjach ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)
 - [Blazor: nieznaczące odstępy są obcinane ze składników w czasie kompilacji](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
 - [Blazor: zmieniono platformę docelową pakietów NuGet](#blazor-target-framework-of-nuget-packages-changed)
 - [Buforowanie: Usunięto Właściwość CompactOnMemoryPressure](#caching-compactonmemorypressure-property-removed)
@@ -99,6 +100,10 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 ***
 
 [!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
+
+***
+
+[!INCLUDE [binaryformatter-serialization-obsolete](../../../includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
 
 ***
 
