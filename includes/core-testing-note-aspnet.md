@@ -6,4 +6,4 @@ ms.contentlocale: pl-PL
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "70373832"
 ---
-Ten artykuł dotyczy testowania projektu .NET Core. Jeśli testujesz projekt **ASP.NET Core,** zobacz [Testy integracji w ASP.NET Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
+Ten artykuł dotyczy testowania projektu .NET Core. Jeśli testujesz projekt **ASP.NET Core** , zobacz temat [testy integracji w programie ASP.NET Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
