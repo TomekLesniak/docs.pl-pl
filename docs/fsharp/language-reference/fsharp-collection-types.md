@@ -2,12 +2,12 @@
 title: Typy kolekcji
 description: 'Dowiedz się więcej o typach kolekcji F # i sposobach ich różnicowania od typów kolekcji .NET.'
 ms.date: 08/14/2020
-ms.openlocfilehash: 197ba754d632051b5a0bf9c8364d45a1fb932f48
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 394f6bbaf58e7e8607abc3a0c20bbc2b1c9c3c8d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267285"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656908"
 ---
 # <a name="f-collection-types"></a>Typy kolekcji F#
 
@@ -21,11 +21,11 @@ W poniższej tabeli przedstawiono typy kolekcji języka F #.
 
 |Typ|Opis|Linki powiązane|
 |----|-----------|-------------|
-|[Lista](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Uporządkowana, niezmienna seria elementów tego samego typu. Zaimplementowane jako lista połączona.|[Listy](lists.md)<br /><br />[List — moduł](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
-|[Macierzy](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Zbiór o stałym rozmiarze, od zera, modyfikowalny dla kolejnych elementów danych, które są tego samego typu.|[Tablice](arrays.md)<br /><br />[Moduł Array](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Moduł Array2D](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Moduł Array3D](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
-|[Sekwencja](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Logiczna seria elementów należących do jednego typu. Sekwencje są szczególnie przydatne w przypadku dużej, uporządkowanej kolekcji danych, ale niekoniecznie używać wszystkich elementów. Poszczególne elementy sekwencji są obliczane tylko w razie potrzeby, dlatego sekwencja może być większa niż lista, jeśli nie wszystkie elementy są używane. Sekwencje są reprezentowane przez `seq<'T>` Typ, który jest aliasem dla `IEnumerable<T>` . W związku z tym każdy typ .NET Framework, który implementuje, `System.Collections.Generic.IEnumerable<'T>` może być używany jako sekwencja.|[Sekwencje](sequences.md)<br /><br />[SEQ — moduł](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
-|[Mapa](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Niezmienny słownik elementów. Dostęp do elementów jest uzyskiwany przez klucz.|[Mapuj moduł](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
-|[Set](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Niezmienny zestaw oparty na drzewach binarnych, gdzie porównanie jest funkcją porównywania strukturalnego F #, która potencjalnie używa implementacji `System.IComparable` interfejsu dla wartości kluczy.|[Ustaw moduł](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
+|[Lista](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharplist-1.html)|Uporządkowana, niezmienna seria elementów tego samego typu. Zaimplementowane jako lista połączona.|[Listy](lists.md)<br /><br />[List — moduł](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html)|
+|[Macierzy](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html)|Zbiór o stałym rozmiarze, od zera, modyfikowalny dla kolejnych elementów danych, które są tego samego typu.|[Tablice](arrays.md)<br /><br />[Moduł Array](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html)<br /><br />[Moduł Array2D](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html)<br /><br />[Moduł Array3D](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array3dmodule.html)|
+|[Sekwencja](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html)|Logiczna seria elementów należących do jednego typu. Sekwencje są szczególnie przydatne w przypadku dużej, uporządkowanej kolekcji danych, ale niekoniecznie używać wszystkich elementów. Poszczególne elementy sekwencji są obliczane tylko w razie potrzeby, dlatego sekwencja może być większa niż lista, jeśli nie wszystkie elementy są używane. Sekwencje są reprezentowane przez `seq<'T>` Typ, który jest aliasem dla `IEnumerable<T>` . W związku z tym każdy typ .NET Framework, który implementuje, `System.Collections.Generic.IEnumerable<'T>` może być używany jako sekwencja.|[Sekwencje](sequences.md)<br /><br />[SEQ — moduł](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html)|
+|[Mapa](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html)|Niezmienny słownik elementów. Dostęp do elementów jest uzyskiwany przez klucz.|[Mapuj moduł](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-mapmodule.html)|
+|[Set](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html)|Niezmienny zestaw oparty na drzewach binarnych, gdzie porównanie jest funkcją porównywania strukturalnego F #, która potencjalnie używa implementacji `System.IComparable` interfejsu dla wartości kluczy.|[Ustaw moduł](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-setmodule.html)|
 
 ### <a name="table-of-functions"></a>Tabela funkcji
 

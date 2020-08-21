@@ -1,17 +1,17 @@
 ---
 title: Wyniki
-description: Dowiedz się, F# jak za pomocą typu "result" napisać kod odporny na błędy.
-ms.date: 04/24/2017
-ms.openlocfilehash: 187aa26ccbaac7e0ec998756377bb7b0489eb1ab
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+description: 'Dowiedz się, w jaki sposób można napisać kod odporny na błędy za pomocą typu "wynik" języka F #.'
+ms.date: 08/13/2020
+ms.openlocfilehash: d69e6ddc37bcf5cb5fc28644d59a11a822b83faa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424850"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656921"
 ---
 # <a name="results"></a>Wyniki
 
-Począwszy od F# 4,1, istnieje `Result<'T,'TFailure>` typ, którego można użyć do pisania kodu odpornego na błędy, który może składać się z.
+`Result<'T,'TFailure>`Typ pozwala pisać kod odporny na błędy, który może być składany.
 
 ## <a name="syntax"></a>Składnia
 
@@ -27,9 +27,11 @@ type Result<'T,'TError> =
 
 ## <a name="remarks"></a>Uwagi
 
-Należy zauważyć, że typ wyniku to [związek rozłącznych struktur](discriminated-unions.md#struct-discriminated-unions), który jest kolejną funkcją wprowadzoną w F# 4,1.  W tym miejscu są stosowane semantyka równości strukturalnej.
+Zapoznaj się z [`Result`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-resultmodule.html) modułem wbudowanej kombinatorów dla `Result` . Wprowadź.
 
-Typ `Result` jest zazwyczaj używany w obsłudze błędów monadic, co jest często określane jako [programowanie zorientowane na szyny](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) w F# społeczności.  Poniższy prosty przykład ilustruje to podejście.
+Należy zauważyć, że typ wyniku to [Unia](discriminated-unions.md#struct-discriminated-unions)rozłączna struktury. W tym miejscu są stosowane semantyka równości strukturalnej.
+
+`Result`Typ jest zazwyczaj używany w obsłudze błędów monadic, który jest często określany jako [programowanie zorientowane na szyny](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) w społeczności języka F #.  Poniższy prosty przykład ilustruje to podejście.
 
 ```fsharp
 // Define a simple type which has fields that can be validated
@@ -80,9 +82,9 @@ let test() =
 test()
 ```
 
-Jak widać, bardzo łatwo można połączyć łańcuchowo różne funkcje walidacji, jeśli wymusimy, aby wszyscy mogli zwrócić `Result`.  Dzięki temu można rozbić funkcje podobne do małych kawałków, które są w miarę możliwości do redagowania.  Jest to również wartość dodana do *wymuszania* użycia [dopasowania wzorca](pattern-matching.md) na końcu zaokrąglenia sprawdzania poprawności, która w ten sposób wymusza wyższy stopień poprawienia programu.
+Jak widać, bardzo łatwo można łączyć łańcuchowo różne funkcje walidacji, jeśli wymusimy, aby wszystkie zwracały `Result` .  Dzięki temu można rozbić funkcje podobne do małych kawałków, które są w miarę możliwości do redagowania.  Jest to również wartość dodana do *wymuszania* użycia [dopasowania wzorca](pattern-matching.md) na końcu zaokrąglenia sprawdzania poprawności, która w ten sposób wymusza wyższy stopień poprawienia programu.
 
 ## <a name="see-also"></a>Zobacz także
 
 - [Sumy rozłączne](discriminated-unions.md)
-- [Dopasowanie do wzorca](pattern-matching.md)
+- [Dopasowanie wzorca](pattern-matching.md)

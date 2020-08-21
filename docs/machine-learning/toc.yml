@@ -75,6 +75,8 @@
           href: how-to-guides/load-data-model-builder.md
         - name: Instalowanie konstruktora modelu
           href: how-to-guides/install-model-builder.md
+        - name: Instalowanie procesora GPU w narzędziu Model Builder
+          href: how-to-guides/install-gpu-model-builder.md
         - name: Instalowanie interfejsu wiersza polecenia
           href: how-to-guides/install-ml-net-cli.md
         - name: Używanie interfejsu API automatycznego uczenia maszynowego
