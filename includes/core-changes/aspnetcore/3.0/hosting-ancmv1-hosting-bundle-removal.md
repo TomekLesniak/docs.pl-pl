@@ -16,7 +16,7 @@ Aby zapoznać się z omówieniem, zobacz [dotnet/aspnetcore # 7095](https://gith
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -38,8 +38,8 @@ Jeśli ANCM v1 jest wymagany, można go zainstalować przy użyciu pakietu hosti
 
 Ta zmiana spowoduje przerwanie ASP.NET Core aplikacji 3,0, które:
 
-- Jawnie wybrane do użycia ANCM V1 z `<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>`.
-- Mieć niestandardowy plik *Web. config* z `<add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />`.
+- Jawnie wybrane do użycia ANCM V1 z `<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>` .
+- Mieć niestandardowy plik *web.config* z `<add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />` .
 
 #### <a name="category"></a>Kategoria
 

@@ -8,20 +8,20 @@ ms.locfileid: "72394240"
 ---
 ### <a name="kestrel-empty-https-assembly-removed"></a>Kestrel: Usunięto pusty zestaw HTTPS
 
-Zestaw <xref:Microsoft.AspNetCore.Server.Kestrel.Https?displayProperty=fullName> został usunięty.
+Zestaw został <xref:Microsoft.AspNetCore.Server.Kestrel.Https?displayProperty=fullName> usunięty.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-W ASP.NET Core 2,1 zawartość `Microsoft.AspNetCore.Server.Kestrel.Https` została przeniesiona do <xref:Microsoft.AspNetCore.Server.Kestrel.Core?displayProperty=fullName>lokalizacji. Ta zmiana została wykonana w sposób rozdzielny przy `[TypeForwardedTo]` użyciu atrybutów.
+W ASP.NET Core 2,1 zawartość `Microsoft.AspNetCore.Server.Kestrel.Https` została przeniesiona do lokalizacji <xref:Microsoft.AspNetCore.Server.Kestrel.Core?displayProperty=fullName> . Ta zmiana została wykonana w sposób rozdzielny przy użyciu `[TypeForwardedTo]` atrybutów.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-- Biblioteki, `Microsoft.AspNetCore.Server.Kestrel.Https` do których odwołuje się 2,0, powinny aktualizować wszystkie zależności ASP.NET Core do 2,1 lub nowszych. W przeciwnym razie mogą wystąpić przerwy w przypadku załadowania do aplikacji ASP.NET Core 3,0.
-- Aplikacje i biblioteki ukierunkowane na ASP.NET Core 2,1 i nowsze powinny usunąć wszystkie bezpośrednie odwołania `Microsoft.AspNetCore.Server.Kestrel.Https` do pakietu NuGet.
+- Biblioteki, do których odwołuje `Microsoft.AspNetCore.Server.Kestrel.Https` się 2,0, powinny aktualizować wszystkie zależności ASP.NET Core do 2,1 lub nowszych. W przeciwnym razie mogą wystąpić przerwy w przypadku załadowania do aplikacji ASP.NET Core 3,0.
+- Aplikacje i biblioteki ukierunkowane na ASP.NET Core 2,1 i nowsze powinny usunąć wszystkie bezpośrednie odwołania do `Microsoft.AspNetCore.Server.Kestrel.Https` pakietu NuGet.
 
 #### <a name="category"></a>Kategoria
 

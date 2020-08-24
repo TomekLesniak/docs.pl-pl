@@ -12,15 +12,15 @@ Począwszy od ASP.NET Core 3,0, interfejs użytkownika tożsamości jest domyśl
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Wywołanie `services.AddDefaultIdentity<IdentityUser>().AddDefaultUI();` metody było takie samo jak`services.AddDefaultIdentity<IdentityUser>().AddDefaultUI(UIFramework.Bootstrap3);`
+`services.AddDefaultIdentity<IdentityUser>().AddDefaultUI();`Wywołanie metody było takie samo jak`services.AddDefaultIdentity<IdentityUser>().AddDefaultUI(UIFramework.Bootstrap3);`
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Wywołanie `services.AddDefaultIdentity<IdentityUser>().AddDefaultUI();` metody jest takie samo jak`services.AddDefaultIdentity<IdentityUser>().AddDefaultUI(UIFramework.Bootstrap4);`
+`services.AddDefaultIdentity<IdentityUser>().AddDefaultUI();`Wywołanie metody jest takie samo jak`services.AddDefaultIdentity<IdentityUser>().AddDefaultUI(UIFramework.Bootstrap4);`
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -28,7 +28,7 @@ Uruchomienie Bootstrap 4 zostało wydane w okresie ASP.NET Core 3,0.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Ta zmiana jest zależna od tego, czy używany jest domyślny interfejs użytkownika tożsamości i czy został on `Startup.ConfigureServices` dodany w programie, jak pokazano w następującym przykładzie:
+Ta zmiana jest zależna od tego, czy używany jest domyślny interfejs użytkownika tożsamości i czy został on dodany w programie `Startup.ConfigureServices` , jak pokazano w następującym przykładzie:
 
 ```csharp
 services.AddDefaultIdentity<IdentityUser>().AddDefaultUI();
@@ -37,7 +37,7 @@ services.AddDefaultIdentity<IdentityUser>().AddDefaultUI();
 Wykonaj jedno z następujących działań:
 
 - Przeprowadź migrację aplikacji, aby użyć ładowania początkowego 4 przy użyciu ich [przewodnika migracji](https://getbootstrap.com/docs/4.0/migration).
-- Aktualizacja `Startup.ConfigureServices` w celu wymuszenia użycia programu Bootstrap 3. Przykład:
+- Aktualizacja `Startup.ConfigureServices` w celu wymuszenia użycia programu Bootstrap 3. Na przykład:
 
     ```csharp
     services.AddDefaultIdentity<IdentityUser>().AddDefaultUI(UIFramework.Bootstrap3);

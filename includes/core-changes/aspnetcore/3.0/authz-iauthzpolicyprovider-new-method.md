@@ -8,13 +8,13 @@ ms.locfileid: "75901631"
 ---
 ### <a name="authorization-iauthorizationpolicyprovider-implementations-require-new-method"></a>Autoryzacja: implementacje IAuthorizationPolicyProvider wymagają nowej metody
 
-W ASP.NET Core 3,0 dodano nową `GetFallbackPolicyAsync` metodę do. `IAuthorizationPolicyProvider` Te zasady powrotu są używane przez oprogramowanie pośredniczące autoryzacji, gdy nie określono zasad.
+W ASP.NET Core 3,0 `GetFallbackPolicyAsync` dodano nową metodę do `IAuthorizationPolicyProvider` . Te zasady powrotu są używane przez oprogramowanie pośredniczące autoryzacji, gdy nie określono zasad.
 
 Aby uzyskać więcej informacji, zobacz [dotnet/aspnetcore # 9759](https://github.com/dotnet/aspnetcore/pull/9759).
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -26,11 +26,11 @@ Implementacje `IAuthorizationPolicyProvider` wymagają `GetFallbackPolicyAsync` 
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Nowa metoda była wymagana do użycia w przypadku `AuthorizationMiddleware` , gdy nie określono żadnych zasad.
+Nowa metoda była wymagana do `AuthorizationMiddleware` użycia w przypadku, gdy nie określono żadnych zasad.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Dodaj `GetFallbackPolicyAsync` metodę do implementacji programu `IAuthorizationPolicyProvider`.
+Dodaj `GetFallbackPolicyAsync` metodę do implementacji programu `IAuthorizationPolicyProvider` .
 
 #### <a name="category"></a>Kategoria
 

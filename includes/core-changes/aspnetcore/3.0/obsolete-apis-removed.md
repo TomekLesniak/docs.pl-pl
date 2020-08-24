@@ -12,7 +12,7 @@ Usunięto przestarzałe elementy członkowskie i przełączniki zgodności w ASP
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -43,7 +43,7 @@ Następujące typy i elementy członkowskie zostały oznaczone jako przestarzał
 - `Microsoft.AspNetCore.Routing.IRouteValuesAddressMetadata`
 - `Microsoft.AspNetCore.Routing.RouteValuesAddressMetadata`
 
-**Konstruktorów**
+**Konstruktory**
 
 - `Microsoft.AspNetCore.Cors.Infrastructure.CorsService(IOptions{CorsOptions})`
 - `Microsoft.AspNetCore.Routing.Tree.TreeRouteBuilder(ILoggerFactory,UrlEncoder,ObjectPool{UriBuildingContext},IInlineConstraintResolver)`

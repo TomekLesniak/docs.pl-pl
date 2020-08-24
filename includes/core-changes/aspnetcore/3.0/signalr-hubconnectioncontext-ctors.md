@@ -8,15 +8,15 @@ ms.locfileid: "81274776"
 ---
 ### <a name="signalr-hubconnectioncontext-constructors-changed"></a>Sygnalizacja: zmieniono konstruktory HubConnectionContext
 
-`HubConnectionContext` Konstruktory sygnalizujące uległy zmianie w celu zaakceptowania typu opcji, a nie wielu parametrów, do dalszego dodawania opcji. Ta zmiana zastępuje dwa konstruktory z pojedynczym konstruktorem akceptującym typ opcji.
+`HubConnectionContext`Konstruktory sygnalizujące uległy zmianie w celu zaakceptowania typu opcji, a nie wielu parametrów, do dalszego dodawania opcji. Ta zmiana zastępuje dwa konstruktory z pojedynczym konstruktorem akceptującym typ opcji.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-`HubConnectionContext`ma dwa konstruktory:
+`HubConnectionContext` ma dwa konstruktory:
 
 ```csharp
 public HubConnectionContext(ConnectionContext connectionContext, TimeSpan keepAliveInterval, ILoggerFactory loggerFactory);

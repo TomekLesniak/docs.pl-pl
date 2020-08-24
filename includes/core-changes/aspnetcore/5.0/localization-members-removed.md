@@ -18,11 +18,11 @@ W przypadku kontekstu zobacz [ASPNET/anonse # 346](https://github.com/aspnet/Ann
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-`ResourceManagerWithCultureStringLocalizer` Klasa i `ResourceManagerStringLocalizer.WithCulture` Metoda są [przestarzałe w programie .NET Core 3,0 w wersji zapoznawczej 3 i nowszych](/dotnet/core/compatibility/2.2-3.0#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete).
+`ResourceManagerWithCultureStringLocalizer`Klasa i `ResourceManagerStringLocalizer.WithCulture` Metoda są [przestarzałe w programie .NET Core 3,0 w wersji zapoznawczej 3 i nowszych](/dotnet/core/compatibility/2.2-3.0#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete).
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-`ResourceManagerWithCultureStringLocalizer` Klasa i `ResourceManagerStringLocalizer.WithCulture` Metoda zostały usunięte w programie .NET 5,0 Preview 1. Aby uzyskać spis zmian wprowadzonych w programie, zobacz żądanie ściągnięcia w programie [dotnet/Extensions # 2562](https://github.com/dotnet/extensions/pull/2562/files).
+`ResourceManagerWithCultureStringLocalizer`Klasa i Metoda zostały `ResourceManagerStringLocalizer.WithCulture` usunięte w programie .NET 5,0 Preview 1. Aby uzyskać spis zmian wprowadzonych w programie, zobacz żądanie ściągnięcia w programie [dotnet/Extensions # 2562](https://github.com/dotnet/extensions/pull/2562/files).
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

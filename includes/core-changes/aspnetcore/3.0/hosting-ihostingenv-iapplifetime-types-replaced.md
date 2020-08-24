@@ -12,11 +12,11 @@ Wprowadzono nowe typy do zastępowania istniejących `IHostingEnvironment` i `IA
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-`IHostingEnvironment` Istnieją dwa różne `IApplicationLifetime` i typy z `Microsoft.Extensions.Hosting` i. `Microsoft.AspNetCore.Hosting`
+Istnieją dwa różne `IHostingEnvironment` i `IApplicationLifetime` typy z `Microsoft.Extensions.Hosting` i `Microsoft.AspNetCore.Hosting` .
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
@@ -24,7 +24,7 @@ Stare typy zostały oznaczone jako przestarzałe i zastąpione nowymi typami.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Kiedy `Microsoft.Extensions.Hosting` został wprowadzony w ASP.NET Core 2,1, niektóre typy takie `IHostingEnvironment` jak `IApplicationLifetime` i zostały skopiowane z `Microsoft.AspNetCore.Hosting`. Niektóre zmiany w ASP.NET Core 3,0 powodują, `Microsoft.Extensions.Hosting` że aplikacje zawierają zarówno `Microsoft.AspNetCore.Hosting` przestrzeń nazw, jak i. Każde użycie tych zduplikowanych typów powoduje błąd kompilatora "niejednoznaczne odwołanie", gdy następuje odwołanie do obu przestrzeni nazw.
+Kiedy `Microsoft.Extensions.Hosting` został wprowadzony w ASP.NET Core 2,1, niektóre typy takie jak `IHostingEnvironment` i `IApplicationLifetime` zostały skopiowane z `Microsoft.AspNetCore.Hosting` . Niektóre zmiany w ASP.NET Core 3,0 powodują, że aplikacje zawierają `Microsoft.Extensions.Hosting` zarówno `Microsoft.AspNetCore.Hosting` przestrzeń nazw, jak i. Każde użycie tych zduplikowanych typów powoduje błąd kompilatora "niejednoznaczne odwołanie", gdy następuje odwołanie do obu przestrzeni nazw.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 

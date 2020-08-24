@@ -20,7 +20,7 @@ Przyczepy protokołu HTTP/2 są dostępne po odebraniu ich od klienta. Klient ni
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -30,10 +30,10 @@ Nagłówki przyczepy z żądaniem zostaną dodane do `HttpRequest.Headers` kolek
 
 Nagłówki przyczepy z żądaniem **nie znajdują** się w `HttpRequest.Headers` kolekcji. Użyj następujących metod rozszerzenia w `HttpRequest` celu uzyskania dostępu do nich:
 
-- `GetDeclaredTrailers()`— Pobiera nagłówek "Przyczepka" z listą, do których przyczep powinien oczekiwać po treści.
-- `SupportsTrailers()`-Wskazuje, czy żądanie obsługuje nagłówki przyczepy.
-- `CheckTrailersAvailable()`-Określa, czy żądanie obsługuje przyczepy i czy są dostępne do odczytu.
-- `GetTrailer(string trailerName)`-Pobiera żądany końcowy nagłówek z odpowiedzi.
+- `GetDeclaredTrailers()` — Pobiera nagłówek "Przyczepka" z listą, do których przyczep powinien oczekiwać po treści.
+- `SupportsTrailers()` -Wskazuje, czy żądanie obsługuje nagłówki przyczepy.
+- `CheckTrailersAvailable()` -Określa, czy żądanie obsługuje przyczepy i czy są dostępne do odczytu.
+- `GetTrailer(string trailerName)` -Pobiera żądany końcowy nagłówek z odpowiedzi.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

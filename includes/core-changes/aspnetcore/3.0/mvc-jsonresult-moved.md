@@ -8,7 +8,7 @@ ms.locfileid: "83720927"
 ---
 ### <a name="mvc-jsonresult-moved-to-microsoftaspnetcoremvccore"></a>MVC: JsonResult przeniesiony do Microsoft. AspNetCore. MVC. Core
 
-`JsonResult`został przeniesiony do `Microsoft.AspNetCore.Mvc.Core` zestawu. Ten typ jest używany do zdefiniowania w pliku [Microsoft. AspNetCore. MVC. formatującegos. JSON](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Formatters.Json). Dodano atrybut na poziomie zestawu [[TypeForwardedTo]](xref:System.Runtime.CompilerServices.TypeForwardedToAttribute) , aby `Microsoft.AspNetCore.Mvc.Formatters.Json` rozwiązać ten problem w przypadku większości użytkowników. Aplikacje korzystające z bibliotek innych firm mogą napotkać problemy.
+`JsonResult` został przeniesiony do `Microsoft.AspNetCore.Mvc.Core` zestawu. Ten typ jest używany do definiowania w [Microsoft.AspNetCore.Mvc.Formatters.Jsna](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Formatters.Json). Dodano atrybut na poziomie zestawu [[TypeForwardedTo]](xref:System.Runtime.CompilerServices.TypeForwardedToAttribute) , aby `Microsoft.AspNetCore.Mvc.Formatters.Json` rozwiązać ten problem w przypadku większości użytkowników. Aplikacje korzystające z bibliotek innych firm mogą napotkać problemy.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 

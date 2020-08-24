@@ -8,7 +8,7 @@ ms.locfileid: "82728304"
 ---
 ### <a name="http-httpclient-instances-created-by-ihttpclientfactory-log-integer-status-codes"></a>HTTP: wystąpienia HttpClient utworzone przez kody stanu liczby całkowitej dziennika IHttpClientFactory
 
-<xref:System.Net.Http.HttpClient>wystąpienia utworzone przez <xref:System.Net.Http.IHttpClientFactory> rejestrowanie kodów stanu HTTP jako liczby całkowite zamiast nazw kodów stanu.
+<xref:System.Net.Http.HttpClient> wystąpienia utworzone przez <xref:System.Net.Http.IHttpClientFactory> Rejestrowanie kodów stanu HTTP jako liczby całkowite zamiast nazw kodów stanu.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
@@ -44,7 +44,7 @@ Dodano kolejną wartość dziennika w celu przechwycenia kodu stanu liczby całk
 
 Najlepszą opcją jest aktualizowanie zapytań rejestrowania, aby użyć wartości całkowitych kodów stanu. Ta opcja może spowodować pewne trudności z pisaniem zapytań w wielu wersjach ASP.NET Core. Jednak użycie liczb całkowitych w tym celu jest znacznie bardziej elastyczne dla zapytań dzienników.
 
-Jeśli chcesz wymusić zgodność ze starym zachowaniem i użyć tekstowych kodów stanu, Zastąp `IHttpClientFactory` rejestrowanie własnym:
+Jeśli chcesz wymusić zgodność ze starym zachowaniem i użyć tekstowych kodów stanu, Zastąp `IHttpClientFactory` Rejestrowanie własnym:
 
 1. Skopiuj wersje programu .NET Core 3,1 następujących klas do projektu:
 
@@ -55,7 +55,7 @@ Jeśli chcesz wymusić zgodność ze starym zachowaniem i użyć tekstowych kod�
 
 1. Zmień nazwy klas, aby uniknąć konfliktów z typami publicznymi w pakiecie NuGet [Microsoft. Extensions. http](https://www.nuget.org/packages/Microsoft.Extensions.Http) .
 
-1. Zastąp wbudowaną implementację `LoggingHttpMessageHandlerBuilderFilter` własnymi w `Startup.ConfigureServices` metodzie projektu. Przykład:
+1. Zastąp wbudowaną implementację `LoggingHttpMessageHandlerBuilderFilter` własnymi w `Startup.ConfigureServices` metodzie projektu. Na przykład:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)

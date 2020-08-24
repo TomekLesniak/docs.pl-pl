@@ -8,27 +8,27 @@ ms.locfileid: "78290756"
 ---
 ### <a name="http-defaulthttpcontext-extensibility-removed"></a>HTTP: Usunięto rozszerzalność DefaultHttpContext
 
-W ramach ulepszeń wydajności ASP.NET Core 3,0, rozszerzalność `DefaultHttpContext` została usunięta. Klasa jest teraz `sealed`. Aby uzyskać więcej informacji, zobacz [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504).
+W ramach ulepszeń wydajności ASP.NET Core 3,0, rozszerzalność `DefaultHttpContext` została usunięta. Klasa jest teraz `sealed` . Aby uzyskać więcej informacji, zobacz [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504).
 
-Jeśli jednostka testuje użycie `Mock<DefaultHttpContext>`, użyj `Mock<HttpContext>` lub `new DefaultHttpContext()` zamiast tego.
+Jeśli jednostka testuje użycie `Mock<DefaultHttpContext>` , użyj `Mock<HttpContext>` lub `new DefaultHttpContext()` zamiast tego.
 
 Aby zapoznać się z omówieniem, zobacz [dotnet/aspnetcore # 6534](https://github.com/dotnet/aspnetcore/issues/6534).
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Klasy mogą pochodzić od `DefaultHttpContext`.
+Klasy mogą pochodzić od `DefaultHttpContext` .
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Klasy nie mogą pochodzić `DefaultHttpContext`od.
+Klasy nie mogą pochodzić od `DefaultHttpContext` .
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Rozszerzalność podano początkowo w celu umożliwienia puli `HttpContext`, ale wprowadza niepotrzebną złożoność i utrudnia inne optymalizacje.
+Rozszerzalność podano początkowo w celu umożliwienia puli `HttpContext` , ale wprowadza niepotrzebną złożoność i utrudnia inne optymalizacje.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 

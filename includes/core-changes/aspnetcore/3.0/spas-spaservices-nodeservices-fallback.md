@@ -8,19 +8,19 @@ ms.locfileid: "72522655"
 ---
 ### <a name="spas-spaservices-and-nodeservices-no-longer-fall-back-to-console-logger"></a>Aplikacji jednostronicowych: SpaServices i NodeServices nie są już z powrotem do rejestratora konsoli
 
-<xref:Microsoft.AspNetCore.SpaServices?displayProperty=nameWithType>nie <xref:Microsoft.AspNetCore.NodeServices?displayProperty=nameWithType> będą wyświetlane dzienniki konsoli, chyba że skonfigurowano rejestrowanie.
+<xref:Microsoft.AspNetCore.SpaServices?displayProperty=nameWithType><xref:Microsoft.AspNetCore.NodeServices?displayProperty=nameWithType>nie będą wyświetlane dzienniki konsoli, chyba że skonfigurowano rejestrowanie.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-`Microsoft.AspNetCore.SpaServices`służy `Microsoft.AspNetCore.NodeServices` do automatycznego tworzenia rejestratora konsoli, gdy rejestrowanie nie jest skonfigurowane.
+`Microsoft.AspNetCore.SpaServices``Microsoft.AspNetCore.NodeServices`służy do automatycznego tworzenia rejestratora konsoli, gdy rejestrowanie nie jest skonfigurowane.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-`Microsoft.AspNetCore.SpaServices`nie `Microsoft.AspNetCore.NodeServices` będą wyświetlane dzienniki konsoli, chyba że skonfigurowano rejestrowanie.
+`Microsoft.AspNetCore.SpaServices``Microsoft.AspNetCore.NodeServices`nie będą wyświetlane dzienniki konsoli, chyba że skonfigurowano rejestrowanie.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

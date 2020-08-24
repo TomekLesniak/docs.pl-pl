@@ -8,7 +8,7 @@ ms.locfileid: "82507096"
 ---
 ### <a name="signalr-messagepack-hub-protocol-options-type-changed"></a>Sygnalizacja: Zmieniono typ opcji protokołu MessagePack Hub
 
-Typ opcji protokołu MessagePack sygnalizującego "ASP.NET Core" został zmieniony z `IList<MessagePack.IFormatterResolver>` na `MessagePackSerializerOptions` typ biblioteki [MessagePack](https://www.nuget.org/packages/MessagePack) .
+Typ opcji protokołu MessagePack sygnalizującego "ASP.NET Core" został zmieniony z `IList<MessagePack.IFormatterResolver>` na typ biblioteki [MessagePack](https://www.nuget.org/packages/MessagePack) `MessagePackSerializerOptions` .
 
 Aby uzyskać więcej dyskusji na temat tej zmiany, zobacz [dotnet/aspnetcore # 20506](https://github.com/dotnet/aspnetcore/issues/20506).
 
@@ -73,7 +73,7 @@ Ta zmiana jest częścią przejścia do MessagePack v2. x, która została ogło
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Ta zmiana wpływa na wszystkich użytkowników, którzy konfigurują <xref:Microsoft.AspNetCore.SignalR.MessagePackHubProtocolOptions>wartości. Jeśli używasz protokołu ASP.NET Core sygnalizującego MessagePack i modyfikowania opcji, zaktualizuj użycie, aby użyć nowego interfejsu API opcji, jak pokazano powyżej.
+Ta zmiana wpływa na wszystkich użytkowników, którzy konfigurują wartości <xref:Microsoft.AspNetCore.SignalR.MessagePackHubProtocolOptions> . Jeśli używasz protokołu ASP.NET Core sygnalizującego MessagePack i modyfikowania opcji, zaktualizuj użycie, aby użyć nowego interfejsu API opcji, jak pokazano powyżej.
 
 #### <a name="category"></a>Kategoria
 

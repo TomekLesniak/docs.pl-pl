@@ -8,11 +8,11 @@ ms.locfileid: "81275310"
 ---
 ### <a name="identity-signinmanager-constructor-accepts-new-parameter"></a>Tożsamość: Konstruktor SignInManager akceptuje nowy parametr
 
-Począwszy od ASP.NET Core 3,0, do `IUserConfirmation<TUser>` `SignInManager` konstruktora został dodany nowy parametr. Aby uzyskać więcej informacji, zobacz [dotnet/aspnetcore # 8356](https://github.com/dotnet/aspnetcore/issues/8356).
+Począwszy od ASP.NET Core 3,0, `IUserConfirmation<TUser>` do konstruktora został dodany nowy parametr `SignInManager` . Aby uzyskać więcej informacji, zobacz [dotnet/aspnetcore # 8356](https://github.com/dotnet/aspnetcore/issues/8356).
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -20,7 +20,7 @@ Celem zmiany było dodanie obsługi nowych przepływów poczty e-mail/potwierdze
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-W przypadku ręcznego konstruowania `SignInManager`, należy podać implementację `IUserConfirmation` lub pobrać jeden z iniekcji zależności, aby zapewnić.
+W przypadku ręcznego konstruowania `SignInManager` , należy podać implementację `IUserConfirmation` lub pobrać jeden z iniekcji zależności, aby zapewnić.
 
 #### <a name="category"></a>Kategoria
 

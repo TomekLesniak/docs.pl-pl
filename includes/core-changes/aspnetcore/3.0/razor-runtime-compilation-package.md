@@ -12,7 +12,7 @@ Obsługa kompilacji w czasie wykonywania widoków Razor i Razor Pages została p
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -22,10 +22,10 @@ Kompilacja środowiska uruchomieniowego jest dostępna bez dodatkowych pakietów
 
 Funkcja została przeniesiona do pakietu [Microsoft. AspNetCore. MVC. Razor. RuntimeCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/) .
 
-Poniższe interfejsy API były wcześniej dostępne w `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions` programie w celu obsługi kompilacji w czasie wykonywania. Interfejsy API są teraz dostępne za `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.MvcRazorRuntimeCompilationOptions`pośrednictwem programu.
+Poniższe interfejsy API były wcześniej dostępne w programie w `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions` celu obsługi kompilacji w czasie wykonywania. Interfejsy API są teraz dostępne za pośrednictwem programu `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.MvcRazorRuntimeCompilationOptions` .
 
-- `RazorViewEngineOptions.FileProviders`jest teraz`MvcRazorRuntimeCompilationOptions.FileProviders`
-- `RazorViewEngineOptions.AdditionalCompilationReferences`jest teraz`MvcRazorRuntimeCompilationOptions.AdditionalReferencePaths`
+- `RazorViewEngineOptions.FileProviders` jest teraz `MvcRazorRuntimeCompilationOptions.FileProviders`
+- `RazorViewEngineOptions.AdditionalCompilationReferences` jest teraz `MvcRazorRuntimeCompilationOptions.AdditionalReferencePaths`
 
 Ponadto program `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange` został usunięty. Ponowna kompilacja zmian w pliku jest domyślnie włączona przez odwołanie do `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` pakietu.
 
@@ -38,7 +38,7 @@ Ta zmiana była niezbędna do usunięcia ASP.NET Core zależności współdzielo
 Aplikacje wymagające kompilacji lub ponownej kompilacji plików Razor powinny wykonać następujące czynności:
 
 1. Dodaj odwołanie do `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` pakietu.
-1. Zaktualizuj `Startup.ConfigureServices` metodę projektu w celu dołączenia wywołania do `AddRazorRuntimeCompilation`. Przykład:
+1. Zaktualizuj `Startup.ConfigureServices` metodę projektu w celu dołączenia wywołania do `AddRazorRuntimeCompilation` . Na przykład:
 
     ```csharp
     services.AddMvc()

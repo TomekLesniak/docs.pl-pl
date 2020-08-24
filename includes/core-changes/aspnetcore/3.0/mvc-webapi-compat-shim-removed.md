@@ -12,11 +12,11 @@ Począwszy od ASP.NET Core 3,0, `Microsoft.AspNetCore.Mvc.WebApiCompatShim` paki
 
 #### <a name="change-description"></a>Zmień opis
 
-Pakiet `Microsoft.AspNetCore.Mvc.WebApiCompatShim` (WebApiCompatShim) zapewnia częściową zgodność w ASP.NET Core z ASP.NET 4. x Web API 2, aby uprościć migrację istniejących implementacji interfejsów API sieci web do ASP.NET Core. Jednak aplikacje korzystające z WebApiCompatShim nie korzystają z funkcji związanych z interfejsem API wysyłanych w ostatnich wersjach ASP.NET Core. Takie funkcje obejmują ulepszoną generację funkcji tworzenia specyfikacji interfejsu API, ustandaryzowaną obsługę błędów i generowanie kodu klienta. Aby lepiej skupić się na działaniach interfejsu API w 3,0, WebApiCompatShim został usunięty. Istniejące aplikacje używające WebApiCompatShim powinny migrować do nowszego `[ApiController]` modelu.
+`Microsoft.AspNetCore.Mvc.WebApiCompatShim`Pakiet (WebApiCompatShim) zapewnia częściową zgodność w ASP.NET Core z ASP.NET 4. x Web API 2, aby uprościć migrację istniejących implementacji interfejsów API sieci Web do ASP.NET Core. Jednak aplikacje korzystające z WebApiCompatShim nie korzystają z funkcji związanych z interfejsem API wysyłanych w ostatnich wersjach ASP.NET Core. Takie funkcje obejmują ulepszoną generację funkcji tworzenia specyfikacji interfejsu API, ustandaryzowaną obsługę błędów i generowanie kodu klienta. Aby lepiej skupić się na działaniach interfejsu API w 3,0, WebApiCompatShim został usunięty. Istniejące aplikacje używające WebApiCompatShim powinny migrować do nowszego `[ApiController]` modelu.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

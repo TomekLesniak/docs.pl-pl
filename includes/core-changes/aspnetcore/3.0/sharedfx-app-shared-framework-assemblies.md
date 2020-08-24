@@ -18,7 +18,7 @@ W ramach zmiany niektóre istotne zmiany są wprowadzane w `Microsoft.AspNetCore
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -54,7 +54,7 @@ Nie jest konieczne, aby projekty korzystały z zestawów w programie `Microsoft.
 
 Ta zmiana nie ma zastosowania do wszystkich plików binarnych, do których odwołuje się `Microsoft.AspNetCore.App` w ASP.NET Core 2. x. Do istotnych wyjątków należą:
 
-- `Microsoft.Extensions`biblioteki, które przejdźą do .NET Standard będą dostępne jako pakiety NuGet (zobacz <https://github.com/dotnet/extensions> ).
+- `Microsoft.Extensions` biblioteki, które przejdźą do .NET Standard będą dostępne jako pakiety NuGet (zobacz <https://github.com/dotnet/extensions> ).
 - Interfejsy API produkowane przez zespół ASP.NET Core, które nie są częścią programu `Microsoft.AspNetCore.App` . Na przykład następujące składniki są dostępne jako pakiety NuGet:
   - Entity Framework Core
   - Interfejsy API zapewniające integrację innych firm

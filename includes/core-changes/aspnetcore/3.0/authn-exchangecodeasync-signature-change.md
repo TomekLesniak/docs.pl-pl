@@ -22,15 +22,15 @@ protected virtual System.Threading.Tasks.Task<Microsoft.AspNetCore.Authenticatio
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Ciągi `code` i `redirectUri` zostały przekazane jako oddzielne argumenty.
+`code`Ciągi i `redirectUri` zostały przekazane jako oddzielne argumenty.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-`Code`i `RedirectUri` są właściwościami `OAuthCodeExchangeContext` , które można ustawić za pośrednictwem `OAuthCodeExchangeContext` konstruktora. Nowy `OAuthCodeExchangeContext` typ jest jedynym argumentem przesłanym do `OAuthHandler.ExchangeCodeAsync`.
+`Code` i `RedirectUri` są właściwościami `OAuthCodeExchangeContext` , które można ustawić za pośrednictwem `OAuthCodeExchangeContext` konstruktora. Nowy `OAuthCodeExchangeContext` Typ jest jedynym argumentem przesłanym do `OAuthHandler.ExchangeCodeAsync` .
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -38,7 +38,7 @@ Ta zmiana pozwala na dostarczenie dodatkowych parametrów w sposób rozdzielny. 
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Utwórz `OAuthCodeExchangeContext` z odpowiednimi `code` wartościami i. `redirectUri` Należy <xref:Microsoft.AspNetCore.Authentication.AuthenticationProperties> podać wystąpienie. To pojedyncze `OAuthCodeExchangeContext` wystąpienie można przesłać `OAuthHandler.ExchangeCodeAsync` zamiast wielu argumentów.
+Utwórz `OAuthCodeExchangeContext` z odpowiednimi `code` `redirectUri` wartościami i. <xref:Microsoft.AspNetCore.Authentication.AuthenticationProperties>Należy podać wystąpienie. To pojedyncze `OAuthCodeExchangeContext` wystąpienie można przesłać `OAuthHandler.ExchangeCodeAsync` zamiast wielu argumentów.
 
 #### <a name="category"></a>Kategoria
 

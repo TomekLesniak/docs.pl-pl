@@ -22,7 +22,7 @@ Następujące interfejsy API `public` :
 
 - `Microsoft.Extensions.Localization.Internal.AssemblyWrapper`
 - `Microsoft.Extensions.Localization.Internal.IResourceStringProvider`
-- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer`przeciążenia konstruktora akceptujące jeden z następujących typów parametrów:
+- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer` przeciążenia konstruktora akceptujące jeden z następujących typów parametrów:
   - `AssemblyWrapper`
   - `IResourceStringProvider`
 
@@ -30,9 +30,9 @@ Następujące interfejsy API `public` :
 
 Na poniższej liście przedstawiono zmiany:
 
-- `Microsoft.Extensions.Localization.Internal.AssemblyWrapper`stała `Microsoft.Extensions.Localization.AssemblyWrapper` się i jest teraz `internal` .
-- `Microsoft.Extensions.Localization.Internal.IResourceStringProvider`stała `Microsoft.Extensions.Localization.Internal.IResourceStringProvider` się i jest teraz `internal` .
-- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer`przeciążenia konstruktora akceptujące jeden z następujących typów parametrów są teraz `internal` :
+- `Microsoft.Extensions.Localization.Internal.AssemblyWrapper` stała `Microsoft.Extensions.Localization.AssemblyWrapper` się i jest teraz `internal` .
+- `Microsoft.Extensions.Localization.Internal.IResourceStringProvider` stała `Microsoft.Extensions.Localization.Internal.IResourceStringProvider` się i jest teraz `internal` .
+- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer` przeciążenia konstruktora akceptujące jeden z następujących typów parametrów są teraz `internal` :
   - `AssemblyWrapper`
   - `IResourceStringProvider`
 

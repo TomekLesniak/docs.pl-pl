@@ -8,11 +8,11 @@ ms.locfileid: "73198526"
 ---
 ### <a name="http-response-body-infrastructure-changes"></a>HTTP: zmiany infrastruktury treści odpowiedzi
 
-Infrastruktura do tworzenia kopii zapasowych treści odpowiedzi HTTP została zmieniona. Jeśli używasz `HttpResponse` bezpośrednio, nie musisz wprowadzać żadnych zmian w kodzie. Przeczytaj więcej w przypadku zawijania lub zamieniania `HttpResponse.Body` lub `HttpContext.Features`uzyskiwania dostępu do.
+Infrastruktura do tworzenia kopii zapasowych treści odpowiedzi HTTP została zmieniona. Jeśli używasz `HttpResponse` bezpośrednio, nie musisz wprowadzać żadnych zmian w kodzie. Przeczytaj więcej w przypadku zawijania lub zamieniania `HttpResponse.Body` lub uzyskiwania dostępu do `HttpContext.Features` .
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -24,7 +24,7 @@ Z treścią odpowiedzi HTTP są skojarzone trzy interfejsy API:
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Jeśli zastąpisz `HttpResponse.Body`, zastępuje cały `IHttpResponseBodyFeature` element otoką wokół danego strumienia przy użyciu `StreamResponseBodyFeature` , aby zapewnić domyślne implementacje dla wszystkich oczekiwanych interfejsów API. Ustawienie Przywróć oryginalny strumień przywraca tę zmianę.
+Jeśli zastąpisz `HttpResponse.Body` , zastępuje cały element `IHttpResponseBodyFeature` otoką wokół danego strumienia przy użyciu, `StreamResponseBodyFeature` Aby zapewnić domyślne implementacje dla wszystkich oczekiwanych interfejsów API. Ustawienie Przywróć oryginalny strumień przywraca tę zmianę.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -32,7 +32,7 @@ Motywacja polega na połączeniu interfejsów API treści odpowiedzi w jeden now
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Użyj `IHttpResponseBodyFeature` tam, gdzie wcześniej `IHttpResponseFeature.Body`korzystano `IHttpSendFileFeature`z, `IHttpBufferingFeature`lub.
+Użyj `IHttpResponseBodyFeature` tam, gdzie wcześniej korzystano z `IHttpResponseFeature.Body` , `IHttpSendFileFeature` lub `IHttpBufferingFeature` .
 
 #### <a name="category"></a>Kategoria
 

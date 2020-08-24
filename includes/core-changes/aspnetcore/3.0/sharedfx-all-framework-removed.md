@@ -8,15 +8,15 @@ ms.locfileid: "72394440"
 ---
 ### <a name="shared-framework-removed-microsoftaspnetcoreall"></a>Udostępnione środowisko: Usunięto Microsoft. AspNetCore. All
 
-Począwszy od ASP.NET Core 3,0, `Microsoft.AspNetCore.All` nie jest już tworzony pakiet i `Microsoft.AspNetCore.All` zgodna struktura współdzielona. Ten pakiet jest dostępny w ASP.NET Core 2,2 i nadal będzie otrzymywać aktualizacje obsługi w programie ASP.NET Core 2,1.
+Począwszy od ASP.NET Core 3,0, `Microsoft.AspNetCore.All` `Microsoft.AspNetCore.All` nie jest już tworzony pakiet i zgodna struktura współdzielona. Ten pakiet jest dostępny w ASP.NET Core 2,2 i nadal będzie otrzymywać aktualizacje obsługi w programie ASP.NET Core 2,1.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Aplikacje mogą używać `Microsoft.AspNetCore.All` pakietu dla platformy `Microsoft.AspNetCore.All` udostępnionej w programie .NET Core.
+Aplikacje mogą używać `Microsoft.AspNetCore.All` pakietu dla `Microsoft.AspNetCore.All` platformy udostępnionej w programie .NET Core.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
@@ -24,11 +24,11 @@ Platforma .NET Core 3,0 nie obejmuje `Microsoft.AspNetCore.All` współdzielonej
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-`Microsoft.AspNetCore.All` Pakietbinding zawiera dużą liczbę zależności zewnętrznych.
+`Microsoft.AspNetCore.All`Pakietbinding zawiera dużą liczbę zależności zewnętrznych.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Migruj projekt, aby użyć `Microsoft.AspNetCore.App` struktury. Składniki, które wcześniej były dostępne `Microsoft.AspNetCore.All` w programie, są nadal dostępne w programie NuGet. Te składniki są teraz wdrażane wraz z aplikacją, a nie uwzględniane w strukturze udostępnionej.
+Migruj projekt, aby użyć `Microsoft.AspNetCore.App` struktury. Składniki, które wcześniej były dostępne w programie, `Microsoft.AspNetCore.All` są nadal dostępne w programie NuGet. Te składniki są teraz wdrażane wraz z aplikacją, a nie uwzględniane w strukturze udostępnionej.
 
 #### <a name="category"></a>Kategoria
 

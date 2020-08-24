@@ -30,7 +30,7 @@ Możesz przejść do punktu końcowego z `HttpContext` . Nie ma jednak możliwo�
 
 Jeśli aplikacja korzysta z zasobu punktu końcowego, wywołaj polecenie, <xref:Microsoft.AspNetCore.Http.EndpointHttpContextExtensions.GetEndpoint%2A> `HttpContext` Aby kontynuować dostęp do punktu końcowego.
 
-W ASP.NET Core 5,0 wersji zapoznawczej 8 i nowszych można przywrócić stare zachowanie przy użyciu programu <xref:System.AppContext.SetSwitch%2A> . Przykład:
+W ASP.NET Core 5,0 wersji zapoznawczej 8 i nowszych można przywrócić stare zachowanie przy użyciu programu <xref:System.AppContext.SetSwitch%2A> . Na przykład:
 
 ```csharp
 AppContext.SetSwitch(

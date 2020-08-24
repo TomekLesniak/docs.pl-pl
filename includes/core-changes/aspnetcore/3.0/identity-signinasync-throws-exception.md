@@ -8,27 +8,27 @@ ms.locfileid: "72394230"
 ---
 ### <a name="identity-signinasync-throws-exception-for-unauthenticated-identity"></a>Tożsamość: SignInAsync zgłasza wyjątek dla nieuwierzytelnionej tożsamości
 
-Domyślnie program `SignInAsync` zgłasza wyjątek dla podmiotów zabezpieczeń/tożsamości, w których `IsAuthenticated` jest. `false`
+Domyślnie program `SignInAsync` zgłasza wyjątek dla podmiotów zabezpieczeń/tożsamości, w których `IsAuthenticated` jest `false` .
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-`SignInAsync`akceptuje wszelkie podmioty zabezpieczeń/tożsamości, w tym tożsamości, `IsAuthenticated` w `false`których jest.
+`SignInAsync` akceptuje wszelkie podmioty zabezpieczeń/tożsamości, w tym tożsamości, w których `IsAuthenticated` jest `false` .
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Domyślnie program `SignInAsync` zgłasza wyjątek dla podmiotów zabezpieczeń/tożsamości, w których `IsAuthenticated` jest. `false` Istnieje nowa flaga, która pozwala pominąć to zachowanie, ale zachowanie domyślne zostało zmienione.
+Domyślnie program `SignInAsync` zgłasza wyjątek dla podmiotów zabezpieczeń/tożsamości, w których `IsAuthenticated` jest `false` . Istnieje nowa flaga, która pozwala pominąć to zachowanie, ale zachowanie domyślne zostało zmienione.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Stare zachowanie było przyczyną problemów, ponieważ domyślnie te podmioty zabezpieczeń zostały odrzucone przez `[Authorize]`  /  `RequireAuthenticatedUser()`.
+Stare zachowanie było przyczyną problemów, ponieważ domyślnie te podmioty zabezpieczeń zostały odrzucone przez `[Authorize]`  /  `RequireAuthenticatedUser()` .
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-W ASP.NET Core 3,0 w wersji zapoznawczej 6 `RequireAuthenticatedSignIn` znajduje się `AuthenticationOptions` flaga, `true` która jest domyślnie. Ustaw tę flagę `false` na, aby przywrócić stare zachowanie.
+W ASP.NET Core 3,0 w wersji zapoznawczej 6 znajduje `RequireAuthenticatedSignIn` `AuthenticationOptions` się flaga, która jest `true` domyślnie. Ustaw tę flagę na, aby `false` przywrócić stare zachowanie.
 
 #### <a name="category"></a>Kategoria
 

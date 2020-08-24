@@ -12,7 +12,7 @@ W ramach przenoszenia z interfejsów API "pubternal" interfejsy API warstwy tran
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -23,7 +23,7 @@ W ramach przenoszenia z interfejsów API "pubternal" interfejsy API warstwy tran
 
 - `IConnectionListener`Interfejs został wprowadzony w bibliotece, `Microsoft.AspNetCore.Connections.Abstractions` Aby udostępnić najbardziej używane funkcje z `...Transport.Abstractions` biblioteki.
 - `NoDelay`Jest teraz dostępna w opcjach transportu ( `LibuvTransportOptions` i `SocketTransportOptions` ).
-- `SchedulingMode`nie jest już dostępny.
+- `SchedulingMode` nie jest już dostępny.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

@@ -8,17 +8,17 @@ ms.locfileid: "72394168"
 ---
 ### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Buforowanie: typy ResponseCaching "pubternal" zostały zmienione na wewnętrzne
 
-W ASP.NET Core 3,0 typy "pubternal" w `ResponseCaching` zostały zmienione na. `internal`
+W ASP.NET Core 3,0 typy "pubternal" w `ResponseCaching` zostały zmienione na `internal` .
 
 Ponadto domyślne implementacje `IResponseCachingPolicyProvider` i `IResponseCachingKeyProvider` nie są już dodawane do usług w ramach `AddResponseCaching` metody.
 
 #### <a name="change-description"></a>Zmień opis
 
-W ASP.NET Core typy "pubternal" są zadeklarowane jako `public` , ale znajdują się w przestrzeni nazw z `.Internal`sufiksem. Chociaż te typy są publiczne, nie mają żadnych zasad pomocy technicznej i podlegają nieprzerwanym zmianom. Niestety, przypadkowe użycie tych typów było wspólne, co spowodowało istotne zmiany w tych projektach i ograniczenie możliwości utrzymania struktury.
+W ASP.NET Core typy "pubternal" są zadeklarowane jako, `public` ale znajdują się w przestrzeni nazw z sufiksem `.Internal` . Chociaż te typy są publiczne, nie mają żadnych zasad pomocy technicznej i podlegają nieprzerwanym zmianom. Niestety, przypadkowe użycie tych typów było wspólne, co spowodowało istotne zmiany w tych projektach i ograniczenie możliwości utrzymania struktury.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -26,11 +26,11 @@ Te typy były widoczne publicznie, ale nie są obsługiwane.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Te typy są teraz `internal`.
+Te typy są teraz `internal` .
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-`internal` Zakres lepiej odzwierciedla nieobsługiwane zasady.
+`internal`Zakres lepiej odzwierciedla nieobsługiwane zasady.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 

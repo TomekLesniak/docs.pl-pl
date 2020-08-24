@@ -18,13 +18,13 @@ Klienci korzystający z ASP.NET Core z .NET Framework mogą kontynuować w pełn
 
 Aby uzyskać więcej informacji na temat przenoszenia z .NET Framework do programu .NET Core, zobacz [przenoszenie do platformy .NET Core](~/docs/core/porting/index.md).
 
-`Microsoft.Extensions`nie ma to wpływu na pakiety (takie jak rejestrowanie, iniekcja zależności i konfiguracja Entity Framework Core). Będą oni nadal obsługiwać .NET Standard.
+`Microsoft.Extensions` nie ma to wpływu na pakiety (takie jak rejestrowanie, iniekcja zależności i konfiguracja Entity Framework Core). Będą oni nadal obsługiwać .NET Standard.
 
 Aby uzyskać więcej informacji na temat motywacji tej zmiany, zobacz [oryginalny wpis w blogu](https://devblogs.microsoft.com/aspnet/a-first-look-at-changes-coming-in-asp-net-core-3-0/).
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

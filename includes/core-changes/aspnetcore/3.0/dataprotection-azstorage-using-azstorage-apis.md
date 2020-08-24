@@ -8,21 +8,21 @@ ms.locfileid: "75902001"
 ---
 ### <a name="data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis"></a>Ochrona danych: usługa dataprotection. AzureStorage używa nowych interfejsów API usługi Azure Storage
 
-<xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName>zależy od [bibliotek usługi Azure Storage](https://github.com/Azure/azure-storage-net). Te biblioteki zmieniły swoje zestawy, pakiety i przestrzenie nazw. Począwszy od ASP.NET Core 3,0, `Microsoft.AspNetCore.DataProtection.AzureStorage` program używa nowych `Microsoft.Azure.Storage.`prefiksów interfejsów API i pakietów.
+<xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> zależy od [bibliotek usługi Azure Storage](https://github.com/Azure/azure-storage-net). Te biblioteki zmieniły swoje zestawy, pakiety i przestrzenie nazw. Począwszy od ASP.NET Core 3,0, program `Microsoft.AspNetCore.DataProtection.AzureStorage` używa nowych `Microsoft.Azure.Storage.` prefiksów interfejsów API i pakietów.
 
-Pytania dotyczące interfejsów API usługi Azure Storage można używać <https://github.com/Azure/azure-storage-net>. Aby zapoznać się z omówieniem tego problemu, zobacz [dotnet/aspnetcore # 8472](https://github.com/dotnet/aspnetcore/issues/8472).
+Pytania dotyczące interfejsów API usługi Azure Storage można używać <https://github.com/Azure/azure-storage-net> . Aby zapoznać się z omówieniem tego problemu, zobacz [dotnet/aspnetcore # 8472](https://github.com/dotnet/aspnetcore/issues/8472).
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Pakiet przywoływany `WindowsAzure.Storage` do pakietu NuGet.
+Pakiet przywoływany do `WindowsAzure.Storage` pakietu NuGet.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Pakiet odwołuje się `Microsoft.Azure.Storage.Blob` do pakietu NuGet.
+Pakiet odwołuje się do `Microsoft.Azure.Storage.Blob` pakietu NuGet.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

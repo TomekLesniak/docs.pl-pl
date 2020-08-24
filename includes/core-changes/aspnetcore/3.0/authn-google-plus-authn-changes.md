@@ -24,7 +24,7 @@ Wszystkie wersje. Ta zmiana jest zewnętrzna dla ASP.NET Core.
 
 ##### <a name="owin-with-aspnet-web-forms-and-mvc"></a>Owin z ASP.NET Web Forms i MVC
 
-W `Microsoft.Owin` przypadku 3.1.0 i nowszych można znaleźć w [tym miejscu](https://github.com/aspnet/AspNetKatana/issues/251#issuecomment-449587635)tymczasowe środki zaradcze. Aplikacje powinny zakończyć testowanie przy użyciu środków zaradczych, aby sprawdzić zmiany w formacie danych. Istnieją plany wydania `Microsoft.Owin` 4.0.1 z poprawkami. Aplikacje korzystające ze starszej wersji powinny aktualizować wersję 4.0.1.
+W przypadku `Microsoft.Owin` 3.1.0 i nowszych można znaleźć w [tym miejscu](https://github.com/aspnet/AspNetKatana/issues/251#issuecomment-449587635)tymczasowe środki zaradcze. Aplikacje powinny zakończyć testowanie przy użyciu środków zaradczych, aby sprawdzić zmiany w formacie danych. Istnieją plany wydania `Microsoft.Owin` 4.0.1 z poprawkami. Aplikacje korzystające ze starszej wersji powinny aktualizować wersję 4.0.1.
 
 ##### <a name="aspnet-core-1x"></a>ASP.NET Core 1. x
 
@@ -32,7 +32,7 @@ W `Microsoft.Owin` przypadku 3.1.0 i nowszych można znaleźć w [tym miejscu](h
 
 ##### <a name="aspnet-core-2x"></a>ASP.NET Core 2. x
 
-W `Microsoft.AspNetCore.Authentication.Google` przypadku wersji 2. x Zastąp istniejące wywołanie do `AddGoogle` programu `Startup.ConfigureServices` przy użyciu następującego kodu:
+W przypadku `Microsoft.AspNetCore.Authentication.Google` wersji 2. x Zastąp istniejące wywołanie do `AddGoogle` programu `Startup.ConfigureServices` przy użyciu następującego kodu:
 
 ```csharp
 .AddGoogle(o =>
@@ -54,7 +54,7 @@ Poprawki 2,1 lutego i 2,2 dołączone do poprzedniej ponownej konfiguracji jako 
 
 ##### <a name="aspnet-core-30"></a>ASP.NET Core 3,0
 
-Środki zaradcze określone dla ASP.NET Core 2. x mogą być również używane dla ASP.NET Core 3,0. W przyszłości wersje zapoznawcze 3,0 `Microsoft.AspNetCore.Authentication.Google` pakietu mogą zostać usunięte. Użytkownicy będą kierowani do `Microsoft.AspNetCore.Authentication.OpenIdConnect` zamiast tego. Poniższy kod ilustruje sposób zamiany `AddGoogle` na `AddOpenIdConnect` w. `Startup.ConfigureServices` Tego zastąpienia można użyć w przypadku ASP.NET Core 2,0 i nowszych. można go dostosować do ASP.NET Core 1. x zgodnie z potrzebami.
+Środki zaradcze określone dla ASP.NET Core 2. x mogą być również używane dla ASP.NET Core 3,0. W przyszłości wersje zapoznawcze 3,0 `Microsoft.AspNetCore.Authentication.Google` pakietu mogą zostać usunięte. Użytkownicy będą kierowani do `Microsoft.AspNetCore.Authentication.OpenIdConnect` zamiast tego. Poniższy kod ilustruje sposób zamiany na `AddGoogle` `AddOpenIdConnect` w `Startup.ConfigureServices` . Tego zastąpienia można użyć w przypadku ASP.NET Core 2,0 i nowszych. można go dostosować do ASP.NET Core 1. x zgodnie z potrzebami.
 
 ```csharp
 .AddOpenIdConnect("Google", o =>

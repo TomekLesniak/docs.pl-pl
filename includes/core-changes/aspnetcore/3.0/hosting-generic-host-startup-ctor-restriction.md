@@ -8,7 +8,7 @@ ms.locfileid: "75901912"
 ---
 ### <a name="hosting-generic-host-restricts-startup-constructor-injection"></a>Hosting: Host ogólny ogranicza iniekcję konstruktora startowego
 
-Jedynym typem obsługiwanym przez hosta ogólnego dla `Startup` iniekcji konstruktora klasy `IHostEnvironment`są `IWebHostEnvironment`,, `IConfiguration`i. Aplikacje korzystające z programu `WebHost` pozostają bez zmian.
+Jedynym typem obsługiwanym przez hosta ogólnego dla `Startup` iniekcji konstruktora klasy są `IHostEnvironment` , `IWebHostEnvironment` , i `IConfiguration` . Aplikacje korzystające z programu `WebHost` pozostają bez zmian.
 
 #### <a name="change-description"></a>Zmień opis
 
@@ -22,11 +22,11 @@ Przed ASP.NET Core 3,0, iniekcja konstruktora może zostać użyta dla dowolnego
 
 <https://github.com/dotnet/aspnetcore/blob/b1ca2c1155da3920f0df5108b9fedbe82efaa11c/src/ProjectTemplates/Web.ProjectTemplates/content/EmptyWeb-CSharp/Program.cs#L19-L24>
 
-`Host`używa jednego kontenera iniekcji zależności (DI) do kompilowania aplikacji. `WebHost`używa dwóch kontenerów: jeden dla hosta i jeden dla aplikacji. W związku z tym `Startup` Konstruktor nie obsługuje już niestandardowego dodawania usług. Tylko `IHostEnvironment`, `IWebHostEnvironment`i `IConfiguration` można wstrzyknąć. Ta zmiana zapobiega występowaniu problemów, takich jak duplikowanie tworzenia pojedynczej usługi.
+`Host` używa jednego kontenera iniekcji zależności (DI) do kompilowania aplikacji. `WebHost` używa dwóch kontenerów: jeden dla hosta i jeden dla aplikacji. W związku z tym `Startup` Konstruktor nie obsługuje już niestandardowego dodawania usług. Tylko `IHostEnvironment` , `IWebHostEnvironment` i `IConfiguration` można wstrzyknąć. Ta zmiana zapobiega występowaniu problemów, takich jak duplikowanie tworzenia pojedynczej usługi.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -34,7 +34,7 @@ Ta zmiana jest konsekwencją zmiany platformy stosu sieci Web na ogólną biblio
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Wsuń usługi do sygnatury `Startup.Configure` metody. Przykład:
+Wsuń usługi do `Startup.Configure` sygnatury metody. Na przykład:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IOptions<MyOptions> options)

@@ -12,7 +12,7 @@ Począwszy od ASP.NET Core 3,0, Przeciążenie metody [IdentityBuilderUIExtensio
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

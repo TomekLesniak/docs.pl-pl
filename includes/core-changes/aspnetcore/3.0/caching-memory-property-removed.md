@@ -16,15 +16,15 @@ Ta zmiana to kontynuacja dla elementu [ASPNET/buforowanie # 221](https://github.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-`MemoryCacheOptions.CompactOnMemoryPressure`Właściwość była dostępna.
+`MemoryCacheOptions.CompactOnMemoryPressure` Właściwość była dostępna.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-`MemoryCacheOptions.CompactOnMemoryPressure` Właściwość została usunięta.
+`MemoryCacheOptions.CompactOnMemoryPressure`Właściwość została usunięta.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -32,7 +32,7 @@ Automatyczne kompaktowanie pamięci podręcznej powodowało problemy. Aby unikn�
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Aby skompaktować pamięć podręczną, `MemoryCache` downcast do `Compact` i Wywołaj w razie potrzeby.
+Aby skompaktować pamięć podręczną, downcast do `MemoryCache` i Wywołaj w `Compact` razie potrzeby.
 
 #### <a name="category"></a>Kategoria
 

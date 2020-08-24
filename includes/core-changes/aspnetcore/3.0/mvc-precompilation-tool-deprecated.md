@@ -14,7 +14,7 @@ W ASP.NET Core 3,0 zostało usunięte narzędzie wstępnej kompilacji MVC ASP.NE
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

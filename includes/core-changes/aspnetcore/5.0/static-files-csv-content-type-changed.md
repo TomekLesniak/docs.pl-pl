@@ -6,31 +6,31 @@ ms.contentlocale: pl-PL
 ms.lasthandoff: 03/30/2020
 ms.locfileid: "80391185"
 ---
-### <a name="static-files-csv-content-type-changed-to-standards-compliant"></a>Pliki statyczne: typ zawartości CSV zmieniony na zgodny ze standardami
+### <a name="static-files-csv-content-type-changed-to-standards-compliant"></a>Pliki statyczne: typ zawartości CSV został zmieniony na zgodny ze standardami
 
-W ASP.NET Core 5.0 domyślna `Content-Type` wartość nagłówka odpowiedzi używana przez [oprogramowanie pośredniczące plików statycznych](/aspnet/core/fundamentals/static-files) dla `text/csv`plików *csv* została zmieniona na wartość ze standardami.
+W ASP.NET Core 5,0 `Content-Type` wartość domyślna nagłówka odpowiedzi, która jest stosowana przez [oprogramowanie pośredniczące plików statycznych](/aspnet/core/fundamentals/static-files) dla plików *CSV* , została zmieniona na wartość zgodną ze standardami `text/csv` .
 
-Aby do dyskusji na ten temat, zobacz [dotnet/aspnetcore#17385](https://github.com/dotnet/AspNetCore/issues/17385).
+Aby zapoznać się z omówieniem tego problemu, zobacz [dotnet/aspnetcore # 17385](https://github.com/dotnet/AspNetCore/issues/17385).
 
-#### <a name="version-introduced"></a>Wprowadzono wersję
+#### <a name="version-introduced"></a>Wprowadzona wersja
 
-5.0 Wersja zapoznawcza 1
+5,0 wersja zapoznawcza 1
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Użyto `Content-Type` `application/octet-stream` wartości nagłówka.
+`Content-Type`Użyto wartości nagłówka `application/octet-stream` .
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Używana `Content-Type` jest `text/csv` wartość nagłówka.
+`Content-Type`Wartość nagłówka `text/csv` jest używana.
 
-#### <a name="reason-for-change"></a>Powód zmiany
+#### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Zgodność z normą [RFC 7111.](https://tools.ietf.org/html/rfc7111#section-5.1)
+Zgodność ze standardem [RFC 7111](https://tools.ietf.org/html/rfc7111#section-5.1) .
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Jeśli ta zmiana ma wpływ na aplikację, można dostosować mapowanie typu rozszerzenia pliku do MIME. Aby powrócić do `application/octet-stream` typu MIME, <xref:Microsoft.AspNetCore.Builder.StaticFileExtensions.UseStaticFiles%2A> zmodyfikuj wywołanie metody w `Startup.Configure`. Przykład:
+Jeśli ta zmiana ma wpływ na aplikację, można dostosować mapowanie typu rozszerzenia pliku do MIME. Aby powrócić do `application/octet-stream` typu MIME, należy zmodyfikować <xref:Microsoft.AspNetCore.Builder.StaticFileExtensions.UseStaticFiles%2A> wywołanie metody w `Startup.Configure` . Na przykład:
 
 ```csharp
 var provider = new FileExtensionContentTypeProvider();

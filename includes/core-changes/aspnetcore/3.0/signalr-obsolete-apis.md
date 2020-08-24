@@ -12,11 +12,11 @@ Metody `UseConnections` i `UseSignalR` i klasy `ConnectionsRouteBuilder` i `HubR
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Routing centrum sygnałów został skonfigurowany przy użyciu `UseSignalR` lub `UseConnections`.
+Routing centrum sygnałów został skonfigurowany przy użyciu `UseSignalR` lub `UseConnections` .
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
@@ -28,7 +28,7 @@ Oprogramowanie pośredniczące jest przenoszone do nowego systemu routingu punkt
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Zamień `UseSignalR` na `UseEndpoints`:
+Zamień `UseSignalR` na `UseEndpoints` :
 
 **Stary kod:**
 

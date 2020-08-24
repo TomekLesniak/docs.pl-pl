@@ -8,21 +8,21 @@ ms.locfileid: "75902059"
 ---
 ### <a name="authentication-httpcontextauthentication-property-removed"></a>Uwierzytelnianie: Właściwość HttpContext. Authentication została usunięta
 
-`Authentication` Właściwość zaniechana `HttpContext` została usunięta.
+Właściwość zaniechana `Authentication` `HttpContext` została usunięta.
 
 #### <a name="change-description"></a>Zmień opis
 
-W ramach programu [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504) `Authentication` Właściwość zaniechana `HttpContext` została usunięta. `Authentication` Właściwość została zaniechana od 2,0. Opublikowano [Przewodnik migracji](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) w celu migrowania kodu przy użyciu tej przestarzałej właściwości do nowych interfejsów API wymiany. Pozostałe nieużywane klasy/interfejsy API powiązane ze starym stosem uwierzytelniania ASP.NET Core 1. x zostały usunięte [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65)podczas zatwierdzania.
+W ramach programu [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504)Właściwość zaniechana `Authentication` `HttpContext` została usunięta. `Authentication`Właściwość została zaniechana od 2,0. Opublikowano [Przewodnik migracji](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) w celu migrowania kodu przy użyciu tej przestarzałej właściwości do nowych interfejsów API wymiany. Pozostałe nieużywane klasy/interfejsy API powiązane ze starym stosem uwierzytelniania ASP.NET Core 1. x zostały usunięte podczas zatwierdzania [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65) .
 
 Aby zapoznać się z omówieniem, zobacz [dotnet/aspnetcore # 6533](https://github.com/dotnet/aspnetcore/issues/6533).
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Interfejsy API ASP.NET Core 1,0 zostały zastąpione metodami rozszerzającymi w <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>temacie.
+Interfejsy API ASP.NET Core 1,0 zostały zastąpione metodami rozszerzającymi w temacie <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName> .
 
 #### <a name="recommended-action"></a>Zalecana akcja
 

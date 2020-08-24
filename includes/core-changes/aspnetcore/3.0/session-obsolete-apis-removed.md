@@ -12,7 +12,7 @@ Usunięto przestarzałe interfejsy API służące do konfigurowania plików cook
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -20,7 +20,7 @@ Ta zmiana wymusza spójność interfejsów API w celu konfigurowania funkcji uż
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Migruj użycie usuniętych interfejsów API do ich nowszych zamian. Rozważmy następujący przykład w `Startup.ConfigureServices`:
+Migruj użycie usuniętych interfejsów API do ich nowszych zamian. Rozważmy następujący przykład w `Startup.ConfigureServices` :
 
 ```csharp
 public void ConfigureServices(ServiceCollection services)

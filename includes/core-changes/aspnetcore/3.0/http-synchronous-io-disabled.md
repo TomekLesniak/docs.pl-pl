@@ -12,7 +12,7 @@ Począwszy od ASP.NET Core 3,0, operacje serwera synchronicznego są domyślnie 
 
 #### <a name="change-description"></a>Zmień opis
 
-`AllowSynchronousIO`jest opcją na każdym serwerze, który włącza lub wyłącza synchroniczne interfejsy API we `HttpRequest.Body.Read`/ `HttpResponse.Body.Write`wy, `Stream.Flush`takie jak, i. Te interfejsy API były źródłem zawieszania wątków i zawieszenia aplikacji. Począwszy od ASP.NET Core 3,0 wersji zapoznawczej 3, te operacje synchroniczne są domyślnie wyłączone.
+`AllowSynchronousIO` jest opcją na każdym serwerze, który włącza lub wyłącza synchroniczne interfejsy API we/wy, takie jak `HttpRequest.Body.Read` , `HttpResponse.Body.Write` i `Stream.Flush` . Te interfejsy API były źródłem zawieszania wątków i zawieszenia aplikacji. Począwszy od ASP.NET Core 3,0 wersji zapoznawczej 3, te operacje synchroniczne są domyślnie wyłączone.
 
 Narażone serwery:
 
@@ -27,9 +27,9 @@ Oczekiwane błędy są podobne do:
 - `Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call FlushAsync or set AllowSynchronousIO to true instead.`
 
-Każdy serwer ma `AllowSynchronousIO` opcję, która steruje tym zachowaniem i domyślnie dla wszystkich z nich jest `false`teraz.
+Każdy serwer ma `AllowSynchronousIO` opcję, która steruje tym zachowaniem i domyślnie dla wszystkich z nich jest teraz `false` .
 
-Zachowanie może być również zastąpione dla każdego żądania jako tymczasowe środki zaradcze. Przykład:
+Zachowanie może być również zastąpione dla każdego żądania jako tymczasowe środki zaradcze. Na przykład:
 
 ```csharp
 var syncIOFeature = HttpContext.Features.Get<IHttpBodyControlFeature>();
@@ -39,17 +39,17 @@ if (syncIOFeature != null)
 }
 ```
 
-Jeśli masz problemy z `TextWriter` lub innym strumieniem wywołującym synchroniczny interfejs API `Dispose`w programie, wywołaj zamiast niego nowy `DisposeAsync` interfejs API.
+Jeśli masz problemy z `TextWriter` lub innym strumieniem wywołującym synchroniczny interfejs API w programie `Dispose` , wywołaj `DisposeAsync` zamiast niego nowy interfejs API.
 
 Aby zapoznać się z omówieniem, zobacz [dotnet/aspnetcore # 7644](https://github.com/dotnet/aspnetcore/issues/7644).
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-`HttpRequest.Body.Read`, `HttpResponse.Body.Write`i `Stream.Flush` były domyślnie dozwolone.
+`HttpRequest.Body.Read`, `HttpResponse.Body.Write` i `Stream.Flush` były domyślnie dozwolone.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 

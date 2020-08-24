@@ -25,7 +25,7 @@ Poprzednie pakiety i moduły npm zostaną później usunięte w programie .NET 5
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

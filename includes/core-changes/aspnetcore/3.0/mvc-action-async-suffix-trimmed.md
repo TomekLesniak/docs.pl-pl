@@ -12,7 +12,7 @@ W ramach adresowania [dotnet/aspnetcore # 4849](https://github.com/dotnet/aspnet
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -29,7 +29,7 @@ public class ProductController : Controller
 }
 ```
 
-Akcja obsługuje routing za pośrednictwem `Product/ListAsync`. Generowanie linku wymaga określenia `Async` sufiksu. Przykład:
+Akcja obsługuje routing za pośrednictwem `Product/ListAsync` . Generowanie linku wymaga określenia `Async` sufiksu. Na przykład:
 
 ```cshtml
 <a asp-controller="Product" asp-action="ListAsync">List</a>
@@ -37,13 +37,13 @@ Akcja obsługuje routing za pośrednictwem `Product/ListAsync`. Generowanie link
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-W ASP.NET Core 3,0 akcja jest w trakcie routingu za `Product/List`pośrednictwem. Kod generacji łącza powinien pominąć `Async` sufiks. Przykład:
+W ASP.NET Core 3,0 akcja jest w trakcie routingu za pośrednictwem `Product/List` . Kod generacji łącza powinien pominąć `Async` sufiks. Na przykład:
 
 ```cshtml
 <a asp-controller="Product" asp-action="List">List</a>
 ```
 
-Ta zmiana nie ma wpływu na nazwy określone `[ActionName]` przy użyciu atrybutu. Nowe zachowanie można wyłączyć, ustawiając wartość `MvcOptions.SuppressAsyncSuffixInActionNames` `false` w: `Startup.ConfigureServices`
+Ta zmiana nie ma wpływu na nazwy określone przy użyciu `[ActionName]` atrybutu. Nowe zachowanie można wyłączyć, ustawiając wartość `MvcOptions.SuppressAsyncSuffixInActionNames` `false` w `Startup.ConfigureServices` :
 
 ```csharp
 services.AddMvc(options =>
@@ -54,14 +54,14 @@ services.AddMvc(options =>
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Przy użyciu konwencji asynchroniczne metody .NET są sufiksem `Async`. Jednak jeśli metoda definiuje akcję MVC, nie można użyć `Async` sufiksu.
+Przy użyciu konwencji asynchroniczne metody .NET są sufiksem `Async` . Jednak jeśli metoda definiuje akcję MVC, nie można użyć `Async` sufiksu.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
 Jeśli aplikacja zależy od akcji MVC z zachowaniem `Async` sufiksu nazwy, wybierz jedno z następujących środków zaradczych:
 
-- Użyj atrybutu `[ActionName]` , aby zachować oryginalną nazwę.
-- Wyłącz zmianę nazwy poprzez ustawienie na `MvcOptions.SuppressAsyncSuffixInActionNames` `false` wartość w: `Startup.ConfigureServices`
+- Użyj `[ActionName]` atrybutu, aby zachować oryginalną nazwę.
+- Wyłącz zmianę nazwy poprzez ustawienie na wartość `MvcOptions.SuppressAsyncSuffixInActionNames` `false` w `Startup.ConfigureServices` :
 
 ```csharp
 services.AddMvc(options =>
