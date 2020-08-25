@@ -2,12 +2,12 @@
 title: Publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 description: Publikowanie tworzy zestaw plików, które są konieczne do uruchomienia aplikacji .NET Core.
 ms.date: 07/04/2020
-ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 04dfbae85f196ca4c8f8eb593637a801aa9773f2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051886"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811395"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Samouczek: publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 
@@ -39,7 +39,7 @@ Interfejs wiersza polecenia platformy .NET Core jest używany do publikowania ap
 
    Dane wyjściowe polecenia są podobne do poniższego przykładu:
 
-   ```
+   ```output
    Microsoft (R) Build Engine version 16.6.0+5ff7b0c9e for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -97,7 +97,7 @@ W poniższych krokach zawarto Podgląd plików utworzonych przez proces publikow
 
    1. Wprowadź nazwę w odpowiedzi na monit, a następnie naciśnij dowolny klawisz, aby wyjść.
 
-1. Na dowolnej platformie Uruchom aplikację za pomocą [`dotnet`](../tools/dotnet.md) polecenia:
+1. Na dowolnej platformie Uruchom aplikację za pomocą  [`dotnet`](../tools/dotnet.md) polecenia:
 
    1. Wprowadź `dotnet HelloWorld.dll` i naciśnij klawisz <kbd>Enter</kbd>.
 

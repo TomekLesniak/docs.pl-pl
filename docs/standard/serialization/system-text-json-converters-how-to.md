@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: abda23ea538c2c0da6ada4f359ce745602dca45d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e0b769d7bb6b336d226cd48de1932524c4d7e74d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84279766"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811070"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Jak pisać konwertery niestandardowe na potrzeby serializacji JSON (kierowanie) w programie .NET
 
@@ -93,7 +93,7 @@ Wzorzec fabryki jest wymagany do otwierania typów ogólnych, ponieważ kod do k
 
 Jeśli musisz zgłosić wyjątek w kodzie obsługi błędu, rozważ przegenerowanie <xref:System.Text.Json.JsonException> bez komunikatu. Ten typ wyjątku powoduje automatyczne utworzenie komunikatu zawierającego ścieżkę do części JSON, która spowodowała błąd. Na przykład instrukcja `throw new JsonException();` generuje komunikat o błędzie, jak w poniższym przykładzie:
 
-```
+```output
 Unhandled exception. System.Text.Json.JsonException:
 The JSON value could not be converted to System.Object.
 Path: $.Date | LineNumber: 1 | BytePositionInLine: 37.
@@ -165,9 +165,9 @@ Oto niestandardowy konwerter dla poprzedniej struktury:
 
 Podczas serializacji lub deserializacji konwerter jest wybierany dla każdego elementu JSON w następującej kolejności, na podstawie najwyższego priorytetu:
 
-* `[JsonConverter]`zastosowano do właściwości.
+* `[JsonConverter]` zastosowano do właściwości.
 * Konwerter dodany do `Converters` kolekcji.
-* `[JsonConverter]`stosowane do niestandardowego typu wartości lub POCO.
+* `[JsonConverter]` stosowane do niestandardowego typu wartości lub POCO.
 
 Jeśli wiele konwerterów niestandardowych dla typu są zarejestrowane w `Converters` kolekcji, używany jest pierwszy konwerter zwracający wartość true dla `CanConvert` .
 
@@ -190,12 +190,12 @@ Wnioskowanie o typie może być niedokładne. Jeśli Deserializator analizuje nu
 
 W przypadku scenariuszy, które wymagają wnioskowania o typie, poniższy kod przedstawia niestandardowy konwerter `object` właściwości. Kod konwertuje:
 
-* `true`i `false` do`Boolean`
-* Liczby bez wartości dziesiętnej na`long`
-* Liczby z liczbą dziesiętną do`double`
-* Daty do`DateTime`
-* Ciągi do`string`
-* Wszystko inne do`JsonElement`
+* `true` i `false` do `Boolean`
+* Liczby bez wartości dziesiętnej na `long`
+* Liczby z liczbą dziesiętną do `double`
+* Daty do `DateTime`
+* Ciągi do `string`
+* Wszystko inne do `JsonElement`
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/ObjectToInferredTypesConverter.cs)]
 
@@ -325,10 +325,10 @@ Jeśli musisz utworzyć konwerter, który modyfikuje zachowanie istniejącego wb
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 
 * [Kod źródłowy wbudowanych konwerterów](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters)
-* [Obsługa DateTime i DateTimeOffset wSystem.Text.Json](../datetime/system-text-json-support.md)
-* [System.Text.JsonPodsumowanie](system-text-json-overview.md)
-* [Jak używaćSystem.Text.Json](system-text-json-how-to.md)
-* [Jak przeprowadzić migrację zNewtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [System.Text.JsonDokumentacja interfejsu API](xref:System.Text.Json)
+* [Obsługa DateTime i DateTimeOffset w System.Text.Json](../datetime/system-text-json-support.md)
+* [System.Text.Json Podsumowanie](system-text-json-overview.md)
+* [Jak używać System.Text.Json](system-text-json-how-to.md)
+* [Jak przeprowadzić migrację z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [System.Text.Json Dokumentacja interfejsu API](xref:System.Text.Json)
 * [System.Text.Json. Dokumentacja interfejsu API serializacji](xref:System.Text.Json.Serialization)
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

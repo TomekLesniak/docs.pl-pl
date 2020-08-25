@@ -3,12 +3,13 @@ title: Właściwości programu MSBuild dla Microsoft. NET. Sdk
 description: Odwołanie do właściwości i elementów programu MSBuild, które są zrozumiałe dla zestaw .NET Core SDK.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 7980369b87d606d3876fe043e929a65da1d0d92b
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.custom: updateeachrelease
+ms.openlocfilehash: 39cbd18121d2b8659b2f5270f39624798f4ebbdc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916257"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810526"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Dokumentacja programu MSBuild dla projektów zestaw .NET Core SDK
 
@@ -97,10 +98,10 @@ Można określić właściwości, takie jak `PackageId` ,,, `PackageVersion` `Pa
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 
-`RuntimeIdentifiers`Właściwość pozwala określić rozdzielaną średnikami listę [identyfikatorów środowiska uruchomieniowego (RID)](../rid-catalog.md) dla projektu. Użyj tej właściwości, jeśli chcesz opublikować dla wielu środowisk uruchomieniowych. `RuntimeIdentifiers`jest używany podczas przywracania, aby upewnić się, że odpowiednie zasoby znajdują się na wykresie.
+`RuntimeIdentifiers`Właściwość pozwala określić rozdzielaną średnikami listę [identyfikatorów środowiska uruchomieniowego (RID)](../rid-catalog.md) dla projektu. Użyj tej właściwości, jeśli chcesz opublikować dla wielu środowisk uruchomieniowych. `RuntimeIdentifiers` jest używany podczas przywracania, aby upewnić się, że odpowiednie zasoby znajdują się na wykresie.
 
 > [!TIP]
-> `RuntimeIdentifier`(pojedyncze) może zapewnić szybsze kompilacje, gdy wymagane jest tylko jedno środowisko uruchomieniowe.
+> `RuntimeIdentifier` (pojedyncze) może zapewnić szybsze kompilacje, gdy wymagane jest tylko jedno środowisko uruchomieniowe.
 
 ```xml
 <PropertyGroup>
@@ -165,6 +166,50 @@ Domyślnie w nowym projekcie .NET Core Właściwość ta ma ustawioną wartość
 ```
 
 Aby uzyskać więcej informacji, zobacz [wersja języka C#](../../csharp/language-reference/configure-language-version.md#override-a-default).
+
+## <a name="code-analysis-properties"></a>Właściwości analizy kodu
+
+### <a name="analysislevel"></a>AnalysisLevel
+
+`AnalysisLevel`Właściwość pozwala określić poziom analizy kodu. Jeśli na przykład chcesz uzyskać dostęp do analizatorów kodu w wersji zapoznawczej, ustaw wartość `AnalysisLevel` `preview` . Wartość domyślna to `latest`.
+
+```xml
+<PropertyGroup>
+  <AnalysisLevel>preview</AnalysisLevel>
+</PropertyGroup>
+```
+
+W poniższej tabeli przedstawiono dostępne opcje.
+
+| Wartość | Znaczenie |
+|-|-|
+| `latest` | Używane są najnowsze analizatory kodu, które zostały wydane. Jest to opcja domyślna. |
+| `preview` | Są używane najnowsze analizatory kodu, nawet jeśli są one w wersji zapoznawczej. |
+| `5.0` | Używany jest zestaw reguł, które zostały włączone dla wydania .NET 5,0, nawet jeśli są dostępne nowsze reguły. |
+| `5` | Używany jest zestaw reguł, które zostały włączone dla wydania .NET 5,0, nawet jeśli są dostępne nowsze reguły. |
+
+### <a name="codeanalysistreatwarningsaserrors"></a>CodeAnalysisTreatWarningsAsErrors
+
+`CodeAnalysisTreatWarningsAsErrors`Właściwość pozwala określić, czy ostrzeżenia analizy kodu powinny być traktowane jako ostrzeżenia i przerwać kompilację. Jeśli używasz `-warnaserror` flagi podczas kompilowania projektów, ostrzeżenia [analizy kodu platformy .NET](../../fundamentals/productivity/code-analysis.md) również są traktowane jako błędy. Jeśli chcesz, aby ostrzeżenia kompilatora były traktowane jako błędy, możesz ustawić `CodeAnalysisTreatWarningsAsErrors` Właściwość programu MSBuild na `false` w pliku projektu.
+
+```xml
+<PropertyGroup>
+  <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+</PropertyGroup>
+```
+
+### <a name="enablenetanalyzers"></a>EnableNETAnalyzers
+
+[Analiza kodu platformy .NET](../../fundamentals/productivity/code-analysis.md) jest domyślnie włączona dla projektów przeznaczonych dla platformy .NET 5,0 lub nowszej. Możesz włączyć analizę kodu platformy .NET dla projektów przeznaczonych dla wcześniejszych wersji platformy .NET, ustawiając `EnableNETAnalyzers` Właściwość na true. Aby wyłączyć analizę kodu w dowolnym projekcie, należy ustawić tę właściwość na `false` .
+
+```xml
+<PropertyGroup>
+  <EnableNETAnalyzers>true</EnableNETAnalyzers>
+</PropertyGroup>
+```
+
+> [!TIP]
+> Innym sposobem na włączenie analizy kodu .NET dla projektów przeznaczonych dla wersji .NET wcześniejszych niż .NET 5,0 jest ustawienie właściwości [AnalysisLevel](#analysislevel) na `latest` .
 
 ## <a name="run-time-configuration-properties"></a>Właściwości konfiguracji czasu wykonywania
 
@@ -344,7 +389,7 @@ Przywracanie przywoływanego pakietu instaluje wszystkie jego bezpośrednie zale
 </PropertyGroup>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie do schematu programu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference)
 - [Typowe właściwości programu MSBuild](/visualstudio/msbuild/common-msbuild-project-properties)

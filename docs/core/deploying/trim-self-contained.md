@@ -4,12 +4,12 @@ description: Dowiedz się, jak przyciąć aplikacje samodzielne w celu zmniejsze
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 0fde409e9e5911213855ab206368d302b73eebb3
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: e3eb161b14f206723ad034af0a4a6ba8cd575578
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720127"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810615"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Przycinanie samodzielnych wdrożeń i plików wykonywalnych
 
@@ -36,28 +36,29 @@ Gdy kod jest pośrednio odwołujący się do zestawu poprzez odbicie, można zap
 
 ## <a name="trim-your-app---cli"></a>Przytnij aplikację — interfejs wiersza polecenia
 
-Przytnij aplikację przy użyciu polecenia [dotnet Publish](../tools/dotnet-publish.md) . Po opublikowaniu aplikacji ustaw następujące trzy ustawienia:
+Przytnij aplikację przy użyciu polecenia [dotnet Publish](../tools/dotnet-publish.md) . Po opublikowaniu aplikacji ustaw następujące właściwości:
 
-- Publikuj jako samodzielny: `--self-contained true`
-- Włącz przycinanie: `p:PublishTrimmed=true`
+- Publikuj jako samodzielną aplikację dla określonego środowiska uruchomieniowego: `-r win-x64`
+- Włącz przycinanie: `/p:PublishTrimmed=true`
 
 Poniższy przykład publikuje aplikację dla systemu Windows jako samodzielny i przycina dane wyjściowe.
 
 ```xml
-<ItemGroup>
+<PropertyGroup>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <SelfContained>true</SelfContained>
     <PublishTrimmed>true</PublishTrimmed>
-</ItemGroup>
+</PropertyGroup>
 ```
 
 Poniższy przykład publikuje aplikację w trybie agresywnego przycinania, w którym nieużywany kod w ramach zestawów zostanie przycięty i włączono ostrzeżenia elementu dostosowującego.
 
 ```xml
-<ItemGroup>
+<PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>link</TrimMode>
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
-</ItemGroup>
+</PropertyGroup>
 ```
 
 Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).
@@ -94,7 +95,7 @@ Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pom
 
 Visual Studio dla komputerów Mac nie udostępnia opcji przycinania aplikacji podczas publikowania. Należy opublikować ręcznie, postępując zgodnie z instrukcjami podanymi w sekcji [Trim The App-CLI](#trim-your-app---cli) . Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wdrażanie aplikacji .NET Core](index.md).
 - [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).

@@ -2,12 +2,12 @@
 title: Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 description: Dowiedz się, jak debugować aplikację konsolową .NET Core przy użyciu Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 40e9b114df1bd12fb05bfb773781d6009d087a06
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 84c7b64ad7708cf2def084593cd7f96eb0ad82e5
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702130"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810667"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 
@@ -51,13 +51,13 @@ Punkt przerwania znajduje się po `Console.ReadLine` wywołaniu metody. **Konsol
 
    Od:
 
-   ```
+   ```json
    "console": "internalConsole",
    ```
 
    Do:
 
-   ```
+   ```json
    "console": "integratedTerminal",
    ```
 

@@ -4,12 +4,12 @@ description: Dowiedz się, jak używać narzędzia analizatora przenośności pl
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: d2a9551565e9ef0a2ed76960c869829fc2e86a1f
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: d8b5fcf8b6c3230e41585261de747edb9105aa31
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903613"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811811"
 ---
 # <a name="the-net-portability-analyzer"></a>Analizator przenośności platformy .NET
 
@@ -39,7 +39,7 @@ Przydatnym krokiem w analizowaniu rozwiązania z wieloma projektami byłoby Wizu
 
 Aby je pobrać, możesz uruchomić następujące polecenie:
 
-```
+```console
 ApiPort.exe analyze -r DGML -f [directory or file]
 ```
 
@@ -54,8 +54,8 @@ Aby analizować cały projekt w programie Visual Studio, kliknij prawym przycisk
 
 Możesz również użyć [aplikacji konsolowej ApiPort](https://aka.ms/apiportdownload).
 
-- Wpisz następujące polecenie, aby przeanalizować bieżący katalog:`ApiPort.exe analyze -f .`
-- Aby przeanalizować określoną listę plików DLL, wpisz następujące polecenie:`ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
+- Wpisz następujące polecenie, aby przeanalizować bieżący katalog: `ApiPort.exe analyze -f .`
+- Aby przeanalizować określoną listę plików DLL, wpisz następujące polecenie: `ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
 - Uruchom `ApiPort.exe -?` , aby uzyskać więcej pomocy
 
 Zaleca się zawrzeć wszystkie powiązane pliki exe i dll, które mają być używane, i które mają być używane do portów, a także wykluczenie plików, od których zależy aplikacja, ale nie do portów. Zapewni to najbardziej odpowiedni raport dotyczący przenośności.

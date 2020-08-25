@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: db35b48d4d7e70a54b38342e79fa2881b3857bd7
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7b411283822360f3057b0d4f4e60ebade4fe45bc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864153"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810940"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Przewodnik programowania w języku C#)
 
@@ -24,7 +24,7 @@ Metoda jest blokiem kodu, który zawiera serie instrukcji. Program powoduje wyko
 
 Metody są zadeklarowane w [klasie](../../language-reference/keywords/class.md), [strukturze](../../language-reference/builtin-types/struct.md)lub [interfejsie](../interfaces/index.md) przez określenie poziomu dostępu, takiego jak `public` lub `private` , Modyfikatory opcjonalne, takie jak `abstract` lub `sealed` , wartość zwracana, nazwa metody i wszystkie parametry metody. Te części razem są sygnaturą metody.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Zwracany typ metody nie jest częścią podpisu metody do celów przeciążania metody. Jednakże jest częścią podpisu metody podczas określania zgodności między delegatem a metodą, do której wskazuje.
 
 Parametry metody są ujęte w nawiasy i są rozdzielone przecinkami. Puste nawiasy wskazują, że metoda nie wymaga żadnych parametrów. Ta klasa zawiera cztery metody:
@@ -127,15 +127,15 @@ Jeśli oznaczesz metodę za pomocą modyfikatora [asynchronicznego](../../langua
 
 Metoda asynchroniczna może mieć zwracany typ <xref:System.Threading.Tasks.Task%601> , <xref:System.Threading.Tasks.Task> lub void. Typ zwracany void jest używany głównie do definiowania programów obsługi zdarzeń, gdzie wymagany jest zwracany typ void. Metoda asynchroniczna zwracająca typ void nie może być oczekiwana, a obiekt wywołujący metodę void nie może przechwytywać wyjątków, które metoda zgłasza.
 
-W poniższym przykładzie `DelayAsync` jest metoda async, która ma zwracany typ <xref:System.Threading.Tasks.Task%601> . `DelayAsync`zawiera `return` instrukcję zwracającą liczbę całkowitą. W związku z tym Deklaracja metody `DelayAsync` musi mieć typ zwracany `Task<int>` . Ponieważ typem zwracanym jest `Task<int>` , obliczanie `await` wyrażenia w `DoSomethingAsync` tworzy liczbę całkowitą, jak pokazano w poniższej instrukcji: `int result = await delayTask` .
+W poniższym przykładzie `DelayAsync` jest metoda async, która ma zwracany typ <xref:System.Threading.Tasks.Task%601> . `DelayAsync` zawiera `return` instrukcję zwracającą liczbę całkowitą. W związku z tym Deklaracja metody `DelayAsync` musi mieć typ zwracany `Task<int>` . Ponieważ typem zwracanym jest `Task<int>` , obliczanie `await` wyrażenia w `DoSomethingAsync` tworzy liczbę całkowitą, jak pokazano w poniższej instrukcji: `int result = await delayTask` .
 
-`startButton_Click`Metoda jest przykładem metody asynchronicznej, która ma zwracany typ void. Ponieważ `DoSomethingAsync` jest to Metoda asynchroniczna, zadanie dla wywołania `DoSomethingAsync` musi być oczekiwane, jak pokazano w poniższej instrukcji: `await DoSomethingAsync();` . `startButton_Click`Metoda musi być zdefiniowana z `async` modyfikatorem, ponieważ metoda ma `await` wyrażenie.
+`Main`Metoda jest przykładem metody asynchronicznej, która ma zwracany typ <xref:System.Threading.Tasks.Task> . Przechodzi do `DoSomethingAsync` metody, a ponieważ jest wyrażana z pojedynczym wierszem, może pominąć `async` `await` słowa kluczowe i. Ponieważ `DoSomethingAsync` jest to Metoda asynchroniczna, zadanie dla wywołania `DoSomethingAsync` musi być oczekiwane, jak pokazano w poniższej instrukcji: `await DoSomethingAsync();` .
 
-[!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]
+:::code language="csharp" source="snippets/classes-and-structs/methods/Program.cs":::
 
 Metoda async nie może deklarować parametrów [ref](../../language-reference/keywords/ref.md) ani [out](../../language-reference/keywords/out-parameter-modifier.md) , ale może wywoływać metody, które mają takie parametry.
 
-Aby uzyskać więcej informacji na temat metod asynchronicznych, zobacz [programowanie asynchroniczne z asynchroniczne i oczekujące](../concepts/async/index.md), [przepływ sterowania w programach asynchronicznych](../concepts/async/control-flow-in-async-programs.md)i [asynchroniczne typy zwracane](../concepts/async/async-return-types.md).
+Aby uzyskać więcej informacji na temat metod asynchronicznych, zobacz [programowanie asynchroniczne z asynchroniczne i oczekujące](../concepts/async/index.md) i [asynchroniczne typy zwracane](../concepts/async/async-return-types.md).
 
 ## <a name="expression-body-definitions"></a>Definicje treści wyrażenia
 
@@ -166,7 +166,7 @@ Aby uzyskać więcej informacji, zobacz [Iteratory](../concepts/iterators.md).
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](index.md)
