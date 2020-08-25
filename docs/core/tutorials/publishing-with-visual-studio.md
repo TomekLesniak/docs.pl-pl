@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 44646a307d230db395b55b9dec5acfd168605940
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: afbffa5dc8a620836ec1433a095face46c32df90
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701287"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811318"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio"></a>Samouczek: publikowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio
 
@@ -87,7 +87,7 @@ W poniższych krokach zawarto Podgląd plików utworzonych przez proces publikow
 
 1. Otwórz wiersz polecenia i przejdź do folderu *Publikowanie* . W tym celu wprowadź, `cd` a następnie wklej pełną ścieżkę. Na przykład:
 
-   ```
+   ```console
    cd C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
    ```
 

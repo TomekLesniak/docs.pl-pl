@@ -2,12 +2,12 @@
 title: Rejestrowanie przy użyciu elastycznego stosu
 description: Rejestrowanie przy użyciu Elastic Stack, logstash i Kibana
 ms.date: 05/13/2020
-ms.openlocfilehash: e886141fa691b75b882b5d67eae4ceb242e8089f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 32d9d0dae175d8d45d48b56d17f133b4cc432363
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613853"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811174"
 ---
 # <a name="logging-with-elastic-stack"></a>Rejestrowanie przy użyciu elastycznego stosu
 
@@ -81,7 +81,7 @@ Komunikaty dziennika, które zostały spreparowane w celu zawierają parametry l
 
 Zapytanie, które wyszukuje 10 najważniejszych stron odwiedzonych przez `jill@example.com` , pojawia się na rysunku 7-9.
 
-```
+```json
 "query": {
     "match": {
       "user": "jill@example.com"
@@ -111,7 +111,7 @@ Opcja o mniejszej obciążeniu polega na użyciu jednego z wielu kontenerów pla
 
 Kolejną opcją jest [niedawna ogłoszona oferta Elk jako usługa](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/).
 
-## <a name="references"></a>Dokumentacja
+## <a name="references"></a>Odwołania
 
 - [Instalowanie elastycznego stosu na platformie Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

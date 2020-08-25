@@ -4,14 +4,14 @@ description: Przegląd metod, parametrów metody i wartości zwracanych metody
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 09a287b3d74e1b8dbdaf4a53cb207dfe1fad8a0c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 8c33bcb9dd4052589222c2cb1b375d94d6792ba2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063357"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810576"
 ---
-# <a name="methods"></a>Metody
+# <a name="methods-in-c"></a>Metody w (C#)
 
 Metoda jest blokiem kodu, który zawiera serie instrukcji. Program powoduje wykonanie instrukcji przez wywołanie metody i określenie wszelkich wymaganych argumentów metody. W języku C# Każda wykonana instrukcja jest wykonywana w kontekście metody. `Main`Metoda jest punktem wejścia dla każdej aplikacji w języku C# i jest wywoływana przez środowisko uruchomieniowe języka wspólnego (CLR), gdy program jest uruchomiony.
 
@@ -32,7 +32,7 @@ Metody są zadeklarowane w `class` lub `struct` przez określenie:
 
 Te części wspólnie tworzą sygnaturę metody.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Zwracany typ metody nie jest częścią podpisu metody do celów przeciążania metody. Jednakże jest częścią podpisu metody podczas określania zgodności między delegatem a metodą, do której wskazuje.
 
 W poniższym przykładzie zdefiniowano klasę o nazwie `Motorcycle` , która zawiera pięć metod:
@@ -149,7 +149,7 @@ W poniższym przykładzie zdefiniowano metodę, `ExampleMethod` która ma jeden 
 
 [!code-csharp[csSnippets.Methods#21](../../samples/snippets/csharp/concepts/methods/optional1.cs#21)]
 
-Jeśli metoda z wieloma opcjonalnymi argumentami jest wywoływana przy użyciu argumentów pozycyjnych, obiekt wywołujący musi podać argument dla wszystkich parametrów opcjonalnych z pierwszego do ostatniego, dla którego podano argument. W przypadku `ExampleMethod` metody, na przykład jeśli obiekt wywołujący dostarcza argument dla `description` parametru, musi również podać jeden dla `optionalInt` parametru. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");`jest prawidłowym wywołaniem metody; `opt.ExampleMethod(2, , "Addition of 2 and 0");`generuje błąd kompilatora "Brak argumentu".
+Jeśli metoda z wieloma opcjonalnymi argumentami jest wywoływana przy użyciu argumentów pozycyjnych, obiekt wywołujący musi podać argument dla wszystkich parametrów opcjonalnych z pierwszego do ostatniego, dla którego podano argument. W przypadku  `ExampleMethod` metody, na przykład jeśli obiekt wywołujący dostarcza argument dla `description` parametru, musi również podać jeden dla `optionalInt` parametru. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");` jest prawidłowym wywołaniem metody; `opt.ExampleMethod(2, , "Addition of 2 and 0");` generuje błąd kompilatora "Brak argumentu".
 
 Jeśli metoda jest wywoływana przy użyciu nazwanych argumentów lub kombinacji argumentów pozycyjnych i nazwanych, obiekt wywołujący może pominąć wszystkie argumenty, które po ostatnim argumencie pozycyjnym w wywołaniu metody.
 
@@ -249,11 +249,11 @@ Metoda asynchroniczna może mieć zwracany typ <xref:System.Threading.Tasks.Task
 
 W poniższym przykładzie `DelayAsync` jest metoda async, która zawiera instrukcję return, która zwraca liczbę całkowitą. Ponieważ jest to Metoda asynchroniczna, jej Deklaracja metody musi być typem zwracanym `Task<int>` . Ponieważ typem zwracanym jest `Task<int>` , obliczanie `await` wyrażenia w `DoSomethingAsync` tworzy liczbę całkowitą, jak pokazano w poniższej `int result = await delayTask` instrukcji.
 
-[!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
+:::code language="csharp" source="programming-guide/classes-and-structs/snippets/classes-and-structs/methods/Program.cs":::
 
 Metoda async nie może deklarować parametrów [in](language-reference/keywords/in-parameter-modifier.md), [ref](language-reference/keywords/ref.md)ani [out](language-reference/keywords/out-parameter-modifier.md) , ale może wywoływać metody, które mają takie parametry.
 
- Aby uzyskać więcej informacji na temat metod asynchronicznych, zobacz [programowanie asynchroniczne z asynchroniczne i oczekujące](async.md), [przepływ sterowania w programach asynchronicznych](programming-guide/concepts/async/control-flow-in-async-programs.md)i [asynchroniczne typy zwracane](programming-guide/concepts/async/async-return-types.md).
+ Aby uzyskać więcej informacji na temat metod asynchronicznych, zobacz [programowanie asynchroniczne z asynchroniczne i oczekujące](async.md) i [asynchroniczne typy zwracane](programming-guide/concepts/async/async-return-types.md).
 
 <a name="expr"></a>
 
@@ -282,7 +282,7 @@ Zwracany typ iteratora może mieć wartość <xref:System.Collections.IEnumerabl
 
 Aby uzyskać więcej informacji, zobacz [Iteratory](programming-guide/concepts/iterators.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Modyfikatory dostępu](language-reference/keywords/access-modifiers.md)
 - [Klasy statyczne i statyczni członkowie klas](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
@@ -291,5 +291,5 @@ Aby uzyskać więcej informacji, zobacz [Iteratory](programming-guide/concepts/i
 - [params](language-reference/keywords/params.md)
 - [określoną](language-reference/keywords/out-parameter-modifier.md)
 - [ref](language-reference/keywords/ref.md)
-- [in](language-reference/keywords/in-parameter-modifier.md)
+- [podczas](language-reference/keywords/in-parameter-modifier.md)
 - [Przekazywanie parametrów](programming-guide/classes-and-structs/passing-parameters.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Instrukcje: Zastępowanie rezerwacji adresu URL programu WCF ograniczoną rezerwacją'
+title: 'Instrukcje: zastępowanie rezerwacji adresu URL programu WCF ograniczoną rezerwacją'
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: 780a2c7fe240ed624ff106e8157661f8b76b32bd
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: a7025636bb1ca2ef250d7d25634bda961f2db09d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202373"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811616"
 ---
-# <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Instrukcje: Zastępowanie rezerwacji adresu URL programu WCF ograniczoną rezerwacją
+# <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Instrukcje: zastępowanie rezerwacji adresu URL programu WCF ograniczoną rezerwacją
 
 Rezerwacja adresu URL umożliwia ograniczenie użytkowników, którzy mogą odbierać wiadomości z adresu URL lub zestawu adresów URL. Rezerwacja składa się z szablonu adresu URL, listy kontroli dostępu (ACL) i zestawu flag. Szablon adresu URL określa adresy URL, na które ma wpływ rezerwacja. Aby uzyskać więcej informacji na temat sposobu przetwarzania szablonów adresów URL, zobacz [Routing przychodzących żądań](/windows/win32/http/routing-incoming-requests). Lista ACL kontroluje, jakiemu użytkownikowi lub grupie użytkowników można odbierać wiadomości z określonych adresów URL. Flagi wskazują, czy rezerwacja ma dać użytkownikowi lub grupie uprawnienie do nasłuchiwania bezpośrednio na adresie URL lub delegowania uprawnień do nasłuchiwania w innym procesie.  
   
@@ -17,7 +17,7 @@ Rezerwacja adresu URL umożliwia ograniczenie użytkowników, którzy mogą odbi
   
 W systemie Windows Vista lub Windows Server 2008 można wyświetlić wszystkie rezerwacje adresów URL protokołu HTTP z wiersza polecenia z podwyższonym poziomem uprawnień, wprowadzając polecenie `netsh http show urlacl` . W poniższym przykładzie przedstawiono sposób rezerwacji adresu URL programu WCF:
 
-```
+```output
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
         User: \Everyone  
             Listen: Yes  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 4715a27a94ac86c5e4955c0e8be95c6ee4a28507
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bb81ddbe631fedfcfe247c6e62580de679ad972f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619705"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812305"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (odwołanie w C#)
 
@@ -129,11 +129,11 @@ Aby uzyskać więcej informacji na temat catch, zobacz [try-catch-finally](try-c
 
 ## <a name="exceptions-in-async-methods"></a>Wyjątki w metodach asynchronicznych
 
-Metoda asynchroniczna jest oznaczona przez modyfikator [Async](async.md) i zwykle zawiera co najmniej jedno wyrażenie lub instrukcje await. Wyrażenie await stosuje operator [await](../operators/await.md) do <xref:System.Threading.Tasks.Task> lub <xref:System.Threading.Tasks.Task%601> .
+Metoda asynchroniczna jest oznaczona przez modyfikator  [Async](async.md) i zwykle zawiera co najmniej jedno wyrażenie lub instrukcje await. Wyrażenie await stosuje operator [await](../operators/await.md) do <xref:System.Threading.Tasks.Task> lub <xref:System.Threading.Tasks.Task%601> .
 
-Gdy kontrolka osiągnie `await` wartość w metodzie asynchronicznej, postęp w metodzie jest zawieszony do momentu zakończenia zadania oczekiwania. Po zakończeniu zadania wykonywanie może zostać wznowione w metodzie. Aby uzyskać więcej informacji, zobacz [programowanie asynchroniczne z asynchroniczne i oczekujące](../../programming-guide/concepts/async/index.md) i [przepływ sterowania w programach asynchronicznych](../../programming-guide/concepts/async/control-flow-in-async-programs.md).
+Gdy kontrolka osiągnie `await` wartość w metodzie asynchronicznej, postęp w metodzie jest zawieszony do momentu zakończenia zadania oczekiwania. Po zakończeniu zadania wykonywanie może zostać wznowione w metodzie. Aby uzyskać więcej informacji, zobacz [programowanie asynchroniczne z Async i await](../../programming-guide/concepts/async/index.md).
 
-Ukończone zadanie, do którego `await` zastosowano, może być w stanie awarii z powodu nieobsłużonego wyjątku w metodzie, która zwraca zadanie. Oczekiwanie na zadanie zgłosi wyjątek. Zadanie można także zakończyć w stanie anulowanym, jeśli asynchroniczny proces zwraca go. Oczekiwanie na anulowane zadanie wyrzuca `OperationCanceledException` . Aby uzyskać więcej informacji o tym, jak anulować proces asynchroniczny, zobacz dostrajanie [aplikacji asynchronicznej](../../programming-guide/concepts/async/fine-tuning-your-async-application.md).
+Ukończone zadanie, do którego `await` zastosowano, może być w stanie awarii z powodu nieobsłużonego wyjątku w metodzie, która zwraca zadanie. Oczekiwanie na zadanie zgłosi wyjątek. Zadanie można także zakończyć w stanie anulowanym, jeśli asynchroniczny proces zwraca go. Oczekiwanie na anulowane zadanie wyrzuca `OperationCanceledException` .
 
 Aby wychwycić wyjątek, oczekiwanie na zadanie w `try` bloku i Przechwyć wyjątek w skojarzonym `catch` bloku. Aby zapoznać się z przykładem, zobacz sekcję dotyczącą [przykładu metody asynchronicznej](#async-method-example) .
 
@@ -177,7 +177,7 @@ Każdy z tych trzech zadań powoduje wyjątek. `catch`Blok wykonuje iterację w 
 
 Aby uzyskać więcej informacji, zobacz sekcję [try instrukcji](~/_csharplang/spec/statements.md#the-try-statement) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)

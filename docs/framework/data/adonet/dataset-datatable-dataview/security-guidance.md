@@ -3,12 +3,12 @@ title: Wskazówki dotyczące zabezpieczeń zestawów danych i DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: f0fa43c467cc7866e69115acb5f807e6487fda7a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608533"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812240"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Wskazówki dotyczące zabezpieczeń zestawów danych i DataTable
 
@@ -34,7 +34,14 @@ We wszystkich obsługiwanych wersjach .NET Framework, .NET Core i .NET `DataSet`
 
 Jeśli dane przychodzące XML zawierają obiekt, którego typ nie znajduje się na tej liście:
 
-* Zgłaszany jest wyjątek.
+* Wyjątek jest zgłaszany przy użyciu następującego komunikatu i śladu stosu.  
+Komunikat o błędzie:  
+System. InvalidOperationException: typ " \<Type Name\> , Version = \<n.n.n.n\> , Culture = \<culture\> , PublicKeyToken = \<token value\> " nie jest dozwolony w tym miejscu. [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227)Aby uzyskać więcej informacji, zobacz.  
+Ślad stosu:  
+w System. Data. TypeLimiter. EnsureTypeIsAllowed (typ typu, TypeLimiter capturedLimiter)  
+w System. Data. DataColumn. UpdateColumnType (typ typu, StorageType, typeCode)  
+w System. Data. DataColumn. set_DataType (typ wartości)  
+
 * Operacja deserializacji kończy się niepowodzeniem.
 
 Podczas ładowania kodu XML do istniejącego `DataSet` `DataTable` wystąpienia lub istniejące definicje kolumn są również brane pod uwagę. Jeśli tabela zawiera już definicję kolumny typu niestandardowego, ten typ jest tymczasowo dodawany do listy dozwolonych w czasie trwania operacji deserializacji XML.

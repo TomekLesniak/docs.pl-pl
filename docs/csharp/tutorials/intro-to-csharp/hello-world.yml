@@ -12,12 +12,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 17d33b25867f75419a0e65ab0d75950bad13af57
-  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+  ms.openlocfilehash: 72198287028c73f0e518d7bcfd0b694bb267e132
+  ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 08/17/2020
-  ms.locfileid: "88267402"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88812279"
 items:
 - durationInMinutes: 1
   content: >
@@ -52,7 +52,7 @@ items:
     > To ćwiczenie pomoże Ci poznać strukturę kodu w języku C#.
 
 
-    Pierwszy program jest ograniczony do wyświetlania jednego komunikatu. Możesz napisać bardziej użyteczne programy, korzystając ze **zmiennych**. **Zmienna** jest symbolem, którego możesz użyć, aby uruchamiać taki sam kod z różnymi wartościami. Spróbujmy to zrobić! Zastąp kod napisany w oknie interaktywnym następującym kodem:
+    Pierwszy program jest ograniczony do wyświetlania jednego komunikatu. Możesz napisać bardziej użyteczne programy, korzystając ze *zmiennych*. *Zmienna* jest symbolem, którego możesz użyć, aby uruchamiać taki sam kod z różnymi wartościami. Spróbujmy to zrobić! Zastąp kod napisany w oknie interaktywnym następującym kodem:
 
 
     ```csharp
@@ -64,7 +64,7 @@ items:
     ```
 
 
-    Pierwszy wiersz deklaruje zmienną (`aFriend`) i przypisuje jej wartość („Bill”). Drugi wiersz wyświetla imię.
+    Pierwszy wiersz deklaruje zmienną, `aFriend` i przypisuje jej wartość, "Bill". Drugi wiersz wyświetla imię.
 
 
     Możesz przypisywać różne wartości do każdej zadeklarowanej zmiennej. Możesz zmienić imię na jednego ze swoich znajomych. Dodaj te dwa wiersze w oknie interaktywnym po już dodanym kodzie:
@@ -149,11 +149,11 @@ items:
 
     > [!TIP]
 
-    > Jest to dobry moment, aby rozejrzeć się samodzielnie. Wiesz już, że `Console.WriteLine()` zapisuje tekst na ekranie. Wiesz też, jak deklarować zmienne i łączyć ciągi. Poeksperymentuj w oknie interaktywnym. Okno zawiera funkcję **IntelliSense** , która udostępnia sugestie dotyczące tego, co można zrobić. Wpisz a `.` po `d` `firstFriend` . Zobaczysz listę sugestii dotyczących właściwości i metod, których można użyć.
+    > Jest to dobry moment, aby rozejrzeć się samodzielnie. Wiesz już, że `Console.WriteLine()` zapisuje tekst na ekranie. Wiesz też, jak deklarować zmienne i łączyć ciągi. Poeksperymentuj w oknie interaktywnym. Okno zawiera funkcję *IntelliSense* , która udostępnia sugestie dotyczące tego, co można zrobić. Wpisz a `.` po `d` `firstFriend` . Zobaczysz listę sugestii dotyczących właściwości i metod, których można użyć.
 - title: Więcej zadań z ciągami
   durationInMinutes: 5
   content: >
-    Używasz **metody**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> , aby drukować wiadomości. **Metoda** to blok kodu, który implementuje pewne działanie. Ma swoją nazwę, więc możesz uzyskać do niej dostęp.
+    Używasz *metody*, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> , aby drukować wiadomości. *Metoda* to blok kodu, który implementuje pewne działanie. Ma swoją nazwę, więc możesz uzyskać do niej dostęp.
 
 
     Załóżmy, że ciągi zawierają początkowe lub końcowe spacje, które nie mają być wyświetlane. Chcesz **przyciąć** spacje z ciągów.
@@ -234,7 +234,7 @@ items:
     ```
 
 
-    Metoda <xref:System.String.Contains%2A> zwraca **wartość logiczną**, która informuje o tym, czy wyszukiwany ciąg został odnaleziony. **Wartość logiczna** przechowuje wartość `true` lub `false`. Gdy są wyświetlane jako dane wyjściowe tekstu, są pisane wielkimi literami: `True` i `False` , odpowiednio. O **wartościach logicznych** dowiesz się więcej z późniejszej lekcji.
+    Metoda <xref:System.String.Contains%2A> zwraca *wartość logiczną*, która informuje o tym, czy wyszukiwany ciąg został odnaleziony. *Wartość logiczna* przechowuje wartość `true` lub `false`. Gdy są wyświetlane jako dane wyjściowe tekstu, są pisane wielkimi literami: `True` i `False` , odpowiednio. O *wartościach logicznych* dowiesz się więcej z późniejszej lekcji.
 
 
     ***Zadanie***

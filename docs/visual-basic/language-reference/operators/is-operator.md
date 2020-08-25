@@ -1,5 +1,5 @@
 ---
-title: Is, operator
+title: IS — operator
 ms.date: 07/20/2015
 f1_keywords:
 - vb.is
@@ -9,23 +9,25 @@ helpviewer_keywords:
 - TypeOf...Is expression
 - Is operator [Visual Basic]
 ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
-ms.openlocfilehash: 3cc0ae5f04358fbe6b2aabc50498f39ca7225164
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1c2d87ef0a8202332c87af552f488d652c400213
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84370807"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812266"
 ---
-# <a name="is-operator-visual-basic"></a>Is — Operator (Visual Basic)
-Porównuje dwie zmienne odwołań do obiektów.  
-  
-## <a name="syntax"></a>Składnia  
-  
-```vb  
-result = object1 Is object2  
-```  
-  
-## <a name="parts"></a>Części  
+# <a name="is-operator-visual-basic"></a>IS — operator (Visual Basic)
+
+Porównuje dwie zmienne odwołań do obiektów.
+
+## <a name="syntax"></a>Składnia
+
+```vb
+result = object1 Is object2
+```
+
+## <a name="parts"></a>Części
+
  `result`  
  Wymagany. Dowolna `Boolean` wartość.  
   
@@ -35,21 +37,29 @@ result = object1 Is object2
  `object2`  
  Wymagany. Dowolna `Object` nazwa.  
   
-## <a name="remarks"></a>Uwagi  
- `Is`Operator określa, czy dwa odwołania do obiektów odwołują się do tego samego obiektu. Jednak nie wykonuje porównania wartości. Jeśli `object1` i `object2` oba odnoszą się do dokładnie tego samego wystąpienia obiektu, `result` to `True` ; Jeśli nie, `result` to `False` .  
-  
- `Is`można go również użyć ze `TypeOf` słowem kluczowym, aby utworzyć `TypeOf` wyrażenie... `Is` , które sprawdza, czy zmienna obiektu jest zgodna z typem danych.  
-  
+## <a name="remarks"></a>Uwagi
+
+`Is`Operator określa, czy dwa odwołania do obiektów odwołują się do tego samego obiektu. Jednak nie wykonuje porównania wartości. Jeśli `object1` i `object2` oba odnoszą się do dokładnie tego samego wystąpienia obiektu, `result` to `True` ; Jeśli nie, `result` to `False` .
+
 > [!NOTE]
-> `Is`Słowo kluczowe jest również używane w [SELECT... Case — instrukcja](../statements/select-case-statement.md).  
+> `Is`Słowo kluczowe jest również używane w [SELECT... Case — instrukcja](../statements/select-case-statement.md).
   
-## <a name="example"></a>Przykład  
- Poniższy przykład używa `Is` operatora do porównywania par odwołań do obiektów. Wyniki są przypisane do `Boolean` wartości reprezentującej, czy dwa obiekty są identyczne.  
-  
- [!code-vb[VbVbalrOperators#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#27)]  
-  
- Jak pokazano w powyższym przykładzie, można użyć `Is` operatora do przetestowania zarówno obiektów wczesnych, jak i późnych powiązań.  
-  
+## <a name="example"></a>Przykład
+
+Poniższy przykład używa `Is` operatora do porównywania par odwołań do obiektów. Wyniki są przypisane do `Boolean` wartości reprezentującej, czy dwa obiekty są identyczne.
+
+[!code-vb[VbVbalrOperators#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#27)]
+
+Jak pokazano w powyższym przykładzie, można użyć `Is` operatora do przetestowania zarówno obiektów wczesnych, jak i późnych powiązań.
+
+## <a name="use-typeof-operator-with-is-operator"></a>Używaj operatora TypeOf z operatorem is
+
+`Is` operatora można także użyć ze `TypeOf` słowem kluczowym, aby utworzyć `TypeOf` wyrażenie... `Is` , które sprawdza, czy zmienna obiektu jest zgodna z typem danych. Na przykład:
+
+```vb
+If TypeOf sender Is Button Then
+```
+
 ## <a name="see-also"></a>Zobacz też
 
 - [TypeOf — Operator](typeof-operator.md)

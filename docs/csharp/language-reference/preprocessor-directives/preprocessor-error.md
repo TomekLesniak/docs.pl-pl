@@ -1,49 +1,54 @@
 ---
-title: '#error - C# Odwołanie'
-ms.date: 07/20/2015
+title: '#błąd — odwołanie w C#'
+ms.date: 08/24/2020
 f1_keywords:
 - '#error'
 helpviewer_keywords:
 - '#error directive [C#]'
 ms.assetid: f2a7f3af-4cf9-4111-b369-70204d24b26b
-ms.openlocfilehash: 28e77304edee617adc1422e6a52d0a617cd9b3bb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cc1e0640886e3f3c1c74a54f64961a56c8b030e4
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173409"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812370"
 ---
 # <a name="error-c-reference"></a>#error (odwołanie w C#)
-`#error`umożliwia wygenerowanie błędu zdefiniowanego przez użytkownika w usiuł [CS1029](../compiler-messages/cs1029.md) z określonej lokalizacji w kodzie. Przykład:  
-  
+
+`#error` umożliwia wygenerowanie [CS1029](../compiler-messages/cs1029.md) błędu zdefiniowanego przez użytkownika z określonej lokalizacji w kodzie. Na przykład:
+
 ```csharp
-#error Deprecated code in this method.  
-```  
-  
-## <a name="remarks"></a>Uwagi  
- Powszechne stosowanie `#error` jest w dyrektywie warunkowej.  
-  
- Możliwe jest również wygenerowanie ostrzeżenia zdefiniowanego przez użytkownika za pomocą [#warning](./preprocessor-warning.md).  
-  
-## <a name="example"></a>Przykład  
-  
+#error Deprecated code in this method.
+```
+
+> [!NOTE]
+> Kompilator traktuje `#error version` się w specjalny sposób i zgłasza błąd kompilatora, CS8304 z komunikatem zawierającym używane wersje kompilatora i języka.
+
+## <a name="remarks"></a>Uwagi
+
+Typowym zastosowaniem `#error` jest w dyrektywie warunkowej.
+
+Istnieje również możliwość wygenerowania ostrzeżenia zdefiniowanego przez użytkownika za pomocą [#warning](./preprocessor-warning.md).
+
+## <a name="example"></a>Przykład
+
 ```csharp
-// preprocessor_error.cs  
-// CS1029 expected  
-#define DEBUG  
+// preprocessor_error.cs
+// CS1029 expected
+#define DEBUG
 class MainClass
-{  
+{
     static void Main()
-    {  
-#if DEBUG  
-#error DEBUG is defined  
-#endif  
-    }  
-}  
-```  
-  
+    {
+#if DEBUG
+#error DEBUG is defined
+#endif
+    }
+}
+```
+
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [Przewodnik programowania języka C#](../../programming-guide/index.md)
-- [Dyrektywy przedprocesorowe C#](./index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
+- [Dyrektywy preprocesora języka C#](./index.md)

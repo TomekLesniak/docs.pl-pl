@@ -2,12 +2,12 @@
 title: Tworzenie biblioteki klas .NET Standard przy użyciu Visual Studio Code
 description: Dowiedz się, jak utworzyć bibliotekę klas .NET Standard przy użyciu Visual Studio Code.
 ms.date: 06/08/2020
-ms.openlocfilehash: 714b5cf2125f1d296adc4a4dc7d1b6c9420417ed
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 146dfd49e448494cce0c844282bc0394a8739ac9
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308887"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810862"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Samouczek: Tworzenie biblioteki .NET Standard przy użyciu Visual Studio Code
 
@@ -42,7 +42,7 @@ Zacznij od utworzenia pustego rozwiązania, aby umieścić projekt biblioteki kl
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    The template "Solution File" was created successfully.
    ```
 
@@ -58,7 +58,7 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    The template "Class library" was created successfully.
    Processing post-creation actions...
    Running 'dotnet restore' on StringLibrary\StringLibrary.csproj...
@@ -75,7 +75,7 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    Project `StringLibrary\StringLibrary.csproj` added to the solution.
    ```
 
@@ -109,7 +109,7 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    Microsoft (R) Build Engine version 16.6.0 for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
      Determining projects to restore...
@@ -134,7 +134,7 @@ Dodaj aplikację konsolową, która używa biblioteki klas. Aplikacja wyświetli
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    The template "Console Application" was created successfully.
    Processing post-creation actions...
    Running 'dotnet restore' on ShowCase\ShowCase.csproj...  
@@ -151,7 +151,7 @@ Dodaj aplikację konsolową, która używa biblioteki klas. Aplikacja wyświetli
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    Project `ShowCase\ShowCase.csproj` added to the solution.
    ```
 
@@ -177,13 +177,13 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    Reference `..\StringLibrary\StringLibrary.csproj` added to the project.
    ```
 
 ## <a name="run-the-app"></a>Uruchamianie aplikacji
 
-1. Uruchom następujące polecenie w terminalu:
+1. W terminalu uruchom następujące polecenie:
 
    ```dotnetcli
    dotnet run --project ShowCase/ShowCase.csproj
@@ -193,7 +193,7 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
-   ```
+   ```output
    Press <Enter> only to exit; otherwise, enter a string and press <Enter>:
 
    A string that starts with an uppercase letter
@@ -205,7 +205,7 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
    Begins with uppercase? : Yes
    ```
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 * [Tworzenie bibliotek przy użyciu interfejs wiersza polecenia platformy .NET Core](libraries.md)
 * [Wersje .NET Standard i obsługiwane przez nich platformy](../../standard/net-standard.md).

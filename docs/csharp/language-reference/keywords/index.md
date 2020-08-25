@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '@ keyword'
 ms.custom: updateeachrelease
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 51e3802ba7b78dab4c3f96365c51af83098c05c7
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 3392b92cbd77e5b3f895af99a71f33d2ab43fa15
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656127"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812318"
 ---
 # <a name="c-keywords"></a>Słowa kluczowe języka C#
 
@@ -41,7 +41,7 @@ Słowa kluczowe są wstępnie zdefiniowanymi, zarezerwowanymi identyfikatorami, 
 |[return](return.md)|[SByte](../builtin-types/integral-numeric-types.md)|[sealed](sealed.md)|[short](../builtin-types/integral-numeric-types.md)||
 [sizeof](../operators/sizeof.md)|[stackalloc](../operators/stackalloc.md)|[static](static.md)|[parametry](../builtin-types/reference-types.md)|
 |[konstrukcja](../builtin-types/struct.md)|[przełącznika](switch.md)|[this](this.md)|[throw](throw.md)|
-|[oznacza](../builtin-types/bool.md)|[try](try-catch.md)|[typeof](../operators/type-testing-and-cast.md#typeof-operator)|[uint](../builtin-types/integral-numeric-types.md)|
+|[oznacza](../builtin-types/bool.md)|[spróbował](try-catch.md)|[typeof](../operators/type-testing-and-cast.md#typeof-operator)|[uint](../builtin-types/integral-numeric-types.md)|
 |[ulong](../builtin-types/integral-numeric-types.md)|[unchecked](unchecked.md)|[niebezpieczne](unsafe.md)|[ushort](../builtin-types/integral-numeric-types.md)|
 |[using](using.md)|[virtual](virtual.md)|[void](../builtin-types/void.md)|[volatile](volatile.md)|
 |[while](while.md)|
@@ -56,14 +56,14 @@ Słowa kluczowe są wstępnie zdefiniowanymi, zarezerwowanymi identyfikatorami, 
 |[async](async.md)|[await](../operators/await.md)|[by](by.md)|
 |[descending](descending.md)|[dynamiczna](../builtin-types/reference-types.md)|[ubiegł](equals.md)|
 |[wniosek](from-clause.md)|[get](get.md)|[globalne](../operators/namespace-alias-qualifier.md)|
-|[Group](group-clause.md)|[przekształca](into.md)|[Złącza](join-clause.md)|
-|[wpuść](let-clause.md)|[nameof](../operators/nameof.md)|[z](on.md)|
-|[OrderBy](orderby-clause.md)|[częściowy (typ)](partial-type.md)|[częściowe (Metoda)](partial-method.md)|
-|[usuwa](remove.md)|[zaznaczenia](select-clause.md)|[zbiór](set.md)|
-|[niezarządzane (ograniczenie typu ogólnego)](where-generic-type-constraint.md)|[wartościami](value.md)|[funkcję](var.md)|
-|[when (warunek filtru)](when.md)|[where (ograniczenie typu ogólnego)](where-generic-type-constraint.md)|[WHERE (klauzula zapytania)](where-clause.md)|
-|[yield](yield.md)| | |
+|[group](group-clause.md)|[przekształca](into.md)|[Złącza](join-clause.md)|
+|[wpuść](let-clause.md)|[nameof](../operators/nameof.md)|[notnull](../../programming-guide/generics/constraints-on-type-parameters.md#notnull-constraint)|
+|[z](on.md)|[OrderBy](orderby-clause.md)|[częściowy (typ)](partial-type.md)|
+|[częściowe (Metoda)](partial-method.md)|[usuwa](remove.md)|[zaznaczenia](select-clause.md)|
+|[zbiór](set.md)|[niezarządzane (ograniczenie typu ogólnego)](where-generic-type-constraint.md)|[wartościami](value.md)|
+|[funkcję](var.md)|[when (warunek filtru)](when.md)|[where (ograniczenie typu ogólnego)](where-generic-type-constraint.md)|
+|[WHERE (klauzula zapytania)](where-clause.md)|[yield](yield.md)| |
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)

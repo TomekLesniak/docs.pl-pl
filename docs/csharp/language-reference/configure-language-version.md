@@ -3,12 +3,12 @@ title: Obsługa wersji języka c# — Przewodnik C#
 description: Dowiedz się, w jaki sposób wersja języka C# jest określana na podstawie projektu i przyczyn związanych z tym wyborem. Dowiedz się, jak ręcznie przesłonić wartość domyślną.
 ms.custom: updateeachrelease
 ms.date: 05/20/2020
-ms.openlocfilehash: a27f3210f399f1bed190c18d778cf3824772d576
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 24797c564890b034683d2989010bc694aabc423c
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656855"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811954"
 ---
 # <a name="c-language-versioning"></a>Przechowywanie wersji języka C#
 
@@ -37,6 +37,9 @@ Kompilator określa wartość domyślną na podstawie następujących reguł:
 | .NET Framework   | all     | C# 7.3                      |
 
 Jeśli projekt jest przeznaczony dla platformy wersji zapoznawczej, która ma odpowiednią wersję języka wersji zapoznawczej, używana jest wersja języka w wersji zapoznawczej. Należy używać najnowszych funkcji w wersji zapoznawczej w dowolnym środowisku, bez wywierania wpływu na projekty przeznaczone do wydania .NET Core.
+
+> [!TIP]
+> Aby dowiedzieć się, jaka wersja językowa jest obecnie używana, umieść `#error version` (z uwzględnieniem wielkości liter) w kodzie. Dzięki temu kompilator tworzy diagnostykę, CS8304 z komunikatem zawierającym używaną wersję kompilatora i bieżącą wybraną wersję językową.
 
 ## <a name="override-a-default"></a>Zastąp wartość domyślną
 
