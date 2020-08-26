@@ -2,12 +2,12 @@
 title: Rekordy
 description: 'Dowiedz się, w jaki sposób rekordy F # reprezentują proste agregowanie nazwanych wartości, opcjonalnie z elementami członkowskimi.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 182b2e83c3940c866197052af102787a96e49c54
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: a72c0f15b58407e7d759e2fb5a1b35a7fc0d29e3
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559053"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812357"
 ---
 # <a name="records"></a>Rekordy
 
@@ -184,5 +184,5 @@ Jeśli potrzebujesz równości odwołań dla rekordów, Dodaj atrybut `[<Referen
 - [Typy F#](fsharp-types.md)
 - [Klasy](classes.md)
 - [Dokumentacja języka F #](index.md)
-- [Odwołanie — równość](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
+- [Odwołanie — równość](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-referenceequalityattribute.html)
 - [Dopasowanie wzorca](pattern-matching.md)

@@ -1,20 +1,17 @@
 ---
 title: Ciągi
 description: 'Dowiedz się, jak typ "String" języka F # reprezentuje niezmienny tekst jako sekwencję znaków Unicode.'
-ms.date: 07/05/2019
-ms.openlocfilehash: 67a6506b4b8c479da1022c069a7f53402f904b4d
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: f6ec36feeb197bf785c702e7b626cf5cf80696ab
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855416"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812214"
 ---
 # <a name="strings"></a>Ciągi
 
-`string`Typ reprezentuje niezmienny tekst jako sekwencję znaków Unicode. `string`jest aliasem dla `System.String` platformy .NET.
-
-> [!NOTE]
-> Dokumentacja interfejsu API docs.microsoft.com dla języka F # nie została ukończona. Jeśli wystąpią jakieś przerwane linki, należy odwołać się do [dokumentacji podstawowej biblioteki języka F #](https://fsharp.github.io/fsharp-core-docs/) .
+`string`Typ reprezentuje niezmienny tekst jako sekwencję znaków Unicode. `string` jest aliasem dla `System.String` platformy .NET.
 
 ## <a name="remarks"></a>Uwagi
 
@@ -32,10 +29,10 @@ Literały ciągów są rozdzielane znakami cudzysłowu ("). Znak ukośnika odwro
 |Ukośnika odwrotnego|`\\`|
 |Cudzysłów|`\"`|
 |Apostrof|`\'`|
-|znak Unicode|`\DDD`(gdzie `D` wskazuje cyfrę dziesiętną; zakres 000-255; na przykład `\231` = "ç")|
-|znak Unicode|`\xHH`(gdzie `H` wskazuje cyfrę szesnastkową; zakres 00-FF; na przykład `\xE7` = "ç")|
-|znak Unicode|`\uHHHH`(UTF-16) (gdzie `H` wskazuje cyfrę szesnastkową; zakres 0000-FFFF;  na przykład `\u00E7` = "ç")|
-|znak Unicode|`\U00HHHHHH`(UTF-32) (gdzie `H` wskazuje cyfrę szesnastkową; zakres 000000-10FFFF;  na przykład `\U0001F47D` = " 👽 ")|
+|znak Unicode|`\DDD` (gdzie `D` wskazuje cyfrę dziesiętną; zakres 000-255; na przykład `\231` = "ç")|
+|znak Unicode|`\xHH` (gdzie `H` wskazuje cyfrę szesnastkową; zakres 00-FF; na przykład `\xE7` = "ç")|
+|znak Unicode|`\uHHHH` (UTF-16) (gdzie `H` wskazuje cyfrę szesnastkową; zakres 0000-FFFF;  na przykład `\u00E7` = "ç")|
+|znak Unicode|`\U00HHHHHH` (UTF-32) (gdzie `H` wskazuje cyfrę szesnastkową; zakres 000000-10FFFF;  na przykład `\U0001F47D` = " 👽 ")|
 
 > [!IMPORTANT]
 > `\DDD`Sekwencja ucieczki jest notacją dziesiętną, a nie notacją ósemkową, taką jak w większości innych języków. W związku z tym cyfry `8` i `9` są prawidłowe, a sekwencja `\032` reprezentuje spację (U + 0020), natomiast ten sam punkt kodu w notacji ósemkowej będzie `\040` .
@@ -69,7 +66,7 @@ Można uzyskać dostęp do pojedynczych znaków w ciągu za pomocą składni pod
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1002.fs)]
 
-Dane wyjściowe to `b` .
+Wynik to `b`.
 
 Lub można wyodrębnić podciągi przy użyciu składni wycinka tablicy, jak pokazano w poniższym kodzie.
 
@@ -102,8 +99,8 @@ Za pomocą `Chars` właściwości `System.String` , można uzyskać dostęp do p
 
 ## <a name="string-module"></a>Moduł String
 
-Dodatkowe funkcje obsługi ciągów są zawarte w `String` module w `FSharp.Core` przestrzeni nazw. Aby uzyskać więcej informacji, zobacz [moduł Core. String](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
+Dodatkowe funkcje obsługi ciągów są zawarte w `String` module w `FSharp.Core` przestrzeni nazw. Aby uzyskać więcej informacji, zobacz temat [String module](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-stringmodule.html).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka F #](index.md)

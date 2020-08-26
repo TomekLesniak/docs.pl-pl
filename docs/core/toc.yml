@@ -368,6 +368,13 @@ items:
         href: run-time-config/networking.md
       - name: Ustawienia wątkowości
         href: run-time-config/threading.md
+  - name: Analiza kodu
+    items:
+      - name: Omówienie
+        href: ../fundamentals/productivity/code-analysis.md
+        displayName: 'code analysis, analyzers'
+      - name: Konfigurowanie reguł
+        href: ../fundamentals/productivity/configure-code-analysis-rules.md
   - name: Migracja
     items:
       - name: Program .NET Core 2.0 do 2.1

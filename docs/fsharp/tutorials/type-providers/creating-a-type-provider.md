@@ -2,18 +2,18 @@
 title: 'Samouczek: Tworzenie dostawcy typów'
 description: 'Dowiedz się, jak utworzyć własnych dostawców typów języka F # w języku F # 3,0, badając kilku dostawców typów prostych, aby zilustrować podstawowe pojęcia.'
 ms.date: 11/04/2019
-ms.openlocfilehash: 67ebd91007ff814370573ebc1a65b2c7a8399f7d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 71225614ed983a76d35c214faa87bbad0fbb7d24
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202129"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810875"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Samouczek: Tworzenie dostawcy typów
 
 Mechanizm dostawcy typów w języku F # jest znaczną częścią pomocy technicznej dotyczącej rozbudowanego programowania informacji. W tym samouczku wyjaśniono, jak utworzyć własnych dostawców typów, przechodząc przez rozwój kilku dostawców typów prostych, aby zilustrować podstawowe pojęcia. Aby uzyskać więcej informacji na temat mechanizmu dostawcy typów w języku F #, zobacz [dostawcy typów](index.md).
 
-Ekosystem F # zawiera szereg dostawców typów dla często używanych usług Internet i Enterprise Data Services. Przykład:
+Ekosystem F # zawiera szereg dostawców typów dla często używanych usług Internet i Enterprise Data Services. Na przykład:
 
 - [FSharp. Data](https://fsharp.github.io/FSharp.Data/) zawiera dostawców typów dla formatów dokumentów JSON, XML, CSV i HTML.
 
@@ -175,9 +175,9 @@ Ta sekcja przeprowadzi Cię przez główne sekcje implementacji dostawcy typów.
 type SampleTypeProvider(config: TypeProviderConfig) as this =
 ```
 
-Ten typ musi być publiczny i musi być oznaczony atrybutem [TypeProvider](https://msdn.microsoft.com/library/bdf7b036-7490-4ace-b79f-c5f1b1b37947) , aby kompilator rozpoznał dostawcę typów, gdy oddzielny projekt F # odwołuje się do zestawu, który zawiera typ. Parametr *config* jest opcjonalny, a jeśli obecny, zawiera informacje o konfiguracji kontekstowej dla wystąpienia dostawcy typu, które tworzy kompilator F #.
+Ten typ musi być publiczny i musi być oznaczony atrybutem [TypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderattribute.html) , aby kompilator rozpoznał dostawcę typów, gdy oddzielny projekt F # odwołuje się do zestawu, który zawiera typ. Parametr *config* jest opcjonalny, a jeśli obecny, zawiera informacje o konfiguracji kontekstowej dla wystąpienia dostawcy typu, które tworzy kompilator F #.
 
-Następnie należy zaimplementować interfejs [ITypeProvider](https://msdn.microsoft.com/library/2c2b0571-843d-4a7d-95d4-0a7510ed5e2f) . W takim przypadku należy użyć `TypeProviderForNamespaces` typu z `ProvidedTypes` interfejsu API jako typu podstawowego. Ten typ pomocnika może zapewnić skończoną kolekcję eagerly udostępnionych przestrzenie nazw, z których każdy zawiera bezpośrednio określoną liczbę stałych eagerly typów. W tym kontekście dostawca *eagerly* generuje typy, nawet jeśli nie są potrzebne lub używane.
+Następnie należy zaimplementować interfejs [ITypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-itypeprovider.html) . W takim przypadku należy użyć `TypeProviderForNamespaces` typu z `ProvidedTypes` interfejsu API jako typu podstawowego. Ten typ pomocnika może zapewnić skończoną kolekcję eagerly udostępnionych przestrzenie nazw, z których każdy zawiera bezpośrednio określoną liczbę stałych eagerly typów. W tym kontekście dostawca *eagerly* generuje typy, nawet jeśli nie są potrzebne lub używane.
 
 ```fsharp
 inherit TypeProviderForNamespaces(config)
@@ -236,7 +236,7 @@ let t = ProvidedTypeDefinition(thisAssembly, namespaceName,
 
 Należy zwrócić uwagę na następujące kwestie:
 
-- Ten dostarczony typ jest wymazany.  Ponieważ wskazujesz, że typ podstawowy to `obj` , wystąpienia będą wyświetlane jako wartości typu [obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7) w skompilowanym kodzie.
+- Ten dostarczony typ jest wymazany.  Ponieważ wskazujesz, że typ podstawowy to `obj` , wystąpienia będą wyświetlane jako wartości typu [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) w skompilowanym kodzie.
 
 - W przypadku określenia typu niezagnieżdżonego należy określić zestaw i przestrzeń nazw. W przypadku wymazanych typów zestaw powinien być samym zestawem dostawcy typów.
 
@@ -255,7 +255,7 @@ let staticProp = ProvidedProperty(propertyName = "StaticProperty",
                                   getterCode = (fun args -> <@@ "Hello!" @@>))
 ```
 
-Pobieranie tej właściwości będzie zawsze oceniane jako ciąg "Hello!". `GetterCode`Dla właściwości zostanie użyta oferta F #, która reprezentuje kod generowany przez kompilator hosta w celu pobrania właściwości. Aby uzyskać więcej informacji na temat ofert, zobacz [cytaty kodu (F #)](https://msdn.microsoft.com/library/6f055397-a1f0-4f9a-927c-f0d7c6951155).
+Pobieranie tej właściwości będzie zawsze oceniane jako ciąg "Hello!". `GetterCode`Dla właściwości zostanie użyta oferta F #, która reprezentuje kod generowany przez kompilator hosta w celu pobrania właściwości. Aby uzyskać więcej informacji na temat ofert, zobacz [cytaty kodu (F #)](../../language-reference/code-quotations.md).
 
 Dodaj dokumentację XML do właściwości.
 
@@ -282,7 +282,7 @@ let ctor = ProvidedConstructor(parameters = [ ],
 new Type10()
 ```
 
-Wystąpienie dostarczonego typu zostanie utworzone z danymi źródłowymi "dane obiektu". Kod ujęty w cudzysłów zawiera konwersję do [obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7) , ponieważ ten typ jest wymazywanie tego dostarczonego typu (jak określono w przypadku zadeklarowanego typu).
+Wystąpienie dostarczonego typu zostanie utworzone z danymi źródłowymi "dane obiektu". Kod ujęty w cudzysłów zawiera konwersję do [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) , ponieważ ten typ jest wymazywanie tego dostarczonego typu (jak określono w przypadku zadeklarowanego typu).
 
 Dodaj dokumentację XML do konstruktora i Dodaj dostarczony Konstruktor do podanego typu:
 
@@ -750,7 +750,7 @@ W tej sekcji przedstawiono sposób dostarczania typu, którego można użyć do 
 
 - Nazwa nagłówka jest mniejsza od jednostki lub ma postać "Name (Unit)" i nie może zawierać przecinków.
 
-- Jednostki to wszystkie jednostki międzynarodowe (SI) systemu, które są zdefiniowane w module [Microsoft. FSharp. Data. UnitSystems. si. UnitNames module (F #)](https://msdn.microsoft.com/library/3cb43485-11f5-4aa7-a779-558f19d4013b) .
+- Jednostki to wszystkie jednostki międzynarodowe (SI) systemu, które są zdefiniowane w module [FSharp. Data. UnitSystems. si. UnitNames module (F #)](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-data-unitsystems-si-unitnames.html) .
 
 - Jednostki są proste (na przykład miernik), a nie złożone (na przykład licznik licznika/sekundę).
 
@@ -877,7 +877,7 @@ Należy zwrócić uwagę na następujące kwestie dotyczące implementacji:
 
 - Przeciążone konstruktory umożliwiają odczytywanie oryginalnego pliku lub jednego, który ma identyczny schemat. Ten wzorzec jest typowy podczas pisania dostawcy typów dla lokalnych lub zdalnych źródeł danych, a ten wzorzec umożliwia użycie lokalnego pliku jako szablonu dla danych zdalnych.
 
-- Do rozpoznawania względnych nazw plików można użyć wartości [TypeProviderConfig](https://msdn.microsoft.com/library/1cda7b9a-3d07-475d-9315-d65e1c97eb44) , która została przeniesiona do konstruktora dostawcy typów.
+- Do rozpoznawania względnych nazw plików można użyć wartości [TypeProviderConfig](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderconfig.html) , która została przeniesiona do konstruktora dostawcy typów.
 
 - Możesz użyć metody, `AddDefinitionLocation` Aby zdefiniować lokalizację podanych właściwości. W związku z tym, jeśli używasz `Go To Definition` na podanej właściwości, plik CSV zostanie otwarty w programie Visual Studio.
 
@@ -901,7 +901,7 @@ let function1 () =
     obj1.InstanceProperty
 ```
 
-Poniżej znajduje się obraz kodu pochodzącego z dekompilowanego przy użyciu programu Ildasm. exe:
+Poniżej znajduje się obraz kodu pochodzącego z dekompilowanego przy użyciu ildasm.exe:
 
 ```il
 .class public abstract auto ansi sealed Module1
@@ -976,7 +976,7 @@ W poniższych sekcjach opisano wzorce projektowe, których można użyć podczas
 
 #### <a name="the-getconnection-design-pattern"></a>Wzorzec projektu GetConnect
 
-Większość dostawców typów należy napisać, aby używać `GetConnection` wzorca, który jest używany przez dostawców typów w FSharp. Data. TypeProviders. dll, jak pokazano w poniższym przykładzie:
+Większość dostawców typów należy napisać, aby używać `GetConnection` wzorca, który jest używany przez dostawców typów w FSharp.Data.TypeProviders.dll, jak pokazano w poniższym przykładzie:
 
 ```fsharp
 #r "Fabrikam.Data.WebDataStore.dll"
@@ -1054,7 +1054,7 @@ Podczas konstruowania każde wystąpienie dostawcy typów może mieć określon�
 
 ### <a name="invalidation"></a>Unieważniania
 
-Dostawcy mogą zgłaszać sygnały unieważnienia, aby powiadomić usługę języka F # o zmianach założeń schematu. Po wystąpieniu unieważnienia typecheck jest wykonywane w przypadku, gdy dostawca jest hostowany w programie Visual Studio. Ten sygnał zostanie zignorowany, gdy dostawca jest hostowany w F# Interactive lub przez kompilator F # (Urzędowi Nadzoru. exe).
+Dostawcy mogą zgłaszać sygnały unieważnienia, aby powiadomić usługę języka F # o zmianach założeń schematu. Po wystąpieniu unieważnienia typecheck jest wykonywane w przypadku, gdy dostawca jest hostowany w programie Visual Studio. Ten sygnał zostanie zignorowany, gdy dostawca jest hostowany w F# Interactive lub przez kompilator F # (fsc.exe).
 
 ### <a name="caching-schema-information"></a>Buforowanie informacji o schemacie
 
@@ -1086,7 +1086,7 @@ type Service = ODataService<"http://services.odata.org/Northwind/Northwind.svc/"
 
 Kod pomocnika ProvidedTypes-0,2, który jest częścią wersji programu F # 3,0, ma ograniczoną obsługę tylko w celu zapewnienia wygenerowanych typów. Następujące instrukcje muszą mieć wartość true w przypadku wygenerowanej definicji typu:
 
-- `isErased`musi być ustawiony na `false` .
+- `isErased` musi być ustawiony na `false` .
 
 - Wygenerowany typ należy dodać do nowo skonstruowanego elementu `ProvidedAssembly()` , który reprezentuje kontener dla wygenerowanych fragmentów kodu.
 
@@ -1118,17 +1118,17 @@ Podczas procesu tworzenia warto poznać następujące wskazówki:
 
 Można opracowywać dostawcę typów w jednym wystąpieniu i testować dostawcę w inny sposób, ponieważ test IDE będzie miał blokadę w pliku dll, który uniemożliwia ponowne skompilowanie dostawcy typów. W tym celu należy zamknąć drugie wystąpienie programu Visual Studio, gdy dostawca jest skompilowany w pierwszym wystąpieniu, a następnie należy ponownie otworzyć drugie wystąpienie po skompilowaniu dostawcy.
 
-### <a name="debug-type-providers-by-using-invocations-of-fscexe"></a>Dostawcy typów debugowania przy użyciu wywołań usługi nadzoru. exe
+### <a name="debug-type-providers-by-using-invocations-of-fscexe"></a>Debuguj dostawców typów przy użyciu wywołań fsc.exe
 
 Dostawców typów można wywoływać przy użyciu następujących narzędzi:
 
-- Urząd nadzoru. exe (kompilator wiersza polecenia F #)
+- fsc.exe (kompilator wiersza polecenia F #)
 
-- FSI. exe (kompilator F# Interactive)
+- fsi.exe (kompilator F# Interactive)
 
-- devenv. exe (Visual Studio)
+- devenv.exe (Visual Studio)
 
-Często można debugować dostawców typów, korzystając z usługi nadzoru. exe w pliku skryptu testowego (na przykład Script. FSX). Debuger można uruchomić z poziomu wiersza polecenia.
+Można często debugować dostawców typów, używając fsc.exe w pliku skryptu testowego (na przykład Script. FSX). Debuger można uruchomić z poziomu wiersza polecenia.
 
 ```console
 devenv /debugexe fsc.exe script.fsx
@@ -1136,7 +1136,7 @@ devenv /debugexe fsc.exe script.fsx
 
   Możesz użyć rejestrowania do-stdout.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dostawcy typów](index.md)
 - [Zestaw SDK dostawcy typów](https://github.com/fsprojects/FSharp.TypeProviders.SDK)

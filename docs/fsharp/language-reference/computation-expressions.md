@@ -1,15 +1,15 @@
 ---
 title: Wyrażenia obliczeń
 description: 'Dowiedz się, jak utworzyć wygodną składnię do pisania obliczeń w języku F #, które mogą być sekwencyjne i połączone przy użyciu konstrukcji przepływu sterowania i powiązań.'
-ms.date: 11/04/2019
+ms.date: 08/15/2020
 f1_keywords:
 - let!_FS
-ms.openlocfilehash: 32638e9493fb2c6b7aae30d044a0cda2a97f2178
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 1649d8c57ea9e025d40ef6d39d92b96795964150
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855364"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812162"
 ---
 # <a name="computation-expressions"></a>Wyrażenia obliczeń
 
@@ -81,7 +81,7 @@ let doThingsAsync url =
 
 W przypadku powiązania wywołania z wyrażeniem obliczeniowym z `let` , wynik wyrażenia obliczeń nie zostanie pobrany. Zamiast tego nastąpi powiązanie wartości *niezrealizowanego* wywołania tego wyrażenia obliczeń. Użyj `let!` , aby powiązać z wynikiem.
 
-`let!`jest definiowana przez `Bind(x, f)` element członkowski w typie konstruktora.
+`let!` jest definiowana przez `Bind(x, f)` element członkowski w typie konstruktora.
 
 ### `do!`
 
@@ -97,7 +97,7 @@ let doThingsAsync data url =
 
 W przypadku [asynchronicznego przepływu pracy](asynchronous-workflows.md)ten typ to `Async<unit>` . W przypadku innych wyrażeń obliczeniowych typ jest prawdopodobnie `CExpType<unit>` .
 
-`do!`jest definiowana przez `Bind(x, f)` element członkowski typu konstruktora, gdzie `f` tworzy `unit` .
+`do!` jest definiowana przez `Bind(x, f)` element członkowski typu konstruktora, gdzie `f` tworzy `unit` .
 
 ### `yield`
 
@@ -144,7 +144,7 @@ let weekdays includeWeekend =
 
 Podobnie jak w przypadku [słowa kluczowego Yield w języku C#](../../csharp/language-reference/keywords/yield.md), każdy element w wyrażeniu obliczenia jest obliczany w miarę powtarzania.
 
-`yield`jest definiowana przez element `Yield(x)` członkowski typu konstruktora, gdzie `x` jest elementem, który ma zostać przywrócony.
+`yield` jest definiowana przez element `Yield(x)` członkowski typu konstruktora, gdzie `x` jest elementem, który ma zostać przywrócony.
 
 ### `yield!`
 
@@ -172,7 +172,7 @@ printfn "%A" squaresAndCubes // Prints - 1; 4; 9; 1; 8; 27
 
 Podczas oceniania wyrażenie obliczeniowe wywoływane przez `yield!` będzie miało swoje elementy po jednym z nich, spłaszczony wynik.
 
-`yield!`jest definiowana przez `YieldFrom(x)` element członkowski typu konstruktora, gdzie `x` jest kolekcją wartości.
+`yield!` jest definiowana przez `YieldFrom(x)` element członkowski typu konstruktora, gdzie `x` jest kolekcją wartości.
 
 W przeciwieństwie do `yield` , `yield!` musi być jawnie określona. Zachowanie nie jest niejawne w wyrażeniach obliczeniowych.
 
@@ -191,7 +191,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return`jest definiowana przez element `Return(x)` członkowski typu konstruktora, gdzie jest elementem, który ma `x` być zawijany.
+`return` jest definiowana przez element `Return(x)` członkowski typu konstruktora, gdzie jest elementem, który ma `x` być zawijany.
 
 ### `return!`
 
@@ -207,7 +207,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return!`jest definiowana przez `ReturnFrom(x)` element członkowski typu konstruktora, gdzie `x` jest innym wyrażeniem obliczeniowym.
+`return!` jest definiowana przez `ReturnFrom(x)` element członkowski typu konstruktora, gdzie `x` jest innym wyrażeniem obliczeniowym.
 
 ### `match!`
 
@@ -410,29 +410,29 @@ comp |> step |> step
 comp |> step |> step |> step |> step
 ```
 
-Wyrażenie obliczeniowe ma typ podstawowy, który zwraca wyrażenie. Typ podstawowy może reprezentować obliczony wynik lub opóźnione obliczenie, które może być wykonane, lub może być sposobem na iterację w przypadku niektórych typów kolekcji. W poprzednim przykładzie typ podstawowy był **ostatecznie**. Dla wyrażenia sekwencji jest typem podstawowym <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Dla wyrażenia zapytania jest typem podstawowym <xref:System.Linq.IQueryable?displayProperty=nameWithType> . Dla asynchronicznego przepływu pracy typem podstawowym jest [`Async`](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7) . `Async`Obiekt reprezentuje prace, które należy wykonać, aby obliczyć wynik. Na przykład można wywołać [`Async.RunSynchronously`](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) wykonywanie obliczeń i zwrócić wynik.
+Wyrażenie obliczeniowe ma typ podstawowy, który zwraca wyrażenie. Typ podstawowy może reprezentować obliczony wynik lub opóźnione obliczenie, które może być wykonane, lub może być sposobem na iterację w przypadku niektórych typów kolekcji. W poprzednim przykładzie typ podstawowy był **ostatecznie**. Dla wyrażenia sekwencji jest typem podstawowym <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Dla wyrażenia zapytania jest typem podstawowym <xref:System.Linq.IQueryable?displayProperty=nameWithType> . Dla asynchronicznego przepływu pracy typem podstawowym jest [`Async`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html) . `Async`Obiekt reprezentuje prace, które należy wykonać, aby obliczyć wynik. Na przykład można wywołać [`Async.RunSynchronously`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html#RunSynchronously) wykonywanie obliczeń i zwrócić wynik.
 
 ## <a name="custom-operations"></a>Operacje niestandardowe
 
-Istnieje możliwość zdefiniowania niestandardowej operacji w wyrażeniu obliczenia i użycia niestandardowej operacji jako operatora w wyrażeniu obliczeniowym. Na przykład można uwzględnić operator zapytania w wyrażeniu zapytania. Podczas definiowania niestandardowej operacji należy zdefiniować wartość Yield i dla metod w wyrażeniu obliczenia. Aby zdefiniować niestandardową operację, należy umieścić ją w klasie konstruktora dla wyrażenia obliczeń, a następnie zastosować [`CustomOperationAttribute`](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19) . Ten atrybut przyjmuje ciąg jako argument, który jest nazwą, która ma być używana w operacji niestandardowej. Ta nazwa znajduje się w zakresie na początku otwierającego nawiasu klamrowego wyrażenia obliczeń. W związku z tym nie należy używać identyfikatorów, które mają taką samą nazwę jak operacja niestandardowa w tym bloku. Na przykład Unikaj używania identyfikatorów takich jak `all` lub `last` w wyrażeniach zapytań.
+Istnieje możliwość zdefiniowania niestandardowej operacji w wyrażeniu obliczenia i użycia niestandardowej operacji jako operatora w wyrażeniu obliczeniowym. Na przykład można uwzględnić operator zapytania w wyrażeniu zapytania. Podczas definiowania niestandardowej operacji należy zdefiniować wartość Yield i dla metod w wyrażeniu obliczenia. Aby zdefiniować niestandardową operację, należy umieścić ją w klasie konstruktora dla wyrażenia obliczeń, a następnie zastosować [`CustomOperationAttribute`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-customoperationattribute.html) . Ten atrybut przyjmuje ciąg jako argument, który jest nazwą, która ma być używana w operacji niestandardowej. Ta nazwa znajduje się w zakresie na początku otwierającego nawiasu klamrowego wyrażenia obliczeń. W związku z tym nie należy używać identyfikatorów, które mają taką samą nazwę jak operacja niestandardowa w tym bloku. Na przykład Unikaj używania identyfikatorów takich jak `all` lub `last` w wyrażeniach zapytań.
 
 ### <a name="extending-existing-builders-with-new-custom-operations"></a>Rozszerzanie istniejących konstruktorów przy użyciu nowych operacji niestandardowych
 
 Jeśli masz już klasę konstruktora, jej operacje niestandardowe można rozszerzyć spoza tej klasy konstruktora. Rozszerzenia muszą być zadeklarowane w modułach. Przestrzenie nazw nie mogą zawierać składowych rozszerzenia, z wyjątkiem tego samego pliku i tej samej grupy deklaracji przestrzeni nazw, w której jest zdefiniowany typ.
 
-Poniższy przykład pokazuje rozszerzenie istniejącej `Microsoft.FSharp.Linq.QueryBuilder` klasy.
+Poniższy przykład pokazuje rozszerzenie istniejącej `FSharp.Linq.QueryBuilder` klasy.
 
 ```fsharp
-type Microsoft.FSharp.Linq.QueryBuilder with
+type FSharp.Linq.QueryBuilder with
 
     [<CustomOperation("existsNot")>]
     member _.ExistsNot (source: QuerySource<'T, 'Q>, predicate) =
         Enumerable.Any (source.Source, Func<_,_>(predicate)) |> not
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka F #](index.md)
 - [Asynchroniczne przepływy pracy](asynchronous-workflows.md)
-- [Sekwencje](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
-- [Wyrażenia zapytania](query-expressions.md)
+- [Sekwencje](sequences.md)
+- [Wyrażenia kwerend](query-expressions.md)

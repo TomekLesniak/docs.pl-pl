@@ -2,12 +2,12 @@
 title: Opcje kompilatora
 description: 'Użyj opcji wiersza polecenia kompilatora F #, aby kontrolować kompilację aplikacji i bibliotek języka F #.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 7f7b7dac2060213cd7d783669cb4de2b96a88968
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: c10808e97d31bd3bdb469fc2a8e57a4650170dec
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557363"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812149"
 ---
 # <a name="compiler-options"></a>Opcje kompilatora
 
@@ -52,7 +52,7 @@ W poniższej tabeli przedstawiono opcje kompilatora w kolejności alfabetycznej.
 |`--pdb:pdb-filename`|Nazywa plik wyjściowy debugowania PDB (baza danych programu). Ta opcja ma zastosowanie tylko wtedy, gdy `--debug` jest również włączona.<br /><br />Ta opcja kompilatora jest równoważna z opcją kompilatora C# o tej samej nazwie. Aby uzyskać więcej informacji, zobacz [&#47;pdb &#40;C&#35; opcje kompilatora&#41;](../../csharp/language-reference/compiler-options/pdb-compiler-option.md).|
 |`--platform:platform-name`|Określa, że wygenerowany kod będzie uruchamiany tylko na określonej platformie ( `x86` , `Itanium` lub `x64` ) lub, jeśli `anycpu` wybrana jest nazwa platformy, określa, że wygenerowany kod można uruchomić na dowolnej platformie.<br /><br />Ta opcja kompilatora jest równoważna z opcją kompilatora C# o tej samej nazwie. Aby uzyskać więcej informacji, zobacz [&#47;platform &#40;C&#35; opcje kompilatora&#41;](../../csharp/language-reference/compiler-options/platform-compiler-option.md).|
 |`--preferreduilang:lang`| Określa nazwę preferowanej kultury języka wyjściowego (na przykład  `es-ES` , `ja-JP` ). |
-|`--quotations-debug`|Określa, że powinny być emitowane dodatkowe informacje o debugowaniu dla wyrażeń, które pochodzą z literałów cytatu w języku F # i odbitej definicji. Informacje debugowania są dodawane do atrybutów niestandardowych węzła drzewa wyrażenia języka F #. Zobacz [cytaty kodu](code-quotations.md) i [expr. CustomAttributes —](https://msdn.microsoft.com/visualfsharpdocs/conceptual/expr.customattributes-property-%5bfsharp%5d).|
+|`--quotations-debug`|Określa, że powinny być emitowane dodatkowe informacje o debugowaniu dla wyrażeń, które pochodzą z literałów cytatu w języku F # i odbitej definicji. Informacje debugowania są dodawane do atrybutów niestandardowych węzła drzewa wyrażenia języka F #. Zobacz [cytaty kodu](code-quotations.md) i [expr. CustomAttributes —](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes).|
 |`--reference:assembly-filename`<br /><br />`-r:assembly-filename`|Sprawia, że kod z zestawu F # lub .NET Framework jest dostępny dla kompilowanego kodu.<br /><br />Ta opcja kompilatora jest równoważna z opcją kompilatora C# o tej samej nazwie. Aby uzyskać więcej informacji, zobacz [&#47;reference &#40;C&#35; opcje kompilatora&#41;](../../csharp/language-reference/compiler-options/reference-compiler-option.md).|
 |`--resource:resource-filename`|Osadza plik zasobów zarządzanych w wygenerowanym zestawie.<br /><br />Ta opcja kompilatora jest równoważna z opcją kompilatora C# o tej samej nazwie. Aby uzyskać więcej informacji, zobacz [&#47;resource &#40;C&#35; opcje kompilatora&#41;](../../csharp/language-reference/compiler-options/resource-compiler-option.md).|
 |`--sig:signature-filename`|Generuje plik sygnatury na podstawie wygenerowanego zestawu. Aby uzyskać więcej informacji na temat plików sygnatur, zobacz [Signature](signature-files.md).|

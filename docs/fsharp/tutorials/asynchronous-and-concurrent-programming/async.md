@@ -1,53 +1,53 @@
 ---
-title: Programowanie asynchroniowe
-description: Dowiedz się, jak F# zapewnia czystą obsługę asynchrony na podstawie modelu programowania na poziomie języka pochodzących z podstawowych koncepcji programowania funkcjonalnego.
-ms.date: 12/17/2018
-ms.openlocfilehash: 0a7d400c9778e30d6b25798239f12b7b2b0e3d82
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+title: Programowanie asynchroniczne
+description: 'Dowiedz się, w jaki sposób język F # zapewnia czystą obsługę asynchroniczności w oparciu o model programowania na poziomie języka pochodzący z podstawowych koncepcji programowania funkcjonalnego.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 2e5d4fb744b4443eb9caf90cc1bf01473b809127
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021523"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811772"
 ---
-# <a name="async-programming-in-f"></a>Programowanie asynchroniowe w F\#
+# <a name="async-programming-in-f"></a>Programowanie asynchroniczne w F\#
 
-Programowanie asynchroniczne jest mechanizmem, który jest niezbędny do nowoczesnych zastosowań z różnych powodów. Istnieją dwa podstawowe przypadki użycia, które napotka większość deweloperów:
+Programowanie asynchroniczne jest mechanizmem, który jest niezbędny dla nowoczesnych aplikacji z różnych powodów. Istnieją dwa podstawowe przypadki użycia, które napotykają większość deweloperów:
 
-- Przedstawianie procesu serwera, który może obsługiwać znaczną liczbę równoczesnych żądań przychodzących, przy jednoczesnym zminimalizowaniu zasobów systemowych zajętych podczas przetwarzania żądań oczekuje na dane wejściowe z systemów lub usług zewnętrznych dla tego procesu
-- Obsługa elastycznego interfejsu użytkownika lub wątku głównego przy jednoczesnym postępie pracy w tle
+- Przedstawienie procesu serwera, który może obsłużyć znaczną liczbę współbieżnych żądań przychodzących, jednocześnie minimalizując zasoby systemowe zajęte podczas przetwarzania żądań czeka na dane wejściowe z systemów lub usług zewnętrznych dla tego procesu
+- Utrzymywanie odpowiedzi na interfejsie użytkownika lub głównego wątku podczas współbieżnego postępu pracy w tle
 
-Chociaż praca w tle często wiąże się z wykorzystaniem wielu wątków, ważne jest, aby rozważyć pojęcia asynchrony i wielowątkowe oddzielnie. W rzeczywistości są to odrębne obawy, a jedno nie oznacza drugiego. W tym artykule opisano bardziej szczegółowo poszczególne pojęcia.
+Mimo że prace w tle często obejmują wykorzystanie wielu wątków, ważne jest, aby rozważyć koncepcje asynchroniczności i wielowątkowości osobno. W rzeczywistości są one oddzielnymi problemami, a jeden z nich nie ma innych. W tym artykule opisano różne koncepcje bardziej szczegółowo.
 
-## <a name="asynchrony-defined"></a>Asynchrony zdefiniowane
+## <a name="asynchrony-defined"></a>Asynchroniczności zdefiniowany
 
-Poprzedni punkt - że asynchrony jest niezależna od wykorzystania wielu wątków - warto wyjaśnić nieco dalej. Istnieją trzy pojęcia, które są czasami powiązane, ale ściśle niezależne od siebie:
+Poprzedni punkt — ten asynchroniczności jest niezależny od użycia wielu wątków — jest również bardziej opisowy. Istnieją trzy koncepcje, które są czasami powiązane, ale ściśle niezależne od siebie:
 
-- Współbieżność; gdy wiele obliczeń wykonuje się w nakładających się okresach.
-- Równoległość; gdy wiele obliczeń lub kilka części pojedynczych obliczeń działa dokładnie w tym samym czasie.
-- Asynchrony; gdy jedno lub więcej obliczeń może być wykonywanych oddzielnie od głównego przepływu programu.
+- Współbieżności gdy wiele obliczeń jest wykonywanych w nadchodzących okresach czasowych.
+- Równoległości gdy wiele obliczeń lub kilka części jednego obliczenia jest wykonywanych w dokładnie tym samym czasie.
+- Asynchroniczności gdy jedno lub więcej obliczeń można wykonać niezależnie od przepływu głównego programu.
 
-Wszystkie trzy są pojęciami ortogonalnymi, ale można je łatwo skondensować, zwłaszcza gdy są używane razem. Na przykład może być konieczne wykonanie wielu obliczeń asynchronicznych równolegle. Ta relacja nie oznacza, że równoległość lub asynchrony implikować siebie nawzajem.
+Wszystkie trzy są koncepcjami prostopadłymi, ale można je łatwo rozliczać, szczególnie gdy są używane razem. Na przykład może być konieczne wykonanie wielu obliczeń asynchronicznych równolegle. Ta relacja nie oznacza, że równoległość lub asynchroniczności implikują sobie siebie nawzajem.
 
-Jeśli wziąć pod uwagę etymologię słowa "asynchroniczne", istnieją dwa elementy zaangażowane:
+Jeśli rozważasz etymology słowa "asynchroniczne", istnieją dwa elementy:
 
-- "a", czyli "nie".
-- "synchroniczne", co oznacza "w tym samym czasie".
+- "a", znaczenie "nie".
+- "synchroniczne", znaczenie "w tym samym czasie".
 
-Po połączeniu tych dwóch terminów zobaczysz, że "asynchroniczne" oznacza "nie w tym samym czasie". Gotowe. Nie ma żadnych konsekwencji współbieżności lub równoległości w tej definicji. Dotyczy to również w praktyce.
+Po umieszczeniu tych dwóch terminów, zobaczysz, że "asynchroniczne" oznacza "nie w tym samym czasie". Gotowe. W tej definicji nie ma implikacji współbieżności ani równoległości. Ta metoda jest również prawdziwa.
 
-W praktyce obliczenia asynchroniczne w języku F# są zaplanowane do wykonania niezależnie od głównego przepływu programu. To niezależne wykonanie nie oznacza współbieżności lub równoległości, ani nie oznacza, że obliczenia zawsze dzieje się w tle. W rzeczywistości obliczenia asynchroniczne można nawet wykonać synchronicznie, w zależności od charakteru obliczeń i środowiska, w jakim obliczenia są wykonywane.
+W praktyce, asynchroniczne obliczenia w języku F # są zaplanowane do wykonania niezależnie od przepływu głównego programu. Niezależne wykonanie nie oznacza współbieżności ani równoległości, ani nie oznacza, że obliczenie zawsze odbywa się w tle. W rzeczywistości asynchroniczne obliczenia mogą nawet wykonywać synchronicznie, w zależności od rodzaju obliczenia i środowiska, w którym jest wykonywane obliczenie.
 
-Głównym wynos powinieneś mieć to, że obliczenia asynchroniczne są niezależne od głównego przepływu programu. Chociaż istnieje kilka gwarancji dotyczących tego, kiedy lub jak wykonuje obliczenia asynchroniczne, istnieją pewne podejścia do ich organizowania i planowania. W dalszej części tego artykułu eksploruje podstawowe pojęcia dla asynchrony F# i jak używać typów, funkcji i wyrażeń wbudowanych w F#.
+Głównym wnioskiemem jest to, że obliczenia asynchroniczne są niezależne od przepływu głównego programu. Chociaż istnieją pewne gwarancje dotyczące tego, kiedy lub jak są wykonywane asynchroniczne obliczenia, istnieją niektóre podejścia do organizowania i planowania. W pozostałej części tego artykułu przedstawiono podstawowe koncepcje dotyczące języka F # asynchroniczności oraz sposób używania typów, funkcji i wyrażeń wbudowanych w języku F #.
 
-## <a name="core-concepts"></a>Kluczowe pojęcia
+## <a name="core-concepts"></a>Podstawowe pojęcia
 
-W języku F# programowanie asynchroniczne jest wyśrodkowane wokół trzech podstawowych pojęć:
+W języku F # programowanie asynchroniczne zawiera trzy podstawowe koncepcje:
 
-- Typ, `Async<'T>` który reprezentuje obliczeń asynchronicznych komponowania.
-- Funkcje modułu, `Async` które umożliwiają planowanie pracy asynchronicznej, komponowanie obliczeń asynchronicznych i przekształcanie wyników asynchronicznych.
-- Wyrażenie `async { }` [obliczeń](../../language-reference/computation-expressions.md), które zapewnia wygodną składnię do tworzenia i kontrolowania obliczeń asynchronicznych.
+- `Async<'T>`Typ, który reprezentuje szeregowe Obliczanie asynchroniczne.
+- `Async`Funkcja module, która umożliwia planowanie pracy asynchronicznej, tworzenie obliczeń asynchronicznych i przekształcanie asynchronicznych wyników.
+- `async { }` [Wyrażenie obliczeń](../../language-reference/computation-expressions.md), które zapewnia wygodną składnię do kompilowania i kontrolowania asynchronicznych obliczeń.
 
-Te trzy pojęcia można zobaczyć w poniższym przykładzie:
+Te trzy koncepcje można zobaczyć w następującym przykładzie:
 
 ```fsharp
 open System
@@ -69,15 +69,15 @@ let main argv =
     0
 ```
 
-W przykładzie `printTotalFileBytes` funkcja jest `string -> Async<unit>`typu . Wywołanie funkcji faktycznie nie wykonuje obliczeń asynchronicznych. Zamiast tego `Async<unit>` zwraca, który działa jako *specyfikacja* pracy, która ma wykonać asynchronicznie. Wywołuje `Async.AwaitTask` w swoim ciele, który konwertuje wynik <xref:System.IO.File.ReadAllBytesAsync%2A> do odpowiedniego typu.
+W przykładzie `printTotalFileBytes` Funkcja jest typu `string -> Async<unit>` . Wywołanie funkcji nie powoduje rzeczywistego wykonania obliczeń asynchronicznych. Zamiast tego zwraca obiekt `Async<unit>` , który działa jako *Specyfikacja* pracy, która jest wykonywana asynchronicznie. Wywołuje `Async.AwaitTask` w swojej treści, który konwertuje wynik <xref:System.IO.File.ReadAllBytesAsync%2A> do odpowiedniego typu.
 
-Inną ważną linią jest `Async.RunSynchronously`wezwanie do . Jest to jedna z funkcji uruchamiania modułu Async, które należy wywołać, jeśli chcesz faktycznie wykonać obliczenia asynchroniczne F#.
+Innym ważnym wierszem jest wywołanie metody `Async.RunSynchronously` . Jest to jeden z funkcji uruchamiania modułów asynchronicznych, które należy wywołać, jeśli chcesz rzeczywiście wykonać obliczenia asynchroniczne w języku F #.
 
-Jest to zasadnicza różnica w stylu `async` programowania języka C#/Visual Basic. W języku F# obliczenia asynchroniczne można traktować jako **zimne zadania**. Muszą one być jawnie rozpoczęte do faktycznie wykonać. Ma to pewne zalety, ponieważ pozwala na łączenie i sekwencji pracy asynchronicznej znacznie łatwiej niż w języku C# lub Visual Basic.
+Jest to podstawowa różnica w stylu programowania w języku C#/Visual Basic `async` . W języku F # asynchroniczne obliczenia można traktować jako **zimne zadania**. Muszą być jawnie uruchomione w celu rzeczywistego wykonania. Ma to pewne zalety, ponieważ umożliwia łączenie i sekwencję asynchronicznych zadań znacznie łatwiej niż w języku C# lub Visual Basic.
 
-## <a name="combine-asynchronous-computations"></a>Łączenie obliczeń asynchronicznych
+## <a name="combine-asynchronous-computations"></a>Łączenie asynchronicznych obliczeń
 
-Oto przykład, który opiera się na poprzednim, łącząc obliczenia:
+Oto przykład, który kompiluje się na poprzednim, przez połączenie obliczeń:
 
 ```fsharp
 open System
@@ -101,18 +101,18 @@ let main argv =
     0
 ```
 
-Jak widać, `main` funkcja ma sporo więcej połączeń wykonanych. Koncepcyjnie wykonuje następujące czynności:
+Jak widać, `main` Funkcja ma wiele większej liczby wywołań. Koncepcyjnie wykonuje następujące czynności:
 
-1. Przekształć `Async<unit>` argumenty wiersza polecenia w obliczenia za pomocą pliku `Array.map`.
-2. `Async<'T[]>` Utwórz, który planuje `printTotalFileBytes` i uruchamia obliczenia równolegle podczas pracy.
-3. `Async<unit>` Utwórz, który uruchomi obliczenia równoległe i zignoruje jego wynik.
-4. Jawnie uruchomić ostatnie obliczenia `Async.RunSynchronously` z i zablokować, dopóki nie zakończy.
+1. Przekształcanie argumentów wiersza polecenia w `Async<unit>` obliczenia za pomocą `Array.map` .
+2. Utwórz `Async<'T[]>` harmonogramy i uruchamia `printTotalFileBytes` obliczenia równolegle, gdy zostanie uruchomione.
+3. Utwórz `Async<unit>` , który będzie uruchamiać obliczenia równoległe i zignorować jego wynik.
+4. Jawnie Uruchom ostatnie obliczenie z `Async.RunSynchronously` i blokuj do momentu jego zakończenia.
 
-Po uruchomieniu tego `printTotalFileBytes` programu działa równolegle dla każdego argumentu wiersza polecenia. Ponieważ obliczenia asynchroniczne są wykonywane niezależnie od przepływu programu, nie ma kolejności drukowania informacji i zakończenia wykonywania. Obliczenia będą zaplanowane równolegle, ale ich kolejność wykonywania nie jest gwarantowana.
+Po uruchomieniu tego programu Program `printTotalFileBytes` uruchamia się równolegle dla każdego argumentu wiersza polecenia. Ponieważ asynchroniczne obliczenia są wykonywane niezależnie od przepływu programu, nie ma kolejności, w której drukują informacje i kończą wykonywanie. Obliczenia będą wykonywane równolegle, ale ich kolejność wykonywania nie jest gwarantowana.
 
-## <a name="sequence-asynchronous-computations"></a>Sekwencja obliczeń asynchronicznych
+## <a name="sequence-asynchronous-computations"></a>Asynchroniczne obliczenia sekwencji
 
-Ponieważ `Async<'T>` jest to specyfikacja pracy, a nie już uruchomione zadanie, można łatwo wykonywać bardziej skomplikowane przekształcenia. Oto przykład, który sekwencjonuje zestaw obliczeń Asynchronii, aby wykonać jeden po drugim.
+Ze względu `Async<'T>` na to, że jest to specyfikacja pracy, a nie zadania już uruchomionego, można łatwo wykonywać bardziej intricatee przekształcenia. Oto przykład, który służy do sekwencjonowania zestawu asynchronicznych obliczeń, tak aby były wykonywane jeden po drugim.
 
 ```fsharp
 let printTotalFileBytes path =
@@ -132,17 +132,17 @@ let main argv =
     |> ignore
 ```
 
-Spowoduje to `printTotalFileBytes` zaplanowanie wykonania w kolejności `argv` elementów, a nie ich równoległego planowania. Ponieważ następny element nie zostanie zaplanowany dopiero po zakończeniu wykonywania ostatniego obliczenia, obliczenia są sekwencjonowane w taki sposób, że nie ma nakładania się w ich wykonaniu.
+Spowoduje to zaplanowanie `printTotalFileBytes` wykonywania w kolejności elementów `argv` zamiast planowania ich równolegle. Ponieważ następny element nie zostanie zaplanowany do momentu zakończenia ostatniego obliczenia, obliczenia zostaną uporządkowane w taki sposób, że ich wykonanie nie nakłada się na siebie.
 
-## <a name="important-async-module-functions"></a>Ważne funkcje modułu Asynchronii
+## <a name="important-async-module-functions"></a>Ważne funkcje modułu asynchronicznego
 
-Podczas pisania kodu asynchroniiowego w języku F#, zwykle będziesz wchodzić w interakcje z platformą, która obsługuje planowania obliczeń dla Ciebie. Jednak nie zawsze tak jest, więc dobrze jest nauczyć się różnych funkcji początkowych, aby zaplanować pracę asynchronizacę.
+Gdy piszesz kod asynchroniczny w języku F #, zazwyczaj będziesz współdziałać z platformą, która obsługuje planowanie obliczeń. Nie jest to jednak zawsze przypadek, dlatego warto poznać różne funkcje uruchamiania w celu zaplanowania pracy asynchronicznej.
 
-Ponieważ obliczenia asynchroniczne F# są _specyfikacją_ pracy, a nie reprezentacją pracy, która jest już wykonywana, muszą być jawnie uruchomione z funkcją początkową. Istnieje wiele [funkcji uruchamiania Async,](https://msdn.microsoft.com/library/ee370232.aspx) które są pomocne w różnych kontekstach. W poniższej sekcji opisano niektóre z bardziej typowych funkcji początkowych.
+Ponieważ obliczenia asynchroniczne języka F # są _specyfikacją_ pracy, a nie reprezentacją już wykonywanej pracy, muszą być jawnie uruchomione przy użyciu funkcji początkowej. Istnieje wiele [metod uruchamiania asynchronicznego](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html#section0) , które są przydatne w różnych kontekstach. W poniższej sekcji opisano niektóre typowe funkcje uruchamiania.
 
-### <a name="asyncstartchild"></a>Async.StartChild
+### <a name="asyncstartchild"></a>Async. StartChild —
 
-Rozpoczyna obliczanie podrzędne w obliczeniach asynchronicznych. Dzięki temu wiele obliczeń asynchronicznych mają być wykonywane jednocześnie. Obliczenia podrzędne współumisuje token anulowania z obliczeń nadrzędnych. Jeśli obliczenia nadrzędne są anulowane, obliczenia podrzędne są również anulowane.
+Uruchamia obliczenie elementu podrzędnego w ramach obliczeń asynchronicznych. Umożliwia to współbieżne wykonywanie wielu asynchronicznych obliczeń. Podrzędne obliczenie udostępnia token anulowania z obliczeniami nadrzędnymi. Jeśli Obliczanie nadrzędne zostanie anulowane, obliczenia podrzędne również zostaną anulowane.
 
 Podpis:
 
@@ -150,19 +150,19 @@ Podpis:
 computation: Async<'T> * timeout: ?int -> Async<Async<'T>>
 ```
 
-Kiedy stosować:
+Kiedy używać:
 
-- Jeśli chcesz wykonać wiele obliczeń asynchronicznych jednocześnie, a nie jeden na raz, ale nie mają ich zaplanowane równolegle.
-- Jeśli chcesz powiązać okres istnienia obliczeń podrzędnych z okresem istnienia obliczeń nadrzędnych.
+- Jeśli chcesz wykonać wiele asynchronicznych obliczeń jednocześnie, a nie jeden na raz, ale nie zaplanowano ich równolegle.
+- Gdy chcesz powiązać okres istnienia obliczeń podrzędnych z tym, że jest to obliczenie nadrzędne.
 
-Na co uważać:
+Co należy obserwować:
 
-- Uruchamianie wielu `Async.StartChild` obliczeń z nie jest taka sama jak planowanie ich równolegle. Jeśli chcesz zaplanować obliczenia równolegle, `Async.Parallel`użyj .
-- Anulowanie obliczeń nadrzędnych spowoduje anulowanie wszystkich obliczeń podrzędnych, które uruchomił.
+- Uruchamianie wielu obliczeń za pomocą `Async.StartChild` nie jest takie samo jak planowanie ich równolegle. Jeśli chcesz zaplanować obliczenia równolegle, użyj `Async.Parallel` .
+- Anulowanie obliczenia nadrzędnego spowoduje anulowanie wszystkich rozpoczętych obliczeń podrzędnych.
 
-### <a name="asyncstartimmediate"></a>Async.StartImmediate
+### <a name="asyncstartimmediate"></a>Async. StartImmediate —
 
-Uruchamia obliczenia asynchroniczne, uruchamia się natychmiast w bieżącym wątku systemu operacyjnego. Jest to przydatne, jeśli trzeba zaktualizować coś w wątku wywołującym podczas obliczeń. Na przykład jeśli obliczenia asynchroniczne muszą zaktualizować interfejs użytkownika (na przykład `Async.StartImmediate` aktualizowanie paska postępu), należy użyć.
+Uruchamia asynchroniczne obliczenie, rozpoczynając od razu od bieżącego wątku systemu operacyjnego. Jest to przydatne, jeśli trzeba zaktualizować coś w wątku wywołującym podczas obliczania. Na przykład jeśli asynchroniczne obliczenie musi zaktualizować interfejs użytkownika (na przykład zaktualizować pasek postępu), `Async.StartImmediate` należy go użyć.
 
 Podpis:
 
@@ -170,17 +170,17 @@ Podpis:
 computation: Async<unit> * cancellationToken: ?CancellationToken -> unit
 ```
 
-Kiedy stosować:
+Kiedy używać:
 
-- Gdy trzeba zaktualizować coś na wątku wywołującego w środku obliczeń asynchronicznych.
+- Gdy trzeba zaktualizować coś w wątku wywołującym w środku obliczeń asynchronicznych.
 
-Na co uważać:
+Co należy obserwować:
 
-- Kod w obliczeniach asynchronicznych będzie działać na dowolnym wątku jeden dzieje się zaplanowane na. Może to być problematyczne, jeśli ten wątek jest w jakiś sposób wrażliwe, takie jak wątek interfejsu użytkownika. W takich `Async.StartImmediate` przypadkach, jest prawdopodobne, niewłaściwe w użyciu.
+- Kod w asynchronicznym obliczaniu zostanie uruchomiony niezależnie od wątku, w którym ma zostać zaplanowana. Może to być problematyczne, jeśli ten wątek jest w sposób niezależny, na przykład wątek interfejsu użytkownika. W takich przypadkach `Async.StartImmediate` prawdopodobnie jest nieodpowiedni do użycia.
 
-### <a name="asyncstartastask"></a>Async.StartAsTask
+### <a name="asyncstartastask"></a>Async. Startastask —
 
-Wykonuje obliczenia w puli wątków. <xref:System.Threading.Tasks.Task%601> Zwraca, który zostanie ukończony w odpowiednim stanie po zakończeniu obliczeń (daje wynik, zgłasza wyjątek lub zostanie anulowany). Jeśli nie podano tokenu anulowania, używany jest domyślny token anulowania.
+Wykonuje obliczenia w puli wątków. Zwraca wartość <xref:System.Threading.Tasks.Task%601> , która zostanie zakończona w odpowiadającym stanie po zakończeniu obliczeń (tworzy wynik, zgłasza wyjątek lub jest anulowany). Jeśli nie podano tokenu anulowania, zostanie użyty domyślny token anulowania.
 
 Podpis:
 
@@ -188,17 +188,17 @@ Podpis:
 computation: Async<'T> * taskCreationOptions: ?TaskCreationOptions * cancellationToken: ?CancellationToken -> Task<'T>
 ```
 
-Kiedy stosować:
+Kiedy używać:
 
-- Gdy trzeba wywołać interfejs API platformy .NET, który <xref:System.Threading.Tasks.Task%601> oczekuje, że reprezentuje wynik obliczeń asynchronicznych.
+- Gdy musisz wywołać interfejs API platformy .NET, który oczekuje na <xref:System.Threading.Tasks.Task%601> wynik obliczeń asynchronicznych.
 
-Na co uważać:
+Co należy obserwować:
 
-- To wywołanie przydzieli dodatkowy `Task` obiekt, który może zwiększyć obciążenie, jeśli jest często używany.
+- To wywołanie spowoduje przydzielenie dodatkowego `Task` obiektu, co może zwiększyć obciążenie, jeśli jest używane często.
 
-### <a name="asyncparallel"></a>Async.Parallel (Async.Parallel)
+### <a name="asyncparallel"></a>Async. Parallel
 
-Planuje sekwencję obliczeń asynchronicznych, które mają być wykonywane równolegle. Stopień równoległości można opcjonalnie dostroić/ograniczyć, `maxDegreesOfParallelism` określając parametr.
+Planuje sekwencję asynchronicznych obliczeń, które mają być wykonywane równolegle. Stopień równoległości można opcjonalnie dostrajać/ograniczyć przez określenie `maxDegreesOfParallelism` parametru.
 
 Podpis:
 
@@ -206,19 +206,19 @@ Podpis:
 computations: seq<Async<'T>> * ?maxDegreesOfParallelism: int -> Async<'T[]>
 ```
 
-Kiedy go używać:
+Kiedy używać go:
 
-- Jeśli musisz uruchomić zestaw obliczeń w tym samym czasie i nie mają polegania na ich kolejności wykonywania.
-- Jeśli nie potrzebujesz wyników z obliczeń zaplanowanych równolegle, dopóki nie zostaną ukończone.
+- Jeśli konieczne jest uruchomienie zestawu obliczeń w tym samym czasie i nie ma on zależności od ich kolejności wykonywania.
+- Jeśli nie są wymagane wyniki z obliczeń zaplanowanych równolegle, dopóki nie zostaną ukończone.
 
-Na co uważać:
+Co należy obserwować:
 
-- Wynikową tablicę wartości można uzyskać tylko po zakończeniu wszystkich obliczeń.
-- Obliczenia będą uruchamiane za każdym razem, gdy zostaną zaplanowane. To zachowanie oznacza, że nie można polegać na ich kolejności ich wykonania.
+- Można uzyskać dostęp tylko do wyników tablicy wartości po zakończeniu wszystkich obliczeń.
+- Obliczenia zostaną uruchomione po każdym zaplanowaniu. To zachowanie oznacza, że nie można polegać na ich kolejności wykonywania.
 
-### <a name="asyncsequential"></a>Async.Sequential
+### <a name="asyncsequential"></a>Async. sekwencyjny
 
-Planuje sekwencję obliczeń asynchronicznych do wykonania w kolejności, w jakiej są przekazywane. Pierwsze obliczenia zostaną wykonane, następnie następne i tak dalej. Żadne obliczenia nie będą wykonywane równolegle.
+Planuje sekwencję asynchronicznych obliczeń do wykonania w kolejności, w jakiej zostały przesłane. Pierwsze obliczenie zostanie wykonane, następnie następne i tak dalej. Żadne obliczenia nie będą wykonywane równolegle.
 
 Podpis:
 
@@ -226,18 +226,18 @@ Podpis:
 computations: seq<Async<'T>> -> Async<'T[]>
 ```
 
-Kiedy go używać:
+Kiedy używać go:
 
-- Jeśli musisz wykonać wiele obliczeń w kolejności.
+- Jeśli konieczne jest wykonanie wielu obliczeń w kolejności.
 
-Na co uważać:
+Co należy obserwować:
 
-- Wynikową tablicę wartości można uzyskać tylko po zakończeniu wszystkich obliczeń.
-- Obliczenia będą uruchamiane w kolejności, w jakiej są przekazywane do tej funkcji, co może oznaczać, że zanim wyniki zostaną zwrócone, upłynie więcej czasu.
+- Można uzyskać dostęp tylko do wyników tablicy wartości po zakończeniu wszystkich obliczeń.
+- Obliczenia będą wykonywane w kolejności, w jakiej są przesyłane do tej funkcji, co może oznaczać, że upłynie więcej czasu przed zwróceniem wyników.
 
-### <a name="asyncawaittask"></a>Async.AwaitTask (Async.AwaitTask)
+### <a name="asyncawaittask"></a>Async. Awaittask —
 
-Zwraca obliczenia asynchroniczne, które czekają <xref:System.Threading.Tasks.Task%601> na zakończenie danego i zwraca jego wynik jako`Async<'T>`
+Zwraca asynchroniczne obliczenie, które czeka na zakończenie danego elementu <xref:System.Threading.Tasks.Task%601> i zwraca jego wynik jako `Async<'T>`
 
 Podpis:
 
@@ -245,17 +245,17 @@ Podpis:
 task: Task<'T> -> Async<'T>
 ```
 
-Kiedy stosować:
+Kiedy używać:
 
-- Podczas korzystania z interfejsu API platformy <xref:System.Threading.Tasks.Task%601> .NET, który zwraca w ramach F# obliczeń asynchronicznych.
+- Gdy korzystasz z interfejsu API platformy .NET, który zwraca <xref:System.Threading.Tasks.Task%601> w ramach obliczeń asynchronicznych języka F #.
 
-Na co uważać:
+Co należy obserwować:
 
-- Wyjątki są <xref:System.AggregateException> zawijane w następujące konwencji biblioteki równoległej zadania i to zachowanie różni się od jak F# async zazwyczaj powierzchnie wyjątków.
+- Wyjątki są opakowane w <xref:System.AggregateException> ramach Konwencji równoległej biblioteki zadań, a to zachowanie różni się od tego, w jaki sposób asynchronicznie zawiera ogólne powierzchnie w języku F #.
 
-### <a name="asynccatch"></a>Async.Catch (Async.Catch)
+### <a name="asynccatch"></a>Async. catch
 
-Tworzy obliczenia asynchroniczne, które wykonuje `Async<'T>`dany `Async<Choice<'T, exn>>`, zwracając . Jeśli podane `Async<'T>` zakończy się pomyślnie, a następnie `Choice1Of2` zwracany z wartością wynikową. Jeśli wyjątek zostanie zgłoszony przed jego `Choice2of2` zakończeniem, a następnie zwracany z zgłoszonym wyjątkiem. Jeśli jest on używany w obliczeniach asynchronicznych, który sam składa się z wielu obliczeń, a jedno z tych obliczeń zgłasza wyjątek, obejmujące obliczeń zostanie całkowicie zatrzymany.
+Tworzy asynchroniczne obliczenie, które wykonuje daną `Async<'T>` , zwracając `Async<Choice<'T, exn>>` . Jeśli podano `Async<'T>` pomyślnie, `Choice1Of2` zostanie zwrócona wartość wynikowy. Jeśli przed zakończeniem zostanie zgłoszony wyjątek, a następnie `Choice2of2` zwracany jest wyjątek. Jeśli jest używany w przypadku obliczeń asynchronicznych, które są tworzone w wielu obliczeniach, a jedno z tych obliczeń zgłasza wyjątek, obliczenia obejmujące obejmie zostaną całkowicie zatrzymane.
 
 Podpis:
 
@@ -263,17 +263,17 @@ Podpis:
 computation: Async<'T> -> Async<Choice<'T, exn>>
 ```
 
-Kiedy stosować:
+Kiedy używać:
 
-- Podczas wykonywania pracy asynchroniiowej, które mogą zakończyć się niepowodzeniem z wyjątkiem i chcesz obsłużyć ten wyjątek w wywołującym.
+- Gdy wykonujesz asynchroniczne zadanie, które może zakończyć się niepowodzeniem z wyjątkiem i chcesz obsłużyć ten wyjątek w obiekcie wywołującym.
 
-Na co uważać:
+Co należy obserwować:
 
-- W przypadku korzystania z połączonych lub sekwencjonowane obliczeń asynchronicznych, obejmujące obliczeń zostanie całkowicie zatrzymane, jeśli jeden z jego "wewnętrznych" obliczeń zgłasza wyjątek.
+- W przypadku korzystania z połączonych lub sekwencyjnych obliczeń asynchronicznych Obliczanie obejmujące obliczenia zostanie całkowicie zatrzymane, jeśli jedno z jego "wewnętrznego" obliczeń zgłosi wyjątek.
 
-### <a name="asyncignore"></a>Async.Ignore (Async.Ignore)
+### <a name="asyncignore"></a>Async. Ignore
 
-Tworzy obliczenia asynchroniczne, który uruchamia danego obliczeń i ignoruje jego wynik.
+Tworzy asynchroniczne obliczenie, które uruchamia danego obliczenia i ignoruje jego wynik.
 
 Podpis:
 
@@ -281,17 +281,17 @@ Podpis:
 computation: Async<'T> -> Async<unit>
 ```
 
-Kiedy stosować:
+Kiedy używać:
 
-- Gdy masz obliczenia asynchroniczne, których wynik nie jest potrzebny. Jest to analogiczne `ignore` do kodu dla kodu nieynchroniowego.
+- W przypadku obliczeń asynchronicznych, których wynik nie jest wymagany. Jest to analogiczny `ignore` kod nieasynchroniczny.
 
-Na co uważać:
+Co należy obserwować:
 
-- Jeśli musisz `Async.Ignore` użyć, ponieważ `Async.Start` chcesz użyć lub `Async<unit>`innej funkcji, która wymaga, należy rozważyć, czy odrzucenie wyniku jest w porządku. Unikaj odrzucania wyników tylko po to, aby dopasować podpis typu.
+- Jeśli musisz użyć `Async.Ignore` programu, ponieważ chcesz użyć `Async.Start` lub innej funkcji, która jest wymagana `Async<unit>` , weź pod uwagę, czy odrzucanie wyniku jest dobry. Unikaj odrzucania wyników tylko w celu dopasowania do podpisu typu.
 
-### <a name="asyncrunsynchronously"></a>Async.RunSynchronously
+### <a name="asyncrunsynchronously"></a>Async. metody RunSynchronously
 
-Uruchamia obliczenia asynchroniczne i oczekuje na jego wynik w wątku wywołującym. To wywołanie jest blokowanie.
+Uruchamia asynchroniczne obliczenie i czeka na wynik wątku wywołującego. To wywołanie blokuje.
 
 Podpis:
 
@@ -299,18 +299,18 @@ Podpis:
 computation: Async<'T> * timeout: ?int * cancellationToken: ?CancellationToken -> 'T
 ```
 
-Kiedy go używać:
+Kiedy używać go:
 
-- Jeśli tego potrzebujesz, użyj go tylko raz w aplikacji — w punkcie wejścia dla pliku wykonywalnego.
-- Gdy nie dbasz o wydajność i chcesz wykonać zestaw innych operacji asynchronicznych na raz.
+- Jeśli potrzebujesz tego, użyj go tylko raz w aplikacji — w punkcie wejścia dla pliku wykonywalnego.
+- Gdy nie masz opieki nad wydajnością i chcesz wykonać zestaw innych operacji asynchronicznych jednocześnie.
 
-Na co uważać:
+Co należy obserwować:
 
-- Wywołanie `Async.RunSynchronously` blokuje wątek wywołujący, dopóki wykonanie nie zostanie zakończone.
+- Wywoływanie `Async.RunSynchronously` blokuje wątek wywołujący do momentu zakończenia wykonywania.
 
-### <a name="asyncstart"></a>Async.Start
+### <a name="asyncstart"></a>Async. Start
 
-Uruchamia obliczenia asynchroniczne w puli wątków, która zwraca `unit`. Nie czeka na jego wynik. Obliczenia zagnieżdżone rozpoczęte `Async.Start` są uruchamiane niezależnie od obliczeń nadrzędnych, które je nazwały. Ich żywotność nie jest związana z żadnymi obliczeniami nadrzędnych. Jeśli obliczenia nadrzędne zostaną anulowane, żadne obliczenia podrzędne nie zostaną anulowane.
+Uruchamia asynchroniczne obliczenie w puli wątków, która zwraca `unit` . Nie czeka na jego wynik. Zagnieżdżone obliczenia rozpoczęte przy użyciu `Async.Start` są uruchamiane niezależnie od obliczeń nadrzędnych, które je wywołały. Ich okres istnienia nie jest powiązany z żadnym z obliczeń nadrzędnych. Jeśli Obliczanie nadrzędne zostało anulowane, nie są anulowane żadne obliczenia podrzędne.
 
 Podpis:
 
@@ -318,27 +318,27 @@ Podpis:
 computation: Async<unit> * cancellationToken: ?CancellationToken -> unit
 ```
 
-Stosować tylko wtedy, gdy:
+Używaj tylko wtedy, gdy:
 
-- Masz obliczenia asynchroniczne, które nie dają wynik i/lub wymagają przetwarzania jednego.
-- Nie musisz wiedzieć, kiedy obliczenia asynchroniczne zakończyć.
-- Nie obchodzi cię, który wątek jest uruchamiany na obliczeniach asynchronicznych.
-- Nie musisz być świadomy lub zgłaszać wyjątki wynikające z zadania.
+- Istnieje asynchroniczne obliczenie, które nie zwraca wyniku i/lub wymaga przetwarzania jednego.
+- Nie musisz wiedzieć, kiedy kończy się Obliczanie asynchroniczne.
+- Nie musisz określać wątku, w którym jest wykonywane asynchroniczne obliczenie.
+- Nie trzeba znać ani zgłosić wyjątków wynikających z zadania.
 
-Na co uważać:
+Co należy obserwować:
 
-- Wyjątki wywoływane przez `Async.Start` obliczenia rozpoczęte z nie są propagowane do wywołującego. Stos wywołań zostanie całkowicie rozwiany.
-- Wszelkie prace (takie `printfn`jak `Async.Start` wywołanie) rozpoczęte z nie spowoduje efekt się dzieje na głównym wątku wykonywania programu.
+- Wyjątki wywoływane przez obliczenia rozpoczęte z `Async.Start` nie są propagowane do obiektu wywołującego. Stos wywołań zostanie całkowicie odłożony.
+- Każda z zadań (takich jak wywoływanie `printfn` ) rozpoczyna się od `Async.Start` nie spowoduje wystąpienia efektu w głównym wątku wykonywania programu.
 
-## <a name="interoperate-with-net"></a>Współdziałanie z .NET
+## <a name="interoperate-with-net"></a>Współdziałanie z platformą .NET
 
-Być może pracujesz z biblioteką .NET lub bazą kodu Języka C#, która używa programowania asynchroniowego asynchroniiowego [asynchronii.](../../../standard/async.md) Ponieważ C# i większość bibliotek .NET <xref:System.Threading.Tasks.Task%601> <xref:System.Threading.Tasks.Task> używać i typów jako `Async<'T>`ich abstrakcje podstawowe, a nie , należy przekroczyć granicę między tymi dwoma podejściami do asynchrony.
+Być może pracujesz z biblioteką .NET lub bazą kodu C#, która używa programowania asynchronicznego [/await](../../../standard/async.md)w stylu. Ze względu na to, że język C# i większość bibliotek .NET używają <xref:System.Threading.Tasks.Task%601> <xref:System.Threading.Tasks.Task> typów i jako ich podstawowych streszczeń, a nie, należy przeprowadzić `Async<'T>` granicę między tymi dwoma podejściami do asynchroniczności.
 
-### <a name="how-to-work-with-net-async-and-taskt"></a>Jak pracować z .NET async i`Task<T>`
+### <a name="how-to-work-with-net-async-and-taskt"></a>Jak korzystać z komunikacji asynchronicznej .NET i `Task<T>`
 
-Praca z bibliotekami asynchronizacyjnymi <xref:System.Threading.Tasks.Task%601> platformy .NET i bazami kodu, które używają (czyli obliczeń asynchronii, które mają zwracane wartości) jest prosta i ma wbudowaną obsługę z F#.
+Praca z bibliotekami asynchronicznymi platformy .NET i bazami kodu, które używają <xref:System.Threading.Tasks.Task%601> (czyli obliczeń asynchronicznych, które mają zwracane wartości) jest prosta i wbudowana obsługa języka F #.
 
-Za pomocą `Async.AwaitTask` funkcji można oczekiwać na obliczenia asynchroniczne platformy .NET:
+Można użyć funkcji, `Async.AwaitTask` aby oczekiwać na asynchroniczne Obliczanie na platformie .NET:
 
 ```fsharp
 let getValueFromLibrary param =
@@ -348,7 +348,7 @@ let getValueFromLibrary param =
     }
 ```
 
-Za pomocą `Async.StartAsTask` tej funkcji można przekazać obliczenia asynchroniczne do wywołującego .NET:
+Można użyć funkcji, `Async.StartAsTask` Aby przekazać asynchroniczne obliczenie do obiektu wywołującego platformy .NET:
 
 ```fsharp
 let computationForCaller param =
@@ -358,9 +358,9 @@ let computationForCaller param =
     } |> Async.StartAsTask
 ```
 
-### <a name="how-to-work-with-net-async-and-task"></a>Jak pracować z .NET async i`Task`
+### <a name="how-to-work-with-net-async-and-task"></a>Jak korzystać z komunikacji asynchronicznej .NET i `Task`
 
-Aby pracować z interfejsami <xref:System.Threading.Tasks.Task> API, które używają (czyli .NET async obliczeń, które nie zwracają wartość), `Async<'T>` może <xref:System.Threading.Tasks.Task>być konieczne dodanie dodatkowej funkcji, która spowoduje konwersję na:
+Aby można było korzystać z interfejsów API, które używają <xref:System.Threading.Tasks.Task> (czyli obliczeń asynchronicznych platformy .NET, które nie zwracają wartości), może być konieczne dodanie dodatkowej funkcji, która spowoduje przekonwertowanie `Async<'T>` na <xref:System.Threading.Tasks.Task> :
 
 ```fsharp
 module Async =
@@ -369,22 +369,22 @@ module Async =
         Async.StartAsTask comp :> Task
 ```
 
-Istnieje `Async.AwaitTask` już, że akceptuje <xref:System.Threading.Tasks.Task> jako dane wejściowe. Za pomocą tej i `startTaskFromAsyncUnit` wcześniej zdefiniowanej funkcji <xref:System.Threading.Tasks.Task> można uruchamiać i czekać na typy z obliczeń asynchronowych języka F#.
+Istnieje już element `Async.AwaitTask` , który akceptuje <xref:System.Threading.Tasks.Task> jako dane wejściowe. Za pomocą tej i wcześniej zdefiniowanej `startTaskFromAsyncUnit` funkcji można rozpocząć i oczekiwać <xref:System.Threading.Tasks.Task> typów z obliczeń asynchronicznych języka F #.
 
-## <a name="relationship-to-multi-threading"></a>Relacja z wieloma wątkami
+## <a name="relationship-to-multi-threading"></a>Relacja do wielowątkowości
 
-Chociaż wątki jest wymieniony w tym artykule, istnieją dwie ważne rzeczy do zapamiętania:
+Chociaż wątki są wymienione w tym artykule, istnieją dwie ważne kwestie, które należy zapamiętać:
 
-1. Nie ma koligacji między obliczeniami asynchronizacyjnymi a wątkiem, chyba że jawnie rozpoczęto w bieżącym wątku.
-1. Programowanie asynchroniczne w języku F# nie jest abstrakcją dla wielowątkowych.
+1. Nie ma koligacji między asynchronicznym obliczaniem a wątkiem, chyba że jest on jawnie uruchamiany w bieżącym wątku.
+1. Programowanie asynchroniczne w języku F # nie jest abstrakcją dla wielowątkowości.
 
-Na przykład obliczenia mogą faktycznie działać na wątku wywołującego, w zależności od charakteru pracy. Obliczenia mogą również "przeskakiwać" między wątkami, pożyczając je przez niewielką ilość czasu, aby wykonać użyteczną pracę między okresami "oczekiwania" (na przykład podczas przesyłania połączenia sieciowego).
+Na przykład obliczenia mogą być uruchamiane w wątku wywołującego, w zależności od rodzaju pracy. Obliczenia mogą również "przeskoczyć" między wątkami, co pociąga za sobą niewielką ilość czasu, aby wykonywać przydatne działania w okresie "oczekiwanie" (na przykład podczas przesyłania połączenia sieciowego).
 
-Chociaż F# zapewnia pewne możliwości, aby rozpocząć obliczenia asynchroniczne w bieżącym wątku (lub jawnie nie w bieżącym wątku), asynchrony ogólnie nie jest skojarzony z określonej strategii wątków.
+Chociaż język F # zapewnia pewne możliwości uruchamiania obliczeń asynchronicznych w bieżącym wątku (lub jawnie nie w bieżącym wątku), asynchroniczności zazwyczaj nie jest skojarzony z określoną strategią wątkowości.
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Model programowania asynchroniiowego F#](https://www.microsoft.com/research/publication/the-f-asynchronous-programming-model)
-- [Jet.com's F# Przewodnik Async](https://medium.com/jettech/f-async-guide-eb3c8a2d180a)
-- [F# dla zabawy i zysku Asynchroniczne Przewodnik programowania](https://fsharpforfunandprofit.com/posts/concurrency-async-and-parallel/)
-- [Async w języku C# i F#: Asynchroniczne gotchas w C #](http://tomasp.net/blog/csharp-async-gotchas.aspx/)
+- [Asynchroniczny model programowania F #](https://www.microsoft.com/research/publication/the-f-asynchronous-programming-model)
+- [Przewodnik asynchroniczny języka F # dla aparatu Jet. com](https://medium.com/jettech/f-async-guide-eb3c8a2d180a)
+- [Przewodnik po programowaniu asynchronicznym w języku F # dla zabawy i zysków](https://fsharpforfunandprofit.com/posts/concurrency-async-and-parallel/)
+- [Asynchroniczne w językach C# i F #: asynchroniczna pytania dotyczące usługi w języku C #](http://tomasp.net/blog/csharp-async-gotchas.aspx/)
