@@ -2,12 +2,12 @@
 title: Publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 description: Publikowanie tworzy zestaw plików, które są konieczne do uruchomienia aplikacji .NET Core.
 ms.date: 07/04/2020
-ms.openlocfilehash: 04dfbae85f196ca4c8f8eb593637a801aa9773f2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: a84e66126806e2ab45c14527df1b931fa9980468
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811395"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867649"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Samouczek: publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 
@@ -17,13 +17,13 @@ Interfejs wiersza polecenia platformy .NET Core jest używany do publikowania ap
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w Visual Studio Code](with-visual-studio-code.md).
+- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="publish-the-app"></a>Publikowanie aplikacji
 
 1. Uruchom program Visual Studio Code.
 
-1. Otwórz folder projektu *HelloWorld* , który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .net Core w Visual Studio Code](with-visual-studio-code.md).
+1. Otwórz folder projektu *HelloWorld* , który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code](with-visual-studio-code.md).
 
 1. Wybierz pozycję **Wyświetl**  >  **Terminal** z menu głównego.
 
@@ -112,4 +112,4 @@ W poniższych krokach zawarto Podgląd plików utworzonych przez proces publikow
 W tym samouczku opublikowano aplikację konsolową. W następnym samouczku utworzysz bibliotekę klas.
 
 > [!div class="nextstepaction"]
-> [Utwórz bibliotekę .NET Standard w programie Visual Studio Code](library-with-visual-studio-code.md)
+> [Utwórz bibliotekę .NET Standard przy użyciu Visual Studio Code](library-with-visual-studio-code.md)

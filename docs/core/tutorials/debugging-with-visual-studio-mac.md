@@ -2,12 +2,12 @@
 title: Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac
 description: Dowiedz się, jak debugować aplikację konsolową .NET Core przy użyciu programu Visual Studio Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 7e2a25266fab40b5ef1d0a38b8bbf06a6843746b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 79936fb99d0bc37c1234eb8f227eb5415ae48b93
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416023"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867571"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac
 
@@ -15,7 +15,7 @@ W tym samouczku przedstawiono narzędzia debugowania dostępne w Visual Studio d
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
+- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
 
 ## <a name="use-debug-build-configuration"></a>Użyj konfiguracji kompilacji debugowania
 
@@ -27,7 +27,7 @@ Domyślnie program Visual Studio używa konfiguracji kompilacji debugowania, wi�
 
 1. Rozpocznij Visual Studio dla komputerów Mac.
 
-1. Otwórz projekt, który został utworzony w temacie [Tworzenie aplikacji konsolowej .NET Core w Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
+1. Otwórz projekt, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
 
    Bieżąca konfiguracja kompilacji jest pokazywana na pasku narzędzi. Poniższy obraz paska narzędzi pokazuje, że program Visual Studio jest skonfigurowany do kompilowania wersji do debugowania aplikacji:
 
@@ -178,4 +178,4 @@ Aby skompilować i przetestować wydaną wersję aplikacji konsolowej, wykonaj n
 W tym samouczku użyto narzędzi debugowania programu Visual Studio. W następnym samouczku zostanie opublikowana wersja aplikacji, którą można wdrożyć.
 
 > [!div class="nextstepaction"]
-> [Publikowanie aplikacji konsolowej .NET Core za pomocą Visual Studio dla komputerów Mac](publishing-with-visual-studio-mac.md)
+> [Publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac](publishing-with-visual-studio-mac.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 743603cb037406948190c7090ca3527bfc40db18
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 0555c6b4185da088333503c1e744da2dd7b4f2e4
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702070"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867597"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio
 
@@ -19,7 +19,7 @@ W tym samouczku przedstawiono narzędzia debugowania dostępne w programie Visua
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w programie Visual Studio 2019](with-visual-studio.md).
+- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu programu Visual Studio](with-visual-studio.md).
 
 ## <a name="use-debug-build-configuration"></a>Użyj konfiguracji kompilacji debugowania
 
@@ -31,7 +31,7 @@ W konfiguracji debugowania program kompiluje z pełnymi symbolicznymi informacja
 
 1. Uruchom program Visual Studio.
 
-1. Otwórz projekt, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w programie Visual Studio 2019](with-visual-studio.md).
+1. Otwórz projekt, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu programu Visual Studio](with-visual-studio.md).
 
    Bieżąca konfiguracja kompilacji jest pokazywana na pasku narzędzi. Poniższy obraz paska narzędzi pokazuje, że program Visual Studio jest skonfigurowany do kompilowania wersji do debugowania aplikacji:
 
@@ -188,4 +188,4 @@ Po naciśnięciu klawisza <kbd>F5</kbd> lub wybraniu opcji **Kompiluj rozwiązan
 W tym samouczku użyto narzędzi debugowania programu Visual Studio. W następnym samouczku zostanie opublikowana wersja aplikacji, którą można wdrożyć.
 
 > [!div class="nextstepaction"]
-> [Publikowanie aplikacji konsolowej .NET Core za pomocą programu Visual Studio](publishing-with-visual-studio.md)
+> [Publikowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio](publishing-with-visual-studio.md)

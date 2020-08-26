@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: c732728a98eb993762e4fbb9e4b0f5229fdde181
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4cd18aca4396f902268d59867760424d65ddcf6d
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811847"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867636"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Samouczek: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu programu Visual Studio
 
@@ -115,4 +115,4 @@ Podnieś poziom aplikacji, aby monitować użytkownika o jego nazwę i wyświetl
 W tym samouczku utworzono aplikację konsolową .NET Core. W następnym samouczku debugujesz aplikację.
 
 > [!div class="nextstepaction"]
-> [Debugowanie aplikacji konsolowej .NET Core w programie Visual Studio](debugging-with-visual-studio.md)
+> [Debugowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio](debugging-with-visual-studio.md)

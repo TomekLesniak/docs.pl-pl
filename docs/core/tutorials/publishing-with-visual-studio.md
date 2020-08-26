@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: afbffa5dc8a620836ec1433a095face46c32df90
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: e0033d52ab54259ce5e4ccf2a25bf4e3d4f244de
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811318"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867558"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio"></a>Samouczek: publikowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio
 
@@ -19,13 +19,13 @@ W tym samouczku pokazano, jak opublikować aplikację konsolową, tak aby inni u
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w programie Visual Studio 2019](with-visual-studio.md).
+- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu programu Visual Studio](with-visual-studio.md).
 
 ## <a name="publish-the-app"></a>Publikowanie aplikacji
 
 1. Uruchom program Visual Studio.
 
-1. Otwórz projekt *HelloWorld* , który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w programie Visual Studio](with-visual-studio.md).
+1. Otwórz projekt *HelloWorld* , który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu programu Visual Studio](with-visual-studio.md).
 
 1. Upewnij się, że program Visual Studio używa konfiguracji kompilacji wydania. W razie potrzeby zmień ustawienie konfiguracji kompilacji na pasku narzędzi z **Debuguj** na **Release**.
 
@@ -85,7 +85,7 @@ W poniższych krokach zawarto Podgląd plików utworzonych przez proces publikow
 
 1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy folder *Publikowanie* , a następnie wybierz polecenie **Kopiuj pełną ścieżkę**.
 
-1. Otwórz wiersz polecenia i przejdź do folderu *Publikowanie* . W tym celu wprowadź, `cd` a następnie wklej pełną ścieżkę. Na przykład:
+1. Otwórz wiersz polecenia i przejdź do folderu *Publikowanie* . W tym celu wprowadź, `cd` a następnie wklej pełną ścieżkę. Przykład:
 
    ```console
    cd C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
@@ -112,4 +112,4 @@ W poniższych krokach zawarto Podgląd plików utworzonych przez proces publikow
 W tym samouczku opublikowano aplikację konsolową. W następnym samouczku utworzysz bibliotekę klas.
 
 > [!div class="nextstepaction"]
-> [Tworzenie biblioteki .NET Standard w programie Visual Studio](library-with-visual-studio.md)
+> [Tworzenie biblioteki .NET Standard przy użyciu programu Visual Studio](library-with-visual-studio.md)

@@ -2,12 +2,12 @@
 title: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac
 description: Dowiedz się, jak utworzyć aplikację konsolową .NET Core przy użyciu Visual Studio dla komputerów Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: e0b18837bf8bef5be5f20b84341bde8526b9f7a2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 8ffcb05ad85f53180ca1aaefbd2dfc7496946142
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811876"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867662"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Samouczek: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac
 
@@ -105,4 +105,4 @@ Podnieś poziom aplikacji, aby monitować użytkownika o jego nazwę i wyświetl
 W tym samouczku utworzono aplikację konsolową .NET Core. W następnym samouczku debugujesz aplikację.
 
 > [!div class="nextstepaction"]
-> [Debugowanie aplikacji konsolowej .NET Core w programie Visual Studio](debugging-with-visual-studio-mac.md)
+> [Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac](debugging-with-visual-studio-mac.md)

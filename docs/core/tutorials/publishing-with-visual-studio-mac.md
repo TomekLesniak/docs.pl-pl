@@ -2,12 +2,12 @@
 title: Publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac
 description: Publikowanie tworzy zestaw plików, które są konieczne do uruchomienia aplikacji .NET Core.
 ms.date: 06/08/2020
-ms.openlocfilehash: 38b656ac919dfb8b710a97c5d7fc63479e3fa367
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: ec6b867f145ffdea491187de3745149f2cebd8dd
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811408"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867545"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-for-mac"></a>Samouczek: publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac
 
@@ -15,13 +15,13 @@ W tym samouczku pokazano, jak opublikować aplikację konsolową, tak aby inni u
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
+- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
 
 ## <a name="publish-the-app"></a>Publikowanie aplikacji
 
 1. Rozpocznij Visual Studio dla komputerów Mac.
 
-1. Otwórz projekt HelloWorld, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
+1. Otwórz projekt HelloWorld, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac](with-visual-studio-mac.md).
 
 1. Upewnij się, że program Visual Studio kompiluje wydaną wersję aplikacji. W razie potrzeby zmień ustawienie konfiguracji kompilacji na pasku narzędzi z **Debuguj** na **Release**.
 
@@ -67,7 +67,7 @@ Jak widać na poprzedniej ilustracji, opublikowane dane wyjściowe zawierają na
 
 ## <a name="run-the-published-app"></a>Uruchom opublikowaną aplikację
 
-1. Otwórz Terminal i przejdź do folderu *Publikowanie* . W tym celu wprowadź, `cd` a następnie wklej wcześniej skopiowaną ścieżkę. Na przykład:
+1. Otwórz Terminal i przejdź do folderu *Publikowanie* . W tym celu wprowadź, `cd` a następnie wklej wcześniej skopiowaną ścieżkę. Przykład:
 
    ```console
    cd ~/Projects/HelloWorld/HelloWorld/bin/Release/netcoreapp3.1/publish/
@@ -88,4 +88,4 @@ Jak widać na poprzedniej ilustracji, opublikowane dane wyjściowe zawierają na
 W tym samouczku opublikowano aplikację konsolową. W następnym samouczku utworzysz bibliotekę klas.
 
 > [!div class="nextstepaction"]
-> [Tworzenie biblioteki .NET Standard w programie Visual Studio dla komputerów Mac](library-with-visual-studio-mac.md)
+> [Utwórz bibliotekę .NET Standard przy użyciu Visual Studio dla komputerów Mac](library-with-visual-studio-mac.md)

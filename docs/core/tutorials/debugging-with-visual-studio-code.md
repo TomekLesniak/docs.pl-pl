@@ -2,12 +2,12 @@
 title: Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 description: Dowiedz się, jak debugować aplikację konsolową .NET Core przy użyciu Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 84c7b64ad7708cf2def084593cd7f96eb0ad82e5
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: e2be9324a77d0360247a225bbd93224d379bda0d
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810667"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867584"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 
@@ -15,7 +15,7 @@ W tym samouczku przedstawiono narzędzia debugowania dostępne w Visual Studio C
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w Visual Studio Code](with-visual-studio-code.md).
+- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="use-debug-build-configuration"></a>Użyj konfiguracji kompilacji debugowania
 
@@ -27,7 +27,7 @@ Domyślnie ustawienia uruchamiania Visual Studio Code używają konfiguracji kom
 
 1. Uruchom program Visual Studio Code.
 
-1. Otwórz folder projektu, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core w Visual Studio Code](with-visual-studio-code.md).
+1. Otwórz folder projektu, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="set-a-breakpoint"></a>Ustawianie punktu przerwania
 
@@ -173,7 +173,7 @@ Visual Studio Code umożliwia również krok po kroku w wierszu przez program i 
 
 1. Wybierz pozycję **Uruchom**  >  **krok do** lub naciśnij klawisz <kbd>F11</kbd>.
 
-   Visual Studio Code wykonuje `Console.WriteLine` monit o podanie nazwy i wyróżnia następny wiersz wykonania. Następnym wierszem jest `Console.ReadLine` `name` . Okno **zmiennych** jest niezmienione, a na karcie **terminala** zostanie wyświetlona wartość "co to jest Twoja nazwa?" pytać.
+   Visual Studio Code wykonuje `Console.WriteLine` monit o podanie nazwy i wyróżnia następny wiersz wykonania. Następnym wierszem jest `Console.ReadLine` `name` . Okno **zmiennych** jest niezmienione, a na karcie **terminala** zostanie wyświetlona wartość "co to jest Twoja nazwa?" .
 
 1. Wybierz pozycję **Uruchom**  >  **krok do** lub naciśnij klawisz <kbd>F11</kbd>.
 
@@ -224,4 +224,4 @@ dotnet run --configuration Release
 W tym samouczku użyto narzędzi debugowania Visual Studio Code. W następnym samouczku zostanie opublikowana wersja aplikacji, którą można wdrożyć.
 
 > [!div class="nextstepaction"]
-> [Publikowanie aplikacji konsolowej .NET Core za pomocą Visual Studio Code](publishing-with-visual-studio-code.md)
+> [Publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code](publishing-with-visual-studio-code.md)

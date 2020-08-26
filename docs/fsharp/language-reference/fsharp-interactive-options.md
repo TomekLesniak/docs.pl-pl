@@ -2,12 +2,12 @@
 title: Opcje interaktywne
 description: Dowiedz się więcej na temat opcji wiersza polecenia obsługiwanych przez F# Interactive, fsi.exe.
 ms.date: 08/15/2020
-ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: adc8dc86f14366720e1acbf35115d4e318a76aef
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558611"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810536"
 ---
 # <a name="f-interactive-options"></a>Opcje F# Interactive
 
@@ -52,7 +52,7 @@ Gdy listy pojawiają się w F# Interactive argumenty opcji, elementy listy są o
 |**--Optymalizuj**[ **+**&#124;**-** ]|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
 |**--preferreduilang: &lt; lang&gt;**| Określa nazwę preferowanej kultury języka wyjściowego (na przykład es-ES, ja-JP). |
 |**--quiet**|Pomiń dane wyjściowe F# Interactive strumienia **stdout** .|
-|**--Cytaty-debugowanie**|Określa, że powinny być emitowane dodatkowe informacje o debugowaniu dla wyrażeń, które pochodzą z literałów cytatu w języku F # i odbitej definicji. Informacje debugowania są dodawane do atrybutów niestandardowych węzła drzewa wyrażenia języka F #. Zobacz [cytaty kodu](code-quotations.md) i [expr. CustomAttributes —](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
+|**--Cytaty-debugowanie**|Określa, że powinny być emitowane dodatkowe informacje o debugowaniu dla wyrażeń, które pochodzą z literałów cytatu w języku F # i odbitej definicji. Informacje debugowania są dodawane do atrybutów niestandardowych węzła drzewa wyrażenia języka F #. Zobacz [cytaty kodu](code-quotations.md) i [expr. CustomAttributes —](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes).|
 |**--ReadLine**[ **+**&#124;**-** ]|Włącza lub wyłącza uzupełnianie kart w trybie interaktywnym.|
 |**--Reference: &lt; filename&gt;**<br /><br />**-r: &lt; filename&gt;**|Taka sama jak opcja kompilatora **fsc.exe** . Aby uzyskać więcej informacji, zobacz [Opcje kompilatora](compiler-options.md).|
 |**--tailcalls**[ **+**&#124;**-** ]|Włącza lub wyłącza użycie instrukcji "tail IL", która powoduje, że ramka stosu będzie ponownie używana na potrzeby funkcji cyklicznych. Ta opcja jest domyślnie włączona.|
