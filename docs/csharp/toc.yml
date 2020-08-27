@@ -299,38 +299,25 @@
         - name: Omówienie
           displayName: programming concepts
           href: programming-guide/concepts/index.md
-        - name: Programowanie asynchroniczne przy użyciu elementów async i await
+        - name: Programowanie asynchroniczne
+          displayName: 'async, await, asynchronous programming, task, cancellation'
           items:
             - name: Omówienie
               displayName: asynchronous programming
               href: programming-guide/concepts/async/index.md
             - name: Model programowania asynchronicznego zadań (APM)
               href: programming-guide/concepts/async/task-asynchronous-programming-model.md
-            - name: 'Przewodnik: uzyskiwanie dostępu do sieci za pomocą elementów async i await'
-              href: programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md
-            - name: 'Porada: rozszerzanie wskazówek asynchronicznych za pomocą metody Task.WhenAll'
-              href: programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md
-            - name: 'Porada: równoległe żądania sieci Web za pomocą metody async i operatora await'
-              href: programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md
             - name: Asynchroniczne typy zwracane
               href: programming-guide/concepts/async/async-return-types.md
-            - name: Przepływ sterowania w aplikacjach asynchronicznych
-              href: programming-guide/concepts/async/control-flow-in-async-programs.md
-            - name: Anulowanie zadań i przetwarzanie ukończonych zadań
+            - name: Anulowanie zadań
               items:
-                - name: Omówienie
-                  href: programming-guide/concepts/async/fine-tuning-your-async-application.md
-                - name: Anulowanie zadania asynchronicznego lub listy zadań
+                - name: Anulowanie listy zadań
                   href: programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md
-                - name: Anulowanie zadań asynchronicznych po upływie określonego czasu
+                - name: Anulowanie zadań po upływie określonego czasu
                   href: programming-guide/concepts/async/cancel-async-tasks-after-a-period-of-time.md
-                - name: Anulowanie pozostałych zadań asynchronicznych po zakończeniu jednego
-                  href: programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md
-                - name: Rozpoczynanie wielu zadań asynchronicznych i przetwarzanie ich w chwili zakończenia
-                  href: programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md
-            - name: Obsługa ponownego rozpoczęcia w aplikacjach asynchronicznych
-              href: programming-guide/concepts/async/handling-reentrancy-in-async-apps.md
-            - name: Użycie Async do uzyskiwania dostępu do plików
+            - name: Przetwarzanie zadań asynchronicznych po ich zakończeniu
+              href: programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md
+            - name: Asynchroniczny dostęp do plików
               href: programming-guide/concepts/async/using-async-for-file-access.md
         - name: Atrybuty
           items:
