@@ -1,30 +1,21 @@
 ---
-title: Odwołanie interakcyjne F# (fsi.exe)
-description: 'Dowiedz się, jak F# Interactive (fsi.exe) służy do interaktywnego uruchamiania kodu F # za pomocą konsoli programu lub wykonywania skryptów języka F #.'
-ms.date: 05/16/2016
+title: Informacje o F# Interactive (dotnet)
+description: 'Dowiedz się, jak F# Interactive (dotnet FSI) służy do interaktywnego uruchamiania kodu F # za pomocą konsoli programu lub wykonywania skryptów języka F #.'
+ms.date: 08/20/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: 8bb1563ad34e65101fb9f09d6e347278e4b0de78
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 760b096c8a3ee0d495b893ab66fa6f9007cdbbf9
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854948"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867623"
 ---
 # <a name="interactive-programming-with-f"></a>Programowanie interaktywne przy użyciu języka F\#
 
-> [!NOTE]
-> W tym artykule opisano obecnie tylko środowisko dla systemu Windows.
+F# Interactive (dotnet FSI) służy do interaktywnego uruchamiania kodu F # za pomocą konsoli programu lub do wykonywania skryptów języka F #. Inaczej mówiąc, program F # Interactive wykonuje REPL (odczyt, oszacowanie i drukowanie) dla języka F #.
 
-F# Interactive (fsi.exe) służy do interaktywnego uruchamiania kodu F # za pomocą konsoli programu lub do wykonywania skryptów języka F #. Inaczej mówiąc, program F # Interactive wykonuje REPL (odczyt, oszacowanie i drukowanie) dla języka F #.
-
-Aby uruchomić F# Interactive z poziomu konsoli programu, uruchom polecenie fsi.exe. Znajdziesz fsi.exe w:
-
-```console
-C:\Program Files (x86)\Microsoft Visual Studio\2019\<sku>\Common7\IDE\CommonExtensions\Microsoft\FSharp
-```
-
-gdzie `sku` ma wartość `Community` , `Professional` lub `Enterprise` .
+Aby uruchomić F# Interactive z konsoli programu, uruchom polecenie `dotnet fsi` . Znajdziesz się `dotnet fsi` w dowolnym zestawie SDK platformy .NET.
 
 Aby uzyskać informacje o dostępnych opcjach wiersza polecenia, zobacz [opcje F# Interactive](../../language-reference/fsharp-interactive-options.md).
 
@@ -44,7 +35,7 @@ Można kontrolować F# Interactive argumenty wiersza polecenia (Opcje), dostosow
 
 ## <a name="scripting-with-f"></a>Wykonywanie skryptów przy użyciu języka F\#
 
-Skrypty używają rozszerzenia pliku **. FSX** lub **. FSSCRIPT**. Zamiast kompilowania kodu źródłowego, a następnie uruchamiania skompilowanego zestawu, można po prostu uruchomić **fsi.exe** i określić nazwę pliku skryptu kodu źródłowego języka f #, a program F # Interactive odczytuje kod i wykonuje go w czasie rzeczywistym.
+Skrypty używają rozszerzenia pliku **. FSX** lub **. FSSCRIPT**. Zamiast kompilowania kodu źródłowego, a następnie uruchamiania skompilowanego zestawu, można po prostu uruchomić polecenie **dotnet FSI** i określić nazwę pliku skryptu kodu źródłowego języka f #, a program F # Interactive odczytuje kod i wykonuje go w czasie rzeczywistym.
 
 ## <a name="differences-between-the-interactive-scripting-and-compiled-environments"></a>Różnice między środowiskami interaktywnymi, skryptowymi i skompilowanymi
 
@@ -94,9 +85,39 @@ test
 90
 ```
 
+## <a name="package-management-in-f-interactive"></a>Zarządzanie pakietami w F# Interactive
+
+[!NOTE] Zarządzanie pakietami jest dostępne jako funkcja w wersji zapoznawczej w wersjach `dotnet fsi` dostarczonych w `3.1.300` i nowszych wersjach zestawu .NET SDK, a także wszystkich `5.*` wersjach zestawu .NET SDK. Aby włączyć ją w tej wersji zapoznawczej, uruchom polecenie `dotnet fsi` z `--langversion:preview` argumentem.
+
+`#r`Składnia do odwoływania się do biblioteki DLL w F# Interactive może być również używana do odwoływania się do pakietu NuGet za pomocą następującej składni:
+
+```fsharp
+#r "nuget: <package name>
+```
+
+Na przykład, aby odwołać się do `FSharp.Data` pakietu, należy użyć następującego `#r` odwołania:
+
+```fsharp
+#r "nuget: FSharp.Data"
+```
+
+Po wykonaniu tego wiersza Najnowsza wersja `FSharp.Data` pakietu zostanie pobrana do pamięci podręcznej NuGet i przywoływana w bieżącej sesji F# Interactive.
+
+Oprócz nazwy pakietu do określonych wersji pakietu można odwoływać się za pomocą krótkiej składni:
+
+```fsharp
+#r "nuget: FSharp.Data, 3.3.2"
+```
+
+lub bardziej jawny sposób:
+
+```fsharp
+#r "nuget: FSharp.Data, Version=3.3.2"
+```
+
 ## <a name="related-articles"></a>Pokrewne artykuły:
 
 |Tytuł|Opis|
 |-----|-----------|
-|[Opcje F# Interactive](../../language-reference/fsharp-interactive-options.md)|Opisuje składnię i opcje wiersza polecenia dla F# Interactive, fsi.exe.|
+|[Opcje interakcyjne F#](../../language-reference/fsharp-interactive-options.md)|Opisuje składnię i opcje wiersza polecenia dla F# Interactive, fsi.exe.|
 |[Dokumentacja biblioteki F# Interactive](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Opisuje funkcje biblioteki dostępne podczas wykonywania kodu w języku F # Interactive.|
