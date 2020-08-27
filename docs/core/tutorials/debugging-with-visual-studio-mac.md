@@ -2,12 +2,12 @@
 title: Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac
 description: Dowiedz się, jak debugować aplikację konsolową .NET Core przy użyciu programu Visual Studio Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 79936fb99d0bc37c1234eb8f227eb5415ae48b93
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 011647a6e3e676909880befa3b770205eb9616d6
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867571"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957528"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac
 
@@ -23,7 +23,7 @@ W tym samouczku przedstawiono narzędzia debugowania dostępne w Visual Studio d
 
 W konfiguracji debugowania program kompiluje z pełnymi symbolicznymi informacjami o debugowaniu i bez optymalizacji. Optymalizacja komplikuje debugowanie, ponieważ relacja między kodem źródłowym i wygenerowanymi instrukcjami jest bardziej skomplikowana. Konfiguracja wydania programu nie ma symbolicznych informacji o debugowaniu i jest w pełni zoptymalizowana.
 
-Domyślnie program Visual Studio używa konfiguracji kompilacji debugowania, więc nie trzeba jej zmieniać przed debugowaniem.
+Domyślnie Visual Studio dla komputerów Mac używa konfiguracji kompilacji debugowania, więc nie trzeba jej zmieniać przed debugowaniem.
 
 1. Rozpocznij Visual Studio dla komputerów Mac.
 
@@ -173,7 +173,7 @@ Aby skompilować i przetestować wydaną wersję aplikacji konsolowej, wykonaj n
 
 1. Naciśnij pozycję <kbd>⌥</kbd><kbd>⌘</kbd><kbd>↵</kbd> (<kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>Enter</kbd>), aby uruchomić bez debugowania.
 
-## <a name="next-steps"></a>Następne kroki
+## <a name="next-steps"></a>Kolejne kroki
 
 W tym samouczku użyto narzędzi debugowania programu Visual Studio. W następnym samouczku zostanie opublikowana wersja aplikacji, którą można wdrożyć.
 

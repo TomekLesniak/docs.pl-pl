@@ -3,12 +3,12 @@ title: Słownik platformy .NET
 description: Sprawdź znaczenie wybranych terminów używanych w dokumentacji programu .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: c984a29208d8680de3c04f6b4d16c6f41afedc71
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 59e338de99510759e3e7acfd782915ed6dc5d988
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812344"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957576"
 ---
 # <a name="net-glossary"></a>Słownik platformy .NET
 
@@ -48,13 +48,13 @@ Biblioteka klas bazowych. Znane również jako *biblioteki struktury*.
 
 Zestaw bibliotek, które składają się na system. \* (i do ograniczonego zakresu firmy Microsoft \* ). przestrzeni. BCL jest ogólnym celem, na niższym poziomie, które platformy aplikacji wyższego poziomu, takie jak ASP.NET Core, Kompiluj na.
 
-Kod źródłowy BCL dla [programu .NET 5 i jego nowszych wersji (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions) znajduje się w [repozytorium środowiska uruchomieniowego platformy .NET](https://github.com/dotnet/runtime). Większość interfejsów API BCL dla tej nowszej implementacji platformy .NET jest również dostępna w .NET Framework, więc możesz traktować ten kod źródłowy jako rozwidlenie kodu źródłowego .NET Framework BCL.
+Kod źródłowy BCL dla [programu .NET 5 (i .NET Core) i nowszych wersji](#net-5-and-later-versions) znajduje się w [repozytorium środowiska uruchomieniowego platformy .NET](https://github.com/dotnet/runtime). Większość interfejsów API BCL dla tej nowszej implementacji platformy .NET jest również dostępna w .NET Framework, więc możesz traktować ten kod źródłowy jako rozwidlenie kodu źródłowego .NET Framework BCL.
 
 ## <a name="clr"></a>CLR
 
 Środowisko uruchomieniowe języka wspólnego.
 
-Dokładne znaczenie zależy od kontekstu. Środowisko uruchomieniowe języka wspólnego dotyczy zazwyczaj środowiska uruchomieniowego [.NET Framework](#net-framework) lub środowiska uruchomieniowego programu [.NET 5 i nowszych wersji (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions).
+Dokładne znaczenie zależy od kontekstu. Środowisko uruchomieniowe języka wspólnego dotyczy zazwyczaj środowiska uruchomieniowego [.NET Framework](#net-framework) lub środowiska uruchomieniowego programu [.NET 5 (oraz platformy .NET Core) i nowszych wersji](#net-5-and-later-versions).
 
 Środowisko CLR obsługuje alokacje pamięci i zarządzanie nimi. Środowisko CLR jest również maszyną wirtualną, która nie tylko wykonuje aplikacje, ale również generuje i kompiluje kod na bieżąco przy użyciu kompilatora [JIT](#jit) .
 
@@ -66,7 +66,7 @@ Zobacz również [środowisko uruchomieniowe](#runtime).
 
 ## <a name="core-clr"></a>Podstawowe środowisko CLR
 
-Środowisko uruchomieniowe języka wspólnego dla [programu .NET 5 i nowszych wersji (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions).
+Środowisko uruchomieniowe języka wspólnego dla [programu .NET 5 (i .NET Core) i nowsze wersje](#net-5-and-later-versions).
 
 Zobacz [CLR](#clr)
 
@@ -126,7 +126,7 @@ Podobnie jak w przypadku [drzewa AOT](#aot), ten kompilator tłumaczy [Il](#il) 
 Implementacja programu .NET obejmuje:
 
 - Co najmniej jedno środowisko uruchomieniowe. Przykłady: [CLR](#clr), [CoreRT](#corert).
-- Biblioteka klas implementująca wersję .NET Standard i może zawierać dodatkowe interfejsy API. Przykłady: [BCLs](#bcl) dla [.NET Framework](#net-framework) i [.NET 5 i nowszych (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions).
+- Biblioteka klas implementująca wersję .NET Standard i może zawierać dodatkowe interfejsy API. Przykłady: [BCLs](#bcl) dla [.NET Framework](#net-framework) i [.NET 5 (oraz .NET Core) i nowszych](#net-5-and-later-versions).
 - Opcjonalnie co najmniej jedna struktura aplikacji. Przykłady: [ASP.NET](#aspnet), Windows Forms i WPF są zawarte w .NET Framework i .NET 5.
 - Opcjonalnie narzędzia programistyczne. Niektóre narzędzia programistyczne są współużytkowane przez wiele implementacji.
 
@@ -173,7 +173,7 @@ Zobacz [.NET](../core/index.yml).
 
 ## <a name="net-cli"></a>INTERFEJS WIERSZA POLECENIA PLATFORMY .NET
 
-Międzyplatformowe łańcucha narzędzi do tworzenia aplikacji i bibliotek dla [programu .NET 5 i nowszych wersji (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions). Znana także jako interfejs wiersza polecenia platformy .NET Core.
+Międzyplatformowe łańcucha narzędzi do tworzenia aplikacji i bibliotek dla [platformy .NET 5 (oraz platformy .NET Core) i nowszych](#net-5-and-later-versions). Znana także jako interfejs wiersza polecenia platformy .NET Core.
 
 Zobacz [interfejs wiersza polecenia platformy .NET](../core/tools/index.md).
 
@@ -199,7 +199,7 @@ Zobacz [wprowadzenie do .NET Native i CoreRT](https://github.com/dotnet/corert/b
 
 ## <a name="net-sdk"></a>Zestaw SDK .NET
 
-Zestaw bibliotek i narzędzi umożliwiających deweloperom tworzenie aplikacji i bibliotek platformy .NET dla [programu .NET 5 i nowszych wersji (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions). Znana także jako zestaw .NET Core SDK.
+Zestaw bibliotek i narzędzi umożliwiających deweloperom tworzenie aplikacji i bibliotek platformy .NET dla [platformy .NET 5 (oraz platformy .NET Core) i nowszych wersji](#net-5-and-later-versions). Znana także jako zestaw .NET Core SDK.
 
 Obejmuje [interfejs wiersza polecenia platformy .NET](#net-cli) do kompilowania aplikacji, bibliotek .NET i środowiska uruchomieniowego na potrzeby kompilowania i uruchamiania aplikacji oraz plików wykonywalnych dotnet (*dotnet.exe*), które uruchamiają polecenia CLI i uruchamiają aplikacje.
 
@@ -252,7 +252,7 @@ Słowo "środowisko uruchomieniowe" ma inne znaczenie w następujących kontekst
 
   "Środowisko uruchomieniowe" oznacza [środowisko CLR](#clr) wraz z [BCL](#bcl) (bibliotekami struktury), które można pobrać i zainstalować na komputerze, aby można było uruchamiać aplikacje [zależne od platformy](../core/deploying/index.md#publish-framework-dependent) na komputerze.
 
-* [Identyfikator środowiska uruchomieniowego (RID)](../core/rid-catalog.md) dla [programu .NET 5 i nowszych wersji (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions).
+* [Identyfikator środowiska uruchomieniowego (RID)](../core/rid-catalog.md) dla [programu .NET 5 (oraz platformy .NET Core) i nowszych wersji](#net-5-and-later-versions).
 
   "Środowisko uruchomieniowe" oznacza platformę systemu operacyjnego i architekturę procesora CPU, na których działa aplikacja .NET, na przykład: `linux-x64` .
 
@@ -290,7 +290,7 @@ Zobacz [platformę docelową](frameworks.md).
 
 platforma uniwersalna systemu Windows.
 
-Implementacja platformy .NET, która jest używana do tworzenia nowoczesnych aplikacji i oprogramowania systemu Windows z obsługą dotykową dla Internet rzeczy (IoT). Ma ona na celu ujednolicenie różnych typów urządzeń docelowych, w tym komputerów, tabletów, telefonów, a nawet konsoli Xbox. Usługa platformy UWP udostępnia wiele usług, takich jak scentralizowany magazyn aplikacji, środowisko wykonawcze i zestaw interfejsów API systemu Windows, które mają być używane zamiast Win32 (WinRT). Aplikacje można napisać w językach C++, C#, Visual Basic i JavaScript. W przypadku korzystania z języka C# i Visual Basic interfejsy API platformy .NET są udostępniane przez platformę .NET 5 i nowsze wersje (w tym .NET Core 2.1-3.1).
+Implementacja platformy .NET, która jest używana do tworzenia nowoczesnych aplikacji i oprogramowania systemu Windows z obsługą dotykową dla Internet rzeczy (IoT). Ma ona na celu ujednolicenie różnych typów urządzeń docelowych, w tym komputerów, tabletów, telefonów, a nawet konsoli Xbox. Usługa platformy UWP udostępnia wiele usług, takich jak scentralizowany magazyn aplikacji, środowisko wykonawcze i zestaw interfejsów API systemu Windows, które mają być używane zamiast Win32 (WinRT). Aplikacje można napisać w językach C++, C#, Visual Basic i JavaScript. W przypadku korzystania z języka C# i Visual Basic interfejsy API platformy .NET są udostępniane przez platformę .NET 5 (i platformę .NET Core) i nowsze wersje.
 
 ## <a name="see-also"></a>Zobacz też
 

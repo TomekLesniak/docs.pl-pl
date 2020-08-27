@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 0555c6b4185da088333503c1e744da2dd7b4f2e4
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 4e408d5bd0976d88f368615860ac373142d0fe1e
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867597"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957228"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio
 
@@ -27,7 +27,7 @@ W tym samouczku przedstawiono narzędzia debugowania dostępne w programie Visua
 
 W konfiguracji debugowania program kompiluje z pełnymi symbolicznymi informacjami o debugowaniu i bez optymalizacji. Optymalizacja komplikuje debugowanie, ponieważ relacja między kodem źródłowym i wygenerowanymi instrukcjami jest bardziej skomplikowana. Konfiguracja wydania programu nie ma symbolicznych informacji o debugowaniu i jest w pełni zoptymalizowana.
 
- Domyślnie Visual Studio Code używa konfiguracji kompilacji debugowania, więc nie trzeba jej zmieniać przed debugowaniem.
+ Domyślnie program Visual Studio używa konfiguracji kompilacji debugowania, więc nie trzeba jej zmieniać przed debugowaniem.
 
 1. Uruchom program Visual Studio.
 
@@ -41,7 +41,7 @@ W konfiguracji debugowania program kompiluje z pełnymi symbolicznymi informacja
 
 *Punkt przerwania* tymczasowo przerywa wykonywanie aplikacji przed wykonaniem wiersza z punktem przerwania.
 
-1. Ustaw *punkt przerwania* w wierszu, który wyświetla nazwę, datę i godzinę, klikając na lewym marginesie okna kod w tym wierszu. Lewy margines znajduje się po lewej stronie numerów wierszy.  Innym sposobem ustawienia punktu przerwania jest umieszczenie kursora w wierszu kodu, a następnie wybranie polecenia **Debuguj**  >  **Przełącz punkt przerwania** z paska menu.
+1. Ustaw *punkt przerwania* w wierszu, który wyświetla nazwę, datę i godzinę, klikając na lewym marginesie okna kod w tym wierszu. Lewy margines znajduje się po lewej stronie numerów wierszy.  Innym sposobem ustawienia punktu przerwania jest umieszczenie kursora w wierszu kodu, a następnie naciśnięcie klawisza <kbd>F9</kbd> lub wybranie **Debug**opcji  >  **przełączenia** debugowania z paska menu.
 
    Jak widać na poniższej ilustracji, program Visual Studio wskazuje wiersz, w którym jest ustawiony punkt przerwania, zaznaczając go i wyświetlając czerwoną kropkę na lewym marginesie.
 
@@ -127,7 +127,7 @@ Program wyświetla ciąg wprowadzony przez użytkownika. Co się stanie, jeśli 
 
 1. Naciśnij dowolny klawisz, aby zamknąć okno konsoli i zatrzymać debugowanie.
 
-1. Wyczyść punkt przerwania, klikając kropkę na lewym marginesie okna kod. Innym sposobem na wyczyszczenie punktu przerwania jest wybranie opcji **debuguj > przełączenia punktu przerwania** podczas wybierania wiersza kodu.
+1. Wyczyść punkt przerwania, klikając kropkę na lewym marginesie okna kod. Innymi sposobami czyszczenia punktu przerwania są naciśnięcie klawisza <kbd>F9</kbd> lub wybranie polecenia **Debuguj > Przełącz punkt przerwania** , gdy zostanie wybrany wiersz kodu.
 
 ## <a name="step-through-a-program"></a>Przechodzenie przez program
 
@@ -183,7 +183,7 @@ Aby skompilować i przetestować wydaną wersję aplikacji konsolowej, Zmień ko
 
 Po naciśnięciu klawisza <kbd>F5</kbd> lub wybraniu opcji **Kompiluj rozwiązanie** z menu **kompilacja** program Visual Studio kompiluje wersję aplikacji. Można go przetestować, tak jak w przypadku wersji do debugowania.
 
-## <a name="next-steps"></a>Następne kroki
+## <a name="next-steps"></a>Kolejne kroki
 
 W tym samouczku użyto narzędzi debugowania programu Visual Studio. W następnym samouczku zostanie opublikowana wersja aplikacji, którą można wdrożyć.
 

@@ -3,7 +3,6 @@ title: Main () i argumenty wiersza polecenia — Przewodnik programowania w jęz
 description: Dowiedz się więcej na temat głównych () i argumentów wiersza polecenia. Metoda "Main" jest punktem wejścia w programie wykonywalnym.
 ms.date: 08/02/2017
 f1_keywords:
-- CS5001
 - main_CSharpKeyword
 - Main
 helpviewer_keywords:
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 95ec9d3dfebe4721d4b1822939f925aa37b9e9c4
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 611b0c8818f8f800cf1cf5c0f6b2789882939b7b
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382077"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957541"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main () i argumenty wiersza polecenia (Przewodnik programowania w języku C#)
 
@@ -31,8 +30,8 @@ W programie w języku C# może istnieć tylko jeden punkt wejścia. Jeśli masz 
 ## <a name="overview"></a>Omówienie
 
 - `Main`Metoda jest punktem wejścia programu wykonywalnego; jest to miejsce, w którym kontrola programu zaczyna się i skończy.
-- `Main`jest zadeklarowany wewnątrz klasy lub struktury. `Main`musi być [statyczna](../../language-reference/keywords/static.md) i nie musi być [publiczny](../../language-reference/keywords/public.md). (W poprzednim przykładzie otrzymuje on domyślny dostęp do [prywatnego](../../language-reference/keywords/private.md)). Otaczająca Klasa lub struktura nie musi być statyczna.
-- `Main`może mieć parametr `void` , `int` , lub, zaczynając od języka C# 7,1 `Task` lub `Task<int>` typu zwracanego.
+- `Main` jest zadeklarowany wewnątrz klasy lub struktury. `Main` musi być [statyczna](../../language-reference/keywords/static.md) i nie musi być [publiczny](../../language-reference/keywords/public.md). (W poprzednim przykładzie otrzymuje on domyślny dostęp do [prywatnego](../../language-reference/keywords/private.md)). Otaczająca Klasa lub struktura nie musi być statyczna.
+- `Main` może mieć parametr `void` , `int` , lub, zaczynając od języka C# 7,1 `Task` lub `Task<int>` typu zwracanego.
 - Jeśli i tylko wtedy `Main` , gdy zwraca `Task` lub `Task<int>` , deklaracja `Main` może zawierać [`async`](../../language-reference/keywords/async.md) modyfikator. Należy zauważyć, że ta metoda nie wyklucza `async void Main` metody.
 - `Main`Metodę można zadeklarować z `string[]` parametrem zawierającym argumenty wiersza polecenia lub bez niego. Korzystając z programu Visual Studio do tworzenia aplikacji systemu Windows, można dodać parametr ręcznie lub użyć <xref:System.Environment.GetCommandLineArgs> metody do uzyskania [argumentów wiersza polecenia](command-line-arguments.md). Parametry są odczytywane jako argumenty wiersza polecenia indeksowane przez zero. W przeciwieństwie do języka C i C++, nazwa programu nie jest traktowana jako pierwszy argument wiersza polecenia w `args` tablicy, ale jest to pierwszy element <xref:System.Environment.GetCommandLineArgs> metody.
 

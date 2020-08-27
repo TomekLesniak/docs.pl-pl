@@ -4,20 +4,24 @@ description: Dowiedz się, jak przyciąć aplikacje samodzielne w celu zmniejsze
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: e3eb161b14f206723ad034af0a4a6ba8cd575578
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 47bccf25b6f6a1b65742bb5e3f5f299932659c3c
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810615"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957556"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Przycinanie samodzielnych wdrożeń i plików wykonywalnych
 
 [Model wdrożenia zależny od platformy](index.md#publish-framework-dependent) był najbardziej pomyślnym modelem wdrożenia od momentu rozpoczęcia działania programu .NET. W tym scenariuszu Deweloper aplikacji korzysta tylko z aplikacji i zestawów innych firm z oczekiwaniami, gdy środowisko uruchomieniowe platformy .NET i biblioteki struktury będą dostępne na komputerze klienckim. Ten model wdrażania jest nadal jedynym podmiotem w programie .NET Core, ale istnieją pewne scenariusze, w których model zależny od struktury nie jest optymalny. Alternatywą jest opublikowanie [aplikacji samodzielnej](index.md#publish-self-contained), w której środowisko uruchomieniowe i struktura platformy .NET Core są powiązane ze sobą wraz z aplikacjami i zestawami innych firm.
 
-Niezależny od przycinania model wdrażania to wyspecjalizowana wersja modelu wdrażania, który jest zoptymalizowany pod kątem zmniejszenia rozmiaru wdrożenia. Minimalizacja rozmiaru wdrożenia jest wymaganiem krytycznym dla niektórych scenariuszy po stronie klienta, takich jak aplikacje Blazor. W zależności od złożoności aplikacji do uruchomienia aplikacji jest wymagany tylko podzestaw zestawów Framework. Te nieużywane części biblioteki są zbędne i mogą być przycinane z spakowanej aplikacji. Istnieje jednak ryzyko, że analiza czasu kompilacji aplikacji może spowodować błędy w czasie wykonywania, ze względu na to, że nie jest możliwe niezawodne analizowanie różnych niezawodnych wzorców kodu (w przeważającej mierze przy użyciu odbicia). Ponieważ niezawodności nie można zagwarantować, ten model wdrażania jest oferowany jako funkcja w wersji zapoznawczej. Aparat analizy czasu kompilacji zawiera ostrzeżenia dla deweloperów wzorców kodu, które są problematyczne, i oczekuje, że te wzorce kodu zostaną naprawione. Jeśli to możliwe, zalecamy przeniesienie wszelkich zależności odbicia środowiska uruchomieniowego w aplikacji do czasu kompilowania przy użyciu kodu, który spełnia te same wymagania.
+Niezależny od przycinania model wdrażania to wyspecjalizowana wersja modelu wdrażania, który jest zoptymalizowany pod kątem zmniejszenia rozmiaru wdrożenia. Minimalizacja rozmiaru wdrożenia jest wymaganiem krytycznym dla niektórych scenariuszy po stronie klienta, takich jak aplikacje Blazor. W zależności od złożoności aplikacji przywoływany jest tylko podzestaw zestawów Framework, a podzestaw kodu w każdym zestawie jest wymagany do uruchomienia aplikacji. Nieużywane części bibliotek są zbędne i mogą być przycinane z spakowanej aplikacji.
 
-Tryb przycinania dla aplikacji można skonfigurować za pomocą elementu TRIMMODE i domyślnie (), `copyused` Aby połączyć zestawy, które są używane w aplikacji. Aplikacje webassembly Blazor będą używać bardziej agresywnego trybu ( `link` ), który będzie przycinał nieużywany kod w zestawach. Ostrzeżenia analizy przycinające zapewniają informacje dotyczące wzorców kodu, w których nie było możliwe przeprowadzenie analizy pełnej zależności. Te ostrzeżenia są domyślnie pomijane i można je włączyć, ustawiając flagę, `SuppressTrimAnalysisWarnings` na wartość false. Więcej informacji na temat dostępnych opcji przycinania można znaleźć na [stronie ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
+Istnieje jednak ryzyko, że analiza czasu kompilacji aplikacji może spowodować błędy w czasie wykonywania, ze względu na to, że nie jest możliwe niezawodne analizowanie różnych niezawodnych wzorców kodu (w przeważającej mierze przy użyciu odbicia). Ponieważ niezawodności nie można zagwarantować, ten model wdrażania jest oferowany jako funkcja w wersji zapoznawczej.
+
+Aparat analizy czasu kompilacji zawiera ostrzeżenia dla deweloperów wzorców kodu, które są problemmatic do wykrywania, który inny kod jest wymagany. Do kodu można dodawać adnotacje z atrybutami, aby poznać element dostosowujący, który ma zostać uwzględniony. Wiele wzorców odbicia można zamienić na generowanie kodu w czasie kompilacji przy użyciu [generatorów źródeł](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md).
+
+Tryb przycinania dla aplikacji jest konfigurowany przy użyciu `TrimMode` Ustawienia. Wartość domyślna to `copyused` i pakiety, do których odwołują się zestawy z aplikacją. Ta `link` wartość jest używana z aplikacjami Webassembly Blazor i przycina nieużywany kod w zestawach. Ostrzeżenia analizy przycinające zapewniają informacje dotyczące wzorców kodu, w których nie było możliwe przeprowadzenie analizy pełnej zależności. Te ostrzeżenia są domyślnie pomijane i można je włączyć, ustawiając flagę `SuppressTrimAnalysisWarnings` na `false` . Aby uzyskać więcej informacji na temat dostępnych opcji przycinania, zobacz [stronę ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
 
 > [!NOTE]
 > Przycinanie jest funkcją eksperymentalną w programie .NET Core 3,1, 5,0 i jest dostępna _tylko_ dla aplikacji, które są publikowane samodzielnie.

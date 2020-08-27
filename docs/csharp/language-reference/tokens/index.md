@@ -1,8 +1,9 @@
 ---
-title: Znaki specjalne — odwołanie do języka C#
+title: Znaki specjalne — odwołanie w C#
 ms.date: 02/14/2017
 f1_keywords:
 - cs.special characters
+- '@$_CSharpKeyword'
 helpviewer_keywords:
 - special characters [C#]
 - C# language, special characters
@@ -10,22 +11,22 @@ helpviewer_keywords:
 - '@ character (C#)'
 - $ character (C#)
 ms.assetid: 4c5c0539-2e37-40b7-91ce-75af5aabd3f9
-ms.openlocfilehash: 241f973baac1671a30da391fb8c3f055fb3ad754
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea0e1ee2ccbf95e3e0c8901564061e6bce481120
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79173383"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957466"
 ---
 # <a name="c-special-characters"></a>Znaki specjalne języka C#
 
-Znaki specjalne są wstępnie zdefiniowane, znaki kontekstowe, które modyfikują element programu (ciąg literału, identyfikator lub nazwa atrybutu), do którego są dołączane. Język C# obsługuje następujące znaki specjalne:
+Znaki specjalne są wstępnie zdefiniowane, kontekstowe znaki, które modyfikują element programu (ciąg literału, identyfikator lub nazwę atrybutu), do którego są dołączane. Język C# obsługuje następujące znaki specjalne:
 
-- [@](./verbatim.md), dosłowny znak identyfikatora.
+- [@](./verbatim.md), znak identyfikatora Verbatim.
 
 - [$](./interpolated.md), interpolowany znak ciągu.
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [Przewodnik programowania języka C#](../../programming-guide/index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
