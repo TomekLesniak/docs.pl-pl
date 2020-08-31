@@ -7,4 +7,4 @@ ms.lasthandoff: 06/09/2020
 ms.locfileid: "84602937"
 ---
 
-❌Należy pamiętać, że ta wersja programu Ubuntu nie jest już obsługiwana.
+❌ Należy pamiętać, że ta wersja programu Ubuntu nie jest już obsługiwana.

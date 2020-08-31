@@ -4,12 +4,12 @@ description: Naucz się, w jaki sposób portować .NET Framework aplikację Wind
 author: Thraka
 ms.author: adegeo
 ms.date: 01/24/2020
-ms.openlocfilehash: efa73428c816eddc00c62c2275d3457c92284388
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 71bd5740e1ea380fdde86328a5aed71fded64765
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206131"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118549"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Jak przenieść aplikację klasyczną Windows Forms na platformę .NET Core
 
@@ -22,22 +22,22 @@ W tym artykule różne nazwy są używane do identyfikowania typów plików uży
 | **Moje Apps. sln** | Nazwa pliku rozwiązania. |
 | **Moje formy. csproj** | Nazwa .NET Framework Windows Forms projektu do portów. |
 | **MyFormsCore. csproj** | Nazwa nowego projektu .NET Core, który tworzysz. |
-| **MyAppCore. exe** | Plik wykonywalny aplikacji .NET Core Windows Forms. |
+| **MyAppCore.exe** | Plik wykonywalny aplikacji .NET Core Windows Forms. |
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- [Visual Studio 2019 16,5 (wersja zapoznawcza 1](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&ch=pre&rel=16) lub nowsza) dla dowolnej pracy projektanta, który chcesz wykonać. Zalecamy aktualizację do najnowszej [wersji zapoznawczej programu Visual Studio](https://visualstudio.microsoft.com/vs/preview/).
+- [Program Visual Studio 2019 w wersji 16,5 lub nowszej](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&rel=16) dla dowolnej pracy z projektantem, który chcesz wykonać. Zalecamy aktualizację do [najnowszej wersji programu Visual Studio](https://visualstudio.microsoft.com/vs/).
 
   Zainstaluj następujące obciążenia programu Visual Studio:
   
   - Programowanie aplikacji klasycznych dla platformy .NET
-  - Tworzenie aplikacji dla wielu platform w środowisku .NET Core
+  - Programowanie dla wielu platform w środowisku .NET Core
 
 - Projekt działającego Windows Forms w rozwiązaniu, które kompiluje i uruchamia bez problemu.
 - Projekt kodowany w języku C#.
 
 > [!NOTE]
-> Projekty .NET Core 3,0 są obsługiwane tylko w programie **Visual Studio 2019** lub jego nowszej wersji. Począwszy od **programu Visual Studio 2019 w wersji 16,5 (wersja zapoznawcza 1**) jest również obsługiwany program .net Core Windows Forms Designer.
+> Projekty programu .NET Core Windows Forms są obsługiwane w programie Visual Studio 2019 i nowszych wersjach. Program .NET Core Windows Forms Designer jest obsługiwany w programie Visual Studio 2019 w wersji 16,5.
 >
 > Aby włączyć projektanta, przejdź do opcji **Narzędzia**  >  **Opcje**  >  **środowisko**  >  w**wersji zapoznawczej** i wybierz opcję **Użyj podglądu Windows Forms projektanta dla aplikacji .NET Core** .
 
@@ -162,7 +162,7 @@ Alternatywnie można utworzyć `<Compile>` `<EmbeddedResource>` wpis lub dla ka�
 
 Dodaj każdy pakiet NuGet, do którego odwołuje się projekt .NET Framework, do projektu .NET Core.
 
-Prawdopodobnie aplikacja Windows Forms .NET Framework ma plik **Packages. config** zawierający listę wszystkich pakietów NuGet, do których odwołuje się projekt. Możesz zapoznać się z tą listą, aby określić, które pakiety NuGet dodać do projektu .NET Core. Na przykład jeśli projekt .NET Framework, do którego odwołuje się `MetroFramework` `MetroFramework.Design` pakiety, i `MetroFramework.Fonts` NuGet, należy dodać każdy do projektu z Visual Studio lub interfejs wiersza polecenia platformy .NET Core z katalogu **SolutionFolder** :
+Najprawdopodobniej aplikacja Windows Forms .NET Framework ma plik **packages.config** , który zawiera listę wszystkich pakietów NuGet, do których odwołuje się projekt. Możesz zapoznać się z tą listą, aby określić, które pakiety NuGet dodać do projektu .NET Core. Na przykład jeśli projekt .NET Framework, do którego odwołuje się `MetroFramework` `MetroFramework.Design` pakiety, i `MetroFramework.Fonts` NuGet, należy dodać każdy do projektu z Visual Studio lub interfejs wiersza polecenia platformy .NET Core z katalogu **SolutionFolder** :
 
 ```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework
@@ -191,7 +191,7 @@ Korzystając z przykładu poprzedniego kroku, program umożliwia rozwinięcie pr
 | **Moje Apps. sln** | Nazwa pliku rozwiązania. |
 | **Kontrolki. csproj** | Nazwa .NET Framework Windows Forms kontroluje projekt do portu. |
 | **MyControlsCore. csproj** | Nazwa nowego projektu biblioteki .NET Core, który tworzysz. |
-| **MyCoreControls. dll** | Biblioteka formantów Windows Forms .NET Core. |
+| **MyCoreControls.dll** | Biblioteka formantów Windows Forms .NET Core. |
 
 ```
 SolutionFolder

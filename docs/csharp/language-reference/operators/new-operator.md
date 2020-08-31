@@ -1,4 +1,5 @@
 ---
+description: New — odwołanie w C#
 title: New — odwołanie w C#
 ms.date: 06/25/2019
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 42128cf23fe2410bf33bb40131843325939646de
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 88ec929317d4e6c6651233c1a1aa0ce8a8cce611
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916770"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118276"
 ---
 # <a name="new-operator-c-reference"></a>New — Operator (odwołanie w C#)
 
@@ -61,7 +62,7 @@ Typ zdefiniowany przez użytkownika nie może przeciążać `new` operatora.
 
 Aby uzyskać więcej informacji, zobacz sekcję [New Operator](~/_csharplang/spec/expressions.md#the-new-operator) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

@@ -1,4 +1,5 @@
 ---
+description: ?? i? = Operatory — odwołanie w C#
 title: ?? i? = Operatory — odwołanie w C#
 ms.date: 09/10/2019
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - null-coalescing assignment [C#]
 - ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 58c60dad3badc62f850f737a3d210ec486809272
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 273bc6d3a4c65c09dc600621b435bf0d1baea9e4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916743"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118289"
 ---
 # <a name="-and--operators-c-reference"></a>?? i? = — Operatory (odwołanie w C#)
 
@@ -90,7 +91,7 @@ Aby uzyskać więcej informacji na temat `??` operatora, zobacz sekcję [operato
 
 Aby uzyskać więcej informacji na temat `??=` operatora, zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

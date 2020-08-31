@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 515b8d9adc1359581625f0d822e254d2c1df3b58
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 8f99af5accdecf1892a67a88c221e866bfddcbb2
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062499"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053047"
 ---
 # <a name="structure-types-c-reference"></a>Typy struktur (odwołanie w C#)
 
@@ -27,7 +27,7 @@ Zwykle typy struktury umożliwiają projektowanie małych typów skoncentrowanyc
 
 Ponieważ typy struktury mają semantykę wartości, zalecamy zdefiniowanie *niezmiennych* typów struktury.
 
-## <a name="readonly-struct"></a>`readonly`konstrukcja
+## <a name="readonly-struct"></a>`readonly` konstrukcja
 
 Począwszy od języka C# 7,2, używasz `readonly` modyfikatora, aby zadeklarować, że typ struktury jest niezmienny:
 
@@ -38,14 +38,14 @@ Wszystkie elementy członkowskie danych `readonly` struktury muszą być tylko d
 - Dowolna deklaracja pola musi mieć [ `readonly` modyfikator](../keywords/readonly.md)
 - Wszystkie właściwości, w tym implementowane przez siebie, muszą być tylko do odczytu
 
-Gwarantuje to, że żaden element członkowski `readonly` struktury nie modyfikuje stanu struktury.
+Gwarantuje to, że żaden element członkowski `readonly` struktury nie modyfikuje stanu struktury. W języku C# 8,0 i nowszych oznacza to, że inne elementy członkowskie wystąpienia z wyjątkiem konstruktorów są niejawnie [`readonly`](#readonly-instance-members) .
 
 > [!NOTE]
 > W `readonly` strukturze element członkowski danych modyfikowalnego typu referencyjnego nadal może mieć własny stan. Na przykład nie można zastąpić <xref:System.Collections.Generic.List%601> wystąpienia, ale można dodać do niego nowe elementy.
 
-## <a name="readonly-instance-members"></a>`readonly`elementy członkowskie wystąpienia
+## <a name="readonly-instance-members"></a>`readonly` elementy członkowskie wystąpienia
 
-Począwszy od języka C# 8,0, można również użyć `readonly` modyfikatora, aby zadeklarować, że element członkowski wystąpienia nie modyfikuje stanu struktury. Jeśli nie można zadeklarować całościowego typu struktury jako `readonly` , użyj `readonly` modyfikatora, aby oznaczyć elementy członkowskie wystąpienia, które nie modyfikują stanu struktury. W `readonly` strukturze każdy element członkowski wystąpienia jest niejawnie `readonly` .
+Począwszy od języka C# 8,0, można również użyć `readonly` modyfikatora, aby zadeklarować, że element członkowski wystąpienia nie modyfikuje stanu struktury. Jeśli nie można zadeklarować całościowego typu struktury jako `readonly` , użyj `readonly` modyfikatora, aby oznaczyć elementy członkowskie wystąpienia, które nie modyfikują stanu struktury.
 
 W obrębie `readonly` elementu członkowskiego wystąpienia nie można przypisać do pól wystąpienia struktury. Jednak `readonly` element członkowski może wywołać element niebędący `readonly` członkiem. W takim przypadku kompilator tworzy kopię wystąpienia struktury i wywołuje element, który nie należy do `readonly` tej kopii. W związku z tym oryginalne wystąpienie struktury nie jest modyfikowane.
 
@@ -102,7 +102,7 @@ W przypadku [wbudowanych typów wartości](value-types.md#built-in-value-types)U
 
 W przypadku przekazania zmiennej typu struktury do metody jako argumentu lub zwrócenia wartości typu struktury z metody, kopiowane jest całe wystąpienie typu struktury. To może mieć wpływ na wydajność kodu w scenariuszach o wysokiej wydajności, które obejmują duże typy struktury. Można uniknąć kopiowania wartości przez przekazanie zmiennej typu struktury przez odwołanie. Użyj [`ref`](../keywords/ref.md#passing-an-argument-by-reference) [`out`](../keywords/out-parameter-modifier.md) [`in`](../keywords/in-parameter-modifier.md) modyfikatorów parametrów,, lub metody, aby wskazać, że argument musi być przekazaniem przez odwołanie. Użyj funkcji [ref](../../programming-guide/classes-and-structs/ref-returns.md) Returns, aby zwrócić wynik metody przez odwołanie. Aby uzyskać więcej informacji, zobacz [Zapisywanie bezpiecznego i wydajnego kodu w języku C#](../../write-safe-efficient-code.md).
 
-## <a name="ref-struct"></a>`ref`konstrukcja
+## <a name="ref-struct"></a>`ref` konstrukcja
 
 Począwszy od języka C# 7,2, można użyć `ref` modyfikatora w deklaracji typu struktury. Wystąpienia `ref` typu struktury są przydzielane na stosie i nie można wyjść do sterty zarządzanej. W celu zapewnienia, że kompilator ogranicza użycie `ref` typów struktur w następujący sposób:
 
@@ -139,7 +139,7 @@ Aby uzyskać więcej informacji o funkcjach wprowadzonych w języku C# 7,2 i now
 - [Elementy członkowskie wystąpień tylko do odczytu](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
 - [Bezpieczeństwo czasu kompilowania dla typów zbliżonych do odwołań](~/_csharplang/proposals/csharp-7.2/span-safety.md)
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Wytyczne dotyczące projektowania — wybór między klasą a strukturą](../../../standard/design-guidelines/choosing-between-class-and-struct.md)

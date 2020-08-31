@@ -2,12 +2,12 @@
 title: Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 description: Dowiedz się, jak debugować aplikację konsolową .NET Core przy użyciu Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: e2be9324a77d0360247a225bbd93224d379bda0d
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 8e84747256551b633a5bf74b72723ba8d2840d52
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867584"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118302"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
 
@@ -35,7 +35,7 @@ Domyślnie ustawienia uruchamiania Visual Studio Code używają konfiguracji kom
 
 1. Otwórz plik *program.cs* .
 
-1. Ustaw *punkt przerwania* w wierszu, który wyświetla nazwę, datę i godzinę, klikając na lewym marginesie okna kod. Lewy margines znajduje się po lewej stronie numerów wierszy. Innymi sposobami ustawiania punktu przerwania są naciśnięcie klawisza <kbd>F9</kbd> lub wybranie opcji **Uruchom**  >  **przełączanie punktu przerwania** z menu podczas wybierania wiersza kodu.
+1. Ustaw *punkt przerwania* w wierszu, który wyświetla nazwę, datę i godzinę, klikając na lewym marginesie okna kod. Lewy margines znajduje się po lewej stronie numerów wierszy. Innymi sposobami ustawiania punktu przerwania są naciśnięcie klawisza <kbd>F9</kbd> **lub wybranie polecenia**  >  **Przełącz punkt przerwania** z menu podczas wybierania wiersza kodu.
 
    Visual Studio Code wskazuje wiersz, w którym jest ustawiony punkt przerwania, wyświetlając czerwoną kropkę na lewym marginesie.
 
@@ -69,7 +69,7 @@ Punkt przerwania znajduje się po `Console.ReadLine` wywołaniu metody. **Konsol
 
    :::image type="content" source="media/debugging-with-visual-studio-code/select-debug-pane.png" alt-text="Otwórz kartę debugowanie w Visual Studio Code":::
 
-1. Wybierz zieloną strzałkę w górnej części okienka, obok pozycji **.NET Core Launch (konsola)**. Innym sposobem uruchomienia programu w trybie debugowania jest wybranie polecenia **Uruchom**  >  **debugowanie** z menu.
+1. Wybierz zieloną strzałkę w górnej części okienka, obok pozycji **.NET Core Launch (konsola)**. Innymi sposobami uruchamiania programu w trybie debugowania są naciśnięcie klawisza <kbd>F5</kbd> lub wybranie polecenia **Uruchom**  >  **debugowanie** z menu.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/start-debugging.png" alt-text="Rozpocznij debugowanie":::
 
@@ -133,7 +133,7 @@ Program wyświetla ciąg wprowadzony przez użytkownika. Co się stanie, jeśli 
 
 1. Na karcie **Terminal** naciśnij klawisz <kbd>Enter</kbd> po wyświetleniu monitu, aby wprowadzić swoją nazwę.
 
-   Ponieważ określony warunek ( `name` is `null` lub) został <xref:System.String.Empty?displayProperty=nameWithType> spełniony, wykonanie programu zatrzyma się po osiągnięciu punktu przerwania i przed wykonaniem `Console.WriteLine` metody.
+   Ponieważ określony warunek ( `name` is `null` lub <xref:System.String.Empty?displayProperty=nameWithType> ) został spełniony, wykonanie programu zatrzyma się po osiągnięciu punktu przerwania i przed wykonaniem `Console.WriteLine` metody.
 
    Okno **zmienne** pokazuje, że wartość `name` zmiennej to `""` , lub <xref:System.String.Empty?displayProperty=nameWithType> .
 
@@ -215,7 +215,7 @@ Aby skompilować i przetestować wydaną wersję aplikacji konsolowej, Otwórz *
 dotnet run --configuration Release
 ```
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 * [Debugowanie w Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 

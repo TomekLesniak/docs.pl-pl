@@ -1,4 +1,5 @@
 ---
+description: Dokumentacja Async-C#
 title: Dokumentacja Async-C#
 ms.date: 05/22/2017
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: d2c1de12a0a836fd4a7962ebbfe890f21ea3d5a7
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 5a70389c9c423300fad03123cfc4738dfe10e481
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811733"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118523"
 ---
 # <a name="async-c-reference"></a>async (odwołanie w C#)
 
@@ -89,4 +90,4 @@ Aby uzyskać więcej informacji i przykładów, zobacz [asynchroniczne typy zwra
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
 - [await](../operators/await.md)
 - [Programowanie asynchroniczne przy użyciu elementów async i await](../../programming-guide/concepts/async/index.md)
-- [Przetwarzaj zadania asynchroniczne po ich zakończeniu](../../programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md)
+- [Przetwarzanie zadań asynchronicznych po ich zakończeniu](../../programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md)

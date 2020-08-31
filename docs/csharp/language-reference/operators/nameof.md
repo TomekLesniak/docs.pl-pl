@@ -1,4 +1,5 @@
 ---
+description: wyrażenie nameof — odwołanie w C#
 title: wyrażenie nameof — odwołanie w C#
 ms.date: 04/23/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - nameof expression [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: b00c5f6f97d27290fb3773dcbb422bf9fb4c425b
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 04109cde2a1f9146bf9bb44f301272808797ded0
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916780"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118315"
 ---
 # <a name="nameof-expression-c-reference"></a>wyrażenie nameof (odwołanie w C#)
 
@@ -38,7 +39,7 @@ Możesz użyć wyrażenia, `nameof` Aby zwiększyć łatwość obsługi kodu spr
 
 Aby uzyskać więcej informacji, zobacz sekcję [wyrażenia nameof](~/_csharplang/spec/expressions.md#nameof-expressions) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

@@ -44,7 +44,7 @@ Pakiety przyciągania dla środowiska uruchomieniowego .NET Core są publikowane
 | Wersja platformy .NET Core | Pakiet przyciągania        |
 |-------------------|---------------------|
 | 3,1 (LTS)         | `dotnet-runtime-31` |
-| 3.0               | `dotnet-runtime-30` |
+| 3,0               | `dotnet-runtime-30` |
 | 2.2               | `dotnet-runtime-22` |
 | 2,1 (LTS)         | `dotnet-runtime-21` |
 
@@ -84,6 +84,6 @@ export SSL_CERT_DIR=/dev/null
 
 Lokalizacja certyfikatu zależy od dystrybucji. Poniżej znajdują się lokalizacje dystrybucje, w których wystąpił problem.
 
-* Fedora`/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem`
-* OpenSUSE`/etc/ssl/ca-bundle.pem`
-* Solus -`/etc/ssl/certs/ca-certificates.crt`
+* Fedora `/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem`
+* OpenSUSE `/etc/ssl/ca-bundle.pem`
+* Solus - `/etc/ssl/certs/ca-certificates.crt`

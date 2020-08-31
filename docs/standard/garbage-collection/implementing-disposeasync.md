@@ -1,27 +1,27 @@
 ---
 title: Implementacja metody DisposeAsync
-description: ''
+description: Dowiedz się, jak zaimplementować metody DisposeAsync i DisposeAsyncCore, aby przeprowadzić Oczyszczanie zasobów asynchronicznych.
 author: IEvangelist
 ms.author: dapine
-ms.date: 06/02/2020
+ms.date: 08/25/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 0f6370d37703509681dd9fb818af8e7e2f3a1085
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 268cea7584040ad92e2da75e5e03112480cda93c
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608077"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053181"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implementacja metody DisposeAsync
 
 <xref:System.IAsyncDisposable?displayProperty=nameWithType>Interfejs został wprowadzony jako część języka C# 8,0. Metodę należy zaimplementować <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> , gdy trzeba przeprowadzić Oczyszczanie zasobów, tak jak podczas [implementowania metody Dispose](implementing-dispose.md). Jedną z najważniejszych różnic jest jednak to, że ta implementacja umożliwia asynchroniczne czyszczenie operacji. <xref:System.IAsyncDisposable.DisposeAsync>Zwraca wartość <xref:System.Threading.Tasks.ValueTask> reprezentującą asynchroniczną operację Dispose.
 
-Typowo, że podczas implementowania <xref:System.IAsyncDisposable> interfejsu, klasy również implementują <xref:System.IDisposable> interfejs. Dobry wzorzec implementacji <xref:System.IAsyncDisposable> interfejsu jest przygotowany do synchronicznej lub asynchronicznej operacji Dispose. Wszystkie wskazówki dotyczące implementacji wzorca Dispose dotyczą implementacji asynchronicznej. W tym artykule założono, że wiesz już, jak [zaimplementować metodę Dispose](implementing-dispose.md).
+Typowym scenariuszem jest implementowanie <xref:System.IAsyncDisposable> interfejsu, który klasy również implementują <xref:System.IDisposable> interfejs. Dobry wzorzec implementacji <xref:System.IAsyncDisposable> interfejsu jest przygotowany do synchronicznej lub asynchronicznej operacji Dispose. Wszystkie wskazówki dotyczące wdrażania wzorca Dispose dotyczą również implementacji asynchronicznej. W tym artykule założono, że wiesz już, jak [zaimplementować metodę Dispose](implementing-dispose.md).
 
 ## <a name="disposeasync-and-disposeasynccore"></a>DisposeAsync () i DisposeAsyncCore ()
 
@@ -30,17 +30,15 @@ Typowo, że podczas implementowania <xref:System.IAsyncDisposable> interfejsu, k
 - `public` <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> Implementacja, która nie ma parametrów.
 - `protected virtual ValueTask DisposeAsyncCore()`Metoda, której sygnatura:
 
-```csharp
-protected virtual ValueTask DisposeAsyncCore()
-{
-}
-```
-
-`DisposeAsyncCore()`Metoda polega na `virtual` tym, że klasy pochodne mogą definiować dodatkowe czyszczenie w ich zastąpień.
+  ```csharp
+  protected virtual ValueTask DisposeAsyncCore()
+  {
+  }
+  ```
 
 ### <a name="the-disposeasync-method"></a>DisposeAsync () — Metoda
 
-`public` `DisposeAsync()` Metoda bez parametrów jest wywoływana niejawnie w `await using` instrukcji i jej celem jest zwolnienie niezarządzanych zasobów, wykonanie ogólnego oczyszczenia i wskazanie, że finalizator, jeśli taki istnieje, nie musi. Zwalnianie pamięci skojarzonej z zarządzanym obiektem jest zawsze domeną [modułu wyrzucania elementów bezużytecznych](index.md). Z tego powodu ma standardową implementację:
+`public` `DisposeAsync()` Metoda bez parametrów jest wywoływana niejawnie w `await using` instrukcji i jej celem jest zwolnienie niezarządzanych zasobów, wykonanie ogólnego czyszczenia i wskazanie, że finalizator, jeśli taki istnieje, nie musi być uruchomiony. Zwalnianie pamięci skojarzonej z zarządzanym obiektem jest zawsze domeną [modułu wyrzucania elementów bezużytecznych](index.md). Z tego powodu ma standardową implementację:
 
 ```csharp
 public async ValueTask DisposeAsync()
@@ -57,6 +55,13 @@ public async ValueTask DisposeAsync()
 
 > [!NOTE]
 > Podstawowa różnica w asynchronicznym wzorcu usuwania w porównaniu do wzorca Dispose polega na tym, że wywołanie z <xref:System.IAsyncDisposable.DisposeAsync> `Dispose(bool)` metody przeciążenia jest podawane `false` jako argument. Podczas implementowania <xref:System.IDisposable.Dispose?displayProperty=nameWithType> metody, jednak `true` zamiast tego jest przesyłane. Dzięki temu można zapewnić równoważność funkcjonalną z synchronicznym wzorcem usuwania, a dodatkowo zapewnić, że ścieżki kodu finalizatora nadal są wywoływane. Innymi słowy, `DisposeAsyncCore()` Metoda usunie zarządzane zasoby asynchronicznie, więc nie ma potrzeby ich synchronicznego usuwania. W związku `Dispose(false)` z tym zamiast `Dispose(true)` .
+
+### <a name="the-disposeasynccore-method"></a>DisposeAsyncCore () — Metoda
+
+`DisposeAsyncCore()`Metoda jest przeznaczona do przeprowadzania asynchronicznego oczyszczania zarządzanych zasobów lub łączenia kaskadowego z `DisposeAsync()` . Hermetyzuje typowe asynchroniczne operacje czyszczenia, gdy Podklasa dziedziczy klasę bazową, która jest implementacją <xref:System.IAsyncDisposable> . `DisposeAsyncCore()`Metoda polega na `virtual` tym, że klasy pochodne mogą definiować dodatkowe czyszczenie w ich zastąpień.
+
+> [!TIP]
+> Jeśli implementacja programu <xref:System.IAsyncDisposable> ma wartość `sealed` , `DisposeAsyncCore()` Metoda nie jest wymagana, a oczyszczanie asynchroniczne można wykonać bezpośrednio w <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> metodzie.
 
 ## <a name="implement-the-async-dispose-pattern"></a>Implementowanie wzorca usuwania asynchronicznego
 

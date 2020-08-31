@@ -4,12 +4,12 @@ description: Ilustruje różne sposoby instalowania zestaw .NET Core SDK i środ
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 68a3e848b3d80806e875dfb2fb7e2cbf223f8ad5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a9ccc461362b1be3e5bc2ee7d13d5d7d383192e4
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619497"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053160"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Zainstaluj zestaw .NET Core SDK lub środowisko uruchomieniowe platformy .NET Core w systemie Debian
 
@@ -31,13 +31,13 @@ Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [10](#debian-10-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
 | ✔️ [9](#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
+| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
 
 Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
-- 3.0
-- 2.2
-- 2.0
+- 3,0
+- 2,2
+- 2,0
 
 ## <a name="how-to-install-other-versions"></a>Jak zainstalować inne wersje
 
@@ -49,7 +49,7 @@ Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobr
 
 ```bash
 wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-dpkg -i packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
 ```
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
@@ -69,7 +69,7 @@ sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="debian-8-"></a>Debian 8❌
+## <a name="debian-8-"></a>Debian 8 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-debian.md)]
 

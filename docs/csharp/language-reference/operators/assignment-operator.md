@@ -1,4 +1,5 @@
 ---
+description: Operatory przypisania — odwołanie w C#
 title: Operatory przypisania — odwołanie w C#
 ms.date: 09/10/2019
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 7b4f3b3f4d6b697903461f08435552f2df36bfe4
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 3df118143b692cc8655de31cce23af41f7da125c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916934"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89117886"
 ---
 # <a name="assignment-operators-c-reference"></a>Operatory przypisania (odwołanie w C#)
 
@@ -75,7 +76,7 @@ Aby uzyskać więcej informacji, zobacz sekcję [Operatory przypisania](~/_cshar
 
 Aby uzyskać więcej informacji na temat operatora przypisania odwołania `= ref` , zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

@@ -25,16 +25,16 @@ Wybiera zestaw SDK lub środowisko uruchomieniowe. Prawidłowe opcje to:
 Wersja zestawu SDK lub środowiska uruchomieniowego do zainstalowania. Ten artykuł będzie zawsze zawierać instrukcje dotyczące najnowszej obsługiwanej wersji. Prawidłowe opcje to wszystkie wydane wersje, takie jak:
 
   - 3,1
-  - 3.0
+  - 3,0
   - 2.1
 
   Możliwe, że zestaw SDK/środowisko uruchomieniowe, które próbujesz pobrać, nie jest dostępny dla dystrybucji systemu Linux. Aby zapoznać się z listą obsługiwanych dystrybucji, zobacz temat [zależności i wymagania dotyczące platformy .NET Core](../linux.md).
 
 ### <a name="examples"></a>Przykłady
 
-- Zainstaluj środowisko uruchomieniowe ASP.NET Core 3,1:`aspnetcore-runtime-3.1`
-- Zainstaluj środowisko uruchomieniowe programu .NET Core 2,1:`dotnet-runtime-2.1`
-- Zainstaluj zestaw SDK platformy .NET Core 3,1:`dotnet-sdk-3.1`
+- Zainstaluj środowisko uruchomieniowe ASP.NET Core 3,1: `aspnetcore-runtime-3.1`
+- Zainstaluj środowisko uruchomieniowe programu .NET Core 2,1: `dotnet-runtime-2.1`
+- Zainstaluj zestaw SDK platformy .NET Core 3,1: `dotnet-sdk-3.1`
 
 ### <a name="package-missing"></a>Brak pakietu
 

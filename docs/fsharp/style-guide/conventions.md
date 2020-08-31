@@ -2,12 +2,12 @@
 title: C# — konwencje kodowania
 description: 'Zapoznaj się z ogólnymi wskazówkami i idiomy podczas pisania kodu F #.'
 ms.date: 01/15/2020
-ms.openlocfilehash: 47e9183ce22689a050878cf10d7a9bcf3b929ec6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 748a9c26794f46dcc67fdcfcf21f41847a462a19
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143535"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053014"
 ---
 # <a name="f-coding-conventions"></a>C# — konwencje kodowania
 
@@ -46,7 +46,7 @@ type MyClass() =
     ...
 ```
 
-### <a name="carefully-apply-autoopen"></a>Starannie stosuj`[<AutoOpen>]`
+### <a name="carefully-apply-autoopen"></a>Starannie stosuj `[<AutoOpen>]`
 
 Konstrukcja może obsłużyć `[<AutoOpen>]` zanieczyszczenie zakresu tego, co jest dostępne dla obiektów wywołujących, i odpowiedzi na to, z których pochodzi element, jest "Magic". Nie jest to dobry efekt. Wyjątkiem od tej reguły jest sama biblioteka języka F # (chociaż jest to również bit kontrowersyjny).
 
@@ -108,34 +108,19 @@ open System.IO
 open System.Reflection
 open System.Text
 
-open Microsoft.FSharp.Compiler
-open Microsoft.FSharp.Compiler.AbstractIL
-open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
-open Microsoft.FSharp.Compiler.AbstractIL.IL
-open Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader
-open Microsoft.FSharp.Compiler.AbstractIL.Internal
-open Microsoft.FSharp.Compiler.AbstractIL.Internal.Library
+open FSharp.Compiler
+open FSharp.Compiler.AbstractIL
+open FSharp.Compiler.AbstractIL.Diagnostics
+open FSharp.Compiler.AbstractIL.IL
+open FSharp.Compiler.AbstractIL.ILBinaryReader
+open FSharp.Compiler.AbstractIL.Internal
+open FSharp.Compiler.AbstractIL.Internal.Library
 
-open Microsoft.FSharp.Compiler.AccessibilityLogic
-open Microsoft.FSharp.Compiler.Ast
-open Microsoft.FSharp.Compiler.CompileOps
-open Microsoft.FSharp.Compiler.CompileOptions
-open Microsoft.FSharp.Compiler.Driver
-open Microsoft.FSharp.Compiler.ErrorLogger
-open Microsoft.FSharp.Compiler.Infos
-open Microsoft.FSharp.Compiler.InfoReader
-open Microsoft.FSharp.Compiler.Lexhelp
-open Microsoft.FSharp.Compiler.Layout
-open Microsoft.FSharp.Compiler.Lib
-open Microsoft.FSharp.Compiler.NameResolution
-open Microsoft.FSharp.Compiler.PrettyNaming
-open Microsoft.FSharp.Compiler.Parser
-open Microsoft.FSharp.Compiler.Range
-open Microsoft.FSharp.Compiler.Tast
-open Microsoft.FSharp.Compiler.Tastops
-open Microsoft.FSharp.Compiler.TcGlobals
-open Microsoft.FSharp.Compiler.TypeChecker
-open Microsoft.FSharp.Compiler.SourceCodeServices.SymbolHelpers
+open FSharp.Compiler.AccessibilityLogic
+open FSharp.Compiler.Ast
+open FSharp.Compiler.CompileOps
+open FSharp.Compiler.CompileOptions
+open FSharp.Compiler.Driver
 
 open Internal.Utilities
 open Internal.Utilities.Collections
@@ -189,7 +174,7 @@ Zarządzanie błędami w dużych systemach jest złożone i złożonych Endeavor
 
 ### <a name="represent-error-cases-and-illegal-state-in-types-intrinsic-to-your-domain"></a>Reprezentuje przypadki błędów i niedozwolony stan w typach wewnętrznych dla domeny
 
-W przypadku [związków rozłącznych](../language-reference/discriminated-unions.md)język F # daje możliwość reprezentowania błędnego stanu programu w systemie typów. Przykład:
+W przypadku [związków rozłącznych](../language-reference/discriminated-unions.md)język F # daje możliwość reprezentowania błędnego stanu programu w systemie typów. Na przykład:
 
 ```fsharp
 type MoneyWithdrawalResult =
@@ -237,7 +222,7 @@ Użyj `nullArg` , `invalidArg` i `invalidOp` jako mechanizmu do rzutowania `Argu
 
 `failwith` `failwithf` Należy ogólnie unikać i, ponieważ powodują wygenerowanie typu podstawowego, a `Exception` nie konkretnego wyjątku. Zgodnie z [zaleceniami dotyczącymi projektowania wyjątków](../../standard/design-guidelines/exceptions.md), możesz w razie potrzeby zgłosić bardziej szczegółowe wyjątki.
 
-### <a name="using-exception-handling-syntax"></a>Używanie składni obsługi wyjątków
+### <a name="use-exception-handling-syntax"></a>Użyj składni obsługi wyjątków
 
 Język F # obsługuje wzorce wyjątków za pomocą `try...with` składni:
 
@@ -365,7 +350,7 @@ MySolution.sln
 |_/API.fsproj
 ```
 
-`ImplementationLogic.fsproj`może uwidaczniać kod, taki jak:
+`ImplementationLogic.fsproj` może uwidaczniać kod, taki jak:
 
 ```fsharp
 module Transactions =
@@ -443,18 +428,18 @@ Na koniec automatyczne uogólnianie nie zawsze jest Boon dla osób, które są n
 
 ## <a name="performance"></a>Wydajność
 
-### <a name="prefer-structs-for-small-data-types"></a>Preferuj struktury dla małych typów danych
+### <a name="consider-structs-for-small-types-with-high-allocation-rates"></a>Rozważ użycie struktur dla małych typów o wysokim stopniu alokacji
 
 Używanie struktur (nazywanych również typami wartości) może często powodować zwiększenie wydajności dla pewnego kodu, ponieważ zazwyczaj unika to alokowania obiektów. Jednak struktury nie zawsze są przyciskami "Przejdź szybszy": Jeśli rozmiar danych w strukturze przekracza 16 bajtów, kopiowanie danych może często powodować więcej czasu procesora niż przy użyciu typu referencyjnego.
 
 Aby określić, czy należy używać struktury, należy wziąć pod uwagę następujące warunki:
 
 - Jeśli rozmiar danych wynosi 16 bajtów lub mniej.
-- Jeśli istnieje duże ryzyko, że wiele z tych typów danych jest rezydentnych w pamięci w uruchomionym programie.
+- Jeśli istnieje duże wystąpienie tych typów, które są rezydentne w pamięci w uruchomionym programie.
 
 Jeśli stosuje się pierwszy warunek, zazwyczaj należy używać struktury. Jeśli oba mają zastosowanie, należy prawie zawsze używać struktury. Mogą wystąpić sytuacje, w których obowiązują poprzednie warunki, ale użycie struktury nie jest lepsze ani gorsze niż użycie typu referencyjnego, ale prawdopodobnie jest to rzadkie. Ważne jest, aby zawsze mierzyć przy wprowadzaniu zmian, takich jak to, chociaż nie działa na założeniu lub Intuition.
 
-#### <a name="prefer-struct-tuples-when-grouping-small-value-types"></a>Preferuj krotek struktury podczas grupowania małych typów wartości
+#### <a name="consider-struct-tuples-when-grouping-small-value-types-with-high-allocation-rates"></a>Uwzględnij krotki struktury podczas grupowania małych typów wartości z wysoką szybkością alokacji
 
 Należy wziąć pod uwagę następujące dwie funkcje:
 
@@ -486,7 +471,7 @@ Gdy wykonujesz testy porównawcze tych funkcji za pomocą narzędzia do analizy 
 
 Jednak te wyniki nie zawsze są w twoim własnym kodzie. Jeśli oznaczesz funkcję jako `inline` , kod, który używa spójnych krotek może uzyskać pewne dodatkowe optymalizacje lub kod, który ma zostać przydzielone, można po prostu zoptymalizować. Należy zawsze mierzyć wyniki przy każdej wydajności, a nigdy nie działać na podstawie założeń lub Intuition.
 
-#### <a name="prefer-struct-records-when-the-data-type-is-small"></a>Preferuj rekordy struktury, gdy typ danych jest mały
+#### <a name="consider-struct-records-when-the-type-is-small-and-has-high-allocation-rates"></a>Uwzględnij rekordy struktury, gdy typ jest mały i ma wysokie stawki przydziału
 
 Reguła typu kciuka opisana wcześniej również jest przechowywana dla [typów rekordów języka F #](../language-reference/records.md). Należy wziąć pod uwagę następujące typy danych i funkcje, które je przetwarzają:
 
@@ -521,7 +506,7 @@ Jest to podobne do poprzedniego kodu krotki, ale ten czas używa rekordów oraz 
 
 Gdy wykonujesz testy porównawcze tych funkcji za pomocą narzędzia do analizy statystycznej, takiego jak [BenchmarkDotNet](https://benchmarkdotnet.org/), zobaczysz, że program `processStructPoint` uruchamia niemal 60% szybciej i przydzieli nic na zarządzanej stercie.
 
-#### <a name="prefer-struct-discriminated-unions-when-the-data-type-is-small"></a>Preferuj związki rozłącznych struktur, gdy typ danych jest mały
+#### <a name="consider-struct-discriminated-unions-when-the-data-type-is-small-with-high-allocation-rates"></a>Rozważaj związki rozłączne struktur, gdy typ danych jest mały z dużą szybkością alokacji
 
 Poprzednie spostrzeżenia dotyczące wydajności z krotkami struktury i rekordami są również przechowywane dla [Unii rozłącznych](../language-reference/discriminated-unions.md). Spójrzmy na poniższy kod:
 
@@ -616,7 +601,7 @@ type Closure1Table() =
         | (false, _) -> false
 ```
 
-`Closure1Table`hermetyzuje źródłową strukturę danych opartych na mutacji, dlatego nie wymuszają wywoływania, aby zachować podstawową strukturę danych. Klasy to zaawansowany sposób hermetyzowania danych i procedur, które są oparte na mutacji bez uwidaczniania szczegółów dla obiektów wywołujących.
+`Closure1Table` hermetyzuje źródłową strukturę danych opartych na mutacji, dlatego nie wymuszają wywoływania, aby zachować podstawową strukturę danych. Klasy to zaawansowany sposób hermetyzowania danych i procedur, które są oparte na mutacji bez uwidaczniania szczegółów dla obiektów wywołujących.
 
 #### <a name="prefer-let-mutable-to-reference-cells"></a>Preferuj `let mutable` komórki odwołania
 
@@ -670,7 +655,7 @@ Język F # ma pełną obsługę obiektów i koncepcje zorientowane obiektowo (OO
 * Hermetyzowane dane modyfikowalne
 * Operatory dla typów
 * Właściwości autowypełniające
-* Implementowanie `IDisposable` i`IEnumerable`
+* Implementowanie `IDisposable` i `IEnumerable`
 * Rozszerzenia typu
 * Zdarzenia
 * Struktury
@@ -680,7 +665,7 @@ Język F # ma pełną obsługę obiektów i koncepcje zorientowane obiektowo (OO
 **Ogólnie rzecz biorąc, należy unikać tych funkcji, chyba że trzeba ich używać:**
 
 * Hierarchie typów oparte na dziedziczeniu i dziedziczenie implementacji
-* Wartości null i`Unchecked.defaultof<_>`
+* Wartości null i `Unchecked.defaultof<_>`
 
 ### <a name="prefer-composition-over-inheritance"></a>Preferuj składanie przez dziedziczenie
 
@@ -740,7 +725,7 @@ type BufferSize = int
 
 Może to być mylące na wiele sposobów:
 
-* `BufferSize`nie jest abstrakcją; jest to tylko inna nazwa dla liczby całkowitej.
+* `BufferSize` nie jest abstrakcją; jest to tylko inna nazwa dla liczby całkowitej.
 * Jeśli `BufferSize` jest uwidoczniona w publicznym interfejsie API, może być łatwo interpretowana jako więcej niż tylko `int` . Ogólnie rzecz biorąc, typy domeny mają wiele atrybutów i nie są typami pierwotnymi, takimi jak `int` . Ten skrót narusza te założenia.
 * Wielkość liter w `BufferSize` (PascalCase) oznacza, że ten typ zawiera więcej danych.
 * Ten alias nie oferuje większej przejrzystości w porównaniu z udostępnianiem nazwanego argumentu funkcji.

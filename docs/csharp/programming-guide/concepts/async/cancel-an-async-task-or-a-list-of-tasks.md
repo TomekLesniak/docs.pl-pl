@@ -4,12 +4,12 @@ description: Dowiedz się, jak używać tokenów anulowania do sygnalizowania ż
 ms.date: 08/19/2020
 ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 000b6a89a9240344508a5ae6b248572c8a2177dc
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 30bef5d1a5082fbd3757377dbedb8f9b9d17e218
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811486"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053096"
 ---
 # <a name="cancel-a-list-of-tasks-c"></a>Anulowanie listy zadań (C#)
 
@@ -33,7 +33,7 @@ Dla tego samouczka wymagane są następujące elementy:
 
 ### <a name="create-example-application"></a>Tworzenie przykładowej aplikacji
 
-Utwórz nową aplikację konsolową platformy .NET Core. Można go utworzyć przy użyciu [nowego konsoli programu dotnet](../../../../core/tools/dotnet-new.md#console) lub z [programu Visual Studio](/visualstudio/install/install-visual-studio). Otwórz plik *program.cs* w ulubionym edytorze kodu.
+Utwórz nową aplikację konsolową platformy .NET Core. Można go utworzyć za pomocą [`dotnet new console`](../../../../core/tools/dotnet-new.md#console) polecenia lub z [programu Visual Studio](/visualstudio/install/install-visual-studio). Otwórz plik *program.cs* w ulubionym edytorze kodu.
 
 ### <a name="replace-using-statements"></a>Zamień instrukcje using
 
