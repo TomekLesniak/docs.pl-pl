@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat wersji programu macOS, na których mo
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 951e9b6a64d55274729e233b4a2d7728c75d05d4
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 19d5ca77b0308533c8f228be70c61daf1b7f82d9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302935"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132758"
 ---
 # <a name="install-net-core-on-macos"></a>Zainstaluj platformę .NET Core w systemie macOS
 
@@ -38,7 +38,7 @@ Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core
 | macOS 10,15 "Catalina"    | ✔️ 2,1 ([Informacje o wersji][release-notes-21]) | ✔️ 3,1 ([Informacje o wersji][release-notes-31]) | ✔️ 5,0 — wersja zapoznawcza ([Informacje o wersji][release-notes-50]) |
 | macOS 10,14 "Mojave"      | ✔️ 2,1 ([Informacje o wersji][release-notes-21]) | ✔️ 3,1 ([Informacje o wersji][release-notes-31]) | ✔️ 5,0 — wersja zapoznawcza ([Informacje o wersji][release-notes-50]) |
 | macOS 10,13 "wysoka firma Sierra" | ✔️ 2,1 ([Informacje o wersji][release-notes-21]) | ✔️ 3,1 ([Informacje o wersji][release-notes-31]) | ✔️ 5,0 — wersja zapoznawcza ([Informacje o wersji][release-notes-50]) |
-| macOS 10,12 "Sierra"      | ✔️ 2,1 ([Informacje o wersji][release-notes-21]) | ❌3,1 ([Informacje o wersji][release-notes-31]) | ❌5,0 Preview ([Informacje o wersji][release-notes-50]) |
+| macOS 10,12 "Sierra"      | ✔️ 2,1 ([Informacje o wersji][release-notes-21]) | ❌ 3,1 ([Informacje o wersji][release-notes-31]) | ❌ 5,0 Preview ([Informacje o wersji][release-notes-50]) |
 
 ## <a name="unsupported-releases"></a>Nieobsługiwane wersje
 
@@ -80,7 +80,7 @@ Platforma .NET Core jest obsługiwana w następujących wersjach macOS:
 | Wersja platformy .NET Core | macOS                 | Architektury |     |
 | ----------------- | --------------------- | --------------| --- |
 | 3,1               | Wysoka firma Sierra (10.13 +)  | x64 | [Więcej informacji](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) |
-| 3.0               | Wysoka firma Sierra (10.13 +)  | x64 | [Więcej informacji](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
+| 3,0               | Wysoka firma Sierra (10.13 +)  | x64 | [Więcej informacji](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
 | 2.2               | Sierra (10.12 +)       | x64 | [Więcej informacji](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) |
 | 2.1               | Sierra (10.12 +)       | x64 | [Więcej informacji](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) |
 
@@ -145,7 +145,7 @@ export PATH=$PATH:$HOME/dotnet
 > [!TIP]
 > Powyższe `export` polecenia sprawiają, że polecenia interfejs wiersza polecenia platformy .NET Core są dostępne tylko dla sesji terminalu, w której została uruchomiona.
 >
-> Możesz edytować profil powłoki, aby trwale dodać polecenia. Istnieje wiele różnych powłok dostępnych dla systemu Linux, a każdy z nich ma inny profil. Na przykład:
+> Możesz edytować profil powłoki, aby trwale dodać polecenia. Istnieje wiele różnych powłok dostępnych dla systemu Linux, a każdy z nich ma inny profil. Przykład:
 >
 > - **Bash Shell**: *~/. bash_profile*, *~/.bashrc.*
 > - **Powłoka Korn**: *~/.KSHRC* lub *. profile*
@@ -159,7 +159,7 @@ Takie podejście umożliwia zainstalowanie różnych wersji w oddzielnych lokali
 
 ## <a name="install-with-visual-studio-for-mac"></a>Zainstaluj przy użyciu Visual Studio dla komputerów Mac
 
-Visual Studio dla komputerów Mac instaluje zestaw .NET Core SDK w przypadku wybrania obciążenia **.NET Core** . Aby rozpocząć pracę z programowaniem programu .NET Core w systemie macOS, zobacz [Instalowanie programu Visual Studio 2019 for Mac](/visualstudio/mac/installation). W przypadku najnowszej wersji programu .NET Core 3,1 należy użyć wersji zapoznawczej Visual Studio dla komputerów Mac 8,4.
+Visual Studio dla komputerów Mac instaluje zestaw .NET Core SDK w przypadku wybrania obciążenia **.NET Core** . Aby rozpocząć pracę z programowaniem programu .NET Core w systemie macOS, zobacz [Instalowanie programu Visual Studio 2019 for Mac](/visualstudio/mac/installation). W przypadku najnowszej wersji programu .NET Core 3,1 należy użyć Visual Studio dla komputerów Mac 8,4.
 
 [![macOS Visual Studio 2019 for Mac z funkcją obciążenia .NET Core](media/install-sdk/mac-install-selection.png)](media/install-sdk/mac-install-selection.png#lightbox)
 
@@ -186,7 +186,7 @@ Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platfo
 > [!NOTE]
 > Powyższe polecenie instaluje środowisko uruchomieniowe ASP.NET Core, aby uzyskać maksymalną zgodność. Środowisko uruchomieniowe ASP.NET Core obejmuje również standardowe środowisko uruchomieniowe programu .NET Core.
 
-## <a name="docker"></a>Platforma Docker
+## <a name="docker"></a>Docker
 
 Kontenery zapewniają lekki sposób izolowania aplikacji od pozostałej części systemu hosta. Kontenery na tym samym komputerze udostępniają tylko jądro i używają zasobów przyznanych aplikacji.
 

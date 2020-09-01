@@ -4,12 +4,12 @@ description: Ilustruje różne sposoby instalowania zestaw .NET Core SDK i środ
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c590bd89b718a5cd31dae9f83049eac910cb4049
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 9694dac719024264edee849044f048970b63b7b7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863894"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132949"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>Zainstaluj zestaw .NET Core SDK lub środowisko uruchomieniowe platformy .NET Core w systemie Ubuntu
 
@@ -31,17 +31,17 @@ Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [20,04 (LTS)](#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
 | ❌[19,10](#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌[19,04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌[18,10](#1810-)       | ✔️ 2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
+| ❌[19,04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌[18,10](#1810-)       | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
 | ✔️ [18,04 (LTS)](#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌[17,04](#1704-)       | ✔️ 2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌[16,10](#1610-)       | ❌2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
+| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌[17,04](#1704-)       | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌ [16,10](#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
 | ✔️ [16,04 (LTS)](#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
 
 Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
-- 3.0
+- 3,0
 - 2.2
 - 2,0
 
@@ -60,7 +60,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1910-"></a>19,10❌
+## <a name="1910-"></a>19,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -73,7 +73,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1904-"></a>19,04❌
+## <a name="1904-"></a>19,04 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -86,7 +86,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1810-"></a>18,10❌
+## <a name="1810-"></a>18,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -110,7 +110,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1710-"></a>17,10❌
+## <a name="1710-"></a>17,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -123,7 +123,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-21](includes/linux-install-21-apt.md)]
 
-## <a name="1704-"></a>17,04❌
+## <a name="1704-"></a>17,04 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -136,7 +136,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-21](includes/linux-install-21-apt.md)]
 
-## <a name="1610-"></a>16,10❌
+## <a name="1610-"></a>16,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -173,7 +173,7 @@ sudo apt-get upgrade
 
 Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podczas instalowania programu .NET Core przy użyciu programu APT.
 
-### <a name="unable-to-locate"></a>Nie można zlokalizować
+### <a name="unable-to-locate--some-packages-could-not-be-installed"></a>Nie można zlokalizować niektórych pakietów, których nie można \\ zainstalować
 
 [!INCLUDE [package-manager-failed-to-find-deb](includes/package-manager-failed-to-find-deb.md)]
 

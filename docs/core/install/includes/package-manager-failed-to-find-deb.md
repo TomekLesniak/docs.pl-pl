@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: 7d398df060c031ae891218b82a2712d74f4c33b7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9d4c031eda291b0a8832c824789efdffe4084926
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602986"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132950"
 ---
 
-Jeśli zostanie wyświetlony komunikat o błędzie podobny do następującego: **nie można zlokalizować pakietu {servicecore-Package}**, uruchom następujące polecenia.
+Jeśli zostanie wyświetlony komunikat o błędzie podobny do następującego: **nie można znaleźć pakietu {servicecore-Package}** lub nie można **zainstalować niektórych pakietów**, uruchom następujące polecenia.
 
 W poniższym zestawie poleceń znajdują się dwa symbole zastępcze.
 
@@ -17,12 +17,11 @@ Reprezentuje pakiet .NET Core, który instalujesz, na przykład `aspnetcore-runt
 - `{os-version}`\
 Oznacza to, że wersja systemu Linux jest włączona. Ta wartość jest używana w `wget` poniższym poleceniu.
 
-Spróbuj wyczyszczenie listy pakietów:
+Najpierw spróbuj wyczyszczenie listy pakietów:
 
 ```bash
 sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
-sudo apt-get install {dotnet-package}
 ```
 
-Jeśli to nie zadziała, można uruchomić instalację ręczną przy użyciu następujących poleceń:
+Następnie spróbuj ponownie zainstalować platformę .NET Core. Jeśli to nie zadziała, można uruchomić instalację ręczną przy użyciu następujących poleceń:
