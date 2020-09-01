@@ -1,5 +1,6 @@
 ---
-title: równa kontekstowe słowo kluczowe - Odwołanie C#
+description: Equals kontekstowe słowo kluczowe — odwołanie w C#
+title: Equals kontekstowe słowo kluczowe — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
 - equals_CSharpKeyword
@@ -7,23 +8,23 @@ f1_keywords:
 helpviewer_keywords:
 - equals keyword [C#]
 ms.assetid: e981309a-e4bf-444c-8a2b-5c695e6114b1
-ms.openlocfilehash: fc190433b37b027a92d8e8338a35b06d5d1e1824
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c23f9d05dd95f737afc2bc9a4bbd5456711a78c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713576"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89126947"
 ---
-# <a name="equals-c-reference"></a><span data-ttu-id="faa68-102">equals (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="faa68-102">equals (C# Reference)</span></span>
+# <a name="equals-c-reference"></a><span data-ttu-id="95571-103">equals (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="95571-103">equals (C# Reference)</span></span>
 
-<span data-ttu-id="faa68-103">Kontekstowe `equals` słowo kluczowe jest `join` używane w klauzuli w wyrażeniu zapytania do porównywania elementów dwóch sekwencji.</span><span class="sxs-lookup"><span data-stu-id="faa68-103">The `equals` contextual keyword is used in a `join` clause in a query expression to compare the elements of two sequences.</span></span> <span data-ttu-id="faa68-104">Aby uzyskać więcej informacji, zobacz [klauzulę join .](join-clause.md)</span><span class="sxs-lookup"><span data-stu-id="faa68-104">For more information, see [join clause](join-clause.md).</span></span>
+<span data-ttu-id="95571-104">`equals`Kontekstowe słowo kluczowe jest używane w `join` klauzuli w wyrażeniu zapytania, aby porównać elementy dwóch sekwencji.</span><span class="sxs-lookup"><span data-stu-id="95571-104">The `equals` contextual keyword is used in a `join` clause in a query expression to compare the elements of two sequences.</span></span> <span data-ttu-id="95571-105">Aby uzyskać więcej informacji, zobacz [Klauzula join](join-clause.md).</span><span class="sxs-lookup"><span data-stu-id="95571-105">For more information, see [join clause](join-clause.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="faa68-105">Przykład</span><span class="sxs-lookup"><span data-stu-id="faa68-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="95571-106">Przykład</span><span class="sxs-lookup"><span data-stu-id="95571-106">Example</span></span>
 
-<span data-ttu-id="faa68-106">W poniższym przykładzie przedstawiono `equals` użycie `join` słowa kluczowego w klauzuli.</span><span class="sxs-lookup"><span data-stu-id="faa68-106">The following example shows the use of the `equals` keyword in a `join` clause.</span></span>
+<span data-ttu-id="95571-107">W poniższym przykładzie pokazano użycie `equals` słowa kluczowego w `join` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="95571-107">The following example shows the use of the `equals` keyword in a `join` clause.</span></span>
 
 [!code-csharp[csrefKeywordsContextual#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#12)]
 
-## <a name="see-also"></a><span data-ttu-id="faa68-107">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="faa68-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95571-108">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="95571-108">See also</span></span>
 
-- [<span data-ttu-id="faa68-108">Language Integrated Query (LINQ)</span><span class="sxs-lookup"><span data-stu-id="faa68-108">Language Integrated Query (LINQ)</span></span>](../../linq/index.md)
+- [<span data-ttu-id="95571-109">Language Integrated Query (LINQ)</span><span class="sxs-lookup"><span data-stu-id="95571-109">Language Integrated Query (LINQ)</span></span>](../../linq/index.md)

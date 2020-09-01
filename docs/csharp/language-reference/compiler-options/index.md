@@ -1,4 +1,5 @@
 ---
+description: Opcje kompilatora C#
 title: Opcje kompilatora C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,35 +11,35 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bcb246055ecb553bbefad2a0d5c95bf6a083ee6f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73972747"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125530"
 ---
-# <a name="c-compiler-options"></a><span data-ttu-id="23d9a-102">Opcje kompilatora C#</span><span class="sxs-lookup"><span data-stu-id="23d9a-102">C# Compiler Options</span></span>
+# <a name="c-compiler-options"></a><span data-ttu-id="da714-103">Opcje kompilatora C#</span><span class="sxs-lookup"><span data-stu-id="da714-103">C# Compiler Options</span></span>
 
-<span data-ttu-id="23d9a-103">Kompilator tworzy pliki wykonywalne (exe), biblioteki łączy dynamicznych (dll) lub moduły kodu (.netmodule).</span><span class="sxs-lookup"><span data-stu-id="23d9a-103">The compiler produces executable (.exe) files, dynamic-link libraries (.dll), or code modules (.netmodule).</span></span>
+<span data-ttu-id="da714-104">Kompilator tworzy pliki wykonywalne (. exe), biblioteki dołączane dynamicznie (dll) lub moduły kodu (. module).</span><span class="sxs-lookup"><span data-stu-id="da714-104">The compiler produces executable (.exe) files, dynamic-link libraries (.dll), or code modules (.netmodule).</span></span>
 
-<span data-ttu-id="23d9a-104">Każda opcja kompilatora jest dostępna w dwóch formach: **-option** i **/option**.</span><span class="sxs-lookup"><span data-stu-id="23d9a-104">Every compiler option is available in two forms: **-option** and **/option**.</span></span> <span data-ttu-id="23d9a-105">W dokumentacji jest wyświetlany tylko formularz **opcji.**</span><span class="sxs-lookup"><span data-stu-id="23d9a-105">The documentation only shows the **-option** form.</span></span>
+<span data-ttu-id="da714-105">Każda opcja kompilatora jest dostępna w dwóch formach: **-Option** i **Option**.</span><span class="sxs-lookup"><span data-stu-id="da714-105">Every compiler option is available in two forms: **-option** and **/option**.</span></span> <span data-ttu-id="da714-106">W dokumentacji jest wyświetlany tylko formularz **-opcja** .</span><span class="sxs-lookup"><span data-stu-id="da714-106">The documentation only shows the **-option** form.</span></span>
 
-<span data-ttu-id="23d9a-106">W programie Visual Studio można ustawić opcje kompilatora w pliku *web.config.*</span><span class="sxs-lookup"><span data-stu-id="23d9a-106">In Visual Studio, you set compiler options in the *web.config* file.</span></span> <span data-ttu-id="23d9a-107">Aby uzyskać więcej informacji, zobacz [ \<kompilator> element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).</span><span class="sxs-lookup"><span data-stu-id="23d9a-107">For more information, see [\<compiler> Element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).</span></span>
+<span data-ttu-id="da714-107">W programie Visual Studio opcje kompilatora są ustawiane w pliku *web.config* .</span><span class="sxs-lookup"><span data-stu-id="da714-107">In Visual Studio, you set compiler options in the *web.config* file.</span></span> <span data-ttu-id="da714-108">Aby uzyskać więcej informacji, zobacz [ \<compiler> element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).</span><span class="sxs-lookup"><span data-stu-id="da714-108">For more information, see [\<compiler> Element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="23d9a-108">W tej sekcji</span><span class="sxs-lookup"><span data-stu-id="23d9a-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="da714-109">W tej sekcji</span><span class="sxs-lookup"><span data-stu-id="da714-109">In this section</span></span>
 
-- <span data-ttu-id="23d9a-109">[Tworzenie wiersza polecenia z csc.exe](command-line-building-with-csc-exe.md) Informacje o tworzeniu aplikacji Visual C# z wiersza polecenia.</span><span class="sxs-lookup"><span data-stu-id="23d9a-109">[Command-line Building With csc.exe](command-line-building-with-csc-exe.md) Information about building a Visual C# application from the command line.</span></span>
+- <span data-ttu-id="da714-110">[Kompilowanie wiersza polecenia przy użyciu csc.exe](command-line-building-with-csc-exe.md) Informacje na temat tworzenia aplikacji Visual C# z poziomu wiersza polecenia.</span><span class="sxs-lookup"><span data-stu-id="da714-110">[Command-line Building With csc.exe](command-line-building-with-csc-exe.md) Information about building a Visual C# application from the command line.</span></span>
 
-- <span data-ttu-id="23d9a-110">[Jak ustawić zmienne środowiskowe dla wiersza polecenia programu Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Zawiera kroki uruchamiania *vsvars32.bat,* aby włączyć kompilacje wiersza polecenia.</span><span class="sxs-lookup"><span data-stu-id="23d9a-110">[How to set environment variables for the Visual Studio Command Line](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Provides steps for running *vsvars32.bat* to enable command-line builds.</span></span>
+- <span data-ttu-id="da714-111">[Jak ustawić zmienne środowiskowe dla wiersza polecenia programu Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Zawiera kroki umożliwiające uruchomienie *vsvars32.bat* w celu włączenia kompilacji w wierszu polecenia.</span><span class="sxs-lookup"><span data-stu-id="da714-111">[How to set environment variables for the Visual Studio Command Line](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Provides steps for running *vsvars32.bat* to enable command-line builds.</span></span>
 
-- <span data-ttu-id="23d9a-111">[Opcje kompilatora Języka C# wymienione według kategorii](listed-by-category.md) Kategoryczna lista opcji kompilatora.</span><span class="sxs-lookup"><span data-stu-id="23d9a-111">[C# Compiler Options Listed by Category](listed-by-category.md) A categorical listing of the compiler options.</span></span>
+- <span data-ttu-id="da714-112">[Opcje kompilatora C# na liście według kategorii](listed-by-category.md) Kategorii listę opcji kompilatora.</span><span class="sxs-lookup"><span data-stu-id="da714-112">[C# Compiler Options Listed by Category](listed-by-category.md) A categorical listing of the compiler options.</span></span>
 
-- <span data-ttu-id="23d9a-112">[Opcje kompilatora Języka C# wymienione alfabetycznie](listed-alphabetically.md) Alfabetyczna lista opcji kompilatora.</span><span class="sxs-lookup"><span data-stu-id="23d9a-112">[C# Compiler Options Listed Alphabetically](listed-alphabetically.md) An alphabetical listing of the compiler options.</span></span>
+- <span data-ttu-id="da714-113">[Opcje kompilatora C# w porządku alfabetycznym](listed-alphabetically.md) Alfabetyczna lista opcji kompilatora.</span><span class="sxs-lookup"><span data-stu-id="da714-113">[C# Compiler Options Listed Alphabetically](listed-alphabetically.md) An alphabetical listing of the compiler options.</span></span>
 
-## <a name="related-sections"></a><span data-ttu-id="23d9a-113">Sekcje pokrewne</span><span class="sxs-lookup"><span data-stu-id="23d9a-113">Related sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="da714-114">Sekcje pokrewne</span><span class="sxs-lookup"><span data-stu-id="da714-114">Related sections</span></span>
 
-- <span data-ttu-id="23d9a-114">[Strona kompilacji, Projektant projektu](/visualstudio/ide/reference/build-page-project-designer-csharp) Ustawianie właściwości, które regulują sposób projektu jest kompilowany, zbudowany i debugowane.</span><span class="sxs-lookup"><span data-stu-id="23d9a-114">[Build Page, Project Designer](/visualstudio/ide/reference/build-page-project-designer-csharp) Setting properties that govern how your project is compiled, built, and debugged.</span></span> <span data-ttu-id="23d9a-115">Zawiera informacje o krokach kompilacji niestandardowej w projektach visual c#.</span><span class="sxs-lookup"><span data-stu-id="23d9a-115">Includes information about custom build steps in Visual C# projects.</span></span>
+- <span data-ttu-id="da714-115">[Strona kompilacja, Projektant projektu](/visualstudio/ide/reference/build-page-project-designer-csharp) Ustawianie właściwości, które określają, jak projekt jest kompilowany, skompilowany i debugowany.</span><span class="sxs-lookup"><span data-stu-id="da714-115">[Build Page, Project Designer](/visualstudio/ide/reference/build-page-project-designer-csharp) Setting properties that govern how your project is compiled, built, and debugged.</span></span> <span data-ttu-id="da714-116">Zawiera informacje o niestandardowych krokach kompilacji w projektach Visual C#.</span><span class="sxs-lookup"><span data-stu-id="da714-116">Includes information about custom build steps in Visual C# projects.</span></span>
 
-- <span data-ttu-id="23d9a-116">[Kompilacje domyślne i niestandardowe](/visualstudio/ide/compiling-and-building-in-visual-studio) Informacje o typach kompilacji i konfiguracjach.</span><span class="sxs-lookup"><span data-stu-id="23d9a-116">[Default and Custom Builds](/visualstudio/ide/compiling-and-building-in-visual-studio) Information on build types and configurations.</span></span>
+- <span data-ttu-id="da714-117">[Domyślne i niestandardowe kompilacje](/visualstudio/ide/compiling-and-building-in-visual-studio) Informacje o typach i konfiguracjach kompilacji.</span><span class="sxs-lookup"><span data-stu-id="da714-117">[Default and Custom Builds](/visualstudio/ide/compiling-and-building-in-visual-studio) Information on build types and configurations.</span></span>
 
-- <span data-ttu-id="23d9a-117">[Przygotowywanie kompilacji i zarządzanie nimi](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procedury tworzenia w środowisku programistycznym Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="23d9a-117">[Preparing and Managing Builds](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procedures for building within the Visual Studio development environment.</span></span>
+- <span data-ttu-id="da714-118">[Przygotowywanie kompilacji i zarządzanie nimi](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procedury kompilowania w środowisku deweloperskim programu Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="da714-118">[Preparing and Managing Builds](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procedures for building within the Visual Studio development environment.</span></span>

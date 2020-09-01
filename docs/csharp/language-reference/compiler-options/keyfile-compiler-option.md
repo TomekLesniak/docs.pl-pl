@@ -1,5 +1,6 @@
 ---
-title: -keyfile (Opcje kompilatora C#)
+description: -keyfile (opcje kompilatora C#)
+title: -keyfile (opcje kompilatora C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /keyfile
@@ -8,52 +9,52 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: bf271cc6b6887e930911071d4603b51daed55e61
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a97fc00201be1cf8043fc353b20ef447468a06bf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970257"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125491"
 ---
-# <a name="-keyfile-c-compiler-options"></a><span data-ttu-id="c694c-102">-keyfile (Opcje kompilatora C#)</span><span class="sxs-lookup"><span data-stu-id="c694c-102">-keyfile (C# Compiler Options)</span></span>
-<span data-ttu-id="c694c-103">Określa nazwę pliku zawierającą klucz kryptograficzny.</span><span class="sxs-lookup"><span data-stu-id="c694c-103">Specifies the filename containing the cryptographic key.</span></span>  
+# <a name="-keyfile-c-compiler-options"></a><span data-ttu-id="3a46f-103">-keyfile (opcje kompilatora C#)</span><span class="sxs-lookup"><span data-stu-id="3a46f-103">-keyfile (C# Compiler Options)</span></span>
+<span data-ttu-id="3a46f-104">Określa nazwę pliku zawierającego klucz kryptograficzny.</span><span class="sxs-lookup"><span data-stu-id="3a46f-104">Specifies the filename containing the cryptographic key.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c694c-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="c694c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3a46f-105">Składnia</span><span class="sxs-lookup"><span data-stu-id="3a46f-105">Syntax</span></span>  
   
 ```console  
 -keyfile:file  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="c694c-105">Argumenty</span><span class="sxs-lookup"><span data-stu-id="c694c-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="3a46f-106">Argumenty</span><span class="sxs-lookup"><span data-stu-id="3a46f-106">Arguments</span></span>  
   
-|<span data-ttu-id="c694c-106">Termin</span><span class="sxs-lookup"><span data-stu-id="c694c-106">Term</span></span>|<span data-ttu-id="c694c-107">Definicja</span><span class="sxs-lookup"><span data-stu-id="c694c-107">Definition</span></span>|  
+|<span data-ttu-id="3a46f-107">Termin</span><span class="sxs-lookup"><span data-stu-id="3a46f-107">Term</span></span>|<span data-ttu-id="3a46f-108">Definicja</span><span class="sxs-lookup"><span data-stu-id="3a46f-108">Definition</span></span>|  
 |----------|----------------|  
-|`file`|<span data-ttu-id="c694c-108">Nazwa pliku zawierającego klucz silnej nazwy.</span><span class="sxs-lookup"><span data-stu-id="c694c-108">The name of the file containing the strong name key.</span></span>|  
+|`file`|<span data-ttu-id="3a46f-109">Nazwa pliku zawierającego klucz silnej nazwy.</span><span class="sxs-lookup"><span data-stu-id="3a46f-109">The name of the file containing the strong name key.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="c694c-109">Uwagi</span><span class="sxs-lookup"><span data-stu-id="c694c-109">Remarks</span></span>  
- <span data-ttu-id="c694c-110">Gdy ta opcja jest używana, kompilator wstawia klucz publiczny z określonego pliku do manifestu zestawu, a następnie podpisuje końcowy zestaw kluczem prywatnym.</span><span class="sxs-lookup"><span data-stu-id="c694c-110">When this option is used, the compiler inserts the public key from the specified file into the assembly manifest and then signs the final assembly with the private key.</span></span> <span data-ttu-id="c694c-111">Aby wygenerować plik klucza, `file` wpisz sn -k w wierszu polecenia.</span><span class="sxs-lookup"><span data-stu-id="c694c-111">To generate a key file, type sn -k `file` at the command line.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3a46f-110">Uwagi</span><span class="sxs-lookup"><span data-stu-id="3a46f-110">Remarks</span></span>  
+ <span data-ttu-id="3a46f-111">Gdy ta opcja jest używana, kompilator wstawia klucz publiczny z określonego pliku do manifestu zestawu, a następnie podpisuje końcowy zestaw kluczem prywatnym.</span><span class="sxs-lookup"><span data-stu-id="3a46f-111">When this option is used, the compiler inserts the public key from the specified file into the assembly manifest and then signs the final assembly with the private key.</span></span> <span data-ttu-id="3a46f-112">Aby wygenerować plik klucza, wpisz SN-k `file` w wierszu polecenia.</span><span class="sxs-lookup"><span data-stu-id="3a46f-112">To generate a key file, type sn -k `file` at the command line.</span></span>  
   
- <span data-ttu-id="c694c-112">Jeśli skompilować z **-target:module**, nazwa pliku klucza jest utrzymywana w module i włączone do zestawu, który jest tworzony podczas kompilowania zestawu z [-addmodule](./addmodule-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="c694c-112">If you compile with **-target:module**, the name of the key file is held in the module and incorporated into the assembly that is created when you compile an assembly with [-addmodule](./addmodule-compiler-option.md).</span></span>  
+ <span data-ttu-id="3a46f-113">W przypadku kompilowania z **modułem-target:** nazwa pliku klucza jest przechowywana w module i wbudowana w zestaw, który jest tworzony podczas kompilowania zestawu za pomocą [-addmodule](./addmodule-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="3a46f-113">If you compile with **-target:module**, the name of the key file is held in the module and incorporated into the assembly that is created when you compile an assembly with [-addmodule](./addmodule-compiler-option.md).</span></span>  
   
- <span data-ttu-id="c694c-113">Można również przekazać informacje szyfrowania do kompilatora z [-keycontainer](./keycontainer-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="c694c-113">You can also pass your encryption information to the compiler with [-keycontainer](./keycontainer-compiler-option.md).</span></span> <span data-ttu-id="c694c-114">Użyj [-delaysign,](./delaysign-compiler-option.md) jeśli chcesz, aby zestaw częściowo podpisany.</span><span class="sxs-lookup"><span data-stu-id="c694c-114">Use [-delaysign](./delaysign-compiler-option.md) if you want a partially signed assembly.</span></span>  
+ <span data-ttu-id="3a46f-114">Możesz również przekazać informacje o szyfrowaniu do kompilatora z [kontenerem](./keycontainer-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="3a46f-114">You can also pass your encryption information to the compiler with [-keycontainer](./keycontainer-compiler-option.md).</span></span> <span data-ttu-id="3a46f-115">Użyj [-delaysign](./delaysign-compiler-option.md) , jeśli chcesz użyć częściowo podpisanego zestawu.</span><span class="sxs-lookup"><span data-stu-id="3a46f-115">Use [-delaysign](./delaysign-compiler-option.md) if you want a partially signed assembly.</span></span>  
   
- <span data-ttu-id="c694c-115">W przypadku, gdy zarówno -keyfile i -keycontainer są określone (przez opcję wiersza polecenia lub przez atrybut niestandardowy) w tej samej kompilacji, kompilator najpierw spróbuje kontenera kluczy.</span><span class="sxs-lookup"><span data-stu-id="c694c-115">In case both -keyfile and -keycontainer are specified (either by command line option or by custom attribute) in the same compilation, the compiler will first try the key container.</span></span> <span data-ttu-id="c694c-116">Jeśli to się powiedzie, zestaw jest podpisany z informacjami w kontenerze kluczy.</span><span class="sxs-lookup"><span data-stu-id="c694c-116">If that succeeds, then the assembly is signed with the information in the key container.</span></span> <span data-ttu-id="c694c-117">Jeśli kompilator nie znajdzie kontenera kluczy, spróbuje plik określony z -keyfile.</span><span class="sxs-lookup"><span data-stu-id="c694c-117">If the compiler does not find the key container, it will try the file specified with -keyfile.</span></span> <span data-ttu-id="c694c-118">Jeśli to się powiedzie, zestaw jest podpisany z informacjami w pliku klucza, a informacje o kluczu zostaną zainstalowane w kontenerze kluczy (podobnie jak sn -i), tak aby podczas następnej kompilacji kontener kluczy był prawidłowy.</span><span class="sxs-lookup"><span data-stu-id="c694c-118">If that succeeds, the assembly is signed with the information in the key file and the key information will be installed in the key container (similar to sn -i) so that on the next compilation, the key container will be valid.</span></span>  
+ <span data-ttu-id="3a46f-116">W przypadku określenia zarówno parametru-KeyFile, jak i-containerer (za pomocą opcji wiersza polecenia lub przez atrybut niestandardowy) w tej samej kompilacji kompilator najpierw spróbuje kontener kluczy.</span><span class="sxs-lookup"><span data-stu-id="3a46f-116">In case both -keyfile and -keycontainer are specified (either by command line option or by custom attribute) in the same compilation, the compiler will first try the key container.</span></span> <span data-ttu-id="3a46f-117">Jeśli to się powiedzie, zestaw zostanie podpisany przy użyciu informacji z kontenera kluczy.</span><span class="sxs-lookup"><span data-stu-id="3a46f-117">If that succeeds, then the assembly is signed with the information in the key container.</span></span> <span data-ttu-id="3a46f-118">Jeśli kompilator nie odnajdzie kontenera kluczy, podejmie próbę pliku określonego za pomocą parametru-keyfile.</span><span class="sxs-lookup"><span data-stu-id="3a46f-118">If the compiler does not find the key container, it will try the file specified with -keyfile.</span></span> <span data-ttu-id="3a46f-119">Jeśli to się powiedzie, zestaw zostanie podpisany przy użyciu informacji w pliku klucza, a informacje o kluczu zostaną zainstalowane w kontenerze kluczy (podobnym do SN-i), tak aby w następnej kompilacji kontener kluczy będzie prawidłowy.</span><span class="sxs-lookup"><span data-stu-id="3a46f-119">If that succeeds, the assembly is signed with the information in the key file and the key information will be installed in the key container (similar to sn -i) so that on the next compilation, the key container will be valid.</span></span>  
   
- <span data-ttu-id="c694c-119">Należy zauważyć, że plik klucza może zawierać tylko klucz publiczny.</span><span class="sxs-lookup"><span data-stu-id="c694c-119">Note that a key file might contain only the public key.</span></span>  
+ <span data-ttu-id="3a46f-120">Należy pamiętać, że plik klucza może zawierać tylko klucz publiczny.</span><span class="sxs-lookup"><span data-stu-id="3a46f-120">Note that a key file might contain only the public key.</span></span>  
   
- <span data-ttu-id="c694c-120">Aby uzyskać więcej informacji, zobacz [Tworzenie i używanie zestawów o silnych nazwach](../../../standard/assembly/create-use-strong-named.md) i [Opóźnianie podpisywania zestawu](../../../standard/assembly/delay-sign.md).</span><span class="sxs-lookup"><span data-stu-id="c694c-120">For more information, see [Creating and Using Strong-Named Assemblies](../../../standard/assembly/create-use-strong-named.md) and [Delay Signing an Assembly](../../../standard/assembly/delay-sign.md).</span></span>  
+ <span data-ttu-id="3a46f-121">Aby uzyskać więcej informacji, zobacz [Tworzenie i używanie zestawów o silnych nazwach](../../../standard/assembly/create-use-strong-named.md) oraz [opóźnienie podpisywania zestawu](../../../standard/assembly/delay-sign.md).</span><span class="sxs-lookup"><span data-stu-id="3a46f-121">For more information, see [Creating and Using Strong-Named Assemblies](../../../standard/assembly/create-use-strong-named.md) and [Delay Signing an Assembly](../../../standard/assembly/delay-sign.md).</span></span>  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="c694c-121">Aby ustawić tę opcję kompilatora w środowisku programowania Visual Studio</span><span class="sxs-lookup"><span data-stu-id="c694c-121">To set this compiler option in the Visual Studio development environment</span></span>  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="3a46f-122">Aby ustawić tę opcję kompilatora w środowisku programowania Visual Studio</span><span class="sxs-lookup"><span data-stu-id="3a46f-122">To set this compiler option in the Visual Studio development environment</span></span>  
   
-1. <span data-ttu-id="c694c-122">Otwórz stronę **Właściwości** projektu.</span><span class="sxs-lookup"><span data-stu-id="c694c-122">Open the **Properties** page for the project.</span></span>  
+1. <span data-ttu-id="3a46f-123">Otwórz stronę **Właściwości** dla projektu.</span><span class="sxs-lookup"><span data-stu-id="3a46f-123">Open the **Properties** page for the project.</span></span>  
   
-2. <span data-ttu-id="c694c-123">Kliknij stronę **Właściwości Podpisywania.**</span><span class="sxs-lookup"><span data-stu-id="c694c-123">Click the **Signing** property page.</span></span>  
+2. <span data-ttu-id="3a46f-124">Kliknij stronę właściwości **podpisywanie** .</span><span class="sxs-lookup"><span data-stu-id="3a46f-124">Click the **Signing** property page.</span></span>  
   
-3. <span data-ttu-id="c694c-124">Zmodyfikuj właściwość **Wybierz właściwość pliku klucza silnej nazwy.**</span><span class="sxs-lookup"><span data-stu-id="c694c-124">Modify the **Choose a strong name key file** property.</span></span>  
+3. <span data-ttu-id="3a46f-125">Zmodyfikuj właściwość **pliku klucza o silnej nazwie** .</span><span class="sxs-lookup"><span data-stu-id="3a46f-125">Modify the **Choose a strong name key file** property.</span></span>  
   
- <span data-ttu-id="c694c-125">Można programowo uzyskać dostęp do <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>tej opcji kompilatora z .</span><span class="sxs-lookup"><span data-stu-id="c694c-125">You can programmatically access this compiler option with <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>.</span></span>  
+ <span data-ttu-id="3a46f-126">Można programowo uzyskać dostęp do tej opcji kompilatora przy użyciu <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A> .</span><span class="sxs-lookup"><span data-stu-id="3a46f-126">You can programmatically access this compiler option with <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c694c-126">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="c694c-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3a46f-127">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="3a46f-127">See also</span></span>
 
-- [<span data-ttu-id="c694c-127">Opcje kompilatora Języka C#</span><span class="sxs-lookup"><span data-stu-id="c694c-127">C# Compiler Options</span></span>](./index.md)
-- [<span data-ttu-id="c694c-128">Zarządzanie właściwościami projektów i rozwiązań</span><span class="sxs-lookup"><span data-stu-id="c694c-128">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+- [<span data-ttu-id="3a46f-128">Opcje kompilatora C#</span><span class="sxs-lookup"><span data-stu-id="3a46f-128">C# Compiler Options</span></span>](./index.md)
+- [<span data-ttu-id="3a46f-129">Zarządzanie właściwościami projektów i rozwiązań</span><span class="sxs-lookup"><span data-stu-id="3a46f-129">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
