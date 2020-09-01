@@ -1,15 +1,16 @@
 ---
+description: operator delegata — odwołanie w C#
 title: operator delegata — odwołanie w C#
 ms.date: 07/18/2019
 helpviewer_keywords:
 - delegate [C#]
 - anonymous method [C#]
-ms.openlocfilehash: 33c438b88f1e993f4648786da9b20b91961b7ee1
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 1dfaaf40c0f5a19534adef3be7e3c917bc95c4a8
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062993"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89122254"
 ---
 # <a name="delegate-operator-c-reference"></a>Delegate — operator (odwołanie w C#)
 
@@ -36,7 +37,7 @@ Możesz również użyć `delegate` słowa kluczowego, aby zadeklarować [typ de
 
 Aby uzyskać więcej informacji, zobacz sekcję [wyrażenia funkcji anonimowej](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

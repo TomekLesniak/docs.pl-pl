@@ -1,19 +1,20 @@
 ---
+description: modyfikator parametru out — odwołanie w C#
 title: modyfikator parametru out — odwołanie w C#
 ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: 30946c85d2b64ead3f42e03da61108fa5b367779
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 23bf841c002f9be5fdd4e8d8da48e68e9f6e5fcc
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174812"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89122436"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out — Modyfikator parametrów (odwołanie w C#)
 
-`out`Słowo kluczowe powoduje, że argumenty są przekazane przez odwołanie. Sprawia, że parametr formalny jest aliasem dla argumentu, który musi być zmienną. Innymi słowy, każda operacja na parametrze jest wykonywana na argumencie. Jest to podobne do słowa kluczowego [ref](ref.md) , z wyjątkiem tego, że `ref` wymaga, aby zmienna została zainicjowana przed przekazaniem. Jest on również podobny do słowa kluczowego [in](in-parameter-modifier.md) , z wyjątkiem tego, że `in` wywołana metoda nie zezwala na modyfikowanie wartości argumentu. Aby użyć `out` parametru, zarówno definicja metody, jak i Metoda wywołująca muszą jawnie użyć `out` słowa kluczowego. Na przykład:  
+`out`Słowo kluczowe powoduje, że argumenty są przekazane przez odwołanie. Sprawia, że parametr formalny jest aliasem dla argumentu, który musi być zmienną. Innymi słowy, każda operacja na parametrze jest wykonywana na argumencie. Jest to podobne do słowa kluczowego [ref](ref.md) , z wyjątkiem tego, że `ref` wymaga, aby zmienna została zainicjowana przed przekazaniem. Jest on również podobny do słowa kluczowego [in](in-parameter-modifier.md) , z wyjątkiem tego, że `in` wywołana metoda nie zezwala na modyfikowanie wartości argumentu. Aby użyć `out` parametru, zarówno definicja metody, jak i Metoda wywołująca muszą jawnie użyć `out` słowa kluczowego. Przykład:  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#1)]  
 
