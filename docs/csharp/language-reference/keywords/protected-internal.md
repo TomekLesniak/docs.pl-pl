@@ -1,15 +1,16 @@
 ---
+description: chronione wewnętrzne odwołanie do języka C#
 title: chronione wewnętrzne odwołanie do języka C#
 ms.date: 11/15/2017
 f1_keywords:
 - protectedinternal_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 4067da93bcceba0fa3e4a14aa58b4cde812412f3
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: a7537fba93c0d7145f04c6236d15c11b70f8bf98
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301791"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139440"
 ---
 # <a name="protected-internal-c-reference"></a>chroniona wewnętrznie (odwołanie w C#)
 
@@ -58,7 +59,7 @@ class DerivedClass : BaseClass
 ```
 
 Ten przykład zawiera dwa pliki `Assembly1.cs` i `Assembly2.cs` .
-Pierwszy plik zawiera publiczną klasę bazową, `BaseClass` i inną klasę, `TestAccess` . `BaseClass`jest właścicielem chronionego wewnętrznego elementu członkowskiego, `myValue` do którego uzyskuje dostęp `TestAccess` Typ.
+Pierwszy plik zawiera publiczną klasę bazową, `BaseClass` i inną klasę, `TestAccess` . `BaseClass` jest właścicielem chronionego wewnętrznego elementu członkowskiego, `myValue` do którego uzyskuje dostęp `TestAccess` Typ.
 W drugim pliku próba uzyskania dostępu `myValue` za pomocą wystąpienia `BaseClass` spowoduje błąd, podczas gdy dostęp do tego elementu członkowskiego za pomocą wystąpienia klasy pochodnej `DerivedClass` zakończy się powodzeniem.
 
 Elementy członkowskie struktury nie mogą być takie same `protected internal` , ponieważ struktura nie może być dziedziczona.
@@ -76,6 +77,6 @@ Elementy członkowskie struktury nie mogą być takie same `protected internal` 
 - [Poziomy ułatwień dostępu](accessibility-levels.md)
 - [Modyfikatory](index.md)
 - [public](public.md)
-- [użytek](private.md)
+- [private](private.md)
 - [internal](internal.md)
 - [Zagadnienia dotyczące zabezpieczeń wewnętrznych wirtualnych słów kluczowych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

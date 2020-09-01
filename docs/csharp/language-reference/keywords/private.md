@@ -1,5 +1,6 @@
 ---
-title: prywatne słowo kluczowe - Odwołanie do języka C#
+description: Private — słowo kluczowe — odwołanie w C#
+title: Private — słowo kluczowe — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
 - private_CSharpKeyword
@@ -7,20 +8,20 @@ f1_keywords:
 helpviewer_keywords:
 - private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
-ms.openlocfilehash: a13e9ef18b0f6452c3ff1497dc97110bc21c433d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e6f40712fd2cca6d7b1f64760f1c6c5dd5c71370
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715200"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139401"
 ---
 # <a name="private-c-reference"></a>private (odwołanie w C#)
 
-Słowo `private` kluczowe jest modyfikatorem dostępu do elementów członkowskich.
+`private`Słowo kluczowe jest modyfikatorem dostępu składowej.
 
-> Ta strona `private` obejmuje dostęp. Słowo `private` kluczowe jest również [`private protected`](./private-protected.md) częścią modyfikatora dostępu.
+> Ta strona dotyczy `private` dostępu. `private`Słowo kluczowe jest również częścią [`private protected`](./private-protected.md) modyfikatora dostępu.
 
-Dostęp prywatny jest najmniej liberalnym poziomem dostępu. Elementy członkowskie prywatne są dostępne tylko w treści klasy lub struktury, w której są zadeklarowane, jak w tym przykładzie:
+Dostęp prywatny to najmniejszy poziom dostępu. Prywatne elementy członkowskie są dostępne tylko w treści klasy lub struktury, w której są zadeklarowane, jak w poniższym przykładzie:
 
 ```csharp
 class Employee
@@ -30,30 +31,30 @@ class Employee
 }
 ```
 
-Zagnieżdżone typy w tym samym treści można również uzyskać dostęp do tych prywatnych elementów członkowskich.
+Typy zagnieżdżone w tej samej treści mogą również uzyskiwać dostęp do tych prywatnych członków.
 
-Jest to błąd w czasie kompilacji, aby odwołać się do prywatnego elementu członkowskiego poza klasą lub struktury, w którym jest zadeklarowany.
+Jest to błąd czasu kompilacji, który odwołuje się do prywatnego elementu członkowskiego spoza klasy lub struktury, w której jest zadeklarowany.
 
-Aby porównać `private` z innymi modyfikatorami dostępu, zobacz [Poziomy ułatwień dostępu](accessibility-levels.md) i [modyfikatory dostępu](../../programming-guide/classes-and-structs/access-modifiers.md).
+Aby uzyskać porównanie `private` z innymi modyfikatorami dostępu, zobacz [poziomy dostępności](accessibility-levels.md) i [Modyfikatory dostępu](../../programming-guide/classes-and-structs/access-modifiers.md).
 
 ## <a name="example"></a>Przykład
 
-W tym przykładzie `Employee` klasa zawiera dwa `name` prywatne `salary`elementy członkowskie danych i . Jako członkowie prywatni nie można uzyskać dostępu z wyjątkiem metod członkowskich. Metody publiczne `GetName` o `Salary` nazwie i są dodawane w celu umożliwienia kontrolowanego dostępu do prywatnych elementów członkowskich. Element `name` członkowski jest dostępny za pomocą `salary` metody publicznej, a element członkowski jest dostępny za pomocą publicznej właściwości tylko do odczytu. (Zobacz [właściwości,](../../programming-guide/classes-and-structs/properties.md) aby uzyskać więcej informacji.)
+W tym przykładzie `Employee` Klasa zawiera dwa prywatne elementy członkowskie danych `name` i `salary` . Jako prywatne elementy członkowskie nie są dostępne z wyjątkiem metod składowych. Metody publiczne o nazwie `GetName` i `Salary` są dodawane w celu umożliwienia kontrolowanego dostępu do prywatnych członków. `name`Dostęp do elementu członkowskiego uzyskuje się za pomocą metody publicznej, a `salary` członek jest dostępny w postaci publicznej właściwości tylko do odczytu. (Zobacz [Właściwości](../../programming-guide/classes-and-structs/properties.md) , aby uzyskać więcej informacji).
 
 [!code-csharp[csrefKeywordsModifiers#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#10)]
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#  
 
-Aby uzyskać więcej informacji, zobacz [Zadeklarowana dostępność](~/_csharplang/spec/basic-concepts.md#declared-accessibility) w [specyfikacji języka Języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
+Aby uzyskać więcej informacji, zobacz [zadeklarowane ułatwienia dostępu](~/_csharplang/spec/basic-concepts.md#declared-accessibility) w [specyfikacji języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [Przewodnik programowania języka C#](../../programming-guide/index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
 - [Słowa kluczowe języka C#](index.md)
 - [Modyfikatory dostępu](access-modifiers.md)
 - [Poziomy ułatwień dostępu](accessibility-levels.md)
 - [Modyfikatory](index.md)
-- [Publicznego](public.md)
+- [public](public.md)
 - [protected](protected.md)
-- [Wewnętrznego](internal.md)
+- [internal](internal.md)

@@ -1,5 +1,6 @@
 ---
-title: słowo kluczowe obszaru nazw — odwołanie do języka C#
+description: Namespace — słowo kluczowe — odwołanie w C#
+title: Namespace — słowo kluczowe — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
 - namespace_CSharpKeyword
@@ -8,58 +9,58 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: b35f0a2a5cc0b2895b491d4ee24f89955f4b8fed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a6cfd1c3d37cbdef1f0dd72ddca85ce91f2e183b
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77625803"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139583"
 ---
 # <a name="namespace-c-reference"></a>namespace (odwołanie w C#)
 
-Słowo `namespace` kluczowe służy do deklarowania zakresu, który zawiera zestaw powiązanych obiektów. Za pomocą obszaru nazw można organizować elementy kodu i tworzyć typy unikatowe globalnie.
+`namespace`Słowo kluczowe jest używane do deklarowania zakresu, który zawiera zestaw powiązanych obiektów. Można użyć przestrzeni nazw do organizowania elementów kodu i tworzenia unikatowych typów globalnie.
 
 [!code-csharp[csrefKeywordsNamespace#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#1)]
 
 ## <a name="remarks"></a>Uwagi
 
-W obszarze nazw można zadeklarować zero lub więcej z następujących typów:
+W przestrzeni nazw można zadeklarować zero lub więcej następujących typów:
 
-- inny obszar nazw
+- inna przestrzeń nazw
 
-- [Klasa](class.md)
+- [określonej](class.md)
 
-- [Interfejs](interface.md)
+- [interfejsu](interface.md)
 
-- [Struct](../builtin-types/struct.md)
+- [konstrukcja](../builtin-types/struct.md)
 
-- [Enum](../builtin-types/enum.md)
+- [podstawowe](../builtin-types/enum.md)
 
-- [delegate](../builtin-types/reference-types.md#the-delegate-type)
+- [Wierz](../builtin-types/reference-types.md#the-delegate-type)
 
-Niezależnie od tego, czy jawnie zadeklarować obszar nazw w pliku źródłowym Języka C#, kompilator dodaje domyślny obszar nazw. Ta nienazwana przestrzeń nazw, czasami nazywana globalną przestrzenią nazw, jest obecna w każdym pliku. Dowolny identyfikator w globalnej przestrzeni nazw jest dostępny do użycia w nazwanym obszarze nazw.
+Niezależnie od tego, czy jawnie deklarujesz przestrzeń nazw w pliku źródłowym C#, kompilator dodaje domyślną przestrzeń nazw. NIENAZWANA przestrzeń nazw, czasami określana jako globalna przestrzeń nazw, jest obecna w każdym pliku. Wszystkie identyfikatory w globalnej przestrzeni nazw są dostępne do użycia w nazwanym obszarze nazw.
 
-Przestrzenie nazw niejawnie mają dostęp publiczny i nie można tego modyfikować. Aby uzyskać omówienie modyfikatorów dostępu, które można przypisać do elementów w obszarze nazw, zobacz [Modyfikatory programu Access](access-modifiers.md).
+Przestrzenie nazw niejawnie mają dostęp publiczny i nie są modyfikowane. Aby uzyskać Omówienie modyfikatorów dostępu, które można przypisać do elementów w przestrzeni nazw, zobacz [Modyfikatory dostępu](access-modifiers.md).
 
-Istnieje możliwość zdefiniowania obszaru nazw w dwóch lub więcej deklaracji. Na przykład w poniższym przykładzie definiuje dwie `MyCompany` klasy jako część obszaru nazw:
+Istnieje możliwość zdefiniowania przestrzeni nazw w dwóch lub większej liczbie deklaracji. Na przykład poniższy przykład definiuje dwie klasy jako część `MyCompany` przestrzeni nazw:
 
 [!code-csharp[csrefKeywordsNamespace#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#2)]
 
 ## <a name="example"></a>Przykład
 
-W poniższym przykładzie pokazano, jak wywołać metodę statyczną w zagnieżdżonym obszarze nazw.
+Poniższy przykład pokazuje, jak wywołać metodę statyczną w zagnieżdżonej przestrzeni nazw.
 
 [!code-csharp[csrefKeywordsNamespace#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#3)]
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji, zobacz [sekcję Przestrzenie nazw](~/_csharplang/spec/namespaces.md) [specyfikacji języka Języka C#.](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji, zobacz sekcję [przestrzenie nazw](~/_csharplang/spec/namespaces.md) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Słowa kluczowe języka C#](index.md)
-- [Za pomocą](using-directive.md)
-- [za pomocą statycznego](using-static.md)
-- [Kwalifikator aliasu obszaru nazw`::`](../operators/namespace-alias-qualifier.md)
-- [Przestrzenie nazw](../../programming-guide/namespaces/index.md)
+- [using](using-directive.md)
+- [Używanie static](using-static.md)
+- [Kwalifikator aliasu przestrzeni nazw `::`](../operators/namespace-alias-qualifier.md)
+- [Namespaces](../../programming-guide/namespaces/index.md)
