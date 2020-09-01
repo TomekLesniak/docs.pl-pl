@@ -1,4 +1,5 @@
 ---
+description: Opcje kompilatora C#
 title: Opcje kompilatora C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,35 +11,35 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bcb246055ecb553bbefad2a0d5c95bf6a083ee6f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73972747"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125530"
 ---
 # <a name="c-compiler-options"></a>Opcje kompilatora C#
 
-Kompilator tworzy pliki wykonywalne (exe), biblioteki łączy dynamicznych (dll) lub moduły kodu (.netmodule).
+Kompilator tworzy pliki wykonywalne (. exe), biblioteki dołączane dynamicznie (dll) lub moduły kodu (. module).
 
-Każda opcja kompilatora jest dostępna w dwóch formach: **-option** i **/option**. W dokumentacji jest wyświetlany tylko formularz **opcji.**
+Każda opcja kompilatora jest dostępna w dwóch formach: **-Option** i **Option**. W dokumentacji jest wyświetlany tylko formularz **-opcja** .
 
-W programie Visual Studio można ustawić opcje kompilatora w pliku *web.config.* Aby uzyskać więcej informacji, zobacz [ \<kompilator> element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).
+W programie Visual Studio opcje kompilatora są ustawiane w pliku *web.config* . Aby uzyskać więcej informacji, zobacz [ \<compiler> element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).
 
 ## <a name="in-this-section"></a>W tej sekcji
 
-- [Tworzenie wiersza polecenia z csc.exe](command-line-building-with-csc-exe.md) Informacje o tworzeniu aplikacji Visual C# z wiersza polecenia.
+- [Kompilowanie wiersza polecenia przy użyciu csc.exe](command-line-building-with-csc-exe.md) Informacje na temat tworzenia aplikacji Visual C# z poziomu wiersza polecenia.
 
-- [Jak ustawić zmienne środowiskowe dla wiersza polecenia programu Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Zawiera kroki uruchamiania *vsvars32.bat,* aby włączyć kompilacje wiersza polecenia.
+- [Jak ustawić zmienne środowiskowe dla wiersza polecenia programu Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Zawiera kroki umożliwiające uruchomienie *vsvars32.bat* w celu włączenia kompilacji w wierszu polecenia.
 
-- [Opcje kompilatora Języka C# wymienione według kategorii](listed-by-category.md) Kategoryczna lista opcji kompilatora.
+- [Opcje kompilatora C# na liście według kategorii](listed-by-category.md) Kategorii listę opcji kompilatora.
 
-- [Opcje kompilatora Języka C# wymienione alfabetycznie](listed-alphabetically.md) Alfabetyczna lista opcji kompilatora.
+- [Opcje kompilatora C# w porządku alfabetycznym](listed-alphabetically.md) Alfabetyczna lista opcji kompilatora.
 
 ## <a name="related-sections"></a>Sekcje pokrewne
 
-- [Strona kompilacji, Projektant projektu](/visualstudio/ide/reference/build-page-project-designer-csharp) Ustawianie właściwości, które regulują sposób projektu jest kompilowany, zbudowany i debugowane. Zawiera informacje o krokach kompilacji niestandardowej w projektach visual c#.
+- [Strona kompilacja, Projektant projektu](/visualstudio/ide/reference/build-page-project-designer-csharp) Ustawianie właściwości, które określają, jak projekt jest kompilowany, skompilowany i debugowany. Zawiera informacje o niestandardowych krokach kompilacji w projektach Visual C#.
 
-- [Kompilacje domyślne i niestandardowe](/visualstudio/ide/compiling-and-building-in-visual-studio) Informacje o typach kompilacji i konfiguracjach.
+- [Domyślne i niestandardowe kompilacje](/visualstudio/ide/compiling-and-building-in-visual-studio) Informacje o typach i konfiguracjach kompilacji.
 
-- [Przygotowywanie kompilacji i zarządzanie nimi](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procedury tworzenia w środowisku programistycznym Visual Studio.
+- [Przygotowywanie kompilacji i zarządzanie nimi](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procedury kompilowania w środowisku deweloperskim programu Visual Studio.

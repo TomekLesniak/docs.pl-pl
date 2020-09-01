@@ -1,5 +1,6 @@
 ---
-title: -define (Opcje kompilatora C#)
+description: -define (opcje kompilatora C#)
+title: -define (opcje kompilatora C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /define
@@ -11,15 +12,15 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: 4a3622b6acc8ebe9c590b01b67074ae59396fc34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b7a1c6e92d2c60ce289f29044774c3aa42ca84f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173747"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125881"
 ---
-# <a name="-define-c-compiler-options"></a>-define (Opcje kompilatora C#)
-Opcja **-define** definiuje `name` jako symbol we wszystkich plikach kodu źródłowego programu.  
+# <a name="-define-c-compiler-options"></a>-define (opcje kompilatora C#)
+Opcja **-define** definiuje `name` jako symbol we wszystkich plikach kodu źródłowego tego programu.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -29,33 +30,33 @@ Opcja **-define** definiuje `name` jako symbol we wszystkich plikach kodu źród
   
 ## <a name="arguments"></a>Argumenty  
  `name`, `name2`  
- Nazwa jednego lub więcej symboli, które chcesz zdefiniować.  
+ Nazwa co najmniej jednego symbolu, który ma zostać zdefiniowany.  
   
 ## <a name="remarks"></a>Uwagi  
- **Opcja -define** ma taki sam efekt jak przy użyciu #define dyrektywy preprocesora, z tą różnicą, że opcja kompilatora obowiązuje dla wszystkich plików w projekcie. [#define](../preprocessor-directives/preprocessor-define.md) Symbol pozostaje zdefiniowany w pliku źródłowym, dopóki [#undef](../preprocessor-directives/preprocessor-undef.md) dyrektywy w pliku źródłowym nie usunie definicji. Korzystając z opcji -define, `#undef` dyrektywa w jednym pliku nie ma wpływu na inne pliki kodu źródłowego w projekcie.  
+ Opcja **-define** ma ten sam skutek jak użycie dyrektywy preprocesora [#define](../preprocessor-directives/preprocessor-define.md) , z wyjątkiem tego, że opcja kompilatora obowiązuje dla wszystkich plików w projekcie. Symbol pozostaje zdefiniowany w pliku źródłowym do momentu usunięcia definicji [#undef](../preprocessor-directives/preprocessor-undef.md) dyrektywy w pliku źródłowym. W przypadku użycia opcji-define `#undef` dyrektywa w jednym pliku nie ma wpływu na inne pliki kodu źródłowego w projekcie.  
   
- Symboli utworzonych przez tę opcję można używać za pomocą [#if](../preprocessor-directives/preprocessor-if.md), [#else](../preprocessor-directives/preprocessor-else.md), [#elif](../preprocessor-directives/preprocessor-elif.md)i [#endif](../preprocessor-directives/preprocessor-endif.md) do warunkowego kompilowania plików źródłowych.  
+ Możesz użyć symboli utworzonych przez tę opcję z [#if](../preprocessor-directives/preprocessor-if.md), [#else](../preprocessor-directives/preprocessor-else.md), [#elif](../preprocessor-directives/preprocessor-elif.md)i [#endif](../preprocessor-directives/preprocessor-endif.md) , aby warunkowo kompilować pliki źródłowe.  
   
  **-d** jest krótką formą **-define**.  
   
- Można zdefiniować wiele symboli za pomocą **-define** za pomocą średnika lub przecinka do oddzielania nazw symboli. Przykład:  
+ Można zdefiniować wiele symboli z **-Definiuj** przy użyciu średnika lub przecinka do oddzielenia nazw symboli. Przykład:  
   
 ```console  
 -define:DEBUG;TUESDAY  
 ```  
   
- Kompilator Języka C# sam definiuje żadnych symboli lub makr, których można użyć w kodzie źródłowym; wszystkie definicje symboli muszą być zdefiniowane przez użytkownika.  
+ Kompilator języka C# nie definiuje symboli ani makr, których można użyć w kodzie źródłowym; wszystkie definicje symboli muszą być zdefiniowane przez użytkownika.  
   
 > [!NOTE]
-> C# `#define` nie zezwala na symbol, aby otrzymać wartość, jak w językach, takich jak C++. Na przykład `#define` nie można użyć do utworzenia makra lub do zdefiniowania stałej. Jeśli trzeba zdefiniować stałą, `enum` należy użyć zmiennej. Jeśli chcesz utworzyć makro stylu C++, rozważ alternatywy, takie jak generycznych. Ponieważ makra są notorycznie podatne na błędy, C# nie zezwala na ich użycie, ale zapewnia bezpieczniejsze alternatywy.  
+> Język C# nie `#define` zezwala, aby symbol uzyskał wartość, tak jak w przypadku języka C++. Na przykład `#define` nie można użyć do utworzenia makra lub zdefiniowania stałej. Jeśli musisz zdefiniować stałą, użyj `enum` zmiennej. Jeśli chcesz utworzyć makro w stylu języka C++, weź pod uwagę alternatywy, takie jak typy ogólne. Ponieważ makra są podatne na błędy wielowątkowy bardzo, język C# nie zezwala na korzystanie z nich, ale zapewnia bezpieczniejsze alternatywy.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Aby ustawić tę opcję kompilatora w środowisku programowania Visual Studio  
   
 1. Otwórz stronę **Właściwości** projektu.  
   
-2. Na **karcie Kompilacja** wpisz symbol, który ma być zdefiniowany w polu **Symbole kompilacji warunkowej.** Na przykład jeśli używasz przykładu kodu, który `xx` następuje, wystarczy wpisać w polu tekstowym.  
+2. Na karcie **kompilacja** wpisz symbol, który ma być zdefiniowany w polu **symbole kompilacji warunkowej** . Na przykład, jeśli używasz poniższego przykładu kodu, po prostu wpisz `xx` w polu tekstowym.  
   
- Aby uzyskać informacje na temat programowania tej opcji <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DefineConstants%2A>kompilatora, zobacz .  
+ Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DefineConstants%2A> .  
   
 ## <a name="example"></a>Przykład  
   
@@ -80,5 +81,5 @@ public class Test
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Opcje kompilatora Języka C#](./index.md)
+- [Opcje kompilatora C#](./index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

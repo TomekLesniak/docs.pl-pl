@@ -1,4 +1,5 @@
 ---
+description: -Main (opcje kompilatora C#)
 title: -Main (opcje kompilatora C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,11 +9,12 @@ helpviewer_keywords:
 - main compiler option [C#]
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
-ms.openlocfilehash: 1de3d51953b632e3881db76202b63d3f287b39fe
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 61e63de8082a335b448ffee1ae35170d3a1cf6b4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051873"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125270"
 ---
 # <a name="-main-c-compiler-options"></a>-Main (opcje kompilatora C#)
 
@@ -47,7 +49,7 @@ Ta opcja jest używana podczas kompilowania pliku *. exe* .
 
 ### <a name="to-set-this-compiler-option-by-manually-editing-the-csproj-file"></a>Aby ustawić tę opcję kompilatora, ręcznie edytując plik *. csproj*
 
-Tę opcję można ustawić, edytując plik. csproj i dodając element `StartupObject` w `PropertyGroup` sekcji. Przykład:
+Tę opcję można ustawić, edytując plik. csproj i dodając element `StartupObject` w `PropertyGroup` sekcji. Na przykład:
 
 ```xml
   <PropertyGroup>
@@ -64,7 +66,7 @@ Kompiluj `t2.cs` i `t3.cs` , określając, że metoda **Main** zostanie znalezio
 csc t2.cs t3.cs -main:Test2
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Opcje kompilatora C#](./index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

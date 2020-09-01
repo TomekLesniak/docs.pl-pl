@@ -1,5 +1,6 @@
 ---
-title: -keyfile (Opcje kompilatora C#)
+description: -keyfile (opcje kompilatora C#)
+title: -keyfile (opcje kompilatora C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /keyfile
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: bf271cc6b6887e930911071d4603b51daed55e61
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a97fc00201be1cf8043fc353b20ef447468a06bf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970257"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125491"
 ---
-# <a name="-keyfile-c-compiler-options"></a>-keyfile (Opcje kompilatora C#)
-Określa nazwę pliku zawierającą klucz kryptograficzny.  
+# <a name="-keyfile-c-compiler-options"></a>-keyfile (opcje kompilatora C#)
+Określa nazwę pliku zawierającego klucz kryptograficzny.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -31,29 +32,29 @@ Określa nazwę pliku zawierającą klucz kryptograficzny.
 |`file`|Nazwa pliku zawierającego klucz silnej nazwy.|  
   
 ## <a name="remarks"></a>Uwagi  
- Gdy ta opcja jest używana, kompilator wstawia klucz publiczny z określonego pliku do manifestu zestawu, a następnie podpisuje końcowy zestaw kluczem prywatnym. Aby wygenerować plik klucza, `file` wpisz sn -k w wierszu polecenia.  
+ Gdy ta opcja jest używana, kompilator wstawia klucz publiczny z określonego pliku do manifestu zestawu, a następnie podpisuje końcowy zestaw kluczem prywatnym. Aby wygenerować plik klucza, wpisz SN-k `file` w wierszu polecenia.  
   
- Jeśli skompilować z **-target:module**, nazwa pliku klucza jest utrzymywana w module i włączone do zestawu, który jest tworzony podczas kompilowania zestawu z [-addmodule](./addmodule-compiler-option.md).  
+ W przypadku kompilowania z **modułem-target:** nazwa pliku klucza jest przechowywana w module i wbudowana w zestaw, który jest tworzony podczas kompilowania zestawu za pomocą [-addmodule](./addmodule-compiler-option.md).  
   
- Można również przekazać informacje szyfrowania do kompilatora z [-keycontainer](./keycontainer-compiler-option.md). Użyj [-delaysign,](./delaysign-compiler-option.md) jeśli chcesz, aby zestaw częściowo podpisany.  
+ Możesz również przekazać informacje o szyfrowaniu do kompilatora z [kontenerem](./keycontainer-compiler-option.md). Użyj [-delaysign](./delaysign-compiler-option.md) , jeśli chcesz użyć częściowo podpisanego zestawu.  
   
- W przypadku, gdy zarówno -keyfile i -keycontainer są określone (przez opcję wiersza polecenia lub przez atrybut niestandardowy) w tej samej kompilacji, kompilator najpierw spróbuje kontenera kluczy. Jeśli to się powiedzie, zestaw jest podpisany z informacjami w kontenerze kluczy. Jeśli kompilator nie znajdzie kontenera kluczy, spróbuje plik określony z -keyfile. Jeśli to się powiedzie, zestaw jest podpisany z informacjami w pliku klucza, a informacje o kluczu zostaną zainstalowane w kontenerze kluczy (podobnie jak sn -i), tak aby podczas następnej kompilacji kontener kluczy był prawidłowy.  
+ W przypadku określenia zarówno parametru-KeyFile, jak i-containerer (za pomocą opcji wiersza polecenia lub przez atrybut niestandardowy) w tej samej kompilacji kompilator najpierw spróbuje kontener kluczy. Jeśli to się powiedzie, zestaw zostanie podpisany przy użyciu informacji z kontenera kluczy. Jeśli kompilator nie odnajdzie kontenera kluczy, podejmie próbę pliku określonego za pomocą parametru-keyfile. Jeśli to się powiedzie, zestaw zostanie podpisany przy użyciu informacji w pliku klucza, a informacje o kluczu zostaną zainstalowane w kontenerze kluczy (podobnym do SN-i), tak aby w następnej kompilacji kontener kluczy będzie prawidłowy.  
   
- Należy zauważyć, że plik klucza może zawierać tylko klucz publiczny.  
+ Należy pamiętać, że plik klucza może zawierać tylko klucz publiczny.  
   
- Aby uzyskać więcej informacji, zobacz [Tworzenie i używanie zestawów o silnych nazwach](../../../standard/assembly/create-use-strong-named.md) i [Opóźnianie podpisywania zestawu](../../../standard/assembly/delay-sign.md).  
+ Aby uzyskać więcej informacji, zobacz [Tworzenie i używanie zestawów o silnych nazwach](../../../standard/assembly/create-use-strong-named.md) oraz [opóźnienie podpisywania zestawu](../../../standard/assembly/delay-sign.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Aby ustawić tę opcję kompilatora w środowisku programowania Visual Studio  
   
-1. Otwórz stronę **Właściwości** projektu.  
+1. Otwórz stronę **Właściwości** dla projektu.  
   
-2. Kliknij stronę **Właściwości Podpisywania.**  
+2. Kliknij stronę właściwości **podpisywanie** .  
   
-3. Zmodyfikuj właściwość **Wybierz właściwość pliku klucza silnej nazwy.**  
+3. Zmodyfikuj właściwość **pliku klucza o silnej nazwie** .  
   
- Można programowo uzyskać dostęp do <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>tej opcji kompilatora z .  
+ Można programowo uzyskać dostęp do tej opcji kompilatora przy użyciu <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A> .  
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Opcje kompilatora Języka C#](./index.md)
+- [Opcje kompilatora C#](./index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,4 +1,5 @@
 ---
+description: 'Porada: ustawianie zmiennych środowiskowych dla wiersza polecenia programu Visual Studio'
 title: 'Porada: ustawianie zmiennych środowiskowych dla wiersza polecenia programu Visual Studio'
 ms.date: 12/20/2019
 f1_keywords:
@@ -15,36 +16,36 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-ms.openlocfilehash: 99e2a837877494dd4c7e0106047bce3cc39a9282
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b985c85e2fddce459ed68b3d07ba7d54a8b2d0a7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75342366"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125608"
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Porada: ustawianie zmiennych środowiskowych dla wiersza polecenia programu Visual Studio
 
-Plik VsDevCmd.bat ustawia odpowiednie zmienne środowiskowe, aby włączyć kompilacje wiersza polecenia.
+Plik VsDevCmd.bat ustawia odpowiednie zmienne środowiskowe, aby włączyć kompilacje w wierszu polecenia.
 
 > [!NOTE]
-> Visual Studio 2015 i wcześniejsze wersje używane VSVARS32.bat, nie VsDevCmd.bat w tym samym celu. Ten plik był przechowywany w folderze\\\Program Files\Microsoft Visual Studio*Version*\Common7\Tools or Program Files (x86)\Microsoft Visual Studio\\*Version*\Common7\Tools.
+> Program Visual Studio 2015 i wcześniejsze wersje używane VSVARS32.bat, a nie VsDevCmd.bat do tego samego celu. Ten plik był przechowywany w folderze \Program Files\Microsoft Visual Studio w \\ *wersji*\Common7\Tools lub Program Files (x86) \Microsoft Visual Studio w \\ *wersji*\Common7\Tools.
 
-Jeśli bieżąca wersja programu Visual Studio jest zainstalowana na komputerze, który ma również wcześniejszą wersję programu Visual Studio, nie należy uruchamiać vsdevcmd.bat i VSVARS32. BAT z różnych wersji w tym samym oknie wiersza polecenia. Zamiast tego należy uruchomić polecenie dla każdej wersji w swoim własnym oknie.
+Jeśli bieżąca wersja programu Visual Studio jest zainstalowana na komputerze, który ma również starszą wersję programu Visual Studio, nie należy uruchamiać VsDevCmd.bat i VSVARS32.BAT z różnych wersji w tym samym oknie wiersza polecenia. Zamiast tego należy uruchomić polecenie dla każdej wersji w osobnym oknie.
 
-### <a name="to-run-vsdevcmdbat"></a>Aby uruchomić vsdevcmd.BAT
+### <a name="to-run-vsdevcmdbat"></a>Aby uruchomić VsDevCmd.BAT
 
-1. Z menu **Start** otwórz **wiersz polecenia dewelopera dla programu VS 2019**.  Znajduje się w folderze **Visual Studio 2019.**
+1. Z menu **Start** Otwórz **wiersz polecenia dla deweloperów dla programu vs 2019**.  Znajduje się w folderze **programu Visual Studio 2019** .
 
-2. Zmień na \Program Files\Microsoft\\Visual Studio*Version*\\*Offering*\Common7\Tools or \Program\\Files (x86)\Microsoft Visual Studio*Version*\\*Offering*\Common7\Tools subdirectory of your installation.  (*Wersja* jest *2019* dla bieżącej wersji. *Oferta* jest jednym z *Przedsiębiorstw,* *Zawodowych* lub *Społeczności*.)
+2. Przejdź do folderu \Program Files\Microsoft Visual Studio \\ *Version* \\ *Offer*\Common7\Tools lub \Program Files (x86) \Microsoft Visual Studio \\ *Version* \\ *Offer*\Common7\Tools subdirectory instalacji.  (*Wersja* *2019* dla bieżącej wersji. *Oferta* jest jedną z *przedsiębiorstw*, *profesjonalistów* lub *społeczności*.)
 
-3. Uruchom VsDevCmd.bat wpisując **VsDevCmd**.
+3. Uruchom VsDevCmd.bat, wpisując **VsDevCmd**.
 
     > [!CAUTION]
-    > VsDevCmd.bat może się różnić w zależności od komputera. Nie należy zastępować brakującego lub uszkodzonego pliku VsDevCmd.bat na vsdevcmd.bat z innego komputera. Zamiast tego uruchom ponownie instalatora, aby zastąpić brakujący plik.
+    > VsDevCmd.bat może się różnić od komputera do komputera. Nie zamieniaj brakującego lub uszkodzonego pliku VsDevCmd.bat na VsDevCmd.bat z innego komputera. Zamiast tego ponownie uruchom Instalatora, aby zastąpić brakujący plik.
 
 ### <a name="available-options-for-vsdevcmdbat"></a>Dostępne opcje dla VsDevCmd.BAT
 
-Aby wyświetlić dostępne opcje dla VsDevCmd.BAT, `-help` uruchom polecenie z opcją:
+Aby wyświetlić dostępne opcje VsDevCmd.BAT, uruchom polecenie z `-help` opcją:
 
 ```console
 VsDevCmd.bat -help

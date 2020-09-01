@@ -1,4 +1,5 @@
 ---
+description: Opcje kompilatora C# w porządku alfabetycznym
 title: Opcje kompilatora C# w porządku alfabetycznym
 ms.date: 06/04/2020
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: eb3a591ba7b58e187eb03e65a3da6dfb47c9475c
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 6e1351eb9989abeaadebcb755ea9268fcff40a11
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473984"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125335"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Opcje kompilatora C# w porządku alfabetycznym
 
@@ -50,7 +51,7 @@ Poniższe opcje kompilatora są sortowane alfabetycznie. Aby uzyskać listę kat
 |[-keyfile](keyfile-compiler-option.md)|Określa plik klucza o silnej nazwie.|
 |[langversion\<string>](langversion-compiler-option.md)|Określ wersję języka: default, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7,1, 7,2, 7,3 lub Najnowsza |
 |[-lib](lib-compiler-option.md)|Określa dodatkowe katalogi, w których mają zostać wyszukane odwołania.|
-|[-link](link-compiler-option.md)|Sprawia, że informacje o typie COM w określonych zestawach są dostępne dla projektu.|
+|[-Link](link-compiler-option.md)|Sprawia, że informacje o typie COM w określonych zestawach są dostępne dla projektu.|
 |[-linkresource](linkresource-compiler-option.md)|Łączy określony zasób z tym zestawem.|
 |[-main](main-compiler-option.md)|Określa typ, który zawiera punkt wejścia (Ignoruj wszystkie inne możliwe punkty wejścia).|
 |[-moduleassemblyname](moduleassemblyname-compiler-option.md)|Określa zestaw, którego typy niepubliczne a. module mogą uzyskać dostęp.|
@@ -77,7 +78,7 @@ Poniższe opcje kompilatora są sortowane alfabetycznie. Aby uzyskać listę kat
 |[-zasób](resource-compiler-option.md)|Osadza określony zasób.|
 |RuleSet\<file>|Określ plik zestawu reguł, który wyłącza określoną diagnostykę.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Określa minimalną wersję podsystemu, który może być używany przez plik wykonywalny.|
-|[-target](target-compiler-option.md)|Określa format pliku wyjściowego przy użyciu jednej z następujących opcji: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|
+|[-target](target-compiler-option.md)|Określa format pliku wyjściowego przy użyciu jednej z następujących opcji: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md),  [-target: winmdobj](target-winmdobj-compiler-option.md).|
 |[-unsafe](unsafe-compiler-option.md)|Zezwala na [niebezpieczny](../keywords/unsafe.md) kod.|
 |[-utf8output](utf8output-compiler-option.md)|Wyświetla komunikaty kompilatora w kodowaniu UTF-8.|
 |-Wersja|Wyświetl numer wersji kompilatora i Zakończ.|
@@ -87,9 +88,9 @@ Poniższe opcje kompilatora są sortowane alfabetycznie. Aby uzyskać listę kat
 |[-win32manifest](win32manifest-compiler-option.md)|Określa niestandardowy plik manifestu Win32.|
 |[-win32res](win32res-compiler-option.md)|Określa plik zasobów Win32 (. res).|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Opcje kompilatora C#](index.md)
 - [Opcje kompilatora C# w rozbiciu na kategorie](listed-by-category.md)
 - [Porada: ustawianie zmiennych środowiskowych dla wiersza polecenia programu Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
-- [\<compiler>Postaci](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)
+- [\<compiler> Postaci](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)

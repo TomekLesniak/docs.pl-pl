@@ -1,4 +1,5 @@
 ---
+description: -langversion (opcje kompilatora C#)
 title: -langversion (opcje kompilatora C#)
 ms.date: 05/20/2020
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - langversion compiler option [C#]
 ms.custom: updateeachrelease
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: fd05802008a20267fea54f14bae4c8deb0e21c65
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: b0e966bcc87303c0a7c2199fbfac743b22481424
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656215"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125478"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (opcje kompilatora C#)
 
@@ -87,7 +88,7 @@ W poniższej tabeli wymieniono minimalne wersje zestawu SDK z kompilatorem C#, k
 | C# 2       | Microsoft Visual Studio/Build Tools 2005 lub z pakietem .NET Framework 2,0      |
 | C# 1.0/1.2 | Narzędzia Microsoft Visual Studio/Build Tools .NET 2002 lub w pakiecie .NET Framework 1,0 |
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Opcje kompilatora C#](index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

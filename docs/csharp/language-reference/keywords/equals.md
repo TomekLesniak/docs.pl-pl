@@ -1,5 +1,6 @@
 ---
-title: równa kontekstowe słowo kluczowe - Odwołanie C#
+description: Equals kontekstowe słowo kluczowe — odwołanie w C#
+title: Equals kontekstowe słowo kluczowe — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
 - equals_CSharpKeyword
@@ -7,20 +8,20 @@ f1_keywords:
 helpviewer_keywords:
 - equals keyword [C#]
 ms.assetid: e981309a-e4bf-444c-8a2b-5c695e6114b1
-ms.openlocfilehash: fc190433b37b027a92d8e8338a35b06d5d1e1824
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c23f9d05dd95f737afc2bc9a4bbd5456711a78c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713576"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89126947"
 ---
 # <a name="equals-c-reference"></a>equals (odwołanie w C#)
 
-Kontekstowe `equals` słowo kluczowe jest `join` używane w klauzuli w wyrażeniu zapytania do porównywania elementów dwóch sekwencji. Aby uzyskać więcej informacji, zobacz [klauzulę join .](join-clause.md)
+`equals`Kontekstowe słowo kluczowe jest używane w `join` klauzuli w wyrażeniu zapytania, aby porównać elementy dwóch sekwencji. Aby uzyskać więcej informacji, zobacz [Klauzula join](join-clause.md).
 
 ## <a name="example"></a>Przykład
 
-W poniższym przykładzie przedstawiono `equals` użycie `join` słowa kluczowego w klauzuli.
+W poniższym przykładzie pokazano użycie `equals` słowa kluczowego w `join` klauzuli.
 
 [!code-csharp[csrefKeywordsContextual#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#12)]
 
