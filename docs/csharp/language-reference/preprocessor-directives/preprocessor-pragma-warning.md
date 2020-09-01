@@ -1,20 +1,21 @@
 ---
-title: '#ostrzeżenie pragma - C# Odwołanie'
+description: '#pragma warning — odwołanie w C#'
+title: '#pragma warning — odwołanie w C#'
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma warning'
 helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
-ms.openlocfilehash: 5620ea9e5f31c22e26bee95a450335bb179ced25
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3085c21db386ca215d48bbe8ade83cd26732242c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712471"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137971"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma warning (odwołanie w C#)
-`#pragma warning`można włączyć lub wyłączyć niektóre ostrzeżenia.  
+`#pragma warning` można włączać lub wyłączać pewne ostrzeżenia.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -25,12 +26,12 @@ ms.locfileid: "75712471"
   
 ## <a name="parameters"></a>Parametry  
  `warning-list`  
- Lista numerów ostrzegawczych rozdzielonych przecinkami. Prefiks "CS" jest opcjonalny.  
+ Rozdzielana przecinkami lista numerów ostrzeżeń. Prefiks "CS" jest opcjonalny.  
   
- Jeśli nie określono żadnych `disable` numerów ostrzegawczych, `restore` wyłącza wszystkie ostrzeżenia i włącza wszystkie ostrzeżenia.  
+ Gdy nie określono żadnych numerów ostrzeżeń, program `disable` wyłącza wszystkie ostrzeżenia i `restore` włącza wszystkie ostrzeżenia.  
   
 > [!NOTE]
-> Aby znaleźć numery ostrzeżeń w programie Visual Studio, skompiluj projekt, a następnie poszukaj numerów ostrzeżeń w oknie **Dane wyjściowe.**  
+> Aby znaleźć numery ostrzegawcze w programie Visual Studio, Skompiluj projekt, a następnie poszukaj numerów ostrzeżeń w oknie **danych wyjściowych** .  
   
 ## <a name="example"></a>Przykład  
   
@@ -60,7 +61,7 @@ public class D
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [Przewodnik programowania języka C#](../../programming-guide/index.md)
-- [Dyrektywy przedprocesorowe C#](./index.md)
-- [Błędy kompilatora Języka C#](../compiler-messages/index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
+- [Dyrektywy preprocesora języka C#](./index.md)
+- [Błędy kompilatora C#](../compiler-messages/index.md)

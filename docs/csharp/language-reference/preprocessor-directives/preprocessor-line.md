@@ -1,23 +1,24 @@
 ---
-title: '#wiersz - Odwołanie do języka C#'
+description: '#Dokumentacja wiersza — C#'
+title: '#Dokumentacja wiersza — C#'
 ms.date: 07/20/2015
 f1_keywords:
 - '#line'
 helpviewer_keywords:
 - '#line directive [C#]'
 ms.assetid: 6439e525-5dd5-4acb-b8ea-efabb32ff95b
-ms.openlocfilehash: 79033fa652af62c76d54737fbf0a0b47cf3aae99
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2a5ecb6c29184123b8a88ae1b12caf24ec7296a
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712497"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137997"
 ---
 # <a name="line-c-reference"></a>#line (odwołanie w C#)
 
-`#line`umożliwia modyfikowanie numeracji wiersza kompilatora i (opcjonalnie) danych wyjściowych nazwy pliku dla błędów i ostrzeżeń.
+`#line` umożliwia zmodyfikowanie numeracji linii kompilatora oraz (opcjonalnie) dane wyjściowe nazwy pliku dla błędów i ostrzeżeń.
 
-W poniższym przykładzie pokazano, jak zgłosić dwa ostrzeżenia skojarzone z numerami linii. Dyrektywa `#line 200` wymusza numer następnego wiersza na 200 (chociaż wartość domyślna `#line` jest #6), a do następnej dyrektywy nazwa pliku będzie zgłaszana jako "Specjalna". Dyrektywa `#line default` zwraca numeracji wiersza do jego domyślnej numeracji, która zlicza wiersze, które zostały ponownie numerowane przez poprzednią dyrektywę.
+Poniższy przykład pokazuje, jak zgłosić dwa ostrzeżenia skojarzone z numerami wierszy. `#line 200`Dyrektywa wymusza numer następnego wiersza do 200 (mimo że wartość domyślna to #6), a do następnej `#line` dyrektywy nazwa pliku będzie raportowana jako "Specjalna". `#line default`Dyrektywa zwraca numery wierszy do domyślnej numeracji, która zlicza wiersze, które zostały zmienione przez poprzednią dyrektywę.
 
 ```csharp
 class MainClass
@@ -37,7 +38,7 @@ class MainClass
 }
 ```
 
-Kompilacja daje następujące dane wyjściowe:
+Kompilacja generuje następujące dane wyjściowe:
 
 ```console
 Special(200,13): warning CS0168: The variable 'i' is declared but never used
@@ -50,19 +51,19 @@ MainClass.cs(13,16): warning CS0168: The variable 'd' is declared but never used
 
 ## <a name="remarks"></a>Uwagi
 
-Dyrektywa `#line` może być używana w zautomatyzowanym, pośrednim kroku w procesie kompilacji. Na przykład jeśli wiersze zostały usunięte z oryginalnego pliku kodu źródłowego, ale nadal chcesz, aby kompilator generował dane wyjściowe na `#line`podstawie oryginalnej numeracji wierszy w pliku, można usunąć wiersze, a następnie symulować oryginalną numeracz wiersza z .
+`#line`Dyrektywa może być używana w zautomatyzowanym, pośrednim kroku w procesie kompilacji. Na przykład jeśli linie zostały usunięte z oryginalnego pliku kodu źródłowego, ale nadal chcesz, aby kompilator generował dane wyjściowe na podstawie pierwotnej numeracji wierszy w pliku, możesz usunąć linie, a następnie symulować pierwotne numery wierszy przy użyciu `#line` .
 
-Dyrektywa `#line hidden` ukrywa kolejne wiersze z debugera, tak aby podczas kroków dewelopera `#line hidden` za `#line` pośrednictwem kodu, wszelkie `#line hidden` wiersze między a i następnej dyrektywy (przy założeniu, że nie jest to inna dyrektywa) zostanie nadepnięcie. Ta opcja może również służyć do umożliwienia ASP.NET rozróżniania kodu zdefiniowanego przez użytkownika i wygenerowanego maszynowo. Mimo że ASP.NET jest głównym konsumentem tej funkcji, jest prawdopodobne, że więcej generatorów źródłowych będzie z niej korzystać.
+`#line hidden`Dyrektywa powoduje ukrycie kolejnych wierszy w debugerze, takich jak w przypadku kroków wykonywanych przez dewelopera w kodzie, wszelkich wierszy między `#line hidden` a i Następna `#line` dyrektywa (przy założeniu, że nie jest to inna `#line hidden` dyrektywa) zostanie przełączona. Tej opcji można również użyć, aby zezwolić ASP.NET na rozróżnienie między zdefiniowanym przez użytkownika i generowanym przez maszyną kodem. Chociaż ASP.NET jest głównym odbiorcą tej funkcji, prawdopodobnie będzie ona używać większej liczby generatorów źródeł.
 
-Dyrektywa `#line hidden` nie ma wpływu na nazwy plików ani numery wierszy w raportowaniu błędów. Oznacza to, że jeśli wystąpi błąd w ukrytym bloku, kompilator zgłosi bieżącą nazwę pliku i numer wiersza błędu.
+`#line hidden`Dyrektywa nie ma wpływu na nazwy plików lub numery wierszy w raportowaniu błędów. Oznacza to, że jeśli w ukrytym bloku wystąpi błąd, kompilator zgłosi bieżącą nazwę pliku i numer wiersza błędu.
 
-Dyrektywa `#line filename` określa nazwę pliku, który ma być wyświetlany w danych wyjściowych kompilatora. Domyślnie używana jest rzeczywista nazwa pliku kodu źródłowego. Nazwa pliku musi być w podwójnych cudzysłowie ("") i musi być poprzedzona numerem wiersza.
+`#line filename`Dyrektywa określa nazwę pliku, który ma być wyświetlany w danych wyjściowych kompilatora. Domyślnie używana jest rzeczywista nazwa pliku kodu źródłowego. Nazwa pliku musi być ujęta w znaki podwójnego cudzysłowu ("") i musi być poprzedzona numerem wiersza.
 
-Plik kodu źródłowego może `#line` mieć dowolną liczbę dyrektyw.
+Plik kodu źródłowego może zawierać dowolną liczbę `#line` dyrektyw.
 
 ## <a name="example-1"></a>Przykład 1
 
-W poniższym przykładzie pokazano, jak debuger ignoruje ukryte wiersze w kodzie. Po uruchomieniu przykładu wyświetli się trzy wiersze tekstu. Jednak po ustawieniu punktu przerwania, jak pokazano w przykładzie i naciśnij F10 krok po kroku kodu, można zauważyć, że debuger ignoruje ukryty wiersz. Należy również zauważyć, że nawet jeśli ustawisz punkt przerwania w ukrytym wierszu, debuger nadal będzie go ignorować.
+Poniższy przykład pokazuje, jak debuger ignoruje ukryte wiersze w kodzie. Po uruchomieniu przykładu zostanie wyświetlonych trzy wiersze tekstu. Jeśli jednak ustawisz punkt przerwania, jak pokazano w przykładzie i naciśniesz klawisz F10, aby przejść przez kod, zobaczysz, że debuger ignoruje ukrytą linię. Zwróć również uwagę, że nawet jeśli ustawisz punkt przerwania w wierszu ukrytym, debuger nadal go zignoruje.
 
 ```csharp
 // preprocessor_linehidden.cs
@@ -82,6 +83,6 @@ class MainClass
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [Przewodnik programowania języka C#](../../programming-guide/index.md)
-- [Dyrektywy przedprocesorowe C#](./index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
+- [Dyrektywy preprocesora języka C#](./index.md)

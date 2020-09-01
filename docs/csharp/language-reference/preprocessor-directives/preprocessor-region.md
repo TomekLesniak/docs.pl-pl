@@ -1,4 +1,5 @@
 ---
+description: '#Region — odwołanie w C#'
 title: '#Region — odwołanie w C#'
 ms.date: 07/20/2015
 f1_keywords:
@@ -6,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#region directive [C#]'
 ms.assetid: 672c87d1-9771-4f64-ab3f-0ad3d4ffb2b4
-ms.openlocfilehash: 66583d6e067b006b03130d8ff842b56bf57bcebc
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: ed40d895fedb9be271bb389a4f8de69d7ae3f266
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802775"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137945"
 ---
 # <a name="region-c-reference"></a>#region (odwołanie w C#)
-`#region`umożliwia określenie bloku kodu, który można rozwijać lub zwijać podczas korzystania z funkcji tworzenia [konspektu](/visualstudio/ide/outlining) w edytorze kodu. W przypadku plików o większej liczbie można zwinąć lub ukryć jeden lub więcej regionów, aby można było skupić się na części pliku, nad którym pracujesz. Poniższy przykład pokazuje, jak zdefiniować region:  
+`#region` umożliwia określenie bloku kodu, który można rozwijać lub zwijać podczas korzystania z funkcji tworzenia [konspektu](/visualstudio/ide/outlining) w edytorze kodu. W przypadku plików o większej liczbie można zwinąć lub ukryć jeden lub więcej regionów, aby można było skupić się na części pliku, nad którym pracujesz. Poniższy przykład pokazuje, jak zdefiniować region:  
   
 ```csharp
 #region MyClass definition  

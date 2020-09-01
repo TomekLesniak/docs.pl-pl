@@ -3,12 +3,12 @@ title: Wskazówki dotyczące zabezpieczeń zestawów danych i DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4fe8a062c762cc70d33243e3443aa9bf55635f98
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812240"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137620"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Wskazówki dotyczące zabezpieczeń zestawów danych i DataTable
 
@@ -45,6 +45,9 @@ w System. Data. DataColumn. set_DataType (typ wartości)
 * Operacja deserializacji kończy się niepowodzeniem.
 
 Podczas ładowania kodu XML do istniejącego `DataSet` `DataTable` wystąpienia lub istniejące definicje kolumn są również brane pod uwagę. Jeśli tabela zawiera już definicję kolumny typu niestandardowego, ten typ jest tymczasowo dodawany do listy dozwolonych w czasie trwania operacji deserializacji XML.
+
+> [!NOTE]
+> Po dodaniu kolumn do programu `DataTable` program `ReadXml` nie odczytuje schematu z kodu XML, a jeśli schemat nie jest zgodny, nie będzie również odczytywany w rekordach, dlatego należy dodać wszystkie kolumny samodzielnie, aby użyć tej metody.
 
 ```cs
 XmlReader xmlReader = GetXmlReader();
