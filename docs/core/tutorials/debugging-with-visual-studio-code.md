@@ -167,7 +167,7 @@ Visual Studio Code umożliwia również krok po kroku w wierszu przez program i 
 
 1. Wybierz pozycję **Uruchom**  >  **krok do** lub naciśnij klawisz <kbd>F11</kbd>.
 
-   :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="Przycisk "krok po kroku"":::
+   :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="Przycisk krok po kroku":::
 
    Visual Studio Code podświetla następny wiersz.
 
