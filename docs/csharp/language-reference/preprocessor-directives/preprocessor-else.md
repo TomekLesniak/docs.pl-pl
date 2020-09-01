@@ -1,26 +1,27 @@
 ---
-title: '#else - C# Odwołanie'
+description: '#Odwołanie w języku C#'
+title: '#Odwołanie w języku C#'
 ms.date: 07/20/2015
 f1_keywords:
 - '#else'
 helpviewer_keywords:
 - '#else directive [C#]'
 ms.assetid: 6a347322-cfa2-4a86-98f8-ddfa2cb7d4db
-ms.openlocfilehash: 967ef38687b739ef3bea3f8923ab26bba0b6cea9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fb1a9f30a42c78b5c4c7323ec213ab8c20b9bb76
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712562"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138179"
 ---
-# <a name="else-c-reference"></a><span data-ttu-id="d22a2-102">#else (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="d22a2-102">#else (C# Reference)</span></span>
-<span data-ttu-id="d22a2-103">`#else`umożliwia utworzenie złożonej dyrektywy warunkowej, tak aby jeśli żadne z wyrażeń w poprzedniej [#if](./preprocessor-if.md) lub (opcjonalnie) `#endif` [#elif](./preprocessor-elif.md) dyrektywy oceniają, `true`kompilator oceni cały kod między `#else` i kolejnych .</span><span class="sxs-lookup"><span data-stu-id="d22a2-103">`#else` lets you create a compound conditional directive, so that, if none of the expressions in the preceding [#if](./preprocessor-if.md) or (optional) [#elif](./preprocessor-elif.md) directives evaluate to `true`, the compiler will evaluate all code between `#else` and the subsequent `#endif`.</span></span>  
+# <a name="else-c-reference"></a><span data-ttu-id="a0303-103">#else (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="a0303-103">#else (C# Reference)</span></span>
+<span data-ttu-id="a0303-104">`#else` umożliwia utworzenie złożonej dyrektywy warunkowej, tak aby w przypadku braku wyrażeń w powyższym [#if](./preprocessor-if.md) lub (opcjonalnie) [#elif](./preprocessor-elif.md) dyrektywy nie były oceniane do `true` , kompilator oceni cały kod między i po `#else` nim `#endif` .</span><span class="sxs-lookup"><span data-stu-id="a0303-104">`#else` lets you create a compound conditional directive, so that, if none of the expressions in the preceding [#if](./preprocessor-if.md) or (optional) [#elif](./preprocessor-elif.md) directives evaluate to `true`, the compiler will evaluate all code between `#else` and the subsequent `#endif`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d22a2-104">Uwagi</span><span class="sxs-lookup"><span data-stu-id="d22a2-104">Remarks</span></span>  
- <span data-ttu-id="d22a2-105">[#endif](./preprocessor-endif.md) musi być następna `#else`dyrektywa preprocesora po .</span><span class="sxs-lookup"><span data-stu-id="d22a2-105">[#endif](./preprocessor-endif.md) must be the next preprocessor directive after `#else`.</span></span> <span data-ttu-id="d22a2-106">Zobacz [#if](./preprocessor-if.md) przykład użycia `#else`.</span><span class="sxs-lookup"><span data-stu-id="d22a2-106">See [#if](./preprocessor-if.md) for an example of how to use `#else`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a0303-105">Uwagi</span><span class="sxs-lookup"><span data-stu-id="a0303-105">Remarks</span></span>  
+ <span data-ttu-id="a0303-106">[#endif](./preprocessor-endif.md) musi być następną dyrektywą preprocesora `#else` .</span><span class="sxs-lookup"><span data-stu-id="a0303-106">[#endif](./preprocessor-endif.md) must be the next preprocessor directive after `#else`.</span></span> <span data-ttu-id="a0303-107">Zobacz [#if](./preprocessor-if.md) , aby zapoznać się z przykładem sposobu korzystania z programu `#else` .</span><span class="sxs-lookup"><span data-stu-id="a0303-107">See [#if](./preprocessor-if.md) for an example of how to use `#else`.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d22a2-107">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="d22a2-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a0303-108">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="a0303-108">See also</span></span>
 
-- [<span data-ttu-id="d22a2-108">Odwołanie do języka C#</span><span class="sxs-lookup"><span data-stu-id="d22a2-108">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="d22a2-109">Przewodnik programowania języka C#</span><span class="sxs-lookup"><span data-stu-id="d22a2-109">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="d22a2-110">Dyrektywy przedprocesorowe C#</span><span class="sxs-lookup"><span data-stu-id="d22a2-110">C# Preprocessor Directives</span></span>](./index.md)
+- [<span data-ttu-id="a0303-109">Odwołanie w C#</span><span class="sxs-lookup"><span data-stu-id="a0303-109">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="a0303-110">Przewodnik programowania w języku C#</span><span class="sxs-lookup"><span data-stu-id="a0303-110">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="a0303-111">Dyrektywy preprocesora języka C#</span><span class="sxs-lookup"><span data-stu-id="a0303-111">C# Preprocessor Directives</span></span>](./index.md)
