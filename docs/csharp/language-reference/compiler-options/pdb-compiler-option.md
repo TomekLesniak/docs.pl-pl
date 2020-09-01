@@ -1,5 +1,6 @@
 ---
-title: -pdb (Opcje kompilatora C#)
+description: -PDB (opcje kompilatora C#)
+title: -PDB (opcje kompilatora C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /pdb
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - pdb compiler option [C#]
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
-ms.openlocfilehash: 3081f4716e8cd858d789db6050e635af941aa05c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0dcafd0fd260488922c74a2330b312e80467e779
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69602576"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124919"
 ---
-# <a name="-pdb-c-compiler-options"></a>-pdb (Opcje kompilatora C#)
-Opcja kompilatora **-pdb** określa nazwę i lokalizację pliku symboli debugowania.  
+# <a name="-pdb-c-compiler-options"></a>-PDB (opcje kompilatora C#)
+**-PDB —** opcja kompilatora określa nazwę i lokalizację pliku symboli debugowania.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -29,14 +30,14 @@ Opcja kompilatora **-pdb** określa nazwę i lokalizację pliku symboli debugowa
  Nazwa i lokalizacja pliku symboli debugowania.  
   
 ## <a name="remarks"></a>Uwagi  
- Po [określeniu -debug (C# Opcje kompilatora),](./debug-compiler-option.md)kompilator utworzy plik .pdb w tym samym katalogu, w którym kompilator utworzy plik wyjściowy (.exe lub .dll) o nazwie pliku, która jest taka sama jak nazwa pliku wyjściowego.  
+ Jeśli określisz polecenie [-debug (opcje kompilatora C#)](./debug-compiler-option.md), kompilator utworzy plik. pdb w tym samym katalogu, w którym kompilator utworzy plik wyjściowy (. exe lub. dll) z nazwą pliku, która jest taka sama jak nazwa pliku wyjściowego.  
   
- **-pdb** umożliwia określenie niedomyślnej nazwy pliku i lokalizacji pliku pdb.  
+ **-PDB** umożliwia określenie niedomyślnej nazwy pliku i lokalizacji dla pliku. pdb.  
   
- Nie można ustawić tej opcji kompilatora w środowisku programistycznym programu Visual Studio ani nie można jej programowo zmienić.  
+ Nie można ustawić tej opcji kompilatora w środowisku deweloperskim programu Visual Studio, ani programowo zmienić.  
   
 ## <a name="example"></a>Przykład  
- Skompiluj `t.cs` i utwórz plik pdb o nazwie tt.pdb:  
+ Kompiluj `t.cs` i Utwórz plik. pdb o nazwie TT. pdb:  
   
 ```console  
 csc -debug -pdb:tt t.cs  
@@ -44,5 +45,5 @@ csc -debug -pdb:tt t.cs
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Opcje kompilatora Języka C#](./index.md)
+- [Opcje kompilatora C#](./index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)
