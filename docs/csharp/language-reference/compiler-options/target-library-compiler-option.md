@@ -1,5 +1,6 @@
 ---
-title: -target:library (Opcje kompilatora C#)
+description: '-target: Library (opcje kompilatora C#)'
+title: '-target: Library (opcje kompilatora C#)'
 ms.date: 07/20/2015
 f1_keywords:
 - /dll
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - target compiler options [C#], /target:library
 - /target compiler options [C#], /target:library
 ms.assetid: c5670e88-2126-47c1-8d1c-217923837d17
-ms.openlocfilehash: c947b2015c19d0809cab4535e989ee83ebf17fd9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 953249c4d0168ed3d279d03a0b2fb63d8ff6d5f5
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606394"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128481"
 ---
-# <a name="-targetlibrary-c-compiler-options"></a>-target:library (Opcje kompilatora C#)
-Opcja **-target:library** powoduje, że kompilator tworzy bibliotekę łączy dynamicznych (DLL), a nie plik wykonywalny (EXE).  
+# <a name="-targetlibrary-c-compiler-options"></a>-target: Library (opcje kompilatora C#)
+Opcja **-target: Library** powoduje, że kompilator tworzy bibliotekę dołączaną dynamicznie (dll), a nie plik wykonywalny (exe).  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -25,26 +26,26 @@ Opcja **-target:library** powoduje, że kompilator tworzy bibliotekę łączy dy
 ```  
   
 ## <a name="remarks"></a>Uwagi  
- DLL zostanie utworzona z rozszerzeniem .dll.  
+ Biblioteka DLL zostanie utworzona z rozszerzeniem dll.  
   
- O ile nie określono inaczej z opcją [-out,](./out-compiler-option.md) nazwa pliku wyjściowego przyjmuje nazwę pierwszego pliku wejściowego.  
+ O ile nie określono inaczej z opcją [-out](./out-compiler-option.md) , nazwa pliku wyjściowego przyjmuje nazwę pierwszego pliku wejściowego.  
   
- Po określeniu w wierszu polecenia wszystkie pliki do następnej opcji **-out** lub **-target:module** są używane do tworzenia pliku dll.  
+ W przypadku określenia w wierszu polecenia wszystkie pliki **do następnej lub** **docelowej opcji modułu** są używane do tworzenia pliku dll.  
   
- Podczas tworzenia pliku dll metoda [główna](../../programming-guide/main-and-command-args/index.md) nie jest wymagana.  
+ Podczas kompilowania pliku DLL Metoda [Main](../../programming-guide/main-and-command-args/index.md) nie jest wymagana.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Aby ustawić tę opcję kompilatora w środowisku programowania Visual Studio  
   
 1. Otwórz stronę **Właściwości** projektu.  
   
-2. Kliknij stronę **właściwości Application.**  
+2. Kliknij stronę właściwości **aplikacji** .  
   
-3. Zmodyfikuj właściwość **Output type.**  
+3. Zmodyfikuj właściwość **typu danych wyjściowych** .  
   
- Aby uzyskać informacje na temat programowania tej opcji <xref:VSLangProj80.ProjectProperties3.OutputType%2A>kompilatora, zobacz .  
+ Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.ProjectProperties3.OutputType%2A> .  
   
 ## <a name="example"></a>Przykład  
- `in.cs`Kompiluj `in.dll`, tworząc:  
+ Kompiluj `in.cs` , Utwórz `in.dll` :  
   
 ```console  
 csc -target:library in.cs  
@@ -52,5 +53,5 @@ csc -target:library in.cs
   
 ## <a name="see-also"></a>Zobacz też
 
-- [-target (Opcje kompilatora C#)](./target-compiler-option.md)
-- [Opcje kompilatora Języka C#](./index.md)
+- [-Target (opcje kompilatora C#)](./target-compiler-option.md)
+- [Opcje kompilatora C#](./index.md)

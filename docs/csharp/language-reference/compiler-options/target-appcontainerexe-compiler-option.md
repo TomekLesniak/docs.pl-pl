@@ -1,16 +1,17 @@
 ---
-title: -target:appcontainerexe (Opcje kompilatora C#)
+description: '-target: appcontainerexe (opcje kompilatora C#)'
+title: '-target: appcontainerexe (opcje kompilatora C#)'
 ms.date: 07/20/2015
 ms.assetid: e7e62229-23ea-4e53-bef5-380d951bf95f
-ms.openlocfilehash: 64661e72f9efe190606cadd93558678cb849e8cc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c3b85c2f5a20788bd311e9bf3b300c32967da77
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204524"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128585"
 ---
-# <a name="-targetappcontainerexe-c-compiler-options"></a>-target:appcontainerexe (Opcje kompilatora C#)
-Jeśli używasz opcji **kompilatora -target:appcontainerexe,** kompilator tworzy plik wykonywalny systemu Windows (exe), który musi być uruchamiany w kontenerze aplikacji. Ta opcja jest odpowiednikiem [-target:winexe,](./target-winexe-compiler-option.md) ale jest przeznaczona dla aplikacji ze Sklepu Windows 8.x.  
+# <a name="-targetappcontainerexe-c-compiler-options"></a>-target: appcontainerexe (opcje kompilatora C#)
+W przypadku użycia opcji kompilatora **-target: appcontainerexe** kompilator tworzy plik wykonywalny systemu Windows (exe), który musi być uruchamiany w kontenerze aplikacji. Ta opcja jest równoznaczna z parametrem [-target: winexe](./target-winexe-compiler-option.md) , ale jest przeznaczona dla aplikacji ze sklepu Windows 8. x.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -19,24 +20,24 @@ Jeśli używasz opcji **kompilatora -target:appcontainerexe,** kompilator tworzy
 ```  
   
 ## <a name="remarks"></a>Uwagi  
- Aby wymagać uruchamiania aplikacji w kontenerze aplikacji, ta opcja ustawia nieco w pliku [Przenośny plik wykonywalny](/windows/desktop/Debug/pe-format) (PE). Gdy ten bit jest ustawiony, występuje błąd, jeśli CreateProcess metoda próbuje uruchomić plik wykonywalny poza kontenerem aplikacji.  
+ Aby wymagać uruchamiania aplikacji w kontenerze aplikacji, ta opcja ustawia bit w [przenośnym pliku wykonywalnym](/windows/desktop/Debug/pe-format) (PE). Gdy ten bit jest ustawiony, występuje błąd, jeśli metoda CreateProcess podejmie próbę uruchomienia pliku wykonywalnego poza kontenerem aplikacji.  
   
- Jeśli nie użyjesz opcji [-out,](./out-compiler-option.md) nazwa pliku wyjściowego przyjmuje nazwę pliku wejściowego, który zawiera [Main](../../programming-guide/main-and-command-args/index.md) metody.  
+ O ile nie zostanie użyta opcja [-out](./out-compiler-option.md) , nazwa pliku wyjściowego przyjmuje nazwę pliku wejściowego, który zawiera metodę [Main](../../programming-guide/main-and-command-args/index.md) .  
   
- Po określeniu tej opcji w wierszu polecenia wszystkie pliki do następnego **-out** lub **-target** opcja są używane do tworzenia pliku wykonywalnego.  
+ Po określeniu tej opcji w wierszu polecenia wszystkie pliki do momentu użycia opcji **Dalej lub** **-Target** są używane do tworzenia pliku wykonywalnego.  
   
 ### <a name="to-set-this-compiler-option-in-the-ide"></a>Aby ustawić tę opcję kompilatora w IDE  
   
-1. W **Eksploratorze rozwiązań**otwórz menu skrótów dla projektu, a następnie wybierz pozycję **Właściwości**.  
+1. W **Eksplorator rozwiązań**Otwórz menu skrótów dla projektu, a następnie wybierz polecenie **Właściwości**.  
   
-2. Na **karcie Aplikacja** na liście **Typ wyjściowy** wybierz pozycję Aplikacja **ze Sklepu Windows**.  
+2. Na karcie **aplikacja** na liście **Typ danych wyjściowych** wybierz pozycję **aplikacja ze sklepu Windows**.  
   
-     Ta opcja jest dostępna tylko dla szablonów aplikacji ze Sklepu Windows 8.x.  
+     Ta opcja jest dostępna tylko dla szablonów aplikacji ze sklepu Windows 8. x.  
   
- Aby uzyskać informacje dotyczące programowego ustawiania tej <xref:VSLangProj80.ProjectProperties3.OutputType%2A>opcji kompilatora, zobacz .  
+ Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.ProjectProperties3.OutputType%2A> .  
   
 ## <a name="example"></a>Przykład  
- Następujące polecenie kompiluje `filename.cs` się do pliku wykonywalnego systemu Windows, który można uruchomić tylko w kontenerze aplikacji.  
+ Następujące polecenie kompiluje `filename.cs` do pliku wykonywalnego systemu Windows, który można uruchomić tylko w kontenerze aplikacji.  
   
 ```console  
 csc -target:appcontainerexe filename.cs  
@@ -44,6 +45,6 @@ csc -target:appcontainerexe filename.cs
   
 ## <a name="see-also"></a>Zobacz też
 
-- [-target (Opcje kompilatora C#)](./target-compiler-option.md)
-- [-target:winexe (Opcje kompilatora C#)](./target-winexe-compiler-option.md)
-- [Opcje kompilatora Języka C#](./index.md)
+- [-Target (opcje kompilatora C#)](./target-compiler-option.md)
+- [-target: winexe (opcje kompilatora C#)](./target-winexe-compiler-option.md)
+- [Opcje kompilatora C#](./index.md)

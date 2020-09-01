@@ -1,4 +1,5 @@
 ---
+description: Operator> — odwołanie w C#
 title: Operator> — odwołanie w C#
 ms.date: 01/22/2019
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: 30e1a3546f83a0a1ba5b1363238878868e94ab93
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 6a4df3a4bd358b87f98ff1bd5a3f624b1029a73b
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063136"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128364"
 ---
 # <a name="-operator-c-reference"></a>=> — operator (odwołanie w C#)
 
@@ -73,7 +74,7 @@ Aby uzyskać więcej informacji, zobacz [elementy członkowskie z wyrażeniami](
 
 Aby uzyskać więcej informacji na temat operatora lambda, zobacz sekcję [wyrażenia funkcji anonimowej](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

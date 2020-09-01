@@ -1,5 +1,6 @@
 ---
-title: instrukcja continue - C# Odwołanie
+description: Continue — instrukcja — odwołanie w C#
+title: Continue — instrukcja — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
 - continue_CSharpKeyword
@@ -7,20 +8,20 @@ f1_keywords:
 helpviewer_keywords:
 - continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
-ms.openlocfilehash: 83b43b31eacf0ed835ee3d7a919538eb9f1dd1e8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 76578b0ad7e2b969609fbf50df1f9ab7de6e5097
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713660"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128442"
 ---
 # <a name="continue-c-reference"></a>continue (odwołanie w C#)
 
-Instrukcja `continue` przechodzi kontrolę do następnej iteracji otaczającego [podczas](./while.md), [zrobić](./do.md), [dla](./for.md), lub [foreach](./foreach-in.md) instrukcji, w którym się pojawia.
+`continue`Instrukcja przekazuje formant do następnej iteracji otaczającej instrukcji [while](./while.md), [do](./do.md), [for](./for.md)lub [foreach](./foreach-in.md) , w której występuje.
 
 ## <a name="example"></a>Przykład
 
-W tym przykładzie licznik jest inicjowany do zliczania od 1 do 10. Za pomocą `continue` instrukcji w połączeniu z `(i < 9)` `continue` wyrażeniem , `for` instrukcje między i na końcu treści są pomijane.
+W tym przykładzie licznik jest zainicjowany do zliczenia z 1 do 10. Używając `continue` instrukcji w połączeniu z wyrażeniem `(i < 9)` , instrukcje między `continue` i końcem `for` treści są pomijane.
 
 [!code-csharp[csrefKeywordsJump#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#3)]
 
@@ -30,7 +31,7 @@ W tym przykładzie licznik jest inicjowany do zliczania od 1 do 10. Za pomocą `
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [Przewodnik programowania języka C#](../../programming-guide/index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
 - [Słowa kluczowe języka C#](./index.md)
-- [break, instrukcja](/cpp/cpp/break-statement-cpp)
+- [Break, instrukcja](/cpp/cpp/break-statement-cpp)

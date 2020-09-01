@@ -14,12 +14,12 @@ helpviewer_keywords:
 - time zones [.NET Framework], type options
 - DateTime structure
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
-ms.openlocfilehash: 03d00fb802032b981a5ebe80f7166eba0fb54a60
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 7ef8782c15ad816b8bb0356e74615a49387f73b9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326053"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89129131"
 ---
 # <a name="choose-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Wybierz między datami DateTime, DateTimeOffset, TimeSpan i TimeZoneInfo
 
@@ -43,6 +43,28 @@ Platforma .NET zawiera <xref:System.DateTime> <xref:System.DateTimeOffset> typy,
 
 > [!NOTE]
 > Ten temat nie jest omawiany, <xref:System.TimeZone> ponieważ jego funkcjonalność jest niemal całkowicie wbudowana w <xref:System.TimeZoneInfo> klasie. Jeśli to możliwe, użyj <xref:System.TimeZoneInfo> klasy zamiast <xref:System.TimeZone> klasy.
+
+## <a name="the-datetimeoffset-structure"></a>Struktura DateTimeOffset
+
+<xref:System.DateTimeOffset>Struktura reprezentuje wartość daty i godziny wraz z przesunięciem wskazującym, ile tej wartości różni się od czasu UTC. Z tego względu wartość zawsze jednoznacznie identyfikuje pojedynczy punkt w czasie.
+
+<xref:System.DateTimeOffset>Typ zawiera wszystkie funkcje <xref:System.DateTime> typu wraz z rozpoznawaniem strefy czasowej. Dzięki temu aplikacje są odpowiednie dla aplikacji, które:
+
+- Jednoznacznie i jednoznacznie Zidentyfikuj pojedynczy punkt w czasie. <xref:System.DateTimeOffset>Typ może służyć do jednoznacznego zdefiniowania znaczenia "teraz", rejestrowania czasu transakcji, rejestrowania czasu zdarzeń systemu lub aplikacji oraz rejestrowania czasu tworzenia i modyfikacji plików.
+
+- Wykonaj ogólną arytmetyczną datę i godzinę.
+
+- Zachowanie wielu pokrewnych czasów, o ile te czasy są przechowywane jako dwie odrębne wartości lub dwa elementy członkowskie struktury.
+
+> [!NOTE]
+> Te zastosowania w przypadku <xref:System.DateTimeOffset> wartości są znacznie bardziej typowe niż te dla <xref:System.DateTime> wartości. W związku z tym należy rozważyć <xref:System.DateTimeOffset> jako domyślny typ daty i godziny dla opracowywania aplikacji.
+
+<xref:System.DateTimeOffset>Wartość nie jest powiązana z konkretną strefą czasową, ale może pochodzić z różnych stref czasowych. W poniższym przykładzie wymieniono strefy czasowe, do których <xref:System.DateTimeOffset> może należeć kilka wartości (w tym lokalny czas pacyficzny).
+
+[!code-csharp[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual1.cs#1)]
+[!code-vb[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual1.vb#1)]
+
+Dane wyjściowe pokazują, że każda wartość daty i godziny w tym przykładzie może należeć do co najmniej trzech różnych stref czasowych. <xref:System.DateTimeOffset>Wartość 6/10/2007 pokazuje, że jeśli wartość daty i godziny reprezentuje czas letni, jego przesunięcie od czasu UTC nie musi nawet odpowiadać podstawowemu przesunięciu czasu UTC lub przesunięciu z czasu UTC znalezionego w jego nazwie wyświetlanej. Ponieważ pojedyncza <xref:System.DateTimeOffset> wartość nie jest ściśle połączona ze strefą czasową, nie może odzwierciedlać przejścia strefy czasowej do i od czasu letniego. Może to być problematyczne, gdy do manipulowania wartością jest używana arytmetyka daty i godziny <xref:System.DateTimeOffset> . Aby zapoznać się z omówieniem sposobu wykonywania operacji arytmetycznych daty i godziny w sposób, który uwzględnia reguły dostosowania strefy czasowej, zobacz [wykonywanie obliczeń arytmetycznych z datami i godzinami](performing-arithmetic-operations.md).
 
 ## <a name="the-datetime-structure"></a>Struktura DateTime
 
@@ -68,28 +90,6 @@ O ile określona <xref:System.DateTime> wartość nie reprezentuje czasu UTC, ta
 
 > [!IMPORTANT]
 > Podczas zapisywania lub udostępniania <xref:System.DateTime> danych należy używać czasu UTC, a <xref:System.DateTime> <xref:System.DateTime.Kind%2A> Właściwość Value powinna być ustawiona na <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> .
-
-## <a name="the-datetimeoffset-structure"></a>Struktura DateTimeOffset
-
-<xref:System.DateTimeOffset>Struktura reprezentuje wartość daty i godziny wraz z przesunięciem wskazującym, ile tej wartości różni się od czasu UTC. Z tego względu wartość zawsze jednoznacznie identyfikuje pojedynczy punkt w czasie.
-
-<xref:System.DateTimeOffset>Typ zawiera wszystkie funkcje <xref:System.DateTime> typu wraz z rozpoznawaniem strefy czasowej. Dzięki temu aplikacje są odpowiednie dla aplikacji, które:
-
-- Jednoznacznie i jednoznacznie Zidentyfikuj pojedynczy punkt w czasie. <xref:System.DateTimeOffset>Typ może służyć do jednoznacznego zdefiniowania znaczenia "teraz", rejestrowania czasu transakcji, rejestrowania czasu zdarzeń systemu lub aplikacji oraz rejestrowania czasu tworzenia i modyfikacji plików.
-
-- Wykonaj ogólną arytmetyczną datę i godzinę.
-
-- Zachowanie wielu pokrewnych czasów, o ile te czasy są przechowywane jako dwie odrębne wartości lub dwa elementy członkowskie struktury.
-
-> [!NOTE]
-> Te zastosowania w przypadku <xref:System.DateTimeOffset> wartości są znacznie bardziej typowe niż te dla <xref:System.DateTime> wartości. W związku z tym należy rozważyć <xref:System.DateTimeOffset> jako domyślny typ daty i godziny dla opracowywania aplikacji.
-
-<xref:System.DateTimeOffset>Wartość nie jest powiązana z konkretną strefą czasową, ale może pochodzić z różnych stref czasowych. W poniższym przykładzie wymieniono strefy czasowe, do których <xref:System.DateTimeOffset> może należeć kilka wartości (w tym lokalny czas pacyficzny).
-
-[!code-csharp[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual1.cs#1)]
-[!code-vb[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual1.vb#1)]
-
-Dane wyjściowe pokazują, że każda wartość daty i godziny w tym przykładzie może należeć do co najmniej trzech różnych stref czasowych. <xref:System.DateTimeOffset>Wartość 6/10/2007 pokazuje, że jeśli wartość daty i godziny reprezentuje czas letni, jego przesunięcie od czasu UTC nie musi nawet odpowiadać podstawowemu przesunięciu czasu UTC lub przesunięciu z czasu UTC znalezionego w jego nazwie wyświetlanej. Ponieważ pojedyncza <xref:System.DateTimeOffset> wartość nie jest ściśle połączona ze strefą czasową, nie może odzwierciedlać przejścia strefy czasowej do i od czasu letniego. Może to być problematyczne, gdy do manipulowania wartością jest używana arytmetyka daty i godziny <xref:System.DateTimeOffset> . Aby zapoznać się z omówieniem sposobu wykonywania operacji arytmetycznych daty i godziny w sposób, który uwzględnia reguły dostosowania strefy czasowej, zobacz [wykonywanie obliczeń arytmetycznych z datami i godzinami](performing-arithmetic-operations.md).
 
 ## <a name="the-timespan-structure"></a>Struktura TimeSpan
 
