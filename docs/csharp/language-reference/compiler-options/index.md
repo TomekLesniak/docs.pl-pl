@@ -1,7 +1,7 @@
 ---
 description: Opcje kompilatora C#
 title: Opcje kompilatora C#
-ms.date: 07/20/2015
+ms.date: 08/28/2020
 f1_keywords:
 - cs.build.options
 helpviewer_keywords:
@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-ms.openlocfilehash: bcb246055ecb553bbefad2a0d5c95bf6a083ee6f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 502bd83ae52be9ae2f914847bb6bf7c7f2a0c411
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125530"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271818"
 ---
 # <a name="c-compiler-options"></a>Opcje kompilatora C#
 
@@ -30,7 +30,7 @@ W programie Visual Studio opcje kompilatora są ustawiane w pliku *web.config* .
 
 - [Kompilowanie wiersza polecenia przy użyciu csc.exe](command-line-building-with-csc-exe.md) Informacje na temat tworzenia aplikacji Visual C# z poziomu wiersza polecenia.
 
-- [Jak ustawić zmienne środowiskowe dla wiersza polecenia programu Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Zawiera kroki umożliwiające uruchomienie *vsvars32.bat* w celu włączenia kompilacji w wierszu polecenia.
+- [Jak ustawić zmienne środowiskowe dla wiersza polecenia programu Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Zawiera kroki umożliwiające uruchomienie *VsDevCmd.bat* w celu włączenia kompilacji w wierszu polecenia.
 
 - [Opcje kompilatora C# na liście według kategorii](listed-by-category.md) Kategorii listę opcji kompilatora.
 

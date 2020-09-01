@@ -4,12 +4,12 @@ description: Dowiedz się, jak kontrolować przycinanie aplikacji samodzielnych.
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: 5597d4cdb9e8e96dcec6545e039d43295ca991bd
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d6081a24cc18e424b55d40e152f519c680f11aa0
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142261"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271883"
 ---
 # <a name="trimming-options"></a>Opcje przycinania
 
@@ -25,7 +25,7 @@ W przypadku korzystania z programu `Microsoft.NET.Sdk` Ta wartość spowoduje pr
 
 ## <a name="trimming-granularity"></a>Stopień szczegółowości przycinania
 
-Następujące ustawienia stopnia szczegółowości kontrolują sposób agresywnego nieużywanej IL jest odrzucany. Można ją ustawić jako właściwość lub jako metadane w [pojedynczym zestawie](#Trimmed-assemblies).
+Następujące ustawienia stopnia szczegółowości kontrolują sposób agresywnego nieużywanej IL jest odrzucany. Można ją ustawić jako właściwość lub jako metadane w [pojedynczym zestawie](#trimmed-assemblies).
 
 - `<TrimMode>copyused</TrimMode>`
 
@@ -60,7 +60,7 @@ Nie należy dodawać ani usuwać elementów do/z `ManagedAssemblyToLink` , ponie
 
 - `<TrimMode>copyused</TrimMode>` lub `<TrimMode>link</TrimMode>`
 
-  Kontroluj [stopień szczegółowości przycinania](#Trimming-granularity) tego zestawu. Ma to pierwszeństwo przed globalnym `TrimMode` . Ustawienie `TrimMode` dla zestawu oznacza `<IsTrimmable>true</IsTrimmable>` .
+  Kontroluj [stopień szczegółowości przycinania](#trimming-granularity) tego zestawu. Ma to pierwszeństwo przed globalnym `TrimMode` . Ustawienie `TrimMode` dla zestawu oznacza `<IsTrimmable>true</IsTrimmable>` .
 
 ## <a name="root-assemblies"></a>Główne zestawy
 
@@ -106,7 +106,7 @@ Będzie to obejmować ostrzeżenia dotyczące całej aplikacji, w tym własny ko
 
 ## <a name="warning-versions"></a>Wersje ostrzeżeń
 
-Analiza przycinania uwzględnia [`AnalysisLevel`](../project-sdk/msbuild-props.md#AnalysisLevel) Właściwość, która kontroluje wersję ostrzeżeń analizy w zestawie SDK. Istnieje inna właściwość, która kontroluje wersje ostrzeżeń analizy przycinania niezależnie (podobnie jak `WarningLevel` w przypadku kompilatora):
+Analiza przycinania uwzględnia [`AnalysisLevel`](../project-sdk/msbuild-props.md#analysislevel) Właściwość, która kontroluje wersję ostrzeżeń analizy w zestawie SDK. Istnieje inna właściwość, która kontroluje wersje ostrzeżeń analizy przycinania niezależnie (podobnie jak `WarningLevel` w przypadku kompilatora):
 
 - `<ILLinkWarningLevel>5</ILLinkWarningLevel>`
 
