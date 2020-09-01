@@ -1,4 +1,5 @@
 ---
+description: operator await — odwołanie w C#
 title: operator await — odwołanie w C#
 ms.date: 07/13/2020
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 1941174d7e8d1676d11a13fa3ee6c7b84fe3952c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 6531e696a6193bf1b1909c9f1be3f5beb4d7dd69
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063240"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134370"
 ---
 # <a name="await-operator-c-reference"></a>await — operator (odwołanie w C#)
 
@@ -51,7 +52,7 @@ Począwszy od języka C# 7,1, [ `Main` Metoda](../../programming-guide/main-and-
 
 Aby uzyskać więcej informacji, zobacz sekcję [await Expressions](~/_csharplang/spec/expressions.md#await-expressions) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

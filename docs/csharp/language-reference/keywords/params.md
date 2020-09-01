@@ -1,5 +1,6 @@
 ---
-title: params — słowo kluczowe dla tablic parametrów — odwołanie do języka C#
+description: params — słowo kluczowe dla tablic parametrów — odwołanie w C#
+title: params — słowo kluczowe dla tablic parametrów — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
 - params_CSharpKeyword
@@ -9,30 +10,30 @@ helpviewer_keywords:
 - params keyword [C#]
 - parameter array
 ms.assetid: 1690815e-b52b-4967-8380-5780aff08012
-ms.openlocfilehash: 77d7fd19ff57f80f401191027e2fae95026e1966
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: a2726c725508cd297001aaabddeff414704d1115
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738842"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134474"
 ---
 # <a name="params-c-reference"></a>params (odwołanie w C#)
 
-Za pomocą `params` słowa kluczowego można określić [parametr metody,](method-parameters.md) który przyjmuje zmienną liczbę argumentów. Typ parametru musi być tablicą jednowymiarową.
+Za pomocą `params` słowa kluczowego, można określić [parametr metody](method-parameters.md) , który przyjmuje zmienną liczbę argumentów. Typ parametru musi być tablicą jednowymiarową.
 
-Żadne dodatkowe parametry są `params` dozwolone po słowie kluczowym `params` w deklaracji metody i tylko jedno słowo kluczowe jest dozwolone w deklaracji metody.
+Żadne dodatkowe parametry nie są dozwolone po `params` słowie kluczowym w deklaracji metody i tylko jedno `params` słowo kluczowe jest dozwolone w deklaracji metody.
 
-Jeśli zadeklarowany typ `params` parametru nie jest tablicą jednowymiarową, występuje błąd kompilatora [CS0225.](../../misc/cs0225.md)
+Jeśli zadeklarowany typ `params` parametru nie jest tablicą jednowymiarową, wystąpi błąd kompilatora [CS0225](../../misc/cs0225.md) .
 
-Po wywołaniu metody `params` z parametrem można przekazać:
+Po wywołaniu metody z `params` parametrem można przekazać:
 
-- Oddzielona przecinkami lista argumentów typu elementów tablicy.
+- Rozdzielana przecinkami lista argumentów typu elementów tablicy.
 - Tablica argumentów określonego typu.
 - Brak argumentów. Jeśli nie wyślesz żadnych argumentów, długość `params` listy wynosi zero.
 
 ## <a name="example"></a>Przykład
 
-W poniższym przykładzie przedstawiono różne sposoby, w jaki argumenty mogą być wysyłane do parametru. `params`
+Poniższy przykład ilustruje różne sposoby wysyłania argumentów do `params` parametru.
 
 [!code-csharp[csrefKeywordsMethodParams#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsMethodParams/CS/csrefKeywordsMethodParams.cs#5)]
 
@@ -42,7 +43,7 @@ W poniższym przykładzie przedstawiono różne sposoby, w jaki argumenty mogą 
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [C# Przewodnik programowania](../../programming-guide/index.md)
-- [C# Słowa kluczowe](index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
+- [Słowa kluczowe języka C#](index.md)
 - [Parametry metody](method-parameters.md)

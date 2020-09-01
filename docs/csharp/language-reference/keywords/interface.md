@@ -1,4 +1,5 @@
 ---
+description: ':::no-loc text=interface::: (Odwołanie w C#)'
 title: Interfejs — Dokumentacja języka C#
 ms.date: 01/17/2020
 f1_keywords:
@@ -6,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: 869f1398ae0af3c7379655aa018a9f4aacb934d7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 24f95e828522f467c519c0c8a7ba9410aa97af4e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243974"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134591"
 ---
-# <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface":::(Odwołanie w C#)
+# <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface"::: (Odwołanie w C#)
 
 Interfejs definiuje kontrakt. Wszystkie [`class`](class.md) lub [`struct`](../builtin-types/struct.md) , które implementują ten kontrakt, muszą zapewnić implementację elementów członkowskich zdefiniowanych w interfejsie. Począwszy od języka C# 8,0, interfejs może definiować domyślną implementację elementów członkowskich. Może również definiować [`static`](static.md) członków w celu zapewnienia pojedynczej implementacji dla typowych funkcji.
 
@@ -29,7 +30,7 @@ Interfejs może być elementem członkowskim przestrzeni nazw lub klasy. Deklara
 
 - [Metody](../../programming-guide/classes-and-structs/methods.md)
 - [Właściwości](../../programming-guide/classes-and-structs/using-properties.md)
-- [Indexers (Indeksatory)](../../programming-guide/indexers/using-indexers.md)
+- [Indeksatory](../../programming-guide/indexers/using-indexers.md)
 - [Zdarzenia](event.md)
 
 Te poprzedzające deklaracje składowych zwykle nie zawierają treści. Począwszy od języka C# 8,0, element członkowski interfejsu może deklarować treść. Ta nazwa jest nazywana *implementacją domyślną*. Elementy członkowskie z organami umożliwiają interfejsowi określenie "domyślnej" implementacji klas i struktur, które nie zapewniają zastępowania implementacji. Ponadto począwszy od języka C# 8,0, interfejs może obejmować:

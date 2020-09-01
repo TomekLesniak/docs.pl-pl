@@ -1,4 +1,5 @@
 ---
+description: Słowa kluczowe języka C#
 title: Słowa kluczowe języka C#
 ms.date: 03/07/2017
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - '@ keyword'
 ms.custom: updateeachrelease
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 3392b92cbd77e5b3f895af99a71f33d2ab43fa15
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: a6658fe7bb97309d35ca2a9177a90a2443f1a3ca
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812318"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134617"
 ---
 # <a name="c-keywords"></a>Słowa kluczowe języka C#
 
@@ -32,10 +33,10 @@ Słowa kluczowe są wstępnie zdefiniowanymi, zarezerwowanymi identyfikatorami, 
 |[do](do.md)|[liczba o podwójnej precyzji](../builtin-types/floating-point-numeric-types.md)|[else](if-else.md)|[podstawowe](../builtin-types/enum.md)|  
 |[wydarzen](event.md)|[wprost](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](../builtin-types/bool.md)|  
 |[finally](try-finally.md)|[FIXED](fixed-statement.md)|[liczba zmiennoprzecinkowa](../builtin-types/floating-point-numeric-types.md)|[dla](for.md)|  
-|[foreach](foreach-in.md)|[goto](goto.md)|[if](if-else.md)|[Konwersja](../operators/user-defined-conversion-operators.md)|  
+|[spowodował](foreach-in.md)|[goto](goto.md)|[if](if-else.md)|[Konwersja](../operators/user-defined-conversion-operators.md)|  
 |[podczas](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interfejsu](interface.md)|[internal](internal.md)|
-|[była](is.md)|[skręt](lock-statement.md)|[liczba długa](../builtin-types/integral-numeric-types.md)|[obszaru](namespace.md)|
-|[Nowy](../operators/new-operator.md)|[wartość null](null.md)|[object](../builtin-types/reference-types.md)|[zakład](../operators/operator-overloading.md)|
+|[is](is.md)|[skręt](lock-statement.md)|[liczba długa](../builtin-types/integral-numeric-types.md)|[obszaru](namespace.md)|
+|[Nowy](../operators/new-operator.md)|[wartość null](null.md)|[Stream](../builtin-types/reference-types.md)|[zakład](../operators/operator-overloading.md)|
 |[określoną](out.md)|[override](override.md)|[params](params.md)|[private](private.md)|
 |[protected](protected.md)|[public](public.md)|[readonly](readonly.md)|[ref](ref.md)|
 |[return](return.md)|[SByte](../builtin-types/integral-numeric-types.md)|[sealed](sealed.md)|[short](../builtin-types/integral-numeric-types.md)||
@@ -54,9 +55,9 @@ Słowa kluczowe są wstępnie zdefiniowanymi, zarezerwowanymi identyfikatorami, 
 |---|---|---|  
 |[add](add.md)|[Użyj](extern-alias.md)|[ascending](ascending.md)|
 |[async](async.md)|[await](../operators/await.md)|[by](by.md)|
-|[descending](descending.md)|[dynamiczna](../builtin-types/reference-types.md)|[ubiegł](equals.md)|
+|[descending](descending.md)|[dynamiczna](../builtin-types/reference-types.md)|[equals](equals.md)|
 |[wniosek](from-clause.md)|[get](get.md)|[globalne](../operators/namespace-alias-qualifier.md)|
-|[group](group-clause.md)|[przekształca](into.md)|[Złącza](join-clause.md)|
+|[Group](group-clause.md)|[przekształca](into.md)|[Złącza](join-clause.md)|
 |[wpuść](let-clause.md)|[nameof](../operators/nameof.md)|[notnull](../../programming-guide/generics/constraints-on-type-parameters.md#notnull-constraint)|
 |[z](on.md)|[OrderBy](orderby-clause.md)|[częściowy (typ)](partial-type.md)|
 |[częściowe (Metoda)](partial-method.md)|[usuwa](remove.md)|[zaznaczenia](select-clause.md)|

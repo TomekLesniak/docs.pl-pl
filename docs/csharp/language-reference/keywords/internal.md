@@ -1,5 +1,6 @@
 ---
-title: wewnętrzny - C# Referencje
+description: Odwołanie wewnętrzne-C#
+title: Odwołanie wewnętrzne-C#
 ms.date: 07/20/2015
 f1_keywords:
 - internal_CSharpKeyword
@@ -7,19 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: e5a5ca18828b689241abbb6d80c5adc51efb073c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14722d66a65eb5f96118acf017dc877e657b2dd9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173604"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134578"
 ---
 # <a name="internal-c-reference"></a>internal (odwołanie w C#)
-Słowo `internal` kluczowe jest [modyfikatorem dostępu](./access-modifiers.md) dla typów i elementów członkowskich typu.
+`internal`Słowo kluczowe jest [modyfikatorem dostępu](./access-modifiers.md) dla typów i elementów członkowskich typu.
   
- > Ta strona `internal` obejmuje dostęp. Słowo `internal` kluczowe jest również [`protected internal`](./protected-internal.md) częścią modyfikatora dostępu.
+ > Ta strona dotyczy `internal` dostępu. `internal`Słowo kluczowe jest również częścią [`protected internal`](./protected-internal.md) modyfikatora dostępu.
   
-Typy wewnętrzne lub elementy członkowskie są dostępne tylko w plikach w tym samym zestawie, jak w tym przykładzie:  
+Typy wewnętrzne lub składowe są dostępne tylko w plikach w tym samym zestawie, jak w poniższym przykładzie:  
   
 ```csharp  
 public class BaseClass
@@ -29,16 +30,16 @@ public class BaseClass
 }  
 ```  
 
- Aby porównać `internal` z innymi modyfikatorami dostępu, zobacz [Poziomy ułatwień dostępu](./accessibility-levels.md) i [modyfikatory dostępu](../../programming-guide/classes-and-structs/access-modifiers.md).  
+ Aby uzyskać porównanie `internal` z innymi modyfikatorami dostępu, zobacz [poziomy dostępności](./accessibility-levels.md) i [Modyfikatory dostępu](../../programming-guide/classes-and-structs/access-modifiers.md).  
   
- Aby uzyskać więcej informacji na temat zestawów, zobacz [Zestawy w .NET](../../../standard/assembly/index.md).  
+ Aby uzyskać więcej informacji o zestawach, zobacz [zestawy w programie .NET](../../../standard/assembly/index.md).  
   
- Typowe użycie dostępu wewnętrznego jest w rozwoju opartym na składnikach, ponieważ umożliwia grupie składników współpracę w sposób prywatny bez narażenia na resztę kodu aplikacji. Na przykład struktura do tworzenia graficznych interfejsów użytkownika może zapewnić `Control` i `Form` klas, które współpracują przy użyciu elementów członkowskich z dostępem wewnętrznym. Ponieważ te elementy członkowskie są wewnętrzne, nie są one udostępniane do kodu, który używa struktury.  
+ Typowym zastosowaniem dostępu wewnętrznego jest w programowaniu opartym na składnikach, ponieważ umożliwia ono grupom współdziałanie w sposób prywatny bez ujawniania pozostałej części kodu aplikacji. Na przykład struktura do tworzenia graficznych interfejsów użytkownika mogłaby udostępniać `Control` klasy i `Form` współdziałać z użytkownikami z dostępem wewnętrznym. Ponieważ te składowe są wewnętrzne, nie są one widoczne dla kodu, który używa struktury.  
   
- Jest to błąd, aby odwołać się do typu lub elementu członkowskiego z dostępem wewnętrznym poza zestawem, w którym został zdefiniowany.  
+ Wystąpił błąd podczas odwoływania się do typu lub elementu członkowskiego z dostępem wewnętrznym poza zestawem, w ramach którego został zdefiniowany.  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie `Assembly1.cs` znajdują `Assembly1_a.cs`się dwa pliki i . Pierwszy plik zawiera wewnętrzną `BaseClass`klasę podstawową. W drugim pliku próba wystąpienia spowoduje `BaseClass` wywołanie błędu.  
+ Ten przykład zawiera dwa pliki `Assembly1.cs` i `Assembly1_a.cs` . Pierwszy plik zawiera wewnętrzną klasę bazową `BaseClass` . W drugim pliku próba wystąpienia `BaseClass` spowoduje wystąpienie błędu.  
   
 ```csharp  
 // Assembly1.cs  
@@ -62,7 +63,7 @@ class TestAccess
 ```  
   
 ## <a name="example"></a>Przykład  
- W tym przykładzie użyj tych samych plików, które zostały `BaseClass` użyte `public`w przykładzie 1 i zmień poziom ułatwień dostępu na . Zmień również poziom dostępności `intM` elementu `internal`członkowskiego na . W takim przypadku można utworzyć wystąpienia klasy, ale nie można uzyskać dostępu do elementu członkowskiego wewnętrznego.  
+ W tym przykładzie należy użyć tych samych plików, które zostały użyte w przykładzie 1, i zmienić poziom dostępności `BaseClass` na `public` . Zmień również poziom dostępności elementu członkowskiego `intM` na `internal` . W takim przypadku można utworzyć wystąpienie klasy, ale nie można uzyskać dostępu do wewnętrznego elementu członkowskiego.  
   
 ```csharp  
 // Assembly2.cs  
@@ -88,16 +89,16 @@ public class TestAccess
   
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
 
-Aby uzyskać więcej informacji, zobacz [Zadeklarowana dostępność](~/_csharplang/spec/basic-concepts.md#declared-accessibility) w [specyfikacji języka Języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
+Aby uzyskać więcej informacji, zobacz [zadeklarowane ułatwienia dostępu](~/_csharplang/spec/basic-concepts.md#declared-accessibility) w [specyfikacji języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
-- [Przewodnik programowania języka C#](../../programming-guide/index.md)
+- [Odwołanie w C#](../index.md)
+- [Przewodnik programowania w języku C#](../../programming-guide/index.md)
 - [Słowa kluczowe języka C#](./index.md)
 - [Modyfikatory dostępu](./access-modifiers.md)
 - [Poziomy ułatwień dostępu](./accessibility-levels.md)
 - [Modyfikatory](index.md)
-- [Publicznego](./public.md)
-- [Prywatny](./private.md)
+- [public](./public.md)
+- [private](./private.md)
 - [protected](./protected.md)

@@ -4,12 +4,12 @@ description: Ilustruje różne sposoby instalowania zestaw .NET Core SDK i środ
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: a9ccc461362b1be3e5bc2ee7d13d5d7d383192e4
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: d4a54a8a5354a1430141d2c06d4aa90dbafc3edf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053160"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134942"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Zainstaluj zestaw .NET Core SDK lub środowisko uruchomieniowe platformy .NET Core w systemie Debian
 
@@ -36,7 +36,7 @@ Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core
 Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
 - 3,0
-- 2,2
+- 2.2
 - 2,0
 
 ## <a name="how-to-install-other-versions"></a>Jak zainstalować inne wersje
@@ -99,7 +99,7 @@ sudo apt-get upgrade
 
 Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podczas instalowania programu .NET Core przy użyciu programu APT.
 
-### <a name="unable-to-locate"></a>Nie można zlokalizować
+### <a name="unable-to-locate--some-packages-could-not-be-installed"></a>Nie można zlokalizować niektórych pakietów, których nie można \\ zainstalować
 
 [!INCLUDE [package-manager-failed-to-find-deb](includes/package-manager-failed-to-find-deb.md)]
 
