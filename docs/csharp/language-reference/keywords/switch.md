@@ -1,4 +1,5 @@
 ---
+description: Switch (odwołanie w C#)
 title: Instrukcja Switch języka C#
 ms.date: 04/09/2019
 f1_keywords:
@@ -12,18 +13,18 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 20c1d9786eaa184088500cf1b37d33afc421b5e7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493672"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142027"
 ---
 # <a name="switch-c-reference"></a>Switch (odwołanie w C#)
 
 Ten artykuł dotyczy `switch` instrukcji. Aby uzyskać informacje na temat `switch` wyrażenia (wprowadzonego w języku C# 8,0), zobacz artykuł dotyczący [ `switch` wyrażeń](../operators/switch-expression.md) w sekcji [wyrażenia i operatory](../operators/index.md) .
 
-`switch`jest instrukcją wyboru, która wybiera pojedynczy *przełącznik* , który ma zostać wykonany z listy kandydatów na podstawie dopasowania wzorca z *wyrażeniem Match*.
+`switch` jest instrukcją wyboru, która wybiera pojedynczy *przełącznik* , który ma zostać wykonany z listy kandydatów na podstawie dopasowania wzorca z *wyrażeniem Match*.
 
 [!code-csharp[switch#1](~/samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]
 
@@ -199,7 +200,7 @@ Należy zauważyć, że `when` klauzula w przykładzie, która próbuje sprawdzi
 
 Aby uzyskać więcej informacji, zobacz [instrukcja SWITCH](~/_csharplang/spec/statements.md#the-switch-statement) w [specyfikacji języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)

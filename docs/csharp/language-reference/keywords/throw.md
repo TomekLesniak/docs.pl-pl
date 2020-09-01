@@ -1,4 +1,5 @@
 ---
+description: throw — odwołanie w C#
 title: throw — odwołanie w C#
 ms.date: 03/02/2015
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - throw expression [C#]
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
-ms.openlocfilehash: 7ed84e04dae54283e4b5f03be0600c4dbf95b4b4
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 4cad4810b89f976f92ce576917feb2398acce636
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063123"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142040"
 ---
 # <a name="throw-c-reference"></a>throw (odwołanie w C#)
 
@@ -38,7 +39,7 @@ Metody wywołujące używają następnie `try-catch` bloku lub `try-catch-finall
 
 ## <a name="re-throwing-an-exception"></a>Ponowne zgłaszanie wyjątku
 
-`throw`można go również użyć w `catch` bloku, aby ponownie zgłosić wyjątek obsłużony w `catch` bloku.  W tym przypadku nie `throw` przyjmuje operandu wyjątku. Jest to najbardziej przydatne, gdy metoda przekazuje argument od wywołującego do innej metody biblioteki, a metoda Library zgłasza wyjątek, który musi zostać przekazana do obiektu wywołującego. Na przykład poniższy przykład generuje ponownie zdarzenie <xref:System.NullReferenceException> , które jest zgłaszane podczas próby pobrania pierwszego znaku niezainicjowanego ciągu.
+`throw` można go również użyć w `catch` bloku, aby ponownie zgłosić wyjątek obsłużony w `catch` bloku.  W tym przypadku nie `throw` przyjmuje operandu wyjątku. Jest to najbardziej przydatne, gdy metoda przekazuje argument od wywołującego do innej metody biblioteki, a metoda Library zgłasza wyjątek, który musi zostać przekazana do obiektu wywołującego. Na przykład poniższy przykład generuje ponownie zdarzenie <xref:System.NullReferenceException> , które jest zgłaszane podczas próby pobrania pierwszego znaku niezainicjowanego ciągu.
 
 [!code-csharp[csrefKeyword#3](~/samples/snippets/csharp/language-reference/keywords/throw/throw-3.cs#3)]
 
@@ -47,7 +48,7 @@ Metody wywołujące używają następnie `try-catch` bloku lub `try-catch-finall
 
 ## <a name="the-throw-expression"></a>`throw`Wyrażenie
 
-Począwszy od języka C# 7,0, `throw` można użyć jako wyrażenia, a także instrukcji. Pozwala to na wyrzucanie wyjątku w kontekstach, które były wcześniej nieobsługiwane. Są to moduły:
+Począwszy od języka C# 7,0, `throw` można użyć jako wyrażenia, a także instrukcji. Pozwala to na wyrzucanie wyjątku w kontekstach, które były wcześniej nieobsługiwane. Należą do nich następujące elementy:
 
 - [operator warunkowy](../operators/conditional-operator.md). Poniższy przykład używa wyrażenia, `throw` Aby zgłosić, <xref:System.ArgumentException> czy metoda jest przenoszona pustą tablicę ciągów. Przed C# 7,0, ta logika musi pojawić się w `if` / `else` instrukcji.
 
@@ -65,7 +66,7 @@ Począwszy od języka C# 7,0, `throw` można użyć jako wyrażenia, a także in
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)

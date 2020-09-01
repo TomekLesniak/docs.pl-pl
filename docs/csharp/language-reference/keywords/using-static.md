@@ -1,15 +1,16 @@
 ---
+description: Używanie dyrektywy statycznej — odwołanie w C#
 title: Używanie dyrektywy statycznej — odwołanie w C#
 ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-ms.openlocfilehash: bffbc026e8f7937db91d42b7a06a5b7bba3bc2f8
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: a10c315a05c28bce9b5ddb65af67dde6446d031d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396150"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141923"
 ---
 # <a name="using-static-directive-c-reference"></a>Using static — dyrektywa (odwołanie w C#)
 
@@ -35,9 +36,9 @@ Eliminując konieczność jawnego odwoływania się do <xref:System.Math> klasy 
 
 [!code-csharp[using-static#2](~/samples/snippets/csharp/language-reference/keywords/using/using-static2.cs#1)]
 
-`using static`Importuje tylko dostępne statyczne elementy członkowskie i zagnieżdżone typy zadeklarowane w określonym typie.  Dziedziczone elementy członkowskie nie są importowane.  Można importować z dowolnego typu nazwanego za pomocą dyrektywy static with, w tym modułów Visual Basic.  Jeśli funkcje najwyższego poziomu języka F # są wyświetlane w metadanych jako statyczne elementy członkowskie nazwanego typu, którego nazwa jest prawidłowym identyfikatorem języka C#, można zaimportować funkcje języka F #.
+`using static` Importuje tylko dostępne statyczne elementy członkowskie i zagnieżdżone typy zadeklarowane w określonym typie.  Dziedziczone elementy członkowskie nie są importowane.  Można importować z dowolnego typu nazwanego za pomocą dyrektywy static with, w tym modułów Visual Basic.  Jeśli funkcje najwyższego poziomu języka F # są wyświetlane w metadanych jako statyczne elementy członkowskie nazwanego typu, którego nazwa jest prawidłowym identyfikatorem języka C#, można zaimportować funkcje języka F #.
 
- `using static`sprawia, że metody rozszerzające zadeklarowane w określonym typie są dostępne dla wyszukiwania metody rozszerzenia.  Jednak nazwy metod rozszerzenia nie są importowane do zakresu dla niekwalifikowanego odwołania w kodzie.
+ `using static` sprawia, że metody rozszerzające zadeklarowane w określonym typie są dostępne dla wyszukiwania metody rozszerzenia.  Jednak nazwy metod rozszerzenia nie są importowane do zakresu dla niekwalifikowanego odwołania w kodzie.
 
  Metody o tej samej nazwie zaimportowanej z różnych typów przez różne `using static` dyrektywy w tej samej jednostce kompilacji lub przestrzeni nazw tworzą grupę metod.  W ramach tych grup metod Rozpoznanie przeciążenia odbywa się zgodnie z normalnymi regułami języka C#.
 
@@ -55,4 +56,4 @@ W przykładzie `using static` można również zastosować dyrektywę do <xref:S
 - [Odwołanie w C#](../index.md)
 - [Słowa kluczowe języka C#](index.md)
 - [Używanie przestrzeni nazw](../../programming-guide/namespaces/using-namespaces.md)
-- [Przestrzenie nazw](../../programming-guide/namespaces/index.md)
+- [Namespaces](../../programming-guide/namespaces/index.md)

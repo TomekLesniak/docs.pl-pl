@@ -1,5 +1,6 @@
 ---
-title: null — słowo kluczowe — odwołanie do języka C#
+description: null — słowo kluczowe — odwołanie w C#
+title: null — słowo kluczowe — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
 - "null"
@@ -7,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - null keyword [C#]
 ms.assetid: fecb1c60-6232-4efe-87f7-9a86ba2e9119
-ms.openlocfilehash: 17e7386571e8c74d411204ade0d56ffe8a710ee8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 26cafb4ab25a0fc9514559e968cbb262fef3d0a9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76741992"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142378"
 ---
 # <a name="null-c-reference"></a>null (C# Reference)
 
-Słowo `null` kluczowe jest literałem, który reprezentuje odwołanie null, który nie odwołuje się do żadnego obiektu. `null`jest wartością domyślną zmiennych typu odwołania. Zwykłe typy wartości nie mogą mieć wartości null, z wyjątkiem [typów wartości nullable](../builtin-types/nullable-value-types.md).
+`null`Słowo kluczowe jest literałem, która reprezentuje odwołanie null, które nie odwołuje się do żadnego obiektu. `null` jest wartością domyślną zmiennych typu odwołania. Zwykłe typy wartości nie mogą mieć wartości null, z wyjątkiem [typów wartości dopuszczających wartość null](../builtin-types/nullable-value-types.md).
 
-W poniższym przykładzie przedstawiono niektóre `null` zachowania słowa kluczowego:
+Poniższy przykład demonstruje niektóre zachowania `null` słowa kluczowego:
 
 [!code-csharp[csrefKeywordsLiteral#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsLiteral/CS/csrefKeywordsLiteral.cs#1)]
 
@@ -30,5 +31,5 @@ W poniższym przykładzie przedstawiono niektóre `null` zachowania słowa klucz
 
 - [Dokumentacja języka C#](../index.md)
 - [Słowa kluczowe języka C#](index.md)
-- [Domyślne wartości typów Języka C#](../builtin-types/default-values.md)
+- [Wartości domyślne typów C#](../builtin-types/default-values.md)
 - [Nothing (Visual Basic)](../../../visual-basic/language-reference/nothing.md)

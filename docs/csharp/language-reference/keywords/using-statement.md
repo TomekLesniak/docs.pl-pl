@@ -1,15 +1,16 @@
 ---
+description: Using — odwołanie w C#
 title: Using — odwołanie w C#
 ms.date: 05/29/2020
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: b889d2fcbdf854dbe8948744810f9b74e9f0dac2
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: c7f1fc4b7e911bdec3bd38ae88aa39b7f1795300
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307049"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141936"
 ---
 # <a name="using-statement-c-reference"></a>using — instrukcja (odwołanie w C#)
 
@@ -27,7 +28,7 @@ Począwszy od języka C# 8,0, można użyć następującej składni alternatywne
 
 ## <a name="remarks"></a>Uwagi
 
-<xref:System.IO.File>i <xref:System.Drawing.Font> są przykładami typów zarządzanych, które uzyskują dostęp do niezarządzanych zasobów (w tym przypadku dojścia do plików i konteksty urządzenia). Istnieje wiele innych rodzajów niezarządzanych zasobów i typów bibliotek klas, które hermetyzują. Wszystkie takie typy muszą implementować <xref:System.IDisposable> interfejs lub <xref:System.IAsyncDisposable> interfejs.
+<xref:System.IO.File> i <xref:System.Drawing.Font> są przykładami typów zarządzanych, które uzyskują dostęp do niezarządzanych zasobów (w tym przypadku dojścia do plików i konteksty urządzenia). Istnieje wiele innych rodzajów niezarządzanych zasobów i typów bibliotek klas, które hermetyzują. Wszystkie takie typy muszą implementować <xref:System.IDisposable> interfejs lub <xref:System.IAsyncDisposable> interfejs.
 
 Gdy okres istnienia `IDisposable` obiektu jest ograniczony do pojedynczej metody, należy zadeklarować go i utworzyć jego wystąpienie w `using` instrukcji. `using`Instrukcja wywołuje <xref:System.IDisposable.Dispose%2A> metodę dla obiektu w prawidłowy sposób i (gdy jest używany w sposób pokazany wcześniej) również powoduje, że sam obiekt nie ma zakresu od razu po <xref:System.IDisposable.Dispose%2A> wywołaniu. W `using` bloku obiekt jest tylko do odczytu i nie można go modyfikować ani ponownie przypisywać. Jeśli obiekt implementuje `IAsyncDisposable` zamiast `IDisposable` , `using` instrukcja wywołuje <xref:System.IAsyncDisposable.DisposeAsync%2A> i `awaits` zwraca wartość <xref:System.Threading.Tasks.ValueTask> . Aby uzyskać więcej informacji na temat <xref:System.IAsyncDisposable> , zobacz [implementowanie metody DisposeAsync](../../../standard/garbage-collection/implementing-disposeasync.md).
 

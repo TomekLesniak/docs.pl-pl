@@ -1,4 +1,5 @@
 ---
+description: -win32res — (opcje kompilatora C#)
 title: -win32res — (opcje kompilatora C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - -win32res compiler option [C#]
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
-ms.openlocfilehash: 3bb1614fcf28c62a9000c9b96af2f046f329fb1e
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: c220c78a6d2c3109402a20f0de40fe9665d6c730
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794380"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89140818"
 ---
 # <a name="-win32res-c-compiler-options"></a>-win32res — (opcje kompilatora C#)
 Opcja **-win32res —** wstawia zasób Win32 do pliku wyjściowego.  
@@ -45,13 +46,13 @@ Opcja **-win32res —** wstawia zasób Win32 do pliku wyjściowego.
 3. Kliknij przycisk **plik zasobów** , a następnie wybierz plik za pomocą pola kombi.  
   
 ## <a name="example"></a>Przykład  
- Kompiluj `in.cs` i Dołącz plik `rf.res` zasobów Win32 do produkcji `in.exe`:  
+ Kompiluj `in.cs` i Dołącz plik zasobów Win32 `rf.res` do produkcji `in.exe` :  
   
 ```console  
 csc -win32res:rf.res in.cs  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Opcje kompilatora C#](./index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

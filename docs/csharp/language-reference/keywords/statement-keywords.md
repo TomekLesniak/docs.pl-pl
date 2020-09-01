@@ -1,33 +1,34 @@
 ---
-title: Słowa kluczowe instrukcji — odwołanie do języka C#
+description: Słowa kluczowe instrukcji — odwołanie w C#
+title: Słowa kluczowe instrukcji — odwołanie w C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-ms.openlocfilehash: c829414cc197b18ad0dbd9c2cf401a05f6f2fbc6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 02c6ba7095c30fb8349e4b810d296e92ecd6e416
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715141"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142053"
 ---
-# <a name="statement-keywords-c-reference"></a>Słowa kluczowe instrukcji (odwołanie do języka C#)
+# <a name="statement-keywords-c-reference"></a>Słowa kluczowe instrukcji (odwołanie w C#)
 
-Instrukcje są instrukcjami programu. Z wyjątkiem opisanych w tematach, do których odwołuje się poniższa tabela, instrukcje są wykonywane w kolejności. W poniższej tabeli wymieniono słowa kluczowe instrukcji C#. Aby uzyskać więcej informacji na temat instrukcji, które nie są wyrażone przy żadnym sutenie kluczowym, zobacz [Instrukcje](../../programming-guide/statements-expressions-operators/statements.md).
+Instrukcje są instrukcjami programu. Z wyjątkiem sytuacji opisanej w tematach wymienionych w poniższej tabeli instrukcje są wykonywane w kolejności. Poniższa tabela zawiera listę słów kluczowych instrukcji języka C#. Aby uzyskać więcej informacji na temat instrukcji, które nie są wyrażane za pomocą słowa kluczowego, zobacz [instrukcje](../../programming-guide/statements-expressions-operators/statements.md).
 
 |Kategoria|Słowa kluczowe języka C#|
 |--------------|------------------|
-|Instrukcje wyboru|[jeśli](if-else.md), [else](if-else.md), [przełączyć](switch.md), [sprawa](switch.md)|
-|Instrukcje iteracji|[zrobić](do.md), [dla](for.md), [foreach](foreach-in.md), [w](foreach-in.md), [podczas](while.md)|
-|Instrukcje skoku|[break](break.md), [continue](continue.md), [default](switch.md), [goto](goto.md), [return](return.md), [yield](yield.md)|
-|Instrukcje obsługi wyjątków|[rzucać](throw.md), [try-catch](try-catch.md), [spróbuj wkońcu](try-finally.md), [try-catch-wreszcie](try-catch-finally.md)|
-|[Sprawdzone i niezaznaczone](checked-and-unchecked.md)|[zaznaczone](checked.md), [niezaznaczone](unchecked.md)|
-[stała instrukcja](fixed-statement.md)|[Stałe](fixed-statement.md)|
-|[instrukcja blokady](lock-statement.md)|[lock](lock-statement.md)|
+|Instrukcje wyboru|[if](if-else.md), [else](if-else.md), [Switch](switch.md), [Case](switch.md)|
+|Instrukcje iteracji|[do](do.md)do, [dla](for.md), [foreach](foreach-in.md), [w](foreach-in.md), [while](while.md)|
+|Instrukcje skoku|[Break](break.md), [Continue](continue.md), [default](switch.md), [goto](goto.md), [Return](return.md), [Yield](yield.md)|
+|Instrukcje obsługi wyjątków|[throw](throw.md), [try-catch](try-catch.md), [try-finally](try-finally.md), [try-catch-finally](try-catch-finally.md)|
+|[Zaznaczone i niezaznaczone](checked-and-unchecked.md)|[zaznaczone](checked.md), [niezaznaczone](unchecked.md)|
+[fixed — Instrukcja](fixed-statement.md)|[FIXED](fixed-statement.md)|
+|[lock — Instrukcja](lock-statement.md)|[skręt](lock-statement.md)|
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Odwołanie do języka C#](../index.md)
+- [Odwołanie w C#](../index.md)
 - [Instrukcje](../../programming-guide/statements-expressions-operators/statements.md)
 - [Słowa kluczowe języka C#](index.md)

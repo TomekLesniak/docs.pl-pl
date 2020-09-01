@@ -1,4 +1,5 @@
 ---
+description: + Operatory and + = — odwołanie w C#
 title: + Operatory and + = — odwołanie w C#
 ms.date: 04/23/2020
 f1_keywords:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: f1db0054ad2411bfe23f10b64bc2727a71ad7463
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 00ba020939694d901afdbf5f5f93b584363d2cc7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916949"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141858"
 ---
 # <a name="-and--operators-c-reference"></a>Operatory + i + = (odwołanie w C#)
 
@@ -76,7 +77,7 @@ Typ zdefiniowany przez użytkownika może [przeciążać](operator-overloading.m
 
 Aby uzyskać więcej informacji, zobacz sekcje [jednoargumentowe Plus](~/_csharplang/spec/expressions.md#unary-plus-operator) i [operator dodawania](~/_csharplang/spec/expressions.md#addition-operator) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

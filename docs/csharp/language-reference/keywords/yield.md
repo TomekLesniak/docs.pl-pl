@@ -1,4 +1,5 @@
 ---
+description: Yield kontekstowego słowa kluczowego — odwołanie w C#
 title: Yield kontekstowego słowa kluczowego — odwołanie w C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: ec1058d1590d64fa8d8786b3118ecf9733c55d6f
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: c8caf7e34397faf9f7085d6634287cffcb37eb08
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063149"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141884"
 ---
 # <a name="yield-c-reference"></a>yield (odwołanie w C#)
 
@@ -95,7 +96,7 @@ Poniższy przykład ilustruje `get` metodę dostępu, która jest iteratorem. W 
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)
