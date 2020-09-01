@@ -2,12 +2,12 @@
 title: Kroki przepływu pracy DevOps w zewnętrznej pętli dla aplikacji platformy Docker
 description: Informacje na temat instrukcji "pętla zewnętrzna" przepływu pracy DevOps
 ms.date: 08/06/2020
-ms.openlocfilehash: 5515c204b09cecba323540572c6769c65c6c93ab
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 82a45c8669812580623811e18cc55f55f45cb6d3
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915275"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271910"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroki przepływu pracy DevOps w zewnętrznej pętli dla aplikacji platformy Docker
 
@@ -94,7 +94,7 @@ Za pomocą tych Visual Studio Team Servicesych zadań kompilacja systemu Linux �
 >   <https://docs.microsoft.com/archive/blogs/stevelasker/building-net-core-linux-docker-images-with-visual-studio-team-services>
 >
 > - Kompilowanie maszyny kompilacji usługi Visual Studio Team Service opartej na systemie Linux z obsługą platformy Docker: \
->   <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
+>   <https://www.donovanbrown.com/post/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
 
 ### <a name="integrate-test-and-validate-multi-container-docker-applications"></a>Integrowanie, testowanie i Weryfikowanie aplikacji platformy Docker z obsługą kontenera
 
@@ -196,7 +196,7 @@ Rysunek 5-11 pokazuje, w jaki sposób można edytować zadanie Deploy to Kuberne
 
 **Rysunek 5-11**. Wdrażanie definicji zadania platformy Docker na platformie DC/OS usługi ACS
 
-> [! INFORMACJE] aby dowiedzieć się więcej na temat potoku dysku CD przy użyciu Azure DevOps Services i platformy Docker, odwiedź stronę<https://azure.microsoft.com/services/devops/pipelines>
+> [! INFORMACJE] aby dowiedzieć się więcej na temat potoku dysku CD przy użyciu Azure DevOps Services i platformy Docker, odwiedź stronę <https://azure.microsoft.com/services/devops/pipelines>
 
 ## <a name="step-5-run-and-manage"></a>Krok 5. Uruchamianie i zarządzanie
 

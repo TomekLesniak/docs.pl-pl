@@ -7,12 +7,12 @@ ms.author: adegeo
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 829c93e97990b87e6e568614236de9708ef080d9
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 3c9615d7d79b5da1c180bb505f5f37b99aeae775
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325749"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89272000"
 ---
 # <a name="data-binding-overview-in-wpf"></a>Omówienie powiązań danych w WPF
 
@@ -91,11 +91,11 @@ Na rysunku przedstawiono różne typy przepływów danych:
 
 ![Przepływ danych powiązań danych](./media/data-binding-overview/databinding-dataflow.png "DataBinding_DataFlow")
 
-- <xref:System.Windows.Data.BindingMode.OneWay>powiązanie powoduje, że zmiany właściwości source mają automatycznie aktualizować właściwość target, ale zmiany właściwości target nie są propagowane do właściwości source. Ten typ powiązania jest odpowiedni, Jeśli powiązanie formantu jest niejawnie tylko do odczytu. Na przykład można powiązać ze źródłem danych, takim jak Giełda, lub być może Właściwość docelowa nie ma interfejsu sterującego do wprowadzania zmian, takich jak kolor tła związany z danymi tabeli. Jeśli nie ma potrzeby monitorowania zmian właściwości docelowej, użycie <xref:System.Windows.Data.BindingMode.OneWay> trybu powiązania pozwala uniknąć narzutu na <xref:System.Windows.Data.BindingMode.TwoWay> tryb powiązania.
+- <xref:System.Windows.Data.BindingMode.OneWay> powiązanie powoduje, że zmiany właściwości source mają automatycznie aktualizować właściwość target, ale zmiany właściwości target nie są propagowane do właściwości source. Ten typ powiązania jest odpowiedni, Jeśli powiązanie formantu jest niejawnie tylko do odczytu. Na przykład można powiązać ze źródłem danych, takim jak Giełda, lub być może Właściwość docelowa nie ma interfejsu sterującego do wprowadzania zmian, takich jak kolor tła związany z danymi tabeli. Jeśli nie ma potrzeby monitorowania zmian właściwości docelowej, użycie <xref:System.Windows.Data.BindingMode.OneWay> trybu powiązania pozwala uniknąć narzutu na <xref:System.Windows.Data.BindingMode.TwoWay> tryb powiązania.
 
-- <xref:System.Windows.Data.BindingMode.TwoWay>powiązanie powoduje, że zmiany właściwości source lub Target mają być automatycznie aktualizowane. Ten typ powiązania jest odpowiedni do edytowalnych formularzy lub innych w pełni interaktywnych scenariuszy interfejsu użytkownika. Większość właściwości jest domyślnie <xref:System.Windows.Data.BindingMode.OneWay> powiązana, ale niektóre właściwości zależności (zazwyczaj właściwości kontrolek edytowalnych przez użytkownika, takich jak <xref:System.Windows.Controls.TextBox.Text?displayProperty=nameWithType> [pole wyboru i. IsChecked](xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked) domyślnie to <xref:System.Windows.Data.BindingMode.TwoWay> Binding. Programistyczny sposób, aby określić, czy właściwość zależności jest domyślnie wiążąca lub dwukierunkowo, ma uzyskać metadane właściwości <xref:System.Windows.DependencyProperty.GetMetadata%2A?displayProperty=nameWithType> , a następnie sprawdzić wartość logiczną <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A?displayProperty=nameWithType> właściwości.
+- <xref:System.Windows.Data.BindingMode.TwoWay> powiązanie powoduje, że zmiany właściwości source lub Target mają być automatycznie aktualizowane. Ten typ powiązania jest odpowiedni do edytowalnych formularzy lub innych w pełni interaktywnych scenariuszy interfejsu użytkownika. Większość właściwości jest domyślnie <xref:System.Windows.Data.BindingMode.OneWay> powiązana, ale niektóre właściwości zależności (zazwyczaj właściwości kontrolek edytowalnych przez użytkownika, takich jak <xref:System.Windows.Controls.TextBox.Text?displayProperty=nameWithType>  [pole wyboru i. IsChecked](xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked) domyślnie to <xref:System.Windows.Data.BindingMode.TwoWay> Binding. Programistyczny sposób, aby określić, czy właściwość zależności jest domyślnie wiążąca lub dwukierunkowo, ma uzyskać metadane właściwości <xref:System.Windows.DependencyProperty.GetMetadata%2A?displayProperty=nameWithType> , a następnie sprawdzić wartość logiczną <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A?displayProperty=nameWithType> właściwości.
 
-- <xref:System.Windows.Data.BindingMode.OneWayToSource>jest odwrotnym <xref:System.Windows.Data.BindingMode.OneWay> powiązaniem; aktualizuje właściwość source po zmianie właściwości docelowej. Przykładowy scenariusz polega na tym, że wystarczy ponownie oszacować wartość źródłową z interfejsu użytkownika.
+- <xref:System.Windows.Data.BindingMode.OneWayToSource> jest odwrotnym <xref:System.Windows.Data.BindingMode.OneWay> powiązaniem; aktualizuje właściwość source po zmianie właściwości docelowej. Przykładowy scenariusz polega na tym, że wystarczy ponownie oszacować wartość źródłową z interfejsu użytkownika.
 
 - Niezilustrowane na rysunku jest <xref:System.Windows.Data.BindingMode.OneTime> powiązanie, co powoduje, że Właściwość Source inicjuje właściwość docelową, ale nie propaguje kolejnych zmian. Jeśli zmieni się kontekst danych lub obiekt w kontekście danych ulegnie zmianie, zmiana *nie* zostanie odzwierciedlona we właściwości target. Ten typ powiązania jest odpowiedni, Jeśli migawka bieżącego stanu jest odpowiednia lub dane są rzeczywiście statyczne. Ten typ powiązania jest również przydatny, jeśli chcesz zainicjować właściwość docelową z jakąś wartością z właściwości source, a kontekst danych nie jest znany z góry. Ten tryb jest zasadniczo prostszym elementem <xref:System.Windows.Data.BindingMode.OneWay> powiązania, który zapewnia lepszą wydajność w przypadkach, gdy wartość źródłowa nie jest zmieniana.
 
@@ -113,7 +113,7 @@ Jednak czy wartość źródłowa jest aktualizowana podczas edytowania tekstu lu
 
 Jeśli `UpdateSourceTrigger` wartość to <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged?displayProperty=nameWithType> , wówczas wartość wskazywana przez strzałkę w prawo <xref:System.Windows.Data.BindingMode.TwoWay> lub <xref:System.Windows.Data.BindingMode.OneWayToSource> powiązania jest aktualizowana zaraz po zmianie właściwości docelowej. Jeśli jednak `UpdateSourceTrigger` wartość jest, wówczas <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> Ta wartość jest aktualizowana tylko przy użyciu nowej wartości, gdy właściwość target utraci fokus.
 
-Podobnie jak w przypadku <xref:System.Windows.Data.Binding.Mode%2A> Właściwości różne właściwości zależności mają różne <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> wartości domyślne. Wartością domyślną dla większości właściwości zależności jest <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> , podczas gdy `TextBox.Text` Właściwość ma wartość domyślną <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> . `PropertyChanged`oznacza, że aktualizacje źródłowe są zwykle wykonywane za każdym razem, gdy zmienia się Właściwość docelowa. Natychmiastowe zmiany są odpowiednie dla pól wyboru i innych formantów prostych. Jednak w przypadku pól tekstowych aktualizowanie po każdym naciśnięciu klawisza może spowodować obniżenie wydajności i odmówić użytkownikowi zwykłej szansy w odniesieniu do wolnego miejsca i naprawić błędy pisowni przed zatwierdzeniem nowej wartości.
+Podobnie jak w przypadku <xref:System.Windows.Data.Binding.Mode%2A> Właściwości różne właściwości zależności mają różne <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> wartości domyślne. Wartością domyślną dla większości właściwości zależności jest <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> , podczas gdy `TextBox.Text` Właściwość ma wartość domyślną <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> . `PropertyChanged` oznacza, że aktualizacje źródłowe są zwykle wykonywane za każdym razem, gdy zmienia się Właściwość docelowa. Natychmiastowe zmiany są odpowiednie dla pól wyboru i innych formantów prostych. Jednak w przypadku pól tekstowych aktualizowanie po każdym naciśnięciu klawisza może spowodować obniżenie wydajności i odmówić użytkownikowi zwykłej szansy w odniesieniu do wolnego miejsca i naprawić błędy pisowni przed zatwierdzeniem nowej wartości.
 
 <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>Aby uzyskać informacje o tym, jak znaleźć wartość domyślną właściwości zależności, zobacz stronę właściwości.
 
@@ -121,7 +121,7 @@ W poniższej tabeli przedstawiono przykładowy scenariusz dla każdej <xref:Syst
 
 | UpdateSourceTrigger wartość | Po zaktualizowaniu wartości źródłowej | Przykładowy scenariusz dla pola tekstowego |
 | ------------------------- | ---------------------------------- | ---------------------------- |
-| `LostFocus`(domyślnie dla <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> ) | Gdy kontrolka TextBox utraci fokus. | Pole tekstowe, które jest skojarzone z logiką walidacji (zobacz [walidacja danych](#data-validation) poniżej). |
+| `LostFocus` (domyślnie dla <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> ) | Gdy kontrolka TextBox utraci fokus. | Pole tekstowe, które jest skojarzone z logiką walidacji (zobacz [walidacja danych](#data-validation) poniżej). |
 | `PropertyChanged` | Podczas wpisywania do <xref:System.Windows.Controls.TextBox> . | Kontrolki TextBox w oknie pokoju rozmowy. |
 | `Explicit` | Gdy aplikacja jest wywoływana <xref:System.Windows.Data.BindingExpression.UpdateSource%2A> . | Kontrolki TextBox w formularzu edytowalnym (aktualizuje wartości źródłowe tylko wtedy, gdy użytkownik kliknie przycisk Prześlij). |
 
@@ -173,12 +173,12 @@ Może być konieczne zastosowanie logiki niestandardowej, aby dane były zrozumi
 
 Przed zainstalowaniem innych funkcji i użycia powiązań danych warto wprowadzić <xref:System.Windows.Data.BindingExpression> klasę. Jak widać w poprzednich sekcjach, <xref:System.Windows.Data.Binding> Klasa jest klasą wysokiego poziomu dla deklaracji powiązania; zawiera wiele właściwości, które umożliwiają określenie charakterystyki powiązania. Klasa pokrewna, <xref:System.Windows.Data.BindingExpression> , jest obiektem źródłowym, który utrzymuje połączenie między źródłem a obiektem docelowym. Powiązanie zawiera wszystkie informacje, które mogą być współużytkowane przez kilka wyrażeń powiązań. A <xref:System.Windows.Data.BindingExpression> jest wyrażeniem wystąpienia, które nie może być współużytkowane i zawiera wszystkie informacje o wystąpieniu <xref:System.Windows.Data.Binding> .
 
-Rozważmy poniższy przykład, gdzie `myDataObject` to wystąpienie `MyData` klasy, `myBinding` jest <xref:System.Windows.Data.Binding> obiektem źródłowym i `MyData` jest klasą zdefiniowaną, która zawiera właściwość ciągu o nazwie `MyDataProperty` . Ten przykład wiąże się z zawartością tekstową `myText` , wystąpieniem <xref:System.Windows.Controls.TextBlock> do `MyDataProperty` .
+Rozważmy poniższy przykład, gdzie `myDataObject` to wystąpienie `MyData` klasy, `myBinding` jest <xref:System.Windows.Data.Binding> obiektem źródłowym i `MyData` jest klasą zdefiniowaną, która zawiera właściwość ciągu o nazwie `ColorName` . Ten przykład wiąże się z zawartością tekstową `myText` , wystąpieniem <xref:System.Windows.Controls.TextBlock> do `ColorName` .
 
 [!code-csharp[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/csharp/ManualBinding.cs#CodeOnlyBinding)]
 [!code-vb[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/vb/ManualBinding.vb#CodeOnlyBinding)]
 
-Możesz użyć tego samego obiektu *powiązania* , aby utworzyć inne powiązania. Na przykład można użyć obiektu *powiązania* , aby powiązać zawartość tekstową pola wyboru z *MyDataProperty*. W tym scenariuszu będą dostępne dwa wystąpienia <xref:System.Windows.Data.BindingExpression> udostępniania obiektu *powiązania* .
+Możesz użyć tego samego obiektu *powiązania* , aby utworzyć inne powiązania. Na przykład można użyć obiektu *powiązania* , aby powiązać zawartość tekstową pola wyboru z *kolorową*. W tym scenariuszu będą dostępne dwa wystąpienia <xref:System.Windows.Data.BindingExpression> udostępniania obiektu *powiązania* .
 
 <xref:System.Windows.Data.BindingExpression>Obiekt jest zwracany przez wywołanie <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> obiektu powiązanego z danymi. W poniższych artykułach przedstawiono niektóre zastosowania <xref:System.Windows.Data.BindingExpression> klasy:
 
@@ -215,7 +215,7 @@ Poniżej przedstawiono niektóre typowe scenariusze, w których warto wdrożyć 
 
 - Więcej niż jeden formant lub wiele właściwości formantów są powiązane z tymi samymi danymi. W takim przypadku podstawowe powiązanie może po prostu wyświetlić tekst, podczas gdy inne powiązania obsługują konkretne problemy z wyświetlaniem, ale nadal używają tego samego powiązania jako informacji źródłowych.
 
-- Właściwość docelowa ma kolekcję powiązań, które są określane <xref:System.Windows.Data.MultiBinding> . W przypadku programu należy <xref:System.Windows.Data.MultiBinding> użyć niestandardowych <xref:System.Windows.Data.IMultiValueConverter> do utworzenia końcowej wartości z wartości powiązań. Na przykład kolor może być obliczany na podstawie wartości czerwony, niebieski i zielony, które mogą być wartościami z tego samego lub różnych obiektów źródłowych powiązań. Zobacz <xref:System.Windows.Data.MultiBinding> , aby uzyskać przykłady i informacje.
+- Właściwość docelowa ma kolekcję powiązań, które są określane <xref:System.Windows.Data.MultiBinding> . W przypadku programu należy <xref:System.Windows.Data.MultiBinding> użyć niestandardowych <xref:System.Windows.Data.IMultiValueConverter> do utworzenia końcowej wartości z wartości powiązań. Na przykład kolor może być obliczany na podstawie wartości czerwony, niebieski i zielony, które mogą być wartościami z tego samego lub różnych obiektów źródłowych powiązań. Zobacz  <xref:System.Windows.Data.MultiBinding> , aby uzyskać przykłady i informacje.
 
 ## <a name="binding-to-collections"></a>Powiązanie z kolekcjami
 
@@ -261,7 +261,7 @@ W poniższej tabeli przedstawiono typy danych widoku, które są tworzone jako d
 
 | Typ kolekcji źródłowej                    | Typ widoku kolekcji | Uwagi |
 | ----------------------------------------- | -------------------- | ----- |
-| <xref:System.Collections.IEnumerable>     | Typ wewnętrzny oparty na<xref:System.Windows.Data.CollectionView> | Nie można grupować elementów. |
+| <xref:System.Collections.IEnumerable>     | Typ wewnętrzny oparty na <xref:System.Windows.Data.CollectionView> | Nie można grupować elementów. |
 | <xref:System.Collections.IList>           | <xref:System.Windows.Data.ListCollectionView> | Najlepszy. |
 | <xref:System.ComponentModel.IBindingList> | <xref:System.Windows.Data.BindingListCollectionView> | |
 

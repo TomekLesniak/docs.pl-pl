@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 5eb9d5127dffd2e80349352ad7a4b57f8848d56b
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 8cbb687b0c7cfb69d3f3807c083f1c25e9d39594
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165795"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271792"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formaty ścieżek plików w systemie Windows
 
@@ -33,19 +33,19 @@ Jeśli wszystkie trzy składniki są obecne, ścieżka jest bezwzględna. Jeśli
 
 |Ścieżka  |Opis  |
 | -- | -- |
-| `C:\Documents\Newsletters\Summer2018.pdf` | Bezwzględna ścieżka pliku z katalogu głównego dysku C: |
+| `C:\Documents\Newsletters\Summer2018.pdf` | Bezwzględna ścieżka pliku z katalogu głównego dysku `C:` . |
 | `\Program Files\Custom Utilities\StringFinder.exe` | Ścieżka bezwzględna z katalogu głównego bieżącego dysku. |
 | `2018\January.xlsx` | Ścieżka względna do pliku w podkatalogu bieżącego katalogu. |
 | `..\Publications\TravelBrochure.pdf` | Ścieżka względna do pliku w katalogu, który jest elementem równorzędnym bieżącego katalogu. |
-| `C:\Projects\apilibrary\apilibrary.sln` | Ścieżka bezwzględna do pliku z katalogu głównego dysku C: |
-| `C:Projects\apilibrary\apilibrary.sln` | Ścieżka względna z bieżącego katalogu dysku C:. |
+| `C:\Projects\apilibrary\apilibrary.sln` | Ścieżka bezwzględna do pliku z katalogu głównego dysku `C:` . |
+| `C:Projects\apilibrary\apilibrary.sln` | Ścieżka względna z bieżącego katalogu `C:` dysku. |
 
 > [!IMPORTANT]
-> Zwróć uwagę na różnicę między ostatnimi dwiema ścieżkami. Oba określają opcjonalny specyfikator woluminu (C: w obu przypadkach), ale pierwszy zaczyna się od elementu głównego określonego woluminu, a drugi nie. W związku z tym pierwsza jest ścieżką bezwzględną z katalogu głównego dysku C:, a druga jest ścieżką względną z bieżącego katalogu dysku C:. Użycie drugiego formularza, gdy pierwszy jest zamierzony, jest wspólnym źródłem błędów, które obejmują ścieżki plików systemu Windows.
+> Zwróć uwagę na różnicę między ostatnimi dwiema ścieżkami. Oba określają opcjonalny specyfikator woluminu ( `C:` w obu przypadkach), ale pierwszy zaczyna się od elementu głównego określonego woluminu, podczas gdy drugi nie. W związku z tym pierwsza jest ścieżką bezwzględną z katalogu głównego dysku `C:` , a druga jest ścieżką względną z bieżącego katalogu dysku `C:` . Użycie drugiego formularza, gdy pierwszy jest zamierzony, jest wspólnym źródłem błędów, które obejmują ścieżki plików systemu Windows.
 
 Można określić, czy ścieżka pliku jest w pełni kwalifikowana (to znaczy, czy ścieżka jest niezależna od bieżącego katalogu i nie ulega zmianie, gdy bieżący katalog ulegnie zmianie) przez wywołanie <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType> metody. Należy zauważyć, że taka ścieżka może zawierać względne segmenty katalogów ( `.` i `..` ) i nadal być w pełni kwalifikowane, jeśli rozpoznana ścieżka zawsze wskazuje tę samą lokalizację.
 
-Poniższy przykład ilustruje różnicę między ścieżkami bezwzględnymi i względnymi. Przyjęto założenie, że katalog D:\FY2018\ istnieje i nie ustawił bieżącego katalogu dla D:\ w wierszu polecenia przed uruchomieniem przykładu.
+Poniższy przykład ilustruje różnicę między ścieżkami bezwzględnymi i względnymi. Przyjęto założenie, że katalog `D:\FY2018\` istnieje i nie został ustawiony bieżący katalog dla `D:\` z wiersza polecenia przed uruchomieniem przykładu.
 
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
@@ -56,8 +56,8 @@ Poniższy przykład ilustruje różnicę między ścieżkami bezwzględnymi i wz
 
 Ścieżki Universal Naming Convention (UNC), które są używane do uzyskiwania dostępu do zasobów sieciowych, mają następujący format:
 
-- Nazwa serwera lub hosta, który jest poprzedzony przez \\ \\ . Nazwa serwera może być nazwą maszyny NetBIOS lub adresem IP/FQDN (obsługiwane są również adresy IPv4 i V6).
-- Nazwa udziału, która jest oddzielona od nazwy hosta przez \\ . Razem serwer i nazwa udziału tworzą wolumin.
+- Nazwa serwera lub hosta, który jest poprzedzony przez `\\` . Nazwa serwera może być nazwą maszyny NetBIOS lub adresem IP/FQDN (obsługiwane są również adresy IPv4 i V6).
+- Nazwa udziału, która jest oddzielona od nazwy hosta przez `\` . Razem serwer i nazwa udziału tworzą wolumin.
 - Nazwa katalogu. [Znak separatora katalogu](<xref:System.IO.Path.DirectorySeparatorChar>) oddziela podkatalogi w hierarchii katalogów zagnieżdżonych.
 - Opcjonalna nazwa pliku. [Znak separatora katalogu](<xref:System.IO.Path.DirectorySeparatorChar>) oddziela ścieżkę pliku i nazwę pliku.
 
@@ -65,8 +65,8 @@ Poniżej przedstawiono kilka przykładów ścieżek UNC:
 
 |Ścieżka  |Opis  |
 | -- | -- |
-| `\\system07\C$\` | Katalog główny dysku C: na `system07` . |
-| `\\Server2\Share\Test\Foo.txt` | Plik Foo.txt w katalogu testów \\ \\ \\ woluminu udziału serwer2.|
+| `\\system07\C$\` | Katalog główny `C:` dysku na `system07` . |
+| `\\Server2\Share\Test\Foo.txt` | `Foo.txt`Plik w katalogu testowym `\\Server2\Share` woluminu.|
 
 Ścieżki UNC muszą zawsze być w pełni kwalifikowane. Mogą one zawierać względne segmenty katalogów ( `.` i `..` ), ale muszą być częścią w pełni kwalifikowanej ścieżki. Ścieżek względnych można używać tylko przez mapowanie ścieżki UNC na literę dysku.
 
@@ -101,7 +101,7 @@ Oprócz identyfikowania dysku za pomocą jego litery dysku, można zidentyfikowa
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
 
-    W przypadku urządzenia UNCs część serwer/udział tworzy wolumin. Na przykład, w programie `\\?\server1\e:\utilities\\filecomparer\` , część serwer/udział jest server1\utilities. Jest to istotne w przypadku wywołania metody, takiej jak <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> w przypadku względnych segmentów katalogu; nigdy nie jest możliwe przechodzenie poza wolumin.
+    W przypadku urządzenia UNCs część serwer/udział tworzy wolumin. Na przykład, w programie `\\?\server1\e:\utilities\\filecomparer\` , część serwer/udział jest `server1\utilities` . Jest to istotne w przypadku wywołania metody, takiej jak <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> w przypadku względnych segmentów katalogu; nigdy nie jest możliwe przechodzenie poza wolumin.
 
 Ścieżki urządzeń systemu DOS są w pełni kwalifikowane według definicji. Względne segmenty katalogu ( `.` i `..` ) są niedozwolone. Bieżące katalogi nigdy nie są wprowadzane do ich użycia.
 
@@ -122,7 +122,7 @@ Prawie wszystkie ścieżki przesyłane do interfejsów API systemu Windows są z
 - Oblicza składniki katalogu względnego ( `.` dla bieżącego katalogu i `..` dla katalogu nadrzędnego).
 - Przycina określone znaki.
 
-Ta normalizacja występuje niejawnie, ale można ją jawnie, wywołując <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metodę, która zawija wywołanie [funkcji GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). Możesz również wywołać [funkcję GetFullPathName systemu Windows ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) bezpośrednio przy użyciu metody P/Invoke.
+Ta normalizacja występuje niejawnie, ale można ją jawnie, wywołując <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metodę, która zawija wywołanie  [funkcji GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). Możesz również wywołać [funkcję GetFullPathName systemu Windows ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) bezpośrednio przy użyciu metody P/Invoke.
 
 ### <a name="identify-the-path"></a>Zidentyfikuj ścieżkę
 
@@ -146,7 +146,7 @@ Jeśli ścieżka to starsze urządzenie systemu DOS, takie jak `CON` , `COM1` lu
 
 ### <a name="apply-the-current-directory"></a>Zastosuj bieżący katalog
 
-Jeśli ścieżka nie jest w pełni kwalifikowana, system Windows stosuje bieżący katalog. UNCs i ścieżki urządzeń nie mają zastosowanego bieżącego katalogu. Ani nie pełni dysku z separatorem C: \\ .
+Jeśli ścieżka nie jest w pełni kwalifikowana, system Windows stosuje bieżący katalog. UNCs i ścieżki urządzeń nie mają zastosowanego bieżącego katalogu. Ani nie pełni dysku z separatorem `C:\` .
 
 Jeśli ścieżka rozpoczyna się od pojedynczego separatora składnika, zostanie zastosowany dysk z bieżącego katalogu. Na przykład jeśli ścieżka pliku jest `\utilities` i bieżącym katalogiem jest `C:\temp\` , normalizacja produkuje `C:\utilities` .
 

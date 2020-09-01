@@ -3,12 +3,12 @@ title: Elasticsearch w aplikacjach natywnych w chmurze
 description: Dowiedz się więcej na temat dodawania funkcji wyszukiwania elastycznego do aplikacji natywnych w chmurze.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: e956f28877d88ce5279944964a877efc324918b6
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 70d1925d6b8c7bbe515ee4f178513dc61212ebce
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614087"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271805"
 ---
 # <a name="elasticsearch-in-a-cloud-native-app"></a>Elasticsearch w aplikacji natywnej w chmurze
 
@@ -36,7 +36,7 @@ W Microsoft Azure Marketplace deweloperzy mogą korzystać ze wstępnie skonfigu
 
 W tym rozdziale przedstawiono szczegółowe dane w systemach natywnych w chmurze. Rozpoczęto od różnicowania magazynu danych w aplikacjach monolitycznych ze wzorcami magazynu danych w systemach natywnych w chmurze. Oglądamy wzorce danych zaimplementowane w systemach natywnych w chmurze, w tym zapytania międzyusługowe, transakcje rozproszone i wzorce, aby zająć się systemami o dużej pojemności. Korzystamy z kodu SQL z danymi NoSQL. Znaleźliśmy dostępne opcje przechowywania danych na platformie Azure, które obejmują opcje skoncentrowane na firmie Microsoft i w trybie Open Source. Wreszcie omawiamy buforowanie i Elasticsearch w aplikacji natywnej w chmurze.
 
-### <a name="references"></a>Dokumentacja
+### <a name="references"></a>Odwołania
 
 - [Wzorzec podziału odpowiedzialności polecenia i zapytania (CQRS)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
 
@@ -74,7 +74,7 @@ W tym rozdziale przedstawiono szczegółowe dane w systemach natywnych w chmurze
 
 - [Vitess](https://vitess.io/)
 
-- [Elasticsearch: Ostateczny Przewodnik](http://shop.oreilly.com/product/0636920028505.do)
+- [Elasticsearch: Ostateczny Przewodnik](https://shop.oreilly.com/product/0636920028505.do)
   
 - [Wprowadzenie do oprogramowania Apache Lucene](https://www.baeldung.com/lucene)
 

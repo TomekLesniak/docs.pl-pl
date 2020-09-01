@@ -2,12 +2,12 @@
 title: Zdarzenia domeny. Projektowanie i implementacja
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Uzyskaj szczegółowy widok zdarzeń domeny, kluczową koncepcję do ustanowienia komunikacji między agregacjami.
 ms.date: 10/08/2018
-ms.openlocfilehash: 630bd0a0b060431e565df98faa77f452e2045fa2
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0cc2072408e110d94b47bd47a9c337a604d4c1a3
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144308"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271779"
 ---
 # <a name="domain-events-design-and-implementation"></a>Zdarzenia w domenie: projektowanie i implementacja
 
@@ -71,7 +71,7 @@ Z drugiej strony, jeśli używasz zdarzeń domeny, możesz utworzyć szczegóło
 2. Odbierz polecenie w programie obsługi poleceń.
    - Wykonaj pojedynczą transakcję agregacji.
    - Obowiązkowe Podnieś zdarzenia domeny dla efektów ubocznych (na przykład OrderStartedDomainEvent).
-3. Obsługa zdarzeń domeny (w ramach bieżącego procesu), które będą wykonywały otwartą liczbę efektów ubocznych w wielu agregacjach lub akcjach aplikacji. Przykład:
+3. Obsługa zdarzeń domeny (w ramach bieżącego procesu), które będą wykonywały otwartą liczbę efektów ubocznych w wielu agregacjach lub akcjach aplikacji. Na przykład:
    - Zweryfikuj lub Utwórz kupującego i metodę płatności.
    - Tworzenie i wysyłanie powiązanego zdarzenia integracji do usługi Event Bus w celu propagowania Stanów dla mikrousług lub wyzwalania akcji zewnętrznych, takich jak wysyłanie wiadomości e-mail do kupującego.
    - Obsługuj inne efekty uboczne.
@@ -130,7 +130,7 @@ Należy tu zaznaczyć, że jeśli zdarzenia domeny mają być obsługiwane async
 
 Następnym pytaniem jest to, jak podnieść zdarzenie domeny, aby docierał do jego powiązanych programów obsługi zdarzeń. Można użyć wielu metod.
 
-UDI Dahan pierwotnie proponowane (na przykład w kilku powiązanych wpisach, takich jak [zdarzenia domeny — Zrób 2](http://udidahan.com/2008/08/25/domain-events-take-2/)) przy użyciu klasy statycznej do zarządzania i wywoływania zdarzeń. Może to obejmować klasę statyczną o nazwie DomainEvents, która wywołuje zdarzenia domeny natychmiast po wywołaniu, przy użyciu składni podobnej do `DomainEvents.Raise(Event myEvent)` . Jimmy Bogard zapisał wpis w blogu ([wzmacnianie domeny: zdarzenia domeny](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)), która zaleca podobne podejście.
+UDI Dahan pierwotnie proponowane (na przykład w kilku powiązanych wpisach, takich jak [zdarzenia domeny — Zrób 2](https://udidahan.com/2008/08/25/domain-events-take-2/)) przy użyciu klasy statycznej do zarządzania i wywoływania zdarzeń. Może to obejmować klasę statyczną o nazwie DomainEvents, która wywołuje zdarzenia domeny natychmiast po wywołaniu, przy użyciu składni podobnej do `DomainEvents.Raise(Event myEvent)` . Jimmy Bogard zapisał wpis w blogu ([wzmacnianie domeny: zdarzenia domeny](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)), która zaleca podobne podejście.
 
 Jednak gdy klasa zdarzenia domeny jest statyczna, to również natychmiast wysyła do programów obsługi. Dzięki temu testy i debugowanie są trudniejsze, ponieważ programy obsługi zdarzeń z logiką efektów ubocznych są wykonywane natychmiast po wywołaniu zdarzenia. Podczas testowania i debugowania należy skoncentrować się na tym, co dzieje się w przypadku bieżących klas agregujących; nie chcesz nagle przekierowywać do innych programów obsługi zdarzeń w przypadku efektów ubocznych związanych z innymi agregacjami lub logiką aplikacji. Jest to dlatego, że inne podejścia zostały rozwinięte, jak wyjaśniono w następnej sekcji.
 
@@ -344,7 +344,7 @@ Jak wspomniano, użyj zdarzeń domeny w celu jawnego implementowania efektów ub
 
 Aplikacja referencyjna używa [MediatR](https://github.com/jbogard/MediatR) do propagowania zdarzeń domeny synchronicznie w ramach agregacji w ramach jednej transakcji. Jednak można również użyć pewnej implementacji AMQP, takiej jak [RabbitMQ](https://www.rabbitmq.com/) lub [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) do propagowania zdarzeń domeny asynchronicznie, przy użyciu spójności ostatecznej, jak wspomniano powyżej, należy wziąć pod uwagę potrzebę działań kompensacyjnych w razie awarii.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Greg Young. Co to jest zdarzenie domeny?** \
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf#page=25>
