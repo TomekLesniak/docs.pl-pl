@@ -1,5 +1,6 @@
 ---
-title: rosnąco — odwołanie do języka C#
+description: Ogólne informacje dotyczące języka C#
+title: Ogólne informacje dotyczące języka C#
 ms.date: 07/20/2015
 f1_keywords:
 - ascending
@@ -7,23 +8,23 @@ f1_keywords:
 helpviewer_keywords:
 - ascending keyword [C#]
 ms.assetid: 57fbb619-8187-481c-b68e-3a91996fde69
-ms.openlocfilehash: 975d004296ace3dc4cebabc41e166a0722288bee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f131cc94824f6c975c65b2d63875197115e01511
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713797"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89140805"
 ---
-# <a name="ascending-c-reference"></a><span data-ttu-id="71e91-102">ascending (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="71e91-102">ascending (C# Reference)</span></span>
-<span data-ttu-id="71e91-103">Kontekstowe `ascending` słowo kluczowe jest używane w [orderby klauzuli](./orderby-clause.md) w wyrażeniach kwerendy, aby określić, że kolejność sortowania jest od najmniejszego do największego.</span><span class="sxs-lookup"><span data-stu-id="71e91-103">The `ascending` contextual keyword is used in the [orderby clause](./orderby-clause.md) in query expressions to specify that the sort order is from smallest to largest.</span></span> <span data-ttu-id="71e91-104">Ponieważ `ascending` jest to domyślna kolejność sortowania, nie trzeba jej określać.</span><span class="sxs-lookup"><span data-stu-id="71e91-104">Because `ascending` is the default sort order, you do not have to specify it.</span></span>  
+# <a name="ascending-c-reference"></a><span data-ttu-id="9aa45-103">ascending (odwołanie w C#)</span><span class="sxs-lookup"><span data-stu-id="9aa45-103">ascending (C# Reference)</span></span>
+<span data-ttu-id="9aa45-104">`ascending`Kontekstowe słowo kluczowe jest używane w [klauzuli OrderBy](./orderby-clause.md) w wyrażeniach zapytania, aby określić, że kolejność sortowania jest od najmniejszych do największych.</span><span class="sxs-lookup"><span data-stu-id="9aa45-104">The `ascending` contextual keyword is used in the [orderby clause](./orderby-clause.md) in query expressions to specify that the sort order is from smallest to largest.</span></span> <span data-ttu-id="9aa45-105">Ponieważ `ascending` jest to domyślny porządek sortowania, nie trzeba go określać.</span><span class="sxs-lookup"><span data-stu-id="9aa45-105">Because `ascending` is the default sort order, you do not have to specify it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="71e91-105">Przykład</span><span class="sxs-lookup"><span data-stu-id="71e91-105">Example</span></span>  
- <span data-ttu-id="71e91-106">W poniższym przykładzie `ascending` przedstawiono użycie w [orderby klauzuli](./orderby-clause.md).</span><span class="sxs-lookup"><span data-stu-id="71e91-106">The following example shows the use of `ascending` in an [orderby clause](./orderby-clause.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="9aa45-106">Przykład</span><span class="sxs-lookup"><span data-stu-id="9aa45-106">Example</span></span>  
+ <span data-ttu-id="9aa45-107">W poniższym przykładzie pokazano użycie `ascending` w [klauzuli OrderBy](./orderby-clause.md).</span><span class="sxs-lookup"><span data-stu-id="9aa45-107">The following example shows the use of `ascending` in an [orderby clause](./orderby-clause.md).</span></span>  
   
 [!code-csharp[csrefKeywordsContextual#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#14)]
   
-## <a name="see-also"></a><span data-ttu-id="71e91-107">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="71e91-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9aa45-108">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="9aa45-108">See also</span></span>
 
-- [<span data-ttu-id="71e91-108">Odwołanie do języka C#</span><span class="sxs-lookup"><span data-stu-id="71e91-108">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="71e91-109">LINQ w C#</span><span class="sxs-lookup"><span data-stu-id="71e91-109">LINQ in C#</span></span>](../../linq/index.md)
-- [<span data-ttu-id="71e91-110">descending</span><span class="sxs-lookup"><span data-stu-id="71e91-110">descending</span></span>](./descending.md)
+- [<span data-ttu-id="9aa45-109">Odwołanie w C#</span><span class="sxs-lookup"><span data-stu-id="9aa45-109">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="9aa45-110">LINQ w C#</span><span class="sxs-lookup"><span data-stu-id="9aa45-110">LINQ in C#</span></span>](../../linq/index.md)
+- [<span data-ttu-id="9aa45-111">descending</span><span class="sxs-lookup"><span data-stu-id="9aa45-111">descending</span></span>](./descending.md)
