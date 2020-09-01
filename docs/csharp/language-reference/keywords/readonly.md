@@ -1,4 +1,5 @@
 ---
+description: ReadOnly — słowo kluczowe — odwołanie w C#
 title: ReadOnly — słowo kluczowe — odwołanie w C#
 ms.date: 04/14/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 66a096e8831f72a2216e8ba5dd9866046504624f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b1bab5af18216fcef2162179493dbbb59e3470cf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84368624"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137178"
 ---
 # <a name="readonly-c-reference"></a>readonly (odwołanie w C#)
 
@@ -22,7 +23,7 @@ ms.locfileid: "84368624"
   
   `readonly`Nie można przypisać pola po zakończeniu konstruktora. Ta reguła ma inne konsekwencje dla typów wartości i typów referencyjnych:
   
-  - Ponieważ typy wartości bezpośrednio zawierają swoje dane, pole, które jest `readonly` typem wartości, jest niezmienne.
+  - Ponieważ typy wartości bezpośrednio zawierają swoje dane, pole, które jest  `readonly` typem wartości, jest niezmienne.
   - Ponieważ typy odwołań zawierają odwołanie do swoich danych, pole, które jest `readonly` typem referencyjnym, musi zawsze odwoływać się do tego samego obiektu. Ten obiekt nie jest niezmienny. `readonly`Modyfikator zapobiega zastąpieniu pola przez inne wystąpienie typu odwołania. Jednak modyfikator nie zapobiega modyfikowaniu danych wystąpienia pola za pośrednictwem pola tylko do odczytu.
 
   > [!WARNING]
@@ -32,7 +33,7 @@ ms.locfileid: "84368624"
 - W deklaracji elementu członkowskiego wystąpienia w typie struktury `readonly` wskazuje, że element członkowski wystąpienia nie modyfikuje stanu struktury. Aby uzyskać więcej informacji, zobacz sekcję [ `readonly` elementy członkowskie wystąpienia](../builtin-types/struct.md#readonly-instance-members) w artykule [typy struktury](../builtin-types/struct.md) .
 - W [ `ref readonly` zwracanej metodzie](#ref-readonly-return-example) `readonly` modyfikator wskazuje, że metoda zwraca odwołanie, a zapisy nie są dozwolone dla tego odwołania.
 
-`readonly struct` `ref readonly` Konteksty i zostały dodane w języku C# 7,2. `readonly`elementy członkowskie struktury zostały dodane w języku C# 8,0
+`readonly struct` `ref readonly` Konteksty i zostały dodane w języku C# 7,2. `readonly` elementy członkowskie struktury zostały dodane w języku C# 8,0
 
 ## <a name="readonly-field-example"></a>Przykład pola tylko do odczytu
 

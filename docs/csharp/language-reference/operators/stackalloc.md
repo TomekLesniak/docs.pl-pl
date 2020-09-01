@@ -1,16 +1,17 @@
 ---
+description: wyrażenie stackalloc — odwołanie w C#
 title: wyrażenie stackalloc — odwołanie w C#
 ms.date: 03/13/2020
 f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc expression [C#]
-ms.openlocfilehash: 4f20f3262b77cc2fe16480e53d13960e68d230b5
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 72d91cf9aa67957ed8e1cad5b2c4a1f3b6382c1f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916668"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136853"
 ---
 # <a name="stackalloc-expression-c-reference"></a>wyrażenie stackalloc (odwołanie w C#)
 
@@ -69,7 +70,7 @@ Korzystanie z programu `stackalloc` automatycznie włącza funkcje wykrywania pr
 
 Aby uzyskać więcej informacji, zobacz sekcję [Alokacja stosu](~/_csharplang/spec/unsafe-code.md#stack-allocation) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md) i zapoznaj się z propozycją oferta funkcji [w przypadku `stackalloc` zagnieżdżonych kontekstów](~/_csharplang/proposals/csharp-8.0/nested-stackalloc.md) .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

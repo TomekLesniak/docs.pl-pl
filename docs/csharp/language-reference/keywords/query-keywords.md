@@ -1,39 +1,40 @@
 ---
-title: Słowa kluczowe zapytania — odwołanie do języka C#
+description: Słowa kluczowe zapytania — odwołanie w C#
+title: Słowa kluczowe zapytania — odwołanie w C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - query keywords [C#]
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
-ms.openlocfilehash: 01134eda540c5141afbd11b2c89ff779da495a9a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0beea8634d13222aa18f14d79fdbd95a35cc832e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173526"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137139"
 ---
-# <a name="query-keywords-c-reference"></a>Słowa kluczowe zapytania (odwołanie do języka C#)
+# <a name="query-keywords-c-reference"></a>Słowa kluczowe zapytania (odwołanie w C#)
 
-Ta sekcja zawiera kontekstowe słowa kluczowe używane w wyrażeniach kwerend.
+Ta sekcja zawiera kontekstowe słowa kluczowe używane w wyrażeniach zapytań.
 
 ## <a name="in-this-section"></a>W tej sekcji
 
 |Klauzula|Opis|
 |------------|-----------------|
-|[Z](from-clause.md)|Określa źródło danych i zmienną zakresu (podobną do zmiennej iteracji).|
-|[Gdzie](where-clause.md)|Filtruje elementy źródłowe na podstawie jednego lub większej liczby `&&` <code>&#124;&#124;</code> wyrażeń logicznych oddzielonych operatorami logicznymi and AND i OR ( lub ).|
-|[Wybierz](select-clause.md)|Określa typ i kształt, które elementy w zwróconej sekwencji będą miały podczas wykonywania kwerendy.|
-|[Grupa](group-clause.md)|Grupy kwerendy wyniki zgodnie z określoną wartością klucza.|
-|[Do](into.md)|Zawiera identyfikator, który może służyć jako odwołanie do wyników sprzężenia, grupy lub select klauzuli.|
-|[Orderby](orderby-clause.md)|Sortuje wyniki kwerendy w kolejności rosnącej lub malejącej na podstawie domyślnego porównania dla typu elementu.|
-|[join](join-clause.md)|Łączy dwa źródła danych na podstawie porównania równości między dwoma określonymi kryteriami dopasowywania.|
-|[Niech](let-clause.md)|Wprowadza zmienną zakresu do przechowywania wyników wyrażenia podrzędnego w wyrażeniu kwerendy.|
-|[Cala](in.md)|Kontekstowe słowo kluczowe w klauzuli [sprzężenia.](join-clause.md)|
-|[Na](on.md)|Kontekstowe słowo kluczowe w klauzuli [sprzężenia.](join-clause.md)|
-|[equals](equals.md)|Kontekstowe słowo kluczowe w klauzuli [sprzężenia.](join-clause.md)|
-|[Przez](by.md)|Kontekstowe słowo kluczowe w klauzuli [grupy.](group-clause.md)|
-|[ascending](ascending.md)|Kontekstowe słowo kluczowe w [klauzuli orderby.](orderby-clause.md)|
-|[descending](descending.md)|Kontekstowe słowo kluczowe w [klauzuli orderby.](orderby-clause.md)|
+|[wniosek](from-clause.md)|Określa źródło danych i zmienną zakresu (podobnie jak Zmienna iteracji).|
+|[miejscu](where-clause.md)|Filtruje elementy źródłowe na podstawie jednego lub kilku wyrażeń logicznych oddzielonych operatorami logicznymi i i lub ( `&&` lub <code>&#124;&#124;</code> ).|
+|[zaznaczenia](select-clause.md)|Określa typ i kształt, które elementy w zwracanej sekwencji będą miały miejsce, gdy zapytanie zostanie wykonane.|
+|[Group](group-clause.md)|Grupuje wyniki zapytania zgodnie z określoną wartością klucza.|
+|[przekształca](into.md)|Dostarcza identyfikator, który może być używany jako odwołanie do wyników klauzuli join, Group lub SELECT.|
+|[OrderBy](orderby-clause.md)|Sortuje wyniki zapytania w porządku rosnącym lub malejącym w oparciu o domyślną funkcję porównującą dla typu elementu.|
+|[Złącza](join-clause.md)|Łączy dwa źródła danych na podstawie porównania równości między dwoma określonymi kryteriami dopasowywania.|
+|[wpuść](let-clause.md)|Wprowadza zmienną zakresu do przechowywania wyników podwyrażenia w wyrażeniu zapytania.|
+|[podczas](in.md)|Kontekstowe słowo kluczowe w klauzuli [Join](join-clause.md) .|
+|[z](on.md)|Kontekstowe słowo kluczowe w klauzuli [Join](join-clause.md) .|
+|[equals](equals.md)|Kontekstowe słowo kluczowe w klauzuli [Join](join-clause.md) .|
+|[by](by.md)|Kontekstowe słowo kluczowe w klauzuli [Group](group-clause.md) .|
+|[ascending](ascending.md)|Kontekstowe słowo kluczowe w klauzuli [OrderBy](orderby-clause.md) .|
+|[descending](descending.md)|Kontekstowe słowo kluczowe w klauzuli [OrderBy](orderby-clause.md) .|
 
 ## <a name="see-also"></a>Zobacz też
 
