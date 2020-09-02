@@ -1,37 +1,37 @@
 ### YamlMime:Landing
-title: F#łączoną
-summary: Dowiedz się, F# jak napisać dowolną aplikację przy użyciu języka programowania na platformie .NET.
+title: Dokumentacja języka F#
+summary: 'Dowiedz się, jak napisać dowolną aplikację przy użyciu języka programowania F # na platformie .NET.'
 metadata:
-  title: F#docs — wprowadzenie, samouczki, dokumentacja.
-  description: Naucz F# się programistyczne — dla deweloperów F#nowych i doświadczonych F# /deweloperów platformy .NET
+  title: 'Dokumentacja języka F # — wprowadzenie, samouczki, dokumentacja.'
+  description: 'Poznaj programowanie w języku F # — dla deweloperów Nowość w języku F # i doświadczonych deweloperów języka F #/platformy .NET'
   ms.topic: landing-page
   author: cartermp
   ms.author: phcart
-  ms.date: 11/25/2019
-  ms.openlocfilehash: 113a99d75f77cba56639abf485bf646155f0ff36
-  ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+  ms.date: 08/29/2020
+  ms.openlocfilehash: 7d7f9492bcd41975616ddd4d8f552aea5217b2d7
+  ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 11/28/2019
-  ms.locfileid: "74569496"
+  ms.lasthandoff: 09/01/2020
+  ms.locfileid: "89271857"
 landingContent:
-- title: Dowiedz się więcej na temat programuF#
+- title: 'Naucz się programować w języku F #'
   linkLists:
   - linkListType: get-started
     links:
-    - text: Co to F#jest?
+    - text: 'Co to jest F #?'
       url: what-is-fsharp.md
     - text: Instalowanie języka F#
       url: get-started/install-fsharp.md
-    - text: Wprowadzenie F# do programu Visual Studio
+    - text: 'Wprowadzenie do języka F # w programie Visual Studio'
       url: get-started/get-started-visual-studio.md
-    - text: Rozpoczynanie pracy F# z usługą w Visual Studio Code
+    - text: 'Wprowadzenie do języka F # w Visual Studio Code'
       url: get-started/get-started-vscode.md
   - linkListType: download
     links:
-    - text: Pobierz zestaw .NET Core SDK
+    - text: Pobieranie zestawu .NET Core SDK
       url: https://dotnet.microsoft.com/download
-- title: F#podstawy
+- title: 'Podstawy języka F #'
   linkLists:
   - linkListType: overview
     links:
@@ -51,19 +51,19 @@ landingContent:
       url: style-guide/conventions.md
   - linkListType: tutorial
     links:
-    - text: Programowanie asynchroniczne wF#
+    - text: 'Programowanie asynchroniczne w F #'
       url: tutorials/asynchronous-and-concurrent-programming/async.md
-- title: Nowe funkcje w programieF#
+- title: 'Nowe funkcje w języku F #'
   linkLists:
   - linkListType: whats-new
     links:
-    - text: Co nowego w F# 4,7
+    - text: 'Co nowego w języku F # 4,7'
       url: whats-new/fsharp-47.md
-    - text: Co nowego w F# 4,6
+    - text: 'Co nowego w języku F # 4,6'
       url: whats-new/fsharp-46.md
-    - text: Co nowego w F# 4,5
+    - text: 'Co nowego w języku F # 4,5'
       url: whats-new/fsharp-45.md
-- title: F#Dokumentacja języka
+- title: Materiały referencyjne dotyczące języka F#
   linkLists:
   - linkListType: reference
     links:
@@ -75,5 +75,11 @@ landingContent:
       url: language-reference/symbol-and-operator-reference/index.md
     - text: Funkcje
       url: language-reference/functions/index.md
-    - text: F#Typ
+    - text: 'Typy języka F #'
       url: language-reference/fsharp-types.md
+- title: 'Podstawowe informacje o bibliotece języka F #'
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Dokumentacja interfejsu API FSharp. Core
+      url: https://fsharp.github.io/fsharp-core-docs/
