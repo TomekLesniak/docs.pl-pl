@@ -2,12 +2,12 @@
 title: Bloki konstrukcyjne programów C# "
 description: Dowiedz się więcej o elementach członkowskich, wyrażeniach i instrukcjach języka C#. Typy zawierają składowe, które są zapisywane. Te elementy członkowskie są kompilowane z instrukcji i wyrażeń.
 ms.date: 08/06/2020
-ms.openlocfilehash: 142fe7b5a3424a8925638bfb4e4437392347f4c6
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 3bdc6a4da6ae76148c7d1d5cb8ccb65d91fda61a
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268143"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358820"
 ---
 # <a name="program-building-blocks"></a>Bloki konstrukcyjne programu
 
@@ -30,7 +30,7 @@ Poniższa lista zawiera przegląd rodzajów elementów członkowskich, które mo
 - **Finalizatory**: akcje wykonywane przed wystąpieniem klasy są trwale odrzucone
 - **Typy**: typy zagnieżdżone zadeklarowane przez klasę
 
-## <a name="accessibility"></a>Dostępność
+## <a name="accessibility"></a>Ułatwienia dostępu
 
 Każdy element członkowski klasy ma skojarzoną dostępność, która kontroluje regiony tekstu programu, które mogą uzyskać dostęp do elementu członkowskiego. Istnieje sześć możliwych form ułatwień dostępu. Modyfikatory dostępu są zestawione poniżej.
 
@@ -137,7 +137,7 @@ Gdy deklaracja metody wystąpienia zawiera `virtual` modyfikator, metoda jest uz
 
 Gdy wywoływana jest metoda wirtualna, *typem czasu wykonywania* wystąpienia, dla którego odbywa się wywołanie określa rzeczywistą implementację metody do wywołania. W wywołaniu metody niewirtualnej *Typ czasu kompilacji* wystąpienia jest czynnikiem decydującym.
 
-Metoda wirtualna może zostać *przesłonięta* w klasie pochodnej. Gdy deklaracja metody wystąpienia zawiera modyfikator przesłonięcia, metoda zastępuje dziedziczonej metody wirtualnej tą samą sygnaturą. Deklaracja metody wirtualnej AA wprowadza nową metodę. Deklaracja metody przesłonięcia specjalizacji istniejącej dziedziczonej metody wirtualnej przez podanie nowej implementacji tej metody.
+Metoda wirtualna może zostać *przesłonięta* w klasie pochodnej. Gdy deklaracja metody wystąpienia zawiera modyfikator przesłonięcia, metoda zastępuje dziedziczonej metody wirtualnej tą samą sygnaturą. Deklaracja metody wirtualnej wprowadza nową metodę. Deklaracja metody przesłonięcia specjalizacji istniejącej dziedziczonej metody wirtualnej przez podanie nowej implementacji tej metody.
 
 *Metoda abstrakcyjna* jest metodą wirtualną bez implementacji. Metoda abstrakcyjna jest zadeklarowana z `abstract` modyfikatorem i jest dozwolona tylko w klasie abstrakcyjnej. Metoda abstrakcyjna musi zostać przesłonięta w każdej nieabstrakcyjnej klasie pochodnej.
 
@@ -173,7 +173,7 @@ Poniższy przykład pokazuje klasę generyczną o nazwie `MyList<T>` , która im
 
 :::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListExample":::
 
-### <a name="constructors"></a>Konstruktorów
+### <a name="constructors"></a>Konstruktory
 
 C# obsługuje zarówno wystąpienie, jak i konstruktory statyczne. *Konstruktor wystąpienia* jest członkiem, który implementuje akcje wymagane do zainicjowania wystąpienia klasy. *Statyczny Konstruktor* jest członkiem, który implementuje akcje wymagane do zainicjowania samej klasy podczas pierwszego ładowania.
 
@@ -193,8 +193,6 @@ Właściwość jest zadeklarowana jako pole, z tą różnicą, że deklaracja ko
 
 Metoda dostępu get odpowiada metodzie bez parametrów z wartością zwracaną typu właściwości. Metoda dostępu zestawu odpowiada metodzie z pojedynczym parametrem o nazwie Value i bez zwracanego typu. Metoda dostępu get oblicza wartość właściwości. Metoda dostępu set udostępnia nową wartość właściwości. Gdy właściwość jest obiektem docelowym przypisania lub operandem `++` lub `--` , metoda dostępu set jest wywoływana. W innych przypadkach, w których właściwość jest przywoływana, metoda dostępu get jest wywoływana.
 
- Gdy właściwość jest przywoływana jako element docelowy przypisania lub jako operand + + lub--, metoda dostępu set jest wywoływana z argumentem, który udostępnia nową wartość.
-
 `MyList<T>`Klasa deklaruje dwie właściwości `Count` i `Capacity` , które są tylko do odczytu i odczytu i zapisu. Poniższy kod stanowi przykład użycia tych właściwości:
 
 :::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="AccessProperties":::
@@ -203,7 +201,7 @@ Podobnie jak pola i metody, C# obsługuje zarówno właściwości wystąpienia, 
 
 Metody dostępu właściwości mogą być wirtualne. Gdy Deklaracja właściwości zawiera `virtual` `abstract` modyfikator, lub `override` , ma zastosowanie do akcesorów właściwości.
 
-### <a name="indexers"></a>Indeksatory
+### <a name="indexers"></a>Indexers (Indeksatory)
 
 *Indeksator* jest członkiem, który umożliwia indeksowanie obiektów w taki sam sposób jak w przypadku tablicy. Indeksator jest zadeklarowany jak właściwość, z tą różnicą, że po nazwie składowej `this` następuje lista parametrów zapisywana między ogranicznikami `[` i `]` . Parametry są dostępne w metodach dostępu indeksatora. Podobnie jak w przypadku właściwości, indeksatory mogą być tylko do odczytu i zapisu, tylko do odczytu i do zapisu, a Akcesory dla indeksatora mogą być wirtualne.
 

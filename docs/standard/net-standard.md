@@ -5,12 +5,12 @@ ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: b52d69756d85e3e422b798c3ac7d53de3b538b8d
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e96a03ca55682d3e30bc13fb20a8e443105301fc
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167410"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359314"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -92,7 +92,7 @@ Specyfikacja nie jest pojedyncza, ale przyrostowo rośnie i liniowo zestaw inter
 
 .NET Standard nie jest specyficzna dla żadnej z implementacji platformy .NET ani nie jest zgodna ze schematem przechowywania wersji żadnego z tych środowisk.
 
-Interfejsy API dodane do dowolnych implementacji (takich jak .NET Framework, .NET Core i mono) mogą być uznawane za kandydatów do dodania do specyfikacji, szczególnie jeśli są uważane za podstawę. Nowe [wersje .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) są tworzone na podstawie wydań implementacji platformy .NET, co umożliwia kierowanie nowych interfejsów API przy użyciu .NET Standard PCL. Informacje o wersji Mechanics są opisane bardziej szczegółowo w temacie [Versioning .NET Core](../core/versions/index.md).
+Interfejsy API dodane do dowolnej implementacji platformy .NET (na przykład .NET Framework, .NET Core i mono) mogą być uznawane za kandydatów do dodania do specyfikacji, szczególnie jeśli są uważane za podstawę. Nowe [wersje .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) są tworzone na podstawie wydań implementacji platformy .NET, co umożliwia kierowanie nowych interfejsów API za pomocą .NET Standard przenośnej biblioteki klas (PCL). Informacje o wersji Mechanics są opisane bardziej szczegółowo w temacie [Versioning .NET Core](../core/versions/index.md).
 
 Obsługa wersji .NET Standard jest ważna w przypadku użycia. Mając .NET Standard wersję, można użyć bibliotek przeznaczonych dla tej samej lub niższej wersji. Poniższe podejście opisuje przepływ pracy służący do używania .NET Standard PCLs, charakterystyczny dla .NET Standard określania wartości docelowej.
 
@@ -141,25 +141,25 @@ Wynikających
 
 Zgodność PCL oparta na profilach jest zapewniana przez pakiet NuGet [Microsoft. Core. Portable. Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) . Ta zależność jest wymagana w przypadku odwoływania się do pakietów NuGet, które zawierają PCLs oparte na profilach.
 
-PCLs spakowane na podstawie profilu jako `netstandard` łatwiejsze do użycia niż zwykle spakowane PCLs oparte na profilach. `netstandard`Pakowanie jest zgodne z istniejącymi użytkownikami.
+PCLs spakowane na podstawie profilu jako `netstandard` łatwiejsze do użycia niż zwykle spakowane PCLs oparte na profilach. `netstandard` Pakowanie jest zgodne z istniejącymi użytkownikami.
 
 Można wyświetlić zestaw profilów PCL, które są zgodne z .NET Standard:
 
 | Profil PCL | .NET Standard | Platformy PCL
 |:-----------:|:-------------:|------------------------------------------------------------------------------
-| Profile7    | 1.1           | .NET Framework 4,5, Windows 8
-| Profile31   | 1.0           | Windows 8.1, Windows Phone Silverlight 8,1
-| Profile32   | 1.2           | Windows 8.1, Windows Phone 8,1
-| Profile44   | 1.2           | .NET Framework 4.5.1, Windows 8.1
-| Profile49   | 1.0           | .NET Framework 4,5, Windows Phone Silverlight 8
-| Profile78   | 1.0           | .NET Framework 4,5, Windows 8, Windows Phone Silverlight 8
-| Profile84   | 1.0           | Windows Phone 8,1, Windows Phone Silverlight 8,1
-| Profile111  | 1.1           | .NET Framework 4,5, Windows 8, Windows Phone 8,1
-| Profile151  | 1.2           | .NET Framework 4.5.1, Windows 8.1, Windows Phone 8,1
-| Profile157  | 1.0           | Windows 8.1, Windows Phone 8,1, Windows Phone Silverlight 8,1
-| Profile259  | 1.0           | .NET Framework 4,5, Windows 8, Windows Phone 8,1, Windows Phone Silverlight 8
+| Profile7    | 1,1           | .NET Framework 4,5, Windows 8
+| Profile31   | 1,0           | Windows 8.1, Windows Phone Silverlight 8,1
+| Profile32   | 1,2           | Windows 8.1, Windows Phone 8,1
+| Profile44   | 1,2           | .NET Framework 4.5.1, Windows 8.1
+| Profile49   | 1,0           | .NET Framework 4,5, Windows Phone Silverlight 8
+| Profile78   | 1,0           | .NET Framework 4,5, Windows 8, Windows Phone Silverlight 8
+| Profile84   | 1,0           | Windows Phone 8,1, Windows Phone Silverlight 8,1
+| Profile111  | 1,1           | .NET Framework 4,5, Windows 8, Windows Phone 8,1
+| Profile151  | 1,2           | .NET Framework 4.5.1, Windows 8.1, Windows Phone 8,1
+| Profile157  | 1,0           | Windows 8.1, Windows Phone 8,1, Windows Phone Silverlight 8,1
+| Profile259  | 1,0           | .NET Framework 4,5, Windows 8, Windows Phone 8,1, Windows Phone Silverlight 8
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wersje .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md)
 - [Kompilowanie biblioteki .NET Standard](../core/tutorials/library-with-visual-studio.md)

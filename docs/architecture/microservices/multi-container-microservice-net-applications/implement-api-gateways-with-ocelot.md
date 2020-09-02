@@ -2,12 +2,12 @@
 title: Wdrażanie bram interfejsu API za pomocą rozwiązania Ocelot
 description: Dowiedz się, jak zaimplementować bramy interfejsu API za pomocą Ocelot oraz jak używać Ocelot w środowisku opartym na kontenerach.
 ms.date: 03/02/2020
-ms.openlocfilehash: f103c1e394a3f829489b61fd17af749798b02f70
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3611ffa7a163ff632ca854fafb910fcd3e228306
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864101"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358989"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementowanie bram interfejsu API za pomocą Ocelot
 
@@ -15,6 +15,7 @@ ms.locfileid: "86864101"
 > [EShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) aplikacji mikrousługi referencyjnej używa obecnie funkcji dostarczonych przez [wysłannika](https://www.envoyproxy.io/) do implementowania bramy interfejsu API zamiast wcześniejszego odwołania do [Ocelot](https://github.com/ThreeMammals/Ocelot).
 > Ten wybór projektu został dokonany z powodu wbudowanej obsługi protokołu WebSocket w programie wysłannika, wymaganej przez nową komunikację między usługami gRPC zaimplementowaną w eShopOnContainers.
 > Ta sekcja w przewodniku została jednak zachowana, dlatego można rozważyć Ocelot jako prostą, łatwą i uproszczoną bramę interfejsu API odpowiednią do scenariuszy klasy produkcyjnej.
+> Ponadto Najnowsza wersja Ocelot zawiera nieprzerwaną zmianę w schemacie JSON. Rozważ użycie Ocelot < v 16.0.0 lub użycie tras kluczowych zamiast retras.
 
 ## <a name="architect-and-design-your-api-gateways"></a>Architekt i projektowanie bram interfejsu API
 
@@ -154,7 +155,7 @@ W eShopOnContainers, jej implementacja bramy interfejsu API to ASP.NET Core pros
 
 **Rysunek 6-32**. Projekt podstawowy OcelotApiGw w eShopOnContainers
 
-Ten ASP.NET Core Project WebHost jest zasadniczo zbudowany przy użyciu dwóch prostych plików: `Program.cs` i `Startup.cs` .
+Ten ASP.NET Core Project WebHost jest zasadniczo zbudowany przy użyciu dwóch prostych plików:  `Program.cs` i `Startup.cs` .
 
 Program.cs musi utworzyć i skonfigurować typowe ASP.NET Core BuildWebHost.
 
@@ -544,13 +545,13 @@ Posiadanie warstwy Nginx w Kubernetes przed aplikacjami sieci Web, a kilka bram 
 
 Ruch przychodzący Kubernetes działa jako zwrotny serwer proxy dla całego ruchu do aplikacji, w tym aplikacji sieci Web, które zwykle znajdują się poza zakresem bramy interfejsu API. Gdy wdrażasz eShopOnContainers w usłudze _Kubernetes,_ uwidaczniamy tylko kilka usług lub punktów końcowych za pośrednictwem transferu danych przychodzących, zasadniczo Poniższa lista przyrostów adresów URL:
 
-- `/`dla aplikacji sieci Web SPA klienta
-- `/webmvc`dla aplikacji sieci Web Client MVC
-- `/webstatus`dla aplikacji sieci Web klienta pokazującej stan/healthchecks
-- `/webshoppingapigw`w przypadku procesów biznesowych BFF i zakupów w sieci Web
-- `/webmarketingapigw`dla BFF sieci Web i marketingu procesów roboczych
-- `/mobileshoppingapigw`dla procesów biznesowych Mobile BFF i zakupów
-- `/mobilemarketingapigw`dla mobilnych BFF i marketingu procesów roboczych
+- `/` dla aplikacji sieci Web SPA klienta
+- `/webmvc` dla aplikacji sieci Web Client MVC
+- `/webstatus` dla aplikacji sieci Web klienta pokazującej stan/healthchecks
+- `/webshoppingapigw` w przypadku procesów biznesowych BFF i zakupów w sieci Web
+- `/webmarketingapigw` dla BFF sieci Web i marketingu procesów roboczych
+- `/mobileshoppingapigw` dla procesów biznesowych Mobile BFF i zakupów
+- `/mobilemarketingapigw` dla mobilnych BFF i marketingu procesów roboczych
 
 Podczas wdrażania programu do Kubernetes każda Brama interfejsu API Ocelot korzysta z innego pliku "configuration.json" dla każdego z nich, na _których działają bramy_ interfejsu API. Te pliki "configuration.json" są udostępniane przez zainstalowanie (oryginalnie ze skryptem deploy.ps1) wolumin utworzony w oparciu o _mapę konfiguracji_ Kubernetes o nazwie "Ocelot". Każdy kontener instaluje związany z nim plik konfiguracji w folderze kontenera o nazwie `/app/configuration` .
 

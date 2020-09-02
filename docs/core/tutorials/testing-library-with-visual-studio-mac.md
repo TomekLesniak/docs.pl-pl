@@ -2,12 +2,12 @@
 title: Testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu Visual Studio dla komputerów Mac
 description: Utwórz projekt testu jednostkowego dla biblioteki klas .NET Core. Sprawdź, czy biblioteka klas .NET Core działa prawidłowo z testami jednostkowymi.
 ms.date: 06/08/2020
-ms.openlocfilehash: a183049623df44cbb8c4abd47ce6e78d91adae12
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: d3c8a5e01d16047949e977f3af6a429970d996d0
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713610"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359223"
 ---
 # <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu programu Visual Studio
 
@@ -15,7 +15,7 @@ W tym samouczku pokazano, jak zautomatyzować testy jednostkowe przez dodanie pr
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współdziała z rozwiązaniem tworzonym w temacie [Tworzenie biblioteki .NET standard w Visual Studio dla komputerów Mac](library-with-visual-studio-mac.md).
+- Ten samouczek współdziała z rozwiązaniem tworzonym w temacie [Tworzenie biblioteki .NET standard przy użyciu Visual Studio dla komputerów Mac](library-with-visual-studio-mac.md).
 
 ## <a name="create-a-unit-test-project"></a>Tworzenie projektu testu jednostkowego
 
@@ -23,7 +23,7 @@ Testy jednostkowe zapewniają zautomatyzowane testowanie oprogramowania podczas 
 
 1. Rozpocznij Visual Studio dla komputerów Mac.
 
-1. Otwórz `ClassLibraryProjects` rozwiązanie utworzone w obszarze [tworzenie biblioteki .NET Standard w Visual Studio dla komputerów Mac](library-with-visual-studio-mac.md).
+1. Otwórz `ClassLibraryProjects` rozwiązanie utworzone w temacie [Tworzenie .NET Standard biblioteki przy użyciu Visual Studio dla komputerów Mac](library-with-visual-studio-mac.md).
 
 1. W konsoli **rozwiązania** <kbd>naciśnij klawisz Ctrl</kbd> `ClassLibraryProjects` i kliknij rozwiązanie, a następnie wybierz pozycję **Dodaj**  >  **Nowy projekt**.
 
@@ -73,7 +73,7 @@ Aby projekt testowy mógł współpracował z `StringLibrary` klasą, Dodaj odwo
 
 ## <a name="add-and-run-unit-test-methods"></a>Dodawanie i uruchamianie metod testów jednostkowych
 
-Gdy program Visual Studio uruchamia test jednostkowy, wykonuje każdą metodę, która jest oznaczona <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atrybutem w klasie, która jest oznaczona <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atrybutem. Metoda testowa kończy się po znalezieniu pierwszego błędu lub gdy wszystkie testy zawarte w metodzie zakończyły się powodzeniem.
+Gdy program Visual Studio uruchamia test jednostkowy, wykonuje każdą metodę, która jest oznaczona <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atrybutem w klasie, która jest oznaczona  <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atrybutem. Metoda testowa kończy się po znalezieniu pierwszego błędu lub gdy wszystkie testy zawarte w metodzie zakończyły się powodzeniem.
 
 Najczęstsze testy wywołują elementy członkowskie <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> klasy. Wiele metod Assert obejmuje co najmniej dwa parametry, z których jeden jest oczekiwany wynik testu, a drugi jest rzeczywistym wynikiem testu. `Assert`W poniższej tabeli przedstawiono niektóre z najczęściej wywoływanych metod:
 
@@ -186,4 +186,4 @@ W przypadku opublikowania biblioteki jako pakietu NuGet inne osoby mogą ją zai
 Biblioteka nie musi być dystrybuowana jako pakiet. Można go powiązać z aplikacją konsolową, która go używa. Aby dowiedzieć się, jak opublikować aplikację konsolową, zobacz wcześniejszy samouczek w tej serii:
 
 > [!div class="nextstepaction"]
-> [Publikowanie aplikacji konsolowej .NET Core za pomocą Visual Studio dla komputerów Mac](publishing-with-visual-studio-mac.md)
+> [Publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac](publishing-with-visual-studio-mac.md)

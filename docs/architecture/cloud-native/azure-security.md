@@ -2,12 +2,12 @@
 title: Zabezpieczenia platformy Azure dla aplikacji natywnych w chmurze
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Zabezpieczenia platformy Azure dla natywnych aplikacji w chmurze
 ms.date: 05/13/2020
-ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 7780b005d84124f202049deeb5be876364e6c5fa
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557649"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358976"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpieczenia platformy Azure dla aplikacji natywnych w chmurze
 
@@ -139,7 +139,7 @@ Zakres może być tak wąski jako pojedynczy zasób lub można go zastosować do
 
 Podczas testowania, jeśli podmiot zabezpieczeń ma określone uprawnienie, połączenie roli i zakresu jest brane pod uwagę. Ta kombinacja zapewnia zaawansowany mechanizm autoryzacji.
 
-## <a name="deny"></a>Zablokuj
+## <a name="deny"></a>Deny
 
 Wcześniej reguły RBAC były dozwolone tylko dla reguł "Zezwalaj". Takie zachowanie jest skomplikowane dla kompilowania niektórych zakresów. Na przykład zezwolenie na dostęp podmiotu zabezpieczeń do wszystkich kont magazynu z wyjątkiem jednego wymaganego przyznania jawnego uprawnienia do potencjalnie nieograniczonej listy kont magazynu. Za każdym razem, gdy nowe konto magazynu zostało utworzone, należy je dodać do tej listy kont. To dodatkowe obciążenie związane z zarządzaniem, które nie było pożądane.
 
@@ -147,7 +147,7 @@ Reguły odmowy mają pierwszeństwo przed regułami Zezwalaj. Teraz reprezentuj�
 
 ## <a name="checking-access"></a>Sprawdzanie dostępu
 
-Jak można wyobrazić, posiadanie dużej liczby ról i zakresów może sprawiać, że efektywne uprawnienia jednostki usługi są dość trudne. Piling reguły odmowy na tym, tylko w celu zwiększenia złożoności. Na szczęście istnieje Kalkulator uprawnień, który może wyświetlać czynne uprawnienia dla każdej jednostki usługi. Zazwyczaj znajduje się on na karcie IAM w portalu, jak pokazano na rysunku 10-3.
+Jak można wyobrazić, posiadanie dużej liczby ról i zakresów może sprawiać, że efektywne uprawnienia jednostki usługi są dość trudne. Piling reguły odmowy na tym, tylko w celu zwiększenia złożoności. Na szczęście istnieje [Kalkulator uprawnień](https://docs.microsoft.com/azure/role-based-access-control/check-access) , który może wyświetlać czynne uprawnienia dla każdej jednostki usługi. Zazwyczaj znajduje się on na karcie IAM w portalu, jak pokazano na rysunku 10-3.
 
 ![Rysunek 9-4 Kalkulator uprawnień dla usługi App Service](./media/check-rbac.png)
 

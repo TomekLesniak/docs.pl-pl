@@ -1,5 +1,5 @@
 ---
-title: Co nowego w Visual Basic
+title: Co nowego?
 ms.date: 10/24/2018
 f1_keywords:
 - VB.StartPage.WhatsNew
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: a9bac04a7839796229a2e1c61771ca32573f8fcd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e9ab745a60cd9eb646bee57a9a6838c30add77c5
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84374515"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359210"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co nowego w Visual Basic
 
@@ -45,7 +45,7 @@ Visual Basic/Visual Studio 2013 \
 Wersje zapoznawcze technologii .NET Compiler Platform ("Roslyn")
 
 Visual Basic/Visual Studio 2012 \
-`Async`i `await` słowa kluczowe, Iteratory, atrybuty informacji o wywołującym
+`Async` i `await` słowa kluczowe, Iteratory, atrybuty informacji o wywołującym
 
 Visual Basic, Visual Studio 2010 \
 Właściwości zaimplementowane przez autoimplementację, Inicjatory kolekcji, niejawne kontynuacja wiersza, dynamiczne, ogólne, proste/odchylenia, globalny dostęp do przestrzeni nazw
@@ -64,7 +64,7 @@ Pierwsze wydanie Visual Basic .NET
 
 ## <a name="visual-basic-160"></a>Visual Basic 16,0
 
-Visual Basic 16,0 koncentruje się na dostarczaniu większej liczby funkcji środowiska uruchomieniowego Visual Basic (Microsoft. VisualBasic. dll) do programu .NET Core i to pierwsza wersja Visual Basic skoncentrowana na platformie .NET Core. Wiele części środowiska uruchomieniowego Visual Basic jest zależne od WinForms i zostaną dodane do nowszej wersji Visual Basic.
+Visual Basic 16,0 koncentruje się na dostarczaniu większej liczby funkcji środowiska uruchomieniowego Visual Basic (microsoft.visualbasic.dll) do programu .NET Core i to pierwsza wersja Visual Basic skoncentrowana na platformie .NET Core. Wiele części środowiska uruchomieniowego Visual Basic jest zależne od WinForms i zostaną dodane do nowszej wersji Visual Basic.
 
 **Komentarze są dozwolone w większej liczbie miejsc w instrukcjach**
 
@@ -124,7 +124,7 @@ Na przykład następujące wywołanie metody ma dwa argumenty pozycyjne między 
 StudentInfo.Display("Mary", age:=19, #9/21/1998#)
 ```
 
-[`Private Protected`Modyfikator dostępu składowej](../language-reference/modifiers/private-protected.md)
+[`Private Protected` Modyfikator dostępu składowej](../language-reference/modifiers/private-protected.md)
 
 Ta nowa kombinacja słów kluczowych definiuje element członkowski, który jest dostępny dla wszystkich elementów członkowskich w jego klasie zawierającej, a także typów pochodzących od klasy zawierającej, ale tylko wtedy, gdy znajdują się one również w zawierającym go zestawie. Ponieważ struktury nie mogą być dziedziczone, `Private Protected` można je stosować tylko do elementów członkowskich klasy.
 
@@ -220,7 +220,7 @@ Można testować pod kątem wartości null w bardzo jasny sposób składni przed
 
 [Wielowierszowe literały ciągów](../programming-guide/language-features/strings/string-basics.md)
 
-Literały ciągu mogą zawierać sekwencje nowego wiersza.  Nie potrzebujesz już starego obejścia z używania`<xml><![CDATA[...text with newlines...]]></xml>.Value`
+Literały ciągu mogą zawierać sekwencje nowego wiersza.  Nie potrzebujesz już starego obejścia z używania `<xml><![CDATA[...text with newlines...]]></xml>.Value`
 
 **Komentarze**
 
@@ -242,7 +242,7 @@ Właściwości interfejsu ReadOnly można zaimplementować przy użyciu właści
 
 Aby zwiększyć czytelność kodu, można teraz użyć `TypeOf` programu z `IsNot` .
 
-[Ostrzeżenie #Disable \<ID> i #Enable\<ID>](../language-reference/directives/index.md)
+[Ostrzeżenie #Disable \<ID> i #Enable \<ID>](../language-reference/directives/index.md)
 
 Można wyłączyć i włączyć określone ostrzeżenia dla regionów w pliku źródłowym.
 
