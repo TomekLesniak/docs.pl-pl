@@ -1,178 +1,180 @@
 ---
-title: Mikrousług .NET. architektura konteneryzowanych aplikacji .NET
-description: Architektura mikrousług platformy .NET dla konteneryzowanych aplikacji .NET | Mikrousługi są usługi modułowe i niezależnie wdrażalne. Kontenery platformy Docker (dla systemów Linux i Windows) upraszczają wdrażanie i testowanie, łącząc usługę i jej zależności w jedną jednostkę, która jest następnie uruchamiana w odizolowanym środowisku.
-ms.date: 01/30/2020
-ms.openlocfilehash: 9cdd5556f92e1acde540b647e7b68628a3ecf67f
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+title: Mikrousługi platformy .NET. architektura konteneryzowanych aplikacji .NET
+description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Mikrousługi są modularne i niezależnie do wdrożenia usługi. Kontenery platformy Docker (dla systemów Linux i Windows) upraszczają wdrażanie i testowanie poprzez zgrupowanie usługi i jej zależności w pojedynczą jednostkę, która jest uruchamiana w środowisku izolowanym.
+ms.date: 09/02/2020
+ms.openlocfilehash: aea5012fee102f388827d146043e69592e14f22b
+ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988794"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89379138"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikrousługi .NET: architektura konteneryzowanych aplikacji .NET
 
-![Okładka książki](./media/cover-small.png)
+![Pokrycie książki](./media/cover-small.png)
 
-**EDITION v3.1** - Zaktualizowano do ASP.NET Core 3.1
+**Wersja 3.1.2** — zaktualizowane do ASP.NET Core 3,1
 
-Ten przewodnik jest wprowadzenie do tworzenia aplikacji opartych na mikrousług i zarządzania nimi przy użyciu kontenerów. Omówiono w nim metody projektowania i implementacji architektury przy użyciu kontenerów .NET Core i Docker.
+Ten przewodnik stanowi wprowadzenie do tworzenia aplikacji opartych na mikrousługach i zarządzania nimi przy użyciu kontenerów. Omówiono podejścia projektowania i implementacji architektury przy użyciu programu .NET Core i kontenerów platformy Docker.
 
-Aby ułatwić rozpoczęcie pracy, przewodnik koncentruje się na aplikacji konteneryzowanej i opartej na mikrousługach, którą można eksplorować. Aplikacja referencyjna jest dostępna w repozytorium [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) GitHub.
+Aby ułatwić rozpoczęcie pracy, przewodnik koncentruje się na odniesieniu do aplikacji opartej na kontenerach i mikrousługach, które można eksplorować. Aplikacja referencyjna jest dostępna w repozytorium GitHub [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) .
 
-## <a name="action-links"></a>Łącza akcji
+## <a name="action-links"></a>Linki akcji
 
-- Ten e-book jest również dostępny w formacie PDF (tylko w wersji angielskiej) [Pobierz](https://aka.ms/microservicesebook)
+- Ta książka elektroniczna jest również dostępna w formacie PDF (tylko wersja w języku angielskim [).](https://aka.ms/microservicesebook)
 
-- Klonuj/rozwidli aplikację referencyjną [eShopOnContainers w usłudze GitHub](https://github.com/dotnet-architecture/eShopOnContainers)
+- Klonowanie/rozwidlenie aplikacji referencyjnej [eShopOnContainers w witrynie GitHub](https://github.com/dotnet-architecture/eShopOnContainers)
 
-- Obejrzyj [film wprowadzający na kanale 9](https://aka.ms/microservices-video)
+- Obejrzyj [film wprowadzający w witrynie Channel 9](https://aka.ms/microservices-video)
 
-- Zapoznaj się z [architekturą mikrousług](https://aka.ms/MicroservicesArchitecture) od razu
+- Uzyskaj informacje o [architekturze mikrousług](https://aka.ms/MicroservicesArchitecture) od razu
 
 ## <a name="introduction"></a>Wprowadzenie
 
-Przedsiębiorstwa coraz częściej zdają sobie sprawę z oszczędności kosztów, rozwiązywania problemów z wdrażaniem oraz ulepszania operacji devops i produkcyjnych przy użyciu kontenerów. Firma Microsoft wypuszcza innowacje kontenerów dla systemów Windows i Linux, tworząc produkty, takie jak usługa Azure Kubernetes i sieć szkieletowa azure, oraz współpracując z liderami branży, takimi jak Docker, Mesosphere i Kubernetes. Produkty te dostarczają rozwiązania kontenerowe, które pomagają firmom tworzyć i wdrażać aplikacje w chmurze z szybkością i skalą, niezależnie od ich wyboru platformy lub narzędzi.
+Przedsiębiorstwa są coraz bardziej kosztowne, rozwiązując problemy z wdrażaniem i ulepszają operacje DevOps i produkcyjne przy użyciu kontenerów. Firma Microsoft wyłączyła innowacje dotyczące kontenerów dla systemów Windows i Linux, tworząc produkty takie jak Azure Kubernetes Service i Azure Service Fabric, a przez partnerskie liderów branżowych, takich jak Docker, mesosphere i Kubernetes. Te produkty dostarczają rozwiązania kontenerów, które ułatwiają firmom Kompilowanie i wdrażanie aplikacji na dużą skalę i skalowalność, niezależnie od ich wyboru platformy lub narzędzi.
 
-Docker staje się de facto standardem w branży kontenerów, obsługiwanym przez najważniejszych dostawców w ekosystemach windows i linux. (Firma Microsoft jest jednym z głównych dostawców chmury obsługujących platformę Docker). W przyszłości docker będzie prawdopodobnie wszechobecne w dowolnym centrum danych w chmurze lub lokalnie.
+Platforma Docker staje się niefaktycznym standardem w branży kontenerów, która jest obsługiwana przez najbardziej znaczących dostawców w ekosystemach systemów Windows i Linux. (Firma Microsoft jest jednym z głównych dostawców chmury obsługujących platformę Docker). W przyszłości platforma Docker będzie prawdopodobnie ogólnie oparta na dowolnym centrum danych w chmurze lub lokalnie.
 
-Ponadto architektura [mikrousług](https://martinfowler.com/articles/microservices.html) pojawia się jako ważne podejście do rozproszonych aplikacji o znaczeniu krytycznym. W architekturze opartej na mikrousługach aplikacja jest oparta na kolekcji usług, które można opracować, przetestować, wdrożyć i wersjona niezależnie.
+Ponadto architektura [mikrousług](https://martinfowler.com/articles/microservices.html) pojawia się jako ważne podejście do rozproszonych aplikacji o krytycznym znaczeniu. W architekturze mikrousług aplikacja jest tworzona na podstawie kolekcji usług, które mogą być opracowane, przetestowane, wdrożone i niezależne od wersji.
 
 ## <a name="about-this-guide"></a>O tym przewodniku
 
-Ten przewodnik jest wprowadzenie do tworzenia aplikacji opartych na mikrousług i zarządzania nimi przy użyciu kontenerów. Omówiono w nim metody projektowania i implementacji architektury przy użyciu kontenerów .NET Core i Docker. Aby ułatwić rozpoczęcie pracy z kontenerów i mikrousług, przewodnik koncentruje się na odwołanie konteneryzowanych i aplikacji opartych na mikrousługach, które można eksplorować. Przykładowa aplikacja jest dostępna w repozytorium [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) GitHub.
+Ten przewodnik stanowi wprowadzenie do tworzenia aplikacji opartych na mikrousługach i zarządzania nimi przy użyciu kontenerów. Omówiono podejścia projektowania i implementacji architektury przy użyciu programu .NET Core i kontenerów platformy Docker. Aby ułatwić rozpoczęcie pracy z kontenerami i mikrousług, przewodnik koncentruje się na odwołaniach do aplikacji opartych na kontenerach i mikrousługach, które można eksplorować. Przykładowa aplikacja jest dostępna w repozytorium GitHub [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) .
 
-Ten przewodnik zawiera podstawowe wskazówki dotyczące rozwoju i architektury przede wszystkim na poziomie środowiska programistycznego z naciskiem na dwie technologie: Docker i .NET Core. Naszym zamiarem jest przeczytanie tego przewodnika, gdy myślisz o projekcie aplikacji bez koncentrowania się na infrastrukturze (w chmurze lub lokalnie) środowiska produkcyjnego. Decyzje dotyczące infrastruktury podejmą później podczas tworzenia aplikacji gotowych do produkcji. W związku z tym ten przewodnik ma być niezależny od infrastruktury i bardziej zorientowane na środowisko rozwoju.
+Ten przewodnik zawiera podstawowe wskazówki dotyczące programowania i architektury w środowisku programistycznym, które koncentrują się na dwóch technologiach: Docker i .NET Core. Naszym zamiarem jest zapoznanie się z tym przewodnikiem, gdy myślisz o projekcie aplikacji bez skoncentrowania się na infrastrukturze (w chmurze lub lokalnie) w środowisku produkcyjnym. Decyzje o infrastrukturze będą podejmowane później, podczas tworzenia aplikacji gotowych do produkcji. W związku z tym ten przewodnik jest przeznaczony dla infrastruktury niezależny od i większej ilości środowiska programistycznego.
 
-Po zapoznaniu się z tym przewodnikiem następnym krokiem będzie zapoznanie się z mikrousługami gotowymi do produkcji na platformie Microsoft Azure.
+Po przeprowadzeniu tego przewodnika następnym krokiem jest zapoznanie się z mikrousługami gotowymi do produkcji na Microsoft Azure.
 
 ## <a name="version"></a>Wersja
 
-Ten przewodnik został zmieniony w celu uwzględnienia wersji **.NET Core 3.1** wraz z wieloma dodatkowymi aktualizacjami związanymi z tą samą "falą" technologii (czyli platformy Azure i dodatkowych technologii innych firm) zbiegającą się w czasie z wydaniem .NET Core 3.1. Dlatego wersja książki została również zaktualizowana do wersji **3.1**.
+Ten przewodnik został zmieniony w celu uwzględnienia wersji **programu .NET Core 3,1** wraz z wieloma dodatkowymi aktualizacjami związanymi z tym samymi "" Wave "technologiami (czyli platformą Azure i dodatkowymi technologiami innych firm), które są zgodne z wersją platformy .net Core 3,1. Dlatego też wersja książki została zaktualizowana do wersji **3,1**.
 
-## <a name="what-this-guide-does-not-cover"></a>Co ten przewodnik nie obejmuje
+## <a name="what-this-guide-does-not-cover"></a>Czym nie obejmuje ten przewodnik
 
-Ten przewodnik nie koncentruje się na cyklu życia aplikacji, DevOps, potoki ciągłej integracji/ciągłego wdrażania lub pracy zespołowej. Uzupełniający przewodnik [Konteneryzowany cykl życia aplikacji platformy Docker z platformą i narzędziami firmy Microsoft](https://aka.ms/dockerlifecycleebook) koncentruje się na tym temacie. Bieżący przewodnik również nie zawiera szczegółów implementacji infrastruktury platformy Azure, takich jak informacje na temat określonych koordynatorów.
+Ten przewodnik nie koncentruje się na potoku cyklu życia aplikacji, DevOps, ciągłej integracji/ciągłego wdrażania lub pracy zespołu. Przewodnik uzupełniający [zadokowany cykl życia aplikacji platformy Docker z platformą i narzędziami firmy Microsoft](https://aka.ms/dockerlifecycleebook) koncentrują się na tym temacie. Bieżący przewodnik nie zawiera również szczegółowych informacji dotyczących implementacji infrastruktury platformy Azure, takich jak informacje dotyczące określonych koordynatorów.
 
 ### <a name="additional-resources"></a>Zasoby dodatkowe
 
-- **Konteneryzowany cykl życia aplikacji platformy Docker za pomocą platformy Microsoft i narzędzi** (e-book do pobrania)  
+- **Cykl życia aplikacji platformy Docker w kontenerze z platformą i narzędziami firmy Microsoft (do** pobrania książek elektronicznych)  
     <https://aka.ms/dockerlifecycleebook>
 
 ## <a name="who-should-use-this-guide"></a>Kto powinien korzystać z tego przewodnika
 
-Napisaliśmy ten przewodnik dla deweloperów i architektów rozwiązań, którzy są nowicjuszami w tworzeniu aplikacji opartych na platformie Docker i architekturze opartej na mikrousługach. Ten przewodnik jest dla Ciebie, jeśli chcesz dowiedzieć się, jak projektować, projektować i implementować aplikacje proof-of-concept za pomocą technologii programisty firmy Microsoft (ze szczególnym uwzględnieniem programu .NET Core) i kontenerów platformy Docker.
+Ten przewodnik został napisany dla deweloperów i architektów rozwiązań, które są nowe dla tworzenia aplikacji opartych na platformie Docker oraz architektury opartej na mikrousługach. Ten przewodnik jest przeznaczony dla Ciebie, jeśli chcesz dowiedzieć się, jak architektować, projektować i wdrażać aplikacje do weryfikacji koncepcji za pomocą technologii programistycznych firmy Microsoft (ze specjalnym skoncentrowaniem się na platformie .NET Core) i z kontenerami platformy Docker.
 
-Ten przewodnik jest również przydatny, jeśli jesteś decydentem technicznym, takim jak architekt przedsiębiorstwa, który chce przeglądu architektury i technologii, zanim zdecydujesz, jakie podejście wybrać dla nowych i nowoczesnych aplikacji rozproszonych.
+Ten przewodnik będzie również przydatny, jeśli jesteś specjalistą ds. decyzji, na przykład z architektem przedsiębiorstwa, który chce zapoznać się z architekturą i technologią, przed podjęciem decyzji o wyborze podejścia do nowych i nowoczesnych aplikacji rozproszonych.
 
 ### <a name="how-to-use-this-guide"></a>Jak korzystać z tego przewodnika
 
-Pierwsza część tego przewodnika przedstawia kontenery platformy Docker, omówiono sposób wyboru między .NET Core i .NET Framework jako platformę rozwoju i zawiera omówienie mikrousług. Ta zawartość jest dla architektów i decydentów technicznych, którzy chcą przeglądu, ale nie trzeba skupić się na szczegóły implementacji kodu.
+Pierwsza część tego przewodnika zawiera wprowadzenie do kontenerów platformy Docker, w jaki sposób można wybrać platformę .NET Core i .NET Framework jako strukturę programistyczną oraz Omówienie mikrousług. Ta zawartość jest przeznaczony dla architektów i osób podejmujących decyzje techniczne, którzy chcą zapoznać się z omówieniem, ale nie muszą skupić się na szczegółach implementacji kodu.
 
-Druga część przewodnika rozpoczyna się od [procesu osiągnięć dla aplikacji opartych na platformie Docker.](./docker-application-development-process/index.md) Koncentruje się na rozwoju i wzorców mikrousług do implementowania aplikacji przy użyciu platformy .NET Core i platformy Docker. Ta sekcja będzie najbardziej interesujące dla deweloperów i architektów, którzy chcą skupić się na kod i wzorce i szczegóły implementacji.
+Druga część przewodnika rozpoczyna się od [procesu opracowywania aplikacji opartych na platformie Docker](./docker-application-development-process/index.md) . Koncentruje się na wzorcach deweloperskich i mikrousług związanych z wdrażaniem aplikacji przy użyciu oprogramowania .NET Core i Docker. Ta sekcja będzie najbardziej interesująca dla deweloperów i architektów, którzy chcą skupić się na kodzie oraz o wzorcach i szczegółach implementacji.
 
 ## <a name="related-microservice-and-container-based-reference-application-eshoponcontainers"></a>Powiązana mikrousługa i aplikacja referencyjna oparta na kontenerach: eShopOnContainers
 
-Aplikacja eShopOnContainers jest aplikacją referencyjną typu open source dla platformy .NET Core i mikrousług, która jest przeznaczona do wdrażania przy użyciu kontenerów platformy Docker. Aplikacja składa się z wielu podsystemów, w tym kilku frontów interfejsu użytkownika sklepu internetowego (aplikacji MVC sieci Web, web SPA i natywnej aplikacji mobilnej). Zawiera również mikrousług zaplecza i kontenerów dla wszystkich wymaganych operacji po stronie serwera.
+Aplikacja eShopOnContainers to aplikacja referencyjna Open Source dla platformy .NET Core i mikrousług, która została zaprojektowana do wdrożenia przy użyciu kontenerów platformy Docker. Aplikacja składa się z wielu podsystemów, w tym kilku frontonów interfejsu użytkownika poczty e-mail (aplikacji sieci Web MVC, SPA sieci Web i natywnej aplikacji mobilnej). Obejmuje ona również mikrousługi i kontenery zaplecza dla wszystkich wymaganych operacji po stronie serwera.
 
-Celem aplikacji jest zaprezentowanie wzorców architektonicznych. **NIE JEST SZABLONEM GOTOWYM** DO PRODUKCJI, aby uruchamiać aplikacje w świecie rzeczywistym. W zasadzie aplikacja jest w stanie stałej wersji beta, ponieważ służy również do testowania nowych potencjalnie interesujących technologii, gdy się pojawiają.
+Celem aplikacji jest zaprezentowanie wzorców architektonicznych. **Nie jest to szablon gotowy** do uruchomienia aplikacji w rzeczywistości. W rzeczywistości aplikacja jest w stanie stałego stanu beta, ponieważ jest również używana do testowania nowych potencjalnie interesujących technologii w miarę ich wyświetlania.
 
-## <a name="send-us-your-feedback"></a>Napisz do nas!
+## <a name="send-us-your-feedback"></a>Wyślij nam swoją opinię!
 
-Napisaliśmy ten przewodnik, aby pomóc Ci zrozumieć architekturę konteneryzowanych aplikacji i mikrousług w .NET. Przewodnik i powiązana aplikacja referencyjna będą ewoluować, więc czekamy na Twoją opinię! Jeśli masz uwagi dotyczące tego przewodnika można <https://aka.ms/ebookfeedback>ulepszyć, prześlij opinię na .
+Utworzyliśmy ten przewodnik, aby ułatwić zrozumienie architektury aplikacji i mikrousług w programie .NET. Przewodnik i powiązana aplikacja referencyjna będą rozwijane, więc będziemy nam powitać Twoją opinię. Jeśli masz komentarze dotyczące tego, jak można ulepszyć ten przewodnik, Prześlij opinię na temat <https://aka.ms/ebookfeedback> .
 
 ## <a name="credits"></a>Środki
 
 Współautorzy:
 
-> **Cesar de la Torre**, Sr. PM, zespół produktów .NET, Microsoft Corp.
+> **Cesar de La Torre**, SR. PM, zespół produktu .NET, Microsoft Corp.
 >
-> **Bill Wagner**, Sr. Content Developer, C+E, Microsoft Corp.
+> **Bill Wagner**, SR. Content Developer, C + E, Microsoft Corp.
 >
-> **Mike Rousos**, główny inżynier oprogramowania, zespół DevDiv CAT, Microsoft
+> **Jan Rousos**, główny inżynier ds. oprogramowania, DevDiv kot, firma Microsoft
 
-Edytory:
+Edytory
 
-> **Michał Papież**
+> **Jan Pope**
 >
 > **Steve Hoag**
 
 Uczestnicy i recenzenci:
 
-> **Jeffrey Richter**, Partner Software Eng, zespół platformy Azure, Microsoft
+> **Jeffrey Richter**, partner Software aparatu, Azure Team, Microsoft
 >
-> **Jimmy Bogard**, Chief Architect w: Headspring
+> **Jimmy Bogard**, główny architekt w headspring
 >
-> **Udi Dahan**, założyciel & CEO, Szczególne oprogramowanie
+> **UDI Dahan**, założyciel & dyrektor naczelny, szczególne oprogramowanie
 >
-> **Jimmy Nilsson**, współzałożyciel i dyrektor generalny Factor10
+> **Jimmy Nilsson**, współzałożyciel i dyrektor naczelny Factor10
 >
-> **Glenn Condron**, Sr. Program Manager, zespół ASP.NET
+> **Glenn Condron**, SR. Program Manager, zespół ASP.NET
 >
-> **Mark Fussell**, główny kierownik PM, zespół sieci szkieletowej usług Azure, Microsoft
+> **Mark Fussell**, podmiotu z potencjalnym klientem PM, Azure Service Fabric Team, Microsoft
 >
-> **Diego Vega**, PM Lead, zespół Entity Framework, Microsoft
+> **Diego Vega**, klient PM, Entity Framework zespół, Microsoft
 >
-> **Barry Dorrans**, Sr. Security Program Manager
+> **Marcin Dorrans**, SR. Security — Menedżer programów
 >
-> **Rowan Miller**, Sr. Program Manager, Microsoft
+> **Rowan Miller**, SR. Program Manager, Microsoft
 >
-> **Ankit Asthana**, Główny Menedżer PM, zespół .NET, Microsoft
+> **Autor Ankit Asthana**, kierownik ds. platformy PM, zespół .NET, Microsoft
 >
-> **Scott Hunter**, Dyrektor Handlowy PM, zespół .NET, Microsoft
+> **Scott myśliwy**, dyrektor ds. partnerów, .NET Team, Microsoft
 >
-> **Nish Anil**, Sr. Program Manager, zespół .NET, Microsoft
+> **Nish Anil**, SR. Program Manager, .NET Team, Microsoft
 >
-> **Dylan Reisenberger**, Architect and Dev Lead w: Polly
+> **Dylan Reisenberger**, architekt i dev ołów w Polly
 >
-> **Steve "ardalis" Smith** - Architekt oprogramowania i trener - [Ardalis.com](https://ardalis.com)
+> **Steve "ardalis" Smith** — architekt oprogramowania i Trainer- [Ardalis.com](https://ardalis.com)
 >
-> **Ian Cooper**, Coding Architect w: Brighter
+> **Ian Cooper**, architekt programowania na jaśniejszy
 >
-> **Unai Zorrilla**, Architekt i Dev Lead w Plain Concepts
+> **Unai Zorrilla**, architekt i dev ołów z zwykłymi pojęciami
 >
-> **Eduard Tomas**, Dev Lead w: Plain Concepts
+> **Eduard Tomas**, dev ołów z zwykłymi pojęciami
 >
-> **Ramon Tomas**, Developer w: Plain Concepts
+> **Ramon Tomas**, deweloper z zwykłymi pojęciami
 >
-> **David Sanz**, Developer w: Plain Concepts
+> **David Sanz**, deweloper z zwykłymi pojęciami
 >
-> **Javier Valero**, Chief Operating Officer w Grupo Solutio
+> **Javier Valero**, dyrektor ds. operacyjnych w Grupo Solutio
 >
-> **Pierre Proso**, Sr. Konsultant, Microsoft
+> **Pierre Millet**, SR. konsultant, Microsoft
 >
-> **Michael Friis**, Menedżer produktu, Docker Inc
+> **Michael Friis**, menedżer produktu, Docker Inc
 >
-> **Charles Lowell**, inżynier oprogramowania, zespół VS CAT, Microsoft
+> **Charles Lowell**, inżynier ds. oprogramowania, zespół programu vs Cat, Microsoft
 >
-> **Miguel Veloso**, Software Development Engineer w: Plain Concepts
+> **Miguel Veloso**, inżynier ds. opracowywania oprogramowania z zwykłymi pojęciami
+>
+> **Sumit Ghosh**, główny konsultant w firmie Neudesic
 
 ## <a name="copyright"></a>Prawa autorskie
 
 OPUBLIKOWANA PRZEZ
 
-Zespoły produktów Microsoft Developer Division, .NET i Visual Studio
+Dział deweloperów firmy Microsoft, zespoły produktów .NET i Visual Studio
 
-Oddział firmy Microsoft Corporation
+Dział firmy Microsoft Corporation
 
 One Microsoft Way
 
 Redmond, Waszyngton 98052-6399
 
-Prawa autorskie © 2020 roku przez Microsoft Corporation
+Prawa autorskie © 2020 przez firmę Microsoft Corporation
 
-Wszelkie prawa zastrzeżone. Żadna część zawartości tej książki nie może być powielana ani przekazywana w jakiejkolwiek formie lub w jakikolwiek sposób bez pisemnej zgody wydawcy.
+All rights reserved. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
 
-Książka ta jest dostarczana "tak jak jest" i wyraża poglądy i opinie autora. Poglądy, opinie i informacje wyrażone w tej książce, w tym adresy URL i inne odniesienia do stron internetowych, mogą ulec zmianie bez powiadomienia.
+Ta książka jest świadczona w postaci "AS-IS" i zawiera widoki i opinie autora. Widoki, opinie i informacje wyrażone w tej książce, w tym adresy URL i inne odwołania do witryn internetowych, mogą ulec zmianie bez powiadomienia.
 
 Niektóre z przykładów przedstawiono wyłącznie do celów informacyjnych i są one fikcyjne. Żadne rzeczywiste skojarzenia lub związki nie są zamierzone ani wnioskowane.
 
-Firma Microsoft i znaki <https://www.microsoft.com> towarowe wymienione na stronie internetowej "Znaki towarowe" są znakami towarowymi grupy firm Microsoft.
+Firma Microsoft i znaki towarowe wymienione na <https://www.microsoft.com> stronie "znaki towarowe" są znakami towarowymi grupy firm Microsoft.
 
-Mac i macOS są znakami towarowymi firmy Apple Inc.
+Komputery Mac i macOS są znakami towarowymi firmy Apple Inc.
 
-Logo docker wielorybów jest zastrzeżonym znakiem towarowym firmy Docker, Inc. Używany za zgodą.
+Logo Docker Whale jest zastrzeżonym znakiem towarowym platformy Docker, Inc. używanym przez uprawnienie.
 
-Wszystkie inne znaki i logo są własnością ich odpowiednich właścicieli.
+Wszystkie inne znaczniki i logo są własnością odpowiednich właścicieli.
 
 >[!div class="step-by-step"]
 >[Dalej](container-docker-introduction/index.md)

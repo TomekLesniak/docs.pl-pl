@@ -2,12 +2,12 @@
 title: Wykaz identyfikatorów środowiska uruchomieniowego platformy .NET Core (RID)
 description: Dowiedz się więcej o identyfikatorze środowiska uruchomieniowego (RID) i sposobie używania identyfikatorów RID w programie .NET Core.
 ms.date: 02/22/2019
-ms.openlocfilehash: 903dd9c619008c9e3c6149a471ba814bdc9c97cc
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: da8c73ef50a8933b93528e4424dff6e5ed95938d
+ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903288"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89379073"
 ---
 # <a name="net-core-rid-catalog"></a>Katalog programu .NET Core RID
 
@@ -27,15 +27,15 @@ Pojedynczy identyfikator RID można ustawić w `<RuntimeIdentifier>` elemencie p
 
 Identyfikatory RID reprezentujące konkretne systemy operacyjne zwykle są zgodne z tym wzorcem: `[os].[version]-[architecture]-[additional qualifiers]` gdzie:
 
-- `[os]`jest monikerem systemu operacyjnego/platformy. Na przykład `ubuntu`.
+- `[os]` jest monikerem systemu operacyjnego/platformy. Na przykład `ubuntu`.
 
-- `[version]`jest wersją systemu operacyjnego w postaci numeru wersji oddzielonej kropką ( `.` ). Na przykład `15.10`.
+- `[version]` jest wersją systemu operacyjnego w postaci numeru wersji oddzielonej kropką ( `.` ). Na przykład `15.10`.
 
   - Wersja nie **powinna** być wersją marketingową, ponieważ często reprezentuje wiele dyskretnych wersji systemu operacyjnego z różnymi obszarami powierzchni interfejsu API platformy.
 
-- `[architecture]`jest architekturą procesora. Na przykład: `x86` , `x64` , `arm` lub `arm64` .
+- `[architecture]` jest architekturą procesora. Na przykład: `x86` , `x64` , `arm` lub `arm64` .
 
-- `[additional qualifiers]`dalsze odróżnienie różnych platform. Na przykład: `aot`.
+- `[additional qualifiers]` dalsze odróżnienie różnych platform. Na przykład: `aot`.
 
 ## <a name="rid-graph"></a>Wykres RID
 
@@ -52,9 +52,9 @@ Poniższy przykład jest rzeczywistym wpisem `osx.10.12-x64` identyfikatora RID:
 }
 ```
 
-Powyższy identyfikator RID określa, że `osx.10.12-x64` Importy `osx.10.11-x64` . W związku z tym, gdy pakiet NuGet przywraca pakiety, próbuje znaleźć dokładne dopasowanie dla `osx.10.12-x64` pakietu. Jeśli NuGet nie może znaleźć określonego środowiska uruchomieniowego, można przywrócić pakiety, które określają `osx.10.11-x64` środowisko uruchomieniowe, na przykład.
+Powyższy identyfikator RID określa, że `osx.10.12-x64` Importy `osx.10.11-x64` . W związku z tym, gdy pakiet NuGet przywraca pakiety, próbuje znaleźć dokładne dopasowanie dla  `osx.10.12-x64` pakietu. Jeśli NuGet nie może znaleźć określonego środowiska uruchomieniowego, można przywrócić pakiety, które określają `osx.10.11-x64` środowisko uruchomieniowe, na przykład.
 
-Poniższy przykład pokazuje nieco większego wykresu RID, zdefiniowany w *runtime.jsw* pliku:
+Poniższy przykład pokazuje nieco większego wykresu RID, zdefiniowany w *runtime.jsw*  pliku:
 
 ```
     win7-x64    win7-x86
@@ -72,7 +72,7 @@ Wszystkie identyfikatory RID ostatecznie zamapują się z powrotem do głównego
 
 Istnieją pewne kwestie dotyczące identyfikatorów RID, które należy wziąć pod uwagę podczas pracy z nimi:
 
-- Identyfikatory RID są **nieprzezroczystymi ciągami** i powinny być traktowane jak czarne pola.
+- Nie próbuj analizować identyfikatorów RID, aby pobrać części składnika.
 - Nie Kompiluj identyfikatorów RID programowo.
 - Użyj identyfikatorów RID, które są już zdefiniowane dla platformy.
 - Identyfikatory RID muszą być specyficzne, więc nie założono niczego z rzeczywistej wartości RID.
@@ -115,13 +115,13 @@ Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące pla
 Wyświetlane są tylko typowe wartości. Aby uzyskać najnowszą i pełną wersję, zobacz [runtime.jsw](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) pliku w `dotnet/runtime` repozytorium. Urządzenia korzystające z dystrybucji niewymienionej poniżej mogą działać z jednym z przenośnych identyfikatorów RID. Na przykład urządzenia Raspberry Pi z dystrybucją systemu Linux, których nie ma na liście, mogą być wskazywane przez `linux-arm` .
 
 - Przenośne (.NET Core 2,0 lub nowsze wersje)
-  - `linux-x64`(Większość dystrybucji komputerów, takich jak CentOS, Debian, Fedora, Ubuntu i pochodne)
-  - `linux-musl-x64`(Lekkie dystrybucje korzystające z [MUSL](https://wiki.musl-libc.org/projects-using-musl.html) , na przykład Alpine Linux)
-  - `linux-arm`(Dystrybucje systemu Linux działające na ARM, takie jak raspbian na Raspberry Pi Model 2 +)
-  - `linux-arm64`(Dystrybucje systemu Linux uruchomione na 64-bitowych ARM, takich jak Ubuntu Server 64-bit in Raspberry Pi Model 3 +)
+  - `linux-x64` (Większość dystrybucji komputerów, takich jak CentOS, Debian, Fedora, Ubuntu i pochodne)
+  - `linux-musl-x64` (Lekkie dystrybucje korzystające z [MUSL](https://wiki.musl-libc.org/projects-using-musl.html) , na przykład Alpine Linux)
+  - `linux-arm` (Dystrybucje systemu Linux działające na ARM, takie jak raspbian na Raspberry Pi Model 2 +)
+  - `linux-arm64` (Dystrybucje systemu Linux uruchomione na 64-bitowych ARM, takich jak Ubuntu Server 64-bit in Raspberry Pi Model 3 +)
 - Red Hat Enterprise Linux
-  - `rhel-x64`(Zastąpione przez `linux-x64` dla RHEL powyżej wersji 6)
-  - `rhel.6-x64`(.NET Core 2,0 lub nowsze wersje)
+  - `rhel-x64` (Zastąpione przez `linux-x64` dla RHEL powyżej wersji 6)
+  - `rhel.6-x64` (.NET Core 2,0 lub nowsze wersje)
 - Tizen (.NET Core 2,0 lub nowszy)
   - `tizen`
   - `tizen.4.0.0`
@@ -134,7 +134,7 @@ Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące pla
 macOS RID używają starszej marki "OSX". Wyświetlane są tylko typowe wartości. Aby uzyskać najnowszą i pełną wersję, zobacz [runtime.jsw](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) pliku w `dotnet/runtime` repozytorium.
 
 - Przenośne (.NET Core 2,0 lub nowsze wersje)
-  - `osx-x64`(Minimalna wersja systemu operacyjnego to macOS 10,12 Sierra)
+  - `osx-x64` (Minimalna wersja systemu operacyjnego to macOS 10,12 Sierra)
 - macOS 10,10, Yosemite
   - `osx.10.10-x64`
 - macOS 10,11 El Capitan

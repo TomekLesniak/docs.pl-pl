@@ -1,243 +1,249 @@
 ---
 title: Typowe architektury aplikacji internetowych
-description: Architekt nowoczesnych aplikacji sieci Web z ASP.NET Core i Azure | Poznaj typowe architektury aplikacji sieci web
+description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyciu ASP.NET Core i platformy Azure | Poznaj typowe architektury aplikacji sieci Web
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: c9a8e9450d81ac2e63a8c8ea54592ed81e646e05
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: de90db9061d0b7bd15141b277ae4272b5208f76b
+ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988131"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89379164"
 ---
 # <a name="common-web-application-architectures"></a>Typowe architektury aplikacji internetowych
 
-> "Jeśli uważasz, że dobra architektura jest kosztowna, spróbuj złej architektury."  
-> _- Brian Foote i Joseph Yoder_
+> "Jeśli sądzisz, że dobra architektura jest kosztowna, wypróbuj złą architekturę".  
+> _-Brian i Joseph Yoder_
 
-Większość tradycyjnych aplikacji platformy .NET jest wdrażana jako pojedyncze jednostki odpowiadające wykonywalnej lub pojedynczej aplikacji sieci web działającej w ramach jednej domeny aplikacji usług IIS. Jest to najprostszy model wdrażania i bardzo dobrze obsługuje wiele wewnętrznych i mniejszych aplikacji publicznych. Jednak nawet biorąc pod uwagę tę pojedynczą jednostkę wdrożenia, większość nietrywialnych aplikacji biznesowych korzysta z pewnej logicznej separacji na kilka warstw.
+Większość tradycyjnych aplikacji .NET jest wdrażana jako pojedyncze jednostki odpowiadające plikowi wykonywalnemu lub pojedynczej aplikacji sieci Web uruchomionej w ramach jednej domeny AppDomain usług IIS. Jest to najprostszy model wdrażania i jest bardzo dobrze obsługujący wiele wewnętrznych i mniejszych aplikacji publicznych. Jednak nawet w przypadku tej pojedynczej jednostki wdrożenia większość aplikacji nieuproszczonych korzysta z niektórych logicznych rozbarwień na kilku warstwach.
 
 ## <a name="what-is-a-monolithic-application"></a>Co to jest aplikacja monolityczna?
 
-Monolityczne aplikacji jest taki, który jest całkowicie samodzielny, pod względem jego zachowania. Może wchodzić w interakcje z innymi usługami lub magazynami danych w trakcie wykonywania swoich operacji, ale rdzeń jego zachowania działa w ramach własnego procesu, a cała aplikacja jest zazwyczaj wdrażana jako pojedyncza jednostka. Jeśli taka aplikacja musi skalować poziomo, zazwyczaj cała aplikacja jest duplikowana na wielu serwerach lub maszynach wirtualnych.
+Aplikacja monolityczna to ta, która jest całkowicie niezależna, w warunkach jego działania. Może ona współdziałać z innymi usługami lub magazynami danych w trakcie wykonywania operacji, ale jego rdzeń jest uruchamiany w ramach własnego procesu, a cała aplikacja jest zwykle wdrażana jako pojedyncza jednostka. Jeśli taka aplikacja musi skalować w poziomie, zazwyczaj cała aplikacja jest duplikowana na wielu serwerach lub maszynach wirtualnych.
 
-## <a name="all-in-one-applications"></a>Aplikacje typu "wszystko w jednym"
+## <a name="all-in-one-applications"></a>Wszystkie aplikacje w jednym miejscu
 
-Najmniejsza możliwa liczba projektów dla architektury aplikacji jest jeden. W tej architekturze cała logika aplikacji jest zawarta w jednym projekcie, skompilowana do pojedynczego zestawu i wdrożona jako pojedyncza jednostka.
+Najmniejsza możliwa liczba projektów dla architektury aplikacji to jedna z nich. W tej architekturze Cała logika aplikacji jest zawarta w pojedynczym projekcie, skompilowana do jednego zestawu i wdrożona jako pojedyncza jednostka.
 
-Nowy projekt ASP.NET Core, utworzony w programie Visual Studio lub z wiersza polecenia, rozpoczyna się jako prosty monolit "all-in-one". Zawiera wszystkie zachowanie aplikacji, w tym logiki dostępu do prezentacji, firmy i danych. Rysunek 5-1 przedstawia strukturę plików aplikacji pojedynczego projektu.
+Nowy projekt ASP.NET Core, niezależnie od tego, czy został utworzony w programie Visual Studio, czy z wiersza polecenia, jest uruchamiany jako proste monolitu "All-in-one". Zawiera wszystkie zachowania aplikacji, w tym logiki dostępu do prezentacji, biznesowego i danych. Rysunek 5-1 przedstawia strukturę plików aplikacji pojedynczego projektu.
 
-![Pojedynczy projekt ASP.NET aplikacji Core](./media/image5-1.png)
+![Aplikacja ASP.NET Core pojedynczego projektu](./media/image5-1.png)
 
-**Rysunek 5-1.** Pojedynczy projekt ASP.NET aplikacji Core.
+**Rysunek 5-1.** Pojedynczy projekt ASP.NET Core aplikacji.
 
-W scenariuszu pojedynczego projektu oddzielenie problemów jest osiągane za pomocą folderów. Szablon domyślny zawiera oddzielne foldery dla obowiązków wzorca MVC modeli, widoków i kontrolerów, a także dodatkowe foldery dla danych i usług. W tym układzie szczegóły prezentacji powinny być ograniczone w miarę możliwości do folderu Widoki, a szczegóły implementacji dostępu do danych powinny być ograniczone do klas przechowywanych w folderze Dane. Logika biznesowa powinna znajdować się w usługach i klasach w folderze Modele.
+W scenariuszu pojedynczego projektu rozdzielenie problemów odbywa się za pomocą folderów. Szablon domyślny zawiera oddzielne foldery dla obowiązków wzorca MVC dla modeli, widoków i kontrolerów, a także dodatkowe foldery dla danych i usług. W tym rozmieszczeniu szczegóły prezentacji powinny być ograniczone możliwie jak najwięcej do folderu widoki, a szczegóły implementacji dostępu do danych powinny być ograniczone do klas przechowywanych w folderze danych. Logika biznesowa powinna znajdować się w usługach i klasach w folderze modele.
 
-Chociaż proste, jednoprojektowe rozwiązanie monolityczne ma pewne wady. Wraz ze wzrostem rozmiaru i złożoności projektu liczba plików i folderów będzie nadal rosnąć. Problemy interfejsu użytkownika (modele, widoki, kontrolery) znajdują się w wielu folderach, które nie są zgrupowane alfabetycznie. Ten problem tylko pogarsza się, gdy dodatkowe konstrukcje na poziomie interfejsu użytkownika, takie jak filtry lub ModelBinders, są dodawane w ich własnych folderach. Logika biznesowa jest rozproszona między modelami i usług folderami i nie ma wyraźnego wskazania, w których klasach, w których folderach powinny zależeć inne. Ten brak organizacji na poziomie projektu często prowadzi do [kodu spaghetti](https://deviq.com/spaghetti-code/).
+Chociaż proste, jednoprojektowe rozwiązanie monolityczne ma pewne wady. Wraz ze wzrostem rozmiaru i złożoności projektu liczba plików i folderów nadal rośnie. Problemy związane z interfejsem użytkownika (modele, widoki, kontrolery) znajdują się w wielu folderach, które nie są pogrupowane w kolejności alfabetycznej. Ten problem występuje tylko wtedy, gdy dodatkowe konstrukcje poziomu interfejsu użytkownika, takie jak filters lub ModelBinders, są dodawane do własnych folderów. Logika biznesowa jest rozproszeni między modelami i folderami usług i nie istnieje jasne wskazanie klas, w których foldery powinny być zależne od innych. Brak organizacji na poziomie projektu często prowadzi do [kodu spaghetti](https://deviq.com/spaghetti-code/).
 
-Aby rozwiązać te problemy, aplikacje często ewoluują w rozwiązania wieloprojektowe, gdzie każdy projekt jest uważany za miejsce w określonej _warstwie_ aplikacji.
+Aby rozwiązać te problemy, aplikacje często są rozłożone na rozwiązania obejmujące wiele projektów, w których każdy projekt jest traktowany jako znajdujący się w określonej _warstwie_ aplikacji.
 
 ## <a name="what-are-layers"></a>Co to są warstwy logiczne?
 
-W miarę jak aplikacje stają się coraz bardziej złożone, jednym ze sposobów zarządzania tą złożonością jest rozbicie aplikacji zgodnie z jej obowiązkami lub obawami. Wynika to z zasady separacji problemów i może pomóc utrzymać rosnącą bazę kodu zorganizowaną, dzięki czemu deweloperzy mogą łatwo znaleźć, gdzie niektóre funkcje są implementowane. Architektura warstwowa oferuje jednak wiele zalet wykraczających poza organizację kodu.
+W miarę wzrostu złożoności aplikacji jeden ze sposobów zarządzania tą złożonością polega na rozdzieleniu aplikacji zależnie od jej obowiązków lub obaw. Jest to zgodne z zasadami separacji i mogą pomóc w utrzymaniu zorganizowanej bazy kodu, dzięki czemu deweloperzy mogą łatwo znaleźć, gdzie są zaimplementowane pewne funkcje. Architektura warstwowa oferuje wiele korzyści poza organizacją kodu, chociaż.
 
-Organizując kod na warstwy, wspólne funkcje niskiego poziomu mogą być ponownie za pomocą całej aplikacji. To ponowne użycie jest korzystne, ponieważ oznacza mniej kodu musi być napisane i ponieważ może umożliwić aplikacji standaryzować na jednej implementacji, zgodnie z [zasadą don't repeat yourself (DRY).](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+Organizując kod na warstwy, typowe funkcje niskiego poziomu mogą być ponownie używane w całej aplikacji. To ponowne użycie jest korzystne, ponieważ oznacza to, że nie trzeba pisać kodu i ponieważ może on umożliwić standaryzację aplikacji w ramach jednej implementacji, zgodnie z zasadą [nie powtarzaj siebie (sucha)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) .
 
-Dzięki architekturze warstwowej aplikacje mogą wymuszać ograniczenia, na których warstwy mogą komunikować się z innymi warstwami. Pomaga to osiągnąć hermetyzację. Po zmianie lub wymianie warstwy należy mieć wpływ tylko na te warstwy, które z nią współpracują. Ograniczając warstwy, które zależą od innych warstw, wpływ zmian można złagodzić, tak aby pojedyncza zmiana nie wpływała na całą aplikację.
+W przypadku architektury warstwowej aplikacje mogą wymuszać ograniczenia dotyczące tego, które warstwy mogą komunikować się z innymi warstwami. Pomaga to w osiągnięciu hermetyzacji. Po zmianie lub wymianie warstwy należy mieć wpływ tylko na te warstwy, które z nią pracują. Ograniczając warstwy, które są zależne od tego, które warstwy, wpływ zmian można zmniejszyć, tak aby jedna zmiana nie miała wpływu na całą aplikację.
 
-Warstwy (i hermetyzacja) znacznie ułatwiają zastępowanie funkcji w aplikacji. Na przykład aplikacja może początkowo używać własnej bazy danych programu SQL Server dla trwałości, ale później można użyć strategii trwałości opartej na chmurze lub jeden za interfejsem API sieci web. Jeśli aplikacja prawidłowo hermetyzuje jego trwałości implementacji w warstwie logicznej, że SQL Server określonewarstwy mogą być zastąpione przez nowy implementując ten sam interfejs publiczny.
+Warstwy (i hermetyzacja) znacznie ułatwiają zamianę funkcji w aplikacji. Na przykład aplikacja może początkowo używać własnej SQL Server bazy danych do trwałości, ale później może zdecydować się na korzystanie z strategii trwałości opartej na chmurze lub jednej za interfejsem API sieci Web. Jeśli aplikacja prawidłowo hermetyzuje swoją implementację trwałości w obrębie warstwy logicznej, SQL Server konkretna warstwa może zostać zastąpiona przez nową, implementując ten sam interfejs publiczny.
 
-Oprócz możliwości wymiany implementacji w odpowiedzi na przyszłe zmiany w wymaganiach, warstwy aplikacji mogą również ułatwić wymianę implementacji do celów testowych. Zamiast pisać testy, które działają względem warstwy danych rzeczywistych lub warstwy interfejsu użytkownika aplikacji, warstwy te można zastąpić w czasie testowania fałszywymi implementacjami, które zapewniają znane odpowiedzi na żądania. Zazwyczaj sprawia to, że testy znacznie łatwiejsze do zapisu i znacznie szybciej uruchomić w porównaniu do uruchamiania testów w rzeczywistej infrastruktury aplikacji.
+Oprócz możliwości zamiany implementacji w odpowiedzi na przyszłe zmiany w wymaganiach, warstwy aplikacji mogą także ułatwić wymianę implementacji na potrzeby testowania. Zamiast konieczności pisania testów, które działają względem warstwy danych rzeczywistych lub warstwy interfejsu użytkownika aplikacji, te warstwy mogą zostać zastąpione w czasie testu przy użyciu fałszywych implementacji, które zapewniają znane odpowiedzi na żądania. Zwykle sprawia to, że testy znacznie ułatwiają pisanie i szybsze wykonywanie w porównaniu z uruchamianiem testów względem rzeczywistej infrastruktury aplikacji.
 
-Warstw logicznych jest powszechną techniką poprawy organizacji kodu w aplikacjach dla przedsiębiorstw i istnieje kilka sposobów, w którym kod może być zorganizowany w warstwy.
+Warstwami logicznymi jest typowa technika ulepszania organizacji kodu w aplikacjach oprogramowania dla przedsiębiorstw. istnieje kilka sposobów, w których kod może być zorganizowany do warstw.
 
 > [!NOTE]
- > _Warstwy_ reprezentują logiczne oddzielenie w aplikacji. W przypadku, gdy logika aplikacji jest fizycznie dystrybuowana do oddzielnych serwerów lub procesów, te oddzielne obiekty docelowe wdrożenia fizycznego są określane jako _warstwy_. Jest możliwe i dość powszechne, aby mieć N-Layer aplikacji, która jest wdrażana w jednej warstwie.
+ > _Warstwy_ reprezentują logiczne separacje w aplikacji. W przypadku, gdy logika aplikacji jest fizycznie dystrybuowana do oddzielnych serwerów lub procesów, te oddzielne elementy docelowe wdrożenia są określane jako _warstwy_. Jest to możliwe, i dość często, aby mieć aplikację N-warstwową, która jest wdrażana w jednej warstwie.
 
 ## <a name="traditional-n-layer-architecture-applications"></a>Tradycyjne aplikacje architektury "N-Layer"
 
-Najbardziej powszechna organizacja logiki aplikacji na warstwy jest pokazana na rysunku 5-2.
+Najbardziej powszechną organizacją logiki aplikacji do warstw przedstawiono na rysunku 5-2.
 
 ![Typowe warstwy aplikacji](./media/image5-2.png)
 
 **Rysunek 5-2.** Typowe warstwy aplikacji.
 
-Warstwy te są często skracane jako UI, BLL (Business Logic Layer) i DAL (Data Access Layer). Korzystając z tej architektury, użytkownicy żądają za pośrednictwem warstwy interfejsu użytkownika, która współdziała tylko z biblioteką BLL. Logika logiki z kolei można wywołać dal dla żądań dostępu do danych. Warstwa interfejsu użytkownika nie należy bezpośrednio żądać żadnych żądań do warstwy DAL, ani nie powinien wchodzić w interakcje z trwałości bezpośrednio za pomocą innych środków. Podobnie logiki biznesowej należy wchodzić w interakcje z trwałości, przechodząc przez dal. W ten sposób każda warstwa ma swoją dobrze znaną odpowiedzialność.
+Te warstwy są często skracane jako interfejs użytkownika, LOGIKI biznesowej (warstwa logiki biznesowej) i DAL (warstwa dostępu do danych). Korzystając z tej architektury, użytkownicy wysyłają żądania za pośrednictwem warstwy interfejsu użytkownika, które współdziałają tylko z LOGIKI biznesowej. LOGIKI biznesowej z kolei może wywoływać DAL dla żądań dostępu do danych. Warstwa interfejsu użytkownika nie powinna bezpośrednio wykonywać żadnych żądań do DAL, ani nie powinna być współpracująca z trwałością bezpośrednio za pośrednictwem innych metod. Podobnie LOGIKI biznesowej powinna współistnieć z trwałością, przechodząc przez DAL. W ten sposób każda warstwa ma własną dobrze znaną odpowiedzialność.
 
-Jedną z wad tego tradycyjnego podejścia warstwowego jest to, że zależności w czasie kompilacji są uruchamiane od góry do dołu. Oznacza to, że warstwa interfejsu użytkownika zależy od logiki biznesowej, która zależy od warstwy DAL. Oznacza to, że logika logiki, która zwykle posiada najważniejszą logikę w aplikacji, zależy od szczegółów implementacji dostępu do danych (i często od istnienia bazy danych). Testowanie logiki biznesowej w takiej architekturze jest często trudne, wymagające testowej bazy danych. Zasada inwersji zależności może służyć do rozwiązania tego problemu, jak zobaczysz w następnej sekcji.
+Jedną z wadą tego tradycyjnego podejścia do warstw jest to, że zależności czasu kompilacji są uruchamiane od góry do dołu. Oznacza to, że warstwa interfejsu użytkownika zależy od LOGIKI biznesowej, która zależy od DAL. Oznacza to, że LOGIKI biznesowej, który zwykle zawiera najważniejsze logiki w aplikacji, zależy od szczegółów implementacji dostępu do danych (i często w przypadku istnienia bazy danych). Testowanie logiki biznesowej w takiej architekturze jest często trudne i wymaga testowej bazy danych. Zasady Inversion dotyczącej zależności mogą służyć do rozwiązywania tego problemu, jak widać w następnej sekcji.
 
-Rysunek 5-3 przedstawia przykładowe rozwiązanie, rozbijając aplikację na trzy projekty według odpowiedzialności (lub warstwy).
+Na rysunku 5-3 przedstawiono przykładowe rozwiązanie, które dzieli aplikację na trzy projekty według odpowiedzialności (lub warstwy).
 
-![Prosta monolityczna aplikacja z trzema projektami](./media/image5-3.png)
+![Prosta aplikacja monolityczna z trzema projektami](./media/image5-3.png)
 
 **Rysunek 5-3.** Prosta aplikacja monolityczna z trzema projektami.
 
-Mimo że ta aplikacja używa kilku projektów do celów organizacyjnych, nadal jest wdrażana jako pojedyncza jednostka, a jej klienci będą z nią współpracować jako pojedyncza aplikacja sieci web. Pozwala to na bardzo prosty proces wdrażania. Rysunek 5-4 pokazuje, jak taka aplikacja może być hostowana przy użyciu platformy Azure.
+Mimo że ta aplikacja korzysta z kilku projektów do celów organizacyjnych, nadal jest wdrażana jako jedna jednostka, a jej klienci będą korzystać z niej jako pojedynczej aplikacji sieci Web. Pozwala to na bardzo prosty proces wdrażania. Rysunek 5-4 pokazuje, jak taka aplikacja może być hostowana przy użyciu platformy Azure.
 
-![Proste wdrażanie aplikacji Azure Web App](./media/image5-4.png)
+![Proste wdrażanie aplikacji sieci Web platformy Azure](./media/image5-4.png)
 
-**Rysunek 5-4.** Proste wdrażanie aplikacji Azure Web App
+**Rysunek 5-4.** Proste wdrażanie aplikacji sieci Web platformy Azure
 
-Wraz ze wzrostem potrzeb aplikacji mogą być wymagane bardziej złożone i niezawodne rozwiązania wdrożeniowe. Rysunek 5-5 przedstawia przykład bardziej złożonego planu wdrażania, który obsługuje dodatkowe możliwości.
+W miarę wzrostu potrzeb aplikacji mogą być wymagane bardziej złożone i niezawodne rozwiązania wdrożeniowe. Rysunek 5-5 przedstawia przykład bardziej złożonego planu wdrożenia, który obsługuje dodatkowe możliwości.
 
-![Wdrażanie aplikacji sieci web w usłudze Azure App Service](./media/image5-5.png)
+![Wdrażanie aplikacji sieci Web w Azure App Service](./media/image5-5.png)
 
-**Rysunek 5-5.** Wdrażanie aplikacji sieci web w usłudze Azure App Service
+**Rysunek 5-5.** Wdrażanie aplikacji sieci Web w Azure App Service
 
-Wewnętrznie organizacja tego projektu w wielu projektach opartych na odpowiedzialności poprawia łatwość konserwacji aplikacji.
+Wewnętrznie organizacja tego projektu w wielu projektach na podstawie odpowiedzialności usprawnia łatwość utrzymania aplikacji.
 
-To urządzenie można skalować w górę lub na zewnątrz, aby korzystać ze skalowalności opartej na chmurze na żądanie. Skalowanie w górę oznacza dodanie dodatkowego procesora CPU, pamięci, miejsca na dysku lub innych zasobów do serwerów obsługujących aplikację. Skalowanie w poziomie oznacza dodanie dodatkowych wystąpień takich serwerów, niezależnie od tego, czy są to serwery fizyczne, maszyny wirtualne czy kontenery. Gdy aplikacja jest hostowana w wielu wystąpieniach, moduł równoważenia obciążenia jest używany do przypisywania żądań do poszczególnych wystąpień aplikacji.
+Tę jednostkę można skalować w górę lub w dół, aby korzystać z skalowalności na żądanie funkcji opartych na chmurze. Skalowanie w górę oznacza dodanie dodatkowego procesora CPU, pamięci, miejsca na dysku lub innych zasobów do serwerów obsługujących aplikację. Skalowanie w dół oznacza dodanie dodatkowych wystąpień takich serwerów, niezależnie od tego, czy są to serwery fizyczne, maszyny wirtualne czy kontenery. Gdy aplikacja jest hostowana w wielu wystąpieniach, moduł równoważenia obciążenia jest używany do przypisywania żądań do poszczególnych wystąpień aplikacji.
 
-Najprostszym podejściem do skalowania aplikacji sieci web na platformie Azure jest skonfigurowanie skalowania ręcznie w planie usługi app service aplikacji. Rysunek 5-6 przedstawia odpowiedni ekran pulpitu nawigacyjnego platformy Azure, aby skonfigurować liczbę wystąpień obsługujących aplikację.
+Najprostszym podejściem do skalowania aplikacji sieci Web na platformie Azure jest ręczne skonfigurowanie skalowania w planie App Service aplikacji. Rysunek 5-6 przedstawia odpowiedni ekran pulpitu nawigacyjnego platformy Azure, aby skonfigurować liczbę wystąpień obsługujących aplikację.
 
-![Skalowanie planu usługi app service na platformie Azure](./media/image5-6.png)
+![Skalowanie planu App Service na platformie Azure](./media/image5-6.png)
 
-**Rysunek 5-6.** Skalowanie planu usługi app service na platformie Azure.
+**Rysunek 5-6.** Skalowanie planu App Service na platformie Azure.
 
 ## <a name="clean-architecture"></a>Czysta architektura
 
-Aplikacje zgodne z zasadą inwersji zależności, a także zasadami projektowania opartego na domenie (DDD) mają tendencję do dotarć do podobnej architektury. Ta architektura przeszła przez wiele nazw na przestrzeni lat. Jednym z pierwszych nazwisk była architektura sześciokątna, a następnie porty i adaptery. Ostatnio, to był cytowany jako [Architektura Cebula](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) lub [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Ta ostatnia nazwa, Clean Architecture, jest używana jako nazwa tej architektury w tym e-booku.
+Aplikacje, które są zgodne z zasadą niezależności zależności, a także zasady projektowania opartego na domenie (DDD), mają do nich zastosowanie w podobnej architekturze. Ta architektura została przełączona przez wiele nazw w latach. Jedna z pierwszych nazw była architekturą sześciokątną, a po niej porty i karty. Niedawno jest to zacytowane jako [Architektura cebuli](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) lub [czysta architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Ta druga nazwa, czysta architektura, jest używana jako nazwa tej architektury w tej książce elektronicznej.
 
-Aplikacja referencyjna eShopOnWeb używa podejścia Clean Architecture w organizowaniu kodu w projektach. Możesz znaleźć szablon rozwiązania, którego można użyć jako punktu wyjścia dla własnego ASP.NET Core na repozytorium [GitHub ardalis/cleanarchitecture.](https://github.com/ardalis/cleanarchitecture)
+Aplikacja referencyjna eShopOnWeb korzysta z metody czystego architektury w organizowaniu kodu do projektów. Możesz znaleźć szablon rozwiązania, którego można użyć jako punktu wyjścia dla własnego ASP.NET Core w repozytorium GitHub [ardalis/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) .
 
-Czysta architektura umieszcza logikę biznesową i model aplikacji w centrum aplikacji. Zamiast logiki biznesowej zależy od dostępu do danych lub innych problemów z infrastrukturą, ta zależność jest odwrócona: szczegóły infrastruktury i implementacji zależą od rdzenia aplikacji. Osiąga się to poprzez definiowanie abstrakcji lub interfejsów w rdzeniu aplikacji, które są następnie implementowane przez typy zdefiniowane w warstwie Infrastruktura. Typowym sposobem wizualizacji tej architektury jest użycie serii koncentrycznych okręgów, podobnych do cebuli. Rysunek 5-7 przedstawia przykład tego stylu reprezentacji architektonicznej.
+Czysty architektura powoduje umieszczenie logiki biznesowej i modelu aplikacji w centrum aplikacji. Zamiast mieć logikę biznesową zależą od dostępu do danych lub innych problemów związanych z infrastrukturą, ta zależność jest odwrócona: szczegóły infrastruktury i implementacji zależą od rdzenia aplikacji. Jest to osiągane przez zdefiniowanie abstrakcji lub interfejsów w rdzeń aplikacji, które następnie są implementowane przez typy zdefiniowane w warstwie infrastruktury. Typowym sposobem wizualizacji tej architektury jest użycie serii okręgów koncentrycznych, podobnie jak w przypadku cebuli. Rysunek 5-7 pokazuje przykład tego stylu reprezentacji architektury.
 
-![Czysta architektura; widok cebuli](./media/image5-7.png)
+![Czysta architektura; Widok cebuli](./media/image5-7.png)
 
-**Rysunek 5-7.** Czysta architektura; widok cebuli
+**Rysunek 5-7.** Czysta architektura; Widok cebuli
 
-Na tym diagramie zależności przepływu w kierunku najbardziej wewnętrznego okręgu. Rdzeń aplikacji bierze swoją nazwę od jego pozycji w centrum tego diagramu. I widać na diagramie, że rdzeń aplikacji nie ma zależności od innych warstw aplikacji. Jednostki i interfejsy aplikacji znajdują się w samym centrum. Tylko na zewnątrz, ale nadal w rdzeniu aplikacji, są usługi domeny, które zazwyczaj implementują interfejsy zdefiniowane w kręgu wewnętrznym. Poza rdzeniem aplikacji warstwy interfejsu użytkownika i infrastruktury zależą od rdzenia aplikacji, ale nie od siebie nawzajem (koniecznie).
+Na tym diagramie zależności przepływu w kierunku najbardziej wewnętrznego okręgu. Rdzeń aplikacji przyjmuje swoją nazwę z pozycji na początku tego diagramu. Na diagramie można zobaczyć, że rdzeń aplikacji nie ma żadnych zależności od innych warstw aplikacji. Jednostki i interfejsy aplikacji są w bardzo wyśrodkowane. Po prostu poza, ale nadal w rdzeń aplikacji, są usługi domenowe, które zwykle implementują interfejsy zdefiniowane w okręgu wewnętrznym. Poza rdzeniem aplikacji zarówno interfejs użytkownika, jak i warstwy infrastruktury zależą od rdzenia aplikacji, ale nie na siebie (koniecznie).
 
-Rysunek 5-8 przedstawia bardziej tradycyjny diagram warstwy poziomej, który lepiej odzwierciedla zależność między interfejsem użytkownika a innymi warstwami.
+Rysunek 5-8 pokazuje bardziej tradycyjny poziomy diagram warstwowy, który lepiej odzwierciedla zależność między interfejsem użytkownika a innymi warstwami.
 
-![Czysta architektura; widok warstwy poziomej](./media/image5-8.png)
+![Czysta architektura; Widok warstwy poziomej](./media/image5-8.png)
 
-**Rysunek 5-8.** Czysta architektura; widok warstwy poziomej
+**Rysunek 5-8.** Czysta architektura; Widok warstwy poziomej
 
-Należy zauważyć, że strzałki stałe reprezentują zależności w czasie kompilacji, podczas gdy strzałka przerywana reprezentuje zależność tylko do środowiska uruchomieniowego. Dzięki czystej architekturze warstwa interfejsu użytkownika współpracuje z interfejsami zdefiniowanymi w rdzeniu aplikacji w czasie kompilacji i idealnie nie powinna wiedzieć o typach implementacji zdefiniowanych w warstwie Infrastruktura. W czasie wykonywania jednak te typy implementacji są wymagane do wykonania aplikacji, więc muszą być obecne i podłączone do interfejsów rdzenia aplikacji za pośrednictwem iniekcji zależności.
+Należy zauważyć, że pełne strzałki reprezentują zależności czasu kompilacji, natomiast strzałka kreskowana reprezentuje zależność tylko do wykonania. W przypadku czystej architektury warstwa interfejsu użytkownika współpracuje z interfejsami zdefiniowanymi w rdzeń aplikacji w czasie kompilacji i najlepiej nie należy wiedzieć o typach implementacji zdefiniowanych w warstwie infrastruktury. Jednak w czasie wykonywania, te typy implementacji są wymagane do wykonania aplikacji, dlatego muszą być obecne i rozłączone do interfejsów podstawowych aplikacji za pomocą iniekcji zależności.
 
-Rysunek 5-9 przedstawia bardziej szczegółowy widok architektury aplikacji ASP.NET Core podczas tworzenia zgodnie z tymi zaleceniami.
+Na rysunku 5-9 przedstawiono bardziej szczegółowy widok architektury aplikacji ASP.NET Core po skompilowaniu tych zaleceń.
 
-![ASP.NET diagram architektury Core po czystej architekturze](./media/image5-9.png)
+![ASP.NET Core diagram architektury po czystej architekturze](./media/image5-9.png)
 
-**Rysunek 5-9.** ASP.NET diagram architektury Core po czystej architekturze.
+**Rysunek 5-9.** ASP.NET Core diagram architektury po czystej architekturze.
 
-Ponieważ rdzeń aplikacji nie zależy od infrastruktury, jest bardzo łatwo napisać zautomatyzowane testy jednostkowe dla tej warstwy. Rysunki 5-10 i 5-11 pokazują, jak testy pasują do tej architektury.
+Ponieważ podstawowe aplikacje nie zależą od infrastruktury, bardzo proste jest zapisanie zautomatyzowanych testów jednostkowych dla tej warstwy. Ilustracje 5-10 i 5-11 pokazują, jak testy mieszczą się w tej architekturze.
 
-![Wynik testu jednostkowego](./media/image5-10.png)
+![UnitTestCore](./media/image5-10.png)
 
-**Rysunek 5-10.** Badanie jednostkowe Application Core w izolacji.
+**Rysunek 5-10.** Podstawowe testy jednostkowe aplikacji w izolacji.
 
-![Testy integracji](./media/image5-11.png)
+![IntegrationTests](./media/image5-11.png)
 
-**Rysunek 5-11.** Integracja testowania implementacji infrastruktury z zależności zewnętrznych.
+**Rysunek 5-11.** Integracja polega na testowaniu implementacji infrastruktury z zależnościami zewnętrznymi.
 
-Ponieważ warstwa interfejsu użytkownika nie ma żadnej bezpośredniej zależności od typów zdefiniowanych w projekcie infrastruktury, jest również bardzo łatwo zamienić implementacje, w celu ułatwienia testowania lub w odpowiedzi na zmieniające się wymagania aplikacji. ASP.NET wbudowane użycie i obsługa iniekcji zależności sprawia, że ta architektura jest najbardziej odpowiednim sposobem struktury nietrywialnych aplikacji monolitycznych.
+Ze względu na to, że warstwa interfejsu użytkownika nie ma żadnej bezpośredniej zależności od typów zdefiniowanych w projekcie infrastruktury, można bardzo łatwo zamienić implementacje, aby ułatwić testowanie lub reagowanie na zmieniające się wymagania aplikacji. Wbudowana w ASP.NET Core funkcja i obsługa iniekcji zależności sprawia, że ta architektura jest najlepszym sposobem na strukturę nieuproszczonych aplikacji.
 
-W przypadku aplikacji monolitycznych projekty rdzenia aplikacji, infrastruktury i interfejsu użytkownika są uruchamiane jako pojedyncza aplikacja. Architektura aplikacji środowiska wykonawczego może wyglądać mniej więcej jak rysunek 5-12.
+W przypadku aplikacji monolitycznych wszystkie projekty aplikacji, infrastruktury i interfejsu użytkownika są uruchamiane jako pojedyncze aplikacje. Architektura aplikacji środowiska uruchomieniowego może wyglądać podobnie do ilustracji 5-12.
 
-![architektura ASP.NET Core 2](./media/image5-12.png)
+![Architektura ASP.NET Core 2](./media/image5-12.png)
 
-**Rysunek 5-12.** Przykładowa ASP.NET architektura środowiska wykonawczego aplikacji Core.
+**Rysunek 5-12.** Przykładowa architektura środowiska uruchomieniowego aplikacji ASP.NET Core.
 
 ### <a name="organizing-code-in-clean-architecture"></a>Organizowanie kodu w czystej architekturze
 
-W rozwiązaniu Czystej architektury każdy projekt ma jasne obowiązki. W związku z tym niektóre typy należą do każdego projektu i często znajdziesz foldery odpowiadające tym typom w odpowiednim projekcie.
+W rozwiązaniu czystego architektury każdy projekt ma wyraźne obowiązki. W związku z tym niektóre typy należą do każdego projektu i często znajdują się foldery odpowiadające tym typom w odpowiednim projekcie.
 
-W programie Application Core znajduje się model biznesowy, który obejmuje jednostki, usługi i interfejsy. Interfejsy te obejmują abstrakcje dla operacji, które będą wykonywane przy użyciu infrastruktury, takich jak dostęp do danych, dostęp do systemu plików, wywołania sieciowe itp. Czasami usługi lub interfejsy zdefiniowane w tej warstwie będą musiały współpracować z typami niebędącymi encjami, które nie mają zależności od interfejsu użytkownika lub infrastruktury. Można je zdefiniować jako proste obiekty transferu danych (DTO).
+#### <a name="application-core"></a>Rdzeń aplikacji
 
-### <a name="application-core-types"></a>Typy rdzeni aplikacji
+Rdzeń aplikacji zawiera model biznesowy, który obejmuje jednostki, usługi i interfejsy. Te interfejsy obejmują abstrakcje operacji, które będą wykonywane przy użyciu infrastruktury, takiej jak dostęp do danych, dostęp do systemu plików, wywołania sieciowe itp. Czasami usługi lub interfejsy zdefiniowane w tej warstwie muszą współdziałać z typami nienależącymi do jednostki, które nie są zależne od interfejsu użytkownika ani infrastruktury. Można je definiować jako proste Transfer danych obiekty (DTO).
 
-- Jednostki (klasy modelu biznesowego, które są utrwalone)
+##### <a name="application-core-types"></a>Typy podstawowe aplikacji
+
+- Jednostki (utrwalone klasy modelu biznesowego)
 - Interfejsy
 - Usługi
-- OTO
+- DTO
 
-Projekt Infrastruktura zazwyczaj obejmuje implementacje dostępu do danych. W typowej aplikacji sieci web ASP.NET Core te implementacje obejmują Entity Framework (EF) DbContext, wszystkie obiekty EF Core, `Migration` które zostały zdefiniowane i klasy implementacji dostępu do danych. Najczęstszym sposobem na abstrakcyjne kod implementacji dostępu do danych jest użycie [wzorca projektu repozytorium.](https://deviq.com/repository-pattern/)
+#### <a name="infrastructure"></a>Infrastruktura
 
-Oprócz wdrożeń dostępu do danych projekt infrastrukturalny powinien zawierać implementacje usług, które muszą współdziałać z problemami dotyczącymi infrastruktury. Te usługi należy implementować interfejsy zdefiniowane w rdzeniu aplikacji, a więc infrastruktura powinna mieć odwołanie do projektu Core aplikacji.
+Projekt infrastruktury zazwyczaj obejmuje implementacje dostępu do danych. W typowej aplikacji sieci Web ASP.NET Core te implementacje obejmują Entity Framework (EF) DbContext, wszystkie EF Core `Migration` obiekty, które zostały zdefiniowane, oraz klasy implementacji dostępu do danych. Najbardziej typowym sposobem na abstrakcyjny kod implementacji dostępu do danych jest użycie [wzorca projektowego repozytorium](https://deviq.com/repository-pattern/).
 
-### <a name="infrastructure-types"></a>Typy infrastruktury
+Oprócz implementacji dostępu do danych, projekt infrastruktury powinien zawierać implementacje usług, które muszą wchodzić w skład z obaw związanych z infrastrukturą. Te usługi powinny implementować interfejsy zdefiniowane w rdzeniu aplikacji, a więc infrastruktura powinna mieć odwołanie do projektu podstawowego aplikacji.
 
-- Typy rdzeni`DbContext` `Migration`EF ( , )
+##### <a name="infrastructure-types"></a>Typy infrastruktury
+
+- Typy EF Core ( `DbContext` , `Migration` )
 - Typy implementacji dostępu do danych (repozytoria)
-- Usługi specyficzne dla infrastruktury `FileLogger` (np. `SmtpNotifier`
+- Usługi specyficzne dla infrastruktury (na przykład `FileLogger` lub `SmtpNotifier` )
 
-Warstwa interfejsu użytkownika w ASP.NET podstawowej aplikacji MVC jest punktem wejścia dla aplikacji. Ten projekt powinien odwoływać się do projektu Application Core, a jego typy powinny współdziałać z infrastrukturą ściśle za pośrednictwem interfejsów zdefiniowanych w programie Application Core. W warstwie interfejsu użytkownika nie powinno być dozwolone żadne bezpośrednie tworzenie wystąpienia lub statyczne wywołania typów warstw infrastruktury.
+#### <a name="ui-layer"></a>Warstwa interfejsu użytkownika
 
-### <a name="ui-layer-types"></a>Typy warstw interfejsu użytkownika
+Warstwa interfejsu użytkownika w aplikacji ASP.NET Core MVC jest punktem wejścia dla aplikacji. Ten projekt powinien odwoływać się do projektu podstawowego aplikacji, a jego typy powinny współdziałać z infrastrukturą przez interfejsy zdefiniowane w podstawowym aplikacji. W warstwie interfejsu użytkownika nie powinny być dozwolone żadne bezpośrednie wystąpienia ani statyczne wywołania do typów warstw infrastruktury.
+
+##### <a name="ui-layer-types"></a>Typy warstw interfejsu użytkownika
 
 - Kontrolery
 - Filtry
 - Widoki
-- ViewModelki
+- Modele widoków
 - Uruchamianie
 
-Startup Klasa jest odpowiedzialny za konfigurowanie aplikacji i okablowanie typów implementacji do interfejsów, dzięki czemu iniekcja zależności działać poprawnie w czasie wykonywania.
+Klasa startowa jest odpowiedzialna za skonfigurowanie aplikacji oraz w celu zapewnienia obsługi typów implementacji w interfejsach, co pozwala na prawidłowe działanie iniekcji zależności w czasie wykonywania.
 
 > [!NOTE]
-> Aby wire up iniekcji zależności w ConfigureServices w pliku Startup.cs projektu interfejsu użytkownika, projekt może być konieczne odwołanie projektu infrastruktury. Ta zależność można wyeliminować, najłatwiej przy użyciu niestandardowego kontenera DI. Na potrzeby tego przykładu najprostszym podejściem jest umożliwienie projektu interfejsu użytkownika odwoływać się do projektu infrastruktury.
+> Aby można było połączyć iniekcję zależności w ConfigureServices w pliku Startup.cs projektu interfejsu użytkownika, projekt może wymagać odniesienia do projektu infrastruktury. Tę zależność można wyeliminować, najłatwiej przy użyciu niestandardowego kontenera DI. Na potrzeby tego przykładu najprostszym podejściem jest umożliwienie projektowi interfejsu użytkownika odwoływania się do projektu infrastruktury.
 
-## <a name="monolithic-applications-and-containers"></a>Monolityczne zastosowania i pojemniki
+## <a name="monolithic-applications-and-containers"></a>Monolityczne aplikacje i kontenery
 
-Można utworzyć pojedynczą i monolityczną aplikację sieci Web opartą na wdrożeniu sieci Web lub usługę i wdrożyć ją jako kontener. W aplikacji może nie być monolityczne, ale zorganizowane w kilka bibliotek, składników lub warstw. Zewnętrznie jest to pojedynczy kontener, taki jak pojedynczy proces, pojedyncza aplikacja sieci web lub pojedyncza usługa.
+Można utworzyć pojedynczą i monolityczną aplikację sieci Web lub usługę opartą na wdrożeniu, a następnie wdrożyć ją jako kontener. W aplikacji może nie być lity, ale zorganizowany w kilka bibliotek, składników ani warstw. Zewnętrznie jest to pojedynczy kontener, taki jak pojedynczy proces, pojedyncza aplikacja internetowa lub jedna usługa.
 
-Aby zarządzać tym modelem, należy wdrożyć pojedynczy kontener do reprezentowania aplikacji. Aby skalować, wystarczy dodać dodatkowe kopie z modułem równoważenia obciążenia z przodu. Prostota pochodzi z zarządzania pojedynczym wdrożeniem w jednym kontenerze lub maszynie wirtualnej.
+Aby zarządzać tym modelem, należy wdrożyć pojedynczy kontener do reprezentowania aplikacji. Aby skalować, po prostu Dodaj dodatkowe kopie przy użyciu modułu równoważenia obciążenia. Prostota pochodzi z zarządzania pojedynczym wdrożeniem w jednym kontenerze lub maszynie wirtualnej.
 
 ![Rysunek 5-13](./media/image5-13.png)
 
-W każdym kontenerze można dołączyć wiele składników/bibliotek lub warstw wewnętrznych, jak pokazano na rysunku 5-13. Ale zgodnie z _zasadą kontenera "kontener robi jedną rzecz i robi to w jednym procesie_", monolityczny wzorzec może być konfliktem.
+W każdym kontenerze można uwzględnić wiele składników/bibliotek lub warstwy wewnętrzne, jak pokazano na rysunku 5-13. Jednak zgodnie z zasadą kontenera _"kontener wykonuje jedną czynność i robi to w jednym procesie_", wzorzec monolityczny może stanowić konflikt.
 
-Wadą tego podejścia jest, jeśli/gdy aplikacja rośnie, wymagając go do skalowania. Jeśli cała aplikacja jest skalowana, nie stanowi to problemu. Jednak w większości przypadków kilka części aplikacji są punkty dławienia wymagające skalowania, podczas gdy inne składniki są używane mniej.
+Minusem tego podejścia ma miejsce, gdy aplikacja zostanie powiększona, co wymaga jego skalowania. Jeśli cała aplikacja jest skalowana, problem nie występuje. Jednak w większości przypadków kilka części aplikacji to punkty podlewki wymagające skalowania, a inne składniki są mniej.
 
-Korzystając z typowego przykładu eCommerce, to, co prawdopodobnie trzeba skalować, to składnik informacji o produkcie. O wiele więcej klientów przegląda produkty niż je kupuje. Więcej klientów korzysta z koszyka niż z potoku płatności. Mniej klientów dodawać komentarze lub wyświetlić ich historii zakupów. I prawdopodobnie masz tylko garstkę pracowników, w jednym regionie, którzy muszą zarządzać treściami i kampaniami marketingowymi. Skalując projekt monolityczny, cały kod jest wdrażany wiele razy.
+Przy użyciu typowego przykładu handlu elektronicznego, co jest potrzebne do skalowania, to składnik informacji o produkcie. Wielu więcej klientów przegląda produkty od ich zakupu. Więcej klientów korzysta z koszyka niż w przypadku korzystania z potoku płatności. Mniejsza liczba klientów umożliwia dodanie komentarzy lub wyświetlenie ich historii zakupów. Najkorzystniej masz kilku pracowników w jednym regionie, który musi zarządzać kampanią zawartości i kampanii marketingowej. Poprzez skalowanie projektu monolitycznego cały kod jest wdrażany wiele razy.
 
-Oprócz problemu "skaluj wszystko", zmiany w jednym składniku wymagają pełnego ponownego przetestowania całej aplikacji i pełnego ponownego rozmieszczenia wszystkich wystąpień.
+Oprócz problemu "Skaluj wszystko" zmiany w pojedynczym składniku wymagają pełnego przetestowania całej aplikacji oraz całkowitego ponownego wdrożenia wszystkich wystąpień.
 
-Podejście monolityczne jest powszechne, a wiele organizacji rozwija się z tym podejściem architektonicznym. Wiele z nich ma wystarczająco dobre wyniki, podczas gdy inni są uderzanie limity. Wiele zaprojektowanych aplikacji w tym modelu, ponieważ narzędzia i infrastruktura były zbyt trudne do tworzenia architektur zorientowanych na usługi (SOA), i nie widzą potrzeby, dopóki aplikacja wzrosła. Jeśli okaże się, że widzisz limity podejścia monolitycznego, rozbicie aplikacji, aby włączyć ją do lepszego wykorzystania kontenerów i mikrousług może być następnym logicznym krokiem.
+Podejście monolityczne jest wspólne, a wiele organizacji opracowuje w ramach tego podejścia do architektury. Wiele z nich ma wystarczającą ilość wyników, a inne to limity. Wiele zaprojektowanych aplikacji w tym modelu, ponieważ narzędzia i infrastruktura były zbyt trudne do budowania architektury zorientowanej na usługi (SOA) i nie widzą potrzeb, dopóki aplikacja nie przezwiększyła się. Jeśli okaże się, że zbliżasz się do ograniczeń podejścia monolitycznego, Podziel aplikację, aby umożliwić jej lepsze wykorzystanie kontenerów i mikrousług.
 
 ![Rysunek 5-14](./media/image5-14.png)
 
-Wdrażanie aplikacji monolitycznych na platformie Microsoft Azure można osiągnąć przy użyciu dedykowanych maszyn wirtualnych dla każdego wystąpienia. Za pomocą [zestawów skalowania maszyny wirtualnej platformy Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/)można łatwo skalować maszyny wirtualne. [Usługi Azure App Services](https://azure.microsoft.com/services/app-service/) mogą uruchamiać aplikacje monolityczne i łatwo skalować wystąpienia bez konieczności zarządzania maszynami wirtualnymi. Usługi Azure App Services można uruchomić pojedyncze wystąpienia kontenerów platformy Docker, jak również, upraszczając wdrożenie. Za pomocą platformy Docker można wdrożyć pojedynczą maszynę wirtualną jako host platformy Docker i uruchomić wiele wystąpień. Za pomocą balanseru platformy Azure, jak pokazano na rysunku 5-14, można zarządzać skalowania.
+Wdrażanie aplikacji monolitycznych w Microsoft Azure można osiągnąć przy użyciu dedykowanych maszyn wirtualnych dla każdego wystąpienia. Za pomocą [usługi Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/)można łatwo skalować maszyny wirtualne. [Usługa Azure App Services](https://azure.microsoft.com/services/app-service/) może uruchamiać aplikacje monolityczne i łatwo skalować wystąpienia bez potrzeby zarządzania maszynami wirtualnymi. Usługa Azure App Services może również uruchamiać pojedyncze wystąpienia kontenerów platformy Docker, upraszczając wdrażanie. Przy użyciu platformy Docker można wdrożyć pojedynczą maszynę wirtualną jako hosta platformy Docker i uruchamiać wiele wystąpień. Korzystając z modułu równoważenia obciążenia platformy Azure, jak pokazano na rysunku 5-14, można zarządzać skalowaniem.
 
-Wdrożeniem różnych hostów można zarządzać za pomocą tradycyjnych technik wdrażania. Hostami platformy Docker można zarządzać za pomocą poleceń, takich jak **uruchamianie platformy docker** wykonywane ręcznie lub za pomocą automatyzacji, takich jak potoki ciągłego dostarczania (CD).
+Wdrożenie na różnych hostach może być zarządzane przy użyciu tradycyjnych technik wdrażania. Hosty platformy Docker mogą być zarządzane za pomocą poleceń, takich jak **uruchomienie platformy Docker** , wykonywane ręcznie lub za pomocą automatyzacji, takich jak potoki ciągłego dostarczania (CD).
 
 ### <a name="monolithic-application-deployed-as-a-container"></a>Aplikacja monolityczna wdrożona jako kontener
 
-Istnieją korzyści z używania kontenerów do zarządzania wdrożeniami aplikacji monolitycznych. Skalowanie wystąpień kontenerów jest znacznie szybsze i łatwiejsze niż wdrażanie dodatkowych maszyn wirtualnych. Nawet w przypadku używania zestawów skalowania maszyny wirtualnej do skalowania maszyn wirtualnych, zajmują one czas na wystąpienie. Po wdrożeniu jako wystąpienia aplikacji konfiguracja aplikacji jest zarządzana jako część maszyny Wirtualnej.
+Istnieją zalety używania kontenerów do zarządzania wdrożeniami aplikacji monolitycznych. Skalowanie wystąpień kontenerów jest znacznie szybsze i łatwiejsze niż wdrażanie dodatkowych maszyn wirtualnych. Nawet w przypadku używania zestawów skalowania maszyn wirtualnych do skalowania maszyn wirtualnych trwają one czas. W przypadku wdrożenia jako wystąpienia aplikacji Konfiguracja aplikacji jest zarządzana w ramach maszyny wirtualnej.
 
-Wdrażanie aktualizacji jako obrazów platformy Docker jest znacznie szybsze i wydajne w sieci. Obrazy platformy Docker zazwyczaj rozpoczynają się w ciągu kilku sekund, przyspieszając wdrażanie. Burzenie wystąpienia platformy Docker jest tak `docker stop` proste, jak wydawanie polecenia, zazwyczaj ukończenie w mniej niż sekundę.
+Wdrażanie aktualizacji jako obrazów platformy Docker odbywa się znacznie szybciej i wydajniej. Obrazy platformy Docker zwykle zaczynają się w ciągu sekund, co przyspiesza wprowadzanie. Przerywanie wystąpienia platformy Docker jest tak proste jak wydawanie `docker stop` polecenia, zwykle kończącego się w mniej niż drugim.
 
-Ponieważ kontenery są z natury niezmienne z założenia, nigdy nie musisz się martwić o uszkodzone maszyny wirtualne, podczas gdy skrypty aktualizacji mogą zapomnieć o uwzględnienie określonej konfiguracji lub pliku pozostawionego na dysku.
+Ponieważ kontenery są z natury niezmienne przez zaprojektowanie, nigdy nie trzeba martwić się o uszkodzone maszyny wirtualne, natomiast skrypty aktualizacji mogą ulec zapomnieć na potrzeby konkretnej konfiguracji lub pliku pozostawionego na dysku.
 
-Kontenery platformy Docker można używać do monolitycznego wdrażania prostszych aplikacji sieci web. Poprawia to ciągłą integrację i ciągłe wdrażanie potoków i pomaga osiągnąć sukces wdrażania do produkcji. Nie więcej "To działa na moim komputerze, dlaczego nie działa w produkcji?"
+Kontenerów platformy Docker można używać do monolitycznego wdrażania prostszych aplikacji sieci Web. Pozwala to zwiększyć ciągłą integrację i ciągłe wdrażanie potoków oraz zapewnić pomyślne wdrożenie do produkcji. Nie ma więcej "działa na mojej maszynie, dlaczego nie działa w środowisku produkcyjnym?"
 
-Architektura oparta na mikrousługach ma wiele zalet, ale te korzyści są kosztem zwiększonej złożoności. W niektórych przypadkach koszty przewyższają korzyści, więc monolityczne aplikacji wdrażania uruchomiony w jednym kontenerze lub w zaledwie kilku kontenerach jest lepszym rozwiązaniem.
+Architektura oparta na mikrousługach ma wiele korzyści, ale te korzyści mają na celu zwiększenie złożoności. W niektórych przypadkach koszty te zwiększają korzyści, więc jest to lepsza aplikacja do wdrożenia działająca w jednym kontenerze lub w zaledwie kilku kontenerach.
 
-Aplikacja monolityczne nie może być łatwo rozkładanych na dobrze oddzielone mikrousług. Mikrousługi powinny działać niezależnie od siebie, aby zapewnić bardziej odporną aplikację. Jeśli nie można dostarczyć niezależnych wycinków funkcji aplikacji, oddzielenie go tylko zwiększa złożoność.
+Aplikacja monolityczna może nie być łatwo można jej przetworzyć w dobrze rozdzielonych mikrousługach. Mikrousługi powinny działać niezależnie od siebie, aby zapewnić bardziej odporną aplikację. Jeśli nie można dostarczyć niezależnych wycinków funkcji aplikacji, oddzielenie go tylko zwiększa złożoność.
 
-Aplikacja może jeszcze nie trzeba skalować funkcji niezależnie. Wiele aplikacji, gdy trzeba skalować poza pojedyncze wystąpienie, można to zrobić za pomocą stosunkowo prostego procesu klonowania tego wystąpienia całego. Dodatkowa praca, aby oddzielić aplikację na dyskretne usługi zapewnia minimalne korzyści podczas skalowania pełnych wystąpień aplikacji jest proste i ekonomiczne.
+Aplikacja może jeszcze nie mieć możliwości skalowania funkcji niezależnie. Wiele aplikacji, gdy wymagają skalowania poza pojedynczym wystąpieniem, może to zrobić za pomocą stosunkowo prostego procesu klonowania całego wystąpienia. Dodatkowa część pracy w celu rozdzielenia aplikacji na osobne usługi zapewnia minimalną korzyść, gdy skalowanie pełnych wystąpień aplikacji jest proste i ekonomiczne.
 
-Na początku rozwoju aplikacji, może nie mieć jasnego pojęcia, gdzie są naturalne granice funkcjonalne. W miarę opracowywania minimalnego opłacalnego produktu, naturalna separacja może jeszcze nie pojawiły się. Niektóre z tych warunków mogą być tymczasowe. Można rozpocząć od utworzenia aplikacji monolityczne, a później oddzielić niektóre funkcje, które mają być opracowane i wdrożone jako mikrousługi. Inne warunki mogą być istotne dla miejsca problem aplikacji, co oznacza, że aplikacja nigdy nie może być podzielona na wiele mikrousług.
+Na wczesnym etapie opracowywania aplikacji może nie mieć jasnego pomysłu, w którym naturalne granice funkcjonalności są. Podczas opracowywania minimalnego produktu, którego oddzielenie prawdopodobnie nie zostało jeszcze wykonane. Niektóre z tych warunków mogą być tymczasowe. Można zacząć od utworzenia aplikacji monolitycznej i późniejszego oddzielenia niektórych funkcji, które mają być opracowane i wdrożone jako mikrousługi. Inne warunki mogą być niezbędne w przypadku problemów z aplikacją, co oznacza, że aplikacja może nigdy nie być uszkodzona w wielu mikrousługach.
 
-Oddzielenie aplikacji do wielu procesów dyskretnych również wprowadza obciążenie. Istnieje większa złożoność w rozdzielaniu funkcji na różne procesy. Protokoły komunikacyjne stają się bardziej złożone. Zamiast wywołania metody, należy użyć komunikacji asynchroniczne między usługami. Podczas przenoszenia do architektury mikrousług, należy dodać wiele bloków konstrukcyjnych zaimplementowanych w wersji mikrousług aplikacji eShopOnContainers: obsługa magistrali zdarzeń, odporność komunikatów i ponownych prób, spójność ostateczna i więcej.
+Rozdzielenie aplikacji na wiele procesów dyskretnych powoduje również zwiększenie nakładu pracy. Istnieje większa złożoność oddzielająca funkcje do różnych procesów. Protokoły komunikacyjne stają się bardziej skomplikowane. Zamiast wywołań metod, należy używać komunikacji asynchronicznej między usługami. Podczas przechodzenia do architektury mikrousług należy dodać wiele bloków konstrukcyjnych zaimplementowanych w wersji mikrousług aplikacji eShopOnContainers: obsługa magistrali zdarzeń, odporność na wiadomości i ponawianie prób, spójność ostateczna i inne.
 
-Znacznie prostsza [aplikacja referencyjna eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb) obsługuje użycie kontenera monolitycznego z jednym kontenerem. Aplikacja zawiera jedną aplikację internetową, która zawiera tradycyjne widoki MVC, interfejsy API sieci Web i strony Razor. Ta aplikacja może być uruchomiona z `docker-compose build` `docker-compose up` katalogu głównego rozwiązania za pomocą i poleceń. To polecenie konfiguruje kontener dla wystąpienia `Dockerfile` sieci web przy użyciu znajdującego się w katalogu głównym projektu sieci web i uruchamia kontener na określonym porcie. Możesz pobrać źródło tej aplikacji z gitHub i uruchomić ją lokalnie. Nawet ta monolityczna aplikacja korzysta z wdrażania w środowisku kontenera.
+Znacznie prostsze [aplikacje referencyjne eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb) obsługują użycie kontenerów monolitycznych jednego kontenera. Aplikacja zawiera jedną aplikację sieci Web, która zawiera tradycyjne widoki MVC, interfejsy API sieci Web i Razor Pages. Ta aplikacja może być uruchamiana z poziomu głównego rozwiązania przy `docker-compose build` użyciu `docker-compose up` poleceń i. To polecenie umożliwia skonfigurowanie kontenera dla wystąpienia sieci Web przy użyciu `Dockerfile` znalezionego w katalogu głównym projektu sieci Web i uruchomienie kontenera na określonym porcie. Możesz pobrać źródło dla tej aplikacji z usługi GitHub i uruchomić ją lokalnie. Nawet ta monolityczna aplikacja nie będzie wdrażana w środowisku kontenera.
 
-Po pierwsze, wdrożenie konteneryzowane oznacza, że każde wystąpienie aplikacji jest uruchamiane w tym samym środowisku. Obejmuje to środowisko deweloperskie, w którym odbywają się wczesne testowanie i rozwój. Zespół deweloperów można uruchomić aplikację w środowisku konteneryzowanym, który pasuje do środowiska produkcyjnego.
+W przypadku jednego z kontenerów wdrożenie to oznacza, że każde wystąpienie aplikacji działa w tym samym środowisku. Obejmuje to środowisko deweloperskie, w którym odbywa się wczesne testowanie i programowanie. Zespół programistyczny może uruchomić aplikację w środowisku kontenerów, które pasuje do środowiska produkcyjnego.
 
-Ponadto aplikacje konteneryzowane są skalowane w poziomie przy niższych kosztach. Korzystanie ze środowiska kontenera umożliwia większe udostępnianie zasobów niż tradycyjne środowiska maszyn wirtualnych.
+Ponadto aplikacje kontenera są skalowane przy niższych kosztach. Użycie środowiska kontenera pozwala zwiększyć udostępnianie zasobów niż tradycyjne środowiska maszyn wirtualnych.
 
-Na koniec konteneryzacji aplikacji wymusza oddzielenie logiki biznesowej i serwera magazynu. Jak aplikacja jest skalowana w poziomie, wiele kontenerów będzie polegać na jednym nośniku magazynu fizycznego. Ten nośnik magazynu zazwyczaj jest serwerem o wysokiej dostępności z bazą danych programu SQL Server.
+Na koniec konteneryzowania aplikacja wymusza rozdzielenie między logiką biznesową a serwerem magazynu. W miarę skalowania aplikacji, wiele kontenerów będzie polegać na jednym fizycznym nośniku magazynowania. Ten nośnik magazynu zazwyczaj jest serwerem o wysokiej dostępności z uruchomioną SQL Server bazą danych.
 
-## <a name="docker-support"></a>Pomoc techniczna firmy Docker
+## <a name="docker-support"></a>Obsługa platformy Docker
 
-Projekt `eShopOnWeb` jest uruchamiany na programie .NET Core. W związku z tym można uruchomić w kontenerach opartych na systemie Linux lub Windows. Należy zauważyć, że w przypadku wdrożenia platformy Docker chcesz użyć tego samego typu hosta dla programu SQL Server. Kontenery oparte na systemie Linux umożliwiają mniejszą powierzchnię i są preferowane.
+`eShopOnWeb`Projekt jest uruchamiany na platformie .NET Core. W związku z tym może działać w kontenerach opartych na systemie Linux lub Windows. Należy pamiętać, że w przypadku wdrożenia platformy Docker chcesz użyć tego samego typu hosta dla SQL Server. Kontenery oparte na systemie Linux umożliwiają mniejsze rozmiary i są preferowane.
 
-Za pomocą programu Visual Studio 2017 lub nowszego można dodać obsługę platformy Docker do istniejącej aplikacji, klikając prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** i wybierając pozycję **Dodaj** > **obsługę platformy Docker.** Spowoduje to dodanie wymaganych plików i modyfikuje projekt, aby z nich korzystać. Bieżąca `eShopOnWeb` próbka ma już te pliki w miejscu.
+Aby dodać obsługę platformy Docker do istniejącej aplikacji, można użyć programu Visual Studio 2017 lub nowszego, klikając prawym przyciskiem myszy projekt w **Eksplorator rozwiązań** i wybierając polecenie **Dodaj**  >  **obsługę platformy Docker**. Spowoduje to dodanie plików wymaganych i zmodyfikowanie projektu w celu ich użycia. Bieżący `eShopOnWeb` przykład ma już te pliki.
 
-Plik na `docker-compose.yml` poziomie rozwiązania zawiera informacje o tym, jakie obrazy do utworzenia i jakie kontenery do uruchomienia. Plik umożliwia użycie polecenia `docker-compose` do uruchamiania wielu aplikacji w tym samym czasie. W takim przypadku jest tylko uruchomienie projektu sieci Web. Można również użyć go do konfigurowania zależności, takich jak oddzielny kontener bazy danych.
+Plik poziomu rozwiązania `docker-compose.yml` zawiera informacje o obrazach do skompilowania oraz o kontenerach do uruchomienia. Plik umożliwia używanie `docker-compose` polecenia do uruchamiania wielu aplikacji w tym samym czasie. W tym przypadku uruchamia tylko projekt sieci Web. Można go również użyć do skonfigurowania zależności, takich jak oddzielny kontener bazy danych.
 
 ```yml
 version: '3'
@@ -259,7 +265,7 @@ networks:
       name: nat
 ```
 
-Plik `docker-compose.yml` odwołuje się `Dockerfile` do `Web` projektu. Jest `Dockerfile` używany do określenia, który kontener podstawowy będzie używany i jak aplikacja będzie skonfigurowana na nim. " `Web` `Dockerfile`:
+`docker-compose.yml`Plik odwołuje się do `Dockerfile` `Web` projektu. Służy `Dockerfile` do określenia, który kontener bazowy będzie używany, oraz sposobu ich konfiguracji. `Web`" `Dockerfile` :
 
 ```Dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
@@ -279,15 +285,15 @@ COPY --from=build /app/src/Web/out ./
 ENTRYPOINT ["dotnet", "Web.dll"]
 ```
 
-### <a name="troubleshooting-docker-problems"></a>Rozwiązywanie problemów z docker
+### <a name="troubleshooting-docker-problems"></a>Rozwiązywanie problemów z platformą Docker
 
-Po uruchomieniu aplikacji konteneryzowane, kontynuuje uruchamianie, dopóki go zatrzymać. Można wyświetlić, które kontenery są uruchomione za `docker ps` pomocą polecenia. Uruchomiony kontener można zatrzymać za `docker stop` pomocą polecenia i określając identyfikator kontenera.
+Po uruchomieniu aplikacji kontenera nadal będzie ona działać do momentu jej zatrzymania. Możesz zobaczyć, które kontenery są uruchomione przy użyciu `docker ps` polecenia. Można zatrzymać uruchomiony kontener przy użyciu `docker stop` polecenia i OKREŚLAJĄC identyfikator kontenera.
 
-Należy zauważyć, że uruchomione kontenery platformy Docker mogą być powiązane z portami, które w przeciwnym razie można spróbować użyć w środowisku programistycznym. Jeśli spróbujesz uruchomić lub debugować aplikację przy użyciu tego samego portu co uruchomiony kontener platformy Docker, zostanie wyświetlony błąd informujący, że serwer nie może powiązać z tym portem. Po raz kolejny zatrzymanie kontenera należy rozwiązać problem.
+Należy pamiętać, że uruchomione kontenery platformy Docker mogą być powiązane z portami, z których możesz próbować korzystać w środowisku deweloperskim. W przypadku próby uruchomienia lub debugowania aplikacji przy użyciu tego samego portu co uruchomiony kontener platformy Docker zostanie wyświetlony komunikat o błędzie informujący o tym, że serwer nie może powiązać z tym portem. Po ponownym zatrzymywaniu kontenera należy rozwiązać ten problem.
 
-Jeśli chcesz dodać obsługę platformy Docker do aplikacji przy użyciu programu Visual Studio, upewnij się, że program Docker Desktop jest uruchomiony po wykonaniu tej funkcji. Kreator nie będzie działać poprawnie, jeśli pulpit platformy Docker nie jest uruchomiony po uruchomieniu kreatora. Ponadto kreator sprawdza bieżący wybór kontenera, aby dodać poprawną obsługę platformy Docker. Jeśli chcesz dodać obsługę kontenerów systemu Windows, musisz uruchomić kreatora, gdy masz skonfigurowany pulpit platformy Docker z skonfigurowaną konfiguracją Kontenery systemu Windows. Jeśli chcesz dodać obsługę kontenerów systemu Linux, uruchom kreatora, gdy masz docker uruchomiony z kontenerami systemu Linux skonfigurowane.
+Jeśli chcesz dodać obsługę platformy Docker do aplikacji przy użyciu programu Visual Studio, upewnij się, że program Docker Desktop jest uruchomiony, gdy to zrobisz. Kreator nie będzie działać prawidłowo, jeśli program Docker Desktop nie zostanie uruchomiony po uruchomieniu kreatora. Ponadto Kreator sprawdza bieżący kontener, aby dodać poprawną obsługę platformy Docker. Jeśli chcesz dodać obsługę kontenerów systemu Windows, musisz uruchomić kreatora, gdy pulpit platformy Docker jest uruchomiony z skonfigurowanymi kontenerami systemu Windows. Jeśli chcesz dodać obsługę kontenerów systemu Linux, uruchom kreatora, gdy zainstalowano Aparat Docker z skonfigurowanymi kontenerami systemu Linux.
 
-### <a name="references--common-web-architectures"></a>Odwołania — typowe architektury sieci web
+### <a name="references--common-web-architectures"></a>Odwołania — wspólne architektury sieci Web
 
 - **Czysta architektura**  
   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
@@ -295,13 +301,13 @@ Jeśli chcesz dodać obsługę platformy Docker do aplikacji przy użyciu progra
   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
 - **Wzorzec repozytorium**  
   <https://deviq.com/repository-pattern/>
-- **Szablon rozwiązania czystej architektury**  
+- **Szablon rozwiązania czystego architektury**  
   <https://github.com/ardalis/cleanarchitecture>
-- **Architekcja Mikrousługi e-book**  
+- **Tworzenie architektury książki elektronicznej mikrousług**  
   <https://aka.ms/MicroservicesEbook>
-- **DDD (projekt oparty na domenie)**  
+- **DDD (Projektowanie oparte na domenie)**  
   <https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/>
 
 >[!div class="step-by-step"]
->[Poprzedni](architectural-principles.md)
->[następny](common-client-side-web-technologies.md)
+>[Poprzedni](architectural-principles.md) 
+> [Dalej](common-client-side-web-technologies.md)
