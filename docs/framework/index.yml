@@ -11,12 +11,12 @@ metadata:
   helpviewer_keywords:
   - .NET Framework guide
   ms.date: 04/22/2020
-  ms.openlocfilehash: 67e1549395ab5657a5d609b186fc1816211c5af3
-  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+  ms.openlocfilehash: 47781bbc5b1b1a2f4c0bc44929c5bb29fe3e7978
+  ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "82135909"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89379177"
 landingContent:
 - title: Dowiedz się więcej o .NET Framework
   linkLists:
@@ -74,24 +74,16 @@ landingContent:
     links:
     - text: Instalowanie i odinstalowywanie usług systemu Windows
       url: windows-services/how-to-install-and-uninstall-services.md
-- title: Tworzenie aplikacji Windows Forms
+- title: Tworzenie aplikacji klasycznych
   linkLists:
   - linkListType: overview
     links:
-    - text: Omówienie Windows Forms
-      url: winforms/index.md
-  - linkListType: tutorial
-    links:
-    - text: Wprowadzenie do Projektanta formularzy systemu Windows
-      url: /visualstudio/designers/walkthrough-windows-forms-designer
-    - text: Tworzenie aplikacji Windows Forms z poziomu wiersza polecenia
-      url: winforms/how-to-create-a-windows-forms-application-from-the-command-line.md
-  - linkListType: how-to-guide
-    links:
-    - text: Dodawanie i usuwanie elementów z formantów ComboBox, ListBox i CheckedListBox
-      url: winforms/controls/add-and-remove-items-from-a-wf-combobox.md
-    - text: Ustaw bezpieczne dla wątków wywołania formantów
-      url: winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md
+    - text: Wprowadzenie do przewodnika po pulpicie
+      url: /dotnet/desktop/
+    - text: .NET Framework WPF
+      url: wpf/index.md
+    - text: .NET Framework Windows Forms
+      url: /dotnet/desktop/winforms/?view=netframework-4-8
 - title: Tworzenie aplikacji WPF
   linkLists:
   - linkListType: overview
