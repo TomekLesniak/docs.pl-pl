@@ -2,12 +2,12 @@
 title: Implementowanie odczytów i zapytań w mikrousłudze CQRS
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się z implementacją zapytania CQRS na mikrousłudze porządkowania w eShopOnContainers przy użyciu Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: 71db95e6fc17475693183be9c6854884cd331ce1
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 41932122326cf4c49b9c9e2c344d2ac17da7466b
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614412"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358898"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implementowanie operacji odczytu/zapytań w CQRS mikrousługi
 
@@ -33,7 +33,7 @@ Ponieważ zapytania są wykonywane w celu uzyskania danych wymaganych przez apli
 
 Zwrócone dane (ViewModel) mogą wynikać z dołączania danych z wielu jednostek lub tabel w bazie danych, a nawet wielu agregacji zdefiniowanych w modelu domeny dla obszaru transakcyjnego. W tym przypadku, ponieważ tworzysz zapytania niezależnie od modelu domeny, granice zagregowane i ograniczenia są ignorowane i można wysyłać zapytania do dowolnej tabeli i kolumny, które mogą być potrzebne. Takie podejście zapewnia dużą elastyczność i produktywność dla deweloperów tworzących lub aktualizujących zapytania.
 
-Modele widoków mogą być typami statycznymi zdefiniowanymi w klasach. Lub mogą być tworzone dynamicznie na podstawie zapytań wykonanych (zgodnie z implementacją mikrousługi porządkowania), które są bardzo elastyczne dla deweloperów.
+Modele widoków mogą być typami statycznymi zdefiniowanymi w klasach (zgodnie z implementacją mikrousługi porządkowania). Lub mogą być tworzone dynamicznie na podstawie wykonanych zapytań, które są bardzo elastyczne dla deweloperów.
 
 ## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>Używanie Dapper jako mikroorm do wykonywania zapytań
 

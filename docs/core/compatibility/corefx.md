@@ -2,12 +2,12 @@
 title: Podstawowe zmiany w bibliotece klas podstawowych
 description: Wyświetla istotne zmiany w podstawowych bibliotekach programu .NET.
 ms.date: 07/27/2020
-ms.openlocfilehash: e0ebc054e0abccfe934b505a727060653fe313cd
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: 8b8fb9b88edf4f1e5f83ef7c21f1712af40479fd
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720209"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359142"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Podstawowe zmiany w bibliotekach .NET
 
@@ -17,39 +17,44 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
-| [Nazwy parametrów zostały zmienione w zestawach odwołań](#parameter-names-changed-in-reference-assemblies) | 5.0 |
-| [Ścieżki URI zawierające znaki inne niż ASCII są analizowane prawidłowo w systemie UNIX](#uri-paths-with-non-ascii-characters-parse-correctly-on-unix) | 5.0 |
-| [Rozpoznawanie identyfikatorów URI ścieżek UNC w systemie UNIX](#uri-recognition-of-unc-paths-on-unix) | 5.0 |
-| [Środowisko. OSVersion zwraca poprawną wersję systemu operacyjnego](#environmentosversion-returns-the-correct-operating-system-version) | 5.0 |
-| [Złożoność elementu LINQ OrderBy. pierwszy {OrDefault} wzrósł](#complexity-of-linq-orderbyfirstordefault-increased) | 5.0 |
-| [IntPtr i UIntPtr Implementuj IFormattable](#intptr-and-uintptr-implement-iformattable) | 5.0 |
-| [PrincipalPermissionAttribute jest przestarzały jako błąd](#principalpermissionattribute-is-obsolete-as-error) | 5.0 |
-| [Metody serializacji BinaryFormatter są przestarzałe i zabronione w aplikacjach ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5.0 |
-| [Ścieżki kodu UTF-7 są przestarzałe](#utf-7-code-paths-are-obsolete) | 5.0 |
-| [Wektor \<T> zawsze zgłasza NotSupportedException dla nieobsługiwanych typów](#vectort-always-throws-notsupportedexception-for-unsupported-types) | 5.0 |
-| [ActivityIdFormat domyślny to W3C](#default-activityidformat-is-w3c) | 5.0 |
-| [Zmiana zachowania dla Vector2. Lerp i Vector4. Lerp](#behavior-change-for-vector2lerp-and-vector4lerp) | 5.0 |
-| [Metody SSE i SSE2 CompareGreaterThan prawidłowo obsługują dane wejściowe NaN](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
-| [Element CounterSet. CreateCounterSetInstance teraz zgłasza InvalidOperationException, jeśli wystąpienie już istnieje](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5.0 |
-| [Usunięto pakiet Microsoft. DotNet. PlatformAbstractions](#microsoftdotnetplatformabstractions-package-removed) | 5.0 |
-| [Interfejsy API służące do raportowania wersji teraz produktu i nie wersji](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
-| [Niestandardowe wystąpienia EncoderFallbackBuffer nie mogą podlegać rekursywnie](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
-| [Zmiany zachowań formatowania zmiennoprzecinkowego i analizowania](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
-| [Operacje analizowania zmiennoprzecinkowe nie będą już kończyć się niepowodzeniem lub nie generują wyjątku overflow](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception) | 3.0 |
-| [InvalidAsynchronousStateException — przeniesiony do innego zestawu](#invalidasynchronousstateexception-moved-to-another-assembly) | 3.0 |
-| [Zastępowanie źle sformułowanych sekwencji bajtów w formacie UTF-8 następuje po wskazówkach dotyczących standardu Unicode](#replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines) | 3.0 |
-| [TypeDescriptionProviderAttribute przeniesiony do innego zestawu](#typedescriptionproviderattribute-moved-to-another-assembly) | 3.0 |
-| [Element ZipArchiveEntry nie obsługuje już archiwów z niespójnymi rozmiarami wpisów](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3.0 |
-| [Element FieldInfo. SetValue zgłasza wyjątek dla pól static, tylko init](#fieldinfosetvalue-throws-exception-for-static-init-only-fields) | 3.0 |
+| [Wewnętrzne testy nieobsługiwane sprzętowo mogą się różnić w zależności od typów zagnieżdżonych](#hardware-intrinsic-issupported-checks-may-differ-for-nested-types) | 5,0 |
+| [Nazwy parametrów zostały zmienione w zestawach odwołań](#parameter-names-changed-in-reference-assemblies) | 5,0 |
+| [Ścieżki URI zawierające znaki inne niż ASCII są analizowane prawidłowo w systemie UNIX](#uri-paths-with-non-ascii-characters-parse-correctly-on-unix) | 5,0 |
+| [Rozpoznawanie identyfikatorów URI ścieżek UNC w systemie UNIX](#uri-recognition-of-unc-paths-on-unix) | 5,0 |
+| [Środowisko. OSVersion zwraca poprawną wersję systemu operacyjnego](#environmentosversion-returns-the-correct-operating-system-version) | 5,0 |
+| [Złożoność elementu LINQ OrderBy. pierwszy {OrDefault} wzrósł](#complexity-of-linq-orderbyfirstordefault-increased) | 5,0 |
+| [IntPtr i UIntPtr Implementuj IFormattable](#intptr-and-uintptr-implement-iformattable) | 5,0 |
+| [PrincipalPermissionAttribute jest przestarzały jako błąd](#principalpermissionattribute-is-obsolete-as-error) | 5,0 |
+| [Metody serializacji BinaryFormatter są przestarzałe i zabronione w aplikacjach ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5,0 |
+| [Ścieżki kodu UTF-7 są przestarzałe](#utf-7-code-paths-are-obsolete) | 5,0 |
+| [Wektor \<T> zawsze zgłasza NotSupportedException dla nieobsługiwanych typów](#vectort-always-throws-notsupportedexception-for-unsupported-types) | 5,0 |
+| [ActivityIdFormat domyślny to W3C](#default-activityidformat-is-w3c) | 5,0 |
+| [Zmiana zachowania dla Vector2. Lerp i Vector4. Lerp](#behavior-change-for-vector2lerp-and-vector4lerp) | 5,0 |
+| [Metody SSE i SSE2 CompareGreaterThan prawidłowo obsługują dane wejściowe NaN](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5,0 |
+| [Element CounterSet. CreateCounterSetInstance teraz zgłasza InvalidOperationException, jeśli wystąpienie już istnieje](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5,0 |
+| [Usunięto pakiet Microsoft. DotNet. PlatformAbstractions](#microsoftdotnetplatformabstractions-package-removed) | 5,0 |
+| [Interfejsy API służące do raportowania wersji teraz produktu i nie wersji](#apis-that-report-version-now-report-product-and-not-file-version) | 3,0 |
+| [Niestandardowe wystąpienia EncoderFallbackBuffer nie mogą podlegać rekursywnie](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3,0 |
+| [Zmiany zachowań formatowania zmiennoprzecinkowego i analizowania](#floating-point-formatting-and-parsing-behavior-changed) | 3,0 |
+| [Operacje analizowania zmiennoprzecinkowe nie będą już kończyć się niepowodzeniem lub nie generują wyjątku overflow](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception) | 3,0 |
+| [InvalidAsynchronousStateException — przeniesiony do innego zestawu](#invalidasynchronousstateexception-moved-to-another-assembly) | 3,0 |
+| [Zastępowanie źle sformułowanych sekwencji bajtów w formacie UTF-8 następuje po wskazówkach dotyczących standardu Unicode](#replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines) | 3,0 |
+| [TypeDescriptionProviderAttribute przeniesiony do innego zestawu](#typedescriptionproviderattribute-moved-to-another-assembly) | 3,0 |
+| [Element ZipArchiveEntry nie obsługuje już archiwów z niespójnymi rozmiarami wpisów](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3,0 |
+| [Element FieldInfo. SetValue zgłasza wyjątek dla pól static, tylko init](#fieldinfosetvalue-throws-exception-for-static-init-only-fields) | 3,0 |
 | [Pola prywatne dodane do wbudowanych typów struktur](#private-fields-added-to-built-in-struct-types) | 2.1 |
 | [Zmień wartość domyślną UseShellExecute](#change-in-default-value-of-useshellexecute) | 2.1 |
 | [Wersje OpenSSL na macOS](#openssl-versions-on-macos) | 2.1 |
-| [UnauthorizedAccessException zgłoszone przez FileSystemInfo. Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | 1.0 |
-| [Obsługa wyjątków uszkodzonego stanu procesu nie jest obsługiwana](#handling-corrupted-state-exceptions-is-not-supported) | 1.0 |
-| [Właściwości UriBuilder nie dołączają już znaków wiodących](#uribuilder-properties-no-longer-prepend-leading-characters) | 1.0 |
-| [Proces. element StartInfo zgłasza InvalidOperationException dla procesów, które nie zostały uruchomione](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
+| [UnauthorizedAccessException zgłoszone przez FileSystemInfo. Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | 1,0 |
+| [Obsługa wyjątków uszkodzonego stanu procesu nie jest obsługiwana](#handling-corrupted-state-exceptions-is-not-supported) | 1,0 |
+| [Właściwości UriBuilder nie dołączają już znaków wiodących](#uribuilder-properties-no-longer-prepend-leading-characters) | 1,0 |
+| [Proces. element StartInfo zgłasza InvalidOperationException dla procesów, które nie zostały uruchomione](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1,0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [hardware-instrinsics-issupported-checks](../../../includes/core-changes/corefx/5.0/hardware-instrinsics-issupported-checks.md)]
+
+***
 
 [!INCLUDE [reference-assembly-parameter-names](../../../includes/core-changes/corefx/5.0/reference-assembly-parameter-names.md)]
 
