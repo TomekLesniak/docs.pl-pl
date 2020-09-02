@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 07/10/2020
-  ms.openlocfilehash: aa4090f5de075015aae7fdbd85905ec5ace2e757
-  ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+  ms.openlocfilehash: 6ad79d52f26dd3c18a36a7f4ed2a3c5e68a5f6d5
+  ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 07/13/2020
-  ms.locfileid: "86281657"
+  ms.lasthandoff: 09/01/2020
+  ms.locfileid: "89271974"
 highlightedContent:
   items:
   - title: Pobierz platformę .NET
@@ -206,7 +206,7 @@ additionalContent:
         text: Tworzenie gier w programie Visual Studio
       - url: https://docs.cryengine.com/display/CEPROG/C%23+Programming
         text: Informacje o tworzeniu gier w języku C# za pomocą aparatu CRYENGINE
-      - url: http://www.monogame.net/documentation/?page=main
+      - url: https://docs.monogame.net/?page=main
         text: Tworzenie gier w języku C# przy użyciu biblioteki MonoGame
       - url: https://docs.unity3d.com/Manual/index.html
         text: Informacje o tworzeniu gier 2D i 3D w języku C# na platformie Unity
