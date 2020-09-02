@@ -10,15 +10,15 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-ms.openlocfilehash: 089de8ce9629e30cb6e4458c0f9a4613c9674a21
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e30b9694a07d1551163f5d80e7874fe5c7d29050
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502720"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359055"
 ---
-# <a name="asynchronous-server-socket-example"></a><span data-ttu-id="ba8d9-104">Przykład asynchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="ba8d9-104">Asynchronous Server Socket Example</span></span>
-<span data-ttu-id="ba8d9-105">Poniższy przykładowy program tworzy serwer, który odbiera żądania połączenia od klientów.</span><span class="sxs-lookup"><span data-stu-id="ba8d9-105">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="ba8d9-106">Serwer jest oparty na asynchronicznym gnieździe, więc wykonywanie aplikacji serwera nie jest wstrzymane podczas oczekiwania na połączenie od klienta.</span><span class="sxs-lookup"><span data-stu-id="ba8d9-106">The server is built with an asynchronous socket, so execution of the server application is not suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="ba8d9-107">Aplikacja otrzymuje ciąg z klienta, wyświetla ciąg w konsoli, a następnie zwraca ciąg z powrotem do klienta.</span><span class="sxs-lookup"><span data-stu-id="ba8d9-107">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="ba8d9-108">Ciąg z klienta musi zawierać ciąg " \<EOF> ", aby sygnalizować koniec komunikatu.</span><span class="sxs-lookup"><span data-stu-id="ba8d9-108">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
+# <a name="asynchronous-server-socket-example"></a><span data-ttu-id="0f05d-104">Przykład asynchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="0f05d-104">Asynchronous Server Socket Example</span></span>
+<span data-ttu-id="0f05d-105">Poniższy przykładowy program tworzy serwer, który odbiera żądania połączenia od klientów.</span><span class="sxs-lookup"><span data-stu-id="0f05d-105">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="0f05d-106">Serwer jest oparty na asynchronicznym gnieździe, więc wykonywanie aplikacji serwera nie jest wstrzymane podczas oczekiwania na połączenie od klienta.</span><span class="sxs-lookup"><span data-stu-id="0f05d-106">The server is built with an asynchronous socket, so execution of the server application is not suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="0f05d-107">Aplikacja otrzymuje ciąg z klienta, wyświetla ciąg w konsoli, a następnie zwraca ciąg z powrotem do klienta.</span><span class="sxs-lookup"><span data-stu-id="0f05d-107">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="0f05d-108">Ciąg z klienta musi zawierać ciąg " \<EOF> ", aby sygnalizować koniec komunikatu.</span><span class="sxs-lookup"><span data-stu-id="0f05d-108">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
   
 ```vb  
 Imports System  
@@ -150,25 +150,32 @@ using System.Text;
 using System.Threading;  
   
 // State object for reading client data asynchronously  
-public class StateObject {  
-    // Client  socket.  
-    public Socket workSocket = null;  
+public class StateObject
+{
     // Size of receive buffer.  
-    public const int BufferSize = 1024;  
+    public const int BufferSize = 1024;
+
     // Receive buffer.  
-    public byte[] buffer = new byte[BufferSize];  
-// Received data string.  
+    public byte[] buffer = new byte[BufferSize];
+
+    // Received data string.
     public StringBuilder sb = new StringBuilder();
+
+    // Client socket.
+    public Socket workSocket = null;
 }  
   
-public class AsynchronousSocketListener {  
+public class AsynchronousSocketListener
+{
     // Thread signal.  
-    public static ManualResetEvent allDone = new ManualResetEvent(false);  
-  
-    public AsynchronousSocketListener() {  
-    }  
-  
-    public static void StartListening() {  
+    public static ManualResetEvent allDone = new ManualResetEvent(false);
+
+    public AsynchronousSocketListener()
+    {
+    }
+
+    public static void StartListening()
+    {
         // Establish the local endpoint for the socket.  
         // The DNS name of the computer  
         // running the listener is "host.contoso.com".  
@@ -206,9 +213,10 @@ public class AsynchronousSocketListener {
         Console.WriteLine("\nPress ENTER to continue...");  
         Console.Read();  
   
-    }  
-  
-    public static void AcceptCallback(IAsyncResult ar) {  
+    }
+
+    public static void AcceptCallback(IAsyncResult ar)
+    {
         // Signal the main thread to continue.  
         allDone.Set();  
   
@@ -221,9 +229,10 @@ public class AsynchronousSocketListener {
         state.workSocket = handler;  
         handler.BeginReceive( state.buffer, 0, StateObject.BufferSize, 0,  
             new AsyncCallback(ReadCallback), state);  
-    }  
-  
-    public static void ReadCallback(IAsyncResult ar) {  
+    }
+
+    public static void ReadCallback(IAsyncResult ar)
+    {
         String content = String.Empty;  
   
         // Retrieve the state object and the handler socket  
@@ -255,19 +264,22 @@ public class AsynchronousSocketListener {
                 new AsyncCallback(ReadCallback), state);  
             }  
         }  
-    }  
-  
-    private static void Send(Socket handler, String data) {  
+    }
+
+    private static void Send(Socket handler, String data)
+    {
         // Convert the string data to byte data using ASCII encoding.  
         byte[] byteData = Encoding.ASCII.GetBytes(data);  
   
         // Begin sending the data to the remote device.  
         handler.BeginSend(byteData, 0, byteData.Length, 0,  
             new AsyncCallback(SendCallback), handler);  
-    }  
-  
-    private static void SendCallback(IAsyncResult ar) {  
-        try {  
+    }
+
+    private static void SendCallback(IAsyncResult ar)
+    {
+        try
+        {
             // Retrieve the socket from the state object.  
             Socket handler = (Socket) ar.AsyncState;  
   
@@ -278,20 +290,23 @@ public class AsynchronousSocketListener {
             handler.Shutdown(SocketShutdown.Both);  
             handler.Close();  
   
-        } catch (Exception e) {  
+        }
+        catch (Exception e)
+        {
             Console.WriteLine(e.ToString());  
         }  
-    }  
-  
-    public static int Main(String[] args) {  
+    }
+
+    public static int Main(String[] args)
+    {
         StartListening();  
         return 0;  
-    }  
-}  
+    }
+}
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ba8d9-109">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="ba8d9-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0f05d-109">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="0f05d-109">See also</span></span>
 
-- [<span data-ttu-id="ba8d9-110">Przykład asynchronicznego gniazda klienta</span><span class="sxs-lookup"><span data-stu-id="ba8d9-110">Asynchronous Client Socket Example</span></span>](asynchronous-client-socket-example.md)
-- [<span data-ttu-id="ba8d9-111">Używanie asynchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="ba8d9-111">Using an Asynchronous Server Socket</span></span>](using-an-asynchronous-server-socket.md)
-- [<span data-ttu-id="ba8d9-112">Przykłady kodu gniazd</span><span class="sxs-lookup"><span data-stu-id="ba8d9-112">Socket Code Examples</span></span>](socket-code-examples.md)
+- [<span data-ttu-id="0f05d-110">Przykład asynchronicznego gniazda klienta</span><span class="sxs-lookup"><span data-stu-id="0f05d-110">Asynchronous Client Socket Example</span></span>](asynchronous-client-socket-example.md)
+- [<span data-ttu-id="0f05d-111">Używanie asynchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="0f05d-111">Using an Asynchronous Server Socket</span></span>](using-an-asynchronous-server-socket.md)
+- [<span data-ttu-id="0f05d-112">Przykłady kodu gniazd</span><span class="sxs-lookup"><span data-stu-id="0f05d-112">Socket Code Examples</span></span>](socket-code-examples.md)
