@@ -2,12 +2,12 @@
 title: Samouczek dotyczący głównych obszarów języka C#
 description: Jesteś nowym w języku C#? Poznaj podstawy języka.
 ms.date: 08/06/2020
-ms.openlocfilehash: f0e9bff144cc3c853a82f2ee6b400049df60683d
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: e1e533982757c10085f0444197ff97ee7487391f
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068537"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414906"
 ---
 # <a name="major-language-areas"></a>Główne obszary języka
 
@@ -60,7 +60,7 @@ Oba poprzednie przykłady są równoważne następującym kodzie:
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="StringInterpolation":::
 
-Ciąg interpolowany jest zadeklarowany przy użyciu `$` tokenu. Interpolacja ciągów oblicza wyrażenia między `{` i `}` , następnie konwertuje wynik na i `string` zastępuje tekst między nawiasami z wynikiem wyrażenia w postaci ciągu. `:`W pierwszym wyrażeniu `{weatherData.Data:MM-DD-YYYY}` określa *ciąg formatu*. W poprzednim przykładzie określa, że data powinna być drukowana w formacie "MM-DD-RRRR".
+Ciąg interpolowany jest zadeklarowany przy użyciu `$` tokenu. Interpolacja ciągów oblicza wyrażenia między `{` i `}` , następnie konwertuje wynik na i `string` zastępuje tekst między nawiasami z wynikiem wyrażenia w postaci ciągu. `:`W pierwszym wyrażeniu `{weatherData.Date:MM-DD-YYYY}` określa *ciąg formatu*. W poprzednim przykładzie określa, że data powinna być drukowana w formacie "MM-DD-RRRR".
 
 ## <a name="pattern-matching"></a>Dopasowanie do wzorca
 

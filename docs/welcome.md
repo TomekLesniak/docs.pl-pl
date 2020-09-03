@@ -1,75 +1,74 @@
 ---
-title: Witamy w .NET
-description: Wprowadzenie do rodziny technologii .NET.
+title: .NET — Zapraszamy!
+description: Wprowadzenie do rodziny .NET Technologies.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 64b9b0402631d34adc7ebd3bf8f7bc13416026b0
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 1933714263b98b4a503ced3868570c35feafe8f0
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646290"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89415062"
 ---
-# <a name="welcome-to-net"></a>Witamy w .NET
+# <a name="welcome-to-net"></a>.NET — Zapraszamy!
 
-Zobacz [Wprowadzenie do platformy .NET Core,](core/get-started.md) aby dowiedzieć się, jak tworzyć aplikacje .NET Core.
+Zobacz Rozpoczynanie [pracy z platformą .NET Core](core/get-started.md) , aby dowiedzieć się, jak tworzyć aplikacje platformy .NET Core.
 
-Twórz wiele typów aplikacji za pomocą platformy .NET, takich jak chmura, IoT i gry, korzystając z bezpłatnych narzędzi między platformami. Aplikacje mogą działać w systemach Android, iOS, Linux, macOS i Windows. Wdrażanie aplikacji na serwerach lub komputerach i publikowanie w sklepach z aplikacjami w celu wdrożenia na urządzeniach przenośnych. .NET jest dostępny dla studentów i hobbystów, a wszyscy są mile widziani, aby uczestniczyć w tętniącej życiem międzynarodowej społeczności programistów i wnieść bezpośredni wkład do wielu technologii .NET.
+Twórz wiele typów aplikacji za pomocą platformy .NET, takich jak chmura, IoT i gry, korzystając z bezpłatnych narzędzi międzyplatformowych. Aplikacje można uruchamiać w systemach Android, iOS, Linux, macOS i Windows. Wdrażaj aplikacje na serwerach lub komputerach stacjonarnych i Publikuj w sklepach z aplikacjami w celu wdrożenia na urządzeniach przenośnych. Platforma .NET jest dostępna dla studentów i hobby, a wszystkie są powitane w Lively międzynarodowej społeczności deweloperów i umożliwiają bezpośrednie tworzenie wielu technologii platformy .NET.
 
 ## <a name="news"></a>Wiadomości
 
-Aby uzyskać informacje o platformie .NET, sprawdź następujące blogi:
+Aby uzyskać informacje na temat platformy .NET, zapoznaj się z następującymi blogami:
 
 - [.NET Blog](https://devblogs.microsoft.com/dotnet/)
-- [ASP.NET Blog](https://devblogs.microsoft.com/aspnet/)
+- [Blog ASP.NET](https://devblogs.microsoft.com/aspnet/)
 - [Blog programu Visual Studio](https://devblogs.microsoft.com/visualstudio/)
 - [Zespół Visual Basic](https://devblogs.microsoft.com/vbteam/)
 
-Śledź również najnowsze zdarzenia .NET:
+Należy również przestrzegać najnowszych zdarzeń platformy .NET:
 
-- [Microsoft Ignite](https://www.microsoft.com/ignite)
+- [Zapłon firmy Microsoft](https://www.microsoft.com/ignite)
 - [Kompilacja firmy Microsoft](https://www.microsoft.com/build)
-- [.NET Conf](https://www.dotnetconf.net/)
+- [.NET conf](https://www.dotnetconf.net/)
 
-Aby uzyskać informacje na temat najnowszych funkcji dodanych do implementacji platformy .NET i obsługiwanych języków, zobacz następujące artykuły:
+Informacje o najnowszych funkcjach dodanych do implementacji platformy .NET i obsługiwanych języków można znaleźć w następujących artykułach:
 
 - [Co nowego w programie .NET Core 3.1](core/whats-new/dotnet-core-3-1.md)
-- [Co nowego w programie .NET Framework](framework/whats-new/index.md)
+- [Co nowego w .NET Framework](framework/whats-new/index.md)
 - [Co nowego w języku C#](csharp/whats-new/index.md)
-- [Co nowego w programie Visual Basic](visual-basic/getting-started/whats-new.md)
+- [Co nowego w Visual Basic](visual-basic/getting-started/whats-new.md)
 
 ## <a name="documentation"></a>Dokumentacja
 
-Ta dokumentacja obejmuje szerokość platformy .NET na różnych platformach i językach. Możesz rozpocząć korzystanie z platformy .NET i jej języków w dowolnej z następujących sekcji:
+Ta dokumentacja obejmuje szeroki zakres platformy .NET dla różnych platform i języków. Możesz rozpocząć pracę z platformą .NET i jej językami w dowolnej z następujących sekcji:
 
-- [Przewodnik po sieci .NET](standard/index.yml)
-- [Przewodnik po rdzeniu .NET](core/index.yml)
-- [Przewodnik po platformach .NET Framework](framework/index.yml)
-- [C# Przewodnik](csharp/index.yml)
-- [F# Przewodnik](fsharp/index.yml)
-- [Przewodnik po podstawowych języka Visual](visual-basic/index.yml)
-- [ML.NET przewodnik](machine-learning/index.yml)
+- [Podstawy platformy .NET](fundamentals/index.yml)
+- [Przewodnik .NET Framework](framework/index.yml)
+- [Przewodnik C#](csharp/index.yml)
+- [Przewodnik po języku F #](fsharp/index.yml)
+- [Przewodnik Visual Basic](visual-basic/index.yml)
+- [Przewodnik ML.NET](machine-learning/index.yml)
 - [Platforma .NET for Apache Spark](spark/index.yml)
-- [Architektura aplikacji platformy .NET](architecture/index.yml)
+- [Architektura aplikacji .NET](architecture/index.yml)
 
-Ponadto można przeglądać [odwołanie do interfejsu API platformy .NET](/dotnet/api).
+Ponadto można przeglądać [Informacje o interfejsie API platformy .NET](/dotnet/api).
 
 ## <a name="videos"></a>Filmy wideo
 
-Przeglądaj filmy wideo w internecie, urządzeniach mobilnych, komputerach stacjonarnych, języku C#, uczeniu maszynowym, kontenerach/dockerach, dostępie do danych i nie tylko:
+Eksplorowanie filmów wideo w sieci Web, mobilnych, klasycznych, C#, uczeniu maszynowym, kontenerów/Docker, dostępie do danych i nie tylko:
 
-[Seria wideo .NET 101](https://dotnet.microsoft.com/learn/videos)
+[Seria filmów programu .NET 101](https://dotnet.microsoft.com/learn/videos)
 
-## <a name="open-source"></a>Kod open source
+## <a name="open-source"></a>Technologia open source
 
-Ta dokumentacja jest całkowicie [open source](https://github.com/dotnet/docs). Możesz przyczynić się w dowolny sposób, od tworzenia problemów do pisania dokumentacji. Ponadto wiele z .NET się jest również open source. Na poniższej liście przedstawiono główne repozytoria .NET GitHub:
+Ta dokumentacja jest całkowicie [Open Source](https://github.com/dotnet/docs). Możesz współtworzyć w dowolny sposób, od tworzenia problemów związanych z pisaniem dokumentacji. Ponadto wiele z nich jest również środowiskiem Open Source. Na poniższej liście przedstawiono główne repozytoria usługi .NET GitHub:
 
-- [Strona główna .NET Core](https://github.com/dotnet/core)
-- [Core .NET środowisko uruchomieniowe](https://github.com/dotnet/runtime)
+- [Strona główna platformy .NET Core](https://github.com/dotnet/core)
+- [Środowisko uruchomieniowe platformy .NET Core](https://github.com/dotnet/runtime)
 - [Zestaw SDK dla platformy .NET Core](https://github.com/dotnet/sdk)
-- [Platforma kompilatora Roslyn (C# i Visual Basic) i narzędzia IDE](https://github.com/dotnet/roslyn)
-- [Kompilator F# i narzędzia IDE](https://github.com/dotnet/fsharp)
+- [Roslyn (C# i Visual Basic) — platforma kompilatora i narzędzia IDE](https://github.com/dotnet/roslyn)
+- [Narzędzia kompilatora i IDE języka F #](https://github.com/dotnet/fsharp)
 - [Windows Forms](https://github.com/dotnet/winforms)
 - [WPF](https://github.com/dotnet/wpf)
 
-Możesz dołączyć do innych osób, które są już aktywne w [społeczności platformy .NET,](https://dotnet.microsoft.com/platform/community) aby dowiedzieć się, co nowego, lub poprosić o pomoc.
+Możesz dołączyć do innych osób, które są już aktywne w [społeczności .NET](https://dotnet.microsoft.com/platform/community) , aby dowiedzieć się, co nowego lub poprosił o pomoc.

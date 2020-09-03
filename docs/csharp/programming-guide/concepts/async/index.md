@@ -2,12 +2,12 @@
 title: 'Programowanie asynchroniczne w języku C #'
 description: Omówienie obsługi języka C# w programowaniu asynchronicznym przy użyciu asynchronicznego, await, zadania i zadania<T>
 ms.date: 06/04/2020
-ms.openlocfilehash: 992ccd3a015653ea9ee13dfc309d47711ad0fca4
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 853019c39880b1f4ef6536aed5841ecab53d7304
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619718"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414984"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Programowanie asynchroniczne przy użyciu elementów async i await
 
@@ -45,7 +45,7 @@ Jeśli chcesz, aby komputer wykonywał powyższe instrukcje asynchronicznie, mus
 
 Te zagadnienia są ważne w przypadku programów, które można napisać dzisiaj. Podczas pisania programów klienckich, interfejs użytkownika ma reagować na dane wejściowe użytkownika. Twoja aplikacja nie powinna sprawiać, że telefon jest zamrożony podczas pobierania danych z sieci Web. W przypadku pisania programów serwerowych nie ma możliwości blokowania wątków. Te wątki mogą obsługiwać inne żądania. Użycie kodu synchronicznego, gdy istnieje asynchroniczna alternatywa, powoduje, że skalowanie w poziomie jest tańsze. Płacisz za te zablokowane wątki.
 
-Pomyślne aplikacje Modern wymagają kodu asynchronicznego. Bez obsługi języka, pisania asynchronicznie wymaganego kodu wywołania zwrotne, zdarzenia ukończenia lub inne oznacza, że zasłania pierwotny cel kodu. Zaletą kodu synchronicznego jest łatwość zrozumienia. Akcje krok po kroku ułatwiają skanowanie i zrozumienie. Tradycyjne modele asynchroniczne zmuszają do skoncentrowania się na asynchronicznym charakterze kodu, a nie na podstawowych działaniach kodu.
+Pomyślne aplikacje Modern wymagają kodu asynchronicznego. Bez obsługi języka, pisania asynchronicznie wymaganego kodu wywołania zwrotne, zdarzenia ukończenia lub inne oznacza, że zasłania pierwotny cel kodu. Zaletą kodu synchronicznego jest to, że akcje krok po kroku ułatwiają ich skanowanie i zrozumienie. Tradycyjne modele asynchroniczne zmuszają do skoncentrowania się na asynchronicznym charakterze kodu, a nie na podstawowych działaniach kodu.
 
 ## <a name="dont-block-await-instead"></a>Nie blokuj, await zamiast
 
@@ -181,7 +181,7 @@ while (breakfastTasks.Count > 0)
 }
 ```
 
-Po wprowadzeniu wszystkich zmian końcowa wersja kodu będzie wyglądać następująco:<a id="final-version"></a>
+Po wprowadzeniu wszystkich zmian końcowa wersja kodu będzie wyglądać następująco: <a id="final-version"></a>
 :::code language="csharp" source="snippets/index/AsyncBreakfast-final/Program.cs" highlight="9-40":::
 
 :::image type="content" source="media/whenany-async-breakfast.png" alt-text="gdy dowolny śniadanie Async":::

@@ -3,16 +3,16 @@ title: Oprogramowanie .NET Core i Open-Source
 description: Zapoznaj się z omówieniem programu .NET Core, który jest implementacją ogólnego przeznaczenia, modularną, międzyplatformową i typu "open source" .NET Standard.
 ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
-ms.openlocfilehash: 08d30d047c25b3b6d681d72b46b81a0cb21f8e0a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 4627d4cc1bf45f3a7ad3f269279384b4a303f00d
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622760"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414919"
 ---
 # <a name="net-core-and-open-source"></a>Platforma .NET Core i oprogramowanie open source
 
-Ten artykuł zawiera krótkie omówienie platformy .NET Core i pokazuje, jak można znaleźć więcej informacji. Aby znaleźć pełną listę dokumentacji programu .NET Core, zapoznaj się z [przewodnikiem dotyczącym platformy .NET Core](../../core/index.yml).
+Ten artykuł zawiera krótkie omówienie platformy .NET Core i pokazuje, jak można znaleźć więcej informacji.
 
 ## <a name="what-is-net-core"></a>Co to jest .NET Core?  
 
@@ -44,8 +44,8 @@ Platforma .NET Core składa się z kilku składników, takich jak zarządzane ko
   
 - [ASP.NET Core](https://github.com/dotnet/aspnetcore)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Samouczek platformy .NET — Hello world w ciągu 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)
-- [Przewodnik platformy .NET Core](../../core/index.yml)
+- [Wprowadzenie do platformy .NET Core](../../core/introduction.md)
 - [Dokumentacja ASP.NET Core](/aspnet/core/)

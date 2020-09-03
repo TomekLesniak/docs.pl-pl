@@ -3,12 +3,12 @@ title: Wybieranie między programami .NET Core i .NET Framework na potrzeby apli
 description: Przewodnik ułatwiający podjęcie decyzji, która implementacja platformy .NET ma być używana podczas kompilowania aplikacji serwera.
 author: cartermp
 ms.date: 04/28/2020
-ms.openlocfilehash: 30157276bce53ed44dca5b660172e5556dab14f8
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: a3c15e8f2198b1bcc4e623a7dc7f5cddca9c83f6
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507445"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89415022"
 ---
 # <a name="net-core-vs-net-framework-for-server-apps"></a>.NET Core a .NET Framework dla aplikacji serwerowych
 
@@ -106,12 +106,12 @@ Niektóre technologie .NET Framework nie są dostępne w programie .NET Core. Ni
 
 Niektóre platformy firmy Microsoft lub innych firm nie obsługują platformy .NET Core. Niektóre usługi platformy Azure udostępniają zestaw SDK, który nie jest jeszcze dostępny do użycia w programie .NET Core. Jest to okoliczności przejściowe, ponieważ wszystkie usługi platformy Azure korzystają z platformy .NET Core. W międzyczasie można użyć równoważnego interfejsu API REST zamiast zestawu SDK klienta.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wybierz między ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
 - [Platforma ASP.NET Core ukierunkowana na platformę .NET Framework](/aspnet/core/introduction-to-aspnet-core#aspnet-core-targeting-net-framework)
 - [Platformy docelowe](frameworks.md)
-- [Przewodnik po programie .NET Core](../core/index.yml)
+- [Wprowadzenie do platformy .NET Core](../core/introduction.md)
 - [Przenoszenie z .NET Framework do platformy .NET Core](../core/porting/index.md)
 - [Wprowadzenie do platform .NET i Docker](../core/docker/introduction.md)
 - [Przegląd składników platformy .NET](components.md)

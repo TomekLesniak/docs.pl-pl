@@ -2,14 +2,14 @@
 title: Co nowego w języku C# 8,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 8,0.
 ms.date: 04/07/2020
-ms.openlocfilehash: 14df381e17fe89bd862f97522c7efd814857e71e
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: eee395c33585028cd81861045f05f7790d8db949
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309407"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414893"
 ---
-# <a name="whats-new-in-c-80"></a>Co nowego w języku C# 8,0
+# <a name="whats-new-in-c-80"></a>Co nowego w języku C# 8.0
 
 W języku c# 8,0 dodano następujące funkcje i ulepszenia języka C#:
 
@@ -311,8 +311,8 @@ static int WriteLinesToFile(IEnumerable<string> lines)
                 skippedLines++;
             }
         }
+        return skippedLines;
     } // file is disposed here
-    return skippedLines;
 }
 ```
 
@@ -406,9 +406,9 @@ Indeksy i zakresy zapewniają zwięzłą składnię do uzyskiwania dostępu do p
 
 Ten język obsługuje dwa nowe typy i dwa nowe operatory:
 
-- <xref:System.Index?displayProperty=nameWithType>reprezentuje indeks w sekwencji.
+- <xref:System.Index?displayProperty=nameWithType> reprezentuje indeks w sekwencji.
 - Indeks od operatora końcowego `^` , który określa, że indeks jest względem końca sekwencji.
-- <xref:System.Range?displayProperty=nameWithType>reprezentuje Podzakres sekwencji.
+- <xref:System.Range?displayProperty=nameWithType> reprezentuje Podzakres sekwencji.
 - Operator zakresu `..` , który określa początek i koniec zakresu jako jego operandy.
 
 Zacznijmy od reguł dotyczących indeksów. Weź pod uwagę tablicę `sequence` . `0`Indeks jest taki sam jak `sequence[0]` . `^0`Indeks jest taki sam jak `sequence[sequence.Length]` . Należy pamiętać, że `sequence[^0]` generuje wyjątek, podobnie jak `sequence[sequence.Length]` . Dla dowolnej liczby `n` indeks jest taki `^n` sam jak `sequence.Length - n` .

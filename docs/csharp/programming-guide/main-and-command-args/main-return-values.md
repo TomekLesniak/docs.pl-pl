@@ -5,12 +5,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 4458f3cd7c8259c5725cfe5e853f826fe2ef61cc
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 469ed872c1c8c4eb41eecd04277d4fc53fb3d112
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382064"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414646"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Main () — zwracane wartości (Przewodnik programowania w języku C#)
 
@@ -26,7 +26,7 @@ Jeśli wartość zwracana z `Main` nie jest używana, zwracający `void` umożli
 
 ## <a name="example"></a>Przykład
 
-W tym przykładzie zastosowano narzędzia wiersza polecenia [platformy .NET Core](../../../core/index.yml) . Jeśli nie znasz narzędzi wiersza polecenia programu .NET Core, możesz dowiedzieć się więcej o nich w tym artykule dotyczącym [uruchamiania](../../../core/tutorials/with-visual-studio-code.md).
+W tym przykładzie zastosowano narzędzia wiersza polecenia [platformy .NET Core](../../../core/introduction.md) . Jeśli nie znasz narzędzi wiersza polecenia programu .NET Core, możesz dowiedzieć się więcej o nich w tym artykule dotyczącym [uruchamiania](../../../core/tutorials/with-visual-studio-code.md).
 
 Zmodyfikuj `Main` metodę w *program.cs* w następujący sposób:
 
@@ -88,10 +88,10 @@ Zaletą nowej składni jest to, że kompilator zawsze generuje poprawny kod.
 
 Gdy punkt wejścia aplikacji zwraca `Task` lub `Task<int>` , kompilator generuje nowy punkt wejścia, który wywołuje metodę punktu wejścia zadeklarowaną w kodzie aplikacji. Przy założeniu, że ten punkt wejścia jest wywoływany `$GeneratedMain` , kompilator generuje następujący kod dla tych punktów wejścia:
 
-- `static Task Main()`powoduje, że kompilator emituje odpowiednik`private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`
-- `static Task Main(string[])`powoduje, że kompilator emituje odpowiednik`private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
-- `static Task<int> Main()`powoduje, że kompilator emituje odpowiednik`private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`
-- `static Task<int> Main(string[])`powoduje, że kompilator emituje odpowiednik`private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+- `static Task Main()` powoduje, że kompilator emituje odpowiednik `private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task Main(string[])` powoduje, że kompilator emituje odpowiednik `private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+- `static Task<int> Main()` powoduje, że kompilator emituje odpowiednik `private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task<int> Main(string[])` powoduje, że kompilator emituje odpowiednik `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
 
 > [!NOTE]
 >Jeśli przykłady użyto `async` modyfikatora `Main` metody, kompilator wygeneruje ten sam kod.

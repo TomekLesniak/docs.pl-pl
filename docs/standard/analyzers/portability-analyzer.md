@@ -4,12 +4,12 @@ description: Dowiedz się, jak używać narzędzia analizatora przenośności pl
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: d8b5fcf8b6c3230e41585261de747edb9105aa31
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: d61dd9ebe744686885dad41ef700caaea9853f85
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811811"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414802"
 ---
 # <a name="the-net-portability-analyzer"></a>Analizator przenośności platformy .NET
 
@@ -19,7 +19,7 @@ Po przeprowadzeniu konwersji projektu na nową platformę, taką jak .NET Core, 
 
 ## <a name="common-targets"></a>Wspólne elementy docelowe
 
-- [.NET Core](../../core/index.yml): ma model modularny, obsługuje instalację równoległą i kieruje scenariusze dla wielu platform. Instalacja równoczesna pozwala na zastosowanie nowych wersji platformy .NET Core bez przerywania innych aplikacji. Jeśli chcesz przenieść aplikację do platformy .NET Core i obsługiwać wiele platform, jest to zalecany element docelowy.
+- [.NET Core](../../core/introduction.md): ma model modularny, obsługuje instalację równoległą i kieruje scenariusze dla wielu platform. Instalacja równoczesna pozwala na zastosowanie nowych wersji platformy .NET Core bez przerywania innych aplikacji. Jeśli chcesz przenieść aplikację do platformy .NET Core i obsługiwać wiele platform, jest to zalecany element docelowy.
 - . [Net Standard](../net-standard.md): zawiera interfejsy API .NET Standard dostępne we wszystkich implementacjach platformy .NET. Jeśli chcesz, aby Twoja biblioteka działała na wszystkich platformach obsługiwanych przez platformę .NET, jest to zalecane.
 - [ASP.NET Core](/aspnet/core): nowoczesne środowisko sieci Web oparte na platformie .NET Core. Jeśli chcesz przenieść aplikację sieci Web do programu .NET Core w celu obsługi wielu platform, jest to zalecane miejsce docelowe.
 - Rozszerzenia platformy .NET Core + [platform](../../core/porting/windows-compat-pack.md): zawierają interfejsy API platformy .NET Core oprócz pakietu zgodności systemu Windows, który zapewnia wiele .NET Framework dostępnych technologii. Jest to zalecany element docelowy do przenoszenia aplikacji z .NET Framework do platformy .NET Core w systemie Windows.

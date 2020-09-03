@@ -3,12 +3,12 @@ title: Współpraca z kolekcjami — wprowadzenie do samouczka języka C#
 description: Poznaj język C#, eksplorując kolekcję list w tym samouczku.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: c99f5582702120db238de1206de42d964837cdbd
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: e2282df21420630634911e07f4fb3b94f34a792b
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396895"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414686"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Dowiedz się, jak zarządzać kolekcjami danych przy użyciu typu listy ogólnej
 
@@ -216,9 +216,9 @@ foreach (var item in fibonacciNumbers)
 Zapisz plik i wpisz `dotnet run` , aby zobaczyć wyniki.
 
 > [!TIP]
-> Aby skoncentrować się na tej sekcji, można skomentować kod, który wywołuje `WorkingWithStrings();` . Po prostu umieść dwa `/` znaki przed wywołaniem podobnym do tego: `// WorkingWithStrings();` .
+> Aby skoncentrować się na tej sekcji, można skomentować kod, który wywołuje `WorkingWithStrings();` . Po prostu umieść dwa `/` znaki przed wywołaniem podobnym do tego:  `// WorkingWithStrings();` .
 
-## <a name="challenge"></a>Wyzwanie
+## <a name="challenge"></a>Zadanie
 
 Sprawdź, czy możesz połączyć niektóre koncepcje z tej i wcześniejszych lekcji. Rozwiń elementy, które zostały już skompilowane z użyciem numerów Fibonacci. Spróbuj napisać kod w celu wygenerowania pierwszych 20 cyfr w sekwencji. (Jako wskazówkę 20 Fibonacci numer jest 6765).
 
@@ -230,4 +230,4 @@ Każda iteracja pętli polega na wykorzystaniu ostatnich dwóch liczb całkowity
 
 Gratulacje, ukończono samouczek z listą. Możesz przejść do samouczka [wprowadzenie do klas](introduction-to-classes.md) w Twoim środowisku programistycznym.
 
-Aby dowiedzieć się więcej na temat pracy z `List` typem w artykule [Przewodnik .NET](../../../standard/index.yml) w [kolekcji](../../../standard/collections/index.md). Zapoznaj się również z wieloma innymi typami kolekcji.
+Aby dowiedzieć się więcej na temat pracy z `List` typem w artykule podstawowe informacje dotyczące platformy .NET, zobacz temat [kolekcje](../../../standard/collections/index.md). Zapoznaj się również z wieloma innymi typami kolekcji.

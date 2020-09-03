@@ -6,16 +6,16 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: 55b90d10a1d8ac8534ba98e1cc5af906d69822a6
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: fe504124a4274ccce332be255addd1f0b41e9026
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100837"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414724"
 ---
-# <a name="introduction-to-the-c-language-and-the-net-framework"></a>Wprowadzenie do języka C# i .NET Framework
+# <a name="introduction-to-the-c-language-and-net-framework"></a>Wprowadzenie do języka C# i .NET Framework
 
-C# to elegancki i bezpieczny dla typu język oparty na obiektach, który umożliwia deweloperom tworzenie różnorodnych bezpiecznych i niezawodnych aplikacji, które działają w ekosystemie platformy .NET. Ekosystem .NET składa się ze wszystkich implementacji platformy .NET, w tym między innymi z [programu .NET Core](../../core/index.yml)i [.NET Framework](../../framework/index.yml). Ten artykuł koncentruje się na .NET Framework. Za pomocą języka C# można tworzyć aplikacje klienckie systemu Windows, usługi sieci Web XML, składniki rozproszone, aplikacje klient-serwer, aplikacje baz danych i wiele innych.
+C# to elegancki i bezpieczny dla typu język oparty na obiektach, który umożliwia deweloperom tworzenie różnorodnych bezpiecznych i niezawodnych aplikacji, które działają w ekosystemie platformy .NET. Ekosystem .NET składa się ze wszystkich implementacji platformy .NET, w tym między innymi z [programu .NET Core](../../core/introduction.md)i [.NET Framework](../../framework/index.yml). Ten artykuł koncentruje się na .NET Framework. Za pomocą języka C# można tworzyć aplikacje klienckie systemu Windows, usługi sieci Web XML, składniki rozproszone, aplikacje klient-serwer, aplikacje baz danych i wiele innych.
 
 > [!NOTE]
 > Dokumentacja języka Visual C# założono, że znasz podstawowe koncepcje programowania. Jeśli jesteś kompletnym początkującym, warto zapoznać się z tematem Visual C# Express, który jest dostępny w sieci Web. Możesz również wykorzystać książki i zasoby sieci Web dotyczące języka C#, aby poznać praktyczne umiejętności programistyczne.

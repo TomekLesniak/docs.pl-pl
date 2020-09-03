@@ -3,12 +3,12 @@ title: Słownik platformy .NET
 description: Sprawdź znaczenie wybranych terminów używanych w dokumentacji programu .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 59e338de99510759e3e7acfd782915ed6dc5d988
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+ms.openlocfilehash: b79580baa12cc8081346678f06d49a9d0455375c
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957576"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89415013"
 ---
 # <a name="net-glossary"></a>Słownik platformy .NET
 
@@ -161,7 +161,7 @@ Termin parasol dla [.NET Standard](#net-standard) i wszystkie [implementacje i o
 
 Po wydaniu [programu .NET 5](#net-5-and-later-versions) (obecnie w wersji zapoznawczej) będzie to zalecana implementacja platformy .NET dla wszystkich nowych rozwiązań związanych z platformą .NET. w niektórych kontekstach ".NET" będzie oznaczać ".NET 5 i nowsze wersje".
 
-Zobacz [Przewodnik po platformie .NET](index.yml)
+Zobacz [.NET — podstawy](../fundamentals/index.yml)
 
 ## <a name="net-5-and-later-versions"></a>.NET 5 i nowsze wersje
 
@@ -169,7 +169,7 @@ Oparta na wielu platformach implementacja platformy .NET typu open source. Obejm
 
 Wcześniejsze wersje tej implementacji platformy .NET są znane jako .NET Core. .NET 5,0 to następna wersja z programu .NET Core 3,1. Wersja 4 została pominięta, aby uniknąć pomyłki w tej nowszej implementacji platformy .NET ze starszą implementacją, która jest znana jako [.NET Framework](#net-framework). Bieżąca wersja .NET Framework to 4,8.
 
-Zobacz [.NET](../core/index.yml).
+Zobacz [.NET Fundamentals](../fundamentals/index.yml).
 
 ## <a name="net-cli"></a>INTERFEJS WIERSZA POLECENIA PLATFORMY .NET
 
@@ -294,8 +294,7 @@ Implementacja platformy .NET, która jest używana do tworzenia nowoczesnych apl
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Przewodnik .NET](index.yml)
+- [Podstawy platformy .NET](../fundamentals/index.yml)
 - [Przewodnik .NET Framework](../framework/index.yml)
-- [.NET Core](../core/index.yml)
 - [ASP.NET — Omówienie](/aspnet/index#pivot=aspnet)
 - [Przegląd ASP.NET Core](/aspnet/index#pivot=core)
