@@ -1,19 +1,19 @@
 ---
-title: Wprowadzenie do języka C# i systemu .NET Framework
+title: Wprowadzenie do języka C# i platformy .NET
 description: Poznaj podstawy języków C# i .NET. Zapoznaj się z omówieniem języka C# i ekosystemu platformy .NET.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: fe504124a4274ccce332be255addd1f0b41e9026
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 9e84726a8f6056c5beeedae9081a68980150efdd
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414724"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465172"
 ---
-# <a name="introduction-to-the-c-language-and-net-framework"></a>Wprowadzenie do języka C# i .NET Framework
+# <a name="introduction-to-the-c-language-and-net"></a>Wprowadzenie do języka C# i platformy .NET
 
 C# to elegancki i bezpieczny dla typu język oparty na obiektach, który umożliwia deweloperom tworzenie różnorodnych bezpiecznych i niezawodnych aplikacji, które działają w ekosystemie platformy .NET. Ekosystem .NET składa się ze wszystkich implementacji platformy .NET, w tym między innymi z [programu .NET Core](../../core/introduction.md)i [.NET Framework](../../framework/index.yml). Ten artykuł koncentruje się na .NET Framework. Za pomocą języka C# można tworzyć aplikacje klienckie systemu Windows, usługi sieci Web XML, składniki rozproszone, aplikacje klient-serwer, aplikacje baz danych i wiele innych.
 
@@ -44,22 +44,22 @@ Poniżej przedstawiono dodatkowe zasoby w języku C#:
 - Aby uzyskać szczegółowe informacje na temat określonych aspektów języka C#, zobacz [Dokumentacja języka c#](../language-reference/index.md).
 - Aby uzyskać więcej informacji na temat LINQ, zobacz [LINQ (zapytanie zintegrowane z językiem)](../programming-guide/concepts/linq/index.md).
 
-## <a name="net-framework-platform-architecture"></a>Architektura platformy .NET Framework
+## <a name="net-platform-architecture"></a>Architektura platformy .NET
 
-Programy w języku C# są uruchamiane na .NET Framework, integralnym składniku systemu Windows, który zawiera wirtualny system wykonywania o nazwie środowisko uruchomieniowe języka wspólnego (CLR) i ujednolicony zestaw bibliotek klas. Środowisko CLR to komercyjna implementacja infrastruktury Common Language Infrastructure (CLI), która jest podstawą do tworzenia środowisk wykonawczych i programistycznych, w których Języki i biblioteki współpracują ze sobą.
+Programy w języku C# są uruchamiane na platformie .NET, integralnym składniku systemu Windows, który obejmuje wirtualny system wykonywania o nazwie środowisko uruchomieniowe języka wspólnego (CLR) i ujednolicony zestaw bibliotek klas. Środowisko CLR to komercyjna implementacja infrastruktury Common Language Infrastructure (CLI), która jest podstawą do tworzenia środowisk wykonawczych i programistycznych, w których Języki i biblioteki współpracują ze sobą.
 
 Kod źródłowy zapisany w języku C# jest kompilowany do [języka pośredniego (IL)](../../standard/managed-code.md) , który jest zgodny ze specyfikacją interfejsu wiersza polecenia. Kod IL i zasoby, takie jak mapy bitowe i ciągi, są przechowywane na dysku w pliku wykonywalnym nazywanym zestawem, zazwyczaj z rozszerzeniem exe lub dll. Zestaw zawiera manifest, który zawiera informacje o typach, wersji, kulturze i wymaganiach dotyczących zestawu.
 
-Gdy program C# jest wykonywany, zestaw jest ładowany do środowiska CLR, co może potrwać różne akcje na podstawie informacji zawartych w manifeście. Następnie, jeśli spełnione są wymagania dotyczące zabezpieczeń, środowisko CLR wykonuje kompilację just-in-Time (JIT), aby przekonwertować kod IL na instrukcje maszyny natywnej. Środowisko CLR udostępnia również inne usługi związane z automatycznym odzyskiwaniem pamięci, obsługą wyjątków i zarządzaniem zasobami. Kod wykonywany przez środowisko CLR jest czasami określany jako "kod zarządzany", w przeciwieństwie do "kodu niezarządzanego", który jest kompilowany do macierzystego języka maszynowego, który jest przeznaczony dla określonego systemu. Na poniższym diagramie przedstawiono relacje czasu kompilacji i czasu wykonywania dla plików kodu źródłowego C#, .NET Framework biblioteki klas, zestawy i środowisko CLR.
+Gdy program C# jest wykonywany, zestaw jest ładowany do środowiska CLR, co może potrwać różne akcje na podstawie informacji zawartych w manifeście. Następnie, jeśli spełnione są wymagania dotyczące zabezpieczeń, środowisko CLR wykonuje kompilację just-in-Time (JIT), aby przekonwertować kod IL na instrukcje maszyny natywnej. Środowisko CLR udostępnia również inne usługi związane z automatycznym odzyskiwaniem pamięci, obsługą wyjątków i zarządzaniem zasobami. Kod wykonywany przez środowisko CLR jest czasami określany jako "kod zarządzany", w przeciwieństwie do "kodu niezarządzanego", który jest kompilowany do macierzystego języka maszynowego, który jest przeznaczony dla określonego systemu. Na poniższym diagramie przedstawiono relacje czasu kompilacji i czasu wykonywania dla plików kodu źródłowego C#, biblioteki klas platformy .NET, zestawów i środowiska CLR.
 
 ![Z kodu źródłowego C# do wykonywania maszynowego](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)
 
-Współdziałanie języków jest kluczową funkcją .NET Framework. Ponieważ kod IL tworzony przez kompilator języka C# jest zgodny ze specyfikacją Common Type Specification (CTS), kod IL wygenerowany na podstawie języka C# może współistnieć z kodem, który został wygenerowany na podstawie wersji .NET Visual Basic, Visual C++ lub dowolnego z ponad 20 innych języków zgodnych ze standardem CTS. Pojedynczy zestaw może zawierać wiele modułów pisanych w różnych językach .NET, a typy mogą się odwoływać nawzajem, tak jakby były zapisywane w tym samym języku.
+Współdziałanie języków jest kluczową funkcją platformy .NET. Ponieważ kod IL tworzony przez kompilator języka C# jest zgodny ze specyfikacją Common Type Specification (CTS), kod IL wygenerowany na podstawie języka C# może współistnieć z kodem, który został wygenerowany na podstawie wersji .NET Visual Basic, Visual C++ lub dowolnego z ponad 20 innych języków zgodnych ze standardem CTS. Pojedynczy zestaw może zawierać wiele modułów pisanych w różnych językach .NET, a typy mogą się odwoływać nawzajem, tak jakby były zapisywane w tym samym języku.
 
-Oprócz usług czasu wykonywania, .NET Framework również zawiera rozbudowana Biblioteka ponad 4000 klas zorganizowanych w przestrzenie nazw, które zapewniają szeroką gamę użytecznych funkcji dla wszystkich elementów od danych wejściowych i wyjściowych na potrzeby manipulowania ciągami do analizy XML, do Windows Forms formantów. Typowa aplikacja C# używa biblioteki klas .NET Framework w szerokim stopniu do obsługi typowych zadań "wodociągów".
+Oprócz usług czasu wykonywania platforma .NET zawiera również rozbudowaną bibliotekę ponad 4000 klas zorganizowanych w przestrzenie nazw, które zapewniają szeroką gamę użytecznych funkcji dla wszystkich elementów od danych wejściowych i wyjściowych w celu manipulowania ciągami do analizy XML, do Windows Forms kontrolek. Typowa aplikacja C# używa biblioteki klas .NET w szerokim stopniu do obsługi typowych zadań "wodociągów".
 
 Aby uzyskać więcej informacji na temat .NET Framework, zobacz [Omówienie struktury Microsoft .NET](../../framework/get-started/overview.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie z Visual C #](/visualstudio/ide/quickstart-csharp-console)

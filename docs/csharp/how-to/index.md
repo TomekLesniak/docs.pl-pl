@@ -2,12 +2,12 @@
 title: Instrukcje dotyczące artykułów (Przewodnik po C#)
 description: Kolekcja szybkich porad i krótkich, ukierunkowanych przykładów kodu
 ms.date: 12/20/2017
-ms.openlocfilehash: 81ef8106add757cf3c83aa7dc130f5474b936461
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 9dd069ff767d65002b78c18b398b700a1f26ebfa
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794705"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465159"
 ---
 # <a name="how-to-c"></a>Instrukcje (C#)
 
@@ -63,7 +63,7 @@ Może być konieczne przekonwertowanie obiektu na inny typ.
 - [Konwertuj ciąg na `DateTime` ](../../standard/base-types/parsing-datetime.md).
 - [Konwertuj tablicę bajtów na](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md)liczbę całkowitą.
 - [Konwertuje ciąg na liczbę](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
-- [Użyj dopasowania wzorca `as` i `is` operatorów, aby bezpiecznie rzutować do innego typu](safely-cast-using-pattern-matching-is-and-as-operators.md).
+- [Użyj dopasowania wzorca `as` i operatorów, `is` Aby bezpiecznie rzutować do innego typu](safely-cast-using-pattern-matching-is-and-as-operators.md).
 - [Zdefiniuj konwersje typów niestandardowych](../language-reference/operators/user-defined-conversion-operators.md).
 - [Ustal, czy typ jest typem wartości null](../language-reference/builtin-types/nullable-value-types.md#how-to-identify-a-nullable-value-type).
 - [Konwersja pomiędzy typami wartości null i niedopuszczających wartości null](../language-reference/builtin-types/nullable-value-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type).
@@ -79,8 +79,8 @@ Można utworzyć typy, które definiują własne reguły równości lub definiuj
 
 Programy .NET zgłaszają, że metody nie ukończyły pracy przez wyrzucanie wyjątków. W tych artykułach dowiesz się, jak korzystać z wyjątków.
 
-- [Obsługa wyjątków przy `try` użyciu `catch`i ](../programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md).
-- [Oczyszczanie zasobów `finally` przy użyciu klauzul](../programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md).
+- [Obsługa wyjątków przy `try` użyciu `catch` i ](../programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md).
+- [Oczyszczanie zasobów przy użyciu `finally` klauzul](../programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md).
 - [Odzyskaj z wyjątków nienależących do CLS (Common Language Specification)](../programming-guide/exceptions/how-to-catch-a-non-cls-exception.md).
 
 ## <a name="delegates-and-events"></a>Obiekty delegowane i zdarzenia
@@ -94,7 +94,7 @@ Zdarzenia udostępniają mechanizm publikowania lub subskrybowania powiadomień.
 
 - [Subskrybowanie i anulowanie subskrypcji zdarzeń](../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 - [Implementuj zdarzenia zadeklarowane w interfejsach](../programming-guide/events/how-to-implement-interface-events.md).
-- Jest [to zgodne z wytycznymi .NET Framework, gdy kod publikuje zdarzenia](../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).
+- [Są zgodne ze wskazówkami platformy .NET, gdy kod publikuje zdarzenia](../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).
 - [Wywołaj zdarzenia zdefiniowane w klasach bazowych z klas pochodnych](../programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md).
 - [Implementowanie niestandardowych metod dostępu do zdarzeń](../programming-guide/events/how-to-implement-custom-event-accessors.md).
 
@@ -121,8 +121,8 @@ LINQ umożliwia pisanie kodu w celu zbadania dowolnego źródła danych, które 
 
 Nowoczesne programy często używają operacji asynchronicznych. Te artykuły ułatwią naukę korzystania z tych technik.
 
-- [Zwiększenie wydajności asynchronicznej `System.Threading.Tasks.Task.WhenAll`przy użyciu programu ](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
-- [Równoległe wykonywanie wielu żądań sieci Web `async` przy `await`użyciu i ](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md).
+- [Zwiększenie wydajności asynchronicznej `System.Threading.Tasks.Task.WhenAll` przy użyciu programu ](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+- [Równoległe wykonywanie wielu żądań sieci Web przy użyciu `async` i `await` ](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md).
 - [Użyj puli wątków](../../standard/threading/the-managed-thread-pool.md#using-the-thread-pool).
 
 ## <a name="command-line-args-to-your-program"></a>Argumenty wiersza polecenia dla programu

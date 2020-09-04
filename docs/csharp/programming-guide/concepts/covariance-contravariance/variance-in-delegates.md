@@ -1,14 +1,14 @@
 ---
 title: Wariancja w delegatach (C#)
-description: Dowiedz się, jak obsługa wariancji w .NET Framework pozwala dopasować sygnatury metod z typami delegatów we wszystkich delegatach.
+description: Dowiedz się, jak obsługa wariancji w programie .NET pozwala dopasować sygnatury metod z typami delegatów we wszystkich delegatach.
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: ef57a7fa7feaef98a47822e3f1c9242d0205932d
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 02b59dd97cedc6ab35c3122912ee528f7ca29238
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105653"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466134"
 ---
 # <a name="variance-in-delegates-c"></a>Wariancja w delegatach (C#)
 .NET Framework 3,5 wprowadza obsługę wariancji dla pasujących sygnatur metod z typami delegatów we wszystkich delegatach w języku C#. Oznacza to, że można przypisać do delegatów nie tylko metod, które mają pasujące podpisy, ale również metody, które zwracają więcej typów pochodnych (Kowariancja) lub akceptują parametry, które mają mniej pochodne typy (kontrawariancja) niż określone przez typ delegata. Dotyczy to zarówno delegatów rodzajowych, jak i nieogólnych.  
@@ -114,9 +114,9 @@ public static void Test()
 
 .NET Framework 4 wprowadził obsługę wariancji dla parametrów typu ogólnego w kilku istniejących delegatach ogólnych:  
   
-- `Action`deleguje z <xref:System> przestrzeni nazw, na przykład, <xref:System.Action%601> i<xref:System.Action%602>  
+- `Action` deleguje z <xref:System> przestrzeni nazw, na przykład, <xref:System.Action%601> i <xref:System.Action%602>  
   
-- `Func`deleguje z <xref:System> przestrzeni nazw, na przykład, <xref:System.Func%601> i<xref:System.Func%602>  
+- `Func` deleguje z <xref:System> przestrzeni nazw, na przykład, <xref:System.Func%601> i <xref:System.Func%602>  
   
 - <xref:System.Predicate%601>Obiekt delegowany  
   
@@ -199,7 +199,7 @@ public static void Test()
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy ogólne](../../../../standard/generics/index.md)
 - [Korzystanie z wariancji dla delegatów funkcji Func i Action (C#)](./using-variance-for-func-and-action-generic-delegates.md)

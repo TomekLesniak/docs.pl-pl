@@ -4,12 +4,12 @@ description: Dowiedz się, jak przyciąć aplikacje samodzielne w celu zmniejsze
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 7a4731e2cbaa3835e6aa6ba558dfa8cd03828e01
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 9c2994c98a2ebe6f45b056256c2bda28db017fbf
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053110"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465484"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Przycinanie samodzielnych wdrożeń i plików wykonywalnych
 
@@ -19,7 +19,7 @@ Niezależny od przycinania model wdrażania to wyspecjalizowana wersja modelu wd
 
 Istnieje jednak ryzyko, że analiza czasu kompilacji aplikacji może spowodować błędy w czasie wykonywania, ze względu na to, że nie jest możliwe niezawodne analizowanie różnych niezawodnych wzorców kodu (w przeważającej mierze przy użyciu odbicia). Ponieważ niezawodności nie można zagwarantować, ten model wdrażania jest oferowany jako funkcja w wersji zapoznawczej.
 
-Aparat analizy czasu kompilacji zawiera ostrzeżenia dla deweloperów wzorców kodu, które są problemmatic do wykrywania, który inny kod jest wymagany. Do kodu można dodawać adnotacje z atrybutami, aby poznać element dostosowujący, który ma zostać uwzględniony. Wiele wzorców odbicia można zamienić na generowanie kodu w czasie kompilacji przy użyciu [generatorów źródeł](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md).
+Aparat analizy czasu kompilacji zawiera ostrzeżenia dla deweloperów wzorców kodu, które są problematyczne w celu wykrycia, który inny kod jest wymagany. Do kodu można dodawać adnotacje z atrybutami, aby poznać element dostosowujący, który ma zostać uwzględniony. Wiele wzorców odbicia można zamienić na generowanie kodu w czasie kompilacji przy użyciu [generatorów źródeł](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md).
 
 Tryb przycinania dla aplikacji jest konfigurowany przy użyciu `TrimMode` Ustawienia. Wartość domyślna to `copyused` i pakiety, do których odwołują się zestawy z aplikacją. Ta `link` wartość jest używana z aplikacjami Webassembly Blazor i przycina nieużywany kod w zestawach. Ostrzeżenia analizy przycinające zapewniają informacje dotyczące wzorców kodu, w których nie było możliwe przeprowadzenie analizy pełnej zależności. Te ostrzeżenia są domyślnie pomijane i można je włączyć, ustawiając flagę `SuppressTrimAnalysisWarnings` na `false` . Aby uzyskać więcej informacji na temat dostępnych opcji przycinania, zobacz [Opcje przycinania](trimming-options.md).
 
@@ -99,7 +99,7 @@ Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pom
 
 Visual Studio dla komputerów Mac nie udostępnia opcji przycinania aplikacji podczas publikowania. Należy opublikować ręcznie, postępując zgodnie z instrukcjami podanymi w sekcji [Trim The App-CLI](#trim-your-app---cli) . Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wdrażanie aplikacji .NET Core](index.md).
 - [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).

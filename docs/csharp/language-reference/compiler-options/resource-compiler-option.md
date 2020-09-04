@@ -12,12 +12,12 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-ms.openlocfilehash: 963004820f56272b4f1b1d92ccc4d0a60493a4a0
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1e2de095b460b684fb06faf46731283a1304906e
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128702"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465692"
 ---
 # <a name="-resource-c-compiler-options"></a>-Resource (opcje kompilatora C#)
 Osadza określony zasób w pliku wyjściowym.  
@@ -30,7 +30,7 @@ Osadza określony zasób w pliku wyjściowym.
   
 ## <a name="arguments"></a>Argumenty  
  `filename`  
- Plik zasobów .NET Framework, który ma zostać osadzony w pliku wyjściowym.  
+ Plik zasobów platformy .NET, który ma zostać osadzony w pliku wyjściowym.  
   
  `identifier` (opcjonalnie)  
  Nazwa logiczna zasobu; Nazwa, która jest używana do ładowania zasobu. Wartość domyślna to nazwa pliku.  
@@ -43,7 +43,7 @@ Osadza określony zasób w pliku wyjściowym.
   
  Domyślnie zasoby są publiczne w zestawie, gdy są tworzone przy użyciu kompilatora języka C#. Aby udostępnić zasoby jako prywatne, określ `private` jako modyfikator dostępności. Żadna inna dostępność jest inna niż `public` lub `private` niedozwolona.  
   
- Jeśli `filename` jest .NET Framework utworzony plik zasobów, na przykład przez [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) lub w środowisku deweloperskim, dostęp do niego można uzyskać za pomocą elementów członkowskich w <xref:System.Resources> przestrzeni nazw. Aby uzyskać więcej informacji, zobacz <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. W przypadku wszystkich innych zasobów Użyj `GetManifestResource` metod w klasie, <xref:System.Reflection.Assembly> Aby uzyskać dostęp do zasobu w czasie wykonywania.  
+ Jeśli `filename` plik zasobów platformy .NET został utworzony na przykład przez [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) lub w środowisku programistycznym, dostęp do niego można uzyskać za pomocą elementów członkowskich w <xref:System.Resources> przestrzeni nazw. Aby uzyskać więcej informacji, zobacz <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. W przypadku wszystkich innych zasobów Użyj `GetManifestResource` metod w klasie, <xref:System.Reflection.Assembly> Aby uzyskać dostęp do zasobu w czasie wykonywania.  
   
  **-res** to krótka forma **zasobu**.  
   
@@ -68,7 +68,7 @@ Osadza określony zasób w pliku wyjściowym.
 csc -resource:rf.resource in.cs  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora C#](./index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

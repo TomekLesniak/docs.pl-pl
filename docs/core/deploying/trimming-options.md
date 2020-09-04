@@ -4,12 +4,12 @@ description: Dowiedz się, jak kontrolować przycinanie aplikacji samodzielnych.
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: d6081a24cc18e424b55d40e152f519c680f11aa0
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 42e98f9ede004f06221d2df5ecd076500061e37d
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271883"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465419"
 ---
 # <a name="trimming-options"></a>Opcje przycinania
 
@@ -39,7 +39,7 @@ Zestawy z `<IsTrimmable>true</IsTrimmable>` metadanymi, ale żadne jawne nie `Tr
 
 ## <a name="trimmed-assemblies"></a>Przycięte zestawy
 
-Podczas publikowania przyciętej aplikacji zestaw SDK oblicza `ItemGroup` wywoływany `ManagedAssemblyToLink` , który reprezentuje zestaw plików do przetworzenia do przycinania. `ManagedAssemblyToLink` może zawierać metadane kontrolujące zachowanie przycinania na zestaw. Aby ustawić te metadane, Utwórz obiekt docelowy, który jest uruchamiany przed wbudowanym `PrepareForILLink` elementem docelowym. Ten przykład pokazuje, jak włączyć przycinanie `MyAssembly` :
+Podczas publikowania przyciętej aplikacji zestaw SDK oblicza `ItemGroup` wywoływany `ManagedAssemblyToLink` , który reprezentuje zestaw plików do przetworzenia do przycinania. `ManagedAssemblyToLink` może zawierać metadane kontrolujące zachowanie przycinania na zestaw. Aby ustawić te metadane, Utwórz obiekt docelowy, który jest uruchamiany przed wbudowanym `PrepareForILLink` elementem docelowym. Poniższy przykład pokazuje, jak włączyć przycinanie `MyAssembly` .
 
 ```xml
 <Target Name="ConfigureTrimming"
@@ -64,7 +64,7 @@ Nie należy dodawać ani usuwać elementów do/z `ManagedAssemblyToLink` , ponie
 
 ## <a name="root-assemblies"></a>Główne zestawy
 
-Wszystkie zestawy, które nie `<IsTrimmable>true</IsTrimmable>` są uznawane za elementy główne do analizy, co oznacza, że zostaną zachowane wszystkie niewłaściwie zrozumiałe zależności. Dodatkowe zestawy mogą być "odblokowane" według nazwy (bez `.dll` rozszerzenia):
+Wszystkie zestawy, które nie `<IsTrimmable>true</IsTrimmable>` są uznawane za elementy główne do analizy, co oznacza, że zostaną zachowane wszystkie niezgodne ze statycznymi zależnościami. Dodatkowe zestawy mogą być "odblokowane" według nazwy (bez `.dll` rozszerzenia):
 
 ```xml
 <ItemGroup>

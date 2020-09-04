@@ -12,15 +12,15 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-ms.openlocfilehash: 162baad57397b6d992dcf8f03f0b3661e0105cb8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: cd1150f3fa0dd0eca4e9352ce3809e73a15126c7
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125348"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466108"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource — (opcje kompilatora C#)
-Tworzy łącze do zasobu .NET Framework w pliku wyjściowym. Plik zasobów nie został dodany do pliku wyjściowego. Różni się to od opcji [-Resource](./resource-compiler-option.md) , która osadza plik zasobów w pliku wyjściowym.  
+Tworzy łącze do zasobu .NET w pliku wyjściowym. Plik zasobów nie został dodany do pliku wyjściowego. Różni się to od opcji [-Resource](./resource-compiler-option.md) , która osadza plik zasobów w pliku wyjściowym.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -30,7 +30,7 @@ Tworzy łącze do zasobu .NET Framework w pliku wyjściowym. Plik zasobów nie z
   
 ## <a name="arguments"></a>Argumenty  
  `filename`  
- Plik zasobów .NET Framework, do którego chcesz utworzyć łącze z zestawu.  
+ Plik zasobów platformy .NET, który ma zostać połączony z zestawu.  
   
  `identifier` (opcjonalnie)  
  Nazwa logiczna zasobu; Nazwa, która jest używana do ładowania zasobu. Wartość domyślna to nazwa pliku.  
@@ -43,7 +43,7 @@ Tworzy łącze do zasobu .NET Framework w pliku wyjściowym. Plik zasobów nie z
   
  **-linkresource —** wymaga jednej z opcji [-Target](./target-compiler-option.md) innych niż **-target: module**.  
   
- Jeśli `filename` jest .NET Framework utworzony plik zasobów, na przykład przez [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) lub w środowisku deweloperskim, dostęp do niego można uzyskać za pomocą elementów członkowskich w <xref:System.Resources> przestrzeni nazw. Aby uzyskać więcej informacji, zobacz <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. W przypadku wszystkich innych zasobów Użyj `GetManifestResource` metod w klasie, <xref:System.Reflection.Assembly> Aby uzyskać dostęp do zasobu w czasie wykonywania.  
+ Jeśli `filename` plik zasobów platformy .NET został utworzony na przykład przez [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) lub w środowisku programistycznym, dostęp do niego można uzyskać za pomocą elementów członkowskich w <xref:System.Resources> przestrzeni nazw. Aby uzyskać więcej informacji, zobacz <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. W przypadku wszystkich innych zasobów Użyj `GetManifestResource` metod w klasie, <xref:System.Reflection.Assembly> Aby uzyskać dostęp do zasobu w czasie wykonywania.  
   
  Plik określony w `filename` może być dowolnym formatem. Można na przykład utworzyć natywną bibliotekę DLL zestawu, tak aby można ją było zainstalować w globalnej pamięci podręcznej zestawów i uzyskać do niej dostęp z kodu zarządzanego w zestawie. W drugim z poniższych przykładów pokazano, jak to zrobić. Tę samą czynność można wykonać w konsolidatorze zestawu. Trzeci z poniższych przykładów pokazuje, jak to zrobić. Aby uzyskać więcej informacji, zobacz [Al.exe (Konsolidator zestawu)](../../../framework/tools/al-exe-assembly-linker.md) i [Praca z zestawami i globalną pamięcią podręczną zestawów](../../../framework/app-domains/working-with-assemblies-and-the-gac.md).  
   
@@ -75,7 +75,7 @@ al -out:A.dll A.netmodule -link:N.dll
 gacutil -i A.dll  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora C#](./index.md)
 - [Al.exe (Konsolidator zestawu)](../../../framework/tools/al-exe-assembly-linker.md)

@@ -1,5 +1,5 @@
 ---
-description: 'Dowiedz się abouot wbudowany typ znaku w języku C #'
+description: 'Dowiedz się więcej na temat wbudowanego typu znaku w języku C #'
 title: Typ char — odwołanie w C#
 ms.date: 05/11/2020
 f1_keywords:
@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 5c15cfb8050bc93e055dbde53308f9460ff90bc8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 636e032ac22b48ebc471780ffa85148bf952cdd2
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89126388"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465094"
 ---
 # <a name="char-c-reference"></a>char (odwołanie w C#)
 
@@ -56,7 +56,7 @@ Nie istnieją niejawne konwersje z innych typów do `char` typu. Jednak każdy t
 
 Aby uzyskać więcej informacji, zobacz sekcję [Typy całkowite](~/_csharplang/spec/types.md#integral-types) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Typy wartości](value-types.md)

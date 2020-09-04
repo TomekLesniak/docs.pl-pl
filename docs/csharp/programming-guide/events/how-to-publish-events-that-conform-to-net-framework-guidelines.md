@@ -1,20 +1,20 @@
 ---
 title: Publikuj zdarzenia zgodne z zaleceniami platformy .NET — Przewodnik programowania w języku C#
-description: Dowiedz się, jak publikować zdarzenia zgodne z zaleceniami dotyczącymi platformy .NET. Wszystkie zdarzenia w bibliotece klas .NET Framework są oparte na delegatze EventHandler.
+description: Dowiedz się, jak publikować zdarzenia zgodne z zaleceniami dotyczącymi platformy .NET. Wszystkie zdarzenia w bibliotece klas .NET są oparte na delegatze EventHandler.
 ms.date: 05/26/2020
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: 1b802e236026911b55bafcb3f48d487c43bba174
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 8cc8b0a9fdaeeb6ab6290630c5d78044c2696b9a
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302116"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466173"
 ---
 # <a name="how-to-publish-events-that-conform-to-net-guidelines-c-programming-guide"></a>Jak opublikować zdarzenia zgodne z zaleceniami dotyczącymi platformy .NET (Przewodnik programowania w języku C#)
 
-Poniższa procedura pokazuje, jak dodać zdarzenia zgodne ze standardowym wzorcem .NET do klas i struktur. Wszystkie zdarzenia w bibliotece klas .NET Framework są oparte na <xref:System.EventHandler> delegatze, który jest zdefiniowany w następujący sposób:
+Poniższa procedura pokazuje, jak dodać zdarzenia zgodne ze standardowym wzorcem .NET do klas i struktur. Wszystkie zdarzenia w bibliotece klas .NET są oparte na <xref:System.EventHandler> delegatze, który jest zdefiniowany w następujący sposób:
 
 ```csharp
 public delegate void EventHandler(object sender, EventArgs e);

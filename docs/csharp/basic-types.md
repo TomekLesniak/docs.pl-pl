@@ -4,16 +4,16 @@ description: Informacje o typach podstawowych (liczbowych, ciągach i obiektach)
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 93a0023969bb8bb089922a9e30fbf599eddc7203
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 18a73e62bf45cdc4a4eaa0985c3fe036ac3b55a8
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174182"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465263"
 ---
 # <a name="types-variables-and-values"></a>Typy, zmienne i wartości
 
-C# jest jednoznacznie określonym językiem. Każda zmienna i stała ma typ, tak jak każde wyrażenie, którego wynikiem jest wartość. Każdy podpis metody Określa typ dla każdego parametru wejściowego i dla zwracanej wartości. Biblioteka klas .NET Framework definiuje zestaw wbudowanych typów liczbowych, a także bardziej złożone typy, które reprezentują szeroką gamę konstrukcji logicznych, takich jak system plików, połączenia sieciowe, kolekcje i tablice obiektów oraz daty. Typowy program C# używa typów z biblioteki klas, a także typów zdefiniowanych przez użytkownika, które są modelami koncepcji specyficznych dla domeny problemu programu.  
+C# jest jednoznacznie określonym językiem. Każda zmienna i stała ma typ, tak jak każde wyrażenie, którego wynikiem jest wartość. Każdy podpis metody Określa typ dla każdego parametru wejściowego i dla zwracanej wartości. Biblioteka klas .NET definiuje zestaw wbudowanych typów liczbowych, a także bardziej złożonych typów, które reprezentują szeroką gamę konstrukcji logicznych, takich jak system plików, połączenia sieciowe, kolekcje i tablice obiektów oraz daty. Typowy program C# używa typów z biblioteki klas, a także typów zdefiniowanych przez użytkownika, które są modelami koncepcji specyficznych dla domeny problemu programu.  
   
 Informacje przechowywane w typie mogą obejmować następujące elementy:  
   
@@ -58,11 +58,11 @@ Język C# zawiera standardowy zestaw wbudowanych typów liczbowych reprezentują
   
 ## <a name="custom-types"></a>Typy niestandardowe
 
-Do tworzenia własnych typów niestandardowych służy konstrukcja [struct](language-reference/builtin-types/struct.md), [Class](language-reference/keywords/class.md), [Interface](language-reference/keywords/interface.md)i [enum](language-reference/builtin-types/enum.md) . Sama Biblioteka klas .NET Framework jest kolekcją typów niestandardowych dostarczanych przez firmę Microsoft, których można używać we własnych aplikacjach. Domyślnie najczęściej używane typy w bibliotece klas są dostępne w dowolnym programie w języku C#. Inne stają się dostępne tylko wtedy, gdy jawnie dodasz odwołanie do projektu do zestawu, w którym są zdefiniowane. Gdy kompilator ma odwołanie do zestawu, można zadeklarować zmienne (i stałe) typów zadeklarowanych w tym zestawie w kodzie źródłowym.
+Do tworzenia własnych typów niestandardowych służy konstrukcja [struct](language-reference/builtin-types/struct.md), [Class](language-reference/keywords/class.md), [Interface](language-reference/keywords/interface.md)i [enum](language-reference/builtin-types/enum.md) . Sama Biblioteka klas .NET jest kolekcją typów niestandardowych dostarczanych przez firmę Microsoft, których można używać w własnych aplikacjach. Domyślnie najczęściej używane typy w bibliotece klas są dostępne w dowolnym programie w języku C#. Inne stają się dostępne tylko wtedy, gdy jawnie dodasz odwołanie do projektu do zestawu, w którym są zdefiniowane. Gdy kompilator ma odwołanie do zestawu, można zadeklarować zmienne (i stałe) typów zadeklarowanych w tym zestawie w kodzie źródłowym.
   
 ## <a name="generic-types"></a>Typy ogólne
 
-Typ może być zadeklarowany z co najmniej jednym *parametrem typu* , który służy jako symbol zastępczy dla rzeczywistego typu ( *konkretny typ*), który będzie używany przez kod klienta podczas tworzenia wystąpienia typu. Takie typy są nazywane *typami ogólnymi*. Na przykład typ .NET Framework <xref:System.Collections.Generic.List%601> ma jeden parametr typu, który zgodnie z Konwencją otrzymuje nazwę *T*. Podczas tworzenia wystąpienia typu należy określić typ obiektów, które będzie zawierać lista, na przykład ciąg:  
+Typ może być zadeklarowany z co najmniej jednym *parametrem typu* , który służy jako symbol zastępczy dla rzeczywistego typu ( *konkretny typ*), który będzie używany przez kod klienta podczas tworzenia wystąpienia typu. Takie typy są nazywane *typami ogólnymi*. Na przykład <xref:System.Collections.Generic.List%601> ma jeden parametr typu, który zgodnie z Konwencją otrzymuje nazwę *T*. Podczas tworzenia wystąpienia typu należy określić typ obiektów, które będzie zawierać lista, na przykład ciąg:  
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
@@ -78,13 +78,13 @@ Często należy zwrócić więcej niż jedną wartość z metody. Można tworzy�
 
 ## <a name="the-common-type-system"></a>Wspólny system typów
 
-Ważne jest, aby zrozumieć dwa podstawowe punkty o systemie typów w .NET Framework:  
+Ważne jest, aby zrozumieć dwa podstawowe punkty o systemie typów w programie .NET:  
   
 - Obsługuje zasady dziedziczenia. Typy mogą pochodzić od innych typów, nazywanych *typami podstawowymi*. Typ pochodny dziedziczy (z pewnymi ograniczeniami) metody, właściwości i inne elementy członkowskie typu podstawowego. Typ podstawowy może być pochodny od innego typu, w tym przypadku typ pochodny dziedziczy elementy członkowskie obu typów podstawowych w hierarchii dziedziczenia. Wszystkie typy, w tym wbudowane typy liczbowe, takie jak <xref:System.Int32> (słowo kluczowe języka c#: `int` ), uzyskują się ostatecznie z jednego typu podstawowego, który jest <xref:System.Object> (słowo kluczowe języka c#: `object` ). Ta ujednolicona hierarchia typów jest nazywana [systemem common Type System](../standard/common-type-system.md) (CTS). Aby uzyskać więcej informacji na temat dziedziczenia w języku C#, zobacz [dziedziczenie](programming-guide/classes-and-structs/inheritance.md).  
   
 - Każdy typ w CTS jest zdefiniowany jako *Typ wartości* lub *typ referencyjny*. Obejmuje to wszystkie niestandardowe typy w bibliotece klas .NET, a także własne typy zdefiniowane przez użytkownika. Typy, które definiujesz za pomocą `struct` `enum` słowa kluczowego or, są typami wartości. Aby uzyskać więcej informacji na temat typów wartości, zobacz [typy wartości](language-reference/builtin-types/value-types.md). Typy zdefiniowane za pomocą słowa kluczowego [Class](language-reference/keywords/class.md) to typy odwołań. Aby uzyskać więcej informacji na temat typów referencyjnych, zobacz [klasy](programming-guide/classes-and-structs/classes.md). Typy odwołań i typy wartości mają różne reguły czasu kompilacji i inne zachowanie w czasie wykonywania.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy struktur](language-reference/builtin-types/struct.md)
 - [Typów wyliczeniowych](language-reference/builtin-types/enum.md)

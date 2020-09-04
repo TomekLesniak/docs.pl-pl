@@ -10,12 +10,12 @@ helpviewer_keywords:
 - -noconfig compiler option [C#]
 - noconfig compiler option [C#]
 ms.assetid: cd26967e-e494-4c8c-b5c9-af13b2f78b2e
-ms.openlocfilehash: 26d0680743ccc3af26a0e81eeec9cd2fc0d693af
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 677b96df8c6686e46c0db93eabe72dd483b947e4
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125231"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466069"
 ---
 # <a name="-noconfig-c-compiler-options"></a>-noconfig (opcje kompilatora C#)
 Opcja **-noconfig** informuje kompilator, że nie kompiluje się z plikiem CSC. rsp, który znajduje się w i załadowany z tego samego katalogu co plik csc.exe.  
@@ -37,7 +37,7 @@ Opcja **-noconfig** informuje kompilator, że nie kompiluje się z plikiem CSC. 
   
  Ta opcja kompilatora jest niedostępna w programie Visual Studio i nie można jej zmienić programowo.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora C#](./index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

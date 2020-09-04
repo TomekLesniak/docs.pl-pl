@@ -2,12 +2,12 @@
 title: Przewodnik programowania w języku C# — C#
 description: Jesteś nowym w języku C#? Poznaj podstawy języka.
 ms.date: 08/06/2020
-ms.openlocfilehash: 9fa292e8e85832d831f36cf0f21512aa0cf32580
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 84775a436deb0958d3c05ec7d0207e76be28f27c
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656231"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465003"
 ---
 # <a name="a-tour-of-the-c-language"></a>Przewodnik po języku C#
 
@@ -37,7 +37,7 @@ Istnieją dwa rodzaje typów w języku C#: *typy wartości* i *typy referencyjne
 
 ***Identyfikator*** jest nazwą zmiennej. Identyfikator jest sekwencją znaków Unicode bez odstępów. Identyfikator może być słowem zastrzeżonym języka C#, jeśli jest poprzedzony przez `@` . Może to być przydatne w przypadku współpracy z innymi językami.
 
-Typy wartości języka C# są dalej podzielone na *typy proste*, *typy wyliczeniowe*, *typy struktur*i *typy wartości null*. Typy odwołań języka C# są dalej podzielone na *typy klas*, *typy interfejsów*, *Typy tablic*i *typy delegatów*.
+Typy wartości języka C# są dalej podzielone na *typy proste*, *typy wyliczeniowe*, *typy struktur*, *typy wartości null* i *typy wartości krotek*. Typy odwołań języka C# są dalej podzielone na *typy klas*, *typy interfejsów*, *Typy tablic*i *typy delegatów*.
 
 Poniższy konspekt zawiera omówienie systemu typów języka C#.
 
@@ -65,11 +65,11 @@ Poniższy konspekt zawiera omówienie systemu typów języka C#.
   - [Typy interfejsów](../language-reference/keywords/interface.md)
     - Typy formularza zdefiniowane przez użytkownika `interface I {...}`
   - [Typy tablic](../programming-guide/arrays/index.md)
-    - Pojedyncze i wielowymiarowe i postrzępione, na przykład,, `int[]` `int[,]` i `int[][]`
+    - Jednowymiarowe, wielowymiarowe i nierówne. Na przykład: `int[]` , `int[,]` , i `int[][]`
   - [Typy delegatów](../language-reference/builtin-types/reference-types.md#the-delegate-type)
     - Typy formularza zdefiniowane przez użytkownika `delegate int D(...)`
 
-Programy w języku C# używają *deklaracji typów* do tworzenia nowych typów. Deklaracja typu określa nazwę i składowe nowego typu. Pięć kategorii typów języka C# jest definiowanych przez użytkownika: typy klas, typy struktur, typy interfejsów, typy wyliczeniowe i typy delegatów.
+Programy w języku C# używają *deklaracji typów* do tworzenia nowych typów. Deklaracja typu określa nazwę i składowe nowego typu. Sześć kategorii typów języka C# jest definiowanych przez użytkownika: typy klas, typy struktur, typy interfejsów, typy wyliczeniowe, typy obiektów delegowanych i typy wartości krotek.
 
 - `class`Typ definiuje strukturę danych, która zawiera składowe danych (pola) i składowe funkcji (metody, właściwości i inne). Typy klas obsługują pojedyncze dziedziczenie i polimorfizm, czyli mechanizmy, w których klasy pochodne mogą poszerzać i specjalizację klas bazowych.
 - `struct`Typ jest podobny do typu klasy w tym, że reprezentuje strukturę z składowymi danych i składowymi funkcji. Jednak w przeciwieństwie do klas, struktury są typami wartości i nie wymagają zazwyczaj alokacji sterty. Typy struktur nie obsługują dziedziczenia określonego przez użytkownika, a wszystkie typy struktur niejawnie dziedziczą po typie `object` .
@@ -78,7 +78,7 @@ Programy w języku C# używają *deklaracji typów* do tworzenia nowych typów. 
 
 `class` `struct` `interface` Wszystkie typy,,, i są `delegate` obsługiwane przez wszystkie typy ogólne, dzięki czemu można je sparametryzowane z innymi typami.
 
-Język C# obsługuje tablice o pojedynczym i wielowymiarowym dowolnego typu. W przeciwieństwie do typów wymienionych powyżej, typy tablicy nie muszą być zadeklarowane przed użyciem. Zamiast tego typy tablic są konstruowane przez następujące nazwy typu z nawiasami kwadratowymi. Na przykład, `int[]` jest tablicą jednowymiarową `int` , `int[,]` jest tablicą dwuwymiarową `int` , i `int[][]` jest jednowymiarową tablicą jednowymiarowej tablicy lub "nieregularna" tablicą `int` .
+Język C# obsługuje jednowymiarowe i wielowymiarowe tablice dowolnego typu. W przeciwieństwie do typów wymienionych powyżej, typy tablicy nie muszą być zadeklarowane przed użyciem. Zamiast tego typy tablic są konstruowane przez następujące nazwy typu z nawiasami kwadratowymi. Na przykład `int[]` jest tablicą jednowymiarową `int` , `int[,]` która jest tablicą dwuwymiarową `int` , i `int[][]` jest jednowymiarową tablicą jednowymiarowych tablic lub "nieregularną" tablicą `int` .
 
 Typy dopuszczające wartości null nie wymagają oddzielnej definicji. Dla każdego typu, który nie dopuszcza wartości null `T` , istnieje odpowiedni typ dopuszczający wartość null, `T?` który może zawierać dodatkowe wartości `null` . Na przykład `int?` jest typem, który może zawierać dowolną 32-bitową liczbę całkowitą lub wartość `null` , i `string?` jest typem, który może zawierać dowolną `string` lub wartość `null` .
 

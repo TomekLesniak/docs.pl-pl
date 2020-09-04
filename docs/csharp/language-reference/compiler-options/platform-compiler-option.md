@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -platform compiler option [C#]
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
-ms.openlocfilehash: e2e4fc37418243ff6998d19165250b895c0a4fa1
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 3fdb030dfc141b011f5faa827a4e4bb45ae38d19
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124867"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466017"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform (opcje kompilatora C#)
 
@@ -35,7 +35,7 @@ AnyCPU (domyślnie), anycpu32bitpreferred, ARM, x64, x86 lub Itanium.
 
 - **AnyCPU** (domyślnie) kompiluje zestaw do uruchomienia na dowolnej platformie. Aplikacja działa jako proces 64-bitowy, gdy jest to możliwe, i wraca do 32-bitowej, gdy dostępny jest tylko ten tryb.
 
-- **anycpu32bitpreferred** kompiluje zestaw do uruchamiania na dowolnej platformie. Aplikacja działa w trybie 32-bitowym w systemach, które obsługują zarówno aplikacje 64-bitowe, jak i 32-bitowe. Tę opcję można określić tylko dla projektów przeznaczonych dla .NET Framework 4,5.
+- **anycpu32bitpreferred** kompiluje zestaw do uruchamiania na dowolnej platformie. Aplikacja działa w trybie 32-bitowym w systemach, które obsługują zarówno aplikacje 64-bitowe, jak i 32-bitowe. Tę opcję można określić tylko dla projektów przeznaczonych dla .NET Framework 4,5 lub nowszych.
 
 - **ARM** kompiluje zestaw do uruchomienia na komputerze z procesorem Advanced RISC Machine (ARM).
 
@@ -57,7 +57,7 @@ W 64-bitowym systemie operacyjnym Windows:
 
 - Pliki wykonywalne skompilowane z **-platformą: anycpu32bitpreferred** execute na 32-bitowym CLR.
 
-Ustawienie **anycpu32bitpreferred** jest prawidłowe tylko dla pliku wykonywalnego (. EXE) i wymaga .NET Framework 4,5.
+Ustawienie **anycpu32bitpreferred** jest prawidłowe tylko dla pliku wykonywalnego (. EXE) i wymaga .NET Framework 4,5 lub nowszego.
 
 Aby uzyskać więcej informacji na temat tworzenia aplikacji do uruchamiania w systemie operacyjnym Windows 64-bitowym, zobacz [64-bitowe aplikacje](../../../framework/64-bit-apps.md).
 
@@ -67,7 +67,7 @@ Aby uzyskać więcej informacji na temat tworzenia aplikacji do uruchamiania w s
 
 2. Kliknij stronę właściwości **kompilacja** .
 
-3. Zmodyfikuj właściwość **Target platformy** i dla projektów przeznaczonych dla .NET Framework 4,5 zaznacz lub wyczyść pole wyboru **Preferuj 32-bitowe** .
+3. Zmodyfikuj właściwość **Target platformy** i dla projektów, które są przeznaczone dla .NET Framework 4,5 lub nowszych, zaznacz lub wyczyść pole wyboru **Preferuj 32-bitowe** .
 
 > [!NOTE]
 > `-platform` nie jest dostępny w środowisku programistycznym w programie Visual C# Express.
@@ -82,7 +82,7 @@ Poniższy przykład pokazuje, jak używać opcji **-platform** , aby określić,
 csc -platform:anycpu filename.cs
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora C#](index.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

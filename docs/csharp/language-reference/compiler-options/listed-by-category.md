@@ -7,12 +7,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 27445b6685f48f7acf646c16de3201e68767da69
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: a1b65db6efb60d27ab82ab47854c0399b9476729
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125296"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466082"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Opcje kompilatora C# w rozbiciu na kategorie
 
@@ -41,7 +41,7 @@ Poniższe opcje kompilatora są sortowane według kategorii. Aby zapoznać się 
 |[-target](target-compiler-option.md)|Określa format pliku wyjściowego przy użyciu jednej z następujących opcji: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md)lub [-target: winmdobj](target-winmdobj-compiler-option.md).|
 |ModuleName\<string>|Określ nazwę modułu źródłowego|
 
-## <a name="net-framework-assemblies"></a>Zestawy .NET Framework
+## <a name="net-assemblies"></a>Zestawy .NET
 
 |Opcja|Przeznaczenie|
 |------------|-------------|
@@ -85,7 +85,7 @@ Poniższe opcje kompilatora są sortowane według kategorii. Aby zapoznać się 
 |------------|-------------|
 |[-Link](link-compiler-option.md)|Sprawia, że informacje o typie COM w określonych zestawach są dostępne dla projektu.|
 |[-linkresource](linkresource-compiler-option.md)|Tworzy łącze do zarządzanego zasobu.|
-|[-zasób](resource-compiler-option.md)|Osadza zasób .NET Framework w pliku wyjściowym.|
+|[-zasób](resource-compiler-option.md)|Osadza zasób platformy .NET w pliku wyjściowym.|
 |[-win32icon](win32icon-compiler-option.md)|Określa plik. ico, który ma zostać wstawiony do pliku wyjściowego.|
 |[-win32res](win32res-compiler-option.md)|Określa zasób Win32, który ma zostać wstawiony do pliku wyjściowego.|
 
@@ -116,7 +116,7 @@ Poniższe opcje kompilatora są sortowane według kategorii. Aby zapoznać się 
 |---|---|
 |-przyrostowe|Włącza kompilację przyrostową.|
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora C#](index.md)
 - [Opcje kompilatora C# w porządku alfabetycznym](listed-alphabetically.md)

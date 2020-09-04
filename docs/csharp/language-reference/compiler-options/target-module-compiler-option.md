@@ -9,12 +9,12 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 2c592d2fe001bb0908a06a6eb3287a39040b8715
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 2074e170ab177c39fdf3954fa93ae4b666bf853d
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128455"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466056"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target: module (opcje kompilatora C#)
 Ta opcja powoduje, że kompilator nie generuje manifestu zestawu.  
@@ -28,7 +28,7 @@ Ta opcja powoduje, że kompilator nie generuje manifestu zestawu.
 ## <a name="remarks"></a>Uwagi  
  Domyślnie plik wyjściowy utworzony przez kompilację z tą opcją będzie miał rozszerzenie.  
   
- Nie można załadować pliku, który nie zawiera manifestu zestawu, za pomocą środowiska uruchomieniowego języka wspólnego .NET Framework. Jednak taki plik można włączyć do manifestu zestawu zestawu za pomocą [-addmodule](./addmodule-compiler-option.md).  
+ Nie można załadować pliku, który nie zawiera manifestu zestawu, przez środowisko uruchomieniowe platformy .NET. Jednak taki plik można włączyć do manifestu zestawu zestawu za pomocą [-addmodule](./addmodule-compiler-option.md).  
   
  W przypadku utworzenia więcej niż jednego modułu w pojedynczej kompilacji typy [wewnętrzne](../keywords/internal.md) w jednym module będą dostępne dla innych modułów w kompilacji. Gdy kod w jednym module odwołuje się do `internal` typów w innym module, oba moduły muszą być dołączone do manifestu zestawu, za pomocą **-addmodule**.  
   
@@ -43,7 +43,7 @@ Ta opcja powoduje, że kompilator nie generuje manifestu zestawu.
 csc -target:module in.cs  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [-Target (opcje kompilatora C#)](./target-compiler-option.md)
 - [Opcje kompilatora C#](./index.md)

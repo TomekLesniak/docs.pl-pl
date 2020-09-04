@@ -2,12 +2,12 @@
 title: Zmiany w sieci
 description: Wyświetla listę istotnych zmian w sieci w programie .NET Core.
 ms.date: 05/05/2020
-ms.openlocfilehash: 568d26bde43ccd6e19fbe2d947f576ef5f99450a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: fa5807c882c3bc6f66e8a27361ccc14254e90b3e
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608470"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465520"
 ---
 # <a name="networking-breaking-changes"></a>Zmiany w sieci
 
@@ -15,9 +15,10 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | - |
-| [WinHttpHandler usunięte z środowiska uruchomieniowego platformy .NET](#winhttphandler-removed-from-net-runtime) | 5.0 |
-| [MulticastOption. Group nie akceptuje wartości null](#multicastoptiongroup-doesnt-accept-a-null-value) | 5.0 |
-| [Wartość domyślna HttpRequestMessage. Version została zmieniona na 1,1](#default-value-of-httprequestmessageversion-changed-to-11) | 3.0 |
+| [WinHttpHandler usunięte z środowiska uruchomieniowego platformy .NET](#winhttphandler-removed-from-net-runtime) | 5,0 |
+| [MulticastOption. Group nie akceptuje wartości null](#multicastoptiongroup-doesnt-accept-a-null-value) | 5,0 |
+| [Obsługa ścieżki plików cookie jest teraz zgodna ze specyfikacją RFC 6265](#cookie-path-handling-now-conforms-to-rfc-6265) | 5,0 |
+| [Wartość domyślna HttpRequestMessage. Version została zmieniona na 1,1](#default-value-of-httprequestmessageversion-changed-to-11) | 3,0 |
 | [Klient WebClient. CancelAsync nie zawsze anuluje natychmiast](#webclientcancelasync-doesnt-always-cancel-immediately) | 2,0 |
 
 ## <a name="net-50"></a>.NET 5,0
@@ -27,6 +28,10 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 ***
 
 [!INCLUDE [multicastoption-group-doesnt-accept-null](../../../includes/core-changes/networking/5.0/multicastoption-group-doesnt-accept-null.md)]
+
+***
+
+[!INCLUDE [cookie-path-conforms-to-rfc6265](../../../includes/core-changes/networking/5.0/cookie-path-conforms-to-rfc6265.md)]
 
 ***
 

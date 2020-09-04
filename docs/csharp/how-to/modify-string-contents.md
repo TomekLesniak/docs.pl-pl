@@ -4,12 +4,12 @@ description: Zapoznaj się z przykładami kilku technik, aby zmodyfikować istni
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: ecce8857befc66353deea341d81f8c6e4313b951
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: bae54757fdb6f02cdc0dc8fc15ad3f7583c230a7
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473971"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465055"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Jak zmodyfikować zawartość ciągu w języku C\#
 
@@ -47,7 +47,7 @@ Można usunąć tekst z ciągu przy użyciu <xref:System.String.Remove%2A?displa
 
 ## <a name="replace-matching-patterns"></a>Zamień pasujące wzorce
 
-Można użyć [wyrażeń regularnych](../../standard/base-types/regular-expressions.md) , aby zastąpić wzorce tekstu nowym tekstem, prawdopodobnie zdefiniowanym przez wzorzec. Poniższy przykład używa klasy, <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> Aby znaleźć wzorzec w ciągu źródłowym i zamienić go na poprawną wielką literę. <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType>Metoda przyjmuje funkcję, która udostępnia logikę wymiany jako jeden z jej argumentów. W tym przykładzie ta funkcja `LocalReplaceMatchCase` jest **funkcją lokalną** zadeklarowaną wewnątrz metody przykładowej. `LocalReplaceMatchCase`używa <xref:System.Text.StringBuilder?displayProperty=nameWithType> klasy do kompilowania ciągu zamiennego przy użyciu odpowiedniej wielkości liter.
+Można użyć [wyrażeń regularnych](../../standard/base-types/regular-expressions.md) , aby zastąpić wzorce tekstu nowym tekstem, prawdopodobnie zdefiniowanym przez wzorzec. Poniższy przykład używa klasy, <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> Aby znaleźć wzorzec w ciągu źródłowym i zamienić go na poprawną wielką literę. <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType>Metoda przyjmuje funkcję, która udostępnia logikę wymiany jako jeden z jej argumentów. W tym przykładzie ta funkcja `LocalReplaceMatchCase` jest **funkcją lokalną** zadeklarowaną wewnątrz metody przykładowej. `LocalReplaceMatchCase` używa <xref:System.Text.StringBuilder?displayProperty=nameWithType> klasy do kompilowania ciągu zamiennego przy użyciu odpowiedniej wielkości liter.
 
 Wyrażenia regularne są najbardziej przydatne do wyszukiwania i zamieniania tekstu, który następuje po wzorcu, a nie na znanym tekście. Aby uzyskać więcej informacji, zobacz [jak wyszukiwać ciągi](search-strings.md). Wzorzec wyszukiwania "the\s" wyszukuje wyraz "" ", po którym następuje znak odstępu. Ta część wzorca gwarantuje, że w ciągu źródłowym nie pasuje do "tam". Aby uzyskać więcej informacji na temat elementów języka wyrażenia regularnego, zobacz temat [wyrażenie regularne — szybkie odwołanie](../../standard/base-types/regular-expression-language-quick-reference.md).
 
@@ -73,5 +73,5 @@ Można zmodyfikować ciąg w stałym bloku z niebezpiecznym kodem, ale **zdecydo
 
 ## <a name="see-also"></a>Zobacz także
 
-- [.NET Framework wyrażeń regularnych](../../standard/base-types/regular-expressions.md)
+- [Wyrażenia regularne .NET](../../standard/base-types/regular-expressions.md)
 - [Język wyrażeń regularnych — Krótki przewodnik](../../standard/base-types/regular-expression-language-quick-reference.md)

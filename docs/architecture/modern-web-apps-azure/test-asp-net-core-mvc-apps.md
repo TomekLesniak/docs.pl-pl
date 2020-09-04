@@ -4,12 +4,12 @@ description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyci
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 947a3bc7da0949781ae89ed74a87edb2637daf73
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1883662f736361a947cbad440aeefda839265251
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89126518"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465640"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Testowanie aplikacji ASP.NET Core MVC
 
@@ -106,7 +106,7 @@ Jeśli określona Klasa aplikacji ma wiele metod do przetestowania (i w ten spos
 
 ## <a name="unit-testing-aspnet-core-apps"></a>Testowanie jednostkowe ASP.NET Core aplikacji
 
-W dobrze zaprojektowanej aplikacji ASP.NET Core większość złożoności i logiki biznesowej będzie hermetyzowana w jednostkach firmy i w różnych usługach. Sama aplikacja MVC ASP.NET Core, z jej kontrolerami, filtrami, modele widoków i widokami, powinna wymagać bardzo kilku testów jednostkowych. Większość funkcjonalności danej akcji leży poza samą metodą akcji. Testowanie, czy Routing działa prawidłowo, czy globalna obsługa błędów, nie można efektywnie skutecznie z testem jednostkowym. Analogicznie, wszelkie filtry, w tym Walidacja modelu i filtry uwierzytelniania i autoryzacji, nie mogą być badane jednostkowo z testem docelowym metody akcji kontrolera. Bez tych źródeł zachowania większość metod działania powinna być bardzo mała, co pozwala na ich przetestowanie do usług, które mogą być testowane niezależnie od kontrolera, który z nich korzysta.
+W dobrze zaprojektowanej aplikacji ASP.NET Core większość złożoności i logiki biznesowej będzie hermetyzowana w jednostkach firmy i w różnych usługach. Sama aplikacja MVC ASP.NET Core, z jej kontrolerami, filtrami, modele widoków i widokami, powinna wymagać bardzo kilku testów jednostkowych. Większość funkcjonalności danej akcji leży poza samą metodą akcji. Testowanie, czy kierowanie i globalna obsługa błędów działają poprawnie, nie można efektywnie wykonać test jednostkowy. Analogicznie, wszelkie filtry, w tym Walidacja modelu i filtry uwierzytelniania i autoryzacji, nie mogą być badane jednostkowo z testem docelowym metody akcji kontrolera. Bez tych źródeł zachowania większość metod działania powinna być bardzo mała, co pozwala na ich przetestowanie do usług, które mogą być testowane niezależnie od kontrolera, który z nich korzysta.
 
 Czasami konieczne będzie Refaktoryzacja kodu w celu przetestowania go jednostkowo. Często polega to na identyfikowaniu abstrakcji i korzystaniu z iniekcji zależności w celu uzyskania dostępu do abstrakcji kodu, który chcesz przetestować, zamiast kodowania bezpośrednio względem infrastruktury. Rozważmy na przykład prostą metodę akcji do wyświetlania obrazów:
 
@@ -121,7 +121,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Testy jednostkowe tej metody są utrudnione w zależności od tego `System.IO.File` , która z nich używa do odczytu z systemu plików. Możesz przetestować to zachowanie, aby upewnić się, że działa zgodnie z oczekiwaniami, ale jest to test integracji z rzeczywistymi plikami. Warto zauważyć, że nie można testować jednostkowo trasy tej metody — zobaczysz, jak to zrobić z testem funkcjonalnym wkrótce.
+Testy jednostkowe tej metody są utrudnione w zależności od tego `System.IO.File` , która z nich używa do odczytu z systemu plików. Możesz przetestować to zachowanie, aby upewnić się, że działa zgodnie z oczekiwaniami, ale jest to test integracji z rzeczywistymi plikami. Należy zauważyć, że nie można testować jednostki tej trasy metody, zobaczysz, &mdash; jak to zrobić z testem funkcjonalnym wkrótce.
 
 Jeśli nie można bezpośrednio przetestować zachowania systemu plików i nie można przetestować trasy, co to jest? Ponadto po refaktoryzacji w celu przeprowadzenia testów jednostkowych można wykryć niektóre przypadki testowe i brakujące zachowanie, takie jak obsługa błędów. Co robią metoda po znalezieniu pliku? Co należy zrobić? W tym przykładzie metoda refaktoryzacji wygląda następująco:
 
@@ -155,9 +155,9 @@ Większość testów integracji w aplikacjach ASP.NET Core należy przetestować
 
 W przypadku aplikacji ASP.NET Core `TestServer` Klasa sprawia, że testy funkcjonalne są dość łatwe do zapisu. Można skonfigurować `TestServer` za pomocą `WebHostBuilder` (lub `HostBuilder` ) bezpośrednio (jak zwykle w przypadku aplikacji) lub z `WebApplicationFactory` typem (dostępnym od wersji 2,1). Spróbuj dokładnie dopasować hosta testowego do hosta produkcyjnego, aby testy były wykonywane podobnie jak w środowisku produkcyjnym. `WebApplicationFactory`Klasa jest przydatna do konfigurowania ContentRoot TestServer, który jest używany przez ASP.NET Core do lokalizowania zasobów statycznych, takich jak widoki.
 
-Można utworzyć proste testy funkcjonalne przez utworzenie klasy testowej, która implementuje IClassFixture \<WebApplicationFactory\<TEntry>>, gdzie namiot jest klasą początkową aplikacji sieci Web. W tym miejscu, armatura testowa może utworzyć klienta przy użyciu metody "ServiceClient" fabryki:
+Można utworzyć proste testy funkcjonalne przez utworzenie klasy testowej implementującej `IClassFixture\<WebApplicationFactory\<TEntry>>` , gdzie `TEntry` jest klasą aplikacji sieci Web `Startup` . W tym miejscu, armatura testowa może utworzyć klienta przy użyciu `CreateClient` metody fabryki:
 
-```cs
+```csharp
 public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 {
     protected readonly HttpClient _client;
@@ -171,9 +171,9 @@ public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 }
 ```
 
-Często podczas każdego przebiegu testowego należy wykonać dodatkową konfigurację lokacji, na przykład w celu skonfigurowania aplikacji do używania magazynu danych w pamięci, a następnie wypełniania aplikacji za pomocą danych testowych. W tym celu należy utworzyć własną podklasę WebApplicationFactory \<TEntry> i zastąpić jej metodę ConfigureWebHost. Poniższy przykład pochodzi z projektu eShopOnWeb FunctionalTests i jest używany jako część testów w głównej aplikacji sieci Web.
+Często podczas każdego przebiegu testowego należy wykonać dodatkową konfigurację lokacji, na przykład w celu skonfigurowania aplikacji do używania magazynu danych w pamięci, a następnie wypełniania aplikacji za pomocą danych testowych. W tym celu należy utworzyć własną podklasę `WebApplicationFactory\<TEntry>` i zastąpić jej `ConfigureWebHost` metodę. Poniższy przykład pochodzi z projektu eShopOnWeb FunctionalTests i jest używany jako część testów w głównej aplikacji sieci Web.
 
-```cs
+```csharp
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -290,7 +290,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 }
 ```
 
-Ten test funkcjonalny wykonuje pełny ASP.NET Core stos aplikacji MVC/Razor Pages, w tym wszystkie oprogramowanie pośredniczące, filtry, powiązania itp., które mogą być stosowane. Sprawdza, czy dana trasa ("/") zwraca oczekiwany kod stanu sukcesu i dane wyjściowe HTML. Nie konfiguruje prawdziwy serwer sieci Web, dlatego pozwala uniknąć większości brittleness, które używają rzeczywistego serwera sieci Web do testowania (na przykład problemy z ustawieniami zapory). Testy funkcjonalne uruchamiane względem TestServer są zwykle wolniejsze niż testy integracji i jednostkowe, ale są znacznie szybsze niż testy, które byłyby wykonywane przez sieć, do testowego serwera sieci Web. Użyj testów funkcjonalnych, aby upewnić się, że stos frontonu aplikacji działa zgodnie z oczekiwaniami. Te testy są szczególnie przydatne w przypadku znalezienia duplikatów na kontrolerach lub stronach i poprawnego duplikowania przez dodanie filtrów. W idealnym przypadku ten Refaktoryzacja nie zmienia zachowania aplikacji, a zestaw testów funkcjonalnych sprawdzi, czy jest to przypadek.
+Ten test funkcjonalny wykonuje pełny ASP.NET Core stos aplikacji MVC/Razor Pages, w tym wszystkie oprogramowanie pośredniczące, filtry i powiązania, które mogą być stosowane. Sprawdza, czy dana trasa ("/") zwraca oczekiwany kod stanu sukcesu i dane wyjściowe HTML. Nie konfiguruje prawdziwy serwer sieci Web i pozwala uniknąć większości brittleness, które mogą korzystać z rzeczywistego serwera sieci Web do testowania (na przykład problemy z ustawieniami zapory). Testy funkcjonalne uruchamiane względem TestServer są zwykle wolniejsze niż testy integracji i jednostkowe, ale są znacznie szybsze niż testy, które byłyby wykonywane przez sieć, do testowego serwera sieci Web. Użyj testów funkcjonalnych, aby upewnić się, że stos frontonu aplikacji działa zgodnie z oczekiwaniami. Te testy są szczególnie przydatne w przypadku znalezienia duplikatów na kontrolerach lub stronach i poprawnego duplikowania przez dodanie filtrów. W idealnym przypadku ten Refaktoryzacja nie zmienia zachowania aplikacji, a zestaw testów funkcjonalnych sprawdzi, czy jest to przypadek.
 
 > ### <a name="references--test-aspnet-core-mvc-apps"></a>References — testowanie ASP.NET Core aplikacji MVC
 >

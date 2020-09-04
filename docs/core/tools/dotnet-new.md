@@ -4,13 +4,13 @@ description: Polecenie dotnet New umożliwia tworzenie nowych projektów platfor
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 04/10/2020
-ms.openlocfilehash: ec41b3b79ed5eded7c9124d3e4d95c658ee39580
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.date: 09/01/2020
+ms.openlocfilehash: 8e05f4dc7a03ae8ae68acc6a57f6fa0e1c6b2ce4
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173123"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465432"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -18,7 +18,7 @@ ms.locfileid: "86173123"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet new`-Tworzy nowy projekt, plik konfiguracji lub rozwiązanie na podstawie określonego szablonu.
+`dotnet new` -Tworzy nowy projekt, plik konfiguracji lub rozwiązanie na podstawie określonego szablonu.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -58,43 +58,43 @@ Polecenie wywołuje [aparat szablonu](https://github.com/dotnet/templating) , ab
 
   W poniższej tabeli przedstawiono szablony, które są wstępnie zainstalowane wraz z zestaw .NET Core SDK. Język domyślny dla szablonu jest pokazywany w nawiasach. Kliknij link krótkiej nazwy, aby wyświetlić opcje konkretnego szablonu.
 
-| Szablony                                    | Krótka nazwa                      | Language     | Tagi                                  | Wraca |
+| Szablony                                    | Krótka nazwa                      | Język     | Tagi                                  | Wraca |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
-| Aplikacja konsoli                          | [konsoli](#console)             | [C#], F #, VB | Wspólna/konsola                        | 1.0        |
-| Biblioteka klas                                | [określono](#classlib)           | [C#], F #, VB | Wspólna/Biblioteka                        | 1.0        |
-| Aplikacja WPF                              | [kodow](#wpf)                     | Znajd         | Common/WPF                            | 3.0        |
-| Biblioteka klas WPF                            | [wpflib](#wpf)                  | Znajd         | Common/WPF                            | 3.0        |
-| Biblioteka kontrolek niestandardowych WPF                   | [wpfcustomcontrollib](#wpf)     | Znajd         | Common/WPF                            | 3.0        |
-| Biblioteka kontrolek użytkownika WPF                     | [wpfusercontrollib](#wpf)       | Znajd         | Common/WPF                            | 3.0        |
-| Aplikacja Windows Forms (WinForms)         | [WinForms](#winforms)           | Znajd         | Typowe/WinForms                       | 3.0        |
-| Biblioteka klas Windows Forms (WinForms)       | [winformslib](#winforms)        | Znajd         | Typowe/WinForms                       | 3.0        |
-| Usługa procesu roboczego                               | [odpowiedzialn](#web-others)           | Znajd         | Common/Worker/sieć Web                     | 3.0        |
-| Projekt testu jednostkowego                            | [MSTest](#test)                 | [C#], F #, VB | Test/MSTest                           | 1.0        |
-| Projekt testowy NUnit 3                         | [NUnit](#nunit)                  | [C#], F #, VB | Test/NUnit                            | 2.1.400    |
+| Aplikacja konsoli                          | [konsoli](#console)             | [C#], F #, VB | Wspólna/konsola                        | 1,0        |
+| Biblioteka klas                                | [określono](#classlib)           | [C#], F #, VB | Wspólna/Biblioteka                        | 1,0        |
+| Aplikacja WPF                              | [kodow](#wpf)                     | [C#], VB     | Common/WPF                            | 3,0        |
+| Biblioteka klas WPF                            | [wpflib](#wpf)                  | [C#], VB     | Common/WPF                            | 3,0        |
+| Biblioteka kontrolek niestandardowych WPF                   | [wpfcustomcontrollib](#wpf)     | [C#], VB     | Common/WPF                            | 3,0        |
+| Biblioteka kontrolek użytkownika WPF                     | [wpfusercontrollib](#wpf)       | [C#], VB     | Common/WPF                            | 3,0        |
+| Aplikacja Windows Forms (WinForms)         | [WinForms](#winforms)           | [C#], VB     | Typowe/WinForms                       | 3,0        |
+| Biblioteka klas Windows Forms (WinForms)       | [winformslib](#winforms)        | [C#], VB     | Typowe/WinForms                       | 3,0        |
+| Usługa procesu roboczego                               | [odpowiedzialn](#web-others)           | Znajd         | Common/Worker/sieć Web                     | 3,0        |
+| Projekt testu jednostkowego                            | [MSTest](#test)                 | [C#], F #, VB | Test/MSTest                           | 1,0        |
+| Projekt testowy NUnit 3                         | [NUnit](#nunit)                 | [C#], F #, VB | Test/NUnit                            | 2.1.400    |
 | Element testowy NUnit 3                            | `nunit-test`                    | [C#], F #, VB | Test/NUnit                            | 2.2        |
-| Projekt testu xUnit                           | [xUnit](#test)                  | [C#], F #, VB | Test/xUnit                            | 1.0        |
-| Składnik Razor                              | `razorcomponent`                | Znajd         | Web/ASP. NET                           | 3.0        |
-| Strona Razor                                   | [stronic](#page)                   | Znajd         | Web/ASP. NET                           | 2.0        |
-| ViewImports MVC                              | [viewimports](#namespace)       | Znajd         | Web/ASP. NET                           | 2.0        |
-| ViewStart MVC                                | `viewstart`                     | Znajd         | Web/ASP. NET                           | 2.0        |
-| BlazorAplikacja serwera                            | [blazorserver](#blazorserver)   | Znajd         | WitrynęBlazor                            | 3.0        |
-| BlazorWebAssemblyAplikacja                       | `blazorwasm`                    | Znajd         | WitrynęBlazor/WebAssembly                            | 3.1.300    |
-| ASP.NET Core puste                           | [witrynę](#web)                     | [C#], F #     | Sieć Web/pusta                             | 1.0        |
-| Aplikacja sieci Web ASP.NET Core (Model-View-Controller) | [Standard](#web-options)             | [C#], F #     | Web/MVC                               | 1.0        |
+| Projekt testu xUnit                           | [xUnit](#test)                  | [C#], F #, VB | Test/xUnit                            | 1,0        |
+| Składnik Razor                              | `razorcomponent`                | Znajd         | Web/ASP. NET                           | 3,0        |
+| Strona Razor                                   | [stronic](#page)                   | Znajd         | Web/ASP. NET                           | 2,0        |
+| ViewImports MVC                              | [viewimports](#namespace)       | Znajd         | Web/ASP. NET                           | 2,0        |
+| ViewStart MVC                                | `viewstart`                     | Znajd         | Web/ASP. NET                           | 2,0        |
+| Blazor Aplikacja serwera                            | [blazorserver](#blazorserver)   | Znajd         | WitrynęBlazor                            | 3,0        |
+| BlazorWebAssemblyAplikacja                       | `blazorwasm`                    | Znajd         | WitrynęBlazor/WebAssembly                | 3.1.300    |
+| ASP.NET Core puste                           | [witrynę](#web)                     | [C#], F #     | Sieć Web/pusta                             | 1,0        |
+| Aplikacja sieci Web ASP.NET Core (Model-View-Controller) | [Standard](#web-options)             | [C#], F #     | Web/MVC                               | 1,0        |
 | Aplikacja sieci Web ASP.NET Core                         | [webapp, Razor](#web-options)   | Znajd         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
-| ASP.NET Core ze Skośnością                    | [kątow](#spa)                 | Znajd         | Web/MVC/SPA                           | 2.0        |
-| ASP.NET Core z React.js                   | [biern](#spa)                   | Znajd         | Web/MVC/SPA                           | 2.0        |
-| ASP.NET Core z React.js i Redux         | [reactredux](#reactredux)       | Znajd         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core ze Skośnością                    | [kątow](#spa)                 | Znajd         | Web/MVC/SPA                           | 2,0        |
+| ASP.NET Core z React.js                   | [biern](#spa)                   | Znajd         | Web/MVC/SPA                           | 2,0        |
+| ASP.NET Core z React.js i Redux         | [reactredux](#reactredux)       | Znajd         | Web/MVC/SPA                           | 2,0        |
 | Biblioteka klas Razor                          | [razorclasslib](#razorclasslib) | Znajd         | Biblioteka klas sieci Web/Razor/Biblioteka/Razor | 2.1        |
-| Internetowy interfejs API platformy ASP.NET Core                         | [WebApi](#webapi)               | [C#], F #     | Sieć Web/WebAPI                            | 1.0        |
-| ASP.NET Core usługi gRPC                    | [grpc](#web-others)             | Znajd         | Sieć Web/gRPC                              | 3.0        |
-| plik GITIGNORE dotnet                        | `gitignore`                     |              | Config                                | 3.0        |
-| global.jspliku                             | [globaljson](#globaljson)       |              | Config                                | 2.0        |
-| Konfiguracja narzędzia NuGet                                 | `nugetconfig`                   |              | Config                                | 1.0        |
-| Plik manifestu narzędzia lokalnego dotnet              | `tool-manifest`                 |              | Config                                | 3.0        |
-| Konfiguracja sieci Web                                   | `webconfig`                     |              | Config                                | 1.0        |
-| Plik rozwiązania                                | `sln`                           |              | Rozwiązanie                              | 1.0        |
-| Plik buforu protokołu                         | [proto](#namespace)             |              | Sieć Web/gRPC                              | 3.0        |
+| Internetowy interfejs API platformy ASP.NET Core                         | [WebApi](#webapi)               | [C#], F #     | Sieć Web/WebAPI                            | 1,0        |
+| ASP.NET Core usługi gRPC                    | [grpc](#web-others)             | Znajd         | Sieć Web/gRPC                              | 3,0        |
+| plik GITIGNORE dotnet                        | `gitignore`                     |              | Config                                | 3,0        |
+| global.jspliku                             | [globaljson](#globaljson)       |              | Config                                | 2,0        |
+| Konfiguracja narzędzia NuGet                                 | `nugetconfig`                   |              | Config                                | 1,0        |
+| Plik manifestu narzędzia lokalnego dotnet              | `tool-manifest`                 |              | Config                                | 3,0        |
+| Konfiguracja sieci Web                                   | `webconfig`                     |              | Config                                | 1,0        |
+| Plik rozwiązania                                | `sln`                           |              | Rozwiązanie                              | 1,0        |
+| Plik buforu protokołu                         | [proto](#namespace)             |              | Sieć Web/gRPC                              | 3,0        |
 
 ## <a name="options"></a>Opcje
 
@@ -178,7 +178,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -210,7 +210,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ***
 
-### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a>WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
+### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a> WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -228,7 +228,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ***
 
-### <a name="winforms-winformslib"></a><a name="winforms"></a>WinForms, winformslib
+### <a name="winforms-winformslib"></a><a name="winforms"></a> WinForms, winformslib
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -242,7 +242,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ***
 
-### <a name="worker-grpc"></a><a name="web-others"></a>proces roboczy, GRPC
+### <a name="worker-grpc"></a><a name="web-others"></a> proces roboczy, GRPC
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -258,7 +258,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ***
 
-### <a name="mstest-xunit"></a><a name="test"></a>MSTest, xUnit
+### <a name="mstest-xunit"></a><a name="test"></a> MSTest, xUnit
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -269,7 +269,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
 
 - **`-p|--enable-pack`**
 
@@ -292,7 +292,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
   | 2.2         | `netcoreapp2.2` |
   | 2.1         | `netcoreapp2.1` |
 
@@ -318,7 +318,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ***
 
-### <a name="viewimports-proto"></a><a name="namespace"></a>viewimports, proto
+### <a name="viewimports-proto"></a><a name="namespace"></a> viewimports, proto
 
 - **`-na|--namespace <NAMESPACE_NAME>`**
 
@@ -332,12 +332,12 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   Typ uwierzytelniania do użycia. Możliwe wartości są następujące:
 
-  - `None`-Brak uwierzytelniania (wartość domyślna).
-  - `Individual`-Uwierzytelnianie indywidualne.
-  - `IndividualB2C`-Uwierzytelnianie indywidualne przy użyciu Azure AD B2C.
-  - `SingleOrg`-Organizacja uwierzytelnianie dla pojedynczej dzierżawy.
-  - `MultiOrg`-Organizacja uwierzytelnianie dla wielu dzierżawców.
-  - `Windows`— Uwierzytelnianie systemu Windows.
+  - `None` -Brak uwierzytelniania (wartość domyślna).
+  - `Individual` -Uwierzytelnianie indywidualne.
+  - `IndividualB2C` -Uwierzytelnianie indywidualne przy użyciu Azure AD B2C.
+  - `SingleOrg` -Organizacja uwierzytelnianie dla pojedynczej dzierżawy.
+  - `MultiOrg` -Organizacja uwierzytelnianie dla wielu dzierżawców.
+  - `Windows` — Uwierzytelnianie systemu Windows.
 
 - **`--aad-b2c-instance <INSTANCE>`**
 
@@ -412,7 +412,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.1` |
 
 - **`--no-restore`**
@@ -425,18 +425,18 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ***
 
-### <a name="mvc-webapp"></a><a name="web-options"></a>MVC, webapp
+### <a name="mvc-webapp"></a><a name="web-options"></a> MVC, webapp
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Typ uwierzytelniania do użycia. Możliwe wartości są następujące:
 
-  - `None`-Brak uwierzytelniania (wartość domyślna).
-  - `Individual`-Uwierzytelnianie indywidualne.
-  - `IndividualB2C`-Uwierzytelnianie indywidualne przy użyciu Azure AD B2C.
-  - `SingleOrg`-Organizacja uwierzytelnianie dla pojedynczej dzierżawy.
-  - `MultiOrg`-Organizacja uwierzytelnianie dla wielu dzierżawców.
-  - `Windows`— Uwierzytelnianie systemu Windows.
+  - `None` -Brak uwierzytelniania (wartość domyślna).
+  - `Individual` -Uwierzytelnianie indywidualne.
+  - `IndividualB2C` -Uwierzytelnianie indywidualne przy użyciu Azure AD B2C.
+  - `SingleOrg` -Organizacja uwierzytelnianie dla pojedynczej dzierżawy.
+  - `MultiOrg` -Organizacja uwierzytelnianie dla wielu dzierżawców.
+  - `Windows` — Uwierzytelnianie systemu Windows.
 
 - **`--aad-b2c-instance <INSTANCE>`**
 
@@ -499,7 +499,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
 
 - **`--no-restore`**
 
@@ -515,7 +515,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ***
 
-### <a name="angular-react"></a><a name="spa"></a>kątowy, reagowanie
+### <a name="angular-react"></a><a name="spa"></a> kątowy, reagowanie
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 
@@ -523,8 +523,8 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   
   Możliwe wartości są następujące:
 
-  - `None`-Brak uwierzytelniania (wartość domyślna).
-  - `Individual`-Uwierzytelnianie indywidualne.
+  - `None` -Brak uwierzytelniania (wartość domyślna).
+  - `Individual` -Uwierzytelnianie indywidualne.
 
 - **`--exclude-launch-settings`**
 
@@ -551,7 +551,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.0` |
 
 ***
@@ -571,7 +571,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.0` |
 
 - **`--no-restore`**
@@ -602,10 +602,10 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   Typ uwierzytelniania do użycia. Możliwe wartości są następujące:
 
-  - `None`-Brak uwierzytelniania (wartość domyślna).
-  - `IndividualB2C`-Uwierzytelnianie indywidualne przy użyciu Azure AD B2C.
-  - `SingleOrg`-Organizacja uwierzytelnianie dla pojedynczej dzierżawy.
-  - `Windows`— Uwierzytelnianie systemu Windows.
+  - `None` -Brak uwierzytelniania (wartość domyślna).
+  - `IndividualB2C` -Uwierzytelnianie indywidualne przy użyciu Azure AD B2C.
+  - `SingleOrg` -Organizacja uwierzytelnianie dla pojedynczej dzierżawy.
+  - `Windows` — Uwierzytelnianie systemu Windows.
 
 - **`--aad-b2c-instance <INSTANCE>`**
 
@@ -641,7 +641,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 - **`--no-https`**
 
-  Wyłącza protokół HTTPS. `app.UseHsts`i `app.UseHttpsRedirection` nie są dodawane do `Startup.Configure` . Ta opcja ma zastosowanie tylko wtedy `IndividualB2C` , gdy lub `SingleOrg` nie są używane do uwierzytelniania.
+  Wyłącza protokół HTTPS. `app.UseHsts` i `app.UseHttpsRedirection` nie są dodawane do `Startup.Configure` . Ta opcja ma zastosowanie tylko wtedy `IndividualB2C` , gdy lub `SingleOrg` nie są używane do uwierzytelniania.
 
 - **`-uld|--use-local-db`**
 
@@ -656,7 +656,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
   | 3,1         | `netcoreapp3.1` |
-  | 3.0         | `netcoreapp3.0` |
+  | 3,0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.1` |
 
 - **`--no-restore`**
@@ -741,7 +741,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   dotnet new globaljson --sdk-version 3.1.101
   ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Szablony niestandardowe dla nowego dotnet](custom-templates.md)
 - [Tworzenie szablonu niestandardowego dla polecenia dotnet new](../tutorials/cli-templates-create-item-template.md)

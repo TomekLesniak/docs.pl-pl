@@ -2,12 +2,12 @@
 title: Tworzenie biblioteki klas .NET Standard przy użyciu Visual Studio Code
 description: Dowiedz się, jak utworzyć bibliotekę klas .NET Standard przy użyciu Visual Studio Code.
 ms.date: 06/08/2020
-ms.openlocfilehash: 146dfd49e448494cce0c844282bc0394a8739ac9
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: d37e3c663146c90f4ae4188b25ea7e501501c93b
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810862"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465289"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Samouczek: Tworzenie biblioteki .NET Standard przy użyciu Visual Studio Code
 
@@ -55,6 +55,8 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
    ```dotnetcli
    dotnet new classlib -o StringLibrary
    ```
+
+   `-o`Polecenie lub `--output` określa lokalizację, w której mają zostać umieszczone wygenerowane dane wyjściowe.
 
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
@@ -200,9 +202,9 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
    Input: A string that starts with an uppercase letter
    Begins with uppercase? : Yes
 
-   A string that starts with a lowercase letter
-   Input: A string that starts with a lowercase letter
-   Begins with uppercase? : Yes
+   a string that starts with a lowercase letter
+   Input: a string that starts with a lowercase letter
+   Begins with uppercase? : No
    ```
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe

@@ -3,12 +3,12 @@ title: Jak wykonać zapytanie o zdania zawierające określony zestaw wyrazów (
 description: Dowiedz się, jak używać LINQ w języku C#, aby znaleźć zdania w pliku tekstowym zawierającym dopasowania dla każdego zestawu słów, które mogą być wypełnione w czasie wykonywania.
 ms.date: 07/20/2015
 ms.assetid: 0724b429-4b87-4d26-a7b1-409358f3fc20
-ms.openlocfilehash: c334c7948f19fb857709ff04a83e1dae56fc69da
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: daf86d6641b82fb77ca237e8a190b4f60b9dea4d
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104526"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465653"
 ---
 # <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Jak wykonać zapytanie o zdania zawierające określony zestaw wyrazów (LINQ) (C#)
 Ten przykład pokazuje, jak znaleźć zdania w pliku tekstowym zawierającym dopasowania dla każdego z określonych wyrazów. Mimo że tablica terminów wyszukiwania jest zakodowana w tym przykładzie, można ją również wypełnić dynamicznie w czasie wykonywania. W tym przykładzie zapytanie zwraca zdania zawierające słowa "historyczne", "dane" i "zintegrowane".  
@@ -23,7 +23,7 @@ class FindSentences
         string text = @"Historically, the world of data and the world of objects " +  
         @"have not been well integrated. Programmers work in C# or Visual Basic " +  
         @"and also in SQL or XQuery. On the one side are concepts such as classes, " +  
-        @"objects, fields, inheritance, and .NET Framework APIs. On the other side " +  
+        @"objects, fields, inheritance, and .NET APIs. On the other side " +  
         @"are tables, columns, rows, nodes, and separate languages for dealing with " +  
         @"them. Data types often require translation between the two worlds; there are " +  
         @"different standard functions. Because the object world has no notion of query, a " +  
@@ -70,6 +70,6 @@ Historically, the world of data and the world of objects have not been well inte
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
 Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ i ciągi (C#)](./linq-and-strings.md)
