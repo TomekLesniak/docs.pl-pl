@@ -217,6 +217,16 @@
       href: cs2032.md
     - name: Błąd kompilatora CS7003
       href: cs7003.md
+    - name: Błąd kompilatora CS8400
+      href: cs8400.md
+    - name: Błąd kompilatora CS8401
+      href: cs8401.md
+    - name: Błąd kompilatora CS8403
+      href: cs8403.md
+    - name: Błąd kompilatora CS8410
+      href: cs8410.md
+    - name: Błąd kompilatora CS8411
+      href: cs8411.md
     - name: Ostrzeżenie kompilatora (poziom 1) CS0420
       href: cs0420.md
     - name: Ostrzeżenie kompilatora (poziom 1) CS0465
