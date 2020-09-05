@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c3e39e49747be709977d7fba3c39b59f5575c40d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 04d1c1162dc79bbcb0578c6661466f4d58a57acc
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620502"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497757"
 ---
 ### <a name="xmlschemaexception-now-sets-line-positions-properly"></a>Sqlschemaexception teraz ustawia prawidłowo pozycje wierszy
 
@@ -18,10 +18,18 @@ Kod obsługi wyjątków, który przyjmuje <xref:System.Xml.Schema.XmlSchemaExcep
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=nameWithType></li></ul>|
+- <xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `F:System.Xml.Linq.LoadOptions.SetLineInfo`
+
+-->

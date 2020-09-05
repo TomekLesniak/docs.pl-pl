@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: beb869208e8d48d762d94b5989a558fa2f1aaf29
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8964cd2f69e95e4078001997ad5a5d126ce42d7b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622109"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497578"
 ---
 ### <a name="data-binding-improvement-for-keyedcollection"></a>Poprawa powiązania danych dla elementu prebindingcollection
 
@@ -21,3 +21,15 @@ Aby można było korzystać z tej zmiany w aplikacji, która jest przeznaczona d
 | Zakres   |Duży|
 |Wersja|4,8|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

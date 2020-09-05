@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1329a86db4227f75dfba7c50bbbdc2fc23099528
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: fd9f4f3de8f7be39242d4ff6924d480f20a1a06b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620278"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497085"
 ---
 ### <a name="sqlbulkcopy-uses-destination-column-encoding-for-strings"></a>SqlBulkCopy używa kodowania kolumn docelowych dla ciągów
 
@@ -18,10 +18,20 @@ Należy oczekiwać, że <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlBulkCopy.%23ctor(System.Data.SqlClient.SqlConnection)></li></ul>|
+- <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType>
+- <xref:System.Data.SqlClient.SqlBulkCopy.%23ctor(System.Data.SqlClient.SqlConnection)>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Data.SqlClient.SqlBulkCopy`
+- `M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection)`
+
+-->

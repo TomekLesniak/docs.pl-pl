@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fbf3c0c8f1d11f9f5997a4d1027242c4710c7107
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d23d7821e19b9d7f2db13a6bfdf868a8414cf721
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621829"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497346"
 ---
 ### <a name="item-scrolling-a-flat-list-with-items-of-different-pixel-height"></a>Element — przewijanie płaskiej listy z elementami o różnej wysokości pikseli
 
@@ -20,8 +20,16 @@ Jeśli iteracja występuje w .NET Framework 4.6.1, ale nie w starszych wersjach 
 |:--------|:------------|
 | Zakres   |Mały|
 |Wersja|4.6.1|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Windows.Controls.VirtualizingStackPanel`
+
+-->

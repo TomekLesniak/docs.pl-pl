@@ -2,12 +2,12 @@
 title: Tworzenie biblioteki klas .NET Standard przy użyciu Visual Studio Code
 description: Dowiedz się, jak utworzyć bibliotekę klas .NET Standard przy użyciu Visual Studio Code.
 ms.date: 06/08/2020
-ms.openlocfilehash: d37e3c663146c90f4ae4188b25ea7e501501c93b
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 966b9b0b48f67809e82d9133c523995cd97b6015
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465289"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495515"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Samouczek: Tworzenie biblioteki .NET Standard przy użyciu Visual Studio Code
 
@@ -65,7 +65,7 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
    Processing post-creation actions...
    Running 'dotnet restore' on StringLibrary\StringLibrary.csproj...
      Determining projects to restore...
-     Restore completed in 328.13 ms for C:\Projects\ClassLibraryProjects\StringLibrary\StringLibrary.csproj.
+     Restored C:\Projects\ClassLibraryProjects\StringLibrary\StringLibrary.csproj (in 328 ms).
    Restore succeeded.
    ```
 
@@ -112,11 +112,10 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
    Dane wyjściowe terminalu wyglądają podobnie jak w poniższym przykładzie:
 
    ```output
-   Microsoft (R) Build Engine version 16.6.0 for .NET Core
+   Microsoft (R) Build Engine version 16.7.0+b89cb5fde for .NET
    Copyright (C) Microsoft Corporation. All rights reserved.
      Determining projects to restore...
      All projects are up-to-date for restore.
-     You are using a preview version of .NET Core. See: https://aka.ms/dotnet-core-preview
      StringLibrary -> C:\Projects\ClassLibraryProjects\StringLibrary\bin\Debug\netstandard2.0\StringLibrary.dll
    Build succeeded.
        0 Warning(s)
@@ -141,7 +140,7 @@ Dodaj aplikację konsolową, która używa biblioteki klas. Aplikacja wyświetli
    Processing post-creation actions...
    Running 'dotnet restore' on ShowCase\ShowCase.csproj...  
      Determining projects to restore...
-     Restore completed in 210.78 ms for C:\Projects\ClassLibraryProjects\ShowCase\ShowCase.csproj.
+     Restored C:\Projects\ClassLibraryProjects\ShowCase\ShowCase.csproj (in 210 ms).
    Restore succeeded.
    ```
 

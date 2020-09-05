@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 809ca85b347fabc44573e2e0c5a43261d68590d3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: cb9305f623044233082286863d2f2d2c7e9d665a
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621250"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496816"
 ---
 ### <a name="workflow-sql-persistence-adds-primary-key-clusters-and-disallows-null-values-in-some-columns"></a>Trwałość SQL przepływu pracy dodaje klastry kluczy podstawowych i nie zezwala na wartości null w niektórych kolumnach
 
@@ -18,6 +18,18 @@ Aby można było obsłużyć tę zmianę, należy zastosować plik SQL SqlWorkfl
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4,7|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

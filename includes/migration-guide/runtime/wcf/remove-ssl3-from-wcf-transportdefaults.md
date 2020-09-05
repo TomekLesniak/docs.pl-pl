@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9b734fe960165b6d4b97b861cb3e8f31979f25c5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 23987c300ac4fbad401de180b63106cd234f8d27
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621214"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497150"
 ---
 ### <a name="remove-ssl3-from-the-wcf-transportdefaults"></a>Usuń Ssl3 z TransportDefaults WCF
 
@@ -18,10 +18,20 @@ Jeśli Ssl3 jest wymagany, użyj jednego z poniższych mechanizmów konfiguracyj
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.6.2|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols?displayProperty=nameWithType></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols?displayProperty=nameWithType></li></ul>|
+- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols?displayProperty=nameWithType>
+- <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `P:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols`
+- `P:System.ServiceModel.TcpTransportSecurity.SslProtocols`
+
+-->

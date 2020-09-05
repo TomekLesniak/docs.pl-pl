@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4c8e597310ec0b02edbf993709f931a6093b6285
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 11bb23232dfedc9fd62cac46493c3fa5d195721b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621822"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497073"
 ---
 ### <a name="coerceisselectionboxhighlighted"></a>CoerceIsSelectionBoxHighlighted
 
@@ -19,9 +19,17 @@ Jeśli to możliwe, należy przeprowadzić uaktualnienie do .NET Framework 4.6.2
 | Nazwa    | Wartość       |
 |:--------|:------------|
 | Zakres   |Mały|
-|Wersja|4.6|
-|Typ|Środowisko uruchomieniowe
+|Wersja|4,6|
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Windows.Controls.ComboBox.IsSelectionBoxHighlighted?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.ComboBox.IsSelectionBoxHighlighted?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `P:System.Windows.Controls.ComboBox.IsSelectionBoxHighlighted`
+
+-->

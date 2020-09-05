@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ccdf232d743c9e270b6ed21f698998eb95a97399
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 9baca45de1c8994f610815e84fdee8ba3930eb04
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621217"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497681"
 ---
 ### <a name="wcf-msmqsecurehashalgorithm-default-value-is-now-sha256"></a>Wartość domyślna MsmqSecureHashAlgorithm WCF jest teraz SHA256
 
@@ -21,3 +21,15 @@ W przypadku wystąpienia problemów ze zgodnością z tą zmianą w .NET Framewo
 | Zakres   |Mały|
 |Wersja|4.7.1|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

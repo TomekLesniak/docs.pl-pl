@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 8cc4f2ba2923774ef4e4e6861a89a7797ca988e1
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5c8ea3565fbe599dd53a71ba8bd339704f7d7f8a
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621202"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497364"
 ---
 ### <a name="signedxml-and-encryptedxml-breaking-changes"></a>Zmiany SignedXml i EncryptedXml
 
 #### <a name="details"></a>Szczegóły
 
-W .NET Framework 4.6.2, poprawki zabezpieczeń w <xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=fullName> i <xref:System.Security.Cryptography.Xml.EncryptedXml?displayProperty=fullName> prowadzą do różnych zachowań w czasie wykonywania. Na przykład<ul><li>Jeśli dokument ma wiele elementów z tym samym <code>id</code> atrybutem, a podpis jednego z tych elementów jako element główny podpisu, dokument będzie teraz traktowany jako nieprawidłowy.</li><li>Dokumenty używające niekanonicznych algorytmów transformacji XPath w odwołaniach są teraz uznawane za nieprawidłowe.</li><li>Dokumenty korzystające z algorytmów transformacji XSLT inne niż kanoniczne w odwołaniach są teraz traktowane jako nieprawidłowe.</li><li>Nie będzie można wykonać żadnego programu korzystającego z odłączonych podpisów zasobów zewnętrznych.</li></ul>
+W .NET Framework 4.6.2, poprawki zabezpieczeń w <xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=fullName> i <xref:System.Security.Cryptography.Xml.EncryptedXml?displayProperty=fullName> prowadzą do różnych zachowań w czasie wykonywania. Przykład:<ul><li>Jeśli dokument ma wiele elementów z tym samym <code>id</code> atrybutem, a podpis jednego z tych elementów jako element główny podpisu, dokument będzie teraz traktowany jako nieprawidłowy.</li><li>Dokumenty używające niekanonicznych algorytmów transformacji XPath w odwołaniach są teraz uznawane za nieprawidłowe.</li><li>Dokumenty korzystające z algorytmów transformacji XSLT inne niż kanoniczne w odwołaniach są teraz traktowane jako nieprawidłowe.</li><li>Nie będzie można wykonać żadnego programu korzystającego z odłączonych podpisów zasobów zewnętrznych.</li></ul>
 
 #### <a name="suggestion"></a>Sugestia
 
@@ -20,8 +20,20 @@ Deweloperzy mogą chcieć przejrzeć użycie <xref:System.Security.Cryptography.
 |:--------|:------------|
 | Zakres   |Mały|
 |Wersja|4.6.2|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Security.Cryptography.Xml.Transform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform?displayProperty=nameWithType></li></ul>|
+- <xref:System.Security.Cryptography.Xml.Transform?displayProperty=nameWithType>
+- <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform?displayProperty=nameWithType>
+- <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Security.Cryptography.Xml.Transform`
+- `T:System.Security.Cryptography.Xml.XmlDsigXPathTransform`
+- `T:System.Security.Cryptography.Xml.XmlDsigXsltTransform`
+
+-->

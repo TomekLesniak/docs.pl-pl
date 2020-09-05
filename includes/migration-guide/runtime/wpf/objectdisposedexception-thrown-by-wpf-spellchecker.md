@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b836b26f3f52e9d0cc78feb764629bd2fa306657
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3244913e06a744dafc4440f824ebe6bed25b8dd1
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621832"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497393"
 ---
 ### <a name="objectdisposedexception-thrown-by-wpf-spellchecker"></a>ObjectDisposedException zgłoszone przez program sprawdzania pisowni WPF
 
@@ -18,6 +18,18 @@ Uaktualnij do .NET Framework 4,7
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.6.1|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

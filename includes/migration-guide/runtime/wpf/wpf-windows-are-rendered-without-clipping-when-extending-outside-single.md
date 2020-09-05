@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d276e2bbf24c8b2389a0a8078c62c327c3729d50
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a133c2ea48df11915f8708029c70549e8a1ccefd
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621358"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497619"
 ---
 ### <a name="wpf-windows-are-rendered-without-clipping-when-extending-outside-a-single-monitor"></a>Okna WPF są renderowane bez obcinania podczas rozszerzania poza pojedynczy monitor
 
@@ -19,5 +19,17 @@ Takie zachowanie (bez względu na to, czy ma być obcinane czy nie) można jawni
 | Nazwa    | Wartość       |
 |:--------|:------------|
 | Zakres   |Mały|
-|Wersja|4.6|
+|Wersja|4,6|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

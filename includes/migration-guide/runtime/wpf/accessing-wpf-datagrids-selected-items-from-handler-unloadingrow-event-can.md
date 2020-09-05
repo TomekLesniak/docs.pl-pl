@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7ac0cac53ab2fa7657d0ae58f11d9e777631acc9
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1487e32ffca7b4bbebb5edac7efc8961ac05723b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620441"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497102"
 ---
 ### <a name="accessing-a-wpf-datagrids-selected-items-from-a-handler-of-the-datagrids-unloadingrow-event-can-cause-a-nullreferenceexception"></a>Dostęp do wybranych elementów programu WPF DataGrid z procedury obsługi zdarzenia UnloadingRow elementu DataGrid może spowodować wystąpienie elementu NullReferenceException
 
@@ -20,8 +20,18 @@ Ten problem został rozwiązany w .NET Framework 4,6 i może zostać rozwiązany
 |:--------|:------------|
 | Zakres   |Mały|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Windows.Controls.DataGrid.UnloadingRow?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.DataGrid.UnloadingRowDetails?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.DataGrid.UnloadingRow?displayProperty=nameWithType>
+- <xref:System.Windows.Controls.DataGrid.UnloadingRowDetails?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `E:System.Windows.Controls.DataGrid.UnloadingRow`
+- `E:System.Windows.Controls.DataGrid.UnloadingRowDetails`
+
+-->

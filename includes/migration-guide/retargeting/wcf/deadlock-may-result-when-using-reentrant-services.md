@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: dd7d3e445772e4b5ec148576ccd1374d56e251bd
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: f61cf21f9f30662cc8e383bb3aeb5c642f1665b8
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614783"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497936"
 ---
 ### <a name="deadlock-may-result-when-using-reentrant-services"></a>Zakleszczenie może wynikać z używania usług współużytkowanych
 
@@ -20,7 +20,7 @@ Zakleszczenie może skutkować usługą współużytkowaną, która ogranicza wy
 
 Aby rozwiązać ten problem, można wykonać następujące czynności:
 
-- Ustaw tryb współbieżności usługi do <xref:System.ServiceModel.ConcurrencyMode.Single?displayProperty=nameWithType> lub &lt; System. ServiceModel. concurrency. Multiple? DisplayProperty = nameWithType &gt; . Przykład:
+- Ustaw tryb współbieżności usługi na <xref:System.ServiceModel.ConcurrencyMode.Single?displayProperty=nameWithType> lub <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType> . Przykład:
 
 ```csharp
 [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]

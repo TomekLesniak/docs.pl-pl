@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f955e270f709ddf6eea2e44bbcf386e372b9f6e3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 4e685722271a8079e727ea9c2e0e501f68b30fc9
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621313"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497403"
 ---
 ### <a name="targetframeworkname-for-default-app-domain-no-longer-defaults-to-null-if-not-set"></a>TargetFrameworkName dla domyślnej domeny aplikacji nie ma już wartości null, jeśli nie jest ustawiona
 
@@ -18,10 +18,18 @@ Kod powinien zostać zaktualizowany, aby nie zależał <xref:System.AppDomainSet
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
-|Wersja|4.6|
-|Typ|Środowisko uruchomieniowe
+| Zakres   |Edge|
+|Wersja|4,6|
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=nameWithType></li></ul>|
+- <xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `P:System.AppDomainSetup.TargetFrameworkName`
+
+-->

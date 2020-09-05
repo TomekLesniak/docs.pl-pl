@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fb9436ec9e525afb497033775e34b6b636ced22d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: afcb9b950d4c47b4251dcc8ab0cf9cfc702005c8
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621349"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497752"
 ---
 ### <a name="wcf-services-that-use-nettcp-with-ssl-security-and-md5-certificate-authentication"></a>Usługi WCF korzystające z NETTCP z zabezpieczeniami SSL i uwierzytelnianiem certyfikatu MD5
 
@@ -51,5 +51,17 @@ Następujący plik konfiguracji wykonuje następujące czynności:
 | Nazwa    | Wartość   |
 |:--------|:--------|
 | Zakres   | Mały   |
-| Wersja | 4.6     |
+| Wersja | 4,6     |
 | Typ    | Środowisko uruchomieniowe |
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

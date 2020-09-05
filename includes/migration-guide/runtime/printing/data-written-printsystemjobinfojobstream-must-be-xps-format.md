@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a007022bf32ffe76861f6f9016a7edace17b0f61
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 19be8a7755d9b238ab6507eaa73319bddf39faa3
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620357"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496846"
 ---
 ### <a name="data-written-to-printsystemjobinfojobstream-must-be-in-xps-format"></a>Dane zapisywane do PrintSystemJobInfo. strumienia zadań muszą być w formacie XPS
 
@@ -20,8 +20,16 @@ Aby wydrukować zawartość wyjściową, można wykonać jedną z następującyc
 |:--------|:------------|
 | Zakres   |Mały|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Printing.PrintSystemJobInfo.JobStream?displayProperty=nameWithType></li></ul>|
+- <xref:System.Printing.PrintSystemJobInfo.JobStream?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `P:System.Printing.PrintSystemJobInfo.JobStream`
+
+-->

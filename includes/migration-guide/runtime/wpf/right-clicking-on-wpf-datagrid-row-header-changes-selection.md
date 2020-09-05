@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6d804dd335cb18d5febc2ca5f794af92963bece1
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e1faee846627b22b88eb888d6241d47d8ea6ea06
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620490"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497754"
 ---
 ### <a name="right-clicking-on-a-wpf-datagrid-row-header-changes-the-datagrid-selection"></a>Kliknięcie prawym przyciskiem myszy nagłówka wiersza DataGrid WPF zmienia zaznaczenie elementu DataGrid
 
@@ -18,10 +18,18 @@ Ten problem został rozwiązany w .NET Framework 4,6 i może zostać rozwiązany
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Windows.Controls.DataGrid.%23ctor></li></ul>|
+- <xref:System.Windows.Controls.DataGrid.%23ctor>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Windows.Controls.DataGrid.#ctor`
+
+-->

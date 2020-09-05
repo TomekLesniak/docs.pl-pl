@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3e8601ba76dfb05e3d70b3af7440bd7e228768d0
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1047f4028697a73741470d1aac8b3aeed37be217
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621169"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497340"
 ---
 ### <a name="allow-unicode-in-uris-that-resemble-unc-shares"></a>Zezwalaj na kodowanie Unicode w identyfikatorach URI, które przypominają udziały UNC
 
@@ -18,10 +18,18 @@ Aplikacje korzystające z identyfikatorów URI spójnie zawierające kod Unicode
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.7.2|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Uri?displayProperty=nameWithType></li></ul>|
+- <xref:System.Uri?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Uri`
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 395463225e3c1f1d168dd019ea75966ad54e5a8a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 12a26030a9a336d887ae9d53994a9daf13356618
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621262"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496376"
 ---
 ### <a name="changing-the-isenabled-property-of-the-parent-of-a-textblock-control-affects-any-child-controls"></a>Zmiana właściwości IsEnabled elementu nadrzędnego formantu TextBlock ma wpływ na wszystkie kontrolki podrzędne
 
@@ -20,8 +20,16 @@ Brak. Ta zmiana jest zgodna z oczekiwanym zachowaniem formantów wewnątrz <xref
 |:--------|:------------|
 | Zakres   |Mały|
 |Wersja|4.6.2|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `P:System.Windows.UIElement.IsEnabled`
+
+-->

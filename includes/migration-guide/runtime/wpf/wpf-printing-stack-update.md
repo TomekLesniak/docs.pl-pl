@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5e2e8d1ec5d698d1c1649c2a0a1b4b77dbdf4022
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e42bce91afab68e509cb35a8992fa3ca2f096872
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621277"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497049"
 ---
 ### <a name="wpf-printing-stack-update"></a>Aktualizacja stosu drukowania WPF
 
@@ -18,6 +18,18 @@ Aby użyć starego stosu w aktualizacji systemu Windows 10 dla twórców, należ
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4,7|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

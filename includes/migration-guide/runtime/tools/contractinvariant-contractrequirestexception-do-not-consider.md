@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 29c66edfeb1690199aac39b9c3076d161b2075d4
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 17fde81f9734966692c9f41d2213f8682dedea46
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621346"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496509"
 ---
 ### <a name="contractinvariant-or-contractrequirestexception-do-not-consider-stringisnullorempty-to-be-pure"></a>Contract. Invariant lub Contract. wymaga, \<TException> aby nie brać pod uwagę ciągu. IsNullOrEmpty jako czysty
 
@@ -20,8 +20,18 @@ To zachowanie zostało opisane w [#339 problemu](https://github.com/Microsoft/Co
 |:--------|:------------|
 | Zakres   |Mały|
 |Wersja|4.6.1|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Contracts.Contract.Requires(System.Boolean)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean)?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Contracts.Contract.Requires(System.Boolean)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean)`
+- `M:System.Diagnostics.Contracts.Contract.Requires(System.Boolean)`
+
+-->

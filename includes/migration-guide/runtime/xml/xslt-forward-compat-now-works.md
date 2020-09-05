@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e3b9711ac66901d69838de4c9f309d086b06fd4d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8c8477ae3719cfcc2060459ba85bcc9e76f11c41
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620514"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497922"
 ---
 ### <a name="xslt-forward-compat-now-works"></a>Teraz działa progresywne przekształcenie XSLT
 
@@ -18,10 +18,18 @@ W przypadku większości aplikacji nie ma to żadnego oddziaływania, jednak w n
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType></li></ul>|
+- <xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Xml.Xsl.XslCompiledTransform`
+
+-->

@@ -5,12 +5,12 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/01/2020
-ms.openlocfilehash: 8e05f4dc7a03ae8ae68acc6a57f6fa0e1c6b2ce4
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 70297cfe15732716b9ceacae091abe3c8957fb61
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465432"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495476"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -62,12 +62,12 @@ Polecenie wywołuje [aparat szablonu](https://github.com/dotnet/templating) , ab
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Aplikacja konsoli                          | [konsoli](#console)             | [C#], F #, VB | Wspólna/konsola                        | 1,0        |
 | Biblioteka klas                                | [określono](#classlib)           | [C#], F #, VB | Wspólna/Biblioteka                        | 1,0        |
-| Aplikacja WPF                              | [kodow](#wpf)                     | [C#], VB     | Common/WPF                            | 3,0        |
-| Biblioteka klas WPF                            | [wpflib](#wpf)                  | [C#], VB     | Common/WPF                            | 3,0        |
-| Biblioteka kontrolek niestandardowych WPF                   | [wpfcustomcontrollib](#wpf)     | [C#], VB     | Common/WPF                            | 3,0        |
-| Biblioteka kontrolek użytkownika WPF                     | [wpfusercontrollib](#wpf)       | [C#], VB     | Common/WPF                            | 3,0        |
-| Aplikacja Windows Forms (WinForms)         | [WinForms](#winforms)           | [C#], VB     | Typowe/WinForms                       | 3,0        |
-| Biblioteka klas Windows Forms (WinForms)       | [winformslib](#winforms)        | [C#], VB     | Typowe/WinForms                       | 3,0        |
+| Aplikacja WPF                              | [kodow](#wpf)                     | [C#], VB     | Common/WPF                            | 3,0 (5,0 dla VB)|
+| Biblioteka klas WPF                            | [wpflib](#wpf)                  | [C#], VB     | Common/WPF                            | 3,0 (5,0 dla VB)|
+| Biblioteka kontrolek niestandardowych WPF                   | [wpfcustomcontrollib](#wpf)     | [C#], VB     | Common/WPF                            | 3,0 (5,0 dla VB)|
+| Biblioteka kontrolek użytkownika WPF                     | [wpfusercontrollib](#wpf)       | [C#], VB     | Common/WPF                            | 3,0 (5,0 dla VB)|
+| Aplikacja Windows Forms (WinForms)         | [WinForms](#winforms)           | [C#], VB     | Typowe/WinForms                       | 3,0 (5,0 dla VB)|
+| Biblioteka klas Windows Forms (WinForms)       | [winformslib](#winforms)        | [C#], VB     | Typowe/WinForms                       | 3,0 (5,0 dla VB)|
 | Usługa procesu roboczego                               | [odpowiedzialn](#web-others)           | Znajd         | Common/Worker/sieć Web                     | 3,0        |
 | Projekt testu jednostkowego                            | [MSTest](#test)                 | [C#], F #, VB | Test/MSTest                           | 1,0        |
 | Projekt testowy NUnit 3                         | [NUnit](#nunit)                 | [C#], F #, VB | Test/NUnit                            | 2.1.400    |

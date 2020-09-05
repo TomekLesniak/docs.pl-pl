@@ -4,12 +4,12 @@ description: Przegląd metod, parametrów metody i wartości zwracanych metody
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 8c33bcb9dd4052589222c2cb1b375d94d6792ba2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 879c553f8df560a3e2f3dccdbbf0d7e8a05c50cd
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810576"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495541"
 ---
 # <a name="methods-in-c"></a>Metody w (C#)
 
@@ -61,7 +61,7 @@ Można również użyć *nazwanych argumentów* zamiast argumentów pozycyjnych 
 
 [!code-csharp[csSnippets.Methods#45](../../samples/snippets/csharp/concepts/methods/named1.cs#45)]
 
-Metodę można wywołać przy użyciu obu argumentów pozycyjnych i nazwanych argumentów. Jednak argument pozycyjny nie może następować po nazwanym argumencie. Poniższy przykład wywołuje `TestMotorcycle.Drive` metodę z poprzedniego przykładu przy użyciu jednego argumentu pozycyjnego i jednego argumentu nazwanego.
+Metodę można wywołać przy użyciu obu argumentów pozycyjnych i nazwanych argumentów. Jednak argumenty pozycyjne mogą następować po nazwanych argumentach tylko wtedy, gdy nazwane argumenty znajdują się w poprawnych pozycjach. Poniższy przykład wywołuje `TestMotorcycle.Drive` metodę z poprzedniego przykładu przy użyciu jednego argumentu pozycyjnego i jednego argumentu nazwanego.
 
 [!code-csharp[csSnippets.Methods#46](../../samples/snippets/csharp/concepts/methods/named2.cs#46)]
 
@@ -282,7 +282,7 @@ Zwracany typ iteratora może mieć wartość <xref:System.Collections.IEnumerabl
 
 Aby uzyskać więcej informacji, zobacz [Iteratory](programming-guide/concepts/iterators.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Modyfikatory dostępu](language-reference/keywords/access-modifiers.md)
 - [Klasy statyczne i statyczni członkowie klas](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)

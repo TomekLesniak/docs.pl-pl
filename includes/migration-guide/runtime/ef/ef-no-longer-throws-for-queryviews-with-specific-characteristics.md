@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c6c897c13c84ce4b2be21da18e5702365518f286
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ceae6b85c14862b1b1183d01def0dda723ee0c2b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620327"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496511"
 ---
 ### <a name="ef-no-longer-throws-for-queryviews-with-specific-characteristics"></a>EF nie zgłasza już) obiektów QueryView o określonych cechach
 
@@ -18,6 +18,18 @@ Ta zmiana ma wpływ tylko na kod, który używa) obiektów QueryView z 1-0.. 1 r
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5.2|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

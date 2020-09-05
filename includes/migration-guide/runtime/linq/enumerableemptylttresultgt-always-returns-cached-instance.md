@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9131c91b34f4c24653dea37ea39af6be6e072287
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 05f60978f5380c406c43aa98ded0c812b1d50694
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620337"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496931"
 ---
 ### <a name="enumerableemptylttresultgt-always-returns-cached-instance"></a>Wyliczalne. Empty &lt; TResult &gt; zawsze zwraca buforowane wystąpienie
 
@@ -18,10 +18,18 @@ Ze względu na to, że poprzednie zachowanie dotyczyło niedeterministyczności,
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Linq.Enumerable.Empty%60%601?displayProperty=nameWithType></li></ul>|
+- <xref:System.Linq.Enumerable.Empty%60%601?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- ``M:System.Linq.Enumerable.Empty``1``
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ed526095459a48aa37b585dfed79cc12b9fb9e56
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 6431f3b4d0983c44629e4fe760c75adcc277ddd4
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622139"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496727"
 ---
 ### <a name="some-net-apis-cause-first-chance-handled-entrypointnotfoundexceptions"></a>Niektóre interfejsy API platformy .NET powodują wystąpienie pierwszej szansy (obsłużone) EntryPointNotFoundExceptions
 
@@ -18,10 +18,26 @@ Tę usterkę można uniknąć przez uaktualnienie do .NET Framework 4.5.1. Alter
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5|
 |Typ|Środowisko uruchomieniowe
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Diagnostics.Debug.Assert(System.Boolean)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String,System.Object[])?displayProperty=nameWithType></li><li><xref:System.Xml.Serialization.XmlSerializer.%23ctor(System.Type)></li></ul>|
+- <xref:System.Diagnostics.Debug.Assert(System.Boolean)?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String)?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String)?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String,System.Object[])?displayProperty=nameWithType>
+- <xref:System.Xml.Serialization.XmlSerializer.%23ctor(System.Type)>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Diagnostics.Debug.Assert(System.Boolean)`
+- `M:System.Diagnostics.Debug.Assert(System.Boolean,System.String)`
+- `M:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String)`
+- `M:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String,System.Object[])`
+- `M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type)`
+
+-->

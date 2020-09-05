@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c103dff320ae30d02c12ea5c585a47b589da8237
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: eb5c032a020799fa19cc0a8cfaabb56e01417ff4
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621310"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496952"
 ---
 ### <a name="contentdisposition-datetimes-returns-slightly-different-string"></a>ContentDisposition DateTimes zwraca nieco inny ciąg
 
@@ -19,9 +19,19 @@ Nie należy oczekiwać, że reprezentacje ciągów ContentDispositions z różny
 | Nazwa    | Wartość       |
 |:--------|:------------|
 | Zakres   |Mały|
-|Wersja|4.6|
-|Typ|Środowisko uruchomieniowe
+|Wersja|4,6|
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType></li><li><xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType></li></ul>|
+- <xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType>
+- <xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Net.Mime.ContentDisposition.ToString`
+- `M:System.Net.Mime.ContentDisposition.GetHashCode`
+
+-->

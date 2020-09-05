@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4f52535e54607cc824500f9c6a14964a1dec9d32
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 25437dcc0c814ed2265b2efb34316af48b372ebd
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620208"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497540"
 ---
 ### <a name="cor_prf_gc_root_handles-are-not-being-enumerated-by-profilers"></a>COR_PRF_GC_ROOT_HANDLEs nie są wyliczane przez program do plików
 
@@ -21,3 +21,15 @@ Ten problem został rozwiązany w .NET Framework 4,6 i może zostać rozwiązany
 | Zakres   |Mały|
 |Wersja|4.5.1|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

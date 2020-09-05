@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cd59818fe674e10a206725bea8a74c4aceed99b1
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: c01705002ad87a12389078d75ffd0f91f934d36e
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620466"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497814"
 ---
 ### <a name="wpf-textbox-selected-text-appears-a-different-color-when-the-text-box-is-inactive"></a>Zaznaczony tekst pola tekstowego WPF jest wyświetlany w innym kolorze, gdy pole tekstowe jest nieaktywne
 
@@ -18,10 +18,18 @@ Zachowanie poprzedniego (.NET Framework 4,0) może zostać przywrócone przez us
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Windows.Controls.TextBox`
+
+-->

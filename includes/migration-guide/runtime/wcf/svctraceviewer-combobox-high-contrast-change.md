@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 06f4186e8f233f5c769dfc5e05d2de5eacd9b053
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 6a6c0af9cc0f3e5d1bbc3a4462a9ff7eaa748a5f
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622089"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496169"
 ---
 ### <a name="svctraceviewer-combobox-high-contrast-change"></a>Zmiana wysokiego kontrastu ComboBox svcTraceViewer
 
@@ -18,6 +18,18 @@ W [narzędziu Podgląd śledzenia usług firmy Microsoft](~/docs/framework/wcf/s
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   |Brzeg|
+| Zakres   |Edge|
 |Wersja|4,8|
 |Typ|Środowisko uruchomieniowe|
+
+#### <a name="affected-apis"></a>Dotyczy interfejsów API
+
+Nie wykrywalne za pośrednictwem analizy interfejsu API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 311adfdc98c766adf1e88ee9bc7e601d2cd13ba5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3c74d237f5540ef1a5bb362487337c81ae739ea1
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620348"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496110"
 ---
 ### <a name="systemnetpeertopeercollaboration-unavailable-on-windows-8"></a>System .NET. PeerToPeer. Współpraca jest niedostępna w systemie Windows 8
 
@@ -20,8 +20,16 @@ Aplikacje, które obsługują system Windows 8 lub nowszy, muszą zostać zaktua
 |:--------|:------------|
 | Zakres   |Duży|
 |Wersja|4.5|
-|Typ|Środowisko uruchomieniowe
+|Typ|Środowisko uruchomieniowe|
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
--<xref:System.Net.PeerToPeer.Collaboration?displayProperty=nameWithType></li></ul>|
+- <xref:System.Net.PeerToPeer.Collaboration?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `N:System.Net.PeerToPeer.Collaboration`
+
+-->

@@ -2,26 +2,28 @@
 title: Obsługa wersji języka c# — Przewodnik C#
 description: Dowiedz się, w jaki sposób wersja języka C# jest określana na podstawie projektu i przyczyn związanych z tym wyborem. Dowiedz się, jak ręcznie przesłonić wartość domyślną.
 ms.custom: updateeachrelease
-ms.date: 05/20/2020
-ms.openlocfilehash: 24797c564890b034683d2989010bc694aabc423c
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.date: 08/11/2020
+ms.openlocfilehash: 327a98da37b97830ac7f752a3621a92d8cb161e0
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811954"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495463"
 ---
 # <a name="c-language-versioning"></a>Przechowywanie wersji języka C#
 
 Najnowsza kompilator języka C# określa domyślną wersję językową opartą na docelowej platformie lub strukturach projektu. Program Visual Studio nie udostępnia interfejsu użytkownika do zmiany wartości, ale można go zmienić, edytując plik *csproj* . Wybór domyślny zapewnia, że jest używana najnowsza wersja językowa zgodna z platformą docelową. Korzystasz z dostępu do najnowszych funkcji języka zgodnych z celem projektu. To ustawienie domyślne gwarantuje również, że nie używasz języka wymagającego typów lub zachowania środowiska uruchomieniowego, które nie jest dostępne w platformie docelowej. Wybranie wersji językowej nowszej niż domyślna może spowodować trudne zdiagnozowanie błędów kompilacji i czasu wykonywania.
 
-Reguły w tym artykule mają zastosowanie do kompilatora dostarczonego z programem Visual Studio 2019 lub zestawem SDK programu .NET Core 3,0. Kompilatory języka C#, które są częścią instalacji programu Visual Studio 2017 lub starsze wersje zestaw .NET Core SDK wersji docelowej C# 7,0.
+Reguły w tym artykule mają zastosowanie do kompilatora dostarczonego z programem Visual Studio 2019 lub zestawem SDK platformy .NET. Kompilatory języka C#, które są częścią instalacji programu Visual Studio 2017 lub starsze wersje zestaw .NET Core SDK wersji docelowej C# 7,0.
 
-Języki C# 8,0 (i nowsze) są obsługiwane tylko w programie .NET Core 3. x i nowszych wersjach. Wiele najnowszych funkcji wymaga funkcji biblioteki i środowiska uruchomieniowego wprowadzonych w programie .NET Core 3. x:
+Język C# 8,0 jest obsługiwany tylko w programie .NET Core 3. x i nowszych wersjach. Wiele najnowszych funkcji wymaga funkcji biblioteki i środowiska uruchomieniowego wprowadzonych w programie .NET Core 3. x:
 
 - [Domyślna implementacja interfejsu](../whats-new/csharp-8.md#default-interface-methods) wymaga nowych funkcji w środowisku CLR programu .net Core 3,0.
 - [Strumienie asynchroniczne](../whats-new/csharp-8.md#asynchronous-streams) wymagają nowych typów <xref:System.IAsyncDisposable?displayProperty=nameWithType> , <xref:System.Collections.Generic.IAsyncEnumerable%601?displayProperty=nameWithType> i <xref:System.Collections.Generic.IAsyncEnumerator%601?displayProperty=nameWithType> .
 - [Indeksy i zakresy](../whats-new/csharp-8.md#indices-and-ranges) wymagają nowych typów <xref:System.Index?displayProperty=nameWithType> i <xref:System.Range?displayProperty=nameWithType> .
 - [Typy odwołań dopuszczających wartości null](../whats-new/csharp-8.md#nullable-reference-types) wykorzystują kilka [atrybutów](attributes/nullable-analysis.md) w celu zapewnienia lepszych ostrzeżeń. Te atrybuty zostały dodane w programie .NET Core 3,0. Inne platformy docelowe nie zostały opatrzone adnotacją z żadnym z tych atrybutów. Oznacza to, że ostrzeżenia dopuszczające wartość null mogą nie odzwierciedlać dokładnie potencjalnych problemów.
+
+Język C# 9,0 jest obsługiwany tylko w programie .NET 5 i nowszych wersjach.
 
 ## <a name="defaults"></a>Wartość domyślna
 
@@ -29,6 +31,7 @@ Kompilator określa wartość domyślną na podstawie następujących reguł:
 
 | Platforma docelowa | version | Domyślna wersja języka C# |
 |------------------|---------|-----------------------------|
+| .NET             | eksportowa     | C# 9,0                      |
 | .NET Core        | wersji     | C# 8.0                      |
 | .NET Core        | 2.x     | C# 7.3                      |
 | .NET Standard    | 2.1     | C# 8.0                      |
