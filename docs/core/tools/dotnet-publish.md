@@ -2,12 +2,12 @@
 title: polecenie dotnet publish
 description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
 ms.date: 02/24/2020
-ms.openlocfilehash: 45bf8504fd882286041794d27ecb56464fc8d13d
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: f171baaa0dbc070b6389ec0fa9895b2c5dcfafff
+ms.sourcegitcommit: f279a4488c48236793c04bf825ae6f9128790849
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656668"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89501912"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -53,7 +53,7 @@ dotnet publish -h|--help
 
 `dotnet publish`Polecenie akceptuje Opcje programu MSBuild, takie jak `-p` Ustawienia właściwości i `-l` definiowania rejestratora. Na przykład można ustawić właściwość programu MSBuild przy użyciu formatu: `-p:<NAME>=<VALUE>` .
 
-Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Na przykład:
+Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Przykład:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -123,7 +123,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
   Określa ścieżkę do katalogu wyjściowego.
   
-  Jeśli nie zostanie określony, domyślna wartość to *[project_file_folder]./bin/[Konfiguracja]/[Framework]/Publish/* dla plików wykonywalnych zależnych od platformy i międzyplatformowych plików binarnych. Wartość domyślna to *[project_file_folder]/bin/[Konfiguracja]/[Framework]/[Runtime]/Publish/* dla samodzielnego pliku wykonywalnego.
+  Jeśli nie zostanie określony, domyślna wartość to *[project_file_folder]/bin/[Configuration]/[Framework]/Publish/* dla plików binarnych zależnych od platformy i dla wielu platform. Wartość domyślna to *[project_file_folder]/bin/[Konfiguracja]/[Framework]/[Runtime]/Publish/* dla samodzielnego pliku wykonywalnego.
 
   W projekcie sieci Web, jeśli folder wyjściowy znajduje się w folderze projektu, kolejne `dotnet publish` polecenia powodują zagnieżdżone foldery wyjściowe. Na przykład, jeśli folder projektu jest typu moje *projekty*, a folder danych wyjściowych publikowanie jest w *projekcie/publikacji*i uruchamiasz `dotnet publish` dwa razy, drugi przebieg umieszcza pliki zawartości, takie jak pliki *config* i *JSON* w programie *WebProject/Publish/Publish*. Aby uniknąć zagnieżdżania folderów publikowania, określ folder publikowania, który nie znajduje się **bezpośrednio** w folderze projektu, lub wyklucz folder publikacji z projektu. Aby wykluczyć folder publikacji o nazwie *publishoutput*, Dodaj następujący element do `PropertyGroup` elementu w pliku *. csproj* :
 
