@@ -1,7 +1,9 @@
 - name: Przewodnik po Visual Basic
   href: index.yml
 - name: Co nowego w języku Visual Basic
-  href: getting-started/whats-new.md
+  href: whats-new/index.md
+- name: Fundamentalne zmiany w kompilatorze
+  href: whats-new/breaking-changes.md
 - name: Rozpocznij
   href: getting-started/index.md
   items:
@@ -535,7 +537,7 @@
               href: language-reference/operators/addition-operator.md
             - name: += — Operator
               href: language-reference/operators/addition-assignment-operator.md
-            - name: = — Operator
+            - name: '= — Operator'
               href: language-reference/operators/assignment-operator.md
             - name: '- Operator'
               href: language-reference/operators/subtraction-operator.md
@@ -875,9 +877,9 @@
     - name: komunikaty o błędach
       href: language-reference/error-messages/index.md
       items:
-        - name: 'Instrukcja „#ElseIf” musi być poprzedzona odpowiadającą jej instrukcją „#If” lub „#ElseIf”'
+        - name: Instrukcja „#ElseIf” musi być poprzedzona odpowiadającą jej instrukcją „#If” lub „#ElseIf”
           href: language-reference/error-messages/elseif-must-be-preceded-by-a-matching-if-or-elseif.md
-        - name: 'Instrukcje „#Region” i „#End Region” nie są prawidłowe w treści metod/wielowierszowych wyrażeń lambda'
+        - name: Instrukcje „#Region” i „#End Region” nie są prawidłowe w treści metod/wielowierszowych wyrażeń lambda
           href: language-reference/error-messages/region-and-end-region-are-not-valid-within-method-bodies-multiline-lambdas.md
         - name: '„<attribute>" nie może być zastosowane, ponieważ format identyfikatora GUID „<number>" jest nieprawidłowy'
           href: language-reference/error-messages/attribute-cannot-be-applied-because-the-format-of-the-guid-is-not-correct.md
