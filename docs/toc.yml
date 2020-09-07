@@ -1,26 +1,25 @@
-- name: Witamy
-  href: welcome.md
-- name: Co nowego w dokumentacji platformy .NET
-  href: whats-new/index.yml
-- name: .NET — przewodnik
-  href: standard/
-- name: Przewodnik platformy .NET Core
-  href: core/
-- name: .NET framework — przewodnik
-  href: framework/
-- name: Przewodnik klasyczny .NET — WPF
-  href: desktop-wpf/
-- name: 'Przewodnik dla języka C#'
-  href: csharp/index.yml
-- name: 'Podręcznik języka F#'
-  href: fsharp/index.yml
-- name: Przewodnik po języku Visual Basic
-  href: visual-basic/index.yml
-- name: Przewodnik po strukturze ML.NET
-  href: machine-learning/index.yml
-- name: Przewodnik platformy .NET dla platformy Apache Spark
-  href: spark/index.yml
-- name: Przewodnik po architekturze aplikacji platformy .NET
-  href: architecture/index.yml
-- name: Przykłady i samouczki
-  href: samples-and-tutorials/index.md
+items:
+  - name: Powitanie
+    href: welcome.md
+  - name: Co nowego w dokumentacji platformy .NET
+    href: whats-new/index.yml
+  - name: Podstawy programu .NET
+    href: fundamentals/
+  - name: .NET framework — przewodnik
+    href: framework/
+  - name: Przewodnik klasyczny .NET — WPF
+    href: desktop-wpf/
+  - name: Przewodnik dla języka C#
+    href: csharp/index.yml
+  - name: Podręcznik języka F#
+    href: fsharp/index.yml
+  - name: Przewodnik po języku Visual Basic
+    href: visual-basic/index.yml
+  - name: Przewodnik po strukturze ML.NET
+    href: machine-learning/index.yml
+  - name: Przewodnik platformy .NET dla platformy Apache Spark
+    href: spark/index.yml
+  - name: Przewodnik po architekturze aplikacji platformy .NET
+    href: architecture/index.yml
+  - name: Przykłady i samouczki
+    href: samples-and-tutorials/index.md
