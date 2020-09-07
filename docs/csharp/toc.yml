@@ -5,7 +5,7 @@
     - name: Omówienie
       displayName: get started
       href: getting-started/index.md
-    - name: Wprowadzenie do języka C# i systemu .NET Framework
+    - name: Wprowadzenie do języka C# i programu .NET
       href: getting-started/introduction-to-the-csharp-language-and-the-net-framework.md
 - name: Samouczki
   items:
@@ -80,8 +80,10 @@
       href: tour-of-csharp/features.md
 - name: Co nowego w języku C#
   items:
-    - name: C# 8.0
+    - name: C# 9.0
       displayName: what's new
+      href: whats-new/csharp-9.md
+    - name: C# 8.0
       href: whats-new/csharp-8.md
     - name: C# 7.3
       href: whats-new/csharp-7-3.md
@@ -1066,7 +1068,7 @@
           href: programming-guide/events/index.md
         - name: Subskrybowanie i anulowanie subskrypcji zdarzeń
           href: programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md
-        - name: Publikowanie zdarzeń zgodnych ze wskazówkami dotyczącymi .NET Framework
+        - name: Publikowanie zdarzeń zgodnych ze wskazówkami dotyczącymi programu .NET
           href: programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md
         - name: Wywoływanie zdarzeń klasy podstawowej w klasach pochodnych
           href: programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md
