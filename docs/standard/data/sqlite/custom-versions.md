@@ -1,33 +1,34 @@
 ---
 title: Niestandardowe wersje programu SQLite
-ms.date: 05/14/2020
+ms.date: 09/04/2020
 description: Dowiedz się, jak używać niestandardowej wersji natywnej biblioteki programu SQLite.
-ms.openlocfilehash: 15db10db26bc7c5017313ca020a0e1e528ba207a
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: fbf4b4cd33e6e890ce0c0cfe0b7688487b94b4a3
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440840"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89516141"
 ---
 # <a name="custom-sqlite-versions"></a>Niestandardowe wersje programu SQLite
 
-`Microsoft.Data.Sqlite`jest zbudowany w oparciu o `SQLitePCLRaw` . Możesz użyć niestandardowych wersji natywnej biblioteki programu SQLite przy użyciu pakietu lub przez skonfigurowanie `SQLitePCLRaw` dostawcy.
+`Microsoft.Data.Sqlite` jest zbudowany w oparciu o `SQLitePCLRaw` . Możesz użyć niestandardowych wersji natywnej biblioteki programu SQLite przy użyciu pakietu lub przez skonfigurowanie `SQLitePCLRaw` dostawcy.
 
 ## <a name="bundles"></a>Pakiety
 
-`SQLitePCLRaw`zapewnia wygodną obsługę pakietów pakietu, dzięki czemu można łatwo korzystać z odpowiednich zależności na różnych platformach. Pakiet główny domyślnie jest przypisuje `Microsoft.Data.Sqlite` `SQLitePCLRaw.bundle_e_sqlite3` . Aby użyć innego pakietu, zainstaluj `Microsoft.Data.Sqlite.Core` pakiet wraz z pakietem pakietu, którego chcesz użyć. Pakiety są automatycznie inicjowane przez `Microsoft.Data.Sqlite` .
+`SQLitePCLRaw` zapewnia wygodną obsługę pakietów pakietu, dzięki czemu można łatwo korzystać z odpowiednich zależności na różnych platformach. Pakiet główny domyślnie jest przypisuje `Microsoft.Data.Sqlite` `SQLitePCLRaw.bundle_e_sqlite3` . Aby użyć innego pakietu, zainstaluj `Microsoft.Data.Sqlite.Core` pakiet wraz z pakietem pakietu, którego chcesz użyć. Pakiety są automatycznie inicjowane przez `Microsoft.Data.Sqlite` .
 
 | Pakiet | Opis |
 |--|--|
-| [SQLitePCLRaw. bundle_e_sqlite3](https://www.nuget.org/packages/SQLitePCLRaw.bundle_e_sqlite3) | Zapewnia spójną wersję oprogramowania SQLite na wszystkich platformach. Obejmuje rozszerzenia drzewa FTS4, FTS5, JSON1 i R *. Domyślnie włączone. |
+| [SQLitePCLRaw. bundle_e_sqlite3](https://www.nuget.org/packages/SQLitePCLRaw.bundle_e_sqlite3) | Zapewnia spójną wersję oprogramowania SQLite na wszystkich platformach. Obejmuje rozszerzenia drzewa FTS4, FTS5, JSON1 i R *. Jest to opcja domyślna. |
 | [SQLitePCLRaw. bundle_e_sqlcipher](https://www.nuget.org/packages/SQLitePCLRaw.bundle_e_sqlcipher) | Zapewnia nieoficjalną kompilację typu open source `SQLCipher` . |
 | [SQLitePCLRaw. bundle_green](https://www.nuget.org/packages/SQLitePCLRaw.bundle_green) | Analogicznie jak `bundle_e_sqlite3` w przypadku systemu iOS, gdzie używa biblioteki oprogramowania SQLite. |
+| [SQLitePCLRaw. bundle_sqlite3](https://www.nuget.org/packages/SQLitePCLRaw.bundle_sqlite3) | Używa biblioteki SQLite systemu. |
 | [SQLitePCLRaw. bundle_winsqlite3](https://www.nuget.org/packages/SQLitePCLRaw.bundle_winsqlite3) | `winsqlite3.dll`Program używa biblioteki SQLite systemu w systemie Windows 10. |
 | [SQLitePCLRaw. bundle_zetetic](https://www.nuget.org/packages/SQLitePCLRaw.bundle_zetetic) | Używa oficjalnych `SQLCipher` kompilacji z Zetetic (nieuwzględnione). |
 
 Na przykład, aby użyć nieoficjalnej kompilacji typu "open source", `SQLCipher` Użyj następujących poleceń.
 
-### <a name="net-core-cli"></a>[interfejs wiersza polecenia programu .NET Core](#tab/netcore-cli)
+### <a name="net-core-cli"></a>[Interfejs wiersza polecenia platformy .NET Core](#tab/netcore-cli)
 
 ```dotnetcli
 dotnet add package Microsoft.Data.Sqlite.Core
@@ -58,7 +59,7 @@ Jeśli nie korzystasz z pakietu, możesz użyć dostępnych dostawców oprogramo
 
 Aby użyć `sqlite3` dostawcy, użyj następujących poleceń:
 
-### <a name="net-core-cli"></a>[interfejs wiersza polecenia programu .NET Core](#tab/netcore-cli)
+### <a name="net-core-cli"></a>[Interfejs wiersza polecenia platformy .NET Core](#tab/netcore-cli)
 
 ```dotnetcli
 dotnet add package Microsoft.Data.Sqlite.Core

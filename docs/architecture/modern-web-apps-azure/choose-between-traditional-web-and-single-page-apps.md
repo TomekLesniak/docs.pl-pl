@@ -6,18 +6,18 @@ ms.author: wiwagn
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 12/04/2019
-ms.openlocfilehash: 4fe889fe86d96a5b2ffa5bd879d2ec1801a3cf20
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.date: 07/27/2020
+ms.openlocfilehash: f04de5c350dfead4dad8c37eece7f16c9a9e00bc
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174370"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515822"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Wybór między tradycyjnymi Web Apps i aplikacjami jednostronicowymi (aplikacji jednostronicowych)
 
 > "Atwoodeme: Każda aplikacja, którą można napisać w języku JavaScript, zostanie ostatecznie zapisywana w języku JavaScript".  
-> _\-Jan Atwoodem_
+> _\- Jan Atwoodem_
 
 Obecnie istnieją dwa ogólne podejścia do kompilowania aplikacji sieci Web: tradycyjne aplikacje sieci Web, które wykonują większość logiki aplikacji na serwerze i aplikacje jednostronicowe (aplikacji jednostronicowych), które wykonują większość logiki interfejsu użytkownika w przeglądarce internetowej, komunikując się z serwerem sieci Web przede wszystkim przy użyciu interfejsów API sieci Web. Podejście hybrydowe jest również możliwe, najprostszym hostem jednego lub więcej rozbudowanych podaplikacji typu SPA w ramach większej tradycyjnej aplikacji sieci Web.
 
@@ -33,7 +33,7 @@ Użyj SPA, gdy:
 
 - Aplikacja musi uwidocznić rozbudowany interfejs użytkownika z wieloma funkcjami.
 
-- Zespół jest zaznajomiony z programowaniem kodu JavaScript i/lub języka TypeScript.
+- Twój zespół jest zaznajomiony z JavaScript, TypeScript lub Blazor WebAssembly programowaniem.
 
 - Aplikacja musi już uwidocznić interfejs API dla innych klientów (wewnętrznych lub publicznych).
 
@@ -43,17 +43,17 @@ Udoskonalenia środowiska użytkownika wykonywanego przez podejście SPA muszą 
 
 ## Blazor
 
-ASP.NET Core 3,0 wprowadza nowy model do tworzenia rozbudowanego, interaktywnego i składającego się interfejsu użytkownika o nazwie Blazor . Blazorpo stronie serwera umożliwiają deweloperom tworzenie interfejsu użytkownika przy użyciu języka C# i Razor na serwerze oraz interfejs użytkownika, który ma być interaktywnie połączony z przeglądarką w czasie rzeczywistym za pomocą połączenia trwałego.
+ASP.NET Core obejmuje model kompilowania bogatych, interaktywnych i składających się interfejsów użytkownika o nazwie Blazor . Blazor po stronie serwera umożliwiają deweloperom tworzenie interfejsu użytkownika przy użyciu języka C# i Razor na serwerze oraz interfejs użytkownika, który ma być interaktywnie połączony z przeglądarką w czasie rzeczywistym za pomocą połączenia trwałego. BlazorWebAssemblywprowadza kolejną opcję dla Blazor aplikacji, umożliwiając ich uruchamianie w przeglądarce przy użyciu programu WebAssembly . Ponieważ jest to rzeczywista platforma .NET działająca w systemie WebAssembly , można użyć kodu i bibliotek z części aplikacji po stronie serwera.
 
-BlazorWebAssemblywprowadza kolejną opcję dla Blazor aplikacji, umożliwiając ich uruchamianie w przeglądarce przy użyciu programu WebAssembly . Ponieważ jest to rzeczywista platforma .NET działająca w systemie WebAssembly , można użyć kodu i bibliotek z części aplikacji po stronie serwera.
-
-BlazorProgram udostępnia nową, trzecią opcję, którą należy wziąć pod uwagę podczas oceniania, czy należy utworzyć czysto wyrenderowaną przez serwer aplikację sieci Web lub SPA. Możesz tworzyć rozbudowane, takie jak zachowania po stronie klienta, podobne Blazor do działania, bez konieczności znaczącego programowania w języku JavaScript. Blazoraplikacje mogą wywoływać interfejsy API w celu żądania danych lub wykonywania operacji po stronie serwera.
+Blazor Program udostępnia nową, trzecią opcję, którą należy wziąć pod uwagę podczas oceniania, czy należy utworzyć czysto wyrenderowaną przez serwer aplikację sieci Web lub SPA. Korzystając z programu, można tworzyć rozbudowane, takie jak zachowania po stronie klienta Blazor , bez konieczności znaczącego programowania w języku JavaScript. Blazor aplikacje mogą wywoływać interfejsy API w celu żądania danych lub wykonywania operacji po stronie serwera. Mogą współdziałać z JavaScript, tam gdzie jest to konieczne, aby korzystać z bibliotek i struktur języka JavaScript.
 
 Rozważ skompilowanie aplikacji sieci Web przy użyciu programu Blazor :
 
 - Aplikacja musi uwidaczniać rozbudowany interfejs użytkownika
 
 - Twój zespół jest bardziej wygodny dla projektowania platformy .NET niż programowanie w języku JavaScript lub TypeScript
+
+Jeśli masz istniejącą aplikację formularzy sieci Web, rozważasz migrację do platformy .NET Core, warto przejrzeć bezpłatną książkę elektroniczną [ Blazor dla deweloperów formularzy sieci Web](../blazor-for-web-forms-developers/index.md) , aby sprawdzić, czy warto rozważyć przeprowadzenie migracji do programu Blazor .
 
 Aby uzyskać więcej informacji na temat Blazor , zobacz [wprowadzenie Blazor do ](https://blazor.net/docs/get-started.html).
 
@@ -100,7 +100,7 @@ Pisanie aplikacji jednostronicowych wymaga znajomości języka JavaScript i/lub 
 
 Jeśli obsługujesz już internetowy interfejs API do użytku przez innych klientów, może być konieczne mniejsze nakłady pracy w celu utworzenia implementacji SPA, która wykorzystuje te interfejsy API zamiast odtwarzania logiki w formularzu po stronie serwera. Aplikacji jednostronicowych wykonywać wiele interfejsów API sieci Web, aby wysyłać zapytania i aktualizować dane, gdy użytkownicy współpracują z aplikacją.
 
-## <a name="when-to-choose-blazor"></a>Kiedy należy wybraćBlazor
+## <a name="when-to-choose-no-locblazor"></a>Kiedy należy wybrać Blazor
 
 Poniżej znajduje się bardziej szczegółowy opis sytuacji, w których należy wybrać Blazor aplikację sieci Web.
 
@@ -116,10 +116,10 @@ Wielu deweloperów jest wydajniejsza przy użyciu platformy .NET i Razor niż w 
 
 W poniższej tabeli decyzji przedstawiono podstawowe czynniki, które należy wziąć pod uwagę podczas wybierania między tradycyjną aplikacją sieci Web, SPA lub Blazor aplikacją.
 
-| **Czynnik**                                           | **Tradycyjna aplikacja internetowa** | **Aplikacja jednostronicowa** | **BlazorAplikacje**  |
+| **Czynnik**                                           | **Tradycyjna aplikacja internetowa** | **Aplikacja jednostronicowa** | **Blazor Aplikacje**  |
 | ---------------------------------------------------- | ----------------------- | --------------------------- | --------------- |
 | Wymagana znajomość zespołu w języku JavaScript/TypeScript | **Minimalny**             | **Wymagane**                | **Minimalny**     |
-| Obsługa przeglądarek bez obsługi skryptów                   | **Obsługiwane**           | **Nieobsługiwane**           | **Obsługiwane**   |
+| Obsługa przeglądarek bez obsługi skryptów                   | **Obsługiwał**           | **Nieobsługiwane**           | **Obsługiwał**   |
 | Minimalne zachowanie aplikacji po stronie klienta             | **Dobrze dopasowane**         | **Zbyt obszerne**                | **Żywe**      |
 | Zaawansowane wymagania dotyczące interfejsu użytkownika            | **Ograniczone**             | **Dobrze dopasowane**             | **Dobrze dopasowane** |
 

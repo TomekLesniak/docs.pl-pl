@@ -3,13 +3,16 @@ title: Opracowywanie aplikacji ASP.NET Core MVC
 description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyciu ASP.NET Core i platformy Azure | opracowywanie aplikacji ASP.NET Core MVC
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/04/2019
-ms.openlocfilehash: be674f3292238b1983064408184777d379cf52a7
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.date: 08/12/2020
+no-loc:
+- Blazor
+- WebAssembly
+ms.openlocfilehash: 255a7f9b34752b3480ba5a8ffc5d506e6d7b05d3
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307010"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515982"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Opracowywanie aplikacji ASP.NET Core MVC
 
@@ -20,7 +23,7 @@ ASP.NET Core to międzyplatformowa platforma typu "open source" służąca do tw
 
 ## <a name="mvc-and-razor-pages"></a>MVC i Razor Pages
 
-ASP.NET Core MVC oferuje wiele funkcji, które są przydatne do tworzenia interfejsów API i aplikacji opartych na sieci Web. Termin MVC oznacza "Model-View-Controller", wzorzec interfejsu użytkownika, który dzieli obowiązki odpowiedzi na żądania użytkowników do kilku części. Oprócz tego wzorca można także zaimplementować funkcje w ASP.NET Core aplikacji jako Razor Pages. Razor Pages są wbudowane w ASP.NET Core MVC i używają tych samych funkcji routingu, powiązania modeli itp. Jednak zamiast oddzielnych folderów i plików dla kontrolerów, widoków itp. i przy użyciu routingu opartego na atrybutach Razor Pages są umieszczane w pojedynczym folderze ("/Pages"), trasie na podstawie ich lokalizacji względnej w tym folderze i obsługi żądań z obsługą, a nie akcją kontrolera.
+ASP.NET Core MVC oferuje wiele funkcji, które są przydatne do tworzenia interfejsów API i aplikacji opartych na sieci Web. Termin MVC oznacza "Model-View-Controller", wzorzec interfejsu użytkownika, który dzieli obowiązki odpowiedzi na żądania użytkowników do kilku części. Oprócz tego wzorca można także zaimplementować funkcje w ASP.NET Core aplikacji jako Razor Pages. Razor Pages są wbudowane w ASP.NET Core MVC i używają tych samych funkcji routingu, powiązania modelu, filtrów, autoryzacji itp. Jednak zamiast oddzielnych folderów i plików dla kontrolerów, modeli, widoków itp. i używania routingu opartego na atrybutach Razor Pages są umieszczane w pojedynczym folderze ("/Pages"), trasie na podstawie ich lokalizacji względnej w tym folderze i obsługi żądań z obsługą, a nie akcją kontrolera. W związku z tym podczas pracy z Razor Pages wszystkie potrzebne pliki i klasy są zwykle współzlokalizowane, a nie rozłożone w całym projekcie sieci Web.
 
 Podczas tworzenia nowej aplikacji ASP.NET Core należy mieć plan na uwadze dla rodzaju aplikacji, którą chcesz skompilować. W programie Visual Studio będziesz wybierać spośród kilku szablonów. Trzy najpopularniejsze szablony projektów to Web API, aplikacja sieci Web i aplikacja sieci Web (Model-View-Controller). Chociaż tę decyzję można podjąć tylko podczas pierwszego tworzenia projektu, nie jest to nieodwołalna decyzja. Projekt interfejsu API sieci Web używa standardowych kontrolerów kontrolera widoku modelu — tylko domyślnie nie ma widoków. Podobnie szablon domyślnej aplikacji sieci Web używa Razor Pages, a zatem nie ma folderu widoki. Możesz później dodać folder widoki do tych projektów, aby obsługiwać zachowanie oparte na widoku. Projekty Web API i Model-View-Controller nie zawierają domyślnie folderu Pages, ale można je później dodać do obsługi zachowania opartego na Razor Pages. Te trzy szablony można traktować jako obsługujące trzy różne rodzaje domyślnej interakcji użytkownika: dane (internetowy interfejs API), oparte na stronach i widoku. Można jednak mieszać i dopasować dowolne lub wszystkie z nich w ramach pojedynczego projektu, jeśli chcesz.
 
@@ -51,7 +54,7 @@ app.UseEndpoints(endpoints =>
 
 W tym przykładzie trasa o nazwie "default" została dodana do tabeli routingu. Definiuje szablon trasy z symbolami zastępczymi dla _kontrolera_, _akcji_i _identyfikatora_. Symbole zastępcze kontrolera i akcji mają domyślnie określony ("Dom" i "index"), a symbol zastępczy ID jest opcjonalny (na przykład "?"). W ramach Konwencji zdefiniowanej tutaj należy określić, że pierwsza część żądania powinna odpowiadać nazwie kontrolera, drugiej części akcji, a następnie, jeśli to konieczne, trzecia część będzie reprezentować parametr ID. Trasy konwencjonalne są zwykle zdefiniowane w jednym miejscu dla aplikacji, na przykład w metodzie Configure w klasie Startup.
 
-Trasy atrybutów są stosowane bezpośrednio do kontrolerów i akcji, a nie do określonych globalnie. Zaletą tego jest znacznie bardziej wykrywalność, gdy przeglądasz określoną metodę, ale oznacza to, że informacje o routingu nie są przechowywane w jednym miejscu w aplikacji. Korzystając z tras atrybutów, można łatwo określić wiele tras dla danej akcji, a także połączyć trasy między kontrolerami i akcjami. Przykład:
+Trasy atrybutów są stosowane bezpośrednio do kontrolerów i akcji, a nie do określonych globalnie. Zaletą tego jest znacznie bardziej wykrywalność, gdy przeglądasz określoną metodę, ale oznacza to, że informacje o routingu nie są przechowywane w jednym miejscu w aplikacji. Korzystając z tras atrybutów, można łatwo określić wiele tras dla danej akcji, a także połączyć trasy między kontrolerami i akcjami. Na przykład:
 
 ```csharp
 [Route("Home")]
@@ -97,6 +100,72 @@ W przypadku korzystania z walidacji modelu należy zawsze sprawdzić, czy model 
 W przypadku interfejsów API sieci Web ASP.NET Core MVC obsługuje [_negocjowanie zawartości_](/aspnet/core/mvc/models/formatting), umożliwiając żądanie określenia sposobu formatowania odpowiedzi. W oparciu o nagłówki podane w żądaniu akcje zwracające dane spowodują sformatowanie odpowiedzi w formacie XML, JSON lub innym obsługiwanym formacie. Ta funkcja umożliwia korzystanie z tego samego interfejsu API przez wielu klientów z różnymi wymaganiami dotyczącymi formatu danych.
 
 Projekty interfejsu API sieci Web należy rozważyć przy użyciu `[ApiController]` atrybutu, który można zastosować do poszczególnych kontrolerów, do podstawowej klasy kontrolera lub do całego zestawu. Ten atrybut dodaje Automatyczne sprawdzanie poprawności modelu, a każda akcja z nieprawidłowym modelem zwróci nieprawidłowego żądania z informacjami o błędach walidacji. Ten atrybut wymaga również, aby wszystkie akcje miały atrybut trasy, zamiast używać trasy konwencjonalnej i zwracają bardziej szczegółowe informacje ProblemDetails w odpowiedzi na błędy.
+
+### <a name="keeping-controllers-under-control"></a>Utrzymywanie kontrolerów pod kontrolą
+
+W przypadku aplikacji opartych na stronach Razor Pages wykonać doskonałe zadanie utrzymywania zbyt dużej liczby kontrolerów. Każda Strona otrzymuje własne pliki i klasy, które są przeznaczone tylko dla jego programów obsługi. Przed wprowadzeniem Razor Pages wiele aplikacji zorientowanych na widok będzie miała duże klasy kontrolerów odpowiedzialne za wiele różnych akcji i widoków. Te klasy byłyby naturalnie rosnące w celu posiadania wielu obowiązków i zależności, co utrudnia ich konserwację. Jeśli okaże się, że Twoje kontrolery widoków są zbyt duże, rozważ ich refaktoryzację do użycia Razor Pages lub wprowadzenie wzorca, takiego jak mediator.
+
+Wzorzec projektowy mediator jest używany do zredukowania sprzęgania między klasami, jednocześnie umożliwiając komunikację między nimi. W aplikacjach ASP.NET Core MVC ten wzorzec jest często stosowany do podziału kontrolerów na mniejsze części za pomocą *programów obsługi* w celu wykonywania pracy z metodami akcji. Popularny [pakiet NuGet MediatR](https://www.nuget.org/packages/MediatR/) jest często używany do osiągnięcia tego celu. Zazwyczaj kontrolery obejmują wiele różnych metod akcji, z których każdy może wymagać pewnych zależności. Zestaw wszystkich zależności wymaganych przez dowolną akcję musi być przekazaniem do konstruktora kontrolera. W przypadku korzystania z Mediatr jedyną zależnością jest kontroler w wystąpieniu mediator. Każda akcja następnie używa wystąpienia mediator do wysyłania komunikatu, który jest przetwarzany przez procedurę obsługi. Procedura obsługi jest specyficzna dla jednej akcji i w ten sposób wymaga tylko zależności wymaganych przez tę akcję. Przykładem kontrolera korzystającego z MediatR jest następujący:
+
+```csharp
+public class OrderController : Controller
+{
+    private readonly IMediator _mediator;
+
+    public OrderController(IMediator mediator)
+    {
+        _mediator = mediator;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> MyOrders()
+    {
+        var viewModel = await _mediator.Send(new GetMyOrders(User.Identity.Name));
+
+        return View(viewModel);
+    }
+
+    // other actions implemented similarly
+}
+```
+
+W `MyOrders` akcji wywołanie `Send` `GetMyOrders` komunikatu jest obsługiwane przez tę klasę:
+
+```csharp
+public class GetMyOrdersHandler : IRequestHandler<GetMyOrders, IEnumerable<OrderViewModel>>
+{
+    private readonly IOrderRepository _orderRepository;
+
+    public GetMyOrdersHandler(IOrderRepository orderRepository)
+    {
+        _orderRepository = orderRepository;
+    }
+
+    public async Task<IEnumerable<OrderViewModel>> Handle(GetMyOrders request, CancellationToken cancellationToken)
+    {
+        var specification = new CustomerOrdersWithItemsSpecification(request.UserName);
+        var orders = await _orderRepository.ListAsync(specification);
+
+        return orders.Select(o => new OrderViewModel
+        {
+            OrderDate = o.OrderDate,
+            OrderItems = o.OrderItems?.Select(oi => new OrderItemViewModel()
+            {
+                PictureUrl = oi.ItemOrdered.PictureUri,
+                ProductId = oi.ItemOrdered.CatalogItemId,
+                ProductName = oi.ItemOrdered.ProductName,
+                UnitPrice = oi.UnitPrice,
+                Units = oi.Units
+            }).ToList(),
+            OrderNumber = o.Id,
+            ShippingAddress = o.ShipToAddress,
+            Total = o.Total()
+        });
+    }
+}
+```
+
+Rezultatem tego podejścia jest to, że kontrolery są znacznie mniejsze i koncentrują się głównie na powiązaniach routingu i modelu, natomiast poszczególne programy obsługi są odpowiedzialne za określone zadania wymagające danego punktu końcowego. Takie podejście można również uzyskać bez MediatR za pomocą [pakietu NuGet ApiEndpoints](https://www.nuget.org/packages/Ardalis.ApiEndpoints/), który próbuje przełączyć się do kontrolerów interfejsu API te same korzyści, Razor Pages są one wbudowane dla kontrolerów opartych na widoku.
 
 > ### <a name="references--mapping-requests-to-responses"></a>References — mapowanie żądań na odpowiedzi
 >
@@ -234,6 +303,18 @@ services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 
 ASP.NET Core MVC używa również Konwencji do lokalizowania widoków. Można zastąpić go Konwencją niestandardową, aby widoki znajdowały się w folderach funkcji (przy użyciu nazwy funkcji dostarczonej przez FeatureConvention). Możesz dowiedzieć się więcej o tym podejściu i pobrać przykład roboczy z artykułu magazynowego MSDN, [wycinki funkcji dla ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
 
+### <a name="apis-and-no-locblazor-applications"></a>Interfejsy API i Blazor aplikacje
+
+Jeśli aplikacja zawiera zestaw interfejsów API sieci Web, które muszą być zabezpieczone, należy je odpowiednio skonfigurować jako oddzielny projekt z widoku lub aplikacji Razor Pages. Oddzielanie interfejsów API, szczególnie publicznych interfejsów API, z aplikacji sieci Web po stronie serwera ma wiele korzyści. Te aplikacje często będą mieć unikatowe charakterystyki wdrożenia i obciążenia. Są one również bardzo prawdopodobnie do wdrażania różnych mechanizmów zabezpieczeń, dzięki standardowym aplikacjom opartym na formularzach, wykorzystującym uwierzytelnianie oparte na plikach cookie i interfejsy API najprawdopodobniej przy użyciu uwierzytelniania opartego na tokenach.
+
+Ponadto Blazor aplikacje, bez względu na to, czy program korzysta z Blazor serwera, czy też Blazor WebAssembly , powinny być skompilowane jako oddzielne projekty. Aplikacje mają różne charakterystyki środowiska uruchomieniowego, a także modele zabezpieczeń. Mogą współużytkować typowe typy z aplikacją sieci Web po stronie serwera (lub projektem interfejsu API), a typy te powinny być zdefiniowane we wspólnym projekcie udostępnionym.
+
+Dodanie Blazor WebAssembly interfejsu administratora do eShopOnWeb wymaga dodania kilku nowych projektów. Blazor WebAssembly Sam projekt, `BlazorAdmin` . Nowy zestaw publicznych punktów końcowych interfejsu API używany przez program `BlazorAdmin` i skonfigurowany do korzystania z uwierzytelniania opartego na tokenach jest zdefiniowany w `PublicApi` projekcie. Niektóre typy udostępnione używane przez oba te projekty są przechowywane w nowym `BlazorShared` projekcie.
+
+Jeden z nich może zadawać, dlaczego należy dodać oddzielny `BlazorShared` projekt, jeśli istnieje już wspólny `ApplicationCore` projekt, którego można użyć do udostępniania dowolnego typu wymaganego przez oba `PublicApi` i `BlazorAdmin` ? Odpowiedź polega na tym, że ten projekt zawiera całą logikę biznesową aplikacji i jest dużo większy niż to konieczne, a także znacznie bardziej niezbędny jest bezpieczny na serwerze. Należy pamiętać, że każda biblioteka, do której odwołuje się `BlazorAdmin` program, zostanie pobrana do przeglądarek użytkowników podczas ładowania Blazor aplikacji.
+
+W zależności od tego, czy jest używany [wzorzec frontonu (BFF)](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends), interfejsy API używane przez Blazor WebAssembly aplikację nie mogą udostępniać ich typów 100% z Blazor . W szczególności publiczny interfejs API, który ma być używany przez wielu różnych klientów, może definiować własne żądanie i typy wyników, zamiast udostępniać je w projekcie udostępnionym specyficznym dla klienta. W przykładzie eShopOnWeb założono, że `PublicApi` projekt jest w rzeczywistości hostem publicznego interfejsu API, dlatego nie wszystkie typy żądań i odpowiedzi pochodzą z `BlazorShared` projektu.
+
 ### <a name="cross-cutting-concerns"></a>Zagadnienia ogólne
 
 Po rozbudowywaniu aplikacji coraz bardziej ważne jest, aby wyeliminować problemy związane z wycinaniem i zachować spójność. Niektóre przykłady zagadnień związanych z obcinaniem w aplikacjach ASP.NET Core to uwierzytelnianie, reguły walidacji modelu, buforowanie danych wyjściowych i obsługa błędów, chociaż istnieje wiele innych. ASP.NET Core [filtry](/aspnet/core/mvc/controllers/filters) MVC umożliwiają uruchamianie kodu przed określonymi krokami w potoku przetwarzania żądań lub po nich. Na przykład filtr może zostać uruchomiony przed i po powiązaniu modelu, przed i po akcji lub przed i po wyniku akcji. Można również użyć filtru autoryzacji, aby kontrolować dostęp do reszty potoku. Ilustracje 7-2 pokazuje, w jaki sposób przepływają żądania wykonania przez filtry, jeśli są skonfigurowane.
@@ -323,7 +404,7 @@ Aby dowiedzieć się więcej na temat implementowania filtrów i pobrać przykł
 
 Zabezpieczanie aplikacji sieci Web to duży temat z wieloma kwestiami. Na najbardziej podstawowym poziomie zabezpieczenia polegają na tym, że wiesz, z kogo pochodzi żądanie, a następnie upewniając się, że żądanie ma tylko dostęp do zasobów, które powinny. Uwierzytelnianie to proces porównujący poświadczenia dostarczone z żądaniem do tych w zaufanym magazynie danych, aby sprawdzić, czy żądanie powinno być traktowane jako pochodzące ze znanej jednostki. Autoryzacja to proces ograniczania dostępu do określonych zasobów na podstawie tożsamości użytkownika. Trzeci problem dotyczący zabezpieczeń chroni żądania przed podsłuchiwaniem przez inne osoby, dla którego należy [upewnić się, że protokół SSL jest używany przez aplikację](/aspnet/core/security/enforcing-ssl).
 
-### <a name="authentication"></a>Authentication
+### <a name="identity"></a>Tożsamość
 
 ASP.NET Core tożsamością jest system członkostwa, którego można użyć do obsługi funkcji logowania dla aplikacji. Obsługuje ona konta użytkowników lokalnych, a także dostawcę logowania zewnętrznego od dostawców, takich jak konto Microsoft, Twitter, Facebook, Google i inne. Oprócz tożsamości ASP.NET Core aplikacja może korzystać z uwierzytelniania systemu Windows lub innego dostawcy tożsamości, takiego jak [serwer tożsamości](https://github.com/IdentityServer/IdentityServer4).
 
@@ -342,8 +423,8 @@ public void ConfigureServices(IServiceCollection services)
     services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
     services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
     services.AddMvc();
 }
 
@@ -362,6 +443,73 @@ Ważne jest, aby UseIdentity pojawił się przed UseMvc w metodzie Configure. Po
 
 Więcej informacji na temat [konfigurowania uwierzytelniania dwuskładnikowego](/aspnet/core/security/authentication/2fa) i [włączania zewnętrznych dostawców logowania](/aspnet/core/security/authentication/social/) można znaleźć w oficjalnym ASP.NET Core dokumentach.
 
+### <a name="authentication"></a>Authentication
+
+Uwierzytelnianie to proces określania, kto uzyskuje dostęp do systemu. Jeśli używasz tożsamości ASP.NET Core i metod konfiguracji przedstawionych w poprzedniej sekcji, spowoduje to automatyczne skonfigurowanie niektórych ustawień uwierzytelniania w aplikacji. Można jednak również skonfigurować te ustawienia domyślne ręcznie lub zastąpić je zestawem AddIdentity. Jeśli używasz tożsamości, skonfigurujesz uwierzytelnianie na podstawie plików cookie jako *schemat*domyślny.
+
+W przypadku uwierzytelniania opartego na sieci Web, zwykle do 5 akcji, które mogą być wykonywane w trakcie uwierzytelniania klienta systemu. Są to:
+
+- Potwierdza. Użyj informacji dostarczonych przez klienta, aby utworzyć tożsamość do użycia w aplikacji.
+- Sprawdz. Ta akcja służy do wymagania, aby klient mógł identyfikować siebie.
+- Uniemożliwia. Informowanie klienta, aby nie wykonywał akcji.
+- Logowanie. W jakiś sposób Utrwalaj istniejącego klienta.
+- Wyloguj się. Usuń klienta z trwałości.
+
+Istnieje kilka typowych technik uwierzytelniania w aplikacjach sieci Web. Są one nazywane schematami. Dany schemat definiuje akcje dla niektórych lub wszystkich powyższych opcji. Niektóre schematy obsługują tylko podzbiór akcji i mogą wymagać oddzielnego schematu, aby wykonać te czynności, które nie są obsługiwane. Na przykład schemat OpenID Connect-Connect (OIDC) nie obsługuje logowania ani wylogowywania, ale jest często skonfigurowany do korzystania z uwierzytelniania plików cookie dla tej trwałości.
+
+W aplikacji ASP.NET Core można skonfigurować `DefaultAuthenticateScheme` oraz opcjonalne określone schematy dla każdej akcji opisanej powyżej. Na przykład, `DefaultChallengeScheme` `DefaultForbidScheme` itp. Wywołanie [`AddIdentity<TUser,TRole>`](https://github.com/dotnet/aspnetcore/blob/release/3.1/src/Identity/Core/src/IdentityServiceCollectionExtensions.cs#L38-L102) konfiguruje kilka aspektów aplikacji i dodaje wiele wymaganych usług. Obejmuje to również wywołanie konfigurowania schematu uwierzytelniania:
+
+```csharp
+services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+});
+```
+
+Te schematy używają plików cookie w celu zapewnienia trwałości i przekierowania do stron logowania w celu uwierzytelniania domyślnego. Te schematy są odpowiednie dla aplikacji sieci Web, które współpracują z użytkownikami za pośrednictwem przeglądarek sieci Web, ale nie są zalecane dla interfejsów API. Zamiast tego interfejsy API zwykle używają innej formy uwierzytelniania, takiej jak tokeny okaziciela JWT.
+
+Interfejsy API sieci Web są używane przez kod, taki jak `HttpClient` aplikacje .NET i równoważne typy w innych strukturach. Ci klienci oczekują użytecznej odpowiedzi z wywołania interfejsu API lub kodu stanu wskazującego, czy wystąpił problem. Ci klienci nie korzystają z przeglądarki i nie renderują kodu HTML ani nie mogą z nimi korzystać. Z tego względu nie są odpowiednie dla punktów końcowych interfejsu API, aby przekierować klientów do stron logowania, jeśli nie są uwierzytelnione. Inny schemat jest bardziej odpowiedni.
+
+Aby skonfigurować uwierzytelnianie dla interfejsów API, można skonfigurować uwierzytelnianie podobne do następujących, które są używane przez `PublicApi` projekt w aplikacji eShopOnWeb Reference:
+
+```csharp
+services.AddAuthentication(config =>
+{
+    config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(config =>
+    {
+        config.RequireHttpsMetadata = false;
+        config.SaveToken = true;
+        config.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
+```
+
+Chociaż istnieje możliwość skonfigurowania wielu różnych schematów uwierzytelniania w ramach jednego projektu, można skonfigurować jeden domyślny schemat. Z tego powodu, aplikacja referencyjna eShopOnWeb oddziela swoje interfejsy API do własnego projektu, `PublicApi` niezależnie od projektu głównego, `Web` zawierającego widoki i Razor Pages aplikacji.
+
+#### <a name="authentication-in-no-locblazor-apps"></a>Uwierzytelnianie w Blazor aplikacjach
+
+Blazor Aplikacje serwera mogą korzystać z tych samych funkcji uwierzytelniania co inna aplikacja ASP.NET Core. Blazorw WebAssembly aplikacjach nie można używać wbudowanych dostawców tożsamości i uwierzytelniania, ponieważ są one uruchamiane w przeglądarce. BlazorWebAssemblyaplikacje mogą lokalnie przechowywać stan uwierzytelniania użytkownika i uzyskiwać dostęp do oświadczeń, aby określić akcje, które użytkownicy powinni wykonywać. Wszystkie testy uwierzytelniania i autoryzacji należy jednak wykonać na serwerze niezależnie od implementacji logiki w Blazor WebAssembly aplikacji, ponieważ użytkownicy mogą łatwo obejść aplikację i bezpośrednio korzystać z interfejsów API.
+
+> ### <a name="references--authentication"></a>Odwołania — uwierzytelnianie
+>
+> - **Akcje uwierzytelniania i ustawienia domyślne**  
+>   <https://stackoverflow.com/a/52493428>
+> - **Uwierzytelnianie i autoryzacja dla aplikacji jednostronicowych**
+>   <https://docs.microsoft.com/aspnet/core/security/authentication/identity-api-authorization>
+> - **ASP.NET Core Blazor uwierzytelnianie i autoryzacja**
+>   <https://docs.microsoft.com/aspnet/core/blazor/security/>
+> - **Zabezpieczenia: uwierzytelnianie i autoryzacja w ASP.NET Web Forms i Blazor**
+>   <https://docs.microsoft.com/dotnet/architecture/blazor-for-web-forms-developers/security-authentication-authorization>
+
 ### <a name="authorization"></a>Autoryzacja
 
 Najprostsza forma autoryzacji obejmuje ograniczenie dostępu do użytkowników anonimowych. Można to osiągnąć przez zastosowanie \[ \] atrybutu Autoryzuj do określonych kontrolerów lub akcji. Jeśli role są używane, atrybut można rozszerzyć, aby ograniczyć dostęp do użytkowników, którzy należą do określonych ról, jak pokazano poniżej:
@@ -376,7 +524,7 @@ public class SalaryController : Controller
 
 W takim przypadku użytkownicy należący do roli HRManager lub finanse (lub obie) będą mieli dostęp do SalaryController. Aby wymagać, aby użytkownik należał do wielu ról (nie tylko jeden z kilku), można zastosować atrybut wielokrotnie, określając wymaganą rolę za każdym razem.
 
-Określanie niektórych zestawów ról jako ciągów w wielu różnych kontrolerach i akcjach może prowadzić do niepożądanego powtórzenia. Istnieje możliwość skonfigurowania zasad autoryzacji, które hermetyzują reguły autoryzacji, a następnie określania zasad zamiast poszczególnych ról przy zastosowaniu \[ \] atrybutu Autoryzuj:
+Określanie niektórych zestawów ról jako ciągów w wielu różnych kontrolerach i akcjach może prowadzić do niepożądanego powtórzenia. Należy określić co najmniej stałe dla tych literałów ciągów i użyć stałych w dowolnym miejscu, aby podać ciąg. Istnieje również możliwość skonfigurowania zasad autoryzacji, które hermetyzują reguły autoryzacji, a następnie określania zasad zamiast poszczególnych ról przy zastosowaniu \[ \] atrybutu Autoryzuj:
 
 ```csharp
 [Authorize(Policy = "CanViewPrivateReport")]
@@ -407,13 +555,28 @@ Te zasady mogą być następnie używane z \[ \] atrybutem Autoryzuj do ochrony 
 
 #### <a name="securing-web-apis"></a>Zabezpieczanie interfejsów API sieci Web
 
-Większość interfejsów API sieci Web powinna implementować system uwierzytelniania oparty na tokenach. Uwierzytelnianie tokenu jest bezstanowe i zaprojektowane do skalowalności. W systemie uwierzytelniania opartego na tokenach klient musi najpierw przeprowadzić uwierzytelnienie u dostawcy uwierzytelniania. Jeśli to się powiedzie, klient wystawia token, który jest po prostu zrozumiałą w sposób kryptograficznie ciągiem znaków. Gdy klient musi wydać żądanie do interfejsu API, dodaje ten token jako nagłówek w żądaniu. Następnie serwer sprawdza poprawność tokenu znalezionego w nagłówku żądania przed ukończeniem żądania. Rysunek 7-4 ilustruje ten proces.
+Większość interfejsów API sieci Web powinna implementować system uwierzytelniania oparty na tokenach. Uwierzytelnianie tokenu jest bezstanowe i zaprojektowane do skalowalności. W systemie uwierzytelniania opartego na tokenach klient musi najpierw przeprowadzić uwierzytelnienie u dostawcy uwierzytelniania. Jeśli to się powiedzie, klient wystawia token, który jest po prostu zrozumiałą w sposób kryptograficznie ciągiem znaków. Najbardziej typowym formatem tokenów jest token sieci Web JSON lub JWT (często wymawiane "notowania"). Gdy klient musi wydać żądanie do interfejsu API, dodaje ten token jako nagłówek w żądaniu. Następnie serwer sprawdza poprawność tokenu znalezionego w nagłówku żądania przed ukończeniem żądania. Rysunek 7-4 ilustruje ten proces.
 
 ![TokenAuth](./media/image7-4.png)
 
 **Rysunek 7-4.** Uwierzytelnianie oparte na tokenach dla interfejsów API sieci Web.
 
 Możesz utworzyć własną usługę uwierzytelniania, zintegrować ją z usługą Azure AD i uwierzytelnianiem OAuth lub wdrożyć usługę przy użyciu narzędzia typu open source, takiego jak [IdentityServer](https://github.com/IdentityServer).
+
+Tokeny JWT mogą osadzać oświadczenia dotyczące użytkownika, które można odczytać na kliencie lub serwerze. Możesz użyć narzędzia, takiego jak [JWT.IO](https://jwt.io/) , aby wyświetlić zawartość tokenu JWT. Nie należy przechowywać poufnych danych, takich jak hasła lub klucze w tokenach JTW, ponieważ ich zawartość jest łatwo odczytywana.
+
+W przypadku używania tokenów JWT z SPA lub Blazor WebAssembly aplikacjami należy przechowywać token w dowolnym miejscu na kliencie, a następnie dodać go do każdego wywołania interfejsu API. Jest to zwykle wykonywane jako nagłówek, jak ilustruje poniższy kod:
+
+```csharp
+// AuthService.cs in BlazorAdmin project of eShopOnWeb
+private async Task SetAuthorizationHeader()
+{
+    var token = await GetToken();
+    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+}
+```
+
+Po wywołaniu powyższej metody żądania wykonane przy użyciu `_httpClient` będą mieć token osadzony w nagłówkach żądania, co umożliwia interfejsowi API po stronie serwera uwierzytelnianie i Autoryzowanie żądania.
 
 #### <a name="custom-security"></a>Zabezpieczenia niestandardowe
 
@@ -518,8 +681,6 @@ Oprócz tych typów modeli DDD zazwyczaj wykorzystuje różne wzorce:
 - [Repozytorium](https://deviq.com/repository-pattern/), aby uzyskać szczegółowe informacje o trwałości.
 
 - [Fabryka](https://en.wikipedia.org/wiki/Factory_method_pattern)dla hermetyzowania złożonego tworzenia obiektów.
-
-- Zdarzenia domeny w celu oddzielenia zachowań zależnych od zachowań wyzwalających.
 
 - [Usługi](http://gorodinski.com/blog/2012/04/14/services-in-domain-driven-design-ddd/)dla hermetyzowania złożonych zachowań i/lub szczegółów implementacji infrastruktury.
 

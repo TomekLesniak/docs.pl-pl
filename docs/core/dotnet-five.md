@@ -5,16 +5,16 @@ ms.date: 09/02/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: c9ac93c152d39bd06875f82ee5f34c1540236038
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 5e8ed371173ff8b81909ceb071ed93c6b0e1eea5
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495231"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515844"
 ---
 # <a name="the-evolution-of-net-core-to-net-5"></a>Ewolucja platformy .NET Core do platformy .NET 5
 
-W tym artykule szczegółowo opisano, co obejmuje platforma .NET 5, która jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
+W tym artykule szczegółowo opisano, co obejmuje platforma .NET 5, która jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. ASP.NET Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Ponadto Entity Framework Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
 
 Pojawieniu platformy .NET Core rozwinęły ekosystem platformy .NET w atrakcyjny sposób. Zostało ono dojrzałe jako projekt Open Source w witrynie GitHub, świętujemy wkłady społecznościowe i humbly ulepszenie w miarę upływu czasu.
 
@@ -78,7 +78,7 @@ Deweloperzy piszący aplikacje .NET 5 będą mieli dostęp do najnowszej wersji 
 
 - Wskaźniki funkcji: konstrukcje języka, które uwidaczniają następujące kod w języku pośrednim (IL): `ldftn` i `calli` .
 
-<!-- For more information on the available C# 9 features, see [What's new in C# 9](csharp/whats-new/csharp-9.md). -->
+Aby uzyskać więcej informacji na temat dostępnych funkcji języka C# 9, zobacz [co nowego w języku c# 9](../csharp/whats-new/csharp-9.md).
 
 #### <a name="source-generators"></a>Generatory źródeł
 
@@ -160,7 +160,7 @@ View body() => new StackLayout
 
 Aby uzyskać więcej informacji, zobacz [plan .NET Maui](https://github.com/dotnet/maui/wiki/Roadmap)i wprowadzenie do artykułu [.NET Maui](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui) .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Podróż do jednego programu .NET](https://channel9.msdn.com/Events/Build/2020/BOD106)
 - [Ulepszenia wydajności w programie .NET 5](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5)

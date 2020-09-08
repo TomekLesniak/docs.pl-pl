@@ -1,43 +1,46 @@
 ---
-title: Praca z danymi w aplikacjach ASP.NET Core
-description: Architekt nowoczesnych aplikacji sieci Web z ASP.NET Core i Azure | Praca z danymi w aplikacjach ASP.NET Core
+title: Pracuj z danymi w aplikacjach ASP.NET Core
+description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyciu ASP.NET Core i platformy Azure | Praca z danymi w aplikacjach ASP.NET Core
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/04/2019
-ms.openlocfilehash: b706332b28aec669a841f510046aa7b185be1373
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 08/12/2020
+no-loc:
+- Blazor
+- WebAssembly
+ms.openlocfilehash: f2f2a4706ea4deba39465d8697f78be58506a09c
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987845"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515877"
 ---
-# <a name="working-with-data-in-aspnet-core-apps"></a>Praca z danymi w ASP.NET podstawowych aplikacjach
+# <a name="working-with-data-in-aspnet-core-apps"></a>Praca z danymi w aplikacjach ASP.NET Core
 
-> "Dane są cenną rzeczą i będą trwać dłużej niż same systemy."
+> "Dane są cenne i będą trwać dłużej niż same systemy".
 >
-> Tim Berners
+> Tim — Lewandowski
 
-Dostęp do danych jest ważną częścią niemal każdej aplikacji. ASP.NET Core obsługuje wiele opcji dostępu do danych, w tym Entity Framework Core (i Entity Framework 6, jak również) i może pracować z dowolnej platformy dostępu do danych .NET. Wybór struktury dostępu do danych do użycia zależy od potrzeb aplikacji. Abstrakcja tych wyborów z ApplicationCore i projektów interfejsu użytkownika i hermetyzacji szczegóły implementacji w infrastrukturze, pomaga produkować luźno sprzężone, testowalne oprogramowanie.
+Dostęp do danych jest ważną częścią niemal każdej aplikacji oprogramowania. ASP.NET Core obsługuje wiele opcji dostępu do danych, w tym Entity Framework Core (i Entity Framework 6), i może współdziałać z dowolnymi strukturami dostępu do danych platformy .NET. Wybór struktury dostępu do danych, która ma być używana, zależy od potrzeb aplikacji. Abstrakcję tych opcji z projektów ApplicationCore i interfejsów użytkownika oraz Hermetyzowanie szczegółów implementacji w infrastrukturze, pomaga w wytwarzaniu luźno sprzężonych, weryfikowalne oprogramowania.
 
 ## <a name="entity-framework-core-for-relational-databases"></a>Entity Framework Core (dla relacyjnych baz danych)
 
-Jeśli piszesz nową aplikację ASP.NET Core, która musi pracować z danymi relacyjnymi, a następnie Entity Framework Core (EF Core) jest zalecanym sposobem dla aplikacji, aby uzyskać dostęp do swoich danych. EF Core jest maperem obiekto-relacyjne (O/RM), który umożliwia deweloperom platformy .NET utrwalanie obiektów do i ze źródła danych. Eliminuje to potrzebę większości deweloperów kodu dostępu do danych zazwyczaj trzeba napisać. Podobnie jak ASP.NET Core, EF Core został przepisany od podstaw do obsługi modułowych aplikacji wieloplatformowych. Dodać go do aplikacji jako pakiet NuGet, skonfigurować go w starcie i zażądać go za pomocą iniekcji zależności, gdziekolwiek jest to potrzebne.
+Jeśli piszesz nową aplikację ASP.NET Core, która musi pracować z danymi relacyjnymi, Entity Framework Core (EF Core) jest zalecanym sposobem, aby aplikacja mogła uzyskać dostęp do swoich danych. EF Core to Mapowanie obiektowo-relacyjne (O/RM), które umożliwia deweloperom platformy .NET utrwalanie obiektów do i ze źródła danych. Eliminuje to potrzebę większości deweloperów kodu dostępu do danych, zwykle trzeba pisać. Podobnie jak ASP.NET Core, EF Core został ponownie zapisany od podstaw, aby obsługiwał modularne aplikacje dla wielu platform. Należy dodać je do aplikacji jako pakiet NuGet, skonfigurować ją w programie startowym i zażądać jej za pomocą iniekcji zależności wszędzie tam, gdzie jest potrzebna.
 
-Aby użyć ef core z bazą danych programu SQL Server, uruchom następujące polecenie dotnet CLI:
+Aby użyć EF Core z bazą danych SQL Server, uruchom następujące polecenie interfejsu wiersza polecenia dotnet:
 
 ```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
-Aby dodać obsługę źródła danych InMemory do testowania:
+Aby dodać obsługę źródła danych inMemory, na potrzeby testowania:
 
 ```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 ```
 
-### <a name="the-dbcontext"></a>Kontekst DbContext
+### <a name="the-dbcontext"></a>DbContext
 
-Do pracy z EF Core potrzebna <xref:Microsoft.EntityFrameworkCore.DbContext>jest podklasa . Ta klasa zawiera właściwości reprezentujące kolekcje jednostek, z którymi aplikacja będzie współpracować. Przykład eShopOnWeb zawiera CatalogContext z kolekcjami dla towarów, marek i typów:
+Aby można było korzystać z EF Core, należy podklasą <xref:Microsoft.EntityFrameworkCore.DbContext> . Ta klasa zawiera właściwości reprezentujące kolekcje jednostek, z którymi aplikacja będzie współdziałać. Przykład eShopOnWeb zawiera CatalogContext z kolekcjami dla elementów, marek i typów:
 
 ```csharp
 public class CatalogContext : DbContext
@@ -55,34 +58,34 @@ public class CatalogContext : DbContext
 }
 ```
 
-Twój DbContext musi mieć konstruktora, który akceptuje DbContextOptions i przekazać ten argument do konstruktora dbcontext bazy. Jeśli masz tylko jeden DbContext w aplikacji, można przekazać wystąpienie DbContextOptions, ale jeśli masz więcej niż jeden,\<należy użyć ogólnego DbContextOptions T> typu, przekazując w DbContext typu jako parametr ogólny.
+DbContext musi mieć konstruktora akceptującego DbContextOptions i przekazać ten argument do podstawowego konstruktora DbContext. Jeśli masz tylko jeden DbContext w aplikacji, możesz przekazać wystąpienie elementu DbContextOptions, ale jeśli masz więcej niż jeden, musisz użyć ogólnego \<T> typu DbContextOptions, przekazując w typ kontekstu dbjako parametr generyczny.
 
-### <a name="configuring-ef-core"></a>Konfigurowanie ef core
+### <a name="configuring-ef-core"></a>Konfigurowanie EF Core
 
-W aplikacji ASP.NET Core zazwyczaj skonfigurujesz EF Core w metodzie ConfigureServices. EF Core używa DbContextOptionsBuilder, który obsługuje kilka metod rozszerzenia pomocne, aby usprawnić jego konfigurację. Aby skonfigurować CatalogContext do używania bazy danych programu SQL Server z ciągiem połączenia zdefiniowanym w programie Configuration, należy dodać następujący kod do configureservices:
+W aplikacji ASP.NET Core zwykle konfigurujesz EF Core w metodzie ConfigureServices. EF Core używa DbContextOptionsBuilder, który obsługuje kilka przydatnych metod rozszerzania w celu usprawnienia jego konfiguracji. Aby skonfigurować CatalogContext do używania bazy danych SQL Server z parametrami połączenia zdefiniowanymi w konfiguracji, należy dodać następujący kod do ConfigureServices:
 
 ```csharp
 services.AddDbContext<CatalogContext>(options => options.UseSqlServer (Configuration.GetConnectionString("DefaultConnection")));
 ```
 
-Aby użyć bazy danych w pamięci:
+Aby użyć bazy danych znajdującej się w pamięci:
 
 ```csharp
 services.AddDbContext<CatalogContext>(options =>
     options.UseInMemoryDatabase());
 ```
 
-Po zainstalowaniu EF Core, utworzeniu typu podrzędnego DbContext i skonfigurowaniu go w ConfigureServices, można przystąpić do użycia EF Core. Można zażądać wystąpienia typu DbContext w dowolnej usłudze, która jej potrzebuje, i rozpocząć pracę z utrwalonych jednostek przy użyciu LINQ tak, jakby były one po prostu w kolekcji. EF Core wykonuje pracę tłumaczenia wyrażeń LINQ do zapytań SQL do przechowywania i pobierania danych.
+Po zainstalowaniu EF Core utworzyć typ elementu podrzędnego DbContext i skonfigurować go w ConfigureServices, możesz użyć EF Core. Możesz zażądać wystąpienia typu DbContext w dowolnej usłudze, która go potrzebuje, i rozpocząć pracę z utrwalonymi obiektami przy użyciu LINQ tak, jakby znajdowały się one po prostu w kolekcji. EF Core Wykonuje translację wyrażeń LINQ na zapytania SQL w celu przechowywania i pobierania danych.
 
-Można zobaczyć kwerendy EF Core jest wykonywany przez skonfigurowanie rejestratora i zapewnienie jego poziom jest ustawiony na co najmniej informacje, jak pokazano na rysunku 8-1.
+Możesz zobaczyć zapytania, EF Core jest wykonywane przez skonfigurowanie rejestratora i upewnienie się, że jego poziom jest ustawiony na co najmniej informacje, jak pokazano na rysunku 8-1.
 
-![Rejestrowanie zapytań EF Core do konsoli](./media/image8-1.png)
+![Rejestrowanie EF Core zapytań do konsoli](./media/image8-1.png)
 
-**Rysunek 8-1**. Rejestrowanie zapytań EF Core do konsoli
+**Rysunek 8-1**. Rejestrowanie EF Core zapytań do konsoli
 
 ### <a name="fetching-and-storing-data"></a>Pobieranie i przechowywanie danych
 
-Aby pobrać dane z EF Core, można uzyskać dostęp do odpowiedniej właściwości i użyć LINQ do filtrowania wyniku. Można również użyć LINQ do wykonywania projekcji, przekształcając wynik z jednego typu do innego. Poniższy przykład można pobrać CatalogBrands, uporządkowane według nazwy, filtrowane przez ich Enabled właściwości i rzutowane na SelectListItem typu:
+Aby pobrać dane z EF Core, można uzyskać dostęp do odpowiedniej właściwości i użyć LINQ do filtrowania wyniku. Można również użyć LINQ do wykonania projekcji, przekształcania wyniku z jednego typu na drugi. Poniższy przykład pobiera CatalogBrands uporządkowane według nazwy, filtrowane według ich właściwości Enabled i rzutowane na typ SelectListItem:
 
 ```csharp
 var brandItems = await _context.CatalogBrands
@@ -93,9 +96,9 @@ var brandItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-W powyższym przykładzie należy dodać wywołanie do ToListAsync w celu natychmiastowego wykonania kwerendy. W przeciwnym razie instrukcja przypisze\<IQueryable SelectListItem> do brandItems, które nie zostaną wykonane, dopóki nie zostanie wyliczony. Istnieją plusy i minusy do powrotu IQueryable wyniki z metod. Umożliwia kwerendy EF Core będzie konstruować do dalszej modyfikacji, ale może również spowodować błędy, które występują tylko w czasie wykonywania, jeśli operacje są dodawane do kwerendy, że EF Core nie może przetłumaczyć. Ogólnie bezpieczniejsze jest przekazywanie filtrów do metody wykonywania dostępu do danych i powrót kolekcji\<w pamięci (na przykład lista T>) w wyniku.
+Ważne jest, aby w powyższym przykładzie dodać wywołanie do ToListAsync w celu natychmiastowego wykonania zapytania. W przeciwnym razie instrukcja przypisze interfejs IQueryable \<SelectListItem> do brandItems, który nie będzie wykonywany do momentu wyliczenia. Istnieją specjaliści i wady zwracające wyniki z metod. Pozwala to na dalsze modyfikacje EF Core kwerendy, ale może również powodować błędy, które występują tylko w czasie wykonywania, jeśli operacje są dodawane do zapytania, którego EF Core nie można przetłumaczyć. Zazwyczaj bezpieczniejsze jest przekazywanie wszelkich filtrów do metody wykonującej dostęp do danych i zwracanie z powrotem kolekcji w pamięci (na przykład listy \<T> ) jako wyniku.
 
-EF Core śledzi zmiany na jednostkach pobiera z trwałości. Aby zapisać zmiany w śledzone jednostki, wystarczy wywołać SaveChanges metody na DbContext, upewniając się, że jest to samo wystąpienie DbContext, który został użyty do pobrania jednostki. Dodawanie i usuwanie jednostek odbywa się bezpośrednio na odpowiedniej właściwości DbSet, ponownie z wywołaniem SaveChanges do wykonania poleceń bazy danych. W poniższym przykładzie pokazano dodawanie, aktualizowanie i usuwanie jednostek z trwałości.
+EF Core śledzi zmiany w jednostkach pobieranych z trwałości. Aby zapisać zmiany w monitorowanej jednostce, wystarczy wywołać metodę metody SaveChanges w kontekście DbContext, upewniając się, że jest to to samo wystąpienie DbContext, które zostało użyte do pobrania jednostki. Dodawanie i usuwanie jednostek jest bezpośrednio wykonywane na odpowiedniej właściwości Nieogólnymi, z wywołaniem metody SaveChanges w celu wykonania poleceń bazy danych. Poniższy przykład ilustruje Dodawanie, aktualizowanie i usuwanie jednostek z trwałości.
 
 ```csharp
 // create
@@ -114,11 +117,11 @@ _context.CatalogBrands.Remove(brandToDelete);
 await _context.SaveChangesAsync();
 ```
 
-EF Core obsługuje zarówno synchroniczne i asynchroniczne metody pobierania i zapisywania. W aplikacjach sieci web zaleca się użycie wzorca asynchronii/await z metodami asynchronizującymi, aby wątki serwera sieci web nie były blokowane podczas oczekiwania na zakończenie operacji dostępu do danych.
+EF Core obsługuje metody synchroniczne i asynchroniczne do pobierania i zapisywania. W aplikacjach sieci Web zaleca się użycie wzorca Async/await z metodami asynchronicznymi, aby wątki serwera sieci Web nie były blokowane podczas oczekiwania na ukończenie operacji dostępu do danych.
 
 ### <a name="fetching-related-data"></a>Pobieranie powiązanych danych
 
-Gdy EF Core pobiera jednostki, wypełnia wszystkie właściwości, które są przechowywane bezpośrednio z tej jednostki w bazie danych. Właściwości nawigacji, takie jak listy powiązanych jednostek, nie są wypełniane i mogą mieć ich wartość ustawioną na wartość null. Gwarantuje to, że EF Core nie pobiera więcej danych niż jest to potrzebne, co jest szczególnie ważne dla aplikacji sieci web, które muszą szybko przetwarzać żądania i zwracać odpowiedzi w skuteczny sposób. Aby uwzględnić relacje z encją przy użyciu _ładowania z użyciem opcji ,należy_określić właściwość przy użyciu metody Dołączania rozszerzenia w kwerendzie, jak pokazano na rysunku:
+Gdy EF Core Pobiera jednostki, wypełnia wszystkie właściwości, które są przechowywane bezpośrednio w tej jednostce w bazie danych. Właściwości nawigacji, takie jak listy powiązanych jednostek, nie są wypełniane i mogą mieć ustawioną wartość null. Dzięki temu EF Core nie pobiera większej ilości danych niż jest to potrzebne, co jest szczególnie ważne w przypadku aplikacji sieci Web, które muszą szybko przetwarzać żądania i zwracać odpowiedzi w wydajny sposób. Aby uwzględnić relacje z jednostką przy użyciu _ładowania eager_, należy określić właściwość przy użyciu metody include Extension w zapytaniu, jak pokazano poniżej:
 
 ```csharp
 // .Include requires using Microsoft.EntityFrameworkCore
@@ -127,13 +130,13 @@ var brandsWithItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Można dołączyć wiele relacji, a także podzespołowania za pomocą ThenInclude. EF Core wykona pojedynczą kwerendę, aby pobrać wynikowy zestaw jednostek. Alternatywnie można uwzględnić właściwości nawigacji właściwości nawigacji, przekazując '.' -oddzielony ciąg `.Include()` do metody rozszerzenia, jak tak:
+Można uwzględnić wiele relacji, a także dołączyć podrelacje przy użyciu ThenInclude. EF Core wykona pojedyncze zapytanie w celu pobrania zestawu wyników. Alternatywnie można uwzględnić właściwości nawigacji właściwości nawigacji poprzez przekazanie "." rozdzielany ciąg do `.Include()` metody rozszerzającej, na przykład:
 
 ```csharp
     .Include("Items.Products")
 ```
 
-Oprócz hermetyzacji logiki filtrowania, specyfikacja można określić kształt danych, które mają być zwracane, w tym właściwości, które mają być wypełniane. Przykład eShopOnWeb zawiera kilka specyfikacji, które pokazują hermetyzację chętnych ładowania informacji w specyfikacji. Możesz zobaczyć, jak specyfikacja jest używana jako część kwerendy tutaj:
+Oprócz hermetyzacji logiki filtrowania, Specyfikacja może określić kształt danych do zwrócenia, w tym właściwości do wypełnienia. Przykład eShopOnWeb zawiera kilka specyfikacji demonstrujących Hermetyzowanie eager informacji dotyczących ładowania w ramach specyfikacji. W tym miejscu można zobaczyć, jak specyfikacja jest używana jako część zapytania:
 
 ```csharp
 // Includes all expression-based includes
@@ -145,15 +148,15 @@ query = specification.IncludeStrings.Aggregate(query,
             (current, include) => current.Include(include));
 ```
 
-Inną opcją ładowania powiązanych danych jest użycie _jawnego ładowania_. Jawne ładowanie umożliwia załadowanie dodatkowych danych do jednostki, która została już pobrana. Ponieważ wiąże się to z osobnym żądaniem do bazy danych, nie jest zalecane dla aplikacji sieci web, co powinno zminimalizować liczbę rund bazy danych wykonanych na żądanie.
+Kolejną opcją ładowania powiązanych danych jest użycie _jawnego ładowania_. Jawne ładowanie umożliwia załadowanie dodatkowych danych do jednostki, która została już pobrana. Ponieważ obejmuje to oddzielne żądanie do bazy danych, nie jest to zalecane w przypadku aplikacji sieci Web, co powinno zminimalizować liczbę rejsów w bazie danych na żądanie.
 
-_Ładowanie z opóźnieniem_ jest funkcją, która automatycznie ładuje powiązane dane, do których odwołuje się aplikacja. EF Core dodał wsparcie dla powolnego ładowania w wersji 2.1. Ładowanie z opóźnieniem nie jest domyślnie `Microsoft.EntityFrameworkCore.Proxies`włączone i wymaga zainstalowania pliku . Podobnie jak w przypadku jawnego ładowania, ładowanie z opóźnieniem powinno być zazwyczaj wyłączone dla aplikacji sieci web, ponieważ jego użycie spowoduje dodatkowe zapytania bazy danych są dokonywane w ramach każdego żądania sieci web. Niestety obciążenie poniesione przez opóźnienie ładowania często pozostaje niezauważone w czasie programowania, gdy opóźnienie jest małe i często zestawy danych używane do testowania są małe. Jednak w produkcji, z większą liczą użytkowników, więcej danych i więcej opóźnień, dodatkowe żądania bazy danych często może spowodować niską wydajność dla aplikacji sieci web, które intensywnie używać ładowania z opóźnieniem.
+_Ładowanie z opóźnieniem_ to funkcja, która automatycznie ładuje powiązane dane, ponieważ odwołuje się do niej aplikacja. EF Core dodano obsługę ładowania z opóźnieniem w wersji 2,1. Ładowanie z opóźnieniem nie jest domyślnie włączone i wymaga zainstalowania `Microsoft.EntityFrameworkCore.Proxies` . Podobnie jak w przypadku jawnego ładowania, ładowanie z opóźnieniem powinno być zwykle wyłączone dla aplikacji sieci Web, ponieważ jego użycie spowoduje, że w każdym żądaniu sieci Web zostaną wykonane dodatkowe zapytania bazy danych. Niestety, obciążenie związane z ładowaniem opóźnionym często jest niezauważalne w czasie projektowania, gdy opóźnienie jest małe i często zestawy danych używane do testowania są małe. Jednak w środowisku produkcyjnym, z większą liczbą użytkowników, większą ilością danych i większym opóźnieniu, dodatkowe żądania bazy danych mogą być często przyczyną niskiej wydajności aplikacji sieci Web, które intensywnie wykorzystują ładowanie z opóźnieniem.
 
-[Unikaj jednostek ładowania z opóźnieniem w aplikacjach sieci Web](https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications)
+[Unikaj załadowania jednostek w aplikacjach sieci Web](https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications)
 
-### <a name="encapsulating-data"></a>Hermetyzacja danych
+### <a name="encapsulating-data"></a>Hermetyzowanie danych
 
-EF Core obsługuje kilka funkcji, które umożliwiają modelu poprawnie hermetyzować jego stan. Typowym problemem w modelach domeny jest to, że uwidaczniają właściwości nawigacji kolekcji jako publicznie dostępne typy list. Dzięki temu każdy współpracownik manipulować zawartością tych typów kolekcji, które mogą pominąć ważne reguły biznesowe związane z kolekcji, ewentualnie pozostawiając obiekt w nieprawidłowym stanie. Rozwiązaniem tego problemu jest udostępnić dostęp tylko do odczytu do powiązanych kolekcji i jawnie zapewnić metody definiujące sposoby, w których klienci mogą manipulować nimi, jak w tym przykładzie:
+EF Core obsługuje kilka funkcji, które umożliwiają modelowi prawidłowe hermetyzację stanu. Typowym problemem w modelach domen jest ujawnienie przez nich właściwości nawigacji kolekcji jako typy list dostępnych publicznie. Pozwala to dowolnym współpracownikowi na manipulowanie zawartością tych typów kolekcji, co może spowodować obejście ważnych reguł firmy związanych z kolekcją, prawdopodobnie pozostawiając obiekt w nieprawidłowym stanie. Rozwiązaniem tego problemu jest udostępnienie dostępu tylko do odczytu do powiązanych kolekcji i jawne udostępnienie metod definiujących sposoby manipulowania nimi przez klientów, jak w tym przykładzie:
 
 ```csharp
 public class Basket : BaseEntity
@@ -180,7 +183,7 @@ public class Basket : BaseEntity
 }
 ```
 
-Ten typ jednostki nie `List` udostępnia `ICollection` publicznej lub właściwości, `IReadOnlyCollection` ale zamiast tego udostępnia typ, który otacza podstawowy typ listy. Korzystając z tego wzorca, można wskazać entity framework core, aby użyć pola zapasowego w taki sposób:
+Ten typ jednostki nie uwidacznia publicznej `List` lub `ICollection` właściwości, ale zamiast tego ujawnia `IReadOnlyCollection` Typ, który otacza bazowego typu listy. Korzystając z tego wzorca, można wskazać, aby Entity Framework Core, aby użyć pola zapasowego, takiego jak:
 
 ```csharp
 private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
@@ -191,7 +194,7 @@ private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
 }
 ```
 
-Innym sposobem, w którym można poprawić model domeny jest za pomocą obiektów wartości dla typów, które nie mają tożsamości i są wyróżniane tylko przez ich właściwości. Za pomocą takich typów, jak właściwości jednostek może pomóc zachować logiki specyficzne dla obiektu wartości, gdzie należy i można uniknąć zduplikowanej logiki między wieloma jednostkami, które używają tej samej koncepcji. W entity framework core można utrwalać obiekty wartości w tej samej tabeli co ich jednostki będące właścicielem, konfigurując typ jako jednostkę należącą do sieci, tak jak:
+Innym sposobem, w którym można poprawić model domeny, jest użycie obiektów wartości dla typów, które nie mają tożsamości i są rozróżniane przez ich właściwości. Użycie takich typów jako właściwości jednostek może pomóc w utrzymaniu logiki specyficznej dla obiektu wartości, do którego należy, i może uniknąć zduplikowanej logiki między wieloma jednostkami, które korzystają z tego samego pojęcia. W Entity Framework Core można utrwalać obiekty wartości w tej samej tabeli co ich jednostka będąca właścicielem przez skonfigurowanie typu jako jednostki należącej, na przykład:
 
 ```csharp
 private void ConfigureOrder(EntityTypeBuilder<Order> builder)
@@ -200,17 +203,17 @@ private void ConfigureOrder(EntityTypeBuilder<Order> builder)
 }
 ```
 
-W tym przykładzie `ShipToAddress` właściwość `Address`jest typu . `Address`jest obiektem wartości o kilku `Street` `City`właściwościach, takich jak i . EF Core `Order` mapuje obiekt do swojej `Address` tabeli z jedną kolumną na właściwość, prefiksując każdą nazwę kolumny o nazwie właściwości. W tym przykładzie tabela `Order` będzie `ShipToAddress_Street` zawierać `ShipToAddress_City`kolumny, takie jak i . W razie potrzeby można również przechowywać posiadane typy w oddzielnych tabelach.
+W tym przykładzie `ShipToAddress` Właściwość jest typu `Address` . `Address` jest obiektem wartości z kilkoma właściwościami, takimi jak `Street` i `City` . EF Core mapuje `Order` obiekt na tabelę z jedną kolumną na `Address` Właściwość, dodając prefiks nazwy każdej kolumny przy użyciu nazwy właściwości. W tym przykładzie `Order` tabela będzie zawierać kolumny, takie jak `ShipToAddress_Street` i `ShipToAddress_City` . Istnieje również możliwość przechowywania typów posiadanych w oddzielnych tabelach, w razie potrzeby.
 
-Dowiedz się więcej o [pomocy technicznej jednostki należącej do firmy w ef core](/ef/core/modeling/owned-entities).
+Dowiedz się więcej o [obsłudze jednostek należących do EF Core](/ef/core/modeling/owned-entities).
 
-### <a name="resilient-connections"></a>Elastyczne połączenia
+### <a name="resilient-connections"></a>Odporne połączenia
 
-Zasoby zewnętrzne, takie jak bazy danych SQL, mogą czasami być niedostępne. W przypadku tymczasowej niedostępności aplikacje mogą używać logiki ponawiania, aby uniknąć wywoływania wyjątku. Technika ta jest powszechnie określana jako _odporność połączenia_. Można zaimplementować [własne próby ponawiania z wykładniczej](https://docs.microsoft.com/azure/architecture/patterns/retry) techniki wycofywania, próbując ponowić próbę z wykładniczo zwiększając czas oczekiwania, aż do osiągnięcia maksymalnej liczby ponownych prób. Ta technika obejmuje fakt, że zasoby w chmurze mogą sporadycznie być niedostępne przez krótki okres czasu, co powoduje niepowodzenie niektórych żądań.
+Zasoby zewnętrzne, takie jak bazy danych SQL, mogą być czasami niedostępne. W przypadku tymczasowej niedostępności aplikacje mogą używać logiki ponawiania, aby uniknąć ponoszenia wyjątku. Ta technika jest często określana jako _odporność połączenia_. Możesz zaimplementować [własne ponowienie próby przy użyciu wykładniczej techniki wycofywania](https://docs.microsoft.com/azure/architecture/patterns/retry) , próbując ponowić próbę przy użyciu wykładniczego wzrostu czasu oczekiwania, dopóki nie zostanie osiągnięta maksymalna liczba ponownych prób. Ta technika obejmuje fakt, że zasoby chmury mogą sporadycznie być niedostępne przez krótki okresy, co powoduje niepowodzenie niektórych żądań.
 
-W przypadku usługi Azure SQL DB entity framework core już zapewnia odporność połączenia wewnętrznej bazy danych i logiki ponawiania próby. Ale należy włączyć strategię wykonywania entity framework dla każdego połączenia DbContext, jeśli chcesz mieć odporne połączenia EF Core.
+W przypadku usługi Azure SQL DB Entity Framework Core już zapewnia odporność połączenia wewnętrznej bazy danych i logikę ponawiania. Należy jednak włączyć strategię wykonywania Entity Framework dla każdego połączenia DbContext, jeśli chcesz mieć odporne EF Core połączenia.
 
-Na przykład następujący kod na poziomie połączenia EF Core umożliwia odporne połączenia SQL, które są ponowione, jeśli połączenie nie powiedzie się.
+Na przykład poniższy kod na poziomie połączenia EF Core włącza odporne połączenia SQL, które są ponawiane, jeśli połączenie nie powiedzie się.
 
 ```csharp
 // Startup.cs from any ASP.NET Core Web API
@@ -234,15 +237,15 @@ public class Startup
 //...
 ```
 
-#### <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>Strategie wykonywania i jawne transakcje przy użyciu BeginTransaction i wielu DbContexts
+#### <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>Strategie wykonywania i jawne transakcje przy użyciu BeginTransaction i wielu dbcontexts
 
-Gdy próby są włączone w połączeniach EF Core, każda operacja, którą wykonujesz przy użyciu EF Core staje się własną operacją ponawianą. Każde zapytanie i każde wywołanie SaveChanges zostaną ponowione jako jednostka, jeśli wystąpi błąd przejściowy.
+Po włączeniu ponownych prób w EF Core połączeniach każda operacja wykonywana przy użyciu EF Core będzie własną operacją ponawiania. Każde zapytanie i każde wywołanie do metody SaveChanges zostanie ponowione w przypadku wystąpienia błędu przejściowego.
 
-Jednak jeśli kod inicjuje transakcję przy użyciu BeginTransaction, definiujesz własną grupę operacji, które muszą być traktowane jako jednostka; wszystko wewnątrz transakcji musi zostać wycofane, jeśli wystąpi błąd. Zostanie wyświetlony wyjątek, jak następujące, jeśli spróbujesz wykonać tę transakcję podczas korzystania ze strategii wykonywania EF (zasady ponawiania próby) i dołączyć kilka SaveChanges z wielu DbContexts w nim.
+Jeśli jednak kod inicjuje transakcję przy użyciu BeginTransaction, definiujesz własną grupę operacji, która musi być traktowana jako jednostka; Jeśli wystąpi awaria, wszystkie elementy wewnątrz transakcji należy wycofać. Jeśli spróbujesz wykonać tę transakcję podczas korzystania z strategii wykonywania EF (zasady ponawiania), zostanie wyświetlony wyjątek, który będzie zawierał kilka metody SaveChanges z wielu dbcontexts.
 
-System.InvalidOperationException: Skonfigurowana strategia wykonywania "SqlServerRetryingExecutionStrategy" nie obsługuje transakcji inicjowanych przez użytkownika. Użyj strategii wykonywania zwróconej przez "DbContext.Database.CreateExecutionStrategy()", aby wykonać wszystkie operacje w transakcji jako jednostkę ponawianą próbę.
+System. InvalidOperationException: skonfigurowana strategia wykonywania "SqlServerRetryingExecutionStrategy" nie obsługuje transakcji inicjowanych przez użytkownika. Użyj strategii wykonywania zwróconej przez obiekt "DbContext. Database. CreateExecutionStrategy ()", aby wykonać wszystkie operacje w transakcji jako jednostkę, którą można ponowić.
 
-Rozwiązaniem jest ręczne wywołanie strategii wykonywania EF z delegata reprezentującego wszystko, co musi zostać wykonane. Jeśli wystąpi błąd przejściowy, strategia wykonywania ponownie wywoła delegata. Poniższy kod pokazuje, jak zaimplementować to podejście:
+Rozwiązaniem jest ręczne Wywołaj strategię wykonywania EF z delegatem reprezentującym wszystkie elementy, które należy wykonać. Jeśli wystąpi błąd przejściowy, strategia wykonywania ponownie wywoła delegata. Poniższy kod przedstawia sposób wdrożenia tego podejścia:
 
 ```csharp
 // Use of an EF Core resiliency strategy when using multiple DbContexts
@@ -267,24 +270,24 @@ await strategy.ExecuteAsync(async () =>
 });
 ```
 
-Pierwszy DbContext jest \_catalogContext i drugi DbContext \_znajduje się w integrationEventLogService obiektu. Na koniec commit akcji zostanie wykonana wiele DbContexts i przy użyciu strategii realizacji EF.
+Pierwszy DbContext to catalogContext, \_ a drugi DbContext znajduje się w \_ obiekcie integrationEventLogService. Na koniec akcja zatwierdzania będzie wykonywana z wieloma kontekstami DbContext i przy użyciu strategii wykonywania EF.
 
-> ### <a name="references--entity-framework-core"></a>Referencje — core struktury jednostki
+> ### <a name="references--entity-framework-core"></a>Odwołania — Entity Framework Core
 >
-> - **Ef Core Dokumenty**
+> - **Dokumentacja EF Core**
 >   <https://docs.microsoft.com/ef/>
-> - **Ef Core: Powiązane dane**
+> - **EF Core: powiązane dane**
 >   <https://docs.microsoft.com/ef/core/querying/related-data>
-> - **Unikaj jednostek ładowania z opóźnieniem w aplikacjach ASPNET**
+> - **Unikaj powolnych jednostek ładowania w aplikacjach ASPNET**
 >   <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
 ## <a name="ef-core-or-micro-orm"></a>EF Core lub mikro-ORM?
 
-Ef Core jest doskonałym wyborem do zarządzania trwałością i w przeważającej części hermetyzuje szczegóły bazy danych od deweloperów aplikacji, nie jest to jedyny wybór. Inną popularną alternatywą open-source jest [Dapper](https://github.com/StackExchange/Dapper), tzw micro-ORM. Micro-ORM to lekkie, mniej w pełni funkcjonalne narzędzie do mapowania obiektów do struktur danych. W przypadku Dapper jego cele projektowe koncentrują się na wydajności, a nie w pełni hermetyzując podstawowe zapytania, których używa do pobierania i aktualizowania danych. Ponieważ nie jest abstrakcyjny SQL od dewelopera, Dapper jest "bliżej metalu" i pozwala deweloperom napisać dokładne zapytania, które mają być używane dla danej operacji dostępu do danych.
+Chociaż EF Core to doskonały wybór w zakresie zarządzania trwałością, a w większości przypadków dane bazy danych są hermetyzowane przez deweloperów aplikacji, nie jest to jedyne rozwiązanie. Kolejną popularną alternatywą typu "open source" jest [Dapper](https://github.com/StackExchange/Dapper), a więc nazywamy mikro-ORM. Mikro-ORM to lekkie, mniej funkcjonalne narzędzie do mapowania obiektów do struktur danych. W przypadku Dapper, jego cele projektowe koncentrują się na wydajności, a nie w pełni hermetyzowaniu podstawowych zapytań używanych do pobierania i aktualizowania danych. Ponieważ nie jest to abstrakcyjny kod SQL od dewelopera, Dapper jest "bliżej metalu" i umożliwia deweloperom pisanie dokładnych zapytań, których chcą używać dla danej operacji dostępu do danych.
 
-EF Core ma dwie istotne funkcje, które zapewnia, które oddzielają go od Dapper, ale także dodać do jego wydajności narzutu. Pierwszym z nich jest tłumaczenie z wyrażeń LINQ do SQL. Te tłumaczenia są buforowane, ale mimo to istnieje obciążenie w wykonywaniu ich po raz pierwszy. Drugim jest śledzenie zmian w jednostkach (tak, aby można było wygenerować efektywne instrukcje aktualizacji). To zachowanie można wyłączyć dla określonych zapytań przy użyciu rozszerzenia AsNotTracking. EF Core generuje również zapytania SQL, które zwykle są bardzo wydajne i w każdym razie całkowicie dopuszczalne z punktu widzenia wydajności, ale jeśli potrzebujesz precyzyjnej kontroli nad dokładną kwerendą do wykonania, można przekazać w niestandardowym języku SQL (lub wykonać procedurę składowaną) przy użyciu EF Core, zbyt. W tym przypadku Dapper nadal przewyższa EF Core, ale tylko nieznacznie. Julie Lerman przedstawia pewne dane dotyczące wydajności w swoim artykule MSDN z maja 2016 [r. Dapper, Entity Framework i Hybrid Apps](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Dodatkowe dane porównawcze wydajności dla różnych metod dostępu do danych można znaleźć na [stronie Dapper](https://github.com/StackExchange/Dapper).
+EF Core ma dwie znaczące funkcje, które zapewnia oddzielenie go od Dapper, ale również zwiększenie wydajności. Pierwszy to tłumaczenie z wyrażeń LINQ do SQL. Te tłumaczenia są przechowywane w pamięci podręcznej, ale nawet wtedy, gdy są wykonywane po raz pierwszy. Druga funkcja śledzenia zmian w jednostkach (tak, aby można było generować wydajne instrukcje Update). To zachowanie można wyłączyć dla konkretnych zapytań przy użyciu rozszerzenia AsNotTracking. EF Core generuje również zapytania SQL, które zwykle są bardzo wydajne i w każdym przypadku idealnie akceptowalne z punktu widzenia wydajności, ale jeśli potrzebujesz precyzyjnej kontroli nad precyzyjnym zapytaniem, można przekazać niestandardowe SQL (lub wykonać procedurę składowaną) przy użyciu EF Core. W takim przypadku Dapper nadal wykonuje EF Core, ale tylko nieco. Julie Lerman przedstawia pewne dane dotyczące wydajności, które mogą być 2016 artykułów MSDN [Dapper, Entity Framework i hybrydowych](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Dodatkowe dane porównawcze wydajności dla różnych metod dostępu do danych można znaleźć w [witrynie Dapper](https://github.com/StackExchange/Dapper).
 
-Aby zobaczyć, jak składnia dapper różni się od EF Core, należy wziąć pod uwagę te dwie wersje tej samej metody pobierania listy elementów:
+Aby zobaczyć, jak składnia Dapper różni się od EF Core, należy wziąć pod uwagę te dwie wersje tej samej metody do pobierania listy elementów:
 
 ```csharp
 // EF Core
@@ -302,7 +305,7 @@ public async Task<IEnumerable<CatalogType>> GetCatalogTypesWithDapper()
 }
 ```
 
-Jeśli chcesz zbudować bardziej złożone wykresy obiektów z Dapper, należy napisać skojarzone zapytania samodzielnie (w przeciwieństwie do dodawania Include jak w EF Core). Jest to obsługiwane przez różne składni, w tym funkcję o nazwie Mapowanie wielokrotne, która umożliwia mapowanie poszczególnych wierszy na wiele mapowanych obiektów. Na przykład biorąc pod uwagę klasę Post z właściwością Właściciel typu Użytkownik, następujący SQL zwróci wszystkie niezbędne dane:
+Jeśli konieczne jest skompilowanie bardziej złożonych grafów obiektów za pomocą Dapper, należy napisać powiązane zapytania samodzielnie (w przeciwieństwie do dodania dołączenia w EF Core). Jest to obsługiwane za pomocą różnych składni, w tym funkcji o nazwie mapowanie wielokrotne, która umożliwia mapowanie poszczególnych wierszy na wiele mapowanych obiektów. Na przykład, jeśli dane wpisu klasy są właścicielami właściwości typu użytkownika, następujące SQL zwróci wszystkie niezbędne dane:
 
 ```sql
 select * from #Posts p
@@ -310,13 +313,13 @@ left join #Users u on u.Id = p.OwnerId
 Order by p.Id
 ```
 
-Każdy zwrócony wiersz zawiera dane użytkownika i postu. Ponieważ dane Użytkownika powinny być dołączone do danych Post za pośrednictwem jego własności Owner, stosuje się następującą funkcję:
+Każdy zwrócony wiersz zawiera dane użytkownika i danych post. Ponieważ dane użytkownika powinny być dołączone do danych post za pośrednictwem jego właściwości Owner, używana jest następująca funkcja:
 
 ```csharp
 (post, user) => { post.Owner = user; return post; }
 ```
 
-Pełna lista kodów do zwrócenia kolekcji wpisów z ich Owner właściwości wypełnione skojarzonych danych użytkownika będzie:
+Pełen kod, który ma zwracać kolekcję wpisów wraz z ich właściwością Owner, wypełnionymi danymi użytkownika:
 
 ```csharp
 var sql = @"select * from #Posts p
@@ -326,61 +329,61 @@ var data = connection.Query<Post, User, Post>(sql,
 (post, user) => { post.Owner = user; return post;});
 ```
 
-Ponieważ oferuje mniej hermetyzacji Dapper wymaga deweloperzy wiedzieć więcej o tym, jak ich dane są przechowywane, jak skutecznie zbadać go i napisać więcej kodu, aby go pobrać. Gdy model się zmieni, zamiast po prostu utworzyć nową migrację (inną funkcję EF Core) i/lub zaktualizować informacje mapowania w jednym miejscu w DbContext, każda kwerenda, która ma wpływ, musi zostać zaktualizowana. Te zapytania nie mają żadnych gwarancji czasu kompilacji, więc mogą one przerwy w czasie wykonywania w odpowiedzi na zmiany w modelu lub bazy danych, co błędy trudniejsze do wykrycia szybko. W zamian za te kompromisy, Dapper oferuje niezwykle szybką wydajność.
+Ponieważ oferuje mniej hermetyzacji, Dapper wymaga, aby deweloperzy wiedzieli, jak ich dane są przechowywane, jak wykonywać zapytania efektywnie i pisać więcej kodu w celu pobrania go. Gdy model ulegnie zmianie, zamiast po prostu utworzyć nową migrację (inną funkcję EF Core) i/lub zaktualizować informacje o mapowaniu w jednym miejscu w DbContext, należy zaktualizować wszystkie zapytania, na które ma wpływ. Te zapytania nie mają gwarancji w czasie kompilacji, więc mogą być przerywane w czasie wykonywania w odpowiedzi na zmiany modelu lub bazy danych, co sprawia, że błędy są trudniejsze do wykrycia szybko. W programie Exchange dla tych kompromisów Dapper oferuje bardzo szybką wydajność.
 
-W przypadku większości aplikacji i większości części prawie wszystkich aplikacji EF Core oferuje akceptowalną wydajność. W związku z tym jego korzyści wydajności dewelopera mogą przeważać nad jego wydajnością. W przypadku kwerend, które mogą korzystać z buforowania, rzeczywiste zapytanie może być wykonywane tylko niewielki procent czasu, dzięki czemu stosunkowo małe różnice wydajności kwerendy dyskusyjne.
+W przypadku większości aplikacji i większości części prawie wszystkich aplikacji EF Core oferuje akceptowalną wydajność. W ten sposób korzyści związane z produktywnością dla deweloperów mogą przeważyć wydajność. W przypadku zapytań, które mogą korzystać z buforowania, rzeczywiste zapytanie może być wykonywane tylko przez niewielki procent czasu, co powoduje stosunkowo małe różnice wydajności zapytań Moot.
 
 ## <a name="sql-or-nosql"></a>SQL lub NoSQL
 
-Tradycyjnie relacyjne bazy danych, takie jak SQL Server, zdominowały rynek trwałego przechowywania danych, ale nie są jedynym dostępnym rozwiązaniem. Bazy danych NoSQL, takie jak [MongoDB,](https://www.mongodb.com/what-is-mongodb) oferują inne podejście do przechowywania obiektów. Zamiast mapowania obiektów do tabel i wierszy, inną opcją jest serializowanie całego wykresu obiektu i przechowywanie wyniku. Zalety tego podejścia, przynajmniej początkowo, to prostota i wydajność. Łatwiej jest przechowywać pojedynczy serializowany obiekt z kluczem niż rozkładać obiekt na wiele tabel z relacjami i aktualizacjami i wierszami, które mogły ulec zmianie od czasu ostatniego pobrania obiektu z bazy danych. Podobnie pobieranie i deserializacja pojedynczego obiektu z magazynu opartego na kluczach jest zazwyczaj znacznie szybsze i łatwiejsze niż sprzężenia złożone lub wiele zapytań bazy danych wymaganych do pełnego skomponowania tego samego obiektu z relacyjnej bazy danych. Brak blokad lub transakcji lub schematu stałego również sprawia, że bazy danych NoSQL podatne na skalowanie na wielu komputerach, obsługujących bardzo dużych zestawów danych.
+Tradycyjnie relacyjne bazy danych, takie jak SQL Server, korzystają z witryny Marketplace na potrzeby trwałego magazynowania danych, ale nie są jedynymi dostępnymi rozwiązaniami. Bazy danych NoSQL, takie jak [MongoDB](https://www.mongodb.com/what-is-mongodb) , oferują inne podejście do przechowywania obiektów. Zamiast mapowania obiektów do tabel i wierszy, kolejną opcją jest Serializacja całego wykresu obiektów i przechowywanie wyniku. Zalety tego podejścia, co najmniej początkowo, są prostoty i wydajności. Prostszym sposobem jest przechowywanie pojedynczego serializowanego obiektu z kluczem niż w celu rozdzielenia obiektu na wiele tabel z relacjami i aktualizacji oraz wierszy, które mogły ulec zmianie od czasu ostatniego pobrania obiektu z bazy danych. Podobnie pobieranie i deserializacja pojedynczego obiektu z magazynu opartego na kluczach jest zwykle znacznie szybsze i łatwiejsze niż złożone sprzężenia lub wiele zapytań bazy danych wymaganych do pełnego zredagowania tego samego obiektu z relacyjnej bazy danych. Brak blokad lub transakcji lub stały schemat sprawia również, że bazy danych NoSQL mogą być skalowane na wielu maszynach i obsługują bardzo duże zestawy danych.
 
-Z drugiej strony bazy danych NoSQL (jak są one zwykle nazywane) mają swoje wady. Relacyjne bazy danych używają normalizacji, aby wymusić spójność i uniknąć powielania danych. Zmniejsza to całkowity rozmiar bazy danych i zapewnia, że aktualizacje udostępnionych danych są dostępne natychmiast w całej bazie danych. W relacyjnej bazie danych tabela adresowa może odwoływać się do tabeli Kraj według identyfikatora, tak aby w przypadku zmiany nazwy kraju/regionu rekordy adresów korzystały z aktualizacji bez konieczności aktualizowania. Jednak w bazie danych NoSQL adres i skojarzony z nim kraj mogą być serializowane jako część wielu przechowywanych obiektów. Aktualizacja nazwy kraju/regionu wymagałaby aktualizacji wszystkich takich obiektów, a nie pojedynczego wiersza. Relacyjne bazy danych mogą również zapewnić integralność relacyjnej, wymuszając reguły, takie jak klucze obce. Bazy danych NoSQL zazwyczaj nie oferują takich ograniczeń na ich danych.
+Z drugiej strony bazy danych NoSQL (jak są zwykle wywoływane) mają swoje wady. Relacyjne bazy danych wykorzystują normalizację w celu wymuszenia spójności i uniknięcia duplikowania danych. Pozwala to zmniejszyć łączny rozmiar bazy danych i zapewnić, że aktualizacje udostępnionych danych będą dostępne natychmiast w całej bazie danych. W relacyjnej bazie danych tabela adresów może odwoływać się do tabeli kraju według identyfikatora, w taki sposób, że jeśli nazwa kraju/regionu została zmieniona, rekordy adresów byłyby korzystne dla aktualizacji, które nie będą musiały zostać zaktualizowane. Jednak w przypadku bazy danych NoSQL adres i jego stowarzyszony kraj mogą być serializowane w ramach wielu przechowywanych obiektów. Aktualizacja nazwy kraju/regionu wymagała aktualizacji wszystkich takich obiektów, a nie jednego wiersza. Relacyjne bazy danych mogą również zapewnić relacyjną integralność, wymuszając reguły, takie jak klucze obce. Bazy danych NoSQL zazwyczaj nie oferują takich ograniczeń dla swoich danych.
 
-Inną złożonością, z którą muszą radzić sobie bazy danych NoSQL, jest przechowywanie wersji. Po zmianie właściwości obiektu, może nie być w stanie być deserialized z poprzednich wersji, które były przechowywane. W związku z tym wszystkie istniejące obiekty, które mają serializowane (poprzednia) wersja obiektu muszą zostać zaktualizowane, aby były zgodne z jego nowym schematem. Nie różni się to koncepcyjnie od relacyjnej bazy danych, w której zmiany schematu czasami wymagają skryptów aktualizacji lub aktualizacji mapowania. Jednak liczba wpisów, które muszą być modyfikowane jest często znacznie większa w podejściu NoSQL, ponieważ istnieje więcej powielania danych.
+Inne bazy danych NoSQL złożoności muszą zająć się przechowywaniem wersji. Zmiany właściwości obiektu mogą nie być możliwe do deserializacji z wcześniejszych wersji, które były przechowywane. W ten sposób wszystkie istniejące obiekty, które mają serializowaną (poprzednią) wersję obiektu, muszą zostać zaktualizowane, aby były zgodne ze swoim nowym schematem. Nie różni się to od relacyjnej bazy danych, gdzie zmiany schematu czasami wymagają skryptów aktualizacji lub mapowania aktualizacji. Jednak liczba wpisów, które muszą zostać zmodyfikowane, jest często znacznie większa w podejściu NoSQL, ponieważ istnieje więcej duplikacji danych.
 
-Jest to możliwe w bazach danych NoSQL do przechowywania wielu wersji obiektów, coś stałe schemat relacyjnych baz danych zazwyczaj nie obsługują. Jednak w tym przypadku kod aplikacji będzie musiał uwzględnić istnienie poprzednich wersji obiektów, dodając dodatkową złożoność.
+Istnieje możliwość, że w bazach danych NoSQL są przechowywane wiele wersji obiektów, ale nie są zwykle obsługiwane. Jednak w tym przypadku kod aplikacji będzie musiał uwzględnić istnienie poprzednich wersji obiektów, co zwiększa złożoność.
 
-Bazy danych NoSQL zazwyczaj nie wymuszają [ACID](https://en.wikipedia.org/wiki/ACID), co oznacza, że mają zarówno wydajność, jak i skalowalność korzyści w stosunku do relacyjnych baz danych. Doskonale nadają się do bardzo dużych zestawów danych i obiektów, które nie są dobrze przystosowane do przechowywania w znormalizowanych strukturach tabel. Nie ma powodu, dla którego pojedyncza aplikacja nie może korzystać z relacyjnych i nosql baz danych, przy użyciu każdego, gdzie jest to najlepiej nadaje.
+Bazy danych NoSQL zazwyczaj nie wymuszają stosowania [kwasów](https://en.wikipedia.org/wiki/ACID), co oznacza, że mają one zalety wydajności i skalowalności w porównaniu z relacyjnymi bazami danych. Doskonale nadają się do bardzo dużych zestawów danych i obiektów, które nie są dobrze dopasowane do magazynu w znormalizowanych strukturach tabel. Nie ma powodów, dla których pojedyncze aplikacje nie mogą korzystać z baz danych relacyjnych i NoSQL, przy użyciu każdego z nich, gdzie jest najlepiej dopasowany.
 
 ## <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
-Usługa Azure Cosmos DB to w pełni zarządzana usługa bazy danych NoSQL, która oferuje magazyn danych bez użycia schematu w chmurze. Usługa Azure Cosmos DB została stworzona z myślą o szybkiej i przewidywalnej wydajności, wysokiej dostępności, elastycznym skalowaniu i dystrybucji globalnej. Pomimo bazy danych NoSQL, deweloperzy mogą korzystać z bogatych i znanych funkcji zapytań SQL na danych JSON. Wszystkie zasoby w usłudze Azure Cosmos DB są przechowywane jako dokumenty JSON. Zasoby są zarządzane jako _elementy_, które są dokumentami zawierającymi metadane i _źródła danych_, które są kolekcjami elementów. Rysunek 8-2 przedstawia relację między różnymi zasobami usługi Azure Cosmos DB.
+Azure Cosmos DB to w pełni zarządzana usługa bazy danych NoSQL, która oferuje oparty na chmurze magazyn danych bez schematu. Azure Cosmos DB został zbudowany w celu uzyskania szybkiej i przewidywalnej wydajności, wysokiej dostępności, elastycznego skalowania i globalnej dystrybucji. Mimo że nie jest to baza danych NoSQL, deweloperzy mogą korzystać z zaawansowanych i znanych funkcji zapytań SQL dotyczących danych JSON. Wszystkie zasoby w Azure Cosmos DB są przechowywane jako dokumenty JSON. Zasoby są zarządzane jako _elementy_, które są dokumentami zawierającymi metadane, a także _źródła danych_, które są kolekcjami elementów. Rysunek 8-2 przedstawia relację między różnymi zasobami Azure Cosmos DB.
 
-![Hierarchiczna relacja między zasobami w usłudze Azure Cosmos DB, bazie danych JSON NoSQL](./media/image8-2.png)
+![Hierarchiczna relacja między zasobami w Azure Cosmos DB, baza danych JSON NoSQL](./media/image8-2.png)
 
-**Rysunek 8-2.** Organizacja zasobów usługi Azure Cosmos DB.
+**Rysunek 8-2.** Organizacja zasobów Azure Cosmos DB.
 
-Język zapytań usługi Azure Cosmos DB to prosty, ale zaawansowany interfejs do wykonywania zapytań o dokumenty JSON. Język obsługuje podzbiór gramatyki ANSI SQL i dodaje głęboką integrację obiektów, tablic, konstrukcji obiektów i wywoływania funkcji języka JavaScript.
+Język zapytań Azure Cosmos DB to prosty, jeszcze zaawansowany interfejs do wykonywania zapytań w dokumentach JSON. Język obsługuje podzbiór gramatyki ANSI SQL i dodaje głęboką integrację obiektów, tablic, konstrukcji obiektów i wywoływania funkcji języka JavaScript.
 
-**Odwołania — usługa Azure Cosmos DB**
+**Odwołania — Azure Cosmos DB**
 
-- Wprowadzenie do usługi Azure Cosmos DB<https://docs.microsoft.com/azure/cosmos-db/introduction>
+- Azure Cosmos DB wprowadzenie <https://docs.microsoft.com/azure/cosmos-db/introduction>
 
 ## <a name="other-persistence-options"></a>Inne opcje trwałości
 
-Oprócz relacyjnych i nosql opcje magazynu, ASP.NET aplikacje Core można używać usługi Azure Storage do przechowywania różnych formatów danych i plików w chmurze, skalowalny sposób. Usługa Azure Storage jest masowo skalowalna, dzięki czemu można rozpocząć przechowywanie niewielkich ilości danych i skalować do przechowywania setek lub terabajtów, jeśli aplikacja tego wymaga. Usługa Azure Storage obsługuje cztery rodzaje danych:
+Oprócz opcji magazynu relacyjnego i NoSQL aplikacje ASP.NET Core mogą używać usługi Azure Storage do przechowywania różnorodnych formatów danych i plików w sposób skalowalny w chmurze. Usługa Azure Storage jest wysoce skalowalna, co pozwala na rozpoczęcie przechowywania małych ilości danych i skalowanie w górę w celu przechowywania setek lub terabajtów, jeśli aplikacja tego wymaga. Usługa Azure Storage obsługuje cztery rodzaje danych:
 
-- Magazyn obiektów blob dla nieustrukturyzowanego tekstu lub magazynu binarnego, nazywany również magazynem obiektów.
+- Blob Storage dla magazynu tekstowego lub binarnego bez struktury, nazywanego również magazynem obiektów.
 
-- Magazyn tabel dla zestawów danych strukturalnych, dostępny za pomocą kluczy wierszy.
+- Table Storage dla zestawów danych ze strukturą, dostępne za pośrednictwem kluczy wierszy.
 
-- Magazyn kolejek dla niezawodnych wiadomości opartych na kolejkach.
+- Queue Storage dla niezawodnej obsługi komunikatów na podstawie kolejki.
 
-- Magazyn plików dla udostępnionego dostępu do plików między maszynami wirtualnymi platformy Azure i aplikacjami lokalnymi.
+- File Storage dostępu do udostępnionego pliku między maszynami wirtualnymi platformy Azure i aplikacjami lokalnymi.
 
-**Odwołania — usługa Azure Storage**
+**Odwołania — Azure Storage**
 
-- Wprowadzenie do usługi Azure Storage<https://docs.microsoft.com/azure/storage/storage-introduction>
+- Wprowadzenie do usługi Azure Storage <https://docs.microsoft.com/azure/storage/storage-introduction>
 
 ## <a name="caching"></a>Buforowanie
 
-W aplikacjach sieci web każde żądanie sieci web należy wykonać w jak najkrótszym czasie. Jednym ze sposobów osiągnięcia tego celu jest ograniczenie liczby wywołań zewnętrznych, które serwer musi wykonać, aby ukończyć żądanie. Buforowanie polega na przechowywaniu kopii danych na serwerze (lub innym magazynie danych, który jest łatwiej wyszukiwany niż źródło danych). Aplikacje sieci Web, a zwłaszcza nie-SPA tradycyjnych aplikacji sieci web, trzeba zbudować cały interfejs użytkownika przy każdym żądaniu. Często wiąże się to z wykonywaniem wielu tych samych zapytań bazy danych wielokrotnie z jednego żądania użytkownika do następnego. W większości przypadków te dane zmieniają się rzadko, więc nie ma powodu, aby stale żądać go z bazy danych. ASP.NET Core obsługuje buforowanie odpowiedzi, buforowanie całych stron i buforowanie danych, które obsługuje bardziej szczegółowe zachowanie buforowania.
+W aplikacjach internetowych każde żądanie sieci Web powinno być wykonywane w najkrótszym możliwym czasie. Jednym ze sposobów osiągnięcia tego celu jest ograniczenie liczby wywołań zewnętrznych, które serwer musi wykonać, aby zakończyć żądanie. Buforowanie obejmuje przechowywanie kopii danych na serwerze (lub w innym magazynie danych, który jest bardziej czytelny niż źródło danych). Aplikacje sieci Web, a w szczególności niespa tradycyjne aplikacje sieci Web, muszą kompilować cały interfejs użytkownika przy użyciu każdego żądania. Często wiąże się to z wielokrotnym wykonywaniem wielu zapytań bazy danych z jednego żądania użytkownika do następnego. W większości przypadków te zmiany danych są rzadko zmieniane, więc istnieje nieco powód, aby ciągle zażądać ich z bazy danych. ASP.NET Core obsługuje buforowanie odpowiedzi, do buforowania całych stron i buforowania danych, co zapewnia bardziej szczegółowe zachowanie buforowania.
 
-Podczas wdrażania buforowania, ważne jest, aby pamiętać o oddzieleniu problemów. Należy unikać implementowania logiki buforowania w logice dostępu do danych lub w interfejsie użytkownika. Zamiast tego hermetyzować buforowania w własnych klasach i używać konfiguracji do zarządzania jego zachowanie. Jest to zgodne z zasadami Otwarte/Zamknięte i Pojedyncza Odpowiedzialność i ułatwi zarządzanie sposób korzystania z buforowania w aplikacji, jak rośnie.
+Podczas implementowania buforowania należy pamiętać o rozdzieleniu obaw. Unikaj implementowania logiki buforowania w logice dostępu do danych lub w interfejsie użytkownika. Zamiast tego hermetyzowaj buforowanie we własnych klasach i używaj konfiguracji do zarządzania zachowaniem. Jest to zgodne z zasadami dotyczącymi otwartych/zamkniętych i pojedynczych odpowiedzialności. ułatwia to zarządzanie sposobem korzystania z pamięci podręcznej w aplikacji podczas jej rozszerzania.
 
-### <a name="aspnet-core-response-caching"></a>ASP.NET Buforowanie odpowiedzi podstawowych
+### <a name="aspnet-core-response-caching"></a>Buforowanie odpowiedzi ASP.NET Core
 
-ASP.NET Core obsługuje dwa poziomy buforowania odpowiedzi. Pierwszy poziom nie buforuje niczego na serwerze, ale dodaje nagłówki HTTP, które instruują klientów i serwery proxy do buforowania odpowiedzi. Jest to implementowane przez dodanie responsecache atrybut do poszczególnych kontrolerów lub akcji:
+ASP.NET Core obsługuje dwa poziomy buforowania odpowiedzi. Pierwszy poziom nie buforuje żadnych elementów na serwerze, ale dodaje nagłówki HTTP, które instruują klientów i serwery proxy w celu buforowania odpowiedzi. Jest to implementowane przez dodanie atrybutu ResponseCache do poszczególnych kontrolerów lub akcji:
 
 ```csharp
 [ResponseCache(Duration = 60)]
@@ -391,11 +394,11 @@ public IActionResult Contact()
 }
 ```
 
-W poprzednim przykładzie spowoduje, że następujący nagłówek zostanie dodany do odpowiedzi, instruując klientów do buforowania wyniku przez maksymalnie 60 sekund.
+W poprzednim przykładzie zostanie dodany następujący nagłówek do odpowiedzi, co powoduje, że klienci buforują wynik przez maksymalnie 60 sekund.
 
-Kontrola pamięci podręcznej: publiczna, max-age=60
+Cache-Control: Public, max-age = 60
 
-Aby dodać buforowanie po stronie serwera w pamięci do aplikacji, należy odwołać się do pakietu Microsoft.AspNetCore.ResponseCaching NuGet, a następnie dodać oprogramowanie pośredniczące buforowania odpowiedzi. To oprogramowanie pośredniczące jest skonfigurowane zarówno w obszarze ConfigureServices, jak i Configure in Startup:
+Aby dodać pamięć podręczną po stronie serwera do aplikacji, należy odwołać się do pakietu NuGet Microsoft. AspNetCore. ResponseCaching, a następnie dodać oprogramowanie pośredniczące buforowania odpowiedzi. To oprogramowanie pośredniczące jest konfigurowane zarówno w ConfigureServices, jak i w trakcie uruchamiania:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -409,13 +412,13 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-Oprogramowanie pośredniczące buforowania odpowiedzi automatycznie buforuje odpowiedzi na podstawie zestawu warunków, które można dostosować. Domyślnie tylko 200 (OK) odpowiedzi wymagane za pośrednictwem metody GET lub HEAD są buforowane. Ponadto żądania muszą mieć odpowiedź z cache-control: nagłówek publiczny i nie może zawierać nagłówków autoryzacji lub set-cookie. Zobacz [pełną listę warunków buforowania używanych przez oprogramowanie pośredniczące buforowania odpowiedzi](/aspnet/core/performance/caching/middleware#conditions-for-caching).
+Oprogramowanie pośredniczące buforowania odpowiedzi automatycznie buforuje odpowiedzi na podstawie zestawu warunków, które można dostosować. Domyślnie tylko odpowiedzi 200 (OK) wymagane przez metody GET lub z pamięci podręcznej są buforowane. Ponadto żądania muszą mieć odpowiedź w nagłówku Cache-Control: Public i nie mogą zawierać nagłówków autoryzacji lub Set-cookie. Zapoznaj się z [pełną listą warunków buforowania używanych przez oprogramowanie pośredniczące buforowania odpowiedzi](/aspnet/core/performance/caching/middleware#conditions-for-caching).
 
 ### <a name="data-caching"></a>Buforowanie danych
 
-Zamiast (lub dodatkowo) buforowania pełnych odpowiedzi sieci web, można buforować wyniki poszczególnych zapytań danych. W tym celu można użyć w buforowaniu pamięci na serwerze sieci web lub użyć [rozproszonej pamięci podręcznej](/aspnet/core/performance/caching/distributed). W tej sekcji pokazano, jak zaimplementować w buforowaniu pamięci.
+Zamiast (lub oprócz) buforowania pełnych odpowiedzi sieci Web, można buforować wyniki poszczególnych zapytań dotyczących danych. W tym celu można użyć usługi do buforowania pamięci na serwerze sieci Web lub użyć [rozproszonej pamięci podręcznej](/aspnet/core/performance/caching/distributed). W tej sekcji pokazano, jak zaimplementować program w pamięci podręcznej.
 
-Dodano obsługę buforowania pamięci (lub rozproszonego) w configureservices:
+Dodano obsługę buforowania pamięci (lub rozproszonego) w ConfigureServices:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -425,9 +428,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Należy również dodać pakiet Microsoft.Extensions.Caching.Memory NuGet.
+Pamiętaj, aby dodać również pakiet NuGet Microsoft. Extensions. buforowanie. Memory.
 
-Po dodaniu usługi, żądanie IMemoryCache za pośrednictwem iniekcji zależności, gdziekolwiek trzeba uzyskać dostęp do pamięci podręcznej. W tym przykładzie CachedCatalogService używa wzorca projektu proxy (lub Dekorator), zapewniając alternatywną implementację ICatalogService, która kontroluje dostęp do (lub dodaje zachowanie) podstawowej implementacji CatalogService.
+Po dodaniu usługi żądanie IMemoryCache za pośrednictwem iniekcji zależności wszędzie tam, gdzie trzeba uzyskać dostęp do pamięci podręcznej. W tym przykładzie CachedCatalogService korzysta ze wzorca projektowego serwera proxy (lub dekoratora), dostarczając alternatywną implementację ICatalogService, która kontroluje dostęp do (lub dodaje zachowanie do) bazowej implementacji CatalogService.
 
 ```csharp
 public class CachedCatalogService : ICatalogService
@@ -474,7 +477,7 @@ public class CachedCatalogService : ICatalogService
 }
 ```
 
-Aby skonfigurować aplikację do korzystania z buforowanej wersji usługi, ale nadal zezwalaj usłudze na uzyskanie wystąpienia CatalogService, której potrzebuje w konstruktorze, należy dodać następujące w configureservices:
+Aby skonfigurować aplikację do korzystania z buforowanej wersji usługi, ale nadal zezwolić usłudze na uzyskanie wystąpienia CatalogService, którego potrzebuje w jego konstruktorze, Dodaj następujące elementy w ConfigureServices:
 
 ```csharp
 services.AddMemoryCache();
@@ -482,17 +485,17 @@ services.AddScoped<ICatalogService, CachedCatalogService>();
 services.AddScoped<CatalogService>();
 ```
 
-Z tym w miejscu bazy danych wywołuje pobieranie danych katalogu będą dokonywane tylko raz na minutę, a nie na każde żądanie. W zależności od ruchu do witryny może to mieć znaczący wpływ na liczbę zapytań do bazy danych i średni czas ładowania strony dla strony głównej, która obecnie zależy od wszystkich trzech zapytań udostępniane przez tę usługę.
+W tym miejscu baza danych wywołuje pobieranie danych wykazu tylko raz na minutę, a nie na każdym żądaniu. W zależności od ruchu do lokacji może to mieć znaczny wpływ na liczbę zapytań wykonywanych w bazie danych oraz średni czas ładowania strony dla strony głównej, który jest obecnie zależny od wszystkich trzech zapytań narażonych na tę usługę.
 
-Problem, który pojawia się podczas buforowania jest zaimplementowane jest _przestarzałe dane_ — oznacza to, że dane, które uległy zmianie u źródła, ale wersja nieaktualna pozostaje w pamięci podręcznej. Prostym sposobem złagodzenia tego problemu jest użycie małych czasów trwania pamięci podręcznej, ponieważ dla zajętej aplikacji istnieje ograniczona dodatkowa korzyść dla rozszerzenia długości danych jest buforowana. Rozważmy na przykład stronę, która tworzy kwerendę pojedynczej bazy danych i jest wymagana 10 razy na sekundę. Jeśli ta strona jest buforowana przez jedną minutę, spowoduje to spadek liczby zapytań bazy danych wykonanych na minutę z 600 do 1, co oznacza zmniejszenie o 99,8%. Jeśli zamiast tego czas trwania pamięci podręcznej zostały wykonane jedną godzinę, ogólne zmniejszenie będzie 99.997%, ale teraz prawdopodobieństwo i potencjalny wiek starych danych są zarówno znacznie wzrosła.
+Problem, który powstaje, gdy buforowanie jest zaimplementowane, to _dane nieodświeżone_ — czyli dane, które uległy zmianie w źródle, ale w pamięci podręcznej pozostaje nieaktualna wersja. Prostym sposobem na ograniczenie tego problemu jest użycie małych okresów pamięci podręcznej, ponieważ w przypadku zajętej aplikacji istnieje ograniczone dodatkowe korzyści umożliwiające rozszerzanie danych długości. Rozważmy na przykład stronę, która tworzy zapytanie pojedynczej bazy danych i żąda 10 razy na sekundę. Jeśli ta strona jest buforowana przez jedną minutę, spowoduje to liczbę zapytań bazy danych wykonanych na minutę do porzucenia z 600 do 1, zmniejszenie 99,8%. Jeśli zamiast tego czas trwania pamięci podręcznej został wykonany jedną godzinę, ogólna obniżka wynosi 99,997%, ale teraz prawdopodobieństwo i potencjalny wiek starych danych są znacznie większe.
 
-Innym podejściem jest proaktywne usuwanie wpisów pamięci podręcznej, gdy dane, które zawierają są aktualizowane. Każdy pojedynczy wpis można usunąć, jeśli jego klucz jest znany:
+Innym podejściem jest proaktywnie Usuwanie wpisów pamięci podręcznej po zaktualizowaniu zawartych w nich danych. Każdy wpis można usunąć, jeśli jego klucz jest znany:
 
 ```csharp
 _cache.Remove(cacheKey);
 ```
 
-Jeśli aplikacja udostępnia funkcje aktualizowania wpisów, które buforuje, można usunąć odpowiednie wpisy pamięci podręcznej w kodzie, który wykonuje aktualizacje. Czasami może istnieć wiele różnych wpisów, które zależą od określonego zestawu danych. W takim przypadku może być przydatne do tworzenia zależności między wpisami pamięci podręcznej, przy użyciu CancellationChangeToken. Z CancellationChangeToken, można wygasnąć wiele wpisów pamięci podręcznej na raz, anulując token.
+Jeśli aplikacja ujawnia funkcje do aktualizowania wpisów, które są buforowane, można usunąć odpowiednie wpisy pamięci podręcznej w kodzie, który wykonuje aktualizacje. Czasami może istnieć wiele różnych wpisów, które są zależne od określonego zestawu danych. W takim przypadku może być przydatne do tworzenia zależności między wpisami pamięci podręcznej przy użyciu CancellationChangeToken. Za pomocą CancellationChangeToken można wycofać wiele wpisów w pamięci podręcznej naraz, anulując token.
 
 ```csharp
 // configure CancellationToken and add entry to cache
@@ -506,8 +509,54 @@ new CancellationChangeToken(cts.Token));
 _cache.Get<CancellationTokenSource>("cts").Cancel();
 ```
 
-Buforowanie może znacznie poprawić wydajność stron sieci web, które wielokrotnie żądają tych samych wartości z bazy danych. Przed zastosowaniem buforowania należy zmierzyć dostęp do danych i wydajność strony, a także zastosować buforowanie tylko wtedy, gdy istnieje potrzeba poprawy. Buforowanie zużywa zasoby pamięci serwera sieci web i zwiększa złożoność aplikacji, dlatego ważne jest, aby nie przedwcześnie optymalizować przy użyciu tej techniki.
+Buforowanie może znacząco poprawić wydajność stron sieci Web, które wielokrotnie żądają tych samych wartości z bazy danych. Należy pamiętać, aby zmierzyć dostęp do danych i wydajność stron przed zastosowaniem buforowania, i zastosować buforowanie tylko w przypadku, gdy zobaczysz potrzebę ulepszenia. Buforowanie zużywa zasoby pamięci serwera sieci Web i zwiększa złożoność aplikacji, dlatego ważne jest, aby nie zoptymalizować się za pomocą tej techniki.
+
+## <a name="getting-data-to-no-locblazor-no-locwebassembly-apps"></a>Pobieranie danych do Blazor WebAssembly aplikacji
+
+W przypadku tworzenia aplikacji korzystających z Blazor serwera można używać Entity Framework i innych technologii bezpośredniego dostępu do danych, ponieważ zostały one omówione w tym rozdziale w tym zakresie. Jednak podczas kompilowania Blazor WebAssembly aplikacji, takich jak inne platformy Spa, będzie potrzebna inna Strategia dostępu do danych. Zazwyczaj te aplikacje uzyskują dostęp do danych i współpracują z serwerem za pomocą punktów końcowych interfejsu API sieci Web.
+
+Jeśli wykonywane dane lub operacje są poufne, należy zapoznać się z sekcją zabezpieczenia w [poprzednim rozdziale](develop-asp-net-core-mvc-apps.md) i chronić interfejsy API przed nieautoryzowanym dostępem.
+
+Przykład aplikacji można znaleźć Blazor WebAssembly w [aplikacji eShopOnWeb Reference](https://github.com/dotnet-architecture/eShopOnWeb)w Blazor projekcie administratora. Ten projekt jest hostowany w projekcie sieci Web eShopOnWeb i umożliwia użytkownikom z grupy administratorów Zarządzanie elementami w sklepie. Zrzut ekranu aplikacji można zobaczyć na rysunku 8-3.
+
+![Zrzut ekranu administratora katalogu eShopOnWeb](./media/image8-3.jpg)
+
+**Rysunek 8-3.** Zrzut ekranu administratora katalogu eShopOnWeb.
+
+Podczas pobierania danych z interfejsów API sieci Web w Blazor WebAssembly aplikacji wystarczy użyć wystąpienia `HttpClient` tak samo jak w przypadku dowolnej aplikacji .NET. Podstawowe kroki polegają na utworzeniu żądania wysłania (jeśli jest to wymagane, zazwyczaj w przypadku żądań POST lub PUT), od samego żądania, sprawdzenia kodu stanu i deserializacji odpowiedzi. Jeśli zamierzasz wykonać wiele żądań do danego zestawu interfejsów API, warto hermetyzować interfejsy API i konfigurować `HttpClient` adres podstawowy centralnie. W ten sposób, jeśli musisz dostosować dowolne z tych ustawień między środowiskami, możesz wprowadzić zmiany w jednym miejscu. Obsługę tej usługi należy dodać w programie `Program.Main` :
+
+```csharp
+builder.Services.AddScoped(sp =>
+    new HttpClient
+    {
+        BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+    });
+```
+
+Aby bezpiecznie uzyskać dostęp do usług, należy uzyskać dostęp do bezpiecznego tokenu i skonfigurować `HttpClient` do przekazywania tego tokenu jako nagłówek uwierzytelniania przy każdym żądaniu:
+
+```csharp
+_httpClient.DefaultRequestHeaders.Authorization =
+    new AuthenticationHeaderValue("Bearer", token);
+```
+
+Można to zrobić z dowolnego składnika, który został wprowadzony `HttpClient` do niego, pod warunkiem, że `HttpClient` nie został dodany do usług aplikacji z `Transient` okresem istnienia. Każde odwołanie do `HttpClient` w aplikacji odwołuje się do tego samego wystąpienia, więc zmiany w nim w jednym przepływie składnika przez całą aplikację. Dobrym miejscem do wykonania tego sprawdzenia uwierzytelniania (po określeniu tokenu) jest składnik współużytkowany, taki jak główna Nawigacja dla witryny. Dowiedz się więcej na temat tego podejścia w `BlazorAdmin` projekcie w [aplikacji eShopOnWeb Reference](https://github.com/dotnet-architecture/eShopOnWeb).
+
+Jedną z korzyści w Blazor WebAssembly porównaniu do tradycyjnych aplikacji jednostronicowych języka JavaScript jest to, że nie trzeba przechowywać zsynchronizowanych kopii obiektów transferów danych (DTO). Projekt Blazor WebAssembly i projekt interfejsu API sieci Web mogą współużytkować ten sam DTO w wspólnym projekcie udostępnionym. Eliminuje to pewne tarcie podczas opracowywania aplikacji jednostronicowych.
+
+Aby szybko pobrać dane z punktu końcowego interfejsu API, można użyć wbudowanej metody pomocnika `GetFromJsonAsync` . Istnieją podobne metody dla wpisów POST, PUT itp. Poniżej pokazano, jak uzyskać CatalogItem z punktu końcowego interfejsu API przy użyciu skonfigurowanej `HttpClient` w Blazor WebAssembly aplikacji:
+
+```csharp
+var item = await _httpClient.GetFromJsonAsync<CatalogItem>($"catalog-items/{id}");
+```
+
+Gdy masz potrzebne dane, zazwyczaj śledźsz zmiany lokalnie. Jeśli chcesz zaktualizować magazyn danych zaplecza, w tym celu wywołaj dodatkowe interfejsy API sieci Web.
+
+**References — Blazor dane**
+
+- Wywoływanie internetowego interfejsu API z ASP.NET Core Blazor
+  <https://docs.microsoft.com/aspnet/core/blazor/call-web-api>
 
 >[!div class="step-by-step"]
->[Poprzedni](develop-asp-net-core-mvc-apps.md)
->[następny](test-asp-net-core-mvc-apps.md)
+>[Poprzedni](develop-asp-net-core-mvc-apps.md) 
+> [Dalej](test-asp-net-core-mvc-apps.md)

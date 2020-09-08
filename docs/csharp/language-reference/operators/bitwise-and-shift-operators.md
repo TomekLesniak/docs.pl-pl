@@ -31,12 +31,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 99181855fdf8e937676e44e8b347510f9405aa3d
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 061abc8bc37d166a3683be1d2ad920a083a8ea3b
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916910"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515946"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Operatory bitowe i przesunięcia (odwołanie w C#)
 
@@ -60,7 +60,7 @@ Operacje bitowe i przesunięcia nigdy nie powodują przepełnienia i tworzą te 
 
 Możesz również użyć symbolu, `~` Aby zadeklarować finalizatory. Aby uzyskać więcej informacji, zobacz [finalizatory](../../programming-guide/classes-and-structs/destructors.md).
 
-## <a name="left-shift-operator-"></a>Operator przesunięcia w lewo\<\<
+## <a name="left-shift-operator-"></a>Operator przesunięcia w lewo \<\<
 
 `<<`Operator przesuwa swój lewy argument operacji pozostawiony przez [liczbę bitów zdefiniowanych przez swój operand z prawej strony](#shift-count-of-the-shift-operators).
 
@@ -94,9 +94,9 @@ Puste pozycje w dużej kolejności są ustawiane na podstawie typu operandu po l
 
 Aby uzyskać informacje o tym, jak argument operacji po prawej stronie `>>` operatora definiuje liczbę przesunięć, zobacz [Liczba przesunięć w sekcji operatory przesunięcia](#shift-count-of-the-shift-operators) .
 
-## <a name="logical-and-operator-amp"></a><a name="logical-and-operator-"></a>Operator logiczny AND&amp;
+## <a name="logical-and-operator-amp"></a><a name="logical-and-operator-"></a> Operator logiczny AND &amp;
 
-`&`Operator oblicza koniunkcję bitową i jej operandy:
+`&`Operator oblicza koniunkcję bitową i jej całkowite operandy:
 
 [!code-csharp-interactive[bitwise AND](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseAnd)]
 
@@ -104,7 +104,7 @@ Dla `bool` operandów `&` operator oblicza wartość [logiczną i](boolean-logic
 
 ## <a name="logical-exclusive-or-operator-"></a>Operator wyłączny logicznego OR ^
 
-Operator oblicza bitową koniunkcję niezależną `^` lub, znaną również jako bitowe logiczne XOR, dla argumentów operacji:
+Operator oblicza bitową koniunkcję niezależną `^` lub, znaną również jako bitowe koniunkcje logiczne XOR, z całkowitymi operandami:
 
 [!code-csharp-interactive[bitwise XOR](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseXor)]
 
@@ -112,7 +112,7 @@ W przypadku `bool` operandów `^` operator oblicza [logiczne wyłącznych lub](b
 
 ## <a name="logical-or-operator-"></a>Operator logiczny OR |
 
-`|`Operator oblicza bitowe logiczne lub jego operandy:
+`|`Operator oblicza bitową koniunkcję logiczną lub jej całkowite operandy:
 
 [!code-csharp-interactive[bitwise OR](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseOr)]
 
@@ -142,15 +142,15 @@ Ze względu na [promocje liczbowe](~/_csharplang/spec/expressions.md#numeric-pro
 
 [!code-csharp-interactive[compound assignment with cast](snippets/shared/BitwiseAndShiftOperators.cs#CompoundAssignmentWithCast)]
 
-## <a name="operator-precedence"></a>Pierwszeństwo operatorów
+## <a name="operator-precedence"></a>Kolejność wykonywania działań
 
 Poniższa lista porządkuje operatory bitowe i przesunięcia, rozpoczynając od najwyższego priorytetu do najniższego:
 
-- Operator dopełnienia bitowego`~`
-- Operatory przesunięcia `<<` i`>>`
-- Operator logiczny AND`&`
-- Operator wyłączny logicznego OR`^`
-- Operator logiczny OR`|`
+- Operator dopełnienia bitowego `~`
+- Operatory przesunięcia `<<` i `>>`
+- Operator logiczny AND `&`
+- Operator wyłączny logicznego OR `^`
+- Operator logiczny OR `|`
 
 Użyj nawiasów, `()` Aby zmienić kolejność oceny nałożona przez pierwszeństwo operatorów:
 
@@ -197,7 +197,7 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języ
 - [Przypisanie złożone](~/_csharplang/spec/expressions.md#compound-assignment)
 - [Promocje numeryczne](~/_csharplang/spec/expressions.md#numeric-promotions)
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

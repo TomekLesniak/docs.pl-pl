@@ -4,16 +4,16 @@ description: Dowiedz się, jak kontrolować przycinanie aplikacji samodzielnych.
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: 42e98f9ede004f06221d2df5ecd076500061e37d
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 89bd195a97c2f1bbbba9199fea51c917c4e4836b
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465419"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515835"
 ---
 # <a name="trimming-options"></a>Opcje przycinania
 
-Następujące właściwości i elementy programu MSBuild mają wpływ na zachowanie [przyciętych wdrożeń samodzielnych](trim-self-contained.md). Niektóre z tych opcji `ILLink` , czyli nazwa narzędzia bazowego implementującego przycinanie. Więcej informacji na temat `ILLink` narzędzia wiersza polecenia można znaleźć w [opcjach illink](https://github.com/mono/linker/blob/master/docs/illink-options.md).
+Następujące właściwości i elementy programu MSBuild mają wpływ na zachowanie [przyciętych wdrożeń samodzielnych](trim-self-contained.md). Niektóre z tych opcji `ILLink` , czyli nazwa narzędzia bazowego implementującego przycinanie. Więcej informacji o podstawowym narzędziu można znaleźć w [dokumentacji konsolidatora](https://github.com/mono/linker/tree/master/docs).
 
 ## <a name="enable-trimming"></a>Włącz przycinanie
 
@@ -129,3 +129,37 @@ Symbole są zwykle przycięte w celu dopasowania do przyciętych zestawów. Moż
     Usuń symbole z przyciętej aplikacji, w tym osadzone plików PDB i oddzielne pliki PDB. Dotyczy to zarówno kodu aplikacji, jak i wszelkich zależności, które są dołączone do symboli.
 
 Zestaw SDK umożliwia także wyłączenie obsługi debugera przy użyciu właściwości `DebuggerSupport` . Gdy obsługa debugera jest wyłączona, przycinanie spowoduje automatyczne usunięcie symboli ( `TrimmerRemoveSymbols` wartość domyślna to true).
+
+## <a name="trimming-framework-library-features"></a>Przycinanie funkcji biblioteki Framework
+
+Kilka obszarów funkcji bibliotek struktury zawiera dyrektywy konsolidatora, które umożliwiają usunięcie kodu dla wyłączonych funkcji.
+
+- `<DebuggerSupport>false</DebuggerSupport>`
+
+    Usuń kod, który umożliwia lepsze środowisko debugowania. Spowoduje to również [usunięcie symboli](#removing-symbols).
+
+- `<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>`
+
+    Usuń obsługę serializacji BinaryFormatter. Aby uzyskać więcej informacji, zobacz [BinaryFormatter metody serializacji są przestarzałe](../compatibility/corefx.md#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps).
+
+- `<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>`
+
+    Usuń niezabezpieczony kod kodowania UTF-7. Aby uzyskać więcej informacji, zobacz [ścieżki kodu UTF-7 są przestarzałe](../compatibility/corefx.md#utf-7-code-paths-are-obsolete).
+
+- `<EventSourceSupport>false</EventSourceSupport>`
+
+    Usuń kod lub logikę powiązaną z usługą EventSource.
+
+- `<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>`
+
+    Usuń kod związany z obsługą diagnostyki dla systemu .NET. http.
+
+- `<InvariantGlobalization>true</InvariantGlobalization>`
+
+    Usuń kod i dane dotyczące globalizacji. Aby uzyskać więcej informacji, zobacz [tryb niezmienny](../run-time-config/globalization.md#invariant-mode).
+
+- `<UseSystemResourceKeys>true</UseSystemResourceKeys>`
+
+    Komunikaty o wyjątkach dla `System.*` zestawów. Gdy wyjątek jest zgłaszany z `System.*` zestawu, komunikat będzie uproszczony identyfikator zasobu zamiast pełnego komunikatu.
+
+ Te właściwości spowodują, że pokrewny kod zostanie przycięty i spowoduje również wyłączenie funkcji za pośrednictwem pliku [runtimeconfig](../run-time-config/index.md) . Aby uzyskać więcej informacji na temat tych właściwości, w tym odpowiednich opcji runtimeconfig, zobacz [przełączniki funkcji](https://github.com/dotnet/runtime/blob/master/docs/workflow/trimming/feature-switches.md). Niektóre zestawy SDK mogą mieć wartości domyślne dla tych właściwości.
