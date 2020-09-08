@@ -136,6 +136,8 @@ items:
             href: ../core/tutorials/index.md
   - name: Co nowego
     items:
+      - name: Ewolucja z programu .NET Core do .NET 5
+        href: ../core/dotnet-five.md
       - name: Co nowego w programie .NET Core 3.1
         href: ../core/whats-new/dotnet-core-3-1.md
       - name: Co nowego w programie .NET Core 3.0
@@ -407,6 +409,8 @@ items:
             href: ../core/deploying/creating-nuget-packages.md
           - name: Przenoszenie do przodu w czasie samodzielnego środowiska uruchomieniowego wdrożenia
             href: ../core/deploying/runtime-patch-selection.md
+          - name: Wdrażanie i wykonywanie przy użyciu jednego pliku
+            href: ../core/deploying/single-file.md
           - name: Przycinanie samodzielnych wdrożeń i plików wykonywalnych
             href: ../core/deploying/trim-self-contained.md
           - name: Magazyn pakietu środowiska uruchomieniowego
