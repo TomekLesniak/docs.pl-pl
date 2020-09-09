@@ -703,7 +703,7 @@ items:
   - name: Dostęp do danych
     items:
       - name: LINQ
-        href: ../standard/using-linq.md
+        href: ../standard/linq/
       - name: Dokumenty i dane XML
         href: ../standard/data/xml/
       - name: Microsoft.Data.Sqlite
