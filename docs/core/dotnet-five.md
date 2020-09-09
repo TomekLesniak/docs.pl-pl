@@ -5,16 +5,16 @@ ms.date: 09/02/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 5e8ed371173ff8b81909ceb071ed93c6b0e1eea5
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 9318b1afbe22c97f056bd38732306c6a6b60ad00
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89515844"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598119"
 ---
 # <a name="the-evolution-of-net-core-to-net-5"></a>Ewolucja platformy .NET Core do platformy .NET 5
 
-W tym artykule szczegółowo opisano, co obejmuje platforma .NET 5, która jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. ASP.NET Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Ponadto Entity Framework Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
+W tym artykule przedstawiono szczegółowe informacje zawarte w programie .NET 5, który jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. ASP.NET Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Ponadto Entity Framework Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
 
 Pojawieniu platformy .NET Core rozwinęły ekosystem platformy .NET w atrakcyjny sposób. Zostało ono dojrzałe jako projekt Open Source w witrynie GitHub, świętujemy wkłady społecznościowe i humbly ulepszenie w miarę upływu czasu.
 
@@ -31,7 +31,7 @@ Platforma .NET Core ma kilka podstawowych cech:
 Platforma .NET 5 rozszerza te charakterystyki, wprowadzając przyrostowe ulepszenia:
 
 - Aplikacje pojedynczego pliku
-- ARM64 z systemami Windows i ARM64
+- Funkcje wewnętrzne ARM64 i ARM64 systemu Windows
 - Udoskonalenia wydajności w celu:
   - [Odzyskiwanie pamięci (GC)](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/#gc)
   - [System.Text.Json](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/#json)
@@ -58,7 +58,7 @@ Platforma .NET 5 nie zastępuje .NET Framework. Nie istnieją plany dotyczące p
 
 Nowe opracowywanie aplikacji może określać `net5.0` moniker platformy docelowej (TFM) dla wszystkich typów projektów, w tym biblioteki klas. Udostępnianie kodu między obciążeniami programu .NET 5 jest uproszczone w tym, że wszystko, co jest potrzebne, to `net5.0` TFM.
 
-`net5.0`TFM łączy i zastępuje `netcoreapp` `netstandard` nazwy. Ta TFM zazwyczaj obejmuje tylko technologie, które działają na wielu platformach, takich jak .NET Standard. Jeśli jednak planujesz udostępnianie kodu między obciążeniami .NET Framework, .NET Core i .NET 5 — możesz to zrobić, określając `netstandard2.0` jako TFM. Aby uzyskać więcej informacji, zobacz [jak określić Platformy docelowe](../standard/frameworks.md#how-to-specify-target-frameworks).
+`net5.0`TFM łączy i zastępuje `netcoreapp` `netstandard` nazwy i. Ta TFM zazwyczaj obejmuje tylko technologie, które działają na wielu platformach, takich jak .NET Standard. Jeśli jednak planujesz udostępnianie kodu między obciążeniami .NET Framework, .NET Core i .NET 5, możesz to zrobić, określając `netstandard2.0` jako TFM. Aby uzyskać więcej informacji, zobacz [jak określić Platformy docelowe](../standard/frameworks.md#how-to-specify-a-target-framework).
 
 ## <a name="language-updates"></a>Aktualizacje języka
 
@@ -66,7 +66,7 @@ W przypadku platformy .NET 5 Języki programowania .NET są kontynuowane.
 
 ### <a name="c-updates"></a>Aktualizacje w języku C#
 
-Deweloperzy piszący aplikacje .NET 5 będą mieli dostęp do najnowszej wersji i funkcji języka C#. Program .NET 5 jest sparowany z językiem C# 9. W języku C# 9 wprowadzono wiele nowych funkcji, które są następujące:
+Deweloperzy piszący aplikacje .NET 5 będą mieli dostęp do najnowszej wersji i funkcji języka C#. Program .NET 5 jest sparowany z językiem C# 9, który oferuje wiele nowych funkcji w języku. Oto kilka świateł:
 
 - Rekordy: niezmienne typy odwołań, które zachowują się jak typy wartości, i wprowadzają nowe `with` słowo kluczowe do języka.
 - Dopasowywanie do wzorca relacyjnego: rozszerza możliwości dopasowania wzorców do operatorów relacyjnych dla obliczeń porównawczych i wyrażeń, w tym wzorców logicznych — nowe słowa kluczowe `and` , `or` i `not` .
@@ -92,7 +92,7 @@ F # to język programowania funkcjonalny .NET, a w przypadku platformy .NET 5 de
 
 #### <a name="interpolated-strings"></a>Ciągi interpolowane
 
-Podobnie jak ciąg interpolowany w języku C#, a nawet JavaScript-F # obsługuje interpolację ciągów podstawowych.
+Podobnie jak ciąg interpolowany w języku C#, a nawet JavaScript, język F # obsługuje interpolację ciągów podstawowych.
 
 ```fsharp
 let name = "David"

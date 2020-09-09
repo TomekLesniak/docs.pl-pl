@@ -2,12 +2,12 @@
 title: dotnet-dump-.NET Core
 description: Instalowanie i używanie narzędzia wiersza polecenia dotnet-dump.
 ms.date: 10/14/2019
-ms.openlocfilehash: 5489011538a4a11d60b333f0230a718c88722c97
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: e008dcfc734a8742c495ea32a7a149c9a55c54c6
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89140935"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598113"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Narzędzie do zbierania i analizowania zrzutów (dotnet-dump)
 
@@ -71,14 +71,15 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
   Określa numer identyfikatora procesu, z którego ma zostać zebrany zrzut pamięci.
 
-- **`--type <Heap|Mini>`**
+- **`--type <Full|Heap|Mini>`**
 
-  Określa typ zrzutu, który określa rodzaje informacji zbieranych z procesu. Istnieją dwa typy:
+  Określa typ zrzutu, który określa rodzaje informacji zbieranych z procesu. Istnieją trzy typy:
 
+  - `Full` -Największy zrzut zawierający całą pamięć, łącznie z obrazami modułu.
   - `Heap` -Duży i stosunkowo kompleksowy zrzut zawierający listy modułów, listy wątków, wszystkie stosy, informacje o wyjątkach, informacje o obsłudze i wszystkie pamięci z wyjątkiem zamapowanych obrazów.
   - `Mini` -Mały zrzut zawierający listy modułów, listy wątków, informacje o wyjątku i wszystkie stosy.
 
-  Jeśli nie zostanie określony, `Heap` jest wartością domyślną.
+  Jeśli nie zostanie określony, `Full` jest wartością domyślną.
 
 - **`-o|--output <output_dump_path>`**
 

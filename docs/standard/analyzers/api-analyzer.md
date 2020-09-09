@@ -1,91 +1,91 @@
 ---
-title: Analizator interfejsu API .NET
-description: Dowiedz się, jak analizator interfejsu API platformy .NET może pomóc w wykrywaniu przestarzałych interfejsów API i problemów ze zgodnością platformy.
+title: Analizator interfejsów API platformy .NET
+description: Dowiedz się, jak Analizator interfejsu API platformy .NET może pomóc w wykrywaniu przestarzałych interfejsów API i problemów ze zgodnością platformy.
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: e214c91f2beebc7f3b3324f4879deba9a5623f86
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8da4b2add206daa431124a7d24efc2676cbcaa69
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156137"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598102"
 ---
-# <a name="net-api-analyzer"></a>Analizator interfejsu API .NET
+# <a name="net-api-analyzer"></a>Analizator interfejsów API platformy .NET
 
-Analizator interfejsu API .NET jest analizatorem Roslyn, który wykrywa potencjalne zagrożenia ze zgodnością dla interfejsów API języka C# na różnych platformach i wykrywa wywołania przestarzałych interfejsów API. Może być przydatne dla wszystkich deweloperów języka C# na każdym etapie rozwoju.
+Analizator interfejsu API platformy .NET to Analizator Roslyn, który wykrywa potencjalne zagrożenia zgodności dla interfejsów API języka C# na różnych platformach i wykrywa wywołania przestarzałych interfejsów API. Może być przydatne dla wszystkich deweloperów C# na dowolnym etapie opracowywania.
 
-Analizator interfejsu API jest dostarczany jako pakiet NuGet [Microsoft.DotNet.Analyzers.Compatibility](https://www.nuget.org/packages/Microsoft.DotNet.Analyzers.Compatibility/). Po odwołaniu się do niego w projekcie automatycznie monitoruje kod i wskazuje problematyczne użycie interfejsu API. Możesz również uzyskać sugestie dotyczące możliwych poprawek, klikając żarówkę. Menu rozwijane zawiera opcję pomijania ostrzeżeń.
+Analizator interfejsu API jest dostarczany jako pakiet NuGet [Microsoft. dotnet. analizatory. zgodność](https://www.nuget.org/packages/Microsoft.DotNet.Analyzers.Compatibility/). Po odwoływaniu się do niego w projekcie program automatycznie monitoruje kod i wskazuje na problematyczne użycie interfejsu API. Możesz również uzyskać sugestie dotyczące możliwych poprawek, klikając żarówkę. Menu rozwijane zawiera opcję pomijania ostrzeżeń.
 
 > [!NOTE]
-> Analizator interfejsu API .NET jest nadal wersją w wersji wstępnej.
+> Analizator interfejsu API platformy .NET jest nadal w wersji wstępnej.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Visual Studio 2017 i nowsze wersje lub Visual Studio dla komputerów Mac (wszystkie wersje).
+- Program Visual Studio 2017 lub jego nowsze wersje lub Visual Studio dla komputerów Mac (wszystkie wersje).
 
 ## <a name="discover-deprecated-apis"></a>Odkryj przestarzałe interfejsy API
 
 ### <a name="what-are-deprecated-apis"></a>Co to są przestarzałe interfejsy API?
 
-Rodzina .NET to zestaw dużych produktów, które są stale uaktualniane, aby lepiej zaspokajać potrzeby klientów. To naturalne, aby przestarzałe niektóre interfejsy API i zastąpić je nowymi. Interfejs API jest uważany za przestarzały, gdy istnieje lepsza alternatywa. Jednym ze sposobów informowania, że interfejs API jest przestarzały i nie <xref:System.ObsoleteAttribute> powinien być używany, jest oznaczenie go atrybutem. Wadą tego podejścia jest to, że istnieje tylko jeden identyfikator diagnostyczny dla wszystkich przestarzałych interfejsów API (dla Języka C#, [CS0612).](../../csharp/misc/cs0612.md) Oznacza to, że:
+Rodzina .NET to zestaw dużych produktów, które są stale uaktualniane, aby lepiej spełniały potrzeby klientów. Jest to naturalne, aby zastąpić niektóre interfejsy API i zamienić je na nowe. Interfejs API jest uznawany za przestarzały, gdy istnieje lepsza alternatywa. Jednym ze sposobów, aby poinformować, że interfejs API jest przestarzały i nie powinien być używany, to Oznacz go <xref:System.ObsoleteAttribute> atrybutem. Wadą tego podejścia jest to, że istnieje tylko jeden identyfikator diagnostyczny dla wszystkich przestarzałych interfejsów API (dla języka C#, [CS0612](../../csharp/misc/cs0612.md)). Oznacza to, że:
 
-- Nie da się mieć dedykowanych dokumentów dla każdego przypadku.
-- Nie da się pominąć określonej kategorii ostrzeżeń. Można pominąć wszystkie lub żadne z nich.
-- Aby poinformować użytkowników o nowym uniewinnieniu, należy zaktualizować pakiet zestawu lub kierowania, do którego istnieje odwołanie.
+- Nie jest możliwe posiadanie dedykowanych dokumentów dla każdego przypadku.
+- Nie można pominąć pewnej kategorii ostrzeżeń. Możesz pominąć wszystkie lub żadne z nich.
+- Aby poinformować użytkowników o nowym zaniechaniu, należy zaktualizować zestaw lub pakiet docelowy, do którego istnieje odwołanie.
 
-Analizator interfejsu API używa kodów błędów specyficznych dla interfejsu API, które zaczynają się od DE (co oznacza błąd zaniechania), co umożliwia kontrolę nad wyświetlaniem poszczególnych ostrzeżeń. Przestarzałe interfejsy API identyfikowane przez analizator są zdefiniowane w repocie [dotnet/platform-compat.](https://github.com/dotnet/platform-compat)
+Analizator interfejsu API korzysta z kodów błędów specyficznych dla interfejsu API, które zaczynają się od DE (co oznacza błąd zaniechania), co umożliwia kontrolę nad wyświetlaniem indywidualnych ostrzeżeń. Przestarzałe interfejsy API identyfikowane przez analizator są zdefiniowane w repozytorium [dotnet/platform-COMPAT](https://github.com/dotnet/platform-compat) .
 
 ### <a name="add-the-api-analyzer-to-your-project"></a>Dodawanie analizatora interfejsu API do projektu
 
 1. Otwórz program Visual Studio.
-2. Otwórz projekt, na którym chcesz uruchomić analizator.
-3. W **Eksploratorze rozwiązań**kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zarządzaj pakietami NuGet**. (Ta opcja jest również dostępna w menu **Projekt).**
-4. Na karcie NuGet Package Manager:
-   1. Wybierz "nuget.org" jako źródło pakietu.
-   2. Przejdź do karty **Przeglądanie.**
-   3. Wybierz **pozycję Dołącz wersję wyjmą .**
-   4. Wyszukaj pozycję **Microsoft.DotNet.Analyzers.Compatibility**.
-   5. Wybierz ten pakiet na liście.
-   6. Wybierz przycisk **Zainstaluj.**
-   7. Wybierz przycisk **OK** w oknie dialogowym **Podgląd zmian,** a następnie wybierz przycisk **Akceptuję** w oknie dialogowym **Akceptacja licencji,** jeśli zgadzasz się z warunkami licencyjnymi dla wymienionych pakietów.
+2. Otwórz projekt, w którym chcesz uruchomić Analizator.
+3. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zarządzaj pakietami NuGet**. (Ta opcja jest również dostępna w menu **projekt** ).
+4. Na karcie Menedżer pakietów NuGet:
+   1. Wybierz pozycję "nuget.org" jako źródło pakietu.
+   2. Przejdź do karty **przeglądanie** .
+   3. Wybierz pozycję **Uwzględnij wersję wstępną**.
+   4. Wyszukaj element **Microsoft. dotnet. analizatory. zgodność**.
+   5. Wybierz ten pakiet z listy.
+   6. Wybierz przycisk **Instaluj** .
+   7. Wybierz przycisk **OK** w oknie dialogowym **Podgląd zmian** , a następnie **Wybierz przycisk** Akceptuję w oknie dialogowym **akceptacji licencji** , jeśli zgadzasz się z postanowieniami licencyjnymi dotyczącymi wymienionych pakietów.
 
 ### <a name="use-the-api-analyzer"></a>Korzystanie z analizatora interfejsu API
 
-Gdy przestarzały interfejs API, <xref:System.Net.WebClient>taki jak , jest używany w kodzie, analizator interfejsu API wyróżnia go zieloną linią falistą. Po najechaniu kursorem na wywołanie interfejsu API wyświetlana jest żarówka z informacjami o zaniechaniu interfejsu API, jak w poniższym przykładzie:
+Gdy przestarzały interfejs API, taki jak <xref:System.Net.WebClient> , jest używany w kodzie, Analizator interfejsu API podświetla go przy użyciu zielonej linii falistej. Po umieszczeniu wskaźnika myszy na wywołaniu interfejsu API żarówka jest wyświetlana z informacjami o zaniechaniu interfejsu API, jak w poniższym przykładzie:
 
-!["Zrzut ekranu WebClient API z zieloną linią falistą i żarówką po lewej stronie"](media/api-analyzer/green-squiggle.jpg)
+![Zrzut ekranu interfejsu API klienta WebClient z zieloną linią falistej i żarówką po lewej stronie.](media/api-analyzer/green-squiggle.jpg)
 
-Okno **Lista błędów** zawiera ostrzeżenia o unikatowym identyfikatorze dla przestarzałego interfejsu API, jak pokazano w poniższym przykładzie (`DE004`):
+Okno **Lista błędów** zawiera ostrzeżenia o UNIKATOWYm identyfikatorze na przestarzały interfejs API, jak pokazano w poniższym przykładzie ( `DE004` ):
 
-!["Zrzut ekranu okna listy błędów z identyfikatorem i opisem ostrzeżenia"](media/api-analyzer/warnings-id-and-descriptions.jpg "Okno listy błędów zawierające ostrzeżenia.")
+![Zrzut ekranu okna Lista błędów przedstawiający identyfikator i opis ostrzeżenia.](media/api-analyzer/warnings-id-and-descriptions.jpg "Okno Lista błędów, które zawiera ostrzeżenia.")
 
-Klikając identyfikator, przejdź do strony internetowej ze szczegółowymi informacjami o tym, dlaczego interfejs API został przestarzały i sugestie dotyczące alternatywnych interfejsów API, które mogą być używane.
+Klikając identyfikator, przejdź do strony sieci Web ze szczegółowymi informacjami o tym, dlaczego interfejs API był przestarzały i sugestie dotyczące alternatywnych interfejsów API, których można użyć.
 
-Wszelkie ostrzeżenia można pominąć, klikając prawym przyciskiem myszy wyróżniony element członkowski i wybierając **opcję Pomiń \<identyfikator diagnostyczny>**. Istnieją dwa sposoby pomijania ostrzeżeń:
+Wszystkie ostrzeżenia można pominąć przez kliknięcie prawym przyciskiem myszy wyróżnionego elementu członkowskiego i wybranie polecenia **Pomiń \<diagnostic ID> **. Istnieją dwa sposoby pomijania ostrzeżeń:
 
 - [lokalnie (w źródle)](#suppress-warnings-locally)
-- [globalnie (w pliku tłumienia)](#suppress-warnings-globally) - zalecane
+- [globalnie (w pliku pominięć)](#suppress-warnings-globally) — zalecane
 
-### <a name="suppress-warnings-locally"></a>Pomijanie ostrzeżeń lokalnie
+### <a name="suppress-warnings-locally"></a>Pomijaj ostrzeżenia lokalnie
 
-Aby pominąć ostrzeżenia lokalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **Szybkie akcje i refaktoryzacja** > **Pomiń identyfikator\< *diagnostyczny*identyfikator diagnostyczny>**  >  **w źródle**. [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) ostrzeżenie preprocesor dyrektywy jest dodawany do ![kodu źródłowego w zakresie zdefiniowanym: "Zrzut ekranu kodu w ramce z #pragma ostrzeżenie wyłączyć"](media/api-analyzer/suppress-in-source.jpg)
+Aby pominąć ostrzeżenia lokalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **szybkie akcje i refaktoryzacje**  >  ** \<diagnostic ID> Pomijaj *Identyfikator diagnostyczny***  >  **w źródle**. Dyrektywa preprocesora ostrzegawczego [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) jest dodawana do kodu źródłowego w zdefiniowanym zakresie: ![ zrzut ekranu przedstawiający kod z funkcją #pragma warning Disable.](media/api-analyzer/suppress-in-source.jpg)
 
-### <a name="suppress-warnings-globally"></a>Pomijanie ostrzeżeń na całym świecie
+### <a name="suppress-warnings-globally"></a>Pomijaj ostrzeżenia globalnie
 
-Aby pominąć ostrzeżenia globalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **Szybkie akcje i refaktoryzacja** > **Pomiń identyfikator\< *diagnostyczny*identyfikator diagnostyczny>**  >  **w pliku pomijania**.
+Aby pominąć ostrzeżenia globalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **szybkie akcje i refaktoryzacje**  >  ** \<diagnostic ID> Pomiń *Identyfikator diagnostyczny***  >  **w pliku pomijania**.
 
-!["Zrzut ekranu WebClient API z zieloną linią falistą i żarówką po lewej stronie"](media/api-analyzer/suppress-in-sup-file.jpg)
+![Zrzut ekranu przedstawiający menu dostępne po kliknięciu prawym przyciskiem myszy z opcjami, które umożliwiają pominięcie ostrzeżenia w programie Visual Studio.](media/api-analyzer/suppress-in-sup-file.jpg)
 
-GlobalSuppressions.cs *GlobalSuppressions.cs* plik zostanie dodany do projektu po pierwszym wygaszeniu. Do tego pliku dołączane są nowe globalne tłumienie.
+Plik *GlobalSuppressions.cs* jest dodawany do projektu po pierwszym pominięciu. Do tego pliku są dołączane nowe, globalne pomijania.
 
-!["Zrzut ekranu WebClient API z zieloną linią falistą i żarówką po lewej stronie"](media/api-analyzer/suppression-file.jpg)
+![Zrzut ekranu przedstawiający plik GlobalSuppressions.cs w Eksplorator rozwiązań.](media/api-analyzer/suppression-file.jpg)
 
-Globalne tłumienie jest zalecanym sposobem zapewnienia spójności użycia interfejsu API w projektach.
+Globalne pomijanie jest zalecanym sposobem zapewnienia spójności użycia interfejsu API między projektami.
 
-## <a name="discover-cross-platform-issues"></a>Odkryj problemy między platformami
+## <a name="discover-cross-platform-issues"></a>Odkryj problemy dotyczące wielu platform
 
-Podobnie jak przestarzałe interfejsy API, analizator identyfikuje wszystkie interfejsy API, które nie są między platformami. Na przykład <xref:System.Console.WindowWidth?displayProperty=nameWithType> działa w systemie Windows, ale nie w systemie Linux i macOS. Identyfikator diagnostyczny jest wyświetlany w oknie **Lista błędów.** Ostrzeżenie to można pominąć, klikając prawym przyciskiem myszy i wybierając polecenie **Szybkie akcje i refaktoryzacja**. W przeciwieństwie do przypadków zaniechania, w których masz dwie opcje (albo zachować przy użyciu przestarzałego członka i pominąć ostrzeżenia lub nie używać go w ogóle), tutaj, jeśli rozwijasz kod tylko dla niektórych platform, można pominąć wszystkie ostrzeżenia dla wszystkich innych platform, które nie plan, aby uruchomić kod na. Aby to zrobić, wystarczy edytować plik projektu `PlatformCompatIgnore` i dodać właściwość, która zawiera listę wszystkich platform, które mają być ignorowane. Akceptowane wartości `Linux`to: `macOS`, `Windows`, i .
+Podobnie jak w przypadku przestarzałych interfejsów API, Analizator identyfikuje wszystkie interfejsy API, które nie są dla wielu platform. Na przykład <xref:System.Console.WindowWidth?displayProperty=nameWithType> program działa w systemie Windows, ale nie w systemie Linux i macOS. Identyfikator diagnostyki jest wyświetlany w oknie **Lista błędów** . Możesz pominąć to ostrzeżenie, klikając prawym przyciskiem myszy i wybierając polecenie **szybkie akcje i refaktoryzacje**. W przeciwieństwie do przypadków wycofania, w których są dostępne dwie opcje (można nadal korzystać z przestarzałego elementu członkowskiego i pomijać ostrzeżenia lub nie używać ich wcale), tutaj jeśli tworzysz kod tylko dla niektórych platform, możesz pominąć wszystkie ostrzeżenia dla wszystkich innych platform, które nie są planowane do uruchamiania kodu. Aby to zrobić, wystarczy edytować plik projektu i dodać `PlatformCompatIgnore` Właściwość, która wyświetla listę wszystkich platform do zignorowania. Akceptowane są następujące wartości: `Linux` , `macOS` , i `Windows` .
 
 ```xml
 <PropertyGroup>
@@ -93,7 +93,7 @@ Podobnie jak przestarzałe interfejsy API, analizator identyfikuje wszystkie int
 </PropertyGroup>
 ```
 
-Jeśli kod jest przeznaczony dla wielu platform i chcesz skorzystać z interfejsu API nie jest obsługiwany `if` na niektórych z nich, można chronić tę część kodu za pomocą instrukcji:
+Jeśli Twój kod jest przeznaczony dla wielu platform i chcesz skorzystać z interfejsu API nieobsługiwanego przez niektóre z nich, możesz zabezpieczyć tę część kodu za pomocą `if` instrukcji:
 
 ```csharp
 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -103,29 +103,29 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 }
 ```
 
-Można również warunkowo skompilować na platformę docelową/system operacyjny, ale obecnie trzeba to zrobić [ręcznie](../frameworks.md#how-to-specify-target-frameworks).
+Można również wykonać warunkowe kompilowanie na platformę docelową/system operacyjny, ale obecnie trzeba to zrobić [ręcznie](../frameworks.md#how-to-specify-a-target-framework).
 
-## <a name="supported-diagnostics"></a>Obsługiwana diagnostyka
+## <a name="supported-diagnostics"></a>Obsługiwana Diagnostyka
 
-Obecnie analizator obsługuje następujące przypadki:
+Obecnie Analizator obsługuje następujące przypadki:
 
-- Użycie standardowego interfejsu API .NET, który jest wyrzucany <xref:System.PlatformNotSupportedException> (PC001).
-- Użycie standardowego interfejsu API .NET, który nie jest dostępny w .NET Framework 4.6.1 (PC002).
-- Użycie natywnego interfejsu API, który nie istnieje w uspo (PC003).
-- Użycie interfejsów API Delegate.BeginInvoke i EndInvoke (PC004).
-- Użycie interfejsu API oznaczonego jako przestarzałe (DEXXXX).
+- Użycie interfejsu API .NET Standard, który zgłasza <xref:System.PlatformNotSupportedException> (PC001).
+- Użycie interfejsu API .NET Standard, który nie jest dostępny w .NET Framework 4.6.1 (PC002).
+- Użycie natywnego interfejsu API, który nie istnieje w platformy UWP (PC003).
+- Użycie interfejsów API Delegate. BeginInvoke i EndInvoke (PC004).
+- Użycie interfejsu API, który jest oznaczony jako przestarzały (rozxxxx).
 
-## <a name="ci-machine"></a>Maszyna CI
+## <a name="ci-machine"></a>Komputer CI
 
-Wszystkie te diagnostyki są dostępne nie tylko w IDE, ale także w wierszu polecenia w ramach tworzenia projektu, który obejmuje serwer pw.
+Wszystkie te diagnostyki są dostępne nie tylko w środowisku IDE, ale również w wierszu polecenia w ramach konstruowania projektu, który obejmuje serwer CI.
 
-## <a name="configuration"></a>Konfigurowanie
+## <a name="configuration"></a>Konfiguracja
 
-Użytkownik decyduje, jak diagnostyka powinna być traktowana: jako ostrzeżenia, błędy, sugestie lub do wyłączenia. Na przykład jako architekt można zdecydować, że problemy ze zgodnością powinny być traktowane jako błędy, wywołania niektórych przestarzałych interfejsów API generują ostrzeżenia, podczas gdy inne generują tylko sugestie. Można skonfigurować to oddzielnie według identyfikatora diagnostycznego i projektu. Aby to zrobić w **Eksploratorze rozwiązań,** przejdź do węzła **Zależności** w projekcie. Rozwiń węzły Zależności > **Analizatory** > **Microsoft.DotNet.Analyzers.Compatibility**. **Dependencies** Kliknij prawym przyciskiem myszy identyfikator diagnostyczny, wybierz pozycję **Ustaw ważność zestawu reguł** i wybierz żądaną opcję.
+Użytkownik decyduje o sposobie traktowania diagnostyki: w postaci ostrzeżeń, błędów, sugestii lub wyłączania. Na przykład jako architekt można zdecydować, że problemy ze zgodnością powinny być traktowane jako błędy, wywołania niektórych przestarzałych interfejsów API generują ostrzeżenia, podczas gdy inne tylko generują sugestie. Można ją skonfigurować osobno według identyfikatora diagnostyki i projektu. W tym celu w **Eksplorator rozwiązań**przejdź do węzła **zależności** w ramach projektu. Rozwiń węzeł **Dependencies**  >  **analizatory**zależności węzłów  >  **Microsoft. dotnet. analizatory. zgodność**. Kliknij prawym przyciskiem myszy identyfikator diagnostyczny, wybierz pozycję **Ustaw ważność zestawu reguł** i wybierz żądaną opcję.
 
-!["Zrzut ekranu przedstawiający Eksploratora rozwiązań z diagnostyką i wyskakujące okno dialogowe z ważnością zestawu reguł"](media/api-analyzer/disable-notifications.jpg)
+![Zrzut ekranu przedstawiający Eksplorator rozwiązań wyświetlania diagnostyki i wyskakujących okienek z ważnością zestawu reguł.](media/api-analyzer/disable-notifications.jpg)
 
 ## <a name="see-also"></a>Zobacz też
 
-- Wprowadzenie do wpisu w blogu [Analizatora interfejsu API.](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/)
-- Film [demonstracyjny API Analyzer](https://youtu.be/eeBEahYXGd0) w YouTube.
+- Wprowadzenie do wpisu w blogu [analizatora interfejsu API](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) .
+- Wideo z pokazem [interfejsu API Analyzer](https://youtu.be/eeBEahYXGd0) w serwisie YouTube.

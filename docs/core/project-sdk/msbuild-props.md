@@ -4,12 +4,12 @@ description: Odwołanie do właściwości i elementów programu MSBuild, które 
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: 39cbd18121d2b8659b2f5270f39624798f4ebbdc
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 866253a0526741f5554971a5202c179106503951
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810526"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598018"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Dokumentacja programu MSBuild dla projektów zestaw .NET Core SDK
 
@@ -26,7 +26,7 @@ Ta strona jest odwołaniem do właściwości i elementów programu MSBuild, któ
 
 ### <a name="targetframework"></a>TargetFramework
 
-`TargetFramework`Właściwość określa wersję platformy docelowej dla aplikacji. Aby zapoznać się z listą prawidłowych monikerów platformy docelowej, zobacz [platformę docelową w projektach w stylu zestawu SDK](../../standard/frameworks.md#supported-target-framework-versions).
+`TargetFramework`Właściwość określa wersję platformy docelowej dla aplikacji. Aby zapoznać się z listą prawidłowych monikerów platformy docelowej, zobacz [platformę docelową w projektach w stylu zestawu SDK](../../standard/frameworks.md#supported-target-frameworks).
 
 ```xml
 <PropertyGroup>
@@ -38,7 +38,7 @@ Aby uzyskać więcej informacji, zobacz [Platformy docelowe w projektach w stylu
 
 ### <a name="targetframeworks"></a>TargetFrameworks
 
-Użyj `TargetFrameworks` właściwości, jeśli chcesz, aby aplikacja była przeznaczona dla wielu platform. Aby zapoznać się z listą prawidłowych monikerów platformy docelowej, zobacz [platformę docelową w projektach w stylu zestawu SDK](../../standard/frameworks.md#supported-target-framework-versions).
+Użyj `TargetFrameworks` właściwości, jeśli chcesz, aby aplikacja była przeznaczona dla wielu platform. Aby zapoznać się z listą prawidłowych monikerów platformy docelowej, zobacz [platformę docelową w projektach w stylu zestawu SDK](../../standard/frameworks.md#supported-target-frameworks).
 
 > [!NOTE]
 > Ta właściwość jest ignorowana, jeśli `TargetFramework` określono (pojedynczo).
@@ -327,7 +327,7 @@ Niektóre zachowania w czasie wykonywania można skonfigurować, określając w�
 
 `AssetTargetFallback`Właściwość pozwala określić dodatkowe zgodne wersje architektury dla odwołań do projektu i pakietów NuGet. Na przykład, jeśli określisz zależność pakietu przy użyciu programu `PackageReference` , ale ten pakiet nie zawiera zasobów, które są zgodne z projektem `TargetFramework` , `AssetTargetFallback` Właściwość jest dostępna. Zgodność przywoływanego pakietu jest ponownie sprawdzana przy użyciu każdej platformy docelowej określonej w `AssetTargetFallback` .
 
-Można ustawić `AssetTargetFallback` Właściwość na co najmniej jedną [docelową wersję platformy](../../standard/frameworks.md#supported-target-framework-versions).
+Można ustawić `AssetTargetFallback` Właściwość na co najmniej jedną [docelową wersję platformy](../../standard/frameworks.md#supported-target-frameworks).
 
 ```xml
 <PropertyGroup>
@@ -365,7 +365,7 @@ Fragment pliku projektu w poniższym przykładzie odwołuje się do projektu o n
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Dokumentacja
+### <a name="reference"></a>Tematy pomocy
 
 `Reference`Element definiuje odwołanie do pliku zestawu.
 

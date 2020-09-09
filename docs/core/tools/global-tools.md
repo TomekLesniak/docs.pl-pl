@@ -4,12 +4,12 @@ description: Jak instalować, używać, aktualizować i usuwać narzędzia .NET 
 author: KathleenDollard
 ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 00c0317fcfc4da0e7205c23faa7b355c20882ec9
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 08277ed791036201d1dfa30c21799db1c21a924e
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062733"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598125"
 ---
 # <a name="how-to-manage-net-core-tools"></a>Jak zarządzać narzędziami programu .NET Core
 
@@ -42,7 +42,7 @@ Obecnie platforma .NET Core nie ma funkcji wyszukiwania w narzędziu. Oto kilka 
 * Zobacz listę narzędzi w repozytorium GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
 * Użyj [ToolGet](https://www.toolget.net/) , aby wyszukać narzędzia platformy .NET.
 * Zobacz kod źródłowy narzędzi utworzonych przez zespół ASP.NET Core w [katalogu Tools w repozytorium GitHub/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
-* Informacje o narzędziach diagnostycznych w [programie .NET Core dotnet Diagnostic Tools](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
+* Informacje o narzędziach diagnostycznych w [programie .NET Core dotnet Diagnostic Tools](../diagnostics/index.md#net-core-diagnostic-global-tools).
 
 ## <a name="check-the-author-and-statistics"></a>Sprawdź autora i statystyki
 
@@ -275,7 +275,7 @@ dotnet <command> --help
 
 Jeśli instalacja lub uruchomienie narzędzia nie powiedzie się, zobacz [Rozwiązywanie problemów z użyciem narzędzia .NET Core](troubleshoot-usage-issues.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Samouczek: Tworzenie narzędzia platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core](global-tools-how-to-create.md)
 - [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core](global-tools-how-to-use.md)

@@ -2,14 +2,14 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: a863e544c0fcc8682994f49a464acccafc5ce92f
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: ddffe4aaaed6c9079999b2ab29ca61ab5753f15a
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495827"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598144"
 ---
-# <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9,0
+# <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
 W języku c# 9,0 dodano następujące funkcje i ulepszenia języka C#:
 
@@ -24,6 +24,7 @@ W języku c# 9,0 dodano następujące funkcje i ulepszenia języka C#:
 - statyczne funkcje anonimowe
 - Wyrażenia warunkowe z typem docelowym
 - Kowariantne typy zwracane
+- `GetEnumerator`Obsługa rozszerzeń dla `foreach` pętli
 - Parametry odrzucania wyrażenia lambda
 - Atrybuty funkcji lokalnych
 - Inicjatory modułów
@@ -217,7 +218,7 @@ Można wywołać go w następujący sposób:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="TargetTypeNewArgument":::
 
-Innym świetnym użyciem tej funkcji jest połączenie z właściwościami tylko init w celu zainicjowania nowego obiektu. Nawiasy `new` są opcjonalne:
+Innym świetnym użyciem tej funkcji jest połączenie z właściwościami tylko init w celu zainicjowania nowego obiektu:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="InitWeatherStation":::
 
@@ -228,6 +229,8 @@ Podobna funkcja ulepsza rozpoznawanie typu docelowego wyrażeń warunkowych. W p
 Począwszy od języka C# 9,0, można dodać `static` modyfikator do wyrażeń lambda lub metod anonimowych. Statyczne wyrażenia lambda są analogiczne do `static` funkcji lokalnych: statyczna funkcja lambda lub anonimowa nie może przechwycić lokalnych zmiennych lub stanu wystąpienia. `static`Modyfikator zapobiega przypadkowemu przechwyceniu innych zmiennych.
 
 Typy zwracane przez współwarianty zapewniają elastyczność dla zwracanych typów funkcji zastąpionych. Zastąpiona funkcja wirtualna może zwrócić typ pochodzący od typu zwracanego zadeklarowanego w metodzie klasy bazowej. Może to być przydatne w przypadku rekordów i dla innych typów, które obsługują wirtualne klony lub metody fabryki.
+
+Ponadto `foreach` Pętla rozpoznaje i używa metody rozszerzenia `GetEnumerator` , która w przeciwnym razie spełnia warunki `foreach` wzorca. Ta zmiana oznacza `foreach` spójność z innymi konstrukcjami opartymi na wzorcu, takimi jak wzorzec asynchroniczny i dekonstrukcja oparta na wzorcu. W tym przypadku ta zmiana oznacza, że można dodać `foreach` obsługę dowolnego typu. Należy ograniczyć jego użycie do momentu, gdy Wyliczenie obiektu ma sens w projekcie.
 
 Następnie można użyć odrzutów jako parametrów w wyrażeniach lambda. Ta wygoda pozwala uniknąć nazywania argumentu, a kompilator może uniknąć korzystania z niego. Używasz `_` argumentu for.
 

@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 87f9cc03f334233ef286abd11e6f5ff82d7988c2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4e937f56f6315ce2abf76dd56989f4d2c4059f22
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811353"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598071"
 ---
-### <a name="ca1831-use-asspan-or-asmemory-instead-of-range-based-indexer"></a>CA1831 użyć AsSpan lub AsMemory zamiast indeksatora opartego na zakresie
+### <a name="ca1831-use-asspan-instead-of-range-based-indexers-for-string"></a>CA1831: Użyj AsSpan zamiast indeksatorów opartych na zakresie dla ciągu
 
 Reguła analizatora kodu platformy .NET [CA1831](/visualstudio/code-quality/ca1831) jest domyślnie włączona, począwszy od platformy .NET 5,0. Generuje ostrzeżenie kompilacji dla dowolnego kodu <xref:System.Range> , w którym jest używany indeksator oparty na ciągu, ale nie ma zamierzonego kopiowania.
 
@@ -14,13 +14,13 @@ Reguła analizatora kodu platformy .NET [CA1831](/visualstudio/code-quality/ca18
 
 Począwszy od platformy .NET 5,0, zestaw SDK .NET zawiera [analizatory kodu źródłowego platformy .NET](../../../../docs/fundamentals/productivity/code-analysis.md). Niektóre z tych reguł są domyślnie włączone, w tym [CA1831](/visualstudio/code-quality/ca1831). Jeśli projekt zawiera kod naruszający tę regułę i jest skonfigurowany do traktowania ostrzeżeń jako błędów, ta zmiana może spowodować uszkodzenie kompilacji.
 
-CA1831 reguły odnajduje wystąpienia <xref:System.Range> , w których jest używany indeksator oparty na ciągu, ale nie ma zamierzonego kopiowania. Jeśli <xref:System.Range> indeksator jest używany bezpośrednio w ciągu do tworzenia rzutowania niejawnego, wówczas tworzona jest niezbędna kopia żądanej części ciągu. Na przykład:
+CA1831 reguły odnajduje wystąpienia <xref:System.Range> , w których jest używany indeksator oparty na ciągu, ale nie ma zamierzonego kopiowania. Jeśli <xref:System.Range> indeksator jest używany bezpośrednio w ciągu do tworzenia rzutowania niejawnego, wówczas tworzona jest niezbędna kopia żądanej części ciągu. Przykład:
 
 ```csharp
 ReadOnlySpan<char> slice = str[1..3];
 ```
 
-CA1831 sugeruje użycie <xref:System.Range> indeksatora opartego na indeksie dla *zakresu* ciągu. Na przykład:
+CA1831 sugeruje użycie <xref:System.Range> indeksatora opartego na indeksie dla *zakresu* ciągu. Przykład:
 
 ```csharp
 ReadOnlySpan<char> slice = str.AsSpan()[1..3];
@@ -32,7 +32,7 @@ ReadOnlySpan<char> slice = str.AsSpan()[1..3];
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-- Aby poprawić kod i uniknąć niepotrzebnych alokacji, wywołaj <xref:System.MemoryExtensions.AsSpan(System.String)> lub <xref:System.MemoryExtensions.AsMemory(System.String)> przed użyciem <xref:System.Range> indeksatora opartego na usłudze. Na przykład:
+- Aby poprawić kod i uniknąć niepotrzebnych alokacji, wywołaj <xref:System.MemoryExtensions.AsSpan(System.String)> lub <xref:System.MemoryExtensions.AsMemory(System.String)> przed użyciem <xref:System.Range> indeksatora opartego na usłudze. Przykład:
 
   ```csharp
   ReadOnlySpan<char> slice = str.AsSpan()[1..3];
