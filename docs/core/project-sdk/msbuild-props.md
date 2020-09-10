@@ -4,12 +4,12 @@ description: Odwołanie do właściwości i elementów programu MSBuild, które 
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: 866253a0526741f5554971a5202c179106503951
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: c1093a0acd5b75ae6478767d690966a30fe84a31
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598018"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656265"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Dokumentacja programu MSBuild dla projektów zestaw .NET Core SDK
 
@@ -188,9 +188,27 @@ W poniższej tabeli przedstawiono dostępne opcje.
 | `5.0` | Używany jest zestaw reguł, które zostały włączone dla wydania .NET 5,0, nawet jeśli są dostępne nowsze reguły. |
 | `5` | Używany jest zestaw reguł, które zostały włączone dla wydania .NET 5,0, nawet jeśli są dostępne nowsze reguły. |
 
+### <a name="analysismode"></a>Analizamode
+
+Począwszy od platformy .NET 5,0 RC2, zestaw .NET SDK jest dostarczany ze wszystkimi [regułami dotyczącymi jakości kodu "CA"](/visualstudio/code-quality/code-analysis-for-managed-code-warnings). Domyślnie tylko [niektóre reguły są włączane](../../fundamentals/productivity/code-analysis.md#enabled-rules) jako ostrzeżenia kompilacji. `AnalysisMode`Właściwość umożliwia dostosowanie zestawu reguł, które są domyślnie włączone. Można przełączać się na bardziej agresywny tryb analizy lub bardziej ostrożny tryb analizy. Na przykład jeśli chcesz włączyć wszystkie reguły domyślnie jako ostrzeżenia kompilacji, ustaw wartość na `AllEnabledByDefault` .
+
+```xml
+<PropertyGroup>
+  <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+</PropertyGroup>
+```
+
+W poniższej tabeli przedstawiono dostępne opcje.
+
+| Wartość | Znaczenie |
+|-|-|
+| `Default` | Domyślny tryb, w którym niektóre reguły są włączone jako ostrzeżenia kompilacji, niektóre reguły są włączane jako sugestie środowiska IDE programu Visual Studio, a reszta jest wyłączona. |
+| `AllEnabledByDefault` | Tryb agresywny lub rezygnacji, w którym wszystkie reguły są domyślnie włączone jako ostrzeżenia kompilacji. Możesz selektywnie [zrezygnować](../../fundamentals/productivity/configure-code-analysis-rules.md) z poszczególnych reguł, aby je wyłączyć. |
+| `AllDisabledByDefault` | Tryb wyłączania lub niewłączania, gdzie wszystkie reguły są domyślnie wyłączone. Można [wybiórczo](../../fundamentals/productivity/configure-code-analysis-rules.md) wybierać poszczególne reguły, aby je włączyć. |
+
 ### <a name="codeanalysistreatwarningsaserrors"></a>CodeAnalysisTreatWarningsAsErrors
 
-`CodeAnalysisTreatWarningsAsErrors`Właściwość pozwala określić, czy ostrzeżenia analizy kodu powinny być traktowane jako ostrzeżenia i przerwać kompilację. Jeśli używasz `-warnaserror` flagi podczas kompilowania projektów, ostrzeżenia [analizy kodu platformy .NET](../../fundamentals/productivity/code-analysis.md) również są traktowane jako błędy. Jeśli chcesz, aby ostrzeżenia kompilatora były traktowane jako błędy, możesz ustawić `CodeAnalysisTreatWarningsAsErrors` Właściwość programu MSBuild na `false` w pliku projektu.
+`CodeAnalysisTreatWarningsAsErrors`Właściwość umożliwia skonfigurowanie, czy ostrzeżenia analizy jakości kodu (CAxxxx) powinny być traktowane jako ostrzeżenia i przerywać kompilację. Jeśli używasz `-warnaserror` flagi podczas kompilowania projektów, ostrzeżenia [analizy jakości kodu platformy .NET](../../fundamentals/productivity/code-analysis.md#code-quality-analysis) również są traktowane jako błędy. Jeśli nie chcesz, aby ostrzeżenia analizy jakości kodu były traktowane jako błędy, możesz ustawić `CodeAnalysisTreatWarningsAsErrors` Właściwość programu MSBuild na `false` w pliku projektu.
 
 ```xml
 <PropertyGroup>
@@ -200,7 +218,7 @@ W poniższej tabeli przedstawiono dostępne opcje.
 
 ### <a name="enablenetanalyzers"></a>EnableNETAnalyzers
 
-[Analiza kodu platformy .NET](../../fundamentals/productivity/code-analysis.md) jest domyślnie włączona dla projektów przeznaczonych dla platformy .NET 5,0 lub nowszej. Możesz włączyć analizę kodu platformy .NET dla projektów przeznaczonych dla wcześniejszych wersji platformy .NET, ustawiając `EnableNETAnalyzers` Właściwość na true. Aby wyłączyć analizę kodu w dowolnym projekcie, należy ustawić tę właściwość na `false` .
+[Analiza jakości kodu platformy .NET](../../fundamentals/productivity/code-analysis.md#code-quality-analysis) jest domyślnie włączona dla projektów przeznaczonych dla platformy .NET 5,0 lub nowszej. Można włączyć analizę kodu platformy .NET dla projektów przeznaczonych dla wcześniejszych wersji platformy .NET przez ustawienie `EnableNETAnalyzers` właściwości na `true` . Aby wyłączyć analizę kodu w dowolnym projekcie, należy ustawić tę właściwość na `false` .
 
 ```xml
 <PropertyGroup>
@@ -210,6 +228,18 @@ W poniższej tabeli przedstawiono dostępne opcje.
 
 > [!TIP]
 > Innym sposobem na włączenie analizy kodu .NET dla projektów przeznaczonych dla wersji .NET wcześniejszych niż .NET 5,0 jest ustawienie właściwości [AnalysisLevel](#analysislevel) na `latest` .
+
+### <a name="enforcecodestyleinbuild"></a>EnforceCodeStyleInBuild
+
+[Analiza stylu kodu platformy .NET](../../fundamentals/productivity/code-analysis.md#code-style-analysis) jest domyślnie wyłączona w przypadku kompilacji dla wszystkich projektów .NET. Można włączyć analizę stylu kodu dla projektów .NET, ustawiając `EnforceCodeStyleInBuild` Właściwość na `true` .
+
+```xml
+<PropertyGroup>
+  <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+</PropertyGroup>
+```
+
+Wszystkie reguły stylu kodu, które są [skonfigurowane](../../fundamentals/productivity/code-analysis.md#code-style-analysis) do wyświetlania ostrzeżeń lub błędów, będą wykonywane w przypadku naruszeń kompilacji i raportu.
 
 ## <a name="run-time-configuration-properties"></a>Właściwości konfiguracji czasu wykonywania
 
@@ -365,7 +395,7 @@ Fragment pliku projektu w poniższym przykładzie odwołuje się do projektu o n
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Tematy pomocy
+### <a name="reference"></a>Dokumentacja
 
 `Reference`Element definiuje odwołanie do pliku zestawu.
 
@@ -389,7 +419,7 @@ Przywracanie przywoływanego pakietu instaluje wszystkie jego bezpośrednie zale
 </PropertyGroup>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odwołanie do schematu programu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference)
 - [Typowe właściwości programu MSBuild](/visualstudio/msbuild/common-msbuild-project-properties)

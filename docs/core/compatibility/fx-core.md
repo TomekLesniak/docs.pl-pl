@@ -1,18 +1,18 @@
 ---
 title: Istotne zmiany — .NET Framework do platformy .NET Core
 titleSuffix: ''
-description: Wyświetla listę istotnych zmian z .NET Framework do programu .NET Core.
+description: Wyświetla listę istotnych zmian z .NET Framework do programu .NET Core 1,0-3,1.
 ms.date: 05/05/2020
-ms.openlocfilehash: e9fa37dba89bbd6c4829614c27cb66206069fa9b
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 5904a359813b6d07bd2a27d882ade4395efe3256
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414461"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656369"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Istotne zmiany dotyczące migracji z .NET Framework do platformy .NET Core
 
-W przypadku migrowania aplikacji z programu .NET Framework do programu .NET Core, istotne zmiany wymienione w tym artykule mogą mieć wpływ na użytkownika. Istotne zmiany są pogrupowane według kategorii i w ramach tych kategorii według wersji platformy .NET Core, w której zostały wprowadzone.
+Jeśli migrujesz aplikację z .NET Framework do programu .NET Core w wersji 1,0 do 3,1, istotne zmiany wymienione w tym artykule mogą mieć wpływ na użytkownika. Istotne zmiany są pogrupowane według kategorii i w ramach tych kategorii według wersji platformy .NET Core, w której zostały wprowadzone.
 
 > [!NOTE]
 > Ten artykuł nie jest pełną listą istotnych zmian między .NET Framework i .NET Core. Najważniejsze zmiany zostaną dodane w tym miejscu w miarę ich istnienia.
@@ -72,17 +72,10 @@ W przypadku migrowania aplikacji z programu .NET Framework do programu .NET Core
 ## <a name="networking"></a>Networking
 
 - [Klient WebClient. CancelAsync nie zawsze anuluje natychmiast](#webclientcancelasync-doesnt-always-cancel-immediately)
-- [Obsługa ścieżki plików cookie jest teraz zgodna ze specyfikacją RFC 6265](#cookie-path-handling-now-conforms-to-rfc-6265)
 
 ### <a name="net-core-20"></a>.NET Core 2.0
 
 [!INCLUDE [behavior-change-webclient-cancelasync](../../../includes/core-changes/networking/2.0/behavior-change-webclient-cancelasync.md)]
-
-***
-
-### <a name="net-50"></a>.NET 5,0
-
-[!INCLUDE [cookie-path-conforms-to-rfc6265](../../../includes/core-changes/networking/5.0/cookie-path-conforms-to-rfc6265.md)]
 
 ***
 
@@ -160,7 +153,7 @@ Obsługa Windows Forms została dodana do programu .NET Core w wersji 3,0. W prz
 
 ***
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy API, które zawsze generują wyjątki w programie .NET Core](unsupported-apis.md)
 - [Technologie .NET Framework niedostępne w programie .NET Core](../porting/net-framework-tech-unavailable.md)

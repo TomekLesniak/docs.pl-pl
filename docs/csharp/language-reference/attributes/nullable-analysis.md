@@ -1,90 +1,90 @@
 ---
-title: 'Atrybuty zastrzeżone języka C#: nullowa analiza statyczna'
+title: 'Atrybuty zastrzeżone języka C#: statycznej analizy dopuszczające wartość null'
 ms.date: 04/14/2020
-description: Te atrybuty są interpretowane przez kompilator, aby zapewnić lepszą analizę statyczną dla typów odwołań nullable i non-null.
-ms.openlocfilehash: 33521133a6a01196e6e1ab9c3cdc191a24f1ecf3
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+description: Te atrybuty są interpretowane przez kompilator w celu zapewnienia lepszej statycznej analizy dla typów odwołań dopuszczających wartości null i niedopuszczających wartości null.
+ms.openlocfilehash: d2405162ece3df209111de65fdef54f70cc86d45
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102713"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656314"
 ---
-# <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>Atrybuty zastrzeżone przyczyniają się do analizy statycznej stanu zerowego kompilatora
+# <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>Atrybuty zastrzeżone przyczyniają się do analizy statycznej stanu kompilatora o wartości null
 
-W kontekście nullable kompilator wykonuje statyczną analizę kodu w celu określenia stanu null wszystkich zmiennych typu odwołania:
+W kontekście dopuszczającym wartość null kompilator wykonuje statyczną analizę kodu, aby określić stan null dla wszystkich zmiennych typu odwołania:
 
-- *nie null*: Analiza statyczna ustaliła, że zmienna jest przypisana do wartości innej niż null.
-- *może null*: Analiza statyczna nie może ustalić, że zmiennej jest przypisana wartość niekrajowa.
+- *nie null*: analiza statyczna ustaliła, że zmienna jest przypisana do wartości innej niż null.
+- może *mieć wartość null*: analiza statyczna nie może określić, że zmienna ma przypisaną wartość różną od null.
 
-Można zastosować szereg atrybutów, które dostarczają informacji do kompilatora o semantyki interfejsów API. Te informacje pomagają kompilatorowi wykonać analizę statyczną i określić, kiedy zmienna nie jest null. Ten artykuł zawiera krótki opis każdego z tych atrybutów i jak z nich korzystać. Wszystkie przykłady zakładają C# 8.0 lub nowsze, a kod jest w kontekście nullable.
+Można zastosować wiele atrybutów, które dostarczają informacje dla kompilatora o semantyki interfejsów API. Te informacje ułatwiają kompilatorowi wykonywanie analizy statycznej i określanie, kiedy zmienna nie ma wartości null. W tym artykule przedstawiono krótki opis każdego z tych atrybutów oraz sposób ich używania. We wszystkich przykładach przyjęto język C# 8,0 lub nowszy, a kod jest w kontekście dopuszczającym wartość null.
 
-Zacznijmy od znanego przykładu. Wyobraź sobie, że biblioteka ma następujący interfejs API do pobierania ciągu zasobu:
+Zacznijmy od znanego przykładu. Wyobraź sobie, że biblioteka zawiera następujący interfejs API do pobrania ciągu zasobu:
 
 ```csharp
 bool TryGetMessage(string key, out string message)
 ```
 
-W poprzednim przykładzie `Try*` następuje znane wzorzec w .NET. Istnieją dwa argumenty odwołania dla `key` tego `message` interfejsu API: i parametr. Ten interfejs API ma następujące reguły odnoszące się do nieważności tych argumentów:
+Poprzedni przykład jest zgodny ze znajomym `Try*` wzorcem w programie .NET. Istnieją dwa argumenty odwołania dla tego interfejsu API: `key` i `message` parametru. Ten interfejs API ma następujące reguły dotyczące wartości null tych argumentów:
 
-- Dzwoniący nie powinni `null` przechodzić `key`jako argument dla .
-- Osoby dzwoniące mogą przekazać `null` zmienną, `message`której wartość jest argumentem dla .
-- Jeśli `TryGetMessage` metoda `true`zwraca , `message` wartość nie jest null. Jeśli zwracana `false,` wartość jest `message` wartością (a jej stan zerowy) jest null.
+- Obiekty wywołujące nie powinny być przekazywane `null` jako argument dla elementu `key` .
+- Obiekty wywołujące mogą przekazywać zmienną, której wartość jest `null` argumentem dla `message` .
+- Jeśli `TryGetMessage` Metoda zwraca `true` , wartość `message` nie jest równa null. Jeśli wartość zwracana jest `false,` wartością parametru `message` (i jego stan zerowy) ma wartość null.
 
-Reguła `key` dla może być wyrażona `key` przez typ zmiennej: powinien być typem odwołania nienastępującym wartość null. Parametr `message` jest bardziej złożony. Pozwala `null` jako argument, ale gwarantuje, że `out` na sukces, że argument nie jest null. W przypadku tych scenariuszy potrzebujesz bogatszego słownictwa, aby opisać oczekiwania.
+Reguła dla `key` może być wyrażona przez typ zmiennej: `key` powinien być typem referencyjnym, który nie dopuszcza wartości null. `message`Parametr jest bardziej skomplikowany. Umożliwia `null` jako argument, ale gwarantuje, że w przypadku powodzenia ten `out` argument nie ma wartości null. W tych scenariuszach potrzebujesz bogatszego słownictwa do opisywania oczekiwań.
 
-Dodano kilka atrybutów, aby wyrazić dodatkowe informacje o stanie null zmiennych. Cały kod, który napisałeś przed C# 8 wprowadzone nullable typy odwołań był *null oblivious*. Oznacza to, że każda zmienna typu odwołania może mieć wartość null, ale nie są wymagane kontrole wartości null. Gdy kod jest *nullable aware*, te reguły zmienić. Typy odwołań `null` nigdy nie powinny być wartością, `null` a typy odwołań do wartości null muszą być sprawdzane przed odwołaniem.
+Dodano kilka atrybutów w celu wyrażenia dodatkowych informacji o stanie null zmiennych. Wszystkie kod, który zapisano przed C# 8 wprowadziły typy odwołań dopuszczających wartości null, miał *wartość null Oblivious*. Oznacza to, że jakakolwiek zmienna typu referencyjnego może mieć wartość null, ale sprawdzanie wartości null nie jest wymagane. Gdy kod *dopuszcza wartość null*, te reguły zostaną zmienione. Typy odwołań nigdy nie powinny być `null` wartościami, a typy referencyjne dopuszczające wartość null muszą zostać sprawdzone przed `null` usunięciem odwołania.
 
-Reguły interfejsów API są prawdopodobnie bardziej skomplikowane, `TryGetValue` jak widać w scenariuszu interfejsu API. Wiele interfejsów API ma bardziej złożone reguły, gdy zmienne mogą lub nie mogą być `null`. W takich przypadkach do wyrażenia tych reguł użyjesz jednego z następujących atrybutów:
+Reguły interfejsów API mogą być bardziej skomplikowane, jak pokazano w `TryGetValue` scenariuszu interfejsu API. Wiele interfejsów API ma bardziej złożone reguły dla sytuacji, gdy zmienne mogą być lub niemożliwe `null` . W takich przypadkach użyjesz jednego z następujących atrybutów, aby przedstawić te reguły:
 
-- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Argument wejściowy nienastępny do wartości null może mieć wartość null.
-- [NieuprawnionyNull:](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute)Nullable argument wejściowy nigdy nie powinien być null.
-- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): Wartość zwracana bez wartości null może być wartość null.
-- [NotNull:](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute)Nullable wartość zwracana nigdy nie będzie null.
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Argument wejściowy nienastępny do wartości `bool` null może mieć wartość null, gdy metoda zwraca określoną wartość.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Argument wejściowy do null nie będzie `bool` null, gdy metoda zwraca określoną wartość.
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): Zwracana wartość nie jest zerowa, jeśli argument dla określonego parametru nie jest null.
-- [DoesNotReturn](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute): Metoda nigdy nie zwraca. Innymi słowy zawsze zgłasza wyjątek.
-- [DoesNotReturnIf:](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute)Ta metoda nigdy nie `bool` zwraca, jeśli skojarzony parametr ma określoną wartość.
+- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Argument wejściowy niedopuszczający wartości null może mieć wartość null.
+- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): Argument wejściowy dopuszczający wartość null nigdy nie powinien mieć wartości null.
+- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): wartość zwracana niedopuszczający wartości null może być równa null.
+- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): wartość zwracana do wartości null nigdy nie będzie równa null.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Argument wejściowy, który nie dopuszcza wartości null, może mieć wartość null, gdy metoda zwraca określoną `bool` wartość.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Argument wejściowy do wartości null nie będzie miał wartości null, gdy metoda zwróci określoną `bool` wartość.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): wartość zwracana nie ma wartości null, jeśli argument dla określonego parametru nie ma wartości null.
+- [DoesNotReturn](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute): Metoda nigdy nie zwraca. Innymi słowy, zawsze zgłasza wyjątek.
+- [DoesNotReturnIf](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute): Ta metoda nigdy nie zwraca, czy skojarzony `bool` parametr ma określoną wartość.
 
-Powyższe opisy są szybkie odwołanie do tego, co każdy atrybut nie. W każdej poniższej sekcji opisano zachowanie i znaczenie dokładniej.
+Powyższe opisy stanowią krótkie informacje o tym, co robi każdy atrybut. W poniższych sekcjach opisano zachowanie i ich znaczenie.
 
-Dodanie tych atrybutów daje kompilatorowi więcej informacji na temat reguł dla interfejsu API. Podczas wywoływania kodu jest kompilowany w kontekście z obsługą nullable włączone, kompilator będzie ostrzegać wywoływaczy, gdy naruszają te reguły. Te atrybuty nie umożliwiają dodatkowych kontroli implementacji.
+Dodanie tych atrybutów zapewnia kompilatorowi więcej informacji na temat reguł dla interfejsu API. Gdy Wywoływanie kodu jest kompilowane w kontekście włączonego wartości null, kompilator ostrzega wywoływania, gdy narusza te reguły. Te atrybuty nie umożliwiają wykonywania dodatkowych operacji sprawdzania w implementacji.
 
-## <a name="specify-preconditions-allownull-and-disallownull"></a>Określ warunki wstępne: `AllowNull` i`DisallowNull`
+## <a name="specify-preconditions-allownull-and-disallownull"></a>Określ warunki wstępne: `AllowNull` i `DisallowNull`
 
-Należy wziąć pod uwagę właściwość odczytu/zapisu, która nigdy nie zwraca, `null` ponieważ ma rozsądną wartość domyślną. Wywołujący `null` przechodzą do zestawu akcesora podczas ustawiania go do tej wartości domyślnej. Rozważmy na przykład system obsługi wiadomości, który prosi o nazwę ekranu w pokoju rozmów. Jeśli nie podano, system generuje losową nazwę:
+Rozważ użycie właściwości do odczytu/zapisu, która nigdy nie zwraca, `null` ponieważ ma ona rozsądną wartość domyślną. Obiekty wywołujące przejdą `null` do zestawu metod dostępu podczas ustawiania tej wartości domyślnej. Rozważmy na przykład system obsługi komunikatów, który prosi o podanie nazwy ekranu w pokoju rozmowy. Jeśli żaden nie jest podany, system generuje nazwę losową:
 
 ```csharp
 public string ScreenName
 {
-   get => screenName;
-   set => screenName = value ?? GenerateRandomScreenName();
+   get => _screenName;
+   set => _screenName = value ?? GenerateRandomScreenName();
 }
-private string screenName;
+private string _screenName;
 ```
 
-Podczas kompilowania poprzedniego kodu w kontekście nullable nieświadomy, wszystko jest w porządku. Po włączeniu typów odwołań `ScreenName` nullable, właściwość staje się odwołanie nie nullable. To jest poprawne `get` dla akcesora: nigdy nie zwraca `null`. Dzwoniący nie muszą sprawdzać zwracane `null`właściwość dla . Ale teraz ustawienie `null` właściwości, aby wygenerować ostrzeżenie. Aby nadal obsługiwać ten typ kodu, <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute?displayProperty=nameWithType> należy dodać atrybut do właściwości, jak pokazano w poniższym kodzie:
+Gdy kompilujesz poprzedni kod w kontekście dopuszczającym wartość null, wszystko jest bardzo precyzyjne. Po włączeniu typów referencyjnych dopuszczających wartość null, `ScreenName` Właściwość ta będzie odwołaniem niedopuszczanym do wartości null. Jest to poprawne dla `get` metody dostępu: nigdy nie zwraca `null` . Obiekty wywołujące nie muszą sprawdzać zwracanej właściwości dla elementu `null` . Ale teraz ustawienie właściwości w celu `null` wygenerowania ostrzeżenia. Aby kontynuować obsługę tego typu kodu, Dodaj <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute?displayProperty=nameWithType> atrybut do właściwości, jak pokazano w poniższym kodzie:
 
 ```csharp
 [AllowNull]
 public string ScreenName
 {
-   get => screenName;
-   set => screenName = value ?? GenerateRandomScreenName();
+   get => _screenName;
+   set => _screenName = value ?? GenerateRandomScreenName();
 }
-private string screenName = GenerateRandomScreenName();
+private string _screenName = GenerateRandomScreenName();
 ```
 
-Może być konieczne `using` dodanie <xref:System.Diagnostics.CodeAnalysis> dyrektywy, aby użyć tego i innych atrybutów omówionych w tym artykule. Atrybut jest stosowany do właściwości, a `set` nie akcesora. Atrybut `AllowNull` określa *warunki wstępne*i ma zastosowanie tylko do danych wejściowych. Akcesor `get` ma wartość zwracaną, ale nie ma argumentów wejściowych. W związku `AllowNull` z tym atrybut dotyczy `set` tylko akcesora.
+Może być konieczne dodanie dyrektywy do programu `using` <xref:System.Diagnostics.CodeAnalysis> w celu użycia tego i innych atrybutów omówionych w tym artykule. Ten atrybut jest stosowany do właściwości, a nie do `set` metody dostępu. `AllowNull`Atrybut określa *warunki wstępne*i ma zastosowanie tylko do danych wejściowych. `get`Metoda dostępu ma wartość zwracaną, ale nie ma argumentów wejściowych. W związku z tym `AllowNull` atrybut ma zastosowanie tylko do `set` metody dostępu.
 
-W poprzednim przykładzie pokazano, na co `AllowNull` zwrócić uwagę podczas dodawania atrybutu w argurze:
+W poprzednim przykładzie pokazano, co należy szukać podczas dodawania `AllowNull` atrybutu do argumentu:
 
-1. Ogólna umowa dla tej zmiennej jest, że nie powinno być `null`, więc chcesz typu odwołania nie nullable.
-1. Istnieją scenariusze dla zmiennej `null`wejściowej, które mają być, choć nie są one najczęściej użycia.
+1. Ogólną umową dla tej zmiennej jest to, że nie powinna ona być `null` , więc potrzebujesz typu referencyjnego, który nie dopuszcza wartości null.
+1. Istnieją scenariusze dla zmiennej wejściowej `null` , chociaż nie są one najczęstszym użyciem.
 
-Najczęściej ten atrybut jest potrzebny dla właściwości `in`lub `out`, `ref` i argumentów. Atrybut `AllowNull` jest najlepszym wyborem, gdy zmienna jest zazwyczaj nie null, ale należy zezwolić `null` jako warunek wstępny.
+Najczęściej ten atrybut jest potrzebny dla właściwości,, `in` `out` i `ref` argumentów. Ten `AllowNull` atrybut jest najlepszym wyborem, gdy zmienna jest zwykle inna niż null, ale musisz zezwolić `null` jako warunek wstępny.
 
-Kontrast, który ze `DisallowNull`scenariuszami użycia: Ten atrybut służy do określania, że zmienną `null`wejściową typu odwołania z dopuszczalną wartością null nie powinna być . Należy wziąć `null` pod uwagę właściwość, gdzie jest wartością domyślną, ale klienci mogą tylko ustawić ją na wartość nietrwałą. Spójrzmy na poniższy kod:
+Przeciwieństwo do użycia `DisallowNull` : ten atrybut służy do określenia, że zmienna wejściowa typu referencyjnego nullable nie powinna być `null` . Rozważmy Właściwość `null` , gdzie jest wartością domyślną, ale klienci mogą ustawić ją tylko na wartość różną od null. Spójrzmy na poniższy kod:
 
 ```csharp
 public string ReviewComment
@@ -95,7 +95,7 @@ public string ReviewComment
 string _comment;
 ```
 
-Powyższy kod jest najlepszym sposobem wyrażenia projektu, który `ReviewComment` może być, `null`ale `null`nie można ustawić na . Gdy ten kod jest nullable pamiętać, można wyrazić tę <xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute?displayProperty=nameWithType>koncepcję jaśniej do rozmówców za pomocą:
+Poprzedni kod jest najlepszym sposobem, aby wyrazić projekt `ReviewComment` , który może być `null` , ale nie może być ustawiony na `null` . Gdy ten kod dopuszcza wartość null, można jawnie wyrazić takie koncepcje dla wywołujących przy użyciu <xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute?displayProperty=nameWithType> :
 
 ```csharp
 [DisallowNull]
@@ -107,44 +107,44 @@ public string? ReviewComment
 string? _comment;
 ```
 
-W kontekście `ReviewComment` `get` możliwego do anulowania akcesor może zwrócić wartość domyślną `null`programu . Kompilator ostrzega, że należy sprawdzić przed dostępem. Co więcej, ostrzega dzwoniących, że nawet `null`jeśli może to być , `null`dzwoniący nie powinni wyraźnie ustawić go na . Atrybut `DisallowNull` określa również *warunek wstępny*, nie wpływa `get` na akcesor. Atrybutu `DisallowNull` należy używać, gdy obserwujesz następujące cechy dotyczące:
+W kontekście dopuszczającym wartość null `ReviewComment` `get` metoda dostępu może zwrócić wartość domyślną `null` . Kompilator ostrzega o tym, że musi zostać sprawdzony przed dostępem. Ponadto ostrzega wywołujących, że mimo że może się to zdarzyć `null` , obiekty wywołujące nie powinny jawnie ustawiać `null` . `DisallowNull`Atrybut określa również *warunek wstępny*, nie ma wpływu na `get` metodę dostępu. Ten atrybut jest używany `DisallowNull` podczas przestrzegania następujących cech:
 
-1. Zmienna może `null` znajdować się w podstawowych scenariuszach, często podczas pierwszego wystąpienia.
-1. Zmienna nie powinna być jawnie ustawiona na `null`.
+1. Zmienna może być `null` w scenariuszach podstawowych, często podczas pierwszego wystąpienia.
+1. Zmienna nie powinna być jawnie ustawiona na wartość `null` .
 
-Te sytuacje są powszechne w kodzie, który pierwotnie *null oblivious*. Może się okazać, że właściwości obiektu są ustawione w dwóch różnych operacji inicjowania. Może się okazać, że niektóre właściwości są ustawiane tylko po zakończeniu niektórych prac asynchronicznych.
+Te sytuacje często występują w kodzie, który pierwotnie miał *wartość null Oblivious*. Może być to, że właściwości obiektu są ustawiane w dwóch odrębnych operacjach inicjalizacji. Niektóre właściwości mogą być ustawione tylko po zakończeniu pewnej asynchronicznej pracy.
 
-`AllowNull` Atrybuty `DisallowNull` i umożliwiają określenie, że warunki wstępne dla zmiennych mogą nie odpowiadać adnotacjami nullable dla tych zmiennych. Zapewniają one więcej szczegółów na temat cech interfejsu API. Te dodatkowe informacje pomagają wywołującym poprawnie używać interfejsu API. Pamiętaj, że określono warunki wstępne przy użyciu następujących atrybutów:
+`AllowNull`Atrybuty i `DisallowNull` umożliwiają określenie, że warunki wstępne dla zmiennych mogą nie pasować do adnotacji dopuszczających wartości null w tych zmiennych. Zapewniają one więcej szczegółowych informacji o cechach interfejsu API. Te dodatkowe informacje ułatwiają wywoływanie interfejsu API. Należy pamiętać o określeniu warunków wstępnych przy użyciu następujących atrybutów:
 
-- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Argument wejściowy nienastępny do wartości null może mieć wartość null.
-- [NieuprawnionyNull:](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute)Nullable argument wejściowy nigdy nie powinien być null.
+- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Argument wejściowy niedopuszczający wartości null może mieć wartość null.
+- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): Argument wejściowy dopuszczający wartość null nigdy nie powinien mieć wartości null.
 
-## <a name="specify-post-conditions-maybenull-and-notnull"></a>Określ warunki `MaybeNull` post: i`NotNull`
+## <a name="specify-post-conditions-maybenull-and-notnull"></a>Określ warunki końcowe: `MaybeNull` i `NotNull`
 
-Załóżmy, że masz metodę z następującym podpisem:
+Załóżmy, że masz metodę o następującej sygnaturze:
 
 ```csharp
 public Customer FindCustomer(string lastName, string firstName)
 ```
 
-Prawdopodobnie napisałeś taką metodę, aby `null` powrócić, gdy poszukiwana nazwa nie została znaleziona. Wyraźnie `null` wskazuje, że rekord nie został znaleziony. W tym przykładzie prawdopodobnie zmienisz typ `Customer` `Customer?`zwracany z na . Deklarowanie wartości zwracanej jako typu odwołania powodującego wartość null określa intencję tego interfejsu API.
+Prawdopodobnie Zapisano metodę podobną do tej, aby zwracała się `null` , gdy nie znaleziono nazwy. `null`Jasno wskazuje, że rekord nie został znaleziony. W tym przykładzie można zmienić typ zwracany z `Customer` na `Customer?` . Deklarowanie wartości zwracanej jako typ referencyjny dopuszczający wartość null Określa zamiar tego interfejsu API jasno.
 
-Z przyczyn objętych [definicjami rodzajowymi i niemożnością użycia](../../nullable-migration-strategies.md#generic-definitions-and-nullability) ta technika nie działa z metodami ogólnymi. Może być metoda rodzajowa, która następuje podobny wzorzec:
+Z przyczyn objętych [definicjami ogólnymi i wartością null](../../nullable-migration-strategies.md#generic-definitions-and-nullability) ta technika nie działa z metodami ogólnymi. Może istnieć Metoda ogólna, która następuje po podobnym wzorcu:
 
 ```csharp
-public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
+public T Find<T>(IEnumerable<T> sequence, Func<T, bool> predicate)
 ```
 
-Nie można określić, że `T?`zwracana jest wartość . Metoda zwraca, `null` gdy nie znaleziono poszukiwanego elementu. Ponieważ nie można zadeklarować typu zwracanego, `T?` należy dodać `MaybeNull` adnotację do zwracania metody:
+Nie można określić, że wartość zwracana to `T?` . Metoda zwraca `null` , gdy nie znaleziono szukanego elementu. Ponieważ nie można zadeklarować `T?` zwracanego typu, należy dodać `MaybeNull` adnotację do zwracanej metody:
 
 ```csharp
 [return: MaybeNull]
-public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
+public T Find<T>(IEnumerable<T> sequence, Func<T, bool> predicate)
 ```
 
-Powyższy kod informuje wywołujących, że umowa implikuje typ nienależyte do null, ale wartość *zwracana może* być rzeczywiście null.  Użyj `MaybeNull` atrybutu, gdy interfejs API powinien być typem nienastępnym do wartości null, `null` zazwyczaj parametrem typu ogólnego, ale mogą występować wystąpienia, w których zostaną zwrócone.
+Poprzedni kod informuje wywołujących, że kontrakt implikuje typ niedopuszczający wartości null, ale zwracana wartość *może* być równa null.  Użyj `MaybeNull` atrybutu, gdy interfejs API powinien być typu niedopuszczający wartości null, zazwyczaj parametru typu ogólnego, ale mogą występować wystąpienia, w których `null` zostałyby zwrócone.
 
-Można również określić, że `out` wartość `ref` zwracana lub argument lub nie jest null, nawet jeśli typ jest typem odwołania z dopuszczalną wartością null. Należy wziąć pod uwagę metodę, która zapewnia tablicy jest wystarczająco duży, aby pomieścić wiele elementów. Jeśli argument wejściowy nie ma pojemności, procedura będzie przydzielić nową tablicę i skopiować wszystkie istniejące elementy do niego. Jeśli argument input `null`jest , procedura będzie przydzielić nowy magazyn. Jeśli istnieje wystarczająca pojemność, procedura nie robi nic:
+Można również określić, że wartość zwracana lub `out` argument or nie mają wartości null, mimo że `ref` Typ jest typem referencyjnym dopuszczającym wartość null. Rozważmy metodę, która zapewnia, że tablica jest wystarczająco duża, aby pomieścić liczbę elementów. Jeśli argument wejściowy nie ma pojemności, procedura przydzieli nową tablicę i skopiuje do niej wszystkie istniejące elementy. Jeśli argumentem wejściowym jest `null` , procedura przydzieli nowy magazyn. W przypadku wystarczającej pojemności procedura nie wykonuje żadnych czynności:
 
 ```csharp
 public void EnsureCapacity<T>(ref T[] storage, int size)
@@ -159,28 +159,28 @@ EnsureCapacity<string>(ref messages, 10);
 EnsureCapacity<string>(messages, 50);
 ```
 
-Po włączeniu typów odwołań null, chcesz upewnić się, że poprzedni kod kompiluje się bez ostrzeżeń. Gdy metoda zwraca, `storage` argument jest gwarantowane nie null. Jednak jest dopuszczalne, `EnsureCapacity` aby wywołać z odwołaniem null. Można wprowadzić `storage` typ odwołania z dopuszczalną `NotNull` wartością null i dodać warunek post do deklaracji parametrów:
+Po włączeniu typów odwołań o wartości null, należy upewnić się, że poprzedni kod kompiluje bez ostrzeżeń. Gdy metoda zwraca, `storage` argument ma gwarantowaną wartość nie równą null. Jednak jest to możliwe do wywołania `EnsureCapacity` z odwołaniem o wartości null. Można wprowadzić `storage` typ referencyjny dopuszczający wartość null i dodać `NotNull` warunek post do deklaracji parametru:
 
 ```csharp
-public void EnsureCapacity<T>([NotNull]ref T[]? storage, int size)
+public void EnsureCapacity<T>([NotNull] ref T[]? storage, int size)
 ```
 
-Powyższy kod wyraźnie wyraża istniejącą umowę: wywołujący mogą `null` przekazać zmienną z wartością, ale wartość zwracana jest gwarantowana, aby nigdy nie była null. Atrybut `NotNull` jest najbardziej przydatne `ref` `out` dla `null` i argumenty, gdzie mogą być przekazywane jako argument, ale ten argument jest gwarantowane nie jest null, gdy zwraca metodę.
+Poprzedni kod wyraża istniejący kontrakt jasno: obiekty wywołujące mogą przekazać zmienną o `null` wartości, ale wartość zwracana jest gwarantowana, aby nigdy nie była równa null. Ten `NotNull` atrybut jest najbardziej przydatny `ref` dla `out` argumentów i `null` , gdzie mogą być przekazane jako argument, ale ten argument jest gwarantowany, że nie ma wartości null, gdy metoda zwraca.
 
-Bezwarunkowe warunki postwarunkowe można określić przy użyciu następujących atrybutów:
+Należy określić warunki końcowe bezwarunkowe, korzystając z następujących atrybutów:
 
-- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): Wartość zwracana bez wartości null może być wartość null.
-- [NotNull:](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute)Nullable wartość zwracana nigdy nie będzie null.
+- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): wartość zwracana niedopuszczający wartości null może być równa null.
+- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): wartość zwracana do wartości null nigdy nie będzie równa null.
 
-## <a name="specify-conditional-post-conditions-notnullwhen-maybenullwhen-and-notnullifnotnull"></a>Określ warunkowe warunki `NotNullWhen` `MaybeNullWhen`post:, , i`NotNullIfNotNull`
+## <a name="specify-conditional-post-conditions-notnullwhen-maybenullwhen-and-notnullifnotnull"></a>Określ warunkowe warunki końcowe: `NotNullWhen` , `MaybeNullWhen` i `NotNullIfNotNull`
 
-Prawdopodobnie znasz `string` metodę <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>. Ta metoda `true` zwraca, gdy argument ma wartość null lub pusty ciąg. Jest to forma sprawdzania wartości null: osoby dzwoniące nie muszą sprawdzać wartości `false`null, jeśli metoda zwraca . Aby metoda taka jak ta nullable świadomość, należy ustawić argument do typu `NotNullWhen` odwołania nullable i dodać atrybut:
+Najkorzystniej znasz `string` metodę <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType> . Ta metoda zwraca `true` , gdy argument ma wartość null lub jest pustym ciągiem. Jest to forma sprawdzania wartości null: obiekty wywołujące nie muszą mieć wartości null — Sprawdź argument, jeśli metoda zwraca wartość `false` . Aby określić metodę, taką jak ta, która dopuszcza wartość null, należy ustawić argument na typ referencyjny dopuszczający wartość null i dodać `NotNullWhen` atrybut:
 
 ```csharp
-bool IsNullOrEmpty([NotNullWhen(false)]string? value);
+bool IsNullOrEmpty([NotNullWhen(false)] string? value);
 ```
 
-Informuje kompilator, że każdy kod, `false` w którym jest wartość zwracana, nie musi być sprawdzany z wartością null. Dodanie atrybutu informuje analizę statyczną kompilatora, `IsNullOrEmpty` która wykonuje niezbędne sprawdzanie wartości `false`null: po `null`powrocie argument input nie jest .
+Informuje kompilator, że żaden kod, w którym nie jest wymagana wartość zwracana, `false` nie może mieć wartości null. Dodanie atrybutu informuje analizę statyczną kompilatora, która `IsNullOrEmpty` wykonuje niezbędne sprawdzanie wartości null: gdy zwraca `false` , argument wejściowy nie jest `null` .
 
 ```csharp
 string? userInput = GetUserInput();
@@ -191,104 +191,110 @@ if (!string.IsNullOrEmpty(userInput))
 // null check needed on userInput here.
 ```
 
-Metoda <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType> zostanie oznaczona jako pokazano powyżej dla .NET Core 3.0. Może mieć podobne metody w bazie kodu, które sprawdzają stan obiektów dla wartości null. Kompilator nie rozpoznaje niestandardowych metod sprawdzania wartości null i musisz samodzielnie dodać adnotacje. Po dodaniu atrybutu, analiza statyczna kompilatora wie, kiedy testowana zmienna została sprawdzona wartość null.
+<xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>Metoda zostanie umieszczona w adnotacji, jak pokazano powyżej dla programu .NET Core 3,0. W bazie kodu mogą znajdować się podobne metody, które sprawdzają stan obiektów dla wartości null. Kompilator nie rozpoznaje niestandardowych metod sprawdzania wartości null i należy samodzielnie dodać adnotacje. Po dodaniu atrybutu analiza statyczna kompilatora wie, kiedy sprawdzona zmienna ma wartość null.
 
-Innym zastosowaniem `Try*` dla tych atrybutów jest wzorzec. Warunki powarunkowe `ref` `out` i zmienne są przekazywane za pośrednictwem wartości zwracanej. Należy wziąć pod uwagę tę metodę pokazano wcześniej:
+Innym zastosowaniem dla tych atrybutów jest `Try*` wzorzec. Warunki końcowe dla `ref` i `out` zmienne są przekazywane przez wartość zwracaną. Rozważmy tę metodę pokazaną wcześniej:
 
 ```csharp
 bool TryGetMessage(string key, out string message)
 ```
 
-Poprzednia metoda jest zgodna z typowym idiomem `message` .NET: zwracana wartość wskazuje, czy została ustawiona na znalezioną wartość lub, jeśli nie zostanie znaleziony żaden komunikat, do wartości domyślnej. Jeśli metoda `true`zwraca , `message` wartość nie jest null; w przeciwnym razie `message` metoda ustawia wartość null.
+Poprzednia metoda jest zgodna z typowym środowiskiem .NET idiom: wartość zwracana wskazuje `message` , czy została ustawiona na znalezioną wartość, czy nie zostanie znaleziony komunikat do wartości domyślnej. Jeśli metoda zwraca `true` , wartość `message` nie jest równa null; w przeciwnym razie metoda jest ustawiana `message` na wartość null.
 
-Można przekazać, że idiom przy użyciu atrybutu. `NotNullWhen` Podczas aktualizowania podpisu dla typów `message` odwołań, których można unieważnić, należy wykonać `string?` i dodać atrybut:
+Można komunikować się z idiom przy użyciu `NotNullWhen` atrybutu. W przypadku aktualizowania sygnatury dla typów referencyjnych dopuszczających wartość null wprowadź `message` `string?` i Dodaj atrybut:
 
 ```csharp
 bool TryGetMessage(string key, [NotNullWhen(true)] out string? message)
 ```
 
-W poprzednim przykładzie wartość `message` jest znana jako nie `TryGetMessage` `true`null podczas zwraca . Podobne metody w bazie kodu należy dodawać adnotacje w `null`taki sam sposób: argumenty mogą `true`być i są znane jako nie null, gdy metoda zwraca .
+W poprzednim przykładzie wartość `message` jest znana od null, gdy `TryGetMessage` zwraca `true` . Należy dodać adnotacje do podobnych metod w bazie kodu w taki sam sposób: argumenty mogą być `null` i nie mieć wartości null, gdy metoda zwraca `true` .
 
-Istnieje jeden atrybut końcowy, który może być również potrzebny. Czasami stan zerowy wartości zwracanej zależy od stanu zerowego jednego lub więcej argumentów wejściowych. Metody te zwracają wartość nie null, gdy pewne `null`argumenty wejściowe nie są . Aby poprawnie dodawać adnotacje `NotNullIfNotNull` do tych metod, należy użyć atrybutu. Należy wziąć pod uwagę następującą metodę:
+Istnieje również jeden atrybut końcowy. Czasami stan null wartości zwracanej zależy od stanu zerowego co najmniej jednego argumentu wejściowego. Metody te zwracają wartość różną od null, gdy nie ma określonych argumentów wejściowych `null` . Aby poprawnie dodać adnotację do tych metod, należy użyć `NotNullIfNotNull` atrybutu. Weź pod uwagę następującą metodę:
 
 ```csharp
 string GetTopLevelDomainFromFullUrl(string url);
 ```
 
-Jeśli `url` argument nie jest null, dane `null`wyjściowe nie jest . Po włączeniu odwołań nullable, że podpis działa poprawnie, pod warunkiem, że interfejs API nigdy nie akceptuje null danych wejściowych. Jednak jeśli dane wejściowe może być null, a następnie zwraca wartość może być również null. W związku z tym można zmienić podpis na następujący kod:
+Jeśli `url` argument nie ma wartości null, dane wyjściowe nie są `null` . Po włączeniu odwołań do wartości null ten podpis działa prawidłowo, pod warunkiem, że interfejs API nigdy nie akceptuje danych wejściowych o wartości null. Jeśli jednak dane wejściowe mogą mieć wartość null, wówczas wartość zwracana może być również wartością null. W związku z tym można zmienić sygnaturę na następujący kod:
 
 ```csharp
 string? GetTopLevelDomainFromFullUrl(string? url);
 ```
 
-To również działa, ale często zmusza `null` dzwoniących do wdrożenia dodatkowych kontroli. Umowa jest taka, że `null` wartość zwracana `url` będzie `null`tylko wtedy, gdy argument wejściowy jest . Aby wyrazić tę umowę, należy opisać tę metodę, jak pokazano w poniższym kodzie:
+To również działa, ale często zmusza wywołujących do wdrożenia dodatkowych `null` kontroli. Kontrakt jest, że wartość zwracana będzie tylko wtedy, `null` gdy argument wejściowy `url` to `null` . Aby można było wyrazić ten kontrakt, należy dodać adnotację do tej metody, jak pokazano w poniższym kodzie:
 
 ```csharp
 [return: NotNullIfNotNull("url")]
 string? GetTopLevelDomainFromFullUrl(string? url);
 ```
 
-Wartość zwracana i argument zostały oś `?` tym adnotacje ze `null`wskazaniem, że albo może być . Atrybut dalej wyjaśnia, że wartość zwracana nie będzie `url` null, `null`gdy argument nie jest .
+Zwracana wartość i argument mają adnotację ze `?` wskazaniem, że może to być `null` . Ten atrybut dokładniej objaśnia, że wartość zwracana nie będzie zerowa, gdy `url` argument nie jest `null` .
 
-Warunkowe warunki postconditions przy użyciu tych atrybutów:
+Należy określić warunkowe warunki końcowe przy użyciu następujących atrybutów:
 
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Argument wejściowy nienastępny do wartości `bool` null może mieć wartość null, gdy metoda zwraca określoną wartość.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Argument wejściowy do null nie będzie `bool` null, gdy metoda zwraca określoną wartość.
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): Zwracana wartość nie jest zerowa, jeśli argument wejściowy dla określonego parametru nie jest null.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Argument wejściowy, który nie dopuszcza wartości null, może mieć wartość null, gdy metoda zwraca określoną `bool` wartość.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Argument wejściowy do wartości null nie będzie miał wartości null, gdy metoda zwróci określoną `bool` wartość.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): wartość zwracana nie ma wartości null, jeśli argument wejściowy dla określonego parametru nie ma wartości null.
 
-## <a name="verify-unreachable-code"></a>Weryfikowanie nieosiągalnego kodu
+## <a name="verify-unreachable-code"></a>Weryfikuj nieosiągalny kod
 
-Niektóre metody, zazwyczaj pomocników wyjątków lub innych metod narzędzia, zawsze zakończyć, zgłaszając wyjątek. Lub pomocnika może zgłosić wyjątek na podstawie wartości argumentu logicznego.
+Niektóre metody, zazwyczaj pomocniki wyjątków lub inne metody narzędzi, zawsze opuszczają się, zwracając wyjątek. Lub pomocnik może zgłosić wyjątek na podstawie wartości argumentu logicznego.
 
-W pierwszym przypadku można dodać `DoesNotReturn` atrybut do deklaracji metody. Kompilator pomaga na trzy sposoby. Najpierw kompilator generuje ostrzeżenie, jeśli istnieje ścieżka, w której metoda może zakończyć działanie bez zgłaszania wyjątku. Po drugie kompilator oznacza dowolny kod po wywołaniu tej metody `catch` jako *nieosiągalny*, dopóki nie zostanie napotkana odpowiednia klauzula. Po trzecie, nieosiągalny kod nie wpłynie na żadne stany null. Należy wziąć pod uwagę tę metodę:
+W pierwszym przypadku można dodać `DoesNotReturn` atrybut do deklaracji metody. Kompilator pozwala na trzy sposoby. Najpierw kompilator generuje ostrzeżenie, jeśli istnieje ścieżka, w której metoda może wyjść bez zgłaszania wyjątku. Po drugie, kompilator oznacza dowolny kod po wywołaniu tej metody jako *nieosiągalny*do czasu `catch` napotkania odpowiedniej klauzuli. Trzeci kod nieosiągalny nie wpłynie na żadne Stany null. Rozważmy tę metodę:
 
 ```csharp
 [DoesNotReturn]
 private void FailFast()
 {
-   throw new InvalidOperationException();
+    throw new InvalidOperationException();
 }
 
 public void SetState(object containedField)
 {
-   if (!isInitialized)
-      FailFast();
+    if (!isInitialized)
+    {
+        FailFast();
+    }
 
-   // unreachable code:
-   this.field = containedField;
+    // unreachable code:
+    _field = containedField;
 }
 ```
 
-W drugim przypadku należy `DoesNotReturnIf` dodać atrybut do parametru logicznego metody. Poprzedni przykład można zmodyfikować w następujący sposób:
+W drugim przypadku należy dodać `DoesNotReturnIf` atrybut do parametru Boolean metody. Poprzedni przykład można zmodyfikować w następujący sposób:
 
 ```csharp
-private void FailFast([DoesNotReturnIf(false)]bool isValid)
+private void FailFast([DoesNotReturnIf(false)] bool isValid)
 {
-   if (!isValid)
-       throw new InvalidOperationException();
+    if (!isValid)
+    {
+        throw new InvalidOperationException();
+    }
 }
 
 public void SetState(object containedField)
 {
-   FailFast(isInitialized);
+    FailFast(isInitialized);
 
-   // unreachable code when "isInitialized" is false:
-   this.field = containedField;
+    // unreachable code when "isInitialized" is false:
+    _field = containedField;
 }
 ```
 
 ## <a name="summary"></a>Podsumowanie
 
-Dodawanie typów odwołań do wartości nullable zapewnia początkowe słownictwo opisujące `null`oczekiwania interfejsów API dla zmiennych, które mogą być . Dodatkowe atrybuty zapewniają bogatsze słownictwo do opisania stanu null zmiennych jako warunków wstępnych i postconditions. Te atrybuty jaśniej opisują twoje oczekiwania i zapewniają lepsze środowisko dla deweloperów korzystających z interfejsów API.
+[!INCLUDE [C# version alert](../../includes/csharp-version-alert.md)]
 
-Podczas aktualizowania bibliotek dla kontekstu możliwego do podenia, dodaj te atrybuty, aby poprowadzić użytkowników interfejsów API do prawidłowego użycia. Te atrybuty pomagają w pełni opisać zerowy stan argumentów wejściowych i zwracać wartości:
+Dodanie typów referencyjnych dopuszczających wartość null zapewnia wstępne słownictwo do opisywania oczekiwań interfejsów API dla zmiennych, które mogą być `null` . Dodatkowe atrybuty zapewniają bogatszy słownictwo do opisania stanu wartości null zmiennych jako warunków wstępnych i warunki końcowe. Te atrybuty bardziej wyraźnie opisują oczekiwania i zapewniają lepszy komfort używania interfejsów API przez deweloperów.
 
-- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Argument wejściowy nienastępny do wartości null może mieć wartość null.
-- [NieuprawnionyNull:](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute)Nullable argument wejściowy nigdy nie powinien być null.
-- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): Wartość zwracana bez wartości null może być wartość null.
-- [NotNull:](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute)Nullable wartość zwracana nigdy nie będzie null.
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Argument wejściowy nienastępny do wartości `bool` null może mieć wartość null, gdy metoda zwraca określoną wartość.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Argument wejściowy do null nie będzie `bool` null, gdy metoda zwraca określoną wartość.
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): Zwracana wartość nie jest zerowa, jeśli argument wejściowy dla określonego parametru nie jest null.
-- [DoesNotReturn](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute): Metoda nigdy nie zwraca. Innymi słowy zawsze zgłasza wyjątek.
-- [DoesNotReturnIf:](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute)Ta metoda nigdy nie `bool` zwraca, jeśli skojarzony parametr ma określoną wartość.
+Podczas aktualizowania bibliotek dla kontekstu dopuszczającego wartość null należy dodać te atrybuty, aby ułatwić użytkownikom interfejsów API poprawne użycie. Te atrybuty pomagają w pełni opisać stan null argumentów wejściowych i zwracanych wartości:
+
+- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Argument wejściowy niedopuszczający wartości null może mieć wartość null.
+- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): Argument wejściowy dopuszczający wartość null nigdy nie powinien mieć wartości null.
+- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): wartość zwracana niedopuszczający wartości null może być równa null.
+- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): wartość zwracana do wartości null nigdy nie będzie równa null.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Argument wejściowy, który nie dopuszcza wartości null, może mieć wartość null, gdy metoda zwraca określoną `bool` wartość.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Argument wejściowy do wartości null nie będzie miał wartości null, gdy metoda zwróci określoną `bool` wartość.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): wartość zwracana nie ma wartości null, jeśli argument wejściowy dla określonego parametru nie ma wartości null.
+- [DoesNotReturn](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute): Metoda nigdy nie zwraca. Innymi słowy, zawsze zgłasza wyjątek.
+- [DoesNotReturnIf](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute): Ta metoda nigdy nie zwraca, czy skojarzony `bool` parametr ma określoną wartość.

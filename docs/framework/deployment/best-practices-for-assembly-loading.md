@@ -13,12 +13,12 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-ms.openlocfilehash: 8ee5243258ea1b853b4690b79ec032c46d1b3777
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 03d2cacea4d2c0e7452240df30350d93ce79282d
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803509"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656148"
 ---
 # <a name="best-practices-for-assembly-loading"></a>Najlepsze praktyki dotyczące ładowania zestawu
 W tym artykule omówiono sposoby unikania problemów z tożsamością typu, które mogą prowadzić do <xref:System.InvalidCastException> <xref:System.MissingMethodException> innych błędów. W tym artykule omówiono następujące zalecenia:  
@@ -63,13 +63,13 @@ W tym artykule omówiono sposoby unikania problemów z tożsamością typu, któ
   
  Ładowanie zestawów przy użyciu <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metody lub jednej z innych metod, które ładują według ścieżki, ma następujące wady:  
   
-- Jeśli zestaw o tej samej tożsamości jest już załadowany, <xref:System.Reflection.Assembly.LoadFrom%2A> zwraca załadowany zestaw, nawet jeśli określono inną ścieżkę.  
+- Jeśli zestaw o tej samej tożsamości jest już załadowany w kontekście ładowania z, <xref:System.Reflection.Assembly.LoadFrom%2A> zwraca załadowany zestaw, nawet jeśli określono inną ścieżkę.  
   
 - Jeśli zestaw jest ładowany z <xref:System.Reflection.Assembly.LoadFrom%2A> , a później zestaw w domyślnym kontekście ładowania próbuje załadować ten sam zestaw według nazwy wyświetlanej, próba załadowania nie powiedzie się. Taka sytuacja może wystąpić w przypadku deserializacji zestawu.  
   
 - Jeśli zestaw jest ładowany przy użyciu <xref:System.Reflection.Assembly.LoadFrom%2A> , a ścieżka sondowania zawiera zestaw o tej samej tożsamości, ale w innej lokalizacji, <xref:System.InvalidCastException> <xref:System.MissingMethodException> lub może wystąpić inne nieoczekiwane zachowanie.  
   
-- <xref:System.Reflection.Assembly.LoadFrom%2A>wymagania <xref:System.Security.Permissions.FileIOPermissionAccess.Read?displayProperty=nameWithType> i <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery?displayProperty=nameWithType> , lub <xref:System.Net.WebPermission> , w określonej ścieżce.  
+- <xref:System.Reflection.Assembly.LoadFrom%2A> wymagania <xref:System.Security.Permissions.FileIOPermissionAccess.Read?displayProperty=nameWithType> i <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery?displayProperty=nameWithType> , lub <xref:System.Net.WebPermission> , w określonej ścieżce.  
   
 - Jeśli istnieje obraz natywny dla zestawu, nie jest on używany.  
   

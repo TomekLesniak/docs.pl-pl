@@ -4,19 +4,19 @@ description: Funkcje lokalne w języku C# to metody prywatne, które są zagnie�
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 854ec7ab4a4cc637c0a5ad03e0344d2f1f7679d2
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: c1c6c6becb3894b05cb9ed89f7f33dcf249b20eb
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063305"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656188"
 ---
 # <a name="local-functions-c-programming-guide"></a>Funkcje lokalne (Przewodnik programowania w języku C#)
 
 Począwszy od języka C# 7,0, C# obsługuje *funkcje lokalne*. Funkcje lokalne są prywatnymi metodami typu, które są zagnieżdżone w innym elemencie członkowskim. Mogą być wywoływane tylko z ich składowych. Funkcje lokalne można zadeklarować w i wywołać z:
 
 - Metody, zwłaszcza metody iteratorów i metody asynchroniczne
-- Konstruktorów
+- Konstruktory
 - Metody dostępu do właściwości
 - Metody dostępu zdarzeń
 - Metody anonimowe
@@ -46,7 +46,7 @@ Należy zauważyć, że wszystkie zmienne lokalne, które są zdefiniowane w sk�
 W przeciwieństwie do definicji metody lokalnej definicja funkcji nie może zawierać modyfikatora dostępu do składowej. Ponieważ wszystkie funkcje lokalne są prywatne, łącznie z modyfikatorem dostępu, takim jak `private` słowo kluczowe, generuje błąd kompilatora CS0106 "modyfikator" Private "jest nieprawidłowy dla tego elementu".
 
 > [!NOTE]
-> W systemach wcześniejszych niż C# 8,0 funkcja lokalna nie może zawierać `static` modyfikatora. Włączenie `static` słowa kluczowego generuje błąd kompilatora CS0106, "modyfikator" static "jest nieprawidłowy dla tego elementu".
+> W systemach wcześniejszych niż C# 8,0 funkcja lokalna nie może zawierać `static` modyfikatora. Włączenie `static` słowa kluczowego generuje błąd kompilatora CS0106, "modyfikator" static "jest nieprawidłowy dla tego elementu.", lub błąd kompilatora informujący, że należy użyć języka C# 8,0 lub nowszego.
 
 Ponadto atrybuty nie mogą być stosowane do funkcji lokalnej ani do jej parametrów i parametrów typu.
 
@@ -68,7 +68,7 @@ Zamiast tego można zgłosić wyjątek podczas sprawdzania poprawności i przed 
 
 Funkcji lokalnych można używać w podobny sposób, aby obsługiwać wyjątki poza operacją asynchroniczną. Zwykle wyjątki zgłoszone w metodzie asynchronicznej wymagają sprawdzenia wyjątków wewnętrznych <xref:System.AggregateException> . Funkcje lokalne umożliwiają szybkie i niepowodzenie wykonywania kodu oraz umożliwiają synchroniczną i zaobserwowany wyjątek.
 
-W poniższym przykładzie zastosowano metodę asynchroniczną o nazwie `GetMultipleAsync` do pauzy przez określoną liczbę sekund i zwracają wartość, która jest losowo wielokrotnością tej liczby sekund. Maksymalne opóźnienie wynosi 5 sekund; <xref:System.ArgumentOutOfRangeException>wyniki, jeśli wartość jest większa niż 5. Jak pokazano na poniższym przykładzie, wyjątek, który jest generowany, gdy wartość 6 jest przekazana do `GetMultipleAsync` metody jest opakowany w <xref:System.AggregateException> po `GetMultipleAsync` rozpoczęciu wykonywania metody.
+W poniższym przykładzie zastosowano metodę asynchroniczną o nazwie `GetMultipleAsync` do pauzy przez określoną liczbę sekund i zwracają wartość, która jest losowo wielokrotnością tej liczby sekund. Maksymalne opóźnienie wynosi 5 sekund; <xref:System.ArgumentOutOfRangeException> wyniki, jeśli wartość jest większa niż 5. Jak pokazano na poniższym przykładzie, wyjątek, który jest generowany, gdy wartość 6 jest przekazana do `GetMultipleAsync` metody jest opakowany w <xref:System.AggregateException> po `GetMultipleAsync` rozpoczęciu wykonywania metody.
 
 [!code-csharp[LocalFunctionAsync](~/samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-async1.cs)]
 
@@ -94,7 +94,7 @@ Funkcje lokalne mają różne reguły dla określonego przypisania niż wyrażen
 
 Określone reguły przypisywania mają wpływ na wszystkie zmienne, które są przechwytywane przez funkcję lokalną lub wyrażenie lambda. Zarówno funkcja lokalna, jak i reguły wyrażenia lambda wymagają, aby wszystkie przechwycone zmienne były ostatecznie przypisane w punkcie, gdy funkcja lokalna lub wyrażenie lambda są konwertowane na delegata. Różnica polega na tym, że wyrażenia lambda są konwertowane na delegatów po ich zadeklarowaniu. Funkcja lokalna jest konwertowana na delegatów tylko wtedy, gdy jest używana jako delegat. Jeśli zadeklarujesz funkcję lokalną i odwołujesz się do niej tylko przez wywołanie jej jako metody, nie zostanie ona przekonwertowana na delegata. Ta reguła umożliwia zadeklarować funkcję lokalną w dowolnej wygodnej lokalizacji w jej zasięgu. Często deklaruje funkcje lokalne na końcu metody nadrzędnej po dowolnych instrukcjach Return.
 
-Po trzecie kompilator może wykonać analizę statyczną, która umożliwia lokalne funkcje, aby ostatecznie przypisywać przechwycone zmienne w zakresie otaczającym. Rozważmy następujący przykład:
+Po trzecie kompilator może wykonać analizę statyczną, która umożliwia lokalne funkcje, aby ostatecznie przypisywać przechwycone zmienne w zakresie otaczającym. Rozważ taki przykład:
 
 ```csharp
 int M()

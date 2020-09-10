@@ -1,41 +1,51 @@
 ---
 title: Windows Forms istotne zmiany
-description: Wyświetla listę istotnych zmian w Windows Forms dla platformy .NET Core.
-ms.date: 01/08/2020
-ms.openlocfilehash: beb9a42e4b5007f03480cd74f57bbfbbfc3f48b1
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+description: Wyświetla listę istotnych zmian w Windows Forms dla platform .NET Core i .NET 5.
+ms.date: 09/08/2020
+ms.openlocfilehash: c3d2d23601d6a2d9d44761c4371fe34d3d5ed1f3
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556255"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656348"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Istotne zmiany w Windows Forms
 
-Obsługa Windows Forms została dodana do programu .NET Core w wersji 3,0. W tym artykule wymieniono istotne zmiany Windows Forms przez wersję programu .NET Core, w której zostały wprowadzone. W przypadku uaktualniania aplikacji Windows Forms z .NET Framework lub poprzedniej wersji platformy .NET Core (3,0 lub nowszej) ten artykuł dotyczy Ciebie.
+Obsługa Windows Forms została dodana do programu .NET Core w wersji 3,0. W tym artykule wymieniono istotne zmiany Windows Forms przez wersję programu .NET, w której zostały wprowadzone. W przypadku uaktualniania aplikacji Windows Forms z .NET Framework lub z poprzedniej wersji platformy .NET Core (3,0 lub nowszej) ten artykuł dotyczy Ciebie.
 
 Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
-| [Usunięto kontrolki paska stanu](#removed-status-bar-controls) | 5.0 |
-| [Metody WinForms teraz generują ArgumentException](#winforms-methods-now-throw-argumentexception) | 5.0 |
-| [Metody WinForms teraz generują ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5.0 |
-| [Właściwości WinForms teraz generują wyjątku ArgumentOutOfRangeException](#winforms-properties-now-throw-argumentoutofrangeexception) | 5.0 |
+| [Interfejsy API związane z formantem DataGridView teraz zgłaszają InvalidOperationException](#datagridview-related-apis-now-throw-invalidoperationexception) | 5,0 |
+| [WinForms i aplikacje WPF używają Microsoft. NET. Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5,0 |
+| [Usunięto kontrolki paska stanu](#removed-status-bar-controls) | 5,0 |
+| [Metody WinForms teraz generują ArgumentException](#winforms-methods-now-throw-argumentexception) | 5,0 |
+| [Metody WinForms teraz generują ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5,0 |
+| [Właściwości WinForms teraz generują wyjątku ArgumentOutOfRangeException](#winforms-properties-now-throw-argumentoutofrangeexception) | 5,0 |
 | [Usunięte kontrolki](#removed-controls) | 3,1 |
 | [Zdarzenie CellFormatting nie zostało zgłoszone, jeśli jest wyświetlana etykietka narzędzia](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3,1 |
-| [Formant. DefaultFont został zmieniony na Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
-| [Modernizacja FolderBrowserDialog](#modernization-of-the-folderbrowserdialog) | 3.0 |
-| [SerializableAttribute usunięte z niektórych typów Windows Forms](#serializableattribute-removed-from-some-windows-forms-types) | 3.0 |
-| [Nieobsługiwany przełącznik zgodności AllowUpdateChildControlIndexForTabControls](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported) | 3.0 |
-| [Przełącznik zgodności DomainUpDown. UseLegacyScrolling nie jest obsługiwany](#domainupdownuselegacyscrolling-compatibility-switch-not-supported) | 3.0 |
-| [Nieobsługiwany przełącznik zgodności DoNotLoadLatestRichEditControl](#donotloadlatestricheditcontrol-compatibility-switch-not-supported) | 3.0 |
-| [Nieobsługiwany przełącznik zgodności DoNotSupportSelectAllShortcutInMultilineTextBox](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported) | 3.0 |
-| [Nieobsługiwany przełącznik zgodności DontSupportReentrantFilterMessage](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported) | 3.0 |
-| [Nieobsługiwany przełącznik zgodności EnableVisualStyleValidation](#enablevisualstylevalidation-compatibility-switch-not-supported) | 3.0 |
-| [Nieobsługiwany przełącznik zgodności UseLegacyContextMenuStripSourceControlValue](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3.0 |
-| [Nieobsługiwany przełącznik zgodności UseLegacyImages](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
+| [Formant. DefaultFont został zmieniony na Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt) | 3,0 |
+| [Modernizacja FolderBrowserDialog](#modernization-of-the-folderbrowserdialog) | 3,0 |
+| [SerializableAttribute usunięte z niektórych typów Windows Forms](#serializableattribute-removed-from-some-windows-forms-types) | 3,0 |
+| [Nieobsługiwany przełącznik zgodności AllowUpdateChildControlIndexForTabControls](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported) | 3,0 |
+| [Przełącznik zgodności DomainUpDown. UseLegacyScrolling nie jest obsługiwany](#domainupdownuselegacyscrolling-compatibility-switch-not-supported) | 3,0 |
+| [Nieobsługiwany przełącznik zgodności DoNotLoadLatestRichEditControl](#donotloadlatestricheditcontrol-compatibility-switch-not-supported) | 3,0 |
+| [Nieobsługiwany przełącznik zgodności DoNotSupportSelectAllShortcutInMultilineTextBox](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported) | 3,0 |
+| [Nieobsługiwany przełącznik zgodności DontSupportReentrantFilterMessage](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported) | 3,0 |
+| [Nieobsługiwany przełącznik zgodności EnableVisualStyleValidation](#enablevisualstylevalidation-compatibility-switch-not-supported) | 3,0 |
+| [Nieobsługiwany przełącznik zgodności UseLegacyContextMenuStripSourceControlValue](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3,0 |
+| [Nieobsługiwany przełącznik zgodności UseLegacyImages](#uselegacyimages-compatibility-switch-not-supported) | 3,0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [null-owner-causes-invalidoperationexception](../../../includes/core-changes/windowsforms/5.0/null-owner-causes-invalidoperationexception.md)]
+
+***
+
+[!INCLUDE [sdk-and-target-framework-change](../../../includes/core-changes/windowsforms/5.0/sdk-and-target-framework-change.md)]
+
+***
 
 [!INCLUDE [winforms-deprecated-controls](../../../includes/core-changes/windowsforms/5.0/winforms-deprecated-controls.md)]
 
@@ -109,6 +119,6 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 ***
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Port aplikacji Windows Forms do programu .NET Core](../porting/winforms.md)
