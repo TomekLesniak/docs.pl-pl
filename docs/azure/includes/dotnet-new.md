@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fd222aee23bf474330c27cb0c477d41cca5e3215
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 1b828dcaf4aca954906164415fa233bf6ebc7481
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89570160"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89644121"
 ---
 | Nazwa | Pakiet | Docs | Element źródłowy |
 | ---- | ------- | ---- | ------ |
@@ -16,8 +16,8 @@ ms.locfileid: "89570160"
 | Cognitive Search  | [11.1.1](https://www.nuget.org/packages/Azure.Search.Documents/11.1.1) NuGet | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Search.Documents-readme/) | [11.1.1](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Search.Documents_11.1.1/sdk/search/Azure.Search.Documents/) GitHub |
 | Core | [1.5.0](https://www.nuget.org/packages/Azure.Core/1.5.0) NuGet | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Core-readme/) | [1.5.0](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Core_1.5.0/sdk/core/Azure.Core/) GitHub |
 | Cosmos | NuGet [4.0.0 — preview3](https://www.nuget.org/packages/Azure.Cosmos/4.0.0-preview3) | [docs](https://docs.microsoft.com/dotnet/api/azure.cosmos?view=azure-dotnet-preview) | GitHub [4.0.0 — preview3](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Cosmos_4.0.0-preview3/sdk/https://github.com/Azure/azure-cosmos-dotnet-v3/tree/releases/4.0.0-preview3/Azure.Cosmos/) |
-| Event Hubs | [5.1.0](https://www.nuget.org/packages/Azure.Messaging.EventHubs/5.1.0) NuGet<br>NuGet [5.2.0 — wersja zapoznawcza. 3](https://www.nuget.org/packages/Azure.Messaging.EventHubs/5.2.0-preview.3) | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Messaging.EventHubs-readme/) | [5.1.0](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Messaging.EventHubs_5.1.0/sdk/eventhub/Azure.Messaging.EventHubs/) GitHub<br>GitHub [5.2.0 — wersja zapoznawcza. 3](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Messaging.EventHubs_5.2.0-preview.3/sdk/eventhub/Azure.Messaging.EventHubs/) |
-| Procesor zdarzeń Event Hubs | [5.1.0](https://www.nuget.org/packages/Azure.Messaging.EventHubs.Processor/5.1.0) NuGet<br>NuGet [5.2.0 — wersja zapoznawcza. 3](https://www.nuget.org/packages/Azure.Messaging.EventHubs.Processor/5.2.0-preview.3) | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Messaging.EventHubs.Processor-readme/) | [5.1.0](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Messaging.EventHubs.Processor_5.1.0/sdk/eventhub/Azure.Messaging.EventHubs.Processor/) GitHub<br>GitHub [5.2.0 — wersja zapoznawcza. 3](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Messaging.EventHubs.Processor_5.2.0-preview.3/sdk/eventhub/Azure.Messaging.EventHubs.Processor/) |
+| Event Hubs | [5.2.0](https://www.nuget.org/packages/Azure.Messaging.EventHubs/5.2.0) NuGet | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Messaging.EventHubs-readme/) | [5.2.0](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Messaging.EventHubs_5.2.0/sdk/eventhub/Azure.Messaging.EventHubs/) GitHub |
+| Procesor zdarzeń Event Hubs | [5.2.0](https://www.nuget.org/packages/Azure.Messaging.EventHubs.Processor/5.2.0) NuGet | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Messaging.EventHubs.Processor-readme/) | [5.2.0](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Messaging.EventHubs.Processor_5.2.0/sdk/eventhub/Azure.Messaging.EventHubs.Processor/) GitHub |
 | Rozpoznawanie formularzy | [3.0.0](https://www.nuget.org/packages/Azure.AI.FormRecognizer/3.0.0) NuGet | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/AI.FormRecognizer-readme/) | [3.0.0](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.FormRecognizer_3.0.0/sdk/formrecognizer/Azure.AI.FormRecognizer/) GitHub |
 | Tożsamość | NuGet [1.2.2](https://www.nuget.org/packages/Azure.Identity/1.2.2) | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Identity-readme/) | GitHub [1.2.2](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Identity_1.2.2/sdk/identity/Azure.Identity/) |
 | Magazyn kluczy — certyfikaty | [4.1.0](https://www.nuget.org/packages/Azure.Security.KeyVault.Certificates/4.1.0) NuGet | [docs](https://docs.microsoft.com/dotnet/api/overview/azure/Security.KeyVault.Certificates-readme/) | [4.1.0](https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.KeyVault.Certificates_4.1.0/sdk/keyvault/Azure.Security.KeyVault.Certificates/) GitHub |
