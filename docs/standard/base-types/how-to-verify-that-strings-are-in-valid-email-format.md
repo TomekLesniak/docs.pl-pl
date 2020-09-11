@@ -19,16 +19,26 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-ms.openlocfilehash: d303c13dead6b4ba29cb7476c2a9b382a9395aff
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 90e79af649727330c2afa1ccb8c64ffe34733f92
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803199"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022951"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Sprawdzanie, czy format poczty e-mail ciągów jest prawidłowy
 
 Poniższy przykład używa wyrażenia regularnego, aby sprawdzić, czy ciąg jest w prawidłowym formacie poczty e-mail.
+
+To wyrażenie regularne jest proste względem tego, czego można używać jako wiadomości e-mail. Użycie wyrażenia regularnego do weryfikacji wiadomości e-mail jest przydatne, aby upewnić się, że struktura poczty e-mail jest poprawna, ale nie jest to podstawienie w celu sprawdzenia, czy wiadomość e-mail rzeczywiście istnieje.
+
+✔️ Użyj małego wyrażenia regularnego, aby sprawdzić poprawność struktury wiadomości e-mail.
+
+✔️ wysłać testową wiadomość e-mail na adres podany przez użytkownika aplikacji.
+
+❌ NIE używaj wyrażenia regularnego jako jedynego sposobu weryfikacji wiadomości e-mail.
+
+Jeśli spróbujesz utworzyć _idealne_ wyrażenie regularne, aby sprawdzić, czy struktura poczty e-mail jest poprawna, wyrażenie staje się bardziej skomplikowane, ponieważ niezwykle trudno debugować lub poprawić. Wyrażenia regularne nie mogą sprawdzić poprawności wiadomości e-mail, nawet jeśli struktura jest nieprawidłowa. Najlepszym sposobem na zweryfikowanie wiadomości e-mail jest wysłanie testowej wiadomości e-mail na adres.
 
 [!INCLUDE [regex](../../../includes/regex.md)]
 
@@ -38,62 +48,41 @@ W przykładzie zdefiniowano `IsValidEmail` metodę, która zwraca wartość, `tr
 
 Aby sprawdzić, czy adres e-mail jest prawidłowy, `IsValidEmail` Metoda wywołuje <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.MatchEvaluator%29?displayProperty=nameWithType> metodę ze `(@)(.+)$` wzorcem wyrażenia regularnego w celu oddzielenia nazwy domeny od adresu e-mail. Trzeci parametr jest <xref:System.Text.RegularExpressions.MatchEvaluator> delegatem, który reprezentuje metodę, która przetwarza i zastępuje dopasowany tekst. Wzorzec wyrażenia regularnego jest interpretowany w następujący sposób.
 
-|Wzorce|Opis|
-|-------------|-----------------|
-|`(@)`|Dopasowuje znak @. Jest to pierwsza grupa przechwytywania.|
-|`(.+)`|Dopasowuje jedno lub więcej wystąpień dowolnego znaku. Jest to druga grupa przechwytywania.|
-|`$`|Zakończ dopasowanie na końcu ciągu.|
+| Wzorce | Opis                                                                         |
+|---------|-------------------------------------------------------------------------------------|
+| `(@)`   | Dopasowuje znak @. Ta część jest pierwszą grupą przechwytywania.                           |
+| `(.+)`  | Dopasowuje jedno lub więcej wystąpień dowolnego znaku. Ta część jest drugą grupą przechwytywania. |
+| `$`     | Zakończ dopasowanie na końcu ciągu.                                             |
 
 Nazwa domeny wraz ze znakiem @ jest przenoszona do `DomainMapper` metody, która używa <xref:System.Globalization.IdnMapping> klasy do translacji znaków Unicode, które są spoza zakresu znaków US-ASCII do formacie Punycode. Metoda ustawia również `invalid` flagę na, `True` Jeśli <xref:System.Globalization.IdnMapping.GetAscii%2A?displayProperty=nameWithType> Metoda wykryje nieprawidłowe znaki w nazwie domeny. Metoda zwraca nazwę domeny formacie Punycode poprzedzoną symbolem @ do `IsValidEmail` metody.
 
+> [!TIP]
+> Zaleca się, `(@)(.+)$` Aby użyć wzorca prostego wyrażenia regularnego do normalizacji domeny, a następnie zwrócić wartość wskazującą, że została przeniesiona lub niepowodzenie. Jednak w przykładzie w tym artykule opisano sposób dalszej weryfikacji wiadomości e-mail przy użyciu wyrażenia regularnego. Bez względu na to, jak sprawdzasz poprawność wiadomości e-mail, należy zawsze wysyłać testową wiadomość e-mail na adres, aby upewnić się, że istnieje.
+
 `IsValidEmail`Metoda następnie wywołuje metodę, <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%29?displayProperty=nameWithType> Aby sprawdzić, czy adres jest zgodny ze wzorcem wyrażenia regularnego.
 
-Należy pamiętać, że `IsValidEmail` Metoda nie przeprowadza uwierzytelniania w celu zweryfikowania adresu e-mail. Określa on tylko, czy jego format jest prawidłowy dla adresu e-mail. Ponadto `IsValidEmail` Metoda nie sprawdza, czy nazwa domeny najwyższego poziomu jest prawidłową nazwą domeny wymienioną w [bazie danych strefy głównej programu Iana](https://www.iana.org/domains/root/db), co wymagałoby operacji wyszukiwania. Zamiast tego wyrażenie regularne sprawdza tylko, czy nazwa domeny najwyższego poziomu składa się z dwóch i dwudziestu czterech znaków ASCII, z znakami alfanumerycznymi i ostatnimi, a pozostałe znaki są alfanumeryczne lub łącznika (-).
+`IsValidEmail`Metoda określa jedynie, czy format wiadomości e-mail jest prawidłowy dla adresu e-mail, a nie sprawdza poprawność wiadomości e-mail. Ponadto `IsValidEmail` Metoda nie sprawdza, czy nazwa domeny najwyższego poziomu jest prawidłową nazwą domeny wymienioną w [bazie danych strefy głównej Iana](https://www.iana.org/domains/root/db), co wymagałoby operacji wyszukiwania.
 
-[!code-csharp[RegularExpressions.Examples.Email#7](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#7)]
-[!code-vb[RegularExpressions.Examples.Email#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#7)]
+:::code language="csharp" source="snippets/how-to-verify-that-strings-are-in-valid-email-format/csharp/RegexUtilities.cs":::
 
-W tym przykładzie wzorzec wyrażenia regularnego ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$`` jest interpretowany jak pokazano w poniższej legendzie. Wyrażenie regularne jest kompilowane przy użyciu <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> flagi.
+:::code language="vb" source="snippets/how-to-verify-that-strings-are-in-valid-email-format/vb/RegexUtilities.vb":::
 
-Wzorzec `^` : Rozpocznij dopasowanie na początku ciągu.
+W tym przykładzie wzorzec wyrażenia regularnego `^[^@\s]+@[^@\s]+\.[^@\s]+$` jest interpretowany jak pokazano w poniższej tabeli. Wyrażenie regularne jest kompilowane przy użyciu <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> flagi.
 
-Wzorzec `(?(")` : określa, czy pierwszy znak jest znakiem cudzysłowu. `(?(")`jest początkiem konstrukcji warunkowej.
+| Wzorce   | Opis                                                                              |
+|-----------|------------------------------------------------------------------------------------------|
+| `^`       | Rozpocznij dopasowanie na początku ciągu.                                              |
+| `[^@\s]+` | Dopasowuje jedno lub więcej wystąpień dowolnego znaku innego niż znak @ lub odstęp. |
+| `@`       | Dopasowuje znak @.                                                                   |
+| `[^@\s]+` | Dopasowuje jedno lub więcej wystąpień dowolnego znaku innego niż znak @ lub odstęp. |
+| `\.`      | Dopasowuje pojedynczy odstęp czasu.                                                         |
+| `[^@\s]+` | Dopasowuje jedno lub więcej wystąpień dowolnego znaku innego niż znak @ lub odstęp. |
+| `$`       | Zakończ dopasowanie na końcu ciągu.                                                  |
 
-Wzorzec `(?(")(".+?(?<!\\)"@)` : Jeśli pierwszy znak jest znakiem cudzysłowu, dopasowuje początkowy znak cudzysłowu, po którym następuje co najmniej jedno wystąpienie dowolnego znaku, po którym następuje znak cudzysłowu końcowego. Znak cudzysłowu końcowego nie może być poprzedzony znakiem ukośnika odwrotnego ( \\ ). `(?<!`to początek asercja wsteczna negatywnej zerowej szerokości. Ciąg powinien zawierać znak (@).
-
-Wzorzec `|(([0-9a-z]` : Jeśli pierwszy znak nie jest znakiem cudzysłowu, dopasowuje dowolny znak alfabetyczny od a do z lub od a do z (w porównaniu z rozróżnianiem wielkości liter) lub dowolny znak numeryczny od 0 do 9.
-
-Wzorzec `(\.(?!\.))` : Jeśli następny znak jest kropką, Dopasuj go. Jeśli nie jest to okres, spójrz na następny znak i Kontynuuj dopasowanie. `(?!\.)`to nieujemne potwierdzenie o zerowej szerokości, które uniemożliwia wyświetlanie dwóch kolejnych okresów w lokalnej części adresu e-mail.
-
-Wzorzec ``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]`` : Jeśli następny znak nie jest kropką, dopasowuje dowolny znak słowa lub jeden z następujących znaków:-! # $% & ' \* +/=? ^ \` {} | ~
-
-Wzorzec ``((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*`` : dopasowuje wzorzec alternatywny (kropka, po którym następuje nieokreślony lub jeden z kilku znaków) zero lub więcej razy.
-
-Wzorzec `@` : dopasowanie znaku @.
-
-Wzorzec `(?<=[0-9a-z])` : Kontynuuj dopasowanie, jeśli znak poprzedzający znak @ ma wartość od a do z, od a do z, lub od 0 do 9. Ten wzorzec definiuje pozytywną asercja wstecznaą o zerowej szerokości.
-
-Wzorzec `(?(\[)` : Sprawdź, czy znak, który następuje po @ jest nawiasem otwierającym.
-
-Wzorzec `(\[(\d{1,3}\.){3}\d{1,3}\])` : Jeśli jest to nawias otwierający, dopasowuje nawias otwierający, po którym następuje adres IP (cztery zestawy od jednej do trzech cyfr, z każdym zestawem oddzielony kropką) i nawias zamykający.
-
-Wzorzec `|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+` : Jeśli znak, który następuje po @ nie jest nawiasem otwierającym, dopasowuje jeden znak alfanumeryczny o wartości a-Z, a-z, lub 0-9, po którym następuje zero lub więcej wystąpień łącznika, po którym następuje zero lub jeden znak alfanumeryczny o wartości a-z, a-z, i 0-9, po którym następuje kropka. Ten wzorzec może być powtarzany jeden lub więcej razy i musi następować po nazwie domeny najwyższego poziomu.
-
-Wzorzec `[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))` : nazwa domeny najwyższego poziomu musi rozpoczynać się i kończyć znakiem alfanumerycznym (a-z, a-z i 0-9). Może również zawierać od zera do 22 znaków ASCII, które są alfanumeryczne lub łączniki.
-
-Wzorzec `$` : kończy dopasowanie na końcu ciągu.
-
-## <a name="compile-the-code"></a>Kompiluj kod
-
-`IsValidEmail`Metody i `DomainMapper` można dołączać do biblioteki metod narzędzia wyrażenia regularnego lub mogą być dołączane jako prywatne metody statyczne lub wystąpienia w klasie aplikacji.
-
-Można również użyć <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metody do dołączenia tego wyrażenia regularnego do biblioteki wyrażeń regularnych.
-
-Jeśli są używane w bibliotece wyrażeń regularnych, można je wywoływać przy użyciu kodu, takiego jak:
-
-[!code-csharp[RegularExpressions.Examples.Email#8](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#8)]
-[!code-vb[RegularExpressions.Examples.Email#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#8)]
+> [!IMPORTANT]
+> To wyrażenie regularne nie obejmuje każdego aspektu prawidłowego adresu e-mail. Jest on dostępny jako przykład do rozbudowania w razie potrzeby.
 
 ## <a name="see-also"></a>Zobacz także
 
 - [.NET Framework — Wyrażenia regularne](regular-expressions.md)
+- [Jak daleko powinna zostać przesunięta Weryfikacja adresu e-mail?](https://softwareengineering.stackexchange.com/questions/78353/how-far-should-one-take-e-mail-address-validation#78363)

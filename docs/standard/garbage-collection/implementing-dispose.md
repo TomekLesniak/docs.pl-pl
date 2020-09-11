@@ -1,7 +1,7 @@
 ---
 title: Implementacja metody Dispose
 description: W tym artykule dowiesz się, jak zaimplementować metodę Dispose, która zwalnia niezarządzane zasoby używane przez kod w programie .NET.
-ms.date: 05/27/2020
+ms.date: 09/08/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 4f0cc9b88947d60638057ca83adb7f2e141c5d14
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 863f78daf13ae9d795c37c1c6f428d387b9a026b
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455731"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022925"
 ---
 # <a name="implement-a-dispose-method"></a>Implementacja metody Dispose
 
@@ -77,7 +77,7 @@ Treść metody składa się z dwóch bloków kodu:
 
   - **Obiekty zarządzane, które implementują <xref:System.IDisposable> .** Bloku warunkowego można użyć do wywołania ich <xref:System.IDisposable.Dispose%2A> implementacji (kaskadowego Dispose). Jeśli użyto klasy pochodnej <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> , aby otoczyć niezarządzany zasób, należy wywołać <xref:System.Runtime.InteropServices.SafeHandle.Dispose?displayProperty=nameWithType> implementację tutaj.
 
-  - **Zarządzane obiekty, które zużywają duże ilości pamięci lub zużywają niewystarczające zasoby.** Przypisz do nich duże odwołania do obiektów zarządzanych, aby `null` zwiększyć ich dostępność. Te wersje są szybsze, niż gdyby były odzyskiwane w sposób Niedeterministyczny.
+  - **Zarządzane obiekty, które zużywają duże ilości pamięci lub zużywają niewystarczające zasoby.** Przypisz do nich duże odwołania do obiektów zarządzanych, aby `null` zwiększyć ich dostępność. Te wersje są szybsze niż w przypadku, gdy były odzyskiwane w sposób Niedeterministyczny i zwykle są wykonywane poza blokiem warunkowym.
 
 Jeśli wywołanie metody pochodzi od finalizatora, należy wykonać tylko kod, który zwolni niezarządzane zasoby. Realizator jest odpowiedzialny za zapewnienie, że ścieżka fałszywa nie współdziała z zarządzanymi obiektami, które mogły zostać ododzyskiwane. Jest to ważne, ponieważ kolejność, w której moduł zbierający elementy bezużyteczne niszczy obiekty zarządzane podczas finalizowania, nie jest deterministyczna.
 

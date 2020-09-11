@@ -2,15 +2,15 @@
 title: ASP.NET Core istotne zmiany
 titleSuffix: ''
 description: Wyświetla listę istotnych zmian w ASP.NET Core.
-ms.date: 08/25/2020
+ms.date: 09/09/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 443494291f4ec58aecd7c8d8ed42cb4086e64095
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+ms.openlocfilehash: 2af0cc6721b66b1d07b196e4ba330f8425c14752
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957733"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022990"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core istotne zmiany
 
@@ -76,6 +76,7 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 - [Lokalizacja: Usunięto klasę ResourceManagerWithCultureStringLocalizer i element członkowski interfejsu WithCulture](#localization-resourcemanagerwithculturestringlocalizer-class-and-withculture-interface-member-removed)
 - [Rejestrowanie: Klasa DebugLogger wykonana wewnętrznie](#logging-debuglogger-class-made-internal)
 - [Oprogramowanie pośredniczące: Strona błędu bazy danych oznaczona jako przestarzała](#middleware-database-error-page-marked-as-obsolete)
+- [Oprogramowanie pośredniczące: oprogramowanie pośredniczące obsługi wyjątków zgłasza oryginalny wyjątek, jeśli nie znaleziono procedury obsługi](#middleware-exception-handler-middleware-throws-original-exception-if-handler-not-found)
 - [MVC: Usunięto sufiks asynchroniczny akcji kontrolera](#mvc-async-suffix-trimmed-from-controller-action-names)
 - [MVC: JsonResult przeniesiony do Microsoft. AspNetCore. MVC. Core](#mvc-jsonresult-moved-to-microsoftaspnetcoremvccore)
 - [MVC: Narzędzie wstępnej kompilacji zostało zaniechane](#mvc-precompilation-tool-deprecated)
@@ -171,6 +172,10 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 ***
 
 [!INCLUDE[Middleware: Database error page marked as obsolete](~/includes/core-changes/aspnetcore/5.0/middleware-database-error-page-obsolete.md)]
+
+***
+
+[!INCLUDE[Middleware: Exception Handler Middleware throws original exception if handler not found](~/includes/core-changes/aspnetcore/5.0/middleware-exception-handler-throws-original-exception.md)]
 
 ***
 
