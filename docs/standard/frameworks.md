@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat platform docelowych dla aplikacji i b
 ms.date: 09/08/2020
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 9c5d3605f893072b2a5e84751e3657152ac0213e
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 22689f6c1f161a67978dc0f41c6bc9a6b5acfad7
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598152"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065256"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Platformy docelowe w projektach w stylu zestawu SDK
 
@@ -29,7 +29,7 @@ Poniższa tabela zawiera definicje najpopularniejszych platform docelowych, spos
 
 | Platforma docelowa      | Najnowsza <br/> stabilna wersja | Moniker platformy docelowej (TFM) | Realizowane <br/> Wersja .NET Standard |
 | :-: | :-: | :-: | :-: |
-| .NET Standard         | 2.1                         | Standard 2.1                 | Nie dotyczy                                     |
+| .NET Standard         | 2.1                         | Standard 2.1                 | Brak                                     |
 | .NET Core             | 3,1                         | netcoreapp 3.1                  | 2.1                                     |
 | .NET Framework        | 4,8                         | net48                          | 2,0                                     |
 
@@ -125,9 +125,9 @@ public class MyClass
 }
 ```
 
-System kompilacji ma świadomość symboli preprocesora reprezentujących Platformy docelowe, które są wyświetlane w tabeli [obsługiwane wersje platformy docelowej](#supported-target-frameworks) w przypadku korzystania z projektów w stylu zestawu SDK. Przy użyciu symbolu, który reprezentuje .NET Standard lub TFM .NET Core, Zastąp kropkę znakiem podkreślenia i Zmień małe litery na wielkie litery (na przykład symbol dla elementu `netstandard1.4` `NETSTANDARD1_4` ).
+System kompilacji ma świadomość symboli preprocesora reprezentujących Platformy docelowe, które są wyświetlane w tabeli [obsługiwane wersje platformy docelowej](#supported-target-frameworks) w przypadku korzystania z projektów w stylu zestawu SDK. Przy użyciu symbolu, który reprezentuje .NET Standard, .NET Core lub .NET 5 TFM, Zastąp kropki i łączniki znakiem podkreślenia i Zmień małe litery na wielkie litery (na przykład symbol " `netstandard1.4` is" `NETSTANDARD1_4` ).
 
-Kompletna lista symboli preprocesora dla platform .NET Core Target Framework to:
+Kompletna lista symboli preprocesora dla platform docelowych .NET to:
 
 [!INCLUDE [Preprocessor symbols](../../includes/preprocessor-symbols.md)]
 
@@ -146,7 +146,7 @@ Poniższe Platformy docelowe są przestarzałe. Pakiety, które są przeznaczone
 | Win10                                                                                      | UAP 10.0     |
 | środowiska                                                                                      | netcore45   |
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tworzenie bibliotek za pomocą narzędzi międzyplatformowych](../core/tutorials/libraries.md)
 - [.NET Standard](net-standard.md)

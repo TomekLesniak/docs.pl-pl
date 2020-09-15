@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: f01db9d7801d4b6f4c273a9cf82806acbb4828bb
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: dc3e235db49279691203a0db4d124239fb972c69
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89138140"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065240"
 ---
 # <a name="if-c-reference"></a>#if (odwołanie w C#)
 
-Gdy kompilator języka C# napotyka `#if` dyrektywę, a ostatecznie według dyrektywy [#endif](preprocessor-endif.md) , kompiluje kod między dyrektywami tylko wtedy, gdy określony symbol jest zdefiniowany. W przeciwieństwie do C i C++, nie można przypisać wartości liczbowej do symbolu. `#if`Instrukcja w języku C# jest wartością logiczną i tylko testuje, czy symbol został zdefiniowany. Przykład:
+Gdy kompilator języka C# napotyka `#if` dyrektywę, a ostatecznie według dyrektywy [#endif](preprocessor-endif.md) , kompiluje kod między dyrektywami tylko wtedy, gdy określony symbol jest zdefiniowany. W przeciwieństwie do C i C++, nie można przypisać wartości liczbowej do symbolu. `#if`Instrukcja w języku C# jest wartością logiczną i tylko testuje, czy symbol został zdefiniowany. Na przykład:
 
 ```csharp
 #if DEBUG
@@ -40,12 +40,12 @@ Symbol zdefiniowany za pomocą `-define` lub with `#define` nie powoduje konflik
 
 Zakres symbolu utworzonego za pomocą `#define` to plik, w którym został zdefiniowany.
 
-System kompilacji jest również świadomy wstępnie zdefiniowanych symboli preprocesora reprezentujących różne [Platformy docelowe](../../../standard/frameworks.md) w projektach w stylu zestawu SDK. Są one przydatne podczas tworzenia aplikacji, które mogą być ukierunkowane na więcej niż jedną implementację lub wersję platformy .NET.
+System kompilacji jest również świadomy wstępnie zdefiniowanych symboli preprocesora reprezentujących różne [Platformy docelowe](../../../standard/frameworks.md) w projektach w stylu zestawu SDK. Są one przydatne podczas tworzenia aplikacji, które mogą być ukierunkowane na więcej niż jedną wersję platformy .NET.
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
 > [!NOTE]
-> W przypadku tradycyjnych projektów .NET Framework należy ręcznie skonfigurować symbole kompilacji warunkowej dla różnych platform docelowych w programie Visual Studio za pośrednictwem stron właściwości projektu.
+> W przypadku tradycyjnych projektów typu non-SDK należy ręcznie skonfigurować symbole kompilacji warunkowej dla różnych platform docelowych w programie Visual Studio za pośrednictwem stron właściwości projektu.
 
 Inne wstępnie zdefiniowane symbole obejmują stałe debugowania i śledzenia. Można zastąpić wartości ustawione dla projektu przy użyciu `#define` . Symbol debugowania, na przykład, jest automatycznie ustawiany w zależności od właściwości konfiguracji kompilacji ("Debugowanie" lub "wersja").
 
@@ -90,7 +90,7 @@ public class MyClass
 }
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)

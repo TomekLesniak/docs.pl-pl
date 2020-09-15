@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: ddffe4aaaed6c9079999b2ab29ca61ab5753f15a
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 80d636db04655650c7448590cd1042cdb1b17de1
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598144"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065035"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -108,7 +108,7 @@ Powyższy wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwoś�
 
 ## <a name="init-only-setters"></a>Metody ustawiające tylko do inicjowania
 
-***Tylko metody init*** zapewniają spójną składnię, aby inicjować elementy członkowskie obiektu. Inicjatory właściwości zapewniają, że wartość jest określana przez ustawienie właściwości. Minusemem jest to, że te właściwości muszą mieć wartość settable. Począwszy od języka C# 9,0, można tworzyć metody `init` dostępu zamiast `set` metod dostępu do właściwości i indeksatorów. Obiekty wywołujące mogą używać składni inicjatora właściwości do ustawiania tych wartości w wyrażeniach tworzenia, ale te właściwości są tylko do odczytu, gdy konstrukcja została ukończona. Tylko metody init umożliwiają zmianę stanu okna. To okno zostanie zamknięte po zakończeniu fazy budowania. Faza konstruowania skutecznie kończy działanie po wszystkich inicjalizacjach, w tym inicjatorach właściwości i wyrażeniach z.
+***Tylko metody init*** zapewniają spójną składnię, aby inicjować elementy członkowskie obiektu. Inicjatory właściwości sprawiają, że wartość jest ustawiana dla właściwości. Minusemem jest to, że te właściwości muszą mieć wartość settable. Począwszy od języka C# 9,0, można tworzyć metody `init` dostępu zamiast `set` metod dostępu do właściwości i indeksatorów. Obiekty wywołujące mogą używać składni inicjatora właściwości do ustawiania tych wartości w wyrażeniach tworzenia, ale te właściwości są tylko do odczytu, gdy konstrukcja została ukończona. Tylko metody init umożliwiają zmianę stanu okna. To okno zostanie zamknięte po zakończeniu fazy budowania. Faza konstruowania skutecznie kończy działanie po wszystkich inicjalizacjach, w tym inicjatorach właściwości i wyrażeniach z.
 
 W powyższym przykładzie dla rekordów pozycyjnych zademonstrowano użycie metody tylko init-Only do ustawiania właściwości przy użyciu wyrażenia with. Można zadeklarować tylko metody init w dowolnym typie, który napiszesz. Na przykład następująca struktura definiuje strukturę obserwacji pogody:
 
@@ -122,7 +122,7 @@ Jednak zmiana obserwacji po inicjacji jest błędem przez przypisanie do właśc
 
 ```csharp
 // Error! CS8852.
-now.TempetureInCelsius = 18;
+now.TemperatureInCelsius = 18;
 ```
 
 Tylko metody init mogą być przydatne do ustawiania właściwości klasy bazowej z klas pochodnych. Mogą także ustawiać właściwości pochodne za pomocą pomocników w klasie bazowej. Rekordy pozycyjne deklarują właściwości przy użyciu tylko metod init. Te metody ustawiające są używane w wyrażeniach with. Można zadeklarować tylko metody init dla dowolnego `class` lub `struct` zdefiniowanego elementu.

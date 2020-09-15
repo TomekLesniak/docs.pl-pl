@@ -2,12 +2,12 @@
 title: Krytyczne zmiany kryptografii
 description: Wyświetla listę istotnych zmian związanych z kryptografią w programie .NET Core.
 ms.date: 04/22/2020
-ms.openlocfilehash: f7d580938fb7620728b8ff7f67412c9f5bbbb6c3
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 621a3dad28b67ee33056dce3df0379efaeb90776
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558009"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065110"
 ---
 # <a name="cryptography-breaking-changes"></a>Krytyczne zmiany kryptografii
 
@@ -15,11 +15,12 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
-| [System. Security. Cryptography. OID jest funkcjonalnie init-Only](#systemsecuritycryptographyoid-is-functionally-init-only) | 5.0 |
-| [Rozpocznij składnię ZAUFANEgo certyfikatu nie jest już obsługiwana w systemie Linux](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3.0 |
-| [EnvelopedCms domyślnie szyfrowanie AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
-| [Zwiększono minimalny rozmiar generowania klucza RSAOpenSsl](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
-| [.NET Core 3,0 preferuje OpenSSL 1.1. x do OpenSSL 1.0. x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
+| [System. Security. Cryptography. OID jest funkcjonalnie init-Only](#systemsecuritycryptographyoid-is-functionally-init-only) | 5,0 |
+| [Rozpocznij składnię ZAUFANEgo certyfikatu nie jest już obsługiwana w systemie Linux](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3,0 |
+| [EnvelopedCms domyślnie szyfrowanie AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3,0 |
+| [Zwiększono minimalny rozmiar generowania klucza RSAOpenSsl](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3,0 |
+| [.NET Core 3,0 preferuje OpenSSL 1.1. x do OpenSSL 1.0. x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3,0 |
+| [CryptoStream. Dispose przekształca końcowy blok tylko podczas pisania](#cryptostreamdispose-transforms-final-block-only-when-writing) | 3,0 |
 | [Parametr logiczny elementu SignedCms. ComputeSignature jest przestrzegany](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-50"></a>.NET 5,0
@@ -43,6 +44,10 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 ***
 
 [!INCLUDE[.NET Core 3.0 prefers OpenSSL 1.1.x to OpenSSL 1.0.x](~/includes/core-changes/cryptography/3.0/net-core-3-0-prefers-openssl-1-1-x.md)]
+
+***
+
+[!INCLUDE [CryptoStream.Dispose transforms final block only when writing](~/includes/core-changes/cryptography/3.0/cryptography-cryptostream-dispose-final-block-write.md)]
 
 ***
 

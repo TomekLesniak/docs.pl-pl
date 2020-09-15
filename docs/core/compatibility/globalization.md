@@ -2,12 +2,12 @@
 title: Zmiany dotyczące podziału globalizacji
 description: Wyświetla listę istotnych zmian w globalizacji w programie .NET Core.
 ms.date: 04/07/2020
-ms.openlocfilehash: 0c3367cb3515c6f473f53be6062b54f2e836b8c5
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 93990d89204df1b2d7498e1d748378fae05598c3
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702310"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065071"
 ---
 # <a name="globalization-breaking-changes"></a>Zmiany dotyczące podziału globalizacji
 
@@ -15,11 +15,16 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
-| [Interfejsy API globalizacji korzystają z bibliotek ICU w systemie Windows](#globalization-apis-use-icu-libraries-on-windows) | 5.0 |
-| [StringInfo i TextElementEnumerator są teraz zgodne UAX29](#stringinfo-and-textelementenumerator-are-now-uax29-compliant) | 5.0 |
-| [Ustawienia regionalne "C" są mapowane na niezmienne ustawienia regionalne](#c-locale-maps-to-the-invariant-locale) | 3.0 |
+| [Zmieniono kategorię Unicode dla niektórych znaków łacińskich 1](#unicode-category-changed-for-some-latin-1-characters) | 5,0 |
+| [Interfejsy API globalizacji korzystają z bibliotek ICU w systemie Windows](#globalization-apis-use-icu-libraries-on-windows) | 5,0 |
+| [StringInfo i TextElementEnumerator są teraz zgodne UAX29](#stringinfo-and-textelementenumerator-are-now-uax29-compliant) | 5,0 |
+| [Ustawienia regionalne "C" są mapowane na niezmienne ustawienia regionalne](#c-locale-maps-to-the-invariant-locale) | 3,0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [unicode-categories-for-latin1-chars](../../../includes/core-changes/globalization/5.0/unicode-categories-for-latin1-chars.md)]
+
+***
 
 [!INCLUDE [icu-globalization-api](../../../includes/core-changes/globalization/5.0/icu-globalization-api.md)]
 
