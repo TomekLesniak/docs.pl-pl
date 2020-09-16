@@ -6,25 +6,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: 3c764cec818cf788282bb616cc123e9be8d62c08
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 56833ef3758a6d8af1eb6f0a103b85ad967c9aad
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553152"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555912"
 ---
-# <a name="how-to-find-sibling-nodes-linq-to-xml"></a><span data-ttu-id="c6068-104">Jak znaleźć węzły elementów równorzędnych (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="c6068-104">How to find sibling nodes (LINQ to XML)</span></span>
+# <a name="how-to-find-sibling-nodes-linq-to-xml"></a><span data-ttu-id="01226-104">Jak znaleźć węzły elementów równorzędnych (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="01226-104">How to find sibling nodes (LINQ to XML)</span></span>
 
-<span data-ttu-id="c6068-105">W tym artykule pokazano, jak używać <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> programu do znajdowania wszystkich elementów równorzędnych węzła, które mają określoną nazwę, oraz sposobu używania zapytania LINQ to XML, aby wykonać tę samą czynność.</span><span class="sxs-lookup"><span data-stu-id="c6068-105">This article shows how to use <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> to find all siblings of a node that have a specific name, and how to use LINQ to XML query to do the same thing.</span></span>
+<span data-ttu-id="01226-105">W tym artykule pokazano, jak używać <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> programu do znajdowania wszystkich elementów równorzędnych węzła, które mają określoną nazwę, oraz sposobu używania zapytania LINQ to XML, aby wykonać tę samą czynność.</span><span class="sxs-lookup"><span data-stu-id="01226-105">This article shows how to use <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> to find all siblings of a node that have a specific name, and how to use LINQ to XML query to do the same thing.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c6068-106">Utworzona kolekcja zawiera węzeł kontekstu, jeśli ma również określoną nazwę.</span><span class="sxs-lookup"><span data-stu-id="c6068-106">The resulting collection includes the context node if it also has the specific name.</span></span>
+> <span data-ttu-id="01226-106">Utworzona kolekcja zawiera węzeł kontekstu, jeśli ma również określoną nazwę.</span><span class="sxs-lookup"><span data-stu-id="01226-106">The resulting collection includes the context node if it also has the specific name.</span></span>
 
-## <a name="example-find-an-element-named-book-and-all-sibling-elements-named-book"></a><span data-ttu-id="c6068-107">Przykład: Znajdź element o nazwie `Book` i wszystkie elementy równorzędne o nazwie `Book`</span><span class="sxs-lookup"><span data-stu-id="c6068-107">Example: Find an element named `Book`, and all sibling elements named `Book`</span></span>
+## <a name="example-find-an-element-named-book-and-all-sibling-elements-named-book"></a><span data-ttu-id="01226-107">Przykład: Znajdź element o nazwie `Book` i wszystkie elementy równorzędne o nazwie `Book`</span><span class="sxs-lookup"><span data-stu-id="01226-107">Example: Find an element named `Book`, and all sibling elements named `Book`</span></span>
 
-<span data-ttu-id="c6068-108">Ten przykład najpierw odnajduje `Book` element w dokumencie XML [przykładowy plik XML: Books](sample-xml-file-books.md), a następnie znajduje wszystkie elementy równorzędne o nazwie `Book` .</span><span class="sxs-lookup"><span data-stu-id="c6068-108">This example first finds a `Book` element in XML document [Sample XML file: Books](sample-xml-file-books.md), and then finds all sibling elements named `Book`.</span></span> <span data-ttu-id="c6068-109">Kolekcja wyników zawiera węzeł kontekstu.</span><span class="sxs-lookup"><span data-stu-id="c6068-109">The resulting collection includes the context node.</span></span>
+<span data-ttu-id="01226-108">Ten przykład najpierw odnajduje `Book` element w dokumencie XML [przykładowy plik XML: Books](sample-xml-file-books.md), a następnie znajduje wszystkie elementy równorzędne o nazwie `Book` .</span><span class="sxs-lookup"><span data-stu-id="01226-108">This example first finds a `Book` element in XML document [Sample XML file: Books](sample-xml-file-books.md), and then finds all sibling elements named `Book`.</span></span> <span data-ttu-id="01226-109">Kolekcja wyników zawiera węzeł kontekstu.</span><span class="sxs-lookup"><span data-stu-id="01226-109">The resulting collection includes the context node.</span></span>
 
-<span data-ttu-id="c6068-110">Wyrażenie XPath jest `../Book`</span><span class="sxs-lookup"><span data-stu-id="c6068-110">The XPath expression is `../Book`</span></span>
+<span data-ttu-id="01226-110">Wyrażenie XPath jest `../Book`</span><span class="sxs-lookup"><span data-stu-id="01226-110">The XPath expression is `../Book`</span></span>
 
 ```csharp
 XDocument books = XDocument.Load("Books.xml");
@@ -75,7 +75,7 @@ For Each el As XElement In list1
 Next
 ```
 
-<span data-ttu-id="c6068-111">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="c6068-111">This example produces the following output:</span></span>
+<span data-ttu-id="01226-111">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="01226-111">This example produces the following output:</span></span>
 
 ```output
 Results are identical
@@ -100,6 +100,6 @@ Results are identical
 </Book>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c6068-112">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="c6068-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="01226-112">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="01226-112">See also</span></span>
 
-- [<span data-ttu-id="c6068-113">LINQ to XML dla użytkowników XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c6068-113">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="01226-113">LINQ to XML dla użytkowników XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="01226-113">LINQ to XML for XPath Users (Visual Basic)</span></span>](./comparison-xpath-linq-xml.md)

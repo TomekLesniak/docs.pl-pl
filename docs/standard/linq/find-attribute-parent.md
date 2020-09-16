@@ -6,22 +6,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-ms.openlocfilehash: 811766ecfdf2f080f29f21ae08981483f75a7e44
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 6d5d1ce768f91aa6e32bf09668bad66f3c4f2334
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553861"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556361"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-linq-to-xml"></a><span data-ttu-id="12ef6-104">Jak znaleźć atrybut elementu nadrzędnego (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="12ef6-104">How to find an attribute of the parent (LINQ to XML)</span></span>
+# <a name="how-to-find-an-attribute-of-the-parent-linq-to-xml"></a><span data-ttu-id="c67e9-104">Jak znaleźć atrybut elementu nadrzędnego (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="c67e9-104">How to find an attribute of the parent (LINQ to XML)</span></span>
 
-<span data-ttu-id="12ef6-105">W tym artykule pokazano, jak używać <xref:System.Xml.XPath.Extensions.XPathEvaluate%2A> programu do znajdowania atrybutu elementu nadrzędnego oraz jak używać zapytania LINQ to XML, aby wykonać to samo.</span><span class="sxs-lookup"><span data-stu-id="12ef6-105">This article shows how to use <xref:System.Xml.XPath.Extensions.XPathEvaluate%2A> to find an attribute of a parent element, and how to use LINQ to XML query to do the same thing.</span></span>
+<span data-ttu-id="c67e9-105">W tym artykule pokazano, jak używać <xref:System.Xml.XPath.Extensions.XPathEvaluate%2A> programu do znajdowania atrybutu elementu nadrzędnego oraz jak używać zapytania LINQ to XML, aby wykonać to samo.</span><span class="sxs-lookup"><span data-stu-id="c67e9-105">This article shows how to use <xref:System.Xml.XPath.Extensions.XPathEvaluate%2A> to find an attribute of a parent element, and how to use LINQ to XML query to do the same thing.</span></span>
 
-## <a name="example-find-the-author-element-and-then-find-the-id-attribute-of-its-parent"></a><span data-ttu-id="12ef6-106">Przykład: Znajdź `Author` element, a następnie Znajdź `id` atrybut jego elementu nadrzędnego</span><span class="sxs-lookup"><span data-stu-id="12ef6-106">Example: Find the `Author` element, and then find the `id` attribute of its parent</span></span>
+## <a name="example-find-the-author-element-and-then-find-the-id-attribute-of-its-parent"></a><span data-ttu-id="c67e9-106">Przykład: Znajdź `Author` element, a następnie Znajdź `id` atrybut jego elementu nadrzędnego</span><span class="sxs-lookup"><span data-stu-id="c67e9-106">Example: Find the `Author` element, and then find the `id` attribute of its parent</span></span>
 
-<span data-ttu-id="12ef6-107">Ten przykład najpierw odnajduje `Author` element w dokumencie XML [przykładowy plik XML: Books](sample-xml-file-books.md), a następnie znajduje `id` atrybut jego elementu nadrzędnego.</span><span class="sxs-lookup"><span data-stu-id="12ef6-107">This example first finds an `Author` element in XML document [Sample XML file: Books](sample-xml-file-books.md), and then finds the `id` attribute of its parent element.</span></span>
+<span data-ttu-id="c67e9-107">Ten przykład najpierw odnajduje `Author` element w dokumencie XML [przykładowy plik XML: Books](sample-xml-file-books.md), a następnie znajduje `id` atrybut jego elementu nadrzędnego.</span><span class="sxs-lookup"><span data-stu-id="c67e9-107">This example first finds an `Author` element in XML document [Sample XML file: Books](sample-xml-file-books.md), and then finds the `id` attribute of its parent element.</span></span>
 
-<span data-ttu-id="12ef6-108">Wyrażenie XPath ma wartość `../@id` .</span><span class="sxs-lookup"><span data-stu-id="12ef6-108">The XPath expression is `../@id`.</span></span>
+<span data-ttu-id="c67e9-108">Wyrażenie XPath ma wartość `../@id` .</span><span class="sxs-lookup"><span data-stu-id="c67e9-108">The XPath expression is `../@id`.</span></span>
 
 ```csharp
 XDocument books = XDocument.Load("Books.xml");
@@ -67,13 +67,13 @@ End If
 Console.WriteLine(att1)
 ```
 
-<span data-ttu-id="12ef6-109">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="12ef6-109">This example produces the following output:</span></span>
+<span data-ttu-id="c67e9-109">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="c67e9-109">This example produces the following output:</span></span>
 
 ```output
 Results are identical
 id="bk101"
 ```
 
-## <a name="see-also"></a><span data-ttu-id="12ef6-110">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="12ef6-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c67e9-110">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="c67e9-110">See also</span></span>
 
-- [<span data-ttu-id="12ef6-111">LINQ to XML dla użytkowników XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="12ef6-111">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="c67e9-111">LINQ to XML dla użytkowników XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c67e9-111">LINQ to XML for XPath Users (Visual Basic)</span></span>](./comparison-xpath-linq-xml.md)
