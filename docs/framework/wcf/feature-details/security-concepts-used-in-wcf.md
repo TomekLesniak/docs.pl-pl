@@ -2,12 +2,12 @@
 title: Pojęcia zabezpieczeń użyte dla programu WCF
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-ms.openlocfilehash: f852ba4e1100103289bc5fd879b19ebd40443b8d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c62b8d39f1a1dc87289ac27022d44ffa3acfc58d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595183"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554055"
 ---
 # <a name="security-concepts-used-in-wcf"></a>Pojęcia zabezpieczeń użyte dla programu WCF
 Zabezpieczenia Windows Communication Foundation (WCF) są tworzone w oparciu o koncepcje już używane i wdrożone w różnych infrastrukturach zabezpieczeń.  
@@ -25,10 +25,10 @@ Grupa Microsoft Patterns and Practices została zapisana w szczegółowym dokume
 Infrastruktura kluczy publicznych (PKI) to system certyfikatów cyfrowych, urzędów certyfikacji i innych urzędów rejestracyjnych, które weryfikują i uwierzytelniają poszczególne strony związane z transakcjami elektronicznymi przy użyciu kryptografii klucza publicznego.
   
 ### <a name="kerberos-protocol"></a>Protokół Kerberos  
- *Protokół Kerberos* to specyfikacja służąca do tworzenia mechanizmu zabezpieczeń, który uwierzytelnia użytkowników w domenie systemu Windows. Umożliwia użytkownikowi ustanowienie bezpiecznego kontekstu z innymi jednostkami w domenie. System Windows 2000 i nowsze platformy domyślnie korzystają z protokołu Kerberos. Zrozumienie mechanizmów systemu jest przydatne podczas tworzenia usługi, która będzie współdziałać z klientami intranetowymi. Ponadto, ponieważ *zabezpieczenia usług w sieci Web powiązania Kerberos* jest szeroko publikowany, można użyć protokołu Kerberos do komunikacji z klientami internetowymi (oznacza to, że protokół Kerberos jest interoperacyjny). Aby uzyskać więcej informacji o sposobie implementacji protokołu Kerberos w systemie Windows, zobacz [Microsoft Kerberos](/windows/win32/secauthn/microsoft-kerberos).  
+ *Protokół Kerberos* to specyfikacja służąca do tworzenia mechanizmu zabezpieczeń, który uwierzytelnia użytkowników w domenie systemu Windows. Umożliwia użytkownikowi ustanowienie bezpiecznego kontekstu z innymi jednostkami w domenie. System Windows 2000 i nowsze platformy domyślnie korzystają z protokołu Kerberos. Zrozumienie mechanizmów systemu jest przydatne podczas tworzenia usługi, która będzie współdziałać z klientami intranetowymi. Ponadto, ponieważ *zabezpieczenia usług w sieci Web powiązania Kerberos* jest szeroko publikowany, można użyć protokołu Kerberos do komunikacji z klientami internetowymi (oznacza to, że protokół Kerberos jest interoperacyjny). Aby uzyskać więcej informacji o sposobie implementacji protokołu Kerberos w systemie Windows, zobacz  [Microsoft Kerberos](/windows/win32/secauthn/microsoft-kerberos).  
   
 ### <a name="x509-certificates"></a>Certyfikaty X. 509  
- Certyfikaty X. 509 są głównym formularzem poświadczeń używanym w aplikacjach zabezpieczeń. Aby uzyskać więcej informacji na temat certyfikatów X. 509, zobacz [Certyfikaty klucza publicznego x. 509](/windows/win32/seccertenroll/about-x-509-public-key-certificates). Certyfikaty X. 509 są przechowywane w magazynie certyfikatów. Komputer z systemem Windows ma kilka rodzajów magazynów certyfikatów, z których każdy ma inny cel. Aby uzyskać więcej informacji na temat różnych magazynów, zobacz [magazyny certyfikatów](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
+ Certyfikaty X. 509 są głównym formularzem poświadczeń używanym w aplikacjach zabezpieczeń. Aby uzyskać więcej informacji na temat certyfikatów X. 509, zobacz [Certyfikaty klucza publicznego x. 509](/windows/win32/seccertenroll/about-x-509-public-key-certificates). Certyfikaty X. 509 są przechowywane w magazynie certyfikatów. Komputer z systemem Windows ma kilka rodzajów magazynów certyfikatów, z których każdy ma inny cel. Aby uzyskać więcej informacji na temat różnych magazynów, zobacz [magazyny certyfikatów](/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ## <a name="web-services-security-specifications"></a>Specyfikacje zabezpieczenia usług w sieci Web  
  Powiązania zdefiniowane przez system obsługują wiele powszechnie używanych specyfikacji zabezpieczeń usług sieci Web. Aby uzyskać pełną listę powiązań dostarczanych przez system i specyfikacji usług sieci Web, które są przez nie obsługiwane przez program, zobacz: [Protokoły usług sieci Web obsługiwanych przez powiązania współdziałania dostarczone przez system](web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
@@ -48,7 +48,7 @@ Infrastruktura kluczy publicznych (PKI) to system certyfikatów cyfrowych, urzę
   
  Aby uzyskać więcej informacji na temat tych tematów, zobacz [mechanizmy Access Control](access-control-mechanisms.md)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

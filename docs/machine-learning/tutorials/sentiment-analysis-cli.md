@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: fcd325d518b276ccb042f3702db978e9189715b8
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 89fc5169eee539aa857a9be03c82bf084fe4b60d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326023"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554439"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analizowanie tonacji przy użyciu interfejsu wiersza polecenia platformy ML.NET
 
@@ -52,7 +52,7 @@ Zamierzamy użyć istniejącego zestawu danych, który będzie używany dla scen
 
 2. Skopiuj `yelp_labelled.txt` plik do folderu, który został wcześniej utworzony (na przykład `/cli-test` ).
 
-3. Otwórz preferowany wiersz polecenia i przejdź do folderu, do którego skopiowano plik zestawu danych. Przykład:
+3. Otwórz preferowany wiersz polecenia i przejdź do folderu, do którego skopiowano plik zestawu danych. Na przykład:
 
     ```console
     cd /cli-test
@@ -199,7 +199,7 @@ W przypadku drugiego obiektu obiekt `PredictionEngine` nie jest tak prosty, poni
 
 Jednak rzeczy znacznie się różnią od tego, co zostało wyjaśnione w tym wpisie w blogu. Pracujemy nad prostszym podejściem i utworzyłem całkiem **"pakiet integracyjny platformy .NET Core"** , którego można łatwo użyć w ASP.NET Core aplikacjach i usługach, rejestrując go w usłudze Application di Services (usługi wtrysku zależności), a następnie bezpośrednio z poziomu kodu. Zapoznaj się z poniższym samouczkiem i przykładem, aby:
 
-- [Samouczek: uruchamianie modeli ML.NET na skalowalnych aplikacjach internetowych i interfejsach API ASP.NET Core](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Samouczek: uruchamianie modeli ML.NET na skalowalnych aplikacjach internetowych i interfejsach API ASP.NET Core](../how-to-guides/serve-model-web-api-ml-net.md)
 - [Przykład: skalowalny model ML.NET na ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
 ## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Eksplorowanie wygenerowanego kodu w języku C#, który został użyty do uczenia modelu "Najlepsza jakość"
@@ -223,10 +223,10 @@ W niniejszym samouczku zawarto informacje na temat wykonywania następujących c
 > - Opis wygenerowanego kodu C# w celu uruchomienia modelu (kod do użycia w aplikacji użytkownika końcowego)
 > - Eksplorowanie wygenerowanego kodu w języku C#, który został użyty do uczenia modelu "Najlepsza jakość" (cele zdobywania)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Automatyzacja szkoleń modeli przy użyciu interfejsu wiersza polecenia ML.NET](../automate-training-with-cli.md)
-- [Samouczek: uruchamianie modeli ML.NET na skalowalnych aplikacjach internetowych i interfejsach API ASP.NET Core](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Samouczek: uruchamianie modeli ML.NET na skalowalnych aplikacjach internetowych i interfejsach API ASP.NET Core](../how-to-guides/serve-model-web-api-ml-net.md)
 - [Przykład: skalowalny model ML.NET na ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 - [Przewodnik dotyczący poleceń autouczenia interfejsu wiersza polecenia ML.NET](../reference/ml-net-cli-reference.md)
 - [Dane telemetryczne w interfejsie wiersza polecenia ML.NET](../resources/ml-net-cli-telemetry.md)

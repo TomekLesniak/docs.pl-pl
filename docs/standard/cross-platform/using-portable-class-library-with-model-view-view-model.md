@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Portable Class Library [.NET Framework], and MVVM
 - MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-ms.openlocfilehash: ff34b295ba443088115d470d8ade0c986ac1d856
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2baa2aaa32c4138eee0932e5c46c2b52482007cd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288852"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547561"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Korzystanie z przenośnej biblioteki klas w połączeniu z modelem Model-View-View Model
 Za pomocą [przenośnej biblioteki klas](cross-platform-development-with-the-portable-class-library.md) .NET Framework można zaimplementować wzorzec Model-View-View Model (MVVM) i udostępnić zestawy na wielu platformach.
@@ -25,7 +25,7 @@ Za pomocą [przenośnej biblioteki klas](cross-platform-development-with-the-por
 
  ![Pokazuje przenośną bibliotekę klas z zestawami udostępniania MVVM na różnych platformach.](./media/using-portable-class-library-with-model-view-view-model/mvvm-share-assemblies-across-platforms.png)
 
- Ten temat nie zawiera ogólnych informacji o wzorcu MVVM. Zawiera on tylko informacje o sposobach używania przenośnej biblioteki klas do implementowania MVVM. Aby uzyskać więcej informacji na temat MVVM, zobacz [Przewodnik Szybki Start MVVM przy użyciu biblioteki biblioteki Prism Library 5,0 for WPF](https://docs.microsoft.com/previous-versions/msp-n-p/gg430857(v=pandp.40)).
+ Ten temat nie zawiera ogólnych informacji o wzorcu MVVM. Zawiera on tylko informacje o sposobach używania przenośnej biblioteki klas do implementowania MVVM. Aby uzyskać więcej informacji na temat MVVM, zobacz [Przewodnik Szybki Start MVVM przy użyciu biblioteki biblioteki Prism Library 5,0 for WPF](/previous-versions/msp-n-p/gg430857(v=pandp.40)).
 
 ## <a name="classes-that-support-mvvm"></a>Klasy obsługujące MVVM
  Jeśli obiektem docelowym jest .NET Framework 4,5, .NET dla aplikacji do sklepu Windows 8. x, Silverlight lub Windows Phone 7,5 dla projektu biblioteki klas przenośnych, do wdrożenia wzorca MVVM są dostępne następujące klasy:

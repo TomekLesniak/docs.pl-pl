@@ -3,12 +3,12 @@ title: Wprowadzenie do samouczków języka C# — interaktywny
 description: Poznaj język C# w przeglądarce i Rozpocznij pracę z własnym środowiskiem programistycznym
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 965fa9dba559b967d3d1ce8d661cd08235c59f70
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 9a93e34f7b54d12b3f69589d7bb2181fc240403c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202435"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554570"
 ---
 # <a name="introduction-to-c"></a>Wprowadzenie do języka C\#
 
@@ -22,15 +22,15 @@ Pierwsze lekcje objaśniają koncepcje języka C# przy użyciu małych fragment�
 Możesz wypróbować te samouczki w różnych środowiskach. Pojęcia, które należy poznać, są takie same. Różnica polega na tym, że masz doświadczenie:
 
 - [W przeglądarce na platformie docs](hello-world.yml): to środowisko osadza okno kodu języka C# możliwy do uruchomienia na stronach witryny docs. Pisanie i wykonywanie kodu w języku C# w przeglądarce.
-- [W Microsoft Learn środowiska](https://docs.microsoft.com/learn/paths/csharp-first-steps/). Ta ścieżka szkoleniowa zawiera kilka modułów, które uczyją się podstaw języka C#.
+- [W Microsoft Learn środowiska](/learn/paths/csharp-first-steps/). Ta ścieżka szkoleniowa zawiera kilka modułów, które uczyją się podstaw języka C#.
 - [W Jupyter na spinaczu](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb). Można eksperymentować z kodem C# w notesie Jupyter w programie Binder.
 - [Na komputerze lokalnym](numbers-in-csharp-local.md). Po przejściu do trybu online można [pobrać](https://dotnet.microsoft.com/download) zestaw .NET Core SDK i skompilować programy na swoim komputerze.
 
 Wszystkie samouczki wprowadzające po lekcji Hello world są dostępne przy użyciu przeglądarki online lub [własnego lokalnego środowiska deweloperskiego](local-environment.md). Na końcu każdego samouczka zdecyduje się, czy chcesz przejść do następnej lekcji w trybie online, czy na własnej maszynie. Istnieją linki ułatwiające skonfigurowanie środowiska i kontynuowanie następnego samouczka na komputerze.
 
-## <a name="hello-world"></a>[Hello world](hello-world.yml)
+## <a name="hello-world"></a>[Cześć ludzie](hello-world.yml)
 
-W samouczku [Hello World](hello-world.yml) utworzysz najbardziej podstawowy program w języku C#. Poznasz `string` Typ i sposób pracy z tekstem. Możesz również użyć ścieżki na [Microsoft Learn](https://docs.microsoft.com/learn/paths/csharp-first-steps/) lub [Jupyter w spinaczu](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb).
+W samouczku [Hello World](hello-world.yml) utworzysz najbardziej podstawowy program w języku C#. Poznasz `string` Typ i sposób pracy z tekstem. Możesz również użyć ścieżki na [Microsoft Learn](/learn/paths/csharp-first-steps/) lub [Jupyter w spinaczu](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb).
 
 ## <a name="numbers-in-c"></a>[Liczby w języku C#](numbers-in-csharp.yml)
 

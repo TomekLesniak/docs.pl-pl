@@ -2,12 +2,12 @@
 title: Omówienie odnajdywania WCF
 ms.date: 03/30/2017
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
-ms.openlocfilehash: e7fd7ae4103600eb5463114987ca4ccbc2e0a1f2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8b4dda410b9ca7d7d3ff76795753811a80a617ec
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600195"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554622"
 ---
 # <a name="wcf-discovery-overview"></a>Omówienie odnajdywania WCF
 Interfejsy API odnajdywania zapewniają ujednolicony model programowania dla publikacji dynamicznej i odnajdywania usług sieci Web przy użyciu protokołu WS-Discovery. Te interfejsy API umożliwiają usługom publikowanie samych opublikowanych usług i klientów. Po przeprowadzeniu odnajdywania usługi Usługa może wysyłać komunikaty dotyczące anonsów, a także nasłuchiwać żądań odnajdywania i odpowiadać na nie. Odnajdywane usługi mogą wysyłać wiadomości Hello w celu ogłoszenia ich przybycia do sieci i bye komunikaty, aby ogłosić wychodzące z sieci. Aby znaleźć usługę, klienci wysyłają `Probe` żądanie zawierające określone kryteria, takie jak typ kontraktu usługi, słowa kluczowe i zakres w sieci. Usługi odbierają `Probe` żądanie i określają, czy pasują do kryteriów. Jeśli usługa jest zgodna, reaguje, wysyłając wiadomość z `ProbeMatch` powrotem do klienta przy użyciu informacji niezbędnych do skontaktowania się z usługą. Klienci mogą również wysyłać `Resolve` żądania, które umożliwiają znalezienie usług, które mogły zmienić adres punktu końcowego. Zgodne usługi odpowiadają na `Resolve` żądania przez wysłanie `ResolveMatch` komunikatu z powrotem do klienta.  
@@ -153,7 +153,7 @@ class Client
   
 2. Korzystanie z serwera proxy odnajdywania w celu komunikowania się w imieniu usługi  
   
- System Windows Server AppFabric zawiera funkcję Autostart, która umożliwi uruchomienie usługi przed odebraniem jakichkolwiek komunikatów. Dzięki temu zestawowi automatycznego uruchamiania można skonfigurować usługę hostowaną w usługach IIS/WAS. Aby uzyskać więcej informacji na temat funkcji Autostart, zobacz [Funkcja Autostart systemu Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677260(v=azure.10)). Wraz z włączeniem funkcji Autostart należy skonfigurować usługę do odnajdowania. Aby uzyskać więcej informacji, zobacz [How to: programowe Dodawanie możliwości odnajdywania do usługi WCF i klienta](how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[Konfigurowanie odnajdywania w pliku konfiguracji](configuring-discovery-in-a-configuration-file.md).  
+ System Windows Server AppFabric zawiera funkcję Autostart, która umożliwi uruchomienie usługi przed odebraniem jakichkolwiek komunikatów. Dzięki temu zestawowi automatycznego uruchamiania można skonfigurować usługę hostowaną w usługach IIS/WAS. Aby uzyskać więcej informacji na temat funkcji Autostart, zobacz [Funkcja Autostart systemu Windows Server AppFabric](/previous-versions/appfabric/ee677260(v=azure.10)). Wraz z włączeniem funkcji Autostart należy skonfigurować usługę do odnajdowania. Aby uzyskać więcej informacji, zobacz [How to: programowe Dodawanie możliwości odnajdywania do usługi WCF i klienta](how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[Konfigurowanie odnajdywania w pliku konfiguracji](configuring-discovery-in-a-configuration-file.md).  
   
  Serwer proxy odnajdywania może być używany do komunikowania się w imieniu usługi WCF, gdy usługa nie jest uruchomiona. Serwer proxy może nasłuchiwać sondy lub rozwiązywać komunikaty i odpowiadać na klienta. Klient może następnie wysyłać wiadomości bezpośrednio do usługi. Gdy klient wysyła komunikat do usługi, zostanie ona utworzona w celu odpowiedzi na wiadomość. Aby uzyskać więcej informacji na temat implementowania serwera proxy odnajdywania, zobacz [Wdrażanie serwera proxy odnajdywania](implementing-a-discovery-proxy.md).  
   

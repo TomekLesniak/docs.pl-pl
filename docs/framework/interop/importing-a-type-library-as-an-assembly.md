@@ -16,12 +16,12 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-ms.openlocfilehash: e5187e3c2ce533f25a38e93bc3715dd3e2e47c11
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bc1b921fea5aff086e21c046369f1d461f553bc7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622721"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554687"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Importowanie biblioteki typów jako zestawu
 
@@ -31,7 +31,7 @@ Istnieją dwa sposoby, aby te informacje o typie były dostępne dla aplikacji:
 
 - Przy użyciu zestawów międzyoperacyjnych tylko do projektowania: począwszy od .NET Framework 4, można wydać kompilatorowi możliwość osadzenia informacji o typie z zestawu międzyoperacyjnego do pliku wykonywalnego. Kompilator osadza tylko informacje o typie używane przez aplikację. Nie trzeba wdrażać zestawu międzyoperacyjnego przy użyciu aplikacji. Jest to zalecana technika.
 
-- Wdrażanie zestawów międzyoperacyjnych: można utworzyć standardowe odwołanie do zestawu międzyoperacyjnego. W takim przypadku zestaw międzyoperacyjny musi zostać wdrożony wraz z aplikacją. Jeśli ta technika jest stosowana i nie używasz prywatnego składnika COM, zawsze odwołuje się do podstawowego zestawu międzyoperacyjnego (PIA) opublikowanego przez autora składnika COM, który ma zostać dołączony do kodu zarządzanego. Aby uzyskać więcej informacji na temat tworzenia i używania podstawowych zestawów międzyoperacyjnych, zobacz [podstawowe zestawy międzyoperacyjności](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).
+- Wdrażanie zestawów międzyoperacyjnych: można utworzyć standardowe odwołanie do zestawu międzyoperacyjnego. W takim przypadku zestaw międzyoperacyjny musi zostać wdrożony wraz z aplikacją. Jeśli ta technika jest stosowana i nie używasz prywatnego składnika COM, zawsze odwołuje się do podstawowego zestawu międzyoperacyjnego (PIA) opublikowanego przez autora składnika COM, który ma zostać dołączony do kodu zarządzanego. Aby uzyskać więcej informacji na temat tworzenia i używania podstawowych zestawów międzyoperacyjnych, zobacz [podstawowe zestawy międzyoperacyjności](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).
 
 W przypadku korzystania z zestawów międzyoperacyjnych tylko do projektowania można osadzić informacje o typie z podstawowego zestawu międzyoperacyjnego opublikowanego przez autora składnika modelu COM. Nie trzeba jednak wdrażać podstawowego zestawu międzyoperacyjnego przy użyciu aplikacji.
 
@@ -67,18 +67,18 @@ Po znalezieniu biblioteki typów, która zawiera implementację docelowego typu 
 
   - Znajomość reguł konwersji typu "Biblioteka na zestaw".
 
-  Pisanie otoki niestandardowej jest zaawansowaną techniką. Aby uzyskać dodatkowe informacje na temat sposobu generowania otoki niestandardowej, zobacz [Dostosowywanie otok standardowych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100)).
+  Pisanie otoki niestandardowej jest zaawansowaną techniką. Aby uzyskać dodatkowe informacje na temat sposobu generowania otoki niestandardowej, zobacz [Dostosowywanie otok standardowych](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100)).
 
- Aby uzyskać więcej informacji na temat procesu importowania międzyoperacyjności modelu COM, zobacz [Podsumowanie konwersji typu Biblioteka na zestaw](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)).
+ Aby uzyskać więcej informacji na temat procesu importowania międzyoperacyjności modelu COM, zobacz [Podsumowanie konwersji typu Biblioteka na zestaw](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)).
 
 ## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - [Udostępnianie składników COM programowi.NET Framework](exposing-com-components.md)
-- [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe (Importer biblioteki typów)](../tools/tlbimp-exe-type-library-importer.md)
-- [Dostosowywanie otok standardowych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
-- [Używanie typów COM w kodzie zarządzanym](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [Dostosowywanie otok standardowych](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
+- [Używanie typów COM w kodzie zarządzanym](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Kompilowanie projektu międzyoperacyjnego](compiling-an-interop-project.md)
 - [Wdrażanie aplikacji międzyoperacyjnych](deploying-an-interop-application.md)
 - [Instrukcje: Dodawanie odwołań do bibliotek typów](how-to-add-references-to-type-libraries.md)

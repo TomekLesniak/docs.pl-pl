@@ -9,12 +9,12 @@ helpviewer_keywords:
 - strings, interop marshaling
 - interop marshaling, strings
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
-ms.openlocfilehash: 440a49730f351b820cd68a741e79f94434f585c8
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 81df2dcc132c8ce057fa3e0e7d0ad04832f7a48b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904120"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555058"
 ---
 # <a name="default-marshaling-for-strings"></a>Organizowanie domyślne dotyczące ciągów
 
@@ -28,7 +28,7 @@ W poniższej tabeli przedstawiono opcje kierowania dla typu danych ciągu, któr
 
 |Typ wyliczenia|Opis niezarządzanego formatu|
 |----------------------|-------------------------------------|
-|`UnmanagedType.BStr`wartooć|Styl COM `BSTR` o stałej długości i znakach Unicode.|
+|`UnmanagedType.BStr` wartooć|Styl COM `BSTR` o stałej długości i znakach Unicode.|
 |`UnmanagedType.LPStr`|Wskaźnik do tablicy znaków ANSI zakończonych znakiem null.|
 |`UnmanagedType.LPWStr`|Wskaźnik do tablicy znaków Unicode zakończonych wartością null.|
 
@@ -89,7 +89,7 @@ W poniższej tabeli wymieniono opcje kierowania dla ciągów, które są organiz
 |----------------------|-------------------------------------|
 |`UnmanagedType.AnsiBStr`|Styl COM `BSTR` z prefiksem o stałej długości i znaków ANSI.|
 |`UnmanagedType.BStr`|Styl COM `BSTR` o stałej długości i znakach Unicode.|
-|`UnmanagedType.LPStr`wartooć|Wskaźnik do tablicy znaków ANSI zakończonych znakiem null.|
+|`UnmanagedType.LPStr` wartooć|Wskaźnik do tablicy znaków ANSI zakończonych znakiem null.|
 |`UnmanagedType.LPTStr`|Wskaźnik do tablicy zakończonych znakiem NULL znaków zależnych od platformy.|
 |`UnmanagedType.LPUTF8Str`|Wskaźnik do tablicy kodowanej za pomocą wartości NULL znaków zakodowanych w formacie UTF-8.|
 |`UnmanagedType.LPWStr`|Wskaźnik do tablicy znaków Unicode zakończonych wartością null.|
@@ -146,7 +146,7 @@ Ciągi są prawidłowymi elementami członkowskimi struktur; jednak <xref:System
 |Typ wyliczenia|Opis niezarządzanego formatu|
 |----------------------|-------------------------------------|
 |`UnmanagedType.BStr`|Styl COM `BSTR` o stałej długości i znakach Unicode.|
-|`UnmanagedType.LPStr`wartooć|Wskaźnik do tablicy znaków ANSI zakończonych znakiem null.|
+|`UnmanagedType.LPStr` wartooć|Wskaźnik do tablicy znaków ANSI zakończonych znakiem null.|
 |`UnmanagedType.LPTStr`|Wskaźnik do tablicy zakończonych znakiem NULL znaków zależnych od platformy.|
 |`UnmanagedType.LPUTF8Str`|Wskaźnik do tablicy kodowanej za pomocą wartości NULL znaków zakodowanych w formacie UTF-8.|
 |`UnmanagedType.LPWStr`|Wskaźnik do tablicy znaków Unicode zakończonych wartością null.|
@@ -233,7 +233,7 @@ W pewnych okolicznościach bufor znaków o stałej długości musi być przekazy
 
 Rozwiązaniem jest przekazanie <xref:System.Text.StringBuilder> buforu jako argumentu zamiast <xref:System.String> . `StringBuilder`Można wycofać odwołanie i zmodyfikować go przez wywoływany, pod warunkiem, że nie przekracza on pojemności `StringBuilder` . Można go również zainicjować na stałą długość. Na przykład, jeśli zainicjujesz `StringBuilder` bufor do pojemności `N` , organizator udostępnia bufor o rozmiarze ( `N` + 1). Konta + 1 dla faktu, że niezarządzany ciąg ma terminator o wartości null, a nie `StringBuilder` .
 
-Na przykład [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) Funkcja Windows API (zdefiniowana w *Winuser. h*) wymaga, aby obiekt wywołujący przeszedł bufor znaków o stałej długości, do którego funkcja zapisuje tekst okna. `LpString`wskazuje bufor rozmiaru przydzieloną przez wywołującego `nMaxCount` . Obiekt wywołujący oczekuje na przydzielenie buforu i ustawienie `nMaxCount` argumentu na rozmiar przydzielonego buforu. W poniższym przykładzie pokazano `GetWindowText` deklarację funkcji, zgodnie z definicją w *Winuser. h*.
+Na przykład [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) Funkcja Windows API (zdefiniowana w *Winuser. h*) wymaga, aby obiekt wywołujący przeszedł bufor znaków o stałej długości, do którego funkcja zapisuje tekst okna. `LpString` wskazuje bufor rozmiaru przydzieloną przez wywołującego `nMaxCount` . Obiekt wywołujący oczekuje na przydzielenie buforu i ustawienie `nMaxCount` argumentu na rozmiar przydzielonego buforu. W poniższym przykładzie pokazano `GetWindowText` deklarację funkcji, zgodnie z definicją w *Winuser. h*.
 
 ```cpp
 int GetWindowText(
@@ -286,10 +286,10 @@ Public Class Window
 End Class
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Domyślne zachowanie marshalingu](default-marshaling-behavior.md)
 - [Organizowanie ciągów](marshaling-strings.md)
 - [Typy kopiowalne i niekopiowalne](blittable-and-non-blittable-types.md)
-- [Atrybuty kierunkowe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
+- [Atrybuty kierunkowe](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [Kopiowanie i przypinanie](copying-and-pinning.md)

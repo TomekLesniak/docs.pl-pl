@@ -17,12 +17,12 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-ms.openlocfilehash: 4963892419fd1caec4483123f820d62967a87dd6
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5fde7f7f00aadf4d941d4ffe522453970b67e9e2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620836"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554133"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>Pakowanie zestawu .NET Framework dla modelu COM
 
@@ -60,7 +60,7 @@ Deweloperzy COM mogą skorzystać z następujących informacji o zarządzanych t
 
   Niezależnie od wybranego mechanizmu, tylko typy publiczne zdefiniowane w zestawie, które dostarczasz, są uwzględniane w wygenerowanej bibliotece typów.
 
-Aby uzyskać instrukcje, zobacz [How to: embed Library Type librarys as Win32 Resources in. Aplikacje oparte na sieci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100)).
+Aby uzyskać instrukcje, zobacz [How to: embed Library Type librarys as Win32 Resources in. Aplikacje oparte na sieci](/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100)).
 
 <a name="cpconpackagingassemblyforcomanchor1"></a>
 
@@ -98,4 +98,4 @@ Aby uzyskać instrukcje, zobacz [How to: embed Library Type librarys as Win32 Re
 - [Zagadnienia dotyczące zabezpieczeń zestawów](../../standard/assembly/security-considerations.md)
 - [Tlbexp.exe (Eksporter biblioteki typów)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Rejestrowanie zestawów do użycia z modelem COM](registering-assemblies-with-com.md)
-- [Instrukcje: osadzanie bibliotek typów jako zasobów Win32 w aplikacjach](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))
+- [Instrukcje: osadzanie bibliotek typów jako zasobów Win32 w aplikacjach](/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

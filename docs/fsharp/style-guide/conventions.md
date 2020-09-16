@@ -2,12 +2,12 @@
 title: C# — konwencje kodowania
 description: 'Zapoznaj się z ogólnymi wskazówkami i idiomy podczas pisania kodu F #.'
 ms.date: 01/15/2020
-ms.openlocfilehash: 748a9c26794f46dcc67fdcfcf21f41847a462a19
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 8c7fedf429ecba6e01b26f37972ffa4eeba6d8af
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053014"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554029"
 ---
 # <a name="f-coding-conventions"></a>C# — konwencje kodowania
 
@@ -703,7 +703,7 @@ Ponieważ nie ma potrzeby stosowania klasy podczas korzystania z interfejsu API 
 
 ## <a name="consider-type-abbreviations-to-shorten-signatures"></a>Rozważ użycie skrótów typów w celu skrócenia sygnatur
 
-[Skróty typów](../language-reference/type-abbreviations.md) są wygodnym sposobem przypisywania etykiety do innego typu, takiego jak sygnatura funkcji lub bardziej złożony typ. Na przykład poniższy alias przypisuje etykietę do elementów potrzebnych do zdefiniowania obliczeń za pomocą [CNTK](https://docs.microsoft.com/cognitive-toolkit/), biblioteki uczenia głębokiego:
+[Skróty typów](../language-reference/type-abbreviations.md) są wygodnym sposobem przypisywania etykiety do innego typu, takiego jak sygnatura funkcji lub bardziej złożony typ. Na przykład poniższy alias przypisuje etykietę do elementów potrzebnych do zdefiniowania obliczeń za pomocą [CNTK](/cognitive-toolkit/), biblioteki uczenia głębokiego:
 
 ```fsharp
 open CNTK

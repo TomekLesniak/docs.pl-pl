@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, getting started
 ms.assetid: c832fa5b-cf86-4690-be5a-a226c0e49530
-ms.openlocfilehash: d2cf693fb0656a835b3f32306bdbb26e03d371e8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b5cd3f447ff6121ca276878c163a382e598ce4a9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348085"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545823"
 ---
 # <a name="getting-started-with-wcf-data-services"></a>Wprowadzenie z Usługi danych programu WCF
 Tematy w tej sekcji ułatwiają szybkie zrozumienie protokołu Open Data Protocol (OData) oraz sposób korzystania z Usługi danych programu WCF w celu udostępniania i korzystania ze źródeł danych OData przez wyjaśnienie podstawowych technologii. Ta sekcja zawiera zarówno zawartość koncepcyjną, jak i samouczek [szybkiego startu](quickstart-wcf-data-services.md) .  
@@ -36,6 +36,6 @@ Tematy w tej sekcji ułatwiają szybkie zrozumienie protokołu Open Data Protoco
  Zawiera łącza do zasobów Usługi danych programu WCF i OData.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
- [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))  
+ [Usługi danych programu WCF (Silverlight)](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))  
   
- [Wprowadzenie](../adonet/ef/getting-started.md)  
+ [Wprowadzenie](../adonet/ef/getting-started.md)

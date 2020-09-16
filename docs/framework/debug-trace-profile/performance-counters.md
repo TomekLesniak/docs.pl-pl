@@ -7,16 +7,16 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 3702e9d2e0a369f5391c16088202caf5d7ced7ea
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 1b5ca6484f45dcee33009d8b8c12a43fa41f63de
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803706"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554452"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Liczniki wydajności w .NET Framework
 
-Ten temat zawiera listę liczników wydajności, które można znaleźć w [monitorze wydajności systemu Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
+Ten temat zawiera listę liczników wydajności, które można znaleźć w [monitorze wydajności systemu Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)).  
 
 ## <a name="exception-performance-counters"></a>Liczniki wydajności wyjątków  
  Kategoria wyjątków środowiska CLR programu .NET Console zawiera liczniki, które zawierają informacje o wyjątkach zgłaszanych przez aplikację. W poniższej tabeli opisano te liczniki wydajności.  

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: 2d4c513b7a4b0e111f2b7e7384c6ee4970d5665f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2be58251c767c937e817edf1ba19309f0c62ac33
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287002"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554739"
 ---
 # <a name="net-framework-data-providers"></a>Dostawcy danych .NET Framework
 Dostawca danych .NET Framework jest używany do łączenia się z bazą danych, wykonywania poleceń i pobierania wyników. Te wyniki są przetwarzane bezpośrednio, umieszczane w, <xref:System.Data.DataSet> aby były udostępniane użytkownikowi w miarę potrzeby, w połączeniu z danymi z wielu źródeł lub zdalnie między warstwami. Dostawcy danych .NET Framework są lekkie, tworząc minimalną warstwę między źródłem danych i kodem, zwiększając wydajność bez ograniczania funkcjonalności.  
@@ -20,12 +20,12 @@ Dostawca danych .NET Framework jest używany do łączenia się z bazą danych, 
   
 |Dostawca danych .NET Framework|Opis|  
 |-------------------------------------------------------------------------------|-----------------|  
-|.NET Framework Dostawca danych SQL Server|Zapewnia dostęp do danych Microsoft SQL Server. Używa <xref:System.Data.SqlClient> przestrzeni nazw.|  
+|Dostawca danych programu .NET Framework dla programu SQL Server|Zapewnia dostęp do danych Microsoft SQL Server. Używa <xref:System.Data.SqlClient> przestrzeni nazw.|  
 |.NET Framework Dostawca danych OLE DB|Dla źródeł danych udostępnianych przy użyciu OLE DB. Używa <xref:System.Data.OleDb> przestrzeni nazw.|  
 |.NET Framework Dostawca danych dla ODBC|Dla źródeł danych narażonych na korzystanie z ODBC. Używa <xref:System.Data.Odbc> przestrzeni nazw.|  
 |.NET Framework Dostawca danych dla programu Oracle|Dla źródeł danych Oracle. .NET Framework Dostawca danych dla programu Oracle obsługuje oprogramowanie klienckie Oracle w wersji 8.1.7 lub nowszej, a następnie używa <xref:System.Data.OracleClient> przestrzeni nazw.|  
 |Dostawca EntityClient|Zapewnia dostęp do danych dla aplikacji Entity Data Model (EDM). Używa <xref:System.Data.EntityClient> przestrzeni nazw.|  
-|.NET Framework Dostawca danych SQL Server Compact 4,0.|Zapewnia dostęp do danych dla Microsoft SQL Server Compact 4,0. Używa przestrzeni nazw [System. Data. SqlServerCe](https://docs.microsoft.com/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) .|  
+|.NET Framework Dostawca danych SQL Server Compact 4,0.|Zapewnia dostęp do danych dla Microsoft SQL Server Compact 4,0. Używa przestrzeni nazw [System. Data. SqlServerCe](/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) .|  
   
 ## <a name="core-objects-of-net-framework-data-providers"></a>Podstawowe obiekty dostawców danych .NET Framework  
  W poniższej tabeli przedstawiono cztery podstawowe obiekty, które tworzą .NET Framework dostawcę danych.  
@@ -150,7 +150,7 @@ using System.Data.OracleClient;
   
 |Dostawca|Uwagi|  
 |--------------|-----------|  
-|.NET Framework Dostawca danych SQL Server|Zalecane w przypadku aplikacji warstwy środkowej, które używają Microsoft SQL Server.<br /><br /> Zalecane w przypadku aplikacji jednowarstwowych, które korzystają z aparatu Microsoft Database Engine (MSDE) lub SQL Server.<br /><br /> Zalecane użycie dostawcy OLE DB dla SQL Server (SQLOLEDB) z Dostawca danych .NET Framework dla OLE DB.|  
+|Dostawca danych programu .NET Framework dla programu SQL Server|Zalecane w przypadku aplikacji warstwy środkowej, które używają Microsoft SQL Server.<br /><br /> Zalecane w przypadku aplikacji jednowarstwowych, które korzystają z aparatu Microsoft Database Engine (MSDE) lub SQL Server.<br /><br /> Zalecane użycie dostawcy OLE DB dla SQL Server (SQLOLEDB) z Dostawca danych .NET Framework dla OLE DB.|  
 |.NET Framework Dostawca danych OLE DB|W przypadku SQL Server zaleca się .NET Framework Dostawca danych dla SQL Server zamiast tego dostawcy.<br /><br /> Zalecane w przypadku aplikacji jednowarstwowych, które korzystają z baz danych programu Microsoft Access. Nie zaleca się używania bazy danych programu Access dla aplikacji warstwy środkowej.|  
 |.NET Framework Dostawca danych dla ODBC|Zalecane w przypadku aplikacji środkowych i jednowarstwowych, które korzystają ze źródeł danych ODBC.|  
 |.NET Framework Dostawca danych dla programu Oracle|Zalecane w przypadku aplikacji środkowych i jednowarstwowych, które korzystają ze źródeł danych Oracle.|  

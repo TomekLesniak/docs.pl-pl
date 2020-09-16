@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: e6dc32274cc3b0d7ec9d66a837a422c87fb2468b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: d4f4d5d34698fbb9a7986f4628b282d4425da3f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416207"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554700"
 ---
 # <a name="consume-a-dataset-from-an-xml-web-service"></a>Korzystanie z zestawu danych z usługi sieci Web XML
 
@@ -271,5 +271,5 @@ ms.locfileid: "86416207"
 - [Wypełnianie zestawu danych z elementu DataAdapter](../populating-a-dataset-from-a-dataadapter.md)
 - [Aktualizowanie źródeł danych za pomocą elementów DataAdapter](../updating-data-sources-with-dataadapters.md)
 - [Parametry elementu DataAdapter](../dataadapter-parameters.md)
-- [Narzędzie Web Services Description Language (Wsdl.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6(v=vs.100))
+- [Narzędzie Web Services Description Language (Wsdl.exe)](/previous-versions/dotnet/netframework-4.0/7h3ystb6(v=vs.100))
 - [Omówienie ADO.NET](../ado-net-overview.md)

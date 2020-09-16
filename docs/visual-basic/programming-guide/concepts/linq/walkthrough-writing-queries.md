@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: 25905d7ac3ca4bb66a22ad1df421b400eaa6b08f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c2abca183f1241cff314a4367c7bd9f1b9f239ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413274"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554596"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Wskazówki: Pisanie zapytań w Visual Basic
 
@@ -32,7 +32,7 @@ Po zakończeniu tego instruktażu będziesz mieć możliwość przejścia do prz
 
 4. Na liście typów projektów kliknij pozycję **Aplikacja konsolowa**. W polu **Nazwa** wpisz nazwę projektu, a następnie kliknij przycisk **OK**.
 
-    Projekt zostanie utworzony. Domyślnie zawiera odwołanie do System. Core. dll. Ponadto lista **zaimportowanych obszarów nazw** na [stronie odwołania, projektant projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic) zawiera <xref:System.Linq?displayProperty=nameWithType> przestrzeń nazw.
+    Projekt zostanie utworzony. Domyślnie zawiera odwołanie do System.Core.dll. Ponadto lista **zaimportowanych obszarów nazw** na [stronie odwołania, projektant projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic) zawiera <xref:System.Linq?displayProperty=nameWithType> przestrzeń nazw.
 
 5. Na [stronie kompilacja, Projektant projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)upewnij się, że **opcja wnioskowanie** jest ustawiona na wartość **włączone**.
 
@@ -145,11 +145,11 @@ Po zapoznaniu się z podstawowymi pojęciami dotyczącymi pracy z zapytaniami mo
 
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 
-- [LINQ do XML](linq-to-xml.md)
+- [LINQ do XML](../../../../standard/linq/linq-xml-overview.md)
 
 - [LINQ do DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zapytanie zintegrowane z językiem (LINQ) (Visual Basic)](index.md)
 - [Wprowadzenie do programu LINQ w Visual Basic](getting-started-with-linq.md)

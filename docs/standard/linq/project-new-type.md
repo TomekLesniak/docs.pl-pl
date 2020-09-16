@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
-ms.openlocfilehash: 15eabf37e23363894ec1ab72e6df6dbe1fd974db
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: a0ce8d9e5199b290dc759c191c4db7a37ddc9a55
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553264"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547537"
 ---
 # <a name="how-to-project-a-new-type-linq-to-xml"></a>Projektowanie nowego typu (LINQ to XML)
 
@@ -86,6 +86,6 @@ Lawnmower:1
 Baby Monitor:2
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Projekcje i przekształcenia (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekcje i przekształcenia (LINQ to XML) (Visual Basic)](./work-dictionaries-linq-xml.md)

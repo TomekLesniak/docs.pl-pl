@@ -3,12 +3,12 @@ title: Uproszczona konfiguracja usług WCF
 description: Dowiedz się, jak zaimplementować i skonfigurować typową usługę i klienta przy użyciu programu WCF. Usługa komunikuje się za pomocą punktu końcowego określonego w pliku konfiguracji.
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: 46a0c878b29de34219413a508799ddaddf507dd8
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: dd05754dcfe36cb2e9c28ce20a5927585f85478f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246223"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554270"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Uproszczona konfiguracja usług WCF
 Ten przykład pokazuje, jak zaimplementować i skonfigurować typową usługę i klienta przy użyciu Windows Communication Foundation (WCF). Ten przykład jest podstawą dla wszystkich innych podstawowych przykładów technologii.  
@@ -79,7 +79,7 @@ Ten przykład pokazuje, jak zaimplementować i skonfigurować typową usługę i
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigSimplificationIn40`  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady zarządzania dla oprogramowania AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383405(v=azure.10))
+- [Przykłady zarządzania dla oprogramowania AppFabric](/previous-versions/appfabric/ff383405(v=azure.10))
 - [Uproszczona konfiguracja](../simplified-configuration.md)

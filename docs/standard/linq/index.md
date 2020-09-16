@@ -8,14 +8,14 @@ ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 2e8abef547d8cc06d80b8cbf865ec984eb91d330
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 65370a2bd21e2474af4cb070bb8d82a167f10070
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552969"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554999"
 ---
-# <a name="linq-overview"></a>LINQ — Omówienie
+# <a name="linq-overview"></a>LINQ — przegląd
 
 Funkcja Query-Integrated Language (LINQ) udostępnia funkcje obsługi zapytań na poziomie języka i interfejs API [funkcji wyższej kolejności](https://en.wikipedia.org/wiki/Higher-order_function) dla języków C# i Visual Basic, które umożliwiają pisanie kodu deklaratywnego.
 
@@ -111,7 +111,7 @@ End Function
 
 Pisanie kodu do ręcznego przechodzenia dokumentu XML, aby to zadanie było znacznie trudniejsze.
 
-Korzystanie z języka XML nie jest jedynym elementem, który można wykonywać za pomocą dostawców LINQ. [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md) to stosunkowo jednoskładnikowo-relacyjny obiekt mapowania (ORM) dla bazy danych serwera MSSQL. Biblioteka [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) zapewnia wydajną przechodzenie dokumentów JSON za pośrednictwem LINQ. Ponadto jeśli nie ma biblioteki, która robi to potrzebne, możesz również [napisać własnego dostawcę LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110)).
+Korzystanie z języka XML nie jest jedynym elementem, który można wykonywać za pomocą dostawców LINQ. [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md) to stosunkowo jednoskładnikowo-relacyjny obiekt mapowania (ORM) dla bazy danych serwera MSSQL. Biblioteka [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) zapewnia wydajną przechodzenie dokumentów JSON za pośrednictwem LINQ. Ponadto jeśli nie ma biblioteki, która robi to potrzebne, możesz również [napisać własnego dostawcę LINQ](/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110)).
 
 ## <a name="reasons-to-use-the-query-syntax"></a>Przyczyny użycia składni zapytania
 
@@ -159,7 +159,7 @@ Odpowiedź na to pytanie **nie** dotyczy, jeśli...
 
 ## <a name="essential-linq"></a>Podstawowe LINQ
 
-Aby zapoznać się z prawdziwie obszerną listą przykładów LINQ, zobacz [101 LINQ Samples](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/).
+Aby zapoznać się z prawdziwie obszerną listą przykładów LINQ, zobacz [101 LINQ Samples](/samples/dotnet/try-samples/101-linq-samples/).
 
 Poniższe przykłady przedstawiają szybką demonstrację niektórych najważniejszych fragmentów LINQ. Ta funkcja nie jest kompletna, ponieważ składnik LINQ oferuje więcej funkcji niż przedstawiono tutaj.
 
@@ -394,6 +394,6 @@ Działania równoległego zadania powiązane z PROCESORem, które mogą być ła
 
 ## <a name="more-resources"></a>Dodatkowe zasoby
 
-* [Przykłady dla LINQ 101](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/)
+* [Przykłady dla LINQ 101](/samples/dotnet/try-samples/101-linq-samples/)
 * [LINQPad](https://www.linqpad.net/), środowisko plac zabaw i aparat zapytań bazy danych dla języka C#/F #/Visual Basic
 * [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/)— książka elektroniczna do uczenia się, jak jest implementowane LINQ-to-Objects

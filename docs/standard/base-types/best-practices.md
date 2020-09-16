@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 30d4a8f6ddc4ae1f83f5c0802e872661cbe6c6f1
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 03eda8a419dc60c75576e15da9b3595274894c75
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85802932"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554583"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Najlepsze rozwiązania dotyczące wyrażeń regularnych w programie .NET
 
@@ -64,7 +64,7 @@ Aby rozwiązać ten problem, można wykonać następujące czynności:
 W serca. Model obiektów wyrażeń regularnych sieci jest <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> klasą, która reprezentuje aparat wyrażeń regularnych. Często jeden największy czynnik wpływający na wydajność wyrażeń regularnych jest sposobem, w jaki <xref:System.Text.RegularExpressions.Regex> aparat jest używany. Definiowanie wyrażenia regularnego polega na ścisłym sprzęganiu aparatu wyrażeń regularnych z wzorcem wyrażenia regularnego. Ten proces sprzęgania, niezależnie od tego, czy obejmuje tworzenie wystąpienia <xref:System.Text.RegularExpressions.Regex> obiektu przez przekazanie jego konstruktora wzorcem wyrażenia regularnego, czy wywoływanie statycznej metody przez przekazanie jej wzorca wyrażenia regularnego wraz z ciągiem, który ma być analizowany, jest zgodnie z koniecznością kosztowną.
 
 > [!NOTE]
-> Aby zapoznać się z bardziej szczegółowym omówieniem implikacji wydajności przy użyciu interpretowanych i skompilowanych wyrażeń regularnych, zobacz [Optymalizowanie wydajności wyrażeń regularnych, część II: Przejmowanie opłaty za wycofywanie](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) w blogu zespołu BCL.
+> Aby zapoznać się z bardziej szczegółowym omówieniem implikacji wydajności przy użyciu interpretowanych i skompilowanych wyrażeń regularnych, zobacz [Optymalizowanie wydajności wyrażeń regularnych, część II: Przejmowanie opłaty za wycofywanie](/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) w blogu zespołu BCL.
 
 Można sprzęgnąć aparat wyrażeń regularnych z konkretnym wzorcem wyrażenia regularnego, a następnie użyć aparatu, aby dopasować tekst na kilka sposobów:
 
@@ -163,7 +163,7 @@ Gdy przykład jest kompilowany do pliku wykonywalnego i uruchamiany, tworzy zest
 Zazwyczaj aparat wyrażeń regularnych używa progresji liniowej do przechodzenia przez ciąg wejściowy i porównywania go ze wzorcem wyrażenia regularnego. Jednakże, gdy nieokreślone Kwantyfikatory, takie jak `*` , `+` i `?` są używane we wzorcu wyrażenia regularnego, aparat wyrażeń regularnych może dać część udanych częściowych dopasowań i powrócić do wcześniej zapisanego stanu, aby wyszukać pomyślne dopasowanie dla całego wzorca. Proces ten jest znany pod nazwą wycofywania.
 
 > [!NOTE]
-> Aby uzyskać więcej informacji na temat wycofywania, zobacz [Szczegóły zachowania wyrażenia regularnego](details-of-regular-expression-behavior.md) [i](backtracking-in-regular-expressions.md)wycofywania. Aby zapoznać się ze szczegółową omówieniem wycofywania, zobacz [Optymalizowanie wydajności wyrażeń regularnych, część II: Przejmowanie opłaty za wycofywanie](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) w blogu zespołu BCL.
+> Aby uzyskać więcej informacji na temat wycofywania, zobacz [Szczegóły zachowania wyrażenia regularnego](details-of-regular-expression-behavior.md) [i](backtracking-in-regular-expressions.md)wycofywania. Aby zapoznać się ze szczegółową omówieniem wycofywania, zobacz [Optymalizowanie wydajności wyrażeń regularnych, część II: Przejmowanie opłaty za wycofywanie](/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) w blogu zespołu BCL.
 
 Obsługa wycofywania daje wyrażeniom regularnym duże możliwości i elastyczność. Dodatkowo odpowiedzialność za kontrolowanie operacji aparatu wyrażeń regularnych spada na deweloperów wyrażeń regularnych. Ponieważ deweloperzy często nie są tego świadomi, błędne użycie wycofywania lub nadmierne poleganie na wycofywaniu często odgrywa najbardziej znaczącą rolę w zmniejszeniu wydajności wyrażeń regularnych. W scenariuszu najgorszego przypadku czas wykonywania może podwajać się dla każdego dodatkowego znaku w ciągu wejściowym. W rzeczywistości przy nadmiernym wykorzystaniu wycofywania łatwo jest stworzyć programowy odpowiednik pętli nieskończonej, jeżeli dane wejściowe niemal pasują do wzorca wyrażenia regularnego; przetwarzanie relatywnie krótkiego ciągu wejściowego może zająć aparatowi wyrażeń regularnych kilka godzin, a nawet dni.
 

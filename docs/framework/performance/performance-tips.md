@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2b3be8b42b5046e52074236de01ca312a0a9a361
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: c5e3f692c2bf754ccd35324019246ee905e8c591
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474270"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554648"
 ---
 # <a name="net-performance-tips"></a>Wskazówki dotyczące wydajności .NET
 Termin *wydajność* zwykle odnosi się do szybkości wykonywania programu. Czasami można zwiększyć szybkość wykonywania, wykonując pewne podstawowe reguły w kodzie źródłowym. W niektórych programach ważne jest dokładne badanie kodu i używanie narzędzi do uruchamiania, aby upewnić się, że działa tak szybko, jak to możliwe. W innych programach nie trzeba wykonywać takich optymalizacji, ponieważ kod jest uruchamiany zadowalająco szybko, gdy zostanie zapisany. W tym artykule wymieniono niektóre typowe obszary, w których wydajność może pogorszyć się, a także linki do dodatkowych tematów dotyczących wydajności. Aby uzyskać więcej informacji na temat planowania i mierzenia wydajności, zobacz [wydajność](index.md)  
@@ -31,17 +31,17 @@ Termin *wydajność* zwykle odnosi się do szybkości wykonywania programu. Czas
   
 ## <a name="other-resources"></a>Inne zasoby  
   
-- [Szybsze pisanie kodu zarządzanego: informacje o kosztach](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973852(v=msdn.10))  
+- [Szybsze pisanie kodu zarządzanego: informacje o kosztach](/previous-versions/dotnet/articles/ms973852(v=msdn.10))  
   
-- [Pisanie aplikacji zarządzanych o wysokiej wydajności: podstawowy](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973858(v=msdn.10))  
+- [Pisanie aplikacji zarządzanych o wysokiej wydajności: podstawowy](/previous-versions/dotnet/articles/ms973858(v=msdn.10))  
   
-- [Podstawy modułu wyrzucania elementów bezużytecznych i wskazówki dotyczące wydajności](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973837(v=msdn.10))  
+- [Podstawy modułu wyrzucania elementów bezużytecznych i wskazówki dotyczące wydajności](/previous-versions/dotnet/articles/ms973837(v=msdn.10))  
   
-- [Porady i wskazówki dotyczące wydajności w aplikacjach .NET](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v=msdn.10))  
+- [Porady i wskazówki dotyczące wydajności w aplikacjach .NET](/previous-versions/dotnet/articles/ms973839(v=msdn.10))  
 
-- [Mariani wydajność smakowite kąski](https://docs.microsoft.com/archive/blogs/ricom/)  
+- [Mariani wydajność smakowite kąski](/archive/blogs/ricom/)  
 
-- [Blog Vance Morrison](https://docs.microsoft.com/archive/blogs/vancem/)
+- [Blog Vance Morrison](/archive/blogs/vancem/)
   
 ## <a name="see-also"></a>Zobacz także
 

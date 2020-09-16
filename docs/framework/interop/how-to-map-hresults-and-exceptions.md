@@ -12,12 +12,12 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-ms.openlocfilehash: 827e79bdefcde7ae94567e5341ade76097dc8eaa
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a1a43d7ce3fbc678cc9aa047c5110ac8615ea27e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619107"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554146"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Instrukcje: Mapowanie wyników HRESULT i wyjątków
 Metody COM zgłaszają błędy, zwracając wartości HRESULT; metody .NET raportują je przez wyrzucanie wyjątków. Środowisko uruchomieniowe obsługuje przejście między nimi. Każda Klasa wyjątków w .NET Framework jest mapowana na wartość HRESULT.  
@@ -131,7 +131,7 @@ CMyClass::MethodThatThrows
   
 |Pole wyjątku|Źródło informacji z modelu COM|  
 |---------------------|------------------------------------|  
-|**ErrorCode**|WYNIK HRESULT został zwrócony z wywołania.|  
+|**Kodzie**|WYNIK HRESULT został zwrócony z wywołania.|  
 |**HelpLink**|Jeśli **IErrorInfo->atrybut HelpContext** jest różna od zera, ciąg jest tworzony przez złączenie **IErrorInfo->GetHelpFile** i "#" oraz **IErrorInfo->GetHelpContext**. W przeciwnym razie ciąg jest zwracany z **IErrorInfo->GetHelpFile**.|  
 |**InnerException**|Zawsze ma odwołanie o wartości null (**Nothing** w Visual Basic).|  
 |**Wiadomość**|Ciąg zwrócony z **IErrorInfo->GetDescription**.|  
@@ -143,5 +143,5 @@ CMyClass::MethodThatThrows
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Zaawansowana współdziałanie COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
+- [Zaawansowana współdziałanie COM](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [Wyjątki](../../standard/exceptions/index.md)

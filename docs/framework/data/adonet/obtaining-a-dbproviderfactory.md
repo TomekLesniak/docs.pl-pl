@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: b790c87cc3ec293c18bf730567f92b490c7c6594
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0c7c89a9104ac72bf03f2900e7ca474b709be40c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286718"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554465"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Uzyskiwanie DbProviderFactory
 Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotyczących dostawcy danych jest przekazywany do <xref:System.Data.Common.DbProviderFactories> klasy. Na podstawie tych informacji <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> Metoda tworzy fabrykę dostawców o jednoznacznie określonym typie. Na przykład, aby utworzyć <xref:System.Data.SqlClient.SqlClientFactory> , można przekazać `GetFactory` ciąg z nazwą dostawcy określoną jako "System. Data. SqlClient". Inne Przeciążenie `GetFactory` trwa <xref:System.Data.DataRow> . Po utworzeniu fabryki dostawcy można użyć jej metod, aby utworzyć dodatkowe obiekty. Niektóre metody `SqlClientFactory` obejmują <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A> , <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A> , i <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A> .  
@@ -20,7 +20,7 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
 > .NET Framework <xref:System.Data.OracleClient.OracleClientFactory> , <xref:System.Data.Odbc.OdbcFactory> i <xref:System.Data.OleDb.OleDbFactory> klasy również zapewniają podobną funkcjonalność.  
   
 ## <a name="registering-dbproviderfactories"></a>Rejestrowanie DbProviderFactories  
- Każdy dostawca danych .NET Framework, który obsługuje klasy oparte na fabryce, rejestruje informacje o konfiguracji w sekcji **DbProviderFactories** pliku **Machine. config** na komputerze lokalnym. Poniższy fragment pliku konfiguracji przedstawia składnię i format dla <xref:System.Data.SqlClient> .  
+ Każdy dostawca danych .NET Framework, który obsługuje klasy oparte na fabryce, rejestruje informacje o konfiguracji w sekcji **DbProviderFactories** pliku **machine.config** na komputerze lokalnym. Poniższy fragment pliku konfiguracji przedstawia składnię i format dla <xref:System.Data.SqlClient> .  
   
 ```xml  
 <system.data>  
@@ -56,7 +56,7 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
  [!code-vb[DataWorks DbProviderFactories#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories/VB/source.vb#1)]  
   
 ## <a name="using-application-configuration-files-to-store-factory-information"></a>Przechowywanie informacji o fabryce przy użyciu plików konfiguracji aplikacji  
- Wzorzec projektowy używany do pracy z fabrykami obejmuje przechowywanie informacji o dostawcach i parametrach połączenia w pliku konfiguracyjnym aplikacji, takim jak **App. config** dla aplikacji systemu Windows i **Web. config** dla aplikacji ASP.NET.  
+ Wzorzec projektowy używany do pracy z fabrykami pociąga za sobą przechowywanie informacji o dostawcy i parametrach połączenia w pliku konfiguracyjnym aplikacji, na przykład **app.config** dla aplikacji systemu Windows i **web.config** dla aplikacji ASP.NET.  
   
  Poniższy fragment pliku konfiguracji pokazuje, jak zapisać dwa nazwane parametry połączenia "NorthwindSQL" dla połączenia z bazą danych Northwind w SQL Server i "NorthwindAccess" w celu połączenia z bazą danych Northwind w pliku Access/Jet. Nazwa **niezmiennej** jest używana dla atrybutu **ProviderName** .  
   
@@ -100,5 +100,5 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
 
 - [DbProviderFactories](dbproviderfactories.md)
 - [Parametry połączenia](connection-strings.md)
-- [Korzystanie z klas konfiguracji](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100))
+- [Korzystanie z klas konfiguracji](/previous-versions/aspnet/ms228063(v=vs.100))
 - [Omówienie ADO.NET](ado-net-overview.md)

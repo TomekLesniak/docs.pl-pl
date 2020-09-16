@@ -10,15 +10,15 @@ helpviewer_keywords:
 - x:Code XAML directive element [XAML Services]
 - XAML [XAML Services], x:Code directive element
 ms.assetid: 87986b13-1a2e-4830-ae36-15f9dc5629e8
-ms.openlocfilehash: 4da72ed630c1df001e3fd6c7e55f866b94c4d9b1
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: ea7bc17cba19137b4e4ca2d8cddb32e6630887c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "82071557"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544846"
 ---
 # <a name="xcode-intrinsic-xaml-type"></a>x:Code — Typ funkcji XAML
-Umożliwia umieszczenie kodu w środowisku produkcyjnym XAML. Taki kod może być skompilowany przez dowolną implementację procesora XAML, który kompiluje XAML, lub pozostawiony w produkcji XAML do późniejszych zastosowań, takich jak interpretacja przez środowisko wykonawcze.
+Umożliwia umieszczanie kodu w środowisku produkcyjnym XAML. Taki kod może być kompilowany przez dowolną implementację procesora XAML, która kompiluje kod XAML lub pozostawioną w środowisku produkcyjnym XAML w celu późniejszego użycia, na przykład interpretacji przez środowisko uruchomieniowe.
 
 ## <a name="xaml-object-element-usage"></a>Użycie elementu obiektu języka XAML
 
@@ -30,28 +30,28 @@ Umożliwia umieszczenie kodu w środowisku produkcyjnym XAML. Taki kod może by�
 
 ## <a name="remarks"></a>Uwagi
 
-Kod w `x:Code` elemencie dyrektywy XAML jest nadal interpretowany w ogólnej przestrzeni nazw XML i dostarczonych przestrzeniach nazw XAML. W związku z tym zwykle konieczne jest `x:Code` ująć kod używany do wewnątrz segmentu. `CDATA`
+Kod wewnątrz `x:Code` elementu dyrektywy XAML jest nadal interpretowany w ogólnej przestrzeni nazw XML i udostępnionych przestrzeniach nazw XAML. W związku z tym zazwyczaj konieczne jest zawrzeć kod używany do `x:Code` wewnątrz `CDATA` segmentu.
 
-`x:Code`nie jest dozwolone dla wszystkich możliwych mechanizmów wdrażania produkcji XAML. W określonych ramach (na przykład WPF) kod musi być skompilowany. W innych ramach `x:Code` użycie może być ogólnie niedozwolone.
+`x:Code` nie jest dozwolony dla wszystkich możliwych mechanizmów wdrażania w środowisku produkcyjnym XAML. W określonych strukturach (na przykład WPF) kod musi być skompilowany. W innych strukturach `x:Code` użycie może być ogólnie niedozwolone.
 
-Dla struktur, które `x:Code` zezwalają na zawartość zarządzaną kompilatora poprawnego języka do użycia dla `x:Code` zawartości jest określana przez ustawienia i obiekty docelowe zawierającego projektu, który jest używany do kompilowania aplikacji.
+W przypadku struktur, które zezwalają na zawartość zarządzaną `x:Code` , prawidłowy kompilator języka do użycia w przypadku `x:Code` zawartości jest określany przez ustawienia i cele projektu zawierającego, który jest używany do kompilowania aplikacji.
 
 ## <a name="wpf-usage-notes"></a>Uwagi dotyczące użycia WPF
 
-Kod zadeklarowany w ramach `x:Code` WPF ma kilka znaczących ograniczeń:
+Kod zadeklarowany w elemencie `x:Code` for WPF ma kilka istotnych ograniczeń:
 
-- Element `x:Code` dyrektywy musi być bezpośrednim elementem podrzędnym elementu głównego produkcji XAML.
+- `x:Code`Element dyrektywy musi być bezpośrednim elementem podrzędnym elementu głównego w środowisku produkcyjnym XAML.
 
-- [x:Dyrektywa klasy](xclass-directive.md) musi być podana w nadrzędnym elemencie głównym.
+- dla nadrzędnego elementu głównego musi być podana [dyrektywa x:Class](xclass-directive.md) .
 
-- Kod umieszczony `x:Code` w zostaną potraktowane przez kompilację, aby mieszcząć się w zakresie klasy częściowej, która jest już tworzona dla tej strony XAML. W związku z tym cały kod, który definiujesz musi być członkami lub zmienne tej klasy częściowej.
+- Kod umieszczony w obszarze `x:Code` będzie traktowany przez kompilację, aby znajdować się w zakresie klasy częściowej, która jest już utworzona dla tej strony XAML. W związku z tym wszystkie zdefiniowane kody muszą być elementami członkowskimi lub zmiennymi tej klasy częściowej.
 
-- Nie można zdefiniować dodatkowych klas, innych niż zagnieżdżanie klasy wewnątrz klasy częściowej (zagnieżdżanie jest dozwolone, ale nie jest typowe, ponieważ nie można odwoływać się do klas zagnieżdżonych w XAML). Nie można zdefiniować ani dodać do innych obszarów nazw clr innych niż obszar nazw używany dla istniejącej klasy częściowej.
+- Nie można definiować dodatkowych klas, innych niż zagnieżdżanie klasy wewnątrz klasy częściowej (zagnieżdżanie jest dozwolone, ale nie jest typowe, ponieważ nie można odwoływać się do klas zagnieżdżonych w języku XAML). Przestrzenie nazw CLR inne niż przestrzeń nazw, która jest używana dla istniejącej klasy częściowej, nie mogą być zdefiniowane ani dodawane do.
 
-- Odwołania do jednostek kodu poza obszarem nazw klasy częściowej CLR muszą być w pełni kwalifikowane. Jeśli elementy członkowskie są zadeklarowane są zastąpienia częściowej klasy nadrzędnych elementów członkowskich, to musi być określona za pomocą słowa kluczowego zastąpienia specyficzne dla języka. Jeśli elementy `x:Code` członkowskie zadeklarowane w zakresie są w konflikcie z członkami klasy częściowej utworzonej z XAML, w taki sposób, że kompilator zgłasza konflikt, plik XAML nie może skompilować ani załadować.
+- Odwołania do jednostek kodu spoza przestrzeni nazw CLR klasy częściowej muszą być w pełni kwalifikowane. Jeśli deklarowane składowe są zastąpienia do składowych klasy częściowej, należy określić za pomocą słowa kluczowego override określonego dla języka. Jeśli elementy członkowskie zadeklarowane w `x:Code` zakresie powodują konflikt z elementami członkowskimi częściowej klasy utworzonej poza XAML, w taki sposób, aby kompilator zgłaszał konflikt, plik XAML nie może kompilować ani ładować.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [x:Class — dyrektywa](xclass-directive.md)
-- [Związane z kodem i XAML w WPF](../../framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)
+- [Związane z kodem i XAML w WPF](/dotnet/desktop/wpf/advanced/code-behind-and-xaml-in-wpf)
 - [Omówienie XAML (WPF)](../fundamentals/xaml.md)

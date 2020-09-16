@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
-ms.openlocfilehash: 058163c96bba036c3183695bf986b4d0424271ac
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aed56be359f094db483ab1d012bd77a1096433b6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595222"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553769"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>Zabezpieczenia komunikatów z anonimowym klientem
 
@@ -22,7 +22,7 @@ Aby zapoznać się z przykładową aplikacją, zobacz [zabezpieczenia wiadomośc
 
 |Charakterystyka|Opis|
 |--------------------|-----------------|
-|Tryb zabezpieczeń|Komunikat|
+|Tryb zabezpieczeń|Wiadomość|
 |Współdziałanie|Tylko WCF|
 |Uwierzytelnianie (serwer)|Początkowe negocjowanie wymaga uwierzytelniania serwera, ale nie uwierzytelniania klienta|
 |Uwierzytelnianie (klient)|Brak|
@@ -45,7 +45,7 @@ Poniższy kod przedstawia sposób tworzenia punktu końcowego usługi, który ko
 [!code-csharp[C_SecurityScenarios#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#8)]
 [!code-vb[C_SecurityScenarios#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#8)]
 
-### <a name="configuration"></a>Konfigurowanie
+### <a name="configuration"></a>Konfiguracja
 
 Można użyć poniższej konfiguracji zamiast kodu. Element zachowania usługi służy do określania certyfikatu, który jest używany do uwierzytelniania usługi dla klienta. Element Service musi określać zachowanie przy użyciu `behaviorConfiguration` atrybutu. Element Binding określa, że typ poświadczeń klienta to `None` , co umożliwia anonimowym klientom korzystanie z usługi.
 
@@ -94,7 +94,7 @@ Poniższy kod i konfiguracja są przeznaczone do niezależnego uruchamiania. Wyk
 
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).
 
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:
 
     [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
     [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
@@ -106,7 +106,7 @@ Poniższy kod tworzy wystąpienie klienta. Powiązanie używa zabezpieczeń tryb
 [!code-csharp[C_SecurityScenarios#15](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#15)]
 [!code-vb[C_SecurityScenarios#15](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#15)]
 
-### <a name="configuration"></a>Konfigurowanie
+### <a name="configuration"></a>Konfiguracja
 
 Poniższy kod konfiguruje klienta.
 
@@ -138,10 +138,10 @@ Poniższy kod konfiguruje klienta.
 </configuration>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Rozproszone zabezpieczenia aplikacji](distributed-application-security.md)
 - [Zabezpieczenia komunikatów z anonimowością](../samples/message-security-anonymous.md)
 - [Uwierzytelnianie i tożsamość usług](service-identity-and-authentication.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

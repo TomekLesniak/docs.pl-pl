@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW events, logging
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
-ms.openlocfilehash: 45d9244eb11b914fd203f24057e1b65c6bef18c2
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: bce5ea41149dc3b19106031fae202872dd8a8fb5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309589"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553808"
 ---
 # <a name="controlling-net-framework-logging"></a>Kontrolowanie logowania w programie .NET Framework
 
@@ -18,7 +18,7 @@ ms.locfileid: "86309589"
 
 - Narzędzia wiersza polecenia [logman](/windows-server/administration/windows-commands/logman) i [tracerpt](/windows-server/administration/windows-commands/tracerpt_1) dołączone do systemu operacyjnego Windows.
 
-- Narzędzia [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) w zestawie narzędzi [wydajności systemu Windows](/windows-hardware/test/wpt/). Aby uzyskać więcej informacji na temat Xperf, zobacz [blog wydajności systemu Windows](https://docs.microsoft.com/archive/blogs/pigscanfly/).
+- Narzędzia [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) w zestawie narzędzi [wydajności systemu Windows](/windows-hardware/test/wpt/). Aby uzyskać więcej informacji na temat Xperf, zobacz [blog wydajności systemu Windows](/archive/blogs/pigscanfly/).
 
 Aby można było przechwytywać informacje o zdarzeniu CLR, dostawca CLR musi być zainstalowany na komputerze. Aby upewnić się, że dostawca jest zainstalowany, wpisz `logman query providers` w wierszu polecenia. Zostanie wyświetlona lista dostawców. Ta lista powinna zawierać następujący wpis dla dostawcy CLR.
 
@@ -54,9 +54,9 @@ Aby włączyć rejestrowanie, użytkownik musi określić trzy rzeczy:
 
     - `-p`Parametr identyfikuje identyfikator GUID dostawcy.
 
-    - `0x1CCBD`określa kategorie zdarzeń, które zostaną zgłoszone.
+    - `0x1CCBD` określa kategorie zdarzeń, które zostaną zgłoszone.
 
-    - `0x5`Ustawia poziom rejestrowania (w tym przypadku, verbose (5)).
+    - `0x5` Ustawia poziom rejestrowania (w tym przypadku, verbose (5)).
 
     - `-ets`Parametr nakazuje programowi logman Wysyłanie poleceń do sesji śledzenia zdarzeń.
 
@@ -110,7 +110,7 @@ Aby wyświetlić zdarzenia CLR ETW, należy użyć poleceń wymienionych poniże
 
      To polecenie powoduje zrzucenie przez narzędzie XPerf zdarzeń do pliku z wartościami rozdzielanymi przecinkami (CSV), który można wyświetlać. Różne zdarzenia mają różne pola, więc ten plik CSV zawiera więcej niż jeden wiersz nagłówka przed danymi. Pierwsze pole w każdym wierszu jest typem zdarzenia wskazującym, który nagłówek powinien być używany do określenia pozostałych pól.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zestaw narzędzi wydajności systemu Windows](/windows-hardware/test/wpt/)
 - [Zdarzenia ETW w środowisku CLR](etw-events-in-the-common-language-runtime.md)

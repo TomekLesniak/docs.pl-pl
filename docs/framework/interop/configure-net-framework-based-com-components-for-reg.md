@@ -9,12 +9,12 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-ms.openlocfilehash: 5263e042bafdb886b313f05751c29de0f5715211
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ad25a79add84e43ba0a8e71a0f48c5ddf65108bd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622201"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554843"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Instrukcje: Konfigurowanie aktywacji bez rejestracji składników COM opartych na platformie .NET Framework
 Aktywacja bez rejestracji dla składników opartych na .NET Framework jest nieco bardziej skomplikowana niż w przypadku składników modelu COM. Instalator wymaga dwóch manifestów:  
@@ -110,9 +110,9 @@ Manifest aplikacji można zainstalować w tym samym katalogu, w którym znajduje
   
     |Atrybut|Opis|Wymagane|  
     |---------------|-----------------|--------------|  
-    |`clsid`|Identyfikator określający klasę, która ma zostać aktywowana.|Tak|  
+    |`clsid`|Identyfikator określający klasę, która ma zostać aktywowana.|Yes|  
     |`description`|Ciąg, który informuje użytkownika o składniku. Pusty ciąg jest wartością domyślną.|Nie|  
-    |`name`|Ciąg, który reprezentuje klasę zarządzaną.|Tak|  
+    |`name`|Ciąg, który reprezentuje klasę zarządzaną.|Yes|  
     |`progid`|Identyfikator, który ma być używany w przypadku aktywacji z późnym wiązaniem.|Nie|  
     |`threadingModel`|Model wątkowości COM. Wartość domyślna to "Both".|Nie|  
     |`runtimeVersion`|Określa wersję środowiska uruchomieniowego języka wspólnego (CLR) do użycia. Jeśli nie określisz tego atrybutu, a środowisko CLR nie jest już załadowane, składnik zostanie załadowany z najnowszym zainstalowanym środowiskiem CLR przed środowiskiem CLR w wersji 4. W przypadku określenia v 1.0.3705, v 1.1.4322 lub v 2.0.50727 wersja zostanie automatycznie przesunięta do najnowszej zainstalowanej wersji środowiska CLR przed środowiskiem CLR w wersji 4 (zazwyczaj 2.0.50727). Jeśli inna wersja środowiska CLR jest już załadowana i określona wersja może zostać załadowana równolegle, określona wersja zostanie załadowana. w przeciwnym razie zostanie użyte załadowane środowisko CLR. Może to spowodować niepowodzenie ładowania.|Nie|  
@@ -176,6 +176,6 @@ Manifest aplikacji można zainstalować w tym samym katalogu, w którym znajduje
 ## <a name="see-also"></a>Zobacz także
 
 - [Współdziałanie z modelem COM bez rejestrowania](registration-free-com-interop.md)
-- [Wymagania dotyczące międzyoperacyjności modelu COM bez rejestracji](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
-- [Konfigurowanie składników COM do aktywacji bez rejestracji](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
-- [Aktywacja bez rejestracji. Składniki oparte na sieci: Przewodnik](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973915(v=msdn.10))
+- [Wymagania dotyczące międzyoperacyjności modelu COM bez rejestracji](/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
+- [Konfigurowanie składników COM do aktywacji bez rejestracji](/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
+- [Aktywacja bez rejestracji. Składniki oparte na sieci: Przewodnik](/previous-versions/dotnet/articles/ms973915(v=msdn.10))

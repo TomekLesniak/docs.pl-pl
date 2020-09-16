@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a1c4d165-9bdc-4ca8-940e-292d4ffcc338
 topic_type:
 - apiref
-ms.openlocfilehash: 4f05eb2e6ef31cf1993a623c38bb177f7e3c297e
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 4c630f5f7e3dc66ce44f10cd69fcd108226b0250
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75935648"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554335"
 ---
 # <a name="gettypelibinfo-function"></a>GetTypeLibInfo — Funkcja
 Zwraca informacje o określonej bibliotece typów, badając jej strukturę [TLIBATTR](/windows/win32/api/oaidl/ns-oaidl-tlibattr) .  
@@ -57,9 +57,9 @@ HRESULT GetTypeLibInfo(
  określoną Numer wersji pomocniczej biblioteki typów. Na przykład w przypadku wersji *x. y*pomocniczy numer wersji to *y*.  
   
 ## <a name="remarks"></a>Uwagi  
- Funkcja `GetTypeLibInfo` jest wywoływana przez [Tlbexp. exe (Eksporter biblioteki typów)](../../tools/tlbexp-exe-type-library-exporter.md). To narzędzie generuje bibliotekę typów, która opisuje typy w zestawie środowiska uruchomieniowego języka wspólnego (CLR).  
+ `GetTypeLibInfo`Funkcja jest wywoływana przez [Tlbexp.exe (Eksporter biblioteki typów)](../../tools/tlbexp-exe-type-library-exporter.md). To narzędzie generuje bibliotekę typów, która opisuje typy w zestawie środowiska uruchomieniowego języka wspólnego (CLR).  
   
- Jeśli dowolny parametr ma wartość null, funkcja zwraca `HRESULT` `E_POINTER`. W przeciwnym razie zwraca `S_OK`.  
+ Jeśli dowolny parametr ma wartość null, funkcja zwraca wartość `HRESULT` `E_POINTER` . W przeciwnym razie zwraca `S_OK` .  
   
 ## <a name="requirements"></a>Wymagania  
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
@@ -68,9 +68,9 @@ HRESULT GetTypeLibInfo(
   
  **Biblioteka:** TlbRef. lib  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Tlbexp, funkcje pomocy](index.md)
-- [LoadTypeLibEx, funkcja](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+- [Tlbexp — funkcje pomocy](index.md)
+- [LoadTypeLibEx, funkcja](/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

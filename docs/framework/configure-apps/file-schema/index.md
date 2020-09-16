@@ -21,12 +21,12 @@ helpviewer_keywords:
 - configuration settings [.NET Framework], applications
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
-ms.openlocfilehash: 35ed53fc480e218df595794f80af2458f3ecec38
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ab6f12be01899f5b7e54a7ec2d9675d502d88bc3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73039156"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555136"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schemat pliku konfiguracji dla .NET Framework
 
@@ -76,7 +76,7 @@ Elementy, które umożliwiają aplikacji Windows Forms lub ASP.NET przechowywani
 Zawiera niestandardowe ustawienia aplikacji, takie jak ścieżki plików, adresy URL usług sieci Web XML lub inne niestandardowe informacje o konfiguracji dla aplikacji.
 
 [Schemat ustawień sieci Web](./web/index.md)\
-Elementy służące do konfigurowania sposobu działania ASP.NET z aplikacją hosta, taką jak usługi IIS. Używany w plikach *ASPNET. config* .
+Elementy służące do konfigurowania sposobu działania ASP.NET z aplikacją hosta, taką jak usługi IIS. Używane w plikach *Aspnet.config* .
 
 [Schemat konfiguracji Windows Forms](winforms/index.md)\
 Wszystkie elementy w sekcji Konfiguracja aplikacji Windows Forms, w tym takie, jak takie dostosowania, jak obsługa wielomonitorów i wysokiej rozdzielczości DPI.
@@ -92,14 +92,14 @@ Wszystkie elementy schematu konfiguracji Windows Identity Foundation (WIF).
 
 ## <a name="related-sections"></a>Sekcje pokrewne
 
-[Schemat ustawień komunikacji zdalnej](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))\
+[Schemat ustawień komunikacji zdalnej](/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))\
 Opisuje elementy, które konfigurują aplikacje klienta i serwera, które implementują komunikację zdalną.
 
-[Schemat ustawień ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
+[Schemat ustawień ASP.NET](/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
 Opisuje elementy kontrolujące zachowanie aplikacji sieci Web ASP.NET.
 
-[Schemat ustawień usług sieci Web](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\
+[Schemat ustawień usług sieci Web](/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\
 Opisuje elementy kontrolujące zachowanie usług sieci Web ASP.NET i ich klientów.
 
-[Konfigurowanie aplikacji .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
+[Konfigurowanie aplikacji .NET Framework](/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
 Opisuje sposób konfigurowania zabezpieczeń, powiązań zestawów i komunikacji zdalnej w .NET Framework.

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - .NET Framework, and Windows Store apps
 - .NET Framework, and Windows Runtime
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
-ms.openlocfilehash: 7ca5a1259f970f2db5400837eb7d20998dd824cb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2d1b35181f508a616ab264c859119da7512e5f23
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288865"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547574"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Obsługa .NET Framework dla aplikacji sklepu Windows Store i środowiska wykonawczego systemu Windows
 
 .NET Framework 4,5 obsługuje wiele scenariuszy tworzenia oprogramowania z środowisko wykonawcze systemu Windows. Te scenariusze dzielą się na trzy kategorie:
 
-- Opracowywanie aplikacji ze sklepu Windows 8. x przy użyciu kontrolek XAML, jak opisano w temacie [Przewodnik dla aplikacji do sklepu Windows przy użyciu języka C# lub Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10)), [jak OT (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10))i [.NET dla aplikacji do sklepu Windows — omówienie](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
+- Opracowywanie aplikacji ze sklepu Windows 8. x przy użyciu kontrolek XAML, jak opisano w temacie [Przewodnik dla aplikacji do sklepu Windows przy użyciu języka C# lub Visual Basic](/previous-versions/windows/apps/br229583(v=win.10)), [jak OT (XAML)](/previous-versions/windows/apps/br229566(v=win.10))i [.NET dla aplikacji do sklepu Windows — omówienie](/previous-versions/windows/apps/br230302(v=vs.140)).
 
 - Opracowywanie bibliotek klas do użycia w aplikacjach do sklepu Windows 8. x utworzonych przy użyciu .NET Framework.
 
@@ -32,7 +32,7 @@ W tym temacie opisano pomoc .NET Framework techniczną dla wszystkich trzech kat
 
 .NET Framework obsługuje trzy scenariusze programowania wymienione wcześniej przez udostępnienie platformy .NET dla systemu Windows 8. x aplikacji ze sklepu i przez obsługę środowisko wykonawcze systemu Windows
 
-- [Przestrzenie nazw .NET Framework i środowisko wykonawcze systemu Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)#net-framework-and-windows-runtime-namespaces) zapewniają usprawniony widok bibliotek klas .NET Framework i zawierają tylko typy i elementy członkowskie, których można użyć do tworzenia aplikacji do sklepu Windows 8. x i składników Środowisko wykonawcze systemu Windows.
+- [Przestrzenie nazw .NET Framework i środowisko wykonawcze systemu Windows](/previous-versions/windows/apps/br230302(v=vs.140)#net-framework-and-windows-runtime-namespaces) zapewniają usprawniony widok bibliotek klas .NET Framework i zawierają tylko typy i elementy członkowskie, których można użyć do tworzenia aplikacji do sklepu Windows 8. x i składników Środowisko wykonawcze systemu Windows.
 
   - Jeśli używasz programu Visual Studio (Visual Studio 2012 lub nowszego) do tworzenia aplikacji ze sklepu Windows 8. x lub składnika środowisko wykonawcze systemu Windows, zestaw zestawów referencyjnych zapewnia, że zobaczysz tylko odpowiednie typy i elementy członkowskie.
 
@@ -40,7 +40,7 @@ W tym temacie opisano pomoc .NET Framework techniczną dla wszystkich trzech kat
 
   - Funkcje, które po prostu zawijają interfejs API systemu operacyjnego, są również usuwane, ponieważ środowisko wykonawcze systemu Windows jest łatwe do wywołania z kodu zarządzanego.
 
-  Aby dowiedzieć się więcej na temat aplikacji ze sklepu .NET dla systemu Windows 8. x, zobacz [Omówienie programu .NET dla aplikacji do sklepu Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Aby zapoznać się z procesem wyboru interfejsu API, zobacz wpis [.net for Metro style Apps](https://devblogs.microsoft.com/dotnet/net-for-metro-style-apps/) w blogu platformy .NET.
+  Aby dowiedzieć się więcej na temat aplikacji ze sklepu .NET dla systemu Windows 8. x, zobacz [Omówienie programu .NET dla aplikacji do sklepu Windows](/previous-versions/windows/apps/br230302(v=vs.140)). Aby zapoznać się z procesem wyboru interfejsu API, zobacz wpis [.net for Metro style Apps](https://devblogs.microsoft.com/dotnet/net-for-metro-style-apps/) w blogu platformy .NET.
 
 - [Środowisko wykonawcze systemu Windows](/uwp/api/) udostępnia elementy interfejsu użytkownika do kompilowania aplikacji ze sklepu Windows 8. x i zapewnia dostęp do funkcji systemu operacyjnego. Podobnie jak w przypadku .NET Framework, środowisko wykonawcze systemu Windows zawiera metadane, które umożliwiają kompilatorom języka C# i Visual Basic używanie środowisko wykonawcze systemu Windows w sposób, w jaki korzystają z bibliotek klas .NET Framework. .NET Framework ułatwia korzystanie z środowisko wykonawcze systemu Windows, ukrywając pewne różnice:
 
@@ -86,7 +86,7 @@ W bardziej zaawansowanych scenariuszach programistycznych, takich jak używanie 
 
 W środowisko wykonawcze systemu Windows `IMap<K, V>` i `IMapView<K, V>` zostały powtórzone przy użyciu `IKeyValuePair` . Gdy przekazujesz je do kodu zarządzanego, są one wyświetlane jako `IDictionary<TKey, TValue>` i `IReadOnlyDictionary<TKey, TValue>` , więc naturalnie używane `System.Collections.Generic.KeyValuePair<TKey, TValue>` do wyliczania.
 
-Sposób, w jaki interfejsy pojawiają się w kodzie zarządzanym, mają wpływ na sposób, w jaki są wyświetlane te interfejsy. Na przykład `PropertySet` Klasa implementuje `IMap<K, V>` , która pojawia się w kodzie zarządzanym jako `IDictionary<TKey, TValue>` . `PropertySet`pojawia się tak, jakby był zaimplementowany `IDictionary<TKey, TValue>` zamiast `IMap<K, V>` , tak więc w kodzie zarządzanym wydaje się `Add` , że ma metodę, która zachowuje się jak `Add` metoda w słownikach .NET Framework. Wydaje się, że nie ma `Insert` metody.
+Sposób, w jaki interfejsy pojawiają się w kodzie zarządzanym, mają wpływ na sposób, w jaki są wyświetlane te interfejsy. Na przykład `PropertySet` Klasa implementuje `IMap<K, V>` , która pojawia się w kodzie zarządzanym jako `IDictionary<TKey, TValue>` . `PropertySet` pojawia się tak, jakby był zaimplementowany `IDictionary<TKey, TValue>` zamiast `IMap<K, V>` , tak więc w kodzie zarządzanym wydaje się `Add` , że ma metodę, która zachowuje się jak `Add` metoda w słownikach .NET Framework. Wydaje się, że nie ma `Insert` metody.
 
 Aby uzyskać więcej informacji o używaniu .NET Framework do tworzenia składnika środowisko wykonawcze systemu Windows i wskazówki, które pokazują, jak używać takiego składnika z JavaScript, zobacz [Tworzenie składników Środowisko wykonawcze systemu Windows w językach C# i Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic).
 
@@ -110,7 +110,7 @@ Inne podstawowe, często używane środowisko wykonawcze systemu Windows typy, k
 
 ### <a name="other-differences"></a>Inne różnice
 
-W kilku przypadkach fakt, że typy .NET Framework pojawiają się w kodzie, a nie typy środowisko wykonawcze systemu Windows wymaga działania w Twojej części. Na przykład <xref:Windows.Foundation.Uri?displayProperty=nameWithType> Klasa jest wyświetlana <xref:System.Uri?displayProperty=nameWithType> w .NET Framework kodzie. <xref:System.Uri?displayProperty=nameWithType>zezwala na względny identyfikator URI, ale <xref:Windows.Foundation.Uri?displayProperty=nameWithType> wymaga bezwzględnego identyfikatora URI. W związku z tym, gdy przekażesz identyfikator URI do metody środowisko wykonawcze systemu Windows, musisz się upewnić, że jest ona bezwzględna. Zobacz [przekazywanie identyfikatora URI do środowisko wykonawcze systemu Windows](passing-a-uri-to-the-windows-runtime.md).
+W kilku przypadkach fakt, że typy .NET Framework pojawiają się w kodzie, a nie typy środowisko wykonawcze systemu Windows wymaga działania w Twojej części. Na przykład <xref:Windows.Foundation.Uri?displayProperty=nameWithType> Klasa jest wyświetlana <xref:System.Uri?displayProperty=nameWithType> w .NET Framework kodzie. <xref:System.Uri?displayProperty=nameWithType> zezwala na względny identyfikator URI, ale <xref:Windows.Foundation.Uri?displayProperty=nameWithType> wymaga bezwzględnego identyfikatora URI. W związku z tym, gdy przekażesz identyfikator URI do metody środowisko wykonawcze systemu Windows, musisz się upewnić, że jest ona bezwzględna. Zobacz [przekazywanie identyfikatora URI do środowisko wykonawcze systemu Windows](passing-a-uri-to-the-windows-runtime.md).
 
 <a name="WindowsRuntimeComponents"></a>
 
@@ -157,9 +157,9 @@ Kod zarządzany można spakować z istniejących aplikacji klasycznych jako skł
 
 |Tytuł|Opis|
 |-----------|-----------------|
-|[Omówienie programu .NET dla aplikacji do sklepu Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))|Zawiera opis typów .NET Framework i członków, których można użyć do tworzenia aplikacji do sklepu Windows 8. x i RuntimeComponents systemu Windows. (W centrum deweloperów systemu Windows).|
-|[Plan dla aplikacji ze sklepu Windows przy użyciu języka C# lub Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))|Udostępnia kluczowe zasoby ułatwiające rozpoczęcie opracowywania aplikacji ze sklepu Windows 8. x przy użyciu języka C# lub Visual Basic, w tym wiele tematów szybkiego startu, wytycznych i najlepszych rozwiązań. (W centrum deweloperów systemu Windows).|
-|[Jak OT (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10))|Udostępnia kluczowe zasoby ułatwiające rozpoczęcie opracowywania aplikacji ze sklepu Windows 8. x przy użyciu języka C# lub Visual Basic, w tym wiele tematów szybkiego startu, wytycznych i najlepszych rozwiązań. (W centrum deweloperów systemu Windows).|
+|[Omówienie programu .NET dla aplikacji do sklepu Windows](/previous-versions/windows/apps/br230302(v=vs.140))|Zawiera opis typów .NET Framework i członków, których można użyć do tworzenia aplikacji do sklepu Windows 8. x i RuntimeComponents systemu Windows. (W centrum deweloperów systemu Windows).|
+|[Plan dla aplikacji ze sklepu Windows przy użyciu języka C# lub Visual Basic](/previous-versions/windows/apps/br229583(v=win.10))|Udostępnia kluczowe zasoby ułatwiające rozpoczęcie opracowywania aplikacji ze sklepu Windows 8. x przy użyciu języka C# lub Visual Basic, w tym wiele tematów szybkiego startu, wytycznych i najlepszych rozwiązań. (W centrum deweloperów systemu Windows).|
+|[Jak OT (XAML)](/previous-versions/windows/apps/br229566(v=win.10))|Udostępnia kluczowe zasoby ułatwiające rozpoczęcie opracowywania aplikacji ze sklepu Windows 8. x przy użyciu języka C# lub Visual Basic, w tym wiele tematów szybkiego startu, wytycznych i najlepszych rozwiązań. (W centrum deweloperów systemu Windows).|
 |[Tworzenie składników środowisko wykonawcze systemu Windows w językach C# i Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)|Opisuje sposób tworzenia składnika środowisko wykonawcze systemu Windows przy użyciu .NET Framework. wyjaśnia, jak używać go jako części aplikacji ze sklepu Windows 8. x skompilowanego dla systemu Windows za pomocą języka JavaScript, i opisuje sposób debugowania kombinacji w programie Visual Studio. (W centrum deweloperów systemu Windows).|
 |[Informacje środowisko wykonawcze systemu Windows](/uwp/api/)|Dokumentacja referencyjna środowisko wykonawcze systemu Windows. (W centrum deweloperów systemu Windows).|
 |[Przekazywanie identyfikatora URI do środowiska wykonawczego systemu Windows](passing-a-uri-to-the-windows-runtime.md)|W tym artykule opisano problem, który może wystąpić w przypadku przekazania identyfikatora URI z kodu zarządzanego do środowisko wykonawcze systemu Windows i sposobu ich unikania.|

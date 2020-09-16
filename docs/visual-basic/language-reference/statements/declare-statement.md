@@ -27,12 +27,12 @@ helpviewer_keywords:
 - Visual Basic code, Sub procedures
 - Function procedures [Visual Basic], declaring
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
-ms.openlocfilehash: 021805508a8a053ccc8fab6f1013109bece4b6f2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8a5802583db53bfd0444ec9df0de9a0b9346d424
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404774"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545522"
 ---
 # <a name="declare-statement"></a>Declare — Instrukcja
 
@@ -52,7 +52,7 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 
 ## <a name="parts"></a>Części
 
-|Termin|Definicja|
+|Okres|Definicja|
 |---|---|
 |`attributelist`|Opcjonalny. Zobacz [listę atrybutów](attribute-list.md).|
 |`accessmodifier`|Opcjonalny. Może być jedną z następujących czynności:<br /><br /> -   [Społeczeństwo](../modifiers/public.md)<br />-   [Chronione](../modifiers/protected.md)<br />-   [Osoby](../modifiers/friend.md)<br />-   [Użytek](../modifiers/private.md)<br />- [Chroniony znajomy](../modifiers/protected-friend.md)<br />- [Prywatne chronione](../modifiers/private-protected.md)<br /><br /> Zobacz [poziomy dostępu w Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|
@@ -120,7 +120,7 @@ Odwołania zewnętrzne są domyślne dla dostępu [publicznego](../modifiers/pub
 
 - **Zestawy znaków.** Można określić, w `charsetmodifier` jaki sposób Visual Basic powinien zorganizować ciągi podczas wywoływania procedury zewnętrznej. `Ansi`Modyfikator kieruje Visual Basic do kierowania wszystkich ciągów do wartości ANSI, a `Unicode` modyfikator kieruje go do skierowania wszystkich ciągów do wartości Unicode. `Auto`Modyfikator kieruje Visual Basic do organizowania ciągów zgodnie z regułami .NET Framework na podstawie odwołania zewnętrznego lub w `name` `aliasname` przypadku określenia. Wartość domyślna to `Ansi`.
 
-  `charsetmodifier`określa również sposób, w jaki Visual Basic powinien wyszukiwać procedurę zewnętrzną w pliku zewnętrznym. `Ansi`i `Unicode` obie Visual Basic bezpośrednie, aby je wyszukać bez modyfikowania jego nazwy podczas wyszukiwania. `Auto`kieruje Visual Basic, aby określić podstawowy zestaw znaków platformy wykonawczej i prawdopodobnie zmodyfikować nazwę procedury zewnętrznej w następujący sposób:
+  `charsetmodifier` określa również sposób, w jaki Visual Basic powinien wyszukiwać procedurę zewnętrzną w pliku zewnętrznym. `Ansi` i `Unicode` obie Visual Basic bezpośrednie, aby je wyszukać bez modyfikowania jego nazwy podczas wyszukiwania. `Auto` kieruje Visual Basic, aby określić podstawowy zestaw znaków platformy wykonawczej i prawdopodobnie zmodyfikować nazwę procedury zewnętrznej w następujący sposób:
 
   - Na platformie ANSI, takiej jak Windows 95, Windows 98 lub Windows Millennium Edition, należy najpierw wyszukać zewnętrzną procedurę bez modyfikacji nazwy. Jeśli to się nie powiedzie, Dołącz wartość "A" na końcu nazwy procedury zewnętrznej i sprawdź ją ponownie.
 
@@ -129,7 +129,7 @@ Odwołania zewnętrzne są domyślne dla dostępu [publicznego](../modifiers/pub
 - **Ustanawia.** Visual Basic używa mechanizmu *wywołania platformy* .NET Framework (PInvoke) do rozwiązywania i uzyskiwania dostępu do zewnętrznych procedur. `Declare`Instrukcja i <xref:System.Runtime.InteropServices.DllImportAttribute> Klasa używają tego mechanizmu automatycznie, a użytkownik nie potrzebuje żadnej wiedzy o funkcji PInvoke. Aby uzyskać więcej informacji, zobacz [Przewodnik: wywoływanie interfejsów API systemu Windows](../../programming-guide/com-interop/walkthrough-calling-windows-apis.md).
 
 > [!IMPORTANT]
-> Jeśli procedura zewnętrzna działa poza środowiskiem uruchomieniowym języka wspólnego (CLR), jest to *kod niezarządzany*. W przypadku wywołania takiej procedury, na przykład funkcji interfejsu API systemu Windows lub metody COM, można uwidocznić swoją aplikację pod kątem zagrożeń bezpieczeństwa. Aby uzyskać więcej informacji, zobacz [zasady bezpiecznego kodowania dla niezarządzanego kodu](https://docs.microsoft.com/previous-versions/dotnet/framework/security/secure-coding-guidelines-for-unmanaged-code).
+> Jeśli procedura zewnętrzna działa poza środowiskiem uruchomieniowym języka wspólnego (CLR), jest to *kod niezarządzany*. W przypadku wywołania takiej procedury, na przykład funkcji interfejsu API systemu Windows lub metody COM, można uwidocznić swoją aplikację pod kątem zagrożeń bezpieczeństwa. Aby uzyskać więcej informacji, zobacz [zasady bezpiecznego kodowania dla niezarządzanego kodu](/previous-versions/dotnet/framework/security/secure-coding-guidelines-for-unmanaged-code).
 
 ## <a name="example"></a>Przykład
 
@@ -145,7 +145,7 @@ Poniższy przykład deklaruje odwołanie zewnętrzne do `Function` procedury, kt
 
 [!code-vb[VbVbalrStatements#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#1)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>
 - [Imports — Instrukcja (.NET Namespace i Type)](imports-statement-net-namespace-and-type.md)

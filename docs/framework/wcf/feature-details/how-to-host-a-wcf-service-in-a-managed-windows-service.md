@@ -1,19 +1,19 @@
 ---
-title: 'Instrukcje: Hostowanie usługi WCF w usłudze zarządzanej systemu Windows'
+title: 'Instrukcje: hostowanie usługi WCF w usłudze zarządzanej systemu Windows'
 description: Dowiedz się, jak utworzyć usługę WCF hostowaną przez usługę systemu Windows. Ta opcja hostingu jest dostępna we wszystkich wersjach systemu Windows.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: 4e07aa7aac82fae5cfd1bfc759ef724cf87a873a
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 21d3dcb05e48154eb3f9f10d8308dc14bd046ae1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246939"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546344"
 ---
-# <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Instrukcje: Hostowanie usługi WCF w usłudze zarządzanej systemu Windows
+# <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Instrukcje: hostowanie usługi WCF w usłudze zarządzanej systemu Windows
 
 W tym temacie przedstawiono podstawowe kroki wymagane do utworzenia usługi Windows Communication Foundation (WCF) hostowanej przez usługę systemu Windows. Ten scenariusz jest włączany przez opcję hostingu zarządzanej usługi systemu Windows, która jest długotrwałą usługą WCF hostowaną poza Internet Information Services (IIS) w bezpiecznym środowisku, które nie jest uaktywniane przez komunikat. Okres istnienia usługi jest kontrolowany przez system operacyjny. Ta opcja hostingu jest dostępna we wszystkich wersjach systemu Windows.
 
@@ -52,7 +52,7 @@ Kod usługi zawiera implementację usługi kontraktu usługi, klasy usługi syst
      [!code-csharp[c_HowTo_HostInNTService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#2)]
      [!code-vb[c_HowTo_HostInNTService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#2)]
 
-8. Utwórz nową klasę o nazwie `CalculatorWindowsService` , która dziedziczy z <xref:System.ServiceProcess.ServiceBase> klasy. Dodaj zmienną lokalną o nazwie, `serviceHost` Aby odwołać się do <xref:System.ServiceModel.ServiceHost> wystąpienia. Zdefiniuj `Main` metodę, która wywołuje`ServiceBase.Run(new CalculatorWindowsService)`
+8. Utwórz nową klasę o nazwie `CalculatorWindowsService` , która dziedziczy z <xref:System.ServiceProcess.ServiceBase> klasy. Dodaj zmienną lokalną o nazwie, `serviceHost` Aby odwołać się do <xref:System.ServiceModel.ServiceHost> wystąpienia. Zdefiniuj `Main` metodę, która wywołuje `ServiceBase.Run(new CalculatorWindowsService)`
 
      [!code-csharp[c_HowTo_HostInNTService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#3)]
      [!code-vb[c_HowTo_HostInNTService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#3)]
@@ -134,9 +134,9 @@ Poniżej znajduje się kompletna lista kodu używanego w tym temacie:
 
 Podobnie jak w przypadku opcji "samohosting" środowisko hostingu usług systemu Windows wymaga, aby część kodu hostingu była zapisywana jako część aplikacji. Usługa jest zaimplementowana jako Aplikacja konsolowa i zawiera swój własny kod hostingu. W innych środowiskach hostingu, takich jak usługa aktywacji procesów systemu Windows (WAS) w programie Internet Information Services (IIS), deweloperzy nie muszą pisać kodu hostingu.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Uproszczona konfiguracja](../simplified-configuration.md)
 - [Hosting w aplikacji zarządzanej](hosting-in-a-managed-application.md)
 - [Usługi hostingowe](../hosting-services.md)
-- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677189(v=azure.10))

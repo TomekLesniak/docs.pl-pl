@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Web services protocols
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
-ms.openlocfilehash: 0b901be2d90a70b4a44fdafb5005f9dc7fb9d556
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c468dc3992b61ce09485ed19da1f2edb3c761525
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594910"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547424"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoły usług sieci Web obsługiwane przez wiązania współdziałania udostępnione przez system
 Program Windows Communication Foundation (WCF) jest oparty na współpracy z usługami sieci Web, które obsługują zestaw specyfikacji znanych jako specyfikacje usług sieci Web. Aby uprościć konfigurację usługi pod kątem najlepszych rozwiązań dotyczących współdziałania, w programie WCF wprowadzono trzy powiązania dostarczone przez system: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> , <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType> i <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType> . W przypadku współdziałania z organizacją dla rozwoju standardów informacji o strukturze (języka Oasis), WCF obejmuje jedno powiązanie dostarczone przez system: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType> . W przypadku publikacji metadanych Funkcja WCF obejmuje dwa powiązania dostarczone przez system: [\<mexHttpBinding>](../../configure-apps/file-schema/wcf/mexhttpbinding.md) i [\<mexHttpsBinding>](../../configure-apps/file-schema/wcf/mexhttpsbinding.md) . W tym temacie wymieniono specyfikacje obsługiwane przez system powiązań interoperacyjności.  
@@ -58,12 +58,12 @@ Program Windows Communication Foundation (WCF) jest oparty na współpracy z us�
 |Zabezpieczenia|Usługa WS-Trust|[Usługa WS-Trust](http://specs.xmlsoap.org/ws/2005/02/trust/ws-trust.pdf)<br /><br /> Używane przez WS-SecureConversation (Zobacz powyżej).|  
 |Niezawodna obsługa komunikatów|WS-ReliableMessaging|[WS-ReliableMessaging](http://specs.xmlsoap.org/ws/2005/02/rm/ws-reliablemessaging.pdf)<br /><br /> Użyj, gdy powiązanie jest skonfigurowane do użycia `reliableSession` .<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
 |Transakcje|Protokół WS-AtomicTransaction|[Protokół WS-AtomicTransaction](http://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)<br /><br /> Używany do komunikacji między menedżerami transakcji. Klienci i usługi WCF zawsze korzystają z lokalnych menedżerów transakcji.|  
-|Transakcje|Usługa WS-koordynacja|[Usługa WS-koordynacja](https://docs.microsoft.com/previous-versions/ms951231(v=msdn.10))<br /><br /> Służy do przepływu kontekstu transakcji, gdy `flowTransactions` atrybut jest ustawiony na wartość "dozwolone" lub "wymagane".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
+|Transakcje|Usługa WS-koordynacja|[Usługa WS-koordynacja](/previous-versions/ms951231(v=msdn.10))<br /><br /> Służy do przepływu kontekstu transakcji, gdy `flowTransactions` atrybut jest ustawiony na wartość "dozwolone" lub "wymagane".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
   
 ## <a name="wsfederationhttpbinding-and-ws2007federationhttpbinding"></a>wsFederationHttpBinding i ws2007FederationHttpBinding  
  [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)Elementy i [\<ws2007FederationHttpBinding>](../../configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) są wprowadzane w celu zapewnienia obsługi scenariuszy federacyjnych, w przypadku których firma trzecia wystawia token używany do uwierzytelniania klienta. Oprócz protokołów używanych przez `wsHttpBinding` program `wsFederationHttpBinding` wykorzystuje:  
   
-- `WS-Trust`w przypadku wystawiania tokenów.  
+- `WS-Trust` w przypadku wystawiania tokenów.  
   
 - W przypadku usługi WSS Security Assertions Language (SAML) — profil tokenów 1,0 i 1,1 dla najczęściej wystawionego formatu tokenu.  
   
@@ -99,7 +99,7 @@ Program Windows Communication Foundation (WCF) jest oparty na współpracy z us�
 |Metadane|Usługa WS-MetadataExchange|[Usługa WS-MetadataExchange](http://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)<br /><br /> Funkcja WCF implementuje usługę WS-MetadataExchange, aby pobrać schemat XML, WSDL i WS-Policy.|  
   
 ### <a name="mexhttpsbinding"></a>mexHttpsBinding  
- [\<mexHttpsBinding>](../../configure-apps/file-schema/wcf/mexhttpsbinding.md)obsługuje następujące protokoły. Aby uzyskać więcej informacji na temat korzystania z tego powiązania, zobacz [Publikowanie metadanych](publishing-metadata.md).  
+ [\<mexHttpsBinding>](../../configure-apps/file-schema/wcf/mexhttpsbinding.md) obsługuje następujące protokoły. Aby uzyskać więcej informacji na temat korzystania z tego powiązania, zobacz [Publikowanie metadanych](publishing-metadata.md).  
   
 |Kategoria|Protokół|Specyfikacja i użycie|  
 |--------------|--------------|-----------------------------|  
@@ -108,9 +108,9 @@ Program Windows Communication Foundation (WCF) jest oparty na współpracy z us�
 |Obsługa komunikatów|WS-Addressing 2005/08|[Web Services Addressing 1,0-Core](https://www.w3.org/TR/ws-addr-core/)<br /><br /> [Web Services Addressing 1,0-SOAP](https://www.w3.org/TR/ws-addr-soap/)|  
 |Metadane|Usługa WS-MetadataExchange|[Usługa WS-MetadataExchange](http://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)<br /><br /> Funkcja WCF implementuje usługę WS-MetadataExchange, aby pobrać schemat XML, WSDL i WS-Policy.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Powiązania dostarczane przez system](../system-provided-bindings.md)
+- [Wiązania dostarczane przez system](../system-provided-bindings.md)
 - [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md)
 - [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md)
 - [\<wsDualHttpBinding>](../../configure-apps/file-schema/wcf/wsdualhttpbinding.md)

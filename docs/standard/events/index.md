@@ -15,18 +15,18 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: 8cf0ff323e9bf7305e3d9cbb6dabd8f685059e97
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 83799b0f4c6d6503825ce271fed4bffa7a9775b9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447111"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545706"
 ---
 # <a name="handling-and-raising-events"></a>Obsługa i wywoływanie zdarzeń
 
 Zdarzenia w programie .NET są oparte na modelu delegata. Model delegata jest zgodny z [wzorcem projektowym obserwatora](observer-design-pattern.md), co umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy. Nadawca zdarzeń wypychanie powiadomienia o wystąpieniu zdarzenia, a odbiorca zdarzenia odbiera to powiadomienie i definiuje odpowiedź na nie. W tym artykule opisano główne składniki modelu delegata, sposób korzystania ze zdarzeń w aplikacjach oraz sposób implementacji zdarzeń w kodzie.  
   
- Aby uzyskać informacje na temat obsługi zdarzeń w aplikacjach ze sklepu Windows 8. x, zobacz [Omówienie zdarzeń i zdarzeń kierowanych](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10)).  
+ Aby uzyskać informacje na temat obsługi zdarzeń w aplikacjach ze sklepu Windows 8. x, zobacz [Omówienie zdarzeń i zdarzeń kierowanych](/previous-versions/windows/apps/hh758286(v=win.10)).  
   
 ## <a name="events"></a>Zdarzenia
 
@@ -60,7 +60,7 @@ W przypadku scenariuszy, w których <xref:System.EventHandler> <xref:System.Even
 
 Dane skojarzone ze zdarzeniem mogą być dostarczane za pomocą klasy danych zdarzenia. Platforma .NET udostępnia wiele klas danych zdarzeń, których można używać w aplikacjach. Na przykład <xref:System.IO.Ports.SerialDataReceivedEventArgs> Klasa jest klasą danych zdarzenia dla <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=nameWithType> zdarzenia. .NET stosuje wzorzec nazewnictwa kończący wszystkie klasy danych zdarzeń za pomocą `EventArgs` . Należy określić, która Klasa danych zdarzenia jest skojarzona ze zdarzeniem, przeglądając delegata zdarzenia. Na przykład <xref:System.IO.Ports.SerialDataReceivedEventHandler> Delegat zawiera <xref:System.IO.Ports.SerialDataReceivedEventArgs> klasę jako jeden z jej parametrów.  
   
-<xref:System.EventArgs>Klasa jest typem podstawowym dla wszystkich klas danych zdarzeń. <xref:System.EventArgs>jest również klasą używaną, gdy do zdarzenia nie są skojarzone żadne dane. Podczas tworzenia zdarzenia, które jest przeznaczone tylko do powiadamiania innych klas, których coś dotyczy, i nie musi przekazywać żadnych danych, należy uwzględnić <xref:System.EventArgs> klasę jako drugi parametr w delegatze. Wartość można przekazać, <xref:System.EventArgs.Empty?displayProperty=nameWithType> gdy nie są dostarczane żadne dane. <xref:System.EventHandler>Delegat zawiera <xref:System.EventArgs> klasę jako parametr.  
+<xref:System.EventArgs>Klasa jest typem podstawowym dla wszystkich klas danych zdarzeń. <xref:System.EventArgs> jest również klasą używaną, gdy do zdarzenia nie są skojarzone żadne dane. Podczas tworzenia zdarzenia, które jest przeznaczone tylko do powiadamiania innych klas, których coś dotyczy, i nie musi przekazywać żadnych danych, należy uwzględnić <xref:System.EventArgs> klasę jako drugi parametr w delegatze. Wartość można przekazać, <xref:System.EventArgs.Empty?displayProperty=nameWithType> gdy nie są dostarczane żadne dane. <xref:System.EventHandler>Delegat zawiera <xref:System.EventArgs> klasę jako parametr.  
   
 Jeśli chcesz utworzyć dostosowaną klasę danych zdarzenia, Utwórz klasę, która pochodzi od <xref:System.EventArgs> , a następnie podaj wszelkich członków potrzebnych do przekazywania danych związanych ze zdarzeniem. Zazwyczaj należy używać tego samego wzorca nazewnictwa jak .NET i kończyć nazwę klasy danych zdarzenia za pomocą `EventArgs` .  
   
