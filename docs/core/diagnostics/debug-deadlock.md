@@ -3,65 +3,65 @@ title: Zakleszczenie debugowania — .NET Core
 description: Samouczek, który przeprowadzi Cię przez debugowanie problemu blokowania w programie .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d9a9328b376de5886d22ca7315f6d7d9d73fd2c2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557883"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538699"
 ---
-# <a name="debug-a-deadlock-in-net-core"></a><span data-ttu-id="2735c-103">Debugowanie zakleszczenia w programie .NET Core</span><span class="sxs-lookup"><span data-stu-id="2735c-103">Debug a deadlock in .NET Core</span></span>
+# <a name="debug-a-deadlock-in-net-core"></a><span data-ttu-id="a04ee-103">Debugowanie zakleszczenia w programie .NET Core</span><span class="sxs-lookup"><span data-stu-id="a04ee-103">Debug a deadlock in .NET Core</span></span>
 
-<span data-ttu-id="2735c-104">**Ten artykuł ma zastosowanie do: ✔️** .net Core 3,1 SDK i nowszych wersjach</span><span class="sxs-lookup"><span data-stu-id="2735c-104">**This article applies to: ✔️** .NET Core 3.1 SDK and later versions</span></span>
+<span data-ttu-id="a04ee-104">**Ten artykuł ma zastosowanie do: ✔️** .net Core 3,1 SDK i nowszych wersjach</span><span class="sxs-lookup"><span data-stu-id="a04ee-104">**This article applies to: ✔️** .NET Core 3.1 SDK and later versions</span></span>
 
-<span data-ttu-id="2735c-105">W tym samouczku dowiesz się, jak debugować scenariusz zakleszczenia.</span><span class="sxs-lookup"><span data-stu-id="2735c-105">In this tutorial, you'll learn how to debug a deadlock scenario.</span></span> <span data-ttu-id="2735c-106">Korzystając z podanego ASP.NET Core przykładowego repozytorium kodu źródłowego [aplikacji sieci Web](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) , można przypadkowo zaistnieć zakleszczenie.</span><span class="sxs-lookup"><span data-stu-id="2735c-106">Using the provided example [ASP.NET Core web app](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) source code repository, you can cause a deadlock intentionally.</span></span> <span data-ttu-id="2735c-107">Punkt końcowy będzie miał Rozwieszanie i kumulację wątków.</span><span class="sxs-lookup"><span data-stu-id="2735c-107">The endpoint will experience a hang and thread accumulation.</span></span> <span data-ttu-id="2735c-108">Dowiesz się, jak można użyć różnych narzędzi do analizowania problemu, takiego jak zrzuty podstawowe, analiza zrzutów podstawowych i śledzenie procesów.</span><span class="sxs-lookup"><span data-stu-id="2735c-108">You'll learn how you can use various tools to analyze the problem, such as core dumps, core dump analysis, and process tracing.</span></span>
+<span data-ttu-id="a04ee-105">W tym samouczku dowiesz się, jak debugować scenariusz zakleszczenia.</span><span class="sxs-lookup"><span data-stu-id="a04ee-105">In this tutorial, you'll learn how to debug a deadlock scenario.</span></span> <span data-ttu-id="a04ee-106">Korzystając z podanego ASP.NET Core przykładowego repozytorium kodu źródłowego [aplikacji sieci Web](/samples/dotnet/samples/diagnostic-scenarios) , można przypadkowo zaistnieć zakleszczenie.</span><span class="sxs-lookup"><span data-stu-id="a04ee-106">Using the provided example [ASP.NET Core web app](/samples/dotnet/samples/diagnostic-scenarios) source code repository, you can cause a deadlock intentionally.</span></span> <span data-ttu-id="a04ee-107">Punkt końcowy będzie miał Rozwieszanie i kumulację wątków.</span><span class="sxs-lookup"><span data-stu-id="a04ee-107">The endpoint will experience a hang and thread accumulation.</span></span> <span data-ttu-id="a04ee-108">Dowiesz się, jak można użyć różnych narzędzi do analizowania problemu, takiego jak zrzuty podstawowe, analiza zrzutów podstawowych i śledzenie procesów.</span><span class="sxs-lookup"><span data-stu-id="a04ee-108">You'll learn how you can use various tools to analyze the problem, such as core dumps, core dump analysis, and process tracing.</span></span>
 
-<span data-ttu-id="2735c-109">W tym samouczku wykonasz następujące czynności:</span><span class="sxs-lookup"><span data-stu-id="2735c-109">In this tutorial, you will:</span></span>
+<span data-ttu-id="a04ee-109">W tym samouczku wykonasz następujące czynności:</span><span class="sxs-lookup"><span data-stu-id="a04ee-109">In this tutorial, you will:</span></span>
 
 > [!div class="checklist"]
 >
-> - <span data-ttu-id="2735c-110">Badanie zawieszenia aplikacji</span><span class="sxs-lookup"><span data-stu-id="2735c-110">Investigate an app hang</span></span>
-> - <span data-ttu-id="2735c-111">Generuj podstawowy plik zrzutu</span><span class="sxs-lookup"><span data-stu-id="2735c-111">Generate a core dump file</span></span>
-> - <span data-ttu-id="2735c-112">Analizuj wątki procesu w pliku zrzutu</span><span class="sxs-lookup"><span data-stu-id="2735c-112">Analyze process threads in the dump file</span></span>
-> - <span data-ttu-id="2735c-113">Analizowanie bloków stosy wywołań i Sync</span><span class="sxs-lookup"><span data-stu-id="2735c-113">Analyze callstacks and sync blocks</span></span>
-> - <span data-ttu-id="2735c-114">Diagnozowanie i rozwiązywanie zakleszczenia</span><span class="sxs-lookup"><span data-stu-id="2735c-114">Diagnose and solve a deadlock</span></span>
+> - <span data-ttu-id="a04ee-110">Badanie zawieszenia aplikacji</span><span class="sxs-lookup"><span data-stu-id="a04ee-110">Investigate an app hang</span></span>
+> - <span data-ttu-id="a04ee-111">Generuj podstawowy plik zrzutu</span><span class="sxs-lookup"><span data-stu-id="a04ee-111">Generate a core dump file</span></span>
+> - <span data-ttu-id="a04ee-112">Analizuj wątki procesu w pliku zrzutu</span><span class="sxs-lookup"><span data-stu-id="a04ee-112">Analyze process threads in the dump file</span></span>
+> - <span data-ttu-id="a04ee-113">Analizowanie bloków stosy wywołań i Sync</span><span class="sxs-lookup"><span data-stu-id="a04ee-113">Analyze callstacks and sync blocks</span></span>
+> - <span data-ttu-id="a04ee-114">Diagnozowanie i rozwiązywanie zakleszczenia</span><span class="sxs-lookup"><span data-stu-id="a04ee-114">Diagnose and solve a deadlock</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="2735c-115">Wymagania wstępne</span><span class="sxs-lookup"><span data-stu-id="2735c-115">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="a04ee-115">Wymagania wstępne</span><span class="sxs-lookup"><span data-stu-id="a04ee-115">Prerequisites</span></span>
 
-<span data-ttu-id="2735c-116">Samouczek używa:</span><span class="sxs-lookup"><span data-stu-id="2735c-116">The tutorial uses:</span></span>
+<span data-ttu-id="a04ee-116">Samouczek używa:</span><span class="sxs-lookup"><span data-stu-id="a04ee-116">The tutorial uses:</span></span>
 
-- <span data-ttu-id="2735c-117">[.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) lub nowsza wersja</span><span class="sxs-lookup"><span data-stu-id="2735c-117">[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version</span></span>
-- <span data-ttu-id="2735c-118">[Przykładowy element docelowy debugowania — aplikacja internetowa](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) do wyzwolenia scenariusza</span><span class="sxs-lookup"><span data-stu-id="2735c-118">[Sample debug target - web app](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) to trigger the scenario</span></span>
-- <span data-ttu-id="2735c-119">[dotnet-Trace](dotnet-trace.md) do procesów list</span><span class="sxs-lookup"><span data-stu-id="2735c-119">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
-- <span data-ttu-id="2735c-120">[dotnet-dump](dotnet-dump.md) do zbierania i analizowania pliku zrzutu</span><span class="sxs-lookup"><span data-stu-id="2735c-120">[dotnet-dump](dotnet-dump.md) to collect, and analyze a dump file</span></span>
+- <span data-ttu-id="a04ee-117">[.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) lub nowsza wersja</span><span class="sxs-lookup"><span data-stu-id="a04ee-117">[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version</span></span>
+- <span data-ttu-id="a04ee-118">[Przykładowy element docelowy debugowania — aplikacja internetowa](/samples/dotnet/samples/diagnostic-scenarios) do wyzwolenia scenariusza</span><span class="sxs-lookup"><span data-stu-id="a04ee-118">[Sample debug target - web app](/samples/dotnet/samples/diagnostic-scenarios) to trigger the scenario</span></span>
+- <span data-ttu-id="a04ee-119">[dotnet-Trace](dotnet-trace.md) do procesów list</span><span class="sxs-lookup"><span data-stu-id="a04ee-119">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
+- <span data-ttu-id="a04ee-120">[dotnet-dump](dotnet-dump.md) do zbierania i analizowania pliku zrzutu</span><span class="sxs-lookup"><span data-stu-id="a04ee-120">[dotnet-dump](dotnet-dump.md) to collect, and analyze a dump file</span></span>
 
-## <a name="core-dump-generation"></a><span data-ttu-id="2735c-121">Generowanie zrzutu rdzeni</span><span class="sxs-lookup"><span data-stu-id="2735c-121">Core dump generation</span></span>
+## <a name="core-dump-generation"></a><span data-ttu-id="a04ee-121">Generowanie zrzutu rdzeni</span><span class="sxs-lookup"><span data-stu-id="a04ee-121">Core dump generation</span></span>
 
-<span data-ttu-id="2735c-122">Aby zbadać czas braku odpowiedzi aplikacji, zrzut rdzenia lub zrzut pamięci umożliwia sprawdzenie stanu wątków i ewentualnych blokad, które mogą mieć problemy z rywalizacją.</span><span class="sxs-lookup"><span data-stu-id="2735c-122">To investigate application unresponsiveness, a core dump or memory dump allows you to inspect the state of its threads and any possible locks that may have contention issues.</span></span> <span data-ttu-id="2735c-123">Uruchom [przykładową](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) aplikację do debugowania przy użyciu następującego polecenia z przykładowego katalogu głównego:</span><span class="sxs-lookup"><span data-stu-id="2735c-123">Run the [sample debug](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) application using the following command from the sample root directory:</span></span>
+<span data-ttu-id="a04ee-122">Aby zbadać czas braku odpowiedzi aplikacji, zrzut rdzenia lub zrzut pamięci umożliwia sprawdzenie stanu wątków i ewentualnych blokad, które mogą mieć problemy z rywalizacją.</span><span class="sxs-lookup"><span data-stu-id="a04ee-122">To investigate application unresponsiveness, a core dump or memory dump allows you to inspect the state of its threads and any possible locks that may have contention issues.</span></span> <span data-ttu-id="a04ee-123">Uruchom [przykładową](/samples/dotnet/samples/diagnostic-scenarios) aplikację do debugowania przy użyciu następującego polecenia z przykładowego katalogu głównego:</span><span class="sxs-lookup"><span data-stu-id="a04ee-123">Run the [sample debug](/samples/dotnet/samples/diagnostic-scenarios) application using the following command from the sample root directory:</span></span>
 
 ```dotnetcli
 dotnet run
 ```
 
-<span data-ttu-id="2735c-124">Aby znaleźć identyfikator procesu, użyj następującego polecenia:</span><span class="sxs-lookup"><span data-stu-id="2735c-124">To find the process ID, use the following command:</span></span>
+<span data-ttu-id="a04ee-124">Aby znaleźć identyfikator procesu, użyj następującego polecenia:</span><span class="sxs-lookup"><span data-stu-id="a04ee-124">To find the process ID, use the following command:</span></span>
 
 ```dotnetcli
 dotnet-trace ps
 ```
 
-<span data-ttu-id="2735c-125">Zanotuj identyfikator procesu z danych wyjściowych polecenia.</span><span class="sxs-lookup"><span data-stu-id="2735c-125">Take note of the process ID from your command output.</span></span> <span data-ttu-id="2735c-126">Nasz identyfikator procesu został utworzony `4807` , ale będzie się różnić.</span><span class="sxs-lookup"><span data-stu-id="2735c-126">Our process ID was `4807`, but yours will be different.</span></span> <span data-ttu-id="2735c-127">Przejdź do następującego adresu URL, który jest punktem końcowym interfejsu API w witrynie przykładowej:</span><span class="sxs-lookup"><span data-stu-id="2735c-127">Navigate to the following URL, which is an API endpoint on the sample site:</span></span>
+<span data-ttu-id="a04ee-125">Zanotuj identyfikator procesu z danych wyjściowych polecenia.</span><span class="sxs-lookup"><span data-stu-id="a04ee-125">Take note of the process ID from your command output.</span></span> <span data-ttu-id="a04ee-126">Nasz identyfikator procesu został utworzony `4807` , ale będzie się różnić.</span><span class="sxs-lookup"><span data-stu-id="a04ee-126">Our process ID was `4807`, but yours will be different.</span></span> <span data-ttu-id="a04ee-127">Przejdź do następującego adresu URL, który jest punktem końcowym interfejsu API w witrynie przykładowej:</span><span class="sxs-lookup"><span data-stu-id="a04ee-127">Navigate to the following URL, which is an API endpoint on the sample site:</span></span>
 
 `https://localhost:5001/api/diagscenario/deadlock`
 
-<span data-ttu-id="2735c-128">Żądanie interfejsu API do witryny zostanie zawieszone i nie będzie odpowiadać.</span><span class="sxs-lookup"><span data-stu-id="2735c-128">The API request to the site will hang and not respond.</span></span> <span data-ttu-id="2735c-129">Pozwól na uruchamianie żądania przez około 10-15 sekund.</span><span class="sxs-lookup"><span data-stu-id="2735c-129">Let the request run for about 10-15 seconds.</span></span> <span data-ttu-id="2735c-130">Następnie Utwórz zrzut rdzenia przy użyciu następującego polecenia:</span><span class="sxs-lookup"><span data-stu-id="2735c-130">Then create the core dump using the following command:</span></span>
+<span data-ttu-id="a04ee-128">Żądanie interfejsu API do witryny zostanie zawieszone i nie będzie odpowiadać.</span><span class="sxs-lookup"><span data-stu-id="a04ee-128">The API request to the site will hang and not respond.</span></span> <span data-ttu-id="a04ee-129">Pozwól na uruchamianie żądania przez około 10-15 sekund.</span><span class="sxs-lookup"><span data-stu-id="a04ee-129">Let the request run for about 10-15 seconds.</span></span> <span data-ttu-id="a04ee-130">Następnie Utwórz zrzut rdzenia przy użyciu następującego polecenia:</span><span class="sxs-lookup"><span data-stu-id="a04ee-130">Then create the core dump using the following command:</span></span>
 
-### <a name="linux"></a>[<span data-ttu-id="2735c-131">Linux</span><span class="sxs-lookup"><span data-stu-id="2735c-131">Linux</span></span>](#tab/linux)
+### <a name="linux"></a>[<span data-ttu-id="a04ee-131">Linux</span><span class="sxs-lookup"><span data-stu-id="a04ee-131">Linux</span></span>](#tab/linux)
 
 ```bash
 sudo dotnet-dump collect -p 4807
 ```
 
-### <a name="windows"></a>[<span data-ttu-id="2735c-132">Windows</span><span class="sxs-lookup"><span data-stu-id="2735c-132">Windows</span></span>](#tab/windows)
+### <a name="windows"></a>[<span data-ttu-id="a04ee-132">Windows</span><span class="sxs-lookup"><span data-stu-id="a04ee-132">Windows</span></span>](#tab/windows)
 
 ```console
 dotnet-dump collect -p 4807
@@ -69,15 +69,15 @@ dotnet-dump collect -p 4807
 
 ---
 
-## <a name="analyze-the-core-dump"></a><span data-ttu-id="2735c-133">Analizowanie zrzutu rdzeni</span><span class="sxs-lookup"><span data-stu-id="2735c-133">Analyze the core dump</span></span>
+## <a name="analyze-the-core-dump"></a><span data-ttu-id="a04ee-133">Analizowanie zrzutu rdzeni</span><span class="sxs-lookup"><span data-stu-id="a04ee-133">Analyze the core dump</span></span>
 
-<span data-ttu-id="2735c-134">Aby rozpocząć analizę podstawowego zrzutu, Otwórz zrzut rdzenia przy użyciu następującego `dotnet-dump analyze` polecenia.</span><span class="sxs-lookup"><span data-stu-id="2735c-134">To start the core dump analysis, open the core dump using the following `dotnet-dump analyze` command.</span></span> <span data-ttu-id="2735c-135">Argument jest ścieżką do głównego pliku zrzutu, który został zebrany wcześniej.</span><span class="sxs-lookup"><span data-stu-id="2735c-135">The argument is the path to the core dump file that was collected earlier.</span></span>
+<span data-ttu-id="a04ee-134">Aby rozpocząć analizę podstawowego zrzutu, Otwórz zrzut rdzenia przy użyciu następującego `dotnet-dump analyze` polecenia.</span><span class="sxs-lookup"><span data-stu-id="a04ee-134">To start the core dump analysis, open the core dump using the following `dotnet-dump analyze` command.</span></span> <span data-ttu-id="a04ee-135">Argument jest ścieżką do głównego pliku zrzutu, który został zebrany wcześniej.</span><span class="sxs-lookup"><span data-stu-id="a04ee-135">The argument is the path to the core dump file that was collected earlier.</span></span>
 
 ```dotnetcli
 dotnet-dump analyze  ~/.dotnet/tools/core_20190513_143916
 ```
 
-<span data-ttu-id="2735c-136">Ponieważ masz wrażenie potencjalnego zawieszenia, chcesz mieć ogólny wpływ na działanie wątku w procesie.</span><span class="sxs-lookup"><span data-stu-id="2735c-136">Since you're looking at a potential hang, you want an overall feel for the thread activity in the process.</span></span> <span data-ttu-id="2735c-137">Możesz użyć `threads` polecenia, jak pokazano poniżej:</span><span class="sxs-lookup"><span data-stu-id="2735c-137">You can use the `threads` command as shown below:</span></span>
+<span data-ttu-id="a04ee-136">Ponieważ masz wrażenie potencjalnego zawieszenia, chcesz mieć ogólny wpływ na działanie wątku w procesie.</span><span class="sxs-lookup"><span data-stu-id="a04ee-136">Since you're looking at a potential hang, you want an overall feel for the thread activity in the process.</span></span> <span data-ttu-id="a04ee-137">Możesz użyć `threads` polecenia, jak pokazano poniżej:</span><span class="sxs-lookup"><span data-stu-id="a04ee-137">You can use the `threads` command as shown below:</span></span>
 
 ```console
 > threads
@@ -117,15 +117,15 @@ dotnet-dump analyze  ~/.dotnet/tools/core_20190513_143916
  321 0x1DD4C (122188)
  ```
 
-<span data-ttu-id="2735c-138">W danych wyjściowych są wyświetlane wszystkie wątki aktualnie uruchomione w procesie ze skojarzonym IDENTYFIKATORem wątku debugera i IDENTYFIKATORem wątku systemu operacyjnego.</span><span class="sxs-lookup"><span data-stu-id="2735c-138">The output shows all the threads currently running in the process with their associated debugger thread ID and operating system thread ID.</span></span> <span data-ttu-id="2735c-139">Na podstawie danych wyjściowych jest ponad 300 wątków.</span><span class="sxs-lookup"><span data-stu-id="2735c-139">Based on the output, there are over 300 threads.</span></span>
+<span data-ttu-id="a04ee-138">W danych wyjściowych są wyświetlane wszystkie wątki aktualnie uruchomione w procesie ze skojarzonym IDENTYFIKATORem wątku debugera i IDENTYFIKATORem wątku systemu operacyjnego.</span><span class="sxs-lookup"><span data-stu-id="a04ee-138">The output shows all the threads currently running in the process with their associated debugger thread ID and operating system thread ID.</span></span> <span data-ttu-id="a04ee-139">Na podstawie danych wyjściowych jest ponad 300 wątków.</span><span class="sxs-lookup"><span data-stu-id="a04ee-139">Based on the output, there are over 300 threads.</span></span>
 
-<span data-ttu-id="2735c-140">Następnym krokiem jest uzyskanie lepszych informacji o tym, co aktualnie robi wątki, pobierając stosu wywołań każdego wątku.</span><span class="sxs-lookup"><span data-stu-id="2735c-140">The next step is to get a better understanding of what the threads are currently doing by getting each thread's callstack.</span></span> <span data-ttu-id="2735c-141">`clrstack`Polecenie może służyć do wyprowadzania stosy wywołań.</span><span class="sxs-lookup"><span data-stu-id="2735c-141">The `clrstack` command can be used to output callstacks.</span></span> <span data-ttu-id="2735c-142">Może on wyprowadzać pojedyncze stosu wywołań lub wszystkie stosy wywołań.</span><span class="sxs-lookup"><span data-stu-id="2735c-142">It can either output a single callstack or all the callstacks.</span></span> <span data-ttu-id="2735c-143">Użyj poniższego polecenia, aby wyprowadzić wszystkie stosy wywołań dla wszystkich wątków w procesie:</span><span class="sxs-lookup"><span data-stu-id="2735c-143">Use the following command to output all the callstacks for all the threads in the process:</span></span>
+<span data-ttu-id="a04ee-140">Następnym krokiem jest uzyskanie lepszych informacji o tym, co aktualnie robi wątki, pobierając stosu wywołań każdego wątku.</span><span class="sxs-lookup"><span data-stu-id="a04ee-140">The next step is to get a better understanding of what the threads are currently doing by getting each thread's callstack.</span></span> <span data-ttu-id="a04ee-141">`clrstack`Polecenie może służyć do wyprowadzania stosy wywołań.</span><span class="sxs-lookup"><span data-stu-id="a04ee-141">The `clrstack` command can be used to output callstacks.</span></span> <span data-ttu-id="a04ee-142">Może on wyprowadzać pojedyncze stosu wywołań lub wszystkie stosy wywołań.</span><span class="sxs-lookup"><span data-stu-id="a04ee-142">It can either output a single callstack or all the callstacks.</span></span> <span data-ttu-id="a04ee-143">Użyj poniższego polecenia, aby wyprowadzić wszystkie stosy wywołań dla wszystkich wątków w procesie:</span><span class="sxs-lookup"><span data-stu-id="a04ee-143">Use the following command to output all the callstacks for all the threads in the process:</span></span>
 
 ```console
 clrstack -all
 ```
 
-<span data-ttu-id="2735c-144">Reprezentatywna część danych wyjściowych wygląda następująco:</span><span class="sxs-lookup"><span data-stu-id="2735c-144">A representative portion of the output looks like:</span></span>
+<span data-ttu-id="a04ee-144">Reprezentatywna część danych wyjściowych wygląda następująco:</span><span class="sxs-lookup"><span data-stu-id="a04ee-144">A representative portion of the output looks like:</span></span>
 
 ```console
   ...
@@ -206,7 +206,7 @@ OS Thread Id: 0x1dc88
 ...
 ```
 
-<span data-ttu-id="2735c-145">Obserwowanie stosy wywołań dla wszystkich ponad 300 wątków pokazuje wzorzec, w którym większość wątków współużytkuje wspólny stosu wywołań:</span><span class="sxs-lookup"><span data-stu-id="2735c-145">Observing the callstacks for all 300+ threads shows a pattern where a majority of the threads share a common callstack:</span></span>
+<span data-ttu-id="a04ee-145">Obserwowanie stosy wywołań dla wszystkich ponad 300 wątków pokazuje wzorzec, w którym większość wątków współużytkuje wspólny stosu wywołań:</span><span class="sxs-lookup"><span data-stu-id="a04ee-145">Observing the callstacks for all 300+ threads shows a pattern where a majority of the threads share a common callstack:</span></span>
 
 ```console
 OS Thread Id: 0x1dc88
@@ -220,9 +220,9 @@ OS Thread Id: 0x1dc88
 00007F2ADFFAED70 00007f30593044af [DebuggerU2MCatchHandlerFrame: 00007f2adffaed70]
 ```
 
-<span data-ttu-id="2735c-146">Stosu wywołań wydaje się, że żądanie dotarło do naszej metody zakleszczenia, która z kolei wywołuje wywołanie `Monitor.ReliableEnter` .</span><span class="sxs-lookup"><span data-stu-id="2735c-146">The callstack seems to show that the request arrived in our deadlock method that in turn makes a call to `Monitor.ReliableEnter`.</span></span> <span data-ttu-id="2735c-147">Ta metoda wskazuje, że wątki próbują wprowadzić blokadę monitora.</span><span class="sxs-lookup"><span data-stu-id="2735c-147">This method indicates that the threads are trying to enter a monitor lock.</span></span> <span data-ttu-id="2735c-148">Czekają na dostępność blokady.</span><span class="sxs-lookup"><span data-stu-id="2735c-148">They're waiting on the availability of the lock.</span></span> <span data-ttu-id="2735c-149">Prawdopodobnie jest on zablokowany przez inny wątek.</span><span class="sxs-lookup"><span data-stu-id="2735c-149">It's likely locked by a different thread.</span></span>
+<span data-ttu-id="a04ee-146">Stosu wywołań wydaje się, że żądanie dotarło do naszej metody zakleszczenia, która z kolei wywołuje wywołanie `Monitor.ReliableEnter` .</span><span class="sxs-lookup"><span data-stu-id="a04ee-146">The callstack seems to show that the request arrived in our deadlock method that in turn makes a call to `Monitor.ReliableEnter`.</span></span> <span data-ttu-id="a04ee-147">Ta metoda wskazuje, że wątki próbują wprowadzić blokadę monitora.</span><span class="sxs-lookup"><span data-stu-id="a04ee-147">This method indicates that the threads are trying to enter a monitor lock.</span></span> <span data-ttu-id="a04ee-148">Czekają na dostępność blokady.</span><span class="sxs-lookup"><span data-stu-id="a04ee-148">They're waiting on the availability of the lock.</span></span> <span data-ttu-id="a04ee-149">Prawdopodobnie jest on zablokowany przez inny wątek.</span><span class="sxs-lookup"><span data-stu-id="a04ee-149">It's likely locked by a different thread.</span></span>
 
-<span data-ttu-id="2735c-150">Następnym krokiem jest znalezienie, który wątek rzeczywiście utrzymuje blokadę monitora.</span><span class="sxs-lookup"><span data-stu-id="2735c-150">The next step then is to find out which thread is actually holding the monitor lock.</span></span> <span data-ttu-id="2735c-151">Ponieważ monitory zwykle przechowują informacje o blokowaniu w tabeli bloków synchronizacji, można użyć `syncblk` polecenia, aby uzyskać więcej informacji:</span><span class="sxs-lookup"><span data-stu-id="2735c-151">Since monitors typically store lock information in the sync block table, we can use the `syncblk` command to get more information:</span></span>
+<span data-ttu-id="a04ee-150">Następnym krokiem jest znalezienie, który wątek rzeczywiście utrzymuje blokadę monitora.</span><span class="sxs-lookup"><span data-stu-id="a04ee-150">The next step then is to find out which thread is actually holding the monitor lock.</span></span> <span data-ttu-id="a04ee-151">Ponieważ monitory zwykle przechowują informacje o blokowaniu w tabeli bloków synchronizacji, można użyć `syncblk` polecenia, aby uzyskać więcej informacji:</span><span class="sxs-lookup"><span data-stu-id="a04ee-151">Since monitors typically store lock information in the sync block table, we can use the `syncblk` command to get more information:</span></span>
 
 ```console
 > syncblk
@@ -237,11 +237,11 @@ ComClassFactory 0
 Free            0
 ```
 
-<span data-ttu-id="2735c-152">Dwie interesujące kolumny to **MonitorHeld** i **właściciel informacji o wątkach**.</span><span class="sxs-lookup"><span data-stu-id="2735c-152">The two interesting columns are **MonitorHeld** and **Owning Thread Info**.</span></span> <span data-ttu-id="2735c-153">Kolumna **MonitorHeld** pokazuje, czy blokada monitora jest pobierana przez wątek i liczbę oczekujących wątków.</span><span class="sxs-lookup"><span data-stu-id="2735c-153">The **MonitorHeld** column shows whether a monitor lock is acquired by a thread and the number of waiting threads.</span></span> <span data-ttu-id="2735c-154">Kolumna **Informacje o wątkach będących właścicielem** wskazuje, który wątek jest aktualnie właścicielem blokady monitora.</span><span class="sxs-lookup"><span data-stu-id="2735c-154">The **Owning Thread Info** column shows which thread currently owns the monitor lock.</span></span> <span data-ttu-id="2735c-155">Informacje o wątku mają trzy różne podkolumny.</span><span class="sxs-lookup"><span data-stu-id="2735c-155">The thread info has three different subcolumns.</span></span> <span data-ttu-id="2735c-156">Druga Podkolumna zawiera identyfikator wątku systemu operacyjnego.</span><span class="sxs-lookup"><span data-stu-id="2735c-156">The second subcolumn shows operating system thread ID.</span></span>
+<span data-ttu-id="a04ee-152">Dwie interesujące kolumny to **MonitorHeld** i **właściciel informacji o wątkach**.</span><span class="sxs-lookup"><span data-stu-id="a04ee-152">The two interesting columns are **MonitorHeld** and **Owning Thread Info**.</span></span> <span data-ttu-id="a04ee-153">Kolumna **MonitorHeld** pokazuje, czy blokada monitora jest pobierana przez wątek i liczbę oczekujących wątków.</span><span class="sxs-lookup"><span data-stu-id="a04ee-153">The **MonitorHeld** column shows whether a monitor lock is acquired by a thread and the number of waiting threads.</span></span> <span data-ttu-id="a04ee-154">Kolumna **Informacje o wątkach będących właścicielem** wskazuje, który wątek jest aktualnie właścicielem blokady monitora.</span><span class="sxs-lookup"><span data-stu-id="a04ee-154">The **Owning Thread Info** column shows which thread currently owns the monitor lock.</span></span> <span data-ttu-id="a04ee-155">Informacje o wątku mają trzy różne podkolumny.</span><span class="sxs-lookup"><span data-stu-id="a04ee-155">The thread info has three different subcolumns.</span></span> <span data-ttu-id="a04ee-156">Druga Podkolumna zawiera identyfikator wątku systemu operacyjnego.</span><span class="sxs-lookup"><span data-stu-id="a04ee-156">The second subcolumn shows operating system thread ID.</span></span>
 
-<span data-ttu-id="2735c-157">W tym momencie wiemy, że dwa różne wątki (0x5634 i 0x51d4) przechowują blokadę monitora.</span><span class="sxs-lookup"><span data-stu-id="2735c-157">At this point, we know two different threads (0x5634 and 0x51d4) hold a monitor lock.</span></span> <span data-ttu-id="2735c-158">Następnym krokiem jest zaplanowanie działania tych wątków.</span><span class="sxs-lookup"><span data-stu-id="2735c-158">The next step is to take a look at what those threads are doing.</span></span> <span data-ttu-id="2735c-159">Musimy sprawdzić, czy blokada nie jest zablokowana.</span><span class="sxs-lookup"><span data-stu-id="2735c-159">We need to check if they're stuck indefinitely holding the lock.</span></span> <span data-ttu-id="2735c-160">Użyjmy `setthread` poleceń i, `clrstack` Aby przełączyć się do każdego z wątków i wyświetlić stosy wywołań.</span><span class="sxs-lookup"><span data-stu-id="2735c-160">Let's use the `setthread` and `clrstack` commands to switch to each of the threads and display the callstacks.</span></span>
+<span data-ttu-id="a04ee-157">W tym momencie wiemy, że dwa różne wątki (0x5634 i 0x51d4) przechowują blokadę monitora.</span><span class="sxs-lookup"><span data-stu-id="a04ee-157">At this point, we know two different threads (0x5634 and 0x51d4) hold a monitor lock.</span></span> <span data-ttu-id="a04ee-158">Następnym krokiem jest zaplanowanie działania tych wątków.</span><span class="sxs-lookup"><span data-stu-id="a04ee-158">The next step is to take a look at what those threads are doing.</span></span> <span data-ttu-id="a04ee-159">Musimy sprawdzić, czy blokada nie jest zablokowana.</span><span class="sxs-lookup"><span data-stu-id="a04ee-159">We need to check if they're stuck indefinitely holding the lock.</span></span> <span data-ttu-id="a04ee-160">Użyjmy `setthread` poleceń i, `clrstack` Aby przełączyć się do każdego z wątków i wyświetlić stosy wywołań.</span><span class="sxs-lookup"><span data-stu-id="a04ee-160">Let's use the `setthread` and `clrstack` commands to switch to each of the threads and display the callstacks.</span></span>
 
-<span data-ttu-id="2735c-161">Aby sprawdzić pierwszy wątek, uruchom `setthread` polecenie i Znajdź indeks wątku 0x5634 (nasz indeks to 28).</span><span class="sxs-lookup"><span data-stu-id="2735c-161">To look at the first thread, run the `setthread` command, and find the index of the 0x5634 thread (our index was 28).</span></span> <span data-ttu-id="2735c-162">Funkcja zakleszczenia oczekuje na uzyskanie blokady, ale jest już właścicielem blokady.</span><span class="sxs-lookup"><span data-stu-id="2735c-162">The deadlock function is waiting to acquire a lock, but it already owns the lock.</span></span> <span data-ttu-id="2735c-163">Jest to zakleszczenie oczekujące na blokadę, która już się utrzymuje.</span><span class="sxs-lookup"><span data-stu-id="2735c-163">It's in deadlock waiting for the lock it already holds.</span></span>
+<span data-ttu-id="a04ee-161">Aby sprawdzić pierwszy wątek, uruchom `setthread` polecenie i Znajdź indeks wątku 0x5634 (nasz indeks to 28).</span><span class="sxs-lookup"><span data-stu-id="a04ee-161">To look at the first thread, run the `setthread` command, and find the index of the 0x5634 thread (our index was 28).</span></span> <span data-ttu-id="a04ee-162">Funkcja zakleszczenia oczekuje na uzyskanie blokady, ale jest już właścicielem blokady.</span><span class="sxs-lookup"><span data-stu-id="a04ee-162">The deadlock function is waiting to acquire a lock, but it already owns the lock.</span></span> <span data-ttu-id="a04ee-163">Jest to zakleszczenie oczekujące na blokadę, która już się utrzymuje.</span><span class="sxs-lookup"><span data-stu-id="a04ee-163">It's in deadlock waiting for the lock it already holds.</span></span>
 
 ```console
 > setthread 28
@@ -260,16 +260,16 @@ OS Thread Id: 0x5634 (28)
 0000004E46AFF3A0 00007ffebdcc6b63 [DebuggerU2MCatchHandlerFrame: 0000004e46aff3a0]
 ```
 
-<span data-ttu-id="2735c-164">Drugi wątek jest podobny.</span><span class="sxs-lookup"><span data-stu-id="2735c-164">The second thread is similar.</span></span> <span data-ttu-id="2735c-165">Próbuje on również uzyskać blokadę, która jest już własnością.</span><span class="sxs-lookup"><span data-stu-id="2735c-165">It's also trying to acquire a lock that it already owns.</span></span> <span data-ttu-id="2735c-166">Pozostałe 300 wątków, które oczekują na to, najprawdopodobniej czekają na jedną z blokad, które spowodowały zakleszczenie.</span><span class="sxs-lookup"><span data-stu-id="2735c-166">The remaining 300+ threads that are all waiting are most likely also waiting on one of the locks that caused the deadlock.</span></span>
+<span data-ttu-id="a04ee-164">Drugi wątek jest podobny.</span><span class="sxs-lookup"><span data-stu-id="a04ee-164">The second thread is similar.</span></span> <span data-ttu-id="a04ee-165">Próbuje on również uzyskać blokadę, która jest już własnością.</span><span class="sxs-lookup"><span data-stu-id="a04ee-165">It's also trying to acquire a lock that it already owns.</span></span> <span data-ttu-id="a04ee-166">Pozostałe 300 wątków, które oczekują na to, najprawdopodobniej czekają na jedną z blokad, które spowodowały zakleszczenie.</span><span class="sxs-lookup"><span data-stu-id="a04ee-166">The remaining 300+ threads that are all waiting are most likely also waiting on one of the locks that caused the deadlock.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="2735c-167">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="2735c-167">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a04ee-167">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="a04ee-167">See also</span></span>
 
-- <span data-ttu-id="2735c-168">[dotnet-Trace](dotnet-trace.md) do procesów list</span><span class="sxs-lookup"><span data-stu-id="2735c-168">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
-- <span data-ttu-id="2735c-169">[dotnet-Counters](dotnet-counters.md) , aby sprawdzić użycie pamięci zarządzanej</span><span class="sxs-lookup"><span data-stu-id="2735c-169">[dotnet-counters](dotnet-counters.md) to check managed memory usage</span></span>
-- <span data-ttu-id="2735c-170">[dotnet-dump](dotnet-dump.md) aby zebrać i przeanalizować plik zrzutu</span><span class="sxs-lookup"><span data-stu-id="2735c-170">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file</span></span>
-- [<span data-ttu-id="2735c-171">dotnet/Diagnostyka</span><span class="sxs-lookup"><span data-stu-id="2735c-171">dotnet/diagnostics</span></span>](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
+- <span data-ttu-id="a04ee-168">[dotnet-Trace](dotnet-trace.md) do procesów list</span><span class="sxs-lookup"><span data-stu-id="a04ee-168">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
+- <span data-ttu-id="a04ee-169">[dotnet-Counters](dotnet-counters.md) , aby sprawdzić użycie pamięci zarządzanej</span><span class="sxs-lookup"><span data-stu-id="a04ee-169">[dotnet-counters](dotnet-counters.md) to check managed memory usage</span></span>
+- <span data-ttu-id="a04ee-170">[dotnet-dump](dotnet-dump.md) aby zebrać i przeanalizować plik zrzutu</span><span class="sxs-lookup"><span data-stu-id="a04ee-170">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file</span></span>
+- [<span data-ttu-id="a04ee-171">dotnet/Diagnostyka</span><span class="sxs-lookup"><span data-stu-id="a04ee-171">dotnet/diagnostics</span></span>](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
 
-## <a name="next-steps"></a><span data-ttu-id="2735c-172">Następne kroki</span><span class="sxs-lookup"><span data-stu-id="2735c-172">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="a04ee-172">Następne kroki</span><span class="sxs-lookup"><span data-stu-id="a04ee-172">Next steps</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="2735c-173">Jakie narzędzia diagnostyczne są dostępne w programie .NET Core</span><span class="sxs-lookup"><span data-stu-id="2735c-173">What diagnostic tools are available in .NET Core</span></span>](index.md)
+> [<span data-ttu-id="a04ee-173">Jakie narzędzia diagnostyczne są dostępne w programie .NET Core</span><span class="sxs-lookup"><span data-stu-id="a04ee-173">What diagnostic tools are available in .NET Core</span></span>](index.md)
