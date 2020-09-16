@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-ms.openlocfilehash: 903d636938c47850951330d7936d95470441607e
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 57ffe3fd2d446b4a7364aa531e785bfb79520a0a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557219"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558215"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Instrukcje: Tworzenie obiektów GenericPrincipal i GenericIdentity
 
 > [!NOTE]
 > Ten artykuł dotyczy systemu Windows.
 >
-> Aby uzyskać informacje na temat ASP.NET Core, zobacz [Omówienie zabezpieczeń ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/).
+> Aby uzyskać informacje na temat ASP.NET Core, zobacz [Omówienie zabezpieczeń ASP.NET Core](/aspnet/core/security/).
 
 Można użyć <xref:System.Security.Principal.GenericIdentity> klasy w połączeniu z <xref:System.Security.Principal.GenericPrincipal> klasą, aby utworzyć schemat autoryzacji, który istnieje niezależnie od domeny systemu Windows.
 
@@ -144,7 +144,7 @@ The IsAuthenticated is: True
 Is this a Manager? True
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Security.Principal.GenericIdentity>
 - <xref:System.Security.Principal.GenericPrincipal>

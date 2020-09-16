@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 5097632ca777403e6073d28b707bdbe653cda8ac
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: edcb1c4d00a09ba8404b08ddc3ca3447a52a81b6
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545028"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679589"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Ładowanie danych z plików i innych źródeł
 
@@ -66,7 +66,7 @@ ML.NET działa za poorednictwem nazw kolumn. Jeśli chcesz zmienić nazwę kolum
 
 ## <a name="load-data-from-a-single-file"></a>Ładowanie danych z jednego pliku
 
-Aby załadować dane z pliku, należy użyć [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) metody wraz z modelem danych w celu załadowania danych. Ponieważ `separatorChar` parametr jest domyślnie rozdzielany tabulatorami, w razie potrzeby zmień go na plik danych. Jeśli plik ma nagłówek, ustaw `hasHeader` parametr na `true` , aby zignorować pierwszy wiersz w pliku i rozpocząć ładowanie danych z drugiego wiersza.
+Aby załadować dane z pliku, należy użyć [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) metody wraz z modelem danych w celu załadowania danych. Ponieważ `separatorChar` parametr jest domyślnie rozdzielany tabulatorami, w razie potrzeby zmień go na plik danych. Jeśli plik ma nagłówek, ustaw `hasHeader` parametr na `true` , aby zignorować pierwszy wiersz w pliku i rozpocząć ładowanie danych z drugiego wiersza.
 
 ```csharp
 //Create MLContext
@@ -82,7 +82,7 @@ W przypadku, gdy dane są przechowywane w wielu plikach, pod warunkiem że schem
 
 ### <a name="load-from-files-in-a-single-directory"></a>Ładowanie z plików w jednym katalogu
 
-Gdy wszystkie pliki danych znajdują się w tym samym katalogu, Użyj symboli wieloznacznych w [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) metodzie.
+Gdy wszystkie pliki danych znajdują się w tym samym katalogu, Użyj symboli wieloznacznych w [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) metodzie.
 
 ```csharp
 //Create MLContext
@@ -94,7 +94,7 @@ IDataView data = mlContext.Data.LoadFromTextFile<HousingData>("Data/*", separato
 
 ### <a name="load-from-files-in-multiple-directories"></a>Ładowanie z plików w wielu katalogach
 
-Aby załadować dane z wielu katalogów, użyj [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader*) metody w celu utworzenia [`TextLoader`](xref:Microsoft.ML.Data.TextLoader) . Następnie użyj [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load*) metody i określ poszczególne ścieżki plików (nie można używać symboli wieloznacznych).
+Aby załadować dane z wielu katalogów, użyj [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader%2A) metody w celu utworzenia [`TextLoader`](xref:Microsoft.ML.Data.TextLoader) . Następnie użyj [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load%2A) metody i określ poszczególne ścieżki plików (nie można używać symboli wieloznacznych).
 
 ```csharp
 //Create MLContext
@@ -200,10 +200,10 @@ HousingData[] inMemoryCollection = new HousingData[]
 };
 ```
 
-Załaduj kolekcję znajdującą się w pamięci do [`IDataView`](xref:Microsoft.ML.IDataView) [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) metody:
+Załaduj kolekcję znajdującą się w pamięci do [`IDataView`](xref:Microsoft.ML.IDataView) [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable%2A) metody:
 
 > [!IMPORTANT]
-> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) zakłada, że [`IEnumerable`](xref:System.Collections.IEnumerable) ładowanie z programu jest bezpieczne dla wątków.
+> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable%2A) zakłada, że [`IEnumerable`](xref:System.Collections.IEnumerable) ładowanie z programu jest bezpieczne dla wątków.
 
 ```csharp
 // Create MLContext

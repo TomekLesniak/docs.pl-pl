@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
-ms.openlocfilehash: f15a19feaed631a76948efd24ee225acf789cb2d
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 2add8c21ca8ade4b530e0e6b1b3c5bba66e100ab
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244858"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556788"
 ---
 # <a name="transport-security-with-basic-authentication"></a>Zabezpieczenia transportu z uwierzytelnianiem podstawowym
 Na poniższej ilustracji przedstawiono usługę i klienta Windows Communication Foundation (WCF). Serwer musi mieć prawidłowy certyfikat X. 509, który może być używany dla SSL (SSL), a klienci muszą ufać certyfikatowi serwera. Ponadto usługa sieci Web ma już implementację protokołu SSL, która może być używana. Aby uzyskać więcej informacji na temat włączania uwierzytelniania podstawowego na Internet Information Services (IIS), zobacz <https://docs.microsoft.com/iis/configuration/system.webserver/security/authentication/basicauthentication> .  
@@ -23,8 +23,8 @@ Na poniższej ilustracji przedstawiono usługę i klienta Windows Communication 
 |Tryb zabezpieczeń|Transport|  
 |Współdziałanie|Z istniejącymi usługami i klientami usług sieci Web|  
 |Uwierzytelnianie (serwer)<br /><br /> Uwierzytelnianie (klient)|Tak (przy użyciu protokołu HTTPS)<br /><br /> Tak (za poorednictwem nazwy użytkownika/hasła)|  
-|Integralność|Tak|  
-|Poufność|Tak|  
+|Integralność|Yes|  
+|Poufność|Yes|  
 |Transport|HTTPS|  
 |Wiązanie|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -111,7 +111,7 @@ Na poniższej ilustracji przedstawiono usługę i klienta Windows Communication 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>
 - <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>
@@ -119,4 +119,4 @@ Na poniższej ilustracji przedstawiono usługę i klienta Windows Communication 
 - [Instrukcje: konfigurowanie portu z certyfikatem SSL](how-to-configure-a-port-with-an-ssl-certificate.md)
 - [Przegląd zabezpieczeń](security-overview.md)
 - [\<clientCredentials>](../../configure-apps/file-schema/wcf/clientcredentials.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

@@ -4,12 +4,12 @@ description: Dowiedz się, jak zainstalować platformę .NET dla Apache Spark w 
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 14babf7a551192b286f309393e3bbff25d4745d5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8110b87991e2f0253257faf19f383dec6cbd3853
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617746"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557206"
 ---
 # <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a>Zainstaluj platformę .NET dla Apache Spark w notesach Jupyter w klastrach Azure HDInsight Spark
 
@@ -17,7 +17,7 @@ W tym artykule przedstawiono sposób instalowania programu .NET for Apache Spark
 
 Klastry usługi Azure HDInsight są już dołączone do notesów Jupyter, więc wystarczy skonfigurować notesy Jupyter do uruchamiania programu .NET dla Apache Spark. Aby można było używać platformy .NET do Apache Spark w notesach Jupyter, w języku c# REPL jest potrzebny do wykonania kodu w języku C# i zachowania stanu wykonywania w razie potrzeby. [Wypróbuj platformę .NET](https://github.com/dotnet/try) jako oficjalną REPL .NET.
 
-Aby włączyć platformę .NET dla Apache Spark za pomocą środowiska Jupyter notesy, należy wykonać kilka ręcznych czynności za pomocą [Ambari](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-manage-ambari) i przesłać [Akcje skryptu](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux) w klastrze usługi HDInsight Spark.
+Aby włączyć platformę .NET dla Apache Spark za pomocą środowiska Jupyter notesy, należy wykonać kilka ręcznych czynności za pomocą [Ambari](/azure/hdinsight/hdinsight-hadoop-manage-ambari) i przesłać [Akcje skryptu](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux) w klastrze usługi HDInsight Spark.
 
 > [!NOTE]
 > Ta funkcja jest *eksperymentalna* i nie jest obsługiwana przez zespół usługi HDInsight Spark.
@@ -26,7 +26,7 @@ Aby włączyć platformę .NET dla Apache Spark za pomocą środowiska Jupyter n
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Jeśli jeszcze tego nie masz, Utwórz klaster [Azure HDInsight Spark](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) .
+Jeśli jeszcze tego nie masz, Utwórz klaster [Azure HDInsight Spark](/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) .
 
 1. Odwiedź [Azure Portal](https://portal.azure.com) i wybierz pozycję **+ Utwórz zasób**.
 
@@ -63,9 +63,9 @@ W Azure Portal wybierz **klaster HDInsight Spark** utworzony w poprzednim kroku.
 
    Utwórz nowy plik o nazwie **Install-Interactive-Notebook.sh** na komputerze lokalnym i wklej zawartość [Install-Interactive-Notebook.sh zawartości](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh).
 
-   Przekaż skrypt do [identyfikatora URI](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) , który jest dostępny z klastra usługi HDInsight. Na przykład `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.
+   Przekaż skrypt do [identyfikatora URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) , który jest dostępny z klastra usługi HDInsight. Na przykład `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.
 
-2. Uruchom `install-interactive-notebook.sh` w klastrze przy użyciu [akcji skryptu HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
+2. Uruchom `install-interactive-notebook.sh` w klastrze przy użyciu [akcji skryptu HDInsight](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
    Wróć do klastra HDI w Azure Portal i wybierz pozycję **Akcje skryptu** z opcji po lewej stronie. Przesyłasz jedną akcję skryptu do wdrożenia platformy .NET dla Apache Spark REPL w klastrze usługi HDInsight Spark. Użyj następujących ustawień:
 
@@ -99,15 +99,15 @@ Postępuj zgodnie z instrukcjami w sekcji [Zatrzymaj usługi Livy Server](#stop-
 
    * **Właściwość 1**
        * Głównych&ensp;&ensp;`spark.dotnet.shell.command`
-       * Wartość:`/usr/share/dotnet-tools/dotnet-try,kernel-server,--default-kernel,csharp`
+       * Wartość: `/usr/share/dotnet-tools/dotnet-try,kernel-server,--default-kernel,csharp`
 
    * **Właściwość 2** Użyj wersji platformy .NET dla Apache Spark, która została uwzględniona w poprzedniej akcji skryptu.
        * Głównych&ensp;&ensp;`spark.dotnet.packages`
-       * Wartość:`["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`
+       * Wartość: `["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`
 
    * **Właściwość 3**
        * Głównych&ensp;&ensp;`spark.dotnet.interpreter`
-       * Wartość:`try`
+       * Wartość: `try`
 
    Na przykład poniższy obraz przechwytuje ustawienie do dodawania właściwości 1:
 
@@ -133,7 +133,7 @@ Po zakończeniu poprzednich kroków można teraz przesyłać zadania platformy .
 
    Następnie wybierz pozycję **Nowy**  >  **.NET Spark (C#)** , aby utworzyć Notes.
 
-   ![Jupyter Notebook](./media/hdinsight-notebook-installation/create-sparkdotnet-notebook.png)
+   ![Notes Jupyter](./media/hdinsight-notebook-installation/create-sparkdotnet-notebook.png)
 
 2. Przesyłanie zadań przy użyciu platformy .NET dla Apache Spark.
 
@@ -158,4 +158,4 @@ Po zakończeniu poprzednich kroków można teraz przesyłać zadania platformy .
 ## <a name="next-steps"></a>Następne kroki
 
 * [Wdrażanie aplikacji platformy .NET dla Apache Spark w usłudze Azure HDInsight](../tutorials/hdinsight-deployment.md)
-* [Dokumentacja usługi HDInsight](https://docs.microsoft.com/azure/hdinsight/)
+* [Dokumentacja usługi HDInsight](/azure/hdinsight/)

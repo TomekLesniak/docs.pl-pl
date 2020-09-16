@@ -6,18 +6,18 @@ helpviewer_keywords:
 - authentication [WCF]
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
-ms.openlocfilehash: 4c3348cfb84b8571dc1f24b774ffcd691aaa5001
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 414353b360992abea69d47de9efb22c3c77f4bf6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247523"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558280"
 ---
 # <a name="authentication-in-wcf"></a>Uwierzytelnianie w programie WCF
 W poniższych tematach przedstawiono szereg różnych mechanizmów programu Windows Communication Foundation (WCF), które zapewniają uwierzytelnianie, na przykład uwierzytelnianie systemu Windows, certyfikaty X. 509 oraz nazwy użytkownika i hasła.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
- [Instrukcje: użycie dostawcy członkostwa platformy ASP.NET](how-to-use-the-aspnet-membership-provider.md)  
+ [Instrukcje: używanie dostawcy członkostwa platformy ASP.NET](how-to-use-the-aspnet-membership-provider.md)  
  Funkcje ASP.NET obejmują członkostwo i dostawcę ról, bazę danych do przechowywania par nazw użytkowników i haseł na potrzeby uwierzytelniania oraz role użytkowników na potrzeby autoryzacji. W tym temacie wyjaśniono, w jaki sposób usługi WCF mogą używać tej samej bazy danych do uwierzytelniania i autoryzowania użytkowników.  
   
  [Instrukcje: używanie niestandardowej nazwy użytkownika i modułu weryfikacji hasła](how-to-use-a-custom-user-name-and-password-validator.md)  
@@ -32,13 +32,13 @@ W poniższych tematach przedstawiono szereg różnych mechanizmów programu Wind
  [Debugowanie błędów uwierzytelniania systemu Windows](debugging-windows-authentication-errors.md)  
  Koncentruje się na typowych problemach występujących podczas korzystania z uwierzytelniania systemu Windows.  
   
-## <a name="reference"></a>Dokumentacja  
+## <a name="reference"></a>Tematy pomocy  
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
  [Typowe scenariusze zabezpieczeń](common-security-scenarios.md)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

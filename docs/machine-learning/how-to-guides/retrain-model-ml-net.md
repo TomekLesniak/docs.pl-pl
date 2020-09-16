@@ -5,12 +5,12 @@ ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 1c891ad1d5b4c1160ca41c43eff6eea444f7224f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 50f35e3511acc344339b1e150b47d7ce6de94254
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545002"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679563"
 ---
 # <a name="re-train-a-model"></a>Ponowne trenowanie modelu
 
@@ -51,7 +51,7 @@ ITransformer trainedModel = mlContext.Model.Load("ogd_model.zip", out modelSchem
 
 ## <a name="extract-pre-trained-model-parameters"></a>Wyodrębnij wstępnie przeszkolone parametry modelu
 
-Po załadowaniu modelu Wyodrębnij uzyskane parametry modelu, uzyskując dostęp do [`Model`](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) właściwości wstępnie przeszkolonego modelu. Model wstępnie szkolony został przeszkolony przy użyciu modelu regresji liniowej, [`OnlineGradientDescentTrainer`](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) który tworzy [`RegressionPredictionTransformer`](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601) te dane wyjściowe [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) . Te parametry modelu regresji liniowej zawierają rozmieszczoną wagę i wagi lub współczynniki modelu. Te wartości będą używane jako punkt wyjścia dla nowego modelu ponownie szkolony.
+Po załadowaniu modelu Wyodrębnij uzyskane parametry modelu, uzyskując dostęp do [`Model`](xref:Microsoft.ML.Data.PredictionTransformerBase%601.Model%2A) właściwości wstępnie przeszkolonego modelu. Model wstępnie szkolony został przeszkolony przy użyciu modelu regresji liniowej, [`OnlineGradientDescentTrainer`](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) który tworzy [`RegressionPredictionTransformer`](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601) te dane wyjściowe [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) . Te parametry modelu regresji liniowej zawierają rozmieszczoną wagę i wagi lub współczynniki modelu. Te wartości będą używane jako punkt wyjścia dla nowego modelu ponownie szkolony.
 
 ```csharp
 // Extract trained model parameters
@@ -61,7 +61,7 @@ LinearRegressionModelParameters originalModelParameters =
 
 ## <a name="re-train-model"></a>Model ponownego uczenia
 
-Proces ponownego szkolenia modelu nie różni się od poziomu szkolenia modelu. Jedyną różnicą jest to, że [`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*) Metoda, oprócz danych, przyjmuje jako dane wejściowe pierwotne informacje o parametrach modelu, a także używa ich jako punktu wyjścia w procesie ponownego uczenia.
+Proces ponownego szkolenia modelu nie różni się od poziomu szkolenia modelu. Jedyną różnicą jest to, że [`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer%602.Fit%2A) Metoda, oprócz danych, przyjmuje jako dane wejściowe pierwotne informacje o parametrach modelu, a także używa ich jako punktu wyjścia w procesie ponownego uczenia.
 
 ```csharp
 // New Data

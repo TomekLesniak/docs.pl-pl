@@ -2,12 +2,12 @@
 title: Konfigurowanie usługi aktywacji procesów systemu Windows do użycia z programem Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-ms.openlocfilehash: 06d3a7bd798913b06d342ac09d12e736fc436b3c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7dccfea990afff1d2aacd5e9714472e733684c33
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597504"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556606"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Konfigurowanie usługi aktywacji procesów systemu Windows do użycia z programem Windows Communication Foundation
 W tym temacie opisano kroki wymagane do skonfigurowania usługi aktywacji procesów systemu Windows (znanej także jako) w systemie Windows Vista do hostowania usług Windows Communication Foundation (WCF), które nie komunikują się za pośrednictwem protokołów sieciowych protokołu HTTP. W poniższych sekcjach opisano kroki tej konfiguracji:  
@@ -21,17 +21,17 @@ W tym temacie opisano kroki wymagane do skonfigurowania usługi aktywacji proces
 - Utwórz usługę WCF, która uwidacznia punkt końcowy inny niż HTTP.  
   
 ## <a name="configuring-a-site-with-non-http-bindings"></a>Konfigurowanie lokacji z powiązaniami innymi niż HTTP  
- Aby można było użyć powiązania inne niż HTTP z programem, należy dodać powiązanie witryny do konfiguracji. Magazyn konfiguracji dla programu to plik applicationHost. config znajdujący się w katalogu%windir%\system32\inetsrv\config. Ten magazyn konfiguracji jest współużytkowany przez program i usługi IIS 7,0.  
+ Aby można było użyć powiązania inne niż HTTP z programem, należy dodać powiązanie witryny do konfiguracji. Magazyn konfiguracji dla programu jest plikiem applicationHost.config znajdującym się w katalogu%windir%\system32\inetsrv\config. Ten magazyn konfiguracji jest współużytkowany przez program i usługi IIS 7,0.  
   
- applicationHost. config to plik tekstowy XML, który można otworzyć za pomocą dowolnego standardowego edytora tekstu (takiego jak Notatnik). Jednak narzędzie konfiguracji wiersza polecenia usług IIS 7,0 (Appcmd. exe) jest preferowanym sposobem dodawania powiązań witryn innych niż HTTP.  
+ applicationHost.config to plik tekstowy XML, który można otworzyć za pomocą dowolnego standardowego edytora tekstu (takiego jak Notatnik). Jednak narzędzie konfiguracji wiersza polecenia usług IIS 7,0 (appcmd.exe) jest preferowanym sposobem dodawania powiązań witryn innych niż HTTP.  
   
- Następujące polecenie dodaje powiązanie witryny net. TCP do domyślnej witryny sieci Web przy użyciu pliku Appcmd. exe (to polecenie jest wprowadzane jako pojedynczy wiersz).  
+ Następujące polecenie dodaje powiązanie witryny net. TCP do domyślnej witryny sieci Web przy użyciu appcmd.exe (to polecenie jest wprowadzane jako pojedynczy wiersz).  
   
 ```console  
 appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']  
 ```  
   
- To polecenie dodaje nowe powiązanie net. TCP do domyślnej witryny sieci Web przez dodanie wiersza wskazanego poniżej do pliku applicationHost. config.  
+ To polecenie dodaje nowe powiązanie net. TCP do domyślnej witryny sieci Web przez dodanie wiersza wskazanego poniżej do pliku applicationHost.config.  
   
 ```xml  
 <sites>  
@@ -52,9 +52,9 @@ appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInf
 appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp  
 ```  
   
- Listę włączonych protokołów można również ustawić w \<applicationDefaults> elemencie konfiguracji XML lokacji przechowywanej w pliku ApplicationHost. config.  
+ Listę włączonych protokołów można również ustawić w \<applicationDefaults> elemencie konfiguracji XML lokacji przechowywanej w ApplicationHost.config.  
   
- Poniższy kod XML z pliku applicationHost. config ilustruje lokację powiązaną z protokołami HTTP i innym niż HTTP. Dodatkowa konfiguracja wymagana do obsługi protokołów innych niż HTTP jest wywoływana z komentarzami.  
+ Poniższy kod XML z applicationHost.config ilustruje lokację powiązaną z protokołami HTTP i innym niż HTTP. Dodatkowa konfiguracja wymagana do obsługi protokołów innych niż HTTP jest wywoływana z komentarzami.  
   
 ```xml  
 <sites>  
@@ -96,7 +96,7 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
   
  Aby uzyskać szczegółowe instrukcje dotyczące kompilowania usługi WCF, zobacz [jak: Hostowanie usługi WCF w usłudze was](how-to-host-a-wcf-service-in-was.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Hosting w usłudze aktywacji procesów systemu Windows](hosting-in-windows-process-activation-service.md)
-- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Hosting w Usłudze aktywacji procesów systemu Windows](hosting-in-windows-process-activation-service.md)
+- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677189(v=azure.10))

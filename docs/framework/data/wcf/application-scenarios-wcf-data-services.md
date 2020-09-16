@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
-ms.openlocfilehash: 8eb1e6e2a9338230520ebf3aec1c9ba50aa15ed9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 842f560df5229fc8a2249e1317cb348b7ed3361a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346197"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556892"
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scenariusze aplikacji (Usługi danych programu WCF)
 
@@ -42,11 +42,11 @@ Korzystanie ze źródła danych OData w aplikacji klienckiej opartej na .NET Fra
 
 Korzystanie ze źródła danych OData w aplikacji klienckiej opartej na technologii Silverlight.
 
-- [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
+- [Usługi danych programu WCF (Silverlight)](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
 
 - [Operacje asynchroniczne](asynchronous-operations-wcf-data-services.md)
 
-- [Instrukcje: powiązywanie danych usługi danych z kontrolkami (klient Silverlight)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
+- [Instrukcje: powiązywanie danych usługi danych z kontrolkami (klient Silverlight)](/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
 
 Korzystanie ze źródła danych OData w aplikacji klienckiej opartej na technologii AJAX.
 
@@ -70,7 +70,7 @@ Utwórz aplikację kliencką opartą na .NET Framework, która asynchronicznie w
 
 - [Operacje asynchroniczne](asynchronous-operations-wcf-data-services.md)
 
-- [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
+- [Usługi danych programu WCF (Silverlight)](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
 
 Udostępniaj strumieniowe źródło danych OData i korzystaj z niego przy użyciu dużego obiektu binarnego, który jest dostępny i zmieniany jako strumień.
 
@@ -80,9 +80,9 @@ Udostępniaj strumieniowe źródło danych OData i korzystaj z niego przy użyci
 
 Powiąż źródła danych OData z kontrolkami w aplikacji Windows Presentation Framework (WPF).
 
-- [Wiązanie danych do kontrolki](binding-data-to-controls-wcf-data-services.md)
+- [Wiązanie danych z kontrolką](binding-data-to-controls-wcf-data-services.md)
 
-- [Instrukcje: Wiązanie danych do elementów systemu Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
+- [Instrukcje: Wiązanie danych z elementami systemu Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
 
 - [Instrukcje: Wiązanie danych przy użyciu źródła danych projektu](how-to-bind-data-using-a-project-data-source-wcf-data-services.md)
 

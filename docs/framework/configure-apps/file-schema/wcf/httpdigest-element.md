@@ -2,12 +2,12 @@
 title: <httpDigest> Element
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
-ms.openlocfilehash: 328411a429cd42927a190c6805a1f5e2b3555ea1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0ffaba218d31a77407c598f8b7fa0260daa4e39c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "77448455"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556905"
 ---
 # <a name="httpdigest-element"></a>\<httpDigest> Element
 Określa poświadczenia typu szyfrowanego używane podczas uwierzytelniania klienta w usłudze.  
@@ -47,7 +47,7 @@ Określa poświadczenia typu szyfrowanego używane podczas uwierzytelniania klie
 ## <a name="remarks"></a>Uwagi  
  Skrót jest skrótem określonym przy użyciu algorytmu i zestawu danych wejściowych. Wystawcy uwierzytelnienie i uwierzytelnienie zgadzają się na algorytm i wymieniają dane wykorzystywane jako dane wejściowe. Klient może obliczyć skrót i wysłać go do usługi. Usługa oblicza również wartość skrótu i porównuje wartości. Dopasowanie sprawdza poprawność klienta.  
   
- Ta funkcja musi być włączona z Active Directory w systemie Windows i Internet Information Services (IIS). Aby uzyskać więcej informacji, zobacz [uwierzytelnianie szyfrowane w usługach IIS 6,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
+ Ta funkcja musi być włączona z Active Directory w systemie Windows i Internet Information Services (IIS). Aby uzyskać więcej informacji, zobacz [uwierzytelnianie szyfrowane w usługach IIS 6,0](/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
   
 ## <a name="see-also"></a>Zobacz także
 
@@ -58,6 +58,6 @@ Określa poświadczenia typu szyfrowanego używane podczas uwierzytelniania klie
 - <xref:System.ServiceModel.Configuration.HttpDigestClientElement>
 - <xref:System.ServiceModel.Security.HttpDigestClientCredential>
 - [Zachowania zabezpieczeń](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Zabezpieczanie klientów](../../../wcf/securing-clients.md)
+- [Zabezpieczanie klientów [WCF]](../../../wcf/securing-clients.md)
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

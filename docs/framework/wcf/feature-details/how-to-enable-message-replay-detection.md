@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Włączanie wykrywania powtarzania komunikatu'
+title: 'Instrukcje: włączanie wykrywania powtarzania komunikatu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,17 +10,17 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-ms.openlocfilehash: bf45b39f59e2fe38fec88d1fac23ab824c009546
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c99500a3d4dc0bd8abe7062f23e064d395cadf36
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597088"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557882"
 ---
-# <a name="how-to-enable-message-replay-detection"></a>Instrukcje: Włączanie wykrywania powtarzania komunikatu
+# <a name="how-to-enable-message-replay-detection"></a>Instrukcje: włączanie wykrywania powtarzania komunikatu
 Ataku powtarzania występuje, gdy osoba atakująca kopiuje strumień komunikatów między dwiema stronami i odtwarza strumień do co najmniej jednej ze stron. O ile nie zostanie to skorygowane, komputery, które podlegają atakom, przetworzyją strumień jako wiarygodne komunikaty, co skutkuje zakresem nieprawidłowych skutków, takich jak nadmiarowe zamówienia elementu.  
   
- Aby uzyskać więcej informacji na temat wykrywania powtarzania wiadomości, zobacz [wykrywanie powtarzania komunikatów](https://docs.microsoft.com/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
+ Aby uzyskać więcej informacji na temat wykrywania powtarzania wiadomości, zobacz [wykrywanie powtarzania komunikatów](/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
   
  Poniższa procedura przedstawia różne właściwości, których można użyć do kontrolowania wykrywania powtarzania przy użyciu Windows Communication Foundation (WCF).  
   
@@ -90,7 +90,7 @@ Ataku powtarzania występuje, gdy osoba atakująca kopiuje strumień komunikató
   
 - <xref:System.ServiceModel.BasicHttpBinding>.  
   
-- <xref:System.ServiceModel.WSHttpBinding>z <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> właściwością ustawioną na `false` .  
+- <xref:System.ServiceModel.WSHttpBinding> z <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> właściwością ustawioną na `false` .  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
   
@@ -102,10 +102,10 @@ Ataku powtarzania występuje, gdy osoba atakująca kopiuje strumień komunikató
   
 - <xref:System.ServiceModel.Channels>  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - [Bezpieczne konwersacje i bezpieczne sesje](secure-conversations-and-secure-sessions.md)
 - [\<localClientSettings>](../../configure-apps/file-schema/wcf/localclientsettings-element.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

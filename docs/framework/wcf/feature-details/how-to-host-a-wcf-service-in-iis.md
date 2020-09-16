@@ -1,19 +1,19 @@
 ---
-title: 'Instrukcje: Hostowanie usługi WCF w programie IIS'
+title: 'Instrukcje: hostowanie usługi WCF w usługach IIS'
 description: Dowiedz się, jak utworzyć usługę WCF hostowaną w Internet Information Services (IIS). Hostingu usług IIS można używać tylko z transportem HTTP.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-ms.openlocfilehash: 2ba0ae7adedc3bf0e0ca0cb92b4205edc968a5d8
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 30910d428ddace7a5d5fc10fc0def21ea14d39c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052016"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556001"
 ---
-# <a name="how-to-host-a-wcf-service-in-iis"></a>Instrukcje: Hostowanie usługi WCF w programie IIS
+# <a name="how-to-host-a-wcf-service-in-iis"></a>Instrukcje: hostowanie usługi WCF w usługach IIS
 W tym temacie przedstawiono podstawowe kroki wymagane do utworzenia usługi Windows Communication Foundation (WCF), która jest hostowana w usłudze Internet Information Services (IIS). W tym temacie założono, że znasz usługi IIS i wiesz, jak używać narzędzia do zarządzania usługami IIS do tworzenia aplikacji usług IIS i zarządzania nimi. Aby uzyskać więcej informacji na temat usług IIS, zobacz [Internet Information Services](https://www.iis.net/). Usługa WCF działająca w środowisku usług IIS pełni funkcję usług IIS, taką jak odtwarzanie procesów, zamykanie bezczynności, monitorowanie kondycji procesu i Aktywacja oparta na komunikatach. Ta opcja hostingu wymaga poprawnego skonfigurowania usług IIS, ale nie wymaga, aby żaden kod hostingu był zapisywana jako część aplikacji. Hostingu usług IIS można używać tylko z transportem HTTP.  
   
  Aby uzyskać więcej informacji o tym, jak działa WCF i ASP.NET, zobacz [usługi WCF i ASP.NET](wcf-services-and-aspnet.md). Aby uzyskać więcej informacji o konfigurowaniu zabezpieczeń, zobacz [zabezpieczenia](security.md).  
@@ -22,7 +22,7 @@ W tym temacie przedstawiono podstawowe kroki wymagane do utworzenia usługi Wind
   
 ### <a name="to-create-a-service-hosted-by-iis"></a>Aby utworzyć usługę hostowaną przez usługi IIS  
   
-1. Upewnij się, że usługi IIS są zainstalowane i uruchomione na komputerze. Aby uzyskać więcej informacji na temat instalowania i konfigurowania usług IIS, zobacz [Instalowanie i Konfigurowanie usług iis 7,0](https://docs.microsoft.com/iis/install/installing-iis-7/installing-necessary-iis-components-on-windows-vista)  
+1. Upewnij się, że usługi IIS są zainstalowane i uruchomione na komputerze. Aby uzyskać więcej informacji na temat instalowania i konfigurowania usług IIS, zobacz [Instalowanie i Konfigurowanie usług iis 7,0](/iis/install/installing-iis-7/installing-necessary-iis-components-on-windows-vista)  
   
 2. Utwórz nowy folder dla plików aplikacji o nazwie "IISHostedCalcService", upewnij się, że ASP.NET ma dostęp do zawartości folderu, a następnie użyj narzędzia do zarządzania usługami IIS, aby utworzyć nową aplikację usług IIS, która znajduje się fizycznie w tym katalogu aplikacji. Podczas tworzenia aliasu dla katalogu aplikacji użyj polecenia "IISHostedCalc".  
   
@@ -67,7 +67,7 @@ W tym temacie przedstawiono podstawowe kroki wymagane do utworzenia usługi Wind
   
      Ten przykład jawnie określa punkty końcowe w pliku konfiguracji. Jeśli nie dodasz żadnych punktów końcowych do usługi, środowisko uruchomieniowe doda domyślne punkty końcowe. Aby uzyskać więcej informacji na temat domyślnych punktów końcowych, powiązań i zachowań, zobacz [uproszczoną konfigurację](../simplified-configuration.md) i [uproszczoną konfigurację dla usług WCF](../samples/simplified-configuration-for-wcf-services.md).  
   
-11. Aby upewnić się, że usługa jest hostowana prawidłowo, Otwórz wystąpienie programu Internet Explorer i przejdź do adresu URL usługi:`http://localhost/IISHostedCalc/Service.svc`  
+11. Aby upewnić się, że usługa jest hostowana prawidłowo, Otwórz wystąpienie programu Internet Explorer i przejdź do adresu URL usługi: `http://localhost/IISHostedCalc/Service.svc`  
   
 ## <a name="example"></a>Przykład  
  Poniżej znajduje się kompletna lista kodu dla usługi hostowanego kalkulatora usług IIS.  
@@ -76,10 +76,10 @@ W tym temacie przedstawiono podstawowe kroki wymagane do utworzenia usługi Wind
  [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)]
  [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Hostowanie przez Internetowe usługi informacyjne](hosting-in-internet-information-services.md)
 - [Usługi hostingowe](../hosting-services.md)
 - [Usługi WCF i platforma ASP.NET](wcf-services-and-aspnet.md)
 - [Bezpieczeństwo](security.md)
-- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677189(v=azure.10))

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 11216186a28509e1f10bafa1b24a440bcedaeeb6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9d061aeccb914cce80e02bb7df44dae2edf25412
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398245"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557022"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Podstawy dotyczące aplikacji Windows Forms (Visual Basic)
 
@@ -20,9 +20,9 @@ Ważną częścią Visual Basic jest możliwość tworzenia Windows Forms aplika
 
 Możesz tworzyć Windows Forms i aplikacje usług systemu Windows za pomocą programu Visual Studio. Aby uzyskać więcej informacji, zobacz następujące tematy:
 
-- [Wprowadzenie z Windows Forms](../../../framework/winforms/getting-started-with-windows-forms.md). Zawiera informacje dotyczące sposobu tworzenia i programu Windows Forms.
+- [Wprowadzenie z Windows Forms](/dotnet/desktop/winforms/getting-started-with-windows-forms). Zawiera informacje dotyczące sposobu tworzenia i programu Windows Forms.
 
-- [Kontrolki Windows Forms](../../../framework/winforms/controls/index.md). Zbiór tematów opisujących sposób używania formantów Windows Forms.
+- [Kontrolki Windows Forms](/dotnet/desktop/winforms/controls/). Zbiór tematów opisujących sposób używania formantów Windows Forms.
 
 - [Aplikacje usług systemu Windows](../../../framework/windows-services/index.md). Zawiera listę tematów, które wyjaśniają sposób tworzenia usług systemu Windows.
 
@@ -34,11 +34,11 @@ W Windows Forms formularz jest obszarem wizualnym, na którym są wyświetlane i
 
 ### <a name="events"></a>Zdarzenia
 
-Gdy użytkownik robi coś w formularzu lub jednej z jego kontrolek, generuje zdarzenie. Aplikacja reaguje na te zdarzenia za pomocą kodu i przetwarza zdarzenia, gdy wystąpią. Aby uzyskać więcej informacji, zobacz [Tworzenie programów obsługi zdarzeń w Windows Forms](../../../framework/winforms/creating-event-handlers-in-windows-forms.md).
+Gdy użytkownik robi coś w formularzu lub jednej z jego kontrolek, generuje zdarzenie. Aplikacja reaguje na te zdarzenia za pomocą kodu i przetwarza zdarzenia, gdy wystąpią. Aby uzyskać więcej informacji, zobacz [Tworzenie programów obsługi zdarzeń w Windows Forms](/dotnet/desktop/winforms/creating-event-handlers-in-windows-forms).
 
 ### <a name="controls"></a>Formanty
 
-Windows Forms zawiera różne kontrolki, które można umieścić w formularzach: kontrolki, które wyświetlają pola tekstowe, przyciski, pola rozwijane, przyciski radiowe i nawet strony sieci Web. Aby uzyskać listę wszystkich kontrolek, których można użyć na formularzu, zobacz [kontrolki do użycia na Windows Forms](../../../framework/winforms/controls/controls-to-use-on-windows-forms.md). Jeśli istniejący formant nie spełnia Twoich potrzeb, Windows Forms również obsługuje tworzenie własnych niestandardowych formantów przy użyciu <xref:System.Windows.Forms.UserControl> klasy.
+Windows Forms zawiera różne kontrolki, które można umieścić w formularzach: kontrolki, które wyświetlają pola tekstowe, przyciski, pola rozwijane, przyciski radiowe i nawet strony sieci Web. Aby uzyskać listę wszystkich kontrolek, których można użyć na formularzu, zobacz [kontrolki do użycia na Windows Forms](/dotnet/desktop/winforms/controls/controls-to-use-on-windows-forms). Jeśli istniejący formant nie spełnia Twoich potrzeb, Windows Forms również obsługuje tworzenie własnych niestandardowych formantów przy użyciu <xref:System.Windows.Forms.UserControl> klasy.
 
 Windows Forms ma rozbudowane kontrolki interfejsu użytkownika, które emulują funkcje aplikacji wysokiej klasy, takich jak Microsoft Office. Za pomocą <xref:System.Windows.Forms.ToolStrip> <xref:System.Windows.Forms.MenuStrip> kontrolki i można tworzyć paski narzędzi i menu, które zawierają tekst i obrazy, wyświetlać podmenu i hostować inne kontrolki, takie jak pola tekstowe i pola kombi.
 
@@ -50,12 +50,12 @@ Na koniec, jeśli trzeba utworzyć własne niestandardowe elementy interfejsu u�
 
 Informacje krok po kroku dotyczące korzystania z tych funkcji można znaleźć w następujących tematach pomocy.
 
-|Do|Zobacz|
+|Działanie|Zobacz|
 |--------|---------|
 |Tworzenie nowej aplikacji Windows Forms przy użyciu programu Visual Studio|[Samouczek 1: Tworzenie przeglądarki obrazów](/visualstudio/ide/tutorial-1-create-a-picture-viewer)|
-|Używanie formantów na formularzach|[Porady: dodawanie formantów do formularzy systemu Windows](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|
-|Tworzenie grafiki przy użyciu<xref:System.Drawing>|[Wprowadzenie do programowania grafiki](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|
-|Tworzenie niestandardowych kontrolek|[Instrukcje: dziedziczenie z klasy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|
+|Używanie formantów na formularzach|[Porady: dodawanie formantów do formularzy systemu Windows](/dotnet/desktop/winforms/controls/how-to-add-controls-to-windows-forms)|
+|Tworzenie grafiki przy użyciu <xref:System.Drawing>|[Wprowadzenie do programowania grafiki](/dotnet/desktop/winforms/advanced/getting-started-with-graphics-programming)|
+|Tworzenie niestandardowych kontrolek|[Instrukcje: dziedziczenie z klasy UserControl](/dotnet/desktop/winforms/controls/how-to-inherit-from-the-usercontrol-class)|
 
 ## <a name="displaying-and-manipulating-data"></a>Wyświetlanie i manipulowanie danymi
 
@@ -73,10 +73,10 @@ Innym typem powiązania danych, którymi można zarządzać w Windows Forms jest
 
 Informacje krok po kroku dotyczące korzystania z tych funkcji można znaleźć w następujących tematach pomocy.
 
-|Do|Zobacz|
+|Działanie|Zobacz|
 |--------|---------|
-|Używanie <xref:System.Windows.Forms.BindingSource> składnika|[Instrukcje: powiązywanie kontrolek formularzy Windows Forms ze składnikiem BindingSource przy użyciu narzędzia Projektant](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|
-|Współpraca ze źródłami danych ADO.NET|[Instrukcje: filtrowanie i sortowanie danych ADO.NET za pomocą składnika BindingSource formularzy Windows Forms](../../../framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
+|Używanie <xref:System.Windows.Forms.BindingSource> składnika|[Instrukcje: wiązanie kontrolek formularzy systemu Windows ze składnikiem BindingSource przy użyciu narzędzia Projektant](/dotnet/desktop/winforms/controls/bind-wf-controls-with-the-bindingsource)|
+|Współpraca ze źródłami danych ADO.NET|[Instrukcje: filtrowanie i sortowanie danych ADO.NET za pomocą składnika BindingSource formularzy systemu Windows](/dotnet/desktop/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component)|
 |Korzystanie z okna źródła danych|[Przewodnik: wyświetlanie danych w formularzu systemu Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|
 
 ## <a name="deploying-applications-to-client-computers"></a>Wdrażanie aplikacji na komputerach klienckich
@@ -89,7 +89,7 @@ Po zaktualizowaniu aplikacji należy opublikować nowy manifest wdrożenia i now
 
 Aby zapoznać się z pełnym wprowadzeniem do technologii ClickOnce, zobacz [zabezpieczenia i wdrażanie technologii ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment). Informacje krok po kroku dotyczące korzystania z tych funkcji można znaleźć w następujących tematach pomocy:
 
-|Do|Zobacz|
+|Działanie|Zobacz|
 |--------|---------|
 |Wdrażanie aplikacji przy użyciu technologii ClickOnce|[Instrukcje: publikowanie aplikacji ClickOnce za pomocą Kreatora publikacji](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Wskazówki: ręczne wdrażanie aplikacji ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|
 |Aktualizowanie wdrożenia ClickOnce|[Porady: zarządzanie aktualizacji dla aplikacji ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|
@@ -101,13 +101,13 @@ W Windows Forms istnieje wiele innych funkcji, które umożliwiają szybkie i ł
 
 Informacje krok po kroku dotyczące korzystania z tych funkcji można znaleźć w następujących tematach pomocy:
 
-|Do|Zobacz|
+|Działanie|Zobacz|
 |--------|---------|
-|Drukowanie zawartości formularza|[Instrukcje: drukowanie grafiki w formularzach Windows Forms](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Instrukcje: wyświetlanie podglądu wydruku w formularzach Windows Forms](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|
-|Dowiedz się więcej o zabezpieczeniach Windows Forms|[Przegląd zabezpieczeń w formularzach systemu Windows](../../../framework/winforms/security-in-windows-forms-overview.md)|
+|Drukowanie zawartości formularza|[Instrukcje: Drukowanie grafiki w formularzach systemu Windows](/dotnet/desktop/winforms/advanced/how-to-print-graphics-in-windows-forms)<br /><br /> [Instrukcje: Wyświetlanie podglądu wydruku w aplikacjach formularzy systemu Windows](/dotnet/desktop/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms)|
+|Dowiedz się więcej o zabezpieczeniach Windows Forms|[Przegląd zabezpieczeń w formularzach systemu Windows](/dotnet/desktop/winforms/security-in-windows-forms-overview)|
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
-- [Formularze systemu Windows — Omówienie](../../../framework/winforms/windows-forms-overview.md)
+- [Formularze systemu Windows — Omówienie](/dotnet/desktop/winforms/windows-forms-overview)
 - [My.Forms — Obiekt](../../language-reference/objects/my-forms-object.md)

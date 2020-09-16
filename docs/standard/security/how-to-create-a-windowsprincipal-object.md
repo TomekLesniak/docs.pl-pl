@@ -11,12 +11,12 @@ helpviewer_keywords:
 - security [.NET], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: d99d63dc766f37e7cc30888d2e77657595f909af
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 6cf7153250d2574783515ea53cf99709499d36f9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557037"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556209"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Instrukcje: Tworzenie obiektu WindowsPrincipal
 
@@ -81,7 +81,7 @@ Jeśli kod musi wielokrotnie wykonywać walidację opartą na rolach, pierwsze z
   
 3. Po utworzeniu obiektu podmiotu zabezpieczeń można użyć jednej z kilku metod weryfikacji.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Obiekty główne i obiekty tożsamości](principal-and-identity-objects.md)
-- [Zabezpieczenia ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/)
+- [Zabezpieczenia ASP.NET Core](/aspnet/core/security/)

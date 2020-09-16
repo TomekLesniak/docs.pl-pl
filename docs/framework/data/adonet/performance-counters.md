@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: 9dde2d7305a1176dadba3802fc5335c0c95bfbbb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4c1da6041b2343565bdaeb53e586c893bd85c922
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286679"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557908"
 ---
 # <a name="performance-counters-in-adonet"></a>Liczniki wydajności w ADO.NET
 W ADO.NET 2,0 wprowadzono rozszerzoną obsługę liczników wydajności, które obejmują obsługę obu <xref:System.Data.SqlClient> i <xref:System.Data.OracleClient> . <xref:System.Data.SqlClient>Liczniki wydajności dostępne w poprzednich wersjach ADO.NET zostały wycofane i zastąpione nowymi licznikami wydajności opisanymi w tym temacie. Liczników wydajności ADO.NET można użyć do monitorowania stanu aplikacji i zasobów połączenia, z których korzysta. Liczniki wydajności można monitorować przy użyciu Monitora wydajności systemu Windows lub mogą być dostępne programowo przy użyciu <xref:System.Diagnostics.PerformanceCounter> klasy w <xref:System.Diagnostics> przestrzeni nazw.  
@@ -399,7 +399,7 @@ class Program
 
 - [Nawiązywanie połączenia ze źródłem danych](connecting-to-a-data-source.md)
 - [Buforowanie połączenia Oracle, OLE DB i ODBC](ole-db-odbc-and-oracle-connection-pooling.md)
-- [Liczniki wydajności dla ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/fxk122b4(v=vs.100))
+- [Liczniki wydajności dla ASP.NET](/previous-versions/aspnet/fxk122b4(v=vs.100))
 - [Profilowanie środowiska uruchomieniowego](../../debug-trace-profile/runtime-profiling.md)
-- [Wprowadzenie do monitorowania progów wydajności](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
+- [Wprowadzenie do monitorowania progów wydajności](/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
 - [Omówienie ADO.NET](ado-net-overview.md)

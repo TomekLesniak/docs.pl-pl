@@ -5,12 +5,12 @@ ms.topic: reference
 ms.date: 06/01/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 8622b580b7925adfd7895317815021f57960e9ee
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 1321967cacdd373acc19923f992d30c5453ea869
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924581"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556222"
 ---
 # <a name="model-builder-azure-training-resources"></a>Model Builder — zasoby szkoleniowe platformy Azure
 
@@ -48,7 +48,7 @@ Aby utworzyć obszar roboczy Azure Machine Learning, wymagane są następujące 
     | Standardowa_NC12   | 12 | 112 | 680  | 2 | 24 | 48 | 2 |
     | Standardowa_NC24   | 24 | 224 | 1440 | 4 | 48 | 64 | 4 |
 
-    Zapoznaj się z [dokumentacją maszyn wirtualnych z systemem Linux z serii NC](https://docs.microsoft.com/azure/virtual-machines/nc-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) , aby uzyskać więcej informacji na temat typów obliczeń zoptymalizowanych według procesora GPU
+    Zapoznaj się z [dokumentacją maszyn wirtualnych z systemem Linux z serii NC](/azure/virtual-machines/nc-series?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) , aby uzyskać więcej informacji na temat typów obliczeń zoptymalizowanych według procesora GPU
 - Priorytet obliczeń
 
   - Niski priorytet: odpowiednie dla zadań o krótszym czasie wykonywania. Może mieć wpływ na przerwy i brak dostępności. Zwykle koszty są tańsze, ponieważ wykorzystuje nadwyżkowe możliwości na platformie Azure.
@@ -76,7 +76,7 @@ Po zakończeniu szkolenia dwa projekty są dodawane do rozwiązania przy użyciu
 W scenariuszu klasyfikacji obrazów `ModelInput` zawiera dwie kolumny:
 
 - `ImageSource`: Ścieżka ciągu lokalizacji obrazu.
-- `Label`: Rzeczywista Kategoria, do której należy obraz. `Label`jest używany tylko jako dane wejściowe w przypadku szkolenia i nie muszą być dostarczane podczas tworzenia prognoz.
+- `Label`: Rzeczywista Kategoria, do której należy obraz. `Label` jest używany tylko jako dane wejściowe w przypadku szkolenia i nie muszą być dostarczane podczas tworzenia prognoz.
 
 `ModelOutput`Zawiera dwie kolumny:
 

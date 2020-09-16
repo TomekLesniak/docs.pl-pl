@@ -3,12 +3,12 @@ title: Zabezpieczenia komunikatów w architekturze WCF
 description: Dowiedz się więcej na temat TransportWithMessageCredential, typu zabezpieczeń komunikatów WCF, który używa kombinacji trybów zabezpieczeń transportu i komunikatów.
 ms.date: 03/30/2017
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
-ms.openlocfilehash: 315a12c73929bfe71340e42f122ae542d4fddc07
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: ea10a87a7c8f9e545c320af30c5cf9958317c2f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245027"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551135"
 ---
 # <a name="message-security-in-wcf"></a>Zabezpieczenia komunikatów w architekturze WCF
 
@@ -64,9 +64,9 @@ Zabezpieczenia komunikatów mają następujące wady:
 
 - Wymaga implementacji mechanizmów zabezpieczeń na poziomie XML i obsługi specyfikacji WS-Security. Może to mieć wpływ na współdziałanie.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zabezpieczanie usług i klientów](securing-services-and-clients.md)
 - [Zabezpieczenia transportu](transport-security.md)
 - [Instrukcje: korzystanie z zabezpieczeń transportu i poświadczeń komunikatów](how-to-use-transport-security-and-message-credentials.md)
-- [Wzorce i praktyki firmy Microsoft, rozdział 3: implementowanie transportu i zabezpieczenia warstwy komunikatów](https://docs.microsoft.com/previous-versions/msp-n-p/ff647370(v=pandp.10))
+- [Wzorce i praktyki firmy Microsoft, rozdział 3: implementowanie transportu i zabezpieczenia warstwy komunikatów](/previous-versions/msp-n-p/ff647370(v=pandp.10))

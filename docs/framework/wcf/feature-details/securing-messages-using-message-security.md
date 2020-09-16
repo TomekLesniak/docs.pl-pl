@@ -2,12 +2,12 @@
 title: Korzystanie z zabezpieczeń komunikatów
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: 70c645101033c31da01d79f624ab03ce328dd3a6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b5f7679d5e5ec82e63b588cebd90ce873c055088
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589984"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558306"
 ---
 # <a name="securing-messages-using-message-security"></a>Korzystanie z zabezpieczeń komunikatów
 W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z programu <xref:System.ServiceModel.NetMsmqBinding> .  
@@ -41,7 +41,7 @@ W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z p
   
  Ze względu na rozłączoną naturę kolejek, klient i usługa nie mogą być w trybie online w tym samym czasie. W związku z tym klient i usługa muszą wymieniać certyfikaty poza pasmem. W szczególności klient z tytułu posiadania certyfikatu usługi (który może być łańcuchem do urzędu certyfikacji) w swoim zaufanym magazynie, musi ufać, że komunikuje się z poprawną usługą. Aby można było uwierzytelniać klienta, usługa używa certyfikatu X. 509 dołączonego do wiadomości w celu dopasowania go do certyfikatu w magazynie w celu zweryfikowania autentyczności klienta. Ponownie certyfikat musi być łańcuchem do urzędu certyfikacji.  
   
- Na komputerze z systemem Windows certyfikaty są przechowywane w kilku rodzajach magazynów. Aby uzyskać więcej informacji na temat różnych magazynów, zobacz [magazyny certyfikatów](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
+ Na komputerze z systemem Windows certyfikaty są przechowywane w kilku rodzajach magazynów. Aby uzyskać więcej informacji na temat różnych magazynów, zobacz [magazyny certyfikatów](/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ### <a name="windows"></a>Windows  
  Typ poświadczeń komunikatu systemu Windows używa protokołu Kerberos.  
@@ -63,7 +63,7 @@ W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z p
 ## <a name="using-transport-and-message-security"></a>Korzystanie z usługi transport i zabezpieczenia komunikatów  
  W przypadku korzystania z zabezpieczeń transportu i zabezpieczeń komunikatów certyfikat używany do zabezpieczenia komunikatu zarówno w transportie, jak i na poziomie komunikatu protokołu SOAP musi być taki sam.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Ochrona komunikatów za pomocą zabezpieczeń transportu](securing-messages-using-transport-security.md)
 - [Zabezpieczenia komunikatów w ramach kolejkowania komunikatów](../samples/message-security-over-message-queuing.md)

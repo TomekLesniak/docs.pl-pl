@@ -5,12 +5,12 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: efda70be0ccdbc1f4b59d548e50f743f6c493b19
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1bb5ac5381dc85f598ef46638fbc8cd1a8643825
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363719"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555747"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Używanie wyrażeń regularnych z formantem MaskedTextBox w Visual Basic
 W tym przykładzie pokazano, jak konwertować proste wyrażenia regularne do pracy z <xref:System.Windows.Forms.MaskedTextBox> kontrolką.  
@@ -55,9 +55,9 @@ W tym przykładzie pokazano, jak konwertować proste wyrażenia regularne do pra
 |`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|Stany Zjednoczone numer telefonu, kod obszaru opcjonalny. Jeśli użytkownik nie chce wprowadzać znaków opcjonalnych, może wprowadzić spacje lub umieścić wskaźnik myszy bezpośrednio na pozycji w masce reprezentowanej przez pierwsze 0.|  
 |`$\d{6}.00`|`$999,999.00`|Wartość waluty z zakresu od 0 do 999999. Znaki Currency, thousandth i Decimal zostaną zastąpione w czasie wykonywania przy użyciu ich odpowiedników specyficznych dla kultury.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>
 - <xref:System.Windows.Forms.MaskedTextBox>
 - [Sprawdzanie poprawności ciągów w Visual Basic](validating-strings.md)
-- [MaskedTextBox, kontrolka](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [MaskedTextBox, kontrolka](/dotnet/desktop/winforms/controls/maskedtextbox-control-windows-forms)

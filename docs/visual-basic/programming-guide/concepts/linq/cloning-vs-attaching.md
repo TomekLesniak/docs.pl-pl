@@ -2,12 +2,12 @@
 title: Klonowanie a dołączanie
 ms.date: 07/20/2015
 ms.assetid: 3c3bd105-c9d3-49bd-875b-27ab4e8bc7a3
-ms.openlocfilehash: aaf3344c0439d96a01006ee000d0a827884a5af9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1974e10579e87f17746d5a9ba8a86ea8d819d9ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410880"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555760"
 ---
 # <a name="cloning-vs-attaching-visual-basic"></a>Klonowanie a dołączanie (Visual Basic)
 W przypadku dodawania <xref:System.Xml.Linq.XNode> (w tym <xref:System.Xml.Linq.XElement> ) lub <xref:System.Xml.Linq.XAttribute> obiektów do nowego drzewa, jeśli nowa zawartość nie ma elementu nadrzędnego, obiekty są po prostu dołączone do drzewa XML. Jeśli nowa zawartość jest już nadrzędna i jest częścią innego drzewa XML, Nowa zawartość jest klonowana. Nowo sklonowana zawartość jest następnie dołączona do drzewa XML.  
@@ -50,6 +50,6 @@ Child1 was cloned
 Child2 was attached  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Tworzenie drzew XML (Visual Basic)](creating-xml-trees.md)
+- [Tworzenie drzew XML (Visual Basic)](../../../../standard/linq/xml-literals.md)

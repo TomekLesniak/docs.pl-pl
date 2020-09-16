@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: 9345e995dcb1179e7d0a86f62737f9fda5889f42
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 43b3349b2a35385dcc49d0866e0695b08eac2d2e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286497"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551494"
 ---
 # <a name="date-and-time-data"></a>Dane daty i godziny
 SQL Server 2008 wprowadza nowe typy danych do obsługi informacji o dacie i godzinie. Nowe typy danych obejmują oddzielne typy dat i godzin oraz rozszerzone typy danych o większej dokładności, precyzji i świadomości strefy czasowej. Począwszy od .NET Framework w wersji 3,5 Service Pack (SP) 1, .NET Framework Dostawca danych dla SQL Server ( <xref:System.Data.SqlClient> ) zapewnia pełną obsługę wszystkich nowych funkcji aparatu bazy danych SQL Server 2008. Aby korzystać z nowych funkcji w programie SqlClient, należy zainstalować .NET Framework 3,5 SP1 (lub nowsze).  
@@ -20,9 +20,9 @@ SQL Server 2008 wprowadza nowe typy danych do obsługi informacji o dacie i godz
   
  Kompletna dokumentacja typów danych SQL Server jest dostępna w SQL Server Books Online. W poniższej tabeli przedstawiono tematy dotyczące poszczególnych wersji dla danych daty i godziny.  
   
- **SQL Server documentation (Dokumentacja programu SQL Server)**  
+ **Dokumentacja SQL Server**  
   
-1. [Korzystanie z danych daty i godziny](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))  
+1. [Korzystanie z danych daty i godziny](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))  
   
 ## <a name="datetime-data-types-introduced-in-sql-server-2008"></a>Typy danych daty/godziny wprowadzone w SQL Server 2008  
  W poniższej tabeli opisano nowe typy danych daty i godziny.  
@@ -47,7 +47,7 @@ SQL Server 2008 wprowadza nowe typy danych do obsługi informacji o dacie i godz
 > [!NOTE]
 > Format daty YDM nie jest obsługiwany podczas konwersji z formatu ciągu na,, `date` `time` `datetime2` , lub `datetimeoffset` .  
   
- Aby uzyskać więcej informacji o tym, jak SQL Server interpretuje dane daty i godziny, zobacz [Korzystanie z danych daty i godziny](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100)).  
+ Aby uzyskać więcej informacji o tym, jak SQL Server interpretuje dane daty i godziny, zobacz [Korzystanie z danych daty i godziny](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100)).  
   
 ## <a name="datetime-data-types-and-parameters"></a>Typy danych daty/godziny i parametry  
  Następujące wyliczenia zostały dodane do programu <xref:System.Data.SqlDbType> w celu obsługi nowych typów danych daty i godziny.  
@@ -81,8 +81,8 @@ Możesz określić typ danych z przy <xref:System.Data.SqlClient.SqlParameter> u
 |time|System. TimeSpan|Godzina|Godzina|  
 |datetime2|System. DateTime|DateTime2|DateTime2|  
 |datetimeoffset|System. DateTimeOffset|DateTimeOffset|DateTimeOffset|  
-|datetime|System. DateTime|DateTime|DateTime|  
-|smalldatetime|System. DateTime|DateTime|DateTime|  
+|datetime|System. DateTime|Data i godzina|Data i godzina|  
+|smalldatetime|System. DateTime|Data i godzina|Data i godzina|  
   
 ### <a name="sqlparameter-properties"></a>Właściwości SqlParameter  
  W poniższej tabeli opisano `SqlParameter` właściwości, które są istotne dla typów danych Data i godzina.  
@@ -191,7 +191,7 @@ command.Parameters.AddWithValue( _
   
 |Typ CLR|Wywnioskowane SqlDbType|  
 |--------------|------------------------|  
-|DateTime|SqlDbType. DateTime|  
+|Data i godzina|SqlDbType. DateTime|  
 |przedział_czasu|SqlDbType. Time|  
 |DateTimeOffset|SqlDbType. DateTimeOffset|  
   
@@ -237,7 +237,7 @@ command.Parameters.AddWithValue( _
 |Temat|Opis|  
 |-----------|-----------------|  
 |[Typy i funkcje danych daty i godziny (Transact-SQL)](/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql)|Zawiera przegląd wszystkich typów danych i funkcji języka Transact-SQL.|  
-|[Korzystanie z danych daty i godziny](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))|Zawiera informacje na temat typów i funkcji danych daty i godziny oraz przykłady ich użycia.|  
+|[Korzystanie z danych daty i godziny](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))|Zawiera informacje na temat typów i funkcji danych daty i godziny oraz przykłady ich użycia.|  
 |[Typy danych (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql)|Opisuje systemowe typy danych w SQL Server.|  
   
 ## <a name="see-also"></a>Zobacz także

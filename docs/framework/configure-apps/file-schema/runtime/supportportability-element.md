@@ -5,12 +5,12 @@ helpviewer_keywords:
 - supportPortability element
 - <supportPortability> element
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
-ms.openlocfilehash: 63c309a8a93c1d31ed8f73a495cf5154c3590d56
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 99fa51238040f21d998a8c6c2aef7c13d288104a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73115655"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551588"
 ---
 # <a name="supportportability-element"></a>\<supportPortability> Element
 Określa, że aplikacja może odwoływać się do tego samego zestawu w dwóch różnych implementacjach .NET Framework, przez wyłączenie domyślnego zachowania, które traktuje zestawy jako równoważne do celów przenośności aplikacji.  
@@ -41,7 +41,7 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|true|Włącz obsługę przenośności między implementacjami określonego zestawu .NET Framework. Domyślnie włączone.|  
+|true|Włącz obsługę przenośności między implementacjami określonego zestawu .NET Framework. Jest to opcja domyślna.|  
 |fałsz|Wyłącz obsługę przenośności między implementacjami określonego zestawu .NET Framework. Dzięki temu aplikacja może mieć odwołania do wielu implementacji określonego zestawu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -63,11 +63,11 @@ Począwszy od .NET Framework 4, pomoc techniczna jest świadczona automatycznie 
 Taki scenariusz jest zestawem, który musi odwoływać się zarówno do implementacji .NET Framework, jak i .NET Framework do implementacji Silverlight dla określonego zestawu odwołania. Na przykład Projektant XAML zapisany w Windows Presentation Foundation (WPF) może potrzebować odwoływać się zarówno do implementacji pulpitu WPF, interfejsu użytkownika projektanta, jak i podzbioru WPF, który jest zawarty w implementacji Silverlight. Domyślnie oddzielne odwołania powodują wystąpienie błędu kompilatora, ponieważ powiązanie zestawu widzi dwa zestawy jako równoważne. Ten element wyłącza zachowanie domyślne i zezwala na pomyślne Kompilowanie.  
   
 > [!IMPORTANT]
-> Aby kompilator przeszedł informacje do logiki wiązania zestawu środowiska uruchomieniowego języka wspólnego, należy użyć `/appconfig` opcji kompilatora, aby określić lokalizację pliku App. config, który zawiera ten element.  
+> Aby kompilator przeszedł informacje do logiki wiązania zestawu środowiska uruchomieniowego języka wspólnego, należy użyć `/appconfig` opcji kompilatora, aby określić lokalizację pliku app.config zawierającego ten element.  
   
 ## <a name="example"></a>Przykład  
 
-Poniższy przykład umożliwia aplikacji odwoływanie się do implementacji .NET Framework i .NET Framework dla implementacji Silverlight dowolnego zestawu .NET Framework, który istnieje w obu implementacjach. `/appconfig`Aby określić lokalizację pliku App. config, należy użyć opcji kompilatora.  
+Poniższy przykład umożliwia aplikacji odwoływanie się do implementacji .NET Framework i .NET Framework dla implementacji Silverlight dowolnego zestawu .NET Framework, który istnieje w obu implementacjach. `/appconfig`Aby określić lokalizację tego pliku app.config, należy użyć opcji kompilatora.  
   
 ```xml  
 <configuration>  
@@ -83,4 +83,4 @@ Poniższy przykład umożliwia aplikacji odwoływanie się do implementacji .NET
 ## <a name="see-also"></a>Zobacz także
 
 - [-AppConfig (opcje kompilatora C#)](../../../../csharp/language-reference/compiler-options/appconfig-compiler-option.md)
-- [Przegląd dezjednoczenia zestawu .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/db7849ey(v=vs.100))
+- [Przegląd dezjednoczenia zestawu .NET Framework](/previous-versions/dotnet/netframework-4.0/db7849ey(v=vs.100))

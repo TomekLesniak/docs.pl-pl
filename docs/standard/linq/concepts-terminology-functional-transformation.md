@@ -3,12 +3,12 @@ title: Pojęcia i terminologia (transformacja funkcjonalna) — LINQ to XML
 description: Poznaj koncepcje i terminologię czystych transformacji funkcjonalnych.
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: a1c9c582235ac63fe50dd585ef5f046e9be8170e
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 0ecdbdf88ee9f868143f466222fa06f0ccf641d8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553539"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558112"
 ---
 # <a name="concepts-and-terminology-functional-transformation-linq-to-xml"></a>Pojęcia i terminologia (przekształcenie funkcjonalne) (LINQ to XML)
 
@@ -54,7 +54,7 @@ Aby uzyskać więcej informacji, zobacz [standardowe operatory zapytań — Omó
 wyrażenie lambda \
 Zasadniczo Wbudowana funkcja anonimowa, która może być używana wszędzie tam, gdzie jest oczekiwany typ delegata. Jest to uproszczona definicja wyrażeń lambda, ale jest odpowiednia do celów tego samouczka.
 
-Aby uzyskać więcej informacji, zobacz [wyrażenia lambda (Przewodnik programowania w języku C#)](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) i [wyrażenia lambda (Visual Basic))](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+Aby uzyskać więcej informacji, zobacz [wyrażenia lambda (Przewodnik programowania w języku C#)](../../csharp/language-reference/operators/lambda-expressions.md) i [wyrażenia lambda (Visual Basic))](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
 
 zbiera
 Strukturalny zestaw danych, zazwyczaj o jednolitym typie. Aby była zgodna z LINQ, kolekcja musi implementować <xref:System.Collections.IEnumerable> interfejs lub <xref:System.Linq.IQueryable> interfejs (lub jeden z ich rodzajowych odpowiedników <xref:System.Collections.Generic.IEnumerator%601> lub <xref:System.Linq.IQueryable%601> ).
@@ -72,13 +72,13 @@ Aby uzyskać więcej informacji, zobacz [niejawnie wpisane zmienne lokalne (Prze
 wykonywanie odroczone i Ocena z opóźnieniem \
 Opóźnienie obliczania wyrażenia do momentu, gdy jego rozpoznana wartość nie jest wymagana. Wykonywanie odroczone jest obsługiwane w kolekcjach.
 
-Aby uzyskać więcej informacji na temat języka C#, zobacz [wprowadzenie do zapytań LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) i [wykonywanie odroczone oraz obliczanie z opóźnieniem w LINQ to XML (c#)](../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Aby uzyskać więcej informacji na temat języka C#, zobacz [wprowadzenie do zapytań LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) i [wykonywanie odroczone oraz obliczanie z opóźnieniem w LINQ to XML (c#)](./deferred-execution-lazy-evaluation.md).
 
-Aby uzyskać więcej Visual Basic informacji, zobacz [podstawowe operacje zapytań (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md) i [wykonywanie odroczone oraz obliczanie z opóźnieniem w LINQ to XML (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Aby uzyskać więcej Visual Basic informacji, zobacz [podstawowe operacje zapytań (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md) i [wykonywanie odroczone oraz obliczanie z opóźnieniem w LINQ to XML (Visual Basic)](./deferred-execution-lazy-evaluation.md).
 
 Te funkcje języka będą używane w przykładach kodu w tej sekcji.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Wprowadzenie do czystych transformacji funkcjonalnych](introduction-pure-functional-transformations.md)
-- [Programowanie funkcjonalne a programowanie bezwzględne](functional-vs-imperative-programming.md)
+- [Wprowadzenie do czystych przekształceń funkcjonalnych](introduction-pure-functional-transformations.md)
+- [Programowanie funkcjonalne a programowanie imperatywne](functional-vs-imperative-programming.md)

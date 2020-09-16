@@ -6,12 +6,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography, cross-platform
 - encryption, cross-platform
-ms.openlocfilehash: 61fd49e53761deac278b770003eb97241b6c2be9
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 7269b32e509039fdd767446bd6e10202b089c094
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557154"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550022"
 ---
 # <a name="cross-platform-cryptography-in-net-core-and-net-5"></a>Kryptografia międzyplatformowa w oprogramowaniu .NET Core i .NET 5
 
@@ -109,7 +109,7 @@ Biblioteki systemu operacyjnego są używane do szyfrowania i uzupełniania odsz
 | Sygnatura PKCS1 (SHA-2)               | ✔️           | ✔️              | ✔️   | ⚠️\*           |
 | PSS                                   | ✔️           | ✔️              | ✔️   | ❌             |
 
-\*Interfejs CryptoAPI systemu Windows (CAPI) jest w stanie PKCS1 podpis z algorytmem SHA-2. Jednak pojedynczy obiekt RSA może zostać załadowany przez dostawcę usług kryptograficznych (CSP), który go nie obsługuje.
+\* Interfejs CryptoAPI systemu Windows (CAPI) jest w stanie PKCS1 podpis z algorytmem SHA-2. Jednak pojedynczy obiekt RSA może zostać załadowany przez dostawcę usług kryptograficznych (CSP), który go nie obsługuje.
 
 #### <a name="rsa-on-windows"></a>RSA w systemie Windows
 
@@ -151,7 +151,7 @@ Krzywe klucza ECDSA są definiowane przez biblioteki systemu operacyjnego i podl
 
 <sup>1</sup> dystrybucje systemu Linux nie wszystkie obsługują te same nazwane krzywe.
 
-<sup>2</sup> obsługa nazwanych krzywych została dodana do systemu Windows CNG w systemie Windows 10. Aby uzyskać więcej informacji, zobacz [CNG o nazwie krzywe eliptyczna](https://msdn.microsoft.com/library/windows/desktop/mt632245(v=vs.85).aspx). Nazwane krzywe nie są dostępne we wcześniejszych wersjach systemu Windows, z wyjątkiem trzech krzywych w systemie Windows 7.
+<sup>2</sup> obsługa nazwanych krzywych została dodana do systemu Windows CNG w systemie Windows 10. Aby uzyskać więcej informacji, zobacz [CNG o nazwie krzywe eliptyczna](/windows/win32/seccng/cng-named-elliptic-curves). Nazwane krzywe nie są dostępne we wcześniejszych wersjach systemu Windows, z wyjątkiem trzech krzywych w systemie Windows 7.
 
 <sup>3</sup> Eksportowanie z jawnymi parametrami krzywej wymaga obsługi biblioteki systemu operacyjnego, która nie jest dostępna w macOS i starszych wersjach systemu Windows.
 
@@ -164,7 +164,7 @@ Platforma .NET udostępnia typy umożliwiające współdziałanie programów z b
 | <xref:System.Security.Cryptography.ECDsaCng>     | ✔️     | ❌    | ❌    |
 | <xref:System.Security.Cryptography.ECDsaOpenSsl> | ❌     | ✔️    | ⚠️\*  |
 
-\*W systemie macOS <xref:System.Security.Cryptography.ECDsaOpenSsl> działa, jeśli OpenSSL jest zainstalowany w systemie i odpowiednie DYLIB libcrypto można znaleźć za pośrednictwem ładowania biblioteki dynamicznej. Jeśli nie można znaleźć odpowiedniej biblioteki, zostaną zgłoszone wyjątki.
+\* W systemie macOS <xref:System.Security.Cryptography.ECDsaOpenSsl> działa, jeśli OpenSSL jest zainstalowany w systemie i odpowiednie DYLIB libcrypto można znaleźć za pośrednictwem ładowania biblioteki dynamicznej. Jeśli nie można znaleźć odpowiedniej biblioteki, zostaną zgłoszone wyjątki.
 
 ### <a name="ecdh"></a>ECDH
 
@@ -194,7 +194,7 @@ Krzywe klucza ECDH są definiowane przez biblioteki systemu operacyjnego i podle
 
 <sup>1</sup> dystrybucje systemu Linux nie wszystkie obsługują te same nazwane krzywe.
 
-<sup>2</sup> obsługa nazwanych krzywych została dodana do systemu Windows CNG w systemie Windows 10. Aby uzyskać więcej informacji, zobacz [CNG o nazwie krzywe eliptyczna](https://msdn.microsoft.com/library/windows/desktop/mt632245(v=vs.85).aspx). Nazwane krzywe nie są dostępne we wcześniejszych wersjach systemu Windows, z wyjątkiem trzech krzywych w systemie Windows 7.
+<sup>2</sup> obsługa nazwanych krzywych została dodana do systemu Windows CNG w systemie Windows 10. Aby uzyskać więcej informacji, zobacz [CNG o nazwie krzywe eliptyczna](/windows/win32/seccng/cng-named-elliptic-curves). Nazwane krzywe nie są dostępne we wcześniejszych wersjach systemu Windows, z wyjątkiem trzech krzywych w systemie Windows 7.
 
 <sup>3</sup> Eksportowanie z jawnymi parametrami krzywej wymaga obsługi biblioteki systemu operacyjnego, która nie jest dostępna w macOS i starszych wersjach systemu Windows.
 
@@ -207,7 +207,7 @@ Platforma .NET udostępnia typy umożliwiające współdziałanie programów z b
 | <xref:System.Security.Cryptography.ECDiffieHellmanCng>     | ✔️     | ❌    | ❌   |
 | <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> | ❌     | ✔️    | ⚠️\* |
 
-\*Na macOS, <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> działa, jeśli zainstalowano OpenSSL i odpowiednie DYLIB libcrypto można znaleźć za pośrednictwem ładowania biblioteki dynamicznej. Jeśli nie można znaleźć odpowiedniej biblioteki, zostaną zgłoszone wyjątki.
+\* Na macOS, <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> działa, jeśli zainstalowano OpenSSL i odpowiednie DYLIB libcrypto można znaleźć za pośrednictwem ładowania biblioteki dynamicznej. Jeśli nie można znaleźć odpowiedniej biblioteki, zostaną zgłoszone wyjątki.
 
 ### <a name="dsa"></a>DSA
 
@@ -222,7 +222,7 @@ Proces DSA (algorytm podpisu cyfrowego) jest wykonywany przez biblioteki systemo
 | FIPS 186-2                    | ✔️         | ✔️    | ✔️            | ✔️           |
 | FIPS 186-3 (sygnatury SHA-2) | ✔️         | ✔️    | ❌            | ❌            |
 
-\*macOS ładuje klucze DSA o rozmiarze większym niż 1024 bitów, ale zachowanie tych kluczy jest niezdefiniowane. Nie zachowują się one zgodnie z standardem FIPS 186-3.
+\* macOS ładuje klucze DSA o rozmiarze większym niż 1024 bitów, ale zachowanie tych kluczy jest niezdefiniowane. Nie zachowują się one zgodnie z standardem FIPS 186-3.
 
 #### <a name="dsa-on-windows"></a>Agent DSA w systemie Windows
 
@@ -261,7 +261,7 @@ Większość obsługi certyfikatów X. 509 w programie .NET pochodzi z bibliotek
 | Wiele certyfikatów, jeden klucz prywatny       | ✔️     | ✔️    | ✔️   |
 | Wiele certyfikatów, wiele kluczy prywatnych | ✔️     | ⚠️\*  | ✔️   |
 
-\*Dostępne w wersji zapoznawczej programu .NET 5.
+\* Dostępne w wersji zapoznawczej programu .NET 5.
 
 ### <a name="write-a-pkcs12pfx"></a>Napisz plik PKCS12/PFX
 
@@ -275,7 +275,7 @@ Większość obsługi certyfikatów X. 509 w programie .NET pochodzi z bibliotek
 | Wiele certyfikatów, wiele kluczy prywatnych | ✔️     | ⚠️\*  | ✔️   |
 | Ładowanie tymczasowe                            | ✔️     | ✔️    | ⚠️\* |
 
-\*Dostępne w wersji zapoznawczej programu .NET 5.
+\* Dostępne w wersji zapoznawczej programu .NET 5.
 
 macOS nie może załadować kluczy prywatnych certyfikatu bez obiektu pęku kluczy, co wymaga zapisu na dysku. Łańcuchy kluczy są tworzone automatycznie na potrzeby ładowania pliku PFX i są usuwane, gdy nie są już używane. Ponieważ <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> opcja oznacza, że klucz prywatny nie powinien być zapisywana na dysku, potwierdzenie flagi na macOS powoduje <xref:System.PlatformNotSupportedException> .
 
@@ -365,7 +365,7 @@ macOS nie obsługuje użycia list CRL w trybie offline, więc `X509RevocationMod
 
 macOS nie obsługuje limitu czasu zainicjowane przez użytkownika w odniesieniu do listy CRL (lista odwołania certyfikatów)/OCSP (protokół stanu certyfikatu online)/AIA (dostęp do informacji o urzędach), więc `X509ChainPolicy.UrlRetrievalTimeout` jest ignorowany.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 * [Model kryptografii .NET](cryptography-model.md)
 * [Usługi kryptograficzne platformy .NET](cryptographic-services.md)

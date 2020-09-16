@@ -3,12 +3,12 @@ title: Omówienie programu Windows Workflow
 description: W tym artykule opisano przepływy pracy programu Workflow Foundation, które są modelami opisującymi procesy w świecie rzeczywistym.
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: ec1a00b37abe2cb842735fb98e1c113a97943758
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c54e405c5fff013f994f98cbf84fcce4d17d9d4e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421478"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558103"
 ---
 # <a name="windows-workflow-overview"></a>Omówienie programu Windows Workflow
 Przepływ pracy to zbiór jednostek elementów o nazwie *działania* , które są przechowywane jako model, który opisuje proces rzeczywisty. Przepływy pracy umożliwiają opisywanie kolejności wykonywania i zależności zależnych od elementów pracy krótko-lub długotrwałej. Ta praca przechodzi przez model od początku do końca, a działania mogą być wykonywane przez osoby lub funkcje systemowe.  
@@ -34,7 +34,7 @@ Składniki przepływu pracy w procesie hosta
   
  ![Diagram przedstawiający sposób działania składników przepływu pracy.](./media/overview/workflow-component-interatction.gif)  
   
- Na powyższym diagramie <xref:System.Activities.WorkflowInvoker.Invoke%2A> Metoda <xref:System.Activities.WorkflowInvoker> klasy jest używana do wywołania kilku wystąpień przepływu pracy. <xref:System.Activities.WorkflowInvoker>służy do obsługi uproszczonych przepływów pracy, które nie wymagają zarządzania z hosta; przepływy pracy, które wymagają zarządzania z hosta (takie jak <xref:System.Activities.Bookmark> wznowienie), muszą być wykonywane przy użyciu <xref:System.Activities.WorkflowApplication.Run%2A> zamiast tego. Nie jest wymagane oczekiwanie na ukończenie jednego wystąpienia przepływu pracy przed wywołaniem innego elementu; aparat środowiska uruchomieniowego obsługuje jednoczesne uruchamianie wielu wystąpień przepływu pracy.  Wywoływane przepływy pracy są następujące:  
+ Na powyższym diagramie <xref:System.Activities.WorkflowInvoker.Invoke%2A> Metoda <xref:System.Activities.WorkflowInvoker> klasy jest używana do wywołania kilku wystąpień przepływu pracy. <xref:System.Activities.WorkflowInvoker> służy do obsługi uproszczonych przepływów pracy, które nie wymagają zarządzania z hosta; przepływy pracy, które wymagają zarządzania z hosta (takie jak <xref:System.Activities.Bookmark> wznowienie), muszą być wykonywane przy użyciu <xref:System.Activities.WorkflowApplication.Run%2A> zamiast tego. Nie jest wymagane oczekiwanie na ukończenie jednego wystąpienia przepływu pracy przed wywołaniem innego elementu; aparat środowiska uruchomieniowego obsługuje jednoczesne uruchamianie wielu wystąpień przepływu pracy.  Wywoływane przepływy pracy są następujące:  
   
 - <xref:System.Activities.Statements.Sequence>Działanie zawierające <xref:System.Activities.Statements.WriteLine> działanie podrzędne. <xref:System.Activities.Variable>Działanie elementu nadrzędnego jest powiązane z <xref:System.Activities.InArgument> działaniem podrzędnym. Aby uzyskać więcej informacji na temat zmiennych, argumentów i powiązań, zobacz [zmienne i argumenty](variables-and-arguments.md).  
   
@@ -44,4 +44,4 @@ Składniki przepływu pracy w procesie hosta
   
 ## <a name="see-also"></a>Zobacz także
 
-- [BizTalk Server 2006 czy WF? Wybieranie odpowiedniego narzędzia przepływu pracy dla projektu](https://docs.microsoft.com/previous-versions/dotnet/articles/cc303238(v=msdn.10))
+- [BizTalk Server 2006 czy WF? Wybieranie odpowiedniego narzędzia przepływu pracy dla projektu](/previous-versions/dotnet/articles/cc303238(v=msdn.10))

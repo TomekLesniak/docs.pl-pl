@@ -1,13 +1,13 @@
 ---
-title: Scenariusze nieobsługiwane
+title: Nieobsługiwane scenariusze
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: b643e6df8a877860ce36fc6ee34c4e4ca08ec748
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: a3ee91e5232926b4ea7db80db35d9a309ca8105b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921158"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557817"
 ---
 # <a name="unsupported-scenarios"></a>Nieobsługiwane scenariusze
 
@@ -20,33 +20,33 @@ Z różnych powodów Windows Communication Foundation (WCF) nie obsługuje niekt
 
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Włączono plik cookie systemu Windows XP i bezpiecznego tokenu kontekstu
 
-Funkcja WCF nie obsługuje personifikacji, a <xref:System.InvalidOperationException> jest zgłaszany, gdy istnieją następujące warunki:
+Funkcja WCF nie obsługuje personifikacji i <xref:System.InvalidOperationException> jest zgłaszany, gdy istnieją następujące warunki:
 
 - System operacyjny to Windows XP.
 
 - Tryb uwierzytelniania powoduje tożsamość systemu Windows.
 
-- Właściwość <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> <xref:System.ServiceModel.OperationBehaviorAttribute> jest ustawiona na <xref:System.ServiceModel.ImpersonationOption.Required>.
+- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>Właściwość obiektu <xref:System.ServiceModel.OperationBehaviorAttribute> ma ustawioną wartość <xref:System.ServiceModel.ImpersonationOption.Required> .
 
 - Tworzony jest token kontekstu zabezpieczeń oparty na stanie (SCT) (domyślnie tworzenie jest wyłączone).
 
- Plik SCT oparty na stanie można utworzyć tylko przy użyciu niestandardowego powiązania. Aby uzyskać więcej informacji, zobacz [jak: Tworzenie tokenu kontekstu zabezpieczeń dla bezpiecznej sesji](how-to-create-a-security-context-token-for-a-secure-session.md). W kodzie, token jest włączony przez utworzenie elementu powiązania zabezpieczeń (<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> lub <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>) przy użyciu metody <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> lub <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> i ustawienie parametru `requireCancellation` na `false`. Parametr odnosi się do buforowania SCT. Ustawienie wartości `false` włącza funkcję SCT na podstawie stanu.
+ Plik SCT oparty na stanie można utworzyć tylko przy użyciu niestandardowego powiązania. Aby uzyskać więcej informacji, zobacz [jak: Tworzenie tokenu kontekstu zabezpieczeń dla bezpiecznej sesji](how-to-create-a-security-context-token-for-a-secure-session.md). W kodzie, token jest włączony przez utworzenie elementu powiązania zabezpieczeń (albo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> ) przy użyciu <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> lub <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> metody i ustawienie `requireCancellation` parametru na `false` . Parametr odnosi się do buforowania SCT. Ustawienie wartości powoduje `false` włączenie funkcji SCT opartej na stanie.
 
- Alternatywnie, w konfiguracji, token jest włączony, tworząc <`customBinding`>, a następnie dodając <`security`> elementu i ustawiając atrybut `authenticationMode` na SecureConversation i `requireSecurityContextCancellation` `true`.
+ Alternatywnie, w konfiguracji, token jest włączony przez utworzenie `customBinding`> <, a następnie dodanie `security` elementu <> i ustawienie `authenticationMode` atrybutu na SecureConversation i `requireSecurityContextCancellation` atrybut na `true` .
 
 > [!NOTE]
-> Powyższe wymagania są specyficzne. Na przykład <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> tworzy element powiązania, który powoduje tożsamość systemu Windows, ale nie ustanawia SCT. W związku z tym można go użyć z opcją `Required` w systemie Windows XP.
+> Powyższe wymagania są specyficzne. Na przykład <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> tworzy element powiązania, który powoduje tożsamość systemu Windows, ale nie ustanawia SCT. Z tego względu można użyć `Required` opcji w systemie Windows XP.
 
 ### <a name="possible-aspnet-conflict"></a>Możliwy konflikt ASP.NET
 
-Funkcje WCF i ASP.NET mogą włączać lub wyłączać personifikację. Gdy ASP.NET hostuje aplikację WCF, może istnieć konflikt między ustawieniami konfiguracji WCF i ASP.NET. W przypadku konfliktu ustawienie WCF ma pierwszeństwo, chyba że właściwość <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> jest ustawiona na <xref:System.ServiceModel.ImpersonationOption.NotAllowed>, w tym przypadku ustawienie personifikacji ASP.NET ma pierwszeństwo.
+Funkcje WCF i ASP.NET mogą włączać lub wyłączać personifikację. Gdy ASP.NET hostuje aplikację WCF, może istnieć konflikt między ustawieniami konfiguracji WCF i ASP.NET. W przypadku konfliktu ustawienie WCF ma pierwszeństwo, chyba że <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> Właściwość jest ustawiona na <xref:System.ServiceModel.ImpersonationOption.NotAllowed> , w tym przypadku ustawienie personifikacji ASP.net ma pierwszeństwo.
 
 ### <a name="assembly-loads-may-fail-under-impersonation"></a>Obciążenia zestawu mogą się nie powieść w ramach personifikacji
 
-Jeśli personifikowany kontekst nie ma uprawnień dostępu do ładowania zestawu i jeśli jest to pierwszy raz, środowisko uruchomieniowe języka wspólnego (CLR) próbuje załadować zestaw dla tej domeny, <xref:System.AppDomain> buforuje awarię. Kolejne próby załadowania zestawu (lub zestawów) kończą się niepowodzeniem nawet po powróceniu personifikacji, a nawet jeśli cofnięty kontekst ma prawa dostępu do ładowania zestawu. Dzieje się tak, ponieważ środowisko CLR nie próbuje wykonać ładowania po zmianie kontekstu użytkownika. Aby odzyskać sprawność po awarii, należy ponownie uruchomić domenę aplikacji.
+Jeśli personifikowany kontekst nie ma uprawnień dostępu do ładowania zestawu i jeśli jest to pierwsze środowisko uruchomieniowe języka wspólnego (CLR) próbuje załadować zestaw dla tej domeny, <xref:System.AppDomain> pamięć podręczna jest niepowodzenie. Kolejne próby załadowania zestawu (lub zestawów) kończą się niepowodzeniem nawet po powróceniu personifikacji, a nawet jeśli cofnięty kontekst ma prawa dostępu do ładowania zestawu. Dzieje się tak, ponieważ środowisko CLR nie próbuje wykonać ładowania po zmianie kontekstu użytkownika. Aby odzyskać sprawność po awarii, należy ponownie uruchomić domenę aplikacji.
 
 > [!NOTE]
-> Wartość domyślna właściwości <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> klasy <xref:System.ServiceModel.Security.WindowsClientCredential> jest <xref:System.Security.Principal.TokenImpersonationLevel.Identification>. W większości przypadków kontekst personifikacji na poziomie tożsamości nie ma praw do ładowania żadnych dodatkowych zestawów. Jest to wartość domyślna, więc jest to bardzo typowy warunek, z którym należy się zapoznać. Personifikacja na poziomie tożsamości występuje również wtedy, gdy proces personifikacji nie ma uprawnień `SeImpersonate`. Aby uzyskać więcej informacji, zobacz [delegowanie i personifikacja](delegation-and-impersonation-with-wcf.md).
+> Wartość domyślna <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> właściwości <xref:System.ServiceModel.Security.WindowsClientCredential> klasy to <xref:System.Security.Principal.TokenImpersonationLevel.Identification> . W większości przypadków kontekst personifikacji na poziomie tożsamości nie ma praw do ładowania żadnych dodatkowych zestawów. Jest to wartość domyślna, więc jest to bardzo typowy warunek, z którym należy się zapoznać. Personifikacja na poziomie tożsamości występuje również wtedy, gdy proces personifikacji nie ma `SeImpersonate` uprawnień. Aby uzyskać więcej informacji, zobacz [delegowanie i personifikacja](delegation-and-impersonation-with-wcf.md).
 
 ### <a name="delegation-requires-credential-negotiation"></a>Delegowanie wymaga negocjowania poświadczeń
 
@@ -78,17 +78,17 @@ Szyfrowanie AES zgodne ze standardem FIPS nie działa w dwustronnych wywołaniac
 
  Istnieją dwa sposoby, aby stwierdzić, czy certyfikat używa dostawcy magazynu kluczy:
 
-- Wykonaj `p/invoke` `CertGetCertificateContextProperty`i sprawdź `dwProvType` zwróconych `CertGetCertificateContextProperty`.
+- Wykonaj `p/invoke` `CertGetCertificateContextProperty` i zbadaj `dwProvType` zwrócone `CertGetCertificateContextProperty` .
 
-- Użyj `certutil` polecenia z wiersza polecenia w celu wykonywania zapytań dotyczących certyfikatów. Aby uzyskać więcej informacji, zobacz [zadania narzędzia Certutil dotyczące rozwiązywania problemów z certyfikatami](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772619(v=ws.10)).
+- Użyj  `certutil` polecenia z wiersza polecenia w celu wykonywania zapytań dotyczących certyfikatów. Aby uzyskać więcej informacji, zobacz [zadania narzędzia Certutil dotyczące rozwiązywania problemów z certyfikatami](/previous-versions/orphan-topics/ws.10/cc772619(v=ws.10)).
 
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>Bezpieczeństwo komunikatów kończy się niepowodzeniem, jeśli jest wymagane użycie personifikacji ASP.NET i zgodność ASP.NET
 
 Usługa WCF nie obsługuje następującej kombinacji ustawień, ponieważ mogą one uniemożliwiać uwierzytelnianie klienta:
 
-- ASP.NET Personifikacja jest włączona. Jest to wykonywane w pliku Web. config przez ustawienie atrybutu `impersonate` <`identity`> elementu `true`.
+- ASP.NET Personifikacja jest włączona. Jest to wykonywane w pliku Web.config przez ustawienie `impersonate` atrybutu <`identity`> elementu `true` .
 
-- Tryb zgodności ASP.NET jest włączony przez ustawienie atrybutu `aspNetCompatibilityEnabled` [\<serviceHostingEnvironment >](../../configure-apps/file-schema/wcf/servicehostingenvironment.md) na `true`.
+- Tryb zgodności ASP.NET jest włączony przez ustawienie `aspNetCompatibilityEnabled` atrybutu [\<serviceHostingEnvironment>](../../configure-apps/file-schema/wcf/servicehostingenvironment.md) na `true` .
 
 - Używane są zabezpieczenia w trybie komunikatów.
 
@@ -114,19 +114,19 @@ Funkcja WCF wymaga dokładnie jednego dokumentu WSDL dla każdego węzła w fede
 
  Powoduje to zgłoszenie wyjątku.
 
- Ten scenariusz można wykonać, umieszczając punkt końcowy `issue_ticket` w innym miejscu.
+ Ten scenariusz można wykonać, umieszczając `issue_ticket` punkt końcowy w innym miejscu.
 
 ## <a name="wsdl-import-attributes-can-be-lost"></a>Atrybuty importu WSDL mogą zostać utracone
 
-Funkcja WCF traci śledzenie atrybutów w `<wst:Claims>` elemencie w szablonie `RST` podczas importowania WSDL. Dzieje się tak podczas importowania WSDL, jeśli określisz `<Claims>` bezpośrednio w `WSFederationHttpBinding.Security.Message.TokenRequestParameters` lub `IssuedSecurityTokenRequestParameters.AdditionalRequestParameters` zamiast bezpośrednio korzystać z kolekcji typu "Claims".  Ponieważ import utraci atrybuty, powiązanie nie jest prawidłowo przeszukiwane za pomocą języka WSDL i dlatego jest niepoprawne po stronie klienta.
+Funkcja WCF traci śledzenie atrybutów dla `<wst:Claims>` elementu w `RST` szablonie podczas importowania WSDL. Dzieje się tak podczas importowania WSDL, jeśli określono `<Claims>` bezpośrednio w `WSFederationHttpBinding.Security.Message.TokenRequestParameters` lub `IssuedSecurityTokenRequestParameters.AdditionalRequestParameters` zamiast bezpośrednio używać kolekcji typu "Claims".  Ponieważ import utraci atrybuty, powiązanie nie jest prawidłowo przeszukiwane za pomocą języka WSDL i dlatego jest niepoprawne po stronie klienta.
 
  Poprawka polega na zmodyfikowaniu powiązania bezpośrednio na kliencie po zaimportowaniu.
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Zagadnienia dotyczące bezpieczeństwa](security-considerations-in-wcf.md)
-- [Ujawnianie informacji](information-disclosure.md)
-- [Podniesienie uprawnień](elevation-of-privilege.md)
-- [Odmowa usługi](denial-of-service.md)
-- [Manipulowanie](tampering.md)
+- [Zagadnienia dotyczące zabezpieczeń](security-considerations-in-wcf.md)
+- [Information Disclosure (ujawnienie informacji)](information-disclosure.md)
+- [Elevation of Privilege (podniesienie uprawnień)](elevation-of-privilege.md)
+- [Denial of Service (odmowa usługi)](denial-of-service.md)
+- [Tampering (manipulowanie)](tampering.md)
 - [Ataki oparte na metodzie powtórzeń](replay-attacks.md)

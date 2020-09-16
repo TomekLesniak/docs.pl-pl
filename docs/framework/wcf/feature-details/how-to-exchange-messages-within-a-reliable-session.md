@@ -1,18 +1,19 @@
 ---
-title: 'Instrukcje: Wymiana komunikatów w ramach sesji niezawodnej'
+title: 'Instrukcje: wymiana komunikatów w ramach sesji niezawodnej'
 ms.date: 03/30/2017
 ms.assetid: 87cd0e75-dd2c-44c1-8da0-7b494bbdeaea
-ms.openlocfilehash: 39dd6636f80b107ced1caac29869c6c66e67e21e
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 97371f8572d5d0db633ab8dd1ca82067d9d55c3f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052042"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550192"
 ---
-# <a name="how-to-exchange-messages-within-a-reliable-session"></a>Instrukcje: Wymiana komunikatów w ramach sesji niezawodnej
+# <a name="how-to-exchange-messages-within-a-reliable-session"></a>Instrukcje: wymiana komunikatów w ramach sesji niezawodnej
 
 W tym temacie opisano kroki wymagane do umożliwienia niezawodnej sesji przy użyciu jednego z powiązań dostarczonych przez system, które obsługują taką sesję, ale nie jest to domyślnie możliwe. Niezawodna sesja jest włączana za pomocą kodu lub deklaratywnie w pliku konfiguracji. Ta procedura korzysta z plików konfiguracji klienta i usługi w celu włączenia niezawodnej sesji i określenia, że komunikaty docierają do tej samej kolejności, w jakiej zostały wysłane.
 
-Kluczową częścią tej procedury jest to, że element konfiguracji punktu końcowego zawiera `bindingConfiguration` atrybut odwołujący się do konfiguracji powiązania o nazwie `Binding1` . [**\<binding>**](../../configure-apps/file-schema/wcf/bindings.md)Element konfiguracji odwołuje się do tej nazwy, aby umożliwić niezawodne sesje przez ustawienie `enabled` atrybutu [**\<reliableSession>**](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731302(v=vs.100)) elementu na `true` . Należy określić uporządkowane gwarancje dostarczania dla niezawodnej sesji przez ustawienie `ordered` atrybutu na `true` .
+Kluczową częścią tej procedury jest to, że element konfiguracji punktu końcowego zawiera `bindingConfiguration` atrybut odwołujący się do konfiguracji powiązania o nazwie `Binding1` . [**\<binding>**](../../configure-apps/file-schema/wcf/bindings.md)Element konfiguracji odwołuje się do tej nazwy, aby umożliwić niezawodne sesje przez ustawienie `enabled` atrybutu [**\<reliableSession>**](/previous-versions/dotnet/netframework-4.0/ms731302(v=vs.100)) elementu na `true` . Należy określić uporządkowane gwarancje dostarczania dla niezawodnej sesji przez ustawienie `ordered` atrybutu na `true` .
 
 Aby uzyskać kopię źródła tego przykładu, zobacz temat [Niezawodna sesja WS](../samples/ws-reliable-session.md).
 
@@ -66,7 +67,7 @@ Aby uzyskać kopię źródła tego przykładu, zobacz temat [Niezawodna sesja WS
 
 ## <a name="example"></a>Przykład
 
-Niektóre powiązania dostarczone przez system domyślnie obsługują niezawodne sesje. Są to moduły:
+Niektóre powiązania dostarczone przez system domyślnie obsługują niezawodne sesje. Należą do nich następujące elementy:
 
 - <xref:System.ServiceModel.WSDualHttpBinding>
 

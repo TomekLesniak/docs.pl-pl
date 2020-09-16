@@ -3,12 +3,12 @@ title: Entity Data Model
 description: Entity Data Model opisuje strukturę danych, niezależnie od jej przechowywanego formularza, który rozwiązuje wyzwania związane z przechowywaniem danych w wielu formularzach.
 ms.date: 03/30/2017
 ms.assetid: 2dda3d5b-4582-4ba0-a91d-fcd7a1498137
-ms.openlocfilehash: c98b1f4559ef297f8b11051940fd91f5f6fa06fd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d32207e3a9dd35d2d8f8990bcbbd35e38d21d8bb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286743"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557622"
 ---
 # <a name="entity-data-model"></a>Entity Data Model
 Entity Data Model (EDM) to zestaw koncepcji, które opisują strukturę danych, niezależnie od ich przechowywanego formularza. Model EDM jest pożyczany z modelu Entity-Relationship opisanego przez Peterowi Chen w 1976, ale również kompiluje się w modelu relacji jednostki i rozszerza jego tradycyjne zastosowania.  
@@ -22,7 +22,7 @@ Entity Data Model (EDM) to zestaw koncepcji, które opisują strukturę danych, 
   
  [Kluczowe założenia modelu danych jednostki](entity-data-model-key-concepts.md)  
   
- [Model danych jednostki: Przestrzenie nazw](entity-data-model-namespaces.md)  
+ [Model danych jednostki: Namespaces](entity-data-model-namespaces.md)  
   
  [Model danych jednostki: Typy danych pierwotnych](entity-data-model-primitive-data-types.md)  
   
@@ -64,6 +64,6 @@ Entity Data Model (EDM) to zestaw koncepcji, które opisują strukturę danych, 
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Narzędzia Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
-- [Plik. edmx — Omówienie](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [Narzędzia Entity Data Model ADO.NET](/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Plik. edmx — Omówienie](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [Specyfikacja CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)

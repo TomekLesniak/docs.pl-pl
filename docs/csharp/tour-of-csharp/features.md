@@ -2,12 +2,12 @@
 title: Samouczek dotyczący głównych obszarów języka C#
 description: Jesteś nowym w języku C#? Poznaj podstawy języka.
 ms.date: 08/06/2020
-ms.openlocfilehash: e1e533982757c10085f0444197ff97ee7487391f
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 9069bb194169a7743f12d998b2842186ed0ef404
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414906"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558178"
 ---
 # <a name="major-language-areas"></a>Główne obszary języka
 
@@ -86,7 +86,7 @@ Delegat nie wie ani nie dba o klasę metody, do której się odwołuje. Wszystki
 
 ## <a name="async--await"></a>asynchroniczne/await
 
-Język C# obsługuje programy asynchroniczne z dwoma słowami kluczowymi: `async` i `await` . Dodaj `async` modyfikator do deklaracji metody, aby zadeklarować metodę jako asynchroniczną. `await`Operator nakazuje kompilatorowi asynchroniczne oczekiwanie na zakończenie. Formant jest zwracany do obiektu wywołującego, a metoda zwraca strukturę, która zarządza stanem pracy asynchronicznej. Struktura jest zazwyczaj <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , ale może być dowolnego typu, który obsługuje wzorzec await. Te funkcje umożliwiają pisanie kodu, który odczytuje jako jego odpowiednik synchroniczny, ale wykonuje się asynchronicznie. Na przykład poniższy kod pobiera stronę główną witryny [Microsoft docs](https://docs.microsoft.com):
+Język C# obsługuje programy asynchroniczne z dwoma słowami kluczowymi: `async` i `await` . Dodaj `async` modyfikator do deklaracji metody, aby zadeklarować metodę jako asynchroniczną. `await`Operator nakazuje kompilatorowi asynchroniczne oczekiwanie na zakończenie. Formant jest zwracany do obiektu wywołującego, a metoda zwraca strukturę, która zarządza stanem pracy asynchronicznej. Struktura jest zazwyczaj <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , ale może być dowolnego typu, który obsługuje wzorzec await. Te funkcje umożliwiają pisanie kodu, który odczytuje jako jego odpowiednik synchroniczny, ale wykonuje się asynchronicznie. Na przykład poniższy kod pobiera stronę główną witryny [Microsoft docs](/):
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="AsyncExample":::
 
@@ -116,7 +116,7 @@ Poniższy przykład kodu demonstruje, jak uzyskać `HelpAttribute` wystąpienia 
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="ReadAttributes":::
 
-## <a name="learn-more"></a>Dowiedz się więcej
+## <a name="learn-more"></a>Więcej tutaj
 
 Więcej informacji na temat języka C# można uzyskać, próbując skorzystać z jednego z naszych [samouczków](../tutorials/index.md).
 

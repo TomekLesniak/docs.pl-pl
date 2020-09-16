@@ -2,12 +2,12 @@
 title: Właściwości magazynu wystąpień przepływu pracy SQL
 ms.date: 03/30/2017
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
-ms.openlocfilehash: 5ad32bc1683fe903abe68809037ffbabd088a32b
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: e5e37d7ec97f877045216069e1dd29da89476625
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802495"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558228"
 ---
 # <a name="properties-of-sql-workflow-instance-store"></a>Właściwości magazynu wystąpień przepływu pracy SQL
 W tematach w tej sekcji znajdują się szczegółowe informacje o właściwościach magazynu wystąpień przepływu pracy SQL.  
@@ -28,5 +28,5 @@ W tematach w tej sekcji znajdują się szczegółowe informacje o właściwości
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Magazyn wystąpień aplikacji Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10))
-- [Baza danych trwałości SQL Server aplikacji sieci szkieletowej](https://docs.microsoft.com/previous-versions/appfabric/ee790819(v=azure.10))
+- [Magazyn wystąpień aplikacji Windows Server App Fabric](/previous-versions/appfabric/ff383417(v=azure.10))
+- [Baza danych trwałości SQL Server aplikacji sieci szkieletowej](/previous-versions/appfabric/ee790819(v=azure.10))

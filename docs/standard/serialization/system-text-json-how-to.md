@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 7ad2721f12c5d14b61b35ecf7696ff0d6a6f27da
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 72ba79784d3eb1beb43eab8db0a448a7e3b18eb6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289515"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557843"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializować i deserializować (Marshaling and unmarshaling) JSON w programie .NET
 
@@ -118,14 +118,14 @@ Serializacja do UTF-8 jest szybsza o 5-10% niż przy użyciu metod opartych na c
 * Domyślnie JSON jest zminimalizowanego. Można tu [wydrukować kod JSON](#serialize-to-formatted-json).
 * Domyślnie wielkość liter w nazwach JSON jest zgodna z nazwami .NET. Można [dostosować wielkość liter w nazwach JSON](#customize-json-names-and-values).
 * Wykryto odwołania cykliczne i zostały zgłoszone wyjątki.
-* Obecnie pola są wykluczone.
+* Obecnie [pola](../../csharp/programming-guide/classes-and-structs/fields.md) są wykluczone.
 
 Obsługiwane typy to:
 
 * Elementy podstawowe platformy .NET, które są mapowane na elementy podstawowe języka JavaScript, takie jak typy liczbowe, ciągi i wartości logiczne.
 * Obiekty CLR zdefiniowane przez użytkownika [(POCOs)](https://stackoverflow.com/questions/250001/poco-definition).
 * Tablice jednowymiarowe i nieregularne ( `ArrayName[][]` ).
-* `Dictionary<string,TValue>`gdzie `TValue` is to `object` , `JsonElement` lub poco.
+* `Dictionary<string,TValue>` gdzie `TValue` is to `object` , `JsonElement` lub poco.
 * Kolekcje z następujących przestrzeni nazw.
   * <xref:System.Collections>
   * <xref:System.Collections.Generic>
@@ -385,7 +385,7 @@ Oto przykład obiektu do serializacji i danych wyjściowych JSON:
 
 |Właściwość |Wartość  |
 |---------|---------|
-| Date    | 8/1/2019 12:00:00 AM – 07:00|
+| Data    | 8/1/2019 12:00:00 AM – 07:00|
 | TemperatureCelsius| 25 |
 | Podsumowanie| wartość null|
 
@@ -641,7 +641,7 @@ Podczas deserializacji kodu JSON pokazanego wcześniej w tym typie próbkowania 
 
 |Właściwość |Wartość  |Uwagi  |
 |---------|---------|---------|
-| Date    | 8/1/2019 12:00:00 AM – 07:00||
+| Data    | 8/1/2019 12:00:00 AM – 07:00||
 | TemperatureCelsius| 0 | Niezgodność z rozróżnianiem wielkości liter ( `temperatureCelsius` w formacie JSON), więc właściwość nie jest ustawiona. |
 | Podsumowanie | Gorąca ||
 | ExtensionData — | temperatureCelsius: 25 |Ponieważ przypadek nie jest zgodny, ta właściwość JSON jest dodatkową i jest parą klucz-wartość w słowniku.|
@@ -700,11 +700,11 @@ Wartości null w formacie JSON są ignorowane tylko wtedy, gdy są prawidłowe. 
 
 ## <a name="utf8jsonreader-utf8jsonwriter-and-jsondocument"></a>Utf8JsonReader, Utf8JsonWriter i JsonDocument
 
-<xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName>jest wysoką wydajnością, niskim alokacją, czytnikiem tylko do przodu dla tekstu JSON zakodowanego w formacie UTF-8, Odczytaj z `ReadOnlySpan<byte>` lub `ReadOnlySequence<byte>` . `Utf8JsonReader`Jest typem niskiego poziomu, który może służyć do tworzenia niestandardowych analizatorów i deserializacji. <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType>Metoda używa `Utf8JsonReader` w obszarze okładki.
+<xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> jest wysoką wydajnością, niskim alokacją, czytnikiem tylko do przodu dla tekstu JSON zakodowanego w formacie UTF-8, Odczytaj z `ReadOnlySpan<byte>` lub `ReadOnlySequence<byte>` . `Utf8JsonReader`Jest typem niskiego poziomu, który może służyć do tworzenia niestandardowych analizatorów i deserializacji. <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType>Metoda używa `Utf8JsonReader` w obszarze okładki.
 
-<xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName>jest wysoce wydajnym sposobem pisania zakodowanego tekstu JSON w formacie UTF-8 ze wspólnych typów platformy .NET, takich jak `String` , `Int32` , i `DateTime` . Składnik zapisywania jest typu niskiego poziomu, który może służyć do tworzenia serializatorów niestandardowych. <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType>Metoda używa `Utf8JsonWriter` w obszarze okładki.
+<xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName> jest wysoce wydajnym sposobem pisania zakodowanego tekstu JSON w formacie UTF-8 ze wspólnych typów platformy .NET, takich jak `String` , `Int32` , i `DateTime` . Składnik zapisywania jest typu niskiego poziomu, który może służyć do tworzenia serializatorów niestandardowych. <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType>Metoda używa `Utf8JsonWriter` w obszarze okładki.
 
-<xref:System.Text.Json.JsonDocument?displayProperty=fullName>zapewnia możliwość tworzenia Document Object Model tylko do odczytu (DOM) za pomocą programu `Utf8JsonReader` . DOM zapewnia losowy dostęp do danych w ładunku JSON. Do elementów JSON, które tworzą ładunek, można uzyskać dostęp za pośrednictwem <xref:System.Text.Json.JsonElement> typu. `JsonElement`Typ udostępnia moduł wyliczający tablic i obiektów oraz interfejsy API służące do konwertowania tekstu JSON na popularne typy .NET. `JsonDocument`uwidacznia <xref:System.Text.Json.JsonDocument.RootElement> Właściwość.
+<xref:System.Text.Json.JsonDocument?displayProperty=fullName> zapewnia możliwość tworzenia Document Object Model tylko do odczytu (DOM) za pomocą programu `Utf8JsonReader` . DOM zapewnia losowy dostęp do danych w ładunku JSON. Do elementów JSON, które tworzą ładunek, można uzyskać dostęp za pośrednictwem <xref:System.Text.Json.JsonElement> typu. `JsonElement`Typ udostępnia moduł wyliczający tablic i obiektów oraz interfejsy API służące do konwertowania tekstu JSON na popularne typy .NET. `JsonDocument` uwidacznia <xref:System.Text.Json.JsonDocument.RootElement> Właściwość.
 
 W poniższych sekcjach pokazano, jak używać tych narzędzi do odczytywania i pisania danych JSON.
 
@@ -801,11 +801,11 @@ Przykładowy kod rozpoczyna się od buforu 4 KB i podwaja rozmiar buforu za każ
 
 W powyższym przykładzie nie określono limitu rozmiaru buforu. Jeśli rozmiar tokenu jest zbyt duży, kod może zakończyć się niepowodzeniem z <xref:System.OutOfMemoryException> wyjątkiem. Taka sytuacja może wystąpić, jeśli kod JSON zawiera token o rozmiarze około 1 GB lub więcej, ponieważ Podwajanie rozmiaru 1 GB spowoduje, że rozmiar jest zbyt duży, aby zmieścił się w `int32` buforze.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
-* [System.Text.JsonPodsumowanie](system-text-json-overview.md)
+* [System.Text.Json Podsumowanie](system-text-json-overview.md)
 * [Jak pisać konwertery niestandardowe](system-text-json-converters-how-to.md)
-* [Jak przeprowadzić migrację zNewtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [Obsługa DateTime i DateTimeOffset wSystem.Text.Json](../datetime/system-text-json-support.md)
-* [System.Text.JsonDokumentacja interfejsu API](xref:System.Text.Json)
+* [Jak przeprowadzić migrację z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Obsługa DateTime i DateTimeOffset w System.Text.Json](../datetime/system-text-json-support.md)
+* [System.Text.Json Dokumentacja interfejsu API](xref:System.Text.Json)
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7fd3001f-f8f9-4bce-879f-d4c7af8a04fe
-ms.openlocfilehash: aa5b83e9bf359481773db673fd3de9c4dcff6af2
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: c37926b93e0dc11255fd27c312679f6286fa7e5d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553026"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558119"
 ---
 # <a name="how-to-calculate-intermediate-values-linq-to-xml"></a>Jak obliczyć wartości pośrednie (LINQ to XML)
 
@@ -104,6 +104,6 @@ Ten przykład generuje następujące wyniki:
 435.00
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Zapytania podstawowe (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Zapytania podstawowe (LINQ to XML) (Visual Basic)](./find-element-specific-attribute.md)

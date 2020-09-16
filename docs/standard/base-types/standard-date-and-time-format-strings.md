@@ -15,12 +15,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 5db9088a6b0d75ae5293b9be35346c4c2ddf81c6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 95f655ace1b2fb38100e3cc1089c4a3f61c5b264
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447228"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557362"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardowe ciągi formatujące datę i godzinę
 
@@ -31,13 +31,13 @@ W ciągu standardowego formatu daty i godziny pojedynczy specyfikator formatu je
 - Aby zdefiniować tekstową reprezentację wartości daty i godziny, która może zostać przekonwertowana <xref:System.DateTime> na <xref:System.DateTimeOffset> wartość lub przez operację analizowania.
 
 > [!TIP]
-> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 Standardowe ciągi formatujące datę i godzinę mogą być używane z obu <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości.
 
 [!INCLUDE[C# interactive-note](~/includes/csharp-interactive-with-utc-partial-note.md)]
 
-<a name="table"></a>W poniższej tabeli opisano specyfikatory standardowego formatu daty i godziny. O ile nie zaznaczono inaczej, określony standardowy specyfikator formatu daty i godziny generuje identyczny ciąg reprezentacji, niezależnie od tego, czy jest używany z <xref:System.DateTime> lub <xref:System.DateTimeOffset> wartością. Zobacz sekcję [uwagi](#Notes) , aby uzyskać dodatkowe informacje dotyczące używania ciągów standardowego formatu daty i godziny.
+<a name="table"></a> W poniższej tabeli opisano specyfikatory standardowego formatu daty i godziny. O ile nie zaznaczono inaczej, określony standardowy specyfikator formatu daty i godziny generuje identyczny ciąg reprezentacji, niezależnie od tego, czy jest używany z <xref:System.DateTime> lub <xref:System.DateTimeOffset> wartością. Zobacz sekcję [uwagi](#Notes) , aby uzyskać dodatkowe informacje dotyczące używania ciągów standardowego formatu daty i godziny.
 
 |Specyfikator formatu|Opis|Przykłady|
 |----------------------|-----------------|--------------|
@@ -48,7 +48,7 @@ Standardowe ciągi formatujące datę i godzinę mogą być używane z obu <xref
 |„g”|Wzorzec ogólnej daty/godziny (godzina krótka).<br /><br /> Więcej informacji: [specyfikator formatu daty ogólnej i godziny krótkiej ("g")](#GeneralDateShortTime).|2009-06-15T13:45:30-> 6/15/2009 1:45 PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 15/06/2009 13:45 (es-ES)<br /><br /> 2009-06-15T13:45:30-> 2009/6/15 13:45 (zh-CN)|
 |„G”|Wzorzec ogólnej daty/godziny (godzina długa).<br /><br /> Więcej informacji: [specyfikator formatu daty ogólnej godziny długiej ("G")](#GeneralDateLongTime).|2009-06-15T13:45:30-> 6/15/2009 1:45:30 PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 15/06/2009 13:45:30 (es-ES)<br /><br /> 2009-06-15T13:45:30-> 2009/6/15 13:45:30 (zh-CN)|
 |„M”, „m”|Wzorzec miesiąc/dzień.<br /><br /> Więcej informacji: [specyfikator formatu miesiąca ("m", "m")](#MonthDay).|2009-06-15T13:45:30 — > Czerwiec 15 (EN-US)<br /><br /> 2009 — 06-15T13:45:30-> 15. Juni (da-DK)<br /><br /> 2009-06-15T13:45:30-> 15 Juni (identyfikator ID)|
-|„O”, „o”|Wzorzec dwustronnej konwersji data/godzina.<br /><br /> Więcej informacji: [specyfikator formatu rundying ("o", "o")](#Roundtrip).|<xref:System.DateTime>wartością<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. UTC)--> 2009-06-15T13:45:30.0000000 Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset>wartością<br /><br /> 2009-06-15T13:45:30-07:00--> 2009-06-15T13:45:30.0000000-07:00|
+|„O”, „o”|Wzorzec dwustronnej konwersji data/godzina.<br /><br /> Więcej informacji: [specyfikator formatu rundying ("o", "o")](#Roundtrip).|<xref:System.DateTime> wartością<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. UTC)--> 2009-06-15T13:45:30.0000000 Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset> wartością<br /><br /> 2009-06-15T13:45:30-07:00--> 2009-06-15T13:45:30.0000000-07:00|
 |„R”, „r”|Wzorzec RFC1123.<br /><br /> Więcej informacji: [specyfikator formatu RFC1123 ("r", "r")](#RFC1123).|2009-06-15T13:45:30-> PN, 15 Jun 2009 20:45:30 GMT|
 |„s”|Wzorzec sortowalnej daty/godziny.<br /><br /> Więcej informacji: [specyfikator formatu sortowania ("s")](#Sortable).|2009-06-15T13:45:30 (DateTimeKind. local)-> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. UTC)-> 2009-06-15T13:45:30|
 |„t”|Wzorzec godziny krótkiej.<br /><br /> Więcej informacji: [specyfikator formatu godziny krótkiej ("t")](#ShortTime).|2009-06-15T13:45:30-> 1:45 PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 13:45 (HR-HR)<br /><br /> 2009-06-15T13:45:30-> 01:45 م (AR-EG)|
@@ -270,7 +270,7 @@ Specyfikator formatu standardowego "O" lub "o" (oraz "yyyy'-'MM'-'dd'T'HH": "mm"
 
 - Składnik strefy czasowej <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> wartości daty i godziny używa "Z" (co oznacza przesunięcie zerowe) do reprezentowania czasu UTC.
 
-- <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>wartości daty i godziny nie zawierają informacji o strefie czasowej.
+- <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType> wartości daty i godziny nie zawierają informacji o strefie czasowej.
 
 Ze względu na to, że specyfikator formatu standardowego "O" lub "o" jest zgodny ze standardem międzynarodowym, Operacja formatowania lub analizowania, która używa specyfikatora zawsze używa niezmiennej kultury i kalendarza gregoriańskiego.
 
@@ -453,5 +453,5 @@ Na formatowanie mają wpływ właściwości bieżącego <xref:System.Globalizati
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
 - [Formatowanie typów](formatting-types.md)
 - [Niestandardowe ciągi formatujące datę i godzinę](custom-date-and-time-format-strings.md)
-- [Przykład: Narzędzie formatowania programu .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
-- [Przykład: Narzędzie formatowania programu .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)
+- [Przykład: Narzędzie formatowania programu .NET Core WinForms (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [Przykład: Narzędzie formatowania programu .NET Core WinForms (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)

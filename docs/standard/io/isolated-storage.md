@@ -19,19 +19,19 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 0de0c7e9843ca8a97392733a68367b1dae8de232
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 4ad7779b9810954d110af576dd834daf61888d59
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416386"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555923"
 ---
 # <a name="isolated-storage"></a>Wydzielona pamięć masowa
 
 W przypadku aplikacji klasycznych magazyn izolowany jest mechanizmem magazynu danych, który zapewnia izolację i bezpieczeństwo przez definiowanie ustandaryzowanych metod kojarzenia kodu z zapisanymi danymi. Standaryzacja oferuje także inne korzyści. Administratorzy mogą używać narzędzi przeznaczonych do wykonywania operacji na wydzielonej pamięci masowej w celu konfigurowania ilości miejsca przeznaczonego na pliki, ustawiania zasad zabezpieczeń i usuwania nieużywanych danych. Dzięki wydzielonej pamięci masowej kod nie wymaga unikatowych ścieżek określających bezpieczne lokalizacje w systemie plików, a dane są chronione przed innymi aplikacjami, które mają dostęp tylko do wydzielonej pamięci masowej. Ustalona informacja, która wskazuje, gdzie jest zlokalizowany obszar pamięci aplikacji nie jest potrzebna.
 
 > [!IMPORTANT]
-> Izolowany magazyn nie jest dostępny dla aplikacji ze sklepu Windows 8. x. Zamiast tego należy użyć klas danych aplikacji w `Windows.Storage` przestrzeniach nazw uwzględnionych w interfejsie API środowisko wykonawcze systemu Windows do przechowywania lokalnych danych i plików. Aby uzyskać więcej informacji, zobacz [dane aplikacji](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) w centrum deweloperów systemu Windows.
+> Izolowany magazyn nie jest dostępny dla aplikacji ze sklepu Windows 8. x. Zamiast tego należy użyć klas danych aplikacji w `Windows.Storage` przestrzeniach nazw uwzględnionych w interfejsie API środowisko wykonawcze systemu Windows do przechowywania lokalnych danych i plików. Aby uzyskać więcej informacji, zobacz [dane aplikacji](/previous-versions/windows/apps/hh464917(v=win.10)) w centrum deweloperów systemu Windows.
 
 <a name="data_compartments_and_stores"></a>
 
@@ -199,9 +199,9 @@ Czasami jest ono pomocne podczas weryfikowania zmiany w wydzielonej pamięci mas
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>, pochodzi z <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType> i zapewnia podstawowe zarządzanie przechowywanymi plikami zestawu i aplikacji. Wystąpienie <xref:System.IO.IsolatedStorage.IsolatedStorageFile> klasy reprezentuje pojedynczy magazyn znajdujący się w systemie plików.
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>pochodzi z <xref:System.IO.FileStream?displayProperty=nameWithType> i zapewnia dostęp do plików w sklepie.
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> pochodzi z <xref:System.IO.FileStream?displayProperty=nameWithType> i zapewnia dostęp do plików w sklepie.
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageScope>jest wyliczeniem umożliwiającym tworzenie i wybieranie magazynu z odpowiednim typem izolacji.
+- <xref:System.IO.IsolatedStorage.IsolatedStorageScope> jest wyliczeniem umożliwiającym tworzenie i wybieranie magazynu z odpowiednim typem izolacji.
 
 Klasy wydzielonej pamięci masowej umożliwiają tworzenie, wyliczanie oraz usuwanie wydzielonej pamięci masowej. Metody wykonywania tych zadań są dostępne za pomocą <xref:System.IO.IsolatedStorage.IsolatedStorageFile> obiektu. Niektóre operacje wymagają posiadania <xref:System.Security.Permissions.IsolatedStorageFilePermission> uprawnienia, które reprezentuje prawo do administrowania izolowanym magazynem. może być również konieczne posiadanie praw systemu operacyjnego w celu uzyskania dostępu do pliku lub katalogu.
 

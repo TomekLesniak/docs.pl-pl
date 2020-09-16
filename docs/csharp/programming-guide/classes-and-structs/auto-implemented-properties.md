@@ -6,12 +6,12 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: aa55fa97-ccec-431f-b5e9-5ac789fd32b7
-ms.openlocfilehash: f58f9a23f26bde7e80d834528d94e38af1231e7b
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 72f774d84266292412be9b954fc206debc8ac55e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474478"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555903"
 ---
 # <a name="auto-implemented-properties-c-programming-guide"></a>Właściwości zaimplementowane automatycznie (Przewodnik programowania w języku C#)
 
@@ -36,4 +36,4 @@ Klasa, która jest wyświetlana w poprzednim przykładzie jest modyfikowalna. Ko
 ## <a name="see-also"></a>Zobacz także
 
 - [Właściwości](./properties.md)
-- [Modyfikatory](/dotnet/csharp/language-reference/keywords)
+- [Modyfikatory](../../language-reference/keywords/index.md)

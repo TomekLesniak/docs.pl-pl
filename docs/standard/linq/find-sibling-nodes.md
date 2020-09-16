@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: 3c764cec818cf788282bb616cc123e9be8d62c08
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 56833ef3758a6d8af1eb6f0a103b85ad967c9aad
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553152"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555912"
 ---
 # <a name="how-to-find-sibling-nodes-linq-to-xml"></a>Jak znaleźć węzły elementów równorzędnych (LINQ to XML)
 
@@ -100,6 +100,6 @@ Results are identical
 </Book>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [LINQ to XML dla użytkowników XPath (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML dla użytkowników XPath (Visual Basic)](./comparison-xpath-linq-xml.md)
