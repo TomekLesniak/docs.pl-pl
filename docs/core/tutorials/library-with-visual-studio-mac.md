@@ -2,12 +2,12 @@
 title: Tworzenie biblioteki klas .NET Standard przy użyciu Visual Studio dla komputerów Mac
 description: Dowiedz się, jak utworzyć bibliotekę klas .NET Standard przy użyciu Visual Studio dla komputerów Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 8e1e4ca3bc1b12d889b847d80318f3d6cd1bbe46
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 433f6e0e2d784878c9a1616139b39ec56d695bcf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416008"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537642"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>Samouczek: Tworzenie biblioteki .NET Standard przy użyciu Visual Studio dla komputerów Mac
 
@@ -26,7 +26,7 @@ W tym samouczku utworzysz bibliotekę klas, która zawiera jedną metodę obsłu
 * [Zainstaluj program Visual Studio dla komputerów Mac w wersji 8,6 lub nowszej](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Wybierz opcję zainstalowania platformy .NET Core. Instalowanie platformy Xamarin jest opcjonalne w przypadku programowania .NET Core. Więcej informacji można znaleźć w następujących zasobach:
 
   * [Samouczek: instalowanie Visual Studio dla komputerów Mac](/visualstudio/mac/installation).
-  * [Obsługiwane wersje macOS](../install/dependencies.md?pivots=os-macos).
+  * [Obsługiwane wersje macOS](../install/macos.md).
   * [Wersje programu .NET Core obsługiwane przez Visual Studio dla komputerów Mac](/visualstudio/mac/net-core-support).
 
 ## <a name="create-a-solution-with-a-class-library-project"></a>Utwórz rozwiązanie z projektem biblioteki klas
@@ -45,7 +45,7 @@ Rozwiązanie programu Visual Studio służy jako kontener dla jednego lub wielu 
 
    :::image type="content" source="media/library-with-visual-studio-mac/choose-net-std-21.png" alt-text="Wybierz .NET Standard 2,1":::
 
-1. Nadaj projektowi nazwę "StringLibrary" i rozwiązanie "ClassLibraryProjects". Pozostaw opcję **Utwórz katalog projektu w wybranym katalogu rozwiązania** . Wybierz pozycję **Utwórz**.
+1. Nadaj projektowi nazwę "StringLibrary" i rozwiązanie "ClassLibraryProjects". Pozostaw opcję **Utwórz katalog projektu w wybranym katalogu rozwiązania** . Wybierz przycisk **Utwórz**.
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-new-project-options.png" alt-text="Opcje okna dialogowego Visual Studio dla komputerów Mac nowego projektu":::
 
@@ -105,7 +105,7 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-console-window.png" alt-text="Visual Studio dla komputerów Mac okno konsoli z uruchomioną aplikacją":::
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 * [Tworzenie bibliotek przy użyciu interfejs wiersza polecenia platformy .NET Core](libraries.md)
 * [Wersje .NET Standard i obsługiwane przez nich platformy](../../standard/net-standard.md).

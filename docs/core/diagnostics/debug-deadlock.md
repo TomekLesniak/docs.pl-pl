@@ -3,18 +3,18 @@ title: Zakleszczenie debugowania — .NET Core
 description: Samouczek, który przeprowadzi Cię przez debugowanie problemu blokowania w programie .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d9a9328b376de5886d22ca7315f6d7d9d73fd2c2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557883"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538699"
 ---
 # <a name="debug-a-deadlock-in-net-core"></a>Debugowanie zakleszczenia w programie .NET Core
 
 **Ten artykuł ma zastosowanie do: ✔️** .net Core 3,1 SDK i nowszych wersjach
 
-W tym samouczku dowiesz się, jak debugować scenariusz zakleszczenia. Korzystając z podanego ASP.NET Core przykładowego repozytorium kodu źródłowego [aplikacji sieci Web](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) , można przypadkowo zaistnieć zakleszczenie. Punkt końcowy będzie miał Rozwieszanie i kumulację wątków. Dowiesz się, jak można użyć różnych narzędzi do analizowania problemu, takiego jak zrzuty podstawowe, analiza zrzutów podstawowych i śledzenie procesów.
+W tym samouczku dowiesz się, jak debugować scenariusz zakleszczenia. Korzystając z podanego ASP.NET Core przykładowego repozytorium kodu źródłowego [aplikacji sieci Web](/samples/dotnet/samples/diagnostic-scenarios) , można przypadkowo zaistnieć zakleszczenie. Punkt końcowy będzie miał Rozwieszanie i kumulację wątków. Dowiesz się, jak można użyć różnych narzędzi do analizowania problemu, takiego jak zrzuty podstawowe, analiza zrzutów podstawowych i śledzenie procesów.
 
 W tym samouczku wykonasz następujące czynności:
 
@@ -31,13 +31,13 @@ W tym samouczku wykonasz następujące czynności:
 Samouczek używa:
 
 - [.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) lub nowsza wersja
-- [Przykładowy element docelowy debugowania — aplikacja internetowa](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) do wyzwolenia scenariusza
+- [Przykładowy element docelowy debugowania — aplikacja internetowa](/samples/dotnet/samples/diagnostic-scenarios) do wyzwolenia scenariusza
 - [dotnet-Trace](dotnet-trace.md) do procesów list
 - [dotnet-dump](dotnet-dump.md) do zbierania i analizowania pliku zrzutu
 
 ## <a name="core-dump-generation"></a>Generowanie zrzutu rdzeni
 
-Aby zbadać czas braku odpowiedzi aplikacji, zrzut rdzenia lub zrzut pamięci umożliwia sprawdzenie stanu wątków i ewentualnych blokad, które mogą mieć problemy z rywalizacją. Uruchom [przykładową](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) aplikację do debugowania przy użyciu następującego polecenia z przykładowego katalogu głównego:
+Aby zbadać czas braku odpowiedzi aplikacji, zrzut rdzenia lub zrzut pamięci umożliwia sprawdzenie stanu wątków i ewentualnych blokad, które mogą mieć problemy z rywalizacją. Uruchom [przykładową](/samples/dotnet/samples/diagnostic-scenarios) aplikację do debugowania przy użyciu następującego polecenia z przykładowego katalogu głównego:
 
 ```dotnetcli
 dotnet run
@@ -262,7 +262,7 @@ OS Thread Id: 0x5634 (28)
 
 Drugi wątek jest podobny. Próbuje on również uzyskać blokadę, która jest już własnością. Pozostałe 300 wątków, które oczekują na to, najprawdopodobniej czekają na jedną z blokad, które spowodowały zakleszczenie.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [dotnet-Trace](dotnet-trace.md) do procesów list
 - [dotnet-Counters](dotnet-counters.md) , aby sprawdzić użycie pamięci zarządzanej

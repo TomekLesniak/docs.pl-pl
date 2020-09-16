@@ -2,12 +2,12 @@
 title: polecenie dotnet Add Package
 description: Polecenie "dotnet Add Package" udostępnia wygodną opcję dodawania odwołania do pakietu NuGet do projektu.
 ms.date: 02/14/2020
-ms.openlocfilehash: bc79fe8adf5f775ddce62f3877a8de945c6a18ab
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1bdda241c1301b926ba2fd322f969407038b7b62
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840900"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538071"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
@@ -15,7 +15,7 @@ ms.locfileid: "83840900"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet add package`-Dodaje odwołanie do pakietu do pliku projektu.
+`dotnet add package` -Dodaje odwołanie do pakietu do pliku projektu.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -87,7 +87,7 @@ Plik do *zrobienia. csproj* zawiera teraz [`<PackageReference>`](/nuget/consume-
 
 - **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  Katalog, w którym mają zostać przywrócone pakiety. Domyślna lokalizacja przywracania pakietu znajduje się `%userprofile%\.nuget\packages` w systemach Windows i `~/.nuget/packages` Linux. Aby uzyskać więcej informacji, zobacz [Zarządzanie pakietami globalnymi, pamięcią podręczną i folderami tymczasowymi w pakiecie NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
+  Katalog, w którym mają zostać przywrócone pakiety. Domyślna lokalizacja przywracania pakietu znajduje się `%userprofile%\.nuget\packages` w systemach Windows i `~/.nuget/packages` Linux. Aby uzyskać więcej informacji, zobacz [Zarządzanie pakietami globalnymi, pamięcią podręczną i folderami tymczasowymi w pakiecie NuGet](/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
 
 - **`-s|--source <SOURCE>`**
 
@@ -95,7 +95,7 @@ Plik do *zrobienia. csproj* zawiera teraz [`<PackageReference>`](/nuget/consume-
 
 - **`-v|--version <VERSION>`**
 
-  Wersja pakietu. Zobacz [przechowywanie wersji pakietów NuGet](https://docs.microsoft.com/nuget/reference/package-versioning).
+  Wersja pakietu. Zobacz [przechowywanie wersji pakietów NuGet](/nuget/reference/package-versioning).
 
 ## <a name="examples"></a>Przykłady
 
@@ -119,5 +119,5 @@ Plik do *zrobienia. csproj* zawiera teraz [`<PackageReference>`](/nuget/consume-
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Zarządzanie pakietami globalnymi, pamięcią podręczną i folderami tymczasowymi w pakiecie NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
-- [Przechowywanie wersji pakietów NuGet](https://docs.microsoft.com/nuget/reference/package-versioning)
+- [Zarządzanie pakietami globalnymi, pamięcią podręczną i folderami tymczasowymi w pakiecie NuGet](/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
+- [Przechowywanie wersji pakietów NuGet](/nuget/reference/package-versioning)

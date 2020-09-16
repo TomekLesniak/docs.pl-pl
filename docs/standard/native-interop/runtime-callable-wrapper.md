@@ -9,12 +9,12 @@ helpviewer_keywords:
 - runtime callable wrappers
 - interoperation with unmanaged code, COM wrappers
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
-ms.openlocfilehash: 6868c79791d960dd1ae55ab09d4ac3b40ce52655
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 9c218fe7a08bd7181d66aa849bcca4cac00dc6fa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420490"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535862"
 ---
 # <a name="runtime-callable-wrapper"></a>Wywoływana otoka środowiska uruchomieniowego
 Środowisko uruchomieniowe języka wspólnego udostępnia obiekty COM za pomocą serwera proxy zwanego otoką (otoka) środowiska uruchomieniowego. Chociaż Otoka RCW wydaje się być zwykłym obiektem dla klientów platformy .NET, jej podstawową funkcją jest kierowanie wywołań między klientem .NET a obiektem COM.  
@@ -61,5 +61,5 @@ Na poniższej ilustracji przedstawiono proces uzyskiwania dostępu do obiektów 
 
 - [Otoki COM](com-wrappers.md)
 - [Wywoływana otoka COM](com-callable-wrapper.md)
-- [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Importowanie biblioteki typów jako zestawu](../../framework/interop/importing-a-type-library-as-an-assembly.md)

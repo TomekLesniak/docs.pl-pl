@@ -3,12 +3,12 @@ title: Mierzenie wydajności za pomocą EventCounters w programie .NET Core
 description: W tym samouczku dowiesz się, jak zmierzyć wydajność przy użyciu EventCounters.
 ms.date: 08/07/2020
 ms.topic: tutorial
-ms.openlocfilehash: 7b4940e17d01e7ec5a50d11e3c818ecdec2d48cf
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: db9a0889d46cc4db02baac60cbed6f6e0ba6856b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88025024"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538569"
 ---
 # <a name="tutorial-measure-performance-using-eventcounters-in-net-core"></a>Samouczek: pomiar wydajności przy użyciu EventCounters w programie .NET Core
 
@@ -29,11 +29,11 @@ Samouczek używa:
 
 - [.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) lub nowsza wersja.
 - [dotnet-Counters](dotnet-counters.md) do monitorowania liczników zdarzeń.
-- [Przykładowa](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) aplikacja do debugowania do diagnozowania.
+- [Przykładowa](/samples/dotnet/samples/diagnostic-scenarios) aplikacja do debugowania do diagnozowania.
 
 ## <a name="get-the-source"></a>Pobierz Źródło
 
-Przykładowa aplikacja zostanie użyta jako podstawa monitorowania. [Przykładowe repozytorium ASP.NET Core](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) jest dostępne w przeglądarce przykładów. Pobierzesz plik zip, wyodrębnisz go po pobraniu i otworzysz go w ulubionym środowisku IDE. Skompiluj i uruchom aplikację, aby upewnić się, że działa prawidłowo, a następnie Zatrzymaj aplikację.
+Przykładowa aplikacja zostanie użyta jako podstawa monitorowania. [Przykładowe repozytorium ASP.NET Core](/samples/dotnet/samples/diagnostic-scenarios) jest dostępne w przeglądarce przykładów. Pobierzesz plik zip, wyodrębnisz go po pobraniu i otworzysz go w ulubionym środowisku IDE. Skompiluj i uruchom aplikację, aby upewnić się, że działa prawidłowo, a następnie Zatrzymaj aplikację.
 
 ## <a name="implement-an-eventsource"></a>Implementowanie elementu EventSource
 

@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat wersji systemu Windows, na których m
 author: adegeo
 ms.author: adegeo
 ms.date: 06/22/2020
-ms.openlocfilehash: 97f67d00b3eb4dafc55256aea51f4295bb0ef06a
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 12cffb78de803845a4b18adc70289993e67f64f1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308952"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538292"
 ---
 # <a name="install-net-core-on-windows"></a>Zainstaluj platformę .NET Core w systemie Windows
 
@@ -42,18 +42,18 @@ Daty końca usługi systemu Windows 10 są poddane segmentacji według wersji. W
 | ✔️ Windows 10, wersja 1909 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
 | ✔️ Windows 10, wersja 1903 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
 | ✔️ Windows 10, wersja 1809 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌Windows 10, wersja 1803 | ✔️ 2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌Windows 10, wersja 1709 | ❌2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌Windows 10, wersja 1703 | ❌2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌Windows 10, wersja 1607 | ❌2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌Windows 10, wersja 1511 | ❌2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
-| ❌Windows 10, wersja 1507 | ❌2,1        | ❌3,1        | ❌wersja zapoznawcza 5,0 |
+| ❌ Windows 10, wersja 1803 | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌ Windows 10, wersja 1709 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌ Windows 10, wersja 1703 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌ Windows 10, wersja 1607 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌ Windows 10, wersja 1511 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ❌ Windows 10, wersja 1507 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
 
 ## <a name="unsupported-releases"></a>Nieobsługiwane wersje
 
 Następujące wersje programu .NET Core nie są ❌ już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
-- 3.0
+- 3,0
 - 2.2
 - 2,0
 
@@ -96,7 +96,7 @@ W przypadku programu .NET Core 3,1 obsługiwane są następujące wersje systemu
 
 | System operacyjny                            | Wersja                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
-| Klient systemu Windows                | 8.1                            | x64, x86        |
+| Klient systemu Windows                | 7 Z DODATKIEM SP1 +, 8,1                    | x64, x86        |
 | Klient systemu Windows 10             | Wersja 1609 +                  | x64, x86        |
 | Windows Server                | 2012 R2 +                       | x64, x86        |
 | Nano Server                   | Wersja 1803 +                  | x64, ARM32      |
@@ -121,7 +121,7 @@ W przypadku programu .NET Core 3,0 obsługiwane są następujące wersje systemu
 
 Aby uzyskać więcej informacji na temat obsługiwanych systemów operacyjnych, dystrybucji i zasad cyklu życia programu .NET Core 3,0, zobacz [.net core 3,0 obsługiwane wersje systemu operacyjnego](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
 
-# <a name="net-core-22"></a>[.NET Core 2,2](#tab/netcore22)
+# <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
 
 *Platforma .NET Core 2,2 jest obecnie nieobsługiwana. Aby uzyskać więcej informacji, zobacz [zasady obsługi .NET Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
@@ -159,12 +159,12 @@ Aby uzyskać więcej informacji na temat obsługiwanych systemów operacyjnych, 
 
 <!-- markdownlint-disable MD001 -->
 
-### <a name="windows-7--vista--81--server-2008-r2--server-2012-r2"></a><a name="additional-deps"></a>Windows 7/Vista/8,1/Server 2008 R2/serwer 2012 R2
+### <a name="windows-7--vista--81--server-2008-r2--server-2012-r2"></a><a name="additional-deps"></a> Windows 7/Vista/8,1/Server 2008 R2/serwer 2012 R2
 
 Jeśli instalujesz zestaw .NET SDK lub środowisko uruchomieniowe w następujących wersjach systemu Windows, wymagane są dodatkowe zależności:
 
-- ❌Windows 7 z dodatkiem SP1
-- ❌Windows Vista z dodatkiem SP 2
+- ❌ Windows 7 z dodatkiem SP1
+- ❌ Windows Vista z dodatkiem SP 2
 - ✔️ Windows 8.1
 - ✔️ Windows Server 2008 R2
 - ✔️ Windows Server 2012 R2
@@ -178,11 +178,11 @@ Powyższe wymagania są również wymagane w przypadku wystąpienia jednego z na
 
 > Nie można uruchomić programu, ponieważ na komputerze nie ma *api-ms-win-crt-runtime-l1-1-0.dll* . Spróbuj zainstalować ponownie program, aby rozwiązać ten problem.
 >
-> \-oraz
+> \- oraz
 >
 > Nie można uruchomić programu, ponieważ na komputerze nie ma *api-ms-win-cor-timezone-l1-1-0.dll* . Spróbuj zainstalować ponownie program, aby rozwiązać ten problem.
 >
-> \-oraz
+> \- oraz
 >
 > Znaleziono bibliotekę *hostfxr.dll* , ale ładowanie jej z *dysku C: \\ \<path_to_app> \\hostfxr.dll* nie powiodło się.
 
@@ -190,7 +190,7 @@ Powyższe wymagania są również wymagane w przypadku wystąpienia jednego z na
 
 [Skrypty dotnet-Install](../tools/dotnet-install-script.md) są używane na potrzeby automatyzacji ci i instalacji niezwiązanych z administratorami środowiska uruchomieniowego. Skrypt można pobrać ze [strony odniesienia do skryptu dotnet-Install](../tools/dotnet-install-script.md).
 
-Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest platformą .net Core 3,1. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje [zestaw SDK](sdk.md).
+Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest platformą .net Core 3,1. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje zestaw SDK.
 
 ```powershell
 dotnet-install.ps1 -Channel 3.1 -Runtime aspnetcore
@@ -209,7 +209,7 @@ Jeśli używasz programu Visual Studio do tworzenia aplikacji platformy .NET Cor
 | Wersja zestaw .NET Core SDK | Wersja programu Visual Studio                      |
 | --------------------- | ------------------------------------------ |
 | 3,1                   | Program Visual Studio 2019 w wersji 16,4 lub nowszej. |
-| 3.0                   | Program Visual Studio 2019 w wersji 16,3 lub nowszej. |
+| 3,0                   | Program Visual Studio 2019 w wersji 16,3 lub nowszej. |
 | 2.2                   | Program Visual Studio 2017 w wersji 15,9 lub nowszej. |
 | 2.1                   | Program Visual Studio 2017 w wersji 15,7 lub nowszej. |
 

@@ -2,12 +2,12 @@
 title: 'Instrukcje: zmienianie kolejności pól w rozdzielonym pliku (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: c451c7db-663b-4daf-b8ba-a2093095d672
-ms.openlocfilehash: 6f87374978425e0d51542c6eceda23697d7a3a67
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 62c21dfb67ef35591a8ffe214bc132e63a2433bd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397898"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535387"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Instrukcje: Zmienianie kolejności pól w rozdzielonym pliku (LINQ) (Visual Basic)
 
@@ -17,7 +17,7 @@ W poniższym przykładzie Załóżmy, że trzy kolumny reprezentują uczniów ""
 
 ### <a name="to-create-the-data-file"></a>Aby utworzyć plik danych
 
-1. Skopiuj następujące wiersze do zwykłego pliku tekstowego o nazwie spreadsheet1. csv. Zapisz plik w folderze projektu.
+1. Skopiuj następujące wiersze do zwykłego pliku tekstowego o nazwie spreadsheet1.csv. Zapisz plik w folderze projektu.
 
     ```csv
     Adams,Terry,120
@@ -75,8 +75,8 @@ End Class
 ' 122, Michael Tucker
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ i ciągi (Visual Basic)](linq-and-strings.md)
 - [LINQ i katalogi plików (Visual Basic)](linq-and-file-directories.md)
-- [Instrukcje: generowanie XML z plików CSV](how-to-generate-xml-from-csv-files.md)
+- [Instrukcje: generowanie XML z plików CSV](../../../../standard/linq/generate-xml-csv-files.md)

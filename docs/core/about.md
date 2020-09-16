@@ -2,12 +2,12 @@
 title: Omówienie platformy .NET Core
 description: Zapoznaj się z charakterystyką i kompozycją platformy .NET Core i porównaj ją z innymi implementacjami platformy .NET.
 ms.date: 03/26/2020
-ms.openlocfilehash: d5ef79fe5a8fbb56beae77edd01830fe6561fa51
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: e99939cf85cc441fd473e4d033e22b1a5d053638
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100733"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539011"
 ---
 # <a name="net-core-overview"></a>Omówienie platformy .NET Core
 
@@ -28,7 +28,7 @@ Platforma .NET Core ma następujące cechy:
 
 Języka [C#](../csharp/index.yml), [Visual Basic](../visual-basic/index.yml)i [języka F #](../fsharp/index.yml) można używać do pisania aplikacji i bibliotek dla platformy .NET Core. Te języki mogą być używane w ulubionym edytorze tekstu lub zintegrowanego środowiska programistycznego (IDE), w tym:
 
-- [Program Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
+- [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
 Integracja z edytorem jest zapewniana w części przez współautorów projektów [OmniSharp](https://www.omnisharp.net/) i [Ionide](https://ionide.io) .
@@ -39,7 +39,7 @@ Platforma .NET Core udostępnia platformy do tworzenia aplikacji dowolnego rodza
 
 * Aplikacje w chmurze z [ASP.NET Core](/aspnet/core/)
 * Aplikacje mobilne przy użyciu platformy [Xamarin](/xamarin)
-* Aplikacje IoT z [System. Device. GPIO](https://docs.microsoft.com/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0)
+* Aplikacje IoT z [System. Device. GPIO](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0)
 * Aplikacje klienckie systemu Windows z [WPF](../desktop-wpf/overview/index.md) i Windows Forms
 * [Ml.NET](../machine-learning/index.yml) uczenia maszynowego
 
@@ -62,9 +62,9 @@ Platforma .NET Core składa się z następujących części:
 - [Zestaw .NET Core SDK](https://github.com/dotnet/sdk) i kompilatory języka ([Roslyn](https://github.com/dotnet/roslyn) i [F #](https://github.com/microsoft/visualfsharp)), które umożliwiają środowisko deweloperskie platformy .NET Core.
 - [Polecenie dotnet](./tools/dotnet.md), które służy do uruchamiania aplikacji .NET Core i poleceń interfejsu wiersza polecenia. Wybiera i obsługuje środowisko uruchomieniowe, udostępnia zasady ładowania zestawu oraz uruchamia aplikacje i narzędzia.
 
-### <a name="open-source"></a>Kod open source
+### <a name="open-source"></a>Technologia open source
 
-[.NET Core](about.md) to platforma programistyczna [Open Source](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT). Można tworzyć aplikacje .NET Core dla systemów Windows, macOS i Linux dla procesorów x64, x86, ARM32 i ARM64. Platformy i interfejsy API są udostępniane dla [chmur](/aspnet/core/), [IoT](https://docs.microsoft.com/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [interfejsu użytkownika klienta](../desktop-wpf/overview/index.md)i [uczenia maszynowego](../machine-learning/index.yml).
+[.NET Core](about.md) to platforma programistyczna [Open Source](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT). Można tworzyć aplikacje .NET Core dla systemów Windows, macOS i Linux dla procesorów x64, x86, ARM32 i ARM64. Platformy i interfejsy API są udostępniane dla [chmur](/aspnet/core/), [IoT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [interfejsu użytkownika klienta](../desktop-wpf/overview/index.md)i [uczenia maszynowego](../machine-learning/index.yml).
 
 ## <a name="support"></a>Pomoc techniczna
 

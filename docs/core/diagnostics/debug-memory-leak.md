@@ -3,12 +3,12 @@ title: Debuguj samouczek przecieku pamięci
 description: Informacje o debugowaniu przecieku pamięci w programie .NET Core.
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ff684f9b9402cb8b7b648e792a1d37ddcc96b399
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 7fa87a411606e81ffe91348c3cbce5f258a6e4e2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924893"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538595"
 ---
 # <a name="debug-a-memory-leak-in-net-core"></a>Debugowanie przecieku pamięci w programie .NET Core
 
@@ -34,7 +34,7 @@ Samouczek używa:
 - [dotnet-Trace](dotnet-trace.md) , aby wyświetlić listę procesów.
 - [dotnet-Counters](dotnet-counters.md) , aby sprawdzić użycie pamięci zarządzanej.
 - [dotnet-dump](dotnet-dump.md) , aby zebrać i przeanalizować plik zrzutu.
-- [Przykładowa](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) aplikacja do debugowania do diagnozowania.
+- [Przykładowa](/samples/dotnet/samples/diagnostic-scenarios/) aplikacja do debugowania do diagnozowania.
 
 W samouczku założono, że przykład i narzędzia są zainstalowane i gotowe do użycia.
 
@@ -42,7 +42,7 @@ W samouczku założono, że przykład i narzędzia są zainstalowane i gotowe do
 
 Przed rozpoczęciem zbierania danych diagnostycznych, aby pomóc nam w tym scenariuszu, należy się upewnić, że faktycznie widzisz przeciek pamięci (przyrost pamięci). Za pomocą narzędzia [dotnet-Counters](dotnet-counters.md) można potwierdzić, że.
 
-Otwórz okno konsoli i przejdź do katalogu, w którym został pobrany i rozpakowany [przykładowy element docelowy debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/). Uruchom obiekt docelowy:
+Otwórz okno konsoli i przejdź do katalogu, w którym został pobrany i rozpakowany [przykładowy element docelowy debugowania](/samples/dotnet/samples/diagnostic-scenarios/). Uruchom obiekt docelowy:
 
 ```dotnetcli
 dotnet run
@@ -116,7 +116,7 @@ Obserwując użycie pamięci, można bezpiecznie powiedzieć, że pamięć jest 
 
 Podczas analizowania potencjalnych przecieków pamięci potrzebny jest dostęp do sterty pamięci aplikacji. Następnie można analizować zawartość pamięci. Analizując relacje między obiektami, tworzysz teorie na Dlaczego pamięć nie jest zwalniana. Typowym źródłem danych diagnostyki jest zrzut pamięci w systemie Windows lub równoważny zrzut rdzenia w systemie Linux. Aby wygenerować zrzut aplikacji .NET Core, można użyć narzędzia [dotnet-dump)](dotnet-dump.md) .
 
-Używając wcześniej uruchomionego [przykładowego elementu Debug](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) , uruchom następujące polecenie, aby wygenerować podstawowy zrzut systemu Linux:
+Używając wcześniej uruchomionego [przykładowego elementu Debug](/samples/dotnet/samples/diagnostic-scenarios/) , uruchom następujące polecenie, aby wygenerować podstawowy zrzut systemu Linux:
 
 ```dotnetcli
 dotnet-dump collect -p 4807
@@ -133,7 +133,7 @@ Complete
 
 Po zebraniu zrzutu należy dysponować wystarczającą ilością informacji, aby zdiagnozować proces zakończony niepowodzeniem. Jeśli proces zakończony niepowodzeniem jest uruchomiony na serwerze produkcyjnym, teraz jest idealnym czasem do krótkoterminowego korygowania przez ponowne uruchomienie procesu.
 
-W ramach tego samouczka nastąpi przetworzenie [przykładowego celu debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) i można go zamknąć. Przejdź do terminalu, który uruchomił serwer, i naciśnij <kbd>klawisze CTRL + C</kbd>.
+W ramach tego samouczka nastąpi przetworzenie [przykładowego celu debugowania](/samples/dotnet/samples/diagnostic-scenarios/) i można go zamknąć. Przejdź do terminalu, który uruchomił serwer, i naciśnij <kbd>klawisze CTRL + C</kbd>.
 
 ### <a name="analyze-the-core-dump"></a>Analizowanie zrzutu rdzeni
 
@@ -146,7 +146,7 @@ dotnet-dump analyze core_20190430_185145
 Gdzie `core_20190430_185145` to nazwa zrzutu podstawowego, który ma zostać przeanalizowany.
 
 > [!NOTE]
-> Jeśli zostanie wyświetlony błąd z skargą, że nie można znaleźć *libdl.so* , może być konieczne zainstalowanie pakietu *libc6-dev* . Aby uzyskać więcej informacji, zobacz [wymagania wstępne dotyczące platformy .NET Core w systemie Linux](../install/dependencies.md?pivots=os-linux).
+> Jeśli zostanie wyświetlony błąd z skargą, że nie można znaleźć *libdl.so* , może być konieczne zainstalowanie pakietu *libc6-dev* . Aby uzyskać więcej informacji, zobacz [wymagania wstępne dotyczące platformy .NET Core w systemie Linux](../install/linux.md).
 
 Zostanie wyświetlony monit z pytaniem, gdzie można wprowadzić polecenia SOS. Często pierwszym krokiem, jaki ma wyglądać, jest ogólny stan sterty zarządzanej:
 
@@ -226,7 +226,7 @@ Można kontynuować zrzucanie obiektów, aby zobaczyć, że większość `String
 
 Ta ogólna procedura umożliwia zidentyfikowanie źródła głównych przecieków pamięci.
 
-## <a name="clean-up-resources"></a>Oczyszczanie zasobów
+## <a name="clean-up-resources"></a>Czyszczenie zasobów
 
 W tym samouczku uruchomiono przykładowy serwer sieci Web. Ten serwer powinien zostać wyłączony zgodnie z opisem w sekcji [Ponowne uruchamianie procesu zakończonego niepowodzeniem](#restart-the-failed-process) .
 

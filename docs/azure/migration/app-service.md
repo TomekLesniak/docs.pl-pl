@@ -3,20 +3,20 @@ title: Migrowanie usługi lub aplikacji sieci Web platformy .NET do Azure App Se
 description: Dowiedz się więcej na temat migrowania usługi lub aplikacji sieci Web platformy .NET ze środowiska lokalnego do Azure App Service.
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: d208865942b49ae2d5437b8f2fcff294933af21b
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: a5e193b2dbaedb86ff0e24bc8b70043896bbeea3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174312"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539089"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>Migrowanie usługi lub aplikacji sieci Web platformy .NET do Azure App Service
 
 [App Service](/azure/app-service/overview) to w pełni zarządzana usługa platformy obliczeniowej, zoptymalizowana pod kątem hostingu skalowalnych witryn internetowych i aplikacji sieci Web. Ten artykuł zawiera informacje na temat sposobu podnoszenia i przenoszenia istniejącej aplikacji do Azure App Service, modyfikacji i dodatkowych zasobów związanych z [przechodzeniem do chmury](https://azure.microsoft.com/migration/web-applications/). Większość ASP.NETych witryn internetowych (WebForms, MVC) i usług (Web API, WCF) można przenieść bezpośrednio do Azure App Service bez zmian. Niektóre mogą wymagać drobnych zmian, podczas gdy inne mogą wymagać refaktoryzacji.
 
-Chcesz zacząć? [Opublikuj aplikację ASP.NET + SQL, aby Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
+Możemy zaczynać? [Opublikuj aplikację ASP.NET + SQL, aby Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
 
-## <a name="considerations"></a>Kwestie do rozważenia
+## <a name="considerations"></a>Zagadnienia do rozważenia
 
 ### <a name="on-premises-resources-including-sql-server"></a>Zasoby lokalne (w tym SQL Server)
 
@@ -37,14 +37,14 @@ W przypadku programu WCF obsługiwane są następujące powiązania:
 |--|--|
 | `BasicHttp` |  |
 | `WSHttp` |  |
-| `WSDualHttpBinding` | Należy włączyć [obsługę gniazda sieci Web](https://docs.microsoft.com/azure/app-service/web-sites-configure) . | Należy włączyć [obsługę gniazda sieci Web](/azure/app-service/web-sites-configure) . |
-| `NetHttpBinding` | [Obsługa gniazd sieci Web](https://docs.microsoft.com/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. | [Obsługa gniazd sieci Web](/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. |
-| `NetHttpsBinding` | [Obsługa gniazd sieci Web](https://docs.microsoft.com/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. | [Obsługa gniazd sieci Web](/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. |
+| `WSDualHttpBinding` | Należy włączyć [obsługę gniazda sieci Web](/azure/app-service/web-sites-configure) . | Należy włączyć [obsługę gniazda sieci Web](/azure/app-service/web-sites-configure) . |
+| `NetHttpBinding` | [Obsługa gniazd sieci Web](/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. | [Obsługa gniazd sieci Web](/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. |
+| `NetHttpsBinding` | [Obsługa gniazd sieci Web](/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. | [Obsługa gniazd sieci Web](/azure/app-service/web-sites-configure) musi być włączona dla umów dupleksowych. |
 | `BasicHttpContextBinding` |  |
 | `WebHttpBinding` |  |
 | `WSHttpContextBinding` |  |
 
-### <a name="authentication"></a>Uwierzytelnianie
+### <a name="authentication"></a>Authentication
 
 Azure App Service domyślnie obsługuje uwierzytelnianie anonimowe i uwierzytelnianie formularzy, gdy zamierzone. Uwierzytelnianie systemu Windows może być używane przez integrację z usługami Azure Active Directory i ADFS. [Dowiedz się więcej na temat integrowania katalogów lokalnych z Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
 
@@ -62,7 +62,7 @@ Tryb zgodności wersją IIS5 nie jest obsługiwany. W Azure App Service każda a
 
 #### <a name="iis7-schema-compliance"></a>Zgodność schematu IIS7 +
 
-Niektóre elementy i atrybuty nie są zdefiniowane w schemacie Azure App Service IIS. Jeśli wystąpią problemy, rozważ użycie [transformacji XDT](https://azure.microsoft.com/documentation/articles/web-sites-transform-extend/).
+Niektóre elementy i atrybuty nie są zdefiniowane w schemacie Azure App Service IIS. Jeśli wystąpią problemy, rozważ użycie [transformacji XDT](/azure/app-service/configure-common).
 
 #### <a name="single-application-pool-per-site"></a>Jedna pula aplikacji na lokację
 
@@ -116,7 +116,7 @@ Może być konieczne zaktualizowanie konfiguracji DNS na podstawie wymagań apli
 
 Jeśli nie można migrować aplikacji bezpośrednio do App Service, należy rozważyć App Service przy użyciu kontenerów systemu Windows, które umożliwiają użycie GAC, składników COM, MSIs, pełny dostęp do interfejsów API programu .NET FX, DirectX i innych.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 * [Jak określić, czy aplikacja kwalifikuje się do App Service](https://appmigration.microsoft.com/)
 * [Przeniesienie bazy danych do chmury](sql.md)

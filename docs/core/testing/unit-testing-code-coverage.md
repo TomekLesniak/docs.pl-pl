@@ -4,12 +4,12 @@ description: Dowiedz się, jak korzystać z funkcji pokrycia kodu dla testów je
 author: IEvangelist
 ms.author: dapine
 ms.date: 07/01/2020
-ms.openlocfilehash: af64116e86c3f46f37c8d5d079b9c86084095485
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.openlocfilehash: 4d2c8f3db26eaabcb973378a349ef57912e92bfa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853896"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538150"
 ---
 # <a name="use-code-coverage-for-unit-testing"></a>Użyj pokrycia kodu do testów jednostkowych
 
@@ -19,7 +19,7 @@ W tym artykule omówiono użycie pokrycia kodu dla testów jednostkowych z Cover
 
 Ponadto w tym artykule szczegółowo przedstawiono sposób użycia informacji o pokryciu kodu zebranych z przebiegu testu Coverlet w celu wygenerowania raportu. Generowanie raportu jest możliwe przy użyciu innego [projektu Open Source w witrynie GitHub-ReportGenerator](https://github.com/danielpalme/ReportGenerator). ReportGenerator konwertuje raporty pokrycia wygenerowane przez Cobertura między wiele innych, w raportach ludzkich do odczytu w różnych formatach.
 
-Ten artykuł jest oparty na [projekcie przykładowego kodu źródłowego](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs), dostępnym w przeglądarce przykładów.
+Ten artykuł jest oparty na [projekcie przykładowego kodu źródłowego](/samples/dotnet/samples/unit-testing-code-coverage-cs), dostępnym w przeglądarce przykładów.
 
 ## <a name="system-under-test"></a>System w trakcie testu
 
@@ -295,14 +295,14 @@ Po uruchomieniu tego polecenia plik HTML reprezentuje wygenerowany raport.
 
 :::image type="content" source="media/test-report.png" lightbox="media/test-report.png" alt-text="Raport jednostkowy wygenerowany w teście":::
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Pokrycie pokrycia testów jednostkowych w programie Visual Studio](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)
 - [Repozytorium GitHub — Coverlet](https://github.com/coverlet-coverage/coverlet)
 - [Repozytorium GitHub — ReportGenerator](https://github.com/danielpalme/ReportGenerator)
 - [Witryna projektu ReportGenerator](https://danielpalme.github.io/ReportGenerator)
 - [Interfejs wiersza polecenia platformy .NET Core polecenie testowe](../tools/dotnet-test.md)
-- [Przykładowy kod źródłowy](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)
+- [Przykładowy kod źródłowy](/samples/dotnet/samples/unit-testing-code-coverage-cs)
 
 ## <a name="next-steps"></a>Następne kroki
 

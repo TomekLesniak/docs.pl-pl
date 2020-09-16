@@ -4,12 +4,12 @@ description: Jak obsłużyć problemy z notarization i certyfikatami w programie
 author: adegeo
 ms.author: adegeo
 ms.date: 02/14/2020
-ms.openlocfilehash: a7741727ad46216ebd9936515d8af29b6d7049c2
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 616f163856cca48ccc6d1a14e0c6e68d56379c0c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656530"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538305"
 ---
 # <a name="macos-catalina-notarization-and-the-impact-on-net-core-downloads-and-projects"></a>macOS Catalina Notarization i wpływ na pobieranie i projekty platformy .NET Core
 
@@ -17,7 +17,7 @@ Począwszy od programu macOS Catalina (wersja 10,15), całe oprogramowanie skomp
 
 ## <a name="installing-net-core"></a>Instalowanie programu .NET Core
 
-Instalatory dla programu .NET Core (zarówno środowisko uruchomieniowe, jak i zestaw SDK) w wersji 3,1, 3,0 i 2,1 zostały zgłoszone od 18 lutego 2020. Wcześniejsze wersje nie zostały ujawnione. Możesz ręcznie zainstalować nieświadomą wersję programu .NET Core, pobierając najpierw Instalatora, a następnie używając `sudo installer` polecenia. Aby uzyskać więcej informacji, zobacz [Pobierz i ręcznie zainstaluj program macOS](sdk.md?pivots=os-macos#download-and-manually-install).
+Instalatory dla programu .NET Core (zarówno środowisko uruchomieniowe, jak i zestaw SDK) w wersji 3,1, 3,0 i 2,1 zostały zgłoszone od 18 lutego 2020. Wcześniejsze wersje nie zostały ujawnione. Możesz ręcznie zainstalować nieświadomą wersję programu .NET Core, pobierając najpierw Instalatora, a następnie używając `sudo installer` polecenia. Aby uzyskać więcej informacji, zobacz [Pobierz i ręcznie zainstaluj program macOS](./macos.md#download-and-manually-install).
 
 Począwszy od następujących wersji, instalatorzy programu .NET Core są notariusz:
 

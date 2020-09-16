@@ -12,12 +12,12 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-ms.openlocfilehash: 105325170389917bfb2022314791aa1ed5923db3
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3941c912348a652ddcbaea517cf7626c2a8f88e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865167"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535573"
 ---
 # <a name="resources-in-net-apps"></a>Zasoby w aplikacjach .NET
 
@@ -25,7 +25,7 @@ Prawie każda aplikacja do jakości produkcyjnej musi korzystać z zasobów. Zas
 
 .NET Framework i .NET Core zapewniają kompleksową obsługę tworzenia i lokalizowania zasobów. Ponadto platforma .NET obsługuje prosty model do pakowania i wdrażania zlokalizowanych zasobów.
 
-Aby uzyskać informacje o zasobach w programie ASP.NET, zobacz [ASP.NET — Omówienie zasobów strony sieci Web](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).
+Aby uzyskać informacje o zasobach w programie ASP.NET, zobacz [ASP.NET — Omówienie zasobów strony sieci Web](/previous-versions/aspnet/ms227427(v=vs.100)).
 
 ## <a name="create-and-localize-resources"></a>Tworzenie i lokalizowanie zasobów
 
@@ -53,7 +53,7 @@ W czasie wykonywania aplikacja ładuje odpowiednie zlokalizowane zasoby dla posz
 
 Aby uzyskać więcej informacji na temat sposobu ustawiania bieżącej kultury interfejsu użytkownika, zobacz <xref:System.Globalization.CultureInfo> i <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> strony odniesienia.
 
-Następnie można pobrać zasoby dla bieżącej kultury interfejsu użytkownika lub dla określonej kultury przy użyciu <xref:System.Resources.ResourceManager?displayProperty=nameWithType> klasy. Chociaż <xref:System.Resources.ResourceManager> Klasa jest najczęściej używana do pobierania zasobów, <xref:System.Resources?displayProperty=nameWithType> przestrzeń nazw zawiera dodatkowe typy, których można użyć do pobierania zasobów. Należą do nich:
+Następnie można pobrać zasoby dla bieżącej kultury interfejsu użytkownika lub dla określonej kultury przy użyciu <xref:System.Resources.ResourceManager?displayProperty=nameWithType> klasy. Chociaż <xref:System.Resources.ResourceManager> Klasa jest najczęściej używana do pobierania zasobów, <xref:System.Resources?displayProperty=nameWithType> przestrzeń nazw zawiera dodatkowe typy, których można użyć do pobierania zasobów. Należą do nich następujące elementy:
 
 - <xref:System.Resources.ResourceReader>Klasa, która umożliwia Wyliczenie zasobów osadzonych w zestawie lub przechowywanych w autonomicznym pliku Binary. resources. Jest to przydatne, gdy nie znasz dokładnych nazw zasobów, które są dostępne w czasie wykonywania.
 

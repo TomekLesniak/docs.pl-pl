@@ -2,12 +2,12 @@
 title: dotnet — polecenie
 description: Dowiedz się więcej na temat polecenia dotnet (sterownika generycznego dla interfejs wiersza polecenia platformy .NET Core) i jego użycia.
 ms.date: 02/13/2020
-ms.openlocfilehash: 88e92b3ff5e8f68b980015a817434dd2d67df93a
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 4476dcf36455e0dc1b89712409818cf7e0352f2c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378841"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537668"
 ---
 # <a name="dotnet-command"></a>dotnet — polecenie
 
@@ -15,7 +15,7 @@ ms.locfileid: "83378841"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet`— Sterownik generyczny dla interfejs wiersza polecenia platformy .NET Core.
+`dotnet` — Sterownik generyczny dla interfejs wiersza polecenia platformy .NET Core.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -46,7 +46,7 @@ dotnet exec [--additionalprobingpath] [--additional-deps <PATH>]
     <PATH_TO_APPLICATION> [arguments]
 ```
 
-`--roll-forward`jest dostępny od wersji .NET Core 3. x. Używany `--roll-forward-on-no-candidate-fx` dla platformy .NET Core 2. x.
+`--roll-forward` jest dostępny od wersji .NET Core 3. x. Używany `--roll-forward-on-no-candidate-fx` dla platformy .NET Core 2. x.
 
 ## <a name="description"></a>Opis
 
@@ -118,26 +118,26 @@ Poniższe opcje są dostępne podczas `dotnet` uruchamiania aplikacji. Na przyk�
 
 - **`--additional-deps <PATH>`**
 
-  Ścieżka do dodatkowego pliku *. deps. JSON* . Plik *deps. JSON* zawiera listę zależności, zależności kompilacji i informacje o wersji używane do rozwiązywania konfliktów zestawów. Aby uzyskać więcej informacji, zobacz [pliki konfiguracji środowiska uruchomieniowego](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) w serwisie GitHub.
+  Ścieżka do dodatkowego *.deps.js* pliku. *deps.jsw* pliku zawiera listę zależności, zależności kompilacji i informacje o wersji używane do rozwiązywania konfliktów zestawów. Aby uzyskać więcej informacji, zobacz [pliki konfiguracji środowiska uruchomieniowego](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) w serwisie GitHub.
 
 - **`--depsfile <PATH_TO_DEPSFILE>`**
 
-  Ścieżka do pliku *deps. JSON* . Plik *deps. JSON* to plik konfiguracji, który zawiera informacje o zależnościach niezbędnych do uruchomienia aplikacji. Ten plik jest generowany przez zestaw .NET Core SDK.
+  Ścieżka do *deps.js* pliku. *deps.jsw* pliku to plik konfiguracji, który zawiera informacje o zależnościach niezbędnych do uruchomienia aplikacji. Ten plik jest generowany przez zestaw .NET Core SDK.
 
 - **`--runtimeconfig`**
 
-  Ścieżka do pliku *runtimeconfig. JSON* . Plik *runtimeconfig. JSON* to plik konfiguracji, który zawiera ustawienia czasu wykonywania. Aby uzyskać więcej informacji, zobacz [Ustawienia konfiguracji środowiska uruchomieniowego .NET Core](../run-time-config/index.md#runtimeconfigjson).
+  Ścieżka do *runtimeconfig.js* pliku. *runtimeconfig.jsw* pliku to plik konfiguracji, który zawiera ustawienia czasu wykonywania. Aby uzyskać więcej informacji, zobacz [Ustawienia konfiguracji środowiska uruchomieniowego .NET Core](../run-time-config/index.md#runtimeconfigjson).
 
 - **`--roll-forward <SETTING>`****Dostępne począwszy od zestaw .NET Core SDK 3,0.**
 
   Kontroluje sposób, w jaki do aplikacji jest stosowane przewinięcie do przodu. `SETTING`Może to być jedna z następujących wartości. Jeśli nie zostanie określony, `Minor` jest wartością domyślną.
 
-  - `LatestPatch`— Przewinięcie do najwyższej wersji poprawki. Spowoduje to wyłączenie wycofywania wersji pomocniczej.
-  - `Minor`— Przewinięcie do najmniejszej wyższej wersji pomocniczej, jeśli brakuje wymaganej wersji pomocniczej. Jeśli jest obecna żądana wersja pomocnicza, zostaną użyte zasady LatestPatch.
-  - `Major`-Przewinięcie do najmniejszej wyższej wersji głównej i najniższej wersji pomocniczej, jeśli brakuje wersji głównej. Jeśli jest obecna żądana wersja główna, są używane zasady pomocnicze.
-  - `LatestMinor`— Przewinięcie do najnowszej wersji pomocniczej, nawet jeśli jest obecna żądana wersja pomocnicza. Przeznaczone do scenariuszy hostingu składników.
-  - `LatestMajor`— Przewinięcie do przodu do najwyższej głównej i najwyższej wersji pomocniczej, nawet jeśli zażądano obecności głównej. Przeznaczone do scenariuszy hostingu składników.
-  - `Disable`— Nie przetaczaj dalej. Powiąż tylko z określoną wersją. Te zasady nie są zalecane do użytku ogólnego, ponieważ uniemożliwiają one przekazanie do najnowszych poprawek. Ta wartość jest zalecana tylko do celów testowych.
+  - `LatestPatch` — Przewinięcie do najwyższej wersji poprawki. Spowoduje to wyłączenie wycofywania wersji pomocniczej.
+  - `Minor` — Przewinięcie do najmniejszej wyższej wersji pomocniczej, jeśli brakuje wymaganej wersji pomocniczej. Jeśli jest obecna żądana wersja pomocnicza, zostaną użyte zasady LatestPatch.
+  - `Major` -Przewinięcie do najmniejszej wyższej wersji głównej i najniższej wersji pomocniczej, jeśli brakuje wersji głównej. Jeśli jest obecna żądana wersja główna, są używane zasady pomocnicze.
+  - `LatestMinor` — Przewinięcie do najnowszej wersji pomocniczej, nawet jeśli jest obecna żądana wersja pomocnicza. Przeznaczone do scenariuszy hostingu składników.
+  - `LatestMajor` — Przewinięcie do przodu do najwyższej głównej i najwyższej wersji pomocniczej, nawet jeśli zażądano obecności głównej. Przeznaczone do scenariuszy hostingu składników.
+  - `Disable` — Nie przetaczaj dalej. Powiąż tylko z określoną wersją. Te zasady nie są zalecane do użytku ogólnego, ponieważ uniemożliwiają one przekazanie do najnowszych poprawek. Ta wartość jest zalecana tylko do celów testowych.
 
   Z wyjątkiem programu `Disable` , wszystkie ustawienia będą używać najwyższej dostępnej wersji poprawki.
 
@@ -145,11 +145,11 @@ Poniższe opcje są dostępne podczas `dotnet` uruchamiania aplikacji. Na przyk�
 
 - **`--roll-forward-on-no-candidate-fx <N>`****Dostępne w zestawie SDK platformy .NET Core 2. x.**
 
-  Definiuje zachowanie, gdy wymagana architektura udostępniona jest niedostępna. `N`może to być:
+  Definiuje zachowanie, gdy wymagana architektura udostępniona jest niedostępna. `N` może to być:
 
-  - `0`-Wyłącz parzystą wersję pomocniczą do przodu.
-  - `1`— Przewinięcie do wersji pomocniczej, ale nie w wersji głównej. Jest to zachowanie domyślne.
-  - `2`— Przewinięcie do przodu w wersjach pomocniczych i głównych.
+  - `0` -Wyłącz parzystą wersję pomocniczą do przodu.
+  - `1` — Przewinięcie do wersji pomocniczej, ale nie w wersji głównej. Jest to zachowanie domyślne.
+  - `2` — Przewinięcie do przodu w wersjach pomocniczych i głównych.
 
   Aby uzyskać więcej informacji, zobacz [przewinięcie do przodu](../whats-new/dotnet-core-2-1.md#roll-forward).
 
@@ -260,7 +260,7 @@ dotnet myapp.dll
 
 - `DOTNET_ROOT`, `DOTNET_ROOT(x86)`
 
-  Określa lokalizację środowiska uruchomieniowego programu .NET Core, jeśli nie są one zainstalowane w domyślnej lokalizacji. Domyślna lokalizacja w systemie Windows to `C:\Program Files\dotnet` . Domyślną lokalizacją w systemie Linux i macOS jest `/usr/share/dotnet` . Ta zmienna środowiskowa jest używana tylko w przypadku uruchamiania aplikacji za pośrednictwem wygenerowanych plików wykonywalnych (apphosts). `DOTNET_ROOT(x86)`jest używany zamiast w przypadku uruchamiania 32-bitowego pliku wykonywalnego w 64-bitowym systemie operacyjnym.
+  Określa lokalizację środowiska uruchomieniowego programu .NET Core, jeśli nie są one zainstalowane w domyślnej lokalizacji. Domyślna lokalizacja w systemie Windows to `C:\Program Files\dotnet` . Domyślną lokalizacją w systemie Linux i macOS jest `/usr/share/dotnet` . Ta zmienna środowiskowa jest używana tylko w przypadku uruchamiania aplikacji za pośrednictwem wygenerowanych plików wykonywalnych (apphosts). `DOTNET_ROOT(x86)` jest używany zamiast w przypadku uruchamiania 32-bitowego pliku wykonywalnego w 64-bitowym systemie operacyjnym.
 
 - `DOTNET_PACKAGES`
 
@@ -300,7 +300,7 @@ dotnet myapp.dll
 
 - `DOTNET_CLI_UI_LANGUAGE`
 
-  Ustawia język interfejsu użytkownika CLI przy użyciu wartości ustawień regionalnych, takich jak `en-us` . Obsługiwane wartości są takie same jak w przypadku programu Visual Studio. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą zmiany języka Instalatora w [dokumentacji instalacyjnej programu Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019). Reguły Menedżera zasobów platformy .NET mają zastosowanie, więc nie trzeba wybierać dokładnego dopasowania, &mdash; które można również wybrać w `CultureInfo` drzewie. Jeśli na przykład ustawisz ją na `fr-CA` , interfejs wiersza polecenia znajdzie i użyje `fr` tłumaczeń. Jeśli ustawisz go na język, który nie jest obsługiwany, interfejs wiersza polecenia powróci do języka angielskiego.
+  Ustawia język interfejsu użytkownika CLI przy użyciu wartości ustawień regionalnych, takich jak `en-us` . Obsługiwane wartości są takie same jak w przypadku programu Visual Studio. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą zmiany języka Instalatora w [dokumentacji instalacyjnej programu Visual Studio](/visualstudio/install/install-visual-studio?view=vs-2019). Reguły Menedżera zasobów platformy .NET mają zastosowanie, więc nie trzeba wybierać dokładnego dopasowania, &mdash; które można również wybrać w `CultureInfo` drzewie. Jeśli na przykład ustawisz ją na `fr-CA` , interfejs wiersza polecenia znajdzie i użyje `fr` tłumaczeń. Jeśli ustawisz go na język, który nie jest obsługiwany, interfejs wiersza polecenia powróci do języka angielskiego.
 
 - `DOTNET_DISABLE_GUI_ERRORS`
 
@@ -332,17 +332,17 @@ dotnet myapp.dll
 
   Steruje śledzeniem diagnostyki ze składników hostingowych, takich jak `dotnet.exe` , `hostfxr` , i `hostpolicy` .
 
-  * `COREHOST_TRACE=[0/1]`-Domyślnie `0` — śledzenie jest wyłączone. Jeśli jest ustawiona na `1` , śledzenie diagnostyki jest włączone.
-  * `COREHOST_TRACEFILE=<file path>`-działa tylko wtedy, gdy śledzenie jest włączone za pośrednictwem `COREHOST_TRACE=1` . Po ustawieniu informacje o śledzeniu są zapisywane w określonym pliku, w przeciwnym razie informacje o śledzeniu są zapisywane w `stderr` . **Dostępne począwszy od platformy .NET Core 3. x.**
-  * `COREHOST_TRACE_VERBOSITY=[1/2/3/4]`-wartość domyślna to `4` . To ustawienie jest używane tylko wtedy, gdy śledzenie jest włączone za pośrednictwem `COREHOST_TRACE=1` . **Dostępne począwszy od platformy .NET Core 3. x.**
-    * `4`— wszystkie informacje o śledzeniu są zapisywane
-    * `3`-tylko komunikaty informacyjne, ostrzegawcze i błędów są zapisywane
-    * `2`-tylko ostrzeżenia i komunikaty o błędach są zapisywane
-    * `1`tylko komunikaty o błędach są zapisywane
+  * `COREHOST_TRACE=[0/1]` -Domyślnie `0` — śledzenie jest wyłączone. Jeśli jest ustawiona na `1` , śledzenie diagnostyki jest włączone.
+  * `COREHOST_TRACEFILE=<file path>` -działa tylko wtedy, gdy śledzenie jest włączone za pośrednictwem `COREHOST_TRACE=1` . Po ustawieniu informacje o śledzeniu są zapisywane w określonym pliku, w przeciwnym razie informacje o śledzeniu są zapisywane w `stderr` . **Dostępne począwszy od platformy .NET Core 3. x.**
+  * `COREHOST_TRACE_VERBOSITY=[1/2/3/4]` -wartość domyślna to `4` . To ustawienie jest używane tylko wtedy, gdy śledzenie jest włączone za pośrednictwem `COREHOST_TRACE=1` . **Dostępne począwszy od platformy .NET Core 3. x.**
+    * `4` — wszystkie informacje o śledzeniu są zapisywane
+    * `3` -tylko komunikaty informacyjne, ostrzegawcze i błędów są zapisywane
+    * `2` -tylko ostrzeżenia i komunikaty o błędach są zapisywane
+    * `1` tylko komunikaty o błędach są zapisywane
 
   Typowym sposobem uzyskania szczegółowych informacji śledzenia dotyczących uruchamiania aplikacji jest ustawienie `COREHOST_TRACE=1` i `COREHOST_TRACEFILE=host_trace.txt` uruchomienie aplikacji. Nowy plik `host_trace.txt` zostanie utworzony w bieżącym katalogu ze szczegółowymi informacjami.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Pliki konfiguracji środowiska uruchomieniowego](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
 - [Ustawienia konfiguracji środowiska uruchomieniowego .NET Core](../run-time-config/index.md)

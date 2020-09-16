@@ -2,12 +2,12 @@
 title: Instrukcje dotyczące artykułów (Przewodnik po C#)
 description: Kolekcja szybkich porad i krótkich, ukierunkowanych przykładów kodu
 ms.date: 12/20/2017
-ms.openlocfilehash: 9dd069ff767d65002b78c18b398b700a1f26ebfa
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 26d3931ff3b4ecfcc052c3ace25a09801f84c505
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465159"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537408"
 ---
 # <a name="how-to-c"></a>Instrukcje (C#)
 
@@ -106,23 +106,23 @@ LINQ umożliwia pisanie kodu w celu zbadania dowolnego źródła danych, które 
 - [Użycie wyrażeń lambda w zapytaniu](../programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md).
 - [Użyj `var` w wyrażeniach zapytania](../programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
 - [Zwraca podzbiory właściwości elementów z zapytania](../programming-guide/classes-and-structs/how-to-return-subsets-of-element-properties-in-a-query.md).
-- [Zapisuj zapytania ze złożonym filtrowaniem](../programming-guide/concepts/linq/how-to-write-queries-with-complex-filtering.md).
-- [Sortuj elementy źródła danych](../programming-guide/concepts/linq/how-to-sort-elements.md).
-- [Sortuj elementy dla wielu kluczy](../programming-guide/concepts/linq/how-to-sort-elements-on-multiple-keys.md).
-- [Kontrolowanie typu projekcji](../programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md).
+- [Zapisuj zapytania ze złożonym filtrowaniem](../../standard/linq/write-queries-complex-filtering.md).
+- [Sortuj elementy źródła danych](../../standard/linq/sort-elements.md).
+- [Sortuj elementy dla wielu kluczy](../../standard/linq/sort-elements-multiple-keys.md).
+- [Kontrolowanie typu projekcji](../../standard/linq/control-type-projection.md).
 - [Liczenie wystąpień wartości w sekwencji źródłowej](../programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md).
-- [Oblicz wartości pośrednie](../programming-guide/concepts/linq/how-to-calculate-intermediate-values.md).
+- [Oblicz wartości pośrednie](../../standard/linq/calculate-intermediate-values.md).
 - [Scalanie danych z wielu źródeł](../programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md).
 - [Znajdź różnicę między dwiema sekwencjami](../programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md).
-- [Debuguj puste wyniki zapytania](../programming-guide/concepts/linq/how-to-debug-empty-query-results-sets.md).
+- [Debuguj puste wyniki zapytania](../../standard/linq/debug-empty-query-results-sets.md).
 - [Dodaj niestandardowe metody do zapytań LINQ](../programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md).
 
 ## <a name="multiple-threads-and-async-processing"></a>Wiele wątków i przetwarzanie asynchroniczne
 
 Nowoczesne programy często używają operacji asynchronicznych. Te artykuły ułatwią naukę korzystania z tych technik.
 
-- [Zwiększenie wydajności asynchronicznej `System.Threading.Tasks.Task.WhenAll` przy użyciu programu ](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
-- [Równoległe wykonywanie wielu żądań sieci Web przy użyciu `async` i `await` ](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md).
+- [Zwiększenie wydajności asynchronicznej `System.Threading.Tasks.Task.WhenAll` przy użyciu programu ](../programming-guide/concepts/async/index.md).
+- [Równoległe wykonywanie wielu żądań sieci Web przy użyciu `async` i `await` ](../programming-guide/concepts/async/index.md).
 - [Użyj puli wątków](../../standard/threading/the-managed-thread-pool.md#using-the-thread-pool).
 
 ## <a name="command-line-args-to-your-program"></a>Argumenty wiersza polecenia dla programu

@@ -5,12 +5,12 @@ author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: efa0925a96fcdd4356109632fa77199edde73c26
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8005a8a3e5202b0255ec482dfb7e3c284bc2e19b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284289"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538907"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Używanie generatora serializatorów Microsoft XML na platformie .NET Core
 
@@ -24,7 +24,7 @@ W tym samouczku przedstawiono sposób użycia generatora serializatorów XML fir
 > - Jak dodać klasę i obiekt XmlSerializer
 > - Jak skompilować i uruchomić aplikację
 
-Podobnie jak w przypadku .NET Framework [Generator serializatorów XML (Sgen. exe)](../../standard/serialization/xml-serializer-generator-tool-sgen-exe.md) , [pakiet NuGet Microsoft. XmlSerializer. Generator](https://www.nuget.org/packages/Microsoft.XmlSerializer.Generator) jest odpowiednikiem projektów .NET Core i .NET Standard. Tworzy zestaw serializacji XML dla typów zawartych w zestawie, aby zwiększyć wydajność podczas uruchamiania serializacji XML podczas serializacji lub deserializacji obiektów tych typów przy użyciu <xref:System.Xml.Serialization.XmlSerializer> .
+Podobnie jak w przypadku [generatora serializatorów XML (sgen.exe)](../../standard/serialization/xml-serializer-generator-tool-sgen-exe.md) dla .NET Framework, [ pakiet NuGetMicrosoft.Xmlserializator. Generator](https://www.nuget.org/packages/Microsoft.XmlSerializer.Generator) jest odpowiednikiem dla projektów .NET Core i .NET Standard. Tworzy zestaw serializacji XML dla typów zawartych w zestawie, aby zwiększyć wydajność podczas uruchamiania serializacji XML podczas serializacji lub deserializacji obiektów tych typów przy użyciu <xref:System.Xml.Serialization.XmlSerializer> .
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -48,7 +48,7 @@ Otwórz wiersz polecenia i Utwórz folder o nazwie *MojaApl*. Przejdź do utworz
 dotnet new console
 ```
 
-### <a name="add-a-reference-to-the-microsoftxmlserializergenerator-package-in-the-myapp-project"></a>Dodawanie odwołania do pakietu Microsoft. XmlSerializer. Generator w projekcie MojaApl
+### <a name="add-a-reference-to-the-microsoftxmlserializergenerator-package-in-the-myapp-project"></a>Dodaj odwołanie do pakietu Microsoft.Xmlserializator. Generator w projekcie MojaApl
 
 Użyj [`dotnet add package`](../tools/dotnet-add-package.md) polecenia, aby dodać odwołanie w projekcie.
 
@@ -112,18 +112,18 @@ dotnet run
 ```
 
 > [!NOTE]
-> [`dotnet run`](../tools/dotnet-run.md)wywołuje [`dotnet build`](../tools/dotnet-build.md) się, by upewnić się, że cele kompilacji zostały skompilowane, a następnie wywołuje, `dotnet <assembly.dll>` Aby uruchomić aplikację docelową.
+> [`dotnet run`](../tools/dotnet-run.md) wywołuje [`dotnet build`](../tools/dotnet-build.md) się, by upewnić się, że cele kompilacji zostały skompilowane, a następnie wywołuje, `dotnet <assembly.dll>` Aby uruchomić aplikację docelową.
 
 > [!IMPORTANT]
 > Polecenia i kroki przedstawione w tym samouczku do uruchamiania aplikacji są używane tylko w czasie projektowania. Gdy wszystko będzie gotowe do wdrożenia aplikacji, zapoznaj się z różnymi [strategiami wdrażania](../deploying/index.md) aplikacji .NET Core i [`dotnet publish`](../tools/dotnet-publish.md) poleceniem.
 
-Jeśli wszystko powiedzie się, zestaw o nazwie *MojaApl. XmlSerializers. dll* jest generowany w folderze wyjściowym.
+Jeśli wszystko powiedzie się, zestaw o nazwie *MyApp.XmlSerializers.dll* zostanie wygenerowany w folderze wyjściowym.
 
 Gratulacje! Masz właśnie:
 > [!div class="checklist"]
 >
 > - Utworzono aplikację platformy .NET Core.
-> - Dodano odwołanie do pakietu Microsoft. XmlSerializer. Generator.
+> - Dodano odwołanie do pakietu Microsoft.Xmlserializator. Generator.
 > - Edycja programu MojaApl. csproj w celu dodania zależności.
 > - Dodano klasę i element XmlSerializer.
 > - Aplikacja została skompilowana i uruchomiona.
@@ -131,5 +131,5 @@ Gratulacje! Masz właśnie:
 ## <a name="related-resources"></a>Powiązane zasoby
 
 - [Wprowadzenie do serializacji XML](../../standard/serialization/introducing-xml-serialization.md)
-- [Jak serializować przy użyciu elementu XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
-- [Instrukcje: Serializowanie przy użyciu elementu XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
+- [Jak serializować przy użyciu elementu XmlSerializer (C#)](../../standard/linq/serialize-xmlserializer.md)
+- [Instrukcje: Serializowanie przy użyciu elementu XmlSerializer (Visual Basic)](../../standard/linq/serialize-xmlserializer.md)

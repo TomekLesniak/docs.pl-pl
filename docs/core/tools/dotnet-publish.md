@@ -2,12 +2,12 @@
 title: polecenie dotnet publish
 description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
 ms.date: 02/24/2020
-ms.openlocfilehash: f171baaa0dbc070b6389ec0fa9895b2c5dcfafff
-ms.sourcegitcommit: f279a4488c48236793c04bf825ae6f9128790849
+ms.openlocfilehash: 53dc6010352d92489017c3aa776bcb6a3601ec2d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89501912"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537772"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -53,7 +53,7 @@ dotnet publish -h|--help
 
 `dotnet publish`Polecenie akceptuje Opcje programu MSBuild, takie jak `-p` Ustawienia właściwości i `-l` definiowania rejestratora. Na przykład można ustawić właściwość programu MSBuild przy użyciu formatu: `-p:<NAME>=<VALUE>` .
 
-Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Przykład:
+Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Na przykład:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -240,4 +240,4 @@ Więcej informacji można znaleźć w następujących zasobach:
 - [Dokumentacja wiersza polecenia programu MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
 - [Profile publikacji programu Visual Studio (. pubxml) dla wdrożenia aplikacji ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
 - [dotnet msbuild](dotnet-msbuild.md)
-- [ILLInk. Tasks](https://aka.ms/dotnet-illink)
+- [ILLInk. Tasks](../deploying/trim-self-contained.md)

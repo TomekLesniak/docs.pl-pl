@@ -3,12 +3,12 @@ title: Informacje o uwierzytelnianiu w bibliotekach platformy Azure dla platform
 description: Wyjaśnia różne sposoby uwierzytelniania przy użyciu zestawu Azure SDK dla platformy .NET.
 ms.date: 06/19/2020
 ms.custom: azure-sdk-dotnet
-ms.openlocfilehash: bc2fce919d88a528f21df9f561cbe33e1119762a
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: dbae72eb9e80801d7338b210f9664f1c4e318ae0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811382"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539180"
 ---
 # <a name="authenticate-with-the-azure-sdk-for-net"></a>Uwierzytelnianie za pomocą zestawu Azure SDK dla platformy .NET
 
@@ -25,7 +25,7 @@ Aby uwierzytelnić się w bibliotekach, które nie obsługują platformy Azure. 
 
 ## <a name="access-azure-resources"></a>Dostęp do zasobów platformy Azure
 
-Aby można było korzystać z zasobów platformy Azure, takich jak pobieranie klucza tajnego z Key Vault lub przechowywanie obiektu BLOB w magazynie, wiele bibliotek usług platformy Azure wymaga parametrów połączenia lub kluczy do uwierzytelnienia. Na przykład SQL Database używa [standardowych parametrów połączenia SQL](https://docs.microsoft.com/azure/azure-sql/database/connect-query-dotnet-core). Parametry połączenia usługi są używane w innych usługach platformy Azure, takich jak [CosmosDB](/azure/cosmos-db/), [pamięć podręczna platformy Azure dla Redis](/azure/azure-cache-for-redis/cache-dotnet-how-to-use-azure-redis-cache)i [Service Bus](/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues). Te ciągi można pobrać przy użyciu Azure Portal, interfejsu wiersza polecenia lub programu PowerShell. Za pomocą bibliotek zarządzania platformy Azure dla platformy .NET można także wysyłać zapytania do zasobów w celu tworzenia parametrów połączenia w kodzie.
+Aby można było korzystać z zasobów platformy Azure, takich jak pobieranie klucza tajnego z Key Vault lub przechowywanie obiektu BLOB w magazynie, wiele bibliotek usług platformy Azure wymaga parametrów połączenia lub kluczy do uwierzytelnienia. Na przykład SQL Database używa [standardowych parametrów połączenia SQL](/azure/azure-sql/database/connect-query-dotnet-core). Parametry połączenia usługi są używane w innych usługach platformy Azure, takich jak [CosmosDB](/azure/cosmos-db/), [pamięć podręczna platformy Azure dla Redis](/azure/azure-cache-for-redis/cache-dotnet-how-to-use-azure-redis-cache)i [Service Bus](/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues). Te ciągi można pobrać przy użyciu Azure Portal, interfejsu wiersza polecenia lub programu PowerShell. Za pomocą bibliotek zarządzania platformy Azure dla platformy .NET można także wysyłać zapytania do zasobów w celu tworzenia parametrów połączenia w kodzie.
 
 Metody używania parametrów połączenia różnią się w zależności od produktu. [Zapoznaj się z dokumentacją dotyczącą produktu platformy Azure](/azure/?product=featured).
 

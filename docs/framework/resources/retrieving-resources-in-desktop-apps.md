@@ -19,16 +19,16 @@ helpviewer_keywords:
 - translating resources into languages
 - localizing resources
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
-ms.openlocfilehash: db1156106690f8321b7fd5a2890c2aa44cfe17e3
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: cefdfef32928783b23ac0d51be596e48c27bde9a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166197"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535511"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Pobieranie zasobów w aplikacjach klasycznych
 
-W przypadku pracy z zlokalizowanymi zasobami w .NET Framework aplikacjach klasycznych najlepiej jest spakować zasoby dla kultury domyślnej lub neutralnej z zestawem głównym i utworzyć oddzielny zestaw satelicki dla każdego języka lub kultury obsługiwanej przez aplikację. Następnie można użyć <xref:System.Resources.ResourceManager> klasy zgodnie z opisem w następnej sekcji, aby uzyskać dostęp do nazwanych zasobów. Jeśli nie zdecydujesz się na osadzanie zasobów w głównym zestawie i zestawach satelickich, możesz również uzyskać dostęp do plików binarnych. resources bezpośrednio, zgodnie z opisem w sekcji [pobieranie zasobów z plików. resources](#from_file) w dalszej części tego artykułu.  Aby pobrać zasoby z aplikacji ze sklepu Windows 8. x, zobacz [Tworzenie i pobieranie zasobów w aplikacjach ze sklepu Windows](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140)).  
+W przypadku pracy z zlokalizowanymi zasobami w .NET Framework aplikacjach klasycznych najlepiej jest spakować zasoby dla kultury domyślnej lub neutralnej z zestawem głównym i utworzyć oddzielny zestaw satelicki dla każdego języka lub kultury obsługiwanej przez aplikację. Następnie można użyć <xref:System.Resources.ResourceManager> klasy zgodnie z opisem w następnej sekcji, aby uzyskać dostęp do nazwanych zasobów. Jeśli nie zdecydujesz się na osadzanie zasobów w głównym zestawie i zestawach satelickich, możesz również uzyskać dostęp do plików binarnych. resources bezpośrednio, zgodnie z opisem w sekcji [pobieranie zasobów z plików. resources](#from_file) w dalszej części tego artykułu.  Aby pobrać zasoby z aplikacji ze sklepu Windows 8. x, zobacz [Tworzenie i pobieranie zasobów w aplikacjach ze sklepu Windows](/previous-versions/windows/apps/hh694557(v=vs.140)).  
   
 <a name="from_assembly"></a>
 ## <a name="retrieving-resources-from-assemblies"></a>Pobieranie zasobów z zestawów  
@@ -159,7 +159,7 @@ GetObject.exe
  Po utworzeniu zasobów i umieszczeniu ich w odpowiednim katalogu należy utworzyć <xref:System.Resources.ResourceManager> obiekt do korzystania z zasobów, wywołując <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> metodę. Pierwszy parametr określa nazwę główną domyślnego pliku Resources aplikacji ("ciągi" dla przykładu w poprzedniej sekcji). Drugi parametr określa lokalizację zasobów ("zasoby" dla poprzedniego przykładu). Trzeci parametr określa <xref:System.Resources.ResourceSet> implementację do użycia. Jeśli trzeci parametr jest `null` , używane jest domyślne środowisko uruchomieniowe <xref:System.Resources.ResourceSet> .  
   
 > [!NOTE]
-> Nie Wdrażaj aplikacji ASP.NET przy użyciu autonomicznych plików Resources. Może to spowodować problemy z blokowaniem i uszkodzenie wdrożenia XCOPY. Zalecamy wdrożenie zasobów ASP.NET w zestawach satelickich. Aby uzyskać więcej informacji, zobacz [Omówienie zasobów strony sieci Web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
+> Nie Wdrażaj aplikacji ASP.NET przy użyciu autonomicznych plików Resources. Może to spowodować problemy z blokowaniem i uszkodzenie wdrożenia XCOPY. Zalecamy wdrożenie zasobów ASP.NET w zestawach satelickich. Aby uzyskać więcej informacji, zobacz [Omówienie zasobów strony sieci Web ASP.NET](/previous-versions/aspnet/ms227427(v=vs.100)).  
   
  Po utworzeniu wystąpienia <xref:System.Resources.ResourceManager> obiektu należy użyć <xref:System.Resources.ResourceManager.GetString%2A> metod, i, <xref:System.Resources.ResourceManager.GetObject%2A> <xref:System.Resources.ResourceManager.GetStream%2A> jak wspomniano wcześniej, aby pobrać zasoby. Jednak pobieranie zasobów bezpośrednio z plików Resources różni się od pobierania zasobów osadzonych z zestawów. Podczas pobierania zasobów z plików. resources <xref:System.Resources.ResourceManager.GetString%28System.String%29> metody, <xref:System.Resources.ResourceManager.GetObject%28System.String%29> , i <xref:System.Resources.ResourceManager.GetStream%28System.String%29> zawsze pobierają domyślne zasoby kultury, niezależnie od bieżącej kultury. Aby pobrać zasoby bieżącej kultury lub określonej kultury aplikacji, należy wywołać <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29> <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29> metodę,, lub <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> i określić kulturę, której zasoby mają być pobrane. Aby pobrać zasoby bieżącej kultury, określ wartość <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> właściwości jako `culture` argument. Jeśli Menedżer zasobów nie może pobrać zasobów programu `culture` , program użyje standardowych reguł rezerwowych zasobów do pobrania odpowiednich zasobów.  
   
@@ -207,4 +207,4 @@ csc Example.cs
 - [Zasoby w aplikacjach klasycznych](index.md)
 - [Opakowanie i wdrażanie zasobów](packaging-and-deploying-resources-in-desktop-apps.md)
 - [Sposoby lokalizowania zestawów przez środowisko uruchomieniowe](../deployment/how-the-runtime-locates-assemblies.md)
-- [Tworzenie i pobieranie zasobów w aplikacjach ze sklepu Windows](https://docs.microsoft.com/previous-versions/windows/apps/hh694557(v=vs.140))
+- [Tworzenie i pobieranie zasobów w aplikacjach ze sklepu Windows](/previous-versions/windows/apps/hh694557(v=vs.140))

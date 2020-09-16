@@ -7,12 +7,12 @@ ms.date: 09/09/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: faa54e0a3c827717114ca6ca4f033c1c4c3acfa8
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 61cddfeb0d881ad2f2006db50ebb33f6a0c870ba
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325773"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535439"
 ---
 # <a name="styles-and-templates-in-wpf"></a>Style i szablony w WPF
 
@@ -103,7 +103,7 @@ Aby zapoznać się z przykładem, zobacz [Tworzenie szablonu dla kontrolki](../t
 
 ### <a name="templatebinding"></a>TemplateBinding
 
-Być może zauważono, że zasób szablonu zdefiniowany w poprzedniej sekcji używa [rozszerzenia znaczników TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md). A `TemplateBinding` to zoptymalizowana postać powiązania dla scenariuszy szablonów, analogiczne do powiązania złożonego z `{Binding RelativeSource={RelativeSource TemplatedParent}}` . `TemplateBinding`przydaje się do powiązania części szablonu z właściwościami formantu. Na przykład każda kontrolka ma <xref:System.Windows.Controls.Control.BorderThickness> Właściwość. Użyj elementu, `TemplateBinding` Aby określić, który element w szablonie ma wpływ to ustawienie kontroli.
+Być może zauważono, że zasób szablonu zdefiniowany w poprzedniej sekcji używa [rozszerzenia znaczników TemplateBinding](/dotnet/desktop/wpf/advanced/templatebinding-markup-extension). A `TemplateBinding` to zoptymalizowana postać powiązania dla scenariuszy szablonów, analogiczne do powiązania złożonego z `{Binding RelativeSource={RelativeSource TemplatedParent}}` . `TemplateBinding` przydaje się do powiązania części szablonu z właściwościami formantu. Na przykład każda kontrolka ma <xref:System.Windows.Controls.Control.BorderThickness> Właściwość. Użyj elementu, `TemplateBinding` Aby określić, który element w szablonie ma wpływ to ustawienie kontroli.
 
 ### <a name="contentcontrol-and-itemscontrol"></a>Elementu ContentControl i ItemsControl
 
@@ -136,7 +136,7 @@ Zasadniczo, <xref:System.Windows.DataTemplate> w powyższym przykładzie definiu
 
 ![Obraz Zdjęcia](./media/styles-and-templates-overview/stylingintro-photosasimages.png "StylingIntro_PhotosAsImages")
 
-Model tworzenia szablonów danych udostępnia inne funkcje. Na przykład, Jeśli wyświetlasz dane kolekcji zawierające inne kolekcje przy użyciu <xref:System.Windows.Controls.HeaderedItemsControl> typu, takiego jak <xref:System.Windows.Controls.Menu> lub <xref:System.Windows.Controls.TreeView> , istnieje <xref:System.Windows.HierarchicalDataTemplate> . Inna funkcja tworzenia szablonów danych to <xref:System.Windows.Controls.DataTemplateSelector> , co umożliwia wybranie <xref:System.Windows.DataTemplate> użycia na podstawie logiki niestandardowej. Aby uzyskać więcej informacji, zobacz [Omówienie usługi Data tworzenia szablonów](../../framework/wpf/data/data-templating-overview.md), która zapewnia bardziej szczegółowe omówienie różnych funkcji tworzenia szablonów danych.
+Model tworzenia szablonów danych udostępnia inne funkcje. Na przykład, Jeśli wyświetlasz dane kolekcji zawierające inne kolekcje przy użyciu <xref:System.Windows.Controls.HeaderedItemsControl> typu, takiego jak <xref:System.Windows.Controls.Menu> lub <xref:System.Windows.Controls.TreeView> , istnieje <xref:System.Windows.HierarchicalDataTemplate> . Inna funkcja tworzenia szablonów danych to <xref:System.Windows.Controls.DataTemplateSelector> , co umożliwia wybranie <xref:System.Windows.DataTemplate> użycia na podstawie logiki niestandardowej. Aby uzyskać więcej informacji, zobacz [Omówienie usługi Data tworzenia szablonów](/dotnet/desktop/wpf/data/data-templating-overview), która zapewnia bardziej szczegółowe omówienie różnych funkcji tworzenia szablonów danych.
 
 ## <a name="triggers"></a>Wyzwalacze
 
@@ -162,7 +162,7 @@ Inny typ wyzwalacza to <xref:System.Windows.EventTrigger> , który uruchamia zes
 
 [!code-xaml[StyleEventTriggers](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window6.xaml#SnippetStyleEventTriggers)]
 
-Aby uzyskać więcej informacji, zobacz [Omówienie scenorysów](../../framework/wpf/graphics-multimedia/storyboards-overview.md).
+Aby uzyskać więcej informacji, zobacz [Omówienie scenorysów](/dotnet/desktop/wpf/graphics-multimedia/storyboards-overview).
 
 Na poniższej ilustracji mysz wskazuje trzeci element.
 
@@ -170,7 +170,7 @@ Na poniższej ilustracji mysz wskazuje trzeci element.
 
 ### <a name="multitriggers-datatriggers-and-multidatatriggers"></a>Wielowyzwalacze, DataTriggers i MultiDataTriggers
 
-Oprócz <xref:System.Windows.Trigger> i, istnieją <xref:System.Windows.EventTrigger> Inne typy wyzwalaczy. <xref:System.Windows.MultiTrigger>umożliwia ustawienie wartości właściwości na podstawie wielu warunków. Używasz <xref:System.Windows.DataTrigger> i <xref:System.Windows.MultiDataTrigger> gdy właściwość warunku jest powiązany z danymi.
+Oprócz <xref:System.Windows.Trigger> i, istnieją <xref:System.Windows.EventTrigger> Inne typy wyzwalaczy. <xref:System.Windows.MultiTrigger> umożliwia ustawienie wartości właściwości na podstawie wielu warunków. Używasz <xref:System.Windows.DataTrigger> i <xref:System.Windows.MultiDataTrigger> gdy właściwość warunku jest powiązany z danymi.
 
 ## <a name="visual-states"></a>Stany wizualne
 
@@ -181,7 +181,7 @@ Kontrolki są zawsze w określonym **stanie**. Na przykład, gdy wskaźnik myszy
 | Normalne           | CommonStates          | Stan domyślny. |
 | MouseOver        | CommonStates          | Wskaźnik myszy znajduje się nad kontrolką. |
 | Naciśnięte          | CommonStates          | Kontrolka zostanie naciśnięty. |
-| Disabled (Wyłączony)         | CommonStates          | Kontrolka jest wyłączona. |
+| Disabled         | CommonStates          | Kontrolka jest wyłączona. |
 | Ustawiono fokus          | FocusStates           | Kontrolka ma fokus. |
 | Bez fokusu        | FocusStates           | Kontrolka nie ma fokusu. |
 
@@ -212,7 +212,7 @@ Na przykład poniższy kod XAML przeczujuje `CommonStates.MouseOver` stan w celu
         ...
 ```
 
-Aby uzyskać więcej informacji na temat scenorysów, zobacz [Omówienie scenorysów](../../framework/wpf/graphics-multimedia/storyboards-overview.md).
+Aby uzyskać więcej informacji na temat scenorysów, zobacz [Omówienie scenorysów](/dotnet/desktop/wpf/graphics-multimedia/storyboards-overview).
 
 ## <a name="shared-resources-and-themes"></a>Udostępnione zasoby i motywy
 
@@ -236,12 +236,12 @@ Aby udostępnić zestaw zasobów, w tym style i szablony, między aplikacjami, m
 
 Jest to współużytkowanie `shared.xaml` , które definiuje, <xref:System.Windows.ResourceDictionary> który zawiera zestaw stylów i zasobów pędzla, co umożliwia kontrolowanie spójnego wyglądu formantów w aplikacji.
 
-Aby uzyskać więcej informacji, zobacz [scalone słowniki zasobów](../../framework/wpf/advanced/merged-resource-dictionaries.md).
+Aby uzyskać więcej informacji, zobacz [scalone słowniki zasobów](/dotnet/desktop/wpf/advanced/merged-resource-dictionaries).
 
-Jeśli tworzysz motyw dla kontrolki niestandardowej, zapoznaj się z sekcją **Definiowanie zasobów na poziomie motywu** w temacie [Omówienie tworzenia kontrolek](../../framework/wpf/controls/control-authoring-overview.md#defining-resources-at-the-theme-level).
+Jeśli tworzysz motyw dla kontrolki niestandardowej, zapoznaj się z sekcją **Definiowanie zasobów na poziomie motywu** w temacie [Omówienie tworzenia kontrolek](/dotnet/desktop/wpf/controls/control-authoring-overview#defining-resources-at-the-theme-level).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Pakuj URI w WPF](../../framework/wpf/app-development/pack-uris-in-wpf.md)
-- [Instrukcje: znajdowanie elementów generowanych przez element ControlTemplate](../../framework/wpf/controls/how-to-find-controltemplate-generated-elements.md)
-- [Znajdowanie elementów generowanych przez szablon](../../framework/wpf/data/how-to-find-datatemplate-generated-elements.md)
+- [Pakuj URI w WPF](/dotnet/desktop/wpf/app-development/pack-uris-in-wpf)
+- [Instrukcje: znajdowanie elementów generowanych przez element ControlTemplate](/dotnet/desktop/wpf/controls/how-to-find-controltemplate-generated-elements)
+- [Znajdowanie elementów generowanych przez szablon](/dotnet/desktop/wpf/data/how-to-find-datatemplate-generated-elements)

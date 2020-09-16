@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: 4c74de90a348d81ac87c98bf6ee27f3c78f34e83
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: a1569f8a91e980f12ecc1801e00d6414711833d0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552870"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535461"
 ---
 # <a name="how-to-find-an-element-with-a-specific-attribute-linq-to-xml"></a>Jak znaleźć element z określonym atrybutem (LINQ to XML)
 
@@ -102,12 +102,12 @@ Ten przykład generuje następujące dane wyjściowe::
 </aw:Address>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
 - [Standardowe operatory zapytań — Omówienie (C#)](../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Operacje projekcji (C#)](../../csharp/programming-guide/concepts/linq/projection-operations.md)
-- [Zapytania podstawowe (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Zapytania podstawowe (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)
 - [Standardowe operatory zapytań — Omówienie (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Operacje projekcji (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/projection-operations.md)

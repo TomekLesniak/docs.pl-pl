@@ -2,12 +2,12 @@
 title: polecenie dotnet Pack
 description: Polecenie programu dotnet Pack tworzy pakiety NuGet dla projektu .NET Core.
 ms.date: 04/28/2020
-ms.openlocfilehash: 00cda2c52a12a7a3aef5f61291120f522536131d
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 409b946d93cf73fec38941740a446c3ee3402490
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442231"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537835"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -15,7 +15,7 @@ ms.locfileid: "83442231"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet pack`-Pakuje kod do pakietu NuGet.
+`dotnet pack` -Pakuje kod do pakietu NuGet.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -36,8 +36,8 @@ dotnet pack -h|--help
 
 Jeśli chcesz wygenerować pakiet zawierający symbole debugowania, dostępne są dwie opcje:
 
-- `--include-symbols`— tworzy pakiet symboli.
-- `--include-source`— tworzy pakiet symboli z `src` folderem zawierającym pliki źródłowe.
+- `--include-symbols` — tworzy pakiet symboli.
+- `--include-source` — tworzy pakiet symboli z `src` folderem zawierającym pliki źródłowe.
 
 Zależności NuGet spakowanego projektu są dodawane do pliku *. nuspec* , więc są one poprawnie rozwiązane po zainstalowaniu pakietu. Odwołania projektu do projektu nie są spakowane w projekcie. Obecnie należy mieć pakiet dla każdego projektu, jeśli istnieją zależności między projektami.
 
@@ -74,7 +74,7 @@ Projekty sieci Web nie są domyślnie objęte pakietem. Aby zastąpić zachowani
 
 - **`--force`**
 
-  Wymusza rozpoznanie wszystkich zależności, nawet jeśli ostatnie przywracanie zakończyło się pomyślnie. Określenie tej flagi jest takie samo jak usuwanie pliku *Project. assets. JSON* .
+  Wymusza rozpoznanie wszystkich zależności, nawet jeśli ostatnie przywracanie zakończyło się pomyślnie. Określenie tej flagi jest takie samo jak usuwanie *project.assets.jsw* pliku.
 
 - **`-h|--help`**
 
@@ -186,6 +186,6 @@ Projekty sieci Web nie są domyślnie objęte pakietem. Aby zastąpić zachowani
 
   Informacje o sposobach korzystania z `NuspecFile` programu, `NuspecBasePath` i `NuspecProperties` można znaleźć w następujących zasobach:
   
-  - [Pakowanie przy użyciu elementu. nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec)
-  - [Zaawansowane punkty rozszerzenia do tworzenia dostosowanego pakietu](https://docs.microsoft.com/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
-  - [Właściwości globalne](https://docs.microsoft.com/visualstudio/msbuild/msbuild-properties?view=vs-2019#global-properties)
+  - [Pakowanie przy użyciu elementu. nuspec](/nuget/reference/msbuild-targets#packing-using-a-nuspec)
+  - [Zaawansowane punkty rozszerzenia do tworzenia dostosowanego pakietu](/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
+  - [Właściwości globalne](/visualstudio/msbuild/msbuild-properties?view=vs-2019#global-properties)

@@ -2,12 +2,12 @@
 title: Buforowanie połączenia Oracle, OLE DB i ODBC
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: 58ea5aa54a0f6acbc8d2400dd04eeba9ff498055
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: c19f341d869ee983531fa5c90c0d7c94978dadb1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75545046"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535374"
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Buforowanie połączeń OLE DB, ODBC i Oracle
 
@@ -23,7 +23,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 
  Zaleca się, aby zawsze zamykać lub zbyć połączenie po zakończeniu korzystania z niego w celu zwrócenia połączenia z pulą. Połączenia, które nie są jawnie zamknięte, mogą nie zostać zwrócone do puli. Na przykład połączenie, które zostało utracone poza zakresem, ale nie zostało jawnie zamknięte, zostanie zwrócone do puli połączeń tylko wtedy, gdy Osiągnięto maksymalny rozmiar puli, a połączenie jest nadal ważne.
 
- Aby uzyskać więcej informacji na temat OLE DB sesji lub puli zasobów, a także sposobu wyłączania puli przez zastępowanie ustawień domyślnych usługi dostawcy OLE DB, zobacz [Podręcznik programisty programu OLE DB](https://docs.microsoft.com/previous-versions/windows/desktop/ms713643(v=vs.85)).
+ Aby uzyskać więcej informacji na temat OLE DB sesji lub puli zasobów, a także sposobu wyłączania puli przez zastępowanie ustawień domyślnych usługi dostawcy OLE DB, zobacz [Podręcznik programisty programu OLE DB](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
 ## <a name="odbc"></a>ODBC
  Pule połączeń dla Dostawca danych .NET Framework dla ODBC są zarządzane przez Menedżera sterowników ODBC, który jest używany do połączenia, i nie ma wpływ na .NET Framework Dostawca danych dla ODBC.
@@ -41,7 +41,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 ### <a name="connection-addition"></a>Dodawanie połączenia
  Pula połączeń jest tworzona dla każdego unikatowego ciągu połączenia. Po utworzeniu puli do puli są tworzone i dodawane wiele obiektów połączeń, aby zapewnić spełnienie minimalnych wymagań dotyczących rozmiaru puli. Połączenia są dodawane do puli w razie potrzeby do maksymalnego rozmiaru puli.
 
- Gdy zażądano obiektu <xref:System.Data.OracleClient.OracleConnection>, jest on uzyskiwany z puli, jeśli dostępne jest połączenie możliwe do użycia. Aby można było korzystać z tego połączenia, połączenie musi być obecnie nieużywane, mieć pasujący kontekst transakcji lub nie być skojarzone z żadnym kontekstem transakcji i mieć prawidłowe połączenie z serwerem.
+ Po <xref:System.Data.OracleClient.OracleConnection> zażądaniu obiektu jest on uzyskiwany z puli, jeśli dostępne jest połączenie użyteczne. Aby można było korzystać z tego połączenia, połączenie musi być obecnie nieużywane, mieć pasujący kontekst transakcji lub nie być skojarzone z żadnym kontekstem transakcji i mieć prawidłowe połączenie z serwerem.
 
  Jeśli maksymalny rozmiar puli został osiągnięty i nie jest dostępne żadne możliwe połączenie, żądanie jest umieszczane w kolejce. Pulę połączenia spełnia te żądania, ponownie przydzielając połączenia po ich wydaniu z powrotem do puli. Połączenia są zwalniane z powrotem do puli, gdy są zamknięte lub usuwane.
 
@@ -50,7 +50,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 
  Jeśli połączenie istnieje na serwerze, który został wyświetlony, to połączenie może być narysowane z puli, jeśli połączenie pulę nie wykryło poprawnego połączenia i zostało oznaczone jako nieprawidłowe. W takim przypadku zostanie wygenerowany wyjątek. Jednak nadal należy zamknąć połączenie w celu zwolnienia go z powrotem do puli.
 
- Nie wywołuj `Close` ani `Dispose` na `Connection`, `DataReader`ani żadnych innych zarządzanych obiektów w metodzie `Finalize` klasy. W finalizatorze zwalniane są tylko niezarządzane zasoby, które są własnością klasy bezpośrednio. Jeśli Klasa nie jest własnością żadnych niezarządzanych zasobów, nie Uwzględniaj metody `Finalize` w definicji klasy. Aby uzyskać więcej informacji, zobacz [odzyskiwanie pamięci](../../../standard/garbage-collection/index.md).
+ Nie wywołuj `Close` ani `Dispose` w `Connection` , a `DataReader` , ani żadnego innego obiektu zarządzanego w `Finalize` metodzie klasy. W finalizatorze zwalniane są tylko niezarządzane zasoby, które są własnością klasy bezpośrednio. Jeśli Klasa nie jest własnością żadnych niezarządzanych zasobów, nie Uwzględniaj `Finalize` metody w definicji klasy. Aby uzyskać więcej informacji, zobacz [odzyskiwanie pamięci](../../../standard/garbage-collection/index.md).
 
 ### <a name="transaction-support"></a>Obsługa transakcji
  Połączenia są rysowane z puli i przypisywane na podstawie kontekstu transakcji. Kontekst wątku żądającego i przypisanego połączenia musi być zgodny. W związku z tym każda pula połączeń jest podzielona na połączenia bez skojarzonego kontekstu transakcji i do *N* podpodziałów, z których każdy zawiera połączenia z określonym kontekstem transakcji.
@@ -58,17 +58,17 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
  Gdy połączenie jest zamknięte, zostaje wydane z powrotem do puli i do odpowiedniej części pola na podstawie kontekstu transakcji. W związku z tym możesz zamknąć połączenie bez generowania błędu, mimo że transakcja rozproszona nadal oczekuje. Dzięki temu możesz zatwierdzić lub przerwać transakcję rozproszoną w późniejszym czasie.
 
 ### <a name="control-connection-pooling-with-connection-string-keywords"></a>Sterowanie pulą połączeń przy użyciu słów kluczowych parametrów połączenia
- Właściwość <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> obiektu <xref:System.Data.OracleClient.OracleConnection> obsługuje pary klucz/wartość parametrów połączenia, których można użyć do dostosowania zachowania logiki puli połączeń.
+ <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>Właściwość <xref:System.Data.OracleClient.OracleConnection> obiektu obsługuje pary klucz/wartość parametrów połączenia, których można użyć do dostosowania zachowania logiki puli połączeń.
 
- W poniższej tabeli opisano wartości <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>, których można użyć do dostosowania zachowania puli połączeń.
+ W poniższej tabeli opisano <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> wartości, których można użyć do dostosowania zachowania puli połączeń.
 
 |Nazwa|Domyślny|Opis|
 |----------|-------------|-----------------|
-|`Connection Lifetime`|0|Gdy połączenie zostanie zwrócone do puli, jego czas utworzenia jest porównywany z bieżącą godziną i połączenie jest niszczone, jeśli ten przedział czasu (w sekundach) przekroczy wartość określoną przez `Connection Lifetime`. Jest to przydatne w konfiguracjach klastrowanych w celu wymuszenia równoważenia obciążenia między uruchomionym serwerem a serwerem, który został przełączony w tryb online.<br /><br /> Wartość zero (0) powoduje, że połączenia w puli mają maksymalny limit czasu.|
-|`Enlist`|'true'|Gdy `true`, pulę automatycznie zarejestrowanie połączenia w bieżącym kontekście transakcji wątku tworzenia, jeśli istnieje kontekst transakcji.|
+|`Connection Lifetime`|0|Gdy połączenie zostanie zwrócone do puli, jego czas utworzenia jest porównywany z bieżącą godziną i połączenie jest niszczone, jeśli ten przedział czasu (w sekundach) przekroczy wartość określoną przez `Connection Lifetime` . Jest to przydatne w konfiguracjach klastrowanych w celu wymuszenia równoważenia obciążenia między uruchomionym serwerem a serwerem, który został przełączony w tryb online.<br /><br /> Wartość zero (0) powoduje, że połączenia w puli mają maksymalny limit czasu.|
+|`Enlist`|oznacza|Kiedy `true` program pulę automatycznie zarejestrowana w bieżącym kontekście transakcji wątku tworzenia, jeśli istnieje kontekst transakcji.|
 |`Max Pool Size`|100|Maksymalna liczba połączeń dozwolonych w puli.|
 |`Min Pool Size`|0|Minimalna liczba połączeń przechowywanych w puli.|
-|`Pooling`|'true'|Gdy `true`, połączenie jest nawiązywane z odpowiedniej puli lub w razie potrzeby tworzone i dodawane do odpowiedniej puli.|
+|`Pooling`|oznacza|Gdy `true` połączenie jest narysowane z odpowiedniej puli lub w razie potrzeby utworzone i dodane do odpowiedniej puli.|
 
 ## <a name="see-also"></a>Zobacz także
 

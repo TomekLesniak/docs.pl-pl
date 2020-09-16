@@ -2,12 +2,12 @@
 title: Ciągła integracja (CI) z zestaw .NET Core SDK i narzędziami
 description: Dowiedz się, jak używać zestaw .NET Core SDK i narzędzi na serwerze kompilacji z ciągłą integracją.
 ms.date: 05/18/2017
-ms.openlocfilehash: ddccb477bc112157a155e2217e04c329e7ab51c5
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 724cc639a2588b085b31ff4590acce34d2380655
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415991"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537720"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Używanie zestaw .NET Core SDK i narzędzi w ciągłej integracji (CI)
 
@@ -36,7 +36,7 @@ Skrypt Instalatora jest zautomatyzowany do uruchomienia na początku kompilacji,
 
 ## <a name="ci-setup-examples"></a>Przykłady konfiguracji elementu konfiguracji
 
-W tej sekcji opisano konfigurację ręczną przy użyciu skryptu PowerShell lub bash, a także opis kilku rozwiązań CI (Software as a Service). Rozwiązania CI SaaS CI obejmują [rozwiązania Travis Ci](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/)i [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
+W tej sekcji opisano konfigurację ręczną przy użyciu skryptu PowerShell lub bash, a także opis kilku rozwiązań CI (Software as a Service). Rozwiązania CI SaaS CI obejmują [rozwiązania Travis Ci](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/)i [Azure Pipelines](/azure/devops/pipelines/index).
 
 ### <a name="manual-setup"></a>Konfiguracja ręczna
 
@@ -147,7 +147,7 @@ Skonfiguruj Azure DevOps Services do kompilowania projektów .NET Core przy uży
 1. Uruchom skrypt z [kroku instalacji ręcznej](#manual-setup) przy użyciu poleceń.
 1. Utwórz kompilację składającą się z kilku Azure DevOps Services wbudowanych zadań kompilacji, które są skonfigurowane do korzystania z narzędzi .NET Core.
 
-Oba rozwiązania są prawidłowe. Za pomocą ręcznego skryptu konfiguracji kontrolujesz wersję narzędzi, które otrzymujesz, ponieważ pobierasz je w ramach kompilacji. Kompilacja jest uruchamiana ze skryptu, który należy utworzyć. W tym artykule omówiono tylko opcję ręczną. Aby uzyskać więcej informacji na temat tworzenia kompilacji z zadaniami kompilacji Azure DevOps Services, zobacz dokumentację [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index) .
+Oba rozwiązania są prawidłowe. Za pomocą ręcznego skryptu konfiguracji kontrolujesz wersję narzędzi, które otrzymujesz, ponieważ pobierasz je w ramach kompilacji. Kompilacja jest uruchamiana ze skryptu, który należy utworzyć. W tym artykule omówiono tylko opcję ręczną. Aby uzyskać więcej informacji na temat tworzenia kompilacji z zadaniami kompilacji Azure DevOps Services, zobacz dokumentację [Azure Pipelines](/azure/devops/pipelines/index) .
 
 Aby użyć ręcznego skryptu konfiguracji w Azure DevOps Services, Utwórz nową definicję kompilacji i określ skrypt do uruchomienia dla kroku kompilacji. Jest to realizowane przy użyciu Azure DevOps Services interfejsu użytkownika:
 
@@ -169,7 +169,7 @@ Aby użyć ręcznego skryptu konfiguracji w Azure DevOps Services, Utwórz nową
 
 ## <a name="orchestrating-the-build"></a>Organizowanie kompilacji
 
-W większości tego dokumentu opisano, jak uzyskać narzędzia .NET Core i skonfigurować różne usługi CI, bez przekazywania informacji na temat sposobu organizowania lub *kompilowania*kodu za pomocą platformy .NET Core. Wybór sposobu struktury procesu kompilacji zależy od wielu czynników, które nie mogą być omówione w ogólny sposób. Aby uzyskać więcej informacji na temat organizowania kompilacji z każdą technologią, zapoznaj się z zasobami i przykładami dostępnymi w zestawach dokumentacji [rozwiązania Travis Ci](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/)i [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
+W większości tego dokumentu opisano, jak uzyskać narzędzia .NET Core i skonfigurować różne usługi CI, bez przekazywania informacji na temat sposobu organizowania lub *kompilowania*kodu za pomocą platformy .NET Core. Wybór sposobu struktury procesu kompilacji zależy od wielu czynników, które nie mogą być omówione w ogólny sposób. Aby uzyskać więcej informacji na temat organizowania kompilacji z każdą technologią, zapoznaj się z zasobami i przykładami dostępnymi w zestawach dokumentacji [rozwiązania Travis Ci](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/)i [Azure Pipelines](/azure/devops/pipelines/index).
 
 Dwa ogólne podejścia do tworzenia struktury procesu kompilacji dla kodu platformy .NET Core przy użyciu narzędzi .NET Core Tools używają programu MSBuild bezpośrednio lub przy użyciu poleceń wiersza polecenia programu .NET Core. Podejście, które należy podjąć, zależy od poziomu komfortu i podejść. Program MSBuild umożliwia wyrażanie procesu kompilacji jako zadań i obiektów docelowych, ale zawiera dodaną złożoność uczenia składni pliku projektu programu MSBuild. Korzystanie z narzędzi wiersza polecenia platformy .NET Core może być prostsze, ale wymaga zapisania logiki aranżacji w języku skryptowym, takim jak `bash` lub PowerShell.
 

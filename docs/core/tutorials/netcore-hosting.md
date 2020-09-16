@@ -4,12 +4,12 @@ description: Dowiedz się, jak hostować środowisko uruchomieniowe platformy .N
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 3b24ade694e25040d77e411bead3f454e9d5cdef
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 9f45a75d7ec836c14a2285a1707649cc32c2a25c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656179"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537551"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Napisz niestandardowego hosta .NET Core, aby kontrolować środowisko uruchomieniowe platformy .NET z kodu natywnego
 
@@ -144,7 +144,7 @@ W tym przykładzie host może teraz wywołać, `managedDelegate` Aby uruchomić 
 
 Alternatywnie, `coreclr_execute_assembly` Funkcja może służyć do uruchamiania zarządzanego pliku wykonywalnego. Ten interfejs API Pobiera ścieżkę zestawu i tablicę argumentów jako parametry wejściowe. Ładuje zestaw w tej ścieżce i wywołuje jego metodę Main.
 
-```C++
+```c++
 int hr = executeAssembly(
         hostHandle,
         domainId,
@@ -197,7 +197,7 @@ Za pomocą `ICLRRuntimeHost4` dostępnego w tym miejscu możemy teraz określić
 
 Środowisko uruchomieniowe jest uruchomione z wywołaniem `Start` funkcji.
 
-```C++
+```c++
 hr = runtimeHost->Start();
 ```
 
@@ -234,7 +234,7 @@ W przypadku wystąpienia elementu AppDomain up i uruchomiona host może teraz ro
 
 Inna opcja, jeśli `ExecuteAssembly` nie spełnia wymagań hosta, służy `CreateDelegate` do tworzenia wskaźnika funkcji do statycznej metody zarządzanej. Wymaga to, aby Host wiedział sygnaturę metody, w której jest wywoływany (w celu utworzenia typu wskaźnika funkcji), ale umożliwia hostom elastyczność wywoływania kodu innego niż punkt wejścia zestawu. Nazwa zestawu podana w drugim parametrze jest [pełną zarządzaną nazwą zestawu](../../standard/assembly/names.md) biblioteki do załadowania.
 
-```C++
+```c++
 void *pfnDelegate = NULL;
 hr = runtimeHost->CreateDelegate(
     domainId,

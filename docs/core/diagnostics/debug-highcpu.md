@@ -3,18 +3,18 @@ title: Debugowanie wysokiego użycia procesora CPU — .NET Core
 description: Samouczek, który przeprowadzi Cię przez debugowanie wysokiego użycia procesora CPU w programie .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 93076bbce3baf3a219b25c927d2aba3d2d57456f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 71e0b98f7ad38836c6a20c3e0e75a878fb6525c7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557805"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538712"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>Debugowanie wysokiego użycia procesora CPU w programie .NET Core
 
 **Ten artykuł ma zastosowanie do: ✔️** .net Core 3,1 SDK i nowszych wersjach
 
-W tym samouczku dowiesz się, jak debugować nadmierne scenariusze użycia procesora CPU. Korzystając z podanego ASP.NET Core przykładowego repozytorium kodu źródłowego [aplikacji sieci Web](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) , można przypadkowo zaistnieć zakleszczenie. Punkt końcowy będzie miał Rozwieszanie i kumulację wątków. Dowiesz się, jak za pomocą różnych narzędzi można zdiagnozować ten scenariusz za pomocą kilku kluczowych fragmentów danych diagnostycznych.
+W tym samouczku dowiesz się, jak debugować nadmierne scenariusze użycia procesora CPU. Korzystając z podanego ASP.NET Core przykładowego repozytorium kodu źródłowego [aplikacji sieci Web](/samples/dotnet/samples/diagnostic-scenarios) , można przypadkowo zaistnieć zakleszczenie. Punkt końcowy będzie miał Rozwieszanie i kumulację wątków. Dowiesz się, jak za pomocą różnych narzędzi można zdiagnozować ten scenariusz za pomocą kilku kluczowych fragmentów danych diagnostycznych.
 
 W tym samouczku wykonasz następujące czynności:
 
@@ -31,13 +31,13 @@ W tym samouczku wykonasz następujące czynności:
 Samouczek używa:
 
 - [.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) lub nowsza wersja.
-- [Przykładowy obiekt docelowy debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) , aby wyzwolić scenariusz.
+- [Przykładowy obiekt docelowy debugowania](/samples/dotnet/samples/diagnostic-scenarios) , aby wyzwolić scenariusz.
 - [dotnet-Trace](dotnet-trace.md) do wyświetlania listy procesów i generowania profilu.
 - [dotnet-Counters](dotnet-counters.md) do monitorowania użycia procesora CPU.
 
 ## <a name="cpu-counters"></a>Liczniki procesora CPU
 
-Przed próbą zebrania danych diagnostycznych należy obserwować wysoki poziom procesora CPU. Uruchom [przykładową aplikację](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) przy użyciu następującego polecenia w katalogu głównym projektu.
+Przed próbą zebrania danych diagnostycznych należy obserwować wysoki poziom procesora CPU. Uruchom [przykładową aplikację](/samples/dotnet/samples/diagnostic-scenarios) przy użyciu następującego polecenia w katalogu głównym projektu.
 
 ```dotnetcli
 dotnet run
@@ -116,11 +116,11 @@ Podczas analizowania powolnego żądania potrzebne jest narzędzie diagnostyczne
 
 ### <a name="linux"></a>[Linux](#tab/linux)
 
-Za `perf` pomocą tego narzędzia można generować profile aplikacji .NET Core. Wyjdź z poprzedniego wystąpienia [przykładowego celu debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios).
+Za `perf` pomocą tego narzędzia można generować profile aplikacji .NET Core. Wyjdź z poprzedniego wystąpienia [przykładowego celu debugowania](/samples/dotnet/samples/diagnostic-scenarios).
 
 Ustaw `COMPlus_PerfMapEnabled` zmienną środowiskową, aby spowodować, że aplikacja .NET Core utworzy `map` plik w `/tmp` katalogu. Ten `map` plik jest używany przez program `perf` do mapowania adresu procesora CPU na funkcje generowane przez JIT według nazwy. Aby uzyskać więcej informacji, zobacz [Zapisywanie mapy wydajności](../run-time-config/debugging-profiling.md#write-perf-map).
 
-Uruchom [przykładowy cel debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) w tej samej sesji terminala.
+Uruchom [przykładowy cel debugowania](/samples/dotnet/samples/diagnostic-scenarios) w tej samej sesji terminala.
 
 ```dotnetcli
 export COMPlus_PerfMapEnabled=1
@@ -152,7 +152,7 @@ To polecenie spowoduje wygenerowanie elementu `flamegraph.svg` , który można w
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-W systemie Windows można użyć narzędzia do [śledzenia dotnet](dotnet-trace.md) jako profilera. Korzystając z poprzedniego [przykładowego celu debugowania](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios), należy ponownie wykonać wysoki punkt końcowy procesora CPU ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Gdy jest uruchomiona w ramach żądania 1-minutowego, użyj `collect` polecenia w następujący sposób:
+W systemie Windows można użyć narzędzia do [śledzenia dotnet](dotnet-trace.md) jako profilera. Korzystając z poprzedniego [przykładowego celu debugowania](/samples/dotnet/samples/diagnostic-scenarios), należy ponownie wykonać wysoki punkt końcowy procesora CPU ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Gdy jest uruchomiona w ramach żądania 1-minutowego, użyj `collect` polecenia w następujący sposób:
 
 ```dotnetcli
 dotnet-trace collect -p 22884 --providers Microsoft-DotNETCore-SampleProfiler
@@ -166,7 +166,7 @@ Otwórz `nettrace` program, [`PerfView`](https://github.com/microsoft/perfview/b
 
 ---
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [dotnet-Trace](dotnet-trace.md) do procesów list
 - [dotnet-Counters](dotnet-counters.md) , aby sprawdzić użycie pamięci zarządzanej

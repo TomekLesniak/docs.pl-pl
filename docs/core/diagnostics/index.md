@@ -3,12 +3,12 @@ title: Omówienie narzędzi diagnostycznych — .NET Core
 description: Przegląd narzędzi i technik dostępnych do diagnozowania aplikacji .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: 568f237e131cde18dad7c87ddff2fdd3d4bc5b8b
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: e97acccbe3bdd577ee600cefb9f1f0528d3c1ac0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89597982"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538530"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Jakie narzędzia diagnostyczne są dostępne w środowisku .NET Core?
 
@@ -28,7 +28,7 @@ Ten artykuł ułatwia znalezienie różnych potrzebnych narzędzi.
 
 [Testowanie jednostkowe](../testing/index.md) to kluczowy składnik ciągłej integracji i wdrażania wysokiej jakości oprogramowania. Testy jednostkowe zostały zaprojektowane w celu zapewnienia wczesnego ostrzegania w przypadku wystąpienia elementu.
 
-## <a name="debug-linux-dumps"></a>Debuguj zrzuty systemu Linux
+## <a name="debug-linux-dumps"></a>Debugowanie zrzutów systemu Linux
 
 [Debugowanie zrzutów systemu Linux](debug-linux-dumps.md) wyjaśnia, jak zbierać i analizować zrzuty w systemie Linux.
 
@@ -50,13 +50,13 @@ Narzędzie [dotnet-gcdump](dotnet-gcdump.md) to sposób zbierania zrzutów pami�
 
 Program .NET Core zawiera informacje o tym, w jaki sposób są `EventPipe` udostępniane dane diagnostyczne. Narzędzie do [śledzenia dotnet](dotnet-trace.md) umożliwia korzystanie z interesujących danych profilowania z poziomu aplikacji, które mogą pomóc w scenariuszach, w których konieczne jest powolne działanie aplikacji.
 
-### <a name="dotnet-symbol"></a>dotnet — symbol
+### <a name="dotnet-symbol"></a>dotnet-symbol
 
 polecenie [dotnet-symbol](dotnet-symbol.md) umożliwia pobieranie plików (symboli, DAC/DBI, plików hosta itp.), które są konieczne do otwarcia podstawowego zrzutu lub minizrzutu. Użyj tego narzędzia, jeśli potrzebujesz symboli i modułów do debugowania pliku zrzutu przechwytywanego na innym komputerze.
 
 ### <a name="dotnet-sos"></a>dotnet-sos
 
-[dotnet-sos](dotnet-sos.md) służy do instalowania [rozszerzenia debugowania SOS](https://docs.microsoft.com/dotnet/framework/tools/sos-dll-sos-debugging-extension) w systemie Linux lub MacOS (lub w systemie Windows, jeśli są używane starsze narzędzia debugowania).
+[dotnet-sos](dotnet-sos.md) służy do instalowania [rozszerzenia debugowania SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) w systemie Linux lub MacOS (lub w systemie Windows, jeśli są używane starsze narzędzia debugowania).
 
 ## <a name="net-core-diagnostics-tutorials"></a>Samouczki dotyczące diagnostyki platformy .NET Core
 
