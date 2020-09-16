@@ -6,4 +6,4 @@ ms.contentlocale: pl-PL
 ms.lasthandoff: 05/15/2019
 ms.locfileid: "65637789"
 ---
-<span data-ttu-id="b462e-101">.NET Framework 4.6.1</span><span class="sxs-lookup"><span data-stu-id="b462e-101">.NET Framework 4.6.1</span></span>
+<span data-ttu-id="c53a1-101">.NET Framework 4.6.1</span><span class="sxs-lookup"><span data-stu-id="c53a1-101">.NET Framework 4.6.1</span></span>

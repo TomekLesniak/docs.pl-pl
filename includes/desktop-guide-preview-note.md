@@ -8,4 +8,4 @@ ms.locfileid: "82071046"
 ---
 
 > [!IMPORTANT]
-> <span data-ttu-id="32247-101">Dokumentacja przewodnika po pulpicie jest w przygotowaniu.</span><span class="sxs-lookup"><span data-stu-id="32247-101">The Desktop Guide documentation is under construction.</span></span>
+> <span data-ttu-id="020b8-101">Dokumentacja przewodnika po pulpicie jest w przygotowaniu.</span><span class="sxs-lookup"><span data-stu-id="020b8-101">The Desktop Guide documentation is under construction.</span></span>
