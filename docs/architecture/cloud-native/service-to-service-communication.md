@@ -3,12 +3,12 @@ title: Komunikacja między usługami
 description: Dowiedz się, jak mikrousługi zaplecza w chmurze komunikują się z innymi mikrousługami zaplecza.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: dec06cc28ac177381b882f9e441e19e5c51bd5ad
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 88d7dfabee14419978889f5d9ea30b12f36837de
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613710"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539813"
 ---
 # <a name="service-to-service-communication"></a>Komunikacja między usługami
 
@@ -28,7 +28,7 @@ Należy wziąć pod uwagę następujące typy interakcji:
 
 Systemy mikrousług zazwyczaj używają kombinacji tych typów interakcji podczas wykonywania operacji wymagających interakcji między usługami. Przyjrzyjmy się, jak można je wdrożyć.
 
-## <a name="queries"></a>Zapytania
+## <a name="queries"></a>Kwerendy
 
 Wiele mikrousług może wymagać wykonania *zapytania* do innej, co wymaga natychmiastowej reakcji na ukończenie operacji. Mikrousługa koszyka zakupów może potrzebować informacji o produkcie i ceny, aby dodać element do jego koszyka. Istnieje kilka podejścia do implementowania operacji zapytań.
 
@@ -164,7 +164,7 @@ Dzięki zdarzeniom przechodźmy od technologii kolejkowania do *tematów*. [Tema
 
 **Rysunek 4-16**. Architektura tematu
 
-Na powyższym rysunku wydawcy wysyłają komunikaty do tematu. Na koniec Subskrybenci odbierają wiadomości z subskrypcji. W środku tematu przekazuje komunikaty do subskrypcji na podstawie zestawu *reguł*, które są wyświetlane w ciemnych polach. Reguły działają jako filtr, który przekazuje dalej określone wiadomości do subskrypcji. W tym miejscu zostanie wysłane zdarzenie "Zamów" do subskrypcji \# 1 i subskrypcji \# 3, ale nie do subskrypcji \# 2. Do subskrypcji \# 2 i subskrypcji 3 zostanie wysłane zdarzenie "OrderCompleted" \# .
+Na powyższym rysunku wydawcy wysyłają komunikaty do tematu. Na koniec Subskrybenci odbierają wiadomości z subskrypcji. W środku tematu przekazuje komunikaty do subskrypcji na podstawie zestawu reguł, które są wyświetlane w ciemnych polach. Reguły działają jako filtr, który przekazuje dalej określone wiadomości do subskrypcji. W tym miejscu zostanie wysłane zdarzenie "getPrice" do subskrypcji dotyczącej cen i rejestrowania, ponieważ subskrypcja rejestrowania wybrała wszystkie komunikaty.  Zdarzenie "GetInformation" zostanie wysłane do subskrypcji informacji i rejestrowania.
 
 Chmura systemu Azure obsługuje dwie różne usługi tematu: Tematy Azure Service Bus i Azure EventGrid.
 

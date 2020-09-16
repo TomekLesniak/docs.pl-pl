@@ -2,12 +2,12 @@
 title: Przepływ pracy tworzenia oprogramowania dla aplikacji platformy Docker
 description: Zapoznaj się ze szczegółami przepływu pracy dotyczącymi tworzenia aplikacji opartych na platformie Docker. Rozpocznij krok po kroku i przejdź do szczegółów, aby zoptymalizować wieloetapowe dockerfile i zakończyć pracę z uproszczonym przepływem pracy dostępnym w przypadku korzystania z programu Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 98dc931e10d5e1a3265ebd6f4e1919a6416e9b27
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: 489f44a2742900d6ce5f77e24dd3d719ec9cda2b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022938"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539730"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Przepływ pracy tworzenia oprogramowania dla aplikacji platformy Docker
 
@@ -61,7 +61,7 @@ Ponadto konieczne jest zainstalowanie programu Visual Studio 2019 w wersji 16,4 
 
 Możesz rozpocząć kodowanie aplikacji w zwykłym środowisku .NET (zwykle w programie .NET Core, jeśli planujesz korzystanie z kontenerów) nawet przed włączeniem platformy Docker w aplikacji oraz wdrożenie i przetestowanie na platformie Docker. Zaleca się jednak rozpoczęcie pracy z platformą Docker najszybciej, jak to możliwe, ponieważ będzie to realne środowisko i ewentualne problemy mogą zostać odnalezione najszybciej, jak to możliwe. Jest to zalecane, ponieważ program Visual Studio ułatwia współpracę z platformą Docker, która niemal jest przejrzysta — najlepszym przykładem w przypadku debugowania aplikacji wielokontenerowych z programu Visual Studio.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Wprowadzenie do Docker CE for Windows** \
   <https://docs.docker.com/docker-for-windows/>
@@ -103,7 +103,7 @@ Korzystanie z oficjalnego repozytorium programu .NET Image z usługi Docker Hub 
 
 W poniższym przykładzie przedstawiono przykładową pliku dockerfile dla kontenera ASP.NET Core.
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 ARG source
 WORKDIR /app
@@ -116,7 +116,7 @@ W tym przypadku obraz jest oparty na wersji 3,1 ASP.NET Core oficjalnego obrazu 
 
 Możesz określić dodatkowe ustawienia konfiguracji w pliku dockerfile, w zależności od używanego języka i platformy. Na przykład wiersz punktu wejścia `["dotnet", "MySingleContainerWebApp.dll"]` informuje platformę Docker, aby uruchomić aplikację platformy .NET Core. Jeśli używasz zestawu SDK i interfejs wiersza polecenia platformy .NET Core (interfejs dotnet CLI) do kompilowania i uruchamiania aplikacji .NET, to ustawienie będzie inne. Dolna linia polega na tym, że linia ENTRYPOINT i inne ustawienia będą się różnić w zależności od języka i platformy wybranej dla aplikacji.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Kompilowanie obrazów platformy Docker dla aplikacji platformy .NET Core** \
   [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
@@ -173,7 +173,7 @@ Prawdopodobnie najlepszym sposobem na zrozumienie wieloetapowego jest przechodze
 
 Początkowy pliku dockerfile może wyglądać następująco:
 
-```Dockerfile
+```dockerfile
  1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
@@ -244,7 +244,7 @@ Będziesz korzystać z funkcji pamięci podręcznej warstwy platformy Docker, kt
 
 W związku z tym skupmy się na etapie **kompilacji** , wiersze 5-6 są w większości takie same, ale linie 7-17 są różne dla każdej usługi z eShopOnContainers, więc muszą być wykonywane co jeden raz, jednak Jeśli zmieniono wiersze 7-16 na:
 
-```Dockerfile
+```dockerfile
 COPY . .
 ```
 
@@ -256,7 +256,7 @@ Następnie będzie ona taka sama dla każdej usługi, dlatego skopiuje całe roz
 
 Kolejna znacząca Optymalizacja obejmuje `restore` polecenie wykonane w wierszu 17, które jest również inne dla każdej usługi eShopOnContainers. Jeśli zmienisz ten wiersz na tylko:
 
-```Dockerfile
+```dockerfile
 RUN dotnet restore
 ```
 
@@ -276,7 +276,7 @@ W przypadku optymalizacji końcowej następuje po prostu, że wiersz 20 jest nad
 
 Otrzymany plik jest następnie:
 
-```Dockerfile
+```dockerfile
  1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
@@ -298,7 +298,7 @@ Otrzymany plik jest następnie:
 
 Możesz utworzyć własny obraz podstawowy platformy Docker od podstaw. Ten scenariusz nie jest zalecany dla osoby, która rozpoczyna się od platformy Docker, ale jeśli chcesz ustawić określone bity obrazu podstawowego, możesz to zrobić.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Obrazy .NET Core z obsługą wielodostępności**. \
   <https://github.com/dotnet/announcements/issues/14>
@@ -493,7 +493,7 @@ Ważnym punktem jest to, jak pokazano na rysunku 5-12 w programie Visual Studio 
 
 **Rysunek 5-12**. Uruchamianie aplikacji z obsługą kontenera w programie Visual Studio 2019
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Wdrażanie kontenera ASP.NET na zdalnym hoście platformy Docker** \
   <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
@@ -530,7 +530,7 @@ Podczas uruchamiania i debugowania kontenerów za pomocą programu Visual Studio
 
 Jeśli tworzysz program przy użyciu podejścia edytora/interfejsu wiersza polecenia, debugowanie kontenerów jest trudniejsze i prawdopodobnie zajdzie potrzeba debugowania przez generowanie śladów.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Debugowanie aplikacji w lokalnym kontenerze platformy Docker** \
   [https://docs.microsoft.com/visualstudio/containers/edit-and-refresh](/visualstudio/containers/edit-and-refresh)
@@ -550,7 +550,7 @@ Proces opracowywania aplikacji platformy Docker: 1 — kod aplikacji, 2-zapis pl
 
 Ponadto należy wykonać krok 2 (dodanie obsługi platformy Docker do projektów) tylko raz. W związku z tym przepływ pracy jest podobny do zwykłych zadań programistycznych podczas korzystania z platformy .NET do innych celów programistycznych. Musisz wiedzieć, co się dzieje w obszarze okładki (proces kompilowania obrazu, jakie obrazy podstawowe są używane, wdrożenia kontenerów itp.), a czasami trzeba również edytować plik pliku dockerfile lub Docker-Compose. yml w celu dostosowania zachowań. Jednak większość pracy jest znacznie uproszczona przy użyciu programu Visual Studio, dzięki czemu znacznie zwiększa produktywność.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Steve Lasker. Programowanie platformy .NET Docker za pomocą programu Visual Studio (2017)** \
   <https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111>
@@ -559,7 +559,7 @@ Ponadto należy wykonać krok 2 (dodanie obsługi platformy Docker do projektów
 
 [Kontenery systemu Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/index) umożliwiają konwertowanie istniejących aplikacji systemu Windows do obrazów platformy Docker i wdrażanie ich przy użyciu tych samych narzędzi, co w pozostałej części ekosystemu platformy Docker. Aby korzystać z kontenerów systemu Windows, należy uruchomić polecenia programu PowerShell w pliku dockerfile, jak pokazano w następującym przykładzie:
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/servercore
 LABEL Description="IIS" Vendor="Microsoft" Version="10"
 RUN powershell -Command Add-WindowsFeature Web-Server
@@ -568,11 +568,11 @@ CMD [ "ping", "localhost", "-t" ]
 
 W takim przypadku używany jest podstawowy obraz systemu Windows Server Core (ustawienie od) i Instalowanie usług IIS za pomocą polecenia programu PowerShell (ustawienie URUCHOMIENIOWe). W podobny sposób można również użyć poleceń programu PowerShell, aby skonfigurować dodatkowe składniki, takie jak ASP.NET 4. x, .NET 4,6 lub dowolne inne oprogramowanie systemu Windows. Na przykład następujące polecenie w pliku dockerfile konfiguruje ASP.NET 4,5:
 
-```Dockerfile
+```dockerfile
 RUN powershell add-windowsfeature web-asp-net45
 ```
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **ASPNET-Docker/pliku dockerfile.** Przykładowe polecenia programu PowerShell do uruchomienia z wieloetapowe dockerfile w celu uwzględnienia funkcji systemu Windows. \
   <https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile>

@@ -2,12 +2,12 @@
 title: Używanie poleceń programu Windows PowerShell w pliku DockerFile do konfigurowania kontenerów systemu Windows (opartych na standardzie platformy Docker)
 description: Dowiedz się, jak używać programu PowerShell podczas pracy z platformą Docker w kontenerach systemu Windows
 ms.date: 08/06/2020
-ms.openlocfilehash: 4e7b9e7fedf11b97b3f468aef541bf72a4e88ebc
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: be30fd4092f51acd4972c05b3c3ccc936aebd884
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915385"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539791"
 ---
 # <a name="using-windows-powershell-commands-in-a-dockerfile-to-set-up-windows-containers-docker-standard-based"></a>Używanie poleceń programu Windows PowerShell w pliku DockerFile do konfigurowania kontenerów systemu Windows (opartych na standardzie platformy Docker)
 
@@ -15,7 +15,7 @@ ms.locfileid: "87915385"
 
 Aby korzystać z kontenerów systemu Windows, wystarczy napisać polecenia programu Windows PowerShell w pliku dockerfile, jak pokazano w następującym przykładzie:
 
-```Dockerfile
+```dockerfile
 FROM microsoft/windowsservercore
 LABEL Description="IIS" Vendor="Microsoft" Version="10"
 RUN powershell -Command Add-WindowsFeature Web-Server
@@ -26,7 +26,7 @@ W takim przypadku korzystamy z programu Windows PowerShell, aby zainstalować po
 
 W podobny sposób można również użyć poleceń programu Windows PowerShell, aby skonfigurować dodatkowe składniki, takie jak tradycyjne ASP.NET 4. x i .NET 4,6 lub inne oprogramowanie systemu Windows, jak pokazano poniżej:
 
-```Dockerfile
+```dockerfile
 RUN powershell add-windowsfeature web-asp-net45
 ```
 

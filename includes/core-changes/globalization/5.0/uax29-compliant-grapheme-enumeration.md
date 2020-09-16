@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c0c1c9c9d8e3aeb6f689f754d09b50b208b54112
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 70b71fc55f76514dd17e5b9ba0e76151a966eebb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702324"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539481"
 ---
 ### <a name="stringinfo-and-textelementenumerator-are-now-uax29-compliant"></a>StringInfo i TextElementEnumerator są teraz zgodne UAX29
 
@@ -16,8 +16,8 @@ Ponadto <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=fullNa
 
 [Grapheme](https://www.unicode.org/glossary/#grapheme) lub [rozszerzony klaster Grapheme](https://www.unicode.org/glossary/#extended_grapheme_cluster) jest pojedynczym postrzeganym przez użytkownika znakiem, który może składać się z wielu punktów kodowych Unicode. Na przykład ciąg zawierający znak tajlandzki "Kam" ( :::no-loc text="กำ"::: ) składa się z następujących dwóch znaków:
 
-- :::no-loc text="ก":::(= "\u0e01") TAJSKI ZNAK KO KAI
-- :::no-loc text=" ำ":::(= "\u0e33") TAJSKI ZNAK SARA AM
+- :::no-loc text="ก"::: (= "\u0e01") TAJSKI ZNAK KO KAI
+- :::no-loc text=" ำ"::: (= "\u0e33") TAJSKI ZNAK SARA AM
 
 W przypadku wyświetlania użytkownikowi system operacyjny łączy dwa znaki, aby utworzyć pojedynczy znak wyświetlania (lub Grapheme) "Kam" lub :::no-loc text="กำ"::: . Emoji może również składać się z wielu znaków, które są połączone do wyświetlania w podobny sposób.
 
@@ -30,7 +30,7 @@ Począwszy od platformy .NET 5, <xref:System.Globalization.StringInfo> <xref:Sys
 
 Rozważmy następujący kod w języku C#:
 
-```cs
+```csharp
 using System.Globalization;
 
 static void Main(string[] args)

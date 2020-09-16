@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3244a36808fb687663241e704d08775ea5c96720
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: 97870553d4ec66a569ba63cd945639b03bbbd6df
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803244"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539502"
 ---
 ### <a name="kestrel-default-supported-tls-protocol-versions-changed"></a>Kestrel: zmieniono domyślne wersje protokołu TLS
 
@@ -39,7 +39,7 @@ Jeśli aplikacja nie ma określonego powodu, należy użyć nowych wartości dom
 
 Aby wyłączyć starsze protokoły, wykonaj jedną z następujących czynności:
 
-* Wyłącz starsze protokoły, takie jak TLS 1,0, system-Wide z [instrukcjami systemu Windows](/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry). Jest ona obecnie włączona domyślnie we wszystkich wersjach systemu Windows.
+* Wyłącz starsze protokoły, takie jak TLS 1,0, system-Wide z [instrukcjami systemu Windows](../../../../docs/framework/network-programming/tls.md#configuring-schannel-protocols-in-the-windows-registry). Jest ona obecnie włączona domyślnie we wszystkich wersjach systemu Windows.
 * Ręcznie wybierz protokoły, które mają być obsługiwane w kodzie w następujący sposób:
 
     ```csharp

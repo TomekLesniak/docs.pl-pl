@@ -2,15 +2,15 @@
 title: ASP.NET Core istotne zmiany
 titleSuffix: ''
 description: Wyświetla listę istotnych zmian w ASP.NET Core.
-ms.date: 09/09/2020
+ms.date: 09/11/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 2af0cc6721b66b1d07b196e4ba330f8425c14752
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: 4c3167e9cad193b6a5a11be399e8be529df3be55
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022990"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539606"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core istotne zmiany
 
@@ -25,6 +25,7 @@ Wybierz jedno z poniższych linków, aby uzyskać istotne zmiany w określonej w
 Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na tej stronie:
 
 - [Usunięto przestarzałe interfejsy API "antysfałszowane", "CORS, Diagnostics, MVC i Routing"](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
+- [Uwierzytelnianie: AzureAD. UI i AzureADB2C. interfejs API i pakiety oznaczone jako przestarzałe](#authentication-azureadui-and-azureadb2cui-apis-and-packages-marked-obsolete)
 - [Uwierzytelnianie: Google + zaniechana](#authentication-google-deprecated-and-replaced)
 - [Uwierzytelnianie: Właściwość HttpContext. Authentication została usunięta](#authentication-httpcontextauthentication-property-removed)
 - [Uwierzytelnianie: Newtonsoft.Jstypów zamieniono](#authentication-newtonsoftjson-types-replaced)
@@ -36,6 +37,7 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 - [Azure: Usunięto wstępnie ustalone pakiety integracji platformy Azure](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [Metody serializacji BinaryFormatter są przestarzałe i zabronione w aplikacjach ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)
 - [Blazor: nieznaczące odstępy są obcinane ze składników w czasie kompilacji](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
+- [Blazor: RenderTreeFrame pola publiczne ReadOnly mają właściwości](#blazor-rendertreeframe-readonly-public-fields-have-become-properties)
 - [Blazor: zmieniono platformę docelową pakietów NuGet](#blazor-target-framework-of-nuget-packages-changed)
 - [Buforowanie: Usunięto Właściwość CompactOnMemoryPressure](#caching-compactonmemorypressure-property-removed)
 - [Buforowanie: Microsoft. Extensions. buforowanie. SqlServer używa nowego pakietu SqlClient](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
@@ -104,6 +106,10 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 
 ## <a name="aspnet-core-50"></a>ASP.NET Core 5,0
 
+[!INCLUDE[Authentication: AzureAD.UI and AzureADB2C.UI APIs and packages marked obsolete](~/includes/core-changes/aspnetcore/5.0/authentication-aad-packages-obsolete.md)]
+
+***
+
 [!INCLUDE[Authorization: Resource in endpoint routing is HttpContext](~/includes/core-changes/aspnetcore/5.0/authorization-resource-in-endpoint-routing.md)]
 
 ***
@@ -117,6 +123,10 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 ***
 
 [!INCLUDE[Blazor: Insignificant whitespace trimmed from components at compile time](~/includes/core-changes/aspnetcore/5.0/blazor-components-trim-insignificant-whitespace.md)]
+
+***
+
+[!INCLUDE[Blazor: RenderTreeFrame readonly public fields have become properties](~/includes/core-changes/aspnetcore/5.0/blazor-rendertreeframe-fields-become-properties.md)]
 
 ***
 

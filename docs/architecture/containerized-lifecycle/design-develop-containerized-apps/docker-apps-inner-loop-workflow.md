@@ -2,12 +2,12 @@
 title: Przepływ pracy wewnętrznej pętli tworzenia kodu dla aplikacji platformy Docker
 description: Dowiedz się więcej o przepływie pracy programistycznej "pętla wewnętrzna" dla aplikacji platformy Docker.
 ms.date: 08/06/2020
-ms.openlocfilehash: bf837ab53fff2b53cf141b2e621d484cff9b6889
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 071e16afede91f4cfd6cbe8662fa68814ffdcdd7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916188"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539765"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Przepływ pracy wewnętrznej pętli tworzenia kodu dla aplikacji platformy Docker
 
@@ -118,7 +118,7 @@ Korzystanie z oficjalnego repozytorium stosu języka z numerem wersji zapewnia, 
 
 Poniżej znajduje się przykład pliku dockerfile dla kontenera .NET Core:
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80
@@ -284,7 +284,7 @@ Należy zauważyć, że korzysta on z portu 50080, ale wewnętrznie jest przekie
 
 Można to przetestować przy użyciu przeglądarki korzystającej z wypełniania z terminalu, jak przedstawiono na rysunku 4-30.
 
-![Uzyskano wynik zwinięcie zhttp://localhost:51080/WeatherForecast](media/docker-apps-inner-loop-workflow/test-docker-app-locally-curl.png)
+![Uzyskano wynik zwinięcie z http://localhost:51080/WeatherForecast](media/docker-apps-inner-loop-workflow/test-docker-app-locally-curl.png)
 
 **Rysunek 4-30**. Lokalne testowanie aplikacji platformy Docker przy użyciu programu ZWINIĘCIE
 

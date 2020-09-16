@@ -2,12 +2,12 @@
 title: Korzystanie z kontenerów i orkiestratorów
 description: Korzystanie z kontenerów platformy Docker i koordynatorów Kubernetes na platformie Azure
 ms.date: 05/31/2020
-ms.openlocfilehash: 25e981e0fb7957e7180be09a19a406eddfe4e51b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f9e8672b742217388bd719262ffdfee63618fd14
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446870"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540546"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Korzystanie z kontenerów i orkiestratorów
 
@@ -183,7 +183,7 @@ Program Visual Studio obsługuje programowanie platformy Docker dla aplikacji si
 
 Gdy ta opcja jest zaznaczona, projekt jest tworzony przy użyciu elementu `Dockerfile` w jego katalogu głównym, który może służyć do kompilowania i hostowania aplikacji w kontenerze platformy Docker. Przykład pliku dockerfile przedstawiono na rysunku 3 -6. git
 
-```docker
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 80

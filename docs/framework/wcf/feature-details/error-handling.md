@@ -2,16 +2,16 @@
 title: Obsługa błędów
 ms.date: 03/30/2017
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-ms.openlocfilehash: f6c0d676a37648678b2b726a46a6238ccc1b3331
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 9c7d6814a6bf1189fd85de5eb440ec4a6840447e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004890"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539986"
 ---
 # <a name="error-handling-in-windows-communication-foundation-wcf"></a>Obsługa błędów w Windows Communication Foundation (WCF)
 
-Gdy usługa napotka nieoczekiwany wyjątek lub błąd, istnieje wiele sposobów projektowania rozwiązania do obsługi wyjątków. Chociaż nie istnieje jedno rozwiązanie do obsługi błędów "poprawne" lub "najlepsze rozwiązanie", istnieje wiele prawidłowych ścieżek, które należy wziąć pod uwagę. Zwykle zaleca się, aby jeden Implementuj rozwiązanie hybrydowe, które łączy wiele metod z poniższej listy, w zależności od złożoności implementacji programu WCF, typu i częstotliwości wyjątków, obsługiwanego a nieobsługiwanego charakteru wyjątki i wszystkie powiązane wymagania dotyczące śledzenia, rejestrowania lub zasad.
+Gdy usługa napotka nieoczekiwany wyjątek lub błąd, istnieje wiele sposobów projektowania rozwiązania do obsługi wyjątków. Chociaż nie istnieje jedno rozwiązanie do obsługi błędów "poprawne" lub "najlepsze rozwiązanie", istnieje wiele prawidłowych ścieżek, które należy wziąć pod uwagę. Zwykle zaleca się, aby jeden Implementuj rozwiązanie hybrydowe, które łączy wiele metod z poniższej listy, w zależności od złożoności implementacji programu WCF, typu i częstotliwości wyjątków, obsługiwanego a nieobsłużonego charakteru wyjątków oraz wszelkich skojarzonych z nimi wymagań śledzenia, rejestrowania lub zasad.
 
 Te rozwiązania zostały wyjaśnione dokładniej w pozostałej części tej sekcji.
 
@@ -23,11 +23,11 @@ Ta biblioteka zawiera wbudowaną procedurę obsługi wyjątków kontraktu błęd
 
 Bloki aplikacji dążą do uwzględnienia często używanych najlepszych rozwiązań i zapewnienia typowego podejścia do obsługi wyjątków w aplikacji. Z drugiej strony programy obsługi błędów niestandardowych i kontrakty błędów opracowane na własne mogą być również bardzo przydatne. Na przykład niestandardowe programy obsługi błędów oferują doskonałą szansę na automatyczne podwyższenie poziomu wszystkich wyjątków do FaultExceptions oraz dodanie funkcji rejestrowania do aplikacji.
 
-Aby uzyskać więcej informacji, zobacz [Biblioteka firmy Microsoft dla przedsiębiorstw](https://docs.microsoft.com/previous-versions/msp-n-p/ff632023(v=pandp.10)).
+Aby uzyskać więcej informacji, zobacz [Biblioteka firmy Microsoft dla przedsiębiorstw](/previous-versions/msp-n-p/ff632023(v=pandp.10)).
 
 ## <a name="dealing-with-expected-exceptions"></a>Postępowanie z oczekiwanymi wyjątkami
 
-Odpowiednim sposobem działania jest przechwycenie oczekiwanych wyjątków w każdej operacji lub w odpowiednim punkcie rozszerzalności, podjęcie decyzji o tym, czy można odzyskać z programu, i zwrócić błąd niestandardowy w usłudze FaultException\<T >.
+Odpowiednim sposobem działania jest przechwycenie oczekiwanych wyjątków w każdej operacji lub w odpowiednim punkcie rozszerzalności, podjęcie decyzji o tym, czy można odzyskać z programu, i zwrócić niestandardową usterkę w liczniku FaultException \<T> .
   
 ## <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a>Postępowanie z nieoczekiwanymi wyjątkami za pomocą IErrorHandler
 

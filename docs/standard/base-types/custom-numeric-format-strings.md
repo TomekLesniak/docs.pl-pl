@@ -17,12 +17,12 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: bd96766c7483a3de1a3c70d1efbe1aa91ea45fbc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7cf61746e483fe5aa2ee5e3421219240e8700172
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447241"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541582"
 ---
 # <a name="custom-numeric-format-strings"></a>Niestandardowe ciągi formatujące liczby
 
@@ -31,9 +31,9 @@ Można utworzyć ciąg niestandardowego formatu liczb, który składa się z jed
 Niestandardowe ciągi formatujące liczb są obsługiwane przez niektóre przeciążenia `ToString` metody wszystkich typów liczbowych. Na przykład można podać ciąg formatu liczbowego do <xref:System.Int32.ToString%28System.String%29> <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metod i <xref:System.Int32> typu. Niestandardowe ciągi formatujące są również obsługiwane przez [funkcję formatowania złożonego](composite-formatting.md).NET, która jest używana przez niektóre `Write` i `WriteLine` metody <xref:System.Console> <xref:System.IO.StreamWriter> klasy i, <xref:System.String.Format%2A?displayProperty=nameWithType> metody i <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metody. Funkcja [interpolacji ciągów](../../csharp/language-reference/tokens/interpolated.md) obsługuje również niestandardowe ciągi formatujące liczby.
 
 > [!TIP]
-> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
-<a name="table"></a>W poniższej tabeli opisano niestandardowe specyfikatory formatu liczbowego i przedstawiono przykładowe dane wyjściowe generowane przez każdy specyfikator formatu. Zapoznaj się z sekcją [uwagi](#NotesCustomFormatting) , aby uzyskać dodatkowe informacje na temat używania ciągów niestandardowego formatu liczb, oraz sekcję [przykładową](#example) dla obszernej ilustracji dotyczącej ich używania.
+<a name="table"></a> W poniższej tabeli opisano niestandardowe specyfikatory formatu liczbowego i przedstawiono przykładowe dane wyjściowe generowane przez każdy specyfikator formatu. Zapoznaj się z sekcją [uwagi](#NotesCustomFormatting) , aby uzyskać dodatkowe informacje na temat używania ciągów niestandardowego formatu liczb, oraz sekcję [przykładową](#example) dla obszernej ilustracji dotyczącej ich używania.
 
 |Specyfikator formatu|Nazwa|Opis|Przykłady|
 |----------------------|----------|-----------------|--------------|
@@ -290,7 +290,7 @@ W poniższym przykładzie pokazano dwa ciągi niestandardowego formatu liczb. W 
 
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
 - [Formatowanie typów](formatting-types.md)
-- [Standardowe ciągi formatujące liczby](standard-numeric-format-strings.md)
+- [Standardowe ciągi formatów liczbowych](standard-numeric-format-strings.md)
 - [Instrukcje: Uzupełnianie liczby zerami wiodącymi](how-to-pad-a-number-with-leading-zeros.md)
-- [Przykład: Narzędzie formatowania programu .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
-- [Przykład: Narzędzie formatowania programu .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)
+- [Przykład: Narzędzie formatowania programu .NET Core WinForms (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [Przykład: Narzędzie formatowania programu .NET Core WinForms (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)

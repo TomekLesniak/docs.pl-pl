@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 99b6893854c358720259095bf3c0270cb3676483
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: e3d5a09730cb8e477bd506749017a403acff1696
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452178"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540568"
 ---
 # <a name="icorprofilerinfo10requestrejitwithinliners-method"></a>ICorProfilerInfo10:: RequestReJITWithInliners, Metoda
 
@@ -35,34 +35,34 @@ HRESULT RequestReJITWithInliners( [in]                       DWORD       dwRejit
 
 - `dwRejitFlags`
 
-  \[w) — Maska bitów [COR_PRF_REJIT_FLAGS](cor-prf-rejit-flags-enumeration.md).
+  \[w] maska bitów [COR_PRF_REJIT_FLAGS](cor-prf-rejit-flags-enumeration.md).
 
 - `cFunctions`
 
-  \[] liczba funkcji, które mają zostać ponownie skompilowane.
+  \[w] liczba funkcji, które mają zostać ponownie skompilowane.
 
 - `moduleIds`
 
-  \[in] określa `moduleId` część par (`module`, `methodDef`), które identyfikują funkcje, które mają być ponownie skompilowane.
+  \[in] określa `moduleId` część `module` par (, `methodDef` ), które identyfikują funkcje, które mają być ponownie skompilowane.
 
 - `methodIds`
 
-  \[in] określa `methodId` część par (`module`, `methodDef`), które identyfikują funkcje, które mają być ponownie skompilowane.
+  \[in] określa `methodId` część `module` par (, `methodDef` ), które identyfikują funkcje, które mają być ponownie skompilowane.
 
 ## <a name="remarks"></a>Uwagi
 
-[RequestReJIT —](icorprofilerinfo4-requestrejit-method.md) nie wykonuje żadnych śledzonych metod. Profiler powinien zablokować tworzenie i śledzenie i wywoływać `RequestReJIT` dla wszystkich elementów, aby upewnić się, że każde wystąpienie metody wbudowanej zostało ReJITted. Stanowi to problem z ReJIT po dołączeniu, ponieważ Profiler nie jest obecny do monitorowania tworzenia konspektu. Ta metoda może być wywoływana w celu zagwarantowania, że pełny zestaw elementów ReJITted również będzie się znajdować.
+[RequestReJIT —](icorprofilerinfo4-requestrejit-method.md) nie wykonuje żadnych śledzonych metod. Profiler powinien zablokować tworzenie i śledzenie i wywoływać wszystkie elementy, aby `RequestReJIT` upewnić się, że każde wystąpienie metody wbudowanej zostało ReJITted. Stanowi to problem z ReJIT po dołączeniu, ponieważ Profiler nie jest obecny do monitorowania tworzenia konspektu. Ta metoda może być wywoływana w celu zagwarantowania, że pełny zestaw elementów ReJITted również będzie się znajdować.
 
 ## <a name="requirements"></a>Wymagania
 
-**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/dependencies.md?pivots=os-windows).
+**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/windows.md?pivots=os-windows).
 
 **Nagłówek:** CorProf. idl, CorProf. h
 
 **Biblioteka:** CorGuids. lib
 
-**Wersje .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**Wersje .NET:**[!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorProfilerInfo10, interfejs](icorprofilerinfo10-interface.md)

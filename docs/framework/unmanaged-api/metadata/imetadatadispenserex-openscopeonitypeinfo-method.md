@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3480bbdb-c442-44a0-b7c6-333354503c52
 topic_type:
 - apiref
-ms.openlocfilehash: 91ef9eaa855ed841bc75bfaeead462f045eb1d8b
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 8e119093800ea0a0119ba25ba38cf2eaf9afe96b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007458"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540865"
 ---
 # <a name="imetadatadispenserexopenscopeonitypeinfo-method"></a>IMetaDataDispenserEx::OpenScopeOnITypeInfo — Metoda
 Ta metoda nie jest zaimplementowana. Jeśli zostanie wywołana, zwraca E_NOTIMPL.  
@@ -38,7 +38,7 @@ HRESULT OpenScopeOnITypeInfo (
   
 ## <a name="parameters"></a>Parametry  
  `pITI`  
- podczas Wskaźnik do interfejsu [Metoda ITypeInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) , który zawiera informacje o typie, na którym należy otworzyć zakres.  
+ podczas Wskaźnik do interfejsu [Metoda ITypeInfo](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) , który zawiera informacje o typie, na którym należy otworzyć zakres.  
   
  `dwOpenFlags`  
  podczas Flagi trybu otwartego.  
@@ -54,11 +54,11 @@ HRESULT OpenScopeOnITypeInfo (
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IMetaDataDispenserEx, interfejs](imetadatadispenserex-interface.md)
+- [IMetaDataDispenserEx — Interfejs](imetadatadispenserex-interface.md)
 - [IMetaDataDispenser — Interfejs](imetadatadispenser-interface.md)

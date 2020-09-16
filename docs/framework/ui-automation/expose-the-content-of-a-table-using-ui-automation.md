@@ -10,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, exposing content of tables
 - exposing content of tables using UI Automation
 ms.assetid: ac3c5eaa-49c7-4653-b83e-532e2a2604a2
-ms.openlocfilehash: c6ceb05421547a7e84f612ed6da2bd7002bf095b
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e32ee52ca17120dbfef6f948711c468dd1d8a021
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168462"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540813"
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>Udostępnianie zawartości tabel za pomocą automatyzacji interfejsu użytkownika
 > [!NOTE]
@@ -27,7 +27,7 @@ ms.locfileid: "87168462"
  Poniższy przykład kodu demonstruje, jak uzyskać element <xref:System.Windows.Automation.AutomationElement> reprezentujący zawartość komórki tabeli; są również uzyskiwane właściwości komórek, takie jak indeksy wierszy i kolumn, zakresy wierszy i kolumn oraz informacje nagłówka wiersza i kolumny. W tym przykładzie zastosowano procedurę obsługi zdarzeń zmiany fokusu, aby symulować przechodzenie klawiatury w formancie tabelarycznym, który implementuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Informacje dla każdego elementu tabeli są ujawniane w przypadku zdarzenia zmiany fokusu.  
   
 > [!NOTE]
-> Ponieważ zmiany ostrości są globalnymi zdarzeniami pulpitu, zdarzenia zmiany fokusu spoza tabeli powinny być filtrowane. Zobacz [przykład TrackFocus](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) dla powiązanej implementacji.  
+> Ponieważ zmiany ostrości są globalnymi zdarzeniami pulpitu, zdarzenia zmiany fokusu spoza tabeli powinny być filtrowane. Zobacz [przykład TrackFocus](/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) dla powiązanej implementacji.  
   
  [!code-csharp[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#starttarget)]
  [!code-vb[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#starttarget)]  

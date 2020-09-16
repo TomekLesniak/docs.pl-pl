@@ -7,17 +7,17 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 12/04/2019
-ms.openlocfilehash: fd6658a6143e132d488660d1aa4a35e427ba2d84
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: a4d7558039d64b21a2744f74d037369ea8c6c923
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174799"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539271"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Charakterystyki nowoczesnych aplikacji sieci Web
 
 > "… przy odpowiednim projekcie funkcje są tanie. To podejście jest uciążliwy, ale nadal kończy się powodzeniem ".  
-> _\-Dennis Ritchie_
+> _\- Dennis Ritchie_
 
 Nowoczesne aplikacje sieci Web mają wyższy poziom oczekiwań użytkowników i większe wymagania niż kiedykolwiek wcześniej. Oczekuje się, że dzisiejsze aplikacje sieci Web będą dostępne 24/7 z dowolnego miejsca na świecie i mogą być używane praktycznie dla każdego urządzenia lub rozmiaru ekranu. Aplikacje sieci Web muszą być bezpieczne, elastyczne i skalowalne, aby sprostać wzrostom popytu. Coraz bardziej złożone scenariusze powinny być obsługiwane przez bogate środowiska użytkownika, które są tworzone na kliencie przy użyciu języka JavaScript, i wydajnie komunikują się za pośrednictwem interfejsów API sieci Web.
 
@@ -38,7 +38,7 @@ Te wskazówki obejmują aplikację referencyjną _eShopOnWeb_, która pokazuje n
 
 ## <a name="cloud-hosted-and-scalable"></a>Hostowane w chmurze i skalowalne
 
-ASP.NET Core jest zoptymalizowany dla chmury (chmura publiczna, Chmura prywatna, dowolna chmura), ponieważ ma małą ilość pamięci i wysoką przepływność. Mniejsza część aplikacji ASP.NET Core oznacza, że możesz obsługiwać więcej z nich na tym samym sprzęcie i płacisz za mniejszą liczbę zasobów przy korzystaniu z usług hostingu zgodnie z rzeczywistym użyciem. Wyższa przepływność polega na tym, że można obsłużyć większą liczbę klientów z aplikacji przy użyciu tego samego sprzętu, co jeszcze bardziej zmniejsza konieczność inwestowania w serwery i infrastrukturę hostingu.
+ASP.NET Core jest zoptymalizowany dla chmury (chmura publiczna, Chmura prywatna, dowolna chmura), ponieważ ma małą ilość pamięci i wysoką przepływność. Mniejsza część aplikacji ASP.NET Core oznacza, że możesz obsługiwać więcej z nich na tym samym sprzęcie i płacisz za mniejszą liczbę zasobów przy korzystaniu z usług hostingu w chmurze z systemem płatność zgodnie z rzeczywistym użyciem. Wyższa przepływność polega na tym, że można obsłużyć większą liczbę klientów z aplikacji przy użyciu tego samego sprzętu, co jeszcze bardziej zmniejsza konieczność inwestowania w serwery i infrastrukturę hostingu.
 
 ## <a name="cross-platform"></a>Wiele platform
 
@@ -72,11 +72,11 @@ Oprócz ASP.NET Core, tradycyjne ASP.NET 4. x nadal są niezawodną i niezawodn�
 
 ## Blazor
 
-Blazorjest dołączony do ASP.NET Core 3,0 i nowszych. Zapewnia nowy mechanizm tworzenia rozbudowanych aplikacji klienckich sieci Web przy użyciu Razor, C# i ASP.NET Core. Oferuje inne rozwiązanie, które należy wziąć pod uwagę podczas tworzenia nowoczesnych aplikacji sieci Web. Istnieją dwie wersje programu, Blazor które należy wziąć pod uwagę: po stronie serwera i po stronie klienta.
+Blazor jest dołączony do ASP.NET Core 3,0 i nowszych. Zapewnia nowy mechanizm tworzenia rozbudowanych aplikacji klienckich sieci Web przy użyciu Razor, C# i ASP.NET Core. Oferuje inne rozwiązanie, które należy wziąć pod uwagę podczas tworzenia nowoczesnych aplikacji sieci Web. Istnieją dwie wersje programu, Blazor które należy wziąć pod uwagę: po stronie serwera i po stronie klienta.
 
 Po stronie serwera Blazor został opublikowany w 2019 z ASP.NET Core 3,0. Ponieważ jego nazwa jest taka sama, jest uruchamiana na serwerze, renderuje zmiany w dokumencie klienta z powrotem do przeglądarki za pośrednictwem sieci. Po stronie serwera Blazor zapewnia rozbudowane środowisko klienta bez konieczności wykonywania kodu JavaScript po stronie klienta i bez konieczności ładowania oddzielnych stron dla każdej interakcji ze strony klienta. Zmiany na załadowanej stronie są żądane i przetwarzane przez serwer, a następnie wysyłane z powrotem do klienta przy użyciu usługi sygnalizującej.
 
-Po stronie klienta Blazor zostanie wydana wartość 2020, co pozwoli wyeliminować konieczność renderowania zmian na serwerze. Zamiast tego będzie używana WebAssembly do uruchamiania kodu platformy .NET w ramach klienta. Klient może nadal wykonywać wywołania interfejsu API na serwerze, jeśli jest to potrzebne do żądania danych, ale wszystkie zachowania po stronie klienta są uruchamiane na kliencie za pośrednictwem programu WebAssembly , który jest już obsługiwany przez wszystkie główne przeglądarki i jest tylko biblioteką JavaScript.
+Po stronie klienta Blazor wydano w maju 2020, eliminuje konieczność renderowania zmian na serwerze. Zamiast tego wykorzystuje WebAssembly do uruchamiania kodu platformy .NET w ramach klienta. Klient może nadal wykonywać wywołania interfejsu API na serwerze, jeśli jest to potrzebne do żądania danych, ale wszystkie zachowania po stronie klienta są uruchamiane na kliencie za pośrednictwem programu WebAssembly , który jest już obsługiwany przez wszystkie główne przeglądarki i jest tylko biblioteką JavaScript.
 
 > ### <a name="references--modern-web-applications"></a>Odwołania — nowoczesne aplikacje sieci Web
 >
@@ -84,7 +84,7 @@ Po stronie klienta Blazor zostanie wydana wartość 2020, co pozwoli wyeliminowa
 >   <https://docs.microsoft.com/aspnet/core/>
 > - **Testowanie w ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/testing/>
-> - **Blazor-Wprowadzenie**  
+> - **Blazor -Wprowadzenie**  
 >   <https://blazor.net/docs/get-started.html>
 
 >[!div class="step-by-step"]

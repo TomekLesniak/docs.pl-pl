@@ -3,12 +3,12 @@ title: Dokumenty i dane XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-ms.openlocfilehash: a752d634141a56df1caa61eb5d375dd2a402832f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6d2a52567a1fc8bdbbb1d039ac583c889d77d4af
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287691"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540137"
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty i dane XML
 
@@ -24,7 +24,7 @@ ms.locfileid: "84287691"
 
 - <xref:System.Xml.Linq>
 
-Aby uzyskać pełną listę, wyszukaj ciąg "System. xml" w [przeglądarce interfejsów API platformy .NET](https://docs.microsoft.com/dotnet/api/?term=system.xml).
+Aby uzyskać pełną listę, wyszukaj frazę "System.Xml" w [przeglądarce interfejsu API platformy .NET](../../../../api/index.md?term=system.xml).
 
 Klasy w tych obszarach nazw obsługują zalecenia dotyczące organizacja World Wide Web Consortium (W3C). Na przykład:
 
@@ -38,7 +38,7 @@ Klasy w tych obszarach nazw obsługują zalecenia dotyczące organizacja World W
 
 Klasy XML w .NET Framework zapewniają następujące korzyści:
 
-- **Zwiększając.** [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) i [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) ułatwiają programowanie w języku XML i udostępniają środowisko zapytań podobne do języka SQL.
+- **Zwiększając.** [LINQ to XML (C#)](../../linq/linq-xml-overview.md) i [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md) ułatwiają programowanie w języku XML i udostępniają środowisko zapytań podobne do języka SQL.
 
 - **Rozszerzaln.** Klasy XML w .NET Framework są rozszerzalne przy użyciu abstrakcyjnych klas podstawowych i metod wirtualnych. Na przykład można utworzyć klasę pochodną <xref:System.Xml.XmlUrlResolver> klasy, która przechowuje strumień pamięci podręcznej na dysku lokalnym.
 
@@ -60,7 +60,7 @@ Klasy XML w .NET Framework zapewniają następujące korzyści:
 
 [Opcje przetwarzania XML](xml-processing-options.md) W tym artykule omówiono opcje przetwarzania danych XML.
 
-[Przetwarzanie danych XML w pamięci](processing-xml-data-in-memory.md) Omawia trzy modele przetwarzania danych XML w pamięci: [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) i [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md), <xref:System.Xml.XmlDocument> klasy (na podstawie Document Object Model W3C) i <xref:System.Xml.XPath.XPathDocument> klasy (na podstawie modelu danych XPath).
+[Przetwarzanie danych XML w pamięci](processing-xml-data-in-memory.md) Omawia trzy modele przetwarzania danych XML w pamięci: [LINQ to XML (C#)](../../linq/linq-xml-overview.md) i [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md), <xref:System.Xml.XmlDocument> klasy (na podstawie Document Object Model W3C) i <xref:System.Xml.XPath.XPathDocument> klasy (na podstawie modelu danych XPath).
 
 [Przekształcenia XSLT](xslt-transformations.md)\
 Opisuje sposób korzystania z procesora XSLT.
@@ -74,7 +74,7 @@ Opisuje, w jaki sposób .NET Framework umożliwia dostęp synchroniczny do relac
 [Zarządzanie przestrzeniami nazw w dokumencie XML](managing-namespaces-in-an-xml-document.md)\
 Opisuje, w jaki sposób <xref:System.Xml.XmlNamespaceManager> Klasa jest używana do przechowywania i konserwowania informacji o przestrzeni nazw.
 
-[Obsługa typów w klasach system. XML](type-support-in-the-system-xml-classes.md)\
+[Obsługa typów w klasach System.Xml](type-support-in-the-system-xml-classes.md)\
 Opisuje sposób mapowania typów danych XML na typy CLR, sposób konwersji typów danych XML i inne funkcje obsługi typu w <xref:System.Xml> klasach.
 
 ## <a name="related-sections"></a>Sekcje pokrewne

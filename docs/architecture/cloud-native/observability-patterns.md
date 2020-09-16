@@ -1,13 +1,13 @@
 ---
 title: Wzorce wglądu
 description: Wzorce zauważalne dla aplikacji natywnych w chmurze
-ms.date: 05/13/2020
-ms.openlocfilehash: db6a56358923025cbcca9478908474227e5da96d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.date: 08/10/2020
+ms.openlocfilehash: 2a6ef0e58f1e20667167042614768b099f640858
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613814"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539856"
 ---
 # <a name="observability-patterns"></a>Wzorce wglądu
 
@@ -15,7 +15,7 @@ Podobnie jak wzorce zostały opracowane w celu pomocy w układzie kodu w aplikac
 
 ## <a name="when-to-use-logging"></a>Kiedy należy używać rejestrowania
 
-Bez względu na to, jak dokładnie jesteśmy, aplikacje niemal zawsze zachowują się w nieoczekiwany sposób w środowisku produkcyjnym. Gdy użytkownicy zgłaszają problemy z aplikacją, niezwykle przydatna jest możliwość sprawdzenia, co się dzieje z aplikacją, gdy wystąpił problem. Jednym z najpopularniejszych i prawdziwych sposobów przechwytywania informacji na temat działania aplikacji, gdy jest uruchomiona, jest zapisanie przez aplikację co robi. Ten proces jest nazywany rejestrowaniem. Wszelkie błędy czasu lub problemy występujące w środowisku produkcyjnym należy wykonać w celu odtworzenia warunków, w których wystąpiły awarie, w środowiskach nieprodukcyjnych. Jeśli dobre miejsce do zarejestrowania zawiera Przewodnik dla deweloperów, w celu duplikowania problemów w środowisku, które mogą być testowane i eksperymentować.
+Bez względu na to, jak dokładnie jesteśmy, aplikacje niemal zawsze zachowują się w nieoczekiwany sposób w środowisku produkcyjnym. Gdy użytkownicy zgłaszają problemy z aplikacją, warto sprawdzić, co się dzieje z aplikacją w przypadku wystąpienia problemu. Jednym z najpopularniejszych i prawdziwych sposobów przechwytywania informacji na temat działania aplikacji, gdy jest uruchomiona, jest zapisanie przez aplikację co robi. Ten proces jest nazywany rejestrowaniem. W przypadku wystąpienia awarii lub problemów występujących w środowisku produkcyjnym celem powinna być odtworzenie warunków, w których wystąpiły awarie, w środowiskach nieprodukcyjnych. Jeśli dobre miejsce do zarejestrowania zawiera Przewodnik dla deweloperów, w celu duplikowania problemów w środowisku, które mogą być testowane i eksperymentować.
 
 ### <a name="challenges-when-logging-with-cloud-native-applications"></a>Wyzwania podczas rejestrowania w aplikacjach natywnych w chmurze
 

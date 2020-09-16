@@ -2,12 +2,12 @@
 title: Wdrażanie bram interfejsu API za pomocą rozwiązania Ocelot
 description: Dowiedz się, jak zaimplementować bramy interfejsu API za pomocą Ocelot oraz jak używać Ocelot w środowisku opartym na kontenerach.
 ms.date: 03/02/2020
-ms.openlocfilehash: 3611ffa7a163ff632ca854fafb910fcd3e228306
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: cd776b2fa31a630d9b58530605966ed2431912a2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358989"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539557"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementowanie bram interfejsu API za pomocą Ocelot
 
@@ -87,7 +87,7 @@ public async Task<IActionResult> GetItemById(int id)
 
 W odniesieniu do adresu URL mikrousług, gdy kontenery są wdrażane na lokalnym komputerze deweloperskim (lokalny Host platformy Docker), każdy kontener mikrousług ma zawsze port wewnętrzny (zazwyczaj port 80) określony w pliku dockerfile, jak w poniższym pliku dockerfile:
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80

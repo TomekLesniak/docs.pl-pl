@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 74c3d3247912dcd638a9379d54e682967c5e400b
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 18718ebc934e0175c20411055b8c0a90ef6b175f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302720"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539488"
 ---
 ### <a name="globalization-apis-use-icu-libraries-on-windows"></a>Interfejsy API globalizacji korzystają z bibliotek ICU w systemie Windows
 
@@ -27,7 +27,7 @@ Ta zmiana została wprowadzona z dwóch powodów:
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-W części dewelopera nie jest wymagana żadna akcja. Jeśli jednak chcesz kontynuować korzystanie z interfejsów API globalizacji NLS, możesz ustawić [przełącznik czasu wykonywania](../../../../docs/core/run-time-config/globalization.md#nls) w celu przywrócenia tego zachowania. Aby uzyskać więcej informacji na temat dostępnych przełączników, zobacz artykuł [globalizacja i ICU platformy .NET](/dotnet/standard/globalization-localization/globalization-icu) .
+W części dewelopera nie jest wymagana żadna akcja. Jeśli jednak chcesz kontynuować korzystanie z interfejsów API globalizacji NLS, możesz ustawić [przełącznik czasu wykonywania](../../../../docs/core/run-time-config/globalization.md#nls) w celu przywrócenia tego zachowania. Aby uzyskać więcej informacji na temat dostępnych przełączników, zobacz artykuł [globalizacja i ICU platformy .NET](../../../../docs/standard/globalization-localization/globalization-icu.md) .
 
 #### <a name="category"></a>Kategoria
 

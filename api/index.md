@@ -8,13 +8,13 @@ quickFilterColumn3: azure-dotnet,ml-dotnet,spark-dotnet
 ms.topic: landing-page
 ms.custom: updateeachrelease
 ms.date: 01/24/2020
-ms.openlocfilehash: b1781d0dddbcb368e0e26bd41f51eeaeeba809e0
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: cf15aaacc853cba386f99205cfe5bf625e8dda21
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308861"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539921"
 ---
 # <a name="net-api-browser"></a>Przeglądarka interfejsów API na platformie .NET
 
-Witamy w przeglądarce interfejsu API platformy .NET — dla wszystkich. Oparte na sieci interfejsy API firmy Microsoft. Rozpocznij wyszukiwanie wszelkich zarządzanych interfejsów API, wpisując je w polu poniżej. Więcej informacji na temat przeglądarki interfejsu API można znaleźć [w naszym wpisie w blogu](https://aka.ms/apibrowser). Jeśli masz jakieś opinie, Utwórz nowy problem w [repozytorium MicrosoftDocs/opinia w witrynie GitHub](https://github.com/MicrosoftDocs/feedback/issues).
+Witamy w przeglądarce interfejsu API platformy .NET — dla wszystkich. Oparte na sieci interfejsy API firmy Microsoft. Rozpocznij wyszukiwanie wszelkich zarządzanych interfejsów API, wpisując je w polu poniżej. Więcej informacji na temat przeglądarki interfejsu API można znaleźć [w naszym wpisie w blogu](/teamblog/announcing-unified-dotnet-experience-on-docs). Jeśli masz jakieś opinie, Utwórz nowy problem w [repozytorium MicrosoftDocs/opinia w witrynie GitHub](https://github.com/MicrosoftDocs/feedback/issues).

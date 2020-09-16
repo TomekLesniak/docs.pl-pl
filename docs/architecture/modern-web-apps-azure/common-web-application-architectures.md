@@ -4,12 +4,12 @@ description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyci
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: de90db9061d0b7bd15141b277ae4272b5208f76b
-ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
+ms.openlocfilehash: dc907e57adba0dd81e5cf27c2798759cee12bed2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379164"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539362"
 ---
 # <a name="common-web-application-architectures"></a>Typowe architektury aplikacji internetowych
 
@@ -267,7 +267,7 @@ networks:
 
 `docker-compose.yml`Plik odwołuje się do `Dockerfile` `Web` projektu. Służy `Dockerfile` do określenia, który kontener bazowy będzie używany, oraz sposobu ich konfiguracji. `Web`" `Dockerfile` :
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app
 

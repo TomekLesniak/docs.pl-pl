@@ -3,16 +3,16 @@ title: Flagi funkcji
 description: Implementuj flagi funkcji w aplikacjach natywnych w chmurze korzystających z konfiguracji aplikacji platformy Azure
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 607bd14a415a25b382f550e697542cf749a21772
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: be4ab307069065975dc22d6bd984e12a2ea1457d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614074"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540468"
 ---
 # <a name="feature-flags"></a>Flagi funkcji
 
-W rozdziale 1 zagwarantujemy, że chmura w chmurze ma wiele informacji o szybkości i elastyczności. Użytkownicy oczekują szybkiego reagowania, innowacyjnych funkcji i zerowego przestoju. `Feature flags`to nowoczesny technik wdrażania, który pomaga zwiększyć elastyczność dla aplikacji natywnych w chmurze. Umożliwiają one wdrażanie nowych funkcji w środowisku produkcyjnym, ale ogranicza ich dostępność. Dzięki szybkiemu przejściu przełącznika można aktywować nową funkcję dla określonych użytkowników bez konieczności ponownego uruchamiania aplikacji ani wdrażania nowego kodu. Oddzielają one wydanie nowych funkcji od ich wdrożenia kodu.
+W rozdziale 1 zagwarantujemy, że chmura w chmurze ma wiele informacji o szybkości i elastyczności. Użytkownicy oczekują szybkiego reagowania, innowacyjnych funkcji i zerowego przestoju. `Feature flags` to nowoczesny technik wdrażania, który pomaga zwiększyć elastyczność dla aplikacji natywnych w chmurze. Umożliwiają one wdrażanie nowych funkcji w środowisku produkcyjnym, ale ogranicza ich dostępność. Dzięki szybkiemu przejściu przełącznika można aktywować nową funkcję dla określonych użytkowników bez konieczności ponownego uruchamiania aplikacji ani wdrażania nowego kodu. Oddzielają one wydanie nowych funkcji od ich wdrożenia kodu.
 
 Flagi funkcji są tworzone na podstawie logiki warunkowej kontrolującej widoczność funkcji dla użytkowników w środowisku uruchomieniowym. W nowoczesnych systemach natywnych w chmurze często Wdrażaj nowe funkcje w środowisku produkcyjnym, ale Przetestuj je za pomocą ograniczonej grupy odbiorców. W miarę wzrostu pewności funkcja może zostać przeprowadzona przyrostowo dla szerszego grona odbiorców.
 
@@ -29,7 +29,7 @@ Flagi funkcji wspierają także `trunk-based` programowanie. Jest to model rozga
 
 W jego rdzeńu flaga funkcji jest odwołaniem do prostej `decision object` . Zwraca wartość logiczną `on` lub `off` . Flaga zwykle otacza blok kodu, który hermetyzuje funkcję funkcji. Stan flagi określa, czy ten blok kodu jest wykonywany dla danego użytkownika. Na rysunku 10-11 przedstawiono implementację.
 
-```c#
+```csharp
 if (featureFlag) {
     // Run this code block if the featureFlag value is true
 } else {
@@ -49,7 +49,7 @@ Flagi funkcji można łatwo zaimplementować w [usłudze ASP.NET Core](https://d
 
 Po skonfigurowaniu w klasie startowej można dodać funkcję flagi funkcji na poziomie kontrolera, akcji lub oprogramowania pośredniczącego. Rysunek 10-12 przedstawia implementację kontrolera i akcji:
 
-```c#
+```csharp
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public class ProductController : Controller
 {
@@ -57,7 +57,7 @@ public class ProductController : Controller
 }
 ```
 
-```c#
+```csharp
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public IActionResult UpdateProductStatus()
 {
@@ -71,7 +71,7 @@ Jeśli flaga funkcji jest wyłączona, użytkownik otrzyma kod stanu 404 (nie zn
 
 Flagi funkcji można również dodawać bezpośrednio do klas języka C#. Rysunek 10-13 pokazuje iniekcję flagi funkcji:
 
-```c#
+```csharp
 public class ProductController : Controller
 {
     private readonly IFeatureManager _featureManager;

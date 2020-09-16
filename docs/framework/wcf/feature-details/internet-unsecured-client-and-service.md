@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 0b02d1efc98f02390555861871d280f9800ced1e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 017744d692d6fd4183fde3c21e71fcee2f35844e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598882"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535361"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Niezabezpieczony klient internetowy i usługa
 Na poniższej ilustracji przedstawiono przykład publicznego, niezabezpieczonego Windows Communication Foundation (WCF) i usługi:  
@@ -21,7 +21,7 @@ Na poniższej ilustracji przedstawiono przykład publicznego, niezabezpieczonego
 |--------------------|-----------------|  
 |Tryb zabezpieczeń|Brak|  
 |Transport|HTTP|  
-|Wiązanie|<xref:System.ServiceModel.BasicHttpBinding>w kodzie lub w [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) elemencie konfiguracji.|  
+|Wiązanie|<xref:System.ServiceModel.BasicHttpBinding> w kodzie lub w [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) elemencie konfiguracji.|  
 |Współdziałanie|Z istniejącymi usługami i klientami usług sieci Web|  
 |Authentication|Brak|  
 |Integralność|Brak|  
@@ -72,7 +72,7 @@ Na poniższej ilustracji przedstawiono przykład publicznego, niezabezpieczonego
   
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).  
   
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:  
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -109,8 +109,8 @@ Na poniższej ilustracji przedstawiono przykład publicznego, niezabezpieczonego
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typowe scenariusze zabezpieczeń](common-security-scenarios.md)
 - [Przegląd zabezpieczeń](security-overview.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))
