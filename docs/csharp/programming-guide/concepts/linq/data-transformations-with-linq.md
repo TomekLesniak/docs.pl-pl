@@ -11,12 +11,12 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: 6844cf2aa589f7516a9e40bc604c5f907ec6d311
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: af08938b6b8f169ded2180529c2b4aadebefef55
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104020"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558813"
 ---
 # <a name="data-transformations-with-linq-c"></a>Przekształcanie danych za pomocą LINQ (C#)
 Zapytanie zintegrowane z językiem (LINQ) nie tylko pobiera dane. Jest to również zaawansowane narzędzie do przekształcania danych. Używając zapytania LINQ, można użyć sekwencji źródłowej jako danych wejściowych i zmodyfikować ją na wiele sposobów, aby utworzyć nową sekwencję wyjściową. Można zmodyfikować samą sekwencję bez modyfikowania samych elementów przez sortowanie i grupowanie. Jednak prawdopodobnie najbardziej wydajną funkcją zapytań LINQ jest możliwość tworzenia nowych typów. Jest to realizowane w klauzuli [SELECT](../../../language-reference/keywords/select-clause.md) . Na przykład można wykonać następujące zadania:  
@@ -88,7 +88,7 @@ Zapytanie zintegrowane z językiem (LINQ) nie tylko pobiera dane. Jest to równi
 </Root>  
 ```  
   
- Aby uzyskać więcej informacji, zobacz [Tworzenie drzew XML w języku C# (LINQ to XML)](./creating-xml-trees-linq-to-xml-2.md).  
+ Aby uzyskać więcej informacji, zobacz [Tworzenie drzew XML w języku C# (LINQ to XML)](../../../../standard/linq/create-xml-trees.md).  
   
 ## <a name="performing-operations-on-source-elements"></a>Wykonywanie operacji na elementach źródłowych  
  Sekwencja wyjściowa może nie zawierać żadnych elementów ani właściwości elementów z sekwencji źródłowej. Wyjście może zamiast tego być sekwencją wartości, które są obliczane przy użyciu elementów źródłowych jako argumentów wejściowych.
@@ -102,11 +102,11 @@ Zapytanie zintegrowane z językiem (LINQ) nie tylko pobiera dane. Jest to równi
   
  [!code-csharp[CsLINQGettingStarted#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#10)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Language-Integrated Query (LINQ) (C#)](./index.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 - [LINQ do DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
-- [LINQ to XML (C#)](./linq-to-xml-overview.md)
+- [LINQ to XML (C#)](../../../../standard/linq/linq-xml-overview.md)
 - [Wyrażenia zapytania LINQ](../../../linq/index.md)
-- [select — Klauzula](../../../language-reference/keywords/select-clause.md)
+- [SELECT — klauzula](../../../language-reference/keywords/select-clause.md)

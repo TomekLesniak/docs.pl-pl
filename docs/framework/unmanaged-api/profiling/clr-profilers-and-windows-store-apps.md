@@ -12,12 +12,12 @@ helpviewer_keywords:
 - profiling managed code
 - profiling managed code [Windows Store Apps]
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
-ms.openlocfilehash: 6330a4c2733729da264065d1eec8c3c9eaf9f05c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8922f057cb59258e2dd002cec4015af518dc255f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501030"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553359"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR i aplikacje sklepu Windows Store
 
@@ -76,7 +76,7 @@ Urządzenia z systemem Windows RT są całkowicie zablokowane. Do takich urządz
 
 W kilku scenariuszach omówionych w poniższych sekcjach aplikacja klasyczna interfejsu użytkownika profilera musi korzystać z nowych interfejsów API środowisko wykonawcze systemu Windows. Zapoznaj się z dokumentacją, aby dowiedzieć się, które środowisko wykonawcze systemu Windows interfejsy API mogą być używane z aplikacji klasycznych, oraz czy ich zachowanie jest różne w przypadku wywołania z aplikacji klasycznych i aplikacji ze sklepu Windows.
 
-Jeśli interfejs użytkownika profilera jest zapisywana w kodzie zarządzanym, należy wykonać kilka kroków, aby ułatwić korzystanie z tych środowisko wykonawcze systemu Windows interfejsów API. Aby uzyskać więcej informacji, zobacz artykuł [aplikacje klasyczne i środowisko wykonawcze systemu Windows](https://docs.microsoft.com/previous-versions/windows/apps/jj856306(v=win.10)) .
+Jeśli interfejs użytkownika profilera jest zapisywana w kodzie zarządzanym, należy wykonać kilka kroków, aby ułatwić korzystanie z tych środowisko wykonawcze systemu Windows interfejsów API. Aby uzyskać więcej informacji, zobacz artykuł [aplikacje klasyczne i środowisko wykonawcze systemu Windows](/previous-versions/windows/apps/jj856306(v=win.10)) .
 
 ## <a name="loading-the-profiler-dll"></a>Ładowanie pliku DLL profilera
 
@@ -98,7 +98,7 @@ Gdy system Windows podejmie próbę załadowania biblioteki DLL profilera, spraw
 
 - Upewnij się, że Twój plik DLL profilera jest podpisany.
 
-- Poinformuj użytkownika, że muszą zainstalować licencję dewelopera na swoim komputerze z systemem Windows 8 przed skorzystaniem z narzędzia. Można to zrobić automatycznie z poziomu programu Visual Studio lub ręcznie z poziomu wiersza polecenia. Aby uzyskać więcej informacji, zobacz [Uzyskiwanie licencji dewelopera](https://docs.microsoft.com/previous-versions/windows/apps/hh974578(v=win.10)).
+- Poinformuj użytkownika, że muszą zainstalować licencję dewelopera na swoim komputerze z systemem Windows 8 przed skorzystaniem z narzędzia. Można to zrobić automatycznie z poziomu programu Visual Studio lub ręcznie z poziomu wiersza polecenia. Aby uzyskać więcej informacji, zobacz [Uzyskiwanie licencji dewelopera](/previous-versions/windows/apps/hh974578(v=win.10)).
 
 **Uprawnienia systemu plików**
 
@@ -122,7 +122,7 @@ Jeśli proces próbuje zduplikować proces aplikacji ze sklepu Windows w trybie 
 
 Najpierw należy polecić użytkownikowi profilera, który ma zostać uruchomiony aplikacja ze sklepu Windows. W przypadku aplikacji klasycznych może być widoczne okno dialogowe przeglądania plików, a użytkownik powinien znaleźć i wybrać plik. exe. Jednak aplikacje ze sklepu Windows różnią się, a korzystanie z okna dialogowego przeglądania nie ma sensu. Zamiast tego lepiej jest pokazać użytkownikowi listę aplikacji ze sklepu Windows zainstalowanych dla danego użytkownika.
 
-<xref:Windows.Management.Deployment.PackageManager>Aby wygenerować tę listę, można użyć klasy. `PackageManager`jest klasą środowisko wykonawcze systemu Windows, która jest dostępna dla aplikacji klasycznych, a w rzeczywistości jest dostępna *tylko* dla aplikacji klasycznych.
+<xref:Windows.Management.Deployment.PackageManager>Aby wygenerować tę listę, można użyć klasy. `PackageManager` jest klasą środowisko wykonawcze systemu Windows, która jest dostępna dla aplikacji klasycznych, a w rzeczywistości jest dostępna *tylko* dla aplikacji klasycznych.
 
 Poniższy przykład kodu z hipotetycznego interfejsu użytkownika profilera zapisaną jako aplikacja klasyczna w języku C# używa `PackageManager` do generowania listy aplikacji systemu Windows:
 
@@ -147,9 +147,9 @@ pkgDebugSettings.EnableDebugging(packageFullName, debuggerCommandLine,
 
 Istnieje kilka elementów, które trzeba uzyskać po prawej stronie:
 
-- `packageFullName`można określić podczas iterowania pakietów i ich przeprowadzania `package.Id.FullName` .
+- `packageFullName` można określić podczas iterowania pakietów i ich przeprowadzania `package.Id.FullName` .
 
-- `debuggerCommandLine`jest nieco bardziej interesujący. Aby przekazać blok środowiska niestandardowego do aplikacji ze sklepu Windows, należy napisać własny debuger fikcyjny uproszczony. System Windows duplikuje aplikację ze sklepu Windows, a następnie dołącza debuger, uruchamiając debuger przy użyciu wiersza polecenia, takiego jak w poniższym przykładzie:
+- `debuggerCommandLine` jest nieco bardziej interesujący. Aby przekazać blok środowiska niestandardowego do aplikacji ze sklepu Windows, należy napisać własny debuger fikcyjny uproszczony. System Windows duplikuje aplikację ze sklepu Windows, a następnie dołącza debuger, uruchamiając debuger przy użyciu wiersza polecenia, takiego jak w poniższym przykładzie:
 
     ```console
     MyDummyDebugger.exe -p 1336 -tid 1424
@@ -271,7 +271,7 @@ Może się okazać, że absolutnie nie można wykonać bez określonego interfej
 
 ### <a name="reduced-permissions"></a>Ograniczone uprawnienia
 
-Jest to poza zakresem tego tematu, aby wyświetlić listę wszystkich sposobów, w których uprawnienia aplikacji ze sklepu Windows różnią się od aplikacji klasycznych. Chociaż zachowanie będzie się różnić za każdym razem, gdy biblioteka DLL profilera (w przypadku załadowania do aplikacji ze sklepu Windows w porównaniu z aplikacją klasyczną) próbuje uzyskać dostęp do wszystkich zasobów. System plików jest najbardziej typowym przykładem. Istnieje jednak kilka miejsc na dysku, do których dostęp ma dana aplikacja ze sklepu Windows (zobacz dostęp do [pliku i uprawnienia (środowisko wykonawcze systemu Windows aplikacje](https://docs.microsoft.com/previous-versions/windows/apps/hh967755(v=win.10))), a Twój plik DLL profilera będzie objęty tymi samymi ograniczeniami. Dokładnie Przetestuj swój kod.
+Jest to poza zakresem tego tematu, aby wyświetlić listę wszystkich sposobów, w których uprawnienia aplikacji ze sklepu Windows różnią się od aplikacji klasycznych. Chociaż zachowanie będzie się różnić za każdym razem, gdy biblioteka DLL profilera (w przypadku załadowania do aplikacji ze sklepu Windows w porównaniu z aplikacją klasyczną) próbuje uzyskać dostęp do wszystkich zasobów. System plików jest najbardziej typowym przykładem. Istnieje jednak kilka miejsc na dysku, do których dostęp ma dana aplikacja ze sklepu Windows (zobacz dostęp do [pliku i uprawnienia (środowisko wykonawcze systemu Windows aplikacje](/previous-versions/windows/apps/hh967755(v=win.10))), a Twój plik DLL profilera będzie objęty tymi samymi ograniczeniami. Dokładnie Przetestuj swój kod.
 
 ### <a name="inter-process-communication"></a>Komunikacja między procesami
 
@@ -317,7 +317,7 @@ Interfejs użytkownika profilera musi znaleźć to nazwane zdarzenie w przestrze
 
 `AppContainerNamedObjects\<acSid>\MyNamedEvent`
 
-`<acSid>`jest identyfikatorem SID aplikacji do sklepu Windows. W poprzedniej sekcji tego tematu pokazano, jak wykonać iterację pakietów zainstalowanych dla bieżącego użytkownika. Z tego przykładowego kodu można uzyskać packageId. I z packageId można uzyskać `<acSid>` kod z kodem podobnym do poniższego:
+`<acSid>` jest identyfikatorem SID aplikacji do sklepu Windows. W poprzedniej sekcji tego tematu pokazano, jak wykonać iterację pakietów zainstalowanych dla bieżącego użytkownika. Z tego przykładowego kodu można uzyskać packageId. I z packageId można uzyskać `<acSid>` kod z kodem podobnym do poniższego:
 
 ```csharp
 IntPtr acPSID;
@@ -378,11 +378,11 @@ Moduł wyrzucania elementów bezużytecznych i zarządzanej sterty różni się 
 
 Podczas profilowania pamięci Biblioteka DLL programu Profiler zazwyczaj tworzy oddzielny wątek, z którego można wywołać metodę [metody ForceGC —](icorprofilerinfo-forcegc-method.md) . Nic nie dotyczy. Jednak może być zaskakujące, że wykonywanie operacji wyrzucania elementów bezużytecznych w aplikacji ze sklepu Windows może przetworzyć wątek w zarządzanym wątku (na przykład dla tego wątku zostanie utworzony ThreadID API profilowania).
 
-Aby zrozumieć konsekwencje tego działania, ważne jest zrozumienie różnic między wywołań synchronicznych i asynchronicznych zgodnie z definicją w interfejsie API profilowania CLR. Należy zauważyć, że jest to bardzo różne od koncepcji wywołań asynchronicznych w aplikacjach ze sklepu Windows. Zapoznaj się z wpisem w blogu [dlaczego CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](https://docs.microsoft.com/archive/blogs/davbr/why-we-have-corprof_e_unsupported_call_sequence) , aby uzyskać więcej informacji.
+Aby zrozumieć konsekwencje tego działania, ważne jest zrozumienie różnic między wywołań synchronicznych i asynchronicznych zgodnie z definicją w interfejsie API profilowania CLR. Należy zauważyć, że jest to bardzo różne od koncepcji wywołań asynchronicznych w aplikacjach ze sklepu Windows. Zapoznaj się z wpisem w blogu [dlaczego CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](/archive/blogs/davbr/why-we-have-corprof_e_unsupported_call_sequence) , aby uzyskać więcej informacji.
 
 Odpowiednim punktem jest to, że wywołania wykonane w wątkach utworzonych przez profiler są zawsze uznawane za synchroniczne, nawet jeśli te wywołania pochodzą z zewnątrz implementacji jednej z metod [ICORPROFILERCALLBACK](icorprofilercallback-interface.md) biblioteki profilera. Co najmniej, które były używane w przypadku. Teraz, gdy środowisko CLR przełączyło wątek profilera do zarządzanego wątku ze względu na wywołanie [metody ForceGC —](icorprofilerinfo-forcegc-method.md), ten wątek nie jest już traktowany jako wątek profilera. W związku z tym środowisko CLR wymusza bardziej rygorystyczną definicję, która jest zgodna z elementem synchronicznym dla tego wątku — w związku z tym, że wywołanie musi pochodzić od jednej z metod [ICorProfilerCallback](icorprofilercallback-interface.md) biblioteki DLL profilera, aby kwalifikować się jako synchroniczne.
 
-Co to znaczy? Większość metod [ICorProfilerInfo](icorprofilerinfo-interface.md) jest bezpieczna wyłącznie do wywołania synchronicznego i natychmiast się nie powiedzie. Dlatego jeśli biblioteka DLL programu Profiler ponownie używa wątku [metody ForceGC —](icorprofilerinfo-forcegc-method.md) dla innych wywołań zwykle wykonywanych w wątkach utworzonych przez profiler (na przykład do [RequestProfilerDetach](icorprofilerinfo3-requestprofilerdetach-method.md), [RequestReJIT —](icorprofilerinfo4-requestrejit-method.md)lub [RequestRevert —](icorprofilerinfo4-requestrevert-method.md)), nastąpi problem. Nawet bezpieczna asynchronicznie funkcja, taka jak [DoStackSnapshot —](icorprofilerinfo2-dostacksnapshot-method.md) , ma specjalne reguły w przypadku wywołania z zarządzanych wątków. (Zobacz wpis w blogu szczegółowe informacje o [stosie: podstawowe i poza nim,](https://docs.microsoft.com/archive/blogs/davbr/profiler-stack-walking-basics-and-beyond) Aby uzyskać więcej informacji).
+Co to znaczy? Większość metod [ICorProfilerInfo](icorprofilerinfo-interface.md) jest bezpieczna wyłącznie do wywołania synchronicznego i natychmiast się nie powiedzie. Dlatego jeśli biblioteka DLL programu Profiler ponownie używa wątku [metody ForceGC —](icorprofilerinfo-forcegc-method.md) dla innych wywołań zwykle wykonywanych w wątkach utworzonych przez profiler (na przykład do [RequestProfilerDetach](icorprofilerinfo3-requestprofilerdetach-method.md), [RequestReJIT —](icorprofilerinfo4-requestrejit-method.md)lub [RequestRevert —](icorprofilerinfo4-requestrevert-method.md)), nastąpi problem. Nawet bezpieczna asynchronicznie funkcja, taka jak [DoStackSnapshot —](icorprofilerinfo2-dostacksnapshot-method.md) , ma specjalne reguły w przypadku wywołania z zarządzanych wątków. (Zobacz wpis w blogu szczegółowe informacje o [stosie: podstawowe i poza nim,](/archive/blogs/davbr/profiler-stack-walking-basics-and-beyond) Aby uzyskać więcej informacji).
 
 W związku z tym zaleca się, aby każdy wątek utworzony przez program Profiler DLL do wywoływania [metody ForceGC —](icorprofilerinfo-forcegc-method.md) powinien być używany *tylko* na potrzeby wyzwalania operacje odzyskiwania pamięci, a następnie odpowiadania na wywołania zwrotne GC. Nie należy wywoływać interfejsu API profilowania, aby wykonywać inne zadania, takie jak próbkowanie stosu lub odłączanie.
 
@@ -396,7 +396,7 @@ Jednak zarządzane aplikacje ze sklepu Windows XAML teraz intensywnie wykorzystu
 
 Można użyć interfejsu API profilowania środowiska CLR do analizy kodu zarządzanego działającego wewnątrz aplikacji ze sklepu Windows. W rzeczywistości można utworzyć istniejący Profiler, który jest opracowywany, i wprowadzić konkretne zmiany, aby można było kierować aplikacje do sklepu Windows. Interfejs użytkownika profilera powinien korzystać z nowych interfejsów API w celu aktywowania aplikacji ze sklepu Windows w trybie debugowania. Upewnij się, że biblioteka DLL profilera wykorzystuje tylko te interfejsy API, które są odpowiednie dla aplikacji ze sklepu Windows. Mechanizm komunikacji między biblioteką DLL i interfejsem użytkownika profilera powinien być zapisany przy użyciu ograniczeń interfejsu API aplikacji ze sklepu Windows i ma świadomość ograniczonych uprawnień dla aplikacji ze sklepu Windows. Biblioteka DLL profilera powinna mieć świadomość, jak środowisko CLR traktuje WinMD i jak zachowanie modułu wyrzucania elementów bezużytecznych jest różne w odniesieniu do zarządzanych wątków.
 
-## <a name="resources"></a>Zasoby
+## <a name="resources"></a>Resources
 
 **Środowisko uruchomieniowe języka wspólnego**
 
@@ -410,8 +410,8 @@ Można użyć interfejsu API profilowania środowiska CLR do analizy kodu zarzą
 
 **Aplikacje ze sklepu Windows**
 
-- [Dostęp do plików i uprawnienia (środowisko wykonawcze systemu Windows aplikacje](https://docs.microsoft.com/previous-versions/windows/apps/hh967755%28v=win.10%29)
+- [Dostęp do plików i uprawnienia (środowisko wykonawcze systemu Windows aplikacje](/previous-versions/windows/apps/hh967755(v=win.10))
 
-- [Uzyskaj licencję dewelopera](https://docs.microsoft.com/previous-versions/windows/apps/hh974578%28v=win.10%29)
+- [Uzyskaj licencję dewelopera](/previous-versions/windows/apps/hh974578(v=win.10))
 
 - [IPackageDebugSettings, interfejs](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)

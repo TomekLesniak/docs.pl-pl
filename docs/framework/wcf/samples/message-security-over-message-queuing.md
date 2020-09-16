@@ -2,12 +2,12 @@
 title: Zabezpieczenia komunikatów w ramach kolejkowania komunikatów
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: 7d483ff8252469e95dfbddedf31d1506848e1b45
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1733cea17c82f85751b810f4a6033caefd828e29
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584925"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558644"
 ---
 # <a name="message-security-over-message-queuing"></a>Zabezpieczenia komunikatów w ramach kolejkowania komunikatów
 Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z protokołu WS-Security z uwierzytelnianiem za pomocą certyfikatu X. 509v3 na potrzeby klienta i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509v3 serwera za pośrednictwem usługi MSMQ. Zabezpieczenia komunikatów są czasami bardziej pożądane, aby zapewnić, że komunikaty w magazynie usługi MSMQ pozostają zaszyfrowane, a aplikacja może wykonać własne uwierzytelnianie wiadomości.
@@ -34,36 +34,36 @@ Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z proto
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Aby uruchomić przykład na tym samym komputerze
 
-1. Upewnij się, że ścieżka zawiera folder zawierający Makecert. exe i FindPrivateKey. exe.
+1. Upewnij się, że ścieżka zawiera folder zawierający Makecert.exe i FindPrivateKey.exe.
 
-2. Uruchom setup. bat z przykładowego folderu instalacyjnego. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.
+2. Uruchom Setup.bat z przykładowego folderu instalacyjnego. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.
 
     > [!NOTE]
-    > Upewnij się, że certyfikaty są usuwane przez uruchomienie Oczyść. bat po zakończeniu z przykładem. Inne przykłady zabezpieczeń używają tych samych certyfikatów.  
+    > Upewnij się, że certyfikaty zostały usunięte, uruchamiając Cleanup.bat po zakończeniu korzystania z przykładu. Inne przykłady zabezpieczeń używają tych samych certyfikatów.  
   
-3. Uruchom usługę Service. exe z \service\bin.  
+3. Uruchom Service.exe z \service\bin.  
   
-4. Uruchamianie programu Client. exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
+4. Uruchom Client.exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
   
-5. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+5. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Aby uruchomić przykład na wielu komputerach  
   
-1. Skopiuj pliki Setup. bat, Oczyść. bat i ImportClientCert. bat do komputera usługi.  
+1. Skopiuj pliki Setup.bat, Cleanup.bat i ImportClientCert.bat na komputer usługi.  
   
 2. Utwórz katalog na komputerze klienckim dla plików binarnych klienta.  
   
-3. Skopiuj pliki programu klienckiego do katalogu klienta na komputerze klienckim. Skopiuj również do klienta pliki Setup. bat, Oczyść. bat i ImportServiceCert. bat.  
+3. Skopiuj pliki programu klienckiego do katalogu klienta na komputerze klienckim. Skopiuj także pliki Setup.bat, Cleanup.bat i ImportServiceCert.bat do klienta programu.  
   
 4. Na serwerze uruchom polecenie `setup.bat service` . Uruchomienie `setup.bat` z `service` argumentem tworzy certyfikat usługi z w pełni kwalifikowaną nazwą domeny komputera i eksportuje certyfikat usługi do pliku o nazwie Service. cer.  
   
-5. Edytuj plik Service. exe. config usługi, aby odzwierciedlić nową nazwę certyfikatu (w `findValue` atrybucie w [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), która jest taka sama jak w pełni kwalifikowana nazwa domeny komputera.  
+5. Edytuj service.exe.config usługi, aby odzwierciedlić nową nazwę certyfikatu (w `findValue` atrybucie w), [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) która jest taka sama jak w pełni kwalifikowana nazwa domeny komputera.  
   
 6. Skopiuj plik. cer usługi z katalogu usługi do katalogu klienta na komputerze klienckim.  
   
 7. Na kliencie Uruchom polecenie `setup.bat client` . Uruchomienie `setup.bat` z `client` argumentem tworzy certyfikat klienta o nazwie Client.com i eksportuje certyfikat klienta do pliku o nazwie Client. cer.  
   
-8. W pliku Client. exe. config na komputerze klienckim Zmień wartość adresu punktu końcowego, aby odpowiadała nowemu adresowi usługi. Aby to zrobić, Zastąp wartość localhost nazwą FQDN serwera.  Należy również zmienić nazwę certyfikatu usługi tak samo jak w pełni kwalifikowana nazwa domeny komputera usługi (w `findValue` atrybucie w `defaultCertificate` elemencie w `serviceCertificate` obszarze `clientCredentials` ).  
+8. W pliku Client.exe.config na komputerze klienckim Zmień wartość adresu punktu końcowego, aby odpowiadała nowemu adresowi usługi. Aby to zrobić, Zastąp wartość localhost nazwą FQDN serwera.  Należy również zmienić nazwę certyfikatu usługi tak samo jak w pełni kwalifikowana nazwa domeny komputera usługi (w `findValue` atrybucie w `defaultCertificate` elemencie w `serviceCertificate` obszarze `clientCredentials` ).  
   
 9. Skopiuj plik. cer programu Client z katalogu Client do katalogu usługi na serwerze programu.  
   
@@ -71,13 +71,13 @@ Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z proto
   
 11. Na serwerze programu uruchom `ImportClientCert.bat` program, który importuje certyfikat klienta z pliku Client. cer do magazynu LocalMachine-TrustedPeople.  
   
-12. Na komputerze usługi Uruchom polecenie Service. exe z wiersza polecenia.  
+12. Na komputerze usługi Uruchom Service.exe z wiersza polecenia.  
   
-13. Na komputerze klienckim uruchom program Client. exe z wiersza polecenia. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+13. Na komputerze klienckim uruchom Client.exe z wiersza polecenia. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>Aby wyczyścić po przykładzie  
   
-- Uruchom Oczyść. bat w folderze Samples po zakończeniu uruchamiania przykładu.  
+- Uruchom Cleanup.bat w folderze Samples po zakończeniu uruchamiania przykładu.  
   
     > [!NOTE]
     > Ten skrypt nie powoduje usunięcia certyfikatów usługi na kliencie podczas uruchamiania tego przykładu między komputerami. W przypadku uruchamiania przykładów programu Windows Communication Foundation (WCF), które używają certyfikatów między komputerami, należy wyczyścić certyfikaty usługi, które zostały zainstalowane w magazynie CurrentUser-TrustedPeople. Aby to zrobić, użyj następującego polecenia: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` na przykład: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` .
@@ -105,7 +105,7 @@ public interface IOrderProcessor
 }
 ```
 
- Aby upewnić się, że komunikat jest zabezpieczony przy użyciu wymaganego tokenu do identyfikacji usługi i klienta, plik App. config zawiera informacje o poświadczeniu.
+ Aby upewnić się, że komunikat jest zabezpieczony przy użyciu wymaganego tokenu do identyfikacji usługi i klienta, App.config zawiera informacje o poświadczeniu.
 
  Konfiguracja klienta określa certyfikat usługi do uwierzytelniania usługi. Używa magazynu LocalMachine jako zaufanego magazynu, aby polegać na ważności usługi. Określa również certyfikat klienta, który jest dołączony do wiadomości w celu uwierzytelnienia usługi klienta.
 
@@ -311,7 +311,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 
 - Tworzenie certyfikatu serwera.
 
-     Następujące wiersze z pliku wsadowego Setup. bat tworzą certyfikat serwera do użycia:
+     Następujące wiersze z pliku wsadowego Setup.bat utworzyć certyfikat serwera do użycia:
 
     ```bat
     echo ************
@@ -327,14 +327,14 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 
 - Instalowanie certyfikatu serwera w zaufanym magazynie certyfikatów klienta.
 
-     Poniższy wiersz zawiera kopię certyfikatu serwera w magazynie zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert. exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
+     Poniższy wiersz zawiera kopię certyfikatu serwera w magazynie zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
 
     ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
     > [!NOTE]
-    > Jeśli używasz wersji innej niż U. S. w języku angielskim firmy Microsoft Windows, musisz edytować plik Setup. bat i zamienić nazwę konta "NT AUTHORITY\NETWORK SERVICE" na swój odpowiednik regionalny.
+    > Jeśli używasz innego niż U. S. Angielska wersja systemu Microsoft Windows należy edytować plik Setup.bat i zastąpić nazwę konta "NT AUTHORITY\NETWORK SERVICE" własnym odpowiednikiem regionalnym.
 
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  
@@ -343,4 +343,4 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 >
 > Jeśli ten katalog nie istnieje, przejdź do [przykładów Windows Communication Foundation (WCF) i Windows Workflow Foundation (WF) dla .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) , aby pobrać wszystkie Windows Communication Foundation (WCF) i [!INCLUDE[wf1](../../../../includes/wf1-md.md)] przykłady. Ten przykład znajduje się w następującym katalogu.  
 >
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`

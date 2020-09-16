@@ -2,12 +2,12 @@
 title: Wybieranie kodera komunikatów
 ms.date: 03/30/2017
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-ms.openlocfilehash: dbc5981013fe5e023f1d6d9eaf64b2e1fa18e2df
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fd5bc2270f2e4095ef6ad2b1d89af3560fb8d312
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587342"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559374"
 ---
 # <a name="choose-a-message-encoder"></a>Wybierz koder komunikatów
 
@@ -31,9 +31,9 @@ W tym artykule omówiono kryteria umożliwiające wybór między koderami komuni
 ## <a name="how-to-choose-a-message-encoder"></a>Jak wybrać koder komunikatów  
  W poniższej tabeli opisano typowe czynniki używane do wybierania kodera komunikatów. Określ priorytety czynników, które są ważne dla aplikacji, a następnie wybierz kodery komunikatów, które najlepiej współpracują z tymi czynnikami. Należy wziąć pod uwagę wszelkie dodatkowe czynniki, które nie są wymienione w tej tabeli oraz wszystkie niestandardowe kodery komunikatów, które mogą być wymagane w aplikacji.  
   
-|1U|Opis|Kodery obsługujące ten czynnik|  
+|Czynnik|Opis|Kodery obsługujące ten czynnik|  
 |------------|-----------------|---------------------------------------|  
-|Obsługiwane zestawy znaków|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>i <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> obsługują tylko kodowania w formacie Unicode i UTF16 (*big-endian* i *little-endian*). Jeśli wymagane są inne kodowania, takie jak UTF7 lub ASCII, należy użyć kodera niestandardowego. Aby zapoznać się z przykładowym koderem niestandardowym, zobacz [niestandardowy koder komunikatów](https://docs.microsoft.com/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder).|Tekst|  
+|Obsługiwane zestawy znaków|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> i <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> obsługują tylko kodowania w formacie Unicode i UTF16 (*big-endian* i *little-endian*). Jeśli wymagane są inne kodowania, takie jak UTF7 lub ASCII, należy użyć kodera niestandardowego. Aby zapoznać się z przykładowym koderem niestandardowym, zobacz [niestandardowy koder komunikatów](../samples/custom-message-encoder-custom-text-encoder.md).|Tekst|  
 |Przedubojowego|Inspekcja umożliwia badanie komunikatów podczas przesyłania. Kodowanie tekstu, z lub bez użycia protokołu SOAP, pozwala na inspekcję i analizowanie komunikatów przez wiele aplikacji bez używania wyspecjalizowanych narzędzi. Korzystanie z zabezpieczeń transferu, na poziomie wiadomości lub transportu, wpływa na możliwość inspekcji komunikatów. Poufność chroni komunikat przed badaniem i zapewnia integralność chroniącą wiadomość przed modyfikacją.|Tekst|  
 |Niezawodność|Niezawodność to odporność kodera na błędy transmisji. Niezawodność można także zapewnić przy użyciu komunikatów, transportu lub warstwy aplikacji. W przypadku wszystkich standardowych koderów WCF przyjęto założenie, że inna warstwa zapewnia niezawodność. Koder ma mało możliwości odzyskania sprawności po błędzie transmisji.|Brak|  
 |Zapewni|Prostota przedstawia łatwość, za pomocą których można tworzyć kodery i dekodery dla specyfikacji kodowania. Kodowanie tekstu jest szczególnie korzystne dla uproszczenia, a kodowanie tekstu POX ma dodatkową zaletę, która nie wymaga obsługi przetwarzania protokołu SOAP.|Tekst (POX)|  
@@ -83,6 +83,6 @@ Ponieważ ta właściwość jest uwidaczniana tylko w binaryMessageEncodingBindi
 
 Zarówno klient, jak i usługa muszą wyrazić zgodę na wysyłanie i odbieranie skompresowanych komunikatów, w związku z czym Właściwość compressionFormat musi być skonfigurowana dla elementu binaryMessageEncoding zarówno na kliencie, jak i w usłudze. Zostanie zgłoszony wyjątek ProtocolException, jeśli usługa lub klient nie jest skonfigurowany do kompresji, ale druga strona to. Należy uważnie rozważyć włączenie kompresji. Kompresja jest przede wszystkim przydatna, jeśli przepustowość sieci jest wąskim gardłem. W przypadku, gdy procesor CPU jest wąskim gardłem, kompresja obniży przepływność. Należy wykonać odpowiednie testy w symulowanym środowisku, aby dowiedzieć się, czy ta korzyść ma zastosowanie do aplikacji  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Powiązania](bindings.md)
