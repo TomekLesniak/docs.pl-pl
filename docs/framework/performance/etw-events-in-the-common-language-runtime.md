@@ -7,17 +7,17 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: 5bb9b6a2-7b57-4aea-8809-32b28bc73e88
-ms.openlocfilehash: aa422dcb7efbc0f6f7f09e09a6c9e44b40ada86b
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: e1da57abba559cdb1e54071c103d67b5327c30ac
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309485"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553704"
 ---
 # <a name="etw-events-in-the-common-language-runtime"></a>Zdarzenia ETW w środowisku CLR
 Środowisko uruchomieniowe języka wspólnego (CLR) zapewnia użyteczne informacje diagnostyczne śledzenia zdarzeń systemu Windows (ETW) za pomocą dużej różnorodności zdarzeń debugowania i profilowania. Zdarzenia ETW CLR wykorzystują system śledzenia funkcji ETW systemu Windows w celu rozszerzenia istniejącej obsługi profilowania i debugowania zapewnianej przez środowisko uruchomieniowe języka wspólnego.  
   
- Więcej informacji na temat funkcji ETW jest dostępnych w artykule [ulepszanie debugowania i dostrajania wydajności za pomocą funkcji ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw) . Informacje na temat Xperf można znaleźć w wpisie [Windows Performance Toolkit-Xperf](https://docs.microsoft.com/archive/blogs/ntdebugging/windows-performance-toolkit-xperf) w blogu NTDebugging.  
+ Więcej informacji na temat funkcji ETW jest dostępnych w artykule [ulepszanie debugowania i dostrajania wydajności za pomocą funkcji ETW](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw) . Informacje na temat Xperf można znaleźć w wpisie [Windows Performance Toolkit-Xperf](/archive/blogs/ntdebugging/windows-performance-toolkit-xperf) w blogu NTDebugging.  
   
  W przypadku wszystkich zdarzeń opisanych w temacie zdarzenia jest wymagany .NET Framework 4 lub nowszy. System operacyjny Windows Vista jest minimalnym obsługiwanym klientem, a system Windows Server 2008 jest minimalnym obsługiwanym serwerem.  
   
@@ -34,6 +34,6 @@ ms.locfileid: "86309485"
  [Zdarzenia ETW CLR](clr-etw-events.md)  
  Zawiera szczegółowe informacje na temat zdarzeń ETW CLR, ich słów kluczowych, poziomów i danych zdarzeń.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zdarzenia ETW w programie .NET Framework](etw-events.md)

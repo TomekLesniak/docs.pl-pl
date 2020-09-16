@@ -1,5 +1,5 @@
 ---
-title: Funkcja GetErrorInfo (niezarządzane odwołanie do interfejsu API)
+title: GetErrorInfo — funkcja (niezarządzana dokumentacja interfejsu API)
 description: Funkcja GetErrorInfo pobiera informacje o błędzie z poprzedniego wywołania funkcji.
 ms.date: 11/06/2017
 api_name:
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - GetErrorInfo function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 802ee66a5be213ac7a599b193ec6de589773ea17
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a80c0b5522113e704336cda29362a0406077931
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176815"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553678"
 ---
-# <a name="geterrorinfo-function"></a>GetErrorInfo, funkcja
+# <a name="geterrorinfo-function"></a>GetErrorInfo — funkcja
 Pobiera informacje o błędzie z poprzedniego wywołania funkcji.  
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -34,19 +34,19 @@ IErrorInfo* GetErrorInfo();
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Wskaźnik do obiektu [IErrorInfo,](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) jeśli wywołanie `null` funkcji powiedzie się lub jeśli zakończy się niepowodzeniem.
+Wskaźnik do obiektu [IErrorInfo](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) , jeśli wywołanie funkcji zakończy się pomyślnie lub `null` nie powiedzie się.
   
 ## <a name="remarks"></a>Uwagi
 
-Ta funkcja zawija wywołanie metody [IComThreadingInfo::GetErrorInfo.](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype)
+Ta funkcja otacza wywołanie metody [IComThreadingInfo:: GetErrorInfo](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
 
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
- **Nagłówek:** WMINet_Utils.def  
+ **Nagłówek:** WMINet_Utils. def  
   
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

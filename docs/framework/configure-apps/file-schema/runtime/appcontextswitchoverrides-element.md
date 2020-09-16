@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 394523e81da96d596a00010a393b9a034c0d552f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 0ead35559a17eb06304e6c251d2fe388ca178a30
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558754"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552287"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides>, element
 
@@ -70,7 +70,7 @@ Definiuje jeden lub więcej przełączników używanych przez <xref:System.AppCo
 |`Switch.System.Diagnostics.`<br/>`IgnorePortablePDBsInStackTraces`|Kontroluje, czy ślady stosu uzyskują się, gdy użycie przenośnego plików PDB może obejmować plik źródłowy i informacje o wierszu. `false` Aby dołączyć plik źródłowy i informacje o wierszu; w przeciwnym razie `true` .| .NET Framework 4.7.2|
 |`Switch.System.Drawing.`<br/>`DontSupportPngFramesInIcons`|Określa, czy <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> Metoda zgłasza wyjątek, gdy <xref:System.Drawing.Icon> obiekt ma ramki PNG. Aby uzyskać więcej informacji, zobacz [ograniczanie: ramki PNG w obiektach ikon](../../../migration-guide/mitigation-png-frames-in-icon-objects.md).|Program .NET Framework 4.6|
 |`Switch.System.Drawing.Text.`<br/>`DoNotRemoveGdiFontsResourcesFromFontCollection`|Określa <xref:System.Drawing.Text.PrivateFontCollection?displayProperty=nameWithType> , czy obiekty są prawidłowo usuwane po dodaniu do kolekcji przez <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)?displayProperty=nameWithType> metodę. `true` Aby zachować starsze zachowanie; `false` do usuwania wszystkich prywatnych obiektów czcionek. | .NET Framework 4.7.2|
-|`Switch.System.Drawing.Printing.`<br>`OptimizePrintPreview`|Określa, czy wydajność programu <xref:System.Windows.Forms.PrintPreviewDialog> jest zoptymalizowana pod kątem drukarek sieciowych. Aby uzyskać więcej informacji, zobacz [PrintPreviewDialog Control — Omówienie](../../../winforms/controls/printpreviewdialog-control-overview-windows-forms.md).|Program .NET Framework 4.6|
+|`Switch.System.Drawing.Printing.`<br>`OptimizePrintPreview`|Określa, czy wydajność programu <xref:System.Windows.Forms.PrintPreviewDialog> jest zoptymalizowana pod kątem drukarek sieciowych. Aby uzyskać więcej informacji, zobacz [PrintPreviewDialog Control — Omówienie](/dotnet/desktop/winforms/controls/printpreviewdialog-control-overview-windows-forms).|Program .NET Framework 4.6|
 |`Switch.System.Globalization.EnforceJapaneseEraYearRanges`|Określa, czy są wymuszane Sprawdzanie zakresu roku dla opcji wymazywania kalendarza japońskiego. `true` Aby wymusić sprawdzanie zakresu roku i `false` wyłączyć je (domyślne zachowanie). Aby uzyskać więcej informacji, zobacz [Praca z kalendarzami](../../../../standard/datetime/working-with-calendars.md).|Program .NET Framework 4.6|
 |`Switch.System.Globalization.EnforceLegacyJapaneseDateParsing`|Określa, czy tylko wartość "1" jest rozpoznawana jako pierwszy rok w ramach ery w przypadku kalendarza japońskiego podczas analizowania operacji. `true` Aby rozpoznać tylko wartość "1"; `false` Aby rozpoznać wartość "1" lub Gannen (zachowanie domyślne). Aby uzyskać więcej informacji, zobacz [Praca z kalendarzami](../../../../standard/datetime/working-with-calendars.md).|Program .NET Framework 4.6|
 |`Switch.System.Globalization.FormatJapaneseFirstYearAsANumber`|Określa, czy pierwszy rok ery w kalendarzu japońskim jest reprezentowany jako "1" lub Gannen w operacjach formatowania. `true` Aby sformatować pierwszy rok oceny era jako "1"; `false` Aby sformatować go jako Gannen (zachowanie domyślne). Aby uzyskać więcej informacji, zobacz [Praca z kalendarzami](../../../../standard/datetime/working-with-calendars.md).|Program .NET Framework 4.6|
@@ -176,7 +176,7 @@ Poniższy przykład używa elementu, `<add>` Aby dodać dwa ustawienia do `<appS
 </configuration>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Eliminowanie nowych zachowań w .NET Framework 4,6 i nowszych](../../../migration-guide/mitigations.md)
 - <xref:System.AppContext?displayProperty=nameWithType>

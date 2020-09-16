@@ -10,15 +10,15 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
-ms.openlocfilehash: 7c68be91deb59ea9439e81561f50b7cc40766a45
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: d1ccf3d3ac966e35e1708f0639785a2760eb8287
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865115"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559190"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Instrukcje: Definiowanie i wykonywanie metod dynamicznych
-W poniższych procedurach pokazano, jak zdefiniować i wykonać prostą metodę dynamiczną oraz metodę dynamiczną powiązaną z wystąpieniem klasy. Aby uzyskać więcej informacji na temat metod dynamicznych, zobacz <xref:System.Reflection.Emit.DynamicMethod> [scenariusze metod dynamicznych emisji klasy i odbicia](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
+W poniższych procedurach pokazano, jak zdefiniować i wykonać prostą metodę dynamiczną oraz metodę dynamiczną powiązaną z wystąpieniem klasy. Aby uzyskać więcej informacji na temat metod dynamicznych, zobacz <xref:System.Reflection.Emit.DynamicMethod> [scenariusze metod dynamicznych emisji klasy i odbicia](/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
   
 ### <a name="to-define-and-execute-a-dynamic-method"></a>Aby zdefiniować i wykonać metodę dynamiczną  
   
@@ -116,5 +116,5 @@ W poniższych procedurach pokazano, jak zdefiniować i wykonać prostą metodę 
 ## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Reflection.Emit.DynamicMethod>
-- [Używanie emisji odbicia](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
-- [Scenariusze emisji metod dynamicznych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100))
+- [Używanie emisji odbicia](/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
+- [Scenariusze emisji metod dynamicznych](/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100))

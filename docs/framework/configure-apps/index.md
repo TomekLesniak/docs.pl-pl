@@ -25,12 +25,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 444d3700f36a2928b79f40dd5265d6166de762da
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 92ecc4a430aa3c238a7cd8705dc0cec5a9d0cb11
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105364"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559294"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurowanie aplikacji za pomocą plików konfiguracji
 .NET Framework, za pomocą plików konfiguracji, oferuje deweloperom i administratorom kontrolę i elastyczność nad sposobem uruchamiania aplikacji. Pliki konfiguracji to pliki XML, które można zmieniać w razie potrzeby. Administrator może kontrolować, do których chronionych zasobów aplikacja może uzyskać dostęp, które wersje zestawów będą używane przez aplikację, oraz miejsce, w którym znajdują się aplikacje zdalne i obiekty. Deweloperzy mogą umieszczać ustawienia w plikach konfiguracji, eliminując konieczność ponownego kompilowania aplikacji za każdym razem, gdy zmieni się ustawienie. W tej sekcji opisano, co można skonfigurować i dlaczego Konfigurowanie aplikacji może być przydatne.  
@@ -53,7 +53,7 @@ ms.locfileid: "85105364"
 ```  
   
 ## <a name="machine-configuration-files"></a>Pliki konfiguracji komputera  
- Plik konfiguracji komputera — Machine.config — zawiera ustawienia, które są stosowane do całego komputera. Ten plik znajduje się w katalogu% \ config*instalacji systemu plików wykonywalnych*. Machine.config zawiera ustawienia konfiguracji dla powiązań zestawów dla całej maszyny, wbudowanych [kanałów komunikacji zdalnej](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))i ASP.NET.  
+ Plik konfiguracji komputera — Machine.config — zawiera ustawienia, które są stosowane do całego komputera. Ten plik znajduje się w katalogu% \ config*instalacji systemu plików wykonywalnych*. Machine.config zawiera ustawienia konfiguracji dla powiązań zestawów dla całej maszyny, wbudowanych [kanałów komunikacji zdalnej](/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))i ASP.NET.  
   
  System konfiguracyjny najpierw przeszukuje plik konfiguracji komputera dla [ **\<appSettings>** elementu](./file-schema/appsettings/index.md) i innych sekcji konfiguracyjnych, które może zdefiniować Deweloper. Następnie przeszukuje plik konfiguracji aplikacji. Aby zachować możliwość zarządzania plikiem konfiguracji komputera, najlepiej jest umieścić te ustawienia w pliku konfiguracji aplikacji. Jednak umieszczenie tych ustawień w pliku konfiguracji komputera może sprawić, że system będzie łatwiejszy w utrzymaniu. Na przykład, jeśli zarówno aplikacja kliencka, jak i serwerowa, używa składnika innej firmy, łatwiej jest umieścić ustawienia dla tego składnika w jednym miejscu. W tym przypadku plik konfiguracji komputera jest właściwym miejscem dla tych ustawień, ponieważ dzięki temu te same ustawienia nie znajdują się w dwóch różnych plikach.  
   
@@ -77,7 +77,7 @@ ms.locfileid: "85105364"
   
 - Aplikacja obsługiwana w programie ASP.NET.  
   
-     Aby uzyskać więcej informacji na temat plików konfiguracji ASP.NET, zobacz [ASP.NET ustawienia konfiguracji](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
+     Aby uzyskać więcej informacji na temat plików konfiguracji ASP.NET, zobacz [ASP.NET ustawienia konfiguracji](/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
   
 - Aplikacja obsługiwana w programie Internet Explorer.  
   
@@ -120,12 +120,12 @@ ms.locfileid: "85105364"
  [Schemat pliku konfiguracji](./file-schema/index.md)  
  Opisuje hierarchię schematów dla uruchamiania, środowiska uruchomieniowego, sieci i innych typów ustawień konfiguracji.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Schemat pliku konfiguracji](./file-schema/index.md)
 - [Określanie lokalizacji zestawu](specify-assembly-location.md)
 - [Przekierowywanie wersji zestawu](redirect-assembly-versions.md)
-- [Administrowanie witryną sieci Web ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
-- [Zarządzanie zasadami zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
+- [Administrowanie witryną sieci Web ASP.NET](/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
+- [Zarządzanie zasadami zabezpieczeń](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
 - [Caspol.exe (Narzędzie zasad zabezpieczeń dostępu kodu)](../tools/caspol-exe-code-access-security-policy-tool.md)
 - [Zestawy w środowisku .NET](../../standard/assembly/index.md)

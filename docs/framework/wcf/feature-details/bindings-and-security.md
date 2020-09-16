@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: e012ec9ad340c74f5bc776cfc6d8b88326210fec
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 86b9a1d7b0c772a308b9f059bb31c1f489635300
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245338"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559405"
 ---
 # <a name="bindings-and-security"></a>Wiązania i zabezpieczenia
 
@@ -196,21 +196,21 @@ Poniższa tabela zawiera podsumowanie funkcji oferowanych w ustawieniach trybu z
 |Ustawienie|Funkcje|
 |-------------|--------------|
 |Transport|Uwierzytelnianie serwera<br /><br /> Uwierzytelnianie klienta<br /><br /> Zabezpieczenia punkt-punkt<br /><br /> Współdziałanie<br /><br /> Przyspieszenie sprzętowe<br /><br /> Wysoka przepływność<br /><br /> Bezpieczna Zapora<br /><br /> Aplikacje o wysokim opóźnieniu<br /><br /> Ponowne szyfrowanie między wieloma przeskokami|
-|Komunikat|Uwierzytelnianie serwera<br /><br /> Uwierzytelnianie klienta<br /><br /> Kompleksowe zabezpieczenia<br /><br /> Współdziałanie<br /><br /> Rozbudowane oświadczenia<br /><br /> Federacja<br /><br /> Uwierzytelnianie wieloskładnikowe<br /><br /> Tokeny niestandardowe<br /><br /> Usługa notariusz/sygnatura czasowa<br /><br /> Aplikacje o wysokim opóźnieniu<br /><br /> Trwałość sygnatur komunikatów|
+|Wiadomość|Uwierzytelnianie serwera<br /><br /> Uwierzytelnianie klienta<br /><br /> Kompleksowe zabezpieczenia<br /><br /> Współdziałanie<br /><br /> Rozbudowane oświadczenia<br /><br /> Federacja<br /><br /> Uwierzytelnianie wieloskładnikowe<br /><br /> Tokeny niestandardowe<br /><br /> Usługa notariusz/sygnatura czasowa<br /><br /> Aplikacje o wysokim opóźnieniu<br /><br /> Trwałość sygnatur komunikatów|
 |TransportWithMessageCredential|Uwierzytelnianie serwera<br /><br /> Uwierzytelnianie klienta<br /><br /> Zabezpieczenia punkt-punkt<br /><br /> Współdziałanie<br /><br /> Przyspieszenie sprzętowe<br /><br /> Wysoka przepływność<br /><br /> Rozbudowane oświadczenia klienta<br /><br /> Federacja<br /><br /> Uwierzytelnianie wieloskładnikowe<br /><br /> Tokeny niestandardowe<br /><br /> Bezpieczna Zapora<br /><br /> Aplikacje o wysokim opóźnieniu<br /><br /> Ponowne szyfrowanie między wieloma przeskokami|
 
 W poniższej tabeli wymieniono powiązania obsługujące różne ustawienia trybu. Wybierz powiązanie z tabeli, która ma zostać użyta do utworzenia punktu końcowego usługi.
 
 |Wiązanie|Obsługa trybu transportowego|Obsługa trybu wiadomości|Obsługa TransportWithMessageCredential|
 |-------------|----------------------------|--------------------------|--------------------------------------------|
-|`BasicHttpBinding`|Tak|Tak|Tak|
-|`WSHttpBinding`|Tak|Tak|Tak|
+|`BasicHttpBinding`|Yes|Yes|Yes|
+|`WSHttpBinding`|Yes|Yes|Yes|
 |`WSDualHttpBinding`|Nie|Yes|Nie|
-|`NetTcpBinding`|Tak|Tak|Tak|
-|`NetNamedPipeBinding`|Tak|Nie|Nie|
-|`NetMsmqBinding`|Tak|Tak|Nie|
+|`NetTcpBinding`|Yes|Yes|Yes|
+|`NetNamedPipeBinding`|Yes|Nie|Nie|
+|`NetMsmqBinding`|Yes|Yes|Nie|
 |`MsmqIntegrationBinding`|Yes|Nie|Nie|
-|`wsFederationHttpBinding`|Nie|Tak|Tak|
+|`wsFederationHttpBinding`|Nie|Yes|Yes|
 
 ## <a name="transport-credentials-in-bindings"></a>Poświadczenia transportu w powiązaniach
 
@@ -219,7 +219,7 @@ W poniższej tabeli wymieniono typy poświadczeń klienta dostępne w przypadku 
 |Typ|Opis|
 |----------|-----------------|
 |Brak|Określa, że klient nie musi zaprezentować żadnego poświadczenia. Powoduje to przetłumaczenie na klienta anonimowego.|
-|Podstawowa|Uwierzytelnianie podstawowe. Aby uzyskać więcej informacji, zobacz RFC 2617 — uwierzytelnianie HTTP: uwierzytelnianie podstawowe i szyfrowane, dostępne pod adresem <https://go.microsoft.com/fwlink/?LinkId=84023> .|
+|Podstawowy|Uwierzytelnianie podstawowe. Aby uzyskać więcej informacji, zobacz RFC 2617 — uwierzytelnianie HTTP: uwierzytelnianie podstawowe i szyfrowane, dostępne pod adresem <https://go.microsoft.com/fwlink/?LinkId=84023> .|
 |Szyfrowane|Uwierzytelnianie szyfrowane. Aby uzyskać więcej informacji, zobacz RFC 2617 — uwierzytelnianie HTTP: uwierzytelnianie podstawowe i szyfrowane, dostępne pod adresem <https://go.microsoft.com/fwlink/?LinkId=84023> .|
 |NTLM|Uwierzytelnianie przy użyciu programu NT LAN Manager (NTLM).|
 |Windows|Uwierzytelnianie systemu Windows.|
@@ -234,15 +234,15 @@ W poniższej tabeli wymieniono typy poświadczeń klienta dostępne w przypadku 
 |----------|-----------------|
 |Brak|Umożliwia usłudze współpracującie z klientami anonimowymi.|
 |Windows|Umożliwia wymianę komunikatów protokołu SOAP w ramach uwierzytelnionego kontekstu poświadczeń systemu Windows.|
-|UserName|Zezwala usłudze na wymaganie uwierzytelniania klienta przy użyciu poświadczeń nazwy użytkownika. Należy pamiętać, że gdy tryb zabezpieczeń jest ustawiony na `TransportWithMessageCredential` , usługa WCF nie obsługuje wysyłania skrótu hasła ani wyprowadzania kluczy przy użyciu hasła i używania tych kluczy do zabezpieczenia w trybie komunikatów. W związku z tym WCF wymusza, aby transport był zabezpieczony przy użyciu poświadczeń nazwy użytkownika.|
+|Nazwa użytkownika|Zezwala usłudze na wymaganie uwierzytelniania klienta przy użyciu poświadczeń nazwy użytkownika. Należy pamiętać, że gdy tryb zabezpieczeń jest ustawiony na `TransportWithMessageCredential` , usługa WCF nie obsługuje wysyłania skrótu hasła ani wyprowadzania kluczy przy użyciu hasła i używania tych kluczy do zabezpieczenia w trybie komunikatów. W związku z tym WCF wymusza, aby transport był zabezpieczony przy użyciu poświadczeń nazwy użytkownika.|
 |Certyfikat|Zezwala usłudze na wymaganie uwierzytelniania klienta przy użyciu certyfikatu.|
 |IssuedToken|Zezwala usłudze na używanie usługi tokenu zabezpieczającego do dostarczania niestandardowego tokenu.|
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Zabezpieczanie usług i klientów](securing-services-and-clients.md)
 - [Wybieranie typu poświadczeń](selecting-a-credential-type.md)
-- [Możliwości zabezpieczeń powiązań niestandardowych](security-capabilities-with-custom-bindings.md)
+- [Możliwości zabezpieczeń wiązań niestandardowych](security-capabilities-with-custom-bindings.md)
 - [Zachowania zabezpieczeń](security-behaviors-in-wcf.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

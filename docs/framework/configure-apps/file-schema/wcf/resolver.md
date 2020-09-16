@@ -2,12 +2,12 @@
 title: <resolver>
 ms.date: 03/30/2017
 ms.assetid: 0c00200c-f135-4e5c-a024-76b72bcbc021
-ms.openlocfilehash: 0dc667f392595d895bd4f2773ab69777d7369446
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c6f5db96ded422493b819d4d75dda6abc9a1676e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738742"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558865"
 ---
 # \<resolver>
 Określa równorzędny program rozpoznawania, który jest używany do rozpoznawania identyfikatora siatki równorzędnej w zestawie adresów węzłów równorzędnych reprezentujących kilka węzłów, które uczestniczą w sieci.  
@@ -60,4 +60,4 @@ Określa równorzędny program rozpoznawania, który jest używany do rozpoznawa
 - <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement.Resolver%2A>
 - <xref:System.ServiceModel.Configuration.PeerResolverElement>
 - [Mechanizmy rozpoznawania elementów równorzędnych](../../../wcf/feature-details/peer-resolvers.md)
-- [Dodawanie niestandardowego programu rozpoznawania nazw do aplikacji PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))
+- [Dodawanie niestandardowego programu rozpoznawania nazw do aplikacji PeerChannel](/previous-versions/ms730105(v=vs.90))

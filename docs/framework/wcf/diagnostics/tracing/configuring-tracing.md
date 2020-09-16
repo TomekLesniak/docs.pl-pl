@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: 55d701ee6769099698d2fd869a1502d94237b5a8
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 7b0cc58975ee145e5234adf51e24109898853e1c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245352"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558904"
 ---
 # <a name="configuring-tracing"></a>Konfigurowanie śledzenia
 W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł śledzenia w celu emitowania śladów i ustawiania poziomów śledzenia, ustawiania śledzenia aktywności i propagacji w celu obsługi korelacji kompleksowych wyników śledzenia oraz ustawiania detektorów śledzenia dostępu do śladów.  
@@ -143,7 +143,7 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
   
  Można skonfigurować odbiornik niestandardowego śledzenia do wysyłania śladów do sieci, na przykład do zdalnej bazy danych. Jako narzędzie do wdrażania aplikacji należy wymusić odpowiednią kontrolę dostępu w dziennikach śledzenia na maszynie zdalnej.  
   
- Można również programowo skonfigurować odbiornik śledzenia. Aby uzyskać więcej informacji, zobacz [How to: Create i Initialize detektory śledzenia](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md) i [Tworzenie niestandardowego TraceListener](https://docs.microsoft.com/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics).  
+ Można również programowo skonfigurować odbiornik śledzenia. Aby uzyskać więcej informacji, zobacz [How to: Create i Initialize detektory śledzenia](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md) i [Tworzenie niestandardowego TraceListener](/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics).  
   
 > [!CAUTION]
 > Ponieważ `System.Diagnostics.XmlWriterTraceListener` nie jest bezpieczny wątkowo, Źródło śledzenia może blokować zasoby wyłącznie podczas wyprowadzania śladów. Gdy wiele wątków wyprowadza ślady do źródła śledzenia skonfigurowanego do korzystania z tego odbiornika, może wystąpić rywalizacja o zasoby, co powoduje znaczący problem z wydajnością. Aby rozwiązać ten problem, należy zaimplementować niestandardowy odbiornik, który jest bezpieczny dla wątków.  
@@ -153,7 +153,7 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
   
 |Poziom śledzenia|Charakter śledzonych zdarzeń|Zawartość śledzonych zdarzeń|Zdarzenia śledzone|Obiekt docelowy użytkownika|  
 |-----------------|----------------------------------|-----------------------------------|--------------------|-----------------|  
-|Wyłączone|Nie dotyczy|Nie dotyczy|Brak wyemitowanych śladów.|Nie dotyczy|  
+|Wyłączone|NIE DOTYCZY|NIE DOTYCZY|Brak wyemitowanych śladów.|Brak|  
 |Krytyczne|Zdarzenia "negatywne": zdarzenia wskazujące nieoczekiwane przetwarzanie lub warunek błędu.||Zarejestrowano Nieobsłużone wyjątki, w tym następujące:<br /><br /> -OutOfMemoryException<br />-ThreadAbortException (środowisko CLR wywołuje wszystkie ThreadAbortExceptionHandler)<br />-StackOverflowException (nie można przechwycić)<br />-ConfigurationErrorsException<br />-SEHException —<br />-Błędy uruchamiania aplikacji<br />-FailFast zdarzenia<br />— Zawiesza się system<br />-Trujące komunikaty: ślady komunikatów, które powodują niepowodzenie aplikacji.|Administratorzy<br /><br /> Deweloperzy aplikacji|  
 |Błąd|Zdarzenia "negatywne": zdarzenia wskazujące nieoczekiwane przetwarzanie lub warunek błędu.|Nastąpiło nieoczekiwane przetwarzanie. Aplikacja nie mogła wykonać zadania zgodnie z oczekiwaniami. Aplikacja jest jednak nadal uruchomiona.|Wszystkie wyjątki są rejestrowane.|Administratorzy<br /><br /> Deweloperzy aplikacji|  
 |Ostrzeżenie|Zdarzenia "negatywne": zdarzenia wskazujące nieoczekiwane przetwarzanie lub warunek błędu.|Wystąpił możliwy problem lub może wystąpić, ale aplikacja nadal działa poprawnie. Może jednak nadal nie funkcjonować prawidłowo.|-Aplikacja otrzymuje więcej żądań niż zezwala na to ustawienia ograniczenia przepustowości.<br />-Kolejka otrzymująca zbliża się do maksymalnej skonfigurowanej pojemności.<br />-Przekroczono limit czasu.<br />-Poświadczenia są odrzucane.|Administratorzy<br /><br /> Deweloperzy aplikacji|  
@@ -181,9 +181,9 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
   
  Nie można używać `propagateActivity` atrybutu ze źródłami śledzenia zdefiniowanymi przez użytkownika. W przypadku propagacji identyfikatora działania kodu użytkownika upewnij się, że nie ustawiono elementu ServiceModel `ActivityTracing` , podczas gdy nadal `propagateActivity` ma atrybut ServiceModel ustawiony na `true` .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Śledzenie](index.md)
 - [Administracja i Diagnostyka](../index.md)
-- [Porady: tworzenie i inicjowanie obiektów nasłuchujących śledzenia](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md)
-- [Tworzenie niestandardowego TraceListener](https://docs.microsoft.com/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics)
+- [Instrukcje: Tworzenie i inicjowanie obiektów nasłuchujących śledzenia](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md)
+- [Tworzenie niestandardowego TraceListener](/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics)

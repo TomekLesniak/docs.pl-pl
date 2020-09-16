@@ -6,12 +6,12 @@ helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-ms.openlocfilehash: d58eac4f21e4f1069ac392aacb4e9818831e914c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: b358f0909147e52293fd802bc98caa31b284d7b1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622656"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558722"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework — Przewodnik wdrażania dla administratorów
 
@@ -39,16 +39,16 @@ Ten temat zawiera następujące sekcje:
 
 W przypadku korzystania z infrastruktury obsługiwanej przez program Configuration Manager można wdrożyć pakiet redystrybucyjny .NET Framework na komputerach w sieci. Tworzenie infrastruktury obejmuje utworzenie i zdefiniowanie pięciu podstawowych obszarów: kolekcji, pakietu i programu dla oprogramowania, punktów dystrybucji i wdrożeń.
 
-- **Kolekcje** są grupami zasobów Configuration Manager, takich jak użytkownicy, grupy użytkowników lub komputery, na których wdrożono .NET Framework. Aby uzyskać więcej informacji, zobacz [wprowadzenie do kolekcji w Configuration Manager](https://docs.microsoft.com/configmgr/core/clients/manage/collections/introduction-to-collections) w bibliotece dokumentacji Configuration Manager.
+- **Kolekcje** są grupami zasobów Configuration Manager, takich jak użytkownicy, grupy użytkowników lub komputery, na których wdrożono .NET Framework. Aby uzyskać więcej informacji, zobacz [wprowadzenie do kolekcji w Configuration Manager](/configmgr/core/clients/manage/collections/introduction-to-collections) w bibliotece dokumentacji Configuration Manager.
 
-- **Pakiety i programy** zwykle reprezentują aplikacje, które mają być zainstalowane na komputerze klienckim, ale mogą również zawierać pojedyncze pliki, aktualizacje lub nawet poszczególne polecenia. Aby uzyskać więcej informacji, zobacz [pakiety i programy w Configuration Manager](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs) w bibliotece dokumentacji Configuration Manager.
+- **Pakiety i programy** zwykle reprezentują aplikacje, które mają być zainstalowane na komputerze klienckim, ale mogą również zawierać pojedyncze pliki, aktualizacje lub nawet poszczególne polecenia. Aby uzyskać więcej informacji, zobacz [pakiety i programy w Configuration Manager](/configmgr/apps/deploy-use/packages-and-programs) w bibliotece dokumentacji Configuration Manager.
 
-- **Punkty dystrybucji** są Configuration Manager ról systemu lokacji, które przechowują pliki wymagane do uruchamiania oprogramowania na komputerach klienckich. Gdy klient programu Configuration Manager odbiera i przetwarza wdrożenie oprogramowania, kontaktuje się z punktem dystrybucji w celu pobrania zawartości skojarzonej z oprogramowaniem i rozpoczęcia procesu instalacji. Aby uzyskać więcej informacji, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie Configuration Manager](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/fundamental-concepts-for-content-management) w bibliotece dokumentacji Configuration Manager.
+- **Punkty dystrybucji** są Configuration Manager ról systemu lokacji, które przechowują pliki wymagane do uruchamiania oprogramowania na komputerach klienckich. Gdy klient programu Configuration Manager odbiera i przetwarza wdrożenie oprogramowania, kontaktuje się z punktem dystrybucji w celu pobrania zawartości skojarzonej z oprogramowaniem i rozpoczęcia procesu instalacji. Aby uzyskać więcej informacji, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie Configuration Manager](/configmgr/core/plan-design/hierarchy/fundamental-concepts-for-content-management) w bibliotece dokumentacji Configuration Manager.
 
 - **Wdrożenia** instruują odpowiednich członków określonej kolekcji docelowej w celu zainstalowania pakietu oprogramowania.
 
 > [!IMPORTANT]
-> Procedury opisane w tym temacie zawierają typowe ustawienia służące do tworzenia i wdrażania pakietu oraz programu i mogą nie obejmować wszystkich możliwych ustawień. Inne Configuration Manager opcje wdrażania można znaleźć w [bibliotece dokumentacji Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682041%28v=technet.10%29).
+> Procedury opisane w tym temacie zawierają typowe ustawienia służące do tworzenia i wdrażania pakietu oraz programu i mogą nie obejmować wszystkich możliwych ustawień. Inne Configuration Manager opcje wdrażania można znaleźć w [bibliotece dokumentacji Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg682041(v=technet.10)).
 
 <a name="deploying_in_a_test_environment"></a>
 
@@ -68,7 +68,7 @@ Za pomocą Configuration Manager można wdrożyć instalację dyskretną .NET Fr
 
 ### <a name="create-a-collection"></a>Tworzenie kolekcji
 
-W tym kroku należy wybrać komputery, na których będzie wdrażany pakiet i program, i zgrupować je w kolekcji urządzeń. Aby utworzyć kolekcję w programie Configuration Manager, można użyć bezpośrednich reguł członkostwa (elementy członkowskie kolekcji są określane ręcznie) lub reguł zapytań (program Configuration Manager określa elementy członkowskie kolekcji na podstawie określonych kryteriów). Aby uzyskać więcej informacji na temat reguł członkostwa, w tym zapytań i reguł bezpośrednich, zobacz [wprowadzenie do kolekcji w Configuration Manager](https://docs.microsoft.com/configmgr/core/clients/manage/collections/introduction-to-collections) w bibliotece dokumentacji Configuration Manager.
+W tym kroku należy wybrać komputery, na których będzie wdrażany pakiet i program, i zgrupować je w kolekcji urządzeń. Aby utworzyć kolekcję w programie Configuration Manager, można użyć bezpośrednich reguł członkostwa (elementy członkowskie kolekcji są określane ręcznie) lub reguł zapytań (program Configuration Manager określa elementy członkowskie kolekcji na podstawie określonych kryteriów). Aby uzyskać więcej informacji na temat reguł członkostwa, w tym zapytań i reguł bezpośrednich, zobacz [wprowadzenie do kolekcji w Configuration Manager](/configmgr/core/clients/manage/collections/introduction-to-collections) w bibliotece dokumentacji Configuration Manager.
 
 Aby utworzyć kolekcję:
 
@@ -106,9 +106,9 @@ Aby utworzyć pakiet:
 
 4. Na stronie **pakiet** **Kreatora tworzenia pakietu i programu**wprowadź następujące informacje:
 
-    - Nazwij`.NET Framework 4.5`
+    - Nazwa: `.NET Framework 4.5`
 
-    - Instrukcj`Microsoft`
+    - Instrukcj `Microsoft`
 
     - Język. `English (US)`
 
@@ -136,7 +136,7 @@ W poniższej tabeli opisano opcje wiersza polecenia określone w kroku 7.
 |**/norestart**|Uniemożliwia Instalatorowi automatyczne wykonywanie ponownego rozruchu. Użycie tej opcji spowoduje, że program Configuration Manager będzie musiał obsługiwać ponowne uruchamianie komputera.|
 |**/chainingpackage** *pakietname*|Określa nazwę pakietu, który tworzy łańcuch. Te informacje są zgłaszane z innymi informacjami sesji instalacji dla tych, którzy zarejestrowali się w programie Microsoft Program poprawy jakości obsługi klienta (CEIP). Jeśli nazwa pakietu zawiera spacje, użyj podwójnych cudzysłowów jako ograniczników; na przykład: **/chainingpackage "iloczyn łańcucha"**.|
 
-Wykonanie tych kroków spowoduje utworzenie pakietu o nazwie .NET Framework 4.5. Program wdraża instalację dyskretną programu .NET Framework 4.5. W przypadku instalacji dyskretnej użytkownicy nie pracują z procesem instalacji, a aplikacja łańcucha musi przechwycić kod powrotny i obsłużyć ponowne uruchomienie. Zobacz [Uzyskiwanie informacji o postępie z pakietu instalacyjnego](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100)).
+Wykonanie tych kroków spowoduje utworzenie pakietu o nazwie .NET Framework 4.5. Program wdraża instalację dyskretną programu .NET Framework 4.5. W przypadku instalacji dyskretnej użytkownicy nie pracują z procesem instalacji, a aplikacja łańcucha musi przechwycić kod powrotny i obsłużyć ponowne uruchomienie. Zobacz [Uzyskiwanie informacji o postępie z pakietu instalacyjnego](/previous-versions/cc825975(v=vs.100)).
 
 <a name="select_dist_point"></a>
 
@@ -162,7 +162,7 @@ Wykonując poniższe kroki, można wybrać punkt dystrybucji dla pakietu program
 
 8. Wykonaj kroki kreatora.
 
-Pakiet zawiera teraz wszystkie informacje niezbędne do dyskretnego wdrożenia programu .NET Framework 4.5. Przed wdrożeniem pakietu i programu należy się upewnić, że został on zainstalowany w punkcie dystrybucji. Zobacz sekcję "Monitorowanie stanu zawartości" tematu [monitorowanie zawartości dystrybuowanej za pomocą Configuration Manager](https://docs.microsoft.com/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed) w bibliotece Configuration Manager dokumentacji.
+Pakiet zawiera teraz wszystkie informacje niezbędne do dyskretnego wdrożenia programu .NET Framework 4.5. Przed wdrożeniem pakietu i programu należy się upewnić, że został on zainstalowany w punkcie dystrybucji. Zobacz sekcję "Monitorowanie stanu zawartości" tematu [monitorowanie zawartości dystrybuowanej za pomocą Configuration Manager](/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed) w bibliotece Configuration Manager dokumentacji.
 
 <a name="deploying_package"></a>
 
@@ -189,7 +189,7 @@ Aby wdrożyć pakiet i program .NET Framework 4.5:
 9. Na stronie **środowisko użytkownika** kreatora Użyj wartości domyślnych i kliknij przycisk **dalej**.
 
     > [!WARNING]
-    > W środowisku produkcyjnym mogą obowiązywać zasady wymagające wybrania innych ustawień harmonogramu wdrażania. Aby uzyskać informacje o tych opcjach, zobacz [Właściwości nazwy reklamy: karta harmonogram](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694016%28v=technet.10%29).
+    > W środowisku produkcyjnym mogą obowiązywać zasady wymagające wybrania innych ustawień harmonogramu wdrażania. Aby uzyskać informacje o tych opcjach, zobacz [Właściwości nazwy reklamy: karta harmonogram](/previous-versions/system-center/configuration-manager-2007/bb694016(v=technet.10)).
 
 10. Na stronie **punkty dystrybucji** kreatora Użyj wartości domyślnych i kliknij przycisk **dalej**.
 
@@ -199,7 +199,7 @@ Teraz pakiet zostanie wdrożony w kolekcji docelowej i rozpocznie się dyskretna
 
 <a name="resources"></a>
 
-## <a name="resources"></a>Zasoby
+## <a name="resources"></a>Resources
 
 Aby uzyskać więcej informacji na temat infrastruktury testowania wdrożenia pakietu redystrybucyjnego .NET Framework 4,5, zobacz następujące zasoby.
 
@@ -213,19 +213,19 @@ Aby uzyskać więcej informacji na temat infrastruktury testowania wdrożenia pa
 
 **SQL Server 2008:**
 
-- [Instalowanie SQL Server 2008 (SQL Server wideo)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
+- [Instalowanie SQL Server 2008 (SQL Server wideo)](/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
 
 - [SQL Server 2008 — Omówienie zabezpieczeń dla administratorów bazy danych](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)
 
 **Configuration Manager programu System Center 2012 (punkt zarządzania, punkt dystrybucji):**
 
-- [Administrowanie lokacją dla programu System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg681983%28v=technet.10%29)
+- [Administrowanie lokacją dla programu System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg681983(v=technet.10))
 
-- [Configuration Manager planowanie i wdrażanie pojedynczej lokacji](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb680961%28v=technet.10%29)
+- [Configuration Manager planowanie i wdrażanie pojedynczej lokacji](/previous-versions/system-center/configuration-manager-2007/bb680961(v=technet.10))
 
 **Klient programu System Center 2012 Configuration Manager dla komputerów z systemem Windows:**
 
-- [Wdrażanie klientów dla programu System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg699391%28v=technet.10%29)
+- [Wdrażanie klientów dla programu System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg699391(v=technet.10))
 
 <a name="troubleshooting"></a>
 
@@ -267,7 +267,7 @@ Aby uzyskać linki do szczegółowych informacji, zobacz następną sekcję, [po
 
 - [Kody błędów Usługa inteligentnego transferu w tle (bity)](/windows/desktop/Bits/bits-return-values)
 
-- [Kody błędów monikera adresu URL](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775145%28v=vs.85%29)
+- [Kody błędów monikera adresu URL](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775145(v=vs.85))
 
 - [Kody błędów usługi WinHttp](/windows/desktop/WinHttp/error-messages)
 
@@ -275,7 +275,7 @@ Inne kody błędów:
 
 - [Instalator Windows kody błędów](/windows/desktop/msi/error-codes)
 
-- [Kody wyników agenta Windows Update](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
+- [Kody wyników agenta Windows Update](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
 
 ## <a name="see-also"></a>Zobacz także
 

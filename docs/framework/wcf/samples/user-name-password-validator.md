@@ -2,12 +2,12 @@
 title: Moduł weryfikacji nazwy użytkownika i hasła
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: 5fbca30ef2dff0aebc13bda12c06adfd1989ea20
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4ad365061e6a0f3178650699febd6c18cdd14205
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596516"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553122"
 ---
 # <a name="user-name-password-validator"></a>Moduł weryfikacji nazwy użytkownika i hasła
 Ten przykład pokazuje, jak wdrożyć niestandardowy moduł sprawdzania poprawności UserNamePassword. Jest to przydatne w przypadkach, gdy żaden z wbudowanych trybów weryfikacji UserNamePassword nie jest odpowiedni dla wymagań aplikacji. na przykład, gdy pary username i Password są przechowywane w niektórych magazynach zewnętrznych, takich jak baza danych. Ten przykład pokazuje usługę, która ma niestandardowy moduł sprawdzania poprawności, który sprawdza dwie konkretne pary nazw użytkownika/hasła. Klient używa pary nazwa użytkownika/hasło do uwierzytelniania w usłudze.
@@ -32,7 +32,7 @@ Ten przykład pokazuje, jak wdrożyć niestandardowy moduł sprawdzania poprawno
 
 - Serwer jest uwierzytelniany przy użyciu certyfikatu X. 509 serwera.
 
- Usługa udostępnia jeden punkt końcowy do komunikacji z usługą, zdefiniowany przy użyciu pliku konfiguracji, App. config. Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane ze standardem `wsHttpBinding` , który domyślnie używa uwierzytelniania WS-Security i username. Zachowanie usługi określa `Custom` tryb weryfikacji par nazwy użytkownika/hasła klienta wraz z typem klasy modułu walidacji. Zachowanie określa również certyfikat serwera za pomocą `serviceCertificate` elementu. Certyfikat serwera musi zawierać taką samą wartość `SubjectName` jak `findValue` w [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) .
+ Usługa udostępnia jeden punkt końcowy do komunikacji z usługą, zdefiniowany przy użyciu pliku konfiguracji, App.config. Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane ze standardem `wsHttpBinding` , który domyślnie używa uwierzytelniania WS-Security i username. Zachowanie usługi określa `Custom` tryb weryfikacji par nazwy użytkownika/hasła klienta wraz z typem klasy modułu walidacji. Zachowanie określa również certyfikat serwera za pomocą `serviceCertificate` elementu. Certyfikat serwera musi zawierać taką samą wartość `SubjectName` jak `findValue` w [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) .
 
 ```xml
 <system.serviceModel>
@@ -251,13 +251,13 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
  Po uruchomieniu przykładu żądania operacji i odpowiedzi są wyświetlane w oknie konsoli klienta. Klient powinien pomyślnie wywołać wszystkie metody. Naciśnij klawisz ENTER w oknie klienta, aby zamknąć klienta programu.
 
 ## <a name="setup-batch-file"></a>Plik wsadowy konfiguracji
- Plik wsadowy Setup. bat dołączony do tego przykładu umożliwia skonfigurowanie serwera z odpowiednimi certyfikatami w celu uruchomienia aplikacji samohostowanej wymagającej zabezpieczeń opartych na certyfikatach serwera. Ten plik wsadowy należy zmodyfikować, aby mógł działać na różnych maszynach lub działać w niezależnym przypadku.
+ Plik wsadowy Setup.bat dołączony do tego przykładu umożliwia skonfigurowanie serwera z odpowiednimi certyfikatami w celu uruchomienia aplikacji samohostowanej wymagającej zabezpieczeń opartych na certyfikatach serwera. Ten plik wsadowy należy zmodyfikować, aby mógł działać na różnych maszynach lub działać w niezależnym przypadku.
 
  Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, dzięki czemu można je zmodyfikować tak, aby były uruchamiane w odpowiedniej konfiguracji.
 
 - Tworzenie certyfikatu serwera:
 
-     Poniższe wiersze z pliku wsadowego Setup. bat tworzą certyfikat serwera do użycia. Zmienna% SERVER_NAME% określa nazwę serwera. Zmień tę zmienną, aby określić własną nazwę serwera. Wartość domyślna to localhost.
+     Poniższe wiersze z pliku wsadowego Setup.bat utworzyć certyfikat serwera do użycia. Zmienna% SERVER_NAME% określa nazwę serwera. Zmień tę zmienną, aby określić własną nazwę serwera. Wartość domyślna to localhost.
 
     ```console
     echo ************
@@ -271,7 +271,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 
 - Instalowanie certyfikatu serwera w magazynie zaufanych certyfikatów klienta:
 
-     Następujące wiersze w pliku wsadowym Setup. bat kopiują certyfikat serwera do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert. exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
+     Poniższe wiersze w pliku wsadowym Setup.bat kopiują certyfikat serwera do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
 
     ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
@@ -285,39 +285,39 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 
 #### <a name="to-run-the-sample-on-the-same-machine"></a>Aby uruchomić przykład na tym samym komputerze
 
-1. Uruchom setup. bat z przykładowego folderu instalacyjnego w wierszu polecenia programu Visual Studio 2012. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.
+1. Uruchom Setup.bat z przykładowego folderu instalacyjnego w wierszu polecenia programu Visual Studio 2012. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.
 
     > [!NOTE]
-    > Plik wsadowy Setup. bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2012. Zmienna środowiskowa PATH ustawiona w wierszu polecenia programu Visual Studio 2012 wskazuje katalog zawierający pliki wykonywalne wymagane przez skrypt Setup. bat.  
+    > Plik wsadowy Setup.bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2012. Zmienna środowiskowa PATH ustawiona w wierszu polecenia programu Visual Studio 2012 wskazuje katalog zawierający pliki wykonywalne wymagane przez skrypt Setup.bat.  
   
-2. Uruchom usługę Service. exe z service\bin.  
+2. Uruchom Service.exe z service\bin.  
   
-3. Uruchamianie programu Client. exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
+3. Uruchom Client.exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
   
-4. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-machines"></a>Aby uruchomić przykład na wielu maszynach  
   
 1. Utwórz katalog na komputerze usługi dla plików binarnych usługi.  
   
-2. Skopiuj program Service Files do katalogu usługi na komputerze usługi. Skopiuj także pliki Setup. bat i Oczyść. bat do maszyny usługi.  
+2. Skopiuj program Service Files do katalogu usługi na komputerze usługi. Skopiuj również Setup.bat i Cleanup.bat pliki na maszynę usługi.  
   
 3. Potrzebny jest certyfikat serwera z nazwą podmiotu zawierającą w pełni kwalifikowaną nazwę domeny komputera. Plik konfiguracji dla serwera musi zostać zaktualizowany w celu odzwierciedlenia tej nowej nazwy certyfikatu.  
   
 4. Skopiuj certyfikat serwera do magazynu CurrentUser-TrustedPeople klienta. Należy to zrobić tylko wtedy, gdy certyfikat serwera nie zostanie wystawiony przez zaufanego wystawcy.  
   
-5. W pliku App. config na komputerze usługi Zmień wartość adresu podstawowego, aby określić w pełni kwalifikowaną nazwę komputera zamiast hosta lokalnego.  
+5. W pliku App.config na komputerze usługi Zmień wartość adresu podstawowego, aby określić w pełni kwalifikowaną nazwę komputera zamiast hosta lokalnego.  
   
-6. Na komputerze usługi Uruchom program Service. exe w oknie wiersza polecenia.  
+6. Na maszynie usługi Uruchom Service.exe z okna wiersza polecenia.  
   
 7. Skopiuj pliki programu klienckiego z folderu \client\bin\, w obszarze folder specyficzny dla języka, do komputera klienckiego.  
   
-8. W pliku Client. exe. config na komputerze klienckim Zmień wartość adresu punktu końcowego, aby odpowiadała nowemu adresowi usługi.  
+8. W pliku Client.exe.config na komputerze klienckim Zmień wartość adresu punktu końcowego, aby odpowiadała nowemu adresowi usługi.  
   
-9. Na komputerze klienckim uruchom program Client. exe w oknie wiersza polecenia.  
+9. Na komputerze klienckim uruchom Client.exe z okna wiersza polecenia.  
   
-10. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Aby wyczyścić po przykładzie  
   
-1. Uruchom Oczyść. bat w folderze Samples po zakończeniu uruchamiania przykładu. Spowoduje to usunięcie certyfikatu serwera z magazynu certyfikatów.  
+1. Uruchom Cleanup.bat w folderze Samples po zakończeniu uruchamiania przykładu. Spowoduje to usunięcie certyfikatu serwera z magazynu certyfikatów.

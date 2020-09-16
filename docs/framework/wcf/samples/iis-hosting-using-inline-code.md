@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Web hosted service
 - IIS Hosting Using Inline Code Sample [Windows Communication Foundation]
 ms.assetid: 56fe3687-a34b-4661-8e30-b33770f413fa
-ms.openlocfilehash: 47d056e35b92654c8e47647c7273c5d69b37bd97
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 41e19c318953d7e97eb5183c5a16a3780813f94c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594650"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559000"
 ---
 # <a name="iis-hosting-using-inline-code"></a>Hostowanie usług IIS przy użyciu kodu wbudowanego
 
@@ -90,10 +90,10 @@ Press <ENTER> to terminate client.
 
 2. Aby skompilować wersję rozwiązania w języku C# lub Visual Basic .NET, postępuj zgodnie z instrukcjami w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md).
 
-3. Po skompilowaniu rozwiązania Uruchom polecenie Setup. bat, aby skonfigurować aplikację ServiceModelSamples w usługach IIS 7,0. Katalog ServiceModelSamples powinien teraz pojawić się jako aplikacja usług IIS 7,0.
+3. Po skompilowaniu rozwiązania Uruchom setup.bat, aby skonfigurować aplikację ServiceModelSamples w usługach IIS 7,0. Katalog ServiceModelSamples powinien teraz pojawić się jako aplikacja usług IIS 7,0.
 
 4. Aby uruchomić przykład w konfiguracji na jednym lub wielu komputerach, postępuj zgodnie z instrukcjami w temacie [Uruchamianie przykładów Windows Communication Foundation](running-the-samples.md). Aby zapoznać się z przykładem dotyczącym tworzenia aplikacji klienckiej, która może wywołać tę usługę, zobacz [How to: Create an Client](../how-to-create-a-wcf-client.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady hostingu i trwałości usługi AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [Przykłady hostingu i trwałości usługi AppFabric](/previous-versions/appfabric/ff383418(v=azure.10))

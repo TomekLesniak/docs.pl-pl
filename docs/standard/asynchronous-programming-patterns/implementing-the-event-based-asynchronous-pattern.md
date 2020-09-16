@@ -18,12 +18,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: e36ae21e1e03c8c5c688b7446f660ab1bb666a94
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 466a0dd8a827cd869894106a0901bdab89601e25
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904380"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559099"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implementacja wzorca asynchronicznego opartego na zdarzeniach
 
@@ -33,7 +33,7 @@ Wzorzec asynchroniczny oparty na zdarzeniach zapewnia ustandaryzowany sposób sp
 
 Aby zapoznać się z przykładem, który implementuje wzorzec asynchroniczny oparty na zdarzeniach, zobacz [How to: Implementuj składnik, który obsługuje wzorzec asynchroniczny oparty na zdarzeniach](component-that-supports-the-event-based-asynchronous-pattern.md).
 
-W przypadku prostych operacji asynchronicznych można znaleźć <xref:System.ComponentModel.BackgroundWorker> odpowiedni składnik. Aby uzyskać więcej informacji na temat <xref:System.ComponentModel.BackgroundWorker> , zobacz [jak: uruchamianie operacji w tle](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md).
+W przypadku prostych operacji asynchronicznych można znaleźć <xref:System.ComponentModel.BackgroundWorker> odpowiedni składnik. Aby uzyskać więcej informacji na temat <xref:System.ComponentModel.BackgroundWorker> , zobacz [jak: uruchamianie operacji w tle](/dotnet/desktop/winforms/controls/how-to-run-an-operation-in-the-background).
 
 Na poniższej liście opisano funkcje wzorca asynchronicznego opartego na zdarzeniach omówione w tym temacie.
 
@@ -167,7 +167,7 @@ Jest on często pożądany w przypadku operacji asynchronicznej do raportowania 
 
 - Nazwij to zdarzenie w następujący sposób:
 
-  - `ProgressChanged`Jeśli klasa ma wiele operacji asynchronicznych (lub można ją zwiększyć, aby uwzględnić wiele operacji asynchronicznych w przyszłych wersjach);
+  - `ProgressChanged` Jeśli klasa ma wiele operacji asynchronicznych (lub można ją zwiększyć, aby uwzględnić wiele operacji asynchronicznych w przyszłych wersjach);
 
   - _MethodName_**ProgressChanged** , jeśli klasa ma pojedynczą operację asynchroniczną.
 
@@ -217,7 +217,7 @@ Chociaż korzystanie z `out` i `ref` jest ogólnie zalecane w .NET Framework, po
 
 Nadana metoda synchroniczna *MethodName*:
 
-- `out`parametry do *MethodName* nie powinny być częścią _MethodName_**Async**. Zamiast tego powinny one być częścią _MethodName_**CompletedEventArgs** o tej samej nazwie, co odpowiedni parametr w *MethodName* (chyba że istnieje bardziej odpowiednia nazwa).
+- `out` parametry do *MethodName* nie powinny być częścią _MethodName_**Async**. Zamiast tego powinny one być częścią _MethodName_**CompletedEventArgs** o tej samej nazwie, co odpowiedni parametr w *MethodName* (chyba że istnieje bardziej odpowiednia nazwa).
 
 - `ref`parametry do *MethodName* powinny być wyświetlane jako część _MethodName_**Async**MethodName, a jako część CompletedEventArgs _MethodName_**CompletedEventArgs** o takiej samej nazwie jak jej parametr odpowiedni w *MethodName* (chyba że istnieje bardziej odpowiednia nazwa).
 
@@ -258,13 +258,13 @@ public class MethodNameCompletedEventArgs : System.ComponentModel.AsyncCompleted
 }
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
 - [Instrukcje: Implementacja składnika obsługującego wzorzec asynchroniczny oparty na zdarzeniach](component-that-supports-the-event-based-asynchronous-pattern.md)
-- [Instrukcje: uruchamianie operacji w tle](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [Instrukcje: implementowanie formularza korzystającego z operacji w tle](../../framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [Instrukcje: uruchamianie operacji w tle](/dotnet/desktop/winforms/controls/how-to-run-an-operation-in-the-background)
+- [Instrukcje: implementowanie formularza korzystającego z operacji w tle](/dotnet/desktop/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation)
 - [Decydowanie o czasie implementacji klienta wzorca asynchronicznego opartego na zdarzeniach](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
 - [Najlepsze rozwiązania w zakresie implementacji wzorca asynchronicznego opartego na zdarzeniach](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
 - [Asynchroniczny wzorzec oparty na zdarzeniach (EAP)](event-based-asynchronous-pattern-eap.md)

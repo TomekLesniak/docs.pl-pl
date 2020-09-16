@@ -3,12 +3,12 @@ title: Własność i oddzielenie schematu użytkownika w programie SQL Server
 description: Dowiedz się, jak separacja schematów użytkownika umożliwia elastyczność zarządzania uprawnieniami obiektu SQL Server Database. Schematy grupują obiekty w oddzielne przestrzenie nazw.
 ms.date: 03/30/2017
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
-ms.openlocfilehash: 97e742979785fedd922dc887295b63e2d93bd147
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 27c37816353ca47c3f96867adc6186b0162feb20
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286265"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558839"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>Własność i oddzielenie schematu użytkownika w programie SQL Server
 Podstawową koncepcją SQL Server zabezpieczeń jest to, że właściciele obiektów mają nieodwołalne uprawnienia do administrowania nimi. Nie można usunąć uprawnień z właściciela obiektu i nie można upuścić użytkowników z bazy danych, jeśli są one właścicielami obiektów.  
@@ -56,7 +56,7 @@ Server.Database.DatabaseSchema.DatabaseObject
   
 |Zasób|Opis|  
 |--------------|-----------------|  
-|[Oddzielanie schematu użytkownika](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms190387(v=sql.105))|Opisuje zmiany wprowadzone przez separację w schemacie użytkownika. Obejmuje nowe zachowanie, jego wpływ na własność, widoki katalogów i uprawnienia.|  
+|[Oddzielanie schematu użytkownika](/previous-versions/sql/sql-server-2008-r2/ms190387(v=sql.105))|Opisuje zmiany wprowadzone przez separację w schemacie użytkownika. Obejmuje nowe zachowanie, jego wpływ na własność, widoki katalogów i uprawnienia.|  
   
 ## <a name="see-also"></a>Zobacz także
 

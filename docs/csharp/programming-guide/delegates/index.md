@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: 2c1be56b67528c17a6cf1d8d8517817ff93b2aa5
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: cf6b90a606d13e3196e3114e84971451a9a322c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063641"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553574"
 ---
 # <a name="delegates-c-programming-guide"></a>Delegaty (Przewodnik programowania w języku C#)
 [Delegat](../../language-reference/builtin-types/reference-types.md) jest typem, który reprezentuje odwołania do metod z określoną listą parametrów i zwracanym typem. Podczas tworzenia wystąpienia delegata można skojarzyć jego wystąpienie z dowolną metodą mającą zgodny podpis i zwracany typ. Za pośrednictwem wystąpienia delegata można wywołać metodę.  
@@ -46,7 +46,7 @@ ms.locfileid: "88063641"
   
 - [Używanie delegatów](./using-delegates.md)  
   
-- [Kiedy używać delegatów zamiast interfejsów (Przewodnik programowania w języku C#)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
+- [Kiedy używać delegatów zamiast interfejsów (Przewodnik programowania w języku C#)](/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
   
 - [Delegaty z metodami nazwanymi lub Metody anonimowe](./delegates-with-named-vs-anonymous-methods.md)  
   
@@ -61,9 +61,9 @@ ms.locfileid: "88063641"
 Aby uzyskać więcej informacji, zobacz [Delegaty](~/_csharplang/spec/delegates.md) w [specyfikacji języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
   
 ## <a name="featured-book-chapters"></a>Polecane rozdziały książki  
- [Delegaty, zdarzenia i wyrażenia lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) w [języku c# 3,0 Cookbook, wydanie trzecie: więcej niż 250 rozwiązań dla programistów 3,0 c#](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
+ [Delegaty, zdarzenia i wyrażenia lambda](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) w [języku c# 3,0 Cookbook, wydanie trzecie: więcej niż 250 rozwiązań dla programistów 3,0 c#](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))  
   
- [Delegaty i zdarzenia](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) w [uczeniu C# 3,0: główne podstawy języka c# 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
+ [Delegaty i zdarzenia](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) w [uczeniu C# 3,0: główne podstawy języka c# 3,0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))  
   
 ## <a name="see-also"></a>Zobacz także
 

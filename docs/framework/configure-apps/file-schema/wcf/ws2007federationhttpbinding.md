@@ -2,12 +2,12 @@
 title: <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9af4ec79-cdef-457e-9dca-09d5eb821594
-ms.openlocfilehash: 20ba643fddbac8a488e5457f0195cc253d4d23f7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fe9ab2e19706a5d295b5916aeb818621d1132c11
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74139313"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558774"
 ---
 # \<ws2007FederationHttpBinding>
 
@@ -87,8 +87,8 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
 |Element|Opis|
 |-------------|-----------------|
 |[\<security>](security-of-wsfederationhttpbinding.md)|Definiuje ustawienia zabezpieczeń wiadomości. Ten element jest typu <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement> .|
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Określa, czy niezawodne sesje są nawiązywane między punktami końcowymi kanałów.|
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|
+|[\<reliableSession>](/previous-versions/ms731375(v=vs.90))|Określa, czy niezawodne sesje są nawiązywane między punktami końcowymi kanałów.|
 
 ### <a name="parent-elements"></a>Elementy nadrzędne
 
@@ -98,7 +98,7 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
 
 ## <a name="remarks"></a>Uwagi
 
-Federacja jest możliwością udostępniania tożsamości w wielu przedsiębiorstwach lub domenach zaufania na potrzeby uwierzytelniania i autoryzacji. Używa protokołu WS-Trust, aby zamapować reprezentację tożsamości z jednej domeny zaufania na inną. Federacyjne powiązanie HTTP obsługuje zabezpieczenia protokołu SOAP oraz zabezpieczenia w trybie mieszanym, ale nie obsługuje zabezpieczeń transportu. Usługi skonfigurowane przy użyciu tego powiązania muszą korzystać z transportu HTTP. Aby uzyskać więcej informacji, zobacz [\<wsFederationHttpBinding>](wsfederationhttpbinding.md) .
+Federacja jest możliwością udostępniania tożsamości w wielu przedsiębiorstwach lub domenach zaufania na potrzeby uwierzytelniania i autoryzacji. Używa protokołu WS-Trust, aby zamapować reprezentację tożsamości z jednej domeny zaufania na inną. Federacyjne powiązanie HTTP obsługuje zabezpieczenia protokołu SOAP oraz zabezpieczenia w trybie mieszanym, ale nie obsługuje zabezpieczeń transportu. Usługi skonfigurowane przy użyciu tego powiązania muszą korzystać z transportu HTTP. Aby uzyskać więcej informacji, zobacz [\<wsFederationHttpBinding>](wsfederationhttpbinding.md).
 
 ## <a name="example"></a>Przykład
 
@@ -140,5 +140,5 @@ Federacja jest możliwością udostępniania tożsamości w wielu przedsiębiors
 - [\<wsFederationHttpBinding>](wsfederationhttpbinding.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

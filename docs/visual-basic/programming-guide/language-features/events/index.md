@@ -5,12 +5,12 @@ helpviewer_keywords:
 - events [Visual Basic], about events
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-ms.openlocfilehash: c61e960078557282de39bdc30f1d614ce8a77f29
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 264c639656b592c0cc660d3745528df7cc89c851
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405121"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559340"
 ---
 # <a name="events-visual-basic"></a>Zdarzenia (Visual Basic)
 Chociaż można wizualizować projekt programu Visual Studio jako szereg procedur wykonywanych w sekwencji, w rzeczywistości większość programów jest sterowana zdarzeniami — oznacza to, że przepływ wykonywania jest określany przez wystąpienia zewnętrzne nazywane *zdarzeniami*.  
@@ -59,7 +59,7 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
   
 - Nie można tworzyć tablic `WithEvents` zmiennych.  
   
- `WithEvents`Zmienne umożliwiają pojedynczemu programowi obsługi zdarzeń obsługę jednego lub więcej rodzajów zdarzeń lub jeden lub więcej programów obsługi zdarzeń w celu obsługi tego samego rodzaju zdarzenia.  
+ `WithEvents` Zmienne umożliwiają pojedynczemu programowi obsługi zdarzeń obsługę jednego lub więcej rodzajów zdarzeń lub jeden lub więcej programów obsługi zdarzeń w celu obsługi tego samego rodzaju zdarzenia.  
   
  Chociaż `Handles` klauzula jest standardowym sposobem kojarzenia zdarzenia z programem obsługi zdarzeń, jest ograniczona do kojarzenia zdarzeń z procedurami obsługi zdarzeń w czasie kompilacji.  
   
@@ -70,11 +70,11 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
 ### <a name="addhandler-and-removehandler"></a>AddHandler i RemoveHandler  
  `AddHandler`Instrukcja jest podobna do `Handles` klauzuli w tym, że oba umożliwiają określenie programu obsługi zdarzeń. Jednak, `AddHandler` używany z `RemoveHandler` , zapewnia większą elastyczność niż `Handles` klauzula, umożliwiając dynamiczne dodawanie, usuwanie i zmienianie obsługi zdarzeń skojarzonej ze zdarzeniem. Jeśli chcesz obsługiwać zdarzenia udostępnione lub zdarzenia ze struktury, musisz użyć `AddHandler` .  
   
- `AddHandler`przyjmuje dwa argumenty: nazwę zdarzenia od nadawcy zdarzenia, takiego jak kontrolka, i wyrażenie, które daje delegatowi. Nie trzeba jawnie podawać klasy delegata przy użyciu `AddHandler` , ponieważ `AddressOf` instrukcja zawsze zwraca odwołanie do delegata. Poniższy przykład kojarzy procedurę obsługi zdarzeń z zdarzeniem wywoływanym przez obiekt:  
+ `AddHandler` przyjmuje dwa argumenty: nazwę zdarzenia od nadawcy zdarzenia, takiego jak kontrolka, i wyrażenie, które daje delegatowi. Nie trzeba jawnie podawać klasy delegata przy użyciu `AddHandler` , ponieważ `AddressOf` instrukcja zawsze zwraca odwołanie do delegata. Poniższy przykład kojarzy procedurę obsługi zdarzeń z zdarzeniem wywoływanym przez obiekt:  
   
  [!code-vb[VbVbalrEvents#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#28)]  
   
- `RemoveHandler`, która rozłącza zdarzenie z programu obsługi zdarzeń, używa tej samej składni co `AddHandler` . Przykład:  
+ `RemoveHandler`, która rozłącza zdarzenie z programu obsługi zdarzeń, używa tej samej składni co `AddHandler` . Na przykład:  
   
  [!code-vb[VbVbalrEvents#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#29)]  
   
@@ -91,7 +91,7 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
   
 ### <a name="to-handle-events-from-a-base-class"></a>Aby obsłużyć zdarzenia z klasy bazowej  
   
-- Zadeklaruj procedurę obsługi zdarzeń w klasie pochodnej przez dodanie instrukcji `Handles MyBase.` *EventName* do wiersza deklaracji procedury obsługi zdarzeń, gdzie *EventName* jest nazwą zdarzenia w obsługiwanej klasie podstawowej. Przykład:  
+- Zadeklaruj procedurę obsługi zdarzeń w klasie pochodnej przez dodanie instrukcji `Handles MyBase.` *EventName* do wiersza deklaracji procedury obsługi zdarzeń, gdzie *EventName* jest nazwą zdarzenia w obsługiwanej klasie podstawowej. Na przykład:  
   
      [!code-vb[VbVbalrEvents#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#12)]  
   
@@ -105,5 +105,5 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
 |[Instrukcje: deklarowanie zdarzeń niestandardowych w celu zachowywania pamięci](how-to-declare-custom-events-to-conserve-memory.md)|Demonstruje sposób definiowania zdarzenia niestandardowego, które używa pamięci tylko wtedy, gdy zdarzenie jest obsługiwane.|  
 |[Rozwiązywanie problemów związanych z odziedziczonymi programami obsługi zdarzeń w Visual Basic](troubleshooting-inherited-event-handlers.md)|Wyświetla listę typowych problemów występujących w przypadku programów obsługi zdarzeń w składnikach dziedziczonych.|  
 |[Zdarzenia](../../../../standard/events/index.md)|Omówienie modelu zdarzeń w środowisku .NET Framework.|  
-|[Tworzenie programów obsługi zdarzeń w formularzach systemu Windows](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Opisuje sposób pracy ze zdarzeniami skojarzonymi z obiektami Windows Forms.|  
+|[Tworzenie programów obsługi zdarzeń w formularzach systemu Windows](/dotnet/desktop/winforms/creating-event-handlers-in-windows-forms)|Opisuje sposób pracy ze zdarzeniami skojarzonymi z obiektami Windows Forms.|  
 |[Delegaci](../delegates/index.md)|Zawiera omówienie delegatów w Visual Basic.|

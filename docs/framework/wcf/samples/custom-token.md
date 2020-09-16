@@ -2,12 +2,12 @@
 title: Token niestandardowy
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: b073375325d2989a23624303f2c40b8f61a29d02
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 1a8c312248b0c15bb2e366a3d9925014556b6dd8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928656"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553164"
 ---
 # <a name="custom-token"></a>Token niestandardowy
 
@@ -28,7 +28,7 @@ Ten przykład pokazuje, jak dodać implementację niestandardowego tokenu do apl
 
 ## <a name="client-authentication-using-a-custom-security-token"></a>Uwierzytelnianie klienta przy użyciu niestandardowego tokenu zabezpieczającego
 
- Usługa ujawnia pojedynczy punkt końcowy, który jest programowo tworzony przy `BindingHelper` użyciu `EchoServiceHost` klas i. Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane z powiązaniem niestandardowym `SymmetricSecurityBindingElement` przy `HttpTransportBindingElement`użyciu i. Ten przykład ustawia, `SymmetricSecurityBindingElement` aby używać certyfikatu X. 509 usługi do ochrony klucza symetrycznego podczas transmisji i do przekazywania niestandardowego `CreditCardToken` w nagłówku komunikatu WS-Security jako podpisane i zaszyfrowane tokeny zabezpieczające. Zachowanie określa poświadczenia usługi, które mają być używane do uwierzytelniania klientów, a także informacje na temat certyfikatu usługi Service X. 509.
+ Usługa ujawnia pojedynczy punkt końcowy, który jest programowo tworzony przy `BindingHelper` użyciu `EchoServiceHost` klas i. Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane z powiązaniem niestandardowym przy użyciu `SymmetricSecurityBindingElement` i `HttpTransportBindingElement` . Ten przykład ustawia, `SymmetricSecurityBindingElement` Aby używać certyfikatu X. 509 usługi do ochrony klucza symetrycznego podczas transmisji i do przekazywania niestandardowego `CreditCardToken` w nagłówku komunikatu WS-Security jako podpisane i zaszyfrowane tokeny zabezpieczające. Zachowanie określa poświadczenia usługi, które mają być używane do uwierzytelniania klientów, a także informacje na temat certyfikatu usługi Service X. 509.
 
 ```csharp
 public static class BindingHelper
@@ -49,7 +49,7 @@ public static class BindingHelper
 }
 ```
 
- Aby korzystać z tokenu karty kredytowej w komunikacie, przykład używa niestandardowych poświadczeń usługi do zapewnienia tej funkcji. Klasa poświadczeń usługi znajduje się w `CreditCardServiceCredentials` klasie i jest dodawana do kolekcji zachowań hosta usługi `EchoServiceHost.InitializeRuntime` w metodzie.
+ Aby korzystać z tokenu karty kredytowej w komunikacie, przykład używa niestandardowych poświadczeń usługi do zapewnienia tej funkcji. Klasa poświadczeń usługi znajduje się w `CreditCardServiceCredentials` klasie i jest dodawana do kolekcji zachowań hosta usługi w `EchoServiceHost.InitializeRuntime` metodzie.
 
 ```csharp
 class EchoServiceHost : ServiceHost
@@ -85,7 +85,7 @@ class EchoServiceHost : ServiceHost
 }
 ```
 
- Punkt końcowy klienta jest konfigurowany w podobny sposób, jak punkt końcowy usługi. Klient używa tej samej `BindingHelper` klasy do utworzenia powiązania. Pozostała część instalacji znajduje się w `Client` klasie. Klient ustawia również informacje, które mają być zawarte w `CreditCardToken` i informacje o certyfikacie usługi X. 509 w kodzie Instalatora przez `CreditCardClientCredentials` dodanie wystąpienia z odpowiednimi danymi do kolekcji zachowań punktów końcowych klienta. Przykład używa certyfikatu X. 509 z nazwą podmiotu ustawioną `CN=localhost` jako certyfikat usługi.
+ Punkt końcowy klienta jest konfigurowany w podobny sposób, jak punkt końcowy usługi. Klient używa tej samej `BindingHelper` klasy do utworzenia powiązania. Pozostała część instalacji znajduje się w `Client` klasie. Klient ustawia również informacje, które mają być zawarte w `CreditCardToken` i informacje o certyfikacie usługi X. 509 w kodzie Instalatora przez dodanie `CreditCardClientCredentials` wystąpienia z odpowiednimi danymi do kolekcji zachowań punktów końcowych klienta. Przykład używa certyfikatu X. 509 z nazwą podmiotu ustawioną `CN=localhost` jako certyfikat usługi.
 
 ```csharp
 Binding creditCardBinding = BindingHelper.CreateCreditCardBinding();
@@ -258,9 +258,9 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 
  W tym przykładzie używamy dostawcy tokenów tylko na kliencie i uwierzytelniającego tokena tylko do usługi, ponieważ chcemy przesłać token karty kredytowej tylko w kierunku od klienta do usługi.
 
- Funkcje klienta znajdują się w `CreditCardClientCredentials` `CreditCardClientCredentialsSecurityTokenManager` klasach i `CreditCardTokenProvider` .
+ Funkcje klienta znajdują się w `CreditCardClientCredentials` `CreditCardClientCredentialsSecurityTokenManager` `CreditCardTokenProvider` klasach i.
 
- `CreditCardServiceCredentials`W usłudze funkcje znajdują się w klasach `CreditCardTokenAuthenticator` , `CreditCardServiceCredentialsSecurityTokenManager`i `CreditCardTokenAuthorizationPolicy` .
+ W usłudze funkcje znajdują się w `CreditCardServiceCredentials` `CreditCardServiceCredentialsSecurityTokenManager` `CreditCardTokenAuthenticator` `CreditCardTokenAuthorizationPolicy` klasach, i.
 
 ```csharp
     public class CreditCardClientCredentials : ClientCredentials
@@ -505,7 +505,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 
 ## <a name="displaying-the-callers-information"></a>Wyświetlanie informacji o wywołujących
 
- Aby wyświetlić informacje o wywołującym, użyj `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` , jak pokazano w poniższym przykładowym kodzie. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` Zawiera oświadczenia autoryzacji skojarzone z bieżącym obiektem wywołującym. Oświadczenia są dostarczane przez `CreditCardToken` klasę w swojej `AuthorizationPolicies` kolekcji.
+ Aby wyświetlić informacje o wywołującym, użyj, `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` jak pokazano w poniższym przykładowym kodzie. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets`Zawiera oświadczenia autoryzacji skojarzone z bieżącym obiektem wywołującym. Oświadczenia są dostarczane przez `CreditCardToken` klasę w swojej `AuthorizationPolicies` kolekcji.
 
 ```csharp
 bool TryGetStringClaimValue(ClaimSet claimSet, string claimType, out string claimValue)
@@ -547,15 +547,15 @@ string GetCallerCreditCardNumber()
 
 ## <a name="setup-batch-file"></a>Plik wsadowy konfiguracji
 
- Plik wsadowy Setup. bat dołączony do tego przykładu umożliwia skonfigurowanie serwera z odpowiednimi certyfikatami w celu uruchomienia aplikacji hostowanej przez usługi IIS, która wymaga zabezpieczeń opartych na certyfikatach serwera. Ten plik wsadowy należy zmodyfikować, aby mógł działać na różnych komputerach lub działać w nieobsługiwanym przypadku.
+ Plik wsadowy Setup.bat dołączony do tego przykładu umożliwia skonfigurowanie serwera z odpowiednimi certyfikatami w celu uruchomienia aplikacji hostowanej przez usługi IIS, która wymaga zabezpieczeń opartych na certyfikatach serwera. Ten plik wsadowy należy zmodyfikować, aby mógł działać na różnych komputerach lub działać w nieobsługiwanym przypadku.
 
  Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, dzięki czemu można je zmodyfikować tak, aby były uruchamiane w odpowiedniej konfiguracji.
 
 - Tworzenie certyfikatu serwera:
 
-     Poniższe wiersze z `Setup.bat` pliku wsadowego tworzą certyfikat serwera do użycia. `%SERVER_NAME%` Zmienna określa nazwę serwera. Zmień tę zmienną, aby określić własną nazwę serwera. Wartość domyślna w tym pliku wsadowym to localhost. Jeśli zmienisz `%SERVER_NAME%` zmienną, musisz przejść przez pliki Client.cs i Service.cs i zamienić wszystkie wystąpienia localhost na nazwę serwera używaną w skrypcie Setup. bat.
+     Poniższe wiersze z `Setup.bat` pliku wsadowego tworzą certyfikat serwera do użycia. `%SERVER_NAME%`Zmienna określa nazwę serwera. Zmień tę zmienną, aby określić własną nazwę serwera. Wartość domyślna w tym pliku wsadowym to localhost. Jeśli zmienisz `%SERVER_NAME%` zmienną, musisz przejść przez pliki Client.cs i Service.cs i zamienić wszystkie wystąpienia localhost na nazwę serwera używaną w skrypcie Setup.bat.
 
-     Certyfikat jest przechowywany w magazynie `LocalMachine` (Personal) w lokalizacji magazynu. Certyfikat jest przechowywany w magazynie LocalMachine dla usług hostowanych przez usługi IIS. W przypadku usług samodzielnych należy zmodyfikować plik wsadowy, aby przechowywać certyfikat klienta w lokalizacji magazynu CurrentUser przez zastąpienie ciągu LocalMachine ciągiem CurrentUser.
+     Certyfikat jest przechowywany w magazynie (Personal) w `LocalMachine` lokalizacji magazynu. Certyfikat jest przechowywany w magazynie LocalMachine dla usług hostowanych przez usługi IIS. W przypadku usług samodzielnych należy zmodyfikować plik wsadowy, aby przechowywać certyfikat klienta w lokalizacji magazynu CurrentUser przez zastąpienie ciągu LocalMachine ciągiem CurrentUser.
 
     ```bat
     echo ************
@@ -569,7 +569,7 @@ string GetCallerCreditCardNumber()
 
 - Instalowanie certyfikatu serwera w magazynie zaufanych certyfikatów klienta:
 
-     Następujące wiersze w pliku wsadowym Setup. bat kopiują certyfikat serwera do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert. exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
+     Poniższe wiersze w pliku wsadowym Setup.bat kopiują certyfikat serwera do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
 
     ```bat
     echo ************
@@ -578,7 +578,7 @@ string GetCallerCreditCardNumber()
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
-- Aby umożliwić dostęp do klucza prywatnego certyfikatu z usługi hostowanej przez usługi IIS, konto użytkownika, pod którym działa proces hostowany przez usługi IIS, musi mieć przyznane odpowiednie uprawnienia do klucza prywatnego. Jest to realizowane przez ostatnie kroki skryptu Setup. bat.
+- Aby umożliwić dostęp do klucza prywatnego certyfikatu z usługi hostowanej przez usługi IIS, konto użytkownika, pod którym działa proces hostowany przez usługi IIS, musi mieć przyznane odpowiednie uprawnienia do klucza prywatnego. Jest to realizowane przez ostatnie kroki skryptu Setup.bat.
 
     ```bat
     echo ************
@@ -592,7 +592,7 @@ string GetCallerCreditCardNumber()
     ```
 
 > [!NOTE]
-> Plik wsadowy Setup. bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2012. Zmienna środowiskowa PATH ustawiona w wierszu polecenia programu Visual Studio 2012 wskazuje katalog zawierający pliki wykonywalne wymagane przez skrypt Setup. bat.
+> Plik wsadowy Setup.bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2012. Zmienna środowiskowa PATH ustawiona w wierszu polecenia programu Visual Studio 2012 wskazuje katalog zawierający pliki wykonywalne wymagane przez skrypt Setup.bat.
 
 #### <a name="to-set-up-and-build-the-sample"></a>Aby skonfigurować i skompilować przykład
 
@@ -602,22 +602,22 @@ string GetCallerCreditCardNumber()
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Aby uruchomić przykład na tym samym komputerze
 
-1. Otwórz okno wiersza polecenia programu Visual Studio 2012 z uprawnieniami administratora i uruchom setup. bat z przykładowego folderu instalacji. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu. Upewnij się, że ścieżka zawiera folder, w którym znajduje się Makecert. exe.
+1. Otwórz okno wiersza polecenia programu Visual Studio 2012 z uprawnieniami administratora i uruchom Setup.bat z przykładowego folderu instalacji. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu. Upewnij się, że ścieżka zawiera folder, w którym znajduje się Makecert.exe.
 
 > [!NOTE]
-> Pamiętaj o usunięciu certyfikatów, uruchamiając Oczyść. bat po zakończeniu z przykładem. Inne przykłady zabezpieczeń używają tych samych certyfikatów.  
+> Pamiętaj o usunięciu certyfikatów, uruchamiając Cleanup.bat po zakończeniu z przykładem. Inne przykłady zabezpieczeń używają tych samych certyfikatów.  
   
-1. Uruchom plik Client. exe z katalogu client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
+1. Uruchom Client.exe z katalogu client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
   
-2. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+2. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computer"></a>Aby uruchomić przykład na komputerze  
   
 1. Utwórz katalog na komputerze usługi dla plików binarnych usługi.  
   
-2. Skopiuj pliki programu Service Files do katalogu usługi na komputerze usługi. Nie zapomnij skopiować CreditCardFile. txt; w przeciwnym razie wystawca uwierzytelnienia karty kredytowej nie może zweryfikować informacji o karcie kredytowej wysłanych przez klienta. Skopiuj także pliki Setup. bat i Oczyść. bat do komputera usługi.  
+2. Skopiuj pliki programu Service Files do katalogu usługi na komputerze usługi. Nie zapomnij kopiować CreditCardFile.txt; w przeciwnym razie wystawca uwierzytelnienia karty kredytowej nie może zweryfikować informacji o karcie kredytowej wysłanych przez klienta. Skopiuj także pliki Setup.bat i Cleanup.bat na komputer usługi.  
   
-3. Musisz mieć certyfikat serwera z nazwą podmiotu zawierającą w pełni kwalifikowaną nazwę domeny komputera. Można go utworzyć przy użyciu Setup. bat, jeśli zmienisz `%SERVER_NAME%` zmienną na w pełni kwalifikowaną nazwę komputera, na którym usługa jest hostowana. Należy pamiętać, że plik Setup. bat musi być uruchamiany w wiersz polecenia dla deweloperów dla programu Visual Studio otwartego z uprawnieniami administratora.  
+3. Musisz mieć certyfikat serwera z nazwą podmiotu zawierającą w pełni kwalifikowaną nazwę domeny komputera. Można go utworzyć przy użyciu Setup.bat, jeśli zmienisz `%SERVER_NAME%` zmienną na w pełni kwalifikowaną nazwę komputera, na którym usługa jest hostowana. Należy pamiętać, że plik Setup.bat musi być uruchamiany w wiersz polecenia dla deweloperów dla programu Visual Studio otwartego z uprawnieniami administratora.  
   
 4. Skopiuj certyfikat serwera do magazynu CurrentUser-TrustedPeople na kliencie. Należy to zrobić tylko wtedy, gdy certyfikat serwera nie zostanie wystawiony przez zaufanego wystawcy.  
   
@@ -629,10 +629,10 @@ string GetCallerCreditCardNumber()
   
 8. W pliku Client.cs Zmień nazwę podmiotu certyfikatu X. 509 usługi w taki sposób, aby była zgodna z w pełni kwalifikowaną nazwą komputera hosta zdalnego zamiast localhost.  
   
-9. Na komputerze klienckim uruchom program Client. exe w oknie wiersza polecenia.  
+9. Na komputerze klienckim uruchom Client.exe z okna wiersza polecenia.  
   
-10. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Aby wyczyścić po przykładzie  
   
-1. Uruchom Oczyść. bat w folderze Samples po zakończeniu uruchamiania przykładu.  
+1. Uruchom Cleanup.bat w folderze Samples po zakończeniu uruchamiania przykładu.

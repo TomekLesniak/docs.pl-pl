@@ -13,12 +13,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 4edcd2645b28095f4bd18f4918b9afa5c893bd39
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 80dac36199dd13abeab295d4b53a52615e7ae625
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662735"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559164"
 ---
 # <a name="observer-design-pattern"></a>Wzorzec projektowy obserwatora
 
@@ -47,7 +47,7 @@ Implementacja wzorca wymaga podania następujących danych:
 - Obiekt, który zawiera dane wysyłane przez dostawcę do obserwatorów. Typ tego obiektu odpowiada parametrowi typu ogólnego <xref:System.IObservable%601> <xref:System.IObserver%601> interfejsów i. Chociaż ten obiekt może być taki sam jak <xref:System.IObservable%601> implementacja, najczęściej jest to oddzielny typ.
 
 > [!NOTE]
-> Oprócz wdrożenia wzorca projektowego obserwatora, warto zapoznać się z bibliotekami utworzonymi przy użyciu <xref:System.IObservable%601> <xref:System.IObserver%601> interfejsów i. Na przykład [reaktywne rozszerzenia dla platformy .NET (RX)](https://docs.microsoft.com/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) składają się z zestawu metod rozszerzających i operatorów standardowej sekwencji LINQ do obsługi programowania asynchronicznego.
+> Oprócz wdrożenia wzorca projektowego obserwatora, warto zapoznać się z bibliotekami utworzonymi przy użyciu <xref:System.IObservable%601> <xref:System.IObserver%601> interfejsów i. Na przykład [reaktywne rozszerzenia dla platformy .NET (RX)](/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) składają się z zestawu metod rozszerzających i operatorów standardowej sekwencji LINQ do obsługi programowania asynchronicznego.
 
 ## <a name="implementing-the-pattern"></a>Implementowanie wzorca
 
@@ -58,9 +58,9 @@ W poniższym przykładzie zastosowano Wzorzec projektowy obserwatora do zaimplem
 
 `BaggageHandler`Klasa jest odpowiedzialna za otrzymywanie informacji na temat docierających lotów i bagażów roszczeń. Wewnętrznie obsługuje dwie kolekcje:
 
-- `observers`— Kolekcja klientów, którzy będą otrzymywać zaktualizowane informacje.
+- `observers` — Kolekcja klientów, którzy będą otrzymywać zaktualizowane informacje.
 
-- `flights`-Kolekcja lotów i przypisane do nich karuzeli.
+- `flights` -Kolekcja lotów i przypisane do nich karuzeli.
 
 Obie kolekcje są reprezentowane przez <xref:System.Collections.Generic.List%601> obiekty ogólne, które są tworzone w `BaggageHandler` konstruktorze klasy. Kod źródłowy `BaggageHandler` klasy jest przedstawiony w poniższym przykładzie.
 
@@ -83,7 +83,7 @@ W poniższym przykładzie przedstawiono <xref:System.IObserver%601> implementacj
 [!code-csharp[Conceptual.ObserverDesignPattern#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesignpattern/cs/observer.cs#4)]
 [!code-vb[Conceptual.ObserverDesignPattern#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesignpattern/vb/observer.vb#4)]
 
-`ArrivalsMonitor`Klasa zawiera `Subscribe` `Unsubscribe` metody i. `Subscribe`Metoda umożliwia klasie zapisywanie <xref:System.IDisposable> implementacji zwróconej przez wywołanie do <xref:System.IObservable%601.Subscribe%2A> zmiennej prywatnej. `Unsubscribe`Metoda umożliwia klasy anulowanie subskrypcji powiadomień przez wywołanie <xref:System.IDisposable.Dispose%2A> implementacji dostawcy. `ArrivalsMonitor`zawiera również implementacje <xref:System.IObserver%601.OnNext%2A> metod, <xref:System.IObserver%601.OnError%2A> , i <xref:System.IObserver%601.OnCompleted%2A> . Tylko <xref:System.IObserver%601.OnNext%2A> implementacja zawiera znaczną ilość kodu. Metoda działa z prywatnym, posortowanym obiektem ogólnym, <xref:System.Collections.Generic.List%601> który utrzymuje informacje o portach lotniczych pochodzenia dla docierających lotów i karuzeli, na których jest dostępny bagaż. Jeśli `BaggageHandler` Klasa zgłasza nowe nadejście lotu, <xref:System.IObserver%601.OnNext%2A> Implementacja metody dodaje informacje o tym locie do listy. Jeśli `BaggageHandler` Klasa zgłasza, że bagaż pracownika został zwolniony, <xref:System.IObserver%601.OnNext%2A> Metoda usuwa ten lot z listy. Za każdym razem, gdy zostanie wprowadzona zmiana, lista zostanie posortowana i wyświetlona w konsoli programu.
+`ArrivalsMonitor`Klasa zawiera `Subscribe` `Unsubscribe` metody i. `Subscribe`Metoda umożliwia klasie zapisywanie <xref:System.IDisposable> implementacji zwróconej przez wywołanie do <xref:System.IObservable%601.Subscribe%2A> zmiennej prywatnej. `Unsubscribe`Metoda umożliwia klasy anulowanie subskrypcji powiadomień przez wywołanie <xref:System.IDisposable.Dispose%2A> implementacji dostawcy. `ArrivalsMonitor` zawiera również implementacje <xref:System.IObserver%601.OnNext%2A> metod, <xref:System.IObserver%601.OnError%2A> , i <xref:System.IObserver%601.OnCompleted%2A> . Tylko <xref:System.IObserver%601.OnNext%2A> implementacja zawiera znaczną ilość kodu. Metoda działa z prywatnym, posortowanym obiektem ogólnym, <xref:System.Collections.Generic.List%601> który utrzymuje informacje o portach lotniczych pochodzenia dla docierających lotów i karuzeli, na których jest dostępny bagaż. Jeśli `BaggageHandler` Klasa zgłasza nowe nadejście lotu, <xref:System.IObserver%601.OnNext%2A> Implementacja metody dodaje informacje o tym locie do listy. Jeśli `BaggageHandler` Klasa zgłasza, że bagaż pracownika został zwolniony, <xref:System.IObserver%601.OnNext%2A> Metoda usuwa ten lot z listy. Za każdym razem, gdy zostanie wprowadzona zmiana, lista zostanie posortowana i wyświetlona w konsoli programu.
 
 Poniższy przykład zawiera punkt wejścia aplikacji, który tworzy wystąpienie klasy, `BaggageHandler` a także dwa wystąpienia `ArrivalsMonitor` klasy, i używa `BaggageHandler.BaggageStatus` metody do dodawania i usuwania informacji na temat przybycia lotów. W każdym przypadku obserwatorzy odbierają aktualizacje i poprawnie wyświetlają informacje o postawie bagażu.
 

@@ -2,12 +2,12 @@
 title: Śledzenie cykliczne
 ms.date: 03/30/2017
 ms.assetid: 5ff139f9-8806-47bc-8f33-47fe6c436b92
-ms.openlocfilehash: 1759db28cb024afc04d02c4b128f96d73aefdd87
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d9af1f18a507a79c9c287393652e65dcb3372444
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585444"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552522"
 ---
 # <a name="circular-tracing"></a>Śledzenie cykliczne
 
@@ -22,9 +22,9 @@ W tym przykładzie założono, że znasz przykład [śledzenia i rejestrowania k
 
 Koncepcja w odróżnieniu od implementacji detektora śledzenia cyklicznego buforu ma dwa pliki, które mogą przechowywać do połowy łącznej liczby żądanych danych dziennika śledzenia. Odbiornik tworzy jeden plik i zapisuje je do tego pliku do momentu, aż osiągnie limit o połowie rozmiaru danych, w którym wskazuje na drugi plik. Gdy odbiornik osiągnie limit dla drugiego pliku — zastępuje pierwszy plik nowym śladem.
 
-Ten odbiornik pochodzi z `XmlWriteTraceListener` i umożliwia wyświetlanie dzienników za pomocą [narzędzia Podgląd śledzenia usług (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Podczas próby wyświetlenia dzienników te dwa pliki dziennika można łatwo połączyć przez otwarcie obu plików dziennika w tym samym czasie w narzędziu Podgląd śledzenia usługi. Narzędzie Podgląd śledzenia usług automatycznie zajmuje się sortowaniem śladów, tak aby były wyświetlane w odpowiedniej kolejności.
+Ten odbiornik pochodzi z `XmlWriteTraceListener` i umożliwia wyświetlanie dzienników za pomocą [narzędzia Podgląd śledzenia usługi (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Podczas próby wyświetlenia dzienników te dwa pliki dziennika można łatwo połączyć przez otwarcie obu plików dziennika w tym samym czasie w narzędziu Podgląd śledzenia usługi. Narzędzie Podgląd śledzenia usług automatycznie zajmuje się sortowaniem śladów, tak aby były wyświetlane w odpowiedniej kolejności.
 
-## <a name="configuration"></a>Konfigurowanie
+## <a name="configuration"></a>Konfiguracja
 
 Usługę można skonfigurować tak, aby korzystała z detektora śledzenia cyklicznego buforu przez dodanie następującego kodu dla odbiornika i elementów źródłowych. Maksymalny rozmiar pliku jest określony przez ustawienie `maxFileSizeKB` atrybutu w konfiguracji detektora cyklicznego śledzenia. Przedstawiono to w poniższym kodzie.
 
@@ -62,6 +62,6 @@ Usługę można skonfigurować tak, aby korzystała z detektora śledzenia cykli
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\CircularTracing`
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady monitorowania oprogramowania AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 76f0e2eccb5d1a59d9aaa3eed11b25dd2dd9cac3
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: eff414411c47ec83177ae6a09de4a96f47af6313
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063006"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558592"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Przewodnik: Programowanie Office (C# i Visual Basic)
 
@@ -45,7 +45,7 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 
 6. Jeśli chcesz, wpisz nazwę projektu w polu **Nazwa** .
 
-7. Kliknij przycisk **OK**.
+7. Kliknij pozycję **OK**.
 
 8. Nowy projekt zostanie wyświetlony w **Eksplorator rozwiązań**.
 
@@ -55,7 +55,7 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 
 2. Na karcie **zestawy** wybierz pozycję **Microsoft. Office. Interop. Excel**, wersja `<version>.0.0.0` (dla klucza w numerach wersji produktu Office, zobacz [Microsoft Versions](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)), na liście **Nazwa składnika** , a następnie naciśnij i przytrzymaj klawisz Ctrl i wybierz pozycję **Microsoft. Office. Interop. Word** `version <version>.0.0.0` . Jeśli zestawy nie są widoczne, może być konieczne zagwarantowanie, że są one zainstalowane i wyświetlone (zobacz [instrukcje: Instalowanie podstawowych zestawów międzyoperacyjnych pakietu Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)).
 
-3. Kliknij przycisk **OK**.
+3. Kliknij pozycję **OK**.
 
 ### <a name="to-add-necessary-imports-statements-or-using-directives"></a>Aby dodać wymagane instrukcje importu lub dyrektywy
 
@@ -117,7 +117,7 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 
      Te dodatki przedstawiają kolejną funkcję w języku C#: traktowanie `Object` wartości zwracanych z hostów com, takich jak pakiet Office, tak jakby były typu [dynamicznego](../../language-reference/builtin-types/reference-types.md). Odbywa się to automatycznie, gdy **osadzanie typów międzyoperacyjnych** jest ustawione na wartość domyślną, `True` lub, równoważne, gdy do zestawu jest przywoływana opcja kompilatora [-link](../../language-reference/compiler-options/link-compiler-option.md) . Typ `dynamic` umożliwia późne wiązanie, już dostępne w Visual Basic i pozwala uniknąć jawnego rzutowania wymaganego w języku C# 3,0 i jego wcześniejszych wersjach.
 
-     Na przykład `excelApp.Columns[1]` zwraca `Object` , i `AutoFit` jest metodą [zakresu](<xref:Microsoft.Office.Interop.Excel.Range>) programu Excel. Bez `dynamic` , należy rzutować obiekt zwracany przez `excelApp.Columns[1]` wystąpienie `Range` przed wywołaniem metody `AutoFit` .
+     Na przykład `excelApp.Columns[1]` zwraca `Object` , i `AutoFit` jest metodą  [zakresu](<xref:Microsoft.Office.Interop.Excel.Range>) programu Excel. Bez `dynamic` , należy rzutować obiekt zwracany przez `excelApp.Columns[1]` wystąpienie `Range` przed wywołaniem metody `AutoFit` .
 
      [!code-csharp[csOfficeWalkthrough#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#8)]
 
@@ -163,7 +163,7 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 
      Aby uzyskać więcej informacji, zobacz [jak: wyświetlić zawartość zestawu](../../../standard/assembly/view-contents.md).
 
-5. Kliknij dwukrotnie ikonę **manifestu** . Zostanie wyświetlone okno zawierające listę zestawów zawierających elementy, do których odwołuje się projekt. `Microsoft.Office.Interop.Excel`i `Microsoft.Office.Interop.Word` nie znajdują się na liście. Ponieważ typy wymagane przez projekt zostały zaimportowane do zestawu, odwołania do PIA nie są wymagane. Ułatwia to wdrażanie. Zestawów PIA nie muszą znajdować się na komputerze użytkownika, a ponieważ aplikacja nie wymaga wdrożenia określonej wersji PIA, aplikacje mogą być zaprojektowane do pracy z wieloma wersjami pakietu Office, pod warunkiem, że niezbędne interfejsy API istnieją we wszystkich wersjach.
+5. Kliknij dwukrotnie ikonę **manifestu** . Zostanie wyświetlone okno zawierające listę zestawów zawierających elementy, do których odwołuje się projekt. `Microsoft.Office.Interop.Excel` i `Microsoft.Office.Interop.Word` nie znajdują się na liście. Ponieważ typy wymagane przez projekt zostały zaimportowane do zestawu, odwołania do PIA nie są wymagane. Ułatwia to wdrażanie. Zestawów PIA nie muszą znajdować się na komputerze użytkownika, a ponieważ aplikacja nie wymaga wdrożenia określonej wersji PIA, aplikacje mogą być zaprojektowane do pracy z wieloma wersjami pakietu Office, pod warunkiem, że niezbędne interfejsy API istnieją we wszystkich wersjach.
 
      Ponieważ wdrożenie zestawów PIA nie jest już konieczne, można utworzyć aplikację w zaawansowanych scenariuszach, które współdziałają z wieloma wersjami pakietu Office, w tym z wcześniejszymi wersjami. Jednak jest to możliwe tylko wtedy, gdy kod nie używa żadnych interfejsów API, które nie są dostępne w używanej wersji pakietu Office. Nie zawsze należy czyścić, czy określony interfejs API jest dostępny w starszej wersji, a z tego powodu nie zaleca się korzystania z wcześniejszych wersji pakietu Office.
 
@@ -205,7 +205,7 @@ Aby ukończyć ten przewodnik, musisz mieć zainstalowany Microsoft Office Excel
 - [Lambda — Wyrażenia (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Wyrażenia lambda (C#)](../../language-reference/operators/lambda-expressions.md)
 - [Używanie właściwości indeksowanych w programowaniu usługi międzyoperacyjnej modelu COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
-- [Przewodnik: osadzanie informacji o typie z zestawów Microsoft Office w programie Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
+- [Przewodnik: osadzanie informacji o typie z zestawów Microsoft Office w programie Visual Studio](/previous-versions/visualstudio/visual-studio-2013/ee317478(v=vs.120))
 - [Przewodnik: osadzanie typów z zarządzanych zestawów](../../../standard/assembly/embed-types-visual-studio.md)
 - [Przewodnik: Tworzenie pierwszego dodatku VSTO dla programu Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)
 - [Międzyoperacyjność modelu COM](../../../visual-basic/programming-guide/com-interop/index.md)

@@ -2,12 +2,12 @@
 title: Obsługa kolejek komunikatów programu Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
-ms.openlocfilehash: 82e71afc911bff2504be15f7f9f2e736d943972b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5132e0380aebd595e79429fab9df8a7fb94574a0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584964"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558696"
 ---
 # <a name="message-queuing-to-windows-communication-foundation"></a>Obsługa kolejek komunikatów programu Windows Communication Foundation
 
@@ -139,11 +139,11 @@ Console.ReadLine();
 
 2. Skopiuj pliki programu klienckiego z folderu \client\bin\, w obszarze folder specyficzny dla języka, do komputera klienckiego.
 
-3. W pliku Client. exe. config zmień orderQueueName, aby określić nazwę komputera usługi zamiast ".".
+3. W pliku Client.exe.config Zmień orderQueueName, aby określić nazwę komputera usługi zamiast ".".
 
-4. Na komputerze usługi Uruchom polecenie Service. exe z wiersza polecenia.
+4. Na komputerze usługi Uruchom Service.exe z wiersza polecenia.
 
-5. Na komputerze klienckim uruchom program Client. exe z wiersza polecenia.
+5. Na komputerze klienckim uruchom Client.exe z wiersza polecenia.
 
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).
@@ -154,8 +154,8 @@ Console.ReadLine();
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MsmqToWcf`
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kolejki programu WCF](../feature-details/queues-in-wcf.md)
 - [Instrukcje: wymiana komunikatów z punktami końcowymi programu WCF i aplikacjami do obsługi kolejek komunikatów](../feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Kolejkowanie komunikatów](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))
+- [Kolejkowanie komunikatów](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

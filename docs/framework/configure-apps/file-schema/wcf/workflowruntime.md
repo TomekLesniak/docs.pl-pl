@@ -2,12 +2,12 @@
 title: <workflowRuntime>
 ms.date: 03/30/2017
 ms.assetid: 304c70fa-78d1-4d0f-b89f-0ca23d734c6f
-ms.openlocfilehash: d12656b77fa219080382603fd04a542d2fa9064a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 43cdec2403e8d80256279388a1adf7cf3cedbb73
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399087"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558787"
 ---
 # \<workflowRuntime>
 Określa ustawienia dla wystąpienia programu <xref:System.Workflow.Runtime.WorkflowRuntime> do hostowania usług Windows Communication Foundation opartych na przepływie pracy (WCF).  
@@ -62,7 +62,7 @@ Określa ustawienia dla wystąpienia programu <xref:System.Workflow.Runtime.Work
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie elementu.|  
   
 ## <a name="remarks"></a>Uwagi  
- Aby uzyskać więcej informacji na temat używania pliku konfiguracji do sterowania zachowaniem <xref:System.Workflow.Runtime.WorkflowRuntime> obiektu Windows Workflow Foundation aplikacji hosta, zobacz [pliki konfiguracji przepływu pracy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
+ Aby uzyskać więcej informacji na temat używania pliku konfiguracji do sterowania zachowaniem <xref:System.Workflow.Runtime.WorkflowRuntime> obiektu Windows Workflow Foundation aplikacji hosta, zobacz [pliki konfiguracji przepływu pracy](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
   
 ## <a name="example"></a>Przykład  
   
@@ -89,4 +89,4 @@ Określa ustawienia dla wystąpienia programu <xref:System.Workflow.Runtime.Work
 - <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>
 - <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>
 - <xref:System.Workflow.Runtime.WorkflowRuntime>
-- [Pliki konfiguracji przepływu pracy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
+- [Pliki konfiguracji przepływu pracy](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))

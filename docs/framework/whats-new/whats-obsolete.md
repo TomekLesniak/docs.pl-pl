@@ -7,12 +7,12 @@ helpviewer_keywords:
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: 188d9184476e58fb679421467cd68e2ea8a8a101
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 93c2015c873b9de7b6c1b94224fa4033863aecfd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558871"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558501"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Co jest przestarzałe w bibliotece klas .NET Framework
 
@@ -66,8 +66,8 @@ Aby określić wersję docelową .NET Framework, należy przypisać jedną z nas
 |4|wersja|
 |3,5|2.0.50727 v|
 |2,0|2.0.50727 v|
-|1.1|1.1.4322 v|
-|1.0|1.0.3705 v|
+|1,1|1.1.4322 v|
+|1,0|1.0.3705 v|
 
 ## <a name="obsolete-apis-for-net-framework-45-and-later-versions"></a>Przestarzałe interfejsy API dla .NET Framework 4,5 i nowszych wersji
 
@@ -76,11 +76,11 @@ Aby określić wersję docelową .NET Framework, należy przypisać jedną z nas
 
 ## <a name="obsolete-apis-for-previous-versions"></a>Przestarzałe interfejsy API dla poprzednich wersji
 
-- [Przestarzałe typy w .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee461503(v=vs.100))
-- [Przestarzałe składowe w .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
-- [Nieaktualna lista .NET Framework 3,5](https://docs.microsoft.com/previous-versions/cc835481(v=msdn.10))
-- [Nieaktualna lista .NET Framework 2,0](https://docs.microsoft.com/previous-versions/aa497286(v=msdn.10))
+- [Przestarzałe typy w .NET Framework 4](/previous-versions/dotnet/netframework-4.0/ee461503(v=vs.100))
+- [Przestarzałe składowe w .NET Framework 4](/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
+- [Nieaktualna lista .NET Framework 3,5](/previous-versions/cc835481(v=msdn.10))
+- [Nieaktualna lista .NET Framework 2,0](/previous-versions/aa497286(v=msdn.10))
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [\<supportedRuntime> Postaci](../configure-apps/file-schema/startup/supportedruntime-element.md)

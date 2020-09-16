@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: e4c5bc03038a3df9df2b7629da762caee175b6e8
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: c75e26ea083f8144bfaf2f67872004ef33365377
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202149"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558761"
 ---
 # <a name="wcf-data-services-overview"></a>Przegląd Usługi danych programu WCF
 Usługi danych programu WCF umożliwia tworzenie i użycie usług danych dla sieci Web lub intranet przy użyciu protokołu Open Data Protocol (OData). Usługa OData umożliwia Uwidacznianie danych jako zasobów, które są adresowane przez identyfikatory URI. Dzięki temu można uzyskać dostęp do danych i zmienić je przy użyciu semantyki przenoszonego transferu stanu (REST), w tym standardowych czasowników HTTP funkcji GET, PUT, POST i DELETE. Ten temat zawiera omówienie wzorców i praktyk zdefiniowanych przez usługi OData, a także funkcje zapewniane przez Usługi danych programu WCF, aby korzystać z protokołu OData w aplikacjach opartych na .NET Framework.  
@@ -18,7 +18,7 @@ Usługi danych programu WCF umożliwia tworzenie i użycie usług danych dla sie
 ## <a name="address-data-as-resources"></a>Adresowanie danych jako zasobów  
  Usługa OData udostępnia dane jako zasoby, które są adresowane przez identyfikatory URI. Ścieżki zasobów są konstruowane na podstawie Konwencji relacji jednostek Entity Data Model. W tym modelu jednostki reprezentują jednostki operacyjne danych w domenie aplikacji, takie jak klienci, zamówienia, elementy i produkty. Aby uzyskać więcej informacji, zobacz [Entity Data Model](../adonet/entity-data-model.md).  
   
- W protokole OData zasoby jednostki są adresowane jako zestaw jednostek, który zawiera wystąpienia typów jednostek. Na przykład identyfikator URI `https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders` zwraca wszystkie zamówienia z `Northwind` usługi danych, które są powiązane z klientem z `CustomerID` wartością`ALFKI.`  
+ W protokole OData zasoby jednostki są adresowane jako zestaw jednostek, który zawiera wystąpienia typów jednostek. Na przykład identyfikator URI `https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders` zwraca wszystkie zamówienia z `Northwind` usługi danych, które są powiązane z klientem z `CustomerID` wartością `ALFKI.`  
   
  Wyrażenia zapytań umożliwiają wykonywanie tradycyjnych operacji zapytań względem zasobów, takich jak filtrowanie, sortowanie i stronicowanie. Na przykład identyfikator URI `https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=Freight gt 50` filtruje zasoby, aby zwracały tylko zamówienia z kosztem frachtu większym niż $50. Aby uzyskać więcej informacji, zobacz [Uzyskiwanie dostępu do zasobów usługi danych](accessing-data-service-resources-wcf-data-services.md).  
   
@@ -60,6 +60,6 @@ Usługa OData definiuje zestaw rozszerzeń protokołu publikowania Atom (AtomPub
 - [Usługi danych WCF 4.5](index.md)
 - [Wprowadzenie](getting-started-with-wcf-data-services.md)
 - [Definiowanie usług danych WCF](defining-wcf-data-services.md)
-- [Uzyskiwanie dostępu do zasobów usługi danych (Usługi danych programu WCF)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd728283(v=vs.100))
+- [Uzyskiwanie dostępu do zasobów usługi danych (Usługi danych programu WCF)](/previous-versions/dotnet/netframework-4.0/dd728283(v=vs.100))
 - [Biblioteka klienta usług danych WCF](wcf-data-services-client-library.md)
 - [Przenoszenie stanu reprezentacji (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)

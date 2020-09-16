@@ -6,12 +6,12 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: a07d7c6da71f4195cb1641ae8ac7585b4158ed63
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8941350e46680c4ecaeb9b89fe9e6910c5830bcb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600974"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553294"
 ---
 # <a name="wcf-security-terminology"></a>Terminologia dotycząca zabezpieczeń programu WCF
 Niektóre terminologii używane podczas omawiania zabezpieczeń mogą być nieznane. Ten temat zawiera krótkie objaśnienia niektórych warunków zabezpieczeń, ale nie stanowi wyczerpującej dokumentacji dla każdego elementu.  
@@ -181,8 +181,8 @@ Niektóre terminologii używane podczas omawiania zabezpieczeń mogą być niezn
  X.509  
  Międzynarodowy, uznawany w międzynarodowym Standard dla certyfikatów, który definiuje ich wymagane części.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podstawowe pojęcia programu Windows Communication Foundation](../fundamental-concepts.md)
 - [Pojęcia dotyczące zabezpieczeń](security-concepts.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

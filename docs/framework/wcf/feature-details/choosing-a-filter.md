@@ -2,12 +2,12 @@
 title: Wybieranie filtra
 ms.date: 03/30/2017
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-ms.openlocfilehash: e951c472543239df0c01dcba3e46f120ced9e192
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2f96e7001a41682ef595d003e87daa06d0244f3b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587498"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559392"
 ---
 # <a name="choosing-a-filter"></a>Wybieranie filtra
 Podczas konfigurowania usługi routingu ważne jest, aby wybrać poprawne filtry komunikatów i skonfigurować je w taki sposób, aby umożliwiały dokładne dopasowanie do odbieranych komunikatów. Jeśli wybrane filtry są zbyt szerokie w dopasowaniach lub są nieprawidłowo skonfigurowane, komunikaty są kierowane nieprawidłowo. Jeśli filtry są zbyt restrykcyjne, może nie mieć dostępnych prawidłowych tras dla niektórych komunikatów.
@@ -142,9 +142,9 @@ Ten filtr jest przydatny, Jeśli wiesz, że odebrane komunikaty zawierają konkr
 
 Ponieważ zapytania XPath często zawierają unikatowe przestrzenie nazw, które często mają długość lub złożone wartości ciągu, filtr XPath umożliwia użycie tabeli przestrzeni nazw w celu zdefiniowania unikatowych prefiksów przestrzeni nazw. Aby uzyskać więcej informacji na temat tabeli przestrzeni nazw, zobacz [filtry komunikatów](message-filters.md).
 
-Aby uzyskać więcej informacji na temat projektowania zapytań XPath, zobacz [składnia XPath](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256471(v=vs.100)).
+Aby uzyskać więcej informacji na temat projektowania zapytań XPath, zobacz [składnia XPath](/previous-versions/dotnet/netframework-4.0/ms256471(v=vs.100)).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Filtry komunikatów](message-filters.md)
-- [Instrukcje: używanie filtrów](how-to-use-filters.md)
+- [Instrukcje: Używanie filtrów](how-to-use-filters.md)

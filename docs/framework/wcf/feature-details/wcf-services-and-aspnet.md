@@ -3,12 +3,12 @@ title: Usługi WCF i ASP.NET
 description: Dowiedz się więcej na temat hostingu usług WCF obok ASP.NET i hostowania ich w trybie zgodności ASP.NET.
 ms.date: 03/30/2017
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
-ms.openlocfilehash: 1d7401f6a326bc50923123acf803e26ce8238415
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 765a509f94a0a934cdbbf0212cfc1d4053d29f9c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246418"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553320"
 ---
 # <a name="wcf-services-and-aspnet"></a>Usługi WCF i ASP.NET
 
@@ -44,11 +44,11 @@ Te ograniczenia dotyczą tylko usług WCF hostowanych w aplikacji usług IIS. Ob
 
 Aplikacje WCF, które wymagają funkcjonalności tradycyjnie zapewnianej przez potok HTTP, powinny być brane pod uwagę przy użyciu odpowiedników WCF, które są niezależne od hosta i transportu:
 
-- <xref:System.ServiceModel.OperationContext>zamiast <xref:System.Web.HttpContext> .
+- <xref:System.ServiceModel.OperationContext> zamiast <xref:System.Web.HttpContext> .
 
-- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>zamiast ASP. Autoryzacja plików/adresów URL w sieci.
+- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> zamiast ASP. Autoryzacja plików/adresów URL w sieci.
 
-- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector>lub niestandardowych kanałów warstwowych zamiast modułów HTTP.
+- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> lub niestandardowych kanałów warstwowych zamiast modułów HTTP.
 
 - Personifikacja dla każdej operacji przy użyciu platformy WCF zamiast personifikacji system. Web.
 
@@ -66,7 +66,7 @@ W przeciwieństwie do domyślnej konfiguracji równoległej, w której infrastru
 
 - Konfigurowalne Autoryzacja adresów URL: ASP. Reguły autoryzacji adresów URL sieci są wymuszane w przypadku żądań WCF, gdy usługa WCF jest uruchomiona w trybie zgodności ASP.NET.
 
-- <xref:System.Web.HttpModuleCollection>rozszerzalność: ponieważ usługi WCF działające w trybie zgodności ASP.NET uczestniczą w pełni w cyklu życia żądania HTTP ASP.NET, każdy moduł HTTP skonfigurowany w potoku HTTP może działać na żądaniach WCF zarówno przed, jak i po wywołaniu usługi.
+- <xref:System.Web.HttpModuleCollection> rozszerzalność: ponieważ usługi WCF działające w trybie zgodności ASP.NET uczestniczą w pełni w cyklu życia żądania HTTP ASP.NET, każdy moduł HTTP skonfigurowany w potoku HTTP może działać na żądaniach WCF zarówno przed, jak i po wywołaniu usługi.
 
 - Personifikacja ASP.NET: usługi WCF działają przy użyciu bieżącej tożsamości wątku personifikowanego ASP.NET, który może być inny niż tożsamość procesu usług IIS, jeśli włączono personifikację ASP.NET dla aplikacji. Jeśli dla określonej operacji usługi jest włączona personifikacja ASP.NET i personifikacja WCF, implementacja usługi ostatecznie zostanie uruchomiona przy użyciu tożsamości uzyskanej z WCF.
 
@@ -104,7 +104,7 @@ W poniższej tabeli przedstawiono sposób, w jaki ustawienia trybu zgodności w 
 
 Aby uzyskać więcej informacji na temat włączania trybu zgodności ASP.NET dla usług WCF, zobacz <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> i przykład [zgodności ASP.NET](../samples/aspnet-compatibility.md) .
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>
-- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677189(v=azure.10))

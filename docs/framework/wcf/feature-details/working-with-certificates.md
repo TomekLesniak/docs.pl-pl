@@ -8,18 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 8090e84b33e2a6f442d387c7012e6ccdc2900dd1
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: a12e723c763cdc3b9cf2105df9d0ee601f8bda1a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246405"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559021"
 ---
 # <a name="working-with-certificates"></a>Praca z certyfikatami
 
 W przypadku zabezpieczeń programu Windows Communication Foundation (WCF), certyfikaty cyfrowe X. 509 są często używane do uwierzytelniania klientów i serwerów, szyfrowania i cyfrowego podpisywania wiadomości. W tym temacie krótko opisano funkcje certyfikatu cyfrowego X. 509 oraz sposób ich używania w programie WCF oraz linki do tematów, które wyjaśniają te koncepcje w dalszej części lub pokazują, jak wykonywać typowe zadania przy użyciu usług WCF i certyfikatów.
 
-W skrócie certyfikat cyfrowy jest częścią *infrastruktury kluczy publicznych* (PKI), która jest systemem certyfikatów cyfrowych, urzędów certyfikacji i innych urzędów rejestrowania, którzy weryfikują i uwierzytelniają okres ważności każdej ze stron w ramach transakcji elektronicznej przy użyciu kryptografii klucza publicznego. Urząd certyfikacji wystawia certyfikaty, a każdy certyfikat zawiera zestaw pól zawierających dane, takich jak *podmiot* (podmiot, dla którego wystawiony jest certyfikat), daty ważności (gdy certyfikat jest ważny), wystawca (jednostka, która wystawił certyfikat) i klucz publiczny. W programie WCF każda z tych właściwości jest przetwarzana jako <xref:System.IdentityModel.Claims.Claim> , a każde z nich jest dalej podzielone na dwa typy: Identity i Right. Aby uzyskać więcej informacji na temat certyfikatów X. 509, zobacz [Certyfikaty klucza publicznego x. 509](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). Aby uzyskać więcej informacji o oświadczeniach i autoryzacji w programie WCF, zobacz [Zarządzanie oświadczeniami i autoryzacją za pomocą modelu tożsamości](managing-claims-and-authorization-with-the-identity-model.md). Aby uzyskać więcej informacji o implementowaniu infrastruktury kluczy publicznych, zobacz [infrastruktura PKI przedsiębiorstwa z systemem Windows Server 2012 R2 Active Directory usług certyfikatów](https://docs.microsoft.com/archive/blogs/yungchou/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2).
+W skrócie certyfikat cyfrowy jest częścią *infrastruktury kluczy publicznych* (PKI), która jest systemem certyfikatów cyfrowych, urzędów certyfikacji i innych urzędów rejestrowania, którzy weryfikują i uwierzytelniają okres ważności każdej ze stron w ramach transakcji elektronicznej przy użyciu kryptografii klucza publicznego. Urząd certyfikacji wystawia certyfikaty, a każdy certyfikat zawiera zestaw pól zawierających dane, takich jak *podmiot* (podmiot, dla którego wystawiony jest certyfikat), daty ważności (gdy certyfikat jest ważny), wystawca (jednostka, która wystawił certyfikat) i klucz publiczny. W programie WCF każda z tych właściwości jest przetwarzana jako <xref:System.IdentityModel.Claims.Claim> , a każde z nich jest dalej podzielone na dwa typy: Identity i Right. Aby uzyskać więcej informacji na temat certyfikatów X. 509, zobacz [Certyfikaty klucza publicznego x. 509](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). Aby uzyskać więcej informacji o oświadczeniach i autoryzacji w programie WCF, zobacz [Zarządzanie oświadczeniami i autoryzacją za pomocą modelu tożsamości](managing-claims-and-authorization-with-the-identity-model.md). Aby uzyskać więcej informacji o implementowaniu infrastruktury kluczy publicznych, zobacz [infrastruktura PKI przedsiębiorstwa z systemem Windows Server 2012 R2 Active Directory usług certyfikatów](/archive/blogs/yungchou/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2).
 
 Podstawową funkcją certyfikatu jest uwierzytelnianie tożsamości właściciela certyfikatu dla innych osób. Certyfikat zawiera *klucz publiczny* właściciela, podczas gdy właściciel zachowuje klucz prywatny. Klucz publiczny może służyć do szyfrowania wiadomości wysyłanych do właściciela certyfikatu. Tylko właściciel ma dostęp do klucza prywatnego, więc tylko właściciel może odszyfrować te komunikaty.
 
@@ -165,9 +165,9 @@ Można również ustawić certyfikaty przy użyciu opcji konfiguracja. Jeśli tw
 
 ## <a name="mapping-a-certificate-to-a-user-account"></a>Mapowanie certyfikatu na konto użytkownika
 
-Funkcją usług IIS i Active Directory jest możliwość mapowania certyfikatu na konto użytkownika systemu Windows. Aby uzyskać więcej informacji na temat tej funkcji, zobacz [Mapowanie certyfikatów na konta użytkowników](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736706(v=ws.10)).
+Funkcją usług IIS i Active Directory jest możliwość mapowania certyfikatu na konto użytkownika systemu Windows. Aby uzyskać więcej informacji na temat tej funkcji, zobacz [Mapowanie certyfikatów na konta użytkowników](/previous-versions/windows/it-pro/windows-server-2003/cc736706(v=ws.10)).
 
-Aby uzyskać więcej informacji o korzystaniu z mapowania Active Directory, zobacz [Mapowanie certyfikatów klienta przy użyciu mapowania usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc758484(v=ws.10)).
+Aby uzyskać więcej informacji o korzystaniu z mapowania Active Directory, zobacz [Mapowanie certyfikatów klienta przy użyciu mapowania usługi katalogowej](/previous-versions/windows/it-pro/windows-server-2003/cc758484(v=ws.10)).
 
 Po włączeniu tej funkcji można ustawić <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> Właściwość <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> klasy na `true` . W obszarze Konfiguracja można ustawić `mapClientCertificateToWindowsAccount` atrybut [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) elementu na `true` , jak pokazano w poniższym kodzie.
 
@@ -189,7 +189,7 @@ W przypadku korzystania z .NET Framework 3,5 lub nowszych wersji usługa WCF gwa
 
 W pierwszej wersji programu WCF mapowanie jest wykonywane bez konsultacji z zasadami domeny. W związku z tym jest możliwe, że starsze aplikacje, które były używane podczas uruchamiania w pierwszej wersji, zakończą się niepowodzeniem, jeśli mapowanie jest włączone i certyfikat X. 509 nie spełnia zasad domeny.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.Channels>
 - <xref:System.ServiceModel.Security>

@@ -3,12 +3,12 @@ title: Zagadnienia dotyczące wersji i aktualizacji dla deweloperów języka C#
 description: Wprowadzenie nowych funkcji języków w bibliotece może mieć wpływ na kod, który go używa.
 ms.topic: reference
 ms.date: 09/19/2018
-ms.openlocfilehash: f7db7c79792d04bcf592bc1858e1f0f05cb34402
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 6de0e3ba33af34edba73819dcb9268f40f8a5ea4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268130"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552430"
 ---
 # <a name="version-and-update-considerations-for-c-developers"></a>Zagadnienia dotyczące wersji i aktualizacji dla deweloperów języka C#
 
@@ -63,4 +63,4 @@ Nowy kod:
 public double CalculateSquare(in double value) => value * value;
 ```
 
-W [artykułach nowości należy](index.md) zauważyć, że wprowadzenie funkcji, która ma wpływ na deklaracje publiczne jest zgodne ze źródłem lub plikiem binarnym.
+W [artykułach nowości należy](./csharp-9.md) zauważyć, że wprowadzenie funkcji, która ma wpływ na deklaracje publiczne jest zgodne ze źródłem lub plikiem binarnym.

@@ -1,15 +1,15 @@
 ---
-title: 'Instrukcje: Zabezpieczanie komunikatów w sesjach niezawodnych'
+title: 'Instrukcje: zabezpieczanie komunikatów w sesjach niezawodnych'
 ms.date: 03/30/2017
 ms.assetid: aee33e50-936f-4486-9ca8-c1520c19a62d
-ms.openlocfilehash: 306d0f96b5163fe5c24d270b4b9a7c1d3f499e7e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cec9356467886be022d05ead55d5cb6ccddcd838
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596958"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558683"
 ---
-# <a name="how-to-secure-messages-within-reliable-sessions"></a>Instrukcje: Zabezpieczanie komunikatów w sesjach niezawodnych
+# <a name="how-to-secure-messages-within-reliable-sessions"></a>Instrukcje: zabezpieczanie komunikatów w sesjach niezawodnych
 
 W tym temacie opisano kroki wymagane do włączenia zabezpieczeń na poziomie komunikatów dla komunikatów wymienianych w ramach niezawodnej sesji przy użyciu jednego z powiązań dostarczonych przez system, które obsługują taką sesję, ale nie domyślnie. W razie potrzeby Włącz bezpieczną, niezawodną sesję przy użyciu kodu lub deklaratywnie w pliku konfiguracji. Ta procedura powoduje użycie plików konfiguracji klienta i usługi w celu włączenia bezpiecznej, niezawodnej sesji.
 
@@ -21,7 +21,7 @@ Ta procedura obejmuje następujące trzy kluczowe zadania:
 
 1. Określ typ poświadczeń klienta, który ma być używany przez klienta do uwierzytelniania w usłudze.
 
-Ważne jest, aby najpierw wykonać pierwsze zadanie, że element konfiguracji punktu końcowego zawiera `bindingConfiguration` atrybut odwołujący się do konfiguracji powiązania o nazwie (w tym przykładzie) `MessageSecurity` . [**\<binding>**](../../configure-apps/file-schema/wcf/bindings.md)Element Configuration następnie odwołuje się do tej nazwy, aby umożliwić niezawodne sesje przez ustawienie `enabled` atrybutu [**\<reliableSession>**](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) elementu na `true` . Można wymagać, aby uporządkowane gwarancje dostarczania były dostępne w ramach niezawodnej sesji przez ustawienie `ordered` atrybutu na `true` .
+Ważne jest, aby najpierw wykonać pierwsze zadanie, że element konfiguracji punktu końcowego zawiera `bindingConfiguration` atrybut odwołujący się do konfiguracji powiązania o nazwie (w tym przykładzie) `MessageSecurity` . [**\<binding>**](../../configure-apps/file-schema/wcf/bindings.md)Element Configuration następnie odwołuje się do tej nazwy, aby umożliwić niezawodne sesje przez ustawienie `enabled` atrybutu [**\<reliableSession>**](/previous-versions/ms731375(v=vs.90)) elementu na `true` . Można wymagać, aby uporządkowane gwarancje dostarczania były dostępne w ramach niezawodnej sesji przez ustawienie `ordered` atrybutu na `true` .
 
 Aby uzyskać kopię źródłową przykładowej procedury konfiguracji, zobacz [sesja niezawodna WS](../samples/ws-reliable-session.md).
 

@@ -7,18 +7,18 @@ helpviewer_keywords:
 - Windows Forms, application settings schema
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-ms.openlocfilehash: 90d471888950347c041b4824b659ce33fda512d7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fc9cd8ac3819c6a02019c871e7bd45ceb4c2cef7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81242832"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552313"
 ---
 # <a name="application-settings-schema"></a>Schemat ustawień aplikacji
 
 Ustawienia aplikacji zezwalają aplikacji Windows Forms lub ASP.NET na przechowywanie i pobieranie ustawień zakresu aplikacji i zakresu użytkownika. W tym kontekście *ustawienie* jest dowolnymi informacjami, które mogą być specyficzne dla aplikacji lub specyficzne dla bieżącego użytkownika — wszystko to w parametrach połączenia bazy danych do preferowanego domyślnego rozmiaru okna użytkownika.
 
-Domyślnie ustawienia aplikacji w aplikacji Windows Forms używają <xref:System.Configuration.LocalFileSettingsProvider> klasy, która używa systemu konfiguracji platformy .NET do przechowywania ustawień w pliku konfiguracyjnym XML. Aby uzyskać więcej informacji na temat plików używanych przez ustawienia aplikacji, zobacz [Architektura ustawień aplikacji](../../winforms/advanced/application-settings-architecture.md).
+Domyślnie ustawienia aplikacji w aplikacji Windows Forms używają <xref:System.Configuration.LocalFileSettingsProvider> klasy, która używa systemu konfiguracji platformy .NET do przechowywania ustawień w pliku konfiguracyjnym XML. Aby uzyskać więcej informacji na temat plików używanych przez ustawienia aplikacji, zobacz [Architektura ustawień aplikacji](/dotnet/desktop/winforms/advanced/application-settings-architecture).
 
 Ustawienia aplikacji definiują następujące elementy w ramach używanych plików konfiguracji.
 
@@ -90,5 +90,5 @@ W poniższym przykładzie przedstawiono plik ustawień aplikacji, który definiu
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Przegląd ustawień aplikacji](../../winforms/advanced/application-settings-overview.md)
-- [Architektura ustawień aplikacji](../../winforms/advanced/application-settings-architecture.md)
+- [Przegląd ustawień aplikacji](/dotnet/desktop/winforms/advanced/application-settings-overview)
+- [Architektura ustawień aplikacji](/dotnet/desktop/winforms/advanced/application-settings-architecture)

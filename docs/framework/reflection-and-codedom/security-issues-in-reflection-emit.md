@@ -12,12 +12,12 @@ helpviewer_keywords:
 - emitting dynamic assemblies,partial trust scenarios
 - dynamic assemblies, security
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
-ms.openlocfilehash: d0ca26a1d0964c935137b0a30a5d7c78f93c597b
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 62bce7435887855f799d320736e6bce8f39e5999
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865245"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558800"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problemy związane z zabezpieczeniami w emisji odbicia
 .NET Framework udostępnia trzy sposoby emisji języka pośredniego firmy Microsoft (MSIL), z których każdy ma własne problemy z zabezpieczeniami:  
@@ -35,7 +35,7 @@ ms.locfileid: "86865245"
   
 <a name="Dynamic_Assemblies"></a>
 ## <a name="dynamic-assemblies"></a>Zestawy dynamiczne  
- Zestawy dynamiczne są tworzone przy użyciu przeciążenia <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Większość przeciążeń tej metody jest przestarzałych w .NET Framework 4 z powodu usunięcia zasad zabezpieczeń dla całego komputera. (Zobacz [zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)). Pozostałe przeciążenia mogą być wykonywane przez dowolny kod niezależnie od poziomu zaufania. Te przeciążenia dzielą się na dwie grupy: te, które określają listę atrybutów, które mają być stosowane do zestawu dynamicznego podczas jego tworzenia, a te, które nie. Jeśli nie określisz modelu przezroczystości dla zestawu, stosując <xref:System.Security.SecurityRulesAttribute> atrybut podczas tworzenia, model przezroczystości jest Dziedziczony z zestawu emitującego.  
+ Zestawy dynamiczne są tworzone przy użyciu przeciążenia <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Większość przeciążeń tej metody jest przestarzałych w .NET Framework 4 z powodu usunięcia zasad zabezpieczeń dla całego komputera. (Zobacz [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes)). Pozostałe przeciążenia mogą być wykonywane przez dowolny kod niezależnie od poziomu zaufania. Te przeciążenia dzielą się na dwie grupy: te, które określają listę atrybutów, które mają być stosowane do zestawu dynamicznego podczas jego tworzenia, a te, które nie. Jeśli nie określisz modelu przezroczystości dla zestawu, stosując <xref:System.Security.SecurityRulesAttribute> atrybut podczas tworzenia, model przezroczystości jest Dziedziczony z zestawu emitującego.  
   
 > [!NOTE]
 > Atrybuty, które są stosowane do zestawu dynamicznego po jego utworzeniu przy użyciu <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A> metody, nie są uwzględniane do momentu zapisania zestawu na dysku i ponownego załadowania do pamięci.  
@@ -138,12 +138,12 @@ ms.locfileid: "86865245"
   
 <a name="Version_Information"></a>
 ## <a name="version-information"></a>Informacje o wersji  
- Począwszy od .NET Framework 4, zasady zabezpieczeń dla całego komputera są eliminowane i przezroczystość zabezpieczeń staną się domyślnym mechanizmem wymuszania. Zobacz [zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
+ Począwszy od .NET Framework 4, zasady zabezpieczeń dla całego komputera są eliminowane i przezroczystość zabezpieczeń staną się domyślnym mechanizmem wymuszania. Zobacz [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes).  
   
  Począwszy od .NET Framework 2,0 z dodatkiem Service Pack 1, <xref:System.Security.Permissions.ReflectionPermission> z <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> flagą nie jest już wymagane w przypadku emitowania zestawów dynamicznych i metod dynamicznych. Ta flaga jest wymagana we wszystkich wcześniejszych wersjach .NET Framework.  
   
 > [!NOTE]
-> <xref:System.Security.Permissions.ReflectionPermission>z <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> flagą jest uwzględniana domyślnie w `FullTrust` `LocalIntranet` zestawach uprawnień i nazwanych, ale nie w `Internet` zestawie uprawnień. W związku z tym we wcześniejszych wersjach .NET Framework Biblioteka może być używana z uprawnieniami internetowymi tylko wtedy, gdy jest wykonywana <xref:System.Security.PermissionSet.Assert%2A> przez <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> . Takie biblioteki wymagają starannej oceny zabezpieczeń, ponieważ błędy kodowania mogą spowodować powstanie luk w zabezpieczeniach. Program .NET Framework 2,0 z dodatkiem SP1 umożliwia emitowanie kodu w scenariuszach częściowej relacji zaufania bez wydawania jakichkolwiek wymagań dotyczących zabezpieczeń, ponieważ generowanie kodu nie jest z założenia uprzywilejowanej operacji. Oznacza to, że wygenerowany kod nie ma więcej uprawnień niż zestaw, który emituje go. Pozwala to na używanie bibliotek, które emitują kod jako przezroczysty i eliminuje konieczność potwierdzenia <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> , co upraszcza zadanie pisania bezpiecznej biblioteki.  
+> <xref:System.Security.Permissions.ReflectionPermission> z <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> flagą jest uwzględniana domyślnie w `FullTrust` `LocalIntranet` zestawach uprawnień i nazwanych, ale nie w `Internet` zestawie uprawnień. W związku z tym we wcześniejszych wersjach .NET Framework Biblioteka może być używana z uprawnieniami internetowymi tylko wtedy, gdy jest wykonywana <xref:System.Security.PermissionSet.Assert%2A> przez <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> . Takie biblioteki wymagają starannej oceny zabezpieczeń, ponieważ błędy kodowania mogą spowodować powstanie luk w zabezpieczeniach. Program .NET Framework 2,0 z dodatkiem SP1 umożliwia emitowanie kodu w scenariuszach częściowej relacji zaufania bez wydawania jakichkolwiek wymagań dotyczących zabezpieczeń, ponieważ generowanie kodu nie jest z założenia uprzywilejowanej operacji. Oznacza to, że wygenerowany kod nie ma więcej uprawnień niż zestaw, który emituje go. Pozwala to na używanie bibliotek, które emitują kod jako przezroczysty i eliminuje konieczność potwierdzenia <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> , co upraszcza zadanie pisania bezpiecznej biblioteki.  
   
  Ponadto w .NET Framework 2,0 SP1 wprowadzono <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flagę uzyskiwania dostępu do niepublicznych typów i członków z częściowo zaufanych metod dynamicznych. Wcześniejsze wersje .NET Framework wymagają <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> flagi metoda dynamiczna, która uzyskuje dostęp do niepublicznych typów i składowych; jest to uprawnienie, które nigdy nie powinno być przyznane do częściowo zaufanego kodu.  
   

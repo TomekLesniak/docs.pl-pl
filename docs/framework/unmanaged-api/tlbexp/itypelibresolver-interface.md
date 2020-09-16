@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: edaaed1d-0d26-40f0-83f1-48efc0ded1c6
 topic_type:
 - apiref
-ms.openlocfilehash: 28a750846407a2b035e42533765eb83a87bfce3c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7c8c21a589554bac81ebfce3505917869ef8de27
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104114"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553600"
 ---
 # <a name="itypelibresolver-interface"></a>ITypeLibResolver — Interfejs
 Udostępnia [metodę ResolveTypeLib —](resolvetypelib-method.md), która rozpoznaje ścieżkę pliku biblioteki typów.  
@@ -28,7 +28,7 @@ Udostępnia [metodę ResolveTypeLib —](resolvetypelib-method.md), która rozpo
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[ResolveTypeLib, metoda](resolvetypelib-method.md)|Rozpoznaje prostą nazwę biblioteki typów przez zwrócenie jej w pełni kwalifikowanej ścieżki.|  
+|[ResolveTypeLib — Metoda](resolvetypelib-method.md)|Rozpoznaje prostą nazwę biblioteki typów przez zwrócenie jej w pełni kwalifikowanej ścieżki.|  
   
 ## <a name="requirements"></a>Wymagania  
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
@@ -41,5 +41,5 @@ Udostępnia [metodę ResolveTypeLib —](resolvetypelib-method.md), która rozpo
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Tlbexp, funkcje pomocy](index.md)
-- [LoadTypeLibEx, funkcja](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+- [Tlbexp — funkcje pomocy](index.md)
+- [LoadTypeLibEx, funkcja](/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

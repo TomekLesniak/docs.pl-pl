@@ -6,12 +6,12 @@ helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 24a5cdff-7ed9-4195-93f3-edf6899019fc
-ms.openlocfilehash: a8596bcac4efb0aea07efcfde6726d8bbf148c24
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: ea2b735b2c98b588903c4393f21c6b743910854a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105096"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552378"
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>Uprawnienie zabezpieczeń przekierowania powiązania zestawu
 Jawne przekierowanie powiązań zestawu w pliku konfiguracji aplikacji wymaga uprawnienia zabezpieczeń. Dotyczy to przekierowań zestawów programu .NET Framework i zestawów firm trzecich. Uprawnienie jest udzielane przez ustawienie <xref:System.Security.Permissions.SecurityPermissionFlag> flagi na <xref:System.Security.Permissions.SecurityPermission> . Zarządzane zestawy nie mają domyślnie żadnych uprawnień.  
@@ -31,8 +31,8 @@ Jawne przekierowanie powiązań zestawu w pliku konfiguracji aplikacji wymaga up
   
  Administrator może zmienić te ustawienia zabezpieczeń, aby obsługiwać lub ograniczać określone scenariusze na danym komputerze. Nie ma narzędzi do zmiany ustawienia flagi **BindingRedirects** z domyślnego. Administrator musi ręcznie edytować plik Security.config na komputerze użytkownika.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Pliki zasad wydawcy i wykonywanie równoczesne](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/06d2bae3(v=vs.100))
+- [Pliki zasad wydawcy i wykonywanie równoczesne](/previous-versions/dotnet/netframework-4.0/06d2bae3(v=vs.100))
 - [Instrukcje: Włączanie i wyłączanie automatycznego przekierowania powiązań](how-to-enable-and-disable-automatic-binding-redirection.md)
 - [Wykonywanie równoczesne](../deployment/side-by-side-execution.md)

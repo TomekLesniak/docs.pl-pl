@@ -3,12 +3,12 @@ title: Programowanie asynchroniczne
 description: Dowiedz się więcej o programowaniu asynchronicznym w .NET Framework Dostawca danych dla SQL Server, w tym ulepszeń wprowadzonych w .NET Framework 4,5.
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 2e5f48b0818ab9cfabc75ba47c95c8198e0fe7fa
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b8f718e0def2ab0b6953ed121eb916f282562d32
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287106"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558475"
 ---
 # <a name="asynchronous-programming"></a>Programowanie asynchroniczne
 
@@ -39,9 +39,9 @@ Aby uzyskać więcej informacji na temat funkcji programowania asynchronicznego,
 
 - [Programowanie asynchroniczne z Async i Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
 
-- [Używanie nowych metod asynchronicznych elementu SqlDataReader w programie .NET 4,5 (część 1)](https://docs.microsoft.com/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
+- [Używanie nowych metod asynchronicznych elementu SqlDataReader w programie .NET 4,5 (część 1)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
 
-- [Używanie nowych metod asynchronicznych elementu SqlDataReader w programie .NET 4,5 (część 2)](https://docs.microsoft.com/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
+- [Używanie nowych metod asynchronicznych elementu SqlDataReader w programie .NET 4,5 (część 2)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
 
 Gdy interfejs użytkownika nie odpowiada lub serwer nie skaluje się, prawdopodobnie potrzebny jest większy kod, który będzie bardziej asynchroniczny. Pisanie kodu asynchronicznego polega tradycyjnie na instalowaniu wywołania zwrotnego (nazywanego również kontynuacją) do wyrażenia logiki, która występuje po zakończeniu operacji asynchronicznej. To komplikuje strukturę kodu asynchronicznego w porównaniu z kodem synchronicznym.
 
@@ -182,7 +182,7 @@ class A {
 
 Może być konieczne utworzenie narzędzia, które będzie mogło nawiązać połączenie z różnymi bazami danych i wykonać zapytania. Można użyć modelu dostawcy podstawowego i nowej funkcji asynchronicznej.
 
-Aby można było korzystać z transakcji rozproszonych, na serwerze musi być włączony kontroler transakcji rozproszonych firmy Microsoft (MSDTC). Aby uzyskać informacje na temat włączania usługi MSDTC, zobacz [jak włączyć usługę MSDTC na serwerze sieci Web](https://docs.microsoft.com/previous-versions/commerce-server/dd327979(v=cs.90)).
+Aby można było korzystać z transakcji rozproszonych, na serwerze musi być włączony kontroler transakcji rozproszonych firmy Microsoft (MSDTC). Aby uzyskać informacje na temat włączania usługi MSDTC, zobacz [jak włączyć usługę MSDTC na serwerze sieci Web](/previous-versions/commerce-server/dd327979(v=cs.90)).
 
 ```csharp
 using System;

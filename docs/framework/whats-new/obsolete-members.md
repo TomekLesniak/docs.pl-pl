@@ -7,12 +7,12 @@ helpviewer_keywords:
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: c3418675bf69ffaf60d6b16202fc6cb8a112ebab
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d5981a2ec1e8152e891a4480ea548200be45ecd1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558936"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558527"
 ---
 # <a name="obsolete-members-in-net-framework"></a>Przestarzałe składowe w .NET Framework
 
@@ -421,8 +421,8 @@ W tym artykule nie wymieniono członków przestarzałych typów. Aby zapoznać s
 > |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>|Obiekty wywołujące nie powinny używać <xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> interfejsu i należy zamiast tego używać metod bezpośrednio w <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> klasie. Te dziedziczące z programu <xref:System.CodeDom.Compiler.CodeDomProvider> muszą nadal implementować ten interfejs i należy wykluczyć to ostrzeżenie, a także przestarzałą metodę.|
 > |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>|Obiekty wywołujące nie powinny używać <xref:System.CodeDom.Compiler.ICodeGenerator?displayProperty=nameWithType> interfejsu i należy zamiast tego używać metod bezpośrednio w <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> klasie. Te dziedziczące z programu <xref:System.CodeDom.Compiler.CodeDomProvider> muszą nadal implementować ten interfejs i należy wykluczyć to ostrzeżenie, a także przestarzałą metodę.|
 > |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateParser%2A>|Obiekty wywołujące nie powinny używać <xref:System.CodeDom.Compiler.ICodeParser?displayProperty=nameWithType> interfejsu i należy zamiast tego używać metod bezpośrednio w <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> klasie. Te dziedziczące z programu <xref:System.CodeDom.Compiler.CodeDomProvider> muszą nadal implementować ten interfejs i należy wykluczyć to ostrzeżenie, a także przestarzałą metodę.|
-> |<xref:System.CodeDom.Compiler.CompilerParameters?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerParameters.Evidence%2A>|Zasady CAS są przestarzałe i zostaną usunięte w przyszłej wersji .NET Framework. Aby uzyskać więcej informacji, zobacz [zmiany zabezpieczeń w .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee191568%28v=vs.100%29).|
-> |<xref:System.CodeDom.Compiler.CompilerResults?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerResults.Evidence%2A>|Zasady CAS są przestarzałe i zostaną usunięte w przyszłej wersji .NET Framework. Aby uzyskać więcej informacji, zobacz [zmiany zabezpieczeń w .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee191568%28v=vs.100%29).|
+> |<xref:System.CodeDom.Compiler.CompilerParameters?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerParameters.Evidence%2A>|Zasady CAS są przestarzałe i zostaną usunięte w przyszłej wersji .NET Framework. Aby uzyskać więcej informacji, zobacz [zmiany zabezpieczeń w .NET Framework 4](/previous-versions/dotnet/netframework-4.0/ee191568(v=vs.100)).|
+> |<xref:System.CodeDom.Compiler.CompilerResults?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerResults.Evidence%2A>|Zasady CAS są przestarzałe i zostaną usunięte w przyszłej wersji .NET Framework. Aby uzyskać więcej informacji, zobacz [zmiany zabezpieczeń w .NET Framework 4](/previous-versions/dotnet/netframework-4.0/ee191568(v=vs.100)).|
 > |<xref:System.Collections.Specialized.NameObjectCollectionBase?displayProperty=nameWithType>|<xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Collections.IHashCodeProvider%2CSystem.Collections.IComparer%29>|Zamiast tego użyj polecenia cmdlet <xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Collections.IEqualityComparer%29>.|
 > |<xref:System.Collections.Specialized.NameObjectCollectionBase?displayProperty=nameWithType>|<xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Int32%2CSystem.Collections.IHashCodeProvider%2CSystem.Collections.IComparer%29>|Zamiast tego użyj polecenia cmdlet <xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Int32%2CSystem.Collections.IEqualityComparer%29>.|
 > |<xref:System.Collections.Specialized.NameValueCollection?displayProperty=nameWithType>|<xref:System.Collections.Specialized.NameValueCollection.%23ctor%28System.Collections.IHashCodeProvider%2CSystem.Collections.IComparer%29>|Zamiast tego użyj polecenia cmdlet <xref:System.Collections.Specialized.NameValueCollection.%23ctor%28System.Collections.IEqualityComparer%29>.|
@@ -730,7 +730,7 @@ Zestawy IEHost.dll i IEExec.exe zostały usunięte z .NET Framework. Wszystkie t
 > |<xref:Microsoft.VisualBasic.CompilerServices.Operators?displayProperty=nameWithType>|<xref:Microsoft.VisualBasic.CompilerServices.Operators.FallbackInvokeUserDefinedOperator%2A>|Użycie tego elementu członkowskiego spowoduje wygenerowanie błędu kompilatora.<br /><br /> Nie należy używać tej metody.|
 > |<xref:Microsoft.VisualBasic.MyServices.RegistryProxy?displayProperty=nameWithType>|<xref:Microsoft.VisualBasic.MyServices.RegistryProxy.DynData%2A>|`DynData`Klucz rejestru działa tylko w systemach Win9x, które nie są obsługiwane przez tę wersję .NET Framework. `PerformanceData`Zamiast tego użyj klucza rejestru. Ta właściwość zostanie usunięta z przyszłej wersji platformy.|
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Co jest przestarzałe w .NET Framework](whats-obsolete.md)
 - [Przestarzałe typy](obsolete-types.md)

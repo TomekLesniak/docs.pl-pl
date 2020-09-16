@@ -10,12 +10,12 @@ helpviewer_keywords:
 - type libraries
 - registering assemblies
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
-ms.openlocfilehash: 6d0090eda764113407e35a3bcec139f1c7cfb050
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 474018b8bc39e4d5c36bd4bc6481072b218d6270
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517246"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558397"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (Narzędzie instalacji usług .NET)
 Narzędzie instalacji usług platformy .NET wykonuje następujące akcje:  
@@ -66,7 +66,7 @@ Narzędzie instalacji usług platformy .NET wykonuje następujące akcje:
 ## <a name="remarks"></a>Uwagi  
  Regsvcs.exe wymaga pliku zestawu źródłowego określonego przez *assemblyFile.dll*. Ten zestaw musi być podpisany za pomocą silnej nazwy. Aby uzyskać więcej informacji na temat podpisywania silnej nazwy, zobacz [podpisywanie zestawu za pomocą silnej nazwy](../../standard/assembly/sign-strong-name.md). Nazwy aplikacji docelowej i pliku biblioteki typów są opcjonalne. Argument *ApplicationName* można wygenerować z pliku zestawu źródłowego i zostanie utworzony przez Regsvcs.exe, jeśli jeszcze nie istnieje. Argument *TypeLibraryFile* może określać nazwę biblioteki typów. Jeśli nie zostanie określona nazwa biblioteki typów, program Regsvcs.exe użyje nazwy zestawu jako wartości domyślnej.  
   
- Gdy Regsvcs.exe rejestruje metody składnika, podlegają [wymaganiom](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100)) i [łącznym potrzebom](../misc/link-demands.md) dotyczącym tych metod. To narzędzie działa we w pełni zaufanym środowisku, więc większość żądań uprawnienia kończy się pomyślnie. Jednak Regsvcs.exe nie może zarejestrować składników przy użyciu metod chronionych przez zapotrzebowanie lub żądanie linku dla <xref:System.Security.Permissions.StrongNameIdentityPermission> lub <xref:System.Security.Permissions.PublisherIdentityPermission> .  
+ Gdy Regsvcs.exe rejestruje metody składnika, podlegają [wymaganiom](/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100)) i [łącznym potrzebom](../misc/link-demands.md) dotyczącym tych metod. To narzędzie działa we w pełni zaufanym środowisku, więc większość żądań uprawnienia kończy się pomyślnie. Jednak Regsvcs.exe nie może zarejestrować składników przy użyciu metod chronionych przez zapotrzebowanie lub żądanie linku dla <xref:System.Security.Permissions.StrongNameIdentityPermission> lub <xref:System.Security.Permissions.PublisherIdentityPermission> .  
   
  Aby używać programu Regsvcs.exe, trzeba mieć uprawnienia administracyjne na komputerze lokalnym.  
   

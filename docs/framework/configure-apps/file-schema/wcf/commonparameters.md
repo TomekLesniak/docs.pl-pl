@@ -2,12 +2,12 @@
 title: <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: ffc20832-34d6-4622-8174-81924fd53514
-ms.openlocfilehash: 73d8549f68e8ca77115619431c857c4a2aac3fdf
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d4b912d003af201b19697854a67943e3d87e3734
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153025"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558488"
 ---
 # \<commonParameters>
 Reprezentuje kolekcję parametrów, które są globalnie używane w wielu usługach. Ta kolekcja zazwyczaj obejmuje parametry połączenia z bazą danych, które mogą być współużytkowane przez trwałe usługi.  
@@ -92,7 +92,7 @@ commonParameters["ConnectionString"].Value="another connection string";
 config.Save();  
 ```  
   
- Aby uzyskać więcej informacji o korzystaniu z pliku konfiguracji w celu sterowania zachowaniem <xref:System.Workflow.Runtime.WorkflowRuntime> obiektu Windows Workflow Foundation aplikacji hosta, zobacz [pliki konfiguracji przepływu pracy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
+ Aby uzyskać więcej informacji o korzystaniu z pliku konfiguracji w celu sterowania zachowaniem <xref:System.Workflow.Runtime.WorkflowRuntime> obiektu Windows Workflow Foundation aplikacji hosta, zobacz [pliki konfiguracji przepływu pracy](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
   
 ## <a name="example"></a>Przykład  
   
@@ -112,5 +112,5 @@ config.Save();
 - <xref:System.Workflow.Runtime.WorkflowRuntime>
 - <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService>
 - <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>
-- [Pliki konfiguracji przepływu pracy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
+- [Pliki konfiguracji przepływu pracy](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
 - [\<add>](add-of-commonparameters.md)

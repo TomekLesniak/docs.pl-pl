@@ -2,17 +2,17 @@
 title: Omówienie rozszerzonej ochrony uwierzytelniania
 ms.date: 03/30/2017
 ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
-ms.openlocfilehash: 400bf7987b5fcd4ec75628d19a30739dd5f23b08
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: fdc42228077bbc703e2e7557c8d7fdb3ff57a150
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964599"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559268"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Omówienie rozszerzonej ochrony uwierzytelniania
 Ochrona rozszerzona uwierzytelniania pomaga chronić przed atakami typu man-in-the-Middle (MITM), w których osoba atakująca przechwytuje poświadczenia klienta i przekazuje je do serwera.  
   
- Rozważmy scenariusz od trzech uczestników: klient, serwer i osoba atakująca. Na serwerze znajduje się adres URL `https://server`, podczas gdy osoba atakująca ma `https://attacker`URL. Osoba atakująca uzyskuje dostęp do osoby atakującej, tak jakby była serwerem. Następnie osoba atakująca wysyła żądanie do serwera. Jeśli osoba atakująca próbuje uzyskać dostęp do bezpiecznego zasobu, serwer odpowie do osoby atakującej za pomocą nagłówka WWW-Authenticate. Osoba atakująca nie ma informacji o uwierzytelnianiu, więc wysyła do klienta nagłówek WWW-Authentication. Klient wysyła nagłówek autoryzacji do osoby atakującej, a osoba atakująca wysyła nagłówek na serwer i uzyskuje dostęp do bezpiecznych zasobów przy użyciu poświadczeń klienta.  
+ Rozważmy scenariusz od trzech uczestników: klient, serwer i osoba atakująca. Serwer ma adres URL `https://server` , podczas gdy osoba atakująca ma ten adres URL `https://attacker` . Osoba atakująca uzyskuje dostęp do osoby atakującej, tak jakby była serwerem. Następnie osoba atakująca wysyła żądanie do serwera. Jeśli osoba atakująca próbuje uzyskać dostęp do bezpiecznego zasobu, serwer odpowie do osoby atakującej za pomocą nagłówka WWW-Authenticate. Osoba atakująca nie ma informacji o uwierzytelnianiu, więc wysyła do klienta nagłówek WWW-Authentication. Klient wysyła nagłówek autoryzacji do osoby atakującej, a osoba atakująca wysyła nagłówek na serwer i uzyskuje dostęp do bezpiecznych zasobów przy użyciu poświadczeń klienta.  
   
  Obecnie, gdy aplikacja kliencka uwierzytelnia się na serwerze przy użyciu protokołu Kerberos, Digest lub NTLM przy użyciu protokołu HTTPS, najpierw zostaje ustanowiony kanał zabezpieczenia na poziomie transportu (TLS), a uwierzytelnianie odbywa się przy użyciu tego kanału. Nie ma jednak powiązania między kluczem sesji wygenerowanym przez SSL (SSL) i kluczem sesji, który jest generowany podczas uwierzytelniania. Tak więc w poprzednim scenariuszu, Jeśli komunikacja odbywa się za pośrednictwem protokołu TLS (na przykład kanału HTTPS), istnieją dwa kanały SSL: jeden między klientem a atakującym, a drugi między intruziem a serwerem. Poświadczenia klienta są wysyłane z klienta na serwer najpierw za pośrednictwem kanału SSL między klientem a osobą atakującą, a następnie przez kanał między osobą atakującą a serwerem. Gdy poświadczenia klienta docierają do serwera, serwer weryfikuje poświadczenia bez wykrywania, czy kanał, w którym te poświadczenia zostały wysłane, pochodzi od osoby atakującej, a nie do klienta programu.  
   
@@ -34,4 +34,4 @@ Ochrona rozszerzona uwierzytelniania pomaga chronić przed atakami typu man-in-t
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

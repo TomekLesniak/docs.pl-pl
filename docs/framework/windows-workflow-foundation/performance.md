@@ -3,12 +3,12 @@ title: Wydajność programu Windows Workflow Foundation 4
 description: W tym artykule wyjaśniono charakterystykę wydajności głównej wersji Windows Workflow Foundation, która jest częścią .NET Framework 4.
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 9b1b9e7c4fd7cdd122d425b2746859dde30ec209
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1ad12d9fd69205bde726fe650a2ec28ba6c750ef
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421569"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558345"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Wydajność programu Windows Workflow Foundation 4
 
@@ -18,11 +18,11 @@ ms.locfileid: "83421569"
 
 ## <a name="terminology"></a>Terminologia
 
- Wersja [!INCLUDE[wf1](../../../includes/wf1-md.md)] wprowadzona w .NET Framework 4 będzie określana jako WF4 w pozostałej części tego tematu. [!INCLUDE[wf1](../../../includes/wf1-md.md)]wprowadzono w .NET Framework 3,0 i wprowadzono kilka drobnych poprawek za pomocą .NET Framework 3,5 z dodatkiem SP1. Wersja .NET Framework 3,5 programu Workflow Foundation będzie określana jako WF3 w pozostałej części tego tematu. WF3 jest dostarczany w .NET Framework 4 obok WF4. Aby uzyskać więcej informacji na temat migrowania artefaktów WF3 do WF4, zobacz: [Przewodnik migracji Windows Workflow Foundation 4](migration-guidance.md).
+ Wersja [!INCLUDE[wf1](../../../includes/wf1-md.md)] wprowadzona w .NET Framework 4 będzie określana jako WF4 w pozostałej części tego tematu. [!INCLUDE[wf1](../../../includes/wf1-md.md)] wprowadzono w .NET Framework 3,0 i wprowadzono kilka drobnych poprawek za pomocą .NET Framework 3,5 z dodatkiem SP1. Wersja .NET Framework 3,5 programu Workflow Foundation będzie określana jako WF3 w pozostałej części tego tematu. WF3 jest dostarczany w .NET Framework 4 obok WF4. Aby uzyskać więcej informacji na temat migrowania artefaktów WF3 do WF4, zobacz: [Przewodnik migracji Windows Workflow Foundation 4](migration-guidance.md).
 
  Windows Communication Foundation (WCF) to ujednolicony model programowania firmy Microsoft służący do tworzenia aplikacji zorientowanych na usługę. Najpierw została wprowadzona jako część programu .NET 3,0 wraz z WF3 i teraz jest jednym z najważniejszych składników .NET Framework.
 
- Windows Server AppFabric to zestaw zintegrowanych technologii, które ułatwiają tworzenie, skalowanie i zarządzanie aplikacjami sieci Web i złożonymi, które działają w usługach IIS. Zapewnia narzędzia do monitorowania usług i przepływów pracy oraz zarządzania nimi. Aby uzyskać więcej informacji, zobacz [Windows Server AppFabric 1,0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
+ Windows Server AppFabric to zestaw zintegrowanych technologii, które ułatwiają tworzenie, skalowanie i zarządzanie aplikacjami sieci Web i złożonymi, które działają w usługach IIS. Zapewnia narzędzia do monitorowania usług i przepływów pracy oraz zarządzania nimi. Aby uzyskać więcej informacji, zobacz [Windows Server AppFabric 1,0](/previous-versions/appfabric/ff384253(v=azure.10)).
 
 ## <a name="goals"></a>Cele
  Celem tego tematu jest przedstawienie charakterystyki wydajności WF4 z danymi mierzonymi dla różnych scenariuszy. Zawiera również szczegółowe porównania między WF4 i WF3, a tym samym przedstawia doskonałe ulepszenia, które zostały wprowadzone w tej nowej wersji. Scenariusze i dane przedstawione w tym artykule określają bazowy koszt różnych aspektów WF4 i WF3. Te dane są przydatne w zrozumieniu charakterystyki wydajności WF4 i mogą być przydatne w planowaniu migracji z WF3 do WF4 lub przy użyciu WF4 podczas opracowywania aplikacji. Należy jednak zadbać o to, aby pochodziły z danych przedstawionych w tym artykule. Wydajność aplikacji złożonego przepływu pracy jest wysoce zależna od implementacji przepływu pracy i sposobu integrowania różnych składników. Jeden musi mierzyć każdą aplikację, aby określić charakterystykę wydajności tej aplikacji.
@@ -56,7 +56,7 @@ ms.locfileid: "83421569"
  Potok przetwarzania ujednoliconych komunikatów zapewniany w programie WCF w programie .NET 4 pomaga WF4 usługom w znacznie lepszą wydajność i skalowalność niż WF3. WF4 zapewnia także bogatszą obsługę programowania komunikatów, która może modelować złożone wzorce wymiany komunikatów (MEPs). Deweloperzy mogą korzystać z umów usług z systemem, aby w łatwy sposób programistyczny lub nieokreślony z nieokreślonymi typami umów uzyskać lepszą wydajność bez płacenia kosztów serializacji. Obsługa buforowania kanału po stronie klienta za pośrednictwem <xref:System.ServiceModel.Activities.SendMessageChannelCache> klasy w WF4 ułatwia deweloperom tworzenie szybkich aplikacji z minimalnym nakładem pracy. Aby uzyskać więcej informacji, zobacz [Zmienianie poziomów udostępniania pamięci podręcznej dla działań wysyłania](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).
 
 ### <a name="declarative-programming"></a>Programowanie deklaracyjne
- WF4 zapewnia czysty i prosty, deklaracyjne środowisko programistyczne do modelowania procesów i usług firmy. Model programowania obsługuje w pełni deklaratywne składowe działań bez kodu, co znacznie upraszcza tworzenie przepływu pracy. W .NET Framework 4, deklaracyjne środowisko programistyczne oparte na języku XAML zostało ujednolicone w jednym zestawie System. XAML. dll do obsługi programów WPF i WF.
+ WF4 zapewnia czysty i prosty, deklaracyjne środowisko programistyczne do modelowania procesów i usług firmy. Model programowania obsługuje w pełni deklaratywne składowe działań bez kodu, co znacznie upraszcza tworzenie przepływu pracy. W .NET Framework 4, deklaracyjne środowisko programistyczne oparte na języku XAML zostało ujednolicone w jednym zestawie System.Xaml.dll do obsługi programów WPF i WF.
 
  W WF4, język XAML zapewnia prawdziwie deklaracyjne środowisko i umożliwia zdefiniowanie całej definicji przepływu pracy w znaczniku XML, odwołujące się do działań i typów utworzonych przy użyciu platformy .NET. Było to trudne do wykonania w WF3 z formatem XOML, bez uwzględniania niestandardowej logiki związanej z kodem. Nowy stos XAML w programie .NET 4 ma znacznie lepszą wydajność podczas serializowania/deserializacji artefaktów przepływu pracy i sprawia, że deklaratywne programowanie jest bardziej atrakcyjne i trwałe.
 
@@ -106,7 +106,7 @@ ms.locfileid: "83421569"
  Przepływ pracy sekwencji zawiera jedno <xref:System.Activities.Statements.While> działanie z jednym działaniem podrzędnym w pętli, które nie wykonuje żadnej pracy.
 
 ### <a name="replicator-compared-to-parallelforeach"></a>Replikator w porównaniu do ParallelForEach
- <xref:System.Workflow.Activities.ReplicatorActivity>w programie WF3 są tryby wykonywania sekwencyjnego i równoległego.  W trybie sekwencyjnym wydajność działania jest podobna do <xref:System.Workflow.Activities.WhileActivity> .  <xref:System.Workflow.Activities.ReplicatorActivity>Jest najbardziej przydatny do wykonywania równoległego.  Wartość WF4 jest analogiczna dla tego <xref:System.Activities.Statements.ParallelForEach%601> działania.
+ <xref:System.Workflow.Activities.ReplicatorActivity> w programie WF3 są tryby wykonywania sekwencyjnego i równoległego.  W trybie sekwencyjnym wydajność działania jest podobna do <xref:System.Workflow.Activities.WhileActivity> .  <xref:System.Workflow.Activities.ReplicatorActivity>Jest najbardziej przydatny do wykonywania równoległego.  Wartość WF4 jest analogiczna dla tego <xref:System.Activities.Statements.ParallelForEach%601> działania.
 
  Na poniższym diagramie przedstawiono przepływy pracy używane do tego testu. Przepływ pracy WF3 jest po lewej stronie, a przepływ pracy WF4 znajduje się po prawej stronie.
 
@@ -285,7 +285,7 @@ Na poniższym diagramie przedstawiono podstawowy przepływ pracy związane z wyn
 
  Nawet w przypadku złożonych przepływów pracy ze znaczną głębokością i dużą liczbą działań wyniki wydajności są spójne z innymi numerami przepływności przedstawionymi wcześniej w tym artykule.  WF4's przepływność jest znacznie szybsza i musi być porównana z skalą logarytmiczną.
 
-### <a name="memory"></a>Memory (Pamięć)
+### <a name="memory"></a>Pamięć
  Obciążenie pamięcią Windows Workflow Foundation jest mierzone w dwóch kluczowych obszarach: złożoność przepływu pracy i liczba definicji przepływu pracy.  Pomiary pamięci zostały wykonane na stacji roboczej systemu Windows 7 64-bitowego.  Istnieje wiele sposobów uzyskania pomiaru rozmiaru zestawu roboczego, takiego jak monitorowanie liczników wydajności, środowisko sondowania środowiska. zestaw roboczy lub używanie narzędzia, takiego jak VMMap dostępne z [VMMap](/sysinternals/downloads/vmmap). Kombinacja metod została użyta w celu uzyskania i sprawdzenia wyników każdego testu.
 
 ### <a name="workflow-complexity-test"></a>Test złożoności przepływu pracy
@@ -304,7 +304,7 @@ Na poniższym diagramie przedstawiono podstawowy przepływ pracy związane z wyn
 ### <a name="multiple-workflow-definitions-test"></a>Test wielu definicji przepływu pracy
  Pomiar ilości pamięci na definicję przepływu pracy jest podzielony na dwa różne testy ze względu na dostępne opcje hostingu przepływów pracy w WF3 i WF4.  Testy są uruchamiane w inny sposób niż w teście złożoności przepływu pracy w przypadku wystąpienia danego przepływu pracy, który jest wykonywany tylko raz dla każdej definicji.  Wynika to z faktu, że definicja przepływu pracy i jego host pozostają w pamięci przez okres istnienia elementu AppDomain.  Podczas wyrzucania elementów bezużytecznych należy oczyścić pamięć używaną przez uruchomienie danego wystąpienia przepływu pracy.  Wskazówki dotyczące migracji WF4 zawierają bardziej szczegółowe informacje na temat opcji hostingu. Aby uzyskać więcej informacji, zobacz temat [migracja WF Cookbook: hosting przepływu pracy](migration-guidance.md).
 
- Tworzenie wielu definicji przepływu pracy dla testu definicji przepływu pracy można wykonać na kilka sposobów.  Na przykład, jeden może użyć generowania kodu, aby utworzyć zestaw 1000 przepływów pracy, które są identyczne, z wyjątkiem nazwy i Zapisz każdy z tych przepływów pracy w oddzielnych plikach.  To podejście zostało wykonane dla testu obsługiwanego przez konsolę.  W WF3, <xref:System.Workflow.Runtime.WorkflowRuntime> Klasa była używana do uruchamiania definicji przepływu pracy.  WF4 może użyć <xref:System.Activities.WorkflowApplication> , aby utworzyć pojedyncze wystąpienie przepływu pracy lub bezpośrednio użyć <xref:System.Activities.WorkflowInvoker> do uruchomienia działania tak, jakby było wywołaniem metody.  <xref:System.Activities.WorkflowApplication>jest hostem pojedynczego wystąpienia przepływu pracy i ma bliższą parzystość funkcji <xref:System.Workflow.Runtime.WorkflowRuntime> , która została użyta w tym teście.
+ Tworzenie wielu definicji przepływu pracy dla testu definicji przepływu pracy można wykonać na kilka sposobów.  Na przykład, jeden może użyć generowania kodu, aby utworzyć zestaw 1000 przepływów pracy, które są identyczne, z wyjątkiem nazwy i Zapisz każdy z tych przepływów pracy w oddzielnych plikach.  To podejście zostało wykonane dla testu obsługiwanego przez konsolę.  W WF3, <xref:System.Workflow.Runtime.WorkflowRuntime> Klasa była używana do uruchamiania definicji przepływu pracy.  WF4 może użyć <xref:System.Activities.WorkflowApplication> , aby utworzyć pojedyncze wystąpienie przepływu pracy lub bezpośrednio użyć <xref:System.Activities.WorkflowInvoker> do uruchomienia działania tak, jakby było wywołaniem metody.  <xref:System.Activities.WorkflowApplication> jest hostem pojedynczego wystąpienia przepływu pracy i ma bliższą parzystość funkcji <xref:System.Workflow.Runtime.WorkflowRuntime> , która została użyta w tym teście.
 
  Podczas hostowania przepływów pracy w usługach IIS można użyć programu, <xref:System.Web.Hosting.VirtualPathProvider> Aby utworzyć nowy <xref:System.ServiceModel.WorkflowServiceHost> zamiast generować wszystkie pliki xamlx lub xoml.  <xref:System.Web.Hosting.VirtualPathProvider>Obsługuje przychodzące żądanie i odpowiada za pomocą "pliku wirtualnego", który można załadować z bazy danych lub, w tym przypadku, generowany na bieżąco.  W związku z tym nie trzeba tworzyć plików fizycznych 1000.
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-ms.openlocfilehash: f2b0e21ff5dbeab3395335f52799629859fb2d90
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 7312de7d812aa714447a60f5aa04cb48890e40e8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475271"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553730"
 ---
 # <a name="migrate-from-the-net-framework-11"></a>Migrowanie z .NET Framework 1,1
 
@@ -41,7 +41,7 @@ Bez względu na to, czy wolisz ponownie skompilować lub przekierować aplikacj�
 
 Bez względu na to, czy chcesz przekierować aplikację, czy ją ponownie skompilować, należy przejrzeć zarówno zmiany, jak i przestarzałe typy i elementy członkowskie dla każdej wersji .NET Framework wydanej po .NET Framework 1,1.
 
-## <a name="breaking-changes"></a>Fundamentalne zmiany
+## <a name="breaking-changes"></a>Zmiany powodujące niezgodność
 
 Gdy nastąpi zmiana istotna, w zależności od określonej zmiany obejście może być dostępne zarówno w przypadku aplikacji docelowych, jak i ponownie skompilowanych. W niektórych przypadkach można dodać element podrzędny do [\<runtime>](../configure-apps/file-schema/startup/supportedruntime-element.md) elementu pliku konfiguracji aplikacji, aby przywrócić poprzednie zachowanie. Na przykład następujący plik konfiguracyjny przywraca zachowanie sortowania i porównywania ciągów używane w .NET Framework 1,1 i może być używane z przekierowaniem lub ponowną kompilacją aplikacji.
 
@@ -57,9 +57,9 @@ Jednak w niektórych przypadkach może być konieczne zmodyfikowanie kodu źród
 
 Aby ocenić wpływ ewentualnych zmian w aplikacji, należy przejrzeć następujące listy zmian:
 
-- Istotne [zmiany w .NET Framework 2,0](https://docs.microsoft.com/previous-versions/aa570326(v=msdn.10)) dokumenty zmiany w .NET Framework 2,0 SP1, które mogą mieć wpływ na aplikację, która jest przeznaczona .NET Framework 1,1.
+- Istotne [zmiany w .NET Framework 2,0](/previous-versions/aa570326(v=msdn.10)) dokumenty zmiany w .NET Framework 2,0 SP1, które mogą mieć wpływ na aplikację, która jest przeznaczona .NET Framework 1,1.
 
-- [Zmiany w .NET Framework 3,5 z dodatkiem SP1](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10)) zmieniają się między .NET Framework 3,5 i .NET Framework 3,5 SP1.
+- [Zmiany w .NET Framework 3,5 z dodatkiem SP1](/previous-versions/dotnet/articles/dd310284(v=msdn.10)) zmieniają się między .NET Framework 3,5 i .NET Framework 3,5 SP1.
 
 - [.NET Framework 4 problemy z migracją](net-framework-4-migration-issues.md) dokumentów między .NET Framework 3,5 SP1 a .NET Framework 4.
 

@@ -2,12 +2,12 @@
 title: Wysyłanie komunikatów z usługi WCF do usługi kolejkowania komunikatów
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 872632dc7d0a8a94f8829ffb3fe8eea2607697c8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a6e322936740f7d88d30b9a205ac937a807bedc1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602347"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552930"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Wysyłanie komunikatów z usługi WCF do usługi kolejkowania komunikatów
 
@@ -97,7 +97,7 @@ Console.WriteLine("Order has been submitted:{0}", po);
 client.Close();
 ```
 
- Klient używa niestandardowego klienta w usłudze w celu wysłania komunikatu MSMQ do kolejki. Ponieważ aplikacja, która odbiera i przetwarza komunikat, jest aplikacją usługi MSMQ, a nie aplikacją WCF, nie istnieje niejawna Umowa serwisowa między tymi dwiema aplikacjami. Dlatego nie można utworzyć serwera proxy za pomocą narzędzia Svcutil. exe w tym scenariuszu.
+ Klient używa niestandardowego klienta w usłudze w celu wysłania komunikatu MSMQ do kolejki. Ponieważ aplikacja, która odbiera i przetwarza komunikat, jest aplikacją usługi MSMQ, a nie aplikacją WCF, nie istnieje niejawna Umowa serwisowa między tymi dwiema aplikacjami. Dlatego nie można utworzyć serwera proxy przy użyciu narzędzia Svcutil.exe w tym scenariuszu.
 
  Klient niestandardowy jest zasadniczo taki sam dla wszystkich aplikacji WCF, które używają `MsmqIntegration` powiązania do wysyłania komunikatów. W przeciwieństwie do innych klientów, nie obejmuje ona zakresu operacji usługi. Jest to tylko operacja przesyłania wiadomości.
 
@@ -131,7 +131,7 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
  Po uruchomieniu przykładu działania klienta i usługi są wyświetlane zarówno w systemie, jak i w oknach konsoli klienta. Możesz zobaczyć, że usługa odbiera komunikaty od klienta. Naciśnij klawisz ENTER w każdym oknie konsoli, aby zamknąć usługę i klienta. Należy pamiętać, że ponieważ usługa kolejkowania jest w użyciu, klient i usługi nie muszą działać w tym samym czasie. Na przykład można uruchomić klienta programu, zamknąć go, a następnie uruchomić usługę i nadal otrzymywać wiadomości.
 
 > [!NOTE]
-> Ten przykład wymaga instalacji usługi kolejkowania komunikatów. Zapoznaj się z instrukcjami dotyczącymi instalacji w usłudze [kolejkowania komunikatów](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)).
+> Ten przykład wymaga instalacji usługi kolejkowania komunikatów. Zapoznaj się z instrukcjami dotyczącymi instalacji w usłudze [kolejkowania komunikatów](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)).
 
 ## <a name="set-up-build-and-run-the-sample"></a>Konfigurowanie, kompilowanie i uruchamianie przykładu
 
@@ -159,11 +159,11 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 
 2. Skopiuj pliki programu klienckiego z folderu \client\bin\, w obszarze folder specyficzny dla języka, do komputera klienckiego.
 
-3. W pliku Client. exe. config zmień adres punktu końcowego klienta, aby określić nazwę komputera usługi zamiast ".".
+3. W pliku Client.exe.config Zmień adres punktu końcowego klienta, aby określić nazwę komputera usługi zamiast ".".
 
-4. Na komputerze usługi Uruchom polecenie Service. exe z wiersza polecenia.
+4. Na komputerze usługi Uruchom Service.exe z wiersza polecenia.
 
-5. Na komputerze klienckim uruchom program Client. exe z wiersza polecenia.
+5. Na komputerze klienckim uruchom Client.exe z wiersza polecenia.
 
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).
@@ -174,7 +174,7 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Instrukcje: wymiana komunikatów z punktami końcowymi programu WCF i aplikacjami do obsługi kolejek komunikatów](../feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Kolejkowanie komunikatów](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))
+- [Kolejkowanie komunikatów](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

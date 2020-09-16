@@ -9,12 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 1591aacf5496852609ae571a52aaea2d5c09a15b
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: accc85f04514822233bc5df3a76eb99775fee529
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558559"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553743"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Instrukcje: Określanie, które wersje .NET Framework są zainstalowane
 
@@ -99,7 +99,7 @@ Użyj poleceń programu PowerShell, aby sprawdzić wartość wpisu **Release** w
 
 Poniższe przykłady umożliwiają sprawdzenie wartości wpisu **wydania** , aby określić, czy .NET Framework 4.6.2 lub nowszy. Ten kod zwraca `True` , jeśli jest zainstalowany i `False` w przeciwnym razie.
 
-```PowerShell
+```powershell
 (Get-ItemProperty "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
 ```
 
@@ -131,10 +131,10 @@ Każda wersja .NET Framework od 1,1 do 4,0 jest wyświetlana jako podklucz w **H
 
 | Wersja struktury  | Podklucz rejestru | Wartość |
 | ------------------ | --------------- | ----- |
-| 1.0                | **HKLM \\ oprogramowanie \\ Microsoft \\ . NETFramework \\ Policy \\ v 1.0 \\ 3705**     | **Zainstaluj** program REG_SZ równa się `1` |
-| 1.1                | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Zainstaluj** program REG_DWORD równa się `1` |
+| 1,0                | **HKLM \\ oprogramowanie \\ Microsoft \\ . NETFramework \\ Policy \\ v 1.0 \\ 3705**     | **Zainstaluj** program REG_SZ równa się `1` |
+| 1,1                | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Zainstaluj** program REG_DWORD równa się `1` |
 | 2,0                | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 2.0.50727**  | **Zainstaluj** program REG_DWORD równa się `1` |
-| 3.0                | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.0 \\ Setup** | **InstallSuccess** REG_DWORD równa się `1` |
+| 3,0                | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.0 \\ Setup** | **InstallSuccess** REG_DWORD równa się `1` |
 | 3,5                | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.5**        | **Zainstaluj** program REG_DWORD równa się `1` |
 | 4,0 profil klienta | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Client**  | **Zainstaluj** program REG_DWORD równa się `1` |
 | pełny profil 4,0   | **HKLM \\ oprogramowanie \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full**    | **Zainstaluj** program REG_DWORD równa się `1` |
@@ -208,7 +208,7 @@ Poniższy przykład umożliwia znalezienie zainstalowanych wersji .NET Framework
   [!code-csharp[ListVersions](../../../samples/snippets/csharp/framework/migration-guide/versions-installed2.cs)]
   [!code-vb[ListVersions](../../../samples/snippets/visualbasic/framework/migration-guide/versions-installed2.vb)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Instrukcje: Określanie, które aktualizacje .NET Framework są zainstalowane](how-to-determine-which-net-framework-updates-are-installed.md)
 - [Zainstaluj .NET Framework dla deweloperów](../install/guide-for-developers.md)

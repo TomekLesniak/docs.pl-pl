@@ -2,12 +2,12 @@
 title: Używanie liczników wydajności
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 0b63cdc145ff8806c26b255500bcb2a132e9ef9f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f2b0f39303d000e2e9aab8fc5280f75ab9309c4d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596503"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553047"
 ---
 # <a name="using-performance-counters"></a>Używanie liczników wydajności
 W tym przykładzie pokazano, jak uzyskać dostęp do liczników wydajności Windows Communication Foundation (WCF) oraz jak tworzyć liczniki wydajności zdefiniowane przez użytkownika. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md).  
@@ -17,7 +17,7 @@ W tym przykładzie pokazano, jak uzyskać dostęp do liczników wydajności Wind
   
  W tym przykładzie klient wywołuje cztery metody `ICalculator` usługi. Klient kontynuuje działanie, dopóki nie zostanie on przerwany przez użytkownika. Usługa pozostaje niezmieniona.  
   
- Liczniki wydajności są włączane w sekcji Diagnostyka w pliku Web. config dla usługi, jak pokazano w poniższej konfiguracji przykładowej.  
+ Liczniki wydajności są włączone w sekcji Diagnostyka pliku Web.config dla usługi, jak pokazano w poniższej konfiguracji przykładowej.  
   
 ```xml  
 <configuration>  
@@ -27,7 +27,7 @@ W tym przykładzie pokazano, jak uzyskać dostęp do liczników wydajności Wind
 </configuration>  
 ```  
   
- To zadanie można również wykonać za pomocą [Narzędzia Edytora konfiguracji (SvcConfigEditor. exe)](../configuration-editor-tool-svcconfigeditor-exe.md).  
+ To zadanie można również wykonać za pomocą [Narzędzia Edytora konfiguracji (SvcConfigEditor.exe)](../configuration-editor-tool-svcconfigeditor-exe.md).  
   
  Po włączeniu liczników wydajności cały pakiet liczników wydajności programu WCF jest włączony dla usługi. .NET Framework automatycznie utrzymuje dane dotyczące wydajności na trzech poziomach: `ServiceModelService` , `ServiceModelEndpoint` i `ServiceModelOperation` . Każdy z tych poziomów ma liczniki wydajności, takie jak "wywołania", "wywołania na sekundę" i "wywołania zabezpieczeń, które nie są autoryzowane".  
   
@@ -55,11 +55,11 @@ W tym przykładzie pokazano, jak uzyskać dostęp do liczników wydajności Wind
   
 ### <a name="to-use-the-configuration-editor-to-enable-counters"></a>Aby włączyć liczniki przy użyciu edytora konfiguracji  
   
-1. Otwórz wystąpienie programu SvcConfigEditor. exe.  
+1. Otwórz wystąpienie SvcConfigEditor.exe.  
   
 2. W menu plik kliknij polecenie **Otwórz** , a następnie kliknij pozycję **plik konfiguracji..**..  
   
-3. Przejdź do folderu usługi przykładowej aplikacji i Otwórz plik Web. config.  
+3. Przejdź do folderu usługi przykładowej aplikacji i Otwórz plik Web.config.  
   
 4. W drzewie konfiguracji kliknij pozycję **Diagnostyka** .  
   
@@ -76,6 +76,6 @@ W tym przykładzie pokazano, jak uzyskać dostęp do liczników wydajności Wind
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\PerfCounters`  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady monitorowania oprogramowania AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

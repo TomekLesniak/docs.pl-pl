@@ -5,12 +5,12 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: 28360b8b5b07c7c532dd2406ca98604870b8335f
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: bab29d738c7562753a826b47c03867eeebac4372
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921074"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558982"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Praca z translatorami adresów sieciowych i zaporami
 Klient i serwer połączenia sieciowego często nie mają bezpośredniego i otwartej ścieżki do komunikacji. Pakiety są filtrowane, kierowane, analizowane i przekształcane zarówno na maszynach końcowych, jak i na maszynach pośrednich w sieci. Translacji adresów sieciowych (NAT) i zapory są typowymi przykładami aplikacji pośrednich, które mogą uczestniczyć w komunikacji sieciowej.  
@@ -33,7 +33,7 @@ Klient i serwer połączenia sieciowego często nie mają bezpośredniego i otwa
   
 ## <a name="using-teredo"></a>Korzystanie z protokołu Teredo  
 
- Teredo to technologia przejściowa IPv6, która umożliwia bezpośrednie adresowanie maszyn za translatorem adresów sieciowych. Teredo korzysta z serwera, który może być publicznie i globalnie kierowany do anonsowania potencjalnych połączeń. Serwer Teredo zapewnia klientowi aplikacji i serwerowi wspólny punkt spotkania, w którym mogą wymieniać informacje o połączeniu. Komputery następnie żądają tymczasowego adresu Teredo, a pakiety są tunelowane za pomocą istniejącej sieci. Obsługa protokołu Teredo w programie WCF wymaga włączenia obsługi protokołów IPv6 i Teredo w systemie operacyjnym. System Windows XP i nowsze systemy operacyjne obsługują protokół Teredo. System Windows Vista i nowsze systemy operacyjne obsługują protokół IPv6 domyślnie i wymagają, aby użytkownik mógł włączyć protokół Teredo. Systemy Windows XP z dodatkiem SP2 i Windows Server 2003 wymagają od użytkownika włączenia protokołów IPv6 i Teredo. Aby uzyskać więcej informacji, zobacz [Omówienie protokołu Teredo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v%3dtechnet.10)).  
+ Teredo to technologia przejściowa IPv6, która umożliwia bezpośrednie adresowanie maszyn za translatorem adresów sieciowych. Teredo korzysta z serwera, który może być publicznie i globalnie kierowany do anonsowania potencjalnych połączeń. Serwer Teredo zapewnia klientowi aplikacji i serwerowi wspólny punkt spotkania, w którym mogą wymieniać informacje o połączeniu. Komputery następnie żądają tymczasowego adresu Teredo, a pakiety są tunelowane za pomocą istniejącej sieci. Obsługa protokołu Teredo w programie WCF wymaga włączenia obsługi protokołów IPv6 i Teredo w systemie operacyjnym. System Windows XP i nowsze systemy operacyjne obsługują protokół Teredo. System Windows Vista i nowsze systemy operacyjne obsługują protokół IPv6 domyślnie i wymagają, aby użytkownik mógł włączyć protokół Teredo. Systemy Windows XP z dodatkiem SP2 i Windows Server 2003 wymagają od użytkownika włączenia protokołów IPv6 i Teredo. Aby uzyskać więcej informacji, zobacz [Omówienie protokołu Teredo](/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10)).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Wybór wzorca transportu i wymiany komunikatów  
  Wybór transportu i unikatowy MEP jest procesem trzech etapów:  

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: 909333b3-35ec-48f0-baff-9a50161896f6
-ms.openlocfilehash: 1dec66631368543eecd548ac1ec9bbcda466d746
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bdebe0db25d796c2debfb905864fd8bf780c8e66
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584857"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558657"
 ---
 # <a name="message-security-certificate"></a>Certyfikat zabezpieczeń komunikatów
 Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z protokołu WS-Security z uwierzytelnianiem certyfikatu X. 509 v3 dla klienta i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509 v3 serwera. Ten przykład używa ustawień domyślnych, takich jak wszystkie komunikaty aplikacji między klientem a serwerem są podpisane i szyfrowane. Ten przykład jest oparty na [WSHttpBinding](wshttpbinding.md) i składa się z programu konsolowego klienta oraz biblioteki usług hostowanej przez Internet Information Services (IIS). Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź.  
@@ -33,7 +33,7 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Usługa udostępnia jeden punkt końcowy do komunikacji z usługą i jeden punkt końcowy do udostępnienia dokumentu WSDL usługi przy użyciu protokołu WS-MetadataExchange zdefiniowanego przy użyciu pliku konfiguracji (Web. config). Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane przy użyciu standardowego [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) elementu, który jest domyślnie używany przez zabezpieczenia komunikatów. Ten przykład ustawia `clientCredentialType` atrybut na certyfikat, aby wymagać uwierzytelnienia klienta.  
+ Usługa udostępnia jeden punkt końcowy do komunikacji z usługą i jeden punkt końcowy do udostępnienia dokumentu WSDL usługi przy użyciu protokołu WS-MetadataExchange zdefiniowanego przy użyciu pliku konfiguracyjnego (Web.config). Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane przy użyciu standardowego [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) elementu, który jest domyślnie używany przez zabezpieczenia komunikatów. Ten przykład ustawia `clientCredentialType` atrybut na certyfikat, aby wymagać uwierzytelnienia klienta.  
   
 ```xml  
 <system.serviceModel>  
@@ -202,7 +202,7 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- Plik wsadowy Setup. bat dołączony do przykładów zabezpieczeń wiadomości umożliwia skonfigurowanie klienta i serwera przy użyciu odpowiednich certyfikatów do uruchamiania hostowanej aplikacji, która wymaga zabezpieczeń opartych na certyfikatach. Plik wsadowy można uruchomić w trzech trybach. Do uruchamiania w trybie jednego komputera wpisz **Setup. bat** w wiersz polecenia dla deweloperów dla programu Visual Studio; w przypadku typu usługi **Setup. bat usługa**; i w przypadku trybu klienta **Setup. bat Client**. Użyj trybu klienta i serwera podczas uruchamiania przykładu między komputerami. Aby uzyskać szczegółowe informacje, zobacz procedurę instalacji na końcu tego tematu. Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, dzięki czemu można je zmodyfikować do uruchamiania w odpowiedniej konfiguracji:  
+ Plik wsadowy Setup.bat dołączony do przykładów zabezpieczeń wiadomości umożliwia skonfigurowanie klienta i serwera przy użyciu odpowiednich certyfikatów do uruchamiania hostowanej aplikacji, która wymaga zabezpieczeń opartych na certyfikatach. Plik wsadowy można uruchomić w trzech trybach. Aby działać w trybie pojedynczego komputera typu **setup.bat** w wiersz polecenia dla deweloperów dla programu Visual Studio; dla typu trybu usługi **setup.bat usługa**; i dla typu trybu klienta **setup.bat Client**. Użyj trybu klienta i serwera podczas uruchamiania przykładu między komputerami. Aby uzyskać szczegółowe informacje, zobacz procedurę instalacji na końcu tego tematu. Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, dzięki czemu można je zmodyfikować do uruchamiania w odpowiedniej konfiguracji:  
   
 - Tworzenie certyfikatu klienta.  
   
@@ -228,7 +228,7 @@ Press <ENTER> to terminate client.
   
 - Tworzenie certyfikatu serwera.  
   
-     Poniższe wiersze z pliku wsadowego Setup. bat tworzą certyfikat serwera do użycia.  
+     Poniższe wiersze z pliku wsadowego Setup.bat utworzyć certyfikat serwera do użycia.  
   
     ```bat
     echo ************  
@@ -240,11 +240,11 @@ Press <ENTER> to terminate client.
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
     ```  
   
-     Zmienna% SERVER_NAME% określa nazwę serwera. Certyfikat jest przechowywany w magazynie LocalMachine. Jeśli plik wsadowy Setup. bat jest uruchamiany przy użyciu argumentu usługi (np **. usługi Setup. bat**),% server_name% zawiera w pełni kwalifikowaną nazwę domeny komputera. W przeciwnym razie wartość domyślna to localhost.  
+     Zmienna% SERVER_NAME% określa nazwę serwera. Certyfikat jest przechowywany w magazynie LocalMachine. Jeśli plik wsadowy Setup.bat jest uruchamiany z argumentem usługi (na przykład ** usługasetup.bat Service**),% server_name% zawiera w pełni kwalifikowaną nazwę domeny komputera. W przeciwnym razie wartość domyślna to localhost.  
   
 - Instalowanie certyfikatu serwera w zaufanym magazynie certyfikatów klienta.  
   
-     Poniższy wiersz zawiera kopię certyfikatu serwera w magazynie zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert. exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.  
+     Poniższy wiersz zawiera kopię certyfikatu serwera w magazynie zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.  
   
     ```console  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
@@ -252,7 +252,7 @@ Press <ENTER> to terminate client.
   
 - Przyznawanie uprawnień dla klucza prywatnego certyfikatu.  
   
-     Następujące wiersze w pliku Setup. bat sprawiają, że certyfikat serwera przechowywany w magazynie LocalMachine jest dostępny dla konta procesu roboczego ASP.NET.  
+     Następujące wiersze w pliku Setup.bat sprawiają, że certyfikat serwera przechowywany w magazynie LocalMachine jest dostępny dla konta procesu roboczego ASP.NET.  
   
     ```bat
     echo ************  
@@ -266,7 +266,7 @@ Press <ENTER> to terminate client.
     ```  
   
     > [!NOTE]
-    > W przypadku korzystania z systemu Windows w wersji innej niż w języku angielskim, należy edytować plik Setup. bat i zastąpić nazwę konta "NT AUTHORITY\NETWORK SERVICE" własnym odpowiednikiem regionalnym.  
+    > Jeśli używasz innego niż U. S. Angielska wersja systemu Windows, należy edytować plik Setup.bat i zastąpić nazwę konta "NT AUTHORITY\NETWORK SERVICE" własnym odpowiednikiem regionalnym.  
   
 > [!NOTE]
 > Narzędzia używane w tym pliku wsadowym znajdują się w folderze C:\Program Files\Microsoft Visual Studio 8 \ Common7\tools lub C:\Program Files\Microsoft SDKs\Windows\v6.0\bin. Jeden z tych katalogów musi znajdować się w ścieżce systemowej. Jeśli masz zainstalowany program Visual Studio, najprostszym sposobem pobrania tego katalogu w ścieżce jest otwarcie wiersz polecenia dla deweloperów dla programu Visual Studio. Kliknij przycisk **Start**, a następnie wybierz pozycję **Wszystkie programy**, **Visual Studio 2012**, **Narzędzia**. Ten wiersz polecenia ma już skonfigurowane odpowiednie ścieżki. W przeciwnym razie musisz ręcznie dodać odpowiedni katalog do swojej ścieżki.  
@@ -288,48 +288,48 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Aby uruchomić przykład na tym samym komputerze  
   
-1. Otwórz wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora i uruchom setup. bat z przykładowego folderu instalacji. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.  
+1. Otwórz wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora i uruchom Setup.bat z przykładowego folderu instalacji. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.  
   
     > [!NOTE]
-    > Plik wsadowy Setup. bat został zaprojektowany do uruchamiania z wiersz polecenia dla deweloperów dla programu Visual Studio. Wymaga, aby zmienna środowiskowa Path wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w ramach wiersz polecenia dla deweloperów dla programu Visual Studio (2010).  
+    > Plik wsadowy Setup.bat został zaprojektowany do uruchamiania z wiersz polecenia dla deweloperów dla programu Visual Studio. Wymaga, aby zmienna środowiskowa Path wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w ramach wiersz polecenia dla deweloperów dla programu Visual Studio (2010).  
   
 2. Aby sprawdzić dostęp do usługi przy użyciu przeglądarki, wprowadź adres `http://localhost/servicemodelsamples/service.svc` .  
   
-3. Uruchamianie programu Client. exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
+3. Uruchom Client.exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
   
-4. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Aby uruchomić przykład na wielu komputerach  
   
 1. Utwórz katalog na komputerze usługi. Utwórz aplikację wirtualną o nazwie servicemodelsamples dla tego katalogu przy użyciu narzędzia do zarządzania Internet Information Services (IIS).  
   
-2. Skopiuj pliki programu usługi z \Inetpub\wwwroot\servicemodelsamples do katalogu wirtualnego na komputerze usługi. Upewnij się, że pliki zostały skopiowane do podkatalogu \Bin. Skopiuj także pliki Setup. bat, Oczyść. bat i ImportClientCert. bat do komputera usługi.  
+2. Skopiuj pliki programu usługi z \Inetpub\wwwroot\servicemodelsamples do katalogu wirtualnego na komputerze usługi. Upewnij się, że pliki zostały skopiowane do podkatalogu \Bin. Skopiuj także pliki Setup.bat, Cleanup.bat i ImportClientCert.bat na komputer usługi.  
   
 3. Utwórz katalog na komputerze klienckim dla plików binarnych klienta.  
   
-4. Skopiuj pliki programu klienckiego do katalogu klienta na komputerze klienckim. Skopiuj również do klienta pliki Setup. bat, Oczyść. bat i ImportServiceCert. bat.  
+4. Skopiuj pliki programu klienckiego do katalogu klienta na komputerze klienckim. Skopiuj także pliki Setup.bat, Cleanup.bat i ImportServiceCert.bat do klienta programu.  
   
-5. Na serwerze uruchom **usługę Setup. bat** w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora. Uruchomienie pliku **Setup. bat** przy użyciu argumentu **usługi** powoduje utworzenie certyfikatu usługi z w pełni kwalifikowaną nazwą domeny komputera i wyeksportowanie certyfikatu usługi do plik o nazwie Service. cer.  
+5. Na serwerze uruchom ** usługęsetup.bat** w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora. Uruchomienie **setup.bat** z argumentem **usługi** tworzy certyfikat usługi z w pełni kwalifikowaną nazwą domeny komputera i eksportuje certyfikat usługi do pliku o nazwie Service. cer.  
   
-6. Edytuj plik Web. config, aby odzwierciedlić nową nazwę certyfikatu (w `findValue` atrybucie w [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), która jest taka sama jak w pełni kwalifikowana nazwa domeny komputera.  
+6. Edytuj Web.config, aby odzwierciedlić nową nazwę certyfikatu (w `findValue` atrybucie w [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), która jest taka sama jak w pełni kwalifikowana nazwa domeny komputera.  
   
 7. Skopiuj plik. cer usługi z katalogu usługi do katalogu klienta na komputerze klienckim.  
   
-8. Na kliencie Uruchom program **Setup. bat Client** w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora. Uruchomienie pliku **Setup. bat** z argumentem **Client** powoduje utworzenie certyfikatu klienta o nazwie Client.com i wyeksportowanie certyfikatu klienta programu na plik o nazwie Client. cer.  
+8. Na kliencie Uruchom **setup.bat klienta** w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora. Uruchomienie **setup.bat** z argumentem **Client** tworzy certyfikat klienta o nazwie Client.com i eksportuje certyfikat klienta do pliku o nazwie Client. cer.  
   
-9. W pliku Client. exe. config na komputerze klienckim Zmień wartość adresu punktu końcowego, aby odpowiadała nowemu adresowi usługi. Aby to zrobić, Zastąp wartość localhost nazwą FQDN serwera.  
+9. W pliku Client.exe.config na komputerze klienckim Zmień wartość adresu punktu końcowego, aby odpowiadała nowemu adresowi usługi. Aby to zrobić, Zastąp wartość localhost nazwą FQDN serwera.  
   
 10. Skopiuj plik. cer programu Client z katalogu Client do katalogu usługi na serwerze programu.  
   
-11. Na kliencie Uruchom program ImportServiceCert. bat w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administracyjnymi. Spowoduje to zaimportowanie certyfikatu usługi z pliku CER usługi do magazynu CurrentUser-TrustedPeople.  
+11. Na kliencie Uruchom ImportServiceCert.bat w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administracyjnymi. Spowoduje to zaimportowanie certyfikatu usługi z pliku CER usługi do magazynu CurrentUser-TrustedPeople.  
   
-12. Na serwerze programu Uruchom program ImportClientCert. bat w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administracyjnymi. Spowoduje to zaimportowanie certyfikatu klienta z pliku. cer klienta do magazynu LocalMachine-TrustedPeople.  
+12. Na serwerze uruchom ImportClientCert.bat w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administracyjnymi. Spowoduje to zaimportowanie certyfikatu klienta z pliku. cer klienta do magazynu LocalMachine-TrustedPeople.  
   
-13. Na komputerze klienckim uruchom program Client. exe w oknie wiersza polecenia. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+13. Na komputerze klienckim uruchom Client.exe z okna wiersza polecenia. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>Aby wyczyścić po przykładzie  
   
-- Uruchom Oczyść. bat w folderze Samples po zakończeniu uruchamiania przykładu.  
+- Uruchom Cleanup.bat w folderze Samples po zakończeniu uruchamiania przykładu.  
   
     > [!NOTE]
-    > Ten skrypt nie powoduje usunięcia certyfikatów usługi na kliencie podczas uruchamiania tego przykładu między komputerami. W przypadku uruchamiania przykładów programu Windows Communication Foundation (WCF), które używają certyfikatów między komputerami, należy wyczyścić certyfikaty usługi, które zostały zainstalowane w magazynie CurrentUser-TrustedPeople. Aby to zrobić, użyj następującego polecenia: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` na przykład: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` .  
+    > Ten skrypt nie powoduje usunięcia certyfikatów usługi na kliencie podczas uruchamiania tego przykładu między komputerami. W przypadku uruchamiania przykładów programu Windows Communication Foundation (WCF), które używają certyfikatów między komputerami, należy wyczyścić certyfikaty usługi, które zostały zainstalowane w magazynie CurrentUser-TrustedPeople. Aby to zrobić, użyj następującego polecenia: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` na przykład: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` .

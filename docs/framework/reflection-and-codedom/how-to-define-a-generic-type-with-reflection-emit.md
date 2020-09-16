@@ -11,12 +11,12 @@ helpviewer_keywords:
 - generics [.NET Framework], dynamic types
 - reflection emit, generic types
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
-ms.openlocfilehash: fe8fb731fd160ab87e5c65debf367a96bc0dea2a
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: bf308b07bf4b2a863b9825e7c8d9f412bdb6d1b8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865128"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559216"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Instrukcje: Definiowanie typu ogólnego przy użyciu emisji odbicia
 W tym temacie pokazano, jak utworzyć prosty typ ogólny z dwoma parametrami typu, jak zastosować ograniczenia klas, ograniczenia interfejsu i specjalne ograniczenia do parametrów typu oraz jak tworzyć elementy członkowskie, które używają parametrów typu klasy jako typów parametrów i zwracanych typów.  
@@ -64,7 +64,7 @@ W tym temacie pokazano, jak utworzyć prosty typ ogólny z dwoma parametrami typ
      [!code-csharp[EmitGenericType#7](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#7)]
      [!code-vb[EmitGenericType#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#7)]  
   
-7. Zdefiniuj pole. W tym przykładzie typ pola jest określony przez parametr typu `TFirst` . <xref:System.Reflection.Emit.GenericTypeParameterBuilder>pochodzi z <xref:System.Type> , dlatego można użyć parametrów typu ogólnego wszędzie tam, gdzie można używać typu.  
+7. Zdefiniuj pole. W tym przykładzie typ pola jest określony przez parametr typu `TFirst` . <xref:System.Reflection.Emit.GenericTypeParameterBuilder> pochodzi z <xref:System.Type> , dlatego można użyć parametrów typu ogólnego wszędzie tam, gdzie można używać typu.  
   
      [!code-cpp[EmitGenericType#21](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#21)]
      [!code-csharp[EmitGenericType#21](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#21)]
@@ -97,7 +97,7 @@ W tym temacie pokazano, jak utworzyć prosty typ ogólny z dwoma parametrami typ
      [!code-csharp[EmitGenericType#8](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#8)]
      [!code-vb[EmitGenericType#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#8)]  
   
-11. Wywołaj metodę. `ExampleMethod`nie jest ogólny, ale typ, do którego należy, jest rodzajowy, więc w celu uzyskania <xref:System.Reflection.MethodInfo> , który może zostać wywołany, jest konieczne do utworzenia typu złożonego z definicji typu dla `Sample` . Typ skonstruowany używa `Example` klasy, która spełnia ograniczenia dotyczące, `TFirst` ponieważ jest typem referencyjnym i ma domyślny konstruktor bez parametrów, a `ExampleDerived` Klasa, która spełnia ograniczenia `TSecond` . (Kod `ExampleDerived` można znaleźć w sekcji przykład kodu). Te dwa typy są przenoszone do, <xref:System.Type.MakeGenericType%2A> Aby utworzyć typ skonstruowany. <xref:System.Reflection.MethodInfo>Następnie jest uzyskiwany przy użyciu <xref:System.Type.GetMethod%2A> metody.  
+11. Wywołaj metodę. `ExampleMethod` nie jest ogólny, ale typ, do którego należy, jest rodzajowy, więc w celu uzyskania <xref:System.Reflection.MethodInfo> , który może zostać wywołany, jest konieczne do utworzenia typu złożonego z definicji typu dla `Sample` . Typ skonstruowany używa `Example` klasy, która spełnia ograniczenia dotyczące, `TFirst` ponieważ jest typem referencyjnym i ma domyślny konstruktor bez parametrów, a `ExampleDerived` Klasa, która spełnia ograniczenia `TSecond` . (Kod `ExampleDerived` można znaleźć w sekcji przykład kodu). Te dwa typy są przenoszone do, <xref:System.Type.MakeGenericType%2A> Aby utworzyć typ skonstruowany. <xref:System.Reflection.MethodInfo>Następnie jest uzyskiwany przy użyciu <xref:System.Type.GetMethod%2A> metody.  
   
      [!code-cpp[EmitGenericType#9](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#9)]
      [!code-csharp[EmitGenericType#9](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#9)]
@@ -129,5 +129,5 @@ W tym temacie pokazano, jak utworzyć prosty typ ogólny z dwoma parametrami typ
 ## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Reflection.Emit.GenericTypeParameterBuilder>
-- [Używanie emisji odbicia](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
-- [Scenariusze dynamicznego wyemituj z odbiciem](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/tt9483fk(v=vs.100))
+- [Używanie emisji odbicia](/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
+- [Scenariusze dynamicznego wyemituj z odbiciem](/previous-versions/dotnet/netframework-4.0/tt9483fk(v=vs.100))

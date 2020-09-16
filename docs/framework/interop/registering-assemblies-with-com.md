@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, registering assemblies
 - registering assemblies
 ms.assetid: 87925795-a3ae-4833-b138-125413478551
-ms.openlocfilehash: 1b73a79b8167e7f75b8c68f708179e88c575d66a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 0adae4db393c4c01620ea896c4451c3279272fca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621902"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559281"
 ---
 # <a name="registering-assemblies-with-com"></a>Rejestrowanie zestawów do użycia z modelem COM
 Możesz uruchomić narzędzie wiersza polecenia o nazwie [Narzędzie rejestracji zestawu (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) , aby zarejestrować lub wyrejestrować zestaw do użycia z modelem com. Regasm.exe dodaje informacje o klasie do rejestru systemowego, aby klienci COM mogli używać klasy .NET Framework w niewidoczny sposób. <xref:System.Runtime.InteropServices.RegistrationServices>Klasa zapewnia równoważne funkcje.  
@@ -46,5 +46,5 @@ Możesz uruchomić narzędzie wiersza polecenia o nazwie [Narzędzie rejestracji
 
 - [Udostępnianie składników .NET Framework modelowi COM](exposing-dotnet-components-to-com.md)
 - [Instrukcje: Odwołania do typów .NET z modelu COM](how-to-reference-net-types-from-com.md)
-- [Wywołanie obiektu .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [Wdrażanie aplikacji na potrzeby dostępu do modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [Wywołanie obiektu .NET](/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
+- [Wdrażanie aplikacji na potrzeby dostępu do modelu COM](/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

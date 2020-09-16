@@ -2,12 +2,12 @@
 title: przechowywanie obiektu w programie Visual Studio
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: e4eaf87c99ea1577d7f3ca40e628c00cc2700511
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3febd3f74510d11a7103edbd52bcae8043a5edc0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413132"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558605"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Przewodnik: utrwalanie obiektu w programie Visual Studio (Visual Basic)
 Chociaż właściwości obiektu można ustawić na wartości domyślne w czasie projektowania, wszelkie wartości wprowadzone w czasie wykonywania są tracone, gdy obiekt zostanie zniszczony. Możesz użyć serializacji, aby zachować dane obiektu między wystąpieniami, co umożliwia przechowywanie wartości i pobieranie ich przy następnym utworzeniu wystąpienia obiektu.  
@@ -31,7 +31,7 @@ Chociaż właściwości obiektu można ustawić na wartości domyślne w czasie 
   
 ### <a name="to-create-the-loan-class"></a>Aby utworzyć klasę pożyczek  
   
-1. Utwórz nowy projekt biblioteki klas i nadaj mu nazwę "LoanClass". Aby uzyskać więcej informacji, zobacz [Tworzenie rozwiązań i projektów](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects).  
+1. Utwórz nowy projekt biblioteki klas i nadaj mu nazwę "LoanClass". Aby uzyskać więcej informacji, zobacz [Tworzenie rozwiązań i projektów](/visualstudio/ide/creating-solutions-and-projects).  
   
 2. W **Eksplorator rozwiązań**Otwórz menu skrótów dla pliku Class1 i wybierz polecenie **Zmień nazwę**. Zmień nazwę pliku na `Loan` i naciśnij klawisz ENTER. Zmiana nazwy pliku spowoduje również zmianę nazwy klasy na `Loan` .  
   
@@ -215,7 +215,7 @@ Chociaż właściwości obiektu można ustawić na wartości domyślne w czasie 
   
  W tym momencie możesz ponownie skompilować i uruchomić aplikację. Początkowo wartości domyślne pojawiają się w polach tekstowych. Spróbuj zmienić wartości i wprowadź nazwę w czwartym polu tekstowym. Zamknij aplikację, a następnie uruchom ją ponownie. Należy pamiętać, że nowe wartości są teraz wyświetlane w polach tekstowych.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Serializacja (Visual Basic)](index.md)
 - [Przewodnik programowania w Visual Basic](../../index.md)

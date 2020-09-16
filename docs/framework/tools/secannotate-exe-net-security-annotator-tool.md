@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SecAnnotate.exe
 - Security Annotator tool
 ms.assetid: 8104d208-7813-4a1d-8a75-58f9a7bcb8c9
-ms.openlocfilehash: 440ad39f1afb54ad517bc73f05d1e60748b7b520
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 408a3064b67cae2d75c80881f918c774e05866e6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517220"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558384"
 ---
 # <a name="secannotateexe-net-security-annotator-tool"></a>SecAnnotate.exe (Narzędzie adnotacji dotyczące zabezpieczeń w programach .NET)
 Narzędzie do dodawania adnotacji zabezpieczeń .NET (SecAnnotate.exe) jest aplikacją wiersza polecenia, która identyfikuje `SecurityCritical` i `SecuritySafeCritical` części jednego lub kilku zestawów.  
@@ -51,6 +51,6 @@ SecAnnotate.exe [parameters] [assemblies]
 ## <a name="remarks"></a>Uwagi  
  Parametry i zestawy można także podać w pliku odpowiedzi, który jest określany w wierszu polecenia i poprzedzany znakiem (@). Każdy wiersz w pliku odpowiedzi musi zawierać pojedynczy parametr lub nazwę zestawu.  
   
- Aby uzyskać więcej informacji na temat adnotacji zabezpieczeń .NET, zobacz wpis [przy użyciu SecAnnotate, aby analizować zestawy pod kątem naruszeń przejrzystości w blogu dotyczącym](https://docs.microsoft.com/archive/blogs/shawnfa/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example) zabezpieczeń platformy .NET.  
+ Aby uzyskać więcej informacji na temat adnotacji zabezpieczeń .NET, zobacz wpis [przy użyciu SecAnnotate, aby analizować zestawy pod kątem naruszeń przejrzystości w blogu dotyczącym](/archive/blogs/shawnfa/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example) zabezpieczeń platformy .NET.  
   
 ## <a name="examples"></a>Przykłady
