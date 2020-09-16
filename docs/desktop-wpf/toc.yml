@@ -5,7 +5,7 @@
     - name: Omówienie
       href: overview/index.md
     - name: Tworzenie aplikacji WPF
-      href: 'https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json'
+      href: /visualstudio/get-started/csharp/tutorial-wpf?bc=%252fdotnet%252fbreadcrumb%252ftoc.json&toc=%252fdotnet%252fdesktop-wpf%252ftoc.json
 - name: Migracja
   items:
     - name: Różnice w porównaniu z platformą .NET Framework

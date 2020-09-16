@@ -6,20 +6,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
-ms.openlocfilehash: 81bfc1d19723377b9b2134c13b58f4e4d682c06f
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 161f354192b3bc5cecec7e7e1b457b23c415c073
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553432"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550129"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-linq-to-xml"></a><span data-ttu-id="e5757-103">Jak sortować elementy w wielu kluczach (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="e5757-103">How to sort elements on multiple keys (LINQ to XML)</span></span>
+# <a name="how-to-sort-elements-on-multiple-keys-linq-to-xml"></a><span data-ttu-id="64be2-103">Jak sortować elementy w wielu kluczach (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="64be2-103">How to sort elements on multiple keys (LINQ to XML)</span></span>
 
-<span data-ttu-id="e5757-104">W tym artykule przedstawiono sposób sortowania wielu kluczy w języku C# i Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="e5757-104">This article shows how to sort on multiple keys in C# and Visual Basic.</span></span>
+<span data-ttu-id="64be2-104">W tym artykule przedstawiono sposób sortowania wielu kluczy w języku C# i Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="64be2-104">This article shows how to sort on multiple keys in C# and Visual Basic.</span></span>
 
-## <a name="example-sort-xml-elements-on-multiple-keys"></a><span data-ttu-id="e5757-105">Przykład: Sortuj elementy XML w wielu kluczach</span><span class="sxs-lookup"><span data-stu-id="e5757-105">Example: Sort XML elements on multiple keys</span></span>
+## <a name="example-sort-xml-elements-on-multiple-keys"></a><span data-ttu-id="64be2-105">Przykład: Sortuj elementy XML w wielu kluczach</span><span class="sxs-lookup"><span data-stu-id="64be2-105">Example: Sort XML elements on multiple keys</span></span>
 
-<span data-ttu-id="e5757-106">Ten przykład sortuje w dwóch kluczach: kod pocztowy (podstawowy) i Data zamówienia.</span><span class="sxs-lookup"><span data-stu-id="e5757-106">This example sorts on two keys: shipping postal code (primary) and order date.</span></span> <span data-ttu-id="e5757-107">Używa [przykładowego pliku XML dokumentu XML: klienci i zamówienia](sample-xml-file-customers-orders.md).</span><span class="sxs-lookup"><span data-stu-id="e5757-107">It uses XML document [Sample XML file: Customers and orders](sample-xml-file-customers-orders.md).</span></span>
+<span data-ttu-id="64be2-106">Ten przykład sortuje w dwóch kluczach: kod pocztowy (podstawowy) i Data zamówienia.</span><span class="sxs-lookup"><span data-stu-id="64be2-106">This example sorts on two keys: shipping postal code (primary) and order date.</span></span> <span data-ttu-id="64be2-107">Używa [przykładowego pliku XML dokumentu XML: klienci i zamówienia](sample-xml-file-customers-orders.md).</span><span class="sxs-lookup"><span data-stu-id="64be2-107">It uses XML document [Sample XML file: Customers and orders](sample-xml-file-customers-orders.md).</span></span>
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -55,7 +55,7 @@ For Each r In result
 Next
 ```
 
-<span data-ttu-id="e5757-108">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="e5757-108">This example produces the following output:</span></span>
+<span data-ttu-id="64be2-108">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="64be2-108">This example produces the following output:</span></span>
 
 ```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997
@@ -82,11 +82,11 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 ```
 
-## <a name="example-sort-xml-thats-in-a-namespace"></a><span data-ttu-id="e5757-109">Przykład: Sortuj kod XML, który znajduje się w przestrzeni nazw</span><span class="sxs-lookup"><span data-stu-id="e5757-109">Example: Sort XML that's in a namespace</span></span>
+## <a name="example-sort-xml-thats-in-a-namespace"></a><span data-ttu-id="64be2-109">Przykład: Sortuj kod XML, który znajduje się w przestrzeni nazw</span><span class="sxs-lookup"><span data-stu-id="64be2-109">Example: Sort XML that's in a namespace</span></span>
 
-<span data-ttu-id="e5757-110">Ten przykład wykonuje takie samo sortowanie jak pierwszy, ale dla XML, który znajduje się w przestrzeni nazw.</span><span class="sxs-lookup"><span data-stu-id="e5757-110">This example does the same sort as the first, but for XML that's in a namespace.</span></span> <span data-ttu-id="e5757-111">Używa [przykładowego pliku XML dokumentu XML: klienci i zamówienia w przestrzeni nazw](sample-xml-file-customers-orders-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="e5757-111">It uses XML document [Sample XML file: Customers and orders in a namespace](sample-xml-file-customers-orders-namespace.md).</span></span>
+<span data-ttu-id="64be2-110">Ten przykład wykonuje takie samo sortowanie jak pierwszy, ale dla XML, który znajduje się w przestrzeni nazw.</span><span class="sxs-lookup"><span data-stu-id="64be2-110">This example does the same sort as the first, but for XML that's in a namespace.</span></span> <span data-ttu-id="64be2-111">Używa [przykładowego pliku XML dokumentu XML: klienci i zamówienia w przestrzeni nazw](sample-xml-file-customers-orders-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="64be2-111">It uses XML document [Sample XML file: Customers and orders in a namespace](sample-xml-file-customers-orders-namespace.md).</span></span>
 
-<span data-ttu-id="e5757-112">Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw](namespaces-overview.md).</span><span class="sxs-lookup"><span data-stu-id="e5757-112">For more information, see [Namespaces overview](namespaces-overview.md).</span></span>
+<span data-ttu-id="64be2-112">Aby uzyskać więcej informacji, zobacz [Omówienie przestrzeni nazw](namespaces-overview.md).</span><span class="sxs-lookup"><span data-stu-id="64be2-112">For more information, see [Namespaces overview](namespaces-overview.md).</span></span>
 
 ```csharp
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");
@@ -130,7 +130,7 @@ Module Module1
 End Module
 ```
 
-<span data-ttu-id="e5757-113">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="e5757-113">This example produces the following output:</span></span>
+<span data-ttu-id="64be2-113">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="64be2-113">This example produces the following output:</span></span>
 
 ```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997
@@ -157,6 +157,6 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e5757-114">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="e5757-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="64be2-114">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="64be2-114">See also</span></span>
 
-- [<span data-ttu-id="e5757-115">Zapytania podstawowe (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e5757-115">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="64be2-115">Zapytania podstawowe (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="64be2-115">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](./find-element-specific-attribute.md)
