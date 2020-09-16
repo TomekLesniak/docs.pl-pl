@@ -2,12 +2,12 @@
 title: Zmiany podziału WPF
 description: Wyświetla listę istotnych zmian w strukturze prezentacji systemu Windows dla platformy .NET Core i .NET 5.
 ms.date: 09/08/2020
-ms.openlocfilehash: babacb0e080e165d16e40e8d44f3afa0dce7664a
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: 3bd5cb585509118fbc3ca9ca08c6ed15b4853b93
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656423"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679308"
 ---
 # <a name="breaking-changes-in-windows-presentation-framework-wpf"></a>Istotne zmiany w strukturze prezentacji systemu Windows (WPF)
 
@@ -17,9 +17,14 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
+| [OutputType ustawiony na WinExe dla aplikacji WPF i WinForms](#outputtype-set-to-winexe-for-wpf-and-winforms-apps) | 5,0 |
 | [WinForms i aplikacje WPF używają Microsoft. NET. Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5,0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [automatically-infer-winexe-output-type](../../../includes/core-changes/windowsforms/5.0/automatically-infer-winexe-output-type.md)]
+
+***
 
 [!INCLUDE [sdk-and-target-framework-change](../../../includes/core-changes/windowsforms/5.0/sdk-and-target-framework-change.md)]
 

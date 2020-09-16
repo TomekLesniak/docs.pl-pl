@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Tlbimp.exe
 - Type Library Importer
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
-ms.openlocfilehash: 779b4863b6f1513f3566d4ab31660d88cda1039b
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 56ce10e0b6f9be988a06d44550cd3b9dc2efd188
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619133"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554159"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Instrukcje: Generowanie zestawów podstawowej obsługi międzyoperacyjnej przy użyciu programu Tlbimp.exe
 
@@ -46,7 +46,7 @@ Podstawowe zestawy międzyoperacyjności mogą odwoływać się tylko do innych 
 
 Zależny podstawowy zestaw międzyoperacyjny z numerem wersji, który różni się od oryginalnej biblioteki typów, nie jest wykrywalny w przypadku instalacji w bieżącym katalogu. Musisz zarejestrować zależny podstawowy zestaw międzyoperacyjny w rejestrze systemu Windows lub użyć opcji **/Reference** , aby upewnić się, że Tlbimp.exe odnajdzie ZALEŻNĄ bibliotekę DLL.
 
-Możesz również otoczyć wiele wersji biblioteki typów. Aby uzyskać instrukcje, zobacz [How to: Otocz wiele wersji bibliotek typów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100)).
+Możesz również otoczyć wiele wersji biblioteki typów. Aby uzyskać instrukcje, zobacz [How to: Otocz wiele wersji bibliotek typów](/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100)).
 
 ## <a name="example"></a>Przykład
 

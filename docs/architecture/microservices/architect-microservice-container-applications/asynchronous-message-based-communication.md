@@ -2,12 +2,12 @@
 title: Asynchroniczna komunikacja oparta na komunikatach
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Asynchroniczna komunikacja oparta na komunikatach to podstawowe koncepcje w architekturze mikrousług, ponieważ jest to najlepszy sposób, aby mikrousługi były niezależne od siebie, a także ostatecznie zsynchronizowane.
 ms.date: 09/20/2018
-ms.openlocfilehash: a8af94540a7906c474b9b784c28aa60ebae0a6e3
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 2bd79935cad3d62e488a57da6b40a0c87349960b
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306971"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679178"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchroniczna komunikacja oparta na komunikatach
 
@@ -81,10 +81,10 @@ Wyzwanie w przypadku implementowania architektury opartej na zdarzeniach w wielu
 
 Dodatkowe tematy, które należy wziąć pod uwagę podczas korzystania z komunikacji asynchronicznej, to idempotentność komunikatów i Deduplikacja komunikatów. Te tematy zostały omówione w sekcji [implementowanie komunikacji opartej na zdarzeniach między mikrousługami (zdarzenia integracji)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md) w dalszej części tego przewodnika.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Obsługa komunikatów opartych na zdarzeniach** \
-  <https://soapatterns.org/design_patterns/event_driven_messaging>
+  <https://patterns.arcitura.com/soa-patterns/design_patterns/event_driven_messaging>
 
 - **Kanał publikowania/subskrybowania** \
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>

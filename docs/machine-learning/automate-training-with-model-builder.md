@@ -3,12 +3,12 @@ title: Co to jest Konstruktor modelu i jak to działa?
 description: Jak korzystać z konstruktora modelu ML.NET w celu automatycznego uczenia modelu uczenia maszynowego
 ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 2ed4a0c3c94ae9f46bb1cf6ddb1e9774baf82367
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 80f5f5d064c4e0c4097dacc6022d4624c1516ab9
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289502"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679680"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co to jest Konstruktor modelu i jak to działa?
 
@@ -109,10 +109,10 @@ Jeśli nie masz jeszcze własnych danych, wypróbuj jeden z tych zestawów danyc
 
 |Scenariusz|Przykład|Dane|Etykieta|Funkcje|
 |-|-|-|-|-|
-|Klasyfikacja|Przewidywanie anomalii sprzedaży|[dane sprzedaży produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Sprzedaż produktu|Miesiąc|
+|Klasyfikacja|Przewidywanie anomalii sprzedaży|[dane sprzedaży produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Sprzedaż produktu|Month (Miesiąc)|
 ||Przewidywanie tonacji z komentarzy w witrynie sieci Web|[dane komentarzy witryny sieci Web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Etykieta (0 w przypadku wartości ujemnej tonacji, 1, gdy wartość jest dodatnia)|Komentarz, rok|
-||Przewidywanie oszustw transakcji kart kredytowych|[dane karty kredytowej](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Klasa (1 w przypadku oszustwa, 0 w przeciwnym razie)|Kwota, v1 — v28 (funkcje anonimowe)|
-||Przewidywanie typu problemu w repozytorium GitHub|[Dane problemu w usłudze GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Warstwowy|Tytuł, opis|
+||Przewidywanie oszustw transakcji kart kredytowych|[dane karty kredytowej](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CCFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Klasa (1 w przypadku oszustwa, 0 w przeciwnym razie)|Kwota, v1 — v28 (funkcje anonimowe)|
+||Przewidywanie typu problemu w repozytorium GitHub|[Dane problemu w usłudze GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Obszar|Tytuł, opis|
 |Przewidywanie wartości|Przewidywanie ceny opłat za taksówkę|[dane dotyczące opłat za taksówki](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Bezprzewodow|Czas podróży, odległość|
 |Klasyfikacja obrazów|Przewidywanie kategorii kwiatów |[obrazy kwiatów](http://download.tensorflow.org/example_images/flower_photos.tgz)|Typ kwitnienia: wirujące, Dandelion, róże, przepływy, Tulips|Same dane obrazu|
 |Zalecenie|Przewidywania filmów, które ktoś chce|[Klasyfikacje filmów](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|Użytkownicy, filmy|Klasyfikacje|

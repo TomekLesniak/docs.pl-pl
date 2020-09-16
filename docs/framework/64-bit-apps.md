@@ -7,12 +7,12 @@ helpviewer_keywords:
 - 64-bit applications [C++]
 - 64-bit programming [C++]
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
-ms.openlocfilehash: 4589d7a070a477dcb229fbaea686f6c6ff7d7e08
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 49feb664531db4955a99324851aef5b49032be71
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989991"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555513"
 ---
 # <a name="64-bit-applications"></a>Aplikacje 64-bitowe
 Podczas kompilowania aplikacji można określić, że powinna być uruchamiana w systemie operacyjnym Windows 64-bitowym jako aplikacja natywna lub w emulatorze WOW64 (Windows 32-bit w systemie Windows 64-bit). Emulator WOW64 to środowisko zgodności, które umożliwia uruchamianie aplikacji 32-bitowych w systemie 64-bitowym. Emulator WOW64 jest uwzględniony we wszystkich 64-bitowych wersjach systemu operacyjnego Windows.  
@@ -37,7 +37,7 @@ Podczas kompilowania aplikacji można określić, że powinna być uruchamiana w
   
 - Kod, który jest rzutowany `IntPtr` na `Int32` .  
   
- Aby uzyskać więcej informacji na temat sposobu przenoszenia aplikacji 32-bitowej do uruchamiania na 64-bitowym CLR, zobacz [migrowanie 32-bitowego kodu zarządzanego do 64-bitowego](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
+ Aby uzyskać więcej informacji na temat sposobu przenoszenia aplikacji 32-bitowej do uruchamiania na 64-bitowym CLR, zobacz [migrowanie 32-bitowego kodu zarządzanego do 64-bitowego](/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
   
 ## <a name="general-64-bit-programming-information"></a>Ogólne informacje nt. programowania 64-bitowego  
  Aby uzyskać ogólne informacje na temat programowania 64-bitowego, zobacz następujące dokumenty:  

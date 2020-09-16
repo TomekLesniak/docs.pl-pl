@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 0024b2a53444319788b8cdd312d537f994070b5e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5b566dd89801caff7a253abc2fb62c5fd79591f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614759"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606935"
 ---
 ### <a name="sslstream-supports-tls-alerts"></a>SslStream obsługuje alerty protokołu TLS
 
 #### <a name="details"></a>Szczegóły
 
-Po niepomyślnym uzgadnianiu protokołu TLS <xref:System.IO.IOException?displayProperty=fullName> <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> zostanie wygenerowany wyjątek wewnętrzny z wyjątkiem operacji odczytu/zapisu w pierwszej kolejności. <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=fullName>Kod dla programu <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> można zamapować na alert protokołu TLS ze strony zdalnej przy użyciu [kodów błędów Schannel dla alertów protokołu TLS i SSL](https://docs.microsoft.com/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts). Aby uzyskać więcej informacji, zobacz artykuł [RFC 2246: sekcja 7.2.2 alerty błędów](https://tools.ietf.org/html/rfc2246#section-7.2.2). <br/>Zachowanie w .NET Framework 4.6.2 i wcześniejszym polega na tym, że kanał transportu (zazwyczaj połączenie TCP) będzie przekroczyć limit czasu podczas zapisu lub odczytu, jeśli druga strona nie powiodła się, a następnie natychmiast odrzuci połączenie.
+Po niepomyślnym uzgadnianiu protokołu TLS <xref:System.IO.IOException?displayProperty=fullName> <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> zostanie wygenerowany wyjątek wewnętrzny z wyjątkiem operacji odczytu/zapisu w pierwszej kolejności. <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=fullName>Kod dla programu <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> można zamapować na alert protokołu TLS ze strony zdalnej przy użyciu [kodów błędów Schannel dla alertów protokołu TLS i SSL](/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts). Aby uzyskać więcej informacji, zobacz artykuł [RFC 2246: sekcja 7.2.2 alerty błędów](https://tools.ietf.org/html/rfc2246#section-7.2.2). <br/>Zachowanie w .NET Framework 4.6.2 i wcześniejszym polega na tym, że kanał transportu (zazwyczaj połączenie TCP) będzie przekroczyć limit czasu podczas zapisu lub odczytu, jeśli druga strona nie powiodła się, a następnie natychmiast odrzuci połączenie.
 
 #### <a name="suggestion"></a>Sugestia
 
@@ -44,7 +44,7 @@ Aplikacje wywołujące interfejsy API we/wy sieci, takie jak <xref:System.IO.Str
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   | Brzeg        |
+| Zakres   | Edge        |
 | Wersja | 4,7         |
 | Typ    | Przekierowanie |
 

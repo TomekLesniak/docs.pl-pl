@@ -3,12 +3,12 @@ title: Zapytania w składniku LINQ to Entities
 description: Dowiedz się, w jaki sposób LINQ oferuje prosty, spójny model służący do pracy z danymi w różnych rodzajach źródeł danych i formatach przy użyciu obiektów programistycznych.
 ms.date: 03/30/2017
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
-ms.openlocfilehash: 908a4a601c075e0845ba6d1eeeaa0f4dbaa3b53d
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5a10aadd3f21086b2b04dc5e77e40f35655f905b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89129144"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554257"
 ---
 # <a name="queries-in-linq-to-entities"></a>Zapytania w składniku LINQ to Entities
 Zapytanie jest wyrażeniem, które pobiera dane ze źródła danych. Zapytania są zwykle wyrażane w wyspecjalizowanym języku zapytań, takim jak SQL dla relacyjnych baz danych i XQuery for XML. W związku z tym deweloperzy musieli poznać nowy język zapytań dla każdego typu źródła danych lub formatu danych, który wykonuje zapytanie. Program Query Integrated Language (LINQ) oferuje prostszy, spójny model służący do pracy z danymi w różnych rodzajach źródeł danych i formatach. W zapytaniu LINQ zawsze pracujesz z obiektami programowania.  
@@ -66,9 +66,9 @@ Zapytanie jest wyrażeniem, które pobiera dane ze źródła danych. Zapytania s
   
 - [Przykłady składni zapytania oparte na metodzie, nawigowanie po relacjach](method-based-query-syntax-examples-navigating-relationships.md)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ to Entities](linq-to-entities.md)
 - [Wprowadzenie do korzystania z LINQ w C#](../../../../../csharp/programming-guide/concepts/linq/index.md)
 - [Wprowadzenie do programu LINQ w Visual Basic](../../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
-- [Opcje scalania EF i skompilowane zapytania](https://docs.microsoft.com/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)
+- [Opcje scalania EF i skompilowane zapytania](/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)

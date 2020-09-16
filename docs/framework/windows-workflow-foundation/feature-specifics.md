@@ -3,12 +3,12 @@ title: Charakterystyka funkcji programu Windows Workflow Foundation
 description: W tym artykule opisano nowe funkcje, które .NET Framework 4 dodaje do Windows Workflow Foundation i scenariuszy, w których funkcje mogą być przydatne.
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: fb490b3dd368710bf2ed98f7c53b7b184fa15b0b
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: ae15f3ed536967cb15d1a5913f9ca1eab8a510d9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419957"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554609"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Charakterystyka funkcji programu Windows Workflow Foundation
 
@@ -16,7 +16,7 @@ ms.locfileid: "83419957"
 
 ## <a name="messaging-activities"></a>Działania dotyczące komunikatów
 
-Działania obsługi komunikatów ( <xref:System.ServiceModel.Activities.Receive> , <xref:System.ServiceModel.Activities.SendReply> ,,) służą <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.ReceiveReply> do wysyłania i odbierania komunikatów WCF z przepływu pracy. <xref:System.ServiceModel.Activities.Receive><xref:System.ServiceModel.Activities.SendReply>działania są używane do tworzenia Windows Communication Foundation (WCF) operacji usługi, która jest udostępniana za pośrednictwem WSDL, podobnie jak w przypadku standardowych usług sieci Web WCF. <xref:System.ServiceModel.Activities.Send>i <xref:System.ServiceModel.Activities.ReceiveReply> są używane do korzystania z usługi sieci Web podobnej do WCF <xref:System.ServiceModel.ChannelFactory> ; istnieje również **Dodaj odwołanie do usługi** środowiska Workflow Foundation, które generuje wstępnie skonfigurowane działania.
+Działania obsługi komunikatów ( <xref:System.ServiceModel.Activities.Receive> , <xref:System.ServiceModel.Activities.SendReply> ,,) służą <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.ReceiveReply> do wysyłania i odbierania komunikatów WCF z przepływu pracy. <xref:System.ServiceModel.Activities.Receive><xref:System.ServiceModel.Activities.SendReply>działania są używane do tworzenia Windows Communication Foundation (WCF) operacji usługi, która jest udostępniana za pośrednictwem WSDL, podobnie jak w przypadku standardowych usług sieci Web WCF. <xref:System.ServiceModel.Activities.Send> i <xref:System.ServiceModel.Activities.ReceiveReply> są używane do korzystania z usługi sieci Web podobnej do WCF <xref:System.ServiceModel.ChannelFactory> ; istnieje również **Dodaj odwołanie do usługi** środowiska Workflow Foundation, które generuje wstępnie skonfigurowane działania.
 
 ### <a name="getting-started-with-messaging-activities"></a>Wprowadzenie z działaniami związanymi z obsługą komunikatów
 
@@ -62,7 +62,7 @@ Korelacja jest jedną z dwóch rzeczy:
 
 - Sposób mapowania danych na wystąpienie usługi
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - Aby rozpocząć pracę z korelacją, Utwórz nowy projekt w programie Visual Studio. Utwórz zmienną typu <xref:System.ServiceModel.Activities.CorrelationHandle> .
 
@@ -86,7 +86,7 @@ Przepływ pracy przetwarzania zamówień jest używany do obsługi nowego zamów
 
 Schemat konfiguracji programu WCF jest skomplikowany i oferuje użytkownikom wiele trudnych do znalezienia funkcji. W [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] systemie firma Microsoft koncentruje się na konfigurowaniu usług przez użytkowników usługi WCF przy użyciu następujących funkcji:
 
-- Usuwanie potrzeby jawnej konfiguracji dla poszczególnych usług. Jeśli nie skonfigurujesz żadnych \<> usługi dla usługi, a usługa nie będzie definiować programistycznie żadnych punktów końcowych, zestaw punktów końcowych zostanie automatycznie dodany do usługi, jeden na adres podstawowy usługi i dla kontraktu wdrożonego przez usługę.
+- Usuwanie potrzeby jawnej konfiguracji dla poszczególnych usług. Jeśli nie skonfigurujesz żadnych \<service> elementów dla usługi, a usługa nie będzie definiować programowo żadnych punktów końcowych, zestaw punktów końcowych zostanie automatycznie dodany do usługi, jeden na adres podstawowy usługi i dla kontraktu zaimplementowanego przez usługę.
 
 - Umożliwia użytkownikowi Definiowanie wartości domyślnych dla powiązań i zachowań programu WCF, które będą stosowane do usług bez wyraźnej konfiguracji.
 
@@ -94,17 +94,17 @@ Schemat konfiguracji programu WCF jest skomplikowany i oferuje użytkownikom wie
 
 - Na koniec program <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> umożliwia centralne zarządzanie konfiguracją klienta programu WCF, przydatną w scenariuszach, w których konfiguracja jest wybierana lub zmieniana po upływie czasu ładowania domeny aplikacji.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
-- [Przewodnik dewelopera dotyczący programu WCF 4,0](https://docs.microsoft.com/previous-versions/dotnet/articles/ee354381(v=msdn.10))
+- [Przewodnik dewelopera dotyczący programu WCF 4,0](/previous-versions/dotnet/articles/ee354381(v=msdn.10))
 
 - [Fabryka kanałów konfiguracji](xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601)
 
 - [Standardowy element punktu końcowego](xref:System.ServiceModel.Configuration.StandardEndpointElement)
 
-- [Ulepszenia konfiguracji usługi w .NET Framework 4](https://docs.microsoft.com/archive/blogs/endpoint/service-configuration-improvements-in-net-4)
+- [Ulepszenia konfiguracji usługi w .NET Framework 4](/archive/blogs/endpoint/service-configuration-improvements-in-net-4)
 
-- [Typowy błąd użytkownika w programie .NET 4: wpisywanie nazwy konfiguracji WF/WCF usługi](https://docs.microsoft.com/archive/blogs/endpoint/common-user-mistake-in-net-4-mistyping-the-wfwcf-service-configuration-name)
+- [Typowy błąd użytkownika w programie .NET 4: wpisywanie nazwy konfiguracji WF/WCF usługi](/archive/blogs/endpoint/common-user-mistake-in-net-4-mistyping-the-wfwcf-service-configuration-name)
 
 ### <a name="simplified-configuration-scenarios"></a>Uproszczone scenariusze konfiguracji
 
@@ -124,11 +124,11 @@ W programie .NET 3,5 istniały pewne ograniczenia dotyczące projektowania znany
 
 [Obiektu DataContractResolver](../wcf/samples/datacontractresolver.md) rozwiązuje te problemy w programie .NET 4,5.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - [Dokumentacja interfejsu API programu rozpoznawania kontraktów danych](xref:System.Runtime.Serialization.DataContractResolver)
 
-- [Wprowadzenie do programu rozpoznawania kontraktu danych](https://docs.microsoft.com/archive/blogs/youssefm/configuring-known-types-dynamically-introducing-the-datacontractresolver)
+- [Wprowadzenie do programu rozpoznawania kontraktu danych](/archive/blogs/youssefm/configuring-known-types-dynamically-introducing-the-datacontractresolver)
 
 - Badan
 
@@ -146,7 +146,7 @@ W programie .NET 3,5 istniały pewne ograniczenia dotyczące projektowania znany
 
 Schemat blokowy jest dobrze znanym modelem, aby wizualnie reprezentować problemy z domeną. Jest to nowy styl przepływu sterowania wprowadzany w programie .NET 4. Podstawowa charakterystyka schematu blokowego polega na tym, że w danym momencie wykonywane jest tylko jedno działanie. Schematy blokowe mogą wyznaczać pętle i alternatywne wyniki, ale nie mogą natywnie wyrażać jednoczesnego wykonywania wielu węzłów.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - W programie Visual Studio 2012 Utwórz aplikację konsolową przepływu pracy. Dodaj schemat blokowy do projektanta przepływu pracy.
 
@@ -192,7 +192,7 @@ Działanie Flowchart może służyć do implementowania gry do odgadnięcia. Gra
 
 Działania proceduralne zapewniają mechanizm modelowania sekwencyjnego przepływu sterowania przy użyciu koncepcji, które są znane dla programistów. Działania te umożliwiają tradycyjną strukturę programowania strukturalnego i, w razie potrzeby, zapewniają parzystość języka za pomocą wspólnych języków proceduralnych, takich jak C# i Visual Basic.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - W programie Visual Studio 2012 Utwórz aplikację konsolową przepływu pracy. Dodaj działania proceduralne w Projektancie przepływu pracy.
 
@@ -206,7 +206,7 @@ Działania proceduralne zapewniają mechanizm modelowania sekwencyjnego przepły
 
   - [Parallel, projektant działań](/visualstudio/workflow-designer/parallel-activity-designer)
 
-  - [ParallelForEach \< T> — Projektant działań](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
+  - [ParallelForEach, \<T> Projektant działań](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
 
 ### <a name="procedural-activity-scenarios"></a>Scenariusze działań proceduralnych
 
@@ -218,7 +218,7 @@ Działania proceduralne zapewniają mechanizm modelowania sekwencyjnego przepły
 
 <xref:System.Activities.Statements.InvokeMethod>Działanie umożliwia wywoływanie metod publicznych w obiektach lub typach w zakresie. Obsługuje ona wywoływanie wystąpień i metod statycznych z parametrami lub bez parametrów (w tym tablicami parametrów) i metodami ogólnymi. Umożliwia również wykonywanie synchronicznie i asynchronicznie metody.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - W programie Visual Studio 2012 Utwórz aplikację konsolową przepływu pracy. Dodawanie <xref:System.Activities.Statements.InvokeMethod> działania w Projektancie przepływu pracy i Konfigurowanie na nim metod statycznych i wystąpień.
 
@@ -232,9 +232,9 @@ Działania proceduralne zapewniają mechanizm modelowania sekwencyjnego przepły
 
 ## <a name="error-handling-activities"></a>Działania obsługi błędów
 
-<xref:System.Activities.Statements.TryCatch>Działanie zapewnia mechanizm przechwytywania wyjątków, które występują podczas wykonywania zestawu zawartych działań (podobnie jak konstrukcja try/catch w języku C# i Visual Basic). <xref:System.Activities.Statements.TryCatch>zapewnia obsługę wyjątków na poziomie przepływu pracy. Gdy zostanie zgłoszony nieobsługiwany wyjątek, przepływ pracy zostanie przerwany i blok finally nie zostanie wykonany. To zachowanie jest spójne z językiem C#.
+<xref:System.Activities.Statements.TryCatch>Działanie zapewnia mechanizm przechwytywania wyjątków, które występują podczas wykonywania zestawu zawartych działań (podobnie jak konstrukcja try/catch w języku C# i Visual Basic). <xref:System.Activities.Statements.TryCatch> zapewnia obsługę wyjątków na poziomie przepływu pracy. Gdy zostanie zgłoszony nieobsługiwany wyjątek, przepływ pracy zostanie przerwany i blok finally nie zostanie wykonany. To zachowanie jest spójne z językiem C#.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - W programie Visual Studio 2012 Utwórz aplikację konsolową przepływu pracy. Dodawanie <xref:System.Activities.Statements.TryCatch> działania w Projektancie przepływu pracy.
 
@@ -248,9 +248,9 @@ Należy wykonać zestaw działań i należy wykonać konkretną logikę w przypa
 
 ## <a name="pick-activity"></a>Wybierz działanie
 
-<xref:System.Activities.Statements.Pick>Działanie zapewnia modelowanie przepływu sterowania opartego na zdarzeniach w WF. <xref:System.Activities.Statements.Pick>zawiera wiele gałęzi, w których poszczególne gałęzie czekają na wystąpienie określonego zdarzenia przed uruchomieniem. W tej konfiguracji zachowanie jest <xref:System.Activities.Statements.Pick> podobne do, <xref:System.Activities.Statements.Switch%601> do którego działanie wykona tylko jeden z zestawów zdarzeń, które nasłuchuje. Każda gałąź jest sterowana zdarzeniami, a zdarzenie, które występuje, uruchamia najpierw odpowiadającą gałąź. Wszystkie inne gałęzie anulują i przerywają nasłuchiwanie zdarzeń.
+<xref:System.Activities.Statements.Pick>Działanie zapewnia modelowanie przepływu sterowania opartego na zdarzeniach w WF. <xref:System.Activities.Statements.Pick> zawiera wiele gałęzi, w których poszczególne gałęzie czekają na wystąpienie określonego zdarzenia przed uruchomieniem. W tej konfiguracji zachowanie jest <xref:System.Activities.Statements.Pick> podobne do, <xref:System.Activities.Statements.Switch%601> do którego działanie wykona tylko jeden z zestawów zdarzeń, które nasłuchuje. Każda gałąź jest sterowana zdarzeniami, a zdarzenie, które występuje, uruchamia najpierw odpowiadającą gałąź. Wszystkie inne gałęzie anulują i przerywają nasłuchiwanie zdarzeń.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - W programie Visual Studio 2012 Utwórz aplikację konsolową przepływu pracy. Dodawanie <xref:System.Activities.Statements.Pick> działania w Projektancie przepływu pracy.
 
@@ -282,13 +282,13 @@ Usługa routingu w programie .NET 4 została zaprojektowana tak, aby ułatwić r
 
 4. Aktualizacja aktualizacji dynamicznej (w pamięci) <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> i konfiguracji routingu.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 1. Dokumentacja: [Routing](../wcf/feature-details/routing.md)
 
 2. Przykłady: [usługi routingu &#91;przykłady WCF&#93;](../wcf/samples/routing-services.md)
 
-3. Blog: [reguły routingu!](https://docs.microsoft.com/archive/blogs/RoutingRules/)
+3. Blog: [reguły routingu!](/archive/blogs/RoutingRules/)
 
 ### <a name="routing-scenarios"></a>Scenariusze routingu
 
@@ -316,7 +316,7 @@ Produkt jest oparty na standardzie WS-Discovery. Jest ona zaprojektowana tak, ab
 
 Ponadto komunikaty odnajdywania to niezależny od protokołu sieciowego; można ich użyć na górze dowolnego protokołu, który obsługuje wymagania dotyczące trybu. Na przykład komunikaty multiemisji odnajdywania można wysyłać za pośrednictwem kanału UDP lub dowolnej innej sieci obsługującej komunikaty multiemisji. Te punkty projektowe, w połączeniu z elastycznością funkcji, umożliwiają dostosowanie odnajdywania do rozwiązania.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 - Dokumentacja: [Odnajdywanie WCF](../wcf/feature-details/wcf-discovery.md)
 
@@ -328,13 +328,13 @@ Deweloper nie chce, aby twarde punkty końcowe kodu, ponieważ jest ono nieznane
 
 ## <a name="tracking"></a>Śledzenie
 
-Śledzenie przepływu pracy zapewnia wgląd w wykonywanie wystąpienia przepływu pracy. Zdarzenia śledzenia są emitowane z przepływu pracy na poziomie wystąpienia przepływu pracy i podczas wykonywania działań w ramach przepływu pracy. Aby subskrybować śledzenie rekordów, należy dodać uczestnika śledzenia przepływu pracy do hosta przepływu pracy. Rekordy śledzenia są filtrowane przy użyciu profilu śledzenia. .NET Framework udostępnia uczestnika śledzenia funkcji ETW (śledzenie zdarzeń dla systemu Windows), a w pliku Machine. config jest instalowany profil podstawowy.
+Śledzenie przepływu pracy zapewnia wgląd w wykonywanie wystąpienia przepływu pracy. Zdarzenia śledzenia są emitowane z przepływu pracy na poziomie wystąpienia przepływu pracy i podczas wykonywania działań w ramach przepływu pracy. Aby subskrybować śledzenie rekordów, należy dodać uczestnika śledzenia przepływu pracy do hosta przepływu pracy. Rekordy śledzenia są filtrowane przy użyciu profilu śledzenia. .NET Framework udostępnia uczestnika śledzenia funkcji ETW (śledzenie zdarzeń dla systemu Windows), a w pliku machine.config jest instalowany profil podstawowy.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 1. W programie Visual Studio 2010 Utwórz projekt aplikacji usługi przepływu pracy WCF. <xref:System.ServiceModel.Activities.Receive>Para i <xref:System.ServiceModel.Activities.SendReply> zostanie umieszczona na kanwie, aby rozpocząć.
 
-2. Otwórz plik Web. config i Dodaj zachowanie śledzenia funkcji ETW bez profilu.
+2. Otwórz web.config i Dodaj zachowanie śledzenia ETW bez profilu.
 
     1. Używany jest profil domyślny.
 
@@ -352,7 +352,7 @@ Deweloper nie chce, aby twarde punkty końcowe kodu, ponieważ jest ono nieznane
 
 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>To oparta na SQL Server Implementacja magazynu wystąpień. Magazyn wystąpień przechowuje stan uruchomionego wystąpienia wraz ze wszystkimi danymi, które są niezbędne do załadowania i wznowienia tego wystąpienia. Host usługi instruuje magazyn wystąpień, aby zapisywał stan wystąpienia, jeśli przepływ pracy będzie trwał, i instruuje magazyn wystąpień, aby załadować stan wystąpienia po nadejściu komunikatu dla tego wystąpienia lub wygaśnięcia działania opóźnienia.
 
-### <a name="getting-started"></a>Getting Started
+### <a name="getting-started"></a>Wprowadzenie
 
 1. W programie Visual Studio 2012 Utwórz przepływ pracy zawierający niejawne lub jawne <xref:System.Activities.Statements.Persist> działanie. Dodaj <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> zachowanie do hosta usługi przepływu pracy. Można to zrobić w kodzie lub w pliku konfiguracji aplikacji.
 

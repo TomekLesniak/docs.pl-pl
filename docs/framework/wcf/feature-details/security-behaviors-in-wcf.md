@@ -2,12 +2,12 @@
 title: Zachowania zabezpieczeń w programie WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-ms.openlocfilehash: b25d476e9c9b4a70834274c6970dad1b056cecb9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1f15a5aec2f5da89e4069deec946cc20b54f414e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595209"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554068"
 ---
 # <a name="security-behaviors-in-wcf"></a>Zachowania zabezpieczeń w programie WCF
 W Windows Communication Foundation (WCF), zachowania modyfikują zachowanie w czasie wykonywania na poziomie usługi lub na poziomie punktu końcowego. (Aby uzyskać więcej informacji na temat zachowań ogólnie, zobacz [Określanie zachowania usługi w czasie wykonywania](../specifying-service-run-time-behavior.md)). *Zachowania zabezpieczeń* umożliwiają kontrolę nad poświadczeniami, uwierzytelnianiem, autoryzacją i dziennikami inspekcji. Można używać zachowań przez programowanie lub przez konfigurację. Ten temat koncentruje się na konfigurowaniu następujących zachowań związanych z funkcjami zabezpieczeń:  
@@ -119,7 +119,7 @@ W Windows Communication Foundation (WCF), zachowania modyfikują zachowanie w cz
  Ustaw certyfikat używany do uwierzytelniania klienta przy użyciu tego elementu. Aby uzyskać więcej informacji, zobacz [How to: Określanie wartości poświadczeń klienta](../how-to-specify-client-credential-values.md).  
   
 #### \<httpDigest>  
- Ta funkcja musi być włączona z Active Directory w systemie Windows i Internet Information Services (IIS). Aby uzyskać więcej informacji, zobacz [uwierzytelnianie szyfrowane w usługach IIS 6,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
+ Ta funkcja musi być włączona z Active Directory w systemie Windows i Internet Information Services (IIS). Aby uzyskać więcej informacji, zobacz [uwierzytelnianie szyfrowane w usługach IIS 6,0](/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
   
 #### <a name="issuedtoken-element"></a>\<issuedToken> Element  
  [\<issuedToken>](../../configure-apps/file-schema/wcf/issuedtoken.md)Zawiera elementy służące do konfigurowania lokalnego wystawcy tokenów lub zachowań używanych z usługą tokenu zabezpieczającego. Aby uzyskać instrukcje dotyczące konfigurowania klienta do korzystania z wystawcy lokalnego, zobacz [How to: Configure a Local wystawca](how-to-configure-a-local-issuer.md).  
@@ -221,7 +221,7 @@ W Windows Communication Foundation (WCF), zachowania modyfikują zachowanie w cz
 </behaviors>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Inspekcja](auditing-security-events.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

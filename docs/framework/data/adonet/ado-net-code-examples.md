@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
-ms.openlocfilehash: 54df0e253716c970cf23446434d96b104b8e9b03
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9d12c7c7dcbc3a24cf51ade5481f59715c4c4d88
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287171"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555110"
 ---
 # <a name="adonet-code-examples"></a>Przykłady kodu ADO.NET
 
@@ -59,7 +59,7 @@ W kodzie w tym przykładzie przyjęto założenie, że można nawiązać połąc
 [!code-vb[DataWorks SampleApp.Odbc#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.Odbc/VB/source.vb#1)]
 
 ### <a name="oracleclient"></a>OracleClient
-Kod w tym przykładzie założono połączenie z DEMONSTRACJą. Klient na serwerze Oracle. Należy również dodać odwołanie do pliku System. Data. OracleClient. dll. Kod zwraca dane w <xref:System.Data.OracleClient.OracleDataReader> .
+Kod w tym przykładzie założono połączenie z DEMONSTRACJą. Klient na serwerze Oracle. Należy również dodać odwołanie do System.Data.OracleClient.dll. Kod zwraca dane w <xref:System.Data.OracleClient.OracleDataReader> .
 
  [!code-csharp[DataWorks SampleApp.Oracle#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.Oracle/CS/source.cs#1)]
  [!code-vb[DataWorks SampleApp.Oracle#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.Oracle/VB/source.vb#1)]
@@ -138,7 +138,7 @@ End Class
 ```
 
 ### <a name="typed-objectquery"></a>Wpisane ObjectQuery
-Kod w tym przykładzie używa <xref:System.Data.Objects.ObjectQuery%601> do zwracania danych jako kategorii obiektów. Aby uzyskać więcej informacji, zobacz [zapytania dotyczące obiektów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)).
+Kod w tym przykładzie używa <xref:System.Data.Objects.ObjectQuery%601> do zwracania danych jako kategorii obiektów. Aby uzyskać więcej informacji, zobacz [zapytania dotyczące obiektów](/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)).
 
 ```csharp
 using System;
@@ -345,6 +345,6 @@ End Class
 
 - [Omówienie ADO.NET](ado-net-overview.md)
 - [Pobieranie i modyfikowanie danych ADO.NET](retrieving-and-modifying-data.md)
-- [Tworzenie aplikacji danych](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/h0y4a0f6(v=vs.120))
-- [Wykonywanie zapytania dotyczącego Entity Data Model (zadania Entity Framework)](https://docs.microsoft.com/previous-versions/bb738455(v=vs.90))
-- [Instrukcje: wykonywanie zapytania, które zwraca obiekty typu anonimowego](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))
+- [Tworzenie aplikacji danych](/previous-versions/visualstudio/visual-studio-2013/h0y4a0f6(v=vs.120))
+- [Wykonywanie zapytania dotyczącego Entity Data Model (zadania Entity Framework)](/previous-versions/bb738455(v=vs.90))
+- [Instrukcje: wykonywanie zapytania, które zwraca obiekty typu anonimowego](/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))

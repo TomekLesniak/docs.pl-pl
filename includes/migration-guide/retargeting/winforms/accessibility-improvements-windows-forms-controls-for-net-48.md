@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e528a41748d9353c96d443f68e15e7a98ee7f4ae
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 882c4c0455b7df538079ffe1b7d1d7ca8af1904a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85616305"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606410"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls-for-net-48"></a>Ulepszenia ułatwień dostępu w kontrolkach Windows Forms dla programu .NET 4,8
 
@@ -21,7 +21,7 @@ Windows Forms Framework kontynuuje ulepszanie sposobu działania z technologiami
 **Jak wybrać lub wycofać te zmiany** Aby aplikacja mogła korzystać z tych zmian, należy ją uruchomić na .NET Framework 4,8. Aplikacja może wyrazić zgodę na te zmiany w jeden z następujących sposobów:
 
 - Zostanie ponownie skompilowana w celu przekierowania .NET Framework 4,8. Te zmiany ułatwień dostępu są domyślnie włączone w Windows Forms aplikacjach przeznaczonych dla .NET Framework 4,8.
-- Jest ona przeznaczona dla .NET Framework 4.7.2 lub starszej wersji, a także [wyłączają](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) się ze starszych zachowań ułatwień dostępu, dodając następujący `<runtime>` przykład do sekcji w pliku konfiguracji aplikacji i ustawiając go na `false` , jak pokazano w poniższym przykładzie.
+- Jest ona przeznaczona dla .NET Framework 4.7.2 lub starszej wersji, a także [wyłączają](../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) się ze starszych zachowań ułatwień dostępu, dodając następujący `<runtime>` przykład do sekcji w pliku konfiguracji aplikacji i ustawiając go na `false` , jak pokazano w poniższym przykładzie.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,7 +72,7 @@ Należy pamiętać, że włączenie tej funkcji wymaga skorzystania z powyższyc
 **Ulepszona obsługa ułatwień dostępu ProgressBar**
 
 - Włączono obsługę automatyzacji interfejsu użytkownika dla <xref:System.Windows.Forms.ProgressBar> kontrolki z możliwością używania powiadomień automatyzacji interfejsu użytkownika i innych funkcji automatyzacji interfejsu użytkownika. Deweloperzy mogą teraz używać powiadomień automatyzacji interfejsu użytkownika, które narrator może ogłosić, aby wskazać postęp.
-Omówienie zdarzeń automatyzacji interfejsu użytkownika, w tym zdarzenia powiadomień automatyzacji interfejsu użytkownika, można znaleźć w temacie [Omówienie zdarzeń automatyzacji interfejsu użytkownika](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-eventsoverview).
+Omówienie zdarzeń automatyzacji interfejsu użytkownika, w tym zdarzenia powiadomień automatyzacji interfejsu użytkownika, można znaleźć w temacie [Omówienie zdarzeń automatyzacji interfejsu użytkownika](/windows/desktop/WinAuto/uiauto-eventsoverview).
 
 **Ulepszona obsługa ułatwień dostępu do elementu PropertyGrid**
 
@@ -89,7 +89,7 @@ Omówienie zdarzeń automatyzacji interfejsu użytkownika, w tym zdarzenia powia
 **Ulepszone podpowiedzi wizualne**
 
 - Pusta <xref:System.Windows.Forms.CheckedListBox> kontrolka wyświetla teraz wskaźnik fokusu po odebraniu fokusu.
-Uwaga: Obsługa automatyzacji interfejsu użytkownika jest włączona dla formantów w środowisku uruchomieniowym, ale nie jest używana w czasie projektowania. Aby zapoznać się z omówieniem automatyzacji interfejsu użytkownika, zobacz [Omówienie automatyzacji interfejsu użytkownika](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview).
+Uwaga: Obsługa automatyzacji interfejsu użytkownika jest włączona dla formantów w środowisku uruchomieniowym, ale nie jest używana w czasie projektowania. Aby zapoznać się z omówieniem automatyzacji interfejsu użytkownika, zobacz [Omówienie automatyzacji interfejsu użytkownika](../../../../docs/framework/ui-automation/ui-automation-overview.md).
 
 **Wywoływanie etykietek narzędzi formantów przy użyciu klawiatury**
 

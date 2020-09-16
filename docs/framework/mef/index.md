@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Managed Extensibility Framework, overview
 - MEF, overview
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
-ms.openlocfilehash: 00ed48f2202d4c04039ac264b1fe71474a02432e
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: b743a26dd401e7015c588be2a197551aa891a687
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281254"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555578"
 ---
 # <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -62,7 +62,7 @@ W poprzednich wersjach .NET Framework wprowadzono zarządzaną strukturę dodatk
 
 Najprostszym sposobem, aby sprawdzić, jakie MEF może być kompilacja prostej aplikacji MEF. W tym przykładzie utworzysz prosty kalkulator o nazwie SimpleCalculator. Celem SimpleCalculator jest utworzenie aplikacji konsolowej, która akceptuje podstawowe polecenia arytmetyczne w postaci "5 + 3" lub "6-2", i zwraca poprawne odpowiedzi. Korzystając z MEF, będziesz mieć możliwość dodawania nowych operatorów bez zmiany kodu aplikacji.
 
-Aby pobrać pełny kod dla tego przykładu, zobacz [przykład SimpleCalculator (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/).
+Aby pobrać pełny kod dla tego przykładu, zobacz [przykład SimpleCalculator (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/).
 
 > [!NOTE]
 > Celem SimpleCalculator jest przedstawienie koncepcji i składni MEF, a nie koniecznie zapewnienia realistycznego scenariusza do użycia. Wiele aplikacji, które byłyby korzystne dla większości możliwości MEF, jest bardziej skomplikowane niż SimpleCalculator. Aby uzyskać bardziej szczegółowe przykłady, zobacz [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef) w witrynie GitHub.
@@ -247,7 +247,7 @@ Public Property operations As IEnumerable(Of Lazy(Of IOperation, IOperationData)
 IEnumerable<Lazy<IOperation, IOperationData>> operations;
 ```
 
-<xref:System.Lazy%602>jest typem dostarczanym przez MEF do przechowywania pośrednich odwołań do eksportów. W tym miejscu oprócz wyeksportowanego obiektu można również uzyskać *metadane eksportu*lub informacje opisujące wyeksportowany obiekt. Każda <xref:System.Lazy%602> z nich zawiera `IOperation` obiekt, reprezentujący rzeczywistą operację i `IOperationData` obiekt reprezentujący swoje metadane.
+<xref:System.Lazy%602> jest typem dostarczanym przez MEF do przechowywania pośrednich odwołań do eksportów. W tym miejscu oprócz wyeksportowanego obiektu można również uzyskać *metadane eksportu*lub informacje opisujące wyeksportowany obiekt. Każda <xref:System.Lazy%602> z nich zawiera `IOperation` obiekt, reprezentujący rzeczywistą operację i `IOperationData` obiekt reprezentujący swoje metadane.
 
 Dodaj następujące proste interfejsy do modułu lub `SimpleCalculator` przestrzeni nazw:
 
@@ -426,7 +426,7 @@ Dodawanie klas do kodu źródłowego jest wystarczająco proste, ale MEF zapewni
 
 Dodaj nowy katalog o nazwie `Extensions` do projektu SimpleCalculator. Upewnij się, że dodano ją na poziomie projektu, a nie na poziomie rozwiązania. Następnie Dodaj nowy projekt biblioteki klas do rozwiązania o nazwie `ExtendedOperations` . Nowy projekt zostanie skompilowany w osobnym zestawie.
 
-Otwórz projektanta właściwości projektu dla projektu ExtendedOperations, a następnie kliknij kartę **kompilacja** lub **kompilacja** . Zmień **ścieżkę wyjściową kompilacji** lub **ścieżkę wyjściową** , aby wskazywała katalog rozszerzeń w katalogu projektu SimpleCalculator (*.. \SimpleCalculator\Extensions \\ *).
+Otwórz projektanta właściwości projektu dla projektu ExtendedOperations, a następnie kliknij kartę **kompilacja** lub **kompilacja** . Zmień **ścieżkę wyjściową kompilacji** lub **ścieżkę wyjściową** , aby wskazywała katalog rozszerzeń w katalogu projektu SimpleCalculator (*... \SimpleCalculator\Extensions \\ *).
 
  W *Module1. vb* lub *program.cs*Dodaj następujący wiersz do `Program` konstruktora:
 
@@ -438,7 +438,7 @@ catalog.Catalogs.Add(New DirectoryCatalog("C:\SimpleCalculator\SimpleCalculator\
 catalog.Catalogs.Add(new DirectoryCatalog("C:\\SimpleCalculator\\SimpleCalculator\\Extensions"));
 ```
 
-Zastąp przykładową ścieżkę ścieżką do katalogu rozszerzeń. (Ta ścieżka bezwzględna służy tylko do celów debugowania. W aplikacji produkcyjnej należy użyć ścieżki względnej. <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog>Teraz zostaną dodane wszystkie części znajdujące się w każdym z zestawów w katalogu rozszerzeń do kontenera kompozycji.
+Zastąp przykładową ścieżkę ścieżką do katalogu rozszerzeń. (Ta ścieżka bezwzględna służy tylko do celów debugowania. W aplikacji produkcyjnej należy użyć ścieżki względnej. <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> Teraz zostaną dodane wszystkie części znajdujące się w każdym z zestawów w katalogu rozszerzeń do kontenera kompozycji.
 
 W projekcie ExtendedOperations Dodaj odwołania do SimpleCalculator i system. ComponentModel. kompozycji. W pliku klasy ExtendedOperations Dodaj `Imports` `using` instrukcję or dla elementu System. ComponentModel. kompozycji. W Visual Basic Dodaj również `Imports` instrukcję dla SimpleCalculator. Następnie Dodaj następującą klasę do pliku klasy ExtendedOperations:
 
@@ -484,6 +484,6 @@ W tym temacie omówiono podstawowe pojęcia dotyczące MEF.
 
 ## <a name="next-steps"></a>Następne kroki
 
-Aby pobrać pełny kod dla tego przykładu, zobacz [przykład SimpleCalculator (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/).
+Aby pobrać pełny kod dla tego przykładu, zobacz [przykład SimpleCalculator (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/).
 
  Aby uzyskać więcej informacji i przykładów kodu, zobacz [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef). Aby uzyskać listę typów MEF, zobacz <xref:System.ComponentModel.Composition?displayProperty=nameWithType> przestrzeń nazw.

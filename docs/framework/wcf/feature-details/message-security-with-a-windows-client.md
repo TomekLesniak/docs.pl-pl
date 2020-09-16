@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
-ms.openlocfilehash: dcb311523c6ec41b62f6e69fe6bc7635b9d49708
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c87583bec908c3465dedf7c542e30ce264cd7b47
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595235"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553782"
 ---
 # <a name="message-security-with-a-windows-client"></a>Zabezpieczanie komunikatów za pomocą klienta systemu Windows
 W tym scenariuszu przedstawiono klienta i serwer Windows Communication Foundation (WCF) zabezpieczony przez tryb zabezpieczeń wiadomości. Klient i usługa są uwierzytelniani przy użyciu poświadczeń systemu Windows.  
@@ -19,7 +19,7 @@ W tym scenariuszu przedstawiono klienta i serwer Windows Communication Foundatio
   
 |Charakterystyka|Opis|  
 |--------------------|-----------------|  
-|Tryb zabezpieczeń|Komunikat|  
+|Tryb zabezpieczeń|Wiadomość|  
 |Współdziałanie|Tylko WCF|  
 |Uwierzytelnianie (serwer)|Wzajemne uwierzytelnianie serwera i klienta|  
 |Uwierzytelnianie (klient)|Wzajemne uwierzytelnianie serwera i klienta|  
@@ -41,7 +41,7 @@ W tym scenariuszu przedstawiono klienta i serwer Windows Communication Foundatio
  [!code-csharp[C_SecurityScenarios#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#11)]
  [!code-vb[C_SecurityScenarios#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#11)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  W celu skonfigurowania usługi można użyć następującej konfiguracji zamiast kodu:  
   
 ```xml  
@@ -77,7 +77,7 @@ W tym scenariuszu przedstawiono klienta i serwer Windows Communication Foundatio
   
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).  
   
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:  
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -88,7 +88,7 @@ W tym scenariuszu przedstawiono klienta i serwer Windows Communication Foundatio
  [!code-csharp[C_SecurityScenarios#18](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#18)]
  [!code-vb[C_SecurityScenarios#18](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#18)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  Następująca konfiguracja służy do ustawiania właściwości klienta.  
   
 ```xml  
@@ -116,7 +116,7 @@ W tym scenariuszu przedstawiono klienta i serwer Windows Communication Foundatio
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

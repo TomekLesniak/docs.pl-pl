@@ -2,15 +2,15 @@
 title: Integracja elementu System.Web.Routing
 ms.date: 03/30/2017
 ms.assetid: 31fe2a4f-5c47-4e5d-8ee1-84c524609d41
-ms.openlocfilehash: 059f14c94bb7502a2e4f4616ca2c5e6ac5273afa
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6e67aa4a790edeb367b099d4a94f465f1e7b9bcc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600740"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554778"
 ---
 # <a name="systemwebrouting-integration"></a>Integracja elementu System.Web.Routing
-W przypadku hostowania usługi Windows Communication Foundation (WCF) w usłudze Internet Information Service (IIS) Umieść plik. svc w katalogu wirtualnym. Ten plik SVC określa fabrykę hosta usługi, która ma być używana, a także klasy implementującej usługę. Podczas wykonywania żądań do usługi należy określić plik SVC w identyfikatorze URI, na przykład: `http://contoso.com/EmployeeServce.svc` . Dla programistów piszące usługi REST ten typ URI nie jest optymalny. Identyfikatory URI usług REST określają konkretny zasób i zwykle nie mają żadnych rozszerzeń. <xref:System.Web.Routing>Funkcja integracji umożliwia Hostowanie usługi REST WCF, która reaguje na identyfikatory URI bez rozszerzenia. Aby uzyskać więcej informacji na temat routingu, zobacz [ASP.NET routing](https://docs.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100)).  
+W przypadku hostowania usługi Windows Communication Foundation (WCF) w usłudze Internet Information Service (IIS) Umieść plik. svc w katalogu wirtualnym. Ten plik SVC określa fabrykę hosta usługi, która ma być używana, a także klasy implementującej usługę. Podczas wykonywania żądań do usługi należy określić plik SVC w identyfikatorze URI, na przykład: `http://contoso.com/EmployeeServce.svc` . Dla programistów piszące usługi REST ten typ URI nie jest optymalny. Identyfikatory URI usług REST określają konkretny zasób i zwykle nie mają żadnych rozszerzeń. <xref:System.Web.Routing>Funkcja integracji umożliwia Hostowanie usługi REST WCF, która reaguje na identyfikatory URI bez rozszerzenia. Aby uzyskać więcej informacji na temat routingu, zobacz [ASP.NET routing](/previous-versions/aspnet/cc668201(v=vs.100)).  
   
 ## <a name="using-systemwebrouting-integration"></a>Korzystanie z integracji system. Web. Routing  
  Aby użyć <xref:System.Web.Routing> funkcji integracji, należy użyć klasy w <xref:System.ServiceModel.Activation.ServiceRoute> celu utworzenia jednej lub więcej tras i dodania ich do <xref:System.Web.Routing.RouteTable> pliku Global. asax. Te trasy określają względne identyfikatory URI, z którymi usługa reaguje. W przykładzie poniżej pokazano, jak to zrobić.  
@@ -36,7 +36,7 @@ W przypadku hostowania usługi Windows Communication Foundation (WCF) w usłudze
   
  To kieruje wszystkie żądania z względnym identyfikatorem URI, który zaczyna się od klientów do `Service` usługi.  
   
- W pliku Web. config należy dodać `System.Web.Routing.UrlRoutingModule` moduł, ustawić `runAllManagedModulesForAllRequests` atrybut na `true` i dodać `UrlRoutingHandler` program obsługi do `<system.webServer>` elementu, jak pokazano w poniższym przykładzie.  
+ W pliku Web.config należy dodać `System.Web.Routing.UrlRoutingModule` moduł, ustawić `runAllManagedModulesForAllRequests` atrybut na `true` i dodać `UrlRoutingHandler` program obsługi do `<system.webServer>` elementu, jak pokazano w poniższym przykładzie.  
   
 ```xml  
 <system.webServer>  
@@ -69,7 +69,7 @@ W przypadku hostowania usługi Windows Communication Foundation (WCF) w usłudze
     }  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Model programowania protokołu HTTP sieci Web w programie WCF](wcf-web-http-programming-model.md)
-- [Routing ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100))
+- [Routing ASP.NET](/previous-versions/aspnet/cc668201(v=vs.100))

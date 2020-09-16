@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7766a59131fffe2b436c15a5ff58e67001be7941
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 6ffd4147a99a59d0a2e50d3f88279608e286aed1
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065109"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679952"
 ---
 ### <a name="cryptostreamdispose-transforms-final-block-only-when-writing"></a>CryptoStream. Dispose przekształca końcowy blok tylko podczas pisania
 
@@ -18,7 +18,7 @@ W programie .NET Core 3,0 i jego nowszych wersjach program <xref:System.Security
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-Ta zmiana włącza niekompletne odczyty ze strumienia kryptograficznego po anulowaniu operacji sieciowej bez konieczności przechwytywania wyjątku.
+Ta zmiana włącza niekompletne odczyty ze strumienia kryptograficznego po anulowaniu operacji sieciowej, bez konieczności przechwytywania wyjątku.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 

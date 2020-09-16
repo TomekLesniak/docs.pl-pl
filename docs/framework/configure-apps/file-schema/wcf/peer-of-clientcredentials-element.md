@@ -2,12 +2,12 @@
 title: <peer><clientCredentials>elementu
 ms.date: 03/30/2017
 ms.assetid: 505bd987-0042-4622-b68e-94f439729d53
-ms.openlocfilehash: dce7ef64de1e3eb248e3553c97cbce8e9b205b4c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a8144ca7bad5654bf8f77259ea1717442665fc81
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400099"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555461"
 ---
 # <a name="peer-of-clientcredentials-element"></a>\<peer>\<clientCredentials>elementu
 Określa poświadczenia używane podczas uwierzytelniania klientów równorzędnych.  
@@ -51,7 +51,7 @@ Określa poświadczenia używane podczas uwierzytelniania klientów równorzędn
 |[\<clientCredentials>](clientcredentials.md)|Określa poświadczenia używane do uwierzytelniania klienta w usłudze.|  
   
 ## <a name="remarks"></a>Uwagi  
- Ten element konfiguracji określa poświadczenia używane przez węzeł równorzędny do samodzielnego uwierzytelnienia w innych węzłach w sieci, a także ustawień uwierzytelniania używanych przez węzeł równorzędny do uwierzytelniania innych węzłów równorzędnych. Aby uzyskać więcej informacji, zobacz [uwierzytelnianie komunikatów kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90)) i [Zabezpieczanie aplikacji kanału równorzędnego](../../../wcf/feature-details/securing-peer-channel-applications.md).  
+ Ten element konfiguracji określa poświadczenia używane przez węzeł równorzędny do samodzielnego uwierzytelnienia w innych węzłach w sieci, a także ustawień uwierzytelniania używanych przez węzeł równorzędny do uwierzytelniania innych węzłów równorzędnych. Aby uzyskać więcej informacji, zobacz [uwierzytelnianie komunikatów kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90)) i [Zabezpieczanie aplikacji kanału równorzędnego](../../../wcf/feature-details/securing-peer-channel-applications.md).  
   
 ## <a name="see-also"></a>Zobacz także
 
@@ -63,8 +63,8 @@ Określa poświadczenia używane podczas uwierzytelniania klientów równorzędn
 - <xref:System.ServiceModel.Description.ClientCredentials.Peer%2A>
 - <xref:System.ServiceModel.Security.PeerCredential>
 - [Sieci równorzędne](../../../wcf/feature-details/peer-to-peer-networking.md)
-- [Zabezpieczanie klientów](../../../wcf/securing-clients.md)
-- [Uwierzytelnianie komunikatów kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
-- [Uwierzytelnianie niestandardowe kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
+- [Zabezpieczanie klientów [WCF]](../../../wcf/securing-clients.md)
+- [Uwierzytelnianie komunikatów kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
+- [Uwierzytelnianie niestandardowe kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
 - [Zabezpieczanie aplikacji kanałów równorzędnych](../../../wcf/feature-details/securing-peer-channel-applications.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

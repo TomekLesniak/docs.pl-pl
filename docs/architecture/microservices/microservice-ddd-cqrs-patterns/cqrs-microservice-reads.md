@@ -2,12 +2,12 @@
 title: Implementowanie odczytów i zapytań w mikrousłudze CQRS
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się z implementacją zapytania CQRS na mikrousłudze porządkowania w eShopOnContainers przy użyciu Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: 41932122326cf4c49b9c9e2c344d2ac17da7466b
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: e6ea7b4b7b37df9ee972319f597ab045bf3bd215
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358898"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678806"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implementowanie operacji odczytu/zapytań w CQRS mikrousługi
 
@@ -173,7 +173,7 @@ public class OrderSummary
 }
 ```
 
-Jest to kolejny powód, dla którego jawne zwracane typy są lepsze niż typy dynamiczne w długim okresie. Przy użyciu `ProducesResponseType` atrybutu można także określić oczekiwany wynik w odniesieniu do możliwych błędów/kodów http, takich jak 200, 400 itd.
+Jest to kolejny powód, dla którego jawne zwracane typy są lepsze niż typy dynamiczne w długim okresie. Korzystając z `ProducesResponseType` atrybutu, można również określić, jaki jest oczekiwany wynik w odniesieniu do możliwych błędów lub kodów http, takich jak 200, 400 itd.
 
 Na poniższej ilustracji widać, jak interfejs użytkownika struktury Swagger wyświetla informacje o odpowiedzi.
 
@@ -183,7 +183,7 @@ Na poniższej ilustracji widać, jak interfejs użytkownika struktury Swagger wy
 
 Obraz pokazuje kilka przykładowych wartości na podstawie typów ViewModel i możliwych kodów stanu HTTP, które mogą być zwracane.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Dapper**  
  <https://github.com/StackExchange/dapper-dot-net>

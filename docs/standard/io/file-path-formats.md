@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 8cbb687b0c7cfb69d3f3807c083f1c25e9d39594
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 36ecbe763ed47e95d9339d1d748b3faab100c15e
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271792"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679602"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formaty ścieżek plików w systemie Windows
 
@@ -43,7 +43,7 @@ Jeśli wszystkie trzy składniki są obecne, ścieżka jest bezwzględna. Jeśli
 > [!IMPORTANT]
 > Zwróć uwagę na różnicę między ostatnimi dwiema ścieżkami. Oba określają opcjonalny specyfikator woluminu ( `C:` w obu przypadkach), ale pierwszy zaczyna się od elementu głównego określonego woluminu, podczas gdy drugi nie. W związku z tym pierwsza jest ścieżką bezwzględną z katalogu głównego dysku `C:` , a druga jest ścieżką względną z bieżącego katalogu dysku `C:` . Użycie drugiego formularza, gdy pierwszy jest zamierzony, jest wspólnym źródłem błędów, które obejmują ścieżki plików systemu Windows.
 
-Można określić, czy ścieżka pliku jest w pełni kwalifikowana (to znaczy, czy ścieżka jest niezależna od bieżącego katalogu i nie ulega zmianie, gdy bieżący katalog ulegnie zmianie) przez wywołanie <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType> metody. Należy zauważyć, że taka ścieżka może zawierać względne segmenty katalogów ( `.` i `..` ) i nadal być w pełni kwalifikowane, jeśli rozpoznana ścieżka zawsze wskazuje tę samą lokalizację.
+Można określić, czy ścieżka pliku jest w pełni kwalifikowana (to znaczy, czy ścieżka jest niezależna od bieżącego katalogu i nie ulega zmianie, gdy bieżący katalog ulegnie zmianie) przez wywołanie <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWithType> metody. Należy zauważyć, że taka ścieżka może zawierać względne segmenty katalogów ( `.` i `..` ) i nadal być w pełni kwalifikowane, jeśli rozpoznana ścieżka zawsze wskazuje tę samą lokalizację.
 
 Poniższy przykład ilustruje różnicę między ścieżkami bezwzględnymi i względnymi. Przyjęto założenie, że katalog `D:\FY2018\` istnieje i nie został ustawiony bieżący katalog dla `D:\` z wiersza polecenia przed uruchomieniem przykładu.
 

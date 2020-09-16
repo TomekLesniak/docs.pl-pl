@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b318da39-bb8b-4c56-a019-e13b12b01831
-ms.openlocfilehash: 61c3ff3fa0b41301215e6f627d76681ad03aa938
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 36547c4ad39953e25bf7a8d5f69aa4a712e51982
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552861"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554233"
 ---
 # <a name="how-to-find-descendant-elements-linq-to-xml"></a>Jak znaleźć elementy zależne (LINQ to XML)
 
@@ -71,6 +71,6 @@ Results are identical
 <Name>Jessica Arnold</Name>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [LINQ to XML dla użytkowników XPath (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML dla użytkowników XPath (Visual Basic)](./comparison-xpath-linq-xml.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 7b1f0a6c416f660f06cea099197ba136f84407f9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0d62c8d3c4669673d26f2d5535d7940fce702f66
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286200"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547450"
 ---
 # <a name="table-valued-parameters"></a>Parametry o wartościach tabelowych
 Parametry z wartościami przechowywanymi w tabeli umożliwiają łatwe kierowanie wielu wierszy danych z aplikacji klienckiej w celu SQL Server bez konieczności wykonywania wielu operacji rundy lub specjalnej logiki po stronie serwera do przetwarzania danych. Parametry z wartościami przechowywanymi w tabeli służą do hermetyzowania wierszy danych w aplikacji klienckiej i wysyłania danych na serwer w jednym sparametryzowanym poleceniu. Przychodzące wiersze danych są przechowywane w zmiennej tabeli, która może być następnie obsługiwana przy użyciu języka Transact-SQL.  
@@ -26,7 +26,7 @@ Parametry z wartościami przechowywanymi w tabeli umożliwiają łatwe kierowani
 |Zasób|Opis|  
 |--------------|-----------------|  
 |[Używanie parametrów z wartościami przechowywanymi w tabeli (aparat bazy danych)](/sql/relational-databases/tables/use-table-valued-parameters-database-engine)|Opisuje sposób tworzenia i używania parametrów z wartościami przechowywanymi w tabeli.|  
-|[Typy tabel zdefiniowane przez użytkownika](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))|Opisuje typy tabel zdefiniowane przez użytkownika, które są używane do deklarowania parametrów z wartościami przechowywanymi w tabeli.|  
+|[Typy tabel zdefiniowane przez użytkownika](/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))|Opisuje typy tabel zdefiniowane przez użytkownika, które są używane do deklarowania parametrów z wartościami przechowywanymi w tabeli.|  
   
 ## <a name="passing-multiple-rows-in-previous-versions-of-sql-server"></a>Przekazywanie wielu wierszy w poprzednich wersjach SQL Server  
  Przed wprowadzeniem parametrów z wartościami przechowywanymi w tabeli do SQL Server 2008 opcje przekazywania wielu wierszy danych do procedury składowanej lub sparametryzowanego polecenia SQL były ograniczone. Deweloper może wybrać jedną z następujących opcji przekazywania wielu wierszy do serwera:  
@@ -40,7 +40,7 @@ Parametry z wartościami przechowywanymi w tabeli umożliwiają łatwe kierowani
 - Użyj `bcp` programu narzędziowego lub <xref:System.Data.SqlClient.SqlBulkCopy> obiektu do załadowania wielu wierszy danych do tabeli. Chociaż ta technika jest bardzo wydajna, nie obsługuje przetwarzania po stronie serwera, chyba że dane są ładowane do tabeli tymczasowej ani zmiennej tabeli.  
   
 ## <a name="creating-table-valued-parameter-types"></a>Tworzenie typów parametrów z wartościami przechowywanymi w tabeli  
- Parametry z wartościami przechowywanymi w tabeli są oparte na strukturach tabel o jednoznacznie określonym typie, które są zdefiniowane przy użyciu instrukcji CREATE TYPE języka Transact-SQL. Należy utworzyć typ tabeli i zdefiniować strukturę w SQL Server zanim będzie można używać parametrów z wartościami przechowywanymi w tabeli w aplikacjach klienckich. Aby uzyskać więcej informacji na temat tworzenia typów tabel, zobacz [Typy tabel zdefiniowane przez użytkownika](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100)).  
+ Parametry z wartościami przechowywanymi w tabeli są oparte na strukturach tabel o jednoznacznie określonym typie, które są zdefiniowane przy użyciu instrukcji CREATE TYPE języka Transact-SQL. Należy utworzyć typ tabeli i zdefiniować strukturę w SQL Server zanim będzie można używać parametrów z wartościami przechowywanymi w tabeli w aplikacjach klienckich. Aby uzyskać więcej informacji na temat tworzenia typów tabel, zobacz [Typy tabel zdefiniowane przez użytkownika](/previous-versions/sql/sql-server-2008/bb522526(v=sql.100)).  
   
  Poniższa instrukcja tworzy typ tabeli o nazwie CategoryTableType, która składa się z kolumn IDKategorii i CategoryName:  
   
@@ -129,7 +129,7 @@ Dim tvpParam As SqlParameter = _
 tvpParam.SqlDbType = SqlDbType.Structured  
 ```  
   
-## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a><a name="passing"></a>Przekazywanie parametru z wartościami przechowywanymi w tabeli do procedury składowanej  
+## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a><a name="passing"></a> Przekazywanie parametru z wartościami przechowywanymi w tabeli do procedury składowanej  
  Ten przykład ilustruje sposób przekazywania danych parametrów z wartościami przechowywanymi w tabeli do procedury składowanej. Kod wyodrębnia dodane wiersze do nowego przy <xref:System.Data.DataTable> użyciu <xref:System.Data.DataTable.GetChanges%2A> metody. Następnie kod definiuje <xref:System.Data.SqlClient.SqlCommand> , ustawiając <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> Właściwość na <xref:System.Data.CommandType.StoredProcedure> . <xref:System.Data.SqlClient.SqlParameter>Jest wypełniana przy użyciu <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> metody i <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> ma ustawioną wartość `Structured` . <xref:System.Data.SqlClient.SqlCommand>Następnie jest wykonywane przy użyciu <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A> metody.  
   
 ```csharp  

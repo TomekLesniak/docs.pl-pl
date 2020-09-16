@@ -7,12 +7,12 @@ ms.date: 09/12/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: de186cd6da83ffef8a5cd59df581e88b24bc474d
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: e1b1f75154431f61885d79db62b9ec289b69446e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325798"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555526"
 ---
 # <a name="create-a-style-for-a-control-in-wpf"></a>Tworzenie stylu kontrolki w WPF
 
@@ -60,7 +60,7 @@ Oto styl z poprzedniej sekcji, ale zadeklarowany przy użyciu `x:Key` atrybutu.
 
 [!code-xaml[ExplicitStyleDeclare](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/WindowExplicitStyle.xaml#ExplicitStyleDeclare)]
 
-Aby zastosować styl, ustaw <xref:System.Windows.FrameworkElement.Style%2A> właściwość elementu na `x:Key` wartość przy użyciu [rozszerzenia znacznika StaticResource](../../framework/wpf/advanced/staticresource-markup-extension.md), jak pokazano poniżej.
+Aby zastosować styl, ustaw <xref:System.Windows.FrameworkElement.Style%2A> właściwość elementu na `x:Key` wartość przy użyciu [rozszerzenia znacznika StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension), jak pokazano poniżej.
 
 [!code-xaml[ExplicitStyleReference](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/WindowExplicitStyle.xaml#ExplicitStyleReference)]
 
@@ -103,7 +103,7 @@ Oprócz podania wartości domyślnej dla `x:Key` , `TargetType` Właściwość o
 
 Należy również zauważyć, że wiele kontrolek WPF składa się z kombinacji innych formantów WPF. Jeśli utworzysz styl stosowany do wszystkich kontrolek typu, możesz uzyskać nieoczekiwane wyniki. Na przykład jeśli utworzysz styl, który jest przeznaczony dla <xref:System.Windows.Controls.TextBlock> typu w <xref:System.Windows.Window> , styl zostanie zastosowany do wszystkich `TextBlock` kontrolek w oknie, nawet jeśli `TextBlock` jest częścią innej kontrolki, takiej jak <xref:System.Windows.Controls.ListBox> .
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 <!-- - [Create a style for a control](styles-templates-create-apply-template.md) -->
 - [Przegląd zasobów XAML](xaml-resources-define.md)

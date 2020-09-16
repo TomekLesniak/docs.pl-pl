@@ -3,18 +3,18 @@ title: Programowanie funkcjonalne a bezwzględne programowanie — LINQ to XML
 description: Poznaj programowanie funkcjonalne i różnice między tradycyjnymi, niezależnymi (proceduralnymi) programowaniem.
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
-ms.openlocfilehash: d6dddab9b288cfa820aa4ed9d800c29136edf772
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: c7d16d61f9865cda7c625f91c2c822be1a327fd6
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553011"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679369"
 ---
 # <a name="functional-programming-vs-imperative-programming-linq-to-xml"></a>Programowanie funkcjonalne a programowanie bezwzględne (LINQ to XML)
 
 W tym artykule porównano i różnią się programowanie funkcjonalne z bardziej tradycyjnym, niewzględnym (proceduralnym) programowaniem.
 
-## <a name="functional-programming-vs-imperative-programming"></a>Programowanie funkcjonalne a programowanie bezwzględne
+## <a name="functional-programming-vs-imperative-programming"></a>Programowanie funkcjonalne a programowanie imperatywne
 
 Model *programowania funkcjonalnego* został jawnie utworzony w celu obsługi czystego podejścia funkcjonalnego do rozwiązywania problemów. Programowanie funkcjonalne jest formą *programowania deklaratywnego*. W przeciwieństwie do najpopularniejszych języków, w tym języków programowania zorientowanego obiektowo (OOP), takich jak C#, Visual Basic, C++ i Java, zostały zaprojektowane głównie *do obsługi* bezwzględnego (proceduralnego) programowania.
 
@@ -32,7 +32,7 @@ Chociaż większość języków została zaprojektowana do obsługi określonego
 
 ## <a name="functional-programming-using-xslt"></a>Programowanie funkcjonalne przy użyciu XSLT
 
-Wielu deweloperów XSLT potrafi poznać czyste podejście funkcjonalne. Najbardziej efektywnym sposobem na Tworzenie arkusza stylów XSLT jest traktowanie każdego szablonu jako odizolowanego, możliwego do redagowania transformacji. Kolejność wykonywania jest całkowicie niewyróżniona. XSLT nie zezwala na efekty uboczne (z wyjątkiem tego, że mechanizmy ucieczki do wykonywania kodu proceduralnego mogą wprowadzać efekty uboczne, które powodują, że nie są one czyste). Chociaż język XSLT jest skutecznym narzędziem, niektóre jego właściwości nie są optymalne. Na przykład, konstrukcje programistyczne w języku XML czynią kod stosunkowo pełny i dlatego trudno jest zachować. Ponadto duże zależności dotyczące rekursji dla sterowania przepływem mogą spowodować, że kod trudno odczytać. Aby uzyskać więcej informacji na temat XSLT, zobacz [XSLT Transformations](../../standard/data/xml/xslt-transformations.md).
+Wielu deweloperów XSLT potrafi poznać czyste podejście funkcjonalne. Najbardziej efektywnym sposobem na Tworzenie arkusza stylów XSLT jest traktowanie każdego szablonu jako odizolowanego, możliwego do redagowania transformacji. Kolejność wykonywania jest całkowicie niewyróżniona. XSLT nie zezwala na efekty uboczne (z wyjątkiem tego, że mechanizmy ucieczki do wykonywania kodu proceduralnego mogą wprowadzać efekty uboczne, które powodują, że nie są one czyste). Chociaż język XSLT jest skutecznym narzędziem, niektóre jego właściwości nie są optymalne. Na przykład, konstrukcje programistyczne w języku XML czynią kod stosunkowo pełny i dlatego trudno jest zachować. Ponadto duże zależności dotyczące rekursji dla sterowania przepływem mogą spowodować, że kod trudno odczytać. Aby uzyskać więcej informacji na temat XSLT, zobacz [XSLT Transformations](../data/xml/xslt-transformations.md).
 
 Jednak język XSLT udowadniał wartość użycia czystego podejścia funkcjonalnego do przekształcenia XML z jednego kształtu do drugiego. Czyste programowanie funkcjonalne przy użyciu LINQ to XML jest podobne do języka XSLT na wiele sposobów. Jednak konstrukcje programistyczne wprowadzone przez LINQ to XML, C# i Visual Basic umożliwiają pisanie czystych transformacji funkcjonalnych, które są bardziej czytelne i konserwowane niż XSLT.
 
@@ -54,8 +54,8 @@ W przeciwieństwie do programowania funkcjonalnego podejścia do problemów obli
 
 Na szczęście język C# i Visual Basic nie wymagają pełnego przestępności do programowania funkcjonalnego, ponieważ obsługują zarówno metody programowania zasadniczego, jak i funkcjonalnego. Deweloper może wybrać, które podejście jest najbardziej odpowiednie dla konkretnego scenariusza. W rzeczywistości programy często łączą oba podejścia.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Wprowadzenie do czystych transformacji funkcjonalnych](introduction-pure-functional-transformations.md)
+- [Wprowadzenie do czystych przekształceń funkcjonalnych](introduction-pure-functional-transformations.md)
 - [Przekształcenia XSLT](/../../standard/data/xml/xslt-transformations.md)
 - [Refaktoryzacja do czystych funkcji](refactor-pure-functions.md)

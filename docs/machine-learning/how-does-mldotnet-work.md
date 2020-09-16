@@ -4,12 +4,12 @@ description: ML.NET umożliwia dodawanie uczenia maszynowego do aplikacji .NET, 
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: 761be4001c1a7e6be8e6aeb32b1d44f0100d0bd1
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d9a218e57756ad8b95248193325e902c1798cc37
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540826"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679667"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co to jest ML.NET i jak to działa?
 
@@ -262,7 +262,7 @@ Wszystkie algorytmy również tworzą nowe kolumny po przeprowadzeniu przewidywa
 
 Więcej informacji na temat kolumn wyjściowych różnych zadań uczenia maszynowego można znaleźć w przewodniku [zadania Machine Learning](resources/tasks.md) .
 
-Ważną właściwością obiektów DataView jest to, że są one oceniane **opóźnieniem**. Widoki danych są ładowane i obsługiwane tylko podczas szkoleń i oceny modelu oraz do przewidywania danych. Podczas pisania i testowania aplikacji ML.NET można użyć debugera programu Visual Studio, aby uzyskać wgląd w dowolny obiekt widoku danych przez wywołanie metody [podglądu](xref:Microsoft.ML.DebuggerExtensions.Preview*) .
+Ważną właściwością obiektów DataView jest to, że są one oceniane **opóźnieniem**. Widoki danych są ładowane i obsługiwane tylko podczas szkoleń i oceny modelu oraz do przewidywania danych. Podczas pisania i testowania aplikacji ML.NET można użyć debugera programu Visual Studio, aby uzyskać wgląd w dowolny obiekt widoku danych przez wywołanie metody [podglądu](xref:Microsoft.ML.DebuggerExtensions.Preview%2A) .
 
 ```csharp
     var debug = testPriceDataView.Preview();

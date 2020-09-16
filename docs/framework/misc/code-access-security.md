@@ -16,12 +16,12 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: 49d55ffde3dcb88720f47af6f9702013d8a7f1ee
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: b5c32afb26c7b4bf7f8585c43ac11e57ebb5d015
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855871"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554869"
 ---
 # <a name="code-access-security"></a>Zabezpieczenia dostępu kodu
 
@@ -34,7 +34,7 @@ ms.locfileid: "87855871"
  .NET Framework zapewnia mechanizm zabezpieczeń o nazwie zabezpieczenia dostępu kodu, który pomaga chronić systemy komputerowe przed złośliwym kodem mobilnym, aby umożliwić uruchamianie kodu z nieznanych źródeł przy użyciu ochrony, a także zapobiegać celowemu lub przypadkowemu wystąpieniu naruszenia zabezpieczeń w zaufanym kodzie. Zabezpieczenia dostępu kodu umożliwiają ufanie kodowi różnym stopom w zależności od tego, skąd pochodzi kod, oraz od innych aspektów tożsamości kodu. Zabezpieczenia dostępu kodu wymuszają również różne poziomy zaufania w kodzie, co minimalizuje ilość kodu, który musi być w pełni zaufany, aby można było go uruchomić. Użycie zabezpieczeń dostępu kodu może zmniejszyć prawdopodobieństwo, że kod będzie nieużywany przez złośliwy lub niewypełniony kod. Może to zmniejszyć odpowiedzialność, ponieważ można określić zestaw operacji, które kod powinien wykonać. Zabezpieczenia dostępu kodu mogą również zminimalizować szkody, które mogą wynikać z luk w zabezpieczeniach w kodzie.  
   
 > [!NOTE]
-> Wprowadzono istotne zmiany w zabezpieczeniach dostępu kodu w .NET Framework 4. Najbardziej istotną zmianą jest [przejrzystość zabezpieczeń](security-transparent-code.md), ale istnieją również inne istotne zmiany, które wpływają na zabezpieczenia dostępu kodu. Aby uzyskać informacje o tych zmianach, zobacz [zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
+> Wprowadzono istotne zmiany w zabezpieczeniach dostępu kodu w .NET Framework 4. Najbardziej istotną zmianą jest [przejrzystość zabezpieczeń](security-transparent-code.md), ale istnieją również inne istotne zmiany, które wpływają na zabezpieczenia dostępu kodu. Aby uzyskać informacje o tych zmianach, zobacz [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes).  
   
  Zabezpieczenia dostępu kodu mają głównie wpływ na kod biblioteki i częściowo zaufane aplikacje. Deweloperzy bibliotek muszą chronić swój kod przed nieautoryzowanym dostępem z częściowo zaufanych aplikacji. Częściowo zaufane aplikacje są aplikacjami, które są ładowane ze źródeł zewnętrznych, takich jak Internet. Aplikacje zainstalowane na pulpicie lub w lokalnym intranecie działają w trybie pełnego zaufania. Zabezpieczenia dostępu kodu nie wpływają na aplikacje mające pełne zaufanie, chyba że są oznaczone jako [przezroczyste dla zabezpieczeń](security-transparent-code.md), ponieważ są w pełni zaufane. Jedynym ograniczeniem dla aplikacji w pełnym zaufaniu jest to, że aplikacje oznaczone <xref:System.Security.SecurityTransparentAttribute> atrybutem nie mogą wywołać kodu, który jest oznaczony za pomocą <xref:System.Security.SecurityCriticalAttribute> atrybutu. Częściowo zaufane aplikacje muszą być uruchamiane w piaskownicy (na przykład w programie Internet Explorer), aby można było zastosować zabezpieczenia dostępu kodu. Jeśli pobrano aplikację z Internetu i spróbujesz uruchomić ją z poziomu pulpitu, otrzymasz <xref:System.NotSupportedException> komunikat o błędzie: "podjęto próbę załadowania zestawu z lokalizacji sieciowej, która spowodowałaby, że zestaw został przetworzony w trybie piaskownicy we wcześniejszych wersjach .NET Framework. Ta wersja .NET Framework nie domyślnie włącza zasad CAS, więc to obciążenie może być niebezpieczne. Jeśli masz pewność, że aplikacja może być zaufana, możesz ją uruchomić jako pełne zaufanie przy użyciu [ \<loadFromRemoteSources> elementu](../configure-apps/file-schema/runtime/loadfromremotesources-element.md). Aby uzyskać informacje na temat uruchamiania aplikacji w piaskownicy, zobacz [How to: Run a Untrusted Code w piaskownicy](how-to-run-partially-trusted-code-in-a-sandbox.md).  
   

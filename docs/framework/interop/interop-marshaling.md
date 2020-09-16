@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interop marshaling
 - interop marshaling, about interop marshaling
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
-ms.openlocfilehash: ca733d59abc4ca3d9d470b054ee9e34b5084ae38
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bd618714a9bd27bc309b7933b656de6bd139cfe7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618977"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554895"
 ---
 # <a name="interop-marshaling"></a>Organizowanie międzyoperacyjne
 
@@ -47,8 +47,8 @@ Wyeksportowany serwer zarządzany z biblioteką typów zarejestrowanym przez [Re
 
 |Klient COM|Serwer .NET|Wymagania dotyczące organizowania|
 |----------------|-----------------|-----------------------------|
-|STA|`Both`zmieni się na STA.|Kierowanie między komórkami.|
-|MTA|`Both`przechodzi do MTA.|Kierowanie między komórkami.|
+|STA|`Both` zmieni się na STA.|Kierowanie między komórkami.|
+|MTA|`Both` przechodzi do MTA.|Kierowanie między komórkami.|
 
 Ponieważ klient i serwer znajdują się w tej samej apartamentie, usługa Marshaling Interop automatycznie obsługuje wszystkie kierowanie danych. Na poniższej ilustracji przedstawiono usługę Marshaling Interop działającą między stertami zarządzanymi i niezarządzanymi w ramach tego samego apartamentu COM.
 
@@ -79,11 +79,11 @@ W przypadku organizowania między komórkami można wykonać następujące czynn
     > [!NOTE]
     > Gdy wątek klienta C# jest ustawiony na STA, wywołania do składników COM MTA będą wymagały organizowania między komórkami.
 
-Aby uzyskać instrukcje dotyczące jawnego wybierania modelu Apartment, zobacz [wątki zarządzane i niezarządzane](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100)).
+Aby uzyskać instrukcje dotyczące jawnego wybierania modelu Apartment, zobacz [wątki zarządzane i niezarządzane](/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100)).
 
 ## <a name="marshaling-remote-calls"></a>Kierowanie zdalnych wywołań
 
-Podobnie jak w przypadku organizowania między komórkami, kierowanie odbywa się w każdym wywołaniu między kodem zarządzanym i niezarządzanym za każdym razem, gdy obiekty znajdują się w osobnych procesach. Przykład:
+Podobnie jak w przypadku organizowania między komórkami, kierowanie odbywa się w każdym wywołaniu między kodem zarządzanym i niezarządzanym za każdym razem, gdy obiekty znajdują się w osobnych procesach. Na przykład:
 
 - Klient COM, który wywołuje serwer zarządzany na hoście zdalnym, używa rozproszonego modelu COM (DCOM).
 - Zarządzany klient, który wywołuje serwer COM na hoście zdalnym, korzysta z modelu DCOM.
@@ -125,11 +125,11 @@ Niektóre niezarządzane wywołania można obsłużyć za pośrednictwem protoko
 |[Organizowanie danych za pomocą modelu COM](marshaling-data-with-com-interop.md)|Opisuje sposób dostosowywania otok COM w celu zmiany sposobu organizowania zachowań.|
 |[Instrukcje: Migrowanie zarządzanego kodu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Opisuje sposób migrowania z modelu DCOM do programu WCF.|
 |[Instrukcje: Mapowanie wyników HRESULT i wyjątków](how-to-map-hresults-and-exceptions.md)|Opisuje sposób mapowania niestandardowych wyjątków na HRESULTs i zapewnia pełne mapowanie z każdego HRESULT do jego porównywalnej klasy wyjątku w .NET Framework.|
-|[Współdziałanie przy użyciu typów ogólnych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|Opisuje, które akcje są obsługiwane w przypadku używania typów ogólnych do współdziałania z modelem COM.|
+|[Współdziałanie przy użyciu typów ogólnych](/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|Opisuje, które akcje są obsługiwane w przypadku używania typów ogólnych do współdziałania z modelem COM.|
 |[Współdziałanie z kodem niezarządzanym](index.md)|Opisuje usługi współdziałania udostępniane przez środowisko uruchomieniowe języka wspólnego.|
-|[Zaawansowana współdziałanie COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Zawiera łącza do dodatkowych informacji na temat dołączania składników COM do aplikacji .NET Framework.|
-|[Zagadnienia dotyczące projektowania operacji międzyoperacyjnych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|Zawiera wskazówki dotyczące pisania zintegrowanych składników COM.|
+|[Zaawansowana współdziałanie COM](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Zawiera łącza do dodatkowych informacji na temat dołączania składników COM do aplikacji .NET Framework.|
+|[Zagadnienia dotyczące projektowania operacji międzyoperacyjnych](/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|Zawiera wskazówki dotyczące pisania zintegrowanych składników COM.|
 
-## <a name="reference"></a>Dokumentacja
+## <a name="reference"></a>Tematy pomocy
 
 <xref:System.Runtime.InteropServices?displayProperty=nameWithType>
