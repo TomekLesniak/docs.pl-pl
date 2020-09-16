@@ -6,12 +6,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: e324b2aa968ff5fdf9c268fa3891f67e8530ff87
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 1bb494ded34065bb76b72db40375555ca1eb6953
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863985"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541854"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Konstruktory statyczne (Przewodnik programowania w języku C#)
 Statyczny Konstruktor jest używany do inicjowania wszelkich danych [statycznych](../../language-reference/keywords/static.md) lub wykonywania określonej akcji, która musi zostać wykonana tylko raz. Jest wywoływana automatycznie przed utworzeniem pierwszego wystąpienia lub odwołaniem do jakiegokolwiek statycznego członka.  
@@ -67,4 +67,4 @@ Aby uzyskać więcej informacji, zobacz sekcję [konstruktory statyczne](~/_csha
 - [Klasy statyczne i statyczni członkowie klas](./static-classes-and-static-class-members.md)
 - [Finalizatory](./destructors.md)
 - [Wytyczne dotyczące projektowania konstruktora](../../../standard/design-guidelines/constructor.md#type-constructor-guidelines)
-- [Ostrzeżenie o zabezpieczeniach — CA2121: konstruktory statyczne powinny być prywatne](https://docs.microsoft.com/visualstudio/code-quality/ca2121-static-constructors-should-be-private)
+- [Ostrzeżenie o zabezpieczeniach — CA2121: konstruktory statyczne powinny być prywatne](/visualstudio/code-quality/ca2121-static-constructors-should-be-private)

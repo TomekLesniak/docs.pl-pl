@@ -2,12 +2,12 @@
 title: ISOF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b2b0d34-d0a7-4bcd-baf2-58aa8456d00b
-ms.openlocfilehash: c4c4cbf74cb17cf43e79c42ff42d1e68122fd534
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: a0294f425552df3329d158d69a6d503b2f008780
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319717"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542336"
 ---
 # <a name="isof-entity-sql"></a>ISOF (Entity SQL)
 Określa, czy typ wyrażenia jest określonego typu czy jednego z jego podtypów.  
@@ -22,24 +22,24 @@ expression IS [ NOT ] OF ( [ ONLY ] type )
  `expression`  
  Dowolne prawidłowe wyrażenie zapytania, aby określić typ.  
   
- NIEMOŻLIWE  
+ NOT  
  Negacja modelu EDM. Wynik wartości logicznej wynosi.  
   
  JEDYN  
- Określa, że jest zwraca wartość `true` tylko wtedy, gdy `expression` jest typu `type`, a nie jednego z jego podtypów.  
+ Określa, że jest zwraca `true` tylko wtedy, gdy `expression` jest typu `type` , a nie dowolnego jednego z jego podtypów.  
   
  `type`  
- Typ, dla którego ma zostać przetestowany `expression`. Typ musi być kwalifikowaną przestrzenią nazw.  
+ Typ do przetestowania `expression` . Typ musi być kwalifikowaną przestrzenią nazw.  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `true` Jeśli `expression` jest typu T, a T jest typem podstawowym lub pochodnym typem `type`; wartość null, jeśli `expression` ma wartość null w czasie wykonywania; w przeciwnym razie `false`.  
+ `true` Jeśli `expression` parametr jest typu T i T jest typem podstawowym lub typem pochodnym `type` ; null, jeśli `expression` ma wartość null w czasie wykonywania; w przeciwnym razie `false` .  
   
 ## <a name="remarks"></a>Uwagi  
- Wyrażenia `expression IS NOT OF (type)` i `expression IS NOT OF (ONLY type)` są syntaktycznie równoważne odpowiednio `NOT (expression IS OF (type))` i `NOT (expression IS OF (ONLY type))`.  
+ Wyrażenia `expression IS NOT OF (type)` i `expression IS NOT OF (ONLY type)` są syntaktycznie równoważne z `NOT (expression IS OF (type))` i `NOT (expression IS OF (ONLY type))` , odpowiednio.  
   
- W poniższej tabeli przedstawiono zachowanie operatora `IS OF` w przypadku niektórych wzorców typowych i narożnych. Wszystkie wyjątki są zgłaszane po stronie klienta przed wywołaniem dostawcy:  
+ W poniższej tabeli przedstawiono zachowanie `IS OF` operatora w przypadku niektórych wzorców typowych i narożnych. Wszystkie wyjątki są zgłaszane po stronie klienta przed wywołaniem dostawcy:  
   
-|Wzorzec|Zachowanie|  
+|Wzorce|Zachowanie|  
 |-------------|--------------|  
 |wartość zerowa jest typu (EntityType)|Generuje|  
 |wartość zerowa jest równa (ComplexType)|Generuje|  
@@ -52,9 +52,9 @@ expression IS [ NOT ] OF ( [ ONLY ] type )
 |RowType jest (RowType)|Generuje|  
   
 ## <a name="example"></a>Przykład  
- Poniższe zapytanie [!INCLUDE[esql](../../../../../../includes/esql-md.md)] używa operatora IS, aby określić typ wyrażenia zapytania, a następnie używa operatora Traktuj do konwersji obiektu typu kursu do kolekcji obiektów typu OnsiteCourse. Zapytanie jest oparte na [modelu szkoły](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
+ Następujące [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zapytanie używa operatora is, aby określić typ wyrażenia zapytania, a następnie używa operatora Traktuj do konwersji obiektu typu kursu do kolekcji obiektów typu OnsiteCourse. Zapytanie jest oparte na [modelu szkoły](/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
   
- [! code-SQL [DP EntityServices koncepcje # TREAT_ISOF] ~/samples/snippets/tsql/VS_Snippets_Data/dp EntityServices koncepcji/TSQL/EntitySql. SQL # TREAT_ISOF)]  
+ [! code-SQL [DP EntityServices koncepcje # TREAT_ISOF] ~/Samples/Snippets/TSQL/VS_Snippets_Data/DP EntityServices koncepcje/TSQL/EntitySql. SQL # treat_isof)]  
   
 ## <a name="see-also"></a>Zobacz także
 

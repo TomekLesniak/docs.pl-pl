@@ -4,12 +4,12 @@ description: Dowiedz się więcej o zasobach XAML w WPF dla platformy .NET Core.
 author: adegeo
 ms.author: adegeo
 ms.date: 08/21/2019
-ms.openlocfilehash: f8eaf3fd931aa6804b0b9a9c19c6bcc042678ebf
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 2393b3b2fabd0e900a99bf950d30e1744c754da5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325714"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541828"
 ---
 # <a name="overview-of-xaml-resources"></a>Przegląd zasobów XAML
 
@@ -40,9 +40,9 @@ W poprzednim przykładzie, gdy moduł ładujący XAML przetwarza wartość `{Sta
 
 ## <a name="static-and-dynamic-resources"></a>Zasoby statyczne i dynamiczne
 
-Zasób może być przywoływany jako statyczny lub dynamiczny. Odwołania są tworzone przy użyciu [rozszerzenia znacznika StaticResource](../../framework/wpf/advanced/staticresource-markup-extension.md) lub [rozszerzenia znacznika DynamicResource —](../../framework/wpf/advanced/dynamicresource-markup-extension.md). Rozszerzenie znaczników jest funkcją języka XAML, która pozwala określić odwołanie do obiektu przez rozszerzenie znacznika przetwarza ciąg atrybutu i zwraca obiekt do modułu ładującego XAML. Aby uzyskać więcej informacji o zachowaniu rozszerzenia znaczników, zobacz [rozszerzenia znaczników i XAML WPF](../../framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).
+Zasób może być przywoływany jako statyczny lub dynamiczny. Odwołania są tworzone przy użyciu [rozszerzenia znacznika StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) lub [rozszerzenia znacznika DynamicResource —](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension). Rozszerzenie znaczników jest funkcją języka XAML, która pozwala określić odwołanie do obiektu przez rozszerzenie znacznika przetwarza ciąg atrybutu i zwraca obiekt do modułu ładującego XAML. Aby uzyskać więcej informacji o zachowaniu rozszerzenia znaczników, zobacz [rozszerzenia znaczników i XAML WPF](/dotnet/desktop/wpf/advanced/markup-extensions-and-wpf-xaml).
 
-W przypadku korzystania z rozszerzenia znacznika zazwyczaj w postaci ciągu jest tworzony jeden lub więcej parametrów, które są przetwarzane przez określone rozszerzenie znacznika. [Rozszerzenie znacznika StaticResource](../../framework/wpf/advanced/staticresource-markup-extension.md) przetwarza klucz, wyszukując wartość tego klucza we wszystkich dostępnych słownikach zasobów. Przetwarzanie odbywa się podczas ładowania, czyli gdy proces ładowania musi przypisać wartość właściwości. [Rozszerzenie znacznika DynamicResource —](../../framework/wpf/advanced/dynamicresource-markup-extension.md) zamiast tego przetwarza klucz przez utworzenie wyrażenia, a to wyrażenie nie jest oceniane do momentu uruchomienia aplikacji, podczas której wyrażenie jest oceniane i zawiera wartość.
+W przypadku korzystania z rozszerzenia znacznika zazwyczaj w postaci ciągu jest tworzony jeden lub więcej parametrów, które są przetwarzane przez określone rozszerzenie znacznika. [Rozszerzenie znacznika StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) przetwarza klucz, wyszukując wartość tego klucza we wszystkich dostępnych słownikach zasobów. Przetwarzanie odbywa się podczas ładowania, czyli gdy proces ładowania musi przypisać wartość właściwości. [Rozszerzenie znacznika DynamicResource —](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) zamiast tego przetwarza klucz przez utworzenie wyrażenia, a to wyrażenie nie jest oceniane do momentu uruchomienia aplikacji, podczas której wyrażenie jest oceniane i zawiera wartość.
 
 W przypadku odwoływania się do zasobu następujące zagadnienia mogą mieć wpływ na to, czy jest używane odwołanie do zasobu statycznego, czy odwołanie do zasobu dynamicznego:
 
@@ -138,7 +138,7 @@ Odwołania do zasobów dynamicznych mają pewne istotne ograniczenia. Musi być 
 
 - Ustawiana właściwość musi być właściwością <xref:System.Windows.Freezable> , która jest podana jako wartość <xref:System.Windows.FrameworkElement> właściwości lub lub <xref:System.Windows.FrameworkContentElement> <xref:System.Windows.Setter> wartość.
 
-Ponieważ właściwość ustawiana musi być <xref:System.Windows.DependencyProperty> <xref:System.Windows.Freezable> właściwością lub, większość zmian właściwości można propagować do interfejsu użytkownika, ponieważ zmiana właściwości (zmieniona dynamiczna wartość zasobu) jest potwierdzana przez system właściwości. Większość formantów obejmuje logikę, która wymusić inny układ kontrolki, jeśli <xref:System.Windows.DependencyProperty> zmiany i właściwości mogą mieć wpływ na układ. Jednak nie wszystkie właściwości, które mają [rozszerzenie znacznika DynamicResource —](../../framework/wpf/advanced/dynamicresource-markup-extension.md) jako ich wartość, są gwarantowane w celu zapewnienia aktualizacji w czasie rzeczywistym w interfejsie użytkownika. Ta funkcja nadal może różnić się w zależności od właściwości, a także w zależności od typu będącego właścicielem właściwości, a nawet logicznej struktury aplikacji.
+Ponieważ właściwość ustawiana musi być <xref:System.Windows.DependencyProperty> <xref:System.Windows.Freezable> właściwością lub, większość zmian właściwości można propagować do interfejsu użytkownika, ponieważ zmiana właściwości (zmieniona dynamiczna wartość zasobu) jest potwierdzana przez system właściwości. Większość formantów obejmuje logikę, która wymusić inny układ kontrolki, jeśli <xref:System.Windows.DependencyProperty> zmiany i właściwości mogą mieć wpływ na układ. Jednak nie wszystkie właściwości, które mają [rozszerzenie znacznika DynamicResource —](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) jako ich wartość, są gwarantowane w celu zapewnienia aktualizacji w czasie rzeczywistym w interfejsie użytkownika. Ta funkcja nadal może różnić się w zależności od właściwości, a także w zależności od typu będącego właścicielem właściwości, a nawet logicznej struktury aplikacji.
 
 ## <a name="styles-datatemplates-and-implicit-keys"></a>Style, datatemplates i klucze niejawne
 
@@ -154,17 +154,17 @@ Ten styl naprawdę ma klucz: klucz niejawny `typeof(System.Windows.Controls.Butt
 
 Za pomocą domyślnych mechanizmów stylu motywu używanych przez WPF, ten styl jest stosowany jako styl środowiska uruchomieniowego <xref:System.Windows.Controls.Button> na stronie, nawet jeśli <xref:System.Windows.Controls.Button> sam nie próbuje określić jego <xref:System.Windows.FrameworkElement.Style%2A> właściwości lub określonego odwołania do zasobu w stylu. Styl zdefiniowany na stronie znajduje się wcześniej w sekwencji wyszukiwania niż styl słownika motywu, przy użyciu tego samego klucza, który ma styl słownika motywu. Można tylko określić `<Button>Hello</Button>` dowolne miejsce na stronie, a styl zdefiniowany za pomocą <xref:System.Windows.Style.TargetType%2A> elementu `Button` zostałby zastosowany do tego przycisku. Jeśli chcesz, możesz nadal jawnie utworzyć klucz stylu z taką samą wartością typu jak <xref:System.Windows.Style.TargetType%2A> dla jasności w znaczniku, ale jest to opcjonalne.
 
-Niejawne klucze dla stylów nie mają zastosowania w kontrolce if <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> is `true` . (Należy również zauważyć, że <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> może być ustawiony jako część zachowania natywnego dla klasy kontrolki, zamiast jawnie na wystąpieniu kontrolki). Ponadto, aby zapewnić obsługę kluczy niejawnych dla scenariuszy klas pochodnych, formant musi przesłonić <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> (wszystkie istniejące kontrolki dostarczane jako część WPF obejmują to zastąpienie). Aby uzyskać więcej informacji na temat stylów, motywów i projektu kontrolki, zobacz [wytyczne dotyczące projektowania formantów określonych stylach](../../framework/wpf/controls/guidelines-for-designing-stylable-controls.md).
+Niejawne klucze dla stylów nie mają zastosowania w kontrolce if <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> is `true` . (Należy również zauważyć, że <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> może być ustawiony jako część zachowania natywnego dla klasy kontrolki, zamiast jawnie na wystąpieniu kontrolki). Ponadto, aby zapewnić obsługę kluczy niejawnych dla scenariuszy klas pochodnych, formant musi przesłonić <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> (wszystkie istniejące kontrolki dostarczane jako część WPF obejmują to zastąpienie). Aby uzyskać więcej informacji na temat stylów, motywów i projektu kontrolki, zobacz [wytyczne dotyczące projektowania formantów określonych stylach](/dotnet/desktop/wpf/controls/guidelines-for-designing-stylable-controls).
 
-<xref:System.Windows.DataTemplate>ma także klucz niejawny. Klucz niejawny elementu a <xref:System.Windows.DataTemplate> jest <xref:System.Windows.DataTemplate.DataType%2A> wartością właściwości. <xref:System.Windows.DataTemplate.DataType%2A>można również określić jako nazwę typu, zamiast jawnie używać [{x:Type...}](../xaml-services/xtype-markup-extension.md). Aby uzyskać szczegółowe informacje, zobacz [tworzenia szablonów danych — omówienie](../../framework/wpf/data/data-templating-overview.md).
+<xref:System.Windows.DataTemplate> ma także klucz niejawny. Klucz niejawny elementu a <xref:System.Windows.DataTemplate> jest <xref:System.Windows.DataTemplate.DataType%2A> wartością właściwości. <xref:System.Windows.DataTemplate.DataType%2A> można również określić jako nazwę typu, zamiast jawnie używać [{x:Type...}](../xaml-services/xtype-markup-extension.md). Aby uzyskać szczegółowe informacje, zobacz [tworzenia szablonów danych — omówienie](/dotnet/desktop/wpf/data/data-templating-overview).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Windows.ResourceDictionary>
-- [Zasoby aplikacji](../../framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Zasoby i kod](../../framework/wpf/advanced/resources-and-code.md)
-- [Definiowanie zasobu i odwoływanie się do niego](../../framework/wpf/advanced/how-to-define-and-reference-a-resource.md)
-- [Omówienie zarządzania aplikacjami](../../framework/wpf/app-development/application-management-overview.md)
+- [Zasoby aplikacji](/dotnet/desktop/wpf/advanced/optimizing-performance-application-resources)
+- [Zasoby i kod](/dotnet/desktop/wpf/advanced/resources-and-code)
+- [Definiowanie zasobu i odwoływanie się do niego](/dotnet/desktop/wpf/advanced/how-to-define-and-reference-a-resource)
+- [Omówienie zarządzania aplikacjami](/dotnet/desktop/wpf/app-development/application-management-overview)
 - [X:Type — — rozszerzenie znaczników](../xaml-services/xtype-markup-extension.md)
-- [StaticResource — Rozszerzenie znaczników](../../framework/wpf/advanced/staticresource-markup-extension.md)
-- [DynamicResource — — Rozszerzenie znaczników](../../framework/wpf/advanced/dynamicresource-markup-extension.md)
+- [StaticResource — Rozszerzenie znaczników](/dotnet/desktop/wpf/advanced/staticresource-markup-extension)
+- [DynamicResource — — Rozszerzenie znaczników](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension)

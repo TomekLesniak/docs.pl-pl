@@ -3,12 +3,12 @@ title: Powiadomienia zapytań w programie SQL Server
 description: Informacje na temat używania powiadomień o zapytaniach w celu powiadomienia aplikacji o zmianie danych w bazie danych SQL Server, na przykład w celu odświeżenia wyświetlania aplikacji.
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: 1351c83b6cc5837115321d53e8779c0f364c3099
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 43b496db74f7e6fc9bc9f17d946bf34398b32312
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286226"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543988"
 ---
 # <a name="query-notifications-in-sql-server"></a>Powiadomienia zapytań w programie SQL Server
 W oparciu o infrastrukturę Service Broker powiadomienia o zapytaniach umożliwiają powiadamianie aplikacji o zmianach danych. Ta funkcja jest szczególnie przydatna w przypadku aplikacji, które udostępniają pamięć podręczną informacji z bazy danych, takiej jak aplikacja sieci Web, i należy powiadamiać o zmianach danych źródłowych.  
@@ -25,19 +25,19 @@ W oparciu o infrastrukturę Service Broker powiadomienia o zapytaniach umożliwi
   
  Możesz skonfigurować powiadomienia dla instrukcji SELECT i EXECUTE. Przy użyciu instrukcji EXECUTE SQL Server rejestruje powiadomienie dla wykonywanego polecenia, a nie samą instrukcję EXECUTE. Polecenie musi spełniać wymagania i ograniczenia dotyczące instrukcji SELECT. Gdy polecenie rejestrujące powiadomienie zawiera więcej niż jedną instrukcję, aparat bazy danych tworzy powiadomienie dla każdej instrukcji w partii.  
   
- Jeśli tworzysz aplikację, w której potrzebujesz niezawodnych powiadomień podrzędnych w przypadku zmiany danych, zapoznaj się z sekcją **Planowanie wydajnej strategii powiadomień o zapytaniach** i **alternatywy do wysyłania zapytań do powiadomień** w artykule [Planowanie powiadomień](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms187528(v=sql.105)) . Aby uzyskać więcej informacji na temat powiadomień o zapytaniach i SQL Server Service Broker, zobacz następujące linki do artykułów w dokumentacji SQL Server.  
+ Jeśli tworzysz aplikację, w której potrzebujesz niezawodnych powiadomień podrzędnych w przypadku zmiany danych, zapoznaj się z sekcją **Planowanie wydajnej strategii powiadomień o zapytaniach** i **alternatywy do wysyłania zapytań do powiadomień** w artykule [Planowanie powiadomień](/previous-versions/sql/sql-server-2008-r2/ms187528(v=sql.105)) . Aby uzyskać więcej informacji na temat powiadomień o zapytaniach i SQL Server Service Broker, zobacz następujące linki do artykułów w dokumentacji SQL Server.  
   
- **SQL Server documentation (Dokumentacja programu SQL Server)**  
+ **Dokumentacja SQL Server**  
   
-- [Korzystanie z powiadomień o zapytaniach](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms175110(v=sql.105))  
+- [Korzystanie z powiadomień o zapytaniach](/previous-versions/sql/sql-server-2008-r2/ms175110(v=sql.105))  
   
-- [Tworzenie zapytania dla powiadomienia](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
+- [Tworzenie zapytania dla powiadomienia](/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
   
-- [Programowanie (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522889(v=sql.105))  
+- [Programowanie (Service Broker)](/previous-versions/sql/sql-server-2008-r2/bb522889(v=sql.105))  
   
-- [Service Broker Developer InfoCenter](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
+- [Service Broker Developer InfoCenter](/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
   
-- [Przewodnik dewelopera (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
+- [Przewodnik dewelopera (Service Broker)](/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="in-this-section"></a>W tej sekcji  
  [Włączanie powiadomień o zapytaniach](enabling-query-notifications.md)  
@@ -52,7 +52,7 @@ W oparciu o infrastrukturę Service Broker powiadomienia o zapytaniach umożliwi
  [Wykonywanie polecenia SqlCommand za pomocą SqlNotificationRequest](sqlcommand-execution-with-a-sqlnotificationrequest.md)  
  Demonstruje Konfigurowanie <xref:System.Data.SqlClient.SqlCommand> obiektu do pracy z powiadomieniem o zapytaniach.  
   
-## <a name="reference"></a>Dokumentacja  
+## <a name="reference"></a>Tematy pomocy  
  <xref:System.Data.Sql.SqlNotificationRequest>  
  Opisuje <xref:System.Data.Sql.SqlNotificationRequest> klasę i wszystkich jej członków.  
   

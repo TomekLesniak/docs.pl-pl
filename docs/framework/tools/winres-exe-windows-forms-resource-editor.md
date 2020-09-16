@@ -12,12 +12,12 @@ helpviewer_keywords:
 - resx files
 - .resx files
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
-ms.openlocfilehash: 8393eb44246ed1bbc0e4e6acc84ad7bd57041ec0
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 35d1324d5ea7a72ffd5ea594530d1312e717cd7c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87516908"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543228"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Edytor lokalizacji zasobów systemu Windows)
 
@@ -52,7 +52,7 @@ Stan elementów interfejsu użytkownika z formularza w projekcie programu Window
 
 - Plik zasobów kultury można zapisać jako inny plik zasobów kultury. Na przykład plik zasobów Angielski (USA) można zapisać jako plik zasobów Polski. Zazwyczaj nowy plik będzie można później edytować, aby był zgodny z nową kulturą.
 
-Zapoznaj się również [z hierarchiczną organizacją zasobów dla lokalizacji](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/756hydy4(v=vs.110)) lub [hierarchicznej organizacji zasobów do lokalizacji](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/756hydy4(v=vs.120)).
+Zapoznaj się również [z hierarchiczną organizacją zasobów dla lokalizacji](/previous-versions/visualstudio/visual-studio-2012/756hydy4(v=vs.110)) lub [hierarchicznej organizacji zasobów do lokalizacji](/previous-versions/visualstudio/visual-studio-2013/756hydy4(v=vs.120)).
 
 Winres.exe nie może skonwertować pliku resx na odpowiedni plik resources; użyj narzędzia Resgen.exe. Aby uzyskać więcej informacji na temat Resgen.exe, zobacz [Resgen.exe (Generator plików zasobów)](resgen-exe-resource-file-generator.md).
 
@@ -91,11 +91,11 @@ Należy użyć wersji Winres.exe wydanej przy użyciu .NET Framework. W poniższ
 
 |Visual Studio|.NET Framework|Winres.exe|
 |-------------------|--------------------|----------------|
-|Visual Studio .NET 2002|1.0|1.0|
-|Visual Studio .NET 2003|1.1|1.1|
+|Visual Studio .NET 2002|1,0|1,0|
+|Visual Studio .NET 2003|1,1|1,1|
 |Visual Studio 2005|2,0|2,0|
 |Visual Studio 2008|3.0 i 3.5|3.0 i 3.5|
-|Visual Studio 2010|4.0|4.0|
+|Visual Studio 2010|4,0|4,0|
 |Visual Studio 2017|4,6|4,6|
 
 > [!NOTE]

@@ -2,12 +2,12 @@
 title: Zaufana usługa fasady
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: e7aa5e96fb8104c8140a8cebc6be45d2000821aa
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e9459b4cc26ef85adcc59c308d92491fd2d3acba
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591322"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544183"
 ---
 # <a name="trusted-facade-service"></a>Zaufana usługa fasady
 W tym scenariuszu przedstawiono sposób przepływu informacji o tożsamości wywołującego z jednej usługi do innej przy użyciu infrastruktury zabezpieczeń Windows Communication Foundation (WCF).  
@@ -230,13 +230,13 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- Plik wsadowy Setup. bat dołączony do zaufanego przykładowego scenariusza zaufana fasady umożliwia skonfigurowanie serwera z odpowiednim certyfikatem w celu uruchomienia usługi fasady wymagającej zabezpieczeń opartych na certyfikatach do samodzielnego uwierzytelnienia klienta. Aby uzyskać szczegółowe informacje, zobacz procedurę instalacji na końcu tego tematu.  
+ Plik wsadowy Setup.bat dołączony do przykładu zaufanego scenariusza zaufana fasady umożliwia skonfigurowanie serwera z odpowiednim certyfikatem w celu uruchomienia usługi fasady wymagającej zabezpieczeń opartych na certyfikatach do samodzielnego uwierzytelnienia klienta. Aby uzyskać szczegółowe informacje, zobacz procedurę instalacji na końcu tego tematu.  
   
  Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych.  
   
 - Tworzenie certyfikatu serwera.  
   
-     Poniższe wiersze z pliku wsadowego Setup. bat tworzą certyfikat serwera do użycia.  
+     Poniższe wiersze z pliku wsadowego Setup.bat utworzyć certyfikat serwera do użycia.  
   
     ```console  
     echo ************  
@@ -252,7 +252,7 @@ Press <ENTER> to terminate client.
   
 - Instalowanie certyfikatu usługi elewacji w zaufanym magazynie certyfikatów klienta.  
   
-     Poniższy wiersz umożliwia skopiowanie certyfikatu usługi elewacji do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert. exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.  
+     Poniższy wiersz umożliwia skopiowanie certyfikatu usługi elewacji do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.  
   
     ```console  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
@@ -266,21 +266,21 @@ Press <ENTER> to terminate client.
   
 #### <a name="to-run-the-sample-on-the-same-machine"></a>Aby uruchomić przykład na tym samym komputerze  
   
-1. Upewnij się, że ścieżka zawiera folder, w którym znajduje się Makecert. exe.  
+1. Upewnij się, że ścieżka zawiera folder, w którym znajduje się Makecert.exe.  
   
-2. Uruchom setup. bat z przykładowego folderu instalacyjnego. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.  
+2. Uruchom Setup.bat z przykładowego folderu instalacyjnego. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.  
   
-3. Uruchom BackendService. exe z katalogu \BackendService\bin w osobnym oknie konsoli  
+3. Uruchom BackendService.exe z katalogu \BackendService\bin w osobnym oknie konsoli  
   
-4. Uruchom FacadeService. exe z katalogu \FacadeService\bin w osobnym oknie konsoli  
+4. Uruchom FacadeService.exe z katalogu \FacadeService\bin w osobnym oknie konsoli  
   
-5. Uruchamianie programu Client. exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
+5. Uruchom Client.exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.  
   
-6. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+6. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Aby wyczyścić po przykładzie  
   
-1. Uruchom Oczyść. bat w folderze Samples po zakończeniu uruchamiania przykładu.  
+1. Uruchom Cleanup.bat w folderze Samples po zakończeniu uruchamiania przykładu.  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  
@@ -289,4 +289,4 @@ Press <ENTER> to terminate client.
 >
 > Jeśli ten katalog nie istnieje, przejdź do [przykładów Windows Communication Foundation (WCF) i Windows Workflow Foundation (WF) dla .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) , aby pobrać wszystkie Windows Communication Foundation (WCF) i [!INCLUDE[wf1](../../../../includes/wf1-md.md)] przykłady. Ten przykład znajduje się w następującym katalogu.  
 >
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`

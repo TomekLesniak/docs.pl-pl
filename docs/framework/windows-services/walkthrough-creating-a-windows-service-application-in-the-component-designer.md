@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 487a974af2280a02b83fe685324c9464df705585
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 04f27729b5713c325a73cbdeb1c6c673fe749c00
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925634"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544209"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Samouczek: Tworzenie aplikacji usługi systemu Windows
 
@@ -471,7 +471,7 @@ Każda usługa systemu Windows ma wpis rejestru w podkluczu **HKEY_LOCAL_MACHINE
 
 Teraz, gdy została skompilowana usługa systemu Windows, możesz ją zainstalować. Aby zainstalować usługę systemu Windows, musisz mieć poświadczenia administratora na komputerze, na którym jest zainstalowany.
 
-1. Otwórz [wiersz polecenia dla deweloperów dla programu Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs) z poświadczeniami administracyjnymi. Z menu **Start** systemu Windows wybierz opcję **wiersz polecenia dla deweloperów dla programu vs 2017** w folderze Visual Studio, a następnie wybierz pozycję **więcej**  >  **Uruchom jako administrator** z menu skrótów.
+1. Otwórz [wiersz polecenia dla deweloperów dla programu Visual Studio](../tools/developer-command-prompt-for-vs.md) z poświadczeniami administracyjnymi. Z menu **Start** systemu Windows wybierz opcję **wiersz polecenia dla deweloperów dla programu vs 2017** w folderze Visual Studio, a następnie wybierz pozycję **więcej**  >  **Uruchom jako administrator** z menu skrótów.
 
 2. W oknie **wiersz polecenia dla deweloperów dla programu Visual Studio** przejdź do folderu, który zawiera dane wyjściowe projektu (domyślnie podkatalog *\bin\debug* projektu).
 

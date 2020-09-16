@@ -158,22 +158,22 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-ms.openlocfilehash: 1b44273bd5a8868ba426d9ac0eabbefcb725e70f
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 2c0b4a6f1f10f0c575b3f5a1aeb9baffa74dba17
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325612"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543254"
 ---
 # <a name="winmdexpexe-error-messages"></a>Winmdexp.exe — komunikaty o błędach
 
 Proces kompilacji wywołuje [Winmdexp.exe (narzędzie do eksportu metadanych środowisko wykonawcze systemu Windows)](winmdexp-exe-windows-runtime-metadata-export-tool.md) w przypadku używania szablonu **składnika Środowisko wykonawcze systemu Windows** w programie Visual Studio 2012, dlatego Winmdexp.exe komunikaty o błędach pojawiają się w **Lista błędów**. Winmdexp.exe działa na module, który jest kompilowany przy użyciu `/target:winmdobj` opcji. Ponieważ wymaga skompilowanego modułu jako dane wejściowe, jego komunikaty o błędach nie są wyświetlane, chyba że kompilacja zakończy się pomyślnie.  
   
- Komunikaty o błędach zostały zaprojektowane tak, aby zawierały wszystkie informacje potrzebne do rozwiązania warunków błędów zgłaszanych przez użytkownika. Jednak niektóre problemy wymagają więcej informacji niż mieści się w komunikacie. Dodatkowe informacje można znaleźć w temacie [diagnozowanie warunków błędów składników Środowisko wykonawcze systemu Windows](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
+ Komunikaty o błędach zostały zaprojektowane tak, aby zawierały wszystkie informacje potrzebne do rozwiązania warunków błędów zgłaszanych przez użytkownika. Jednak niektóre problemy wymagają więcej informacji niż mieści się w komunikacie. Dodatkowe informacje można znaleźć w temacie [diagnozowanie warunków błędów składników Środowisko wykonawcze systemu Windows](/previous-versions/hh977010(v=vs.110)).  
   
  Jeśli błąd nie został omówiony w tym artykule i uważasz, że komunikat nie zawiera wystarczających informacji, aby rozwiązać problem, Użyj linku opinii w tym artykule i Dołącz komunikat o błędzie. Alternatywnie możesz zgłosić błąd w [witrynie internetowej społeczności deweloperów](https://developercommunity.visualstudio.com/). Możesz również wyszukać więcej informacji na [forach firmy Microsoft](https://social.msdn.microsoft.com/Forums/).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Winmdexp.exe (narzędzie do eksportu metadanych środowisko wykonawcze systemu Windows)](winmdexp-exe-windows-runtime-metadata-export-tool.md)
-- [Diagnozowanie warunków błędów składników środowisko wykonawcze systemu Windows](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))
+- [Diagnozowanie warunków błędów składników środowisko wykonawcze systemu Windows](/previous-versions/hh977010(v=vs.110))

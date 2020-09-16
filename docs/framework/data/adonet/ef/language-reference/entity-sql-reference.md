@@ -1,73 +1,73 @@
 ---
-title: Odwołanie do jednostki SQL
+title: Informacje Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
-ms.openlocfilehash: 9b666b83674cb2374409e321a2b715e9910bdd0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 987aa5c05b88d684e050721077d704b29e546aab
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034271"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542127"
 ---
-# <a name="entity-sql-reference"></a>Odwołanie do jednostki SQL
+# <a name="entity-sql-reference"></a>Informacje Entity SQL
 
-Ta sekcja zawiera artykuły odwołanie do jednostki SQL. Ten artykuł zawiera podsumowanie i grupy operatorów SQL jednostek według kategorii.
+Ta sekcja zawiera Entity SQL artykułów referencyjnych. Ten artykuł podsumowuje i grupuje operatory Entity SQL według kategorii.
 
 ## <a name="arithmetic-operators"></a>Operatory arytmetyczne
 
-Operatory arytmetyczne wykonywania operacji matematycznych na dwóch wyrażeniach co najmniej jeden typ danych liczbowych. W poniższej tabeli wymieniono operatory arytmetyczne jednostki SQL:
+Operatory arytmetyczne wykonują operacje matematyczne na dwóch wyrażeniach z co najmniej jednym typem danych liczbowych. W poniższej tabeli wymieniono operatory arytmetyczne Entity SQL:
 
 |Operator|Zastosowanie|
 |--------------|---------|
-|[+ (Dodaj)](add.md)|Dodatek.|
-|[/ (Dzielenie)](divide-entity-sql.md)|Dzielenie.|
+|[+ (Dodaj)](add.md)|Dodatkowo.|
+|[/ (Dzielenie)](divide-entity-sql.md)|Przegrod.|
 |[% (Modulo)](modulo-entity-sql.md)|Zwraca resztę z dzielenia.|
 |[* (Mnożenie)](multiply-entity-sql.md)|Mnożenia.|
-|[- (Ujemne)](negative-entity-sql.md)|Negacja.|
-|[- (Odejmowanie)](subtract-entity-sql.md)|Odejmowanie.|
+|[- (Ujemne)](negative-entity-sql.md)|Negacji.|
+|[- (Odejmowanie)](subtract-entity-sql.md)|Odejmowania.|
 
-## <a name="canonical-functions"></a>Funkcje Canonical
+## <a name="canonical-functions"></a>Funkcje kanoniczne
 
-Funkcje Canonical są obsługiwane przez wszystkich dostawców danych i mogą być używane przez wszystkie technologie zapytań. W poniższej tabeli wymieniono funkcje canonical:
+Funkcje kanoniczne są obsługiwane przez wszystkich dostawców danych i mogą być używane przez wszystkie technologie zapytań. W poniższej tabeli wymieniono funkcje kanoniczne:
 
 |Funkcja|Typ|
 |--------------|----------|
-|[Funkcje Canonical agregacji jednostki SQL](aggregate-canonical-functions.md)|W tym artykule omówiono funkcje agregujące canonical jednostki SQL.|
-|[Funkcje matematyczne Canonical](math-canonical-functions.md)|W tym artykule omówiono funkcje matematyczne jednostki SQL canonical.|
-|[Funkcje ciągów Canonical](string-canonical-functions.md)|W tym artykule omówiono funkcje canonical ciągów SQL jednostki.|
-|[Funkcji daty i godziny Canonical](date-and-time-canonical-functions.md)|W tym artykule omówiono funkcje canonical jednostki SQL daty i godziny.|
-|[Funkcje bitowe Canonical](bitwise-canonical-functions.md)|W tym artykule omówiono bitowe funkcje canonical jednostki SQL.|
-|[Inne funkcje Canonical](other-canonical-functions.md)|W tym artykule omówiono funkcje nie sklasyfikowane jako bitowe, daty/godziny, ciąg, matematyczne lub agregacji.|
+|[Agreguj Entity SQL funkcje kanoniczne](aggregate-canonical-functions.md)|Omawia funkcje agregujące Entity SQL w postaci kanonicznej.|
+|[Funkcje matematyczne Canonical](math-canonical-functions.md)|Omawia Entity SQL funkcje kanoniczne matematyczne.|
+|[Funkcje ciągów Canonical](string-canonical-functions.md)|Omawia ciąg Entity SQL funkcje kanoniczne.|
+|[Funkcji daty i godziny Canonical](date-and-time-canonical-functions.md)|Omawia datę i godzinę Entity SQL funkcje kanoniczne.|
+|[Funkcje bitowe Canonical](bitwise-canonical-functions.md)|Omawia bitowe Entity SQL funkcje kanoniczne.|
+|[Inne funkcje Canonical](other-canonical-functions.md)|Omawia funkcje niesklasyfikowane jako bitowe, daty/godziny, String, Math lub Aggregate.|
 
 ## <a name="comparison-operators"></a>Operatory porównania
 
-Operatory porównania są zdefiniowane dla następujących typów: `Byte`, `Int16`, `Int32`, `Int64`, `Double`, `Single`, `Decimal`, `String`, `DateTime`, `Date`, `Time` , `DateTimeOffset`. Promocja typu niejawnego występuje operandy przed zastosowaniem operatora porównania. Operatory porównania zawsze zwracać wartości logiczne. Gdy co najmniej jeden z operandów jest `null`, wynik jest `null`.
+Operatory porównania są zdefiniowane dla następujących typów:,,,,,,,,,, `Byte` `Int16` `Int32` `Int64` `Double` `Single` `Decimal` `String` `DateTime` `Date` `Time` , `DateTimeOffset` . Niejawna Promocja typu występuje dla operandów przed zastosowaniem operatora porównania. Operatory porównania zawsze zwracają wartości logiczne. Gdy co najmniej jeden z operandów ma wartość `null` , wynik jest `null` .
 
-Równość i nierówność, które są zdefiniowane dla dowolnego typu obiektu, który ma tożsamości, takie jak `Boolean` typu. Inne niż podstawowego obiektów przy użyciu tożsamości są traktowane jako równe, jeśli użytkownicy udostępniają pliki tej samej tożsamości. W poniższej tabeli wymieniono operatory porównania jednostki SQL:
-
-|Operator|Opis|
-|--------------|-----------------|
-|[= (Równa się)](equals-entity-sql.md)|Porównanie równości dwóch wyrażeń.|
-|[> (Większe niż)](greater-than-entity-sql.md)|Porównuje dwa wyrażenia w celu określenia, czy lewe wyrażenie ma wartość większą niż wyrażenie prawej krawędzi.|
-|[>= (Większe niż lub równe)](greater-than-or-equal-to-entity-sql.md)|Porównuje dwa wyrażenia w celu określenia, czy lewe wyrażenie ma wartość większą niż lub równa wyrażenie prawej krawędzi.|
-|[JEST \[NIE\] O WARTOŚCI NULL](isnull-entity-sql.md)|Określa, czy wyrażenie zapytania o wartości null.|
-|[< (Mniejsze niż)](less-than-entity-sql.md)|Porównuje dwa wyrażenia w celu określenia, czy lewe wyrażenie ma wartość mniejszą niż wyrażenie prawej krawędzi.|
-|[<= (Mniejsze niż lub równe)](less-than-or-equal-to-entity-sql.md)|Porównuje dwa wyrażenia, aby ustalić, czy lewe wyrażenie ma wartość mniejszą niż lub równe wyrażenie prawej krawędzi.|
-|[\[NIE\] BETWEEN](between-entity-sql.md)|Określa, czy wynikiem wyrażenia wartości w określonym zakresie.|
-|[\!= (Nie równa się)](not-equal-to-entity-sql.md)|Porównuje dwa wyrażenia w celu określenia, czy po lewej stronie wyrażenia nie jest równa wyrażenie prawej krawędzi.|
-|[\[NIE\] NP.](like-entity-sql.md)|Określa, czy dany ciąg znaków pasuje do określonego wzorca.|
-
-## <a name="logical-and-case-expression-operators"></a>Operatory wyrażeń logicznych i wielkości liter
-
-Operatory logiczne przetestować prawdziwość tego warunku. Wyrażenie CASE obliczenie zestawu wyrażeń logicznych w celu określenia wyniku. W poniższej tabeli wymieniono operatory wyrażeń logicznych i wielkości liter:
+Równość i nierówność są zdefiniowane dla dowolnego typu obiektu, który ma tożsamość, taką jak `Boolean` Typ. Obiekty inne niż pierwotne z tożsamością są uważane za równe, jeśli korzystają z tej samej tożsamości. W poniższej tabeli wymieniono Entity SQL operatory porównania:
 
 |Operator|Opis|
 |--------------|-----------------|
-|[& & (Operator logiczny oraz)](and-entity-sql.md)|Operatora logicznego AND.|
-|[\! (Logiczne NOT)](not-entity-sql.md)|Logiczne NOT.|
-|[&#124;&#124;(Operator logiczny lub)](or-entity-sql.md)|Logiczne OR.|
-|[CASE](case-entity-sql.md)|Obliczenie zestawu wyrażeń logicznych w celu określenia wyniku.|
-|[THEN](then-entity-sql.md)|Wynik [podczas](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb387119(v=vs.100)) klauzuli, gdy jest spełniony.|
+|[= (Równa się)](equals-entity-sql.md)|Porównuje równość dwóch wyrażeń.|
+|[> (Większe niż)](greater-than-entity-sql.md)|Porównuje dwa wyrażenia, aby określić, czy lewe wyrażenie ma wartość większą niż prawo wyrażenie.|
+|[>= (Większe niż lub równe)](greater-than-or-equal-to-entity-sql.md)|Porównuje dwa wyrażenia, aby określić, czy lewe wyrażenie ma wartość większą lub równą prawemu wyrażeniu.|
+|[\[nie ma \] wartości null](isnull-entity-sql.md)|Określa, czy wyrażenie zapytania ma wartość null.|
+|[< (Mniejsze niż)](less-than-entity-sql.md)|Porównuje dwa wyrażenia, aby określić, czy lewe wyrażenie ma wartość mniejszą niż prawo wyrażenie.|
+|[<= (Mniejsze niż lub równe)](less-than-or-equal-to-entity-sql.md)|Porównuje dwa wyrażenia, aby określić, czy lewe wyrażenie ma wartość mniejszą lub równą prawemu wyrażeniu.|
+|[\[NIE \] pomiędzy](between-entity-sql.md)|Określa, czy wynikiem wyrażenia jest wartość w określonym zakresie.|
+|[\!= (Nie równa się)](not-equal-to-entity-sql.md)|Porównuje dwa wyrażenia, aby określić, czy lewe wyrażenie nie jest równe wyrażeniu z prawej strony.|
+|[\[NIE \] przypomina](like-entity-sql.md)|Określa, czy określony ciąg znaków jest zgodny z określonym wzorcem.|
+
+## <a name="logical-and-case-expression-operators"></a>Operatory wyrażenia logicznego i Case
+
+Test operatorów logicznych dla prawdy warunku. Wyrażenie CASE oblicza zestaw wyrażeń logicznych, aby określić wynik. W poniższej tabeli wymieniono operatory logiczne i wyrażenia CASE:
+
+|Operator|Opis|
+|--------------|-----------------|
+|[&&  (koniunkcja logiczna i)](and-entity-sql.md)|Koniunkcja logiczna i.|
+|[\! (Logiczne NOT)](not-entity-sql.md)|NIE ma logicznego.|
+|[&#124;&#124;  (logiczne lub)](or-entity-sql.md)|Logiczne OR.|
+|[SPRAW](case-entity-sql.md)|Oblicza zestaw wyrażeń logicznych, aby określić wynik.|
+|[NASTĘPNIE](then-entity-sql.md)|Wynik klauzuli [when](/previous-versions/dotnet/netframework-4.0/bb387119(v=vs.100)) , gdy wartość jest równa true.|
 
 ## <a name="query-operators"></a>Operatory zapytań
 
@@ -75,70 +75,70 @@ Operatory zapytań są używane do definiowania wyrażeń zapytania, które zwra
 
 |Operator|Zastosowanie|
 |--------------|---------|
-|[FROM](from-entity-sql.md)|Określa kolekcję, która jest używana w [wybierz](select-entity-sql.md) instrukcji.|
-|[GROUP BY](group-by-entity-sql.md)|Określa grupy, do których obiektów, które zwróconych przez zapytanie ([wybierz](select-entity-sql.md)) wyrażenie, które mają być umieszczone.|
-|[GroupPartition](grouppartition-entity-sql.md)|Zwraca kolekcję wartości argumentu, przewidywany wyłączanie partycji grupy, do którego odnosi się agregacji.|
+|[FROM](from-entity-sql.md)|Określa kolekcję, która jest używana w instrukcjach [SELECT](select-entity-sql.md) .|
+|[GROUP BY](group-by-entity-sql.md)|Określa grupy, w których obiekty zwracane przez zapytanie ([SELECT](select-entity-sql.md)) mają zostać umieszczone.|
+|[GroupPartition](grouppartition-entity-sql.md)|Zwraca kolekcję wartości argumentów, które są rzutowane na partycję grupy, z którą jest powiązana agregacja.|
 |[HAVING](having-entity-sql.md)|Określa warunek wyszukiwania dla grupy lub agregacji.|
-|[LIMIT](limit-entity-sql.md)|Używane z [ORDER BY](order-by-entity-sql.md) klauzuli, która wykonano, fizyczne stronicowania.|
-|[ORDER BY](order-by-entity-sql.md)|Określa porządek sortowania, która jest używana na obiekty zwrócone w [wybierz](select-entity-sql.md) instrukcji.|
-|[SELECT](select-entity-sql.md)|Określa elementy w projekcji, które są zwracane przez zapytanie.|
-|[SKIP](skip-entity-sql.md)|Używane z [ORDER BY](order-by-entity-sql.md) klauzuli, która wykonano, fizyczne stronicowania.|
-|[TOP](top-entity-sql.md)|Określa, że tylko pierwszy zestaw wierszy zostaną zwrócone w wyniku zapytania.|
-|[WHERE](where-entity-sql.md)|Warunkowo filtruje danych zwracanych przez zapytanie.|
+|[GRANICE](limit-entity-sql.md)|Używany z klauzulą [order by](order-by-entity-sql.md) do wykonywania stronicowania fizycznego.|
+|[ORDER BY](order-by-entity-sql.md)|Określa kolejność sortowania, która jest używana dla obiektów zwracanych w instrukcji [SELECT](select-entity-sql.md) .|
+|[ZAZNACZENIA](select-entity-sql.md)|Określa elementy w projekcji, które są zwracane przez zapytanie.|
+|[Skocz](skip-entity-sql.md)|Używany z klauzulą [order by](order-by-entity-sql.md) do wykonywania stronicowania fizycznego.|
+|[Do góry](top-entity-sql.md)|Określa, że tylko pierwszy zestaw wierszy zostanie zwrócony z wyniku zapytania.|
+|[WHERE](where-entity-sql.md)|Warunkowe filtrowanie danych zwracanych przez zapytanie.|
 
-## <a name="reference-operators"></a>Odwołanie do operatorów
+## <a name="reference-operators"></a>Operatory odwołań
 
-Odwołanie jest wskaźnikiem logiczne (z kluczem obcym) do określonej jednostki w zestawie określonej jednostki. Jednostka SQL obsługuje następujące operatory do konstruowania, dekonstruować i nawigowanie po odwołania:
+Odwołanie jest wskaźnikiem logicznym (kluczem obcym) do określonej jednostki w określonym zestawie jednostek. Entity SQL obsługuje następujące operatory do konstruowania, dekonstrukcji i nawigowania po odwołaniach:
 
 |Operator|Zastosowanie|
 |--------------|---------|
 |[CREATEREF](createref-entity-sql.md)|Tworzy odwołania do jednostki w zestawie jednostek.|
-|[DEREF](deref-entity-sql.md)|Wyłuskań, wartość odniesienia i generuje wyłuskania wynik tego obiektu.|
-|[KEY](key-entity-sql.md)|Wyodrębnia klucz referencyjnego lub wyrażenie jednostki.|
-|[NAVIGATE](navigate-entity-sql.md)|Pozwala na przechodzenie przez relację typu jeden jednostki do innej|
-|[REF](ref-entity-sql.md)|Zwraca odwołanie do wystąpienia jednostki.|
+|[DEREF](deref-entity-sql.md)|Odwołuje się do wartości odniesienia i tworzy wynik tego odwołania.|
+|[GŁÓWNYCH](key-entity-sql.md)|Wyodrębnia klucz odwołania lub wyrażenia jednostki.|
+|[NIMI](navigate-entity-sql.md)|Umożliwia nawigowanie po relacjach z jednego typu jednostki do innego|
+|[UMIESZCZONE](ref-entity-sql.md)|Zwraca odwołanie do wystąpienia jednostki.|
 
-## <a name="set-operators"></a>Operatory zestawu
+## <a name="set-operators"></a>Ustaw operatory
 
-Jednostka SQL oferuje różne operacje bogaty zestaw. Obejmuje to podobne do operatorów języka Transact-SQL, takich jak UNION, INTERSECT i EXCEPT, operatorów i EXISTS. Jednostka SQL obsługuje również operatory wyeliminowania zduplikowanych (SET), członkostwo w testowania (ruch PRZYCHODZĄCY) i sprzężenia (POŁĄCZ). W poniższej tabeli wymieniono operatory zestawów jednostek SQL:
+Entity SQL oferuje różne Zaawansowane operacje zestawu. Obejmuje to operatory ustawiające podobne do operatorów Transact-SQL, takich jak UNION, INTERSECT, EXCEPT i EXISTS. Entity SQL obsługuje również operatory do usuwania duplikatów (SET), testowania członkostwa (w programie) i sprzężeń (JOIN). W poniższej tabeli wymieniono operatory zestawu Entity SQL:
 
 |Operator|Zastosowanie|
 |--------------|---------|
-|[ANYELEMENT](anyelement-entity-sql.md)|Wyodrębnia element z kolekcji wielowartościowych.|
-|[EXCEPT](except-entity-sql.md)|Zwraca kolekcję wszystkie unikatowe wartości w wyrażeniu zapytania do lewego operandu EXCEPT, które również nie są zwracane po prawej stronie operandu EXCEPT wyrażenia zapytania.|
-|[\[NIE\] EXISTS](exists-entity-sql.md)|Określa, czy kolekcja jest pusta.|
-|[FLATTEN](flatten-entity-sql.md)|Konwertuje kolekcję spłaszczonych kolekcją kolekcji.|
-|[\[NIE\] W](in-entity-sql.md)|Określa, czy wartość pasuje do dowolnej wartości w kolekcji.|
-|[INTERSECT](intersect-entity-sql.md)|Zwraca kolekcję różne wartości, które są zwracane przez wyrażenia zapytania po lewej stronie i prawej stronie operandu INTERSECT.|
+|[ANYELEMENT](anyelement-entity-sql.md)|Wyodrębnia element z kolekcji wielowartościowej.|
+|[EXCEPT](except-entity-sql.md)|Zwraca kolekcję wszystkich odrębnych wartości z wyrażenia zapytania na lewo od operandu EXCEPT, które nie są zwracane z wyrażenia zapytania na prawo od operandu EXCEPT.|
+|[\[NIE \] istnieje](exists-entity-sql.md)|Określa, czy kolekcja jest pusta.|
+|[FLATTEN](flatten-entity-sql.md)|Konwertuje kolekcję kolekcji na spłaszczoną kolekcję.|
+|[\[NIE \] w](in-entity-sql.md)|Określa, czy wartość jest zgodna z dowolną wartością w kolekcji.|
+|[INTERSECT](intersect-entity-sql.md)|Zwraca kolekcję wszelkich unikatowych wartości, które są zwracane przez wyrażenia zapytania po lewej stronie i po prawej stronie operandu INTERSECT.|
 |[OVERLAPS](overlaps-entity-sql.md)|Określa, czy dwie kolekcje mają wspólne elementy.|
-|[SET](set-entity-sql.md)|Używana do konwersji kolekcji obiektów do zestawu, reaguje nową kolekcję z wszystkie zduplikowane usunięte elementy.|
-|[UNION](union-entity-sql.md)|Scala wyniki dwóch lub więcej zapytań w jednej kolekcji.|
+|[ZBIÓR](set-entity-sql.md)|Służy do konwertowania kolekcji obiektów do zestawu przez wypróbowanie nowej kolekcji z usuniętymi wszystkimi zduplikowanymi elementami.|
+|[Unii](union-entity-sql.md)|Łączy wyniki dwóch lub więcej zapytań w jedną kolekcję.|
 
-## <a name="type-operators"></a>Operatory typu
+## <a name="type-operators"></a>Operatory typów
 
-Jednostka SQL udostępnia operacje, które zezwala na typ wyrażenia (wartość) skonstruowane, zapytania i modyfikować. W poniższej tabeli wymieniono operatory, które są używane do pracy z typami:
+Entity SQL zawiera operacje, które umożliwiają konstruowanie typu wyrażenia (wartości), zapytania i manipulowanie nimi. W poniższej tabeli wymieniono operatory, które są używane do pracy z typami:
 
 |Operator|Zastosowanie|
 |--------------|---------|
-|[CAST](cast-entity-sql.md)|Konwertuje wyrażenie jednego typu danych do innego.|
-|[COLLECTION](collection-entity-sql.md)|Używane w [funkcja](function-entity-sql.md) operację, aby zadeklarować kolekcją typów jednostek lub złożonych typów.|
-|[JEST \[NIE\] OF](isof-entity-sql.md)|Określa, czy typ wyrażenia jest określonego typu lub jednego z jego podtypy.|
-|[OFTYPE](oftype-entity-sql.md)|Zwraca kolekcję obiektów z wyrażenie zapytania, które jest określonego typu.|
-|[Konstruktor typu nazwanego](named-type-constructor-entity-sql.md)|Używane do tworzenia wystąpień typów jednostek lub złożonych typów.|
-|[MULTISET](multiset-entity-sql.md)|Tworzy wystąpienie zestawu wielokrotnego na podstawie listy wartości.|
-|[ROW](row-entity-sql.md)|Tworzy rekordy anonimowe, strukturalnie wpisane z co najmniej jedną wartość.|
-|[TREAT](treat-entity-sql.md)|Traktuje obiektu określonego typu podstawowego, jako obiekt określonego typu pochodnego.|
+|[CAST](cast-entity-sql.md)|Konwertuje wyrażenie jednego typu danych na inne.|
+|[ZBIERA](collection-entity-sql.md)|Używane w operacji [funkcji](function-entity-sql.md) do deklarowania kolekcji typów jednostek lub typów złożonych.|
+|[\[nie jest \]](isof-entity-sql.md)|Określa, czy typ wyrażenia jest określonego typu czy jednego z jego podtypów.|
+|[OFTYPE](oftype-entity-sql.md)|Zwraca kolekcję obiektów z wyrażenia zapytania, które jest określonego typu.|
+|[Konstruktor typu nazwanego](named-type-constructor-entity-sql.md)|Służy do tworzenia wystąpień typów jednostek lub typów złożonych.|
+|[MULTISET](multiset-entity-sql.md)|Tworzy wystąpienie zestawu wielokrotnego z listy wartości.|
+|[ROW](row-entity-sql.md)|Konstruuje anonimowe, strukturalnie wpisane rekordy z co najmniej jednej wartości.|
+|[TREAT](treat-entity-sql.md)|Traktuje obiekt określonego typu podstawowego jako obiekt określonego typu pochodnego.|
 
 ## <a name="other-operators"></a>Inne operatory
 
-W poniższej tabeli wymieniono innych operatorów jednostki SQL:
+W poniższej tabeli wymieniono inne operatory Entity SQL:
 
 |Operator|Zastosowanie|
 |--------------|---------|
-|[+ (Łączenie ciągów)](string-concatenation-entity-sql.md)|Umożliwia łączenie ciągów w języku SQL jednostki.|
-|[. (Dostęp do elementu członkowskiego)](member-access-entity-sql.md)|Umożliwia dostęp do wartości właściwości lub pola wystąpienia typu modelu koncepcyjnego strukturalnych.|
-|[-- (Komentarz)](comment-entity-sql.md)|Dodawać komentarze do jednostki SQL.|
-|[FUNCTION](function-entity-sql.md)|Definiuje wbudowanej funkcji, która może być wykonywana w kwerendzie SQL jednostki.|
+|[+ (Łączenie ciągów)](string-concatenation-entity-sql.md)|Służy do łączenia ciągów w Entity SQL.|
+|[. (Dostęp do elementów członkowskich)](member-access-entity-sql.md)|Służy do uzyskiwania dostępu do wartości właściwości lub pola wystąpienia strukturalnego modelu koncepcyjnego.|
+|[-- (Komentarz)](comment-entity-sql.md)|Uwzględnij Komentarze Entity SQL.|
+|[FUNKCYJN](function-entity-sql.md)|Definiuje wbudowaną funkcję, która może być wykonywana w kwerendzie Entity SQL.|
 
 ## <a name="see-also"></a>Zobacz także
 

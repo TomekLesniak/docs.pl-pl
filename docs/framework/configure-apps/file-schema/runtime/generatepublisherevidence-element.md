@@ -5,12 +5,12 @@ helpviewer_keywords:
 - generatePublisherEvidence element
 - <generatePublisherEvidence> element
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
-ms.openlocfilehash: c2ba4a7244b7849e28eac38fb34a2cdd0d1f1048
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 11592b055641c0fa2d2b968547dcc5aa40c94600
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81645357"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541787"
 ---
 # <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> Element
 Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Publisher> dowód dla zabezpieczeń dostępu kodu (CAS).  
@@ -40,7 +40,7 @@ Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Pub
 |Wartość|Opis|  
 |-----------|-----------------|  
 |`false`|Nie tworzy <xref:System.Security.Policy.Publisher> dowodów.|  
-|`true`|Tworzy <xref:System.Security.Policy.Publisher> dowód. Domyślnie włączone.|  
+|`true`|Tworzy <xref:System.Security.Policy.Publisher> dowód. Jest to opcja domyślna.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
  Brak.  
@@ -55,7 +55,7 @@ Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Pub
 ## <a name="remarks"></a>Uwagi  
   
 > [!NOTE]
-> W .NET Framework 4 i nowszych ten element nie ma wpływu na czasy ładowania zestawu. Aby uzyskać więcej informacji, zobacz sekcję "uproszczenie zasad zabezpieczeń" w temacie [zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
+> W .NET Framework 4 i nowszych ten element nie ma wpływu na czasy ładowania zestawu. Aby uzyskać więcej informacji, zobacz sekcję "uproszczenie zasad zabezpieczeń" w temacie [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes).  
   
  Środowisko uruchomieniowe języka wspólnego (CLR) próbuje zweryfikować podpis Authenticode w czasie ładowania, aby utworzyć <xref:System.Security.Policy.Publisher> dowód dla zestawu. Jednak domyślnie większość aplikacji nie potrzebuje <xref:System.Security.Policy.Publisher> dowodu. Standardowe zasady CAS nie bazują na <xref:System.Security.Policy.PublisherMembershipCondition> . Należy unikać niepotrzebnego kosztu uruchomienia związanego z weryfikacją podpisu wydawcy, chyba że aplikacja jest wykonywana na komputerze z niestandardowymi zasadami CAS lub nie spełnia wymagań dotyczących <xref:System.Security.Permissions.PublisherIdentityPermission> w środowisku częściowego zaufania. (Wymagania dotyczące uprawnień tożsamości zawsze powiodło się w środowisku pełnego zaufania).  
   

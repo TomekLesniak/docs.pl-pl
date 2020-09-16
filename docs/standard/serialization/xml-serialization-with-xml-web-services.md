@@ -18,18 +18,18 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: b03c25f745df9aa4afe44075506983cb14ed3da7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8464122d4849271ba76edd6b3400ed09d7429821
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84288956"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542010"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializacja XML z usługami internetowymi XML
-Serializacji XML jest źródłowego transportu mechanizm używany w architekturze usług sieci Web XML przez <xref:System.Xml.Serialization.XmlSerializer> klasy. Aby sterować XML wygenerowanym przez usługę sieci Web XML, można zastosować atrybuty wymienione w obu [atrybutach, które kontrolują serializacji XML](attributes-that-control-xml-serialization.md) i atrybuty kontrolujące [ZAKODOWANĄ serializację protokołu SOAP](attributes-that-control-encoded-soap-serialization.md) do klas, wartości zwracanych, parametrów i pól pliku używanego do tworzenia usługi sieci Web XML (. asmx). Aby uzyskać więcej informacji na temat tworzenia usługi sieci Web XML, zobacz [usługi sieci Web XML przy użyciu ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
+Serializacji XML jest źródłowego transportu mechanizm używany w architekturze usług sieci Web XML przez <xref:System.Xml.Serialization.XmlSerializer> klasy. Aby sterować XML wygenerowanym przez usługę sieci Web XML, można zastosować atrybuty wymienione w obu [atrybutach, które kontrolują serializacji XML](attributes-that-control-xml-serialization.md) i atrybuty kontrolujące [ZAKODOWANĄ serializację protokołu SOAP](attributes-that-control-encoded-soap-serialization.md) do klas, wartości zwracanych, parametrów i pól pliku używanego do tworzenia usługi sieci Web XML (. asmx). Aby uzyskać więcej informacji na temat tworzenia usługi sieci Web XML, zobacz [usługi sieci Web XML przy użyciu ASP.NET](/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
   
 ## <a name="literal-and-encoded-styles"></a>Literał i zakodowany stylów  
- KOD XML wygenerowany przez usługę sieci Web XML można sformatować na jeden z dwóch sposobów, albo literał lub zakodowany, zgodnie z opisem w temacie [Dostosowywanie formatowania komunikatów protokołu SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Dlatego są dwóch zestawów atrybutów, które kontrolują serializacji XML. Atrybuty wymienione w [atrybutach, które kontrolują serializacji XML,](attributes-that-control-xml-serialization.md) są przeznaczone do sterowania XML stylu literału. Atrybuty wymienione w [atrybutach kontrolujących kodowanie zakodowanej serializacji protokołu SOAP](attributes-that-control-encoded-soap-serialization.md) w stylu kodowanym. Wybiórczo stosując te atrybuty, można dostosować aplikację w celu zwrócenia obu tych stylów lub obu. Ponadto te atrybuty mogą być stosowane (odpowiednio) do zwracania wartości i parametrów.  
+ KOD XML wygenerowany przez usługę sieci Web XML można sformatować na jeden z dwóch sposobów, albo literał lub zakodowany, zgodnie z opisem w temacie [Dostosowywanie formatowania komunikatów protokołu SOAP](/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Dlatego są dwóch zestawów atrybutów, które kontrolują serializacji XML. Atrybuty wymienione w [atrybutach, które kontrolują serializacji XML,](attributes-that-control-xml-serialization.md) są przeznaczone do sterowania XML stylu literału. Atrybuty wymienione w [atrybutach kontrolujących kodowanie zakodowanej serializacji protokołu SOAP](attributes-that-control-encoded-soap-serialization.md) w stylu kodowanym. Wybiórczo stosując te atrybuty, można dostosować aplikację w celu zwrócenia obu tych stylów lub obu. Ponadto te atrybuty mogą być stosowane (odpowiednio) do zwracania wartości i parametrów.  
   
 ### <a name="example-of-using-both-styles"></a>Przykład użycia obu stylów  
  Podczas tworzenia usługi sieci Web XML, można użyć obu zestawów atrybutów na metody. W poniższym przykładzie kodu Klasa o nazwie `MyService` zawiera dwie metody usługi sieci Web XML `MyLiteralMethod` i `MyEncodedMethod` . Obie metody wykonywania tej samej funkcji: zwrócenia wystąpienia `Order` klasy. W `Order` klasie, <xref:System.Xml.Serialization.XmlTypeAttribute> i <xref:System.Xml.Serialization.SoapTypeAttribute> atrybuty są stosowane do `OrderID` pola, a oba atrybuty mają `ElementName` ustawioną inną wartość.  

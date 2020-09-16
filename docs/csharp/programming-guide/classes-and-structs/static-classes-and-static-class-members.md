@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 4f187d772d2f2e4375fbe3cfdc8c48af691f1c7c
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 019b36a328d4e9fb01b112ec79d8d8e0548142f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863880"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541880"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Klasy statyczne i statyczni członkowie klas (Przewodnik programowania w języku C#)
 
@@ -41,7 +41,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  Podobnie jak w przypadku wszystkich typów klas, informacje o typie klasy statycznej są ładowane przez środowisko uruchomieniowe platformy .NET, gdy zostanie załadowany program, który odwołuje się do klasy. Program nie może określić dokładnie, gdy Klasa jest załadowana. Jednak zagwarantowane jest załadowanie i zainicjowanie jego pól oraz jego konstruktora statycznego wywołanego przed odwołaniem do klasy po raz pierwszy w programie. Konstruktor statyczny jest wywoływany tylko jednokrotnie, a Klasa statyczna pozostaje w pamięci przez okres istnienia domeny aplikacji, w której znajduje się program.  
   
 > [!NOTE]
-> Aby utworzyć niestatyczną klasę, która umożliwia utworzenie tylko jednego wystąpienia, zobacz [implementowanie pojedynczych w języku C#](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  
+> Aby utworzyć niestatyczną klasę, która umożliwia utworzenie tylko jednego wystąpienia, zobacz [implementowanie pojedynczych w języku C#](/previous-versions/msp-n-p/ff650316(v=pandp.10)).  
   
  Poniższa lista zawiera główne funkcje klasy statycznej:  
   

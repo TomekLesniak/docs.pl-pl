@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Type Library Exporter
 - type libraries [.NET Framework], exporting
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
-ms.openlocfilehash: 3cfaa83590fefe31c437d2ff607fb579aec1da61
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: e675b0addc9051a0b3c877e9b029e113c17ba5f0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517038"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543390"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (Eksporter biblioteki typów)
 Eksporter biblioteki typów generuje bibliotekę typów, która opisuje typy zdefiniowane w zestawie środowiska uruchomieniowego języka wspólnego.  
@@ -89,7 +89,7 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
   
  Należy zauważyć, że Tlbexp.exe ignoruje <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType> pole.  
   
- Ponieważ biblioteki typów nie mogą pomieścić wszystkich informacji znajdujących się w zestawach, Tlbexp.exe może odrzucić niektóre dane podczas procesu eksportu. Aby uzyskać informacje na temat procesu transformacji i identyfikacji źródła informacji emitowanych do biblioteki typów, zobacz [Podsumowanie konwersji zestawu na bibliotekę typów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100)).  
+ Ponieważ biblioteki typów nie mogą pomieścić wszystkich informacji znajdujących się w zestawach, Tlbexp.exe może odrzucić niektóre dane podczas procesu eksportu. Aby uzyskać informacje na temat procesu transformacji i identyfikacji źródła informacji emitowanych do biblioteki typów, zobacz [Podsumowanie konwersji zestawu na bibliotekę typów](/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100)).  
   
  Należy zauważyć, że Eksporter biblioteki typów eksportuje metody, które mają <xref:System.TypedReference> Parametry AS `VARIANT` , nawet jeśli <xref:System.TypedReference> obiekt nie ma znaczenia w kodzie niezarządzanym. Podczas eksportowania metod, które mają <xref:System.TypedReference> Parametry, Eksporter biblioteki typów nie będzie generował ostrzeżenia ani błędu i niezarządzany kod, który używa biblioteki typów, nie będzie działać prawidłowo.  
   
@@ -133,6 +133,6 @@ tlbexp Sample.dll
 - <xref:System.Runtime.InteropServices.TypeLibExporterFlags>
 - [Narzędzia](index.md)
 - [Regasm.exe (Narzędzie rejestracji zestawów)](regasm-exe-assembly-registration-tool.md)
-- [Podsumowanie konwersji zestawu na bibliotekę typów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
+- [Podsumowanie konwersji zestawu na bibliotekę typów](/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
 - [Tlbimp.exe (Importer biblioteki typów)](tlbimp-exe-type-library-importer.md)
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)

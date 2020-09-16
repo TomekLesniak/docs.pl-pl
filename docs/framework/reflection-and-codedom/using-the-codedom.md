@@ -21,12 +21,12 @@ helpviewer_keywords:
 - code generators
 - CodeDOM, graphs
 ms.assetid: 0444ddf3-c3f6-44ed-a999-f710d9c3e0cf
-ms.openlocfilehash: 476d8c18f386f889855c664147b1ee20995dc6f9
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7a730a828488fd3ca04419588b3f32703dfda1c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865219"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541737"
 ---
 # <a name="using-the-codedom"></a>Używanie modelu CodeDOM
 CodeDOM zawiera typy reprezentujące wiele typowych typów elementów kodu źródłowego. Można zaprojektować program, który kompiluje model kodu źródłowego za pomocą elementów CodeDOM do złożenia grafu obiektów. Ten Graf obiektu może być renderowany jako kod źródłowy przy użyciu generatora kodu CodeDOM dla obsługiwanego języka programowania. CodeDOM można także użyć do kompilowania kodu źródłowego do zestawu binarnego.  
@@ -126,4 +126,4 @@ CodeDOM zawiera typy reprezentujące wiele typowych typów elementów kodu źró
   
  Aby uzyskać dokumentację dla każdego z typów CodeDOM, zobacz dokumentację referencyjną dla <xref:System.CodeDom> przestrzeni nazw.  
   
- Aby uzyskać szybki wykres w celu zlokalizowania elementu CodeDOM, który reprezentuje określony typ elementu kodu, zobacz [Krótki przewodnik CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)).
+ Aby uzyskać szybki wykres w celu zlokalizowania elementu CodeDOM, który reprezentuje określony typ elementu kodu, zobacz [Krótki przewodnik CodeDOM](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)).

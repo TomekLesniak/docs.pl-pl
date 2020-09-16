@@ -11,12 +11,12 @@ helpviewer_keywords:
 - type libraries
 - converting type definitions
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
-ms.openlocfilehash: f1e50336e6c159ae56b393098868e4b8f5310b49
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 4c2cddd78e14d1ae0b04bab07b57fe0ce0f627ca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87516999"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543371"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (Importer biblioteki typów)
 Importer biblioteki typów konwertuje definicje typów znalezione w bibliotece typów modelu COM do równoważnych definicji w zestawie środowiska uruchomieniowego języka wspólnego. Wyjściem programu Tlbimp.exe jest plik binarny (zestaw) zawierający metadane środowiska wykonawczego dla typów zdefiniowanych w oryginalnej biblioteki typów. Ten plik można przeanalizować za pomocą narzędzi, takich jak [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -51,7 +51,7 @@ tlbimp tlbFile [options]
 |**/noclassmembers**|Zapobiega dodawaniu przez Tlbimp.exe składowych do klasy. Pozwala to uniknąć możliwości <xref:System.TypeLoadException> .|  
 |**/nologo**|Pomija wyświetlanie transparentu startowego firmy Microsoft.|  
 |**/out:** *filename*|Określa nazwę wyjściowego pliku zestawu i przestrzeń nazw, w którym mają być zapisywane definicje metadanych. Opcja **/out** nie ma wpływu na przestrzeń nazw zestawu, jeśli biblioteka typów określa atrybut niestandardowy języka definicji interfejsu (IDL), który jawnie kontroluje przestrzeń nazw zestawu. Jeśli ta opcja nie zostanie określona, Tlbimp.exe zapisuje metadane do pliku o takiej samej nazwie jak rzeczywista biblioteka zdefiniowana w pliku wejściowym i przypisuje mu rozszerzenie dll. Jeśli plik wyjściowy ma taką samą nazwę jak plik wejściowy, narzędzie wygeneruje błąd, aby zapobiec zastąpieniu biblioteki typów.|  
-|**/primary**|Tworzy podstawowy zestaw międzyoperacyjny dla określonej biblioteki typu. Do zestawu są dodawane informacje wskazujące, że wydawca biblioteki typów wyprodukował zestaw. Określając podstawowy zestaw międzyoperacyjny, różnicuje się zestawu wydawcy od innych zestawów utworzonych z biblioteki typów za pomocą Tlbimp.exe. Opcji **/Primary** należy używać tylko wtedy, gdy jesteś wydawcą biblioteki typów importowanej przy użyciu Tlbimp.exe. Należy pamiętać, że należy podpisać podstawowy zestaw międzyoperacyjny o [silnej nazwie](../../standard/assembly/strong-named.md). Aby uzyskać więcej informacji, zobacz [podstawowe zestawy międzyoperacyjności](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).|  
+|**/primary**|Tworzy podstawowy zestaw międzyoperacyjny dla określonej biblioteki typu. Do zestawu są dodawane informacje wskazujące, że wydawca biblioteki typów wyprodukował zestaw. Określając podstawowy zestaw międzyoperacyjny, różnicuje się zestawu wydawcy od innych zestawów utworzonych z biblioteki typów za pomocą Tlbimp.exe. Opcji **/Primary** należy używać tylko wtedy, gdy jesteś wydawcą biblioteki typów importowanej przy użyciu Tlbimp.exe. Należy pamiętać, że należy podpisać podstawowy zestaw międzyoperacyjny o [silnej nazwie](../../standard/assembly/strong-named.md). Aby uzyskać więcej informacji, zobacz [podstawowe zestawy międzyoperacyjności](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).|  
 |**/Product:**`productinformation`|Dodaje informacje o produkcie do wyjściowego zestawu. Te informacje można wyświetlić w oknie dialogowym **właściwości pliku** dla zestawu.|  
 |**/ProductVersion:**`productversioninformation`|Dodaje informacje o wersji produktu do wyjściowego zestawu. Nie ma żadnych ograniczeń dotyczących formatu. Te informacje można wyświetlić w oknie dialogowym **właściwości pliku** dla zestawu.|  
 |**/publickey:** *filename*|Określa plik zawierający klucz publiczny używany do podpisywania wynikowego zestawu. W przypadku określenia opcji **/keyfile:** lub **/keycontainer:** zamiast **/publickey:**, Tlbimp.exe generuje klucz publiczny z pary kluczy publiczny/prywatny dostarczonej z **/keyfile:** lub **/keycontainer:**. **/Publickey:** opcja obsługuje klucz testu i opóźnienia podpisywania. Plik jest w formacie generowanym przez Sn.exe. Aby uzyskać więcej informacji, zobacz opcję **-p** Sn.exe w [narzędziu silnej nazwy (Sn.exe)](sn-exe-strong-name-tool.md).|  
@@ -96,7 +96,7 @@ tlbimp myTest.tlb
 tlbimp  myTest.tlb  /out:myTest.dll  
 ```  
   
- Następujące polecenie generuje zestaw o tej samej nazwie co biblioteka typów określona przez `MyModule.dll\1` i z rozszerzeniem. dll. `MyModule.dll\1`musi znajdować się w bieżącym katalogu.  
+ Następujące polecenie generuje zestaw o tej samej nazwie co biblioteka typów określona przez `MyModule.dll\1` i z rozszerzeniem. dll. `MyModule.dll\1` musi znajdować się w bieżącym katalogu.  
   
 ```console  
 tlbimp MyModule.dll\1  
@@ -131,9 +131,9 @@ void SomeMethod(out bool x);
 - [Narzędzia](index.md)
 - [Tlbexp.exe (Eksporter biblioteki typów)](tlbexp-exe-type-library-exporter.md)
 - [Importowanie biblioteki typów jako zestawu](../interop/importing-a-type-library-as-an-assembly.md)
-- [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Ildasm.exe (IL dezasembler)](ildasm-exe-il-disassembler.md)
 - [Sn.exe (Narzędzie silnej nazwy)](sn-exe-strong-name-tool.md)
 - [Zestawy o silnych nazwach](../../standard/assembly/strong-named.md)
-- [Atrybuty importowania bibliotek typów do zestawów międzyoperacyjnych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y6a7ak23(v=vs.100))
+- [Atrybuty importowania bibliotek typów do zestawów międzyoperacyjnych](/previous-versions/dotnet/netframework-4.0/y6a7ak23(v=vs.100))
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 116087ac1aab57f2869b05f436801c7861c56eca
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 88d6cfd1b5262d4a4fae96cf53271467b5042319
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063708"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541945"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozszerzeń (Przewodnik programowania w języku C#)
 
@@ -123,7 +123,7 @@ Dla zaimplementowanej biblioteki klas nie należy używać metod rozszerzenia, a
 - [Równoległe przykłady programowania (zawierają wiele przykładowych metod rozszerzających)](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
 - [Wyrażenia lambda](../../language-reference/operators/lambda-expressions.md)
 - [Standardowe operatory zapytań — Omówienie](../concepts/linq/standard-query-operators-overview.md)
-- [Reguły konwersji dla parametrów wystąpienia i ich wpływu](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
-- [Metody rozszerzające współdziałanie między językami](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)
-- [Metody rozszerzające i Delegaty rozwinięte](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-and-curried-delegates)
-- [Powiązanie metody rozszerzenia i raportowanie błędów](https://docs.microsoft.com/archive/blogs/sreekarc/extension-method-binding-and-error-reporting)
+- [Reguły konwersji dla parametrów wystąpienia i ich wpływu](/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
+- [Metody rozszerzające współdziałanie między językami](/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)
+- [Metody rozszerzające i Delegaty rozwinięte](/archive/blogs/sreekarc/extension-methods-and-curried-delegates)
+- [Powiązanie metody rozszerzenia i raportowanie błędów](/archive/blogs/sreekarc/extension-method-binding-and-error-reporting)

@@ -18,19 +18,19 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: 7802e4bc27195d1c8ecaccbd64121fb24328a4d8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 244bd9c25040b39c9349d28f57981f29d7a32d0a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288540"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542037"
 ---
 # <a name="types-of-isolation"></a>Typy izolacji
 Dostęp do wydzielonej pamięci masowej jest zawsze ograniczony do użytkownika, który go utworzył. W celu zaimplementowania tego typu izolacji środowisko uruchomieniowe języka wspólnego używa tego samego pojęcia tożsamości użytkownika, która jest rozpoznawana przez system operacyjny, co jest tożsamością skojarzoną z procesem, w którym uruchomiono kod w momencie otwarcia magazynu. Ta tożsamość jest uwierzytelnianą tożsamością użytkownika, ale personifikacja może spowodować dynamiczną zmianę tożsamości bieżącego użytkownika.  
   
  Dostęp do izolowanego magazynu jest również ograniczany zgodnie z tożsamością skojarzoną z domeną i zestawem aplikacji albo z samym zestawem. Środowisko uruchomieniowe uzyskuje te tożsamości w następujący sposób:  
   
-- Tożsamość domeny reprezentuje dowód aplikacji, co w przypadku, gdy aplikacja sieci Web może być pełnym adresem URL. W przypadku kodu hostowanego przez powłokę tożsamość domeny może opierać się na ścieżce katalogu aplikacji. Na przykład jeśli plik wykonywalny jest uruchamiany ze ścieżki C:\Office\MyApp.exe, tożsamość domeny byłaby C:\Office\MyApp.exe.  
+- Tożsamość domeny reprezentuje dowód aplikacji, co w przypadku, gdy aplikacja sieci Web może być pełnym adresem URL. W przypadku kodu hostowanego przez powłokę tożsamość domeny może opierać się na ścieżce katalogu aplikacji. Na przykład, jeśli plik wykonywalny jest uruchamiany ze ścieżki C:\Office\MyApp.exe, tożsamość domeny zostałaby C:\Office\MyApp.exe.  
   
 - Tożsamość zestawu jest dowodem zestawu. Może to wynikać z kryptograficznego podpisu cyfrowego, który może być [silną nazwą](../assembly/strong-named.md)zestawu, wydawcą oprogramowania zestawu lub TOŻSAMOŚCIĄ adresu URL. Jeśli zestaw ma silną nazwę i tożsamość wydawcy oprogramowania, używana jest tożsamość wydawcy oprogramowania. Jeśli zestaw pochodzi z Internetu i jest niepodpisany, zostanie użyta tożsamość adresu URL. Aby uzyskać więcej informacji o zestawach i silnych nazwach, zobacz [programowanie z zestawami](../assembly/index.md).  
   
@@ -51,7 +51,7 @@ Dostęp do wydzielonej pamięci masowej jest zawsze ograniczony do użytkownika,
  Z wyjątkiem magazynów mobilnych izolowany magazyn jest zawsze niejawnie izolowany przez komputer, ponieważ używa on magazynów lokalnych dla danego komputera.  
   
 > [!IMPORTANT]
-> Izolowany magazyn nie jest dostępny dla aplikacji ze sklepu Windows 8. x. Zamiast tego należy użyć klas danych aplikacji w `Windows.Storage` przestrzeniach nazw uwzględnionych w interfejsie API środowisko wykonawcze systemu Windows do przechowywania lokalnych danych i plików. Aby uzyskać więcej informacji, zobacz [dane aplikacji](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) w centrum deweloperów systemu Windows.  
+> Izolowany magazyn nie jest dostępny dla aplikacji ze sklepu Windows 8. x. Zamiast tego należy użyć klas danych aplikacji w `Windows.Storage` przestrzeniach nazw uwzględnionych w interfejsie API środowisko wykonawcze systemu Windows do przechowywania lokalnych danych i plików. Aby uzyskać więcej informacji, zobacz [dane aplikacji](/previous-versions/windows/apps/hh464917(v=win.10)) w centrum deweloperów systemu Windows.  
   
 <a name="UserAssembly"></a>
 ## <a name="isolation-by-user-and-assembly"></a>Izolacja według użytkownika i zestawu  
