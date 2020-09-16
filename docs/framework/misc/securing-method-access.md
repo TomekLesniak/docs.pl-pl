@@ -11,12 +11,12 @@ helpviewer_keywords:
 - security [.NET Framework], method access
 - method access security
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
-ms.openlocfilehash: 88868ab29fc37854959a044b9c0fed5bd8c82d77
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: f9b9bc00058aefc8f58facff43509e717967c2a7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855767"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555721"
 ---
 # <a name="securing-method-access"></a>Zabezpieczanie dostępu metody
 
@@ -30,7 +30,7 @@ ms.locfileid: "87855767"
   
 - Ogranicz zakres dostępności do klasy, zestawu lub klas pochodnych, jeśli mogą być zaufane. Jest to najprostszy sposób ograniczenia dostępu do metody. Ogólnie rzecz biorąc klasy pochodne mogą być mniej wiarygodne niż Klasa, z której pochodzi, ale w niektórych przypadkach współużytkują tożsamość klasy nadrzędnej. W szczególności nie należy wywnioskować zaufania ze słowa kluczowego `protected` , które nie jest koniecznie używane w kontekście zabezpieczeń.  
   
-- Ogranicz dostęp do metod wywołujących o określonej tożsamości — zasadniczo, wszelkich określonych [dowodów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) (silna nazwa, Wydawca, strefa itd.).  
+- Ogranicz dostęp do metod wywołujących o określonej tożsamości — zasadniczo, wszelkich określonych [dowodów](/previous-versions/dotnet/netframework-4.0/7y5x1hcd(v=vs.100)) (silna nazwa, Wydawca, strefa itd.).  
   
 - Ogranicz dostęp do metod wywołujących mających wybrane uprawnienia.  
   

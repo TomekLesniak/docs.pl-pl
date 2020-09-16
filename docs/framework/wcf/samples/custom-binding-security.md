@@ -2,12 +2,12 @@
 title: Zabezpieczenia wiązania niestandardowego
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: eb575594cec9ea714578bc104344acc14b00e9df
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ce4cd76a053b9b3611751fe081d0ca710240049d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592466"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555708"
 ---
 # <a name="custom-binding-security"></a>Zabezpieczenia wiązania niestandardowego
 
@@ -73,13 +73,13 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
 Po uruchomieniu przykładu komunikaty zwrócone do klienta są wyświetlane w interfejsie wywołania zwrotnego wysyłanego z usługi. Zostanie wyświetlony każdy wynik pośredni, po którym następuje całe równanie po zakończeniu wszystkich operacji. Naciśnij klawisz ENTER, aby zamknąć klienta.
 
-Dołączony plik Setup. bat umożliwia skonfigurowanie klienta i serwera przy użyciu odpowiedniego certyfikatu usługi do uruchamiania hostowanej aplikacji, która wymaga zabezpieczeń opartych na certyfikatach. Ten plik wsadowy należy zmodyfikować, aby mógł działać na różnych komputerach lub działać w nieobsługiwanym przypadku.
+Dołączony plik Setup.bat umożliwia skonfigurowanie klienta i serwera przy użyciu odpowiedniego certyfikatu usługi do uruchamiania hostowanej aplikacji, która wymaga zabezpieczeń opartych na certyfikatach. Ten plik wsadowy należy zmodyfikować, aby mógł działać na różnych komputerach lub działać w nieobsługiwanym przypadku.
 
 Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, które mają zastosowanie do tego przykładu, aby można je było modyfikować do uruchamiania w odpowiedniej konfiguracji:
 
 - Tworzenie certyfikatu serwera.
 
-  Poniższe wiersze z pliku Setup. bat umożliwiają utworzenie certyfikatu serwera, który ma być używany. `%SERVER_NAME%`Zmienna określa nazwę serwera. Zmień tę zmienną, aby określić własną nazwę serwera. Ten plik wsadowy domyślnie Nazwa serwera to localhost.
+  Poniższe wiersze z pliku Setup.bat umożliwiają utworzenie certyfikatu serwera, który ma być używany. `%SERVER_NAME%`Zmienna określa nazwę serwera. Zmień tę zmienną, aby określić własną nazwę serwera. Ten plik wsadowy domyślnie Nazwa serwera to localhost.
 
   Certyfikat jest przechowywany w magazynie CurrentUser dla usług hostowanych w sieci Web.
 
@@ -95,14 +95,14 @@ Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, k
 
 - Instalowanie certyfikatu serwera w zaufanym magazynie certyfikatów klienta.
 
-  Poniższe wiersze w pliku Setup. bat kopiują certyfikat serwera do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert. exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
+  Poniższe wiersze w pliku Setup.bat kopiują certyfikat serwera do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
 
   ```console
   certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
   ```
 
   > [!NOTE]
-  > Plik wsadowy Setup. bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2010. Wymaga, aby zmienna środowiskowa MSSDK wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w wierszu polecenia programu Visual Studio 2010.
+  > Plik wsadowy Setup.bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2010. Wymaga, aby zmienna środowiskowa MSSDK wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w wierszu polecenia programu Visual Studio 2010.
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Aby skonfigurować, skompilować i uruchomić przykład
 
@@ -114,16 +114,16 @@ Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, k
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Aby uruchomić przykład na tym samym komputerze
 
-1. Otwórz okno wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora i uruchom setup. bat z przykładowego folderu instalacyjnego. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.
+1. Otwórz okno wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora i uruchom Setup.bat z przykładowego folderu instalacji. Spowoduje to zainstalowanie wszystkich certyfikatów wymaganych do uruchomienia przykładu.
 
     > [!NOTE]
-    > Plik wsadowy Setup. bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2012. Zmienna środowiskowa PATH ustawiona w wierszu polecenia programu Visual Studio 2012 wskazuje katalog zawierający pliki wykonywalne wymagane przez skrypt Setup. bat.
+    > Plik wsadowy Setup.bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2012. Zmienna środowiskowa PATH ustawiona w wierszu polecenia programu Visual Studio 2012 wskazuje katalog zawierający pliki wykonywalne wymagane przez skrypt Setup.bat.
 
-2. Uruchom usługę Service. exe z \service\bin.
+2. Uruchom Service.exe z \service\bin.
 
-3. Uruchamianie programu Client. exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.
+3. Uruchom Client.exe z \client\bin. Aktywność klienta jest wyświetlana w aplikacji konsoli klienta.
 
-4. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
+4. Jeśli klient i usługa nie mogą się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
 
 ### <a name="to-run-the-sample-across-computers"></a>Aby uruchomić przykład na wielu komputerach
 
@@ -133,22 +133,22 @@ Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, k
 
     2. Skopiuj pliki programu usługi z \Inetpub\wwwroot\servicemodelsamples do katalogu wirtualnego na komputerze usługi. Upewnij się, że pliki zostały skopiowane do podkatalogu \Bin.
 
-    3. Skopiuj pliki Setup. bat i Oczyść. bat do komputera usługi.
+    3. Skopiuj Setup.bat i Cleanup.bat pliki na komputer usługi.
 
     4. Uruchom następujące polecenie w wiersz polecenia dla deweloperów dla programu Visual Studio otwartego z uprawnieniami administratora: `Setup.bat service` . Spowoduje to utworzenie certyfikatu usługi z nazwą podmiotu zgodną z nazwą komputera, na którym uruchomiono plik wsadowy.
 
         > [!NOTE]
-        > Plik wsadowy Setup. bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2010. Wymaga, aby zmienna środowiskowa Path wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w wierszu polecenia programu Visual Studio 2010.
+        > Plik wsadowy Setup.bat został zaprojektowany do uruchamiania z wiersza polecenia programu Visual Studio 2010. Wymaga, aby zmienna środowiskowa Path wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w wierszu polecenia programu Visual Studio 2010.
 
-    5. Zmień [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) wewnątrz pliku Service. exe. config, aby odzwierciedlał nazwę podmiotu certyfikatu wygenerowanego w poprzednim kroku.
+    5. Zmień [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) wewnątrz pliku Service.exe.config, aby odzwierciedlał nazwę podmiotu certyfikatu wygenerowanego w poprzednim kroku.
 
-    6. Uruchom polecenie Service. exe z wiersza polecenia.
+    6. Uruchom Service.exe z wiersza polecenia.
 
 2. Na komputerze klienckim:
 
-    1. Skopiuj pliki programu klienckiego z folderu \client\bin\ na komputer kliencki. Skopiuj również plik Cleanup. bat.
+    1. Skopiuj pliki programu klienckiego z folderu \client\bin\ na komputer kliencki. Skopiuj również plik Cleanup.bat.
 
-    2. Uruchom Oczyść. bat, aby usunąć wszystkie stare certyfikaty z poprzednich przykładów.
+    2. Uruchom Cleanup.bat, aby usunąć wszystkie stare certyfikaty z poprzednich przykładów.
 
     3. Wyeksportuj certyfikat usługi, otwierając wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administracyjnymi, a następnie uruchamiając następujące polecenie na komputerze usługi ( `%SERVER_NAME%` należy zastąpić w pełni kwalifikowaną nazwą komputera, na którym uruchomiona jest usługa):
 
@@ -166,7 +166,7 @@ Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, k
 
         Kroki c, d i e nie są konieczne, jeśli certyfikat jest wystawiony przez zaufanego wystawcy.
 
-    6. Zmodyfikuj plik App. config klienta w następujący sposób:
+    6. Zmodyfikuj plik App.config klienta w następujący sposób:
 
         ```xml
         <client>
@@ -179,10 +179,10 @@ Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, k
         </client>
         ```
 
-    7. Jeśli usługa jest uruchomiona w ramach konta innego niż konto NetworkService lub LocalSystem w środowisku domeny, może być konieczne zmodyfikowanie tożsamości punktu końcowego dla punktu końcowego usługi w pliku App. config klienta, aby ustawić odpowiednią nazwę UPN lub nazwę SPN na podstawie konta, które jest używane do uruchamiania usługi. Aby uzyskać więcej informacji na temat tożsamości punktów końcowych, zobacz temat [tożsamość usługi i uwierzytelnianie](../feature-details/service-identity-and-authentication.md) .
+    7. Jeśli usługa jest uruchomiona w ramach konta innego niż konto NetworkService lub LocalSystem w środowisku domeny, może być konieczne zmodyfikowanie tożsamości punktu końcowego dla punktu końcowego usługi w pliku App.config klienta, aby ustawić odpowiednią nazwę UPN lub nazwę SPN na podstawie konta, które jest używane do uruchamiania usługi. Aby uzyskać więcej informacji na temat tożsamości punktów końcowych, zobacz temat [tożsamość usługi i uwierzytelnianie](../feature-details/service-identity-and-authentication.md) .
 
-    8. Uruchom plik Client. exe z wiersza polecenia.
+    8. Uruchom Client.exe z wiersza polecenia.
 
 ### <a name="to-clean-up-after-the-sample"></a>Aby wyczyścić po przykładzie
 
-- Uruchom Oczyść. bat w folderze Samples po zakończeniu uruchamiania przykładu.
+- Uruchom Cleanup.bat w folderze Samples po zakończeniu uruchamiania przykładu.

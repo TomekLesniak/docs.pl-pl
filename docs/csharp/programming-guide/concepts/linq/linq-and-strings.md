@@ -3,18 +3,18 @@ title: LINQ i ciągi (C#)
 description: LINQ może wykonywać zapytania i przekształcać ciągi i kolekcje ciągów. Zapytania LINQ można łączyć z funkcjami ciągów języka C# i wyrażeniami regularnymi.
 ms.date: 07/20/2015
 ms.assetid: dbe2d657-b3f3-487e-b645-21fb2d71cd7b
-ms.openlocfilehash: c515a0c56ad6473f93c6339540e4ed0245bb5bd2
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 0500d821335659fa29dd4809513f38dac0a8b193
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165620"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556723"
 ---
 # <a name="linq-and-strings-c"></a>LINQ i ciągi (C#)
 
 LINQ może służyć do wykonywania zapytań i przekształcania ciągów i kolekcji ciągów. Może być szczególnie przydatne w przypadku danych z częściową strukturą w plikach tekstowych. Zapytania LINQ można łączyć z tradycyjnymi funkcjami ciągów i wyrażeniami regularnymi. Na przykład można użyć <xref:System.String.Split%2A?displayProperty=nameWithType> metody lub, <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> Aby utworzyć tablicę ciągów, które można następnie wykonać zapytania lub zmodyfikować przy użyciu LINQ. Możesz użyć <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody w `where` klauzuli zapytania LINQ. I można użyć LINQ do zapytania lub zmodyfikować <xref:System.Text.RegularExpressions.MatchCollection> wyniki zwrócone przez wyrażenie regularne.
 
-Można również użyć technik opisanych w tej sekcji, aby przekształcić dane z częściową strukturą do formatu XML. Aby uzyskać więcej informacji, zobacz [jak generować XML z plików CSV](how-to-generate-xml-from-csv-files.md).
+Można również użyć technik opisanych w tej sekcji, aby przekształcić dane z częściową strukturą do formatu XML. Aby uzyskać więcej informacji, zobacz [jak generować XML z plików CSV](../../../../standard/linq/generate-xml-csv-files.md).
 
 Przykłady w tej sekcji należą do dwóch kategorii:
 
@@ -76,4 +76,4 @@ Wiele różnych typów plików tekstowych składa się z szeregu wierszy, częst
 ## <a name="see-also"></a>Zobacz także
 
 - [Language-Integrated Query (LINQ) (C#)](index.md)
-- [Generowanie kodu XML z plików CSV](how-to-generate-xml-from-csv-files.md)
+- [Generowanie kodu XML z plików CSV](../../../../standard/linq/generate-xml-csv-files.md)

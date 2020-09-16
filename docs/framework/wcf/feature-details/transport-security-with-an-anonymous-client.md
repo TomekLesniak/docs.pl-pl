@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: 08cfb8c1a5581f17a251224430018764bed80b0f
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 5e8bcab4cdd8f27e9ea27e66fe4c848ccd35e99c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245014"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556814"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>Zabezpieczanie transportu za pomocą anonimowego klienta
 
@@ -27,9 +27,9 @@ Aby uzyskać więcej informacji na temat korzystania z certyfikatu z usługą, z
 |--------------------|-----------------|
 |Tryb zabezpieczeń|Transport|
 |Współdziałanie|Z istniejącymi usługami i klientami sieci Web|
-|Uwierzytelnianie (serwer)<br /><br /> Uwierzytelnianie (klient)|Tak<br /><br /> Poziom aplikacji (brak obsługi WCF)|
-|Integralność|Tak|
-|Poufność|Tak|
+|Uwierzytelnianie (serwer)<br /><br /> Uwierzytelnianie (klient)|Yes<br /><br /> Poziom aplikacji (brak obsługi WCF)|
+|Integralność|Yes|
+|Poufność|Yes|
 |Transport|HTTPS|
 |Wiązanie|<xref:System.ServiceModel.WSHttpBinding>|
 
@@ -85,7 +85,7 @@ Poniższy kod i konfiguracja są przeznaczone do niezależnego uruchamiania. Wyk
 
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).
 
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:
 
      [!code-csharp[C_SecurityScenarios#0](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
@@ -122,9 +122,9 @@ W celu skonfigurowania usługi można użyć następującej konfiguracji zamiast
 </configuration>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Zabezpieczenia transportu WS](../samples/ws-transport-security.md)
 - [Przegląd zabezpieczeń transportu](transport-security-overview.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

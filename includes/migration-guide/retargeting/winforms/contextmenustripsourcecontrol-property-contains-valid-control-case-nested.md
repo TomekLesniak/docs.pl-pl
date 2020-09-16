@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 97299ddb9bee89c792ddb3d2b9c37516180996f7
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5529b8379c5cb9f1bc525e0c2340f6b885e35822
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614880"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606170"
 ---
 ### <a name="contextmenustripsourcecontrol-property-contains-a-valid-control-in-the-case-of-nested-toolstripmenuitems"></a>Właściwość ContextMenuStrip. SourceControl zawiera prawidłową kontrolkę w przypadku zagnieżdżonych kontrolki ToolStripMenuItems
 
@@ -17,7 +17,7 @@ W .NET Framework 4.7.1 i poprzednich wersjach <xref:System.Windows.Forms.Context
 **Jak wybrać lub wycofać te zmiany** Aby aplikacja mogła korzystać z tych zmian, musi ona działać na .NET Framework 4.7.2 lub nowszym. Aplikacja może korzystać z tych zmian w jeden z następujących sposobów:
 
 - Jest ona przeznaczona dla .NET Framework 4.7.2. Ta zmiana jest domyślnie włączona w Windows Forms aplikacjach przeznaczonych dla .NET Framework 4.7.2 lub nowszych.
-- Jest ona przeznaczona dla .NET Framework 4.7.1 lub wcześniejszej wersji i [wyłączają](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) się ze starszych zachowań ułatwień dostępu, dodając następujący `<runtime>` przykład AppContext do sekcji pliku app.config i ustawiając go na `false` , jak pokazano w poniższym przykładzie.
+- Jest ona przeznaczona dla .NET Framework 4.7.1 lub wcześniejszej wersji i [wyłączają](../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) się ze starszych zachowań ułatwień dostępu, dodając następujący `<runtime>` przykład AppContext do sekcji pliku app.config i ustawiając go na `false` , jak pokazano w poniższym przykładzie.
 
 ```xml
 <runtime>
@@ -29,7 +29,7 @@ Aplikacje ukierunkowane na .NET Framework 4.7.2 lub nowsze i chcą zachować sta
 
 | Nazwa    | Wartość       |
 |:--------|:------------|
-| Zakres   | Brzeg        |
+| Zakres   | Edge        |
 | Wersja | 4.7.2       |
 | Typ    | Przekierowanie |
 

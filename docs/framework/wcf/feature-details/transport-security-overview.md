@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: 6302a949e8d0a041446b75dd3769b8ba2d1fc2b5
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 8780b9c0fc06a49ddaf42166c292a41e9124f6e1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244832"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556801"
 ---
 # <a name="transport-security-overview"></a>Przegląd zabezpieczeń transportu
 Mechanizmy zabezpieczeń transportu w programie Windows Communication Foundation (WCF) zależą od powiązań i używanego transportu. Na przykład w przypadku korzystania z <xref:System.ServiceModel.WSHttpBinding> klasy transport jest http, a podstawowym mechanizmem zabezpieczania transportu jest SSL (SSL) za pośrednictwem protokołu HTTP, powszechnie nazywanego https. W tym temacie omówiono główne mechanizmy zabezpieczeń transportu używane w powiązaniach dostarczonych przez system w systemie WCF.  
@@ -20,7 +20,7 @@ Mechanizmy zabezpieczeń transportu w programie Windows Communication Foundation
 > Gdy zabezpieczenia SSL są używane z .NET Framework 3,5 i nowsze, klient WCF używa zarówno certyfikatów pośrednich w magazynie certyfikatów, jak i pośrednich certyfikatów odebranych podczas negocjowania protokołu SSL w celu przeprowadzenia walidacji łańcucha certyfikatów w certyfikacie usługi. .NET Framework 3,0 używa tylko certyfikatów pośrednich zainstalowanych w lokalnym magazynie certyfikatów.  
   
 > [!WARNING]
-> W przypadku korzystania z zabezpieczeń transportu <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> Właściwość może być zastępowana. Aby tego uniknąć, należy ustawić <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.Description.PrincipalPermissionMode.None?displayProperty=nameWithType> . <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>to zachowanie usługi, które można ustawić w opisie usługi.  
+> W przypadku korzystania z zabezpieczeń transportu <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> Właściwość może być zastępowana. Aby tego uniknąć, należy ustawić <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.Description.PrincipalPermissionMode.None?displayProperty=nameWithType> . <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> to zachowanie usługi, które można ustawić w opisie usługi.  
   
 ## <a name="basichttpbinding"></a>BasicHttpBinding  
  Domyślnie <xref:System.ServiceModel.BasicHttpBinding> Klasa nie zapewnia zabezpieczeń. To powiązanie jest przeznaczone do współdziałania z dostawcami usług sieci Web, które nie implementują zabezpieczeń. Można jednak włączyć zabezpieczenia, ustawiając <xref:System.ServiceModel.BasicHttpSecurity.Mode%2A> Właściwość na dowolną wartość z wyjątkiem <xref:System.ServiceModel.BasicHttpSecurityMode.None> . Aby włączyć zabezpieczenia transportu, ustaw właściwość na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport> .  
@@ -47,20 +47,20 @@ Mechanizmy zabezpieczeń transportu w programie Windows Communication Foundation
   
  W poniższych sekcjach omówiono inne typy poświadczeń klienta.  
   
-#### <a name="basic"></a>Podstawowa  
- Odnosi się to do metody uwierzytelniania podstawowego w usługach IIS. W przypadku korzystania z tego trybu serwer IIS musi być skonfigurowany przy użyciu kont użytkowników systemu Windows i odpowiednich uprawnień systemu plików NTFS. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [Włączanie uwierzytelniania podstawowego i Konfigurowanie nazwy obszaru](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785293(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie uwierzytelniania podstawowego (IIS 7)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772009(v=ws.10)).  
+#### <a name="basic"></a>Podstawowy  
+ Odnosi się to do metody uwierzytelniania podstawowego w usługach IIS. W przypadku korzystania z tego trybu serwer IIS musi być skonfigurowany przy użyciu kont użytkowników systemu Windows i odpowiednich uprawnień systemu plików NTFS. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [Włączanie uwierzytelniania podstawowego i Konfigurowanie nazwy obszaru](/previous-versions/windows/it-pro/windows-server-2003/cc785293(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie uwierzytelniania podstawowego (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772009(v=ws.10)).  
   
 #### <a name="certificate"></a>Certyfikat  
- Usługi IIS mają opcję, aby wymagać od klientów zalogowania się przy użyciu certyfikatu. Ta funkcja umożliwia także programowi IIS Zamapowanie certyfikatu klienta na konto systemu Windows. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [Włączanie certyfikatów klienta w usługach IIS 6,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc727994(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).  
+ Usługi IIS mają opcję, aby wymagać od klientów zalogowania się przy użyciu certyfikatu. Ta funkcja umożliwia także programowi IIS Zamapowanie certyfikatu klienta na konto systemu Windows. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [Włączanie certyfikatów klienta w usługach IIS 6,0](/previous-versions/windows/it-pro/windows-server-2003/cc727994(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).  
   
 #### <a name="digest"></a>Szyfrowane  
- Uwierzytelnianie szyfrowane jest podobne do uwierzytelniania podstawowego, ale oferuje zalety wysyłania poświadczeń jako skrótu, a nie zwykłego tekstu. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [uwierzytelnianie szyfrowane w usługach iis 6,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie uwierzytelniania szyfrowanego (IIS 7)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754104(v=ws.10)).  
+ Uwierzytelnianie szyfrowane jest podobne do uwierzytelniania podstawowego, ale oferuje zalety wysyłania poświadczeń jako skrótu, a nie zwykłego tekstu. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [uwierzytelnianie szyfrowane w usługach iis 6,0](/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie uwierzytelniania szyfrowanego (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754104(v=ws.10)).  
   
 #### <a name="windows"></a>Windows  
- Odnosi się to do zintegrowanego uwierzytelniania systemu Windows w usługach IIS. W przypadku ustawienia tej wartości serwer powinien również istnieć w domenie systemu Windows, która używa protokołu Kerberos jako kontrolera domeny. Jeśli serwer nie znajduje się w domenie z zabezpieczeniami opartymi na protokole Kerberos lub w przypadku awarii systemu Kerberos, można użyć wartości z programu NT LAN Manager (NTLM) opisanej w następnej sekcji. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [zintegrowane uwierzytelnianie systemu Windows w usługach iis 6,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738016(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+ Odnosi się to do zintegrowanego uwierzytelniania systemu Windows w usługach IIS. W przypadku ustawienia tej wartości serwer powinien również istnieć w domenie systemu Windows, która używa protokołu Kerberos jako kontrolera domeny. Jeśli serwer nie znajduje się w domenie z zabezpieczeniami opartymi na protokole Kerberos lub w przypadku awarii systemu Kerberos, można użyć wartości z programu NT LAN Manager (NTLM) opisanej w następnej sekcji. Aby uzyskać więcej informacji na temat usług IIS 6,0, zobacz [zintegrowane uwierzytelnianie systemu Windows w usługach iis 6,0](/previous-versions/windows/it-pro/windows-server-2003/cc738016(v=ws.10)). Aby uzyskać więcej informacji na temat usług IIS 7,0, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
   
 #### <a name="ntlm"></a>NTLM  
- Pozwala to serwerowi na uwierzytelnianie przy użyciu protokołu NTLM w przypadku niepowodzenia. Aby uzyskać więcej informacji na temat konfigurowania usług IIS w usługach IIS 6,0, zobacz [Wymuszanie uwierzytelniania NTLM](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786486(v=ws.10)). W przypadku usług IIS 7,0 uwierzytelnianie systemu Windows obejmuje uwierzytelnianie NTLM. Aby uzyskać więcej informacji, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+ Pozwala to serwerowi na uwierzytelnianie przy użyciu protokołu NTLM w przypadku niepowodzenia. Aby uzyskać więcej informacji na temat konfigurowania usług IIS w usługach IIS 6,0, zobacz [Wymuszanie uwierzytelniania NTLM](/previous-versions/windows/it-pro/windows-server-2003/cc786486(v=ws.10)). W przypadku usług IIS 7,0 uwierzytelnianie systemu Windows obejmuje uwierzytelnianie NTLM. Aby uzyskać więcej informacji, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
  <xref:System.ServiceModel.WSHttpBinding>Klasa została zaprojektowana do współdziałania z usługami, które implementują specyfikacje WS-*. Zabezpieczenia transportu dla tego powiązania są SSL (SSL) za pośrednictwem protokołu HTTP lub HTTPS. Aby utworzyć aplikację WCF, która używa protokołu SSL, Użyj usług IIS do hostowania aplikacji. Alternatywnie, jeśli tworzysz aplikację samoobsługową, użyj narzędzia HttpCfg.exe, aby powiązać certyfikat X. 509 z określonym portem na komputerze. Numer portu jest określony jako część aplikacji WCF jako adres punktu końcowego. W przypadku korzystania z trybu transportu adres punktu końcowego musi zawierać protokół HTTPS lub wyjątek w czasie wykonywania. Aby uzyskać więcej informacji, zobacz [zabezpieczenia transportu HTTP](http-transport-security.md).  
@@ -121,6 +121,6 @@ Mechanizmy zabezpieczeń transportu w programie Windows Communication Foundation
 ## <a name="msmqintegrationbinding-and-netmsmqbinding"></a>MsmqIntegrationBinding i Msmqbinding  
  Aby zapoznać się ze wszystkimi zabezpieczeniami transportu za pomocą usługi kolejkowania komunikatów (wcześniej nazywanej MSMQ), zobacz [Zabezpieczanie komunikatów za pomocą zabezpieczeń transportu](securing-messages-using-transport-security.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Programowanie zabezpieczeń WCF](programming-wcf-security.md)

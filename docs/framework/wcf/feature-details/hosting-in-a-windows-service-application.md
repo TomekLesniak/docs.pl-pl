@@ -2,12 +2,12 @@
 title: Hostowanie w aplikacji usługi systemu Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: ba49d123508ceb8da677d1e9c67721e4f86aa7c3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cb952cfcd670a790033fbec70de00a4db2541237
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597335"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555851"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostowanie w aplikacji usługi systemu Windows
 Usługi systemu Windows (znane wcześniej jako usługi systemu Windows NT) oferują model procesu szczególnie odpowiedni dla aplikacji, które muszą się znajdować w długim, uruchomionym pliku wykonywalnym i nie mogą wyświetlać żadnych form interfejsu użytkownika. Okres istnienia aplikacji usługi systemu Windows jest zarządzany przez menedżera kontroli usług (SCM), który pozwala uruchamiać, zatrzymywać i wstrzymywać aplikacje usług systemu Windows. Proces usługi systemu Windows można skonfigurować do automatycznego uruchamiania podczas uruchamiania komputera, co sprawia, że jest to odpowiednie środowisko hostingu dla aplikacji "zawsze włączone". Aby uzyskać więcej informacji o aplikacjach usług systemu Windows, zobacz [aplikacje usług systemu Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -36,11 +36,11 @@ Usługi systemu Windows (znane wcześniej jako usługi systemu Windows NT) oferu
   
      Aplikacje usług systemu Windows obsługujące usługi WCF są wdrażane i zarządzane w taki sam sposób, jak aplikacje usług systemu Windows, które nie korzystają z programu WCF.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceProcess>
 - [Przewodnik: tworzenie aplikacji usługowej systemu Windows w Projektancie składników](https://go.microsoft.com/fwlink/?LinkId=94875)
 - [Instrukcje: hostowanie usługi WCF w usłudze zarządzanej systemu Windows](how-to-host-a-wcf-service-in-a-managed-windows-service.md)
 - [Host usług systemu Windows](../samples/windows-service-host.md)
 - [Architektura programowania aplikacji usług](https://go.microsoft.com/fwlink/?LinkId=94876)
-- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677189(v=azure.10))

@@ -1,23 +1,23 @@
 ---
-title: 'Instrukcje: Konfigurowanie klienta programu WCF do współdziałania z usługami WES3.0'
+title: 'Instrukcje: konfigurowanie klienta programu WCF do współdziałania z usługami WES3.0'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-ms.openlocfilehash: 7dd50fcc07c6c090042cf87acb4aa5d2b5321a68
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1ebc4e145528c3025b0299ea7e421c248c28cdc0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579582"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556372"
 ---
-# <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Instrukcje: Konfigurowanie klienta programu WCF do współdziałania z usługami WES3.0
+# <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Instrukcje: konfigurowanie klienta programu WCF do współdziałania z usługami WES3.0
 Klienci korzystający z programu Windows Communication Foundation (WCF) są zgodną z usługami sieci Web udoskonalenia 3,0 dla usług Microsoft .NET (WSE), gdy klienci WCF są skonfigurowani do korzystania z wersji z sierpnia 2004 specyfikacji WS-Addressing.  
   
 ### <a name="to-configure-a-wcf-client-to-interoperate-with-a-wse-30-web-service"></a>Aby skonfigurować klienta WCF do współdziałania z usługą sieci Web WSE 3,0  
   
-1. Uruchom narzędzie do obsługi [metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , aby utworzyć klienta WCF dla usługi sieci Web WSE 3,0.  
+1. Uruchom narzędzie do obsługi [metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , aby utworzyć klienta WCF dla usługi sieci Web WSE 3,0.  
   
      W przypadku usługi sieci Web WSE tworzona jest Klasa klienta WCF.  
   
@@ -25,7 +25,7 @@ Klienci korzystający z programu Windows Communication Foundation (WCF) są zgod
   
 2. Utwórz klasę, która reprezentuje powiązanie, które może komunikować się z usługami sieci Web WSE 3,0.  
   
-     Następująca Klasa jest częścią [współdziałania z](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29) przykładem WSE.  
+     Następująca Klasa jest częścią [współdziałania z](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90)) przykładem WSE.  
   
     1. Utwórz klasę pochodną od klasy <xref:System.ServiceModel.Channels.Binding>.  
   
@@ -61,7 +61,7 @@ Klienci korzystający z programu Windows Communication Foundation (WCF) są zgod
 [!code-csharp[c_WCFClientToWSEService#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/client.cs#0)]
 [!code-vb[c_WCFClientToWSEService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#0)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.Channels.Binding>
-- [Współdziałanie z WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)
+- [Współdziałanie z WSE](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90))

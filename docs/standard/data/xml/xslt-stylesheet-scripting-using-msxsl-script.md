@@ -6,14 +6,14 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: aef2471a375469f7cd4dff27084b305ef9394d5e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b2fd5ac6f03c0c66c05117a882d53af37e3f8665
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291971"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555936"
 ---
-# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Obsługa skryptów arkusza stylów XSLT przy użyciu\<msxsl:script>
+# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Obsługa skryptów arkusza stylów XSLT przy użyciu \<msxsl:script>
 <xref:System.Xml.Xsl.XslTransform>Klasa obsługuje osadzone skrypty przy użyciu `script` elementu.  
   
 > [!NOTE]
@@ -43,7 +43,7 @@ ms.locfileid: "84291971"
   
  Aby uzyskać dowody z Twojego zestawu, użyj `this.GetType().Assembly.Evidence` . Aby uzyskać dowód z Uniform Resource Identifier (URI), użyj `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)` .  
   
- W przypadku korzystania z <xref:System.Xml.Xsl.XslTransform.Load%2A> metod, które pobierają <xref:System.Xml.XmlResolver> , ale nie `Evidence` , Strefa zabezpieczeń dla zestawu domyślnie ma wartość pełne zaufanie. Aby uzyskać więcej informacji, zobacz <xref:System.Security.SecurityZone> i [nazwane zestawy uprawnień](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
+ W przypadku korzystania z <xref:System.Xml.Xsl.XslTransform.Load%2A> metod, które pobierają <xref:System.Xml.XmlResolver> , ale nie `Evidence` , Strefa zabezpieczeń dla zestawu domyślnie ma wartość pełne zaufanie. Aby uzyskać więcej informacji, zobacz <xref:System.Security.SecurityZone> i [nazwane zestawy uprawnień](/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
   
  Funkcje mogą być deklarowane w obrębie `msxsl:script` elementu. W poniższej tabeli przedstawiono przestrzenie nazw, które są obsługiwane domyślnie. Można używać klas poza wymienionymi obszarami nazw. Jednak te klasy muszą być w pełni kwalifikowane.  
   
@@ -54,7 +54,7 @@ ms.locfileid: "84291971"
 |System.Text|Klasy tekstowe.|  
 |System.Text.RegularExpressions|Klasy wyrażeń regularnych.|  
 |System.Xml|Podstawowe klasy XML.|  
-|System. XML. xsl|Klasy XSLT.|  
+|System.Xml. Kodzie|Klasy XSLT.|  
 |System.Xml.XPath|Klasy języka XML Path Language (XPath).|  
 |Microsoft. VisualBasic|Klasy dla skryptów Visual Basic firmy Microsoft.|  
   
@@ -64,11 +64,11 @@ ms.locfileid: "84291971"
   
 |Typ|Równoważna Klasa .NET Framework (typ)|Typ XPath lub typ XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
-|String (ciąg)|System. String|XPath|  
-|Boolean (wartość logiczna)|System. Boolean|XPath|  
+|Ciąg|System. String|XPath|  
+|Wartość logiczna|System. Boolean|XPath|  
 |Liczba|System. Double|XPath|  
-|Fragment drzewa wyników|System. XML. XPath. XPathNavigator|XSL|  
-|Zestaw węzłów|System. XML. XPath. XPathNodeIterator|XPath|  
+|Fragment drzewa wyników|System.Xml. XPath. XPathNavigator|XSL|  
+|Zestaw węzłów|System.Xml. XPath. XPathNodeIterator|XPath|  
   
  Jeśli funkcja skryptu używa jednego z następujących typów liczbowych: Int16, UInt16, Int32, UInt32, Int64, UInt64, Single lub decimal, są one wymuszane jako podwójne, które mapuje do typu W3C XPath. Wszystkie inne typy są wymuszane jako ciąg przez wywołanie `ToString` metody.  
   
@@ -166,7 +166,7 @@ public class Sample
 ```  
   
 ## <a name="input"></a>Dane wejściowe  
- Number. XML  
+ number.xml  
   
 ```xml  
 <?xml version='1.0'?>  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - tools [.NET Framework]
 - running .NET Framework tools
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
-ms.openlocfilehash: 0a5cbcd4fa60b819d3ab07a4f221e77ca106c321
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 96df5a0c8487d3ba344b3aa13ca74b92e428d5aa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166849"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556684"
 ---
 # <a name="net-framework-tools"></a>Narzędzia programu .NET Framework
 
@@ -37,7 +37,7 @@ Generuje plik z manifestem zestawu z modułów lub plików zasobów.
 Konwertuje definicje typów w bibliotece typów modelu COM dla formantu ActiveX do formantu Windows Forms.
 
 - [Caspol.exe (Narzędzie zasad zabezpieczeń dostępu kodu)](caspol-exe-code-access-security-policy-tool.md)  
-Umożliwia wyświetlanie i konfigurowanie zasad zabezpieczeń na poziomie zasad komputera, poziomie zasad użytkownika i poziomie zasad przedsiębiorstwa. W .NET Framework 4 i nowszych tego narzędzia nie wpływa na zasady zabezpieczeń dostępu kodu (CAS), chyba że [ \<legacyCasPolicy> element](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) jest ustawiony na `true` . Aby uzyskać więcej informacji, zobacz [zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).
+Umożliwia wyświetlanie i konfigurowanie zasad zabezpieczeń na poziomie zasad komputera, poziomie zasad użytkownika i poziomie zasad przedsiębiorstwa. W .NET Framework 4 i nowszych tego narzędzia nie wpływa na zasady zabezpieczeń dostępu kodu (CAS), chyba że [ \<legacyCasPolicy> element](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) jest ustawiony na `true` . Aby uzyskać więcej informacji, zobacz [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes).
 
 - [Cert2spc.exe (Narzędzie testowe certyfikatów wydawców oprogramowania)](cert2spc-exe-software-publisher-certificate-test-tool.md)  
 Tworzy certyfikat wydawcy oprogramowania (SPC) na podstawie co najmniej jednego certyfikatu X.509. To narzędzie jest przeznaczone wyłącznie do celów testowych.
@@ -134,7 +134,7 @@ Ułatwia lokalizowanie zasobów interfejsu użytkownika (plików*resx* lub *zaso
 
 ## <a name="related-sections"></a>Sekcje pokrewne
 
-- [Narzędzia WPF](https://docs.microsoft.com/previous-versions/ms742404(v=vs.110))  
+- [Narzędzia WPF](/previous-versions/ms742404(v=vs.110))  
 Obejmuje narzędzia, takie jak narzędzie isXPS zgodności (isXPS.exe) i narzędzia profilowania wydajności.
 
 - [Narzędzia programu Windows Communication Foundation](../wcf/tools.md)  

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - strings [Visual Basic], validating
 - validation [Visual Basic], strings
 ms.assetid: 9a1acf9b-7e2c-40cb-bba4-656ee2bc2ed0
-ms.openlocfilehash: 58ca052f4a03d99ab62e651f5c15e45c94b8d483
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 585f7acc8ab46ad7f5711fca7805b63b316f1970
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363720"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555734"
 ---
 # <a name="validating-strings-in-visual-basic"></a>Sprawdzanie poprawności ciągów w Visual Basic
 W tej sekcji omówiono sposób sprawdzania poprawności ciągów w Visual Basic.  
@@ -30,7 +30,7 @@ W tej sekcji omówiono sposób sprawdzania poprawności ciągów w Visual Basic.
  [Przewodnik: Walidacja złożoności haseł](walkthrough-validating-that-passwords-are-complex.md)  
  Jak ustalić, czy ciąg ma cechy silnego hasła.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Ciągi](index.md)
-- [MaskedTextBox, kontrolka](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [MaskedTextBox, kontrolka](/dotnet/desktop/winforms/controls/maskedtextbox-control-windows-forms)

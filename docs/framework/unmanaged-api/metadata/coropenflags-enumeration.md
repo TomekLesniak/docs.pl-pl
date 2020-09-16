@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e27a83b5-2698-4996-9032-1e0fed8b91ca
 topic_type:
 - apiref
-ms.openlocfilehash: 7318a7ea3eb1ddb047a799e58ebdfd9ce6cd76d1
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: e474cac6437413565a1ebddfa88c3e228fe59d41
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007588"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556352"
 ---
 # <a name="coropenflags-enumeration"></a>CorOpenFlags — Wyliczenie
 Zawiera wartości flag kontrolujące zachowanie metadanych podczas otwierania plików manifestu.  
@@ -59,7 +59,7 @@ typedef enum CorOpenFlags
 |`ofReadOnly`|Wskazuje, że plik powinien być otwarty do odczytu i że wywołanie `QueryInterface` dla elementu [IMetaDataEmit](imetadataemit-interface.md) nie może zostać wykonane.|  
 |`ofTakeOwnership`|Wskazuje, że pamięć została przypisana przy użyciu wywołania do [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) i zostanie zwolniona z metadanych.|  
 |`ofNoTypeLib`|Nieaktualne. Ta flaga jest ignorowana.|  
-|`ofNoTransform`|Wskazuje, że należy wyłączyć automatyczne transformacje plików WinMD. Innymi słowy, projekcja typu środowisko wykonawcze systemu Windows do typu .NET Framework powinna być wyłączona. Aby uzyskać więcej informacji, zobacz [środowisko wykonawcze systemu Windows i środowisko CLR poniżej wystawcy z platformą .NET i środowisko wykonawcze systemu Windows](https://docs.microsoft.com/archive/msdn-magazine/2012/windows-8-special-issue/windows-runtime-and-the-clr-underneath-the-hood-with-net-and-the-windows-runtime).|  
+|`ofNoTransform`|Wskazuje, że należy wyłączyć automatyczne transformacje plików WinMD. Innymi słowy, projekcja typu środowisko wykonawcze systemu Windows do typu .NET Framework powinna być wyłączona. Aby uzyskać więcej informacji, zobacz [środowisko wykonawcze systemu Windows i środowisko CLR poniżej wystawcy z platformą .NET i środowisko wykonawcze systemu Windows](/archive/msdn-magazine/2012/windows-8-special-issue/windows-runtime-and-the-clr-underneath-the-hood-with-net-and-the-windows-runtime).|  
 |`ofReserved1`|Zarezerwowane do użytku wewnętrznego.|  
 |`ofReserved2`|Zarezerwowane do użytku wewnętrznego.|  
 |`ofReserved`|Zarezerwowane do użytku wewnętrznego.|  
@@ -71,6 +71,6 @@ typedef enum CorOpenFlags
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

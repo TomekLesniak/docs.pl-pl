@@ -11,12 +11,12 @@ helpviewer_keywords:
 - reflection,partial trust
 - link demands
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
-ms.openlocfilehash: 0465cbd5ceb7d4f44bb6d10865fcbd17b8ed7af6
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 9ef2ac4897b3f8c48a0b0f402ab06eb073a5c1fa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865258"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556339"
 ---
 # <a name="security-considerations-for-reflection"></a>Zagadnienia dotyczące zabezpieczeń dla odbicia
 
@@ -36,7 +36,7 @@ Z zastrzeżeniem niepotrzebnych uprawnień, kod może użyć odbicia, aby wykona
 
   - Chronione elementy członkowskie klas bazowych kodu wywołującego. (W odbiciu jest to nazywane dostępem na poziomie rodziny).
 
-  - `internal`elementy członkowskie ( `Friend` elementy członkowskie w Visual Basic) w zestawie kodu wywołującego. (W odbiciu jest to określane jako dostęp na poziomie zestawu).
+  - `internal` elementy członkowskie ( `Friend` elementy członkowskie w Visual Basic) w zestawie kodu wywołującego. (W odbiciu jest to określane jako dostęp na poziomie zestawu).
 
   - Prywatne elementy członkowskie innych wystąpień klasy, które zawierają kod wywołujący.
 
@@ -60,7 +60,7 @@ Te reguły są takie same, niezależnie od tego, czy dostęp do elementu członk
 
 Kod aplikacji uruchamiany z wiersza polecenia jest uruchamiany z pełnym zaufaniem. O ile nie jest oznaczona jako przezroczysta, może użyć odbicia w celu uzyskania dostępu do elementów członkowskich o znaczeniu krytycznym. Gdy ten sam kod jest uruchamiany z częściowym zaufaniem (na przykład w domenie aplikacji w trybie piaskownicy), poziom zaufania zestawu określa, czy może on uzyskać dostęp do kodu krytycznego dla zabezpieczeń: Jeśli zestaw ma silną nazwę i jest zainstalowany w globalnej pamięci podręcznej zestawów, jest to zaufany zestaw i może wywołać członków o kluczowym znaczeniu dla bezpieczeństwa. Jeśli nie jest zaufana, jego stan zmieni się na przezroczysty, mimo że nie został oznaczony jako przezroczysty i nie może uzyskać dostępu do elementów członkowskich o znaczeniu krytycznym.
 
-Aby uzyskać więcej informacji na temat modelu zabezpieczeń w .NET Framework 4, zobacz [zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).
+Aby uzyskać więcej informacji na temat modelu zabezpieczeń w .NET Framework 4, zobacz [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes).
 
 ## <a name="reflection-and-transparency"></a>Odbicie i przezroczystość
 
@@ -93,7 +93,7 @@ Załóżmy na przykład, że przyznano uprawnienia internetowe do domeny aplikac
 
 - Zestaw A może używać odbicia w celu uzyskania dostępu do prywatnych składowych zestawu B, ponieważ zestaw przypisań zestawu B nie zawiera żadnych uprawnień, których nie udzielono.
 
-- Zestaw A nie może używać odbicia w celu uzyskania dostępu do prywatnych elementów członkowskich zestawów .NET Framework, takich jak mscorlib.dll, ponieważ mscorlib.dll jest w pełni zaufany i w związku z tym ma uprawnienia, które nie zostały przyznane do zestawu A. <xref:System.MemberAccessException>Występuje, gdy zabezpieczenia dostępu kodu przechodzą stos w czasie wykonywania.
+- Zestaw A nie może używać odbicia w celu uzyskania dostępu do prywatnych elementów członkowskich zestawów .NET Framework, takich jak mscorlib.dll, ponieważ mscorlib.dll jest w pełni zaufany i w związku z tym ma uprawnienia, które nie zostały przyznane do zestawu A. <xref:System.MemberAccessException> Występuje, gdy zabezpieczenia dostępu kodu przechodzą stos w czasie wykonywania.
 
 ## <a name="serialization"></a>Serializacja
 
@@ -116,7 +116,7 @@ Unikaj pisania publicznych elementów członkowskich, które pobierają <xref:Sy
 - <xref:System.Security.Permissions.ReflectionPermissionFlag>
 - <xref:System.Security.Permissions.ReflectionPermission>
 - <xref:System.Security.Permissions.SecurityPermission>
-- [Zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)
+- [Zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes)
 - [Zabezpieczenia dostępu kodu](../misc/code-access-security.md)
 - [Problemy związane z zabezpieczeniami w emisji odbicia](security-issues-in-reflection-emit.md)
 - [Wyświetlanie informacji o typie](viewing-type-information.md)

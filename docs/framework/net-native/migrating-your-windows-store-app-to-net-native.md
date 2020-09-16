@@ -2,16 +2,16 @@
 title: Migrowanie aplikacji ze Sklepu Windows do architektury .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: 5e5c655d0e8d6f1730f27d35525692e110b3c80c
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: cef985200efaf2ed7488d5e99394a5f01cc38594
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309199"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556931"
 ---
 # <a name="migrate-your-windows-store-app-to-net-native"></a>Migrowanie aplikacji ze sklepu Windows do .NET Native
 
-.NET Native zapewnia statyczną kompilację aplikacji w Sklepie Windows lub na komputerze dewelopera. Różni się to od kompilacji dynamicznej wykonywanej dla aplikacji ze sklepu Windows przez kompilator just-in-Time (JIT) lub [natywny Generator obrazu (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) na urządzeniu. Pomimo różnic, .NET Native próbuje zachować zgodność z [platformą .NET dla aplikacji ze sklepu Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29). W większości przypadków elementy, które działają na platformie .NET dla aplikacji ze sklepu Windows, działają również z .NET Native.  Jednak w niektórych przypadkach mogą wystąpić zmiany behawioralne. W tym dokumencie omówiono różnice między standardową platformą .NET dla aplikacji ze sklepu Windows i .NET Native w następujących obszarach:
+.NET Native zapewnia statyczną kompilację aplikacji w Sklepie Windows lub na komputerze dewelopera. Różni się to od kompilacji dynamicznej wykonywanej dla aplikacji ze sklepu Windows przez kompilator just-in-Time (JIT) lub [natywny Generator obrazu (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) na urządzeniu. Pomimo różnic, .NET Native próbuje zachować zgodność z [platformą .NET dla aplikacji ze sklepu Windows](/previous-versions/windows/apps/br230302(v=vs.140)). W większości przypadków elementy, które działają na platformie .NET dla aplikacji ze sklepu Windows, działają również z .NET Native.  Jednak w niektórych przypadkach mogą wystąpić zmiany behawioralne. W tym dokumencie omówiono różnice między standardową platformą .NET dla aplikacji ze sklepu Windows i .NET Native w następujących obszarach:
 
 - [Ogólne różnice w środowisku uruchomieniowym](#Runtime)
 
@@ -83,9 +83,9 @@ W .NET Native:
 
 - Publiczne składowe w <xref:System.RuntimeFieldHandle> <xref:System.RuntimeMethodHandle> strukturach i nie są obsługiwane. Te typy są obsługiwane tylko dla LINQ, drzew wyrażeń i inicjalizacji tablicy statycznej.
 
-- <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType>i <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> Uwzględnij ukryte składowe w klasach bazowych, więc mogą zostać zastąpione bez jawnych zastąpień. Jest to również prawdziwe w przypadku innych metod [RuntimeReflectionExtensions. GetRuntime *](xref:System.Reflection.RuntimeReflectionExtensions) .
+- <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType> i <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> Uwzględnij ukryte składowe w klasach bazowych, więc mogą zostać zastąpione bez jawnych zastąpień. Jest to również prawdziwe w przypadku innych metod [RuntimeReflectionExtensions. GetRuntime *](xref:System.Reflection.RuntimeReflectionExtensions) .
 
-- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType>i <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> nie kończy się niepowodzeniem podczas próby utworzenia niektórych kombinacji (na przykład tablicy `byref` obiektów).
+- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> i <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> nie kończy się niepowodzeniem podczas próby utworzenia niektórych kombinacji (na przykład tablicy `byref` obiektów).
 
 - Nie można używać odbicia do wywoływania elementów członkowskich, które mają parametry wskaźnika.
 
@@ -153,7 +153,7 @@ Użycie zlokalizowanych zasobów z <xref:System.Diagnostics.Tracing.EventSource>
 
 **Delegaci**
 
-`Delegate.BeginInvoke`i `Delegate.EndInvoke` nie są obsługiwane.
+`Delegate.BeginInvoke` i `Delegate.EndInvoke` nie są obsługiwane.
 
 **Różne interfejsy API**
 
@@ -225,9 +225,9 @@ W .NET Native:
 - <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>
 
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>jest obsługiwane, ale zgłasza wyjątek w niektórych scenariuszach, na przykład gdy jest używany z elementem [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) lub `byref` Variant.
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> jest obsługiwane, ale zgłasza wyjątek w niektórych scenariuszach, na przykład gdy jest używany z elementem [IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) lub `byref` Variant.
 
- Przestarzałe interfejsy API obsługi [interfejsu IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) obejmują:
+ Przestarzałe interfejsy API obsługi [interfejsu IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) obejmują:
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual?displayProperty=fullName>
@@ -240,15 +240,15 @@ Przestarzałe interfejsy API dla klasycznych zdarzeń COM obejmują:
 
 Przestarzałe interfejsy API w <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> interfejsie, które nie są obsługiwane w .NET Native, obejmują:
 
-- <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType>(wszystkie elementy członkowskie)
-- <xref:System.Runtime.InteropServices.CustomQueryInterfaceMode?displayProperty=nameWithType>(wszystkie elementy członkowskie)
-- <xref:System.Runtime.InteropServices.CustomQueryInterfaceResult?displayProperty=nameWithType>(wszystkie elementy członkowskie)
+- <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> (wszystkie elementy członkowskie)
+- <xref:System.Runtime.InteropServices.CustomQueryInterfaceMode?displayProperty=nameWithType> (wszystkie elementy członkowskie)
+- <xref:System.Runtime.InteropServices.CustomQueryInterfaceResult?displayProperty=nameWithType> (wszystkie elementy członkowskie)
 - <xref:System.Runtime.InteropServices.Marshal.GetComInterfaceForObject%28System.Object%2CSystem.Type%2CSystem.Runtime.InteropServices.CustomQueryInterfaceMode%29?displayProperty=fullName>
 
 Inne Nieobsługiwane funkcje międzyoperacyjności obejmują:
 
-- <xref:System.Runtime.InteropServices.ICustomAdapter?displayProperty=nameWithType>(wszystkie elementy członkowskie)
-- <xref:System.Runtime.InteropServices.SafeBuffer?displayProperty=nameWithType>(wszystkie elementy członkowskie)
+- <xref:System.Runtime.InteropServices.ICustomAdapter?displayProperty=nameWithType> (wszystkie elementy członkowskie)
+- <xref:System.Runtime.InteropServices.SafeBuffer?displayProperty=nameWithType> (wszystkie elementy członkowskie)
 - <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.UnmanagedType.VBByRefStr?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.UnmanagedType.AnsiBStr?displayProperty=fullName>
@@ -324,7 +324,7 @@ Jednak .NET Native nie obsługuje następujących funkcji:
 
 - Implementowanie <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> interfejsu w typie zarządzanym
 
-- Implementowanie interfejsu [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) w typie zarządzanym za pomocą <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> atrybutu. Nie można jednak wywoływać obiektów COM za poorednictwem `IDispatch` , a obiekt zarządzany nie może implementować `IDispatch` .
+- Implementowanie interfejsu [IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) w typie zarządzanym za pomocą <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> atrybutu. Nie można jednak wywoływać obiektów COM za poorednictwem `IDispatch` , a obiekt zarządzany nie może implementować `IDispatch` .
 
 Używanie odbicia do wywołania metody Invoke platformy nie jest obsługiwane. To ograniczenie można obejść przez zapakowanie wywołania metody w innej metodzie i użycie odbicia w celu wywołania otoki.
 
@@ -587,11 +587,11 @@ Poniższe różnice dotyczą serializacji i deserializacji z <xref:System.Runtim
 
   Typ `InnerType` nie jest znany jako Serializator, ponieważ elementy członkowskie klasy bazowej nie są przenoszone podczas serializacji.
 
-- <xref:System.Runtime.Serialization.DataContractSerializer>i <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> nie można serializować klasy lub struktury implementującej <xref:System.Collections.Generic.IEnumerable%601> interfejs. Na przykład następujące typy nie mogą serializować lub deserializować:
+- <xref:System.Runtime.Serialization.DataContractSerializer> i <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> nie można serializować klasy lub struktury implementującej <xref:System.Collections.Generic.IEnumerable%601> interfejs. Na przykład następujące typy nie mogą serializować lub deserializować:
 
-- <xref:System.Xml.Serialization.XmlSerializer>Serializacja następującej wartości obiektu nie powiodła się, ponieważ nie jest ona poznania dokładnego typu obiektu do serializacji:
+- <xref:System.Xml.Serialization.XmlSerializer> Serializacja następującej wartości obiektu nie powiodła się, ponieważ nie jest ona poznania dokładnego typu obiektu do serializacji:
 
-- <xref:System.Xml.Serialization.XmlSerializer>nie można serializować lub deserializować, jeśli typ serializowanego obiektu to <xref:System.Xml.XmlQualifiedName> .
+- <xref:System.Xml.Serialization.XmlSerializer> nie można serializować lub deserializować, jeśli typ serializowanego obiektu to <xref:System.Xml.XmlQualifiedName> .
 
 - Wszystkie serializatory ( <xref:System.Runtime.Serialization.DataContractSerializer> , <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> i <xref:System.Xml.Serialization.XmlSerializer> ) nie generują kodu serializacji dla typu <xref:System.Xml.Linq.XElement?displayProperty=nameWithType> lub dla typu, który zawiera <xref:System.Xml.Linq.XElement> . Wyświetlają one błędy czasu kompilacji.
 
@@ -619,7 +619,7 @@ Poniższe różnice dotyczą serializacji i deserializacji z <xref:System.Runtim
 
   - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%2CSystem.Type%5B%5D%2CSystem.Xml.Serialization.XmlRootAttribute%2CSystem.String%29>
 
-- <xref:System.Xml.Serialization.XmlSerializer>nie można wygenerować kodu dla typu, który ma metody przypisane do żadnego z następujących atrybutów:
+- <xref:System.Xml.Serialization.XmlSerializer> nie można wygenerować kodu dla typu, który ma metody przypisane do żadnego z następujących atrybutów:
 
   - <xref:System.Runtime.Serialization.OnSerializingAttribute>
 
@@ -629,7 +629,7 @@ Poniższe różnice dotyczą serializacji i deserializacji z <xref:System.Runtim
 
   - <xref:System.Runtime.Serialization.OnDeserializedAttribute>
 
-- <xref:System.Xml.Serialization.XmlSerializer>nie honoruje <xref:System.Xml.Serialization.IXmlSerializable> niestandardowego interfejsu serializacji. Jeśli masz klasę, która implementuje ten interfejs, <xref:System.Xml.Serialization.XmlSerializer> traktuje typ zwykłego starego obiektu CLR (POCO) i serializować tylko jego właściwości publiczne.
+- <xref:System.Xml.Serialization.XmlSerializer> nie honoruje <xref:System.Xml.Serialization.IXmlSerializable> niestandardowego interfejsu serializacji. Jeśli masz klasę, która implementuje ten interfejs, <xref:System.Xml.Serialization.XmlSerializer> traktuje typ zwykłego starego obiektu CLR (POCO) i serializować tylko jego właściwości publiczne.
 
 - Serializacja zwykłego <xref:System.Exception> obiektu nie działa dobrze z <xref:System.Runtime.Serialization.DataContractSerializer> i <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> .
 
@@ -661,9 +661,9 @@ Użyj narzędzi kompilacji x86, które są używane domyślnie przez program Vis
 
 Włączanie .NET Native w bibliotece testów jednostkowych dla projektu aplikacji ze sklepu Windows nie jest obsługiwane i powoduje, że kompilacja nie powiedzie się.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie](getting-started-with-net-native.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
-- [Omówienie programu .NET dla aplikacji do sklepu Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
+- [Omówienie programu .NET dla aplikacji do sklepu Windows](/previous-versions/windows/apps/br230302(v=vs.140))
 - [Obsługa programu .NET Framework dla aplikacji ze Sklepu Windows i środowiska wykonawczego systemu Windows](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

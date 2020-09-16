@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 07/10/2020
-  ms.openlocfilehash: d324cfe43f5558f255746421ebd4d143e7343e81
-  ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+  ms.openlocfilehash: 98de6da2ffd990c5ec99f1a4043b089af712dd6b
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 09/05/2020
-  ms.locfileid: "89495554"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90556053"
 highlightedContent:
   items:
   - title: Pobierz platformę .NET
@@ -168,11 +168,11 @@ additionalContent:
         text: 'Blazor: Interaktywny internetowy interfejs użytkownika po stronie klienta obsługujący platformę .NET'
     - title: Natywne dla chmury i mikrousługi
       links:
-      - url: /dotnet/azure/
+      - url: ./azure/index.yml
         text: Dokumentacja dotycząca platformy Azure na platformie .NET
       - url: /azure/storage
         text: Magazyn
-      - url: /dotnet/fsharp/using-fsharp-on-azure/
+      - url: ./fsharp/using-fsharp-on-azure/index.md
         text: Używanie języka F# na platformie Azure
       - url: architecture/serverless/index.md
         text: 'Aplikacje bezserwerowe: architektura, wzorce i implementacja platformy Azure'
@@ -224,7 +224,7 @@ additionalContent:
       links:
       - url: https://channel9.msdn.com/Shows/On-NET/IoT-support-for-NET-Core
         text: 'Na platformie .NET: Informacje o obsłudze IoT na platformie .NET Core'
-      - url: https://docs.microsoft.com/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0
+      - url: /archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0
         text: Programowanie IoT dla wielu platform przy użyciu platformy .NET Core 3.0
       - url: https://github.com/dotnet/iot
         text: Biblioteki IoT platformy .NET Core
@@ -235,19 +235,19 @@ additionalContent:
     items:
     - title: Dokumentacja interfejsów API platformy .NET Core
       summary: Dokumentacja referencyjna interfejsów API dla platformy .NET Core
-      url: https://docs.microsoft.com/dotnet/api/?view=netcore-3.1
+      url: ../api/index.md?view=netcore-3.1
     - title: Dokumentacja interfejsów API programu .NET Framework
       summary: Dokumentacja referencyjna interfejsów API dla platformy .NET Framework
-      url: https://docs.microsoft.com/dotnet/api/?view=netframework-4.8
+      url: ../api/index.md?view=netframework-4.8
     - title: Dokumentacja interfejsów API platformy ASP.NET Core
       summary: Dokumentacja referencyjna interfejsów API dla platformy ASP.NET Core
-      url: https://docs.microsoft.com/dotnet/api/?view=aspnetcore-3.1
+      url: ../api/index.md?view=aspnetcore-3.1
     - title: Dokumentacja interfejsów API ML.NET
       summary: Dokumentacja referencyjna interfejsów API dla platformy ML.NET
-      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
+      url: ../api/index.md?view=ml-dotnet
     - title: Dokumentacja interfejsów API platformy .NET dla platformy Apache Spark
       summary: Dokumentacja referencyjna interfejsów API platformy .NET dla platformy Apache Spark
-      url: https://docs.microsoft.com/dotnet/api/?view=spark-dotnet
+      url: ../api/index.md?view=spark-dotnet
     - title: Dokumentacja języka C#
       summary: Dokumentacja i specyfikacja języka C#
       url: csharp/language-reference/index.md
@@ -257,4 +257,4 @@ additionalContent:
     - title: Dokumentacja języka Visual Basic
       summary: Dokumentacja i specyfikacja języka Visual Basic
       url: visual-basic/language-reference/index.md
-  footer: Współtwórz dokumentację platformy .NET. Przeczytaj nasz [przewodnik współautora](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute).
+  footer: Współtwórz dokumentację platformy .NET. Przeczytaj nasz [przewodnik współautora](/contribute/dotnet/dotnet-contribute).

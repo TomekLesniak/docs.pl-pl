@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Konfigurowanie portu z certyfikatem SSL'
+title: 'Instrukcje: konfigurowanie portu z certyfikatem SSL'
 description: Dowiedz się, jak skonfigurować port za pomocą certyfikatu X. 509, który jest wymagany w przypadku samodzielnej usługi WCF z klasą WSHttpBinding za pomocą zabezpieczeń transportu.
 ms.date: 03/30/2017
 dev_langs:
@@ -10,20 +10,20 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: 0eccdf916dae7b886cbc4e6563e6dfe17039c321
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 619a893e0973f6691e32446d75f101201a0b6799
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247185"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556385"
 ---
-# <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Instrukcje: Konfigurowanie portu z certyfikatem SSL
+# <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Instrukcje: konfigurowanie portu z certyfikatem SSL
 
 Podczas tworzenia samohostowanej usługi Windows Communication Foundation (WCF) z <xref:System.ServiceModel.WSHttpBinding> klasą, która korzysta z zabezpieczeń transportu, należy również skonfigurować port za pomocą certyfikatu X. 509. Jeśli nie tworzysz usługi samodzielnej, możesz hostować usługę w Internet Information Services (IIS). Aby uzyskać więcej informacji, zobacz [zabezpieczenia transportu HTTP](http-transport-security.md).  
   
  Aby skonfigurować port, używane narzędzie zależy od systemu operacyjnego działającego na komputerze.  
   
- Jeśli korzystasz z systemu Windows Server 2003, użyj narzędzia HttpCfg.exe. W systemie Windows Server 2003 to narzędzie jest zainstalowane. Aby uzyskać więcej informacji, zobacz [Httpcfg Overview (przegląd](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10))). [Dokumentacja narzędzi pomocy technicznej systemu Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) objaśnia składnię narzędzia Httpcfg.exe.  
+ Jeśli korzystasz z systemu Windows Server 2003, użyj narzędzia HttpCfg.exe. W systemie Windows Server 2003 to narzędzie jest zainstalowane. Aby uzyskać więcej informacji, zobacz [Httpcfg Overview (przegląd](/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10))). [Dokumentacja narzędzi pomocy technicznej systemu Windows](/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) objaśnia składnię narzędzia Httpcfg.exe.  
   
  Jeśli korzystasz z systemu Windows Vista, użyj narzędzia Netsh.exe, które jest już zainstalowane.
   
@@ -121,6 +121,6 @@ Podczas tworzenia samohostowanej usługi Windows Communication Foundation (WCF) 
  [!code-csharp[c_WsHttpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wshttpservice/cs/source.cs#3)]
  [!code-vb[c_WsHttpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#3)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zabezpieczenia transportu HTTP](http-transport-security.md)

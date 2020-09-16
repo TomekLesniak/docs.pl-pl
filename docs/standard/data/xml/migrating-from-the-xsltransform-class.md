@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-ms.openlocfilehash: d18cf72f0629d347fb5f55ad7332e6046614c01b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 32fac1b5ab339dd4c71d761cf07fcde99ce1f2fa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282392"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550166"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrowanie z klasy XslTransform
 
@@ -26,7 +26,7 @@ W poniższych sekcjach opisano niektóre główne różnice między <xref:System
 <xref:System.Xml.Xsl.XslCompiledTransform>Klasa zawiera również inne optymalizacje, które znacznie przyspieszają od <xref:System.Xml.Xsl.XslTransform> klasy.
 
 > [!NOTE]
-> Chociaż ogólna wydajność <xref:System.Xml.Xsl.XslCompiledTransform> klasy jest lepsza niż <xref:System.Xml.Xsl.XslTransform> Klasa, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> Metoda <xref:System.Xml.Xsl.XslCompiledTransform> klasy może działać wolniej niż <xref:System.Xml.Xsl.XslTransform.Load%2A> Metoda <xref:System.Xml.Xsl.XslTransform> klasy, gdy jest wywoływana po raz pierwszy. Jest to spowodowane tym, że plik XSLT musi być skompilowany przed załadowaniem. Aby uzyskać więcej informacji, zobacz następujący wpis w blogu: [XslCompiledTransform wolniej niż XslTransform?](https://docs.microsoft.com/archive/blogs/antosha/xslcompiledtransform-slower-than-xsltransform)
+> Chociaż ogólna wydajność <xref:System.Xml.Xsl.XslCompiledTransform> klasy jest lepsza niż <xref:System.Xml.Xsl.XslTransform> Klasa, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> Metoda <xref:System.Xml.Xsl.XslCompiledTransform> klasy może działać wolniej niż <xref:System.Xml.Xsl.XslTransform.Load%2A> Metoda <xref:System.Xml.Xsl.XslTransform> klasy, gdy jest wywoływana po raz pierwszy. Jest to spowodowane tym, że plik XSLT musi być skompilowany przed załadowaniem. Aby uzyskać więcej informacji, zobacz następujący wpis w blogu: [XslCompiledTransform wolniej niż XslTransform?](/archive/blogs/antosha/xslcompiledtransform-slower-than-xsltransform)
 
 ## <a name="security"></a>Zabezpieczenia
 
@@ -101,7 +101,7 @@ Zalecenie dotyczące formatu W3C XSL Transformations (XSLT) w wersji 1,0 zawiera
 
 ### <a name="extension-objects-and-script-functions"></a>Obiekty rozszerzeń i funkcje skryptów
 
-<xref:System.Xml.Xsl.XslCompiledTransform>wprowadza dwa nowe ograniczenia dotyczące używania funkcji skryptów:
+<xref:System.Xml.Xsl.XslCompiledTransform> wprowadza dwa nowe ograniczenia dotyczące używania funkcji skryptów:
 
 - Tylko metody publiczne mogą być wywoływane z wyrażeń XPath.
 
@@ -109,19 +109,19 @@ Zalecenie dotyczące formatu W3C XSL Transformations (XSLT) w wersji 1,0 zawiera
 
 W programie <xref:System.Xml.Xsl.XslCompiledTransform> powiązanie (wyszukiwanie nazw metod) z funkcjami skryptu występuje w czasie kompilacji, a arkusze stylów, które działały z XslTransform, mogą spowodować wyjątek podczas ładowania z <xref:System.Xml.Xsl.XslCompiledTransform> .
 
-<xref:System.Xml.Xsl.XslCompiledTransform>obsługuje elementy mające `msxsl:using` i `msxsl:assembly` elementów podrzędnych w obrębie `msxsl:script` elementu. `msxsl:using`Elementy i `msxsl:assembly` są używane do deklarowania dodatkowych przestrzeni nazw i zestawów do użycia w bloku skryptu. Aby uzyskać więcej informacji, zobacz [bloki skryptów przy użyciu msxsl: Script](script-blocks-using-msxsl-script.md) .
+<xref:System.Xml.Xsl.XslCompiledTransform> obsługuje elementy mające `msxsl:using` i `msxsl:assembly` elementów podrzędnych w obrębie `msxsl:script` elementu. `msxsl:using`Elementy i `msxsl:assembly` są używane do deklarowania dodatkowych przestrzeni nazw i zestawów do użycia w bloku skryptu. Aby uzyskać więcej informacji, zobacz [bloki skryptów przy użyciu msxsl: Script](script-blocks-using-msxsl-script.md) .
 
-<xref:System.Xml.Xsl.XslCompiledTransform>zabrania obiektów rozszerzeń, które mają wiele przeciążeń z tą samą liczbą argumentów.
+<xref:System.Xml.Xsl.XslCompiledTransform> zabrania obiektów rozszerzeń, które mają wiele przeciążeń z tą samą liczbą argumentów.
 
 ### <a name="msxml-functions"></a>Funkcje programu MSXML
 
 Do klasy dodano obsługę dodatkowych funkcji MSXML <xref:System.Xml.Xsl.XslCompiledTransform> . Na poniższej liście opisano nowe lub udoskonalone funkcje:
 
-- msxsl: zestaw węzłów: <xref:System.Xml.Xsl.XslTransform> wymagany argument funkcji [funkcji zestawu węzłów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) musi być fragmentem drzewa wynikowego. <xref:System.Xml.Xsl.XslCompiledTransform>Klasa nie ma tego wymagania.
+- msxsl: zestaw węzłów: <xref:System.Xml.Xsl.XslTransform> wymagany argument funkcji [funkcji zestawu węzłów](/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) musi być fragmentem drzewa wynikowego. <xref:System.Xml.Xsl.XslCompiledTransform>Klasa nie ma tego wymagania.
 
 - msxsl: wersja: Ta funkcja jest obsługiwana w programie <xref:System.Xml.Xsl.XslCompiledTransform> .
 
-- Funkcje rozszerzenia XPath: [Funkcja MS: Compare — porównanie](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [MS: UTC funkcja](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [MS: Namespace-URI](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [MS: funkcja local-name](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [MS: Number](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), funkcja [MS: format-Date](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100))i MS: funkcje [funkcji Time w formacie godziny](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) są teraz obsługiwane.
+- Funkcje rozszerzenia XPath: [Funkcja MS: Compare — porównanie](/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [MS: UTC funkcja](/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [MS: Namespace-URI](/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [MS: funkcja local-name](/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [MS: Number](/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), funkcja [MS: format-Date](/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100))i MS: funkcje [funkcji Time w formacie godziny](/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) są teraz obsługiwane.
 
 - Funkcje rozszerzenia XPath powiązane ze schematem: funkcje te nie są obsługiwane natywnie przez program <xref:System.Xml.Xsl.XslCompiledTransform> . Można je jednak zaimplementować jako funkcje rozszerzenia.
 

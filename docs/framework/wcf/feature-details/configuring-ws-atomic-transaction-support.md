@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: d396ccdaca81eab74de5e20d7ba7a9a00acbf7a6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9c0e75d58fbcf61137ceae3fba9d8acfe3902171
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597478"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556593"
 ---
 # <a name="configure-ws-atomic-transaction-support"></a>Konfigurowanie obsługi transakcji WS-AT
 
@@ -17,19 +17,19 @@ W tym temacie opisano, jak można skonfigurować obsługę protokołu WS-AtomicT
 
 ## <a name="use-the-ws-at-configuration-utility"></a>Korzystanie z narzędzia konfiguracji WS-AT
 
-Narzędzie konfiguracji WS-AT (wsatConfig. exe) służy do konfigurowania ustawień usługi WS-AT. Aby włączyć usługę protokołu WS-AT, należy użyć narzędzia konfiguracji, aby skonfigurować port HTTPS dla usługi WS-AT, powiązać certyfikat X. 509 z portem HTTPS i skonfigurować autoryzowane certyfikaty partnerów przez określenie nazw podmiotu certyfikatu lub odcisków palców. Narzędzie konfiguracji umożliwia również wybranie trybu śledzenia i ustawienie domyślnych limitów czasu transakcji przychodzących i maksymalnych.
+Narzędzie konfiguracji WS-AT (wsatConfig.exe) służy do konfigurowania ustawień usługi WS-AT. Aby włączyć usługę protokołu WS-AT, należy użyć narzędzia konfiguracji, aby skonfigurować port HTTPS dla usługi WS-AT, powiązać certyfikat X. 509 z portem HTTPS i skonfigurować autoryzowane certyfikaty partnerów przez określenie nazw podmiotu certyfikatu lub odcisków palców. Narzędzie konfiguracji umożliwia również wybranie trybu śledzenia i ustawienie domyślnych limitów czasu transakcji przychodzących i maksymalnych.
 
 Dostęp do funkcji tego narzędzia można uzyskać za pomocą przystawki Strona właściwości programu Microsoft Management Console (MMC) w konsoli zarządzania usługami składowych lub z okna wiersza polecenia. Skonfiguruj obsługę WS-AT na komputerze lokalnym za pomocą okna wiersza polecenia. Skonfiguruj ustawienia na maszynach lokalnych i zdalnych przy użyciu przystawki programu MMC.
 
 Dostęp do okna wiersza polecenia można uzyskać w lokalizacji instalacji Windows SDK "%WINDIR%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation".
 
-Aby uzyskać więcej informacji na temat narzędzia wiersza polecenia, zobacz [Narzędzie konfiguracji protokołu WS-AtomicTransaction (wsatConfig. exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md).
+Aby uzyskać więcej informacji na temat narzędzia wiersza polecenia, zobacz [Narzędzie konfiguracji usługi WS-AtomicTransaction (wsatConfig.exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md).
 
 Jeśli korzystasz z systemu Windows XP lub Windows Server 2003, możesz uzyskać dostęp do przystawki programu MMC, przechodząc do **Panelu sterowania/narzędzia administracyjne/usługi składowe**, klikając prawym przyciskiem myszy pozycję **mój komputer**, a następnie wybierając polecenie **Właściwości**. Jest to ta sama lokalizacja, w której można skonfigurować usługę Microsoft Distributed Transaction Coordinator (MSDTC). Opcje dostępne dla konfiguracji są pogrupowane pod kartą **WS-AT** . W przypadku korzystania z systemu Windows Vista lub Windows Server 2008 przystawka MMC można znaleźć, klikając przycisk **Start** i wprowadzając `dcomcnfg.exe` w polu **wyszukiwania** . Po otwarciu programu MMC przejdź do węzła **My Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , kliknij prawym przyciskiem myszy i wybierz pozycję **Właściwości**. Opcje dostępne dla konfiguracji są pogrupowane pod kartą **WS-AT** .
 
 Aby uzyskać więcej informacji o przystawce, zobacz [Przystawka programu MMC Konfiguracja protokołu WS-AtomicTransaction](../ws-atomictransaction-configuration-mmc-snap-in.md).
 
-Aby włączyć interfejs użytkownika narzędzia, należy najpierw zarejestrować plik WsatUI. dll znajdujący się w następującej ścieżce
+Aby włączyć interfejs użytkownika narzędzia, należy najpierw zarejestrować plik WsatUI.dll znajdujący się w następującej ścieżce
 
 %PROGRAMFILES%\Microsoft SDKs\Windows\v6.0\Bin
 
@@ -39,19 +39,19 @@ Aby zarejestrować produkt, wykonaj następujące polecenie w oknie wiersza pole
 
 ## <a name="enable-ws-at"></a>Włącz usługę WS-AT
 
-Aby włączyć usługę protokołu WS-AT w usłudze MSDTC przy użyciu portu 443 i certyfikatu X. 509 z kluczem prywatnym, który został zainstalowany w magazynie komputera lokalnego, należy użyć narzędzia wsatConfig. exe z następującym poleceniem.
+Aby włączyć usługę protokołu WS-AT w usłudze MSDTC przy użyciu portu 443 i certyfikatu X. 509 z kluczem prywatnym, który został zainstalowany w lokalnym magazynie komputera, użyj narzędzia wsatConfig.exe z następującym poleceniem.
 
 `WsatConfig.exe –network:enable –port:8443 –endpointCert:<machine|"Issuer\SubjectName"> -accountsCerts:<thumbprint|"Issuer\SubjectName"> -restart`
 
 Zamień odpowiednie parametry na wartości odpowiednie dla danego środowiska.
 
-Aby wyłączyć usługę protokołu WS-AT w usłudze MSDTC, należy użyć narzędzia wsatConfig. exe z następującym poleceniem.
+Aby wyłączyć usługę protokołu WS-AT w usłudze MSDTC, użyj narzędzia wsatConfig.exe z następującym poleceniem.
 
 `WsatConfig.exe –network:disable -restart`
 
 ## <a name="configure-trust-between-two-machines"></a>Skonfiguruj relację zaufania między dwoma komputerami
 
-Usługa protokołu WS-AT wymaga, aby administrator jawnie autoryzuje poszczególne konta do udziału w transakcjach rozproszonych. Jeśli jesteś administratorem dwóch maszyn, możesz skonfigurować oba komputery w celu ustanowienia relacji wzajemnego zaufania przez wymianę odpowiedniego zestawu certyfikatów między maszynami, zainstalowanie ich w odpowiednich magazynach certyfikatów i użycie narzędzia wsatConfig. exe do dodania certyfikatu każdej maszyny do listy autoryzowanych certyfikatów uczestników. Ten krok jest niezbędny do wykonania transakcji rozproszonych między dwoma maszynami przy użyciu usługi WS-AT.
+Usługa protokołu WS-AT wymaga, aby administrator jawnie autoryzuje poszczególne konta do udziału w transakcjach rozproszonych. Jeśli jesteś administratorem dwóch maszyn, możesz skonfigurować obu maszyn w celu nawiązania wzajemnej relacji zaufania przez wymianę odpowiedniego zestawu certyfikatów między maszynami, zainstalowanie ich w odpowiednich magazynach certyfikatów i użycie narzędzia wsatConfig.exe, aby dodać certyfikat każdej maszyny do listy autoryzowanych certyfikatów uczestników. Ten krok jest niezbędny do wykonania transakcji rozproszonych między dwoma maszynami przy użyciu usługi WS-AT.
 
 W poniższym przykładzie przedstawiono kroki, aby ustanowić relację zaufania między dwoma komputerami, a i B.
 
@@ -59,7 +59,7 @@ W poniższym przykładzie przedstawiono kroki, aby ustanowić relację zaufania 
 
 Ta procedura wymaga przystawki Certyfikaty programu MMC. Dostęp do przystawki można uzyskać, otwierając menu Start/Run, wpisując "MMC" w polu wejściowym i naciskając przycisk OK. Następnie w oknie **Console1** przejdź do **pliku/Dodaj/Usuń** przystawkę, kliknij przycisk Dodaj, a następnie wybierz pozycję **Certyfikaty** z listy **dostępne autonomiczne przystawki** . Na koniec wybierz pozycję **konto komputera** , aby zarządzać, a następnie kliknij przycisk **OK**. W konsoli przystawki zostanie wyświetlony węzeł **Certyfikaty** .
 
-Musisz mieć już wymagane certyfikaty, aby ustanowić relację zaufania. Aby dowiedzieć się, jak tworzyć i instalować nowe certyfikaty przed wykonaniem poniższych kroków, zobacz [How to: Create i Install Temporary Client Certificates in WCF podczas tworzenia](https://docs.microsoft.com/previous-versions/msp-n-p/ff650751(v=pandp.10)).
+Musisz mieć już wymagane certyfikaty, aby ustanowić relację zaufania. Aby dowiedzieć się, jak tworzyć i instalować nowe certyfikaty przed wykonaniem poniższych kroków, zobacz [How to: Create i Install Temporary Client Certificates in WCF podczas tworzenia](/previous-versions/msp-n-p/ff650751(v=pandp.10)).
 
 1. Na maszynie A, za pomocą przystawki Certyfikaty programu MMC, zaimportuj istniejący certyfikat (certyfikat) do LocalMachine\MY (węzeł prywatny) i magazyn LocalMachine\ROOT (węzeł zaufanego głównego urzędu certyfikacji). Aby zaimportować certyfikat do określonego węzła, kliknij prawym przyciskiem myszy węzeł i wybierz polecenie **wszystkie zadania/Importuj**.
 
@@ -102,7 +102,7 @@ Podczas wdrażania usługi MSDTC administrator musi upewnić się, że wszystkie
 
 ## <a name="tracing"></a>Śledzenie
 
-Usługa protokołu WS-AT obsługuje zintegrowane, specyficzne dla transakcji śledzenie, które może być włączone i zarządzane za pomocą narzędzia [MMC konfiguracja usługi WS-AtomicTransaction](../ws-atomictransaction-configuration-mmc-snap-in.md) . Ślady mogą zawierać dane wskazujące czas rejestracji dla konkretnej transakcji, czas, w którym transakcja osiągnie swój stan, a także otrzymać wyniki każdej rejestracji transakcji. Wszystkie ślady można wyświetlić za pomocą narzędzia [Podgląd śledzenia usług (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) .
+Usługa protokołu WS-AT obsługuje zintegrowane, specyficzne dla transakcji śledzenie, które może być włączone i zarządzane za pomocą narzędzia [MMC konfiguracja usługi WS-AtomicTransaction](../ws-atomictransaction-configuration-mmc-snap-in.md) . Ślady mogą zawierać dane wskazujące czas rejestracji dla konkretnej transakcji, czas, w którym transakcja osiągnie swój stan, a także otrzymać wyniki każdej rejestracji transakcji. Wszystkie ślady można wyświetlić za pomocą narzędzia [Podgląd śledzenia usługi (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) .
 
 Usługa protokołu WS-AT obsługuje również zintegrowane śledzenie ServiceModel przez sesję śledzenia ETW. Zawiera bardziej szczegółowe dane śledzenia dotyczące komunikacji oprócz istniejących śladów transakcji.  Aby włączyć te dodatkowe ślady, wykonaj następujące kroki
 
@@ -126,7 +126,7 @@ Usługa protokołu WS-AT obsługuje również zintegrowane śledzenie ServiceMod
 
 - 31: pełne
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Narzędzie do konfiguracji elementu WS-AtomicTransaction (wsatConfig.exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
 - [Przystawka programu MMC do konfigurowania elementu WS-AtomicTransaction](../ws-atomictransaction-configuration-mmc-snap-in.md)

@@ -3,20 +3,20 @@ title: Rozpoczynanie pracy z usługą Azure Queue Storage przy użyciu języka F
 description: Usługa Azure Queues zapewnia niezawodne, asynchroniczne przesyłanie komunikatów między składnikami aplikacji. Przesyłanie komunikatów za pomocą chmury umożliwia składnikom aplikacji niezależne skalowanie.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 841068ac91aecc53811359e27d984907569a2c6d
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 0b360348ce6966ce49a2ac0abd839844bdbe55f2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75935494"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548367"
 ---
-# <a name="get-started-with-azure-queue-storage-using-f"></a>Rozpoczynanie pracy z usługą Azure queue storage przy użyciu programu F\#
+# <a name="get-started-with-azure-queue-storage-using-f"></a>Rozpoczynanie pracy z usługą Azure queue storage przy użyciu języka F\#
 
 Usługa Azure Queue Storage umożliwia przesyłanie komunikatów za pomocą chmury między składnikami aplikacji. W przypadku projektowania aplikacji pod kątem skalowania składniki aplikacji są często rozłączane, dzięki czemu mogą być skalowane niezależnie. Usługa Queue Storage zapewnia asynchroniczne przesyłanie komunikatów na potrzeby komunikacji między składnikami aplikacji niezależnie od tego, czy działają w chmurze, na komputerze, serwerze lokalnym czy urządzeniu przenośnym. Magazyn kolejek obsługuje również zarządzanie asynchronicznymi zadaniami oraz przepływy pracy procesu kompilacji.
 
 ### <a name="about-this-tutorial"></a>Informacje o tym samouczku
 
-W tym samouczku pokazano, F# jak napisać kod dla niektórych typowych zadań za pomocą usługi Azure queue storage. Objęte zadaniami obejmują tworzenie i usuwanie kolejek oraz dodawanie, odczytywanie i usuwanie komunikatów w kolejce.
+W tym samouczku pokazano, jak napisać kod języka F # dla niektórych typowych zadań za pomocą usługi Azure queue storage. Objęte zadaniami obejmują tworzenie i usuwanie kolejek oraz dodawanie, odczytywanie i usuwanie komunikatów w kolejce.
 
 Omówienie pojęć dotyczących usługi queue storage można znaleźć [w przewodniku .NET dla usługi queue storage](/azure/storage/storage-dotnet-how-to-use-queues).
 
@@ -25,11 +25,11 @@ Omówienie pojęć dotyczących usługi queue storage można znaleźć [w przewo
 Aby skorzystać z tego przewodnika, musisz najpierw [utworzyć konto usługi Azure Storage](/azure/storage/storage-create-storage-account).
 Wymagany jest również klucz dostępu do magazynu dla tego konta.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Utwórz F# skrypt i uruchom F# interaktywny
+## <a name="create-an-f-script-and-start-f-interactive"></a>Utwórz skrypt języka F # i zacznij F# Interactive
 
-Przykłady w tym artykule mogą być używane w F# aplikacji lub F# skrypcie. Aby utworzyć F# skrypt, Utwórz plik z rozszerzeniem `.fsx`, na przykład `queues.fsx`, w środowisku F# deweloperskim.
+Przykłady w tym artykule mogą być używane w przypadku aplikacji F # lub skryptu języka F #. Aby utworzyć skrypt języka F #, Utwórz plik z `.fsx` rozszerzeniem, na przykład `queues.fsx` w środowisku deweloperskim języka f #.
 
-Następnie należy użyć [Menedżera pakietów](package-management.md) , takiego jak [Paket](https://fsprojects.github.io/Paket/) lub [NuGet](https://www.nuget.org/) , aby zainstalować pakiet `WindowsAzure.Storage` i informacje referencyjne `WindowsAzure.Storage.dll` w skrypcie przy użyciu dyrektywy `#r`.
+Następnie należy użyć [Menedżera pakietów](package-management.md) , takiego jak [Paket](https://fsprojects.github.io/Paket/) lub [NuGet](https://www.nuget.org/) , aby zainstalować `WindowsAzure.Storage` pakiet i odwołanie `WindowsAzure.Storage.dll` w skrypcie przy użyciu `#r` dyrektywy.
 
 ### <a name="add-namespace-declarations"></a>Dodawanie deklaracji przestrzeni nazw
 
@@ -51,7 +51,7 @@ W przypadku prawdziwych aplikacji najlepszym sposobem obsługi parametrów poł�
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L11-L13)]
 
-Użycie programu Azure Configuration Manager jest opcjonalne. Można również użyć interfejsu API, takiego jak typ `ConfigurationManager` .NET Framework.
+Użycie programu Azure Configuration Manager jest opcjonalne. Można również użyć interfejsu API, takiego jak `ConfigurationManager` typ .NET Framework.
 
 ### <a name="parse-the-connection-string"></a>Analizowanie parametrów połączenia
 
@@ -59,11 +59,11 @@ Aby przeanalizować parametry połączenia, użyj:
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L19-L20)]
 
-Spowoduje to zwrócenie `CloudStorageAccount`.
+Spowoduje to zwrócenie elementu `CloudStorageAccount` .
 
 ### <a name="create-the-queue-service-client"></a>Tworzenie klienta usługi kolejki
 
-Klasa `CloudQueueClient` umożliwia pobieranie kolejek przechowywanych w usłudze queue storage. Oto jeden ze sposobów tworzenia klienta usługi:
+`CloudQueueClient`Klasa umożliwia pobieranie kolejek przechowywanych w usłudze queue storage. Oto jeden ze sposobów tworzenia klienta usługi:
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L26-L26)]
 
@@ -77,23 +77,23 @@ Ten przykład pokazuje, jak utworzyć kolejkę, jeśli jeszcze nie istnieje:
 
 ## <a name="insert-a-message-into-a-queue"></a>Wstawianie komunikatu do kolejki
 
-Aby wstawić komunikat do istniejącej kolejki, najpierw utwórz nowy `CloudQueueMessage`. Następnie Wywołaj metodę `AddMessage`. `CloudQueueMessage` można utworzyć na podstawie ciągu (w formacie UTF-8) lub tablicy `byte`, tak jak to:
+Aby wstawić komunikat do istniejącej kolejki, najpierw utwórz nowy `CloudQueueMessage` . Następnie Wywołaj `AddMessage` metodę. Element `CloudQueueMessage` można utworzyć na podstawie ciągu (w formacie UTF-8) lub `byte` tablicy, tak jak to:
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L42-L44)]
 
 ## <a name="peek-at-the-next-message"></a>Podgląd kolejnego komunikatu
 
-Możesz uzyskać wgląd w komunikat z przodu kolejki, bez usuwania go z kolejki, wywołując metodę `PeekMessage`.
+Możesz uzyskać wgląd w komunikat z przodu kolejki, bez usuwania go z kolejki, wywołując `PeekMessage` metodę.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L50-L52)]
 
 ## <a name="get-the-next-message-for-processing"></a>Pobierz następny komunikat do przetworzenia
 
-Możesz pobrać komunikat z przodu kolejki do przetworzenia, wywołując metodę `GetMessage`.
+Możesz pobrać komunikat z przodu kolejki do przetworzenia, wywołując `GetMessage` metodę.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L58-L59)]
 
-Możesz później wskazać pomyślne przetwarzanie komunikatu przy użyciu `DeleteMessage`.
+Później wskazujemy pomyślne przetwarzanie komunikatu przy użyciu `DeleteMessage` .
 
 ## <a name="change-the-contents-of-a-queued-message"></a>Zmiana zawartości komunikatu w kolejce
 
@@ -103,7 +103,7 @@ Można zmienić zawartość pobranego komunikatu w miejscu w kolejce. Jeśli kom
 
 ## <a name="de-queue-the-next-message"></a>Usunięcie następnego komunikatu z kolejki
 
-Twój kod usuwa komunikat z kolejki w dwóch etapach. Po wywołaniu `GetMessage`otrzymujesz następny komunikat w kolejce. Komunikat zwrócony z `GetMessage` jest niewidoczny dla każdego innego kodu odczytującego komunikaty z tej kolejki. Domyślnie komunikat pozostanie niewidoczny przez 30 sekund. Aby zakończyć usuwanie komunikatu z kolejki, należy również wywołać `DeleteMessage`. Ten dwuetapowy proces usuwania komunikatów gwarantuje, że jeśli kod nie będzie w stanie przetworzyć komunikatu z powodu awarii sprzętu lub oprogramowania, inne wystąpienie kodu będzie w stanie uzyskać ten sam komunikat i ponowić próbę. Kod wywołuje `DeleteMessage` bezpośrednio po przetworzeniu komunikatu.
+Twój kod usuwa komunikat z kolejki w dwóch etapach. Po wywołaniu otrzymujesz `GetMessage` następną wiadomość w kolejce. Komunikat zwrócony z programu `GetMessage` stał się niewidoczny dla każdego innego kodu odczytującego komunikaty z tej kolejki. Domyślnie komunikat pozostanie niewidoczny przez 30 sekund. Aby zakończyć usuwanie komunikatu z kolejki, należy również wywołać metodę `DeleteMessage` . Ten dwuetapowy proces usuwania komunikatów gwarantuje, że jeśli kod nie będzie w stanie przetworzyć komunikatu z powodu awarii sprzętu lub oprogramowania, inne wystąpienie kodu będzie w stanie uzyskać ten sam komunikat i ponowić próbę. Kod wywołuje `DeleteMessage` się bezpośrednio po przetworzeniu komunikatu.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L75-L76)]
 
@@ -116,19 +116,19 @@ Ten przykład pokazuje, jak używać asynchronicznego przepływu pracy ze wspól
 ## <a name="additional-options-for-de-queuing-messages"></a>Dodatkowe opcje do usuwania komunikatów z kolejkowania
 
 Istnieją dwa sposoby dostosowania pobierania komunikatów z kolejki.
-Po pierwsze można uzyskać komunikaty zbiorczo (do 32). Po drugie można ustawić dłuższy lub krótszy limit czasu niewidoczności, dzięki czemu kod będzie mieć więcej lub mniej czasu na pełne przetworzenie każdego komunikatu. Poniższy przykład kodu używa `GetMessages`, aby pobrać 20 komunikatów w jednym wywołaniu, a następnie przetwarza każdy komunikat. Ustawia również limitu czasu niewidoczności na pięć minut dla każdego komunikatu. Należy zauważyć, że 5 minut rozpoczyna się dla wszystkich komunikatów w tym samym czasie, więc po upływie 5 minut od wywołania do `GetMessages`wszystkie komunikaty, które nie zostały usunięte, staną się znów widoczne.
+Po pierwsze można uzyskać komunikaty zbiorczo (do 32). Po drugie można ustawić dłuższy lub krótszy limit czasu niewidoczności, dzięki czemu kod będzie mieć więcej lub mniej czasu na pełne przetworzenie każdego komunikatu. Poniższy przykład kodu używa `GetMessages` do uzyskania 20 komunikatów w jednym wywołaniu, a następnie przetwarza każdy komunikat. Ustawia również limitu czasu niewidoczności na pięć minut dla każdego komunikatu. Należy zauważyć, że 5 minut rozpoczyna się dla wszystkich komunikatów w tym samym czasie, więc po upływie 5 minut od wywołania do `GetMessages` , wszystkie komunikaty, które nie zostały usunięte, staną się znów widoczne.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L97-L99)]
 
 ## <a name="get-the-queue-length"></a>Pobieranie długości kolejki
 
-Możesz uzyskać szacunkową liczbę komunikatów w kolejce. Metoda `FetchAttributes` prosi usługa kolejki o pobranie atrybutów kolejki, łącznie z liczbą komunikatów. Właściwość `ApproximateMessageCount` zwraca ostatnią wartość pobraną przez metodę `FetchAttributes`, bez wywoływania usługa kolejki.
+Możesz uzyskać szacunkową liczbę komunikatów w kolejce. `FetchAttributes`Metoda prosi usługa kolejki o pobranie atrybutów kolejki, łącznie z liczbą komunikatów. `ApproximateMessageCount`Właściwość zwraca ostatnią wartość pobraną przez `FetchAttributes` metodę bez wywoływania usługa kolejki.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L105-L106)]
 
 ## <a name="delete-a-queue"></a>Usuwanie kolejki
 
-Aby usunąć kolejkę i wszystkie znajdujące się w niej komunikaty, wywołaj metodę `Delete` w obiekcie Queue.
+Aby usunąć kolejkę i wszystkie znajdujące się w niej komunikaty, wywołaj `Delete` metodę w obiekcie Queue.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L112-L113)]
 
@@ -138,6 +138,6 @@ Teraz, kiedy znasz już podstawy usługi Queue Storage, skorzystaj z poniższych
 
 - [Interfejsy API usługi Azure Storage dla platformy .NET](/dotnet/api/overview/azure/storage)
 - [Dostawca typów usługi Azure Storage](https://github.com/fsprojects/AzureStorageTypeProvider)
-- [Blog zespołu odpowiedzialnego za usługę Azure Storage](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
+- [Blog zespołu usługi Azure Storage](/archive/blogs/windowsazurestorage/)
 - [Konfiguracja parametrów połączenia usługi Azure Storage](/azure/storage/common/storage-configure-connection-string)
 - [Dokumentacja interfejsu API REST usługi Azure Storage](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

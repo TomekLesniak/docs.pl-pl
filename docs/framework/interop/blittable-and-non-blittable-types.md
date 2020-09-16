@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interop marshaling, blittable types
 - blittable types, interop marshaling
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
-ms.openlocfilehash: 68f4197a2710b6825c83bbc51daaf8f6b5a2c81f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8bbf9c72143033cec22b38cc26cbe8ceb44f790b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621538"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556274"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Typy kopiowalne i niekopiowalne
 Większość typów danych ma wspólną reprezentację w pamięci zarządzanej i niezarządzanej i nie wymaga specjalnej obsługi przez organizatora międzyoperacyjności. Typy te są nazywane *danych kopiowalnychmi* , ponieważ nie wymagają konwersji podczas przekazywania między zarządzanym i niezarządzanym kodem.  
@@ -61,13 +61,13 @@ Większość typów danych ma wspólną reprezentację w pamięci zarządzanej i
 |Typ inny niż danych kopiowalnych|Opis|  
 |-------------------------|-----------------|  
 |[System. Array](default-marshaling-for-arrays.md)|Konwertuje na tablicę w stylu C lub `SAFEARRAY` .|  
-|[System. Boolean](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/t2t3725f(v=vs.100))|Konwertuje do wartości 1, 2 lub 4-bajtowej na wartość `true` 1 lub-1.|  
-|[System. Char](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|Konwertuje na znak Unicode lub ANSI.|  
-|[System. Class](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/s0968xy8(v=vs.100))|Konwertuje do interfejsu klasy.|  
+|[System. Boolean](/previous-versions/dotnet/netframework-4.0/t2t3725f(v=vs.100))|Konwertuje do wartości 1, 2 lub 4-bajtowej na wartość `true` 1 lub-1.|  
+|[System. Char](/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|Konwertuje na znak Unicode lub ANSI.|  
+|[System. Class](/previous-versions/dotnet/netframework-4.0/s0968xy8(v=vs.100))|Konwertuje do interfejsu klasy.|  
 |[System.Object](default-marshaling-for-objects.md)|Konwertuje na wariant lub interfejs.|  
 |[System. Mdarray](default-marshaling-for-arrays.md)|Konwertuje na tablicę w stylu C lub `SAFEARRAY` .|  
 |[System. String](default-marshaling-for-strings.md)|Konwertuje na ciąg kończący się w odwołaniu o wartości null lub w postaci BSTR.|  
-|[System. ValueType](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|Konwertuje na strukturę ze stałym układem pamięci.|  
+|[System. ValueType](/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|Konwertuje na strukturę ze stałym układem pamięci.|  
 |[System. Szarray](default-marshaling-for-arrays.md)|Konwertuje na tablicę w stylu C lub `SAFEARRAY` .|  
   
  Typy klas i obiektów są obsługiwane tylko przez międzyoperacyjność modelu COM. Aby uzyskać odpowiednie typy w Visual Basic, C# i C++, zobacz [Omówienie biblioteki klas](../../standard/class-library-overview.md).  

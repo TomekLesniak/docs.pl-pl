@@ -1,15 +1,15 @@
 ---
-title: 'Instrukcje: Uzyskiwanie dostępu do usługi z poziomu aplikacji przepływu pracy'
+title: 'Instrukcje: uzyskiwanie dostępu do usługi z poziomu aplikacji przepływu pracy'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-ms.openlocfilehash: 2ce79b726b623c2a25bf14065682e685455ca575
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7375dc4f9af2eb0209b83724cd2ac9b9619b56dd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597244"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556879"
 ---
-# <a name="how-to-access-a-service-from-a-workflow-application"></a>Instrukcje: Uzyskiwanie dostępu do usługi z poziomu aplikacji przepływu pracy
+# <a name="how-to-access-a-service-from-a-workflow-application"></a>Instrukcje: uzyskiwanie dostępu do usługi z poziomu aplikacji przepływu pracy
 W tym temacie opisano sposób wywoływania usługi przepływu pracy z poziomu aplikacji konsolowej przepływu pracy. Jest to zależne od ukończenia procedury [: Tworzenie usługi przepływu pracy z działaniami obsługi komunikatów](how-to-create-a-workflow-service-with-messaging-activities.md) . Chociaż w tym temacie opisano sposób wywoływania usługi przepływu pracy z poziomu aplikacji przepływu pracy, można używać tych samych metod do wywoływania dowolnej usługi Windows Communication Foundation (WCF) z poziomu aplikacji przepływu pracy.
 
 ### <a name="create-a-workflow-console-application-project"></a>Tworzenie projektu aplikacji konsolowej przepływu pracy
@@ -62,8 +62,8 @@ W tym temacie opisano sposób wywoływania usługi przepływu pracy z poziomu ap
 
 12. Naciśnij kombinację klawiszy CTRL + F5, aby uruchomić usługę i klienta. Serwer programistyczny ASP.NET obsługuje usługę, program Internet Explorer wyświetla stronę pomocy programu WCF, a aplikacja przepływu pracy klienta jest uruchamiana w oknie konsoli i wyświetla ciąg zwracany przez usługę ("Hello, World").
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Usługi przepływu pracy](workflow-services.md)
-- [Instrukcje: tworzenie przepływu pracy usługi przy użyciu działań dotyczących komunikatów](how-to-create-a-workflow-service-with-messaging-activities.md)
-- [Zużywanie usługi WCF z przepływu pracy w projekcie sieci Web](https://docs.microsoft.com/archive/blogs/endpoint/how-to-consume-a-wcf-service-from-a-wf4-workflow)
+- [Instrukcje: Tworzenie usługi przepływu pracy przy użyciu działań dotyczących komunikatów](how-to-create-a-workflow-service-with-messaging-activities.md)
+- [Zużywanie usługi WCF z przepływu pracy w projekcie sieci Web](/archive/blogs/endpoint/how-to-consume-a-wcf-service-from-a-wf4-workflow)

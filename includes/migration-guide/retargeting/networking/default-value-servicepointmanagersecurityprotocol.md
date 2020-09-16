@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 5c86be598ab6196ecf4da05451c7f22d2be52c12
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8aff4b1aa329d6fdfebf3b62e9279e9dfe5de0a4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614699"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606614"
 ---
 ### <a name="default-value-of-servicepointmanagersecurityprotocol-is-securityprotocoltypesystemdefault"></a>Wartość domyślna elementu ServicePointManager. to elementu SecurityProtocol to SecurityProtocolType.System. Wartooć
 
 #### <a name="details"></a>Szczegóły
 
-Począwszy od aplikacji przeznaczonych dla .NET Framework 4,7, wartość domyślna <xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> Właściwości to <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType> . Ta zmiana umożliwia .NET Framework interfejsów API sieci opartych na SslStream (na przykład FTP, HTTPS i SMTP) do dziedziczenia domyślnych protokołów zabezpieczeń z systemu operacyjnego zamiast przy użyciu zakodowanych wartości zdefiniowanych przez .NET Framework. Wartość domyślna zmienia się w zależności od systemu operacyjnego i dowolnej konfiguracji niestandardowej wykonywanej przez administratora systemu. Aby uzyskać informacje dotyczące domyślnego protokołu SChannel w każdej wersji systemu operacyjnego Windows, zobacz [Protokoły protokołu TLS/SSL (Dostawca SSP Schannel)](https://docs.microsoft.com/windows/desktop/SecAuthN/protocols-in-tls-ssl--schannel-ssp-).</p>W przypadku aplikacji przeznaczonych dla starszej wersji .NET Framework wartość domyślna <xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> właściwości zależy od wersji .NET Framework docelowej. Aby uzyskać więcej informacji, zobacz [sekcję dotyczącą sieci przekierowywania zmian dotyczących migracji z .NET Framework 4.5.2 do 4,6](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#networking) .
+Począwszy od aplikacji przeznaczonych dla .NET Framework 4,7, wartość domyślna <xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> Właściwości to <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType> . Ta zmiana umożliwia .NET Framework interfejsów API sieci opartych na SslStream (na przykład FTP, HTTPS i SMTP) do dziedziczenia domyślnych protokołów zabezpieczeń z systemu operacyjnego zamiast przy użyciu zakodowanych wartości zdefiniowanych przez .NET Framework. Wartość domyślna zmienia się w zależności od systemu operacyjnego i dowolnej konfiguracji niestandardowej wykonywanej przez administratora systemu. Aby uzyskać informacje dotyczące domyślnego protokołu SChannel w każdej wersji systemu operacyjnego Windows, zobacz [Protokoły protokołu TLS/SSL (Dostawca SSP Schannel)](/windows/desktop/SecAuthN/protocols-in-tls-ssl--schannel-ssp-).</p>W przypadku aplikacji przeznaczonych dla starszej wersji .NET Framework wartość domyślna <xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> właściwości zależy od wersji .NET Framework docelowej. Aby uzyskać więcej informacji, zobacz [sekcję dotyczącą sieci przekierowywania zmian dotyczących migracji z .NET Framework 4.5.2 do 4,6](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#networking) .
 
 #### <a name="suggestion"></a>Sugestia
 

@@ -8,22 +8,22 @@ helpviewer_keywords:
 - names in XAML [XAML Services]
 - XamlName grammar [XAML Services]
 ms.assetid: 11e4cada-41d2-494d-9531-0d3df4dfcbe3
-ms.openlocfilehash: 2fc74990b15caaa9b58e6eea5b0212ea22505674
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ceb027938b6d4313babbe02949e0b6dd5ee85589
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "82071830"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556697"
 ---
 # <a name="xamlname-grammar"></a>XamlName — Gramatyka
 
-XamlName Grammar jest określoną gramatyką zdefiniowaną w specyfikacji języka XAML [MS-XAML], która jest powielana tutaj dla wygody.
+Gramatyka XAML to określona Gramatyka zdefiniowana w specyfikacji języka XAML [MS-XAML], która jest odtwarzana w tym miejscu dla wygody.
 
-## <a name="from-the-xaml-specification"></a>Ze specyfikacji XAML
+## <a name="from-the-xaml-specification"></a>Ze specyfikacji języka XAML
 
-Specyfikacja [MS-XAML] definiuje gramatyki XamlName do identyfikacji zestawu prawnych identyfikatorów symbolicznych używanych dla typów i właściwości.
+Specyfikacja [MS-XAML] definiuje gramatykę XamlName do identyfikowania zestawu dozwolonych identyfikatorów symbolicznych używanych dla typów i właściwości.
 
-Wartości ciągów typu XamlName muszą być zgodne z następującą gramatyką:
+Wartości ciągu typu XamlName muszą być zgodne z następującą gramatyką:
 
 ```xaml
 XamlName ::= NameStartChar ( NameChar )*
@@ -34,7 +34,7 @@ DecimalDigit ::= UnicodeNd
 CombiningCharacter ::= UnicodeMn | UnicodeMc
 ```
 
-Który zakłada następujące ogólne wartości kategorii zdefiniowane w bazie danych znaków Unicode
+Który przyjmuje następujące ogólne wartości kategorii, zgodnie z definicją w bazie danych znaków Unicode
 
 | Kategoria Unicode   | Opis                   |
 |--------------------|-------------------------------|
@@ -43,14 +43,14 @@ Który zakłada następujące ogólne wartości kategorii zdefiniowane w bazie d
 | Lt                 | Litera, Duże litery na początku wyrazu             |
 | Lm                 | Litera, Modyfikator              |
 | Lo                 | Litera, Inne                 |
-| Mn                 | Oznacz, Bez odstępów             |
-| Mc                 | Znak, Odstępy mieszane       |
+| Mn                 | Oznacz, bez odstępów             |
+| Rolę                 | Znak, Odstępy mieszane       |
 | Nd                 | Liczba, dziesiętna               |
-| Nl                 | Liczba, Litera                |
+| NL                 | Liczba, Litera                |
 
-XAML definiuje drugą gramatykę, DottedXamlName, która jest używana dla odwołań do właściwości i zdarzeń kwalifikowanych, a także dla dołączonych elementów członkowskich. Aby uzyskać więcej <xref:System.Windows.DependencyProperty> informacji, zobacz i [Omówienie XAML (WPF)](../fundamentals/xaml.md).
+XAML definiuje drugą gramatykę, DottedXamlName, która jest używana do zakwalifikowanych odwołań do właściwości i zdarzeń, a także dla dołączonych elementów członkowskich. Aby uzyskać więcej informacji, zobacz <xref:System.Windows.DependencyProperty> i [Omówienie języka XAML (WPF)](../fundamentals/xaml.md).
 
-Wartości ciągów typu DottedXamlName muszą być zgodne z następującą gramatyką:
+Wartości ciągu typu DottedXamlName muszą być zgodne z następującą gramatyką:
 
 ```xaml
 DottedXamlName ::= XamlName '.' XamlName
@@ -58,4 +58,4 @@ DottedXamlName ::= XamlName '.' XamlName
 
 ## <a name="remarks"></a>Uwagi
 
-Aby uzyskać pełną specyfikację, zobacz [ \[MS-XAML\]](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10)).
+Aby uzyskać pełną specyfikację, zobacz [ \[ MS- \] XAML](/previous-versions/msp-n-p/ff650760(v=pandp.10)).

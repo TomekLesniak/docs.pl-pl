@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-ms.openlocfilehash: 9447487012cae370d35880e5b780465f9434051b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9bcac0e45d44270d27a4cf04677e967a80e94b90
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602625"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550205"
 ---
 # <a name="message-security-with-a-user-name-client"></a>Zabezpieczenia na poziomie komunikatu z użyciem klienta nazwy użytkownika
 Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation (WCF) i klienta zabezpieczoną przy użyciu zabezpieczeń na poziomie komunikatów. Usługa jest uwierzytelniana przy użyciu certyfikatu X. 509. Klient jest uwierzytelniany przy użyciu nazwy użytkownika i hasła.  
@@ -21,7 +21,7 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
   
 |Charakterystyka|Opis|  
 |--------------------|-----------------|  
-|Tryb zabezpieczeń|Komunikat|  
+|Tryb zabezpieczeń|Wiadomość|  
 |Współdziałanie|Tylko Windows Communication Foundation (WCF)|  
 |Uwierzytelnianie (serwer)|Początkowe negocjowanie wymaga uwierzytelniania serwera|  
 |Uwierzytelnianie (klient)|Nazwa użytkownika/hasło|  
@@ -43,7 +43,7 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
  [!code-csharp[C_SecurityScenarios#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#9)]
  [!code-vb[C_SecurityScenarios#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#9)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  Zamiast kodu można użyć następującej konfiguracji:  
   
 ```xml  
@@ -94,7 +94,7 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
  [!code-csharp[C_SecurityScenarios#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#16)]
  [!code-vb[C_SecurityScenarios#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#16)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  Poniższy kod konfiguruje klienta. Powiązanie jest zabezpieczeniami trybu komunikatów, a typ poświadczeń klienta jest ustawiony na `UserName` . Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować).  
   
 ```xml  
@@ -125,10 +125,10 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Nazwa użytkownika zabezpieczeń komunikatów](../samples/message-security-user-name.md)
 - [Uwierzytelnianie i tożsamość usług](service-identity-and-authentication.md)
 - [\<identity>](../../configure-apps/file-schema/wcf/identity.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

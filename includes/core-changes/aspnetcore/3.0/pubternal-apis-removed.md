@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b1fb9647091cecb80b9c2f04ec9b6bb156eb39ba
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 224cd3c7897c64ef05baba7d3d31dbe5ac0dd610
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84466879"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606167"
 ---
 ### <a name="pubternal-apis-removed"></a>Usunięte interfejsy API "Pubternal"
 
@@ -14,7 +14,7 @@ Aby uzyskać więcej informacji, zobacz [dotnet/aspnetcore # 4932](https://githu
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -22,7 +22,7 @@ Narażone interfejsy API są oznaczone `public` modyfikatorem dostępu i istniej
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Narażone interfejsy API są oznaczone modyfikatorem dostępu [wewnętrznego](/dotnet/csharp/language-reference/keywords/internal) i nie mogą być używane przez kod poza tym zestawem.
+Narażone interfejsy API są oznaczone modyfikatorem dostępu [wewnętrznego](../../../../docs/csharp/language-reference/keywords/internal.md) i nie mogą być używane przez kod poza tym zestawem.
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -43,7 +43,7 @@ Rozważmy na przykład następujący kod buforowania żądania HTTP w projekcie 
 HttpContext.Request.EnableRewind();
 ```
 
-W projekcie ASP.NET Core 3,0 Zastąp wywołanie wywołaniu `EnableRewind` `EnableBuffering` metody rozszerzenia. Funkcja buforowania żądań działa tak, jak w przeszłości. `EnableBuffering`wywołuje `internal` interfejs API teraz.
+W projekcie ASP.NET Core 3,0 Zastąp wywołanie wywołaniu `EnableRewind` `EnableBuffering` metody rozszerzenia. Funkcja buforowania żądań działa tak, jak w przeszłości. `EnableBuffering` wywołuje `internal` interfejs API teraz.
 
 ```csharp
 HttpContext.Request.EnableBuffering();
@@ -55,7 +55,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 
-Wszystkie interfejsy API w `Microsoft.AspNetCore.*` `Microsoft.Extensions.*` przestrzeni nazw i, które mają `Internal` segment w nazwie przestrzeni nazw. Przykład:
+Wszystkie interfejsy API w `Microsoft.AspNetCore.*` `Microsoft.Extensions.*` przestrzeni nazw i, które mają `Internal` segment w nazwie przestrzeni nazw. Na przykład:
 
 - `Microsoft.AspNetCore.Authentication.Internal`
 - `Microsoft.AspNetCore.Builder.Internal`
