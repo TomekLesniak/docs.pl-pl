@@ -8,12 +8,12 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: 6beedb8e3fd03049cd58ce1d2dac78d1adb820ef
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3577a3ad13d9ef6935a1bed8a29e3d594857928e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618756"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557765"
 ---
 # <a name="overview-of-net-framework"></a>Omówienie platformy .NET Framework
 
@@ -76,9 +76,9 @@ Zgodnie z oczekiwaniami z biblioteki klas zorientowanej obiektowo typy .NET Fram
 
 - Aplikacje konsolowe. Zobacz [Kompilowanie aplikacji konsolowych](../../standard/building-console-apps.md).
 
-- Aplikacje GUI systemu Windows (Windows Forms). Zobacz [Windows Forms](../winforms/index.md).
+- Aplikacje GUI systemu Windows (Windows Forms). Zobacz [Windows Forms](/dotnet/desktop/winforms/).
 
-- Aplikacje Windows Presentation Foundation (WPF). Zobacz [Windows Presentation Foundation](../wpf/index.md).
+- Aplikacje Windows Presentation Foundation (WPF). Zobacz [Windows Presentation Foundation](/dotnet/desktop/wpf/).
 
 - Aplikacje ASP.NET. Zobacz [aplikacje sieci Web za pomocą ASP.NET](../develop-web-apps-with-aspnet.md).
 

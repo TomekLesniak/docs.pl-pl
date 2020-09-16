@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security-transparent code
 - security-critical code
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-ms.openlocfilehash: 3b87a48ac3f9925fd868be9e58d5904014ca6c09
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: bbff7b53bacd50746de56c8dba85cdc9e4b1ad9b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309212"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556411"
 ---
 # <a name="security-transparent-code-level-2"></a>Kod o przezroczystym poziomie bezpieczeństwa, poziom 2
 
@@ -67,7 +67,7 @@ Następujące reguły mają zastosowanie do korzystania z atrybutów na poziomie
 
 - `SecurityCritical`: Cały kod wprowadzony przez typy w tym zestawie ma krytyczne znaczenie. cały inny kod jest przezroczysty. Ten scenariusz jest podobny do nieokreślania atrybutów; jednak środowisko uruchomieniowe języka wspólnego nie ustala automatycznie reguł przezroczystości. Na przykład jeśli zastąpisz metodę wirtualną lub abstrakcyjną lub implementuje metodę interfejsu, domyślnie ta metoda jest przezroczysta. Należy jawnie dodać adnotację do metody jako `SecurityCritical` lub `SecuritySafeCritical` ; w przeciwnym razie <xref:System.TypeLoadException> zostanie wygenerowane w czasie ładowania. Ta reguła ma zastosowanie również wtedy, gdy zarówno Klasa bazowa, jak i Klasa pochodna znajdują się w tym samym zestawie.
 
-- `AllowPartiallyTrustedCallers`(tylko poziom 2): wszystkie wartości domyślne kodu są przezroczyste. Jednak poszczególne typy i elementy członkowskie mogą mieć inne atrybuty.
+- `AllowPartiallyTrustedCallers` (tylko poziom 2): wszystkie wartości domyślne kodu są przezroczyste. Jednak poszczególne typy i elementy członkowskie mogą mieć inne atrybuty.
 
 Poniższa tabela zawiera porównanie zachowania poziomu zestawu dla poziomu 2 z poziomem 1.
 
@@ -163,7 +163,7 @@ Model przezroczystości poziomu 2 zastępuje <xref:System.Security.Permissions.S
 
 Wywołanie krytycznej metody lub odczytanie pola krytycznego wyzwala żądanie pełnego zaufania (podobnie jak w przypadku wywołania metody prywatnej lub pola). W związku z tym kod pełnego zaufania może wywołać metodę krytyczną, natomiast kod częściowego zaufania nie może.
 
-Do przestrzeni nazw dodano następujące właściwości, <xref:System.Reflection> Aby określić, czy typ, metoda lub pole to `SecurityCritical` , `SecuritySafeCritical` , lub `SecurityTransparent` : <xref:System.Type.IsSecurityCritical%2A> , <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A> , i <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A> . Te właściwości umożliwiają określanie przejrzystości przy użyciu odbicia zamiast sprawdzania obecności atrybutu. Reguły przezroczystości są złożone i sprawdzanie, czy atrybut może być niewystarczający.
+Do przestrzeni nazw dodano następujące właściwości, <xref:System.Reflection> Aby określić, czy typ, metoda lub pole to `SecurityCritical` , `SecuritySafeCritical` , lub `SecurityTransparent` :  <xref:System.Type.IsSecurityCritical%2A> , <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A> , i <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A> . Te właściwości umożliwiają określanie przejrzystości przy użyciu odbicia zamiast sprawdzania obecności atrybutu. Reguły przezroczystości są złożone i sprawdzanie, czy atrybut może być niewystarczający.
 
 > [!NOTE]
 > `SafeCritical`Metoda zwraca `true` dla obu <xref:System.Type.IsSecurityCritical%2A> i <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A> , ponieważ `SafeCritical` jest rzeczywiście krytyczne (ma takie same możliwości jak kod krytyczny, ale może być wywoływana z kodu przezroczystego).
@@ -178,7 +178,7 @@ Możesz pominąć weryfikację dla w pełni zaufanych zestawów przezroczystych 
 
 <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A>Właściwość jest `false` Domyślnie, więc właściwość musi być ustawiona na, aby `true` pominąć weryfikację. Należy to zrobić tylko w celach optymalizacji. Upewnij się, że przezroczysty kod w zestawie jest możliwy do zweryfikowania przy użyciu `transparent` opcji w [narzędziu PEVerify](../tools/peverify-exe-peverify-tool.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kod przezroczysty pod względem zabezpieczeń, poziom 1](security-transparent-code-level-1.md)
-- [Zmiany zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)
+- [Zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes)

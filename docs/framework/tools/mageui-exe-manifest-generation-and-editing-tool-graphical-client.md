@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 1ff7c10a478f0f0f53d7b00f34b228b9070f798d
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 59f2d3dbf09beacb62042b8195bba23f345fba02
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87516726"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557440"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (Narzędzie generowania i edytowania manifestu, klient grafiki)
 
@@ -41,7 +41,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Cut**|**Edytuj**|CTRL+X|Usuwa zaznaczony tekst z aplikacji i przenosi je do Schowka systemu Windows.|  
 |**Kopiuj**|**Edytuj**|CTRL+C|Kopiuje zaznaczony tekst do Schowka systemu Windows.|  
 |**Wklej**|**Edytuj**|CTRL+V|Wkleja tekst ze Schowka systemu Windows do aktywnego elementu tekstu.|  
-|**Usuwanie**|**Edytuj**||Usuwa element aktualnie wybrany na liście, na przykład licencji zaufania na karcie **manifest wdrożenia** .|  
+|**Usuń**|**Edytuj**||Usuwa element aktualnie wybrany na liście, na przykład licencji zaufania na karcie **manifest wdrożenia** .|  
 |**Zamknij wszystkie**|**Okno**||Zamyka wszystkie pliki otwarte w MageUI.exe. Jeżeli jeden lub więcej plików wymagają zapisania, MageUI.exe wyświetli monit o zapisanie ich. MageUI.exe również wyświetla monit o wybranie klucza podpisywania dla każdego niepodpisanego lub zmienionego pliku.|  
 |**Informacje**|**Pomoc**||Wyświetla informacje o wersji i prawach autorskich dotyczące MageUI.exe.|  
   
@@ -67,7 +67,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Nowe**|Generuje nowy pfx niesprawdzalny przez urząd certyfikacji (CA). Aby uzyskać więcej informacji na temat typów certyfikatów używanych do podpisywania wdrożeń ClickOnce, zobacz [Omówienie wdrażania zaufanych aplikacji](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Hasło**|Miejsce na wpisanie hasła używanego do podpisywania tym certyfikatem. Jeśli nie ma to zastosowania, może być puste.|  
 |**Podpisz z zapisanym certyfikatem**|Wyświetla listę wyboru certyfikatów cyfrowych przechowywanych w magazynie certyfikatów na komputerze.|  
-|**Identyfikator URI sygnatury czasowej**|Wyświetla identyfikator URI usługi sygnatur cyfrowych. Przypisanie do manifestu znacznika czasu zapobiega konieczności ponownego podpisania manifestu, jeśli certyfikat cyfrowy wygaśnie przed wdrożeniem następnej wersji aplikacji. Aby uzyskać więcej informacji, zobacz [Członkowie programu certyfikatów głównych systemu Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11)) oraz [ClickOnce i Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
+|**Identyfikator URI sygnatury czasowej**|Wyświetla identyfikator URI usługi sygnatur cyfrowych. Przypisanie do manifestu znacznika czasu zapobiega konieczności ponownego podpisania manifestu, jeśli certyfikat cyfrowy wygaśnie przed wdrożeniem następnej wersji aplikacji. Aby uzyskać więcej informacji, zobacz [Członkowie programu certyfikatów głównych systemu Windows](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11)) oraz [ClickOnce i Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
 |**Nie pisz**|Umożliwia zapisanie manifestu bez dodawania podpisu z certyfikatu cyfrowego.|  
   
 ## <a name="tab-and-panel-descriptions"></a>Opisy karta i panelu  
@@ -129,7 +129,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
   
 |Element interfejsu użytkownika|Opis|  
 |----------------|-----------------|  
-|**Typ zestawu uprawnień**|Minimalny zestaw uprawnień wymagany przez tę aplikację do uruchomienia na kliencie. Aby uzyskać opis tych zestawów uprawnień i uprawnień, które wykonują lub nie wymagają żądania, zobacz [nazwane zestawy uprawnień](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).|  
+|**Typ zestawu uprawnień**|Minimalny zestaw uprawnień wymagany przez tę aplikację do uruchomienia na kliencie. Aby uzyskać opis tych zestawów uprawnień i uprawnień, które wykonują lub nie wymagają żądania, zobacz [nazwane zestawy uprawnień](/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).|  
 |**Szczegóły**|KOD XML utworzony dla manifestu aplikacji reprezentujący zestaw uprawnień. Jeśli nie znasz dobrego formatu XML manifestu aplikacji, nie należy edytować tego kodu XML ręcznie. Aby uzyskać więcej informacji, zobacz [manifest aplikacji ClickOnce](/visualstudio/deployment/clickonce-application-manifest).|  
   
 ### <a name="deployment-manifest-tab"></a>Karta manifest wdrożenia  

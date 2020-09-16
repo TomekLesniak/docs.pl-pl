@@ -3,12 +3,12 @@ title: ICorProfilerInfo9, interfejs
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 431a546fb4a3b92b379e273553f0caf540ba1473
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: f38195b1a7983e23c7f5c20055ea8c2a8bfcb7d8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449740"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556853"
 ---
 # <a name="icorprofilerinfo9-interface"></a>ICorProfilerInfo9, interfejs
 
@@ -18,15 +18,15 @@ Podklasa elementu [ICorProfilerInfo8](icorprofilerinfo8-interface.md) , która d
 
 | Metoda|Opis|  
 | ------------|-----------------|  
-|[GetNativeCodeStartAddresses, Metoda](icorprofilerinfo9-getnativecodestartaddresses-method.md)| Mając functionId i rejitId, wylicza natywny adres początkowy kodu dla wszystkich wersji trybie JIT tego kodu, który już istnieje. |
-|[GetILToNativeMapping3, Metoda](icorprofilerinfo9-getiltonativemapping3-method.md)| Przy podanym adresie początkowym kodu natywnego program zwraca informacje mapowania natywnego do IL dla tej trybie JIT wersji kodu. |
-|[GetCodeInfo4, Metoda](icorprofilerinfo9-getcodeinfo4-method.md)| Przy podanym adresie początkowym kodu natywnego program zwraca bloki pamięci wirtualnej, która przechowuje ten kod. |
+|[GetNativeCodeStartAddresses, metoda](icorprofilerinfo9-getnativecodestartaddresses-method.md)| Mając functionId i rejitId, wylicza natywny adres początkowy kodu dla wszystkich wersji trybie JIT tego kodu, który już istnieje. |
+|[GetILToNativeMapping3, metoda](icorprofilerinfo9-getiltonativemapping3-method.md)| Przy podanym adresie początkowym kodu natywnego program zwraca informacje mapowania natywnego do IL dla tej trybie JIT wersji kodu. |
+|[GetCodeInfo4, metoda](icorprofilerinfo9-getcodeinfo4-method.md)| Przy podanym adresie początkowym kodu natywnego program zwraca bloki pamięci wirtualnej, która przechowuje ten kod. |
 
 ## <a name="requirements"></a>Wymagania  
-**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/dependencies.md?pivots=os-windows).  
+**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/windows.md?pivots=os-windows).  
 **Nagłówek:** CorProf. idl, CorProf. h  
-**Wersje .NET:** [!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  
+**Wersje .NET:**[!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy profilowania](profiling-interfaces.md)

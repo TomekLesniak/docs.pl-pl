@@ -9,12 +9,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 7f8d3695a36a43ca6bf796b141c07f6d2d088354
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 91e7ea8df5c32329f0eb8d12943ce5f816ff0e5a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245079"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557596"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegowanie i personifikacja za pomocą programu WCF
 *Personifikacja* jest powszechną techniką używaną przez usługi do ograniczania dostępu klientów do zasobów domeny usługi. Zasoby domeny usługi mogą być zasobami maszynowymi, takimi jak pliki lokalne (personifikacja) lub zasobami na innej maszynie, takimi jak udział plików (delegowanie). Aby uzyskać przykładową aplikację, zobacz [Personifikowanie klienta](../samples/impersonating-the-client.md). Przykład korzystania z personifikacji można znaleźć [w temacie How to: Personifikuj klienta w usłudze](../how-to-impersonate-a-client-on-a-service.md).  
@@ -40,7 +40,7 @@ ms.locfileid: "85245079"
   
 - <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding> i <xref:System.ServiceModel.NetTcpBinding> z poświadczeniem klienta systemu Windows.  
   
-- <xref:System.ServiceModel.BasicHttpBinding>z <xref:System.ServiceModel.BasicHttpSecurityMode> zestawem <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> poświadczeń lub innym powiązaniem standardowym, w którym klient przedstawia poświadczenia nazwy użytkownika, które usługa może zamapować na prawidłowe konto systemu Windows.  
+- <xref:System.ServiceModel.BasicHttpBinding> z <xref:System.ServiceModel.BasicHttpSecurityMode> zestawem <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> poświadczeń lub innym powiązaniem standardowym, w którym klient przedstawia poświadczenia nazwy użytkownika, które usługa może zamapować na prawidłowe konto systemu Windows.  
   
 - Wszystkie <xref:System.ServiceModel.Channels.CustomBinding> , które używają poświadczeń klienta systemu Windows z `requireCancellation` ustawionym na `true` . (Właściwość jest dostępna dla następujących klas: <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters> , <xref:System.ServiceModel.Security.Tokens.SslSecurityTokenParameters> , i <xref:System.ServiceModel.Security.Tokens.SspiSecurityTokenParameters> .) Jeśli w powiązaniu jest używana bezpieczna Konwersacja, musi ona również mieć `requireCancellation` ustawioną właściwość `true` .  
   
@@ -112,31 +112,31 @@ ms.locfileid: "85245079"
   
  W poniższej tabeli określono poziom personifikacji uzyskany przez usługę podczas personifikacji z buforowanego tokenu.  
   
-|`AllowedImpersonationLevel`wartościami|Usługa ma`SeImpersonatePrivilege`|Usługa i klient mogą przebudować|Token pamięci podręcznej`ImpersonationLevel`|  
+|`AllowedImpersonationLevel` wartościami|Usługa ma `SeImpersonatePrivilege`|Usługa i klient mogą przebudować|Token pamięci podręcznej `ImpersonationLevel`|  
 |---------------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|Anonimowe|Tak|nie dotyczy|Personifikacja|  
+|Anonimowe|Yes|nie dotyczy|Personifikacja|  
 |Anonimowe|Nie|nie dotyczy|Identyfikacja|  
 |Identyfikacja|nie dotyczy|nie dotyczy|Identyfikacja|  
-|Personifikacja|Tak|nie dotyczy|Personifikacja|  
+|Personifikacja|Yes|nie dotyczy|Personifikacja|  
 |Personifikacja|Nie|nie dotyczy|Identyfikacja|  
-|Delegowanie|Tak|Tak|Delegowanie|  
-|Delegowanie|Yes|Nie|Personifikacja|  
-|Delegowanie|Nie|nie dotyczy|Identyfikacja|  
+|Delegacja|Yes|Yes|Delegacja|  
+|Delegacja|Yes|Nie|Personifikacja|  
+|Delegacja|Nie|nie dotyczy|Identyfikacja|  
   
 ## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>Poziom personifikacji uzyskany na podstawie poświadczeń nazwy użytkownika i personifikacji tokenu w pamięci podręcznej  
  Przekazując usługę nazwę użytkownika i hasło, klient programu może zalogować się jako ten użytkownik, który jest odpowiednikiem ustawienia `AllowedImpersonationLevel` właściwości na <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> . ( `AllowedImpersonationLevel` Jest dostępny w <xref:System.ServiceModel.Security.WindowsClientCredential> <xref:System.ServiceModel.Security.HttpDigestClientCredential> klasach i.) Poniższa tabela zawiera poziom personifikacji uzyskany, gdy usługa otrzymuje poświadczenia nazwy użytkownika.  
   
-|`AllowedImpersonationLevel`|Usługa ma`SeImpersonatePrivilege`|Usługa i klient mogą przebudować|Token pamięci podręcznej`ImpersonationLevel`|  
+|`AllowedImpersonationLevel`|Usługa ma `SeImpersonatePrivilege`|Usługa i klient mogą przebudować|Token pamięci podręcznej `ImpersonationLevel`|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|nie dotyczy|Tak|Tak|Delegowanie|  
+|nie dotyczy|Yes|Yes|Delegacja|  
 |nie dotyczy|Yes|Nie|Personifikacja|  
 |nie dotyczy|Nie|nie dotyczy|Identyfikacja|  
   
 ## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Poziom personifikacji uzyskany z personifikacji opartej na protokole S4U  
   
-|Usługa ma`SeTcbPrivilege`|Usługa ma`SeImpersonatePrivilege`|Usługa i klient mogą przebudować|Token pamięci podręcznej`ImpersonationLevel`|  
+|Usługa ma `SeTcbPrivilege`|Usługa ma `SeImpersonatePrivilege`|Usługa i klient mogą przebudować|Token pamięci podręcznej `ImpersonationLevel`|  
 |----------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|Tak|Tak|nie dotyczy|Personifikacja|  
+|Yes|Yes|nie dotyczy|Personifikacja|  
 |Yes|Nie|nie dotyczy|Identyfikacja|  
 |Nie|nie dotyczy|nie dotyczy|Identyfikacja|  
   
@@ -170,8 +170,8 @@ ServiceHost sh = new ServiceHost(typeof(HelloService), httpUri);
 sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAccount = true;  
 ```  
   
-## <a name="delegation"></a>Delegowanie  
- Aby delegować do usługi zaplecza, usługa musi wykonać wieloetapowe uwierzytelnianie Kerberos (SSPI bez powrotu NTLM) lub Kerberos Direct do usługi zaplecza przy użyciu tożsamości systemu Windows klienta. Aby delegować do usługi zaplecza, Utwórz <xref:System.ServiceModel.ChannelFactory%601> i kanał, a następnie przekomunikuj się za pośrednictwem kanału podczas personifikacji klienta. Dzięki tej formie delegowania odległość, z jaką usługa zaplecza może znajdować się w usłudze frontonu, zależy od poziomu personifikacji osiągniętego przez usługę frontonu. Gdy poziom personifikacji to <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> , usługi frontonu i zaplecza muszą być uruchomione na tym samym komputerze. Gdy poziom personifikacji to <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> , usługi frontonu i zaplecza mogą znajdować się na oddzielnych maszynach lub na tym samym komputerze. Włączenie personifikacji na poziomie delegowania wymaga skonfigurowania zasad domeny systemu Windows do zezwalania na delegowanie. Aby uzyskać więcej informacji o konfigurowaniu Active Directory na potrzeby obsługi delegowania, zobacz [Włączanie uwierzytelniania delegowanego](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780217(v=ws.10)).  
+## <a name="delegation"></a>Delegacja  
+ Aby delegować do usługi zaplecza, usługa musi wykonać wieloetapowe uwierzytelnianie Kerberos (SSPI bez powrotu NTLM) lub Kerberos Direct do usługi zaplecza przy użyciu tożsamości systemu Windows klienta. Aby delegować do usługi zaplecza, Utwórz <xref:System.ServiceModel.ChannelFactory%601> i kanał, a następnie przekomunikuj się za pośrednictwem kanału podczas personifikacji klienta. Dzięki tej formie delegowania odległość, z jaką usługa zaplecza może znajdować się w usłudze frontonu, zależy od poziomu personifikacji osiągniętego przez usługę frontonu. Gdy poziom personifikacji to <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> , usługi frontonu i zaplecza muszą być uruchomione na tym samym komputerze. Gdy poziom personifikacji to <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> , usługi frontonu i zaplecza mogą znajdować się na oddzielnych maszynach lub na tym samym komputerze. Włączenie personifikacji na poziomie delegowania wymaga skonfigurowania zasad domeny systemu Windows do zezwalania na delegowanie. Aby uzyskać więcej informacji o konfigurowaniu Active Directory na potrzeby obsługi delegowania, zobacz [Włączanie uwierzytelniania delegowanego](/previous-versions/windows/it-pro/windows-server-2003/cc780217(v=ws.10)).  
   
 > [!NOTE]
 > Gdy klient uwierzytelnia się w usłudze frontonu przy użyciu nazwy użytkownika i hasła, które odpowiadają kontu systemu Windows w usłudze zaplecza, usługa frontonu może uwierzytelniać się w usłudze zaplecza przez ponowne użycie nazwy użytkownika i hasła klienta. Jest to szczególnie wydajna postać przepływu tożsamości, ponieważ przekazywanie nazwy użytkownika i hasła do usługi zaplecza umożliwia usłudze zaplecza wykonywanie personifikacji, ale nie stanowi delegowania, ponieważ nie jest używany protokół Kerberos. Kontrolki Active Directory w delegowaniu nie mają zastosowania do uwierzytelniania nazwy użytkownika i hasła.  
@@ -182,7 +182,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 |-------------------------|---------------------------------------------------|---------------------------------------------------|  
 |<xref:System.Security.Principal.TokenImpersonationLevel.Identification>|Nie|Nie|  
 |<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Yes|Nie|  
-|<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>|Tak|Tak|  
+|<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>|Yes|Yes|  
   
  Poniższy przykład kodu demonstruje sposób korzystania z delegowania.  
   
@@ -190,7 +190,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
  [!code-vb[c_delegation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_delegation/vb/source.vb#1)]  
   
 ### <a name="how-to-configure-an-application-to-use-constrained-delegation"></a>Jak skonfigurować aplikację do korzystania z delegowania ograniczonego  
- Aby można było korzystać z delegowania ograniczonego, należy odpowiednio skonfigurować nadawcę, odbiorcę i kontroler domeny. Poniższa procedura zawiera listę czynności, które umożliwiają delegowanie ograniczone. Aby uzyskać szczegółowe informacje o różnicach między delegowaniem i delegowaniem ograniczonym, zobacz część [rozszerzeń systemu Windows Server 2003 Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738207(v=ws.10)) , które omawiają ograniczone dyskusje.  
+ Aby można było korzystać z delegowania ograniczonego, należy odpowiednio skonfigurować nadawcę, odbiorcę i kontroler domeny. Poniższa procedura zawiera listę czynności, które umożliwiają delegowanie ograniczone. Aby uzyskać szczegółowe informacje o różnicach między delegowaniem i delegowaniem ograniczonym, zobacz część [rozszerzeń systemu Windows Server 2003 Kerberos](/previous-versions/windows/it-pro/windows-server-2003/cc738207(v=ws.10)) , które omawiają ograniczone dyskusje.  
   
 1. Na kontrolerze domeny wyczyść pole wyboru **konto jest poufne i nie może być delegowane** dla konta, w ramach którego jest uruchomiona aplikacja kliencka.  
   
@@ -200,9 +200,9 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
   
 4. Na kontrolerze domeny skonfiguruj komputer warstwy środkowej do korzystania z delegowania ograniczonego, klikając opcję **Ufaj temu komputerowi w delegowaniu tylko do określonych usług** .  
   
- Aby uzyskać bardziej szczegółowe instrukcje dotyczące konfigurowania delegowania ograniczonego, zobacz [przejście do protokołu Kerberos i delegowanie ograniczone](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10)).
+ Aby uzyskać bardziej szczegółowe instrukcje dotyczące konfigurowania delegowania ograniczonego, zobacz [przejście do protokołu Kerberos i delegowanie ograniczone](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10)).
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.OperationBehaviorAttribute>
 - <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>

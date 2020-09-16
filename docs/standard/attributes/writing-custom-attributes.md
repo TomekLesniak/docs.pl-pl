@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: 3cae8de9b76aa9953b21ad2e23ad003e97555aa9
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: f047e18531b46f0c89be9a6feaa9aa50341205e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768485"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550928"
 ---
 # <a name="writing-custom-attributes"></a>Wpisywanie atrybutów niestandardowych
 Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzenia wzorców wielu nowych koncepcji. Jeśli znasz programowanie zorientowane obiektowo i wiesz, jak projektować klasy, masz już większość koniecznych informacji. Atrybuty niestandardowe są zasadniczo tradycyjnymi klasami, które są wyprowadzane bezpośrednio lub pośrednio z <xref:System.Attribute?displayProperty=nameWithType> . Podobnie jak tradycyjne klasy, atrybuty niestandardowe zawierają metody, które przechowują i pobierają dane.  
@@ -117,7 +117,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  [!code-csharp[Conceptual.Attributes.Usage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#15)]
  [!code-vb[Conceptual.Attributes.Usage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#15)]  
   
- Można przeciążyć konstruktora, aby pomieścić różne kombinacje wartości. Jeśli zdefiniowano również [Właściwość](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) klasy atrybutów niestandardowych, podczas inicjowania atrybutu można użyć kombinacji nazwanych i pozycyjnych parametrów. Zwykle wszystkie wymagane parametry są definiowane jako położenie i wszystkie parametry opcjonalne jako nazwane. W tym przypadku nie można zainicjować atrybutu bez wymaganego parametru. Wszystkie inne parametry są opcjonalne. Należy zauważyć, że w Visual Basic konstruktory dla klasy atrybutów nie powinny używać argumentu ParamArray.  
+ Można przeciążyć konstruktora, aby pomieścić różne kombinacje wartości. Jeśli zdefiniowano również [Właściwość](/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) klasy atrybutów niestandardowych, podczas inicjowania atrybutu można użyć kombinacji nazwanych i pozycyjnych parametrów. Zwykle wszystkie wymagane parametry są definiowane jako położenie i wszystkie parametry opcjonalne jako nazwane. W tym przypadku nie można zainicjować atrybutu bez wymaganego parametru. Wszystkie inne parametry są opcjonalne. Należy zauważyć, że w Visual Basic konstruktory dla klasy atrybutów nie powinny używać argumentu ParamArray.  
   
  Poniższy przykład kodu pokazuje, jak atrybut, który używa poprzedniego konstruktora można zastosować przy użyciu opcjonalnych i wymaganych parametrów. Przyjęto założenie, że atrybut ma jedną wymaganą wartość logiczną i jedną opcjonalną Właściwość ciągu.  
   
@@ -126,7 +126,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
 ## <a name="declaring-properties"></a>Deklarowanie właściwości  
- Jeśli chcesz zdefiniować nazwany parametr lub podać łatwy sposób zwracania wartości przechowywanych przez atrybut, zadeklaruj [Właściwość](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Właściwości atrybutu należy zadeklarować jako jednostki publiczne z opisem typu danych, które zostaną zwrócone. Zdefiniuj zmienną, która będzie przechowywać wartość właściwości i skojarz ją z metodami **Get** i **Set** . Poniższy przykład kodu demonstruje sposób implementacji prostej właściwości w atrybucie.  
+ Jeśli chcesz zdefiniować nazwany parametr lub podać łatwy sposób zwracania wartości przechowywanych przez atrybut, zadeklaruj [Właściwość](/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Właściwości atrybutu należy zadeklarować jako jednostki publiczne z opisem typu danych, które zostaną zwrócone. Zdefiniuj zmienną, która będzie przechowywać wartość właściwości i skojarz ją z metodami **Get** i **Set** . Poniższy przykład kodu demonstruje sposób implementacji prostej właściwości w atrybucie.  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]
@@ -147,7 +147,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
   
  Pierwszy przykład pokazuje atrybut zastosowany z tylko wymaganymi nazwanymi parametrami, podczas gdy drugi przykład pokazuje atrybut zastosowany do parametrów wymaganych i opcjonalnych.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Attribute?displayProperty=nameWithType>
 - <xref:System.AttributeUsageAttribute?displayProperty=nameWithType>

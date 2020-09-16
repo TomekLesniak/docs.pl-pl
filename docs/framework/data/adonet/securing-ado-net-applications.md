@@ -2,12 +2,12 @@
 title: Zabezpieczanie aplikacji
 ms.date: 03/30/2017
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-ms.openlocfilehash: 1e08bb2386dff5d824d46aba652609ec5a373008
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: af184f64b43c2d3dc39f8c0add08940d3b002c24
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374523"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550758"
 ---
 # <a name="securing-adonet-applications"></a>Zabezpieczanie aplikacji ADO.NET
 
@@ -48,16 +48,16 @@ Pisanie bezpiecznego kodu nie chroni przed atakami z użyciem niezarządzanych z
  [Bezpieczeństwo](../../../standard/security/index.md)  
  Zawiera łącza do artykułów opisujących wszystkie aspekty zabezpieczeń w programie .NET.  
   
- [Narzędzia zabezpieczeń](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/7w3fd0wb(v=vs.90))  
+ [Narzędzia zabezpieczeń](/previous-versions/visualstudio/visual-studio-2008/7w3fd0wb(v=vs.90))  
  .NET Framework narzędzia do zabezpieczania zasad zabezpieczeń i administrowania nimi.  
   
- [Zasoby do tworzenia bezpiecznych aplikacji](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165101(v=vs.100))  
+ [Zasoby do tworzenia bezpiecznych aplikacji](/previous-versions/visualstudio/visual-studio-2010/ms165101(v=vs.100))  
  Zawiera łącza do artykułów na potrzeby tworzenia bezpiecznych aplikacji.  
   
  [Bibliografia dotycząca zabezpieczeń](/visualstudio/ide/securing-applications)  
  Oferuje linki do zasobów zewnętrznych dostępnych w trybie online i drukowania.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ADO.NET](index.md)
 - [Omówienie ADO.NET](ado-net-overview.md)

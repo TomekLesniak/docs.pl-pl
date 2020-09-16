@@ -27,12 +27,12 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-ms.openlocfilehash: 7b06ca4444b75f0a7002323b32732dd4f855f692
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 056569f86afcbdf124f9e617e4ad07b09a194681
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166183"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554003"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Pakowanie i wdrażanie zasobów w aplikacjach .NET
 
@@ -51,7 +51,7 @@ Ten model ma kilka zalet:
 
 ## <a name="resource-naming-conventions"></a>Konwencje nazewnictwa zasobów
 
-Podczas pakowania zasobów aplikacji należy nadać im nazwy przy użyciu konwencji nazewnictwa zasobów, których oczekuje środowisko uruchomieniowe języka wspólnego. Środowisko uruchomieniowe identyfikuje zasób według jego nazwy kultury. Każda kultura ma unikatową nazwę, która zwykle jest kombinacją dwuliterowej nazwy kultury, która jest skojarzona z językiem i, w razie potrzeby, z dwuliterową nazwą podkultury Wielkiej, skojarzoną z danym krajem lub regionem. Nazwa kultury jest zgodna z nazwą kultury, oddzieloną kreską (-). Przykłady obejmują ja-JP dla języka japońskiego w Japonii, en-US dla języka angielskiego w Stany Zjednoczone, de-DE dla języka niemieckiego w Niemczech lub w odniesieniu do języka niemieckiego, który jest mówiony w Austrii. Zobacz kolumnę **tag języka** na [liście nazw języków/regionów obsługiwanych przez system Windows](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Nazwy kultur są zgodne ze standardem zdefiniowanym przez [BCP 47](https://tools.ietf.org/html/bcp47).
+Podczas pakowania zasobów aplikacji należy nadać im nazwy przy użyciu konwencji nazewnictwa zasobów, których oczekuje środowisko uruchomieniowe języka wspólnego. Środowisko uruchomieniowe identyfikuje zasób według jego nazwy kultury. Każda kultura ma unikatową nazwę, która zwykle jest kombinacją dwuliterowej nazwy kultury, która jest skojarzona z językiem i, w razie potrzeby, z dwuliterową nazwą podkultury Wielkiej, skojarzoną z danym krajem lub regionem. Nazwa kultury jest zgodna z nazwą kultury, oddzieloną kreską (-). Przykłady obejmują ja-JP dla języka japońskiego w Japonii, en-US dla języka angielskiego w Stany Zjednoczone, de-DE dla języka niemieckiego w Niemczech lub w odniesieniu do języka niemieckiego, który jest mówiony w Austrii. Zobacz kolumnę **tag języka** na [liście nazw języków/regionów obsługiwanych przez system Windows](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Nazwy kultur są zgodne ze standardem zdefiniowanym przez [BCP 47](https://tools.ietf.org/html/bcp47).
 
 > [!NOTE]
 > Istnieją pewne wyjątki dla nazw kultur dwuliterowych, na przykład `zh-Hans` dla języka chińskiego (uproszczonego).
@@ -146,7 +146,7 @@ Proces rezerwowy zasobów platformy .NET Core obejmuje następujące kroki:
        > W systemach operacyjnych z systemami plików z uwzględnieniem wielkości liter (czyli Linux i macOS) Wyszukiwanie w podkatalogu nazw kultur jest rozróżniana wielkość liter. Nazwa podkatalogu musi dokładnie pasować do wielkości liter <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> (na przykład `es` lub `es-MX` ).
 
        > [!NOTE]
-       > Jeśli programista poprowadził niestandardowy kontekst ładowania zestawu od <xref:System.Runtime.Loader.AssemblyLoadContext> , sytuacja jest skomplikowana. Jeśli zestaw wykonawczy został załadowany do kontekstu niestandardowego, środowisko uruchomieniowe ładuje zestaw satelicki do niestandardowego kontekstu. Szczegóły znajdują się poza zakresem tego dokumentu. Zobacz <xref:System.Runtime.Loader.AssemblyLoadContext> .
+       > Jeśli programista poprowadził niestandardowy kontekst ładowania zestawu od <xref:System.Runtime.Loader.AssemblyLoadContext> , sytuacja jest skomplikowana. Jeśli zestaw wykonawczy został załadowany do kontekstu niestandardowego, środowisko uruchomieniowe ładuje zestaw satelicki do niestandardowego kontekstu. Szczegóły znajdują się poza zakresem tego dokumentu. Zobacz  <xref:System.Runtime.Loader.AssemblyLoadContext> .
 
      - Jeśli nie można odnaleźć asemblera satelitarnego, <xref:System.Runtime.Loader.AssemblyLoadContext> wywołuje zdarzenie, <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> Aby wskazać, że nie można znaleźć zestawu satelickiego. Jeśli zdecydujesz się obsłużyć zdarzenie, program obsługi zdarzeń może załadować i zwrócić odwołanie do zestawu satelickiego.
      - Jeśli zestaw satelicki nadal nie został znaleziony, AssemblyLoadContext powoduje, że obiekt AppDomain wyzwala <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> zdarzenie, aby wskazać, że nie można znaleźć zestawu satelickiego. Jeśli zdecydujesz się obsłużyć zdarzenie, program obsługi zdarzeń może załadować i zwrócić odwołanie do zestawu satelickiego.

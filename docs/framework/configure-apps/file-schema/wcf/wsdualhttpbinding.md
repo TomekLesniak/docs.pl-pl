@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsDualHttpBinding Element
 ms.assetid: fd8ac4e2-5641-473b-9115-73f14ab1c065
-ms.openlocfilehash: 01360ae8288b3cb7374597ad77935f634eb0a519
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3e32539900893297d2bac232138f9940a8ab100b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74139270"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557648"
 ---
 # \<wsDualHttpBinding>
 Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpowiednie dla kontraktów usługi dupleksowej lub komunikacji za pośrednictwem pośredników SOAP.  
@@ -82,8 +82,8 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpo
 |Element|Opis|  
 |-------------|-----------------|  
 |[\<security>](security-of-wsdualhttpbinding.md)|Definiuje ustawienia zabezpieczeń dla powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.WSDualHttpSecurityElement> .|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|  
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Określa, czy niezawodne sesje są nawiązywane między punktami końcowymi kanałów.|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|  
+|[\<reliableSession>](/previous-versions/ms731375(v=vs.90))|Określa, czy niezawodne sesje są nawiązywane między punktami końcowymi kanałów.|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
   
@@ -92,7 +92,7 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpo
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
- `WSDualHttpBinding`Zapewnia taką samą obsługę protokołów usługi sieci Web jak `WSHttpBinding` , ale w przypadku kontraktów dupleksowych. `WSDualHttpBinding`obsługuje tylko zabezpieczenia protokołu SOAP i wymaga niezawodnej obsługi komunikatów. To powiązanie wymaga, aby klient miał publiczny identyfikator URI, który udostępnia punkt końcowy wywołania zwrotnego dla usługi. Jest to zapewniane przez `clientBaseAddress` atrybut. Podwójne powiązanie uwidacznia adres IP klienta w usłudze. Klient powinien korzystać z zabezpieczeń, aby upewnić się, że tylko nawiązuje połączenie z usługami, które ufają.  
+ `WSDualHttpBinding`Zapewnia taką samą obsługę protokołów usługi sieci Web jak `WSHttpBinding` , ale w przypadku kontraktów dupleksowych. `WSDualHttpBinding` obsługuje tylko zabezpieczenia protokołu SOAP i wymaga niezawodnej obsługi komunikatów. To powiązanie wymaga, aby klient miał publiczny identyfikator URI, który udostępnia punkt końcowy wywołania zwrotnego dla usługi. Jest to zapewniane przez `clientBaseAddress` atrybut. Podwójne powiązanie uwidacznia adres IP klienta w usłudze. Klient powinien korzystać z zabezpieczeń, aby upewnić się, że tylko nawiązuje połączenie z usługami, które ufają.  
   
  To powiązanie może służyć do niezawodnego komunikowania się przez jeden lub więcej pośredników SOAP.  
   
@@ -138,5 +138,5 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpo
 - <xref:System.ServiceModel.Configuration.WSDualHttpBindingElement>
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

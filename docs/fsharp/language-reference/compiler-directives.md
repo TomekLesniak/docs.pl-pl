@@ -4,12 +4,12 @@ description: 'Poznaj dyrektywy preprocesora języka F #, dyrektywy warunkowej ko
 ms.date: 12/10/2018
 f1_keywords:
 - '#endif_FS'
-ms.openlocfilehash: aee307eb7bccc8d91b5162f3f43db3b806b761d0
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: c3e1a07e0e09b5ae090c550368f8a9f8ee575bfb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855377"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557323"
 ---
 # <a name="compiler-directives"></a>Dyrektywy kompilatora
 
@@ -40,7 +40,7 @@ Kod zdezaktywowany przez jedną z tych dyrektyw jest wyszarzony w edytorze Visua
 > [!NOTE]
 > Zachowanie dyrektyw kompilacji warunkowej nie jest takie samo, jak w innych językach. Na przykład nie można używać wyrażeń logicznych obejmujących symbole i `true` i `false` nie mają specjalnego znaczenia. Symbole, które są używane w `if` dyrektywie, muszą być zdefiniowane w wierszu polecenia lub w ustawieniach projektu; nie istnieje `define` dyrektywa preprocesora.
 
-Poniższy kod ilustruje użycie `#if` `#else` dyrektyw, i `#endif` . W tym przykładzie kod zawiera dwie wersje definicji `function1` . Gdy `VERSION1` jest zdefiniowany przy użyciu [opcji-define kompilatora](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04), `#if` jest uaktywniany kod między dyrektywą i `#else` dyrektywą. W przeciwnym razie kod między `#else` i `#endif` jest aktywowany.
+Poniższy kod ilustruje użycie `#if` `#else` dyrektyw, i `#endif` . W tym przykładzie kod zawiera dwie wersje definicji `function1` . Gdy `VERSION1` jest zdefiniowany przy użyciu [opcji-define kompilatora](./compiler-options.md), `#if` jest uaktywniany kod między dyrektywą i `#else` dyrektywą. W przeciwnym razie kod między `#else` i `#endif` jest aktywowany.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7301.fs)]
 
@@ -76,7 +76,7 @@ W poniższej tabeli wymieniono dyrektywy kompilatora, które są dostępne w ję
 
 |Dyrektywę|Opis|
 |---------|-----------|
-|`#light`["on" &#124; "off"]|Włącza lub wyłącza uproszczoną składnię w celu zapewnienia zgodności z innymi wersjami ML. Domyślnie uproszczona składnia jest włączona. Pełna składnia jest zawsze włączona. W związku z tym można użyć składni uproszczonej i pełnej składni. Sama dyrektywa `#light` jest równoważna z `#light "on"` . Jeśli określisz `#light "off"` , musisz użyć pełnej składni dla wszystkich konstrukcji językowych. Składnia w dokumentacji języka F # jest prezentowana z założeniem, że używana jest składnia uproszczona. Aby uzyskać więcej informacji, zobacz [verbose Syntax](verbose-syntax.md).|
+|`#light` ["on" &#124; "off"]|Włącza lub wyłącza uproszczoną składnię w celu zapewnienia zgodności z innymi wersjami ML. Domyślnie uproszczona składnia jest włączona. Pełna składnia jest zawsze włączona. W związku z tym można użyć składni uproszczonej i pełnej składni. Sama dyrektywa `#light` jest równoważna z `#light "on"` . Jeśli określisz `#light "off"` , musisz użyć pełnej składni dla wszystkich konstrukcji językowych. Składnia w dokumentacji języka F # jest prezentowana z założeniem, że używana jest składnia uproszczona. Aby uzyskać więcej informacji, zobacz [verbose Syntax](verbose-syntax.md).|
 
 Aby poznać dyrektywy interpretera (fsi.exe), zobacz [programowanie interaktywne przy użyciu języka F #](../tutorials/fsharp-interactive/index.md).
 

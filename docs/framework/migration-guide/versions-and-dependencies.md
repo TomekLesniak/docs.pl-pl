@@ -5,12 +5,12 @@ ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: fe652e4cc3a996586d01cdfc4c5749decb51e9db
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 74a1e244fa47cf7c6ea36454013b46b6e44f62c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557350"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557674"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework wersje i zależności
 
@@ -36,7 +36,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 | | |
 | - | - |
-| [.NET Framework 4,8](#net-framework-48) | [.NET Framework 4.7.2](#net-framework-472) | [.NET Framework 4.7.1](#net-framework-471) | [.NET Framework 4,7](#net-framework-47) |
+| [ .NET Framework 4.8](#net-framework-48) | [.NET Framework 4.7.2](#net-framework-472) | [.NET Framework 4.7.1](#net-framework-471) | [.NET Framework 4,7](#net-framework-47) |
 | [.NET Framework 4.6.2](#net-framework-462) | [.NET Framework 4.6.1](#net-framework-461) | [Program .NET Framework 4.6](#net-framework-46) | [.NET Framework 4.5.2](#net-framework-452) |
 | [.NET Framework 4.5.1](#net-framework-451) | [.NET Framework 4.5](#net-framework-45) | [Program .NET Framework 4](#net-framework-4) | [Program .NET Framework 3,5](#net-framework-35) |
 | [.NET Framework 3.0](#net-framework-30) | [.NET Framework 2.0](#net-framework-20) | [.NET Framework 1.1](#net-framework-11) | [.NET Framework 1.0](#net-framework-10) |
@@ -175,7 +175,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 ### <a name="net-framework-4"></a>Program .NET Framework 4
 
-[Nowe funkcje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868(v=vs.100))
+[Nowe funkcje](/previous-versions/dotnet/netframework-4.0/ms171868(v=vs.100))
 
 |||
 |-|-|
@@ -187,7 +187,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 ### <a name="net-framework-35"></a>Program .NET Framework 3,5
 
-[Nowe funkcje](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms171868\(v=vs.90\)):
+[Nowe funkcje](/previous-versions/visualstudio/visual-studio-2008/ms171868\(v=vs.90\)):
 
 - LINQ
 - Drzewa wyrażeń
@@ -208,7 +208,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 ### <a name="net-framework-30"></a>.NET Framework 3.0
 
-[Nowe funkcje](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb822048(v=vs.90)):
+[Nowe funkcje](/previous-versions/visualstudio/visual-studio-2008/bb822048(v=vs.90)):
 
 - Windows Presentation Foundation
 - Windows Communication Foundation
@@ -224,7 +224,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 ### <a name="net-framework-20"></a>.NET Framework 2.0
 
-[Nowe funkcje](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/t357fb32%28v%3dvs.90%29):
+[Nowe funkcje](/previous-versions/visualstudio/visual-studio-2008/t357fb32(v=vs.90)):
 
 - Typy ogólne
 - Debuger Edytuj i Kontynuuj
@@ -237,13 +237,13 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 |-|-|
 |**Wersja środowiska CLR**|2,0|
 |**Uwzględnione w wersji programu Visual Studio**|2005|
-|**Wersje systemu Windows**|Nie dotyczy|
+|**Wersje systemu Windows**|Brak|
 |**Wersje systemu Windows Server**|✔️ 2008 R2 Z DODATKIEM SP1<br />✔️ 2008 Z DODATKIEM SP2<br />✔️ 2003|
 |**Aby określić zainstalowaną wersję programu .NET**|Zobacz [instrukcje](how-to-determine-which-versions-are-installed.md)|
 
 ### <a name="net-framework-11"></a>.NET Framework 1.1
 
-[Nowe funkcje](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/h88tthh0%28v%3dvs.90%29):
+[Nowe funkcje](/previous-versions/visualstudio/visual-studio-2008/h88tthh0(v=vs.90)):
 
 - Kontrolki mobilne ASP.NET
 - Wykonywanie równoczesne
@@ -251,9 +251,9 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 |||
 |-|-|
-|**Wersja środowiska CLR**|1.1|
+|**Wersja środowiska CLR**|1,1|
 |**Uwzględnione w wersji programu Visual Studio**|2003|
-|**Wersje systemu Windows**|Nie dotyczy|
+|**Wersje systemu Windows**|Brak|
 |**Wersje systemu Windows Server**|✔️ 2003|
 |**Aby określić zainstalowaną wersję programu .NET**|Zobacz [instrukcje](how-to-determine-which-versions-are-installed.md)|
 
@@ -261,10 +261,10 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 |||
 |-|-|
-|**Wersja środowiska CLR**|1.0|
+|**Wersja środowiska CLR**|1,0|
 |**Uwzględnione w wersji programu Visual Studio**|Visual Studio .NET|
-|**Wersje systemu Windows**|Nie dotyczy|
-|**Wersje systemu Windows Server**|Nie dotyczy|
+|**Wersje systemu Windows**|Brak|
+|**Wersje systemu Windows Server**|Brak|
 |**Aby określić zainstalowaną wersję programu .NET**|Zobacz [instrukcje](how-to-determine-which-versions-are-installed.md)|
 
 > [!NOTE]
@@ -303,7 +303,7 @@ Ponadto, jeśli aplikacja jest przeznaczona dla wersji 2,0, 3,0 lub 3,5, użytko
 
 - Aby uzyskać informacje dotyczące ustalania, które wersje lub aktualizacje są zainstalowane na komputerze, zobacz [How to: Określanie, które wersje .NET Framework są zainstalowane](how-to-determine-which-versions-are-installed.md) , i [instrukcje: Określanie, które aktualizacje .NET Framework są zainstalowane](how-to-determine-which-net-framework-updates-are-installed.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zgodność wersji](version-compatibility.md) 
 |  [.NET Framework oficjalne zasady pomocy technicznej](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)

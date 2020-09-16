@@ -8,18 +8,18 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: eb3274b98234324bd47aa456feb4845da5a7f3a9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7a896b12f9e877c00688ade176c1e0c730d9591b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599285"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557609"
 ---
 # <a name="debug-windows-authentication-errors"></a>Debuguj błędy uwierzytelniania systemu Windows
 
 W przypadku korzystania z uwierzytelniania systemu Windows jako mechanizmu zabezpieczeń interfejs dostawcy obsługi zabezpieczeń (SSPI) obsługuje procesy zabezpieczeń. Gdy w warstwie SSPI wystąpią błędy zabezpieczeń, są one nałożone przez Windows Communication Foundation (WCF). Ten temat zawiera informacje o strukturze i zestawie pytań ułatwiających zdiagnozowanie błędów.  
   
- Aby zapoznać się z omówieniem protokołu Kerberos, zobacz Omówienie protokołu [Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742516(v=technet.10)). Aby zapoznać się z omówieniem interfejsu SSPI, zobacz [SSPI](/windows/win32/secauthn/sspi).  
+ Aby zapoznać się z omówieniem protokołu Kerberos, zobacz Omówienie protokołu [Kerberos](/previous-versions/windows/it-pro/windows-2000-server/bb742516(v=technet.10)). Aby zapoznać się z omówieniem interfejsu SSPI, zobacz [SSPI](/windows/win32/secauthn/sspi).  
   
  W przypadku uwierzytelniania systemu Windows funkcja WCF zazwyczaj używa dostawcy usługi *negocjowania* zabezpieczeń (SSP), który wykonuje wzajemne uwierzytelnianie Kerberos między klientem a usługą. Jeśli protokół Kerberos nie jest dostępny, domyślnie WCF powraca do programu NT LAN Manager (NTLM). Można jednak skonfigurować funkcję WCF do używania tylko protokołu Kerberos (i zgłosić wyjątek, jeśli protokół Kerberos nie jest dostępny). Istnieje również możliwość skonfigurowania programu WCF do korzystania z ograniczonych form protokołu Kerberos.  
   
@@ -67,7 +67,7 @@ W przypadku korzystania z uwierzytelniania systemu Windows jako mechanizmu zabez
   
  W scenariuszach równoważenia obciążenia, takich jak farmy sieci Web lub ogrody sieci Web, typową metodą jest zdefiniowanie unikatowego konta dla każdej aplikacji, przypisanie nazwy SPN do tego konta i upewnienie się, że wszystkie usługi aplikacji działają na tym koncie.  
   
- Aby uzyskać nazwę SPN konta usługi, musisz być administratorem domeny Active Directory. Aby uzyskać więcej informacji, zobacz [dodatek dotyczący protokołu Kerberos dla systemu Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)).  
+ Aby uzyskać nazwę SPN konta usługi, musisz być administratorem domeny Active Directory. Aby uzyskać więcej informacji, zobacz [dodatek dotyczący protokołu Kerberos dla systemu Windows](/previous-versions/msp-n-p/ff649429(v=pandp.10)).  
   
 #### <a name="kerberos-protocol-direct-requires-the-service-to-run-under-a-domain-machine-account"></a>Protokół Kerberos Direct wymaga, aby usługa działała w ramach konta komputera domeny  
  Dzieje się tak `ClientCredentialType` , gdy właściwość jest ustawiona na `Windows` <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> , a właściwość jest ustawiona na `false` , jak pokazano w poniższym kodzie.  
@@ -92,7 +92,7 @@ W przypadku korzystania z uwierzytelniania systemu Windows jako mechanizmu zabez
   
 3. Wymagaj negocjacji interfejsu SSPI do korzystania z protokołu Kerberos przez niezezwalanie na korzystanie z uwierzytelniania NTLM:  
   
-    1. Zrób to w kodzie, z następującą instrukcją:`ChannelFactory.Credentials.Windows.AllowNtlm = false`  
+    1. Zrób to w kodzie, z następującą instrukcją: `ChannelFactory.Credentials.Windows.AllowNtlm = false`  
   
     2. Lub można to zrobić w pliku konfiguracji przez ustawienie `allowNtlm` atrybutu na `false` . Ten atrybut jest zawarty w [\<windows>](../../configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md) .  
   
@@ -145,7 +145,7 @@ W przypadku korzystania z uwierzytelniania systemu Windows jako mechanizmu zabez
 #### <a name="developing-and-deploying-with-different-identities"></a>Opracowywanie i wdrażanie przy użyciu różnych tożsamości  
  Jeśli tworzysz aplikację na jednej maszynie i wdrażasz ją na innym serwerze i używasz innych typów kont do uwierzytelniania na każdej maszynie, może wystąpić inne zachowanie. Załóżmy na przykład, że tworzysz aplikację na komputerze z systemem Windows XP Pro przy użyciu `SSPI Negotiated` trybu uwierzytelniania. Jeśli używasz konta użytkownika lokalnego do uwierzytelniania za pomocą programu, zostanie użyty protokół NTLM. Po opracowaniu aplikacji należy wdrożyć usługę na komputerze z systemem Windows Server 2003, na którym działa w ramach konta domeny. W tym momencie klient nie będzie mógł uwierzytelnić usługi, ponieważ będzie korzystać z protokołu Kerberos i kontrolera domeny.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.Security.WindowsServiceCredential>

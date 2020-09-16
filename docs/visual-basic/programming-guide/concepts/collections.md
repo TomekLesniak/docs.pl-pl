@@ -2,12 +2,12 @@
 title: Kolekcje
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: f264a0f9ee15707daf4bece5651b9f5f07ebbc39
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 91c6048caf622f21a02032bac31cb2ba5565c54c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400658"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551070"
 ---
 # <a name="collections-visual-basic"></a>Kolekcje (Visual Basic)
 
@@ -95,7 +95,7 @@ Next
 'Output: chinook pink sockeye
 ```
 
-Poniższy przykład usuwa elementy z listy ogólnej. Zamiast `For Each` instrukcji, [dla... ](../../language-reference/statements/for-next-statement.md)Używana jest następna instrukcja, która wykonuje iterację w kolejności malejącej. Wynika to z faktu, że <xref:System.Collections.Generic.List%601.RemoveAt%2A> Metoda powoduje, że elementy po usuniętym elemencie mają niższą wartość indeksu.
+Poniższy przykład usuwa elementy z listy ogólnej. Zamiast `For Each` instrukcji, [dla... ](../../language-reference/statements/for-next-statement.md) Używana jest następna instrukcja, która wykonuje iterację w kolejności malejącej. Wynika to z faktu, że <xref:System.Collections.Generic.List%601.RemoveAt%2A> Metoda powoduje, że elementy po usuniętym elemencie mają niższą wartość indeksu.
 
 ```vb
 Dim numbers As New List(Of Integer) From
@@ -458,13 +458,13 @@ End Class
 
 ## <a name="defining-a-custom-collection"></a>Definiowanie kolekcji niestandardowej
 
-Kolekcję można zdefiniować przez implementację <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Collections.IEnumerable> interfejsu lub. Aby uzyskać dodatkowe informacje, zobacz [Wyliczanie kolekcji](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
+Kolekcję można zdefiniować przez implementację <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Collections.IEnumerable> interfejsu lub. Aby uzyskać dodatkowe informacje, zobacz [Wyliczanie kolekcji](/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
 
 Chociaż można zdefiniować kolekcję niestandardową, zazwyczaj lepiej jest używać kolekcji, które znajdują się w .NET Framework, które są opisane w [typach kolekcji](#kinds-of-collections) wcześniej w tym temacie.
 
 W poniższym przykładzie zdefiniowano klasę kolekcji niestandardowej o nazwie `AllColors` . Ta klasa implementuje <xref:System.Collections.IEnumerable> interfejs, który wymaga, aby <xref:System.Collections.IEnumerable.GetEnumerator%2A> Metoda została zaimplementowana.
 
-`GetEnumerator`Metoda zwraca wystąpienie `ColorEnumerator` klasy. `ColorEnumerator`implementuje <xref:System.Collections.IEnumerator> interfejs, który wymaga <xref:System.Collections.IEnumerator.Current%2A> <xref:System.Collections.IEnumerator.MoveNext%2A> zaimplementowania właściwości, metody i <xref:System.Collections.IEnumerator.Reset%2A> metody.
+`GetEnumerator`Metoda zwraca wystąpienie `ColorEnumerator` klasy. `ColorEnumerator` implementuje <xref:System.Collections.IEnumerator> interfejs, który wymaga <xref:System.Collections.IEnumerator.Current%2A> <xref:System.Collections.IEnumerator.MoveNext%2A> zaimplementowania właściwości, metody i <xref:System.Collections.IEnumerator.Reset%2A> metody.
 
 ```vb
 Public Sub ListColors()
@@ -568,7 +568,7 @@ As IEnumerable(Of Integer)
 End Function
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Inicjatory kolekcji](../language-features/collection-initializers/index.md)
 - [Koncepcje programowania (Visual Basic)](index.md)

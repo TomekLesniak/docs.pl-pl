@@ -2,12 +2,12 @@
 title: Omówienie zabezpieczeń
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 8a036a40d2b1728f39037018c3672551b8b67bd9
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 4222dd36fe2f693bb16216e01d5e06a8176a7801
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75545027"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550693"
 ---
 # <a name="security-overview"></a>Omówienie zabezpieczeń
 
@@ -92,7 +92,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 |Zasób|Opis|
 |--------------|-----------------|
 |[Zabezpieczenia serwera SQL](./sql/sql-server-security.md)|Zawiera omówienie zabezpieczeń SQL Server ze scenariuszami aplikacji, które zapewniają wskazówki dotyczące tworzenia bezpiecznych aplikacji ADO.NET, które są przeznaczone SQL Server.|
-|[Zalecenia dotyczące strategii dostępu do danych](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Zawiera zalecenia dotyczące uzyskiwania dostępu do danych i wykonywania operacji bazy danych.|
+|[Zalecenia dotyczące strategii dostępu do danych](/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Zawiera zalecenia dotyczące uzyskiwania dostępu do danych i wykonywania operacji bazy danych.|
 
 ## <a name="security-policy-and-administration"></a>Zasady zabezpieczeń i administracja
 
@@ -102,12 +102,12 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 |Zasób|Opis|
 |--------------|-----------------|
-|[Zarządzanie zasadami zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|Zawiera informacje dotyczące tworzenia i administrowania zasadami zabezpieczeń.|
-|[Najlepsze rozwiązania dotyczące zasad zabezpieczeń](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|Zawiera łącza opisujące sposób administrowania zasadami zabezpieczeń.|
+|[Zarządzanie zasadami zabezpieczeń](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|Zawiera informacje dotyczące tworzenia i administrowania zasadami zabezpieczeń.|
+|[Najlepsze rozwiązania dotyczące zasad zabezpieczeń](/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|Zawiera łącza opisujące sposób administrowania zasadami zabezpieczeń.|
 
 ## <a name="see-also"></a>Zobacz także
 
 - [Zabezpieczanie aplikacji ADO.NET](securing-ado-net-applications.md)
-- [Zabezpieczenia w programie .NET](../../../standard/security/index.md)
+- [Zabezpieczenia w .NET](../../../standard/security/index.md)
 - [Zabezpieczenia serwera SQL](./sql/sql-server-security.md)
 - [Omówienie ADO.NET](ado-net-overview.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: ba2a1eef73a586074c75a7fec84c912acb8b25e9
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 13d1a22d933d789f28efa2d196fc0106986caa90
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553101"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555008"
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-linq-to-xml"></a>Jak znaleźć Unię dwóch ścieżek lokalizacji (LINQ to XML)
 
@@ -91,6 +91,6 @@ Results are identical
 <Price>6.99</Price>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [LINQ to XML dla użytkowników XPath (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML dla użytkowników XPath (Visual Basic)](./comparison-xpath-linq-xml.md)

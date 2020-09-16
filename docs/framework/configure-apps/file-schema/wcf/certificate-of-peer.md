@@ -2,12 +2,12 @@
 title: <certificate> dla <peer>
 ms.date: 03/30/2017
 ms.assetid: 48b69142-c957-4305-a042-c9d0c9a55c0e
-ms.openlocfilehash: 2044dc6fb4ae688a0a3c7e29b3b7696df0d0d218
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ed24e9061f57798197ad41c1f556ce612a357e9e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398197"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555318"
 ---
 # <a name="certificate-of-peer"></a>\<certificate> dla \<peer>
 Określa certyfikat używany przez element równorzędny.  
@@ -65,7 +65,7 @@ Określa certyfikat używany przez element równorzędny.
 - <xref:System.ServiceModel.Security.PeerCredential>
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [Sieci równorzędne](../../../wcf/feature-details/peer-to-peer-networking.md)
-- [Uwierzytelnianie komunikatów kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
-- [Uwierzytelnianie niestandardowe kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
+- [Uwierzytelnianie komunikatów kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
+- [Uwierzytelnianie niestandardowe kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
 - [Zabezpieczanie aplikacji kanałów równorzędnych](../../../wcf/feature-details/securing-peer-channel-applications.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

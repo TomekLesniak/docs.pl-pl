@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-ms.openlocfilehash: 0a77c791d55c6009cf59d5a4b15f3b2a63b7ccf9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a57b5ff0b4a8186ffc4c01b5e0824100f265551c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74140477"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557284"
 ---
 # \<wsFederationHttpBinding>
 
@@ -133,8 +133,8 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
 |Element|Opis|
 |-------------|-----------------|
 |[\<security>](security-of-wsfederationhttpbinding.md)|Definiuje ustawienia zabezpieczeń wiadomości. Ten element jest typu <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement> .|
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Określa, czy niezawodne sesje są nawiązywane między punktami końcowymi kanałów.|
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|
+|[\<reliableSession>](/previous-versions/ms731375(v=vs.90))|Określa, czy niezawodne sesje są nawiązywane między punktami końcowymi kanałów.|
 
 ### <a name="parent-elements"></a>Elementy nadrzędne
 
@@ -148,7 +148,7 @@ Federacja jest możliwością udostępniania tożsamości w wielu systemach na p
 
 Powiązania składają się ze stosu elementów powiązania. Stos elementów powiązania w
 
-`wsFederationHttpBinding`jest taka sama jak zawarte w`wsHttpBinding`
+`wsFederationHttpBinding` jest taka sama jak zawarte w `wsHttpBinding`
 
 gdy [\<security>](security-of-wsfederationhttpbinding.md) jest ustawiona na wartość domyślną <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> .
 
@@ -202,5 +202,5 @@ Aby uzyskać więcej informacji na temat tego powiązania, zobacz [How to: Creat
 - [Instrukcje: tworzenie elementu WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

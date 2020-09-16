@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Forms Add configuration element
 - configuring Windows Forms applications
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
-ms.openlocfilehash: 26b806f84c3e1bc44e0437a8f8806316b14897b8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: dc1786f1f2dcc7bd01488dd24c6ef454f7e1cfbd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73109661"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557635"
 ---
 # <a name="windows-forms-add-configuration-element"></a>Windows Forms dodać elementu konfiguracji
 
@@ -35,9 +35,9 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
 | `key`     | Atrybut wymagany. Wstępnie zdefiniowana nazwa klucza odpowiadająca określonej Windows Forms funkcji dostosowywalnej. |
 | `value`   | Atrybut wymagany. Wartość do przypisania `key` . |
 
-### <a name="key-attribute-names-and-associated-values"></a>`key`nazwy atrybutów i skojarzone wartości
+### <a name="key-attribute-names-and-associated-values"></a>`key` nazwy atrybutów i skojarzone wartości
 
-| `key`Nazwij | Wartości | Opis |
+| `key` Nazwij | Wartości | Opis |
 | ---------- | ------ | ----------- |
 | "AnchorLayout.DisableSinglePassControlScaling" | "true" &#124; "false" | Wskazuje, czy kontrolki zakotwiczone są skalowane w jednym przebiegu. "true", aby wyłączyć pojedyncze skalowanie; w przeciwnym razie false. Aby uzyskać więcej informacji, zobacz sekcję "skalowanie pojedynczego przebiegu" w obszarze [uwagi](#remarks) . |
 | "DpiAwareness" | "PerMonitorV2" &#124; "false" | Wskazuje, czy aplikacja obsługuje DPI. Ustaw klucz na wartość "PerMonitorV2", aby obsługiwać rozpoznawanie dpi; w przeciwnym razie ustaw dla niego wartość "false". Rozpoznawanie DPI to funkcja opcjonalna. Aby skorzystać z obsługi Windows Forms "wysokiej rozdzielczości DPI, należy ustawić jej wartość na" PerMonitorV2 ". Zobacz sekcję [uwagi](#remarks) , aby uzyskać więcej informacji. |
@@ -65,17 +65,17 @@ Począwszy od .NET Framework 4,7, `<System.Windows.Forms.ApplicationConfiguratio
 
 `<System.Windows.Forms.ApplicationConfigurationSection>`Element umożliwia dodanie jednego lub większej liczby `<add>` elementów podrzędnych, z których każdy definiuje określone ustawienie konfiguracji.
 
-Aby zapoznać się z omówieniem Windows Forms wysokiej rozdzielczości DPI, zobacz [wysoka rozdzielczość DPI w programie Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md).
+Aby zapoznać się z omówieniem Windows Forms wysokiej rozdzielczości DPI, zobacz [wysoka rozdzielczość DPI w programie Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms).
 
 ### <a name="dpiawareness"></a>DpiAwareness
 
-Windows Forms aplikacje uruchamiane w ramach wersji systemu Windows, począwszy od systemu Windows 10 Creator Edition i wersje docelowa .NET Framework, począwszy od .NET Framework 4,7, można skonfigurować tak, aby korzystały z ulepszeń o wysokiej rozdzielczości DPI wprowadzonych w .NET Framework 4,7. Należą do nich:
+Windows Forms aplikacje uruchamiane w ramach wersji systemu Windows, począwszy od systemu Windows 10 Creator Edition i wersje docelowa .NET Framework, począwszy od .NET Framework 4,7, można skonfigurować tak, aby korzystały z ulepszeń o wysokiej rozdzielczości DPI wprowadzonych w .NET Framework 4,7. Należą do nich następujące elementy:
 
 - Obsługa dynamicznych scenariuszy DPI, w których użytkownik zmienia współczynnik DPI lub skalowania po uruchomieniu aplikacji Windows Forms.
 
 - Ulepszenia skalowania i układu wielu kontrolek Windows Forms, takich jak <xref:System.Windows.Forms.MonthCalendar> kontrolka i <xref:System.Windows.Forms.CheckedListBox> kontrolka.
 
-Wysoka rozdzielczość DPI to funkcja opcjonalna. Domyślnie wartość `DpiAwareness` to `false` . Możesz zadecydować, Windows Forms "obsłużyć świadomość DPI, ustawiając wartość tego klucza `PerMonitorV2` w pliku konfiguracji aplikacji. W przypadku włączenia rozpoznawania DPI wszystkie poszczególne funkcje DPI również są włączone. Należą do nich:
+Wysoka rozdzielczość DPI to funkcja opcjonalna. Domyślnie wartość `DpiAwareness` to `false` . Możesz zadecydować, Windows Forms "obsłużyć świadomość DPI, ustawiając wartość tego klucza `PerMonitorV2` w pliku konfiguracji aplikacji. W przypadku włączenia rozpoznawania DPI wszystkie poszczególne funkcje DPI również są włączone. Należą do nich następujące elementy:
 
 - Komunikaty o zmienionych wartościach DPI, które są kontrolowane przez `DisableDpiChangedMessageHandling` klucz.
 
@@ -97,7 +97,7 @@ Pojedyncze domyślne ustawienie zgody udostępniane przez ustawienie `DpiAwarene
 
 Zazwyczaj należy zrezygnować z konkretnej funkcji, ponieważ została wybrana obsługa programistycznie.
 
-Aby uzyskać więcej informacji o korzystaniu z obsługi wysokiej rozdzielczości DPI w aplikacjach Windows Forms, zobacz [Obsługa wysokiej rozdzielczości DPI w Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md).
+Aby uzyskać więcej informacji o korzystaniu z obsługi wysokiej rozdzielczości DPI w aplikacjach Windows Forms, zobacz [Obsługa wysokiej rozdzielczości DPI w Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms).
 
 ### <a name="disabledpichangedmessagehandling"></a>DisableDpiChangedMessageHandling
 
@@ -109,5 +109,5 @@ Skalowanie pojedyncze lub wieloprzebiegowe ma wpływ na postrzeganą czas odpowi
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Sekcja konfiguracji programu Windows Forms](index.md)
-- [Obsługa wysokiej rozdzielczości DPI w Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md)
+- [Sekcja konfiguracji Windows Forms](index.md)
+- [Obsługa wysokiej rozdzielczości DPI w Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms)

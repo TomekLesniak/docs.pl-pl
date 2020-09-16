@@ -3,12 +3,12 @@ title: Duże ilości danych i przesyłanie strumieniowe
 description: Zapoznaj się z zagadnieniami dotyczącymi komunikacji opartej na języku XML WCF, koderów i danych przesyłanych strumieniowo, w tym transferu danych binarnych.
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 2eb57e2f57bebb2e765ea798b3dff27e0187e8c7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 58ef2ea1fd4f9aa800a91edbaabeb80f989b38f4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246587"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555032"
 ---
 # <a name="large-data-and-streaming"></a>Duże ilości danych i przesyłanie strumieniowe
 
@@ -58,7 +58,7 @@ Windows Communication Foundation (WCF) to infrastruktura komunikacji oparta na j
   
  W przypadku danych, które nie mają tych ograniczeń, zazwyczaj lepiej jest wysyłać sekwencje komunikatów w zakresie sesji niż w przypadku jednej dużej wiadomości. Aby uzyskać więcej informacji, zobacz sekcję "dane przesyłane strumieniowo" w dalszej części tego tematu.  
   
- Podczas wysyłania dużych ilości danych należy ustawić `maxAllowedContentLength` ustawienie usług IIS (Aby uzyskać więcej informacji, zobacz [Konfigurowanie limitów żądań usług IIS](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)) i `maxReceivedMessageSize` ustawienie powiązania (na przykład [System. ServiceModel. BasicHttpBinding. MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) lub <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A> ). `maxAllowedContentLength`Właściwość domyślna to 28,6 MB, a `maxReceivedMessageSize` Właściwość domyślna to 64 KB.  
+ Podczas wysyłania dużych ilości danych należy ustawić `maxAllowedContentLength` ustawienie usług IIS (Aby uzyskać więcej informacji, zobacz [Konfigurowanie limitów żądań usług IIS](/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)) i `maxReceivedMessageSize` ustawienie powiązania (na przykład [System. ServiceModel. BasicHttpBinding. MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) lub <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A> ). `maxAllowedContentLength`Właściwość domyślna to 28,6 MB, a `maxReceivedMessageSize` Właściwość domyślna to 64 KB.  
   
 ## <a name="encodings"></a>Kodowanie  
  *Kodowanie* definiuje zestaw reguł dotyczących sposobu prezentowania wiadomości w sieci przewodowej. *Koder* implementuje takie kodowanie i jest odpowiedzialny na stronie nadawcy w celu wyłączania pamięci <xref:System.ServiceModel.Channels.Message> do strumienia bajtów lub buforu bajtów, który można wysłać w sieci. Po stronie odbiornika koder zamienia sekwencję bajtów na komunikat w pamięci.  
@@ -187,7 +187,7 @@ class MyData
  Można włączyć przesyłanie strumieniowe żądań i odpowiedzi albo w obu kierunkach, niezależnie od ich strony, bez wywierania wpływu na funkcjonalność. Należy jednak zawsze założyć, że transferowany rozmiar danych jest tak duży, że włączenie przesyłania strumieniowego jest uzasadnione na obu punktach końcowych łącza komunikacyjnego. W przypadku komunikacji między platformami, w której jeden z punktów końcowych nie jest zaimplementowany przy użyciu programu WCF, możliwość korzystania z przesyłania strumieniowego zależy od możliwości przesyłania strumieniowego na platformie. Innym rzadkim wyjątkiem może być Scenariusz oparty na zużyciu pamięci, w którym klient lub usługa musi zminimalizować swój zestaw roboczy i może zapewnić tylko małe rozmiary buforów.  
   
 ### <a name="enabling-asynchronous-streaming"></a>Włączanie przesyłania strumieniowego asynchronicznego  
- Aby włączyć asynchroniczne przesyłanie strumieniowe, Dodaj <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> zachowanie punktu końcowego do hosta usługi i ustaw jego <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> Właściwość na `true` . Dodaliśmy także możliwość wysyłania strumieniowo asynchronicznych danych przesyłanych po stronie wysyłającej. Poprawia to skalowalność usługi w scenariuszach, w których przesyła strumieniowo komunikaty do wielu klientów, z których może się zająć wolne odczytywanie z powodu przeciążenia sieci lub nie są w ogóle odczytywane. W tych scenariuszach nie blokujemy poszczególnych wątków w usłudze na klienta. Dzięki temu usługa może przetwarzać wielu kolejnych klientów w taki sposób, aby zwiększyć skalowalność usługi.  
+ Aby włączyć asynchroniczne przesyłanie strumieniowe, Dodaj  <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> zachowanie punktu końcowego do hosta usługi i ustaw jego <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> Właściwość na `true` . Dodaliśmy także możliwość wysyłania strumieniowo asynchronicznych danych przesyłanych po stronie wysyłającej. Poprawia to skalowalność usługi w scenariuszach, w których przesyła strumieniowo komunikaty do wielu klientów, z których może się zająć wolne odczytywanie z powodu przeciążenia sieci lub nie są w ogóle odczytywane. W tych scenariuszach nie blokujemy poszczególnych wątków w usłudze na klienta. Dzięki temu usługa może przetwarzać wielu kolejnych klientów w taki sposób, aby zwiększyć skalowalność usługi.  
   
 ### <a name="programming-model-for-streamed-transfers"></a>Model programowania dla transferów przesyłanych strumieniowo  
  Model programowania dla przesyłania strumieniowego jest prosty. W przypadku otrzymywania przesyłanych strumieniowo danych należy określić kontrakt operacji, który ma <xref:System.IO.Stream> parametr wejściowy z jednym typem. Aby można było zwracać dane przesyłane strumieniowo, zwróć <xref:System.IO.Stream> odwołanie.  
@@ -240,6 +240,6 @@ public class UploadStreamMessage
 > [!NOTE]
 > Decyzja o użyciu buforowanych lub przesyłanych strumieniowo jest lokalną decyzją punktu końcowego. W przypadku transportów HTTP tryb transferu nie jest propagowany przez połączenie lub serwery proxy i innych pośredników. Ustawienie trybu transferu nie jest odzwierciedlone w opisie interfejsu usługi. Po wygenerowaniu klienta programu WCF do usługi należy edytować plik konfiguracji usług przeznaczonych do użycia z transferem strumieniowym w celu ustawienia trybu. W przypadku transportów TCP i nazwanych potoków tryb transferu jest propagowany jako potwierdzenie zasad.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Instrukcje: włączanie przesyłania strumieniowego](how-to-enable-streaming.md)

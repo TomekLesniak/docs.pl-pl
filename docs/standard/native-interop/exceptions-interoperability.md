@@ -7,12 +7,12 @@ helpviewer_keywords:
 - exceptions, unmanaged code
 - interop, exceptions
 - exceptions, interop
-ms.openlocfilehash: 2aff71e97e1be0dbb584f4fe43c322cea86d2480
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 90774b5d1b64feb34e01f48708d94f8f841a7c9d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76795176"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550875"
 ---
 # <a name="working-with-interop-exceptions-in-unmanaged-code"></a>Praca z wyjątkami międzyoperacyjnymi w kodzie niezarządzanym
 
@@ -20,11 +20,11 @@ Międzyoperacyjność wyjątku kodu niezarządzanego jest obsługiwana tylko na 
 
 ## <a name="setjmplongjmp-behaviors"></a>Zachowania setjmp/longjmp
 
-Funkcje Interop `setjmp` with `longjmp` i języka C nie są obsługiwane. Nie można użyć `longjmp` , aby pominąć ramki zarządzane.
+Funkcje Interop with `setjmp` i języka `longjmp` C nie są obsługiwane. Nie można użyć, `longjmp` Aby pominąć ramki zarządzane.
 
-Aby uzyskać więcej informacji, zobacz [dokumentację longjmp](https://docs.microsoft.com/cpp/c-runtime-library/reference/longjmp).
+Aby uzyskać więcej informacji, zobacz [dokumentację longjmp](/cpp/c-runtime-library/reference/longjmp).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyjątki](index.md)
 - [Współdziałanie z natywnymi bibliotekami](https://www.mono-project.com/docs/advanced/pinvoke/#runtime-exception-propagation)

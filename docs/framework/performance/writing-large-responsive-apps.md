@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4a9f5d50ad78b2b0bef0ece3c4fce47d2925aca5
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: d74c7b8d80f02283cd681ed0118257ed926bdc83
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063760"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555253"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Pisanie dużych i sprawnie działających aplikacji platformy .NET Framework
 
@@ -86,7 +86,7 @@ public class BoxingExample
 var s = id.ToString() + ':' + size.ToString();  
 ```  
   
- Jednak ten wiersz kodu wprowadza alokację opakowania, ponieważ kompiluje się do <xref:System.String.Concat%28System.Object%2CSystem.Object%2CSystem.Object%29> . .NET Framework musi mieć pole literału znakowego do wywołania`Concat`  
+ Jednak ten wiersz kodu wprowadza alokację opakowania, ponieważ kompiluje się do <xref:System.String.Concat%28System.Object%2CSystem.Object%2CSystem.Object%29> . .NET Framework musi mieć pole literału znakowego do wywołania `Concat`  
   
  **Poprawka na przykład 1**  
   
@@ -167,7 +167,7 @@ public void WriteFormattedDocComment(string text)
   
  W pierwszym wierszu wewnątrz `WriteFormattedDocComment` , `text.Split` wywołanie przydziela nową tablicę trzech elementów jako argument przy każdym wywołaniu. Kompilator musi emitować kod, aby przydzielić tę tablicę za każdym razem. Dzieje się tak, ponieważ kompilator nie wie, czy <xref:System.String.Split%2A> przechowuje tablicę w miejscu, w którym tablica może być modyfikowana przez inny kod, co wpłynie na późniejsze wywołania do `WriteFormattedDocComment` . Wywołanie w celu <xref:System.String.Split%2A> przydzielania również ciągu dla każdego wiersza w `text` i przydziela inne pamięci do wykonania operacji.
   
- `WriteFormattedDocComment`ma trzy wywołania <xref:System.String.TrimStart%2A> metody. Dwa znajdują się w wewnętrznych pętlach, które duplikują zadania i przydziały. Aby przyczynić się do gorszenia, wywołanie <xref:System.String.TrimStart%2A> metody bez argumentów przypisuje pustą tablicę (dla `params` parametru) oprócz wyniku ciągu.
+ `WriteFormattedDocComment` ma trzy wywołania <xref:System.String.TrimStart%2A> metody. Dwa znajdują się w wewnętrznych pętlach, które duplikują zadania i przydziały. Aby przyczynić się do gorszenia, wywołanie <xref:System.String.TrimStart%2A> metody bez argumentów przypisuje pustą tablicę (dla `params` parametru) oprócz wyniku ciągu.
   
  Na koniec istnieje wywołanie <xref:System.String.Substring%2A> metody, która zwykle przypisuje nowy ciąg.
   
@@ -271,7 +271,7 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
   
  Ponieważ nowe kompilatory używają wątków, te implementacje używają pola statycznego wątku ( <xref:System.ThreadStaticAttribute> atrybutu) do buforowania <xref:System.Text.StringBuilder> i prawdopodobnie można forgo `ThreadStatic` deklarację. Pole statyczne wątku przechowuje unikatową wartość dla każdego wątku, który wykonuje ten kod.
   
- `AcquireBuilder()`Zwraca buforowane <xref:System.Text.StringBuilder> wystąpienie, jeśli istnieje, po jego wyczyszczeniu i ustawieniu pola lub pamięci podręcznej na wartość null. W przeciwnym razie `AcquireBuilder()` tworzy nowe wystąpienie i zwraca je, pozostawiając pole lub pamięć podręczną ustawioną na wartość null.
+ `AcquireBuilder()` Zwraca buforowane <xref:System.Text.StringBuilder> wystąpienie, jeśli istnieje, po jego wyczyszczeniu i ustawieniu pola lub pamięci podręcznej na wartość null. W przeciwnym razie `AcquireBuilder()` tworzy nowe wystąpienie i zwraca je, pozostawiając pole lub pamięć podręczną ustawioną na wartość null.
   
  Gdy wszystko będzie gotowe <xref:System.Text.StringBuilder> , należy wywołać, `GetStringAndReleaseBuilder()` Aby uzyskać wynik ciągu, zapisać <xref:System.Text.StringBuilder> wystąpienie w polu lub w pamięci podręcznej, a następnie zwrócić wynik. Można wykonać ponowne wprowadzenie tego kodu i utworzyć wiele <xref:System.Text.StringBuilder> obiektów (chociaż zdarza się to rzadko). Kod zapisuje tylko ostatnio wydane <xref:System.Text.StringBuilder> wystąpienie do późniejszego użycia. Ta prosta strategia buforowania znacznie zmniejsza alokacje w nowych kompilatorach. Części .NET Framework i MSBuild ("MSBuild") używają podobnej metody w celu zwiększenia wydajności.
   
@@ -282,7 +282,7 @@ W połączeniu z wyrażeniami lambda jest przykładem funkcji produktywności (L
   
  **Przykład 5: lambdas, List \<T> i IEnumerable\<T>**  
   
- W tym przykładzie używa [kodu LINQ i języka stylu funkcjonalności](https://docs.microsoft.com/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming) , aby znaleźć symbol w modelu kompilatora, przy użyciu ciągu nazwy:  
+ W tym przykładzie używa [kodu LINQ i języka stylu funkcjonalności](/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming) , aby znaleźć symbol w modelu kompilatora, przy użyciu ciągu nazwy:  
   
 ```csharp  
 class Symbol {  
@@ -306,7 +306,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- W pierwszym wierszu [wyrażenie lambda](../../csharp/language-reference/operators/lambda-expressions.md) jest `s => s.Name == name` [zamykane](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures) na zmiennej lokalnej `name` . Oznacza to, że oprócz przydzielenia obiektu [delegata](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) `predicate` , który przechowuje, kod przydziela klasę statyczną do przechowywania środowiska, które przechwytuje wartość `name` . Kompilator generuje kod podobny do następującego:  
+ W pierwszym wierszu [wyrażenie lambda](../../csharp/language-reference/operators/lambda-expressions.md) jest `s => s.Name == name` [zamykane](/archive/blogs/ericlippert/what-are-closures) na zmiennej lokalnej `name` . Oznacza to, że oprócz przydzielenia obiektu [delegata](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) `predicate` , który przechowuje, kod przydziela klasę statyczną do przechowywania środowiska, które przechwytuje wartość `name` . Kompilator generuje kod podobny do następującego:  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  
@@ -410,7 +410,7 @@ class Compilation { /*...*/
 }  
 ```  
   
- Zobaczysz, że nowy kod z buforowaniem ma `SyntaxTree` pole o nazwie `cachedResult` . Gdy to pole ma wartość null, program `GetSyntaxTreeAsync()` wykonuje i zapisuje wynik w pamięci podręcznej. `GetSyntaxTreeAsync()`zwraca `SyntaxTree` obiekt. Problem polega na tym, że jeśli masz `async` funkcję typu `Task<SyntaxTree>` i zwracasz wartość typu `SyntaxTree` , kompilator emituje kod w celu przydzielenia zadania do przechowywania wyniku (przy użyciu `Task<SyntaxTree>.FromResult()` ). Zadanie jest oznaczane jako ukończone, a wynik jest natychmiast dostępny. W kodzie dla nowych kompilatorów <xref:System.Threading.Tasks.Task> obiekty, które zostały już wykonane, były tak często, że te przydziały znacznie poprawiają czas odpowiedzi.
+ Zobaczysz, że nowy kod z buforowaniem ma `SyntaxTree` pole o nazwie `cachedResult` . Gdy to pole ma wartość null, program `GetSyntaxTreeAsync()` wykonuje i zapisuje wynik w pamięci podręcznej. `GetSyntaxTreeAsync()` zwraca `SyntaxTree` obiekt. Problem polega na tym, że jeśli masz `async` funkcję typu `Task<SyntaxTree>` i zwracasz wartość typu `SyntaxTree` , kompilator emituje kod w celu przydzielenia zadania do przechowywania wyniku (przy użyciu `Task<SyntaxTree>.FromResult()` ). Zadanie jest oznaczane jako ukończone, a wynik jest natychmiast dostępny. W kodzie dla nowych kompilatorów <xref:System.Threading.Tasks.Task> obiekty, które zostały już wykonane, były tak często, że te przydziały znacznie poprawiają czas odpowiedzi.
   
  **Poprawka na przykład 6**  
   
@@ -436,7 +436,7 @@ class Compilation { /*...*/
 }  
 ```  
   
- Ten kod zmienia typ `cachedResult` do i korzysta z `Task<SyntaxTree>` `async` funkcji pomocnika, która zawiera oryginalny kod z `GetSyntaxTreeAsync()` . `GetSyntaxTreeAsync()`teraz używa [operatora łączenia wartości null](../../csharp/language-reference/operators/null-coalescing-operator.md) do zwrócenia, `cachedResult` Jeśli nie ma wartości null. Jeśli `cachedResult` ma wartość null, `GetSyntaxTreeAsync()` wywołuje `GetSyntaxTreeUncachedAsync()` i buforuje wynik. Zwróć uwagę, że `GetSyntaxTreeAsync()` nie oczekujemy, że wywołanie `GetSyntaxTreeUncachedAsync()` jako kod normalnie będzie się powtarzać. Nie przy użyciu oczekiwania oznacza, że gdy `GetSyntaxTreeUncachedAsync()` zwraca swój <xref:System.Threading.Tasks.Task> obiekt, `GetSyntaxTreeAsync()` natychmiast zwraca <xref:System.Threading.Tasks.Task> . Teraz buforowany wynik to a <xref:System.Threading.Tasks.Task> , więc nie ma żadnych alokacji, aby zwrócić zbuforowany wynik.
+ Ten kod zmienia typ `cachedResult` do i korzysta z `Task<SyntaxTree>` `async` funkcji pomocnika, która zawiera oryginalny kod z `GetSyntaxTreeAsync()` . `GetSyntaxTreeAsync()` teraz używa [operatora łączenia wartości null](../../csharp/language-reference/operators/null-coalescing-operator.md) do zwrócenia, `cachedResult` Jeśli nie ma wartości null. Jeśli `cachedResult` ma wartość null, `GetSyntaxTreeAsync()` wywołuje `GetSyntaxTreeUncachedAsync()` i buforuje wynik. Zwróć uwagę, że `GetSyntaxTreeAsync()` nie oczekujemy, że wywołanie `GetSyntaxTreeUncachedAsync()` jako kod normalnie będzie się powtarzać. Nie przy użyciu oczekiwania oznacza, że gdy `GetSyntaxTreeUncachedAsync()` zwraca swój <xref:System.Threading.Tasks.Task> obiekt, `GetSyntaxTreeAsync()` natychmiast zwraca <xref:System.Threading.Tasks.Task> . Teraz buforowany wynik to a <xref:System.Threading.Tasks.Task> , więc nie ma żadnych alokacji, aby zwrócić zbuforowany wynik.
   
 ### <a name="additional-considerations"></a>Dodatkowe zagadnienia  
  Poniżej przedstawiono kilka dodatkowych kwestii dotyczących potencjalnych problemów z dużymi aplikacjami lub aplikacjami, które przetwarzają wiele danych.
@@ -468,7 +468,7 @@ class Compilation { /*...*/
 - [Wideo przedstawiające prezentację tego tematu](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)
 - [Początkujący Przewodnik dotyczący profilowania wydajności](/visualstudio/profiling/beginners-guide-to-performance-profiling)
 - [Wydajność](index.md)
-- [Wskazówki dotyczące wydajności .NET](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v%3dmsdn.10))
+- [Wskazówki dotyczące wydajności .NET](/previous-versions/dotnet/articles/ms973839(v=msdn.10))
 - [Samouczki narzędzia PerfView kanału 9](https://channel9.msdn.com/Series/PerfView-Tutorial)
 - [Zestaw SDK .NET Compiler Platform](../../csharp/roslyn-sdk/index.md)
 - [repozytorium dotnet/Roslyn w witrynie GitHub](https://github.com/dotnet/roslyn)

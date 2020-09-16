@@ -2,12 +2,12 @@
 title: Ograniczanie dystrybucji komunikatów
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-ms.openlocfilehash: 188d7bd365caad7d4cd438744c78ae8e7cd95e7e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e736aba60d7d2b39d1b8eb958a8c72e6e8d55e13
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586315"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555019"
 ---
 # <a name="limiting-message-distribution"></a>Ograniczanie dystrybucji komunikatów
 
@@ -19,15 +19,15 @@ Koncepcja `PeerHopCount` jest podobna do czasu wygaśnięcia (Time-to-Live) uży
 
 Licznik przeskoków może zostać dodany do komunikatu przez dodanie `PeerHopCount` jako atrybut do odpowiedniej właściwości lub pola w implementacji klasy komunikatów. Można ją ustawić na określoną wartość przed wysłaniem komunikatu do siatki. W ten sposób można użyć liczby przeskoków, aby ograniczyć dystrybucję komunikatów w sieci w razie potrzeby, potencjalnie unikając niepotrzebne duplikowanie komunikatów. Jest to przydatne w przypadkach, gdy siatka zawiera dużą ilość danych nadmiarowych lub do wysyłania komunikatów do bezpośrednich sąsiadów lub sąsiadów w ciągu kilku przeskoków.
 
-- Fragmenty kodu i powiązane informacje można znaleźć w [atrybucie PeerHopCount: kontrolowanie wpisu dystrybucji komunikatów](https://docs.microsoft.com/archive/blogs/peerchan/the-peerhopcount-attribute-controlling-message-distribution) na blogu kanału równorzędnego.
+- Fragmenty kodu i powiązane informacje można znaleźć w [atrybucie PeerHopCount: kontrolowanie wpisu dystrybucji komunikatów](/archive/blogs/peerchan/the-peerhopcount-attribute-controlling-message-distribution) na blogu kanału równorzędnego.
 
 ## <a name="message-propagation-filter"></a>Filtr propagacji komunikatów
 
-`MessagePropagationFilter`może służyć do dostosowanej kontroli zalewania komunikatów, szczególnie w przypadku, gdy zawartość wiadomości lub innych określonych scenariuszy decyduje o propagacji. Filtr wykonuje decyzje propagacji dla każdego komunikatu, który przechodzi przez węzeł. Jest to prawdziwe w przypadku komunikatów, które pochodzą z innych miejsc w siatce, które zostały odebrane przez ten węzeł, a także wiadomości utworzonych przez aplikację. Filtr ma dostęp zarówno do wiadomości, jak i jej pochodzenia, dlatego decyzje dotyczące przekazywania lub porzucania wiadomości mogą opierać się na pełnych dostępnych informacjach.
+`MessagePropagationFilter` może służyć do dostosowanej kontroli zalewania komunikatów, szczególnie w przypadku, gdy zawartość wiadomości lub innych określonych scenariuszy decyduje o propagacji. Filtr wykonuje decyzje propagacji dla każdego komunikatu, który przechodzi przez węzeł. Jest to prawdziwe w przypadku komunikatów, które pochodzą z innych miejsc w siatce, które zostały odebrane przez ten węzeł, a także wiadomości utworzonych przez aplikację. Filtr ma dostęp zarówno do wiadomości, jak i jej pochodzenia, dlatego decyzje dotyczące przekazywania lub porzucania wiadomości mogą opierać się na pełnych dostępnych informacjach.
 
-<xref:System.ServiceModel.PeerMessagePropagationFilter>jest podstawową klasą abstrakcyjną z pojedynczą funkcją <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A> . Pierwszy argument wywołania metody przekazuje pełną kopię wiadomości. Wszelkie zmiany wprowadzone w komunikacie nie wpływają na rzeczywistą wiadomość. Ostatni argument wywołania metody Określa początek komunikatu ( `PeerMessageOrigination.Local` lub `PeerMessageOrigination.Remote` ). Konkretne implementacje tej metody muszą zwracać stałą z wyliczenia, <xref:System.ServiceModel.PeerMessagePropagation> wskazując, że wiadomość ma być przekazywana do lokalnej aplikacji ( `Local` ), przekazana do klientów zdalnych ( `Remote` ), obu ( `LocalAndRemote` ) lub nie ( `None` ). Ten filtr można zastosować, uzyskując dostęp do odpowiedniego `PeerNode` obiektu i określając wystąpienie klasy filtru propagacji pochodnej we `PeerNode.MessagePropagationFilter` właściwości. Przed otwarciem kanału równorzędnego upewnij się, że jest dołączony filtr propagacji.
+<xref:System.ServiceModel.PeerMessagePropagationFilter> jest podstawową klasą abstrakcyjną z pojedynczą funkcją <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A> . Pierwszy argument wywołania metody przekazuje pełną kopię wiadomości. Wszelkie zmiany wprowadzone w komunikacie nie wpływają na rzeczywistą wiadomość. Ostatni argument wywołania metody Określa początek komunikatu ( `PeerMessageOrigination.Local` lub `PeerMessageOrigination.Remote` ). Konkretne implementacje tej metody muszą zwracać stałą z wyliczenia, <xref:System.ServiceModel.PeerMessagePropagation> wskazując, że wiadomość ma być przekazywana do lokalnej aplikacji ( `Local` ), przekazana do klientów zdalnych ( `Remote` ), obu ( `LocalAndRemote` ) lub nie ( `None` ). Ten filtr można zastosować, uzyskując dostęp do odpowiedniego `PeerNode` obiektu i określając wystąpienie klasy filtru propagacji pochodnej we `PeerNode.MessagePropagationFilter` właściwości. Przed otwarciem kanału równorzędnego upewnij się, że jest dołączony filtr propagacji.
 
-- Fragmenty kodu i powiązane informacje znajdują się w witrynie [peer Channel i MessagePropagationFilter](https://docs.microsoft.com/archive/blogs/peerchan/peer-channel-and-messagepropagationfilter) post na blogu kanału równorzędnego.
+- Fragmenty kodu i powiązane informacje znajdują się w witrynie [peer Channel i MessagePropagationFilter](/archive/blogs/peerchan/peer-channel-and-messagepropagationfilter) post na blogu kanału równorzędnego.
 
 ## <a name="contacting-an-individual-node-in-the-mesh"></a>Kontaktowanie się z pojedynczym węzłem w sieci
 
@@ -69,6 +69,6 @@ Odpowiedzi na te pytania mogą pomóc w ustaleniu, czy użyć liczby przeskoków
 
   - *Niska*: dowolne, bezpośrednie połączenie prawdopodobnie nie jest potrzebne.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tworzenie aplikacji kanału równorzędnego](building-a-peer-channel-application.md)

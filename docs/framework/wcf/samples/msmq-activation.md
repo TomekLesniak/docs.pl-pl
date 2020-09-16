@@ -2,12 +2,12 @@
 title: Aktywacja usługi MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 0dbd24a612d56c0fe88066f625be2a8369b7df5b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 349eadb8f517993c343e81656204ad25e62ed931
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602545"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555240"
 ---
 # <a name="msmq-activation"></a>Aktywacja usługi MSMQ
 
@@ -25,7 +25,7 @@ Ten przykład pokazuje, jak hostować aplikacje w usłudze aktywacji procesów s
 >
 > \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
 
-Usługa aktywacji procesów systemu Windows (WAS), nowy mechanizm aktywacji procesu dla systemu Windows Server 2008, zapewnia funkcje podobne do usług IIS, które były wcześniej dostępne tylko dla aplikacji opartych na protokole HTTP, do aplikacji korzystających z protokołów innych niż HTTP. Windows Communication Foundation (WCF) używa interfejsu adaptera odbiornika do przekazywania żądań aktywacji odbieranych za pośrednictwem protokołów innych niż HTTP obsługiwanych przez funkcję WCF, takich jak TCP, nazwane potoki i MSMQ. Funkcja otrzymywania żądań za pośrednictwem protokołów innych niż HTTP jest hostowana przez zarządzane usługi systemu Windows działające w SMSvcHost. exe.
+Usługa aktywacji procesów systemu Windows (WAS), nowy mechanizm aktywacji procesu dla systemu Windows Server 2008, zapewnia funkcje podobne do usług IIS, które były wcześniej dostępne tylko dla aplikacji opartych na protokole HTTP, do aplikacji korzystających z protokołów innych niż HTTP. Windows Communication Foundation (WCF) używa interfejsu adaptera odbiornika do przekazywania żądań aktywacji odbieranych za pośrednictwem protokołów innych niż HTTP obsługiwanych przez funkcję WCF, takich jak TCP, nazwane potoki i MSMQ. Funkcja otrzymywania żądań za pośrednictwem protokołów innych niż HTTP jest hostowana przez zarządzane usługi systemu Windows działające w SMSvcHost.exe.
 
 Usługa adaptera odbiornika NET. msmq (NetMsmqActivator) aktywuje aplikacje znajdujące się w kolejce na podstawie komunikatów w kolejce.
 
@@ -94,7 +94,7 @@ Sam plik Service. svc zawiera dyrektywę służącą do utworzenia `OrderProcess
 
 `<%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>`
 
-Plik Service. svc zawiera także dyrektywę zestawu, aby upewnić się, że system. Transactions. dll jest załadowany.
+Plik Service. svc zawiera także dyrektywę zestawu, aby upewnić się, że System.Transactions.dll jest załadowana.
 
 `<%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>`
 
@@ -228,7 +228,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
 3. Aby skompilować wersję rozwiązania w języku C# lub Visual Basic .NET, postępuj zgodnie z instrukcjami w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md).
 
-4. Uruchom klienta programu, wykonując polecenie Client. exe z okna polecenia. Spowoduje to utworzenie kolejki i wysłanie do niej komunikatu. Pozostaw uruchomiony klient, aby zobaczyć wynik usługi odczytującej komunikat
+4. Uruchom klienta, wykonując client.exe z okna poleceń. Spowoduje to utworzenie kolejki i wysłanie do niej komunikatu. Pozostaw uruchomiony klient, aby zobaczyć wynik usługi odczytującej komunikat
 
 5. Domyślnie usługa aktywacji usługi MSMQ działa jako usługa sieciowa. W związku z tym Kolejka służąca do aktywowania aplikacji musi mieć uprawnienia do odbierania i wglądu w usługę sieciową. Można to dodać przy użyciu programu MMC usługi kolejkowania komunikatów:
 
@@ -246,7 +246,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
     Jako wygoda, następujące kroki są zaimplementowane w pliku wsadowym o nazwie AddMsmqSiteBinding. cmd znajdującym się w katalogu przykładowym.
 
-    1. Aby można było obsługiwać aktywację net. MSMQ, domyślna witryna sieci Web musi być najpierw powiązana z protokołem net. MSMQ. Można to zrobić za pomocą programu Appcmd. exe, który jest instalowany przy użyciu zestawu narzędzi do zarządzania usługami IIS 7,0. W wierszu polecenia z podwyższonym poziomem uprawnień (Administrator) Uruchom następujące polecenie.
+    1. Aby można było obsługiwać aktywację net. MSMQ, domyślna witryna sieci Web musi być najpierw powiązana z protokołem net. MSMQ. Można to zrobić za pomocą appcmd.exe, który jest instalowany przy użyciu zestawu narzędzi do zarządzania usługami IIS 7,0. W wierszu polecenia z podwyższonym poziomem uprawnień (Administrator) Uruchom następujące polecenie.
 
         ```console
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"
@@ -327,7 +327,7 @@ Domyślnie w przypadku `netMsmqBinding` transportu powiązań jest włączone za
 
      Aby zmienić tożsamość, w której uruchamiany jest proces roboczy:
 
-    1. Uruchom plik inetmgr. exe.
+    1. Uruchom Inetmgr.exe.
 
     2. W obszarze **Pule aplikacji**kliknij prawym przyciskiem myszy pozycję **puli aplikacji** (zazwyczaj **Domyślna pula**aplikacji), a następnie wybierz pozycję **Ustaw wartości domyślne puli.**
 
@@ -347,6 +347,6 @@ Domyślnie w przypadku `netMsmqBinding` transportu powiązań jest włączone za
     sc sidtype netmsmqactivator unrestricted
     ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady hostingu i trwałości usługi AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [Przykłady hostingu i trwałości usługi AppFabric](/previous-versions/appfabric/ff383418(v=azure.10))

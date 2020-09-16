@@ -2,12 +2,12 @@
 title: Aktywacja TCP
 ms.date: 03/30/2017
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-ms.openlocfilehash: 0fa737adbdc7acc51511557877799c89849149bc
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e6f40b31656746d3db37545709c4e4813a7422cf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598661"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555188"
 ---
 # <a name="tcp-activation"></a>Aktywacja TCP
 
@@ -69,7 +69,7 @@ public class CalculatorService : ICalculator
 }
 ```
 
-W przykładzie zastosowano wariant powiązania net. TCP z włączonym udostępnianiem portów TCP i wyłączonym zabezpieczeniami. Jeśli chcesz użyć bezpiecznego powiązania TCP, Zmień tryb zabezpieczeń serwera na żądane ustawienie i ponownie uruchom program Svcutil. exe na kliencie, aby wygenerować plik konfiguracji klienta aktualizacji.
+W przykładzie zastosowano wariant powiązania net. TCP z włączonym udostępnianiem portów TCP i wyłączonym zabezpieczeniami. Jeśli chcesz użyć bezpiecznego powiązania TCP, Zmień tryb zabezpieczeń serwera na żądane ustawienie i ponownie uruchom Svcutil.exe na kliencie, aby wygenerować plik konfiguracji klienta aktualizacji.
 
 Poniższy przykład pokazuje konfigurację usługi:
 
@@ -159,7 +159,7 @@ Press <ENTER> to terminate client.
 
     Jako wygoda, następujące dwa kroki są zaimplementowane w pliku wsadowym o nazwie AddNetTcpSiteBinding. cmd znajdującym się w przykładowym katalogu.
 
-    1. Aby można było obsługiwać aktywację net. TCP, domyślną witryną sieci Web należy najpierw powiązać z portem net. TCP. Można to zrobić za pomocą programu Appcmd. exe, który jest instalowany przy użyciu zestawu narzędzi do zarządzania Internet Information Services 7,0 (IIS). W wierszu polecenia na poziomie administratora uruchom następujące polecenie:
+    1. Aby można było obsługiwać aktywację net. TCP, domyślną witryną sieci Web należy najpierw powiązać z portem net. TCP. Można to zrobić za pomocą Appcmd.exe, który jest instalowany przy użyciu zestawu narzędzi do zarządzania Internet Information Services 7,0 (IIS). W wierszu polecenia na poziomie administratora uruchom następujące polecenie:
 
         ```console
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']
@@ -206,6 +206,6 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         > To polecenie musi być wpisane jako pojedynczy wiersz tekstu.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady hostingu i trwałości usługi AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [Przykłady hostingu i trwałości usługi AppFabric](/previous-versions/appfabric/ff383418(v=azure.10))

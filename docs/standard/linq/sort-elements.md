@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
-ms.openlocfilehash: c2d7915aacf0c41e99581fa8b5cc397bcaf5c612
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 0e93add12e39c71c7312036917d42dd53450b712
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553419"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550070"
 ---
 # <a name="how-to-sort-elements-linq-to-xml"></a>Jak sortować elementy (LINQ to XML)
 
@@ -104,8 +104,8 @@ Ten przykład generuje następujące wyniki:
 89.99
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Sortowanie danych (C#)](../../csharp/programming-guide/concepts/linq/sorting-data.md)
 - [Sortowanie danych (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/sorting-data.md)
-- [Zapytania podstawowe (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Zapytania podstawowe (LINQ to XML) (Visual Basic)](./find-element-specific-attribute.md)

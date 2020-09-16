@@ -7,12 +7,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 84cb45d62409769a79fa6a401fdb1aa6934c4099
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 898211ec4504225413769f2f0dbf2f2c70110c14
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245612"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556066"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co to jest program Windows Communication Foundation
 Windows Communication Foundation (WCF) to platforma służąca do tworzenia aplikacji zorientowanych na usługę. Korzystając z programu WCF, można wysyłać dane jako komunikaty asynchroniczne z jednego punktu końcowego usługi do innego. Punkt końcowy usługi może być częścią stale dostępnej usługi hostowanej przez usługi IIS lub może być usługą hostowaną w aplikacji. Punktem końcowym może być klient usługi, która żąda danych z punktu końcowego usługi. Komunikaty mogą być proste jako pojedynczy znak lub słowo wysyłane jako XML lub jako strumień danych binarnych. Oto kilka przykładowych scenariuszy:
@@ -95,7 +95,7 @@ Microsoft Silverlight to platforma służąca do tworzenia międzyoperacyjnych, 
 
 Funkcje hostingu serwera aplikacji systemu Windows Server AppFabric są przeznaczone specjalnie do wdrażania aplikacji, które używają programu WCF do komunikacji i zarządzania nimi. Funkcje hostingu obejmują rozbudowane narzędzia i opcje konfiguracji zaprojektowane specjalnie dla aplikacji obsługujących WCF.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel>
 - [Podstawowe pojęcia programu Windows Communication Foundation](fundamental-concepts.md)
@@ -104,4 +104,4 @@ Funkcje hostingu serwera aplikacji systemu Windows Server AppFabric są przeznac
 - [Wprowadzenie — samouczek](getting-started-tutorial.md)
 - [Przewodnik po dokumentacji](guide-to-the-documentation.md)
 - [Podstawy programowania przy użyciu programu WCF](basic-wcf-programming.md)
-- [Windows Communication Foundation — przykłady](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)
+- [Windows Communication Foundation — przykłady](/previous-versions/dotnet/netframework-3.5/ms751514(v=vs.90))

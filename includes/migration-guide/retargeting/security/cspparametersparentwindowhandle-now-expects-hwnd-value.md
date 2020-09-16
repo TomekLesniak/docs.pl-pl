@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4b5c886ad35afbbf0a68e03b3174ab9ea1f5524f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 12ba3bd3c9e9e00b88cab0e568a1ce0f4f8bbb05
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614766"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606565"
 ---
 ### <a name="cspparametersparentwindowhandle-now-expects-hwnd-value"></a>CspParameters. ParentWindowHandle teraz oczekuje wartości HWND
 
@@ -16,7 +16,7 @@ ms.locfileid: "85614766"
 cspParameters.ParentWindowHandle = form.Handle;
 ```
 
-W poprzednich wersjach .NET Framework oczekiwano, że wartość będzie <xref:System.IntPtr?displayProperty=fullName> reprezentować lokalizację w pamięci, w której znajduje się wartość [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types#HWND) . Ustawianie właściwości na postać. Obsługa w systemie Windows 7 i starszych wersjach nie miała znaczenia, ale w systemie Windows 8 i nowszych wersjach jego wynikiem jest &quot; <xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName> : parametr jest nieprawidłowy.&quot;
+W poprzednich wersjach .NET Framework oczekiwano, że wartość będzie <xref:System.IntPtr?displayProperty=fullName> reprezentować lokalizację w pamięci, w której znajduje się wartość [HWND](/windows/desktop/WinProg/windows-data-types#HWND) . Ustawianie właściwości na postać. Obsługa w systemie Windows 7 i starszych wersjach nie miała znaczenia, ale w systemie Windows 8 i nowszych wersjach jego wynikiem jest &quot; <xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName> : parametr jest nieprawidłowy.&quot;
 
 #### <a name="suggestion"></a>Sugestia
 

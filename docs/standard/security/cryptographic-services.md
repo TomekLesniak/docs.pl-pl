@@ -25,12 +25,12 @@ helpviewer_keywords:
 - cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 4cd4e493e0e7d159b2749dac78b9a560e20fd75c
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 651231dcc41926307e3a46b67c80ba3df1fb25e9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557024"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549983"
 ---
 # <a name="cryptographic-services"></a>Usługi kryptograficzne
 
@@ -150,7 +150,7 @@ Dwie strony (Alicja i Robert) mogą używać funkcji skrótu, aby zapewnić inte
 
 - Alicja wysyła wiadomość w postaci zwykłego tekstu oraz komunikat z mieszaniem (podpis cyfrowy) do Roberta. Robert odbiera i miesza komunikat i porównuje jego wartość skrótu z wartością skrótu uzyskaną od Alicja. Jeśli wartości skrótu są identyczne, komunikat nie został zmieniony. Jeśli wartości nie są identyczne, komunikat został zmieniony po jego zapisaniu przez Alicja.
 
-  Niestety, ta metoda nie ustala autentyczności nadawcy. Każdy może personifikować Alicja i wysłać wiadomość do Roberta. Mogą używać tego samego algorytmu wyznaczania wartości skrótu do podpisywania wiadomości, a cała Robert może określić, że wiadomość pasuje do podpisu. Jest to jedna z form ataku typu man-in-the-middle. Aby uzyskać więcej informacji, zobacz [przykład bezpiecznej komunikacji Secure Generation (CNG)](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
+  Niestety, ta metoda nie ustala autentyczności nadawcy. Każdy może personifikować Alicja i wysłać wiadomość do Roberta. Mogą używać tego samego algorytmu wyznaczania wartości skrótu do podpisywania wiadomości, a cała Robert może określić, że wiadomość pasuje do podpisu. Jest to jedna z form ataku typu man-in-the-middle. Aby uzyskać więcej informacji, zobacz [przykład bezpiecznej komunikacji Secure Generation (CNG)](/previous-versions/cc488018(v=vs.100)).
 
 - Alicja wysyła wiadomość w postaci zwykłego tekstu do Roberta za pośrednictwem niezabezpieczonego kanału publicznego. Wysyła komunikat z mieszaniem do Roberta za pośrednictwem bezpiecznego kanału prywatnego. Robert odbiera komunikat w postaci zwykłego tekstu, miesza go i porównuje skrót z wymieniem prywatnym. Jeśli skróty są zgodne, Robert wie dwie rzeczy:
 
@@ -194,13 +194,13 @@ W .NET Framework 3,5 następujące klasy kryptograficzne umożliwiają uzyskanie
 
  Ponadto następujące klasy zawierają określone informacje o podpisie:
 
-- <xref:System.Security.Cryptography.StrongNameSignatureInformation>przechowuje informacje o sygnaturze silnej nazwy dla manifestu.
+- <xref:System.Security.Cryptography.StrongNameSignatureInformation> przechowuje informacje o sygnaturze silnej nazwy dla manifestu.
 
-- <xref:System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation>reprezentuje informacje o podpisie Authenticode dla manifestu.
+- <xref:System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation> reprezentuje informacje o podpisie Authenticode dla manifestu.
 
-- <xref:System.Security.Cryptography.X509Certificates.TimestampInformation>zawiera informacje o sygnaturze czasowej w podpisie Authenticode.
+- <xref:System.Security.Cryptography.X509Certificates.TimestampInformation> zawiera informacje o sygnaturze czasowej w podpisie Authenticode.
 
-- <xref:System.Security.Cryptography.X509Certificates.TrustStatus>zapewnia prosty sposób sprawdzenia, czy podpis Authenticode jest zaufany.
+- <xref:System.Security.Cryptography.X509Certificates.TrustStatus> zapewnia prosty sposób sprawdzenia, czy podpis Authenticode jest zaufany.
 
 ## <a name="cryptography-next-generation-cng-classes"></a>Klasy kryptografii nowej generacji (CNG)
 
@@ -210,13 +210,13 @@ W .NET Framework 3,5 i nowszych wersjach klasy kryptografii nowej generacji (CNG
 
 .NET Framework 3,5 zawiera również różne klasy obsługi CNG, takie jak:
 
-- <xref:System.Security.Cryptography.CngProvider>obsługuje dostawcę magazynu kluczy.
+- <xref:System.Security.Cryptography.CngProvider> obsługuje dostawcę magazynu kluczy.
 
-- <xref:System.Security.Cryptography.CngAlgorithm>utrzymuje algorytm CNG.
+- <xref:System.Security.Cryptography.CngAlgorithm> utrzymuje algorytm CNG.
 
-- <xref:System.Security.Cryptography.CngProperty>zachowuje często używane właściwości klucza.
+- <xref:System.Security.Cryptography.CngProperty> zachowuje często używane właściwości klucza.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Model kryptografii](cryptography-model.md) — opis sposobu implementacji kryptografii w bibliotece klas bazowych.
 - [Kryptografia międzyplatformowa](cross-platform-cryptography.md)

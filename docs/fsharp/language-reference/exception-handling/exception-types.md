@@ -1,17 +1,17 @@
 ---
 title: Typy wyjątków
-description: Dowiedz się, jak definiować F# typy wyjątków i korzystać z nich.
+description: 'Dowiedz się, jak definiować i używać typów wyjątków języka F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 8545fab50ff6338d1f1621710a838a200f9ac705
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 8b4ceec31a2d68abbcd025812ffeeefc0c090efb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630311"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557232"
 ---
 # <a name="exception-types"></a>Typy wyjątków
 
-Istnieją dwie kategorie wyjątków w programie F#: typy wyjątków .NET i F# typy wyjątków. W tym temacie opisano sposób definiowania typów wyjątków F# i ich używania.
+Istnieją dwie kategorie wyjątków w języku F #: typy wyjątków platformy .NET i typy wyjątków języka F #. W tym temacie opisano sposób definiowania typów wyjątków języka F # i używania ich.
 
 ## <a name="syntax"></a>Składnia
 
@@ -21,9 +21,9 @@ exception exception-type of argument-type
 
 ## <a name="remarks"></a>Uwagi
 
-W poprzedniej składni *Typ wyjątku* jest nazwą nowego F# typu wyjątku, a *argument-type* reprezentuje typ argumentu, który może być dostarczony podczas zgłaszania wyjątku tego typu. Można określić wiele argumentów za pomocą typu krotki dla *typu argumentu*.
+W poprzedniej składni *Typ wyjątku* to nazwa nowego typu wyjątku F #, a *argument-type* reprezentuje typ argumentu, który może być dostarczony podczas zgłaszania wyjątku tego typu. Można określić wiele argumentów za pomocą typu krotki dla *typu argumentu*.
 
-Typowa definicja F# wyjątku jest podobna do następującej.
+Typowa definicja wyjątku języka F # jest podobna do poniższego.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5501.fs)]
 
@@ -31,14 +31,14 @@ Wyjątek tego typu można wygenerować przy użyciu `raise` funkcji w następuj�
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5502.fs)]
 
-Możesz użyć typu F# wyjątku bezpośrednio w filtrach w `try...with` wyrażeniu, jak pokazano w poniższym przykładzie.
+Możesz użyć typu wyjątku F # bezpośrednio w filtrach w `try...with` wyrażeniu, jak pokazano w poniższym przykładzie.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5503.fs)]
 
-Typ wyjątku zdefiniowany za pomocą `exception` słowa kluczowego w F# jest nowym typem, który dziedziczy z `System.Exception`.
+Typ wyjątku zdefiniowany za pomocą `exception` słowa kluczowego w F # to nowy typ, który dziedziczy po `System.Exception` .
 
 ## <a name="see-also"></a>Zobacz także
 
 - [Obsługa wyjątków](index.md)
-- [Wyjątki: `raise` funkcja](the-raise-function.md)
-- [Hierarchia wyjątków](https://msdn.microsoft.com/library/z4c5tckx.aspx)
+- [Wyjątki: `raise` Funkcja](the-raise-function.md)
+- [Hierarchia wyjątków](../../../standard/exceptions/index.md)

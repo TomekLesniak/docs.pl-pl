@@ -18,12 +18,12 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-ms.openlocfilehash: 76b1a87c4513fdee21c5c3d5eba533b11e022e3a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e83979e5843c52fc3a446a5b669ae8822b32ddad
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622162"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555591"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Tworzenie prototypów w kodzie zarządzanym
 W tym temacie opisano, jak uzyskać dostęp do funkcji niezarządzanych i wprowadzono kilka pól atrybutów, które umożliwiają dodawanie adnotacji do definicji metody w kodzie zarządzanym. Przykłady, które demonstrują sposób konstruowania. Deklaracje oparte na sieci, które mają być używane z wywołaniem platformy, można znaleźć w temacie [kierowanie danych za pomocą wywołania platformy](marshaling-data-with-platform-invoke.md).  
@@ -131,7 +131,7 @@ extern "C" int MessageBox(
     private static extern bool CallRegistryPermissionDeny();  
 ```  
   
- <xref:System.Security.Permissions.SecurityAction>Modyfikatory działają poprawnie, jeśli są umieszczone na klasie, która zawiera (zawija) wywołanie wywołania platformy.  
+ <xref:System.Security.Permissions.SecurityAction> Modyfikatory działają poprawnie, jeśli są umieszczone na klasie, która zawiera (zawija) wywołanie wywołania platformy.  
   
 ```cpp  
       [RegistryPermission(SecurityAction.Demand, Unrestricted = true)]  
@@ -152,7 +152,7 @@ class PInvokeWrapper
 }  
 ```  
   
- <xref:System.Security.Permissions.SecurityAction>Modyfikatory działają również prawidłowo w zagnieżdżonym scenariuszu, w którym są umieszczane na wywołującym wywołania wywołania platformy:  
+ <xref:System.Security.Permissions.SecurityAction> Modyfikatory działają również prawidłowo w zagnieżdżonym scenariuszu, w którym są umieszczane na wywołującym wywołania wywołania platformy:  
   
 ```cpp  
       {  
@@ -236,7 +236,7 @@ interface IDemandStubsItf
 - [Określanie punktu wejścia](specifying-an-entry-point.md)
 - [Określanie zestawu znaków](specifying-a-character-set.md)
 - [Przykłady wywołań platformy](platform-invoke-examples.md)
-- [Zagadnienia dotyczące zabezpieczeń wywołania platformy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
+- [Zagadnienia dotyczące zabezpieczeń wywołania platformy](/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [Identyfikowanie funkcji w bibliotekach DLL](identifying-functions-in-dlls.md)
 - [Tworzenie klasy utrzymującej funkcje DLL](creating-a-class-to-hold-dll-functions.md)
 - [Wywołanie funkcji DLL](calling-a-dll-function.md)

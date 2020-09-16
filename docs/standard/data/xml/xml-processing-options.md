@@ -4,21 +4,21 @@ description: Przejrzyj opcje przetwarzania XML, w tym LINQ to XML, XmlReader, Xm
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
-ms.openlocfilehash: c41b3dd99264b9043c5914b84bbb76ac02b317ac
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 707ac1e4c8e16e701faed8476f0e773270dc1174
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767770"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554531"
 ---
 # <a name="xml-processing-options"></a>Opcje przetwarzania XML
 Zapoznaj się z poniższymi tabelami, aby zapoznać się z listą technologii firmy Microsoft, których można użyć do przetwarzania danych XML.  
   
 ## <a name="net-framework-options"></a>Opcje .NET Framework  
   
-|**Zaznaczyć**|**Typ przetwarzania**|**Opis**|  
+|**Opcja**|**Typ przetwarzania**|**Opis**|  
 |----------------|-------------------------|---------------------|  
-|[LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) <br/> [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) <br />( <xref:System.Xml.Linq> przestrzeń nazw)|W pamięci|— Oparta na technologii .NET Framework Language-Integrated Query (LINQ).<br />— Zapewnia środowisko zapytań podobne do SQL dla obiektów, danych relacyjnych i danych XML.<br />— Oferuje intuicyjne możliwości tworzenia i przekształcania dokumentów.<br />— Użyj tej opcji, jeśli piszesz nowy kod.|  
+|[LINQ to XML (C#)](../../linq/linq-xml-overview.md) <br/> [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md) <br />( <xref:System.Xml.Linq> przestrzeń nazw)|W pamięci|— Oparta na technologii .NET Framework Language-Integrated Query (LINQ).<br />— Zapewnia środowisko zapytań podobne do SQL dla obiektów, danych relacyjnych i danych XML.<br />— Oferuje intuicyjne możliwości tworzenia i przekształcania dokumentów.<br />— Użyj tej opcji, jeśli piszesz nowy kod.|  
 |<xref:System.Xml.XmlReader?displayProperty=nameWithType>|Oparte na strumieniu|— Zapewnia szybki, niebuforowany, w sposób umożliwiający dostęp do danych XML.<br />— Można tworzyć obiekty przy użyciu <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> metody i określać zestaw funkcji, które mają być włączone dla obiektu za pomocą <xref:System.Xml.XmlReaderSettings> klasy.|  
 |<xref:System.Xml.XmlWriter?displayProperty=nameWithType>|Oparte na strumieniu|— Zapewnia szybki, niebuforowany, tylko do przodu sposób generowania danych XML.<br />— Można tworzyć obiekty przy użyciu <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> metody i określać zestaw funkcji, które mają być włączone dla obiektu za pomocą <xref:System.Xml.XmlWriterSettings> klasy.|  
 |<xref:System.Xml.XmlDocument?displayProperty=nameWithType>|W pamięci|-Implementuje zalecenia dotyczące poziomu 1 podstawowego i [modelu dom](https://www.w3.org/TR/DOM-Level-2-Core/) w [formacie W3C Document Object Model (dom)](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html) .<br />— Można tworzyć, wstawiać, usuwać i modyfikować węzły przy użyciu metod i właściwości w oparciu o znany model DOM.<br />— Użyj tej opcji, jeśli modyfikujesz istniejący kod korzystający z W3C DOM.|  
@@ -27,12 +27,12 @@ Zapoznaj się z poniższymi tabelami, aby zapoznać się z listą technologii fi
   
 ## <a name="win32-and-com-based-options"></a>Opcje oparte na systemie Win32 i modelu COM  
   
-|**Zaznaczyć**|**Opis**|  
+|**Opcja**|**Opis**|  
 |----------------|---------------------|  
-|[XmlLite](https://docs.microsoft.com/previous-versions/windows/desktop/ms752872(v=vs.85))|-Szybki, bezpieczny, nieobsługujący buforowanie parser XML, który ułatwia tworzenie aplikacji XML o wysokiej wydajności.<br />-Działa z dowolnym językiem, który może korzystać z bibliotek dołączanych dynamicznie (dll); Zalecamy używanie języka C++.|  
-|[PROGRAMU](https://docs.microsoft.com/previous-versions/windows/desktop/ms763742(v=vs.85))|— Technologia oparta na modelu COM służąca do przetwarzania kodu XML, który jest dołączony do systemu operacyjnego Windows.<br />— Zapewnia natywną implementację modelu DOM z obsługą języka XPath i XSLT.<br />-Zawiera parser oparty na zdarzeniach SAX2.|  
+|[XmlLite](/previous-versions/windows/desktop/ms752872(v=vs.85))|-Szybki, bezpieczny, nieobsługujący buforowanie parser XML, który ułatwia tworzenie aplikacji XML o wysokiej wydajności.<br />-Działa z dowolnym językiem, który może korzystać z bibliotek dołączanych dynamicznie (dll); Zalecamy używanie języka C++.|  
+|[PROGRAMU](/previous-versions/windows/desktop/ms763742(v=vs.85))|— Technologia oparta na modelu COM służąca do przetwarzania kodu XML, który jest dołączony do systemu operacyjnego Windows.<br />— Zapewnia natywną implementację modelu DOM z obsługą języka XPath i XSLT.<br />-Zawiera parser oparty na zdarzeniach SAX2.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przetwarzanie danych XML przy użyciu modelu DOM](process-xml-data-using-the-dom-model.md)
 - [Przetwarzanie danych XML przy użyciu modelu danych XPath](process-xml-data-using-the-xpath-data-model.md)

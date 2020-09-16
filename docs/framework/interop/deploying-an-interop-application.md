@@ -15,19 +15,19 @@ helpviewer_keywords:
 - signed assemblies
 - COM interop, exposing COM components
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
-ms.openlocfilehash: 744307d4175d151d07acbedd5815e538307c8973
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 190b10ede4bc0037836d44332408d7752108346c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617486"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555071"
 ---
 # <a name="deploying-an-interop-application"></a>Wdrażanie aplikacji międzyoperacyjnych
 Aplikacja międzyoperacyjna zwykle zawiera zestaw klienta .NET, co najmniej jeden zestaw międzyoperacyjny reprezentujący różne biblioteki typów COM oraz co najmniej jeden zarejestrowany składnik COM. Program Visual Studio i Windows SDK udostępniają narzędzia do importowania i konwersji biblioteki typów na zestaw międzyoperacyjny, jak opisano w [importowania biblioteki typów jako zestawu](importing-a-type-library-as-an-assembly.md). Istnieją dwa sposoby wdrożenia aplikacji międzyoperacyjnego:  
   
 - Korzystając z osadzonych typów międzyoperacyjnych: począwszy od .NET Framework 4, można wydać kompilatorowi, aby osadzi informacje o typie z zestawu międzyoperacyjnego do pliku wykonywalnego. Kompilator osadza tylko informacje o typie używane przez aplikację. Nie trzeba wdrażać zestawu międzyoperacyjnego przy użyciu aplikacji. Jest to zalecana technika.  
   
-- Przez wdrożenie zestawów międzyoperacyjnych: można utworzyć standardowe odwołanie do zestawu międzyoperacyjnego. W takim przypadku zestaw międzyoperacyjny musi zostać wdrożony wraz z aplikacją. Jeśli ta technika jest stosowana i nie używasz prywatnego składnika COM, zawsze odwołuje się do podstawowego zestawu międzyoperacyjnego (PIA) opublikowanego przez autora składnika COM, który ma zostać dołączony do kodu zarządzanego. Aby uzyskać więcej informacji na temat tworzenia i używania podstawowych zestawów międzyoperacyjnych, zobacz [podstawowe zestawy międzyoperacyjności](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
+- Przez wdrożenie zestawów międzyoperacyjnych: można utworzyć standardowe odwołanie do zestawu międzyoperacyjnego. W takim przypadku zestaw międzyoperacyjny musi zostać wdrożony wraz z aplikacją. Jeśli ta technika jest stosowana i nie używasz prywatnego składnika COM, zawsze odwołuje się do podstawowego zestawu międzyoperacyjnego (PIA) opublikowanego przez autora składnika COM, który ma zostać dołączony do kodu zarządzanego. Aby uzyskać więcej informacji na temat tworzenia i używania podstawowych zestawów międzyoperacyjnych, zobacz [podstawowe zestawy międzyoperacyjności](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
  W przypadku korzystania z osadzonych typów międzyoperacyjnych wdrożenie jest proste i proste. Nie ma żadnych specjalnych, które należy wykonać. W dalszej części tego artykułu opisano scenariusze wdrażania zestawów międzyoperacyjnych w aplikacji.  
   
@@ -42,11 +42,11 @@ Aplikacja międzyoperacyjna zwykle zawiera zestaw klienta .NET, co najmniej jede
  Wszystkie składniki COM skojarzone z aplikacją muszą być zainstalowane w rejestrze systemu Windows. Jeśli Client1.exe i Client2.exe na ilustracji są zainstalowane na różnych komputerach, należy zarejestrować składniki COM na obu komputerach.  
   
 ### <a name="shared-assemblies"></a>Zestawy udostępnione  
- Zestawy, które są współużytkowane przez wiele aplikacji, powinny być zainstalowane w scentralizowanym repozytorium o nazwie globalna pamięć podręczna zestawów. Klienci platformy .NET mogą uzyskać dostęp do tej samej kopii zestawu międzyoperacyjnego, który jest podpisany i zainstalowany w globalnej pamięci podręcznej zestawów. Aby uzyskać więcej informacji na temat tworzenia i używania podstawowych zestawów międzyoperacyjnych, zobacz [podstawowe zestawy międzyoperacyjności](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
+ Zestawy, które są współużytkowane przez wiele aplikacji, powinny być zainstalowane w scentralizowanym repozytorium o nazwie globalna pamięć podręczna zestawów. Klienci platformy .NET mogą uzyskać dostęp do tej samej kopii zestawu międzyoperacyjnego, który jest podpisany i zainstalowany w globalnej pamięci podręcznej zestawów. Aby uzyskać więcej informacji na temat tworzenia i używania podstawowych zestawów międzyoperacyjnych, zobacz [podstawowe zestawy międzyoperacyjności](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [Udostępnianie składników COM programowi.NET Framework](exposing-com-components.md)
 - [Importowanie biblioteki typów jako zestawu](importing-a-type-library-as-an-assembly.md)
-- [Używanie typów COM w kodzie zarządzanym](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [Używanie typów COM w kodzie zarządzanym](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Kompilowanie projektu międzyoperacyjnego](compiling-an-interop-project.md)

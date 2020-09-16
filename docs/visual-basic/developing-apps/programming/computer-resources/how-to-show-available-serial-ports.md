@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - ports, serial port availability
 ms.assetid: eaf2ee5a-8103-4e10-a205-ed1d4db120ba
-ms.openlocfilehash: e7a9166f1879ed0850ca893bed307a0318298bbb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b19bdd56311ab7029fb224256d138a0dc0dd8ddc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401826"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557349"
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Porady: wyświetlanie dostępnych portów seryjnych w Visual Basic
 
@@ -24,7 +24,7 @@ W tym temacie opisano sposób użycia `My.Computer.Ports` programu w celu wyświ
 
  Ten przykład pętli dla wszystkich ciągów `My.Computer.Ports.SerialPortNames` zwracanych przez właściwość. Te ciągi są nazwami dostępnych portów szeregowych na komputerze.  
   
- Zazwyczaj użytkownik wybiera port szeregowy, który ma być używany przez aplikację z listy dostępnych portów. W tym przykładzie nazwy portów szeregowych są przechowywane w <xref:System.Windows.Forms.ListBox> kontrolce. Aby uzyskać więcej informacji, zobacz [formant ListBox](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
+ Zazwyczaj użytkownik wybiera port szeregowy, który ma być używany przez aplikację z listy dostępnych portów. W tym przykładzie nazwy portów szeregowych są przechowywane w <xref:System.Windows.Forms.ListBox> kontrolce. Aby uzyskać więcej informacji, zobacz [formant ListBox](/dotnet/desktop/winforms/controls/listbox-control-windows-forms).  
   
  [!code-vb[VbVbalrMyComputer#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#45)]  
   
@@ -34,7 +34,7 @@ W tym temacie opisano sposób użycia `My.Computer.Ports` programu w celu wyświ
 
  Ten przykład wymaga:  
   
-- Odwołanie do projektu do System. Windows. Forms. dll.  
+- Odwołanie do projektu do System.Windows.Forms.dll.  
   
 - Dostęp do elementów członkowskich <xref:System.Windows.Forms> przestrzeni nazw. Dodaj `Imports` instrukcję, jeśli nie masz w pełni kwalifikowanej nazwy elementu członkowskiego w kodzie. Aby uzyskać więcej informacji, zobacz [Imports — Instrukcja (przestrzeń nazw i typ .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
@@ -47,7 +47,7 @@ W tym temacie opisano sposób użycia `My.Computer.Ports` programu w celu wyświ
 > [!NOTE]
 > Nazwy portów zwracane przez `My.Computer.Ports.SerialPortNames` mogą być nieprawidłowe w przypadku uruchamiania w systemie Windows 98. Aby zapobiec błędom aplikacji, należy użyć obsługi wyjątków, `Try...Catch...Finally` na przykład instrukcji lub `Using` instrukcji, w przypadku używania nazw portów do otwierania portów.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - [Instrukcje: modemy dostępowe powiązane z portami seryjnymi](how-to-dial-modems-attached-to-serial-ports.md)

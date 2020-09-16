@@ -2,12 +2,12 @@
 title: Parametry połączeń
 ms.date: 12/13/2019
 description: Obsługiwane słowa kluczowe i wartości parametrów połączenia.
-ms.openlocfilehash: bb54d152bac62a86c2a49192cf678a745159164e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3c50b31689abf6d47aa8f83a6f6f755bcfec0ea3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400450"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555396"
 ---
 # <a name="connection-strings"></a>Parametry połączeń
 
@@ -25,9 +25,9 @@ SQLite traktuje ścieżki względem bieżącego katalogu roboczego. Można równ
 
 Jeśli ta wartość jest **pusta**, program SQLite tworzy tymczasową bazę danych na dysku, która jest usuwana po zamknięciu połączenia.
 
-Jeśli `:memory:`używana jest baza danych w pamięci. Aby uzyskać więcej informacji, zobacz [bazy danych w pamięci](in-memory-databases.md).
+Jeśli `:memory:` używana jest baza danych w pamięci. Aby uzyskać więcej informacji, zobacz [bazy danych w pamięci](in-memory-databases.md).
 
-Ścieżki, które zaczynają `|DataDirectory|` się od ciągu podstawiania są traktowane tak samo jak ścieżki względne. W przypadku ustawienia ścieżki są tworzone względem wartości właściwości domena aplikacji usługi DataDirectory.
+Ścieżki, które zaczynają się od `|DataDirectory|` ciągu podstawiania są traktowane tak samo jak ścieżki względne. W przypadku ustawienia ścieżki są tworzone względem wartości właściwości domena aplikacji usługi DataDirectory.
 
 To słowo kluczowe obsługuje również [nazwy plików URI](https://www.sqlite.org/uri.html).
 
@@ -37,10 +37,10 @@ Tryb połączenia.
 
 | Wartość           | Opis                                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------- |
-| ReadWriteCreate | Otwiera bazę danych do odczytu i zapisu, a następnie tworzy ją, jeśli nie istnieje. Domyślnie włączone. |
+| ReadWriteCreate | Otwiera bazę danych do odczytu i zapisu, a następnie tworzy ją, jeśli nie istnieje. Jest to opcja domyślna. |
 | Odczyt/zapis       | Otwiera bazę danych do odczytu i zapisu.                                                        |
 | ReadOnly        | Otwiera bazę danych w trybie tylko do odczytu.                                                              |
-| Memory (Pamięć)          | Otwiera bazę danych w pamięci.                                                                       |
+| Pamięć          | Otwiera bazę danych w pamięci.                                                                       |
 
 ### <a name="cache"></a>Pamięć podręczna
 
@@ -48,13 +48,13 @@ Tryb buforowania używany przez połączenie.
 
 | Wartość   | Opis                                                                                    |
 | ------- | ---------------------------------------------------------------------------------------------- |
-| Domyślne | Używa domyślnego trybu podstawowej biblioteki programu SQLite. Domyślnie włączone.                   |
+| Domyślny | Używa domyślnego trybu podstawowej biblioteki programu SQLite. Jest to opcja domyślna.                   |
 | Private | Każde połączenie używa prywatnej pamięci podręcznej.                                                          |
-| Udostępnione  | Połączenia korzystają z pamięci podręcznej. Ten tryb pozwala zmienić zachowanie blokowania transakcji i tabel. |
+| Shared  | Połączenia korzystają z pamięci podręcznej. Ten tryb pozwala zmienić zachowanie blokowania transakcji i tabel. |
 
 ### <a name="password"></a>Hasło
 
-Klucz szyfrowania. Gdy ta wartość `PRAGMA key` jest określona, jest wysyłana natychmiast po otwarciu połączenia.
+Klucz szyfrowania. Gdy ta `PRAGMA key` wartość jest określona, jest wysyłana natychmiast po otwarciu połączenia.
 
 > [!WARNING]
 > Hasło nie ma znaczenia, jeśli szyfrowanie nie jest obsługiwane przez natywną bibliotekę oprogramowania SQLite.
@@ -65,9 +65,9 @@ Wartość wskazująca, czy należy włączyć ograniczenia klucza obcego.
 
 | Wartość   | Opis
 | ------- | --- |
-| True    | Wysyła `PRAGMA foreign_keys = 1` natychmiast po otwarciu połączenia.
-| False   | Wysyła `PRAGMA foreign_keys = 0` natychmiast po otwarciu połączenia.
-| ciągiem | Nie wysyła `PRAGMA foreign_keys`. Domyślnie włączone. |
+| Prawda    | Wysyła `PRAGMA foreign_keys = 1` natychmiast po otwarciu połączenia.
+| Fałsz   | Wysyła `PRAGMA foreign_keys = 0` natychmiast po otwarciu połączenia.
+| ciągiem | Nie wysyła `PRAGMA foreign_keys` . Jest to opcja domyślna. |
 
 Nie ma potrzeby włączania kluczy obcych, jeśli tak, jak w e_sqlite3, SQLITE_DEFAULT_FOREIGN_KEYS został użyty do skompilowania natywnej biblioteki programu SQLite.
 
@@ -77,8 +77,8 @@ Wartość wskazująca, czy włączyć Wyzwalacze cykliczne.
 
 | Wartość | Opis                                                                 |
 | ----- | --------------------------------------------------------------------------- |
-| True  | Wysyła `PRAGMA recursive_triggers` natychmiast po otwarciu połączenia. |
-| False | Nie wysyła `PRAGMA recursive_triggers`. Domyślnie włączone.              |
+| Prawda  | Wysyła `PRAGMA recursive_triggers` natychmiast po otwarciu połączenia. |
+| Fałsz | Nie wysyła `PRAGMA recursive_triggers` . Jest to opcja domyślna.              |
 
 ## <a name="connection-string-builder"></a>Konstruktor parametrów połączenia
 
@@ -92,7 +92,7 @@ Można użyć <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> jako je
 
 Podstawowe parametry połączenia z udostępnioną pamięcią podręczną w celu zwiększenia współbieżności.
 
-```ConnectionString
+```connectionstring
 Data Source=Application.db;Cache=Shared
 ```
 
@@ -100,7 +100,7 @@ Data Source=Application.db;Cache=Shared
 
 Zaszyfrowana baza danych.
 
-```ConnectionString
+```connectionstring
 Data Source=Encrypted.db;Password=MyEncryptionKey
 ```
 
@@ -108,7 +108,7 @@ Data Source=Encrypted.db;Password=MyEncryptionKey
 
 Baza danych tylko do odczytu, która nie może być modyfikowana przez aplikację.
 
-```ConnectionString
+```connectionstring
 Data Source=Reference.db;Mode=ReadOnly
 ```
 
@@ -116,7 +116,7 @@ Data Source=Reference.db;Mode=ReadOnly
 
 Prywatna baza danych w pamięci.
 
-```ConnectionString
+```connectionstring
 Data Source=:memory:
 ```
 
@@ -124,11 +124,11 @@ Data Source=:memory:
 
 Współużytkowana baza danych w pamięci identyfikowana przy użyciu nazwy, którą można *udostępniać*.
 
-```ConnectionString
+```connectionstring
 Data Source=Sharable;Mode=Memory;Cache=Shared
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 * [Parametry połączenia w ADO.NET](../../../framework/data/adonet/connection-strings.md)
 * [Bazy danych w pamięci](in-memory-databases.md)

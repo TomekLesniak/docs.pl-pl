@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 2b2717bc68da9f07cd38e10a5d75b2a7df9add45
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6221f253746ac304115fe844966e2cf552263d04
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602638"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551148"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpieczenia komunikatów z klientem dysponującym certyfikatem
 W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication Foundation (WCF) zabezpieczony przy użyciu trybu zabezpieczeń wiadomości. Zarówno klient, jak i usługa są uwierzytelniani przy użyciu certyfikatów. Aby uzyskać więcej informacji, zobacz [rozproszone zabezpieczenia aplikacji](distributed-application-security.md).
@@ -21,12 +21,12 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
 
 |Charakterystyka|Opis|  
 |--------------------|-----------------|  
-|Tryb zabezpieczeń|Komunikat|  
+|Tryb zabezpieczeń|Wiadomość|  
 |Współdziałanie|Tylko WCF|  
 |Uwierzytelnianie (serwer)|Korzystanie z certyfikatu usługi|  
 |Uwierzytelnianie (klient)|Korzystanie z certyfikatu klienta|  
-|Integralność|Tak|  
-|Poufność|Tak|  
+|Integralność|Yes|  
+|Poufność|Yes|  
 |Transport|HTTP|  
 |Wiązanie|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -43,7 +43,7 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
  [!code-csharp[C_SecurityScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#10)]
  [!code-vb[C_SecurityScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#10)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  Można użyć poniższej konfiguracji zamiast kodu.  
   
 ```xml  
@@ -89,7 +89,7 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
   
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).  
   
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:  
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -100,7 +100,7 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
  [!code-csharp[C_SecurityScenarios#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#17)]
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  Poniższa konfiguracja określa certyfikat klienta przy użyciu zachowania punktu końcowego. Aby uzyskać więcej informacji o certyfikatach, zobacz [Praca z certyfikatami](working-with-certificates.md). Kod używa również `identity` elementu> <, aby określić system nazw domen (DNS) oczekiwanej tożsamości serwera. Aby uzyskać więcej informacji na temat tożsamości, zobacz [tożsamość usługi i uwierzytelnianie](service-identity-and-authentication.md).  
   
 ```xml  
@@ -143,9 +143,9 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Uwierzytelnianie i tożsamość usług](service-identity-and-authentication.md)
 - [Praca z certyfikatami](working-with-certificates.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

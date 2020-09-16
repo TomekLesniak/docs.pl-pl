@@ -1,17 +1,17 @@
 ---
-title: Odmowa usługi
+title: Denial of Service (odmowa usługi)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 1c1778ace6abc332517786f910d0442eeed577c9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 29798a73ec69b7f695068343d9c7b5593eeba4fa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599272"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557583"
 ---
-# <a name="denial-of-service"></a>Odmowa usługi
+# <a name="denial-of-service"></a>Denial of Service (odmowa usługi)
 Odmowa usługi występuje, gdy system jest przeciążony w taki sposób, że komunikaty nie mogą być przetwarzane lub są przetwarzane bardzo wolno.  
   
 ## <a name="excess-memory-consumption"></a>Nadmierne użycie pamięci  
@@ -44,7 +44,7 @@ Odmowa usługi występuje, gdy system jest przeciążony w taki sposób, że kom
 ## <a name="auditing-event-log-can-be-filled"></a>Dziennik zdarzeń inspekcji może być wypełniony  
  Jeśli złośliwy użytkownik rozumie, że inspekcja jest włączona, osoba atakująca może wysłać nieprawidłowe komunikaty, które powodują zapisanie wpisów inspekcji. Jeśli dziennik inspekcji zostanie wypełniony w ten sposób, system inspekcji zakończy się niepowodzeniem.  
   
- Aby rozwiązać ten problem, ustaw <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> Właściwość na `true` i użyj właściwości Podgląd zdarzeń, aby kontrolować zachowanie inspekcji. Aby uzyskać więcej informacji na temat używania Podgląd zdarzeń do wyświetlania dzienników zdarzeń i zarządzania nimi, zobacz [Podgląd zdarzeń](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11)). Aby uzyskać więcej informacji, zobacz [Inspekcja](auditing-security-events.md).  
+ Aby rozwiązać ten problem, ustaw <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> Właściwość na `true` i użyj właściwości Podgląd zdarzeń, aby kontrolować zachowanie inspekcji. Aby uzyskać więcej informacji na temat używania Podgląd zdarzeń do wyświetlania dzienników zdarzeń i zarządzania nimi, zobacz [Podgląd zdarzeń](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11)). Aby uzyskać więcej informacji, zobacz [Inspekcja](auditing-security-events.md).  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Nieprawidłowe implementacje interfejsu IAuthorizationPolicy mogą spowodować, że usługa przestanie odpowiadać  
  Wywołanie <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metody w wadliwej implementacji <xref:System.IdentityModel.Policy.IAuthorizationPolicy> interfejsu może spowodować, że usługa przestanie odpowiadać.  
@@ -61,7 +61,7 @@ Odmowa usługi występuje, gdy system jest przeciążony w taki sposób, że kom
   
  Aby rozwiązać ten problem, należy odwołać się do dokładnego certyfikatu do użycia przy użyciu dokładniejszego kryterium wyszukiwania w [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) . Na przykład użyj <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> opcji i Określ certyfikat przy użyciu unikatowego odcisku palca (hash).  
   
- Aby uzyskać więcej informacji na temat funkcji autorejestrowania, zobacz [autorejestrowanie certyfikatów w systemie Windows Server 2003](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc778954(v%3dws.10)).  
+ Aby uzyskać więcej informacji na temat funkcji autorejestrowania, zobacz [autorejestrowanie certyfikatów w systemie Windows Server 2003](/previous-versions/windows/it-pro/windows-server-2003/cc778954(v=ws.10)).  
   
 ## <a name="last-of-multiple-alternative-subject-names-used-for-authorization"></a>Ostatnia z wielu alternatywnych nazw podmiotów używanych do autoryzacji  
  W rzadkich przypadkach, gdy certyfikat X. 509 zawiera wiele alternatywnych nazw podmiotu i Użytkownik autoryzuje przy użyciu alternatywnej nazwy podmiotu, autoryzacja może zakończyć się niepowodzeniem.  
@@ -79,12 +79,12 @@ Odmowa usługi występuje, gdy system jest przeciążony w taki sposób, że kom
   
  Aby rozwiązać ten problem, należy ustawić limit maksymalnej liczby aktywnych sesji i maksymalny okres istnienia sesji przez ustawienie <xref:System.ServiceModel.Channels.SecurityBindingElement> właściwości <xref:System.ServiceModel.Channels.SecurityBindingElement> klasy.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zagadnienia dotyczące zabezpieczeń](security-considerations-in-wcf.md)
-- [Ujawnianie informacji](information-disclosure.md)
-- [Podniesienie uprawnień](elevation-of-privilege.md)
-- [Odmowa usługi](denial-of-service.md)
+- [Information Disclosure (ujawnienie informacji)](information-disclosure.md)
+- [Elevation of Privilege (podniesienie uprawnień)](elevation-of-privilege.md)
+- [Denial of Service (odmowa usługi)](denial-of-service.md)
 - [Ataki oparte na metodzie powtórzeń](replay-attacks.md)
-- [Manipulowanie](tampering.md)
+- [Tampering (manipulowanie)](tampering.md)
 - [Nieobsługiwane scenariusze](unsupported-scenarios.md)

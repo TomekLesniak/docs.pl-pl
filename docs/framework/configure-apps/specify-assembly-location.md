@@ -7,12 +7,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: e14bdc12598d0aa6cdd2789b09a04ab8ed134169
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 3b24ff99eee9027d507ef89ca855162f221f826a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141707"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555123"
 ---
 # <a name="specifying-an-assemblys-location"></a>Określanie lokalizacji zestawu
 Istnieją dwa sposoby określania lokalizacji zestawu:  
@@ -21,7 +21,7 @@ Istnieją dwa sposoby określania lokalizacji zestawu:
   
 - Przy użyciu [\<probing>](./file-schema/runtime/probing-element.md) elementu.  
   
- Można również użyć [Narzędzia konfiguracji .NET Framework (Mscorcfg. msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) , aby określić lokalizacje zestawów lub określić lokalizacje dla środowiska uruchomieniowego języka wspólnego do sondowania dla zestawów.  
+ Można również użyć [Narzędzia konfiguracji .NET Framework (Mscorcfg. msc)](/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) , aby określić lokalizacje zestawów lub określić lokalizacje dla środowiska uruchomieniowego języka wspólnego do sondowania dla zestawów.  
   
 ## <a name="using-the-codebase-element"></a>Korzystanie z \<codeBase> elementu  
  Można używać **\<codeBase>** elementu tylko w plikach konfiguracji komputera lub zasad wydawcy, które również przekierują wersję zestawu. Gdy środowisko uruchomieniowe określa wersję zestawu, która ma być używana, stosuje ustawienia podstawowe kodu z pliku, który określa wersję. Jeśli nie wskazano żadnego kodu bazowego, sondy środowiska uruchomieniowego dla zestawu w normalny sposób. Aby uzyskać szczegółowe informacje, zobacz [jak środowisko uruchomieniowe lokalizuje zestawy](../deployment/how-the-runtime-locates-assemblies.md).  
@@ -66,7 +66,7 @@ Istnieją dwa sposoby określania lokalizacji zestawu:
   
  Atrybut **PrivatePath** zawiera katalogi, w których środowisko uruchomieniowe ma wyszukiwać zestawy. Jeśli aplikacja znajduje się w katalogu C:\Program Files\MyApp, środowisko uruchomieniowe będzie szukać zestawów, które nie określają bazy kodu w folderze C:\Program Files\MyApp\Bin, C:\Program Files\MyApp\Bin2\Subbin i C:\Program Files\MyApp\Bin3. Katalogi określone w **PrivatePath** muszą być podkatalogami katalogu podstawowego aplikacji.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zestawy w środowisku .NET](../../standard/assembly/index.md)
 - [Programowanie za pomocą zestawów](../../standard/assembly/index.md)

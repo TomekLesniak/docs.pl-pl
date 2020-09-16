@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], persistence
 ms.assetid: 39e69d1f-b771-4c16-9e18-696fa43b65b2
-ms.openlocfilehash: 1178bd3800fce95be96e601a17bfeff2c05cfceb
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c609ec5e67ce3bb0605f543806085f893acba37c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419307"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557531"
 ---
 # <a name="workflow-persistence"></a>Trwałość przepływu pracy
 Trwałość przepływu pracy to trwałe Przechwytywanie stanu wystąpienia przepływu pracy niezależnie od informacji o procesie lub komputerze. W tym celu należy zapewnić dobrze znany punkt odzyskiwania wystąpienia przepływu pracy w przypadku awarii systemu lub zachować pamięć, zwalniając wystąpienia przepływu pracy, które nie działają aktywnie, lub przenieść stan wystąpienia przepływu pracy z jednego węzła do innego w węźle farmy serwerów.  
@@ -23,7 +23,7 @@ Trwałość przepływu pracy to trwałe Przechwytywanie stanu wystąpienia przep
   
  Aby przechowywać i ładować dane specyficzne dla aplikacji wraz z informacjami związanymi z wystąpieniem przepływu pracy, można utworzyć uczestników trwałości rozszerzających <xref:System.Activities.Persistence.PersistenceParticipant> klasę. Uczestnik trwałości uczestniczy w procesie trwałości w celu zapisania niestandardowych danych, które można serializować do magazynu trwałości, do załadowania danych z magazynu wystąpień do pamięci oraz do wykonania dodatkowej logiki w ramach transakcji trwałości. Aby uzyskać więcej informacji, zobacz temat [trwałość uczestników](persistence-participants.md).  
   
- Sieć szkieletowa aplikacji systemu Windows Server upraszcza proces konfigurowania trwałości. Aby uzyskać więcej informacji, zobacz [pojęcia dotyczące trwałości przy użyciu sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10))  
+ Sieć szkieletowa aplikacji systemu Windows Server upraszcza proces konfigurowania trwałości. Aby uzyskać więcej informacji, zobacz [pojęcia dotyczące trwałości przy użyciu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677272(v=azure.10))  
   
 ## <a name="implicit-persistence-points"></a>Niejawne punkty trwałości  
  Poniższa lista zawiera przykłady warunków, na których przepływ pracy jest utrwalany, gdy magazyn wystąpień jest skojarzony z przepływem pracy.  

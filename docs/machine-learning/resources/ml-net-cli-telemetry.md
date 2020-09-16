@@ -4,16 +4,16 @@ description: Dowiedz się więcej o funkcjach telemetrycznych interfejsu wiersza
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 833ee2ae54cf3a52adaf070837a33e00267d25dc
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 753361abdac5a2e979873003f419232a069b2015
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599843"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546435"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Zbieranie danych telemetrycznych za pomocą interfejsu wiersza polecenia ML.NET
 
-[Interfejs wiersza polecenia ml.NET](https://aka.ms/mlnet-cli) zawiera funkcję telemetrii, która zbiera anonimowe dane użycia, które są agregowane na użytek firmy Microsoft.
+[Interfejs wiersza polecenia ml.NET](../automate-training-with-cli.md) zawiera funkcję telemetrii, która zbiera anonimowe dane użycia, które są agregowane na użytek firmy Microsoft.
 
 ## <a name="how-microsoft-uses-the-data"></a>Jak firma Microsoft używa danych
 
@@ -25,7 +25,7 @@ Gdy zespół produktu docenia ten wgląd, wie również, że nie wszyscy chcą w
 
 `mlnet`Polecenie uruchamia interfejs wiersza polecenia ml.NET, ale samo polecenie nie zbiera danych telemetrycznych.
 
-Funkcja telemetrii *nie jest włączona* po uruchomieniu `mlnet` polecenia bez innego dołączonego polecenia. Przykład:
+Funkcja telemetrii *nie jest włączona* po uruchomieniu `mlnet` polecenia bez innego dołączonego polecenia. Na przykład:
 
 - `mlnet`
 - `mlnet --help`
@@ -42,7 +42,7 @@ Rezygnacja z funkcji telemetrii przez ustawienie `MLDOTNET_CLI_TELEMETRY_OPTOUT`
 
 Funkcja zbiera następujące dane:
 
-- Jakie polecenie zostało wywołane, na przykład`classification`
+- Jakie polecenie zostało wywołane, na przykład `classification`
 - Używane nazwy parametrów wiersza polecenia (czyli "DataSet, etykieta-Kol, wyjście-ścieżka, czas uczenia, poziom szczegółowości")
 - Skrótowy adres MAC: kryptograficzny (SHA256) anonimowy i unikatowy identyfikator dla komputera
 - Sygnatura czasowa wywołania
@@ -51,7 +51,7 @@ Funkcja zbiera następujące dane:
 - Nazwa pliku zestawu danych skrótów
 - Zasobnik rozmiaru pliku zestawu danych
 - System operacyjny i wersja
-- Wartość ML polecenia zadania: kategorii wartości, takie jak `regression` , `classification` i`recommendation`
+- Wartość ML polecenia zadania: kategorii wartości, takie jak `regression` , `classification` i `recommendation`
 - Wersja interfejsu wiersza polecenia ML.NET (0.3.27703.4)
 
 Dane są bezpiecznie przesyłane do serwerów firmy Microsoft przy użyciu technologii [Application Insights platformy Azure](https://azure.microsoft.com/services/application-insights/) , w ramach ograniczonego dostępu i stosowane w ramach ścisłej kontroli zabezpieczeń z bezpiecznych systemów [usługi Azure Storage](https://azure.microsoft.com/services/storage/) .
@@ -74,7 +74,7 @@ ML.NET interfejs wiersza polecenia firmy Microsoft do dystrybucji jest licencjon
 
 Gdy po raz pierwszy uruchomisz [polecenie interfejsu wiersza polecenia ml.NET](../reference/ml-net-cli-reference.md) , takie jak `mlnet classification` , narzędzie ml.NET CLI wyświetla tekst, który informuje, jak zrezygnować z telemetrii. Tekst może się nieco różnić w zależności od używanej wersji interfejsu wiersza polecenia.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja interfejsu wiersza polecenia ML.NET](../reference/ml-net-cli-reference.md)
 - [Postanowienia licencyjne dotyczące oprogramowania firmy Microsoft: Biblioteka Microsoft .NET](https://aka.ms/dotnet-core-eula)

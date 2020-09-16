@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: 6feaa801610fa0ffbbf47575f25aff29fa46a66c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ca474cdcaeaac7b1c32efa5c58f4b5bb5b7f7895
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152857"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557245"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool>, element (ustawienia internetowe)
 Określa ustawienia konfiguracji, które są używane przez ASP.NET do zarządzania zachowaniem całego procesu, gdy aplikacja ASP.NET działa w trybie zintegrowanym w usługach IIS 7,0 lub nowszym.  
@@ -56,18 +56,18 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
 
 Po uruchomieniu usług IIS 7,0 lub nowszej wersji w trybie zintegrowanym Ta kombinacja elementów umożliwia skonfigurowanie sposobu, w jaki ASP.NET zarządza wątkami i kolejkami żądań, gdy aplikacja jest hostowana w puli aplikacji IIS. W przypadku uruchomienia usług IIS 6 lub uruchamiania usług IIS 7,0 w trybie klasycznym lub w trybie ISAPI te ustawienia są ignorowane.  
   
-`applicationPool`Ustawienia dotyczą wszystkich pul aplikacji, które są uruchamiane w określonej wersji .NET Framework. Ustawienia są zawarte w pliku aspnet. config. Istnieje wersja tego pliku dla wersji 2,0 i 4,0 .NET Framework. (Wersje 3,0 i 3,5 .NET Framework współużytkują plik ASPNET. config z wersją 2,0).  
+`applicationPool`Ustawienia dotyczą wszystkich pul aplikacji, które są uruchamiane w określonej wersji .NET Framework. Ustawienia są zawarte w pliku aspnet.config. Istnieje wersja tego pliku dla wersji 2,0 i 4,0 .NET Framework. (Wersje 3,0 i 3,5 .NET Framework współdzielą plik aspnet.config z wersją 2,0).  
   
 > [!IMPORTANT]
-> W przypadku uruchamiania usług IIS 7,0 w systemie Windows 7 można skonfigurować oddzielny plik ASPNET. config dla każdej puli aplikacji. Pozwala to na dostosowanie wydajności wątków dla każdej puli aplikacji.  
+> W przypadku uruchamiania usług IIS 7,0 w systemie Windows 7 można skonfigurować oddzielny plik aspnet.config dla każdej puli aplikacji. Pozwala to na dostosowanie wydajności wątków dla każdej puli aplikacji.  
   
 Dla `maxConcurrentRequestsPerCPU` Ustawienia domyślne ustawienie "5000" w .NET Framework 4 skutecznie wyłącza ograniczanie żądań, które jest kontrolowane przez ASP.NET, chyba że rzeczywiście masz 5000 lub więcej żądań na procesor. Ustawienie domyślne jest zależne od tego, czy w puli wątków CLR w celu automatycznego zarządzania współbieżnością na procesor CPU. Aplikacje, które znacznie wykorzystują asynchroniczne przetwarzanie żądań lub mają wiele długotrwałych żądań zablokowanych we/wy sieci, będą korzystać z zwiększonego limitu domyślnego w .NET Framework 4. Ustawienie `maxConcurrentRequestsPerCPU` wartości zero powoduje wyłączenie używania zarządzanych wątków do przetwarzania żądań ASP.NET. Gdy aplikacja jest uruchamiana w puli aplikacji IIS, żądania pozostają w wątku we/wy usług IIS i w związku z tym współbieżność jest ograniczana przez ustawienia wątku IIS.  
   
-`requestQueueLimit`Ustawienie działa tak samo jak `requestQueueLimit` atrybut elementu [processModel](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) , który jest ustawiany w plikach Web. config dla aplikacji ASP.NET. Jednak `requestQueueLimit` ustawienie w pliku aspnet. config zastępuje `requestQueueLimit` ustawienie w pliku Web. config. Innymi słowy, jeśli oba atrybuty są ustawione (domyślnie jest to prawdziwe), `requestQueueLimit` ustawienie w pliku aspnet. config ma pierwszeństwo.  
+`requestQueueLimit`Ustawienie działa tak samo jak `requestQueueLimit` atrybut elementu [processModel](/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) , który jest ustawiany w plikach Web.config dla aplikacji ASP.NET. Jednak `requestQueueLimit` ustawienie w pliku aspnet.config przesłania `requestQueueLimit` Ustawienia w pliku Web.config. Innymi słowy, jeśli oba atrybuty są ustawione (domyślnie jest to prawdziwe), `requestQueueLimit` ustawienie w pliku aspnet.config ma pierwszeństwo.  
   
 ## <a name="example"></a>Przykład  
 
-Poniższy przykład pokazuje, jak skonfigurować zachowanie ASP.NET całego procesu w pliku aspnet. config w następujących okolicznościach:  
+Poniższy przykład pokazuje, jak skonfigurować zachowanie ASP.NET całego procesu w pliku aspnet.config w następujących okolicznościach:  
   
 - Aplikacja jest hostowana w puli aplikacji usług IIS 7,0.  
   
@@ -99,4 +99,4 @@ Wartości w przykładzie są wartościami domyślnymi.
   
 ## <a name="see-also"></a>Zobacz także
 
-- [\<system.web>— Element (Ustawienia sieci Web)](system-web-element-web-settings.md)
+- [\<system.web> — Element (Ustawienia sieci Web)](system-web-element-web-settings.md)

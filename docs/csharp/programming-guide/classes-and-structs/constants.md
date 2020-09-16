@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: 1252e214be03f8a180fadb7667ee59f36a862040
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: e4d7c96cdcfd7751e80703fe4c5a56e66f4c18c6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558429"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555357"
 ---
 # <a name="constants-c-programming-guide"></a>Stałe (Przewodnik programowania w języku C#)
 Stałe są niezmienne wartości, które są znane w czasie kompilacji i nie zmieniają się w okresie istnienia programu. Stałe są zadeklarowane za pomocą modyfikatora [const](../../language-reference/keywords/const.md) . Tylko [typy wbudowane](../../language-reference/builtin-types/built-in-types.md) języka C# (z wyjątkiem <xref:System.Object?displayProperty=nameWithType> ) mogą być zadeklarowane jako `const` . Typy zdefiniowane przez użytkownika, w tym klasy, struktury i tablice, nie mogą być `const` . Użyj modyfikatora [tylko do odczytu](../../language-reference/keywords/readonly.md) , aby utworzyć klasę, strukturę lub tablicę, która jest inicjowana jednokrotnie w czasie wykonywania (na przykład w konstruktorze) i nie można jej zmienić.  
@@ -46,11 +46,11 @@ Stałe są niezmienne wartości, które są znane w czasie kompilacji i nie zmie
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)
 - [Właściwości](./properties.md)
 - [Typy](../types/index.md)
 - [readonly](../../language-reference/keywords/readonly.md)
-- [Niezmienności w języku C#, część: rodzaje niezmienności](https://docs.microsoft.com/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)
+- [Niezmienności w języku C#, część: rodzaje niezmienności](/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)

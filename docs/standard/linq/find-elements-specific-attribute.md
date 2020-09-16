@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: daed00dd-923a-43be-8a90-eee406f6f574
-ms.openlocfilehash: fc9f5acdda457eea1790f76695a71afe5fefa070
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 2a747e7609e2b130249a7635d8448577d035f939
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552858"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545650"
 ---
 # <a name="how-to-find-elements-with-a-specific-attribute-linq-to-xml"></a>Jak znaleźć elementy z określonym atrybutem (LINQ to XML)
 
@@ -92,6 +92,6 @@ Results are identical
 <Child4 Select="true">4</Child4>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [LINQ to XML dla użytkowników XPath (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML dla użytkowników XPath (Visual Basic)](./comparison-xpath-linq-xml.md)

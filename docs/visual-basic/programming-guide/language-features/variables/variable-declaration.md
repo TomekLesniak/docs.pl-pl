@@ -17,12 +17,12 @@ helpviewer_keywords:
 - local variables [Visual Basic], declarations
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
-ms.openlocfilehash: 587cb84faa09b686361c255c413ad852780b8971
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e3e2b6173a36490328801afd7fe711f1a003e2ae
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410299"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557479"
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Deklaracja zmiennej w Visual Basic
 Należy zadeklarować zmienną, aby określić jej nazwę i cechy. Instrukcja deklaracji dla zmiennych jest [instrukcją Dim](../../../language-reference/statements/dim-statement.md). Jego lokalizacja i zawartość określają cechy zmiennych.  
@@ -42,15 +42,15 @@ Należy zadeklarować zmienną, aby określić jej nazwę i cechy. Instrukcja de
 ## <a name="declaring-data-type"></a>Deklarowanie typu danych  
  Klauzula [as](../../../language-reference/statements/as-clause.md) w instrukcji deklaracji umożliwia zdefiniowanie typu danych lub typu obiektu deklarowanej zmiennej. Można określić dowolny z następujących typów dla zmiennej:  
   
-- Podstawowy typ danych, taki jak `Boolean` , `Long` , lub`Decimal`  
+- Podstawowy typ danych, taki jak `Boolean` , `Long` , lub `Decimal`  
   
 - Złożony typ danych, taki jak tablica lub struktura  
   
 - Typ obiektu lub Klasa, zdefiniowane w aplikacji lub w innej aplikacji  
   
-- Klasa .NET Framework, taka jak <xref:System.Windows.Forms.Label> lub<xref:System.Windows.Forms.TextBox>  
+- Klasa .NET Framework, taka jak <xref:System.Windows.Forms.Label> lub <xref:System.Windows.Forms.TextBox>  
   
-- Typ interfejsu, taki jak <xref:System.IComparable> lub<xref:System.IDisposable>  
+- Typ interfejsu, taki jak <xref:System.IComparable> lub <xref:System.IDisposable>  
   
  Można zadeklarować kilka zmiennych w jednej instrukcji bez konieczności powtarzania typu danych. W poniższych instrukcjach zmienne `i` , `j` , i `k` są zadeklarowane jako typ `Integer` , i `l` `m` `Long` `x` i `y` jako `Single` :  
   
@@ -61,7 +61,7 @@ Dim l, m As Long, x, y As Single
 ' In the preceding statement, l and m are Long, x and y are Single.  
 ```  
   
- Aby uzyskać więcej informacji na temat typów danych, zobacz [typy danych](../data-types/index.md). Aby uzyskać więcej informacji na temat obiektów, zobacz [obiekty i klasy](../objects-and-classes/index.md) i [Programowanie za pomocą składników](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
+ Aby uzyskać więcej informacji na temat typów danych, zobacz [typy danych](../data-types/index.md). Aby uzyskać więcej informacji na temat obiektów, zobacz [obiekty i klasy](../objects-and-classes/index.md) i [Programowanie za pomocą składników](/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
   
 ## <a name="local-type-inference"></a>Wnioskowanie o typie lokalnym  
  *Wnioskowanie o typie* służy do określania typów danych zmiennych lokalnych zadeklarowanych bez `As` klauzuli. Kompilator wnioskuje typ zmiennej z typu wyrażenia inicjowania. Dzięki temu można zadeklarować zmienne bez jawnego stwierdzenia typu. W poniższym przykładzie zarówno, jak `num1` i `num2` są jednoznacznie wpisane jako liczby całkowite.  
@@ -77,14 +77,14 @@ Dim l, m As Long, x, y As Single
   
  *Poziom dostępu* do zmiennej to zakres kodu, który ma uprawnienia dostępu do niego. Jest to określane przez modyfikator dostępu (na przykład [Public](../../../language-reference/modifiers/public.md) lub [Private](../../../language-reference/modifiers/private.md)), który jest używany w `Dim` instrukcji. Aby uzyskać więcej informacji, zobacz [poziomy dostępu w Visual Basic](../declared-elements/access-levels.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Porady: tworzenie nowej zmiennej](how-to-create-a-new-variable.md)
 - [Porady: przenoszenie danych do zmiennej i z niej](how-to-move-data-into-and-out-of-a-variable.md)
 - [Typy danych](../../../language-reference/data-types/index.md)
 - [Chronione](../../../language-reference/modifiers/protected.md)
-- [Osoby](../../../language-reference/modifiers/friend.md)
-- [Ruchom](../../../language-reference/modifiers/static.md)
+- [Friend](../../../language-reference/modifiers/friend.md)
+- [Statyczny](../../../language-reference/modifiers/static.md)
 - [Charakterystyka zadeklarowanych elementów](../declared-elements/declared-element-characteristics.md)
 - [Wnioskowanie o typie lokalnym](local-type-inference.md)
 - [Option Infer — Instrukcja](../../../language-reference/statements/option-infer-statement.md)

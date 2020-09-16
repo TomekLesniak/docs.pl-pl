@@ -3,12 +3,12 @@ title: Używanie języka F# na platformie Azure
 description: 'Przewodnik dotyczący korzystania z usług platformy Azure w języku F #'
 author: sylvanc
 ms.date: 07/29/2020
-ms.openlocfilehash: 24ef3fd14a4d0173935fac3e67aadf86110fa6d8
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 0f516b8a3b4fd60eea8facad83a440e33ffd521c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517376"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548426"
 ---
 # <a name="using-f-on-azure"></a>Używanie języka F# na platformie Azure
 
@@ -57,7 +57,7 @@ Usługi Azure Storage można także używać w połączeniu z Azure Functions za
 
 ## <a name="using-apache-spark-with-f-on-azure-hdinsight-or-azure-databricks"></a>Używanie Apache Spark z językiem F # w usłudze Azure HDInsight lub Azure Databricks
 
-[Apache Spark dla usługi Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) to platforma przetwarzania Open Source, która uruchamia aplikacje do analizy danych na dużą skalę. [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) to platforma analizy oparta na usłudze Apache Spark i zoptymalizowana pod kątem platformy usług w chmurze Microsoft Azure. Platforma Azure sprawia, że wdrożenie Apache Spark łatwe i ekonomiczne. Tworzenie aplikacji platformy Spark w języku F # przy użyciu [platformy .NET dla Apache Spark](../../spark/what-is-apache-spark-dotnet.md), zestaw powiązań platformy .net dla Apache Spark.
+[Apache Spark dla usługi Azure HDInsight](/azure/hdinsight/spark/apache-spark-overview) to platforma przetwarzania Open Source, która uruchamia aplikacje do analizy danych na dużą skalę. [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks) to platforma analizy oparta na usłudze Apache Spark i zoptymalizowana pod kątem platformy usług w chmurze Microsoft Azure. Platforma Azure sprawia, że wdrożenie Apache Spark łatwe i ekonomiczne. Tworzenie aplikacji platformy Spark w języku F # przy użyciu [platformy .NET dla Apache Spark](../../spark/what-is-apache-spark-dotnet.md), zestaw powiązań platformy .net dla Apache Spark.
 
 * [.NET for Apache Spark — przykłady dla języka F #](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.FSharp.Examples)
 * [Instalowanie notesów programu .NET Interactive Jupyter w usłudze Azure HDInsight](../../spark/how-to-guides/hdinsight-notebook-installation.md)
@@ -89,7 +89,7 @@ Usługi Azure Event Hubs można używać w połączeniu z językiem F # na dwa s
 Usługi Azure Notification Hubs można używać w połączeniu z językiem F # na dwa sposoby:
 
 1. Za pomocą tworzenia Azure Functions F #, które wysyłają wyniki do centrum powiadomień. Zobacz [wyzwalacze wyjściowe funkcji platformy Azure dla Notification Hubs](/azure/azure-functions/functions-bindings-notification-hubs)lub
-2. Za pomocą [zestawu .NET SDK dla platformy Azure](https://docs.microsoft.com/archive/blogs/azuremobile/push-notifications-using-notification-hub-and-net-backend). Zwróć uwagę na to, że przykłady znajdują się w języku C#.
+2. Za pomocą [zestawu .NET SDK dla platformy Azure](/archive/blogs/azuremobile/push-notifications-using-notification-hub-and-net-backend). Zwróć uwagę na to, że przykłady znajdują się w języku C#.
 
 ## <a name="implementing-webhooks-on-azure-with-f"></a>Implementowanie elementów webhook na platformie Azure przy użyciu języka F\#
 
@@ -111,7 +111,7 @@ Czasomierze mogą być implementowane w języku F # i hostowane na platformie Az
 
 ## <a name="deploying-and-managing-azure-resources-with-f-scripts"></a>Wdrażanie zasobów platformy Azure i zarządzanie nimi za pomocą skryptów języka F #
 
-Maszyny wirtualne platformy Azure można programistycznie wdrażać i zarządzać nimi ze skryptów języka F # przy użyciu pakietów i interfejsów API Microsoft. Azure. Management. Na przykład zobacz [wprowadzenie do bibliotek zarządzania dla platformy .NET](https://msdn.microsoft.com/library/dn722415.aspx) i korzystanie z [Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
+Maszyny wirtualne platformy Azure można programistycznie wdrażać i zarządzać nimi ze skryptów języka F # przy użyciu pakietów i interfejsów API Microsoft. Azure. Management. Na przykład zobacz [wprowadzenie do bibliotek zarządzania dla platformy .NET](/previous-versions/azure/dn722415(v=azure.100)) i korzystanie z [Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
 
 Podobnie inne zasoby platformy Azure mogą być również wdrażane i zarządzane ze skryptów języka F # przy użyciu tych samych składników. Można na przykład utworzyć konta magazynu, wdrożyć usługę Azure Cloud Services, utworzyć wystąpienia Azure Cosmos DB i programowo zarządzać Notification Hubs platformy Azure ze skryptów języka F #.
 

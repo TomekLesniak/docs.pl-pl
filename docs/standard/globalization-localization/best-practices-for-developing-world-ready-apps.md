@@ -8,12 +8,12 @@ helpviewer_keywords:
 - globalization [.NET Framework], best practices
 - international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
-ms.openlocfilehash: f0e5ccf999b6aa96b6317b88e25f3cd9d9fbc899
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9d9f6b3540bb04dd4af154fce2f91a3a7b6395ba
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279883"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555539"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>Najlepsze rozwiązania dotyczące tworzenia aplikacji gotowych do użytku na całym świecie
 
@@ -69,7 +69,7 @@ W tej sekcji opisano najlepsze rozwiązania, które należy wykonać podczas two
 
 8. Użyj <xref:System.Resources.ResourceManager?displayProperty=nameWithType> klasy, aby pobrać zasoby na podstawie kultury.
 
-9. Użyj [programu Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) , aby utworzyć Windows Forms oknach dialogowych, aby można było je lokalizować przy użyciu [edytora zasobów Windows Forms (Winres. exe)](../../framework/tools/winres-exe-windows-forms-resource-editor.md). Nie należy ręcznie Windows Forms okien dialogowych.
+9. Użyj [programu Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) , aby utworzyć Windows Forms oknach dialogowych, aby można było je lokalizować przy użyciu [edytora zasobów Windows Forms (Winres.exe)](../../framework/tools/winres-exe-windows-forms-resource-editor.md). Nie należy ręcznie Windows Forms okien dialogowych.
 
 10. Rozmieść na potrzeby profesjonalnej lokalizacji (tłumaczenia).
 
@@ -91,7 +91,7 @@ W tej sekcji opisano najlepsze rozwiązania, które należy wykonać podczas two
 
 4. Określ wartości atrybutów requestEncoding, responseEncoding, fileEncoding, Culture i uiCulture w następujących trzech miejscach w aplikacji ASP.NET:
 
-    - W sekcji globalizacji w pliku Web. config. Ten plik jest zewnętrzny względem aplikacji ASP.NET. Aby uzyskać więcej informacji, zobacz [ \<globalization> element](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
+    - W sekcji globalizacja pliku Web.config. Ten plik jest zewnętrzny względem aplikacji ASP.NET. Aby uzyskać więcej informacji, zobacz [ \<globalization> element](/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
 
     - W dyrektywie page. Pamiętaj, że gdy aplikacja znajduje się na stronie, plik został już odczytany. W związku z tym jest zbyt późno, aby określić fileEncoding i requestEncoding. Tylko uiCulture, Culture i responseEncoding można określić w dyrektywie page.
 
