@@ -7,4 +7,4 @@ ms.lasthandoff: 03/15/2020
 ms.locfileid: "72523796"
 ---
 > [!NOTE]
-> <span data-ttu-id="975ea-101">Ten interfejs API jest przeznaczony wyłącznie do użytku wewnętrznego.</span><span class="sxs-lookup"><span data-stu-id="975ea-101">This API is for internal use only.</span></span> <span data-ttu-id="975ea-102">Nie jest przeznaczony do użycia z kodu dewelopera.</span><span class="sxs-lookup"><span data-stu-id="975ea-102">It's not intended for use from developer code.</span></span>
+> <span data-ttu-id="b0ef7-101">Ten interfejs API jest przeznaczony tylko do użytku wewnętrznego.</span><span class="sxs-lookup"><span data-stu-id="b0ef7-101">This API is for internal use only.</span></span> <span data-ttu-id="b0ef7-102">Nie jest ona przeznaczona do użycia w kodzie dewelopera.</span><span class="sxs-lookup"><span data-stu-id="b0ef7-102">It's not intended for use from developer code.</span></span>
