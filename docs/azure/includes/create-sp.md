@@ -35,7 +35,7 @@ Zostaną wyświetlone informacje o subskrypcji.
 }
 ```
 
-Jeśli nie zalogowano się do poprawnej subskrypcji, wybierz odpowiednią wartość, wpisując `az account set -s <name or ID of subscription>`.
+Jeśli nie zalogowano się do poprawnej subskrypcji, wybierz odpowiednią wartość, wpisując `az account set -s <name or ID of subscription>` .
 
 Utwórz jednostkę usługi za pomocą następującego polecenia:
 

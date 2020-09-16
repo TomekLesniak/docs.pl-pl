@@ -3,12 +3,12 @@ title: Omówienie programu Entity Framework
 description: Entity Framework w ADO.NET obsługuje programowanie aplikacji zorientowanych na dane, które działają na wyższym poziomie abstrakcji niż tradycyjne aplikacje.
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: 1f1ab5d44c2d6c7e1f54a761dbc706d537664ef6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e6b7a605f88aecc76cb182473d9dd9f925a4d5a9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286808"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557986"
 ---
 # <a name="entity-framework-overview"></a>Przegląd Entity Framework
 
@@ -48,7 +48,7 @@ Więcej niż tylko inne rozwiązanie do mapowania relacyjnego obiektów Entity F
 
 - LINQ to Entities. Zapewnia obsługę zapytań opartych na języku (LINQ) do wykonywania zapytań o typy jednostek, które są zdefiniowane w modelu koncepcyjnym. Aby uzyskać więcej informacji, zobacz [LINQ to Entities](./language-reference/linq-to-entities.md).
 
-- [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Dialekt niezależny od magazynu SQL, który działa bezpośrednio z jednostkami w modelu koncepcyjnym i obsługuje koncepcje Entity Data Model. [!INCLUDE[esql](../../../../../includes/esql-md.md)]jest używany zarówno z kwerendami obiektów, jak i kwerendami, które są wykonywane przy użyciu dostawcy EntityClient. Aby uzyskać więcej informacji, zobacz [Entity SQL przegląd](./language-reference/entity-sql-overview.md).
+- [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Dialekt niezależny od magazynu SQL, który działa bezpośrednio z jednostkami w modelu koncepcyjnym i obsługuje koncepcje Entity Data Model. [!INCLUDE[esql](../../../../../includes/esql-md.md)] jest używany zarówno z kwerendami obiektów, jak i kwerendami, które są wykonywane przy użyciu dostawcy EntityClient. Aby uzyskać więcej informacji, zobacz [Entity SQL przegląd](./language-reference/entity-sql-overview.md).
 
 Entity Framework obejmuje dostawcę danych EntityClient. Ten dostawca zarządza połączeniami, tłumaczy zapytania jednostek na zapytania specyficzne dla źródła danych i zwraca czytnik danych, którego Entity Framework używa do zmaterializowania danych jednostki w obiektach. Gdy obiekt materializację nie jest wymagany, Dostawca EntityClient może być również używany jako standardowy dostawca danych ADO.NET przez umożliwienie aplikacjom wykonywania [!INCLUDE[esql](../../../../../includes/esql-md.md)] zapytań i używania zwróconego czytnika danych tylko do odczytu. Aby uzyskać więcej informacji, zobacz [EntityClient Provider for the Entity Framework](entityclient-provider-for-the-entity-framework.md).
 
@@ -60,7 +60,7 @@ Narzędzia Entity Data Model mogą generować klasę pochodną `System.Data.Obje
 
 ## <a name="data-providers"></a>Dostawcy danych
 
-`EntityClient`Dostawca rozszerza model dostawcy ADO.NET, uzyskując dostęp do danych pod względem jednostek koncepcyjnych i relacji. Wykonuje zapytania, które używają [!INCLUDE[esql](../../../../../includes/esql-md.md)] . [!INCLUDE[esql](../../../../../includes/esql-md.md)]Program udostępnia podstawowy język zapytań umożliwiający `EntityClient` komunikację z bazą danych programu. Aby uzyskać więcej informacji, zobacz [EntityClient Provider for the Entity Framework](entityclient-provider-for-the-entity-framework.md).
+`EntityClient`Dostawca rozszerza model dostawcy ADO.NET, uzyskując dostęp do danych pod względem jednostek koncepcyjnych i relacji. Wykonuje zapytania, które używają [!INCLUDE[esql](../../../../../includes/esql-md.md)] . [!INCLUDE[esql](../../../../../includes/esql-md.md)] Program udostępnia podstawowy język zapytań umożliwiający `EntityClient` komunikację z bazą danych programu. Aby uzyskać więcej informacji, zobacz [EntityClient Provider for the Entity Framework](entityclient-provider-for-the-entity-framework.md).
 
 Entity Framework obejmuje zaktualizowany Dostawca danych SqlClient obsługujący drzewa poleceń w postaci kanonicznej. Aby uzyskać więcej informacji, zobacz [SqlClient dla Entity Framework](sqlclient-for-the-entity-framework.md).
 
@@ -72,7 +72,7 @@ Wraz z Entity Framework środowiska uruchomieniowego program Visual Studio zawie
 
 Aby dowiedzieć się więcej na temat Entity Framework, zobacz:
 
-[Wprowadzenie](getting-started.md) — zawiera informacje o tym, jak szybko rozpocząć pracę, korzystając z [przewodnika Szybki Start](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399182(v=vs.100)), który pokazuje, jak utworzyć prostą Entity Framework aplikację.
+[Wprowadzenie](getting-started.md) — zawiera informacje o tym, jak szybko rozpocząć pracę, korzystając z [przewodnika Szybki Start](/previous-versions/dotnet/netframework-4.0/bb399182(v=vs.100)), który pokazuje, jak utworzyć prostą Entity Framework aplikację.
 
 [Terminologia Entity Framework](terminology.md) — definiuje wiele warunków wprowadzonych przez Entity Data Model i Entity Framework i które są używane w dokumentacji programu Entity Framework.
 

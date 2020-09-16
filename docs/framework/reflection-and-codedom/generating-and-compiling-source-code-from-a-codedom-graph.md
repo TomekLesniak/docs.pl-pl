@@ -27,12 +27,12 @@ helpviewer_keywords:
 - compiling source code, multiple languages
 - CodeDOM, graphs
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
-ms.openlocfilehash: 85654fe961f01ad7b8fb886d59a3de9ab0efe7aa
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 3aad7b2ff047a2d9ad12c23d16773e482a395c10
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474049"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551200"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Generowanie i kompilowanie kodu źródłowego z wykresu CodeDOM
 <xref:System.CodeDom.Compiler>Przestrzeń nazw udostępnia interfejsy do generowania kodu źródłowego z grafów obiektów CodeDOM i do zarządzania kompilacją z obsługiwanymi kompilatorami. Dostawca kodu może utworzyć kod źródłowy w określonym języku programowania zgodnie z wykresem CodeDOM. Klasa, która pochodzi od, <xref:System.CodeDom.Compiler.CodeDomProvider> zazwyczaj dostarcza metody do generowania i kompilowania kodu dla języka obsługiwanego przez dostawcę.  
@@ -97,4 +97,4 @@ ms.locfileid: "86474049"
 - <xref:System.CodeDom>
 - <xref:System.CodeDom.Compiler>
 - [Dynamiczne generowanie i kompilacja kodu źródłowego](dynamic-source-code-generation-and-compilation.md)
-- [Zwięzłe odwołanie CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))
+- [Zwięzłe odwołanie CodeDOM](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))

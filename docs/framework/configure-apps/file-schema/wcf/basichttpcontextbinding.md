@@ -2,12 +2,12 @@
 title: <basicHttpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 39b16b82-4ec6-4eff-8031-67e026870961
-ms.openlocfilehash: 78372970c7dc0f5a29e7fc9fdfc80aa443107b6d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d7d825e4fb17c3d864f0ac40daaee9d492c7f8e8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84201178"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557661"
 ---
 # \<basicHttpContextBinding>
 Określanie powiązania, które dostarcza kontekst <xref:System.ServiceModel.BasicHttpBinding> do wymiany przez włączenie plików cookie protokołu HTTP jako mechanizm wymiany.  
@@ -83,7 +83,7 @@ Określanie powiązania, które dostarcza kontekst <xref:System.ServiceModel.Bas
 |Element|Opis|  
 |-------------|-----------------|  
 |[\<security>](security-of-basichttpbinding.md)|Definiuje ustawienia zabezpieczeń dla powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement> .|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definiuje ograniczenia złożoności komunikatów protokołu SOAP, które mogą być przetwarzane przez punkty końcowe skonfigurowane za pomocą tego powiązania. Ten element jest typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
   
@@ -102,6 +102,6 @@ Określanie powiązania, które dostarcza kontekst <xref:System.ServiceModel.Bas
 - <xref:System.ServiceModel.Channels.ContextBindingElement>
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)
 - [\<basicHttpBinding>](basichttpbinding.md)

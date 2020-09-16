@@ -1,20 +1,20 @@
 ---
-title: Wprowadzaj prognozy za pomocą przeszkolonego modelu
-description: Naucz się przewidywać przy użyciu uczonego modelu
+title: Tworzenie prognoz przy użyciu przeszkolonego modelu
+description: Dowiedz się, jak tworzyć prognozy przy użyciu przeszkolonego modelu
 ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 182350cc5143155133385c6fd77986b271f6db91
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e8263db289bed50e7437b695134458b8c07e0e5
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73977048"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679576"
 ---
-# <a name="make-predictions-with-a-trained-model"></a>Wprowadzaj prognozy za pomocą przeszkolonego modelu
+# <a name="make-predictions-with-a-trained-model"></a>Tworzenie prognoz przy użyciu przeszkolonego modelu
 
-Dowiedz się, jak używać uczonego modelu do tworzenia prognoz
+Dowiedz się, jak tworzyć prognozy przy użyciu przeszkolonego modelu
 
 ## <a name="create-data-models"></a>Tworzenie modeli danych
 
@@ -38,9 +38,9 @@ public class HousingData
 
 ### <a name="output-data"></a>Dane wyjściowe
 
-Podobnie `Features` jak `Label` nazwy kolumn wejściowych, ML.NET ma domyślne nazwy kolumn wartości przewidywanej produkowane przez model. W zależności od zadania nazwa może się różnić.
+Podobnie jak `Features` `Label` nazwy kolumn wejściowych i, ml.net ma nazwy domyślne dla kolumn wartości przewidywanych produkowanych przez model. W zależności od zadania, którego nazwa może się różnić.
 
-Ponieważ algorytm używany w tym przykładzie jest algorytm regresji liniowej, domyślna nazwa kolumny wyjściowej jest, `Score` który jest zdefiniowany przez [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) atrybut we `PredictedPrice` właściwości.
+Ponieważ algorytm używany w tym przykładzie jest algorytmem regresji liniowej, domyślna nazwa kolumny wyjściowej jest `Score` definiowana przez [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) atrybut `PredictedPrice` właściwości.
 
 ```csharp
 class HousingPrediction
@@ -52,7 +52,7 @@ class HousingPrediction
 
 ## <a name="set-up-a-prediction-pipeline"></a>Konfigurowanie potoku prognozowania
 
-Niezależnie od tego, czy dokonywanie pojedynczej lub wsadowe przewidywanie, potoku przewidywania musi zostać załadowany do aplikacji. Ten potok zawiera zarówno przekształcenia przetwarzania wstępnego danych, jak również uczonego modelu. Poniższy fragment kodu ładuje potok przewidywania `model.zip`z pliku o nazwie .
+Niezależnie od tego, czy dokonywana jest prognoza pojedyncza, czy wsadowa, należy załadować potok przewidywania do aplikacji. Ten potok zawiera zarówno przekształcenia wstępnego przetwarzania danych, jak i przeszkolony model. Poniższy fragment kodu ładuje potok przewidywania z pliku o nazwie `model.zip` .
 
 ```csharp
 //Create MLContext
@@ -63,16 +63,16 @@ DataViewSchema predictionPipelineSchema;
 ITransformer predictionPipeline = mlContext.Model.Load("model.zip", out predictionPipelineSchema);
 ```
 
-## <a name="single-prediction"></a>Pojedyncza prognoza
+## <a name="single-prediction"></a>Pojedyncze prognozowanie
 
-Aby utworzyć pojedyncze przewidywanie, utwórz [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) przy użyciu załadowanego potoku prognozowania.
+Aby wykonać pojedyncze prognozowanie, Utwórz [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) za pomocą załadowanego potoku predykcyjnego.
 
 ```csharp
 // Create PredictionEngines
 PredictionEngine<HousingData, HousingPrediction> predictionEngine = mlContext.Model.CreatePredictionEngine<HousingData, HousingPrediction>(predictionPipeline);
 ```
 
-Następnie należy [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) użyć metody i przekazać dane wejściowe jako parametr. Należy zauważyć, [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) że przy użyciu metody [`IDataView`](xref:Microsoft.ML.IDataView)nie wymaga danych wejściowych, aby być ). Dzieje się tak, ponieważ wygodnie internalizuje manipulacji typu danych wejściowych, dzięki czemu można przekazać w obiekcie typu danych wejściowych. Ponadto ponieważ `CurrentPrice` jest obiektem docelowym lub etykietą, którą próbujesz przewidzieć przy użyciu nowych danych, zakłada się, że w tej chwili nie ma dla niego żadnej wartości.
+Następnie użyj [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict%2A) metody i Przekaż dane wejściowe jako parametr. Należy zauważyć, że użycie [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict%2A) metody nie wymaga, aby dane wejściowe były [`IDataView`](xref:Microsoft.ML.IDataView) . Jest to spowodowane tym, że wygodnie internalizes manipulowanie danymi typu danych wejściowych, aby można było przekazać obiekt typu danych wejściowych. Ponadto, ponieważ `CurrentPrice` jest obiektem docelowym lub etykietą, którą próbujesz przewidzieć przy użyciu nowych danych, zakłada się, że nie ma w tej chwili żadnej wartości.
 
 ```csharp
 // Input Data
@@ -86,11 +86,11 @@ HousingData inputData = new HousingData
 HousingPrediction prediction = predictionEngine.Predict(inputData);
 ```
 
-Jeśli uzyskujesz dostęp do `Score` właściwości `prediction` obiektu, `150079`powinna zostać uzyskana wartość podobna do .
+Jeśli uzyskujesz dostęp do `Score` właściwości `prediction` obiektu, należy uzyskać wartość podobną do `150079` .
 
 ## <a name="multiple-predictions"></a>Wiele prognoz
 
-Biorąc pod uwagę następujące dane, załaduj je do pliku [`IDataView`](xref:Microsoft.ML.IDataView). W takim przypadku nazwa [`IDataView`](xref:Microsoft.ML.IDataView) jest `inputData`. Ponieważ `CurrentPrice` jest to cel lub etykieta, którą próbujesz przewidzieć przy użyciu nowych danych, zakłada się, że w tej chwili nie ma dla niego żadnej wartości.
+Uwzględniając poniższe dane, załaduj je do [`IDataView`](xref:Microsoft.ML.IDataView) . W tym przypadku nazwa [`IDataView`](xref:Microsoft.ML.IDataView) jest `inputData` . Ponieważ `CurrentPrice` jest obiektem docelowym lub etykietą, którą próbujesz przewidzieć przy użyciu nowych danych, zakłada się, że nie ma w tej chwili żadnej wartości.
 
 ```csharp
 // Actual data
@@ -114,24 +114,24 @@ HousingData[] housingData = new HousingData[]
 };
 ```
 
-Następnie użyj [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) metody, aby zastosować przekształcenia danych i wygenerować prognozy.
+Następnie użyj metody, [`Transform`](xref:Microsoft.ML.ITransformer.Transform%2A) Aby zastosować przekształcenia danych i wygenerować przewidywania.
 
 ```csharp
 // Predicted Data
 IDataView predictions = predictionPipeline.Transform(inputData);
 ```
 
-Sprawdź przewidywane wartości przy [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) użyciu metody.
+Sprawdź przewidywane wartości przy użyciu [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn%2A) metody.
 
 ```csharp
 // Get Predictions
 float[] scoreColumn = predictions.GetColumn<float>("Score").ToArray();
 ```
 
-Przewidywane wartości w kolumnie wyników powinny wyglądać następująco:
+Wartości przewidywane w kolumnie Score powinny wyglądać następująco:
 
-| Obserwacji | Prediction (Prognoza) |
+| Uchwyceni | Przewidywanie |
 |---|---|
-| 1 | 144638.2 |
-| 2 | 150079.4 |
-| 3 | 107789.8 |
+| 1 | 144638,2 |
+| 2 | 150079,4 |
+| 3 | 107789,8 |

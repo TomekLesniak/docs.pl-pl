@@ -4,23 +4,23 @@ description: Dowiedz się, jak używać ML.NET w scenariuszu klasyfikacji wielok
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 48f5f213802b09168cbc21da1b22e84ec53756fe
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: fa00306e80046097c1269533d3a3ca1e85f10288
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282076"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679498"
 ---
 # <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-mlnet"></a>Samouczek: kategoryzowanie problemów pomocy technicznej przy użyciu klasyfikacji wieloklasowej z ML.NET
 
 Ten przykładowy samouczek ilustruje użycie ML.NET do utworzenia klasyfikatora problemu w usłudze GitHub w celu uczenia modelu, który klasyfikuje i przewidywalnuje etykietę obszaru dla problemu usługi GitHub za pośrednictwem aplikacji konsolowej .NET Core przy użyciu języka C# w programie Visual Studio.
 
-Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
+Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
 > [!div class="checklist"]
 >
 > * Przygotowywanie danych
 > * Przekształcanie danych
-> * Szkolenie modelu
+> * Trenowanie modelu
 > * Ocena modelu
 > * Przewidywanie przy użyciu przeszkolonego modelu
 > * Wdrażanie i przewidywanie z załadowanym modelem
@@ -67,12 +67,12 @@ Dodaj następujące dodatkowe `using` instrukcje na początku pliku *program.cs*
 
 Utwórz trzy pola globalne do przechowywania ścieżek do ostatnio pobranych plików, a następnie zmienne globalne dla `MLContext` , `DataView` i `PredictionEngine` :
 
-* `_trainDataPath`ma ścieżkę do zestawu danych używanego do uczenia modelu.
-* `_testDataPath`ma ścieżkę do zestawu danych używanego do szacowania modelu.
-* `_modelPath`ma ścieżkę, w której jest zapisywany model szkolony.
-* `_mlContext`jest to element <xref:Microsoft.ML.MLContext> , który zawiera kontekst przetwarzania.
-* `_trainingDataView`jest <xref:Microsoft.ML.IDataView> używany do przetwarzania zestawu danych szkoleniowych.
-* `_predEngine`jest <xref:Microsoft.ML.PredictionEngine%602> używany dla pojedynczych prognoz.
+* `_trainDataPath` ma ścieżkę do zestawu danych używanego do uczenia modelu.
+* `_testDataPath` ma ścieżkę do zestawu danych używanego do szacowania modelu.
+* `_modelPath` ma ścieżkę, w której jest zapisywany model szkolony.
+* `_mlContext` jest to element <xref:Microsoft.ML.MLContext> , który zawiera kontekst przetwarzania.
+* `_trainingDataView` jest <xref:Microsoft.ML.IDataView> używany do przetwarzania zestawu danych szkoleniowych.
+* `_predEngine` jest <xref:Microsoft.ML.PredictionEngine%602> używany dla pojedynczych prognoz.
 
 Dodaj następujący kod do wiersza bezpośrednio powyżej `Main` metody, aby określić te ścieżki i inne zmienne:
 
@@ -96,14 +96,14 @@ Usuń istniejącą definicję klasy i Dodaj następujący kod, który ma dwie kl
 
 Użyj [LoadColumnAttribute](xref:Microsoft.ML.Data.LoadColumnAttribute) , aby określić indeksy kolumn źródłowych w zestawie danych.
 
-`GitHubIssue`jest klasą wejściowego zestawu danych i zawiera następujące <xref:System.String> pola:
+`GitHubIssue` jest klasą wejściowego zestawu danych i zawiera następujące <xref:System.String> pola:
 
 * Pierwsza kolumna `ID` (identyfikator problemu usługi GitHub)
 * Druga kolumna `Area` (Prognoza dla szkolenia)
-* Trzecia kolumna `Title` (tytuł problemu GitHub) jest pierwszym `feature` używanym do przewidywania`Area`
-* czwarta kolumna `Description` jest sekundą `feature` używaną do przewidywania`Area`
+* Trzecia kolumna `Title` (tytuł problemu GitHub) jest pierwszym `feature` używanym do przewidywania `Area`
+* czwarta kolumna  `Description` jest sekundą `feature` używaną do przewidywania `Area`
 
-`IssuePrediction`jest klasą używaną do przewidywania po przeszkoleniu modelu. Ma pojedynczy `string` ( `Area` ) i `PredictedLabel` `ColumnName` atrybut.  `PredictedLabel`Jest używany podczas przewidywania i oceny. W celu dokonania oceny dane wejściowe z danymi szkoleniowymi, przewidywane wartości i model są używane.
+`IssuePrediction` jest klasą używaną do przewidywania po przeszkoleniu modelu. Ma pojedynczy `string` ( `Area` ) i `PredictedLabel` `ColumnName` atrybut.  `PredictedLabel`Jest używany podczas przewidywania i oceny. W celu dokonania oceny dane wejściowe z danymi szkoleniowymi, przewidywane wartości i model są używane.
 
 Wszystkie operacje ML.NET są uruchamiane w klasie [MLContext](xref:Microsoft.ML.MLContext) . Inicjowanie `mlContext` tworzy nowe środowisko ml.NET, które może być współużytkowane przez obiekty przepływu pracy tworzenia modelu. Jest to podobne, pojęciowo do `DBContext` w `Entity Framework` .
 
@@ -115,9 +115,9 @@ Zainicjuj `_mlContext` zmienną globalną z nowym wystąpieniem `MLContext` z lo
 
 ## <a name="load-the-data"></a>Ładowanie danych
 
-ML.NET używa [klasy IDataView](xref:Microsoft.ML.IDataView) jako elastycznej, wydajnej metody opisywania danych tabelarycznych lub tekstowych. `IDataView`może ładować pliki tekstowe lub w czasie rzeczywistym (na przykład bazy danych SQL lub pliki dzienników).
+ML.NET używa [klasy IDataView](xref:Microsoft.ML.IDataView) jako elastycznej, wydajnej metody opisywania danych tabelarycznych lub tekstowych. `IDataView` może ładować pliki tekstowe lub w czasie rzeczywistym (na przykład bazy danych SQL lub pliki dzienników).
 
-Aby zainicjować i załadować `_trainingDataView` zmienną globalną w celu użycia jej dla potoku, należy dodać następujący kod po `mlContext` zainicjowaniu:
+Aby zainicjować i załadować `_trainingDataView` zmienną globalną w celu użycia jej dla potoku, należy dodać następujący kod po  `mlContext` zainicjowaniu:
 
 [!code-csharp[LoadTrainData](./snippets/github-issue-classification/csharp/Program.cs#LoadTrainData)]
 
@@ -205,7 +205,7 @@ Dołącz algorytm uczenia maszynowego do definicji transformacji danych, dodają
 
 [SdcaMaximumEntropy](xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer) to algorytm szkoleniowy klasyfikacji wieloklasowej. Jest on dołączany do `pipeline` i akceptuje featurized `Title` i `Description` ( `Features` ) oraz `Label` Parametry wejściowe, aby poznać dane historyczne.
 
-### <a name="train-the-model"></a>Szkolenie modelu
+### <a name="train-the-model"></a>Trenowanie modelu
 
 Dopasuj model do `splitTrainSet` danych i zwróć przeszkolony model, dodając następujący kod jako następny wiersz kodu w `BuildAndTrainModel()` metodzie:
 
@@ -302,7 +302,7 @@ private static void SaveModelAsFile(MLContext mlContext,DataViewSchema trainingD
 }
 ```
 
-Dodaj następujący kod do `SaveModelAsFile` metody. Ten kod używa [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) metody do serializacji i przechowywania przeszkolonego modelu jako pliku zip.
+Dodaj następujący kod do `SaveModelAsFile` metody. Ten kod używa [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save%2A) metody do serializacji i przechowywania przeszkolonego modelu jako pliku zip.
 
 [!code-csharp[SnippetSaveModel](./snippets/github-issue-classification/csharp/Program.cs#SnippetSaveModel)]
 
@@ -341,10 +341,10 @@ Tak jak wcześniej, Utwórz `PredictionEngine` wystąpienie o następującym kod
 
 [!code-csharp[CreatePredictionEngine](./snippets/github-issue-classification/csharp/Program.cs#CreatePredictionEngine)]
 
-[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) jest WYGODNYm interfejsem API, który umożliwia prognozowanie jednego wystąpienia danych. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)nie jest bezpieczny wątkowo. Jest to możliwe do użycia w środowiskach wielowątkowych lub prototypowych. Aby zwiększyć wydajność i bezpieczeństwo wątków w środowiskach produkcyjnych, należy użyć `PredictionEnginePool` usługi, która tworzy [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) obiekty do użycia w całej aplikacji. Zapoznaj się z tym przewodnikiem dotyczącym [korzystania `PredictionEnginePool` z programu w ASP.NET Core INTERNETowym interfejsie API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
+[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) jest WYGODNYm interfejsem API, który umożliwia prognozowanie jednego wystąpienia danych. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) nie jest bezpieczny wątkowo. Jest to możliwe do użycia w środowiskach wielowątkowych lub prototypowych. Aby zwiększyć wydajność i bezpieczeństwo wątków w środowiskach produkcyjnych, należy użyć `PredictionEnginePool` usługi, która tworzy [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) obiekty do użycia w całej aplikacji. Zapoznaj się z tym przewodnikiem dotyczącym [korzystania `PredictionEnginePool` z programu w ASP.NET Core INTERNETowym interfejsie API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
 > [!NOTE]
-> `PredictionEnginePool`rozszerzenie usługi jest obecnie w wersji zapoznawczej.
+> `PredictionEnginePool` rozszerzenie usługi jest obecnie w wersji zapoznawczej.
 
 Użyj, `PredictionEngine` aby przewidzieć etykietę obszaru GitHub, dodając następujący kod do `PredictIssue` metody przewidywania:
 
@@ -382,7 +382,7 @@ W niniejszym samouczku zawarto informacje na temat wykonywania następujących c
 >
 > * Przygotowywanie danych
 > * Przekształcanie danych
-> * Szkolenie modelu
+> * Trenowanie modelu
 > * Ocena modelu
 > * Przewidywanie przy użyciu przeszkolonego modelu
 > * Wdrażanie i przewidywanie z załadowanym modelem

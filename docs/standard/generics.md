@@ -4,18 +4,18 @@ description: Dowiedz się, w jaki sposób typy ogólne działają jako szablony 
 author: kuhlenh
 ms.author: wiwagn
 ms.date: 10/09/2018
-ms.openlocfilehash: 99e3b589cd67c9d7026966d3d48d0e06a91fcc86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5f6e84e23b5bcdcb3dcd742823d83728fb43d195
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287548"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557947"
 ---
 # <a name="generic-types-overview"></a>Przegląd typów ogólnych
 
 Deweloperzy używają typów ogólnych przez cały czas w programie .NET, niezależnie od tego, czy jest to jawnie, czy niejawnie. Kiedy używasz LINQ w programie .NET, czy wiesz, że pracujesz z <xref:System.Collections.Generic.IEnumerable%601> ? Lub jeśli kiedykolwiek zdarzyło Ci się korzystać z przykładu online "ogólnego repozytorium" do nawiązywania komunikacji z bazami danych przy użyciu Entity Framework, zobaczysz, że większość metod zwraca `IQueryable<T>` ? Być może zastanawiasz się, co znajduje się w tych przykładach i dlaczego znajduje się **w tym miejscu** .
 
-Po raz pierwszy wprowadzona w .NET Framework 2,0, typy ogólne są zasadniczo "szablonem kodu", dzięki czemu deweloperzy mogą definiować [bezpieczne dla typów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hbzz1a9a(v=vs.100)) struktury danych bez przekazywania ich do rzeczywistego typu danych. Na przykład <xref:System.Collections.Generic.List%601> to [Ogólna kolekcja](xref:System.Collections.Generic) , która może być zadeklarowana i używana z dowolnym typem, takim jak `List<int>` , `List<string>` lub `List<Person>` .
+Po raz pierwszy wprowadzona w .NET Framework 2,0, typy ogólne są zasadniczo "szablonem kodu", dzięki czemu deweloperzy mogą definiować [bezpieczne dla typów](/previous-versions/dotnet/netframework-4.0/hbzz1a9a(v=vs.100)) struktury danych bez przekazywania ich do rzeczywistego typu danych. Na przykład <xref:System.Collections.Generic.List%601> to [Ogólna kolekcja](xref:System.Collections.Generic) , która może być zadeklarowana i używana z dowolnym typem, takim jak `List<int>` , `List<string>` lub `List<Person>` .
 
 Aby zrozumieć, dlaczego typy ogólne są przydatne, przyjrzyjmy się określonej klasie przed i po dodaniu typów ogólnych: <xref:System.Collections.ArrayList> . W .NET Framework 1,0 `ArrayList` elementy były typu <xref:System.Object> . Każdy element dodany do kolekcji został dyskretnie przekonwertowany na `Object` . Taka sytuacja miałaby miejsce podczas odczytywania elementów z listy. Ten proces jest nazywany [opakowaniem i rozpakowywaniem](../csharp/programming-guide/types/boxing-and-unboxing.md)i ma wpływ na wydajność. Poza wydajnością nie ma jednak możliwości określenia typu danych na liście w czasie kompilacji, co sprawia, że jest to niedelikatny kod. Typy ogólne rozwiązują ten problem przez zdefiniowanie typu danych, które będą zawierać każde wystąpienie listy. Na przykład można dodawać tylko liczby całkowite do `List<int>` i dodawać tylko osoby do `List<Person>` .
 

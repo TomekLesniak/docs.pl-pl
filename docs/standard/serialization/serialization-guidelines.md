@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: eb11f0b8ddd34df7c6970c275d4b83cb95f59a53
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6a8fd644e6f9132bf93277ae9928788f236a7bd1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84287496"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558202"
 ---
 # <a name="serialization-guidelines"></a>Wskazówki dotyczące serializacji
 Ten dokument zawiera listę wskazówek, które należy wziąć pod uwagę podczas projektowania interfejs API serializacji.  
@@ -26,7 +26,7 @@ Ten dokument zawiera listę wskazówek, które należy wziąć pod uwagę podcza
 |Technologia|Odpowiednich klas|Uwagi|  
 |----------------|----------------------|-----------|  
 |Serializacja kontrakt danych|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Trwałość ogólne<br /><br /> Usługi sieci Web<br /><br /> JSON|  
-|Serializacji XML|<xref:System.Xml.Serialization.XmlSerializer>|XML format <br />z pełną kontrolę|  
+|Serializacji XML|<xref:System.Xml.Serialization.XmlSerializer>|Format XML <br />z pełną kontrolę|  
 |Środowisko wykonawcze-serializacji (binarnych i protokołu SOAP)|<xref:System.SerializableAttribute><br /><br /> <xref:System.Runtime.Serialization.ISerializable><br /><br /> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter><br /><br /> <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>|Wywołaniem funkcji zdalnych .NET|  
   
  Podczas projektowania nowych typów, należy zdecydować, które ewentualnie technologii te typy muszą obsługiwać. Poniższe wskazówki opisano sposób, aby wybrać i jak zapewnić obsługę takich. Te wytyczne nie mają na celu ułatwienie wyboru technologii serializacji, która ma być używana w implementacji aplikacji lub biblioteki. Takie wytyczne nie są bezpośrednio związane z interfejsu API projektowania i w związku z tym nie są w zakresie tego tematu.  
@@ -99,7 +99,7 @@ Ten dokument zawiera listę wskazówek, które należy wziąć pod uwagę podcza
   
 1. Należy UNIKAĆ projektowanie swój typ specjalnie dla serializacji XML, chyba że użytkownik ma bardzo duży Przyczyna do określenia kształtu XML utworzone. Ta technologia serializacji została zastąpiona przez serializacji kontrakt danych opisanych w poprzedniej sekcji.  
   
-     Innymi słowy, nie stosuj atrybutów z <xref:System.Xml.Serialization> przestrzeni nazw do nowych typów, chyba że wiadomo, że typ będzie używany z serializacji XML. Poniższy przykład pokazuje, jak **System. XML. Serialization** może służyć do kontrolowania kształtu utworzonego XML.  
+     Innymi słowy, nie stosuj atrybutów z <xref:System.Xml.Serialization> przestrzeni nazw do nowych typów, chyba że wiadomo, że typ będzie używany z serializacji XML. Poniższy przykład pokazuje, jak **System.Xml. Serializacja** może służyć do kontrolowania kształtu wygenerowanego kodu XML.  
   
      [!code-csharp[SerializationGuidelines#6](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#6)]
      [!code-vb[SerializationGuidelines#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#6)]  
@@ -144,6 +144,6 @@ Ten dokument zawiera listę wskazówek, które należy wziąć pod uwagę podcza
 - [Serializator kontraktów danych](../../framework/wcf/feature-details/data-contract-serializer.md)
 - [Typy obsługiwane przez serializator kontraktu danych](../../framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Serializacja binarna](binary-serialization.md)
-- [Wywołaniem funkcji zdalnych .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
+- [Wywołaniem funkcji zdalnych .NET](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [Serializacja XML i SOAP](xml-and-soap-serialization.md)
-- [Zabezpieczenia i serializacja](../../framework/misc/security-and-serialization.md)
+- [Zabezpieczenia i Serializacja](../../framework/misc/security-and-serialization.md)

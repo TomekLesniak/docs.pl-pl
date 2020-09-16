@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54edefe0-bc38-419b-b486-3d8a0c356f13
-ms.openlocfilehash: b2b71dac58838a826933af570934bf4bbb35e025
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0f79b97b486bbc3e1150cd6aff8162d37134f62e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784609"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557999"
 ---
 # <a name="handling-dataset-events"></a>Obsługa zdarzeń elementu DataSet
-Obiekt zawiera trzy zdarzenia: <xref:System.ComponentModel.MarshalByValueComponent.Disposed>, <xref:System.Data.DataSet.Initialized>, i <xref:System.Data.DataSet.MergeFailed>. <xref:System.Data.DataSet>  
+<xref:System.Data.DataSet>Obiekt zawiera trzy zdarzenia: <xref:System.ComponentModel.MarshalByValueComponent.Disposed> , <xref:System.Data.DataSet.Initialized> , i <xref:System.Data.DataSet.MergeFailed> .  
   
 ## <a name="the-mergefailed-event"></a>Zdarzenie MergeFailed  
- Najczęściej używane zdarzenie `DataSet` obiektu to `MergeFailed`, który jest wywoływany, `DataSet` gdy schemat scalonych obiektów jest w konflikcie. Dzieje się tak, gdy element docelowy <xref:System.Data.DataRow> i źródło mają tę samą wartość klucza podstawowego <xref:System.Data.DataSet.EnforceConstraints%2A> i właściwość jest ustawiona na `true`. Na przykład, jeśli kolumny klucza podstawowego Scalonej tabeli są takie same między tabelami w dwóch `DataSet` obiektach, zgłaszany jest wyjątek, `MergeFailed` a zdarzenie jest zgłaszane. `MergeFailed` <xref:System.Data.MergeFailedEventArgs.Conflict%2A> <xref:System.Data.MergeFailedEventArgs.Table%2A> Obiekt przesłany do zdarzenia ma właściwość, która identyfikuje konflikt w schemacie między tymi dwoma `DataSet` obiektami, i właściwość, która określa nazwę tabeli w konflikcie. <xref:System.Data.MergeFailedEventArgs>  
+ Najczęściej używane zdarzenie `DataSet` obiektu to `MergeFailed` , który jest wywoływany, gdy schemat `DataSet` scalonych obiektów jest w konflikcie. Dzieje się tak, gdy element docelowy i źródło <xref:System.Data.DataRow> mają tę samą wartość klucza podstawowego i <xref:System.Data.DataSet.EnforceConstraints%2A> Właściwość jest ustawiona na `true` . Na przykład, jeśli kolumny klucza podstawowego Scalonej tabeli są takie same między tabelami w dwóch `DataSet` obiektach, zgłaszany jest wyjątek, a `MergeFailed` zdarzenie jest zgłaszane. <xref:System.Data.MergeFailedEventArgs>Obiekt przesłany do `MergeFailed` zdarzenia ma <xref:System.Data.MergeFailedEventArgs.Conflict%2A> Właściwość, która identyfikuje konflikt w schemacie między tymi dwoma `DataSet` obiektami, i <xref:System.Data.MergeFailedEventArgs.Table%2A> Właściwość, która określa nazwę tabeli w konflikcie.  
   
  Poniższy fragment kodu pokazuje, jak dodać program obsługi zdarzeń dla `MergeFailed` zdarzenia.  
   
@@ -43,21 +43,21 @@ private static void DataSetMergeFailed(
 ```  
   
 ## <a name="the-initialized-event"></a>Zainicjowane zdarzenie  
- Zdarzenie <xref:System.Data.DataSet.Initialized> występuje, `DataSet` gdy Konstruktor inicjuje nowe wystąpienie obiektu `DataSet`.  
+ <xref:System.Data.DataSet.Initialized>Zdarzenie występuje, gdy `DataSet` Konstruktor inicjuje nowe wystąpienie obiektu `DataSet` .  
   
- <xref:System.Data.DataSet.IsInitialized%2A> Właściwość zwraca `false`, jeśli `DataSet` zakończył inicjalizację; w `true` przeciwnym razie zwraca. Metoda, która rozpoczyna inicjalizację `DataSet`, ustawia <xref:System.Data.DataSet.IsInitialized%2A> na `false`. <xref:System.Data.DataSet.BeginInit%2A> Metoda, która przerywa inicjalizację `DataSet`, ustawia ją na `true`. <xref:System.Data.DataSet.EndInit%2A> Te metody są używane przez środowisko projektowe programu Visual Studio do inicjowania `DataSet` , który jest używany przez inny składnik. Nie są one często używane w kodzie.  
+ <xref:System.Data.DataSet.IsInitialized%2A>Właściwość zwraca, `true` Jeśli `DataSet` zakończył inicjalizację; w przeciwnym razie zwraca `false` . <xref:System.Data.DataSet.BeginInit%2A>Metoda, która rozpoczyna inicjalizację `DataSet` , ustawia <xref:System.Data.DataSet.IsInitialized%2A> na `false` . <xref:System.Data.DataSet.EndInit%2A>Metoda, która przerywa inicjalizację `DataSet` , ustawia ją na `true` . Te metody są używane przez środowisko projektowe programu Visual Studio do inicjowania `DataSet` , który jest używany przez inny składnik. Nie są one często używane w kodzie.  
   
 ## <a name="the-disposed-event"></a>Usunięte zdarzenie  
- `DataSet`pochodzi od <xref:System.ComponentModel.MarshalByValueComponent> klasy, która uwidacznia <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> zarówno metodę, jak i <xref:System.ComponentModel.MarshalByValueComponent.Disposed> zdarzenie. <xref:System.ComponentModel.MarshalByValueComponent.Disposed> Zdarzenie dodaje procedurę obsługi zdarzeń, która umożliwia nasłuchiwanie usuniętego zdarzenia w składniku. Możesz użyć <xref:System.ComponentModel.MarshalByValueComponent.Disposed> zdarzenia `DataSet` , jeśli chcesz wykonać kod, gdy <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> wywoływana jest metoda. <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A>Zwalnia zasoby używane przez <xref:System.ComponentModel.MarshalByValueComponent>program.  
+ `DataSet` pochodzi od <xref:System.ComponentModel.MarshalByValueComponent> klasy, która uwidacznia zarówno <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> metodę, jak i <xref:System.ComponentModel.MarshalByValueComponent.Disposed> zdarzenie. <xref:System.ComponentModel.MarshalByValueComponent.Disposed>Zdarzenie dodaje procedurę obsługi zdarzeń, która umożliwia nasłuchiwanie usuniętego zdarzenia w składniku. Możesz użyć zdarzenia, <xref:System.ComponentModel.MarshalByValueComponent.Disposed> `DataSet` Jeśli chcesz wykonać kod, gdy <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> wywoływana jest metoda. <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> Zwalnia zasoby używane przez program <xref:System.ComponentModel.MarshalByValueComponent> .  
   
 > [!NOTE]
-> Obiekty `DataSet` <xref:System.ComponentModel.MarshalByValueComponent> i `DataTable` dziedziczą z i obsługują interfejsna<xref:System.Runtime.Serialization.ISerializable> potrzeby komunikacji zdalnej. Są to jedyne ADO.NET obiekty, które można zdalnie. Aby uzyskać więcej informacji, zobacz [komunikacja zdalna platformy .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)).  
+> `DataSet`Obiekty i `DataTable` dziedziczą z <xref:System.ComponentModel.MarshalByValueComponent> i obsługują <xref:System.Runtime.Serialization.ISerializable> interfejs na potrzeby komunikacji zdalnej. Są to jedyne ADO.NET obiekty, które można zdalnie. Aby uzyskać więcej informacji, zobacz [komunikacja zdalna platformy .NET](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)).  
   
- Aby uzyskać informacje o innych zdarzeniach dostępnych podczas pracy `DataSet`z usługą, zobacz [obsługiwanie zdarzeń DataTable](handling-datatable-events.md) i [Obsługa zdarzeń DataAdapter](../handling-dataadapter-events.md).  
+ Aby uzyskać informacje o innych zdarzeniach dostępnych podczas pracy z usługą `DataSet` , zobacz [obsługiwanie zdarzeń DataTable](handling-datatable-events.md) i [Obsługa zdarzeń DataAdapter](../handling-dataadapter-events.md).  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [Elementy DataSet, DataTable i DataView](index.md)
-- [Sprawdzanie poprawności danych](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/t3b36awf(v=vs.120))
+- [Sprawdzanie poprawności danych](/previous-versions/visualstudio/visual-studio-2013/t3b36awf(v=vs.120))
 - [Pobieranie i modyfikowanie danych ADO.NET](../retrieving-and-modifying-data.md)
 - [Omówienie ADO.NET](../ado-net-overview.md)

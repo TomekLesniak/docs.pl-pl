@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, Selection Item control pattern
 - control patterns, Selection Item
 ms.assetid: 76b0949a-5b23-4cfc-84cc-154f713e2e12
-ms.openlocfilehash: 441417aa370563a9ce8b513be6ca4507b21e1e4a
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 671a18d43a297026e4264cc35412fb9d233b2f33
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163541"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551507"
 ---
 # <a name="implementing-the-ui-automation-selectionitem-control-pattern"></a>Implementacja wzorca formantu SelectionItem dla automatyzacji interfejsu użytkownika
 > [!NOTE]
@@ -57,4 +57,4 @@ ms.locfileid: "87163541"
 - [Implementacja wzorca formantu wyboru automatyzacji interfejsu użytkownika](implementing-the-ui-automation-selection-control-pattern.md)
 - [Przegląd drzewa automatyzacji interfejsu użytkownika](ui-automation-tree-overview.md)
 - [Używanie buforowania w automatyzacji interfejsu użytkownika](use-caching-in-ui-automation.md)
-- [Przykład dostawcy fragmentu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771502(v=vs.90))
+- [Przykład dostawcy fragmentu](/previous-versions/dotnet/netframework-3.5/ms771502(v=vs.90))

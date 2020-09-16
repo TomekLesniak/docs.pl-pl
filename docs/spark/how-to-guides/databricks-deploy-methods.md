@@ -4,12 +4,12 @@ description: Dowiedz się, jak przesłać zadanie platformy .NET dla Apache Spar
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: bebd170a689d8ae56aa6c55486d70354da2437ea
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 88dc321a08f805ef8c3bf8d4d01d32dd890548d2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617772"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557180"
 ---
 # <a name="submit-a-net-for-apache-spark-job-to-databricks"></a>Przesyłanie zadania platformy .NET dla Apache Spark do kostek
 
@@ -19,7 +19,7 @@ Możesz uruchamiać zadania programu .NET dla Apache Spark w klastrach datakostk
 
 ## <a name="deploy-using-spark-submit"></a>Wdrażanie przy użyciu platformy Spark — przesyłanie
 
-Można użyć polecenia [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applications.html) do przesyłania zadań programu .net dla Apache Spark do datakostki. `spark-submit`umożliwia przesyłanie tylko do klastra, który został utworzony na żądanie.
+Można użyć polecenia [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applications.html) do przesyłania zadań programu .net dla Apache Spark do datakostki. `spark-submit` umożliwia przesyłanie tylko do klastra, który został utworzony na żądanie.
 
 1. Przejdź do obszaru roboczego datakostki i Utwórz zadanie. Wybierz tytuł zadania, a następnie wybierz pozycję Skonfiguruj platformę **Spark-Submit**. Wklej następujące parametry w konfiguracji zadania, a następnie wybierz pozycję **Potwierdź**.
 
@@ -36,7 +36,7 @@ Można użyć polecenia [Spark-Submit](https://spark.apache.org/docs/latest/subm
 
 ## <a name="deploy-using-set-jar"></a>Wdrażanie przy użyciu zestawu jar
 
-Alternatywnie możesz użyć [Ustawienia jar](https://docs.microsoft.com/azure/databricks/jobs#--create-a-job) w obszarze roboczym datakosteks, aby przesłać środowisko .net dla Apache Spark zadań do kostek. *Ustawienie jar* umożliwia przesyłanie zadań do istniejącego aktywnego klastra.
+Alternatywnie możesz użyć [Ustawienia jar](/azure/databricks/jobs#--create-a-job) w obszarze roboczym datakosteks, aby przesłać środowisko .net dla Apache Spark zadań do kostek. *Ustawienie jar* umożliwia przesyłanie zadań do istniejącego aktywnego klastra.
 
 ### <a name="one-time-setup"></a>Konfiguracja jednorazowa
 
@@ -57,7 +57,7 @@ Alternatywnie możesz użyć [Ustawienia jar](https://docs.microsoft.com/azure/d
 
 1. Upewnij się, że aplikacja została opublikowana i że kod aplikacji nie jest używany `SparkSession.Stop()` .
 
-2. Użyj [interfejsu wiersza polecenia datakosteks](https://docs.microsoft.com/azure/databricks/dev-tools/databricks-cli) , aby przekazać aplikację do klastra datakostks. Na przykład użyj następującego polecenia, aby przekazać opublikowaną aplikację do klastra:
+2. Użyj [interfejsu wiersza polecenia datakosteks](/azure/databricks/dev-tools/databricks-cli) , aby przekazać aplikację do klastra datakostks. Na przykład użyj następującego polecenia, aby przekazać opublikowaną aplikację do klastra:
 
     ```console
     cd <path-to-your-app-publish-directory>
@@ -86,4 +86,4 @@ Alternatywnie możesz użyć [Ustawienia jar](https://docs.microsoft.com/azure/d
 
 * [Wprowadzenie do platformy .NET dla Apache Spark](../tutorials/get-started.md)
 * [Wdrażanie aplikacji platformy .NET dla Apache Spark w kostkach](../tutorials/databricks-deployment.md)
-* [Dokumentacja usługi Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/)
+* [Dokumentacja usługi Azure Databricks](/azure/azure-databricks/)

@@ -2,12 +2,12 @@
 title: Dostęp do usług WCF za pomocą aplikacji klienckiej ze Sklepu Windows
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: ed13a88e3a534cd586d9386396802d7457de56e7
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d575907feea3d831b7e6f69410c8d4647e6ac95d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558975"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557960"
 ---
 # <a name="access-wcf-services-with-a-windows-store-client-app"></a>Dostęp do usług WCF za pomocą aplikacji klienckiej ze sklepu Windows
 
@@ -56,7 +56,7 @@ System Windows 8 wprowadza nowy typ aplikacji o nazwie aplikacje ze sklepu Windo
  Obsługiwane są zarówno kodowanie tekstu, jak i binarne. Obsługiwane są wszystkie tryby transferu WCF. Aby uzyskać więcej informacji, zobacz [transfer komunikatów przesyłanych strumieniowo](streaming-message-transfer.md).  
   
 ### <a name="add-service-reference"></a>Dodaj odwołanie do usługi  
- Aby wywołać usługę WCF z poziomu aplikacji ze sklepu Windows, użyj funkcji Dodaj odwołanie do usługi programu Visual Studio 2012. Po wykonaniu tej czynności w aplikacji ze sklepu Windows zobaczysz kilka zmian w funkcji Dodaj odwołanie do usługi. Nie jest generowany pierwszy plik konfiguracji. Aplikacje ze sklepu Windows nie używają plików konfiguracji, dlatego muszą być skonfigurowane w kodzie. Ten kod konfiguracji można znaleźć w pliku References.cs generowanym przez Dodaj odwołanie do usługi. Aby wyświetlić ten plik, upewnij się, że wybrano opcję "Pokaż wszystkie pliki" w Eksploratorze rozwiązań. Plik będzie znajdował się w ramach odwołań do usługi, a następnie odwołuje się do węzłów. svcmap w ramach projektu. Wszystkie operacje wygenerowane dla usług WCF w ramach aplikacji ze sklepu Windows będą asynchroniczne za pomocą wzorca asynchronicznego opartego na zadaniach. Aby uzyskać więcej informacji, zobacz [zadania asynchroniczne — uproszczenie programowania asynchronicznego z zadaniami](https://docs.microsoft.com/archive/msdn-magazine/2010/september/async-tasks-simplify-asynchronous-programming-with-tasks).  
+ Aby wywołać usługę WCF z poziomu aplikacji ze sklepu Windows, użyj funkcji Dodaj odwołanie do usługi programu Visual Studio 2012. Po wykonaniu tej czynności w aplikacji ze sklepu Windows zobaczysz kilka zmian w funkcji Dodaj odwołanie do usługi. Nie jest generowany pierwszy plik konfiguracji. Aplikacje ze sklepu Windows nie używają plików konfiguracji, dlatego muszą być skonfigurowane w kodzie. Ten kod konfiguracji można znaleźć w pliku References.cs generowanym przez Dodaj odwołanie do usługi. Aby wyświetlić ten plik, upewnij się, że wybrano opcję "Pokaż wszystkie pliki" w Eksploratorze rozwiązań. Plik będzie znajdował się w ramach odwołań do usługi, a następnie odwołuje się do węzłów. svcmap w ramach projektu. Wszystkie operacje wygenerowane dla usług WCF w ramach aplikacji ze sklepu Windows będą asynchroniczne za pomocą wzorca asynchronicznego opartego na zadaniach. Aby uzyskać więcej informacji, zobacz [zadania asynchroniczne — uproszczenie programowania asynchronicznego z zadaniami](/archive/msdn-magazine/2010/september/async-tasks-simplify-asynchronous-programming-with-tasks).  
   
  Ponieważ konfiguracja jest teraz generowana w kodzie, wszelkie zmiany wprowadzone w pliku Reference.cs zostałyby zastępować za każdym razem, gdy odwołanie do usługi zostanie zaktualizowane. Aby wyeliminować tę sytuację, kod konfiguracji jest generowany w ramach metody częściowej, którą można zaimplementować w klasie proxy klienta. Metoda częściowa jest zadeklarowana w następujący sposób:  
   
@@ -140,7 +140,7 @@ Następujące typy poświadczeń klienta są obsługiwane w aplikacjach ze sklep
  Aby aplikacje ze sklepu Windows mogły uzyskiwać dostęp do domyślnych poświadczeń systemu Windows i je wysyłać, należy włączyć tę funkcję w pliku Package. Appmanifest. Otwórz ten plik i wybierz kartę możliwości i wybierz pozycję "domyślne poświadczenia systemu Windows". Umożliwia to aplikacji łączenie się z zasobami intranetowymi, które wymagają poświadczeń domeny.  
   
 > [!IMPORTANT]
-> Aby aplikacje ze sklepu Windows mogły wykonywać wywołania między maszynami, należy włączyć inną możliwość nazywaną "siecią domową/służbową". To ustawienie znajduje się również w pliku Package. Appmanifest na karcie możliwości. Zaznacz pole wyboru Sieć domowa/Work. Zapewnia to aplikacji dostęp przychodzący i wychodzący do sieci zaufanych miejsc użytkownika, takich jak Home i Work. Przychodzące porty krytyczne są zawsze blokowane. Aby uzyskać dostęp do usług w Internecie, należy również włączyć funkcję internetową (klienta).  
+> Aby aplikacje ze sklepu Windows mogły wykonywać wywołania między maszynami, należy włączyć inną możliwość nazywaną "siecią domową/służbową". To ustawienie znajduje się również w pliku Package. Appmanifest na karcie możliwości. Wybierz pole wyboru Sieć domowa/Work. Zapewnia to aplikacji dostęp przychodzący i wychodzący do sieci zaufanych miejsc użytkownika, takich jak Home i Work. Przychodzące porty krytyczne są zawsze blokowane. Aby uzyskać dostęp do usług w Internecie, należy również włączyć funkcję internetową (klienta).  
   
 ### <a name="misc"></a>Różne  
  Użycie następujących klas jest obsługiwane w przypadku aplikacji ze sklepu Windows:  
@@ -175,7 +175,7 @@ void async SomeMethod()
   
  Zwróć uwagę na użycie słowa kluczowego Async na metodzie wywołującym wywołanie asynchroniczne i słowo kluczowe await podczas wywoływania metody asynchronicznej.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Programowanie zabezpieczeń WCF](programming-wcf-security.md)
 - [Powiązania](../bindings.md)

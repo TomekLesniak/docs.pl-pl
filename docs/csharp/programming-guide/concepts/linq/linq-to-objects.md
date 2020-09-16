@@ -3,16 +3,16 @@ title: LINQ to Objects (C#)
 description: Dowiedz się więcej o LINQ to Objects w języku C#, które używają zapytań LINQ z dowolną kolekcją IEnumerable lub IEnumerable <T> bez pośredniego dostawcy LINQ lub interfejsu API.
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
-ms.openlocfilehash: 7b67690ee13f207441bc94155acd91047b63b3df
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: f8e65f129dc002d9615b01e3a3a123514754b886
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165550"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557009"
 ---
 # <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
 
-Termin "LINQ to Objects" odnosi się do użycia zapytań LINQ z dowolnym <xref:System.Collections.IEnumerable> lub <xref:System.Collections.Generic.IEnumerable%601> kolekcją bezpośrednio, bez użycia pośredniego dostawcy LINQ lub interfejsu API, takiego jak [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) lub [LINQ to XML](./linq-to-xml-overview.md). Za pomocą LINQ można badać wszystkie wyliczalne kolekcje, takie jak <xref:System.Collections.Generic.List%601> , <xref:System.Array> lub <xref:System.Collections.Generic.Dictionary%602> . Kolekcja może być zdefiniowana przez użytkownika lub może być zwracana przez interfejs API platformy .NET.  
+Termin "LINQ to Objects" odnosi się do użycia zapytań LINQ z dowolnym <xref:System.Collections.IEnumerable> lub <xref:System.Collections.Generic.IEnumerable%601> kolekcją bezpośrednio, bez użycia pośredniego dostawcy LINQ lub interfejsu API, takiego jak [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) lub [LINQ to XML](../../../../standard/linq/linq-xml-overview.md). Za pomocą LINQ można badać wszystkie wyliczalne kolekcje, takie jak <xref:System.Collections.Generic.List%601> , <xref:System.Array> lub <xref:System.Collections.Generic.Dictionary%602> . Kolekcja może być zdefiniowana przez użytkownika lub może być zwracana przez interfejs API platformy .NET.  
   
  W podstawowym sensie LINQ to Objects reprezentuje nowe podejście do kolekcji. W stary sposób należy napisać złożone `foreach` pętle, które określają sposób pobierania danych z kolekcji. W podejściu LINQ napiszesz kod deklaratywny opisujący, co chcesz pobrać.  
   

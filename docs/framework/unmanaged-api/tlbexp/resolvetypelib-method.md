@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 95d2aa0d-8eeb-4a9f-a216-5249f7e2c167
 topic_type:
 - apiref
-ms.openlocfilehash: f0f6fe321f4d38129b6d70ce94a7ea8de8fff6c8
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 65bbae614c8872ab5d78b3855b56ceaf2aad50da
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75935667"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558189"
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib — Metoda
 Rozpoznaje prostą nazwę biblioteki typów przez zwrócenie jej w pełni kwalifikowanej ścieżki.  
@@ -38,7 +38,7 @@ HRESULT ResolveTypeLib(
   
 ## <a name="parameters"></a>Parametry  
  `bstrSimpleName`  
- podczas [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) , który zawiera prostą nazwę biblioteki typów.  
+ podczas [BSTR](/previous-versions/windows/desktop/automat/bstr) , który zawiera prostą nazwę biblioteki typów.  
   
  `tlbid`  
  podczas Identyfikator GUID przypisany do biblioteki typów w rejestrze.  
@@ -56,12 +56,12 @@ HRESULT ResolveTypeLib(
  podczas Flaga [SYSKIND](/windows/win32/api/oaidl/ne-oaidl-syskind) , która identyfikuje środowisko operacyjne. Typowe wartości to SYS_WIN32 i SYS_WIN64.  
   
  `pbstrResolvedTlbName`  
- określoną Wskaźnik do typu [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) , który zawiera pełną ścieżkę biblioteki typów o nazwie w parametrze `bstrSimpleName`.  
+ określoną Wskaźnik do typu [BSTR](/previous-versions/windows/desktop/automat/bstr) , który zawiera pełną ścieżkę do biblioteki typów o nazwie w `bstrSimpleName` parametrze.  
   
 ## <a name="remarks"></a>Uwagi  
- Metoda `ResolveTypeLib` jest wywoływana przez [funkcję LoadTypeLibWithResolver —](loadtypelibwithresolver-function.md) podczas przetwarzania [Tlbexp. exe (Eksporter biblioteki typów)](../../tools/tlbexp-exe-type-library-exporter.md) .  
+ `ResolveTypeLib`Metoda jest wywoływana przez [funkcję LoadTypeLibWithResolver —](loadtypelibwithresolver-function.md) podczas przetwarzania [Tlbexp.exe (Eksporter biblioteki typów)](../../tools/tlbexp-exe-type-library-exporter.md) .  
   
- Niestandardowe implementacje tego interfejsu muszą zwracać typ [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) , który zawiera pełną ścieżkę biblioteki typów o nazwie w parametrze `bstrSimpleName`.  
+ Niestandardowe implementacje tego interfejsu muszą zwracać element [BSTR](/previous-versions/windows/desktop/automat/bstr) , który zawiera pełną ścieżkę biblioteki typów o nazwie w `bstrSimpleName` parametrze.  
   
 ## <a name="requirements"></a>Wymagania  
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
@@ -70,9 +70,9 @@ HRESULT ResolveTypeLib(
   
  **Biblioteka:** TlbRef. lib  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Tlbexp, funkcje pomocy](index.md)
-- [LoadTypeLibEx](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+- [Tlbexp — funkcje pomocy](index.md)
+- [LoadTypeLibEx](/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

@@ -2,12 +2,12 @@
 title: Weryfikacja zabezpieczeń
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: 70408976469b1cbcf9c4679bd91d81872ec74ae1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ec7b7f96c1f6489f677970164f74c176b301f55b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599974"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557388"
 ---
 # <a name="security-validation"></a>Weryfikacja zabezpieczeń
 W tym przykładzie pokazano, jak za pomocą niestandardowego zachowania sprawdzić poprawność usług na komputerze, aby upewnić się, że spełniają one określone kryteria. W tym przykładzie usługi są weryfikowane przez zachowanie niestandardowe przez skanowanie poszczególnych punktów końcowych usługi i sprawdzanie, czy zawierają one bezpieczne elementy powiązania. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md).  
@@ -47,7 +47,7 @@ public void Validate(ServiceDescription serviceDescription,
 }  
 ```  
   
- Dodanie poniższego kodu do pliku Web. config dodaje `serviceValidate` rozszerzenie zachowania dla usługi do rozpoznania.  
+ Dodanie następującego kodu do pliku Web.config powoduje dodanie `serviceValidate` rozszerzenia zachowania dla usługi do rozpoznania.  
   
 ```xml  
 <system.serviceModel>  
@@ -60,7 +60,7 @@ public void Validate(ServiceDescription serviceDescription,
 </system.serviceModel>
 ```  
   
- Po dodaniu rozszerzenia zachowania do usługi można teraz dodać `endpointValidate` zachowanie do listy zachowań w pliku Web. config i w ten sposób do usługi.  
+ Po dodaniu rozszerzenia zachowania do usługi można teraz dodać `endpointValidate` zachowanie do listy zachowań w pliku Web.config i w ten sposób do usługi.  
   
 ```xml  
 <behaviors>  
@@ -73,10 +73,10 @@ public void Validate(ServiceDescription serviceDescription,
 </behaviors>  
 ```  
   
- Zachowania i ich rozszerzenia, które są dodawane do pliku Web. config, mają zastosowanie do poszczególnych usług, natomiast w przypadku dodania do pliku Machine. config należy zastosować zachowanie dla każdej usługi aktywnej na komputerze.  
+ Zachowania i ich rozszerzenia, które są dodawane do pliku Web.config, stosują zachowanie do poszczególnych usług, natomiast po dodaniu do pliku Machine.config Zastosuj zachowanie dla każdej usługi aktywnej na komputerze.  
   
 > [!NOTE]
-> Podczas dodawania zachowania do wszystkich usług zaleca się wykonanie kopii zapasowej pliku Machine. config przed wprowadzeniem jakichkolwiek zmian.  
+> Podczas dodawania zachowania do wszystkich usług zaleca się wykonanie kopii zapasowej pliku Machine.config przed wprowadzeniem jakichkolwiek zmian.  
   
  Teraz uruchom klienta dostarczonego w katalogu client\bin tego przykładu. Wystąpił wyjątek z następującym komunikatem: "nie można aktywować żądanej usługi" http://localhost/servicemodelsamples/service.svc ". Jest to oczekiwane, ponieważ punkt końcowy jest traktowany jako niezabezpieczony przez sprawdzanie poprawności zachowania punktu końcowego i uniemożliwia uruchomienie usługi. Zachowanie generuje również wyjątek wewnętrzny, który opisuje, który punkt końcowy jest niezabezpieczony i zapisuje komunikat do Podgląd zdarzeń systemu w ramach źródła "System. ServiceModel 4.0.0.0" i kategorii "WebHost". Możliwe jest również włączenie śledzenia usługi w tym przykładzie. Dzięki temu użytkownik może wyświetlić wyjątki zgłoszone przez sprawdzanie poprawności przez punkt końcowy, otwierając wynikowe ślady usługi za pomocą narzędzia Podgląd śledzenia usługi.  
   
@@ -107,6 +107,6 @@ public void Validate(ServiceDescription serviceDescription,
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ServiceValidation`  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady monitorowania oprogramowania AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

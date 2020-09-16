@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4759a661646b08ea6a93cab030a19af2cfeaca16
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 49817f9ad712e50669bab958296946c06d5c19eb
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803407"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679419"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Samouczek: wykrywanie obiektów przy użyciu ONNX w ML.NET
 
@@ -149,10 +149,10 @@ Utwórz klasę danych wejściowych w nowo utworzonym katalogu *struktury* danych
 
     [!code-csharp [ImageNetDataClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/DataStructures/ImageNetData.cs#L8-L23)]
 
-    `ImageNetData`jest klasą danych obrazu wejściowego i ma następujące <xref:System.String> pola:
+    `ImageNetData` jest klasą danych obrazu wejściowego i ma następujące <xref:System.String> pola:
 
-    - `ImagePath`zawiera ścieżkę, w której jest przechowywany obraz.
-    - `Label`zawiera nazwę pliku.
+    - `ImagePath` zawiera ścieżkę, w której jest przechowywany obraz.
+    - `Label` zawiera nazwę pliku.
 
     Ponadto program `ImageNetData` zawiera metodę `ReadFromFile` , która ładuje wiele plików obrazu przechowywanych w `imageFolder` określonej ścieżce i zwraca je jako kolekcję `ImageNetData` obiektów.
 
@@ -169,9 +169,9 @@ Utwórz klasę predykcyjną w katalogu *struktury* danych.
 
     [!code-csharp [ImageNetPredictionClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/DataStructures/ImageNetPrediction.cs#L5-L9)]
 
-    `ImageNetPrediction`jest klasą przewidywania i ma następujące `float[]` pole:
+    `ImageNetPrediction` jest klasą przewidywania i ma następujące `float[]` pole:
 
-    - `PredictedLabel`zawiera wymiary, wynik obiektu i prawdopodobieństwa klasy dla każdego z pól, które zostały wykryte w obrazie.
+    - `PredictedLabel` zawiera wymiary, wynik obiektu i prawdopodobieństwa klasy dla każdego z pól, które zostały wykryte w obrazie.
 
 ### <a name="initialize-variables-in-main"></a>Inicjuj zmienne w głównym
 
@@ -187,12 +187,12 @@ Model segmentuje obraz w `13 x 13` siatce, gdzie każda komórka siatki ma warto
 
 ![Przykład siatki po lewej stronie i pole ograniczenia ramki po prawej stronie](./media/object-detection-onnx/model-output-description.png)
 
-- `x`Pozycja x środka pola ograniczenia względem komórki siatki, z którą jest skojarzona.
-- `y`Pozycja y środka pola ograniczenia względem komórki siatki, z którą jest skojarzona.
-- `w`Szerokość pola ograniczenia.
-- `h`Wysokość pola ograniczenia.
-- `o`wartość pewności, którą obiekt istnieje w polu ograniczenia, znanego również jako wynik obiektu.
-- `p1-p20`prawdopodobieństwa klasy dla każdej z 20 klas przewidywanych przez model.
+- `x` Pozycja x środka pola ograniczenia względem komórki siatki, z którą jest skojarzona.
+- `y` Pozycja y środka pola ograniczenia względem komórki siatki, z którą jest skojarzona.
+- `w` Szerokość pola ograniczenia.
+- `h` Wysokość pola ograniczenia.
+- `o` wartość pewności, którą obiekt istnieje w polu ograniczenia, znanego również jako wynik obiektu.
+- `p1-p20` prawdopodobieństwa klasy dla każdej z 20 klas przewidywanych przez model.
 
 Łącznie 25 elementów opisujących każde z 5 pól ograniczenia tworzą elementy 125 zawarte w każdej komórce siatki.
 
@@ -215,12 +215,12 @@ Dane wyjściowe przez model zawierają współrzędne i wymiary pól ograniczeni
 
     [!code-csharp [DimensionsBaseClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/DimensionsBase.cs#L3-L9)]
 
-    `DimensionsBase`ma następujące `float` Właściwości:
+    `DimensionsBase` ma następujące `float` Właściwości:
 
-    - `X`zawiera położenie obiektu wzdłuż osi x.
-    - `Y`zawiera położenie obiektu wzdłuż osi y.
-    - `Height`zawiera wysokość obiektu.
-    - `Width`zawiera szerokość obiektu.
+    - `X` zawiera położenie obiektu wzdłuż osi x.
+    - `Y` zawiera położenie obiektu wzdłuż osi y.
+    - `Height` zawiera wysokość obiektu.
+    - `Width` zawiera szerokość obiektu.
 
 Następnie Utwórz klasę dla pól ograniczenia.
 
@@ -239,13 +239,13 @@ Następnie Utwórz klasę dla pól ograniczenia.
 
     [!code-csharp [YoloBoundingBoxClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloBoundingBox.cs#L7-L21)]
 
-    `YoloBoundingBox`ma następujące właściwości:
+    `YoloBoundingBox` ma następujące właściwości:
 
-    - `Dimensions`zawiera wymiary powiązanego pola.
-    - `Label`zawiera klasę obiektu wykryty w polu ograniczenia.
-    - `Confidence`zawiera zaufanie do klasy.
-    - `Rect`zawiera reprezentację prostokąta wymiarów powiązanego pola.
-    - `BoxColor`zawiera kolor skojarzony z odpowiednią klasą używaną do rysowania na obrazie.
+    - `Dimensions` zawiera wymiary powiązanego pola.
+    - `Label` zawiera klasę obiektu wykryty w polu ograniczenia.
+    - `Confidence` zawiera zaufanie do klasy.
+    - `Rect` zawiera reprezentację prostokąta wymiarów powiązanego pola.
+    - `BoxColor` zawiera kolor skojarzony z odpowiednią klasą używaną do rysowania na obrazie.
 
 ### <a name="create-the-parser"></a>Tworzenie analizatora
 
@@ -266,15 +266,15 @@ Teraz, gdy tworzone są klasy wymiarów i pól powiązanych, czas na utworzenie 
 
     [!code-csharp [ParserVarDefinitions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L12-L21)]
 
-    - `ROW_COUNT`to liczba wierszy w siatce, do których jest podzielona ilustracja.
-    - `COL_COUNT`jest liczbą kolumn w siatce, w której jest podzielony obraz.
-    - `CHANNEL_COUNT`to całkowita liczba wartości zawartych w jednej komórce siatki.
-    - `BOXES_PER_CELL`jest liczbą pól ograniczenia w komórce,
-    - `BOX_INFO_FEATURE_COUNT`to liczba funkcji zawartych w polu (x, y, wysokość, Szerokość, pewność).
-    - `CLASS_COUNT`to liczba prognoz klas zawartych w każdym polu ograniczenia.
-    - `CELL_WIDTH`jest szerokością jednej komórki w siatce obrazu.
-    - `CELL_HEIGHT`to wysokość jednej komórki w siatce obrazu.
-    - `channelStride`jest pozycją początkową bieżącej komórki siatki.
+    - `ROW_COUNT` to liczba wierszy w siatce, do których jest podzielona ilustracja.
+    - `COL_COUNT` jest liczbą kolumn w siatce, w której jest podzielony obraz.
+    - `CHANNEL_COUNT` to całkowita liczba wartości zawartych w jednej komórce siatki.
+    - `BOXES_PER_CELL` jest liczbą pól ograniczenia w komórce,
+    - `BOX_INFO_FEATURE_COUNT` to liczba funkcji zawartych w polu (x, y, wysokość, Szerokość, pewność).
+    - `CLASS_COUNT` to liczba prognoz klas zawartych w każdym polu ograniczenia.
+    - `CELL_WIDTH` jest szerokością jednej komórki w siatce obrazu.
+    - `CELL_HEIGHT` to wysokość jednej komórki w siatce obrazu.
+    - `channelStride` jest pozycją początkową bieżącej komórki siatki.
 
     Gdy model wykonuje prognozę, znaną również jako ocenianie, dzieli `416px x 416px` obraz wejściowy na siatkę komórek o rozmiarze `13 x 13` . Każda komórka zawiera `32px x 32px` . W każdej komórce istnieją 5 pól, które zawierają 5 funkcji (x, y, Szerokość, wysokość, pewność). Ponadto każde pole ograniczenia zawiera prawdopodobieństwo dla każdej z klas, co w tym przypadku wynosi 20. W związku z tym każda komórka zawiera 125 fragmenty informacji (5 funkcji + 20 prawdopodobieństwa dotyczącej klasy).
 
@@ -300,15 +300,15 @@ Etap przetwarzania końcowego obejmuje szereg kroków. Aby pomóc w tym, można 
 
 Metody pomocnika używane przez parser są następujące:
 
-- `Sigmoid`stosuje funkcję sigmoid, która wyprowadza liczbę z zakresu od 0 do 1.
-- `Softmax`normalizuje wektor wejściowy do rozkładu prawdopodobieństwa.
-- `GetOffset`mapuje elementy w danych wyjściowych modelu jednowymiarowego do odpowiedniej pozycji w dwukierunkowym `125 x 13 x 13` .
-- `ExtractBoundingBoxes`wyodrębnia Wymiary pola ograniczenia przy użyciu `GetOffset` metody z danych wyjściowych modelu.
-- `GetConfidence`Wyodrębnia wartość pewności, która określa, jak upewnić się, że model wykrył obiekt i używa funkcji, `Sigmoid` Aby przekształcić ją w wartość procentową.
-- `MapBoundingBoxToCell`używa wymiarów pola ograniczenia i mapuje je na odpowiednią komórkę w obrazie.
-- `ExtractClasses`wyodrębnia przewidywania klas dla pola ograniczenia z danych wyjściowych modelu przy użyciu `GetOffset` metody i włącza je do dystrybucji prawdopodobieństwa przy użyciu `Softmax` metody.
-- `GetTopResult`wybiera klasę z listy przewidywanych klas o największym prawdopodobieństwie.
-- `IntersectionOverUnion`filtruje nakładające się pola ograniczające o mniejsze prawdopodobieństwa.
+- `Sigmoid` stosuje funkcję sigmoid, która wyprowadza liczbę z zakresu od 0 do 1.
+- `Softmax` normalizuje wektor wejściowy do rozkładu prawdopodobieństwa.
+- `GetOffset` mapuje elementy w danych wyjściowych modelu jednowymiarowego do odpowiedniej pozycji w dwukierunkowym `125 x 13 x 13` .
+- `ExtractBoundingBoxes` wyodrębnia Wymiary pola ograniczenia przy użyciu `GetOffset` metody z danych wyjściowych modelu.
+- `GetConfidence` Wyodrębnia wartość pewności, która określa, jak upewnić się, że model wykrył obiekt i używa funkcji, `Sigmoid` Aby przekształcić ją w wartość procentową.
+- `MapBoundingBoxToCell` używa wymiarów pola ograniczenia i mapuje je na odpowiednią komórkę w obrazie.
+- `ExtractClasses` wyodrębnia przewidywania klas dla pola ograniczenia z danych wyjściowych modelu przy użyciu `GetOffset` metody i włącza je do dystrybucji prawdopodobieństwa przy użyciu `Softmax` metody.
+- `GetTopResult` wybiera klasę z listy przewidywanych klas o największym prawdopodobieństwie.
+- `IntersectionOverUnion` filtruje nakładające się pola ograniczające o mniejsze prawdopodobieństwa.
 
 Dodaj kod dla wszystkich metod pomocników znajdujących się poniżej listy `classColors` .
 
@@ -492,22 +492,22 @@ Podobnie jak w przypadku przetwarzania końcowego, należy wykonać kilka krokó
 
     [!code-csharp [LoadModelLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L47-L49)]
 
-    Potoki ML.NET muszą znać schemat danych do działania, gdy [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit*) wywoływana jest metoda. W takim przypadku zostanie użyty proces podobny do szkoleń. Ponieważ jednak żadne rzeczywiste szkolenie nie jest wykonywane, można go użyć jako pustego [`IDataView`](xref:Microsoft.ML.IDataView) . Utwórz nowy [`IDataView`](xref:Microsoft.ML.IDataView) dla potoku z pustej listy.
+    Potoki ML.NET muszą znać schemat danych do działania, gdy [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit%2A) wywoływana jest metoda. W takim przypadku zostanie użyty proces podobny do szkoleń. Ponieważ jednak żadne rzeczywiste szkolenie nie jest wykonywane, można go użyć jako pustego [`IDataView`](xref:Microsoft.ML.IDataView) . Utwórz nowy [`IDataView`](xref:Microsoft.ML.IDataView) dla potoku z pustej listy.
 
     [!code-csharp [LoadEmptyIDV](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L52)]
 
     Poniżej Zdefiniuj potoku. Potok będzie zawierać cztery przekształcenia.
 
-    - [`LoadImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.LoadImages*)ładuje obraz jako mapę bitową.
-    - [`ResizeImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.ResizeImages*)przeskaluje obraz do określonego rozmiaru (w tym przypadku `416 x 416` ).
-    - [`ExtractPixels`](xref:Microsoft.ML.ImageEstimatorsCatalog.ExtractPixels*)zmienia reprezentację obrazu z mapy bitowej na wektor numeryczny.
-    - [`ApplyOnnxModel`](xref:Microsoft.ML.OnnxCatalog.ApplyOnnxModel*)ładuje model ONNX i używa go do oceny dostarczonych danych.
+    - [`LoadImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.LoadImages%2A) ładuje obraz jako mapę bitową.
+    - [`ResizeImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.ResizeImages%2A) przeskaluje obraz do określonego rozmiaru (w tym przypadku `416 x 416` ).
+    - [`ExtractPixels`](xref:Microsoft.ML.ImageEstimatorsCatalog.ExtractPixels%2A) zmienia reprezentację obrazu z mapy bitowej na wektor numeryczny.
+    - [`ApplyOnnxModel`](xref:Microsoft.ML.OnnxCatalog.ApplyOnnxModel%2A) ładuje model ONNX i używa go do oceny dostarczonych danych.
 
     Zdefiniuj potok w `LoadModel` metodzie poniżej `data` zmiennej.
 
     [!code-csharp [ScoringPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L55-L58)]
 
-    Teraz czas na utworzenie wystąpienia modelu oceniania. Wywołaj [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit*) metodę w potoku i zwróć ją na dalsze przetwarzanie.
+    Teraz czas na utworzenie wystąpienia modelu oceniania. Wywołaj [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit%2A) metodę w potoku i zwróć ją na dalsze przetwarzanie.
 
     [!code-csharp [FitReturnModel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L61-L63)]
 
@@ -524,7 +524,7 @@ W programie `PredictDataUsingModel` Dodaj następujący kod do rejestrowania.
 
 [!code-csharp [PredictDataLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L68-L71)]
 
-Następnie użyj [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) metody do oceny danych.
+Następnie użyj [`Transform`](xref:Microsoft.ML.ITransformer.Transform%2A) metody do oceny danych.
 
 [!code-csharp [ScoreImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L73)]
 
@@ -626,11 +626,11 @@ Poniżej Ustaw opcje czcionki i koloru dla pola tekst i granice.
 
 [!code-csharp [SetColorOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L106-L114)]
 
-Utwórz i Wypełnij prostokąt powyżej pola ograniczenia, aby zawierać tekst przy użyciu [`FillRectangle`](xref:System.Drawing.Graphics.FillRectangle*) metody. Pomoże to zwiększyć kontrast tekstu i poprawić czytelność.
+Utwórz i Wypełnij prostokąt powyżej pola ograniczenia, aby zawierać tekst przy użyciu [`FillRectangle`](xref:System.Drawing.Graphics.FillRectangle%2A) metody. Pomoże to zwiększyć kontrast tekstu i poprawić czytelność.
 
 [!code-csharp [DrawTextBackground](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L117)]
 
-Następnie należy narysować tekst i obwiednię obrazu przy użyciu [`DrawString`](xref:System.Drawing.Graphics.DrawString*) [`DrawRectangle`](xref:System.Drawing.Graphics.DrawRectangle*) metod i.
+Następnie należy narysować tekst i obwiednię obrazu przy użyciu [`DrawString`](xref:System.Drawing.Graphics.DrawString%2A) [`DrawRectangle`](xref:System.Drawing.Graphics.DrawRectangle%2A) metod i.
 
 [!code-csharp [DrawClassAndBBox](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L118-L121)]
 

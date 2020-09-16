@@ -2,12 +2,12 @@
 title: 'Wzorce projektowania: Publikowanie/subskrybowanie oparte na liście'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 5aaea5b0def544f8b3e963d71e269592b9b40784
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 02668962afff5f760fc02692a92e72e765089545
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592349"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545582"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Wzorce projektowania: Publikowanie/subskrybowanie oparte na liście
 Ten przykład ilustruje wzorzec publikowania/subskrybowania opartego na liście wdrożony jako program Windows Communication Foundation (WCF).  
@@ -15,7 +15,7 @@ Ten przykład ilustruje wzorzec publikowania/subskrybowania opartego na liście 
 > [!NOTE]
 > Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.  
   
- Wzorzec projektowy publikowania/subskrybowania opartego na liście jest opisany w artykule wzorce firmy Microsoft dotyczące publikacji & praktyk, [wzorców integracji](https://docs.microsoft.com/previous-versions/msp-n-p/ff647309(v=pandp.10)). Wzorzec publikowania/subskrybowania przekazuje informacje do kolekcji adresatów, którzy subskrybują temat informacji. Publikowanie/subskrybowanie oparte na liście zachowuje listę subskrybentów. Gdy są informacje do udostępnienia, kopia jest wysyłana do każdego subskrybenta na liście. Ten przykład ilustruje dynamiczny wzorzec publikowania/subskrybowania opartego na listach, w którym klienci mogą subskrybować lub anulować subskrypcję, tak często, jak jest to wymagane.  
+ Wzorzec projektowy publikowania/subskrybowania opartego na liście jest opisany w artykule wzorce firmy Microsoft dotyczące publikacji & praktyk, [wzorców integracji](/previous-versions/msp-n-p/ff647309(v=pandp.10)). Wzorzec publikowania/subskrybowania przekazuje informacje do kolekcji adresatów, którzy subskrybują temat informacji. Publikowanie/subskrybowanie oparte na liście zachowuje listę subskrybentów. Gdy są informacje do udostępnienia, kopia jest wysyłana do każdego subskrybenta na liście. Ten przykład ilustruje dynamiczny wzorzec publikowania/subskrybowania opartego na listach, w którym klienci mogą subskrybować lub anulować subskrypcję, tak często, jak jest to wymagane.  
   
  Przykład publikowania/subskrybowania opartego na liście składa się z klienta, usługi i programu źródła danych. Może istnieć więcej niż jeden klient i więcej niż jeden uruchomiony program źródła danych. Klienci subskrybują usługę, odbierają powiadomienia i anulują subskrypcję. Programy ze źródeł danych wysyłają do usługi informacje, które mają być współużytkowane z bieżącymi subskrybentami.  
   
@@ -120,17 +120,17 @@ public class PriceChangeEventArgs : EventArgs
   
 1. Sprawdź, czy możesz uzyskać dostęp do usługi przy użyciu przeglądarki, wprowadzając następujący adres: `http://localhost/servicemodelsamples/service.svc` . W odpowiedzi powinna zostać wyświetlona strona potwierdzenia.  
   
-2. Uruchom program Client. exe z \client\bin \\ , z poziomu folderu specyficznego dla języka. Aktywność klienta jest wyświetlana w oknie konsoli klienta. Uruchom kilku klientów.  
+2. Uruchom Client.exe z \client\bin \\ , z poziomu folderu specyficznego dla języka. Aktywność klienta jest wyświetlana w oknie konsoli klienta. Uruchom kilku klientów.  
   
-3. Uruchom polecenie DataSource. exe z \datasource\bin \\ , z poziomu folderu specyficznego dla języka. Działanie źródła danych jest wyświetlane w oknie konsoli. Gdy źródło danych wyśle informacje do usługi, powinna zostać przeniesiona do każdego klienta.  
+3. Uruchom Datasource.exe z \datasource\bin \\ , z poziomu folderu specyficznego dla języka. Działanie źródła danych jest wyświetlane w oknie konsoli. Gdy źródło danych wyśle informacje do usługi, powinna zostać przeniesiona do każdego klienta.  
   
-4. Jeśli klient, źródło danych i programy usług nie będą mogły się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Jeśli klient, źródło danych i programy usług nie będą mogły się komunikować, zobacz Wskazówki dotyczące [rozwiązywania problemów z przykładami programu WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-machines"></a>Aby uruchomić przykład na wielu maszynach  
   
 1. Skonfiguruj maszynę usługi:  
   
-    1. Na maszynie usługi Utwórz katalog wirtualny o nazwie ServiceModelSamples. Plik wsadowy Setupvroot. bat z [procedury konfiguracji jednorazowej dla przykładów Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md) można użyć do utworzenia katalogu dysku i katalogu wirtualnego.  
+    1. Na maszynie usługi Utwórz katalog wirtualny o nazwie ServiceModelSamples. Plik wsadowy Setupvroot.bat z [procedury konfiguracji jednorazowej dla przykładów Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md) można użyć do utworzenia katalogu dysku i katalogu wirtualnego.  
   
     2. Skopiuj pliki programu usługi z%SystemDrive%\Inetpub\wwwroot\servicemodelsamples do katalogu wirtualnego ServiceModelSamples na maszynie usługi. Pamiętaj o uwzględnieniu plików w katalogu \Bin.  
   
@@ -148,9 +148,9 @@ public class PriceChangeEventArgs : EventArgs
   
     2. W pliku konfiguracji źródła danych Zmień wartość adresu definicji punktu końcowego, aby odpowiadała nowemu adresowi usługi. Zastąp wszystkie odwołania do "localhost" z w pełni kwalifikowaną nazwą domeny w adresie.  
   
-4. Na komputerach klienckich Uruchom program Client. exe z wiersza polecenia.  
+4. Na komputerach klienckich Uruchom Client.exe z wiersza polecenia.  
   
-5. Na maszynie źródła danych Uruchom plik DataSource. exe z wiersza polecenia.  
+5. Na maszynie źródła danych Uruchom Datasource.exe z wiersza polecenia.  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  
@@ -159,4 +159,4 @@ public class PriceChangeEventArgs : EventArgs
 >
 > Jeśli ten katalog nie istnieje, przejdź do [przykładów Windows Communication Foundation (WCF) i Windows Workflow Foundation (WF) dla .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) , aby pobrać wszystkie Windows Communication Foundation (WCF) i [!INCLUDE[wf1](../../../../includes/wf1-md.md)] przykłady. Ten przykład znajduje się w następującym katalogu.  
 >
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`

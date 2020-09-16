@@ -4,12 +4,12 @@ description: Informacje na temat przykładów i samouczków dotyczących platfor
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/19/2020
-ms.openlocfilehash: 587365aae1c2069c3e94ad0452da9c31dc6e89f0
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 7e477683834b46439626e03e6ff411fabc52672d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656960"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557193"
 ---
 # <a name="net-samples-and-tutorials"></a>Przykłady i samouczki dotyczące platformy .NET
 
@@ -17,7 +17,7 @@ Dokumentacja platformy .NET zawiera zestaw przykładów i samouczków, które po
 
 ## <a name="net-core"></a>.NET Core
 
-### <a name="samples"></a>Samples
+### <a name="samples"></a>Przykłady
 
 **[Testowanie jednostkowe w programie .NET Core przy użyciu testu dotnet](../core/testing/unit-testing-with-dotnet-test.md)**
 
@@ -39,7 +39,7 @@ Zobacz [samouczki ASP.NET Core](/aspnet/core/tutorials/). Wiele artykułów w do
 
 ## <a name="c-language"></a>C# — język
 
-### <a name="samples"></a>Samples
+### <a name="samples"></a>Przykłady
 
 **[Iteratory](../csharp/iterators.md)**
 
@@ -107,7 +107,7 @@ Wiele tematów pokazuje kod źródłowy i przykłady, które są dostępne do wy
 
 1. Pobierz repozytorium zawierające przykładowy kod, wykonując jedną z następujących procedur:
    * Pobierz plik ZIP repozytorium do systemu lokalnego. Cofnij kod ZIP skompresowanego archiwum.
-   * [Rozwidlenie](https://help.github.com/articles/fork-a-repo/) repozytorium i [klonowanie](https://help.github.com/articles/cloning-a-repository/) rozwidlenia do systemu lokalnego. Rozwidlenie i klonowanie pozwala na wprowadzanie wkładu do dokumentacji przez zatwierdzanie zmian w rozwidleniu, a następnie Tworzenie żądania ściągnięcia dla oficjalnego repozytorium dokumentów. Aby uzyskać więcej informacji, zobacz Przewodnik dotyczący [dokumentacji programu .NET](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute) i Podręcznik dotyczący [ASP.NET Core dokumentów](https://github.com/dotnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
+   * [Rozwidlenie](https://help.github.com/articles/fork-a-repo/) repozytorium i [klonowanie](https://help.github.com/articles/cloning-a-repository/) rozwidlenia do systemu lokalnego. Rozwidlenie i klonowanie pozwala na wprowadzanie wkładu do dokumentacji przez zatwierdzanie zmian w rozwidleniu, a następnie Tworzenie żądania ściągnięcia dla oficjalnego repozytorium dokumentów. Aby uzyskać więcej informacji, zobacz Przewodnik dotyczący [dokumentacji programu .NET](/contribute/dotnet/dotnet-contribute) i Podręcznik dotyczący [ASP.NET Core dokumentów](https://github.com/dotnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
    * Sklonuj repozytorium lokalnie. W przypadku sklonowania repozytorium dokumentów bezpośrednio do systemu lokalnego nie będzie można wprowadzać zatwierdzeń bezpośrednio do oficjalnego repozytorium, więc nie będzie można później wprowadzać wkładów do dokumentacji. Użyj opisanej wcześniej procedury rozwidlenia i klonowania, jeśli chcesz zachować możliwość późniejszego współtworzenia do dokumentacji.
 1. Nawigowanie w folderach repozytorium do lokalizacji przykładowej. Ścieżka względna do lokalizacji przykładu pojawia się na pasku adresu przeglądarki, gdy użyjesz linku do przykładu.
 1. Aby uruchomić przykład, masz kilka opcji:

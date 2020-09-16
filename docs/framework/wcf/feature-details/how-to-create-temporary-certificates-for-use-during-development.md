@@ -1,19 +1,19 @@
 ---
-title: 'Instrukcje: Tworzenie certyfikatów tymczasowych do używania w trakcie opracowywania'
+title: 'Instrukcje: tworzenie certyfikatów tymczasowych do używania w trakcie opracowywania'
 description: Dowiedz się, jak za pomocą polecenia cmdlet programu PowerShell utworzyć dwa tymczasowe certyfikaty X. 509 do użycia podczas tworzenia bezpiecznej usługi lub klienta WCF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 0a21548386639a9f6a8c8572e5d7928ffdb270d6
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 0907f7f8a3767db9d83e5deaae1d86141fbee7b0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247042"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557414"
 ---
-# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Instrukcje: Tworzenie certyfikatów tymczasowych do używania w trakcie opracowywania
+# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Instrukcje: tworzenie certyfikatów tymczasowych do używania w trakcie opracowywania
 
 Podczas tworzenia bezpiecznej usługi lub klienta przy użyciu programu Windows Communication Foundation (WCF) często konieczne jest podanie certyfikatu X. 509, który będzie używany jako poświadczenie. Certyfikat jest zwykle częścią łańcucha certyfikatów z urzędem głównym, które znajdują się w magazynie zaufanych głównych urzędów certyfikacji komputera. Łańcuch certyfikatów umożliwia określanie zakresu certyfikatów, w przypadku których zazwyczaj urząd główny pochodzi z organizacji lub jednostki biznesowej. Aby emulować ten czas podczas opracowywania, można utworzyć dwa certyfikaty spełniające wymagania dotyczące zabezpieczeń. Pierwszy to certyfikat z podpisem własnym, który znajduje się w magazynie zaufanych głównych urzędów certyfikacji, a drugi certyfikat jest tworzony od pierwszego i został umieszczony w magazynie osobistym lokalizacji komputera lokalnego lub w magazynie osobistym bieżącej lokalizacji użytkownika. W tym temacie przedstawiono procedurę tworzenia tych dwóch certyfikatów przy użyciu polecenia cmdlet programu PowerShell [New-SelfSignedCertificate)](/powershell/module/pkiclient/new-selfsignedcertificate) .
 
@@ -22,7 +22,7 @@ Podczas tworzenia bezpiecznej usługi lub klienta przy użyciu programu Windows 
 >
 > Domyślnie polecenie cmdlet [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) tworzy certyfikaty z podpisem własnym i te certyfikaty są niezabezpieczone. Umieszczenie certyfikatów z podpisem własnym w magazynie zaufanych głównych urzędów certyfikacji pozwala utworzyć środowisko programistyczne, które bardziej przypomina środowisko wdrażania.
 
- Aby uzyskać więcej informacji na temat tworzenia i używania certyfikatów, zobacz [Praca z certyfikatami](working-with-certificates.md). Aby uzyskać więcej informacji na temat korzystania z certyfikatu jako poświadczenia, zobacz [Zabezpieczanie usług i klientów](securing-services-and-clients.md). Aby zapoznać się z samouczkiem dotyczącym korzystania z technologii Microsoft Authenticode, zobacz Omówienie [i samouczki Authenticode](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85)).
+ Aby uzyskać więcej informacji na temat tworzenia i używania certyfikatów, zobacz [Praca z certyfikatami](working-with-certificates.md). Aby uzyskać więcej informacji na temat korzystania z certyfikatu jako poświadczenia, zobacz [Zabezpieczanie usług i klientów](securing-services-and-clients.md). Aby zapoznać się z samouczkiem dotyczącym korzystania z technologii Microsoft Authenticode, zobacz Omówienie [i samouczki Authenticode](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85)).
 
 ## <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a>Aby utworzyć certyfikat głównego urzędu certyfikacji z podpisem własnym i wyeksportować klucz prywatny
 
@@ -113,8 +113,8 @@ Aby uzyskać więcej informacji o używaniu certyfikatów w programie WCF, zobac
 
 Pamiętaj o usunięciu wszelkich tymczasowych certyfikatów głównych urzędów **certyfikacji z zaufanych głównych źródeł certyfikatów** i folderów **osobistych** , klikając prawym przyciskiem myszy certyfikat, a następnie klikając polecenie **Usuń**.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Praca z certyfikatami](working-with-certificates.md)
-- [Instrukcje: Wyświetlanie certyfikatów w przystawce programu MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Instrukcje: wyświetlanie certyfikatów w przystawce programu MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
 - [Zabezpieczanie usług i klientów](securing-services-and-clients.md)

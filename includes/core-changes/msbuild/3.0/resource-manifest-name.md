@@ -12,7 +12,7 @@ Począwszy od platformy .NET Core 3,0, w domyślnym przypadku MSBuild generuje i
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3.0
+3,0
 
 #### <a name="change-description"></a>Zmień opis
 

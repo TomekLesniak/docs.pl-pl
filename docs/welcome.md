@@ -3,12 +3,12 @@ title: .NET — Zapraszamy!
 description: Wprowadzenie do rodziny .NET Technologies.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 7b1c5eceefd1e108eabf17d5cb6f7552af00e0d5
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 707f83e912b6bd6999423949412cffba852093a0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495150"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558077"
 ---
 # <a name="welcome-to-net"></a>.NET — Zapraszamy!
 
@@ -34,24 +34,24 @@ Należy również przestrzegać najnowszych zdarzeń platformy .NET:
 Informacje o najnowszych funkcjach dodanych do implementacji platformy .NET i obsługiwanych języków można znaleźć w następujących artykułach:
 
 - [Co nowego w programie .NET Core 3.1](core/whats-new/dotnet-core-3-1.md)
-- [Co nowego w .NET Framework](framework/whats-new/index.md)
-- [Co nowego w języku C#](csharp/whats-new/index.md)
+- [Co nowego w programie .NET Framework](framework/whats-new/index.md)
+- [Co nowego w języku C#](./csharp/whats-new/csharp-9.md)
 - [Co nowego w Visual Basic](visual-basic/whats-new/index.md)
 
 ## <a name="documentation"></a>Dokumentacja
 
 Ta dokumentacja obejmuje szeroki zakres platformy .NET dla różnych platform i języków. Możesz rozpocząć pracę z platformą .NET i jej językami w dowolnej z następujących sekcji:
 
-- [Podstawy platformy .NET](fundamentals/index.yml)
-- [Przewodnik .NET Framework](framework/index.yml)
-- [Przewodnik C#](csharp/index.yml)
-- [Przewodnik po języku F #](fsharp/index.yml)
-- [Przewodnik Visual Basic](visual-basic/index.yml)
-- [Przewodnik ML.NET](machine-learning/index.yml)
+- [Podstawy programu .NET](fundamentals/index.yml)
+- [Przewodnik programu .NET Framework](framework/index.yml)
+- [Przewodnik języka C#](csharp/index.yml)
+- [Przewodnik języka F#](fsharp/index.yml)
+- [Przewodnik języka Visual Basic](visual-basic/index.yml)
+- [Przewodnik platformy ML.NET](machine-learning/index.yml)
 - [Platforma .NET for Apache Spark](spark/index.yml)
 - [Architektura aplikacji .NET](architecture/index.yml)
 
-Ponadto można przeglądać [Informacje o interfejsie API platformy .NET](/dotnet/api).
+Ponadto można przeglądać [Informacje o interfejsie API platformy .NET](../api/index.md).
 
 ## <a name="videos"></a>Filmy wideo
 

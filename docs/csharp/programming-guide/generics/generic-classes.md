@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 308f4328540e1001018942738d931be3d8be53ed
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: a885ae042eef939021d3a9b75616505c289bd43c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301921"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558090"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Klasy ogólne (Przewodnik programowania w języku C#)
 Klasy ogólne hermetyzują operacje, które nie są specyficzne dla określonego typu danych. Najbardziej typowym zastosowaniem klas ogólnych jest kolekcje, takie jak listy połączone, tabele skrótów, stosy, kolejki, drzewa i tak dalej. Operacje, takie jak dodawanie i usuwanie elementów z kolekcji, są wykonywane w taki sam sposób, niezależnie od typu przechowywanych danych.  
@@ -66,10 +66,10 @@ Klasy ogólne hermetyzują operacje, które nie są specyficzne dla określonego
   
  Klasy generyczne są niezmienne. Innymi słowy, jeśli parametr wejściowy określa `List<BaseClass>` , zostanie wyświetlony błąd czasu kompilacji, jeśli spróbujesz podać `List<DerivedClass>` .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Generic>
 - [Przewodnik programowania w języku C#](../index.md)
 - [Typy ogólne](./index.md)
-- [Zapisywanie stanu modułów wyliczających](https://docs.microsoft.com/archive/blogs/wesdyer/saving-the-state-of-enumerators)
-- [Dziedziczenie, część jedna](https://docs.microsoft.com/archive/blogs/ericlippert/an-inheritance-puzzle-part-one)
+- [Zapisywanie stanu modułów wyliczających](/archive/blogs/wesdyer/saving-the-state-of-enumerators)
+- [Dziedziczenie, część jedna](/archive/blogs/ericlippert/an-inheritance-puzzle-part-one)

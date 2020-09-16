@@ -2,12 +2,12 @@
 title: Korelacja komunikatów
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 84b10b507f9fdaa7c53cf937bb132c8cc0aac33f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c6c68ec36ecee294aa217f77f462dcea31f1e211
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591647"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557973"
 ---
 # <a name="message-correlation"></a>Korelacja komunikatów
 
@@ -66,7 +66,7 @@ public class OrderProcessorService : IOrderProcessor
 }
 ```
 
- Usługa używa klienta niestandardowego `OrderResponseClient` do wysyłania wiadomości MSMQ do kolejki. Ponieważ aplikacja, która odbiera i przetwarza komunikat, jest aplikacją usługi MSMQ, a nie aplikacją WCF, nie istnieje niejawna Umowa serwisowa między tymi dwiema aplikacjami. Dlatego nie można utworzyć serwera proxy za pomocą narzędzia Svcutil. exe w tym scenariuszu.
+ Usługa używa klienta niestandardowego `OrderResponseClient` do wysyłania wiadomości MSMQ do kolejki. Ponieważ aplikacja, która odbiera i przetwarza komunikat, jest aplikacją usługi MSMQ, a nie aplikacją WCF, nie istnieje niejawna Umowa serwisowa między tymi dwiema aplikacjami. Dlatego nie można utworzyć serwera proxy przy użyciu narzędzia Svcutil.exe w tym scenariuszu.
 
  Niestandardowy serwer proxy jest zasadniczo taki sam dla wszystkich aplikacji WCF, które używają `msmqIntegrationBinding` powiązania do wysyłania komunikatów. W przeciwieństwie do innych serwerów proxy, nie obejmuje zakresu operacji usługi. Jest to tylko operacja przesyłania wiadomości.
 
@@ -296,13 +296,13 @@ static void DisplayOrderStatus()
 
 2. Skopiuj pliki programu klienckiego z folderu \client\bin\, w obszarze folder specyficzny dla języka, do komputera klienckiego.
 
-3. W pliku Client. exe. config zmień orderQueueName, aby określić nazwę komputera usługi zamiast ".".
+3. W pliku Client.exe.config Zmień orderQueueName, aby określić nazwę komputera usługi zamiast ".".
 
-4. W pliku Service. exe. config zmień adres punktu końcowego klienta, aby określić nazwę komputera klienckiego zamiast ".".
+4. W pliku Service.exe.config Zmień adres punktu końcowego klienta, aby określić nazwę komputera klienckiego zamiast ".".
 
-5. Na komputerze usługi Uruchom polecenie Service. exe z wiersza polecenia.
+5. Na komputerze usługi Uruchom Service.exe z wiersza polecenia.
 
-6. Na komputerze klienckim uruchom program Client. exe z wiersza polecenia.
+6. Na komputerze klienckim uruchom Client.exe z wiersza polecenia.
 
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).
@@ -313,7 +313,7 @@ static void DisplayOrderStatus()
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tworzenie kolejek w programie WCF](../feature-details/queuing-in-wcf.md)
-- [Kolejkowanie komunikatów](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))
+- [Kolejkowanie komunikatów](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

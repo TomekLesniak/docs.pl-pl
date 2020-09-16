@@ -2,12 +2,12 @@
 title: Zgodność funkcji zaufania częściowego
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-ms.openlocfilehash: 85e34e365d125fe4f00756549ba5bda4311b78f8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6d009482037efac8e0f90d255e198f10a1234187
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579166"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551975"
 ---
 # <a name="partial-trust-feature-compatibility"></a>Zgodność funkcji zaufania częściowego
 Windows Communication Foundation (WCF) obsługuje ograniczoną część funkcjonalności w przypadku uruchamiania w środowisku częściowo zaufanym. Funkcje obsługiwane w częściowej relacji zaufania są przeznaczone dla określonego zestawu scenariuszy, zgodnie z opisem w temacie [obsługiwane scenariusze wdrażania](supported-deployment-scenarios.md) .  
@@ -28,7 +28,7 @@ Windows Communication Foundation (WCF) obsługuje ograniczoną część funkcjon
   
 - W przypadku korzystania z `[ServiceKnownType]` atrybutu należy określić metodę `public` .  
   
-- `[MessageContract]`klasy i ich członkowie mogą być `public` . Jeśli `[MessageContract]` Klasa jest zdefiniowana w zestawie aplikacji, może być `internal` i mieć `internal` członków.  
+- `[MessageContract]` klasy i ich członkowie mogą być `public` . Jeśli `[MessageContract]` Klasa jest zdefiniowana w zestawie aplikacji, może być `internal` i mieć `internal` członków.  
   
 ## <a name="system-provided-bindings"></a>Wiązania dostarczane przez system  
  <xref:System.ServiceModel.BasicHttpBinding>I <xref:System.ServiceModel.WebHttpBinding> są w pełni obsługiwane w środowisku częściowej relacji zaufania. <xref:System.ServiceModel.WSHttpBinding>Jest obsługiwana tylko w trybie zabezpieczenia transportu.  
@@ -67,7 +67,7 @@ Windows Communication Foundation (WCF) obsługuje ograniczoną część funkcjon
   
 - `[Serializable]`Model programowania/ISerializable nie jest obsługiwany w środowisku częściowej relacji zaufania.  
   
-- Znane typy muszą być określone w kodzie lub konfiguracji na poziomie komputera (Machine. config). Nie można określić znanych typów w konfiguracji na poziomie aplikacji ze względów bezpieczeństwa.  
+- Znane typy muszą być określone w kodzie lub konfiguracji na poziomie komputera (machine.config). Nie można określić znanych typów w konfiguracji na poziomie aplikacji ze względów bezpieczeństwa.  
   
 - Typy, które implementują <xref:System.Runtime.Serialization.IObjectReference> zgłoszenie wyjątku w środowisku częściowo zaufanym.  
   
@@ -90,12 +90,12 @@ Windows Communication Foundation (WCF) obsługuje ograniczoną część funkcjon
   
 - Oznacz wspólne zachowanie przy użyciu <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atrybutu, aby można go było uruchomić w przypadku wdrożenia jako częściowo zaufanej aplikacji. Należy pamiętać, że na komputerze można ustawić wpis rejestru, aby zapobiec uruchamianiu zestawów oznaczonych przez APTCA. .  
   
-- Upewnij się, że jeśli aplikacja jest wdrożona jako w pełni zaufana aplikacja, której użytkownicy nie mogą modyfikować ustawień zabezpieczeń dostępu kodu w celu uruchamiania aplikacji w środowisku częściowej relacji zaufania. Jeśli tak się stanie, zachowanie nie zostanie uruchomione i żaden wyjątek nie jest zgłaszany. Aby to sprawdzić, zobacz opcję **levelfinal** za pomocą [Narzędzia Caspol. exe (narzędzie do uzyskiwania dostępu do kodu)](../../tools/caspol-exe-code-access-security-policy-tool.md).  
+- Upewnij się, że jeśli aplikacja jest wdrożona jako w pełni zaufana aplikacja, której użytkownicy nie mogą modyfikować ustawień zabezpieczeń dostępu kodu w celu uruchamiania aplikacji w środowisku częściowej relacji zaufania. Jeśli tak się stanie, zachowanie nie zostanie uruchomione i żaden wyjątek nie jest zgłaszany. Aby to sprawdzić, zobacz **levelfinal** [Caspol.exe Option (Narzędzie zasad zabezpieczeń dostępu kodu)](../../tools/caspol-exe-code-access-security-policy-tool.md).  
   
  Przykład typowego zachowania można znaleźć [w temacie How to: Lock down Endpoints in the Enterprise](../extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
   
-## <a name="configuration"></a>Konfigurowanie  
- Po jednym wyjątku kod częściowo zaufany może ładować tylko sekcje konfiguracji WCF w `app.config` pliku lokalnym. Aby załadować sekcje konfiguracyjne WCF, które odwołują się do sekcji WCF w pliku Machine. config lub w katalogu głównym Web. config wymaga ConfigurationPermission (bez ograniczeń). Bez tego uprawnienia odwołania do sekcji konfiguracji WCF (zachowania, powiązania) poza lokalnym plikiem konfiguracji powoduje wyjątek podczas ładowania konfiguracji.  
+## <a name="configuration"></a>Konfiguracja  
+ Po jednym wyjątku kod częściowo zaufany może ładować tylko sekcje konfiguracji WCF w `app.config` pliku lokalnym. Aby załadować sekcje konfiguracyjne WCF odwołujące się do sekcji WCF w machine.config lub w pliku głównym web.config wymaga ConfigurationPermission (bez ograniczeń). Bez tego uprawnienia odwołania do sekcji konfiguracji WCF (zachowania, powiązania) poza lokalnym plikiem konfiguracji powoduje wyjątek podczas ładowania konfiguracji.  
   
  Jedynym wyjątkiem jest konfiguracja typu dla serializacji, zgodnie z opisem w sekcji serializacji tego tematu.  
   
@@ -127,7 +127,7 @@ Windows Communication Foundation (WCF) obsługuje ograniczoną część funkcjon
   
 - <xref:System.IO.Log>  
 
-- [System. ServiceModel. Internal. TransactionBridge](https://docs.microsoft.com/previous-versions/aa346556(v=vs.110))]
+- [System. ServiceModel. Internal. TransactionBridge](/previous-versions/aa346556(v=vs.110))]
   
  <xref:System.Diagnostics.TraceOptions>Nie należy określać następujących elementów członkowskich wyliczenia:  
   
@@ -145,7 +145,7 @@ Windows Communication Foundation (WCF) obsługuje ograniczoną część funkcjon
   
 ## <a name="other-limitations"></a>Inne ograniczenia  
 
-  Funkcja WCF jest ogólnie ograniczona do zagadnień związanych z zabezpieczeniami nałożonych przez aplikację hostingu. Jeśli na przykład WCF jest hostowana w aplikacji przeglądarki XAML (XBAP), podlegają ograniczeniam XBAP, zgodnie z opisem w [części Windows Presentation Foundation zabezpieczenia relacji zaufania](../../wpf/wpf-partial-trust-security.md).  
+  Funkcja WCF jest ogólnie ograniczona do zagadnień związanych z zabezpieczeniami nałożonych przez aplikację hostingu. Jeśli na przykład WCF jest hostowana w aplikacji przeglądarki XAML (XBAP), podlegają ograniczeniam XBAP, zgodnie z opisem w [części Windows Presentation Foundation zabezpieczenia relacji zaufania](/dotnet/desktop/wpf/wpf-partial-trust-security).  
   
  Następujące dodatkowe funkcje nie są włączone w przypadku uruchamiania programu indigO2 w środowisku częściowej relacji zaufania:  
   
@@ -160,7 +160,7 @@ Windows Communication Foundation (WCF) obsługuje ograniczoną część funkcjon
 ## <a name="unlisted-features"></a>Funkcje nieznajdujące się na liście  
  Najlepszym sposobem, aby poznać, że informacja lub akcja jest niedostępna w przypadku uruchamiania w środowisku częściowego zaufania, jest próba uzyskania dostępu do zasobu lub wykonania akcji wewnątrz `try` bloku, a następnie `catch` błędu. Aby uniknąć zalewania plików śledzenia ze zduplikowanymi błędami, WCF wyłącza śledzenie zasobu lub akcji po pierwszym błędzie zabezpieczeń. Istnieje jeden ślad wyjątku dla każdego niepowodzenia dostępu do zasobu, podczas gdy podejmowana jest próba uzyskania dostępu do zasobu lub wykonania akcji.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.Channels.HttpTransportBindingElement>
 - <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>

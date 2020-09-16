@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operating systems supported
 - hardware requirements
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
-ms.openlocfilehash: 92cc95f80d18251314db8d953520732841b0274c
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 6c14c94c0a2f88f28ec327a3463a6b525ef80ff6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557337"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557752"
 ---
 # <a name="net-framework-system-requirements"></a>Wymagania systemowe .NET Framework
 
@@ -99,7 +99,7 @@ Aby uzyskać informacje na temat cyklu pomocy technicznej .NET Framework wersji,
 
 - System Windows Server 2012 zawiera .NET Framework 4,5, więc nie trzeba go instalować oddzielnie. Podobnie system Windows Server 2012 R2 zawiera .NET Framework 4.5.1.
 
-- .NET Framework ma ograniczoną obsługę roli Server Core w systemie Windows Server 2008 R2 z dodatkiem SP1 lub nowszym. Listę nieobsługiwanych interfejsów API można znaleźć w temacie [funkcje serwera .NET Core](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85)) .
+- .NET Framework ma ograniczoną obsługę roli Server Core w systemie Windows Server 2008 R2 z dodatkiem SP1 lub nowszym. Listę nieobsługiwanych interfejsów API można znaleźć w temacie [funkcje serwera .NET Core](/previous-versions//dd745015(v=vs.85)) .
 
 - .NET Framework nie jest obsługiwana w systemie Windows Server 2008 R2 dla systemów z procesorem Itanium.
 
@@ -109,7 +109,7 @@ Aby uzyskać informacje na temat cyklu pomocy technicznej .NET Framework wersji,
 
 - W 64-bitowych systemach operacyjnych .NET Framework obsługuje zarówno 64 procesor WOW64 (32-bitowy), jak i natywne przetwarzanie 64-bitowe.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik instalacji](../install/index.md)
 - [Wprowadzenie](index.md)

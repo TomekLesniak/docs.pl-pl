@@ -2,12 +2,12 @@
 title: <add> dla <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
-ms.openlocfilehash: d682acd7fff6bab2c66660a028f8a75b780e21d2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8328b6d08c1b57ad7a899c8cb489e07037e5af09
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400664"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558164"
 ---
 # <a name="add-of-commonparameters"></a>\<add> dla \<commonParameters>
 Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu usługach. Zazwyczaj ten parametr zawiera parametry połączenia z bazą danych, które mogą być współużytkowane przez trwałe usługi.  
@@ -39,7 +39,7 @@ Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu
 |Atrybut|Opis|  
 |---------------|-----------------|  
 |name|Nazwa parametru określonego dla usługi.|  
-|value|Wartość parametru określonego dla usługi.|  
+|Wartość|Wartość parametru określonego dla usługi.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
  Brak.  
@@ -73,7 +73,7 @@ Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu
   
  Należy zauważyć, że `EnableRetries` parametr można ustawić na poziomie globalnym (jak pokazano w sekcji *Parametry* ) lub dla poszczególnych usług, które obsługują `EnableRetries` (jak pokazano w sekcji *usługi* ).  
   
- Aby uzyskać więcej informacji na temat używania pliku konfiguracji do sterowania zachowaniem <xref:System.Workflow.Runtime.WorkflowRuntime> obiektu Windows Workflow Foundation aplikacji hosta, zobacz [pliki konfiguracji przepływu pracy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
+ Aby uzyskać więcej informacji na temat używania pliku konfiguracji do sterowania zachowaniem <xref:System.Workflow.Runtime.WorkflowRuntime> obiektu Windows Workflow Foundation aplikacji hosta, zobacz [pliki konfiguracji przepływu pracy](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
   
 ## <a name="example"></a>Przykład  
   
@@ -93,5 +93,5 @@ Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu
 - <xref:System.Workflow.Runtime.WorkflowRuntime>
 - <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService>
 - <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>
-- [Pliki konfiguracji przepływu pracy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
+- [Pliki konfiguracji przepływu pracy](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
 - [\<commonParameters>](commonparameters.md)

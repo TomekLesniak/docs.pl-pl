@@ -1,22 +1,22 @@
 ---
-title: 'Instrukcje: Programowe dodawanie możliwości odnajdywania do usługi i klienta WCF'
+title: 'Instrukcje: programowe dodawanie możliwości odnajdywania do usługi i klienta WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: c28815d1d208d3e91785a13d95e03c09c0f02ed9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c1b92568d90734a33a7b36af987fdb7cbbbe5149
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596997"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557830"
 ---
-# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Instrukcje: Programowe dodawanie możliwości odnajdywania do usługi i klienta WCF
-W tym temacie wyjaśniono, jak umożliwić odnajdywanie usługi Windows Communication Foundation (WCF). Jest on oparty [na przykładu samoobsługowego](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host) .  
+# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Instrukcje: programowe dodawanie możliwości odnajdywania do usługi i klienta WCF
+W tym temacie wyjaśniono, jak umożliwić odnajdywanie usługi Windows Communication Foundation (WCF). Jest on oparty [na przykładu samoobsługowego](../samples/self-host.md) .  
   
 ### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Aby skonfigurować istniejącą przykładową usługę samoobsługi do odnajdowania  
   
 1. Otwórz rozwiązanie własne hosta w programie Visual Studio 2012. Przykład znajduje się w katalogu TechnologySamples\Basic\Service\Hosting\SelfHost.  
   
-2. Dodaj odwołanie do `System.ServiceModel.Discovery.dll` projektu usługi. Może zostać wyświetlony komunikat o błędzie z informacją "System. ServiceModel. Discovery. dll lub jedna z jej zależności wymaga nowszej wersji .NET Framework niż określona w projekcie... " Jeśli zobaczysz ten komunikat, kliknij prawym przyciskiem myszy projekt w Eksplorator rozwiązań i wybierz polecenie **Właściwości**. W oknie **właściwości projektu** upewnij się, że **Struktura docelowa** to [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] .  
+2. Dodaj odwołanie do `System.ServiceModel.Discovery.dll` projektu usługi. Może zostać wyświetlony komunikat o błędzie z informacją "System. ServiceModel.Discovery.dll lub jedna z jej zależności wymaga nowszej wersji .NET Framework niż określona w projekcie... " Jeśli zobaczysz ten komunikat, kliknij prawym przyciskiem myszy projekt w Eksplorator rozwiązań i wybierz polecenie **Właściwości**. W oknie **właściwości projektu** upewnij się, że **Struktura docelowa** to [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] .  
   
 3. Otwórz plik Service.cs i Dodaj następującą `using` instrukcję.  
   
@@ -58,9 +58,9 @@ W tym temacie wyjaśniono, jak umożliwić odnajdywanie usługi Windows Communic
   
 1. Dodaj nową aplikację konsolową do rozwiązania o nazwie `DiscoveryClientApp` .  
   
-2. Dodaj odwołanie do `System.ServiceModel.dll` i`System.ServiceModel.Discovery.dll`  
+2. Dodaj odwołanie do `System.ServiceModel.dll` i `System.ServiceModel.Discovery.dll`  
   
-3. Skopiuj pliki GeneratedClient.cs i App. config z istniejącego projektu klienta do nowego projektu DiscoveryClientApp. Aby to zrobić, kliknij prawym przyciskiem myszy pliki w **Eksplorator rozwiązań**, wybierz polecenie **Kopiuj**, a następnie wybierz projekt **DiscoveryClientApp** , kliknij prawym przyciskiem myszy i wybierz polecenie **Wklej**.  
+3. Skopiuj pliki GeneratedClient.cs i App.config z istniejącego projektu klienta do nowego projektu DiscoveryClientApp. Aby to zrobić, kliknij prawym przyciskiem myszy pliki w **Eksplorator rozwiązań**, wybierz polecenie **Kopiuj**, a następnie wybierz projekt **DiscoveryClientApp** , kliknij prawym przyciskiem myszy i wybierz polecenie **Wklej**.  
   
 4. Otwórz Program.cs.  
   
@@ -124,7 +124,7 @@ W tym temacie wyjaśniono, jak umożliwić odnajdywanie usługi Windows Communic
   
      Ta metoda używa adresu punktu końcowego zwróconego przez program, `FindCalculatorServiceAddress` Aby wywołać usługę Kalkulator.  
   
-11. Wewnątrz `InvokeCalculatorService` metody Utwórz wystąpienie `CalculatorServiceClient` klasy. Ta klasa jest definiowana przez przykład [samoobsługi](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host) . Został on wygenerowany przy użyciu Svcutil. exe.  
+11. Wewnątrz `InvokeCalculatorService` metody Utwórz wystąpienie `CalculatorServiceClient` klasy. Ta klasa jest definiowana przez przykład [samoobsługi](../samples/self-host.md) . Został on wygenerowany przy użyciu Svcutil.exe.  
   
     ```csharp  
     // Create a client  
@@ -190,11 +190,11 @@ W tym temacie wyjaśniono, jak umożliwić odnajdywanie usługi Windows Communic
   
 ### <a name="to-test-the-application"></a>Aby przetestować aplikację  
   
-1. Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i uruchom Service. exe.  
+1. Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i uruchom Service.exe.  
   
-2. Otwórz wiersz polecenia i uruchom Discoveryclientapp. exe.  
+2. Otwórz wiersz polecenia i uruchom Discoveryclientapp.exe.  
   
-3. Dane wyjściowe z usługi Service. exe powinny wyglądać podobnie jak następujące dane wyjściowe.  
+3. Dane wyjściowe z service.exe powinny wyglądać podobnie do poniższych danych wyjściowych.  
   
     ```output  
     Received Add(100,15.99)  
@@ -207,7 +207,7 @@ W tym temacie wyjaśniono, jak umożliwić odnajdywanie usługi Windows Communic
     Return: 6.25390869293308  
     ```  
   
-4. Dane wyjściowe z Discoveryclientapp. exe powinny wyglądać podobnie jak następujące dane wyjściowe.  
+4. Dane wyjściowe z Discoveryclientapp.exe powinny wyglądać podobnie do poniższych danych wyjściowych.  
   
     ```output  
     Invoking CalculatorService at http://localhost:8000/ServiceModelSamples/service  
@@ -220,7 +220,7 @@ W tym temacie wyjaśniono, jak umożliwić odnajdywanie usługi Windows Communic
     ```  
   
 ## <a name="example"></a>Przykład  
- Poniżej znajduje się lista kodów dla tego przykładu. Ponieważ ten kod jest oparty na przykładu z [własnym hostem](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host) , wyświetlane są tylko te pliki, które zostały zmienione. Aby uzyskać więcej informacji na temat przykładu samoobsługowego, zobacz [instrukcje dotyczące instalacji](https://docs.microsoft.com/dotnet/framework/wcf/samples/set-up-instructions).  
+ Poniżej znajduje się lista kodów dla tego przykładu. Ponieważ ten kod jest oparty na przykładu z [własnym hostem](../samples/self-host.md) , wyświetlane są tylko te pliki, które zostały zmienione. Aby uzyskać więcej informacji na temat przykładu samoobsługowego, zobacz [instrukcje dotyczące instalacji](../samples/set-up-instructions.md).  
   
 ```csharp  
 // Service.cs  
@@ -340,7 +340,7 @@ namespace DiscoveryClientApp
 }  
 ```  
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Omówienie odnajdywania WCF](wcf-discovery-overview.md)
 - [Model obiektów odnajdywania WCF](wcf-discovery-object-model.md)

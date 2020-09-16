@@ -2,12 +2,12 @@
 title: Wdrażanie bram interfejsu API za pomocą rozwiązania Ocelot
 description: Dowiedz się, jak zaimplementować bramy interfejsu API za pomocą Ocelot oraz jak używać Ocelot w środowisku opartym na kontenerach.
 ms.date: 03/02/2020
-ms.openlocfilehash: cd776b2fa31a630d9b58530605966ed2431912a2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5cee56e6b68bc08f9e1de41605951989a55dc0df
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539557"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679230"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementowanie bram interfejsu API za pomocą Ocelot
 
@@ -373,7 +373,7 @@ Ze względu na testowanie lub debugowanie, jeśli chcesz uzyskać bezpośredni d
 
 **Rysunek 6-36**. Bezpośredni dostęp do mikrousługi na potrzeby testowania
 
-Jednak aplikacja jest skonfigurowana, aby uzyskiwać dostęp do wszystkich mikrousług za pośrednictwem bram interfejsu API, a nie za pomocą portu bezpośredniego "skróty".
+Jednak aplikacja jest skonfigurowana, aby uzyskiwać dostęp do wszystkich mikrousług za pośrednictwem bram interfejsu API, a nie za pośrednictwem portu bezpośredniego.
 
 ### <a name="the-gateway-aggregation-pattern-in-eshoponcontainers"></a>Wzorzec agregacji bramy w eShopOnContainers
 

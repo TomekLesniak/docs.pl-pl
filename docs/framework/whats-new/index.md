@@ -8,18 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 3eba676a4134415f0e2981d5094c0b0f6a1651be
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 15350f93ffabb10136af1b9a4d12d5301e661b29
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559027"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551715"
 ---
 # <a name="whats-new-in-net-framework"></a>Co nowego w .NET Framework
 
 Ten artykuł podsumowuje najważniejsze nowe funkcje i ulepszenia w następujących wersjach .NET Framework:
 
-- [.NET Framework 4,8](#v48)
+- [ .NET Framework 4.8](#v48)
 - [.NET Framework 4.7.2](#v472)
 - [.NET Framework 4.7.1](#v471)
 - [.NET Framework 4,7](#v47)
@@ -350,7 +350,7 @@ Obsługa dekompresji przy użyciu interfejsów API systemu Windows jest włączo
 
 **Dodatkowe interfejsy API kolekcji**
 
-.NET Framework 4.7.2 dodaje wiele nowych interfejsów API do <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typów i. Należą do nich:
+.NET Framework 4.7.2 dodaje wiele nowych interfejsów API do <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typów i. Należą do nich następujące elementy:
 
 - `TryGetValue` metody, które zwiększają wzorzec try użyty w innych typach kolekcji do tych dwóch typów. Dostępne metody:
 
@@ -389,9 +389,9 @@ Public GetOrAdd(Of TArg)(key As TKey, valueFactory As Func(Of TKey, TArg, TValue
 
 [Iniekcja zależności (di)](/aspnet/core/fundamentals/dependency-injection#overview-of-dependency-injection) oddziela obiekty i ich zależności, tak aby kod obiektu nie był już zmieniany tylko z powodu zmiany zależności. Podczas tworzenia aplikacji ASP.NET, które są przeznaczone dla .NET Framework 4.7.2, można:
 
-- Używaj opartych na metodach, opartych na interfejsach i iniekcji konstruktorów w programach [obsługi i modułach](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), [wystąpieniach stron](xref:System.Web.UI.Page)i [kontrolach użytkownika](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) projektów aplikacji sieci Web ASP.NET.
+- Używaj opartych na metodach, opartych na interfejsach i iniekcji konstruktorów w programach [obsługi i modułach](/previous-versions/aspnet/bb398986(v=vs.100)), [wystąpieniach stron](xref:System.Web.UI.Page)i [kontrolach użytkownika](/previous-versions/aspnet/y6wb1a0e(v=vs.100)) projektów aplikacji sieci Web ASP.NET.
 
-- Używaj opartych na metodzie i iniekcji opartej na interfejsach w programach [obsługi i modułach](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), [wystąpieniach stron](xref:System.Web.UI.Page)i [kontrolach użytkowników](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) w projektach witryn sieci Web ASP.NET.
+- Używaj opartych na metodzie i iniekcji opartej na interfejsach w programach [obsługi i modułach](/previous-versions/aspnet/bb398986(v=vs.100)), [wystąpieniach stron](xref:System.Web.UI.Page)i [kontrolach użytkowników](/previous-versions/aspnet/y6wb1a0e(v=vs.100)) w projektach witryn sieci Web ASP.NET.
 
 - Podłącz różne struktury iniekcji zależności.
 
@@ -517,9 +517,9 @@ Metoda zwraca puste wartości wyliczalne  <xref:System.Windows.Diagnostics.Visu
 
 **Znajdowanie właścicieli ResourceDictionary**
 
-Począwszy od .NET Framework 4.7.2, asystent diagnostyczny może zlokalizować właścicieli danego elementu <xref:Windows.UI.Xaml.ResourceDictionary> .(Funkcja jest używana przez asystentów diagnostycznych, a nie przez aplikacje produkcyjne). Za każdym razem, gdy zostanie wprowadzona zmiana w programie <xref:Windows.UI.Xaml.ResourceDictionary> , WPF automatycznie odnajdzie wszystkie odwołania [DynamicResource —](../wpf/advanced/dynamicresource-markup-extension.md) , które mogą mieć wpływ na zmianę.
+Począwszy od .NET Framework 4.7.2, asystent diagnostyczny może zlokalizować właścicieli danego elementu <xref:Windows.UI.Xaml.ResourceDictionary> .(Funkcja jest używana przez asystentów diagnostycznych, a nie przez aplikacje produkcyjne). Za każdym razem, gdy zostanie wprowadzona zmiana w programie <xref:Windows.UI.Xaml.ResourceDictionary> , WPF automatycznie odnajdzie wszystkie odwołania [DynamicResource —](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) , które mogą mieć wpływ na zmianę.
 
-Asystent diagnostyczny, taki jak obiekt "Edytuj i Kontynuuj" programu Visual Studio, może chcieć przedłużyć ten sposób, aby obsługiwał odwołania [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Pierwszym krokiem w tym procesie jest znalezienie właścicieli słownika; oznacza to, aby znaleźć wszystkie obiekty, których `Resources` Właściwość odwołuje się do słownika (bezpośrednio lub pośrednio przez <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType> Właściwość). Trzy nowe metody statyczne zaimplementowane dla <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType> klasy, po jednej dla każdego z typów podstawowych, które mają `Resources` Właściwość, obsługują ten krok:
+Asystent diagnostyczny, taki jak obiekt "Edytuj i Kontynuuj" programu Visual Studio, może chcieć przedłużyć ten sposób, aby obsługiwał odwołania [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) . Pierwszym krokiem w tym procesie jest znalezienie właścicieli słownika; oznacza to, aby znaleźć wszystkie obiekty, których `Resources` Właściwość odwołuje się do słownika (bezpośrednio lub pośrednio przez <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType> Właściwość). Trzy nowe metody statyczne zaimplementowane dla <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType> klasy, po jednej dla każdego z typów podstawowych, które mają `Resources` Właściwość, obsługują ten krok:
 
 - [`public static IEnumerable<FrameworkElement> GetFrameworkElementOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetFrameworkElementOwners%2A)
 
@@ -531,7 +531,7 @@ Te metody zwracają pustą wartość wyliczalną, chyba że  <xref:System.Windo
 
 **Znajdowanie odwołań StaticResource**
 
-Asystent diagnostyczny może teraz odbierać powiadomienie za każdym razem, gdy zostanie rozpoznane odwołanie [StaticResource](../wpf/advanced/staticresource-markup-extension.md) .(Funkcja jest używana przez asystentów diagnostycznych, a nie przez aplikacje produkcyjne). Asystent diagnostyczny, taki jak funkcja "Edytuj i Kontynuuj" programu Visual Studio, może chcieć zaktualizować wszystkie zastosowania zasobu, gdy jego wartość <xref:Windows.UI.Xaml.ResourceDictionary> zmienia się. WPF robi to automatycznie w odniesieniu do [DynamicResource —](../wpf/advanced/dynamicresource-markup-extension.md) , ale celowo nie robi to w odniesieniu do [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Począwszy od .NET Framework 4.7.2, asystent diagnostyczny może użyć tych powiadomień, aby zlokalizować te zastosowania zasobu statycznego.
+Asystent diagnostyczny może teraz odbierać powiadomienie za każdym razem, gdy zostanie rozpoznane odwołanie [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) .(Funkcja jest używana przez asystentów diagnostycznych, a nie przez aplikacje produkcyjne). Asystent diagnostyczny, taki jak funkcja "Edytuj i Kontynuuj" programu Visual Studio, może chcieć zaktualizować wszystkie zastosowania zasobu, gdy jego wartość <xref:Windows.UI.Xaml.ResourceDictionary> zmienia się. WPF robi to automatycznie w odniesieniu do [DynamicResource —](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) , ale celowo nie robi to w odniesieniu do [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) . Począwszy od .NET Framework 4.7.2, asystent diagnostyczny może użyć tych powiadomień, aby zlokalizować te zastosowania zasobu statycznego.
 
 Powiadomienie jest implementowane przez nowe <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.StaticResourceResolved?displayProperty=nameWithType> zdarzenie:
 
@@ -543,7 +543,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
-To zdarzenie jest wywoływane za każdym razem, gdy środowisko uruchomieniowe rozwiązuje odwołanie [StaticResource](../wpf/advanced/staticresource-markup-extension.md) .<xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs>Argumenty opisują rozdzielczość i wskazują obiekt i właściwość, które obsługują odwołanie [StaticResource](../wpf/advanced/staticresource-markup-extension.md) , oraz  <xref:Windows.UI.Xaml.ResourceDictionary> klucz używany do rozwiązania:
+To zdarzenie jest wywoływane za każdym razem, gdy środowisko uruchomieniowe rozwiązuje odwołanie [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) .<xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs>Argumenty opisują rozdzielczość i wskazują obiekt i właściwość, które obsługują odwołanie [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) , oraz  <xref:Windows.UI.Xaml.ResourceDictionary> klucz używany do rozwiązania:
 
 ```csharp
 public class StaticResourceResolvedEventArgs : EventArgs
@@ -741,7 +741,7 @@ Począwszy od .NET Framework 4,7, usługa WCF umożliwia skonfigurowanie program
 
 **Zwiększona niezawodność aplikacji WCF i serializacji WCF**
 
-Program WCF zawiera szereg zmian w kodzie, które eliminują sytuacje wyścigu, co poprawia wydajność i niezawodność opcji serializacji. Należą do nich:
+Program WCF zawiera szereg zmian w kodzie, które eliminują sytuacje wyścigu, co poprawia wydajność i niezawodność opcji serializacji. Należą do nich następujące elementy:
 
 - Lepsza obsługa mieszania kodu asynchronicznego i synchronicznego w wywołaniach **SocketConnection. BeginRead** i **SocketConnection. Read**.
 - Zwiększona niezawodność podczas przerywania połączenia z **SharedConnectionListener** i **DuplexChannelBinder**.
@@ -758,7 +758,7 @@ W .NET Framework 4,7 Windows Forms Ulepszona obsługa monitorów o wysokiej rozd
 
 Począwszy od aplikacji, które są przeznaczone dla .NET Framework 4,7, .NET Framework funkcje o wysokiej rozdzielczości DPI i dynamicznej rozdzielczości DPI dla aplikacji Windows Forms. Obsługa wysokiej rozdzielczości DPI usprawnia układ i wygląd formularzy i kontrolek na monitorach o wysokiej rozdzielczości DPI. Dynamiczne DPI zmienia układ i wygląd formularzy i kontrolek, gdy użytkownik zmienia wartość DPI lub współczynnik skali wyświetlania uruchomionej aplikacji.
 
-Obsługa wysokiej rozdzielczości DPI to funkcja, która została skonfigurowana przez zdefiniowanie [\<System.Windows.Forms.ConfigurationSection>](../configure-apps/file-schema/winforms/index.md) sekcji w pliku konfiguracyjnym aplikacji. Aby uzyskać więcej informacji na temat dodawania obsługi wysokiej rozdzielczości DPI i dynamicznej rozdzielczości DPI do aplikacji Windows Forms, zobacz [Obsługa wysokiej rozdzielczości DPI w Windows Forms](../winforms/high-dpi-support-in-windows-forms.md).
+Obsługa wysokiej rozdzielczości DPI to funkcja, która została skonfigurowana przez zdefiniowanie [\<System.Windows.Forms.ConfigurationSection>](../configure-apps/file-schema/winforms/index.md) sekcji w pliku konfiguracyjnym aplikacji. Aby uzyskać więcej informacji na temat dodawania obsługi wysokiej rozdzielczości DPI i dynamicznej rozdzielczości DPI do aplikacji Windows Forms, zobacz [Obsługa wysokiej rozdzielczości DPI w Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms).
 
 <a name="WPF47"></a>
 
@@ -768,7 +768,7 @@ W .NET Framework 4,7, WPF obejmuje następujące udoskonalenia:
 
 **Obsługa stosu dotykowego/pióra opartego na komunikatach WM_POINTER systemu Windows**
 
-Masz teraz możliwość używania stosu dotykowego/pióra na podstawie [komunikatów WM_POINTER](https://docs.microsoft.com/previous-versions/windows/desktop/InputMsg/messages) zamiast platformy Windows Ink Services (roaming). Jest to funkcja opcjonalna w .NET Framework. Aby uzyskać więcej informacji, zobacz sekcję [zgodność aplikacji](../migration-guide/application-compatibility.md) .
+Masz teraz możliwość używania stosu dotykowego/pióra na podstawie [komunikatów WM_POINTER](/previous-versions/windows/desktop/InputMsg/messages) zamiast platformy Windows Ink Services (roaming). Jest to funkcja opcjonalna w .NET Framework. Aby uzyskać więcej informacji, zobacz sekcję [zgodność aplikacji](../migration-guide/application-compatibility.md) .
 
 **Nowa Implementacja interfejsów API drukowania WPF**
 
@@ -1196,7 +1196,7 @@ W .NET Framework 4.6.2 Windows Workflow Foundation został ulepszony w następuj
 
 **Obsługa wyrażeń języka C# i technologii IntelliSense w nieobsługiwanym projektancie WF**
 
-Począwszy od .NET Framework 4,5, WF obsługuje wyrażenia języka C# zarówno w projektancie programu Visual Studio, jak i w przepływach pracy w kodzie. Projektant przepływu pracy przeszukana jest kluczową cechą WF, która umożliwia Projektant przepływu pracy się w aplikacji poza programem Visual Studio (na przykład w WPF).  Windows Workflow Foundation zapewnia możliwość obsługi wyrażeń języka C# i IntelliSense w przemieszczonych Projektant przepływu pracyach. Aby uzyskać więcej informacji, zapoznaj się z [blogiem Windows Workflow Foundation](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
+Począwszy od .NET Framework 4,5, WF obsługuje wyrażenia języka C# zarówno w projektancie programu Visual Studio, jak i w przepływach pracy w kodzie. Projektant przepływu pracy przeszukana jest kluczową cechą WF, która umożliwia Projektant przepływu pracy się w aplikacji poza programem Visual Studio (na przykład w WPF).  Windows Workflow Foundation zapewnia możliwość obsługi wyrażeń języka C# i IntelliSense w przemieszczonych Projektant przepływu pracyach. Aby uzyskać więcej informacji, zapoznaj się z [blogiem Windows Workflow Foundation](/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
 
 `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` W wersjach .NET Framework wcześniejszych niż 4.6.2 Funkcja IntelliSense projektanta WF jest uszkodzona, gdy klient odbudowuje projekt przepływu pracy z programu Visual Studio. Gdy kompilacja projektu zakończy się pomyślnie, typy przepływu pracy nie są dostępne w projektancie, a w oknie **Lista błędów** są wyświetlane ostrzeżenia z funkcji IntelliSense dotyczące brakujących typów przepływów pracy. .NET Framework 4.6.2 rozwiązuje ten problem i udostępnia funkcję IntelliSense.
 
@@ -1343,7 +1343,7 @@ We wcześniejszych wersjach programu WPF Słowniki niestandardowe nie rozpoznaj�
 > [!NOTE]
 > Te nowe formaty plików nie są bezpośrednio obsługiwane przez interfejsy API sprawdzania pisowni WPF, a Słowniki niestandardowe dostarczane do WPF w aplikacjach powinny nadal używać plików. lex.
 
-**Samples**
+**Przykłady**
 
 Istnieje kilka przykładów WPF w repozytorium GitHub [Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples) . Pomóż nam ulepszyć nasze przykłady, wysyłając do nas żądanie ściągnięcia lub otwierając [problem usługi GitHub](https://github.com/Microsoft/WPF-Samples/issues).
 
@@ -1886,7 +1886,7 @@ Ulepszenia Windows Forms obejmują:
 
 Ulepszenia podczas debugowania aplikacji .NET Framework w Visual Studio 2013 obejmują:
 
-- Zwraca wartości w debugerze programu Visual Studio. Gdy debugujesz zarządzaną aplikację w Visual Studio 2013, w oknie samochody są wyświetlane typy zwracane i wartości dla metod. Te informacje są dostępne dla aplikacji klasycznych, sklepu Windows i Windows Phone. Aby uzyskać więcej informacji, zobacz [badanie wartości zwracanych wywołań metod](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120)).
+- Zwraca wartości w debugerze programu Visual Studio. Gdy debugujesz zarządzaną aplikację w Visual Studio 2013, w oknie samochody są wyświetlane typy zwracane i wartości dla metod. Te informacje są dostępne dla aplikacji klasycznych, sklepu Windows i Windows Phone. Aby uzyskać więcej informacji, zobacz [badanie wartości zwracanych wywołań metod](/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120)).
 
 - Edytuj i Kontynuuj dla aplikacji 64-bitowych. Visual Studio 2013 obsługuje funkcję Edytuj i Kontynuuj dla 64-bitowych aplikacji zarządzanych dla komputerów stacjonarnych, sklepu Windows i Windows Phone. Istniejące ograniczenia nadal obowiązują dla aplikacji 32-bitowych i 64-bitowych (zobacz ostatnią sekcję [obsługiwane zmiany kodu (C#)](/visualstudio/debugger/supported-code-changes-csharp) ).
 
@@ -1972,7 +1972,7 @@ Optymalizacja z przewodnikiem zarządzanym profilem (Mpgo.exe) umożliwia skróc
 
 ASP.NET 4,5 i 4.5.1 Dodawanie powiązania modelu dla formularzy sieci Web, obsługi protokołu WebSocket, obsługi asynchronicznych, ulepszeń wydajności i wielu innych funkcji. Więcej informacji można znaleźć w następujących zasobach:
 
-- [ASP.NET 4,5 i Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
+- [ASP.NET 4,5 i Visual Studio 2012](/previous-versions/aspnet/hh420390(v=vs.110))
 
 - [Rozszerzenie ASP.NET and Web Tools dla programu Visual Studio 2013 — informacje o wersji](/aspnet/visual-studio/overview/2013/release-notes)
 
@@ -2066,7 +2066,7 @@ Aby uzyskać więcej informacji, zobacz [co nowego w Windows Communication Found
 
 W .NET Framework 4,5 dodano kilka nowych funkcji do Windows Workflow Foundation (WF), w tym:
 
-- Przepływy pracy automatu Stanów, które zostały po raz pierwszy wprowadzone w ramach .NET Framework 4.0.1 ([aktualizacja .NET Framework 4 platformy 1](https://docs.microsoft.com/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1)). Ta aktualizacja zawiera kilka nowych klas i działań, które umożliwiają deweloperom tworzenie przepływów pracy automatu Stanów. Te klasy i działania zostały zaktualizowane dla .NET Framework 4,5, aby uwzględnić:
+- Przepływy pracy automatu Stanów, które zostały po raz pierwszy wprowadzone w ramach .NET Framework 4.0.1 ([aktualizacja .NET Framework 4 platformy 1](/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1)). Ta aktualizacja zawiera kilka nowych klas i działań, które umożliwiają deweloperom tworzenie przepływów pracy automatu Stanów. Te klasy i działania zostały zaktualizowane dla .NET Framework 4,5, aby uwzględnić:
 
   - Możliwość ustawiania punktów przerwania w Stanach.
 
@@ -2118,13 +2118,13 @@ Aby uzyskać więcej informacji, zobacz [co nowego w Windows Workflow Foundation
 
 ### <a name="net-for-windows-8x-store-apps"></a>Platforma .NET dla aplikacji do Sklepu Windows 8.x
 
-Aplikacje ze sklepu Windows 8. x są przeznaczone do określonych współczynników i wykorzystują możliwości systemu operacyjnego Windows. Podzestaw .NET Framework 4,5 lub 4.5.1 jest dostępny do kompilowania aplikacji ze sklepu Windows 8. x dla systemu Windows przy użyciu języka C# lub Visual Basic. Ten podzestaw nosi nazwę .NET dla aplikacji ze sklepu Windows 8. x i został omówiony w [przeglądzie](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
+Aplikacje ze sklepu Windows 8. x są przeznaczone do określonych współczynników i wykorzystują możliwości systemu operacyjnego Windows. Podzestaw .NET Framework 4,5 lub 4.5.1 jest dostępny do kompilowania aplikacji ze sklepu Windows 8. x dla systemu Windows przy użyciu języka C# lub Visual Basic. Ten podzestaw nosi nazwę .NET dla aplikacji ze sklepu Windows 8. x i został omówiony w [przeglądzie](/previous-versions/windows/apps/br230302(v=vs.140)).
 
 ### <a name="portable-class-libraries"></a>Przenośne biblioteki klas <a name="portable"></a>
 
 Przenośna biblioteka klas w programie Visual Studio 2012 (i nowszych wersjach) umożliwia pisanie i kompilowanie zestawów zarządzanych, które działają na wielu platformach .NET Framework. Korzystając z projektu biblioteki klas przenośnych, należy wybrać platformy (takie jak Windows Phone i .NET dla systemu Windows 8. x aplikacji do sklepu). Dostępne typy i elementy członkowskie w projekcie są automatycznie ograniczone do wspólnych typów i elementów członkowskich na tych platformach. Aby uzyskać więcej informacji, zobacz [Przenośna biblioteka klas](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Program .NET Framework i wydania poza harmonogramem (OOB)](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co nowego w ułatwieniach dostępu w .NET Framework](whats-new-in-accessibility.md)

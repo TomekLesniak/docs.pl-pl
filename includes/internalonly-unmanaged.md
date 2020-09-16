@@ -7,4 +7,4 @@ ms.lasthandoff: 03/15/2020
 ms.locfileid: "72523796"
 ---
 > [!NOTE]
-> Ten interfejs API jest przeznaczony wyłącznie do użytku wewnętrznego. Nie jest przeznaczony do użycia z kodu dewelopera.
+> Ten interfejs API jest przeznaczony tylko do użytku wewnętrznego. Nie jest ona przeznaczona do użycia w kodzie dewelopera.

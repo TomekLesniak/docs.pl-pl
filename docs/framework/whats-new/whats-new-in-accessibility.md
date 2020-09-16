@@ -7,12 +7,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: df9188c4f7c2af77f5dc87309880a41724254c5c
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d204bea7f5ec1ed0c25b7b2dedd04d61c7f3e93d
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558962"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679550"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co nowego w ułatwieniach dostępu w .NET Framework
 
@@ -136,7 +136,7 @@ namespace WindowsFormsApplication
 
 **UIA zdarzenia powiadomień**
 
-Zdarzenie powiadamiania UIA wprowadzone w ramach aktualizacji systemu Windows 10 z aktualizacją dla twórców pozwala aplikacji na zgłaszanie zdarzenia UIA, które prowadzi do Narratora w oparciu o tekst dostarczany wraz ze zdarzeniem, bez konieczności posiadania odpowiedniej kontrolki w interfejsie użytkownika. W niektórych scenariuszach jest to prosty sposób znacznie zwiększyć dostępność aplikacji. W programie może być również przydatne powiadamianie o postępie niektórych procesów, które mogą zająć dużo czasu. Aby uzyskać więcej informacji na temat zdarzeń powiadomień UIA, zobacz [czy aplikacja klasyczna korzysta z nowego zdarzenia powiadamiania o interfejsie użytkownika?](https://docs.microsoft.com/archive/blogs/winuiautomation/can-your-desktop-app-leverage-the-new-uia-notification-event-in-order-to-have-narrator-say-exactly-what-your-customers-need).
+Zdarzenie powiadamiania UIA wprowadzone w ramach aktualizacji systemu Windows 10 z aktualizacją dla twórców pozwala aplikacji na zgłaszanie zdarzenia UIA, które prowadzi do Narratora w oparciu o tekst dostarczany wraz ze zdarzeniem, bez konieczności posiadania odpowiedniej kontrolki w interfejsie użytkownika. W niektórych scenariuszach jest to prosty sposób znacznie zwiększyć dostępność aplikacji. W programie może być również przydatne powiadamianie o postępie niektórych procesów, które mogą zająć dużo czasu. Aby uzyskać więcej informacji na temat zdarzeń powiadomień UIA, zobacz [czy aplikacja klasyczna korzysta z nowego zdarzenia powiadamiania o interfejsie użytkownika?](/archive/blogs/winuiautomation/can-your-desktop-app-leverage-the-new-uia-notification-event-in-order-to-have-narrator-say-exactly-what-your-customers-need).
 
 Poniższy przykład podnosi [zdarzenie powiadomienia](xref:System.Windows.Forms.AccessibleObject.RaiseAutomationNotification%2A):
 
@@ -387,7 +387,7 @@ Począwszy od .NET Framework 4.7.2, <xref:System.Windows.Forms.DataGridView> for
 
 **Zmiany w kontrolkach CheckBox i RadioButton**
 
-W .NET Framework 4.7.1 i starszych wersjach, WPF <xref:System.Windows.Controls.CheckBox?displayProperty=nameWIthType> i <xref:System.Windows.Controls.RadioButton?displayProperty=nameWIthType> kontrolki są niespójne i w kompozycjach klasycznych i duży kontrast, nieprawidłowe wizualizacje fokusu.  Te problemy występują w przypadkach, gdy kontrolki nie mają żadnego zestawu zawartości.  Może to spowodować, że przejście między motywami jest mylące i wizualizacja fokusu będzie widoczna.
+W .NET Framework 4.7.1 i starszych wersjach, WPF <xref:System.Windows.Controls.CheckBox?displayProperty=nameWithType> i <xref:System.Windows.Controls.RadioButton?displayProperty=nameWithType> kontrolki są niespójne i w kompozycjach klasycznych i duży kontrast, nieprawidłowe wizualizacje fokusu.  Te problemy występują w przypadkach, gdy kontrolki nie mają żadnego zestawu zawartości.  Może to spowodować, że przejście między motywami jest mylące i wizualizacja fokusu będzie widoczna.
 
 W .NET Framework 4.7.2 te wizualizacje są teraz bardziej spójne w różnych motywach i łatwiej widoczne w klasycznych i duży kontrast motywach.
 
@@ -472,7 +472,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 **High contrast** (Wysoki kontrast)
 
-Począwszy od .NET Framework 4.7.1, wprowadzono ulepszenia w różnych kontrolkach WPF. Są one teraz widoczne po <xref:System.Windows.SystemParameters.HighContrast%2A> ustawieniu motywu. Należą do nich:
+Począwszy od .NET Framework 4.7.1, wprowadzono ulepszenia w różnych kontrolkach WPF. Są one teraz widoczne po <xref:System.Windows.SystemParameters.HighContrast%2A> ustawieniu motywu. Należą do nich następujące elementy:
 
 - <xref:System.Windows.Controls.Expander> kontroli
 
@@ -707,6 +707,6 @@ Zmiany ułatwień dostępu w Projektant przepływu pracy obejmują następujące
 
 - Użytkownicy, którzy wybierają duży kontrast motywy zobaczą wiele ulepszeń w zakresie widoczności Projektant przepływu pracy i jej kontrolek, takich jak lepsze współczynniki kontrastu między elementami i bardziej zauważalne pola wyboru używane do elementów fokusu.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Co nowego w programie .NET Framework](index.md)

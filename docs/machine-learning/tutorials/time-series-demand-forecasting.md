@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: d93bdee8d5a057be0f405fe4334d7edbdc0649ec
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 214a368ba269103093a90431cdf9e77ab5989c07
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174409"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557219"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Samouczek: prognozowanie popytu na usługę najmu roweru za pomocą analiz szeregów czasowych i ML.NET
 
@@ -73,7 +73,7 @@ Oryginalny zestaw danych zawiera kilka kolumn odpowiadających sezonowości i po
 
 Oryginalny zestaw danych jest mapowany do tabeli bazy danych z następującym schematem w bazie danych SQL Server.
 
-```SQL
+```sql
 CREATE TABLE [Rentals] (
     [RentalDate] DATE NOT NULL,
     [Year] INT NOT NULL,
@@ -217,7 +217,7 @@ Oceń, jak dobrze model wykonuje, prognozowanie danych w następnym roku i poró
 
 Jeśli Twój model jest zadowalający, Zapisz go do późniejszego użycia w innych aplikacjach.
 
-1. W `Main` metodzie Utwórz [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602) . [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602)jest wygodną metodą podejmowania pojedynczych prognoz.
+1. W `Main` metodzie Utwórz [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602) . [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602) jest wygodną metodą podejmowania pojedynczych prognoz.
 
     [!code-csharp [CreateTimeSeriesEngine](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L51)]
 
@@ -287,7 +287,7 @@ Gratulacje! Pomyślnie skompilowano model uczenia maszynowego w szeregach czasow
 
 Kod źródłowy dla tego samouczka można znaleźć w repozytorium [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) .
 
-## <a name="next-steps"></a>Kolejne kroki
+## <a name="next-steps"></a>Następne kroki
 
 - [Zadania uczenia maszynowego w ML.NET](../resources/tasks.md)
 - [Zwiększanie dokładności modelu](../resources/improve-machine-learning-model-ml-net.md)

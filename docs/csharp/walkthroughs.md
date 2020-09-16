@@ -7,12 +7,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: d7e367f3b4e9a6d88d2a13ca8727d2e2884bb97c
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 5d181f5bc9f7e16051f16ca68490744e9c0d3abd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810602"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557921"
 ---
 # <a name="c-walkthroughs"></a>Wskazówki dotyczące języka C#
 
@@ -34,19 +34,19 @@ Instruktaże zawierają instrukcje krok po kroku dla typowych scenariuszy, co sp
 - [Tworzenie i używanie obiektów dynamicznych (C# i Visual Basic)](./programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)\
   Pokazuje, jak utworzyć niestandardowy obiekt, który dynamicznie uwidacznia zawartość pliku tekstowego i jak utworzyć projekt, który używa `IronPython` biblioteki.
 
-- [Tworzenie kontrolki złożonej za pomocą języka Visual C #](../framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)\
+- [Tworzenie kontrolki złożonej za pomocą języka Visual C #](/dotnet/desktop/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp)\
   Demonstruje Tworzenie prostego formantu złożonego i rozszerzanie jego funkcjonalności przez dziedziczenie.
 
-- [Tworzenie kontrolki Windows Forms, która wykorzystuje funkcje czasu projektowania programu Visual Studio](../framework/winforms/controls/creating-a-wf-control-design-time-features.md)\
+- [Tworzenie kontrolki Windows Forms, która wykorzystuje funkcje czasu projektowania programu Visual Studio](/dotnet/desktop/winforms/controls/creating-a-wf-control-design-time-features)\
   Ilustruje sposób tworzenia niestandardowego projektanta dla kontrolki niestandardowej.
 
-- [Dziedziczenie z kontrolki Windows Forms przy użyciu języka Visual C #](../framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)\
+- [Dziedziczenie z kontrolki Windows Forms przy użyciu języka Visual C #](/dotnet/desktop/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp)\
   Demonstruje tworzenie prostej dziedziczonej kontrolki Button. Ten przycisk dziedziczy funkcje ze standardowego przycisku Windows Forms i uwidacznia niestandardowy element członkowski.
 
-- [Debugowanie niestandardowych kontrolek Windows Forms w czasie projektowania](../framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)\
+- [Debugowanie niestandardowych kontrolek Windows Forms w czasie projektowania](/dotnet/desktop/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time)\
   Opisuje sposób debugowania zachowania niestandardowej kontrolki czasu projektowania.
 
-- [Przewodnik: wykonywanie typowych zadań przy użyciu akcji projektanta](../framework/winforms/controls/perform-common-tasks-design-actions.md)\
+- [Przewodnik: wykonywanie typowych zadań przy użyciu akcji projektanta](/dotnet/desktop/winforms/controls/perform-common-tasks-design-actions)\
   Pokazuje niektóre z często wykonywanych zadań, takich jak dodawanie lub usuwanie karty na `TabControl` , dokowanie kontrolki do jej elementu nadrzędnego i zmiana orientacji `SplitContainer` formantu.
 
 - [Pisanie zapytań w języku C# (LINQ)](./programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)\
@@ -72,7 +72,7 @@ Instruktaże zawierają instrukcje krok po kroku dla typowych scenariuszy, co sp
 - [Przykłady i wskazówki dotyczące wdrażania](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)\
   Zawiera przykładowe instrukcje krok po kroku dotyczące typowych scenariuszy wdrażania.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik programowania w języku C#](./programming-guide/index.md)
 - [Przykłady programu Visual Studio](/visualstudio/ide/visual-studio-ide)

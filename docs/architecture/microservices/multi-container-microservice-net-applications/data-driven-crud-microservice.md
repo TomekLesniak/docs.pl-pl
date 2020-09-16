@@ -2,12 +2,12 @@
 title: Tworzenie prostej mikrousługi CRUD na podstawie danych
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się z tworzeniem prostej mikrousługi CRUD (opartej na danych) w kontekście aplikacji mikrousług.
 ms.date: 08/14/2020
-ms.openlocfilehash: 4d475ba42cb0f86b57b2467549635556cab1136d
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 46654b9e6283d913910b62621d056e034c18870e
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267961"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679152"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Tworzenie prostej mikrousługi CRUD na podstawie danych
 
@@ -219,7 +219,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Wykonywanie zapytania dotyczącego danych** \
   [https://docs.microsoft.com/ef/core/querying/index](/ef/core/querying/index)
@@ -288,7 +288,7 @@ Obsługa wersji umożliwia korzystanie z interfejsu API sieci Web w celu wskazan
 
 - Obsługa wersji za pomocą nagłówka
 
-Jest to najprostszy do zaimplementowania ciąg zapytania i wersja identyfikatora URI. Przechowywanie wersji nagłówka jest dobrym rozwiązaniem. Jednak wersja nagłówka nie jest jawna i prosta jako wersja identyfikatora URI. Ponieważ przechowywanie wersji adresów URL jest najprostszym i najbardziej jawnym, przykładowa aplikacja eShopOnContainers korzysta z obsługi wersji identyfikatorów URI.
+Jest to najprostszy do zaimplementowania ciąg zapytania i wersja identyfikatora URI. Przechowywanie wersji nagłówka jest dobrym rozwiązaniem. Przechowywanie wersji nagłówków nie jest jednak jawne i proste jako przechowywanie wersji identyfikatorów URI. Ponieważ przechowywanie wersji adresów URL jest najprostszym i najbardziej jawnym, przykładowa aplikacja eShopOnContainers korzysta z obsługi wersji identyfikatorów URI.
 
 W przypadku obsługi wersji identyfikatorów URI, podobnie jak w przypadku przykładowej aplikacji eShopOnContainers, przy każdej modyfikacji internetowego interfejsu API lub zmianie schematu zasobów należy dodać numer wersji do identyfikatora URI dla każdego zasobu. Istniejące identyfikatory URI powinny nadal działać jak poprzednio, zwracając zasoby zgodne ze schematem, który jest zgodny z żądaną wersją.
 
@@ -303,7 +303,7 @@ public class CatalogController : ControllerBase
 
 Ten mechanizm przechowywania wersji jest prosty i zależy od serwera routingu żądania do odpowiedniego punktu końcowego. Jednak w celu uzyskania bardziej zaawansowanej wersji i najlepszej metody w przypadku korzystania z usługi REST należy użyć narzędzia z nośnika i zaimplementować [HATEOAS (hipertekst jako aparat stanu aplikacji)](https://docs.microsoft.com/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources).
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Scott Hanselman. Łatwość ASP.NET Core RESTful internetowego interfejsu API** \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
@@ -428,7 +428,7 @@ W szczegółach interfejsu API interfejsu użytkownika programu Swagger przedsta
 
 Jest to proste. I ponieważ jest generowany automatycznie, podczas dodawania większej funkcjonalności do interfejsu API zostaną powiększone metadane programu Swagger.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Strony pomocy interfejsu API sieci Web ASP.NET korzystające z programu Swagger** \
   [https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger](/aspnet/core/tutorials/web-api-help-pages-using-swagger)

@@ -1,18 +1,18 @@
 ---
-title: 'Instrukcje: Instalowanie i konfigurowanie składników aktywacji programu WCF'
+title: 'Instrukcje: instalowanie i konfigurowanie składników aktywacji programu WCF'
 description: Dowiedz się, jak skonfigurować usługę aktywacji procesów systemu Windows (WAS) w systemie Windows Vista do hostowania usług WCF, które nie komunikują się za pośrednictwem protokołu HTTP.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: 84a0dcc4fed28ebd7a536bdabfcdc389be6072d8
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 085a69421f0aa7b763bd2222820ced4b4a7e1c81
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246886"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557869"
 ---
-# <a name="how-to-install-and-configure-wcf-activation-components"></a>Instrukcje: Instalowanie i konfigurowanie składników aktywacji programu WCF
+# <a name="how-to-install-and-configure-wcf-activation-components"></a>Instrukcje: instalowanie i konfigurowanie składników aktywacji programu WCF
 
 W tym temacie opisano kroki wymagane do skonfigurowania usługi aktywacji procesów systemu Windows (znanej także jako) w systemie Windows Vista do hostowania usług Windows Communication Foundation (WCF), które nie komunikują się za pośrednictwem protokołów sieciowych protokołu HTTP. W poniższych sekcjach opisano kroki tej konfiguracji:
 
@@ -102,9 +102,9 @@ Po zainstalowaniu i skonfigurowaniu programu zapoznaj się z tematem [jak: Hosto
     > [!NOTE]
     > To polecenie jest pojedynczym wierszem tekstu.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Aktywacja TCP](../samples/tcp-activation.md)
 - [Aktywacja usługi MSMQ](../samples/msmq-activation.md)
 - [Aktywowanie elementu NamedPipe](../samples/namedpipe-activation.md)
-- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677189(v=azure.10))

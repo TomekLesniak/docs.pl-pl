@@ -13,16 +13,16 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: aa569c0da5b963243596ef440ef37c08b4fae37f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b440bce7ad73cfd526b1589e7f19b4cc06be238c
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288241"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679615"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Niezależność od języka i elementy niezależne od języka
 
-.NET Framework jest niezależne od języka. Oznacza to, że jako programista można opracowywać w jednym z wielu języków przeznaczonych dla .NET Framework, takich jak C#, C++/CLI, Eiffel, F #, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL i Windows PowerShell. Można uzyskać dostęp do typów i elementów członkowskich bibliotek klas opracowanych dla .NET Framework bez konieczności znajomości języka, w którym zostały pierwotnie napisane, i bez konieczności przestrzegania jakichkolwiek Konwencji języka oryginalnego. Jeśli jesteś deweloperem składnika, dostęp do składnika można uzyskać za pomocą dowolnej aplikacji .NET Framework niezależnie od języka.
+.NET Framework jest niezależny od języka. Oznacza to, że jako programista można opracowywać w jednym z wielu języków, które są przeznaczone dla .NET Framework, takich jak C#, C++/CLI, Eiffel, F #, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL i Windows PowerShell. Można uzyskać dostęp do typów i elementów członkowskich bibliotek klas opracowanych dla .NET Framework bez konieczności znajomości języka, w którym zostały pierwotnie napisane, i bez konieczności przestrzegania jakichkolwiek Konwencji języka oryginalnego. Jeśli jesteś deweloperem składnika, dostęp do składnika można uzyskać za pomocą dowolnej aplikacji .NET Framework niezależnie od języka.
 
 > [!NOTE]
 > W pierwszej części tego artykułu omówiono Tworzenie składników niezależnych od języka — to znaczy składników, które mogą być używane przez aplikacje, które są zapisywane w dowolnym języku. Możesz również utworzyć pojedynczy składnik lub aplikację z kodu źródłowego zapisaną w wielu językach. Zobacz [współdziałanie między językami](#CrossLang) w drugiej części tego artykułu.
@@ -135,13 +135,13 @@ Reguły zgodności ze specyfikacją CLS są wymienione w poniższej tabeli. Teks
 |Elementy członkowskie|[Ogólnie wpisz składowe](#members)|Globalne pola statyczne i metody nie są zgodne ze specyfikacją CLS.|36|
 |Elementy członkowskie|--|Wartość literału statycznego jest określana za pomocą metadanych inicjacji pola. Literał zgodny ze specyfikacją CLS musi mieć wartość określoną w metadanych inicjowania pola, które są dokładnie takie same jak w przypadku literału (lub typu podstawowego, jeśli ten literał to `enum` ).|13|
 |Elementy członkowskie|[Ogólnie wpisz składowe](#members)|Ograniczenie vararg nie jest częścią specyfikacji CLS, a jedyną konwencją wywoływania obsługiwaną przez specyfikację CLS jest standardowa zarządzana Konwencja wywoływania.|15|
-|Konwencje nazewnictwa|[Konwencje nazewnictwa](#naming)|Zespoły muszą stosować się do załącznika 7 raportu technicznego 15 standardu Unicode 3.0 w celu określenia zestawu znaków, które mogą być uruchamiane i uwzględniane w identyfikatorach, dostępne online na stronie <https://www.unicode.org/unicode/reports/tr15/tr15-18.html> . Identyfikatory powinny znajdować się w formacie kanonicznym zdefiniowanym przez normalizację Unicode w postaci C. W celach CLS dwa identyfikatory są takie same, jeśli ich mapowania małymi literami (zgodnie z ustawieniami regionalnymi Unicode, które różnią się od liter, jeden do jednego) są takie same. Oznacza to, że w przypadku dwóch identyfikatorów, które mają być uznawane za różne pod względem CLS, różnią się w więcej niż w ich przypadku. Jednak w celu zastąpienia definicji dziedziczonej, interfejs wiersza polecenia wymaga dokładnego kodowania oryginalnej deklaracji.|4|
+|Konwencje nazewnictwa|[Konwencje nazewnictwa](#naming)|Zespoły muszą stosować się do załącznika 7 raportu technicznego 15 standardu Unicode 3.0 w celu określenia zestawu znaków, które mogą być uruchamiane i uwzględniane w identyfikatorach, dostępne online na stronie <https://www.unicode.org/reports/tr15/tr15-18.html> . Identyfikatory powinny znajdować się w formacie kanonicznym zdefiniowanym przez normalizację Unicode w postaci C. W celach CLS dwa identyfikatory są takie same, jeśli ich mapowania małymi literami (zgodnie z ustawieniami regionalnymi Unicode, które różnią się od liter, jeden do jednego) są takie same. Oznacza to, że w przypadku dwóch identyfikatorów, które mają być uznawane za różne pod względem CLS, różnią się w więcej niż w ich przypadku. Jednak w celu zastąpienia definicji dziedziczonej, interfejs wiersza polecenia wymaga dokładnego kodowania oryginalnej deklaracji.|4|
 |Przeciążenie|[Konwencje nazewnictwa](#naming)|Wszystkie nazwy wprowadzone w zakresie zgodnym ze specyfikacją CLS powinny być odrębne niezależnie od rodzaju, z wyjątkiem sytuacji, gdy nazwy są identyczne i rozwiązywane przez przeciążanie. Oznacza to, że podczas CTSallows jednego typu do używania tej samej nazwy dla metody i pola, CLS nie.|5|
 |Przeciążenie|[Konwencje nazewnictwa](#naming)|Pola i zagnieżdżone typy powinny różnić się odrębnie przez porównanie identyfikatorów, nawet jeśli CTS zezwala na rozróżnianie unikatowych podpisów. Metody, właściwości i zdarzenia, które mają taką samą nazwę (za pomocą porównania identyfikatorów), różnią się więcej niż tylko zwracanym typem, z wyjątkiem określonych w regule CLS 39.|6|
 |Przeciążenie|[Przeciążenia](#overloads)|Tylko właściwości i metody mogą być przeciążone.|37|
 |Przeciążenie|[Przeciążenia](#overloads)|Właściwości i metody mogą być przeciążone na podstawie liczby i typów ich parametrów, z wyjątkiem operatorów konwersji o nazwach `op_Implicit` i `op_Explicit` , które mogą być również przeciążone na podstawie ich typu zwracanego.|38|
 |Przeciążenie|--|Jeśli dwie lub więcej metod zgodnych ze specyfikacją CLS zadeklarowanych w typie ma taką samą nazwę i, dla określonego zestawu wystąpień typu, mają one te same parametry i zwracane typy, wówczas wszystkie te metody są semantycznie równoważne w tych wystąpieniach typu.|48|
-|Typy|[Typ i podpisy elementów członkowskich typu](#Types)|<xref:System.Object?displayProperty=nameWithType>jest zgodny ze specyfikacją CLS. Wszystkie inne klasy zgodne ze specyfikacją CLS są dziedziczone z klasy zgodnej ze specyfikacją CLS.|23|
+|Typy|[Typ i podpisy elementów członkowskich typu](#Types)|<xref:System.Object?displayProperty=nameWithType> jest zgodny ze specyfikacją CLS. Wszystkie inne klasy zgodne ze specyfikacją CLS są dziedziczone z klasy zgodnej ze specyfikacją CLS.|23|
 |Właściwości|[Właściwości](#properties)|Metody, które implementują metody pobierającej i ustawiającej właściwość, powinny być oznaczone `SpecialName` w metadanych.|24|
 |Właściwości|[Właściwości](#properties)|Metody dostępu do właściwości muszą być statyczne, wszystkie być wirtualne lub być wystąpieniem.|26|
 |Właściwości|[Właściwości](#properties)|Typ właściwości musi być typem zwracanym metody pobierającej i typem ostatniego argumentu metody ustawiającej. Typy parametrów właściwości są typami parametrów do metody pobierającej i typami wszystkich oprócz końcowych parametrów metody ustawiającej. Wszystkie te typy muszą być zgodne ze specyfikacją CLS i nie mogą być wskaźnikami zarządzanymi (tj. nie są przesyłane przez odwołanie).|27|
@@ -180,7 +180,7 @@ Wszystkie typy, które pojawiają się w sygnaturach składowych, łącznie z ty
 |<xref:System.Int64>|64-bitowa liczba całkowita ze znakiem|
 |<xref:System.Single>|Wartość zmiennoprzecinkowa o pojedynczej precyzji|
 |<xref:System.Double>|Wartość zmiennoprzecinkowa o podwójnej precyzji|
-|<xref:System.Boolean>|`true`lub `false` Typ wartości|
+|<xref:System.Boolean>|`true` lub `false` Typ wartości|
 |<xref:System.Char>|Jednostka kodu zakodowana w formacie UTF-16|
 |<xref:System.Decimal>|Liczba dziesiętna liczb zmiennoprzecinkowych|
 |<xref:System.IntPtr>|Wskaźnik lub uchwyt rozmiaru zdefiniowanego przez platformę|
@@ -194,7 +194,7 @@ Typy wewnętrzne wymienione w poniższej tabeli są niezgodne ze specyfikacją C
 |<xref:System.TypedReference>|Wskaźnik do obiektu i jego typu środowiska uruchomieniowego|Brak|
 |<xref:System.UInt16>|16-bitowa liczba całkowita bez znaku|<xref:System.Int32>|
 |<xref:System.UInt32>|32-bitowa liczba całkowita bez znaku|<xref:System.Int64>|
-|<xref:System.UInt64>|64-bitowa liczba całkowita bez znaku|<xref:System.Int64>(może przepełnić się), <xref:System.Numerics.BigInteger> lub<xref:System.Double>|
+|<xref:System.UInt64>|64-bitowa liczba całkowita bez znaku|<xref:System.Int64> (może przepełnić się), <xref:System.Numerics.BigInteger> lub <xref:System.Double>|
 |<xref:System.UIntPtr>|Niepodpisany wskaźnik lub dojście|<xref:System.IntPtr>|
 
 Biblioteka klas .NET Framework lub jakakolwiek inna Biblioteka klas może zawierać inne typy, które nie są zgodne ze specyfikacją CLS; na przykład:
@@ -400,7 +400,7 @@ Przykład zostanie skompilowany pomyślnie, jeśli ograniczenie zostanie dodane 
 
 Common Language Specification nakładają się na model tworzenia wystąpień dla zagnieżdżonych typów i chronionych elementów członkowskich. Otwarte typy ogólne nie mogą ujawniać pól ani członków z podpisami zawierającymi określone wystąpienie zagnieżdżonego, chronionego typu ogólnego. Typy nieogólne, które zwiększają wystąpienie określonego wystąpienia generycznej klasy podstawowej lub interfejsu, nie mogą ujawniać pól ani elementów członkowskich z podpisami zawierającymi różne wystąpienia zagnieżdżonego, chronionego typu ogólnego.
 
-Poniższy przykład definiuje typ ogólny, `C1<T>` (lub `C1(Of T)` w Visual Basic) i chronioną klasę `C1<T>.N` (lub `C1(Of T).N` w Visual Basic). `C1<T>`ma dwie metody `M1` i `M2` . Jednakże `M1` nie jest zgodny ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt (lub `C1(Of Integer).N` ) z C1 \<T> (lub `C1(Of T)` ). Druga klasa, `C2` ,, pochodzi od `C1<long>` (lub `C1(Of Long)` ). Ma dwie metody `M3` i `M4` . `M3`nie jest zgodne ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt (lub `C1(Of Integer).N` ) z podklasy `C1<long>` . Należy zauważyć, że kompilatory języka mogą być jeszcze bardziej restrykcyjne. W tym przykładzie Visual Basic wyświetla błąd podczas próby skompilowania `M4` .
+Poniższy przykład definiuje typ ogólny, `C1<T>` (lub `C1(Of T)` w Visual Basic) i chronioną klasę `C1<T>.N` (lub `C1(Of T).N` w Visual Basic). `C1<T>` ma dwie metody `M1` i `M2` . Jednakże `M1` nie jest zgodny ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt (lub `C1(Of Integer).N` ) z C1 \<T> (lub `C1(Of T)` ). Druga klasa, `C2` ,, pochodzi od `C1<long>` (lub `C1(Of Long)` ). Ma dwie metody `M3` i `M4` . `M3` nie jest zgodne ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt (lub `C1(Of Integer).N` ) z podklasy `C1<long>` . Należy zauważyć, że kompilatory języka mogą być jeszcze bardziej restrykcyjne. W tym przykładzie Visual Basic wyświetla błąd podczas próby skompilowania `M4` .
 
 [!code-csharp[Conceptual.CLSCompliant#32](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics4.cs#32)]
 [!code-vb[Conceptual.CLSCompliant#32](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics4.vb#32)]
@@ -573,7 +573,7 @@ Jeśli tworzysz aplikację, a nie bibliotekę (czyli jeśli nie ujawniasz typów
 
 Niezależność od języka ma wiele możliwych znaczenia. Jednym z nich, który jest omawiany w [zależności od języka artykułu i składników niezależnych od języka](language-independence-and-language-independent-components.md), obejmuje bezproblemowe zużywanie typów pisanych w jednym języku z aplikacji w innym języku. Drugie znaczenie, które jest fokusem tego artykułu, obejmuje łączenie kodu pisanego w wielu językach w jeden zestaw .NET Framework.
 
-Poniższy przykład ilustruje współdziałanie między językami przez utworzenie biblioteki klas o nazwie Utilities. dll, która zawiera dwie klasy, `NumericLib` i `StringLib` . `NumericLib`Klasa jest zapisywana w języku C#, a `StringLib` Klasa jest zapisywana w Visual Basic. Oto kod źródłowy dla StringUtil. vb, który zawiera pojedynczy element członkowski, `ToTitleCase` w swojej `StringLib` klasie.
+Poniższy przykład ilustruje współdziałanie między językami przez utworzenie biblioteki klas o nazwie Utilities.dll zawierającej dwie klasy `NumericLib` i `StringLib` . `NumericLib`Klasa jest zapisywana w języku C#, a `StringLib` Klasa jest zapisywana w Visual Basic. Oto kod źródłowy dla StringUtil. vb, który zawiera pojedynczy element członkowski, `ToTitleCase` w swojej `StringLib` klasie.
 
 [!code-vb[Conceptual.CrossLanguage#1](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.crosslanguage/vb/stringutil.vb#1)]
 
@@ -595,7 +595,7 @@ Aby skompilować plik kodu źródłowego C# do modułu, użyj tego polecenia:
 csc /t:module NumberUtil.cs
 ```
 
-Aby uzyskać więcej informacji na temat składni wiersza polecenia kompilatora języka C#, zobacz [Kompilowanie wiersza polecenia przy użyciu pliku CSC. exe](../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).
+Aby uzyskać więcej informacji na temat składni wiersza polecenia kompilatora języka C#, zobacz [Kompilowanie wiersza polecenia przy użyciu csc.exe](../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).
 
 Następnie użyj [opcji konsolidatora](/cpp/build/reference/linker-options) , aby skompilować dwa moduły do zestawu:
 
@@ -620,6 +620,6 @@ Aby skompilować przy użyciu języka C#, Zmień nazwę kompilatora z **VBC** na
 csc example.cs /r:UtilityLib.dll
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.CLSCompliantAttribute>

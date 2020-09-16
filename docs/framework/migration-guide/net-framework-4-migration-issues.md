@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
-ms.openlocfilehash: b2924a49816b2c7d097cc12ddd5b30ad8aed5a14
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 50355fd5a502771ce88e1f329ec7effdaf380d48
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555448"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679432"
 ---
 # <a name="net-framework-4-migration-issues"></a>Problemy podczas migracji programu .NET Framework 4
 
@@ -224,7 +224,7 @@ Zestawy: platformie docelowej (w PresentationFramework.dll)
 | **Słowniki zasobów** | Aby ulepszyć słowniki zasobów na poziomie motywu i uniemożliwić ich zmianę, Freezable zasoby zdefiniowane w słowniku zasobów i scalone w słowniku na poziomie motywu są teraz zawsze oznaczone jako zamrożone i niezmienne. Jest to oczekiwane zachowanie dla zasobów Freezable. | Aplikacje, które modyfikują zasób zdefiniowany w scalonym słowniku na poziomie motywu, powinny klonować zasób i modyfikować sklonowaną kopię. Alternatywnie można oznaczyć zasób, `x:Shared="false"` Aby <xref:System.Windows.ResourceDictionary> utworzyć nową kopię przy każdym zapytaniu zasobu. |
 | **Windows 7** | Aby aplikacje WPF działały lepiej w systemie Windows 7, wprowadzono następujące ulepszenia w celu poprawienia zachowania okna:<br><br>\* Stany dokowania i gestu działają teraz zgodnie z oczekiwaniami w oparciu o Interakcje użytkownika.<br>\* Polecenia paska zadań **kaskadowe okna, Pokaż okna w stosie**i **Pokaż okna obok siebie** mają teraz poprawne zachowanie i Aktualizuj odpowiednie właściwości.<br>\*`Top`Właściwości, `Left` , `Width` , i `Height` okna zmaksymalizowane lub zminimalizowane zawierają teraz poprawną lokalizację przywracania okna zamiast innych wartości, w zależności od monitora. | Brak. |
 | **Styl i przezroczystość systemu Windows** | <xref:System.InvalidOperationException>Jest zgłaszany, jeśli spróbujesz ustawić <xref:System.Windows.Window.WindowStyle> wartość inną niż <xref:System.Windows.WindowStyle> when <xref:System.Windows.Window.AllowsTransparency> `true` i <xref:System.Windows.WindowState> is <xref:System.Windows.WindowState> . | Jeśli musisz zmienić <xref:System.Windows.Window.WindowStyle> gdy <xref:System.Windows.Window.AllowsTransparency> jest, możesz `true` wywołać `SetWindowLongPtr` funkcję Win32. |
-| **Przeglądarka plików XPS** | WPF nie zawiera pakietu Microsoft XML Paper Specification Essentials (XPSEP). XPSEP jest dołączany do systemów Windows 7 i Windows Vista.<br><br>Na komputerze z systemem Windows XP bez zainstalowanego .NET Framework 3,5 SP1 Drukowanie przy użyciu interfejsu API WPF innego niż te w programie <xref:System.Windows.Controls.PrintDialog> będzie polegać na winspool. Niektóre możliwości drukarki nie będą raportowane i niektóre ustawienia drukarki nie będą stosowane podczas drukowania. | W razie konieczności zainstaluj [pakiet Microsoft XML Paper Specification Essentials](https://www.microsoft.com/en-us/download/details.aspx?id=11816). |
+| **Przeglądarka plików XPS** | WPF nie zawiera pakietu Microsoft XML Paper Specification Essentials (XPSEP). XPSEP jest dołączany do systemów Windows 7 i Windows Vista.<br><br>Na komputerze z systemem Windows XP bez zainstalowanego .NET Framework 3,5 SP1 Drukowanie przy użyciu interfejsu API WPF innego niż te w programie <xref:System.Windows.Controls.PrintDialog> będzie polegać na winspool. Niektóre możliwości drukarki nie będą raportowane i niektóre ustawienia drukarki nie będą stosowane podczas drukowania. | W razie konieczności Zainstaluj pakiet Microsoft XML Paper Specification Essentials. |
 
 ### <a name="controls"></a>Formanty
 

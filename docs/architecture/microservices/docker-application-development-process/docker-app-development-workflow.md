@@ -2,12 +2,12 @@
 title: Przepływ pracy tworzenia oprogramowania dla aplikacji platformy Docker
 description: Zapoznaj się ze szczegółami przepływu pracy dotyczącymi tworzenia aplikacji opartych na platformie Docker. Rozpocznij krok po kroku i przejdź do szczegółów, aby zoptymalizować wieloetapowe dockerfile i zakończyć pracę z uproszczonym przepływem pracy dostępnym w przypadku korzystania z programu Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 489f44a2742900d6ce5f77e24dd3d719ec9cda2b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d32134a10fb9b56e874bbc6218ca2c4d822adb90
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539730"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678852"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Przepływ pracy tworzenia oprogramowania dla aplikacji platformy Docker
 
@@ -496,7 +496,7 @@ Ważnym punktem jest to, jak pokazano na rysunku 5-12 w programie Visual Studio 
 ### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Wdrażanie kontenera ASP.NET na zdalnym hoście platformy Docker** \
-  <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
+  <https://docs.microsoft.com/visualstudio/containers/hosting-web-apps-in-docker>
 
 ### <a name="a-note-about-testing-and-deploying-with-orchestrators"></a>Uwaga dotycząca testowania i wdrażania w programie Orchestrator
 
