@@ -7,15 +7,15 @@ helpviewer_keywords:
 - API calls [Visual Basic], platform invoke
 - calls [Visual Basic], stored procedures
 ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
-ms.openlocfilehash: 2c3bb599b79575180eb2b0ec89453f01901f94c0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 863986e94855e02e9fd04685f7dc3e8e7f7b1cc3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396846"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548068"
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>Porady: wywoływanie Windows API (Visual Basic)
-Ten przykład definiuje i wywołuje `MessageBox` funkcję w User32. dll, a następnie przekazuje do niej ciąg.  
+Ten przykład definiuje i wywołuje `MessageBox` funkcję w user32.dll a następnie przekazuje do niej ciąg.  
   
 ## <a name="example"></a>Przykład  
  [!code-vb[VbVbalrInterop#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#1)]  
@@ -34,11 +34,11 @@ Ten przykład definiuje i wywołuje `MessageBox` funkcję w User32. dll, a nast�
   
 - Typ zawierający został wcześniej utworzony przy użyciu `CreateType` . (<xref:System.InvalidOperationException>)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Bliższe spojrzenie na wywołanie platformy](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
 - [Przykłady wywołań platformy](../../../framework/interop/platform-invoke-examples.md)
 - [Wykorzystywanie niezarządzanych funkcji DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md)
-- [Definiowanie metody przy użyciu emisji odbicia](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
+- [Definiowanie metody przy użyciu emisji odbicia](/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
 - [Przewodnik: Wywoływanie interfejsów API systemu Windows](walkthrough-calling-windows-apis.md)
 - [Międzyoperacyjność modelu COM](index.md)

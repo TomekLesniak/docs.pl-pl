@@ -2,18 +2,18 @@
 title: dotnet-install scripts
 description: Więcej informacji na temat skryptów programu dotnet-Install w celu zainstalowania zestaw .NET Core SDK i udostępnionego środowiska uruchomieniowego.
 ms.date: 04/30/2020
-ms.openlocfilehash: c3aa6549a0b521db7fc19c6ff44665e3c4ba0c5f
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: 8f27b8a7794e84e6e2b288d6cc2ec33ffcb7600f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024657"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538045"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet — informacje o skryptach instalacji
 
 ## <a name="name"></a>Nazwa
 
-`dotnet-install.ps1` | `dotnet-install.sh`-Skrypt służący do instalowania zestaw .NET Core SDK i udostępnionego środowiska uruchomieniowego.
+`dotnet-install.ps1` | `dotnet-install.sh` -Skrypt służący do instalowania zestaw .NET Core SDK i udostępnionego środowiska uruchomieniowego.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -71,8 +71,8 @@ Aby skonfigurować środowisko programistyczne lub uruchamiać aplikacje, należ
 
 Zalecamy użycie stabilnej wersji skryptów:
 
-- Bash (Linux/macOS):<https://dot.net/v1/dotnet-install.sh>
-- PowerShell (Windows):<https://dot.net/v1/dotnet-install.ps1>
+- Bash (Linux/macOS): <https://dot.net/v1/dotnet-install.sh>
+- PowerShell (Windows): <https://dot.net/v1/dotnet-install.ps1>
 
 ### <a name="script-behavior"></a>Zachowanie skryptu
 
@@ -102,8 +102,8 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
 
   Określa kanał źródłowy instalacji. Możliwe wartości są następujące:
 
-  - `Current`-Najnowsza wersja.
-  - `LTS`-Długoterminowy kanał pomocy technicznej (większość aktualnie obsługiwanych wersji).
+  - `Current` -Najnowsza wersja.
+  - `LTS` -Długoterminowy kanał pomocy technicznej (większość aktualnie obsługiwanych wersji).
   - Dwuczęściowa wersja w formacie X. Y reprezentującym określoną wersję (na przykład `2.1` lub `3.0` ).
   - Nazwa gałęzi: na przykład `release/3.1.1xx` lub `master` (dla nocnych wydań). Użyj tej opcji, aby zainstalować wersję z kanału w wersji zapoznawczej. Użyj nazwy kanału wymienionej w [instalatorze i plikach binarnych](https://github.com/dotnet/core-sdk#installers-and-binaries).
 
@@ -131,7 +131,7 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
 
 - **`-NoCdn|--no-cdn`**
 
-  Wyłącza pobieranie z [usługi Azure Content Delivery Network (CDN)](https://docs.microsoft.com/azure/cdn/cdn-overview) i bezpośrednio używa niebuforowanego źródła danych.
+  Wyłącza pobieranie z [usługi Azure Content Delivery Network (CDN)](/azure/cdn/cdn-overview) i bezpośrednio używa niebuforowanego źródła danych.
 
 - **`-NoPath|--no-path`**
 
@@ -153,9 +153,9 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
 
   Instaluje tylko udostępnione środowisko uruchomieniowe, a nie cały zestaw SDK. Możliwe wartości są następujące:
 
-  - `dotnet`— `Microsoft.NETCore.App` udostępnione środowisko uruchomieniowe.
-  - `aspnetcore`— `Microsoft.AspNetCore.App` udostępnione środowisko uruchomieniowe.
-  - `windowsdesktop`— `Microsoft.WindowsDesktop.App` udostępnione środowisko uruchomieniowe.
+  - `dotnet` — `Microsoft.NETCore.App` udostępnione środowisko uruchomieniowe.
+  - `aspnetcore` — `Microsoft.AspNetCore.App` udostępnione środowisko uruchomieniowe.
+  - `windowsdesktop` — `Microsoft.WindowsDesktop.App` udostępnione środowisko uruchomieniowe.
 
 - **`--runtime-id <RID>`**
 
@@ -184,8 +184,8 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
 
   Reprezentuje konkretną wersję kompilacji. Możliwe wartości są następujące:
 
-  - `latest`-Najnowsza kompilacja w kanale (używana z `-Channel` opcją).
-  - `coherent`-Najnowsza spójna kompilacja na kanale; używa najnowszej stabilnej kombinacji pakietów (używanej z `-Channel` opcjami nazw gałęzi).
+  - `latest` -Najnowsza kompilacja w kanale (używana z `-Channel` opcją).
+  - `coherent` -Najnowsza spójna kompilacja na kanale; używa najnowszej stabilnej kombinacji pakietów (używanej z `-Channel` opcjami nazw gałęzi).
   - Wersja z trzech części w formacie X. Y. Z, reprezentująca konkretną wersję kompilacji; zastępuje `-Channel` opcję. Na przykład: `2.0.0-preview2-006120`.
 
   Jeśli nie zostanie określony, `-Version` wartością domyślną jest `latest` .

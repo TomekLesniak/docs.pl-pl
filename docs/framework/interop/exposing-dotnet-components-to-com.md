@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
-ms.openlocfilehash: 918c90f6741047f7d3cdf89a9b182700ecb2ed93
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: dc808f3e8d6bd89ba979d43e5b4ec9d787bd09b1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617461"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545262"
 ---
 # <a name="exposing-net-components-to-com"></a>Udostępnianie składników .NET do modelu COM
 
@@ -42,11 +42,11 @@ Pisanie typu .NET i używanie tego typu z kodu niezarządzanego to odrębne dzia
 
      Deweloperzy COM mogą odwoływać się do typów w zestawie przy użyciu tych samych narzędzi i technik, których używają dzisiaj.
 
-3. [Wywoływanie obiektu .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100)).
+3. [Wywoływanie obiektu .NET](/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100)).
 
      Deweloperzy COM mogą wywoływanie metod w obiekcie .NET w taki sam sposób, jak wywoływanie metod dla dowolnego typu niezarządzanego. Na przykład interfejs API funkcji **COCREATEINSTANCE** com aktywuje obiekty .NET.
 
-4. [Wdróż aplikację na potrzeby dostępu do modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100)).
+4. [Wdróż aplikację na potrzeby dostępu do modelu COM](/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100)).
 
      Zestaw o silnej nazwie można zainstalować w globalnej pamięci podręcznej zestawów i wymaga podpisu od jego wydawcy. Zestawy, które nie mają silnej nazwy, muszą być zainstalowane w katalogu aplikacji klienta.
 

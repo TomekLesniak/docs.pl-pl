@@ -3,12 +3,12 @@ title: Publikowanie usług WCF
 description: Publikowanie usługi WCF pomaga wdrożyć aplikację w środowisku produkcyjnym na potrzeby testowania.
 ms.date: 03/30/2017
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-ms.openlocfilehash: 99798b75e1dc01c8db361f4d8d1f162c7f7617b1
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: ccd3fe80e51ef28f7a037d624e9099c42d867d95
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245677"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544573"
 ---
 # <a name="wcf-service-publishing"></a>Publikowanie usług WCF
 
@@ -22,7 +22,7 @@ Publikowanie usługi WCF obsługuje Publikowanie usług WCF utworzonych na podst
 
 - Biblioteka usługi zespolonej.
 
-Te szablony usług można znaleźć, wybierając kolejno pozycje **plik**  >  **Nowy projekt** > [**Visual Basic** lub **Visual C#**] > **WCF**. W przypadku innych szablonów usługi WCF w tej lokalizacji (w tym aplikacji usługi przepływu pracy WCF i aplikacji usługi WCF) można opublikować publikację przy użyciu [jednego kliknięcia dla aplikacji sieci Web](https://docs.microsoft.com/previous-versions/aspnet/dd465337(v=vs.110)).
+Te szablony usług można znaleźć, wybierając kolejno pozycje **plik**  >  **Nowy projekt** > [**Visual Basic** lub **Visual C#**] > **WCF**. W przypadku innych szablonów usługi WCF w tej lokalizacji (w tym aplikacji usługi przepływu pracy WCF i aplikacji usługi WCF) można opublikować publikację przy użyciu [jednego kliknięcia dla aplikacji sieci Web](/previous-versions/aspnet/dd465337(v=vs.110)).
 
 Usługę można opublikować w następujących lokalizacjach docelowych.
 
@@ -69,12 +69,12 @@ W przypadku wybrania opcji wdrożenia aplikacji w lokalnych usługach IIS mogą 
 - Ustawienia w `<diagnostics>` elemencie są wykluczone, aby zachować ustawienia śledzenia platformy docelowej.
 
 ## <a name="publishing-wcf-services-with-non-http-bindings-to-iis"></a>Publikowanie usług WCF z powiązaniami innymi niż HTTP z usługami IIS
- W przypadku korzystania z usług IIS 7.0 lub nowszych można opublikować usługi WCF z powiązaniami innymi niż HTTP z usługami IIS. Należy wykonać pewne wstępne konfiguracje. Aby uzyskać więcej informacji, zobacz tematy dotyczące [hostingu w usłudze aktywacji procesów systemu Windows](./feature-details/hosting-in-windows-process-activation-service.md).
+ W przypadku korzystania z usług IIS 7.0 lub nowszych można opublikować usługi WCF z powiązaniami innymi niż HTTP z usługami IIS. Należy wykonać pewne wstępne konfiguracje. Aby uzyskać więcej informacji, zobacz tematy dotyczące  [hostingu w usłudze aktywacji procesów systemu Windows](./feature-details/hosting-in-windows-process-activation-service.md).
 
 ## <a name="security"></a>Zabezpieczenia
  Publikowanie w lokalnych usługach IIS wymaga uprawnień administratora, ponieważ usługi IIS wymagają uruchomienia na koncie administratora. Jeśli użytkownik bez uprawnień administratora otworzy opcję publikowanie usługi WCF, usługi IIS nie są dostępne jako lokalizacja docelowa. Publikowanie w systemie plików lub witryna FTP działa bez uprawnień administratora.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Szablony programu Visual Studio na potrzeby programu WCF](wcf-vs-templates.md)
 - [Host usługi WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

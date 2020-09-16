@@ -3,12 +3,12 @@ title: Koncepcje z zakresu serializacji
 description: Serializacja może służyć do przechwytywania stanu obiektu, aby można było utworzyć kopię lub wysłać obiekt przez wartość z jednej domeny aplikacji do innej.
 ms.date: 08/07/2017
 ms.assetid: e1ff4740-20a1-4c76-a8ad-d857db307054
-ms.openlocfilehash: 35addd2dd2bed8ce878f2f159f1caefe89922d88
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a185855f4b6913c8e1d57bf36fc5c37411123e68
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84291321"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541203"
 ---
 # <a name="serialization-concepts"></a>Koncepcje z zakresu serializacji
 Dlaczego czy chcesz użyć serializacji? Dwa najważniejsze powody to utrwalanie stanu obiektu na nośniku magazynu, dzięki czemu można ponownie utworzyć dokładną kopię na późniejszym etapie i wysłać obiekt przez wartość z jednej domeny aplikacji do innej. Na przykład Serializacja służy do zapisywania stanu sesji w ASP.NET i kopiowania obiektów do Schowka w Windows Forms. Jest on również używany przez funkcję komunikacji zdalnej do przekazywania obiektów według wartości z jednej domeny aplikacji do innej.
@@ -31,7 +31,7 @@ Gdy obiekt pochodzi z `MarshalByRefObject` , odwołanie do obiektu jest przesył
  [Serializacja binarna](binary-serialization.md)  
  Opisuje mechanizm serializacji binarnej, który jest dołączony do aparatu PLików wykonywalnych języka wspólnego.  
   
- [Komunikacja zdalna .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
+ [Komunikacja zdalna .NET](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
  Opis różnych metod komunikacji dostępnych w programie .NET Framework do komunikacji zdalnej.  
   
  [Serializacja XML i SOAP](xml-and-soap-serialization.md)  

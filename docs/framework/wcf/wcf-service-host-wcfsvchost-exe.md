@@ -3,12 +3,12 @@ title: Host usługi WCF (WcfSvcHost.exe)
 description: Host usługi WCF umożliwia Hostowanie i testowanie wdrożonej usługi. Usługę można przetestować przy użyciu klienta testowego WCF lub własnego klienta.
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-ms.openlocfilehash: efc9512766d2a9cc814083ab632226d98917bf4e
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 2ac1d6318d8a82a82c08f38305ee6f92ad3f52a2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245729"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544599"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Host usługi WCF (WcfSvcHost.exe)
 
@@ -46,13 +46,13 @@ W poniższej tabeli wymieniono wszystkie parametry w oknie dialogowym **argument
 
 Po utworzeniu nowego projektu usługi WCF i naciśnięciu klawisza F5 w celu uruchomienia debugera, Host usługi WCF rozpocznie hostowanie wszystkich usług znalezionych w projekcie. Klient testowy WCF zostanie automatycznie otwarty i zostanie wyświetlona lista punktów końcowych usługi zdefiniowanych w pliku konfiguracji. W oknie głównym można testować parametry i wywoływać usługę.
 
-Aby upewnić się, że klient testowy WCF jest używany, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . kliknij przycisk **Start Project** i upewnij się, że w oknie dialogowym **argumenty wiersza polecenia** pojawiają się następujące elementy.
+Aby upewnić się, że klient testowy WCF jest używany, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . Kliknij przycisk **Start Project** i upewnij się, że w oknie dialogowym **argumenty wiersza polecenia** pojawiają się następujące elementy.
 
 `/client:WcfTestClient.exe`
 
 #### <a name="using-a-custom-client"></a>Korzystanie z niestandardowego klienta
 
-Aby użyć niestandardowego klienta, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . kliknij przycisk **Start Project** i edytuj `/client` parametr w oknie dialogowym **argumenty wiersza polecenia** , aby wskazać niestandardowego klienta, jak pokazano w poniższym przykładzie.
+Aby użyć niestandardowego klienta, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . Kliknij przycisk **Start Project** i edytuj `/client` parametr w oknie dialogowym **argumenty wiersza polecenia** , aby wskazać niestandardowego klienta, jak pokazano w poniższym przykładzie.
 
 `/client:"path/CustomClient.exe"`
 
@@ -68,11 +68,11 @@ Na przykład jeśli używasz szablonu biblioteki usługi zespolonej, możesz uż
 
 #### <a name="specifying-no-client"></a>Określanie braku klienta
 
-Aby określić, że żaden klient nie będzie używany po uruchomieniu usługi WCF, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . kliknij przycisk **Start Project** i pozostaw puste okno dialogowe **argumenty wiersza polecenia** .
+Aby określić, że żaden klient nie będzie używany po uruchomieniu usługi WCF, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . Kliknij przycisk **Start Project** i pozostaw puste okno dialogowe **argumenty wiersza polecenia** .
 
 #### <a name="using-a-custom-host"></a>Korzystanie z hosta niestandardowego
 
-Aby użyć niestandardowego hosta, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . kliknij przycisk **Uruchom program zewnętrzny** i wprowadź pełną ścieżkę do niestandardowego hosta. Można również użyć okna dialogowego **argumenty wiersza polecenia** , aby określić argumenty, które mają być przekazane do hosta.
+Aby użyć niestandardowego hosta, kliknij prawym przyciskiem myszy projekt w **Eksploratorze rozwiązań** w programie Visual Studio, wybierz polecenie **Właściwości**, a następnie wybierz kartę **debugowanie** . Kliknij pozycję **Uruchom program zewnętrzny** i wprowadź pełną ścieżkę do hosta niestandardowego. Można również użyć okna dialogowego **argumenty wiersza polecenia** , aby określić argumenty, które mają być przekazane do hosta.
 
 ## <a name="wcf-service-host-user-interface"></a>Interfejs użytkownika hosta usługi WCF
 
@@ -120,8 +120,8 @@ Dostęp można modyfikować za pomocą narzędzia netsh.exe w systemie Windows V
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
 ```
 
-Aby uzyskać więcej informacji na temat netsh.exe, zobacz "[jak używać narzędzia Netsh.exe i przełączników wiersza polecenia](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))".
+Aby uzyskać więcej informacji na temat netsh.exe, zobacz "[jak używać narzędzia Netsh.exe i przełączników wiersza polecenia](/previous-versions/tn-archive/bb490939(v=technet.10))".
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Testowy klient WCF (WcfTestClient.exe)](wcf-test-client-wcftestclient-exe.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - best practices for accessibility
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
-ms.openlocfilehash: 2980881bbcd34ca82f6cca7723cf976e0890f463
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 1c01cfe8fdfb285ee5cbc586cc0c549365ef72ee
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557089"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543150"
 ---
 # <a name="accessibility-best-practices"></a>Najlepsze rozwiązania dotyczące ułatwień dostępu
 
@@ -132,8 +132,8 @@ ms.locfileid: "87557089"
 ### <a name="use-standard-input-apis-with-device-independent-calls"></a>Używanie standardowych interfejsów API wejścia z wywołaniami niezależnymi od urządzenia  
  Wywołania niezależne od urządzenia zapewniają równość funkcji klawiatury i myszy, a jednocześnie zapewniają technologię pomocniczą z wymaganymi informacjami o interfejsie użytkownika.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Windows.Automation.Peers>
-- [NumericUpDown kontrolkę niestandardową z motywem i przykładem obsługi automatyzacji interfejsu użytkownika](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771573(v=vs.90))
-- [Wskazówki dotyczące projektowania interfejsu użytkownika klawiatury](https://docs.microsoft.com/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)
+- [NumericUpDown kontrolkę niestandardową z motywem i przykładem obsługi automatyzacji interfejsu użytkownika](/previous-versions/dotnet/netframework-3.5/ms771573(v=vs.90))
+- [Wskazówki dotyczące projektowania interfejsu użytkownika klawiatury](/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)

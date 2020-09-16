@@ -3,12 +3,12 @@ title: Jak zmienić kolejność pól w rozdzielonym pliku (LINQ) (C#)
 description: Dowiedz się, jak zmienić rozmieszczenie pól w pliku CSV w LINQ w języku C#. Przykład zmienia kolejność kolumn, Scala do kolumn i sortuje wiersze według wartości kolumny.
 ms.date: 07/20/2015
 ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
-ms.openlocfilehash: 3ebc56b418d2732a296896a19d770136a56e2fbb
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a3bbc2690ded24629b313b24ee7a604bcacce850
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103408"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547300"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Jak zmienić kolejność pól w rozdzielonym pliku (LINQ) (C#)
 Plik wartości rozdzielanych przecinkami (CSV) to plik tekstowy, który jest często używany do przechowywania danych arkusza kalkulacyjnego lub innych danych tabelarycznych, które są reprezentowane przez wiersze i kolumny. Za pomocą <xref:System.String.Split%2A> metody do rozdzielania pól, można bardzo łatwo wysyłać zapytania do plików CSV i manipulować nimi przy użyciu LINQ. W rzeczywistości ta sama technika może służyć do zmiany kolejności części dowolnego strukturalnego wiersza tekstu. nie jest to ograniczone do plików CSV.  
@@ -79,8 +79,8 @@ class CSVFiles
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
 Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ i ciągi (C#)](./linq-and-strings.md)
 - [LINQ i katalogi plików (C#)](./linq-and-file-directories.md)
-- [Jak generować XML z plików CSV (C#)](./how-to-generate-xml-from-csv-files.md)
+- [Jak generować XML z plików CSV (C#)](../../../../standard/linq/generate-xml-csv-files.md)

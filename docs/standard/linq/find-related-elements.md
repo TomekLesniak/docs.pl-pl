@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: 7b39e8aef6409a51b0691cb9a9d09839e609a41c
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 385d454d19a12bfa0f90510d73a2961a93bbd5ee
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553170"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549606"
 ---
 # <a name="how-to-find-related-elements-linq-to-xml"></a>Jak znaleźć powiązane elementy (LINQ to XML)
 
@@ -115,6 +115,6 @@ Results are identical
 </Customer>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [LINQ to XML dla użytkowników XPath (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML dla użytkowników XPath (Visual Basic)](./comparison-xpath-linq-xml.md)

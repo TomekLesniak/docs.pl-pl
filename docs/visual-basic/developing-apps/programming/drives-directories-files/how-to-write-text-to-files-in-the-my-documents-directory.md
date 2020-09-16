@@ -1,5 +1,5 @@
 ---
-title: 'Porady: zapisywanie tekstu do plików w katalogu Moje dokumenty'
+title: 'Instrukcje: Zapisywanie tekstu w plikach w katalogu Moje dokumenty'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], writing to
@@ -7,16 +7,16 @@ helpviewer_keywords:
 - examples [Visual Basic], text files
 - writing to files [Visual Basic], in My Documents
 ms.assetid: 1c726124-781d-4976-9baa-ed46814ff3fe
-ms.openlocfilehash: bc62f2bc63a2ea185b8ea4c8d271dd28d347d6f0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb3a9bdc44f86fbcdb3c56ee088740efdfebe95d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334522"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546461"
 ---
 # <a name="how-to-write-text-to-files-in-the-my-documents-directory-in-visual-basic"></a>Porady: zapisywanie tekstu do plików w katalogu Moje dokumenty w Visual Basic
 
-`My.Computer.FileSystem.SpecialDirectories` Obiekt umożliwia dostęp do katalogów specjalnych, takich jak katalog **WebDocuments** .  
+`My.Computer.FileSystem.SpecialDirectories`Obiekt umożliwia dostęp do katalogów specjalnych, takich jak katalog **WebDocuments** .  
   
 ## <a name="procedure"></a>Procedura  
   
@@ -26,7 +26,7 @@ ms.locfileid: "74334522"
   
      [!code-vb[VbFileIOWrite#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#1)]  
   
-2. Użyj metody `WriteAllText` , aby zapisać tekst do określonego pliku.  
+2. Użyj `WriteAllText` metody, aby zapisać tekst do określonego pliku.  
   
      [!code-vb[VbVbcnMyFileSystem#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#14)]  
   
@@ -36,19 +36,19 @@ ms.locfileid: "74334522"
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
 
- Zamień `test.txt` na nazwę pliku, do którego chcesz pisać.  
+ Zamień na `test.txt` nazwę pliku, do którego chcesz pisać.  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
 
- Ten kod ponownie generuje wszystkie wyjątki, które mogą wystąpić podczas zapisywania tekstu do pliku. Możliwe jest zmniejszenie prawdopodobieństwa wyjątków za pomocą kontrolek Windows Forms, takich jak [OpenFileDialog](../../../../framework/winforms/controls/openfiledialog-component-windows-forms.md) i składniki [SaveFileDialog](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md) , które ograniczają Opcje użytkownika do prawidłowych nazw plików. Korzystanie z tych kontrolek nie jest jednak foolproof. System plików można zmienić między czasem, gdy użytkownik wybierze plik i czas wykonywania kodu. Obsługa wyjątków jest w związku z tym niemal zawsze niepotrzebna podczas pracy z plikami.  
+ Ten kod ponownie generuje wszystkie wyjątki, które mogą wystąpić podczas zapisywania tekstu do pliku. Możliwe jest zmniejszenie prawdopodobieństwa wyjątków za pomocą kontrolek Windows Forms, takich jak [OpenFileDialog](/dotnet/desktop/winforms/controls/openfiledialog-component-windows-forms) i składniki [SaveFileDialog](/dotnet/desktop/winforms/controls/savefiledialog-component-windows-forms) , które ograniczają Opcje użytkownika do prawidłowych nazw plików. Korzystanie z tych kontrolek nie jest jednak foolproof. System plików można zmienić między czasem, gdy użytkownik wybierze plik i czas wykonywania kodu. Obsługa wyjątków jest w związku z tym niemal zawsze niepotrzebna podczas pracy z plikami.  
   
 ## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
 
  Jeśli używasz w kontekście częściowego zaufania, kod może zgłosić wyjątek z powodu niewystarczających uprawnień. Aby uzyskać więcej informacji, zobacz podstawowe informacje o [zabezpieczeniach dostępu kodu](../../../../framework/misc/code-access-security-basics.md).  
   
- Ten przykład tworzy nowy plik. Jeśli aplikacja musi utworzyć plik, aplikacja musi mieć uprawnienie Tworzenie dla tego folderu. Uprawnienia są ustawiane przy użyciu list kontroli dostępu. Jeśli plik już istnieje, aplikacja wymaga tylko uprawnienia Zapis, ale ma mniejsze uprawnienia. Jeśli to możliwe, bezpieczniejsze jest tworzenie pliku podczas wdrażania i udzielanie uprawnień do odczytu tylko do jednego pliku, a nie do przyznawania uprawnień do tworzenia folderów. Ponadto bardziej bezpieczne jest zapisanie danych do folderów użytkowników niż folder główny lub folder **Program Files** . Aby uzyskać więcej informacji, zobacz [Omówienie technologii list ACL](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229742(v=vs.100)).  
+ Ten przykład tworzy nowy plik. Jeśli aplikacja musi utworzyć plik, aplikacja musi mieć uprawnienie Tworzenie dla tego folderu. Uprawnienia są ustawiane przy użyciu list kontroli dostępu. Jeśli plik już istnieje, aplikacja wymaga tylko uprawnienia Zapis, ale ma mniejsze uprawnienia. Jeśli to możliwe, bezpieczniejsze jest tworzenie pliku podczas wdrażania i udzielanie uprawnień do odczytu tylko do jednego pliku, a nie do przyznawania uprawnień do tworzenia folderów. Ponadto bardziej bezpieczne jest zapisanie danych do folderów użytkowników niż folder główny lub folder **Program Files** . Aby uzyskać więcej informacji, zobacz [Omówienie technologii list ACL](/previous-versions/dotnet/netframework-4.0/ms229742(v=vs.100)).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IO.Path.Combine%2A?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Devices.Computer>

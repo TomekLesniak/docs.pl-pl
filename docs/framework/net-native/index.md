@@ -8,12 +8,12 @@ helpviewer_keywords:
 - .NET Native
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
-ms.openlocfilehash: 1f176e81905fe68c6d740a13240fe814659a7a59
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7601a6d5e7f49b6d8fc434ef772e2e69740f02cf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128375"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543936"
 ---
 # <a name="compiling-apps-with-net-native"></a>Kompilowanie aplikacji z architekturą .NET Native
 
@@ -38,7 +38,7 @@ W przypadku użytkowników aplikacji .NET Native oferuje następujące korzyści
 - Zoptymalizowano użycie pamięci przez aplikację.
 
 > [!IMPORTANT]
-> W przypadku większości aplikacji i scenariuszy .NET Native oferuje znacznie krótszy czas uruchamiania i wyższą wydajność w porównaniu z aplikacją skompilowaną do IL lub obrazu NGEN. Jednak wyniki mogą się różnić. Aby upewnić się, że aplikacja korzystała z ulepszeń .NET Native, należy porównać jej wydajność z wersją natywną aplikacji non-.NET. Aby uzyskać więcej informacji, zobacz [Omówienie sesji wydajności](https://docs.microsoft.com/visualstudio/profiling/performance-session-overview).
+> W przypadku większości aplikacji i scenariuszy .NET Native oferuje znacznie krótszy czas uruchamiania i wyższą wydajność w porównaniu z aplikacją skompilowaną do IL lub obrazu NGEN. Jednak wyniki mogą się różnić. Aby upewnić się, że aplikacja korzystała z ulepszeń .NET Native, należy porównać jej wydajność z wersją natywną aplikacji non-.NET. Aby uzyskać więcej informacji, zobacz [Omówienie sesji wydajności](/visualstudio/profiling/performance-session-overview).
 
 Ale .NET Native zawiera więcej niż Kompilacja kodu natywnego. Przekształca on sposób kompilowania i wykonywania .NET Framework aplikacji. W szczególności:
 
@@ -55,7 +55,7 @@ Ale .NET Native zawiera więcej niż Kompilacja kodu natywnego. Przekształca on
 |Biblioteki|.NET Framework + środowisko wykonawcze systemu Windows|Win32 + środowisko wykonawcze systemu Windows|
 |Compiler|Kompilator optymalizacji UTC|Kompilator optymalizacji UTC|
 |Szczebl|Gotowe do uruchomienia pliki binarne|Gotowe do uruchomienia pliki binarne (ASM)|
-|Środowisko uruchomieniowe|MRT. dll (minimalne środowisko uruchomieniowe CLR)|CRT. dll (środowisko uruchomieniowe języka C)|
+|Środowisko uruchomieniowe|MRT.dll (minimalne środowisko uruchomieniowe CLR)|CRT.dll (środowisko uruchomieniowe języka C)|
 
 W przypadku aplikacji systemu Windows dla systemu Windows 10 przekazywanie plików binarnych kompilacji kodu .NET Native w pakietach aplikacji (pliki. appx) do sklepu Windows.
 

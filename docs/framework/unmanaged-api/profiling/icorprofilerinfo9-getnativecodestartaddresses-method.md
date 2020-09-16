@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 99706fdc3d60a5e1a7f85400c1184d5acc808e42
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: ca1643dfa980fa647164accf6432082428124acb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449735"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541242"
 ---
 # <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9:: GetNativeCodeStartAddresses, Metoda
 
@@ -36,15 +36,15 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
 
 - `functionId`
 
-  \[in) identyfikator funkcji, której powinny zostać zwrócone adresy początkowe kodu natywnego.
+  \[in] identyfikator funkcji, której adresy początkowe kodu natywnego powinny zostać zwrócone.
 
 - `reJitId`
 
-  \[] tożsamość funkcji ponownie skompilowanej JIT.
+  \[in) tożsamość funkcji ponownie skompilowanej JIT.
 
 - `cCodeStartAddresses`
 
-  \[] maksymalny rozmiar tablicy `codeStartAddresses`.
+  \[w] maksymalny rozmiar `codeStartAddresses` tablicy.
 
 - `pcCodeStartAddresses`
 
@@ -52,7 +52,7 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
 
 - `codeStartAddresses`
 
-  \[out] tablica `UINT_PTR`, z których każdy jest adresem początkowym dla określonej funkcji.
+  \[out] tablica, z `UINT_PTR` której każdy jest adresem początkowym dla określonej funkcji.
 
 ## <a name="remarks"></a>Uwagi
 
@@ -60,14 +60,14 @@ Gdy kompilacja warstwowa jest włączona, funkcja może mieć więcej niż jedn�
 
 ## <a name="requirements"></a>Wymagania
 
-**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/dependencies.md?pivots=os-windows).
+**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/windows.md?pivots=os-windows).
 
 **Nagłówek:** CorProf. idl, CorProf. h
 
 **Biblioteka:** CorGuids. lib
 
-**Wersje .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
+**Wersje .NET:**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorProfilerInfo9, interfejs](icorprofilerinfo9-interface.md)

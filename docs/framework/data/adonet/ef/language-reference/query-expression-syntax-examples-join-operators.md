@@ -1,21 +1,21 @@
 ---
-title: 'Przykłady składni wyrażeń zapytania: Operatory sprzęgania'
+title: Przykłady składni wyrażeń zapytania, operatory sprzężenia
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 343e8dda-70b2-409d-9334-ce9a880c3cea
-ms.openlocfilehash: b1a85dda5d860445174a46d1bc4738962d588369
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 422179171819f1a78a33f93545c92547830ab5fb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398449"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543644"
 ---
-# <a name="query-expression-syntax-examples-join-operators"></a>Przykłady składni wyrażeń zapytania: Operatory sprzęgania
-Łączenie jest ważną operacją w zapytaniach, które są przeznaczone dla źródeł danych, które nie mają relacji nawigacji ze sobą, takich jak tabele relacyjnej bazy danych. Sprzężenie dwóch źródeł danych to skojarzenie obiektów w jednym źródle danych z obiektami, które współużytkują wspólny atrybut w innym źródle danych. Aby uzyskać więcej informacji, zobacz [Omówienie standardowych operatorów zapytań](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120)).  
+# <a name="query-expression-syntax-examples-join-operators"></a>Przykłady składni wyrażeń zapytania, operatory sprzężenia
+Łączenie jest ważną operacją w zapytaniach, które są przeznaczone dla źródeł danych, które nie mają relacji nawigacji ze sobą, takich jak tabele relacyjnej bazy danych. Sprzężenie dwóch źródeł danych to skojarzenie obiektów w jednym źródle danych z obiektami, które współużytkują wspólny atrybut w innym źródle danych. Aby uzyskać więcej informacji, zobacz [Omówienie standardowych operatorów zapytań](/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120)).  
   
- W przykładach w tym temacie pokazano, <xref:System.Linq.Enumerable.GroupJoin%2A> jak za pomocą metod i <xref:System.Linq.Enumerable.Join%2A> zbadać [model sprzedaży AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) przy użyciu składni wyrażeń zapytań. Model sprzedaży AdventureWorks używany w tych przykładach jest tworzony na podstawie tabel Contact, Address, Product, SalesOrderHeader i SalesOrderDetail w przykładowej bazie danych AdventureWorks.  
+ W przykładach w tym temacie pokazano, jak za <xref:System.Linq.Enumerable.GroupJoin%2A> pomocą <xref:System.Linq.Enumerable.Join%2A> metod i zbadać [model sprzedaży AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) przy użyciu składni wyrażeń zapytań. Model sprzedaży AdventureWorks używany w tych przykładach jest tworzony na podstawie tabel Contact, Address, Product, SalesOrderHeader i SalesOrderDetail w przykładowej bazie danych AdventureWorks.  
   
  Przykłady w tym temacie wykorzystują następujące `using` / `Imports` instrukcje:  
   
@@ -36,7 +36,7 @@ ms.locfileid: "70398449"
  [!code-csharp[DP L2E Examples#GroupJoin](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#groupjoin)]
  [!code-vb[DP L2E Examples#GroupJoin](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#groupjoin)]  
   
-## <a name="join"></a>Łączenie  
+## <a name="join"></a>Join  
   
 ### <a name="example"></a>Przykład  
  Poniższy przykład wykonuje sprzężenie w tabelach SalesOrderHeader i SalesOrderDetail w celu uzyskania zamówień online od miesiąca sierpnia.  

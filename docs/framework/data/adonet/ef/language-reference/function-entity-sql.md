@@ -1,16 +1,16 @@
 ---
-title: FUNKCJA (Jednostka SQL)
+title: Funkcja (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 0bb88992-37ed-4991-ace5-55be612a2c4d
-ms.openlocfilehash: fd7f484733e7135d2d6c8094b6527d672a988088
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3cc843c7f16f667508aeaea65879de6842478bc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150301"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544495"
 ---
-# <a name="function-entity-sql"></a>FUNKCJA (Jednostka SQL)
-Definiuje funkcję w zakresie polecenia zapytania SQL jednostki.  
+# <a name="function-entity-sql"></a>Funkcja (Entity SQL)
+Definiuje funkcję w zakresie polecenia kwerendy Entity SQL.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -36,24 +36,24 @@ FUNCTION function-name
  Nazwa parametru w funkcji.  
   
  `function_expression`  
- Prawidłowe wyrażenie SQL jednostki, które jest funkcją. Polecenie w funkcji może `parameter_name` działać na parametrach przekazanych do funkcji.  
+ Prawidłowe wyrażenie Entity SQL, które jest funkcją. Polecenie w funkcji może działać na `parameter_name` parametrach przekazaną do funkcji.  
   
  `data_type`  
  Nazwa obsługiwanego typu.  
   
- KOLEKCJA ( <type_definition`>` )  
- Wyrażenie, które zwraca kolekcję obsługiwanych typów, wierszy lub odwołań.  
+ Kolekcja (<type_definition `>` )  
+ Wyrażenie zwracające kolekcję obsługiwanych typów, wierszy lub odwołań.  
   
- REF **(**`data_type`**)**  
- Wyrażenie, które zwraca odwołanie do typu jednostki.  
+ REF **(** `data_type` **)**  
+ Wyrażenie zwracające odwołanie do typu jednostki.  
   
- WIERSZ **(**`row_expression`**)**  
- Wyrażenie, które zwraca anonimowe, strukturalnie wpisane rekordy z jednej lub więcej wartości. Aby uzyskać więcej informacji, zobacz [ROW](row-entity-sql.md).  
+ WIERSZ **(** `row_expression` **)**  
+ Wyrażenie zwracające anonimowe, strukturalnie wpisane rekordy z co najmniej jednej wartości. Aby uzyskać więcej informacji, zobacz [wiersz](row-entity-sql.md).  
   
 ## <a name="remarks"></a>Uwagi  
- Wiele funkcji o tej samej nazwie można zadeklarować w wierszu, tak długo, jak podpisy funkcji są różne. Aby uzyskać więcej informacji, zobacz [Rozpoznawanie przeciążenia funkcji](function-overload-resolution-entity-sql.md).  
+ Wiele funkcji o tej samej nazwie można zadeklarować wewnętrznie, o ile sygnatury funkcji różnią się od siebie. Aby uzyskać więcej informacji, zobacz [rozpoznawanie przeciążeń funkcji](function-overload-resolution-entity-sql.md).  
   
- Funkcję wbudowaną można wywołać w poleceniu Entity SQL tylko wtedy, gdy zostało zdefiniowane w tym poleceniu. Jednak funkcja wbudowana może być wywoływana wewnątrz innej funkcji wbudowanej przed lub po zdefiniowaniu wywoływanej funkcji. W poniższym przykładzie funkcja A wywołuje funkcję B przed zdefiniowaniem funkcji B:  
+ Wbudowaną funkcję można wywołać w Entity SQL polecenie dopiero po zdefiniowaniu tego polecenia. Jednak Wbudowana funkcja może być wywoływana wewnątrz innej wbudowanej funkcji albo przed lub po zdefiniowaniu wywoływanej funkcji. W poniższym przykładzie funkcja A wywołuje funkcję B przed zdefiniowaniem funkcji B:  
   
  `Function A() as ('A calls B. ' + B())`  
   
@@ -61,21 +61,21 @@ FUNCTION function-name
   
  `A()`  
   
- Aby uzyskać więcej informacji, zobacz [Jak: Wywołanie funkcji zdefiniowanej przez użytkownika](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100)).  
+ Aby uzyskać więcej informacji, zobacz [instrukcje: wywoływanie funkcji zdefiniowanej przez użytkownika](/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100)).  
   
- Funkcje można również zadeklarować w samym modelu. Funkcje zadeklarowane w modelu są wykonywane w taki sam sposób, jak funkcje zadeklarowane w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [Funkcje zdefiniowane przez użytkownika](user-defined-functions-entity-sql.md).  
+ Funkcje mogą być również deklarowane w samym modelu. Funkcje zadeklarowane w modelu są wykonywane w taki sam sposób jak funkcje zadeklarowane jako wbudowane w poleceniu. Aby uzyskać więcej informacji, zobacz [funkcje zdefiniowane przez użytkownika](user-defined-functions-entity-sql.md).  
   
 ## <a name="example"></a>Przykład  
- Następujące polecenie Entity SQL definiuje `Products` funkcję, która przyjmuje wartość całkowitą do filtrowania zwróconych produktów.  
+ Następujące polecenie Entity SQL definiuje funkcję `Products` , która pobiera liczbę całkowitą do odfiltrowania zwróconych produktów.  
   
  [!code-sql[DP EntityServices Concepts#FUNCTION1](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function1)]  
   
 ## <a name="example"></a>Przykład  
- Następujące polecenie Entity SQL definiuje `StringReturnsCollection` funkcję, która pobiera kolekcję ciągów do filtrowania zwracanych kontaktów.  
+ Następujące polecenie Entity SQL definiuje funkcję `StringReturnsCollection` pobierającą ciągi do filtrowania zwróconych kontaktów.  
   
  [!code-sql[DP EntityServices Concepts#FUNCTION2](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function2)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odwołanie do jednostki SQL](entity-sql-reference.md)
 - [Jednostki języka SQL](entity-sql-language.md)

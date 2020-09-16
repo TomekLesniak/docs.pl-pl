@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-ms.openlocfilehash: 8ae98805eea7231e3a15cb74e636313e796796a2
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 0445ac33473c7e2d1916705893b22ba21bb981ff
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89117990"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536849"
 ---
 # <a name="partial-type-c-reference"></a>Typ częściowy (odwołanie w C#)
 
@@ -29,13 +29,13 @@ W *file2.cs* deklaracji:
 
 ## <a name="remarks"></a>Uwagi
 
-Dzielenie klasy, struktury lub interfejsu za pomocą kilku plików może być przydatne podczas pracy z dużymi projektami lub z automatycznie generowanym kodem, takim jak [Projektant formularzy systemu Windows](../../../framework/winforms/controls/developing-windows-forms-controls-at-design-time.md). Typ częściowy może zawierać [metodę częściową](partial-method.md). Aby uzyskać więcej informacji, zobacz [częściowe klasy i metody](../../programming-guide/classes-and-structs/partial-classes-and-methods.md).
+Dzielenie klasy, struktury lub interfejsu za pomocą kilku plików może być przydatne podczas pracy z dużymi projektami lub z automatycznie generowanym kodem, takim jak [Projektant formularzy systemu Windows](/dotnet/desktop/winforms/controls/developing-windows-forms-controls-at-design-time). Typ częściowy może zawierać [metodę częściową](partial-method.md). Aby uzyskać więcej informacji, zobacz [częściowe klasy i metody](../../programming-guide/classes-and-structs/partial-classes-and-methods.md).
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)

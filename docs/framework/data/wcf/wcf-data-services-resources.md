@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: 8b86944808aa7a35341f4fdafb3a92c6d9d127ec
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 9b0534c2d11b723458b52e219ba1ce2de4b3c550
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900855"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541529"
 ---
 # <a name="wcf-data-services-resources"></a>Zasoby Usługi danych programu WCF
 Tematy dotyczące wprowadzenia Usługi danych programu WCF można znaleźć w następujących lokalizacjach. Wiele z tych tematów zawiera również linki do powiązanych tematów, które zawierają bardziej szczegółowe informacje.  
@@ -32,7 +32,7 @@ Tematy dotyczące wprowadzenia Usługi danych programu WCF można znaleźć w na
  [Forum Usługi danych programu WCF](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetdataservices)  
  Obsługa programowania danych dla deweloperów Usługi danych programu WCF.  
   
- [Blog zespołu Usługi danych programu WCF](https://docs.microsoft.com/archive/blogs/astoriateam/)  
+ [Blog zespołu Usługi danych programu WCF](/archive/blogs/astoriateam/)  
  Blog zawierający aktualizacje i Omówienie funkcji Usługi danych programu WCF.  
   
  [Witryna sieci Web OData](https://www.odata.org/)  
@@ -44,10 +44,10 @@ Tematy dotyczące wprowadzenia Usługi danych programu WCF można znaleźć w na
  [Blog usługi OData](https://www.odata.org/blog/)  
  Blog zawierający dyskusje na temat programowania OData.  
   
- [Przegląd: Usługi danych programu WCF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/cc956153(v=msdn.10))  
+ [Przegląd: Usługi danych programu WCF](/previous-versions/visualstudio/visual-studio-2008/cc956153(v=msdn.10))  
  Oficjalny dokument zapewniający więcej informacji na temat korzyści z Usługi danych programu WCF.  
   
- [Korzystanie z programu Microsoft Usługi danych programu WCF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/cc907912(v=msdn.10))  
+ [Korzystanie z programu Microsoft Usługi danych programu WCF](/previous-versions/visualstudio/visual-studio-2008/cc907912(v=msdn.10))  
  Oficjalny dokument z dodatkowymi informacjami i przykładami służącymi do tworzenia usług danych i uzyskiwania dostępu do usług danych w aplikacjach klienckich.  
   
  [Model relacji jednostki: w kierunku ujednoliconego widoku danych](https://dl.acm.org/doi/10.1145/320434.320440) przez Piotr PIN-Shan Chen, Massachusetts Institute of Technology  

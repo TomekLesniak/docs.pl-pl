@@ -10,12 +10,12 @@ helpviewer_keywords:
 - compiler configuration attributes
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
-ms.openlocfilehash: 46676f25597f85596598d6f67c98930971cb0447
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0abbe594754cbd70ec4732a1e7ef98e8e88bf167
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088053"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544755"
 ---
 # <a name="compiler-element"></a>\<compiler> Element
 
@@ -56,21 +56,21 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
 
 |Element|Opis|
 |-------------|-----------------|
-|[\<providerOption>Postaci](provideroption-element.md)|Określa atrybuty wersji kompilatora dla dostawcy języka.|
+|[\<providerOption> Postaci](provideroption-element.md)|Określa atrybuty wersji kompilatora dla dostawcy języka.|
 
 ### <a name="parent-elements"></a>Elementy nadrzędne
 
 |Element|Opis|
 |-------------|-----------------|
-|[\<configuration>Postaci](../configuration-element.md)|Element główny w każdym pliku konfiguracji używanym przez środowisko uruchomieniowe języka wspólnego i aplikacje programu .NET Framework.|
-|[\<system.codedom>Postaci](system-codedom-element.md)|Określa ustawienia konfiguracji kompilatora dla dostępnych dostawców języka.|
-|[\<compilers>Postaci](compilers-element.md)|Kontener dla elementów konfiguracji kompilatora; zawiera zero lub więcej `<compiler>` elementów.|
+|[\<configuration> Postaci](../configuration-element.md)|Element główny w każdym pliku konfiguracji używanym przez środowisko uruchomieniowe języka wspólnego i aplikacje programu .NET Framework.|
+|[\<system.codedom> Postaci](system-codedom-element.md)|Określa ustawienia konfiguracji kompilatora dla dostępnych dostawców języka.|
+|[\<compilers> Postaci](compilers-element.md)|Kontener dla elementów konfiguracji kompilatora; zawiera zero lub więcej `<compiler>` elementów.|
 
 ## <a name="remarks"></a>Uwagi
 
 Każdy `<compiler>` element określa atrybuty konfiguracji kompilatora dla określonego dostawcy języka. Dostawca rozszerza <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> klasę dla określonego języka; `<compiler>` element definiuje ustawienia kompilatora i generatora kodu dla dostawcy języka.
 
-.NET Framework definiuje początkowe ustawienia kompilatora w pliku konfiguracji komputera (Machine. config). Deweloperzy i dostawcy kompilatora mogą dodać ustawienia konfiguracji dla nowej <xref:System.CodeDom.Compiler.CodeDomProvider> implementacji. Użyj <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> metody, aby programowo wyliczyć dostawcę języka i ustawienia konfiguracji kompilatora na komputerze.
+.NET Framework definiuje początkowe ustawienia kompilatora w pliku konfiguracji komputera (Machine.config). Deweloperzy i dostawcy kompilatora mogą dodać ustawienia konfiguracji dla nowej <xref:System.CodeDom.Compiler.CodeDomProvider> implementacji. Użyj <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> metody, aby programowo wyliczyć dostawcę języka i ustawienia konfiguracji kompilatora na komputerze.
 
 Elementy kompilatora w pliku konfiguracyjnym aplikacji lub sieci Web mogą uzupełniać lub zastępować ustawienia w pliku konfiguracji komputera. Jeśli skonfigurowano więcej niż jedną implementację dostawcy dla tej samej nazwy języka lub tego samego rozszerzenia pliku, Ostatnia zgodna konfiguracja zastępuje wszelkich wcześniej skonfigurowanych dostawców dla tej nazwy języka lub rozszerzenia pliku.
 
@@ -105,6 +105,6 @@ Poniższy przykład ilustruje typowy element konfiguracji kompilatora:
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
 - [Schemat pliku konfiguracji](../index.md)
-- [\<compilers>Postaci](compilers-element.md)
+- [\<compilers> Postaci](compilers-element.md)
 - [Określanie w pełni kwalifikowanych nazw typów](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)
-- [Element kompilatora dla kompilatorów dla kompilacji (Schemat ustawień ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))
+- [Element kompilatora dla kompilatorów dla kompilacji (Schemat ustawień ASP.NET)](/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))

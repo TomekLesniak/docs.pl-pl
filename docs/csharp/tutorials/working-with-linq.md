@@ -4,12 +4,12 @@ description: W tym samouczku przedstawiono sposób generowania sekwencji przy u�
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 9bc17700e22ea29b1861945a220e397a90b9a7c1
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 59e86d6412e16728fb03d05f7f4e221a26ec1bb1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656999"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536239"
 ---
 # <a name="work-with-language-integrated-query-linq"></a>Korzystanie z zapytań zintegrowanych z językiem (LINQ)
 
@@ -259,7 +259,7 @@ shuffle = shuffle.Skip(26).InterleaveSequenceWith(shuffle.Take(26));
 
 Uruchom program ponownie, a zobaczysz, że dla talii zostanie wykonanych 52 iteracji na potrzeby zmiany kolejności. Należy również pamiętać o poważnym obniżeniu wydajności, gdy program będzie kontynuował pracę.
 
-Istnieje kilka przyczyn tego działania. Możesz skorzystać z jednej z głównych przyczyn tego spadku wydajności: niewydajne użycie [*oceny z opóźnieniem*](../programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Istnieje kilka przyczyn tego działania. Możesz skorzystać z jednej z głównych przyczyn tego spadku wydajności: niewydajne użycie [*oceny z opóźnieniem*](../../standard/linq/deferred-execution-lazy-evaluation.md).
 
 Krótko, z opóźnieniem, że Ocena instrukcji nie jest wykonywana, dopóki jej wartość nie jest wymagana. Zapytania LINQ to instrukcje, które są oceniane opóźnieniem. Sekwencje są generowane tylko w przypadku, gdy są żądane elementy. Zwykle jest to główna korzyść dla LINQ. Jednak w przypadku użycia takiego jak ten program powoduje wzrost wykładniczy w czasie wykonywania.
 

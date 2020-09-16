@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
-ms.openlocfilehash: 517d80395e09598fcbd067034223dc6ba58cbe2e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e7dd73b755c7aed91a1fd59baaf9d5e090a36768
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600441"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541464"
 ---
 # <a name="windows-communication-foundation-security-overview"></a>Omówienie zabezpieczeń Windows Communication Foundation
 Windows Communication Foundation (WCF) to platforma programowania oparta na komunikatach protokołu SOAP, a zabezpieczenia komunikatów między klientami i usługami są niezbędne do ochrony danych. Funkcja WCF zapewnia uniwersalną i międzyplatformową platforma do wymiany bezpiecznych komunikatów opartych na istniejącej infrastrukturze zabezpieczeń i uznanych standardach zabezpieczeń dla komunikatów protokołu SOAP.  
@@ -97,7 +97,7 @@ Windows Communication Foundation (WCF) to platforma programowania oparta na komu
 ### <a name="auditing"></a>Inspekcja  
  *Inspekcja* to rejestrowanie zdarzeń zabezpieczeń w dzienniku zdarzeń systemu Windows. Można rejestrować zdarzenia związane z zabezpieczeniami, takie jak błędy uwierzytelniania (lub sukcesy). Aby uzyskać więcej informacji, zobacz [Inspekcja](auditing-security-events.md). Aby uzyskać szczegółowe informacje dotyczące programowania, zobacz [jak: Inspekcja zdarzeń zabezpieczeń](how-to-audit-wcf-security-events.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
 - [Zabezpieczanie usług](../securing-services.md)
@@ -110,7 +110,7 @@ Windows Communication Foundation (WCF) to platforma programowania oparta na komu
 - [Inspekcja](auditing-security-events.md)
 - [Wytyczne dotyczące zabezpieczeń i najlepsze rozwiązania](security-guidance-and-best-practices.md)
 - [Konfigurowanie usług za pomocą plików konfiguracji](../configuring-services-using-configuration-files.md)
-- [Powiązania dostarczane przez system](../system-provided-bindings.md)
+- [Wiązania dostarczane przez system](../system-provided-bindings.md)
 - [Przegląd tworzenia punktów końcowych](../endpoint-creation-overview.md)
 - [Rozszerzanie zabezpieczeń](../extending/extending-security.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

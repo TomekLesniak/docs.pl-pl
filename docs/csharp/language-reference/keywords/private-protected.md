@@ -5,12 +5,12 @@ ms.date: 11/15/2017
 f1_keywords:
 - privateprotected_CSharpKeyword
 author: sputier
-ms.openlocfilehash: d83fd2a570b735a029bd2a79ad24e30d235dc5fb
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: e7ef6d691b43abd3d07321adfc0c166629ce9098
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89117964"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537304"
 ---
 # <a name="private-protected-c-reference"></a>Private Protected (odwołanie w C#)
 
@@ -72,7 +72,7 @@ Elementy członkowskie struktury nie mogą być takie same `private protected` ,
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)
@@ -83,4 +83,4 @@ Elementy członkowskie struktury nie mogą być takie same `private protected` ,
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Zagadnienia dotyczące zabezpieczeń wewnętrznych wirtualnych słów kluczowych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Zagadnienia dotyczące zabezpieczeń wewnętrznych wirtualnych słów kluczowych](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

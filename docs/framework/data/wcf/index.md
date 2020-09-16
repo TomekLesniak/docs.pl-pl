@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: ca6b196e8c910f97ead6d1df5b6c0dd6c49c68a4
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: c36967236c40efbf432d554c3f551aea22cfb148
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247755"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549682"
 ---
 # <a name="wcf-data-services-45"></a>Usługi danych WCF 4.5
 
@@ -39,7 +39,7 @@ Pokaż mi tylko jakiś kod...
 
 - [Instrukcje: Wykonywanie zapytań usługi danych](how-to-execute-data-service-queries-wcf-data-services.md)
 
-- [Instrukcje: Wiązanie danych do elementów systemu Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
+- [Instrukcje: Wiązanie danych z elementami systemu Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
 
 Chcę dowiedzieć się więcej o usłudze OData...
 
@@ -76,7 +76,7 @@ Chcę użyć LINQ...
 
 Nadal potrzebuję więcej informacji...
 
-- [Blog zespołu Usługi danych programu WCF](https://docs.microsoft.com/archive/blogs/astoriateam/)
+- [Blog zespołu Usługi danych programu WCF](/archive/blogs/astoriateam/)
 
 - [Zasoby](wcf-data-services-resources.md)
 
@@ -86,7 +86,7 @@ Nadal potrzebuję więcej informacji...
 
 Zawiera przegląd funkcji dostępnych w Usługi danych programu WCF.
 
-[Co nowego w Usługi danych programu WCF 5,0](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
+[Co nowego w Usługi danych programu WCF 5,0](/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
 
 Opisuje nowe funkcje w Usługi danych programu WCF i obsługę nowych funkcji OData.
 
@@ -102,6 +102,6 @@ Opisuje sposób tworzenia i konfigurowania usługi danych, która udostępnia ź
 
 Opisuje sposób używania bibliotek klienckich do korzystania ze źródeł danych OData z aplikacji klienckiej .NET Framework.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przenoszenie stanu reprezentacji (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)

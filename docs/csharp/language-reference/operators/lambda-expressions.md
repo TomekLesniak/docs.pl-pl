@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 3dd793ec000999935bff6b54b1b00e49211bd5ec
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 7f80c1a5d9136609935b25b5cce3792e80b9ac94
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558364"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536447"
 ---
 # <a name="lambda-expressions-c-reference"></a>Wyrażenia lambda (odwołanie w C#)
 
@@ -224,9 +224,9 @@ Aby uzyskać więcej informacji, zobacz sekcję [wyrażenia funkcji anonimowej](
 
 ## <a name="featured-book-chapter"></a>Polecany rozdział książki
 
-[Delegaty, zdarzenia i wyrażenia lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) w [języku c# 3,0 Cookbook, wydanie trzecie: więcej niż 250 rozwiązań dla programistów 3,0 c#](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
+[Delegaty, zdarzenia i wyrażenia lambda](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) w [języku c# 3,0 Cookbook, wydanie trzecie: więcej niż 250 rozwiązań dla programistów 3,0 c#](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

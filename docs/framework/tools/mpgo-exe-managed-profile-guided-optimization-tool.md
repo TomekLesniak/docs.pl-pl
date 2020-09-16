@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Ngen.exe
 - Ngen.exe, profilers and native images
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
-ms.openlocfilehash: 18a379447e1d5ba97090eca299c59cc161c7be71
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 714715968388325713a12027fb0ab89415e1d60c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517285"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544287"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (narzędzie optymalizacji sterowania zarządzanym profilem)
 
@@ -103,7 +103,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
   
 - Nie można używać ścieżek w cudzysłowie ze znakami ukośnika na końcu, ponieważ makra Visual Studio również domyślnie używają końcowych ukośników. (Na przykład `–OutDir "C:\Output Folder\"` jest nieprawidłowy). Aby obejść to ograniczenie, można wyjść z końcowym ukośnikiem. (Na przykład użyj `-OutDir "$(OutDir)\"` zamiast tego).  
   
-- Domyślnie program Mpgo.exe nie znajduje się w ścieżce kompilacji programu Visual Studio. Możesz dodać ścieżkę do programu Visual Studio lub podać pełną ścieżkę w wierszu polecenia Mpgo. Możesz użyć albo `–Scenario` `–Import` parametru w zdarzeniu po kompilacji w programie Visual Studio. Typowym procesem jest jednak użycie `–Scenario` jednego czasu z wiersz polecenia dla deweloperów dla programu Visual Studio, a następnie użycie `–Import` go do zaktualizowania zoptymalizowanych zestawów po każdej kompilacji; na przykład: `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"` .  
+- Domyślnie program Mpgo.exe nie znajduje się w ścieżce kompilacji programu Visual Studio. Możesz dodać ścieżkę do programu Visual Studio lub podać pełną ścieżkę w wierszu polecenia Mpgo. Możesz użyć albo `–Scenario` `–Import` parametru w zdarzeniu po kompilacji w programie Visual Studio. Typowym procesem jest jednak użycie `–Scenario` jednego czasu z wiersz polecenia dla deweloperów dla programu Visual Studio, a następnie użycie `–Import` go do zaktualizowania zoptymalizowanych zestawów po każdej kompilacji; na przykład:  `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"` .  
   
 <a name="samples"></a>
 ## <a name="examples"></a>Przykłady  
@@ -130,4 +130,4 @@ mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyT
 - [Ngen.exe (Generator obrazu natywnego)](ngen-exe-native-image-generator.md)
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)
 - [Poprawianie wydajności uruchamiania aplikacji klasycznych](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)
-- [Omówienie ulepszeń wydajności w programie .NET 4,5](https://docs.microsoft.com/archive/msdn-magazine/2012/april/clr-an-overview-of-performance-improvements-in-net-4-5)
+- [Omówienie ulepszeń wydajności w programie .NET 4,5](/archive/msdn-magazine/2012/april/clr-an-overview-of-performance-improvements-in-net-4-5)

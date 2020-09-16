@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: 92cfdc1a2a530f9790a693d0aa1ca5f65ff1af9f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 824765e1f3ecfd1381f9c5f8b144b7b11aee8f0b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558767"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550387"
 ---
 # <a name="version-compatibility"></a>Zgodność wersji
 
@@ -53,9 +53,9 @@ Jeśli aplikacja lub składnik nie działa zgodnie z oczekiwaniami w .NET Framew
 
 - Jeśli masz aplikację .NET Framework 3,5, zobacz również problemy z [migracją .NET Framework 4](net-framework-4-migration-issues.md).
 
-- Jeśli masz aplikację .NET Framework 2,0, zobacz również [zmiany w programie .NET Framework 3,5 z dodatkiem SP1](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10)).
+- Jeśli masz aplikację .NET Framework 2,0, zobacz również [zmiany w programie .NET Framework 3,5 z dodatkiem SP1](/previous-versions/dotnet/articles/dd310284(v=msdn.10)).
 
-- Jeśli masz aplikację .NET Framework 1,1, zobacz również [zmiany w .NET Framework 2,0](https://docs.microsoft.com/previous-versions/aa570326(v=msdn.10)).
+- Jeśli masz aplikację .NET Framework 1,1, zobacz również [zmiany w .NET Framework 2,0](/previous-versions/aa570326(v=msdn.10)).
 
 - Jeśli ponownie kompilujesz istniejący kod źródłowy do uruchamiania na .NET Framework 4,5 lub w jego wersjach, lub jeśli tworzysz nową wersję aplikacji lub składnika, który jest przeznaczony dla wersji .NET Framework 4,5 lub jej punktów z istniejącej bazy kodu źródłowego, sprawdź, [co jest przestarzałe w bibliotece klas](../whats-new/whats-obsolete.md) dla przestarzałych typów i członków, i zastosuj opisane obejście. (Poprzednio skompilowany kod będzie kontynuował pracę względem typów i elementów członkowskich, które zostały oznaczone jako przestarzałe.)
 
@@ -67,7 +67,7 @@ Jeśli aplikacja lub składnik nie działa zgodnie z oczekiwaniami w .NET Framew
 
 Jeśli nie możesz znaleźć odpowiedniego obejścia problemu, pamiętaj, że .NET Framework 4,5 (lub jeden z jego wydań punktów) działa równolegle z wersjami 1,1, 2,0 i 3,5, i jest aktualizacją w miejscu, która zastępuje wersję 4. W przypadku aplikacji przeznaczonych dla wersji 1,1, 2,0 i 3,5 można zainstalować odpowiednią wersję .NET Framework na komputerze docelowym, aby uruchomić aplikację w jej najlepszym środowisku. Aby uzyskać więcej informacji na temat wykonywania równoczesnego, zobacz [Wykonywanie równoczesne](../deployment/side-by-side-execution.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Co nowego](../whats-new/index.md)
 - [Przestarzałe elementy w ułatwieniach dostępu](../whats-new/whats-obsolete.md)

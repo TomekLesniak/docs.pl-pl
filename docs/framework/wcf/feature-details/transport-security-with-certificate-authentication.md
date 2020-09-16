@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 dev_langs:
 - csharp
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-ms.openlocfilehash: 3da1202a5ad3b953470b50dd5924b2ab45f301eb
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 38f7d310be41455dd12460fdfa93d7e624d10c2a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244781"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545223"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>Zabezpieczanie transportu przy użyciu uwierzytelniania certyfikatów
 
@@ -27,8 +27,8 @@ W tym artykule omówiono użycie certyfikatów X. 509 na potrzeby uwierzytelnian
 |Tryb zabezpieczeń|Transport|  
 |Współdziałanie|Z istniejącymi klientami i usługami sieci Web.|  
 |Uwierzytelnianie (serwer)<br /><br /> Uwierzytelnianie (klient)|Tak (przy użyciu certyfikatu SSL)<br /><br /> Tak (przy użyciu certyfikatu X. 509)|  
-|Integralność danych|Tak|  
-|Poufność danych|Tak|  
+|Integralność danych|Yes|  
+|Poufność danych|Yes|  
 |Transport|HTTPS|  
 |Wiązanie|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -139,7 +139,7 @@ cc.Close();
 <startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

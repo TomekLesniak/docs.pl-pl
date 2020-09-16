@@ -11,12 +11,12 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: fa0af1461ba568583127316934b9d55577dd4c5a
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 8d5c37bf2ed80e9b6ea071fcd2080c43be8f6247
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662826"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546370"
 ---
 # <a name="managed-threading-best-practices"></a>Zarządzane wątki z najlepszymi rozwiązaniami
 Wielowątkowość wymaga starannego programowania. W przypadku większości zadań można zmniejszyć złożoność przez kolejkowanie żądań na potrzeby wykonywania przez wątki puli wątków. Ten temat dotyczy trudniejszych sytuacji, takich jak koordynacja pracy wielu wątków lub obsługa wątków, które blokują.  
@@ -78,7 +78,7 @@ else {
 
 ## <a name="number-of-processors"></a>Liczba procesorów
 
-Bez względu na to, czy istnieje wiele procesorów, czy tylko jeden procesor dostępny w systemie może mieć wpływ na architekturę wielowątkową. Aby uzyskać więcej informacji, zobacz [Liczba procesorów](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/1c9txz50(v%3dvs.71)#number-of-processors).
+Bez względu na to, czy istnieje wiele procesorów, czy tylko jeden procesor dostępny w systemie może mieć wpływ na architekturę wielowątkową. Aby uzyskać więcej informacji, zobacz [Liczba procesorów](/previous-versions/dotnet/netframework-1.1/1c9txz50(v=vs.71)#number-of-processors).
 
 Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> właściwości, aby określić liczbę procesorów dostępnych w czasie wykonywania.
   
@@ -89,7 +89,7 @@ Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> wła
   
 - Nie używaj <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> i <xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType> synchronizowania działań wielu wątków. Użyj <xref:System.Threading.Mutex> , <xref:System.Threading.ManualResetEvent> , <xref:System.Threading.AutoResetEvent> , i <xref:System.Threading.Monitor> .  
   
-- Nie Kontroluj wykonywania wątków roboczych z głównego programu (na przykład przy użyciu zdarzeń). Zamiast tego Zaprojektuj program tak, aby wątki robocze były odpowiedzialne za oczekiwanie na dostępność, wykonanie tej operacji i powiadomienie innych części programu po zakończeniu. Jeśli wątki robocze nie są blokowane, należy rozważyć użycie wątków puli wątków. <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType>jest przydatny w sytuacjach, w których działa blok wątków roboczych.  
+- Nie Kontroluj wykonywania wątków roboczych z głównego programu (na przykład przy użyciu zdarzeń). Zamiast tego Zaprojektuj program tak, aby wątki robocze były odpowiedzialne za oczekiwanie na dostępność, wykonanie tej operacji i powiadomienie innych części programu po zakończeniu. Jeśli wątki robocze nie są blokowane, należy rozważyć użycie wątków puli wątków. <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> jest przydatny w sytuacjach, w których działa blok wątków roboczych.  
   
 - Nie używaj typów jako obiektów blokady. Oznacza to, że należy unikać kodu, takiego jak `lock(typeof(X))` C# lub `SyncLock(GetType(X))` w Visual Basic, lub używania <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> z <xref:System.Type> obiektami. Dla danego typu istnieje tylko jedno wystąpienie dla <xref:System.Type?displayProperty=nameWithType> każdej domeny aplikacji. Jeśli typ, w którym jest wykonywane zablokowanie, jest publiczny, kod inny niż własny może być na nim zablokowany, prowadząc do zakleszczenia. Aby uzyskać dodatkowe problemy, zobacz [najlepsze rozwiązania dotyczące niezawodności](../../framework/performance/reliability-best-practices.md).  
   

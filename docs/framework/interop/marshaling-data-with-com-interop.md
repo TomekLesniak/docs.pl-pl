@@ -5,12 +5,12 @@ ms.date: 09/07/2017
 helpviewer_keywords:
 - COM interop, data marshaling
 - marshaling data, COM interop
-ms.openlocfilehash: eedfb60a75e2fe5fafdaa786dbb54adddf28400e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 94149e0c444cad7e32f959eaedd55bf14acb1ecb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621512"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547847"
 ---
 # <a name="marshaling-data-with-com-interop"></a>Organizowanie danych za pomocą modelu COM
 Współdziałanie modelu COM zapewnia obsługę zarówno obiektów COM z kodu zarządzanego, jak i Uwidacznianie obiektów zarządzanych w modelu COM. Obsługa przekazywania danych do i z modelu COM jest obszerna i prawie zawsze zapewnia prawidłowe zachowanie organizowania.  
@@ -30,23 +30,23 @@ Współdziałanie modelu COM zapewnia obsługę zarówno obiektów COM z kodu za
  Opisuje sposób migrowania zarządzanego kodu DCOM do usługi WCF w celu zapewnienia najbezpieczniejszego rozwiązania.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
- [Typy danych COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))  
+ [Typy danych COM](/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))  
  Zapewnia odpowiednie zarządzane i niezarządzane typy danych.  
   
- [Dostosowywanie wywoływanych otok COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3bwc828w(v=vs.100))  
+ [Dostosowywanie wywoływanych otok COM](/previous-versions/dotnet/netframework-4.0/3bwc828w(v=vs.100))  
  Opisuje, jak jawnie zorganizować typy danych przy użyciu <xref:System.Runtime.InteropServices.MarshalAsAttribute> atrybutu w czasie projektowania.  
   
- [Dostosowywanie wywoływanych otok środowiska uruchomieniowego](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
+ [Dostosowywanie wywoływanych otok środowiska uruchomieniowego](/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
  Opisuje sposób dostosowywania zachowania związanego z kierowaniem typów w zestawie międzyoperacyjnym i sposób ręcznego definiowania typów COM.  
   
- [Zaawansowana współdziałanie COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  
+ [Zaawansowana współdziałanie COM](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  
  Zawiera łącza do dodatkowych informacji na temat dołączania składników COM do aplikacji .NET Framework.  
   
- [Podsumowanie konwersji zestawu na bibliotekę typów](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))  
+ [Podsumowanie konwersji zestawu na bibliotekę typów](/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))  
  Opisuje zestaw do procesu konwersji eksportu biblioteki typów.  
   
- [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))  
+ [Podsumowanie dotyczące konwersji biblioteki typów na zestaw](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))  
  Opisuje proces konwersji biblioteki typów na import zestawu.  
   
- [Współdziałanie przy użyciu typów ogólnych](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))  
+ [Współdziałanie przy użyciu typów ogólnych](/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))  
  Opisuje, które akcje są obsługiwane w przypadku używania typów ogólnych do współdziałania z modelem COM.

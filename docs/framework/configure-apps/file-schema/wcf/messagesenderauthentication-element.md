@@ -2,12 +2,12 @@
 title: <messageSenderAuthentication>, element
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
-ms.openlocfilehash: bab0e50d7feba3ea55d505be07cfa41427a5cbbc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3693b2b4c6b6cbc3705a25967aedc88e36291407
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397786"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547014"
 ---
 # <a name="messagesenderauthentication-element"></a>\<messageSenderAuthentication>, element
 Określa opcje uwierzytelniania dla nadawców wiadomości równorzędnych.  
@@ -109,6 +109,6 @@ Określa opcje uwierzytelniania dla nadawców wiadomości równorzędnych.
 - <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [Sieci równorzędne](../../../wcf/feature-details/peer-to-peer-networking.md)
-- [Uwierzytelnianie komunikatów kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
-- [Uwierzytelnianie niestandardowe kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
+- [Uwierzytelnianie komunikatów kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
+- [Uwierzytelnianie niestandardowe kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
 - [Zabezpieczanie aplikacji kanałów równorzędnych](../../../wcf/feature-details/securing-peer-channel-applications.md)

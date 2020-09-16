@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
 topic_type:
 - apiref
-ms.openlocfilehash: 4c015d77deb4e6ed3d43074f2903e26b687de84f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9c5d83b5f2ffb06c9fb14f715a3ea7ff12319086
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493568"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547834"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime — Funkcja
 Ładuje środowisko uruchomieniowe języka wspólnego (CLR) do procesu przy użyciu informacji o wersji przechowywanych w pliku XML. Format pliku XML jest modelowany po standardowym pliku konfiguracji aplikacji. Aby uzyskać więcej informacji na temat plików konfiguracji, zobacz [Schemat pliku konfiguracji](../../configure-apps/file-schema/index.md).  
   
- Ta funkcja jest przestarzała w .NET Framework 4. Zobacz [ładowanie środowiska uruchomieniowego języka wspólnego do procesu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100)).  
+ Ta funkcja jest przestarzała w .NET Framework 4. Zobacz [ładowanie środowiska uruchomieniowego języka wspólnego do procesu](/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100)).  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -47,7 +47,7 @@ HRESULT CorBindToCurrentRuntime (
  Jeśli nie określono żadnej wersji lub `<requiredRuntime>` nie można znaleźć elementu, zostanie załadowana Najnowsza wersja środowiska CLR, która jest zainstalowana na maszynie.  
   
  `rclsid`  
- podczas `CLSID`Klasy coclass implementującej interfejs [ICorRuntimeHost](icorruntimehost-interface.md) lub [ICLRRuntimeHost](iclrruntimehost-interface.md) . Obsługiwane wartości to CLSID_CorRuntimeHost lub CLSID_CLRRuntimeHost.  
+ podczas `CLSID` Klasy coclass implementującej interfejs [ICorRuntimeHost](icorruntimehost-interface.md) lub [ICLRRuntimeHost](iclrruntimehost-interface.md) . Obsługiwane wartości to CLSID_CorRuntimeHost lub CLSID_CLRRuntimeHost.  
   
  `riid`  
  podczas Żądanego `IID` interfejsu. Obsługiwane wartości to IID_ICorRuntimeHost lub IID_ICLRRuntimeHost.  
@@ -60,15 +60,15 @@ HRESULT CorBindToCurrentRuntime (
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [CorBindToRuntime, funkcja](corbindtoruntime-function.md)
+- [CorBindToRuntime — Funkcja](corbindtoruntime-function.md)
 - [CorBindToRuntimeByCfg — Funkcja](corbindtoruntimebycfg-function.md)
-- [CorBindToRuntimeEx, funkcja](corbindtoruntimeex-function.md)
+- [CorBindToRuntimeEx — Funkcja](corbindtoruntimeex-function.md)
 - [CorBindToRuntimeHost — Funkcja](corbindtoruntimehost-function.md)
-- [ICorRuntimeHost, interfejs](icorruntimehost-interface.md)
+- [ICorRuntimeHost — Interfejs](icorruntimehost-interface.md)
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

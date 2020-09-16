@@ -3,12 +3,12 @@ title: Śledzenie za pomocą funkcji ETW
 description: Ten przykład pokazuje, jak zaimplementować śledzenie kompleksowe (E2E) przy użyciu funkcji śledzenia zdarzeń systemu Windows (ETW) i ETWTraceListener.
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 210186285ed749a5d1567becd6738939b0bd9d03
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 6e7526ef05d672b550599e3b12a4b083e9130b96
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244429"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547144"
 ---
 # <a name="etw-tracing"></a>Śledzenie za pomocą funkcji ETW
 W tym przykładzie pokazano, jak zaimplementować śledzenie kompleksowego (E2E) przy użyciu funkcji śledzenia zdarzeń systemu Windows (ETW) i `ETWTraceListener` dostarczonej z tym przykładem. Przykład jest oparty na [wprowadzenie](getting-started-sample.md) i zawiera śledzenie ETW.  
@@ -51,7 +51,7 @@ W tym przykładzie pokazano, jak zaimplementować śledzenie kompleksowego (E2E)
  Przed użyciem tego odbiornika należy uruchomić sesję śledzenia ETW. Tę sesję można uruchomić przy użyciu Logman.exe lub Tracelog.exe. Ten przykład zawiera plik SetupETW.bat, dzięki czemu można skonfigurować sesję śledzenia ETW wraz z plikiem CleanupETW.bat do zamykania sesji i wykonywania pliku dziennika.  
   
 > [!NOTE]
-> Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu. Aby uzyskać więcej informacji na temat tych narzędzi, zobacz.<https://go.microsoft.com/fwlink/?LinkId=56580>  
+> Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu. Aby uzyskać więcej informacji na temat tych narzędzi, zobacz. <https://go.microsoft.com/fwlink/?LinkId=56580>  
   
  W przypadku korzystania z ETWTraceListener, ślady są rejestrowane w binarnych plikach. etl. Śledzenie ServiceModel jest włączone, wszystkie wygenerowane ślady pojawiają się w tym samym pliku. Użyj [narzędzia Podgląd śledzenia usługi (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) do wyświetlania plików dziennika. ETL i. svclog. Przeglądarka tworzy kompleksowy widok systemu, który umożliwia śledzenie komunikatu z jego źródła do jego lokalizacji docelowej i punktu zużycia.  
   
@@ -107,6 +107,6 @@ logman stop Wcf
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\AnalyticTrace`  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Przykłady monitorowania oprogramowania AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

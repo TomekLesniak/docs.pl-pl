@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7c589dd8-f680-4cdb-9d6a-78d57e2555e8
-ms.openlocfilehash: 84b820f3192a173130c485f3e7cdadf9499932f1
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: c575df2e8caa2125091265c00557b91a24601e48
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553192"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549599"
 ---
 # <a name="how-to-find-a-list-of-child-elements-linq-to-xml"></a>Jak znaleźć listę elementów podrzędnych (LINQ to XML)
 
@@ -75,6 +75,6 @@ Results are identical
 <Country>USA</Country>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [LINQ to XML dla użytkowników XPath (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML dla użytkowników XPath (Visual Basic)](./comparison-xpath-linq-xml.md)

@@ -4,12 +4,12 @@ description: Opisuje składniki architektury .NET, takie jak .NET Standard, impl
 author: cartermp
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 2fc8bcea59cd2ba652b88644677f077d62994ca4
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: fc34cf35e82e3a401f32561aa239996c7697aa03
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414737"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547678"
 ---
 # <a name="net-architectural-components"></a>Składniki architektury .NET
 
@@ -29,14 +29,14 @@ Każda implementacja platformy .NET obejmuje następujące składniki:
 
 - Co najmniej jedno środowisko uruchomieniowe. Przykłady: CLR dla .NET Framework, CoreCLR i CoreRT dla platformy .NET Core.
 - Biblioteka klas, która implementuje .NET Standard i może implementować dodatkowe interfejsy API. Przykłady: .NET Framework podstawowa Biblioteka klas, podstawowa Biblioteka klas .NET Core.
-- Opcjonalnie co najmniej jedna struktura aplikacji. Przykłady: [ASP.NET](https://www.asp.net/), [Windows Forms](../framework/winforms/windows-forms-overview.md)i [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) są zawarte w .NET Framework i .NET Core.
+- Opcjonalnie co najmniej jedna struktura aplikacji. Przykłady: [ASP.NET](https://www.asp.net/), [Windows Forms](/dotnet/desktop/winforms/windows-forms-overview)i [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) są zawarte w .NET Framework i .NET Core.
 - Opcjonalnie narzędzia programistyczne. Niektóre narzędzia programistyczne są współużytkowane przez wiele implementacji.
 
 Istnieją cztery podstawowe implementacje platformy .NET, które firma Microsoft aktywnie opracowuje i utrzymuje: .NET Core, .NET Framework, mono i platformy UWP.
 
 ### <a name="net-core"></a>.NET Core
 
-.NET Core to wieloplatformowa implementacja programu .NET i zaprojektowana pod kątem obsługi obciążeń serwera i chmury na dużą skalę. Działa w systemach Windows, macOS i Linux. Implementuje .NET Standard, więc kod, który jest przeznaczony dla .NET Standard można uruchomić na platformie .NET Core. [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core), [Windows Forms](../framework/winforms/windows-forms-overview.md)i [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) działają na platformie .NET Core.
+.NET Core to wieloplatformowa implementacja programu .NET i zaprojektowana pod kątem obsługi obciążeń serwera i chmury na dużą skalę. Działa w systemach Windows, macOS i Linux. Implementuje .NET Standard, więc kod, który jest przeznaczony dla .NET Standard można uruchomić na platformie .NET Core. [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core), [Windows Forms](/dotnet/desktop/winforms/windows-forms-overview)i [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) działają na platformie .NET Core.
 
 Aby dowiedzieć się więcej na temat platformy .NET Core, zobacz [wprowadzenie do platformy .NET Core](../core/introduction.md) i [wybór między platformą .net core i .NET Framework dla aplikacji serwerowych](choosing-core-framework-server.md).
 
@@ -103,12 +103,12 @@ Oficjalne dokumenty ISO/IEC są dostępne na stronie [standardy dostępne public
 - **Technologia informacyjna — Common Language Infrastructure (CLI) partycje I do VI**: [ISO/IEC 23271:2012](https://standards.iso.org/ittf/PubliclyAvailableStandards/c058046_ISO_IEC_23271_2012(E).zip)
 - **Technologia informacyjna — Common Language Infrastructure (CLI) — raport techniczny dotyczący informacji pochodnych z pliku XML partycji IV**: [ISO/IEC TR 23272:2011](https://standards.iso.org/ittf/PubliclyAvailableStandards/c057955_ISO_IEC_TR_23272_2011.zip)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wybieranie między programami .NET Core i .NET Framework na potrzeby aplikacji serwerowych](choosing-core-framework-server.md)
 - [.NET Standard wprowadzenie](net-standard.md)
 - [Wprowadzenie do platformy .NET Core](../core/introduction.md)
-- [Przewodnik .NET Framework](../framework/index.yml)
-- [Przewodnik C#](../csharp/index.yml)
-- [Przewodnik po języku F #](../fsharp/index.yml)
-- [Przewodnik Visual Basic](../visual-basic/index.yml)
+- [Przewodnik programu .NET Framework](../framework/index.yml)
+- [Przewodnik języka C#](../csharp/index.yml)
+- [Przewodnik języka F#](../fsharp/index.yml)
+- [Przewodnik języka Visual Basic](../visual-basic/index.yml)

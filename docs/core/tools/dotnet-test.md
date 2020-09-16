@@ -2,12 +2,12 @@
 title: polecenie testu dotnet
 description: Polecenie Test dotnet służy do wykonywania testów jednostkowych w danym projekcie.
 ms.date: 04/29/2020
-ms.openlocfilehash: d67521084330b206afca89baf59228b99ca799a1
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 5ecfa24905537a663cd967142b765c258495fb22
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656758"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537743"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -77,7 +77,7 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
 - **`--blame-crash`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
-  Uruchamia testy w trybie polecenia Blame i zbiera zrzut awaryjny, gdy host testowy zostanie nieoczekiwanie zamknięty. Ta opcja jest obsługiwana tylko w systemie Windows. Katalog zawierający *procdump.exe* i *procdump64.exe* musi znajdować się w zmiennej środowiskowej PATH lub PROCDUMP_PATH. [Pobierz narzędzia](https://docs.microsoft.com/sysinternals/downloads/procdump). Oznacza `--blame` .
+  Uruchamia testy w trybie polecenia Blame i zbiera zrzut awaryjny, gdy host testowy zostanie nieoczekiwanie zamknięty. Ta opcja jest obsługiwana tylko w systemie Windows. Katalog zawierający *procdump.exe* i *procdump64.exe* musi znajdować się w zmiennej środowiskowej PATH lub PROCDUMP_PATH. [Pobierz narzędzia](/sysinternals/downloads/procdump). Oznacza `--blame` .
 
 - **`--blame-crash-dump-type <DUMP_TYPE>`** (Dostępne od wersji .NET 5,0 Preview SDK)
 

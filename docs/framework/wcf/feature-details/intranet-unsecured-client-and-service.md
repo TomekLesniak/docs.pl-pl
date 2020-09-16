@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 591f7db0f6b4e928a991961d3bc7c404f41028bf
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1edbfe2d0d25ea9f2145f879673fc9f0a6ee7f96
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579283"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547196"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Niezabezpieczony klient i usługa w intranecie
 Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Foundation (WCF) opracowaną w celu zapewnienia informacji o bezpiecznej sieci prywatnej do aplikacji WCF. Zabezpieczenia nie są wymagane, ponieważ dane mają niską ważność, Sieć powinna być zabezpieczona w sposób niebezpieczny lub zabezpieczenia są udostępniane przez warstwę poniżej infrastruktury WCF.  
@@ -40,7 +40,7 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
  [!code-csharp[C_UnsecuredService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#2)]
  [!code-vb[C_UnsecuredService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredservice/vb/source.vb#2)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  Poniższy kod konfiguruje ten sam punkt końcowy przy użyciu konfiguracji:  
   
 ```xml  
@@ -75,7 +75,7 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
   
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).  
   
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:  
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -86,7 +86,7 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  
   
-### <a name="configuration"></a>Konfigurowanie  
+### <a name="configuration"></a>Konfiguracja  
  Następujący kod konfiguracji ma zastosowanie do klienta programu:  
   
 ```xml  
@@ -112,8 +112,8 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ServiceModel.NetTcpBinding>
 - [Przegląd zabezpieczeń](security-overview.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Forms, app settings schema
 - configuration schema [.NET Framework], app settings
 ms.assetid: 99347d62-3ea5-40b6-bfec-c31431011422
-ms.openlocfilehash: 0a3363b35a6fc8bd27753eb034f8a1e95feb5292
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a67689bd9757f7586881fd910ef6103b1dffeab8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "77215428"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550452"
 ---
 # <a name="app-settings-schema"></a>Schemat ustawień aplikacji
 
@@ -49,7 +49,7 @@ Usuwa odwołanie do dziedziczonego ustawienia aplikacji niestandardowej z kolekc
 
 ## <a name="example"></a>Przykład
 
-W poniższym przykładzie przedstawiono zewnętrzny plik ustawień aplikacji (*Custom. config*) definiujący niestandardowe ustawienie aplikacji:
+W poniższym przykładzie przedstawiono zewnętrzny plik ustawień aplikacji (*custom.config*) definiujący niestandardowe ustawienie aplikacji:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -70,5 +70,5 @@ Poniższy przykład przedstawia plik konfiguracji aplikacji, który używa ustaw
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Przegląd ustawień aplikacji](../../../winforms/advanced/application-settings-overview.md)
-- [Architektura ustawień aplikacji](../../../winforms/advanced/application-settings-architecture.md)
+- [Przegląd ustawień aplikacji](/dotnet/desktop/winforms/advanced/application-settings-overview)
+- [Architektura ustawień aplikacji](/dotnet/desktop/winforms/advanced/application-settings-architecture)

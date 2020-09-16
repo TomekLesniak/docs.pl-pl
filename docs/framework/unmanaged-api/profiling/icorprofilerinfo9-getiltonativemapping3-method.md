@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 22fe5608b0a3f86baf80abb3810a512077954ac3
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 14391a0fe046b44aedca1da2bc42c7d962e1a5e7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449754"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541281"
 ---
 # <a name="icorprofilerinfo9getiltonativemapping3-method"></a>ICorProfilerInfo9:: GetILToNativeMapping3, Metoda
 
@@ -39,7 +39,7 @@ HRESULT GetILToNativeMapping3( [in]  UINT_PTR pNativeCodeStartAddress,
 
 - `cMap`
 
-  \[] maksymalny rozmiar tablicy `map`.
+  \[w] maksymalny rozmiar `map` tablicy.
 
 - `pcMap`
 
@@ -47,7 +47,7 @@ HRESULT GetILToNativeMapping3( [in]  UINT_PTR pNativeCodeStartAddress,
 
 - `map`
 
-  \[out] tablica [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md) struktur, z których każdy określa przesunięcia. Po powrocie metody `GetILToNativeMapping3`, `map` będzie zawierać niektóre lub wszystkie struktury `COR_DEBUG_IL_TO_NATIVE_MAP`.
+  \[out] tablica struktur [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md) , z których każdy określa przesunięcia. Po `GetILToNativeMapping3` powrocie metody `map` będzie zawierać niektóre lub wszystkie `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.
 
 ## <a name="remarks"></a>Uwagi
 
@@ -55,14 +55,14 @@ Gdy kompilacja warstwowa jest włączona, Metoda może mieć więcej niż jedną
 
 ## <a name="requirements"></a>Wymagania
 
-**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/dependencies.md?pivots=os-windows).
+**Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/windows.md?pivots=os-windows).
 
 **Nagłówek:** CorProf. idl, CorProf. h
 
 **Biblioteka:** CorGuids. lib
 
-**Wersje .NET Framework:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
+**.NET Framework wersje:**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorProfilerInfo9, interfejs](icorprofilerinfo9-interface.md)

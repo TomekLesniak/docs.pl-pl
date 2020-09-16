@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF security
 - access control [WCF]
 ms.assetid: 9d576122-3f55-4425-9acf-b23d0781e966
-ms.openlocfilehash: 27f2b7d3146199f1c3e9a228202618c992e2a1ea
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bd3156e0fa8ea976d2297ffc0767cd948c9c96b4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601364"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550485"
 ---
 # <a name="access-control-mechanisms"></a>Mechanizmy kontroli dostępu
 Dostęp można kontrolować w kilka sposobów przy użyciu Windows Communication Foundation (WCF). W tym temacie krótko omówiono różne mechanizmy i przedstawiono sugestie dotyczące sytuacji, w których należy ich używać. ma ona na celu ułatwienie wyboru właściwego mechanizmu do użycia. Technologie dostępu są wymienione w kolejności złożoności. Najprostszą jest to, że <xref:System.Security.Permissions.PrincipalPermissionAttribute> najbardziej złożona jest model tożsamości.  
@@ -46,7 +46,7 @@ Dostęp można kontrolować w kilka sposobów przy użyciu Windows Communication
   
  Możesz również użyć AzMan i dostawcy ról ASP.NET, jeśli masz już dostęp do istniejącej instalacji AzMan i chcesz autoryzować użytkowników usługi przy użyciu funkcji kombinacji AzMan/dostawcy ról.  
   
- Aby uzyskać więcej informacji na temat AzMan i dostawcy ról ASP.NET, zobacz [How to: use Menedżer autoryzacji (AzMan) z ASP.NET 2,0](https://docs.microsoft.com/previous-versions/msp-n-p/ff649313(v=pandp.10)). Aby uzyskać więcej informacji o korzystaniu z AzMan i dostawcy roli dla usług WCF, zobacz [How to: Use the ASP.NET role Manager Service Provider with a usługi](how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
+ Aby uzyskać więcej informacji na temat AzMan i dostawcy ról ASP.NET, zobacz [How to: use Menedżer autoryzacji (AzMan) z ASP.NET 2,0](/previous-versions/msp-n-p/ff649313(v=pandp.10)). Aby uzyskać więcej informacji o korzystaniu z AzMan i dostawcy roli dla usług WCF, zobacz [How to: Use the ASP.NET role Manager Service Provider with a usługi](how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
   
 ## <a name="identity-model"></a>Model tożsamości  
  Model tożsamości to zestaw interfejsów API, które umożliwiają zarządzanie oświadczeniami i zasadami w celu autoryzowania klientów. Korzystając z modelu tożsamości, można przeanalizować każde oświadczenie zawarte w poświadczeniach, których obiekt wywołujący użył do samodzielnego uwierzytelnienia w usłudze, porównać oświadczenia z zestawem zasad usługi i przyznać lub odmówić dostępu na podstawie porównania.  
@@ -57,11 +57,11 @@ Dostęp można kontrolować w kilka sposobów przy użyciu Windows Communication
   
  Aby uzyskać więcej informacji na temat modelu tożsamości, zobacz [Zarządzanie oświadczeniami i autoryzacją za pomocą modelu tożsamości](managing-claims-and-authorization-with-the-identity-model.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
-- [Instrukcje: ograniczanie dostępu przy użyciu klasy PrincipalPermissionAttribute](../how-to-restrict-access-with-the-principalpermissionattribute-class.md)
-- [Instrukcje: Używanie dostawcy ról ASP.NET razem z usługą](how-to-use-the-aspnet-role-provider-with-a-service.md)
+- [Instrukcje: Ograniczanie dostępu przy użyciu klasy PrincipalPermissionAttribute](../how-to-restrict-access-with-the-principalpermissionattribute-class.md)
+- [Instrukcje: używanie dostawcy ról ASP.NET razem z usługą](how-to-use-the-aspnet-role-provider-with-a-service.md)
 - [Instrukcje: używanie dostawcy roli menedżera autoryzacji platformy ASP.NET za pomocą usługi](how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)
 - [Zarządzanie oświadczeniami i autoryzacją za pomocą modelu tożsamości](managing-claims-and-authorization-with-the-identity-model.md)
 - [Delegowanie i personifikacja](delegation-and-impersonation-with-wcf.md)

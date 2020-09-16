@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 88584574-ade5-45b2-9778-489ed5c4dd7f
 topic_type:
 - apiref
-ms.openlocfilehash: db9ce146da1d6fee8db32a0be43903eaa61e52de
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8c502c082c2cf90d87c195df531de686e2a6d914
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501758"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544261"
 ---
 # <a name="icordebugfunction3getactiverejitrequestilcode-method"></a>Metoda ICorDebugFunction3::GetActiveReJitRequestILCode
 [Obsługiwane w .NET Framework 4.5.2 i nowszych wersjach]  
@@ -54,4 +54,4 @@ HRESULT GetActiveReJitRequestILCode(
 
 - [Interfejs ICorDebugFunction3](icordebugfunction3-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
-- [ReJIT: Przewodnik po poradniku](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT: Przewodnik po poradniku](/archive/blogs/davbr/rejit-a-how-to-guide)

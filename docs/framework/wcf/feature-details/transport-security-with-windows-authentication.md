@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: b6134d4cbdff0c1adea704a7f3aaff7e40fd75ec
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 9b81f2f2fb6352af254146951ed35ad4fdca8caa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244767"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545210"
 ---
 # <a name="transport-security-with-windows-authentication"></a>Zabezpieczenia transportu z uwierzytelnianiem systemu Windows
 W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication Foundation (WCF) zabezpieczony przez zabezpieczenia systemu Windows. Aby uzyskać więcej informacji na temat programowania, zobacz [How to: Zabezpieczanie usługi przy użyciu poświadczeń systemu Windows](../how-to-secure-a-service-with-windows-credentials.md).  
@@ -25,8 +25,8 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
 |Tryb zabezpieczeń|Transport|  
 |Współdziałanie|Tylko WCF|  
 |Uwierzytelnianie (serwer)<br /><br /> Uwierzytelnianie (klient)|Tak (przy użyciu zintegrowanego uwierzytelniania systemu Windows)<br /><br /> Tak (przy użyciu zintegrowanego uwierzytelniania systemu Windows)|  
-|Integralność|Tak|  
-|Poufność|Tak|  
+|Integralność|Yes|  
+|Poufność|Yes|  
 |Transport|Waga. PROTOKOŁ|  
 |Wiązanie|<xref:System.ServiceModel.NetTcpBinding>|  
   
@@ -79,7 +79,7 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
   
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).  
   
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:  
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -118,8 +118,8 @@ W poniższym scenariuszu przedstawiono klienta i usługę Windows Communication 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przegląd zabezpieczeń](security-overview.md)
-- [Instrukcje: zabezpieczanie usługi za pomocą poświadczeń systemu Windows](../how-to-secure-a-service-with-windows-credentials.md)
-- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Instrukcje: Zabezpieczanie usługi za pomocą poświadczeń systemu Windows](../how-to-secure-a-service-with-windows-credentials.md)
+- [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

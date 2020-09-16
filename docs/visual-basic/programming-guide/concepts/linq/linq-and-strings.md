@@ -2,22 +2,22 @@
 title: LINQ i ciągi
 ms.date: 07/20/2015
 ms.assetid: 75ddb201-d97a-4f98-8cdf-4ad51714529a
-ms.openlocfilehash: 73ce4bf5586f1f9ff4995ea6f425b90744b7e333
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ee2a44175e8546f879473a3af6bf1a2de92d2501
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353285"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549852"
 ---
 # <a name="linq-and-strings-visual-basic"></a>LINQ i ciągi (Visual Basic)
-LINQ może służyć do wykonywania zapytań i przekształcania ciągów i kolekcji ciągów. Może być szczególnie przydatne w przypadku danych z częściową strukturą w plikach tekstowych. Zapytania LINQ można łączyć z tradycyjnymi funkcjami ciągów i wyrażeniami regularnymi. Na przykład można użyć metody <xref:System.String.Split%2A> lub <xref:System.Text.RegularExpressions.Regex.Split%2A>, aby utworzyć tablicę ciągów, które można następnie wykonać zapytania lub zmodyfikować przy użyciu LINQ. Metody <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> można użyć w klauzuli `where` zapytania LINQ. I można użyć LINQ do zapytania lub zmodyfikować wyniki <xref:System.Text.RegularExpressions.MatchCollection> zwrócone przez wyrażenie regularne.  
+LINQ może służyć do wykonywania zapytań i przekształcania ciągów i kolekcji ciągów. Może być szczególnie przydatne w przypadku danych z częściową strukturą w plikach tekstowych. Zapytania LINQ można łączyć z tradycyjnymi funkcjami ciągów i wyrażeniami regularnymi. Na przykład można użyć <xref:System.String.Split%2A> metody lub, <xref:System.Text.RegularExpressions.Regex.Split%2A> Aby utworzyć tablicę ciągów, które można następnie wykonać zapytania lub zmodyfikować przy użyciu LINQ. Możesz użyć <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metody w `where` klauzuli zapytania LINQ. I można użyć LINQ do zapytania lub zmodyfikować <xref:System.Text.RegularExpressions.MatchCollection> wyniki zwrócone przez wyrażenie regularne.  
   
- Można również użyć technik opisanych w tej sekcji, aby przekształcić dane z częściową strukturą do formatu XML. Aby uzyskać więcej informacji, zobacz [How to: Generate XML from pliki CSV](how-to-generate-xml-from-csv-files.md).  
+ Można również użyć technik opisanych w tej sekcji, aby przekształcić dane z częściową strukturą do formatu XML. Aby uzyskać więcej informacji, zobacz [How to: Generate XML from pliki CSV](../../../../standard/linq/generate-xml-csv-files.md).  
   
  Przykłady w tej sekcji należą do dwóch kategorii:  
   
 ## <a name="querying-a-block-of-text"></a>Wykonywanie zapytania dotyczącego bloku tekstu  
- Można wykonywać zapytania, analizować i modyfikować bloki tekstu, dzieląc je na tablicę Queryable mniejszych ciągów przy użyciu metody <xref:System.String.Split%2A> lub metody <xref:System.Text.RegularExpressions.Regex.Split%2A>. Możesz podzielić tekst źródłowy na słowa, zdania, akapity, strony lub inne kryteria, a następnie wykonać dodatkowe podziały, jeśli są one wymagane w zapytaniu.  
+ Można wykonywać zapytania, analizować i modyfikować bloki tekstu, dzieląc je na tablicę Queryable mniejszych ciągów przy użyciu <xref:System.String.Split%2A> metody lub <xref:System.Text.RegularExpressions.Regex.Split%2A> metody. Możesz podzielić tekst źródłowy na słowa, zdania, akapity, strony lub inne kryteria, a następnie wykonać dodatkowe podziały, jeśli są one wymagane w zapytaniu.  
   
  [Instrukcje: Liczenie wystąpień wyrazu w ciągu (LINQ) (Visual Basic)](how-to-count-occurrences-of-a-word-in-a-string-linq.md)  
  Pokazuje, jak używać LINQ do prostego wykonywania zapytań względem tekstu.  
@@ -62,4 +62,4 @@ LINQ może służyć do wykonywania zapytań i przekształcania ciągów i kolek
 ## <a name="see-also"></a>Zobacz także
 
 - [Zapytanie zintegrowane z językiem (LINQ) (Visual Basic)](index.md)
-- [Instrukcje: generowanie kodu XML z plików CSV](how-to-generate-xml-from-csv-files.md)
+- [Instrukcje: generowanie XML z plików CSV](../../../../standard/linq/generate-xml-csv-files.md)

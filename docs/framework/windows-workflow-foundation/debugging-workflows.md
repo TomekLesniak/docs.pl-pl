@@ -2,12 +2,12 @@
 title: Debugowanie przepływów pracy
 ms.date: 03/30/2017
 ms.assetid: b23b4814-ebb1-4c51-b7a9-469f4da7a96d
-ms.openlocfilehash: 2bfc50215697636f1771d6bb35510fbf9e0b435d
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 31c688f5f45b41f337176108486ec2074e1915a7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802638"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543839"
 ---
 # <a name="debugging-workflows"></a>Debugowanie przepływów pracy
 
@@ -31,11 +31,11 @@ Debugowanie przepływu pracy obsługuje również korzystanie z infrastruktury p
 
 ## <a name="remote-debugging"></a>Debugowanie zdalne
 
-Debugowanie zdalne Windows Workflow Foundation (WF) działa tak samo jak debugowanie zdalne dla innych składników programu Visual Studio. Aby uzyskać informacje na temat korzystania z debugowania zdalnego, zobacz [How to: Enable Remote Debug](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/febz73k0(v=vs.100)).
+Debugowanie zdalne Windows Workflow Foundation (WF) działa tak samo jak debugowanie zdalne dla innych składników programu Visual Studio. Aby uzyskać informacje na temat korzystania z debugowania zdalnego, zobacz [How to: Enable Remote Debug](/previous-versions/visualstudio/visual-studio-2010/febz73k0(v=vs.100)).
 
 > [!NOTE]
 > Jeśli aplikacja przepływu pracy jest ukierunkowana na architekturę x86 i jest hostowana na komputerze z uruchomionym 64-bitowym systemem operacyjnym, debugowanie zdalne nie będzie działać, jeśli program Visual Studio nie jest zainstalowany na komputerze zdalnym lub obiekt docelowy dla aplikacji przepływu pracy zostanie zmieniony na **dowolny procesor CPU**.
 
 ## <a name="extending-the-workflow-debugging-service"></a>Rozszerzanie usługi debugowania przepływu pracy
 
-Usługa debuggera przepływu pracy jest teraz publiczna i może służyć do tworzenia niestandardowych aplikacji, takich jak monitorowanie, Symulacja i debugowanie w środowisku, w którym jest ponownie hostowany. Aby uzyskać więcej informacji, zobacz artykuł <xref:System.Activities.Presentation.Debug.DebuggerService>.
+Usługa debuggera przepływu pracy jest teraz publiczna i może służyć do tworzenia niestandardowych aplikacji, takich jak monitorowanie, Symulacja i debugowanie w środowisku, w którym jest ponownie hostowany. Aby uzyskać więcej informacji, zobacz <xref:System.Activities.Presentation.Debug.DebuggerService> artykuł.

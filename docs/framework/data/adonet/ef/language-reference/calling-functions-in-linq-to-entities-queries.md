@@ -3,12 +3,12 @@ title: Wywoływanie funkcji w zapytaniach składnika LINQ to Entities
 description: Skorzystaj z poniższych artykułów, aby zobaczyć, jak klasy EntityFunctions i SqlFunctions zapewniają dostęp do funkcji kanonicznych i baz danych w ramach Entity Framework.
 ms.date: 03/30/2017
 ms.assetid: 12a525a9-727c-4464-a0c7-71a0ef541792
-ms.openlocfilehash: faa6406713592f10e5e7371cd73f29bec4b03b7b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: eb206e9b331da1ae442c1f310e78fec5c6b57e82
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286860"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546051"
 ---
 # <a name="calling-functions-in-linq-to-entities-queries"></a>Wywoływanie funkcji w zapytaniach składnika LINQ to Entities
 W tematach w tej sekcji opisano sposób wywoływania funkcji w LINQ to Entities zapytaniach.  
@@ -40,5 +40,5 @@ W tematach w tej sekcji opisano sposób wywoływania funkcji w LINQ to Entities 
 
 - [Zapytania w składniku LINQ to Entities](queries-in-linq-to-entities.md)
 - [Funkcje Canonical](canonical-functions.md)
-- [Plik. edmx — Omówienie](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
-- [Instrukcje: Definiowanie funkcji niestandardowych w modelu koncepcyjnym](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))
+- [Plik. edmx — Omówienie](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [Instrukcje: Definiowanie funkcji niestandardowych w modelu koncepcyjnym](/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))

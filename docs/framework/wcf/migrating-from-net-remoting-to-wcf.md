@@ -3,12 +3,12 @@ title: Migrowanie z programu .NET Remoting do programu WCF
 description: Dowiedz się, jak przeprowadzić migrację aplikacji, która używa usług komunikacji zdalnej .NET do korzystania z programu WCF. W programie WCF można wykonać kilka typowych scenariuszy komunikacji zdalnej.
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: f6f526db09806008314980b71233b208d25359fc
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 73bdac5d8f4d39694f038bb600828c79e527efb0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246158"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542853"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrowanie z programu .NET Remoting do programu WCF
 W tym artykule opisano sposób migracji aplikacji, która używa usług komunikacji zdalnej .NET do korzystania z Windows Communication Foundation (WCF). Porównuje podobne koncepcje tych produktów, a następnie opisuje sposób wykonywania kilku typowych scenariuszy komunikacji zdalnej w programie WCF.  
@@ -26,7 +26,7 @@ W tym artykule opisano sposób migracji aplikacji, która używa usług komunika
 |Obiekty zakończone|Według wartości lub według odwołania|Tylko według wartości|  
 |Błędy/wyjątki|Dowolny wyjątek możliwy do serializacji|FaultContract\<TDetail>|  
 |Obiekty serwera proxy klienta|Przezroczyste obiekty pośredniczące o jednoznacznie określonym typie są tworzone automatycznie z MarshalByRefObjects|Serwery proxy o jednoznacznie określonym typie są generowane na żądanie przy użyciu elementu ChannelFactory\<TChannel>|  
-|Wymagana platforma|Zarówno klient, jak i serwer muszą korzystać z systemów operacyjnych Microsoft i .NET|Wieloplatformowość|  
+|Wymagana platforma|Zarówno klient, jak i serwer muszą korzystać z systemów operacyjnych Microsoft i .NET|Wiele platform|  
 |Format wiadomości|Private|Standardy branżowe (SOAP, WS-* itp.)|  
   
 ### <a name="server-implementation-comparison"></a>Porównanie implementacji serwera  
@@ -56,7 +56,7 @@ Console.WriteLine("RemotingServer is running.  Press ENTER to terminate...");
 Console.ReadLine();  
 ```  
   
- Istnieje wiele sposobów zapewnienia, że typ komunikacji zdalnej jest dostępny jako serwer, w tym przy użyciu plików konfiguracyjnych. Jest to tylko jeden przykład.  
+ Istnieje wiele sposobów zapewnienia, że typ komunikacji zdalnej jest dostępny jako serwer, w tym przy użyciu plików konfiguracyjnych. To tylko jeden przykład.  
   
 #### <a name="creating-a-server-in-wcf"></a>Tworzenie serwera w programie WCF  
  Odpowiedni krok w programie WCF obejmuje tworzenie dwóch typów — publicznego "kontraktu usług" i konkretnej implementacji. Pierwszy jest zadeklarowany jako interfejs oznaczony przy użyciu [ServiceContract]. Metody dostępne dla klientów są oznaczone atrybutem [OperationContract]:  
@@ -269,7 +269,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
  Aby uzyskać więcej informacji na temat umów dotyczących błędów, zobacz <xref:System.ServiceModel.FaultException> .  
   
-### <a name="security-considerations"></a>Zagadnienia związane z zabezpieczeniami  
+### <a name="security-considerations"></a>Zagadnienia dotyczące bezpieczeństwa  
   
 #### <a name="security-in-net-remoting"></a>Zabezpieczenia w komunikacji zdalnej .NET  
  Niektóre kanały komunikacji zdalnej .NET obsługują funkcje zabezpieczeń, takie jak uwierzytelnianie i szyfrowanie, w warstwie kanału (IPC i TCP). Kanał HTTP opiera się na Internet Information Services (IIS) do uwierzytelniania i szyfrowania. Pomimo tego wsparcia należy rozważyć użycie przez program .NET zdalnej protokołu komunikacyjnego i używanie go tylko w środowiskach w pełni zaufanych. Nigdy nie ujawniaj publicznego punktu końcowego komunikacji zdalnej dla Internetu lub niezaufanych klientów.  
@@ -285,7 +285,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>Dlaczego należy przeprowadzić migrację z usług zdalnych do WCF?  
   
-- **Komunikacja zdalna .NET to starszy produkt.** Zgodnie z opisem w [komunikacji zdalnej .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29), jest uznawany za starszy produkt i nie jest zalecany w przypadku nowych rozwiązań programistycznych. W przypadku nowych i istniejących aplikacji zaleca się używanie interfejsu API sieci Web WCF lub ASP.NET.  
+- **Komunikacja zdalna .NET to starszy produkt.** Zgodnie z opisem w [komunikacji zdalnej .NET](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)), jest uznawany za starszy produkt i nie jest zalecany w przypadku nowych rozwiązań programistycznych. W przypadku nowych i istniejących aplikacji zaleca się używanie interfejsu API sieci Web WCF lub ASP.NET.  
   
 - **Funkcja WCF stosuje standardy dla wielu platform.** Program WCF został zaprojektowany z myślą o współdziałaniu między platformami i obsługuje wiele standardów branżowych (SOAP, WS-Security, WS-Trust itp.). Usługa WCF może współpracować z klientami uruchomionymi w systemach operacyjnych innych niż Windows. Komunikacja zdalna została zaprojektowana głównie dla środowisk, w których aplikacje serwerowe i klienckie działają za pomocą .NET Framework w systemie operacyjnym Windows.
   

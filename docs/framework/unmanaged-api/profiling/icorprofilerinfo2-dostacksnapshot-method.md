@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 287b11e9-7c52-4a13-ba97-751203fa97f4
 topic_type:
 - apiref
-ms.openlocfilehash: b9a7142de01d818390b740a795f70a4606952780
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ff0ff35f42e20725cab49afd971523aabda866c3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497377"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547812"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot — Metoda
 Przegląda zarządzane ramki na stosie dla określonego wątku i wysyła informacje do profilera za pomocą wywołania zwrotnego.  
@@ -71,7 +71,7 @@ HRESULT DoStackSnapshot(
   
  Kolejność, w której jest przeszukiwany stos, to odwracanie do sposobu wypychania ramek do stosu: liścia (ostatnio wypchnięcia), pierwsza klatka główna (pierwsza-wypchnięci) Ostatnia.  
   
- Aby uzyskać więcej informacji o tym, jak programować Profiler w celu przechodzenia do zarządzanych stosów, zobacz Samouczek dotyczący [stosu profilera w .NET Framework 2,0: podstawowe i poza](https://docs.microsoft.com/previous-versions/dotnet/articles/bb264782(v=msdn.10))nimi.  
+ Aby uzyskać więcej informacji o tym, jak programować Profiler w celu przechodzenia do zarządzanych stosów, zobacz Samouczek dotyczący [stosu profilera w .NET Framework 2,0: podstawowe i poza](/previous-versions/dotnet/articles/bb264782(v=msdn.10))nimi.  
   
  Przeszukiwanie stosu może być synchroniczne lub asynchroniczne, jak wyjaśniono w poniższych sekcjach.  
   
@@ -85,7 +85,7 @@ HRESULT DoStackSnapshot(
   
  Inicjator jest uzyskiwany przez bezpośrednie zawieszenie wątku docelowego i przeanalizowanie jego stosu do momentu znalezienia ramki zarządzanej znajdującej się najwyżej. Po wstrzymaniu wątku docelowego Pobierz bieżący kontekst rejestru wątku docelowego. Następnie ustal, czy kontekst rejestru wskazuje niezarządzany kod przez wywołanie [ICorProfilerInfo:: GetFunctionFromIP —](icorprofilerinfo-getfunctionfromip-method.md) — jeśli zwraca wartość `FunctionID` równą zero, jest to kod niezarządzany. Teraz przeprowadzisz stos do momentu osiągnięcia pierwszej zarządzanej ramki, a następnie obliczy Kontekst inicjatora na podstawie kontekstu rejestru dla tej ramki.  
   
- Wywołaj `DoStackSnapshot` z kontekstem inicjatora, aby rozpocząć przechodzenie przez stos asynchroniczny. Jeśli nie podasz inicjatora, program `DoStackSnapshot` może pominąć zarządzane ramki w górnej części stosu, co w efekcie spowoduje przeprowadzenie niekompletnego przeszukiwania stosu. W przypadku dostarczania inicjatora należy wskazać kod wygenerowany przez KOMPILATOR lub Generator obrazu natywnego (Ngen. exe). w przeciwnym razie `DoStackSnapshot` zwraca kod błędu, CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
+ Wywołaj `DoStackSnapshot` z kontekstem inicjatora, aby rozpocząć przechodzenie przez stos asynchroniczny. Jeśli nie podasz inicjatora, program `DoStackSnapshot` może pominąć zarządzane ramki w górnej części stosu, co w efekcie spowoduje przeprowadzenie niekompletnego przeszukiwania stosu. W przypadku dostarczania inicjatora należy wskazać kod wygenerowany przez KOMPILATOR lub natywny Generator obrazu (Ngen.exe). w przeciwnym razie `DoStackSnapshot` zwraca kod błędu, CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
   
  Asynchroniczne przechodzenia stosu mogą łatwo prowadzić do zakleszczenii lub naruszeń praw dostępu, chyba że są przestrzegane następujące wytyczne:  
   
@@ -108,5 +108,5 @@ HRESULT DoStackSnapshot(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)

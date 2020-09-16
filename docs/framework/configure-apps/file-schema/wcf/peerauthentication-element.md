@@ -2,12 +2,12 @@
 title: <peerAuthentication> Element
 ms.date: 03/30/2017
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
-ms.openlocfilehash: 4c29c84a2cc56a890c8273e410ba31b5f3900732
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 093b0c4b6a7fbf54455ec523b52c1f3a9884cfa8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400085"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536018"
 ---
 # <a name="peerauthentication-element"></a>\<peerAuthentication> Element
 Określa opcje uwierzytelniania dla klientów równorzędnych.  
@@ -48,7 +48,7 @@ Określa opcje uwierzytelniania dla klientów równorzędnych.
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|String|Określa nazwę typu i zestaw oraz inne dane używane do znajdowania typu. Minimalna nazwa przestrzeni nazw i typ są wymagane. Informacje opcjonalne obejmują: nazwę zestawu, numer wersji, kulturę i token klucza publicznego.|  
+|Ciąg|Określa nazwę typu i zestaw oraz inne dane używane do znajdowania typu. Minimalna nazwa przestrzeni nazw i typ są wymagane. Informacje opcjonalne obejmują: nazwę zestawu, numer wersji, kulturę i token klucza publicznego.|  
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode — atrybut  
   
@@ -110,6 +110,6 @@ Określa opcje uwierzytelniania dla klientów równorzędnych.
 - <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [Sieci równorzędne](../../../wcf/feature-details/peer-to-peer-networking.md)
-- [Uwierzytelnianie komunikatów kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
-- [Uwierzytelnianie niestandardowe kanału równorzędnego](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
+- [Uwierzytelnianie komunikatów kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
+- [Uwierzytelnianie niestandardowe kanału równorzędnego](/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
 - [Zabezpieczanie aplikacji kanałów równorzędnych](../../../wcf/feature-details/securing-peer-channel-applications.md)

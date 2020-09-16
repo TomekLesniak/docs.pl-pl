@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-ms.openlocfilehash: 6e0051e3181e03070436b8d53d30326e8d71d096
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 73b930efa893fd2b481c4c130754154a0d10d5b4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622578"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547887"
 ---
 # <a name="net-framework-development-guide"></a>Przewodnik programowania .NET Framework
 
@@ -38,7 +38,7 @@ W tej sekcji opisano sposób tworzenia, konfigurowania, debugowania, zabezpiecza
  [Równoległe przetwarzanie, współbieżność i programowanie asynchroniczne w programie .NET](../standard/parallel-processing-and-concurrency.md)  
  Zawiera informacje o zarządzanym wątkach, programowaniu równoległym i wzorcach projektów programowania asynchronicznego.  
   
- [Programowanie dla sieci w programie .NET Framework](./network-programming/index.md)  
+ [Programowanie dla sieci w .NET Framework](./network-programming/index.md)  
  Opisuje warstwową, rozszerzalną i zarządzaną implementację usług internetowych, którą można szybko i łatwo zintegrować z aplikacjami.  
   
  [Konfigurowanie aplikacji .NET Framework](configure-apps/index.md) Wyjaśnia, jak można używać plików konfiguracji do zmiany ustawień bez konieczności ponownego kompilowania aplikacji .NET Framework.  
@@ -61,8 +61,8 @@ W tej sekcji opisano sposób tworzenia, konfigurowania, debugowania, zabezpiecza
  [Wydajność](./performance/index.md)  
  Zawiera informacje na temat buforowania, inicjowania z opóźnieniem, niezawodności i zdarzeń ETW.  
 
-## <a name="reference"></a>Dokumentacja  
- [Biblioteka klas .NET Framework](/dotnet/api/?view=netframework-4.7)  
+## <a name="reference"></a>Tematy pomocy  
+ [Biblioteka klas .NET Framework](../../api/index.md?view=netframework-4.7)  
  Dostarcza składnię, przykłady kodu i informacje o użyciu dla każdej klasy, która jest zawarta w przestrzeni nazw .NET Framework.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  

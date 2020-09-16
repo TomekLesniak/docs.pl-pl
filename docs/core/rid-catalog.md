@@ -2,12 +2,12 @@
 title: Wykaz identyfikatorów środowiska uruchomieniowego platformy .NET Core (RID)
 description: Dowiedz się więcej o identyfikatorze środowiska uruchomieniowego (RID) i sposobie używania identyfikatorów RID w programie .NET Core.
 ms.date: 02/22/2019
-ms.openlocfilehash: 719c84248b955ec05d7cd9b361c7e5ebea6aa37b
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 096ce8e33a82df3b9de682ed16e10fbe9f07fd03
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414568"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538227"
 ---
 # <a name="net-core-rid-catalog"></a>Katalog programu .NET Core RID
 
@@ -108,7 +108,7 @@ Wyświetlane są tylko typowe wartości. Aby uzyskać najnowszą i pełną wersj
   - `win10-arm`
   - `win10-arm64`
 
-Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące platformy .NET Core](install/dependencies.md?pivots=os-windows).
+Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące platformy .NET Core](./install/windows.md#dependencies).
 
 ## <a name="linux-rids"></a>Identyfikatory RID systemu Linux
 
@@ -127,7 +127,7 @@ Wyświetlane są tylko typowe wartości. Aby uzyskać najnowszą i pełną wersj
   - `tizen.4.0.0`
   - `tizen.5.0.0`
 
-Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące platformy .NET Core](install/dependencies.md?pivots=os-linux).
+Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące platformy .NET Core](./install/linux.md).
 
 ## <a name="macos-rids"></a>macOS RID
 
@@ -146,8 +146,8 @@ macOS RID używają starszej marki "OSX". Wyświetlane są tylko typowe wartośc
 - macOS 10,14 Mojave (wersja .NET Core 1,1 lub nowsza)
   - `osx.10.14-x64`
 
-Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące platformy .NET Core](install/dependencies.md?pivots=os-macos).
+Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące platformy .NET Core](./install/macos.md#dependencies).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Identyfikatory środowiska uruchomieniowego](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/readme.md)

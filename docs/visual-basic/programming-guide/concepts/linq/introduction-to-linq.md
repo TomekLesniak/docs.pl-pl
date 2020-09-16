@@ -2,12 +2,12 @@
 title: Wprowadzenie do LINQ
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: b0fa27fd81b85eb89712f9e81f42e06505878f86
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 58613281d79769bfb5515f1291feb9b502a1e846
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397561"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549970"
 ---
 # <a name="introduction-to-linq-visual-basic"></a>Wprowadzenie do LINQ (Visual Basic)
 Language-Integrated Query (LINQ) to innowacje wprowadzone w .NET Framework w wersji 3,5, która mostkuje przerwy między światem obiektów a światem danych.  
@@ -27,12 +27,12 @@ Language-Integrated Query (LINQ) to innowacje wprowadzone w .NET Framework w wer
   
 - Bazy danych SQL Server: [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
   
-- Dokumenty XML: [LINQ to XML (Visual Basic)](linq-to-xml.md)  
+- Dokumenty XML: [LINQ to XML (Visual Basic)](../../../../standard/linq/linq-xml-overview.md)  
   
 - ADO.NET zbiory danych: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
 - Kolekcje .NET, pliki, ciągi i tak dalej: [LINQ to Objects (Visual Basic)](linq-to-objects.md)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zapytanie zintegrowane z językiem (LINQ) (Visual Basic)](index.md)

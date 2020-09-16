@@ -3,12 +3,12 @@ title: Szablony niestandardowe dla nowego dotnet
 description: Dowiedz się więcej na temat szablonów niestandardowych dla dowolnego typu projektu lub plików platformy .NET.
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: cabe220917e7ff688a2c2d2df56d9bc7f8afdf56
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 1d2e5ffcb0b279f1686855834c2357827a4dc7d5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324510"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538098"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Szablony niestandardowe dla nowego dotnet
 
@@ -57,7 +57,7 @@ Pliki generowane przez szablon można modyfikować na podstawie logiki i ustawie
 
 | Członek            | Typ          | Opis |
 | ----------------- | ------------- | ----------- |
-| `$schema`         | Identyfikator URI           | Schemat JSON dla *template.js* pliku. Edytory obsługujące schematy JSON umożliwiają korzystanie z funkcji edytowania JSON, gdy schemat jest określony. Na przykład [Visual Studio Code](https://code.visualstudio.com/) wymaga tego elementu członkowskiego, aby włączyć funkcję IntelliSense. Użyj wartości `http://json.schemastore.org/template` . |
+| `$schema`         | URI           | Schemat JSON dla *template.js* pliku. Edytory obsługujące schematy JSON umożliwiają korzystanie z funkcji edytowania JSON, gdy schemat jest określony. Na przykład [Visual Studio Code](https://code.visualstudio.com/) wymaga tego elementu członkowskiego, aby włączyć funkcję IntelliSense. Użyj wartości `http://json.schemastore.org/template` . |
 | `author`          | ciąg        | Autor szablonu. |
 | `classifications` | Array (ciąg) | Zero lub więcej charakterystyki szablonu, którego użytkownik może użyć, aby znaleźć szablon podczas jego wyszukania. Klasyfikacje są również wyświetlane w kolumnie *Tagi* , gdy pojawiają się na liście szablonów utworzonych przy użyciu `dotnet new -l|--list` polecenia. |
 | `identity`        | ciąg        | Unikatowa nazwa tego szablonu. |
@@ -96,7 +96,7 @@ Folder Moje *Template* to instalowalny pakiet szablonów. Po zainstalowaniu paki
 
 ## <a name="packing-a-template-into-a-nuget-package-nupkg-file"></a>Pakowanie szablonu do pakietu NuGet (plik NUPKG)
 
-Szablon niestandardowy jest spakowany przy użyciu polecenia [pakietu dotnet](dotnet-pack.md) i pliku *. csproj* . Alternatywnie, można użyć polecenia [NuGet](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference) z [pakietem NuGet](https://docs.microsoft.com/nuget/tools/cli-ref-pack) z plikiem *. nuspec* . Jednak program NuGet wymaga .NET Framework w systemie Windows i [mono](https://www.mono-project.com/) w systemie Linux i macOS.
+Szablon niestandardowy jest spakowany przy użyciu polecenia [pakietu dotnet](dotnet-pack.md) i pliku *. csproj* . Alternatywnie, można użyć polecenia [NuGet](/nuget/tools/nuget-exe-cli-reference) z [pakietem NuGet](/nuget/tools/cli-ref-pack) z plikiem *. nuspec* . Jednak program NuGet wymaga .NET Framework w systemie Windows i [mono](https://www.mono-project.com/) w systemie Linux i macOS.
 
 Plik *. csproj* różni się nieco od tradycyjnego pliku Code-Project *. csproj* . Zwróć uwagę na następujące ustawienia:
 
@@ -251,7 +251,7 @@ Po zainstalowaniu szablonu Użyj szablonu, wykonując `dotnet new <TEMPLATE>` po
 dotnet new <TEMPLATE>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tworzenie szablonu niestandardowego dla nowego dotnet (samouczek)](../tutorials/cli-templates-create-item-template.md)
 - [Witryna typu wiki repozytorium usługi GitHub/tworzenia szablonów](https://github.com/dotnet/templating/wiki)

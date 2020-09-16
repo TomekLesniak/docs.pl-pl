@@ -13,12 +13,12 @@ helpviewer_keywords:
 - converting times
 - local time conversions
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
-ms.openlocfilehash: 7d1984866c5eacdfe21834389b8f0be4caf78fb7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 156c3d8b360d62ba72f9a4447646fafe170ea658
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446844"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547333"
 ---
 # <a name="converting-times-between-time-zones"></a>Konwertowanie czasów między strefami czasowymi
 
@@ -26,7 +26,7 @@ Staje się coraz bardziej ważna dla wszystkich aplikacji, które współdziała
 
 ## <a name="converting-to-coordinated-universal-time"></a>Konwertowanie na uniwersalny czas koordynowany
 
-Uniwersalny czas koordynowany (UTC) to standard czasu o dużej precyzji. Strefy czasowe na świecie są wyrażane jako dodatnie lub ujemne przesunięcia z czasu UTC. W ten sposób czas UTC zapewnia niezależny od strefy czasowej lub neutralną strefę czasową. Korzystanie z czasu UTC jest zalecane, gdy ważna jest data i godzina przenośna między komputerami. (Aby uzyskać szczegółowe informacje i inne najlepsze rozwiązania przy użyciu daty i godziny, zobacz [najlepsze rozwiązania dotyczące kodowania przy użyciu daty i godziny w .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973825(v=msdn.10))). Przekonwertowanie poszczególnych stref czasowych na czas UTC ułatwia porównanie czasu.
+Uniwersalny czas koordynowany (UTC) to standard czasu o dużej precyzji. Strefy czasowe na świecie są wyrażane jako dodatnie lub ujemne przesunięcia z czasu UTC. W ten sposób czas UTC zapewnia niezależny od strefy czasowej lub neutralną strefę czasową. Korzystanie z czasu UTC jest zalecane, gdy ważna jest data i godzina przenośna między komputerami. (Aby uzyskać szczegółowe informacje i inne najlepsze rozwiązania przy użyciu daty i godziny, zobacz [najlepsze rozwiązania dotyczące kodowania przy użyciu daty i godziny w .NET Framework](/previous-versions/dotnet/articles/ms973825(v=msdn.10))). Przekonwertowanie poszczególnych stref czasowych na czas UTC ułatwia porównanie czasu.
 
 > [!NOTE]
 > Można również serializować <xref:System.DateTimeOffset> strukturę w sposób niejednoznaczny reprezentujący pojedynczy punkt w czasie. Ponieważ <xref:System.DateTimeOffset> obiekty przechowują wartość daty i godziny wraz z przesunięciem od czasu UTC, zawsze reprezentują określony punkt w czasie w zależności od czasu UTC.

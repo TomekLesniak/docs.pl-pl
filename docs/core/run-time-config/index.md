@@ -2,12 +2,12 @@
 title: Opcje konfiguracji czasu wykonywania
 description: Dowiedz się, jak skonfigurować aplikacje platformy .NET Core za pomocą ustawień konfiguracji czasu wykonywania.
 ms.date: 01/21/2020
-ms.openlocfilehash: 68690689fd4f936e3af76ab647f0b58d8ec6ca27
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 21673a221d0f21202febf4730b955da66132d5f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761957"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538201"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>Ustawienia konfiguracji środowiska uruchomieniowego .NET Core
 
@@ -18,31 +18,31 @@ Platforma .NET Core obsługuje używanie plików konfiguracji i zmiennych środo
 - Wiele wystąpień aplikacji jest wykonywanych w tym samym czasie w pojedynczym systemie i chcesz skonfigurować każdą z nich w celu uzyskania optymalnej wydajności.
 
 > [!NOTE]
-> Ta dokumentacja jest w toku. Jeśli zauważysz, że informacje przedstawione w tym miejscu są niekompletne lub niedokładne, należy [otworzyć problem](https://github.com/dotnet/docs/issues) , aby poinformować nas o tym lub [przesłać żądanie ściągnięcia](https://github.com/dotnet/docs/pulls) w celu rozwiązania problemu. Informacje o przesyłaniu żądań ściągnięcia dla repozytorium dotnet/docs można znaleźć w [przewodniku współautora](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute).
+> Ta dokumentacja jest w toku. Jeśli zauważysz, że informacje przedstawione w tym miejscu są niekompletne lub niedokładne, należy [otworzyć problem](https://github.com/dotnet/docs/issues) , aby poinformować nas o tym lub [przesłać żądanie ściągnięcia](https://github.com/dotnet/docs/pulls) w celu rozwiązania problemu. Informacje o przesyłaniu żądań ściągnięcia dla repozytorium dotnet/docs można znaleźć w [przewodniku współautora](/contribute/dotnet/dotnet-contribute).
 
 Platforma .NET Core udostępnia następujące mechanizmy konfigurowania zachowania aplikacji w czasie wykonywania:
 
-- [Plik runtimeconfig. JSON](#runtimeconfigjson)
+- [runtimeconfig.jspliku](#runtimeconfigjson)
 
-- [Właściwości programu MSBuild](#msbuild-properties)
+- [właściwości programu MSBuild](#msbuild-properties)
 
 - [Zmienne środowiskowe](#environment-variables)
 
 > [!TIP]
-> Skonfigurowanie opcji czasu wykonywania przy użyciu zmiennej środowiskowej stosuje ustawienie do wszystkich aplikacji platformy .NET Core. Skonfigurowanie opcji czasu wykonywania w pliku *runtimeconfig. JSON* lub projektu powoduje zastosowanie ustawienia tylko do tej aplikacji.
+> Skonfigurowanie opcji czasu wykonywania przy użyciu zmiennej środowiskowej stosuje ustawienie do wszystkich aplikacji platformy .NET Core. Skonfigurowanie opcji czasu wykonywania w pliku *runtimeconfig.js* lub projektu powoduje zastosowanie ustawienia tylko do tej aplikacji.
 
 Niektóre wartości konfiguracji można również ustawić programowo, wywołując <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> metodę.
 
-Artykuły w tej sekcji dokumentacji są zorganizowane według kategorii, na przykład [debugowania](debugging-profiling.md) i [wyrzucania elementów bezużytecznych](garbage-collector.md). W stosownych przypadkach opcje konfiguracji są wyświetlane dla plików *runtimeconfig. JSON* , właściwości programu MSBuild, zmiennych środowiskowych i, w przypadku plików z odsyłaczem, *pliku App. config* dla projektów .NET Framework.
+Artykuły w tej sekcji dokumentacji są zorganizowane według kategorii, na przykład [debugowania](debugging-profiling.md) i [wyrzucania elementów bezużytecznych](garbage-collector.md). Jeśli ma to zastosowanie, opcje konfiguracji są wyświetlane dla *runtimeconfig.js* plików, właściwości programu MSBuild, zmiennych środowiskowych i, w przypadku plików referencyjnych, *app.config* dla projektów .NET Framework.
 
-## <a name="runtimeconfigjson"></a>runtimeconfig. JSON
+## <a name="runtimeconfigjson"></a>runtimeconfig.jsna
 
-Po [skompilowaniu](../tools/dotnet-build.md)projektu w katalogu wyjściowym zostanie wygenerowany plik *[nazwa_aplikacji]. runtimeconfig. JSON* . Jeśli plik *runtimeconfig. Template. JSON* istnieje w tym samym folderze co plik projektu, wszystkie opcje konfiguracji, które zawiera, są scalane w pliku *[nazwa_aplikacji]. runtimeconfig. JSON* . Jeśli tworzysz aplikację samodzielnie, umieść wszystkie opcje konfiguracji w pliku *runtimeconfig. Template. JSON* . Jeśli właśnie uruchamiasz aplikację, Wstaw ją bezpośrednio do pliku *[nazwa_aplikacji]. runtimeconfig. JSON* .
+Po [skompilowaniu](../tools/dotnet-build.md)projektu w katalogu wyjściowym zostanie wygenerowany element *[nazwa_aplikacji] .runtimeconfig.jsw* pliku. Jeśli *runtimeconfig.template.jsw* pliku istnieje w tym samym folderze co plik projektu, wszystkie opcje konfiguracji, które zawiera, zostaną scalone w *.runtimeconfig.js[nazwa_aplikacji] w* pliku. W przypadku kompilowania aplikacji należy umieścić dowolne opcje konfiguracji w *runtimeconfig.template.js* pliku. Jeśli właśnie uruchamiasz aplikację, Wstaw ją bezpośrednio do programu *[nazwa_aplikacji] .runtimeconfig.js* pliku.
 
 > [!NOTE]
-> Plik *[nazwa_aplikacji]. runtimeconfig. JSON* zostanie nadpisany po kolejnych kompilacjach.
+> Plik *[nazwa_aplikacji] .runtimeconfig.jsw* pliku zostanie nadpisany w kolejnych kompilacjach.
 
-Określ opcje konfiguracji czasu wykonywania w sekcji **configProperties** plików *runtimeconfig. JSON* . Ta sekcja ma postać:
+Określ opcje konfiguracji czasu wykonywania w sekcji **configProperties** *runtimeconfig.jsna* plikach. Ta sekcja ma postać:
 
 ```json
 "configProperties": {
@@ -51,7 +51,7 @@ Określ opcje konfiguracji czasu wykonywania w sekcji **configProperties** plik�
 }
 ```
 
-### <a name="example-appnameruntimeconfigjson-file"></a>Przykład [nazwa_aplikacji]. runtimeconfig. JSON
+### <a name="example-appnameruntimeconfigjson-file"></a>Przykład [nazwa_aplikacji] .runtimeconfig.jsw pliku
 
 Jeśli umieszczasz opcje w wyjściowym pliku JSON, zastąp je `runtimeOptions` właściwością.
 
@@ -72,7 +72,7 @@ Jeśli umieszczasz opcje w wyjściowym pliku JSON, zastąp je `runtimeOptions` w
 }
 ```
 
-### <a name="example-runtimeconfigtemplatejson-file"></a>Przykład pliku runtimeconfig. Template. JSON
+### <a name="example-runtimeconfigtemplatejson-file"></a>Przykład runtimeconfig.template.jspliku
 
 Jeśli umieszczasz opcje w pliku JSON szablonu, Pomiń `runtimeOptions` Właściwość.
 
@@ -88,7 +88,7 @@ Jeśli umieszczasz opcje w pliku JSON szablonu, Pomiń `runtimeOptions` Właści
 
 ## <a name="msbuild-properties"></a>właściwości programu MSBuild
 
-Niektóre opcje konfiguracji czasu wykonywania można ustawić przy użyciu właściwości programu MSBuild w pliku *. csproj* lub *. vbproj* projektów .NET Core w stylu zestawu SDK. Właściwości programu MSBuild mają pierwszeństwo przed opcjami ustawionymi w pliku *runtimeconfig. Template. JSON* . Zastąpią także wszystkie opcje ustawione w pliku *[nazwa_aplikacji]. runtimeconfig. JSON* w czasie kompilacji.
+Niektóre opcje konfiguracji czasu wykonywania można ustawić przy użyciu właściwości programu MSBuild w pliku *. csproj* lub *. vbproj* projektów .NET Core w stylu zestawu SDK. Właściwości programu MSBuild mają pierwszeństwo przed opcjami ustawionymi w *runtimeconfig.template.js* pliku. Zastępują one również wszystkie opcje ustawione w programie *[nazwa_aplikacji] .runtimeconfig.jsw* pliku podczas kompilacji.
 
 Oto przykładowy plik projektu w stylu zestawu SDK z właściwościami MSBuild służący do konfigurowania zachowania w czasie wykonywania:
 

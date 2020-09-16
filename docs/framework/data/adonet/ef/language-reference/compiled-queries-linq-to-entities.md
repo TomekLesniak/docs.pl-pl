@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8025ba1d-29c7-4407-841b-d5a3bed40b7a
-ms.openlocfilehash: b4594932b6ed21de98faab57d80404a7b763067d
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: f3270147f0cf38a646efac603f058173daa78547
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207916"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541138"
 ---
 # <a name="compiled-queries--linq-to-entities"></a>Skompilowane zapytania (LINQ to Entities)
 
@@ -18,7 +18,7 @@ W przypadku aplikacji, która wykonuje zapytania podobne do strukturalnie w Enti
   
  Począwszy od .NET Framework 4,5, zapytania LINQ są buforowane automatycznie. Można jednak nadal używać skompilowanych zapytań LINQ, aby ograniczyć ten koszt do późniejszych wykonań, a skompilowane zapytania mogą być bardziej wydajne niż zapytania LINQ, które są automatycznie buforowane. LINQ to Entities zapytania, które stosują `Enumerable.Contains` operator do kolekcji w pamięci, nie są automatycznie buforowane. Ponadto parametryzacja kolekcje w pamięci w skompilowanych zapytaniach LINQ są niedozwolone.  
   
- <xref:System.Data.Objects.CompiledQuery>Klasa zawiera kompilację i buforowanie zapytań do ponownego użycia. Koncepcyjnie, ta klasa zawiera <xref:System.Data.Objects.CompiledQuery> `Compile` metodę z kilkoma przeciążeniami. Wywołaj `Compile` metodę, aby utworzyć nowy delegat reprezentujący skompilowane zapytanie. `Compile`Metody, dostarczone z <xref:System.Data.Objects.ObjectContext> wartościami parametrów i zwracają delegata, który tworzy jakiś wynik (na przykład <xref:System.Linq.IQueryable%601> wystąpienie). Zapytanie kompiluje się raz podczas pierwszego wykonania. Opcji scalania ustawionych dla zapytania w czasie kompilacji nie można później zmienić. Po skompilowaniu zapytania można dostarczyć tylko parametry typu pierwotnego, ale nie można zastąpić części zapytania, które mogłyby spowodować zmianę wygenerowanej bazy danych SQL. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [scalania opcji i skompilowanych zapytań](https://docs.microsoft.com/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries).
+ <xref:System.Data.Objects.CompiledQuery>Klasa zawiera kompilację i buforowanie zapytań do ponownego użycia. Koncepcyjnie, ta klasa zawiera <xref:System.Data.Objects.CompiledQuery> `Compile` metodę z kilkoma przeciążeniami. Wywołaj `Compile` metodę, aby utworzyć nowy delegat reprezentujący skompilowane zapytanie. `Compile`Metody, dostarczone z <xref:System.Data.Objects.ObjectContext> wartościami parametrów i zwracają delegata, który tworzy jakiś wynik (na przykład <xref:System.Linq.IQueryable%601> wystąpienie). Zapytanie kompiluje się raz podczas pierwszego wykonania. Opcji scalania ustawionych dla zapytania w czasie kompilacji nie można później zmienić. Po skompilowaniu zapytania można dostarczyć tylko parametry typu pierwotnego, ale nie można zastąpić części zapytania, które mogłyby spowodować zmianę wygenerowanej bazy danych SQL. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [scalania opcji i skompilowanych zapytań](/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries).
   
  Wyrażenie zapytania LINQ to Entities, które jest <xref:System.Data.Objects.CompiledQuery> `Compile` kompilowane Metoda jest reprezentowane przez jeden z `Func` delegatów ogólnych, takich jak <xref:System.Func%605> . Co więcej, wyrażenie zapytania może hermetyzować `ObjectContext` parametr, parametr Return i 16 parametrów zapytania. Jeśli wymagane są więcej niż 16 parametrów zapytania, można utworzyć strukturę, której właściwości reprezentują parametry zapytania. Po ustawieniu właściwości można użyć właściwości struktury w wyrażeniu zapytania.  
   
@@ -69,8 +69,8 @@ W przypadku aplikacji, która wykonuje zapytania podobne do strukturalnie w Enti
  [!code-csharp[DP L2E Conceptual Examples - MyParamsStruct](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#myparamsstruct)]
  [!code-vb[DP L2E Conceptual Examples - MyParamsStruct](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#myparamsstruct)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Program Entity Framework na platformie ADO.NET](../index.md)
 - [LINQ to Entities](linq-to-entities.md)
-- [Opcje scalania EF i skompilowane zapytania](https://docs.microsoft.com/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)
+- [Opcje scalania EF i skompilowane zapytania](/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)

@@ -10,15 +10,15 @@ helpviewer_keywords:
 - XData in XAML [XAML Services]
 - x:XData XAML directive element [XAML Services]
 ms.assetid: 7ce209c2-621b-4977-b643-565f7e663534
-ms.openlocfilehash: b7f0954158988db107feb4a6c51ba81d5db11dcb
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: d78c2fd63192dc499b119e5b038b92555511a695
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "82071543"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544807"
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData — Typ funkcji XAML
-Umożliwia umieszczenie wysp danych XML w środowisku produkcyjnym XAML. Elementy XML `x:XData` wewnątrz nie powinny być traktowane przez procesory XAML tak, jakby były częścią działającej domyślnej przestrzeni nazw XAML lub innej przestrzeni nazw XAML. `x:XData`może zawierać dowolny dobrze uformowany kod XML.
+Umożliwia umieszczanie wysp danych XML w środowisku produkcyjnym XAML. Elementy XML w ramach `x:XData` nie powinny być traktowane przez procesory XAML tak, jakby były częścią działającej domyślnej przestrzeni nazw XAML lub dowolnej innej przestrzeni nazw XAML. `x:XData` może zawierać dowolny poprawnie sformułowany kod XML.
 
 ## <a name="xaml-object-element-usage"></a>Użycie elementu obiektu języka XAML
 
@@ -34,25 +34,25 @@ Umożliwia umieszczenie wysp danych XML w środowisku produkcyjnym XAML. Element
 
 |||
 |-|-|
-|`elementDataRoot`|Pojedynczy element główny zamkniętej wyspy danych. Dla większości potencjalnych konsumentów XML, który nie ma jednego katalogu głównego jest uważany za nieprawidłowy. W szczególności pojedynczy katalog główny jest `x:XData` wymagany, jeśli jest przeznaczony jako źródło danych XML dla WPF lub wiele innych technologii, które używają źródeł XML do wiązania danych.|
-|`[elementData]`|Element opcjonalny. XML reprezentujący dane XML. Dowolna liczba elementów może być zawarta jako dane elementu i elementy zagnieżdżone mogą być zawarte w innych elementach; zastosowanie mają jednak ogólne zasady XML.|
+|`elementDataRoot`|Pojedynczy element główny z podanej Wyspy danych. W przypadku większości odbiorców, XML, który nie ma jednego katalogu głównego, jest uznawany za nieprawidłowy. W szczególności, jeśli `x:XData` jest to źródło danych XML dla WPF lub wiele innych technologii, które używają źródeł danych XML do tworzenia powiązań z danymi, wymagany jest pojedynczy element główny.|
+|`[elementData]`|Opcjonalny. KOD XML, który reprezentuje dane XML. Dowolna liczba elementów może być zawarta jako dane elementu, a zagnieżdżone elementy mogą być zawarte w innych elementach. jednak ogólne reguły dotyczące języka XML mają zastosowanie.|
 
 ## <a name="remarks"></a>Uwagi
 
-Elementy XML w `x:XData` obiekcie można ponownie zadeklarować wszystkie możliwe przestrzenie nazw i prefiksy zawierające XMLDOM w danych.
+Elementy XML w `x:XData` obiekcie mogą ponownie deklarować wszystkie możliwe przestrzenie nazw i prefiksy zawierające XMLDOM w danych.
 
-Programowy dostęp do danych `x:XData` XML i wewnętrznego typu XAML jest możliwy w <xref:System.Windows.Markup.XData> usługach .NET XAML za pośrednictwem klasy.
+Dostęp programistyczny do danych XML i `x:XData` wewnętrzny typ XAML jest możliwy w usługach .NET XAML za pomocą <xref:System.Windows.Markup.XData> klasy.
 
 ## <a name="wpf-usage-notes"></a>Uwagi dotyczące użycia WPF
 
-Obiekt `x:XData` jest używany głównie jako obiekt <xref:System.Windows.Data.XmlDataProvider>podrzędny , lub alternatywnie, <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> jako obiekt podrzędny właściwości (w XAML, jest to zazwyczaj wyrażone w składni elementu właściwości).
+`x:XData`Obiekt jest głównie używany jako obiekt podrzędny obiektu <xref:System.Windows.Data.XmlDataProvider> , lub alternatywnie, jako obiekt podrzędny <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> właściwości (w języku XAML jest zwykle wyrażona w składni elementu właściwości).
 
-Dane powinny zazwyczaj przedefiniować podstawową przestrzeń nazw XML w obrębie wyspy danych jako nową domyślną przestrzeń nazw XML (ustawioną na pusty ciąg). Jest to najłatwiejsze dla <xref:System.Windows.Data.Binding.XPath%2A> prostych wysp danych, ponieważ wyrażenia, które są używane do odwoływania się i powiązania z danymi, mogą uniknąć dołączania prefiksów. Bardziej złożone wyspy danych mogą definiować wiele prefiksów danych i używać określonego prefiksu obszaru nazw XML w katalogu głównym. W takim przypadku <xref:System.Windows.Data.Binding.XPath%2A> wszystkie odwołania do wyrażeń powinny zawierać odpowiedni prefiks mapowany przez obszar nazw. Aby uzyskać więcej informacji, zobacz [Omówienie powiązania danych](../data/data-binding-overview.md).
+Dane powinny zwykle przedefiniować podstawową przestrzeń nazw XML w obrębie Wyspy danych, aby była nową domyślną przestrzenią nazw XML (ustawioną na pusty ciąg). Jest to najłatwiej w przypadku prostych wysp danych, ponieważ <xref:System.Windows.Data.Binding.XPath%2A> wyrażenia, które są używane do odwoływania się do danych i tworzenia powiązań z danymi, mogą uniknąć włączenia prefiksów. Bardziej złożone Wyspy danych mogą definiować wiele prefiksów danych i używać określonego prefiksu dla przestrzeni nazw XML w katalogu głównym. W takim przypadku wszystkie <xref:System.Windows.Data.Binding.XPath%2A> odwołania do wyrażeń powinny zawierać odpowiedni prefiks mapowany na przestrzeń nazw. Aby uzyskać więcej informacji, zobacz temat [powiązanie danych — omówienie](../data/data-binding-overview.md).
 
-Technicznie, `x:XData` może być używany jako zawartość dowolnej <xref:System.Xml.Serialization.IXmlSerializable>właściwości typu . Jest <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> to jednak jedyna znacząca implementacja.
+Technicznie, `x:XData` może być używany jako zawartość dowolnej właściwości typu <xref:System.Xml.Serialization.IXmlSerializable> . Jest jednak <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> jedyną wyrazistą implementacją.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Windows.Data.XmlDataProvider>
-- [Omówienie powiązania danych](../data/data-binding-overview.md)
-- [Rozszerzenie znaczników powiązania](../../framework/wpf/advanced/binding-markup-extension.md)
+- [Przegląd powiązań danych](../data/data-binding-overview.md)
+- [Rozszerzenie znaczników powiązania](/dotnet/desktop/wpf/advanced/binding-markup-extension)

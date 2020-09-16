@@ -2,18 +2,18 @@
 title: Przestarzałe typy w programie Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: 4aebe928-a964-4c1c-abf7-0dbbd3604b13
-ms.openlocfilehash: c8325e60d708b53e1701a980355d5d2bf20e8a4b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b0ec30d2778333537e781e6681927f7048b630ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64644966"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543787"
 ---
 # <a name="deprecated-types-in-windows-workflow-foundation"></a>Przestarzałe typy w programie Windows Workflow Foundation
-W .NET 4 zespołu przepływu pracy zwolnione wszystkich nowych aparatu przepływu pracy w <xref:System.Activities> przestrzeni nazw. Wersja programu .NET 4.5 w wersji Beta firma Microsoft oznaczanie większość typów w "WF 3" <xref:System.Workflow.Activities>, <xref:System.Workflow.ComponentModel>, i <xref:System.Workflow.Runtime> przestrzeni nazw jako przestarzałe.  
+W programie .NET 4 zespół przepływu pracy wydał cały nowy aparat przepływu pracy w <xref:System.Activities> przestrzeni nazw. W wersji programu .NET 4,5 beta oznaczamy większość typów w "WF 3" <xref:System.Workflow.Activities> , <xref:System.Workflow.ComponentModel> i  <xref:System.Workflow.Runtime> przestrzenie nazw jako przestarzałe.  
   
 ## <a name="obsolete-namespaces-and-tools"></a>Przestarzałe przestrzenie nazw i narzędzia  
- Następujące zestawy mają jeden lub więcej typów publicznych, które staną się przestarzałe:  
+ Następujące zestawy mają jeden lub więcej typów publicznych, które będą przestarzałe:  
   
 - System.Workflow.Activities.dll  
   
@@ -29,10 +29,10 @@ W .NET 4 zespołu przepływu pracy zwolnione wszystkich nowych aparatu przepływ
   
 - Wfc.exe  
   
- W rezultacie klienci, którzy używają przestarzałych API 3 WF będą napotykać ostrzeżenia kompilacji za pomocą komunikatu podobnego do następującego:  
+ W związku z tym klienci korzystający z przestarzałych interfejsów API WF 3 będą napotykać ostrzeżenia kompilacji z komunikatem podobnym do poniższego:  
   
- **Ostrzeżenie BC40000: X jest przestarzała: WF 3 typy są przestarzałe. Zamiast tego użyj WF 4.** Typy zostanie usunięty z programu .NET Framework w przyszłej wersji, ale nie Ustaliliśmy jeszcze tego przedziału czasu (nie w 4.5). Ten krok bieżącego pozwala nam komunikować się z naszym kierunek dla naszych klientów i zezwolić im na może zająć dużo czasu, aby przejść do nowego modelu WF4. Firma Microsoft oczywiście, będzie obsługiwać te typy WF 3 w obszarze [zasady świadczenia pomocy technicznej firmy Microsoft](https://aka.ms/MicrosoftSupportLifecycle). Istniejące aplikacje WF3 uruchomią się bez problemu w .NET 4.5 i programu Visual Studio 2012 będzie obsługiwać nowych i istniejących rozwiązań opartych na WF3.  
+ **Ostrzeżenie BC40000: X jest przestarzałe: Typy WF 3 są przestarzałe. Zamiast tego użyj polecenia WF 4.** Usuniemy typy z .NET Framework w przyszłej wersji, ale jeszcze nie określiłeś tego czasu (nie w 4,5). Ten bieżący krok pozwala nam komunikować się naszym naszym klientom i umożliwić im wiele czasu na przejście do nowego modelu WF4. Będziemy oczywiście w dalszym ciągu obsługiwać te typy WF 3 w ramach [zasad cyklu życia pomoc techniczna firmy Microsoft](/lifecycle/). Istniejące aplikacje WF3 będą uruchamiane bez problemu w programie .NET 4,5, a program Visual Studio 2012 będzie obsługiwał nowe i istniejące rozwiązania oparte na WF3.  
   
- Zasady dotyczące typów w <xref:System.Workflow.Activities.Rules> przestrzeni nazw, które nie mają zastępuje w programie WF 4.5, nie są przestarzałe.  
+ Reguły związane z typami w <xref:System.Workflow.Activities.Rules> przestrzeni nazw, które nie mają zamiennika WF 4,5, nie zostały wycofane.  
   
- Klienci, którzy chcą przeprowadzić migrację aplikacji WF 4 znajdą się w Pomocy [wskazówek dotyczących migracji 4 przepływu pracy](migration-guidance.md).
+ Klienci, którzy chcą migrować swoje aplikacje do programu WF 4, zobaczą [wskazówki dotyczące migracji przepływu pracy 4](migration-guidance.md).

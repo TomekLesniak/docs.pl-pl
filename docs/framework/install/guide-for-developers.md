@@ -8,12 +8,12 @@ helpviewer_keywords:
 - installing .NET Framework
 - installation [.NET Framework]
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
-ms.openlocfilehash: d2bb964c3d034ea6913c91922fcff1e62130e0dc
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 4ea1954841696ef28cceca2968e750d9771be038
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558468"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543714"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Zainstaluj .NET Framework dla deweloperów
 
@@ -35,7 +35,7 @@ Aby uzyskać szczegółowe informacje, Skorzystaj z poniższej tabeli. Aby wyśw
 
 | Wersja programu .NET Framework | Instalator (pakiet dla deweloperów i środowisko uruchomieniowe) | Obsługa platform |
 | ---------------------- | -------------------------------------- | ---------------- |
-|**4,8**   | [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)    | **Uwzględnione w:**<br/><br/>Aktualizacja systemu Windows 10 maja 2019<br/>[Visual Studio 2019 (aktualizacja 16,3)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Program można zainstalować na:**<br/><br/>Aktualizacja systemu Windows 10 październik 2018<br/>Aktualizacja systemu Windows 10 z kwietnia 2018<br/>Windows 10 Fall Creators Update<br/>Aktualizacja systemu Windows 10 dla twórców <br /> Aktualizacja Windows 10 Anniversary Update<br /> Windows 8.1 i starsze<br /> Windows Server 2019<br/>System Windows Server w wersji 1809<br/>System Windows Server w wersji 1803<br /><br/> (aby zapoznać się z pełną listą, zobacz [wymagania systemowe](../get-started/system-requirements.md)).||
+|**4,8**   | [ .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)    | **Uwzględnione w:**<br/><br/>Aktualizacja systemu Windows 10 maja 2019<br/>[Visual Studio 2019 (aktualizacja 16,3)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Program można zainstalować na:**<br/><br/>Aktualizacja systemu Windows 10 październik 2018<br/>Aktualizacja systemu Windows 10 z kwietnia 2018<br/>Windows 10 Fall Creators Update<br/>Aktualizacja systemu Windows 10 dla twórców <br /> Aktualizacja Windows 10 Anniversary Update<br /> Windows 8.1 i starsze<br /> Windows Server 2019<br/>System Windows Server w wersji 1809<br/>System Windows Server w wersji 1803<br /><br/> (aby zapoznać się z pełną listą, zobacz [wymagania systemowe](../get-started/system-requirements.md)).||
 |**4.7.2** | [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) | **Uwzględnione w:** <br/><br/>Aktualizacja systemu Windows 10 październik 2018<br/>Aktualizacja systemu Windows 10 z kwietnia 2018<br/>Windows Server 2019<br/>System Windows Server w wersji 1809<br/>System Windows Server w wersji 1803<br/>[Visual Studio 2017 (Aktualizacja 15,8)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Program można zainstalować na:**<br/> <br/>Windows 10 Fall Creators Update<br/>Aktualizacja systemu Windows 10 dla twórców <br /> Aktualizacja Windows 10 Anniversary Update<br /> Windows 8.1 i starsze<br /> System Windows Server, wersja 1709 i starsze wersje<br /><br/> (aby zapoznać się z pełną listą, zobacz [wymagania systemowe](../get-started/system-requirements.md)).||
 |**4.7.1** | [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471) | **Uwzględnione w:** <br/><br/>Windows 10 Fall Creators Update<br/>System Windows Server w wersji 1709<br/>[Visual Studio 2017 (Aktualizacja 15,5)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Program można zainstalować na:**<br/><br/> Aktualizacja systemu Windows 10 dla twórców <br /> Aktualizacja Windows 10 Anniversary Update<br /> Windows 8.1 i starsze<br /> Windows Server 2016 i starsze<br /> (aby zapoznać się z pełną listą, zobacz [wymagania systemowe](../get-started/system-requirements.md)).||
 |**4,7**   | [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)    | **Uwzględnione w:** <br/><br/>Aktualizacja systemu Windows 10 dla twórców<br/>[Visual Studio 2017 (Aktualizacja 15,3)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Program można zainstalować na:**<br /><br/> Aktualizacja Windows 10 Anniversary Update<br /> Windows 8.1 i starsze<br /> Windows Server 2016 i starsze<br /> (aby zapoznać się z pełną listą, zobacz [wymagania systemowe](../get-started/system-requirements.md)).||
@@ -68,7 +68,7 @@ Zainstaluj pakiet przeznaczony dla deweloperów, aby opracowywać najnowszą wer
 
 Pakiet dewelopera dla .NET Framework 4.5.1 lub 4.5.2, pakiet docelowy dla .NET Framework 4,6, a pakiet dewelopera dla .NET Framework 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 lub 4,8, stanowi określoną .NET Framework wersję zestawów referencyjnych, pakietów językowych i plików IntelliSense do użycia w zintegrowanym środowisku programistycznym, takim jak Visual Studio.  Jeśli używasz programu Visual Studio, pakiet dewelopera lub pakiet docelowy dodaje także zainstalowaną wersję .NET Framework do wybranych elementów docelowych podczas tworzenia nowego projektu.  Wybierz jedną z następujących opcji:
 
-- [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+- [ .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
 - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
 - [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
@@ -102,7 +102,7 @@ Programy instalacyjne sieci Web i offline są przeznaczone dla komputerów opart
 
 1. Otwórz stronę pobierania dla .NET Framework wersji, którą chcesz zainstalować:
 
-   - [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+   - [ .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
    - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
    - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
    - [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
@@ -138,7 +138,7 @@ Programy instalacyjne sieci Web i offline są przeznaczone dla komputerów opart
 
 - Musisz mieć poświadczenia administracyjne, aby zainstalować .NET Framework 4,5 lub nowszą wersję.
 
-- Pakiet redystrybucyjny .NET Framework 4,5 został zaktualizowany w dniu 9 października 2012, aby rozwiązać problem związany z niewłaściwym znacznikiem czasu w certyfikacie cyfrowym, który spowodował Przedwczesne wygaśnięcie podpisu cyfrowego plików utworzonych i podpisanych przez firmę Microsoft. Jeśli wcześniej zainstalowano pakiet redystrybucyjny .NET Framework 4,5 z 16 sierpnia 2012, Zalecamy zaktualizowanie kopii przy użyciu najnowszego pakietu redystrybucyjnego ze [strony pobierania .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45). Aby uzyskać więcej informacji o tym problemie, zobacz [Poradnik zabezpieczeń firmy Microsoft 2749655](https://docs.microsoft.com/security-updates/SecurityAdvisories/2012/2749655) i [artykuł z bazy wiedzy 2770445](https://support.microsoft.com/kb/2770445).
+- Pakiet redystrybucyjny .NET Framework 4,5 został zaktualizowany w dniu 9 października 2012, aby rozwiązać problem związany z niewłaściwym znacznikiem czasu w certyfikacie cyfrowym, który spowodował Przedwczesne wygaśnięcie podpisu cyfrowego plików utworzonych i podpisanych przez firmę Microsoft. Jeśli wcześniej zainstalowano pakiet redystrybucyjny .NET Framework 4,5 z 16 sierpnia 2012, Zalecamy zaktualizowanie kopii przy użyciu najnowszego pakietu redystrybucyjnego ze [strony pobierania .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45). Aby uzyskać więcej informacji o tym problemie, zobacz [Poradnik zabezpieczeń firmy Microsoft 2749655](/security-updates/SecurityAdvisories/2012/2749655) i [artykuł z bazy wiedzy 2770445](https://support.microsoft.com/kb/2770445).
 
 ## <a name="to-install-language-packs"></a>Aby zainstalować pakiety językowe
 
@@ -149,7 +149,7 @@ Pakiety językowe są plikami wykonywalnymi zawierającymi zlokalizowane zasoby 
 
 1. Otwórz stronę pobierania pakietu językowego dla zainstalowanej wersji .NET Framework:
 
-   - [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+   - [ .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
    - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
    - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
    - [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
@@ -175,20 +175,20 @@ Poniższa tabela zawiera listę obsługiwanych języków.
 | Fiński               | fi      |
 | Angielski (USA)         | pl-PL   |
 | Francuski                | fr      |
-| Niemiecki                | de      |
+| niemiecki                | de      |
 | Grecki                 | Colon      |
 | Hebrajski                | Przewodniczący      |
 | Węgierski             | Węgry      |
 | Włoski               | it      |
-| Japoński              | ja      |
-| Koreański                | Ko      |
+| japoński              | ja      |
+| koreański                | Ko      |
 | Norweski             | nie      |
 | Polski                | zysków      |
 | Portugalski (Brazylia)   | pt-BR   |
 | Portugalski (Portugalia) | pt-PT   |
 | Rosyjski               | ru      |
 | Chiński uproszczony    | zh-CHS  |
-| Hiszpański               | Tak      |
+| Hiszpański               | es      |
 | Szwedzki               | sv      |
 | Chiński tradycyjny   | zh-CHT  |
 | Turecki               | zdawczy      |
@@ -207,7 +207,7 @@ Poniższa tabela zawiera listę obsługiwanych języków.
 
 - Aby przeglądać .NET Framework kod źródłowy w trybie online, zobacz [.NET Framework Source Reference](https://referencesource.microsoft.com/) . Źródło odwołania jest również dostępne w serwisie [GitHub](https://github.com/Microsoft/referencesource). Możesz [pobrać źródło odwołania](https://referencesource.microsoft.com/download.html) do wyświetlania w trybie offline i przejść przez źródła (w tym poprawki i aktualizacje) podczas debugowania. Aby uzyskać więcej informacji, zobacz wpis w blogu [nowe wyszukiwanie źródła odwołania dla platformy .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik wdrażania dla deweloperów](../deployment/deployment-guide-for-developers.md)
 - [Przewodnik wdrażania dla administratorów](../deployment/guide-for-administrators.md)

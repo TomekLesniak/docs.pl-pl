@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
-ms.openlocfilehash: 5e616b5bb513939cadd8fe5c72675ba0b6e070a3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 25de633faabb1424bcf5e618cc5ca129e61c5fca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621525"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547873"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Marshaling klas, struktur i unii
 
@@ -36,7 +36,7 @@ W poniższej tabeli wymieniono opcje organizowania klas, struktur i Unii; opisuj
 |----------|-----------------|------------|
 |Klasa według wartości.|Przekazuje klasę z składowymi liczb całkowitych jako parametr in/out, jak w przypadku wystąpienia zarządzanego.|[SysTime — przykład](#systime-sample)|
 |Struktura według wartości.|Przekazuje struktury zgodnie z parametrami.|[Przykłady struktur](#structures-sample)|
-|Struktura przez odwołanie.|Przekazuje struktury jako parametry wejściowe/out.|[OSInfo — Przykład](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
+|Struktura przez odwołanie.|Przekazuje struktury jako parametry wejściowe/out.|[OSInfo — Przykład](/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
 |Struktura ze strukturami zagnieżdżonymi (spłaszczone).|Przekazuje klasę, która reprezentuje strukturę z zagnieżdżonymi strukturami w funkcji niezarządzanej. Struktura jest spłaszczona do jednej dużej struktury w zarządzanym prototypie.|[FindFile — przykład](#findfile-sample)|
 |Struktura ze wskaźnikiem do innej struktury.|Przekazuje strukturę, która zawiera wskaźnik do drugiej struktury jako element członkowski.|[Przykłady struktur](#structures-sample)|
 |Tablica struktur z liczbami całkowitymi przez wartość.|Przekazuje tablicę struktur, które zawierają tylko liczby całkowite jako parametr in/out. Elementy członkowskie tablicy można zmienić.|[Przykłady tablic](marshaling-different-types-of-arrays.md)|
@@ -44,7 +44,7 @@ W poniższej tabeli wymieniono opcje organizowania klas, struktur i Unii; opisuj
 |Unii z typami wartości.|Przekazuje Unię z typami wartości (integer i Double).|[przykład unii](#unions-sample)|
 |Unii z typami mieszanymi.|Przekazuje Unii z typami mieszanymi (liczbami całkowitymi i ciągami).|[przykład unii](#unions-sample)|
 |Struktura z układem specyficznym dla platformy.|Przekazuje typ z natywnymi definicjami pakowania.|[Przykład platformy](#platform-sample)|
-|Wartości null w strukturze.|Przekazuje odwołanie o wartości null (**Nothing** w Visual Basic) zamiast odwołania do typu wartości.|[HandleRef — przykład](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
+|Wartości null w strukturze.|Przekazuje odwołanie o wartości null (**Nothing** w Visual Basic) zamiast odwołania do typu wartości.|[HandleRef — przykład](/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
 
 ## <a name="structures-sample"></a>Przykłady struktur
 
@@ -100,23 +100,23 @@ typedef struct _MYARRAYSTRUCT
 
 Struktury zarządzane `MyPerson` , `MyPerson2` , `MyPerson3` i `MyArrayStruct` mają następującą cechę:
 
-- `MyPerson`zawiera tylko elementy członkowskie ciągu. Pole [charset](specifying-a-character-set.md) ustawia ciągi na format ANSI w przypadku przekazywania do funkcji niezarządzanej.
+- `MyPerson` zawiera tylko elementy członkowskie ciągu. Pole [charset](specifying-a-character-set.md) ustawia ciągi na format ANSI w przypadku przekazywania do funkcji niezarządzanej.
 
-- `MyPerson2`zawiera element **IntPtr** do `MyPerson` struktury. Typ **IntPtr** zastępuje oryginalny wskaźnik do struktury niezarządzanej, ponieważ .NET Framework aplikacje nie używają wskaźników, chyba że kod jest oznaczony jako **niebezpieczny**.
+- `MyPerson2` zawiera element **IntPtr** do `MyPerson` struktury. Typ **IntPtr** zastępuje oryginalny wskaźnik do struktury niezarządzanej, ponieważ .NET Framework aplikacje nie używają wskaźników, chyba że kod jest oznaczony jako **niebezpieczny**.
 
-- `MyPerson3`zawiera `MyPerson` jako osadzoną strukturę. Strukturę osadzoną w innej strukturze można spłaszczyć, umieszczając elementy osadzonej struktury bezpośrednio w strukturze głównej, lub można ją pozostawić jako osadzoną strukturę, jak w tym przykładzie.
+- `MyPerson3` zawiera `MyPerson` jako osadzoną strukturę. Strukturę osadzoną w innej strukturze można spłaszczyć, umieszczając elementy osadzonej struktury bezpośrednio w strukturze głównej, lub można ją pozostawić jako osadzoną strukturę, jak w tym przykładzie.
 
-- `MyArrayStruct`zawiera tablicę liczb całkowitych. <xref:System.Runtime.InteropServices.MarshalAsAttribute>Atrybut ustawia <xref:System.Runtime.InteropServices.UnmanagedType> wartość wyliczenia na **ByValArray**, która jest używana do wskazania liczby elementów w tablicy.
+- `MyArrayStruct` zawiera tablicę liczb całkowitych. <xref:System.Runtime.InteropServices.MarshalAsAttribute>Atrybut ustawia <xref:System.Runtime.InteropServices.UnmanagedType> wartość wyliczenia na **ByValArray**, która jest używana do wskazania liczby elementów w tablicy.
 
 Dla wszystkich struktur w tym przykładzie <xref:System.Runtime.InteropServices.StructLayoutAttribute> atrybut jest stosowany, aby upewnić się, że elementy członkowskie są uporządkowane w pamięci sekwencyjnie, w kolejności, w jakiej są wyświetlane.
 
 `NativeMethods`Klasa zawiera zarządzane prototypy dla `TestStructInStruct` `TestStructInStruct3` metod, i `TestArrayInStruct` wywoływanych przez `App` klasę. Każdy prototyp deklaruje jeden parametr w następujący sposób:
 
-- `TestStructInStruct`deklaruje odwołanie do typu `MyPerson2` jako jego parametru.
+- `TestStructInStruct` deklaruje odwołanie do typu `MyPerson2` jako jego parametru.
 
-- `TestStructInStruct3`deklaruje typ `MyPerson3` jako parametr i przekazuje parametr przez wartość.
+- `TestStructInStruct3` deklaruje typ `MyPerson3` jako parametr i przekazuje parametr przez wartość.
 
-- `TestArrayInStruct`deklaruje odwołanie do typu `MyArrayStruct` jako jego parametru.
+- `TestArrayInStruct` deklaruje odwołanie do typu `MyArrayStruct` jako jego parametru.
 
 Struktury jako argumenty metod są przekazane przez wartość, chyba że parametr zawiera słowo kluczowe **ref** (**ByRef** in Visual Basic). Na przykład `TestStructInStruct` Metoda przekazuje odwołanie (wartość adresu) do obiektu typu `MyPerson2` do niezarządzanego kodu. Aby manipulować strukturą `MyPerson2` wskazującą, przykład tworzy bufor o określonym rozmiarze i zwraca jego adres przez połączenie <xref:System.Runtime.InteropServices.Marshal.AllocCoTaskMem%2A?displayProperty=nameWithType> <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType> metod i. Następnie przykład kopiuje zawartość zarządzanej struktury do bufora niezarządzanego. Na koniec przykład używa <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A?displayProperty=nameWithType> metody do organizowania danych z niezarządzanego bufora do obiektu zarządzanego i <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A?displayProperty=nameWithType> metody zwalniania niezarządzanego bloku pamięci.
 
@@ -134,7 +134,7 @@ Struktury jako argumenty metod są przekazane przez wartość, chyba że paramet
 
 ## <a name="findfile-sample"></a>FindFile — przykład
 
-Ten przykład pokazuje, jak przekazać strukturę, która zawiera drugą, osadzoną strukturę do niezarządzanej funkcji. Pokazano również, jak używać atrybutu, <xref:System.Runtime.InteropServices.MarshalAsAttribute> Aby zadeklarować tablicę o stałej długości w strukturze. W tym przykładzie elementy osadzonej struktury są dodawane do struktury nadrzędnej. Aby zapoznać się z przykładową strukturą osadzoną, która nie została spłaszczona, zobacz [przykładowe struktury](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100)).
+Ten przykład pokazuje, jak przekazać strukturę, która zawiera drugą, osadzoną strukturę do niezarządzanej funkcji. Pokazano również, jak używać atrybutu, <xref:System.Runtime.InteropServices.MarshalAsAttribute> Aby zadeklarować tablicę o stałej długości w strukturze. W tym przykładzie elementy osadzonej struktury są dodawane do struktury nadrzędnej. Aby zapoznać się z przykładową strukturą osadzoną, która nie została spłaszczona, zobacz [przykładowe struktury](/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100)).
 
 Przykład FindFile — używa następującej funkcji niezarządzanej, pokazanej wraz z jej oryginalną deklaracją funkcji:
 
@@ -208,9 +208,9 @@ union MYUNION2
 
 W kodzie zarządzanym Unii są zdefiniowane jako struktury. `MyUnion`Struktura zawiera dwa typy wartości jako elementy członkowskie: liczbę całkowitą i podwójną. <xref:System.Runtime.InteropServices.StructLayoutAttribute>Atrybut jest ustawiony na kontrolowanie precyzyjnej pozycji każdego elementu członkowskiego danych. Ten <xref:System.Runtime.InteropServices.FieldOffsetAttribute> atrybut zawiera fizyczną pozycję pól w niezarządzanej reprezentacji Unii. Zwróć uwagę, że oba elementy członkowskie mają te same wartości przesunięcia, dlatego członkowie mogą definiować ten sam fragment pamięci.
 
-`MyUnion2_1`i `MyUnion2_2` zawierają odpowiednio typ wartości (Integer) i ciąg. W kodzie zarządzanym, typy wartości i typy referencyjne nie mogą nakładać się na siebie. Ten przykład używa przeciążania metody, aby umożliwić wywołującemu używanie obu typów podczas wywoływania tej samej funkcji niezarządzanej. Układ `MyUnion2_1` jest jawny i ma precyzyjną wartość przesunięcia. W przeciwieństwie `MyUnion2_2` ma układ sekwencyjny, ponieważ jawne układy są niedozwolone w przypadku typów referencyjnych. <xref:System.Runtime.InteropServices.MarshalAsAttribute>Atrybut ustawia <xref:System.Runtime.InteropServices.UnmanagedType> Wyliczenie na **ByValTStr**, który jest używany do identyfikowania wbudowanej tablicy znaków o stałej długości, która pojawia się w niezarządzanej reprezentacji Unii.
+`MyUnion2_1` i `MyUnion2_2` zawierają odpowiednio typ wartości (Integer) i ciąg. W kodzie zarządzanym, typy wartości i typy referencyjne nie mogą nakładać się na siebie. Ten przykład używa przeciążania metody, aby umożliwić wywołującemu używanie obu typów podczas wywoływania tej samej funkcji niezarządzanej. Układ `MyUnion2_1` jest jawny i ma precyzyjną wartość przesunięcia. W przeciwieństwie `MyUnion2_2` ma układ sekwencyjny, ponieważ jawne układy są niedozwolone w przypadku typów referencyjnych. <xref:System.Runtime.InteropServices.MarshalAsAttribute>Atrybut ustawia <xref:System.Runtime.InteropServices.UnmanagedType> Wyliczenie na **ByValTStr**, który jest używany do identyfikowania wbudowanej tablicy znaków o stałej długości, która pojawia się w niezarządzanej reprezentacji Unii.
 
-`NativeMethods`Klasa zawiera prototypy dla `TestUnion` `TestUnion2` metod i. `TestUnion2`jest przeciążony do zadeklarowania `MyUnion2_1` lub `MyUnion2_2` jako parametry.
+`NativeMethods`Klasa zawiera prototypy dla `TestUnion` `TestUnion2` metod i. `TestUnion2` jest przeciążony do zadeklarowania `MyUnion2_1` lub `MyUnion2_2` jako parametry.
 
 ### <a name="declaring-prototypes"></a>Deklarowanie prototypów
 
@@ -291,7 +291,7 @@ Domyślnie zestawy .NET mogą działać w wersji 32-bitowej i 64-bitowej środow
 
 Poniższy fragment kodu przedstawia przykład sposobu wyboru między definicją 32-bitową i 64-bitową w czasie wykonywania.
 
-```CSharp
+```csharp
 if (IntPtr.Size == 8)
 {
     // Use the STRRET_64 definition
@@ -332,7 +332,7 @@ typedef struct _SYSTEMTIME {
 
 W tym przykładzie `SystemTime` Klasa zawiera elementy oryginalnej struktury reprezentowane jako elementy członkowskie klasy. <xref:System.Runtime.InteropServices.StructLayoutAttribute>Atrybut jest ustawiony tak, aby upewnić się, że elementy członkowskie są ułożone w pamięci sekwencyjnie, w kolejności, w jakiej są wyświetlane.
 
-`NativeMethods`Klasa zawiera zarządzany prototyp `GetSystemTime` metody, która `SystemTime` Domyślnie przekazuje klasę jako parametr we/out. Parametr musi być zadeklarowany za pomocą <xref:System.Runtime.InteropServices.InAttribute> atrybutów i, <xref:System.Runtime.InteropServices.OutAttribute> ponieważ klasy, które są typami odwołań, są domyślnie przenoszone jako parametry w parametrach. Aby obiekt wywołujący otrzymywał wyniki, należy jawnie zastosować te [atrybuty kierunkowe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) . `App`Klasa tworzy nowe wystąpienie `SystemTime` klasy i uzyskuje dostęp do jego pól danych.
+`NativeMethods`Klasa zawiera zarządzany prototyp `GetSystemTime` metody, która `SystemTime` Domyślnie przekazuje klasę jako parametr we/out. Parametr musi być zadeklarowany za pomocą <xref:System.Runtime.InteropServices.InAttribute> atrybutów i, <xref:System.Runtime.InteropServices.OutAttribute> ponieważ klasy, które są typami odwołań, są domyślnie przenoszone jako parametry w parametrach. Aby obiekt wywołujący otrzymywał wyniki, należy jawnie zastosować te [atrybuty kierunkowe](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) . `App`Klasa tworzy nowe wystąpienie `SystemTime` klasy i uzyskuje dostęp do jego pól danych.
 
 ### <a name="code-samples"></a>Przykłady kodu
 
@@ -362,11 +362,11 @@ typedef struct _MYSTRSTRUCT2
 
 `App`Klasa implementuje `UsingMarshaling` metodę, która wykonuje wszystkie zadania niezbędne do przekazania tablicy. Tablica jest oznaczona za pomocą `out` `ByRef` słowa kluczowego (w Visual Basic), aby wskazać, że dane są przekazywane do obiektu wywołującego. Implementacja używa następujących <xref:System.Runtime.InteropServices.Marshal> metod klasy:
 
-- <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A>kierowanie danych z bufora niezarządzanego do obiektu zarządzanego.
+- <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A> kierowanie danych z bufora niezarządzanego do obiektu zarządzanego.
 
-- <xref:System.Runtime.InteropServices.Marshal.DestroyStructure%2A>zwalnianie pamięci zarezerwowanej dla ciągów w strukturze.
+- <xref:System.Runtime.InteropServices.Marshal.DestroyStructure%2A> zwalnianie pamięci zarezerwowanej dla ciągów w strukturze.
 
-- <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A>zwalnianie pamięci zarezerwowanej dla tablicy.
+- <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A> zwalnianie pamięci zarezerwowanej dla tablicy.
 
 Jak wspomniano wcześniej, język C# zezwala na niebezpieczny kod i Visual Basic nie. W przykładzie w języku C# `UsingUnsafePointer` jest alternatywną implementacją metody, która używa wskaźników zamiast <xref:System.Runtime.InteropServices.Marshal> klasy do przekazania tablicy zawierającej `MyUnsafeStruct` strukturę.
 
