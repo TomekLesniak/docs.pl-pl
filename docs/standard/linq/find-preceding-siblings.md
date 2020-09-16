@@ -6,25 +6,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b281ff99-d08a-43d0-bea1-eff831b2f8ae
-ms.openlocfilehash: 788101eee6cdbce89626d1b46a5011a897c64704
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 0cfd516f274eaf2940a7b944d34c6ea494e7eaa1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553188"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546190"
 ---
-# <a name="how-to-find-preceding-siblings-linq-to-xml"></a><span data-ttu-id="b4271-104">Jak znaleźć poprzednie elementy równorzędne (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b4271-104">How to find preceding siblings (LINQ to XML)</span></span>
+# <a name="how-to-find-preceding-siblings-linq-to-xml"></a><span data-ttu-id="208cb-104">Jak znaleźć poprzednie elementy równorzędne (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="208cb-104">How to find preceding siblings (LINQ to XML)</span></span>
 
-<span data-ttu-id="b4271-105">W tym artykule pokazano, jak używać <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> wzdłuż osi powyższego poziomu elementów równorzędnych do znajdowania elementów równorzędnych poprzedzających dany element, a także sposobu używania <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> do znajdowania tych samych elementów.</span><span class="sxs-lookup"><span data-stu-id="b4271-105">This article shows how to use <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> along the preceding-sibling axis to find sibling elements that precede a given element, and how to use <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> to find the same elements.</span></span>
+<span data-ttu-id="208cb-105">W tym artykule pokazano, jak używać <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> wzdłuż osi powyższego poziomu elementów równorzędnych do znajdowania elementów równorzędnych poprzedzających dany element, a także sposobu używania <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> do znajdowania tych samych elementów.</span><span class="sxs-lookup"><span data-stu-id="208cb-105">This article shows how to use <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> along the preceding-sibling axis to find sibling elements that precede a given element, and how to use <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> to find the same elements.</span></span>
 
-## <a name="example-use-two-methods-to-find-sibling-elements-that-precede-an-element"></a><span data-ttu-id="b4271-106">Przykład: Użyj dwóch metod, aby znaleźć elementy równorzędne poprzedzające element</span><span class="sxs-lookup"><span data-stu-id="b4271-106">Example: Use two methods to find sibling elements that precede an element</span></span>
+## <a name="example-use-two-methods-to-find-sibling-elements-that-precede-an-element"></a><span data-ttu-id="208cb-106">Przykład: Użyj dwóch metod, aby znaleźć elementy równorzędne poprzedzające element</span><span class="sxs-lookup"><span data-stu-id="208cb-106">Example: Use two methods to find sibling elements that precede an element</span></span>
 
-<span data-ttu-id="b4271-107">Poniższy przykład umożliwia znalezienie `FullAddress` elementu w dokumencie XML [przykładowy plik XML: klienci i zamówienia](sample-xml-file-customers-orders.md)i pobiera poprzednie elementy równorzędne na dwa różne sposoby.</span><span class="sxs-lookup"><span data-stu-id="b4271-107">The following example finds the `FullAddress` element in XML document [Sample XML file: Customers and orders](sample-xml-file-customers-orders.md), and retrieves the preceding sibling elements in two different ways.</span></span> <span data-ttu-id="b4271-108">Następnie porównuje wyniki i znajduje je identycznie.</span><span class="sxs-lookup"><span data-stu-id="b4271-108">It then compares the results and finds them identical.</span></span>
+<span data-ttu-id="208cb-107">Poniższy przykład umożliwia znalezienie `FullAddress` elementu w dokumencie XML [przykładowy plik XML: klienci i zamówienia](sample-xml-file-customers-orders.md)i pobiera poprzednie elementy równorzędne na dwa różne sposoby.</span><span class="sxs-lookup"><span data-stu-id="208cb-107">The following example finds the `FullAddress` element in XML document [Sample XML file: Customers and orders](sample-xml-file-customers-orders.md), and retrieves the preceding sibling elements in two different ways.</span></span> <span data-ttu-id="208cb-108">Następnie porównuje wyniki i znajduje je identycznie.</span><span class="sxs-lookup"><span data-stu-id="208cb-108">It then compares the results and finds them identical.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b4271-109">Obie metody zapewniają wyniki w kolejności dokumentu.</span><span class="sxs-lookup"><span data-stu-id="b4271-109">Both methods provide results that are in document order.</span></span>
+> <span data-ttu-id="208cb-109">Obie metody zapewniają wyniki w kolejności dokumentu.</span><span class="sxs-lookup"><span data-stu-id="208cb-109">Both methods provide results that are in document order.</span></span>
 
-<span data-ttu-id="b4271-110">Użyte wyrażenie XPath ma wartość `preceding-sibling::*` .</span><span class="sxs-lookup"><span data-stu-id="b4271-110">The XPath expression used is `preceding-sibling::*`.</span></span>
+<span data-ttu-id="208cb-110">Użyte wyrażenie XPath ma wartość `preceding-sibling::*` .</span><span class="sxs-lookup"><span data-stu-id="208cb-110">The XPath expression used is `preceding-sibling::*`.</span></span>
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -68,7 +68,7 @@ For Each el As XElement In list2
 Next
 ```
 
-<span data-ttu-id="b4271-111">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="b4271-111">This example produces the following output:</span></span>
+<span data-ttu-id="208cb-111">Ten przykład generuje następujące wyniki:</span><span class="sxs-lookup"><span data-stu-id="208cb-111">This example produces the following output:</span></span>
 
 ```output
 Results are identical
@@ -78,6 +78,6 @@ Results are identical
 <Phone>(503) 555-7555</Phone>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="b4271-112">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="b4271-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="208cb-112">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="208cb-112">See also</span></span>
 
-- [<span data-ttu-id="b4271-113">LINQ to XML dla użytkowników XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b4271-113">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="208cb-113">LINQ to XML dla użytkowników XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="208cb-113">LINQ to XML for XPath Users (Visual Basic)</span></span>](./comparison-xpath-linq-xml.md)
