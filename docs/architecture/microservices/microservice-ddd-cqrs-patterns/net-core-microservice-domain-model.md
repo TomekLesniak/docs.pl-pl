@@ -2,12 +2,12 @@
 title: Implementowanie modelu domeny mikrousługi za pomocą platformy .NET Core
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się ze szczegółami implementacji modelu domeny zorientowanego na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 0b42ecc2440faf5870b2d99e31d03cda00b21ce0
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 4017d9d658ff73fd935507dad79e9ffab7973de1
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306915"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738752"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementowanie modelu domeny mikrousługi przy użyciu platformy .NET Core
 
@@ -154,7 +154,7 @@ Ponadto nowa operacja OrderItem (params) również będzie kontrolowana i wykony
 
 W przypadku korzystania z Entity Framework Core 1,1 lub nowszej jednostka DDD może być lepiej wyrażona, ponieważ umożliwia ona [Mapowanie do pól](https://docs.microsoft.com/ef/core/modeling/backing-field) oprócz właściwości. Jest to przydatne w przypadku ochrony kolekcji jednostek podrzędnych lub obiektów wartości. Dzięki temu ulepszeniu można używać prostych prywatnych pól zamiast właściwości i można zaimplementować dowolną aktualizację do kolekcji pól w metodach publicznych i zapewnić dostęp tylko do odczytu za pomocą metody AsReadOnly.
 
-W DDD należy zaktualizować jednostkę tylko za pomocą metod w jednostce (lub w konstruktorze) w celu kontrolowania wszelkich niezmiennej i spójności danych, dlatego właściwości są definiowane tylko przy użyciu metody dostępu get. Właściwości są obsługiwane przez pola prywatne. Dostęp do prywatnych elementów członkowskich można uzyskać tylko z poziomu klasy. Istnieje jednak jeden wyjątek: EF Core muszą także ustawiać te pola (aby można było zwrócić obiekt z prawidłowymi wartościami).
+W DDD należy zaktualizować jednostkę tylko za pomocą metod w jednostce (lub w konstruktorze) w celu kontrolowania wszelkich niezmiennej i spójności danych, dlatego właściwości są definiowane tylko przy użyciu metody dostępu get. Właściwości są obsługiwane przez pola prywatne. Dostęp do prywatnych elementów członkowskich można uzyskać tylko z poziomu klasy. Istnieje jednak jeden wyjątek: EF Core należy odpowiednio ustawić te pola (aby można było zwrócić obiekt z prawidłowymi wartościami).
 
 ### <a name="map-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>Właściwości mapy z dostępem tylko do pól w tabeli bazy danych
 
@@ -166,7 +166,7 @@ W przypadku korzystania z EF Core 1,0 lub nowszego w kontekście DbContext nale�
 
 Przy użyciu funkcji w EF Core 1,1 lub nowszej, aby zamapować kolumny na pola, można również nie używać właściwości. Zamiast tego można po prostu zmapować kolumny z tabeli do pól. Typowym przypadkiem użycia jest to pole prywatne dla stanu wewnętrznego, do którego nie trzeba uzyskiwać dostępu poza jednostką.
 
-Na przykład w poprzednim przykładzie kodu OrderAggregate istnieje kilka pól prywatnych, takich jak `_paymentMethodId` pole, które nie ma powiązanej właściwości dla metody ustawiającej lub pobierającej. To pole może być również obliczane w ramach logiki biznesowej i stosowane z metod zamówienia, ale muszą być również utrwalane w bazie danych. Tak więc w EF Core (od wersji 1.1) istnieje możliwość mapowania pola bez powiązanej właściwości do kolumny w bazie danych. Jest to również wyjaśnione w sekcji [warstwa infrastruktury](ddd-oriented-microservice.md#the-infrastructure-layer) tego przewodnika.
+Na przykład w poprzednim przykładzie kodu OrderAggregate istnieje kilka pól prywatnych, takich jak  `_paymentMethodId` pole, które nie ma powiązanej właściwości dla metody ustawiającej lub pobierającej. To pole może być również obliczane w ramach logiki biznesowej i stosowane z metod zamówienia, ale muszą być również utrwalane w bazie danych. Tak więc w EF Core (od wersji 1.1) istnieje możliwość mapowania pola bez powiązanej właściwości do kolumny w bazie danych. Jest to również wyjaśnione w sekcji [warstwa infrastruktury](ddd-oriented-microservice.md#the-infrastructure-layer) tego przewodnika.
 
 ### <a name="additional-resources"></a>Zasoby dodatkowe
 

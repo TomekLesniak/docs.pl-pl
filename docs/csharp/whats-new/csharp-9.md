@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 80d636db04655650c7448590cd1042cdb1b17de1
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: a8b66d21514b57d8bee3ff54b2a707af391fe7a9
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065035"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738726"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -224,7 +224,7 @@ Innym świetnym użyciem tej funkcji jest połączenie z właściwościami tylko
 
 Można zwrócić wystąpienie utworzone przez konstruktora domyślnego przy użyciu `return new();` wyrażenia.
 
-Podobna funkcja ulepsza rozpoznawanie typu docelowego wyrażeń warunkowych. W przypadku tej zmiany dwa wyrażenia nie muszą mieć jawnej konwersji z jednego do drugiego, ale mogą jednocześnie mieć niejawne konwersje do typu wspólnego. Ta zmiana jest niezauważalna. Informacje o tym, że niektóre wyrażenia warunkowe, które wcześniej wymagały rzutowania lub nie spowodują skompilowania, już teraz działają.
+Podobna funkcja ulepsza rozpoznawanie typu docelowego wyrażeń warunkowych. W przypadku tej zmiany dwa wyrażenia nie muszą mieć jawnej konwersji z jednego do drugiego, ale mogą jednocześnie mieć niejawne konwersje na typ docelowy. Ta zmiana jest niezauważalna. Informacje o tym, że niektóre wyrażenia warunkowe, które wcześniej wymagały rzutowania lub nie spowodują skompilowania, już teraz działają.
 
 Począwszy od języka C# 9,0, można dodać `static` modyfikator do wyrażeń lambda lub metod anonimowych. Statyczne wyrażenia lambda są analogiczne do `static` funkcji lokalnych: statyczna funkcja lambda lub anonimowa nie może przechwycić lokalnych zmiennych lub stanu wystąpienia. `static`Modyfikator zapobiega przypadkowemu przechwyceniu innych zmiennych.
 

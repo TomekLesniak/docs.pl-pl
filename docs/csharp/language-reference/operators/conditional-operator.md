@@ -1,7 +1,7 @@
 ---
 description: '?: operator-Dokumentacja języka C#'
 title: '?: operator-Dokumentacja języka C#'
-ms.date: 03/06/2020
+ms.date: 09/17/2020
 f1_keywords:
 - ?:_CSharpKeyword
 - ?_CSharpKeyword
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 0efa6de2b537fd3af76807938ac2b50a2716561f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: b6add045983619169bed0cd9f32eb27dba0a0338
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89122358"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738882"
 ---
 # <a name="-operator-c-reference"></a>?: — operator (odwołanie w C#)
 
@@ -29,7 +29,13 @@ condition ? consequent : alternative
 
 `condition`Wyrażenie musi być szacowane do `true` lub `false` . Jeśli `condition` jest wynikiem obliczenia `true` , `consequent` wyrażenie jest oceniane, a jego wynik zmieni się na wynik operacji. Jeśli `condition` jest wynikiem obliczenia `false` , `alternative` wyrażenie jest oceniane, a jego wynik zmieni się na wynik operacji. Tylko `consequent` lub `alternative` jest oceniane.
 
-Typ `consequent` i `alternative` musi być taki sam lub musi być niejawną konwersją z jednego typu na drugi.
+Począwszy od języka C# 9,0, wyrażenia warunkowe mają typ docelowy. Oznacza to, że jeśli jest znany typ docelowy wyrażenia warunkowego, typy `consequent` i `alternative` muszą być niejawnie konwertowane na typ docelowy, jak pokazano na poniższym przykładzie:
+
+[!code-csharp[target-typed conditional](snippets/shared/ConditionalOperator.cs#TargetTyped)]
+
+Jeśli typ docelowy wyrażenia warunkowego jest nieznany (na przykład w przypadku użycia [`var`](../keywords/var.md) słowa kluczowego) lub w języku C# 8,0 i starszych, typ `consequent` i `alternative` musi być taki sam lub musi być niejawną konwersją z jednego typu na drugi:
+
+[!code-csharp[not target-typed conditional](snippets/shared/ConditionalOperator.cs#NotTargetTyped)]
 
 Operator warunkowy jest prawym przyciskiem asocjacyjnym, czyli wyrażeniem formularza
 
@@ -66,7 +72,7 @@ condition ? ref consequent : ref alternative
 
 Podobnie jak w przypadku oryginalnego operatora warunkowego wyrażenie ref oblicza tylko jedno z dwóch wyrażeń: albo `consequent` lub `alternative` .
 
-W przypadku warunkowego wyrażenia ref typ `consequent` i `alternative` musi być taki sam.
+W przypadku warunkowego wyrażenia ref typ `consequent` i `alternative` musi być taki sam. Wyrażenia referencyjne warunkowe nie są typami docelowymi.
 
 Poniższy przykład demonstruje użycie warunkowego wyrażenia ref:
 
@@ -86,7 +92,10 @@ Typ zdefiniowany przez użytkownika nie może przeciążać operatora warunkoweg
 
 Aby uzyskać więcej informacji, zobacz sekcję [warunkowego operatora](~/_csharplang/spec/expressions.md#conditional-operator) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-Aby uzyskać więcej informacji na temat wyrażenia ref warunkowego, zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-7.2/conditional-ref.md).
+Aby uzyskać więcej informacji na temat funkcji dodanych w języku C# 7,2 i nowszych, zobacz następujące uwagi dotyczące propozycji funkcji:
+
+- [Warunkowe wyrażenia ref (C# 7,2)](~/_csharplang/proposals/csharp-7.2/conditional-ref.md)
+- [Wyrażenie warunkowe o typie docelowym (C# 9,0)](~/_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md)
 
 ## <a name="see-also"></a>Zobacz też
 
