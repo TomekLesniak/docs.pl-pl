@@ -224,6 +224,6 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         > To polecenie musi być wpisane jako pojedynczy wiersz tekstu.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady hostingu i trwałości usługi AppFabric](/previous-versions/appfabric/ff383418(v=azure.10))
