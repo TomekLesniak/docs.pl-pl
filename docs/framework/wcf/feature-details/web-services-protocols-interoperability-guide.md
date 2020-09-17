@@ -2,16 +2,16 @@
 title: Przewodnik współdziałania protokołów usług sieci Web
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-ms.openlocfilehash: 4169a796311c402a97358de5d52c52562b6ed357
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f35ca629da65af749897d28d28808d06eced7aa8
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553177"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720117"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Przewodnik współdziałania protokołów usług sieci Web
 
-Windows Communication Foundation (WCF) implementuje wiele protokołów usług sieci Web. Wiele z tych protokołów obejmuje kilka opcji i punkty rozszerzalności pozostawione do uznania. Ten temat zawiera listę protokołów usług sieci Web zaimplementowane w programie WCF. Inne tematy w tej sekcji zawierają szczegóły implementacji dla każdego obsługiwanego protokołu.
+Windows Communication Foundation (WCF) implementuje wiele protokołów usług sieci Web. Wiele z tych protokołów obejmuje kilka opcji i punkty rozszerzalności pozostawione do uznania. Ten artykuł zawiera listę protokołów usług sieci Web zaimplementowane w programie WCF. Inne artykuły w tej sekcji zawierają szczegóły implementacji dla każdego obsługiwanego protokołu.
 
 ## <a name="web-services-protocols-implemented-by-wcf"></a>Protokoły usług sieci Web zaimplementowane przez funkcję WCF
 
@@ -64,9 +64,9 @@ Protokoły infrastruktury współdziałania są udostępniane przez specyfikacje
 |WSS: Profil tokenu x509 1,1|[Zabezpieczenia usług w sieci Web profil tokenu certyfikatu X. 509 1,1](https://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf)|
 |WSS: Profil tokenu Kerberos 1,1|[Zabezpieczenia usług w sieci Web profilu tokenu Kerberos 1,1](https://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf)|
 |WSS: Profil tokenu SAML 1,1 1,1|[Zabezpieczenia usług w sieci Web profilu tokenu SAML 1,1](https://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf)|
-|Bezpieczna konwersacja WS-Secure|[Język bezpiecznej konwersacji usług sieci Web](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)|
+|Bezpieczna konwersacja WS-Secure|[Język bezpiecznej konwersacji usług sieci Web](http://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)|
 |WS-Trust 1,4|[Język zaufania usług sieci Web](https://docs.oasis-open.org/ws-sx/ws-trust/200802)|
-|WS-SecurityPolicy 2005/07|[Język bezpiecznej konwersacji usług sieci Web](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)<br /><br /> Zgodnie z zmianą Errata przesłaną do Komitetu Technicznego usługi WS-SX języka Oasis.<br /><br /> [komunikat WS-SX](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html)|
+|WS-SecurityPolicy 2005/07|[Język bezpiecznej konwersacji usług sieci Web](http://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)<br /><br /> Zgodnie z zmianą Errata przesłaną do Komitetu Technicznego usługi WS-SX języka Oasis.<br /><br /> [komunikat WS-SX](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html)|
 |WS-ReliableMessaging 1,1|[Reliable Messaging Protocol w wersji 1,1](reliable-messaging-protocol-version-1-1.md)|
 
 <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> obsługuje specyfikacje w poniższej tabeli.
@@ -74,7 +74,7 @@ Protokoły infrastruktury współdziałania są udostępniane przez specyfikacje
 |Specyfikacja/dokument|Łącze|
 |-----------------------------|----------|
 |Usługa WS-koordynacja|[Koordynacja usług sieci Web](/previous-versions/ms951231(v=msdn.10))|
-|Protokół WS-AtomicTransaction|[Niepodzielna transakcja usług sieci Web](https://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)|
+|Protokół WS-AtomicTransaction|[Niepodzielna transakcja usług sieci Web](http://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)|
 
 <xref:System.ServiceModel.Description.MetadataExporter>Klasy, <xref:System.ServiceModel.Description.MetadataImporter> , <xref:System.ServiceModel.Description.WsdlExporter> , <xref:System.ServiceModel.Description.WsdlImporter> i <xref:System.ServiceModel.Description.MetadataResolver> zapewniają obsługę następujących specyfikacji metadanych:
 
@@ -90,7 +90,7 @@ Protokoły infrastruktury współdziałania są udostępniane przez specyfikacje
 
 - [WS-PolicyAttachment 1,2](https://www.w3.org/Submission/2006/SUBM-WS-PolicyAttachment-20060425/)
 
-- [WS-MetadataExchange 1,1](https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)
+- [WS-MetadataExchange 1,1](http://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)
 
 - [Pobieranie metadanych usługi WS-transfer](https://www.w3.org/Submission/2006/SUBM-WS-Transfer-20060315/)
 
@@ -102,7 +102,7 @@ Ponadto w ramach programu WCF Zaimplementowane są następujące profile współ
 
 - [Podstawowy profil zabezpieczeń 1,0 roboczy — wersja robocza](http://www.ws-i.org/Profiles/BasicSecurityProfile-1.0-2006-03-29.html)
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Protokoły usług sieci Web obsługiwane przez wiązania współdziałania udostępnione przez system](web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
 - [Protokoły obsługi komunikatów](messaging-protocols.md)

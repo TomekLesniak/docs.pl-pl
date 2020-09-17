@@ -1,22 +1,22 @@
 ---
-ms.openlocfilehash: e3c9f23ca73ed9b85d09680ec15251ebe02c7f8e
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: cd7860a5dfff1eb595625665382689733cffc94a
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065218"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90721239"
 ---
 ### <a name="ca1416-platform-compatibility"></a>CA1416: zgodność platformy
 
-Reguła analizatora kodu platformy .NET CA1416 jest domyślnie włączona, począwszy od platformy .NET 5,0. Generuje ostrzeżenie kompilacji dla wywołań interfejsów API specyficznych dla platformy z lokacji wywołań, które nie weryfikują systemu operacyjnego.
+Reguła analizatora kodu platformy .NET [CA1416](/visualstudio/code-quality/ca1416) jest domyślnie włączona, począwszy od platformy .NET 5,0. Generuje ostrzeżenie kompilacji dla wywołań interfejsów API specyficznych dla platformy z lokacji wywołań, które nie weryfikują systemu operacyjnego.
 
 #### <a name="change-description"></a>Zmień opis
 
-Począwszy od platformy .NET 5,0, zestaw SDK .NET zawiera [analizatory kodu źródłowego platformy .NET](../../../../docs/fundamentals/productivity/code-analysis.md). Niektóre z tych reguł są domyślnie włączone, w tym CA1416. Jeśli projekt zawiera kod naruszający tę regułę i jest skonfigurowany do traktowania ostrzeżeń jako błędów, ta zmiana może spowodować uszkodzenie kompilacji. Reguła CA1416 informuje użytkownika, gdy korzystasz z interfejsów API specyficznych dla platformy z miejsc, w których kontekst platformy nie został zweryfikowany.
+Począwszy od platformy .NET 5,0, zestaw SDK .NET zawiera [analizatory kodu źródłowego platformy .NET](../../../../docs/fundamentals/productivity/code-analysis.md). Niektóre z tych reguł są domyślnie włączone, w tym [CA1416](/visualstudio/code-quality/ca1416). Jeśli projekt zawiera kod naruszający tę regułę i jest skonfigurowany do traktowania ostrzeżeń jako błędów, ta zmiana może spowodować uszkodzenie kompilacji. Reguła CA1416 informuje użytkownika, gdy korzystasz z interfejsów API specyficznych dla platformy z miejsc, w których kontekst platformy nie został zweryfikowany.
 
-CA1416 reguły, Analizator zgodności platformy, umożliwia dostęp do innych funkcji, które są nowe w programie .NET 5,0. Środowisko .NET 5,0 wprowadza `SupportedOSPlatformAttribute` i zawiera `UnsupportedOSPlatformAttribute` atrybuty (o nazwie <xref:System.Runtime.Versioning.MinimumOSPlatformAttribute> i <xref:System.Runtime.Versioning.RemovedInOSPlatformAttribute> w starszej wersji zapoznawczej), które umożliwiają określenie platform, w których interfejs API *jest* lub *nie* jest obsługiwany. W przypadku braku tych atrybutów przyjmuje się, że interfejs API jest obsługiwany na wszystkich platformach. Te atrybuty zostały zastosowane do interfejsów API specyficznych dla platformy w podstawowych bibliotekach platformy .NET.
+[CA1416](/visualstudio/code-quality/ca1416)reguły, Analizator zgodności platformy, umożliwia dostęp do innych funkcji, które są nowe w programie .NET 5,0. W programie .NET 5,0 <xref:System.Runtime.Versioning.SupportedOSPlatformAttribute> wprowadzono <xref:System.Runtime.Versioning.UnsupportedOSPlatformAttribute> funkcję i, która pozwala określić platformy, na których interfejs API *jest* lub *nie* jest obsługiwany. W przypadku braku tych atrybutów przyjmuje się, że interfejs API jest obsługiwany na wszystkich platformach. Te atrybuty zostały zastosowane do interfejsów API specyficznych dla platformy w podstawowych bibliotekach platformy .NET.
 
-W projektach przeznaczonych dla platform, dla których używane interfejsy API są niedostępne, reguła CA1416 flaguje każde wywołanie interfejsu API specyficzne dla platformy, w którym nie zweryfikowano kontekstu platformy. Większość interfejsów API, które są teraz uzupełnione `SupportedOSPlatformAttribute` `UnsupportedOSPlatformAttribute` atrybutami i generują <xref:System.PlatformNotSupportedException> wyjątki, gdy są wywoływane w nieobsługiwanym systemie operacyjnym. Teraz, gdy te interfejsy API są oznaczone jako specyficzne dla platformy, reguła CA1416a pomaga zapobiegać <xref:System.PlatformNotSupportedException> wyjątkom w czasie wykonywania, dodając sprawdzenia systemu operacyjnego do witryn wywołań.
+W projektach przeznaczonych dla platform, dla których używane interfejsy API są niedostępne, reguła [CA1416](/visualstudio/code-quality/ca1416) flaguje każde wywołanie interfejsu API specyficzne dla platformy, w którym nie zweryfikowano kontekstu platformy. Większość interfejsów API, które są teraz uzupełnione <xref:System.Runtime.Versioning.SupportedOSPlatformAttribute> <xref:System.Runtime.Versioning.UnsupportedOSPlatformAttribute> atrybutami i generują <xref:System.PlatformNotSupportedException> wyjątki, gdy są wywoływane w nieobsługiwanym systemie operacyjnym. Teraz, gdy te interfejsy API są oznaczone jako specyficzne dla platformy, reguła [CA1416a](/visualstudio/code-quality/ca1416) pomaga zapobiegać <xref:System.PlatformNotSupportedException> wyjątkom w czasie wykonywania, DODAJĄC sprawdzenia systemu operacyjnego do witryn wywołań.
 
 #### <a name="examples"></a>Przykłady
 
@@ -44,7 +44,7 @@ W projektach przeznaczonych dla platform, dla których używane interfejsy API s
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Upewnij się, że interfejsy API specyficzne dla platformy są wywoływane tylko wtedy, gdy kod jest uruchomiony na odpowiedniej platformie. `Is<Platform>` <xref:System.OperatingSystem?displayProperty=nameWithType> `System.OperatingSystem.IsWindows()` Przed wywołaniem interfejsu API specyficznego dla platformy można sprawdzić bieżący system operacyjny przy użyciu jednej z metod w klasie.
+Upewnij się, że interfejsy API specyficzne dla platformy są wywoływane tylko wtedy, gdy kod jest uruchomiony na odpowiedniej platformie. `Is<Platform>` <xref:System.OperatingSystem?displayProperty=nameWithType> <xref:System.OperatingSystem.IsWindows?displayProperty=nameWithType> Przed wywołaniem interfejsu API specyficznego dla platformy można sprawdzić bieżący system operacyjny przy użyciu jednej z metod w klasie.
 
 Można użyć jednej z `Is<Platform>` metod w warunku `if` instrukcji:
 
@@ -120,6 +120,7 @@ Na platformie Blazor webassembly:
 
 -->
 
-#### <a name="see-also"></a>Zobacz także
+#### <a name="see-also"></a>Zobacz też
 
+- [CA1416: Weryfikowanie zgodności platformy](/visualstudio/code-quality/ca1416)
 - [Analizator interfejsów API platformy .NET](../../../../docs/standard/analyzers/api-analyzer.md)

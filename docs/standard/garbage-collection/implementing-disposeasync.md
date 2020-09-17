@@ -3,19 +3,19 @@ title: Implementacja metody DisposeAsync
 description: Dowiedz się, jak zaimplementować metody DisposeAsync i DisposeAsyncCore, aby przeprowadzić Oczyszczanie zasobów asynchronicznych.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 88adf9e484baa0e65e2ff093b4649cf35b8c86dc
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: 6ddfd860571d883e20fdb18985fe2bc2d9477dec
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022912"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720286"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implementacja metody DisposeAsync
 
@@ -54,7 +54,7 @@ public async ValueTask DisposeAsync()
 ```
 
 > [!NOTE]
-> Podstawowa różnica w asynchronicznym wzorcu usuwania w porównaniu do wzorca Dispose polega na tym, że wywołanie z <xref:System.IAsyncDisposable.DisposeAsync> `Dispose(bool)` metody przeciążenia jest podawane `false` jako argument. Podczas implementowania <xref:System.IDisposable.Dispose?displayProperty=nameWithType> metody, jednak `true` zamiast tego jest przesyłane. Dzięki temu można zapewnić równoważność funkcjonalną z synchronicznym wzorcem usuwania, a dodatkowo zapewnić, że ścieżki kodu finalizatora nadal są wywoływane. Innymi słowy, `DisposeAsyncCore()` Metoda usunie zarządzane zasoby asynchronicznie, więc nie ma potrzeby ich synchronicznego usuwania. W związku `Dispose(false)` z tym zamiast `Dispose(true)` .
+> Podstawowa różnica w asynchronicznym wzorcu usuwania w porównaniu do wzorca Dispose polega na tym, że wywołanie z <xref:System.IAsyncDisposable.DisposeAsync> `Dispose(bool)` metody przeciążenia jest podawane `false` jako argument. Podczas implementowania <xref:System.IDisposable.Dispose?displayProperty=nameWithType> metody, jednak `true` jest przenoszona zamiast. Dzięki temu można zapewnić równoważność funkcjonalną z synchronicznym wzorcem usuwania, a dodatkowo zapewnić, że ścieżki kodu finalizatora nadal są wywoływane. Innymi słowy, `DisposeAsyncCore()` Metoda usunie zarządzane zasoby asynchronicznie, więc nie ma potrzeby ich synchronicznego usuwania. W związku `Dispose(false)` z tym zamiast `Dispose(true)` .
 
 ### <a name="the-disposeasynccore-method"></a>DisposeAsyncCore () — Metoda
 
@@ -77,15 +77,15 @@ Może być konieczne zaimplementowanie obu <xref:System.IDisposable> <xref:Syste
 
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/dispose-and-disposeasync.cs":::
 
-<xref:System.IDisposable.Dispose?displayProperty=nameWithType> <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> Implementacje i są prostym kodem niezwykłym. `Dispose(bool)`Metody i `DisposeAsyncCore()` zaczynają się od sprawdzenia `_disposed` , czy jest `true` , i zostaną uruchomione tylko wtedy, gdy `false` jest to.
+<xref:System.IDisposable.Dispose?displayProperty=nameWithType> <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> Implementacje i są prostym kodem niezwykłym.
 
-W `Dispose(bool)` metodzie przeciążenia <xref:System.IDisposable> wystąpienie jest warunkowo usuwane, jeśli nie jest `null` . <xref:System.IAsyncDisposable>Wystąpienie jest rzutowane jako <xref:System.IDisposable> , a jeśli również nie zostało także `null` usunięte. Oba wystąpienia są następnie przypisywane do `null` .
+W `Dispose(bool)` metodzie przeciążenia <xref:System.IDisposable> wystąpienie jest warunkowo usuwane, jeśli nie jest `null` . <xref:System.IAsyncDisposable>Wystąpienie jest rzutowane jako <xref:System.IDisposable> , a jeśli nie `null` , również jest usuwane. Oba wystąpienia są następnie przypisywane do `null` .
 
 Przy użyciu `DisposeAsyncCore()` metody jest stosowane takie samo podejście logiczne. Jeśli <xref:System.IAsyncDisposable> wystąpienie nie jest `null` , jego wywołanie `DisposeAsync().ConfigureAwait(false)` jest oczekiwane. Jeśli <xref:System.IDisposable> wystąpienie jest również implementacją programu <xref:System.IAsyncDisposable> , jest również usuwane asynchronicznie. Oba wystąpienia są następnie przypisywane do `null` .
 
 ## <a name="using-async-disposable"></a>Korzystanie z asynchronicznej operacji jednorazowej
 
-Aby prawidłowo korzystać z obiektu, który implementuje <xref:System.IAsyncDisposable> interfejs, należy użyć słów kluczowych [await](../../csharp/language-reference/operators/await.md)i [using](../../csharp/language-reference/keywords/using-statement.md) . Rozważmy następujący przykład, w którym `ExampleAsyncDisposable` tworzona jest instancja klasy, a następnie zawinięte w `await using` instrukcji.
+Aby prawidłowo korzystać z obiektu, który implementuje <xref:System.IAsyncDisposable> interfejs, należy użyć słów kluczowych [await](../../csharp/language-reference/operators/await.md) i [using](../../csharp/language-reference/keywords/using-statement.md) ze sobą. Rozważmy następujący przykład, w którym `ExampleAsyncDisposable` tworzona jest instancja klasy, a następnie zawinięte w `await using` instrukcji.
 
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/proper-await-using.cs":::
 
@@ -106,7 +106,7 @@ W sytuacjach, gdy tworzysz i używasz wielu obiektów, które implementują <xre
 
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IAsyncDisposable>
 - <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType>
