@@ -100,7 +100,7 @@
           href: ../../../../_csharplang/proposals/csharp-9.0/extending-partial-methods.md
         - name: Statyczne funkcje anonimowe
           href: ../../../../_csharplang/proposals/csharp-9.0/static-anonymous-functions.md
-        - name: Wyrażenie warunkowe z typami docelowymi
+        - name: Wyrażenie warunkowe z typem docelowym
           href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md
         - name: Kowariantne typy zwracane
           href: ../../../../_csharplang/proposals/csharp-9.0/covariant-returns.md
