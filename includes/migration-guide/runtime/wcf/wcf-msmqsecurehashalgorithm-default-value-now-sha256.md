@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9baca45de1c8994f610815e84fdee8ba3930eb04
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 7c0227980aa5d90f3788783088bcd7cd9509ed66
+ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497681"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90770848"
 ---
 ### <a name="wcf-msmqsecurehashalgorithm-default-value-is-now-sha256"></a>Wartość domyślna MsmqSecureHashAlgorithm WCF jest teraz SHA256
 
@@ -14,13 +14,21 @@ Począwszy od .NET Framework 4.7.1, domyślny algorytm podpisywania komunikatów
 
 #### <a name="suggestion"></a>Sugestia
 
-W przypadku wystąpienia problemów ze zgodnością z tą zmianą w .NET Framework 4.7.1 lub nowszym można zrezygnować z zmiany, dodając następujący wiersz do <code>&lt;runtime&gt;</code> sekcji pliku app.config:<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.UseSha1InMsmqEncryptionAlgorithm=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+W przypadku wystąpienia problemów ze zgodnością z tą zmianą w .NET Framework 4.7.1 lub nowszym można zrezygnować z zmiany, dodając następujący wiersz do `<runtime>` sekcji pliku app.config:
 
-| Nazwa    | Wartość       |
-|:--------|:------------|
-| Zakres   |Mały|
-|Wersja|4.7.1|
-|Typ|Środowisko uruchomieniowe|
+```xml
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.UseSha1InMsmqEncryptionAlgorithm=true&quot; />
+  </runtime>
+</configuration>
+```
+
+| Nazwa    | Wartość   |
+|:--------|:--------|
+| Zakres   | Mały   |
+| Wersja | 4.7.1   |
+| Typ    | Środowisko uruchomieniowe |
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 

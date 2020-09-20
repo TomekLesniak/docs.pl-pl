@@ -2,12 +2,12 @@
 title: Krotki
 description: 'Dowiedz się więcej na temat krotki F #, grupowania nienazwanych, ale uporządkowanych wartości, prawdopodobnie różnych typów.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 5d26fd5d7ec5b4939a895a6d2a6a0d7fc6c6c733
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 6f4adf7e10e22d8b7a8cf697baee15962adf3630
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173292"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720364"
 ---
 # <a name="tuples"></a>Krotki
 
@@ -36,7 +36,7 @@ Możesz użyć dopasowania wzorca, aby uzyskać dostęp i przypisać nazwy dla e
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L27-L29)]
 
-Możesz również odtworzyć krotkę przez dopasowanie wzorca poza `match` wyrażeniem za pośrednictwem `let` powiązania:
+Możesz również odtworzyć krotkę przez dopasowanie wzorca poza `match` wyrażeniem za pośrednictwem  `let` powiązania:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L34-L37)]
 
@@ -126,7 +126,7 @@ Musisz dopasować wzorzec dla jednej krotki i utworzyć drugą z częściami ele
 
 W tej sekcji opisano formę krotek, gdy są one kompilowane.  Informacje w tym miejscu nie są niezbędne do odczytania, chyba że jest przeznaczony .NET Framework 3,5 lub niższy.
 
-Krotki są kompilowane do obiektów jednego z kilku typów ogólnych, wszystkie nazwane `System.Tuple` , które są przeciążone dla liczby argumentów lub liczby parametrów typu. Typy krotek są wyświetlane w tym formularzu podczas wyświetlania ich z innego języka, takiego jak C# lub Visual Basic, lub podczas korzystania z narzędzia, które nie ma informacji o konstrukcjach języka F #. `Tuple`Typy zostały wprowadzone w .NET Framework 4. Jeśli obiektem docelowym jest wcześniejsza wersja .NET Framework, kompilator używa wersji [System. krotka](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) z wersji 2,0 biblioteki podstawowej F #. Typy w tej bibliotece są używane tylko dla aplikacji przeznaczonych dla wersji 2,0, 3,0 i 3,5 .NET Framework. Przekazywanie typu jest używane w celu zapewnienia zgodności binarnej między składnikami .NET Framework 2,0 i .NET Framework 4 F #.
+Krotki są kompilowane do obiektów jednego z kilku typów ogólnych, wszystkie nazwane `System.Tuple` , które są przeciążone dla liczby argumentów lub liczby parametrów typu. Typy krotek są wyświetlane w tym formularzu podczas wyświetlania ich z innego języka, takiego jak C# lub Visual Basic, lub podczas korzystania z narzędzia, które nie ma informacji o konstrukcjach języka F #. `Tuple`Typy zostały wprowadzone w .NET Framework 4. Jeśli chcesz uzyskać wcześniejszą wersję .NET Framework, kompilator używa wersji `System.Tuple` z wersji 2,0 biblioteki podstawowej F #. Typy w tej bibliotece są używane tylko dla aplikacji przeznaczonych dla wersji 2,0, 3,0 i 3,5 .NET Framework. Przekazywanie typu jest używane w celu zapewnienia zgodności binarnej między składnikami .NET Framework 2,0 i .NET Framework 4 F #.
 
 ### <a name="compiled-form-of-struct-tuples"></a>Skompilowana forma krotek struktury
 

@@ -2,12 +2,12 @@
 title: Listy
 description: 'Zapoznaj się z listami języka F #, uporządkowaną, niemodyfikowalną serią elementów tego samego typu.'
 ms.date: 08/13/2020
-ms.openlocfilehash: 16d7195039d25cf63630f5cc3be6563b1bf45c44
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 567731eb57b77d60d3dd847630d5676e8d047d09
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559170"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720351"
 ---
 # <a name="lists"></a>Listy
 
@@ -61,7 +61,7 @@ Typ listy obsługuje następujące właściwości:
 
 |Właściwość|Typ|Opis|
 |--------|----|-----------|
-|[MTP](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Head)|`'T`|Pierwszy element.|
+|[Head](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Head)|`'T`|Pierwszy element.|
 |[Ciągiem](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Empty)|`'T list`|Właściwość statyczna zwracająca pustą listę odpowiedniego typu.|
 |[IsEmpty](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#IsEmpty)|`bool`|`true` Jeśli lista nie zawiera żadnych elementów.|
 |[Element](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Item)|`'T`|Element o określonym indeksie (liczony od zera).|
@@ -233,13 +233,13 @@ Poniższy kod ilustruje użycie `List.sum` , `List.sumBy` , i `List.average` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet11.fs)]
 
-Dane wyjściowe to `1.000000` .
+Wynik to `1.000000`.
 
 Poniższy kod ilustruje użycie `List.averageBy` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet12.fs)]
 
-Dane wyjściowe to `5.5` .
+Wynik to `5.5`.
 
 ### <a name="lists-and-tuples"></a>Listy i krotki
 
@@ -265,7 +265,7 @@ Wynik jest następujący:
 
 Odpowiednie wersje rozpakować, [list. rozpakować](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip) i [list. unzip3 —](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip3), przyjmują listy krotek i listy zwracane w spójnej kolekcji, gdzie pierwsza lista zawiera wszystkie elementy, które wcześniej znajdowały się w każdej kolekcji, a druga lista zawiera drugi element każdej krotki itd.
 
-Poniższy przykład kodu demonstruje użycie [list.](https://msdn.microsoft.com/library/639db80c-41b5-45bb-a6b4-1eaa04d61d21)rozpakowywanie.
+Poniższy przykład kodu demonstruje użycie [list.](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip)rozpakowywanie.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet15.fs)]
 
@@ -276,7 +276,7 @@ Wynik jest następujący:
 [1; 3] [2; 4]
 ```
 
-Poniższy przykład kodu demonstruje użycie [list. unzip3 —](https://msdn.microsoft.com/library/43078c77-32ec-4342-85b3-c31ccf984db4).
+Poniższy przykład kodu demonstruje użycie [list. unzip3 —](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip3).
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet16.fs)]
 

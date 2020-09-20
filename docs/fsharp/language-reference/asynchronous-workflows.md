@@ -2,12 +2,12 @@
 title: Asynchroniczne przepływy pracy
 description: 'Dowiedz się więcej o pomocy technicznej w języku programowania F # na potrzeby wykonywania obliczeń asynchronicznie, które są wykonywane bez blokowania wykonywania innych czynności.'
 ms.date: 08/15/2020
-ms.openlocfilehash: ac727fc630f13db01da964131ab39dc242a12cd1
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 14146cc8a643f31831475075212cc06da5f8d6ff
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557714"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720273"
 ---
 # <a name="asynchronous-workflows"></a>Asynchroniczne przepływy pracy
 
@@ -44,7 +44,7 @@ Oprócz programu `let!` można używać `use!` do wykonywania powiązań asynchr
 
 Metoda, która wykonuje pojedyncze zadanie asynchroniczne i zwraca wynik, jest nazywana *asynchroniczną pierwotną*i jest przeznaczona specjalnie do użycia z `let!` . Niektóre elementy pierwotne asynchroniczne są zdefiniowane w bibliotece podstawowej języka F #. Dwie takie metody aplikacji sieci Web są zdefiniowane w module [`FSharp.Control.WebExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html) : [`WebRequest.AsyncGetResponse`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html#AsyncGetResponse) i [`WebClient.AsyncDownloadString`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html#AsyncDownloadString) . Oba elementy pierwotne pobierają dane ze strony sieci Web przy użyciu adresu URL. `AsyncGetResponse` tworzy `System.Net.WebResponse` obiekt i `AsyncDownloadString` tworzy ciąg, który reprezentuje kod HTML dla strony sieci Web.
 
-W module uwzględniono kilka elementów podstawowych operacji we/wy [`FSharp.Control.CommonExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html) . Te metody rozszerzające `System.IO.Stream` klasy to [`Stream.AsyncRead`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncRead) i [`Stream.AsyncWrite`](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncWrite) .
+W module uwzględniono kilka elementów podstawowych operacji we/wy [`FSharp.Control.CommonExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html) . Te metody rozszerzające `System.IO.Stream` klasy to [`Stream.AsyncRead`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncRead) i [`Stream.AsyncWrite`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncWrite) .
 
 Możesz również pisać własne elementy pierwotne, definiując funkcję, której Pełna treść jest zawarta w bloku asynchronicznym.
 
@@ -66,4 +66,4 @@ Funkcja służy [`Async.RunSynchronously`](https://fsharp.github.io/fsharp-core-
 
 - [Dokumentacja języka F #](index.md)
 - [Wyrażenia obliczeń](computation-expressions.md)
-- [Control. Async — Klasa](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.async-class-%5bfsharp%5d)
+- [Control. Async — Klasa](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html)

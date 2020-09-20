@@ -2,20 +2,20 @@
 title: Typy kolekcji
 description: 'Dowiedz się więcej o typach kolekcji F # i sposobach ich różnicowania od typów kolekcji .NET.'
 ms.date: 08/14/2020
-ms.openlocfilehash: 394f6bbaf58e7e8607abc3a0c20bbc2b1c9c3c8d
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 0b5be8f656d6728fe382b1944bda0a410a94d226
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656908"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720338"
 ---
-# <a name="f-collection-types"></a>Typy kolekcji F#
+# <a name="f-collection-types"></a>Typy kolekcji języka F #
 
 Przeglądając ten temat, można określić, który typ kolekcji języka F # najlepiej odpowiada konkretnym potrzebom. Te typy kolekcji różnią się od typów kolekcji w programie .NET, takich jak te w `System.Collections.Generic` przestrzeni nazw, w których typy kolekcji F # są zaprojektowane z perspektywy programowania funkcjonalnego, a nie z perspektywy zorientowanej obiektowo. Dokładniej tylko kolekcja tablic ma modyfikowalne elementy. W związku z tym podczas modyfikowania kolekcji utworzysz wystąpienie zmodyfikowanej kolekcji zamiast zmieniać oryginalną kolekcję.
 
 Typy kolekcji różnią się również w zależności od typu struktury danych, w której są przechowywane obiekty. Struktury danych, takie jak tabele skrótów, połączone listy i tablice, mają różne charakterystyki wydajności i inny zestaw dostępnych operacji.
 
-## <a name="f-collection-types"></a>Typy kolekcji F#
+## <a name="table-of-collection-types"></a>Tabela typów kolekcji
 
 W poniższej tabeli przedstawiono typy kolekcji języka F #.
 
@@ -29,9 +29,9 @@ W poniższej tabeli przedstawiono typy kolekcji języka F #.
 
 ### <a name="table-of-functions"></a>Tabela funkcji
 
-W tej sekcji porównano funkcje, które są dostępne w typach kolekcji języka F #. Określona jest złożoność obliczeniowa funkcji, gdzie N jest rozmiarem pierwszej kolekcji, a M to rozmiar drugiej kolekcji, jeśli istnieje. Łącznik (-) wskazuje, że ta funkcja jest niedostępna w kolekcji. Ponieważ sekwencje są oceniane opóźnieniem, funkcja taka jak Seq. DISTINCT może mieć wartość O (1), ponieważ zwraca natychmiast, mimo że ma wpływ na wydajność sekwencji podczas wyliczania.
+W tej sekcji porównano funkcje, które są dostępne w typach kolekcji języka F #. Określona jest złożoność obliczeniowa funkcji, gdzie N jest rozmiarem pierwszej kolekcji, a M to rozmiar drugiej kolekcji, jeśli istnieje. Łącznik (-) wskazuje, że ta funkcja jest niedostępna w kolekcji. Ponieważ sekwencje są oceniane opóźnieniem, funkcja taka jak `Seq.distinct` może mieć wartość O (1), ponieważ zwraca natychmiast, mimo że ma wpływ na wydajność sekwencji podczas wyliczania.
 
-|Funkcja|Tablica|Lista|Sequence|Mapa|Set|Opis|
+|Funkcja|Tablica|Lista|Sequence|Mapa|Zestaw|Opis|
 |--------|-----|----|--------|---|---|-----------|
 |łączono|O (N)|O (N)|O (N)|-|-|Zwraca nową kolekcję zawierającą elementy pierwszej kolekcji, a następnie elementy drugiej kolekcji.|
 |add|-|-|-|O (Dziennik (N))|O (Dziennik (N))|Zwraca nową kolekcję z dodanym elementem.|
@@ -90,11 +90,11 @@ W tej sekcji porównano funkcje, które są dostępne w typach kolekcji języka 
 |map3 —|-|O (N)|-|-|-|Kompiluje kolekcję, której elementy są wynikami zastosowania danej funkcji do odpowiednich elementów trzech kolekcji jednocześnie.|
 |obsługując|O (N)|O (N)|O (N)|-|-|Kompiluje tablicę, której elementy są wynikami zastosowania danej funkcji do każdego elementu tablicy. Indeks liczby całkowitej, który jest przesyłany do funkcji wskazuje indeks elementu, który jest przekształcany.|
 |mapi2 —|O (N)|O (N)|-|-|-|Kompiluje kolekcję, której elementy są wynikami zastosowania danej funkcji do odpowiednich elementów dwóch kolekcji parowania, również przekazywać indeks elementów. Dwie tablice wejściowe muszą mieć tę samą długość.|
-|max|O (N)|O (N)|O (N)|-|-|Zwraca największy element w kolekcji, porównując przy użyciu operatora [Max](https://msdn.microsoft.com/library/9a988328-00e9-467b-8dfa-e7a6990f6cce) .|
-|maxBy —|O (N)|O (N)|O (N)|-|-|Zwraca największy element w kolekcji, porównując przy użyciu wartości [Max](https://msdn.microsoft.com/library/9a988328-00e9-467b-8dfa-e7a6990f6cce) w wyniku funkcji.|
+|max|O (N)|O (N)|O (N)|-|-|Zwraca największy element w kolekcji, porównując przy użyciu operatora [Max](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#max) .|
+|maxBy —|O (N)|O (N)|O (N)|-|-|Zwraca największy element w kolekcji, porównując przy użyciu wartości [Max](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#max) w wyniku funkcji.|
 |MaxElement —|-|-|-|-|O (Dziennik (N))|Zwraca największy element w zestawie zgodnie z kolejnością używaną dla zestawu.|
-|min|O (N)|O (N)|O (N)|-|-|Zwraca najmniejszy element w kolekcji, porównując przy użyciu operatora [min](https://msdn.microsoft.com/library/adea4fd7-bfad-4834-989c-7878aca81fed) .|
-|minBy —|O (N)|O (N)|O (N)|-|-|Zwraca najmniejszy element w kolekcji, porównując przy użyciu operatora [min](https://msdn.microsoft.com/library/adea4fd7-bfad-4834-989c-7878aca81fed) w wyniku funkcji.|
+|min|O (N)|O (N)|O (N)|-|-|Zwraca najmniejszy element w kolekcji, porównując przy użyciu operatora [min](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#min) .|
+|minBy —|O (N)|O (N)|O (N)|-|-|Zwraca najmniejszy element w kolekcji, porównując przy użyciu operatora [min](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#min) w wyniku funkcji.|
 |MinElement —|-|-|-|-|O (Dziennik (N))|Zwraca najniższy element w zestawie zgodnie z kolejnością używaną dla zestawu.|
 |ofArray —|-|O (N)|O (1)|O (N)|O (N)|Tworzy kolekcję zawierającą te same elementy co dana tablica.|
 |ofList —|O (N)|-|O (1)|O (N)|O (N)|Tworzy kolekcję zawierającą te same elementy co podaną listę.|
@@ -115,10 +115,10 @@ W tej sekcji porównano funkcje, które są dostępne w typach kolekcji języka 
 |set|O (1)|-|-|-|-|Ustawia element tablicy do określonej wartości.|
 |Pomiń|-|-|O (N)|-|-|Zwraca sekwencję, która pomija N elementów sekwencji źródłowej, a następnie daje pozostałe elementy sekwencji.|
 |SkipWhile —|-|-|O (N)|-|-|Zwraca sekwencję, która podczas iteracji pomija elementy z sekwencji bazowej, gdy dany predykat zwraca, `true` a następnie daje pozostałe elementy sekwencji.|
-|sort|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|O (N \* log (n))|O (N \* log (n))|-|-|Sortuje kolekcje według wartości elementu. Elementy są porównywane za pomocą [porównania](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c).|
-|SortBy —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|O (N \* log (n))|O (N \* log (n))|-|-|Sortuje daną listę przy użyciu kluczy, które udostępnia dana projekcja. Klucze są porównywane za pomocą [porównania](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c).|
-|sortInPlace —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|-|-|-|-|Sortuje elementy tablicy przez przemieszczenie ich w miejscu i przy użyciu danej funkcji porównywania. Elementy są porównywane za pomocą [porównania](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c).|
-|SortInPlaceBy —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|-|-|-|-|Sortuje elementy tablicy przez przemieszczenie ich w miejscu i użycie danego rzutowania dla kluczy. Elementy są porównywane za pomocą [porównania](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c).|
+|sort|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|O (N \* log (n))|O (N \* log (n))|-|-|Sortuje kolekcje według wartości elementu. Elementy są porównywane za pomocą [porównania](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare).|
+|SortBy —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|O (N \* log (n))|O (N \* log (n))|-|-|Sortuje daną listę przy użyciu kluczy, które udostępnia dana projekcja. Klucze są porównywane za pomocą [porównania](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare).|
+|sortInPlace —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|-|-|-|-|Sortuje elementy tablicy przez przemieszczenie ich w miejscu i przy użyciu danej funkcji porównywania. Elementy są porównywane za pomocą [porównania](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare).|
+|SortInPlaceBy —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|-|-|-|-|Sortuje elementy tablicy przez przemieszczenie ich w miejscu i użycie danego rzutowania dla kluczy. Elementy są porównywane za pomocą [porównania](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare).|
 |SortInPlaceWith —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|-|-|-|-|Sortuje elementy tablicy przez zamierzenie jej w miejscu i użycie danej funkcji porównania jako kolejności.|
 |sortWith —|O (N \* log (n)) średnia<br /><br />O (N ^ 2) najgorszy przypadek|O (N \* log (n))|-|-|-|Sortuje elementy kolekcji, używając podanej funkcji porównania jako kolejności i zwracając nową kolekcję.|
 |Sub|O (N)|-|-|-|-|Kompiluje tablicę zawierającą dany Podzakres, który jest określony przez początkowy indeks i długość.|
@@ -144,7 +144,7 @@ W tej sekcji porównano funkcje, które są dostępne w typach kolekcji języka 
 |kodu|O (N)|O (N)|O (N)|-|-|Łączy dwie kolekcje w listę par. Dwie listy muszą mieć równe długości.|
 |zip3 —|O (N)|O (N)|O (N)|-|-|Łączy trzy kolekcje z listą trzykrotnie. Listy muszą mieć równe długości.|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Typy F#](fsharp-types.md)
 - [Dokumentacja języka F #](index.md)

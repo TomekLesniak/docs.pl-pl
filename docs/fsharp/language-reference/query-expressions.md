@@ -2,12 +2,12 @@
 title: Wyrażenia kwerend
 description: 'Dowiedz się więcej o obsłudze wyrażeń zapytania dla LINQ w języku programowania F #.'
 ms.date: 08/15/2020
-ms.openlocfilehash: afcc6e92818b1648a210ad9cfc3f1dcfa46037b5
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: b2380bbc448aca06a40896582f3d4e7f701c6184
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559066"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720481"
 ---
 # <a name="query-expressions"></a>Wyrażenia zapytań
 
@@ -45,7 +45,7 @@ query1
 
 W poprzednim przykładzie kod wyrażenie zapytania znajduje się w nawiasach klamrowych. Znaczenie kodu w wyrażeniu polega na zwracaniu każdego klienta w tabeli Customers w bazie danych w wynikach zapytania. Wyrażenia zapytania zwracają typ, który implementuje <xref:System.Linq.IQueryable%601> i <xref:System.Collections.Generic.IEnumerable%601> i tak, aby można było wykonać iterację przy użyciu [modułu SEQ](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html) , jak pokazano w przykładzie.
 
-Każdy typ wyrażenia obliczeń jest kompilowany z klasy konstruktora. Klasa konstruktora dla wyrażenia obliczeń zapytania to `QueryBuilder` . Aby uzyskać więcej informacji, zobacz [wyrażenia obliczeń](computation-expressions.md) i [Klasa QueryBuilder](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html).
+Każdy typ wyrażenia obliczeń jest kompilowany z klasy konstruktora. Klasa konstruktora dla wyrażenia obliczeń zapytania to `QueryBuilder` . Aby uzyskać więcej informacji, zobacz [wyrażenia obliczeń](computation-expressions.md) i [Klasa QueryBuilder](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html).
 
 ## <a name="query-operators"></a>Operatory zapytań
 
