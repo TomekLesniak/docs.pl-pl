@@ -7,8 +7,8 @@ items:
     href: fundamentals/
   - name: .NET framework — przewodnik
     href: framework/
-  - name: Przewodnik klasyczny .NET — WPF
-    href: desktop-wpf/
+  - name: Przewodnik klasyczny .NET
+    href: /dotnet/desktop/
   - name: Przewodnik dla języka C#
     href: csharp/index.yml
   - name: Podręcznik języka F#
