@@ -1,7 +1,7 @@
 ---
 description: foreach, in (odwołanie w C#)
 title: Instrukcja "foreach" języka C#
-ms.date: 07/22/2020
+ms.date: 09/18/2020
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: 2ed89fa52b2d3d369d668bf79ab32eaf7be18a8a
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ea8a6f86595348a32b707caf9782f84147fefc87
+ms.sourcegitcommit: 43ed174f085840ca18a791dc89fe833174da766d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142079"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90828893"
 ---
 # <a name="foreach-in-c-reference"></a>foreach, in (odwołanie w C#)
 
@@ -25,8 +25,8 @@ ms.locfileid: "89142079"
 
 `foreach`Instrukcja nie jest ograniczona do tych typów. Można jej użyć z wystąpieniem dowolnego typu, który spełnia następujące warunki:
 
-- Typ ma publiczną metodę bez parametrów `GetEnumerator` , której typem zwracanym jest Klasa, struktura lub typ interfejsu,
-- zwracany typ `GetEnumerator` metody ma właściwość publiczną `Current` i publiczną metodę bez parametrów, `MoveNext` której typem zwracanym jest <xref:System.Boolean> .
+- Typ ma publiczną metodę bez parametrów, `GetEnumerator` której typem zwracanym jest Klasa, struktura lub typ interfejsu. Począwszy od języka C# 9,0, `GetEnumerator` Metoda może być [metodą rozszerzenia](../../programming-guide/classes-and-structs/extension-methods.md)typu.
+- Zwracany typ `GetEnumerator` metody ma właściwość publiczną `Current` i publiczną metodę bez parametrów, `MoveNext` której typem zwracanym jest <xref:System.Boolean> .
 
 Poniższy przykład używa `foreach` instrukcji z wystąpieniem <xref:System.Span%601?displayProperty=nameWithType> typu, który nie implementuje interfejsów:
 
@@ -66,6 +66,11 @@ W poprzednim formularzu typ `T` elementu kolekcji musi być niejawnie lub jawnie
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
 Aby uzyskać więcej informacji, zobacz sekcję [instrukcja foreach](~/_csharplang/spec/statements.md#the-foreach-statement) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
+
+Aby uzyskać więcej informacji na temat funkcji dodanych w języku C# 8,0 i nowszych, zobacz następujące uwagi dotyczące propozycji funkcji:
+
+- [Strumienie asynchroniczne (C# 8,0)](~/_csharplang/proposals/csharp-8.0/async-streams.md)
+- [`GetEnumerator`Obsługa rozszerzeń dla `foreach` pętli (C# 9,0)](~/_csharplang/proposals/csharp-9.0/extension-getenumerator.md)
 
 ## <a name="see-also"></a>Zobacz też
 
