@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic]
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
-ms.openlocfilehash: 5d88a01f90bc91a88229d19aa2368f8c71075b2f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: dd8fbc71fdc859bb127764951464278267c0984c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404502"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875222"
 ---
 # <a name="inherits-statement"></a>Inherits — Instrukcja
+
 Powoduje, że bieżąca Klasa lub interfejs dziedziczy atrybuty, zmienne, właściwości, procedury i zdarzenia z innej klasy lub zestawu interfejsów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -31,6 +32,7 @@ Inherits basetypenames
 |`basetypenames`|Wymagany. Nazwa klasy, z której pochodzi ta klasa.<br /><br /> -lub-<br /><br /> Nazwy interfejsów, z których pochodzi ten interfejs. Użyj przecinków, aby rozdzielić wiele nazw.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli jest używana, `Inherits` instrukcja musi być pierwszym niepustym wierszem bez komentarza w definicji klasy lub interfejsu. Należy od razu przestrzegać `Class` instrukcji or `Interface` .  
   
  Można używać `Inherits` tylko w klasie lub interfejsie. Oznacza to, że kontekst deklaracji dziedziczenia nie może być plikiem źródłowym, przestrzenią nazw, strukturą, modułem, procedurą lub blokiem.  
@@ -52,11 +54,13 @@ Inherits basetypenames
  Przykładem dziedziczenia interfejsów w .NET Framework jest <xref:System.Collections.ICollection> interfejs, który dziedziczy z <xref:System.Collections.IEnumerable> interfejsu. Powoduje to <xref:System.Collections.ICollection> dziedziczenie definicji modułu wyliczającego wymaganego do przechodzenia do kolekcji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa instrukcji, `Inherits` Aby pokazać, jak Klasa o nazwie `thisClass` może dziedziczyć wszystkich elementów członkowskich klasy bazowej o nazwie `anotherClass` .  
   
  [!code-vb[VbVbalrStatements#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#37)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje dziedziczenie wielu interfejsów.  
   
  [!code-vb[VbVbalrStatements#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#38)]  

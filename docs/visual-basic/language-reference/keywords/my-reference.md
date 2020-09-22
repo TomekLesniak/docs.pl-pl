@@ -5,19 +5,20 @@ helpviewer_keywords:
 - My feature
 - My reference
 ms.assetid: 6f803bd7-21ff-4569-b1fe-b00a6678b1e3
-ms.openlocfilehash: f54ecf4f60a620818ea57093d8c2325cf2ed0d04
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 60dadc2918d4926c2b8bf1004a09d9b3a1ec56ab
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373346"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875584"
 ---
 # <a name="my-reference-visual-basic"></a>Moje odwołanie (Visual Basic)
+
 `My`Funkcja przyspiesza i ułatwia programowanie, zapewniając intuicyjny dostęp do często używanych metod, właściwości i zdarzeń. Ta tabela zawiera listę obiektów zawartych w programie `My` oraz akcje, które można wykonać w przypadku każdego z nich.  
   
-|**Akcja**|**Obiekt**|  
+|**Akcja**|**Stream**|  
 |----------------|----------------|  
-|Uzyskiwanie dostępu do informacji i usług aplikacji.|`My.Application`Obiekt składa się z następujących klas:<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>zapewnia składowe, które są dostępne we wszystkich projektach.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>zapewnia składowe dostępne w aplikacjach Windows Forms.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>zapewnia składowe dostępne w aplikacjach konsolowych.|  
+|Uzyskiwanie dostępu do informacji i usług aplikacji.|`My.Application`Obiekt składa się z następujących klas:<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> zapewnia składowe, które są dostępne we wszystkich projektach.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> zapewnia składowe dostępne w aplikacjach Windows Forms.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> zapewnia składowe dostępne w aplikacjach konsolowych.|  
 |Uzyskiwanie dostępu do komputera hosta oraz jego zasobów, usług i danych.|`My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)|  
 |Uzyskiwanie dostępu do formularzy w bieżącym projekcie.|[My.Forms — Obiekt](../objects/my-forms-object.md)|  
 |Uzyskiwanie dostępu do dziennika aplikacji.|`My.Application.Log` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log%2A>)|  

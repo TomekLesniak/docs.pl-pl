@@ -9,14 +9,15 @@ helpviewer_keywords:
 - XML comment literal [Visual Basic]
 - XML literals [Visual Basic], comment
 ms.assetid: 634c1cee-5e01-48d0-88d7-2dd55e4a9e52
-ms.openlocfilehash: 93c1346e54106b93f3932a494dea85d082ec994d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3272cc0f976d6e8819e51bb5d5fce73066007963
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400218"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875185"
 ---
 # <a name="xml-comment-literal-visual-basic"></a>Literał komentarza XML (Visual Basic)
+
 Literał reprezentujący <xref:System.Xml.Linq.XComment> obiekt.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,9 +35,11 @@ Literał reprezentujący <xref:System.Xml.Linq.XComment> obiekt.
 |`-->`|Wymagany. Oznacza koniec komentarza XML.|  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Obiekt <xref:System.Xml.Linq.XComment>.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Literały komentarza XML nie zawierają zawartości dokumentu; zawierają one informacje o dokumencie. Sekcja komentarza XML jest zakończona sekwencją "-->". Oznacza to następujące kwestie:  
   
 - Nie można użyć wyrażenia osadzonego w literale komentarza XML, ponieważ ogranicznik wyrażenia osadzonego są prawidłową zawartością komentarza XML.  
@@ -51,6 +54,7 @@ Literał reprezentujący <xref:System.Xml.Linq.XComment> obiekt.
  Kompilator Visual Basic konwertuje literał komentarza XML na wywołanie <xref:System.Xml.Linq.XComment.%23ctor%2A> konstruktora.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład tworzy komentarz XML zawierający tekst "to jest komentarz".  
   
  [!code-vb[VbXMLSamples#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples4.vb#9)]  

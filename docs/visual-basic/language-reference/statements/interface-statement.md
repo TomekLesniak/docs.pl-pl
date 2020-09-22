@@ -7,14 +7,15 @@ helpviewer_keywords:
 - interface statement [Visual Basic]
 - interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
-ms.openlocfilehash: 02d258084aaaa53dcc559cfaa0dec27556351037
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3025adfe8c881a08df3b5f03253510c263c624d1
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404489"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873220"
 ---
 # <a name="interface-statement-visual-basic"></a>Interface — Instrukcja (Visual Basic)
+
 Deklaruje nazwę interfejsu i wprowadza definicje elementów członkowskich, które zawiera interfejs.  
   
 ## <a name="syntax"></a>Składnia  
@@ -57,6 +58,7 @@ End Interface
 |`End Interface`|Kończy `Interface` definicję.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  *Interfejs* definiuje zestaw elementów członkowskich, takich jak właściwości i procedury, które mogą implementować klasy i struktury. Interfejs definiuje tylko sygnatury elementów członkowskich, a nie ich wewnętrzne działania.  
   
  Klasa lub struktura implementuje interfejs, dostarczając kod dla każdego elementu członkowskiego zdefiniowanego przez interfejs. Na koniec, gdy aplikacja tworzy wystąpienie z tej klasy lub struktury, obiekt istnieje i jest uruchamiany w pamięci. Aby uzyskać więcej informacji, zobacz [obiekty i klasy](../../programming-guide/language-features/objects-and-classes/index.md) i [interfejsy](../../programming-guide/language-features/interfaces/index.md).  
@@ -106,6 +108,7 @@ End Interface
 - **Okres istnienia.** Interfejs nie ma samego okresu istnienia ani nie należy do jego składowych. Gdy klasa implementuje interfejs, a obiekt jest tworzony jako wystąpienie tej klasy, obiekt ma okres istnienia w aplikacji, w której jest uruchomiony. Aby uzyskać więcej informacji, zobacz "okres istnienia" w [instrukcji klasy](class-statement.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa `Interface` instrukcji, aby zdefiniować interfejs o nazwie `thisInterface` , który musi być zaimplementowany przy użyciu `Property` instrukcji i `Function` instrukcji.  
   
  [!code-vb[VbVbalrStatements#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#40)]  

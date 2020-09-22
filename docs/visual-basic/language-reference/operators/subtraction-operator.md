@@ -17,14 +17,15 @@ helpviewer_keywords:
 - operators [Visual Basic], negation
 - minus operator [Visual Basic]
 ms.assetid: bff2c368-662d-4c92-ac87-1d9bdfd3426a
-ms.openlocfilehash: 6539beb5cf8078281357445e2391fac189208087
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b5129c2dbb361940fa6da2cb424ee23736ba72c5
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406357"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875331"
 ---
 # <a name="--operator-visual-basic"></a>- — Operator (Visual Basic)
+
 Zwraca różnicę między dwoma wyrażeniami liczbowymi lub wartością ujemną wyrażenia liczbowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ lub
 ```  
   
 ## <a name="parts"></a>Części  
+
  `expression1`  
  Wymagany. Dowolne wyrażenie liczbowe.  
   
@@ -47,14 +49,17 @@ lub
  Wymagane, chyba że `–` operator oblicza wartość ujemną. Dowolne wyrażenie liczbowe.  
   
 ## <a name="result"></a>Wynik  
+
  Wynikiem jest różnica między `expression1` i `expression2` lub Negacja wartości `expression1` .  
   
  Typ danych wyniku jest typem liczbowym odpowiednim dla typów danych `expression1` i `expression2` . Zobacz tabele "arytmetyczne liczby całkowite" w [typach danych wyników operatora](data-types-of-operator-results.md).  
   
 ## <a name="supported-types"></a>Obsługiwane typy  
+
  Wszystkie typy liczbowe. Obejmuje to typy niepodpisane i zmiennoprzecinkowe oraz `Decimal` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  W pierwszym użyciu pokazanym w pokazanej wcześniej składni `–` operator to *binarny* operator odejmowania arytmetycznego dla różnicy między dwoma wyrażeniami liczbowymi.  
   
  W drugim wykorzystaniu pokazanym w składni pokazanej wcześniej `–` operator jest *jednoargumentowym* operatorem negacji dla wartości ujemnej wyrażenia. W tym sensie Negacja składa się z odwrócenia znaku, `expression1` aby wynik był dodatni, jeśli `expression1` jest ujemny.  
@@ -65,6 +70,7 @@ lub
 > `–`Operator może być *przeciążony*, co oznacza, że Klasa lub struktura może przedefiniować jej zachowanie, gdy operand ma typ tej klasy lub struktury. Jeśli kod używa tego operatora dla takiej klasy lub struktury, upewnij się, że rozumiesz jego ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa operatora, `–` Aby obliczyć i zwrócić różnicę między dwiema liczbami, a następnie Negate liczbę.  
   
  [!code-vb[VbVbalrOperators#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#10)]  

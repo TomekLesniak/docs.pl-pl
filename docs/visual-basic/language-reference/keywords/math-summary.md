@@ -7,14 +7,15 @@ helpviewer_keywords:
 - math functions, Visual Basic
 - math functions
 ms.assetid: 6abf2dd7-92d2-488a-8e2b-819be9b30c3f
-ms.openlocfilehash: ef0e014745ec99afbce16824e65587276bc145e4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: eb13a5f32ea407bebad576ef063c9def03fc6693
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373450"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875587"
 ---
 # <a name="math-summary-visual-basic"></a>Podsumowanie matematyczne (Visual Basic)
+
 Słowa kluczowe języka Visual Basic i elementy członkowskie biblioteki wykonawczej są zorganizowane według przeznaczenia i użycia.  
   
 |Akcja|Element języka|  

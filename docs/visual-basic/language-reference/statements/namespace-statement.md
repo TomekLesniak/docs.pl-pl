@@ -12,14 +12,15 @@ helpviewer_keywords:
 - root namespaces
 - declarations [Visual Basic], namespaces
 ms.assetid: a31fbd95-9ace-4c3d-bbb1-51222a2272b2
-ms.openlocfilehash: 0f1ba9a038fc604b6e4ede758891832e087fc096
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cef339a66458ee9657dc1706082c3c5328746dc6
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404437"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875215"
 ---
 # <a name="namespace-statement"></a>Namespace — Instrukcja
+
 Deklaruje nazwę przestrzeni nazw i powoduje, że kod źródłowy, który następuje po deklaracji, jest kompilowany w obrębie tej przestrzeni nazw.  
   
 ## <a name="syntax"></a>Składnia  
@@ -31,6 +32,7 @@ End Namespace
 ```  
   
 ## <a name="parts"></a>Części  
+
  Globalnie  
  Opcjonalny. Umożliwia zdefiniowanie przestrzeni nazw spoza głównej przestrzeni nazw projektu. Zobacz [przestrzenie nazw w Visual Basic](../../programming-guide/program-structure/namespaces.md).  
   
@@ -44,6 +46,7 @@ End Namespace
  Kończy `Namespace` blok.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Przestrzenie nazw są używane jako system organizacyjny. Umożliwiają one klasyfikowanie i prezentowanie elementów programistycznych, które są dostępne dla innych programów i aplikacji. Należy zauważyć, że przestrzeń nazw nie jest *typem* w sensie, że Klasa lub struktura to — nie można zadeklarować elementu programistycznego w taki sposób, aby miał typ danych przestrzeni nazw.  
   
  Wszystkie elementy programistyczne zadeklarowane po `Namespace` instrukcji należy do tej przestrzeni nazw. Visual Basic kontynuuje Kompilowanie elementów do ostatnio zadeklarowanej przestrzeni nazw do momentu napotkania `End Namespace` instrukcji lub innej `Namespace` instrukcji.  
@@ -55,11 +58,13 @@ End Namespace
  Można zadeklarować jedną przestrzeń nazw w innym. Nie istnieje ścisły limit poziomów zagnieżdżenia, które można zadeklarować, ale należy pamiętać, że gdy inny kod uzyskuje dostęp do elementów zadeklarowanych w wewnętrznej przestrzeni nazw, musi użyć ciągu kwalifikacji, który zawiera wszystkie nazwy przestrzeni nazw w hierarchii zagnieżdżania.  
   
 ## <a name="access-level"></a>Poziom dostępu  
+
  Przestrzenie nazw są traktowane tak, jakby miały `Public` poziom dostępu. Do przestrzeni nazw można uzyskać dostęp z kodu dowolnego miejsca w tym samym projekcie, od innych projektów odwołujących się do projektu oraz z dowolnego zestawu skompilowanego z projektu.  
   
  Elementy programistyczne zadeklarowane na poziomie przestrzeni nazw, znaczenie w przestrzeni nazw, ale nie w żadnym innym elemencie, mogą mieć `Public` lub mieć `Friend` dostęp. Jeśli nie zostanie określony, poziom dostępu tego elementu jest domyślnie stosowany `Friend` . Elementy, które można zadeklarować na poziomie przestrzeni nazw, obejmują klasy, struktury, moduły, interfejsy, wyliczenia i delegatów. Aby uzyskać więcej informacji, zobacz [konteksty deklaracji i domyślne poziomy dostępu](declaration-contexts-and-default-access-levels.md).  
   
 ## <a name="root-namespace"></a>Główna przestrzeń nazw  
+
  Wszystkie nazwy przestrzeni nazw w projekcie są oparte na *głównej przestrzeni nazw*. Program Visual Studio przypisuje nazwę projektu jako domyślną główną przestrzeń nazw dla całego kodu w projekcie. Na przykład jeśli projekt ma nazwę `Payroll` , jego elementy programistyczne należą do przestrzeni nazw `Payroll` . Jeśli zadeklarujesz `Namespace funding` , pełna nazwa tej przestrzeni nazw to `Payroll.funding` .  
   
  Jeśli chcesz określić istniejącą przestrzeń nazw w `Namespace` instrukcji, np. w przykładowej klasy listy ogólnej, możesz ustawić główną przestrzeń nazw na wartość null. Aby to zrobić, kliknij pozycję **właściwości projektu** w menu **projekt** , a następnie wyczyść pozycję **główna przestrzeń nazw** , aby pole było puste. Jeśli nie zostało to zrobione w przykładowej klasie listy ogólnej, kompilator Visual Basic będzie miał `System.Collections.Generic` jako nową przestrzeń nazw w ramach projektu `Payroll` , z pełną nazwą `Payroll.System.Collections.Generic` .  
@@ -71,26 +76,31 @@ End Namespace
  **Rozwiązywanie problemów z.** Główna przestrzeń nazw może prowadzić do nieoczekiwanych łączenia nazw przestrzeni nazw. Jeśli wprowadzisz odwołanie do przestrzeni nazw zdefiniowanych poza projektem, kompilator Visual Basic może interpretować je jako zagnieżdżone przestrzenie nazw w głównej przestrzeni nazw. W takim przypadku kompilator nie rozpoznaje żadnych typów, które zostały już zdefiniowane w zewnętrznych przestrzeniach nazw. Aby tego uniknąć, należy ustawić w głównej przestrzeni nazw wartość null zgodnie z opisem w części "główna przestrzeń nazw" lub użyć `Global` słowa kluczowego w celu uzyskania dostępu do elementów zewnętrznych przestrzeni nazw.  
   
 ## <a name="attributes-and-modifiers"></a>Atrybuty i Modyfikatory  
+
  Nie można zastosować atrybutów do przestrzeni nazw. Atrybut zawiera informacje o metadanych zestawu, który nie jest znaczący dla klasyfikatorów źródłowych, takich jak przestrzenie nazw.  
   
  Nie można zastosować żadnych modyfikatorów dostępu ani procedur ani żadnych innych modyfikatorów do przestrzeni nazw. Ponieważ nie jest to typ, Modyfikatory te nie mają znaczenia.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład deklaruje dwie przestrzenie nazw, jeden zagnieżdżony w drugim.  
   
  [!code-vb[VbVbalrStatements#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#43)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład deklaruje wiele zagnieżdżonych przestrzeni nazw w jednym wierszu i jest odpowiednikiem poprzedniego przykładu.  
   
  [!code-vb[VbVbalrStatements#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#41)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład uzyskuje dostęp do klasy zdefiniowanej w poprzednich przykładach.  
   
  [!code-vb[VbVbalrStatements#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#42)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład definiuje szkielet nowej klasy listy ogólnej i dodaje ją do <xref:System.Collections.Generic?displayProperty=nameWithType> przestrzeni nazw.  
   
 ```vb  

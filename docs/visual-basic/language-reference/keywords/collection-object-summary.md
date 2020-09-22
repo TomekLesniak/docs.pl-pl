@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Collection object, summary
 ms.assetid: c4586369-d817-4453-9cb0-1a272fc66737
-ms.openlocfilehash: 2bef46745697fa3ff7f207c13015423cea11db1f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 26bc596cda1ceea9ae4b0bf02e73f013cb7ab5be
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84362388"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875675"
 ---
 # <a name="collection-object-summary-visual-basic"></a>Obiekt stanowiący część kolekcji — Podsumowanie (Visual Basic)
+
 Słowa kluczowe języka Visual Basic i elementy członkowskie biblioteki wykonawczej są zorganizowane według przeznaczenia i użycia.  
   
 |Akcja|Element języka|  

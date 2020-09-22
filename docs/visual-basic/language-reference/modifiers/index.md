@@ -2,32 +2,34 @@
 title: Modyfikatory
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 80adc4521dcb1bb0c65981dae6f842168194eae7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6ee477e8d09ea7c8ea559ff8245784b2d0123141
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372897"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875442"
 ---
 # <a name="modifiers-visual-basic"></a>Modyfikatory (Visual Basic)
+
 Tematy w tej sekcji dokumentu Visual Basic Modyfikatory czasu wykonywania.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Ansi](ansi.md)  
   
  [Zestaw](assembly.md)  
   
  [Asynchroniczne](async.md)  
   
- [Automatycznie](auto.md)  
+ [Auto](auto.md)  
   
  [ByRef](byref.md)  
   
  [ByVal](byval.md)  
   
- [Domyślne](default.md)  
+ [Wartooć](default.md)  
   
- [Osoby](friend.md)  
+ [Friend](friend.md)  
   
  [W](in-generic-modifier.md)  
   
@@ -35,7 +37,7 @@ Tematy w tej sekcji dokumentu Visual Basic Modyfikatory czasu wykonywania.
   
  [Klucz](key.md)  
   
- [Elementu\<keyword>](module-keyword.md)  
+ [Elementu \<keyword>](module-keyword.md)  
   
  [MustInherit](mustinherit.md)  
   
@@ -61,7 +63,7 @@ Tematy w tej sekcji dokumentu Visual Basic Modyfikatory czasu wykonywania.
   
  [Częściowe](partial.md)  
   
- [Użytek](private.md)  
+ [Prywatne](private.md)  
   
  [Prywatne chronione](private-protected.md)  
   
@@ -69,7 +71,7 @@ Tematy w tej sekcji dokumentu Visual Basic Modyfikatory czasu wykonywania.
 
  [Protected Friend](protected-friend.md)  
   
- [Społeczeństwo](public.md)  
+ [Publiczne](public.md)  
   
  [Trybie](readonly.md)  
   
@@ -77,7 +79,7 @@ Tematy w tej sekcji dokumentu Visual Basic Modyfikatory czasu wykonywania.
   
  [Shared](shared.md)  
   
- [Ruchom](static.md)  
+ [Statyczny](static.md)  
   
  [Unicode](unicode.md)  
   
@@ -88,4 +90,5 @@ Tematy w tej sekcji dokumentu Visual Basic Modyfikatory czasu wykonywania.
  [WriteOnly](writeonly.md)  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Dokumentacja języka Visual Basic](../index.md)  

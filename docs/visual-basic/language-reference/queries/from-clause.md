@@ -10,14 +10,15 @@ helpviewer_keywords:
 - From clause [Visual Basic]
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
-ms.openlocfilehash: 33680f49247b3b2a6082b3a6b27ca64f8401e42d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 120ba6da11bffc3a0e81873d1fd606633724723d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396184"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875253"
 ---
 # <a name="from-clause-visual-basic"></a>From — Klauzula (Visual Basic)
+
 Określa co najmniej jedną zmienną zakresu i kolekcję do zapytania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ From element [ As type ] In collection [ _ ]
 |`collection`|Wymagany. Odwołuje się do kolekcji, do której mają być wysyłane zapytania. Musi być typem wyliczalnym.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `From`Klauzula służy do identyfikowania danych źródłowych zapytania i zmiennych, które są używane do odwoływania się do elementu z kolekcji źródłowej. Te zmienne są nazywane *zmiennymi zakresu*. `From`Klauzula jest wymagana dla zapytania, z wyjątkiem sytuacji, gdy `Aggregate` klauzula służy do identyfikowania zapytania, które zwraca tylko zagregowane wyniki. Aby uzyskać więcej informacji, zobacz [klauzula Aggregate](aggregate-clause.md).  
   
  Można określić wiele `From` klauzul w zapytaniu, aby zidentyfikować wiele kolekcji do przyłączenia. Jeśli określono wiele kolekcji, są one powtarzane niezależnie lub można je przyłączać, jeśli są powiązane. Kolekcje można sprzęgać niejawnie przy użyciu `Select` klauzuli lub jawnie za pomocą `Join` `Group Join` klauzul or. Alternatywnie można określić wiele zmiennych zakresów i kolekcji w pojedynczej `From` klauzuli, z każdą pokrewną zmienną zakresu i kolekcją oddzieloną od innych, przecinkiem. Poniższy przykład kodu pokazuje obie opcje składni dla tej `From` klauzuli.  
@@ -65,6 +67,7 @@ From element [ As type ] In collection [ _ ]
 - Zidentyfikuj części wyniku do zwrócenia przy użyciu `Skip` `Take` klauzul,, `Skip While` , i `Take While` .  
   
 ## <a name="example"></a>Przykład  
+
  Następujące wyrażenie zapytania używa klauzuli, `From` Aby zadeklarować zmienną zakresu `cust` dla każdego `Customer` obiektu w `customers` kolekcji. `Where`Klauzula używa zmiennej zakresu w celu ograniczenia danych wyjściowych do klientów z określonego regionu. `For Each`Pętla wyświetla nazwę firmy dla każdego klienta w wyniku zapytania.  
   
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  
@@ -81,7 +84,7 @@ From element [ As type ] In collection [ _ ]
 - [Distinct, klauzula](distinct-clause.md)
 - [Klauzula join](join-clause.md)
 - [Group Join. klauzula](group-join-clause.md)
-- [Order By, klauzula](order-by-clause.md)
+- [Klauzula Order by](order-by-clause.md)
 - [Klauzula Let](let-clause.md)
 - [Skip, klauzula](skip-clause.md)
 - [Take, klauzula](take-clause.md)

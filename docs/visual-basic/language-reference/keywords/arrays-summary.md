@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [Visual Basic]
 ms.assetid: 167f77d4-7cb2-4a31-9dc9-0fd0b26fda7e
-ms.openlocfilehash: 003233463b208fa0f8604ab1a5c52b9c219c711c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6dfb0565803bce298fc1b9467e82d2e09ffb4239
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84362440"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875685"
 ---
 # <a name="arrays-summary-visual-basic"></a>Tablice — Podsumowanie (Visual Basic)
+
 Słowa kluczowe języka Visual Basic i elementy członkowskie biblioteki wykonawczej są zorganizowane według przeznaczenia i użycia.  
   
 |Akcja|Element języka|  

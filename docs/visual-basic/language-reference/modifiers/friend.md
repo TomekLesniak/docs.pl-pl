@@ -10,22 +10,24 @@ helpviewer_keywords:
 - Protected Friend keyword combination
 - Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-ms.openlocfilehash: 4ac8e5942cf6097642ec111992ebfcdb91e8d7c1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d37a93343822d069295477958780c2b9c72043fa
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392174"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875467"
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
+
 Określa, że co najmniej jeden zadeklarowany element programistyczny jest dostępny tylko w obrębie zestawu, który zawiera jego deklarację.  
   
 ## <a name="remarks"></a>Uwagi  
+
  W wielu przypadkach elementy programowania, takie jak klasy i struktury, mają być używane przez cały zestaw, nie tylko przez składnik, który deklaruje je. Jednak użytkownik może nie chcieć uzyskiwać dostępu przez kod poza zestawem (na przykład jeśli aplikacja jest zastrzeżona). Jeśli chcesz ograniczyć dostęp do elementu w ten sposób, możesz go zadeklarować za pomocą `Friend` modyfikatora.  
   
  Kod w innych klasach, strukturach i modułach, które są kompilowane do tego samego zestawu, mogą uzyskać dostęp do wszystkich `Friend` elementów w tym zestawie.  
   
- `Friend`dostęp jest często preferowanym poziomem dla elementów programistycznych aplikacji i `Friend` jest domyślnym poziomem dostępu do interfejsu, modułu, klasy lub struktury.  
+ `Friend` dostęp jest często preferowanym poziomem dla elementów programistycznych aplikacji i `Friend` jest domyślnym poziomem dostępu do interfejsu, modułu, klasy lub struktury.  
   
  Można używać `Friend` tylko na poziomie modułu, interfejsu lub przestrzeni nazw. W związku z tym kontekst deklaracji dla `Friend` elementu musi być plikiem źródłowym, przestrzenią nazw, interfejsem, modułem, klasą lub strukturą. nie może to być procedura.  
 
@@ -38,11 +40,13 @@ Określa, że co najmniej jeden zadeklarowany element programistyczny jest dost�
 > Można określić, że inny zestaw jest zestawem zaprzyjaźnionym, który umożliwia mu dostęp do wszystkich typów i elementów członkowskich, które są oznaczone jako `Friend` . Aby uzyskać więcej informacji, zobacz [zaprzyjaźnione zestawy](../../../standard/assembly/friend.md).
 
 ## <a name="example"></a>Przykład  
+
  Poniższa klasa używa `Friend` modyfikatora, aby zezwolić innym elementom programistycznym w tym samym zestawie na dostęp do niektórych elementów członkowskich.  
   
  [!code-vb[VbVbalrAccessModifiers#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalraccessmodifiers/vb/class1.vb#1)]  
   
 ## <a name="usage"></a>Użycie  
+
  Modyfikatora można użyć `Friend` w tych kontekstach:  
   
  [Class, instrukcja](../statements/class-statement.md)  
@@ -74,9 +78,9 @@ Określa, że co najmniej jeden zadeklarowany element programistyczny jest dost�
 ## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [Społeczeństwo](public.md)
+- [Publiczne](public.md)
 - [Chronione](protected.md)
-- [Użytek](private.md)
+- [Prywatne](private.md)
 - [Prywatne chronione](./private-protected.md)
 - [Protected Friend](./protected-friend.md)
 - [Poziomy dostępu w Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)

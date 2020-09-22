@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Auto keyword [Visual Basic]
 - Auto keyword [Visual Basic], marshaling strings
 ms.assetid: bf79ba95-a62c-48a5-916f-0ac7a52c13ec
-ms.openlocfilehash: b9bdeed55788252c71b8fb1c995c140cbfdf60eb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 799a7320b701384dc5f4b4b46fef8544f6b15b02
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373131"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875510"
 ---
 # <a name="auto-visual-basic"></a>Auto (Visual Basic)
+
 Określa, że Visual Basic powinny organizować ciągi zgodnie z regułami .NET Framework na podstawie zewnętrznej nazwy procedury zewnętrznej.  
   
  Po wywołaniu procedury zdefiniowanej poza projektem, kompilator Visual Basic nie ma dostępu do informacji, które muszą być wymagane do poprawnego wywołania procedury. Informacje te obejmują miejsce, w którym znajduje się procedura, sposób jego identyfikacji, jego sekwencję wywoływania i zwracany typ oraz zestaw znaków użytych w ciągu. [Instrukcja DECLARE](../statements/declare-statement.md) tworzy odwołanie do zewnętrznej procedury i dostarcza te niezbędne informacje.  
@@ -26,11 +27,13 @@ Określa, że Visual Basic powinny organizować ciągi zgodnie z regułami .NET 
  Jeśli nie określono modyfikatora zestawu znaków, `Ansi` jest to ustawienie domyślne.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Auto`Modyfikator może być używany w tym kontekście:  
   
  [Declare — Instrukcja](../statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Uwagi dla deweloperów inteligentnych urządzeń  
+
  To słowo kluczowe nie jest obsługiwane.  
   
 ## <a name="see-also"></a>Zobacz też

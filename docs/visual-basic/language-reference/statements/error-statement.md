@@ -10,14 +10,15 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], codes
 - errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
-ms.openlocfilehash: 35ba1f19654d1d23ac1ec73564bc36b0af4f6777
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f3f9f5ecb96686fe525e98cf64672d81a3145796
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404748"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873280"
 ---
 # <a name="error-statement"></a>Error — Instrukcja
+
 Symuluje wystąpienie błędu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -27,10 +28,12 @@ Error errornumber
 ```  
   
 ## <a name="parts"></a>Części  
+
  `errornumber`  
  Wymagany. Może być dowolnym prawidłowym numerem błędu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta `Error` instrukcja jest obsługiwana w celu zapewnienia zgodności z poprzednimi wersjami. W nowym kodzie, szczególnie podczas tworzenia obiektów, użyj `Err` `Raise` metody obiektu do generowania błędów w czasie wykonywania.  
   
  Jeśli `errornumber` jest zdefiniowany, `Error` instrukcja wywołuje procedurę obsługi błędów po `Err` przypisaniu właściwości obiektu do następujących wartości domyślnych:  
@@ -50,6 +53,7 @@ Error errornumber
 > Niektóre Visual Basic aplikacje hosta nie mogą tworzyć obiektów. Zapoznaj się z dokumentacją aplikacji hosta, aby określić, czy można tworzyć klasy i obiekty.  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład używa `Error` instrukcji w celu wygenerowania błędu o numerze 11.  
   
 ```vb  
@@ -58,9 +62,10 @@ Error 11   ' Simulate the "Division by zero" error.
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Przestrzeń nazw:** [Microsoft. VisualBasic](../runtime-library-members.md)  
   
- **Zestaw:** Biblioteka środowiska uruchomieniowego Visual Basic (w pliku Microsoft. VisualBasic. dll)  
+ **Zestaw:** Biblioteka środowiska uruchomieniowego Visual Basic (w Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Zobacz też
 

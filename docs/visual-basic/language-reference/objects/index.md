@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic]
 ms.assetid: 651c73e4-dca8-402b-9c6b-e3902b3a3f4b
-ms.openlocfilehash: e927f69b7606866a0a9e8eadd59270f51ffc5e2b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 86852b8335c05f496ea7325ae3defd35c7532b38
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414222"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875410"
 ---
 # <a name="objects-visual-basic"></a>Obiekty (Visual Basic)
+
 Ten temat zawiera linki do innych tematów, które dokumentują Visual Basic obiekty czasu wykonywania i zawierają tabele ich procedur, właściwości i zdarzeń członków.  
   
 ## <a name="visual-basic-run-time-objects"></a>Visual Basic obiektów czasu wykonywania  
@@ -20,7 +21,7 @@ Ten temat zawiera linki do innych tematów, które dokumentują Visual Basic obi
 |---|---|  
 |<xref:Microsoft.VisualBasic.Collection>|Zapewnia wygodny sposób wyświetlania powiązanej grupy elementów jako pojedynczego obiektu.|  
 |<xref:Microsoft.VisualBasic.Information.Err%2A>|Zawiera informacje o błędach czasu wykonywania.|  
-|`My.Application`Obiekt składa się z następujących klas:<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>zapewnia składowe, które są dostępne we wszystkich projektach.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>zapewnia składowe dostępne w aplikacjach Windows Forms.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>zapewnia składowe dostępne w aplikacjach konsolowych.|Dostarcza dane, które są skojarzone tylko z bieżącą aplikacją lub biblioteką DLL. Informacje na poziomie systemu nie mogą być zmieniane za pomocą programu `My.Application` .<br /><br /> Niektóre elementy członkowskie są dostępne tylko dla aplikacji Windows Forms lub konsoli programu.|  
+|`My.Application`Obiekt składa się z następujących klas:<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> zapewnia składowe, które są dostępne we wszystkich projektach.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> zapewnia składowe dostępne w aplikacjach Windows Forms.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> zapewnia składowe dostępne w aplikacjach konsolowych.|Dostarcza dane, które są skojarzone tylko z bieżącą aplikacją lub biblioteką DLL. Informacje na poziomie systemu nie mogą być zmieniane za pomocą programu `My.Application` .<br /><br /> Niektóre elementy członkowskie są dostępne tylko dla aplikacji Windows Forms lub konsoli programu.|  
 |`My.Application.Info` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Info%2A>)|Zawiera właściwości służące do uzyskiwania informacji o aplikacji, takich jak numer wersji, opis, ładowane zestawy itd.|  
 |`My.Application.Log` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log%2A>)|Zawiera właściwości i metody zapisu informacji o zdarzeniu i wyjątku w detektorach dzienników aplikacji.|  
 |`My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)|Zawiera właściwości służące do manipulowania składnikami komputerów, takimi jak dźwięk, zegar, klawiatura, system plików i tak dalej.|  

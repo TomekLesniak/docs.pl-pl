@@ -12,14 +12,15 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: 0cce36073b53442bce63f966f3bd94bd5d70d2a8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0a01b49cf1e0bf9ad7b2ce541cee39cba83025ca
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406330"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875311"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf — Operator (Visual Basic)
+
 Sprawdza, czy typ środowiska uruchomieniowego wyniku wyrażenia jest zgodny z typem określonego typu.
   
 ## <a name="syntax"></a>Składnia  
@@ -33,6 +34,7 @@ result = TypeOf objectexpression IsNot typename
 ```  
   
 ## <a name="parts"></a>Części  
+
  `result`  
  Zwracać. `Boolean`Wartość.  
   
@@ -43,19 +45,21 @@ result = TypeOf objectexpression IsNot typename
  Wymagany. Dowolna nazwa typu danych.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `TypeOf`Operator określa, czy typ czasu wykonywania `objectexpression` jest zgodny z `typename` . Zgodność zależy od kategorii typów `typename` . W poniższej tabeli przedstawiono sposób określania zgodności.  
   
-|Kategoria typu`typename`|Kryterium zgodności|  
+|Kategoria typu `typename`|Kryterium zgodności|  
 |---------------------------------|-----------------------------|  
-|Klasa|`objectexpression`jest typu `typename` lub dziedziczy po`typename`|  
-|Struktura|`objectexpression`jest typu`typename`|  
-|Interfejs|`objectexpression`implementuje `typename` lub dziedziczy z klasy implementującej`typename`|  
+|Klasa|`objectexpression` jest typu `typename` lub dziedziczy po `typename`|  
+|Struktura|`objectexpression` jest typu `typename`|  
+|Interfejs|`objectexpression` implementuje `typename` lub dziedziczy z klasy implementującej `typename`|  
   
  Jeśli typ czasu wykonywania `objectexpression` spełnia kryteria zgodności, `result` jest `True` . W przeciwnym razie `result` jest `False` .  Jeśli `objectexpression` ma wartość null, `TypeOf` Funkcja... `Is` zwraca wartość `False` , a... `IsNot` zwraca wartość `True` .  
   
- `TypeOf`jest zawsze używana ze `Is` słowem kluczowym w celu skonstruowania `TypeOf` wyrażenia... `Is` lub ze `IsNot` słowem kluczowym służącym do konstruowania `TypeOf` wyrażenia... `IsNot` .  
+ `TypeOf` jest zawsze używana ze `Is` słowem kluczowym w celu skonstruowania `TypeOf` wyrażenia... `Is` lub ze `IsNot` słowem kluczowym służącym do konstruowania `TypeOf` wyrażenia... `IsNot` .  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano `TypeOf` wyrażenia... `Is` do testowania zgodności typów dwóch zmiennych odwołań do obiektów z różnymi typami danych.  
   
  [!code-vb[VbVbalrOperators#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#39)]  
