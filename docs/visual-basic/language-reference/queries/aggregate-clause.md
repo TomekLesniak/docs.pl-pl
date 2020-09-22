@@ -10,14 +10,15 @@ helpviewer_keywords:
 - Aggregate statement [Visual Basic]
 - queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
-ms.openlocfilehash: 326c3306368ceca2122e912556efd84e4bfef1f1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: be2e401c7931b2637c14a3ea3b742a2c09917939
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413004"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869982"
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate — Klauzula (Visual Basic)
+
 Stosuje co najmniej jedną funkcję agregującą do kolekcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ Aggregate element [As type] In collection _
 |`expressionList`|Wymagany. Jedno lub więcej wyrażeń rozdzielanych przecinkami, które identyfikują funkcję agregującą, która ma zostać zastosowana do kolekcji. Można zastosować alias do funkcji agregującej, aby określić nazwę elementu członkowskiego dla wyniku zapytania. Jeśli nie podano aliasu, używana jest nazwa funkcji agregującej. Przykłady zawiera sekcja dotycząca funkcji agregujących w dalszej części tego tematu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Aggregate`Klauzula może służyć do uwzględnienia funkcji agregujących w zapytaniach. Funkcje agregujące wykonują operacje sprawdzania i obliczeń na zestawie wartości i zwracają pojedynczą wartość. Możesz uzyskać dostęp do obliczonej wartości przy użyciu elementu członkowskiego typu wyników zapytania. Standardowe funkcje agregujące, których można użyć, to funkcje,,,,,, `All` `Any` `Average` `Count` `LongCount` `Max` `Min` i `Sum` . Te funkcje są znane dla deweloperów, którzy znają agregacje w programie SQL Server. Opisano je w poniższej sekcji tego tematu.  
   
  Wynik funkcji agregującej jest uwzględniany w wyniku zapytania jako pole typu wyniku zapytania. Można podać alias dla wyniku funkcji agregującej, aby określić nazwę elementu członkowskiego typu wyników zapytania, który będzie przechowywać wartość zagregowaną. Jeśli nie podano aliasu, używana jest nazwa funkcji agregującej.  
@@ -50,7 +52,7 @@ Aggregate element [As type] In collection _
 
 Poniżej znajdują się standardowe funkcje agregujące, które mogą być używane z `Aggregate` klauzulą.  
   
-### <a name="all"></a>Wszyscy
+### <a name="all"></a>Wszystko
 
 Zwraca `true` czy wszystkie elementy w kolekcji spełniają określony warunek; w przeciwnym razie zwraca `false` . Poniżej przedstawiono przykład:
 
@@ -74,7 +76,7 @@ Zlicza elementy w kolekcji. Można podać opcjonalne `Boolean` wyrażenie, aby o
 
  [!code-vb[VbSimpleQuerySamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#8)]
 
-### <a name="group"></a>Grupa
+### <a name="group"></a>Group (Grupa)
 
 Odwołuje się do wyników zapytania, które są pogrupowane w `Group By` wyniku `Group Join` klauzuli OR. `Group`Funkcja jest prawidłowa tylko w `Into` klauzuli `Group By` `Group Join` klauzuli OR. Aby uzyskać więcej informacji i przykładów, zobacz klauzule Group [by](group-by-clause.md) i Group [Join](group-join-clause.md).
 

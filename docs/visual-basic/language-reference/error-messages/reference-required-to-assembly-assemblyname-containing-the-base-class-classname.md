@@ -7,25 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30007
 ms.assetid: 5f34cf47-6c6e-4954-bd8e-d6b020b75fb7
-ms.openlocfilehash: 8218a3325d5d47bf85aacab1724221d233d92ba4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 07c09d0dfcb374b974fbda9099c4e85d6d054753
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661704"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870911"
 ---
-# <a name="reference-required-to-assembly-assemblyname-containing-the-base-class-classname"></a>Wymagane odwołanie do zestawu "\<nazwa_zestawu >" z klasą bazową\<nazwa_klasy > "
-Wymagane odwołanie do zestawu "\<nazwa_zestawu >" z klasą bazową\<nazwa_klasy > ". Dodaj je do projektu.  
+# <a name="reference-required-to-assembly-assemblyname-containing-the-base-class-classname"></a>Wymagane odwołanie do zestawu „\<assemblyname>” z klasą bazową „\<classname>”
+
+Wymagane odwołanie do zestawu " \<assemblyname> " zawierającego klasę bazową " \<classname> ". Dodaj je do projektu.  
   
- Klasa jest zdefiniowana w biblioteki dołączanej (dynamicznie DLL) lub zestawu, który nie jest bezpośrednio wywoływany w projekcie. Kompilator Visual Basic wymaga odwołania, aby uniknąć niejednoznaczności, w przypadku, gdy klasa jest zdefiniowana w więcej niż jednego pliku DLL lub zestawu.  
+ Klasa jest definiowana w bibliotece dołączanej dynamicznie (DLL) lub w zestawie, który nie jest bezpośrednio przywoływany w projekcie. Kompilator Visual Basic wymaga odwołania, aby uniknąć niejednoznaczności na wypadek, gdyby Klasa została zdefiniowana w więcej niż jednej bibliotece DLL lub zestawie.  
   
  **Identyfikator błędu:** BC30007  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
   
-- Obejmują nazwę bez odwołań biblioteki DLL lub zestawu w odwołaniach do projektu.  
+- Dołącz nazwę nieodwołania do biblioteki DLL lub zestawu w odwołaniach do projektu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zarządzanie odwołaniami w projekcie](/visualstudio/ide/managing-references-in-a-project)
 - [Rozwiązywanie problemów z przerwanymi odwołaniami](/visualstudio/ide/troubleshooting-broken-references)

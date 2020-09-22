@@ -8,14 +8,15 @@ helpviewer_keywords:
 - queries [Visual Basic], Take
 - Take clause [Visual Basic]
 ms.assetid: 77bf87b2-1476-4456-957f-fee922fbad8c
-ms.openlocfilehash: 25dd06905525a96bc1504f033eb4f19af6d454a2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f2377d8d1635912885a310b2b0429a6a00083b47
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84359635"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869669"
 ---
 # <a name="take-clause-visual-basic"></a>Take — Klauzula (Visual Basic)
+
 Zwraca określoną liczbę elementów sąsiadujących od początku kolekcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,10 +26,12 @@ Take count
 ```  
   
 ## <a name="parts"></a>Części  
+
  `count`  
  Wymagany. Wartość lub wyrażenie, które oblicza liczbę elementów sekwencji do zwrócenia.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Take`Klauzula powoduje, że zapytanie zawiera określoną liczbę elementów sąsiadujących od początku listy wyników. Liczba elementów do dołączenia jest określona przez `count` parametr.  
   
  Można użyć `Take` klauzuli z `Skip` klauzulą, aby zwrócić zakres danych z dowolnego segmentu zapytania. Aby to zrobić, Przekaż indeks pierwszego elementu zakresu do `Skip` klauzuli i rozmiar zakresu do `Take` klauzuli. W takim przypadku `Take` klauzula musi być określona po `Skip` klauzuli.  
@@ -38,6 +41,7 @@ Take count
  Można użyć `TakeWhile` klauzuli, aby określić, że tylko niektóre elementy mają być zwracane, w zależności od podanego warunku.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu używa `Take` klauzuli razem z `Skip` klauzulą, aby zwrócić dane ze zapytania na stronach. Funkcja getcustomerss używa `Skip` klauzuli do obejścia klientów na liście do momentu podanej wartości indeksu początkowego i użycia `Take` klauzuli do zwrócenia strony klientów zaczynających się od tej wartości indeksu.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
@@ -48,6 +52,6 @@ Take count
 - [Zapytania](index.md)
 - [SELECT — klauzula](select-clause.md)
 - [Klauzula from](from-clause.md)
-- [Order By, klauzula](order-by-clause.md)
+- [Klauzula Order by](order-by-clause.md)
 - [Take While, klauzula](take-while-clause.md)
 - [Skip, klauzula](skip-clause.md)

@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30451
 ms.assetid: 765f099b-e21e-47c6-a906-a065444e56b3
-ms.openlocfilehash: 6fa4639b97e4314d8752ae520e94a58a189b7cbb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 76c1ab4fb5f1f8e4c76a06110f4b0f9026cca201
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397171"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871547"
 ---
 # <a name="name-name-is-not-declared"></a>Nazwa „\<name>" nie została zadeklarowana
+
 Instrukcja odwołuje się do elementu programistycznego, ale kompilator nie może odnaleźć elementu o takiej samej nazwie.  
   
  **Identyfikator błędu:** BC30451  
@@ -31,7 +32,7 @@ Instrukcja odwołuje się do elementu programistycznego, ale kompilator nie moż
 
 5. Jeśli nie używasz w pełni kwalifikowanego typu lub typu i nazwy elementu członkowskiego (na przykład kod odwołuje się do właściwości jako " `MethodInfo.Name` zamiast" `System.Reflection.MethodInfo.Name` ), Dodaj [instrukcję Imports](../statements/imports-statement-net-namespace-and-type.md).
 
-6. Jeśli próbujesz skompilować projekt w stylu zestawu SDK (projekt z \* plikiem. vbproj, który zaczyna się od wiersza `<Project Sdk="Microsoft.NET.Sdk">` ), a komunikat o błędzie dotyczy typu lub elementu członkowskiego zestawu Microsoft. VisualBasic. dll, skonfiguruj aplikację do kompilowania z odwołaniem do biblioteki środowiska uruchomieniowego Visual Basic. Domyślnie podzestaw biblioteki jest osadzony w zestawie w projekcie w stylu zestawu SDK.
+6. Jeśli próbujesz skompilować projekt w stylu zestawu SDK (projekt z \* plikiem. vbproj, który rozpoczyna się od wiersza `<Project Sdk="Microsoft.NET.Sdk">` ), a komunikat o błędzie dotyczy typu lub elementu członkowskiego w zestawie Microsoft.VisualBasic.dll, skonfiguruj aplikację do kompilowania z odwołaniem do biblioteki środowiska uruchomieniowego Visual Basic. Domyślnie podzestaw biblioteki jest osadzony w zestawie w projekcie w stylu zestawu SDK.
 
    Na przykład następujący przykład nie zostanie skompilowany, ponieważ <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ChangeType%2A?displayProperty=fullName> nie można odnaleźć metody. Nie jest on osadzony w podzbiorze środowiska uruchomieniowego Visual Basic dołączonego do aplikacji.  
 

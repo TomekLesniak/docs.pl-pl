@@ -21,14 +21,15 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Select Case statements
 - Case statement [Visual Basic], Select...Case
 ms.assetid: 68877b65-5419-4bf0-a465-20cd0e4c7d44
-ms.openlocfilehash: 3dedd43f920b493a0aca9ce48460b00815e1af5c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 750e765390ad223976b000fe64e656fa2d62a34b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404242"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871777"
 ---
 # <a name="selectcase-statement-visual-basic"></a>Select...Case — Instrukcja (Visual Basic)
+
 Uruchamia jedną z kilku grup instrukcji w zależności od wartości wyrażenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -53,6 +54,7 @@ End Select
 |`End Select`|Kończy definicję konstruowania.. `Select` .. `Case`|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli `testexpression` dopasowuje dowolną `Case` `expressionlist` klauzulę, instrukcje po tej `Case` instrukcji są uruchamiane do następnej `Case` `Case Else` instrukcji,, lub `End Select` . Następnie kontrolka przechodzi do następującej instrukcji `End Select` . Jeśli `testexpression` jest zgodny z `expressionlist` klauzulą w więcej niż jednej `Case` klauzuli, tylko instrukcje po pierwszym uruchomieniu są wykonywane.  
   
  `Case Else`Instrukcja jest używana do wprowadzenia `elsestatements` do uruchomienia, jeśli nie zostanie znalezione dopasowanie między `testexpression` `expressionlist` klauzulą a klauzuli w żadnej z innych `Case` instrukcji. Chociaż nie jest to wymagane, dobrym pomysłem jest posiadanie `Case Else` instrukcji w `Select Case` konstrukcji do obsługi nieprzewidzianych `testexpression` wartości. Jeśli żadna `Case` `expressionlist` klauzula nie `testexpression` jest zgodna i nie ma żadnej `Case Else` instrukcji, kontrola przechodzi do następującej instrukcji `End Select` .  
@@ -75,9 +77,10 @@ End Select
   
  Jeśli kod w `Case` `Case Else` bloku instrukcji lub nie musi uruchamiać żadnych więcej instrukcji w bloku, może wyjść z bloku przy użyciu `Exit Select` instrukcji. Powoduje to natychmiastowe przeniesienie kontroli do poniższej instrukcji `End Select` .  
   
- `Select Case`konstrukcje mogą być zagnieżdżane. Każda konstrukcja zagnieżdżona `Select Case` musi mieć zgodną `End Select` instrukcję i musi być całkowicie zawarta w obrębie pojedynczego `Case` lub `Case Else` bloku instrukcji `Select Case` konstrukcji zewnętrznej, w ramach której jest zagnieżdżony.  
+ `Select Case` konstrukcje mogą być zagnieżdżane. Każda konstrukcja zagnieżdżona `Select Case` musi mieć zgodną `End Select` instrukcję i musi być całkowicie zawarta w obrębie pojedynczego `Case` lub `Case Else` bloku instrukcji `Select Case` konstrukcji zewnętrznej, w ramach której jest zagnieżdżony.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa konstrukcji, `Select Case` Aby napisać linię odpowiadającą wartości zmiennej `number` . Druga `Case` instrukcja zawiera wartość, która pasuje do bieżącej wartości `number` , więc instrukcji, która zapisuje "od 6 do 8 włącznie".  
   
  [!code-vb[VbVbalrStatements#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#54)]  
