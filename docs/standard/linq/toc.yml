@@ -46,7 +46,7 @@
                       href: preserve-white-space-loading-parsing-xml.md
                     - name: Sposób przechwytywania błędów analizy
                       href: catch-parsing-errors.md
-                    - name: Sposób tworzenia drzewa na podstawie elementu XmlReader
+                    - name: Tworzenie drzewa na podstawie elementu XmlReader
                       href: create-tree-xmlreader.md
                     - name: Przesyłanie strumieniowo fragmentów kodu XML z elementu XmlReader
                       href: stream-xml-fragments-xmlreader.md
@@ -112,9 +112,12 @@
                   href: query-xml-trees-overview.md
                 - name: Zapytania podstawowe
                   items:
-                    - name: Sposób wyszukiwania elementu o określonym atrybucie
+                    - name: Spis przykładów
+                      displayName: queries
+                      href: basic-queries-linq-to-xml.md
+                    - name: Wyszukiwanie elementu o określonym atrybucie
                       href: find-element-specific-attribute.md
-                    - name: Sposób wyszukiwania elementu o określonym elemencie podrzędnym
+                    - name: Wyszukiwanie elementu o określonym elemencie podrzędnym
                       href: find-element-specific-child-element.md
                     - name: Tworzenie zapytań dotyczących elementu XDocument a tworzenie zapytań dotyczących elementu XElement
                       href: query-xdocument-vs-query-xelement.md
@@ -124,19 +127,19 @@
                       href: find-single-descendant-descendants-method.md
                     - name: Pisanie zapytań z zaawansowanym filtrowaniem
                       href: write-queries-complex-filtering.md
-                    - name: Sposób filtrowania elementu opcjonalnego
+                    - name: Filtrowanie elementu opcjonalnego
                       href: filter-optional-element.md
-                    - name: Sposób wyszukiwania węzłów w przestrzeni nazw
+                    - name: Wyszukiwanie węzłów w przestrzeni nazw
                       href: find-all-nodes-namespace.md
                     - name: Sortowanie elementów
                       href: sort-elements.md
                     - name: Sortowanie elementów na wielu kluczach
                       href: sort-elements-multiple-keys.md
-                    - name: Sposób obliczania wartości pośrednich
+                    - name: Obliczanie wartości pośrednich
                       href: calculate-intermediate-values.md
-                    - name: Pisanie zapytania odnajdującego elementy na podstawie kontekstu
+                    - name: Znajdowanie elementów na podstawie kontekstu
                       href: write-query-finds-elements-based-context.md
-                    - name: Sposób debugowania zestawów wyników zapytania
+                    - name: Debugowanie pustych zestawów wyników zapytania
                       href: debug-empty-query-results-sets.md
                 - name: Projekcje i przekształcenia
                   items:
@@ -144,7 +147,7 @@
                       href: work-dictionaries-linq-xml.md
                     - name: Przekształcanie kształtu drzewa XML
                       href: transform-shape-xml-tree.md
-                    - name: Sposób kontrolowania typu projekcji
+                    - name: Kontrolowanie typu projekcji
                       href: control-type-projection.md
                     - name: Projektowanie nowego typu
                       href: project-new-type.md
@@ -160,7 +163,7 @@
                   items:
                     - name: Łączenie dwóch kolekcji
                       href: join-two-collections.md
-                    - name: Sposób tworzenia hierarchii przy użyciu grupowania
+                    - name: Tworzenie hierarchii przy użyciu grupowania
                       href: create-hierarchy-grouping.md
                     - name: Tworzenie zapytań dotyczących LINQ to XML przy użyciu metody XPath
                       href: query-linq-xml-xpath.md
@@ -214,9 +217,9 @@
                       href: find-immediate-preceding-sibling.md
                 - name: Czyste przekształcanie funkcjonalne kodu XML
                   items:
-                    - name: Wprowadzenie do czystych przekształceń funkcjonalnych
+                    - name: Wprowadzenie
                       href: introduction-pure-functional-transformations.md
-                    - name: Pojęcia i terminologia (przekształcanie funkcjonalne)
+                    - name: Pojęcia i terminologia
                       href: concepts-terminology-functional-transformation.md
                     - name: Programowanie funkcjonalne a programowanie imperatywne
                       href: functional-vs-imperative-programming.md
@@ -232,11 +235,11 @@
                       href: deferred-execution-example.md
                     - name: 'Samouczek: łączenie łańcuchowe zapytań (C#)'
                       items:
-                        - name: Przykład łączenia łańcuchowego zapytań (C#)
+                        - name: Przykład łączenia łańcuchowego zapytań
                           href: chain-queries-example.md
-                        - name: Materializacja pośrednia (C#)
+                        - name: Materializacja pośrednia
                           href: intermediate-materialization.md
-                        - name: Łączenie łańcuchowe standardowych operatorów zapytań (C#)
+                        - name: Łączenie łańcuchowe standardowych operatorów zapytań
                           href: chain-standard-query-operators-together.md
                     - name: 'Samouczek: manipulowanie zawartością w dokumencie WordprocessingML'
                       items:
@@ -264,21 +267,21 @@
                               href: wordprocessingml-document-styles.md
                             - name: Część stylu dokumentu WordprocessingML
                               href: style-part-wordprocessingml-document.md
-                            - name: 'Przykład, który wyprowadza części dokumentu Office Open XML Document'
+                            - name: 'Przykład, który generuje części dokumentu jako wynik'
                               href: example-outputs-office-open-xml-document-parts.md
             - name: Modyfikowanie drzew XML
               items:
                 - name: Modyfikowanie drzewa XML w pamięci a konstrukcja funkcjonalna
                   href: in-memory-xml-tree-modification-vs-functional-construction.md
-                - name: 'Dodawanie elementów, atrybutów i węzłów do drzewa XML'
+                - name: 'Dodawanie elementów, atrybutów i węzłów'
                   href: add-elements-attributes-nodes-xml-tree.md
-                - name: 'Modyfikowanie elementów, atrybutów i węzłów w drzewie XML'
+                - name: 'Modyfikowanie elementów, atrybutów i węzłów'
                   href: modify-elements-attributes-nodes-xml-tree.md
-                - name: 'Usuwanie elementów, atrybutów i węzłów z drzewa XML'
+                - name: 'Usuwanie elementów, atrybutów i węzłów'
                   href: remove-elements-attributes-nodes-xml-tree.md
                 - name: Obsługiwanie par nazwa-wartość
                   href: maintain-name-value-pairs.md
-                - name: Sposób zmieniania przestrzeni nazw dla całego drzewa XML
+                - name: Zmienianie przestrzeni nazw dla całego drzewa XML
                   href: change-namespace-entire-xml-tree.md
             - name: Wydajność
               items:
@@ -300,7 +303,7 @@
                   href: program-nodes.md
                 - name: Mieszane błędy kodu deklaratywnego i imperatywnego
                   href: mixed-declarative-imperative-code-bugs.md
-                - name: Przesyłanie strumieniowe fragmentów z dostępem do informacji o nagłówku
+                - name: Przesyłanie strumieniowe fragmentów kodu XML z dostępem do informacji o nagłówku
                   href: stream-xml-fragments-access-header-information.md
                 - name: Wykonywanie przekształceń strumieniowych dużych dokumentów XML
                   href: perform-streaming-transform-large-xml-documents.md

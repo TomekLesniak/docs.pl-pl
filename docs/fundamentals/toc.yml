@@ -55,8 +55,10 @@ items:
         href: ../standard/components.md
       - name: Biblioteki klas .NET
         href: ../standard/class-libraries.md
-      - name: Omówienie platformy .NET Core
+      - name: Wprowadzenie do platformy .NET Core
         href: ../core/introduction.md
+      - name: Omówienie platformy .NET Core
+        href: ../core/about.md
       - name: Omówienie platformy .NET Standard
         href: ../standard/net-standard.md
       - name: Słownik platformy .NET
@@ -432,8 +434,12 @@ items:
         href: ../core/deploying/runtime-patch-selection.md
       - name: Wdrażanie i wykonywanie przy użyciu jednego pliku
         href: ../core/deploying/single-file.md
-      - name: Przycinanie samodzielnych wdrożeń i plików wykonywalnych
-        href: ../core/deploying/trim-self-contained.md
+      - name: Przycinanie samodzielnych wdrożeń
+        items:
+          - name: Omówienie i instrukcje
+            href: ../core/deploying/trim-self-contained.md
+          - name: Opcje
+            href: ../core/deploying/trimming-options.md
       - name: Magazyn pakietu środowiska uruchomieniowego
         href: ../core/deploying/runtime-store.md
       - name: Wykaz identyfikatorów środowisk uruchomieniowych (RID)
