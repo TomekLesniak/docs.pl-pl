@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30910
 ms.assetid: 68fc05c5-5d55-4742-9a3b-ea04312594f4
-ms.openlocfilehash: aa04c558abbcc4259c2821cdcbdc1669b91ffee0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5adb5a74c220c7b2f95ac7370040a7fa2bd34299
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402775"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872061"
 ---
 # <a name="typename-cannot-inherit-from-type-basetypename-because-it-expands-the-access-of-the-base-type-outside-the-assembly"></a>Element „\<typename>” nie może dziedziczyć po elemencie \<type> „\<basetypename>", ponieważ rozszerza dostęp podstawowego elementu \<type> poza zestawem
+
 Klasa lub interfejs dziedziczy z klasy bazowej lub interfejsu, ale ma mniej restrykcyjny poziom dostępu.  
   
  Na przykład `Public` interfejs dziedziczy z `Friend` interfejsu lub `Protected` Klasa dziedziczy z `Private` klasy. To ujawnia klasę bazową lub interfejs, aby uzyskać dostęp poza zaplanowanym poziomem.  

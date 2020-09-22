@@ -15,14 +15,15 @@ helpviewer_keywords:
 - execution
 - Resume statement [Visual Basic]
 ms.assetid: e24d058b-1a5c-4274-acb9-7d295d3ea537
-ms.openlocfilehash: 3f49f05f1deb2027b03bbf3443ca44f30c44344e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: db9d47798d087d60f4318b06fe3291fb895e6618
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404216"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871868"
 ---
 # <a name="resume-statement"></a>Resume — Instrukcja
+
 Wznawia wykonywanie po zakończeniu procedury obsługi błędu.  
   
  Zalecamy używanie obsługi wyjątków strukturalnych w kodzie wszędzie tam, gdzie jest to możliwe, zamiast korzystania z obsługi wyjątków bez struktury i `On Error` instrukcji i `Resume` . Aby uzyskać więcej informacji, zobacz [try... Catch... Finally — instrukcja](try-catch-finally-statement.md).  
@@ -34,6 +35,7 @@ Resume [ Next | line ]
 ```  
   
 ## <a name="parts"></a>Części  
+
  `Resume`  
  Wymagany. Jeśli błąd wystąpił w tej samej procedurze co program obsługi błędów, wykonanie jest wznawiane za pomocą instrukcji, która spowodowała błąd. Jeśli wystąpił błąd w wywoływanej procedurze, wykonanie zostaje wznowione w instrukcji, która została ostatnio wywołana z procedury zawierającej procedurę obsługi błędu.  
   
@@ -53,14 +55,16 @@ Resume [ Next | line ]
  `Resume`Instrukcji nie można używać w żadnej procedurze zawierającej `Try...Catch...Finally` instrukcję.  
   
 ## <a name="example"></a>Przykład  
+
  W tym przykładzie używa `Resume` instrukcji, aby zakończyć obsługę błędów w procedurze, a następnie wznowić wykonywanie przy użyciu instrukcji, która spowodowała błąd. Numer błędu 55 został wygenerowany w celu zilustrowania użycia `Resume` instrukcji.  
   
  [!code-vb[VbVbalrErrorHandling#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#16)]  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Przestrzeń nazw:** [Microsoft. VisualBasic](../runtime-library-members.md)  
   
- **Zestaw:** Biblioteka środowiska uruchomieniowego Visual Basic (w pliku Microsoft. VisualBasic. dll)  
+ **Zestaw:** Biblioteka środowiska uruchomieniowego Visual Basic (w Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Zobacz też
 

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - += operator [Visual Basic], appending strings
 - compound assignment statements [Visual Basic]
 ms.assetid: d3e959f4-85d4-4e47-87c4-77b62335a5b3
-ms.openlocfilehash: c2ce384901a9f0207e8279a5a07a88600c875e7f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a3a37798a3ddb480ac5322c4b2d3e9396e739aa6
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372210"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873487"
 ---
 # <a name="-operator-visual-basic"></a>+= — Operator (Visual Basic)
+
 Dodaje wartość wyrażenia liczbowego do wartości zmiennej numerycznej lub właściwości i przypisuje wynik do zmiennej lub właściwości. Można również użyć do łączenia `String` wyrażenia z `String` zmienną lub właściwością i przypisywać wynik do zmiennej lub właściwości.  
   
 ## <a name="syntax"></a>Składnia  
@@ -27,6 +28,7 @@ variableorproperty += expression
 ```  
   
 ## <a name="parts"></a>Części  
+
  `variableorproperty`  
  Wymagany. Dowolna wartość liczbowa lub `String` zmienna lub właściwość.  
   
@@ -34,6 +36,7 @@ variableorproperty += expression
  Wymagany. Wszystkie wartości liczbowe lub `String` wyrażenia.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Element po lewej stronie `+=` operatora może być prostą zmienną skalarną, właściwością lub elementem tablicy. Zmienna lub właściwość nie może być [tylko do odczytu](../modifiers/readonly.md).  
   
  `+=`Operator dodaje wartość po prawej stronie do zmiennej lub właściwości po lewej stronie, a następnie przypisuje wynik do zmiennej lub właściwości po jej lewej stronie. `+=`Operatora można także użyć do łączenia `String` wyrażenia po prawej stronie ze `String` zmienną lub właściwości po lewej stronie, a następnie przypisywać wynik do zmiennej lub właściwości po lewej stronie.  
@@ -46,9 +49,11 @@ variableorproperty += expression
  Jeśli dozwolone jest semantyka ograniczająca, `+=` operator niejawnie wykonuje szereg konwersji ciągów i liczb, identycznych z tymi wykonywanymi przez `+` operatora. Aby uzyskać szczegółowe informacje na temat tych konwersji, zobacz [+ operator](addition-operator.md).  
   
 ## <a name="overloading"></a>Przeciążenie  
+
  `+`Operator może być *przeciążony*, co oznacza, że Klasa lub struktura może przedefiniować jej zachowanie, gdy operand ma typ tej klasy lub struktury. Przeciążanie `+` operatora ma wpływ na zachowanie `+=` operatora. Jeśli kod korzysta z `+=` klasy lub struktury, która przeciążania `+` , należy poznać jej ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa operatora, `+=` Aby połączyć wartość jednej zmiennej z inną. Pierwsza część używa `+=` ze zmiennymi liczbowymi, aby dodać jedną wartość do innej. Druga część używa `+=` ze `String` zmiennymi do łączenia jednej wartości z inną. W obu przypadkach wynik jest przypisywany do pierwszej zmiennej.  
   
  [!code-vb[VbVbalrOperators#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#7)]  

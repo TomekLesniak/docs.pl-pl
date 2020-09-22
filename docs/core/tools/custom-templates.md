@@ -3,12 +3,12 @@ title: Szablony niestandardowe dla nowego dotnet
 description: Dowiedz się więcej na temat szablonów niestandardowych dla dowolnego typu projektu lub plików platformy .NET.
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 1d2e5ffcb0b279f1686855834c2357827a4dc7d5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 55091ef9bb9f7a2aa24f585c94aa2a47960b1829
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538098"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874724"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Szablony niestandardowe dla nowego dotnet
 
@@ -63,6 +63,8 @@ Pliki generowane przez szablon można modyfikować na podstawie logiki i ustawie
 | `identity`        | ciąg        | Unikatowa nazwa tego szablonu. |
 | `name`            | ciąg        | Nazwa szablonu, który użytkownicy powinni zobaczyć. |
 | `shortName`       | ciąg        | Domyślna nazwa skrótu służąca do wybierania szablonu, który ma zastosowanie do środowisk, w których nazwa szablonu jest określona przez użytkownika, a nie wybierana za pośrednictwem graficznego interfejsu użytkownika. Na przykład krótka nazwa jest przydatna w przypadku korzystania z szablonów z wiersza polecenia z poleceniami CLI. |
+| `sourceName`       | ciąg        | Nazwa w drzewie źródłowym, która ma zostać zamieniona na nazwę określaną przez użytkownika. Aparat szablonów sprawdzi każde wystąpienie `sourceName` wymienione w pliku konfiguracji i zastąpi je w nazwach plików i zawartości pliku. Wartość, która ma zostać zastąpiona, może zostać podaną przy użyciu `-n` `--name` opcji lub podczas uruchamiania szablonu. Jeśli nazwa nie zostanie określona, używany jest bieżący katalog.|
+| `preferNameDirectory`       | boolean        | Wskazuje, czy należy utworzyć katalog dla szablonu, jeśli określono nazwę, ale katalog wyjściowy nie jest ustawiony (zamiast tworzyć zawartość bezpośrednio w bieżącym katalogu). Wartość domyślna to false.|
 
 Pełny schemat *template.jsw* pliku znajduje się w [magazynie schematów JSON](http://json.schemastore.org/template). Aby uzyskać więcej informacji na temat *template.jsw* pliku, zobacz stronę [typu "dotnet tworzenia szablonów wiki](https://github.com/dotnet/templating/wiki)".
 
@@ -251,7 +253,7 @@ Po zainstalowaniu szablonu Użyj szablonu, wykonując `dotnet new <TEMPLATE>` po
 dotnet new <TEMPLATE>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Tworzenie szablonu niestandardowego dla nowego dotnet (samouczek)](../tutorials/cli-templates-create-item-template.md)
 - [Witryna typu wiki repozytorium usługi GitHub/tworzenia szablonów](https://github.com/dotnet/templating/wiki)

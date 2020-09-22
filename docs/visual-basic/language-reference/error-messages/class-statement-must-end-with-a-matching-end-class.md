@@ -7,15 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30481
 ms.assetid: 583f3029-bc3a-4e06-866f-92dbecc46f19
-ms.openlocfilehash: 01c231f577d21028e9ef92f37c7ac5f7f1fe2aa3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d67f0e71dbdbf97420ec5b5ba4b6f06acfba1bd9
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84415391"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874617"
 ---
 # <a name="class-statement-must-end-with-a-matching-end-class"></a>Instrukcja „Class” musi być zakończona odpowiadającą jej instrukcją „End Class”
-`Class`służy do inicjowania `Class` bloku; w związku z tym może wystąpić tylko na początku bloku, z odpowiadającą instrukcją `End Class` kończącą blok. Istnieje instrukcja nadmiarowa `Class` lub nie zakończono `Class` blokady przy użyciu `End Class` .  
+
+`Class` służy do inicjowania `Class` bloku; w związku z tym może wystąpić tylko na początku bloku, z odpowiadającą instrukcją `End Class` kończącą blok. Istnieje instrukcja nadmiarowa `Class` lub nie zakończono `Class` blokady przy użyciu `End Class` .  
   
  **Identyfikator błędu:** BC30481  
   

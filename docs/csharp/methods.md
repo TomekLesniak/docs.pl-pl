@@ -4,12 +4,12 @@ description: Przegląd metod, parametrów metody i wartości zwracanych metody
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 879c553f8df560a3e2f3dccdbbf0d7e8a05c50cd
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 520aeed85ee00127c2bd3eee681b980d05f46d05
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495541"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874702"
 ---
 # <a name="methods-in-c"></a>Metody w (C#)
 
@@ -121,13 +121,14 @@ Przekazywanie parametru typu odwołania umożliwia zmianę wartości samego odwo
 
 Czasami wymaganie podania dokładnej liczby argumentów do metody jest restrykcyjne. Za pomocą `params` słowa kluczowego, aby wskazać, że parametr jest tablicą parametrów, można wywołać metodę o zmiennej liczbie argumentów. Parametr oznaczony `params` słowem kluczowym musi być typem tablicowym i musi być ostatnim parametrem na liście parametrów metody.
 
-Obiekt wywołujący może następnie wywołać metodę na jeden z trzech sposobów:
+Obiekt wywołujący może następnie wywołać metodę na jeden z czterech sposobów:
 
 - Przekazując tablicę odpowiedniego typu, która zawiera żądaną liczbę elementów.
 - Przekazując do metody rozdzieloną przecinkami listę pojedynczych argumentów odpowiedniego typu.
+- Przez przekazanie `null` .
 - Nie dostarczając argumentu do tablicy parametrów.
 
-W poniższym przykładzie zdefiniowano metodę o nazwie `GetVowels` , która zwraca wszystkie samogłosy z tablicy parametrów. `Main`Metoda ilustruje wszystkie trzy sposoby wywoływania metody. Obiekty wywołujące nie muszą podawać żadnych argumentów dla parametrów, które zawierają `params` modyfikator. W takim przypadku parametr ma wartość `null` .
+W poniższym przykładzie zdefiniowano metodę o nazwie `GetVowels` , która zwraca wszystkie samogłosy z tablicy parametrów. `Main`Metoda ilustruje wszystkie cztery sposoby wywoływania metody. Obiekty wywołujące nie muszą podawać żadnych argumentów dla parametrów, które zawierają `params` modyfikator. W takim przypadku parametr jest pustą tablicą.
 
 [!code-csharp[csSnippets.Methods#75](~/samples/snippets/csharp/concepts/methods/params75.cs#75)]
 
@@ -282,7 +283,7 @@ Zwracany typ iteratora może mieć wartość <xref:System.Collections.IEnumerabl
 
 Aby uzyskać więcej informacji, zobacz [Iteratory](programming-guide/concepts/iterators.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Modyfikatory dostępu](language-reference/keywords/access-modifiers.md)
 - [Klasy statyczne i statyczni członkowie klas](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)

@@ -1,16 +1,16 @@
 ---
 description: operator delegata — odwołanie w C#
 title: operator delegata — odwołanie w C#
-ms.date: 07/18/2019
+ms.date: 09/22/2020
 helpviewer_keywords:
 - delegate [C#]
 - anonymous method [C#]
-ms.openlocfilehash: 1dfaaf40c0f5a19534adef3be7e3c917bc95c4a8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6c087d9bdb2f526cf7d94c3a0f2c1a929b0343ef
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89122254"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874913"
 ---
 # <a name="delegate-operator-c-reference"></a>Delegate — operator (odwołanie w C#)
 
@@ -30,6 +30,12 @@ Gdy używasz `delegate` operatora, możesz pominąć listę parametrów. W takim
 [!code-csharp-interactive[no parameter list](snippets/shared/DelegateOperator.cs#WithoutParameterList)]
 
 Jest to jedyna funkcja metod anonimowych, które nie są obsługiwane przez wyrażenia lambda. We wszystkich innych przypadkach wyrażenie lambda jest preferowanym sposobem pisania kodu śródwierszowego.
+
+Począwszy od języka C# 9,0, można użyć [odrzucania](../../discards.md) , aby określić dwa lub więcej parametrów wejściowych metody anonimowej, które nie są używane przez metodę:
+
+:::code language="csharp" source="snippets/shared/DelegateOperator.cs" id="SnippetDiscards" :::
+
+W celu zapewnienia zgodności z poprzednimi wersjami, jeśli tylko jeden parametr ma `_` `_` nazwę, jest traktowany jako nazwa tego parametru w metodzie anonimowej.
 
 Możesz również użyć `delegate` słowa kluczowego, aby zadeklarować [typ delegata](../builtin-types/reference-types.md#the-delegate-type).
 

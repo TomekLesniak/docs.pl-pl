@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
-ms.openlocfilehash: de0d825c7eec603f3ad1e43b1e4aaa0cc78fd1db
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8fc173182d062c80ffde15b1e7210644d37f8f66
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408513"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875115"
 ---
 # <a name="type-typename-has-no-constructors"></a>Typ „\<typename>” nie ma konstruktorów
+
 Typ nie obsługuje wywołania do `Sub New()` . Jedną z możliwych przyczyn jest uszkodzony kompilator lub plik binarny.  
   
  **Identyfikator błędu:** BC30251  

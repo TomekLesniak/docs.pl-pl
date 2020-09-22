@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40041
 ms.assetid: 634132c2-5646-44aa-98c6-f773e2e63882
-ms.openlocfilehash: eacf5036ebc6fc31dfa0e8de39c4fb574c9072b3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 369516fb12b24981eaecfe467bf421dec279aa01
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84386961"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875092"
 ---
 # <a name="type-typename-is-not-cls-compliant"></a>Typ „\<typename>” jest niezgodny ze specyfikacją CLS
+
 Zmienna, właściwość lub return funkcji jest zadeklarowana z typem danych, który jest niezgodny ze specyfikacją CLS.  
   
  Aby aplikacja była zgodna z [niezależnością od języka i składnikami niezależnymi od języka](../../../standard/language-independence-and-language-independent-components.md) (CLS), musi używać tylko typów zgodnych ze specyfikacją CLS.  

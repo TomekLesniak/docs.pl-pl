@@ -7,14 +7,15 @@ helpviewer_keywords:
 - Continue statement [Visual Basic]
 - loops, transferring to next iteration
 ms.assetid: 3ad00103-358b-4af3-a3a8-1b9ea0e995d3
-ms.openlocfilehash: fd604b281a590073a5e76398788d7648cadd145c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cf73ea1b3d402609c9966980dcab9ddd9bc096c2
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84382097"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874969"
 ---
 # <a name="continue-statement-visual-basic"></a>Continue — Instrukcja (Visual Basic)
+
 Natychmiast przenosi kontrolę do następnej iteracji pętli.  
   
 ## <a name="syntax"></a>Składnia  
@@ -24,6 +25,7 @@ Continue { Do | For | While }
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Można przenieść z wewnątrz `Do` , `For` lub `While` do następnej iteracji pętli. Kontrolka natychmiast przechodzi do testu warunku pętli, który jest równoznaczny z transferem do `For` instrukcji or lub `While` do `Do` instrukcji or, `Loop` która zawiera `Until` `While` klauzulę OR.  
   
  Można użyć `Continue` w dowolnej lokalizacji w pętli, która umożliwia transfery. Reguły zezwalające na transfer kontroli są takie same jak w przypadku [instrukcji goto](goto-statement.md).  
@@ -35,6 +37,7 @@ Continue { Do | For | While }
  Jeśli istnieją zagnieżdżone pętle różnych typów, na przykład `Do` Pętla w `For` pętli, można przejść do następnej iteracji jednej pętli, używając `Continue Do` lub `Continue For` .  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu używa instrukcji, `Continue While` Aby przejść do następnej kolumny tablicy, Jeśli dzielnik ma wartość zero. `Continue While`Znajduje się wewnątrz `For` pętli. Przesyła do `While col < lastcol` instrukcji, która jest następną iteracją wewnętrznej `While` pętli, która zawiera `For` pętlę.  
   
  [!code-vb[VbVbalrStatements#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#14)]  

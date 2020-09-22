@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30594
 ms.assetid: 5b9fceb4-ab11-41bb-ad3b-6f1a9da8ae7e
-ms.openlocfilehash: fc163c1069aa6f41766664e0fa5f5a9c34a1f73d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d519463e036de215143efad5be3745484ac17d82
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409572"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874294"
 ---
 # <a name="events-of-shared-withevents-variables-cannot-be-handled-by-non-shared-methods"></a>Zdarzenia zmiennych WithEvents nie mogą być obsługiwane przez metody nieudostępnione
+
 Zmienna zadeklarowana z `Shared` modyfikatorem jest zmienną udostępnioną. Zmienna współdzielona identyfikuje dokładnie jedną lokalizację magazynu. Zmienna zadeklarowana z `WithEvents` modyfikatorem modyfikującym, że typ, do którego należy zmienna, obsługuje zestaw zdarzeń zgłaszanych przez zmienną. Gdy wartość jest przypisana do zmiennej, właściwość utworzona przez `WithEvents` deklarację odłączy wszelkie istniejące procedury obsługi zdarzeń i przechwytuje nowy program obsługi zdarzeń za pośrednictwem `Add` metody.  
   
  **Identyfikator błędu:** BC30594  

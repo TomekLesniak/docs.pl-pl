@@ -7,28 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC40029
 ms.assetid: 178452f3-5575-4da0-9d6c-53bcddb6a338
-ms.openlocfilehash: 24a0866544cc3cd058672d18c6a7670b0b1bb489
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a482d14094a3fa86b56ca84af46c45e6093416c5
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584217"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874631"
 ---
-# <a name="classname-is-not-cls-compliant-because-the-interface-interfacename-it-implements-is-not-cls-compliant"></a>"\<nazwa_klasy >' nie jest zgodny ze specyfikacją CLS, ponieważ interfejs"\<interfacename > "go implementuje, jest niezgodny ze specyfikacją CLS
-Klasy lub interfejsu, jest oznaczana `<CLSCompliant(True)>` po pochodzi od klasy lub typu, który jest oznaczony jako implementuje `<CLSCompliant(False)>` lub nie jest oznaczona.  
+# <a name="classname-is-not-cls-compliant-because-the-interface-interfacename-it-implements-is-not-cls-compliant"></a>Element „\<classname>” jest niezgodny ze specyfikacją CLS, ponieważ interfejs „\<interfacename>”, który implementuje, jest niezgodny ze specyfikacją CLS
+
+Klasa lub interfejs jest oznaczony jako, `<CLSCompliant(True)>` gdy pochodzi z lub implementuje typ, który jest oznaczony jako `<CLSCompliant(False)>` lub nie jest oznaczony.  
   
- Dla klasy lub interfejsu, aby zachować zgodność z [niezależność od języka i składniki niezależne od języka](../../../standard/language-independence-and-language-independent-components.md) (CLS), jej hierarchii dziedziczenia całego muszą być zgodne. Oznacza to, że każdy typ, po którym dziedziczy, bezpośrednio lub pośrednio, muszą być zgodne. Podobnie jeśli klasa implementuje jeden lub więcej interfejsów, ich wszystkie muszą być zgodne w całej swojej hierarchii dziedziczenia.  
+ Aby Klasa lub interfejs były zgodne z [niezależnością od języka i składnikami niezależnymi od języka](../../../standard/language-independence-and-language-independent-components.md) (CLS), jego cała Hierarchia dziedziczenia musi być zgodna. Oznacza to, że każdy typ, z którego dziedziczy, bezpośrednio lub pośrednio, musi być zgodny. Podobnie, jeśli klasa implementuje jeden lub więcej interfejsów, muszą one być zgodne w całej hierarchii dziedziczenia.  
   
- Po zastosowaniu <xref:System.CLSCompliantAttribute> elementu programistycznego, ten atrybut zostanie ustawiony `isCompliant` albo parametr `True` lub `False` aby wskazać, zgodności ani niezgodności. Nie istnieje domyślny dla tego parametru. Ponadto należy podać wartość.  
+ Po zastosowaniu <xref:System.CLSCompliantAttribute> do elementu programistycznego, należy ustawić `isCompliant` parametr atrybutu na wartość `True` lub `False` w celu wskazania zgodności lub niezgodności. Dla tego parametru nie ma wartości domyślnej i należy podać wartość.  
   
- Jeśli nie zastosujesz <xref:System.CLSCompliantAttribute> elementu, jest uznawane za niezgodne.  
+ Jeśli nie zastosujesz <xref:System.CLSCompliantAttribute> do elementu, jest on uznawany za niezgodny.  
   
- Domyślnie ta wiadomość jest ostrzeżenie. Uzyskać informacje o ukrywaniu ostrzeżenia lub traktowanie ostrzeżeń jako błędy, zobacz [Konfigurowanie ostrzeżeń w języku Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Domyślnie ten komunikat jest ostrzeżeniem. Aby uzyskać informacje na temat ukrywania ostrzeżeń lub leczenia ostrzeżeń jako błędy, zobacz [Konfigurowanie ostrzeżeń w Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **Identyfikator błędu:** BC40029  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
   
-- Jeśli wymagana jest zgodność ze specyfikacją CLS, należy zdefiniować tego typu w ramach różnych dziedziczenia hierarchii lub implementacji systemu.  
+- Jeśli wymagana jest zgodność ze specyfikacją CLS, należy zdefiniować ten typ w ramach innej hierarchii dziedziczenia lub schematu implementacji.  
   
-- Jeśli potrzebujesz, że tego typu pozostaną w jego bieżącej hierarchii lub implementacji schemat dziedziczenia, Usuń <xref:System.CLSCompliantAttribute> z jego definicji lub oznaczyć go jako `<CLSCompliant(False)>`.  
+- Jeśli potrzebujesz, aby ten typ pozostał w bieżącej hierarchii dziedziczenia lub schemat implementacji, Usuń <xref:System.CLSCompliantAttribute> z jego definicji lub Oznacz jako `<CLSCompliant(False)>` .  

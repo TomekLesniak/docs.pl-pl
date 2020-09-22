@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30205
 ms.assetid: 53c7f825-a737-4b76-a1fa-f67745b8bd40
-ms.openlocfilehash: 169f01b02df377ba6cc21ffad53c36f5d4537140
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9141400afc651629df381e0a655e2d7b9da2e45d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409650"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874420"
 ---
 # <a name="end-of-statement-expected"></a>Oczekiwano końca instrukcji
+
 Instrukcja ma składnię kompletną, ale dodatkowy element programistyczny następuje po elemencie, który uzupełnia instrukcję. Terminator wiersza jest wymagany na końcu każdej instrukcji.
   
  Terminator wiersza dzieli znaki pliku źródłowego Visual Basic na wiersze. Przykłady terminatorów wiersza to znak powrotu karetki Unicode (&HD), znak wysuwu wiersza Unicode (&HA) i znak powrotu karetki Unicode, po którym następuje znak wysuwu wiersza w formacie Unicode. Aby uzyskać więcej informacji na temat terminatorów wierszy, zobacz [Specyfikacja języka Visual Basic](~/_vblang/spec/lexical-grammar.md#line-terminators).

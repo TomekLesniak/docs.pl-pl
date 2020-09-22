@@ -1,5 +1,5 @@
 ---
-title: "Nie można utworzyć zestawu o silnej nazwie z pliku kluczy „<filename>': <error>"
+title: 'Nie można utworzyć zestawu o silnej nazwie z pliku kluczy „<filename>": <error>'
 ms.date: 07/20/2015
 f1_keywords:
 - vbc31026
@@ -7,22 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC31026
 ms.assetid: 5dd09785-bc10-4ae7-ba24-b795057aca31
-ms.openlocfilehash: df6de037cf7cd5b41ed417a8ebfa6f9586e4ebb4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db89f4cbaa7008e59f3698eec0f2603cfc06439e
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764182"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873577"
 ---
-# <a name="unable-to-create-strong-named-assembly-from-key-file-filename-error"></a>Nie można utworzyć zestawu o silnej nazwie z pliku kluczy '\<nazwa pliku >': \<błąd >
-Nie można utworzyć zestawu z silną nazwą z określonego pliku klucza.  
+# <a name="unable-to-create-strong-named-assembly-from-key-file-filename-error"></a>Nie można utworzyć zestawu o silnej nazwie z pliku kluczy „\<filename>": \<error>
+
+Nie można utworzyć zestawu o silnej nazwie z określonego pliku klucza.  
   
  **Identyfikator błędu:** BC31026  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
   
-1. Sprawdź, czy został określony poprawny plik klucza i że nie jest zablokowany przez inną aplikację.  
+1. Sprawdź, czy określono prawidłowy plik klucza i czy nie jest on zablokowany przez inną aplikację.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [SN.exe (narzędzie silnych nazw)](../../../framework/tools/sn-exe-strong-name-tool.md))
+- [Sn.exe (Narzędzie silnej nazwy)](../../../framework/tools/sn-exe-strong-name-tool.md))

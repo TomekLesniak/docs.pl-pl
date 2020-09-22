@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36810
 ms.assetid: 9323b5d2-ba14-4e49-91f1-9ad647162144
-ms.openlocfilehash: 919c6873ba63addb776d756a58c44a3fe3f0ec3d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 17c31301e28c757954e72ba103254f038905671f
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409634"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874355"
 ---
 # <a name="errors-occurred-while-compiling-the-xml-schemas-in-the-project"></a>Wystąpiły błędy podczas kompilowania schematów XML w projekcie
+
 Wystąpiły błędy podczas kompilowania schematów XML w projekcie. Z tego powodu funkcja IntelliSense języka XML jest niedostępna.  
   
  Wystąpił błąd w schemacie definicji schematu XML (XSD) zawartym w projekcie. Ten błąd występuje po dodaniu pliku schematu XSD (XSD), który powoduje konflikt z istniejącym zestawem schematu XSD dla projektu.  

@@ -7,17 +7,19 @@ helpviewer_keywords:
 - Private keyword [Visual Basic]
 - Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
-ms.openlocfilehash: 524f03e77e075bef08a1b41b563985de41baacb6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 59f1c1666ce38923a2861244fb377007cd0fa992
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404813"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874980"
 ---
 # <a name="private-visual-basic"></a>Private (Visual Basic)
+
 Określa, że co najmniej jeden zadeklarowany element programistyczny jest dostępny tylko w obrębie ich kontekstu deklaracji, łącznie z zawartymi w zawartych typach.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli element programistyczny reprezentuje funkcje własnościowe lub zawiera dane poufne, zazwyczaj trzeba ograniczyć dostęp do niego tak samo jak to możliwe. Maksymalne ograniczenie można osiągnąć, zezwalając tylko na moduł, klasę lub strukturę, która je definiuje, aby uzyskać do niej dostęp. Aby ograniczyć dostęp do elementu w ten sposób, można go zadeklarować za pomocą `Private` .  
 
 > [!NOTE]
@@ -61,9 +63,9 @@ Określa, że co najmniej jeden zadeklarowany element programistyczny jest dost�
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Społeczeństwo](public.md)
+- [Publiczne](public.md)
 - [Chronione](protected.md)
-- [Osoby](friend.md)
+- [Friend](friend.md)
 - [Prywatne chronione](./private-protected.md)
 - [Protected Friend](./protected-friend.md)
 - [Poziomy dostępu w Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)

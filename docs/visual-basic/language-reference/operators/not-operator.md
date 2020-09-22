@@ -14,14 +14,15 @@ helpviewer_keywords:
 - logical negation
 - operators [Visual Basic], negation
 ms.assetid: 8f2ea83c-d2ed-480a-a474-3042a1cad9b5
-ms.openlocfilehash: 56cdeb80a217dbce15921eddd6a43d8d1b049376
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7d0beea16a2ac00be090c6a241f9790a0ba33390
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401462"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874795"
 ---
 # <a name="not-operator-visual-basic"></a>Not — Operator (Visual Basic)
+
 Wykonuje logiczne negację `Boolean` wyrażenia lub bitową negację wyrażenia liczbowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -31,6 +32,7 @@ result = Not expression
 ```  
   
 ## <a name="parts"></a>Części  
+
  `result`  
  Wymagany. `Boolean`Wyrażenie dowolne lub liczbowe.  
   
@@ -38,6 +40,7 @@ result = Not expression
  Wymagany. `Boolean`Wyrażenie dowolne lub liczbowe.  
   
 ## <a name="remarks"></a>Uwagi  
+
  W przypadku `Boolean` wyrażeń w poniższej tabeli pokazano, jak określono `result` .  
   
 |Jeśli `expression` jest|Wartość `result` jest|  
@@ -56,12 +59,15 @@ result = Not expression
 > Ponieważ operatory logiczne i bitowe mają niższy priorytet niż inne operatory arytmetyczne i relacyjne, każda operacja bitowa powinna być ujęta w nawiasy, aby zapewnić dokładne wykonanie.  
   
 ## <a name="data-types"></a>Typy danych  
+
  W przypadku negacji logicznej, typ danych wyniku to `Boolean` . W przypadku negacji bitowej dane wynikowe są takie same, jak w przypadku `expression` . Jeśli jednak wyrażenie ma wartość `Decimal` , wynik jest `Long` .  
   
 ## <a name="overloading"></a>Przeciążenie  
+
  `Not`Operator może być *przeciążony*, co oznacza, że Klasa lub struktura może zmienić jego zachowanie, gdy jego operand ma typ tej klasy lub struktury. Jeśli Twój kod używa tego operatora dla takiej klasy lub struktury, pamiętaj o tym, aby zrozumieć jego ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa `Not` operatora do wykonywania logiczne negacji dla `Boolean` wyrażenia. Wynik jest `Boolean` wartością, która reprezentuje odwracanie wartości wyrażenia.  
   
  [!code-vb[VbVbalrOperators#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#33)]  
@@ -69,6 +75,7 @@ result = Not expression
  Powyższy przykład daje wyniki `False` odpowiednio i `True` .  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa `Not` operatora do wykonywania logicznego negacji poszczególnych bitów wyrażenia liczbowego. Bit w wzorcu wyniku jest ustawiony na odwrotność odpowiedniego bitu we wzorcu operandu, łącznie z bitem znaku.  
   
  [!code-vb[VbVbalrOperators#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#34)]  

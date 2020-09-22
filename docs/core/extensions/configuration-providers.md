@@ -4,12 +4,12 @@ description: Dowiedz się, w jaki sposób interfejs API dostawcy konfiguracji je
 author: IEvangelist
 ms.author: dapine
 ms.date: 09/16/2020
-ms.openlocfilehash: fe90ba9aee08ec9c1316335a5b3fd8dd6e90a811
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: d5333e8e52feb7d28e2149a988dc7ce53a926a50
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720844"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874750"
 ---
 # <a name="configuration-providers-in-net"></a>Dostawcy konfiguracji w programie .NET
 
@@ -203,8 +203,9 @@ set CustomPrefix_TransientFaultHandlingOptions__AutoRetryDelay=00:00:21
 dotnet run
 ```
 
-Konfiguracja domyślna ładuje zmienne środowiskowe i argumenty wiersza polecenia poprzedzone prefiksem `DOTNET_` . `DOTNET_`Prefiks jest używany przez platformę .NET do konfiguracji hosta i aplikacji, ale nie do konfiguracji użytkownika.
-<!-- For more information on host and app configuration, see .NET Generic Host. -->
+Konfiguracja domyślna ładuje zmienne środowiskowe i argumenty wiersza polecenia poprzedzone prefiksem `DOTNET_` . `DOTNET_`Prefiks jest używany przez platformę .NET do [konfiguracji](generic-host.md#app-configuration) [hosta](generic-host.md#host-configuration) i aplikacji, ale nie do konfiguracji użytkownika.
+
+Aby uzyskać więcej informacji na temat konfiguracji hosta i aplikacji, zobacz [host ogólny programu .NET](generic-host.md).
 
 Na [Azure App Service](https://azure.microsoft.com/services/app-service)wybierz pozycję **nowe ustawienie aplikacji** na stronie **Konfiguracja > ustawienia** . Ustawienia aplikacji Azure App Service są następujące:
 
@@ -313,4 +314,5 @@ W powyższym kodzie program <xref:Microsoft.Extensions.Configuration.MemoryConfi
 ## <a name="see-also"></a>Zobacz też
 
 - [Konfiguracja w programie .NET](configuration.md)
+- [Host ogólny .NET](generic-host.md)
 - [Implementowanie niestandardowego dostawcy konfiguracji](custom-configuration-provider.md)

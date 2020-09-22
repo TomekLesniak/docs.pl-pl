@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40028
 ms.assetid: dfa1f6f9-bb88-44ad-b85f-149144363d41
-ms.openlocfilehash: edbcadf271c4ccafc11e5b64eb103a0290976179
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a4617d3550cfb48f32a19a4c70809141173c6147
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413017"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875129"
 ---
 # <a name="type-of-parameter-parametername-is-not-cls-compliant"></a>Typ parametru „\<parametername>” jest niezgodny ze specyfikacją CLS
+
 Procedura jest oznaczona jako `<CLSCompliant(True)>` , ale deklaruje parametr z typem, który jest oznaczony jako `<CLSCompliant(False)>` , nie jest oznaczona lub nie kwalifikuje się, ponieważ jest typem niezgodnym.  
   
  Aby procedura była zgodna z [niezależnością od języka i składnikami niezależnymi od języka](../../../standard/language-independence-and-language-independent-components.md) (CLS), musi używać tylko typów zgodnych ze specyfikacją CLS. Dotyczy to typów parametrów, typu zwracanego i typów wszystkich zmiennych lokalnych.  

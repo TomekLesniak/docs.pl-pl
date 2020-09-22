@@ -13,14 +13,15 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - bitwise comparison [Visual Basic]
 ms.assetid: 2ea711f3-439a-4c7c-9e3a-1ffe3b0d6046
-ms.openlocfilehash: c2b135d27e14816c011a4f70793543aa835d960a
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b4d6d08cca2907befeab2e31c6804b69849c9e38
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84371950"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874860"
 ---
 # <a name="and-operator-visual-basic"></a>And — Operator (Visual Basic)
+
 Wykonuje logiczną koniunkcję w dwóch `Boolean` wyrażeniach lub bitowego połączenia dwóch wyrażeń liczbowych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -30,6 +31,7 @@ result = expression1 And expression2
 ```  
   
 ## <a name="parts"></a>Części  
+
  `result`  
  Wymagany. `Boolean`Wyrażenie dowolne lub liczbowe. W przypadku porównania logicznego `result` jest koniunkcja logiczna dwóch `Boolean` wartości. W przypadku operacji bitowych `result` jest wartością liczbową reprezentującą bitowe połączenia dwóch wzorców bitowych liczb.  
   
@@ -40,6 +42,7 @@ result = expression1 And expression2
  Wymagany. `Boolean`Wyrażenie dowolne lub liczbowe.  
   
 ## <a name="remarks"></a>Uwagi  
+
  W przypadku porównania wartości logicznych `result` jest `True` if i tylko wtedy, gdy oba `expression1` i są `expression2` oceniane do `True` . W poniższej tabeli przedstawiono sposób `result` określania.  
   
 |Jeśli `expression1` jest|I `expression2` jest|Wartość `result` jest|  
@@ -65,6 +68,7 @@ result = expression1 And expression2
 > Ponieważ operatory logiczne i bitowe mają niższy priorytet niż inne operatory arytmetyczne i relacyjne, każda operacja bitowa powinna być ujęta w nawiasy, aby zapewnić dokładne wyniki.  
   
 ## <a name="data-types"></a>Typy danych  
+
  Jeśli operandy składają się z jednego `Boolean` wyrażenia i jednego wyrażenia liczbowego, Visual Basic konwertuje `Boolean` wyrażenie na wartość liczbową (– 1 dla `True` i 0 dla `False` ) i wykonuje operację bitową.  
   
  W przypadku porównania wartości logicznych typem danych wyniku jest `Boolean` . W przypadku porównania bitowego typem danych wynik jest typ liczbowy odpowiedni dla typów danych `expression1` i `expression2` . Zobacz tabelę "porównania relacyjne i bitowe" w [typach danych wyników operatora](data-types-of-operator-results.md).  
@@ -73,6 +77,7 @@ result = expression1 And expression2
 > `And`Operator może być *przeciążony*, co oznacza, że Klasa lub struktura może przedefiniować jej zachowanie, gdy operand ma typ tej klasy lub struktury. Jeśli Twój kod używa tego operatora dla takiej klasy lub struktury, pamiętaj o tym, aby zrozumieć jego ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa `And` operatora do wykonywania logicznego połączenia dwóch wyrażeń. Wynik jest `Boolean` wartością, która reprezentuje, czy oba wyrażenia są `True` .  
   
  [!code-vb[VbVbalrOperators#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#22)]  
@@ -80,6 +85,7 @@ result = expression1 And expression2
  Powyższy przykład daje wyniki `True` odpowiednio i `False` .  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa `And` operatora do wykonywania logicznego połączenia na poszczególnych bitach dwóch wyrażeń liczbowych. Bit w wzorcu wyniku jest ustawiany, jeśli odpowiadające im bity w operandach są ustawione na 1.  
   
  [!code-vb[VbVbalrOperators#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#23)]  

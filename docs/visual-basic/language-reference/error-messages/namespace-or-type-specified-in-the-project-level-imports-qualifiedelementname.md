@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: 0ee235252d69e6f77ce53b048f45e73d0969e864
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e0be18509d0d4b1b4f5eadfadce7a0785e9309f0
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409455"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871508"
 ---
 # <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Przestrzeń nazw lub typ określony w elemencie Imports „\<qualifiedelementname>” na poziomie projektu nie zawierają żadnego członka publicznego lub nie można go odnaleźć
+
 Przestrzeń nazw lub typ określony w elemencie Imports "" na poziomie projektu \<qualifiedelementname> nie zawiera żadnej publicznej składowej lub nie można jej znaleźć. Upewnij się, że przestrzeń nazw lub typ jest zdefiniowany i zawiera co najmniej jedną publiczną składową. Upewnij się, że Nazwa aliasu nie zawiera innych aliasów.  
   
  Właściwość Import projektu określa element zawierający, którego nie można odnaleźć lub nie definiuje żadnych `Public` elementów członkowskich.  
@@ -41,6 +42,6 @@ Przestrzeń nazw lub typ określony w elemencie Imports "" na poziomie projektu 
 
 - [Strona odwołań, Projektant projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)
-- [Społeczeństwo](../modifiers/public.md)
+- [Publiczne](../modifiers/public.md)
 - [Przestrzenie nazw w Visual Basic](../../programming-guide/program-structure/namespaces.md)
 - [Odwołania do elementów zadeklarowanych](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

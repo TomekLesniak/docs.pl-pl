@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36629
 ms.assetid: 0a1e2dbc-d9a4-433d-9306-c5540782b81d
-ms.openlocfilehash: 52e5391fbcf30a4dada4d64a0e810c900ea85806
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f2d3bcdaccfd993da1eebf81ae961f35eb22b294
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409390"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873674"
 ---
 # <a name="nullable-type-inference-is-not-supported-in-this-context"></a>Wnioskowanie typu zerowalnego nie jest obsługiwane w tym kontekście
+
 Typy wartości i struktury mogą być deklarowane jako dopuszczające wartość null.  
   
 ```vb  

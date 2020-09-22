@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC41999
 ms.assetid: ae48c738-dff8-4c0f-8931-bbb70b2c8b03
-ms.openlocfilehash: 4d0f9aac795f683cf58210ea38b3783e451ccfc3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: fced95fe24d42d4af2118706bcaf3337429fea91
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402865"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873995"
 ---
 # <a name="implicit-conversion-from-typename1-to-typename2-in-copying-the-value-of-byref-parameter-parametername-back-to-the-matching-argument"></a>Niejawna konwersja z „\<typename1>” na „\<typename2>” podczas kopiowania wartości parametru „ByRef” „\<parametername>” z powrotem do pasującego argumentu.
+
 Procedura jest wywoływana z argumentem [ByRef](../modifiers/byref.md) innego typu niż odpowiedni parametr.  
   
  W przypadku przekazania argumentu `ByRef` Visual Basic czasami kopiuje wartość argumentu do zmiennej lokalnej w procedurze, zamiast przekazywać odwołanie. W takim przypadku, gdy procedura zwraca, Visual Basic należy skopiować wartość zmiennej lokalnej z powrotem do argumentu w kodzie wywołującym.  

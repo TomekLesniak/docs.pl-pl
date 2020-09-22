@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30722
 ms.assetid: 6f452da8-6ef8-41fd-9ab8-6f681cf7d433
-ms.openlocfilehash: d0600c7acdb138e363dcbece392bf4b8122cb250
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 8de57715c770cdd66f34977d0be12552e635670d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191928"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874344"
 ---
 # <a name="evaluation-of-expression-or-statement-timed-out"></a>Szacowanie wyrażenia lub instrukcji przekroczyło limit czasu
+
 Obliczanie wyrażenia nie zostało ukończone w odpowiednim czasie.  
   
  **Identyfikator błędu:** BC30722  
@@ -25,6 +26,6 @@ Obliczanie wyrażenia nie zostało ukończone w odpowiednim czasie.
   
 2. Uprość wyrażenie, aby było możliwe jego wykonanie.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Debugowanie w programie Visual Studio](/visualstudio/debugger/debugger-feature-tour)
+- [Debugowanie w Visual Studio](/visualstudio/debugger/debugger-feature-tour)

@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30961
 ms.assetid: 8be5aa0d-d236-4ac3-aa9c-5044f9f6562b
-ms.openlocfilehash: 25008f05979638e050b74fc659fdc0a6d13b3c31
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4b74fdc5584fd296d4bbe36034920d4b467dbb7a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406589"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875070"
 ---
 # <a name="value-of-type-typename1-cannot-be-converted-to-typename2-multiple-file-references"></a>Wartości typu „\<typename1>” nie może zostać przekonwertowana na „\<typename2>” (Odwołania do wielu plików)
+
 \<typename1>Nie można przekonwertować wartości typu "" na " \<typename2> ". Niezgodność typów może być spowodowana mieszaniem odwołania do pliku " \<filepath1> " w projekcie " \<projectname1> " z odwołaniem do pliku " \<filepath2> " w projekcie " \<projectname2> ". Jeśli oba zestawy są identyczne, spróbuj zastąpić te odwołania, aby oba odwołania były z tej samej lokalizacji.  
   
  W sytuacji, gdy projekt składa więcej niż jedno odwołanie do zestawu, kompilator nie może zagwarantować, że jeden typ może być konwertowany na inny.  

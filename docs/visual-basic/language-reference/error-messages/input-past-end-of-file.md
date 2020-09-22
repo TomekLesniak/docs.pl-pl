@@ -4,23 +4,24 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID62
 ms.assetid: 65292704-6e7d-4622-9f50-eb655a59b016
-ms.openlocfilehash: 5da14c7a28ecdcd023fc6439cb6ed64444c1183b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c0cb0373fb0652e9600ac8651661708414561aca
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013793"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873966"
 ---
 # <a name="input-past-end-of-file"></a>Próba zapisu poza końcem pliku
-Albo `Input` instrukcji jest odczytu z pliku, który jest pusty lub w którym wszystkie dane są używane, lub możesz użyć `EOF` funkcji przy użyciu pliku otwarty dostęp do danych binarnych.  
+
+`Input`Instrukcja odczytuje z pliku, który jest pusty lub jeden, w którym są używane wszystkie dane, albo użyto `EOF` funkcji z plikiem otwartym do dostępu do danych binarnych.  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
   
-1. Użyj `EOF` funkcji tuż przed `Input` instrukcję, aby wykrywać koniec pliku.  
+1. Użyj `EOF` funkcji bezpośrednio przed `Input` instrukcją w celu wykrycia końca pliku.  
   
-2. Jeśli plik jest otwarty, aby uzyskać dostęp do danych binarnych, należy użyć `Seek` i `Loc`.  
+2. Jeśli plik jest otwarty do dostępu do danych binarnych, użyj `Seek` i `Loc` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:Microsoft.VisualBasic.FileSystem.Input%2A>
 - <xref:Microsoft.VisualBasic.FileSystem.EOF%2A>

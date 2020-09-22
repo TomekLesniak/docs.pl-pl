@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30203
 ms.assetid: c05162ee-55d0-4d7f-84bb-e7758d4c5081
-ms.openlocfilehash: e33450e921f1859c97edf1fbf123a0a95267767f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a2f86704c0734ef462a92883e2368cba57349058
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402891"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874022"
 ---
 # <a name="identifier-expected"></a>Oczekiwano identyfikatora
+
 Element programistyczny, który nie jest rozpoznawalną zadeklarowaną nazwą elementu, występuje, gdy kontekst wymaga nazwy elementu. Jedną z możliwych przyczyn jest to, że atrybut został określony w innym miejscu niż na początku instrukcji.  
   
  **Identyfikator błędu:** BC30203  

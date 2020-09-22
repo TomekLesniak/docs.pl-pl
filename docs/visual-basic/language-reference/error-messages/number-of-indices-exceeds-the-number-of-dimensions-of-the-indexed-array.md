@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30106
 ms.assetid: 2c5363e1-62c2-4f5a-b675-c7337aeb363d
-ms.openlocfilehash: 4d8ffd2c4ad0a386053ced0f98503969723c7168
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3fc2744bb471eabd9345994b28fbef3ebc76f00d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409377"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873667"
 ---
 # <a name="number-of-indices-exceeds-the-number-of-dimensions-of-the-indexed-array"></a>Liczba indeksów przekracza liczbę wymiarów tablicy indeksowanej
+
 Liczba indeksów używanych w celu uzyskania dostępu do elementu tablicy musi być dokładnie taka sama jak ranga tablicy, czyli liczba dla nich wymiarów.  
   
  **Identyfikator błędu:** BC30106  

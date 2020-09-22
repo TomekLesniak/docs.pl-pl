@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30148
 ms.assetid: 4426e8fc-cb39-4eb8-ba95-503cd32fcc89
-ms.openlocfilehash: 2b9d2568fb64e4af72733ad1f3dee58aaee650e5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e336494ad78e9835f62ad54bb4dbf91a63172a25
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402982"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874109"
 ---
 # <a name="first-statement-of-this-sub-new-must-be-a-call-to-mybasenew-or-myclassnew-no-accessible-constructor-without-parameters"></a>Pierwsza instrukcja tego elementu „Sub New” musi być wywołaniem do „MyBase.New” lub „MyClass.New” (Nie jest dostępny żaden konstruktor bez parametrów)
+
 Pierwsza instrukcja tego elementu "Sub New" musi być wywołaniem elementu "MyBase. New" lub "MyClass. New", ponieważ klasa bazowa " \<basename> " z " \<derivedname> " nie ma dostępnego elementu "Sub New", który można wywołać bez argumentów.  
   
  W klasie pochodnej każdy Konstruktor musi wywołać konstruktora klasy bazowej ( `MyBase.New` ). Jeśli klasa bazowa ma konstruktora bez parametrów, które są dostępne dla klas pochodnych, `MyBase.New` może być wywoływana automatycznie. Jeśli nie, Konstruktor klasy bazowej musi być wywołany z parametrami i nie można wykonać tej operacji automatycznie. W takim przypadku pierwsza instrukcja każdego pochodnego konstruktora klasy musi wywołać sparametryzowany Konstruktor w klasie bazowej lub wywołać innego konstruktora w klasie pochodnej, która tworzy wywołanie konstruktora klasy bazowej.  

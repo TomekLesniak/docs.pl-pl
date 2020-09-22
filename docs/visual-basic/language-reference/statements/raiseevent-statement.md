@@ -10,14 +10,15 @@ helpviewer_keywords:
 - RaiseEvent statement [Visual Basic]
 - event handlers, connecting events to
 ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
-ms.openlocfilehash: 46b93c060a12d82b34dafdf3aa4ea677df6f54cd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 13d86aad8b68391f7effe2f6637adc68d8a3b59a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404294"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872021"
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent — Instrukcja
+
 Wyzwala zdarzenie zadeklarowane na poziomie modułu w klasie, formularzu lub dokumencie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -27,6 +28,7 @@ RaiseEvent eventname[( argumentlist )]
 ```  
   
 ## <a name="parts"></a>Części  
+
  `eventname`  
  Wymagany. Nazwa zdarzenia do wyzwolenia.  
   
@@ -34,6 +36,7 @@ RaiseEvent eventname[( argumentlist )]
  Opcjonalny. Rozdzielana przecinkami lista zmiennych, tablic lub wyrażeń. `argumentlist`Argument musi być ujęty w nawiasy. Jeśli nie ma żadnych argumentów, nawiasy muszą być pominięte.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wymagana `eventname` jest nazwą zdarzenia zadeklarowanego w module. Następuje Visual Basic konwencji nazewnictwa zmiennych.  
   
  Jeśli zdarzenie nie zostało zadeklarowane w module, w którym jest wywoływany, wystąpi błąd. Poniższy fragment kodu ilustruje deklarację zdarzenia i procedurę, w której zdarzenie jest zgłaszane.  
@@ -51,6 +54,7 @@ RaiseEvent eventname[( argumentlist )]
 > Domyślne zachowanie zdarzeń można zmienić przez zdefiniowanie niestandardowego zdarzenia. W przypadku zdarzeń niestandardowych `RaiseEvent` instrukcja wywołuje `RaiseEvent` metodę dostępu zdarzenia. Aby uzyskać więcej informacji na temat zdarzeń niestandardowych, zobacz [instrukcja zdarzenia](event-statement.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa zdarzeń do zliczenia w dół sekund od 10 do 0. Kod ilustruje kilka metod, właściwości i instrukcji związanych ze zdarzeniami, w tym `RaiseEvent` instrukcji.  
   
  Klasa, która wywołuje zdarzenie, jest źródłem zdarzenia, a metody, które przetwarzają zdarzenie, są procedurami obsługi zdarzeń. Źródło zdarzenia może mieć wiele programów obsługi dla generowanych zdarzeń. Gdy Klasa zgłasza zdarzenie, to zdarzenie jest zgłaszane dla każdej klasy, która została wybrana do obsługi zdarzeń dla tego wystąpienia obiektu.  
@@ -66,6 +70,7 @@ RaiseEvent eventname[( argumentlist )]
  [!code-vb[VbVbalrEvents#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Przykład  
+
  Dodaj następujący kod do kodu dla `Form1` . Zastąp wszystkie zduplikowane procedury, takie jak `Form_Load` lub `Button_Click` .  
   
  [!code-vb[VbVbalrEvents#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#15)]  
