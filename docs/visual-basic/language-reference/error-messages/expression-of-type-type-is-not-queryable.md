@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36593
 ms.assetid: 6f1f5860-bf97-4885-9ebb-bc87d028095c
-ms.openlocfilehash: e61b4dac109f714b5cf25226d1029237ca77032d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 78b47601bf0a013d079f638f6dac27511e01aec4
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409481"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874212"
 ---
 # <a name="expression-of-type-type-is-not-queryable"></a>Wyrażenie \<type> nie umożliwia zadawania zapytań
+
 Wyrażenie typu \<type> nie jest queryable. Upewnij się, że nie brakuje importu odwołania do zestawu i/lub przestrzeni nazw dla dostawcy LINQ.  
   
  Typy Queryable są zdefiniowane w <xref:System.Linq> <xref:System.Data.Linq> <xref:System.Xml.Linq> przestrzeniach nazw, i. Aby wykonać zapytania LINQ, należy zaimportować co najmniej jedną z tych przestrzeni nazw.  

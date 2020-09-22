@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrTextFieldParser_BufferExceededMaxSize
 ms.assetid: 36565e82-8458-4a08-86af-d9a7a2c32937
-ms.openlocfilehash: c0dd1872eedc0d17c65f82d40f2ab618cf3ed842
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 51a029366bfb467bb2a4e2bc70f942161a1480e3
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363114"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873560"
 ---
 # <a name="textfieldparser-is-unable-to-complete-the-read-operation-because-maximum-buffer-size-has-been-exceeded"></a>TextFieldParser nie może wykonać operacji odczytu, ponieważ został przekroczony maksymalny rozmiar buforu
+
 Nie można ukończyć operacji, ponieważ został przekroczony maksymalny rozmiar buforu (10 000 000 bajtów).  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - operator >>
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
-ms.openlocfilehash: 10b07da22b8b43d6a966fa7c334ac6a0ef4b430d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 00f43bc9bae6d550ed175906777ac273fc8e9a23
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406374"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873341"
 ---
 # <a name="-operator-visual-basic"></a>Operator >> (Visual Basic)
+
 Wykonuje arytmetyczne przesunięcie w prawo na wzorcu bitowym.  
   
 ## <a name="syntax"></a>Składnia  
@@ -27,6 +28,7 @@ result = pattern >> amount
 ```  
   
 ## <a name="parts"></a>Części  
+
  `result`  
  Wymagany. Całkowita wartość liczbowa. Wynik przesunięcia wzorca bitowego. Typ danych jest taki sam jak w przypadku programu `pattern` .  
   
@@ -37,13 +39,14 @@ result = pattern >> amount
  Wymagany. Wyrażenie liczbowe. Liczba bitów do przesunięcia wzorca bitowego. Typ danych musi być `Integer` lub być rozszerzony do `Integer` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Przesunięcia arytmetyczne nie są cykliczne, co oznacza, że bity przesunięte poza jeden koniec wyniku nie są ponownie wprowadzane na drugim końcu. W wyniku przesunięcia w prawo, bity przesunięte poza skrajną prawą pozycję bitową są odrzucane, a w lewej (znak) bit jest propagowany do pozycji bitowych opuszczone. Oznacza to, że jeśli `pattern` ma wartość ujemną, pozycje opuszczone są ustawione na jeden; w przeciwnym razie są ustawione na wartość zero.  
   
  Należy zauważyć, że typy danych `Byte` ,, `UShort` `UInteger` i `ULong` są niepodpisane, dlatego nie istnieje bit znaku do propagowania. Jeśli `pattern` jest dowolnego typu bez znaku, pozycje opuszczone są zawsze ustawione na zero.  
   
  Aby zapobiec przesunięciu przez więcej bitów niż w wyniku, Visual Basic maskuje wartość `amount` z maską rozmiaru odpowiadającą typowi danych `pattern` . Wartość binarna i z tych wartości są używane na potrzeby przesunięcia. Maski rozmiaru są następujące:  
   
-|Typ danych`pattern`|Maska rozmiaru (dziesiętna)|Maska rozmiaru (szesnastkowo)|  
+|Typ danych `pattern`|Maska rozmiaru (dziesiętna)|Maska rozmiaru (szesnastkowo)|  
 |----------------------------|---------------------------|-------------------------------|  
 |`SByte`, `Byte`|7|&H00000007|  
 |`Short`, `UShort`|15|&H0000000F|  
@@ -55,24 +58,26 @@ result = pattern >> amount
  Przesunięcia arytmetyczne nigdy nie generują wyjątków przepełnienia.  
   
 ## <a name="overloading"></a>Przeciążenie  
+
  `>>`Operator może być *przeciążony*, co oznacza, że Klasa lub struktura może przedefiniować jej zachowanie, gdy operand ma typ tej klasy lub struktury. Jeśli Twój kod używa tego operatora dla takiej klasy lub struktury, pamiętaj o tym, aby zrozumieć jego ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa operatora, `>>` Aby wykonać arytmetyczne przesunięcie w prawo na wartościach całkowitych. Wynik zawsze ma ten sam typ danych co w przypadku przesunięcia wyrażenia.  
   
  [!code-vb[VbVbalrOperators#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#14)]  
   
  W powyższym przykładzie przedstawiono następujące wyniki:  
   
-- `result1`jest 2560 (0000 1010 0000 0000).  
+- `result1` jest 2560 (0000 1010 0000 0000).  
   
-- `result2`jest 160 (0000 0000 1010 0000).  
+- `result2` jest 160 (0000 0000 1010 0000).  
   
-- `result3`jest 2 (0000 0000 0000 0010).  
+- `result3` jest 2 (0000 0000 0000 0010).  
   
-- `result4`jest 640 (0000 0010 1000 0000).  
+- `result4` jest 640 (0000 0010 1000 0000).  
   
-- `result5`jest 0 (przesunięte 15 miejsc w prawo).  
+- `result5` jest 0 (przesunięte 15 miejsc w prawo).  
   
  Wartość przesunięcia dla `result4` jest obliczana jako 18 i 15, która jest równa 2.  
   
@@ -82,9 +87,9 @@ result = pattern >> amount
   
  W powyższym przykładzie przedstawiono następujące wyniki:  
   
-- `negresult1`is-512 (1111 1110 0000 0000).  
+- `negresult1` is-512 (1111 1110 0000 0000).  
   
-- `negresult2`is-1 (jest propagowany bit znaku).  
+- `negresult2` is-1 (jest propagowany bit znaku).  
   
 ## <a name="see-also"></a>Zobacz też
 

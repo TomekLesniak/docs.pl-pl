@@ -5,17 +5,19 @@ helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-ms.openlocfilehash: 8fb245309170d4b9adf7458bb3bcfde3e28c0538
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 006a4b67094b258d440c2046fe3ae02274e1c337
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84359836"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869897"
 ---
 # <a name="queries-visual-basic"></a>Zapytania (Visual Basic)
+
 Visual Basic umożliwia tworzenie wyrażeń programu Query-Integrated Language (LINQ) w kodzie.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Aggregate, klauzula](aggregate-clause.md)  
  Opisuje `Aggregate` klauzulę, która stosuje co najmniej jedną funkcję agregującą do kolekcji.  
   
@@ -37,7 +39,7 @@ Visual Basic umożliwia tworzenie wyrażeń programu Query-Integrated Language (
  [Klauzula Let](let-clause.md)  
  Opisuje `Let` klauzulę, która oblicza wartość i przypisuje ją do nowej zmiennej w zapytaniu.  
   
- [Order By, klauzula](order-by-clause.md)  
+ [Klauzula Order by](order-by-clause.md)  
  Opisuje `Order By` klauzulę, która określa kolejność sortowania kolumn w zapytaniu.  
   
  [SELECT — klauzula](select-clause.md)  

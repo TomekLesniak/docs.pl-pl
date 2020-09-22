@@ -21,14 +21,15 @@ helpviewer_keywords:
 - degrees
 - arccosine function
 ms.assetid: 63e449d8-9444-44fb-8db1-6d9cf346e2aa
-ms.openlocfilehash: 611f3d8faf2148b8a983467d9ace4fd6c18b30e6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f84b1ef18ef2a924bb2e47da85ecbb51f982873a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373895"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869020"
 ---
 # <a name="derived-math-functions-visual-basic"></a>Pochodne funkcje matematyczne (Visual Basic)
+
 W poniższej tabeli przedstawiono funkcje matematyczne inne niż wewnętrzne, które mogą pochodzić z wewnętrznych funkcji matematycznych <xref:System.Math?displayProperty=nameWithType> obiektu. Możesz uzyskać dostęp do wewnętrznych funkcji matematycznych przez dodanie `Imports System.Math` do pliku lub projektu.  
   
 |Funkcja|Pochodne równoważne|  

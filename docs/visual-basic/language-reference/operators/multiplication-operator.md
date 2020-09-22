@@ -10,14 +10,15 @@ helpviewer_keywords:
 - multiplication operator [Visual Basic], syntax
 - math operators [Visual Basic]
 ms.assetid: 2b210382-99da-4195-89ba-b1d06f5e89ad
-ms.openlocfilehash: f1a7653fb3006ab3c9736ec168a8c5ea028f4763
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7038fef4258d190b726a851b26f2a2840ff3c0ea
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409326"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873364"
 ---
 # <a name="-operator-visual-basic"></a>* Operator (Visual Basic)
+
 Mnoży dwie liczby.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,12 +35,15 @@ number1 * number2
 |`number2`|Wymagany. Dowolne wyrażenie liczbowe.|  
   
 ## <a name="result"></a>Wynik  
+
  Wynikiem jest iloczyn `number1` i `number2` .  
   
 ## <a name="supported-types"></a>Obsługiwane typy  
+
  Wszystkie typy liczbowe, w tym typy niepodpisane i zmiennoprzecinkowe oraz `Decimal` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Typ danych wyniku zależy od typów operandów. W poniższej tabeli przedstawiono sposób określania typu danych wyniku.  
   
 |Typy danych operandu|Typ danych wynikowych|  
@@ -52,9 +56,11 @@ number1 * number2
  Jeśli wyrażenie zwróci wartość [Nothing](../nothing.md), jest traktowane jako zero.  
   
 ## <a name="overloading"></a>Przeciążenie  
+
  `*`Operator może być *przeciążony*, co oznacza, że Klasa lub struktura może przedefiniować jej zachowanie, gdy operand ma typ tej klasy lub struktury. Jeśli Twój kod używa tego operatora dla takiej klasy lub struktury, pamiętaj o tym, aby zrozumieć jego ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład używa `*` operatora, aby pomnożyć dwie liczby. Wynikiem jest iloczyn dwóch operandów.  
   
  [!code-vb[VbVbalrOperators#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#4)]  

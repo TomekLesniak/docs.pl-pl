@@ -10,14 +10,15 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-ms.openlocfilehash: 49d4c36805b64d7232a94e818256723a0437b6ef
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b3524769567a56a87184bf916a3e5ccb1fd4fa1c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404190"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871748"
 ---
 # <a name="set-statement-visual-basic"></a>Set — Instrukcja (Visual Basic)
+
 Deklaruje `Set` procedurę właściwości używaną do przypisywania wartości do właściwości.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ End Set
 ```  
   
 ## <a name="parts"></a>Części  
+
  `attributelist`  
  Opcjonalny. Zobacz [listę atrybutów](attribute-list.md).  
   
@@ -37,9 +39,9 @@ End Set
   
 - [Chronione](../modifiers/protected.md)  
   
-- [Osoby](../modifiers/friend.md)  
+- [Friend](../modifiers/friend.md)  
   
-- [Użytek](../modifiers/private.md)  
+- [Prywatne](../modifiers/private.md)  
   
 - `Protected Friend`  
   
@@ -58,6 +60,7 @@ End Set
  Wymagany. Kończy definicję `Set` procedury właściwości.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Każda właściwość musi mieć `Set` procedurę właściwości, chyba że właściwość jest oznaczona `ReadOnly` . `Set`Procedura służy do ustawiania wartości właściwości.  
   
  Visual Basic automatycznie wywołuje procedurę właściwości, `Set` gdy instrukcja przypisania dostarcza wartość, która ma być przechowywana we właściwości.  
@@ -78,11 +81,12 @@ End Set
   
 - **Powrót z procedury właściwości.** Gdy `Set` procedura wraca do kodu wywołującego, wykonanie jest kontynuowane po instrukcji, która dostarczyła wartość do zapisania.  
   
-     `Set`procedury właściwości mogą być zwracane przy użyciu [instrukcji return](return-statement.md) lub [instrukcji Exit](exit-statement.md).  
+     `Set` procedury właściwości mogą być zwracane przy użyciu [instrukcji return](return-statement.md) lub [instrukcji Exit](exit-statement.md).  
   
      `Exit Property`Instrukcje i `Return` powodują natychmiastowe wyjście z procedury właściwości. Dowolna liczba `Exit Property` `Return` instrukcji i może występować w dowolnym miejscu procedury i można mieszać i wypełniać `Exit Property` `Return` instrukcje.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa instrukcji, `Set` Aby ustawić wartość właściwości.  
   
  [!code-vb[VbVbalrStatements#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#55)]  

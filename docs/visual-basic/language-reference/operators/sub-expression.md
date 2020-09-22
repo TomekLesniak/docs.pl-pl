@@ -6,14 +6,15 @@ helpviewer_keywords:
 - Sub Expression [Visual Basic]
 - subroutines [Visual Basic], sub expressions
 ms.assetid: 36b6bfd1-6539-4d8f-a5eb-6541a745ffde
-ms.openlocfilehash: f862730220d0595faecaa915b1eaad2a3cdc0053
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e564fa3f717fc1a9f4e9961d9b3e961912a4d56b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406318"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873329"
 ---
 # <a name="sub-expression-visual-basic"></a>Sub — Wyrażenie (Visual Basic)
+
 Deklaruje parametry i kod, który definiuje podprocedure wyrażenie lambda.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,9 +36,11 @@ End Sub
 |`statements`|Wymagany. Lista instrukcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  *Wyrażenie lambda* jest podprocedurą, która nie ma nazwy i która wykonuje co najmniej jedną instrukcję. Wyrażenia lambda można użyć w dowolnym miejscu, w którym można użyć typu delegata, z wyjątkiem argumentu `RemoveHandler` . Aby uzyskać więcej informacji na temat delegatów i użycie wyrażeń lambda z delegatami, zobacz [instrukcja Delegate](../statements/delegate-statement.md) i [Swobodna konwersja delegata](../../programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
   
 ## <a name="lambda-expression-syntax"></a>Składnia wyrażenia lambda  
+
  Składnia wyrażenia lambda jest podobna do standardowej procedury podrzędnej. Różnice są następujące:  
   
 - Wyrażenie lambda nie ma nazwy.  
@@ -53,6 +56,7 @@ End Sub
 - Parametry ogólne są niedozwolone w wyrażeniach lambda.  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się przykład wyrażenia lambda, które zapisuje wartość w konsoli. Przykład pokazuje składnię jednowierszową i wieloliniową wyrażenia lambda dla procedury podrzędnej. Aby uzyskać więcej przykładów, zobacz [lambda Expressions](../../programming-guide/language-features/procedures/lambda-expressions.md).  
   
  [!code-vb[VbVbalrLambdas#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#15)]  

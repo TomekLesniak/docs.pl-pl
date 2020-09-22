@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC32124
 ms.assetid: 55aa8b2a-9ce3-4620-a710-2f9b0feb6143
-ms.openlocfilehash: 273ea592e73be5d76a4ffef077e691014a108347
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2e3f50d08fdf78b5ca9bf9e3399b00ed0328320f
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402930"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874031"
 ---
 # <a name="generic-parameters-used-as-optional-parameter-types-must-be-class-constrained"></a>Parametry ogólne używane jako typy parametrów opcjonalnych muszą być ograniczone przez klasę
+
 Procedura jest zadeklarowana z opcjonalnym parametrem, który używa parametru typu, który nie jest ograniczony do typu referencyjnego.  
   
  Należy zawsze podać wartość domyślną dla każdego opcjonalnego parametru. Jeśli parametr jest typu referencyjnego, wartość opcjonalna musi być `Nothing` , która jest prawidłową wartością dla dowolnego typu odwołania. Jeśli jednak parametr ma typ wartości, ten typ musi być typem danych podstawowych wstępnie zdefiniowanym przez Visual Basic. Wynika to z faktu, że złożony typ wartości, taki jak struktura zdefiniowana przez użytkownika, nie ma prawidłowej wartości domyślnej.  

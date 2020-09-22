@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36563
 ms.assetid: 3ca8b873-e98d-419b-95f2-d75bd2a9eb6c
-ms.openlocfilehash: 8e5e94bbde016ec7342a9933905977dac85fb035
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 45df056b71e3536dabc9f7725f623e818c10075d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397249"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873773"
 ---
 # <a name="method-does-not-have-a-signature-compatible-with-the-delegate"></a>Metoda nie ma podpisu zgodnego z obiektem delegowanym
+
 Istnieje niezgodność między podpisami metody i delegatem, którego próbujesz użyć. `Delegate`Instrukcja definiuje typy parametrów i zwracane typy klasy delegatów. Każda procedura, która ma zgodne parametry typów zgodnych i typów zwracanych, może być użyta do utworzenia wystąpienia tego typu delegata.  
   
  **Identyfikator błędu**: BC36563  

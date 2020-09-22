@@ -1,7 +1,7 @@
 ---
 title: Wyrażenia lambda — odwołanie w C#
 description: Informacje o wyrażeniach lambda. Istnieją wyrażenia lambda, które mają wyrażenie jako treść, lub instrukcji lambda, które mają blok instrukcji jako treść.
-ms.date: 07/29/2019
+ms.date: 09/22/2020
 helpviewer_keywords:
 - lambda expressions [C#]
 - outer variables [C#]
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 7f80c1a5d9136609935b25b5cce3792e80b9ac94
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: afabca0b4ba4d5f7c6f4a7ba8aa97301456b0941
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90536447"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871714"
 ---
 # <a name="lambda-expressions-c-reference"></a>Wyrażenia lambda (odwołanie w C#)
 
@@ -50,33 +50,17 @@ W przypadku użycia składni opartej na metodzie do wywołania <xref:System.Linq
   
 ## <a name="expression-lambdas"></a>Wyrażenia lambda
 
-Wyrażenie lambda z wyrażeniem po prawej stronie `=>` operatora jest nazywane *wyrażeniem lambda*. Wyrażenia lambda są szeroko używane w konstruowaniu [drzew wyrażeń](../../programming-guide/concepts/expression-trees/index.md). Lambda wyrażenia zwraca wynik wyrażenia i ma następującą podstawową formę:
+Wyrażenie lambda z wyrażeniem po prawej stronie `=>` operatora jest nazywane *wyrażeniem lambda*. Lambda wyrażenia zwraca wynik wyrażenia i ma następującą podstawową formę:
 
 ```csharp
 (input-parameters) => expression
 ```
 
-Nawiasy są opcjonalne tylko wtedy, gdy lambda ma jeden parametr wejściowy; w przeciwnym razie są wymagane.
-
-Określanie braku parametrów wejściowych za pomocą pustych nawiasów:  
-
-[!code-csharp[zero parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ZeroParameters)]
-
-Jeśli liczba parametrów wejściowych wynosi dwa lub więcej, te parametry są rozdzielane przecinkami i umieszczone w nawiasach:
-
-[!code-csharp[two parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#TwoParameters)]
-
-Czasami w kompilatorze nie można wywnioskować typów wejściowych. Możesz określić typy jawnie, jak pokazano w następującym przykładzie:
-
-[!code-csharp[explicitly typed parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ExplicitlyTypedParameters)]
-
-Typy parametrów wejściowych muszą być jawne lub niejawne; w przeciwnym razie wystąpi błąd kompilatora [CS0748](../../misc/cs0748.md) .
-
-Treść wyrażenia lambda może składać się z wywołania metody. Jeśli jednak tworzysz drzewa wyrażeń, które są oceniane poza kontekstem środowiska uruchomieniowego języka wspólnego .NET, na przykład w SQL Server, nie należy używać wywołań metod w wyrażeniach lambda. Te metody nie będą zrozumiałe poza kontekstem środowiska uruchomieniowego języka wspólnego platformy .NET.
+Treść wyrażenia lambda może składać się z wywołania metody. Jeśli jednak tworzysz [drzewa wyrażeń](../../programming-guide/concepts/expression-trees/index.md) , które są oceniane poza kontekstem środowiska uruchomieniowego języka wspólnego .NET, na przykład w SQL Server, nie należy używać wywołań metod w wyrażeniach lambda. Te metody nie będą zrozumiałe poza kontekstem środowiska uruchomieniowego języka wspólnego platformy .NET.
 
 ## <a name="statement-lambdas"></a>Instrukcja lambda
 
-Lambda instrukcji jest podobna do lambdy wyrażenia, z tym że instrukcje są ujęte w nawiasy klamrowe:
+Instrukcja lambda przypomina wyrażenie lambda, z tą różnicą, że jego instrukcje są ujęte w nawiasy klamrowe:
 
 ```csharp  
 (input-parameters) => { <sequence-of-statements> }
@@ -84,10 +68,39 @@ Lambda instrukcji jest podobna do lambdy wyrażenia, z tym że instrukcje są uj
 
 Treść lambdy instrukcji może składać się z dowolnej liczby instrukcji, jednak w praktyce jest ich zwykle nie więcej niż dwie lub trzy.
 
-[!code-csharp-interactive[statement lambda](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#StatementLambda)]
+:::code interactive="try-dotnet" source="snippets/lambda-expressions/ExpressionAndStatementLambdas.cs" id="SnippetStatementLambda":::
 
 Instrukcji lambda nie można używać do tworzenia drzew wyrażeń.
-  
+
+## <a name="input-parameters-of-a-lambda-expression"></a>Parametry wejściowe wyrażenia lambda
+
+Parametry wejściowe wyrażenia lambda są umieszczane w nawiasach. Określanie braku parametrów wejściowych za pomocą pustych nawiasów:  
+
+[!code-csharp[zero parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ZeroParameters)]
+
+Jeśli wyrażenie lambda ma tylko jeden parametr wejściowy, nawiasy są opcjonalne:
+
+[!code-csharp[one parameter](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#OneParameter)]
+
+Dwa lub więcej parametrów wejściowych są rozdzielone przecinkami:
+
+[!code-csharp[two parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#TwoParameters)]
+
+Czasami kompilator nie może wywnioskować typów parametrów wejściowych. Możesz określić typy jawnie, jak pokazano w następującym przykładzie:
+
+[!code-csharp[explicitly typed parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ExplicitlyTypedParameters)]
+
+Typy parametrów wejściowych muszą być jawne lub niejawne; w przeciwnym razie wystąpi błąd kompilatora [CS0748](../../misc/cs0748.md) .
+
+Począwszy od języka C# 9,0, można użyć [odrzucania](../../discards.md) , aby określić dwa lub więcej parametrów wejściowych wyrażenia lambda, które nie są używane w wyrażeniu:
+
+:::code language="csharp" source="snippets/lambda-expressions/ExpressionAndStatementLambdas.cs" id="SnippetDiscards":::
+
+Parametry lambda Discard mogą być przydatne w przypadku używania wyrażenia lambda do [zapewnienia obsługi zdarzeń](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+
+> [!NOTE]
+> W celu zapewnienia zgodności z poprzednimi wersjami, jeśli tylko jeden parametr wejściowy ma nazwę `_` , a następnie, w wyrażeniu lambda, `_` jest traktowany jako nazwa tego parametru.
+
 ## <a name="async-lambdas"></a>Asynchroniczne wyrażenia lambda
 
 Możesz łatwo tworzyć wyrażenia lambda i instrukcje, które zawierają asynchroniczne przetwarzanie przy użyciu słów kluczowych [Async](../keywords/async.md) i [await](await.md) . Na przykład poniższy Windows Forms przykład zawiera procedurę obsługi zdarzeń, która wywołuje i czeka na metodę asynchroniczną `ExampleMethodAsync` .
@@ -222,11 +235,9 @@ Do zakresu zmiennych w wyrażeniach lambda są stosowane następujące reguły:
 
 Aby uzyskać więcej informacji, zobacz sekcję [wyrażenia funkcji anonimowej](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="featured-book-chapter"></a>Polecany rozdział książki
+Aby uzyskać więcej informacji na temat odrzucania lambda parametrów, zobacz [uwagi dotyczące propozycji funkcji](~/_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md)
 
-[Delegaty, zdarzenia i wyrażenia lambda](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) w [języku c# 3,0 Cookbook, wydanie trzecie: więcej niż 250 rozwiązań dla programistów 3,0 c#](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))  
-  
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

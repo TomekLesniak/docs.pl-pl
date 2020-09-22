@@ -18,14 +18,15 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-ms.openlocfilehash: a136a517c7ce865b4e1d349270696e2704d61592
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0575a67f89f734c79259036fe48d6e2671c2d1ed
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404670"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873265"
 ---
 # <a name="event-statement"></a>Event — Instrukcja
+
 Deklaruje zdarzenie zdefiniowane przez użytkownika.  
   
 ## <a name="syntax"></a>Składnia  
@@ -65,7 +66,7 @@ End Event
 |`eventname`|Wymagany. Nazwa zdarzenia; obowiązują standardowe konwencje nazewnictwa zmiennych.|  
 |`parameterlist`|Opcjonalny. Lista zmiennych lokalnych, które reprezentują parametry tego zdarzenia. Należy ująć [listę parametrów](parameter-list.md) w nawiasach.|  
 |`Implements`|Opcjonalny. Wskazuje, że to zdarzenie implementuje zdarzenie interfejsu.|  
-|`implementslist`|Wymagane, jeśli `Implements` jest podany. Lista `Sub` implementowanych procedur. Wiele procedur jest oddzielonych przecinkami:<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Każda `implementedprocedure` z nich ma następującą składnię i części:<br /><br /> `interface`.`definedname`<br /><br /> -   `interface`Potrzeb. Nazwa interfejsu, który jest implementowany przez tę procedurę zawierającą klasę lub strukturę.<br />-   `Definedname`Potrzeb. Nazwa, przez którą procedura jest zdefiniowana `interface` . Nie musi to być taka sama `name` , jak nazwa używana przez tę procedurę w celu zaimplementowania zdefiniowanej procedury.|  
+|`implementslist`|Wymagane, jeśli `Implements` jest podany. Lista `Sub` implementowanych procedur. Wiele procedur jest oddzielonych przecinkami:<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Każda `implementedprocedure` z nich ma następującą składnię i części:<br /><br /> `interface`.`definedname`<br /><br /> -   `interface` Potrzeb. Nazwa interfejsu, który jest implementowany przez tę procedurę zawierającą klasę lub strukturę.<br />-   `Definedname` Potrzeb. Nazwa, przez którą procedura jest zdefiniowana `interface` . Nie musi to być taka sama `name` , jak nazwa używana przez tę procedurę w celu zaimplementowania zdefiniowanej procedury.|  
 |`Custom`|Wymagany. Zdarzenia zadeklarowane jako `Custom` muszą definiować metody `AddHandler` dostępu Custom, `RemoveHandler` i `RaiseEvent` .|  
 |`delegatename`|Opcjonalny. Nazwa delegata, który określa sygnaturę procedury obsługi zdarzeń.|  
 |`AddHandler`|Wymagany. Deklaruje `AddHandler` metodę dostępu, która określa instrukcje do wykonania po dodaniu programu obsługi zdarzeń, albo jawnie za pomocą `AddHandler` instrukcji lub niejawnie za pomocą `Handles` klauzuli.|  
@@ -80,6 +81,7 @@ End Event
 |`End Event`|Wymagany. Kończy `Event` blok.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Po zadeklarowaniu zdarzenia Użyj `RaiseEvent` instrukcji, aby zgłosić zdarzenie. Typowe zdarzenie może zostać zadeklarowane i zgłoszone, jak pokazano w następujących fragmentach:  
   
  [!code-vb[VbVbalrEvents#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#13)]  
@@ -94,6 +96,7 @@ End Event
  W większości przypadków można użyć pierwszej składni w sekcji Składnia tego tematu do deklarowania zdarzeń. Jednak niektóre scenariusze wymagają większej kontroli nad szczegółowym zachowaniem zdarzenia. Ostatnia składnia w sekcji Składnia tego tematu, która używa `Custom` słowa kluczowego, zapewnia tę kontrolkę, umożliwiając zdefiniowanie zdarzeń niestandardowych. W niestandardowym zdarzeniu należy określić dokładnie to, co się dzieje, gdy kod dodaje lub usuwa procedurę obsługi zdarzeń do lub ze zdarzenia lub gdy kod wywołuje zdarzenie. Aby zapoznać się z przykładami, zobacz [How to: DECLARE Custom Events by zaoszczędzić pamięć](../../programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md) i [instrukcje: deklarowanie zdarzeń niestandardowych w celu uniknięcia blokowania](../../programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa zdarzeń do zliczenia w dół sekund od 10 do 0. Kod ilustruje kilka metod, właściwości i instrukcji związanych z zdarzeniami. Obejmuje to `RaiseEvent` instrukcję.  
   
  Klasa, która wywołuje zdarzenie, jest źródłem zdarzenia, a metody, które przetwarzają zdarzenie, są procedurami obsługi zdarzeń. Źródło zdarzenia może mieć wiele programów obsługi dla generowanych zdarzeń. Gdy Klasa zgłasza zdarzenie, to zdarzenie jest zgłaszane dla każdej klasy, która została wybrana do obsługi zdarzeń dla tego wystąpienia obiektu.  

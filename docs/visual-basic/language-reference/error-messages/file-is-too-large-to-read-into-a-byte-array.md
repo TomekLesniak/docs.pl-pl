@@ -2,14 +2,15 @@
 title: Plik jest za duży, aby odczytać z tablicy bajtów
 ms.date: 07/20/2015
 ms.assetid: 686630a6-a439-46c7-8d7b-34613ae4c5d8
-ms.openlocfilehash: b81fc9332d5f1347404fcdd73bce72b6b09778b9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 89459aaf766a70f69008f847dda7ac6e2a1e41d1
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363127"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874188"
 ---
 # <a name="file-is-too-large-to-read-into-a-byte-array"></a>Plik jest za duży, aby odczytać z tablicy bajtów
+
 Rozmiar pliku, który próbujesz odczytać do tablicy bajtów, przekracza 4 GB. `My.Computer.FileSystem.ReadAllBytes`Metoda nie może odczytać pliku, który przekracza ten rozmiar.  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - operator -=
 - compound assignment statements [Visual Basic]
 ms.assetid: 5ead0c37-ae50-48f7-8435-8e341d81cae1
-ms.openlocfilehash: 4f403cd8a28f8d9d0ba1d24b0792a352a9c961db
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9149d9b350fc05c5e576f9f7800725aeb330e79d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406408"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873305"
 ---
 # <a name="--operator-visual-basic"></a>-= — Operator (Visual Basic)
+
 Odejmuje wartość wyrażenia od wartości zmiennej lub właściwości i przypisuje wynik do zmiennej lub właściwości.  
   
 ## <a name="syntax"></a>Składnia  
@@ -27,6 +28,7 @@ variableorproperty -= expression
 ```  
   
 ## <a name="parts"></a>Części  
+
  `variableorproperty`  
  Wymagany. Dowolna zmienna lub właściwość numeryczna.  
   
@@ -34,14 +36,17 @@ variableorproperty -= expression
  Wymagany. Dowolne wyrażenie liczbowe.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Element po lewej stronie `-=` operatora może być prostą zmienną skalarną, właściwością lub elementem tablicy. Zmienna lub właściwość nie może być [tylko do odczytu](../modifiers/readonly.md).  
   
  `-=`Operator najpierw odejmuje wartość wyrażenia (po prawej stronie operatora) od wartości zmiennej lub właściwości (po lewej stronie operatora), która znajduje się po raz pierwszy. Następnie operator przypisuje wynik tej operacji do zmiennej lub właściwości.  
   
 ## <a name="overloading"></a>Przeciążenie  
+
  [Operator-(Visual Basic)](subtraction-operator.md) może być *przeciążony*, co oznacza, że Klasa lub struktura może przedefiniować jej zachowanie, gdy operand ma typ tej klasy lub struktury. Przeciążanie `-` operatora ma wpływ na zachowanie `-=` operatora. Jeśli kod korzysta z `-=` klasy lub struktury, która przeciążania `-` , należy poznać jej ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa operatora, `-=` aby odjąć jedną `Integer` zmienną od innej i przypisać wynik do ostatniej zmiennej.  
   
  [!code-vb[VbVbalrOperators#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#11)]  

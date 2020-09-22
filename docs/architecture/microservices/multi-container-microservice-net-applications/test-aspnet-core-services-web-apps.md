@@ -2,12 +2,12 @@
 title: Testowanie aplikacji internetowych i usług ASP.NET Core
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Poznaj architekturę testowania ASP.NET Core usług i aplikacji sieci Web w kontenerach.
 ms.date: 08/07/2020
-ms.openlocfilehash: a27b3b8d392c5e1a7d1961307e6de95659cd823e
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: f76f502adf8321c9015cc6cfd0e12214a7576b5c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024605"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872461"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testowanie aplikacji internetowych i usług ASP.NET Core
 
@@ -99,7 +99,7 @@ public class PrimeWebDefaultRequestShould
 }
 ```
 
-#### <a name="additional-resources"></a>Zasoby dodatkowe
+#### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Steve Smith. Kontrolery testowania** (ASP.NET Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
@@ -140,7 +140,7 @@ Testy aplikacji referencyjnych (eShopOnContainers) zostały niedawno rozbudowane
 
 3. **Testy funkcjonalne/integracji aplikacji**, które koncentrują się na integracji mikrousług, z przypadkami testowymi, które wywierają kilka mikrousług. Te testy znajdują się w projekcie **Application. FunctionalTests**.
 
-Test jednostkowy i integracji na mikrousług są zawarte w folderze testowym w każdej mikrousłudze i aplikacji testy obciążenia są zawarte w folderze testowym w folderze rozwiązania, jak pokazano na rysunku 6-25.
+Chociaż testy jednostkowe i integracji są zorganizowane w folderze testowym w ramach projektu mikrousług, testy aplikacji i obciążenia są zarządzane oddzielnie pod folderem głównym, jak pokazano na rysunku 6-25.
 
 ![Zrzut ekranu przedstawiający a wskazujący niektóre projekty testowe w rozwiązaniu.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
 
@@ -196,7 +196,7 @@ docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 
 Jak widać, te pliki tworzące platformę Docker umożliwiają uruchamianie tylko mikrousług Redis, RabbitMQ, SQL Server i MongoDB.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Testowanie integracji jednostek &** na eShopOnContainers \
     <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Unit-and-integration-testing>

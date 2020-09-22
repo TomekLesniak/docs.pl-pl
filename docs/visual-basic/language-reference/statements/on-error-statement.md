@@ -22,14 +22,15 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-ms.openlocfilehash: 0297f7af29faf5a08472fd1d18ca52e9b2fda1af
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7e007d59292fc577c0c8927766423ba6f7896a71
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404411"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873190"
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error — Instrukcja (Visual Basic)
+
 Włącza procedurę obsługi błędów i określa lokalizację procedury w ramach procedury; można również użyć, aby wyłączyć procedurę obsługi błędu. `On Error`Instrukcja jest używana w obsłudze błędów bez struktury i może być używana zamiast strukturalnej obsługi wyjątków. [Strukturalna obsługa wyjątków](../../../standard/exceptions/index.md) jest wbudowana w platformę .NET, jest zwykle wydajniejsza i dlatego jest zalecana w przypadku obsługi błędów środowiska uruchomieniowego w aplikacji.
 
  Bez obsługi błędów lub obsługi wyjątków, wystąpi błąd w czasie wykonywania, który jest krytyczny: wyświetlany jest komunikat o błędzie, a wykonywanie jest zatrzymywane.
@@ -69,9 +70,11 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
 > Procedura obsługi błędu nie jest `Sub` procedurą ani `Function` procedurą. Jest to sekcja kodu oznaczona przez etykietę wiersza lub numer wiersza.
   
 ## <a name="number-property"></a>Number — właściwość
+
  Procedury obsługi błędów są zależne od wartości `Number` właściwości `Err` obiektu, aby określić przyczynę błędu. Procedura powinna testować lub zapisywać odpowiednie wartości właściwości w `Err` obiekcie przed wystąpieniem innego błędu lub przed wykonaniem procedury, która może spowodować wystąpienie błędu. Wartości właściwości w `Err` obiekcie odzwierciedlają tylko ostatni błąd. Komunikat o błędzie skojarzony z `Err.Number` jest zawarty w `Err.Description` .  
   
 ## <a name="throw-statement"></a>Throw — Instrukcja  
+
  Błąd, który jest wywoływany za pomocą `Err.Raise` metody ustawia `Exception` Właściwość na nowo utworzone wystąpienie <xref:System.Exception> klasy. Aby można było obsługiwać wywoływanie wyjątków pochodnych typów wyjątków, `Throw` instrukcja jest obsługiwana w języku. Przyjmuje jeden parametr, który jest wystąpieniem wyjątku, które ma zostać zgłoszone. W poniższym przykładzie pokazano, jak te funkcje mogą być używane z istniejącą obsługą obsługi wyjątków:
 
  [!code-vb[VbVbalrErrorHandling#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#17)]  
@@ -79,16 +82,19 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  Zwróć uwagę, że `On Error GoTo` instrukcja Zalewka wszystkich błędów, niezależnie od klasy wyjątku.
   
 ## <a name="on-error-resume-next"></a>Przy wznowieniu błędu dalej
- `On Error Resume Next`powoduje, że wykonanie instrukcji kontynuuje się bezpośrednio po instrukcji, która spowodowała błąd czasu wykonywania, lub instrukcji zaraz po ostatnim wywołaniu procedury zawierającej `On Error Resume Next` instrukcję. Ta instrukcja umożliwia kontynuowanie wykonywania pomimo błędu czasu wykonywania. Można umieścić procedurę obsługi błędów, w której wystąpił błąd, zamiast przenoszenia kontroli do innej lokalizacji w ramach procedury. `On Error Resume Next`Instrukcja stanie się nieaktywna, gdy wywoływana jest inna procedura, więc należy wykonać `On Error Resume Next` instrukcję w każdej nazwie procedury, jeśli chcesz, aby Wbudowana obsługa błędów w tej procedurze.
+
+ `On Error Resume Next` powoduje, że wykonanie instrukcji kontynuuje się bezpośrednio po instrukcji, która spowodowała błąd czasu wykonywania, lub instrukcji zaraz po ostatnim wywołaniu procedury zawierającej `On Error Resume Next` instrukcję. Ta instrukcja umożliwia kontynuowanie wykonywania pomimo błędu czasu wykonywania. Można umieścić procedurę obsługi błędów, w której wystąpił błąd, zamiast przenoszenia kontroli do innej lokalizacji w ramach procedury. `On Error Resume Next`Instrukcja stanie się nieaktywna, gdy wywoływana jest inna procedura, więc należy wykonać `On Error Resume Next` instrukcję w każdej nazwie procedury, jeśli chcesz, aby Wbudowana obsługa błędów w tej procedurze.
   
 > [!NOTE]
 > `On Error Resume Next`Konstrukcja może być preferowana w `On Error GoTo` przypadku obsługi błędów generowanych podczas uzyskiwania dostępu do innych obiektów. `Err`Po każdej interakcji z obiektem jest usuwana niejednoznaczność informacji o obiekcie, do którego miał dostęp kod. Możesz mieć pewność, który obiekt został umieszczony w kodzie błędu `Err.Number` , a także który obiekt pierwotnie wygenerował błąd (obiekt określony w `Err.Source` ).
 
 ## <a name="on-error-goto-0"></a>W przypadku błędu GoTo 0
- `On Error GoTo 0`wyłącza obsługę błędów w bieżącej procedurze. Nie określa wiersz 0 jako początku kodu obsługi błędu, nawet jeśli procedura zawiera numer 1. Bez `On Error GoTo 0` instrukcji procedura obsługi błędów jest automatycznie wyłączona, gdy procedura zostanie zakończona.
+
+ `On Error GoTo 0` wyłącza obsługę błędów w bieżącej procedurze. Nie określa wiersz 0 jako początku kodu obsługi błędu, nawet jeśli procedura zawiera numer 1. Bez `On Error GoTo 0` instrukcji procedura obsługi błędów jest automatycznie wyłączona, gdy procedura zostanie zakończona.
 
 ## <a name="on-error-goto--1"></a>W przypadku błędu GoTo-1
- `On Error GoTo -1`wyłącza wyjątek w bieżącej procedurze. Nie określa wiersz-1 jako początku kodu obsługi błędu, nawet jeśli procedura zawiera numer wiersza-1. Bez `On Error GoTo -1` instrukcji, wyjątek jest automatycznie wyłączany, gdy procedura zostanie zakończona.
+
+ `On Error GoTo -1` wyłącza wyjątek w bieżącej procedurze. Nie określa wiersz-1 jako początku kodu obsługi błędu, nawet jeśli procedura zawiera numer wiersza-1. Bez `On Error GoTo -1` instrukcji, wyjątek jest automatycznie wyłączany, gdy procedura zostanie zakończona.
 
  Aby zapobiec uruchamianiu kodu obsługi błędów, gdy nie wystąpił błąd, należy umieścić `Exit Sub` `Exit Function` instrukcję,, lub `Exit Property` bezpośrednio przed procedurą obsługi błędów, tak jak w poniższym fragmencie:
 
@@ -97,6 +103,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  W tym miejscu kod obsługi błędu następuje po `Exit Sub` instrukcji i poprzedza `End Sub` instrukcję, aby oddzielić ją od przepływu procedury. Kod obsługi błędów można umieścić w dowolnym miejscu w procedurze.
 
 ## <a name="untrapped-errors"></a>Błędy niezalewkowane
+
  Błędy niezalewkowane w obiektach są zwracane do aplikacji kontrolującej, gdy obiekt jest uruchomiony jako plik wykonywalny. W środowisku programistycznym błędy niezalewkowane są zwracane do aplikacji kontrolującej tylko wtedy, gdy są ustawione odpowiednie opcje. Zapoznaj się z dokumentacją aplikacji hosta, aby zapoznać się z opisem opcji, które należy ustawić podczas debugowania, sposobie ich ustawiania oraz o tym, czy host może tworzyć klasy.
 
  Jeśli utworzysz obiekt, który uzyskuje dostęp do innych obiektów, spróbuj obsłużyć wszelkie nieobsłużone błędy, które przechodzą z powrotem. Jeśli nie jest to możliwe, zamapuj kody błędów w `Err.Number` jeden z własnych błędów, a następnie Przekaż je z powrotem do wywołującego obiektu. Należy określić błąd, dodając kod błędu do `VbObjectError` stałej. Na przykład jeśli kod błędu to 1052, przypisz go w następujący sposób:
@@ -107,14 +114,16 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
 > Błędy systemowe podczas wywołań bibliotek dołączanych dynamicznie (dll) systemu Windows nie powodują wymuszania wyjątków i nie można ich zalewkować przy użyciu nadlewek Visual Basic błędów. Podczas wywoływania funkcji DLL, należy sprawdzić każdą wartość zwracaną dla sukcesu lub niepowodzenia (zgodnie ze specyfikacją interfejsu API), a w przypadku niepowodzenia Sprawdź wartość we `Err` `LastDLLError` właściwości obiektu.
 
 ## <a name="example"></a>Przykład
+
  Ten przykład najpierw używa `On Error GoTo` instrukcji, aby określić lokalizację procedury obsługi błędów w ramach procedury. W przykładzie próba podzielenia przez zero spowoduje wygenerowanie błędu o numerze 6. Błąd jest obsługiwany w procedurze obsługi błędów, a następnie formant jest zwracany do instrukcji, która spowodowała błąd. `On Error GoTo 0`Instrukcja powoduje wyłączenie zalewkowania błędów. Następnie `On Error Resume Next` instrukcja jest używana do opóźniania zalewkowania błędów, dzięki czemu kontekst dla błędu generowanego przez następną instrukcję może być znany dla niektórych. Należy pamiętać, że `Err.Clear` służy do czyszczenia `Err` właściwości obiektu po obsłudze błędu.
 
  [!code-vb[VbVbalrErrorHandling#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#20)]
 
 ## <a name="requirements"></a>Wymagania
+
  **Przestrzeń nazw:** [Microsoft. VisualBasic](../runtime-library-members.md)
 
- **Zestaw:** Biblioteka środowiska uruchomieniowego Visual Basic (w pliku Microsoft. VisualBasic. dll)
+ **Zestaw:** Biblioteka środowiska uruchomieniowego Visual Basic (w Microsoft.VisualBasic.dll)
 
 ## <a name="see-also"></a>Zobacz też
 

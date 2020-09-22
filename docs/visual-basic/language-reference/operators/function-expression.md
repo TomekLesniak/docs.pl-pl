@@ -6,14 +6,15 @@ helpviewer_keywords:
 - functions [Visual Basic], function expressions
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
-ms.openlocfilehash: a9b621ff03f833fcf0f07f876fd864ee963bef75
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 719969be23a6d94f22a1d86cb4ad3f37e4c3b254
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84371184"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873414"
 ---
 # <a name="function-expression-visual-basic"></a>Function — Wyrażenie (Visual Basic)
+
 Deklaruje parametry i kod, który definiuje funkcję wyrażenia lambda.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,9 +36,11 @@ End Function
 |`statements`|Wymagany. Lista instrukcji zwracających wartość przy użyciu `Return` instrukcji. (Patrz [instrukcja return](../statements/return-statement.md)). Typ zwracanej wartości jest zwracanym typem funkcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  *Wyrażenie lambda* jest funkcją bez nazwy, która oblicza i zwraca wartość. Możesz użyć wyrażenia lambda wszędzie tam, gdzie można użyć typu delegata, z wyjątkiem argumentu `RemoveHandler` . Aby uzyskać więcej informacji na temat delegatów i użycie wyrażeń lambda z delegatami, zobacz [instrukcja Delegate](../statements/delegate-statement.md) i [Swobodna konwersja delegata](../../programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
   
 ## <a name="lambda-expression-syntax"></a>Składnia wyrażenia lambda  
+
  Składnia wyrażenia lambda jest podobna do funkcji standardowej. Różnice są następujące:  
   
 - Wyrażenie lambda nie ma nazwy.  
@@ -55,6 +58,7 @@ End Function
 - Parametry ogólne są niedozwolone.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższych przykładach pokazano dwa sposoby tworzenia prostych wyrażeń lambda. Pierwszy używa `Dim` do podania nazwy dla funkcji. Aby wywołać funkcję, należy wysłać w wartości parametru.  
   
  [!code-vb[VbVbalrLambdas#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#1)]  
@@ -62,16 +66,19 @@ End Function
  [!code-vb[VbVbalrLambdas#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#2)]  
   
 ## <a name="example"></a>Przykład  
+
  Alternatywnie można zadeklarować i uruchomić funkcję w tym samym czasie.  
   
  [!code-vb[VbVbalrLambdas#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#3)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się przykład wyrażenia lambda, które zwiększa jego argument i zwraca wartość. Przykład pokazuje składnię jednowierszową i wieloliniową wyrażenia lambda dla funkcji. Aby uzyskać więcej przykładów, zobacz [lambda Expressions](../../programming-guide/language-features/procedures/lambda-expressions.md).  
   
  [!code-vb[VbVbalrLambdas#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Przykład  
+
  Wyrażenia lambda podstawą wiele operatorów zapytań w zapytaniach zintegrowanych z językiem (LINQ) i mogą być używane jawnie w zapytaniach opartych na metodzie. W poniższym przykładzie przedstawiono typowe zapytanie LINQ, po którym następuje tłumaczenie zapytania do formatu metody.  
   
 ```vb  
