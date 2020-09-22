@@ -4,22 +4,23 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID451
 ms.assetid: 8542382a-689f-4e1b-abc0-c1e2dadb92f4
-ms.openlocfilehash: 7da1de98132f47740e805ed34ff3890f0ba0f889
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fbeaa224ea9e095f86c37e571492d83bc98b4397
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920751"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871092"
 ---
-# <a name="property-let-procedure-not-defined-and-property-get-procedure-did-not-return-an-object"></a><span data-ttu-id="148c7-102">Procedura Let właściwości nie została zdefiniowana, a procedura Get właściwości nie zwraca obiektu</span><span class="sxs-lookup"><span data-stu-id="148c7-102">Property let procedure not defined and property get procedure did not return an object</span></span>
-<span data-ttu-id="148c7-103">Niektóre właściwości, metod i operacje można stosować tylko do `Collection` obiektów.</span><span class="sxs-lookup"><span data-stu-id="148c7-103">Certain properties, methods, and operations can only apply to `Collection` objects.</span></span> <span data-ttu-id="148c7-104">Określone operacje lub właściwość, która jest dostępna wyłącznie dla kolekcji, ale obiekt nie jest kolekcją.</span><span class="sxs-lookup"><span data-stu-id="148c7-104">You specified an operation or property that is exclusive to collections, but the object is not a collection.</span></span>  
+# <a name="property-let-procedure-not-defined-and-property-get-procedure-did-not-return-an-object"></a><span data-ttu-id="325fb-102">Procedura Let właściwości nie została zdefiniowana, a procedura Get właściwości nie zwraca obiektu</span><span class="sxs-lookup"><span data-stu-id="325fb-102">Property let procedure not defined and property get procedure did not return an object</span></span>
+
+<span data-ttu-id="325fb-103">Niektóre właściwości, metody i operacje mogą dotyczyć tylko `Collection` obiektów.</span><span class="sxs-lookup"><span data-stu-id="325fb-103">Certain properties, methods, and operations can only apply to `Collection` objects.</span></span> <span data-ttu-id="325fb-104">Określono operację lub właściwość, która jest wyłączna dla kolekcji, ale obiekt nie jest kolekcją.</span><span class="sxs-lookup"><span data-stu-id="325fb-104">You specified an operation or property that is exclusive to collections, but the object is not a collection.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="148c7-105">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="148c7-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="325fb-105">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="325fb-105">To correct this error</span></span>  
   
-1. <span data-ttu-id="148c7-106">Sprawdź pisownię nazwy obiektu lub właściwości lub upewnij się, że obiekt jest `Collection` obiektu.</span><span class="sxs-lookup"><span data-stu-id="148c7-106">Check the spelling of the object or property name, or verify that the object is a `Collection` object.</span></span>  
+1. <span data-ttu-id="325fb-106">Sprawdź pisownię nazwy obiektu lub właściwości albo sprawdź, czy obiekt jest `Collection` obiektem.</span><span class="sxs-lookup"><span data-stu-id="325fb-106">Check the spelling of the object or property name, or verify that the object is a `Collection` object.</span></span>  
   
-2. <span data-ttu-id="148c7-107">Przyjrzyj się `Add` metodę używaną do dodawania obiektu do kolekcji, upewnij się, składnia jest poprawna i że wszystkie identyfikatory zostały poprawnie wpisany.</span><span class="sxs-lookup"><span data-stu-id="148c7-107">Look at the `Add` method used to add the object to the collection to be sure the syntax is correct and that any identifiers were spelled correctly.</span></span>  
+2. <span data-ttu-id="325fb-107">Przyjrzyj się `Add` metodzie użytej do dodania obiektu do kolekcji, aby upewnić się, że składnia jest poprawna i że wszystkie identyfikatory zostały wpisane prawidłowo.</span><span class="sxs-lookup"><span data-stu-id="325fb-107">Look at the `Add` method used to add the object to the collection to be sure the syntax is correct and that any identifiers were spelled correctly.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="148c7-108">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="148c7-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="325fb-108">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="325fb-108">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.Collection>

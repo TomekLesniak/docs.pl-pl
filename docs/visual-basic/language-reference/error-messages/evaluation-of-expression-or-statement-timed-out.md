@@ -7,24 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30722
 ms.assetid: 6f452da8-6ef8-41fd-9ab8-6f681cf7d433
-ms.openlocfilehash: d0600c7acdb138e363dcbece392bf4b8122cb250
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 8de57715c770cdd66f34977d0be12552e635670d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191928"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874344"
 ---
-# <a name="evaluation-of-expression-or-statement-timed-out"></a><span data-ttu-id="6728e-102">Szacowanie wyrażenia lub instrukcji przekroczyło limit czasu</span><span class="sxs-lookup"><span data-stu-id="6728e-102">Evaluation of expression or statement timed out</span></span>
-<span data-ttu-id="6728e-103">Obliczanie wyrażenia nie zostało ukończone w odpowiednim czasie.</span><span class="sxs-lookup"><span data-stu-id="6728e-103">The evaluation of an expression did not complete in a timely manner.</span></span>  
-  
- <span data-ttu-id="6728e-104">**Identyfikator błędu:** BC30722</span><span class="sxs-lookup"><span data-stu-id="6728e-104">**Error ID:** BC30722</span></span>  
-  
-## <a name="to-correct-this-error"></a><span data-ttu-id="6728e-105">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="6728e-105">To correct this error</span></span>  
-  
-1. <span data-ttu-id="6728e-106">Sprawdź, czy wprowadzony kod jest poprawny.</span><span class="sxs-lookup"><span data-stu-id="6728e-106">Verify that the entered code is correct.</span></span>  
-  
-2. <span data-ttu-id="6728e-107">Uprość wyrażenie, aby było możliwe jego wykonanie.</span><span class="sxs-lookup"><span data-stu-id="6728e-107">Simplify your expression so that it takes less time to execute.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="6728e-108">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="6728e-108">See also</span></span>
+# <a name="evaluation-of-expression-or-statement-timed-out"></a><span data-ttu-id="67c56-102">Szacowanie wyrażenia lub instrukcji przekroczyło limit czasu</span><span class="sxs-lookup"><span data-stu-id="67c56-102">Evaluation of expression or statement timed out</span></span>
 
-- [<span data-ttu-id="6728e-109">Debugowanie w programie Visual Studio</span><span class="sxs-lookup"><span data-stu-id="6728e-109">Debugging in Visual Studio</span></span>](/visualstudio/debugger/debugger-feature-tour)
+<span data-ttu-id="67c56-103">Obliczanie wyrażenia nie zostało ukończone w odpowiednim czasie.</span><span class="sxs-lookup"><span data-stu-id="67c56-103">The evaluation of an expression did not complete in a timely manner.</span></span>  
+  
+ <span data-ttu-id="67c56-104">**Identyfikator błędu:** BC30722</span><span class="sxs-lookup"><span data-stu-id="67c56-104">**Error ID:** BC30722</span></span>  
+  
+## <a name="to-correct-this-error"></a><span data-ttu-id="67c56-105">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="67c56-105">To correct this error</span></span>  
+  
+1. <span data-ttu-id="67c56-106">Sprawdź, czy wprowadzony kod jest poprawny.</span><span class="sxs-lookup"><span data-stu-id="67c56-106">Verify that the entered code is correct.</span></span>  
+  
+2. <span data-ttu-id="67c56-107">Uprość wyrażenie, aby było możliwe jego wykonanie.</span><span class="sxs-lookup"><span data-stu-id="67c56-107">Simplify your expression so that it takes less time to execute.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="67c56-108">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="67c56-108">See also</span></span>
+
+- [<span data-ttu-id="67c56-109">Debugowanie w Visual Studio</span><span class="sxs-lookup"><span data-stu-id="67c56-109">Debugging in Visual Studio</span></span>](/visualstudio/debugger/debugger-feature-tour)
