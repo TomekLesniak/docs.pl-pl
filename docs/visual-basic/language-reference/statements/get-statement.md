@@ -11,14 +11,15 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-ms.openlocfilehash: 31936fb2c8f658203a43702a2b5fa4ee2481beb5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3da6c099b3f43a144484eaddf58605609eb0bbfe
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404605"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866201"
 ---
 # <a name="get-statement"></a>Get — Instrukcja
+
 Deklaruje `Get` procedurę właściwości używaną do pobrania wartości właściwości.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ End Get
 |`End Get`|Wymagany. Kończy definicję `Get` procedury właściwości.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Każda właściwość musi mieć `Get` procedurę właściwości, chyba że właściwość jest oznaczona `WriteOnly` . `Get`Procedura służy do zwracania bieżącej wartości właściwości.  
   
  Visual Basic automatycznie wywołuje procedurę właściwości, `Get` gdy wyrażenie żąda wartości właściwości.  
@@ -61,7 +63,7 @@ End Get
   
 - **Powrót z procedury.** Gdy `Get` procedura zwraca kod wywołujący, wykonywanie jest kontynuowane w instrukcji, która zażądała wartości właściwości.  
   
-     `Get`procedury właściwości mogą zwracać wartość przy użyciu [instrukcji return](return-statement.md) lub przez przypisanie wartości zwracanej do nazwy właściwości. Aby uzyskać więcej informacji, zobacz "wartość zwracana" w [instrukcji funkcji](function-statement.md).  
+     `Get` procedury właściwości mogą zwracać wartość przy użyciu [instrukcji return](return-statement.md) lub przez przypisanie wartości zwracanej do nazwy właściwości. Aby uzyskać więcej informacji, zobacz "wartość zwracana" w [instrukcji funkcji](function-statement.md).  
   
      `Exit Property`Instrukcje i `Return` powodują natychmiastowe wyjście z procedury właściwości. Dowolna liczba `Exit Property` `Return` instrukcji i może występować w dowolnym miejscu procedury i można mieszać i wypełniać `Exit Property` `Return` instrukcje.  
   
@@ -78,6 +80,7 @@ End Get
      [!code-vb[VbVbalrStatements#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#29)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa instrukcji, `Get` Aby zwrócić wartość właściwości.  
   
  [!code-vb[VbVbalrStatements#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#30)]  

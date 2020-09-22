@@ -8,18 +8,20 @@ helpviewer_keywords:
 - ParamArray keyword [Visual Basic]
 - ParamArray keyword [Visual Basic], syntax
 ms.assetid: a5f18789-92bd-488f-9c7e-cf3719963635
-ms.openlocfilehash: e3c24818ea87884a0dd9b42c604e13e16ca6d3d7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: baf9303101eea9eed27e8a4eee9e04d255c798e9
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84391823"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867823"
 ---
 # <a name="paramarray-visual-basic"></a>ParamArray (Visual Basic)
-Określa, że parametr procedury przyjmuje opcjonalną tablicę elementów określonego typu. `ParamArray`może być używany tylko dla ostatniego parametru listy parametrów.  
+
+Określa, że parametr procedury przyjmuje opcjonalną tablicę elementów określonego typu. `ParamArray` może być używany tylko dla ostatniego parametru listy parametrów.  
   
 ## <a name="remarks"></a>Uwagi  
- `ParamArray`umożliwia przekazanie dowolnej liczby argumentów do procedury. `ParamArray`Parametr jest zawsze deklarowany przy użyciu [ByVal](byval.md).  
+
+ `ParamArray` umożliwia przekazanie dowolnej liczby argumentów do procedury. `ParamArray`Parametr jest zawsze deklarowany przy użyciu [ByVal](byval.md).  
   
  Można podać jeden lub więcej argumentów do parametru, `ParamArray` przekazując tablicę odpowiedniego typu danych, rozdzielaną przecinkami listę wartości lub nic wcale. Aby uzyskać szczegółowe informacje, zobacz "wywoływanie ParamArray" w [tablicach parametrów](../../programming-guide/language-features/procedures/parameter-arrays.md).  
   

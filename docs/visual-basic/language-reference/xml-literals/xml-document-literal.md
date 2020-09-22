@@ -9,14 +9,15 @@ helpviewer_keywords:
 - XML documents [Visual Basic], creating
 - document literal [Visual Basic]
 ms.assetid: f7bbee56-0911-41de-b907-96f20450137b
-ms.openlocfilehash: 3a2182d2937827bc8dc45e22307a3668420261a2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bd1b2f43fce563af431d67b3817b05c7c1048314
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400205"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866022"
 ---
 # <a name="xml-document-literal-visual-basic"></a>Literał dokumentu XML (Visual Basic)
+
 Literał reprezentujący <xref:System.Xml.Linq.XDocument> obiekt.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,9 +39,11 @@ rootElement
 |`rootElement`|Wymagany. Element główny dokumentu. Jest to jeden z następujących formatów:<br /><br /> <ul><li>[Literal elementu XML](xml-element-literal.md).</li><li>Wyrażenie osadzone formularza `<%=` `elementExp` `%>` . `elementExp`Zwraca jedną z następujących wartości:<br /><br /> <ul><li>Obiekt <xref:System.Xml.Linq.XElement>.</li><li>Kolekcja zawierająca jeden <xref:System.Xml.Linq.XElement> obiekt i dowolną liczbę <xref:System.Xml.Linq.XProcessingInstruction> <xref:System.Xml.Linq.XComment> obiektów i.</li></ul></li></ul><br /> Aby uzyskać więcej informacji, zobacz [Embedded Expressions in XML](../../programming-guide/language-features/xml/embedded-expressions-in-xml.md).|  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Obiekt <xref:System.Xml.Linq.XDocument>.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Literał dokumentu XML jest identyfikowany przez deklarację XML na początku literału. Chociaż każdy literał dokumentu XML musi mieć dokładnie jeden główny element XML, może zawierać dowolną liczbę instrukcji przetwarzania XML i komentarzy XML.  
   
  Literał dokumentu XML nie może występować w elemencie XML.  
@@ -51,6 +54,7 @@ rootElement
  Kompilator Visual Basic konwertuje literał dokumentu XML na wywołania <xref:System.Xml.Linq.XDocument.%23ctor%2A> <xref:System.Xml.Linq.XDeclaration.%23ctor%2A> konstruktorów i.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład tworzy dokument XML, który ma deklarację XML, instrukcję przetwarzania, komentarz i element, który zawiera inny element.  
   
  [!code-vb[VbXMLSamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#30)]  

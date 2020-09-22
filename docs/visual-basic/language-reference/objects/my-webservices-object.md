@@ -7,17 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - My.WebServices object
 ms.assetid: f188dc05-2c75-41b6-bb68-122d1c3110a2
-ms.openlocfilehash: a52f9f5f5b044273a45da5ef9478e2212def57a5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0b63b44c2cd9d55094fb83fed6c04e4de528a25c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372365"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867204"
 ---
 # <a name="mywebservices-object"></a>My.WebServices — Obiekt
+
 Zawiera właściwości służące do tworzenia i uzyskiwania dostępu do pojedynczego wystąpienia każdej usługi sieci Web XML, do której odwołuje się bieżący projekt.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `My.WebServices`Obiekt zawiera wystąpienie każdej usługi sieci Web, do której odwołuje się bieżący projekt. Każde wystąpienie jest tworzone na żądanie. Dostęp do tych usług sieci Web można uzyskać za pomocą właściwości `My.WebServices` obiektu. Nazwa właściwości jest taka sama jak nazwa usługi sieci Web, do której uzyskuje dostęp właściwość. Każda klasa, która dziedziczy z, <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> jest usługą sieci Web. Aby uzyskać informacje na temat dodawania usług sieci Web do projektu, zobacz [Uzyskiwanie dostępu do usług sieci Web aplikacji](../../developing-apps/programming/accessing-application-web-services.md).  
   
  `My.WebServices`Obiekt uwidacznia tylko usługi sieci Web skojarzone z bieżącym projektem. Nie zapewnia dostępu do usług sieci Web zadeklarowanych w przywoływanych bibliotekach DLL. Aby uzyskać dostęp do usługi sieci Web udostępnianej przez bibliotekę DLL, należy użyć kwalifikowanej nazwy usługi sieci Web w formularzu *nazwa_pliku_dll*. *WebServiceName*. Aby uzyskać więcej informacji, zobacz [Uzyskiwanie dostępu do usług sieci Web aplikacji](../../developing-apps/programming/accessing-application-web-services.md).  
@@ -25,6 +27,7 @@ Zawiera właściwości służące do tworzenia i uzyskiwania dostępu do pojedyn
  Obiekt i jego właściwości nie są dostępne dla aplikacji sieci Web.  
   
 ## <a name="properties"></a>Właściwości  
+
  Każda właściwość `My.WebServices` obiektu zapewnia dostęp do wystąpienia usługi sieci Web, do której odwołuje się bieżący projekt. Nazwa właściwości jest taka sama jak nazwa usługi sieci Web, do której uzyskuje dostęp właściwość, a typ właściwości jest taka sama jak typ usługi sieci Web.  
   
 > [!NOTE]
@@ -40,6 +43,7 @@ Zawiera właściwości służące do tworzenia i uzyskiwania dostępu do pojedyn
 > Zazwyczaj `Is` `IsNot` operator or musi odczytywać wartość właściwości w celu przeprowadzenia porównania. Jeśli jednak właściwość jest obecnie przechowywana `Nothing` , Właściwość tworzy nowe wystąpienie usługi sieci Web, a następnie zwraca to wystąpienie. Jednak kompilator Visual Basic traktuje właściwości `My.WebServices` obiektu specjalnie i umożliwia `Is` `IsNot` operatorowi or sprawdzenie stanu właściwości bez zmiany jego wartości.  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład wywołuje `FahrenheitToCelsius` metodę `TemperatureConverter` usługi sieci Web XML i zwraca wynik.  
   
  [!code-vb[VbVbalrMyWebService#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWebService/VB/Form1.vb#1)]  

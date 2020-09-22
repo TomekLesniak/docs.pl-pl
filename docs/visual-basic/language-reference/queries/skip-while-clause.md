@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Skip While clause [Visual Basic]
 - queries [Visual Basic], Skip While
 ms.assetid: 5dee8350-7520-4f1a-b00d-590cacd572d6
-ms.openlocfilehash: b357320a92ace1b7a261991737ed653d54d0eeab
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: af722f7aee021f244b411cdc61619b7de3c20607
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84359648"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866232"
 ---
 # <a name="skip-while-clause-visual-basic"></a>Skip While — Klauzula (Visual Basic)
+
 Pomija elementy w kolekcji, tak długo, jak określony warunek jest `true` , a następnie zwraca pozostałe elementy.  
   
 ## <a name="syntax"></a>Składnia  
@@ -31,6 +32,7 @@ Skip While expression
 |`expression`|Wymagany. Wyrażenie reprezentujące warunek, dla którego mają zostać przetestowane elementy. Wyrażenie musi zwracać `Boolean` wartość lub odpowiedni odpowiednik funkcjonalny, na przykład, `Integer` Aby można było je oszacować jako `Boolean` .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Skip While`Klauzula pomija elementy od początku wyniku zapytania do momentu podania podanej `expression` wartości `false` . Po `expression` zwracaniu `false` zapytanie zwraca wszystkie pozostałe elementy. Wartość `expression` jest ignorowana dla pozostałych wyników.  
   
  `Skip While`Klauzula różni się od `Where` klauzuli, w której `Where` klauzula może służyć do wykluczenia wszystkich elementów z zapytania, które nie spełniają określonego warunku. `Skip While`Klauzula wyklucza elementy tylko do pierwszego niespełnienia warunku. `Skip While`Klauzula jest najbardziej przydatna podczas pracy z wynikiem kwerendy uporządkowanej.  
@@ -38,6 +40,7 @@ Skip While expression
  Można pominąć określoną liczbę wyników od początku wyniku zapytania przy użyciu `Skip` klauzuli.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu używa klauzuli, `Skip While` Aby pominąć wyniki do momentu, gdy zostanie znaleziony pierwszy klient z Stany Zjednoczone.  
   
  [!code-vb[VbSimpleQuerySamples#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#3)]  

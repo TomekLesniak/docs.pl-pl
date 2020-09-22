@@ -15,17 +15,19 @@ helpviewer_keywords:
 - sealed classes [Visual Basic]
 - classes [Visual Basic], not inheritable
 ms.assetid: 5c4da7c9-9562-4653-a947-1972e992f9f9
-ms.openlocfilehash: a5b571591a2ec62915c2a112f9a088a12837c9cf
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a204303a9695a157f598f83e182709a458a62be7
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84362349"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867899"
 ---
 # <a name="notinheritable-visual-basic"></a>NotInheritable (Visual Basic)
+
 Określa, że Klasa nie może być używana jako klasa bazowa.  
   
 ## <a name="remarks"></a>Uwagi  
+
  **Alternatywne warunki**. Klasa, która nie może być dziedziczona, jest czasami nazywana klasą *zapieczętowana* .  
   
  `NotInheritable`Modyfikator może być używany w tym kontekście:  

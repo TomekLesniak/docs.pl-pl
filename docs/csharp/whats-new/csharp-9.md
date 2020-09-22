@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: a8b66d21514b57d8bee3ff54b2a707af391fe7a9
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 13da712e9421bbfe593e5945b80bb3636ebe05f3
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738726"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866438"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -224,15 +224,15 @@ Innym świetnym użyciem tej funkcji jest połączenie z właściwościami tylko
 
 Można zwrócić wystąpienie utworzone przez konstruktora domyślnego przy użyciu `return new();` wyrażenia.
 
-Podobna funkcja ulepsza rozpoznawanie typu docelowego wyrażeń warunkowych. W przypadku tej zmiany dwa wyrażenia nie muszą mieć jawnej konwersji z jednego do drugiego, ale mogą jednocześnie mieć niejawne konwersje na typ docelowy. Ta zmiana jest niezauważalna. Informacje o tym, że niektóre wyrażenia warunkowe, które wcześniej wymagały rzutowania lub nie spowodują skompilowania, już teraz działają.
+Podobna funkcja ulepsza rozpoznawanie typu docelowego [wyrażeń warunkowych](../language-reference/operators/conditional-operator.md). W przypadku tej zmiany dwa wyrażenia nie muszą mieć jawnej konwersji z jednego do drugiego, ale mogą jednocześnie mieć niejawne konwersje na typ docelowy. Ta zmiana jest niezauważalna. Informacje o tym, że niektóre wyrażenia warunkowe, które wcześniej wymagały rzutowania lub nie spowodują skompilowania, już teraz działają.
 
 Począwszy od języka C# 9,0, można dodać `static` modyfikator do wyrażeń lambda lub metod anonimowych. Statyczne wyrażenia lambda są analogiczne do `static` funkcji lokalnych: statyczna funkcja lambda lub anonimowa nie może przechwycić lokalnych zmiennych lub stanu wystąpienia. `static`Modyfikator zapobiega przypadkowemu przechwyceniu innych zmiennych.
 
 Typy zwracane przez współwarianty zapewniają elastyczność dla zwracanych typów funkcji zastąpionych. Zastąpiona funkcja wirtualna może zwrócić typ pochodzący od typu zwracanego zadeklarowanego w metodzie klasy bazowej. Może to być przydatne w przypadku rekordów i dla innych typów, które obsługują wirtualne klony lub metody fabryki.
 
-Ponadto `foreach` Pętla rozpoznaje i używa metody rozszerzenia `GetEnumerator` , która w przeciwnym razie spełnia warunki `foreach` wzorca. Ta zmiana oznacza `foreach` spójność z innymi konstrukcjami opartymi na wzorcu, takimi jak wzorzec asynchroniczny i dekonstrukcja oparta na wzorcu. W tym przypadku ta zmiana oznacza, że można dodać `foreach` obsługę dowolnego typu. Należy ograniczyć jego użycie do momentu, gdy Wyliczenie obiektu ma sens w projekcie.
+Ponadto [ `foreach` Pętla](../language-reference/keywords/foreach-in.md) rozpoznaje i używa metody rozszerzenia `GetEnumerator` , która w przeciwnym razie spełnia warunki `foreach` wzorca. Ta zmiana oznacza `foreach` spójność z innymi konstrukcjami opartymi na wzorcu, takimi jak wzorzec asynchroniczny i dekonstrukcja oparta na wzorcu. W tym przypadku ta zmiana oznacza, że można dodać `foreach` obsługę dowolnego typu. Należy ograniczyć jego użycie do momentu, gdy Wyliczenie obiektu ma sens w projekcie.
 
-Następnie można użyć odrzutów jako parametrów w wyrażeniach lambda. Ta wygoda pozwala uniknąć nazywania argumentu, a kompilator może uniknąć korzystania z niego. Używasz `_` argumentu for.
+Następnie można użyć odrzutów jako parametrów w wyrażeniach lambda. Ta wygoda pozwala uniknąć nazywania argumentu, a kompilator może uniknąć korzystania z niego. Używasz `_` argumentu for. Aby uzyskać więcej informacji, zobacz [Parametry wejściowe sekcji wyrażenie lambda](../language-reference/operators/lambda-expressions.md#input-parameters-of-a-lambda-expression) w artykule [wyrażenia lambda](../language-reference/operators/lambda-expressions.md) .
 
 Na koniec możesz teraz zastosować atrybuty do funkcji lokalnych. Na przykład można zastosować adnotacje atrybutu nullable do funkcji lokalnych.
 

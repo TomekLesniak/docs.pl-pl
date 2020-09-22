@@ -15,17 +15,19 @@ helpviewer_keywords:
 - MustOverride keyword [Visual Basic]
 - properties [Visual Basic], overriding
 ms.assetid: 6e9d9ad6-bb64-433f-b32b-3ef84293bf96
-ms.openlocfilehash: 1b20108a2d42e82c0af7598fde8d60a08fea28ec
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cf73f07b6e13d524281129e3c5d8dceceb90764c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396197"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867951"
 ---
 # <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
+
 Określa, że właściwość lub procedura nie jest zaimplementowana w tej klasie i musi zostać przesłonięta w klasie pochodnej, zanim będzie mogła zostać użyta.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Można użyć `MustOverride` tylko w instrukcji deklaracji właściwości lub procedury. Właściwość lub procedura, która określa, `MustOverride` musi być elementem członkowskim klasy, a Klasa musi być oznaczona jako [MustInherit](mustinherit.md).  
   
 ## <a name="rules"></a>Reguły  

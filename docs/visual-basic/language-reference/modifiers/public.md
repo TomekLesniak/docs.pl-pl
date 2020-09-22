@@ -8,17 +8,19 @@ helpviewer_keywords:
 - Public keyword [Visual Basic], syntax
 - Public access modifier
 ms.assetid: 284c9e1b-ed23-499b-9bc9-ad87c11485a5
-ms.openlocfilehash: 35332e50227cdef6386362df17c10b5b2cdaa689
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f2b6a126435b111ef56ee2a9870ea6fbddf87901
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84415352"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867686"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)
+
 Określa, że co najmniej jeden zadeklarowany element programistyczny nie ma ograniczeń dostępu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli publikujesz składnik lub zestaw składników, takich jak Biblioteka klas, zazwyczaj chcesz, aby elementy programistyczne były dostępne dla dowolnego kodu, który współdziała z Twoim zestawem. Aby przyznać takie nieograniczone dostęp do elementu, można zadeklarować go za pomocą `Public` .  
   
  Dostęp publiczny jest normalnym poziomem dla elementu programistycznego, gdy nie trzeba ograniczać dostępu do niego. Należy zauważyć, że poziom dostępu elementu zadeklarowanego w interfejsie, module, klasie lub strukturze domyślnie nie jest `Public` deklarowany w inny sposób.  
@@ -68,8 +70,8 @@ Określa, że co najmniej jeden zadeklarowany element programistyczny nie ma ogr
 ## <a name="see-also"></a>Zobacz też
 
 - [Chronione](protected.md)
-- [Osoby](friend.md)
-- [Użytek](private.md)
+- [Friend](friend.md)
+- [Prywatne](private.md)
 - [Prywatne chronione](private-protected.md)
 - [Protected Friend](protected-friend.md)
 - [Poziomy dostępu w Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)

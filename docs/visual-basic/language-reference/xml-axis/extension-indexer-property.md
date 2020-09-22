@@ -9,14 +9,15 @@ helpviewer_keywords:
 - extension indexer [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: a16a4b13-54be-432c-82b3-a87091464ada
-ms.openlocfilehash: c91061d49e22e648b7bf75a812071b352793abcb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 23417cd982c2ddf06afce69d9b120ae0737fb87d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401345"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866116"
 ---
 # <a name="extension-indexer-property-visual-basic"></a>Właściwość indeksatora rozszerzenia (Visual Basic)
+
 Zapewnia dostęp do poszczególnych elementów w kolekcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,9 +36,11 @@ object(index)
 |)|Wymagany. Oznacza koniec właściwości indeksatora.|  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Obiekt z określonej lokalizacji w kolekcji lub, `Nothing` Jeśli indeks jest poza zakresem.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby uzyskać dostęp do poszczególnych elementów w kolekcji, można użyć właściwości indeksatora rozszerzenia. Ta właściwość indeksatora jest zwykle używana w danych wyjściowych właściwości osi XML. Właściwości osi elementu podrzędnego XML i XML zwracają kolekcje <xref:System.Xml.Linq.XElement> obiektów lub wartość atrybutu.  
   
  Kompilator Visual Basic konwertuje właściwości indeksatora rozszerzenia na wywołania `ElementAtOrDefault` metody. W przeciwieństwie do indeksatora tablicy `ElementAtOrDefault` Metoda zwraca, `Nothing` Jeśli indeks jest poza zakresem. To zachowanie jest przydatne, gdy nie można łatwo określić liczby elementów w kolekcji.  
@@ -47,6 +50,7 @@ object(index)
  Aby uzyskać dostęp do wartości pierwszego elementu w kolekcji <xref:System.Xml.Linq.XElement> lub <xref:System.Xml.Linq.XAttribute> obiektów, można użyć `Value` właściwości XML. Aby uzyskać więcej informacji, zobacz [Właściwość wartości XML](xml-value-property.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak za pomocą indeksatora rozszerzeń uzyskać dostęp do drugiego węzła podrzędnego w kolekcji <xref:System.Xml.Linq.XElement> obiektów. Do kolekcji uzyskuje się dostęp za pomocą Właściwości oś podrzędna, która pobiera wszystkie elementy podrzędne o nazwie `phone` w `contact` obiekcie.  
   
  [!code-vb[VbXMLSamples#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#24)]  

@@ -11,24 +11,27 @@ helpviewer_keywords:
 - properties [Visual Basic], write-only
 - sensitive data
 ms.assetid: 488d2899-b09f-4cee-92f0-6f9f9fc4f944
-ms.openlocfilehash: a9fa0a3a23561215d6ff122bc8e609b68ca6fc30
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 12a1030a423359a3e4122eea98e223a1a02f680c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84386637"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867620"
 ---
 # <a name="writeonly-visual-basic"></a>WriteOnly (Visual Basic)
+
 Określa, że właściwość może być zapisywana, ale nie do odczytu.  
   
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="rules"></a>Reguły  
+
  **Kontekst deklaracji.** Można używać `WriteOnly` tylko na poziomie modułu. Oznacza to, że kontekst deklaracji `WriteOnly` właściwości musi być klasą, strukturą lub modułem, i nie może być plikiem źródłowym, przestrzenią nazw ani procedurą.  
   
  Właściwość można zadeklarować jako `WriteOnly` , ale nie zmienną.  
   
 ## <a name="when-to-use-writeonly"></a>Kiedy używać WriteOnly  
+
  Czasami kod zużywający ma mieć możliwość ustawienia wartości, ale nie Odkryj, co to jest. Na przykład dane poufne, takie jak numer rejestracji społecznościowej lub hasło, muszą być chronione przed dostępem przez dowolny składnik, który go nie ustawił. W takich przypadkach można użyć `WriteOnly` właściwości, aby ustawić wartość.  
   
 > [!IMPORTANT]
@@ -51,5 +54,5 @@ Określa, że właściwość może być zapisywana, ale nie do odczytu.
 ## <a name="see-also"></a>Zobacz też
 
 - [Trybie](readonly.md)
-- [Użytek](private.md)
+- [Prywatne](private.md)
 - [Słowa kluczowe](../keywords/index.md)

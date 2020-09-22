@@ -7,14 +7,15 @@ helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-ms.openlocfilehash: 8dec28620b0409f05007b2c0b1c1fd4494c2d7c8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 29de4c174273c3c6c0d4f0cea1ee6dc254a1339b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404761"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866657"
 ---
 # <a name="delegate-statement"></a>Delegate — Instrukcja
+
 Używane do deklarowania delegata. Delegat jest typem referencyjnym, który odwołuje się do `Shared` metody typu lub do metody wystąpienia obiektu. Każda procedura ze zgodnymi parametrami i zwracanymi typami może służyć do tworzenia wystąpienia tej klasy delegata. Procedurę można później wywołać za pomocą wystąpienia delegata.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ Używane do deklarowania delegata. Delegat jest typem referencyjnym, który odwo
 |`type`|Wymagane, jeśli określisz `Function` procedurę. Typ danych wartości zwracanej.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Delegate`Instrukcja definiuje parametry i zwracane typy klasy delegata. Każda procedura z pasującymi parametrami i zwracanymi typami może służyć do tworzenia wystąpienia tej klasy delegata. Procedurę można później wywołać za pomocą wystąpienia delegata, wywołując metodę delegata `Invoke` .  
   
  Delegaty mogą być zadeklarowane na poziomie przestrzeni nazw, modułu, klasy lub struktury, ale nie w ramach procedury.  
@@ -53,13 +55,14 @@ Używane do deklarowania delegata. Delegat jest typem referencyjnym, który odwo
   
  Aby określić wyrażenie lambda, należy użyć następującej składni:  
   
- `Function`([ `parm` AS `type` , `parm2` AS, `type2` ...])`expression`  
+ `Function` ([ `parm` AS `type` , `parm2` AS, `type2` ...]) `expression`  
   
  Sygnatura funkcji musi być zgodna z typem delegata. Aby uzyskać więcej informacji na temat wyrażeń lambda, zobacz [lambda Expressions](../../programming-guide/language-features/procedures/lambda-expressions.md).  
   
  Aby uzyskać więcej informacji na temat delegatów, zobacz [delegats](../../programming-guide/language-features/delegates/index.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa instrukcji, `Delegate` Aby zadeklarować delegata na potrzeby obsługi dwóch liczb i zwracać liczbę. `DelegateTest`Metoda przyjmuje wystąpienie delegata tego typu i używa go do obsługi par liczb.  
   
  [!code-vb[VbVbalrDelegates#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#14)]  

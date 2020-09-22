@@ -5,14 +5,15 @@ helpviewer_keywords:
 - typeparam XML tag
 - <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-ms.openlocfilehash: 2ad54845645172acb5b91935f5347a828510e3aa
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0a68cf0a495c2809961e8ec99effa459b0647fec
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411489"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866384"
 ---
 # <a name="typeparam-visual-basic"></a>\<typeparam> (Visual Basic)
+
 Definiuje nazwę i opis parametru typu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,6 +23,7 @@ Definiuje nazwę i opis parametru typu.
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `name`  
  Nazwa parametru typu. Ujmij nazwę w znaki podwójnego cudzysłowu ("").  
   
@@ -29,11 +31,13 @@ Definiuje nazwę i opis parametru typu.
  Opis parametru typu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Użyj `<typeparam>` znacznika w komentarzu dla typu ogólnego lub ogólnej deklaracji elementu członkowskiego, aby opisać jeden z parametrów typu.  
   
  Kompiluj z [-doc](../../reference/command-line-compiler/doc.md) , aby przetwarzać komentarze dokumentacji do pliku.  
   
 ## <a name="example"></a>Przykład  
+
  W tym przykładzie używa `<typeparam>` znacznika do opisania `id` parametru.  
   
  [!code-vb[VbVbcnXmlDocComments#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#8)]  

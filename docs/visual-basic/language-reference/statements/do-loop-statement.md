@@ -20,14 +20,15 @@ helpviewer_keywords:
 - loops, exiting
 - Loop keyword [Visual Basic], Do...Loop statement
 ms.assetid: 892f9096-b3e2-4aee-834d-83bc4e2c379d
-ms.openlocfilehash: a9ec6caccbe161a39b592a642a938b81bae911a6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 86a702aefeea1e5e359a579a3f29e9c06f1c619c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404787"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90865932"
 ---
 # <a name="doloop-statement-visual-basic"></a>Do...Loop — Instrukcja (Visual Basic)
+
 Powtarza blok instrukcji, gdy `Boolean` warunek jest `True` lub do momentu, aż stanie się `True` .  
   
 ## <a name="syntax"></a>Składnia  
@@ -57,13 +58,14 @@ Loop { While | Until } condition
 |`Do`|Wymagany. Uruchamia definicję `Do` pętli.|  
 |`While`|Wymagane, chyba że `Until` jest używany. Powtarzaj pętlę `condition` do `False` .|  
 |`Until`|Wymagane, chyba że `While` jest używany. Powtarzaj pętlę `condition` do `True` .|  
-|`condition`|Opcjonalny. `Boolean`wyrażenia. Jeśli `condition` jest `Nothing` , Visual Basic traktuje go jako `False` .|  
+|`condition`|Opcjonalny. `Boolean` wyrażenia. Jeśli `condition` jest `Nothing` , Visual Basic traktuje go jako `False` .|  
 |`statements`|Opcjonalny. Co najmniej jedna instrukcja, która jest powtarzana w czasie lub do, `condition` jest `True` .|  
 |`Continue Do`|Opcjonalny. Przenosi formant do następnej iteracji `Do` pętli.|  
 |`Exit Do`|Opcjonalny. Przenosi kontrolę z `Do` pętli.|  
 |`Loop`|Wymagany. Kończy definicję `Do` pętli.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Użyj `Do...Loop` struktury, gdy chcesz powtórzyć zestaw instrukcji przez nieokreśloną liczbę razy, aż warunek zostanie spełniony. Jeśli chcesz powtórzyć instrukcje określoną liczbę razy, [dla... Kolejną instrukcją](for-next-statement.md) jest zwykle lepszy wybór.  
   
  Możesz użyć albo `While` `Until` , aby określić `condition` , ale nie oba jednocześnie.  
@@ -78,30 +80,35 @@ Loop { While | Until } condition
 > `Do...Loop`Struktura zapewnia większą elastyczność niż [while... Instrukcja End while](while-end-while-statement.md) , ponieważ umożliwia podjęcie decyzji, czy przerwać pętlę, gdy zostanie ona `condition` zatrzymana `True` `True` . Umożliwia również przetestowanie `condition` na początku lub na końcu pętli.  
   
 ## <a name="exit-do"></a>Zakończ działanie  
- Instrukcja [exiter](exit-statement.md) może zapewnić alternatywny sposób wyjścia `Do…Loop` . `Exit Do`natychmiast przenosi kontrolę do instrukcji, która następuje po `Loop` instrukcji.  
+
+ Instrukcja [exiter](exit-statement.md) może zapewnić alternatywny sposób wyjścia `Do…Loop` . `Exit Do` natychmiast przenosi kontrolę do instrukcji, która następuje po `Loop` instrukcji.  
   
- `Exit Do`jest często używany po ocenie pewnego warunku, na przykład w `If...Then...Else` strukturze. Możesz chcieć zakończyć pętlę, jeśli wykryjesz warunek, który sprawia, że nie jest to konieczne lub niemożliwe do kontynuowania iteracji, na przykład błędnej wartości lub żądania zakończenia. Jednym z nich `Exit Do` jest przetestowanie stanu, który może spowodować nieskończoną *pętlę*, która jest pętlą, która może uruchamiać dużą lub nawet nieskończoną liczbę razy. Możesz użyć, `Exit Do` Aby wyjść z pętli.  
+ `Exit Do` jest często używany po ocenie pewnego warunku, na przykład w `If...Then...Else` strukturze. Możesz chcieć zakończyć pętlę, jeśli wykryjesz warunek, który sprawia, że nie jest to konieczne lub niemożliwe do kontynuowania iteracji, na przykład błędnej wartości lub żądania zakończenia. Jednym z nich `Exit Do` jest przetestowanie stanu, który może spowodować nieskończoną *pętlę*, która jest pętlą, która może uruchamiać dużą lub nawet nieskończoną liczbę razy. Możesz użyć, `Exit Do` Aby wyjść z pętli.  
   
  Możesz dołączyć dowolną liczbę `Exit Do` instrukcji w dowolnym miejscu `Do…Loop` .  
   
  W przypadku użycia wewnątrz `Do` pętli zagnieżdżonych, program `Exit Do` przenosi kontrolę z wewnętrznej pętli i na następny wyższy poziom zagnieżdżenia.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie instrukcje w pętli są nadal wykonywane, dopóki `index` zmienna nie będzie większa niż 10. `Until`Klauzula znajduje się na końcu pętli.  
   
  [!code-vb[VbVbalrStatements#131](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#131)]  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie jest używana `While` klauzula zamiast `Until` klauzuli i `condition` jest testowana na początku pętli, a nie na końcu.  
   
  [!code-vb[VbVbalrStatements#132](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#132)]  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie, `condition` zatrzymanie pętli, gdy `index` zmienna jest większa niż 100. `If`Instrukcja w pętli, jednak powoduje `Exit Do` zatrzymanie pętli, gdy zmienna indeksu jest większa niż 10.  
   
  [!code-vb[VbVbalrStatements#133](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#133)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład odczytuje wszystkie wiersze w pliku tekstowym. <xref:System.IO.File.OpenText%2A>Metoda otwiera plik i zwraca <xref:System.IO.StreamReader> , który odczytuje znaki. W `Do...Loop` warunku <xref:System.IO.StreamReader.Peek%2A> Metoda określa, czy istnieją `StreamReader` dodatkowe znaki.  
   
  [!code-vb[VbVbalrStatements#134](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#134)]  

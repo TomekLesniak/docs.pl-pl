@@ -13,14 +13,15 @@ helpviewer_keywords:
 - classes [Visual Basic], data members
 - data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
-ms.openlocfilehash: bdb73772dfe0e6d49d89a4ef006b1bceac14c8ee
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3b64597fcd7453c20ed295fe263eeaa8783b20ae
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397158"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866033"
 ---
 # <a name="class-statement-visual-basic"></a>Class — Instrukcja (Visual Basic)
+
 Deklaruje nazwę klasy i wprowadza definicje zmiennych, właściwości, zdarzeń i procedur, które obejmuje Klasa.  
   
 ## <a name="syntax"></a>Składnia  
@@ -55,6 +56,7 @@ End Class
 |`End Class`|Wymagany. Kończy `Class` definicję.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Class`Instrukcja definiuje nowy typ danych. *Klasa* jest podstawowym blokiem konstrukcyjnym programowania zorientowanego obiektowo (OOP). Aby uzyskać więcej informacji, zobacz [obiekty i klasy](../../programming-guide/language-features/objects-and-classes/index.md).  
   
  Można używać `Class` tylko na poziomie przestrzeni nazw lub modułu. Oznacza to, że *kontekst deklaracji* klasy musi być plikiem źródłowym, przestrzenią nazw, klasą, strukturą, modułem lub interfejsem i nie może być procedurą ani blokiem. Aby uzyskać więcej informacji, zobacz [konteksty deklaracji i domyślne poziomy dostępu](declaration-contexts-and-default-access-levels.md).  
@@ -94,6 +96,7 @@ End Class
      Jeśli kod wewnątrz klasy zagnieżdżonej tworzy niekwalifikowane odwołanie do elementu programistycznego, Visual Basic wyszukuje element jako pierwszy w klasie zagnieżdżonej, a następnie w klasie zawierającej i tak dalej, jak najbardziej zewnętrzny element zawierający.  
   
 ## <a name="classes-and-modules"></a>Klasy i moduły  
+
  Te elementy mają wiele podobieństw, ale istnieją pewne istotne różnice.  
   
 - **Terminologia.** Poprzednie wersje Visual Basic rozpoznają dwa typy modułów: *moduły klasy* (pliki. CLS) i *moduły standardowe* (pliki. bas). Bieżąca wersja wywołuje odpowiednio te *klasy* i *moduły*.  
@@ -103,6 +106,7 @@ End Class
 - **Orientacja obiektu.** Klasy są zorientowane obiektowo, ale moduły nie są. Można utworzyć co najmniej jedno wystąpienie klasy. Aby uzyskać więcej informacji, zobacz [obiekty i klasy](../../programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa instrukcji, `Class` Aby zdefiniować klasę i kilku członków.  
   
  [!code-vb[VbVbalrStatements#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#62)]  

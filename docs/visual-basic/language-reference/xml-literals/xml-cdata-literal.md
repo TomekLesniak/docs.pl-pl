@@ -8,14 +8,15 @@ helpviewer_keywords:
 - XML CDATA literal [Visual Basic]
 - XML literals [Visual Basic], CDATA
 ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
-ms.openlocfilehash: b9cc830d27625f192d8f5e059bd3783d05d8ba3b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4447ad6cf0fb251b0d2d1387c109b06d32f69cb8
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400231"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866095"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>Literał CDATA XML (Visual Basic)
+
 Literał reprezentujący <xref:System.Xml.Linq.XCData> obiekt.  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,6 +26,7 @@ Literał reprezentujący <xref:System.Xml.Linq.XCData> obiekt.
 ```  
   
 ## <a name="parts"></a>Części  
+
  `<![CDATA[`  
  Wymagany. Wskazuje początek sekcji CDATA XML.  
   
@@ -35,9 +37,11 @@ Literał reprezentujący <xref:System.Xml.Linq.XCData> obiekt.
  Wymagany. Oznacza koniec sekcji.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Obiekt <xref:System.Xml.Linq.XCData>.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Sekcje CDATA XML zawierają nieprzetworzony tekst, który powinien być uwzględniony, ale nie jest analizowany, z XML, który zawiera. Sekcja CDATA XML może zawierać dowolny tekst. Obejmuje to zastrzeżone znaki XML. Sekcja CDATA XML zostanie zakończona z sekwencją "]] >". Oznacza to następujące kwestie:  
   
 - Nie można użyć wyrażenia osadzonego w literale CDATA XML, ponieważ ogranicznik wyrażenia osadzonego są prawidłową zawartością elementu XML CDATA.  
@@ -52,6 +56,7 @@ Literał reprezentujący <xref:System.Xml.Linq.XCData> obiekt.
  Kompilator Visual Basic konwertuje literał XML CDATA na wywołanie <xref:System.Xml.Linq.XCData.%23ctor%2A> konstruktora.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład tworzy sekcję CDATA, która zawiera tekst "może zawierać Tagi literału \<XML> ".  
   
  [!code-vb[VbXMLSamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#23)]  

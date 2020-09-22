@@ -14,14 +14,15 @@ helpviewer_keywords:
 - Partial keyword [Visual Basic]
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
-ms.openlocfilehash: 650ead2f0deb9813b26241a6a4676907de3f263d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2482facadd0e0528ed1b71df6edb4a447947a902
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84362245"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867777"
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
+
 Wskazuje, że deklaracja typu jest częściową definicją typu.  
   
  Można podzielić definicję typu między kilka deklaracji za pomocą `Partial` słowa kluczowego. Możesz użyć dowolną liczbę deklaracji częściowych, tak jak wiele różnych plików źródłowych. Wszystkie deklaracje muszą jednak znajdować się w tym samym zestawie i w tej samej przestrzeni nazw.  
@@ -62,6 +63,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
 |`End Class` lub `End Structure`|Zakończenie tej częściowej `Class` lub `Structure` definicji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Visual Basic używa definicji klasy częściowej do oddzielenia wygenerowanego kodu od kodu napisanego przez użytkownika w oddzielnych plikach źródłowych. Na przykład **Projektant formularzy systemu Windows** definiuje klasy częściowe dla formantów, takich jak <xref:System.Windows.Forms.Form> . Nie należy modyfikować wygenerowanego kodu w tych kontrolkach.  
   
  W przypadku tworzenia typu częściowego stosowane są wszystkie reguły tworzenia klas, struktur, interfejsów i modułów, takie jak te dla modyfikatorów użycia i dziedziczenia.  
@@ -87,6 +89,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
  [Structure — Instrukcja](../statements/structure-statement.md)  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład dzieli definicję klasy `sampleClass` na dwie deklaracje, z których każda definiuje inną `Sub` procedurę.  
   
  [!code-vb[VbVbalrKeywords#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#3)]  

@@ -5,17 +5,18 @@ helpviewer_keywords:
 - operators [Visual Basic], concatenation
 - concatenation operators [Visual Basic]
 ms.assetid: d787368b-3713-47ff-bce8-f112720a673a
-ms.openlocfilehash: cd288450b0e23bf49c4db2c04008431fd1b8f1be
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 282747043197ad2fded6f5cccc85ec7eaadbe2bf
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84371547"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867117"
 ---
 # <a name="concatenation-operators-visual-basic"></a>Concatenation — Operatory (Visual Basic)
+
 Poniżej przedstawiono operatory łączenia zdefiniowane w Visual Basic.  
   
- [Operator&](concatenation-operator.md)  
+ [ Operator&](concatenation-operator.md)  
   
  [+ — Operator](addition-operator.md)  
   

@@ -7,17 +7,19 @@ helpviewer_keywords:
 - static modifier
 - Static keyword [Visual Basic]
 ms.assetid: 19013910-4658-47b6-a22e-1744b527979e
-ms.openlocfilehash: 3b323d5fb1c4f1357b9f476213793c69d29b7208
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2b7113424969b0b18c981b0c8932aeef3795ca4a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402697"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867676"
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
+
 Określa, że co najmniej jedna zadeklarowana zmienna lokalna ma nadal istnieć i zachować najnowsze wartości po zakończeniu procedury, w której zostały zadeklarowane.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zwykle zmienna lokalna w procedurze przestaje istnieć, gdy tylko procedura zostanie zatrzymana. Zmienna statyczna nadal istnieje i zachowuje jej najnowszą wartość. Przy następnym wywoływaniu procedury przez kod zmienna nie zostanie zainicjowana i nadal będzie zawierać najnowszą wartość, którą przypisano do niej. Zmienna statyczna nadal istnieje dla okresu istnienia klasy lub modułu, w którym jest zdefiniowana.  
   
 ## <a name="rules"></a>Reguły  
@@ -31,11 +33,13 @@ Określa, że co najmniej jedna zadeklarowana zmienna lokalna ma nadal istnieć 
 - **Połączone modyfikatory.** Nie można określić `Static` razem z `ReadOnly` , `Shadows` , lub `Shared` w tej samej deklaracji.  
   
 ## <a name="behavior"></a>Zachowanie  
+
  Po zadeklarowaniu zmiennej statycznej w `Shared` procedurze dla całej aplikacji dostępna jest tylko jedna kopia zmiennej statycznej. Wywoływanie `Shared` procedury przy użyciu nazwy klasy, a nie zmiennej, która wskazuje na wystąpienie klasy.  
   
  Po zadeklarowaniu zmiennej statycznej w procedurze, która nie jest `Shared` , dla każdego wystąpienia klasy dostępna jest tylko jedna kopia zmiennej. Procedurę nieudostępnioną można wywołać przy użyciu zmiennej, która wskazuje na konkretne wystąpienie klasy.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje użycie `Static` .  
   
  [!code-vb[VbVbalrKeywords#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#5)]  

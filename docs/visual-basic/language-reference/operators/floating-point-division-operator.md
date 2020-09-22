@@ -16,14 +16,15 @@ helpviewer_keywords:
 - / operator [Visual Basic]
 - math operators [Visual Basic]
 ms.assetid: 335e97f2-c434-439e-9064-76973a051101
-ms.openlocfilehash: e9400b50a84522f87a9a2ea4cd05b479d7a4538e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 765a80d45908e0ecf17e4c21b748dbf6b2a4c0f5
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84371171"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867033"
 ---
 # <a name="-operator-visual-basic"></a>/ — Operator (Visual Basic)
+
 Dzieli dwie liczby i zwraca wynik zmiennoprzecinkowy.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,6 +34,7 @@ expression1 / expression2
 ```  
   
 ## <a name="parts"></a>Części  
+
  `expression1`  
  Wymagany. Dowolne wyrażenie liczbowe.  
   
@@ -40,14 +42,17 @@ expression1 / expression2
  Wymagany. Dowolne wyrażenie liczbowe.  
   
 ## <a name="supported-types"></a>Obsługiwane typy  
+
  Wszystkie typy liczbowe, w tym typy niepodpisane i zmiennoprzecinkowe oraz `Decimal` .  
   
 ## <a name="result"></a>Wynik  
+
  Wynikiem jest pełny iloraz `expression1` podzielony przez `expression2` , łącznie z dowolnymi resztami.  
   
  [Operator \ (Visual Basic)](integer-division-operator.md) zwraca iloraz całkowity, który porzuca resztę.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Typ danych wyniku zależy od typów operandów. W poniższej tabeli przedstawiono sposób określania typu danych wyniku.  
   
 |Typy danych operandu|Typ danych wynikowych|  
@@ -62,18 +67,20 @@ expression1 / expression2
  Jeśli `expression1` lub `expression2` zwróci wartość [Nothing](../nothing.md), jest traktowany jako zero.  
   
 ## <a name="attempted-division-by-zero"></a>Próba dzielenia przez zero  
+
  Jeśli `expression2` wartość jest równa zero, `/` operator działa inaczej dla różnych typów danych operandu. W poniższej tabeli przedstawiono możliwe zachowania.  
   
 |Typy danych operandu|Zachowanie jeśli `expression2` jest równe zero|  
 |------------------------|---------------------------------------|  
 |Zmiennoprzecinkowe ( `Single` lub `Double` )|Zwraca nieskończoność ( <xref:System.Double.PositiveInfinity> lub <xref:System.Double.NegativeInfinity> ) lub <xref:System.Double.NaN> (nie liczbę), jeśli `expression1` również jest równa zero|  
-|`Decimal`|Generuje<xref:System.DivideByZeroException>|  
-|Całka (ze znakiem lub bez znaku)|Próba konwersji z powrotem na typ całkowity zgłasza <xref:System.OverflowException> , ponieważ typy całkowite nie mogą akceptować <xref:System.Double.PositiveInfinity> , <xref:System.Double.NegativeInfinity> lub<xref:System.Double.NaN>|  
+|`Decimal`|Generuje <xref:System.DivideByZeroException>|  
+|Całka (ze znakiem lub bez znaku)|Próba konwersji z powrotem na typ całkowity zgłasza <xref:System.OverflowException> , ponieważ typy całkowite nie mogą akceptować <xref:System.Double.PositiveInfinity> , <xref:System.Double.NegativeInfinity> lub <xref:System.Double.NaN>|  
   
 > [!NOTE]
 > `/`Operator może być *przeciążony*, co oznacza, że Klasa lub struktura może przedefiniować jej zachowanie, gdy operand ma typ tej klasy lub struktury. Jeśli Twój kod używa tego operatora dla takiej klasy lub struktury, pamiętaj o tym, aby zrozumieć jego ponownie zdefiniowane zachowanie. Aby uzyskać więcej informacji, zobacz [procedury operatorów](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład używa `/` operatora do wykonywania dzielenia zmiennoprzecinkowego. Wynik jest ilorazem dwóch operandów.  
   
  [!code-vb[VbVbalrOperators#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#16)]  

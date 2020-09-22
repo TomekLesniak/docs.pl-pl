@@ -17,17 +17,19 @@ helpviewer_keywords:
 - type parameters
 - data type arguments
 ms.assetid: 0db8f65c-65af-4089-ab7f-6fcfecb60444
-ms.openlocfilehash: 8497f46453d586fb94e1f7c82c81c6b923dd6f60
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0595356fb75fc0ac73a49622d71fe1d28fa7b648
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404424"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90865908"
 ---
 # <a name="of-clause-visual-basic"></a>Of — Klauzula (Visual Basic)
+
 Wprowadza `Of` klauzulę, która identyfikuje *parametr typu* dla klasy *ogólnej* , struktury, interfejsu, delegata lub procedury. Aby uzyskać informacje na temat typów ogólnych, zobacz [typy ogólne w Visual Basic](../../programming-guide/language-features/data-types/generic-types.md).  
   
 ## <a name="using-the-of-keyword"></a>Za pomocą słowa kluczowego  
+
  Poniższy przykład kodu używa `Of` słowa kluczowego do definiowania konspektu klasy, która przyjmuje dwa parametry typu. *Ogranicza* `keyType` parametr według <xref:System.IComparable> interfejsu, co oznacza, że kod zużywający musi dostarczyć argument typu, który implementuje <xref:System.IComparable> . Jest to konieczne, aby `add` procedura mogła wywołać <xref:System.IComparable.CompareTo%2A?displayProperty=nameWithType> metodę. Aby uzyskać więcej informacji o ograniczeniach, zobacz [Type list](type-list.md).  
   
 ```vb  
@@ -44,7 +46,7 @@ End Class
   
  Jeśli poprzednia definicja klasy zostanie ukończona, można utworzyć `dictionary` z niej różne klasy. Typy, które dostarczasz, `entryType` i `keyType` określają typ wpisu, który zawiera Klasa, oraz typ klucza, który jest kojarzony z każdym wpisem. Ze względu na ograniczenie należy dostarczyć do `keyType` typu, który implementuje <xref:System.IComparable> .  
   
- Poniższy przykład kodu tworzy obiekt, który zawiera `String` wpisy i kojarzy `Integer` klucz z każdym z nich. `Integer`implementuje <xref:System.IComparable> i w związku z tym spełnia ograniczenie dotyczące `keyType` .  
+ Poniższy przykład kodu tworzy obiekt, który zawiera `String` wpisy i kojarzy `Integer` klucz z każdym z nich. `Integer` implementuje <xref:System.IComparable> i w związku z tym spełnia ograniczenie dotyczące `keyType` .  
   
 ```vb  
 Dim d As New dictionary(Of String, Integer)  
