@@ -715,7 +715,7 @@ items:
       - name: Wstrzykiwanie zależności
         href: /aspnet/core/fundamentals/dependency-injection
       - name: Host ogólny
-        href: /aspnet/core/fundamentals/host/generic-host
+        href: ../core/extensions/generic-host.md
       - name: Rejestrowanie
         href: /aspnet/core/fundamentals/logging
       - name: Wzorzec opcji
