@@ -14,14 +14,15 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-ms.openlocfilehash: 9f9174896181e427c73936a1bb91fa13235e70be
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b0077bdae3bad1d67c3d26e503d05f318982eb80
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550992"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91099024"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentarze w kodzie (Visual Basic)
+
 Podczas odczytywania przykładów kodu często występuje symbol komentarza ( `'` ). Ten symbol nakazuje kompilatorowi Visual Basic ignorowanie tekstu po nim lub *komentarz*. Komentarze to krótkie notatki wyjaśniające, dodane do kodu, aby ułatwić życie innym osobom, które go czytają.  
   
  Dobrą praktyką programowania jest rozpoczynanie wszystkich procedur od krótkiego komentarza, który opisuje charakterystykę funkcjonalną procedury (co dana procedura robi). Korzysta z tego i sam programista, i wszyscy inni, którzy czytają kod. Szczegóły dotyczące implementacji (jak procedura coś robi) należy oddzielić od komentarzy opisujących charakterystyki funkcjonalne. Gdy w opisie dołączasz szczegóły dotyczące implementacji, pamiętaj, aby je zaktualizować, gdy aktualizujesz funkcję.  
@@ -35,6 +36,7 @@ Podczas odczytywania przykładów kodu często występuje symbol komentarza ( `'
  [!code-vb[VbVbcnConventions#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#17)]  
   
 ## <a name="commenting-guidelines"></a>Wytyczne komentowania  
+
  Poniższa tabela zawiera ogólne wytyczne na temat tego, jakie rodzaje komentarzy mogą poprzedzać sekcję kodu. Są to sugestie: Visual Basic nie wymusza reguł dodawania komentarzy. Pisz to, co się najlepiej sprawdza, zarówno dla ciebie, jak i dla każdego, kto czyta twój kod.  
   
 |||  

@@ -2,17 +2,19 @@
 title: 'Instrukcje: zapytanie o całkowitą liczbę bajtów w zestawie folderów (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: bfe85ed2-44dc-4ef1-aac7-241622b80a69
-ms.openlocfilehash: c6490c8863b5762b0b487c6f3f3b2809e16d6519
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c8e1ee66c2c9b570acd2c815bdc1ba0324380eda
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397937"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100207"
 ---
 # <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-visual-basic"></a>Instrukcje: zapytanie o całkowitą liczbę bajtów w zestawie folderów (LINQ) (Visual Basic)
+
 Ten przykład pokazuje, jak pobrać łączną liczbę bajtów używanych przez wszystkie pliki w określonym folderze i jego podfolderach.  
   
 ## <a name="example"></a>Przykład  
+
  <xref:System.Linq.Enumerable.Sum%2A>Metoda dodaje wartości wszystkich elementów wybranych w `select` klauzuli. Możesz łatwo zmodyfikować to zapytanie, aby pobrać największy lub najmniejszy plik w określonym drzewie katalogów, wywołując <xref:System.Linq.Enumerable.Min%2A> <xref:System.Linq.Enumerable.Max%2A> metodę or zamiast <xref:System.Linq.Enumerable.Sum%2A> .  
   
 ```vb  
@@ -72,9 +74,10 @@ End Module
  Zapytanie wywołuje oddzielną metodę w celu uzyskania długości pliku. Wykonuje to w celu użycia możliwego wyjątku, który zostanie wywołany, jeśli plik został usunięty z innego wątku po <xref:System.IO.FileInfo> utworzeniu obiektu w wywołaniu `GetFiles` . Mimo że <xref:System.IO.FileInfo> obiekt został już utworzony, wyjątek może wystąpić, ponieważ <xref:System.IO.FileInfo> obiekt podejmie próbę odświeżenia swojej <xref:System.IO.FileInfo.Length%2A> właściwości z największą bieżącą długością dostępną do właściwości. Przez umieszczenie tej operacji w bloku try-catch poza zapytania, kod jest zgodny z regułą unikania operacji w zapytaniach, które mogą spowodować skutki uboczne. Ogólnie rzecz biorąc należy zachować szczególną ostrożność podczas korzystania z wyjątków, aby upewnić się, że aplikacja nie jest pozostawiona w nieznanym stanie.  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
 Utwórz projekt aplikacji konsolowej Visual Basic przy użyciu `Imports` instrukcji dla przestrzeni nazw System. LINQ.
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
 - [LINQ i katalogi plików (Visual Basic)](linq-and-file-directories.md)

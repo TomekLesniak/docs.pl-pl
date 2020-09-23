@@ -6,14 +6,15 @@ helpviewer_keywords:
 - win32manifest compiler option [Visual Basic]
 - -win32manifest compiler option [Visual Basic]
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
-ms.openlocfilehash: 6f77649365f8ca7b163cd55854aa9960d88f2984
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f8329ce2e7597f802d75ec85a580f1a3bd5cfc97
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414262"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098881"
 ---
 # <a name="-win32manifest-visual-basic"></a>-WIN32MANIFEST (Visual Basic)
+
 Identyfikuje zdefiniowany przez użytkownika plik manifestu aplikacji Win32, który ma zostać osadzony w przenośnym pliku wykonywalnym (PE) projektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ Identyfikuje zdefiniowany przez użytkownika plik manifestu aplikacji Win32, kt�
 |`fileName`|Ścieżka pliku manifestu niestandardowego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie kompilator Visual Basic osadza manifest aplikacji, który określa żądany poziom wykonywania jako źródło. Tworzy manifest w tym samym folderze, w którym plik wykonywalny jest kompilowany, zazwyczaj folder bin\Debug lub bin\Release w przypadku korzystania z programu Visual Studio. Jeśli chcesz podać niestandardowy manifest, na przykład aby określić żądany poziom wykonywania najwyższe dostępne lub wymaga administratora, Użyj tej opcji, aby określić nazwę pliku.  
   
 > [!NOTE]
@@ -47,6 +49,7 @@ Identyfikuje zdefiniowany przez użytkownika plik manifestu aplikacji Win32, kt�
  Można dostarczyć manifest aplikacji jako niestandardowy krok po kompilacji lub jako część pliku zasobów Win32 przy użyciu `-nowin32manifest` opcji. Użyj tej samej opcji, jeśli chcesz, aby aplikacja podlegała wirtualizacji plików lub rejestru w systemie Windows Vista. Uniemożliwi to kompilatorowi utworzenie i osadzenie domyślnego manifestu w pliku PE.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje domyślny manifest, który kompilator Visual Basic wstawia do PE.  
   
 > [!NOTE]
@@ -66,7 +69,7 @@ Identyfikuje zdefiniowany przez użytkownika plik manifestu aplikacji Win32, kt�
 </assembly>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kompilator wiersza polecenia Visual Basic](index.md)
 - [-nowin32manifest (Visual Basic)](nowin32manifest.md)

@@ -5,14 +5,15 @@ helpviewer_keywords:
 - conditional compilation [Visual Basic], about conditional compilation
 - compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
-ms.openlocfilehash: c3eb1eb57b3d76e762ed53edb3b168ad96abec39
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e59296882edc018259816c73b6ae861b3b296783
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403268"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098972"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Kompilacja warunkowa w Visual Basic
+
 W *kompilacji warunkowej*poszczególne bloki kodu w programie są kompilowane wybiórczo, podczas gdy inne są ignorowane.  
   
  Na przykład możesz chcieć napisać instrukcje debugowania, które porównują szybkość różnych podejść do tego samego zadania programistycznego, lub można zlokalizować aplikację dla wielu języków. Instrukcje kompilacji warunkowej są przeznaczone do uruchamiania w czasie kompilacji, a nie w czasie wykonywania.  
@@ -27,6 +28,7 @@ W *kompilacji warunkowej*poszczególne bloki kodu w programie są kompilowane wy
 > Funkcja autouzupełniania nie będzie działać podczas edytowania kodu i stosowania dyrektyw warunkowej kompilacji, jeśli kod nie jest częścią bieżącej gałęzi.  
   
 ## <a name="declaring-conditional-compilation-constants"></a>Deklarowanie stałych kompilacji warunkowej  
+
  Stałe kompilacji warunkowej można ustawić na jeden z trzech sposobów:  
   
 - W **projektancie projektu**  
@@ -41,7 +43,7 @@ W *kompilacji warunkowej*poszczególne bloki kodu w programie są kompilowane wy
 |---|---|  
 |**Projektant projektu**|Publiczny dla wszystkich plików w projekcie|  
 |Wiersz polecenia|Publiczny dla wszystkich plików przesłanych do kompilatora wiersza polecenia|  
-|`#Const`Instrukcja w kodzie|Prywatny do pliku, w którym jest zadeklarowany|  
+|`#Const` Instrukcja w kodzie|Prywatny do pliku, w którym jest zadeklarowany|  
   
 |Aby ustawić stałe w projektancie projektu|  
 |---|  
@@ -62,6 +64,7 @@ W *kompilacji warunkowej*poszczególne bloki kodu w programie są kompilowane wy
 |[Struktura programu i konwencje związane z kodem](program-structure-and-code-conventions.md)|Zawiera sugestie ułatwiające odczytywanie i konserwowanie kodu.|  
   
 ## <a name="reference"></a>Dokumentacja  
+
  [#Const — dyrektywa](../../language-reference/directives/const-directive.md)  
   
  [#If... Then... #Else — dyrektywy](../../language-reference/directives/if-then-else-directives.md)  
