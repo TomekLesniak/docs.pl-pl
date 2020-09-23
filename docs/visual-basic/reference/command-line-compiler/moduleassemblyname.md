@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [Visual Basic]
 - -moduleassemblyname compiler option [Visual Basic]
 ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
-ms.openlocfilehash: 99f2b9d65f3c2a128e026666c5efb384e22643f9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9fb9287f9472d4b33eff4cb601aff5eed370b2c0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403151"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91065570"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
+
 Określa nazwę zestawu, którego częścią ma być ten moduł.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ Określa nazwę zestawu, którego częścią ma być ten moduł.
 |`assembly_name`|Nazwa zestawu, którego częścią ma być ten moduł.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Kompilator przetwarza `-moduleassemblyname` opcję tylko wtedy, gdy została `-target:module` określona opcja. Powoduje to, że kompilator tworzy moduł. Moduł utworzony przez kompilator jest prawidłowy tylko dla zestawu określonego przy użyciu `-moduleassemblyname` opcji. Jeśli umieścisz moduł w innym zestawie, wystąpią błędy w czasie wykonywania.  
   
  Ta `-moduleassemblyname` opcja jest wymagana tylko wtedy, gdy są spełnione następujące warunki:  
@@ -42,7 +44,7 @@ Określa nazwę zestawu, którego częścią ma być ten moduł.
 > [!NOTE]
 > `-moduleassemblyname`Opcja jest niedostępna w środowisku deweloperskim programu Visual Studio. jest ona dostępna tylko podczas kompilowania z wiersza polecenia.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Instrukcje: kompilowanie zestawu wieloplikowego](../../../framework/app-domains/build-multifile-assembly.md)
 - [Kompilator wiersza polecenia Visual Basic](index.md)

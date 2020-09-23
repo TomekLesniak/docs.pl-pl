@@ -7,14 +7,15 @@ helpviewer_keywords:
 - name conflicts [Visual Basic]
 - element names [Visual Basic], in code
 ms.assetid: 2e4e8e02-23f7-49b9-a1c8-2b0402b6b525
-ms.openlocfilehash: a98f0b027700717b414d58e1284ddec655eb25f7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e895db180dbb44cd4cfe4053d4be429f13324fe8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403229"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91065752"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>Słowa kluczowe jako nazwy elementów w Code (Visual Basic)
+
 Każdy element programu, taki jak zmienna, Klasa lub element członkowski — może mieć taką samą nazwę jak słowo kluczowe z ograniczeniami. Na przykład można utworzyć zmienną o nazwie `Loop` . Jednak, aby odwołać się do używanej wersji programu, która ma taką samą nazwę jak `Loop` słowo kluczowe z ograniczeniami, należy poprzedzić ją ciągiem zawierającym pełną kwalifikację lub ująć ją w nawiasy kwadratowe ( `[ ]` ), jak pokazano w poniższym przykładzie.  
   
  [!code-vb[VbVbcnConventions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#8)]  
@@ -30,7 +31,7 @@ Każdy element programu, taki jak zmienna, Klasa lub element członkowski — mo
 > [!NOTE]
 > Program może również zawierać nazwy elementów udostępniane przez inne przywoływane zestawy. Jeśli te nazwy powodują konflikt z ograniczonymi słowami kluczowymi, umieszczenie nawiasów kwadratowych spowoduje, że Visual Basic interpretują je jako zdefiniowane elementy.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Visual Basic — Konwencje nazewnictwa](naming-conventions.md)
 - [Struktura programu i konwencje związane z kodem](program-structure-and-code-conventions.md)
