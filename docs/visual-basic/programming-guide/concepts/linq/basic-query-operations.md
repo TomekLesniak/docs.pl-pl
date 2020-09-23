@@ -15,14 +15,15 @@ helpviewer_keywords:
 - grouping data [LINQ in Visual Basic]
 - Select clause [LINQ in Visual Basic]
 ms.assetid: 1146f6d0-fcb8-4f4d-8223-c9db52620d21
-ms.openlocfilehash: 92ac5beb70526795eb140bd794e47981cebfea93
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6f4c58b15c33d8d2007069df88b2984e692df0a8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410919"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078375"
 ---
 # <a name="basic-query-operations-visual-basic"></a>Podstawowe operacje zapytań (Visual Basic)
+
 Ten temat zawiera krótkie wprowadzenie do wyrażeń programu Query-Integrated Language (LINQ) w Visual Basic oraz do niektórych typowych rodzajów operacji wykonywanych w zapytaniu. Aby uzyskać więcej informacji, zobacz następujące tematy:  
   
  [Wprowadzenie do LINQ w Visual Basic](../../language-features/linq/introduction-to-linq.md)  
@@ -32,6 +33,7 @@ Ten temat zawiera krótkie wprowadzenie do wyrażeń programu Query-Integrated L
  [Wskazówki: Pisanie zapytań w Visual Basic](walkthrough-writing-queries.md)  
   
 ## <a name="specifying-the-data-source-from"></a>Określanie źródła danych (z)  
+
  W zapytaniu LINQ pierwszy krok to określenie źródła danych, które chcesz zbadać. W związku z tym, `From` klauzula w zapytaniu zawsze jest w pierwszej kolejności. Operatory zapytań zaznaczają i kształtują wynik w oparciu o typ źródła.  
   
  [!code-vb[VbLINQBasicOps#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#1)]  
@@ -41,6 +43,7 @@ Ten temat zawiera krótkie wprowadzenie do wyrażeń programu Query-Integrated L
  Aby uzyskać więcej informacji na temat używania `From` klauzuli w Visual Basic, zobacz [klauzula FROM](../../../language-reference/queries/from-clause.md).  
   
 ## <a name="filtering-data-where"></a>Filtrowanie danych (gdzie)  
+
  Prawdopodobnie najbardziej typowa operacja zapytania stosuje filtr w postaci wyrażenia logicznego. Zapytanie zwraca następnie tylko te elementy, dla których wyrażenie ma wartość true. `Where`Klauzula służy do przeprowadzenia filtrowania. Filtr określa, które elementy w źródle danych mają być uwzględnione w wyniku sekwencji. W poniższym przykładzie uwzględniono tylko tych klientów, którzy mają adres w Londynie.  
   
  [!code-vb[VbLINQBasicOps#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#2)]  
@@ -60,6 +63,7 @@ Where cust.City = "London" Or cust.City = "Paris"
  Aby uzyskać więcej informacji na temat używania `Where` klauzuli w Visual Basic, zobacz [klauzula WHERE](../../../language-reference/queries/where-clause.md).  
   
 ## <a name="ordering-data-order-by"></a>Szeregowanie danych (porządkuj wg)  
+
  Często jest wygodne do sortowania zwracanych danych w określonej kolejności. `Order By`Klauzula spowoduje, że elementy w zwracanej sekwencji będą sortowane według określonego pola lub pola. Na przykład następujące zapytanie sortuje wyniki na podstawie `Name` właściwości. Ponieważ `Name` jest ciągiem, zwracane dane zostaną posortowane alfabetycznie, od a do z.  
   
  [!code-vb[VbLINQBasicOps#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#3)]  
@@ -69,6 +73,7 @@ Where cust.City = "London" Or cust.City = "Paris"
  Aby uzyskać więcej informacji na temat używania `Order By` klauzuli w Visual Basic, zobacz [klauzula Order by](../../../language-reference/queries/order-by-clause.md).  
   
 ## <a name="selecting-data-select"></a>Wybieranie danych (wybór)  
+
  `Select`Klauzula określa formę i zawartość zwróconych elementów. Można na przykład określić, czy wyniki będą składać się z kompletnych `Customer` obiektów, tylko jednej `Customer` właściwości, podzestawu właściwości, kombinacji właściwości z różnych źródeł danych, czy pewnego nowego typu wyników na podstawie obliczeń. Gdy `Select` klauzula generuje coś innego niż kopia elementu źródłowego, operacja jest nazywana *projekcją*.  
   
  Aby pobrać kolekcję, która składa się z kompletnych `Customer` obiektów, wybierz samą zmienną zakresu:  
@@ -98,6 +103,7 @@ Where cust.City = "London" Or cust.City = "Paris"
  Aby uzyskać więcej informacji na temat używania `Select` klauzuli w Visual Basic, zobacz [SELECT — klauzula](../../../language-reference/queries/select-clause.md).  
   
 ## <a name="joining-data-join-and-group-join"></a>Przyłączanie danych (łączenie i łączenie grupy)  
+
  Więcej niż jedno źródło danych w klauzuli można połączyć `From` na kilka sposobów. Na przykład poniższy kod używa dwóch źródeł danych i niejawnie łączy właściwości z obu nich w wyniku. Zapytanie wybiera uczniów, których nazwiska zaczynają się od samogłosek.  
   
  [!code-vb[VbLINQBasicOps#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#9)]  
@@ -109,9 +115,10 @@ Where cust.City = "London" Or cust.City = "Paris"
   
  [!code-vb[VbLINQBasicOps#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#10)]  
   
- `Group Join`łączy kolekcje w jedną hierarchiczną kolekcję, podobnie jak `LEFT JOIN` w przypadku języka SQL. Aby uzyskać więcej informacji, zobacz Klauzula [Join](../../../language-reference/queries/join-clause.md) i [Klauzula join Group](../../../language-reference/queries/group-join-clause.md).  
+ `Group Join` łączy kolekcje w jedną hierarchiczną kolekcję, podobnie jak `LEFT JOIN` w przypadku języka SQL. Aby uzyskać więcej informacji, zobacz Klauzula [Join](../../../language-reference/queries/join-clause.md) i [Klauzula join Group](../../../language-reference/queries/group-join-clause.md).  
   
 ## <a name="grouping-data-group-by"></a>Grupowanie danych (grupuj według)  
+
  Można dodać `Group By` klauzulę, aby zgrupować elementy w wyniku zapytania zgodnie z co najmniej jednym polem elementów. Na przykład poniższy kod grupuje uczniów według klasy Year.  
   
  [!code-vb[VbLINQBasicOps#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#11)]  
@@ -152,7 +159,7 @@ Where cust.City = "London" Or cust.City = "Paris"
   
  Aby uzyskać więcej informacji na temat `Group By` , zobacz [klauzula GROUP by](../../../language-reference/queries/group-by-clause.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Generic.IEnumerable%601>
 - [Wprowadzenie do programu LINQ w Visual Basic](getting-started-with-linq.md)

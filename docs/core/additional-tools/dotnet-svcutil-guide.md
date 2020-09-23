@@ -3,12 +3,12 @@ title: Omówienie narzędzia WCF Svcutil
 description: Omówienie narzędzia dotnet-Svcutil programu Microsoft WCF, które dodaje funkcje dla projektów .NET Core i ASP.NET Core, podobnie jak narzędzie WCF Svcutil dla projektów .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
-ms.openlocfilehash: fde42f7d040fba91f51ce6faa58282ed0206a853
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 403bcf78ccebd983d378cfdd7965c4ca5097ccc9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396223"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078258"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>WCF dotnet-Svcutil Tool dla platformy .NET Core
 
@@ -50,7 +50,7 @@ public interface ISayHello
 }
 ```
 
-Na potrzeby tego przykładu Załóżmy, że usługa sieci Web będzie hostowana pod następującym adresem:`http://contoso.com/SayHello.svc`
+Na potrzeby tego przykładu Załóżmy, że usługa sieci Web będzie hostowana pod następującym adresem: `http://contoso.com/SayHello.svc`
 
 W oknie polecenia systemu Windows, macOS lub Linux wykonaj następujące czynności:
 
@@ -75,6 +75,7 @@ W oknie polecenia systemu Windows, macOS lub Linux wykonaj następujące czynno�
     ```
 
     # <a name="dotnet-svcutil-1x"></a>[dotnet-Svcutil 1. x](#tab/dotnetsvcutil1x)
+
     Otwórz `HelloSvcutil.csproj` plik projektu w edytorze, Edytuj `Project` element i Dodaj [ `dotnet-svcutil` pakiet NuGet](https://nuget.org/packages/dotnet-svcutil) jako odwołanie narzędzia interfejsu wiersza polecenia, używając następującego kodu:
 
     ```xml
@@ -117,7 +118,7 @@ Wygenerowany plik zostanie zapisany jako _HelloSvcutil/ServiceReference/Referenc
     dotnet restore
     ```
 
-2. Znajdź nazwę klasy klienta i operację, której chcesz użyć. `Reference.cs`będzie zawierać klasę, która dziedziczy z `System.ServiceModel.ClientBase` , przy użyciu metod, które mogą być używane do wywoływania operacji w usłudze. W tym przykładzie chcesz wywołać operację _Hello_ usługi _sayHello_ . `ServiceReference.SayHelloClient`jest nazwą klasy klienta i ma metodę o nazwie, `HelloAsync` która może być używana do wywołania operacji.
+2. Znajdź nazwę klasy klienta i operację, której chcesz użyć. `Reference.cs` będzie zawierać klasę, która dziedziczy z `System.ServiceModel.ClientBase` , przy użyciu metod, które mogą być używane do wywoływania operacji w usłudze. W tym przykładzie chcesz wywołać operację _Hello_ usługi _sayHello_ . `ServiceReference.SayHelloClient` jest nazwą klasy klienta i ma metodę o nazwie, `HelloAsync` która może być używana do wywołania operacji.
 
 3. Otwórz `Startup.cs` plik w edytorze i Dodaj `using` dyrektywę dla przestrzeni nazw odwołania do usługi u góry:
 
@@ -156,6 +157,7 @@ Wygenerowany plik zostanie zapisany jako _HelloSvcutil/ServiceReference/Referenc
 Powinny zostać wyświetlone następujące dane wyjściowe: "Hello dotnet-Svcutil!"
 
 Aby uzyskać szczegółowy opis `dotnet-svcutil` parametrów narzędzia, wywołaj narzędzie do przekazywania parametru pomocy w następujący sposób:
+
 # <a name="dotnet-svcutil-2x"></a>[dotnet-Svcutil 2. x](#tab/dotnetsvcutil2x)
 
 ```dotnetcli
@@ -174,10 +176,10 @@ dotnet svcutil --help
 
 Jeśli masz jakieś pytania lub opinie, [Otwórz problem w usłudze GitHub](https://github.com/dotnet/wcf/issues/new). Możesz również zapoznać się z istniejącymi pytaniami i problemami [w REPOZYTORIUM WCF w serwisie GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).
 
-## <a name="release-notes"></a>Uwagi do wersji
+## <a name="release-notes"></a>Informacje o wersji
 
 - Zapoznaj się z informacjami o [wersji](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) dotyczącymi zaktualizowanych informacji o wersji, w tym znanych problemów.
 
-## <a name="information"></a>Informacje
+## <a name="information"></a>Informacyjny
 
 - [Pakiet NuGet dotnet-Svcutil](https://nuget.org/packages/dotnet-svcutil)

@@ -2,14 +2,15 @@
 title: Nie można usunąć dziennika zdarzeń systemowych
 ms.date: 07/20/2015
 ms.assetid: 26ca8819-4ce5-49c6-98f3-27fe9e2e8e3d
-ms.openlocfilehash: e00527300a77f6bc006555ee688e055e1a351056
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 444c18f24f63c0c8e206ebf6fe3c77632df2fbd0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554960"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078674"
 ---
 # <a name="system-event-log-cannot-be-deleted"></a>Nie można usunąć dziennika zdarzeń systemowych
+
 Podjęto próbę usunięcia dziennika zdarzeń systemu, którego nie można usunąć. Dziennik systemowy śledzi zdarzenia systemowe, takie jak uruchamianie systemu i awarie sprzętu.  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  

@@ -1,24 +1,25 @@
 ---
-title: Określony klucz rejestru nie istnieje.
+title: Określony klucz rejestru nie istnieje
 ms.date: 07/20/2015
 ms.assetid: 837e925a-aac5-4745-8eaa-d08bebbcbcd3
-ms.openlocfilehash: e93e1a9c919481bb9a3279a4302d861453e758cd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 17f41711c522581f8b5b1019a43e8a4f448d37fd
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661039"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078752"
 ---
-# <a name="specified-registry-key-does-not-exist"></a>Określony klucz rejestru nie istnieje.
-Klucz rejestru, który został określony, nie istnieje.  
+# <a name="specified-registry-key-does-not-exist"></a>Określony klucz rejestru nie istnieje
+
+Określony klucz rejestru nie istnieje.  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
   
-- Sprawdź, czy klucz rejestru, który jest dostarczenie, aby upewnić się, że poprawnie określona ścieżka  
+- Sprawdź podany klucz rejestru, aby upewnić się, że poprawnie określono ścieżkę.  
   
-- Utwórz klucz rejestru przed podjęciem próby zapisanie w nim.  
+- Przed podjęciem próby zapisu należy utworzyć klucz rejestru.  
   
 ## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.Win32.RegistryKey>
-- [My.Computer.Registry](xref:Microsoft.VisualBasic.MyServices.RegistryProxy)
+- [My. Computer. Registry](xref:Microsoft.VisualBasic.MyServices.RegistryProxy)

@@ -3,12 +3,12 @@ title: Dodatki do formatu csproj dla platformy .NET Core
 description: Dowiedz się więcej o różnicach między istniejącymi a plikami csproj programu .NET Core
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 7760dc095fa894b1f356c939eb030e675f58a876
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 3ef6a89a8cd4f811bcdd41b9c9bedbc45da78098
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810888"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078219"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatki do formatu csproj dla platformy .NET Core
 
@@ -44,7 +44,7 @@ Ponieważ `Microsoft.NETCore.App` lub `NETStandard.Library` pakiety są niejawni
 
 Większość zastosowań [`<PackageReference>`](#packagereference) wymaga ustawienia `Version` atrybutu w celu określenia wersji pakietu NuGet do użycia. W przypadku korzystania z platformy .NET Core 2,1 lub 2,2 i odwoływania się do [Microsoft. AspNetCore. app](/aspnet/core/fundamentals/metapackage-app) lub [Microsoft. AspNetCore. All](/aspnet/core/fundamentals/metapackage), jednak atrybut jest zbędny. Zestaw .NET Core SDK może automatycznie wybrać wersję tych pakietów, które mają być używane.
 
-### <a name="recommendation"></a>Rekomendacja
+### <a name="recommendation"></a>Zalecenie
 
 W przypadku odwoływania się do `Microsoft.AspNetCore.App` `Microsoft.AspNetCore.All` pakietów lub nie należy określać ich wersji. Jeśli określona jest wersja, zestaw SDK może generować ostrzeżenie NETSDK1071. Aby usunąć to ostrzeżenie, Usuń wersję pakietu, taką jak w poniższym przykładzie:
 
@@ -73,8 +73,8 @@ W poniższej tabeli przedstawiono, który element i które [elementy globalne](h
 
 | Element           | Uwzględnij globalizowania                              | Wyklucz globalizowania                                                  | Usuń globalizowania              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Opracowania           | \*\*/\*. cs (lub inne rozszerzenia językowe) | \*\*/\*Użytkownicy  \*\*/\*.\* proj  \*\*/\*. sln  \*\*/\*. vssscc  | Nie dotyczy                      |
-| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*Użytkownicy \*\*/\*.\* proj \*\*/\*. sln \*\*/\*. vssscc     | Nie dotyczy                      |
+| Opracowania           | \*\*/\*. cs (lub inne rozszerzenia językowe) | \*\*/\*Użytkownicy  \*\*/\*.\* proj  \*\*/\*. sln  \*\*/\*. vssscc  | Brak                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*Użytkownicy \*\*/\*.\* proj \*\*/\*. sln \*\*/\*. vssscc     | Brak                      |
 | Brak              | \*\*/\*                                   | \*\*/\*Użytkownicy \*\*/\*.\* proj \*\*/\*. sln \*\*/\*. vssscc     | \*\*/\*Rejestr \*\*/\*. resx   |
 
 > [!NOTE]
@@ -364,9 +364,11 @@ Rozdzielana średnikami lista znaczników, które wyznaczają pakiet.
 Określa ścieżkę wyjściową, w której zostanie usunięty spakowany pakiet. Wartość domyślna to `$(OutputPath)`.
 
 ### <a name="includesymbols"></a>IncludeSymbols
+
 Ta wartość logiczna wskazuje, czy pakiet powinien utworzyć dodatkowy pakiet symboli podczas pakowania projektu. Format pakietu symboli jest kontrolowany przez `SymbolPackageFormat` Właściwość.
 
 ### <a name="symbolpackageformat"></a>SymbolPackageFormat
+
 Określa format pakietu symboli. W przypadku wystąpienia "Symbols. nupkg" zostanie utworzony pakiet ze starszymi symbolami z rozszerzeniem *. Symbols. nupkg* zawierającym plików PDB, DLL i inne pliki wyjściowe. W przypadku elementu "snupkg" zostanie utworzony pakiet symboli snupkg zawierający przenośne plików PDB. Wartość domyślna to "Symbols. nupkg".
 
 ### <a name="includesource"></a>IncludeSource
@@ -386,9 +388,11 @@ Określa adres URL repozytorium, w którym znajduje się kod źródłowy pakietu
 Określa typ repozytorium. Wartość domyślna to "Git".
 
 ### <a name="repositorybranch"></a>RepositoryBranch
+
 Określa nazwę gałęzi źródłowej w repozytorium. Gdy projekt jest spakowany w pakiecie NuGet, jest dodawany do metadanych pakietu.
 
 ### <a name="repositorycommit"></a>RepositoryCommit
+
 Opcjonalne zatwierdzenie lub zestaw zmian repozytorium, aby wskazać, z którym źródłem został skompilowany pakiet. `RepositoryUrl` należy również określić, aby ta właściwość została uwzględniona. Gdy projekt jest spakowany w pakiecie NuGet, to zatwierdzenie lub zestaw zmian zostanie dodany do metadanych pakietu.
 
 ### <a name="nopackageanalysis"></a>NoPackageAnalysis

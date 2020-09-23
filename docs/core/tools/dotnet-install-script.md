@@ -1,13 +1,13 @@
 ---
 title: dotnet-install scripts
 description: Więcej informacji na temat skryptów programu dotnet-Install w celu zainstalowania zestaw .NET Core SDK i udostępnionego środowiska uruchomieniowego.
-ms.date: 04/30/2020
-ms.openlocfilehash: 8f27b8a7794e84e6e2b288d6cc2ec33ffcb7600f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 09/22/2020
+ms.openlocfilehash: 35161edd2a4862e064373d75f1e19396983f3a64
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538045"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078206"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet — informacje o skryptach instalacji
 
@@ -185,7 +185,6 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
   Reprezentuje konkretną wersję kompilacji. Możliwe wartości są następujące:
 
   - `latest` -Najnowsza kompilacja w kanale (używana z `-Channel` opcją).
-  - `coherent` -Najnowsza spójna kompilacja na kanale; używa najnowszej stabilnej kombinacji pakietów (używanej z `-Channel` opcjami nazw gałęzi).
   - Wersja z trzech części w formacie X. Y. Z, reprezentująca konkretną wersję kompilacji; zastępuje `-Channel` opcję. Na przykład: `2.0.0-preview2-006120`.
 
   Jeśli nie zostanie określony, `-Version` wartością domyślną jest `latest` .
