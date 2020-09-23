@@ -8,14 +8,15 @@ helpviewer_keywords:
 - COM objects, referencing
 - interop assemblies
 ms.assetid: 9c518fb4-27d9-4112-9e6a-5a7d0210af6f
-ms.openlocfilehash: 2e2cbac6fad5e1686b7383c44619b8c6f5326483
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 43ba068663db9f8c3816a6f731395a6682a130e6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396807"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91083296"
 ---
 # <a name="how-to-reference-com-objects-from-visual-basic"></a>Porady: odwołania do obiektów COM z Visual Basic
+
 W Visual Basic Dodawanie odwołań do obiektów COM, które mają biblioteki typów, wymaga utworzenia zestawu międzyoperacyjnego dla biblioteki COM. Odwołania do elementów członkowskich obiektu COM są kierowane do zestawu międzyoperacyjnego, a następnie przekazywane do rzeczywistego obiektu COM. Odpowiedzi z obiektu COM są kierowane do zestawu międzyoperacyjnego i przekazywane do aplikacji .NET Framework.  
   
  Można odwołać się do obiektu COM bez użycia zestawu międzyoperacyjnego przez osadzenie informacji o typie dla obiektu COM w zestawie .NET. Aby osadzić informacje o typie, ustaw `Embed Interop Types` Właściwość na `True` dla odwołania do obiektu com. Jeśli kompilujesz przy użyciu kompilatora wiersza polecenia, użyj `/link` opcji, aby odwołać się do biblioteki com. Aby uzyskać więcej informacji, zobacz [-link (Visual Basic)](../../reference/command-line-compiler/link.md).  
@@ -52,11 +53,11 @@ W Visual Basic Dodawanie odwołań do obiektów COM, które mają biblioteki typ
   
      Można użyć Tlbimp do tworzenia zestawów międzyoperacyjnych dla bibliotek typów, nawet dla niezarejestrowanych obiektów COM. Jednak obiekty COM, do których odwołują się zestawy międzyoperacyjności, muszą być poprawnie zarejestrowane na komputerze, na którym mają być używane. Obiekt COM można zarejestrować za pomocą narzędzia regsvr32 dołączonego do systemu operacyjnego Windows.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Międzyoperacyjność modelu COM](index.md)
-- [Tlbimp. exe (Importer biblioteki typów)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
-- [Tlbexp. exe (Eksporter biblioteki typów)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
+- [Tlbimp.exe (Importer biblioteki typów)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
+- [Tlbexp.exe (Eksporter biblioteki typów)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
 - [Przewodnik: Implementowanie dziedziczenia z obiektami COM](walkthrough-implementing-inheritance-with-com-objects.md)
 - [Rozwiązywanie problemów związanych z współdziałaniem](troubleshooting-interoperability.md)
 - [Imports — Instrukcja (.NET Namespace i Type)](../../language-reference/statements/imports-statement-net-namespace-and-type.md)
