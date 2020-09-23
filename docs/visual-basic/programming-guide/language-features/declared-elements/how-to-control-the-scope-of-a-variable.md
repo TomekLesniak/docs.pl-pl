@@ -12,14 +12,15 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 8b21f22edea84448e3f2969c3e4b07c08a17a338
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2ce7c1700eec54542719e6e0880466ca136e86f6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357351"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91095436"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Porady: kontrolowanie zakresu zmiennej (Visual Basic)
+
 Zwykle zmienna znajduje się w *zakresie*lub jest widoczna dla odwołania w całym regionie, w którym jest zadeklarowana. W niektórych przypadkach *poziom dostępu* zmiennej może mieć wpływ na jego zakres.  
   
  Aby uzyskać więcej informacji, zobacz [zakres w Visual Basic](scope.md).  
@@ -39,6 +40,7 @@ Zwykle zmienna znajduje się w *zakresie*lub jest widoczna dla odwołania w cał
      Można odwołać się do zmiennej tylko z wewnątrz procedury, w tym w dowolnym bloku zawartym w procedurze.  
   
 ## <a name="scope-at-module-or-namespace-level"></a>Zakres na poziomie modułu lub przestrzeni nazw  
+
  Dla wygody poziom jednoterminowego *modułu* jest stosowany równomiernie dla modułów, klas i struktur. Poziom dostępu zmiennej poziomu modułu określa jej zakres. Przestrzeń nazw, która zawiera moduł, klasę lub strukturę, ma także wpływ na zakres.  
   
 #### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Aby uczynić zmienną widoczną w całym module, klasie lub strukturze  
@@ -58,6 +60,7 @@ Zwykle zmienna znajduje się w *zakresie*lub jest widoczna dla odwołania w cał
 3. Możesz odwołać się do zmiennej z dowolnego miejsca w przestrzeni nazw zawierającej moduł, klasę lub strukturę.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład deklaruje zmienną na poziomie modułu i ogranicza jej widoczność do kodu w module.  
   
 ```vb  
@@ -81,12 +84,14 @@ Public strMsg As String
 ```  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  Im węższy zakres zmiennej, tym mniej możliwości odwołujące się do nich zamiast innej zmiennej o tej samej nazwie. Możesz również zminimalizować problemy pasujące do odwołania.  
   
 ## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
+
  Im węższy zakres zmiennej, tym mniejsze prawdopodobieństwo, że złośliwy kod może być niewłaściwym użyciem.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zakres w Visual Basic](scope.md)
 - [Okres istnienia w Visual Basic](lifetime.md)

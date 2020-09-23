@@ -5,17 +5,19 @@ helpviewer_keywords:
 - shadowing, vs. overriding
 - overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
-ms.openlocfilehash: a6ea83fadf18ef3be778e6de31c0eb4e65e74824
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 98c073f8fa403416b2425431ff4334b990726f44
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392873"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91095450"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>Różnice pomiędzy przesłanianiem i zastępowaniem (Visual Basic)
+
 Podczas definiowania klasy, która dziedziczy z klasy bazowej, Czasami chcesz zmienić definicję co najmniej jednego elementu klasy bazowej w klasie pochodnej. W tym celu są dostępne zarówno przesłanianie, jak i przesłanianie.  
   
 ## <a name="comparison"></a>Porównanie  
+
  Przesłonięcie i przesłanianie są używane, gdy Klasa pochodna dziedziczy z klasy bazowej, i obie przedefiniują jeden zadeklarowany element z innym. Istnieją jednak znaczące różnice między nimi.  
   
  Poniższa tabela zawiera porównanie przesłaniania z zastępowaniem.  
@@ -28,8 +30,8 @@ Podczas definiowania klasy, która dziedziczy z klasy bazowej, Czasami chcesz zm
 |Ponowne definiowanie elementu|Dowolny zadeklarowany typ elementu|Tylko procedura lub właściwość o identycznej sekwencji wywołania<sup>1</sup>|  
 |Poziom dostępu elementu do ponownego definiowania|Dowolny poziom dostępu|Nie można zmienić poziomu dostępu przesłoniętego elementu|  
 |Czytelność i writability ponownego definiowania elementu|Dowolna kombinacja|Nie można zmienić wartości Read lub writability zastąpionej właściwości|  
-|Kontrola nad ponownym definiowaniem|Element klasy bazowej nie może wymusić lub zabronić przesłaniania|Element klasy bazowej może określać `MustOverride` , `NotOverridable` lub`Overridable`|  
-|Użycie słowa kluczowego|`Shadows`zalecane w klasie pochodnej; `Shadows`przyjęto, jeśli nie `Shadows` lub `Overrides` określono<sup>2</sup>|`Overridable`lub `MustOverride` wymagane w klasie bazowej; `Overrides` wymagane w klasie pochodnej|  
+|Kontrola nad ponownym definiowaniem|Element klasy bazowej nie może wymusić lub zabronić przesłaniania|Element klasy bazowej może określać `MustOverride` , `NotOverridable` lub `Overridable`|  
+|Użycie słowa kluczowego|`Shadows` zalecane w klasie pochodnej; `Shadows` przyjęto, jeśli nie `Shadows` lub `Overrides` określono<sup>2</sup>|`Overridable` lub `MustOverride` wymagane w klasie bazowej; `Overrides` wymagane w klasie pochodnej|  
 |Dziedziczenie elementu do ponownego definiowania przez klasy pochodne z klasy pochodnej|Element Shadows dziedziczony przez dalsze klasy pochodne; element w tle nadal ukryty<sup>3</sup>|Przesłanianie elementu dziedziczone przez dalsze klasy pochodne; element zastąpiony nadal został zastąpiony|  
   
  <sup>1</sup> *sekwencja wywołująca* składa się z typu elementu ( `Function` ,,, `Sub` `Operator` lub `Property` ), nazwy, listy parametrów i zwracanego typu. Nie można przesłonić procedury z właściwością ani w inny sposób. Nie można zastąpić jednego rodzaju procedury ( `Function` , `Sub` , lub `Operator` ) innym rodzajem.  
@@ -39,6 +41,7 @@ Podczas definiowania klasy, która dziedziczy z klasy bazowej, Czasami chcesz zm
  <sup>3</sup> Jeśli element przesłaniania jest niedostępny w dalszej klasie pochodnej, przesłanianie nie jest dziedziczone. Na przykład, Jeśli zadeklarujesz element przesłaniania jako `Private` , Klasa pochodna klasy pochodnej dziedziczy oryginalny element zamiast elementu shadowing.  
   
 ## <a name="guidelines"></a>Wytyczne  
+
  Zwykle używasz przesłaniania w następujących przypadkach:  
   
 - Definiujesz klasy pochodne polimorficzne.  
@@ -51,7 +54,7 @@ Podczas definiowania klasy, która dziedziczy z klasy bazowej, Czasami chcesz zm
   
 - Potrzebujesz swobody zmiany typu elementu lub sekwencji wywołania.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odwołania do elementów zadeklarowanych](references-to-declared-elements.md)
 - [Przesłanianie w Visual Basic](shadowing.md)
