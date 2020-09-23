@@ -5,17 +5,18 @@ helpviewer_keywords:
 - errors [Visual Basic], run-time
 - run-time errors [Visual Basic], Visual Basic
 ms.assetid: 130f7c2b-8eb1-4a6e-81aa-e30e27d3d4f7
-ms.openlocfilehash: 3b8ca626df76d881e26dae49d48217fa8e81951b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 88c9d341064f5c8d85d4c27b7d9bc79114642610
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357936"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91060707"
 ---
 # <a name="visual-basic-run-time-messages"></a>Visual Basic komunikaty czasu wykonywania
+
 Ta sekcja zawiera Visual Basic komunikaty o błędach, które występują w czasie wykonywania.  
   
- [\<address>nie jest prawidłowym adresem pliku zdalnego](address-is-not-a-valid-remote-file-address.md)  
+ [\<address> nie jest prawidłowym adresem pliku zdalnego](address-is-not-a-valid-remote-file-address.md)  
   
  [Ogranicznik nie może mieć wartości Nothing lub być pustym ciągiem](a-delimiter-cannot-be-nothing-or-an-empty-string.md)  
   
@@ -269,7 +270,7 @@ Ta sekcja zawiera Visual Basic komunikaty o błędach, które występują w czas
   
  [Błąd wewnętrzny (Visual Basic)](internal-error.md)  
   
- [Wystąpił błąd wewnętrzny w\<location>](../language-reference/error-messages/internal-error-happened-at-location.md)  
+ [Wystąpił błąd wewnętrzny w \<location>](../language-reference/error-messages/internal-error-happened-at-location.md)  
   
  [Błąd wewnętrzny w środowisku uruchomieniowym Microsoft Visual Basic](internal-error-in-the-microsoft-visual-basic-runtime.md)  
   
@@ -311,11 +312,11 @@ Ta sekcja zawiera Visual Basic komunikaty o błędach, które występują w czas
   
  [Żaden dostępny przeciążony element " \<methodname> " nie może zostać wywołany z tymi argumentami bez konwersji Narrow](no-accessible-overloaded-methodname-can-be-called-with-these-arguments.md)  
   
- [Żaden dostępny przeciążony element " \<methodname> " nie może zostać wywołany z tymi argumentami bez konwersji zawężania:\<list>](no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list-2.md)  
+ [Żaden dostępny przeciążony element " \<methodname> " nie może zostać wywołany z tymi argumentami bez konwersji zawężania: \<list>](no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list-2.md)  
   
- [Żaden dostępny przeciążony element " \<methodname> " nie może zostać wywołany z tymi argumentami bez konwersji rozszerzającej:\<list>](no-accessible-overloaded-methodname-can-be-called-without-widening.md)  
+ [Żaden dostępny przeciążony element " \<methodname> " nie może zostać wywołany z tymi argumentami bez konwersji rozszerzającej: \<list>](no-accessible-overloaded-methodname-can-be-called-without-widening.md)  
   
- [Żaden dostępny przeciążony element " \<methodname> " nie może zostać wywołany z tymi argumentami:\<list>](no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list.md)  
+ [Żaden dostępny przeciążony element " \<methodname> " nie może zostać wywołany z tymi argumentami: \<list>](no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list.md)  
   
  [Nie znaleziono domyślnego elementu członkowskiego dla typu " \<typename> "](no-default-member-found-for-type-typename.md)  
   
@@ -553,6 +554,6 @@ Ta sekcja zawiera Visual Basic komunikaty o błędach, które występują w czas
   
  [Należy określić ścieżkę znajdującą się pod bieżącym folderem lub jednym z jej podfolderów](you-must-specify-path-that-is-under-the-current-folder-or-one-of-sub-folders.md)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Komunikaty o błędach](../language-reference/error-messages/index.md)
