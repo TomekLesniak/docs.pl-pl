@@ -1,23 +1,24 @@
 ---
-title: Wymiana za długa
+title: Zamienniki są za długie
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID746
 ms.assetid: 398ff5eb-b580-456f-8f24-b7a8318e1193
-ms.openlocfilehash: 4ac66aa6e48a81c49ac21d6d4a15ba0fe278bf29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3c9cbdf1c1317ff8bdea073896f4d959ac9908b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965090"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086676"
 ---
-# <a name="replacements-too-long"></a><span data-ttu-id="df105-102">Wymiana za długa</span><span class="sxs-lookup"><span data-stu-id="df105-102">Replacements too long</span></span>
-<span data-ttu-id="df105-103">Określono zastępczy, który przekracza dozwolone długości.</span><span class="sxs-lookup"><span data-stu-id="df105-103">You specified a replacement that exceeds the permitted length.</span></span>  
-  
-## <a name="to-correct-this-error"></a><span data-ttu-id="df105-104">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="df105-104">To correct this error</span></span>  
-  
-1. <span data-ttu-id="df105-105">Ograniczenia długości można znaleźć w dokumentacji składnika.</span><span class="sxs-lookup"><span data-stu-id="df105-105">Consult the component documentation for the length restriction.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="df105-106">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="df105-106">See also</span></span>
+# <a name="replacements-too-long"></a><span data-ttu-id="f274a-102">Zamienniki są za długie</span><span class="sxs-lookup"><span data-stu-id="f274a-102">Replacements too long</span></span>
 
-- [<span data-ttu-id="df105-107">Znajdowanie i zastępowanie tekstu</span><span class="sxs-lookup"><span data-stu-id="df105-107">Find and replace text</span></span>](/visualstudio/ide/finding-and-replacing-text)
+<span data-ttu-id="f274a-103">Określono zastąpienie, które przekracza dozwoloną długość.</span><span class="sxs-lookup"><span data-stu-id="f274a-103">You specified a replacement that exceeds the permitted length.</span></span>  
+  
+## <a name="to-correct-this-error"></a><span data-ttu-id="f274a-104">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="f274a-104">To correct this error</span></span>  
+  
+1. <span data-ttu-id="f274a-105">Zapoznaj się z dokumentacją dotyczącą składnika, aby uzyskać ograniczenie długości.</span><span class="sxs-lookup"><span data-stu-id="f274a-105">Consult the component documentation for the length restriction.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="f274a-106">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="f274a-106">See also</span></span>
+
+- [<span data-ttu-id="f274a-107">Znajdowanie i zastępowanie tekstu</span><span class="sxs-lookup"><span data-stu-id="f274a-107">Find and replace text</span></span>](/visualstudio/ide/finding-and-replacing-text)
