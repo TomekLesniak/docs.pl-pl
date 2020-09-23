@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f1129500c9b779256b2650fe6fa855152cb3ae80
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 10521759d31c3183232cdb1793d78d139f13ce41
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811281"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077569"
 ---
 ### <a name="middleware-database-error-page-marked-as-obsolete"></a>Oprogramowanie pośredniczące: Strona błędu bazy danych oznaczona jako przestarzała
 
@@ -55,6 +55,8 @@ Wykonaj poniższe czynności:
         }
     }
     ```
+
+1. Dodaj pakiet NuGet [Microsoft. AspNetCore. Diagnostics. EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore) do pliku projektu.
 
 1. Dodaj filtr wyjątku strony dewelopera bazy danych do kolekcji usług. Na przykład Wywołaj `AddDatabaseDeveloperPageExceptionFilter` metodę w `Startup.ConfigureServices` :
 

@@ -2,14 +2,15 @@
 title: Użycie Async do uzyskiwania dostępu do plików
 ms.date: 07/20/2015
 ms.assetid: c989305f-08e3-4687-95c3-948465cda202
-ms.openlocfilehash: 2ee1efa69f4b13224be65fe802ebf5f834c941aa
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2e7fa4a78363a08f2ff25e6a961868e85994e200
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400774"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077361"
 ---
 # <a name="using-async-for-file-access-visual-basic"></a>Używanie Async na potrzeby dostępu do plików (Visual Basic)
+
 Do uzyskiwania dostępu do plików można użyć funkcji asynchronicznej. Za pomocą funkcji asynchronicznej można wywołać metody asynchroniczne bez używania wywołań zwrotnych lub dzieląc kod w wielu metodach lub wyrażeniach lambda. Aby przeprowadzić synchroniczne asynchroniczne kod, wystarczy wywołać metodę asynchroniczną zamiast metody synchronicznej i dodać kilka słów kluczowych do kodu.  
   
  Aby dodać asynchroniczności do wywołań dostępu do plików, należy wziąć pod uwagę następujące przyczyny:  
@@ -25,6 +26,7 @@ Do uzyskiwania dostępu do plików można użyć funkcji asynchronicznej. Za pom
 - Zadania asynchroniczne można łatwo uruchomić równolegle.  
   
 ## <a name="running-the-examples"></a>Uruchamianie przykładów  
+
  Aby uruchomić przykłady w tym temacie, można utworzyć **aplikację WPF** lub **aplikację Windows Forms** , a następnie dodać **przycisk**. W `Click` zdarzeniu przycisku Dodaj wywołanie do pierwszej metody w każdym przykładzie.  
   
  W poniższych przykładach Uwzględnij poniższe `Imports` instrukcje.  
@@ -39,11 +41,13 @@ Imports System.Threading.Tasks
 ```  
   
 ## <a name="use-of-the-filestream-class"></a>Użycie klasy FileStream  
+
  Przykłady w tym temacie używają <xref:System.IO.FileStream> klasy, która powoduje wystąpienie asynchroniczne we/wy na poziomie systemu operacyjnego. Korzystając z tej opcji, można uniknąć zablokowania wątku puli wątków w wielu przypadkach. Aby włączyć tę opcję, należy określić `useAsync=true` argument or `options=FileOptions.Asynchronous` w wywołaniu konstruktora.  
   
  Nie można użyć tej opcji razem z <xref:System.IO.StreamReader> i, <xref:System.IO.StreamWriter> Jeśli otworzysz je bezpośrednio, określając ścieżkę pliku. Można jednak użyć tej opcji, jeśli podajesz im <xref:System.IO.Stream> , że została <xref:System.IO.FileStream> otwarta Klasa. Należy zauważyć, że wywołania asynchroniczne są szybsze w aplikacjach interfejsu użytkownika, nawet jeśli wątek puli wątków jest zablokowany, ponieważ wątek interfejsu użytkownika nie jest blokowany podczas oczekiwania.  
   
 ## <a name="writing-text"></a>Pisanie tekstu  
+
  Poniższy przykład zapisuje tekst do pliku. W każdej instrukcji Await Metoda natychmiast opuszcza. Po zakończeniu operacji we/wy pliku Metoda zostaje wznowiona przy użyciu instrukcji, która następuje po instrukcji Await. Należy zauważyć, że modyfikator Async jest w definicji metod, które używają instrukcji Await.  
   
 ```vb  
@@ -73,9 +77,10 @@ Dim theTask As Task = sourceStream.WriteAsync(encodedText, 0, encodedText.Length
 Await theTask  
 ```  
   
- Pierwsza instrukcja zwraca zadanie i powoduje uruchomienie przetwarzania plików. Druga instrukcja z Await powoduje, że metoda natychmiast zakończy działanie i zwróci inne zadanie. Po późniejszym zakończeniu przetwarzania plików wykonanie powraca do instrukcji, która następuje po oczekiwania. Aby uzyskać więcej informacji, zobacz [sterowanie przepływem w programach asynchronicznych (Visual Basic)](control-flow-in-async-programs.md).  
+ Pierwsza instrukcja zwraca zadanie i powoduje uruchomienie przetwarzania plików. Druga instrukcja z Await powoduje, że metoda natychmiast zakończy działanie i zwróci inne zadanie. Po późniejszym zakończeniu przetwarzania plików wykonanie powraca do instrukcji, która następuje po oczekiwania. Aby uzyskać więcej informacji, zobacz  [sterowanie przepływem w programach asynchronicznych (Visual Basic)](control-flow-in-async-programs.md).  
   
 ## <a name="reading-text"></a>Odczytywanie tekstu  
+
  Poniższy przykład odczytuje tekst z pliku. Tekst jest buforowany i, w tym przypadku, umieszczony w <xref:System.Text.StringBuilder> . W przeciwieństwie do poprzedniego przykładu, obliczanie oczekiwania powoduje utworzenie wartości. <xref:System.IO.Stream.ReadAsync%2A>Metoda zwraca <xref:System.Threading.Tasks.Task> \<<xref:System.Int32>>, więc Ocena await generuje `Int32` wartość ( `numRead` ) po zakończeniu operacji. Aby uzyskać więcej informacji, zobacz [asynchroniczne typy zwracane (Visual Basic)](async-return-types.md).  
   
 ```vb  
@@ -118,6 +123,7 @@ End Function
 ```  
   
 ## <a name="parallel-asynchronous-io"></a>Równoległe asynchroniczne operacje we/wy  
+
  Poniższy przykład ilustruje przetwarzanie równoległe, pisząc 10 plików tekstowych. Dla każdego pliku <xref:System.IO.Stream.WriteAsync%2A> Metoda zwraca zadanie, które jest następnie dodawane do listy zadań. `Await Task.WhenAll(tasks)`Instrukcja kończy metodę i wznawia działanie w ramach metody po zakończeniu przetwarzania plików dla wszystkich zadań.  
   
  Przykład zamyka wszystkie <xref:System.IO.FileStream> wystąpienia w `Finally` bloku po zakończeniu zadań. Jeśli każdy z `FileStream` nich został utworzony w `Imports` instrukcji, `FileStream` może zostać usunięty przed ukończeniem zadania.  
@@ -160,7 +166,7 @@ End Sub
   
  W przypadku korzystania <xref:System.IO.Stream.WriteAsync%2A> z <xref:System.IO.Stream.ReadAsync%2A> metod i można określić <xref:System.Threading.CancellationToken> , której można użyć do anulowania strumienia średniej operacji. Aby uzyskać więcej informacji, zobacz [dostrajanie aplikacji asynchronicznej (Visual Basic)](fine-tuning-your-async-application.md) i [Anulowanie w zarządzanych wątkach](../../../../standard/threading/cancellation-in-managed-threads.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Programowanie asynchroniczne z Async i Await (Visual Basic)](index.md)
 - [Asynchroniczne typy zwracane (Visual Basic)](async-return-types.md)

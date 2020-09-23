@@ -2,17 +2,19 @@
 title: 'Instrukcje: grupowanie plików według rozszerzenia (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-ms.openlocfilehash: 67c48cd735b51009835cbc8df3101ea3cb212a87
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3b1b02283dc65148b8a44952ce39659cc92b483a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396548"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077309"
 ---
 # <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Instrukcje: grupowanie plików według rozszerzenia (LINQ) (Visual Basic)
+
 Ten przykład pokazuje, jak LINQ może służyć do wykonywania zaawansowanych operacji grupowania i sortowania na listach plików lub folderów. Przedstawiono w nim również sposób wyświetlania stron wyjściowych w oknie konsoli przy użyciu <xref:System.Linq.Enumerable.Skip%2A> <xref:System.Linq.Enumerable.Take%2A> metod i.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższe zapytanie pokazuje, jak grupować zawartość określonego drzewa katalogów według rozszerzenia nazwy pliku.  
   
 ```vb  
@@ -94,9 +96,10 @@ End Module
  Dane wyjściowe tego programu mogą być długie, w zależności od szczegółów lokalnego systemu plików i `startFolder` konfiguracji. Aby umożliwić wyświetlanie wszystkich wyników, ten przykład pokazuje, jak przechodzić przez wyniki. Te same techniki można stosować do aplikacji systemu Windows i sieci Web. Zauważ, że ponieważ strona kodowa zawiera elementy w grupie, `For Each` wymagana jest pętla zagnieżdżona. Istnieje również dodatkowa logika służąca do obliczania bieżącej pozycji na liście i umożliwia użytkownikowi zatrzymanie stronicowania i wyjście z programu. W tym konkretnym przypadku kwerenda stronicowania jest uruchamiana względem wyników z pamięci podręcznej z oryginalnego zapytania. W innych kontekstach, takich jak LINQ to SQL, takie buforowanie nie jest wymagane.  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
 Utwórz projekt aplikacji konsolowej Visual Basic przy użyciu `Imports` instrukcji dla przestrzeni nazw System. LINQ.
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
 - [LINQ i katalogi plików (Visual Basic)](linq-and-file-directories.md)

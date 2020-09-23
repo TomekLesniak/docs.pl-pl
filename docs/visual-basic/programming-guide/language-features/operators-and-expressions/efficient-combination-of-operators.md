@@ -13,14 +13,15 @@ helpviewer_keywords:
 - parentheses [Visual Basic], complex expressions
 - numeric expressions
 ms.assetid: bd22340e-b5be-458b-8772-3916c02309a4
-ms.openlocfilehash: 3088072646278dac13e4d483cb4f99297eaad9ca
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9ba6be8e1dd03c0589f712b0e9b39258953cd223
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403475"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077088"
 ---
 # <a name="efficient-combination-of-operators-visual-basic"></a>Skuteczna kombinacja operatorów (Visual Basic)
+
 Wyrażenia złożone mogą zawierać wiele różnych operatorów. Ilustruje to poniższy przykład.  
   
  `x = (45 * (y + z)) ^ (2 / 85) * 5 + z`  
@@ -28,6 +29,7 @@ Wyrażenia złożone mogą zawierać wiele różnych operatorów. Ilustruje to p
  Tworzenie złożonych wyrażeń, takich jak jeden w poprzednim przykładzie, wymaga dokładnego poznania reguł pierwszeństwa operatorów. Aby uzyskać więcej informacji, zobacz [pierwszeństwo operatorów w Visual Basic](../../../language-reference/operators/operator-precedence.md).  
   
 ## <a name="parenthetical-expressions"></a>Wyrażenia w nawiasach  
+
  Często operacje mają być wykonywane w innej kolejności niż określona przez pierwszeństwo operatorów. Rozważmy następujący przykład.  
   
  `x = z * y + 4`  
@@ -39,13 +41,14 @@ Wyrażenia złożone mogą zawierać wiele różnych operatorów. Ilustruje to p
  Powyższy przykład dodaje `y` i `4` , a następnie mnoży sumę według `z` .  
   
 ### <a name="nested-parenthetical-expressions"></a>Zagnieżdżone wyrażenia ujęte w nawiasy  
+
  Można zagnieżdżać wyrażenia na wielu poziomach nawiasów, aby jeszcze bardziej zastępować pierwszeństwo. Wyrażenia najbardziej głęboko zagnieżdżone w nawiasach są oceniane jako pierwsze, po których następuje następne przeważnie zagnieżdżone i tak dalej, jak najmniej głęboko zagnieżdżone, a wreszcie wyrażenia poza nawiasy. Ilustruje to poniższy przykład.  
   
  `x = (z * 4) ^ (y * (z + 2))`  
   
  W poprzednim przykładzie `z + 2` jest oceniane jako pierwsze, a następnie inne wyrażenia ujęte w nawiasy. Potęga, która zwykle ma wyższy priorytet niż Dodawanie lub mnożenie, jest szacowana jako Ostatnia w tym przykładzie, ponieważ inne wyrażenia są ujęte w nawiasy.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Operatory arytmetyczne w Visual Basic](arithmetic-operators.md)
 - [Operatory porównania w Visual Basic](comparison-operators.md)

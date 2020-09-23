@@ -6,19 +6,21 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: 9d85f9c0390a659e59e372ad949cffdd17715189
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c7d0595b991bdad6ef05b567f95ead8c7fccdbc2
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413261"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077283"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Pisanie pierwszego zapytania LINQ (Visual Basic)
+
 *Zapytanie* jest wyrażeniem, które pobiera dane ze źródła danych. Zapytania są wyrażane w dedykowanym języku zapytań. W miarę upływu czasu różne języki zostały opracowane dla różnych typów źródeł danych, na przykład SQL dla relacyjnych baz danych i XQuery dla XML. Dzięki temu deweloper aplikacji może poznać nowy język zapytań dla każdego typu źródła danych lub obsługiwanego formatu danych.  
   
  Program Query Integrated Language (LINQ) upraszcza sytuację, oferując spójny model do pracy z danymi w różnych rodzajach źródeł danych i formatach. W zapytaniu LINQ zawsze pracujesz z obiektami. Te same podstawowe wzorce kodowania służą do wykonywania zapytań i przekształcania danych w dokumentach XML, baz danych SQL, ADO.NET zbiorach i jednostkach, kolekcjach .NET Framework i innych źródłach lub formatach, dla których jest dostępny dostawca LINQ. W tym dokumencie opisano trzy etapy tworzenia i używania podstawowych zapytań LINQ.  
   
 ## <a name="three-stages-of-a-query-operation"></a>Trzy etapy operacji zapytania  
+
  Operacje zapytań LINQ składają się z trzech akcji:  
   
 1. Uzyskaj źródło danych lub źródła.  
@@ -41,6 +43,7 @@ ms.locfileid: "84413261"
  `0 2 4 6`  
   
 ## <a name="the-data-source"></a>Źródło danych  
+
  Ze względu na to, że źródło danych w poprzednim przykładzie jest tablicą, niejawnie obsługuje <xref:System.Collections.Generic.IEnumerable%601> interfejs ogólny. Jest to fakt, że umożliwia użycie tablicy jako źródła danych dla zapytania LINQ. Typy obsługujące <xref:System.Collections.Generic.IEnumerable%601> lub interfejs pochodny, takie jak generyczne, <xref:System.Linq.IQueryable%601> są nazywane *typami Queryable*.  
   
  Jako niejawnie queryable typ, tablica nie wymaga modyfikacji ani specjalnego traktowania, które ma stanowić źródło danych LINQ. Ta sama wartość dotyczy dowolnego typu kolekcji, który obsługuje <xref:System.Collections.Generic.IEnumerable%601> , w tym generycznej <xref:System.Collections.Generic.List%601> , <xref:System.Collections.Generic.Dictionary%602> i innych klas w bibliotece klas .NET Framework.  
@@ -63,6 +66,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
 > Typy takie jak <xref:System.Collections.ArrayList> obsługujące interfejs nieogólny <xref:System.Collections.IEnumerable> mogą również służyć jako źródła danych LINQ. Aby zapoznać się z przykładem, który używa programu <xref:System.Collections.ArrayList> , zobacz [How to: Query a ARRAYLIST with LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
   
 ## <a name="the-query"></a>Zapytanie  
+
  W zapytaniu należy określić, jakie informacje mają być pobierane ze źródła danych lub źródeł. Istnieje również możliwość określenia, w jaki sposób te informacje mają być sortowane, grupowane lub strukturalne przed zwróceniem. Aby włączyć Tworzenie zapytania, Visual Basic zawiera nową składnię zapytania w języku.  
   
  Gdy jest wykonywane, zapytanie w poniższym przykładzie zwraca wszystkie liczby parzyste z tablicy liczb całkowitych `numbers` .  
@@ -74,9 +78,11 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  Należy pamiętać, że zmienna zapytania nie przyjmuje żadnej akcji i nie zwraca żadnych danych. Przechowuje tylko definicję zapytania. W poprzednim przykładzie jest to `For Each` Pętla, która wykonuje zapytanie.  
   
 ## <a name="query-execution"></a>Wykonywanie zapytania  
+
  Wykonanie zapytania jest niezależne od tworzenia zapytania. Tworzenie zapytania definiuje zapytanie, ale wykonywanie jest wyzwalane przez inny mechanizm. Zapytanie może być wykonywane zaraz po jego zdefiniowaniu (*natychmiastowe wykonanie*) lub definicji może być przechowywane, a zapytanie można wykonać później (*odroczone wykonanie*).  
   
 ### <a name="deferred-execution"></a>Wykonanie odroczone  
+
  Typowa kwerenda LINQ jest podobna do powyższego przykładu, w którym `evensQuery` jest zdefiniowana. Tworzy zapytanie, ale nie wykonuje go od razu. Zamiast tego definicja zapytania jest przechowywana w zmiennej zapytania `evensQuery` . Zapytanie jest wykonywane później, zazwyczaj przy użyciu `For Each` pętli, która zwraca sekwencję wartości lub przez zastosowanie standardowego operatora zapytania, takiego jak `Count` lub `Max` . Ten proces jest nazywany *wykonaniem odroczonym*.  
   
  [!code-vb[VbLINQFirstQuery#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#7)]  
@@ -98,6 +104,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  `0  10  2  22  8`  
   
 ### <a name="immediate-execution"></a>Natychmiastowe wykonanie  
+
  W odroczonym wykonywaniu zapytań definicja zapytania jest przechowywana w zmiennej zapytania na potrzeby późniejszego wykonania. W przypadku natychmiastowego wykonania zapytanie jest wykonywane w momencie jego definicji. Wykonywanie jest wyzwalane w przypadku zastosowania metody wymagającej dostępu do poszczególnych elementów wyniku zapytania. Natychmiastowe wykonanie często jest wymuszane przy użyciu jednego z standardowych operatorów zapytań, które zwracają pojedyncze wartości. Przykłady to `Count` , `Max` , `Average` , i `First` . Te standardowe operatory zapytań wykonują zapytanie natychmiast po ich zastosowaniu, aby obliczyć i zwrócić pojedynczy wynik. Aby uzyskać więcej informacji na temat standardowych operatorów zapytań, które zwracają pojedyncze wartości, zobacz [operacje agregacji](aggregation-operations.md), [operacje elementów](element-operations.md)i [Kwantyfikatory](quantifier-operations.md).  
   
  Następujące zapytanie zwraca liczbę liczb parzystych w tablicy liczb całkowitych. Definicja zapytania nie została zapisana i `numEvens` jest prosta `Integer` .  
@@ -118,7 +125,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
   
  Możesz również spowodować wykonanie zapytania przy użyciu `IEnumerable` metody, takiej jak <xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A> Metoda.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie do programu LINQ w Visual Basic](getting-started-with-linq.md)
 - [Wnioskowanie o typie lokalnym](../../language-features/variables/local-type-inference.md)

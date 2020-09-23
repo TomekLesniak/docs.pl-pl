@@ -21,14 +21,15 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 242dd2a6-86c4-4ce7-83f2-f2661803f752
-ms.openlocfilehash: 01f1f7ef5963feeb3fe2b5390244e4e516773bad
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 87ba5132afe9f5a7cd6fb33d716c670f4812c7e2
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393847"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077114"
 ---
 # <a name="how-to-use-a-generic-class-visual-basic"></a>Porady: używanie klasy ogólnej (Visual Basic)
+
 Klasa, która pobiera *parametry typu* , jest nazywana *klasą rodzajową*. Jeśli używasz klasy generycznej, możesz wygenerować utworzoną *klasę* z niej, dostarczając *argument typu* dla każdego z tych parametrów. Następnie można zadeklarować zmienną typu konstruowanej klasy i można utworzyć wystąpienie klasy skonstruowanej i przypisać ją do tej zmiennej.  
   
  Oprócz klas można także definiować struktury ogólne, interfejsy, procedury i Delegaty oraz korzystać z nich.  
@@ -45,7 +46,7 @@ Klasa, która pobiera *parametry typu* , jest nazywana *klasą rodzajową*. Jeś
   
      [!code-vb[VbVbalrDataTypes#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#9)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy danych](index.md)
 - [Typy ogólne w Visual Basic](generic-types.md)

@@ -11,22 +11,25 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-ms.openlocfilehash: 3e8df5ccfeca4bc0a19237ba6d59e9d0747080ea
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 842b74aa7cc99c8196fdfb1eb6c976d9e72a4fa4
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84394301"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077166"
 ---
 # <a name="composite-data-types-visual-basic"></a>Złożone typy danych (Visual Basic)
+
 Oprócz podstawowych typów danych Visual Basic dostaw, można także złożyć elementy różnych typów w celu utworzenia *złożonych typów danych* , takich jak struktury, tablice i klasy. Można tworzyć złożone typy danych z typów podstawowych i z innych typów złożonych. Na przykład można zdefiniować tablicę elementów struktury lub strukturę z elementami członkowskimi tablicy.  
   
 ## <a name="data-types"></a>Typy danych  
+
  Typ złożony różni się od typu danych któregokolwiek z jego składników. Na przykład tablica `Integer` elementów nie jest `Integer` typu danych.  
   
  Typ danych tablicy jest zwykle reprezentowany przy użyciu typu elementu, nawiasów i przecinków w razie potrzeby. Na przykład Jednowymiarowa tablica `String` elementów jest reprezentowana jako `String()` , a Dwuwymiarowa tablica `Boolean` elementów jest reprezentowana jako `Boolean(,)` .  
   
 ## <a name="structure-types"></a>Typy struktur  
+
  Nie istnieje pojedynczy typ danych obejmujący wszystkie struktury. Zamiast tego każda definicja struktury reprezentuje unikatowy typ danych, nawet jeśli dwie struktury definiują identyczne elementy w tej samej kolejności. Jeśli jednak tworzysz dwa lub więcej wystąpień tej samej struktury, Visual Basic uznaje ich za tego samego typu danych.  
   
 ## <a name="tuples"></a>Krotki
@@ -34,6 +37,7 @@ Oprócz podstawowych typów danych Visual Basic dostaw, można także złożyć 
 Krotka jest strukturą uproszczoną, która zawiera co najmniej dwa pola, których typy są wstępnie zdefiniowane. Krotki są obsługiwane począwszy od Visual Basic 2017. Krotki są najczęściej używane do zwracania wielu wartości z pojedynczej metody wywołania bez konieczności przekazywania argumentów przez odwołanie lub pakowanie zwracanych pól w bardziej ciężkich klasach lub strukturach. Aby uzyskać więcej informacji na temat krotek, zobacz temat [krotki](tuples.md) .
 
 ## <a name="array-types"></a>Typy tablic  
+
  Nie istnieje pojedynczy typ danych składający się ze wszystkich tablic. Typ danych określonego wystąpienia tablicy jest określany na podstawie następujących elementów:  
   
 - Fakt, że jest tablicą  
@@ -57,11 +61,12 @@ Dim arrayE( , ) As Short = New Short(4, 10) {}
  Aby uzyskać więcej informacji na temat tablic, zobacz [tablice](../arrays/index.md).  
   
 ## <a name="class-types"></a>Typy klas  
+
  Nie istnieje pojedynczy typ danych składający się ze wszystkich klas. Chociaż jedna klasa może dziedziczyć z innej klasy, każda z nich jest osobnym typem danych. Wiele wystąpień tej samej klasy ma ten sam typ danych. W przypadku przypisania jednej zmiennej wystąpienia klasy do innej nie tylko mają one ten sam typ danych, wskazują na to samo wystąpienie klasy w pamięci.  
   
  Aby uzyskać więcej informacji na temat klas, zobacz [obiekty i klasy](../objects-and-classes/index.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy danych](index.md)
 - [Typy danych podstawowych](elementary-data-types.md)

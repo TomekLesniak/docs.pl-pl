@@ -12,14 +12,15 @@ helpviewer_keywords:
 - conversions [Visual Basic], array types
 - object arrays
 ms.assetid: fceff7d2-a1b7-44c7-b9aa-8bd831d8a444
-ms.openlocfilehash: 1d20b01200d3f967e3355dc6e9651291003d140e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 375c75c954f3be535272d674d9b786cad46b1a01
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402008"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077192"
 ---
 # <a name="array-conversions-visual-basic"></a>Konwersje tablic (Visual Basic)
+
 Typ tablicy można skonwertować na inny typ tablicy, pod warunkiem, że są spełnione następujące warunki:  
   
 - **Równa ranga.** Range dwóch tablic muszą być takie same, co oznacza, że muszą mieć taką samą liczbę wymiarów. Jednak długości odpowiednich wymiarów nie muszą być takie same.  
@@ -31,6 +32,7 @@ Typ tablicy można skonwertować na inny typ tablicy, pod warunkiem, że są spe
  Konwersja jednego typu tablicy na inny jest poszerzana lub zawężana w zależności od tego, czy konwersja odpowiednich elementów jest poszerzana czy zawężana. Aby uzyskać więcej informacji, zobacz [rozszerzanie i zwężanie konwersji](widening-and-narrowing-conversions.md).  
   
 ## <a name="conversion-to-an-object-array"></a>Konwersja na tablicę obiektów  
+
  Po zadeklarowaniu `Object` tablicy bez jej inicjalizacji jej typ elementu jest `Object` tak długo, jak pozostaje niezainicjowany. Gdy ustawiasz ją na tablicę określonej klasy, przyjmuje ona typ tej klasy. Jednak jego typ podstawowy jest nadal `Object` , a następnie można ustawić go na inną tablicę niepowiązanej klasy. Ponieważ wszystkie klasy pochodzą z `Object` , można zmienić typ elementu tablicy z dowolnej klasy na dowolną inną klasę.  
   
  W poniższym przykładzie nie istnieje żadna konwersja między typami `student` i `String` , ale obie wartości pochodzą od `Object` , więc wszystkie przypisania są prawidłowe.  
@@ -47,6 +49,7 @@ testArray = names
 ```  
   
 ### <a name="underlying-type-of-an-array"></a>Typ podstawowy tablicy  
+
  Jeśli pierwotnie deklarujesz tablicę z określoną klasą, jej typem elementu podstawowego jest Klasa. Jeśli następnie ustawisz ją na tablicę innej klasy, musi istnieć konwersja między tymi dwiema klasami.  
   
  W poniższym przykładzie `students` jest `student` tablicą. Ponieważ nie istnieje konwersja między `String` i `student` , Ostatnia instrukcja kończy się niepowodzeniem.  
@@ -59,7 +62,7 @@ students = New Student(3) {}
 students = names  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy danych](index.md)
 - [Konwersje plików w Visual Basic](type-conversions.md)

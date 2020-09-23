@@ -2,14 +2,15 @@
 title: 'Porady: odczytywanie danych o obiektach z pliku XML'
 ms.date: 07/20/2015
 ms.assetid: 1e1423bf-74a4-4dde-a3bb-ae1bfc0a68ed
-ms.openlocfilehash: 7097ec146987aea7855da40dd30f9cd3c17d8ce4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7677b32f76bee3fe579f96715b6c748c08c83a82
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413170"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077244"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>Instrukcje: odczytywanie danych obiektu z pliku XML (Visual Basic)
+
 Ten przykład odczytuje dane obiektu, które wcześniej Zapisano do pliku XML przy użyciu <xref:System.Xml.Serialization.XmlSerializer> klasy.  
   
 ## <a name="example"></a>Przykład  
@@ -30,6 +31,7 @@ End Sub
 ```  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
  Zastąp nazwę pliku "c:\temp\SerializationOverview.xml" nazwą pliku zawierającego serializowane dane. Aby uzyskać więcej informacji na temat serializowania danych, zobacz [How to: Write dane obiektu do pliku XML (Visual Basic)](how-to-write-object-data-to-an-xml-file.md).  
   
  Klasa musi mieć Konstruktor publiczny bez parametrów.  
@@ -37,6 +39,7 @@ End Sub
  Tylko publiczne właściwości i pola są deserializowane.  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  Następujące warunki mogą spowodować wyjątek:  
   
 - Serializowana Klasa nie ma publicznego konstruktora bez parametrów.  
@@ -46,9 +49,10 @@ End Sub
 - Plik nie istnieje ( <xref:System.IO.IOException> ).  
   
 ## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
+
  Zawsze Weryfikuj dane wejściowe i nigdy nie wykonuj deserializacji danych z niezaufanego źródła. Nowo utworzony obiekt jest uruchamiany na komputerze lokalnym z uprawnieniami kodu, który został deserializowany. Sprawdź wszystkie dane wejściowe, zanim użyjesz danych w aplikacji.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IO.StreamWriter>
 - [Instrukcje: zapisywanie danych obiektu w pliku XML (Visual Basic)](how-to-write-object-data-to-an-xml-file.md)

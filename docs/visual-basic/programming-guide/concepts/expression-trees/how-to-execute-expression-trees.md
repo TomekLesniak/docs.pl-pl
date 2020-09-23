@@ -2,14 +2,15 @@
 title: 'Porady: wykonywanie drzew wyrażeń'
 ms.date: 07/20/2015
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-ms.openlocfilehash: 7b7b08ea1a7a1310b1d98876be96f1fa28ecba91
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 703a2dc49ba905c81948267f6eec3ca7578fc308
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84375333"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077335"
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a>Instrukcje: wykonywanie drzew wyrażeń (Visual Basic)
+
 W tym temacie pokazano, jak wykonać drzewo wyrażenia. Wykonanie drzewa wyrażenia może zwrócić wartość lub może po prostu wykonać akcję, taką jak wywołanie metody.  
   
  Można wykonywać tylko drzewa wyrażeń, które reprezentują wyrażenia lambda. Drzewa wyrażeń, które reprezentują wyrażenia lambda, są typu <xref:System.Linq.Expressions.LambdaExpression> lub <xref:System.Linq.Expressions.Expression%601> . Aby wykonać te drzewa wyrażeń, wywołaj <xref:System.Linq.Expressions.LambdaExpression.Compile%2A> metodę, aby utworzyć delegata pliku wykonywalnego, a następnie Wywołaj delegata.  
@@ -20,6 +21,7 @@ W tym temacie pokazano, jak wykonać drzewo wyrażenia. Wykonanie drzewa wyraże
  Jeśli drzewo wyrażenia nie reprezentuje wyrażenia lambda, można utworzyć nowe wyrażenie lambda, które ma pierwotne drzewo wyrażenia jako jego treść, wywołując <xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29> metodę. Następnie można wykonać wyrażenie lambda zgodnie z opisem we wcześniejszej części tej sekcji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu demonstruje, jak wykonać drzewo wyrażenia, które reprezentuje podnoszenie liczby do potęgi przez utworzenie wyrażenia lambda i jego wykonanie. Zostanie wyświetlony wynik, który reprezentuje liczbę podniesioną do potęgi.  
   
 ```vb  
@@ -46,7 +48,7 @@ MsgBox(result)
   
 - Uwzględnij przestrzeń nazw System. LINQ. Expressions.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Drzewa wyrażeń (Visual Basic)](index.md)
 - [Instrukcje: modyfikowanie drzew wyrażeń (Visual Basic)](how-to-modify-expression-trees.md)
