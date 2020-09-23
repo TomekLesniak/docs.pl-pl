@@ -9,14 +9,15 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 633b457106203e213f5d30003e576b7e8132f4d2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b489a164e56a5e3bdbf7e3cdf24ec330fadedf38
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400490"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097556"
 ---
 # <a name="-reference-visual-basic"></a>-Reference (Visual Basic)
+
 Powoduje, że kompilator udostępnia informacje o typie w określonych zestawach, które są dostępne dla aktualnie kompilowanego projektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ lub
 |`fileList`|Wymagany. Rozdzielana przecinkami lista nazw plików zestawu. Jeśli nazwa pliku zawiera spację, należy ująć ją w cudzysłów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Importowane pliki muszą zawierać metadane zestawu. Tylko typy publiczne są widoczne poza zestawem. Opcja [-addmodule](addmodule.md) Importuje metadane z modułu.  
   
  Jeśli odwołujesz się do zestawu (zestawu A), który sam odwołuje się do innego zestawu (zestawu B), należy odwołać się do zestawu B, jeśli:  
@@ -55,16 +57,17 @@ lub
  Krótka forma `-reference` to `-r` .  
   
 ## <a name="example"></a>Przykład  
+
  Poniższe polecenie kompiluje plik źródłowy `Input.vb` i zestawy odwołań z `Metad1.dll` i `Metad2.dll` do produkcji `Out.exe` .  
   
 ```console
 vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kompilator wiersza polecenia Visual Basic](index.md)
 - [-noconfig](noconfig.md)
 - [-Target (Visual Basic)](target.md)
-- [Społeczeństwo](../../language-reference/modifiers/public.md)
+- [Publiczne](../../language-reference/modifiers/public.md)
 - [Przykłady kompilacji — wiersze poleceń](sample-compilation-command-lines.md)

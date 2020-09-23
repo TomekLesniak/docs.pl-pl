@@ -6,14 +6,15 @@ helpviewer_keywords:
 - -doc compiler option [Visual Basic]
 - /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
-ms.openlocfilehash: 57a81983278c26090c62995f4da55c5cbfd66047
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8b80629ce9b2cd62f10d9a53279b83ba41bc4ece
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408676"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097712"
 ---
 # <a name="-doc"></a>-doc
+
 Przetwarza komentarze dokumentacji do pliku XML.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,10 +33,11 @@ lub
   
 |Termin|Definicja|  
 |---|---|  
-|`+`&#124;`-`|Opcjonalny. Określenie +, lub po prostu `-doc` powoduje, że kompilator generuje informacje dokumentacji i umieszcza je w pliku XML. Określenie `-` jest odpowiednikiem nieokreślenia `-doc` , co nie powoduje utworzenia informacji o dokumentacji.|  
+|`+` &#124; `-`|Opcjonalny. Określenie +, lub po prostu `-doc` powoduje, że kompilator generuje informacje dokumentacji i umieszcza je w pliku XML. Określenie `-` jest odpowiednikiem nieokreślenia `-doc` , co nie powoduje utworzenia informacji o dokumentacji.|  
 |`file`|Wymagane, jeśli `-doc:` jest używany. Określa wyjściowy plik XML, który jest wypełniany komentarzami z plików kodu źródłowego kompilacji. Jeśli nazwa pliku zawiera spację, należy ująć ją w cudzysłów ("").|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `-doc`Opcja określa, czy kompilator generuje plik XML zawierający komentarze dokumentacji. Jeśli używasz `-doc:file` składni, `file` parametr określa nazwę pliku XML. Jeśli używasz `-doc` lub `-doc+` , kompilator Pobiera nazwę pliku XML z pliku wykonywalnego lub biblioteki, którą tworzy kompilator. Jeśli używasz `-doc-` lub nie określisz `-doc` opcji, kompilator nie tworzy pliku XML.  
   
  W plikach kodu źródłowego Komentarze do dokumentacji mogą poprzedzać następujące definicje:  
@@ -55,9 +57,10 @@ lub
 |1. zaznaczono projekt w **Eksplorator rozwiązań**. W menu **projekt** kliknij polecenie **Właściwości**. <br />2. Kliknij kartę **kompilacja** .<br />3. Ustaw wartość w polu **Generuj plik dokumentacji XML** .|  
   
 ## <a name="example"></a>Przykład  
+
  Zobacz [dokumentowanie kodu za pomocą XML](../../programming-guide/program-structure/documenting-your-code-with-xml.md) dla przykładu.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kompilator wiersza polecenia Visual Basic](index.md)
 - [Dokumentowanie kodu za pomocą XML](../../programming-guide/program-structure/documenting-your-code-with-xml.md)
