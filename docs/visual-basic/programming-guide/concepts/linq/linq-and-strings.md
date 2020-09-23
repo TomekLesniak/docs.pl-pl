@@ -2,14 +2,15 @@
 title: LINQ i ciągi
 ms.date: 07/20/2015
 ms.assetid: 75ddb201-d97a-4f98-8cdf-4ad51714529a
-ms.openlocfilehash: ee2a44175e8546f879473a3af6bf1a2de92d2501
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 28c11dcc3c788ea85516e8b3fbafe2677b6d9b54
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549852"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075346"
 ---
 # <a name="linq-and-strings-visual-basic"></a>LINQ i ciągi (Visual Basic)
+
 LINQ może służyć do wykonywania zapytań i przekształcania ciągów i kolekcji ciągów. Może być szczególnie przydatne w przypadku danych z częściową strukturą w plikach tekstowych. Zapytania LINQ można łączyć z tradycyjnymi funkcjami ciągów i wyrażeniami regularnymi. Na przykład można użyć <xref:System.String.Split%2A> metody lub, <xref:System.Text.RegularExpressions.Regex.Split%2A> Aby utworzyć tablicę ciągów, które można następnie wykonać zapytania lub zmodyfikować przy użyciu LINQ. Możesz użyć <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metody w `where` klauzuli zapytania LINQ. I można użyć LINQ do zapytania lub zmodyfikować <xref:System.Text.RegularExpressions.MatchCollection> wyniki zwrócone przez wyrażenie regularne.  
   
  Można również użyć technik opisanych w tej sekcji, aby przekształcić dane z częściową strukturą do formatu XML. Aby uzyskać więcej informacji, zobacz [How to: Generate XML from pliki CSV](../../../../standard/linq/generate-xml-csv-files.md).  
@@ -17,6 +18,7 @@ LINQ może służyć do wykonywania zapytań i przekształcania ciągów i kolek
  Przykłady w tej sekcji należą do dwóch kategorii:  
   
 ## <a name="querying-a-block-of-text"></a>Wykonywanie zapytania dotyczącego bloku tekstu  
+
  Można wykonywać zapytania, analizować i modyfikować bloki tekstu, dzieląc je na tablicę Queryable mniejszych ciągów przy użyciu <xref:System.String.Split%2A> metody lub <xref:System.Text.RegularExpressions.Regex.Split%2A> metody. Możesz podzielić tekst źródłowy na słowa, zdania, akapity, strony lub inne kryteria, a następnie wykonać dodatkowe podziały, jeśli są one wymagane w zapytaniu.  
   
  [Instrukcje: Liczenie wystąpień wyrazu w ciągu (LINQ) (Visual Basic)](how-to-count-occurrences-of-a-word-in-a-string-linq.md)  
@@ -33,6 +35,7 @@ LINQ może służyć do wykonywania zapytań i przekształcania ciągów i kolek
  Pokazuje, jak używać wyrażeń regularnych w zapytaniach LINQ dla złożonego dopasowania do wzorca na filtrowanych wynikach zapytań.  
   
 ## <a name="querying-semi-structured-data-in-text-format"></a>Wykonywanie zapytania dotyczącego danych z częściową strukturą w formacie tekstowym  
+
  Wiele różnych typów plików tekstowych składa się z szeregu wierszy, często z podobnym formatowaniem, takim jak pliki rozdzielane znakami tabulacji lub rozdzielonymi długościami. Po przeczytaniu takiego pliku tekstowego do pamięci można użyć LINQ do wykonywania zapytań i/lub modyfikowania wierszy. Zapytania LINQ upraszczają także zadanie łączenia danych z wielu źródeł.  
   
  [Instrukcje: Wyszukiwanie zestawu różnic między dwoma listami (LINQ) (Visual Basic)](how-to-find-the-set-difference-between-two-lists-linq.md)  

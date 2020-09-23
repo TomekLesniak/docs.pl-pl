@@ -8,14 +8,15 @@ helpviewer_keywords:
 - anonymous types [Visual Basic]
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
-ms.openlocfilehash: bbe84ce8a62705027c00bc26db74a3c21fa34fd9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5ab3cf8c3c02ff35890f71ad6c7f314b51b87133
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411805"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075242"
 ---
 # <a name="anonymous-types-visual-basic"></a>Typy anonimowe (Visual Basic)
+
 Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów bez konieczności pisania definicji klasy dla typu danych. Zamiast tego kompilator generuje klasę dla Ciebie. Klasa nie ma użytecznych nazw, dziedziczy bezpośrednio z <xref:System.Object> i zawiera właściwości określone w deklaracji obiektu. Ponieważ nazwa typu danych nie jest określona, jest określana jako *Typ anonimowy*.  
   
  Poniższy przykład deklaruje i tworzy zmienną `product` jako wystąpienie typu anonimowego, który ma dwie właściwości, `Name` i `Price` .  
@@ -38,6 +39,7 @@ Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów
 > Nazwa typu anonimowego jest generowana przez kompilator i może się różnić od kompilacji do kompilacji. Kod nie powinien używać nazwy typu anonimowego ani polegać na niej, ponieważ nazwa może ulec zmianie podczas ponownej kompilacji projektu.  
   
 ## <a name="declaring-an-anonymous-type"></a>Deklarowanie typu anonimowego  
+
  Deklaracja wystąpienia typu anonimowego używa listy inicjatorów do określenia właściwości typu. Podczas deklarowania typu anonimowego można określić tylko właściwości, a nie inne elementy klasy, takie jak metody lub zdarzenia. W poniższym przykładzie `product1` jest wystąpienie typu anonimowego, który ma dwie właściwości: `Name` i `Price` .  
   
  [!code-vb[VbVbalrAnonymousTypes#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#4)]  
@@ -51,6 +53,7 @@ Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów
  Aby uzyskać więcej informacji na temat innych metod określania właściwości typu anonimowego, zobacz [How to: wnioskowanie nazw właściwości i typów w deklaracjach typu anonimowego](how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).  
   
 ## <a name="key-properties"></a>Właściwości klucza  
+
  Właściwości klucza różnią się od właściwości niebędących kluczami na kilka podstawowych sposobów:  
   
 - Tylko wartości właściwości klucza są porównywane w celu określenia, czy dwa wystąpienia są równe.  
@@ -60,6 +63,7 @@ Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów
 - Tylko wartości właściwości klucza są zawarte w algorytmie kodu skrótu wygenerowanego przez kompilator dla typu anonimowego.  
   
 ### <a name="equality"></a>Równość  
+
  Wystąpienia typów anonimowych mogą być równe tylko wtedy, gdy są wystąpieniami tego samego typu anonimowego. Kompilator traktuje dwa wystąpienia jako wystąpienia tego samego typu, jeśli spełniają następujące warunki:  
   
 - Są one deklarowane w tym samym zestawie.  
@@ -79,18 +83,20 @@ Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów
  [!code-vb[VbVbalrAnonymousTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#7)]  
   
 ### <a name="read-only-values"></a>Wartości tylko do odczytu  
+
  Nie można zmienić wartości właściwości klucza. Na przykład w `prod8` poprzednim przykładzie `Name` `Price` pola i są `read-only` , ale `OnHand` można je zmienić.  
   
  [!code-vb[VbVbalrAnonymousTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#8)]  
   
 ## <a name="anonymous-types-from-query-expressions"></a>Typy anonimowe z wyrażeń zapytania  
+
  Wyrażenia zapytań nie zawsze wymagają tworzenia typów anonimowych. Jeśli to możliwe, używa istniejącego typu do przechowywania danych kolumny. Dzieje się tak, gdy zapytanie zwraca wszystkie rekordy ze źródła danych lub tylko jedno pole z każdego rekordu. W poniższym przykładzie kodu, `customers` jest kolekcją obiektów `Customer` klasy. Klasa ma wiele właściwości i można w dowolnej kolejności uwzględnić jeden lub więcej z nich w wyniku zapytania. W pierwszych dwóch przykładach nie są wymagane żadne typy anonimowe, ponieważ zapytania wybierają elementy nazwanych typów:  
   
-- `custs1`zawiera kolekcję ciągów, ponieważ `cust.Name` jest ciągiem.  
+- `custs1` zawiera kolekcję ciągów, ponieważ `cust.Name` jest ciągiem.  
   
      [!code-vb[VbVbalrAnonymousTypes#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#30)]  
   
-- `custs2`zawiera kolekcję `Customer` obiektów, ponieważ każdy element `customers` jest `Customer` obiekt, a cały element jest wybierany przez zapytanie.  
+- `custs2` zawiera kolekcję `Customer` obiektów, ponieważ każdy element `customers` jest `Customer` obiekt, a cały element jest wybierany przez zapytanie.  
   
      [!code-vb[VbVbalrAnonymousTypes#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#31)]  
   
@@ -107,6 +113,7 @@ Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów
  Aby uzyskać więcej informacji, zobacz [wprowadzenie do LINQ w Visual Basic](../linq/introduction-to-linq.md).  
   
 ## <a name="deciding-whether-to-use-anonymous-types"></a>Decydowanie o tym, czy mają być używane typy anonimowe  
+
  Przed utworzeniem obiektu jako wystąpieniem klasy anonimowej, należy rozważyć, czy jest to najlepsza opcja. Na przykład, jeśli chcesz utworzyć tymczasowy obiekt, aby zawierał powiązane dane, i nie ma potrzeby dla innych pól i metod, które może zawierać kompletna Klasa, typ anonimowy jest dobrym rozwiązaniem. Typy anonimowe są również wygodne, jeśli chcesz wybrać różne właściwości dla każdej deklaracji, lub jeśli chcesz zmienić kolejność właściwości. Jeśli jednak projekt zawiera kilka obiektów, które mają te same właściwości, w ustalonej kolejności można zadeklarować je łatwiej przy użyciu nazwanego typu z konstruktorem klasy. Na przykład, z odpowiednim konstruktorem, łatwiej jest zadeklarować kilka wystąpień `Product` klasy, niż ma zadeklarować kilka wystąpień typu anonimowego.  
   
  [!code-vb[VbVbalrAnonymousTypes#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#9)]  
@@ -118,6 +125,7 @@ Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów
  Co ważniejsze, istnieją ograniczenia dotyczące użycia anonimowych typów, które nie mają zastosowania do wystąpień nazwanych typów. `firstProd2`, `secondProd2` , i `thirdProd2` są wystąpieniami tego samego typu anonimowego. Jednak nazwa udostępnionego typu anonimowego jest niedostępna i nie może się pojawić w przypadku, gdy w kodzie nie oczekiwano nazwy typu. Na przykład typu anonimowego nie można użyć do zdefiniowania podpisu metody, do deklarowania innej zmiennej lub pola lub deklaracji typu. W związku z tym typy anonimowe nie są odpowiednie w przypadku konieczności udostępniania informacji między metodami.  
   
 ## <a name="an-anonymous-type-definition"></a>Definicja typu anonimowego  
+
  W odpowiedzi na deklarację wystąpienia typu anonimowego kompilator tworzy nową definicję klasy, która zawiera określone właściwości.  
   
  Jeśli typ anonimowy zawiera co najmniej jedną właściwość klucza, definicja przesłania trzy składowe dziedziczone z <xref:System.Object> : <xref:System.Object.Equals%2A> , <xref:System.Object.GetHashCode%2A> , i <xref:System.Object.ToString%2A> . Kod przeznaczony do testowania równości i określania wartości kodu skrótu uwzględnia tylko właściwości klucza. Jeśli typ anonimowy nie zawiera właściwości klucza, tylko <xref:System.Object.ToString%2A> jest zastępowany. Właściwości jawnie nazwane typu anonimowego nie mogą powodować konfliktu z tymi wygenerowanymi metodami. Oznacza to, że nie można `.Equals` użyć `.GetHashCode` `.ToString` właściwości.  
@@ -126,7 +134,7 @@ Visual Basic obsługuje typy anonimowe, które umożliwiają tworzenie obiektów
   
  Aby uzyskać więcej informacji na temat kodu utworzonego przez kompilator i funkcji przesłoniętych metod, zobacz [definicja typu anonimowego](anonymous-type-definition.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Inicjatory obiektów: typy nazwane i anonimowe](object-initializers-named-and-anonymous-types.md)
 - [Wnioskowanie o typie lokalnym](../variables/local-type-inference.md)

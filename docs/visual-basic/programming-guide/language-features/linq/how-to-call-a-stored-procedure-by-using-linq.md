@@ -7,14 +7,15 @@ helpviewer_keywords:
 - stored procedures [LINQ to SQL]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 6436d384-d1e0-40aa-8afd-451007477260
-ms.openlocfilehash: b451642a16f36c4f7fd19c853fdfd2282f5bede5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7e5fecf0c4c0d3a561ec7d0c4ac03c9d9ce7f759
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405033"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075138"
 ---
 # <a name="how-to-call-a-stored-procedure-by-using-linq-visual-basic"></a>Porady: wywoływanie procedury przechowywanej za pomocą LINQ (Visual Basic)
+
 Program Query Integrated Language (LINQ) ułatwia dostęp do informacji o bazie danych, takich jak obiekty bazy danych, takie jak procedury składowane.  
   
  Poniższy przykład pokazuje, jak utworzyć aplikację, która wywołuje procedurę przechowywaną w bazie danych SQL Server. Przykład pokazuje, jak wywoływać dwie różne procedury składowane w bazie danych. Każda procedura zwraca wyniki zapytania. Jedna procedura przyjmuje parametry wejściowe, a druga procedura nie przyjmuje parametrów.  
@@ -68,7 +69,7 @@ Program Query Integrated Language (LINQ) ułatwia dostęp do informacji o bazie 
   
 4. Naciśnij klawisz F5, aby uruchomić projekt i wyświetlić wyniki.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ](index.md)
 - [Zapytania](../../../language-reference/queries/index.md)

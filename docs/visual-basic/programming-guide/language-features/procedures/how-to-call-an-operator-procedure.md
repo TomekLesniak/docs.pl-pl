@@ -11,14 +11,15 @@ helpviewer_keywords:
 - overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-ms.openlocfilehash: fa2bc5417b8b917ff48502a5bd0a4daa21fab67e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0e88ff7b36535a709671a1f9b838f2b4488d1d37
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388572"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075190"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>Porady: wywoływanie procedury operatora (Visual Basic)
+
 Wywoływanie procedury operatora przy użyciu symbolu operatora w wyrażeniu. W przypadku operatora konwersji należy wywołać [funkcję CType](../../../language-reference/functions/ctype-function.md) , aby przekonwertować wartość z jednego typu danych na inny.  
   
  Procedury operatorów nie są jawnie wywoływane. Wystarczy użyć operatora lub `CType` funkcji w instrukcji przypisania lub wyrażeniu, tak samo jak zwykle korzystasz z operatora. Visual Basic wykonuje wywołanie procedury operatora.  
@@ -39,9 +40,10 @@ Wywoływanie procedury operatora przy użyciu symbolu operatora w wyrażeniu. W 
   
 2. Upewnij się, że typy danych argumentów operacji są odpowiednie dla konwersji, i w odpowiedniej kolejności.  
   
-3. `CType`wywołuje procedurę operatora konwersji i zwraca przekonwertowaną wartość.  
+3. `CType` wywołuje procedurę operatora konwersji i zwraca przekonwertowaną wartość.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład tworzy dwie <xref:System.TimeSpan> struktury, dodaje je razem i zapisuje wynik w trzeciej <xref:System.TimeSpan> strukturze. <xref:System.TimeSpan>Struktura definiuje procedury operatora, aby przeciążać kilka standardowych operatorów.  
   
  [!code-vb[VbVbcnProcedures#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#29)]  
@@ -51,9 +53,10 @@ Wywoływanie procedury operatora przy użyciu symbolu operatora w wyrażeniu. W 
  Aby zapoznać się z przykładem wywoływania procedury operatora konwersacji, zobacz [How to: use a Class, który definiuje operatory](./how-to-use-a-class-that-defines-operators.md).  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
  Upewnij się, że używana Klasa lub struktura definiuje operatora, którego chcesz użyć.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury operatorów](./operator-procedures.md)
 - [Instrukcje: definiowanie operatora](./how-to-define-an-operator.md)

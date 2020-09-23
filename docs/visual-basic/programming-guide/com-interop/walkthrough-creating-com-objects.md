@@ -8,13 +8,15 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-ms.openlocfilehash: 6ff23f73af384a1440bcebd4b6bac21714e01756
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 90a21b70b45902a9f4fd559a97e777f26043fffb
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051483"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075619"
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Wskazówki: tworzenie obiektów COM z Visual Basic
+
 Podczas tworzenia nowych aplikacji lub składników najlepiej utworzyć zestawy .NET Framework. Jednak Visual Basic ułatwiają również uwidocznienie składnika .NET Framework w modelu COM. Pozwala to udostępnić nowe składniki dla wcześniejszych zestawów aplikacji, które wymagają składników COM. W tym instruktażu pokazano, jak za pomocą Visual Basic uwidocznić obiekty .NET Framework jako obiekty COM, zarówno z szablonem klasy COM, jak i bez niego.  
   
  Najprostszym sposobem uwidocznienia obiektów COM jest użycie szablonu klasy COM. Ten szablon umożliwia utworzenie nowej klasy, a następnie skonfigurowanie projektu w celu wygenerowania klasy z warstwą współdziałania jako obiekt COM i zarejestrowanie go w systemie operacyjnym.  
@@ -39,6 +41,7 @@ Podczas tworzenia nowych aplikacji lub składników najlepiej utworzyć zestawy 
 6. Wybierz pozycję **kompilacja ClassLibrary1** z menu **kompilacja** . Visual Basic kompiluje zestaw i rejestruje obiekt COM w systemie operacyjnym.  
   
 ## <a name="creating-com-objects-without-the-com-class-template"></a>Tworzenie obiektów COM bez szablonu klasy COM  
+
  Klasy COM można także utworzyć ręcznie zamiast używać szablonu klasy COM. Ta procedura jest pomocna podczas pracy z wiersza polecenia lub w przypadku, gdy potrzebna jest większa kontrola nad sposobem definiowania obiektów COM.  
   
 #### <a name="to-set-up-your-project-to-generate-a-com-object"></a>Aby skonfigurować projekt do generowania obiektu COM  

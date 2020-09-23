@@ -9,14 +9,15 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-ms.openlocfilehash: de8c4ec3ab8a0f2335c034231c661380420fd31b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ebda8d3b7fa2e712c337ed2c1fadc580bed7fe61
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405007"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075073"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Porady: łączenie danych w LINQ za pomocą sprzężeń (Visual Basic)
+
 Visual Basic zawiera `Join` `Group Join` klauzule i zapytania umożliwiające połączenie zawartości wielu kolekcji na podstawie wspólnych wartości między kolekcjami. Te wartości są znane jako wartości *klucza* . Deweloperzy znający koncepcje relacyjnych baz danych będą rozpoznawać `Join` klauzulę jako sprzężenie wewnętrzne i `Group Join` klauzulę jako, jak skutecznie, lewe sprzężenie zewnętrzne.  
   
  Przykłady w tym temacie przedstawiają kilka sposobów łączenia danych przy użyciu `Join` `Group Join` klauzul zapytania i.  
@@ -33,6 +34,7 @@ Visual Basic zawiera `Join` `Group Join` klauzule i zapytania umożliwiające po
     [!code-vb[VbLINQHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#2)]  
   
 ## <a name="perform-an-inner-join-by-using-the-join-clause"></a>Wykonywanie sprzężenia wewnętrznego przy użyciu klauzuli join  
+
  SPRZĘŻENIe wewnętrzne łączy dane z dwóch kolekcji. Elementy, dla których są uwzględniane określone wartości klucza. Wszystkie elementy z kolekcji, które nie mają pasującego elementu w innej kolekcji, są wykluczone.  
   
  W Visual Basic LINQ oferuje dwie opcje wykonywania SPRZĘŻENIa wewnętrznego: niejawne sprzężenie i jawne sprzężenie.  
@@ -48,6 +50,7 @@ Visual Basic zawiera `Join` `Group Join` klauzule i zapytania umożliwiające po
      [!code-vb[VbLINQHowTos#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#4)]  
   
 ## <a name="perform-a-left-outer-join-by-using-the-group-join-clause"></a>Wykonaj lewe sprzężenie zewnętrzne przy użyciu klauzuli Group Join  
+
  LEWE SPRZĘŻENIe zewnętrzne obejmuje wszystkie elementy z kolekcji po lewej stronie sprzężenia i tylko pasujące wartości z kolekcji po prawej stronie sprzężenia. Wszystkie elementy z kolekcji po prawej stronie sprzężenia, które nie mają pasującego elementu w kolekcji po lewej stronie, są wykluczone z wyniku zapytania.  
   
  `Group Join`Klauzula wykonuje w efekcie lewe sprzężenie zewnętrzne. Różnica między tym, co jest zwykle znane jako lewe SPRZĘŻENIe zewnętrzne i co `Group Join` zwraca klauzula, jest to, że `Group Join` klauzula grupuje wyniki z kolekcji po prawej stronie sprzężenia dla każdego elementu w kolekcji po lewej stronie. W relacyjnej bazie danych lewe SPRZĘŻENIe zewnętrzne zwraca niezgrupowane wyniki, w których każdy element w wyniku zapytania zawiera pasujące elementy z obu kolekcji w sprzężeniu. W tym przypadku elementy z kolekcji po lewej stronie sprzężenia są powtórzone dla każdego pasującego elementu z kolekcji po prawej stronie. Po zakończeniu następnej procedury zobaczysz, jak to wygląda.  
@@ -61,6 +64,7 @@ Visual Basic zawiera `Join` `Group Join` klauzule i zapytania umożliwiające po
      [!code-vb[VbLINQHowTos#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#3)]  
   
 ## <a name="perform-a-join-by-using-a-composite-key"></a>Wykonywanie sprzężenia przy użyciu klucza złożonego  
+
  Możesz użyć `And` słowa kluczowego w `Join` klauzuli OR, `Group Join` Aby zidentyfikować wiele pól klucza do użycia podczas dopasowywania wartości z kolekcji, które są sprzężone. `And`Słowo kluczowe Określa, że wszystkie określone pola kluczy muszą być zgodne dla elementów do przyłączenia.  
   
 #### <a name="to-perform-a-join-by-using-a-composite-key"></a>Aby wykonać sprzężenie przy użyciu klucza złożonego  
@@ -79,7 +83,7 @@ Visual Basic zawiera `Join` `Group Join` klauzule i zapytania umożliwiające po
   
 2. Naciśnij klawisz F5, aby uruchomić przykłady.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ](index.md)
 - [Wprowadzenie do LINQ w Visual Basic](introduction-to-linq.md)

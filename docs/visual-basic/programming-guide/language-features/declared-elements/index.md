@@ -2,14 +2,15 @@
 title: Zadeklarowane elementy
 ms.date: 07/20/2015
 ms.assetid: 0d1d1bb5-ac0b-485f-8922-cdcec5574c79
-ms.openlocfilehash: f7fedc58ec061ddb133eb94ee3b3b7a7b49083cd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9359c8df60d7fdc06e7c8dfa1df82f1b277d7339
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357247"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075164"
 ---
 # <a name="declared-elements-in-visual-basic"></a>Zadeklarowane elementy w Visual Basic
+
 *Zadeklarowany element* to element programistyczny, który jest zdefiniowany w instrukcji deklaracji. Zadeklarowane elementy obejmują zmienne, stałe, wyliczenia, klasy, struktury, moduły, interfejsy, procedury, parametry procedury, funkcje zwracane, odwołania do procedur zewnętrznych, operatory, właściwości, zdarzenia i Delegaty.  
   
  Deklaracje deklaracji obejmują następujące elementy:  
@@ -43,6 +44,7 @@ ms.locfileid: "84357247"
 - [Delegate — Instrukcja](../../../language-reference/statements/delegate-statement.md)  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Nazwy zadeklarowanych elementów](declared-element-names.md)  
  Opisuje sposób nazwy elementów i używania wielkości liter.  
   
@@ -53,6 +55,7 @@ ms.locfileid: "84357247"
  Opisuje sposób, w jaki kompilator dopasowuje odwołanie do deklaracji i jak zakwalifikować nazwę.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Struktura programu i konwencje związane z kodem](../../program-structure/program-structure-and-code-conventions.md)  
  Przedstawia wytyczne ułatwiające odczytywanie, poznawanie i konserwowanie kodu.  
   
