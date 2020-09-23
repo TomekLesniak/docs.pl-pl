@@ -5,17 +5,19 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: 1bb5ac5381dc85f598ef46638fbc8cd1a8643825
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 493da7b8583b5cc73a9832afa81b7b1d84742f2d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555747"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072434"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Używanie wyrażeń regularnych z formantem MaskedTextBox w Visual Basic
+
 W tym przykładzie pokazano, jak konwertować proste wyrażenia regularne do pracy z <xref:System.Windows.Forms.MaskedTextBox> kontrolką.  
   
 ## <a name="description-of-the-masking-language"></a>Opis języka maskowania  
+
  Standardowy <xref:System.Windows.Forms.MaskedTextBox> Język maskujący jest oparty na tym, kto jest używany przez `Masked Edit` formant w Visual Basic 6,0 i powinien być zaznajomiony z użytkownikami migrowania z tej platformy.  
   
  <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>Właściwość <xref:System.Windows.Forms.MaskedTextBox> kontrolki określa, która Maska wprowadzania ma być używana. Maska musi być ciągiem składającym się z co najmniej jednego elementu maskowania z poniższej tabeli.  
@@ -44,6 +46,7 @@ W tym przykładzie pokazano, jak konwertować proste wyrażenia regularne do pra
  Symbole dziesiętne (.), stutysięcznych (,), Time (:), Date (/) i Currency ($) są domyślne do wyświetlania tych symboli zgodnie z kulturą aplikacji. Można wymusić wyświetlanie symboli dla innej kultury przy użyciu <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> właściwości.  
   
 ## <a name="regular-expressions-and-masks"></a>Wyrażenia regularne i maski  
+
  Chociaż można używać wyrażeń regularnych i masek do sprawdzania poprawności danych wejściowych użytkownika, nie są one całkowicie równoważne. Wyrażenia regularne mogą wyrażać bardziej złożone wzorce niż maski, ale maski mogą bardziej zwięzłie wyrazić te same informacje i w istotnie odpowiednim formacie.  
   
  W poniższej tabeli porównano cztery wyrażenia regularne i równoważną maskę dla każdego z nich.  

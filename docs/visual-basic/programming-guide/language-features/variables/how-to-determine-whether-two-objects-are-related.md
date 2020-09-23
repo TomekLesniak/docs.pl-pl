@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [Visual Basic], inheritance
 - object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
-ms.openlocfilehash: 30e88a21e737aa57513745899577381ed34151a2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b33815d58b0ef40f7f75a6a41bb4b1eeef591859
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410467"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072226"
 ---
 # <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>Porady: określanie, czy dwa obiekty są powiązane (Visual Basic)
 
@@ -25,9 +25,10 @@ Można porównać dwa obiekty, aby określić relację, jeśli istnieje, między
 
 3. Na liście argumentów dla <xref:System.Type.IsInstanceOfType%2A> Określ obiekt, który może być typem pochodnym.
 
-    <xref:System.Type.IsInstanceOfType%2A>Zwraca wartość, `True` Jeśli jej typ argumentu dziedziczy z <xref:System.Type?displayProperty=nameWithType> typu obiektu.
+    <xref:System.Type.IsInstanceOfType%2A> Zwraca wartość, `True` Jeśli jej typ argumentu dziedziczy z <xref:System.Type?displayProperty=nameWithType> typu obiektu.
 
 ## <a name="example"></a>Przykład
+
  Poniższy przykład określa, czy jeden obiekt reprezentuje klasę pochodzącą od klasy innego obiektu.
 
 ```vb
@@ -48,7 +49,7 @@ End Class
 
 Zwróć uwagę na nieoczekiwane rozmieszczenie dwóch zmiennych obiektów w wywołaniu <xref:System.Type.IsInstanceOfType%2A> . Przypuszczalny typ podstawowy jest używany do generowania <xref:System.Type?displayProperty=nameWithType> klasy, a typ pochodny jest przenoszona jako argument do <xref:System.Type.IsInstanceOfType%2A> metody.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Object.GetType%2A>
 - <xref:System.Type?displayProperty=nameWithType>

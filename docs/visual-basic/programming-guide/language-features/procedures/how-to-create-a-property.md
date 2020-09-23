@@ -7,14 +7,15 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic]
 ms.assetid: 4d229712-6be8-4c5c-bac5-06995ce9185a
-ms.openlocfilehash: fa220998d12206e620c242b9b39df3dc1b639d29
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bd138177d5f4b7ee1eb63833360d227baa54f66d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388261"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072746"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a>Porady: tworzenie właściwości (Visual Basic)
+
 Należy ująć definicję właściwości między `Property` instrukcją a `End Property` instrukcją. W ramach tej definicji należy zdefiniować `Get` procedurę, `Set` procedurę lub oba te elementy. Wszystkie kody właściwości są w tych procedurach.  
   
  `Get`Procedura Pobiera wartość właściwości, a `Set` procedura przechowuje wartość. Jeśli chcesz, aby Właściwość miała dostęp do odczytu/zapisu, musisz zdefiniować obie procedury. Dla właściwości tylko do odczytu należy zdefiniować tylko `Get` i dla właściwości tylko do zapisu `Set` .  
@@ -52,6 +53,7 @@ Należy ująć definicję właściwości między `Property` instrukcją a `End P
  Należy napisać `Set` procedurę dla właściwości Read-Write i dla właściwości tylko do zapisu. Nie należy definiować `Set` procedury dla właściwości tylko do odczytu.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład tworzy właściwość odczytu/zapisu, która przechowuje pełną nazwę jako dwie nazwy składników, imię i nazwisko. Podczas odczytywania kodu wywołującego `fullName` `Get` procedura łączy dwie nazwy składników i zwraca pełną nazwę. Gdy wywołujący kod przypisze nową pełną nazwę, `Set` procedura próbuje ją podzielić na dwie nazwy składników. Jeśli nie znajdzie miejsca, będzie ono przechowywane jako imię i nazwisko.  
   
  [!code-vb[VbVbcnProcedures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#8)]  
@@ -60,7 +62,7 @@ Należy ująć definicję właściwości między `Property` instrukcją a `End P
   
  [!code-vb[VbVbcnProcedures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#9)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Procedury własności](./property-procedures.md)

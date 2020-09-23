@@ -16,14 +16,15 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - namespaces
 ms.assetid: cffac744-ab8c-4f1f-ba50-732c22ab4b88
-ms.openlocfilehash: 087c6f02e1fca9cf2664ca76581c08a9b1a5e447
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f4521fa10c3bb9e8e121e3c228a23061becd1741
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398360"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072200"
 ---
 # <a name="namespaces-in-visual-basic"></a>Przestrzenie nazw w Visual Basic
+
 Przestrzenie nazw organizują obiekty zdefiniowane w zestawie. Zestawy mogą zawierać wiele przestrzeni nazw, które mogą z kolei zawierać inne przestrzenie nazw. Przestrzenie nazw uniemożliwiają niejednoznaczność i upraszczają odwołania w przypadku używania dużych grup obiektów, takich jak biblioteki klas.  
   
  Na przykład .NET Framework definiuje <xref:System.Windows.Forms.ListBox> klasę w <xref:System.Windows.Forms?displayProperty=nameWithType> przestrzeni nazw. Poniższy fragment kodu przedstawia sposób deklarowania zmiennej przy użyciu w pełni kwalifikowanej nazwy dla tej klasy:  
@@ -31,6 +32,7 @@ Przestrzenie nazw organizują obiekty zdefiniowane w zestawie. Zestawy mogą zaw
  [!code-vb[VbVbalrApplication#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#6)]  
   
 ## <a name="avoiding-name-collisions"></a>Unikanie kolizji nazw  
+
  Przestrzenie nazw .NET Framework rozwiązaniu problemu czasami nazywanego *zanieczyszczeniem przestrzeni nazw*, w którym deweloper biblioteki klas jest niehamowany przez użycie podobnych nazw w innej bibliotece. Te konflikty z istniejącymi składnikami są czasami nazywane *kolizjami nazw*.  
   
  Na przykład jeśli utworzysz nową klasę o nazwie, możesz `ListBox` jej użyć w projekcie bez kwalifikacji. Jeśli jednak chcesz użyć <xref:System.Windows.Forms.ListBox> klasy .NET Framework w tym samym projekcie, musisz użyć w pełni kwalifikowanego odwołania, aby odwołać odwołanie. Jeśli odwołanie nie jest unikatowe, Visual Basic generuje błąd informujący o tym, że nazwa jest niejednoznaczna. Poniższy przykład kodu demonstruje, jak zadeklarować te obiekty:  
@@ -41,11 +43,12 @@ Przestrzenie nazw organizują obiekty zdefiniowane w zestawie. Zestawy mogą zaw
   
  ![Zrzut ekranu pokazujący dwie hierarchie przestrzeni nazw.](./media/namespaces/visual-basic-namespace-hierarchy.gif)  
   
- Domyślnie każdy plik wykonywalny tworzony za pomocą Visual Basic zawiera przestrzeń nazw o tej samej nazwie co projekt. Na przykład, jeśli zdefiniujesz obiekt w projekcie o nazwie `ListBoxProject` , plik wykonywalny ListBoxProject. exe zawiera przestrzeń nazw o nazwie `ListBoxProject` .  
+ Domyślnie każdy plik wykonywalny tworzony za pomocą Visual Basic zawiera przestrzeń nazw o tej samej nazwie co projekt. Na przykład, jeśli zdefiniujesz obiekt w projekcie o nazwie `ListBoxProject` , plik wykonywalny ListBoxProject.exe zawiera przestrzeń nazw o nazwie `ListBoxProject` .  
   
  Wiele zestawów może używać tej samej przestrzeni nazw. Visual Basic traktuje je jako pojedynczy zestaw nazw. Na przykład można zdefiniować klasy dla przestrzeni nazw o nazwie `SomeNameSpace` w zestawie o nazwie `Assemb1` i zdefiniować dodatkowe klasy dla tej samej przestrzeni nazw z zestawu o nazwie `Assemb2` .  
   
 ## <a name="fully-qualified-names"></a>W pełni kwalifikowane nazwy  
+
  W pełni kwalifikowane nazwy są odwołaniami do obiektów, które są poprzedzone nazwą przestrzeni nazw, w której jest zdefiniowany obiekt. Możesz użyć obiektów zdefiniowanych w innych projektach, jeśli utworzysz odwołanie do klasy (wybierając **Dodaj odwołanie** z menu **projekt** ), a następnie użyj w pełni kwalifikowanej nazwy dla obiektu w kodzie. Poniższy fragment kodu pokazuje, jak używać w pełni kwalifikowanej nazwy dla obiektu z przestrzeni nazw innego projektu:  
   
  [!code-vb[VbVbalrApplication#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#8)]  
@@ -63,9 +66,11 @@ Przestrzenie nazw organizują obiekty zdefiniowane w zestawie. Zestawy mogą zaw
  Jeśli próba użycia nie zostanie w `Class1` pełni zakwalifikowania, Visual Basic generuje błąd informujący o tym, że nazwa `Class1` jest niejednoznaczna.  
   
 ## <a name="namespace-level-statements"></a>Instrukcje na poziomie przestrzeni nazw  
+
  W przestrzeni nazw można definiować elementy, takie jak moduły, interfejsy, klasy, Delegaty, wyliczenia, struktury i inne przestrzenie nazw. Nie można definiować elementów, takich jak właściwości, procedury, zmienne i zdarzenia, na poziomie przestrzeni nazw. Te elementy muszą być zadeklarowane w kontenerach, takich jak moduły, struktury lub klasy.  
   
 ## <a name="global-keyword-in-fully-qualified-names"></a>Globalne słowo kluczowe w w pełni kwalifikowanych nazwach  
+
  Jeśli zdefiniowano hierarchię zagnieżdżoną przestrzeni nazw, kod wewnątrz tej hierarchii może mieć zablokowany dostęp do <xref:System?displayProperty=nameWithType> przestrzeni nazw .NET Framework. Poniższy przykład ilustruje hierarchię, w której `SpecialSpace.System` przestrzeń nazw blokuje dostęp do <xref:System?displayProperty=nameWithType> .  
   
 ```vb  
@@ -99,6 +104,7 @@ End Namespace
  Można użyć, `Global` Aby uzyskać dostęp do innych obszarów nazw na poziomie głównym, takich jak <xref:Microsoft.VisualBasic?displayProperty=nameWithType> i wszystkich przestrzeni nazw skojarzonych z projektem.  
   
 ## <a name="global-keyword-in-namespace-statements"></a>Globalne słowo kluczowe w instrukcjach Namespace  
+
  Możesz również użyć `Global` słowa kluczowego w [instrukcji Namespace](../../language-reference/statements/namespace-statement.md). Pozwala to definiować przestrzeń nazw poza główną przestrzenią nazw projektu.  
   
  Wszystkie przestrzenie nazw w projekcie są oparte na głównej przestrzeni nazw dla projektu.  Program Visual Studio przypisuje nazwę projektu jako domyślną główną przestrzeń nazw dla całego kodu w projekcie. Na przykład jeśli projekt ma nazwę `ConsoleApplication1` , jego elementy programistyczne należą do przestrzeni nazw `ConsoleApplication1` . Jeśli zadeklarujesz `Namespace Magnetosphere` , odwołania do `Magnetosphere` w projekcie będą miały dostęp `ConsoleApplication1.Magnetosphere` .  
@@ -119,7 +125,7 @@ End Namespace
   
  [!code-vb[VbVbalrApplication#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/module1.vb#21)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Windows.Forms.ListBox>
 - <xref:System.Windows.Forms?displayProperty=nameWithType>

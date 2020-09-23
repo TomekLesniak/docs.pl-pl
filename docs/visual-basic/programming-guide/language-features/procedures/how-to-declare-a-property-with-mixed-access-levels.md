@@ -10,14 +10,15 @@ helpviewer_keywords:
 - properties [Visual Basic], access levels
 - Property statement [Visual Basic], declaring mixed access levels
 ms.assetid: fdbb2d97-279a-4956-b26c-cbdfbc34915a
-ms.openlocfilehash: f0f7aba25888544dfcc093906850ae7ada621182
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 78363f7b2fb5b251f7409e53b2802baf83b05810
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388248"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072707"
 ---
 # <a name="how-to-declare-a-property-with-mixed-access-levels-visual-basic"></a>Porady: deklarowanie właściwości z mieszanymi poziomami dostępu (Visual Basic)
+
 Jeśli chcesz, `Get` `Set` aby procedury i dla właściwości miały różne poziomy dostępu, możesz użyć poziomu bardziej ograniczającego w `Property` instrukcji i bardziej restrykcyjnego poziomu w `Get` `Set` instrukcji or. Możesz użyć mieszanych poziomów dostępu dla właściwości, jeśli chcesz, aby niektóre części kodu mogły uzyskać wartość właściwości, a niektóre inne części kodu, aby można było zmienić wartość.  
   
  Aby uzyskać więcej informacji na temat poziomów dostępu, zobacz [poziomy dostępu w Visual Basic](../declared-elements/access-levels.md).  
@@ -34,7 +35,7 @@ Jeśli chcesz, `Get` `Set` aby procedury i dla właściwości miały różne poz
   
      W poprzednim przykładzie `Get` procedura ma taki sam `Protected` dostęp jak sama właściwość, podczas gdy `Set` procedura ma `Private` dostęp. Klasa pochodna `employee` może odczytać `salary` wartość, ale `employee` można ją ustawić tylko przez klasę.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Procedury własności](./property-procedures.md)

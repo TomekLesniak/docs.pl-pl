@@ -8,19 +8,21 @@ helpviewer_keywords:
 - Main method [Visual Basic]
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-ms.openlocfilehash: cf6003206566dfe8f70a7f75cd4d7ec7565794a5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d6708ee13963aaae43a73b159032f64f0fffac10
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403177"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072213"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Procedura główna w Visual Basic
+
 Każda aplikacja Visual Basic musi zawierać procedurę o nazwie `Main` . Ta procedura służy jako punkt wyjścia i ogólna kontrola aplikacji. .NET Framework wywołuje `Main` procedurę po załadowaniu aplikacji i jest gotowa do przekazania kontroli do niej. Jeśli tworzysz aplikację Windows Forms, musisz napisać `Main` procedurę dla aplikacji, które działają samodzielnie.
 
- `Main`zawiera kod, który jest uruchamiany jako pierwszy. W programie `Main` można określić, który formularz ma zostać załadowany jako pierwszy podczas uruchamiania programu, sprawdzić, czy kopia aplikacji jest już uruchomiona w systemie, ustalić zestaw zmiennych dla aplikacji lub otworzyć bazę danych wymaganą przez aplikację.
+ `Main` zawiera kod, który jest uruchamiany jako pierwszy. W programie `Main` można określić, który formularz ma zostać załadowany jako pierwszy podczas uruchamiania programu, sprawdzić, czy kopia aplikacji jest już uruchomiona w systemie, ustalić zestaw zmiennych dla aplikacji lub otworzyć bazę danych wymaganą przez aplikację.
 
 ## <a name="requirements-for-the-main-procedure"></a>Wymagania dotyczące głównej procedury
+
  Plik, który jest uruchamiany samodzielnie (zazwyczaj z rozszerzeniem. exe), musi zawierać `Main` procedurę. Biblioteka (na przykład z rozszerzeniem dll) nie jest uruchamiana samodzielnie i nie wymaga wykonania `Main` procedury. Poniżej przedstawiono wymagania dotyczące różnych typów projektów, które można utworzyć:
 
 - Aplikacje konsolowe działają we własnym zakresie i należy podać co najmniej jedną `Main` procedurę.
@@ -30,6 +32,7 @@ Każda aplikacja Visual Basic musi zawierać procedurę o nazwie `Main` . Ta pro
 - Biblioteki klas nie wymagają wykonania `Main` procedury. Należą do nich biblioteki formantów systemu Windows i biblioteki formantów sieci Web. Aplikacje sieci Web są wdrażane jako biblioteki klas.
 
 ## <a name="declaring-the-main-procedure"></a>Deklarowanie głównej procedury
+
  Istnieją cztery sposoby zadeklarować `Main` procedurę. Może przyjmować argumenty i nie może zwracać wartości.
 
 > [!NOTE]
@@ -47,7 +50,7 @@ Każda aplikacja Visual Basic musi zawierać procedurę o nazwie `Main` . Ta pro
     End Module
     ```
 
-- `Main`może również zwrócić `Integer` wartość, której system operacyjny używa jako kodu zakończenia dla programu. Inne programy mogą testować ten kod, sprawdzając wartość Windows ERRORLEVEL. Aby zwrócić kod zakończenia, należy zadeklarować `Main` jako `Function` procedurę zamiast `Sub` procedury.
+- `Main` może również zwrócić `Integer` wartość, której system operacyjny używa jako kodu zakończenia dla programu. Inne programy mogą testować ten kod, sprawdzając wartość Windows ERRORLEVEL. Aby zwrócić kod zakończenia, należy zadeklarować `Main` jako `Function` procedurę zamiast `Sub` procedury.
 
     ```vb
     Module mainModule
@@ -64,7 +67,7 @@ Każda aplikacja Visual Basic musi zawierać procedurę o nazwie `Main` . Ta pro
     End Module
     ```
 
-- `Main`można również pobrać `String` tablicę jako argument. Każdy ciąg w tablicy zawiera jeden z argumentów wiersza polecenia użytych do wywołania programu. W zależności od ich wartości można wykonać różne akcje.
+- `Main` można również pobrać `String` tablicę jako argument. Każdy ciąg w tablicy zawiera jeden z argumentów wiersza polecenia użytych do wywołania programu. W zależności od ich wartości można wykonać różne akcje.
 
     ```vb
     Module mainModule
@@ -108,7 +111,7 @@ Każda aplikacja Visual Basic musi zawierać procedurę o nazwie `Main` . Ta pro
     End Module
     ```
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>
 - <xref:System.Array.Length%2A>

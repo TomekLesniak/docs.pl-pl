@@ -6,18 +6,20 @@ helpviewer_keywords:
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-ms.openlocfilehash: 935926b8b83afa47c20ea68aecd6bc8c40bd0234
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 44736f4db9977d9f69a0571cc80fa327dcf96581
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363700"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072512"
 ---
 # <a name="string-basics-in-visual-basic"></a>Podstawowe informacje o ciągach w Visual Basic
+
 `String`Typ danych reprezentuje serię znaków (z których każdy reprezentuje wystąpienie `Char` typu danych). W tym temacie przedstawiono podstawowe pojęcia dotyczące ciągów w Visual Basic.  
   
 ## <a name="string-variables"></a>Zmienne ciągu  
- Do wystąpienia ciągu można przypisać wartość literału, która reprezentuje serię znaków. Przykład:  
+
+ Do wystąpienia ciągu można przypisać wartość literału, która reprezentuje serię znaków. Na przykład:  
   
  [!code-vb[VbVbalrStrings#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#63)]  
   
@@ -50,17 +52,19 @@ World]]></xml>.Value
 ```  
   
 ## <a name="characters-in-strings"></a>Znaki w ciągach  
- Ciąg może być uważany za serię `Char` wartości, a `String` Typ ma wbudowane funkcje, które umożliwiają wykonywanie wielu operacji na ciągu, który przypomina manipulowanie dozwolonymi przez tablice. Podobnie jak w przypadku wszystkich tablic w .NET Framework, są to tablice oparte na zero. Możesz odwołać się do określonego znaku w ciągu za pomocą `Chars` właściwości, która zapewnia sposób dostępu do znaku przez położenie, w którym występuje w ciągu. Przykład:  
+
+ Ciąg może być uważany za serię `Char` wartości, a `String` Typ ma wbudowane funkcje, które umożliwiają wykonywanie wielu operacji na ciągu, który przypomina manipulowanie dozwolonymi przez tablice. Podobnie jak w przypadku wszystkich tablic w .NET Framework, są to tablice oparte na zero. Możesz odwołać się do określonego znaku w ciągu za pomocą `Chars` właściwości, która zapewnia sposób dostępu do znaku przez położenie, w którym występuje w ciągu. Na przykład:  
   
  [!code-vb[VbVbalrStrings#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#67)]  
   
- W powyższym przykładzie `Chars` Właściwość ciągu zwraca czwarty znak w ciągu, który jest `D` i przypisuje do `myChar` . Możesz również uzyskać długość określonego ciągu za pomocą `Length` właściwości. Jeśli trzeba wykonać wiele operacji manipulowania typem tablicowym w ciągu, można przekonwertować ją na tablicę `Char` wystąpień przy użyciu `ToCharArray` funkcji ciągu. Przykład:  
+ W powyższym przykładzie `Chars` Właściwość ciągu zwraca czwarty znak w ciągu, który jest `D` i przypisuje do `myChar` . Możesz również uzyskać długość określonego ciągu za pomocą `Length` właściwości. Jeśli trzeba wykonać wiele operacji manipulowania typem tablicowym w ciągu, można przekonwertować ją na tablicę `Char` wystąpień przy użyciu `ToCharArray` funkcji ciągu. Na przykład:  
   
  [!code-vb[VbVbalrStrings#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#68)]  
   
  Zmienna `myArray` zawiera teraz tablicę `Char` wartości, z których każdy reprezentuje znak `myString` .  
   
 ## <a name="the-immutability-of-strings"></a>Niezmienności ciągów  
+
  Ciąg jest *niezmienny*, co oznacza, że jego wartość nie może zostać zmieniona po utworzeniu. Nie uniemożliwia to jednak przypisywania więcej niż jednej wartości do zmiennej ciągu. Rozpatrzmy następujący przykład:  
   
  [!code-vb[VbVbalrStrings#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#69)]  
@@ -71,7 +75,7 @@ World]]></xml>.Value
   
  W przeciwieństwie do innych wewnętrznych typów danych, `String` jest typem referencyjnym. Gdy zmienna typu referencyjnego jest przenoszona jako argument do funkcji lub podprocedury, odwołanie do adresu pamięci, w którym są przechowywane dane jest przekazywane zamiast rzeczywistej wartości ciągu. Tak więc w poprzednim przykładzie nazwa zmiennej pozostaje taka sama, ale wskazuje na nowe i inne wystąpienie `String` klasy, która zawiera nową wartość.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie do ciągów w Visual Basic](introduction-to-strings.md)
 - [Typ danych ciągu](../../../language-reference/data-types/string-data-type.md)

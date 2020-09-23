@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - String data type [Visual Basic], validation
 ms.assetid: 5d9a918f-6c1f-41a3-a019-b5c2b8ce0381
-ms.openlocfilehash: 8cb04286e98cf78f0fb66dde92002ee09e2ea0f5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9597d7a9d6b68b8c91f32d97da3532f181585cf6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556248"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072356"
 ---
 # <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Wskazówki: sprawdzanie poprawności złożoności haseł (Visual Basic)
+
 Ta metoda sprawdza pewne cechy silnego hasła i aktualizuje parametr ciągu z informacjami o tym, które sprawdzenia nie powiodło się.  
   
  Hasła mogą być używane w zabezpieczonym systemie w celu autoryzowania użytkownika. Jednak hasła muszą być trudne dla nieautoryzowanych użytkowników. Osoby atakujące mogą korzystać z programu *ataku słownikowego* , który wykonuje iterację we wszystkich słowach w słowniku (lub wielu słownikach w różnych językach) i sprawdza, czy którykolwiek z tych słów działa jako hasło użytkownika. Słabe hasła, takie jak "Yankees" lub "Mustang", można szybko wypróbować. Silniejsze hasła, na przykład "? " L1N3vaFiNdMeyeP@sSWerd !", Są znacznie mniej podobne do odgadnięcia. System chroniony hasłem powinien mieć pewność, że użytkownicy wybierają silne hasła.  
@@ -21,9 +22,11 @@ Ta metoda sprawdza pewne cechy silnego hasła i aktualizuje parametr ciągu z in
 ## <a name="example"></a>Przykład  
   
 ### <a name="code"></a>Kod  
+
  [!code-vb[VbVbcnRegEx#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnRegEx/VB/Class1.vb#1)]  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
  Wywołaj tę metodę, przekazując ciąg, który zawiera to hasło.  
   
  Ten przykład wymaga:  
@@ -31,6 +34,7 @@ Ta metoda sprawdza pewne cechy silnego hasła i aktualizuje parametr ciągu z in
 - Dostęp do elementów członkowskich <xref:System.Text.RegularExpressions> przestrzeni nazw. Dodaj `Imports` instrukcję, jeśli nie masz w pełni kwalifikowanej nazwy elementu członkowskiego w kodzie. Aby uzyskać więcej informacji, zobacz [Imports — Instrukcja (przestrzeń nazw i typ .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 ## <a name="security"></a>Zabezpieczenia  
+
  Jeśli przenosisz hasło za pośrednictwem sieci, musisz użyć bezpiecznej metody przesyłania danych. Aby uzyskać więcej informacji, zobacz [ASP.NET zabezpieczenia aplikacji sieci Web](/previous-versions/aspnet/330a99hc(v=vs.100)).
   
  Dokładność funkcji można poprawić `ValidatePassword` , dodając dodatkowe sprawdzenia złożoności:  
