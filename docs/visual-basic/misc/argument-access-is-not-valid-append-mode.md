@@ -1,19 +1,20 @@
 ---
-title: Argument "Access" jest nieprawidłowa. Prawidłowe wartości dla trybu Append to "OpenAcess.Write" i "OpenAccess.Default"
+title: Argument "Access" jest nieprawidłowy. Prawidłowe wartości trybu Append to "OpenAccess. Write" i "OpenAccess. default"
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_IllegalAppendAccess
 ms.assetid: f584056e-5eb7-401f-b43d-d08252e66d1c
-ms.openlocfilehash: 3983ea00c1300d144fdd471a1658e991e6c85e66
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a8e5c4fc4f2f3714b6a2f614dbe6434ad13e5ef1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642158"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084895"
 ---
-# <a name="argument-access-is-not-valid-valid-values-for-append-mode-are-openaccesswrite-and-openaccessdefault"></a><span data-ttu-id="23135-103">Argument "Access" jest nieprawidłowa.</span><span class="sxs-lookup"><span data-stu-id="23135-103">Argument 'Access' is not valid.</span></span> <span data-ttu-id="23135-104">Prawidłowe wartości dla trybu Append to "OpenAcess.Write" i "OpenAccess.Default"</span><span class="sxs-lookup"><span data-stu-id="23135-104">Valid values for Append mode are 'OpenAccess.Write' and 'OpenAccess.Default'</span></span>
-<span data-ttu-id="23135-105">Wartość dostępu jest nieprawidłowe w trybie Append.</span><span class="sxs-lookup"><span data-stu-id="23135-105">An access value is not valid in Append mode.</span></span>  
+# <a name="argument-access-is-not-valid-valid-values-for-append-mode-are-openaccesswrite-and-openaccessdefault"></a><span data-ttu-id="804ac-103">Argument "Access" jest nieprawidłowy.</span><span class="sxs-lookup"><span data-stu-id="804ac-103">Argument 'Access' is not valid.</span></span> <span data-ttu-id="804ac-104">Prawidłowe wartości trybu Append to "OpenAccess. Write" i "OpenAccess. default"</span><span class="sxs-lookup"><span data-stu-id="804ac-104">Valid values for Append mode are 'OpenAccess.Write' and 'OpenAccess.Default'</span></span>
+
+<span data-ttu-id="804ac-105">Wartość dostępu jest nieprawidłowa w trybie dołączania.</span><span class="sxs-lookup"><span data-stu-id="804ac-105">An access value is not valid in Append mode.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="23135-106">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="23135-106">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="804ac-106">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="804ac-106">To correct this error</span></span>  
   
-1. <span data-ttu-id="23135-107">Zmień wartość na jedną `OpenAccess.Write` lub `OpenAccess.Default`.</span><span class="sxs-lookup"><span data-stu-id="23135-107">Change the value to either `OpenAccess.Write` or `OpenAccess.Default`.</span></span>
+1. <span data-ttu-id="804ac-107">Zmień wartość na `OpenAccess.Write` lub `OpenAccess.Default` .</span><span class="sxs-lookup"><span data-stu-id="804ac-107">Change the value to either `OpenAccess.Write` or `OpenAccess.Default`.</span></span>
