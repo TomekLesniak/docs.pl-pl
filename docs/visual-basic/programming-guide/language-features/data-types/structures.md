@@ -9,14 +9,15 @@ helpviewer_keywords:
 - user-defined data types [Visual Basic], about user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: 55e86462-5e99-4d33-8018-6d097ca491b2
-ms.openlocfilehash: a08a5da33fd9507494cac84fd0429b0ff9d9c88e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 04ccb5d39ea7c76a1e75dbeafd9230f2cb604d7c
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393432"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090238"
 ---
 # <a name="structures-visual-basic"></a>Struktury (Visual Basic)
+
 *Struktura* jest generalizacją typu zdefiniowanego przez użytkownika (UDT) obsługiwaną przez poprzednie wersje Visual Basic. Oprócz pól struktury mogą uwidaczniać właściwości, metody i zdarzenia. Struktura może zaimplementować jeden lub więcej interfejsów i można zadeklarować poszczególne poziomy dostępu dla każdego pola.  
   
  Można połączyć elementy danych różnych typów, aby utworzyć strukturę. Struktura kojarzy jeden lub więcej *elementów* ze sobą i ze strukturą. Gdy deklarujesz strukturę, stanie się ona *złożonym typem danych*i można zadeklarować zmienne tego typu.  
@@ -24,6 +25,7 @@ ms.locfileid: "84393432"
  Struktury są przydatne, gdy chcesz, aby jedna zmienna zawierała kilka powiązanych informacji. Na przykład możesz chcieć zadbać o podanie nazwiska pracownika, numeru telefonu i wynagrodzenia. Można użyć kilku zmiennych dla tych informacji lub zdefiniować strukturę i użyć jej dla jednej zmiennej pracownika. Zalety struktury staną się widoczne, gdy istnieje wielu pracowników i wiele wystąpień zmiennej.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Instrukcje: Deklarowanie struktury](how-to-declare-a-structure.md)  
  Pokazuje, jak zadeklarować strukturę i jej elementy.  
   
@@ -37,6 +39,7 @@ ms.locfileid: "84393432"
  Opisuje podobieństwa i różnice między strukturami i klasami.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Typy danych](index.md)  
  Wprowadza Visual Basic typy danych i opisuje sposób ich używania.  
   

@@ -2,17 +2,19 @@
 title: Składnia wyrażeń dla standardowych operatorów zapytań
 ms.date: 07/20/2015
 ms.assetid: eb978d86-d3b5-497b-95ce-a054bea8f510
-ms.openlocfilehash: 69bb50007c04bf8d1ee1553a37aca542afbffab0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 57a08f6540cbf3e091ee1b2e202e0e181487e3be
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396288"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090251"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-visual-basic"></a>Składnia wyrażenia zapytania dla standardowych operatorów zapytań (Visual Basic)
-Niektóre często używane standardowe operatory zapytań mają dedykowaną składnię słowa kluczowego Visual Basic języka, która umożliwia ich wywoływanie jako część *wyrażenia zapytania*. Wyrażenie zapytania jest inną, bardziej czytelną formą wyrażenia zapytania niż jego odpowiednik *oparty na metodzie* . Klauzule wyrażenia zapytania są tłumaczone na wywołania metod zapytania w czasie kompilacji.  
+
+Niektóre często używane standardowe operatory zapytań mają dedykowaną składnię słowa kluczowego Visual Basic języka, która umożliwia ich wywoływanie jako część *wyrażenia zapytania*. Wyrażenie zapytania jest inną, bardziej czytelną formą wyrażenia zapytania niż jego odpowiednik *oparty na metodzie*  . Klauzule wyrażenia zapytania są tłumaczone na wywołania metod zapytania w czasie kompilacji.  
   
 ## <a name="query-expression-syntax-table"></a>Tabela składni wyrażeń zapytania  
+
  W poniższej tabeli wymieniono standardowe operatory zapytań, które mają równoważne klauzule wyrażenia zapytania.  
   
 |Metoda|Składnia wyrażenia zapytania Visual Basic|  
@@ -42,7 +44,7 @@ Niektóre często używane standardowe operatory zapytań mają dedykowaną skł
 |<xref:System.Linq.Enumerable.ThenByDescending%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29>|`Order By …, … Descending`<br /><br /> (Aby uzyskać więcej informacji, zobacz [klauzula Order by](../../../language-reference/queries/order-by-clause.md).)|  
 |<xref:System.Linq.Enumerable.Where%2A>|`Where`<br /><br /> (Aby uzyskać więcej informacji, zobacz [klauzula WHERE](../../../language-reference/queries/where-clause.md)).|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Linq.Enumerable>
 - <xref:System.Linq.Queryable>

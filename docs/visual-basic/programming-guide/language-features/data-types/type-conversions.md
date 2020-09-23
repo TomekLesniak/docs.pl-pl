@@ -10,17 +10,19 @@ helpviewer_keywords:
 - changing data types [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 1cdacd21-ba31-4b62-b5be-395e41eeaa17
-ms.openlocfilehash: be388998da5e88f99c62128e6ad63d5a476153ba
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ee8700ea757cee9c20e2598de029f54ae33a7114
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393055"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090160"
 ---
 # <a name="type-conversions-in-visual-basic"></a>Konwersje plików w Visual Basic
+
 Proces zmiany wartości z jednego typu danych na inny typ jest nazywany *konwersją*. Konwersje są *rozszerzane* lub *zwężane*, w zależności od pojemności danych typów, których to dotyczy. Są one również *niejawne* lub *jawne*, w zależności od składni w kodzie źródłowym.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Rozszerzanie i zwężanie konwersji](widening-and-narrowing-conversions.md)  
  Objaśnia konwersje sklasyfikowane przez określenie, czy typ docelowy może przechowywać dane.  
   
@@ -37,6 +39,7 @@ Proces zmiany wartości z jednego typu danych na inny typ jest nazywany *konwers
  Przeprowadzi Cię przez proces konwersji między tablicami różnych typów danych.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Typy danych](index.md)  
  Wprowadza Visual Basic typy danych i opisuje sposób ich używania.  
   

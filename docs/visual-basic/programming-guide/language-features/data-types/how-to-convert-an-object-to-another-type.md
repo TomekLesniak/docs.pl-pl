@@ -4,17 +4,19 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic], converting
 ms.assetid: 60cb5fc7-7ba4-4ab5-9c24-480fa12ddcdc
-ms.openlocfilehash: cdb78bc66867ce27076d7b7e42de6a2880cb3a8c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b89e996324d9ec22fc243b59502f3d36fefdee60
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393964"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090225"
 ---
 # <a name="how-to-convert-an-object-to-another-type-in-visual-basic"></a>Porady: konwertowanie obiektu do innego typu w Visual Basic
+
 Zmienną można przekonwertować `Object` na inny typ danych za pomocą słowa kluczowego konwersji, takiego jak [Funkcja CType](../../../language-reference/functions/ctype-function.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład konwertuje `Object` zmienną na `Integer` i `String` .  
   
 ```vb  
@@ -29,11 +31,12 @@ End Sub
  Jeśli wiesz, że zawartość `Object` zmiennej jest określonego typu danych, lepiej jest skonwertować zmienną na ten typ danych. Jeśli nadal używasz `Object` zmiennej, naliczane są *opakowanie* i *rozpakowywanie* (dla typu wartości) lub *późne wiązanie* (dla typu odwołania). Wszystkie te operacje pobierają dodatkowy czas wykonywania i zwiększają wydajność.  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
  Ten przykład wymaga:  
   
 - Odwołanie do <xref:System?displayProperty=nameWithType> przestrzeni nazw.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Object>
 - [Konwersje plików w Visual Basic](type-conversions.md)

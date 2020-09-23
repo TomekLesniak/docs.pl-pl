@@ -13,17 +13,19 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-ms.openlocfilehash: d5f79f3e45fc887dcb32c959f04703253ade198c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 023e479736285aa2d04509e05f49fe930cb4721d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84389039"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090082"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Operatory arytmetyczne w Visual Basic
+
 Operatory arytmetyczne są używane do wykonywania wielu znanych operacji arytmetycznych, które obejmują Obliczanie wartości liczbowych reprezentowanych przez literały, zmienne, inne wyrażenia, wywołania funkcji i właściwości oraz stałe. Również sklasyfikowane operatorami arytmetycznymi są operatory przesunięcia bitowego, które działają na poziomie poszczególnych bitów operandów i przesuwają wzorce bitów w lewo lub w prawo.  
   
 ## <a name="arithmetic-operations"></a>Operacje arytmetyczne  
+
  Można dodać dwie wartości w wyrażeniu razem z [operatorem +](../../../language-reference/operators/addition-operator.md)lub odjąć jeden od innego za pomocą [operatora-operator (Visual Basic)](../../../language-reference/operators/subtraction-operator.md), jak pokazano w poniższym przykładzie.  
   
  [!code-vb[VbVbalrOperators#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#57)]  
@@ -51,20 +53,22 @@ Operatory arytmetyczne są używane do wykonywania wielu znanych operacji arytme
  [!code-vb[VbVbalrOperators#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#63)]  
   
 ### <a name="attempted-division-by-zero"></a>Próba dzielenia przez zero  
+
  Dzielenie przez zero ma różne wyniki w zależności od typów danych. W przypadku częściowych podziałów (,,,,,,, `SByte` `Byte` `Short` `UShort` `Integer` `UInteger` `Long` `ULong` ) .NET Framework zgłasza <xref:System.DivideByZeroException> wyjątek. W operacjach dzielenia na `Decimal` `Single` Typ danych lub .NET Framework zgłasza również <xref:System.DivideByZeroException> wyjątek.  
   
  W przypadku przedziałów zmiennoprzecinkowych obejmujących `Double` Typ danych nie jest zgłaszany żaden wyjątek, a wynikiem jest element członkowski klasy reprezentujący <xref:System.Double.NaN> , <xref:System.Double.PositiveInfinity> lub <xref:System.Double.NegativeInfinity> , w zależności od dywidendy. Poniższa tabela podsumowuje różne wyniki próby podziału `Double` wartości przez zero.  
   
 |Typ danych dywidendy|Dzielnik — typ danych|Wartość dywidendy|Wynik|  
 |---|---|---|---|  
-|`Double`|`Double`|0|<xref:System.Double.NaN>(nie jest to liczba matematycznie zdefiniowana)|  
+|`Double`|`Double`|0|<xref:System.Double.NaN> (nie jest to liczba matematycznie zdefiniowana)|  
 |`Double`|`Double`|> 0|<xref:System.Double.PositiveInfinity>|  
-|`Double`|`Double`|\<2,0|<xref:System.Double.NegativeInfinity>|  
+|`Double`|`Double`|\< 2,0|<xref:System.Double.NegativeInfinity>|  
   
  Podczas przechwytywania <xref:System.DivideByZeroException> wyjątku można użyć jego członków, aby ułatwić jego obsługę. Na przykład <xref:System.Exception.Message%2A> Właściwość zawiera tekst komunikatu dla wyjątku. Aby uzyskać więcej informacji, zobacz [try... Catch... Finally — instrukcja](../../../language-reference/statements/try-catch-finally-statement.md).  
   
 ## <a name="bit-shift-operations"></a>Operacje bitu Shift  
- Operacja bitu Shift wykonuje arytmetyczną zmianę wzorca bitowego. Wzorzec jest zawarty w argumencie operacji po lewej stronie, podczas gdy argument operacji po prawej stronie określa liczbę pozycji do przesunięcia wzorca. Możesz przesunąć wzorzec w prawo z [operatorem>> ](../../../language-reference/operators/right-shift-operator.md) lub z lewej strony [operatorem<< ](../../../language-reference/operators/left-shift-operator.md).  
+
+ Operacja bitu Shift wykonuje arytmetyczną zmianę wzorca bitowego. Wzorzec jest zawarty w argumencie operacji po lewej stronie, podczas gdy argument operacji po prawej stronie określa liczbę pozycji do przesunięcia wzorca. Możesz przesunąć wzorzec w prawo z [ operatorem>> ](../../../language-reference/operators/right-shift-operator.md) lub z lewej strony [ operatorem<< ](../../../language-reference/operators/left-shift-operator.md).  
   
  Typem danych operandu wzorca musi być,,,,,, `SByte` `Byte` `Short` `UShort` `Integer` `UInteger` `Long` lub `ULong` . Typ danych operandu kwoty przesunięcia musi być `Integer` lub musi być rozszerzony na `Integer` .  
   
@@ -85,16 +89,18 @@ Operatory arytmetyczne są używane do wykonywania wielu znanych operacji arytme
  Przesunięcia arytmetyczne nigdy nie generują wyjątków przepełnienia.  
   
 ## <a name="bitwise-operations"></a>Operacje bitowe  
+
  Poza operatorami logicznymi, `Not` ,, `Or` `And` i `Xor` również przeprowadzać operacje arytmetyczne przy użyciu wartości numerycznych. Aby uzyskać więcej informacji, zobacz "Operacje bitowe" w [operatorach logicznych i bitowych w Visual Basic](logical-and-bitwise-operators.md).  
   
 ## <a name="type-safety"></a>Bezpieczeństwo typów  
+
  Operandy powinny być zwykle tego samego typu. Na przykład, jeśli dodasz `Integer` do zmiennej, należy dodać ją do innej `Integer` zmiennej i przypisać wynik do zmiennej typu `Integer` .  
   
  Jednym ze sposobów zapewnienia dobrego kodowania bezpiecznych typów jest użycie [instrukcji Option Strict](../../../language-reference/statements/option-strict-statement.md). Jeśli ustawisz `Option Strict On` , Visual Basic automatycznie wykonuje konwersje *bezpieczne dla typów* . Na przykład, jeśli spróbujesz dodać `Integer` zmienną do `Double` zmiennej i przypisać wartość do `Double` zmiennej, operacja jest przeprowadzana normalnie, ponieważ `Integer` wartość może zostać przekonwertowana na `Double` bez utraty danych. Niebezpieczne konwersje typu, z drugiej strony, powodują błąd kompilatora z `Option Strict On` . Na przykład, jeśli spróbujesz dodać `Integer` zmienną do `Double` zmiennej i przypisać wartość do `Integer` zmiennej, wynik błędu kompilatora, ponieważ `Double` zmienna nie może zostać niejawnie przekonwertowana na typ `Integer` .  
   
  Jeśli jednak zostanie ustawiona `Option Strict Off` , Visual Basic zezwala na niejawne konwersje zawężające, chociaż mogą spowodować nieoczekiwaną utratę danych lub precyzję. Z tego powodu zalecamy użycie `Option Strict On` podczas pisania kodu produkcyjnego. Aby uzyskać więcej informacji, zobacz [rozszerzanie i zwężanie konwersji](../data-types/widening-and-narrowing-conversions.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Operatory arytmetyczne](../../../language-reference/operators/arithmetic-operators.md)
 - [Operatory Bit Shift](../../../language-reference/operators/bit-shift-operators.md)

@@ -2,14 +2,15 @@
 title: Informacje o wywołującym
 ms.date: 07/20/2015
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-ms.openlocfilehash: 93fb1e327d65ac19f293a2f77b7d5712fc5e8d2f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 33c7367626d66d1db2705fc2882ca0780d1b867f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400671"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090355"
 ---
 # <a name="caller-information-visual-basic"></a>Informacje o wywołującym (Visual Basic)
+
 Przy użyciu atrybutów informacji o obiekcie wywołującym można uzyskać informacje o obiekcie wywołującym metodę. Można uzyskać ścieżkę pliku kodu źródłowego, numer wiersza kodu źródłowego i nazwę elementu członkowskiego obiektu wywołującego. Te informacje są przydatne do śledzenia, debugowania i tworzenia narzędzi diagnostycznych.  
   
  Aby uzyskać te informacje, należy użyć atrybutów stosowanych do opcjonalnych parametrów, z których każdy ma wartość domyślną. W poniższej tabeli wymieniono atrybuty informacji o wywołującym, które są zdefiniowane w <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> przestrzeni nazw:  
@@ -21,6 +22,7 @@ Przy użyciu atrybutów informacji o obiekcie wywołującym można uzyskać info
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nazwa metody lub właściwości obiektu wywołującego. Zobacz [nazwy członków](#MEMBERNAMES) w dalszej części tego tematu.|`String`|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład przedstawia, jak używać atrybutów informacji o obiekcie wywołującym. Dla każdego wywołania `TraceMessage` metody informacje o wywołującym są zastępowane jako argumenty parametrów opcjonalnych.  
   
 ```vb  
@@ -47,6 +49,7 @@ End Sub
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Należy jawnie określić wartość domyślną dla każdego opcjonalnego parametru. Nie można zastosować atrybutów informacji o obiekcie wywołującym do parametrów, które nie są określone jako opcjonalne.  
   
  Atrybuty informacji o obiekcie wywołującym nie czynią parametru opcjonalnym. Zamiast tego wpływają na domyślną wartość, która jest przekazywana, gdy argument zostanie pominięty.  
@@ -55,7 +58,8 @@ End Sub
   
  Można jawnie dostarczyć opcjonalne argumenty do sterowania informacjami o obiekcie wywołującym lub ukryć te informacje.  
   
-### <a name="member-names"></a><a name="MEMBERNAMES"></a>Nazwy elementów członkowskich  
+### <a name="member-names"></a><a name="MEMBERNAMES"></a> Nazwy elementów członkowskich  
+
  Możesz użyć atrybutu, `CallerMemberName` Aby uniknąć określania nazwy elementu członkowskiego jako `String` argumentu wywoływanej metody. Korzystając z tej techniki, można uniknąć problemu, którego **zmiana nazwy Refaktoryzacja** nie zmienia `String` wartości. Jest to szczególnie przydatne w następujących zadaniach:  
   
 - Używanie procedur do śledzenia i diagnostycznych.  
@@ -74,7 +78,7 @@ End Sub
 |Konstruktor atrybutu|Nazwa elementu członkowskiego, do którego został zastosowany atrybut. Jeśli atrybut jest dowolnym elementem elementu członkowskiego (takim jak parametr, wartość zwracana lub parametr typu ogólnego), to wynikiem jest nazwa elementu członkowskiego, który jest skojarzony z tym elementem.|  
 |Brak nadrzędnego elementu członkowskiego (na przykład poziom zestawu lub atrybuty, które są stosowane do typów)|Wartość domyślna opcjonalnego parametru.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Atrybuty (Visual Basic)](../../language-reference/attributes.md)
 - [Atrybuty wspólne (Visual Basic)](attributes/common-attributes.md)

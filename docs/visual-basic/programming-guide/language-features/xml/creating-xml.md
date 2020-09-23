@@ -6,14 +6,15 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], creating XML
 - XML literals [Visual Basic], creating
 ms.assetid: 8ae29ec5-e5fb-4137-9df5-60a288df7045
-ms.openlocfilehash: 0777b428d651c09d4bfb9789ab7b2ac8e74cc32e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a6a927c8dc1a4f3e38a99a1f730be68a2566d048
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410286"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090030"
 ---
 # <a name="creating-xml-in-visual-basic"></a>Tworzenie XML w Visual Basic
+
 Visual Basic umożliwia używanie *literałów XML* bezpośrednio w kodzie. Składnia literału XML reprezentuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obiekty i jest podobna do SKŁADNI xml 1,0. Ułatwia to tworzenie elementów XML, dokumentów i fragmentów programowo, ponieważ kod ma taką samą strukturę jak końcowy kod XML.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
@@ -28,6 +29,6 @@ Visual Basic umożliwia używanie *literałów XML* bezpośrednio w kodzie. Skł
 |[Porady: osadzanie wyrażeń w literałach XML](how-to-embed-expressions-in-xml-literals.md)|Opisuje sposób używania osadzonych wyrażeń w literałach XML do tworzenia zawartości w czasie wykonywania.|  
 |[Nazwy deklarowanych elementów XML oraz atrybuty](names-of-declared-xml-elements-and-attributes.md)|Opisuje wskazówki dotyczące nazewnictwa elementów i atrybutów XML.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [XML](index.md)
