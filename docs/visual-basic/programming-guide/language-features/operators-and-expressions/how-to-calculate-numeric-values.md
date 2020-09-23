@@ -11,14 +11,15 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-ms.openlocfilehash: 94b02693f308dcfcfa6983f2750a26d9d419f7be
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 452a8392b46f0c25b6ad2a8a30c51071f2ae1d93
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403462"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071719"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>Porady: obliczanie wartości liczbowych (Visual Basic)
+
 Wartości liczbowe można obliczyć przy użyciu wyrażeń liczbowych. *Wyrażenie liczbowe* jest wyrażeniem zawierającym literały, stałe i zmienne reprezentujące wartości liczbowe oraz operatory, które działają na tych wartościach.  
   
 ## <a name="calculating-numeric-values"></a>Obliczanie wartości liczbowych  
@@ -50,6 +51,7 @@ Wartości liczbowe można obliczyć przy użyciu wyrażeń liczbowych. *Wyrażen
      Aby uzyskać więcej informacji, zobacz [instrukcje](../../../language-reference/statements/index.md).  
   
 ## <a name="multiple-operators"></a>Wiele operatorów  
+
  Jeśli wyrażenie liczbowe zawiera więcej niż jeden operator, kolejność, w której są oceniane, zależy od reguł pierwszeństwa operatora. Aby zastąpić reguły pierwszeństwa operatorów, należy umieścić wyrażenia w nawiasach, jak w powyższym przykładzie. ujęte wyrażenia są oceniane jako pierwsze.  
   
 #### <a name="to-override-normal-operator-precedence"></a>Aby zastąpić normalne pierwszeństwo operatorów  
@@ -62,7 +64,7 @@ Wartości liczbowe można obliczyć przy użyciu wyrażeń liczbowych. *Wyrażen
   
      Aby uzyskać więcej informacji, zobacz [pierwszeństwo operatorów w Visual Basic](../../../language-reference/operators/operator-precedence.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Operatory i wyrażenia](index.md)
 - [Porównania wartości](value-comparisons.md)

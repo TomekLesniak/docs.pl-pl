@@ -10,14 +10,15 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
-ms.openlocfilehash: 20531e379ddf9b93a278795e9b3c0eb91b47e077
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b25d246bd31147b7a9ba2c72214926fdb5ca8895
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398347"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072148"
 ---
 # <a name="visual-basic-naming-conventions"></a>Visual Basic — Konwencje nazewnictwa
+
 Po wybraniu nazwy elementu w aplikacji Visual Basic pierwszy znak tej nazwy musi być znakiem alfabetycznym lub podkreśleniem. Należy jednak zauważyć, że nazwy zaczynające się od znaku podkreślenia nie są zgodne z [zależnościami od języka i składnikami niezależnymi od języka](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
   
  Poniższe sugestie dotyczą nazewnictwa.  
@@ -40,7 +41,7 @@ Po wybraniu nazwy elementu w aplikacji Visual Basic pierwszy znak tej nazwy musi
   
 - Należy unikać używania nazw w zakresie wewnętrznym, które są takie same jak nazwy w zewnętrznym zakresie. Błędy mogą wynikać z niewłaściwej zmiennej. Jeśli występuje konflikt między zmienną i słowem kluczowym o tej samej nazwie, należy zidentyfikować słowo kluczowe, poprzedzając je odpowiednią biblioteką typów. Na przykład jeśli masz zmienną o nazwie, można `Date` użyć `Date` funkcji wewnętrznej tylko przez wywołanie <xref:System.DateTime.Date%2A?displayProperty=nameWithType> .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Słowa kluczowe jako nazwy elementów w kodzie](keywords-as-element-names-in-code.md)
 - [Me, My, MyBase i MyClass](me-my-mybase-and-myclass.md)

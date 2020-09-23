@@ -11,14 +11,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - argument passing [Visual Basic], procedures
 ms.assetid: 08723588-3890-4ddc-8249-79e049e0f241
-ms.openlocfilehash: 903e05facccd1f2afdf4bb51b200531feb64aa79
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 816d6388a0dbb7ae346074d258ff651c793c5e0e
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387780"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071511"
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>Porady: przekazywanie argumentów do procedury (Visual Basic)
+
 Po wywołaniu procedury należy użyć nazwy procedury z listą argumentów w nawiasach. Należy podać argument odpowiadający każdemu wymaganemu parametrowi zdefiniowanej przez procedurę i opcjonalnie dostarczyć argumentów do `Optional` parametrów. Jeśli nie podasz `Optional` parametru w wywołaniu, musisz dołączyć przecinek, aby oznaczyć jego miejsce na liście argumentów, jeśli podasz kolejne argumenty.  
   
  Jeśli zamierzasz przekazać argument typu danych innego niż odpowiadający mu parametr, na przykład `Byte` do `String` , można ustawić przełącznik kontroli typu ([Option Strict](../../../language-reference/statements/option-strict-statement.md)) na `Off` . Jeśli `Option Strict` jest `On` , musisz użyć rozszerzonych słów kluczowych lub konwersji. Aby uzyskać więcej informacji, zobacz [rozszerzanie i zwężanie konwersji](../data-types/widening-and-narrowing-conversions.md) oraz [funkcji konwersji typów](../../../language-reference/functions/type-conversion-functions.md).  
@@ -45,7 +46,7 @@ Po wywołaniu procedury należy użyć nazwy procedury z listą argumentów w na
   
      Drugi przecinek na liście argumentów oznacza miejsce pominiętego drugiego argumentu, a ostatni ciąg jest przenoszona do opcjonalnego trzeciego parametru `MsgBox` , który jest tekstem, który ma być wyświetlany na pasku tytułu.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Sub, procedury](./sub-procedures.md)
 - [Procedury funkcji](./function-procedures.md)

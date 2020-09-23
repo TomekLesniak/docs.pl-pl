@@ -13,14 +13,15 @@ helpviewer_keywords:
 - Visual Basic code
 - programming [Visual Basic], Visual Basic coding conventions
 ms.assetid: dd9be76f-6944-4e78-ad72-0b6084a3fc13
-ms.openlocfilehash: c8d851afc33e7e898ab16abc941d8680f74145e3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ee61c676f3ff554267f6659453ec55e45df69aee
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398308"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072122"
 ---
 # <a name="program-structure-and-code-conventions-visual-basic"></a>Struktura programu i konwencje związane z kodami (Visual Basic)
+
 W tej sekcji przedstawiono typową strukturę programu Visual Basic, przedstawiono prosty program Visual Basic, "Hello, World" i omówiono Visual Basic Konwencji kodów. Konwencje kodu są sugestiami, które koncentrują się nie na logice programu, ale w jego fizycznej strukturze i wyglądzie. Poniższe elementy ułatwiają odczytywanie, poznawanie i konserwowanie kodu. Konwencje kodu mogą zawierać między innymi:  
   
 - Standardowe formaty do etykietowania i komentowania kodu.  
@@ -32,6 +33,7 @@ W tej sekcji przedstawiono typową strukturę programu Visual Basic, przedstawio
  W poniższych tematach przedstawiono zestaw wytycznych dotyczących programowania dla programów Visual Basic, a także przykłady dobrego użycia.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Struktura programu Visual Basic](structure-of-a-visual-basic-program.md)  
  Zawiera omówienie elementów, które składają się na program Visual Basic.  
   
@@ -78,6 +80,7 @@ W tej sekcji przedstawiono typową strukturę programu Visual Basic, przedstawio
  W tym artykule omówiono usuwanie znanych limitów kodu w ramach Visual Basic.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Konwencje związane z typografią i kodami](../../language-reference/typographic-and-code-conventions.md)  
  Zapewnia standardowe konwencje kodowania dla Visual Basic.  
   

@@ -8,17 +8,19 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - arguments [Visual Basic], modifiable
 ms.assetid: 87b2df69-e1f7-4657-9caf-b3f48d693428
-ms.openlocfilehash: 733f92cc2cdaa6e923c57649774ceb64de172c18
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 662ad3039bb3fd5c44847d5b2a97a033a18ad063
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403346"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071965"
 ---
 # <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a>Różnice pomiędzy argumentami modyfikowalnymi i niemodyfikowalnymi (Visual Basic)
+
 Po wywołaniu procedury zwykle przekazywany jest jeden lub więcej argumentów. Każdy argument odpowiada bazowemu elementowi programistycznemu. Zarówno elementy bazowe, jak i same argumenty mogą być modyfikowalne lub niemodyfikowane.  
   
 ## <a name="modifiable-and-nonmodifiable-elements"></a>Modyfikowalne i niemodyfikowalne elementy  
+
  Elementem programistycznym może być *element modyfikowalny*, który może mieć zmienioną wartość, lub *niemodyfikowalny element*, który ma ustaloną wartość po utworzeniu.  
   
  W poniższej tabeli wymieniono elementy programistyczne modyfikowane i niemodyfikowane.  
@@ -31,13 +33,14 @@ Po wywołaniu procedury zwykle przekazywany jest jeden lub więcej argumentów. 
 |Elementy tablicy|Wyrażenia (nawet jeśli ich elementy są modyfikowane)|  
   
 ## <a name="modifiable-and-nonmodifiable-arguments"></a>Modyfikowalne i niemodyfikowalne argumenty  
+
  *Modyfikowalny argument* to jeden z modyfikowalnym elementem bazowym. Kod wywołujący może przechowywać nową wartość w dowolnym momencie, a w przypadku przekazania argumentu [ByRef](../../../language-reference/modifiers/byref.md)kod w procedurze może także zmodyfikować podstawowy element w kodzie wywołującym.  
   
  *Argument niemodyfikowalny* ma niemodyfikowalny element podstawowy lub został przekazaną wartość [ByVal](../../../language-reference/modifiers/byval.md). Procedura nie może zmodyfikować podstawowego elementu w kodzie wywołującym, nawet jeśli jest to element modyfikowalny. Jeśli jest to niemodyfikowalny element, sam kod wywołujący nie może go zmodyfikować.  
   
  Wywołana procedura może zmodyfikować swoją lokalną kopię niemodyfikowalnego argumentu, ale ta modyfikacja nie ma wpływu na element podstawowy w kodzie wywołującym.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)

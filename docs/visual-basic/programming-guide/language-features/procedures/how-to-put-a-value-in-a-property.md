@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: c39401e5-b5fc-4439-8f31-ed640f7ce6ed
-ms.openlocfilehash: c0fb3e137010390097a68aea161efcff93839d94
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7d85066d4678ee2a53b8339bee2db20374482579
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414340"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071407"
 ---
 # <a name="how-to-put-a-value-in-a-property-visual-basic"></a>Porady: umieszczanie wartości we właściwości (Visual Basic)
+
 Wartość właściwości jest przechowywana przez umieszczenie nazwy właściwości po lewej stronie instrukcji przypisania.  
   
  `Set`Procedura właściwości przechowuje wartość, ale nie jest jawnie wywoływana przez nazwę. Właściwość jest używana tak samo jak w przypadku użycia zmiennej. Visual Basic wykonuje wywołania procedur właściwości.  
@@ -34,7 +35,7 @@ Wartość właściwości jest przechowywana przez umieszczenie nazwy właściwo�
   
 4. Wartość wygenerowana po prawej stronie instrukcji przypisania jest przechowywana we właściwości.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>
 - [Procedury własności](./property-procedures.md)

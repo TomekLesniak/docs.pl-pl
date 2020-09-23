@@ -15,29 +15,32 @@ helpviewer_keywords:
 - comparison operators [Visual Basic], comparing numeric values
 - operators [Visual Basic], comparison
 ms.assetid: 0b570339-5407-474f-8421-e183a8b303ee
-ms.openlocfilehash: 7a93928ff95e307c64149da7ab21476ffd4fa77d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: fbe81532bb435e54e694f9b5fe9dd497392f31e1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388832"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071771"
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Operatory porównania w Visual Basic
+
 Operatory porównania porównują dwa wyrażenia i zwracają `Boolean` wartość, która reprezentuje relację ich wartości. Istnieją operatory do porównywania wartości liczbowych, operatorów do porównywania ciągów i operatorów do porównywania obiektów. Wszystkie trzy typy operatorów zostały omówione w tym dokumencie.  
   
 ## <a name="comparing-numeric-values"></a>Porównywanie wartości liczbowych  
+
  Visual Basic porównuje wartości liczbowe przy użyciu sześciu liczbowych operatorów porównywania. Każdy operator przyjmuje jako operandy dwa wyrażenia, które obliczają wartości numeryczne. W poniższej tabeli przedstawiono operatory i przedstawiono przykłady poszczególnych elementów.  
   
 |Operator|Testowany warunek|Przykłady|  
 |--------------|----------------------|--------------|  
-|`=`Kryteri|Czy wartość pierwszego wyrażenia jest równa wartości sekundy?|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
-|`<>`Nierówności|Czy wartość pierwszego wyrażenia jest nierówna wartości sekundy?|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
-|`<`(Mniejsze niż)|Czy wartość pierwszego wyrażenia jest mniejsza niż wartość drugiego?|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
-|`>`(Większe niż)|Czy wartość pierwszego wyrażenia jest większa niż wartość drugiego?|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
-|`<=`(Mniejsze niż lub równe)|Czy wartość pierwszego wyrażenia jest mniejsza lub równa wartości sekundy?|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
-|`>=`(Większe niż lub równe)|Czy wartość pierwszego wyrażenia jest większa niż lub równa wartości sekundy?|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
+|`=` Kryteri|Czy wartość pierwszego wyrażenia jest równa wartości sekundy?|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
+|`<>` Nierówności|Czy wartość pierwszego wyrażenia jest nierówna wartości sekundy?|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
+|`<` (Mniejsze niż)|Czy wartość pierwszego wyrażenia jest mniejsza niż wartość drugiego?|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
+|`>` (Większe niż)|Czy wartość pierwszego wyrażenia jest większa niż wartość drugiego?|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
+|`<=` (Mniejsze niż lub równe)|Czy wartość pierwszego wyrażenia jest mniejsza lub równa wartości sekundy?|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
+|`>=` (Większe niż lub równe)|Czy wartość pierwszego wyrażenia jest większa niż lub równa wartości sekundy?|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
   
 ## <a name="comparing-strings"></a>Porównywanie ciągów  
+
  Visual Basic porównuje ciągi przy użyciu [operatora like](../../../language-reference/operators/like-operator.md) oraz liczbowych operatorów porównania. `Like`Operator pozwala określić wzorzec. Ciąg jest porównywany z wzorcem i jeśli jest zgodny, wynik jest `True` . W przeciwnym razie wynik jest `False` . Operatory liczbowe umożliwiają porównywanie `String` wartości na podstawie ich kolejności sortowania, jak pokazano w poniższym przykładzie.  
   
  `"73" < "9"`  
@@ -59,6 +62,7 @@ Operatory porównania porównują dwa wyrażenia i zwracają `Boolean` wartość
  Kolejność sortowania jest oparta na porównaniu binarnej lub porównującej tekst w zależności od ustawienia `Option Compare` . Aby uzyskać więcej informacji, zobacz [opcja porównania instrukcji](../../../language-reference/statements/option-compare-statement.md).  
   
 ## <a name="comparing-objects"></a>Porównywanie obiektów  
+
  Visual Basic porównuje dwie zmienne odwołań do obiektów z [operatorem is](../../../language-reference/operators/is-operator.md) i [operatorem IsNot](../../../language-reference/operators/isnot-operator.md). Można użyć dowolnego z tych operatorów, aby określić, czy dwie zmienne referencyjne odwołują się do tego samego wystąpienia obiektu. Ilustruje to poniższy przykład.  
   
  [!code-vb[VbVbalrOperators#65](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#65)]  
@@ -76,7 +80,8 @@ Operatory porównania porównują dwa wyrażenia i zwracają `Boolean` wartość
  W poprzednim przykładzie `If a IsNot b` jest równoważne `If Not a Is b` .  
   
 ### <a name="comparing-object-type"></a>Porównywanie typu obiektu  
- Można sprawdzić, czy obiekt jest określonego typu z `TypeOf` wyrażeniem.... `Is` Składnia jest następująca:  
+
+ Można sprawdzić, czy obiekt jest określonego typu z `TypeOf` wyrażeniem.... `Is` Składnia wygląda następująco:  
   
  `TypeOf <objectexpression> Is <typename>`  
   
@@ -88,7 +93,7 @@ Operatory porównania porównują dwa wyrażenia i zwracają `Boolean` wartość
   
  Aby uzyskać więcej informacji, zobacz [operator typeof](../../../language-reference/operators/typeof-operator.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Porównania wartości](value-comparisons.md)
 - [Operatory porównania](../../../language-reference/operators/comparison-operators.md)

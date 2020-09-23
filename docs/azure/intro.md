@@ -2,12 +2,12 @@
 title: Wprowadzenie do platformy Azure i platformy .NET
 description: Poznaj podstawowe informacje dotyczące platformy Azure i platformy .NET.
 ms.date: 06/20/2020
-ms.openlocfilehash: c64de800f47035b22cc62b6d08cb7b71246984a7
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 9f1766176740ede5aa40dd894497f2aa719efe23
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174325"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071108"
 ---
 # <a name="introduction-to-azure-and-net"></a>Wprowadzenie do platform Azure i .NET
 
@@ -28,7 +28,7 @@ Ten dokument zawiera omówienie najważniejszych pojęć i usług, które dewelo
 
 **Zarządzane usługi**: platforma Azure udostępnia niektóre usługi, które udostępniają dane lub informacje na platformie Azure, a implementacja platformy Azure podejmuje odpowiednie działania. Przykładem jest platforma Azure Blob Storage, w której udostępniamy pliki i platforma Azure obsługuje odczytywanie, zapisywanie i utrwalanie.
 
-**Zestaw Azure SDK dla platformy .NET**: czasami określane jako **biblioteki platformy Azure dla platformy .NET**, zbiorczo odnoszą się do [pakietów NuGet](https://www.nuget.org/profiles/azure-sdk) instalowanych w projekcie, które udostępniają różne interakcje i funkcje z usługami platformy Azure. Te pakiety obejmują również biblioteki zarządzania używane do udostępniania zasobów i administrowania nimi.
+**Zestaw Azure SDK dla platformy .NET** zbiorczo odwołuje się do [pakietów NuGet](packages.md) instalowanych w projekcie, które udostępniają różne interakcje i funkcje z usługami platformy Azure. Te pakiety obejmują również biblioteki zarządzania używane do udostępniania zasobów i administrowania nimi.
 
 ## <a name="choosing-a-hosting-option"></a>Wybieranie opcji hostingu
 

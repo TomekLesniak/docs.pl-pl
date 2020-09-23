@@ -10,14 +10,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: c7042de2-2422-4039-94e8-ac298896af69
-ms.openlocfilehash: ddff8c8cd82593b7d89fb0847e56123c287e364b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 10cd7d11b0efe9fa5eb3ae24269a4cdbe33bc08a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387884"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071550"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters-visual-basic"></a>Porady: przeciążanie procedury wykorzystującej nieokreśloną liczbę parametrów (Visual Basic)
+
 Jeśli procedura zawiera parametr [ParamArray](../../../language-reference/modifiers/paramarray.md) , nie można zdefiniować przeciążonej wersji pobierającej tablicę jednowymiarową dla tablicy parametrów. Aby uzyskać więcej informacji, zobacz "niejawne przeciążenia dla parametru ParamArray" w artykule dotyczącym [przeciążania procedur](./considerations-in-overloading-procedures.md).  
   
 ### <a name="to-overload-a-procedure-that-takes-a-variable-number-of-parameters"></a>Aby przeciążyć procedurę, która przyjmuje zmienną liczbę parametrów  
@@ -35,6 +36,7 @@ Jeśli procedura zawiera parametr [ParamArray](../../../language-reference/modif
 6. Przerwij każdą procedurę za pomocą `End Sub` instrukcji lub w `End Function` zależności od potrzeb.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje procedurę zdefiniowaną za pomocą parametru [ParamArray](../../../language-reference/modifiers/paramarray.md) , a następnie równoważnego zestawu przeciążonych procedur.  
   
  [!code-vb[VbVbcnProcedures#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#69)]  
@@ -48,12 +50,14 @@ Jeśli procedura zawiera parametr [ParamArray](../../../language-reference/modif
  Kod w przeciążonych wersjach nie musi testować, czy kod wywołujący dostarczył jedną lub więcej wartości `ParamArray` parametru, czy tak, ile tak. Visual Basic przekazuje kontrolę do wersji zgodnej z listą argumentów wywołujących.  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
  Ponieważ procedura z `ParamArray` parametrem jest równoważna z zestawem przeciążonych wersji, nie można przeciążyć takiej procedury z listą parametrów odpowiadającą każdemu z tych niejawnych przeciążeń. Aby uzyskać więcej informacji, zobacz [zagadnienia dotyczące przeciążania procedur](./considerations-in-overloading-procedures.md).  
   
 ## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
+
  Za każdym razem, gdy zajmujesz się tablicą, która może być nienieskończona, istnieje ryzyko, że zachodzi taka Wewnętrzna pojemność aplikacji. Jeśli zaakceptujesz tablicę parametrów, należy sprawdzić długość tablicy, do której przeszedł kod wywołujący, i wykonać odpowiednie czynności, jeśli jest zbyt duży dla aplikacji.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)

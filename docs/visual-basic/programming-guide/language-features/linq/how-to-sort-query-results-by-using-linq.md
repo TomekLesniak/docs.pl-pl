@@ -11,14 +11,15 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 - query samples [Visual Basic]
 ms.assetid: 07a4584d-9fd8-4a1d-b7d9-ccf2efa5c84e
-ms.openlocfilehash: c1bc6ab863f9de118d59e102d3d5d251d326f497
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 94c2907f05aa9b5b2bc8659cef6f523187f1ef6b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404942"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071797"
 ---
 # <a name="how-to-sort-query-results-by-using-linq-visual-basic"></a>Porady: sortowanie wyników zapytania za pomocą LINQ (Visual Basic)
+
 Program Query Integrated Language (LINQ) ułatwia dostęp do informacji o bazie danych i wykonywanie zapytań.  
   
  Poniższy przykład pokazuje, jak utworzyć nową aplikację wykonującą zapytania względem bazy danych SQL Server i sortować wyniki według wielu pól przy użyciu `Order By` klauzuli. Kolejność sortowania dla każdego pola może być kolejnością rosnącą lub malejącą. Aby uzyskać więcej informacji, zobacz [klauzula Order by](../../../language-reference/queries/order-by-clause.md).  
@@ -73,7 +74,7 @@ Program Query Integrated Language (LINQ) ułatwia dostęp do informacji o bazie 
   
 4. Naciśnij klawisz F5, aby uruchomić projekt i wyświetlić wyniki.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ](index.md)
 - [Zapytania](../../../language-reference/queries/index.md)

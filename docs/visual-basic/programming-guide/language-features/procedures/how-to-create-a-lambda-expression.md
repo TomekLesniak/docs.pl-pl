@@ -5,14 +5,15 @@ helpviewer_keywords:
 - lambda expressions [Visual Basic]
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
-ms.openlocfilehash: 7affc84fa501ba98bdfa93835f0b0e381580b9bd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cc2de38f7375848d104edff6f419656d9caa9cb2
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388390"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071927"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>Porady: tworzenie wyrażenia lambda (Visual Basic)
+
 *Wyrażenie lambda* jest funkcją lub podprocedurą, która nie ma nazwy. Wyrażenia lambda można użyć wszędzie tam, gdzie typ delegata jest prawidłowy.  
   
 ### <a name="to-create-a-single-line-lambda-expression-function"></a>Aby utworzyć jednowierszową funkcję wyrażenia lambda  
@@ -96,6 +97,7 @@ ms.locfileid: "84388390"
      [!code-vb[VbVbalrLambdas#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#22)]  
   
 ## <a name="example"></a>Przykład  
+
  Typowym zastosowaniem wyrażeń lambda jest zdefiniowanie funkcji, która może być przenoszona jako argument dla parametru, którego typem jest `Delegate` . W poniższym przykładzie <xref:System.Diagnostics.Process.GetProcesses%2A> Metoda zwraca tablicę procesów uruchomionych na komputerze lokalnym. <xref:System.Linq.Enumerable.Where%2A>Metoda z <xref:System.Linq.Enumerable> klasy wymaga `Boolean` delegata jako argumentu. Wyrażenie lambda w przykładzie jest używane do tego celu. Zwraca `True` dla każdego procesu, który ma tylko jeden wątek i są wybrane w `filteredList` .  
   
  [!code-vb[VbVbalrLambdas#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class4.vb#10)]  
@@ -104,7 +106,7 @@ ms.locfileid: "84388390"
   
  [!code-vb[VbVbalrLambdas#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class5.vb#11)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Linq.Enumerable>
 - [Wyrażenia lambda](./lambda-expressions.md)

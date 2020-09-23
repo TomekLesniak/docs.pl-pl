@@ -10,17 +10,18 @@ helpviewer_keywords:
 - signatures [Visual Basic], procedure
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
-ms.openlocfilehash: bcb99ef3845c1ce3998dc9dc8d9f1d335515c0a9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9b83eba8efc8dfe14b6ec1cbab270984977198e5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84364373"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071368"
 ---
 # <a name="overload-resolution-visual-basic"></a>Rozpoznanie przeciążenia (Visual Basic)
+
 Gdy kompilator Visual Basic napotyka wywołanie procedury, która jest zdefiniowana w kilku przeciążonych wersjach, kompilator musi zdecydować, które z przeciążeń mają być wywoływane. Robi to, wykonując następujące czynności:  
   
-1. **U.** Eliminuje wszelkie przeciążenia z poziomem dostępu, który uniemożliwia Wywoływanie kodu wywołującego.  
+1. **Ułatwienia dostępu.** Eliminuje wszelkie przeciążenia z poziomem dostępu, który uniemożliwia Wywoływanie kodu wywołującego.  
   
 2. **Liczba parametrów.** Eliminuje wszelkie przeciążenia, które definiują inną liczbę parametrów niż podano w wywołaniu.  
   
@@ -49,6 +50,7 @@ Gdy kompilator Visual Basic napotyka wywołanie procedury, która jest zdefiniow
  W drugim wywołaniu kompilator nie może wyeliminować żadnych przeciążeń na podstawie zawężania. Eliminuje trzecie Przeciążenie z tego samego powodu, co w pierwszym wywołaniu, ponieważ może wywoływać drugie Przeciążenie przy mniejszej poszerzeniu typów argumentów. Jednak kompilator nie może rozpoznać pierwszego i drugiego przeciążenia. Każdy z nich ma jeden zdefiniowany typ parametru, który jest poszerzany do odpowiedniego typu w drugim ( `Byte` do `Short` , ale `Single` do `Double` ). W związku z tym kompilator generuje błąd rozpoznawania przeciążenia.  
   
 ## <a name="overloaded-optional-and-paramarray-arguments"></a>Przeciążone argumenty opcjonalne i ParamArray  
+
  Jeśli dwa przeciążenia procedury mają identyczne podpisy, z wyjątkiem tego, że ostatni parametr jest zadeklarowany jako [opcjonalny](../../../language-reference/modifiers/optional.md) w jednym i [ParamArray](../../../language-reference/modifiers/paramarray.md) w drugim, kompilator rozpoznaje wywołanie tej procedury w następujący sposób:  
   
 |Jeśli wywołanie dostarcza ostatni argument jako|Kompilator rozpoznaje wywołanie do przeciążenia deklarującego ostatni argument jako|  
@@ -58,7 +60,7 @@ Gdy kompilator Visual Basic napotyka wywołanie procedury, która jest zdefiniow
 |Co najmniej dwie wartości na liście rozdzielanej przecinkami|`ParamArray`|  
 |Tablica dowolnej długości (łącznie z pustą tablicą)|`ParamArray`|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Parametry opcjonalne](./optional-parameters.md)
 - [Parameter — Tablice](./parameter-arrays.md)

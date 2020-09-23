@@ -18,14 +18,15 @@ helpviewer_keywords:
 - argument lists [Visual Basic]
 - procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-ms.openlocfilehash: 178206ca2ee103bbdb5a4ac03bca0df903c8c5d8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c7f8eb1fa4e1fa3d87474d048d5a60994b0b7fc5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406719"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071277"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>Parametry i argumenty procedur (Visual Basic)
+
 W większości przypadków procedura wymaga pewnych informacji na temat okoliczności, w których został wywołany. Procedura wykonująca powtarzalne lub udostępnione zadania używa różnych informacji dla każdego wywołania. Te informacje składają się ze zmiennych, stałych i wyrażeń, które są przekazywane do procedury po jej wywołaniu.  
   
  *Parametr* reprezentuje wartość, którą procedura oczekuje na dostarczenie podczas jego wywoływania. Deklaracja procedury definiuje jej parametry.  
@@ -41,6 +42,7 @@ W większości przypadków procedura wymaga pewnych informacji na temat okoliczn
  Aby uzyskać więcej informacji, zobacz [różnice między parametrami i argumentami](./differences-between-parameters-and-arguments.md).  
   
 ## <a name="parameter-data-type"></a>Typ danych parametru  
+
  Zdefiniowano typ danych dla parametru przy użyciu `As` klauzuli w deklaracji. Na przykład następująca funkcja akceptuje ciąg i liczbę całkowitą.  
   
  [!code-vb[VbVbcnProcedures#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#32)]  
@@ -56,9 +58,10 @@ W większości przypadków procedura wymaga pewnych informacji na temat okoliczn
 - Użyj słowa kluczowego konwersji, aby jawnie skonwertować typ danych.  
   
 ### <a name="type-parameters"></a>Parametry typu  
+
  *Procedura ogólna* definiuje także jeden lub więcej *parametrów typu* oprócz zwykłych parametrów. Procedura ogólna pozwala wywołującemu kod przekazać różne typy danych przy każdym wywołaniu procedury, tak aby można było dostosować typy danych do wymagań poszczególnych wywołań. Zapoznaj [się z procedurami ogólnymi w Visual Basic](../data-types/generic-procedures.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Sub, procedury](./sub-procedures.md)

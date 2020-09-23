@@ -10,14 +10,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 9ae6818b1e03ccd00ed554e98690e02ffa45de99
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 78ca6b2b95dfd5a7f208e5251f08dfccc5514946
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387845"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071524"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>Porady: przeciążanie procedury wykorzystującej parametry opcjonalne (Visual Basic)
+
 Jeśli procedura zawiera co najmniej jeden parametr [opcjonalny](../../../language-reference/modifiers/optional.md) , nie można zdefiniować przeciążonej wersji zgodnej z żadnym z jego niejawnego przeciążenia. Aby uzyskać więcej informacji, zobacz "niejawne przeciążenia dla parametrów opcjonalnych" w [kwestiach dotyczących przeciążania procedur](./considerations-in-overloading-procedures.md).  
   
 ## <a name="one-optional-parameter"></a>Jeden opcjonalny parametr  
@@ -45,6 +46,7 @@ Jeśli procedura zawiera co najmniej jeden parametr [opcjonalny](../../../langua
      [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
 ## <a name="multiple-optional-parameters"></a>Wiele parametrów opcjonalnych  
+
  W przypadku procedury z więcej niż jednym opcjonalnym parametrem zwykle wymagane są więcej niż dwie przeciążone wersje. Na przykład jeśli istnieją dwa parametry opcjonalne, a kod wywołujący może dostarczyć lub pominąć każdy z nich niezależnie, potrzebne są cztery przeciążone wersje, jeden dla każdej możliwej kombinacji dostarczonych argumentów.  
   
  Wraz ze wzrostem liczby parametrów opcjonalnych zwiększa się złożoność przeciążenia. Jeśli niektóre kombinacje podanych argumentów nie są akceptowalne, dla N opcjonalnych parametrów wymagane są 2 ^ N przeciążone wersje. W zależności od charakteru procedury, może się okazać, że przejrzystość logiki usprawiedliwia dodatkowy nakład pracy w celu zdefiniowania wszystkich przeciążonych wersji.  
@@ -61,7 +63,7 @@ Jeśli procedura zawiera co najmniej jeden parametr [opcjonalny](../../../langua
   
 5. Przerwij każdą procedurę za pomocą `End Sub` instrukcji lub w `End Function` zależności od potrzeb.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)

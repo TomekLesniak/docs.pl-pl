@@ -8,14 +8,15 @@ helpviewer_keywords:
 - properties [Visual Basic], property procedures
 - procedure calls [Visual Basic], property procedures
 ms.assetid: 96bc4d74-d9c3-4b7a-954d-58ac8553cd94
-ms.openlocfilehash: 006961a0f1d4be6b0d52be5bc273dad9733bfe56
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0b35751136937d4cee5b3ca9669b43d3fbdf71a1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388702"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071956"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>Porady: wywoływanie procedury właściwości (Visual Basic)
+
 Wywoływanie procedury właściwości przez zapisanie wartości we właściwości lub pobranie jej wartości. Dostęp do właściwości jest taki sam jak w przypadku dostępu do zmiennej.  
   
  `Set`Procedura właściwości przechowuje wartość, a jej `Get` procedura Pobiera wartość. Jednak te procedury nie są jawnie wywoływane przez nazwę. Używasz właściwości w instrukcji przypisania lub wyrażeniu, tak jak w przypadku przechowywania lub pobierania wartości zmiennej. Visual Basic wykonuje wywołania procedur właściwości.  
@@ -52,7 +53,7 @@ Wywoływanie procedury właściwości przez zapisanie wartości we właściwośc
   
  Wartość wygenerowana po prawej stronie instrukcji przypisania jest przechowywana we właściwości.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury własności](./property-procedures.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)

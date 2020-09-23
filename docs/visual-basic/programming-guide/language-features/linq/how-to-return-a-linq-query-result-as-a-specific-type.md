@@ -9,14 +9,15 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 - query samples [Visual Basic]
 ms.assetid: 621bb10a-e5d7-44fb-a025-317964b19d92
-ms.openlocfilehash: c8ed792bf3ffefd903d60522f621958e44546d32
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 249c3eebaeec3d09a297fead07ab056caff1b618
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404955"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071810"
 ---
 # <a name="how-to-return-a-linq-query-result-as-a-specific-type-visual-basic"></a>Porady: zwracanie wyniku zapytania LINQ jako określonego typu (Visual Basic)
+
 Program Query Integrated Language (LINQ) ułatwia dostęp do informacji o bazie danych i wykonywanie zapytań. Domyślnie zapytania LINQ zwracają listę obiektów jako typ anonimowy. Możesz również określić, że zapytanie zwróci listę określonego typu przy użyciu `Select` klauzuli.  
   
  Poniższy przykład pokazuje, jak utworzyć nową aplikację, która wykonuje zapytania dotyczące bazy danych SQL Server i projektuje wyniki jako określony nazwany typ. Aby uzyskać więcej informacji, zobacz [Typy anonimowe](../objects-and-classes/anonymous-types.md) i [klauzula SELECT](../../../language-reference/queries/select-clause.md).  
@@ -75,7 +76,7 @@ Program Query Integrated Language (LINQ) ułatwia dostęp do informacji o bazie 
   
 5. Naciśnij klawisz F5, aby uruchomić projekt i wyświetlić wyniki.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ](index.md)
 - [Zapytania](../../../language-reference/queries/index.md)

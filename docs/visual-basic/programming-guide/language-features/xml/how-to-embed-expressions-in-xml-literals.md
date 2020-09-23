@@ -5,14 +5,15 @@ helpviewer_keywords:
 - embedded expressions [Visual Basic]
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: 75016fad-0141-42de-8564-5051be29487e
-ms.openlocfilehash: 59ba03be6e132203523427d3b7af5a163b6f05ac
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5ce1386e6a1ff8ffce296f5cea694499633eb011
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392317"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071212"
 ---
 # <a name="how-to-embed-expressions-in-xml-literals-visual-basic"></a>Porady: osadzanie wyrażeń w literałach XML (Visual Basic)
+
 Literały XML można łączyć z osadzonymi wyrażeniami w celu utworzenia dokumentu XML, fragmentu lub elementu zawierającego zawartość utworzoną w czasie wykonywania. W poniższych przykładach pokazano, jak używać osadzonych wyrażeń do wypełniania zawartości elementu, atrybutów i nazw elementów w czasie wykonywania.  
   
  Składnia wyrażenia osadzonego ma tę `<%=` `exp` `%>` samą składnię, która ASP.NET używa. Aby uzyskać więcej informacji, zobacz [Embedded Expressions in XML](embedded-expressions-in-xml.md).  
@@ -65,7 +66,7 @@ Literały XML można łączyć z osadzonymi wyrażeniami w celu utworzenia dokum
     </contact>  
     ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Instrukcje: tworzenie literałów XML](how-to-create-xml-literals.md)
 - [Wyrażenia osadzone w XML](embedded-expressions-in-xml.md)

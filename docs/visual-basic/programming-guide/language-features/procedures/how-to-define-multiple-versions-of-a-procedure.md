@@ -8,14 +8,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: 870a18dbf3a7e28b7d7b612e853beeec6908cf6f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2661603ba33dd0bc28ac1a192794a4534225b641
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387936"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071641"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>Porady: definiowanie wielu wersji procedury (Visual Basic)
+
 Można zdefiniować procedurę w wielu wersjach przez *przekazanie* jej przy użyciu tej samej nazwy, ale innej listy parametrów dla każdej wersji. Przeciążanie polega na zdefiniowaniu kilku ściśle powiązanych wersji procedury bez konieczności odróżnienia ich według nazwy.  
   
  Aby uzyskać więcej informacji, zobacz [przeciążanie procedur](./procedure-overloading.md).  
@@ -31,6 +32,7 @@ Można zdefiniować procedurę w wielu wersjach przez *przekazanie* jej przy uż
 4. Przerwij każdą wersję procedury z `End Sub` instrukcją lub, `End Function` zgodnie z potrzebami.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zdefiniowano `Sub` procedurę publikowania transakcji na podstawie salda klienta. Używa `Overloads` słowa kluczowego, aby zdefiniować dwie wersje procedury, jedną, która akceptuje klienta według nazwy i innych według numeru konta.  
   
  [!code-vb[VbVbcnProcedures#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#72)]  
@@ -40,9 +42,10 @@ Można zdefiniować procedurę w wielu wersjach przez *przekazanie* jej przy uż
  Aby uzyskać informacje na temat sposobu wywoływania tych wersji `post` procedury, zobacz [How to: calling a przeciążona procedura](./how-to-call-an-overloaded-procedure.md).  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
  Upewnij się, że każda ze przeciążonych wersji ma taką samą nazwę procedury, ale inną listę parametrów.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)

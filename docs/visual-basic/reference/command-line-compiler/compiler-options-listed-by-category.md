@@ -4,14 +4,15 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: 533d3da2f76854d311262ce97b43f240acab5f7d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 77a130b684d26cf7e4b9df9382348a371a60bc5d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408754"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072044"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Opcje kompilatora Visual Basic wymienione według kategorii
+
 Kompilator wiersza polecenia Visual Basic jest dostarczany jako alternatywa dla kompilowania programów z poziomu zintegrowanego środowiska programistycznego (IDE) programu Visual Studio. Poniżej znajduje się lista opcji kompilatora wiersza polecenia Visual Basic posortowanych według kategorii funkcjonalnej.  
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
@@ -93,7 +94,7 @@ Kompilator wiersza polecenia Visual Basic jest dostarczany jako alternatywa dla 
   
 |Opcja|Przeznaczenie|  
 |---|---|  
-|[-define](define.md)|Definiuje symbole dla kompilacji warunkowej.|  
+|[-Zdefiniuj](define.md)|Definiuje symbole dla kompilacji warunkowej.|  
   
 ## <a name="resources"></a>Zasoby  
   
@@ -112,7 +113,7 @@ Kompilator wiersza polecenia Visual Basic jest dostarczany jako alternatywa dla 
 |[-baseaddress](baseaddress.md)|Określa adres podstawowy biblioteki DLL.|  
 |[-codepage](codepage.md)|Określa stronę kodową, która ma być używana dla wszystkich plików kodu źródłowego w kompilacji.|  
 |[-errorreport](errorreport.md)|Określa sposób, w jaki kompilator Visual Basic powinien raportować wewnętrzne błędy kompilatora.|  
-|[-highentropyva](highentropyva.md)|Informuje jądro systemu Windows o tym, czy określony plik wykonywalny obsługuje losowe generowanie układu przestrzeni adresowej (ASLR).|  
+|[-HIGHENTROPYVA](highentropyva.md)|Informuje jądro systemu Windows o tym, czy określony plik wykonywalny obsługuje losowe generowanie układu przestrzeni adresowej (ASLR).|  
 |[-main](main.md)|Określa klasę, która zawiera `Sub Main` procedurę używaną podczas uruchamiania.|  
 |[-noconfig](noconfig.md)|Nie Kompiluj z VBC. rsp|  
 |[-nostdlib](nostdlib.md)|Powoduje, że kompilator nie odwołuje się do bibliotek standardowych.|  
@@ -120,13 +121,13 @@ Kompilator wiersza polecenia Visual Basic jest dostarczany jako alternatywa dla 
 |[-Platforma](platform.md)|Określa platformę procesora, która jest elementem docelowym kompilatora dla pliku wyjściowego.|  
 |[-recurse](recurse.md)|Wyszukuje w podkatalogach pliki źródłowe do skompilowania.|  
 |[-rootnamespace](rootnamespace.md)|Określa przestrzeń nazw dla wszystkich deklaracji typu.|  
-|[-sdkpath](sdkpath.md)|Określa lokalizację plików mscorlib. dll i Microsoft. VisualBasic. dll.|  
+|[-sdkpath](sdkpath.md)|Określa lokalizację Mscorlib.dll i Microsoft.VisualBasic.dll.|  
 |[-vbruntime](vbruntime.md)|Określa, że kompilator ma kompilować bez odwołania do biblioteki środowiska uruchomieniowego Visual Basic lub z odwołaniem do określonej biblioteki środowiska uruchomieniowego.|  
 |[-win32manifest](win32manifest.md)|Identyfikuje zdefiniowany przez użytkownika plik manifestu aplikacji Win32, który ma zostać osadzony w przenośnym pliku wykonywalnym (PE) projektu.|  
 |`-parallel[+&#124;-]`|Określa, czy ma być używana współbieżna kompilacja (+).|  
 |`-checksumalgorithm:<alg>`|Określ algorytm obliczania sumy kontrolnej plików źródłowych przechowywanej w pliku PDB.  Obsługiwane są następujące wartości: SHA1 (domyślnie) lub SHA256. <br>Ze względu na kolizje problemów z algorytmem SHA1 firma Microsoft zaleca SHA256ą lub lepszą.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora Visual Basic w porządku alfabetycznym](compiler-options-listed-alphabetically.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)
