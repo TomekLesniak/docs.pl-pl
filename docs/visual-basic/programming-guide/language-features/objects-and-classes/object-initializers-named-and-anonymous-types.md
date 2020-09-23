@@ -10,17 +10,19 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: 5561812a53e2fe45c3ad4d12d0e18a8a1e948559
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 724407fed5bf90ed6e3e470cbabc9e42856cb99a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411769"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087482"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Inicjatory obiektów: typy nazwane i anonimowe (Visual Basic)
+
 Inicjatory obiektów umożliwiają określanie właściwości dla obiektu złożonego za pomocą jednego wyrażenia. Mogą służyć do tworzenia wystąpień nazwanych typów i typów anonimowych.  
   
 ## <a name="declarations"></a>Deklaracje  
+
  Deklaracje wystąpień typów nazwanych i anonimowych mogą wyglądać niemal identycznie, ale ich efekty nie są takie same. Każda kategoria ma możliwości i ograniczenia własnych. Poniższy przykład przedstawia wygodny sposób deklarowania i inicjowania wystąpienia nazwanej klasy, `Customer` przy użyciu listy inicjatorów obiektów. Zauważ, że nazwa klasy jest określona po słowie kluczowym `New` .  
   
  [!code-vb[VbVbalrObjectInit#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#1)]  
@@ -32,6 +34,7 @@ Inicjatory obiektów umożliwiają określanie właściwości dla obiektu złoż
  Wymagania i wyniki dwóch deklaracji nie są takie same. Dla `namedCust` klasy, `Customer` która ma `Name` Właściwość musi już istnieć, a deklaracja tworzy wystąpienie tej klasy. Dla programu `anonymousCust` kompilator definiuje nową klasę, która ma jedną właściwość, ciąg o nazwie `Name` i tworzy nowe wystąpienie tej klasy.  
   
 ## <a name="named-types"></a>Nazwane typy  
+
  Inicjatory obiektów zapewniają prosty sposób wywoływania konstruktora typu, a następnie ustawiania wartości niektórych lub wszystkich właściwości w pojedynczej instrukcji. Kompilator wywołuje odpowiedni Konstruktor dla instrukcji: bezparametrowego konstruktora, jeśli nie są wyświetlane żadne argumenty lub jeśli zostanie wysłany jeden lub więcej argumentów. Po tym określone właściwości są inicjowane w kolejności, w jakiej są wyświetlane na liście inicjatorów.  
   
  Każda Inicjalizacja na liście inicjatora składa się z przypisania wartości początkowej do składowej klasy. Nazwy i typy danych elementów członkowskich są określane, gdy Klasa jest zdefiniowana. W poniższych przykładach `Customer` Klasa musi istnieć i musi mieć składowe o nazwie `Name` i `City` , która może akceptować wartości ciągu.  
@@ -57,6 +60,7 @@ Inicjatory obiektów umożliwiają określanie właściwości dla obiektu złoż
  Jednak lista inicjalizacji nie może być pusta. Niezainicjowane właściwości zachowują wartości domyślne.  
   
 ### <a name="type-inference-with-named-types"></a>Wnioskowanie o typie z nazwanymi typami  
+
  Można skrócić kod dla deklaracji `cust1` przez połączenie inicjatorów obiektów i wnioskowania o typie lokalnym. Pozwala to pominąć `As` klauzulę w deklaracji zmiennej. Typ danych zmiennej jest wywnioskowany na podstawie typu obiektu, który jest tworzony przez przypisanie. W poniższym przykładzie typem `cust6` jest `Customer` .  
   
  [!code-vb[VbVbalrObjectInit#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#8)]  
@@ -94,6 +98,7 @@ Inicjatory obiektów umożliwiają określanie właściwości dla obiektu złoż
      `' Dim c2 = New Customer with {.Address.City = "Springfield"}`  
   
 ## <a name="anonymous-types"></a>Typy anonimowe  
+
  Typy anonimowe używają inicjatorów obiektów do tworzenia wystąpień nowych typów, które nie są jawnie definiowane i nazwy. Zamiast tego kompilator generuje typ zgodnie z właściwościami wyznaczonymi na liście inicjatora obiektów. Ponieważ nazwa typu nie jest określona, jest określana jako *Typ anonimowy*. Na przykład Porównaj następującą deklarację z poprzednią `cust6` .  
   
  [!code-vb[VbVbalrObjectInit#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#13)]  
@@ -127,7 +132,7 @@ Inicjatory obiektów umożliwiają określanie właściwości dla obiektu złoż
   
      Aby uzyskać więcej informacji o opcjach definiowania właściwości w typach anonimowych, zobacz [How to: wnioskowanie nazw właściwości i typów w deklaracjach typu anonimowego](how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wnioskowanie o typie lokalnym](../variables/local-type-inference.md)
 - [Typy anonimowe](anonymous-types.md)

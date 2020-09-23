@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - procedure parameters [Visual Basic], defining
 ms.assetid: 7962808d-407e-4e84-984e-43e9857c53c9
-ms.openlocfilehash: e703346113348556b8a3ea41a7934a55a8008522
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 73b53dcf7cd732af1a4f1d23cd0d3b9ef5b5529b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388079"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087443"
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Porady: definiowanie parametru dla procedury (Visual Basic)
+
 *Parametr* pozwala wywołującemu kod przekazać wartość do procedury, gdy wywołuje ją. Należy zadeklarować każdy parametr dla procedury w taki sam sposób, w jaki deklarujesz zmienną, określając jej nazwę i typ danych. Określany jest również mechanizm przekazywania oraz określa, czy parametr jest opcjonalny.  
   
  Aby uzyskać więcej informacji, zobacz [parametry procedury i argumenty](./procedure-parameters-and-arguments.md).  
@@ -52,7 +53,7 @@ ms.locfileid: "84388079"
   
     - Skutkuje to przyspieszeniem wykonywania kodu. Jedną z przyczyn tego problemu jest to, że jeśli nie określisz typu danych dla elementu programistycznego, kompilator Visual Basic przypisze ten `Object` Typ. Skompilowany kod może wymagać konwersji z powrotem między `Object` i innych typów danych, co zmniejsza wydajność.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Sub, procedury](./sub-procedures.md)

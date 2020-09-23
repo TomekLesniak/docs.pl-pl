@@ -10,14 +10,15 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
-ms.openlocfilehash: 4de5d94a94e764d1fc543ffae41b00a9bb729c94
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 21aa6e6a9bba23d767b9d1fac610eaac3265550d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388157"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087456"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Porady: deklarowanie i wywoływanie w właściwości domyślnej w Visual Basic
+
 *Właściwość domyślna* jest klasą lub właściwością struktury, do której Twój kod może uzyskać dostęp bez określania go. Podczas wywoływania nazw kodu klasy lub struktury, ale nie do właściwości, a kontekst umożliwia dostęp do właściwości, Visual Basic rozpoznaje dostęp do tej klasy lub domyślnej właściwości tej struktury, jeśli taki istnieje.  
   
  Klasa lub struktura może mieć co najwyżej jedną właściwość domyślną. Można jednak przeciążyć właściwość domyślną i mieć więcej niż jedną wersję.  
@@ -61,11 +62,13 @@ ms.locfileid: "84388157"
      [!code-vb[VbVbcnProcedures#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#19)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład deklaruje właściwość domyślną klasy.  
   
  [!code-vb[VbVbcnProcedures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#12)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje sposób wywoływania właściwości domyślnej `myProperty` klasy `class1` . Trzy instrukcje przypisania przechowują wartości w `myProperty` , a <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> wywołanie odczytuje wartości.  
   
  [!code-vb[VbVbcnProcedures#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#13)]  
@@ -73,6 +76,7 @@ ms.locfileid: "84388157"
  Najbardziej typowym zastosowaniem właściwości domyślnej jest <xref:Microsoft.VisualBasic.Collection.Item%2A> Właściwość różnych klas kolekcji.  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  Właściwości domyślne mogą spowodować niewielkie zmniejszenie kodu źródłowego, ale może to utrudnić odczytywanie kodu. Jeśli kod wywołujący nie jest zaznajomiony z klasą lub strukturą, gdy tworzy odwołanie do nazwy klasy lub struktury, nie można określić, czy odwołanie uzyskuje dostęp do samej klasy lub struktury, czy też do właściwości domyślnej. Może to prowadzić do błędów kompilatora lub niewielkich błędów logiki czasu wykonywania.  
   
  Możesz nieco skrócić ryzyko błędów właściwości domyślnych, zawsze używając [instrukcji Option Strict](../../../language-reference/statements/option-strict-statement.md) , aby ustawić sprawdzanie typu kompilatora `On` .  
@@ -81,12 +85,12 @@ ms.locfileid: "84388157"
   
  Ze względu na te wady należy rozważyć niedefiniowanie właściwości domyślnych. Aby uzyskać czytelność kodu, należy również rozważyć zawsze odwołanie do wszystkich właściwości jawnie, nawet właściwości domyślnych.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury własności](./property-procedures.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)
 - [Property — Instrukcja](../../../language-reference/statements/property-statement.md)
-- [Domyślne](../../../language-reference/modifiers/default.md)
+- [Wartooć](../../../language-reference/modifiers/default.md)
 - [Różnice pomiędzy właściwościami i zmiennymi w Visual Basic](./differences-between-properties-and-variables.md)
 - [Instrukcje: tworzenie właściwości](./how-to-create-a-property.md)
 - [Porady: deklarowanie właściwości z mieszanymi poziomami dostępu](./how-to-declare-a-property-with-mixed-access-levels.md)

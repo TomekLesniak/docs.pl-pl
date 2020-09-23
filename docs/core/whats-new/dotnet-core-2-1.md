@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 94f3db14046ad5d63975d0ca44425abed5d52062
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: f125a6a8d9287cb515478a10c2679c07817ae9a6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281540"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087365"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co nowego w programie .NET Core 2.1
 
@@ -45,7 +45,7 @@ Głównym fokusem platformy .NET Core 2,1 jest poprawa wydajności czasu kompila
 
 Liczba narzędzi, które były dostępne tylko dla poszczególnych projektów, przy użyciu, `DotnetCliToolReference` jest teraz dostępna jako część zestaw .NET Core SDK. Do tych narzędzi należą:
 
-- `dotnet watch`udostępnia obserwatora systemu plików, który czeka na zmianę pliku przed wykonaniem określonego zestawu poleceń. Na przykład następujące polecenie automatycznie ponownie kompiluje bieżący projekt i generuje pełne dane wyjściowe za każdym razem, gdy plik zostanie zmieniony:
+- `dotnet watch` udostępnia obserwatora systemu plików, który czeka na zmianę pliku przed wykonaniem określonego zestawu poleceń. Na przykład następujące polecenie automatycznie ponownie kompiluje bieżący projekt i generuje pełne dane wyjściowe za każdym razem, gdy plik zostanie zmieniony:
 
    ```dotnetcli
    dotnet watch -- --verbose build
@@ -55,13 +55,13 @@ Liczba narzędzi, które były dostępne tylko dla poszczególnych projektów, p
   
    Aby uzyskać więcej informacji, zobacz [opracowywanie aplikacji ASP.NET Core przy użyciu czujki dotnet](/aspnet/core/tutorials/dotnet-watch).
 
-- `dotnet dev-certs`Program generuje i zarządza certyfikatami używanymi podczas opracowywania aplikacji ASP.NET Core.
+- `dotnet dev-certs` Program generuje i zarządza certyfikatami używanymi podczas opracowywania aplikacji ASP.NET Core.
 
-- `dotnet user-secrets`zarządza wpisami tajnymi w magazynie kluczy tajnych użytkownika w aplikacjach ASP.NET Core.
+- `dotnet user-secrets` zarządza wpisami tajnymi w magazynie kluczy tajnych użytkownika w aplikacjach ASP.NET Core.
 
-- `dotnet sql-cache`tworzy tabelę i indeksy w bazie danych Microsoft SQL Server, które mają być używane na potrzeby rozproszonej pamięci podręcznej.
+- `dotnet sql-cache` tworzy tabelę i indeksy w bazie danych Microsoft SQL Server, które mają być używane na potrzeby rozproszonej pamięci podręcznej.
 
-- `dotnet ef`jest narzędziem do zarządzania bazami danych, <xref:Microsoft.EntityFrameworkCore.DbContext> obiektami i migracjami w aplikacjach Entity Framework Core. Aby uzyskać więcej informacji, zobacz [EF Core narzędzia wiersza polecenia programu .NET](/ef/core/miscellaneous/cli/dotnet).
+- `dotnet ef` jest narzędziem do zarządzania bazami danych, <xref:Microsoft.EntityFrameworkCore.DbContext> obiektami i migracjami w aplikacjach Entity Framework Core. Aby uzyskać więcej informacji, zobacz [EF Core narzędzia wiersza polecenia programu .NET](/ef/core/miscellaneous/cli/dotnet).
 
 ### <a name="global-tools"></a>Narzędzia globalne
 
@@ -79,13 +79,13 @@ Po zainstalowaniu narzędzie można uruchomić z wiersza polecenia, określając
 
 W zestawie SDK platformy .NET Core 2,1 wszystkie operacje narzędzi używają `dotnet tool` polecenia. Dostępne są następujące opcje:
 
-- [`dotnet tool install`](../tools/dotnet-tool-install.md)Aby zainstalować narzędzie.
+- [`dotnet tool install`](../tools/dotnet-tool-install.md) Aby zainstalować narzędzie.
 
-- [`dotnet tool update`](../tools/dotnet-tool-update.md)Aby odinstalować i ponownie zainstalować narzędzie, które efektywnie go aktualizuje.
+- [`dotnet tool update`](../tools/dotnet-tool-update.md) Aby odinstalować i ponownie zainstalować narzędzie, które efektywnie go aktualizuje.
 
-- [`dotnet tool list`](../tools/dotnet-tool-list.md)Aby wyświetlić listę aktualnie zainstalowanych narzędzi.
+- [`dotnet tool list`](../tools/dotnet-tool-list.md) Aby wyświetlić listę aktualnie zainstalowanych narzędzi.
 
-- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md)Odinstalowywanie aktualnie zainstalowanych narzędzi.
+- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md) Odinstalowywanie aktualnie zainstalowanych narzędzi.
 
 ## <a name="roll-forward"></a>Przewinięcie do przodu
 
@@ -98,9 +98,9 @@ Począwszy od platformy .NET Core 2,0, jeśli wersja platformy .NET Core, z któ
 
 To zachowanie można zmienić, zmieniając ustawienie dla opcji przechodzenie do przodu w przypadku braku kandydata udostępnionego platformy. Dostępne są następujące ustawienia:
 
-- `0`— Wyłącz zachowanie przekazujące wersje pomocnicze. W przypadku tego ustawienia aplikacja skompilowana dla programu .NET Core 2.0.0 będzie przeniesiona do wersji .NET Core 2.0.1, ale nie do platformy .NET Core 2.2.0 lub .NET Core 3.0.0.
-- `1`-Włącz zachowanie przekazujące wersje pomocnicze. Jest to wartość domyślna dla tego ustawienia. W przypadku tego ustawienia aplikacja skompilowana dla programu .NET Core 2.0.0 będzie przeniesiona do programu .NET Core 2.0.1 lub .NET Core 2.2.0, w zależności od tego, który z nich jest zainstalowany, ale nie zostanie przesunięty do programu .NET Core 3.0.0.
-- `2`— Włącz proste i główne zachowanie podczas przekazywania wersji. Jeśli ta wartość jest ustawiona, są uwzględniane różne wersje główne, więc aplikacja skompilowana dla platformy .NET Core 2.0.0 przejdzie do usługi .NET Core 3.0.0.
+- `0` — Wyłącz zachowanie przekazujące wersje pomocnicze. W przypadku tego ustawienia aplikacja skompilowana dla programu .NET Core 2.0.0 będzie przeniesiona do wersji .NET Core 2.0.1, ale nie do platformy .NET Core 2.2.0 lub .NET Core 3.0.0.
+- `1` -Włącz zachowanie przekazujące wersje pomocnicze. Jest to wartość domyślna dla tego ustawienia. W przypadku tego ustawienia aplikacja skompilowana dla programu .NET Core 2.0.0 będzie przeniesiona do programu .NET Core 2.0.1 lub .NET Core 2.2.0, w zależności od tego, który z nich jest zainstalowany, ale nie zostanie przesunięty do programu .NET Core 3.0.0.
+- `2` — Włącz proste i główne zachowanie podczas przekazywania wersji. Jeśli ta wartość jest ustawiona, są uwzględniane różne wersje główne, więc aplikacja skompilowana dla platformy .NET Core 2.0.0 przejdzie do usługi .NET Core 3.0.0.
 
 To ustawienie można zmienić na jeden z trzech sposobów:
 
@@ -124,13 +124,14 @@ Wersja poprawki do przodu jest niezależna od tego ustawienia i jest wykonywana 
 
 ### <a name="self-contained-application-servicing"></a>Obsługa aplikacji samodzielnych
 
-`dotnet publish`Program publikuje teraz aplikacje samodzielne z wersją środowiska uruchomieniowego z obsługą usługi. Po opublikowaniu aplikacji samodzielnej przy użyciu zestawu .NET Core 2,1 SDK (v 2.1.300) aplikacja zawiera najnowszą wersję środowiska uruchomieniowego, znaną przez ten zestaw SDK. Po uaktualnieniu do najnowszego zestawu SDK opublikujesz go przy użyciu najnowszej wersji środowiska uruchomieniowego platformy .NET Core. Dotyczy to środowiska uruchomieniowego .NET Core 1,0 i nowszych.
+`dotnet publish` Program publikuje teraz aplikacje samodzielne z wersją środowiska uruchomieniowego z obsługą usługi. Po opublikowaniu aplikacji samodzielnej przy użyciu zestawu .NET Core 2,1 SDK (v 2.1.300) aplikacja zawiera najnowszą wersję środowiska uruchomieniowego, znaną przez ten zestaw SDK. Po uaktualnieniu do najnowszego zestawu SDK opublikujesz go przy użyciu najnowszej wersji środowiska uruchomieniowego platformy .NET Core. Dotyczy to środowiska uruchomieniowego .NET Core 1,0 i nowszych.
 
 Samodzielny publikowanie jest zależne od wersji środowiska uruchomieniowego w systemie NuGet.org. Na maszynie nie trzeba mieć obsługiwanego środowiska uruchomieniowego.
 
 Przy użyciu zestawu SDK platformy .NET Core 2,0 aplikacje samodzielne są publikowane przy użyciu środowiska uruchomieniowego 2.0.0 platformy .NET Core, o ile nie zostanie określona inna wersja za pośrednictwem `RuntimeFrameworkVersion` właściwości. W przypadku tego nowego zachowania nie trzeba już ustawiać tej właściwości, aby wybrać nowszą wersję środowiska uruchomieniowego dla aplikacji samodzielnej. Najprostszym podejściem do przodu jest zawsze Publikowanie przy użyciu zestawu SDK platformy .NET Core 2,1 (v 2.1.300).
 
 Aby uzyskać więcej informacji, zobacz [samodzielne wdrożenie środowiska uruchomieniowego wdrożenia](../deploying/runtime-patch-selection.md).
+
 ## <a name="windows-compatibility-pack"></a>Pakiet zgodności systemu Windows
 
 Podczas przenoszenia istniejącego kodu z .NET Framework do programu .NET Core można użyć [pakietu zgodności systemu Windows](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Zapewnia dostęp do 20 000 więcej interfejsów API, niż są dostępne w programie .NET Core. Te interfejsy API obejmują typy w <xref:System.Drawing?displayProperty=nameWithType> przestrzeni nazw, <xref:System.Diagnostics.EventLog> klasy, WMI, liczniki wydajności, usługi systemu Windows oraz typy i składowe rejestru systemu Windows.
@@ -169,9 +170,9 @@ Możesz zdecydować się na kompilację warstwową na dwa sposoby.
 
 Platforma .NET Core 2,1 zawiera nowe typy, które ułatwiają pracę z tablicami i innymi typami pamięci. Nowe typy obejmują:
 
-- <xref:System.Span%601?displayProperty=nameWithType>i <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> .
+- <xref:System.Span%601?displayProperty=nameWithType> i <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> .
 
-- <xref:System.Memory%601?displayProperty=nameWithType>i <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType> .
+- <xref:System.Memory%601?displayProperty=nameWithType> i <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType> .
 
 Bez tych typów, podczas przekazywania takich elementów jako części tablicy lub sekcji buforu pamięci należy wykonać kopię części danych przed przekazaniem jej do metody. Te typy zapewniają wirtualny widok tych danych, który eliminuje konieczność dodatkowej alokacji pamięci i operacji kopiowania.
 
@@ -195,7 +196,7 @@ Program .NET Core 2,1 dodaje obsługę kompresji i dekompresji Brotli. Brotli to
 
 Program .NET Core 2,1 zawiera liczne ulepszenia interfejsów API kryptografii:
 
-- <xref:System.Security.Cryptography.Pkcs.SignedCms?displayProperty=nameWithType>jest dostępny w pakiecie System. Security. Cryptography. PKCS. Implementacja jest taka sama jak <xref:System.Security.Cryptography.Pkcs.SignedCms> Klasa w .NET Framework.
+- <xref:System.Security.Cryptography.Pkcs.SignedCms?displayProperty=nameWithType> jest dostępny w pakiecie System. Security. Cryptography. PKCS. Implementacja jest taka sama jak <xref:System.Security.Cryptography.Pkcs.SignedCms> Klasa w .NET Framework.
 
 - Nowe przeciążenia <xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetCertHash%2A?displayProperty=nameWithType> <xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetCertHashString%2A?displayProperty=nameWithType> metod i akceptują identyfikator algorytmu wyznaczania wartości skrótu, aby umożliwić wywołującym pobieranie wartości odcisków palca certyfikatu przy użyciu algorytmów innych niż SHA-1.
 
@@ -205,9 +206,9 @@ Program .NET Core 2,1 zawiera liczne ulepszenia interfejsów API kryptografii:
 
 - Nowa <xref:System.Security.Cryptography.CryptographicOperations?displayProperty=nameWithType> Klasa obejmuje dwie nowe metody:
 
-  - <xref:System.Security.Cryptography.CryptographicOperations.FixedTimeEquals%2A>Pobiera stałą ilość czasu, aby zwrócić do każdego z dwóch danych wejściowych o tej samej długości, co sprawia, że jest to odpowiednie do użycia w weryfikacji kryptograficznej, aby uniknąć współtworzenia informacji w kanale bocznym.
+  - <xref:System.Security.Cryptography.CryptographicOperations.FixedTimeEquals%2A> Pobiera stałą ilość czasu, aby zwrócić do każdego z dwóch danych wejściowych o tej samej długości, co sprawia, że jest to odpowiednie do użycia w weryfikacji kryptograficznej, aby uniknąć współtworzenia informacji w kanale bocznym.
 
-  - <xref:System.Security.Cryptography.CryptographicOperations.ZeroMemory%2A>to procedura czyszczenia pamięci, której nie można zoptymalizować.
+  - <xref:System.Security.Cryptography.CryptographicOperations.ZeroMemory%2A> to procedura czyszczenia pamięci, której nie można zoptymalizować.
 
 - Metoda statyczna <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=nameWithType> wypełnia <xref:System.Span%601> losowo wartościami.
 
@@ -229,7 +230,7 @@ Implementacja Sockets wprowadzona w programie .NET Core 2,1 ma wiele zalet:
 
 - Spójne zachowanie na wszystkich platformach .NET Core.
 
-<xref:System.Net.Http.SocketsHttpHandler>jest domyślną implementacją w programie .NET Core 2,1. Można jednak skonfigurować aplikację tak, aby używała starszej <xref:System.Net.Http.HttpClientHandler> klasy przez wywołanie <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> metody:
+<xref:System.Net.Http.SocketsHttpHandler> jest domyślną implementacją w programie .NET Core 2,1. Można jednak skonfigurować aplikację tak, aby używała starszej <xref:System.Net.Http.HttpClientHandler> klasy przez wywołanie <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> metody:
 
 ```csharp
 AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);

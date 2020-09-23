@@ -2,14 +2,15 @@
 title: przechowywanie obiektu w programie Visual Studio
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: 3febd3f74510d11a7103edbd52bcae8043a5edc0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0b2fff171164a29e6066839371fc95ad41b452f1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558605"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086468"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Przewodnik: utrwalanie obiektu w programie Visual Studio (Visual Basic)
+
 Chociaż właściwości obiektu można ustawić na wartości domyślne w czasie projektowania, wszelkie wartości wprowadzone w czasie wykonywania są tracone, gdy obiekt zostanie zniszczony. Możesz użyć serializacji, aby zachować dane obiektu między wystąpieniami, co umożliwia przechowywanie wartości i pobieranie ich przy następnym utworzeniu wystąpienia obiektu.  
   
 > [!NOTE]
@@ -27,6 +28,7 @@ Chociaż właściwości obiektu można ustawić na wartości domyślne w czasie 
 > Okna dialogowe i polecenia menu mogą się różnić od tych opisanych w Pomocy, w zależności od ustawień aktywnych lub wydania. Aby zmienić ustawienia, kliknij przycisk **Importuj i Eksportuj ustawienia** w menu **Narzędzia** . Aby uzyskać więcej informacji, zobacz [personalizowanie środowiska IDE programu Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ## <a name="creating-the-loan-object"></a>Tworzenie obiektu pożyczek  
+
  Pierwszym krokiem jest utworzenie `Loan` klasy i aplikacji testowej, która używa klasy.  
   
 ### <a name="to-create-the-loan-class"></a>Aby utworzyć klasę pożyczek  
@@ -123,6 +125,7 @@ Chociaż właściwości obiektu można ustawić na wartości domyślne w czasie 
  W świecie rzeczywistym stawki odsetek zmieniają się okresowo, ale nie zawsze, gdy aplikacja jest uruchomiona. Zamiast sprawiać, że użytkownik nie aktualizuje stopy oprocentowania za każdym razem, gdy aplikacja jest uruchomiona, lepiej jest zachować najnowszą stawkę odsetek między wystąpieniami aplikacji. W następnym kroku wystarczy dodać serializację do klasy pożyczek.  
   
 ## <a name="using-serialization-to-persist-the-object"></a>Utrwalanie obiektu przy użyciu serializacji  
+
  Aby zachować wartości dla klasy pożyczek, należy najpierw oznaczyć klasę `Serializable` atrybutem.  
   
 ### <a name="to-mark-a-class-as-serializable"></a>Aby oznaczyć klasę jako możliwy do serializacji  
