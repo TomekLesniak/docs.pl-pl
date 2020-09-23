@@ -2,14 +2,15 @@
 title: Wprowadzenie do LINQ
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: 58613281d79769bfb5515f1291feb9b502a1e846
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e99da74eb69511b92ddccfb42f8002adc7be83d1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549970"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098284"
 ---
 # <a name="introduction-to-linq-visual-basic"></a>Wprowadzenie do LINQ (Visual Basic)
+
 Language-Integrated Query (LINQ) to innowacje wprowadzone w .NET Framework w wersji 3,5, która mostkuje przerwy między światem obiektów a światem danych.  
   
  Tradycyjnie zapytania dotyczące danych są wyrażane jako proste ciągi bez sprawdzania typu w czasie kompilacji lub obsłudze IntelliSense. Ponadto należy poznać inny język zapytań dla każdego typu źródła danych: bazy danych SQL, dokumenty XML, różne usługi sieci Web itd. LINQ wykonuje *zapytanie* do konstrukcji języka pierwszej klasy w Visual Basic. Zapytania są pisane względem jednoznacznie wpisanych kolekcji obiektów przy użyciu słów kluczowych języka i znanych operatorów.  
@@ -23,6 +24,7 @@ Language-Integrated Query (LINQ) to innowacje wprowadzone w .NET Framework w wer
  ![Diagram przedstawiający zapytanie LINQ z technologią IntelliSense.](./media/introduction-to-linq/linq-query-intellisense.png)  
   
 ## <a name="next-steps"></a>Następne kroki  
+
  Aby dowiedzieć się więcej na temat programu LINQ, Zacznij od zapoznania się z niektórymi podstawowymi koncepcjami w sekcji Wprowadzenie [wprowadzenie za pomocą LINQ w Visual Basic](getting-started-with-linq.md), a następnie zapoznaj się z dokumentacją technologii LINQ, w której Cię interesujesz:  
   
 - Bazy danych SQL Server: [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
