@@ -4,14 +4,15 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-ms.openlocfilehash: 19e14953c08f90ea1ab245fa3124a462ccba162f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d0dbe785edf7a9aa029d4be08a9b854cf1fb2b79
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408741"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085298"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Opcje kompilatora Visual Basic w porządku alfabetycznym
+
 Kompilator Visual Basic wiersza polecenia jest dostępny jako alternatywa dla kompilowania programów z zintegrowanego środowiska programistycznego (IDE) programu Visual Studio. Poniżej znajduje się lista opcji kompilatora wiersza polecenia Visual Basic sortowanych alfabetycznie.  
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
@@ -28,14 +29,14 @@ Kompilator Visual Basic wiersza polecenia jest dostępny jako alternatywa dla ko
 |`-checksumalgorithm:<alg>`|Określ algorytm obliczania sumy kontrolnej plików źródłowych przechowywanej w pliku PDB.  Obsługiwane są następujące wartości: SHA1 (domyślnie) lub SHA256. <br>Ze względu na kolizje problemów z algorytmem SHA1 firma Microsoft zaleca SHA256ą lub lepszą.|  
 |[-codepage](codepage.md)|Określa stronę kodową, która ma być używana dla wszystkich plików kodu źródłowego w kompilacji.|  
 |[-Debuguj](debug.md)|Generuje informacje o debugowaniu.|  
-|[-define](define.md)|Definiuje symbole dla kompilacji warunkowej.|  
+|[-Zdefiniuj](define.md)|Definiuje symbole dla kompilacji warunkowej.|  
 |[-delaysign](delaysign.md)|Określa, czy zestaw zostanie podpisany całkowicie czy częściowo.|  
 |[-deterministic](deterministic.md)|Powoduje, że kompilator wyprowadza zestaw, którego zawartość binarna jest taka sama w kompilacjach, jeśli dane wejściowe są identyczne.|
 |[-doc](doc.md)|Przetwarza komentarze dokumentacji do pliku XML.|  
 |[-errorreport](errorreport.md)|Określa sposób, w jaki kompilator Visual Basic powinien raportować wewnętrzne błędy kompilatora.|  
 |[-filealign](filealign.md)|Określa, gdzie mają być wyrównane sekcje pliku wyjściowego.|  
 |[-Pomoc](help.md)|Wyświetla opcje kompilatora. To polecenie jest takie samo jak określenie `-?` opcji. Nie wystąpi kompilacja.|  
-|[-highentropyva](highentropyva.md)|Wskazuje, czy określony plik wykonywalny obsługuje generowanie losowe układu przestrzeni adresowej o wysokiej entropii (ASLR).|  
+|[-HIGHENTROPYVA](highentropyva.md)|Wskazuje, czy określony plik wykonywalny obsługuje generowanie losowe układu przestrzeni adresowej o wysokiej entropii (ASLR).|  
 |[-imports](imports.md)|Importuje przestrzeń nazw z określonego zestawu.|  
 |[-keycontainer](keycontainer.md)|Określa nazwę kontenera kluczy, aby nadać zestawowi silną nazwę.|  
 |[-keyfile](keyfile.md)|Określa plik, który zawiera parę kluczy lub kluczy, aby nadać zestawowi silną nazwę.|  
@@ -69,7 +70,7 @@ Kompilator Visual Basic wiersza polecenia jest dostępny jako alternatywa dla ko
 |[-zasób](resource.md)|Osadza zasób zarządzany w zestawie.|  
 |[-rootnamespace](rootnamespace.md)|Określa przestrzeń nazw dla wszystkich deklaracji typu.|  
 |`-ruleset:<file>`|Określ plik zestawu reguł, który wyłącza określoną diagnostykę.|  
-|[-sdkpath](sdkpath.md)|Określa lokalizację plików mscorlib. dll i Microsoft. VisualBasic. dll.|  
+|[-sdkpath](sdkpath.md)|Określa lokalizację Mscorlib.dll i Microsoft.VisualBasic.dll.|  
 |[-subsystemversion](subsystemversion.md)|Określa minimalną wersję podsystemu, która może być używana przez wygenerowany plik wykonywalny.|  
 |[-target](target.md)|Określa format pliku wyjściowego.|  
 |[-utf8output](utf8output.md)|Wyświetla dane wyjściowe kompilatora przy użyciu kodowania UTF-8.|  
@@ -80,7 +81,7 @@ Kompilator Visual Basic wiersza polecenia jest dostępny jako alternatywa dla ko
 |[-win32manifest](win32manifest.md)|Identyfikuje zdefiniowany przez użytkownika plik manifestu aplikacji Win32, który ma zostać osadzony w przenośnym pliku wykonywalnym (PE) projektu.|  
 |[-win32resource](win32resource.md)|Wstawia zasób Win32 do pliku wyjściowego.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Opcje kompilatora Visual Basic według kategorii](compiler-options-listed-by-category.md)
 - [Zarządzanie właściwościami projektów i rozwiązań](/visualstudio/ide/managing-project-and-solution-properties)

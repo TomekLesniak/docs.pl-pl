@@ -7,14 +7,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - procedures [Visual Basic], returning a value
 ms.assetid: a445127b-0f5f-465a-98fb-3e514b93d115
-ms.openlocfilehash: a110cf9f3b42c7244d8d5bf7b49d5e6dac8c2e21
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 53589f84c6675d1e7ae2a593341e5dac747132a9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388767"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91083980"
 ---
 # <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>Porady: wywoływanie procedury zwracającej wartość (Visual Basic)
+
 `Function`Procedura zwraca wartość do kodu wywołującego. Należy to wywołać, dołączając jego nazwę i argumenty po prawej stronie instrukcji przypisania lub w wyrażeniu.  
   
 ### <a name="to-call-a-function-procedure-within-an-expression"></a>Aby wywołać procedurę funkcji w wyrażeniu  
@@ -40,11 +41,12 @@ ms.locfileid: "84388767"
 4. Wartość zwracana z procedury jest przechowywana w zmiennej lub właściwości po lewej stronie instrukcji przypisania.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład wywołuje Visual Basic, <xref:Microsoft.VisualBasic.Interaction.Environ%2A> Aby pobrać wartość zmiennej środowiskowej systemu operacyjnego. Pierwszy wiersz wywołuje `Environ` wewnątrz wyrażenia, a drugi wiersz wywołuje go w instrukcji przypisania. `Environ`przyjmuje nazwę zmiennej jako jedynego argumentu. Zwraca wartość zmiennej do kodu wywołującego.  
+
+ Poniższy przykład wywołuje Visual Basic, <xref:Microsoft.VisualBasic.Interaction.Environ%2A> Aby pobrać wartość zmiennej środowiskowej systemu operacyjnego. Pierwszy wiersz wywołuje `Environ` wewnątrz wyrażenia, a drugi wiersz wywołuje go w instrukcji przypisania. `Environ` przyjmuje nazwę zmiennej jako jedynego argumentu. Zwraca wartość zmiennej do kodu wywołującego.  
   
  [!code-vb[VbVbcnProcedures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#7)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury funkcji](./function-procedures.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)

@@ -21,22 +21,25 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-ms.openlocfilehash: 19d3511363f19319c2bd8ce872b62c1462b1370f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c15b9337f262563941699c0ff8fe5219ca6a5c93
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403411"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086000"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Operatory logiczne i bitowe w Visual Basic
+
 Operatory logiczne porównują `Boolean` wyrażenia i zwracają `Boolean` wynik. `And`Operatory, `Or` , `AndAlso` , `OrElse` i `Xor` są *binarne* , ponieważ przyjmują dwa operandy, natomiast `Not` operator jest *jednoargumentowy* , ponieważ przyjmuje jeden operand. Niektóre z tych operatorów mogą również wykonywać bitowe operacje logiczne na wartościach całkowitych.  
   
 ## <a name="unary-logical-operator"></a>Jednoargumentowy operator logiczny  
+
  [Operator not](../../../language-reference/operators/not-operator.md) wykonuje logiczne *Negacja* dla `Boolean` wyrażenia. Zwraca logiczne przeciwieństwo operandu. Jeśli wyrażenie zwróci `True` wartość, a następnie `Not` zwraca `False` ; Jeśli wyrażenie zwróci wartość `False` , a następnie `Not` zwraca `True` . Ilustruje to poniższy przykład.  
   
  [!code-vb[VbVbalrOperators#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#77)]  
   
 ## <a name="binary-logical-operators"></a>Binarne operatory logiczne  
+
  [Operator and](../../../language-reference/operators/and-operator.md) *wykonuje koniunkcję logiczną dla* dwóch `Boolean` wyrażeń. Jeśli oba wyrażenia są szacowane do `True` , następnie `And` zwraca wartość `True` . Jeśli co najmniej jedno wyrażenie oblicza wartość `False` , a następnie `And` zwraca `False` .  
   
  [Operator or](../../../language-reference/operators/or-operator.md) *wykonuje logiczne* *rozłączenie lub włączenie* dwóch `Boolean` wyrażeń. Jeśli wyrażenie zwróci wartość `True` , lub obie wartości oblicza do `True` , następnie `Or` zwraca wartość `True` . Jeśli wyrażenie nie zostanie oszacowane `True` , `Or` zwraca `False` .  
@@ -48,11 +51,13 @@ Operatory logiczne porównują `Boolean` wyrażenia i zwracają `Boolean` wynik.
  [!code-vb[VbVbalrOperators#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#78)]  
   
 ## <a name="short-circuiting-logical-operations"></a>Operacje logiczne o krótkim obwodzie  
+
  [Operator AndAlso](../../../language-reference/operators/andalso-operator.md) jest bardzo podobny do `And` operatora, dzięki czemu wykonuje także koniunkcję logiczną dla dwóch `Boolean` wyrażeń. Kluczową różnicą między tymi dwoma są te, które `AndAlso` wykazuje zachowanie podczas *krótkiego obwodu* . Jeśli pierwsze wyrażenie w `AndAlso` wyrażeniu zwraca wartość `False` , drugie wyrażenie nie jest oceniane, ponieważ nie może zmienić wyniku końcowego i `AndAlso` zwraca wartość `False` .  
   
  Podobnie [operator OrElse](../../../language-reference/operators/orelse-operator.md) wykonuje krótkie, logiczne rozłączenie dwóch `Boolean` wyrażeń. Jeśli pierwsze wyrażenie w `OrElse` wyrażeniu zwraca wartość `True` , drugie wyrażenie nie jest oceniane, ponieważ nie może zmienić wyniku końcowego i `OrElse` zwraca wartość `True` .  
   
 ### <a name="short-circuiting-trade-offs"></a>Krótkoterminowe kompromisy  
+
  Krótkie obwody mogą zwiększyć wydajność, nie obliczając wyrażenia, które nie może zmienić wyniku operacji logicznej. Jeśli jednak to wyrażenie wykonuje dodatkowe akcje, krótkie obwody pomija te akcje. Na przykład jeśli wyrażenie zawiera wywołanie `Function` procedury, ta procedura nie jest wywoływana, jeśli wyrażenie jest krótkie, a jakikolwiek dodatkowy kod zawarty w nie zostanie `Function` uruchomiony. W związku z tym funkcja może działać tylko sporadycznie i może nie być testowana prawidłowo. Lub logika programu może zależeć od kodu w `Function` .  
   
  Poniższy przykład ilustruje różnicę między elementami `And` , `Or` i ich krótkimi odpowiednikami.  
@@ -66,6 +71,7 @@ Operatory logiczne porównują `Boolean` wyrażenia i zwracają `Boolean` wynik.
  W poprzednim przykładzie należy zauważyć, że jakiś istotny kod wewnątrz `checkIfValid()` nie jest uruchamiany, gdy wywołanie jest krótkie. Pierwsza `If` instrukcja wywołuje `checkIfValid()` choć `12 > 45` Returns `False` , ponieważ nie `And` jest krótka obwód. Druga `If` instrukcja nie wywołuje `checkIfValid()` , ponieważ gdy `12 > 45` zwraca `False` , `AndAlso` krótkie obwody drugie wyrażenie. Trzecia `If` instrukcja wywołuje `checkIfValid()` choć `12 < 45` Returns `True` , ponieważ nie `Or` jest krótkim obwodem. Czwarta `If` instrukcja nie wywołuje metody `checkIfValid()` , ponieważ gdy `12 < 45` zwraca `True` , `OrElse` krótkie obwody drugie wyrażenie.  
   
 ## <a name="bitwise-operations"></a>Operacje bitowe  
+
  Operacje bitowe obliczają dwie wartości całkowite w postaci binarnej (podstawowej 2) formularza. Porównują bity w odpowiednich pozycjach, a następnie przypisują wartości na podstawie porównania. Poniższy przykład ilustruje `And` operatora.  
   
  [!code-vb[VbVbalrConcepts#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConcepts/VB/Class1.vb#2)]  
@@ -88,14 +94,14 @@ Operatory logiczne porównują `Boolean` wyrażenia i zwracają `Boolean` wynik.
   
 - Wynik jest traktowany jako decimal. Wartość 001 jest reprezentacją binarną 1, więc `x` = 1.  
   
- Operacja bitowa `Or` jest podobna, z tą różnicą, że wartość 1 jest przypisana do bitu wynik, jeśli jedna lub obie wartości w porównaniu z porównaniem są 1. `Xor`przypisuje 1 do bitu wynikowego, jeśli dokładnie jeden z porównywanych bitów (nie oba) ma wartość 1. `Not`przyjmuje jeden operand i odwraca wszystkie bity, w tym bit znaku, i przypisuje tę wartość do wyniku. Oznacza to, że w przypadku podpisanych liczb dodatnich `Not` zawsze zwraca wartość ujemną, a dla liczb ujemnych `Not` zawsze zwraca wartość dodatnią lub zero.  
+ Operacja bitowa `Or` jest podobna, z tą różnicą, że wartość 1 jest przypisana do bitu wynik, jeśli jedna lub obie wartości w porównaniu z porównaniem są 1. `Xor` przypisuje 1 do bitu wynikowego, jeśli dokładnie jeden z porównywanych bitów (nie oba) ma wartość 1. `Not` przyjmuje jeden operand i odwraca wszystkie bity, w tym bit znaku, i przypisuje tę wartość do wyniku. Oznacza to, że w przypadku podpisanych liczb dodatnich `Not` zawsze zwraca wartość ujemną, a dla liczb ujemnych `Not` zawsze zwraca wartość dodatnią lub zero.  
   
  `AndAlso`Operatory i `OrElse` nie obsługują operacji bitowych.  
   
 > [!NOTE]
 > Operacje bitowe można wykonywać tylko w przypadku typów całkowitych. Aby można było wykonać operację bitową, wartości zmiennoprzecinkowe muszą być konwertowane na typy całkowite.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Operatory logiczne/bitowe (Visual Basic)](../../../language-reference/operators/logical-bitwise-operators.md)
 - [Wyrażenia logiczne](boolean-expressions.md)

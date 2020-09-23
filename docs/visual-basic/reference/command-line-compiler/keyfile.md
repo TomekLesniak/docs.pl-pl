@@ -6,14 +6,15 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: 3f476f6b6db1a788002a938eb5ae4bbbed7a5dae
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c81486243195f7d022bd474ef6db20d069b3a018
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408578"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085155"
 ---
 # <a name="-keyfile"></a>-keyfile
+
 Określa plik zawierający parę klucz lub klucz, aby nadać zestawowi silną nazwę.  
   
 ## <a name="syntax"></a>Składnia  
@@ -23,11 +24,13 @@ Określa plik zawierający parę klucz lub klucz, aby nadać zestawowi silną na
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `file`  
  Wymagany. Plik, który zawiera klucz. Jeśli nazwa pliku zawiera spację, należy ująć ją w cudzysłów ("").  
   
 ## <a name="remarks"></a>Uwagi  
- Kompilator wstawia klucz publiczny do manifestu zestawu, a następnie podpisuje końcowy zestaw kluczem prywatnym. Aby wygenerować plik klucza, wpisz `sn -k file` w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [SN. exe (Narzędzie silnej nazwy)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
+
+ Kompilator wstawia klucz publiczny do manifestu zestawu, a następnie podpisuje końcowy zestaw kluczem prywatnym. Aby wygenerować plik klucza, wpisz `sn -k file` w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [Sn.exe (Narzędzie silnej nazwy)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
  W przypadku kompilowania za pomocą `-target:module` programu nazwa pliku klucza jest przechowywana w module i włączana do zestawu, który jest tworzony podczas kompilowania zestawu za pomocą [-addmodule](addmodule.md).  
   
@@ -52,7 +55,7 @@ Poniższy kod kompiluje plik źródłowy `Input.vb` i określa plik klucza.
 vbc -keyfile:myfile.sn input.vb
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zestawy w środowisku .NET](../../../standard/assembly/index.md)
 - [Kompilator wiersza polecenia Visual Basic](index.md)

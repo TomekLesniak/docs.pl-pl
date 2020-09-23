@@ -8,20 +8,22 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: dbd24065a954e5611663963371d5a9f4bbbaea68
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 26c98adda7305783b0220141db35b08285b21554
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393497"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084089"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Struktury oraz inne elementy programowania (Visual Basic)
+
 Można używać struktur w połączeniu z tablicami, obiektami i procedurami, a także ze sobą. Interakcje używają tej samej składni, w której te elementy używają pojedynczo.  
   
 > [!NOTE]
 > Nie można zainicjować któregokolwiek z elementów struktury w deklaracji struktury. Wartości można przypisywać tylko do elementów zmiennej, która została zadeklarowana jako typu struktury.  
   
 ## <a name="structures-and-arrays"></a>Struktury i tablice  
+
  Struktura może zawierać tablicę jako jeden lub kilka jej elementów. Ilustruje to poniższy przykład.  
   
 ```vb  
@@ -56,6 +58,7 @@ allSystems(5).diskDrives(2) = "100M SCSI"
 ```  
   
 ## <a name="structures-and-objects"></a>Struktury i obiekty  
+
  Struktura może zawierać obiekt jako jeden lub więcej elementów. Ilustruje to poniższy przykład.  
   
 ```vb  
@@ -69,6 +72,7 @@ End Structure
  Należy użyć określonej klasy obiektów w takiej deklaracji, a nie `Object` .  
   
 ## <a name="structures-and-procedures"></a>Struktury i procedury  
+
  Strukturę można przekazać jako argument procedury. Ilustruje to poniższy przykład.  
   
 ```vb  
@@ -97,6 +101,7 @@ End Function
 ```  
   
 ## <a name="structures-within-structures"></a>Struktury w strukturach  
+
  Struktury mogą zawierać inne struktury. Ilustruje to poniższy przykład.  
   
 ```vb  
@@ -122,7 +127,7 @@ allSystems(1).diskDrives(0).type = "Floppy"
   
  Struktury mogą zawierać inne struktury do arbitralnej głębokości.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy danych](index.md)
 - [Typy danych podstawowych](elementary-data-types.md)

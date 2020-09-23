@@ -7,17 +7,19 @@ helpviewer_keywords:
 - examples [Visual Basic], strings
 - arrays [Visual Basic], converting to strings
 ms.assetid: d0dc8317-9ab3-4324-99f7-3f5788c0e72a
-ms.openlocfilehash: 6dbbaafedeca4d2cea625a300d764f61bb575750
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 49c1e454b845bd545d7a8dccb3a3d9a39ff2db21
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410622"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085662"
 ---
 # <a name="how-to-convert-an-array-of-bytes-into-a-string-in-visual-basic"></a>Porady: konwertowanie tablicy bajtów w ciąg w Visual Basic
+
 W tym temacie pokazano, jak przekonwertować bajty z tablicy bajtowej na ciąg.  
   
 ## <a name="example"></a>Przykład  
+
  W tym przykładzie zastosowano <xref:System.Text.Encoding.GetString%2A> metodę <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> klasy kodowania, aby przekonwertować wszystkie bajty z tablicy bajtowej na ciąg.  
   
  [!code-vb[VbVbalrStrings#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#72)]  
@@ -38,7 +40,7 @@ W tym temacie pokazano, jak przekonwertować bajty z tablicy bajtowej na ciąg.
   
 - <xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>: Pobiera kodowanie dla formatu UTF-8.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Text.Encoding?displayProperty=nameWithType>
 - <xref:System.Text.Encoding.GetString%2A>

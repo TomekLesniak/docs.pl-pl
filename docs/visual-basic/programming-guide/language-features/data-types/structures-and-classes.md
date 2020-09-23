@@ -9,14 +9,15 @@ helpviewer_keywords:
 - structures [Visual Basic], structure variables
 - structure variables [Visual Basic]
 ms.assetid: a221e74a-ffcf-4bdc-a0f6-a088a9bf26cc
-ms.openlocfilehash: d252d9216a9b825ad0663a5779d7ce7f81fa9011
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e7ca5b9d55611eafad88517e71f9807fe2aa4416
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393575"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086221"
 ---
 # <a name="structures-and-classes-visual-basic"></a>Struktury i klasy (Visual Basic)
+
 Visual Basic łączy składni dla struktur i klas, z wynikiem, że obie jednostki obsługują większość z tych samych funkcji. Istnieją jednak również istotne różnice między strukturami i klasami.  
   
  Klasy mają zalety typów referencyjnych — przekazywanie odwołania jest bardziej wydajne niż przekazywanie zmiennej struktury ze wszystkimi danymi. Z drugiej strony struktury nie wymagają alokacji pamięci na stercie globalnej.  
@@ -24,6 +25,7 @@ Visual Basic łączy składni dla struktur i klas, z wynikiem, że obie jednostk
  Ponieważ nie można dziedziczyć z struktury, struktury powinny być używane tylko w przypadku obiektów, które nie muszą być rozszerzane. Używaj struktur, gdy obiekt, który chcesz utworzyć ma niewielki rozmiar wystąpienia, i weź pod uwagę charakterystykę wydajności klas i struktur.  
   
 ## <a name="similarities"></a>Podobieństwa  
+
  Struktury i klasy są podobne do następujących:  
   
 - Oba są typami *kontenerów* , co oznacza, że zawierają one inne typy jako elementy członkowskie.  
@@ -41,6 +43,7 @@ Visual Basic łączy składni dla struktur i klas, z wynikiem, że obie jednostk
 - Oba mogą deklarować i wywoływać zdarzenia, a oba mogą deklarować delegatów.  
   
 ## <a name="differences"></a>Różnice  
+
  Struktury i klasy różnią się w następujących tematach:  
   
 - Struktury są *typami wartości*; klasy są *typami referencyjnymi*. Zmienna typu struktury zawiera dane struktury, a nie zawiera odwołania do danych jako typ klasy.  
@@ -70,6 +73,7 @@ Visual Basic łączy składni dla struktur i klas, z wynikiem, że obie jednostk
  Każda struktura ma niejawny Konstruktor publiczny bez parametrów. Ten konstruktor inicjuje wszystkie elementy danych struktury do ich wartości domyślnych. Nie można ponownie zdefiniować tego zachowania.  
   
 ## <a name="instances-and-variables"></a>Wystąpienia i zmienne  
+
  Ponieważ struktury są typami wartości, Każda zmienna struktury jest trwale związana z konkretnym wystąpieniem struktury. Ale klasy są typami odwołań, a zmienna obiektu może odwoływać się do różnych wystąpień klasy w różnych godzinach. Takie rozróżnienie ma wpływ na użycie struktur i klas w następujący sposób:  
   
 - **Zainicjować.** Zmienna struktury niejawnie obejmuje inicjalizację elementów przy użyciu konstruktora bez parametrów struktury. W związku `Dim s As struct1` z tym, jest równoważne `Dim s As struct1 = New struct1()` .  
@@ -84,9 +88,9 @@ Visual Basic łączy składni dla struktur i klas, z wynikiem, że obie jednostk
   
      Elementy struktury są jednak izolowane w ich własnym wystąpieniu. Zmiany w ich wartości nie są odzwierciedlone w żadnych innych zmiennych struktury, nawet w innych wystąpieniach tej samej `Structure` deklaracji.  
   
-- **Kryteri.** Testy równości dwóch struktur muszą być wykonywane z testem elementu po elemencie. Dwie zmienne obiektów można porównać przy użyciu <xref:System.Object.Equals%2A> metody. <xref:System.Object.Equals%2A>wskazuje, czy dwie zmienne wskazują na to samo wystąpienie.  
+- **Kryteri.** Testy równości dwóch struktur muszą być wykonywane z testem elementu po elemencie. Dwie zmienne obiektów można porównać przy użyciu <xref:System.Object.Equals%2A> metody. <xref:System.Object.Equals%2A> wskazuje, czy dwie zmienne wskazują na to samo wystąpienie.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy danych](index.md)
 - [Złożone typy danych](composite-data-types.md)

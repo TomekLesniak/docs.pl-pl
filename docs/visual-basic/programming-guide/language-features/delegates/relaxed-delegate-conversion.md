@@ -6,17 +6,19 @@ helpviewer_keywords:
 - delegates [Visual Basic], relaxed conversion
 - conversions [Visual Basic], relaxed delegate
 ms.assetid: 64f371d0-5416-4f65-b23b-adcbf556e81c
-ms.openlocfilehash: a581ffae77c496908d2e4e38df53491a54ae2ab8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b914d0479f160199744a8f9923c0bebc87321329
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410673"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086078"
 ---
 # <a name="relaxed-delegate-conversion-visual-basic"></a>Swobodna konwersja delegatów (Visual Basic)
+
 Swobodna konwersja delegatów umożliwia przypisanie funkcji do delegatów lub programów obsługi nawet wtedy, gdy ich podpisy nie są identyczne. W związku z tym powiązanie z delegatami jest spójne z powiązaniem, które jest już dozwolone dla wywołań metod.  
   
 ## <a name="parameters-and-return-type"></a>Parametry i zwracany typ  
+
  W przypadku dokładnego dopasowania podpisu, Przekształcenie swobodne wymaga spełnienia następujących warunków, gdy `Option Strict` jest ustawiony na `On` :  
   
 - Konwersja rozszerzająca musi istnieć z typu danych każdego parametru delegata na typ danych odpowiadającego mu parametru przypisanej funkcji lub `Sub` . W poniższym przykładzie delegat `Del1` ma jeden parametr, a `Integer` . Parametr `m` w przypisanych wyrażeniach lambda musi mieć typ danych, dla którego istnieje konwersja rozszerzająca z `Integer` , taka jak `Long` lub `Double` .  
@@ -38,6 +40,7 @@ Swobodna konwersja delegatów umożliwia przypisanie funkcji do delegatów lub p
  [!code-vb[VbVbalrRelaxedDelegates#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#4)]  
   
 ## <a name="omitting-parameter-specifications"></a>Pomijanie specyfikacji parametrów  
+
  W przypadku delegatów swobodnych można również całkowicie pominąć specyfikacje parametrów w przypisanej metodzie:  
   
  [!code-vb[VbVbalrRelaxedDelegates#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#5)]  
@@ -61,6 +64,7 @@ End Sub
 ```  
   
 ## <a name="addressof-examples"></a>Przykłady AddressOf  
+
  Wyrażenia lambda są używane w poprzednich przykładach, aby można było łatwo zobaczyć relacje typu. Jednak te same złagodzenia są dozwolone dla przypisań delegatów korzystających z `AddressOf` , `Handles` lub `AddHandler` .  
   
  W poniższym przykładzie funkcje `f1` , `f2` , `f3` i `f4` mogą być przypisane do `Del1` .  
@@ -76,13 +80,14 @@ End Sub
  [!code-vb[VbVbalrRelaxedDelegates#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#14)]  
   
 ## <a name="dropping-function-returns"></a>Funkcja upuszczania zwraca  
+
  Swobodna konwersja delegatów umożliwia przypisanie funkcji do `Sub` delegata, co w efekcie ignorowanie wartości zwracanej funkcji. Nie można jednak przypisać `Sub` do delegata funkcji. W poniższym przykładzie adres funkcji `doubler` jest przypisany do `Sub` obiektu delegowanego `Del3` .  
   
  [!code-vb[VbVbalrRelaxedDelegates#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#10)]  
   
  [!code-vb[VbVbalrRelaxedDelegates#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#11)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyrażenia lambda](../procedures/lambda-expressions.md)
 - [Rozszerzanie i zwężanie konwersji](../data-types/widening-and-narrowing-conversions.md)

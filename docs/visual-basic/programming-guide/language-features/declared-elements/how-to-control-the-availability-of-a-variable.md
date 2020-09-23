@@ -11,14 +11,15 @@ helpviewer_keywords:
 - declared elements [Visual Basic], access level
 - Protected keyword [Visual Basic], accessing variables
 ms.assetid: eaf4f073-7922-43ce-ae1e-90ff376ae947
-ms.openlocfilehash: 0bfa7fa2bdac4746827884c1dad62734c549a48e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e6173a0eaa0bf84abb1979711c6df932533c5ce9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357390"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086117"
 ---
 # <a name="how-to-control-the-availability-of-a-variable-visual-basic"></a>Porady: kontrolowanie dostępności zmiennej (Visual Basic)
+
 Możesz kontrolować dostępność zmiennej, określając jej *poziom dostępu*. Poziom dostępu określa kod, który ma uprawnienia do odczytu lub zapisu do zmiennej.  
   
 - *Zmienne składowe* (zdefiniowane na poziomie modułu i poza każdą procedurę) domyślnie mają dostęp publiczny, co oznacza, że każdy kod, który może je zobaczyć, może uzyskać do nich dostęp. Można to zmienić, określając modyfikator dostępu.  
@@ -54,6 +55,7 @@ Możesz kontrolować dostępność zmiennej, określając jej *poziom dostępu*.
      Możesz odczytać lub zapisać w zmiennej z dowolnego miejsca w ramach procedury, ale nie spoza niej.  
   
 ## <a name="protected-and-friend-access"></a>Dostęp chroniony i przyjazny  
+
  Można ograniczyć poziom dostępu zmiennej do jej klasy i wszelkich klas pochodnych lub do zestawu. Można również określić Unię tych ograniczeń, co umożliwia dostęp z kodu w dowolnej klasie pochodnej lub w innym miejscu w tym samym zestawie. Ten związek należy określić, łącząc `Protected` `Friend` słowa kluczowe i w tej samej deklaracji.  
   
 #### <a name="to-make-a-variable-accessible-only-from-within-its-class-and-any-derived-classes"></a>Aby udostępnić zmienną tylko z poziomu jej klasy i wszystkich klas pochodnych  
@@ -73,6 +75,7 @@ Możesz kontrolować dostępność zmiennej, określając jej *poziom dostępu*.
      Możesz odczytać lub zapisać w zmiennej z dowolnego miejsca w module, klasie lub strukturze, a także z dowolnego kodu w tym samym zestawie, ale nie spoza zestawu.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie przedstawiono deklaracje zmiennych z `Public` `Protected` `Friend` `Protected Friend` poziomami dostępu,,, i `Private` . Należy pamiętać, że gdy `Dim` instrukcja określa poziom dostępu, nie trzeba uwzględniać `Dim` słowa kluczowego.  
   
 ```vb  
@@ -84,13 +87,14 @@ Private numberForMeOnly As Integer
 ```  
   
 ## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
+
  Im bardziej restrykcyjny poziom dostępu zmiennej, tym mniejsze prawdopodobieństwo, że złośliwy kod może być niewłaściwym użyciem.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Poziomy dostępu w Visual Basic](access-levels.md)
 - [Dim, instrukcja](../../../language-reference/statements/dim-statement.md)
-- [Społeczeństwo](../../../language-reference/modifiers/public.md)
+- [Publiczne](../../../language-reference/modifiers/public.md)
 - [Chronione](../../../language-reference/modifiers/protected.md)
-- [Osoby](../../../language-reference/modifiers/friend.md)
-- [Użytek](../../../language-reference/modifiers/private.md)
+- [Friend](../../../language-reference/modifiers/friend.md)
+- [Prywatne](../../../language-reference/modifiers/private.md)

@@ -5,14 +5,15 @@ helpviewer_keywords:
 - AddressOf operator [Visual Basic]
 - delegates [Visual Basic], passing procedures
 ms.assetid: 5adbba15-5a1d-413f-ab3e-3ff6cc0a4669
-ms.openlocfilehash: 36f623068372614ae034a8a7b31bffb7496f98b1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3a7a653bbf238b50e3c7339da76df0f68ab9b59f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410698"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085792"
 ---
 # <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a>Porady: przekazywanie procedur do innej procedury w Visual Basic
+
 Ten przykład pokazuje, jak za pomocą delegatów przekazać procedurę do innej procedury.  
   
  Delegat jest typem, który można użyć jak dowolnego innego typu w Visual Basic. `AddressOf`Operator zwraca obiekt delegata w przypadku zastosowania do nazwy procedury.  
@@ -45,7 +46,7 @@ Ten przykład pokazuje, jak za pomocą delegatów przekazać procedurę do innej
   
      Gdy `Test` jest wywoływana, najpierw wyświetla wynik działania `AddNumbers` w `5` i `3` , czyli 8. Następnie zostanie wyświetlony wynik działania `SubtractNumbers` w dniu `9` i, czyli `3` 6.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Delegaci](index.md)
 - [AddressOf, operator](../../../language-reference/operators/addressof-operator.md)

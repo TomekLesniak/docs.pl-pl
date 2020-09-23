@@ -9,14 +9,15 @@ helpviewer_keywords:
 - literals [Visual Basic], coercing data type
 - declarations [Visual Basic], data types
 ms.assetid: 057206d2-3a5b-40b9-b3af-57446f9b52fa
-ms.openlocfilehash: b94259326b42104db05d9fc5bb09f686075d0759
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 03d693653cd166bbf1096031f1a864b492e2e896
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414534"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086299"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>Stała i typy literałów (Visual Basic)
+
 Literał jest wartością, która jest wyrażona jako sama wartość zmiennej lub wynik wyrażenia, takie jak liczba 3 lub ciąg "Hello". Stała jest zrozumiałą nazwą, która przyjmuje miejsce literału i zachowuje tę samą wartość w całym programie, w przeciwieństwie do zmiennej, której wartość może zmienić.  
   
  Gdy [opcja wnioskowanie](../../../language-reference/statements/option-infer-statement.md) jest `Off` i [opcją Strict](../../../language-reference/statements/option-strict-statement.md) jest `On` , należy zadeklarować wszystkie stałe jawnie z typem danych. W poniższym przykładzie typ danych `MyByte` jest zadeklarowany jako typ danych `Byte` :  
@@ -26,6 +27,7 @@ Literał jest wartością, która jest wyrażona jako sama wartość zmiennej lu
  Gdy `Option Infer` jest `On` lub `Option Strict` jest `Off` , można zadeklarować stałą bez określania typu danych z `As` klauzulą. Kompilator określa typ stałej z typu wyrażenia. Literał liczbowy liczb całkowitych jest domyślnie rzutowany na `Integer` Typ danych. Domyślny typ danych dla liczb zmiennoprzecinkowych to `Double` , i słowa kluczowe `True` i `False` Określanie `Boolean` stałej.  
   
 ## <a name="literals-and-type-coercion"></a>Literały i przekształcenia typów  
+
  W niektórych przypadkach może zajść potrzeba wymuszenia literału dla określonego typu danych; na przykład podczas przypisywania szczególnie dużej wartości literału całkowitego do zmiennej typu `Decimal` . Poniższy przykład generuje błąd:  
   
 ```vb  
@@ -61,7 +63,7 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
 |`Single`|(brak)|F lub!|  
 |`String`|"|(brak)|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Stałe zdefiniowane przez użytkownika](user-defined-constants.md)
 - [Instrukcje: deklarowanie stałej](how-to-declare-a-constant.md)

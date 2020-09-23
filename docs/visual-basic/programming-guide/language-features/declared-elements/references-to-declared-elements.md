@@ -6,14 +6,15 @@ helpviewer_keywords:
 - references [Visual Basic], declared elements
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
-ms.openlocfilehash: 23bff2eb098982f67ecb1b709e59096d5259a644
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: af5be47335b6d48bd6c0bccc30b8db15c9912807
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405186"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085883"
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Odwołania do elementów zadeklarowanych (Visual Basic)
+
 Gdy kod odwołuje się do zadeklarowanego elementu, kompilator Visual Basic dopasowuje nazwę w odwołaniu do odpowiedniej deklaracji tej nazwy. Jeśli jest zadeklarowany więcej niż jeden element o tej samej nazwie, można kontrolować, które z tych elementów mają być przywoływane przez *zakwalifikowanie* jego nazwy.  
   
  Kompilator próbuje dopasować odwołanie do nazwy do deklaracji nazwy z *najwęższym zakresem*. Oznacza to, że zaczyna się od kodu, który wprowadza odwołanie i działa na zewnątrz przez kolejne poziomy zawierające elementy.  
@@ -42,6 +43,7 @@ End Module
 ```  
   
 ## <a name="qualifying-an-element-name"></a>Kwalifikowanie nazwy elementu  
+
  Jeśli chcesz przesłonić ten proces wyszukiwania i określić nazwę zadeklarowaną w szerszym zakresie, musisz *zakwalifikować* nazwę z elementem zawierającym szerszy zakres. W niektórych przypadkach może być również konieczne zakwalifikowanie elementu zawierającego.  
   
  Kwalifikowanie nazwy oznacza poprzedzające ją w instrukcji źródłowej informacjami, które identyfikują, gdzie jest zdefiniowany element docelowy. Te informacje są nazywane *ciągiem kwalifikacji*. Może zawierać co najmniej jedną przestrzeń nazw oraz moduł, klasę lub strukturę.  
@@ -68,7 +70,7 @@ End Module
   
 2. Określ ścieżkę kwalifikacyjną na podstawie lokalizacji elementu docelowego. Zacznij od przestrzeni nazw najwyższego poziomu, Kontynuuj do przestrzeni nazw najniższego poziomu i kończyć się modułem, klasą lub strukturą zawierającą element docelowy. Każdy element w ścieżce musi zawierać element, który następuje po nim.  
   
-     `outerSpace`→ `innerSpace` → `holdsTotals` →`totals`  
+     `outerSpace` → `innerSpace` → `holdsTotals` → `totals`  
   
 3. Przygotuj ciąg kwalifikacji dla elementu docelowego. Umieść kropkę ( `.` ) po każdym elemencie w ścieżce. Aplikacja musi mieć dostęp do każdego elementu w ciągu kwalifikacji.  
   
@@ -105,6 +107,7 @@ Dim winLabel As New win.Label()
 ```  
   
 ## <a name="members-of-other-containing-elements"></a>Elementy członkowskie innych zawierających elementy  
+
  W przypadku korzystania z nieudostępnionej składowej innej klasy lub struktury, należy najpierw zakwalifikować nazwę składowej ze zmienną lub wyrażeniem, które wskazuje na wystąpienie klasy lub struktury. W poniższym przykładzie `demoClass` jest wystąpienie klasy o nazwie `class1` .  
   
 ```vb  
@@ -150,6 +153,7 @@ End Module
 ```  
   
 ## <a name="references-to-projects"></a>Odwołania do projektów  
+
  Aby użyć elementów [publicznych](../../../language-reference/modifiers/public.md) zdefiniowanych w innym projekcie, należy najpierw ustawić *odwołanie* do zestawu lub biblioteki typów tego projektu. Aby ustawić odwołanie, kliknij opcję **Dodaj odwołanie** w menu **projekt** lub użyj opcji kompilatora wiersza polecenia [-Reference (Visual Basic)](../../../reference/command-line-compiler/reference.md) .  
   
  Na przykład można użyć modelu obiektów XML .NET Framework. Jeśli ustawisz odwołanie do <xref:System.Xml> przestrzeni nazw, możesz zadeklarować i użyć dowolnej z jej klas, takich jak <xref:System.Xml.XmlDocument> . Poniższy przykład używa <xref:System.Xml.XmlDocument> .  
@@ -161,6 +165,7 @@ Dim xDoc As System.Xml.XmlDocument
 ```  
   
 ## <a name="importing-containing-elements"></a>Importowanie zawierających elementy  
+
  Aby *zaimportować* przestrzenie nazw zawierające moduły lub klasy, które mają być używane, można użyć [instrukcji Imports (przestrzeń nazw i typ .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md) . Dzięki temu można odwołać się do elementów zdefiniowanych w importowanym obszarze nazw bez w pełni kwalifikujących się nazw. Poniższy przykład zapisuje ponownie poprzedni przykład, aby zaimportować <xref:System.Xml> przestrzeń nazw.  
   
 ```vb  
@@ -186,14 +191,16 @@ Dim xDoc As xD.XmlDocument
  Możesz również użyć instrukcji, `Imports` Aby zaimportować moduły, klasy, struktury i wyliczenia. Następnie można użyć elementów członkowskich takich zaimportowanych elementów bez kwalifikacji. Należy jednak zawsze kwalifikować nieudostępniane elementy członkowskie klas i struktur z zmienną lub wyrażeniem, które oblicza wystąpienie klasy lub struktury.  
   
 ## <a name="naming-guidelines"></a>Wskazówki dotyczące nazewnictwa  
+
  Po zdefiniowaniu co najmniej dwóch elementów programistycznych, które mają taką samą nazwę, *niejednoznaczność* może wynikać z tego, kiedy kompilator próbuje rozpoznać odwołanie do tej nazwy. Jeśli więcej niż jedna definicja znajduje się w zakresie lub jeśli żadna definicja nie należy do zakresu, odwołanie jest nierozwiązywalny. Aby zapoznać się z przykładem, zobacz sekcję dotyczącą przykładowego odwołania na tej stronie pomocy.  
   
  Można uniknąć niejednoznaczności nazwy, dając wszystkie elementy unikatowymi nazwami. Następnie można utworzyć odwołanie do dowolnego elementu bez konieczności kwalifikowania jego nazwy z przestrzenią nazw, modułem lub klasą. Zmniejszamy również szanse przypadkowego odwołującego się do niewłaściwego elementu.  
   
 ## <a name="shadowing"></a>Zasłanianie  
+
  Gdy dwa elementy programistyczne współdzielą tę samą nazwę, jeden z nich może ukryć lub *Zacień*, drugi. Element z cieniem nie jest dostępny dla celów referencyjnych. Zamiast tego, gdy kod używa zasłoniętej nazwy elementu, kompilator Visual Basic rozpoznaje ją jako element przesłaniania. Aby uzyskać bardziej szczegółowe wyjaśnienie z przykładami, zobacz [przesłanianie w Visual Basic](shadowing.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Nazwy zadeklarowanych elementów](declared-element-names.md)
 - [Charakterystyka zadeklarowanych elementów](declared-element-characteristics.md)
@@ -201,4 +208,4 @@ Dim xDoc As xD.XmlDocument
 - [Zmienne](../variables/index.md)
 - [Imports — Instrukcja (.NET Namespace i Type)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md)
 - [Operator new](../../../language-reference/operators/new-operator.md)
-- [Społeczeństwo](../../../language-reference/modifiers/public.md)
+- [Publiczne](../../../language-reference/modifiers/public.md)

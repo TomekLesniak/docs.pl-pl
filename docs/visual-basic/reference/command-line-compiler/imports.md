@@ -6,14 +6,15 @@ helpviewer_keywords:
 - imports compiler option [Visual Basic]
 - -imports compiler option [Visual Basic]
 ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
-ms.openlocfilehash: cc9fc222843bdfe8e49d2d291dc36ff3e0c63fc2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 69781dff1474e42ae5f735fdefd694c6447636b5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408598"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085259"
 ---
 # <a name="-imports-visual-basic"></a>-Imports (Visual Basic)
+
 Importuje przestrzenie nazw z określonego zestawu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ Importuje przestrzenie nazw z określonego zestawu.
 |`namespaceList`|Wymagany. Rozdzielana przecinkami lista przestrzeni nazw do zaimportowania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `-imports`Opcja importuje wszystkie przestrzenie nazw zdefiniowane w bieżącym zestawie plików źródłowych lub z dowolnego zestawu, do którego się odwołuje.  
   
  Elementy członkowskie w przestrzeni nazw określonej za pomocą `-imports` są dostępne dla wszystkich plików kodu źródłowego w kompilacji. Użyj [instrukcji Imports (przestrzeń nazw i typ .NET)](../../language-reference/statements/imports-statement-net-namespace-and-type.md) , aby użyć przestrzeni nazw w jednym pliku kodu źródłowego.  
@@ -38,6 +40,7 @@ Importuje przestrzenie nazw z określonego zestawu.
 |1. zaznaczono projekt w **Eksplorator rozwiązań**. W menu **projekt** kliknij polecenie **Właściwości**. <br />2. Kliknij kartę **odwołania** .<br />3. Wprowadź nazwę przestrzeni nazw w polu obok przycisku **Dodaj użytkownika importowania** .<br />4. kliknij przycisk **Dodaj Import użytkownika** .|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod kompiluje, kiedy `-imports:system.globalization` jest określony. Bez tej operacji kompilacja wymaga, aby `Imports System.Globalization` instrukcja była uwzględniona na początku pliku kodu źródłowego lub że właściwość jest w pełni kwalifikowana jako `System.Globalization.CultureInfo.CurrentCulture.Name` .
 
 ```vb
@@ -48,7 +51,7 @@ Module Example
 End Module
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kompilator wiersza polecenia Visual Basic](index.md)
 - [Referencje i instrukcja Imports](../../programming-guide/program-structure/references-and-the-imports-statement.md)

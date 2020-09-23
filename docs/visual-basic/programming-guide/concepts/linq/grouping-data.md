@@ -2,14 +2,15 @@
 title: Grupowanie danych
 ms.date: 07/20/2015
 ms.assetid: 8f3a0871-6958-4aef-8f6f-493e189fd57d
-ms.openlocfilehash: 8996eee748489c596bc5adc32f53b6b39dbfc6ac
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: aae48543472ee71990d0bc96defa9ad6a6ab4c0d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398386"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084206"
 ---
 # <a name="grouping-data-visual-basic"></a>Grupowanie danych (Visual Basic)
+
 Grupowanie odwołuje się do operacji umieszczania danych w grupach, tak aby elementy w każdej grupie miały wspólny atrybut.  
   
  Na poniższej ilustracji przedstawiono wyniki grupowania sekwencji znaków. Klucz dla każdej grupy jest znakiem.  
@@ -26,6 +27,7 @@ Grupowanie odwołuje się do operacji umieszczania danych w grupach, tak aby ele
 |ToLookup|Wstawia elementy do <xref:System.Linq.Lookup%602> (słownik jeden-do-wielu) w oparciu o funkcję selektora kluczy.|Nie dotyczy.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Przykład składni wyrażenia zapytania  
+
  Poniższy przykład kodu używa `Group By` klauzuli do grupowania liczb całkowitych na liście zgodnie z tym, czy są one parzyste czy nieparzyste.  
   
 ```vb  
@@ -63,7 +65,7 @@ MsgBox(sb.ToString())
 ' 208  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Linq>
 - [Standardowe operatory zapytań — Omówienie (Visual Basic)](standard-query-operators-overview.md)

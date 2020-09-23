@@ -13,17 +13,19 @@ helpviewer_keywords:
 - data types [Visual Basic], optimizing
 - ChrW function [Visual Basic], preferred to Chr
 ms.assetid: 28f5e4ba-ec24-4f37-b90a-e8ee822f778a
-ms.openlocfilehash: 0de02840cb18fde16134ef43df9d63abb503c979
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7f446b264dcb5c05ed6ddfba34acbbf66be0e447
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84394174"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084115"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>Skuteczne stosowanie typów danych (Visual Basic)
+
 Niezadeklarowane zmienne i zmienne zadeklarowane bez typu danych są przypisywane do `Object` typu danych. Ułatwia to szybkie pisanie programów, ale może spowodować spowolnienie ich wykonywania.
 
 ## <a name="strong-typing"></a>Silne wpisywanie
+
  Określanie typów danych dla wszystkich zmiennych jest znane jako *silne wpisywanie*. Używanie silnego wpisywania ma kilka zalet:
 
 - Umożliwia obsługę technologii IntelliSense dla zmiennych. Dzięki temu można zobaczyć swoje właściwości i innych członków podczas wpisywania kodu.
@@ -33,11 +35,13 @@ Niezadeklarowane zmienne i zmienne zadeklarowane bez typu danych są przypisywan
 - Skutkuje to przyspieszeniem wykonywania kodu.
 
 ## <a name="most-efficient-data-types"></a>Najbardziej wydajne typy danych
+
  W przypadku zmiennych, które nigdy nie zawierają ułamków, typy danych całkowitych są bardziej wydajne niż typy niecałkowite. W Visual Basic `Integer` i `UInteger` to najbardziej wydajne typy liczbowe.
 
  W przypadku liczb ułamkowych `Double` jest najbardziej wydajnym typem danych, ponieważ procesory na bieżących platformach wykonują operacje zmiennoprzecinkowe w podwójnej precyzji. Jednak operacje z `Double` nie są tak szybkie jak w przypadku typów całkowitych, takich jak `Integer` .
 
 ## <a name="specifying-data-type"></a>Określanie typu danych
+
  Użyj [instrukcji Dim](../../../language-reference/statements/dim-statement.md) , aby zadeklarować zmienną określonego typu. Możesz jednocześnie określić swój poziom dostępu przy użyciu słowa kluczowego [Public](../../../language-reference/modifiers/public.md), [Protected](../../../language-reference/modifiers/protected.md), [Friend](../../../language-reference/modifiers/friend.md)lub [Private](../../../language-reference/modifiers/private.md) , jak w poniższym przykładzie.
 
 ```vb
@@ -46,9 +50,10 @@ Protected s As String
 ```
 
 ## <a name="character-conversion"></a>Konwersja znaków
+
  `AscW`Funkcje i `ChrW` działają w formacie Unicode. Należy używać ich z preferencjami do `Asc` i `Chr` , które muszą przełożyć na i z wartości Unicode.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.VisualBasic.Strings.Asc%2A>
 - <xref:Microsoft.VisualBasic.Strings.AscW%2A>
@@ -57,4 +62,4 @@ Protected s As String
 - [Typy danych](index.md)
 - [Typy danych liczbowych](numeric-data-types.md)
 - [Deklaracja zmiennej](../variables/variable-declaration.md)
-- [Korzystanie z IntelliSense](/visualstudio/ide/using-intellisense)
+- [Korzystanie z funkcji IntelliSense](/visualstudio/ide/using-intellisense)
