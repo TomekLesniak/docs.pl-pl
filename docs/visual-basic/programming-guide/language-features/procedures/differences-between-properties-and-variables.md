@@ -14,23 +14,27 @@ helpviewer_keywords:
 - variables [Visual Basic], and properties
 - properties [Visual Basic], and variables
 ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
-ms.openlocfilehash: 162bd71eaebdf55f6be89e0c5dce7acc1b975d79
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 95bafcaca98e1a0fbdd62a550291c8ece932c1ba
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403307"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075034"
 ---
 # <a name="differences-between-properties-and-variables-in-visual-basic"></a>Różnice pomiędzy właściwościami i zmiennymi w Visual Basic
+
 Zmienne i właściwości reprezentują wartości, do których można uzyskać dostęp. Istnieją jednak różnice dotyczące magazynu i implementacji.  
   
 ## <a name="variables"></a>Zmienne  
+
  *Zmienna* odnosi się bezpośrednio do lokalizacji w pamięci. Należy zdefiniować zmienną z pojedynczą instrukcją deklaracji. Zmienna może być *zmienną lokalną*, zdefiniowaną wewnątrz procedury i dostępną tylko w ramach tej procedury lub może być *zmienną członkowską*, zdefiniowaną w module, klasie lub strukturze, ale nie wewnątrz żadnej procedury. Zmienna członkowska jest również wywoływana jako *pole*.  
   
 ## <a name="properties"></a>Właściwości  
+
  *Właściwość* jest elementem danych zdefiniowanym dla modułu, klasy lub struktury. Należy zdefiniować właściwość z blokiem kodu między `Property` `End Property` instrukcjami i. Blok kodu zawiera `Get` procedurę, `Set` procedurę lub obie te metody. Te procedury są nazywane *procedurami właściwości* lub metodami *dostępu do właściwości*. Oprócz pobierania lub przechowywania wartości właściwości, mogą również wykonywać akcje niestandardowe, takie jak aktualizowanie licznika dostępu.  
   
 ## <a name="differences"></a>Różnice  
+
  W poniższej tabeli przedstawiono kilka ważnych różnic między zmiennymi i właściwościami.  
   
 |Punkt różnicy|Zmienna|Właściwość|  
@@ -44,7 +48,7 @@ Zmienne i właściwości reprezentują wartości, do których można uzyskać do
   
  <sup>1</sup> w przeciwieństwie do zmiennej, wartość właściwości może nie odpowiadać bezpośrednio na pojedynczy element magazynu. Magazyn może być podzielony na fragmenty dla wygody lub bezpieczeństwa lub wartość może być przechowywana w postaci zaszyfrowanej. W takich przypadkach `Get` procedura może złożyć fragmenty lub odszyfrować przechowywaną wartość, a `Set` procedura będzie szyfrować nową wartość lub podzielić ją na magazyn elementów składowych. Wartość właściwości może być wyliczeniem nieulotnym, takim jak godzina dnia, w którym to przypadku `Get` procedura będzie obliczać ją na bieżąco za każdym razem, gdy uzyskujesz dostęp do właściwości.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury własności](./property-procedures.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)
