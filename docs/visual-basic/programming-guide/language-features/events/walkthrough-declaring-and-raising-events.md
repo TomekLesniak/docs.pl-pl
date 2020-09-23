@@ -9,17 +9,19 @@ helpviewer_keywords:
 - events [Visual Basic], raising
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
-ms.openlocfilehash: 3da60014d7ac95189c5d56c3e339ff1b054a40dc
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 07ef611b50cfa13f77fa168d58dd3b43e97eeec6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405096"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057991"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Wskazówki: deklarowanie i wywoływanie zdarzeń (Visual Basic)
+
 W tym instruktażu pokazano, jak zadeklarować i zgłosić zdarzenia dla klasy o nazwie `Widget` . Po wykonaniu kroków warto przeczytać temat pomocnika, [Przewodnik: obsługa zdarzeń](walkthrough-handling-events.md), który pokazuje, jak używać zdarzeń z `Widget` obiektów w celu dostarczania informacji o stanie w aplikacji.  
   
 ## <a name="the-widget-class"></a>Klasa widget  
+
  Załóżmy dla momentu, gdy masz `Widget` klasę. Twoja `Widget` Klasa ma metodę, która może zająć dużo czasu, i chcesz, aby aplikacja mogła umieścić jakiś wskaźnik uzupełniania.  
   
  Oczywiście można sprawić, `Widget` Aby obiekt pokazywał okno dialogowe z wartością procentową, ale w każdym projekcie, w którym została użyta Klasa, zostało zablokowane `Widget` . Dobrą zasadą projektowania obiektów jest umożliwienie aplikacji, która używa obiektu obsługującego interfejs użytkownika — chyba że cały cel obiektu ma zarządzać formularzem lub oknem dialogowym.  
@@ -53,7 +55,7 @@ W tym instruktażu pokazano, jak zadeklarować i zgłosić zdarzenia dla klasy o
 > [!NOTE]
 > Argumenty zdarzeń można zadeklarować tak samo jak argumenty procedur, z następującymi wyjątkami: zdarzenia nie mogą mieć `Optional` argumentów lub `ParamArray` , a zdarzenia nie mają zwracanych wartości.  
   
- `PercentDone`Zdarzenie jest wywoływane przez `LongTask` metodę `Widget` klasy. `LongTask`przyjmuje dwa argumenty: czas, który ma być wykonywany przez metodę, oraz minimalny interwał czasu przed `LongTask` zatrzymaniem `PercentDone` zdarzenia.  
+ `PercentDone`Zdarzenie jest wywoływane przez `LongTask` metodę `Widget` klasy. `LongTask` przyjmuje dwa argumenty: czas, który ma być wykonywany przez metodę, oraz minimalny interwał czasu przed `LongTask` zatrzymaniem `PercentDone` zdarzenia.  
   
 #### <a name="to-raise-the-percentdone-event"></a>Aby zgłosić zdarzenie PercentDone  
   
@@ -73,7 +75,7 @@ W tym instruktażu pokazano, jak zadeklarować i zgłosić zdarzenia dla klasy o
   
  Teraz, gdy `Widget` Klasa może zgłaszać zdarzenia, możesz przejść do następnego przewodnika. [Przewodnik: obsługa zdarzeń](walkthrough-handling-events.md) pokazuje, jak używać `WithEvents` do kojarzenia procedury obsługi zdarzeń ze `PercentDone` zdarzeniem.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:Microsoft.VisualBasic.DateAndTime.Timer%2A>
 - <xref:Microsoft.VisualBasic.DateAndTime.Now%2A>

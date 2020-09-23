@@ -2,14 +2,15 @@
 title: 'Instrukcje: zapytanie o pliki o określonym atrybucie lub nazwie'
 ms.date: 07/20/2015
 ms.assetid: b26026a3-3f43-448f-a582-259997af6be0
-ms.openlocfilehash: 4a6a5630f4ac0eb0cb08aed0dc8a390225194675
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: eeacd94fb303a439e8034b84d285ab11b2333581
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396418"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059317"
 ---
 # <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>Instrukcje: zapytanie o pliki o określonym atrybucie lub nazwie (Visual Basic)
+
 Ten przykład pokazuje, jak znaleźć wszystkie pliki, które mają określone rozszerzenie nazwy pliku (na przykład ". txt") w określonym drzewie katalogów. Przedstawiono w nim również, jak zwrócić najnowszy lub najstarszy plik w drzewie na podstawie czasu utworzenia.  
   
 ## <a name="example"></a>Przykład  
@@ -61,9 +62,10 @@ End Module
 ```  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
 Utwórz projekt aplikacji konsolowej Visual Basic przy użyciu `Imports` instrukcji dla przestrzeni nazw System. LINQ.
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
 - [LINQ i katalogi plików (Visual Basic)](linq-and-file-directories.md)

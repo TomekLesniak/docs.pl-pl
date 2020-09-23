@@ -1,19 +1,20 @@
 ---
-title: Obraz nie jest prawidłowy
+title: Obraz jest nieprawidłowy
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID481
 ms.assetid: 6ac18c39-042b-423a-9d95-25a7745c84dd
-ms.openlocfilehash: 3413aaecb332b711cb93c86156ab2c6f48110213
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a95e3f6d5b89f398e2e282308ecea426e826f2e7
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944753"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059707"
 ---
-# <a name="picture-is-not-valid"></a>Obraz nie jest prawidłowy
-Próbowano przypisać format graficznych niż mapa bitowa, ikona lub metaplik Windows do `Picture` właściwości formularza lub formantu.  
+# <a name="picture-is-not-valid"></a>Obraz jest nieprawidłowy
+
+Próbowano przypisać format graficzny inny niż Mapa bitowa, ikona lub metaplik Windows do `Picture` właściwości formularza lub kontrolki.  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
   
-1. Upewnij się, że plik, który chcesz załadować do `Picture` właściwość jest prawidłowy plik obsługiwane przez program Visual Basic.  
+1. Upewnij się, że plik, który próbujesz załadować do `Picture` właściwości, jest prawidłowym plikiem graficznym obsługiwanym przez Visual Basic.  

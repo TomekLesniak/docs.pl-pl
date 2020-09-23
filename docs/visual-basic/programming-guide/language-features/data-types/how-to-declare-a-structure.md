@@ -7,14 +7,15 @@ helpviewer_keywords:
 - statements [Visual Basic], structure
 - structures [Visual Basic], declaring
 ms.assetid: d5e98381-eb81-47d4-af83-48cc534a2572
-ms.openlocfilehash: a6b70d0973e92db90e35e61b7fed2279c5b0bac3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bffdc5974eff6b71e0abc4780a61aa300769eed6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393977"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058550"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Porady: deklarowanie struktury (Visual Basic)
+
 Należy rozpocząć deklarację struktury za pomocą [instrukcji Structure](../../../language-reference/statements/structure-statement.md)i zakończyć ją za pomocą `End Structure` instrukcji. Między tymi dwiema instrukcjami należy zadeklarować co najmniej jeden *element*. Elementy mogą być dowolnego typu danych, ale co najmniej jeden musi być zmienną nieudostępnioną lub niestandardowym zdarzeniem.  
   
  Nie można zainicjować któregokolwiek z elementów struktury w deklaracji struktury. Podczas deklarowania zmiennej jako typu struktury, należy przypisać wartości do elementów, uzyskując dostęp do nich za pomocą zmiennej.  
@@ -55,7 +56,7 @@ Należy rozpocząć deklarację struktury za pomocą [instrukcji Structure](../.
   
      Oprócz zmiennych, `Sub` procedur i zdarzeń można także definiować stałe, `Function` procedury i właściwości w strukturze. Można wyznaczyć najwyżej jedną właściwość jako *Właściwość domyślną*, pod warunkiem, że przyjmuje co najmniej jeden argument. Można obsłużyć zdarzenie z [wspólną](../../../language-reference/modifiers/shared.md) `Sub` procedurą. Aby uzyskać więcej informacji, zobacz [jak: deklarowanie i wywoływanie właściwości domyślnej w Visual Basic](../procedures/how-to-declare-and-call-a-default-property.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy danych](index.md)
 - [Typy danych podstawowych](elementary-data-types.md)

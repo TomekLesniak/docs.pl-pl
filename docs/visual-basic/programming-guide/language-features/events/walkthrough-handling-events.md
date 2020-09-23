@@ -9,14 +9,15 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: 29d878afbe3669fc88e62b1fec98b306918c303d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4489f75e50a783a9b1acfb9c30568fdec6614488
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405083"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057913"
 ---
 # <a name="walkthrough-handling-events-visual-basic"></a>Wskazówki: obsługa zdarzeń (Visual Basic)
+
 Jest to drugi z dwóch tematów, które pokazują, jak korzystać z zdarzeń. Pierwszy temat, [Przewodnik: deklarowanie i](walkthrough-declaring-and-raising-events.md)wywoływanie zdarzeń, pokazuje sposób deklarowania i zgłaszania zdarzeń. Ta sekcja używa formularza i klasy z tego przewodnika, aby pokazać, jak obsługiwać zdarzenia po ich przejściu.  
   
  W `Widget` przykładzie klasy są stosowane tradycyjne instrukcje obsługi zdarzeń. Visual Basic zapewnia inne techniki pracy ze zdarzeniami. W ramach ćwiczenia można zmodyfikować ten przykład, aby użyć `AddHandler` `Handles` instrukcji i.  
@@ -34,6 +35,7 @@ Jest to drugi z dwóch tematów, które pokazują, jak korzystać z zdarzeń. Pi
      Zmienna służy `mblnCancel` do anulowania `LongTask` metody.  
   
 ## <a name="writing-code-to-handle-an-event"></a>Pisanie kodu do obsługi zdarzenia  
+
  Po zadeklarowaniu zmiennej przy użyciu `WithEvents` , nazwa zmiennej jest wyświetlana na liście rozwijanej w **edytorze kodu**klasy. Po wybraniu `mWidget` `Widget` zdarzenia klasy są wyświetlane na liście rozwijanej po prawej stronie. Wybranie zdarzenia powoduje wyświetlenie odpowiedniej procedury zdarzenia z prefiksem `mWidget` i podkreśleniem. Wszystkie procedury zdarzeń skojarzone ze `WithEvents` zmienną otrzymują nazwę zmiennej jako prefiks.  
   
 #### <a name="to-handle-an-event"></a>Aby obsłużyć zdarzenie  
@@ -58,7 +60,8 @@ Jest to drugi z dwóch tematów, które pokazują, jak korzystać z zdarzeń. Pi
  Jeśli użytkownik kliknie przycisk **Anuluj** w trakcie `LongTask` działania, `Button2_Click` zdarzenie jest wykonywane zaraz po tym, jak `DoEvents` instrukcja zezwala na przetwarzanie zdarzeń. Zmienna na poziomie klasy `mblnCancel` jest ustawiana na `True` , a `mWidget_PercentDone` następnie zdarzenie sprawdza i ustawia `ByRef Cancel` argument na `True` .  
   
 ## <a name="connecting-a-withevents-variable-to-an-object"></a>Łączenie zmiennej WithEvents z obiektem  
- `Form1`jest teraz skonfigurowany do obsługi `Widget` zdarzeń obiektu. To wszystko, co pozostało, aby znaleźć `Widget` gdzieś.  
+
+ `Form1` jest teraz skonfigurowany do obsługi `Widget` zdarzeń obiektu. To wszystko, co pozostało, aby znaleźć `Widget` gdzieś.  
   
  Po zadeklarowaniu zmiennej `WithEvents` w czasie projektowania, żaden obiekt nie jest skojarzony z nim. `WithEvents`Zmienna jest tak samo jak jakakolwiek inna zmienna obiektu. Należy utworzyć obiekt i przypisać do niego odwołanie przy użyciu `WithEvents` zmiennej.  
   
@@ -82,7 +85,7 @@ Jest to drugi z dwóch tematów, które pokazują, jak korzystać z zdarzeń. Pi
   
  Przed `LongTask` wywołaniem metody, etykieta, w której jest wyświetlany procent wykonania, musi zostać zainicjowana, a flaga poziomu klasy `Boolean` dla anulowania metody musi być ustawiona na `False` .  
   
- `LongTask`jest wywoływana z czasem trwania zadania wynoszącym 12,2 sekund. `PercentDone`Zdarzenie jest zgłaszane raz w jednej trzeciej części sekundy. Za każdym razem, gdy zdarzenie jest zgłaszane, `mWidget_PercentDone` wykonywana jest procedura zdarzenia.  
+ `LongTask` jest wywoływana z czasem trwania zadania wynoszącym 12,2 sekund. `PercentDone`Zdarzenie jest zgłaszane raz w jednej trzeciej części sekundy. Za każdym razem, gdy zdarzenie jest zgłaszane, `mWidget_PercentDone` wykonywana jest procedura zdarzenia.  
   
  Gdy `LongTask` to zrobisz, `mblnCancel` zostanie przetestowany w celu sprawdzenia `LongTask` , czy zakończono normalne działanie, czy został zatrzymany, ponieważ `mblnCancel` został ustawiony na `True` . Procent ukończenia jest aktualizowany tylko w poprzednim przypadku.  
   
@@ -116,7 +119,7 @@ Jest to drugi z dwóch tematów, które pokazują, jak korzystać z zdarzeń. Pi
 > [!NOTE]
 > W razie potrzeby można zadeklarować dowolną liczbę `WithEvents` zmiennych, ale tablice `WithEvents` zmiennych nie są obsługiwane.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wskazówki: deklarowanie i wywoływanie zdarzeń](walkthrough-declaring-and-raising-events.md)
 - [Zdarzenia](index.md)

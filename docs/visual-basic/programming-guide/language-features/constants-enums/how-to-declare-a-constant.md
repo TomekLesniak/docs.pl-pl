@@ -23,14 +23,15 @@ helpviewer_keywords:
 - module-level constants and variables
 - Object data type [Visual Basic], declaring constants
 ms.assetid: f901b4fa-481f-4621-822e-427060577ad1
-ms.openlocfilehash: ffaa98f6af3d4b276f5c0b1153841acdea0809d7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 138dd58dac9d1983e35e61f8b98a77810fc6e38b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414482"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058849"
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a>Porady: deklarowanie stałej (Visual Basic)
+
 Użyj instrukcji, `Const` Aby zadeklarować stałą i ustawić jej wartość. Deklarując stałą, należy przypisać do wartości nazwę zrozumiałą. Po zadeklarowaniu stałej nie można jej modyfikować ani przypisywać nowej wartości.  
   
  Należy zadeklarować stałą w ramach procedury lub w sekcji deklaracji modułu, klasy lub struktury. Stałe klasy lub struktury są `Private` Domyślnie, ale mogą być również deklarowane jako,, `Public` `Friend` `Protected` lub `Protected Friend` dla odpowiedniego poziomu dostępu kodu.  
@@ -65,7 +66,7 @@ Użyj instrukcji, `Const` Aby zadeklarować stałą i ustawić jej wartość. De
     Public Const Four As Integer = 4, Five As Integer = 5, Six As Integer = 44  
     ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Const, instrukcja](../../../language-reference/statements/const-statement.md)
 - [Stała i typy literałów](constant-and-literal-data-types.md)

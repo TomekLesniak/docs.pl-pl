@@ -1,25 +1,26 @@
 ---
-title: Inny dziennika zdarzeń została już zarejestrowana źródło o tej nazwie
+title: Inny dziennik zdarzeń zarejestrował już źródło o tej nazwie
 ms.date: 07/20/2015
 ms.assetid: e6f5cd95-bb3f-4845-84fb-ae623a9bd44e
-ms.openlocfilehash: d932869504b2d8a5f3a948b190e5528bfcfa664f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 333c28036e2d1b7514c7370b98ff70a6d195a9dd
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940617"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058394"
 ---
-# <a name="another-event-log-has-already-registered-a-source-with-this-name"></a>Inny dziennika zdarzeń została już zarejestrowana źródło o tej nazwie
-Nastąpiła próba zapisu do dziennika zdarzeń, gdzie określona źródłowa jest zarejestrowany w innym dzienniku zdarzeń.  
+# <a name="another-event-log-has-already-registered-a-source-with-this-name"></a>Inny dziennik zdarzeń zarejestrował już źródło o tej nazwie
+
+Podjęto próbę zapisania wpisu w dzienniku zdarzeń, w którym określone źródło jest zarejestrowane w innym dzienniku zdarzeń.  
   
- Należy ustawić <xref:System.Diagnostics.EventLog.Source%2A> właściwości usługi <xref:System.Diagnostics.EventLog> wystąpienie składnika przed składnika zapisuje wpis dziennika. W takim przypadku system sprawdza, czy określone źródło jest zarejestrowany w dzienniku zdarzeń, do którego jest pisanie składnika i wywołania <xref:System.Diagnostics.EventLog.CreateEventSource%2A> w razie potrzeby.  
+ Należy ustawić <xref:System.Diagnostics.EventLog.Source%2A> Właściwość <xref:System.Diagnostics.EventLog> wystąpienia składnika, zanim składnik zapisze wpis w dzienniku. W takim przypadku system sprawdza, czy określone źródło jest zarejestrowane w dzienniku zdarzeń, do którego składnik jest zapisywany, i wywołuje w <xref:System.Diagnostics.EventLog.CreateEventSource%2A> razie potrzeby.  
   
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
   
-1. Usuń skojarzenie źródła z pierwszym przy użyciu dziennika <xref:System.Diagnostics.EventLog.DeleteEventSource%2A> lub <xref:System.Diagnostics.EventLog.DeleteEventSource%2A> metody.  
+1. Usuń skojarzenie źródła z pierwszym dziennikiem przy użyciu <xref:System.Diagnostics.EventLog.DeleteEventSource%2A> <xref:System.Diagnostics.EventLog.DeleteEventSource%2A> metody lub.  
   
-2. Zarejestruj nowy dziennik źródła.  
+2. Zarejestruj źródło w nowym dzienniku.  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [My.Application.Log](xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log)
+- [My. Application. log](xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log)

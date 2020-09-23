@@ -2,15 +2,16 @@
 title: 'Instrukcje: zapytanie o zduplikowane pliki w drzewie katalogu (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: b37da0a26c8bb4abc885faa7bb0c467e2d7d2347
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 71c656fba3962f08733e27279ac9bfa94d957aa8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396431"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058914"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Instrukcje: zapytanie o zduplikowane pliki w drzewie katalogów (LINQ) (Visual Basic)
-Czasami pliki o tej samej nazwie mogą znajdować się w więcej niż jednym folderze. Na przykład w folderze instalacyjnym programu Visual Studio kilka folderów zawiera plik Readme. htm. Ten przykład pokazuje, jak wykonać zapytanie o takie zduplikowane nazwy plików w określonym folderze głównym. Drugi przykład pokazuje, jak wykonywać zapytania dotyczące plików, których rozmiar i czasy tworzenia są również zgodne.  
+
+Czasami pliki o tej samej nazwie mogą znajdować się w więcej niż jednym folderze. Na przykład w folderze instalacyjnym programu Visual Studio kilka folderów ma plik readme.htm. Ten przykład pokazuje, jak wykonać zapytanie o takie zduplikowane nazwy plików w określonym folderze głównym. Drugi przykład pokazuje, jak wykonywać zapytania dotyczące plików, których rozmiar i czasy tworzenia są również zgodne.  
   
 ## <a name="example"></a>Przykład  
   
@@ -101,9 +102,10 @@ End Module
  Pierwsze zapytanie używa prostego klucza w celu określenia dopasowania; spowoduje to znalezienie plików o tej samej nazwie, ale których zawartość może się różnić. Drugie zapytanie używa klucza złożonego, aby dopasować się do trzech właściwości <xref:System.IO.FileInfo> obiektu. To zapytanie jest znacznie bardziej prawdopodobnie, aby znaleźć pliki o tej samej nazwie i podobnej lub identycznej zawartości.  
   
 ## <a name="compile-the-code"></a>Kompiluj kod  
+
 Utwórz projekt aplikacji konsolowej Visual Basic przy użyciu `Imports` instrukcji dla przestrzeni nazw System. LINQ.
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
 - [LINQ i katalogi plików (Visual Basic)](linq-and-file-directories.md)

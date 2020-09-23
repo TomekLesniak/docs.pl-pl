@@ -6,14 +6,15 @@ helpviewer_keywords:
 - enumerations [Visual Basic], declaring
 - declaring enumerations [Visual Basic]
 ms.assetid: db4ca1c3-f429-4c81-ae81-29e0157b29fd
-ms.openlocfilehash: c8f228c205c93adf7f2f555dc840a7daac61950b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 752b425ba32efe41a1ab1aa75de20039d36f5e50
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414456"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058901"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a>Porady: deklarowanie wyliczeń (Visual Basic)
+
 Wyliczenie można utworzyć przy użyciu `Enum` instrukcji w sekcji deklaracji klasy lub modułu. Nie można zadeklarować wyliczenia w ramach metody. Aby określić odpowiedni poziom dostępu, użyj,, `Private` `Protected` `Friend` , lub `Public` .  
   
  `Enum`Typ ma nazwę, typ podstawowy i zestaw pól, z których każdy reprezentuje stałą. Nazwa musi być prawidłowym kwalifikatorem Visual Basic platformy .NET. Typ podstawowy musi być jednym z typów całkowitych — `Byte` , `Short` , `Long` lub `Integer` . Wartość domyślna to `Integer`. Wyliczenia są zawsze silnie wpisane i nie mogą być zamienne z typami liczb całkowitych.  
@@ -42,7 +43,7 @@ Wyliczenie można utworzyć przy użyciu `Enum` instrukcji w sekcji deklaracji k
   
      [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenie i kwantyfikacja nazwy](enumerations-and-name-qualification.md)
 - [Porady: odwoływanie się do elementu członkowskiego wyliczenia](how-to-refer-to-an-enumeration-member.md)

@@ -7,14 +7,15 @@ helpviewer_keywords:
 - loop structures [Visual Basic], optimizing performance
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
-ms.openlocfilehash: 582957c91eac63cf7f72dd2f6c0cf40e627be686
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f1f0036c38299f2392f8c8705e67b7bb6b7db068
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402034"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058641"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Wskazówki: wdrażanie IEnumerable(Of T) w Visual Basic
+
 <xref:System.Collections.Generic.IEnumerable%601>Interfejs jest implementowany przez klasy, które mogą zwracać sekwencję wartości po jednym elemencie naraz. Zaletą zwracania danych z jednego elementu jednocześnie jest to, że nie trzeba ładować kompletnego zestawu danych do pamięci, aby z niego korzystać. Wystarczy użyć wystarczającej ilości pamięci do załadowania pojedynczego elementu z danych. Klasy implementujące `IEnumerable(T)` interfejs mogą być używane z `For Each` pętlami lub kwerendami LINQ.  
   
  Rozważmy na przykład aplikację, która musi odczytać duży plik tekstowy i zwrócić każdy wiersz z pliku zgodnego z określonymi kryteriami wyszukiwania. Aplikacja używa zapytania LINQ do zwracania wierszy z pliku, które pasują do określonych kryteriów. Aby zbadać zawartość pliku przy użyciu zapytania LINQ, aplikacja może załadować zawartość pliku do tablicy lub kolekcji. Jednak załadowanie całego pliku do tablicy lub kolekcji spowodowałoby dużo więcej pamięci niż jest to wymagane. Zapytanie LINQ mogło zamiast tego zbadać zawartość pliku przy użyciu klasy wyliczalnej, zwracając tylko wartości pasujące do kryteriów wyszukiwania. Zapytania, które zwracają tylko kilka pasujących wartości, zużywają znacznie mniej pamięci.  
@@ -93,7 +94,7 @@ ms.locfileid: "84402034"
   
  [!code-vb[VbVbalrIteratorWalkthrough#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/Module1.vb#10)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie do LINQ w Visual Basic](../linq/introduction-to-linq.md)
 - [Przepływ sterowania](index.md)

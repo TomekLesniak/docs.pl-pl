@@ -3044,14 +3044,15 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 12af447d053e84347ddc3a2c1ecad1cde4ff3428
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d96f2512e2fae038853baedfb78fcf2feb84542b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357807"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059642"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-visual-basic-error"></a>Niestety nie są dostępne szczegółowe informacje na temat tego błędu języka Visual Basic
+
 Niestety, nie mamy żadnych szczegółowych informacji o tym błędzie. Możesz wyszukać numer błędu i tekst komunikatu, aby znaleźć informacje w sieci Web. Możesz też podawać innym deweloperom, korzystając z jednego z tych forów:  
   
  [Język Visual Basic](https://social.msdn.microsoft.com/Forums/home?forum=vblanguage)  
@@ -3072,7 +3073,7 @@ Niestety, nie mamy żadnych szczegółowych informacji o tym błędzie. Możesz 
  Zobacz również:  
  [Zasoby dodatkowe dla programistów Visual Basic](../getting-started/additional-resources.md)  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik programowania w Visual Basic](../programming-guide/index.md)
 - [Visual Basic — Odwołanie](../reference/index.md)

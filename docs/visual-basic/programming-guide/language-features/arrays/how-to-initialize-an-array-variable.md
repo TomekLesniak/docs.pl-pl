@@ -7,14 +7,15 @@ helpviewer_keywords:
 - arrays [Visual Basic], initializing
 - arrays [Visual Basic], declaring
 ms.assetid: aadd7a60-7ca4-4608-b986-091f19e7fc10
-ms.openlocfilehash: 7feaf71fa1c59c24aa751f2b9e28328d47ba357c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1add054a6cb6468f4581f92ca3a258c5b0cdc77d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413069"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058862"
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a>Porady: inicjowanie zmiennej tablicy w języku Visual Basic
+
 Można zainicjować zmienną tablicową przez uwzględnienie literału tablicy w `New` klauzuli i określenie wartości początkowych tablicy. Można określić typ lub zezwolić na wywnioskowanie go na podstawie wartości w literale tablicy. Aby uzyskać więcej informacji na temat sposobu wywnioskowania typu, zobacz "zapełnianie tablicy wartościami początkowymi" w [tablicach](index.md).  
   
 ### <a name="to-initialize-an-array-variable-by-using-an-array-literal"></a>Aby zainicjować zmienną tablicową przy użyciu literału tablicowego  
@@ -33,7 +34,7 @@ Można zainicjować zmienną tablicową przez uwzględnienie literału tablicy w
   
      [!code-vb[VbVbalrArrays#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#17)]  
   
-- Można jawnie określić granice tablicy lub pozostawić je, a kompilator wywnioskuje granice tablicy na podstawie wartości w literale tablicy. Jeśli podasz górną granicę i wartości, musisz dołączyć wartość dla każdego elementu z indeksu od 0 do górnej granicy w każdym wymiarze. W poniższym przykładzie przedstawiono kilka sposobów deklarowania, tworzenia i inicjowania zmiennej, która zawiera dwuwymiarową tablicę, która zawiera elementy typu`Short`  
+- Można jawnie określić granice tablicy lub pozostawić je, a kompilator wywnioskuje granice tablicy na podstawie wartości w literale tablicy. Jeśli podasz górną granicę i wartości, musisz dołączyć wartość dla każdego elementu z indeksu od 0 do górnej granicy w każdym wymiarze. W poniższym przykładzie przedstawiono kilka sposobów deklarowania, tworzenia i inicjowania zmiennej, która zawiera dwuwymiarową tablicę, która zawiera elementy typu `Short`  
   
      [!code-vb[VbVbalrArrays#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#18)]  
   
@@ -53,7 +54,7 @@ Można zainicjować zmienną tablicową przez uwzględnienie literału tablicy w
   
      [!code-vb[VbVbalrArrays#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#32)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tablice](index.md)
 - [Rozwiązywanie problemów związanych z tablicami](troubleshooting-arrays.md)

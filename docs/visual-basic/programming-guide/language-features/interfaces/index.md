@@ -7,14 +7,15 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: 90f8e5d4eb7bb6b367ee5ffd4a4323097c6bde9c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ac5db62fec3548bfd4a99477958f4f29463267c0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405045"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057835"
 ---
 # <a name="interfaces-visual-basic"></a>Interfejsy (Visual Basic)
+
 *Interfejsy* definiują właściwości, metody i zdarzenia, które mogą implementować klasy. Interfejsy umożliwiają definiowanie funkcji jako małych grup ściśle powiązanych właściwości, metod i zdarzeń; zmniejsza to problemy ze zgodnością, ponieważ można opracowywać ulepszone implementacje dla interfejsów bez narażania istniejącego kodu. W dowolnym momencie możesz dodać nowe funkcje, opracowując dodatkowe interfejsy i implementacje.  
   
  Istnieje kilka innych powodów, dla których warto chcieć używać interfejsów zamiast dziedziczenia klasy:  
@@ -28,6 +29,7 @@ ms.locfileid: "84405045"
 - Interfejsy są przydatne, gdy nie można użyć dziedziczenia klas. Na przykład struktury nie mogą dziedziczyć z klas, ale mogą implementować interfejsy.  
   
 ## <a name="declaring-interfaces"></a>Deklarowanie interfejsów  
+
  Definicje interfejsu są ujęte w `Interface` `End Interface` instrukcji i. Postępując zgodnie z `Interface` instrukcją, można dodać opcjonalną `Inherits` instrukcję, która wyświetla jeden lub więcej dziedziczonych interfejsów. `Inherits`Instrukcje muszą poprzedzać wszystkie inne instrukcje w deklaracji poza komentarzem. Pozostałe instrukcje w definicji interfejsu powinny mieć instrukcje,,,,,, `Event` `Sub` `Function` `Property` `Interface` `Class` `Structure` , i `Enum` . Interfejsy nie mogą zawierać żadnych kodów implementacji ani instrukcji skojarzonych z kodem implementacji, takimi jak `End Sub` lub `End Property` .  
   
  W przestrzeni nazw instrukcje interfejsu są `Friend` Domyślnie, ale mogą być również jawnie zadeklarowane jako `Public` lub `Friend` . Interfejsy zdefiniowane w ramach klas, modułów, interfejsów i struktur są `Public` Domyślnie, ale mogą być również jawnie zadeklarowane jako `Public` ,, `Friend` `Protected` , lub `Private` .  
@@ -40,12 +42,15 @@ ms.locfileid: "84405045"
  [!code-vb[VbVbalrOOP#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#17)]  
   
 ## <a name="implementing-interfaces"></a>Implementowanie interfejsów  
+
  Zastrzeżony wyraz Visual Basic `Implements` jest używany na dwa sposoby. `Implements`Instrukcja oznacza, że Klasa lub struktura implementuje interfejs. `Implements`Słowo kluczowe oznacza, że element członkowski klasy lub element członkowski struktury implementuje określonego elementu członkowskiego interfejsu.  
   
 ### <a name="implements-statement"></a>Implements — Instrukcja  
+
  Jeśli klasa lub struktura implementuje jeden lub więcej interfejsów, musi zawierać `Implements` instrukcję bezpośrednio po `Class` `Structure` instrukcji or. `Implements`Instrukcja wymaga rozdzielonej przecinkami listy interfejsów, które mają być implementowane przez klasę. Klasa lub struktura muszą implementować wszystkie elementy członkowskie interfejsu za pomocą `Implements` słowa kluczowego.  
   
 ### <a name="implements-keyword"></a>Implements — słowo kluczowe  
+
  `Implements`Słowo kluczowe wymaga zaimplementowania listy składowych interfejsu rozdzielanych przecinkami. Ogólnie tylko jeden element członkowski interfejsu jest określony, ale można określić wielu członków. Specyfikacja elementu członkowskiego interfejsu składa się z nazwy interfejsu, która musi być określona w instrukcji Implements w klasie; okres; i nazwa funkcji składowej, właściwości lub zdarzenia, które mają zostać zaimplementowane. Nazwa elementu członkowskiego implementującego element członkowski interfejsu może korzystać z dowolnego identyfikatora prawnego i nie jest ograniczona do `InterfaceName_MethodName` Konwencji używanej we wcześniejszych wersjach Visual Basic.  
   
  Na przykład poniższy kod ilustruje sposób deklarowania podprocedury o nazwie `Sub1` implementującej metodę interfejsu:  
@@ -63,6 +68,7 @@ ms.locfileid: "84405045"
  Do zaimplementowania elementu członkowskiego interfejsu można użyć prywatnego elementu członkowskiego. Gdy prywatny element członkowski implementuje element członkowski interfejsu, ten element członkowski jest dostępny w interfejsie, mimo że nie jest dostępny bezpośrednio dla zmiennych obiektów klasy.  
   
 ### <a name="interface-implementation-examples"></a>Przykłady implementacji interfejsu  
+
  Klasy implementujące interfejs muszą implementować wszystkie jego właściwości, metody i zdarzenia.  
   
  W poniższym przykładzie zdefiniowano dwa interfejsy. Drugi interfejs, `Interface2` , dziedziczy `Interface1` i definiuje dodatkową właściwość i metodę.  

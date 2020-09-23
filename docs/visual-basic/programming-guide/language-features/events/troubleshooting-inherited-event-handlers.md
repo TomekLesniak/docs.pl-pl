@@ -8,14 +8,15 @@ helpviewer_keywords:
 - event handling, troubleshooting
 - event handlers, troubleshooting
 ms.assetid: e1c8759f-5370-4308-8476-8c48b73509bf
-ms.openlocfilehash: 4e7bedd1de5197fcf8b69091f4cc878f41b01cd5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d228e916e45054bc088aa633afd9d591e592210d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405109"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058004"
 ---
 # <a name="troubleshooting-inherited-event-handlers-in-visual-basic"></a>Rozwiązywanie problemów związanych z odziedziczonymi programami obsługi zdarzeń w Visual Basic
+
 W tym temacie wymieniono typowe problemy związane z obsługą zdarzeń w składnikach dziedziczonych.  
   
 ## <a name="procedures"></a>Procedury  
@@ -28,6 +29,6 @@ W tym temacie wymieniono typowe problemy związane z obsługą zdarzeń w skład
   
 - Jeśli dziedziczona Metoda nie ma `Handles` słowa kluczowego, sprawdź, czy Twój kod nie zawiera dodatkowej [instrukcji AddHandler](../../../language-reference/statements/addhandler-statement.md) ani żadnych dodatkowych metod, które obsługują to samo zdarzenie.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zdarzenia](index.md)

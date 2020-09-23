@@ -5,27 +5,31 @@ helpviewer_keywords:
 - events [Visual Basic], about events
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-ms.openlocfilehash: 264c639656b592c0cc660d3745528df7cc89c851
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 15ab02c20c1baf0fbc9087bfe2e75ec97acd0734
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559340"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057939"
 ---
 # <a name="events-visual-basic"></a>Zdarzenia (Visual Basic)
+
 Chociaż można wizualizować projekt programu Visual Studio jako szereg procedur wykonywanych w sekwencji, w rzeczywistości większość programów jest sterowana zdarzeniami — oznacza to, że przepływ wykonywania jest określany przez wystąpienia zewnętrzne nazywane *zdarzeniami*.  
   
  Zdarzenie jest sygnałem, który informuje aplikację o wystąpieniu znaczenia. Na przykład gdy użytkownik kliknie formant w formularzu, formularz może zgłosić `Click` zdarzenie i wywołać procedurę, która obsługuje zdarzenie. Zdarzenia umożliwiają również komunikowanie się z osobnymi zadaniami. Załóżmy na przykład, że aplikacja wykonuje zadanie sortowania niezależnie od głównej aplikacji. Jeśli użytkownik anuluje sortowanie, aplikacja może wysłać zdarzenie anulowania, co powoduje zatrzymanie procesu sortowania.  
   
 ## <a name="event-terms-and-concepts"></a>Warunki i pojęcia dotyczące zdarzenia  
+
  Ta sekcja zawiera opis pojęć i koncepcji używanych ze zdarzeniami w Visual Basic.  
   
 ### <a name="declaring-events"></a>Deklarowanie zdarzeń  
+
  Zdarzenia deklaruje się w klasach, strukturach, modułach i interfejsach za pomocą `Event` słowa kluczowego, jak w poniższym przykładzie:  
   
  [!code-vb[VbVbalrEvents#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#24)]  
   
 ### <a name="raising-events"></a>Wywoływanie zdarzeń  
+
  Zdarzenie przypomina komunikat informujący o tym, że coś istotny wystąpił. Czynność rozgłaszania wiadomości jest nazywana *podnoszeniem* zdarzenia. W Visual Basic są podniesione zdarzenia za pomocą `RaiseEvent` instrukcji, jak w poniższym przykładzie:  
   
  [!code-vb[VbVbalrEvents#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#25)]  
@@ -33,9 +37,11 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
  Zdarzenia muszą być zgłaszane w zakresie klasy, modułu lub struktury, w której zostały zadeklarowane. Na przykład Klasa pochodna nie może zgłosić zdarzeń dziedziczonych z klasy bazowej.  
   
 ### <a name="event-senders"></a>Nadawcy zdarzeń  
+
  Każdy obiekt, który może podnieść zdarzenie, jest *nadawcą zdarzenia*, znanym również jako *Źródło zdarzenia*. Formularze, formanty i obiekty zdefiniowane przez użytkownika są przykładami nadawców zdarzeń.  
   
 ### <a name="event-handlers"></a>Programy obsługi zdarzeń  
+
  Procedury *obsługi zdarzeń* są wywoływane, gdy wystąpi odpowiednie zdarzenie. Do obsługi zdarzeń można użyć dowolnej prawidłowej procedury z podpisem zgodnym. Nie można użyć funkcji jako programu obsługi zdarzeń, ponieważ nie może ona zwrócić wartości do źródła zdarzenia.  
   
  Visual Basic używa standardowej konwencji nazewnictwa dla programów obsługi zdarzeń, która łączy nazwę nadawcy zdarzenia, znak podkreślenia i nazwę zdarzenia. Na przykład zdarzenie o `Click` nazwie `button1` ma nazwę `Sub button1_Click` .  
@@ -44,9 +50,11 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
 > Zalecamy używanie tej konwencji nazewnictwa podczas definiowania obsługi zdarzeń dla własnych zdarzeń, ale nie jest to wymagane. można użyć dowolnej prawidłowej nazwy procedury podrzędnej.  
   
 ## <a name="associating-events-with-event-handlers"></a>Kojarzenie zdarzeń z obsługą zdarzeń  
+
  Przed rozpoczęciem korzystania z programu obsługi zdarzeń należy najpierw skojarzyć go ze zdarzeniem przy użyciu `Handles` `AddHandler` instrukcji or.  
   
 ### <a name="withevents-and-the-handles-clause"></a>WithEvents i klauzula Handles  
+
  `WithEvents`Instrukcja i `Handles` klauzula zapewniają deklaratywny sposób określania programów obsługi zdarzeń. Zdarzenie wywoływane przez obiekt zadeklarowany za pomocą `WithEvents` słowa kluczowego może być obsługiwane przez dowolną procedurę z `Handles` instrukcją dla tego zdarzenia, jak pokazano w następującym przykładzie:  
   
  [!code-vb[VbVbalrEvents#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#1)]  
@@ -68,6 +76,7 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
  [!code-vb[VbVbalrEvents#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#26)]  
   
 ### <a name="addhandler-and-removehandler"></a>AddHandler i RemoveHandler  
+
  `AddHandler`Instrukcja jest podobna do `Handles` klauzuli w tym, że oba umożliwiają określenie programu obsługi zdarzeń. Jednak, `AddHandler` używany z `RemoveHandler` , zapewnia większą elastyczność niż `Handles` klauzula, umożliwiając dynamiczne dodawanie, usuwanie i zmienianie obsługi zdarzeń skojarzonej ze zdarzeniem. Jeśli chcesz obsługiwać zdarzenia udostępnione lub zdarzenia ze struktury, musisz użyć `AddHandler` .  
   
  `AddHandler` przyjmuje dwa argumenty: nazwę zdarzenia od nadawcy zdarzenia, takiego jak kontrolka, i wyrażenie, które daje delegatowi. Nie trzeba jawnie podawać klasy delegata przy użyciu `AddHandler` , ponieważ `AddressOf` instrukcja zawsze zwraca odwołanie do delegata. Poniższy przykład kojarzy procedurę obsługi zdarzeń z zdarzeniem wywoływanym przez obiekt:  
@@ -87,6 +96,7 @@ Chociaż można wizualizować projekt programu Visual Studio jako szereg procedu
  [!code-vb[VbVbalrEvents#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class2.vb#38)]  
   
 ## <a name="handling-events-inherited-from-a-base-class"></a>Obsługa zdarzeń dziedziczonych z klasy bazowej  
+
  *Klasy pochodne*— klasy dziedziczące cechy z klasy podstawowej — mogą obsługiwać zdarzenia zgłoszone przez ich klasę bazową przy użyciu `Handles MyBase` instrukcji.  
   
 ### <a name="to-handle-events-from-a-base-class"></a>Aby obsłużyć zdarzenia z klasy bazowej  

@@ -9,17 +9,19 @@ helpviewer_keywords:
 - arguments [Visual Basic], passing by value or by reference
 - argument passing [Visual Basic], by value or by reference
 ms.assetid: fd8a9de6-7178-44d5-a9bf-458d4ad907c2
-ms.openlocfilehash: 3dd4be6ea6de9dfe8eb165e5d4ba9a990fc40585
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b7430b209f53a0a924ec587a0097178baf0075e3
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363957"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059225"
 ---
 # <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a>Przekazywanie argumentów według wartości i według odwołania (Visual Basic)
+
 W Visual Basic można przekazać argument do procedury *przez wartość* lub *przez odwołanie*. Jest to nazywane *mechanizmem przekazywania*i określa, czy procedura może zmodyfikować element programowania, który jest powiązany z argumentem w kodzie wywołującym. Deklaracja procedury określa mechanizm przekazywania dla każdego parametru przez określenie słowa kluczowego [ByVal](../../../language-reference/modifiers/byval.md) lub [ByRef](../../../language-reference/modifiers/byref.md) .  
   
 ## <a name="distinctions"></a>Różnice  
+
  Podczas przekazywania argumentu do procedury należy pamiętać o kilku różnych rozróżnieniu, które współpracują ze sobą:  
   
 - Czy bazowy element programistyczny jest modyfikowalny, czy niemodyfikowalny  
@@ -33,6 +35,7 @@ W Visual Basic można przekazać argument do procedury *przez wartość* lub *pr
  Aby uzyskać więcej informacji, zobacz [różnice między modyfikowalnymi i niemodyfikowalnymi argumentami](./differences-between-modifiable-and-nonmodifiable-arguments.md) i [różnicami między przekazywaniem argumentu według wartości i przez odwołanie](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
   
 ## <a name="choice-of-passing-mechanism"></a>Wybór mechanizmu przechodzenia  
+
  Dla każdego argumentu należy uważnie wybrać mechanizm przekazywania.  
   
 - **Ochrona**. W wyborze między dwoma mechanizmami przekazywania najważniejszym kryterium jest narażenie zmiennych wywołujących na zmianę. Zalety przekazywania argumentu `ByRef` polega na tym, że procedura może zwrócić wartość do kodu wywołującego za pomocą tego argumentu. Zalety przekazywania argumentu `ByVal` polega na tym, że chroni zmienną przed zmianą przez procedurę.  
@@ -42,6 +45,7 @@ W Visual Basic można przekazać argument do procedury *przez wartość* lub *pr
      W przypadku typów referencyjnych kopiowany jest tylko wskaźnik do danych (cztery bajty na 32-bitowych platformach, osiem bajtów na platformach 64-bitowych). W związku z tym można przekazać argumenty typu `String` lub `Object` według wartości bez zakłócania wydajności.  
   
 ## <a name="determination-of-the-passing-mechanism"></a>Określanie mechanizmu przekazywania  
+
  Deklaracja procedury określa mechanizm przekazywania dla każdego parametru. Kod wywołujący nie może przesłonić `ByVal` mechanizmu.  
   
  Jeśli parametr jest zadeklarowany za pomocą `ByRef` , wywoływany kod może wymusić, `ByVal` umieszczając nazwę argumentu w nawiasach w wywołaniu. Aby uzyskać więcej informacji, zobacz [jak: Wymuś przekazywanie argumentu przez wartość](./how-to-force-an-argument-to-be-passed-by-value.md).  
@@ -63,12 +67,14 @@ W Visual Basic można przekazać argument do procedury *przez wartość* lub *pr
 ## <a name="example"></a>Przykład  
   
 ### <a name="description"></a>Opis  
+
  Poniższy przykład ilustruje czas przekazywania argumentów według wartości i czas przekazywania ich przez odwołanie. Procedura `Calculate` ma zarówno `ByVal` parametr, jak i `ByRef` . Mając na względzie stawkę odsetek, `rate` i sumę pieniędzy, `debt` zadanie procedury polega na obliczeniu nowej wartości, `debt` która jest wynikiem zastosowania stopy oprocentowania do oryginalnej wartości `debt` . Ponieważ `debt` jest `ByRef` parametrem, Nowa suma jest odzwierciedlona w wartości argumentu kodu wywołującego, który odnosi się do `debt` . Parametr `rate` jest `ByVal` parametrem, ponieważ `Calculate` nie należy zmieniać jego wartości.  
   
 ### <a name="code"></a>Kod  
+
  [!code-vb[VbVbcnProcedures#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class2.vb#74)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Procedury](./index.md)
 - [Parametry i argumenty procedur](./procedure-parameters-and-arguments.md)

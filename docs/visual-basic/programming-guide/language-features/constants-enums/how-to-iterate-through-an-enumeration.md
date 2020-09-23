@@ -6,14 +6,15 @@ helpviewer_keywords:
 - enumerations [Visual Basic], iterating
 - ListBox control [Windows Forms], populating from an enumeration
 ms.assetid: e5aa10eb-cfcd-4a3b-8e76-f06b8f2002be
-ms.openlocfilehash: fb6fbdd45ca0e84ccb9fc55296d78e3867d5fe25
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 21c170d4708b90987a3f1e9c18969b8803fcdbe0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414430"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058719"
 ---
 # <a name="how-to-iterate-through-an-enumeration-in-visual-basic"></a>Porady: iterowanie za pomocą wyliczania w Visual Basic
+
 Wyliczenia zapewniają wygodny sposób pracy z zestawami powiązanych stałych i kojarzenia wartości stałych z nazwami. Aby wykonać iterację wyliczenia, można przenieść go do tablicy przy użyciu <xref:System.Enum.GetValues%2A> metody. Można również wykonać iterację w wyliczeniu przy użyciu `For...Each` instrukcji, <xref:System.Enum.GetNames%2A> używając <xref:System.Enum.GetValues%2A> metody lub do wyodrębnienia ciągu lub wartości liczbowej.  
   
 ### <a name="to-iterate-through-an-enumeration"></a>Aby wykonać iterację wyliczenia  
@@ -22,7 +23,7 @@ Wyliczenia zapewniają wygodny sposób pracy z zestawami powiązanych stałych i
   
      [!code-vb[VbEnumsTask#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#7)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Enumerations — Przegląd](enumerations-overview.md)
 - [Instrukcje: deklarowanie wyliczenia](how-to-declare-enumerations.md)
