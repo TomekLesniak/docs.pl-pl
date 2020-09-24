@@ -2,28 +2,30 @@
 title: Oracle LOB
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: 62525fed85525e26b7c61208fe44b108de562fb0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 072e3e3514c2dd32ddff0bac941da30788feae16
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149430"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147843"
 ---
 # <a name="oracle-lobs"></a>Oracle LOB
-Dostawca danych .NET Framework dla <xref:System.Data.OracleClient.OracleLob> Oracle obejmuje klasę, która jest używana do pracy z typami danych Oracle **LOB.**  
+
+.NET Framework Dostawca danych dla programu Oracle zawiera <xref:System.Data.OracleClient.OracleLob> klasę, która jest używana do pracy z typami danych **LOB** firmy Oracle.  
   
- **OracleLob** może być jednym <xref:System.Data.OracleClient.OracleType> z następujących typów danych:  
+ **OracleLob** może być jednym z następujących <xref:System.Data.OracleClient.OracleType> typów danych:  
   
 |Typ danych|Opis|  
 |---------------|-----------------|  
-|**Obiekt blob**|Typ danych **obiektu BLOB** Oracle zawierający dane binarne o maksymalnym rozmiarze 4 gigabajtów. Spowoduje to mapenie **na tablicę** typu **Bajt**.|  
-|**Clob**|Typ danych Oracle **CLOB** zawierający dane znaków, oparte na domyślnym zestawie znaków na serwerze, o maksymalnym rozmiarze 4 gigabajtów. To mapuje do **String**.|  
-|**Nclob**|Typ danych Oracle **NCLOB** zawierający dane znaków na podstawie znaku narodowego ustawionego na serwerze o maksymalnym rozmiarze 4 gigabajtów. To mapuje do **String**.|  
+|**Obiekt blob**|Typ danych **obiektu BLOB** Oracle zawierający dane binarne o maksymalnym rozmiarze wynoszącym 4 gigabajty. To mapuje do **tablicy** typu **Byte**.|  
+|**Obiektów CLOB**|Typ danych Oracle **obiektów CLOB** , który zawiera dane znakowe, na podstawie domyślnego zestawu znaków na serwerze z maksymalnym rozmiarem wynoszącym 4 gigabajty. To mapuje na **ciąg**.|  
+|**NClob**|Typ danych Oracle **NCLOB** , który zawiera dane znakowe, oparte na Narodowym zestawie znaków na serwerze o maksymalnym rozmiarze wynoszącym 4 gigabajty. To mapuje na **ciąg**.|  
   
- **OracleLob** różni się <xref:System.Data.OracleClient.OracleBFile> od tego, że dane są przechowywane na serwerze, a nie w pliku fizycznym w systemie operacyjnym. Może to być również obiekt odczytu i zapisu, w przeciwieństwie do **OracleBFile**, który jest zawsze tylko do odczytu.  
+ **OracleLob** różni się od <xref:System.Data.OracleClient.OracleBFile> w tym, że dane są przechowywane na serwerze, a nie w pliku fizycznym w systemie operacyjnym. Może być również obiektem do odczytu i zapisu, w przeciwieństwie do **OracleBFile**, który jest zawsze tylko do odczytu.  
   
-## <a name="creating-retrieving-and-writing-to-a-lob"></a>Tworzenie, pobieranie i zapisywanie w lob  
- Poniższy przykład języka C# pokazuje, jak można utworzyć lobs w tabeli Oracle, a następnie pobrać i zapisać do nich w postaci **OracleLob** obiektów. W przykładzie pokazano <xref:System.Data.OracleClient.OracleDataReader> przy użyciu obiektu i **OracleLob** **Odczyt** i **zapis** metody. W przykładzie użyto typów danych Oracle **BLOB,** **CLOB**i **NCLOB.**  
+## <a name="creating-retrieving-and-writing-to-a-lob"></a>Tworzenie, pobieranie i zapisywanie do obiektu LOB  
+
+ W poniższym przykładzie w języku C# pokazano, jak można utworzyć LOB w tabeli Oracle, a następnie pobrać i zapisać do nich w postaci obiektów **OracleLob** . W przykładzie pokazano użycie <xref:System.Data.OracleClient.OracleDataReader> obiektu i metody **odczytu** i **zapisu** **OracleLob** . W przykładzie są stosowane typy danych **obiektów BLOB**, **obiektów CLOB**i **NCLOB** firmy Oracle.  
   
 ```csharp  
 using System;  
@@ -215,8 +217,9 @@ public class LobExample
 }  
 ```  
   
-## <a name="creating-a-temporary-lob"></a>Tworzenie tymczasowego lob  
- Poniższy przykład języka C# pokazuje, jak utworzyć tymczasowy lob.  
+## <a name="creating-a-temporary-lob"></a>Tworzenie tymczasowego obiektu LOB  
+
+ W poniższym przykładzie w języku C# pokazano, jak utworzyć tymczasowy obiekt LOB.  
   
 ```csharp  
 OracleConnection conn = new OracleConnection(  

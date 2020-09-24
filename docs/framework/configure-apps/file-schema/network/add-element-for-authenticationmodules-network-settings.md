@@ -11,14 +11,15 @@ helpviewer_keywords:
 - <authenticationModules>, add element
 - <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
-ms.openlocfilehash: 1a6d0f79f076a69cec33ac14f0e0f33f7c3c6577
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f679a43ed1851e9681a2a57ca1639f8aa75aa8b3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504644"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149507"
 ---
 # <a name="add-element-for-authenticationmodules-network-settings"></a>\<add>, element dla authenticationModules (ustawienia sieci)
+
 Dodaje moduł uwierzytelniania do aplikacji.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Dodaje moduł uwierzytelniania do aplikacji.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -44,6 +46,7 @@ Dodaje moduł uwierzytelniania do aplikacji.
 |`type`|W pełni kwalifikowana nazwa typu (wskazywana przez <xref:System.Type.FullName%2A> Właściwość) i nazwa zestawu (wskazywanym przez <xref:System.Reflection.Assembly.FullName%2A> Właściwość) oddzielone przecinkami.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -53,14 +56,17 @@ Dodaje moduł uwierzytelniania do aplikacji.
 |[authenticationModules](authenticationmodules-element-network-settings.md)|Określa moduły używane do uwierzytelniania żądań sieci.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `add`Element dodaje moduł uwierzytelniania na końcu listy zarejestrowanych modułów uwierzytelniania. Moduły uwierzytelniania są wywoływane w kolejności, w jakiej zostały dodane do listy.  
   
  Wartość `type` atrybutu powinna być prawidłową nazwą typu i odpowiadającą jej nazwą zestawu, rozdzieloną przecinkami.  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie są włączane domyślne moduły uwierzytelniania. Należy zastąpić wartości wersji i PublicKeyToken wartościami prawidłowymi dla określonego modułu.  
   
 ```xml  
@@ -82,8 +88,8 @@ Dodaje moduł uwierzytelniania do aplikacji.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

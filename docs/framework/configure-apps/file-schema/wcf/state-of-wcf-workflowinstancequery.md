@@ -1,15 +1,16 @@
 ---
-title: <state>programu WCF,<workflowInstanceQuery>
+title: <state> programu WCF, <workflowInstanceQuery>
 ms.date: 03/30/2017
 ms.assetid: 40f21055-766c-4be9-86c4-d1d899007098
-ms.openlocfilehash: 80f7532f3c51680a2e34713b526dc43822db61b9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c323f7dba265e7fbcb09482115694088e761af0e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854949"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148896"
 ---
-# <a name="state-of-wcf-workflowinstancequery"></a>\<state>programu WCF,\<workflowInstanceQuery>
+# <a name="state-of-wcf-workflowinstancequery"></a>\<state> programu WCF, \<workflowInstanceQuery>
+
 Reprezentuje kolekcję subskrybowanego stanów z wystąpienia śledzonych przepływu pracy podczas tworzenia rekordów śledzenia.  
   
  Aby uzyskać więcej informacji o śledzeniu zapytań profilowych, zobacz [śledzenie profilów](../../../windows-workflow-foundation/tracking-profiles.md)  
@@ -84,7 +85,7 @@ Możliwe wartości stanu są opisane w poniższej tabeli:
 |Zwolniono|Wystąpienie przepływu pracy nie jest załadowany.|  
 |Anulowane|Wystąpienie przepływu pracy zostało anulowane.|  
 |Suspended|Wystąpienie przepływu pracy jest zawieszone.|  
-|Zakończone|Wystąpienie przepływu pracy jest zakończone.|  
+|Zakończony|Wystąpienie przepływu pracy jest zakończone.|  
 |Anulowano|Anulowano to wystąpienie przepływu pracy.|  
   
 ## <a name="example"></a>Przykład
@@ -101,7 +102,7 @@ Następująca konfiguracja subskrybuje przepływu rekordów dla śledzenia na po
 </workflowInstanceQueries>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElement?displayProperty=nameWithType>

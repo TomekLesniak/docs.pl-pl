@@ -2,14 +2,15 @@
 title: <add> dla <scopes>
 ms.date: 03/30/2017
 ms.assetid: 0563a7d8-fc84-4c85-9066-af32665857c2
-ms.openlocfilehash: bcde6b18c34dccf1716c809dddeb45b1b4da90f0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1f5b5ea621614880286181c7584863ea024b3d04
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398309"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149013"
 ---
 # <a name="add-of-scopes"></a>\<add> dla \<scopes>
+
 Dodaje niestandardowy identyfikator URI zakresu, którego można użyć do filtrowania punktów końcowych usługi podczas zapytania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,6 +39,7 @@ Dodaje niestandardowy identyfikator URI zakresu, którego można użyć do filtr
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -47,6 +49,7 @@ Dodaje niestandardowy identyfikator URI zakresu, którego można użyć do filtr
 |scope|Identyfikator URI zawierający zakres informacji dla punktu końcowego, który może być używany w kryterium dopasowywania do znajdowania usług.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -55,6 +58,6 @@ Dodaje niestandardowy identyfikator URI zakresu, którego można użyć do filtr
 |-------------|-----------------|  
 |[\<scopes>](scopes.md)|Zawiera kolekcję elementów konfiguracji, które określają niestandardowe identyfikatory URI, których można użyć do filtrowania punktów końcowych usługi podczas zapytania.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

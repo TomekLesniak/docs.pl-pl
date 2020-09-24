@@ -8,14 +8,15 @@ helpviewer_keywords:
 - providerOptions
 - provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-ms.openlocfilehash: 7e006adb86886d22ec08dc61fa092bf677b4da96
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9374fbaf7ceb61e5b72335417d32a08525477e0d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544742"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149637"
 ---
 # <a name="provideroption-element"></a>\<providerOption> Element
+
 Określa atrybuty wersji kompilatora dla dostawcy języka.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Określa atrybuty wersji kompilatora dla dostawcy języka.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -44,6 +46,7 @@ Określa atrybuty wersji kompilatora dla dostawcy języka.
 |`value`|Atrybut wymagany.<br /><br /> Określa wartość dla opcji; na przykład "v 3.5".|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,6 +59,7 @@ Określa atrybuty wersji kompilatora dla dostawcy języka.
 |[\<compiler> Postaci](compiler-element.md)|Określa atrybuty konfiguracji kompilatora dla dostawcy języka.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  W .NET Framework w wersji 3,5 Code Document Object Model (CodeDOM) dostawcy kodu mogą obsługiwać opcje specyficzne dla dostawcy za pomocą `<providerOption>` elementu.  
   
  .NET Framework 3,5 obejmuje zaktualizowane zestawy .NET Framework 2,0 i udostępnia 3,5 nowe zestawy, które zawierają nowe typy. Dostawcy kodów programu Microsoft C# i Visual Basic są zainstalowani w zestawach .NET Framework 2,0, ale zostały zaktualizowane do obsługi kompilatorów w wersji 3,5. Domyślnie zaktualizowani dostawcy kodu generują kod dla kompilatorów w wersji 2,0. Możesz użyć elementu, `<providerOption>` Aby zmienić docelową wersję kompilatora na 3,5. W tym celu należy określić wartość "CompilerVersion" dla `name` atrybutu i "v 3.5" dla `value` atrybutu. Należy poprzedzić numer wersji małą literą "v".  
@@ -65,6 +69,7 @@ Określa atrybuty wersji kompilatora dla dostawcy języka.
  Implementacje dostawcy kodu CodeDOM mogą przetwarzać niestandardowe opcje, dostarczając Konstruktor, który przyjmuje `providerOptions` parametr typu <xref:System.Collections.Generic.IDictionary%602> .  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie pokazano, jak określić, że należy użyć wersji 3,5 dostawcy kodu C#.  
   
 ```xml  
@@ -89,7 +94,7 @@ Określa atrybuty wersji kompilatora dla dostawcy języka.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-ms.openlocfilehash: f3c1a1670139a8262dea449bfff99c7c1c19f088
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: eb29701912a45a484b1716195b449e8a97d1d4b5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088946"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149299"
 ---
 # <a name="assert-element"></a>\<assert> Element
+
 Określa, czy podczas wywoływania metody ma być wyświetlane okno komunikatu <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> , a także określa nazwę pliku, w którym mają zostać zapisane komunikaty.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Określa, czy podczas wywoływania metody ma być wyświetlane okno komunikatu <
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,10 +44,11 @@ Określa, czy podczas wywoływania metody ma być wyświetlane okno komunikatu <
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|`true`|Wyświetla okno komunikatu. Domyślnie włączone.|  
+|`true`|Wyświetla okno komunikatu. Jest to opcja domyślna.|  
 |`false`|Nie wyświetla okna komunikatu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,9 +59,11 @@ Określa, czy podczas wywoływania metody ma być wyświetlane okno komunikatu <
 |`system.diagnostics`|Określa detektory śledzenia, które zbierają, przechowują i rozsyłają komunikaty oraz poziom, w którym ustawiono przełącznik śledzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Oba atrybuty w **\<assert>** elemencie są opcjonalne. Można wyłączyć okna komunikatów bez określania pliku, w którym mają zostać zapisane komunikaty, lub można określić plik, do którego mają być zapisane komunikaty, pozostawiając pola komunikatów włączone.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak wyłączyć wyświetlanie okien komunikatów po wywołaniu **debugowania. Assert** i Zapisz wiadomości w `c:\log.txt` .  
   
 ```xml  
@@ -69,7 +74,7 @@ Określa, czy podczas wywoływania metody ma być wyświetlane okno komunikatu <
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.Debug>
 - [Schemat ustawień śledzenia i debugowania](index.md)

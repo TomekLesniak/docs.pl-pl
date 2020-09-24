@@ -8,14 +8,15 @@ helpviewer_keywords:
 - alwaysFlowImpersonationPolicy element
 - <alwaysFlowImpersonationPolicy> element
 ms.assetid: ee622801-9e46-470b-85ab-88c4b1dd2ee1
-ms.openlocfilehash: 7c8ac37932a528ff0f000cbaab49124dec51b88c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9316f026a807b6ad36014157061f67bdbd7d3d18
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154486"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149442"
 ---
 # <a name="alwaysflowimpersonationpolicy-element"></a>\<alwaysFlowImpersonationPolicy> Element
+
 Określa, że tożsamość systemu Windows jest zawsze przepływów między punktami asynchronicznymi, niezależnie od tego, jak personifikacja została wykonana.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Określa, że tożsamość systemu Windows jest zawsze przepływów między punk
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,10 +44,11 @@ Określa, że tożsamość systemu Windows jest zawsze przepływów między punk
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|`false`|Tożsamość systemu Windows nie jest przepływa między punktami asynchronicznymi, chyba że personifikacja jest wykonywana za pomocą metod zarządzanych, takich jak <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> . Domyślnie włączone.|  
+|`false`|Tożsamość systemu Windows nie jest przepływa między punktami asynchronicznymi, chyba że personifikacja jest wykonywana za pomocą metod zarządzanych, takich jak <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> . Jest to opcja domyślna.|  
 |`true`|Tożsamość systemu Windows jest zawsze przepływów między punktami asynchronicznymi, niezależnie od tego, jak personifikacja została wykonana.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,6 +59,7 @@ Określa, że tożsamość systemu Windows jest zawsze przepływów między punk
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  W .NET Framework wersje 1,0 i 1,1 tożsamość systemu Windows nie jest przesyłana między punktami asynchronicznymi. W .NET Framework w wersji 2,0 istnieje <xref:System.Threading.ExecutionContext> obiekt, który zawiera informacje o aktualnie wykonywanym wątku i przepływa przez punkty asynchroniczne w domenie aplikacji. <xref:System.Security.Principal.WindowsIdentity>Również przepływy jako część informacji przesyłanych przez punkty asynchroniczne, pod warunkiem, że personifikacja została osiągnięta przy użyciu metod zarządzanych, takich jak <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> , a nie za pośrednictwem innych, takich jak wywołanie platformy do metod natywnych. Ten element służy do określenia, że tożsamość systemu Windows jest przesyłana w punktach asynchronicznych, niezależnie od sposobu uzyskania personifikacji.  
   
  To zachowanie domyślne można zmienić na dwa sposoby:  
@@ -69,11 +73,12 @@ Określa, że tożsamość systemu Windows jest zawsze przepływów między punk
      Jeśli do załadowania środowiska CLR jest używany niezarządzany interfejs hostingu (zamiast prostego zarządzanego pliku wykonywalnego), można określić specjalną flagę w wywołaniu funkcji [funkcji CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) . Aby włączyć tryb zgodności dla całego procesu, należy ustawić `flags` parametr dla [funkcji CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) na `STARTUP_ALWAYSFLOW_IMPERSONATION` .  
   
 ## <a name="configuration-file"></a>Plik konfiguracji  
+
  W aplikacji .NET Framework ten element może być używany tylko w pliku konfiguracji aplikacji.  
   
- W przypadku aplikacji ASP.NET przepływ personifikacji można skonfigurować w pliku aspnet. config znajdującym się w \<Windows Folder> katalogu \Microsoft.NET\Framework\vx.x.xxxx.  
+ W przypadku aplikacji ASP.NET przepływ personifikacji można skonfigurować w pliku aspnet.config znalezionym w \<Windows Folder> katalogu \Microsoft.NET\Framework\vx.x.xxxx.  
   
- Domyślnie ASP.NET powoduje wyłączenie przepływu personifikacji w pliku aspnet. config przy użyciu następujących ustawień konfiguracji:  
+ ASP.NET domyślnie wyłącza przepływ personifikacji w pliku aspnet.config przy użyciu następujących ustawień konfiguracji:  
   
 ```xml
 <configuration>  
@@ -96,6 +101,7 @@ Określa, że tożsamość systemu Windows jest zawsze przepływów między punk
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak określić, że tożsamość systemu Windows jest realizowana w punktach asynchronicznych, nawet jeśli Personifikacja jest realizowana za pośrednictwem środków innych niż metody zarządzane.  
   
 ```xml  
@@ -106,8 +112,8 @@ Określa, że tożsamość systemu Windows jest zawsze przepływów między punk
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)
-- [\<legacyImpersonationPolicy>Postaci](legacyimpersonationpolicy-element.md)
+- [\<legacyImpersonationPolicy> Postaci](legacyimpersonationpolicy-element.md)

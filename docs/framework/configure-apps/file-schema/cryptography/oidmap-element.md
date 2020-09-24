@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <oidMap> element
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
-ms.openlocfilehash: a28eaf68fe1e6ab3f26592eee5ae2d0f2e7a3256
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6c57810389acbd58e6d2e05277a6f26fa0aac8c6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149520"
 ---
 # <a name="oidmap-element"></a>\<oidMap> Element
+
 Zawiera mapowania identyfikatorów obiektów ASN. 1 (OID) do klas.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,9 +32,11 @@ Zawiera mapowania identyfikatorów obiektów ASN. 1 (OID) do klas.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -51,6 +54,7 @@ Zawiera mapowania identyfikatorów obiektów ASN. 1 (OID) do klas.
 |`mscorlib`|Zawiera `cryptographySettings` element.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, **\<oidMap>** aby zawierać mapowanie identyfikatora OID dla algorytmu wyznaczania wartości skrótu RIPEMD-160 do implementacji algorytmu wyznaczania wartości skrótu.  
   
 ```xml  
@@ -73,7 +77,7 @@ Zawiera mapowania identyfikatorów obiektów ASN. 1 (OID) do klas.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat pliku konfiguracji](../index.md)
 - [Schemat ustawień kryptografii](index.md)

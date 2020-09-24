@@ -2,14 +2,15 @@
 title: Funkcja (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 0bb88992-37ed-4991-ace5-55be612a2c4d
-ms.openlocfilehash: a3cc843c7f16f667508aeaea65879de6842478bc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4e06b5bf8a2ca62630666ab3e8ba35f0425e3988
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544495"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148038"
 ---
 # <a name="function-entity-sql"></a>Funkcja (Entity SQL)
+
 Definiuje funkcję w zakresie polecenia kwerendy Entity SQL.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ FUNCTION function-name
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `function-name`  
  Nazwa funkcji.  
   
@@ -51,6 +53,7 @@ FUNCTION function-name
  Wyrażenie zwracające anonimowe, strukturalnie wpisane rekordy z co najmniej jednej wartości. Aby uzyskać więcej informacji, zobacz [wiersz](row-entity-sql.md).  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wiele funkcji o tej samej nazwie można zadeklarować wewnętrznie, o ile sygnatury funkcji różnią się od siebie. Aby uzyskać więcej informacji, zobacz [rozpoznawanie przeciążeń funkcji](function-overload-resolution-entity-sql.md).  
   
  Wbudowaną funkcję można wywołać w Entity SQL polecenie dopiero po zdefiniowaniu tego polecenia. Jednak Wbudowana funkcja może być wywoływana wewnątrz innej wbudowanej funkcji albo przed lub po zdefiniowaniu wywoływanej funkcji. W poniższym przykładzie funkcja A wywołuje funkcję B przed zdefiniowaniem funkcji B:  
@@ -66,16 +69,18 @@ FUNCTION function-name
  Funkcje mogą być również deklarowane w samym modelu. Funkcje zadeklarowane w modelu są wykonywane w taki sam sposób jak funkcje zadeklarowane jako wbudowane w poleceniu. Aby uzyskać więcej informacji, zobacz [funkcje zdefiniowane przez użytkownika](user-defined-functions-entity-sql.md).  
   
 ## <a name="example"></a>Przykład  
+
  Następujące polecenie Entity SQL definiuje funkcję `Products` , która pobiera liczbę całkowitą do odfiltrowania zwróconych produktów.  
   
  [!code-sql[DP EntityServices Concepts#FUNCTION1](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function1)]  
   
 ## <a name="example"></a>Przykład  
+
  Następujące polecenie Entity SQL definiuje funkcję `StringReturnsCollection` pobierającą ciągi do filtrowania zwróconych kontaktów.  
   
  [!code-sql[DP EntityServices Concepts#FUNCTION2](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function2)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie do jednostki SQL](entity-sql-reference.md)
 - [Jednostki języka SQL](entity-sql-language.md)

@@ -2,14 +2,15 @@
 title: <add> dla <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
-ms.openlocfilehash: 8328b6d08c1b57ad7a899c8cb489e07037e5af09
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 11be233d846f9025f041a26174e5b3bd2abdab55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558164"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149195"
 ---
 # <a name="add-of-commonparameters"></a>\<add> dla \<commonParameters>
+
 Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu usługach. Zazwyczaj ten parametr zawiera parametry połączenia z bazą danych, które mogą być współużytkowane przez trwałe usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -39,9 +41,10 @@ Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu
 |Atrybut|Opis|  
 |---------------|-----------------|  
 |name|Nazwa parametru określonego dla usługi.|  
-|Wartość|Wartość parametru określonego dla usługi.|  
+|wartość|Wartość parametru określonego dla usługi.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -51,6 +54,7 @@ Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu
 |[\<commonParameters>](commonparameters.md)|Kolekcja typowych parametrów używanych przez usługi. Ta kolekcja zazwyczaj obejmuje parametry połączenia z bazą danych, które mogą być współużytkowane przez trwałe usługi.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<commonParameters>`Element definiuje wszystkie parametry, które są używane globalnie w wielu usługach, na przykład `ConnectionString` podczas korzystania z <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> .  
   
  W przypadku usług, które zatwierdzają partie pracy do magazynów trwałości, takich jak <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> i <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> , można umożliwić im ponawianie transakcji przy użyciu `EnableRetries` parametru, jak pokazano w następującym przykładzie:  
@@ -86,7 +90,7 @@ Określa pary nazwa-wartość parametrów, które są globalnie używane w wielu
 </commonParameters>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>
 - <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>

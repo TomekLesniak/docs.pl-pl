@@ -2,14 +2,15 @@
 title: <add><claimTypeRequirements>elementu
 ms.date: 03/30/2017
 ms.assetid: 3234cd45-1478-468e-8b19-5c50815c4786
-ms.openlocfilehash: f6948052c62684faa734b592f5bdfc2e7827a07a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 920d2b3fa4b51ee56e30863d521214ff66e7fcf2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153103"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149247"
 ---
 # <a name="add-of-claimtyperequirements-element"></a>\<add>\<claimTypeRequirements>elementu
+
 Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać się w poświadczeniu Federacji. Na przykład usługi określają wymagania dotyczące poświadczeń przychodzących, które muszą mieć określony zestaw typów roszczeń.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,6 +44,7 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 |isoption|Wartość logiczna określająca, czy jest to dla opcjonalnego żądania. Ustaw ten atrybut na, `false` Jeśli jest to wymagane żądanie.<br /><br /> Tego atrybutu można użyć, gdy usługa żąda pewnych informacji, ale nie wymaga tego. Na przykład, jeśli użytkownik musi wprowadzić imię, nazwisko i adres, ale zdecydować, że numer telefonu jest opcjonalny.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -51,9 +54,11 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 |[\<claimTypeRequirements>](claimtyperequirements-for-message.md)|Określa kolekcję wymaganych typów roszczeń. Każdy element jest typu <xref:System.ServiceModel.Configuration.ClaimTypeElement> .<br /><br /> W scenariuszu federacyjnym usługi określają wymagania dotyczące poświadczeń przychodzących. Na przykład poświadczenia przychodzące muszą mieć określony zestaw typów roszczeń. Każdy element w tej kolekcji określa typy wymaganych i opcjonalnych oświadczeń, które powinny być wyświetlane w federacyjnym poświadczeniu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  W scenariuszu federacyjnym usługi określają wymagania dotyczące poświadczeń przychodzących. Na przykład poświadczenia przychodzące muszą mieć określony zestaw typów roszczeń. Ten wymóg jest zamieszczony w zasadach zabezpieczeń. Gdy klient zażąda poświadczeń z usługi federacyjnej (na przykład CardSpace), umieszcza wymagania w żądaniu tokenu (RequestSecurityToken), aby usługa federacyjna mogła wystawić poświadczenia spełniające odpowiednie wymagania.  
   
 ## <a name="example"></a>Przykład  
+
  Następująca konfiguracja dodaje dwa wymagania dotyczące typów roszczeń do powiązania zabezpieczeń.  
   
 ```xml  
@@ -74,7 +79,7 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 </bindings>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>
 - <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>

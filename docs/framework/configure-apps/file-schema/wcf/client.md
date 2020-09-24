@@ -5,14 +5,15 @@ f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel/client
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
-ms.openlocfilehash: 7aa3755be97a839cb576d53852b75cfe50e39276
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b3234bfa60cd1e3c88778951fc27301c615c84ba
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "72773944"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148961"
 ---
 # \<client>
+
 `client`Element definiuje listę punktów końcowych, z którymi klient może się połączyć.
 
 [**\<configuration>**](../configuration-element.md)\
@@ -33,9 +34,11 @@ ms.locfileid: "72773944"
 ```
 
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.
 
 ### <a name="attributes"></a>Atrybuty
+
  Brak
 
 ### <a name="child-elements"></a>Elementy podrzędne
@@ -52,6 +55,7 @@ ms.locfileid: "72773944"
 |[\<system.serviceModel>](system-servicemodel.md)|Element główny wszystkich elementów konfiguracji Windows Communication Foundation (WCF).|
 
 ## <a name="remarks"></a>Uwagi
+
  `client`Sekcja definiuje listę punktów końcowych, z którymi klient może się połączyć. Każdy punkt końcowy wymieniony w sekcji Client definiuje własne powiązanie, zachowanie i kontrakt. Jest unikatowo identyfikowana przez kombinację `name` atrybutów i `contract` . Kod klienta określa, `name` Aby połączyć się z punktem końcowym usługi, którą implementuje klient. Jeśli `name` atrybut zostanie pominięty, punkt końcowy działa jako domyślny punkt końcowy dla wdrażanego kontraktu.
 
  Ponadto ta sekcja określa również ustawienia przetwarzania metadanych.
@@ -73,7 +77,7 @@ ms.locfileid: "72773944"
 </client>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ClientSection>
 - <xref:System.ServiceModel.Configuration.MetadataElement>

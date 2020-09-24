@@ -1,5 +1,5 @@
 ---
-title: <clear>Element dla <listeners> elementu<source>
+title: <clear> Element dla <listeners> elementu <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
@@ -7,14 +7,15 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <source>
 - clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-ms.openlocfilehash: 7f9ddd93d27c3619119702c82c9e8752dab1af7b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d3e76496c82b508feabf8a46cf7bce7e3d54e8cf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153584"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149286"
 ---
-# <a name="clear-element-for-listeners-for-source"></a>\<clear>Element dla \<listeners> elementu\<source>
+# <a name="clear-element-for-listeners-for-source"></a>\<clear> Element dla \<listeners> elementu \<source>
+
 Czyści `Listeners` kolekcję dla źródła śledzenia.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,12 +32,15 @@ Czyści `Listeners` kolekcję dla źródła śledzenia.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -50,12 +54,15 @@ Czyści `Listeners` kolekcję dla źródła śledzenia.
 |`listeners`|Określa detektory, które zbierają, przechowują i rozsyłają komunikaty.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<clear>`Element usuwa wszystkie odbiorniki z `Listeners` kolekcji dla źródła śledzenia, włącznie z <xref:System.Diagnostics.DefaultTraceListener> . Możesz użyć `<clear>` elementu przed użyciem `<add>` elementu, aby mieć pewność, że w kolekcji nie ma żadnych innych aktywnych odbiorników.  
   
 ## <a name="configuration-file"></a>Plik konfiguracji  
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak używać `<clear>` elementu przed użyciem `<add>` elementów, aby dodać detektory `console` oraz `textListener` do `Listeners` kolekcji dla źródła śledzenia `TraceSourceApp` .  
   
 ```xml  
@@ -84,7 +91,7 @@ Czyści `Listeners` kolekcję dla źródła śledzenia.
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TraceListener>

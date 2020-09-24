@@ -5,24 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: 571904d36293caa6d4330b2ffda2cff5aca8e6b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de925afd071a5c92dfa3f6a5e35e62a8ba734cd8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174462"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147622"
 ---
 # <a name="windows-applications-using-callbacks"></a>Aplikacje systemu Windows z wykorzystaniem wywołania zwrotnego
-W większości scenariuszy przetwarzania asynchroniczną chcesz rozpocząć operację bazy danych i kontynuować uruchamianie innych procesów bez oczekiwania na zakończenie operacji bazy danych. Jednak wiele scenariuszy wymagają zrobienia czegoś po zakończeniu operacji bazy danych. W aplikacji systemu Windows, na przykład można delegować długotrwałą operację do wątku w tle, umożliwiając jednocześnie wątku interfejsu użytkownika, aby pozostać responsywny. Jednak po zakończeniu operacji bazy danych, chcesz użyć wyników do wypełnienia formularza. Ten typ scenariusza najlepiej jest zaimplementować z wywołaniem zwrotnym.  
+
+W większości scenariuszy przetwarzania asynchronicznego należy uruchomić operację bazy danych i kontynuować uruchamianie innych procesów bez oczekiwania na ukończenie operacji bazy danych. Jednak wiele scenariuszy wymaga wykonania czegoś po zakończeniu operacji bazy danych. Na przykład w aplikacji systemu Windows możesz chcieć delegować długotrwałą operację do wątku w tle, jednocześnie zezwalając na pozostawanie odpowiedzi wątku interfejsu użytkownika. Jednak po zakończeniu działania bazy danych chcesz użyć wyników do wypełnienia formularza. Ten typ scenariusza jest najlepiej zaimplementowany przy użyciu wywołania zwrotnego.  
   
- Wywołania zwrotnego można zdefiniować, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>określając <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>pełnomocnika <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> <xref:System.AsyncCallback> w , lub metody. Pełnomocnik jest wywoływana po zakończeniu operacji. Można przekazać delegata odwołanie <xref:System.Data.SqlClient.SqlCommand> do siebie, dzięki czemu <xref:System.Data.SqlClient.SqlCommand> można łatwo `End` uzyskać dostęp do obiektu i wywołać odpowiednią metodę bez konieczności używania zmiennej globalnej.  
+ Wywołanie zwrotne można zdefiniować przez określenie <xref:System.AsyncCallback> delegata w <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metodzie, lub. Delegat jest wywoływany, gdy operacja zostanie ukończona. Można przekazać delegata odwołanie do <xref:System.Data.SqlClient.SqlCommand> samego siebie, co ułatwia dostęp do <xref:System.Data.SqlClient.SqlCommand> obiektu i wywoływanie odpowiedniej `End` metody bez konieczności używania zmiennej globalnej.  
   
 ## <a name="example"></a>Przykład  
- Następująca aplikacja systemu Windows demonstruje użycie <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> metody, wykonując instrukcję Transact-SQL, która zawiera kilkusekundowe opóźnienie (emulowanie długotrwałego polecenia).  
+
+ W następującej aplikacji systemu Windows pokazano użycie <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> metody, wykonanie instrukcji języka Transact-SQL, która obejmuje opóźnienie kilku sekund (emulowanie długotrwałego polecenia).  
   
- W tym przykładzie przedstawiono szereg ważnych technik, w tym wywoływanie metody, która współdziała z formularzem z oddzielnego wątku. Ponadto w tym przykładzie pokazano, jak należy zablokować użytkownikom jednocześnie wykonywanie polecenia wiele razy i jak należy upewnić się, że formularz nie zamyka przed wywołaniem procedury wywołania zwrotnego.  
+ W tym przykładzie pokazano kilka ważnych technik, w tym wywoływanie metody, która współdziała z formularzem z oddzielnego wątku. Ponadto w tym przykładzie pokazano, jak należy zablokować użytkownikom współbieżne wykonywanie polecenia wielokrotnie i jak należy zapewnić, że formularz nie zostanie zamknięty przed wywołaniem procedury wywołania zwrotnego.  
   
- Aby skonfigurować ten przykład, należy utworzyć nową aplikację systemu Windows. Umieść <xref:System.Windows.Forms.Button> formant <xref:System.Windows.Forms.Label> i dwa formanty w formularzu (akceptując domyślną nazwę dla każdego formantu). Dodaj następujący kod do klasy formularza, modyfikując parametry połączenia zgodnie z oczekiwaniami dla środowiska.  
+ Aby skonfigurować ten przykład, należy utworzyć nową aplikację systemu Windows. Umieść <xref:System.Windows.Forms.Button> kontrolkę i dwie <xref:System.Windows.Forms.Label> kontrolki w formularzu (akceptując nazwę domyślną dla każdej kontrolki). Dodaj następujący kod do klasy formularza, modyfikując parametry połączenia jako niezbędne dla danego środowiska.  
   
 ```vb  
 ' Add these to the top of the class:  

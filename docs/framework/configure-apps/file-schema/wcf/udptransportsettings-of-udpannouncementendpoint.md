@@ -2,14 +2,15 @@
 title: <udpTransportSettings> dla <udpAnnouncementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: a7ddff1a-5eed-4bbc-8580-b95ef8890e1f
-ms.openlocfilehash: b67bdf825948dffe18aabe91b0de236eb929bccc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9b2efe706777550f300f5b88710874342c51c5cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854848"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148858"
 ---
 # <a name="udptransportsettings-of-udpannouncementendpoint"></a>\<udpTransportSettings> dla \<udpAnnouncementEndpoint>
+
 Ten element konfiguracji udostępnia ustawienia transportu UDP dla programu [\<udpAnnouncementEndpoint>](udpannouncementendpoint.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ Ten element konfiguracji udostępnia ustawienia transportu UDP dla programu [\<u
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -58,6 +60,7 @@ Ten element konfiguracji udostępnia ustawienia transportu UDP dla programu [\<u
 |timeToLive|Liczba całkowita określająca liczbę przeskoków segmentu sieci, które mogą przechodzić przez pakiet multiemisji.  Ten atrybut uwidacznia funkcje skojarzone z `IP_MULTICAST_TTL` `IP_TTL` opcjami i gniazdem.<br /><br /> Wartość domyślna to 1.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -66,6 +69,6 @@ Ten element konfiguracji udostępnia ustawienia transportu UDP dla programu [\<u
 |-------------|-----------------|  
 |[\<udpAnnouncementEndpoint>](udpannouncementendpoint.md)|Standardowy punkt końcowy ze stałym kontraktem anonsu i powiązaniem transportu UDP.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Discovery.UdpTransportSettings>

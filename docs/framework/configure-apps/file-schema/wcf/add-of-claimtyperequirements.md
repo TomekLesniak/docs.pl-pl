@@ -2,14 +2,15 @@
 title: <add> dla <claimTypeRequirements>
 ms.date: 03/30/2017
 ms.assetid: c68e83c9-39e8-4264-b1ce-b6a9eb5b98aa
-ms.openlocfilehash: 6ba935f7f6dae0e4d9e6581f53a50c684efcbed3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 00699a6fa5d0de7ac554db6ef8d0bbe511a85c0a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153090"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149221"
 ---
 # <a name="add-of-claimtyperequirements"></a>\<add> dla \<claimTypeRequirements>
+
 Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać się w poświadczeniu Federacji. Na przykład usługi określają wymagania dotyczące poświadczeń przychodzących, które muszą mieć określony zestaw typów roszczeń.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,6 +44,7 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 |isoption|Wartość logiczna określająca, czy jest to dla opcjonalnego żądania. Ustaw ten atrybut na, `false` Jeśli jest to wymagane żądanie.<br /><br /> Tego atrybutu można użyć, gdy usługa żąda pewnych informacji, ale nie wymaga tego. Na przykład, jeśli użytkownik musi wprowadzić imię, nazwisko i adres, ale zdecydować, że numer telefonu jest opcjonalny.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -51,9 +54,11 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 |[\<claimTypeRequirements>](claimtyperequirements-element.md)|Określa kolekcję wymaganych typów roszczeń.<br /><br /> W scenariuszu federacyjnym usługi określają wymagania dotyczące poświadczeń przychodzących. Na przykład poświadczenia przychodzące muszą mieć określony zestaw typów roszczeń. Każdy element w tej kolekcji określa typy wymaganych i opcjonalnych oświadczeń, które powinny być wyświetlane w federacyjnym poświadczeniu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  W scenariuszu federacyjnym usługi określają wymagania dotyczące poświadczeń przychodzących. Na przykład poświadczenia przychodzące muszą mieć określony zestaw typów roszczeń. Ten wymóg jest zamieszczony w zasadach zabezpieczeń. Gdy klient zażąda poświadczeń z usługi federacyjnej (na przykład CardSpace), umieszcza wymagania w żądaniu tokenu (RequestSecurityToken), aby usługa federacyjna mogła wystawić poświadczenia spełniające odpowiednie wymagania.  
   
 ## <a name="example"></a>Przykład  
+
  Następująca konfiguracja dodaje dwa wymagania dotyczące typów roszczeń do powiązania zabezpieczeń.  
   
 ```xml  
@@ -74,7 +79,7 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 </bindings>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>
 - <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.ClaimTypeRequirements%2A>
@@ -87,5 +92,5 @@ Określa typy wymaganych i opcjonalnych oświadczeń, które powinny pojawiać s
 - [Rozszerzanie powiązań](../../../wcf/extending/extending-bindings.md)
 - [Powiązania niestandardowe](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Zabezpieczenia wiązania niestandardowego](../../../wcf/samples/custom-binding-security.md)
