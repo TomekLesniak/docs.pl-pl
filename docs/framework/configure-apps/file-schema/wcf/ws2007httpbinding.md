@@ -2,14 +2,15 @@
 title: <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8586ecc9-bdaa-44d6-8d4d-7038e4ea1741
-ms.openlocfilehash: 102e220ad01410568a18ce4ea6fac06ca8c15230
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5f35029806172c3abe639052798c0a018e8514f0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558735"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158607"
 ---
 # \<ws2007HttpBinding>
+
 Definiuje powiązanie interoperacyjne, które zapewnia obsługę prawidłowych wersji <xref:System.ServiceModel.WSHttpBinding.Security%2A> <xref:System.ServiceModel.ReliableSession> elementów, i <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -59,6 +60,7 @@ Definiuje powiązanie interoperacyjne, które zapewnia obsługę prawidłowych w
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -96,6 +98,7 @@ Definiuje powiązanie interoperacyjne, które zapewnia obsługę prawidłowych w
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dodaje do programu `WS2007HttpBinding` powiązanie dostarczone z systemem, które jest podobne do programu, `WSHttpBinding` ale używa organizacji do rozwoju standardowych wersji standardu języka Oasis (Structured Information Standards) ReliableSession, Security i TransactionFlow Protocols. W przypadku korzystania z tego powiązania nie są wymagane żadne zmiany w modelu obiektu ani w ustawieniach domyślnych.  
   
 ## <a name="example"></a>Przykład  
@@ -136,7 +139,7 @@ Definiuje powiązanie interoperacyjne, które zapewnia obsługę prawidłowych w
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.WS2007HttpBinding>
 - <xref:System.ServiceModel.Configuration.WS2007HttpBindingElement>

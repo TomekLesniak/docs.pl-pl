@@ -18,14 +18,15 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: d9653be8b67ef4d971c157b8dd8d82b2ae3c2287
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 9f5d39e396e9be3e633326d4034a89d874373d75
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105521"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159296"
 ---
 # <a name="basic-linq-query-operations-c"></a>Podstawowe operacje zapytań LINQ (C#)
+
 Ten temat zawiera krótkie wprowadzenie do wyrażeń zapytań LINQ i niektórych typowych rodzajów operacji wykonywanych w zapytaniu. Bardziej szczegółowe informacje znajdują się w następujących tematach:  
   
  [Wyrażenia zapytania LINQ](../../../linq/index.md)  
@@ -38,6 +39,7 @@ Ten temat zawiera krótkie wprowadzenie do wyrażeń zapytań LINQ i niektórych
 > Jeśli znasz już język zapytań, taki jak SQL lub XQuery, możesz pominąć większość tego tematu. Przeczytaj temat " `from` klauzula" w następnej sekcji, aby dowiedzieć się więcej na temat porządku klauzul w wyrażeniach zapytań LINQ.  
   
 ## <a name="obtaining-a-data-source"></a>Uzyskanie źródła danych  
+
  W zapytaniu LINQ pierwszym krokiem jest określenie źródła danych. W języku C#, jak w większości języków programowania, zmienna musi być zadeklarowana, zanim będzie można jej użyć. W zapytaniu LINQ `from` klauzula jest najpierw w celu wprowadzenia źródła danych ( `customers` ) i *zmiennej zakresu* ( `cust` ).  
   
  [!code-csharp[csLINQGettingStarted#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#23)]  
@@ -48,6 +50,7 @@ Ten temat zawiera krótkie wprowadzenie do wyrażeń zapytań LINQ i niektórych
 > W przypadku nieogólnych źródeł danych, takich jak <xref:System.Collections.ArrayList> , zmienna zakresu musi być jawnie wpisana. Aby uzyskać więcej informacji, zobacz [How to Query an ArrayList with LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) i [from](../../../language-reference/keywords/from-clause.md).  
   
 ## <a name="filtering"></a>Filtrowanie  
+
  Prawdopodobnie najbardziej typową operacją zapytania jest stosowanie filtru w postaci wyrażenia logicznego. Filtr powoduje, że zapytanie zwraca tylko te elementy, dla których wyrażenie ma wartość true. Wynik jest tworzony przy użyciu `where` klauzuli. Filtr w efekcie określa elementy, które mają zostać wykluczone z sekwencji źródłowej. W poniższym przykładzie zwracane są tylko te `customers` osoby, które mają adres w Londynie.  
   
  [!code-csharp[csLINQGettingStarted#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#24)]  
@@ -62,7 +65,8 @@ Ten temat zawiera krótkie wprowadzenie do wyrażeń zapytań LINQ i niektórych
   
  Aby uzyskać więcej informacji, zobacz [klauzula WHERE](../../../language-reference/keywords/where-clause.md).  
   
-## <a name="ordering"></a>Szeregowanie  
+## <a name="ordering"></a>Zamawianie  
+
  Często wygodnie jest posortować zwrócone dane. `orderby`Klauzula spowoduje, że elementy w zwracanej sekwencji będą sortowane zgodnie z domyślną wartością porównującą dla sortowanego typu. Na przykład następujące zapytanie można rozszerzyć, aby posortować wyniki na podstawie `Name` właściwości. Ponieważ `Name` jest ciągiem, domyślna funkcja porównująca wykonuje alfabetyczne sortowanie od a do z.  
   
  [!code-csharp[csLINQGettingStarted#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#27)]  
@@ -72,6 +76,7 @@ Ten temat zawiera krótkie wprowadzenie do wyrażeń zapytań LINQ i niektórych
  Aby uzyskać więcej informacji, zobacz [klauzula OrderBy](../../../language-reference/keywords/orderby-clause.md).  
   
 ## <a name="grouping"></a>Grupowanie  
+
  `group`Klauzula pozwala grupować wyniki na podstawie określonego klucza. Można na przykład określić, że wyniki mają być pogrupowane według, `City` aby wszyscy klienci z Londyn lub Paryż w poszczególnych grupach. W tym przypadku `cust.City` jest kluczem.  
   
  [!code-csharp[csLINQGettingStarted#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#28)]  
@@ -85,6 +90,7 @@ Ten temat zawiera krótkie wprowadzenie do wyrażeń zapytań LINQ i niektórych
  Aby uzyskać więcej informacji, zobacz [klauzula](../../../language-reference/keywords/group-clause.md)Group.  
   
 ## <a name="joining"></a>Dołączenie  
+
  Operacje Join tworzą skojarzenia między sekwencjami, które nie są jawnie modelowane w źródłach danych. Na przykład możesz wykonać sprzężenie, aby znaleźć wszystkich klientów i dystrybutorów, którzy mają tę samą lokalizację. W LINQ `join` klauzula zawsze działa w odniesieniu do kolekcji obiektów, a nie bezpośrednio w tabelach bazy danych.  
   
  [!code-csharp[csLINQGettingStarted#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#36)]  
@@ -98,6 +104,7 @@ from order in Customer.Orders...
  Aby uzyskać więcej informacji, zobacz [Klauzula join](../../../language-reference/keywords/join-clause.md).  
   
 ## <a name="selecting-projections"></a>Zaznaczenie (projekcje)  
+
  `select`Klauzula tworzy wyniki zapytania i określa "kształt" lub typ każdego zwróconego elementu. Można na przykład określić, czy wyniki będą składać się z kompletnych `Customer` obiektów, tylko jednego elementu członkowskiego, podzestawu elementów członkowskich, czy pewnego całkowicie innego typu wyników na podstawie obliczeń lub tworzenia nowego obiektu. Gdy `select` klauzula generuje coś innego niż kopia elementu źródłowego, operacja jest nazywana *projekcją*. Użycie projekcji do przekształcania danych jest zaawansowaną funkcją wyrażeń zapytań LINQ. Aby uzyskać więcej informacji, zobacz [przekształcenia danych za pomocą LINQ (C#)](./data-transformations-with-linq.md) i [SELECT](../../../language-reference/keywords/select-clause.md).  
   
 ## <a name="see-also"></a>Zobacz też

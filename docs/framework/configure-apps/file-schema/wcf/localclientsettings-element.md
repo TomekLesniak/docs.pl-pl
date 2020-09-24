@@ -2,14 +2,15 @@
 title: <localClientSettings>, element
 ms.date: 03/30/2017
 ms.assetid: 4680ace5-f4e1-4fcb-b9d8-a4a4af5cd7ae
-ms.openlocfilehash: 3ec0394943c030a8866087c98a912682a2a2112e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 19eaea71fdaad1b945524cca5cf15634e0b0fa14
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400319"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158737"
 ---
 # <a name="localclientsettings-element"></a>\<localClientSettings>, element
+
 Określa ustawienia zabezpieczeń lokalnego klienta dla tego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,6 +40,7 @@ Określa ustawienia zabezpieczeń lokalnego klienta dla tego powiązania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -58,6 +60,7 @@ Określa ustawienia zabezpieczeń lokalnego klienta dla tego powiązania.
 |`timestampValidityDuration`|Wartość dodatnia określająca <xref:System.TimeSpan> czas ważności sygnatury czasowej. Wartość domyślna to "00:15:00".|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -68,9 +71,10 @@ Określa ustawienia zabezpieczeń lokalnego klienta dla tego powiązania.
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Określa wartości domyślne używane do inicjowania usługi bezpiecznej konwersacji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ustawienia są lokalne w sensie, że nie są ustawieniami pochodzącymi z zasad zabezpieczeń usługi.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>
 - <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalClientSettings%2A>
@@ -81,5 +85,5 @@ Określa ustawienia zabezpieczeń lokalnego klienta dla tego powiązania.
 - [Rozszerzanie powiązań](../../../wcf/extending/extending-bindings.md)
 - [Powiązania niestandardowe](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Zabezpieczenia wiązania niestandardowego](../../../wcf/samples/custom-binding-security.md)

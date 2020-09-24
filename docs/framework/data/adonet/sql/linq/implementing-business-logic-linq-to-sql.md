@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-ms.openlocfilehash: a8be0bd542c76e732d47c19f1d3b578884e2b5ff
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3d703f7a13f21947fb5d2b5adcac8ae4df6a1547
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558930"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158373"
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Implementowanie logiki biznesowej (LINQ to SQL)
+
 Termin "logika biznesowa" w tym temacie odnosi się do wszystkich reguł niestandardowych lub testów weryfikacyjnych, które są stosowane do danych, zanim zostaną wstawione, zaktualizowane lub usunięte z bazy danych. Logika biznesowa jest również czasami określana jako "reguły biznesowe" lub "Logika domeny". W aplikacjach n-warstwowych zwykle jest to warstwa logiczna, dzięki czemu można ją modyfikować niezależnie od warstwy prezentacji lub warstwy dostępu do danych. Logika biznesowa może być wywoływana przez warstwę dostępu do danych przed dowolnymi aktualizacjami, wstawianiem lub usuwaniem danych w bazie danych.  
   
  Logika biznesowa może być prosta jako Walidacja schematu, aby upewnić się, że typ pola jest zgodny z typem kolumny tabeli. Lub może składać się z zestawu obiektów, które współpracują w sposób arbitralnie skomplikowany. Reguły mogą być implementowane jako procedury składowane w bazie danych lub jako obiekty w pamięci. Jednak logika biznesowa jest zaimplementowana, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] umożliwia korzystanie z klas częściowych i metod częściowych w celu oddzielenia logiki biznesowej od kodu dostępu do danych.  
   
 ## <a name="how-linq-to-sql-invokes-your-business-logic"></a>Jak LINQ to SQL wywołuje logikę biznesową  
+
  Podczas generowania klasy jednostki w czasie projektowania, ręcznie lub przy użyciu Object Relational Designer lub SQLMetal, jest definiowana jako Klasa częściowa. Oznacza to, że w osobnym pliku kodu można zdefiniować inną część klasy Entity, która zawiera niestandardową logikę biznesową. W czasie kompilacji dwie części są scalane w jedną klasę. Ale jeśli musisz ponownie wygenerować klasy jednostek przy użyciu Object Relational Designer lub SQLMetal, możesz to zrobić, a część klasy nie zostanie zmodyfikowana.  
   
  Klasy częściowe, które definiują jednostki i <xref:System.Data.Linq.DataContext> zawierają metody częściowe. Są to punkty rozszerzalności, których można użyć do zastosowania logiki biznesowej przed i po dowolnej aktualizacji, wstawieniu lub usunięciu dla właściwości jednostki lub jednostki. Metody częściowe można traktować jako zdarzenia w czasie kompilacji. Generator kodu definiuje sygnaturę metody i wywołuje metody w metodach dostępu do właściwości get i Set, `DataContext` Konstruktor i w niektórych przypadkach w tle, gdy <xref:System.Data.Linq.DataContext.SubmitChanges%2A> jest wywoływana. Jednakże jeśli nie zaimplementowano konkretnej metody częściowej, wszystkie odwołania do niej i definicja zostaną usunięte w czasie kompilacji.  
@@ -25,6 +27,7 @@ Termin "logika biznesowa" w tym temacie odnosi się do wszystkich reguł niestan
  W definicji implementującej zapisanej w osobnym pliku kodu można wykonać dowolną logikę niestandardową. Możesz użyć swojej częściowej klasy jako warstwy domeny lub wywołać z definicji implementującej metody częściowej w oddzielnym obiekcie lub obiektach. W obu przypadkach logika biznesowa jest czysto oddzielona od kodu dostępu do danych i kodu warstwy prezentacji.  
   
 ## <a name="a-closer-look-at-the-extensibility-points"></a>Bliżej przeszukiwania punktów rozszerzalności  
+
  Poniższy przykład przedstawia część kodu wygenerowanego przez Object Relational Designer dla `DataContext` klasy, która ma dwie tabele: `Customers` i `Orders` . Należy zauważyć, że dla każdej tabeli w klasie są zdefiniowane metody INSERT, Update i DELETE.  
   
 ```vb  
@@ -183,7 +186,7 @@ partial class Customer
   
  [Wskazówki: Dodawanie walidacji do klas jednostek](/previous-versions/visualstudio/visual-studio-2013/bb629301(v=vs.120))  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Klasy częściowe i metody](../../../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)
 - [Metody częściowe](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)

@@ -5,14 +5,15 @@ helpviewer_keywords:
 - generatePublisherEvidence element
 - <generatePublisherEvidence> element
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
-ms.openlocfilehash: 11592b055641c0fa2d2b968547dcc5aa40c94600
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 506e7873fab8e41fce121587c22d85600a8b1760
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541787"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158776"
 ---
 # <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> Element
+
 Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Publisher> dowód dla zabezpieczeń dostępu kodu (CAS).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Pub
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,6 +45,7 @@ Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Pub
 |`true`|Tworzy <xref:System.Security.Policy.Publisher> dowód. Jest to opcja domyślna.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -63,9 +66,11 @@ Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Pub
 > Zalecamy, aby usługi korzystały z `<generatePublisherEvidence>` elementu, aby zwiększyć wydajność uruchamiania.  Za pomocą tego elementu można także uniknąć opóźnień, które mogą spowodować przekroczenie limitu czasu i anulowanie uruchamiania usługi.  
   
 ## <a name="configuration-file"></a>Plik konfiguracji  
+
  Tego elementu można używać tylko w pliku konfiguracji aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, `<generatePublisherEvidence>` Aby wyłączyć sprawdzanie zasad wydawcy CAS dla aplikacji.  
   
 ```xml  
@@ -76,7 +81,7 @@ Określa, czy środowisko uruchomieniowe tworzy <xref:System.Security.Policy.Pub
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

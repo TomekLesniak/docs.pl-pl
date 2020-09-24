@@ -3,12 +3,12 @@ title: Flagi funkcji
 description: Implementuj flagi funkcji w aplikacjach natywnych w chmurze korzystających z konfiguracji aplikacji platformy Azure
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: be4ab307069065975dc22d6bd984e12a2ea1457d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ee45c9f187b056887ea6dd3a08da508afca51987
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540468"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158100"
 ---
 # <a name="feature-flags"></a>Flagi funkcji
 
@@ -43,9 +43,9 @@ Należy zauważyć, jak to podejście oddziela logikę decyzyjną od kodu funkcj
 
 W rozdziale 1 omawiamy `Twelve-Factor App` . Wskazówki dotyczące przechowywania ustawień konfiguracji zewnętrznych z kodu wykonywalnego aplikacji. W razie konieczności ustawienia mogą być odczytywane ze źródła zewnętrznego. Wartości konfiguracji flagi funkcji powinny być również niezależne od ich bazy kodu. Zgodnie z konfiguracją flagi eksternalizacji w oddzielnym repozytorium można zmienić stan flagi bez modyfikowania i ponownego wdrażania aplikacji.
 
-[Konfiguracja aplikacji platformy Azure](https://docs.microsoft.com/azure/azure-app-configuration/overview) zapewnia scentralizowane repozytorium dla flag funkcji. Dzięki niej można definiować różne rodzaje flag funkcji i manipulować ich Stanami szybko i bezpiecznie. Aby włączyć funkcję flagi funkcji, należy dodać biblioteki klienta konfiguracji aplikacji do aplikacji. Obsługiwane są różne struktury języka programowania.
+[Konfiguracja aplikacji platformy Azure](/azure/azure-app-configuration/overview) zapewnia scentralizowane repozytorium dla flag funkcji. Dzięki niej można definiować różne rodzaje flag funkcji i manipulować ich Stanami szybko i bezpiecznie. Aby włączyć funkcję flagi funkcji, należy dodać biblioteki klienta konfiguracji aplikacji do aplikacji. Obsługiwane są różne struktury języka programowania.
 
-Flagi funkcji można łatwo zaimplementować w [usłudze ASP.NET Core](https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core). Zainstalowanie bibliotek zarządzania funkcją .NET i dostawcy konfiguracji aplikacji umożliwia deklaratywne Dodawanie flag funkcji do kodu. Umożliwiają one włączenie `FeatureGate` atrybutów w taki sposób, aby nie trzeba było ręcznie pisać instrukcji if w bazie kodu.
+Flagi funkcji można łatwo zaimplementować w [usłudze ASP.NET Core](/azure/azure-app-configuration/use-feature-flags-dotnet-core). Zainstalowanie bibliotek zarządzania funkcją .NET i dostawcy konfiguracji aplikacji umożliwia deklaratywne Dodawanie flag funkcji do kodu. Umożliwiają one włączenie `FeatureGate` atrybutów w taki sposób, aby nie trzeba było ręcznie pisać instrukcji if w bazie kodu.
 
 Po skonfigurowaniu w klasie startowej można dodać funkcję flagi funkcji na poziomie kontrolera, akcji lub oprogramowania pośredniczącego. Rysunek 10-12 przedstawia implementację kontrolera i akcji:
 

@@ -2,14 +2,15 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 987dcad5e239b35f5ff367ab668d40526593f970
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6d4302e1840f58e2daad855942493cc96b7d5e34
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556463"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158672"
 ---
 # \<tcpTransport>
+
 Definiuje transport TCP, który może być używany przez kanał do przesyłania komunikatów dla niestandardowego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -44,6 +45,7 @@ Definiuje transport TCP, który może być używany przez kanał do przesyłania
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -67,6 +69,7 @@ Definiuje transport TCP, który może być używany przez kanał do przesyłania
 |connectionPoolSettings|Określa dodatkowe ustawienia puli połączeń dla powiązania nazwanego potoku.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -76,11 +79,12 @@ Definiuje transport TCP, który może być używany przez kanał do przesyłania
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten transport używa identyfikatorów URI w postaci "net. TCP://NazwaHosta: Port/Path". Inne składniki URI są opcjonalne.  
   
  `tcpTransport`Element jest punktem początkowym do tworzenia niestandardowego powiązania, które implementuje protokół transportowy TCP. Ten transport jest zoptymalizowany pod kątem komunikacji między WCF i WCF.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.TcpTransportElement>
 - <xref:System.ServiceModel.Channels.TcpTransportBindingElement>

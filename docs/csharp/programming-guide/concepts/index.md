@@ -3,14 +3,15 @@ title: Koncepcje programowania (C#)
 description: Skorzystaj z zasobów w tej sekcji, aby zrozumieć koncepcje programowania w języku C#, w tym programowanie zorientowane obiektowo.
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 8b0b69abd3c23a968e34905cea93f99e044668ce
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 0e11fb3a184cb828be58cd43dde281366ed533d4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924919"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159335"
 ---
 # <a name="programming-concepts-c"></a>Koncepcje programowania (C#)
+
 W tej części objaśniono koncepcje programowania w języku C#.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
@@ -33,4 +34,4 @@ W tej części objaśniono koncepcje programowania w języku C#.
   
 |||  
 |---|---|  
-|[Wskazówki dotyczące wydajności](../../../framework/performance/performance-tips.md) | Omawia kilka podstawowych reguł, które mogą pomóc zwiększyć wydajność aplikacji.|
+|[Porady dotyczące wydajności](../../../framework/performance/performance-tips.md) | Omawia kilka podstawowych reguł, które mogą pomóc zwiększyć wydajność aplikacji.|

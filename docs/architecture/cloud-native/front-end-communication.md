@@ -3,12 +3,12 @@ title: Komunikacja z klientem frontonu
 description: Dowiedz się, jak klienci frontonu komunikują się z systemami natywnymi w chmurze
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 97421e9b90b19c720b1ab0ff8dd1e5f029cba5e4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 147adb3d0375f8bf5dadf14e1237aa93e9e42908
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614061"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158113"
 ---
 # <a name="front-end-client-communication"></a>Komunikacja z klientem frontonu
 
@@ -41,7 +41,7 @@ Na poprzedniej ilustracji należy zwrócić uwagę na to, jak Usługa bramy API 
 
 Brama izolowana od klienta od partycjonowania i refaktoryzacji usługi wewnętrznej. W przypadku zmiany usługi zaplecza należy ją uwzględnić w bramie bez przerywania pracy klienta. Jest to również pierwszy wiersz obrony przed rozliczeniem, taki jak tożsamość, buforowanie, odporności, pomiar i ograniczanie. Wiele z tych zagadnień związanych z rozcinaniem można wyłączyć z usług podstawowych zaplecza do bramy, upraszczając usługi zaplecza.
 
-Należy zadbać o to, aby brama interfejsu API była prosta i szybka. Zazwyczaj logika biznesowa jest utrzymywana poza bramą. Złożone ryzyko związane z bramą staje się wąskim gardłem i ostatecznie monolitu. Duże systemy często uwidaczniają wiele bram interfejsu API, które są dzielone przez typ klienta (Mobile, Web, Desktop) lub zaplecza. Wzorzec [zaplecza dla frontonów](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) zapewnia kierunek implementacji wielu bram. Wzorzec przedstawiono na rysunku 4-4.
+Należy zadbać o to, aby brama interfejsu API była prosta i szybka. Zazwyczaj logika biznesowa jest utrzymywana poza bramą. Złożone ryzyko związane z bramą staje się wąskim gardłem i ostatecznie monolitu. Duże systemy często uwidaczniają wiele bram interfejsu API, które są dzielone przez typ klienta (Mobile, Web, Desktop) lub zaplecza. Wzorzec [zaplecza dla frontonów](/azure/architecture/patterns/backends-for-frontends) zapewnia kierunek implementacji wielu bram. Wzorzec przedstawiono na rysunku 4-4.
 
 ![Wzorzec bramy interfejsu API](./media/backend-for-frontend-pattern.png)
 
@@ -59,7 +59,7 @@ Podobnie jak w przypadku dowolnej bramy interfejsu API, jej podstawową funkcją
 
 |Funkcje Ocelot  | |
 | :-------- | :-------- |
-| Routing | Authentication |
+| Routing | Uwierzytelnianie |
 | Agregacja żądań | Autoryzacja |
 | Odnajdowanie usług (z Consul i Eureka) | Ograniczanie przepływności |
 | Równoważenie obciążenia | Rejestrowanie, śledzenie |
@@ -75,7 +75,7 @@ Rozważ Ocelot dla prostych aplikacji natywnych w chmurze, które nie wymagają 
 
 ## <a name="azure-application-gateway"></a>Azure Application Gateway
 
-Aby uzyskać proste wymagania dotyczące bramy, możesz rozważyć [Application Gateway platformy Azure](https://docs.microsoft.com/azure/application-gateway/overview). Dostępna jako usługa Azure [PaaS](https://azure.microsoft.com/overview/what-is-paas/)obejmuje podstawowe funkcje bramy, takie jak routing adresów URL, zakończenie protokołu SSL i Zapora aplikacji sieci Web. Usługa obsługuje funkcje [równoważenia obciążenia warstwy 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) . Za pomocą warstwy 7 można kierować żądania na podstawie rzeczywistej zawartości komunikatu HTTP, a nie tylko pakietów sieciowych TCP niskiego poziomu.
+Aby uzyskać proste wymagania dotyczące bramy, możesz rozważyć [Application Gateway platformy Azure](/azure/application-gateway/overview). Dostępna jako usługa Azure [PaaS](https://azure.microsoft.com/overview/what-is-paas/)obejmuje podstawowe funkcje bramy, takie jak routing adresów URL, zakończenie protokołu SSL i Zapora aplikacji sieci Web. Usługa obsługuje funkcje [równoważenia obciążenia warstwy 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) . Za pomocą warstwy 7 można kierować żądania na podstawie rzeczywistej zawartości komunikatu HTTP, a nie tylko pakietów sieciowych TCP niskiego poziomu.
 
 W tej książce nauczanie hosting natywnych systemów w chmurze w [Kubernetes](https://www.infoworld.com/article/3268073/what-is-kubernetes-your-next-application-platform.html). Koordynator kontenerów, Kubernetes automatyzuje wdrażanie, skalowanie i problemy operacyjne obciążeń kontenerów. Usługę Azure Application Gateway można skonfigurować jako bramę interfejsu API dla klastra [usługi Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/) .
 
@@ -99,7 +99,7 @@ Aby rozpocząć, API Management uwidacznia serwer bramy, który umożliwia kontr
 
 W przypadku deweloperów API Management oferuje portal dla deweloperów, który zapewnia dostęp do usług, dokumentacji i przykładowego kodu do wywoływania ich. Deweloperzy mogą używać platformy Swagger/Open API do sprawdzenia punktów końcowych usługi i przeanalizowania ich użycia. Usługa działa na głównych platformach deweloperskich: .NET, Java, golang i innych.
 
-Portal wydawców udostępnia pulpit nawigacyjny zarządzania, w którym Administratorzy ujawniają interfejsy API i zarządzają ich zachowaniem. Można udzielić dostępu do usługi, monitorować kondycję usługi i zbierać dane telemetryczne usługi. Administratorzy stosują *zasady* do każdego punktu końcowego, aby mieć wpływ na zachowanie. [Zasady](https://docs.microsoft.com/azure/api-management/api-management-howto-policies) są wstępnie skompilowanymi instrukcjami wykonywanymi sekwencyjnie dla każdego wywołania usługi.  Zasady są konfigurowane dla wywołania przychodzącego, wywołania wychodzącego lub wywoływanego po błędzie. Zasady mogą być stosowane w różnych zakresach usług, co umożliwia jednoznaczne porządkowanie podczas łączenia zasad. Produkt jest dostarczany z dużą liczbą wstępnie utworzonych [zasad](https://docs.microsoft.com/azure/api-management/api-management-policies).
+Portal wydawców udostępnia pulpit nawigacyjny zarządzania, w którym Administratorzy ujawniają interfejsy API i zarządzają ich zachowaniem. Można udzielić dostępu do usługi, monitorować kondycję usługi i zbierać dane telemetryczne usługi. Administratorzy stosują *zasady* do każdego punktu końcowego, aby mieć wpływ na zachowanie. [Zasady](/azure/api-management/api-management-howto-policies) są wstępnie skompilowanymi instrukcjami wykonywanymi sekwencyjnie dla każdego wywołania usługi.  Zasady są konfigurowane dla wywołania przychodzącego, wywołania wychodzącego lub wywoływanego po błędzie. Zasady mogą być stosowane w różnych zakresach usług, co umożliwia jednoznaczne porządkowanie podczas łączenia zasad. Produkt jest dostarczany z dużą liczbą wstępnie utworzonych [zasad](/azure/api-management/api-management-policies).
 
 Poniżej przedstawiono przykłady zastosowania zasad, które mogą mieć wpływ na zachowanie usług natywnych w chmurze:  
 
@@ -116,17 +116,17 @@ Usługa Azure API Management może uwidaczniać usługi zaplecza hostowane w dow
 Usługa Azure API Management jest dostępna w [czterech różnych warstwach](https://azure.microsoft.com/pricing/details/api-management/):
 
 - Deweloper
-- Podstawowy
-- Standardowa
+- Podstawowa
+- Standardowa (Standard)
 - Premium
 
-Warstwa Deweloper jest przeznaczona dla obciążeń nieprodukcyjnych i oceny. Inne warstwy oferują coraz więcej mocy, funkcji i wyższych umów dotyczących poziomu usług (umowy SLA). Warstwa Premium zapewnia [platformę Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) i [obsługę wieloregionową](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region). Wszystkie warstwy mają stałą cenę za godzinę.
+Warstwa Deweloper jest przeznaczona dla obciążeń nieprodukcyjnych i oceny. Inne warstwy oferują coraz więcej mocy, funkcji i wyższych umów dotyczących poziomu usług (umowy SLA). Warstwa Premium zapewnia [platformę Azure Virtual Network](/azure/virtual-network/virtual-networks-overview) i [obsługę wieloregionową](/azure/api-management/api-management-howto-deploy-multi-region). Wszystkie warstwy mają stałą cenę za godzinę.
 
 Chmura platformy Azure oferuje również [warstwę bezserwerową](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/) dla API Management platformy Azure. W odniesieniu do *warstwy cenowej zużycie*usługa jest odmianą API Management zaprojektowaną wokół modelu obliczeniowego bezserwerowego. W przeciwieństwie do wcześniej podanych warstw cenowych "wstępnie przydzielona" warstwa zużycia zapewnia szybkie Inicjowanie obsługi i Cennik płatnych akcji.
 
 Umożliwia ona korzystanie z funkcji bramy interfejsu API dla następujących przypadków użycia:
 
-- Mikrousługi zaimplementowane przy użyciu technologii bezserwerowych, takich jak [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) i [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
+- Mikrousługi zaimplementowane przy użyciu technologii bezserwerowych, takich jak [Azure Functions](/azure/azure-functions/functions-overview) i [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
 - Zasoby usługi Azure Site Recovery, takie jak kolejki i tematy Service Bus, Azure Storage i inne.
 - Mikrousługi, w przypadku których ruch ma sporadyczne duże wartości, ale pozostaje niski przez większość czasu.
 

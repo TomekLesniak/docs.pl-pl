@@ -4,12 +4,12 @@ description: Dowiedz się, jak zdefiniować logikę uruchamiania dla aplikacji.
 author: csharpfritz
 ms.author: jefritz
 ms.date: 02/25/2020
-ms.openlocfilehash: ea2ea458011d8351a834aa12db02e5d2bac2dc65
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 883f9a3fbe2d52cb7d0fbc5dfc94ce829a5d2bf3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267701"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158191"
 ---
 # <a name="app-startup"></a>Uruchamianie aplikacji
 
@@ -79,7 +79,7 @@ public class Startup
 
 Podobnie jak w przypadku pozostałej części ASP.NET Core, Klasa startowa jest tworzona z zasadami iniekcji zależności.  `IConfiguration`Jest dostarczany do konstruktora i umieszczany we właściwości publicznej na potrzeby późniejszego dostępu podczas konfiguracji.
 
-`ConfigureServices`Metoda wprowadzona w ASP.NET Core umożliwia skonfigurowanie różnych usług ASP.NET Core Framework dla wbudowanego kontenera wstrzykiwania zależności struktury.  Różne `services.Add*` metody umożliwiają dodanie usług, które udostępniają funkcje, takie jak uwierzytelnianie, strony Razor, routing kontrolerów MVC, sygnalizacja i Blazor interakcje serwera między wieloma innymi.  Ta metoda nie była wymagana w formularzach sieci Web, ponieważ analizowanie i obsługa plików ASPX, ASCX, ASHX i ASMX zostało zdefiniowane przez odwołanie do ASP.NET w pliku konfiguracji web.config.  Więcej informacji o iniekcji zależności w ASP.NET Core jest dostępny w [dokumentacji online](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection).
+`ConfigureServices`Metoda wprowadzona w ASP.NET Core umożliwia skonfigurowanie różnych usług ASP.NET Core Framework dla wbudowanego kontenera wstrzykiwania zależności struktury.  Różne `services.Add*` metody umożliwiają dodanie usług, które udostępniają funkcje, takie jak uwierzytelnianie, strony Razor, routing kontrolerów MVC, sygnalizacja i Blazor interakcje serwera między wieloma innymi.  Ta metoda nie była wymagana w formularzach sieci Web, ponieważ analizowanie i obsługa plików ASPX, ASCX, ASHX i ASMX zostało zdefiniowane przez odwołanie do ASP.NET w pliku konfiguracji web.config.  Więcej informacji o iniekcji zależności w ASP.NET Core jest dostępny w [dokumentacji online](/aspnet/core/fundamentals/dependency-injection).
 
 `Configure`Metoda wprowadza koncepcję potoku HTTP do ASP.NET Core.  W tej metodzie deklarujemy od góry do dołu [oprogramowanie pośredniczące](middleware.md) , które będzie obsługiwało każde żądanie wysyłane do naszej aplikacji. Większość z tych funkcji w konfiguracji domyślnej została rozłożona na wiele plików konfiguracji formularzy sieci Web i znajduje się teraz w jednym miejscu, aby ułatwić sobie odwołanie.
 
@@ -103,7 +103,7 @@ Narzędzia wiersza polecenia grunt, Gulp i WebPack oraz skojarzone z nimi konfig
 </Target>
 ```
 
-Więcej szczegółów na temat obu strategii zarządzania plikami CSS i JavaScript jest dostępnych w [zbiorze i zminifikować zasobów statycznych w dokumentacji ASP.NET Core](https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification) .
+Więcej szczegółów na temat obu strategii zarządzania plikami CSS i JavaScript jest dostępnych w [zbiorze i zminifikować zasobów statycznych w dokumentacji ASP.NET Core](/aspnet/core/client-side/bundling-and-minification) .
 
 >[!div class="step-by-step"]
 >[Poprzedni](project-structure.md) 

@@ -2,12 +2,12 @@
 title: Pakiety aplikacji natywnych dla chmury
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Zbiory natywnych aplikacji w chmurze
 ms.date: 05/13/2020
-ms.openlocfilehash: fc6ee96078650dccd2ebeb3e65a0a00c4e05ecdb
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7f1fcd448f3299a31043bf269717f7b777329c62
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614347"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158126"
 ---
 # <a name="cloud-native-application-bundles"></a>Pakiety aplikacji natywnych dla chmury
 
@@ -78,12 +78,12 @@ Format CNAB jest również elastyczny, dzięki czemu można go używać z dowoln
 
 Istnieje wiele doskonałych narzędzi w przestrzeni DevOps w ciągu kilku dni i jeszcze bardziej fantastyczniee książki i dokumenty dotyczące sukcesu. Ulubiona Książka do rozpoczęcia podróży DevOps jest [projektem w Phoenix](https://www.oreilly.com/library/view/the-phoenix-project/9781457191350/), który następuje po przekształceniu fikcyjnej firmy od NoOps do DevOps. Jedną z rzeczy jest dla niektórych: DevOps nie jest już "całkiem" w przypadku wdrażania złożonych, natywnych aplikacji w chmurze. Jest to wymagane i powinny być planowane dla i zamierzone na początku każdego projektu.
 
-## <a name="references"></a>Dokumentacja
+## <a name="references"></a>Odwołania
 
 - [Azure DevOps](https://azure.microsoft.com/services/devops/)
-- [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/)
+- [Azure Resource Manager](/azure/azure-resource-manager/management/overview)
 - [Terraform](https://www.terraform.io/)
-- [Interfejs wiersza polecenia platformy Azure](https://docs.microsoft.com/cli/azure/)
+- [Interfejs wiersza polecenia platformy Azure](/cli/azure/)
 
 >[!div class="step-by-step"]
 >[Poprzedni](infrastructure-as-code.md) 

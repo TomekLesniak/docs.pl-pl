@@ -3,14 +3,15 @@ title: <claimsAuthorizationManager>
 ms.date: 03/30/2017
 ms.assetid: 9354eee3-f692-4ad6-8427-3169686b8bcc
 author: BrucePerlerMS
-ms.openlocfilehash: ddbe8a862940272e4192a3f4c0abdc1f9e8b5d48
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0718f789ff4d99fb4e2651a9a704da4248cd5f49
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252086"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158438"
 ---
 # \<claimsAuthorizationManager>
+
 Rejestruje Menedżera autoryzacji oświadczeń dla oświadczeń przychodzących.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Rejestruje Menedżera autoryzacji oświadczeń dla oświadczeń przychodzących.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -40,6 +42,7 @@ Rejestruje Menedżera autoryzacji oświadczeń dla oświadczeń przychodzących.
 |typ|Typ niestandardowy, który pochodzi od <xref:System.Security.Claims.ClaimsAuthorizationManager> klasy. Aby uzyskać więcej informacji na temat sposobu określania `type` atrybutu, zobacz [odwołania do typów niestandardowych](../windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Jeśli nie ma `type` atrybutu lub jeśli `type` atrybut odwołuje się do <xref:System.Security.Claims.ClaimsAuthenticationManager> klasy, element nie `<claimsAuthorizationManager>` przyjmuje elementów podrzędnych, jednak klasy pochodne <xref:System.Security.Claims.ClaimsAuthorizationManager> mogą definiować podrzędne elementy konfiguracji.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -49,6 +52,7 @@ Rejestruje Menedżera autoryzacji oświadczeń dla oświadczeń przychodzących.
 |[\<identityConfiguration>](identityconfiguration.md)|Określa ustawienia tożsamości na poziomie usług.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślne zachowanie udostępniane przez <xref:System.Security.Claims.ClaimsAuthorizationManager> klasę zawsze autoryzuje oświadczenia przychodzące. Jeśli nie `type` określono atrybutu lub jeśli `type` atrybut określa <xref:System.Security.Claims.ClaimsAuthorizationManager> klasę, `<claimsAuthorizationManager>` element nie przyjmuje elementów podrzędnych. Możesz określić atrybut, `type` Aby zarejestrować typ pochodny <xref:System.Security.Claims.ClaimsAuthorizationManager> klasy, aby zaimplementować zachowanie niestandardowe. Klasy pochodne mogą obsługiwać konfigurację za pomocą elementów podrzędnych `<claimsAuthorizationManager>` elementu przez zastąpienie <xref:System.Security.Claims.ClaimsAuthorizationManager.LoadCustomConfiguration%2A> metody do obsługi tych elementów. Schemat zdefiniowany dla elementów podrzędnych jest projektantem klasy.  
   
 > [!IMPORTANT]
@@ -57,6 +61,7 @@ Rejestruje Menedżera autoryzacji oświadczeń dla oświadczeń przychodzących.
  Ten element ustawia <xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthorizationManager%2A?displayProperty=nameWithType> Właściwość.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym kodzie XML przedstawiono konfigurację Menedżera autoryzacji oświadczeń, który implementuje zasady składające się z par akcji zasobów, z których każda określa logiczne kombinacje oświadczeń, które obiekt żądający musi dysponować, aby wykonać akcję dla zasobu. Kod implementujący Menedżera autoryzacji oświadczeń, który może korzystać z tych zasad, można znaleźć w `ClaimsBasedAuthorization` przykładzie.  
   
 ```xml  

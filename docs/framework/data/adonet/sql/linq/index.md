@@ -3,14 +3,15 @@ title: LINQ do SQL
 description: LINQ to SQL jest składnikiem .NET Framework, który zapewnia infrastrukturę czasu wykonywania do zarządzania danymi relacyjnymi jako obiekty.
 ms.date: 03/30/2017
 ms.assetid: 73d13345-eece-471a-af40-4cc7a2f11655
-ms.openlocfilehash: d6fadecf17cae21527cec2180b6d6c5b5e85d0cc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 961e0713de714d0e75417f93e84e0ab748fd9a42
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551317"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158321"
 ---
 # <a name="linq-to-sql"></a>LINQ to SQL
+
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] jest składnikiem .NET Framework w wersji 3,5, który udostępnia infrastrukturę czasu wykonywania do zarządzania danymi relacyjnymi jako obiekty.  
   
 > [!NOTE]
@@ -23,6 +24,7 @@ ms.locfileid: "90551317"
  Dokumentacja, która jest dostępna w tej wersji programu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , zawiera opis podstawowych bloków konstrukcyjnych, procesów i technik potrzebnych do kompilowania [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikacji. Możesz również wyszukać Microsoft Docs pod kątem określonych problemów i można wziąć udział na [forum LINQ](https://social.msdn.microsoft.com/forums/home?forum=linqtosql), gdzie można omówić bardziej złożone tematy szczegółowo z ekspertami. Na koniec [LINQ to SQL: zapytanie zintegrowane z językiem .NET na potrzeby](/previous-versions/dotnet/articles/bb425822(v=msdn.10)) Detailed Data Paper — [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologia, kompletna z Visual Basic i kodu C# przykłady.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Wprowadzenie](getting-started.md)  
  Zawiera skrócone Omówienie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] wraz z informacjami dotyczącymi sposobu rozpoczęcia korzystania z programu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .  
   
@@ -36,6 +38,7 @@ ms.locfileid: "90551317"
  Zawiera łącza do przykładów Visual Basic i C#.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Zapytanie zintegrowane z językiem (LINQ)-C #](../../../../../csharp/programming-guide/concepts/linq/index.md)\
  Oferuje przegląd technologii LINQ w języku C#.
 

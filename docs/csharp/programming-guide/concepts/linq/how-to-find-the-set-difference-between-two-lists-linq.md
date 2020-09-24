@@ -3,14 +3,15 @@ title: Jak znaleźć różnice między dwoma listami (LINQ) (C#)
 description: Dowiedz się, jak za pomocą LINQ w języku C# porównać dwie listy ciągów i wyprowadzić te wiersze, które znajdują się na jednej liście, ale nie w drugim.
 ms.date: 07/20/2015
 ms.assetid: 8e8945f0-4aba-439d-8d5d-c8d1eeef4e71
-ms.openlocfilehash: 24509488d91f9861ee9bf84277238bea7031e5f6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 01aba16b3489e4bf21a76bc715b6d4d2c9d250dd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105079"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159062"
 ---
 # <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Jak znaleźć różnice między dwoma listami (LINQ) (C#)
+
 Ten przykład pokazuje, jak używać LINQ do porównywania dwóch list ciągów i wyprowadzania tych wierszy, które znajdują się w names1.txt, ale nie w names2.txt.  
   
 ### <a name="to-create-the-data-files"></a>Aby utworzyć pliki danych  
@@ -56,6 +57,7 @@ class CompareLists
  Niektóre typy operacji zapytań w języku C#, takie jak <xref:System.Linq.Enumerable.Except%2A> , <xref:System.Linq.Enumerable.Distinct%2A> , <xref:System.Linq.Enumerable.Union%2A> i <xref:System.Linq.Enumerable.Concat%2A> , można wyrazić tylko w składni opartej na metodzie.  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
  Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.  
   
 ## <a name="see-also"></a>Zobacz też

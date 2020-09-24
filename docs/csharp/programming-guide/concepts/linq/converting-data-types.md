@@ -3,14 +3,15 @@ title: Konwertowanie typów danych (C#)
 description: Metody konwersji zmieniają typ obiektów wejściowych. Zobacz operacje konwersji w zapytaniach LINQ w języku C#, takie jak wyliczalne. AsEnumerable i wyliczalne. OfType.
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-ms.openlocfilehash: 3291690f9aaee945ca7feb04ebbc676db2612894
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: f9e3b354fd6eeba6564067550ea3821e4946d92f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105494"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159140"
 ---
 # <a name="converting-data-types-c"></a>Konwertowanie typów danych (C#)
+
 Metody konwersji zmieniają typ obiektów wejściowych.
 
  Operacje konwersji w zapytaniach LINQ są przydatne w różnych aplikacjach. Poniżej przedstawiono kilka przykładów:
@@ -22,6 +23,7 @@ Metody konwersji zmieniają typ obiektów wejściowych.
 - <xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>Metody, <xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType> , <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> i <xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType> mogą być używane do wymuszenia natychmiastowego wykonania zapytania zamiast odliczenia go do momentu wyliczenia zapytania.
 
 ## <a name="methods"></a>Metody
+
  W poniższej tabeli wymieniono standardowe metody operatorów zapytań, które wykonują konwersje typów danych.
 
  Metody konwersji w tej tabeli, których nazwy zaczynają się od "As", zmieniają typ statyczny kolekcji źródłowej, ale nie są wyliczane. Metody, których nazwy zaczynają się od "do", wyliczają kolekcję źródłową i umieszczają elementy w odpowiednim typie kolekcji.
@@ -80,6 +82,6 @@ static void Cast()
 
 - <xref:System.Linq>
 - [Standardowe operatory zapytań — Omówienie (C#)](./standard-query-operators-overview.md)
-- [Klauzula From](../../../language-reference/keywords/from-clause.md)
+- [Klauzula from](../../../language-reference/keywords/from-clause.md)
 - [Wyrażenia zapytania LINQ](../../../linq/index.md)
 - [Jak zbadać ArrayList za pomocą LINQ (C#)](./how-to-query-an-arraylist-with-linq.md)

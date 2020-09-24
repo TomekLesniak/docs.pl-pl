@@ -3,14 +3,15 @@ title: Operacje agregacji (C#)
 description: Dowiedz się więcej na temat metod wykonywania operacji agregacji. Operacja agregacji oblicza pojedynczą wartość z kolekcji wartości.
 ms.date: 07/20/2015
 ms.assetid: 6fc035e5-7639-48b8-bc7f-b093dd31b039
-ms.openlocfilehash: 3d5a52249520478571db2fcfd7aa5d10fb013565
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: c302667ec7f1d4ed5acb98439ea9f8f80250077d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104302"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159387"
 ---
 # <a name="aggregation-operations-c"></a>Operacje agregacji (C#)
+
 Operacja agregacji oblicza pojedynczą wartość z kolekcji wartości. Przykład operacji agregacji oblicza średnią dzienną temperaturę od miesięcznej wartości dziennej temperatury.  
   
  Na poniższej ilustracji przedstawiono wyniki dwóch różnych operacji agregacji w sekwencji liczb. Pierwsza operacja sumuje liczby. Druga operacja zwraca maksymalną wartość w sekwencji.  

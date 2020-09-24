@@ -7,14 +7,15 @@ helpviewer_keywords:
 - <enforceFIPSPolicy> element
 - Federal Information Processing Standards (FIPS)
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
-ms.openlocfilehash: 0d6dd291a24928487a040c0427f058dee80bf836
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 864a371d4ad10585e672452ad85cc09d4b684068
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117385"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158841"
 ---
 # <a name="enforcefipspolicy-element"></a>\<enforceFIPSPolicy> Element
+
 Określa, czy należy wymusić wymaganie konfiguracji komputera, że algorytmy kryptograficzne muszą być zgodne z FIPS (Federal Information Processing Standards).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Określa, czy należy wymusić wymaganie konfiguracji komputera, że algorytmy k
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -40,10 +42,11 @@ Określa, czy należy wymusić wymaganie konfiguracji komputera, że algorytmy k
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|`true`|Jeśli komputer jest skonfigurowany tak, aby wymagania algorytmów kryptograficznych były zgodne ze standardem FIPS, to wymaganie jest wymuszane. Jeśli klasa implementuje algorytm, który nie jest zgodny z FIPS, konstruktory lub `Create` metody dla tej klasy generują wyjątki, gdy są uruchamiane na tym komputerze. Domyślnie włączone.|  
+|`true`|Jeśli komputer jest skonfigurowany tak, aby wymagania algorytmów kryptograficznych były zgodne ze standardem FIPS, to wymaganie jest wymuszane. Jeśli klasa implementuje algorytm, który nie jest zgodny z FIPS, konstruktory lub `Create` metody dla tej klasy generują wyjątki, gdy są uruchamiane na tym komputerze. Jest to opcja domyślna.|  
 |`false`|Algorytmy kryptograficzne używane przez aplikację nie są wymagane do zgodności ze standardem FIPS, niezależnie od konfiguracji komputera.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -54,11 +57,13 @@ Określa, czy należy wymusić wymaganie konfiguracji komputera, że algorytmy k
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Począwszy od .NET Framework 2,0, tworzenie klas implementujących algorytmy kryptograficzne jest kontrolowane przez konfigurację komputera. Jeśli komputer jest skonfigurowany tak, aby wymagał zgodności algorytmów z FIPS, a Klasa implementuje algorytm, który nie jest zgodny ze standardem FIPS, każda próba utworzenia wystąpienia tej klasy zgłasza wyjątek. Konstruktory zgłaszają <xref:System.InvalidOperationException> wyjątek, a metody zgłaszają `Create` <xref:System.Reflection.TargetInvocationException> wyjątek z <xref:System.InvalidOperationException> wyjątkiem wewnętrznym.  
   
  Jeśli aplikacja jest uruchamiana na komputerach, których konfiguracje wymagają zgodności ze standardem FIPS, a aplikacja używa algorytmu, który nie jest zgodny z FIPS, można użyć tego elementu w pliku konfiguracji, aby uniemożliwić środowisko uruchomieniowe języka wspólnego (CLR) Wymuszanie zgodności ze standardem FIPS. Ten element został wprowadzony w dodatku Service Pack 1 .NET Framework 2,0.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak uniemożliwić środowisku CLR Wymuszanie zgodności ze standardem FIPS.  
   
 ```xml  
@@ -69,7 +74,7 @@ Określa, czy należy wymusić wymaganie konfiguracji komputera, że algorytmy k
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

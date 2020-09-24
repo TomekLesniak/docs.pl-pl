@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: 567cbd2cc07ee82e795daa067b9034b2b8dc1974
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 44966ed9ee3abb3d1babdf09dd44f087376ada55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243961"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158685"
 ---
 # \<system.serviceModel>
+
 Ta sekcja konfiguracji zawiera wszystkie elementy konfiguracji programu Windows Communication Foundation (WCF).  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -56,9 +57,11 @@ Ta sekcja konfiguracji zawiera wszystkie elementy konfiguracji programu Windows 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -86,6 +89,7 @@ Ta sekcja konfiguracji zawiera wszystkie elementy konfiguracji programu Windows 
 |\<configuration>|Element główny dla wszystkich elementów konfiguracji w PLiku konfiguracji PLatformy .NET.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Funkcja WCF nie dodaje elementów do sekcji konfiguracji innych produktów.  
   
  Usługi WCF są zdefiniowane w `services` sekcji pliku konfiguracji. Zestaw może zawierać dowolną liczbę usług. Każda usługa ma swoją własną `service` sekcję konfiguracyjną. Sekcja i jej zawartość definiują kontrakt usługi, zachowanie i punkty końcowe określonej usługi.  
@@ -99,6 +103,7 @@ Ta sekcja konfiguracji zawiera wszystkie elementy konfiguracji programu Windows 
  Powiązania są połączone z punktami końcowymi przez kombinację atrybutów `name` i `bindingConfiguration` . `binding`Atrybut określa, w którym sekcji jest zdefiniowane powiązanie. `bindingConfiguration`Atrybut definiuje skonfigurowane powiązanie w sekcji powiązania. Sekcja powiązania może definiować kilka skonfigurowanych powiązań.  
   
 ## <a name="example"></a>Przykład  
+
  Jest to przykład pliku konfiguracji WCF.  
   
 ```xml  
