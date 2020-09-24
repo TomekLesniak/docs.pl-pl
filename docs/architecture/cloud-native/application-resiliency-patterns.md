@@ -3,12 +3,12 @@ title: Wzorce odporności aplikacji
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Wzorce odporności aplikacji
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: bb72e47704c833a2ce86f103a66b0414ce3a37ff
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e81d6e1d6b95cf0053de3ba557068ff458a59dc9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614330"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161155"
 ---
 # <a name="application-resiliency-patterns"></a>Wzorce odporności aplikacji
 
@@ -33,7 +33,7 @@ Zwróć uwagę na to, jak na poprzedniej ilustracji zasady odporności dotyczą 
 | 408 | Limit czasu żądania |
 | 429 | Zbyt wiele żądań (prawdopodobnie została ograniczona) |
 | 502 | Zła brama |
-| 503 | Usługa jest niedostępna |
+| 503 | Usługa niedostępna |
 | 504 | Limit czasu bramy |
 
 Pytanie: Czy chcesz ponowić próbę wykonania kodu stanu HTTP 403 — Dostęp zabroniony? Nie. W tym miejscu system działa prawidłowo, ale informuje obiekt wywołujący, że nie ma uprawnień do wykonywania żądanych operacji. Należy zachować ostrożność, aby ponowić próbę tylko operacji spowodowanych błędami.
@@ -46,7 +46,7 @@ Następnie Rozwińmy wzorce ponowień i wyłączników.
 
 W rozproszonym środowisku natywnym w chmurze wywołania usług i zasobów w chmurze mogą zakończyć się niepowodzeniem z powodu przejściowych (krótko-o) awarii, które zwykle są naprawione po krótkim czasie. Implementacja strategii ponawiania próbuje, aby usługa w chmurze mogła ograniczyć te scenariusze.
 
-[Wzorzec ponawiania próby](https://docs.microsoft.com/azure/architecture/patterns/retry) umożliwia usłudze ponowienie próby nieudanej operacji żądania, która jest możliwa do skonfigurowania. Rysunek 6-2 pokazuje ponowną próbę wykonania akcji.
+[Wzorzec ponawiania próby](/azure/architecture/patterns/retry) umożliwia usłudze ponowienie próby nieudanej operacji żądania, która jest możliwa do skonfigurowania. Rysunek 6-2 pokazuje ponowną próbę wykonania akcji.
 
 ![Wzorzec ponawiania w akcji](./media/retry-pattern.png)
 
@@ -70,7 +70,7 @@ Aby zapewnić, że wykonywanie ciągle powtarzających się operacji w usłudze 
 
 W takich sytuacjach lepszym rozwiązaniem może być niepowodzenie operacji natychmiastowego i próba wywołania usługi w przypadku, gdy będzie to możliwe.
 
-[Wzorzec wyłącznika](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker) może uniemożliwić aplikacji wielokrotne ponawianie próby wykonania operacji, która może zakończyć się niepowodzeniem. Po wstępnie zdefiniowanej liczbie wywołań zakończonych niepowodzeniem blokuje cały ruch do usługi. Okresowo zezwoli na połączenie próbne w celu ustalenia, czy błąd został rozwiązany. Rysunek 6-3 pokazuje wzorzec wyłącznika w akcji.
+[Wzorzec wyłącznika](/azure/architecture/patterns/circuit-breaker) może uniemożliwić aplikacji wielokrotne ponawianie próby wykonania operacji, która może zakończyć się niepowodzeniem. Po wstępnie zdefiniowanej liczbie wywołań zakończonych niepowodzeniem blokuje cały ruch do usługi. Okresowo zezwoli na połączenie próbne w celu ustalenia, czy błąd został rozwiązany. Rysunek 6-3 pokazuje wzorzec wyłącznika w akcji.
 
 ![Wzorzec wyłącznika w akcji](./media/circuit-breaker-pattern.png)
 

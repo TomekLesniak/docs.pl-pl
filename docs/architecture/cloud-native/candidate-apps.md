@@ -3,12 +3,12 @@ title: Aplikacje kandydujące dla chmury natywnej
 description: Dowiedz się, które typy aplikacji korzystają z podejścia natywnego w chmurze
 author: robvet
 ms.date: 05/14/2020
-ms.openlocfilehash: b907a17b2351bc4ffe49fd6eb6f5963b209d00db
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8f00633a575dad12b0bc1d5adb83acac03db0659
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614243"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160947"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Aplikacje kandydujące dla chmury natywnej
 
@@ -40,7 +40,7 @@ Bezpłatna książka elektroniczna firmy Microsoft umożliwia [modernizację ist
 
 Wbudowane aplikacje, które nie mają krytycznego znaczenia, korzystają z szybkiej migracji podnoszenia i przesunięć ([gotowej do infrastruktury w chmurze](../modernize-with-azure-containers/lift-and-shift-existing-apps-azure-iaas.md)). W tym miejscu obciążenie lokalne jest hostowane na maszynie wirtualnej opartej na chmurze bez zmian. To podejście używa [modelu IaaS (infrastruktura jako usługa)](https://azure.microsoft.com/overview/what-is-iaas/). Platforma Azure oferuje kilka narzędzi, takich jak [Azure Migrate](https://azure.microsoft.com/services/azure-migrate/), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)i [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/) , aby ułatwić takie przenoszenie. Chociaż ta strategia może przynieść pewne oszczędności, takie aplikacje zwykle nie zostały zaprojektowane w celu odblokowania i wykorzystania zalet chmury obliczeniowej.
 
-Monolityczne aplikacje mające kluczowe znaczenie dla korzyści z często biznesowej z rozszerzonej migracji podniesienia i przesunięcia (*zoptymalizowane pod kątem chmury*). Takie podejście obejmuje optymalizacje wdrożenia, które umożliwiają korzystanie z kluczowych usług Cloud Services — bez konieczności zmiany podstawowej architektury aplikacji. Na przykład możesz [konteneryzowanie](https://docs.microsoft.com/virtualization/windowscontainers/about/) aplikację i wdrożyć ją w usłudze Orchestrator Containers, takiej jak [usługi Azure Kubernetes Services](https://azure.microsoft.com/services/kubernetes-service/), omówionej w dalszej części tej książki. W chmurze aplikacja może korzystać z innych usług w chmurze, takich jak bazy danych, kolejki komunikatów, monitorowanie i rozproszone buforowanie.
+Monolityczne aplikacje mające kluczowe znaczenie dla korzyści z często biznesowej z rozszerzonej migracji podniesienia i przesunięcia (*zoptymalizowane pod kątem chmury*). Takie podejście obejmuje optymalizacje wdrożenia, które umożliwiają korzystanie z kluczowych usług Cloud Services — bez konieczności zmiany podstawowej architektury aplikacji. Na przykład możesz [konteneryzowanie](/virtualization/windowscontainers/about/) aplikację i wdrożyć ją w usłudze Orchestrator Containers, takiej jak [usługi Azure Kubernetes Services](https://azure.microsoft.com/services/kubernetes-service/), omówionej w dalszej części tej książki. W chmurze aplikacja może korzystać z innych usług w chmurze, takich jak bazy danych, kolejki komunikatów, monitorowanie i rozproszone buforowanie.
 
 Na koniec aplikacje monolityczne, które wykonują strategiczne funkcje korporacyjne, mogą najlepiej korzystać z *natywnych rozwiązań chmurowych* . Takie podejście zapewnia elastyczność i szybkość pracy. Jest to jednak koszt przetworzenia platformy, ponownej architektury i ponownego pisania kodu.
 
@@ -68,19 +68,19 @@ W tym rozdziale wprowadziliśmy przetwarzanie natywne w chmurze. Firma Microsoft
 
 Po wprowadzeniu tych informacji szczegółowemy bardziej szczegółowy wgląd w chmurę w chmurze.
 
-### <a name="references"></a>Dokumentacja
+### <a name="references"></a>Odwołania
 
 - [Natywna platforma obliczeniowa w chmurze](https://www.cncf.io/)
 
 - [Mikrousługi platformy .NET: architektura dla kontenerów aplikacji .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
 
-- [Modernizacja istniejących aplikacji platformy .NET za pomocą chmury platformy Azure i kontenerów systemu Windows](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook)
+- [Modernizacja istniejących aplikacji .NET za pomocą chmury platformy Azure i kontenerów systemu Windows](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook)
 
 - [Natywne wzorce chmury według Cornelia Davis](https://www.manning.com/books/cloud-native-patterns)
 
 - [Poza aplikacją 12-Składnikową](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
 
-- [Co to jest infrastruktura jako kod](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code)
+- [Co to jest infrastruktura jako kod](/azure/devops/learn/what-is-infrastructure-as-code)
 
 - [Micro Deploying inżyniera Uber: wdrażanie codziennie z pewnością](https://eng.uber.com/micro-deploy/)
 

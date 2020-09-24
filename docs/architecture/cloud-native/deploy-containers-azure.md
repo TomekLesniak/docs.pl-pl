@@ -2,18 +2,18 @@
 title: Wdrażanie kontenerów na platformie Azure
 description: Wdrażanie kontenerów na platformie Azure przy użyciu Azure Container Registry, usługi Azure Kubernetes i Azure Dev Spaces.
 ms.date: 04/13/2020
-ms.openlocfilehash: ba2854323ee0f1394a3cff0dd3756cb3c7c32d5b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d848a146a2bdb5d8d02543f57f19d6a39c9699e6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614152"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160778"
 ---
 # <a name="deploying-containers-in-azure"></a>Wdrażanie kontenerów na platformie Azure
 
 W tym rozdziale omówiono kontenery oraz rozdział 1. Wiemy, że kontenery oferują wiele korzyści dla aplikacji natywnych w chmurze, w tym przenośność. W chmurze platformy Azure można wdrożyć te same usługi kontenerów w środowiskach przejściowych i produkcyjnych. Platforma Azure oferuje kilka opcji hostowania obciążeń kontenerowych:
 
-- Usługi Azure Kubernetes Services (AKS)
+- Usługi Azure Kubernetes Service (AKS)
 - Wystąpienie kontenera platformy Azure (ACI)
 - Web Apps platformy Azure dla kontenerów
 
@@ -23,7 +23,7 @@ Podczas konteneryzowania mikrousługi, najpierw należy utworzyć kontener "Imag
 
 Po utworzeniu obrazy kontenerów są przechowywane w rejestrach kontenerów. Umożliwiają one tworzenie i przechowywanie obrazów kontenerów oraz zarządzanie nimi. Istnieje wiele dostępnych rejestrów — zarówno publicznych, jak i prywatnych. Azure Container Registry (ACR) to w pełni zarządzana usługa rejestru kontenerów w chmurze platformy Azure. Obrazy są utrwalane w sieci platformy Azure, co skraca czas wdrażania ich na hostach kontenerów platformy Azure. Można je również zabezpieczyć przy użyciu tych samych procedur zabezpieczeń i tożsamości, które są używane dla innych zasobów platformy Azure.
 
-Azure Container Registry można utworzyć przy użyciu [Azure Portal](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal), [interfejsu wiersza polecenia platformy Azure](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli)lub [narzędzi programu PowerShell](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-powershell). Tworzenie rejestru na platformie Azure jest proste. Wymaga subskrypcji platformy Azure, grupy zasobów i unikatowej nazwy. Na rysunku 3-11 przedstawiono podstawowe opcje tworzenia rejestru, które będą obsługiwane w programie `registryname.azurecr.io` .
+Azure Container Registry można utworzyć przy użyciu [Azure Portal](/azure/container-registry/container-registry-get-started-portal), [interfejsu wiersza polecenia platformy Azure](/azure/container-registry/container-registry-get-started-azure-cli)lub [narzędzi programu PowerShell](/azure/container-registry/container-registry-get-started-powershell). Tworzenie rejestru na platformie Azure jest proste. Wymaga subskrypcji platformy Azure, grupy zasobów i unikatowej nazwy. Na rysunku 3-11 przedstawiono podstawowe opcje tworzenia rejestru, które będą obsługiwane w programie `registryname.azurecr.io` .
 
 ![Tworzenie rejestru kontenerów](./media/create-container-registry.png)
 
@@ -57,7 +57,7 @@ Najlepszym rozwiązaniem jest, aby deweloperzy nie mogli ręcznie wypychania obr
 
 ## <a name="acr-tasks"></a>Zadania usługi ACR
 
-[ACR Tasks](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-overview) to zestaw funkcji dostępnych w Azure Container Registry. Rozszerza [cykl programowania w pętli wewnętrznej](https://docs.microsoft.com/dotnet/architecture/containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow) przez tworzenie obrazów kontenerów i zarządzanie nimi w chmurze platformy Azure. Zamiast wywoływania a `docker build` i `docker push` lokalnie na komputerze deweloperskim, są one automatycznie obsługiwane przez zadania ACR w chmurze.
+[ACR Tasks](/azure/container-registry/container-registry-tasks-overview) to zestaw funkcji dostępnych w Azure Container Registry. Rozszerza [cykl programowania w pętli wewnętrznej](../containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow.md) przez tworzenie obrazów kontenerów i zarządzanie nimi w chmurze platformy Azure. Zamiast wywoływania a `docker build` i `docker push` lokalnie na komputerze deweloperskim, są one automatycznie obsługiwane przez zadania ACR w chmurze.
 
 Następujące polecenie AZ CLI/kompiluje obraz kontenera i wypchnięcie go do ACR:
 
@@ -75,7 +75,7 @@ Jak widać w poprzednim bloku poleceń, nie ma potrzeby instalowania pulpitu pla
 
 W tym rozdziale omówiono usługę Azure Kubernetes Service (AKS). Wiemy, że jest to niefaktyczny koordynator kontenerów zarządzania kontenerami aplikacji natywnych w chmurze.
 
-Po wdrożeniu obrazu do rejestru, takiego jak ACR, można skonfigurować AKS do automatycznego ściągania i wdrażania. W przypadku potoku ciągłej integracji i ciągłego wdrażania można skonfigurować strategię wydania w systemie [Kanaryjskie](https://martinfowler.com/bliki/CanaryRelease.html) , aby zminimalizować ryzyko związane z szybkim wdrażaniem aktualizacji. Nowa wersja aplikacji jest początkowo konfigurowana w środowisku produkcyjnym bez ruchu kierowanego do niego. Następnie system będzie kierować niewielki procent użytkowników do nowo wdrożonej wersji. Gdy zespół uzyska zaufanie do nowej wersji, może wycofać więcej wystąpień i wycofać stary. AKS łatwo obsługuje ten styl wdrożenia.
+Po wdrożeniu obrazu do rejestru, takiego jak ACR, można skonfigurować AKS do automatycznego ściągania i wdrażania. W przypadku potoku ciągłej integracji i ciągłego wdrażania można skonfigurować strategię wydania w systemie  [Kanaryjskie](https://martinfowler.com/bliki/CanaryRelease.html) , aby zminimalizować ryzyko związane z szybkim wdrażaniem aktualizacji. Nowa wersja aplikacji jest początkowo konfigurowana w środowisku produkcyjnym bez ruchu kierowanego do niego. Następnie system będzie kierować niewielki procent użytkowników do nowo wdrożonej wersji. Gdy zespół uzyska zaufanie do nowej wersji, może wycofać więcej wystąpień i wycofać stary. AKS łatwo obsługuje ten styl wdrożenia.
 
 Podobnie jak w przypadku większości zasobów platformy Azure, można utworzyć klaster usługi Azure Kubernetes Service przy użyciu portalu, wiersza polecenia lub narzędzi do automatyzacji, takich jak Helm lub Terraform. Aby rozpocząć pracę z nowym klastrem, należy podać następujące informacje:
 
@@ -91,12 +91,12 @@ Podobnie jak w przypadku większości zasobów platformy Azure, można utworzyć
 Te informacje są wystarczające, aby rozpocząć pracę. W ramach procesu tworzenia w Azure Portal można również skonfigurować opcje następujących funkcji klastra:
 
 - Skalowanie
-- Authentication
+- Uwierzytelnianie
 - Networking
 - Monitorowanie
 - Tagi
 
-Ten [Przewodnik Szybki Start przeprowadzi Cię przez proces wdrażania klastra AKS przy użyciu Azure Portal](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
+Ten [Przewodnik Szybki Start przeprowadzi Cię przez proces wdrażania klastra AKS przy użyciu Azure Portal](/azure/aks/kubernetes-walkthrough-portal).
 
 ## <a name="azure-dev-spaces"></a>Azure Dev Spaces
 
@@ -116,7 +116,7 @@ Proces pracy z Azure Dev Spaces obejmuje następujące kroki:
 3. Skonfiguruj podrzędną przestrzeń programistyczną (dla własnej wersji systemu).
 4. Nawiąż połączenie z obszarem dev.
 
-Wszystkie te kroki można wykonać przy użyciu interfejsu wiersza polecenia platformy Azure i nowych `azds` narzędzi wiersza poleceń. Na przykład, aby utworzyć nowe miejsce dla deweloperów platformy Azure dla danego klastra Kubernetes, użyj polecenia takiego jak ten:
+Wszystkie te kroki można wykonać przy użyciu interfejsu wiersza polecenia platformy Azure i nowych  `azds` narzędzi wiersza poleceń. Na przykład, aby utworzyć nowe miejsce dla deweloperów platformy Azure dla danego klastra Kubernetes, użyj polecenia takiego jak ten:
 
 ```azurecli
 az aks use-dev-spaces -g my-aks-resource-group -n MyAKSCluster

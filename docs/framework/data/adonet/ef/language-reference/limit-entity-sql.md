@@ -2,14 +2,15 @@
 title: LIMIT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c22ffede-0a52-44d1-99b9-4a91e651e1b9
-ms.openlocfilehash: 98e44110e604c6d893734869871d72f1d021775d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 81d135785e567d46a105adcafbf083f48cb4868e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556287"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161766"
 ---
 # <a name="limit-entity-sql"></a>LIMIT (Entity SQL)
+
 Stronicowanie fizyczne można wykonać za pomocą klauzuli LIMIT w klauzuli ORDER BY. Nie można użyć limitu niezależnie od klauzuli ORDER BY.  
   
 ## <a name="syntax"></a>Składnia  
@@ -19,6 +20,7 @@ Stronicowanie fizyczne można wykonać za pomocą klauzuli LIMIT w klauzuli ORDE
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `n`  
  Liczba elementów, które zostaną wybrane.  
   
@@ -28,6 +30,7 @@ Stronicowanie fizyczne można wykonać za pomocą klauzuli LIMIT w klauzuli ORDE
 > Zapytanie SQL jednostki zostanie uznane za nieprawidłowe, jeśli w tym samym wyrażeniu zapytania występuje modyfikator TOP i SKIP sub. Zapytanie powinno być ponownie zapisywane przez zmianę wyrażenia TOP na wyrażenie OGRANICZAjące.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższe zapytanie Entity SQL używa operatora ORDER BY z LIMITem, aby określić kolejność sortowania używaną dla obiektów zwracanych w instrukcji SELECT. Zapytanie jest oparte na modelu sprzedaży AdventureWorks. Aby skompilować i uruchomić to zapytanie, wykonaj następujące kroki:  
   
 1. Postępuj zgodnie z procedurą w temacie [How to: Execute a Query zwracającej wyniki StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
@@ -36,7 +39,7 @@ Stronicowanie fizyczne można wykonać za pomocą klauzuli LIMIT w klauzuli ORDE
   
  [!code-sql[DP EntityServices Concepts#LIMIT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#limit)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [ORDER BY](order-by-entity-sql.md)
 - [Instrukcje: Strona za poorednictwem wyników zapytania](/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))

@@ -2,12 +2,12 @@
 title: Azure Monitor
 description: Korzystanie z Azure Monitor w celu uzyskania wglądu w system działa.
 ms.date: 07/05/2020
-ms.openlocfilehash: 342d54292736622f6546768e039ca244a69b020e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 65e17740dba49c3ac3f6e13462897b5342da6710
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540208"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160973"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
@@ -20,9 +20,9 @@ ms.locfileid: "90540208"
 
 Pierwszym krokiem w dowolnym rozwiązaniu monitorowania jest gromadzenie możliwie największej ilości danych. Im więcej zebranych danych, tym dokładniejsze są szczegółowe informacje. Systemy Instrumentacji są tradycyjnie trudne. Simple Network Management Protocol (SNMP) był standardowym protokołem do zbierania informacji na poziomie komputera, ale wymagało dużej wiedzy i konfiguracji. Na szczęście większość tej pracy twardej została wyeliminowana, ponieważ najczęstsze metryki są zbierane automatycznie przez Azure Monitor.
 
-Metryki i zdarzenia na poziomie aplikacji nie są możliwe do automatycznego przystąpienia, ponieważ są specyficzne dla wdrażanej aplikacji. Aby zebrać te metryki, [dostępne są zestawy SDK i interfejsy API](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) służące do bezpośredniego zgłaszania takich informacji, na przykład gdy klient zarejestruje lub ukończy zamówienie. Wyjątki mogą być również przechwytywane i raportowane z powrotem do Azure Monitor za pośrednictwem Application Insights. Zestawy SDK obsługują większość języków znalezionych w natywnych aplikacjach w chmurze, takich jak go, Python, JavaScript i .NET.
+Metryki i zdarzenia na poziomie aplikacji nie są możliwe do automatycznego przystąpienia, ponieważ są specyficzne dla wdrażanej aplikacji. Aby zebrać te metryki, [dostępne są zestawy SDK i interfejsy API](/azure/azure-monitor/app/api-custom-events-metrics) służące do bezpośredniego zgłaszania takich informacji, na przykład gdy klient zarejestruje lub ukończy zamówienie. Wyjątki mogą być również przechwytywane i raportowane z powrotem do Azure Monitor za pośrednictwem Application Insights. Zestawy SDK obsługują większość języków znalezionych w natywnych aplikacjach w chmurze, takich jak go, Python, JavaScript i .NET.
 
-Ostatecznym celem zebrania informacji o stanie aplikacji jest upewnienie się, że użytkownicy końcowi mają dobre doświadczenie. Jaki lepszy sposób, aby stwierdzić, czy użytkownicy napotykają problemy niż [w przypadku testów sieci Web](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability)? Te testy mogą być proste jako polecenie ping dla witryny internetowej z lokalizacji na całym świecie lub w przypadku, gdy agenci są zalogować się do lokacji i symulują akcje użytkownika.
+Ostatecznym celem zebrania informacji o stanie aplikacji jest upewnienie się, że użytkownicy końcowi mają dobre doświadczenie. Jaki lepszy sposób, aby stwierdzić, czy użytkownicy napotykają problemy niż [w przypadku testów sieci Web](/azure/azure-monitor/app/monitor-web-app-availability)? Te testy mogą być proste jako polecenie ping dla witryny internetowej z lokalizacji na całym świecie lub w przypadku, gdy agenci są zalogować się do lokacji i symulują akcje użytkownika.
 
 ## <a name="reporting-data"></a>Dane raportowania
 
@@ -45,11 +45,11 @@ Rysunek 7-13 przedstawia wyniki tego zapytania Application Insights.
 ![Application Insights ilustracji wyników zapytania ](./media/application_insights_example.png)
  **7-13**. Application Insights wyników zapytania.
 
-Istnieje [plac zabaw do eksperymentowania z](https://dataexplorer.azure.com/clusters/help/databases/Samples) zapytaniami Kusto. Odczytywanie [przykładowych zapytań](https://docs.microsoft.com/azure/kusto/query/samples) może być również instrukcją.
+Istnieje [plac zabaw do eksperymentowania z](https://dataexplorer.azure.com/clusters/help/databases/Samples) zapytaniami Kusto. Odczytywanie [przykładowych zapytań](/azure/kusto/query/samples) może być również instrukcją.
 
 ## <a name="dashboards"></a>Pulpity nawigacyjne
 
-Istnieje kilka różnych technologii pulpitu nawigacyjnego, które mogą być używane do prezentowania informacji z Azure Monitor. Prawdopodobnie najprostszym sposobem jest tylko uruchomienie zapytań w Application Insights i [wykreślenie danych na wykresie](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards).
+Istnieje kilka różnych technologii pulpitu nawigacyjnego, które mogą być używane do prezentowania informacji z Azure Monitor. Prawdopodobnie najprostszym sposobem jest tylko uruchomienie zapytań w Application Insights i [wykreślenie danych na wykresie](/azure/azure-monitor/learn/tutorial-app-dashboards).
 
 ![Przykład Application Insights wykresów osadzonych na głównym rysunku pulpitu nawigacyjnego platformy Azure ](./media/azure_dashboard.png)
  **7-14**. Przykład Application Insights wykresów osadzonych na głównym pulpicie nawigacyjnym platformy Azure.
@@ -62,7 +62,7 @@ Te wykresy można następnie osadzić w Azure Portal w odpowiedni sposób przy u
 
 ## <a name="alerts"></a>Alerty
 
-Czasami posiadanie pulpitów nawigacyjnych danych jest niewystarczające. Jeśli nikt nie będzie w stanie obejrzeć pulpitów nawigacyjnych, może to potrwać kilka godzin, zanim problem zostanie rozwiązany, a nawet wykryty. W tym celu Azure Monitor również zawiera pierwsze rozwiązanie do tworzenia [alertów](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview). Alerty mogą być wyzwalane przez szeroki zakres warunków, w tym:
+Czasami posiadanie pulpitów nawigacyjnych danych jest niewystarczające. Jeśli nikt nie będzie w stanie obejrzeć pulpitów nawigacyjnych, może to potrwać kilka godzin, zanim problem zostanie rozwiązany, a nawet wykryty. W tym celu Azure Monitor również zawiera pierwsze rozwiązanie do tworzenia [alertów](/azure/azure-monitor/platform/alerts-overview). Alerty mogą być wyzwalane przez szeroki zakres warunków, w tym:
 
 - Wartości metryk
 - Zapytania przeszukiwania dzienników
@@ -74,11 +74,11 @@ Po wyzwoleniu alerty mogą wykonywać wiele różnych zadań. Po stronie prostej
 
 W miarę identyfikowania typowych przyczyn alertów można rozszerzyć alerty z szczegółowymi przyczynami alertów i czynnościami, które należy podjąć w celu ich rozwiązania. Wysoce dojrzałe wdrożenia aplikacji natywnych w chmurze mogą zrezygnować z wykonywania zadań samonaprawiania, które wykonują działania, takie jak usuwanie węzłów zakończonych niepowodzeniem z zestawu skalowania lub wyzwalanie działania skalowania automatycznego. Na koniec nie jest już konieczne wznawianie pracy w ramach usługi –: 00, aby rozwiązać problem związany z witryną na żywo, ponieważ system będzie mógł dopasować się do co najmniej Limp, dopóki ktoś się nie dotrze do następnego dnia.
 
-Azure Monitor automatycznie wykorzystuje Uczenie maszynowe do zrozumienia normalnych parametrów operacyjnych wdrożonych aplikacji. Dzięki temu można wykryć usługi, które działają poza ich normalnymi parametrami. Na przykład typowy ruch w dniu tygodnia w witrynie może wynosić 10 000 żądań na minutę. A następnie w danym tygodniu nagle liczba żądań trafi o wysoce nietypowe żądania 20 000 na minutę. [Inteligentne wykrywanie](https://docs.microsoft.com/azure/azure-monitor/app/proactive-diagnostics) będzie zauważyć takie odróżnienie od normy i wyzwolenie alertu. W tym samym czasie analiza trendu jest na tyle inteligentna, aby uniknąć zapłonu fałszywych wartości dodatnich, gdy oczekiwane jest obciążenie ruchem.
+Azure Monitor automatycznie wykorzystuje Uczenie maszynowe do zrozumienia normalnych parametrów operacyjnych wdrożonych aplikacji. Dzięki temu można wykryć usługi, które działają poza ich normalnymi parametrami. Na przykład typowy ruch w dniu tygodnia w witrynie może wynosić 10 000 żądań na minutę. A następnie w danym tygodniu nagle liczba żądań trafi o wysoce nietypowe żądania 20 000 na minutę. [Inteligentne wykrywanie](/azure/azure-monitor/app/proactive-diagnostics) będzie zauważyć takie odróżnienie od normy i wyzwolenie alertu. W tym samym czasie analiza trendu jest na tyle inteligentna, aby uniknąć zapłonu fałszywych wartości dodatnich, gdy oczekiwane jest obciążenie ruchem.
 
-## <a name="references"></a>Dokumentacja
+## <a name="references"></a>Odwołania
 
-- [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
+- [Azure Monitor](/azure/azure-monitor/overview)
 
 >[!div class="step-by-step"]
 >[Poprzedni](monitoring-azure-kubernetes.md) 

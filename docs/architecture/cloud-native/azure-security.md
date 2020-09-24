@@ -2,12 +2,12 @@
 title: Zabezpieczenia platformy Azure dla aplikacji natywnych w chmurze
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Zabezpieczenia platformy Azure dla natywnych aplikacji w chmurze
 ms.date: 05/13/2020
-ms.openlocfilehash: 7780b005d84124f202049deeb5be876364e6c5fa
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: e6f91cc4c240dd3349faed2f87db1ba99b2780a9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358976"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160999"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpieczenia platformy Azure dla aplikacji natywnych w chmurze
 
@@ -24,7 +24,7 @@ Niezależnie od tego, czy zalety przewyższają wady aplikacji natywnych w chmur
 - Kto powinien mieć dostęp do tych danych?
 - Czy istnieją zasady inspekcji dotyczące procesu tworzenia i zwalniania?
 
-Wszystkie te pytania są częścią procesu nazywanego [modelem zagrożeń](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool). Ten proces próbuje odpowiedzieć na pytanie dotyczące zagrożeń związanych z systemem, jak najprawdopodobniej zagrożenia i potencjalne szkody.
+Wszystkie te pytania są częścią procesu nazywanego [modelem zagrożeń](/azure/security/azure-security-threat-modeling-tool). Ten proces próbuje odpowiedzieć na pytanie dotyczące zagrożeń związanych z systemem, jak najprawdopodobniej zagrożenia i potencjalne szkody.
 
 Po ustaleniu listy zagrożeń należy zdecydować, czy są one cennym problemem. Czasami zagrożenie jest mało prawdopodobne i kosztowne do zaplanowania, że nie jest to konieczne. Na przykład niektóre aktory poziomu stanu mogą wstrzyknąć zmiany do projektu procesu, który jest używany przez miliony urządzeń. Teraz zamiast uruchamiania pewnego fragmentu kodu w [pierścieniu 3](https://en.wikipedia.org/wiki/Protection_ring), ten kod jest uruchamiany w pierścieniu 0. Pozwala to wykorzystać luki w zabezpieczeniach, która może ominąć funkcję hypervisor i uruchomić kod ataku na komputerach bez systemu operacyjnego, umożliwiając ataki na wszystkie maszyny wirtualne, na których działa ten sprzęt.
 
@@ -94,11 +94,11 @@ Po ustanowieniu sieci zasoby wewnętrzne, takie jak konta magazynu, można skonf
 
 Węzły w klastrze usługi Azure Kubernetes mogą uczestniczyć w sieci wirtualnej tak samo jak inne zasoby, które są bardziej natywne dla platformy Azure. Ta funkcja jest nazywana [interfejsem usługi Azure Container Network](https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md). W efekcie przypisuje podsieci w sieci wirtualnej, w której są przydzielane maszyny wirtualne i obrazy kontenerów.
 
-Kontynuowanie ścieżki ilustrującej zasadę najniższych uprawnień, nie każdy zasób w ramach Virtual Network musi komunikować się z każdym innym zasobem. Na przykład w aplikacji udostępniającej internetowy interfejs API w ramach konta magazynu i bazy danych SQL jest mało prawdopodobne, że baza danych i konto magazynu muszą komunikować się ze sobą. Każde udostępnianie danych między nimi spowoduje przejście przez aplikację sieci Web. Dlatego w celu odmowy ruchu między obiema usługami można użyć [sieciowej grupy zabezpieczeń (sieciowej grupy zabezpieczeń)](https://docs.microsoft.com/azure/virtual-network/security-overview) .
+Kontynuowanie ścieżki ilustrującej zasadę najniższych uprawnień, nie każdy zasób w ramach Virtual Network musi komunikować się z każdym innym zasobem. Na przykład w aplikacji udostępniającej internetowy interfejs API w ramach konta magazynu i bazy danych SQL jest mało prawdopodobne, że baza danych i konto magazynu muszą komunikować się ze sobą. Każde udostępnianie danych między nimi spowoduje przejście przez aplikację sieci Web. Dlatego w celu odmowy ruchu między obiema usługami można użyć [sieciowej grupy zabezpieczeń (sieciowej grupy zabezpieczeń)](/azure/virtual-network/security-overview) .
 
 Zasady odmawiające komunikacji między zasobami mogą być irytujące do zaimplementowania, szczególnie pochodzące z tła platformy Azure bez ograniczeń ruchu. W przypadku niektórych innych chmur koncepcje grup zabezpieczeń sieci są znacznie bardziej powszechne. Na przykład zasady domyślne w AWS to, że zasoby nie mogą komunikować się między sobą, dopóki nie zostaną włączone przez reguły w sieciowej grupy zabezpieczeń. Jednak wolniejsze tworzenie tego środowiska zapewnia bezpieczniejsze ustawienia domyślne. Korzystanie z odpowiednich praktyk DevOps, zwłaszcza przy użyciu [Azure Resource Manager lub Terraform](infrastructure-as-code.md) do zarządzania uprawnieniami, może ułatwić kontrolowanie reguł.
 
-Sieci wirtualne mogą być również przydatne podczas konfigurowania komunikacji między zasobami lokalnymi i w chmurze. Wirtualna sieć prywatna może służyć do bezproblemowego dołączania dwóch sieci. Pozwala to na uruchamianie sieci wirtualnej bez żadnych rodzajów bram dla scenariuszy, w których wszyscy użytkownicy są w lokacji. Istnieje wiele technologii, których można użyć do ustanowienia tej sieci. Najprostszą jest użycie [sieci VPN typu lokacja-lokacja](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#s2smulti) , którą można nawiązać między wieloma routerami i platformą Azure. Ruch jest szyfrowany i tunelowany przez Internet przy użyciu tego samego kosztu na bajt, co inny ruch. W przypadku scenariuszy, w których jest wymagana większa przepustowość lub większa, platforma Azure oferuje usługę o nazwie [Express Route](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#ExpressRoute) , która używa obwodu prywatnego między siecią lokalną a platformą Azure. Jest to tańsze i trudne do ustanowienia, ale również bezpieczniejsze.
+Sieci wirtualne mogą być również przydatne podczas konfigurowania komunikacji między zasobami lokalnymi i w chmurze. Wirtualna sieć prywatna może służyć do bezproblemowego dołączania dwóch sieci. Pozwala to na uruchamianie sieci wirtualnej bez żadnych rodzajów bram dla scenariuszy, w których wszyscy użytkownicy są w lokacji. Istnieje wiele technologii, których można użyć do ustanowienia tej sieci. Najprostszą jest użycie [sieci VPN typu lokacja-lokacja](/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%252fazure%252fvirtual-network%252ftoc.json#s2smulti) , którą można nawiązać między wieloma routerami i platformą Azure. Ruch jest szyfrowany i tunelowany przez Internet przy użyciu tego samego kosztu na bajt, co inny ruch. W przypadku scenariuszy, w których jest wymagana większa przepustowość lub większa, platforma Azure oferuje usługę o nazwie [Express Route](/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%252fazure%252fvirtual-network%252ftoc.json#ExpressRoute) , która używa obwodu prywatnego między siecią lokalną a platformą Azure. Jest to tańsze i trudne do ustanowienia, ale również bezpieczniejsze.
 
 ## <a name="role-based-access-control-for-restricting-access-to-azure-resources"></a>Kontrola dostępu oparta na rolach w celu ograniczenia dostępu do zasobów platformy Azure
 
@@ -129,7 +129,7 @@ Podmiot zabezpieczeń może przejąć wiele ról lub, przy użyciu bardziej sart
 
 Wbudowana w platformę Azure to również szereg ról wysokiego poziomu, takich jak właściciel, współautor, czytelnik i administrator konta użytkownika. Przy użyciu roli właściciela podmiot zabezpieczeń może uzyskać dostęp do wszystkich zasobów i przypisać uprawnienia innym użytkownikom. Współautor ma ten sam poziom dostępu do wszystkich zasobów, ale nie może przypisywać uprawnień. Czytelnik może wyświetlać tylko istniejące zasoby platformy Azure, a administrator konta użytkownika może zarządzać dostępem do zasobów platformy Azure.
 
-Bardziej szczegółowe role wbudowane, takie jak [współautor strefy DNS](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#dns-zone-contributor) , mają uprawnienia ograniczone do pojedynczej usługi. Podmioty zabezpieczeń mogą wykonać dowolną liczbę ról.
+Bardziej szczegółowe role wbudowane, takie jak [współautor strefy DNS](/azure/role-based-access-control/built-in-roles#dns-zone-contributor) , mają uprawnienia ograniczone do pojedynczej usługi. Podmioty zabezpieczeń mogą wykonać dowolną liczbę ról.
 
 ## <a name="scopes"></a>Zakresy
 
@@ -139,7 +139,7 @@ Zakres może być tak wąski jako pojedynczy zasób lub można go zastosować do
 
 Podczas testowania, jeśli podmiot zabezpieczeń ma określone uprawnienie, połączenie roli i zakresu jest brane pod uwagę. Ta kombinacja zapewnia zaawansowany mechanizm autoryzacji.
 
-## <a name="deny"></a>Deny
+## <a name="deny"></a>Zablokuj
 
 Wcześniej reguły RBAC były dozwolone tylko dla reguł "Zezwalaj". Takie zachowanie jest skomplikowane dla kompilowania niektórych zakresów. Na przykład zezwolenie na dostęp podmiotu zabezpieczeń do wszystkich kont magazynu z wyjątkiem jednego wymaganego przyznania jawnego uprawnienia do potencjalnie nieograniczonej listy kont magazynu. Za każdym razem, gdy nowe konto magazynu zostało utworzone, należy je dodać do tej listy kont. To dodatkowe obciążenie związane z zarządzaniem, które nie było pożądane.
 
@@ -147,7 +147,7 @@ Reguły odmowy mają pierwszeństwo przed regułami Zezwalaj. Teraz reprezentuj�
 
 ## <a name="checking-access"></a>Sprawdzanie dostępu
 
-Jak można wyobrazić, posiadanie dużej liczby ról i zakresów może sprawiać, że efektywne uprawnienia jednostki usługi są dość trudne. Piling reguły odmowy na tym, tylko w celu zwiększenia złożoności. Na szczęście istnieje [Kalkulator uprawnień](https://docs.microsoft.com/azure/role-based-access-control/check-access) , który może wyświetlać czynne uprawnienia dla każdej jednostki usługi. Zazwyczaj znajduje się on na karcie IAM w portalu, jak pokazano na rysunku 10-3.
+Jak można wyobrazić, posiadanie dużej liczby ról i zakresów może sprawiać, że efektywne uprawnienia jednostki usługi są dość trudne. Piling reguły odmowy na tym, tylko w celu zwiększenia złożoności. Na szczęście istnieje [Kalkulator uprawnień](/azure/role-based-access-control/check-access) , który może wyświetlać czynne uprawnienia dla każdej jednostki usługi. Zazwyczaj znajduje się on na karcie IAM w portalu, jak pokazano na rysunku 10-3.
 
 ![Rysunek 9-4 Kalkulator uprawnień dla usługi App Service](./media/check-rbac.png)
 
@@ -231,9 +231,9 @@ W dowolnej aplikacji istnieje wiele miejsc, w których dane są przechowywane na
 
 Nadmierne Przypinanie wielu platform Azure to aparat usługi Azure Storage. Dyski maszyny wirtualnej są instalowane w usłudze Azure Storage. Usługi Azure Kubernetes Services są uruchamiane na maszynach wirtualnych, które są hostowane w usłudze Azure Storage. Nawet w przypadku technologii bezserwerowych, takich jak Azure Functions aplikacje i Azure Container Instances, należy uruchomić poza dyskiem, który jest częścią usługi Azure Storage.
 
-Jeśli usługa Azure Storage jest dobrze zaszyfrowana, umożliwia ona również podstawę dla większości innych elementów. Usługa Azure Storage [jest zaszyfrowana](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) przy użyciu zgodności ze [standardem FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140) [256-bitowym AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). Jest to dobrze uznana technologia szyfrowania, która była przedmiotem rozbudowanej kontroli naukowej w ciągu ostatnich 20 lub lat. Obecnie nie ma znanego praktycznego ataku, który zezwoli komuś bez znajomości klucza w celu odczytania danych szyfrowanych przez algorytm AES.
+Jeśli usługa Azure Storage jest dobrze zaszyfrowana, umożliwia ona również podstawę dla większości innych elementów. Usługa Azure Storage [jest zaszyfrowana](/azure/storage/common/storage-service-encryption) przy użyciu zgodności ze [standardem FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140) [256-bitowym AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). Jest to dobrze uznana technologia szyfrowania, która była przedmiotem rozbudowanej kontroli naukowej w ciągu ostatnich 20 lub lat. Obecnie nie ma znanego praktycznego ataku, który zezwoli komuś bez znajomości klucza w celu odczytania danych szyfrowanych przez algorytm AES.
 
-Domyślnie klucze używane do szyfrowania usługi Azure Storage są zarządzane przez firmę Microsoft. Istnieją rozległe zabezpieczenia zapewniające zapobieganie złośliwemu dostępowi do tych kluczy. Jednak użytkownicy z określonymi wymaganiami dotyczącymi szyfrowania mogą również [udostępniać własne klucze magazynu](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-powershell) zarządzane w programie Azure Key Vault. Te klucze można odwołać w dowolnym momencie, co mogłoby efektywnie renderować zawartość konta magazynu przy użyciu ich niedostępności.
+Domyślnie klucze używane do szyfrowania usługi Azure Storage są zarządzane przez firmę Microsoft. Istnieją rozległe zabezpieczenia zapewniające zapobieganie złośliwemu dostępowi do tych kluczy. Jednak użytkownicy z określonymi wymaganiami dotyczącymi szyfrowania mogą również [udostępniać własne klucze magazynu](/azure/storage/common/storage-encryption-keys-powershell) zarządzane w programie Azure Key Vault. Te klucze można odwołać w dowolnym momencie, co mogłoby efektywnie renderować zawartość konta magazynu przy użyciu ich niedostępności.
 
 Maszyny wirtualne korzystają z zaszyfrowanego magazynu, ale istnieje możliwość zapewnienia innej warstwy szyfrowania przy użyciu technologii, takich jak funkcja BitLocker w systemie Windows lub DM-Crypt w systemie Linux. Te technologie oznaczają, że nawet w przypadku przecieku obrazu dysku poza magazynem nie można go odczytać.
 
@@ -243,7 +243,7 @@ Bazy danych hostowane w usłudze Azure SQL wykorzystują technologię o nazwie [
 
 Parametry szyfrowania są przechowywane w `master` bazie danych programu i po uruchomieniu są odczytywane w pamięci dla pozostałych operacji. Oznacza to, że `master` baza danych musi pozostać niezaszyfrowana. Rzeczywistym kluczem zarządza firma Microsoft. Jednak użytkownicy z dokładnymi wymaganiami dotyczącymi bezpieczeństwa mogą zapewnić własny klucz w Key Vault w podobny sposób, jak w przypadku usługi Azure Storage. Key Vault zapewnia takie usługi jak rotacja kluczy i odwoływanie.
 
-Część "przezroczyste" strumienia TDS pochodzi z faktu, że nie są potrzebne zmiany klienta wymagające użycia zaszyfrowanej bazy danych. Chociaż takie podejście zapewnia dobrą ochronę, przeciek hasła bazy danych jest wystarczający, aby użytkownicy mogli odszyfrować dane. Istnieje inne podejście, które szyfruje pojedyncze kolumny lub tabele w bazie danych. [Always Encrypted](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) zapewnia, że dane zaszyfrowane nie będą wyświetlane w postaci zwykłego tekstu wewnątrz bazy danych.
+Część "przezroczyste" strumienia TDS pochodzi z faktu, że nie są potrzebne zmiany klienta wymagające użycia zaszyfrowanej bazy danych. Chociaż takie podejście zapewnia dobrą ochronę, przeciek hasła bazy danych jest wystarczający, aby użytkownicy mogli odszyfrować dane. Istnieje inne podejście, które szyfruje pojedyncze kolumny lub tabele w bazie danych. [Always Encrypted](/azure/sql-database/sql-database-always-encrypted-azure-key-vault) zapewnia, że dane zaszyfrowane nie będą wyświetlane w postaci zwykłego tekstu wewnątrz bazy danych.
 
 Skonfigurowanie tej warstwy szyfrowania wymaga uruchomienia przez kreatora w SQL Server Management Studio, aby wybrać sortowanie szyfrowania i miejsce, w którym w Key Vault mają być przechowywane skojarzone klucze.
 

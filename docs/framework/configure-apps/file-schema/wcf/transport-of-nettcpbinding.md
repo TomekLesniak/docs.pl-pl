@@ -2,14 +2,15 @@
 title: <transport> dla <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 49462e0a-66e1-463f-b3e1-c83a441673c6
-ms.openlocfilehash: 4ef08ad73a03dea21d27217364a7bacb46a3848e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8f752373c51992c51b747f5f4dc4a63910a387c6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73735934"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162195"
 ---
 # <a name="transport-of-nettcpbinding"></a>\<transport> dla \<netTcpBinding>
+
 Definiuje typ wymagań dotyczących zabezpieczeń na poziomie komunikatów dla punktu końcowego skonfigurowanego przy użyciu [\<netTcpBinding>](nettcpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ Definiuje typ wymagań dotyczących zabezpieczeń na poziomie komunikatów dla p
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -69,6 +71,7 @@ Definiuje typ wymagań dotyczących zabezpieczeń na poziomie komunikatów dla p
 |EncryptAndSign|— Komunikaty są szyfrowane i podpisane.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -78,9 +81,10 @@ Definiuje typ wymagań dotyczących zabezpieczeń na poziomie komunikatów dla p
 |[\<security>](security-of-nettcpbinding.md)|Określa możliwości zabezpieczeń programu [\<netTcpBinding>](nettcpbinding.md) .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zabezpieczenia transportu umożliwiają integralność i poufność komunikatu protokołu SOAP oraz uwierzytelnianie wzajemne. Jeśli w powiązaniu wybrano ten tryb zabezpieczeń, stos kanału zostanie skonfigurowany przy użyciu bezpiecznego transportu, a komunikaty protokołu SOAP są zabezpieczone za pomocą zabezpieczeń transportu, takich jak Windows (Negotiate) lub SSL przez TCP.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.TcpTransportSecurity>
 - <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Transport%2A>
@@ -89,5 +93,5 @@ Definiuje typ wymagań dotyczących zabezpieczeń na poziomie komunikatów dla p
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

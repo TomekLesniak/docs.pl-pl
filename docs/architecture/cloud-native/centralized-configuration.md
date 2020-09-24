@@ -2,12 +2,12 @@
 title: Konfiguracja scentralizowana
 description: Scentralizowana konfiguracja aplikacji natywnych w chmurze przy użyciu usługi Azure App Configuration i magazynu AzureKey.
 ms.date: 05/13/2020
-ms.openlocfilehash: d389d29dcdb1db5162d95370d181ab5a85d72dc8
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 0d40c5b2d70f30beb17489dfd55900f7c5fc1a75
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614230"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160882"
 ---
 # <a name="centralized-configuration"></a>Konfiguracja scentralizowana
 
@@ -19,7 +19,7 @@ W chmurze platformy Azure prezentowane są kilka doskonałych opcji.
 
 ## <a name="azure-app-configuration"></a>Azure App Configuration
 
-[Konfiguracja aplikacji platformy Azure](https://docs.microsoft.com/azure/azure-app-configuration/overview) to w pełni zarządzana usługa platformy Azure, która przechowuje ustawienia konfiguracji inne niż tajne w bezpiecznej, scentralizowanej lokalizacji. Przechowywane wartości mogą być współużytkowane przez wiele usług i aplikacji.
+[Konfiguracja aplikacji platformy Azure](/azure/azure-app-configuration/overview) to w pełni zarządzana usługa platformy Azure, która przechowuje ustawienia konfiguracji inne niż tajne w bezpiecznej, scentralizowanej lokalizacji. Przechowywane wartości mogą być współużytkowane przez wiele usług i aplikacji.
 
 Usługa jest prosta do użycia i oferuje kilka korzyści:
 
@@ -51,19 +51,19 @@ Dostęp do Key Vault wymaga właściwego uwierzytelniania i autoryzacji wywołuj
 
 Aplikacja eShopOnContainers obejmuje lokalne pliki ustawień aplikacji z każdą mikrousługą. Te pliki są sprawdzane w kontroli źródła, ale nie zawierają wpisów tajnych, takich jak parametry połączenia lub klucze interfejsu API. W środowisku produkcyjnym poszczególne ustawienia mogą zostać zastąpione zmiennymi środowiskowymi dla poszczególnych usług. Wprowadzanie wpisów tajnych w zmiennych środowiskowych jest powszechną metodą obsługi hostowanych aplikacji, ale nie zapewnia centralnego magazynu konfiguracji. Aby zapewnić obsługę scentralizowanego zarządzania ustawieniami konfiguracji, każda mikrousługa zawiera ustawienie umożliwiające przełączenie między użyciem ustawień lokalnych lub Azure Key Vault ustawień.
 
-## <a name="references"></a>Dokumentacja
+## <a name="references"></a>Odwołania
 
 - [Architektura eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Architecture)
-- [Organizowanie aplikacji mikrousług i aplikacji z wieloma kontenerami w celu zapewnienia wysokiej skalowalności i dostępności](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications)
-- [Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
-- [Przegląd Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
+- [Organizowanie aplikacji mikrousług i aplikacji z wieloma kontenerami w celu zapewnienia wysokiej skalowalności i dostępności](../microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications.md)
+- [Usługa Azure API Management](/azure/api-management/api-management-key-concepts)
+- [Przegląd Azure SQL Database](/azure/sql-database/sql-database-technical-overview)
 - [Azure Cache for Redis](https://azure.microsoft.com/services/cache/)
-- [Interfejs API usługi Azure Cosmos DB dla bazy danych MongoDB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
-- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
-- [Omówienie usługi Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
+- [Interfejs API usługi Azure Cosmos DB dla bazy danych MongoDB](/azure/cosmos-db/mongodb-introduction)
+- [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview)
+- [Omówienie usługi Azure Monitor](/azure/azure-monitor/overview)
 - [eShopOnContainers: Utwórz klaster Kubernetes w AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)#create-kubernetes-cluster-in-aks)
 - [eShopOnContainers: Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)
-- [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
+- [Azure Dev Spaces](/azure/dev-spaces/about)
 
 >[!div class="step-by-step"]
 >[Poprzedni](deploy-eshoponcontainers-azure.md) 

@@ -3,12 +3,12 @@ title: Definiowanie rozwiązań natywnych dla chmury
 description: Poznaj filary podstawowe, które zapewniają nimi dla systemów natywnych w chmurze
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: f50c144d99fae0c4702965342fd76ec22e8bd8c8
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: dce8da57b90519880e322a26de403d8e7cb718c2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87427037"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160908"
 ---
 # <a name="defining-cloud-native"></a>Definiowanie natywnego chmury
 
@@ -91,11 +91,11 @@ W poniższej tabeli przedstawiono metodologię 12-czynnikową:
 
 W książce [poza aplikacją 12-składnikową](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), autor: Jan Hoffman szczegóły każdego z oryginalnych 12 czynników (napisane w 2011). Ponadto omawiamy trzy dodatkowe czynniki odzwierciedlające współczesny współczesny projekt aplikacji w chmurze.
 
-|    |  Nowy czynnik | Wyjaśnienie  |
+|    |  Nowy czynnik | Objaśnienie  |
 | :-------- | :-------- | :-------- |
 | 13 | Priorytetyzowanie interfejsu API | Utwórz wszystko jako usługę. Załóżmy, że kod będzie używany przez klienta frontonu, bramę lub inną usługę. |
-| 14 | Telemetry | Na stacji roboczej masz wgląd w aplikację i jej zachowanie. W chmurze nie masz. Upewnij się, że projekt zawiera kolekcję monitorowanie, specyficzne dla domeny i kondycję/dane systemowe. |
-| 15 | Uwierzytelnianie/autoryzacja  | Zaimplementuj tożsamość z poziomu uruchomienia. Zapoznaj się z funkcjami [RBAC (kontrola dostępu opartą na rolach)](https://docs.microsoft.com/azure/role-based-access-control/overview) dostępnymi w chmurach publicznych.  |
+| 14 | Telemetria | Na stacji roboczej masz wgląd w aplikację i jej zachowanie. W chmurze nie masz. Upewnij się, że projekt zawiera kolekcję monitorowanie, specyficzne dla domeny i kondycję/dane systemowe. |
+| 15 | Uwierzytelnianie/autoryzacja  | Zaimplementuj tożsamość z poziomu uruchomienia. Zapoznaj się z funkcjami [RBAC (kontrola dostępu opartą na rolach)](/azure/role-based-access-control/overview) dostępnymi w chmurach publicznych.  |
 
 Odwołujemy się do wielu czynników 12 + w tym rozdziale i w całej książce.
 
@@ -221,7 +221,7 @@ Rysunek 1-6 przedstawia zadania zarządzania, które zapewnia koordynatorów kon
 
 W poniższej tabeli opisano typowe zadania aranżacji.
 
-|  Zadania | Wyjaśnienie  |
+|  Zadania | Objaśnienie  |
 | :-------- | :-------- |
 | Planowanie | Automatyczne Inicjowanie obsługi wystąpień kontenerów.|
 | Koligacja/ochrona przed koligacją | Udostępniaj kontenery w pobliżu lub daleko od siebie, ułatwiając dostępność i wydajność. |
@@ -276,21 +276,21 @@ Dostawcy chmury dostarczają interfejsy API umożliwiające komunikowanie się z
 
 Usługi zapasowe zostały omówione szczegółowo w rozdziale 5, *wzorcach danych natywnych w chmurze*i rozdziale 4 w *natywnych wzorcach komunikacji w chmurze*.
 
-## <a name="automation"></a>Automation
+## <a name="automation"></a>Automatyzacja
 
 Jak widać, systemy natywne w chmurze uwzględniają mikrousługi, kontenery i nowoczesne projektowanie systemu, aby osiągnąć szybkość i elastyczność. Ale jest to tylko część wątku. Jak można zainicjować obsługę środowisk w chmurze, na których są uruchamiane te systemy? Jak szybko wdrażać funkcje i aktualizacje aplikacji? Jak zaokrąglić pełny obraz?
 
-Wprowadzanie powszechnie zaakceptowanej metody [infrastruktury jako kodu](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code)lub IaC.
+Wprowadzanie powszechnie zaakceptowanej metody [infrastruktury jako kodu](/azure/devops/learn/what-is-infrastructure-as-code)lub IaC.
 
 Przy użyciu IaC można zautomatyzować Inicjowanie obsługi platformy i wdrażanie aplikacji. Zasadniczo stosowane są praktyki inżynieryjne dotyczące oprogramowania, takie jak testowanie i przechowywanie wersji, do Twoich praktyk DevOps. Infrastruktura i wdrożenia są zautomatyzowane, spójne i powtarzalne.
 
 ### <a name="automating-infrastructure"></a>Automatyzacja infrastruktury
 
-Narzędzia, takie jak [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraform i [interfejs wiersza polecenia platformy Azure](https://docs.microsoft.com/cli/azure/), umożliwiają deklaratywne skrypt wymaganej infrastruktury chmurowej. Nazwy zasobów, lokalizacje, pojemności i wpisy tajne są sparametryzowane i dynamiczne. Skrypt ma wersję i zaewidencjonowano kontrolę źródła jako artefakt projektu. Skrypt jest wywoływany w celu zapewnienia spójnej i powtarzalnej infrastruktury w środowiskach systemowych, takich jak pytania i odpowiedzi, przygotowanie i produkcja.
+Narzędzia, takie jak [Azure Resource Manager](/azure/azure-resource-manager/management/overview), Terraform i [interfejs wiersza polecenia platformy Azure](/cli/azure/), umożliwiają deklaratywne skrypt wymaganej infrastruktury chmurowej. Nazwy zasobów, lokalizacje, pojemności i wpisy tajne są sparametryzowane i dynamiczne. Skrypt ma wersję i zaewidencjonowano kontrolę źródła jako artefakt projektu. Skrypt jest wywoływany w celu zapewnienia spójnej i powtarzalnej infrastruktury w środowiskach systemowych, takich jak pytania i odpowiedzi, przygotowanie i produkcja.
 
 Pod okapem, IaC to idempotentne, co oznacza, że można uruchomić ten sam skrypt w czasie, bez efektów ubocznych. Jeśli zespół musi wprowadzić zmianę, edytuje i ponownie uruchamia skrypt. Dotyczy to tylko zaktualizowanych zasobów.
 
-W artykule [co to jest infrastruktura jako kod](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), autor sam Guckenheimer opisuje, jak "zespoły, które implementują IaC, mogą szybko i w odpowiedniej skali. Zespoły unikają ręcznej konfiguracji środowisk i wymuszania spójności przez odzwierciedlenie żądanego stanu środowiska za pośrednictwem kodu. Wdrożenia infrastruktury za pomocą IaC są powtarzalne i zapobiegają problemom z czasem wykonywania spowodowanym przez dryfowanie konfiguracji lub brakujące zależności. Zespoły DevOps mogą współdziałać z ujednoliconym zestawem praktyk i narzędzi, aby dostarczać aplikacje i obsługiwać infrastrukturę szybko, niezawodnie i na dużą skalę. "
+W artykule [co to jest infrastruktura jako kod](/azure/devops/learn/what-is-infrastructure-as-code), autor sam Guckenheimer opisuje, jak "zespoły, które implementują IaC, mogą szybko i w odpowiedniej skali. Zespoły unikają ręcznej konfiguracji środowisk i wymuszania spójności przez odzwierciedlenie żądanego stanu środowiska za pośrednictwem kodu. Wdrożenia infrastruktury za pomocą IaC są powtarzalne i zapobiegają problemom z czasem wykonywania spowodowanym przez dryfowanie konfiguracji lub brakujące zależności. Zespoły DevOps mogą współdziałać z ujednoliconym zestawem praktyk i narzędzi, aby dostarczać aplikacje i obsługiwać infrastrukturę szybko, niezawodnie i na dużą skalę. "
 
 ### <a name="automating-deployments"></a>Automatyzacja wdrożeń
 

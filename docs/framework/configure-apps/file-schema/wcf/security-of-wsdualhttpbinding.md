@@ -2,14 +2,15 @@
 title: <security> dla <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-ms.openlocfilehash: 4969c041678bbf3490975bc0ec53507b6cf762bb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7398cd538bb240e78413575f7c28abe7f797d05c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738604"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162208"
 ---
 # <a name="security-of-wsdualhttpbinding"></a>\<security> dla \<wsDualHttpBinding>
+
 Definiuje możliwości zabezpieczeń programu [\<wsDualHttpBinding>](wsdualhttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Definiuje możliwości zabezpieczeń programu [\<wsDualHttpBinding>](wsdualhttpb
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,7 +45,7 @@ Definiuje możliwości zabezpieczeń programu [\<wsDualHttpBinding>](wsdualhttpb
 |Wartość|Opis|  
 |-----------|-----------------|  
 |Brak|Zabezpieczenia są wyłączone.|  
-|Komunikat|Zabezpieczenia są udostępniane przy użyciu zabezpieczeń komunikatów protokołu SOAP.|  
+|Wiadomość|Zabezpieczenia są udostępniane przy użyciu zabezpieczeń komunikatów protokołu SOAP.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
   
@@ -58,14 +60,15 @@ Definiuje możliwości zabezpieczeń programu [\<wsDualHttpBinding>](wsdualhttpb
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań [\<wsDualHttpBinding>](wsdualhttpbinding.md) .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Podwójne powiązanie uwidacznia adres IP klienta w usłudze. Klient powinien korzystać z zabezpieczeń, aby upewnić się, że tylko nawiązuje połączenie z usługami, które ufają.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.WSDualHttpSecurity>
 - <xref:System.ServiceModel.BasicHttpSecurity>
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

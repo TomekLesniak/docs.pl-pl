@@ -2,14 +2,15 @@
 title: <transport> dla <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-ms.openlocfilehash: e8016eb9058f132722587368f1f8c7c03220af4a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b9efc732832a8862373b14f657796a59fb52c1a1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73732789"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162117"
 ---
 # <a name="transport-of-webhttpbinding"></a>\<transport> dla \<webHttpBinding>
+
 Definiuje ustawienia zabezpieczeń na poziomie transportu dla punktu końcowego usługi skonfigurowanego do odbierania żądań HTTP.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,9 +42,11 @@ Definiuje ustawienia zabezpieczeń na poziomie transportu dla punktu końcowego 
 ```  
   
 ## <a name="type"></a>Typ  
+
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -77,6 +80,7 @@ Definiuje ustawienia zabezpieczeń na poziomie transportu dla punktu końcowego 
 |`Windows`|Używa zintegrowanego uwierzytelniania systemu Windows.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -85,7 +89,7 @@ Definiuje ustawienia zabezpieczeń na poziomie transportu dla punktu końcowego 
 |-------------|-----------------|  
 |[\<security>](security-of-webhttpbinding.md)|Reprezentuje możliwości zabezpieczeń [\<wsHttpBinding>](wshttpbinding.md) elementu.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.HttpTransportSecurity>
 - <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>
@@ -94,6 +98,6 @@ Definiuje ustawienia zabezpieczeń na poziomie transportu dla punktu końcowego 
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)
 - [Model programowania protokołu HTTP sieci Web w programie WCF](../../../wcf/feature-details/wcf-web-http-programming-model.md)

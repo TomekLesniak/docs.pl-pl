@@ -2,22 +2,24 @@
 title: Mapowanie zewnętrzne
 ms.date: 03/30/2017
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-ms.openlocfilehash: ba5af75ae34b233354fec6e9074f3cc96d924c7f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 79427cde0784746480e851cf1be56c8bce854919
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003046"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161389"
 ---
 # <a name="external-mapping"></a>Mapowanie zewnętrzne
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] obsługuje *Mapowanie zewnętrzne*, proces, za pomocą którego można określić mapowanie między modelem danych bazy danych i modelem obiektu. Zalety korzystania z zewnętrznego pliku mapowania są następujące:  
+
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] obsługuje *Mapowanie zewnętrzne*, proces, za pomocą którego używany jest osobny plik XML do określenia mapowania między modelem danych bazy danych i modelem obiektu. Zalety korzystania z zewnętrznego pliku mapowania są następujące:  
   
 - Kod mapowania można zachować poza kodem aplikacji. Takie podejście zmniejsza czytelność kodu aplikacji.  
   
 - Plik mapowania zewnętrznego można traktować jako plik konfiguracji. Można na przykład zaktualizować działanie aplikacji po dostarczeniu plików binarnych przez zamienienie pliku mapowania zewnętrznego.  
   
 ## <a name="requirements"></a>Wymagania  
- Plik mapowania musi być plikiem XML, a plik musi być sprawdzony przy użyciu pliku definicji schematu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] (XSD).  
+
+ Plik mapowania musi być plikiem XML, a plik musi być zweryfikowany względem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pliku definicji schematu (XSD).  
   
  Mają zastosowanie następujące zasady:  
   
@@ -25,12 +27,13 @@ ms.locfileid: "72003046"
   
 - Plik mapowania XML musi być prawidłowy względem pliku definicji schematu XML. Aby uzyskać więcej informacji, zobacz [jak: sprawdzanie poprawności DBML i plików mapowania zewnętrznego](how-to-validate-dbml-and-external-mapping-files.md).  
   
-- Mapowanie zewnętrzne zastępuje mapowanie oparte na atrybutach. Innymi słowy, jeśli używasz zewnętrznego źródła mapowania do tworzenia <xref:System.Data.Linq.DataContext>, <xref:System.Data.Linq.DataContext> ignoruje wszystkie atrybuty mapowania utworzone dla klas. To zachowanie jest prawdziwe, niezależnie od tego, czy Klasa jest uwzględniona w zewnętrznym pliku mapowania.  
+- Mapowanie zewnętrzne zastępuje mapowanie oparte na atrybutach. Innymi słowy, jeśli używasz zewnętrznego źródła mapowania do tworzenia <xref:System.Data.Linq.DataContext> , <xref:System.Data.Linq.DataContext> ignoruje wszystkie atrybuty mapowania, które zostały utworzone dla klas. To zachowanie jest prawdziwe, niezależnie od tego, czy Klasa jest uwzględniona w zewnętrznym pliku mapowania.  
   
 - [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nie obsługuje użycia hybrydowego dwóch metod mapowania (opartych na atrybutach i zewnętrznych).  
   
 ## <a name="xml-schema-definition-file"></a>Plik definicji schematu XML  
- Mapowanie zewnętrzne w [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] musi być prawidłowe względem następującej definicji schematu XML.  
+
+ Mapowanie zewnętrzne w programie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] musi być prawidłowe względem następującej definicji schematu XML.  
   
  Odróżnij ten plik definicji schematu od pliku definicji schematu, który jest używany do walidacji pliku DBML. Aby uzyskać więcej informacji, zobacz [generowanie kodu w LINQ to SQL](code-generation-in-linq-to-sql.md)).  
   
@@ -141,8 +144,8 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Generowanie kodu w składniku LINQ to SQL](code-generation-in-linq-to-sql.md)
-- [Tematy pomocy](reference.md)
+- [Odwołanie](reference.md)
 - [Instrukcje: Generowanie modelu obiektu jako zewnętrznego pliku](how-to-generate-the-object-model-as-an-external-file.md)

@@ -3,12 +3,12 @@ title: Buforowanie w aplikacji natywnej dla chmury
 description: Dowiedz się więcej na temat strategii buforowania w aplikacji natywnej w chmurze.
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: a33f143499b5f9545493bc4bc757cc3d152f7aa9
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 84860ad4583e4b45d5ca9490d9f0167e7439d3d4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557519"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161090"
 ---
 # <a name="caching-in-a-cloud-native-app"></a>Buforowanie w aplikacji natywnej w chmurze
 
@@ -20,7 +20,7 @@ Zalety buforowania są zrozumiałe. Technika działa przez tymczasowe kopiowanie
 
 ## <a name="why"></a>Dlaczego?
 
-Zgodnie z opisem w [wytycznych dotyczących buforowania firmy Microsoft](https://docs.microsoft.com/azure/architecture/best-practices/caching)buforowanie może zwiększyć wydajność, skalowalność i dostępność dla poszczególnych mikrousług i całego systemu. Zmniejsza to opóźnienia i rywalizację o obsługę dużych ilości współbieżnych żądań do magazynu danych. W miarę jak ilość danych i liczba użytkowników zwiększają się, tym większe korzyści z buforowania.
+Zgodnie z opisem w [wytycznych dotyczących buforowania firmy Microsoft](/azure/architecture/best-practices/caching)buforowanie może zwiększyć wydajność, skalowalność i dostępność dla poszczególnych mikrousług i całego systemu. Zmniejsza to opóźnienia i rywalizację o obsługę dużych ilości współbieżnych żądań do magazynu danych. W miarę jak ilość danych i liczba użytkowników zwiększają się, tym większe korzyści z buforowania.
 
 Buforowanie jest najbardziej efektywne, gdy klient wielokrotnie odczytuje dane, które są niezmienne lub rzadko ulegają zmianom. Przykłady zawierają informacje referencyjne, takie jak informacje o produkcie i cenach lub udostępnione zasoby statyczne, które są kosztowne do skonstruowania.
 
@@ -38,7 +38,7 @@ Natywne aplikacje w chmurze zwykle implementują rozproszoną architekturę pami
 
 Na poprzedniej ilustracji należy zauważyć, jak pamięć podręczna jest niezależna i współdzielona przez mikrousługi. W tym scenariuszu pamięć podręczna jest wywoływana przez [bramę interfejsu API](./front-end-communication.md). Jak opisano w rozdziale 4, Brama służy jako fronton dla wszystkich żądań przychodzących. Rozproszonej pamięci podręcznej zwiększa czas odpowiedzi systemu przez zwrócenie danych w pamięci podręcznej, jeśli to możliwe. Ponadto oddzielenie pamięci podręcznej od usług pozwala na niezależne skalowanie w górę lub w poziomie w celu spełnienia zwiększonych wymagań w zakresie ruchu.
 
-Powyższy rysunek przedstawia typowy wzorzec buforowania znany jako wzorzec z odkładaniem do [pamięci podręcznej](https://docs.microsoft.com/azure/architecture/patterns/cache-aside). W przypadku żądania przychodzącego należy najpierw wykonać zapytanie do pamięci podręcznej (krok \# 1) w celu uzyskania odpowiedzi. Jeśli ta wartość zostanie znaleziona, dane są zwracane natychmiast. Jeśli dane nie znajdują się w pamięci podręcznej (nazywanej [chybień pamięci podręcznej](https://www.techopedia.com/definition/6308/cache-miss)), są pobierane z lokalnej bazy danych w usłudze podrzędnej (krok \# 2). Następnie jest on zapisywana w pamięci podręcznej w celu przyszłego żądania (krok \# 3) i zwracany do obiektu wywołującego. Należy zwrócić uwagę na okresowe wykluczanie danych w pamięci podręcznej tak, aby system pozostały czasowo i spójny.
+Powyższy rysunek przedstawia typowy wzorzec buforowania znany jako wzorzec z odkładaniem do [pamięci podręcznej](/azure/architecture/patterns/cache-aside). W przypadku żądania przychodzącego należy najpierw wykonać zapytanie do pamięci podręcznej (krok \# 1) w celu uzyskania odpowiedzi. Jeśli ta wartość zostanie znaleziona, dane są zwracane natychmiast. Jeśli dane nie znajdują się w pamięci podręcznej (nazywanej [chybień pamięci podręcznej](https://www.techopedia.com/definition/6308/cache-miss)), są pobierane z lokalnej bazy danych w usłudze podrzędnej (krok \# 2). Następnie jest on zapisywana w pamięci podręcznej w celu przyszłego żądania (krok \# 3) i zwracany do obiektu wywołującego. Należy zwrócić uwagę na okresowe wykluczanie danych w pamięci podręcznej tak, aby system pozostały czasowo i spójny.
 
 W miarę zwiększania współużytkowanej pamięci podręcznej może okazać się korzystne, aby mieć możliwość partycjonowania danych w wielu węzłach. Takie działanie może pomóc zminimalizować rywalizację i zwiększyć skalowalność. Wiele usług buforowania obsługuje możliwość dynamicznego dodawania i usuwania węzłów oraz ponownego równoważenia danych w różnych partycjach. Takie podejście zwykle obejmuje klastrowanie. Klastrowanie udostępnia kolekcję węzłów federacyjnych jako bezproblemową, pojedynczą pamięć podręczną. Wewnętrznie dane są jednak dystrybuowane między węzłami w ramach wstępnie zdefiniowanej strategii dystrybucji, która równoważy obciążenie.
 
@@ -55,9 +55,9 @@ Pamięć podręczna systemu Azure dla Redis jest większa niż prosta pamięć p
 - Broker komunikatów
 - Serwer konfiguracji lub odnajdywania
   
-W przypadku zaawansowanych scenariuszy kopia danych w pamięci podręcznej może być [utrwalona na dysku](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-persistence). Jeśli zdarzenie katastrofalne wyłącza zarówno podstawową, jak i pamięć podręczną repliki, pamięć podręczną jest tworzona z najnowszej migawki.
+W przypadku zaawansowanych scenariuszy kopia danych w pamięci podręcznej może być [utrwalona na dysku](/azure/azure-cache-for-redis/cache-how-to-premium-persistence). Jeśli zdarzenie katastrofalne wyłącza zarówno podstawową, jak i pamięć podręczną repliki, pamięć podręczną jest tworzona z najnowszej migawki.
 
-Azure Redis Cache jest dostępny w wielu wstępnie zdefiniowanych konfiguracjach i warstwach cenowych. [Warstwa Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-overview#service-tiers) oferuje wiele funkcji na poziomie przedsiębiorstwa, takich jak klastrowanie, trwałość danych, replikacja geograficzna i izolacja sieci wirtualnej.
+Azure Redis Cache jest dostępny w wielu wstępnie zdefiniowanych konfiguracjach i warstwach cenowych. [Warstwa Premium](/azure/azure-cache-for-redis/cache-overview#service-tiers) oferuje wiele funkcji na poziomie przedsiębiorstwa, takich jak klastrowanie, trwałość danych, replikacja geograficzna i izolacja sieci wirtualnej.
 
 >[!div class="step-by-step"]
 >[Poprzedni](relational-vs-nosql-data.md) 

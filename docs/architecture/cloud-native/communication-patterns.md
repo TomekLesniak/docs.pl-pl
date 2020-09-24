@@ -3,12 +3,12 @@ title: Wzorce komunikacji rozwiązań natywnych dla chmury
 description: Informacje o problemach z łącznością usług w aplikacjach natywnych w chmurze
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 3d678df44b5fef68427846e59f446b7408795625
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 5ce789924e828865f7bdf717b081b9112203293a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614217"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160921"
 ---
 # <a name="cloud-native-communication-patterns"></a>Wzorce komunikacji rozwiązań natywnych dla chmury
 
@@ -20,7 +20,7 @@ W aplikacji monolitycznej komunikacja jest prosta. Moduły kodu są wykonywane r
 
 Systemy natywne w chmurze implementują architekturę opartą na mikrousługach z wieloma małymi, niezależnymi mikrousługami. Każda mikrousługa jest wykonywana w osobnym procesie i zazwyczaj jest uruchamiana wewnątrz kontenera wdrożonego w *klastrze*.
 
-Klaster grupuje pulę maszyn wirtualnych w celu tworzenia środowiska o wysokiej dostępności. Są one zarządzane za pomocą narzędzia Orchestration, które jest odpowiedzialne za wdrażanie mikrousług kontenerów i zarządzanie nimi. Rysunek 4-1 przedstawia klaster [Kubernetes](https://kubernetes.io) wdrożony w chmurze platformy Azure z w pełni zarządzanymi [usługami Kubernetes platformy Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes).
+Klaster grupuje pulę maszyn wirtualnych w celu tworzenia środowiska o wysokiej dostępności. Są one zarządzane za pomocą narzędzia Orchestration, które jest odpowiedzialne za wdrażanie mikrousług kontenerów i zarządzanie nimi. Rysunek 4-1 przedstawia klaster [Kubernetes](https://kubernetes.io) wdrożony w chmurze platformy Azure z w pełni zarządzanymi [usługami Kubernetes platformy Azure](/azure/aks/intro-kubernetes).
 
 ![Klaster Kubernetes na platformie Azure](./media/kubernetes-cluster-in-azure.png)
 

@@ -2,14 +2,15 @@
 title: <scopes>
 ms.date: 03/30/2017
 ms.assetid: 9a0dd3ce-e383-4ac3-b7be-7d604388304a
-ms.openlocfilehash: 57e9e19025db5e1fa588f073fdf30de09837a25d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 63f46753da13469147b378f373de9888a007bf52
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399928"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162221"
 ---
 # \<scopes>
+
 Zawiera kolekcję elementów konfiguracji, które określają niestandardowe identyfikatory URI, których można użyć do filtrowania punktów końcowych usługi podczas zapytania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,9 +38,11 @@ Zawiera kolekcję elementów konfiguracji, które określają niestandardowe ide
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -54,6 +57,6 @@ Zawiera kolekcję elementów konfiguracji, które określają niestandardowe ide
 |-------------|-----------------|  
 |[\<endpointDiscovery>](endpointdiscovery.md)|Określa różne ustawienia odnajdywania dla punktu końcowego, takie jak jego wykrywalność, zakresy i wszelkie niestandardowe rozszerzenia do swoich metadanych.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

@@ -2,12 +2,12 @@
 title: Usługa Azure Active Directory
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Azure Active Directory
 ms.date: 06/30/2019
-ms.openlocfilehash: 03f5ea8e84bc3c4a2a88a63d4b109aabf0c64f36
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 55787f3565fc15bb25cf1a101aa5c1e3ddefe5e7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614282"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161116"
 ---
 # <a name="azure-active-directory"></a>Usługa Azure Active Directory
 
@@ -17,9 +17,9 @@ Usługa Azure AD została skompilowana dla chmury. Jest to natywne rozwiązanie 
 
 Usługa Azure AD obsługuje firmowe ekrany logowania, uwierzytelnianie wieloskładnikowe i serwery proxy aplikacji opartych na chmurze, które są używane do zapewnienia logowania jednokrotnego dla aplikacji hostowanych lokalnie. Oferuje różne rodzaje funkcji raportowania zabezpieczeń i alertów.
 
-## <a name="references"></a>Dokumentacja
+## <a name="references"></a>Odwołania
 
-- [Platforma tożsamości firmy Microsoft](https://docs.microsoft.com/azure/active-directory/develop/)
+- [Platforma tożsamości firmy Microsoft](/azure/active-directory/develop/)
 
 >[!div class="step-by-step"]
 >[Poprzedni](authentication-authorization.md) 
