@@ -3,14 +3,15 @@ title: Jak wykonać zapytanie o pliki o określonym atrybucie lub nazwie (C#)
 description: Dowiedz się, jak używać LINQ w języku C#, aby znaleźć pliki, które mają określone rozszerzenie nazwy pliku w drzewie katalogów i jak zwrócić najnowszy lub najstarszy plik.
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: 9820b96e19d805b792e18ff242e64dfb6cf4a606
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 01a3482d8ea4c95b60dd9434320f175f0498c3e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104501"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165315"
 ---
 # <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Jak wykonać zapytanie o pliki o określonym atrybucie lub nazwie (C#)
+
 Ten przykład pokazuje, jak znaleźć wszystkie pliki, które mają określone rozszerzenie nazwy pliku (na przykład ". txt") w określonym drzewie katalogów. Przedstawiono w nim również, jak zwrócić najnowszy lub najstarszy plik w drzewie na podstawie czasu utworzenia.  
   
 ## <a name="example"></a>Przykład  
@@ -65,6 +66,7 @@ class FindFileByExtension
 ```  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
   Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.
   
 ## <a name="see-also"></a>Zobacz też

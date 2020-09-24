@@ -2,12 +2,12 @@
 title: Tożsamość
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Identity
 ms.date: 05/13/2020
-ms.openlocfilehash: 9fa48977e58e2ca5a5f3e231372a4791640a85fd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 66ff29947093d7c4fe57b11039190836dc37db08
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614022"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163755"
 ---
 # <a name="identity"></a>Tożsamość
 
@@ -25,9 +25,9 @@ Nowoczesne natywne rozwiązania do obsługi tożsamości w chmurze zwykle wykorz
 
 Zazwyczaj usługa STS jest odpowiedzialna za uwierzytelnianie podmiotu zabezpieczeń. Określenie poziomu dostępu do zasobów jest pozostawione do innych części aplikacji.
 
-## <a name="references"></a>Dokumentacja
+## <a name="references"></a>Odwołania
 
-- [Platforma tożsamości firmy Microsoft](https://docs.microsoft.com/azure/active-directory/develop/)
+- [Platforma tożsamości firmy Microsoft](/azure/active-directory/develop/)
 
 >[!div class="step-by-step"]
 >[Poprzedni](azure-monitor.md) 

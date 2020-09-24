@@ -3,12 +3,12 @@ title: Komunikacja między usługami
 description: Dowiedz się, jak mikrousługi zaplecza w chmurze komunikują się z innymi mikrousługami zaplecza.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 88d7dfabee14419978889f5d9ea30b12f36837de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9761b99cd9ad076eb82a23a00ec3099e8913168b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539813"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166082"
 ---
 # <a name="service-to-service-communication"></a>Komunikacja między usługami
 
@@ -28,7 +28,7 @@ Należy wziąć pod uwagę następujące typy interakcji:
 
 Systemy mikrousług zazwyczaj używają kombinacji tych typów interakcji podczas wykonywania operacji wymagających interakcji między usługami. Przyjrzyjmy się, jak można je wdrożyć.
 
-## <a name="queries"></a>Kwerendy
+## <a name="queries"></a>Zapytania
 
 Wiele mikrousług może wymagać wykonania *zapytania* do innej, co wymaga natychmiastowej reakcji na ukończenie operacji. Mikrousługa koszyka zakupów może potrzebować informacji o produkcie i ceny, aby dodać element do jego koszyka. Istnieje kilka podejścia do implementowania operacji zapytań.
 
@@ -54,7 +54,7 @@ Duży stopień sprzęgania w poprzednim obrazie sugeruje, że usługi nie były 
 
 ### <a name="materialized-view-pattern"></a>Wzorzec zmaterializowanego widoku
 
-Popularną opcją usunięcia sprzęgu mikrousług jest [wzorzec widoku materiału](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). W tym wzorcu mikrousługa przechowuje własną, nieznormalizowaną kopię danych, która jest własnością innych usług. W przypadku mikrousług w koszyku zakupów i mikrousług do obsługi cennika usługa ta utrzymuje własną lokalną kopię tych danych. Ten wzorzec eliminuje zbędny sprzężenie i zwiększa niezawodność i czas odpowiedzi. Cała operacja jest wykonywana w ramach jednego procesu. Omawiamy ten wzorzec i inne zagadnienia dotyczące danych w rozdziale 5.
+Popularną opcją usunięcia sprzęgu mikrousług jest [wzorzec widoku materiału](/azure/architecture/patterns/materialized-view). W tym wzorcu mikrousługa przechowuje własną, nieznormalizowaną kopię danych, która jest własnością innych usług. W przypadku mikrousług w koszyku zakupów i mikrousług do obsługi cennika usługa ta utrzymuje własną lokalną kopię tych danych. Ten wzorzec eliminuje zbędny sprzężenie i zwiększa niezawodność i czas odpowiedzi. Cała operacja jest wykonywana w ramach jednego procesu. Omawiamy ten wzorzec i inne zagadnienia dotyczące danych w rozdziale 5.
 
 ### <a name="service-aggregator-pattern"></a>Wzorzec agregatora usług
 
@@ -94,7 +94,7 @@ W rozdziale 1 zostały omówione *usługi zapasowe*. Usługi zapasowe są zasoba
 
 Kolejki usługi Azure Storage oferują prostą infrastrukturę obejmującą szybkie, niedrogie i obsługiwane przez konta usługi Azure Storage.
 
-[Kolejki usługi Azure Storage](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction) to mechanizm kolejkowania oparty na protokole REST z niezawodnymi i trwałymi wiadomościami. Zapewniają one minimalny zestaw funkcji, ale są niedrogie i przechowują miliony komunikatów. Zakresy pojemności do 500 TB. Pojedynczy komunikat może mieć rozmiar do 64 KB.
+[Kolejki usługi Azure Storage](/azure/storage/queues/storage-queues-introduction) to mechanizm kolejkowania oparty na protokole REST z niezawodnymi i trwałymi wiadomościami. Zapewniają one minimalny zestaw funkcji, ale są niedrogie i przechowują miliony komunikatów. Zakresy pojemności do 500 TB. Pojedynczy komunikat może mieć rozmiar do 64 KB.
 
 Możesz uzyskiwać dostęp do komunikatów z dowolnego miejsca na świecie za pośrednictwem uwierzytelnionych połączeń przy użyciu protokołu HTTP lub HTTPS. Kolejki magazynu można skalować w poziomie do dużej liczby współbieżnych klientów, aby obsługiwać skoki ruchu.
 
@@ -122,13 +122,13 @@ Kolejki usługi Azure Storage to ekonomiczne rozwiązanie do implementowania kom
 
 Aby uzyskać bardziej złożone wymagania dotyczące komunikatów, należy wziąć pod uwagę Azure Service Bus kolejki.
 
-Zakorzystającego się z niezawodną infrastrukturą komunikatów, [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) obsługuje *model komunikatów obsługiwanych przez brokera*. Komunikaty są niezawodnie przechowywane w brokerze (kolejce) do momentu odebrania przez konsumenta. Kolejka gwarantuje dostarczanie komunikatów First-In/First-Out (FIFO), z uwzględnieniem kolejności, w jakiej komunikaty zostały dodane do kolejki.
+Zakorzystającego się z niezawodną infrastrukturą komunikatów, [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview) obsługuje *model komunikatów obsługiwanych przez brokera*. Komunikaty są niezawodnie przechowywane w brokerze (kolejce) do momentu odebrania przez konsumenta. Kolejka gwarantuje dostarczanie komunikatów First-In/First-Out (FIFO), z uwzględnieniem kolejności, w jakiej komunikaty zostały dodane do kolejki.
 
-Rozmiar wiadomości może być znacznie większy, do 256 KB. Komunikaty są utrwalane w kolejce przez nieograniczony okres. Service Bus obsługuje nie tylko wywołania oparte na protokole HTTP, ale również zapewnia pełną obsługę [protokołu AMQP](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-amqp-overview). AMQP to wersja typu Open-Standard dla wielu dostawców, która obsługuje protokół binarny i wyższy poziom niezawodności.
+Rozmiar wiadomości może być znacznie większy, do 256 KB. Komunikaty są utrwalane w kolejce przez nieograniczony okres. Service Bus obsługuje nie tylko wywołania oparte na protokole HTTP, ale również zapewnia pełną obsługę [protokołu AMQP](/azure/service-bus-messaging/service-bus-amqp-overview). AMQP to wersja typu Open-Standard dla wielu dostawców, która obsługuje protokół binarny i wyższy poziom niezawodności.
 
-Service Bus oferuje bogaty zestaw funkcji, w tym [obsługę transakcji](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-transactions) i [funkcję wykrywania duplikatów](https://docs.microsoft.com/azure/service-bus-messaging/duplicate-detection). Kolejka "co najwyżej raz zagwarantuje" w przypadku wiadomości. Automatycznie odrzuca już wysłany komunikat. Jeśli producent jest w stanie wątpliwości, może ponownie wysłać ten sam komunikat, a Service Bus gwarantuje, że tylko jedna kopia zostanie przetworzona. Wykrywanie duplikatów zwalnia użytkownika z konieczności tworzenia dodatkowej infrastruktury instalacji.
+Service Bus oferuje bogaty zestaw funkcji, w tym [obsługę transakcji](/azure/service-bus-messaging/service-bus-transactions) i [funkcję wykrywania duplikatów](/azure/service-bus-messaging/duplicate-detection). Kolejka "co najwyżej raz zagwarantuje" w przypadku wiadomości. Automatycznie odrzuca już wysłany komunikat. Jeśli producent jest w stanie wątpliwości, może ponownie wysłać ten sam komunikat, a Service Bus gwarantuje, że tylko jedna kopia zostanie przetworzona. Wykrywanie duplikatów zwalnia użytkownika z konieczności tworzenia dodatkowej infrastruktury instalacji.
 
-Dwie więcej funkcji przedsiębiorstwa to partycjonowanie i sesje. Kolejka konwencjonalnych Service Bus jest obsługiwana przez jednego brokera komunikatów i przechowywana w jednym magazynie komunikatów. Jednak [Service Bus partycjonowanie](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-partitioning) rozkłada kolejkę na wiele brokerów komunikatów i magazynów komunikatów. Ogólna przepływność nie jest już ograniczona przez wydajność jednego brokera komunikatów lub magazynu komunikatów. Tymczasowa awaria magazynu komunikatów nie powoduje niedostępności kolejki partycjonowanej.
+Dwie więcej funkcji przedsiębiorstwa to partycjonowanie i sesje. Kolejka konwencjonalnych Service Bus jest obsługiwana przez jednego brokera komunikatów i przechowywana w jednym magazynie komunikatów. Jednak [Service Bus partycjonowanie](/azure/service-bus-messaging/service-bus-partitioning) rozkłada kolejkę na wiele brokerów komunikatów i magazynów komunikatów. Ogólna przepływność nie jest już ograniczona przez wydajność jednego brokera komunikatów lub magazynu komunikatów. Tymczasowa awaria magazynu komunikatów nie powoduje niedostępności kolejki partycjonowanej.
 
 [Sesje Service Bus](https://codingcanvas.com/azure-service-bus-sessions/) zapewniają sposób grupowania komunikatów związanych z grupą. Wyobraź sobie scenariusz przepływu pracy, w którym wiadomości muszą być przetwarzane razem, a operacja zakończona na końcu. Aby skorzystać z zalet, należy jawnie włączyć sesje dla kolejki, a każdy powiązany komunikat musi zawierać ten sam identyfikator sesji.
 
@@ -148,7 +148,7 @@ Usługa kolejkowania komunikatów jest efektywnym sposobem na wdrożenie komunik
 
 Aby rozwiązać ten scenariusz, przejdziemy do innego typu interakcji z komunikatem, *zdarzenie*. Jedna mikrousług ogłasza, że wystąpiła akcja. Inne mikrousługi, jeśli są zainteresowane, reagują na działanie lub zdarzenie.
 
-Tworzenie zdarzeń jest procesem dwuetapowym. Dla danej zmiany stanu mikrousługa publikuje zdarzenie w brokerze komunikatów, udostępniając go innym zainteresowanym mikrousługom. Zainteresowana mikrousługa jest powiadamiana przez zasubskrybowanie zdarzenia w brokerze komunikatów. Wzorzec [publikowania/subskrybowania](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber) służy do implementowania [komunikacji opartej na zdarzeniach](https://docs.microsoft.com/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications).
+Tworzenie zdarzeń jest procesem dwuetapowym. Dla danej zmiany stanu mikrousługa publikuje zdarzenie w brokerze komunikatów, udostępniając go innym zainteresowanym mikrousługom. Zainteresowana mikrousługa jest powiadamiana przez zasubskrybowanie zdarzenia w brokerze komunikatów. Wzorzec [publikowania/subskrybowania](/azure/architecture/patterns/publisher-subscriber) służy do implementowania [komunikacji opartej na zdarzeniach](/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications).
 
 Na rysunku 4-15 przedstawiono mikrousługi koszyka zakupów wydarzenie z dwoma innymi subskrybowanymi mikrousług.
 
@@ -158,7 +158,7 @@ Na rysunku 4-15 przedstawiono mikrousługi koszyka zakupów wydarzenie z dwoma i
 
 Zanotuj składnik *magistrali zdarzeń* , który znajduje się w środku kanału komunikacyjnego. Jest to Klasa niestandardowa, która hermetyzuje brokera komunikatów i oddziela ją od aplikacji źródłowej. Mikrousługi zamawiania i spisu niezależnie obsługują zdarzenia bez znajomości siebie ani do mikrousługi koszyka zakupów. Po opublikowaniu zarejestrowanego zdarzenia w usłudze Event Bus działają one na nim.
 
-Dzięki zdarzeniom przechodźmy od technologii kolejkowania do *tematów*. [Temat](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions) jest podobny do kolejki, ale obsługuje wzorzec obsługi komunikatów jeden-do-wielu. Jedna mikrousługa publikuje komunikat. Wiele zasubskrybowanych mikrousług może być w stanie otrzymywać i korzystać z tego komunikatu. Rysunek 4-16 przedstawia architekturę tematu.
+Dzięki zdarzeniom przechodźmy od technologii kolejkowania do *tematów*. [Temat](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions) jest podobny do kolejki, ale obsługuje wzorzec obsługi komunikatów jeden-do-wielu. Jedna mikrousługa publikuje komunikat. Wiele zasubskrybowanych mikrousług może być w stanie otrzymywać i korzystać z tego komunikatu. Rysunek 4-16 przedstawia architekturę tematu.
 
 ![Architektura tematu](./media/topic-architecture.png)
 
@@ -170,17 +170,17 @@ Chmura systemu Azure obsługuje dwie różne usługi tematu: Tematy Azure Servic
 
 ### <a name="azure-service-bus-topics"></a>Tematy usługi Azure Service Bus
 
-W oparciu o ten sam niezawodny model komunikatów obsługiwanych przez brokera Azure Service Bus kolejek są [Azure Service Bus tematy](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Temat może odbierać komunikaty od wielu niezależnych wydawców i wysyłać komunikaty do 2 000 subskrybentów. Subskrypcje mogą być dynamicznie dodawane lub usuwane w czasie wykonywania bez zatrzymywania systemu ani ponownego tworzenia tematu.
+W oparciu o ten sam niezawodny model komunikatów obsługiwanych przez brokera Azure Service Bus kolejek są [Azure Service Bus tematy](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Temat może odbierać komunikaty od wielu niezależnych wydawców i wysyłać komunikaty do 2 000 subskrybentów. Subskrypcje mogą być dynamicznie dodawane lub usuwane w czasie wykonywania bez zatrzymywania systemu ani ponownego tworzenia tematu.
 
-Wiele zaawansowanych funkcji z kolejek Azure Service Busych są również dostępne dla tematów, takich jak [Wykrywanie duplikatów](https://docs.microsoft.com/azure/service-bus-messaging/duplicate-detection) i [Obsługa transakcji](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-transactions). Domyślnie tematy Service Bus są obsługiwane przez jednego brokera komunikatów i przechowywane w jednym magazynie komunikatów. Ale [Service Bus partycjonowanie](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-partitioning) skaluje temat, rozkładając go na wielu brokerów komunikatów i magazynów komunikatów.
+Wiele zaawansowanych funkcji z kolejek Azure Service Busych są również dostępne dla tematów, takich jak [Wykrywanie duplikatów](/azure/service-bus-messaging/duplicate-detection) i [Obsługa transakcji](/azure/service-bus-messaging/service-bus-transactions). Domyślnie tematy Service Bus są obsługiwane przez jednego brokera komunikatów i przechowywane w jednym magazynie komunikatów. Ale [Service Bus partycjonowanie](/azure/service-bus-messaging/service-bus-partitioning) skaluje temat, rozkładając go na wielu brokerów komunikatów i magazynów komunikatów.
 
-[Zaplanowana dostarczanie komunikatów](https://docs.microsoft.com/azure/service-bus-messaging/message-sequencing) oznacza komunikat z określonym czasem do przetwarzania. Wiadomość nie zostanie wyświetlona w temacie przed upływem tego czasu. [Odroczenie komunikatów](https://docs.microsoft.com/azure/service-bus-messaging/message-deferral) pozwala na odroczenie pobierania komunikatu w późniejszym czasie. Oba są często używane w scenariuszach przetwarzania przepływu pracy, w których operacje są przetwarzane w określonej kolejności. Możesz odroczyć przetwarzanie odebranych komunikatów do momentu ukończenia wcześniejszej pracy.
+[Zaplanowana dostarczanie komunikatów](/azure/service-bus-messaging/message-sequencing) oznacza komunikat z określonym czasem do przetwarzania. Wiadomość nie zostanie wyświetlona w temacie przed upływem tego czasu. [Odroczenie komunikatów](/azure/service-bus-messaging/message-deferral) pozwala na odroczenie pobierania komunikatu w późniejszym czasie. Oba są często używane w scenariuszach przetwarzania przepływu pracy, w których operacje są przetwarzane w określonej kolejności. Możesz odroczyć przetwarzanie odebranych komunikatów do momentu ukończenia wcześniejszej pracy.
 
 Tematy Service Bus to niezawodna i sprawdzona technologia umożliwiająca umożliwienie komunikacji z publikowaniem/subskrypcją w systemach natywnych w chmurze.
 
 ### <a name="azure-event-grid"></a>Azure Event Grid
 
-Mimo że Azure Service Bus jest przetestowanym sprawdzonej brokerem obsługi komunikatów z pełnym zestawem funkcji dla przedsiębiorstw, [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) jest nowym dzieciem w bloku.
+Mimo że Azure Service Bus jest przetestowanym sprawdzonej brokerem obsługi komunikatów z pełnym zestawem funkcji dla przedsiębiorstw, [Azure Event Grid](/azure/event-grid/overview) jest nowym dzieciem w bloku.
 
 Na pierwszy rzut oka Event Grid może wyglądać podobnie jak w przypadku innego systemu obsługi komunikatów opartego na temacie. Jest to jednak różne na wiele sposobów. Skoncentrowanie się na obciążeniach opartych na zdarzeniach pozwala na przetwarzanie zdarzeń w czasie rzeczywistym, integrację z platformą Azure oraz platformę Open-All w infrastrukturze bezserwerowej. Jest ona przeznaczona do współczesnych aplikacji natywnych dla chmury i bezserwerowych
 
@@ -206,9 +206,9 @@ Event Grid to w pełni zarządzana usługa w chmurze bezserwerowej. Dynamicznie 
 
 ### <a name="streaming-messages-in-the-azure-cloud"></a>Przesyłanie strumieniowe komunikatów w chmurze platformy Azure
 
-Azure Service Bus i Event Grid zapewniają doskonałą pomoc techniczną dla aplikacji, które uwidaczniają pojedyncze, dyskretne zdarzenia, takie jak nowy dokument został wstawiony do Cosmos DB. Ale co zrobić, jeśli system natywny w chmurze musi przetworzyć *strumień powiązanych zdarzeń*? [Strumienie zdarzeń](https://docs.microsoft.com/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) są bardziej skomplikowane. Są one zazwyczaj uporządkowane według czasu, wzajemnie powiązane i muszą być przetwarzane jako Grupa.
+Azure Service Bus i Event Grid zapewniają doskonałą pomoc techniczną dla aplikacji, które uwidaczniają pojedyncze, dyskretne zdarzenia, takie jak nowy dokument został wstawiony do Cosmos DB. Ale co zrobić, jeśli system natywny w chmurze musi przetworzyć *strumień powiązanych zdarzeń*? [Strumienie zdarzeń](/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) są bardziej skomplikowane. Są one zazwyczaj uporządkowane według czasu, wzajemnie powiązane i muszą być przetwarzane jako Grupa.
 
-[Azure Event Hub](https://azure.microsoft.com/services/event-hubs/) to usługa przesyłania strumieniowego danych i usługi pozyskiwania zdarzeń, która gromadzi, przekształca i zapisuje zdarzenia. Jest to dostrajane do przechwytywania danych przesyłanych strumieniowo, takich jak ciągłe powiadomienia o zdarzeniach emitowane z kontekstu telemetrii. Usługa jest wysoce skalowalna i może przechowywać i [przetwarzać miliony zdarzeń na sekundę](https://docs.microsoft.com/azure/event-hubs/event-hubs-about). Pokazano na rysunku 4-18, często są to drzwi czołowe dla potoku zdarzeń, oddzielania strumienia pozyskiwania od zużycia zdarzeń.
+[Azure Event Hub](https://azure.microsoft.com/services/event-hubs/) to usługa przesyłania strumieniowego danych i usługi pozyskiwania zdarzeń, która gromadzi, przekształca i zapisuje zdarzenia. Jest to dostrajane do przechwytywania danych przesyłanych strumieniowo, takich jak ciągłe powiadomienia o zdarzeniach emitowane z kontekstu telemetrii. Usługa jest wysoce skalowalna i może przechowywać i [przetwarzać miliony zdarzeń na sekundę](/azure/event-hubs/event-hubs-about). Pokazano na rysunku 4-18, często są to drzwi czołowe dla potoku zdarzeń, oddzielania strumienia pozyskiwania od zużycia zdarzeń.
 
 ![Centrum zdarzeń Azure](./media/azure-event-hub.png)
 
@@ -216,9 +216,9 @@ Azure Service Bus i Event Grid zapewniają doskonałą pomoc techniczną dla apl
 
 Centrum zdarzeń obsługuje małe opóźnienia i konfigurowalne przechowywanie czasu. W przeciwieństwie do kolejek i tematów Event Hubs zachować dane zdarzenia po ich odczytaniu przez konsumenta. Ta funkcja umożliwia innym usługom analitycznym danych, zarówno wewnętrznym, jak i zewnętrznym, odtwarzanie danych w celu dalszej analizy. Zdarzenia przechowywane w centrum zdarzeń są usuwane dopiero po upływie okresu przechowywania, który jest domyślnie jeden dzień, ale konfigurowalne.
 
-Centrum zdarzeń obsługuje typowe protokoły publikowania zdarzeń, w tym HTTPS i AMQP. Obsługuje także Kafka 1,0. [Istniejące aplikacje Kafka mogą komunikować się z centrum zdarzeń](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) przy użyciu protokołu Kafka, co zapewnia alternatywę dla zarządzania dużymi klastrami Kafka. Wiele systemów natywnych dla chmury "open source" obejmuje Kafka.
+Centrum zdarzeń obsługuje typowe protokoły publikowania zdarzeń, w tym HTTPS i AMQP. Obsługuje także Kafka 1,0. [Istniejące aplikacje Kafka mogą komunikować się z centrum zdarzeń](/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) przy użyciu protokołu Kafka, co zapewnia alternatywę dla zarządzania dużymi klastrami Kafka. Wiele systemów natywnych dla chmury "open source" obejmuje Kafka.
 
-Event Hubs implementuje przesyłanie strumieniowe komunikatów za pomocą [partycjonowanego modelu konsumenta](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) , w którym każdy odbiorca odczytuje tylko konkretny podzbiór lub partycję strumienia komunikatów. Ten wzorzec zapewnia nieogromne skalowanie w poziomie na potrzeby przetwarzania zdarzeń oraz udostępnia inne funkcje ukierunkowane na przesyłanie strumieniowe, które są niedostępne w kolejkach i tematach. Partycja to uporządkowana sekwencja zdarzeń przechowywana w centrum zdarzeń. Po nadejściu nowszych zdarzeń są one dodawane na końcu tej sekwencji.Rysunek 4-19 pokazuje partycjonowanie w centrum zdarzeń.
+Event Hubs implementuje przesyłanie strumieniowe komunikatów za pomocą [partycjonowanego modelu konsumenta](/azure/event-hubs/event-hubs-features) , w którym każdy odbiorca odczytuje tylko konkretny podzbiór lub partycję strumienia komunikatów. Ten wzorzec zapewnia nieogromne skalowanie w poziomie na potrzeby przetwarzania zdarzeń oraz udostępnia inne funkcje ukierunkowane na przesyłanie strumieniowe, które są niedostępne w kolejkach i tematach. Partycja to uporządkowana sekwencja zdarzeń przechowywana w centrum zdarzeń. Po nadejściu nowszych zdarzeń są one dodawane na końcu tej sekwencji.Rysunek 4-19 pokazuje partycjonowanie w centrum zdarzeń.
 
 ![Partycjonowanie centrum zdarzeń](./media/event-hub-partitioning.png)
 

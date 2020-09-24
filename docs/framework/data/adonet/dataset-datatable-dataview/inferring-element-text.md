@@ -2,14 +2,15 @@
 title: Wnioskowanie tekstu elementu
 ms.date: 03/30/2017
 ms.assetid: 789799e5-716f-459f-a168-76c5cf22178b
-ms.openlocfilehash: 3fdd110a14ddfd6065ed552171a8d76ef64e2fb5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7389e24f39902edf041c3cd3502303b17fd008ba
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784541"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164691"
 ---
 # <a name="inferring-element-text"></a>Wnioskowanie tekstu elementu
+
 Jeśli element zawiera tekst i nie ma żadnych elementów podrzędnych, które mają być wywnioskowane jako tabele (takie jak elementy z atrybutami lub powtarzalne elementy), Nowa kolumna o nazwie **TableName_Text** zostanie dodana do tabeli, która jest wywnioskowana dla elementu. Tekst zawarty w elemencie zostanie dodany do wiersza w tabeli i zapisany w nowej kolumnie. Właściwość **ColumnMapping** nowej kolumny zostanie ustawiona na wartość **MappingType. SimpleContent**.  
   
  Rozważmy na przykład następujący kod XML.  
@@ -22,9 +23,9 @@ Jeśli element zawiera tekst i nie ma żadnych elementów podrzędnych, które m
   
  Proces wnioskowania spowoduje utworzenie tabeli o nazwie **element1** z dwiema kolumnami: **attr1** i **Element1_Text**. Właściwość **ColumnMapping** kolumny **attr1** zostanie ustawiona na wartość **MappingType. Attribute**. Właściwość **ColumnMapping** kolumny **Element1_Text** zostanie ustawiona na wartość **MappingType. SimpleContent**.  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
@@ -42,15 +43,15 @@ Jeśli element zawiera tekst i nie ma żadnych elementów podrzędnych, które m
   
  Proces wnioskowania spowoduje utworzenie tabeli o nazwie **element1** z jedną kolumną o nazwie **ChildElement1**. Tekst elementu **ChildElement1** zostanie uwzględniony w wierszu w tabeli. Drugi tekst zostanie zignorowany. Właściwość **ColumnMapping** kolumny **ChildElement1** zostanie ustawiona na wartość **MappingType. element**.  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |ChildElement1|  
 |-------------------|  
 |Text2|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wnioskowanie relacyjnej struktury elementu DataSet z pliku XML](inferring-dataset-relational-structure-from-xml.md)
 - [Ładowanie elementu DataSet z pliku XML](loading-a-dataset-from-xml.md)

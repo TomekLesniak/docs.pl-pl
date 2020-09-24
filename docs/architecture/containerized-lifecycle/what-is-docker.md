@@ -2,12 +2,12 @@
 title: Co to jest Docker?
 description: Zapoznaj się z bardziej szczegółowymi informacjami na temat platformy Docker, ale proste analogowe rozwiązanie może Ci pomóc.
 ms.date: 08/06/2020
-ms.openlocfilehash: 73b6032465583861169a8ac2bed81585027f42ec
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: b23a8719170deca706ee44d10337c340d72605fb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915067"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165926"
 ---
 # <a name="what-is-docker"></a>Co to jest Docker?
 
@@ -29,7 +29,7 @@ Aby uruchamiać [kontenery systemu Windows](/virtualization/windowscontainers/ab
 
 - **Kontenery funkcji Hyper-V** rozszerzają się na izolację zapewnioną przez kontenery systemu Windows Server, uruchamiając każdy kontener w wysoce zoptymalizowanej maszynie wirtualnej. W tej konfiguracji jądro hosta kontenera nie jest udostępniane kontenerom funkcji Hyper-V, co zapewnia lepszą izolację.
 
-Obrazy dla tych kontenerów są tworzone i działają w taki sam sposób. Różnica polega na tym, jak kontener jest tworzony na podstawie obrazu — uruchomienie kontenera funkcji Hyper-V wymaga dodatkowego parametru. Aby uzyskać szczegółowe informacje, zobacz [kontenery funkcji Hyper-V](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/hyperv-container).
+Obrazy dla tych kontenerów są tworzone i działają w taki sam sposób. Różnica polega na tym, jak kontener jest tworzony na podstawie obrazu — uruchomienie kontenera funkcji Hyper-V wymaga dodatkowego parametru. Aby uzyskać szczegółowe informacje, zobacz [kontenery funkcji Hyper-V](/virtualization/windowscontainers/manage-containers/hyperv-container).
 
 ## <a name="comparing-docker-containers-with-virtual-machines"></a>Porównywanie kontenerów platformy Docker z maszynami wirtualnymi
 

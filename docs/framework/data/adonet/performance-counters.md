@@ -6,17 +6,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: 4c1da6041b2343565bdaeb53e586c893bd85c922
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4f645a51996078f8dd80b6c455c420633db36155
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557908"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164604"
 ---
 # <a name="performance-counters-in-adonet"></a>Liczniki wydajności w ADO.NET
+
 W ADO.NET 2,0 wprowadzono rozszerzoną obsługę liczników wydajności, które obejmują obsługę obu <xref:System.Data.SqlClient> i <xref:System.Data.OracleClient> . <xref:System.Data.SqlClient>Liczniki wydajności dostępne w poprzednich wersjach ADO.NET zostały wycofane i zastąpione nowymi licznikami wydajności opisanymi w tym temacie. Liczników wydajności ADO.NET można użyć do monitorowania stanu aplikacji i zasobów połączenia, z których korzysta. Liczniki wydajności można monitorować przy użyciu Monitora wydajności systemu Windows lub mogą być dostępne programowo przy użyciu <xref:System.Diagnostics.PerformanceCounter> klasy w <xref:System.Diagnostics> przestrzeni nazw.  
   
 ## <a name="available-performance-counters"></a>Dostępne liczniki wydajności  
+
  Obecnie dostępne są 14 różnych liczników wydajności dla <xref:System.Data.SqlClient> i <xref:System.Data.OracleClient> , zgodnie z opisem w poniższej tabeli. Należy zauważyć, że nazwy poszczególnych liczników nie są zlokalizowane w regionalnych wersjach środowiska Microsoft .NET Framework.  
   
 |Licznik wydajności|Opis|  
@@ -37,10 +39,13 @@ W ADO.NET 2,0 wprowadzono rozszerzoną obsługę liczników wydajności, które 
 |`SoftDisconnectsPerSecond`|Liczba aktywnych połączeń, które są zwracane do puli połączeń. **Uwaga:**  Ten licznik wydajności nie jest domyślnie włączony. Aby włączyć ten licznik wydajności, zobacz sekcję [Aktywowanie liczników wyłączonych jako domyślne](#ActivatingOffByDefault).|  
   
 ### <a name="connection-pool-groups-and-connection-pools"></a>Grupy puli połączeń i pule połączeń  
+
  W przypadku korzystania z uwierzytelniania systemu Windows (zabezpieczenia zintegrowane) należy monitorować oba `NumberOfActiveConnectionPoolGroups` `NumberOfActiveConnectionPools` liczniki wydajności i. Przyczyną jest to, że grupy puli połączeń mapują na unikatowe parametry połączenia. W przypadku użycia zintegrowanego zabezpieczenia pule połączeń mapują się na parametry połączenia i dodatkowo tworzą oddzielne pule dla poszczególnych tożsamości systemu Windows. Na przykład, jeśli Fred i Julie, każdy w ramach tego samego elementu AppDomain, użyj parametrów połączenia `"Data Source=MySqlServer;Integrated Security=true"` , grupy puli połączeń dla parametrów połączenia i są tworzone dwa dodatkowe pule, jeden dla Fred i jeden dla Julie. Jeśli Jan i Martha używają parametrów połączenia o identycznym logowaniu SQL Server, to `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"` dla tożsamości **lowPrivUser** zostanie utworzona tylko jedna pula.  
   
 <a name="ActivatingOffByDefault"></a>
+
 ### <a name="activating-off-by-default-counters"></a>Aktywowanie liczników wyłączonych przez domyślne  
+
  Liczniki wydajności `NumberOfFreeConnections` ,, `NumberOfActiveConnections` `SoftDisconnectsPerSecond` i `SoftConnectsPerSecond` są domyślnie wyłączone. Dodaj następujące informacje do pliku konfiguracji aplikacji, aby je włączyć:  
   
 ```xml  
@@ -53,6 +58,7 @@ W ADO.NET 2,0 wprowadzono rozszerzoną obsługę liczników wydajności, które 
 ```  
   
 ## <a name="retrieving-performance-counter-values"></a>Pobieranie wartości licznika wydajności  
+
  W poniższej aplikacji konsolowej pokazano, jak pobrać wartości liczników wydajności w aplikacji. Połączenia muszą być otwarte i aktywne, aby można było zwracać informacje dla wszystkich liczników wydajności ADO.NET.  
   
 > [!NOTE]
@@ -395,7 +401,7 @@ class Program
 }  
 ```  
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Nawiązywanie połączenia ze źródłem danych](connecting-to-a-data-source.md)
 - [Buforowanie połączenia Oracle, OLE DB i ODBC](ole-db-odbc-and-oracle-connection-pooling.md)

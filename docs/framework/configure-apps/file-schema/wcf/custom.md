@@ -2,14 +2,15 @@
 title: <custom>
 ms.date: 03/30/2017
 ms.assetid: a6f65a00-bd1a-4d4a-955a-fe009ec02ab8
-ms.openlocfilehash: 4077aacab1c1c4594db76cc6663bfc0245d345d7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c208a6c7305ccbbe8efb10d071de29cf1bd2cc10
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555500"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165146"
 ---
 # \<custom>
+
 Określa ustawienia niestandardowej usługi rozpoznawania elementów równorzędnych.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Określa ustawienia niestandardowej usługi rozpoznawania elementów równorzęd
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -54,9 +56,10 @@ Określa ustawienia niestandardowej usługi rozpoznawania elementów równorzęd
 |[\<resolver>](resolver.md)|Równorzędny program rozpoznawania używany do rozpoznawania identyfikatora siatki równorzędnej w zestawie adresów węzłów równorzędnych reprezentujących kilka węzłów, które uczestniczą w sieci.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element definiuje podstawowe ustawienia dla niestandardowej usługi rozpoznawania elementów równorzędnych, w tym adres punktu końcowego elementu równorzędnego obsługującego usługę i wszystkie określone ustawienia powiązań. Aby uzyskać więcej informacji na temat tworzenia niestandardowego programu rozpoznawania nazw, zobacz [Dodawanie niestandardowego programu rozpoznawania nazw do aplikacji PeerChannel](/previous-versions/ms730105(v=vs.90)).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>
 - <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings>

@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: 94ebc97d5f90b5bb92186ba6f33015633bd01127
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: aac2d90cc57a4af823c42f8c7eb2adcd43c63caf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286937"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164821"
 ---
 # <a name="adding-data-to-a-datatable"></a>Dodawanie danych do elementu DataTable
+
 Po utworzeniu <xref:System.Data.DataTable> i zdefiniowaniu struktury przy użyciu kolumn i ograniczeń można dodać do tabeli nowe wiersze danych. Aby dodać nowy wiersz, Zadeklaruj nową zmienną jako typ <xref:System.Data.DataRow> . Nowy obiekt **DataRow** jest zwracany po wywołaniu <xref:System.Data.DataTable.NewRow%2A> metody. Element **DataTable** następnie tworzy obiekt **DataRow** na podstawie struktury tabeli zdefiniowanej przez <xref:System.Data.DataColumnCollection> .  
   
  W poniższym przykładzie pokazano, jak utworzyć nowy wiersz przez wywołanie metody **NewRow** .  
@@ -86,7 +87,7 @@ for (int i = 0; i <= 9; i++)
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataRow>

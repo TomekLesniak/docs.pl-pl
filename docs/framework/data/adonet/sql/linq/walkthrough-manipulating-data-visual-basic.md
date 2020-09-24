@@ -1,24 +1,26 @@
 ---
-title: 'Przewodnik: manipulowanie danymi (Visual Basic)'
+title: 'Przewodnik: Manipulowanie danymi (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: 7acce3f8483fab3c2978de7cbd1b9d875900f1d3
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: dbf18273e69ff0977f5d16ff179b8659865ef696
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003399"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164054"
 ---
-# <a name="walkthrough-manipulating-data-visual-basic"></a>Przewodnik: manipulowanie danymi (Visual Basic)
-Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na potrzeby dodawania, modyfikowania i usuwania danych w bazie danych. Zostanie użyta kopia przykładowej bazy danych Northwind, aby dodać klienta, zmienić nazwę klienta i usunąć zamówienie.  
+# <a name="walkthrough-manipulating-data-visual-basic"></a>Przewodnik: Manipulowanie danymi (Visual Basic)
+
+Ten Instruktaż zawiera podstawowy kompleksowy [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scenariusz służący do dodawania, modyfikowania i usuwania danych w bazie danych. Zostanie użyta kopia przykładowej bazy danych Northwind, aby dodać klienta, zmienić nazwę klienta i usunąć zamówienie.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
  Ten Instruktaż został zapisany przy użyciu ustawień tworzenia Visual Basic.  
   
 ## <a name="prerequisites"></a>Wymagania wstępne  
+
  Ten przewodnik wymaga następujących czynności:  
   
 - W tym instruktażu do przechowywania plików służy dedykowany folder ("c:\linqtest2"). Utwórz ten folder przed rozpoczęciem przewodnika.  
@@ -33,12 +35,13 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
   
      **SQLMetal/Code: "c:\linqtest2\northwind.vb"/Language: VB "C:\linqtest2\northwnd.mdf"/pluralize**  
   
-     Aby uzyskać więcej informacji, zobacz [SQLMetal. exe (Narzędzie generowania kodu)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
+     Aby uzyskać więcej informacji, zobacz [SqlMetal.exe (Narzędzie generowania kodu)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Omówienie  
+
  Ten przewodnik składa się z sześciu głównych zadań:  
   
-- Tworzenie rozwiązania [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] w programie Visual Studio.  
+- Tworzenie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] rozwiązania w programie Visual Studio.  
   
 - Dodawanie pliku kodu bazy danych do projektu.  
   
@@ -51,7 +54,8 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
 - Przesyłanie tych zmian do bazy danych Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Tworzenie rozwiązania LINQ to SQL  
- W tym pierwszym zadaniu utworzysz rozwiązanie programu Visual Studio, które zawiera niezbędne odwołania do kompilowania i uruchamiania projektu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+
+ W tym pierwszym zadaniu utworzysz rozwiązanie programu Visual Studio, które zawiera niezbędne odwołania do kompilowania i uruchamiania [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>Aby utworzyć rozwiązanie LINQ to SQL  
   
@@ -66,6 +70,7 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
 5. Kliknij przycisk **OK**.  
   
 ## <a name="adding-linq-references-and-directives"></a>Dodawanie odwołań i dyrektyw LINQ  
+
  W tym instruktażu są używane zestawy, które mogą nie być instalowane domyślnie w projekcie. Jeśli `System.Data.Linq` nie jest wymieniony jako odwołanie w projekcie (kliknij przycisk **Pokaż wszystkie pliki** w **Eksplorator rozwiązań** i rozwiń węzeł **odwołania** ), Dodaj go, jak wyjaśniono w poniższych krokach.  
   
 #### <a name="to-add-systemdatalinq"></a>Aby dodać system. Data. LINQ  
@@ -81,6 +86,7 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
      [!code-vb[DLinqWalk3VB#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#1)]  
   
 ## <a name="adding-the-northwind-code-file-to-the-project"></a>Dodawanie pliku kodu Northwind do projektu  
+
  W tych krokach przyjęto założenie, że użyto narzędzia SQLMetal do wygenerowania pliku kodu z przykładowej bazy danych Northwind. Aby uzyskać więcej informacji, zobacz sekcję wymagania wstępne we wcześniejszej części tego przewodnika.  
   
 #### <a name="to-add-the-northwind-code-file-to-the-project"></a>Aby dodać plik kodu Northwind do projektu  
@@ -92,11 +98,12 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
      Plik Northwind. vb zostanie dodany do projektu.  
   
 ## <a name="setting-up-the-database-connection"></a>Konfigurowanie połączenia z bazą danych  
+
  Najpierw Przetestuj połączenie z bazą danych. Należy pamiętać, że nazwa bazy danych, northwnd, nie ma znaku. W przypadku wygenerowania błędów w następnych krokach przejrzyj plik Northwind. vb, aby określić sposób pisowni klasy częściowej Northwind.  
   
 #### <a name="to-set-up-and-test-the-database-connection"></a>Aby skonfigurować i przetestować połączenie z bazą danych  
   
-1. Wpisz lub wklej następujący kod do `Sub Main`:  
+1. Wpisz lub wklej następujący kod do `Sub Main` :  
   
      [!code-vb[DLinqWalk3VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#2)]  
   
@@ -107,13 +114,14 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
      Zamknij aplikację, naciskając klawisz ENTER w oknie **konsoli** lub klikając przycisk **Zatrzymaj debugowanie** w menu **debugowanie** programu Visual Studio.  
   
 ## <a name="creating-a-new-entity"></a>Tworzenie nowej jednostki  
- Tworzenie nowej jednostki jest proste. Obiekty (takie jak `Customer`) można tworzyć za pomocą słowa kluczowego `New`.  
+
+ Tworzenie nowej jednostki jest proste. Możesz tworzyć obiekty (na przykład `Customer` ) za pomocą `New` słowa kluczowego.  
   
- W tym i w poniższych sekcjach wprowadzasz zmiany tylko do lokalnej pamięci podręcznej. Żadne zmiany nie są wysyłane do bazy danych do momentu wywołania <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na końcu tego instruktażu.  
+ W tym i w poniższych sekcjach wprowadzasz zmiany tylko do lokalnej pamięci podręcznej. Żadne zmiany nie są wysyłane do bazy danych do momentu wywołania <xref:System.Data.Linq.DataContext.SubmitChanges%2A> końca tego przewodnika.  
   
 #### <a name="to-add-a-new-customer-entity-object"></a>Aby dodać nowy obiekt jednostki klienta  
   
-1. Utwórz nowy `Customer`, dodając następujący kod przed `Console.ReadLine` w `Sub Main`:  
+1. Utwórz nowy `Customer` , dodając następujący kod przed `Console.ReadLine` `Sub Main` :  
   
      [!code-vb[DLinqWalk3VB#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#3)]  
   
@@ -132,35 +140,38 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
 3. Naciśnij klawisz ENTER w oknie **konsoli** , aby zatrzymać debugowanie.  
   
 ## <a name="updating-an-entity"></a>Aktualizowanie jednostki  
- W poniższych krokach zostanie pobrany obiekt `Customer` i zostanie zmodyfikowana jedna z jego właściwości.  
+
+ W poniższych krokach zostanie pobrany `Customer` obiekt i zostanie zmodyfikowana jedna z jego właściwości.  
   
 #### <a name="to-change-the-name-of-a-customer"></a>Aby zmienić nazwę klienta  
   
-- Dodaj następujący kod powyżej `Console.ReadLine()`:  
+- Dodaj następujący kod powyżej `Console.ReadLine()` :  
   
      [!code-vb[DLinqWalk3VB#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#4)]  
   
 ## <a name="deleting-an-entity"></a>Usuwanie jednostki  
+
  Przy użyciu tego samego obiektu klienta można usunąć pierwszą kolejność.  
   
  Poniższy kod ilustruje sposób tworzenia relacji między wierszami i sposobu usuwania wiersza z bazy danych.  
   
 #### <a name="to-delete-a-row"></a>Aby usunąć wiersz  
   
-- Dodaj następujący kod tuż powyżej `Console.ReadLine()`:  
+- Dodaj poniższy kod bezpośrednio powyżej `Console.ReadLine()` :  
   
      [!code-vb[DLinqWalk3VB#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#5)]  
   
 ## <a name="submitting-changes-to-the-database"></a>Przesyłanie zmian do bazy danych  
+
  Ostatnim krokiem wymaganym do tworzenia, aktualizowania i usuwania obiektów jest faktyczne przesłanie zmian do bazy danych. Bez tego kroku zmiany są tylko lokalne i nie będą wyświetlane w wynikach zapytania.  
   
 #### <a name="to-submit-changes-to-the-database"></a>Aby przesłać zmiany do bazy danych  
   
-1. Wstaw następujący kod tuż powyżej `Console.ReadLine`:  
+1. Wstaw poniższy kod powyżej `Console.ReadLine` :  
   
      [!code-vb[DLinqWalk3VB#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#6)]  
   
-2. Wstaw następujący kod (po `SubmitChanges`), aby pokazać efekt przed i po przesłaniu zmian:  
+2. Wstaw poniższy kod (po `SubmitChanges` ), aby wyświetlić efekty przesłania zmian:  
   
      [!code-vb[DLinqWalk3VB#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#7)]  
   
@@ -186,6 +197,6 @@ Ten Instruktaż zawiera podstawowy, kompleksowy scenariusz [!INCLUDE[vbtecdlinq]
 > [!NOTE]
 > Po dodaniu nowego klienta przez przesłanie zmian nie można wykonać tego rozwiązania ponownie, ponieważ nie można ponownie dodać tego samego klienta. Aby ponownie wykonać rozwiązanie, należy zmienić wartość identyfikatora klienta, który ma zostać dodany.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Nauka przez przewodniki](learning-by-walkthroughs.md)

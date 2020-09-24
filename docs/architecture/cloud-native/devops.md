@@ -2,12 +2,12 @@
 title: DevOps
 description: DevOps uwagi dotyczące aplikacji natywnych w chmurze
 ms.date: 05/13/2020
-ms.openlocfilehash: ce814595245d49e409e780cb0f63c436299c2e4e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e6e093a1847d3aec37ac5d4ca56f64e0091a9b6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614123"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164002"
 ---
 # <a name="devops"></a>DevOps
 
@@ -57,7 +57,7 @@ Jednostka organizacyjna najwyższego poziomu w usłudze Azure DevOps jest nazywa
 
 Na szczęście zespoły deweloperów mają wiele opcji podczas wybierania repozytorium. Jednym z nich jest serwis GitHub.
 
-## <a name="github-actions"></a>GitHub Actions
+## <a name="github-actions"></a>Funkcja GitHub Actions
 
 2009 w witrynie GitHub jest to szeroko popularne repozytorium oparte na sieci Web służące do hostowania projektów, dokumentacji i kodu. Wiele dużych firm technicznych, takich jak Apple, Amazon, Google i Large Corporation, korzysta z usługi GitHub. Usługa GitHub używa rozproszonego systemu kontroli wersji (Open Source) o nazwie git jako podstawy. Następnie dodaje swój własny zestaw funkcji, w tym śledzenie defektów, żądania funkcji i żądań ściągnięcia, zarządzanie zadaniami i wiki dla każdej bazy kodu.
 
@@ -154,7 +154,7 @@ Etapy na tablicach nie są jedynym narzędziem organizacji. W zależności od ko
 
 Pole Description obsługuje style normalne, których oczekujesz (pogrubienie, podkreślenie kursywą i przekreślenie) oraz możliwość wstawiania obrazów. Sprawia to, że jest to zaawansowane narzędzie do użycia podczas określania pracy lub błędów.
 
-Zadania mogą być rzutowane na funkcje, które definiują większą liczbę jednostek pracy. Z kolei funkcje mogą być [rzutowane na epiki](https://docs.microsoft.com/azure/devops/boards/backlogs/define-features-epics?view=azure-devops). Klasyfikowanie zadań w tej hierarchii ułatwia zrozumienie, jak zamknięcie dużej funkcji jest możliwe.
+Zadania mogą być rzutowane na funkcje, które definiują większą liczbę jednostek pracy. Z kolei funkcje mogą być [rzutowane na epiki](/azure/devops/boards/backlogs/define-features-epics?view=azure-devops). Klasyfikowanie zadań w tej hierarchii ułatwia zrozumienie, jak zamknięcie dużej funkcji jest możliwe.
 
 ![Rysunek 10-6 typów elementów roboczych skonfigurowanych domyślnie w szablonie procesu podstawowego](./media/board-issue-types.png)
 
