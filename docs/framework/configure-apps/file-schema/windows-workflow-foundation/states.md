@@ -3,14 +3,15 @@ title: <states>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: ebea5e7c-ad58-43c5-8f2d-cca25ae1b721
-ms.openlocfilehash: 1a7c839a5ff8fac9470aea71a4886d9000086e9e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e759f86e7746eaf3fdd72ed923612b24ef9b0c23
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398618"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150820"
 ---
 # \<states>
+
 Reprezentuje kolekcję subskrybowanego stanów z wystąpienia śledzonych przepływu pracy podczas tworzenia rekordów śledzenia.  
   
  Aby uzyskać więcej informacji o śledzeniu zapytań profilowych, zobacz [śledzenie profilów](../../../windows-workflow-foundation/tracking-profiles.md)  
@@ -43,9 +44,11 @@ Reprezentuje kolekcję subskrybowanego stanów z wystąpienia śledzonych przep�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -61,6 +64,7 @@ Reprezentuje kolekcję subskrybowanego stanów z wystąpienia śledzonych przep�
 |[\<workflowInstanceQuery>](workflowinstancequery.md)|Zapytanie, które śledzi zmiany cyklu życia wystąpienia przepływu pracy, takie jak zdarzenie uruchomione lub ukończone.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zwracane rekordy są filtrowane według stanów w tej kolekcji.  
   
  Stan możliwe wartości są opisane w poniższej tabeli.  
@@ -78,10 +82,11 @@ Reprezentuje kolekcję subskrybowanego stanów z wystąpienia śledzonych przep�
 |Zwolniono|Wystąpienie przepływu pracy nie jest załadowany.|  
 |Anulowane|Wystąpienie przepływu pracy zostało anulowane.|  
 |Suspended|Wystąpienie przepływu pracy jest zawieszone.|  
-|Zakończone|Wystąpienie przepływu pracy jest zakończone.|  
+|Zakończony|Wystąpienie przepływu pracy jest zakończone.|  
 |Anulowano|Anulowano to wystąpienie przepływu pracy.|  
   
 ## <a name="example"></a>Przykład  
+
  Następująca konfiguracja subskrybuje przepływu rekordów dla śledzenia na poziomie wystąpienia `Started` stan wystąpienia przy użyciu tego zapytania.  
   
 ```xml  
@@ -94,7 +99,7 @@ Reprezentuje kolekcję subskrybowanego stanów z wystąpienia śledzonych przep�
 </workflowInstanceQueries>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType>

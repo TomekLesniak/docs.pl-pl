@@ -2,14 +2,15 @@
 title: <routing> dla <serviceBehavior>
 ms.date: 03/30/2017
 ms.assetid: d8f9c844-4629-4a45-9599-856dc8f01794
-ms.openlocfilehash: 0998f4fc61de7099879ba6e122eed1e64588baec
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cd53b720bad5752189f1c30d9e4acd3a66830396
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397731"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150885"
 ---
 # <a name="routing-of-servicebehavior"></a>\<routing> dla \<serviceBehavior>
+
 Zapewnia dostęp do usługi routingu w czasie wykonywania w celu umożliwienia dynamicznej modyfikacji konfiguracji routingu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Zapewnia dostęp do usługi routingu w czasie wykonywania w celu umożliwienia d
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -45,6 +47,7 @@ Zapewnia dostęp do usługi routingu w czasie wykonywania w celu umożliwienia d
 |soapProcessingEnabled|Wartość logiczna określająca, czy należy wykonać przetwarzanie protokołu SOAP.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -54,6 +57,7 @@ Zapewnia dostęp do usługi routingu w czasie wykonywania w celu umożliwienia d
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie elementu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Po dodaniu do konfiguracji zachowania usługi, ten element konfiguracji włącza Routing dla usługi. Możesz określić rzeczywistą tabelę routingu, która ma być używana przez usługę w tym elemencie.  
   
  Za pomocą tej sekcji konfiguracji można zmienić ustawienia routingu na bieżąco po zmianie wzorca wdrożenia. W czasie wykonywania można zarejestrować własne rozszerzenie routingu z nowymi ustawieniami routingu, a usługa routingu rozpocznie korzystanie z zaktualizowanych informacji o konfiguracji dla nowych komunikatów i sesji, pozostawiając jednocześnie komunikaty/sesje w locie przy użyciu dowolnych reguł podczas ich uruchamiania.  Umożliwia to bezpieczne dla sesji ponowne odtwarzanie usługi routingu podczas środowiska uruchomieniowego.  

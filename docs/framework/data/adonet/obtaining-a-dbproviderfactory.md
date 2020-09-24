@@ -6,20 +6,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: 0c7c89a9104ac72bf03f2900e7ca474b709be40c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0bf95f1773c832a4666c1b33336f963b674052ef
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554465"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150742"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Uzyskiwanie DbProviderFactory
+
 Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotyczących dostawcy danych jest przekazywany do <xref:System.Data.Common.DbProviderFactories> klasy. Na podstawie tych informacji <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> Metoda tworzy fabrykę dostawców o jednoznacznie określonym typie. Na przykład, aby utworzyć <xref:System.Data.SqlClient.SqlClientFactory> , można przekazać `GetFactory` ciąg z nazwą dostawcy określoną jako "System. Data. SqlClient". Inne Przeciążenie `GetFactory` trwa <xref:System.Data.DataRow> . Po utworzeniu fabryki dostawcy można użyć jej metod, aby utworzyć dodatkowe obiekty. Niektóre metody `SqlClientFactory` obejmują <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A> , <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A> , i <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A> .  
   
 > [!NOTE]
 > .NET Framework <xref:System.Data.OracleClient.OracleClientFactory> , <xref:System.Data.Odbc.OdbcFactory> i <xref:System.Data.OleDb.OleDbFactory> klasy również zapewniają podobną funkcjonalność.  
   
 ## <a name="registering-dbproviderfactories"></a>Rejestrowanie DbProviderFactories  
+
  Każdy dostawca danych .NET Framework, który obsługuje klasy oparte na fabryce, rejestruje informacje o konfiguracji w sekcji **DbProviderFactories** pliku **machine.config** na komputerze lokalnym. Poniższy fragment pliku konfiguracji przedstawia składnię i format dla <xref:System.Data.SqlClient> .  
   
 ```xml  
@@ -38,6 +40,7 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
  Atrybut **niezmienny** identyfikuje bazowego dostawcę danych. Ta trzykrotna składnia nazewnictwa jest również używana podczas tworzenia nowej fabryki i do identyfikowania dostawcy w pliku konfiguracji aplikacji, tak aby nazwa dostawcy wraz ze skojarzonymi z nim parametrami połączenia mogła zostać pobrana w czasie wykonywania.  
   
 ## <a name="retrieving-provider-information"></a>Pobieranie informacji o dostawcy  
+
  Można pobrać informacje o wszystkich dostawcach danych zainstalowanych na komputerze lokalnym przy użyciu <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> metody. Zwraca <xref:System.Data.DataTable> nazwę **DbProviderFactories** , która zawiera kolumny opisane w poniższej tabeli.  
   
 |Numer porządkowy kolumny|Nazwa kolumny|Przykładowe dane wyjściowe|Opis|  
@@ -50,12 +53,14 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
  `DataTable`Można go użyć, aby umożliwić użytkownikowi wybranie <xref:System.Data.DataRow> w czasie wykonywania. Wybrane `DataRow` można następnie przesłać do <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metody, aby utworzyć silnie wpisaną wartość <xref:System.Data.Common.DbProviderFactory> . Wybrany element <xref:System.Data.DataRow> może zostać przesłany do `GetFactory` metody w celu utworzenia żądanego `DbProviderFactory` obiektu.  
   
 ## <a name="listing-the-installed-provider-factory-classes"></a>Wyświetlanie listy zainstalowanych klas fabryki dostawców  
+
  W tym przykładzie pokazano, jak użyć <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> metody do zwrócenia <xref:System.Data.DataTable> informacji o zainstalowanych dostawcach. Kod wykonuje iterację każdego wiersza w `DataTable` , wyświetlając informacje dla każdego zainstalowanego dostawcy w oknie konsoli.  
   
  [!code-csharp[DataWorks DbProviderFactories#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories/VB/source.vb#1)]  
   
 ## <a name="using-application-configuration-files-to-store-factory-information"></a>Przechowywanie informacji o fabryce przy użyciu plików konfiguracji aplikacji  
+
  Wzorzec projektowy używany do pracy z fabrykami pociąga za sobą przechowywanie informacji o dostawcy i parametrach połączenia w pliku konfiguracyjnym aplikacji, na przykład **app.config** dla aplikacji systemu Windows i **web.config** dla aplikacji ASP.NET.  
   
  Poniższy fragment pliku konfiguracji pokazuje, jak zapisać dwa nazwane parametry połączenia "NorthwindSQL" dla połączenia z bazą danych Northwind w SQL Server i "NorthwindAccess" w celu połączenia z bazą danych Northwind w pliku Access/Jet. Nazwa **niezmiennej** jest używana dla atrybutu **ProviderName** .  
@@ -80,6 +85,7 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
 ```  
   
 ### <a name="retrieving-a-connection-string-by-provider-name"></a>Pobieranie parametrów połączenia według nazwy dostawcy  
+
  Aby utworzyć fabrykę dostawcy, należy podać parametry połączenia oraz nazwę dostawcy. W tym przykładzie pokazano, jak pobrać parametry połączenia z pliku konfiguracyjnego aplikacji, przekazując nazwę dostawcy w formacie niezmiennym "*System. Data. ProviderName*". Kod wykonuje iterację przez <xref:System.Configuration.ConnectionStringSettingsCollection> . Zwraca on <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> sukces; w przeciwnym razie `null` ( `Nothing` w Visual Basic). Jeśli istnieje wiele wpisów dla dostawcy, zostanie zwrócony pierwszy z nich. Aby uzyskać więcej informacji i przykłady pobierania parametrów połączenia z plików konfiguracji, zobacz [parametry połączeń i pliki konfiguracji](connection-strings-and-configuration-files.md).  
   
 > [!NOTE]
@@ -89,6 +95,7 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
 ## <a name="creating-the-dbproviderfactory-and-dbconnection"></a>Tworzenie DbProviderFactory i DbConnection  
+
  Ten przykład ilustruje sposób tworzenia <xref:System.Data.Common.DbProviderFactory> <xref:System.Data.Common.DbConnection> obiektu i przez przekazanie go do nazwy dostawcy w formacie "*System. Data. ProviderName*" i parametry połączenia. `DbConnection`Obiekt jest zwracany w wyniku sukcesu; `null` ( `Nothing` w Visual Basic) w przypadku dowolnego błędu.  
   
  Kod uzyskuje `DbProviderFactory` przez wywołanie <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> . Następnie <xref:System.Data.Common.DbProviderFactory.CreateConnection%2A> Metoda tworzy <xref:System.Data.Common.DbConnection> obiekt, a <xref:System.Data.Common.DbConnection.ConnectionString%2A> Właściwość jest ustawiana na parametry połączenia.  
@@ -96,7 +103,7 @@ Proces uzyskiwania <xref:System.Data.Common.DbProviderFactory> informacji dotycz
  [!code-csharp[DataWorks DbProviderFactories.GetFactory#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.GetFactory/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories.GetFactory#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.GetFactory/VB/source.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [DbProviderFactories](dbproviderfactories.md)
 - [Parametry połączenia](connection-strings.md)

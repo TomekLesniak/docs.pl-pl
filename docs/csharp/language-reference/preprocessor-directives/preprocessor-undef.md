@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
-ms.openlocfilehash: 97f99ab4230585e61fed0e057552b78c7a4c2bb5
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 7db79be7ea9d8462e09b6ae874bf0ae7d265afe2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137867"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150560"
 ---
 # <a name="undef-c-reference"></a>#undef (odwołanie w C#)
+
 `#undef` umożliwia oddefiniowanie symbolu, takiego, że, przy użyciu symbolu jako wyrażenia w dyrektywie [#if](./preprocessor-if.md) , wyrażenie zwróci wartość `false` .  
   
  Symbol można zdefiniować za pomocą dyrektywy [#define](./preprocessor-define.md) lub opcji [-define](../compiler-options/define-compiler-option.md) kompilatora. `#undef`Dyrektywa musi znajdować się w pliku przed użyciem wszelkich instrukcji, które nie są również dyrektywami.  

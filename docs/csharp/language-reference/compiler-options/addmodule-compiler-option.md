@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -addmodule compiler option [C#]
 - addmodule compiler option [C#]
 ms.assetid: ed604546-0dc2-4bd4-9a3e-610a8d973e58
-ms.openlocfilehash: bcc615d52aec0a09ebf3913b3ece71f2cbfcbda9
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ec72fc76b3d550029b1286f64b8f86e69e721468
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89126128"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150573"
 ---
 # <a name="-addmodule-c-compiler-options"></a>-addmodule (opcje kompilatora C#)
+
 Ta opcja dodaje moduł, który został utworzony za pomocą elementu docelowego: przełączenie modułu do bieżącej kompilacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,10 +27,12 @@ Ta opcja dodaje moduł, który został utworzony za pomocą elementu docelowego:
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `file`, `file2`  
  Plik wyjściowy zawierający metadane. Plik nie może zawierać manifestu zestawu. Aby zaimportować więcej niż jeden plik, oddziel nazwy plików przecinkami lub średnikami.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wszystkie moduły dodane za pomocą polecenia **-addmodule** muszą znajdować się w tym samym katalogu co plik wyjściowy w czasie wykonywania. Oznacza to, że można określić moduł w dowolnym katalogu w czasie kompilacji, ale moduł musi znajdować się w katalogu aplikacji w czasie wykonywania. Jeśli moduł nie znajduje się w katalogu aplikacji w czasie wykonywania, otrzymasz <xref:System.TypeLoadException> .  
   
  `file` nie może zawierać zestawu. Na przykład jeśli plik wyjściowy został utworzony za pomocą [elementu-target: module](./target-module-compiler-option.md), jego metadane można zaimportować za pomocą polecenia **-addmodule**.  
@@ -39,6 +42,7 @@ Ta opcja dodaje moduł, który został utworzony za pomocą elementu docelowego:
  Ta opcja kompilatora jest niedostępna w programie Visual Studio; projekt nie może odwoływać się do modułu. Ponadto nie można programowo zmienić tej opcji kompilatora.  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj plik źródłowy `input.cs` i Dodaj metadane z `metad1.netmodule` i `metad2.netmodule` do produkcji `out.exe` :  
   
 ```console  

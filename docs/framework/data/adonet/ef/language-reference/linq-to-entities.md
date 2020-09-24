@@ -3,14 +3,15 @@ title: LINQ do Jednostek
 description: Dowiedz się, jak tworzyć i uruchamiać zapytania LINQ to Entities, które umożliwiają pisanie zapytań względem modelu koncepcyjnego Entity Framework przy użyciu Visual Basic lub Visual C#.
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: 389a81872f4652c69e2b845359cf4e5a275aed5c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 809cbd10be6a2bc44bb4bff0ba3ea363da676f7f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286847"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150794"
 ---
 # <a name="linq-to-entities"></a>LINQ do Jednostek
+
 LINQ to Entities zapewnia obsługę programu Query-Integrated Language (LINQ), która umożliwia deweloperom Pisanie zapytań względem modelu koncepcyjnego Entity Framework przy użyciu Visual Basic lub Visual C#. Zapytania dotyczące Entity Framework są reprezentowane przez zapytania drzewa poleceń, które są wykonywane względem kontekstu obiektu. LINQ to Entities konwertuje zapytania dotyczące języka (LINQ) na zapytania drzewa poleceń, wykonuje zapytania względem Entity Framework i zwraca obiekty, które mogą być używane przez Entity Framework i LINQ. Poniżej przedstawiono proces tworzenia i wykonywania zapytania LINQ to Entities:  
   
 1. Utwórz <xref:System.Data.Objects.ObjectQuery%601> wystąpienie z <xref:System.Data.Objects.ObjectContext> .  
@@ -24,9 +25,11 @@ LINQ to Entities zapewnia obsługę programu Query-Integrated Language (LINQ), k
 5. Zwraca wyniki zapytania z powrotem do klienta.  
   
 ## <a name="constructing-an-objectquery-instance"></a>Konstruowanie wystąpienia ObjectQuery  
+
  <xref:System.Data.Objects.ObjectQuery%601>Klasa generyczna reprezentuje zapytanie, które zwraca kolekcję składającą się z zero lub więcej z wpisanych jednostek. Zapytanie obiektu jest zwykle konstruowane z istniejącego kontekstu obiektu, a nie do ręcznego konstruowania i zawsze należy do tego kontekstu obiektu. Ten kontekst zapewnia informacje o połączeniu i metadanych, które są wymagane do tworzenia i wykonywania zapytania. <xref:System.Data.Objects.ObjectQuery%601>Klasa generyczna implementuje <xref:System.Linq.IQueryable%601> interfejs ogólny, którego metody konstruktora umożliwiają przyrostowe kompilowanie zapytań LINQ. Można również zezwolić kompilatorowi na wnioskowanie typu jednostek za pomocą `var` słowa kluczowego C# ( `Dim` w Visual Basic z włączonym wnioskem o typie lokalnym).  
   
 ## <a name="composing-the-queries"></a>Redagowanie zapytań  
+
  Wystąpienia <xref:System.Data.Objects.ObjectQuery%601> klasy generycznej implementującej <xref:System.Linq.IQueryable%601> interfejs ogólny, służące jako źródło danych dla zapytań LINQ to Entities. W zapytaniu należy określić dokładnie informacje, które mają zostać pobrane ze źródła danych. Zapytanie może również określać, jak te informacje powinny być sortowane, grupowane i ukształtowane przed zwróceniem. W LINQ, zapytanie jest przechowywane w zmiennej. Ta zmienna zapytania nie przyjmuje żadnej akcji i nie zwraca żadnych danych. przechowuje on tylko informacje o zapytaniu. Po utworzeniu zapytania należy wykonać to zapytanie w celu pobrania danych.  
   
  Zapytania LINQ to Entities mogą składać się z dwóch różnych składni: składni wyrażeń zapytania i składni zapytania opartego na metodzie. Składnia wyrażenia zapytania i Składnia zapytania oparta na metodzie są nowe w językach C# 3,0 i Visual Basic 9,0.  
@@ -34,6 +37,7 @@ LINQ to Entities zapewnia obsługę programu Query-Integrated Language (LINQ), k
  Aby uzyskać więcej informacji, zobacz [zapytania w LINQ to Entities](queries-in-linq-to-entities.md).  
   
 ## <a name="query-conversion"></a>Konwersja zapytań  
+
  Aby wykonać kwerendę LINQ to Entitiesową względem Entity Framework, zapytanie LINQ musi zostać przekonwertowane na reprezentację drzewa poleceń, które można wykonać w odniesieniu do Entity Framework.  
   
  Zapytania LINQ to Entities składają się z standardowych operatorów zapytań LINQ (takich jak <xref:System.Linq.Queryable.Select%2A> , <xref:System.Linq.Queryable.Where%2A> i <xref:System.Linq.Queryable.GroupBy%2A> ) i wyrażeń (x > 10, Contact. LastName itd.). Operatory LINQ nie są zdefiniowane przez klasę, ale raczej są metodami klasy. W LINQ, wyrażenia mogą zawierać dowolne elementy dozwolone przez typy w <xref:System.Linq.Expressions> przestrzeni nazw i, przez rozszerzenie, wszystkie elementy, które mogą być reprezentowane w funkcji lambda. Jest to nadzbiór wyrażeń dozwolonych przez Entity Framework, które są przez definicję ograniczone do operacji dozwolonych w bazie danych i obsługiwanych przez <xref:System.Data.Objects.ObjectQuery%601> .  
@@ -51,9 +55,11 @@ LINQ to Entities zapewnia obsługę programu Query-Integrated Language (LINQ), k
  Aby uzyskać informacje o sposobie wywoływania funkcji kanonicznych, baz danych i niestandardowych w ramach zapytań LINQ to Entities, zobacz [wywoływanie funkcji w LINQ to Entities zapytaniach](calling-functions-in-linq-to-entities-queries.md).  
   
 ## <a name="query-execution"></a>Wykonywanie zapytania  
+
  Po utworzeniu zapytania LINQ przez użytkownika zostanie ono przekonwertowane na reprezentację zgodną z Entity Framework (w formie drzew poleceń), która jest następnie wykonywana względem źródła danych. W czasie wykonywania zapytania wszystkie wyrażenia zapytania (lub składniki zapytania) są oceniane na kliencie lub na serwerze. Obejmuje to wyrażenia, które są używane w wyniku materializację lub projekcji jednostek. Aby uzyskać więcej informacji, zobacz [wykonywanie zapytań](query-execution.md). Aby uzyskać informacje na temat zwiększania wydajności przez skompilowanie zapytania raz, a następnie wykonywanie go kilka razy przy użyciu różnych parametrów, zobacz [skompilowane zapytania (LINQ to Entities)](compiled-queries-linq-to-entities.md).  
   
 ## <a name="materialization"></a>Materializację  
+
  Materializację to proces zwracania wyników zapytania z powrotem do klienta jako typy CLR. W LINQ to Entities rekordy danych wyników zapytania nigdy nie są zwracane; istnieje zawsze zapasowy typ CLR zdefiniowany przez użytkownika lub przez Entity Framework lub wygenerowany przez kompilator (typy anonimowe). Wszystkie materializację obiektów są wykonywane przez Entity Framework. Wszelkie błędy, które wynikają z braku możliwości mapowania między Entity Framework i CLR spowodują, że wyjątki będą zgłaszane podczas materializację obiektów.  
   
  Wyniki zapytania są zwykle zwracane jako jeden z następujących elementów:  
@@ -69,6 +75,7 @@ LINQ to Entities zapewnia obsługę programu Query-Integrated Language (LINQ), k
  Aby uzyskać więcej informacji, zobacz [wyniki zapytania](query-results.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Zapytania w składniku LINQ to Entities](queries-in-linq-to-entities.md)  
   
  [Wyrażenia w zapytaniach składnika LINQ to Entities](expressions-in-linq-to-entities-queries.md)  
@@ -89,7 +96,7 @@ LINQ to Entities zapewnia obsługę programu Query-Integrated Language (LINQ), k
   
  [Znane problemy i zagadnienia dotyczące w składniku LINQ to Entities](known-issues-and-considerations-in-linq-to-entities.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Znane problemy i zagadnienia dotyczące w składniku LINQ to Entities](known-issues-and-considerations-in-linq-to-entities.md)
 - [Zapytanie zintegrowane z językiem (LINQ)-C #](../../../../../csharp/programming-guide/concepts/linq/index.md)

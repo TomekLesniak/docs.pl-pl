@@ -7,14 +7,15 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: c248c6c54de493ab06a833fc525252fa812d60da
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: cbe0703ca39422ac0a9e7a93bf2cfc4c3f8528f8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381752"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151431"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Jak określić, czy ciąg reprezentuje wartość liczbową (Przewodnik programowania w języku C#)
+
 Aby określić, czy ciąg jest prawidłową reprezentacją określonego typu liczbowego, należy użyć statycznej `TryParse` metody, która jest implementowana przez wszystkie pierwotne typy liczbowe, a także typy takie jak <xref:System.DateTime> i <xref:System.Net.IPAddress> . Poniższy przykład pokazuje, jak ustalić, czy "108" jest prawidłową [int](../../language-reference/builtin-types/integral-numeric-types.md).  
   
 ```csharp  
@@ -29,14 +30,17 @@ bool result = int.TryParse(s, out i); //i now = 108
 > Ciąg może zawierać tylko znaki numeryczne i nadal nie jest prawidłowy dla typu, którego `TryParse` Metoda jest używana. Na przykład "256" nie jest prawidłową wartością dla `byte` , ale jest prawidłowy dla `int` . "98,6" nie jest prawidłową wartością dla `int` , ale jest prawidłowy `decimal` .  
   
 ## <a name="example"></a>Przykład  
+
  W poniższych przykładach pokazano, jak używać `TryParse` z reprezentacjami ciągów `long` `byte` wartości,, i `decimal` .  
   
  [!code-csharp[csProgGuideStrings#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#14)]  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
- Pierwotne typy liczbowe implementują również `Parse` metodę statyczną, która zgłasza wyjątek, jeśli ciąg nie jest prawidłową liczbą. `TryParse`jest zwykle bardziej wydajne, ponieważ zwraca wartość false, jeśli liczba jest nieprawidłowa.  
+
+ Pierwotne typy liczbowe implementują również `Parse` metodę statyczną, która zgłasza wyjątek, jeśli ciąg nie jest prawidłową liczbą. `TryParse` jest zwykle bardziej wydajne, ponieważ zwraca wartość false, jeśli liczba jest nieprawidłowa.  
   
 ## <a name="net-security"></a>Zabezpieczenia platformy .NET  
+
  Zawsze używaj `TryParse` metod lub `Parse` do sprawdzania poprawności danych wejściowych użytkownika z kontrolek, takich jak pola tekstowe i pola kombi.  
   
 ## <a name="see-also"></a>Zobacz też

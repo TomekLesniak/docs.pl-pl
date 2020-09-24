@@ -2,14 +2,15 @@
 title: <bindingElementExtensions>
 ms.date: 03/30/2017
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
-ms.openlocfilehash: c323a65ace332d2ecd1e03330dddbe7ca17ff5bd
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6ba97adfa696e00b4d6b75faf104c31436e25447
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69926367"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151133"
 ---
 # \<bindingElementExtensions>
+
 Ta sekcja umożliwia korzystanie z niestandardowego elementu powiązania z pliku konfiguracji komputera lub aplikacji. Można dodać niestandardowy element powiązania do tej kolekcji przy użyciu `add` słowa kluczowego i ustawić `type` atrybut elementu na rozszerzenie elementu powiązania, a także `name` atrybut elementu niestandardowego powiązania.  
   
  Rozszerzenia powiązań umożliwiają użytkownikowi tworzenie elementów powiązania zdefiniowanych przez użytkownika do użycia w ramach powiązań niestandardowych. Programowe rozszerzenie powiązania jest typem, który implementuje klasę abstrakcyjną <xref:System.ServiceModel.Channels.BindingElement> . W pliku konfiguracji `bindingElementExtensions` sekcja służy do definiowania elementu rozszerzenia.  
@@ -43,7 +44,7 @@ Ta sekcja umożliwia korzystanie z niestandardowego elementu powiązania z pliku
 </customBinding>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>
 - [Rozszerzanie powiązań](../../../wcf/extending/extending-bindings.md)

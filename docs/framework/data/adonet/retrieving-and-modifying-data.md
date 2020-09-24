@@ -3,24 +3,26 @@ title: Pobieranie i modyfikowanie danych
 description: W .NET Framework dostawcy danych w ADO.NET pełnią rolę mostka między aplikacją a źródłem danych, aby odczytywać i aktualizować dane.
 ms.date: 03/30/2017
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
-ms.openlocfilehash: f916324dc829526a5e6b0078021b09786755f666
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7620843e77b25606b2dec2bf6eae3a4f40d1b9fb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286614"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150677"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>Pobieranie i modyfikowanie danych ADO.NET
+
 Podstawowa funkcja dowolnej aplikacji bazy danych nawiązuje połączenie ze źródłem danych i pobiera dane, które zawiera. .NET Framework dostawcy danych ADO.NET służy jako Most między aplikacją a źródłem danych, co umożliwia wykonywanie poleceń oraz pobieranie danych przy użyciu elementu **DataReader** lub **DataAdapter**. Kluczową funkcją dowolnej aplikacji bazy danych jest możliwość aktualizowania danych przechowywanych w bazie danych programu. W ADO.NET, aktualizowanie danych obejmuje użycie obiektów **DataAdapter** i i <xref:System.Data.DataSet> i **Command** może również wymagać korzystania z transakcji.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Nawiązywanie połączenia ze źródłem danych](connecting-to-a-data-source.md)  
  Opisuje sposób nawiązywania połączenia ze źródłem danych i sposobu pracy ze zdarzeniami połączenia.  
   
  [Parametry połączenia](connection-strings.md)  
  Zawiera tematy opisujące różne aspekty używania parametrów połączenia, w tym słowa kluczowe parametrów połączenia, informacje zabezpieczające i przechowywania i pobierania.  
   
- [Buforowanie połączeń](connection-pooling.md)  
+ [Pula połączeń](connection-pooling.md)  
  Opisuje pule połączeń dla dostawców danych .NET Framework.  
   
  [Polecenia i parametry](commands-and-parameters.md)  
@@ -59,7 +61,7 @@ Podstawowa funkcja dowolnej aplikacji bazy danych nawiązuje połączenie ze źr
  [Obsługa przesyłania strumieniowego SqlClient](sqlclient-streaming-support.md)  
  W tym artykule omówiono sposób pisania aplikacji, które przesyła strumieniowo dane z SQL Server bez całkowitego ładowania w pamięci.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Mapowanie typu danych w ADO.NET](data-type-mappings-in-ado-net.md)
 - [Elementy DataSet, DataTable i DataView](./dataset-datatable-dataview/index.md)

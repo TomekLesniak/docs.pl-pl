@@ -6,21 +6,23 @@ helpviewer_keywords:
 - object identity [C#]
 - reference equality [C#]
 ms.assetid: 91307fda-267b-4fd2-a338-2aada39ee791
-ms.openlocfilehash: fece0fbc0179f5707e7f3fcd62371b8dde84eb6a
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 1d1a0e5d80ac8d2a689e75acbc6099b92e16f23f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381388"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151444"
 ---
 # <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a>Testowanie równości odwołań (tożsamość) (Przewodnik programowania w języku C#)
+
 Nie trzeba implementować żadnej logiki niestandardowej w celu obsługi porównania równości odwołań w typach. Ta funkcja jest dostępna dla wszystkich typów przez metodę statyczną <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> .  
   
  Poniższy przykład pokazuje, jak określić, czy dwie zmienne mają *równość odwołania*, co oznacza, że odwołują się do tego samego obiektu w pamięci.  
   
- W przykładzie pokazano również, dlaczego <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> zawsze są zwracane `false` dla typów wartości i dlaczego nie należy używać <xref:System.Object.ReferenceEquals%2A> do określania równości ciągów.  
+ W przykładzie pokazano również, dlaczego <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> zawsze są zwracane `false` dla typów wartości i dlaczego nie należy używać  <xref:System.Object.ReferenceEquals%2A> do określania równości ciągów.  
   
 ## <a name="example"></a>Przykład  
+
  [!code-csharp[csProgGuideObjects#90](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#90)]  
   
  Implementacja `Equals` w <xref:System.Object?displayProperty=nameWithType> uniwersalnej klasie bazowej również wykonuje kontrolę równości odwołań, ale nie jest to zalecane, ponieważ jeśli klasa ma przesłonić metodę, wyniki mogą nie być oczekiwane. Ta sama wartość dotyczy `==` `!=` operatorów i. Gdy są one wykonywane na typach referencyjnych, domyślne zachowanie `==` i `!=` ma na celu wykonywanie kontroli równości odwołań. Jednak klasy pochodne mogą przeciążać operator, aby wykonać kontrolę równości wartości. Aby zminimalizować prawdopodobieństwo wystąpienia błędu, najlepiej jest zawsze używać, gdy trzeba <xref:System.Object.ReferenceEquals%2A> określić, czy dwa obiekty mają równość odwołania.  
