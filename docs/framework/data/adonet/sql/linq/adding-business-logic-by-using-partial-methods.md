@@ -5,52 +5,57 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3a73991e-fd4e-4610-93fb-7ced4dc6b7f9
-ms.openlocfilehash: 251d7a05971ff7940f85ec9d555d26f2e57067c3
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 9ad3329c621b8bf8eaa0fd5f986ac7e8cff97d9e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248136"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156163"
 ---
-# <a name="adding-business-logic-by-using-partial-methods"></a><span data-ttu-id="7c90d-102">Dodawanie logiki biznesowej przy użyciu metod częściowych</span><span class="sxs-lookup"><span data-stu-id="7c90d-102">Adding Business Logic By Using Partial Methods</span></span>
-<span data-ttu-id="7c90d-103">Możesz dostosować Visual Basic i C# wygenerowany kod w swoich [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektach przy użyciu *metod częściowych*.</span><span class="sxs-lookup"><span data-stu-id="7c90d-103">You can customize Visual Basic and C# generated code in your [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projects by using *partial methods*.</span></span> <span data-ttu-id="7c90d-104">Kod, który [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generuje definiuje podpisy jako jedną część metody częściowej.</span><span class="sxs-lookup"><span data-stu-id="7c90d-104">The code that [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generates defines signatures as one part of a partial method.</span></span> <span data-ttu-id="7c90d-105">Jeśli chcesz zaimplementować metodę, możesz dodać własną metodę częściową.</span><span class="sxs-lookup"><span data-stu-id="7c90d-105">If you want to implement the method, you can add your own partial method.</span></span> <span data-ttu-id="7c90d-106">Jeśli nie dodasz własnej implementacji, kompilator odrzuca podpis metod częściowych i wywołuje metody domyślne w [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7c90d-106">If you do not add your own implementation, the compiler discards the partial methods signature and calls the default methods in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
+# <a name="adding-business-logic-by-using-partial-methods"></a><span data-ttu-id="f8e09-102">Dodawanie logiki biznesowej przy użyciu metod częściowych</span><span class="sxs-lookup"><span data-stu-id="f8e09-102">Adding Business Logic By Using Partial Methods</span></span>
+
+<span data-ttu-id="f8e09-103">Możesz dostosować Visual Basic i wygenerowany kod C# w projektach przy [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] użyciu *metod częściowych*.</span><span class="sxs-lookup"><span data-stu-id="f8e09-103">You can customize Visual Basic and C# generated code in your [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projects by using *partial methods*.</span></span> <span data-ttu-id="f8e09-104">Kod, który [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generuje definiuje podpisy jako jedną część metody częściowej.</span><span class="sxs-lookup"><span data-stu-id="f8e09-104">The code that [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generates defines signatures as one part of a partial method.</span></span> <span data-ttu-id="f8e09-105">Jeśli chcesz zaimplementować metodę, możesz dodać własną metodę częściową.</span><span class="sxs-lookup"><span data-stu-id="f8e09-105">If you want to implement the method, you can add your own partial method.</span></span> <span data-ttu-id="f8e09-106">Jeśli nie dodasz własnej implementacji, kompilator odrzuca podpis metod częściowych i wywołuje metody domyślne w [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="f8e09-106">If you do not add your own implementation, the compiler discards the partial methods signature and calls the default methods in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="7c90d-107">Jeśli używasz programu Visual Studio, możesz użyć Object Relational Designer, aby dodać walidację i inne dostosowania do klas jednostek.</span><span class="sxs-lookup"><span data-stu-id="7c90d-107">If you are using Visual Studio, you can use the Object Relational Designer to add validation and other customizations to entity classes.</span></span>  
+> <span data-ttu-id="f8e09-107">Jeśli używasz programu Visual Studio, możesz użyć Object Relational Designer, aby dodać walidację i inne dostosowania do klas jednostek.</span><span class="sxs-lookup"><span data-stu-id="f8e09-107">If you are using Visual Studio, you can use the Object Relational Designer to add validation and other customizations to entity classes.</span></span>  
   
- <span data-ttu-id="7c90d-108">Na przykład domyślne mapowanie `Customer` klasy w przykładowej bazie danych Northwind zawiera następującą metodę częściową:</span><span class="sxs-lookup"><span data-stu-id="7c90d-108">For example, the default mapping for the `Customer` class in the Northwind sample database includes the following partial method:</span></span>  
+ <span data-ttu-id="f8e09-108">Na przykład domyślne mapowanie `Customer` klasy w przykładowej bazie danych Northwind zawiera następującą metodę częściową:</span><span class="sxs-lookup"><span data-stu-id="f8e09-108">For example, the default mapping for the `Customer` class in the Northwind sample database includes the following partial method:</span></span>  
   
  [!code-csharp[DLinqOverrideDefault#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqOverrideDefault/cs/northwind.cs#2)]
  [!code-vb[DLinqOverrideDefault#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqOverrideDefault/vb/northwind.vb#2)]  
   
- <span data-ttu-id="7c90d-109">Możesz zaimplementować własną metodę, dodając kod, taki jak poniżej, do własnej klasy częściowej `Customer` :</span><span class="sxs-lookup"><span data-stu-id="7c90d-109">You can implement your own method by adding code such as the following to your own partial `Customer` class:</span></span>  
+ <span data-ttu-id="f8e09-109">Możesz zaimplementować własną metodę, dodając kod, taki jak poniżej, do własnej klasy częściowej `Customer` :</span><span class="sxs-lookup"><span data-stu-id="f8e09-109">You can implement your own method by adding code such as the following to your own partial `Customer` class:</span></span>  
   
  [!code-csharp[DLinqOverrideDefault#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqOverrideDefault/cs/Program.cs#3)]
  [!code-vb[DLinqOverrideDefault#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqOverrideDefault/vb/Module1.vb#3)]  
   
- <span data-ttu-id="7c90d-110">Takie podejście jest zwykle używane w [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] programie, aby przesłonić `Update`domyślne `Delete`metody dla `Insert`,, i do walidacji właściwości podczas zdarzeń cyklu życia obiektu.</span><span class="sxs-lookup"><span data-stu-id="7c90d-110">This approach is typically used in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] to override default methods for `Insert`, `Update`, `Delete`, and to validate properties during object life-cycle events.</span></span>  
+ <span data-ttu-id="f8e09-110">Takie podejście jest zwykle używane w programie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , aby przesłonić domyślne metody dla `Insert` ,, `Update` `Delete` i do walidacji właściwości podczas zdarzeń cyklu życia obiektu.</span><span class="sxs-lookup"><span data-stu-id="f8e09-110">This approach is typically used in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] to override default methods for `Insert`, `Update`, `Delete`, and to validate properties during object life-cycle events.</span></span>  
   
- <span data-ttu-id="7c90d-111">Aby uzyskać więcej informacji, zobacz [częściowe metody](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md) (Visual Basic) lub [częściowe (Metoda)C# (odwołanie)](../../../../../csharp/language-reference/keywords/partial-method.md) (C#).</span><span class="sxs-lookup"><span data-stu-id="7c90d-111">For more information, see [Partial Methods](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md) (Visual Basic) or [partial (Method) (C# Reference)](../../../../../csharp/language-reference/keywords/partial-method.md) (C#).</span></span>  
+ <span data-ttu-id="f8e09-111">Aby uzyskać więcej informacji, zobacz [częściowe metody](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md) (Visual Basic) lub [częściowe (Metoda) (odwołanie w c#)](../../../../../csharp/language-reference/keywords/partial-method.md) (c#).</span><span class="sxs-lookup"><span data-stu-id="f8e09-111">For more information, see [Partial Methods](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md) (Visual Basic) or [partial (Method) (C# Reference)](../../../../../csharp/language-reference/keywords/partial-method.md) (C#).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7c90d-112">Przykład</span><span class="sxs-lookup"><span data-stu-id="7c90d-112">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f8e09-112">Przykład</span><span class="sxs-lookup"><span data-stu-id="f8e09-112">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="7c90d-113">Opis</span><span class="sxs-lookup"><span data-stu-id="7c90d-113">Description</span></span>  
- <span data-ttu-id="7c90d-114">Poniższy przykład pokazuje `ExampleClass` pierwszy, ponieważ może być zdefiniowany przez narzędzie generujące kod, takie jak SQLMetal, a następnie jak można zaimplementować tylko jedną z dwóch metod.</span><span class="sxs-lookup"><span data-stu-id="7c90d-114">The following example shows `ExampleClass` first as it might be defined by a code-generating tool such as SQLMetal, and then how you might implement only one of the two methods.</span></span>  
+### <a name="description"></a><span data-ttu-id="f8e09-113">Opis</span><span class="sxs-lookup"><span data-stu-id="f8e09-113">Description</span></span>  
+
+ <span data-ttu-id="f8e09-114">Poniższy przykład pokazuje `ExampleClass` pierwszy, ponieważ może być zdefiniowany przez narzędzie generujące kod, takie jak SQLMetal, a następnie jak można zaimplementować tylko jedną z dwóch metod.</span><span class="sxs-lookup"><span data-stu-id="f8e09-114">The following example shows `ExampleClass` first as it might be defined by a code-generating tool such as SQLMetal, and then how you might implement only one of the two methods.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="7c90d-115">Kod</span><span class="sxs-lookup"><span data-stu-id="7c90d-115">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="f8e09-115">Kod</span><span class="sxs-lookup"><span data-stu-id="f8e09-115">Code</span></span>  
+
  [!code-csharp[DLinqSubmittingChanges#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#4)]
  [!code-vb[DLinqSubmittingChanges#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#4)]  
   
-## <a name="example"></a><span data-ttu-id="7c90d-116">Przykład</span><span class="sxs-lookup"><span data-stu-id="7c90d-116">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f8e09-116">Przykład</span><span class="sxs-lookup"><span data-stu-id="f8e09-116">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="7c90d-117">Opis</span><span class="sxs-lookup"><span data-stu-id="7c90d-117">Description</span></span>  
- <span data-ttu-id="7c90d-118">Poniższy przykład używa relacji między `Shipper` i `Order` jednostką.</span><span class="sxs-lookup"><span data-stu-id="7c90d-118">The following example uses the relationship between `Shipper` and `Order` entities.</span></span> <span data-ttu-id="7c90d-119">Zwróć uwagę między metodami częściowymi `InsertShipper` i. `DeleteShipper`</span><span class="sxs-lookup"><span data-stu-id="7c90d-119">Note among the methods the partial methods, `InsertShipper` and `DeleteShipper`.</span></span> <span data-ttu-id="7c90d-120">Te metody zastępują domyślne metody częściowe dostarczone przez [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapowanie.</span><span class="sxs-lookup"><span data-stu-id="7c90d-120">These methods override the default partial methods supplied by [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapping.</span></span>  
+### <a name="description"></a><span data-ttu-id="f8e09-117">Opis</span><span class="sxs-lookup"><span data-stu-id="f8e09-117">Description</span></span>  
+
+ <span data-ttu-id="f8e09-118">Poniższy przykład używa relacji między `Shipper` i `Order` jednostką.</span><span class="sxs-lookup"><span data-stu-id="f8e09-118">The following example uses the relationship between `Shipper` and `Order` entities.</span></span> <span data-ttu-id="f8e09-119">Zwróć uwagę między metodami częściowymi `InsertShipper` i `DeleteShipper` .</span><span class="sxs-lookup"><span data-stu-id="f8e09-119">Note among the methods the partial methods, `InsertShipper` and `DeleteShipper`.</span></span> <span data-ttu-id="f8e09-120">Te metody zastępują domyślne metody częściowe dostarczone przez [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Mapowanie.</span><span class="sxs-lookup"><span data-stu-id="f8e09-120">These methods override the default partial methods supplied by [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapping.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="7c90d-121">Kod</span><span class="sxs-lookup"><span data-stu-id="7c90d-121">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="f8e09-121">Kod</span><span class="sxs-lookup"><span data-stu-id="f8e09-121">Code</span></span>  
+
  [!code-csharp[DLinqOverrideDefault#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqOverrideDefault/cs/northwind.cs#1)]
  [!code-vb[DLinqOverrideDefault#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqOverrideDefault/vb/northwind.vb#1)]  
   
-## <a name="see-also"></a><span data-ttu-id="7c90d-122">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="7c90d-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f8e09-122">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="f8e09-122">See also</span></span>
 
-- [<span data-ttu-id="7c90d-123">Tworzenie i przesyłanie zmian danych</span><span class="sxs-lookup"><span data-stu-id="7c90d-123">Making and Submitting Data Changes</span></span>](making-and-submitting-data-changes.md)
-- [<span data-ttu-id="7c90d-124">Dostosowywanie operacji wstawiania, aktualizowania i usuwania</span><span class="sxs-lookup"><span data-stu-id="7c90d-124">Customizing Insert, Update, and Delete Operations</span></span>](customizing-insert-update-and-delete-operations.md)
+- [<span data-ttu-id="f8e09-123">Tworzenie i przesyłanie zmian danych</span><span class="sxs-lookup"><span data-stu-id="f8e09-123">Making and Submitting Data Changes</span></span>](making-and-submitting-data-changes.md)
+- [<span data-ttu-id="f8e09-124">Dostosowywanie operacji wstawiania, aktualizowania i usuwania</span><span class="sxs-lookup"><span data-stu-id="f8e09-124">Customizing Insert, Update, and Delete Operations</span></span>](customizing-insert-update-and-delete-operations.md)
