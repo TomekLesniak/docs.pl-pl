@@ -2,24 +2,24 @@
 title: Infrastruktura jako kod
 description: Wdrażanie infrastruktury jako kodu (IaC) z aplikacjami natywnymi w chmurze
 ms.date: 05/13/2020
-ms.openlocfilehash: cfc9e1f0b2733048d5921de5a0400998c282b1fa
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d130705e19e0d3d7a9e15c73f4758a22ee8ecd43
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613957"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163742"
 ---
 # <a name="infrastructure-as-code"></a>Infrastruktura jako kod
 
 Systemy natywne w chmurze uwzględniają mikrousługi, kontenery i nowoczesne projektowanie systemu, aby osiągnąć szybkość i elastyczność. Zapewniają one automatyczne etapy kompilowania i wydawania, aby zapewnić spójność i jakość kodu. Ale jest to tylko część wątku. Jak można zainicjować obsługę środowisk w chmurze, na których są uruchamiane te systemy?
 
-Nowoczesne aplikacje natywne w chmurze stosują powszechnie zaakceptowane metody [infrastruktury jako kodu](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code)lub `IaC` .  Przy użyciu IaC można zautomatyzować Inicjowanie obsługi platformy. Zasadniczo stosowane są praktyki inżynieryjne dotyczące oprogramowania, takie jak testowanie i przechowywanie wersji, do Twoich praktyk DevOps. Infrastruktura i wdrożenia są zautomatyzowane, spójne i powtarzalne. Podobnie jak ciągłe dostarczanie zautomatyzowany tradycyjny model wdrożeń ręcznych, infrastruktura jako kod (IaC) to ewolucja sposobu zarządzania środowiskami aplikacji.
+Nowoczesne aplikacje natywne w chmurze stosują powszechnie zaakceptowane metody [infrastruktury jako kodu](/azure/devops/learn/what-is-infrastructure-as-code)lub `IaC` .  Przy użyciu IaC można zautomatyzować Inicjowanie obsługi platformy. Zasadniczo stosowane są praktyki inżynieryjne dotyczące oprogramowania, takie jak testowanie i przechowywanie wersji, do Twoich praktyk DevOps. Infrastruktura i wdrożenia są zautomatyzowane, spójne i powtarzalne. Podobnie jak ciągłe dostarczanie zautomatyzowany tradycyjny model wdrożeń ręcznych, infrastruktura jako kod (IaC) to ewolucja sposobu zarządzania środowiskami aplikacji.
 
 Narzędzia takie jak Azure Resource Manager (ARM), Terraform i interfejs wiersza polecenia platformy Azure (CLI) umożliwiają deklaratywne skrypt wymaganej infrastruktury chmurowej.
 
 ## <a name="azure-resource-manager-templates"></a>Szablony usługi Azure Resource Manager
 
-Dla [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/). Jest to aparat aprowizacji interfejsu API, który jest wbudowany w platformę Azure i udostępniany jako usługa interfejsu API. Usługa ARM umożliwia wdrażanie, aktualizowanie, usuwanie i zarządzanie zasobami zawartymi w grupie zasobów platformy Azure w ramach jednej, skoordynowanej operacji. Zapewniasz aparat z szablonem opartym na notacji JSON, który określa wymagane zasoby i ich konfigurację. ARM automatycznie organizuje wdrożenie w odpowiedniej kolejności z uwzględnieniem zależności. Aparat zapewnia idempotentności. Jeśli żądany zasób już istnieje z tą samą konfiguracją, Inicjowanie obsługi zostanie zignorowane.
+Dla [Azure Resource Manager](/azure/azure-resource-manager/management/overview). Jest to aparat aprowizacji interfejsu API, który jest wbudowany w platformę Azure i udostępniany jako usługa interfejsu API. Usługa ARM umożliwia wdrażanie, aktualizowanie, usuwanie i zarządzanie zasobami zawartymi w grupie zasobów platformy Azure w ramach jednej, skoordynowanej operacji. Zapewniasz aparat z szablonem opartym na notacji JSON, który określa wymagane zasoby i ich konfigurację. ARM automatycznie organizuje wdrożenie w odpowiedniej kolejności z uwzględnieniem zależności. Aparat zapewnia idempotentności. Jeśli żądany zasób już istnieje z tą samą konfiguracją, Inicjowanie obsługi zostanie zignorowane.
 
 Szablony Azure Resource Manager to język oparty na notacji JSON służący do definiowania różnych zasobów na platformie Azure. Schemat podstawowy wygląda podobnie do ilustracji 10-14.
 
@@ -102,7 +102,7 @@ Czasami szablony Terraform i ARM wyprowadzają znaczące wartości, takie jak pa
 
 ## <a name="azure-cli-scripts-and-tasks"></a>Skrypty i zadania interfejsu wiersza polecenia platformy Azure
 
-Na koniec możesz użyć [interfejsu wiersza polecenia platformy Azure](https://docs.microsoft.com/cli/azure/) , aby deklaratywnie zaskryptować infrastrukturę chmurową. Skrypty interfejsu wiersza polecenia platformy Azure mogą być tworzone, dostępne i udostępniane w celu aprowizacji i konfigurowania niemal dowolnych zasobów platformy Azure. Interfejs wiersza polecenia jest prosty do użycia z łagodną krzywą uczenia się. Skrypty są wykonywane w ramach programu PowerShell lub bash. Są one również proste do debugowania, szczególnie w porównaniu z szablonami ARM.
+Na koniec możesz użyć [interfejsu wiersza polecenia platformy Azure](/cli/azure/) , aby deklaratywnie zaskryptować infrastrukturę chmurową. Skrypty interfejsu wiersza polecenia platformy Azure mogą być tworzone, dostępne i udostępniane w celu aprowizacji i konfigurowania niemal dowolnych zasobów platformy Azure. Interfejs wiersza polecenia jest prosty do użycia z łagodną krzywą uczenia się. Skrypty są wykonywane w ramach programu PowerShell lub bash. Są one również proste do debugowania, szczególnie w porównaniu z szablonami ARM.
 
 Skrypty interfejsu wiersza polecenia platformy Azure działają prawidłowo, gdy konieczne jest rozbicie i ponowne wdrożenie infrastruktury. Aktualizowanie istniejącego środowiska może być trudne. Wiele poleceń interfejsu wiersza polecenia nie jest idempotentne. Oznacza to, że będą ponownie tworzyć zasób przy każdym uruchomieniu, nawet jeśli zasób już istnieje. Zawsze jest możliwe dodanie kodu, który sprawdza obecność poszczególnych zasobów przed utworzeniem go. Jednak dzięki temu skrypt może być bloated i trudny do zarządzania.
 
@@ -124,7 +124,7 @@ Na rysunku 10-17 przedstawiono fragment kodu YAML, który zawiera listę wersji 
 
 **Rysunek 10-17** — skrypt interfejsu wiersza polecenia platformy Azure
 
-W artykule [co to jest infrastruktura jako kod](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), autor sam Guckenheimer opisuje, jak "zespoły, które implementują IaC, mogą szybko i w odpowiedniej skali. Zespoły unikają ręcznej konfiguracji środowisk i wymuszania spójności przez odzwierciedlenie żądanego stanu środowiska za pośrednictwem kodu. Wdrożenia infrastruktury za pomocą IaC są powtarzalne i zapobiegają problemom z czasem wykonywania spowodowanym przez dryfowanie konfiguracji lub brakujące zależności. Zespoły DevOps mogą współdziałać z ujednoliconym zestawem praktyk i narzędzi, aby dostarczać aplikacje i obsługiwać infrastrukturę szybko, niezawodnie i na dużą skalę. "
+W artykule [co to jest infrastruktura jako kod](/azure/devops/learn/what-is-infrastructure-as-code), autor sam Guckenheimer opisuje, jak "zespoły, które implementują IaC, mogą szybko i w odpowiedniej skali. Zespoły unikają ręcznej konfiguracji środowisk i wymuszania spójności przez odzwierciedlenie żądanego stanu środowiska za pośrednictwem kodu. Wdrożenia infrastruktury za pomocą IaC są powtarzalne i zapobiegają problemom z czasem wykonywania spowodowanym przez dryfowanie konfiguracji lub brakujące zależności. Zespoły DevOps mogą współdziałać z ujednoliconym zestawem praktyk i narzędzi, aby dostarczać aplikacje i obsługiwać infrastrukturę szybko, niezawodnie i na dużą skalę. "
 
 >[!div class="step-by-step"]
 >[Poprzedni](feature-flags.md) 

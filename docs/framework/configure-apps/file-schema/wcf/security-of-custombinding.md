@@ -2,14 +2,15 @@
 title: <security> dla <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 243a5148-bbd1-447f-a8a5-6e7792c0a3f1
-ms.openlocfilehash: 454113f66007ddd69f8455bb532e9cbd12fcefb7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: eb661864e2540a9b9f5f217402d37515043c862a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738700"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170119"
 ---
 # <a name="security-of-custombinding"></a>\<security> dla \<customBinding>
+
 Określa opcje zabezpieczeń dla niestandardowego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -42,6 +43,7 @@ Określa opcje zabezpieczeń dla niestandardowego powiązania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -103,9 +105,11 @@ Określa opcje zabezpieczeń dla niestandardowego powiązania.
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby uzyskać więcej informacji na temat używania tego elementu, zobacz [elementu SecurityBindingElement Authentication Modes](../../../wcf/feature-details/securitybindingelement-authentication-modes.md) and [How to: Create a Custom Binding using the elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje sposób konfigurowania zabezpieczeń przy użyciu niestandardowego powiązania. Pokazuje, jak użyć niestandardowego powiązania, aby włączyć zabezpieczenia na poziomie wiadomości razem z bezpiecznym transportem. Jest to przydatne, gdy do przesyłania komunikatów między klientem i usługą jest wymagany bezpieczny transport, a jednocześnie komunikaty muszą być bezpieczne na poziomie wiadomości. Ta konfiguracja nie jest obsługiwana przez powiązania dostarczone przez system.  
   
  Konfiguracja usługi definiuje niestandardowe powiązanie obsługujące komunikację TCP zabezpieczone przy użyciu protokołu TLS/SSL i zabezpieczenia komunikatów systemu Windows. Niestandardowe powiązanie używa certyfikatu usługi do uwierzytelniania usługi na poziomie transportu oraz do ochrony komunikatów podczas przesyłania między klientem i usługą. Jest to realizowane przez [\<sslStreamSecurity>](sslstreamsecurity.md) element Binding. Certyfikat usługi jest konfigurowany przy użyciu zachowania usługi.  
@@ -167,7 +171,7 @@ Określa opcje zabezpieczeń dla niestandardowego powiązania.
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.SecurityElement>
 - <xref:System.ServiceModel.Channels.SecurityBindingElement>
@@ -176,5 +180,5 @@ Określa opcje zabezpieczeń dla niestandardowego powiązania.
 - [Rozszerzanie powiązań](../../../wcf/extending/extending-bindings.md)
 - [Powiązania niestandardowe](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Zabezpieczenia wiązania niestandardowego](../../../wcf/samples/custom-binding-security.md)

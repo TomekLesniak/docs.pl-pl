@@ -3,12 +3,12 @@ title: Elasticsearch w aplikacjach natywnych w chmurze
 description: Dowiedz się więcej na temat dodawania funkcji wyszukiwania elastycznego do aplikacji natywnych w chmurze.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 70d1925d6b8c7bbe515ee4f178513dc61212ebce
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: fa46f3387eecb3fccd63fdea10c11e92923ae862
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271805"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155383"
 ---
 # <a name="elasticsearch-in-a-cloud-native-app"></a>Elasticsearch w aplikacji natywnej w chmurze
 
@@ -38,23 +38,23 @@ W tym rozdziale przedstawiono szczegółowe dane w systemach natywnych w chmurze
 
 ### <a name="references"></a>Odwołania
 
-- [Wzorzec podziału odpowiedzialności polecenia i zapytania (CQRS)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
+- [Wzorzec podziału odpowiedzialności polecenia i zapytania (CQRS)](/azure/architecture/patterns/cqrs)
 
-- [Wzorzec określania źródła zdarzeń](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [Wzorzec określania źródła zdarzeń](/azure/architecture/patterns/event-sourcing)
 
 - [Dlaczego RDBMS jest odporna na partycje w CAP theorem i dlaczego jest dostępna?](https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available)
 
-- [Zmaterializowany widok](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
+- [Zmaterializowany widok](/azure/architecture/patterns/materialized-view)
 
 - [Wszystko, co naprawdę trzeba wiedzieć na temat baz danych open source](https://www.ibm.com/blogs/systems/all-you-really-need-to-know-about-open-source-databases/)
 
-- [Wzorzec transakcji kompensacyjnych](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
+- [Wzorzec transakcji kompensacyjnych](/azure/architecture/patterns/compensating-transaction)
 
 - [Wzorzec Saga](https://microservices.io/patterns/data/saga.html)
 
 - [Wzorce Saga | Jak zaimplementować transakcje biznesowe przy użyciu mikrousług](https://blog.couchbase.com/saga-pattern-implement-business-transactions-using-microservices-part/)
 
-- [Wzorzec transakcji kompensacyjnych](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
+- [Wzorzec transakcji kompensacyjnych](/azure/architecture/patterns/compensating-transaction)
 
 - [Po 9-piłkę: Cosmos DB poziomów spójności wyjaśniono](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)
 

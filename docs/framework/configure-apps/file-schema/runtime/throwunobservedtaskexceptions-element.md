@@ -8,14 +8,15 @@ helpviewer_keywords:
 - ThrowUnobservedTaskExceptions element
 - <ThrowUnobservedTaskExceptions> element
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
-ms.openlocfilehash: de5a686bcbd88fc52173b488103f033575623d62
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 012c2e70e66015bc317606a7eea07812b5df26e7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153818"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183926"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions> Element
+
 Określa, czy Nieobsłużone wyjątki zadań powinny kończyć uruchomiony proces.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Określa, czy Nieobsłużone wyjątki zadań powinny kończyć uruchomiony proce
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,10 +44,11 @@ Określa, czy Nieobsłużone wyjątki zadań powinny kończyć uruchomiony proce
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|`false`|Nie przerywa uruchomionego procesu dla nieobsłużonego wyjątku zadania. Domyślnie włączone.|  
+|`false`|Nie przerywa uruchomionego procesu dla nieobsłużonego wyjątku zadania. Jest to opcja domyślna.|  
 |`true`|Kończy uruchomiony proces dla nieobsłużonego wyjątku zadania.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -57,6 +60,7 @@ Określa, czy Nieobsłużone wyjątki zadań powinny kończyć uruchomiony proce
 |||  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli nie zaobserwowano wyjątku, który jest skojarzony z programem, nie ma <xref:System.Threading.Tasks.Task> żadnej <xref:System.Threading.Tasks.Task.Wait%2A> operacji, element nadrzędny nie jest dołączony i <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> Właściwość nie została odczytana, ponieważ wyjątek zadania jest traktowany jako nieobserwowany.  
   
  W .NET Framework 4 domyślnie, jeśli dla, <xref:System.Threading.Tasks.Task> który ma niezauważalny wyjątek jest odzyskiwany, finalizator zgłasza wyjątek i kończy proces. Zakończenie procesu zależy od chronometrażu wyrzucania elementów bezużytecznych i finalizacji.  
@@ -72,6 +76,7 @@ Określa, czy Nieobsłużone wyjątki zadań powinny kończyć uruchomiony proce
 - Ustawiając wartość DWORD rejestru ThrowUnobservedTaskExceptions = 1 w HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ . Klucz NETFramework.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak włączyć zgłaszanie wyjątków w zadaniach przy użyciu pliku konfiguracji aplikacji.  
   
 ```xml  
@@ -83,12 +88,13 @@ Określa, czy Nieobsłużone wyjątki zadań powinny kończyć uruchomiony proce
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład demonstruje, jak wyjątek niezauważalny jest generowany z zadania. Aby program działał prawidłowo, kod musi być uruchomiony.  
   
  [!code-csharp[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/throwunobservedtaskexceptions/cs/program.cs#1)]
  [!code-vb[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/throwunobservedtaskexceptions/vb/program.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

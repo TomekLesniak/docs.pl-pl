@@ -3,12 +3,12 @@ title: Rozproszone dane
 description: Magazyn danych kontrastowych w aplikacjach monolitycznych i natywnych w chmurze.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 28513f8691c06cf58ed14d57bf7830bb35d94852
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: b7c8c43b16f2f70f9009c4fe4a8d19c52fa7ea2a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144399"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163937"
 ---
 # <a name="distributed-data"></a>Rozproszone dane
 
@@ -22,7 +22,7 @@ Rysunek 5-1 kontrastuje różnice.
 
 Doświadczeni deweloperzy mogą łatwo rozpoznać architekturę po lewej stronie rysunku 5-1. W tej *aplikacji monolitycznej*składniki usługi biznesowej współdzielą się ze sobą w warstwie usług udostępnionych, udostępniając dane z pojedynczej relacyjnej bazy danych.
 
-W wielu przypadkach pojedyncza baza danych utrzymuje prostotę zarządzania danymi. Wykonywanie zapytań dotyczących danych w wielu tabelach jest proste. Zmiany w aktualizacjach danych lub ich wycofanie. [Transakcje kwasowe](https://docs.microsoft.com/windows/desktop/cossdk/acid-properties) gwarantują silną i natychmiastową spójność.
+W wielu przypadkach pojedyncza baza danych utrzymuje prostotę zarządzania danymi. Wykonywanie zapytań dotyczących danych w wielu tabelach jest proste. Zmiany w aktualizacjach danych lub ich wycofanie. [Transakcje kwasowe](/windows/desktop/cossdk/acid-properties) gwarantują silną i natychmiastową spójność.
 
 Projektowanie na potrzeby chmury w chmurze jest inne podejście. Zwróć uwagę na to, w jaki sposób funkcje biznesowe są segregowane w małych, niezależnych mikrousługach po prawej stronie rysunku 5-1. Każda mikrousługa hermetyzuje konkretną możliwość biznesową i własne dane. Monolityczna baza danych dekomponowa się do rozproszonego modelu danych z wieloma mniejszymi bazami danych, z których każda jest dostosowywana przy użyciu mikrousługi. Gdy dym jest wyczyszczony, zostanie nadana konstrukcja, która udostępnia *bazę danych na mikrousługi*.
 
@@ -68,7 +68,7 @@ Jedną z opcji omówioną w rozdziale 4 jest [bezpośrednie wywołanie protokoł
 Możemy również zaimplementować wzorzec żądanie-odpowiedź z oddzielnymi kolejkami ruchu przychodzącego i wychodzącego dla każdej usługi. Jednak ten wzorzec jest skomplikowany i wymaga instalacji wodociągowej do skorelowania komunikatów żądań i odpowiedzi.
 Podczas oddzielania wywołań mikrousług zaplecza usługa wywołująca musi nadal przeprowadzić synchroniczną oczekiwanie na zakończenie wywołania. Przeciążenie sieci, awarie przejściowe lub przeciążona mikrousługa, co może skutkować długotrwałymi operacjami i nawet niepowodzeniem.
 
-Zamiast tego powszechnie akceptowany wzorzec do usuwania zależności między usługami jest [wzorcem widoku materiałowego](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)pokazanym na rysunku 5-4.
+Zamiast tego powszechnie akceptowany wzorzec do usuwania zależności między usługami jest [wzorcem widoku materiałowego](/azure/architecture/patterns/materialized-view)pokazanym na rysunku 5-4.
 
 ![Wzorzec widoku materiałowego](./media/materialized-view-pattern.png)
 
@@ -92,7 +92,7 @@ Na powyższym rysunku pięć niezależnych mikrousług uczestniczy w transakcji 
 
 Zamiast tego należy skonstruować tę transakcję rozproszoną *programowo*.
 
-Popularnym wzorcem dodawania rozproszonej obsługi transakcyjnej jest wzorzec Saga. Jest to implementowane przez grupowanie transakcji lokalnych razem programowo i sekwencyjnie wywoływanie każdego z nich. Jeśli dowolna transakcja lokalna zakończy się niepowodzeniem, Saga przerywa operację i wywołuje zestaw [kompensowania transakcji](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction). Kompensowanie transakcji cofa zmiany dokonane przez poprzednie transakcje lokalne i przywraca spójność danych. Rysunek 5-6 pokazuje nieudaną transakcję ze wzorcem Saga.
+Popularnym wzorcem dodawania rozproszonej obsługi transakcyjnej jest wzorzec Saga. Jest to implementowane przez grupowanie transakcji lokalnych razem programowo i sekwencyjnie wywoływanie każdego z nich. Jeśli dowolna transakcja lokalna zakończy się niepowodzeniem, Saga przerywa operację i wywołuje zestaw [kompensowania transakcji](/azure/architecture/patterns/compensating-transaction). Kompensowanie transakcji cofa zmiany dokonane przez poprzednie transakcje lokalne i przywraca spójność danych. Rysunek 5-6 pokazuje nieudaną transakcję ze wzorcem Saga.
 
 ![Wycofywanie w wzorcu Saga](./media/saga-rollback-operation.png)
 
@@ -108,7 +108,7 @@ Duże aplikacje natywne w chmurze często obsługują wymagania dotyczące duże
 
 ### <a name="cqrs"></a>CQRS
 
-[CQRS](https://docs.microsoft.com/azure/architecture/patterns/cqrs), to wzorzec architektoniczny, który może pomóc zmaksymalizować wydajność, skalowalność i bezpieczeństwo. Wzorzec oddziela operacje odczytujące dane z tych operacji, które zapisują dane.
+[CQRS](/azure/architecture/patterns/cqrs), to wzorzec architektoniczny, który może pomóc zmaksymalizować wydajność, skalowalność i bezpieczeństwo. Wzorzec oddziela operacje odczytujące dane z tych operacji, które zapisują dane.
 
 W normalnych *scenariuszach do operacji odczytu i* zapisu są używane te same obiekty modelu jednostki i repozytorium danych.
 
@@ -124,11 +124,11 @@ Na poprzednim rysunku zaimplementowane są osobne modele poleceń i zapytań. Ka
 
 To Separacja umożliwia niezależne skalowanie odczytów i zapisów. Operacje odczytu używają schematu zoptymalizowanego pod kątem zapytań, podczas gdy zapisy używają schematu zoptymalizowanego pod kątem aktualizacji. Zapytania odczytu przechodzą na nieznormalizowane dane, podczas gdy złożona logika biznesowa może być stosowana do modelu zapisu. Ponadto można nałożyć ściślejsze zabezpieczenia na operacje zapisu niż te, które uwidaczniają odczyty.
 
-Wdrożenie CQRS może zwiększyć wydajność aplikacji dla usług natywnych w chmurze. Jednak powoduje to bardziej skomplikowany projekt. Zastosuj tę zasadę starannie i strategicznie do tych sekcji aplikacji natywnej w chmurze, która będzie z niej korzystać. Aby uzyskać więcej informacji na temat CQRS, zobacz temat [Usługa .NET dla usługi Microsoft Books: architektura dla kontenerów aplikacji .NET](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns).
+Wdrożenie CQRS może zwiększyć wydajność aplikacji dla usług natywnych w chmurze. Jednak powoduje to bardziej skomplikowany projekt. Zastosuj tę zasadę starannie i strategicznie do tych sekcji aplikacji natywnej w chmurze, która będzie z niej korzystać. Aby uzyskać więcej informacji na temat CQRS, zobacz temat [Usługa .NET dla usługi Microsoft Books: architektura dla kontenerów aplikacji .NET](../microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns.md).
 
 ### <a name="event-sourcing"></a>Określanie źródła zdarzeń
 
-Innym podejściem do optymalizowania scenariuszy danych o wysokiej ilości obejmuje Określanie [źródła zdarzeń](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
+Innym podejściem do optymalizowania scenariuszy danych o wysokiej ilości obejmuje Określanie [źródła zdarzeń](/azure/architecture/patterns/event-sourcing).
 
 System zazwyczaj zapisuje bieżący stan jednostki danych. Jeśli użytkownik zmieni swój numer telefonu, na przykład rekord klienta zostanie zaktualizowany przy użyciu nowej liczby. Zawsze wiemy bieżący stan jednostki danych, ale każda aktualizacja zastępuje poprzedni stan.
 

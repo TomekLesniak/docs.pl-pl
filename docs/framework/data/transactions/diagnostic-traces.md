@@ -3,19 +3,21 @@ title: Dane śledzenia diagnostycznego
 description: Informacje na temat śladów diagnostycznych w programie .NET. Ślady to publikowanie określonych komunikatów, które są generowane podczas wykonywania aplikacji.
 ms.date: 03/30/2017
 ms.assetid: 28e77a63-d20d-4b6a-9caf-ddad86550427
-ms.openlocfilehash: 5de8fdf7b95cf01b119118dac75d373c32949dcd
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 1999cd922b9e7299cbf3c10a702eb4d2dc6c3fbb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141814"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177244"
 ---
 # <a name="diagnostic-traces"></a>Dane śledzenia diagnostycznego
+
 Ślady to publikowanie określonych komunikatów, które są generowane podczas wykonywania aplikacji. Jeśli śledzenie, musi mieć mechanizm do gromadzenia i rejestrowania wiadomości, które mają być wysyłane. Przez odbiorniki odbierania komunikatów śledzenia. Odbiornik ma na celu zbierania, przechowywania i komunikatów śledzenia, które trasy. Odbiorniki bezpośrednie dane wyjściowe śledzenia do odpowiedniego obiektu docelowego, takie jak dziennik, okno lub PLiku tekstowego.  
   
  Jedno takie odbiornik <xref:System.Diagnostics.DefaultTraceListener>, jest automatycznie tworzone i inicjowana, gdy śledzenie jest włączone. Jeśli chcesz, aby dane wyjściowe śledzenia kierować do żadnych dodatkowych źródeł, należy utworzyć i zainicjować odbiorniki śledzenia dodatkowe. Odbiorniki, tworzonych powinny odzwierciedlać Twoich potrzeb. Na przykład może być potrzebny rekord tekstowy wszystkich danych wyjściowych śledzenia. W takim przypadku należy utworzyć odbiornik, który zapisano wszystkie dane wyjściowe w nowy PLik tekstowy, jeśli włączona. Z drugiej strony możesz chcieć tylko wyświetlać dane wyjściowe podczas wykonywania aplikacji. W takim przypadku można utworzyć odbiornik, który przekierowanie wszystkie dane wyjściowe do okna konsoli. <xref:System.Diagnostics.EventLogTraceListener> Można skierować dane wyjściowe śledzenia do dziennika zdarzeń, a właściwość <xref:System.Diagnostics.TextWriterTraceListener> może zapisywać dane wyjściowe śledzenia w strumieniu.  
   
 ## <a name="enabling-tracing"></a>Włączenie debugowania  
+
  Aby włączyć ślady podczas przetwarzania transakcji, należy edytować plik konfiguracji aplikacji. Poniżej przedstawiono przykład.  
   
 ```xml  
@@ -40,12 +42,13 @@ ms.locfileid: "85141814"
   
 |Poziom śledzenia|Opis|  
 |-----------------|-----------------|  
-|Krytyczne|Wystąpiły błędy poważne, podobny do następującego:<br /><br /> -Błąd, który może spowodować natychmiastowe utratę funkcjonalności użytkownika.<br />-Zdarzenie, które wymaga od administratora podjęcia działań w celu uniknięcia utraty funkcjonalności.<br />— Zawiesza się kod.<br />— Ten poziom śledzenia może także zapewnić wystarczający kontekst interpretacji innych krytycznych śladów. Może to ułatwić identyfikację sekwencji działań prowadzących do wystąpienia poważnego błędu.|  
+|Krytyczny|Wystąpiły błędy poważne, podobny do następującego:<br /><br /> -Błąd, który może spowodować natychmiastowe utratę funkcjonalności użytkownika.<br />-Zdarzenie, które wymaga od administratora podjęcia działań w celu uniknięcia utraty funkcjonalności.<br />— Zawiesza się kod.<br />— Ten poziom śledzenia może także zapewnić wystarczający kontekst interpretacji innych krytycznych śladów. Może to ułatwić identyfikację sekwencji działań prowadzących do wystąpienia poważnego błędu.|  
 |Błąd|Wystąpił błąd (na przykład Nieprawidłowa konfiguracja lub zachowanie sieciowe), co może spowodować utratę funkcjonalności użytkownika.|  
 |Ostrzeżenie|Istnieje warunek, który może spowodować błąd lub krytyczny błąd (na przykład alokacja kończy się niepowodzeniem lub zbliża się do limitu). Normalne przetwarzanie błędów z kodu użytkownika (na przykład przerwanie transakcji, przekroczenie limitu czasu, uwierzytelnienie nie powiodło się) może również generować ostrzeżenie.|  
-|Informacje|Komunikaty przydatne do monitorowania i diagnozowania stanu systemu, pomiaru wydajności lub profilowania są generowane. Może to dotyczyć transakcji i rejestracja zdarzenia okresu istnienia, na przykład tworzenia ani przydzielonej przekroczenia granicę znaczących lub alokacji zasobów znaczących transakcji. Deweloper może następnie wykorzystać takie informacje do planowania pojemności i zarządzania wydajnością.|  
+|Informacyjny|Komunikaty przydatne do monitorowania i diagnozowania stanu systemu, pomiaru wydajności lub profilowania są generowane. Może to dotyczyć transakcji i rejestracja zdarzenia okresu istnienia, na przykład tworzenia ani przydzielonej przekroczenia granicę znaczących lub alokacji zasobów znaczących transakcji. Deweloper może następnie wykorzystać takie informacje do planowania pojemności i zarządzania wydajnością.|  
   
 ## <a name="trace-codes"></a>Kody śledzenia  
+
  Poniższa tabela zawiera listę kodów śledzenia generowanych przez <xref:System.Transactions> infrastruktury. W tabeli znajdują się identyfikatory kodu śledzenia, <xref:System.Diagnostics.EventTypeFilter.EventType%2A> poziom wyliczenia dla śladu i dodatkowe dane zawarte w **TraceRecord** dla śledzenia. Ponadto odpowiedni poziom śledzenia śledzenia jest również przechowywany w **TraceRecord**.  
   
 |TraceCode|Typ zdarzenia|Dodatkowe dane w TraceRecord|  
@@ -78,6 +81,7 @@ ms.locfileid: "85141814"
  Schemat XML dla poszczególnych elementów dodatkowe dane ma następujący format.  
   
 ### <a name="transactiontraceidentifier"></a>TransactionTraceIdentifier  
+
  `<TransactionTraceIdentifier>`  
   
  `<TransactionIdentifier >`  
@@ -95,6 +99,7 @@ ms.locfileid: "85141814"
  `</TransactionTraceIdentifier>`  
   
 ### <a name="enlistmenttraceidentifier"></a>EnlistmentTraceIdentifier  
+
  `<EnlistmentTraceIdentifier>`  
   
  `<ResourceManagerId>`  
@@ -128,6 +133,7 @@ ms.locfileid: "85141814"
  `</EnlistmentTraceIdentifier>`  
   
 ### <a name="resource-manager-identifier"></a>Identyfikator Menedżera zasobów  
+
  `<ResourceManagerId>`  
   
  `string form of guid`  
@@ -135,4 +141,5 @@ ms.locfileid: "85141814"
  `</ResourceManagerId>`  
   
 ## <a name="security-issues-for-tracing"></a>Problemy zabezpieczeń dla śledzenia  
+
  Po włączeniu śledzenia przez administratora informacje poufne mogą być zapisywane w dzienniku śledzenia, który jest domyślnie widoczny. Aby wyeliminować ewentualne zagrożenia bezpieczeństwa, należy rozważyć przechowywanie dziennika śledzenia w bezpiecznej lokalizacji kontrolowanej przez udział i uprawnienia dostępu do systemu plików.

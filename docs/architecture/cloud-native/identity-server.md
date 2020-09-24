@@ -2,12 +2,12 @@
 title: IdentityServer dla natywnych aplikacji w chmurze
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | IdentityServer
 ms.date: 05/13/2020
-ms.openlocfilehash: 2128001f0d25b1edd795dd9676e0d76018c1fa3a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: bdf193aac348b54f2ebf5b537beef5d61a1d5a1e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144373"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163833"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer dla aplikacji natywnych w chmurze
 
@@ -44,7 +44,7 @@ IdentityServer zapewnia oprogramowanie pośredniczące działające w ramach apl
 
 Usługi identityserver4 to "open source" i bezpłatna do użycia. Możesz dodać go do aplikacji przy użyciu swoich pakietów NuGet. Pakiet główny to [usługi identityserver4](https://www.nuget.org/packages/IdentityServer4/) , który został pobrany ponad 4 000 000 razy. Pakiet podstawowy nie zawiera żadnego kodu interfejsu użytkownika i obsługuje tylko w konfiguracji pamięci. Aby używać jej z bazą danych, należy również użyć dostawcy danych, takiego jak [usługi identityserver4. EntityFramework](https://www.nuget.org/packages/IdentityServer4.EntityFramework) , który używa Entity Framework Core do przechowywania danych konfiguracyjnych i operacyjnych dla IdentityServer. W przypadku interfejsu użytkownika można skopiować pliki z [repozytorium szybkiego interfejsu użytkownika](https://github.com/IdentityServer/IdentityServer4.Quickstart.UI) do aplikacji ASP.NET Core MVC, aby dodać obsługę logowania i wylogować się przy użyciu oprogramowania pośredniczącego IdentityServer.
 
-## <a name="configuration"></a>Konfigurowanie
+## <a name="configuration"></a>Konfiguracja
 
 Program IdentityServer obsługuje różne rodzaje protokołów i dostawców uwierzytelniania społecznościowego, które można skonfigurować w ramach każdej instalacji niestandardowej. Jest to zazwyczaj wykonywane w klasie aplikacji ASP.NET Core `Startup` w `ConfigureServices` metodzie. Konfiguracja obejmuje określenie obsługiwanych protokołów i ścieżek do serwerów i punktów końcowych, które będą używane. Na rysunku 8-2 przedstawiono przykładową konfigurację wykonywaną w projekcie interfejsu użytkownika szybkiego startu usługi identityserver4:
 
@@ -100,7 +100,7 @@ Wiele aplikacji natywnych w chmurze korzysta z interfejsów API po stronie serwe
 ## <a name="references"></a>Odwołania
 
 - [Dokumentacja IdentityServer](https://docs.identityserver.io/en/latest/)
-- [Typy aplikacji](https://docs.microsoft.com/azure/active-directory/develop/app-types)
+- [Typy aplikacji](/azure/active-directory/develop/app-types)
 - [Klient JavaScript OIDC](https://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html)
 
 >[!div class="step-by-step"]

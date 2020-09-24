@@ -5,20 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: 18bb03e17b19243ee1bc6e3f7ebd70afb4d4c60b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6b0234337c85ace0797d75b72560ccb55635daae
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174449"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177270"
 ---
 # <a name="updating-data-in-a-data-source"></a>Aktualizowanie danych w źródle danych
-Instrukcje SQL modyfikując dane (takie jak INSERT, UPDATE lub DELETE) nie zwracają wierszy. Podobnie wiele procedur przechowywanych wykonać akcję, ale nie zwracają wierszy. Aby wykonać polecenia, które nie zwracają wierszy, należy utworzyć obiekt **Command** z odpowiednim poleceniem SQL i **połączeniem**, w tym wszelkie wymagane **parametry**. Wykonaj polecenie metodą **ExecuteNonQuery** obiektu **Command.**  
+
+Instrukcje SQL, które modyfikują dane (takie jak INSERT, UPDATE lub DELETE) nie zwracają wierszy. Podobnie wiele procedur składowanych wykonuje akcję, ale nie zwraca wierszy. Aby wykonać polecenia, które nie zwracają wierszy, Utwórz obiekt **polecenia** z odpowiednim poleceniem SQL i **połączeniem**, włącznie z wymaganymi **parametrami**. Wykonaj polecenie za pomocą metody **ExecuteNonQuery** obiektu **Command** .  
   
- **ExecuteNonQuery** Metoda zwraca liczbę całkowitą, która reprezentuje liczbę wierszy, których dotyczy instrukcja lub procedura składowana, która została wykonana. Jeśli wiele instrukcji są wykonywane, zwracana wartość jest sumą rekordów, których dotyczą wszystkie instrukcje wykonane.  
+ Metoda **ExecuteNonQuery** zwraca liczbę całkowitą, która odpowiada liczbie wierszy objętych instrukcją lub procedury składowanej, która została wykonana. W przypadku wykonywania wielu instrukcji zwracana wartość jest sumą rekordów, których dotyczą wszystkie wykonane instrukcje.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład kodu wykonuje instrukcję INSERT, aby wstawić rekord do bazy danych przy użyciu **executenonquery**.  
+
+ Poniższy przykład kodu wykonuje instrukcję INSERT, aby wstawić rekord do bazy danych przy użyciu **ExecuteNonQuery**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -42,9 +44,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- Poniższy przykład kodu wykonuje procedurę składowaną utworzoną przez przykładowy kod w [wykonywaniu operacji wykazu](performing-catalog-operations.md). Żadne wiersze nie są zwracane przez procedurę składowaną, więc **ExecuteNonQuery** metoda jest używana, ale procedura składowana odbiera parametr wejściowy i zwraca parametr wyjściowy i wartość zwracaną.  
+ Poniższy przykład kodu wykonuje procedurę przechowywaną utworzoną przez przykładowy kod podczas [wykonywania operacji katalogu](performing-catalog-operations.md). Procedura składowana nie zwraca żadnych wierszy, więc metoda **ExecuteNonQuery** jest używana, ale procedura składowana otrzymuje parametr wejściowy i zwraca parametr wyjściowy oraz wartość zwracaną.  
   
- Dla <xref:System.Data.OleDb.OleDbCommand> obiektu **ReturnValue** parametr musi zostać dodany do **parameters** kolekcji pierwszy.  
+ Dla <xref:System.Data.OleDb.OleDbCommand> obiektu należy najpierw dodać parametr **ReturnValue** do kolekcji **Parameters** .  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  

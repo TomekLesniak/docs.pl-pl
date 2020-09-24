@@ -2,14 +2,15 @@
 title: <endpoint>, element
 ms.date: 03/30/2017
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
-ms.openlocfilehash: fb9d3bf9b5f1a742abcc70d78af026c179ec4c4d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: befebc090900576b1e0f7ca679e1f5f5cd15af9a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855378"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183809"
 ---
 # <a name="endpoint-element"></a>\<endpoint>, element
+
 Określa powiązanie, kontrakt i właściwości adresu dla punktu końcowego usługi, który jest używany do udostępniania usług.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Określa powiązanie, kontrakt i właściwości adresu dla punktu końcowego us�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -52,7 +54,7 @@ Określa powiązanie, kontrakt i właściwości adresu dla punktu końcowego us�
 |przedsiębiorc|Ciąg wskazujący, który kontrakt jest ujawniany przez ten punkt końcowy. Zestaw musi implementować typ kontraktu. Jeśli implementacja usługi implementuje pojedynczy typ kontraktu, ta właściwość może zostać pominięta. Wartość domyślna to pusty ciąg.|  
 |endpointConfiguration|Ciąg określający nazwę standardowego punktu końcowego, który jest ustawiany przez `kind` atrybut, który odwołuje się do dodatkowych informacji konfiguracyjnych tego standardowego punktu końcowego. Ta sama nazwa musi być zdefiniowana w `<standardEndpoints>` sekcji.|  
 |isSystemEndpoint|Wartość logiczna określająca, czy punkt końcowy jest punktem końcowym infrastruktury.|  
-|Natur|Ciąg określający typ stosowanego standardowego punktu końcowego. Typ musi być zarejestrowany w `<extensions>` sekcji lub pliku Machine. config. Jeśli nic nie zostanie określone, tworzony jest wspólny punkt końcowy usługi.|  
+|Natur|Ciąg określający typ stosowanego standardowego punktu końcowego. Typ musi być zarejestrowany w `<extensions>` sekcji lub w machine.config. Jeśli nic nie zostanie określone, tworzony jest wspólny punkt końcowy usługi.|  
 |listenUriMode|Określa sposób, w jaki transport traktuje `ListenUri` podany na potrzeby nasłuchiwania usługi. Prawidłowe wartości to<br /><br /> -Jawne<br />-Unikatowy<br /><br /> Wartość domyślna to explicit.|  
 |ListenUri o wartości|Ciąg określający identyfikator URI, z którego nasłuchuje punkt końcowy usługi. Wartość domyślna to pusty ciąg.|  
 |name|Atrybut opcjonalny. Ciąg określający nazwę punktu końcowego usługi. Wartość domyślna to połączenie nazwy powiązania i nazwy opisu kontraktu. Usługi mogą mieć wiele punktów końcowych, więc atrybut punktu końcowego `name` różni się od nazwy usługi.|  
@@ -71,6 +73,7 @@ Określa powiązanie, kontrakt i właściwości adresu dla punktu końcowego us�
 |[\<service>](service.md)|Sekcja konfiguracji, która definiuje listę punktów końcowych, z którymi klient może się połączyć.|  
   
 ## <a name="example"></a>Przykład  
+
  Jest to przykład konfiguracji punktu końcowego usługi.  
   
 ```xml  
@@ -86,10 +89,10 @@ Określa powiązanie, kontrakt i właściwości adresu dla punktu końcowego us�
 </endpoint>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ServiceEndpointElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.Description.ServiceEndpoint>
-- [Punkty końcowe: Adresy, powiązania i kontrakty](../../../wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Punkty końcowe: adresy, wiązania i kontrakty](../../../wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
 - [Instrukcje: tworzenie punktu końcowego usługi w konfiguracji](../../../wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)

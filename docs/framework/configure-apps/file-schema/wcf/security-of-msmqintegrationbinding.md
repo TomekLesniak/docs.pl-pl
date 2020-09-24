@@ -2,14 +2,15 @@
 title: <security> dla <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: ae5c68a8-14a2-4c6e-b9e0-3e94e3e9135e
-ms.openlocfilehash: 2268bf48a2b86c3b3b25db006e6f8f55ea33af73
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: be2f48f7d9c3be4ea0a5fe95436930b3f23c7551
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738682"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170067"
 ---
 # <a name="security-of-msmqintegrationbinding"></a>\<security> dla \<msmqIntegrationBinding>
+
 Definiuje ustawienia zabezpieczeń transportu dla kanału integracji usługi kolejkowania komunikatów (MSMQ).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,6 +39,7 @@ Definiuje ustawienia zabezpieczeń transportu dla kanału integracji usługi kol
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -58,7 +60,7 @@ Definiuje ustawienia zabezpieczeń transportu dla kanału integracji usługi kol
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Element Binding elementu [\<msmqIntegrationBinding>](msmqintegrationbinding.md) .|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding.Security%2A>
@@ -68,6 +70,6 @@ Definiuje ustawienia zabezpieczeń transportu dla kanału integracji usługi kol
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)
 - [\<msmqIntegrationBinding>](msmqintegrationbinding.md)

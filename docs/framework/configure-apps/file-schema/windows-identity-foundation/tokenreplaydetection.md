@@ -3,14 +3,15 @@ title: <tokenReplayDetection>
 ms.date: 03/30/2017
 ms.assetid: ac3f588e-5f75-4275-b969-2d492ecc3b47
 author: BrucePerlerMS
-ms.openlocfilehash: a4454042e1d97fb3cc2d6f2735104dadda6e7b5a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: df512960b522f17dc9247bb5959e246c8c1f15b8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70251768"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169807"
 ---
 # \<tokenReplayDetection>
+
 Włącza wykrywanie powtarzania tokenów i określa czas wygaśnięcia tokenów.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,9 +31,11 @@ Włącza wykrywanie powtarzania tokenów i określa czas wygaśnięcia tokenów.
 ```  
   
 ## <a name="type"></a>Typ  
+
  <xref:System.IdentityModel.Configuration.TokenReplayDetectionElement>  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,6 +46,7 @@ Włącza wykrywanie powtarzania tokenów i określa czas wygaśnięcia tokenów.
 |expirationPeriod|A <xref:System.TimeSpan> , która określa maksymalny czas, po upływie którego element zostanie uznany za wygasły i usunięty z pamięci podręcznej.  Aby uzyskać więcej informacji na temat sposobu określania <xref:System.TimeSpan> wartości, zobacz [wartości TimeSpan](../windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -53,6 +57,7 @@ Włącza wykrywanie powtarzania tokenów i określa czas wygaśnięcia tokenów.
 |[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Zapewnia konfigurację kolekcji programów obsługi tokenów zabezpieczających.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<tokenReplayDetection>`Element można określić na poziomie usługi pod `<identityConfiguration>` elementem lub na poziomie kolekcji programu obsługi tokenów zabezpieczających w ramach `<securityTokenHandlerConfiguration>` elementu. Ustawienia w kolekcji obsługi tokenów zastępują te określone w usłudze.  
   
  Typ pamięci podręcznej powtarzania tokenów jest określany przez [\<tokenReplayCache>](tokenreplaycache.md) element.

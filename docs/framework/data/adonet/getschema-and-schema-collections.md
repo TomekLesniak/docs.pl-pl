@@ -5,23 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
-ms.openlocfilehash: e18c23e9bbec97a64110aba6eb7241761ecece06
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cea9deb7fe019fea189a87fc08468d010929db9a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149560"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177452"
 ---
 # <a name="getschema-and-schema-collections"></a>GetSchema i kolekcje schematów
-**Klasy połączenia** w każdym z dostawców zarządzanych programu .NET Framework implementują metodę **GetSchema,** która jest używana do pobierania informacji o schemacie o aktualnie połączonej bazie danych, a informacje o schemacie zwrócone z metody **GetSchema** są dostępne w postaci pliku <xref:System.Data.DataTable>. **Metoda GetSchema** jest przeciążona metoda, która zapewnia opcjonalne parametry do określania kolekcji schematu do zwrócenia i ograniczania ilości zwracanych informacji.  
+
+Klasy **połączeń** w każdym z .NET Framework dostawców zarządzanych implementują metodę **GetSchema** , która jest używana do pobierania informacji o schemacie dla aktualnie połączonej bazy danych, a informacje o schemacie zwracane z metody **GetSchema** mają postać <xref:System.Data.DataTable> . Metoda **GetSchema** jest przeciążoną metodą, która zapewnia parametry opcjonalne do określania kolekcji schematów do zwrócenia i ograniczając ilość zwracanych informacji.  
   
-## <a name="specifying-the-schema-collections"></a>Określanie kolekcji schematu  
- Pierwszy opcjonalny parametr **Metody GetSchema** jest nazwą kolekcji, która jest określona jako ciąg. Istnieją dwa typy kolekcji schematu: typowe kolekcje schematów, które są wspólne dla wszystkich dostawców i kolekcje określonego schematu, które są specyficzne dla każdego dostawcy.  
+## <a name="specifying-the-schema-collections"></a>Określanie kolekcji schematów  
+
+ Pierwszy opcjonalny parametr metody **GetSchema** jest nazwą kolekcji, która jest określona jako ciąg. Istnieją dwa typy kolekcji schematów: wspólne kolekcje schematów, które są wspólne dla wszystkich dostawców i konkretne kolekcje schematów, które są specyficzne dla każdego dostawcy.  
   
- Można zbadać dostawcę zarządzanego programu .NET Framework, aby określić listę obsługiwanych kolekcji schematu, wywołując metodę **GetSchema** bez argumentów lub o nazwie kolekcji schematu "MetaDataCollections". Spowoduje to <xref:System.Data.DataTable> zwrócenie a z listy obsługiwanych kolekcji schematu, liczba ograniczeń, które obsługują, a liczba części identyfikatorów, które używają.  
+ Można wysłać zapytanie do dostawcy zarządzanego .NET Framework, aby określić listę obsługiwanych kolekcji schematów przez wywołanie metody **GetSchema** bez argumentów lub z nazwą kolekcji schematów "MetaDataCollections". Spowoduje to zwrócenie <xref:System.Data.DataTable> listy obsługiwanych kolekcji schematów, liczbę ograniczeń, które one obsługują, oraz liczbę używanych przez nich części identyfikatora.  
   
 ### <a name="retrieving-schema-collections-example"></a>Przykład pobierania kolekcji schematów  
- Poniższe przykłady pokazują, <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> jak używać metody dostawcy danych programu <xref:System.Data.SqlClient.SqlConnection> .NET Framework dla klasy PROGRAMU SQL Server do pobierania informacji o schemacie wszystkich tabel zawartych w przykładowej bazie danych **AdventureWorks:**  
+
+ W poniższych przykładach pokazano, jak za pomocą <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> metody Dostawca danych .NET Framework dla <xref:System.Data.SqlClient.SqlConnection> klasy SQL Server pobrać informacje o schemacie dotyczące wszystkich tabel zawartych w przykładowej bazie danych **AdventureWorks** :  
   
 ```vb  
 Imports System.Data.SqlClient  

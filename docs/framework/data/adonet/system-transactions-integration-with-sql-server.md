@@ -5,62 +5,68 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b555544e-7abb-4814-859b-ab9cdd7d8716
-ms.openlocfilehash: 42007dafbdc9f61b9fc0776e0aaa2987551b704a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5adf40f96854e08736cdef77300d69e452de5eea
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174241"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91191687"
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>Integracja System.Transactions z programem SQL Server
-Program .NET Framework w wersji 2.0 wprowadził strukturę <xref:System.Transactions> transakcji, do których można uzyskać dostęp za pośrednictwem obszaru nazw. Ta struktura udostępnia transakcje w sposób, który jest w pełni zintegrowany z .NET Framework, w tym ADO.NET.  
+
+W .NET Framework w wersji 2,0 wprowadzono strukturę transakcji, do której można uzyskać dostęp za pomocą <xref:System.Transactions> przestrzeni nazw. Ta struktura uwidacznia transakcje w sposób, który jest w pełni zintegrowany w .NET Framework, w tym ADO.NET.  
   
- Oprócz ulepszeń programowalności <xref:System.Transactions> i ADO.NET mogą współpracować w celu koordynowania optymalizacji podczas pracy z transakcjami. Transakcja z możliwością promowania to lekka (lokalna) transakcja, która może być automatycznie promowana do w pełni rozproszonej transakcji zgodnie z potrzebami.  
+ Oprócz ulepszeń programistycznych, <xref:System.Transactions> a ADO.NET może współdziałać w celu koordynowania optymalizacji podczas pracy z transakcjami. Transakcja promocji to lekki (lokalny) transakcję, którą można automatycznie podwyższyć do w pełni rozproszonej transakcji.  
   
- Począwszy od ADO.NET 2.0, <xref:System.Data.SqlClient> obsługuje transakcje promowane podczas pracy z programem SQL Server. Transakcja z domosywana nie wywołuje dodatkowego obciążenia transakcji rozproszonej, chyba że wymagane jest dodatkowe obciążenie. Transakcje, które można promować, są automatyczne i nie wymagają interwencji ze strony dewelopera.  
+ Począwszy od ADO.NET 2,0, <xref:System.Data.SqlClient> obsługuje transakcje promocji podczas pracy z SQL Server. Transakcja promocji nie wywołuje dodanego nakładu transakcji rozproszonej, chyba że jest wymagane dodatkowe obciążenie. Transakcje promocji są automatyczne i nie wymagają żadnej interwencji z dewelopera.  
   
- Transakcje z których można promować są dostępne tylko wtedy, gdy`SqlClient`używasz dostawcy danych programu .NET Framework dla programu SQL Server ( ) z programem SQL Server.  
+ Transakcje promocyjne są dostępne tylko wtedy, gdy używasz Dostawca danych .NET Framework dla SQL Server ( `SqlClient` ) z SQL Server.  
   
-## <a name="creating-promotable-transactions"></a>Tworzenie transakcji promowanych  
- Dostawca programu .NET Framework dla programu SQL Server zapewnia obsługę transakcji, które można <xref:System.Transactions> promować, które są obsługiwane za pośrednictwem klas w obszarze nazw programu .NET Framework. Transakcje promowane optymalizują transakcje rozproszone, odraczając tworzenie transakcji rozproszonej, dopóki nie jest potrzebna. Jeśli wymagany jest tylko jeden menedżer zasobów, nie występuje żadna transakcja rozproszona.  
+## <a name="creating-promotable-transactions"></a>Tworzenie transakcji promocji  
+
+ Dostawca .NET Framework dla SQL Server zapewnia obsługę transakcji promocji, które są obsługiwane przez klasy w <xref:System.Transactions> przestrzeni nazw .NET Framework. Transakcje promocyjne optymalizują transakcje rozproszone przez odroczenie tworzenia transakcji rozproszonej do momentu, gdy jest to konieczne. Jeśli jest wymagany tylko jeden Menedżer zasobów, nie są wykonywane żadne transakcje rozproszone.  
   
 > [!NOTE]
-> W scenariuszu częściowo zaufany <xref:System.Transactions.DistributedTransactionPermission> jest wymagane, gdy transakcja jest promowany do transakcji rozproszonej.  
+> W częściowo zaufanym scenariuszu <xref:System.Transactions.DistributedTransactionPermission> jest to wymagane, gdy transakcja jest podwyższana do transakcji rozproszonej.  
   
-## <a name="promotable-transaction-scenarios"></a>Scenariusze transakcji promowanych  
- Transakcje rozproszone zazwyczaj zużywają znaczne zasoby systemowe, zarządzane przez koordynatora transakcji rozproszonych firmy Microsoft (MS DTC), który integruje wszystkich menedżerów zasobów dostępnych w transakcji. Transakcja z do promowania jest <xref:System.Transactions> specjalną formą transakcji, która skutecznie deleguje pracę do prostej transakcji programu SQL Server. <xref:System.Transactions>, <xref:System.Data.SqlClient>a SQL Server koordynują pracę związaną z obsługą transakcji, promując ją do pełnej transakcji rozproszonej w razie potrzeby.  
+## <a name="promotable-transaction-scenarios"></a>Scenariusze transakcji promocji  
+
+ Transakcje rozproszone zazwyczaj zużywają znaczne zasoby systemowe zarządzane przez firmę Microsoft Distributed Transaction Coordinator (MS DTC), które integrują wszystkich menedżerów zasobów, do których uzyskuje dostęp w transakcji. Transakcja promocji to specjalna forma <xref:System.Transactions> transakcji, która efektywnie deleguje prace do prostej transakcji SQL Server. <xref:System.Transactions>, <xref:System.Data.SqlClient> i SQL Server koordynuje pracy związanej z obsługą transakcji, promując ją do pełnej transakcji rozproszonej w razie potrzeby.  
   
- Zaletą korzystania z transakcji można promować jest to, że <xref:System.Transactions.TransactionScope> gdy połączenie jest otwierane przy użyciu aktywnej transakcji, a żadne inne połączenia są otwierane, transakcja zatwierdza jako lekka transakcja, zamiast ponosić dodatkowe obciążenie pełnej transakcji rozproszonej.  
+ Korzyści wynikające z korzystania z transakcji promocyjnych polegają na tym, że gdy połączenie jest otwierane przy użyciu aktywnej <xref:System.Transactions.TransactionScope> transakcji, a żadne inne połączenia nie są otwierane, transakcja zostaje zatwierdzona jako uproszczona transakcja, zamiast naliczać dodatkowe obciążenie dla pełnej transakcji rozproszonej.  
   
-### <a name="connection-string-keywords"></a>Słowa kluczowe ciągu połączenia  
- Właściwość <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> obsługuje słowo `Enlist`kluczowe, co <xref:System.Data.SqlClient> wskazuje, czy wykryje konteksty transakcyjne i automatycznie zarejestrować połączenie w transakcji rozproszonej. Jeśli `Enlist=true`połączenie jest automatycznie rejestrowane w kontekście bieżącej transakcji wątku otwarcia. Jeśli `Enlist=false`połączenie `SqlClient` nie wchodzi w interakcję z transakcją rozproszoną. Wartość domyślna `Enlist` dla jest true. Jeśli `Enlist` nie jest określony w ciągu połączenia, połączenie jest automatycznie łączony w transakcji rozproszonej, jeśli zostanie wykryty po otwarciu połączenia.  
+### <a name="connection-string-keywords"></a>Słowa kluczowe parametrów połączenia  
+
+ <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>Właściwość obsługuje słowo kluczowe, `Enlist` które wskazuje, czy <xref:System.Data.SqlClient> program będzie wykrywał konteksty transakcyjne i automatycznie zarejestrowana w transakcji rozproszonej. Jeśli `Enlist=true` połączenie zostanie automatycznie zarejestrowane w bieżącym kontekście transakcji otwarcia wątku. Jeśli `Enlist=false` połączenie nie `SqlClient` działa w przypadku transakcji rozproszonej. Wartość domyślna dla `Enlist` ma wartość true. Jeśli `Enlist` wartość nie jest określona w parametrach połączenia, połączenie zostanie automatycznie zarejestrowane w transakcji rozproszonej, jeśli zostanie wykryta po otwarciu połączenia.  
   
- Słowa `Transaction Binding` kluczowe w <xref:System.Data.SqlClient.SqlConnection> ciągu połączenia kontrolują skojarzenia połączenia `System.Transactions` z zarejestrowaną transakcją. Jest on również <xref:System.Data.SqlClient.SqlConnectionStringBuilder.TransactionBinding%2A> dostępny za <xref:System.Data.SqlClient.SqlConnectionStringBuilder>pośrednictwem obiektu.  
+ `Transaction Binding`Słowa kluczowe w <xref:System.Data.SqlClient.SqlConnection> parametrach połączenia kontrolują skojarzenie połączenia z zarejestrowaną `System.Transactions` transakcją. Jest ona również dostępna za pomocą <xref:System.Data.SqlClient.SqlConnectionStringBuilder.TransactionBinding%2A> właściwości <xref:System.Data.SqlClient.SqlConnectionStringBuilder> .  
   
  W poniższej tabeli opisano możliwe wartości.  
   
 |Słowo kluczowe|Opis|  
 |-------------|-----------------|  
-|Niejawne unbind|Domyślnie. Połączenie odłącza się od transakcji po jej zakończeniu, przełączając się z powrotem do trybu automatycznego przywiązania.|  
-|Jawne unbind|Połączenie pozostaje dołączone do transakcji do momentu zamknięcia transakcji. Połączenie zakończy się niepowodzeniem, jeśli skojarzona transakcja <xref:System.Transactions.Transaction.Current%2A>nie jest aktywna lub nie jest zgodna .|  
+|Niejawne powiązanie|Domyślnie. Połączenie zostanie odłączone od transakcji po jej zakończeniu, przełączając z powrotem do trybu automatycznego zatwierdzania.|  
+|Jawne powiązanie powiązania|Połączenie pozostaje dołączone do transakcji do momentu zamknięcia transakcji. Połączenie zakończy się niepowodzeniem, jeśli skojarzona transakcja nie jest aktywna lub nie jest zgodna <xref:System.Transactions.Transaction.Current%2A> .|  
   
-## <a name="using-transactionscope"></a>Korzystanie z transactionscope  
- Klasa <xref:System.Transactions.TransactionScope> sprawia, że blok kodu transakcyjnych przez niejawnie rejestracji połączeń w transakcji rozproszonej. Należy wywołać <xref:System.Transactions.TransactionScope.Complete%2A> metodę na końcu <xref:System.Transactions.TransactionScope> bloku przed opuszczeniem go. Pozostawienie bloku wywołuje <xref:System.Transactions.TransactionScope.Dispose%2A> metodę. Jeśli został zgłoszony wyjątek, który powoduje, że kod do opuszczenia zakresu, transakcja jest uważany za przerwane.  
+## <a name="using-transactionscope"></a>Używanie elementu TransactionScope  
+
+ <xref:System.Transactions.TransactionScope>Klasa wywołuje kod transakcyjny przez niejawnie zarejestrowane połączenia w transakcji rozproszonej. Należy wywołać <xref:System.Transactions.TransactionScope.Complete%2A> metodę na końcu <xref:System.Transactions.TransactionScope> bloku przed opuszczeniem go. Wyjście bloku wywołuje <xref:System.Transactions.TransactionScope.Dispose%2A> metodę. Jeśli wystąpił wyjątek, który powoduje, że kod opuszcza zakres, transakcja jest traktowana jako przerwana.  
   
- Zaleca się użycie `using` bloku, aby <xref:System.Transactions.TransactionScope.Dispose%2A> upewnić się, że jest wywoływana na <xref:System.Transactions.TransactionScope> obiekcie, gdy using blok jest zamykany. Niepowodzenie zatwierdzania lub wycofywania oczekujących transakcji może znacznie uszkodzić wydajność, ponieważ domyślny limit czasu dla <xref:System.Transactions.TransactionScope> tej wartości wynosi jedną minutę. Jeśli nie używasz `using` instrukcji, należy wykonać całą `Try` pracę w bloku <xref:System.Transactions.TransactionScope.Dispose%2A> i `Finally` jawnie wywołać metodę w bloku.  
+ Zalecamy użycie `using` bloku, aby upewnić się, że <xref:System.Transactions.TransactionScope.Dispose%2A> jest wywoływana na obiekcie, <xref:System.Transactions.TransactionScope> gdy blok using zostanie zakończony. Nie można zatwierdzić lub wycofać oczekujących transakcji może znacząco spowodować uszkodzenie wydajności, ponieważ domyślny limit czasu <xref:System.Transactions.TransactionScope> wynosi minutę. Jeśli nie używasz `using` instrukcji, musisz wykonać wszystkie czynności w `Try` bloku i jawnie wywołać <xref:System.Transactions.TransactionScope.Dispose%2A> metodę w `Finally` bloku.  
   
- Jeśli wystąpi wyjątek <xref:System.Transactions.TransactionScope>w , transakcja jest oznaczona jako niespójne i jest porzucona. Zostanie wycofany, gdy <xref:System.Transactions.TransactionScope> jest usuwany. Jeśli nie wystąpi wyjątek, transakcje uczestniczące zatwierdzają.  
-  
-> [!NOTE]
-> Klasa `TransactionScope` tworzy transakcję <xref:System.Transactions.Transaction.IsolationLevel%2A> z `Serializable` domyślnie. W zależności od aplikacji warto rozważyć obniżenie poziomu izolacji, aby uniknąć wysokiej rywalizacji w aplikacji.  
+ Jeśli wystąpi wyjątek w <xref:System.Transactions.TransactionScope> , transakcja jest oznaczona jako niespójna i została porzucona. Zostanie wycofany po usunięciu <xref:System.Transactions.TransactionScope> . Jeśli żaden wyjątek nie wystąpi, uczestniczące transakcje są zatwierdzane.  
   
 > [!NOTE]
-> Zaleca się wykonywanie tylko aktualizacji, wstawia i usuwa w ramach transakcji rozproszonych, ponieważ zużywają one znaczne zasoby bazy danych. Wybierz instrukcje mogą niepotrzebnie blokować zasoby bazy danych, a w niektórych scenariuszach może być trzeba użyć transakcji dla wybranych. Wszelkie prace spoza bazy danych powinny być wykonywane poza zakresem transakcji, chyba że obejmuje ona innych transakcyjnych menedżerów zasobów. Chociaż wyjątek w zakresie transakcji uniemożliwia zatwierdzenie transakcji, <xref:System.Transactions.TransactionScope> klasa nie ma przepisu na wycofywanie wszelkich zmian wprowadzonych przez kod poza zakresem samej transakcji. Jeśli trzeba podjąć pewne działania, gdy transakcja jest przywracana, należy <xref:System.Transactions.IEnlistmentNotification> napisać własną implementację interfejsu i jawnie zarejestrować się w transakcji.  
+> `TransactionScope`Klasa tworzy transakcję z <xref:System.Transactions.Transaction.IsolationLevel%2A> `Serializable` wartością domyślną. W zależności od aplikacji warto rozważyć obniżenie poziomu izolacji, aby uniknąć dużej rywalizacji w aplikację.  
+  
+> [!NOTE]
+> Zalecamy wykonywanie tylko aktualizacji, wstawianych i usuwanych transakcji rozproszonych, ponieważ zużywają one znaczne zasoby bazy danych. Instrukcje SELECT mogą niepotrzebnie blokować zasoby bazy danych, a w niektórych scenariuszach może być konieczne użycie transakcji do wyboru. Wszelkie zadania poza bazą danych powinny być wykonywane spoza zakresu transakcji, o ile nie obejmuje ona innych menedżerów zasobów transakcyjnych. Chociaż wyjątek w zakresie transakcji uniemożliwia zatwierdzenie transakcji, Klasa nie ma do wycofania żadnych zmian wprowadzonych w <xref:System.Transactions.TransactionScope> kodzie poza zakres transakcji. Jeśli konieczne jest wykonanie pewnej akcji w przypadku wycofania transakcji, należy napisać własną implementację <xref:System.Transactions.IEnlistmentNotification> interfejsu i jawnie zarejestrować się w transakcji.  
   
 ## <a name="example"></a>Przykład  
- Praca <xref:System.Transactions> z wymaga, aby masz odwołanie do System.Transactions.dll.  
+
+ Praca z programem <xref:System.Transactions> wymaga odwołania do System.Transactions.dll.  
   
- Poniższa funkcja pokazuje, jak utworzyć transakcję można promować względem dwóch różnych <xref:System.Data.SqlClient.SqlConnection> wystąpień programu SQL <xref:System.Transactions.TransactionScope> Server, reprezentowanych przez dwa różne obiekty, które są zawinięte w bloku. Kod tworzy <xref:System.Transactions.TransactionScope> blok z `using` instrukcją i otwiera pierwsze połączenie, które <xref:System.Transactions.TransactionScope>automatycznie rejestruje go w pliku . Transakcja jest początkowo rejestrowana jako lekka transakcja, a nie pełna transakcja rozproszona. Drugie połączenie jest rejestrowane <xref:System.Transactions.TransactionScope> tylko wtedy, gdy polecenie w pierwszym połączeniu nie zgłasza wyjątek. Po otwarciu drugiego połączenia transakcja jest automatycznie podyzowana do pełnej transakcji rozproszonej. Metoda <xref:System.Transactions.TransactionScope.Complete%2A> jest wywoływana, która zatwierdza transakcji tylko wtedy, gdy nie zostały odrzucone wyjątki. Jeśli wyjątek został zgłoszony w <xref:System.Transactions.TransactionScope> dowolnym `Complete` momencie w bloku, nie zostanie wywołana, <xref:System.Transactions.TransactionScope> a transakcja rozproszona `using` zostanie wycofana, gdy jest usuwany na końcu jego bloku.  
+ Poniższa funkcja pokazuje, jak utworzyć transakcję promocji dla dwóch różnych wystąpień SQL Server, reprezentowanych przez dwa różne <xref:System.Data.SqlClient.SqlConnection> obiekty, które są opakowane w <xref:System.Transactions.TransactionScope> bloku. Kod tworzy <xref:System.Transactions.TransactionScope> blok z `using` instrukcją i otwiera pierwsze połączenie, które jest automatycznie rejestrowane w <xref:System.Transactions.TransactionScope> . Transakcja jest początkowo rejestrowana jako uproszczona transakcja, a nie pełna transakcja rozproszona. Drugie połączenie jest rejestrowane w tylko wtedy, <xref:System.Transactions.TransactionScope> gdy polecenie w pierwszym połączeniu nie zgłasza wyjątku. Po otwarciu drugiego połączenia transakcja zostanie automatycznie podzielona na pełną transakcję rozproszoną. <xref:System.Transactions.TransactionScope.Complete%2A>Wywoływana jest metoda, która zatwierdza transakcję tylko wtedy, gdy nie zgłoszono żadnych wyjątków. Jeśli wyjątek został zgłoszony w dowolnym momencie w <xref:System.Transactions.TransactionScope> bloku, `Complete` nie zostanie wywołany, a transakcja rozproszona zostanie wycofana, gdy <xref:System.Transactions.TransactionScope> zostanie usunięty na końcu jego `using` bloku.  
   
 ```csharp  
 // This function takes arguments for the 2 connection strings and commands in order  

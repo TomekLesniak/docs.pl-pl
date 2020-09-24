@@ -2,14 +2,15 @@
 title: <security> dla <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: bb3cb022-637e-49fd-92e8-6766038affa7
-ms.openlocfilehash: 31ea31ce6880a770c966350cd931e487396c4d63
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1a231a60d29cc6a4460de69a98753c23c0386027
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736434"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170041"
 ---
 # <a name="security-of-netnamedpipebinding"></a>\<security> dla \<netNamedPipeBinding>
+
 Definiuje ustawienia zabezpieczeń dla powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Definiuje ustawienia zabezpieczeń dla powiązania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -52,7 +54,7 @@ Definiuje ustawienia zabezpieczeń dla powiązania.
 |-------------|-----------------|  
 |powiązanie|Element Binding elementu [\<netNamedPipeBinding>](netnamedpipebinding.md) .|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.NetNamedPipeSecurity>
 - <xref:System.ServiceModel.NetNamedPipeBinding.Security%2A>
@@ -62,5 +64,5 @@ Definiuje ustawienia zabezpieczeń dla powiązania.
 - [Wybieranie typu poświadczeń](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

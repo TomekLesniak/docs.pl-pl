@@ -5,14 +5,15 @@ helpviewer_keywords:
 - appDomainManagerType element
 - <appDomainManagerType> element
 ms.assetid: ae8d5a7e-e7f7-47f7-98d9-455cc243a322
-ms.openlocfilehash: 8eb6129b3fafaeb81a94d5a4078e41a16583a226
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e21384de6ca07c637a79ee54207d1e3ddfbf20e6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154432"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170314"
 ---
 # <a name="appdomainmanagertype-element"></a>\<appDomainManagerType> Element
+
 Określa typ, który służy jako Menedżer domeny aplikacji dla domyślnej domeny aplikacji.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Określa typ, który służy jako Menedżer domeny aplikacji dla domyślnej dome
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -36,6 +38,7 @@ Określa typ, który służy jako Menedżer domeny aplikacji dla domyślnej dome
 |`value`|Atrybut wymagany. Określa nazwę typu, w tym przestrzeń nazw, która służy jako Menedżer domeny aplikacji dla domyślnej domeny aplikacji w procesie.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -46,6 +49,7 @@ Określa typ, który służy jako Menedżer domeny aplikacji dla domyślnej dome
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby określić typ Menedżera domeny aplikacji, należy określić zarówno ten element, jak i [\<appDomainManagerAssembly>](appdomainmanagerassembly-element.md) element. Jeśli jeden z tych elementów nie zostanie określony, drugi zostanie zignorowany.  
   
  W przypadku załadowania domyślnej domeny aplikacji <xref:System.TypeLoadException> jest zgłaszany, jeśli określony typ nie istnieje w zestawie, który jest określony przez [\<appDomainManagerAssembly>](appdomainmanagerassembly-element.md) element; a proces nie zostanie uruchomiony.  
@@ -59,6 +63,7 @@ Określa typ, który służy jako Menedżer domeny aplikacji dla domyślnej dome
  Ten element konfiguracji jest dostępny tylko w .NET Framework 4 i nowszych.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak określić, że Menedżer domeny aplikacji dla domyślnej domeny aplikacji procesu jest `MyMgr` typem w `AdMgrExample` zestawie.  
   
 ```xml  
@@ -71,11 +76,11 @@ Określa typ, który służy jako Menedżer domeny aplikacji dla domyślnej dome
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>
-- [\<appDomainManagerAssembly>Postaci](appdomainmanagerassembly-element.md)
+- [\<appDomainManagerAssembly> Postaci](appdomainmanagerassembly-element.md)
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)
-- [SetAppDomainManagerType, metoda](../../../unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)
+- [SetAppDomainManagerType — Metoda](../../../unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)

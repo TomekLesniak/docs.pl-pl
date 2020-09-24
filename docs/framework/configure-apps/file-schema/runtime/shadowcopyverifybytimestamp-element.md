@@ -5,14 +5,15 @@ helpviewer_keywords:
 - <shadowCopyTimeStampVerification> element
 - shadowCopyTimeStampVerification element
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
-ms.openlocfilehash: 160f14c856735e1ceac8635506aea52454faea43
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c0dc190e69ca9650d518ee297b12f79f8c47d58b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73115727"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183978"
 ---
 # <a name="shadowcopyverifybytimestamp-element"></a>\<shadowCopyVerifyByTimestamp> Element
+
 Określa, czy kopiowanie w tle używa domyślnego zachowania uruchamiania wprowadzonego w .NET Framework 4, czy przywraca zachowanie uruchamiania wcześniejszych wersji .NET Framework.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,6 +27,7 @@ Określa, czy kopiowanie w tle używa domyślnego zachowania uruchamiania wprowa
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,6 +44,7 @@ Określa, czy kopiowanie w tle używa domyślnego zachowania uruchamiania wprowa
 |fałsz|Przywraca zachowanie uruchamiania poprzednich wersji .NET Framework, które było skopiowane wszystkie pliki podczas uruchamiania.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -52,9 +55,11 @@ Określa, czy kopiowanie w tle używa domyślnego zachowania uruchamiania wprowa
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Począwszy od .NET Framework 4, zestawy są kopiowane w tle, tylko wtedy, gdy ich sygnatury czasowe wskazują, że zostały zmienione od czasu ostatniego skopiowania do katalogu kopii w tle. Skraca to czas uruchamiania dla wielu aplikacji używających kopiowania w tle, zgodnie z opisem w obszarze [kopiowania w tle](../../../app-domains/shadow-copy-assemblies.md). W przypadku aplikacji z wysoką wartością procentową i częstotliwością aktualizacji zestawu mogą nie być korzystne zmiany w zachowaniu. W takim przypadku można użyć tego elementu, aby przywrócić zachowanie poprzednich wersji .NET Framework.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak wyłączyć domyślne zachowanie podczas uruchamiania kopiowania w tle w .NET Framework 4 i przywrócić zachowanie uruchamiania poprzednich wersji .NET Framework.  
   
 ```xml  
@@ -65,7 +70,7 @@ Określa, czy kopiowanie w tle używa domyślnego zachowania uruchamiania wprowa
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

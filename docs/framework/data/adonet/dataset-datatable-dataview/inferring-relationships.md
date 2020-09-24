@@ -2,15 +2,16 @@
 title: Wnioskowanie relacji
 ms.date: 03/30/2017
 ms.assetid: 8fa86a9d-6545-4a9d-b1f5-58d9742179c7
-ms.openlocfilehash: 4c9c13453e4a830fcda337e8163649ba6491a995
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ee691eee95c34afdb6374cdd7448d4b44ece3055
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785362"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177569"
 ---
 # <a name="inferring-relationships"></a>Wnioskowanie relacji
-Jeśli element, który jest wywnioskowany jako tabela, ma element podrzędny, który jest również wywnioskowany jako tabela, <xref:System.Data.DataRelation> zostanie utworzony między dwiema tabelami. Nowa kolumna o nazwie **ParentTableName_Id** zostanie dodana do tabeli utworzonej dla elementu nadrzędnego, a tabela utworzona dla elementu podrzędnego. Właściwość **ColumnMapping** tej kolumny tożsamości zostanie ustawiona na wartość **MappingType. Hidden**. Kolumna będzie przerastać klucz podstawowy dla tabeli nadrzędnej i będzie używana dla **relacji** między tymi dwiema tabelami. Typem danych kolumny dodanej tożsamości będzie **System. Int32**, w przeciwieństwie do typu danych wszystkich innych wywnioskowanych kolumn, które jest **System. String**. Element <xref:System.Data.ForeignKeyConstraint> with **DeleteRule** = **Cascade** również zostanie utworzony przy użyciu nowej kolumny w tabeli nadrzędnej i podrzędnej.  
+
+Jeśli element, który jest wywnioskowany jako tabela, ma element podrzędny, który jest również wywnioskowany jako tabela, <xref:System.Data.DataRelation> zostanie utworzony między dwiema tabelami. Nowa kolumna o nazwie **ParentTableName_Id** zostanie dodana do tabeli utworzonej dla elementu nadrzędnego, a tabela utworzona dla elementu podrzędnego. Właściwość **ColumnMapping** tej kolumny tożsamości zostanie ustawiona na wartość **MappingType. Hidden**. Kolumna będzie przerastać klucz podstawowy dla tabeli nadrzędnej i będzie używana dla **relacji** między tymi dwiema tabelami. Typem danych kolumny dodanej tożsamości będzie **System. Int32**, w przeciwieństwie do typu danych wszystkich innych wywnioskowanych kolumn, które jest **System. String**. Element <xref:System.Data.ForeignKeyConstraint> with **DeleteRule**  =  **Cascade** również zostanie utworzony przy użyciu nowej kolumny w tabeli nadrzędnej i podrzędnej.  
   
  Rozważmy na przykład następujący kod XML:  
   
@@ -23,29 +24,29 @@ Jeśli element, który jest wywnioskowany jako tabela, ma element podrzędny, kt
 </DocumentElement>  
 ```  
   
- Proces wnioskowania spowoduje utworzenie dwóch tabel: **Element1** i **ChildElement1**.  
+ Proces wnioskowania spowoduje utworzenie dwóch tabel: **element1** i **ChildElement1**.  
   
- Tabela **element1** będzie zawierać dwie kolumny: **Element1_Id** i **ChildElement2**. Właściwość **ColumnMapping** kolumny **Element1_Id** zostanie ustawiona na wartość **MappingType. Hidden**. Właściwość **ColumnMapping** kolumny **ChildElement2** zostanie ustawiona na wartość **MappingType. element**. Kolumna **Element1_Id** zostanie ustawiona jako klucz podstawowy tabeli **element1** .  
+ Tabela **element1** będzie miała dwie kolumny: **Element1_Id** i **ChildElement2**. Właściwość **ColumnMapping** kolumny **Element1_Id** zostanie ustawiona na wartość **MappingType. Hidden**. Właściwość **ColumnMapping** kolumny **ChildElement2** zostanie ustawiona na wartość **MappingType. element**. Kolumna **Element1_Id** zostanie ustawiona jako klucz podstawowy tabeli **element1** .  
   
  Tabela **ChildElement1** będzie miała trzy kolumny: **attr1**, **attr2** i **Element1_Id**. Właściwość **ColumnMapping** dla kolumn **attr1** i **Attr2** zostanie ustawiona na wartość **MappingType. Attribute**. Właściwość **ColumnMapping** kolumny **Element1_Id** zostanie ustawiona na wartość **MappingType. Hidden**.  
   
- **Relacje** i **element ForeignKeyConstraint** zostaną utworzone przy użyciu kolumn **Element1_Id** z obu tabel.  
+ **Relacja** i **element ForeignKeyConstraint** zostanie utworzona przy użyciu kolumn **Element1_Id** z obu tabel.  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |Element1_Id|ChildElement2|  
 |------------------|-------------------|  
 |0|Text2|  
   
- **Tabele** ChildElement1  
+ **Tabela:** ChildElement1  
   
 |attr1|attr2|Element1_Id|  
 |-----------|-----------|------------------|  
 |sekwencj|wartość2|0|  
   
- **DataRelation** Element1_ChildElement1  
+ **Relacja** : Element1_ChildElement1  
   
  **Element nadrzędny:** Element1  
   
@@ -55,11 +56,11 @@ Jeśli element, który jest wywnioskowany jako tabela, ma element podrzędny, kt
   
  **ChildColumn:** Element1_Id  
   
- **Zagnieżdża** Prawda  
+ **Zagnieżdżone:** Oznacza  
   
- **Element ForeignKeyConstraint** Element1_ChildElement1  
+ **Element ForeignKeyConstraint:** Element1_ChildElement1  
   
- **Kolumna** Element1_Id  
+ **Kolumna:** Element1_Id  
   
  **Element nadrzędny:** Element1  
   
@@ -67,9 +68,9 @@ Jeśli element, który jest wywnioskowany jako tabela, ma element podrzędny, kt
   
  **DeleteRule:** Cascade  
   
- **AcceptRejectRule:** Brak  
+ **AcceptRejectRule:** Dawaj  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wnioskowanie relacyjnej struktury elementu DataSet z pliku XML](inferring-dataset-relational-structure-from-xml.md)
 - [Ładowanie elementu DataSet z pliku XML](loading-a-dataset-from-xml.md)

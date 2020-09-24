@@ -1,16 +1,17 @@
 ---
-title: '! (NIE) (Jednostka SQL)'
+title: '! NIEMOŻLIWE (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: a1447a34-df06-4393-93c3-0612ebd41abc
-ms.openlocfilehash: 0b69d4cb64adc1f9232631d50ec42af0d1ba47e3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0eb9be9ed4cbce45a51d15eea68e9fb1a26f0107
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150132"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91191843"
 ---
-# <a name="-not-entity-sql"></a>! (NIE) (Jednostka SQL)
-Neguje `Boolean` wyrażenie.  
+# <a name="-not-entity-sql"></a>! NIEMOŻLIWE (Entity SQL)
+
+Wyklucza `Boolean` wyrażenie.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -21,18 +22,21 @@ NOT boolean_expression
 ```
   
 ## <a name="arguments"></a>Argumenty  
+
  `boolean_expression`  
- Dowolne prawidłowe wyrażenie, które zwraca wartość logiczną.  
+ Dowolne prawidłowe wyrażenie zwracające wartość logiczną.  
   
 ## <a name="remarks"></a>Uwagi  
- Wykrzyknik (!) ma taką samą funkcjonalność jak operator NOT.  
+
+ Wykrzyknik (!) ma takie same funkcje jak operator NOT.  
   
 ## <a name="example"></a>Przykład  
- Następująca kwerenda SQL jednostki używa operatora `Boolean` NOT do neguje wyrażenie. Kwerenda jest oparta na modelu sprzedaży AdventureWorks. Aby skompilować i uruchomić tę kwerendę, wykonaj następujące kroki:  
+
+ Poniższe zapytanie Entity SQL używa operatora NOT, aby Negacja `Boolean` wyrażenia. Zapytanie jest oparte na modelu sprzedaży AdventureWorks. Aby skompilować i uruchomić to zapytanie, wykonaj następujące kroki:  
   
-1. Postępuj zgodnie z procedurą [w : Jak: Wykonać kwerendę, która zwraca wyniki structuraltype](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postępuj zgodnie z procedurą w temacie [How to: Execute a Query zwracającej wyniki StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Przekaż następującą kwerendę jako `ExecuteStructuralTypeQuery` argument do metody:  
+2. Przekaż następujące zapytanie jako argument do `ExecuteStructuralTypeQuery` metody:  
   
  [!code-sql[DP EntityServices Concepts#NOT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#not)]  
   

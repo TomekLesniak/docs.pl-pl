@@ -6,14 +6,15 @@ helpviewer_keywords:
 - asynchronous operations [WCF Data Services]
 - WCF Data Services, client library
 ms.assetid: 679644c7-e3fc-422c-b14a-b44b683900d0
-ms.openlocfilehash: d1f45979dba5c3ab0dccc8d0a61a7abaa9913e11
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: cf3a81914d78e8f08c06602600ce5dcef4f4d35b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556866"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91191648"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>Operacje asynchroniczne (Usługi danych programu WCF)
+
 Aplikacje sieci Web muszą obsługiwać wyższe opóźnienia między klientem a serwerem niż aplikacje, które działają w sieciach wewnętrznych. Aby zoptymalizować wydajność i środowisko użytkownika aplikacji, zalecamy użycie asynchronicznych metod <xref:System.Data.Services.Client.DataServiceContext> <xref:System.Data.Services.Client.DataServiceQuery%601> klas i podczas uzyskiwania dostępu do usługi danych programu WCF serwerów za pośrednictwem sieci Web.  
   
  Mimo że serwery Usługi danych programu WCF przetwarzają żądania HTTP asynchronicznie, niektóre metody bibliotek klienckich Usługi danych programu WCF są synchroniczne i oczekują na ukończenie całego wymiany odpowiedzi na żądanie przed kontynuowaniem wykonywania. Metody asynchroniczne bibliotek klienta Usługi danych programu WCF nie czekają na ukończenie tej wymiany i mogą umożliwić aplikacji obsługę interfejsu użytkownika w międzyczasie.  
@@ -34,8 +35,9 @@ Aplikacje sieci Web muszą obsługiwać wyższe opóźnienia między klientem a 
 |Zapisywanie zmian w obiektach w <xref:System.Data.Services.Client.DataServiceContext>|-   <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A>|  
   
 ## <a name="threading-considerations-for-asynchronous-operations"></a>Zagadnienia dotyczące wątkowania operacji asynchronicznych  
+
  W aplikacji wielowątkowej delegat, który jest zarejestrowany jako wywołanie zwrotne dla operacji asynchronicznej, nie jest koniecznie wywoływany w tym samym wątku, który został użyty do wywołania metody *BEGIN* , co powoduje utworzenie początkowego żądania. W aplikacji, w której wywołanie zwrotne musi być wywoływane w określonym wątku, należy jawnie zorganizować wykonywanie metody *End* , która obsługuje odpowiedź, do żądanego wątku. Na przykład w przypadku aplikacji opartych na Windows Presentation Foundation (WPF) i aplikacji opartych na technologii Silverlight odpowiedź musi być organizowana z powrotem do wątku interfejsu użytkownika przy użyciu <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> metody dla <xref:System.Windows.Threading.Dispatcher> obiektu. Aby uzyskać więcej informacji, zobacz [wykonywanie zapytań dotyczących usługi danych (usługi danych programu WCF/Silverlight)](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc903932(v=vs.95)).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Biblioteka klienta usług danych WCF](wcf-data-services-client-library.md)

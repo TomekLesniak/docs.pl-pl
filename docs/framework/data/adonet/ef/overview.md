@@ -3,12 +3,12 @@ title: Omówienie programu Entity Framework
 description: Entity Framework w ADO.NET obsługuje programowanie aplikacji zorientowanych na dane, które działają na wyższym poziomie abstrakcji niż tradycyjne aplikacje.
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: e6b7a605f88aecc76cb182473d9dd9f925a4d5a9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1e38670678a6f9985bc36de5586760450a880cb0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557986"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177504"
 ---
 # <a name="entity-framework-overview"></a>Przegląd Entity Framework
 
@@ -17,6 +17,7 @@ Entity Framework to zestaw technologii ADO.NET, które obsługują opracowywanie
 Entity Framework umożliwia deweloperom współdziałanie z danymi w postaci obiektów i właściwości specyficznych dla domeny, takich jak klienci i adresy klientów, bez konieczności zapoznania się z podstawowymi bazami danych i kolumnami, w których są przechowywane te dane. Dzięki Entity Framework deweloperzy mogą korzystać z wyższego poziomu abstrakcji, gdy zajmują się danymi, i mogą tworzyć i konserwować aplikacje zorientowane na dane przy użyciu mniejszego kodu niż w tradycyjnych aplikacjach. Ponieważ Entity Framework jest składnikiem .NET Framework, Entity Framework aplikacje można uruchamiać na dowolnym komputerze, na którym zainstalowano .NET Framework od wersji 3,5 SP1.
 
 ## <a name="give-life-to-models"></a>Zapewnij życie dla modeli
+
  Od dawna dba i wspólne podejście projektowe podczas kompilowania aplikacji lub usługi jest podziałem aplikacji lub usługi na trzy części: model domeny, model logiczny i model fizyczny. Model domeny definiuje jednostki i relacje w systemie, który jest modelem. Model logiczny dla relacyjnej bazy danych normalizuje jednostki i relacje w tabelach z ograniczeniami klucza obcego. Model fizyczny dotyczy możliwości określonego aparatu danych przez określenie szczegółów magazynu, takich jak partycjonowanie i indeksowanie.
 
  Model fizyczny jest rafinowany przez administratorów bazy danych w celu zwiększenia wydajności, ale programiści piszący kod aplikacji przede wszystkim zawężają się do pracy z modelem logicznym, pisząc zapytania SQL i wywołując procedury składowane. Modele domen są zwykle używane jako narzędzie do przechwytywania i komunikowania się z wymaganiami aplikacji, często tak jak w przypadku diagramów obojętnych, które są wyświetlane i omówione w wczesnych etapach projektu, a następnie porzucone. Wiele zespołów programistycznych pomija Tworzenie modelu koncepcyjnego i rozpoczyna się od określenia tabel, kolumn i kluczy w relacyjnej bazie danych.
@@ -38,6 +39,7 @@ Model magazynu i mapowania mogą ulegać zmianom w razie potrzeby bez konieczno�
 Entity Framework używa tego modelu i mapowania plików do tworzenia, odczytywania, aktualizowania i usuwania operacji względem jednostek i relacji w modelu koncepcyjnym do równoważnych operacji w źródle danych. Entity Framework nawet obsługuje mapowanie jednostek w modelu koncepcyjnym na procedury składowane w źródle danych. Aby uzyskać więcej informacji, zobacz [specyfikacje CSDL, SSDL i MSL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec).
 
 ## <a name="map-objects-to-data"></a>Mapowanie obiektów na dane
+
  Programowanie zorientowane obiektowo stanowi wyzwanie dla współpracy z systemami magazynowania danych. Chociaż organizacja klas często odzwierciedla organizację tabel relacyjnych baz danych, dopasowanie nie jest idealne. Wiele znormalizowanych tabel często odpowiada pojedynczej klasie, a relacje między klasami są często reprezentowane inaczej niż reprezentowane są relacje między tabelami. Na przykład, aby reprezentować klienta dla zamówienia sprzedaży, `Order` Klasa może używać właściwości, która zawiera odwołanie do wystąpienia `Customer` klasy, natomiast `Order` wiersz tabeli w bazie danych zawiera kolumnę klucza obcego (lub zestaw kolumn) o wartości odpowiadającej wartości klucza podstawowego w `Customer` tabeli. `Customer`Klasa może mieć właściwość o nazwie, `Orders` która zawiera kolekcję wystąpień `Order` klasy, podczas gdy `Customer` tabela w bazie danych nie ma porównywalnej kolumny. Entity Framework zapewnia deweloperom elastyczność umożliwiającą reprezentowanie relacji w ten sposób lub bardziej ścisłe relacje między modelami, które są reprezentowane w bazie danych.
 
  Istniejące rozwiązania podjęły próbę mostkowania tej przerwy, która jest często nazywana "niezgodnością", tylko mapując klasy zorientowane obiektowo i właściwości na relacyjne tabele i kolumny. Zamiast korzystać z tego tradycyjnego podejścia, Entity Framework mapuje tabele relacyjne, kolumny i ograniczenia klucza obcego w modelach logicznych na jednostki i relacje w modelu koncepcyjnym. Zapewnia to większą elastyczność zarówno w definiowaniu obiektów, jak i optymalizowaniu modelu logicznego. Narzędzia Entity Data Model generują rozszerzalne klasy danych na podstawie modelu koncepcyjnego. Klasy te są klasami częściowymi, które można rozszerzyć z dodatkowymi elementami członkowskimi dodawanymi przez dewelopera. Domyślnie klasy, które są generowane dla określonego modelu koncepcyjnego, pochodzą z klas podstawowych, które udostępniają usługi dla jednostek materializacji jako obiekty i do śledzenia i zapisywania zmian. Deweloperzy mogą używać tych klas do pracy z jednostkami i relacjami jako obiektami związanymi ze skojarzeniami. Deweloperzy mogą również dostosować klasy, które są generowane dla modelu koncepcyjnego. Aby uzyskać więcej informacji, zobacz [Praca z obiektami](working-with-objects.md).
@@ -78,6 +80,6 @@ Aby dowiedzieć się więcej na temat Entity Framework, zobacz:
 
 [Zasoby Entity Framework](resources.md) — zawiera linki do tematów koncepcyjnych i linki do zewnętrznych tematów i zasobów służących do kompilowania aplikacji Entity Framework.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Program Entity Framework na platformie ADO.NET](index.md)

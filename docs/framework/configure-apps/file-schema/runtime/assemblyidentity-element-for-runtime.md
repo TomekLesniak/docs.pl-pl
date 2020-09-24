@@ -9,14 +9,15 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-ms.openlocfilehash: b026dafbde796bbd8726de56b532ed6710ba2290
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f3e74b05ac0fd7c57963f2aad047ba3f2d63a10a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154312"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170184"
 ---
 # <a name="assemblyidentity-element-for-runtime"></a>\<assemblyIdentity>, element dla \<runtime>
+
 Zawiera informacje identyfikacyjne zestawu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ culture="assembly culture"/>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -56,6 +58,7 @@ culture="assembly culture"/>
 |`x86`|32-bitowy procesor x86 — natywny lub w środowisku Windows on Windows (WOW) na platformie 64-bitowej.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -68,6 +71,7 @@ culture="assembly culture"/>
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Każdy **\<dependentAssembly>** element musi mieć jeden **\<assemblyIdentity>** element podrzędny.  
   
  Jeśli `processorArchitecture` atrybut jest obecny, `<assemblyIdentity>` element ma zastosowanie tylko do zestawu z odpowiednią architekturą procesora. Jeśli `processorArchitecture` atrybut nie istnieje, `<assemblyIdentity>` element może być stosowany do zestawu z dowolną architekturą procesora.  
@@ -102,6 +106,7 @@ culture="assembly culture"/>
  Jeśli plik konfiguracji zawiera element bez `<assemblyIdentity>` `processorArchitecture` atrybutu i nie zawiera elementu, który jest zgodny z platformą, element bez `processorArchitecture` atrybutu jest używany.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak podać informacje o zestawie.  
   
 ```xml  
@@ -119,7 +124,7 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

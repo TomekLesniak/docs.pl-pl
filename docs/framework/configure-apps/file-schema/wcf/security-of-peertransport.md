@@ -2,14 +2,15 @@
 title: <security> dla <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: f73634ed-f896-4968-bf74-5e5ac52d3b6b
-ms.openlocfilehash: 270ca844f586be256b6483653c868d1cc4396657
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f37c336b0e42993e1eef3f06e2f919705f425a2e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399762"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169963"
 ---
 # <a name="security-of-peertransport"></a>\<security> dla \<peerTransport>
+
 Zawiera ustawienia zabezpieczeń skojarzone z kanałem równorzędnym, w tym typ używanego uwierzytelniania i zabezpieczenia używane do transportu wiadomości.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Zawiera ustawienia zabezpieczeń skojarzone z kanałem równorzędnym, w tym typ
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -58,7 +60,7 @@ Zawiera ustawienia zabezpieczeń skojarzone z kanałem równorzędnym, w tym typ
 |-------------|-----------------|  
 |[\<peerTransport>](peertransport.md)|Definiuje transport równorzędny dla niestandardowego powiązania.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement>
 - <xref:System.ServiceModel.PeerSecuritySettings>

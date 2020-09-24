@@ -2,14 +2,15 @@
 title: Wnioskowanie tabel
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: 52ffd3fe90eb491dd01acf8538276cc828fdb309
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4a3d7b239dbc405cf2acae967b5be401dc772e38
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784491"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177556"
 ---
 # <a name="inferring-tables"></a>Wnioskowanie tabel
+
 Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XML, ADO.net najpierw określa, które elementy XML reprezentują tabele. Poniższe struktury XML powodują powstanie tabeli dla schematu **zestawu danych** :  
   
 - Elementy z atrybutami  
@@ -19,6 +20,7 @@ Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XM
 - Powtarzające się elementy  
   
 ## <a name="elements-with-attributes"></a>Elementy z atrybutami  
+
  Elementy, które mają określone atrybuty, powodują wywnioskowane tabele. Rozważmy na przykład następujący kod XML:  
   
 ```xml  
@@ -30,9 +32,9 @@ Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XM
   
  Proces wnioskowania tworzy tabelę o nazwie "element1".  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
@@ -40,6 +42,7 @@ Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XM
 |wartość2|Organizacji1|  
   
 ## <a name="elements-with-child-elements"></a>Elementy z elementami podrzędnymi  
+
  Elementy, które mają elementy podrzędne, powodują wywnioskowane tabele. Rozważmy na przykład następujący kod XML:  
   
 ```xml  
@@ -52,9 +55,9 @@ Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XM
   
  Proces wnioskowania tworzy tabelę o nazwie "element1".  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |ChildElement1|  
 |-------------------|  
@@ -71,9 +74,9 @@ Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XM
   
  Proces wnioskowania tworzy tabelę o nazwie "DocumentElement".  
   
- **Zestawu** NewDataSet  
+ **Zestaw danych:** NewDataSet  
   
- **Tabele** DocumentElement  
+ **Tabela:** DocumentElement  
   
 |Element1|Element2|  
 |--------------|--------------|  
@@ -89,15 +92,16 @@ Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XM
   
  Proces wnioskowania generuje **zestaw danych** o nazwie "DocumentElement", który zawiera tabelę o nazwie "element1".  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |attr1|attr2|  
 |-----------|-----------|  
 |sekwencj|wartość2|  
   
 ## <a name="repeating-elements"></a>Powtarzające się elementy  
+
  Elementy powtarzające się powodują powstanie pojedynczej tabeli wywnioskowanej. Rozważmy na przykład następujący kod XML:  
   
 ```xml  
@@ -109,16 +113,16 @@ Gdy wywnioskowano schemat dla programu <xref:System.Data.DataSet> z dokumentu XM
   
  Proces wnioskowania tworzy tabelę o nazwie "element1".  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |Element1_Text|  
 |--------------------|  
 |Organizacji1|  
 |Text2|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wnioskowanie relacyjnej struktury elementu DataSet z pliku XML](inferring-dataset-relational-structure-from-xml.md)
 - [Ładowanie elementu DataSet z pliku XML](loading-a-dataset-from-xml.md)

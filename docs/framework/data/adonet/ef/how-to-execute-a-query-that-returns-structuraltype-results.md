@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2314f2a2-b1c3-40c4-95bb-cdf9b21a7b53
-ms.openlocfilehash: e9b9c806dd77ea90399aaefdaa751cbd0ab938e9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4b3a63cb23851c6545f330ebd2371e1a34ff13e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546747"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198317"
 ---
 # <a name="how-to-execute-a-query-that-returns-structuraltype-results"></a>Instrukcje: Wykonywanie zapytania, które zwraca wyniki StructuralType
+
 W tym temacie pokazano, jak wykonać polecenie względem modelu koncepcyjnego za pomocą <xref:System.Data.EntityClient.EntityCommand> obiektu i jak pobrać <xref:System.Data.Metadata.Edm.StructuralType> wyniki przy użyciu <xref:System.Data.EntityClient.EntityDataReader> . <xref:System.Data.Metadata.Edm.EntityType> <xref:System.Data.Metadata.Edm.RowType> Klasy i są <xref:System.Data.Metadata.Edm.ComplexType> pochodne od <xref:System.Data.Metadata.Edm.StructuralType> klasy.  
   
 ### <a name="to-run-the-code-in-this-example"></a>Aby uruchomić kod w tym przykładzie  
@@ -25,6 +26,7 @@ W tym temacie pokazano, jak wykonać polecenie względem modelu koncepcyjnego za
      [!code-vb[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#namespaces)]  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład wykonuje zapytanie zwracające <xref:System.Data.Metadata.Edm.EntityType> wyniki. W przypadku przekazania następującego zapytania jako argumentu do `ExecuteStructuralTypeQuery` funkcji, funkcja wyświetla szczegółowe informacje o `Products` :  
   
  [!code-csharp[DP EntityServices Concepts 2#SelectProduct](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#selectproduct)]  
@@ -36,7 +38,7 @@ W tym temacie pokazano, jak wykonać polecenie względem modelu koncepcyjnego za
  [!code-csharp[DP EntityServices Concepts#eSQLStructuralTypes](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#esqlstructuraltypes)]
  [!code-vb[DP EntityServices Concepts#eSQLStructuralTypes](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#esqlstructuraltypes)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie do jednostki SQL](./language-reference/entity-sql-reference.md)
 - [Dostawca EntityClient dla programu Entity Framework](entityclient-provider-for-the-entity-framework.md)

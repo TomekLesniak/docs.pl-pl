@@ -3,12 +3,12 @@ title: Dane relacyjne a NoSQL
 description: Informacje o relacyjnych i NoSQL danych w aplikacjach natywnych w chmurze
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: cc47faa4fcd4468de9ddc468e488297db4289ff5
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6e7725c2d67452218d1c6bda89c2fec6aa4a2b96
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613788"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163638"
 ---
 # <a name="relational-vs-nosql-data"></a>Dane relacyjne a NoSQL
 
@@ -31,7 +31,7 @@ Bazy danych NoSQL obejmują kilka różnych modeli do uzyskiwania dostępu do da
 | Magazyn dokumentów | Dane i metadane są przechowywane hierarchicznie w dokumentach opartych na notacji JSON w bazie danych. |
 | Magazyn wartości klucza | Najprostszym z baz danych NoSQL, dane są reprezentowane jako kolekcja par klucz-wartość. |
 | Magazyn szerokiej kolumny | Powiązane dane są przechowywane jako zestaw zagnieżdżonych par klucz-wartość w jednej kolumnie. |
-| Sklep Graph | Dane są przechowywane w strukturze grafu jako właściwości węzła, krawędzi i danych. |
+| Magazyn grafowy | Dane są przechowywane w strukturze grafu jako właściwości węzła, krawędzi i danych. |
 
 ## <a name="the-cap-theorem"></a>Theorem zakończenia
 
@@ -53,7 +53,7 @@ Relacyjne bazy danych zwykle zapewniają spójność i dostępność, ale nie to
 
 Wiele systemów relacyjnych baz danych obsługuje wbudowane funkcje replikacji, w których kopie podstawowej bazy danych można wykonać w innych wystąpieniach serwera pomocniczego. Operacje zapisu są wykonywane w wystąpieniu podstawowym i replikowane do poszczególnych serwerów pomocniczych. Po awarii wystąpienie podstawowe może działać w trybie failover w celu zapewnienia wysokiej dostępności. Serwery pomocnicze mogą być również używane do dystrybucji operacji odczytu. Podczas gdy operacje zapisu są zawsze wykonywane względem repliki podstawowej, operacje odczytu mogą być kierowane do dowolnej z serwerów pomocniczych w celu ograniczenia obciążenia systemu.
 
-Dane mogą również być podzielone na partycje w wielu węzłach, na przykład z [fragmentowania](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-scale-introduction). Jednak fragmentowania znacząco zwiększa koszty operacyjne przez Spitting dane w wielu kawałkach, które nie mogą się łatwo komunikować. Zarządzanie nimi może być kosztowne i czasochłonne. Może to mieć wpływ na wydajność, sprzężenia tabel i integralność referencyjną.
+Dane mogą również być podzielone na partycje w wielu węzłach, na przykład z [fragmentowania](/azure/sql-database/sql-database-elastic-scale-introduction). Jednak fragmentowania znacząco zwiększa koszty operacyjne przez Spitting dane w wielu kawałkach, które nie mogą się łatwo komunikować. Zarządzanie nimi może być kosztowne i czasochłonne. Może to mieć wpływ na wydajność, sprzężenia tabel i integralność referencyjną.
 
 Jeśli repliki danych zostały utracone w klastrze relacyjnej bazy danych "wysoce spójnym", nie będzie można zapisywać w bazie danych. System odrzuci operację zapisu, ponieważ nie może replikować zmiany do innej repliki danych. Każdą replikę danych należy zaktualizować przed ukończeniem transakcji.
 
@@ -109,15 +109,15 @@ Usługę Azure Database można zainicjować w kilka minut, wybierając liczbę r
 
 ## <a name="azure-sql-database"></a>Azure SQL Database
 
-Zespoły programistyczne z doświadczeniem w Microsoft SQL Server powinni rozważyć [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/). Jest to w pełni zarządzana relacyjna baza danych jako usługa (DBaaS) oparta na aparacie Microsoft SQL Server Database. Usługa udostępnia wiele funkcji dostępnych w lokalnej wersji SQL Server i uruchamia najnowszą stabilną wersję aparatu bazy danych SQL Server Database.
+Zespoły programistyczne z doświadczeniem w Microsoft SQL Server powinni rozważyć [Azure SQL Database](/azure/sql-database/). Jest to w pełni zarządzana relacyjna baza danych jako usługa (DBaaS) oparta na aparacie Microsoft SQL Server Database. Usługa udostępnia wiele funkcji dostępnych w lokalnej wersji SQL Server i uruchamia najnowszą stabilną wersję aparatu bazy danych SQL Server Database.
 
 Do użytku z mikrousługą natywną w chmurze Azure SQL Database jest dostępny z trzema opcjami wdrażania:
 
-- Pojedyncza baza danych reprezentuje w pełni zarządzane SQL Database uruchomione na [serwerze Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-servers) w chmurze platformy Azure. Baza danych jest uznawana za [*zawartą*](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) , ponieważ nie ma żadnych zależności konfiguracji na źródłowym serwerze bazy danych.
+- Pojedyncza baza danych reprezentuje w pełni zarządzane SQL Database uruchomione na [serwerze Azure SQL Database](/azure/sql-database/sql-database-servers) w chmurze platformy Azure. Baza danych jest uznawana za [*zawartą*](/sql/relational-databases/databases/contained-databases) , ponieważ nie ma żadnych zależności konfiguracji na źródłowym serwerze bazy danych.
   
-- [Wystąpienie zarządzane](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) jest w pełni zarządzanym wystąpieniem aparatu bazy danych Microsoft SQL Server, które zapewnia niemal 100% zgodności z SQL Server lokalnymi. Ta opcja obsługuje większe bazy danych, do 35 TB i jest umieszczana w [Virtual Network platformy Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) w celu lepszego odizolowania.
+- [Wystąpienie zarządzane](/azure/sql-database/sql-database-managed-instance) jest w pełni zarządzanym wystąpieniem aparatu bazy danych Microsoft SQL Server, które zapewnia niemal 100% zgodności z SQL Server lokalnymi. Ta opcja obsługuje większe bazy danych, do 35 TB i jest umieszczana w [Virtual Network platformy Azure](/azure/virtual-network/virtual-networks-overview) w celu lepszego odizolowania.
 
-- [Azure SQL Database bezserwerowy](https://docs.microsoft.com/azure/sql-database/sql-database-serverless) jest warstwą obliczeniową dla pojedynczej bazy danych, która automatycznie skaluje się w oparciu o zapotrzebowanie na obciążenie. Są one rozliczane tylko za ilość obliczeń użytych w ciągu sekundy. Usługa jest doskonale nadaje się do obciążeń z sporadycznymi, nieprzewidywalnymi wzorcami użycia, odplatanymi okresami braku aktywności. Warstwa obliczeniowa bezserwerowa również automatycznie wstrzymuje bazy danych w trakcie okresów nieaktywnych, aby rozliczać tylko opłaty za magazyn. Wznawia się automatycznie po powrocie działania.
+- [Azure SQL Database bezserwerowy](/azure/sql-database/sql-database-serverless) jest warstwą obliczeniową dla pojedynczej bazy danych, która automatycznie skaluje się w oparciu o zapotrzebowanie na obciążenie. Są one rozliczane tylko za ilość obliczeń użytych w ciągu sekundy. Usługa jest doskonale nadaje się do obciążeń z sporadycznymi, nieprzewidywalnymi wzorcami użycia, odplatanymi okresami braku aktywności. Warstwa obliczeniowa bezserwerowa również automatycznie wstrzymuje bazy danych w trakcie okresów nieaktywnych, aby rozliczać tylko opłaty za magazyn. Wznawia się automatycznie po powrocie działania.
 
 Poza tradycyjnym stosem Microsoft SQL Server platforma Azure oferuje także zarządzane wersje trzech popularnych baz danych typu open source.
 
@@ -151,7 +151,7 @@ MariaDB ma silną społeczność i jest używana przez wiele dużych przedsiębi
 
 Azure Database for PostgreSQL jest dostępny z dwiema opcjami wdrażania:
 
-- Opcja wdrożenia [pojedynczego serwera](https://docs.microsoft.com/azure/postgresql/concepts-servers) to centralny punkt administracyjny dla wielu baz danych, w których można wdrożyć wiele baz danych. Ceny są ustalane na podstawie rdzeni i magazynu.
+- Opcja wdrożenia [pojedynczego serwera](/azure/postgresql/concepts-servers) to centralny punkt administracyjny dla wielu baz danych, w których można wdrożyć wiele baz danych. Ceny są ustalane na podstawie rdzeni i magazynu.
 
 - [Opcja Citus)](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/) jest obsługiwana przez technologię danych Citus. Zapewnia wysoką wydajność dzięki *skalowaniu w poziomie* pojedynczej bazy danych w setkach węzłów w celu zapewnienia szybkiej wydajności i skalowania. Ta opcja umożliwia aparatowi dopasowanie większej ilości danych do pamięci, zrównoleglanie zapytań na setki węzłów oraz szybsze indeksowanie danych.
 
@@ -175,7 +175,7 @@ Można dystrybuować bazy danych Cosmos w różnych regionach lub na całym świ
 
 Cosmos DB obsługuje klastrowanie [aktywne/aktywne](https://kemptechnologies.com/white-papers/unfog-confusion-active-passive-activeactive-load-balancing/) na poziomie globalnym, co umożliwia skonfigurowanie dowolnych regionów bazy danych do obsługi *zarówno zapisu, jak i odczytu*.
 
-Protokół [wielu wzorców](https://docs.microsoft.com/azure/cosmos-db/multi-master-benefits) jest ważną funkcją w Cosmos DB, która zapewnia następujące funkcje:
+Protokół [wielu wzorców](/azure/cosmos-db/multi-master-benefits) jest ważną funkcją w Cosmos DB, która zapewnia następujące funkcje:
 
 - Nieograniczone elastyczne zapisywanie i skalowalność.
 
@@ -183,7 +183,7 @@ Protokół [wielu wzorców](https://docs.microsoft.com/azure/cosmos-db/multi-mas
 
 - Gwarantowane odczyty i zapisy obsługiwane w czasie krótszym niż 10 milisekund w 99 percentylu.
 
-Korzystając z Cosmos DB [interfejsów API multihostingu](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), mikrousługi są automatycznie świadomi najbliższego regionu platformy Azure i wysyła do niego żądania. Najbliższy region jest identyfikowany przez Cosmos DB bez żadnych zmian w konfiguracji. Jeśli region staje się niedostępny, funkcja wiele Multihostingu będzie automatycznie kierować żądania do następnego najbliższego dostępnego regionu.
+Korzystając z Cosmos DB [interfejsów API multihostingu](/azure/cosmos-db/distribute-data-globally), mikrousługi są automatycznie świadomi najbliższego regionu platformy Azure i wysyła do niego żądania. Najbliższy region jest identyfikowany przez Cosmos DB bez żadnych zmian w konfiguracji. Jeśli region staje się niedostępny, funkcja wiele Multihostingu będzie automatycznie kierować żądania do następnego najbliższego dostępnego regionu.
 
 ### <a name="multi-model-support"></a>Obsługa wielomodelowa
 
@@ -202,11 +202,11 @@ Zespoły programistyczne mogą migrować istniejące bazy danych Mongo, Gremlin 
 
 > Wewnętrznie Cosmos przechowuje dane w prostym formacie struktury składającym się z typów danych pierwotnych. Dla każdego żądania aparat bazy danych tłumaczy dane pierwotne na wybraną reprezentację modelu.
 
-W poprzedniej tabeli Zanotuj opcję [interfejs API tabel](https://docs.microsoft.com/azure/cosmos-db/table-introduction) . Ten interfejs API to ewolucja Table Storage platformy Azure. Oba te elementy mają ten sam model tabeli podstawowej, ale interfejs API tabel Cosmos DB dodaje usprawnienia Premium niedostępne w interfejsie API usługi Azure Storage. Poniższa tabela zawiera kontrast funkcji.
+W poprzedniej tabeli Zanotuj opcję [interfejs API tabel](/azure/cosmos-db/table-introduction) . Ten interfejs API to ewolucja Table Storage platformy Azure. Oba te elementy mają ten sam model tabeli podstawowej, ale interfejs API tabel Cosmos DB dodaje usprawnienia Premium niedostępne w interfejsie API usługi Azure Storage. Poniższa tabela zawiera kontrast funkcji.
 
 |  | Azure Table Storage  | Azure Cosmos DB  |
 | :-------- | :-------- |:-------- |
-| Opóźnienie | Fast | Opóźnienie jednocyfrowej milisekundy dla odczytu i zapisu w dowolnym miejscu na świecie |
+| Opóźnienie | Duża | Opóźnienie jednocyfrowej milisekundy dla odczytu i zapisu w dowolnym miejscu na świecie |
 | Przepływność | Limit liczby operacji 20 000 na tabelę | 10 000 000 operacji na tabelę |
 | Dystrybucja globalna | Pojedynczy region z opcjonalnym dodatkowym regionem odczytu | Gotowe dystrybucji do wszystkich regionów z automatycznym trybem failover |
 | Indeksowanie | Dostępne tylko dla właściwości klucza partycji i wiersza | Automatyczne indeksowanie wszystkich właściwości |
@@ -214,13 +214,13 @@ W poprzedniej tabeli Zanotuj opcję [interfejs API tabel](https://docs.microsoft
 
 Mikrousługi korzystające z usługi Azure Table Storage można łatwo migrować do interfejs API tabel Cosmos DB. Nie są wymagane żadne zmiany w kodzie.
 
-### <a name="tunable-consistency"></a>Możliwość dostosowania spójność
+### <a name="tunable-consistency"></a>Dostosowywana spójność
 
 Wcześniej w sekcji *relacyjnej i NoSQL* został omówiony temat *spójności danych*. Spójność danych oznacza *integralność* danych. Usługi natywne w chmurze z rozproszonymi danymi są zależne od replikacji i muszą mieć zasadniczą kompromis między spójnością odczytu, dostępnością i opóźnieniem.
 
 Większość rozproszonych baz danych umożliwia deweloperom wybór dwóch modeli spójności: silną spójność i spójność ostateczna. *Silna spójność* to złoty standard programowania danych. Gwarantuje to, że zapytanie zawsze zwróci najbardziej aktualne dane — nawet jeśli system musi nawiązać opóźnienie, czekając na przereplikację aktualizacji we wszystkich kopiach baz danych. Baza danych skonfigurowana pod kątem *spójności ostatecznej* zwróci dane natychmiast, nawet jeśli te dane nie są najbardziej aktualną kopią. Ta ostatnia opcja zapewnia wyższą dostępność, większą skalę i zwiększoną wydajność.
 
-Azure Cosmos DB oferuje pięć dobrze zdefiniowanych [modeli spójności](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) przedstawionych na rysunku 5-13.
+Azure Cosmos DB oferuje pięć dobrze zdefiniowanych [modeli spójności](/azure/cosmos-db/consistency-levels) przedstawionych na rysunku 5-13.
 
 ![Wykres spójności Cosmos DB](./media/cosmos-consistency-level-graph.png)
 
@@ -240,7 +240,7 @@ W artykule, w którym znajdują [się za 9-piłką: Cosmos DB poziomów spójno�
 
 ### <a name="partitioning"></a>Partycjonowanie
 
-Azure Cosmos DB obejmuje automatyczne [partycjonowanie](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview) w celu skalowania bazy danych w celu spełnienia wymagań dotyczących wydajności usług natywnych w chmurze.
+Azure Cosmos DB obejmuje automatyczne [partycjonowanie](/azure/cosmos-db/partitioning-overview) w celu skalowania bazy danych w celu spełnienia wymagań dotyczących wydajności usług natywnych w chmurze.
 
 Zarządzanie danymi w Cosmos DB danych przez tworzenie baz danych, kontenerów i elementów.
 
@@ -254,15 +254,15 @@ Do partycjonowania kontenera elementy są podzielone na odrębne podzestawy o na
 
 Zwróć uwagę na powyższym rysunku, jak każdy element zawiera klucz partycji "City" lub "Lotnisko". Klucz Określa partycję logiczną elementu. Elementy o kodzie miejscowości są przypisywane do kontenera po lewej stronie i elementy z kodem lotniska, do kontenera po prawej stronie. Połączenie wartości klucza partycji z wartością identyfikatora tworzy indeks elementu, który jednoznacznie identyfikuje element.
 
-Wewnętrznie program Cosmos DB automatycznie zarządza umieszczaniem [partycji logicznych](https://docs.microsoft.com/azure/cosmos-db/partition-data) w partycjach fizycznych w celu spełnienia wymagań dotyczących skalowalności i wydajności kontenera. W miarę wzrostu wymagań dotyczących przepływności i magazynu aplikacji Azure Cosmos DB redystrybuuje partycje logiczne na większą liczbę serwerów. Operacje redystrybucji są zarządzane przez Cosmos DB i wywoływane bez przeszkód lub przestojów.
+Wewnętrznie program Cosmos DB automatycznie zarządza umieszczaniem [partycji logicznych](/azure/cosmos-db/partition-data) w partycjach fizycznych w celu spełnienia wymagań dotyczących skalowalności i wydajności kontenera. W miarę wzrostu wymagań dotyczących przepływności i magazynu aplikacji Azure Cosmos DB redystrybuuje partycje logiczne na większą liczbę serwerów. Operacje redystrybucji są zarządzane przez Cosmos DB i wywoływane bez przeszkód lub przestojów.
 
-## <a name="newsql-databases"></a>Bazy danych NewSQL
+## <a name="newsql-databases"></a>Bazy danych SQL
 
 *NewSQL*   jest nową technologią bazy danych, która łączy rozproszoną skalowalność NoSQL za pomocą gwarancji KWASowej relacyjnej bazy danych. Bazy danych NewSQL są ważne dla systemów firmowych, które muszą przetwarzać duże ilości danych, w środowiskach rozproszonych, z pełną obsługą transakcyjną i zgodnością KWASów. Baza danych NoSQL może zapewniać ogromną skalowalność, ale nie gwarantuje spójności danych. Sporadyczne problemy z niespójnymi danymi mogą stanowić obciążenie zespołu deweloperów. Deweloperzy muszą konstruować zabezpieczenia w swoim kodzie mikrousług, aby zarządzać problemami spowodowanymi niespójnymi danymi.
 
 Natywna platforma obliczeniowa w chmurze (CNCF) zawiera kilka projektów bazy danych NewSQL.
 
-| Project | Właściwości |
+| Projekt | Właściwości |
 | :-------- | :-------- |
 | Baza danych Cockroach |Zgodna z KWASem relacyjna baza danych, która skaluje się globalnie. Dodaj nowy węzeł do klastra, a CockroachDB Zadbaj o zrównoważenie danych w różnych wystąpieniach i lokalizacje geograficzne. Tworzy, zarządza i dystrybuuje repliki w celu zapewnienia niezawodności. Jest to open source i dostępne bezpłatnie.  |
 | TiDB | Baza danych open source, która obsługuje obciążenia hybrydowe i analityczne przetwarzania (HTAP). Jest to zgodne z bazą danych MySQL i funkcje skalowalności w poziomie, silnej spójności i wysokiej dostępności.  TiDB działa jak serwer MySQL. Można nadal używać istniejących bibliotek klienta programu MySQL, bez konieczności wprowadzania szczegółowych zmian w kodzie aplikacji. |

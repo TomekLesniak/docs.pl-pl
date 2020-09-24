@@ -3,12 +3,12 @@ title: Odporność na platformę Azure
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Odporność infrastruktury chmurowej na platformę Azure
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 752f1320d9dfa18e52b078763d221a787da15e8e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 88634bc60df15cc93b1769a85879795ae383757a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613983"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163768"
 ---
 # <a name="azure-platform-resiliency"></a>Odporność na platformę Azure
 
@@ -39,7 +39,7 @@ Mamy sprawność, że aplikacja reaguje na awarie i nadal pozostaje funkcjonalna
 
 Awarie różnią się w zakresie wpływu. Awaria sprzętowa, taka jak uszkodzony dysk, może mieć wpływ na pojedynczy węzeł w klastrze. Uszkodzony przełącznik sieciowy może mieć wpływ na cały stojak serwera. Mniej typowe błędy, takie jak utrata mocy, mogą zakłócać całe centrum danych. Rzadko, cały region jest niedostępny.
 
-[Nadmiarowość](https://docs.microsoft.com/azure/architecture/guide/design-principles/redundancy) jest jednym ze sposobów zapewnienia odporności aplikacji. Dokładny poziom nadmiarowości zależy od wymagań firmy i wpłynie na koszt i złożoność systemu. Na przykład wdrożenie w wielu regionach jest droższe i bardziej skomplikowane niż w przypadku wdrożenia w jednym regionie. Aby zarządzać trybem failover i powrotu po awarii, musisz wykonać procedury operacyjne. Dodatkowy koszt i złożoność mogą być usprawiedliwione w niektórych scenariuszach firmy, ale nie w innych.
+[Nadmiarowość](/azure/architecture/guide/design-principles/redundancy) jest jednym ze sposobów zapewnienia odporności aplikacji. Dokładny poziom nadmiarowości zależy od wymagań firmy i wpłynie na koszt i złożoność systemu. Na przykład wdrożenie w wielu regionach jest droższe i bardziej skomplikowane niż w przypadku wdrożenia w jednym regionie. Aby zarządzać trybem failover i powrotu po awarii, musisz wykonać procedury operacyjne. Dodatkowy koszt i złożoność mogą być usprawiedliwione w niektórych scenariuszach firmy, ale nie w innych.
 
 Aby zapewnić nadmiarowość, należy zidentyfikować ścieżki krytyczne w aplikacji, a następnie określić, czy istnieje nadmiarowość w każdym punkcie ścieżki? Jeśli podsystem nie powinien działać, aplikacja przejdzie w tryb failover na coś innego? Na koniec należy jasno zrozumieć te funkcje, które są wbudowane w platformę chmury platformy Azure, z których można korzystać w celu spełnienia wymagań dotyczących nadmiarowości. Poniżej przedstawiono zalecenia dotyczące tworzenia nadmiarowości:
 
@@ -49,13 +49,13 @@ Aby zapewnić nadmiarowość, należy zidentyfikować ścieżki krytyczne w apli
 
 - *Planowanie wdrożenia wieloregionowego.* Jeśli aplikacja zostanie wdrożona w jednym regionie, a ten region staje się niedostępny, aplikacja również stanie się niedostępna. Może to być nieakceptowalne w warunkach umowy dotyczącej poziomu usług aplikacji. Zamiast tego warto rozważyć wdrożenie aplikacji i jej usług w wielu regionach. Na przykład klaster usługi Azure Kubernetes Service (AKS) jest wdrażany w jednym regionie. Aby chronić system przed awarią regionalną, można wdrożyć aplikację w wielu klastrach AKS w różnych regionach i użyć funkcji [par regionów](https://buildazure.com/2017/01/06/azure-region-pairs-explained/) do koordynowania aktualizacji platformy i określania priorytetów działań związanych z odzyskiwaniem.
 
-- *Włącz [replikację geograficzną](https://docs.microsoft.com/azure/sql-database/sql-database-active-geo-replication).* Replikacja geograficzna dla usług, takich jak Azure SQL Database i Cosmos DB, spowoduje utworzenie replik pomocniczych danych w wielu regionach. Podczas gdy obie usługi będą automatycznie replikować dane w tym samym regionie, replikacja geograficzna chroni przed awarią regionalną, umożliwiając przechodzenie w tryb failover do regionu pomocniczego. Innym najlepszym rozwiązaniem dla centrów replikacji geograficznej wokół przechowywania obrazów kontenerów. Aby wdrożyć usługę w programie AKS, należy przechowywać i ściągać obraz z repozytorium. Azure Container Registry integruje się z usługą AKS i umożliwia bezpieczne przechowywanie obrazów kontenerów. Aby zwiększyć wydajność i dostępność, należy rozważyć replikację geograficzną obrazów do rejestru w każdym regionie, w którym znajduje się klaster AKS. Każdy klaster AKS następnie ściąga obrazy kontenerów z rejestru kontenerów lokalnych w jego regionie, jak pokazano na rysunku 6-4:
+- *Włącz [replikację geograficzną](/azure/sql-database/sql-database-active-geo-replication).* Replikacja geograficzna dla usług, takich jak Azure SQL Database i Cosmos DB, spowoduje utworzenie replik pomocniczych danych w wielu regionach. Podczas gdy obie usługi będą automatycznie replikować dane w tym samym regionie, replikacja geograficzna chroni przed awarią regionalną, umożliwiając przechodzenie w tryb failover do regionu pomocniczego. Innym najlepszym rozwiązaniem dla centrów replikacji geograficznej wokół przechowywania obrazów kontenerów. Aby wdrożyć usługę w programie AKS, należy przechowywać i ściągać obraz z repozytorium. Azure Container Registry integruje się z usługą AKS i umożliwia bezpieczne przechowywanie obrazów kontenerów. Aby zwiększyć wydajność i dostępność, należy rozważyć replikację geograficzną obrazów do rejestru w każdym regionie, w którym znajduje się klaster AKS. Każdy klaster AKS następnie ściąga obrazy kontenerów z rejestru kontenerów lokalnych w jego regionie, jak pokazano na rysunku 6-4:
 
 ![Zreplikowane zasoby w różnych regionach](./media/replicated-resources.png)
 
 **Rysunek 6-4**. Zreplikowane zasoby w różnych regionach
 
-- *Zaimplementuj moduł równoważenia obciążenia ruchem DNS.* Usługa [Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview) zapewnia wysoką dostępność aplikacji o krytycznym znaczeniu przez równoważenie obciążenia na poziomie systemu DNS. Może kierować ruch do różnych regionów na podstawie lokalizacji geograficznej, czasu odpowiedzi klastra, a nawet kondycji punktu końcowego aplikacji. Na przykład usługa Azure Traffic Manager może kierować klientów do najbliższego klastra AKS i wystąpienia aplikacji. Jeśli masz wiele klastrów AKS w różnych regionach, użyj Traffic Manager, aby kontrolować sposób przepływu ruchu do aplikacji uruchamianych w każdym klastrze. Na rysunku 6-5 przedstawiono ten scenariusz.
+- *Zaimplementuj moduł równoważenia obciążenia ruchem DNS.* Usługa [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) zapewnia wysoką dostępność aplikacji o krytycznym znaczeniu przez równoważenie obciążenia na poziomie systemu DNS. Może kierować ruch do różnych regionów na podstawie lokalizacji geograficznej, czasu odpowiedzi klastra, a nawet kondycji punktu końcowego aplikacji. Na przykład usługa Azure Traffic Manager może kierować klientów do najbliższego klastra AKS i wystąpienia aplikacji. Jeśli masz wiele klastrów AKS w różnych regionach, użyj Traffic Manager, aby kontrolować sposób przepływu ruchu do aplikacji uruchamianych w każdym klastrze. Na rysunku 6-5 przedstawiono ten scenariusz.
 
 ![AKS i Traffic Manager platformy Azure](./media/aks-traffic-manager.png)
 
@@ -79,7 +79,7 @@ Chmura jest w trakcie skalowania. Możliwość zwiększenia/zmniejszenia zasobó
 
 - *Należy unikać koligacji.* Najlepszym rozwiązaniem jest upewnienie się, że węzeł nie wymaga lokalnej koligacji, często nazywanej *sesją programu Sticky Notes*. Żądanie powinno być możliwe do skierowania do dowolnego wystąpienia. Jeśli zachodzi potrzeba utrwalenia stanu, powinien on zostać zapisany w rozproszonej pamięci podręcznej, na przykład w [pamięci podręcznej usługi Azure Redis](https://azure.microsoft.com/services/cache/).
 
-- *Skorzystaj z funkcji skalowania automatycznego platformy.* Korzystaj z wbudowanych funkcji skalowania automatycznego, jeśli jest to możliwe, a nie mechanizmów niestandardowych lub innych firm. Jeśli to możliwe, Użyj reguł skalowania zaplanowanego, aby upewnić się, że zasoby są dostępne bez opóźnień uruchamiania, ale Dodaj aktywne Skalowanie automatyczne do odpowiednich reguł, aby sprostać nieoczekiwanym zmianom popytu. Aby uzyskać więcej informacji, zobacz [wskazówki dotyczące skalowania](https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling)automatycznego.
+- *Skorzystaj z funkcji skalowania automatycznego platformy.* Korzystaj z wbudowanych funkcji skalowania automatycznego, jeśli jest to możliwe, a nie mechanizmów niestandardowych lub innych firm. Jeśli to możliwe, Użyj reguł skalowania zaplanowanego, aby upewnić się, że zasoby są dostępne bez opóźnień uruchamiania, ale Dodaj aktywne Skalowanie automatyczne do odpowiednich reguł, aby sprostać nieoczekiwanym zmianom popytu. Aby uzyskać więcej informacji, zobacz [wskazówki dotyczące skalowania](/azure/architecture/best-practices/auto-scaling)automatycznego.
 
 - *Agresywne skalowanie w poziomie.* Ostatecznym celem jest agresywne skalowanie w poziomie, dzięki czemu można szybko zaspokoić natychmiastowe wzrosty ruchu bez utraty firmy. A następnie Skaluj w dół (czyli usunąć niepotrzebne wystąpienia), aby zachować stabilność systemu. Prostym sposobem wdrożenia tego ustawienia jest ustawienie okresu dla chłodzenia, czyli czasu oczekiwania między operacjami skalowania, do pięciu minut w przypadku dodawania zasobów oraz do 15 minut na usuwanie wystąpień.
 
@@ -93,7 +93,7 @@ Zachęcamy do stosowania najlepszych rozwiązań dotyczących implementowania op
 
 - *Azure Service Bus.* Klient Service Bus uwidacznia [klasę RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) , która może być skonfigurowana z interwałem wycofywania, liczbą ponownych prób i <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer%2A> , która określa maksymalny czas trwania operacji. Domyślną zasadą jest dziewięć Maksymalna liczba ponownych prób z 30-sekundowym okresem wycofywania między kolejnymi próbami.
 
-- *Azure SQL Database.* W przypadku korzystania z biblioteki [Entity Framework Core](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency) podano ponowną pomoc techniczną.
+- *Azure SQL Database.* W przypadku korzystania z biblioteki [Entity Framework Core](/ef/core/miscellaneous/connection-resiliency) podano ponowną pomoc techniczną.
 
 - *Usługa Azure Storage.* Biblioteka klienta magazynu obsługuje operacje ponawiania. Strategie różnią się w zależności od tabel, obiektów blob i kolejek usługi Azure Storage. Ponadto alternatywna ponowna próba jest przełączana między lokacjami podstawowej i pomocniczej usługi magazynu po włączeniu funkcji nadmiarowości geograficznej.
 
