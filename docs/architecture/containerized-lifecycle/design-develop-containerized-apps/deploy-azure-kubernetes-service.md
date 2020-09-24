@@ -2,16 +2,16 @@
 title: Organizowanie aplikacji mikrousług i aplikacji z wieloma kontenerami w celu zapewnienia wysokiej skalowalności i dostępności
 description: Dowiedz się, jak wdrożyć aplikację przy użyciu usługi Azure Kubernetes Service.
 ms.date: 08/06/2020
-ms.openlocfilehash: b4deb9906e0fece7fb611b6988df576e8b07fe46
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: ba9887c0a4837c16a60ebeb006416c0fa8c105e0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916089"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163599"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks"></a>Wdrażanie w usłudze Azure Kubernetes Service (AKS)
 
-Można korzystać z AKS przy użyciu preferowanego systemu operacyjnego klienta (Windows, macOS lub Linux) z zainstalowanym interfejsem wiersza polecenia platformy Azure (Azure CLI). Aby uzyskać więcej informacji, zapoznaj się z [dokumentacją interfejsu wiersza polecenia platformy Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) i [Podręcznikiem instalacji](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) dla dostępnych środowisk.
+Można korzystać z AKS przy użyciu preferowanego systemu operacyjnego klienta (Windows, macOS lub Linux) z zainstalowanym interfejsem wiersza polecenia platformy Azure (Azure CLI). Aby uzyskać więcej informacji, zapoznaj się z [dokumentacją interfejsu wiersza polecenia platformy Azure](/cli/azure/?view=azure-cli-latest) i [Podręcznikiem instalacji](/cli/azure/install-azure-cli?view=azure-cli-latest) dla dostępnych środowisk.
 
 ## <a name="create-the-aks-environment-in-azure"></a>Tworzenie środowiska AKS na platformie Azure
 
@@ -60,7 +60,7 @@ az aks get-credentials --resource-group explore-docker-aks-rg --name explore-doc
 
 ![Dane wyjściowe konsoli z powyższego polecenia: scalono "Eksploruj-Docker-AKS" jako bieżący kontekst w/Home/Miguel/.Kube/config.](media/deploy-azure-kubernetes-service/get-credentials-command-result.png)
 
-**Rysunek 4-19**. `aks get-credentials`wynik polecenia.
+**Rysunek 4-19**. `aks get-credentials` wynik polecenia.
 
 A następnie pobieranie węzłów z polecenia kubectl:
 
@@ -70,7 +70,7 @@ kubectl get nodes
 
 ![Dane wyjściowe konsoli z powyższego polecenia: lista węzłów ze stanem, wiek (czas działania) i wersja](media/deploy-azure-kubernetes-service/kubectl-get-nodes-command-result.png)
 
-**Rysunek 4-20**. `kubectl get nodes`wynik polecenia.
+**Rysunek 4-20**. `kubectl get nodes` wynik polecenia.
 
 > [!div class="step-by-step"]
 > [Poprzedni](orchestrate-high-scalability-availability.md) 

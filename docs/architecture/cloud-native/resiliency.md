@@ -3,12 +3,12 @@ title: Odporność rozwiązań natywnych dla chmury
 description: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure | Natywna odporność w chmurze
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: f3aa89e3ae21b13a31f65013b59636b3f931553c
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 5c4fb261515c151fd666cc33cbb020447716c814
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613775"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163560"
 ---
 # <a name="cloud-native-resiliency"></a>Odporność rozwiązań natywnych dla chmury
 
@@ -26,7 +26,7 @@ W tym środowisku usługa musi być wrażliwa na wiele różnych wyzwań:
 
 - Nieoczekiwane opóźnienie sieci — czas przesyłania żądania usługi do odbiornika i z powrotem.
 
-- [Awarie przejściowe](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults) — krótkie Błędy łączności sieciowej.
+- [Awarie przejściowe](/azure/architecture/best-practices/transient-faults) — krótkie Błędy łączności sieciowej.
 
 - Zatorem przez długotrwałą operację synchroniczną.
 

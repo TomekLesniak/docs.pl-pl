@@ -2,12 +2,12 @@
 title: Aplikacje monolityczne
 description: Zapoznaj się z podstawowymi pojęciami dotyczącymi aplikacji konteneryzowania monolitycznych.
 ms.date: 08/06/2020
-ms.openlocfilehash: f188a2ff576436d9378030e0a858ffb8110dad17
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: c9a5baf209a47f62f421a236c0b04fe5dae37e3a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915442"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163547"
 ---
 # <a name="monolithic-applications"></a>Aplikacje monolityczne
 
@@ -37,7 +37,7 @@ Z punktu widzenia infrastruktury każdy serwer może uruchamiać wiele aplikacji
 
 Na koniec z perspektywy dostępności aplikacje monolityczne muszą być wdrażane jako całość; oznacza to, że w przypadku konieczności *zatrzymania i uruchomienia*programu wszystkie funkcje i wszyscy użytkownicy będą mieć na to zastosowanie w oknie wdrożenia. W niektórych sytuacjach korzystanie z platformy Azure i kontenerów może zminimalizować te sytuacje i zmniejszyć prawdopodobieństwo przestoju aplikacji, jak widać na rysunku 4-3.
 
-Aplikacje monolityczne można wdrażać na platformie Azure przy użyciu dedykowanych maszyn wirtualnych dla każdego wystąpienia. Za pomocą [usługi Azure VM Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/)można łatwo skalować maszyny wirtualne.
+Aplikacje monolityczne można wdrażać na platformie Azure przy użyciu dedykowanych maszyn wirtualnych dla każdego wystąpienia. Za pomocą [usługi Azure VM Scale Sets](/azure/virtual-machine-scale-sets/)można łatwo skalować maszyny wirtualne.
 
 Za pomocą [usługi Azure App Services](https://azure.microsoft.com/services/app-service/) można także uruchamiać aplikacje monolityczne i łatwo skalować wystąpienia bez potrzeby zarządzania maszynami wirtualnymi. Na platformie Azure App Services można uruchamiać pojedyncze wystąpienia kontenerów platformy Docker, a także uprościć wdrażanie.
 

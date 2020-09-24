@@ -2,14 +2,15 @@
 title: <peer> dla <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: b134e21d-e5b5-458e-9309-626dbf8db4ed
-ms.openlocfilehash: 50db8eb381249c3b880c4b1dd96ec3813d51ce67
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7f6669d3f53a6ee0d189786fa9ca3625fdedd127
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556118"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162481"
 ---
 # <a name="peer-of-servicecredentials"></a>\<peer> dla \<serviceCredentials>
+
 Określa bieżące poświadczenia dla węzła równorzędnego.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,9 +32,11 @@ Określa bieżące poświadczenia dla węzła równorzędnego.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -50,7 +53,7 @@ Określa bieżące poświadczenia dla węzła równorzędnego.
 |-------------|-----------------|  
 |[\<serviceCredentials>](servicecredentials.md)|Określa poświadczenie, które ma być używane w uwierzytelnianiu usługi i ustawień związanych z walidacją poświadczeń klienta.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.PeerCredentialElement>
 - <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.Peer%2A>

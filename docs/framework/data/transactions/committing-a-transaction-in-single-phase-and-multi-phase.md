@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 694ea153-e4db-41ae-96ac-9ac66dcb69a9
-ms.openlocfilehash: 2f4486998f347bf1db6d22433e6e48b553609c18
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: f46c22294da4db017eceb0bfd0b5cb2bb093c0b5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141827"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147414"
 ---
 # <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>Jednofazowe i wielofazowe zatwierdzanie transakcji
+
 Poszczególne zasoby używane w transakcji jest zarządzane przez Menedżera zasobów (MB), w których działania są koordynowany przez Menedżera transakcji (TM). Zasoby związane z [rejestrowaniem w temacie transakcji](enlisting-resources-as-participants-in-a-transaction.md) omawiają sposób, w jaki zasób (lub wiele zasobów) może być zarejestrowany w transakcji. W tym temacie opisano, jak można skoordynowanego między wyświetlone zasoby zobowiązaniom transakcji.  
   
  Na końcu transakcji aplikacja żąda, aby transakcja została zatwierdzona lub wycofana. Menedżer transakcji musi wyeliminowania zagrożeń, takich jak niektórych menedżerów zasobów głosowanie zatwierdzić, podczas gdy inne głosowania można wycofać transakcji.  
@@ -25,6 +26,7 @@ Poszczególne zasoby używane w transakcji jest zarządzane przez Menedżera zas
  Jeśli po prostu chcesz informujące o wyniku transakcji i zrezygnować z uczestnictwa w głosowaniu, należy zarejestrować dla <xref:System.Transactions.Transaction.TransactionCompleted> zdarzenia.  
   
 ## <a name="two-phase-commit-2pc"></a>Dwufazowego (2PC)  
+
  W pierwszej fazy transakcji Menedżer transakcji pyta każdy zasób, aby ustalić, czy zatwierdzeniu lub wycofać transakcji. Drugi etap transakcji Menedżer transakcji powiadamia każdego zasobu wynik jego zapytań, dzięki któremu można wykonać wszelkie niezbędne czyszczenia.  
   
  Aby wziąć udział w tym rodzaju transakcji, Menedżer zasobów musi zaimplementować <xref:System.Transactions.IEnlistmentNotification> interfejs, który zapewnia metody wywoływane przez Menedżera TM jako powiadomienia podczas 2PC.  W poniższym przykładzie przedstawiono przykład takiej implementacji.  
@@ -33,6 +35,7 @@ Poszczególne zasoby używane w transakcji jest zarządzane przez Menedżera zas
  [!code-vb[Tx_Enlist#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/tx_enlist/vb/enlist.vb#2)]  
   
 ### <a name="prepare-phase-phase-1"></a>Przygotuj faza (fazy 1)  
+
  Po odebraniu <xref:System.Transactions.CommittableTransaction.Commit%2A> żądania od aplikacji Menedżer transakcji rozpoczyna przygotowywanie wszystkich uczestników uczestniczących przez wywołanie <xref:System.Transactions.IEnlistmentNotification.Prepare%2A> metody dla każdego zarejestrowanego zasobu w celu uzyskania głosu każdego zasobu na transakcję.  
   
  Menedżer zasobów implementujący <xref:System.Transactions.IEnlistmentNotification> interfejs powinien najpierw zaimplementować <xref:System.Transactions.IEnlistmentNotification.Prepare%28System.Transactions.PreparingEnlistment%29> metodę, jak pokazano w poniższym przykładzie.  
@@ -70,6 +73,7 @@ public void Prepare(PreparingEnlistment preparingEnlistment)
  Aplikacja jest powiadamiana o pomyślnym zobowiązaniu transakcji po zagłosowaniu wszystkich menedżerów zasobów <xref:System.Transactions.PreparingEnlistment.Prepared%2A> .  
   
 ### <a name="commit-phase-phase-2"></a>Zatwierdź fazy (faza 2)  
+
  W drugiej fazy transakcji, gdy Menedżer transakcji odbiera pomyślne przygotowuje z wszystkich menedżerów zasobów (wywoływane ma wszystkich menedżerów zasobów <xref:System.Transactions.PreparingEnlistment.Prepared%2A> na końcu fazy 1), wywołuje ono <xref:System.Transactions.IEnlistmentNotification.Commit%2A> metody dla każdego Menedżera zasobów. Menedżerowie zasobów mogą następnie wprowadzić trwałe zmiany i zakończyć zatwierdzenie.  
   
  Jeśli którykolwiek z menedżerów zasobów zgłosił niepowodzenie przygotowania w fazie 1, Menedżer transakcji wywołuje <xref:System.Transactions.IEnlistmentNotification.Rollback%2A> metodę dla każdego Menedżera zasobów i wskazuje niepowodzenie zatwierdzenia aplikacji.  
@@ -97,6 +101,7 @@ public void Rollback (Enlistment enlistment)
  Menedżer zasobów powinien wykonać wszelkie prace niezbędne do zakończenia transakcji na podstawie typu powiadomień i informuje Menedżer transakcji, który zakończył się przez wywołanie metody <xref:System.Transactions.Enlistment.Done%2A> metody w <xref:System.Transactions.Enlistment> parametru. Tej pracy można wykonać na wątku roboczego. Należy pamiętać, że powiadomieniami 2 może się tak zdarzyć tekście w tym samym wątku, który wywołał <xref:System.Transactions.PreparingEnlistment.Prepared%2A> metody w fazie 1. W związku z tym nie należy wykonywać żadnej pracy po <xref:System.Transactions.PreparingEnlistment.Prepared%2A> wywołaniu (na przykład zwalniać blokad), które należy wykonać przed odebraniem powiadomień fazy 2.  
   
 ### <a name="implementing-indoubt"></a>Zaimplementowanie wątpliwości  
+
  Na koniec należy zaimplementować <xref:System.Transactions.IEnlistmentNotification.InDoubt%2A> metodę dla Menedżera zasobów lotnych. Ta metoda jest wywoływana, gdy Menedżer transakcji traci kontaktu z jednego lub więcej uczestników, więc ich stan jest nieznany. W takim przypadku powinni wylogować się ten fakt tak, aby można było zbadać później czy wszystkich uczestników transakcji pozostały w niespójnym stanie.  
   
 ```csharp
@@ -108,6 +113,7 @@ public void InDoubt (Enlistment enlistment)
 ```  
   
 ## <a name="single-phase-commit-optimization"></a>Jedna faza zatwierdzania optymalizacji  
+
  Protokół zatwierdzania pojedynczej fazy jest bardziej wydajny w czasie wykonywania, ponieważ wszystkie aktualizacje są wykonywane bez jawnej koordynacji. Aby uzyskać więcej informacji na temat tego protokołu, zobacz [Optymalizacja przy użyciu jednej fazy zatwierdzania i powiadomienia o pojedynczej fazie](optimization-spc-and-promotable-spn.md).  
   
 ## <a name="see-also"></a>Zobacz też

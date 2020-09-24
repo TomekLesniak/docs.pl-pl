@@ -3,14 +3,15 @@ title: Podstawowe informacje dotyczące transakcji
 description: Przejrzyj podstawy transakcji w programie .NET. Wszystkie transakcje muszą mieć podstawowe właściwości kwasu (niepodzielne, spójne, izolowane i trwałe).
 ms.date: 03/30/2017
 ms.assetid: 353f4ee2-e6bf-4b1c-b1c8-385fc8a486c0
-ms.openlocfilehash: 49292172b07985d379bfa5d520798d7d97af5749
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 5efc778d6c50c16ac7335ed4d624dbd03d26a2e1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141942"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147388"
 ---
 # <a name="transaction-fundamentals"></a>Podstawowe informacje dotyczące transakcji
+
 Transakcje wiążą wiele zadań jednocześnie. Załóżmy na przykład, że aplikacja wykonuje dwa zadania. Najpierw tworzy nową tabelę w bazie danych. Następnie wywołuje obiekt specjalne do zbierania, formatowania i wstawianie danych w nowej tabeli. Te dwa zadania są powiązane i wzajemnie nawet wtedy, w taki sposób, że ma zostać Unikaj tworzenia nowej tabeli, o ile nie można wypełniać danych. Wykonywanie zadania, zarówno w zakresie pojedynczą transakcję wymusza połączenie między nimi. Jeśli drugie zadanie nie powiedzie się, pierwsze zadanie jest przywrócenie punkt przed utworzeniem nowej tabeli.  
   
  Aby zapewnić zachowanie przewidywalne, wszystkie transakcje musi mieć podstawowe właściwości ACID (częściowych, spójne, izolowane i trwałe). Te właściwości wymuszać stosowanie rolę transakcji krytycznym wykonywanie oferty. Aby uzyskać więcej informacji o KWASie, zobacz [właściwości ACID](/windows/win32/cossdk/acid-properties). Podsumowanie kwas gwarantuje zadania powodzenie lub niepowodzenie jako jednostki związane z zestawu. W transakcji albo przetwarzania terminologii transakcji zatwierdza lub przerywa. Można zatwierdzić transakcji wszyscy uczestnicy należy zagwarantować, wszelkie zmiany w danych będą trwałe. Zmiany muszą zostać zachowane niezależnie awarie systemu lub inne nieprzewidziane zdarzenia. Jeśli pojedynczego uczestnika nie powiedzie się gwarancji, cała transakcja nie powiedzie się. Wszystkie zmiany danych w zakresie transakcji zostaną przywrócone do określonego punktu zestawu.  

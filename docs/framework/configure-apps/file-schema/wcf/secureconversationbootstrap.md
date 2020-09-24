@@ -2,14 +2,15 @@
 title: <secureConversationBootstrap>
 ms.date: 03/30/2017
 ms.assetid: 66b46f95-fa2d-4b5b-b6ce-0572ab0cdd50
-ms.openlocfilehash: b3187cb51b6fd32797c9ad401c704d5f16c6f7e8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 02072c55e299d9e3a5d53b61c891a9ee9837ada0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399912"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183718"
 ---
 # \<secureConversationBootstrap>
+
 Określa wartości domyślne używane do inicjowania usługi bezpiecznej konwersacji.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,9 +40,11 @@ Określa wartości domyślne używane do inicjowania usługi bezpiecznej konwers
 ```  
   
 ## <a name="type"></a>Typ  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -74,7 +77,7 @@ Określa wartości domyślne używane do inicjowania usługi bezpiecznej konwers
 |-------------|-----------------|  
 |[\<security>](security-of-custombinding.md)|Określa opcje zabezpieczeń dla niestandardowego powiązania.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>
@@ -84,5 +87,5 @@ Określa wartości domyślne używane do inicjowania usługi bezpiecznej konwers
 - [Rozszerzanie powiązań](../../../wcf/extending/extending-bindings.md)
 - [Powiązania niestandardowe](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Zabezpieczenia wiązania niestandardowego](../../../wcf/samples/custom-binding-security.md)

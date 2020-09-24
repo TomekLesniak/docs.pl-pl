@@ -2,12 +2,12 @@
 title: Stan i dane w aplikacjach platformy Docker
 description: Poznaj dostępną opcję zapisywania stanu w aplikacjach kontenerowych.
 ms.date: 08/06/2020
-ms.openlocfilehash: dc9a1a3eccb77e9fd67e69fd3295f3db1edf5e66
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: d55519e9340ec06588c2dae3e7363d03f263ce39
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915336"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163469"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stan i dane w aplikacjach platformy Docker
 
@@ -27,7 +27,7 @@ Z magazynu zdalnego:
 
 - [Usługa Azure Storage](https://azure.microsoft.com/documentation/services/storage/) zapewnia magazyn z systemem geograficznym, co zapewnia dobre długoterminowe rozwiązanie trwałości dla kontenerów.
 
-- Zdalne relacyjne bazy danych, takie jak [Azure SQL Database](https://azure.microsoft.com/services/sql-database/), bazy danych NoSQL, takie jak [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)lub usługi pamięci podręcznej, takie jak [Redis](https://redis.io/)
+- Zdalne relacyjne bazy danych, takie jak [Azure SQL Database](https://azure.microsoft.com/services/sql-database/), bazy danych NoSQL, takie jak [Azure Cosmos DB](/azure/cosmos-db/introduction)lub usługi pamięci podręcznej, takie jak [Redis](https://redis.io/)
 
 Z kontenera Docker:
 

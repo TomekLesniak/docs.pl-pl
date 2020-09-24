@@ -2,14 +2,15 @@
 title: <transport> dla <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
-ms.openlocfilehash: b975015a9c9a0af53117900c45d917ce1c1a53e9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 996b3655b0698595256c9a7197f705d46e6e9fcf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73732813"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169820"
 ---
 # <a name="transport-of-nethttpbinding"></a>\<transport> dla \<netHttpBinding>
+
 Definiuje właściwości kontrolujące parametry uwierzytelniania dla transportu HTTP.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ Definiuje właściwości kontrolujące parametry uwierzytelniania dla transportu
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -75,6 +77,7 @@ Definiuje właściwości kontrolujące parametry uwierzytelniania dla transportu
 |Certyfikat|Wykonuje uwierzytelnianie klienta przy użyciu certyfikatu. Ta opcja działa tylko wtedy `Mode` , gdy atrybut elementu nadrzędnego `security` jest ustawiony na transport i nie będzie działać, jeśli zostanie ustawiony na wartość TransportCredentialOnly.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -84,6 +87,7 @@ Definiuje właściwości kontrolujące parametry uwierzytelniania dla transportu
 |[\<security>](security-of-nethttpbinding.md)|Definiuje funkcje zabezpieczeń dla programu [\<netHttpBinding>](nethttpbinding.md) .|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje użycie zabezpieczeń transportu SSL z powiązaniem podstawowym. Domyślnie podstawowe powiązanie obsługuje komunikację HTTP.  
   
 ```xml  
@@ -118,7 +122,7 @@ Definiuje właściwości kontrolujące parametry uwierzytelniania dla transportu
 </system.serviceModel>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>
 - <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
@@ -126,5 +130,5 @@ Definiuje właściwości kontrolujące parametry uwierzytelniania dla transportu
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

@@ -2,14 +2,15 @@
 title: <knownType>
 ms.date: 03/30/2017
 ms.assetid: ee2b7be3-7148-4a3a-b861-48e7330615e5
-ms.openlocfilehash: 61f51b2ecd572ba254317a01e0f514503c7cc9e4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6bb6a419d863172951d82a67de044cb8cfc30f49
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397875"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183796"
 ---
 # \<knownType>
+
 Określa typ, który ma być używany przez program <xref:System.Runtime.Serialization.DataContractSerializer> podczas deserializacji. Element określa "znany typ", który jest zwracany przez pole lub właściwość "zadeklarowanego typu". Aby uzyskać więcej informacji, zobacz [znane typy kontraktu danych](../../../wcf/feature-details/data-contract-known-types.md).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,9 +30,11 @@ Określa typ, który ma być używany przez program <xref:System.Runtime.Seriali
 ```  
   
 ## <a name="type"></a>Typ  
+
  `string`  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -53,6 +56,7 @@ Określa typ, który ma być używany przez program <xref:System.Runtime.Seriali
 |[\<add>](add-of-declaredtypes-element.md)|Dodaje zadeklarowany typ do kolekcji zadeklarowanych typów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby uzyskać więcej informacji na temat znanych typów, zobacz [znane typy kontraktu danych](../../../wcf/feature-details/data-contract-known-types.md) i <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
  Zobacz, [\<dataContractSerializer>](datacontractserializer-element.md) Aby zapoznać się z przykładem użycia tego elementu.  
@@ -70,7 +74,7 @@ Określa typ, który ma być używany przez program <xref:System.Runtime.Seriali
 </add>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - [Znane typy kontraktów danych](../../../wcf/feature-details/data-contract-known-types.md)
