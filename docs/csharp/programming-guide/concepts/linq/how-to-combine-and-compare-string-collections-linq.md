@@ -3,19 +3,20 @@ title: Łączenie i porównywanie kolekcji ciągów (LINQ) (C#)
 description: Ten przykład scala pliki zawierające wiersze tekstu. Dowiedz się, jak wykonać prostą kombinację, Unię i wspólną część zestawów wierszy w LINQ w języku C#.
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: bfbdb9a0a3d531b56578b242c91596d9e41b6cd6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 7bc2b2fbc6a6ce09305f870275f2f0ea5379d4fc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105353"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167603"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="27894-104">Łączenie i porównywanie kolekcji ciągów (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="27894-104">How to combine and compare string collections (LINQ) (C#)</span></span>
-<span data-ttu-id="27894-105">Ten przykład pokazuje, jak scalać pliki zawierające wiersze tekstu, a następnie sortować wyniki.</span><span class="sxs-lookup"><span data-stu-id="27894-105">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="27894-106">W związku z tym pokazuje, jak wykonać prostą metodę łączenia, Unii i przecięcia na dwóch zestawach wierszy tekstu.</span><span class="sxs-lookup"><span data-stu-id="27894-106">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="a12ae-104">Łączenie i porównywanie kolekcji ciągów (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="a12ae-104">How to combine and compare string collections (LINQ) (C#)</span></span>
+
+<span data-ttu-id="a12ae-105">Ten przykład pokazuje, jak scalać pliki zawierające wiersze tekstu, a następnie sortować wyniki.</span><span class="sxs-lookup"><span data-stu-id="a12ae-105">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="a12ae-106">W związku z tym pokazuje, jak wykonać prostą metodę łączenia, Unii i przecięcia na dwóch zestawach wierszy tekstu.</span><span class="sxs-lookup"><span data-stu-id="a12ae-106">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
   
-### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="27894-107">Aby skonfigurować projekt i pliki tekstowe</span><span class="sxs-lookup"><span data-stu-id="27894-107">To set up the project and the text files</span></span>  
+### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="a12ae-107">Aby skonfigurować projekt i pliki tekstowe</span><span class="sxs-lookup"><span data-stu-id="a12ae-107">To set up the project and the text files</span></span>  
   
-1. <span data-ttu-id="27894-108">Skopiuj te nazwy do pliku tekstowego o nazwie names1.txt i Zapisz go w folderze projektu:</span><span class="sxs-lookup"><span data-stu-id="27894-108">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
+1. <span data-ttu-id="a12ae-108">Skopiuj te nazwy do pliku tekstowego o nazwie names1.txt i Zapisz go w folderze projektu:</span><span class="sxs-lookup"><span data-stu-id="a12ae-108">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
   
     ```text  
     Bankov, Peter  
@@ -30,7 +31,7 @@ ms.locfileid: "87105353"
     Garcia, Debra  
     ```  
   
-2. <span data-ttu-id="27894-109">Skopiuj te nazwy do pliku tekstowego o nazwie names2.txt i Zapisz go w folderze projektu.</span><span class="sxs-lookup"><span data-stu-id="27894-109">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="27894-110">Należy pamiętać, że dwa pliki mają nazwy wspólne.</span><span class="sxs-lookup"><span data-stu-id="27894-110">Note that the two files have some names in common.</span></span>  
+2. <span data-ttu-id="a12ae-109">Skopiuj te nazwy do pliku tekstowego o nazwie names2.txt i Zapisz go w folderze projektu.</span><span class="sxs-lookup"><span data-stu-id="a12ae-109">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="a12ae-110">Należy pamiętać, że dwa pliki mają nazwy wspólne.</span><span class="sxs-lookup"><span data-stu-id="a12ae-110">Note that the two files have some names in common.</span></span>  
   
     ```text  
     Liu, Jinghao  
@@ -45,7 +46,7 @@ ms.locfileid: "87105353"
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a><span data-ttu-id="27894-111">Przykład</span><span class="sxs-lookup"><span data-stu-id="27894-111">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="a12ae-111">Przykład</span><span class="sxs-lookup"><span data-stu-id="a12ae-111">Example</span></span>  
   
 ```csharp  
 class MergeStrings  
@@ -169,10 +170,11 @@ class MergeStrings
 */  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="27894-112">Kompilowanie kodu</span><span class="sxs-lookup"><span data-stu-id="27894-112">Compiling the Code</span></span>  
- <span data-ttu-id="27894-113">Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.</span><span class="sxs-lookup"><span data-stu-id="27894-113">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="27894-114">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="27894-114">See also</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="a12ae-112">Kompilowanie kodu</span><span class="sxs-lookup"><span data-stu-id="a12ae-112">Compiling the Code</span></span>  
 
-- [<span data-ttu-id="27894-115">LINQ i ciągi (C#)</span><span class="sxs-lookup"><span data-stu-id="27894-115">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
-- [<span data-ttu-id="27894-116">LINQ i katalogi plików (C#)</span><span class="sxs-lookup"><span data-stu-id="27894-116">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+ <span data-ttu-id="a12ae-113">Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.</span><span class="sxs-lookup"><span data-stu-id="a12ae-113">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="a12ae-114">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="a12ae-114">See also</span></span>
+
+- [<span data-ttu-id="a12ae-115">LINQ i ciągi (C#)</span><span class="sxs-lookup"><span data-stu-id="a12ae-115">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
+- [<span data-ttu-id="a12ae-116">LINQ i katalogi plików (C#)</span><span class="sxs-lookup"><span data-stu-id="a12ae-116">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
