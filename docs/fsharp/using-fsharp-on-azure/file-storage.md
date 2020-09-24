@@ -3,12 +3,13 @@ title: Rozpoczynanie pracy z usługą Azure File Storage przy użyciu języka F#
 description: Usługa Magazyn plików Azure umożliwia przechowywanie plików danych w chmurze oraz instalowanie udziału plików w chmurze z maszyny wirtualnej platformy Azure lub z aplikacji lokalnych działających w systemie Windows.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 04bee82fd9d3c652cd99b9c951880f6ba89610ee
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.custom: devx-track-fsharp
+ms.openlocfilehash: dd19b156e73774f4eca63afd3f4c10a4a7b8d46c
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548465"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100129"
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>Rozpoczynanie pracy z usługą Azure File Storage przy użyciu języka F\#
 
@@ -146,7 +147,7 @@ Aby uzyskać więcej informacji na temat usługi Azure File Storage, zobacz te l
 - [How to use AzCopy with Microsoft Azure Storage (Jak używać narzędzia AzCopy z usługą Magazyn Microsoft Azure)](/azure/storage/storage-use-azcopy)
 - [Tworzenie, pobieranie i wyświetlanie listy obiektów BLOB za pomocą interfejsu wiersza polecenia platformy Azure](/azure/storage/blobs/storage-quickstart-blobs-cli#create-and-manage-file-shares)
 
-### <a name="reference"></a>Tematy pomocy
+### <a name="reference"></a>Dokumentacja
 
 - [Dokumentacja biblioteki klienta usługi Storage dla platformy .NET](/dotnet/api/overview/azure/storage)
 - [Dokumentacja interfejsu API REST usługi plików](/rest/api/storageservices/fileservices/File-Service-REST-API)
