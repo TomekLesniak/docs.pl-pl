@@ -2,12 +2,12 @@
 title: Korzystanie z kontenerów i orkiestratorów
 description: Korzystanie z kontenerów platformy Docker i koordynatorów Kubernetes na platformie Azure
 ms.date: 05/31/2020
-ms.openlocfilehash: f9e8672b742217388bd719262ffdfee63618fd14
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4d1dfa17fe9b4a683ab71ef2c9f97373579197af
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540546"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155552"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Korzystanie z kontenerów i orkiestratorów
 
@@ -214,7 +214,7 @@ Domyślne zachowanie podczas uruchamiania aplikacji jest skonfigurowane do korzy
 
 **Rysunek 3-7**. Opcje uruchamiania programu Visual Studio Docker
 
-Poza programowaniem lokalnym [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) zapewnia wygodny sposób pracy wielu programistów z własnymi konfiguracjami Kubernetes na platformie Azure. Jak widać na rysunku 3-7, można również uruchomić aplikację w Azure Dev Spaces.
+Poza programowaniem lokalnym [Azure dev Spaces](/azure/dev-spaces/) zapewnia wygodny sposób pracy wielu programistów z własnymi konfiguracjami Kubernetes na platformie Azure. Jak widać na rysunku 3-7, można również uruchomić aplikację w Azure Dev Spaces.
 
 Ponadto w dowolnym momencie można dodać obsługę platformy Docker do istniejącej aplikacji ASP.NET Core. W programie Visual Studio Eksplorator rozwiązań kliknij prawym przyciskiem myszy projekt i **Dodaj**  >  **obsługę platformy Docker**, jak pokazano na rysunku 3-8.
 

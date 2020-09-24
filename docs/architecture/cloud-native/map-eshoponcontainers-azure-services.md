@@ -2,12 +2,12 @@
 title: Mapowanie aplikacji eShopOnContainers na usługi platformy Azure
 description: Mapowanie eShopOnContainers do usług platformy Azure, takich jak usługa Azure Kubernetes, Brama interfejsu API i Azure Service Bus.
 ms.date: 05/13/2020
-ms.openlocfilehash: 271707404f7fb51aec59c6f682ddaefd0bac82cc
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e938bf9a8f93f9e375a22ffb94395b9e85b0fe63
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613840"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155266"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mapowanie aplikacji eShopOnContainers na usługi platformy Azure
 
@@ -38,7 +38,7 @@ Azure Portal to miejsce, w którym można zdefiniować schemat interfejsu API i 
 
 Portal dla deweloperów służy jako główny zasób dla deweloperów. Udostępnia ona deweloperom dokumentację interfejsu API, interaktywną konsolę testową i raporty dotyczące własnego użycia. Deweloperzy mogą również używać portalu do tworzenia własnych kont i zarządzania nimi, w tym subskrypcji i obsługi kluczy interfejsu API.
 
-Korzystając z APIM, aplikacje mogą uwidaczniać kilka różnych grup usług, z których każda zapewnia zaplecze dla określonego klienta frontonu. APIM jest zalecana w przypadku złożonych scenariuszy. W celu uproszczenia potrzeb można użyć uproszczonej bramy interfejsu API Ocelot. Aplikacja eShopOnContainers używa Ocelot ze względu na prostotę i ponieważ można ją wdrożyć w tym samym środowisku aplikacji co sama aplikacja. [Dowiedz się więcej na temat eShopOnContainers, APIM i Ocelot.](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern#azure-api-management)
+Korzystając z APIM, aplikacje mogą uwidaczniać kilka różnych grup usług, z których każda zapewnia zaplecze dla określonego klienta frontonu. APIM jest zalecana w przypadku złożonych scenariuszy. W celu uproszczenia potrzeb można użyć uproszczonej bramy interfejsu API Ocelot. Aplikacja eShopOnContainers używa Ocelot ze względu na prostotę i ponieważ można ją wdrożyć w tym samym środowisku aplikacji co sama aplikacja. [Dowiedz się więcej na temat eShopOnContainers, APIM i Ocelot.](../microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#azure-api-management)
 
 Inną opcją, jeśli aplikacja korzysta z programu AKS, jest wdrożenie kontrolera usługi transferu danych w usłudze Azure Gateway w ramach klastra AKS. Dzięki temu klaster może być zintegrowany z usługą Azure Application Gateway, co pozwala bramie równoważyć obciążenie ruchem do AKSch. [Dowiedz się więcej o kontrolerze usługi Azure Gateway Ingress dla AKS](https://github.com/Azure/application-gateway-kubernetes-ingress).
 
@@ -50,13 +50,13 @@ Aby uzyskać pomoc techniczną dla SQL Server bazy danych, platforma Azure oferu
 
 Aplikacja eShopOnContainers przechowuje bieżący koszyk użytkownika między żądaniami. Jest to zarządzane przez mikrousługę koszyka, która przechowuje dane w pamięci podręcznej Redis. W trakcie tworzenia tej pamięci podręcznej można wdrożyć w kontenerze, podczas gdy w środowisku produkcyjnym można korzystać z pamięci podręcznej platformy Azure dla Redis. Pamięć podręczna Azure for Redis to w pełni zarządzana usługa oferująca wysoką wydajność i niezawodność bez konieczności wdrażania i zarządzania wystąpieniami Redis lub kontenerami.
 
-Mikrousługa lokalizacji używa bazy danych MongoDB NoSQL do jej trwałości. Podczas opracowywania baza danych może zostać wdrożona we własnym kontenerze, a w środowisku produkcyjnym usługa może korzystać z [interfejsu API Azure Cosmos DB dla MongoDB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction). Jedną z zalet Azure Cosmos DB jest możliwość korzystania z wielu różnych protokołów komunikacyjnych, w tym interfejsu API SQL i wspólnych interfejsów API NoSQL, takich jak MongoDB, Cassandra, Gremlin i Azure Table Storage. Azure Cosmos DB oferuje w pełni zarządzaną i globalnie rozproszoną bazę danych jako usługę, którą można skalować w celu spełnienia potrzeb usług, które go używają.
+Mikrousługa lokalizacji używa bazy danych MongoDB NoSQL do jej trwałości. Podczas opracowywania baza danych może zostać wdrożona we własnym kontenerze, a w środowisku produkcyjnym usługa może korzystać z [interfejsu API Azure Cosmos DB dla MongoDB](/azure/cosmos-db/mongodb-introduction). Jedną z zalet Azure Cosmos DB jest możliwość korzystania z wielu różnych protokołów komunikacyjnych, w tym interfejsu API SQL i wspólnych interfejsów API NoSQL, takich jak MongoDB, Cassandra, Gremlin i Azure Table Storage. Azure Cosmos DB oferuje w pełni zarządzaną i globalnie rozproszoną bazę danych jako usługę, którą można skalować w celu spełnienia potrzeb usług, które go używają.
 
 Dane rozproszone w aplikacjach natywnych w chmurze zostały omówione bardziej szczegółowo w [rozdziale 5](distributed-data.md).
 
 ## <a name="event-bus"></a>Magistrala zdarzeń
 
-Aplikacja używa zdarzeń do przekazywania zmian między różnymi usługami. Tę funkcję można zaimplementować przy użyciu różnych implementacji, a lokalnie aplikacja eShopOnContainers używa funkcji [RabbitMQ](https://www.rabbitmq.com/). Gdy aplikacja jest hostowana na platformie Azure, będzie ona używać [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/) do obsługi komunikatów. Azure Service Bus to w pełni zarządzany Broker komunikatów integracji, który umożliwia aplikacjom i usługom komunikowanie się ze sobą w niezależny, niezawodny i asynchroniczny sposób. Azure Service Bus obsługuje poszczególne kolejki oraz oddzielne *Tematy* obsługujące scenariusze dla subskrybentów wydawcy. Aplikacja eShopOnContainers będzie używać tematów z Azure Service Bus do obsługi dystrybuowania komunikatów z jednej mikrousługi do dowolnej innej mikrousług, która wymagała reakcji na daną wiadomość.
+Aplikacja używa zdarzeń do przekazywania zmian między różnymi usługami. Tę funkcję można zaimplementować przy użyciu różnych implementacji, a lokalnie aplikacja eShopOnContainers używa funkcji [RabbitMQ](https://www.rabbitmq.com/). Gdy aplikacja jest hostowana na platformie Azure, będzie ona używać [Azure Service Bus](/azure/service-bus/) do obsługi komunikatów. Azure Service Bus to w pełni zarządzany Broker komunikatów integracji, który umożliwia aplikacjom i usługom komunikowanie się ze sobą w niezależny, niezawodny i asynchroniczny sposób. Azure Service Bus obsługuje poszczególne kolejki oraz oddzielne *Tematy* obsługujące scenariusze dla subskrybentów wydawcy. Aplikacja eShopOnContainers będzie używać tematów z Azure Service Bus do obsługi dystrybuowania komunikatów z jednej mikrousługi do dowolnej innej mikrousług, która wymagała reakcji na daną wiadomość.
 
 ## <a name="resiliency"></a>Odporność
 

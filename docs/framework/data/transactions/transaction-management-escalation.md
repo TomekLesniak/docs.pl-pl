@@ -3,23 +3,25 @@ title: Eskalacja zarządzania transakcjami
 description: Dowiedz się więcej na temat eskalacji zarządzania transakcjami w programie .NET, który jest procesem migrowania transakcji z jednego składnika menedżera transakcji do innej.
 ms.date: 03/30/2017
 ms.assetid: 1e96331e-31b6-4272-bbbd-29ed1e110460
-ms.openlocfilehash: a0b70f4be0f041be95b02537e06f9ec19a9b6183
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 83abca2e2c9acf53ce3f72d6bc55a82964b99cb5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141660"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155444"
 ---
 # <a name="transaction-management-escalation"></a>Eskalacja zarządzania transakcjami
+
 System Windows obsługuje zestaw usług i moduły, które razem stanowią Menedżera transakcji. Eskalacja zarządzania transakcji opisano proces migrację transakcji z jeden ze składników Menedżera transakcji na inny.  
   
- <xref:System.Transactions>zawiera składnik Menedżera transakcji, który koordynuje transakcję obejmującą co najwyżej pojedynczy zasób trwały lub wiele zasobów lotnych. Ponieważ Menedżer transakcji używa tylko wywołań domeny wewnątrz aplikacji, zapewnia najlepszą wydajność. Deweloperzy muszą nie komunikują się z menedżerem transakcji bezpośrednio. Zamiast tego wspólnej infrastruktury, definiujący interfejsów, wspólnego zachowania i klasy pomocy są dostarczane przez <xref:System.Transactions> przestrzeni nazw.  
+ <xref:System.Transactions> zawiera składnik Menedżera transakcji, który koordynuje transakcję obejmującą co najwyżej pojedynczy zasób trwały lub wiele zasobów lotnych. Ponieważ Menedżer transakcji używa tylko wywołań domeny wewnątrz aplikacji, zapewnia najlepszą wydajność. Deweloperzy muszą nie komunikują się z menedżerem transakcji bezpośrednio. Zamiast tego wspólnej infrastruktury, definiujący interfejsów, wspólnego zachowania i klasy pomocy są dostarczane przez <xref:System.Transactions> przestrzeni nazw.  
   
  Jeśli chcesz podać transakcję do obiektu w innej domenie aplikacji (w tym między granicami procesów i maszyn) na tym samym komputerze, <xref:System.Transactions> infrastruktura automatycznie przeniesie transakcję, która ma być zarządzana przez usługę Microsoft Distributed Transaction Coordinator (MSDTC). Eskalacji ma miejsce, gdy zarejestrować innego menedżera zasobów trwałe. W przypadku eskalacji transakcja pozostaje zarządzana w stanie podwyższonym uprawnień do momentu jego zakończenia.  
   
  Między <xref:System.Transactions> transakcji i transakcji MSDTC nie pośredniczące typu transakcji, które są udostępniane za pośrednictwem awansowanie jednego etapu rejestracji (PSPE). PSPE jest inny mechanizm ważne w <xref:System.Transactions> dla optymalizacji wydajności. Umożliwia ona zdalny trwały zasób, znajdujący się w innej domenie aplikacji, procesie lub komputerze, aby uczestniczyć w <xref:System.Transactions> transakcji bez powodowania jego eskalacji do transakcji MSDTC. Aby uzyskać więcej informacji na temat PSPE, zobacz temat [Rejestrowanie zasobów jako uczestników transakcji](enlisting-resources-as-participants-in-a-transaction.md).  
   
 ## <a name="how-escalation-is-initiated"></a>Jak jest inicjowane eskalacji  
+
  Ponieważ MSDTC znajduje się w osobnym procesie i zamocowaniem transakcji MSDTC wyniki w wiadomości przesyłanych przez proces eskalacji transakcji powoduje zmniejszenie wydajności. Aby zwiększyć wydajność, należy opóźnić lub uniknąć eskalacji do usługi MSDTC; w tym celu należy wiedzieć, jak i kiedy zostanie zainicjowane eskalacja.  
   
  Tak długo, jak <xref:System.Transactions> infrastruktury obsługi lotnych zasobów i co najwyżej jeden trwały zasób, który obsługuje jednofazowy powiadomień, pozostanie transakcji w prawo własności <xref:System.Transactions> infrastruktury. Menedżer transakcji korzysta tylko z tych zasobów, które znajdują się na żywo w tej samej domenie aplikacji i dla których rejestrowanie (zapisywanie wyniku transakcji na dysku) nie jest wymagane. Eskalację, które spowodowało, że <xref:System.Transactions> infrastruktury transferowania własność transakcji na MSDTC się stanie po:  

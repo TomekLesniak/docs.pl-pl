@@ -2,19 +2,21 @@
 title: SQL Server Compact i LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 59022359-a5a2-4c42-9a6a-5c0259c3ad17
-ms.openlocfilehash: bdd1237a8eac1c278e7704f3fbf0ae8b1deeff42
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7963db9e05eca7a7a148228c6d2fbca0221ca870
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541366"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155682"
 ---
 # <a name="sql-server-compact-and-linq-to-sql"></a>SQL Server Compact i LINQ to SQL
+
 SQL Server Compact jest domyślną bazą danych zainstalowaną z programem Visual Studio. Aby uzyskać więcej informacji, zobacz [używanie SQL Server Compact (Visual Studio)](/previous-versions/visualstudio/visual-studio-2012/aa983321(v=vs.110)).  
   
  W tym temacie omówiono kluczowe różnice w zakresie użycia, konfiguracji, zestawów funkcji i zakresu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pomocy technicznej.  
   
 ## <a name="characteristics-of-sql-server-compact-in-relation-to-linq-to-sql"></a>Charakterystyka SQL Server Compact w odniesieniu do LINQ to SQL  
+
  Domyślnie program SQL Server Compact jest instalowany dla wszystkich wersji programu Visual Studio i dlatego jest dostępny na komputerze deweloperskim do użytku z programem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] . Ale wdrożenie aplikacji, która używa SQL Server Compact i [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] różni się od tej dla aplikacji SQL Server. SQL Server Compact nie jest częścią .NET Framework i dlatego musi być spakowana z aplikacją lub pobierana oddzielnie z witryny firmy Microsoft.  
   
  Należy pamiętać o następujących cechach:  
@@ -30,6 +32,7 @@ SQL Server Compact jest domyślną bazą danych zainstalowaną z programem Visua
 - Object Relational Designer nie obsługuje SQL Server Compact.  
   
 ## <a name="feature-set"></a>Zestaw funkcji  
+
  Zestaw funkcji SQL Server Compact jest znacznie prostszy niż zestaw funkcji SQL Server w następujących sposobach, które mogą mieć wpływ na [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikacje:  
   
 - SQL Server Compact nie obsługuje procedur ani widoków składowanych.  
@@ -42,6 +45,6 @@ SQL Server Compact jest domyślną bazą danych zainstalowaną z programem Visua
   
 - SQL Server Compact nie obsługuje częściowej relacji zaufania.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie](reference.md)

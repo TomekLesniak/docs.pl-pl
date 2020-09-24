@@ -2,14 +2,15 @@
 title: <identity>
 ms.date: 03/30/2017
 ms.assetid: c1d2ae56-e231-4a07-9c3f-9f13381dc0d8
-ms.openlocfilehash: 15c9e38a141fc294c47863b1a932711444ac079a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bb9468b6005361a2a480f7c0ebfb2cbb9e9199c2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855152"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157385"
 ---
 # \<identity>
+
 Element Identity pozwala deweloperowi klienta określić w czasie projektowania oczekiwaną tożsamość usługi. W procesie uzgadniania między klientem a usługą infrastruktura Windows Communication Foundation (WCF) zapewni, że tożsamość oczekiwanej usługi jest zgodna z wartościami tego elementu i w ten sposób może być uwierzytelniona. Aby uzyskać więcej informacji, zobacz [tożsamość usługi i uwierzytelnianie](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -36,9 +37,11 @@ Element Identity pozwala deweloperowi klienta określić w czasie projektowania 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -58,16 +61,16 @@ Element Identity pozwala deweloperowi klienta określić w czasie projektowania 
 |-------------|-----------------|  
 |[\<custom>](custom.md)|Określa niestandardowy program rozpoznawania elementów równorzędnych dla netPeerTcpBinding.|  
 |[\<endpoint>](endpoint-element.md)|Konfiguruje punkty końcowe usługi.|  
-|[\<endpoint>z\<client>](endpoint-of-client.md)|Konfiguruje punkty końcowe kanału.|  
+|[\<endpoint> z \<client>](endpoint-of-client.md)|Konfiguruje punkty końcowe kanału.|  
 |[\<issuer>](issuer.md)|Określa usługę tokenu zabezpieczającego (STS) dla usługi federacyjnej.|  
 |[\<issuerMetadata>](issuermetadata.md)|Określa punkt końcowy metadanych usługi federacyjnej (Security Token Service).|  
 |[\<issuedTokenParameters>](issuedtokenparameters.md)|Definiuje parametry wystawionego tokenu w niestandardowym powiązaniu.|  
 |[\<localIssuer>](localissuer.md)|Określa usługę lokalnego tokenu zabezpieczającego (STS).|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
 - [Uwierzytelnianie i tożsamość usług](../../../wcf/feature-details/service-identity-and-authentication.md)
-- [Punkty końcowe: Adresy, powiązania i kontrakty](../../../wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Punkty końcowe: adresy, wiązania i kontrakty](../../../wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: 43b3349b2a35385dcc49d0866e0695b08eac2d2e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6fe047fc672a2b42f886e81dcace91042a552932
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551494"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156319"
 ---
 # <a name="date-and-time-data"></a>Dane daty i godziny
+
 SQL Server 2008 wprowadza nowe typy danych do obsługi informacji o dacie i godzinie. Nowe typy danych obejmują oddzielne typy dat i godzin oraz rozszerzone typy danych o większej dokładności, precyzji i świadomości strefy czasowej. Począwszy od .NET Framework w wersji 3,5 Service Pack (SP) 1, .NET Framework Dostawca danych dla SQL Server ( <xref:System.Data.SqlClient> ) zapewnia pełną obsługę wszystkich nowych funkcji aparatu bazy danych SQL Server 2008. Aby korzystać z nowych funkcji w programie SqlClient, należy zainstalować .NET Framework 3,5 SP1 (lub nowsze).  
   
  Wersje SQL Server starszej niż SQL Server 2008 mają tylko dwa typy danych do pracy z wartościami daty i godziny: `datetime` i `smalldatetime` . Oba te typy danych zawierają zarówno wartość daty, jak i wartość czasu, co utrudnia działanie tylko wartości daty i godziny. Ponadto te typy danych obsługują tylko daty, które wystąpiły po wprowadzeniu kalendarza gregoriańskiego w Anglii w 1753. Inne ograniczenie polega na tym, że te starsze typy danych nie są świadome strefy czasowej, co utrudnia pracy z danymi, które pochodzą z wielu stref czasowych.  
@@ -25,6 +26,7 @@ SQL Server 2008 wprowadza nowe typy danych do obsługi informacji o dacie i godz
 1. [Korzystanie z danych daty i godziny](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))  
   
 ## <a name="datetime-data-types-introduced-in-sql-server-2008"></a>Typy danych daty/godziny wprowadzone w SQL Server 2008  
+
  W poniższej tabeli opisano nowe typy danych daty i godziny.  
   
 |Typ danych SQL Server|Opis|  
@@ -38,6 +40,7 @@ SQL Server 2008 wprowadza nowe typy danych do obsługi informacji o dacie i godz
 > Aby uzyskać więcej informacji na temat używania `Type System Version` słowa kluczowego, zobacz <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> .  
   
 ## <a name="date-format-and-date-order"></a>Format daty i kolejność dat  
+
  Sposób, w jaki SQL Server analizuje wartości daty i godziny, zależy nie tylko od wersji systemu typu i wersji serwera, ale również w domyślnym języku i ustawieniach formatowania serwera. Ciąg daty, który działa w przypadku formatów daty jednego języka może być nierozpoznawalny, jeśli zapytanie jest wykonywane przez połączenie, które używa innego ustawienia język i format daty.  
   
  Instrukcja języka Transact-SQL SET niejawnie ustawia DATEFORMAT, który określa kolejność części daty. Można użyć instrukcji DATEFORMAT języka Transact-SQL w połączeniu, aby odróżnić wartości daty przez porządkowanie części daty w MDR, DMY, YMD, YDM, MYD lub DYM Order.  
@@ -50,6 +53,7 @@ SQL Server 2008 wprowadza nowe typy danych do obsługi informacji o dacie i godz
  Aby uzyskać więcej informacji o tym, jak SQL Server interpretuje dane daty i godziny, zobacz [Korzystanie z danych daty i godziny](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100)).  
   
 ## <a name="datetime-data-types-and-parameters"></a>Typy danych daty/godziny i parametry  
+
  Następujące wyliczenia zostały dodane do programu <xref:System.Data.SqlDbType> w celu obsługi nowych typów danych daty i godziny.  
   
 - `SqlDbType.Date`  
@@ -77,14 +81,15 @@ Możesz określić typ danych z przy <xref:System.Data.SqlClient.SqlParameter> u
   
 |Typ danych SQL Server|Typ programu .NET Framework|System. Data. SqlDbType|System. Data. DbType|  
 |--------------------------|-------------------------|---------------------------|------------------------|  
-|data|System. DateTime|Data|Data|  
+|data|System. DateTime|Date|Date|  
 |time|System. TimeSpan|Godzina|Godzina|  
 |datetime2|System. DateTime|DateTime2|DateTime2|  
 |datetimeoffset|System. DateTimeOffset|DateTimeOffset|DateTimeOffset|  
-|datetime|System. DateTime|Data i godzina|Data i godzina|  
-|smalldatetime|System. DateTime|Data i godzina|Data i godzina|  
+|datetime|System. DateTime|DateTime|DateTime|  
+|smalldatetime|System. DateTime|DateTime|DateTime|  
   
 ### <a name="sqlparameter-properties"></a>Właściwości SqlParameter  
+
  W poniższej tabeli opisano `SqlParameter` właściwości, które są istotne dla typów danych Data i godzina.  
   
 |Właściwość|Opis|  
@@ -100,11 +105,13 @@ Możesz określić typ danych z przy <xref:System.Data.SqlClient.SqlParameter> u
 > Wartość czasu, która jest mniejsza od zera lub większa lub równa 24 godzin, spowoduje wygenerowanie <xref:System.ArgumentException> .  
   
 ### <a name="creating-parameters"></a>Tworzenie parametrów  
+
  Można utworzyć <xref:System.Data.SqlClient.SqlParameter> obiekt za pomocą jego konstruktora lub przez dodanie go do <xref:System.Data.SqlClient.SqlCommand> <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekcji, wywołując `Add` metodę <xref:System.Data.SqlClient.SqlParameterCollection> . `Add`Metoda przyjmuje jako dane wejściowe argumenty konstruktora lub istniejący obiekt Parameter.  
   
  W następnych sekcjach tego tematu przedstawiono przykłady sposobu określania parametrów daty i godziny. Aby uzyskać dodatkowe przykłady pracy z parametrami, zobacz [Konfigurowanie parametrów i typów danych parametrów](../configuring-parameters-and-parameter-data-types.md) i [DataAdapter Parameters](../dataadapter-parameters.md).  
   
 ### <a name="date-example"></a>Przykład daty  
+
  Poniższy fragment kodu pokazuje, jak określić `date` parametr.  
   
 ```csharp  
@@ -122,6 +129,7 @@ parameter.Value = "2007/12/1"
 ```  
   
 ### <a name="time-example"></a>Przykład czasu  
+
  Poniższy fragment kodu pokazuje, jak określić `time` parametr.  
   
 ```csharp  
@@ -139,6 +147,7 @@ parameter.Value = DateTime.Parse("23:59:59").TimeOfDay;
 ```  
   
 ### <a name="datetime2-example"></a>Przykład Datetime2  
+
  Poniższy fragment kodu pokazuje, jak określić `datetime2` parametr z częściami daty i godziny.  
   
 ```csharp  
@@ -156,6 +165,7 @@ parameter.Value = DateTime.Parse("1666-09-02 1:00:00");
 ```  
   
 ### <a name="datetimeoffset-example"></a>Przykład DateTimeOffSet  
+
  Poniższy fragment kodu ilustruje sposób określania `DateTimeOffSet` parametru z datą, godziną i przesunięciem strefy czasowej równej 0.  
   
 ```csharp  
@@ -173,6 +183,7 @@ parameter.Value = DateTimeOffset.Parse("1666-09-02 1:00:00+0");
 ```  
   
 ### <a name="addwithvalue"></a>AddWithValue  
+
  Parametry można także podać przy użyciu `AddWithValue` metody <xref:System.Data.SqlClient.SqlCommand> , jak pokazano w poniższym fragmencie kodu. Jednak metoda nie `AddWithValue` pozwala na określenie <xref:System.Data.SqlClient.SqlParameter.DbType%2A> <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> parametru lub.  
   
 ```csharp  
@@ -191,11 +202,12 @@ command.Parameters.AddWithValue( _
   
 |Typ CLR|Wywnioskowane SqlDbType|  
 |--------------|------------------------|  
-|Data i godzina|SqlDbType. DateTime|  
+|DateTime|SqlDbType. DateTime|  
 |przedział_czasu|SqlDbType. Time|  
 |DateTimeOffset|SqlDbType. DateTimeOffset|  
   
 ## <a name="retrieving-date-and-time-data"></a>Pobieranie danych daty i godziny  
+
  W poniższej tabeli opisano metody, które są używane do pobierania wartości daty i godziny SQL Server 2008.  
   
 |Metoda SqlClient|Opis|  
@@ -218,6 +230,7 @@ command.Parameters.AddWithValue( _
 > Nowa Data i godzina `SqlDbTypes` nie są obsługiwane dla kodu, który jest wykonywany w procesie w SQL Server. Jeśli jeden z tych typów zostanie przekazywać do serwera, zostanie zgłoszony wyjątek.  
   
 ## <a name="specifying-date-and-time-values-as-literals"></a>Określanie wartości daty i godziny jako literałów  
+
  Można określić typy danych daty i godziny przy użyciu różnych formatów ciągów literałów, które SQL Server następnie szacuje się w czasie wykonywania, konwertując je do wewnętrznych struktur daty/czasu. SQL Server rozpoznaje dane daty i godziny ujęte w znaki pojedynczego cudzysłowu ('). W poniższych przykładach przedstawiono niektóre formaty:  
   
 - Alfabetyczne formaty dat, takie jak `'October 15, 2006'` .  
@@ -232,6 +245,7 @@ command.Parameters.AddWithValue( _
  Wartość czasu, która jest mniejsza od zera lub większa lub równa 24 godzin, spowoduje wygenerowanie <xref:System.ArgumentException> .  
   
 ## <a name="resources-in-sql-server-books-online"></a>Zasoby w SQL Server książki online  
+
  Aby uzyskać więcej informacji na temat pracy z wartościami daty i godziny w SQL Server, zobacz następujące zasoby w SQL Server Books Online.  
   
 |Temat|Opis|  
@@ -240,7 +254,7 @@ command.Parameters.AddWithValue( _
 |[Korzystanie z danych daty i godziny](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))|Zawiera informacje na temat typów i funkcji danych daty i godziny oraz przykłady ich użycia.|  
 |[Typy danych (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql)|Opisuje systemowe typy danych w SQL Server.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Mapowanie typu danych serwera SQL](../sql-server-data-type-mappings.md)
 - [Konfigurowanie parametrów i typów danych parametrów](../configuring-parameters-and-parameter-data-types.md)

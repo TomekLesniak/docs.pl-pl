@@ -3,14 +3,15 @@ title: <serviceCertificate>
 ms.date: 03/30/2017
 ms.assetid: 42c7f291-2ec3-43c5-8872-35897ff3c660
 author: BrucePerlerMS
-ms.openlocfilehash: 653dd9cfadbfd33f5371b77172199b946321bc8c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ce8be6eea5469b099a368a0b62e791faa7e3cbfc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70251857"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156995"
 ---
 # \<serviceCertificate>
+
 Konfiguruje certyfikat X. 509, który jest używany do szyfrowania i odszyfrowywania tokenów.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,9 +31,11 @@ Konfiguruje certyfikat X. 509, który jest używany do szyfrowania i odszyfrowyw
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -48,6 +51,7 @@ Konfiguruje certyfikat X. 509, który jest używany do szyfrowania i odszyfrowyw
 |[\<federationConfiguration>](federationconfiguration.md)|Zawiera ustawienia, które konfigurują <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) i <xref:System.IdentityModel.Services.SessionAuthenticationModule> (sam).|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod XML pokazuje użycie \<serviceCertificate> elementu. KOD XML jest pobierany z `CustomToken` przykładu.  
   
 ```xml  

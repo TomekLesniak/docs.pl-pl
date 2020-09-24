@@ -3,14 +3,15 @@ title: <securityTokenHandlers>
 ms.date: 03/30/2017
 ms.assetid: f11a631d-4094-4e11-bb03-4ede74b30281
 author: BrucePerlerMS
-ms.openlocfilehash: 017309436660991c69da569e9cc4219e842ecaa3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d892fbd802ed366ca7af9b85fbf5c23d4d27e0f1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70251874"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157008"
 ---
 # \<securityTokenHandlers>
+
 Określa kolekcję programów obsługi tokenów zabezpieczających, które są zarejestrowane w punkcie końcowym.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Określa kolekcję programów obsługi tokenów zabezpieczających, które są z
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -54,6 +56,7 @@ Określa kolekcję programów obsługi tokenów zabezpieczających, które są z
 |[\<identityConfiguration>](identityconfiguration.md)|Określa ustawienia tożsamości na poziomie usług.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  W konfiguracji usługi można określić co najmniej jedną nazwę kolekcji programów obsługi tokenów zabezpieczających. Możesz określić nazwę kolekcji przy użyciu `name` atrybutu. Jedyne nazwy obsługiwane przez platformę to "ActAs" i "OnBehalfOf". Jeśli w tych kolekcjach istnieją programy obsługi, są one używane przez usługę tokenu zabezpieczającego (STS) zamiast domyślnych programów obsługi podczas przetwarzania `ActAs` i `OnBehalfOf` tokenów.  
   
  Domyślnie kolekcja jest wypełniana następującymi typami obsługi:,,,, <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> , <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> <xref:System.IdentityModel.Tokens.KerberosSecurityTokenHandler> <xref:System.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler> <xref:System.IdentityModel.Tokens.RsaSecurityTokenHandler> <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler> , i <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler> . Kolekcję można modyfikować za pomocą `<add>` `<remove>` elementów, i `<clear>` . Musisz się upewnić, że w kolekcji istnieje tylko jedna procedura obsługi określonego typu. Na przykład, jeśli pochodna jest procedura obsługi z <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> klasy, program obsługi lub <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> może być skonfigurowany w pojedynczej kolekcji, ale nie w obu tych przypadkach.  

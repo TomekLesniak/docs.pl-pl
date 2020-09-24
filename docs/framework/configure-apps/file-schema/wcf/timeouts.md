@@ -2,14 +2,15 @@
 title: <timeOuts>
 ms.date: 03/30/2017
 ms.assetid: 7fccd436-b326-48ec-8de1-c16817a09e0d
-ms.openlocfilehash: b9c67ac03f0eb73a2a4cdd43ab48fe12871a1cc3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f7e513bb5c486fa5f7c39c9b2e3cfcd26bd7c219
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854965"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157099"
 ---
 # \<timeOuts>
+
 Reprezentuje element konfiguracji, który określa przedział czasu dozwolony na otwarcie lub zamknięcie hosta usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Reprezentuje element konfiguracji, który określa przedział czasu dozwolony na
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -37,6 +39,7 @@ Reprezentuje element konfiguracji, który określa przedział czasu dozwolony na
 |`openTimeout`|<xref:System.TimeSpan>Wartość, która określa przedział czasu, jaki może otworzyć Host usługi.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -45,7 +48,7 @@ Reprezentuje element konfiguracji, który określa przedział czasu dozwolony na
 |-------------|-----------------|  
 |[\<host>](host.md)|Element konfiguracji, który określa ustawienia dla hosta usługi.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.HostElement>
 - <xref:System.ServiceModel.ServiceHost>

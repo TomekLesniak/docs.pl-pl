@@ -2,14 +2,15 @@
 title: Informacje uzupełniające
 ms.date: 03/30/2017
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
-ms.openlocfilehash: fc7c68fe2dba266e056feb459038a060a055e175
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 56ba323aee3b559fbb8afd506be4c23595df6d2d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542114"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156098"
 ---
 # <a name="background-information"></a>Informacje uzupełniające
+
 Tematy w tej sekcji odnoszą się do pojęć i procedur, które wykraczają poza podstawowe informacje dotyczące korzystania z programu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .  
   
  Wykonaj następujące kroki, aby znaleźć dodatkowe przykłady [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kodu i aplikacji:  
@@ -21,6 +22,7 @@ Tematy w tej sekcji odnoszą się do pojęć i procedur, które wykraczają poza
 - Zapoznaj się z oficjalnym dokumentem, który zawiera szczegółowe informacje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] o technologii, zapoznaj się z przykładami Visual Basic i C#. Aby uzyskać więcej informacji, zobacz [LINQ to SQL: zapytanie zintegrowane z językiem .NET dla danych relacyjnych](/previous-versions/dotnet/articles/bb425822(v=msdn.10)).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [ADO.NET i LINQ to SQL](ado-net-and-linq-to-sql.md)  
  Opisuje relacje ADO.NET i [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .  
   
@@ -82,5 +84,6 @@ Tematy w tej sekcji odnoszą się do pojęć i procedur, które wykraczają poza
  Opisuje sposób mapowania funkcji zdefiniowanych przez użytkownika w czasie projektowania oraz sposobu wywoływania ich z poziomu aplikacji.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Przewodnik programowania](programming-guide.md)  
  Zawiera linki do sekcji, które wyjaśniają różne aspekty [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .

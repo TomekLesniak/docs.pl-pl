@@ -2,12 +2,12 @@
 title: Korzystanie z funkcji bezserwerowych
 description: Korzystanie z bezserwerowych i Azure Functions w aplikacjach natywnych w chmurze
 ms.date: 05/13/2020
-ms.openlocfilehash: 53a0fdd29630b2a4368f3aa37ddfc5f93df10a24
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8e5c60d29cd8d635f79f42c232b33f060949e2b5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613866"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155370"
 ---
 # <a name="leveraging-serverless-functions"></a>Korzystanie z funkcji bezserwerowych
 
@@ -40,7 +40,7 @@ Mikrousługi są zwykle konstruowane do odpowiedzi na żądania, często z inter
 
 Bezserwerowe uwidacznia pojedyncze funkcje, które są wywoływane w odpowiedzi na wyzwalacz. Sprawia to, że są one idealne do przetwarzania zadań w tle.
 
-Aplikacja może wymagać wysłania wiadomości e-mail w ramach przepływu pracy. Zamiast wysyłać powiadomienie w ramach żądania mikrousługi, umieść szczegóły komunikatu w kolejce. Funkcja platformy Azure może usunąć z kolejki komunikat i asynchronicznie wysłać wiadomość e-mail. Wykonanie tej czynności może poprawić wydajność i skalowalność mikrousługi. [Wyrównywanie obciążeń przy użyciu kolejki](https://docs.microsoft.com/azure/architecture/patterns/queue-based-load-leveling) można zaimplementować, aby uniknąć wąskich gardeł związanych z wysyłaniem wiadomości e-mail. Ponadto ta usługa autonomiczna może zostać ponownie użyta jako narzędzie dla wielu różnych aplikacji.
+Aplikacja może wymagać wysłania wiadomości e-mail w ramach przepływu pracy. Zamiast wysyłać powiadomienie w ramach żądania mikrousługi, umieść szczegóły komunikatu w kolejce. Funkcja platformy Azure może usunąć z kolejki komunikat i asynchronicznie wysłać wiadomość e-mail. Wykonanie tej czynności może poprawić wydajność i skalowalność mikrousługi. [Wyrównywanie obciążeń przy użyciu kolejki](/azure/architecture/patterns/queue-based-load-leveling) można zaimplementować, aby uniknąć wąskich gardeł związanych z wysyłaniem wiadomości e-mail. Ponadto ta usługa autonomiczna może zostać ponownie użyta jako narzędzie dla wielu różnych aplikacji.
 
 Asynchroniczna obsługa komunikatów z kolejek i tematów jest typowym wzorcem do wyzwalania funkcji bezserwerowych. Jednak Azure Functions mogą być wyzwalane przez inne zdarzenia, takie jak zmiany w usłudze Azure Blob Storage. Usługa obsługująca przekazywanie obrazów może mieć funkcję platformy Azure odpowiedzialną za optymalizację rozmiaru obrazu. Funkcja może zostać wyzwolona bezpośrednio przez wstawianie do Blob Storage platformy Azure, zachowując złożoność z operacji mikrousług.
 
@@ -55,9 +55,9 @@ Rysunek 3-10 pokazuje wzorzec zimnego startu. Należy pamiętać o dodatkowych k
 ![Rysunek zimny i rozgrzany początek ](./media/cold-start-warm-start.png)
  **3-10**. Zimne rozpoczęcie i rozgrzane.
 
-Aby uniknąć całkowitego uruchamiania zimnego, możesz przełączyć się z [planu zużycia do dedykowanego planu](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Możesz również skonfigurować co najmniej jedno [wystąpienie wstępnie rozgrzane](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances) z uaktualnieniem planu Premium. W takich przypadkach należy dodać kolejne wystąpienie, które jest już gotowe do użycia. Te opcje mogą pomóc w ograniczeniu problemu zimnego startu związanego z przetwarzaniem nieserwerowym.
+Aby uniknąć całkowitego uruchamiania zimnego, możesz przełączyć się z [planu zużycia do dedykowanego planu](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Możesz również skonfigurować co najmniej jedno [wystąpienie wstępnie rozgrzane](/azure/azure-functions/functions-premium-plan#pre-warmed-instances) z uaktualnieniem planu Premium. W takich przypadkach należy dodać kolejne wystąpienie, które jest już gotowe do użycia. Te opcje mogą pomóc w ograniczeniu problemu zimnego startu związanego z przetwarzaniem nieserwerowym.
 
-Dostawcy usług w chmurze rachunku bezserwerowego na podstawie czasu wykonywania obliczeń i zużytej pamięci. Długotrwałe operacje lub obciążenia zużywające duże ilości pamięci nie zawsze są najlepszymi kandydatami dla bezserwerowych. Funkcje bezserwerowe preferują małe fragmenty pracy, które mogą szybko zakończyć pracę. Większość platform bezserwerowych wymaga, aby poszczególne funkcje zostały wykonane w ciągu kilku minut. Azure Functions wartość domyślna to 5-minutowy czas trwania, który można skonfigurować do 10 minut. Plan Azure Functions Premium umożliwia ograniczenie tego problemu, a także domyślnego limitu czasu do 30 minut z niezwiązanym wyższym limitem, który można skonfigurować. Czas obliczeń nie jest czasem kalendarzowym. Bardziej zaawansowane funkcje wykorzystujące platformę [Azure Durable Functions Framework](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview?tabs=csharp) mogą wstrzymywać wykonywanie w ciągu kilku dni. Rozliczenia opierają się na rzeczywistym czasie wykonywania — gdy funkcja wznawia działanie i wznawia przetwarzanie.
+Dostawcy usług w chmurze rachunku bezserwerowego na podstawie czasu wykonywania obliczeń i zużytej pamięci. Długotrwałe operacje lub obciążenia zużywające duże ilości pamięci nie zawsze są najlepszymi kandydatami dla bezserwerowych. Funkcje bezserwerowe preferują małe fragmenty pracy, które mogą szybko zakończyć pracę. Większość platform bezserwerowych wymaga, aby poszczególne funkcje zostały wykonane w ciągu kilku minut. Azure Functions wartość domyślna to 5-minutowy czas trwania, który można skonfigurować do 10 minut. Plan Azure Functions Premium umożliwia ograniczenie tego problemu, a także domyślnego limitu czasu do 30 minut z niezwiązanym wyższym limitem, który można skonfigurować. Czas obliczeń nie jest czasem kalendarzowym. Bardziej zaawansowane funkcje wykorzystujące platformę [Azure Durable Functions Framework](/azure/azure-functions/durable/durable-functions-overview?tabs=csharp) mogą wstrzymywać wykonywanie w ciągu kilku dni. Rozliczenia opierają się na rzeczywistym czasie wykonywania — gdy funkcja wznawia działanie i wznawia przetwarzanie.
 
 Na koniec korzystanie z Azure Functions dla zadań aplikacji zwiększa złożoność. Warto najpierw przeprowadzić architekta swojej aplikacji przy użyciu modularnie powiązanego projektu. Następnie ustal, czy nie ma żadnych korzyści bezserwerowych, które uzasadniają dodatkową złożoność.
 

@@ -2,19 +2,20 @@
 title: Mapowanie oparte na atrybutach
 ms.date: 03/30/2017
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
-ms.openlocfilehash: 1e11a2efc3d1afa56a27d6e2c60149a509511080
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 986a5022ea9e70868689c898649067135eac944b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248064"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156111"
 ---
 # <a name="attribute-based-mapping"></a>Mapowanie oparte na atrybutach
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mapuje bazę danych SQL Server na [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] model obiektu przez zastosowanie atrybutów lub zewnętrznego pliku mapowania. Ten temat zawiera opis podejścia opartego na atrybutach.  
+
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje bazę danych SQL Server na [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] model obiektu przez zastosowanie atrybutów lub zewnętrznego pliku mapowania. Ten temat zawiera opis podejścia opartego na atrybutach.  
   
- W najpopularniejszym formularzu podstawowym program [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje bazę danych <xref:System.Data.Linq.DataContext>do tabeli, tabelę na klasę, a następnie kolumny i relacje z właściwościami tych klas. Można również użyć atrybutów do mapowania hierarchii dziedziczenia w modelu obiektów. Aby uzyskać więcej informacji, zobacz [jak: Generuj model obiektów w Visual Basic lub C# ](how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
+ W najpopularniejszym formularzu podstawowym program [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje bazę danych do <xref:System.Data.Linq.DataContext> tabeli, tabelę na klasę, a następnie kolumny i relacje z właściwościami tych klas. Można również użyć atrybutów do mapowania hierarchii dziedziczenia w modelu obiektów. Aby uzyskać więcej informacji, zobacz [jak: generować model obiektów w Visual Basic lub C#](how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
- Deweloperzy korzystający z programu Visual Studio zwykle wykonują mapowanie oparte na atrybutach przy użyciu Object Relational Designer. Możesz również użyć narzędzia wiersza polecenia SQLMetal lub samodzielnie pokodować atrybuty. Aby uzyskać więcej informacji, zobacz [jak: Generuj model obiektów w Visual Basic lub C# ](how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
+ Deweloperzy korzystający z programu Visual Studio zwykle wykonują mapowanie oparte na atrybutach przy użyciu Object Relational Designer. Możesz również użyć narzędzia wiersza polecenia SQLMetal lub samodzielnie pokodować atrybuty. Aby uzyskać więcej informacji, zobacz [jak: generować model obiektów w Visual Basic lub C#](how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
 > [!NOTE]
 > Możesz również mapować przy użyciu zewnętrznego pliku XML. Aby uzyskać więcej informacji, zobacz [Mapowanie zewnętrzne](external-mapping.md).  
@@ -22,16 +23,18 @@ ms.locfileid: "70248064"
  W poniższych sekcjach opisano mapowanie oparte na atrybutach bardziej szczegółowo. Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping> przestrzeń nazw.  
   
 ## <a name="databaseattribute-attribute"></a>DatabaseAttribute — atrybut  
- Użyj tego atrybutu, aby określić domyślną nazwę bazy danych, gdy nazwa nie jest dostarczana przez połączenie. Ten atrybut jest opcjonalny, ale jeśli jest używany, należy zastosować <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> właściwość, zgodnie z opisem w poniższej tabeli.  
+
+ Użyj tego atrybutu, aby określić domyślną nazwę bazy danych, gdy nazwa nie jest dostarczana przez połączenie. Ten atrybut jest opcjonalny, ale jeśli jest używany, należy zastosować <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> Właściwość, zgodnie z opisem w poniższej tabeli.  
   
 |Właściwość|Typ|Domyślny|Opis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|Wyświetlania<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Używany z <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> właściwością, określa nazwę bazy danych.|  
+|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|Zobacz <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Używany z <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> właściwością, określa nazwę bazy danych.|  
   
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.DatabaseAttribute>.  
   
 ## <a name="tableattribute-attribute"></a>TableAttribute — atrybut  
- Ten atrybut służy do wyznaczania klasy jako klasy jednostki skojarzonej z tabelą lub widokiem bazy danych. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]traktuje klasy, które mają ten atrybut jako klas trwałych. W poniższej tabeli opisano <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> właściwość.  
+
+ Ten atrybut służy do wyznaczania klasy jako klasy jednostki skojarzonej z tabelą lub widokiem bazy danych. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traktuje klasy, które mają ten atrybut jako klas trwałych. W poniższej tabeli opisano <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> Właściwość.  
   
 |Właściwość|Typ|Domyślny|Opis|  
 |--------------|----------|-------------|-----------------|  
@@ -40,15 +43,16 @@ ms.locfileid: "70248064"
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.TableAttribute>.  
   
 ## <a name="columnattribute-attribute"></a>ColumnAttribute — atrybut  
+
  Użyj tego atrybutu, aby wyznaczyć element członkowski klasy Entity do reprezentowania kolumny w tabeli bazy danych. Ten atrybut można zastosować do dowolnego pola lub właściwości.  
   
- Tylko elementy członkowskie identyfikowane jako kolumny są pobierane i utrwalane [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podczas zapisywania zmian w bazie danych. Nie przyjmuje się elementów członkowskich bez tego atrybutu jako nietrwałych i nie są one przesłane do operacji INSERT ani Update.  
+ Tylko elementy członkowskie identyfikowane jako kolumny są pobierane i utrwalane podczas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zapisywania zmian w bazie danych. Nie przyjmuje się elementów członkowskich bez tego atrybutu jako nietrwałych i nie są one przesłane do operacji INSERT ani Update.  
   
  W poniższej tabeli opisano właściwości tego atrybutu.  
   
 |Właściwość|Typ|Domyślny|Opis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|AutoSync|nigdy nie|Powoduje, że środowisko uruchomieniowe języka wspólnego (CLR) Pobiera wartość po operacji INSERT lub Update.<br /><br /> Opcje: Zawsze, nigdy, OnUpdate, OnInsert.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|AutoSync|Nigdy|Powoduje, że środowisko uruchomieniowe języka wspólnego (CLR) Pobiera wartość po operacji INSERT lub Update.<br /><br /> Opcje: zawsze, nigdy, OnUpdate, OnInsert.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A>|Boolean|`true`|Wskazuje, że kolumna może zawierać wartości null.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>|String|Typ kolumny wywnioskowanej bazy danych|Używa typów i modyfikatorów baz danych, aby określić typ kolumny bazy danych.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>|String|Pusty|Definiuje kolumnę obliczaną w bazie danych.|  
@@ -56,15 +60,16 @@ ms.locfileid: "70248064"
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A>|Boolean|`false`|Wskazuje, że kolumna zawiera wartość rozróżniacza dla [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] hierarchii dziedziczenia.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>|Boolean|`false`|Określa, że ten element członkowski klasy reprezentuje kolumnę, która jest lub jest częścią kluczy podstawowych tabeli.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A>|Boolean|`false`|Identyfikuje typ kolumny elementu członkowskiego jako sygnaturę czasową bazy danych lub numer wersji.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>|UpdateCheck|`Always`, chyba <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> że `true` jest dla elementu członkowskiego|Określa sposób [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] wykrywania optymistycznych konfliktów współbieżności.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>|UpdateCheck|`Always`, chyba że <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> jest `true` dla elementu członkowskiego|Określa sposób [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] wykrywania optymistycznych konfliktów współbieżności.|  
   
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.ColumnAttribute>.  
   
 > [!NOTE]
-> W wartościach właściwości magazynu AssociationAttribute i ColumnAttribute jest uwzględniana wielkość liter. Na przykład upewnij się, że wartości używane w atrybucie właściwości AssociationAttribute. Storage pasują do wielkości liter dla odpowiednich nazw właściwości używanych w innym miejscu w kodzie. Dotyczy to wszystkich języków programowania .NET, nawet tych, które nie są zazwyczaj rozróżniane wielkości liter, w tym Visual Basic. Aby uzyskać więcej informacji na temat właściwości Storage, <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>Zobacz.  
+> W wartościach właściwości magazynu AssociationAttribute i ColumnAttribute jest uwzględniana wielkość liter. Na przykład upewnij się, że wartości używane w atrybucie właściwości AssociationAttribute. Storage pasują do wielkości liter dla odpowiednich nazw właściwości używanych w innym miejscu w kodzie. Dotyczy to wszystkich języków programowania .NET, nawet tych, które nie są zazwyczaj rozróżniane wielkości liter, w tym Visual Basic. Aby uzyskać więcej informacji na temat właściwości Storage, zobacz <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType> .  
   
 ## <a name="associationattribute-attribute"></a>AssociationAttribute — atrybut  
- Użyj tego atrybutu, aby wyznaczyć Właściwość reprezentującą skojarzenie w bazie danych, takie jak klucz obcy do relacji klucza podstawowego. Aby uzyskać więcej informacji na temat relacji [, zobacz How to: Mapowanie relacji między](how-to-map-database-relationships.md)bazami danych.  
+
+ Użyj tego atrybutu, aby wyznaczyć Właściwość reprezentującą skojarzenie w bazie danych, takie jak klucz obcy do relacji klucza podstawowego. Aby uzyskać więcej informacji na temat relacji, zobacz [How to: map Relationships Database](how-to-map-database-relationships.md).  
   
  W poniższej tabeli opisano właściwości tego atrybutu.  
   
@@ -80,9 +85,10 @@ ms.locfileid: "70248064"
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.AssociationAttribute>.  
   
 > [!NOTE]
-> W wartościach właściwości magazynu AssociationAttribute i ColumnAttribute jest uwzględniana wielkość liter. Na przykład upewnij się, że wartości używane w atrybucie właściwości AssociationAttribute. Storage pasują do wielkości liter dla odpowiednich nazw właściwości używanych w innym miejscu w kodzie. Dotyczy to wszystkich języków programowania .NET, nawet tych, które nie są zazwyczaj rozróżniane wielkości liter, w tym Visual Basic. Aby uzyskać więcej informacji na temat właściwości Storage, <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>Zobacz.  
+> W wartościach właściwości magazynu AssociationAttribute i ColumnAttribute jest uwzględniana wielkość liter. Na przykład upewnij się, że wartości używane w atrybucie właściwości AssociationAttribute. Storage pasują do wielkości liter dla odpowiednich nazw właściwości używanych w innym miejscu w kodzie. Dotyczy to wszystkich języków programowania .NET, nawet tych, które nie są zazwyczaj rozróżniane wielkości liter, w tym Visual Basic. Aby uzyskać więcej informacji na temat właściwości Storage, zobacz <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType> .  
   
 ## <a name="inheritancemappingattribute-attribute"></a>InheritanceMappingAttribute — atrybut  
+
  Użyj tego atrybutu, aby zmapować hierarchię dziedziczenia.  
   
  W poniższej tabeli opisano właściwości tego atrybutu.  
@@ -96,6 +102,7 @@ ms.locfileid: "70248064"
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute>.  
   
 ## <a name="functionattribute-attribute"></a>FunctionAttribute — atrybut  
+
  Użyj tego atrybutu, aby wyznaczyć metodę w postaci procedury składowanej lub funkcji zdefiniowanej przez użytkownika w bazie danych.  
   
  W poniższej tabeli opisano właściwości tego atrybutu.  
@@ -108,6 +115,7 @@ ms.locfileid: "70248064"
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.FunctionAttribute>.  
   
 ## <a name="parameterattribute-attribute"></a>ParameterAttribute — atrybut  
+
  Ten atrybut służy do mapowania parametrów wejściowych w metodach procedury składowanej.  
   
  W poniższej tabeli opisano właściwości tego atrybutu.  
@@ -120,17 +128,19 @@ ms.locfileid: "70248064"
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.ParameterAttribute>.  
   
 ## <a name="resulttypeattribute-attribute"></a>Resultattribute — atrybut  
+
  Użyj tego atrybutu, aby określić typ wyniku.  
   
  W poniższej tabeli opisano właściwości tego atrybutu.  
   
 |Właściwość|Typ|Domyślny|Opis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.ResultTypeAttribute.Type%2A>|Typ|Dawaj|Używane dla metod zamapowanych na procedury składowane, które zwracają <xref:System.Data.Linq.IMultipleResults>. Deklaruje prawidłowe lub oczekiwane mapowania typów dla procedury składowanej.|  
+|<xref:System.Data.Linq.Mapping.ResultTypeAttribute.Type%2A>|Typ|(Brak)|Używane dla metod zamapowanych na procedury składowane, które zwracają <xref:System.Data.Linq.IMultipleResults> . Deklaruje prawidłowe lub oczekiwane mapowania typów dla procedury składowanej.|  
   
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.ResultTypeAttribute>.  
   
 ## <a name="dataattribute-attribute"></a>DataAttribute — atrybut  
+
  Użyj tego atrybutu, aby określić nazwy i pola prywatnego magazynu.  
   
  W poniższej tabeli opisano właściwości tego atrybutu.  
@@ -142,6 +152,6 @@ ms.locfileid: "70248064"
   
  Aby uzyskać więcej informacji, zobacz <xref:System.Data.Linq.Mapping.DataAttribute>.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Dokumentacja](reference.md)
+- [Odwołanie](reference.md)

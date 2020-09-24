@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3af512f3-87d9-4005-9e2f-abb1060ff43f
-ms.openlocfilehash: 0da74b4896ad5434e46df336183db89054198134
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bf38475711a193bc69176993154f87d455aefe7d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540969"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156475"
 ---
 # <a name="establishing-the-connection"></a>Nawiązywanie połączenia
+
 Aby nawiązać połączenie z Microsoft SQL Server, użyj <xref:System.Data.SqlClient.SqlConnection> obiektu Dostawca danych .NET Framework SQL Server. Aby nawiązać połączenie ze źródłem danych OLE DB, użyj <xref:System.Data.OleDb.OleDbConnection> obiektu .NET Framework dostawca danych dla OLE DB. Aby nawiązać połączenie ze źródłem danych ODBC, użyj <xref:System.Data.Odbc.OdbcConnection> obiektu Dostawca danych .NET Framework dla ODBC. Aby nawiązać połączenie ze źródłem danych Oracle, użyj <xref:System.Data.OracleClient.OracleConnection> obiektu Dostawca danych .NET Framework dla programu Oracle. Aby bezpiecznie przechowywać i pobierać parametry połączenia, zobacz [Ochrona informacji o połączeniu](protecting-connection-information.md).  
   
 ## <a name="closing-connections"></a>Zamykanie połączeń  
+
  Zalecane jest, aby zawsze zamykać połączenie po zakończeniu korzystania z niego, aby można było zwrócić połączenie do puli. `Using`Blok w Visual Basic lub C# automatycznie usuwa połączenie, gdy kod opuszcza blok, nawet w przypadku nieobsłużonego wyjątku. Aby uzyskać więcej informacji, zobacz [używanie instrukcji using](../../../csharp/language-reference/keywords/using-statement.md) i [instrukcji using](../../../visual-basic/language-reference/statements/using-statement.md) .  
   
  Można również użyć `Close` `Dispose` metod lub obiektu połączenia dla dostawcy, którego używasz. Połączenia, które nie zostały jawnie zamknięte, mogą nie zostać dodane lub zwrócone do puli. Na przykład połączenie, które zostało utracone poza zakresem, ale nie zostało jawnie zamknięte, zostanie zwrócone do puli połączeń tylko wtedy, gdy Osiągnięto maksymalny rozmiar puli, a połączenie jest nadal ważne. Aby uzyskać więcej informacji, zobacz [OLE DB, ODBC i pule połączeń Oracle](ole-db-odbc-and-oracle-connection-pooling.md).  
@@ -27,6 +29,7 @@ Aby nawiązać połączenie z Microsoft SQL Server, użyj <xref:System.Data.SqlC
 > Zdarzenia logowania i wylogowywania nie będą zgłaszane na serwerze, gdy połączenie zostanie pobrane z lub zwrócone do puli połączeń, ponieważ połączenie nie jest faktycznie zamknięte, gdy zostanie zwrócone do puli połączeń. Aby uzyskać więcej informacji, zobacz [SQL Servering pooling (ADO.NET)](sql-server-connection-pooling.md).  
   
 ## <a name="connecting-to-sql-server"></a>Nawiązywanie połączenia z SQL Server  
+
  Dostawca danych .NET Framework dla SQL Server obsługuje format parametrów połączenia, który jest podobny do formatu parametrów połączenia OLE DB (ADO). W przypadku prawidłowych nazw i wartości formatu ciągu zobacz <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> Właściwość <xref:System.Data.SqlClient.SqlConnection> obiektu. Można również użyć <xref:System.Data.SqlClient.SqlConnectionStringBuilder> klasy do tworzenia składniowo prawidłowych parametrów połączenia w czasie wykonywania. Aby uzyskać więcej informacji, zobacz [konstruktory parametrów połączenia](connection-string-builders.md).  
   
  Poniższy przykład kodu pokazuje, jak utworzyć i otworzyć połączenie z bazą danych SQL Server.  
@@ -49,11 +52,13 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 ```  
   
 ### <a name="integrated-security-and-aspnet"></a>Zintegrowane zabezpieczenia i ASP.NET  
+
  SQL Server zintegrowane zabezpieczenia (znane także jako zaufane połączenia) pomagają zapewnić ochronę podczas nawiązywania połączenia z SQL Server, ponieważ nie uwidacznia identyfikatora użytkownika i hasła w parametrach połączenia i jest zalecaną metodą uwierzytelniania połączenia. Zabezpieczenia zintegrowane korzystają z bieżącej tożsamości lub tokenu procesu wykonywania. W przypadku aplikacji klasycznych zwykle jest to tożsamość aktualnie zalogowanego użytkownika.  
   
  Tożsamość zabezpieczeń dla aplikacji ASP.NET można ustawić na jedną z kilku różnych opcji. Aby lepiej zrozumieć tożsamość zabezpieczeń używaną przez aplikację ASP.NET podczas nawiązywania połączenia z SQL Server, zobacz [personifikacja ASP.NET](/previous-versions/aspnet/xh507fc5(v=vs.100)), [uwierzytelnianie ASP.NET](/previous-versions/aspnet/eeyk640h(v=vs.100))i [instrukcje: dostęp SQL Server przy użyciu zintegrowanych zabezpieczeń systemu Windows](/previous-versions/aspnet/bsz5788z(v=vs.100)).  
   
 ## <a name="connecting-to-an-ole-db-data-source"></a>Nawiązywanie połączenia ze źródłem danych OLE DB  
+
  Dostawca danych .NET Framework dla OLE DB zapewnia łączność ze źródłami danych ujawnionymi przy użyciu OLE DB (za pośrednictwem SQLOLEDB, dostawcy OLE DB dla SQL Server) przy użyciu obiektu **OleDbConnection** .  
   
  W przypadku .NET Framework Dostawca danych dla OLE DB format parametrów połączenia jest identyczny z formatem parametrów połączenia używanym w ADO, z następującymi wyjątkami:  
@@ -88,9 +93,11 @@ using (OleDbConnection connection =
 ```  
   
 ## <a name="do-not-use-universal-data-link-files"></a>Nie używaj plików Universal Data Link  
+
  Możliwe jest podanie informacji o połączeniu dla **OleDbConnection** w pliku Universal Data Link (UDL); należy jednak unikać tego. Pliki UDL nie są szyfrowane i ujawniają informacje o parametrach połączenia w postaci zwykłego tekstu. Ponieważ plik UDL jest zewnętrznym zasobem opartym na plikach dla aplikacji, nie może być zabezpieczony przy użyciu .NET Framework.  
   
 ## <a name="connecting-to-an-odbc-data-source"></a>Nawiązywanie połączenia ze źródłem danych ODBC  
+
  Dostawca danych .NET Framework dla ODBC zapewnia łączność ze źródłami danych, które są udostępniane za pomocą ODBC przy użyciu obiektu **OdbcConnection** .  
   
  W przypadku .NET Framework Dostawca danych dla ODBC, format parametrów połączenia jest zaprojektowana tak, aby pasował do formatu parametrów połączenia ODBC tak blisko, jak to możliwe. Możesz również podać nazwę źródła danych ODBC (DSN). Aby uzyskać więcej szczegółów na temat **OdbcConnection** , zobacz <xref:System.Data.Odbc.OdbcConnection> .  
@@ -116,6 +123,7 @@ using (OdbcConnection connection =
 ```  
   
 ## <a name="connecting-to-an-oracle-data-source"></a>Nawiązywanie połączenia ze źródłem danych Oracle  
+
  .NET Framework Dostawca danych dla programu Oracle zapewnia łączność ze źródłami danych Oracle przy użyciu obiektu **OracleConnection** .  
   
  W przypadku .NET Framework Dostawca danych dla programu Oracle format parametrów połączenia jest zaprojektowany tak, aby był zgodny z formatem parametrów połączenia dostawcy OLE DB dla programu Oracle (MSDAORA I). Aby uzyskać więcej szczegółów na temat **OracleConnection**, zobacz <xref:System.Data.OracleClient.OracleConnection> .  
@@ -142,7 +150,7 @@ OracleConnection nwindConn = new OracleConnection("Data Source=MyOracleServer;In
 nwindConn.Open();  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Nawiązywanie połączenia ze źródłem danych](connecting-to-a-data-source.md)
 - [Parametry połączenia](connection-strings.md)

@@ -3,14 +3,15 @@ title: <securityTokenHandlerConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 28724cc6-020c-4a06-9a1f-d7594f315019
 author: BrucePerlerMS
-ms.openlocfilehash: e3e65820fa4dc341371d4f67689a288cd3f63951
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4c6affbc24a58424158e466fb732e9a3b3d6f1ed
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152570"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157021"
 ---
 # \<securityTokenHandlerConfiguration>
+
 Zapewnia konfigurację kolekcji programów obsługi tokenów.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Zapewnia konfigurację kolekcji programów obsługi tokenów.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -62,6 +64,7 @@ Zapewnia konfigurację kolekcji programów obsługi tokenów.
 |[\<securityTokenHandlers>](securitytokenhandlers.md)|Określa kolekcję programów obsługi tokenów zabezpieczających, które są zarejestrowane w punkcie końcowym.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta sekcja zawiera wartości właściwości dla <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration> obiektu. Ustawienia skonfigurowane w tej sekcji zastępują te skonfigurowane w usłudze. Niektóre z tych ustawień mogą zostać zastąpione przez ustawienia, które są określone podczas dodawania programu obsługi do kolekcji obsługi tokenów zabezpieczających.  
   
 ## <a name="example"></a>Przykład  

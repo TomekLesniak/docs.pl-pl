@@ -2,14 +2,15 @@
 title: <issuer> dla <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: d6a95f32-d58c-40fc-8658-dd92564d3c90
-ms.openlocfilehash: bdd5ad45984fae7b39defe82c4af75845dfda1b6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bfe8163d2d6baba1d6e8053f7f6579673d8b4b21
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397943"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157281"
 ---
 # <a name="issuer-of-issuedtokenparameters"></a>\<issuer> dla \<issuedTokenParameters>
+
 Określa usługę tokenu zabezpieczającego (STS), która wystawia tokeny zabezpieczające.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Określa usługę tokenu zabezpieczającego (STS), która wystawia tokeny zabezp
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -49,18 +51,18 @@ Określa usługę tokenu zabezpieczającego (STS), która wystawia tokeny zabezp
 |-------------|-----------------|  
 |[\<issuedTokenParameters>](issuedtokenparameters.md)|Określa bieżący token wystawiony.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.AdditionalRequestParameters%2A>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement.AdditionalRequestParameters%2A>
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [Uwierzytelnianie i tożsamość usług](../../../wcf/feature-details/service-identity-and-authentication.md)
 - [Federacja i wystawione tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
-- [Możliwości zabezpieczeń powiązań niestandardowych](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Możliwości zabezpieczeń wiązań niestandardowych](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
 - [Federacja i wystawione tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Rozszerzanie powiązań](../../../wcf/extending/extending-bindings.md)
 - [Powiązania niestandardowe](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Zabezpieczenia wiązania niestandardowego](../../../wcf/samples/custom-binding-security.md)

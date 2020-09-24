@@ -2,12 +2,12 @@
 title: Rejestrowanie przy użyciu elastycznego stosu
 description: Rejestrowanie przy użyciu Elastic Stack, logstash i Kibana
 ms.date: 05/13/2020
-ms.openlocfilehash: 32d9d0dae175d8d45d48b56d17f133b4cc432363
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 3f10b0d06c87b7bed6d3e302742b1dc52e2c9d3b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811174"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155344"
 ---
 # <a name="logging-with-elastic-stack"></a>Rejestrowanie przy użyciu elastycznego stosu
 
@@ -105,7 +105,7 @@ Końcowym składnikiem stosu jest Kibana. To narzędzie służy do udostępniani
 
 ## <a name="installing-elastic-stack-on-azure"></a>Instalowanie elastycznego stosu na platformie Azure
 
-Stos elastyczny można zainstalować na platformie Azure na wiele sposobów. Jak zawsze, możliwe jest [udostępnienie maszyn wirtualnych i bezpośrednie zainstalowanie na nich elastycznego stosu](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch). Ta opcja jest preferowana przez niektórych doświadczonych użytkowników, ponieważ oferuje ona najwyższy stopień szerszym. Wdrożenie w ramach infrastruktury jako usługi wprowadza znaczące narzuty związane z zarządzaniem wymuszające, że ta ścieżka przejęcie na własność wszystkich zadań związanych z infrastrukturą jako usługą, takich jak Zabezpieczanie maszyn i aktualizowanie ich przy użyciu poprawek.
+Stos elastyczny można zainstalować na platformie Azure na wiele sposobów. Jak zawsze, możliwe jest [udostępnienie maszyn wirtualnych i bezpośrednie zainstalowanie na nich elastycznego stosu](/azure/virtual-machines/linux/tutorial-elasticsearch). Ta opcja jest preferowana przez niektórych doświadczonych użytkowników, ponieważ oferuje ona najwyższy stopień szerszym. Wdrożenie w ramach infrastruktury jako usługi wprowadza znaczące narzuty związane z zarządzaniem wymuszające, że ta ścieżka przejęcie na własność wszystkich zadań związanych z infrastrukturą jako usługą, takich jak Zabezpieczanie maszyn i aktualizowanie ich przy użyciu poprawek.
 
 Opcja o mniejszej obciążeniu polega na użyciu jednego z wielu kontenerów platformy Docker, na którym został już skonfigurowany Stos elastyczny. Te kontenery można porzucić w istniejącym klastrze Kubernetes i uruchamiać wraz z kodem aplikacji. Kontener [sebp/Elk](https://elk-docker.readthedocs.io/) to dobrze udokumentowany i przetestowany kontener stosu elastycznego.
 
@@ -113,7 +113,7 @@ Kolejną opcją jest [niedawna ogłoszona oferta Elk jako usługa](https://devop
 
 ## <a name="references"></a>Odwołania
 
-- [Instalowanie elastycznego stosu na platformie Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
+- [Instalowanie elastycznego stosu na platformie Azure](/azure/virtual-machines/linux/tutorial-elasticsearch)
 
 >[!div class="step-by-step"]
 >[Poprzedni](observability-patterns.md) 

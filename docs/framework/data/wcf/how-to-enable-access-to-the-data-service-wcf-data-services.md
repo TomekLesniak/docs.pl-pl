@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 3d830bcd-32b4-4f26-9287-d58a071452c6
-ms.openlocfilehash: 377b031c48ed831cfa5e270426283ed03a55f886
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 62622a5788a735497a6869c114c572e947067449
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542310"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155422"
 ---
 # <a name="how-to-enable-access-to-the-data-service-wcf-data-services"></a>Instrukcje: Włączanie dostępu do usługi danych (Usługi danych programu WCF)
+
 W Usługi danych programu WCF należy jawnie udzielić dostępu do zasobów, które są udostępniane przez usługę danych. Oznacza to, że po utworzeniu nowej usługi danych nadal trzeba jawnie zapewnić dostęp do poszczególnych zasobów jako zestawy jednostek. W tym temacie pokazano, jak włączyć dostęp do odczytu i zapisu do pięciu zestawów jednostek w usłudze danych Northwind, która została utworzona po zakończeniu [przewodnika Szybki Start](quickstart-wcf-data-services.md). Ponieważ <xref:System.Data.Services.EntitySetRights> Wyliczenie jest zdefiniowane przy użyciu <xref:System.FlagsAttribute> , można użyć operatora logicznego OR do określenia wielu uprawnień dla pojedynczego zestawu jednostek.  
   
 > [!NOTE]
@@ -29,7 +30,7 @@ W Usługi danych programu WCF należy jawnie udzielić dostępu do zasobów, kt�
   
      Dzięki temu klienci mają dostęp do odczytu i zapisu do `Orders` `Order_Details` zestawów jednostek oraz dostęp tylko do odczytu do `Customers` zestawów jednostek.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Instrukcje: Tworzenie usługi danych WCF działającej na serwerze IIS](how-to-develop-a-wcf-data-service-running-on-iis.md)
 - [Konfigurowanie usługi danych](configuring-the-data-service-wcf-data-services.md)

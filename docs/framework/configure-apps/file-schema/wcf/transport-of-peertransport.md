@@ -2,14 +2,15 @@
 title: <transport> dla <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: d7116240-845c-4b6f-b203-262de6b597ef
-ms.openlocfilehash: 3b2c7716727f58abb81bf4d58b13189ac170cf7c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7328d67c4649010dce3e1c866238d1e0067e4990
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399286"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157073"
 ---
 # <a name="transport-of-peertransport"></a>\<transport> dla \<peerTransport>
+
 Określa typ transportu zabezpieczonych komunikatów wysyłanych przez elementy równorzędne skonfigurowane przy użyciu tego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Określa typ transportu zabezpieczonych komunikatów wysyłanych przez elementy 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -46,6 +48,7 @@ Określa typ transportu zabezpieczonych komunikatów wysyłanych przez elementy 
 |Hasło|Uwierzytelnianie transportu kanału równorzędnego wymaga poprawnego hasła.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -55,9 +58,10 @@ Określa typ transportu zabezpieczonych komunikatów wysyłanych przez elementy 
 |[\<security>](security-of-peertransport.md)|Definiuje ustawienia zabezpieczeń dla transportu równorzędnego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element jest ustawiany tylko wtedy, gdy atrybut mode [\<security>](security-of-peertransport.md) jest ustawiony na `Transport` lub `TransportWithMessageCredential` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>
 - <xref:System.ServiceModel.PeerSecuritySettings.Transport%2A>
