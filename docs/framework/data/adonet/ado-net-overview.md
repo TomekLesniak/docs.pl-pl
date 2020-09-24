@@ -3,27 +3,29 @@ title: Omówienie
 description: Zapoznaj się z omówieniem ADO.NET w .NET Framework i przeczytaj o zasobach, aby uzyskać bardziej szczegółowe wyjaśnienia i przykłady.
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: 2ff3b7ad197bfe1e1c12e382f3a59bd470c57a75
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 459e4a548a4d1358b196dc41ec495921833728d4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287158"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153498"
 ---
 # <a name="adonet-overview"></a>Omówienie ADO.NET
+
 ADO.NET zapewnia spójny dostęp do źródeł danych, takich jak SQL Server i XML, oraz źródeł danych udostępnianych za pośrednictwem OLE DB i ODBC. Aplikacje dla użytkowników korzystających z udostępniania danych mogą łączyć się z tymi źródłami danych przy użyciu programu ADO.NET, a także pobierać, obsługiwać i aktualizować zawarte w nich dane.  
   
  ADO.NET oddziela dostęp do danych z manipulowania danymi do odrębnych składników, które mogą być używane osobno lub wspólnie. ADO.NET zawiera .NET Framework dostawców danych do łączenia się z bazą danych, wykonywania poleceń i pobierania wyników. Te wyniki są przetwarzane bezpośrednio, umieszczane w obiekcie ADO.NET, <xref:System.Data.DataSet> Aby można było je uwidocznić dla użytkownika w trybie ad hoc, w połączeniu z danymi z wielu źródeł lub przekazywać między warstwami. `DataSet`Obiekt może być również używany niezależnie od dostawcy danych .NET Framework do zarządzania danymi lokalnymi w aplikacji lub źródłem z pliku XML.  
   
- Klasy ADO.NET są dostępne w pliku System. Data. dll i są zintegrowane z klasami XML znalezionymi w pliku System. XML. dll. W przypadku przykładowego kodu, który nawiązuje połączenie z bazą danych, pobiera z niej dane, a następnie wyświetla je w oknie konsoli, zobacz [przykłady kodu ADO.NET](ado-net-code-examples.md).  
+ Klasy ADO.NET są dostępne w System.Data.dll i są zintegrowane z klasami XML, które znajdują się w System.Xml.dll. W przypadku przykładowego kodu, który nawiązuje połączenie z bazą danych, pobiera z niej dane, a następnie wyświetla je w oknie konsoli, zobacz [przykłady kodu ADO.NET](ado-net-code-examples.md).  
   
  Funkcja ADO.NET zapewnia deweloperom, którzy piszą kod zarządzany podobny do funkcji udostępnianych przez deweloperów modelu COM (Component Object Model), przez ActiveX Data Objects (ADO). Zalecamy używanie ADO.NET, a nie ADO, do uzyskiwania dostępu do danych w aplikacjach .NET.  
   
  ADO.NET zapewnia najbardziej bezpośrednią metodę dostępu do danych w .NET Framework. W przypadku abstrakcji wyższego poziomu, która umożliwia aplikacjom współdziałanie z modelem koncepcyjnym, a nie z modelem magazynu bazowego, zobacz [ADO.NET Entity Framework](./ef/index.md).  
   
- **Zasady zachowania poufności**: System. Data. dll, system. Data. Design. dll, system. Data. OracleClient. dll, system. Data. SQLXML. dll, system. Data. LINQ. dll, system. Data. SqlServerCe. dll i system. Data. DataSetExtensions. dll nie rozróżnia danych prywatnych użytkownika i danych nieprywatnych.  Te zestawy nie zbierają, nie przechowują ani nie transportuje prywatnych danych użytkownika. Jednak aplikacje innych firm mogą zbierać, przechowywać i transportować prywatne dane użytkownika przy użyciu tych zestawów.  
+ **Zasady zachowania poufności**: zestawy System.Data.dll, System.Data.Design.dll, System.Data.OracleClient.dll, System.Data.SqlXml.dll, System.Data.Linq.dll, System.Data.SqlServerCe.dll i System.Data.DataSetExtensions.dll nie rozróżniają danych prywatnych użytkownika i danych nieprywatnych.  Te zestawy nie zbierają, nie przechowują ani nie transportuje prywatnych danych użytkownika. Jednak aplikacje innych firm mogą zbierać, przechowywać i transportować prywatne dane użytkownika przy użyciu tych zestawów.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Architektura ADO.NET](ado-net-architecture.md)  
  Zawiera omówienie architektury i składników ADO.NET.  
   
@@ -46,6 +48,7 @@ ADO.NET zapewnia spójny dostęp do źródeł danych, takich jak SQL Server i XM
  Udostępnia przykłady kodu, które pobierają dane przy użyciu dostawców danych ADO.NET.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Nowości w programie ADO.NET](whats-new.md)  
  Wprowadza funkcje, które są nowe w ADO.NET.  
   
@@ -58,7 +61,7 @@ ADO.NET zapewnia spójny dostęp do źródeł danych, takich jak SQL Server i XM
  [Pobieranie i modyfikowanie danych ADO.NET](retrieving-and-modifying-data.md)  
  Opisuje sposób nawiązywania połączenia ze źródłem danych, pobierania danych i modyfikowania danych. Obejmuje to `DataReaders` i `DataAdapters` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [ADO.NET](index.md)
 - [Uzyskiwanie dostępu do danych w programie Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)

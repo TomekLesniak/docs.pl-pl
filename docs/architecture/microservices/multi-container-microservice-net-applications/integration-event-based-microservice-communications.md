@@ -2,12 +2,12 @@
 title: Implementowanie komunikacji opartej na zdarzeniach między mikrousługami (zdarzenia integracji)
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zrozumienie zdarzeń integracji w celu zaimplementowania komunikacji opartej na zdarzeniach między mikrousługami.
 ms.date: 10/02/2018
-ms.openlocfilehash: cbc9d28f9fbcaea528eabc4930476545cb919bb4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a778acba3e17b084840b77d903533f9180ca01d9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539349"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152536"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementowanie komunikacji opartej na zdarzeniach między mikrousługami (zdarzenia integracji)
 
@@ -76,7 +76,7 @@ We [wzorcu obserwatora](https://en.wikipedia.org/wiki/Observer_pattern)obiekt po
 
 ### <a name="publishsubscribe-pubsub-pattern"></a>Wzorzec publikowania/subskrybowania (pub/Sub)
 
-Celem [wzorca publikowania/subskrybowania](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) jest taka sama jak wzorzec obserwatora: chcesz powiadomić inne usługi o wystąpieniu pewnych zdarzeń. Ale istnieje istotna różnica między wzorcem obserwatora a publikowaniem/podrzędnym. We wzorcu obserwatora emisja jest wykonywana bezpośrednio od zauważalnych obserwatorów, więc "wiedzą". Jednak w przypadku korzystania ze wzorca publikowania/sub, istnieje trzeci składnik, nazywany brokerem lub brokerem komunikatów lub magistralą zdarzeń, który jest znany przez wydawcę i abonenta. W związku z tym w przypadku używania wzorca publikowania/podłączania Wydawca i Subskrybenci są precyzyjnie oddzielone przez wymienioną magistralę zdarzeń lub brokera komunikatów.
+Celem [wzorca publikowania/subskrybowania](/previous-versions/msp-n-p/ff649664(v=pandp.10)) jest taka sama jak wzorzec obserwatora: chcesz powiadomić inne usługi o wystąpieniu pewnych zdarzeń. Ale istnieje istotna różnica między wzorcem obserwatora a publikowaniem/podrzędnym. We wzorcu obserwatora emisja jest wykonywana bezpośrednio od zauważalnych obserwatorów, więc "wiedzą". Jednak w przypadku korzystania ze wzorca publikowania/sub, istnieje trzeci składnik, nazywany brokerem lub brokerem komunikatów lub magistralą zdarzeń, który jest znany przez wydawcę i abonenta. W związku z tym w przypadku używania wzorca publikowania/podłączania Wydawca i Subskrybenci są precyzyjnie oddzielone przez wymienioną magistralę zdarzeń lub brokera komunikatów.
 
 ### <a name="the-middleman-or-event-bus"></a>Centrum oprogramowania lub magistrali zdarzeń
 
@@ -127,7 +127,7 @@ public interface IEventBus
 
 `Subscribe`Metody (mogą być dostępne różne implementacje zależne od argumentów) są używane przez mikrousługi, które chcą odbierać zdarzenia. Ta metoda ma dwa argumenty. Pierwsze jest zdarzeniem integracji subskrybowanym przez usługę ( `IntegrationEvent` ). Drugim argumentem jest program obsługi zdarzeń integracji (lub metoda wywołania zwrotnego) o nazwie `IIntegrationEventHandler<T>` , który ma być wykonywany, gdy mikrousługa odbiornika pobiera ten komunikat o zdarzeniu integracji.
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 Niektóre rozwiązania do obsługi komunikatów w środowisku produkcyjnym:
 

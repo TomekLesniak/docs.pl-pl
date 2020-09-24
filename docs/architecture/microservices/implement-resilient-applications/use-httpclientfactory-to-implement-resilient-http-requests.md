@@ -2,12 +2,12 @@
 title: Używanie elementu IHttpClientFactory do implementowania odpornych na błędy żądań HTTP
 description: Dowiedz się, jak używać usługi IHttpClientFactory, dostępnej od platformy .NET Core 2,1, do tworzenia `HttpClient` wystąpień, co ułatwia korzystanie z niej w aplikacjach.
 ms.date: 08/31/2020
-ms.openlocfilehash: c54965a9bbb700cfb1f14150773c2df45d109c39
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: ae093ef960b2540bf4916bf72ad3bec51fa33ebe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90678819"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152575"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>Używanie elementu IHttpClientFactory do implementowania odpornych na błędy żądań HTTP
 
@@ -23,7 +23,7 @@ W związku z tym, `HttpClient` jest przeznaczony do tworzenia wystąpień i pono
 
 Innym problemem, z którym deweloperzy pracują usługi, jest użycie udostępnionego wystąpienia programu `HttpClient` w długotrwałych procesach. W sytuacji, gdy HttpClient jest tworzona jako obiekt pojedynczy lub statyczny, nie może obsłużyć zmian DNS zgodnie z opisem w tym [zagadnieniu](https://github.com/dotnet/runtime/issues/18348) dotyczącego repozytorium dotnet/Runtime.
 
-Problem nie `HttpClient` dotyczy jednak na SE, ale z [domyślnym konstruktorem dla HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=netcore-3.1#System_Net_Http_HttpClient__ctor), ponieważ tworzy nowe konkretne wystąpienie <xref:System.Net.Http.HttpMessageHandler> , które jest takie, które ma problemy z *WYCZERPANIEM gniazd* i zmiany systemu DNS wymienione powyżej.
+Problem nie `HttpClient` dotyczy jednak na SE, ale z [domyślnym konstruktorem dla HttpClient](/dotnet/api/system.net.http.httpclient.-ctor?view=netcore-3.1#System_Net_Http_HttpClient__ctor), ponieważ tworzy nowe konkretne wystąpienie <xref:System.Net.Http.HttpMessageHandler> , które jest takie, które ma problemy z *WYCZERPANIEM gniazd* i zmiany systemu DNS wymienione powyżej.
 
 Aby rozwiązać problemy wymienione powyżej i umożliwić `HttpClient` Zarządzanie wystąpieniami, w programie .NET Core 2,1 wprowadzono <xref:System.Net.Http.IHttpClientFactory> interfejs, którego można użyć do konfigurowania i tworzenia `HttpClient` wystąpień w aplikacji za pomocą iniekcji zależności (di). Udostępnia również rozszerzenia dla oprogramowania pośredniczącego opartego na Polly, które umożliwiają delegowanie programów obsługi w HttpClient.
 
@@ -188,7 +188,7 @@ namespace Microsoft.eShopOnContainers.WebMVC.Controllers
 
 Do tego momentu Powyższy fragment kodu pokazuje przykład wykonywania zwykłych żądań HTTP. Ale "Magic" znajduje się w następujących sekcjach, w których pokazano, jak wszystkie żądania HTTP wykonywane przez `HttpClient` program, mogą mieć odporne na błędy zasady, takie jak ponowne próby przy użyciu wykładniczej wycofywania, wyłączników, funkcji zabezpieczeń przy użyciu tokenów uwierzytelniania, a nawet innych funkcji niestandardowych. Wszystkie te czynności można wykonać tylko przez dodanie zasad i delegowanie programów obsługi do zarejestrowanych klientów z określonym typem.
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Używanie HttpClientFactory w programie .NET Core**  
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)

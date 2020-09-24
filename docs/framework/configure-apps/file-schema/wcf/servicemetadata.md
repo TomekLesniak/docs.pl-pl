@@ -2,14 +2,15 @@
 title: <serviceMetadata>
 ms.date: 03/30/2017
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
-ms.openlocfilehash: c421273d1d08db047a51f1f1e4f9d6c908f12986
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2236361316254d065abd1fb62fd2e509be289a4c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84201787"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153862"
 ---
 # \<serviceMetadata>
+
 Określa publikację metadanych usługi i skojarzonych z nią informacji.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Określa publikację metadanych usługi i skojarzonych z nią informacji.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -53,6 +55,7 @@ Określa publikację metadanych usługi i skojarzonych z nią informacji.
 |policyVersion|Ciąg określający używaną wersję specyfikacji WS-Policy. Ten atrybut jest typu <xref:System.ServiceModel.Description.PolicyVersion> .|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -62,7 +65,8 @@ Określa publikację metadanych usługi i skojarzonych z nią informacji.
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie elementu.|  
   
 ## <a name="remarks"></a>Uwagi  
- Ten element konfiguracji umożliwia kontrolowanie funkcji publikowania metadanych usługi. Aby zapobiec przypadkowemu ujawnieniu potencjalnie poufnych metadanych usługi, konfiguracja domyślna dla usług Windows Communication Foundation (WCF) wyłącza Publikowanie metadanych. To zachowanie jest domyślnie bezpieczne, ale oznacza to, że nie można użyć narzędzia do importowania metadanych (takiego jak Svcutil. exe) w celu wygenerowania kodu klienta wymaganego do wywołania usługi, chyba że zachowanie publikowania metadanych usługi jest jawnie włączone w konfiguracji. Za pomocą tego elementu konfiguracji można włączyć to zachowanie publikowania dla usługi.  
+
+ Ten element konfiguracji umożliwia kontrolowanie funkcji publikowania metadanych usługi. Aby zapobiec przypadkowemu ujawnieniu potencjalnie poufnych metadanych usługi, konfiguracja domyślna dla usług Windows Communication Foundation (WCF) wyłącza Publikowanie metadanych. To zachowanie jest zabezpieczone domyślnie, ale oznacza to, że nie można użyć narzędzia do importowania metadanych (takiego jak Svcutil.exe) do wygenerowania kodu klienta wymaganego do wywołania usługi, chyba że zachowanie publikowania metadanych usługi jest jawnie włączone w konfiguracji. Za pomocą tego elementu konfiguracji można włączyć to zachowanie publikowania dla usługi.  
   
  Szczegółowy przykład konfigurowania tego zachowania znajduje się w temacie [zachowanie publikowania metadanych](../../../wcf/samples/metadata-publishing-behavior.md).  
   
@@ -82,6 +86,7 @@ Określa publikację metadanych usługi i skojarzonych z nią informacji.
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład umożliwia skonfigurowanie usługi do uwidaczniania metadanych przy użyciu \<serviceMetadata> elementu. Umożliwia również skonfigurowanie punktu końcowego w celu udostępnienia `IMetadataExchange` kontraktu jako implementacji protokołu WS-MetadataExchange (Mex). W przykładzie użyto `mexHttpBinding` , który jest wygodnym powiązaniem standardowym, które jest równoważne z `wsHttpBinding` trybem zabezpieczeń ustawionym na `None` . Adres względny "Mex" jest używany w punkcie końcowym, który po rozwiązaniu z adresem podstawowym usług powoduje adres punktu końcowego `http://localhost/servicemodelsamples/service.svc/mex` .  
   
 ```xml  
@@ -117,7 +122,7 @@ Określa publikację metadanych usługi i skojarzonych z nią informacji.
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ServiceMetadataPublishingElement>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>

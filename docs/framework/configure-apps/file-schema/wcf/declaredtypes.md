@@ -8,14 +8,15 @@ helpviewer_keywords:
 - KnownTypes
 - <declaredTypes> element
 ms.assetid: f35184e4-9d9e-4d37-8fb4-d5b58220eb3e
-ms.openlocfilehash: c45a4e67d0a2d98c0e9c1a91e07f25b81370244c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 281d9d7d7e51a837de4f86f85472815956a20319
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398062"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153914"
 ---
 # \<declaredTypes>
+
 Zawiera znane typy <xref:System.Runtime.Serialization.DataContractSerializer> używane podczas deserializacji.  
   
  Aby uzyskać więcej informacji na temat kontraktów danych i znanych typów, zobacz [znane typy kontraktu danych](../../../wcf/feature-details/data-contract-known-types.md).  
@@ -44,9 +45,11 @@ Zawiera znane typy <xref:System.Runtime.Serialization.DataContractSerializer> u�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -62,9 +65,11 @@ Zawiera znane typy <xref:System.Runtime.Serialization.DataContractSerializer> u�
 |[\<dataContractSerializer>](datacontractserializer-of-system-runtime-serialization.md)|Zawiera dane konfiguracji dla programu <xref:System.Runtime.Serialization.DataContractSerializer> .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby uzyskać więcej informacji na temat znanych typów, zobacz [znane typy kontraktu danych](../../../wcf/feature-details/data-contract-known-types.md) i <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod XML przedstawia zadeklarowane typy i znane typy dodawane do `DataContractSerializer` elementu. W przykładzie pokazano trzy typy, które są dodawane. Pierwszy jest typem niestandardowym o nazwie "Orders", który używa znanego typu o nazwie "Item". Drugi zadeklarowany typ jest <xref:System.Collections.Generic.List%601> wykorzystywany `Item` jako typ znany. Na koniec trzeci zadeklarowany typ to <xref:System.Collections.Generic.Dictionary%602> . <xref:System.Collections.Generic.Dictionary%602>Typ klasy jest typem ogólnym z dwoma parametrami typu. Pierwszy reprezentuje klucz, a drugi reprezentuje wartość. Poniższy przykład dodaje <xref:System.Collections.Generic.List%601> Typ sekundy (wartość) do listy znanych typów. Należy użyć atrybutu, `index` Aby określić, który parametr typu ma być używany w znanym typie. W takim przypadku typ wartości jest wskazywany przez atrybut indeksu ustawiony na wartość "1" (kolekcja jest różna od zera).  
   
 ```xml  
@@ -89,7 +94,7 @@ Zawiera znane typy <xref:System.Runtime.Serialization.DataContractSerializer> u�
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - [\<dataContractSerializer>](datacontractserializer-element.md)

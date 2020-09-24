@@ -2,14 +2,15 @@
 title: <serviceDebug>
 ms.date: 03/30/2017
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-ms.openlocfilehash: 4eb79cc91ef489501c4c8bb6311f240d855ed053
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8236e581ee754a39ae32fa97084b8e2bfbaee652
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399646"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153875"
 ---
 # \<serviceDebug>
+
 Określa funkcje debugowania i pomocy dla usługi Windows Communication Foundation (WCF).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Określa funkcje debugowania i pomocy dla usługi Windows Communication Foundati
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -51,6 +53,7 @@ Określa funkcje debugowania i pomocy dla usługi Windows Communication Foundati
 |includeExceptionDetailInFaults|Wartość określająca, czy w celach debugowania mają być uwzględniane informacje o zarządzanych wyjątkach. Wartość domyślna to `false`.<br /><br /> Jeśli ten atrybut zostanie ustawiony na `true` , można włączyć przepływ informacji o zarządzanych wyjątkach do klienta na potrzeby debugowania, a także publikację plików informacji HTML dla użytkowników przeglądających usługę w przeglądarkach sieci Web. **Przestroga:**  Zwrócenie informacji o wyjątku zarządzanym do klientów może stanowić zagrożenie bezpieczeństwa. Wynika to z faktu, że szczegóły wyjątku ujawniają informacje o implementacji wewnętrznej usługi, która może być używana przez nieautoryzowanych klientów.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -60,6 +63,7 @@ Określa funkcje debugowania i pomocy dla usługi Windows Communication Foundati
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie elementu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ustawienie `includeExceptionDetailInFaults` `true` umożliwia usłudze zwrócenie dowolnego wyjątku, który jest generowany przez kod aplikacji, nawet jeśli wyjątek nie jest zadeklarowany przy użyciu <xref:System.ServiceModel.FaultContractAttribute> . To ustawienie jest przydatne w przypadku debugowania, gdy serwer zgłasza nieoczekiwany wyjątek. Korzystając z tego atrybutu, zwracana jest serializowana forma nieznanego wyjątku i można zapoznać się z większą liczbą szczegółów wyjątku.  
   
 > [!CAUTION]
@@ -71,7 +75,7 @@ Określa funkcje debugowania i pomocy dla usługi Windows Communication Foundati
   
  Opcjonalne `httpHelpPageBinding` i `httpHelpPageBinding` atrybuty umożliwiają skonfigurowanie powiązań używanych do uzyskiwania dostępu do strony sieci Web usługi. Jeśli nie są one określone, domyślne powiązania ( `HttpTransportBindingElement` w przypadku protokołu HTTP i `HttpsTransportBindingElement` , w przypadku protokołu HTTPS) są używane w celu uzyskania dostępu do strony pomocy usługi. Należy zauważyć, że nie można używać tych atrybutów z wbudowanymi powiązaniami programu WCF. Obsługiwane są tylko powiązania z elementami wewnętrznymi powiązania, które obsługują linki XREF: System. ServiceModel. Channels. IReplyChannel>. Ponadto <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> właściwość powiązania musi mieć wartość <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ServiceDebugElement>
 - <xref:System.ServiceModel.Description.ServiceDebugBehavior>

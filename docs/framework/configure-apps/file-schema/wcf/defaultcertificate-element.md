@@ -2,14 +2,15 @@
 title: <defaultCertificate> Element
 ms.date: 03/30/2017
 ms.assetid: f1ddf364-9a00-45d3-b989-ff381c154ce6
-ms.openlocfilehash: cce236bf80fa00f01a3b5f4680d975f83fde0c16
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2eaec4f4296f90579ca32d817f0a20da4ccc9a37
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400425"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153901"
 ---
 # <a name="defaultcertificate-element"></a>\<defaultCertificate> Element
+
 Określa certyfikat X. 509, który ma być używany, gdy usługa lub STS nie zapewnia go za pośrednictwem protokołu negocjacji.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Określa certyfikat X. 509, który ma być używany, gdy usługa lub STS nie zap
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -67,6 +69,7 @@ Określa certyfikat X. 509, który ma być używany, gdy usługa lub STS nie zap
 |Wyliczenie|Dostępne są następujące wartości: AddressBook, AuthRoot, urząd certyfikacji, niedozwolone, my, root, TrustedPeople i TrustedPublisher.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -76,9 +79,11 @@ Określa certyfikat X. 509, który ma być używany, gdy usługa lub STS nie zap
 |[\<serviceCertificate>](servicecertificate-of-clientcredentials-element.md)|Określa certyfikat, który ma być używany podczas uwierzytelniania usługi dla klienta.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  W przypadku powiązań korzystających z zabezpieczeń komunikatów opartych na certyfikatach certyfikat określony przez ten element konfiguracji jest używany do szyfrowania komunikatów do usługi i powinien być używany przez usługę do podpisywania odpowiedzi do klienta. Przechowuje on pojedynczy certyfikat, który będzie używany w przypadku braku certyfikatu określonego przez usługę.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie określono certyfikat używany dla punktów końcowych, których identyfikator URI zaczyna się od `http://www.contoso.com` i certyfikat używany dla wszystkich innych punktów końcowych, które nie wykonują negocjacji certyfikatów.  
   
 ```xml  
@@ -99,12 +104,12 @@ Określa certyfikat X. 509, który ma być używany, gdy usługa lub STS nie zap
 </serviceCertificate>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.X509DefaultServiceCertificateElement>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.DefaultCertificate%2A>
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [\<authentication>](authentication-of-clientcertificate-element.md)
-- [Zabezpieczanie klientów](../../../wcf/securing-clients.md)
+- [Zabezpieczanie klientów [WCF]](../../../wcf/securing-clients.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

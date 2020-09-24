@@ -3,14 +3,15 @@ title: Debugowanie drzew wyrażeń w programie Visual Studio (C#)
 description: Dowiedz się więcej o właściwości DebugView w programie Visual Studio. Zobacz, jak używać tej właściwości do analizowania struktury i zawartości drzew wyrażeń.
 ms.date: 07/20/2015
 ms.assetid: 1369fa25-0fbd-4b92-98d0-8df79c49c27a
-ms.openlocfilehash: fab378149fb14ccf6a66434c933aa24a8c9c6119
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5dcf56f96ecdbfdc3f4cb171fdb30b96456b59c9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555617"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91154135"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>Debugowanie drzew wyrażeń w programie Visual Studio (C#)
+
 Można analizować strukturę i zawartość drzew wyrażeń podczas debugowania aplikacji. Aby uzyskać szybki przegląd struktury drzewa wyrażeń, można użyć `DebugView` właściwości, która reprezentuje drzewa wyrażeń [przy użyciu specjalnej składni](debugview-syntax.md). (Uwaga, która `DebugView` jest dostępna tylko w trybie debugowania).  
 
 ![Zrzut ekranu przedstawiający DebugView drzewa wyrażenia w debugerze programu VS.](media/debugging-expression-trees-in-visual-studio/debugview-expression-tree.png)
@@ -39,7 +40,7 @@ Alternatywnie można zainstalować i używać [wizualizatora niestandardowego](/
 
 2. Kliknij wizualizator, którego chcesz użyć.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Drzewa wyrażeń (C#)](./index.md)
 - [Debugowanie w Visual Studio](/visualstudio/debugger/debugger-feature-tour)

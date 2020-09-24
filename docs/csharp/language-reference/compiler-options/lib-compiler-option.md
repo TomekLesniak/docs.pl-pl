@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-ms.openlocfilehash: e53c54dc446d9fea87a9b7a336a38ffaa31704e9
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9478501ea98ec1b9d3ec2761bc4ebf3f6bef656c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125452"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152445"
 ---
 # <a name="-lib-c-compiler-options"></a>-LIB (opcje kompilatora C#)
+
 Opcja **-lib** określa lokalizację zestawów, do których odwołuje się opcja [-Reference (opcje kompilatora C#)](./reference-compiler-option.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,6 +27,7 @@ Opcja **-lib** określa lokalizację zestawów, do których odwołuje się opcja
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `dir1`  
  Katalog dla kompilatora, który ma być używany w przypadku, gdy w bieżącym katalogu roboczym nie znaleziono zestawu, którego dotyczy odwołanie, lub w katalogu systemowym środowiska uruchomieniowego języka wspólnego.  
   
@@ -33,6 +35,7 @@ Opcja **-lib** określa lokalizację zestawów, do których odwołuje się opcja
  Co najmniej jeden katalog dodatkowych do przeszukania w celu odwołania do zestawu. Oddzielaj dodatkowe nazwy katalogów przecinkami i bez odstępów między nimi.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Kompilator wyszukuje odwołania do zestawów, które nie są w pełni kwalifikowane w następującej kolejności:  
   
 1. Bieżący katalog roboczy. Jest to katalog, z którego wywołano kompilator.  
@@ -62,6 +65,7 @@ Opcja **-lib** określa lokalizację zestawów, do których odwołuje się opcja
  Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A> .  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj t2.cs, aby utworzyć plik. exe. Kompilator będzie szukać w katalogu roboczym i w katalogu głównym dysku C na potrzeby odwołań do zestawów.  
   
 ```console  

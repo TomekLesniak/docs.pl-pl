@@ -2,14 +2,15 @@
 title: <serviceSecurityAudit>
 ms.date: 03/30/2017
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-ms.openlocfilehash: 10888f26053014ffb1fec49d1dfe87c7fd09ab54
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6cec3373dae3127f16bb8a418a91a684554f2b0c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399577"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153667"
 ---
 # \<serviceSecurityAudit>
+
 Określa ustawienia, które włączają inspekcję zdarzeń zabezpieczeń podczas operacji usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Określa ustawienia, które włączają inspekcję zdarzeń zabezpieczeń podcza
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -41,6 +43,7 @@ Określa ustawienia, które włączają inspekcję zdarzeń zabezpieczeń podcza
 |messageAuthenticationAuditLevel|Określa typ zarejestrowanych zdarzeń inspekcji uwierzytelniania wiadomości. Prawidłowe wartości to:<br /><br /> -Brak: nie są generowane żadne zdarzenia inspekcji.<br />-Sukces: zarejestrowano tylko pomyślne zabezpieczenia (pełna Walidacja, w tym sprawdzanie poprawności podpisów komunikatów, szyfrowanie i sprawdzanie poprawności tokenów).<br />-Błąd: rejestrowane są tylko zdarzenia niepowodzeń.<br />-SuccessOrFailure: rejestrowane są zdarzenia sukces i niepowodzeń.<br /><br /> Wartość domyślna to Brak. Aby uzyskać więcej informacji, zobacz <xref:System.ServiceModel.AuditLevel>.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -50,6 +53,7 @@ Określa ustawienia, które włączają inspekcję zdarzeń zabezpieczeń podcza
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie elementu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element konfiguracji jest używany do inspekcji zdarzeń uwierzytelniania Windows Communication Foundation (WCF). Gdy inspekcja jest włączona, może być przeprowadzana inspekcja nieudanych lub nieudanych prób uwierzytelnienia (lub obydwu). Zdarzenia są zapisywane w jednym z trzech dzienników zdarzeń: aplikacji, zabezpieczeń lub dziennika domyślnego dla wersji systemu operacyjnego. Wszystkie dzienniki zdarzeń można wyświetlić za pomocą podglądu zdarzeń systemu Windows.  
   
  Aby zapoznać się ze szczegółowym przykładem użycia tego elementu konfiguracji, zapoznaj się z tematem [zachowanie inspekcji usługi](../../../wcf/samples/service-auditing-behavior.md).  
@@ -79,7 +83,7 @@ Określa ustawienia, które włączają inspekcję zdarzeń zabezpieczeń podcza
 </system.serviceModel>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>

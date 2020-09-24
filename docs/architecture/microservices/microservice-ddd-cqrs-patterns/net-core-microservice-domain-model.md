@@ -2,12 +2,12 @@
 title: Implementowanie modelu domeny mikrousługi za pomocą platformy .NET Core
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się ze szczegółami implementacji modelu domeny zorientowanego na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 4017d9d658ff73fd935507dad79e9ffab7973de1
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: e24f4e643d258450a2b33ed4dc4aded718bebd82
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738752"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152549"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementowanie modelu domeny mikrousługi przy użyciu platformy .NET Core
 
@@ -152,7 +152,7 @@ W tym fragmencie kodu większość walidacji lub logiki związanych z tworzeniem
 
 Ponadto nowa operacja OrderItem (params) również będzie kontrolowana i wykonywana przez metodę AddOrderItem z poziomu głównego agregacji Order. W związku z tym większość logiki lub walidacji związanych z tą operacją (szczególnie każdy ma wpływ na spójność między innymi jednostkami podrzędnymi) będzie w jednym miejscu w ramach zagregowanego elementu głównego. Jest to ostateczny cel zagregowanego wzorca głównego.
 
-W przypadku korzystania z Entity Framework Core 1,1 lub nowszej jednostka DDD może być lepiej wyrażona, ponieważ umożliwia ona [Mapowanie do pól](https://docs.microsoft.com/ef/core/modeling/backing-field) oprócz właściwości. Jest to przydatne w przypadku ochrony kolekcji jednostek podrzędnych lub obiektów wartości. Dzięki temu ulepszeniu można używać prostych prywatnych pól zamiast właściwości i można zaimplementować dowolną aktualizację do kolekcji pól w metodach publicznych i zapewnić dostęp tylko do odczytu za pomocą metody AsReadOnly.
+W przypadku korzystania z Entity Framework Core 1,1 lub nowszej jednostka DDD może być lepiej wyrażona, ponieważ umożliwia ona [Mapowanie do pól](/ef/core/modeling/backing-field) oprócz właściwości. Jest to przydatne w przypadku ochrony kolekcji jednostek podrzędnych lub obiektów wartości. Dzięki temu ulepszeniu można używać prostych prywatnych pól zamiast właściwości i można zaimplementować dowolną aktualizację do kolekcji pól w metodach publicznych i zapewnić dostęp tylko do odczytu za pomocą metody AsReadOnly.
 
 W DDD należy zaktualizować jednostkę tylko za pomocą metod w jednostce (lub w konstruktorze) w celu kontrolowania wszelkich niezmiennej i spójności danych, dlatego właściwości są definiowane tylko przy użyciu metody dostępu get. Właściwości są obsługiwane przez pola prywatne. Dostęp do prywatnych elementów członkowskich można uzyskać tylko z poziomu klasy. Istnieje jednak jeden wyjątek: EF Core należy odpowiednio ustawić te pola (aby można było zwrócić obiekt z prawidłowymi wartościami).
 

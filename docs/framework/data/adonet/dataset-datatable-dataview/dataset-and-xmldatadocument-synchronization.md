@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0ce3793d-54b2-47e4-8cf7-b0591cc4dd21
-ms.openlocfilehash: e76e81153cb7d074fe975744c6b6041ee04be90f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2790f0a9edd5bfde96683e00725dd04555379adf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785428"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153303"
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>Synchronizacja elementów DataSet i XmlDataDocument
+
 ADO.NET <xref:System.Data.DataSet> zapewnia relacyjną reprezentację danych. W przypadku dostępu do danych hierarchicznych można użyć klas XML dostępnych w .NET Framework. W przeszłości te dwie reprezentacje danych zostały użyte osobno. Jednak .NET Framework umożliwia dostęp synchroniczny w czasie rzeczywistym zarówno do relacyjnych, jak i hierarchicznych reprezentacji danych za pomocą obiektu **DataSet** i <xref:System.Xml.XmlDataDocument> obiektu.  
   
- Gdy **zestaw danych** jest synchronizowany z **XmlDataDocument**, oba obiekty pracują z pojedynczym zestawem danych. Oznacza to, że jeśli w **zestawie danych**zostanie wprowadzona zmiana, zmiana zostanie odzwierciedlona w **XmlDataDocument**i na odwrót. Relacja między **zestawem danych** a **XmlDataDocumentą** tworzy doskonałą elastyczność dzięki umożliwieniu pojedynczej aplikacji, korzystającej z pojedynczego zestawu danych, w celu uzyskania dostępu do całego zestawu usług utworzonych wokół **zestawu danych** (na przykład formularzy sieci Web i Formanty Windows Forms i Visual Studio .NET Designer), a także pakiet usług XML, w tym Extensible Stylesheet Language (XSL), przekształcenia XSL (XSLT) i XML Path Language (XPath). Nie trzeba wybierać zestawu usług przeznaczonych dla aplikacji; Oba te elementy są dostępne.  
+ Gdy **zestaw danych** jest synchronizowany z **XmlDataDocument**, oba obiekty pracują z pojedynczym zestawem danych. Oznacza to, że jeśli w **zestawie danych**zostanie wprowadzona zmiana, zmiana zostanie odzwierciedlona w **XmlDataDocument**i na odwrót. Relacja między **zestawem danych** a **XmlDataDocumentą** tworzy doskonałą elastyczność przez umożliwienie pojedynczej aplikacji, korzystanie z jednego zestawu danych w celu uzyskania dostępu do całego zestawu usług utworzonych wokół **zestawu danych** (takich jak formularze sieci Web i kontrolki Windows Forms i Visual Studio .NET Designer), a także zestawu usług XML, w tym EXTENSIBLE STYLESHEET Language (XSL), przekształcenia XSL (XSLT) i XML Path Language (XPath). Nie trzeba wybierać zestawu usług przeznaczonych dla aplikacji; Oba te elementy są dostępne.  
   
  Istnieje kilka sposobów synchronizacji **zestawu danych** z **XmlDataDocument**. Można:  
   
@@ -85,11 +86,12 @@ ADO.NET <xref:System.Data.DataSet> zapewnia relacyjną reprezentację danych. W 
     xmlDoc.Load("XMLDocument.xml");  
     ```  
   
- Inną zaletą synchronizowania **XmlDataDocument** z **zestawem danych** jest zachowywanie wierności dokumentu XML. Jeśli **zestaw danych** jest wypełniany z dokumentu XML przy użyciu **ReadXml**, gdy dane są zapisywane z powrotem jako dokument XML przy użyciu **WriteXml** , może się różnić od oryginalnego dokumentu XML. Jest to spowodowane tym, że **zestaw danych** nie zachowuje formatowania, takiego jak odstępy, lub informacji hierarchicznych, takich jak kolejność elementów, z dokumentu XML. **Zestaw danych** nie zawiera również elementów z dokumentu XML, który został zignorowany, ponieważ nie pasowały do schematu **zestawu danych**. Synchronizacja elementu **XmlDataDocument** z **zestawem danych** umożliwia przechowywanie formatowania i hierarchicznej struktury elementu oryginalnego dokumentu XML w **XmlDataDocument**, podczas gdy **zestaw danych** zawiera tylko dane i Informacje o schemacie odpowiednie dla **zestawu danych**.  
+ Inną zaletą synchronizowania **XmlDataDocument** z **zestawem danych** jest zachowywanie wierności dokumentu XML. Jeśli **zestaw danych** jest wypełniany z dokumentu XML przy użyciu **ReadXml**, gdy dane są zapisywane z powrotem jako dokument XML przy użyciu **WriteXml** , może się różnić od oryginalnego dokumentu XML. Jest to spowodowane tym, że **zestaw danych** nie zachowuje formatowania, takiego jak odstępy, lub informacji hierarchicznych, takich jak kolejność elementów, z dokumentu XML. **Zestaw danych** nie zawiera również elementów z dokumentu XML, który został zignorowany, ponieważ nie pasowały do schematu **zestawu danych**. Synchronizowanie **XmlDataDocument** z **zestawem danych** umożliwia przechowywanie formatowania i hierarchicznej struktury elementu oryginalnego dokumentu XML w **XmlDataDocument**, podczas gdy **zestaw danych** zawiera tylko dane i informacje o schemacie, które są odpowiednie dla tego **zestawu danych**.  
   
  W przypadku synchronizacji **zestawu danych** z **XmlDataDocument**wyniki mogą się różnić w zależności od tego, czy <xref:System.Data.DataRelation> obiekty są zagnieżdżone. Aby uzyskać więcej informacji, zobacz [zagnieżdżanie relacji](nesting-datarelations.md)danych.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Synchronizowanie elementu DataSet z elementem XmlDataDocument](synchronizing-a-dataset-with-an-xmldatadocument.md)  
  Demonstruje synchronizację **zestawu danych**o jednoznacznie określonym typie, z minimalnym schematem, z **XmlDataDocument**.  
   
@@ -100,6 +102,7 @@ ADO.NET <xref:System.Data.DataSet> zapewnia relacyjną reprezentację danych. W 
  Pokazuje, jak zastosować transformację XSLT do zawartości **zestawu danych**.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Używanie języka XML w elemencie DataSet](using-xml-in-a-dataset.md)  
  Opisuje, jak **zestaw** danych WSPÓŁDZIAŁA z XML jako źródło danych, w tym ładowanie i utrwalanie zawartości **zestawu** danych jako danych XML.  
   
@@ -112,6 +115,6 @@ ADO.NET <xref:System.Data.DataSet> zapewnia relacyjną reprezentację danych. W 
  <xref:System.Xml.XmlDataDocument>  
  Zawiera informacje referencyjne dotyczące klasy **XmlDataDocument** .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie ADO.NET](../ado-net-overview.md)

@@ -2,12 +2,12 @@
 title: Wzorzec bramy interfejsu API w porównaniu z bezpośrednią komunikacją klient-do-mikrousług
 description: Zapoznaj się z różnicami i wykorzystaniem wzorca usługi API Gateway oraz bezpośredniej komunikacji klient-do-mikrousług.
 ms.date: 01/07/2019
-ms.openlocfilehash: 089b6302132437e4bb733653b3edb401ff81a164
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 90761605dde197e44658e3ba0b0a3a2c06b5942c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306958"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152705"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Wzorzec bramy interfejsu API w porównaniu z bezpośrednią komunikacją klient-do-mikrousług
 
@@ -25,7 +25,7 @@ W tym podejściu każda mikrousługa ma publiczny punkt końcowy, czasami z inny
 
 `http://eshoponcontainers.westus.cloudapp.azure.com:88/`
 
-W środowisku produkcyjnym opartym na klastrze ten adres URL będzie mapowany do modułu równoważenia obciążenia używanego w klastrze, co z kolei dystrybuuje żądania dla mikrousług. W środowiskach produkcyjnych można korzystać z kontrolera dostarczania aplikacji (ADC), takiego jak [platforma Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction) między mikrousługami i Internetem. Działa to jako przezroczysta warstwa, która nie tylko realizuje Równoważenie obciążenia, ale zabezpiecza usługi przez umożliwienie zakończenia protokołu SSL. Poprawia to obciążenie hostów przez Przeciążenie zakończenia protokołu SSL intensywnie korzystających z procesora CPU i innych obowiązków routingu do Application Gateway platformy Azure. W każdym przypadku moduł równoważenia obciążenia i ADC jest przezroczysty z punktu widzenia architektury aplikacji logicznej.
+W środowisku produkcyjnym opartym na klastrze ten adres URL będzie mapowany do modułu równoważenia obciążenia używanego w klastrze, co z kolei dystrybuuje żądania dla mikrousług. W środowiskach produkcyjnych można korzystać z kontrolera dostarczania aplikacji (ADC), takiego jak [platforma Azure Application Gateway](/azure/application-gateway/application-gateway-introduction) między mikrousługami i Internetem. Działa to jako przezroczysta warstwa, która nie tylko realizuje Równoważenie obciążenia, ale zabezpiecza usługi przez umożliwienie zakończenia protokołu SSL. Poprawia to obciążenie hostów przez Przeciążenie zakończenia protokołu SSL intensywnie korzystających z procesora CPU i innych obowiązków routingu do Application Gateway platformy Azure. W każdym przypadku moduł równoważenia obciążenia i ADC jest przezroczysty z punktu widzenia architektury aplikacji logicznej.
 
 Bezpośrednia architektura komunikacji między klientem a mikrousługą może być wystarczająca dla małych aplikacji opartych na mikrousługach, zwłaszcza jeśli aplikacja kliencka jest aplikacją sieci Web po stronie serwera, taką jak aplikacja ASP.NET MVC. Jednak podczas kompilowania dużych i złożonych aplikacji opartych na mikrousługach (na przykład w przypadku obsługi dziesiątek typów mikrousług), a zwłaszcza gdy aplikacje klienckie to zdalne aplikacje mobilne lub aplikacje sieci Web SPA, takie podejście nadaje kilka problemów.
 
@@ -95,13 +95,13 @@ Brama interfejsu API może oferować wiele funkcji. W zależności od produktu m
 
 **Zwrotny serwer proxy lub Routing bramy.** Brama interfejsu API oferuje zwrotny serwer proxy do przekierowywania lub kierowania żądań (Routing warstwy 7, zazwyczaj żądania HTTP) do punktów końcowych mikrousług wewnętrznych. Brama zawiera pojedynczy punkt końcowy lub adres URL dla aplikacji klienckich, a następnie wewnętrznie mapuje żądania do grupy mikrousług wewnętrznych. Ta funkcja routingu ułatwia oddzielenie aplikacji klienckich od mikrousług, ale jest również wygodne podczas modernizacji interfejsu API monolitycznej przez umieszczenie bramy interfejsu API między monolitycznym interfejsem API i aplikacjami klienckim, a następnie dodanie nowych interfejsów API jako nowych mikrousług przy użyciu starszego monolitycznego interfejsu API, dopóki nie zostanie on podzielony na wiele mikrousług w przyszłości. Ze względu na bramę interfejsu API aplikacje klienckie nie będą wyszukiwane, jeśli używane interfejsy API są implementowane jako mikrousługi wewnętrzne lub monolityczny interfejs API, a co ważniejsze, podczas rozwijania i refaktoryzacji monolitycznego interfejsu API do mikrousług, dzięki routingu bramy interfejsu API nie będą miały wpływu na żadną zmianę identyfikatora URI.
 
-Aby uzyskać więcej informacji, zobacz [wzorzec routingu bramy](https://docs.microsoft.com/azure/architecture/patterns/gateway-routing).
+Aby uzyskać więcej informacji, zobacz [wzorzec routingu bramy](/azure/architecture/patterns/gateway-routing).
 
 **Żąda agregacji.** W ramach wzorca bramy można agregować wiele żądań klientów (zazwyczaj żądania HTTP) ukierunkowane na wiele mikrousług wewnętrznych na jedno żądanie klienta. Ten wzorzec jest szczególnie wygodniejszy, gdy strona/ekran klienta potrzebuje informacji z kilku mikrousług. W tym podejściu aplikacja kliencka wysyła pojedyncze żądanie do bramy interfejsu API, która rozsyła kilka żądań do wewnętrznych mikrousług, a następnie agreguje wyniki i wysyła wszystko z powrotem do aplikacji klienckiej. Główną korzyścią i celem tego wzorca projektowego jest zredukowanie chattiness między aplikacjami klienckimi i interfejsem API zaplecza, co jest szczególnie ważne w przypadku aplikacji zdalnych z centrum danych, w których na żywo znajdują się mikrousługi, takie jak aplikacje mobilne lub żądania odbierane z aplikacji SPA w przeglądarkach zdalnych klienta. W przypadku zwykłych aplikacji sieci Web, które wykonują żądania w środowisku serwera (na przykład w aplikacji sieci Web ASP.NET Core MVC), ten wzorzec nie jest tak ważny, ponieważ opóźnienie jest bardzo mniejsze niż w przypadku zdalnych aplikacji klienckich.
 
 W zależności od używanego produktu bramy API może być możliwe przeprowadzenie tego agregacji. Jednak w wielu przypadkach bardziej elastyczne jest tworzenie mikrousług agregacji w zakresie bramy interfejsu API, dlatego należy zdefiniować agregację w kodzie (czyli kodzie C#):
 
-Aby uzyskać więcej informacji, zobacz [wzorzec agregacji bramy](https://docs.microsoft.com/azure/architecture/patterns/gateway-aggregation).
+Aby uzyskać więcej informacji, zobacz [wzorzec agregacji bramy](/azure/architecture/patterns/gateway-aggregation).
 
 **Problemy z wycinaniem lub odciążanie bramy.** W zależności od funkcji oferowanych przez każdy produkt bramy interfejsu API można odciążyć funkcje z poszczególnych mikrousług do bramy, co upraszcza implementację każdej mikrousługi przez konsolidowanie zagadnień związanych z przecinaniem do jednej warstwy. Jest to szczególnie wygodne w przypadku wyspecjalizowanych funkcji, które mogą być skomplikowane do prawidłowego wdrożenia w każdej wewnętrznej mikrousług, takiej jak następujące:
 
@@ -115,7 +115,7 @@ Aby uzyskać więcej informacji, zobacz [wzorzec agregacji bramy](https://docs.m
 - Nagłówki, ciągi zapytań i przekształcenia oświadczeń
 - Listy dozwolonych IP
 
-Aby uzyskać więcej informacji, zobacz [wzorzec odciążania bramy](https://docs.microsoft.com/azure/architecture/patterns/gateway-offloading).
+Aby uzyskać więcej informacji, zobacz [wzorzec odciążania bramy](/azure/architecture/patterns/gateway-offloading).
 
 ## <a name="using-products-with-api-gateway-features"></a>Korzystanie z produktów z funkcjami bramy interfejsu API
 

@@ -3,17 +3,19 @@ title: Jak wykonać zapytanie o znaki w ciągu (LINQ) (C#)
 description: Możesz badać ciąg jako sekwencję znaków w LINQ. Ten przykład w języku C# wysyła zapytanie do ciągu, aby określić liczbę cyfr, które zawiera.
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: 3512be7c30843fcd8e881eab59761706a84a3ac8
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 73288924d057e720a744b853998a52437b9db481
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104548"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153940"
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Jak wykonać zapytanie o znaki w ciągu (LINQ) (C#)
+
 Ponieważ <xref:System.String> Klasa implementuje <xref:System.Collections.Generic.IEnumerable%601> interfejs ogólny, dowolny ciąg może być badany jako sekwencja znaków. Nie jest to jednak powszechne użycie LINQ. W przypadku złożonych operacji dopasowania do wzorca Użyj <xref:System.Text.RegularExpressions.Regex> klasy.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład wysyła zapytanie do ciągu, aby określić liczbę cyfr, które zawiera. Należy pamiętać, że zapytanie jest "ponownie używane" po raz pierwszy. Jest to możliwe, ponieważ samo zapytanie nie przechowuje żadnych rzeczywistych wyników.  
   
 ```csharp  
@@ -56,6 +58,7 @@ class QueryAString
 ```  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
  Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.  
   
 ## <a name="see-also"></a>Zobacz też

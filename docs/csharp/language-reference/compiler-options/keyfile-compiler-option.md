@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: a97fc00201be1cf8043fc353b20ef447468a06bf
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5af40da18895d47933cb809d710e31a40f14513b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125491"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152432"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (opcje kompilatora C#)
+
 Określa nazwę pliku zawierającego klucz kryptograficzny.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,6 +33,7 @@ Określa nazwę pliku zawierającego klucz kryptograficzny.
 |`file`|Nazwa pliku zawierającego klucz silnej nazwy.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Gdy ta opcja jest używana, kompilator wstawia klucz publiczny z określonego pliku do manifestu zestawu, a następnie podpisuje końcowy zestaw kluczem prywatnym. Aby wygenerować plik klucza, wpisz SN-k `file` w wierszu polecenia.  
   
  W przypadku kompilowania z **modułem-target:** nazwa pliku klucza jest przechowywana w module i wbudowana w zestaw, który jest tworzony podczas kompilowania zestawu za pomocą [-addmodule](./addmodule-compiler-option.md).  

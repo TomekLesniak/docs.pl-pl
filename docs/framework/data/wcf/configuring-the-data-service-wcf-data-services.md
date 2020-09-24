@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
-ms.openlocfilehash: 57830421eee3c94f9785a2c603eb31b96f99f4d5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a30a8c2c731e8c5cb2b22c8d7f34ec32d149803c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552846"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152796"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurowanie usługi danych (Usługi danych programu WCF)
+
 Za pomocą Usługi danych programu WCF można tworzyć usługi danych, które uwidaczniają źródła danych Open Data Protocol (OData). Dane w tych źródłach mogą pochodzić z różnych źródeł danych. Usługi danych programu WCF używa dostawców danych w celu udostępnienia tych danych jako źródła strumieniowego OData. Ci dostawcy obejmują dostawcę Entity Framework, dostawcę odbicia i zestaw niestandardowych interfejsów dostawcy usługi danych. Implementacja dostawcy definiuje model danych dla usługi. Aby uzyskać więcej informacji, zobacz [Data Services Providers](data-services-providers-wcf-data-services.md).  
   
  W Usługi danych programu WCF usługa danych jest klasą, która dziedziczy z <xref:System.Data.Services.DataService%601> klasy, gdzie typ usługi danych jest kontenerem jednostek modelu danych. Ten kontener jednostek ma co najmniej jedną właściwość, która zwraca obiekt <xref:System.Linq.IQueryable%601> , który jest używany do uzyskiwania dostępu do zestawów jednostek w modelu danych.  
@@ -25,6 +26,7 @@ Za pomocą Usługi danych programu WCF można tworzyć usługi danych, które uw
 [!code-vb[Astoria Northwind Service#DataServiceConfigComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind.svc.vb#dataserviceconfigcomplete)]  
   
 ## <a name="data-service-configuration-settings"></a>Ustawienia konfiguracji usługi danych  
+
  <xref:System.Data.Services.DataServiceConfiguration>Klasa umożliwia określenie następujących zachowań usługi danych:  
   
 |Członek|Zachowanie|  
@@ -48,7 +50,9 @@ Za pomocą Usługi danych programu WCF można tworzyć usługi danych, które uw
 |<xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A>|Ta właściwość konfiguracji umożliwia łatwiejsze rozwiązywanie problemów z usługą danych przez zwrócenie większej ilości informacji w komunikacie o błędzie. Ta opcja nie jest przeznaczona do użycia w środowisku produkcyjnym. Aby uzyskać więcej informacji, zobacz [Tworzenie i wdrażanie usługi danych programu WCF](developing-and-deploying-wcf-data-services.md).|  
   
 <a name="accessRequirements"></a>
+
 ## <a name="minimum-resource-access-requirements"></a>Minimalne wymagania dotyczące dostępu do zasobów  
+
  Poniższa tabela zawiera szczegółowe informacje o prawach do zestawu jednostek minimalnych, które muszą zostać przyznane do wykonania określonej operacji. Przykłady ścieżki są oparte na usłudze danych Northwind, która została utworzona po zakończeniu [przewodnika Szybki Start](quickstart-wcf-data-services.md). Ponieważ zarówno <xref:System.Data.Services.EntitySetRights> Wyliczenie, jak i <xref:System.Data.Services.ServiceOperationRights> Wyliczenie są zdefiniowane przy użyciu <xref:System.FlagsAttribute> , można użyć operatora logicznego OR do określenia wielu uprawnień dla pojedynczego zestawu lub operacji. Aby uzyskać więcej informacji, zobacz [jak: Włączanie dostępu do usługi danych](how-to-enable-access-to-the-data-service-wcf-data-services.md).  
   
 |Ścieżka/akcja|`GET`|`DELETE`|`MERGE`|`POST`|`PUT`|  
@@ -65,7 +69,7 @@ Za pomocą Usługi danych programu WCF można tworzyć usługi danych, które uw
 |`/Customers('ALFKI')/ContactName`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Nieobsługiwane|<xref:System.Data.Services.EntitySetRights.WriteMerge>|Nieobsługiwane|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Customers('ALFKI')/Address/StreetAddress/$value`<sup>1</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.WriteDelete>|Nieobsługiwane|Nieobsługiwane|Nieobsługiwane|  
 |`/Customers('ALFKI')/ContactName/$value`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.ReadSingle> i <xref:System.Data.Services.EntitySetRights.WriteDelete>|<xref:System.Data.Services.EntitySetRights.WriteMerge>|Nieobsługiwane|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
-|`/Customers('ALFKI')/$value` <sup>2</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Nieobsługiwane|Nieobsługiwane|Nieobsługiwane|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Customers('ALFKI')/$value`<sup>2</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Nieobsługiwane|Nieobsługiwane|Nieobsługiwane|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Customers?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> lub<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nieobsługiwane|Nieobsługiwane|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend>|Nieobsługiwane|  
 |`/Customers('ALFKI')?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> lub<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Nieobsługiwane|Nieobsługiwane|Nieobsługiwane|Nieobsługiwane|  
   
@@ -74,7 +78,9 @@ Za pomocą Usługi danych programu WCF można tworzyć usługi danych, które uw
  <sup>2</sup> ten identyfikator URI jest obsługiwany, gdy właściwość zwracająca duży obiekt binarny (BLOB) jest definiowana jako zasób multimedialny należący do jednostki, która jest pozycją linku do nośnika, w tym przypadku jest to `Customers` . Aby uzyskać więcej informacji, zobacz [dostawca przesyłania strumieniowego](streaming-provider-wcf-data-services.md).  
   
 <a name="versioning"></a>
+
 ## <a name="versioning-requirements"></a>Wymagania dotyczące wersji  
+
  Następujące zachowania konfiguracji usługi danych wymagają wersji 2 protokołu OData lub nowszej wersji:  
   
 - Obsługa żądań Count.  
@@ -83,7 +89,7 @@ Za pomocą Usługi danych programu WCF można tworzyć usługi danych, które uw
   
  Aby uzyskać więcej informacji, zobacz [przechowywanie wersji usługi danych](data-service-versioning-wcf-data-services.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Definiowanie usług danych WCF](defining-wcf-data-services.md)
 - [Hosting usługi danych](hosting-the-data-service-wcf-data-services.md)

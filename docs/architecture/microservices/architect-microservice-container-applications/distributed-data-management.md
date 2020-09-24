@@ -2,12 +2,12 @@
 title: Problemy i rozwiązania dotyczące rozproszonego zarządzania danymi
 description: Zapoznaj się z wyzwaniami i rozwiązaniami dotyczącymi rozproszonego zarządzania danymi na świecie mikrousług.
 ms.date: 09/20/2018
-ms.openlocfilehash: 8b91879e879db293ed61bd5f3c49dc391b9d8f5a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 1439dd5a04c3991a2b3b2ef12763843f9f339a29
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144321"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152654"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Problemy i rozwiązania dotyczące rozproszonego zarządzania danymi
 
@@ -25,7 +25,7 @@ Drugim wyzwaniem jest zaimplementowanie zapytań, które pobierają dane z kilku
 
 **Brama interfejsu API.** W przypadku prostej agregacji danych z wielu mikrousług należących do różnych baz danych Zalecanym podejściem jest mikrousługa agregacji, nazywana bramą interfejsu API. Należy jednak zachować ostrożność podczas implementowania tego wzorca, ponieważ może to być punkt podlewka w systemie i może naruszać zasadę autonomii mikrousług. Aby wyeliminować tę możliwość, można mieć wiele bram interfejsów API z ograniczeniami, które koncentrują się na pionowych "wycinkach" lub w obszarze roboczym systemu. Wzorzec bramy interfejsu API został wyjaśniony bardziej szczegółowo w [sekcji bramy interfejsu API](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#why-consider-api-gateways-instead-of-direct-client-to-microservice-communication) .
 
-**CQRS z tabelami zapytań/odczytów.** Innym rozwiązaniem do agregowania danych z wielu mikrousług jest [wzorzec widoku materiału](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). W tej metodzie generowane są z góry (przygotowanie nieznormalizowanych danych przed rzeczywistymi zapytania), tabela tylko do odczytu z danymi należącymi do wielu mikrousług. Tabela ma format odpowiedni dla potrzeb aplikacji klienta.
+**CQRS z tabelami zapytań/odczytów.** Innym rozwiązaniem do agregowania danych z wielu mikrousług jest [wzorzec widoku materiału](/azure/architecture/patterns/materialized-view). W tej metodzie generowane są z góry (przygotowanie nieznormalizowanych danych przed rzeczywistymi zapytania), tabela tylko do odczytu z danymi należącymi do wielu mikrousług. Tabela ma format odpowiedni dla potrzeb aplikacji klienta.
 
 Rozważ coś takiego jak ekran aplikacji mobilnej. Jeśli masz pojedynczą bazę danych, możesz ściągnąć dane dla tego ekranu za pomocą zapytania SQL, które wykonuje złożone sprzężenie obejmujące wiele tabel. Jeśli jednak masz wiele baz danych, a każda baza danych jest własnością innej mikrousługi, nie można wykonać zapytania o te bazy danych i utworzyć sprzężenia SQL. Zapytanie złożone jest wyzwaniem. Wymagania można rozwiązać przy użyciu podejścia CQRSego — można utworzyć nieznormalizowaną tabelę w innej bazie danych, która jest używana tylko w przypadku zapytań. Tabela może być zaprojektowana specjalnie dla danych, które są potrzebne dla zapytania złożonego, z relacją jeden do jednego między polami wymaganymi przez ekran aplikacji a kolumnami w tabeli zapytania. Może również być używany do celów raportowania.
 

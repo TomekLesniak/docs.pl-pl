@@ -2,14 +2,15 @@
 title: <servicePrincipalName>
 ms.date: 03/30/2017
 ms.assetid: 3f3b85d3-20f2-4cd8-8a6a-ee18befbd165
-ms.openlocfilehash: da865a19a91d4af6221a13b53a174637d5fb8139
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0d03844a58de5b4af93f276de75c88af6efed3f8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854993"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153797"
 ---
 # \<servicePrincipalName>
+
 Określa tożsamość usługi za pomocą nazwy głównej usługi (SPN).  
   
 Aby uzyskać więcej informacji na temat ustawiania nazwy SPN, zobacz [tożsamość usługi i uwierzytelnianie](../../../wcf/feature-details/service-identity-and-authentication.md).  
@@ -28,15 +29,17 @@ Aby uzyskać więcej informacji na temat ustawiania nazwy SPN, zobacz [tożsamo�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
   
 |Atrybut|Opis|  
 |---------------|-----------------|  
-|value|Nazwa, przez którą klient jednoznacznie identyfikuje wystąpienie usługi. W przypadku instalowania wielu wystąpień usługi na komputerach w lesie, każde wystąpienie musi mieć własną nazwę SPN. Dana nazwa wystąpienia usługi może mieć wiele nazw SPN, jeśli istnieje wiele nazwy, których klienci mogą używać na potrzeby uwierzytelniania.|  
+|wartość|Nazwa, przez którą klient jednoznacznie identyfikuje wystąpienie usługi. W przypadku instalowania wielu wystąpień usługi na komputerach w lesie, każde wystąpienie musi mieć własną nazwę SPN. Dana nazwa wystąpienia usługi może mieć wiele nazw SPN, jeśli istnieje wiele nazwy, których klienci mogą używać na potrzeby uwierzytelniania.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -46,9 +49,10 @@ Aby uzyskać więcej informacji na temat ustawiania nazwy SPN, zobacz [tożsamo�
 |[\<identity>](identity.md)|Określa tożsamość usługi do uwierzytelnienia przez klienta.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Bezpieczny Windows Communication Foundation (WCF), który nawiązuje połączenie z punktem końcowym z tą tożsamością używa nazwy SPN podczas uwierzytelniania SSPI przy użyciu punktu końcowego.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>
