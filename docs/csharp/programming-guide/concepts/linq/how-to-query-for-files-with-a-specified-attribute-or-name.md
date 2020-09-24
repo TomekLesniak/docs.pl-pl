@@ -3,17 +3,18 @@ title: Jak wykonać zapytanie o pliki o określonym atrybucie lub nazwie (C#)
 description: Dowiedz się, jak używać LINQ w języku C#, aby znaleźć pliki, które mają określone rozszerzenie nazwy pliku w drzewie katalogów i jak zwrócić najnowszy lub najstarszy plik.
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: 9820b96e19d805b792e18ff242e64dfb6cf4a606
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 01a3482d8ea4c95b60dd9434320f175f0498c3e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104501"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165315"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a><span data-ttu-id="5f4c4-103">Jak wykonać zapytanie o pliki o określonym atrybucie lub nazwie (C#)</span><span class="sxs-lookup"><span data-stu-id="5f4c4-103">How to query for files with a specified attribute or name (C#)</span></span>
-<span data-ttu-id="5f4c4-104">Ten przykład pokazuje, jak znaleźć wszystkie pliki, które mają określone rozszerzenie nazwy pliku (na przykład ". txt") w określonym drzewie katalogów.</span><span class="sxs-lookup"><span data-stu-id="5f4c4-104">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="5f4c4-105">Przedstawiono w nim również, jak zwrócić najnowszy lub najstarszy plik w drzewie na podstawie czasu utworzenia.</span><span class="sxs-lookup"><span data-stu-id="5f4c4-105">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a><span data-ttu-id="f8e1f-103">Jak wykonać zapytanie o pliki o określonym atrybucie lub nazwie (C#)</span><span class="sxs-lookup"><span data-stu-id="f8e1f-103">How to query for files with a specified attribute or name (C#)</span></span>
+
+<span data-ttu-id="f8e1f-104">Ten przykład pokazuje, jak znaleźć wszystkie pliki, które mają określone rozszerzenie nazwy pliku (na przykład ". txt") w określonym drzewie katalogów.</span><span class="sxs-lookup"><span data-stu-id="f8e1f-104">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="f8e1f-105">Przedstawiono w nim również, jak zwrócić najnowszy lub najstarszy plik w drzewie na podstawie czasu utworzenia.</span><span class="sxs-lookup"><span data-stu-id="f8e1f-105">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="5f4c4-106">Przykład</span><span class="sxs-lookup"><span data-stu-id="5f4c4-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f8e1f-106">Przykład</span><span class="sxs-lookup"><span data-stu-id="f8e1f-106">Example</span></span>  
   
 ```csharp  
 class FindFileByExtension  
@@ -64,10 +65,11 @@ class FindFileByExtension
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="5f4c4-107">Kompilowanie kodu</span><span class="sxs-lookup"><span data-stu-id="5f4c4-107">Compiling the Code</span></span>  
-  <span data-ttu-id="5f4c4-108">Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.</span><span class="sxs-lookup"><span data-stu-id="5f4c4-108">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
-  
-## <a name="see-also"></a><span data-ttu-id="5f4c4-109">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="5f4c4-109">See also</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="f8e1f-107">Kompilowanie kodu</span><span class="sxs-lookup"><span data-stu-id="f8e1f-107">Compiling the Code</span></span>  
 
-- [<span data-ttu-id="5f4c4-110">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="5f4c4-110">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
-- [<span data-ttu-id="5f4c4-111">LINQ i katalogi plików (C#)</span><span class="sxs-lookup"><span data-stu-id="5f4c4-111">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+  <span data-ttu-id="f8e1f-108">Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.</span><span class="sxs-lookup"><span data-stu-id="f8e1f-108">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
+  
+## <a name="see-also"></a><span data-ttu-id="f8e1f-109">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="f8e1f-109">See also</span></span>
+
+- [<span data-ttu-id="f8e1f-110">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="f8e1f-110">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
+- [<span data-ttu-id="f8e1f-111">LINQ i katalogi plików (C#)</span><span class="sxs-lookup"><span data-stu-id="f8e1f-111">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
