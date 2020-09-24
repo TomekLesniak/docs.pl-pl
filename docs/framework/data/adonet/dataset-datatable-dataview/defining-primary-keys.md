@@ -5,19 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
-ms.openlocfilehash: 159b23eb4ef5ca38ebce6e488080d315ec3be081
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 94b033d58061e3d2e48a352d782eec7c4202fa43
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151185"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166836"
 ---
 # <a name="defining-primary-keys"></a>Definiowanie kluczy podstawowych
-Tabela bazy danych często ma kolumnę lub grupę kolumn, która jednoznacznie identyfikuje każdy wiersz w tabeli. Ta kolumna identyfikującya lub grupa kolumn jest nazywana kluczem podstawowym.  
+
+Tabela bazy danych ma zwykle kolumnę lub grupę kolumn, która jednoznacznie identyfikuje każdy wiersz w tabeli. Ta kolumna identyfikująca lub grupa kolumn jest nazywana kluczem podstawowym.  
   
- Po zidentyfikowaniu <xref:System.Data.DataColumn> pojedynczego <xref:System.Data.DataTable.PrimaryKey%2A> <xref:System.Data.DataTable>jako fora tabela <xref:System.Data.DataColumn.AllowDBNull%2A> automatycznie ustawia właściwość <xref:System.Data.DataColumn.Unique%2A> kolumny na **false,** a właściwość na **true**. W przypadku wielokolumnowych kluczy podstawowych tylko właściwość **AllowDBNull** jest automatycznie ustawiana na **false**.  
+ Po zidentyfikowaniu pojedynczej <xref:System.Data.DataColumn> jako <xref:System.Data.DataTable.PrimaryKey%2A> dla elementu <xref:System.Data.DataTable> , w tabeli automatycznie ustawia <xref:System.Data.DataColumn.AllowDBNull%2A> Właściwość kolumny na **false** i <xref:System.Data.DataColumn.Unique%2A> Właściwość na **true**. W przypadku kluczy podstawowych z wieloma kolumnami tylko właściwość **AllowDBNull** jest automatycznie ustawiana na **wartość false**.  
   
- **Właściwość PrimaryKey** <xref:System.Data.DataTable> a odbiera jako swoją wartość tablicę jednego lub więcej obiektów **DataColumn,** jak pokazano w poniższych przykładach. Pierwszy przykład definiuje pojedynczą kolumnę jako klucz podstawowy.  
+ Właściwość **PrimaryKey** elementu <xref:System.Data.DataTable> otrzymuje jako wartość tablicę co najmniej jednego obiektu **DataColumn** , jak pokazano w poniższych przykładach. Pierwszy przykład definiuje pojedynczą kolumnę jako klucz podstawowy.  
   
 ```vb  
 workTable.PrimaryKey = New DataColumn() {workTable.Columns("CustID")}  
@@ -39,7 +40,7 @@ columns[0] = workTable.Columns["CustID"];
 workTable.PrimaryKey = columns;  
 ```  
   
- Poniższy przykład definiuje dwie kolumny jako klucz podstawowy.  
+ W poniższym przykładzie zdefiniowano dwie kolumny jako klucz podstawowy.  
   
 ```vb  
 workTable.PrimaryKey = New DataColumn() {workTable.Columns("CustLName"), _  

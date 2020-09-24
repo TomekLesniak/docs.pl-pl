@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
-ms.openlocfilehash: 77715913c24423c1dc95478977f4e3821e4c247b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0920acac2c82677cfce37703b7027dedce91a535
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545314"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166810"
 ---
 # <a name="loading-a-dataset-from-xml"></a>Ładowanie elementu DataSet z pliku XML
+
 Zawartość ADO.NET <xref:System.Data.DataSet> można utworzyć na podstawie strumienia lub dokumentu XML. Ponadto dzięki .NET Framework masz doskonałą elastyczność nad tym, jakie informacje są ładowane z pliku XML, oraz sposób tworzenia schematu lub struktury relacyjnej <xref:System.Data.DataSet> .  
   
  Aby wypełnić <xref:System.Data.DataSet> danymi z XML, użyj metody **ReadXml** <xref:System.Data.DataSet> obiektu. Metoda **ReadXml** odczytuje z pliku, strumienia lub elementu **XmlReader**i przyjmuje jako argumenty Źródło XML i opcjonalny argument **XmlReadMode** . Aby uzyskać więcej informacji na temat elementu **XmlReader**, zobacz [odczytywanie danych XML za pomocą XmlTextReader](/previous-versions/dotnet/netframework-4.0/tfz3cz6w(v=vs.100)). Metoda **ReadXml** odczytuje zawartość strumienia XML lub dokumentu i ładuje <xref:System.Data.DataSet> dane z danymi. Zostanie również utworzony schemat relacyjny w <xref:System.Data.DataSet> zależności od typu **XmlReadMode** oraz tego, czy schemat relacyjny już istnieje.  
@@ -33,6 +34,7 @@ Zawartość ADO.NET <xref:System.Data.DataSet> można utworzyć na podstawie str
 > Jeśli przekażesz element **XmlReader** do **ReadXml** , który jest umieszczony częścią sposobu w dokumencie XML, **ReadXml** zostanie odczytany do następnego węzła elementu i będzie traktowany jako element główny, odczytując do końca węzła elementu. Nie ma to zastosowania w przypadku określenia **XmlReadMode. fragment**.  
   
 ## <a name="dtd-entities"></a>Jednostki DTD  
+
  Jeśli plik XML zawiera jednostki zdefiniowane w schemacie definicji typu dokumentu (DTD), zostanie zgłoszony wyjątek w przypadku próby załadowania <xref:System.Data.DataSet> przez przekazanie pliku o nazwie, strumienia lub braku sprawdzania poprawności elementu **XmlReader** do **ReadXml**. Zamiast tego należy utworzyć element **XmlValidatingReader**z opcją **EntityHandling** ustawioną na **EntityHandling. ExpandEntities**i przekazać **XmlValidatingReader** do **ReadXml**. **XmlValidatingReader** rozwinie jednostki przed odczytaniem przez <xref:System.Data.DataSet> .  
   
  Poniższy przykład kodu przedstawia sposób ładowania <xref:System.Data.DataSet> ze strumienia XML. Pierwszy przykład przedstawia nazwę pliku, który jest przesyłany do metody **ReadXml** . W drugim przykładzie przedstawiono ciąg zawierający kod XML, który jest ładowany przy użyciu <xref:System.IO.StringReader> .  
@@ -114,9 +116,10 @@ foreach (DataTable dataTable in dataSet.Tables)
 ```  
   
 ## <a name="merging-data-from-xml"></a>Scalanie danych z pliku XML  
+
  Jeśli <xref:System.Data.DataSet> zawiera już dane, nowe dane z pliku XML zostaną dodane do danych znajdujących się już w <xref:System.Data.DataSet> . **ReadXml** nie scala danych z pliku XML z <xref:System.Data.DataSet> dowolnymi informacjami o wierszach ze zgodnymi kluczami podstawowymi. Aby zastąpić informacje o istniejących wierszach nowymi informacjami z pliku XML, użyj **ReadXml** , aby utworzyć nowe <xref:System.Data.DataSet> , a następnie <xref:System.Data.DataSet.Merge%2A> nowe <xref:System.Data.DataSet> do istniejącej <xref:System.Data.DataSet> . Należy zauważyć, że załadowanie pliku DiffGram przy użyciu **ReadXml** z atrybutem **XmlReadMode** z elementu **DiffGram** spowoduje scalenie wierszy, które mają ten sam unikatowy identyfikator.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Data.DataSet.Merge%2A?displayProperty=nameWithType>
 - [Używanie języka XML w elemencie DataSet](using-xml-in-a-dataset.md)

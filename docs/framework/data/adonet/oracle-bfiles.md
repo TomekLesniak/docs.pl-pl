@@ -2,36 +2,38 @@
 title: Oracle BFILE
 ms.date: 03/30/2017
 ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
-ms.openlocfilehash: 40060a7ea8576e08140d972072d086606d640366
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d43dfccd9735ce1ab822d7b14de2abaa0940c77b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149443"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166602"
 ---
 # <a name="oracle-bfiles"></a>Oracle BFILE
-Dostawca danych .NET Framework dla <xref:System.Data.OracleClient.OracleBFile> Oracle obejmuje klasę, która <xref:System.Data.OracleClient.OracleType.BFile> jest używana do pracy z typem danych Oracle.  
+
+.NET Framework Dostawca danych dla programu Oracle zawiera <xref:System.Data.OracleClient.OracleBFile> klasę, która jest używana do pracy z <xref:System.Data.OracleClient.OracleType.BFile> typem danych Oracle.  
   
- Typ danych Oracle **BFILE** to typ danych Oracle **LOB,** który zawiera odwołanie do danych binarnych o maksymalnym rozmiarze 4 gigabajtów. Oracle **BFILE** różni się od innych typów danych Oracle **LOB** tym, że jego dane są przechowywane w pliku fizycznym w systemie operacyjnym, a nie na serwerze. Należy zauważyć, że typ danych **BFILE** zapewnia dostęp tylko do odczytu do danych.  
+ Typ danych Oracle **bInformacje** to typ danych **LOB** firmy Oracle, który zawiera odwołanie do danych binarnych o maksymalnym rozmiarze wynoszącym 4 gigabajty. Oprogramowanie Oracle **bInformacje** różni się od innych typów danych **LOB** Oracle w tym, że dane są przechowywane w pliku fizycznym w systemie operacyjnym, a nie na serwerze. Należy pamiętać, że typ danych **bInformacje** zapewnia dostęp tylko do odczytu do danych.  
   
- Inne cechy typu danych **BFILE,** które odróżniają go od typu danych **LOB,** to, że:  
+ Inne cechy typu danych **bInformacje** odróżniające go od typu danych **LOB** to:  
   
-- Zawiera dane nieustrukturyzowane.  
+- Zawiera dane bez struktury.  
   
-- Obsługuje fragmentowanie po stronie serwera.  
+- Obsługuje dzielenie fragmentów po stronie serwera.  
   
-- Używa semantyki kopii odwołań. Na przykład, jeśli wykonujesz operację kopiowania na **BFILE,** kopiowany jest tylko lokalizator **BFILE** (który jest odwołaniem do pliku). Dane w pliku nie są kopiowane.  
+- Używa semantyki kopiowania odwołań. Na przykład jeśli wykonujesz operację kopiowania w pliku **bInformacje**, kopiowane jest tylko lokalizator **plików bInformacje** (który jest odwołaniem do pliku). Dane w pliku nie są kopiowane.  
   
- Typ danych **BFILE** powinny służyć do odwoływania się do lobs, które są duże rozmiary i dlatego nie praktyczne do przechowywania w bazie danych. Więcej klienta, serwera i komunikacji obciążenie jest zaangażowany podczas korzystania z typu danych **BFILE** w porównaniu z typem danych **LOB.** Jest bardziej wydajny dostęp do **pliku BFILE,** jeśli wystarczy uzyskać niewielką ilość danych. Jest bardziej efektywny dostęp do lobs rezydenta bazy danych, jeśli trzeba uzyskać cały obiekt.  
+ Typ danych **bInformacje** powinien być używany w przypadku przywołujących się do LOB o dużych rozmiarach, dlatego nie jest to praktyczne do przechowywania w bazie danych. W przypadku użycia typu danych " **bInformacje** " w porównaniu z typem danych **LOB** jest naliczana większa obciążenie klienta, serwera i komunikacji. Aby uzyskać niewielką ilość danych, bardziej wydajne jest uzyskanie dostępu do klasy **bInformacje** . W celu uzyskania całego obiektu bardziej wydajne jest uzyskanie dostępu do LOB rezydentów bazy danych.  
   
- Każdy obiekt **OracleBFile** innej niż NULL jest skojarzony z dwoma encjami, które definiują lokalizację bazowego pliku fizycznego:  
+ Każdy obiekt **OracleBFile** o wartości innej niż null jest skojarzony z dwiema jednostkami, które definiują lokalizację bazowego pliku fizycznego:  
   
-1. Obiekt Oracle DIRECTORY, który jest aliasem bazy danych dla katalogu w systemie plików, oraz  
+1. Obiekt katalogu Oracle, który jest aliasem bazy danych dla katalogu w systemie plików i  
   
-2. Nazwa pliku źródłowego pliku fizycznego, który znajduje się w katalogu skojarzonym z obiektem DIRECTORY.  
+2. Nazwa pliku podstawowego pliku, który znajduje się w katalogu skojarzonym z obiektem katalogu.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład języka C# pokazuje, jak można utworzyć **BFILE** w tabeli Oracle, a następnie pobrać go w postaci **obiektu OracleBFile.** W przykładzie pokazano <xref:System.Data.OracleClient.OracleDataReader> przy użyciu obiektu i **OracleBFile** **Seek** i **Read** metody. Należy zauważyć, że aby użyć tego przykładu, należy najpierw\\utworzyć katalog o nazwie "c: \bfiles" i plik o nazwie "MyFile.jpg" na serwerze Oracle.  
+
+ W poniższym przykładzie w języku C# pokazano, jak można utworzyć plik **bInformacje** w tabeli Oracle, a następnie pobrać go w postaci obiektu **OracleBFile** . W przykładzie pokazano użycie <xref:System.Data.OracleClient.OracleDataReader> obiektu i metody wyszukiwania **OracleBFile** **Seek** i **odczytu** . Należy pamiętać, że w celu użycia tego przykładu należy najpierw utworzyć katalog o nazwie "c: \\ \bfiles" i plik o nazwie "MyFile.jpg" na serwerze Oracle.  
   
 ```csharp  
 using System;  

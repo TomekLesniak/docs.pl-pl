@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
-ms.openlocfilehash: 60c491000337fd50da217e97054e86faccb2e7d7
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: df665704ac813adbbf6473e81fad0a1c7ff616d0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137984"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168572"
 ---
 # <a name="pragma-checksum-c-reference"></a>#pragma checksum (odwołanie w C#)
+
 Generuje sumy kontrolne dla plików źródłowych, aby pomóc w debugowaniu stron ASP.NET.  
   
 ## <a name="syntax"></a>Składnia  
@@ -24,6 +25,7 @@ Generuje sumy kontrolne dla plików źródłowych, aby pomóc w debugowaniu stro
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `"filename"`  
  Nazwa pliku, który wymaga monitorowania pod kątem zmian lub aktualizacji.  
   
@@ -34,6 +36,7 @@ Generuje sumy kontrolne dla plików źródłowych, aby pomóc w debugowaniu stro
  Ciąg cyfr szesnastkowych reprezentujących bajty sum kontrolnych. Musi być parzystą liczbą cyfr szesnastkowych. Nieparzysta liczba cyfr skutkuje ostrzeżeniem w czasie kompilacji, a dyrektywa jest ignorowana.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Debuger programu Visual Studio używa sumy kontrolnej, aby upewnić się, że zawsze znajdzie prawidłowe źródło. Kompilator oblicza sumę kontrolną pliku źródłowego, a następnie emituje dane wyjściowe do pliku bazy danych programu (PDB). Debuger następnie używa pliku PDB do porównania z sumą kontrolną, która jest obliczana dla plików źródłowych.  
   
  To rozwiązanie nie działa w przypadku projektów ASP.NET, ponieważ obliczona suma kontrolna jest dla wygenerowanego pliku źródłowego, a nie pliku. aspx. Aby rozwiązać ten problem, program `#pragma checksum` zapewnia obsługę sum kontrolnych dla stron ASP.NET.  
