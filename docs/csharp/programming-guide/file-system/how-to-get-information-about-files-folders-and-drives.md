@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
-ms.openlocfilehash: f696cd90f197bede1a64949d211a563ce9a18376
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 7cbaea4dc5381a2ebeb97ce2797ffe850488e126
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299932"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170457"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Jak uzyskać informacje o plikach, folderach i dyskach (Przewodnik programowania w języku C#)
+
 W programie .NET można uzyskać dostęp do informacji o systemie plików przy użyciu następujących klas:  
   
 - <xref:System.IO.FileInfo?displayProperty=nameWithType>  
@@ -36,11 +37,13 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
  <xref:System.IO.Directory?displayProperty=nameWithType>Klasy i <xref:System.IO.File?displayProperty=nameWithType> zapewniają statyczne metody pobierania informacji o katalogach i plikach.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie przedstawiono różne sposoby uzyskiwania dostępu do informacji o plikach i folderach.  
   
  [!code-csharp[csFilesandFolders#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#6)]  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  Podczas przetwarzania ciągów ścieżki określonych przez użytkownika należy również obsługiwać wyjątki dla następujących warunków:  
   
 - Nazwa pliku jest źle sformułowana. Na przykład zawiera nieprawidłowe znaki lub tylko odstęp.  
@@ -53,7 +56,7 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
   
  Jeśli aplikacja nie ma wystarczających uprawnień do odczytu określonego pliku, `Exists` Metoda zwraca `false` bez względu na to, czy ścieżka istnieje; metoda nie zgłasza wyjątku.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IO?displayProperty=nameWithType>
 - [Przewodnik programowania w języku C#](../index.md)

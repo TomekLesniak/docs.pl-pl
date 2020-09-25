@@ -3,12 +3,12 @@ title: Migrowanie aplikacji sieci Web ASP.NET na maszynę wirtualną platformy A
 description: Dowiedz się, jak migrować aplikację sieci Web ASP.NET z lokalnego na maszynę wirtualną platformy Azure.
 ms.topic: how-to
 ms.date: 06/20/2020
-ms.openlocfilehash: 5ef340d020b72bebe46fe598fe68e7d02d0c0363
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 940243310c5e6ed13d2a42c8d9d87244200479f5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174247"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171562"
 ---
 # <a name="migrate-an-aspnet-web-application-to-an-azure-virtual-machine"></a>Migrowanie aplikacji sieci Web ASP.NET na maszynę wirtualną platformy Azure
 
@@ -18,7 +18,7 @@ Ten dokument zawiera omówienie sposobu migrowania aplikacji sieci Web ASP.NET z
 
 Dowiedz się, jak utworzyć maszynę wirtualną i opublikować w niej aplikację: [Publikowanie na maszynie wirtualnej platformy Azure](https://tutorials.visualstudio.com/aspnet-vm/intro)
 
-## <a name="get-started"></a>Rozpocznij
+## <a name="get-started"></a>Rozpoczęcie pracy
 
 Te samouczki demonstrują procedurę tworzenia (lub migrowania) maszyny wirtualnej, publikowania w niej aplikacji sieci Web oraz innych zadań, które mogą być wymagane do obsługi aplikacji na platformie Azure.
 
@@ -31,7 +31,7 @@ Te samouczki demonstrują procedurę tworzenia (lub migrowania) maszyny wirtualn
 - [Tworzenie potoku ciągłej integracji/ciągłego wdrażania dla aplikacji](/vsts/build-release/apps/cd/deploy-webdeploy-iis-deploygroups)
 - [Przejdź do zestawu skalowania maszyn wirtualnych w celu zapewnienia wysokiej dostępności i skalowalności](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app)
 
-## <a name="considerations"></a>Kwestie do rozważenia
+## <a name="considerations"></a>Zagadnienia do rozważenia
 
 ### <a name="benefits"></a>Korzyści
 
@@ -59,7 +59,8 @@ Usługa Azure Virtual Networks umożliwia:
 
 Aby rozpocząć, zobacz [dokumentację dotyczącą Virtual Network](/azure/virtual-network/)
 
-### <a name="active-directory"></a>Active Directory
+### <a name="active-directory"></a>Usługa Active Directory
+
 Wiele aplikacji używa Active Directory do uwierzytelniania i zarządzania tożsamościami.
 
 - Azure AD Connect umożliwia integrację katalogów lokalnych z Azure Active Directory. Aby rozpocząć, zobacz [integrowanie katalogów lokalnych z Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
@@ -74,12 +75,14 @@ Jeśli aplikacja korzysta z lokalnej bazy danych, aplikacja nie będzie mogła k
 
 ### <a name="high-availability-and-scalability"></a>Wysoka dostępność i skalowalność
 
-#### <a name="virtual-machine-scale-sets"></a>Usługa Virtual Machine Scale Sets
+#### <a name="virtual-machine-scale-sets"></a>Zestawy skali maszyn wirtualnych
+
 Upewnij się, że aplikacja jest wysoce dostępna i można ją skalować, migrować do zestawu skalowania maszyn wirtualnych platformy Azure, aby zwiększyć dostępność i skalowalność aplikacji. VM Scale Sets zapewnić możliwość korzystania z istniejącej maszyny wirtualnej, która została już skonfigurowana, lub skonfigurowania potoku kompilacji w celu utworzenia obrazu w aplikacji.
 
 Aby rozpocząć, zobacz [wdrażanie aplikacji w zestawach skalowania maszyn wirtualnych](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app).
 
 #### <a name="centralized-logging"></a>Scentralizowane rejestrowanie
+
 W przypadku uruchamiania aplikacji w wielu wystąpieniach warto rozważyć przechowywanie dzienników w scentralizowanej lokalizacji, takiej jak [usługa Azure Storage](/azure/storage/).
 
 ## <a name="next-steps"></a>Następne kroki

@@ -2,12 +2,12 @@
 title: Wprowadzenie do platformy Azure i platformy .NET
 description: Poznaj podstawowe informacje dotyczące platformy Azure i platformy .NET.
 ms.date: 06/20/2020
-ms.openlocfilehash: 9f1766176740ede5aa40dd894497f2aa719efe23
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: e4a071e302247332cdc98c1aabf595cb4f8e2eff
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91071108"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171575"
 ---
 # <a name="introduction-to-azure-and-net"></a>Wprowadzenie do platform Azure i .NET
 
@@ -77,6 +77,7 @@ Jeśli używasz zestawu Azure SDK dla platformy .NET do uzyskiwania dostępu do 
 * **Interfejs API REST**: zestaw Azure SDK dla platformy .NET jest abstrakcją utworzoną w [interfejsie API REST platformy Azure](/rest/api/azure/). W razie potrzeby można użyć interfejsu API REST platformy Azure zamiast lub obok zestawu Azure SDK dla platformy .NET.
 
 ## <a name="diagnosing-problems-in-the-cloud"></a>Diagnozowanie problemów w chmurze
+
 Po wdrożeniu aplikacji na platformie Azure można wypróbować przypadki, w których działały w programowaniu, ale nie na platformie Azure. Poniżej znajdują się dwa dobre miejsca do uruchomienia podczas diagnozowania problemów:
 
 * **Zdalne debugowanie z programu Visual Studio**: większość usług obliczeniowych platformy Azure (łącznie z usługami opisanymi w tym dokumencie) obsługuje zdalne debugowanie przy użyciu programu Visual Studio i pobieranie dzienników. Aby poznać możliwości programu Visual Studio w aplikacji, Otwórz okno narzędzia Cloud Explorer, wpisując "Cloud Explorer" do paska narzędzi szybkiego uruchamiania programu Visual Studio (w prawym górnym rogu), a następnie zlokalizuj swoją aplikację w drzewie. Aby uzyskać szczegółowe informacje, zobacz [Rozwiązywanie problemów z aplikacją sieci Web w Azure App Service przy użyciu programu Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug).

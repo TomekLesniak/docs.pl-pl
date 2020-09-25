@@ -4,12 +4,12 @@ description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyci
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 8497892b88c313cde0a604ad3967507300e5154a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ca86388b9f5dfe5e63ead1b5f84486ba2181af57
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539246"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169079"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Testowanie aplikacji ASP.NET Core MVC
 
@@ -149,7 +149,7 @@ W większości przypadków należy użyć globalnych programów obsługi wyjątk
 
 ## <a name="integration-testing-aspnet-core-apps"></a>Testowanie integracji ASP.NET Core aplikacje
 
-Większość testów integracji w aplikacjach ASP.NET Core należy przetestować usługi i inne typy implementacji zdefiniowane w projekcie infrastruktury. Można na przykład [sprawdzić, czy EF Core pomyślnie zaktualizować i pobrać dane, których oczekujesz](https://docs.microsoft.com/ef/core/miscellaneous/testing/) od klas dostępu do danych znajdujących się w projekcie infrastruktury. Najlepszym sposobem, aby sprawdzić, czy projekt ASP.NET Core MVC działa prawidłowo, jest testami funkcjonalnymi uruchamianymi względem aplikacji działającej na hoście testowym.
+Większość testów integracji w aplikacjach ASP.NET Core należy przetestować usługi i inne typy implementacji zdefiniowane w projekcie infrastruktury. Można na przykład [sprawdzić, czy EF Core pomyślnie zaktualizować i pobrać dane, których oczekujesz](/ef/core/miscellaneous/testing/) od klas dostępu do danych znajdujących się w projekcie infrastruktury. Najlepszym sposobem, aby sprawdzić, czy projekt ASP.NET Core MVC działa prawidłowo, jest testami funkcjonalnymi uruchamianymi względem aplikacji działającej na hoście testowym.
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Testowanie funkcjonalne ASP.NET Core aplikacji
 

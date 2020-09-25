@@ -9,14 +9,15 @@ helpviewer_keywords:
 - win32manifest compiler option [C#]
 - -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
-ms.openlocfilehash: 4ce4033323eb938caff1d769198ca69782b470ab
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1d2eefdab433f67e1cba5f709a2db8ec6b9a5dc7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89140831"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171315"
 ---
 # <a name="-win32manifest-c-compiler-options"></a>-WIN32MANIFEST (opcje kompilatora C#)
+
 Użyj opcji **-WIN32MANIFEST** , aby określić zdefiniowany przez użytkownika plik manifestu aplikacji Win32, który ma zostać osadzony w przenośnym pliku wykonywalnym (PE) projektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,10 +27,12 @@ Użyj opcji **-WIN32MANIFEST** , aby określić zdefiniowany przez użytkownika 
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `filename`  
  Nazwa i lokalizacja pliku manifestu niestandardowego.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie kompilator Visual C# osadza manifest aplikacji, który określa żądany poziom wykonywania "jako Źródło". Tworzy manifest w tym samym folderze, w którym jest skompilowany plik wykonywalny, zazwyczaj folder bin\Debug lub bin\Release w przypadku korzystania z programu Visual Studio. Jeśli chcesz podać niestandardowy manifest, na przykład aby określić żądany poziom wykonywania "najwyższe dostępne" lub "wymaga administratora", Użyj tej opcji, aby określić nazwę pliku.  
   
 > [!NOTE]
@@ -48,6 +51,7 @@ Użyj opcji **-WIN32MANIFEST** , aby określić zdefiniowany przez użytkownika 
  Można dostarczyć manifest aplikacji jako niestandardowy krok po kompilacji lub jako część pliku zasobów Win32 przy użyciu opcji [-nowin32manifest (opcje kompilatora C#)](./nowin32manifest-compiler-option.md) . Użyj tej samej opcji, jeśli chcesz, aby aplikacja podlegała wirtualizacji plików lub rejestru w systemie Windows Vista. Uniemożliwi to kompilatorowi utworzenie i osadzenie domyślnego manifestu w przenośnym pliku wykonywalnym (PE).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje domyślny manifest, który kompilator Visual C# wstawia do PE.  
   
 > [!NOTE]

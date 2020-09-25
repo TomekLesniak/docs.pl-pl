@@ -4,17 +4,17 @@ description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyci
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: 547654e77812481daffc9a03ccd28d3d2f6b5f09
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 19626aea07fb26222af575a709b54577ca12589b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164431"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169222"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Zalecenia dotyczące hostingu platformy Azure dla ASP.NET Core aplikacji sieci Web
 
 > "Liderzy biznesowi wszędzie są pomijani usługi IT, aby uzyskiwać aplikacje z chmury (znane również jako SaaS) i płacić za nie tak jak w przypadku subskrypcji magazynu. Gdy usługa nie jest już wymagana, może anulować subskrypcję bez żadnego sprzętu nieużywanego w rogu ".  
-> _\-Daryl Plummer, analityk firmy Gartner_
+> _\- Daryl Plummer, analityk firmy Gartner_
 
 W zależności od potrzeb i architektury aplikacji Microsoft Azure może ją obsłużyć. Twoje potrzeby hostingu mogą być proste jako statyczna Witryna internetowa lub zaawansowana aplikacja składająca się z wielu usług. W przypadku ASP.NET Core monolitycznych aplikacji sieci Web i usług pomocniczych istnieje kilka dobrze znanych konfiguracji, które są zalecane. Zalecenia dotyczące tego artykułu są pogrupowane w zależności od rodzaju zasobu, który ma być hostowany, od tego, czy są to pełne aplikacje, poszczególne procesy czy dane.
 
@@ -54,7 +54,7 @@ Oprócz aplikacji, które nie są zoptymalizowane pod kątem chmury, Azure App S
 
 ![Podstawowa architektura platformy Azure](./media/image1-5.png)
 
-Niewielka liczba zasobów w pojedynczej grupie zasobów jest zwykle wystarczająca do zarządzania taką aplikacją. Aplikacje, które są zwykle wdrażane jako pojedyncze jednostki, a nie aplikacje, które składają się z wielu oddzielnych procesów, są dobrym kandydatami do tego [podstawowego podejścia do architektury](https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app). Chociaż skalowalne w poziomie, takie podejście nadal zezwala aplikacji hostowanej na skalowanie w górę (więcej zasobów na węzeł) i na zewnątrz (więcej węzłów hostowanych), aby sprostać dowolnemu wzrostowi popytu. Dzięki funkcji automatycznego skalowania aplikacja może być skonfigurowana w taki sposób, aby automatycznie dostosowywać liczbę węzłów obsługujących aplikację na podstawie popytu i średniego obciążenia między węzłami.
+Niewielka liczba zasobów w pojedynczej grupie zasobów jest zwykle wystarczająca do zarządzania taką aplikacją. Aplikacje, które są zwykle wdrażane jako pojedyncze jednostki, a nie aplikacje, które składają się z wielu oddzielnych procesów, są dobrym kandydatami do tego [podstawowego podejścia do architektury](/azure/architecture/reference-architectures/app-service-web-app/basic-web-app). Chociaż skalowalne w poziomie, takie podejście nadal zezwala aplikacji hostowanej na skalowanie w górę (więcej zasobów na węzeł) i na zewnątrz (więcej węzłów hostowanych), aby sprostać dowolnemu wzrostowi popytu. Dzięki funkcji automatycznego skalowania aplikacja może być skonfigurowana w taki sposób, aby automatycznie dostosowywać liczbę węzłów obsługujących aplikację na podstawie popytu i średniego obciążenia między węzłami.
 
 ### <a name="app-service-web-apps-for-containers"></a>App Service Web Apps kontenerów
 
@@ -74,7 +74,7 @@ W miarę jak część większych aplikacji jest dzielona na własne, niezależne
 
 ![Mikrousługi — Przykładowa architektura z kilkoma typowymi wzorcami projektowymi.](./media/image1-10.png)
 
-[Dowiedz się więcej o wzorcach projektowych, które należy wziąć pod uwagę podczas tworzenia systemów mikrousług.](https://docs.microsoft.com/azure/architecture/microservices/design/patterns)
+[Dowiedz się więcej o wzorcach projektowych, które należy wziąć pod uwagę podczas tworzenia systemów mikrousług.](/azure/architecture/microservices/design/patterns)
 
 ### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
@@ -100,7 +100,7 @@ Azure Dev Spaces:
 - Zmniejsz liczbę środowisk integracji wymaganych przez zespół
 - Usuń potrzebę zasymulować niektóre usługi w systemie rozproszonym podczas tworzenia/testowania
 
-[Dowiedz się więcej o Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
+[Dowiedz się więcej o Azure Dev Spaces](/azure/dev-spaces/about)
 
 ### <a name="azure-virtual-machines"></a>Azure Virtual Machines
 

@@ -2,14 +2,15 @@
 title: <security> dla <netPeerBinding>
 ms.date: 03/30/2017
 ms.assetid: 1ef40d8c-f903-4426-9b08-da81462766d8
-ms.openlocfilehash: 3d1ac85073c44f683fe0c054737c5ec7ed1cbf52
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 543c57d6b2dba1ff5934b49e0e219cf2e5cad153
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738659"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170028"
 ---
 # <a name="security-of-netpeerbinding"></a>\<security> dla \<netPeerBinding>
+
 Definiuje ustawienia zabezpieczeń [\<netPeerTcpBinding>](netpeertcpbinding.md) , w tym typ używanego uwierzytelniania i zabezpieczenia używane do transportu wiadomości.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Definiuje ustawienia zabezpieczeń [\<netPeerTcpBinding>](netpeertcpbinding.md) 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -44,7 +46,7 @@ Definiuje ustawienia zabezpieczeń [\<netPeerTcpBinding>](netpeertcpbinding.md) 
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|Komunikat|Zabezpieczenia protokołu SOAP zapewniają uwierzytelnianie, integralność i poufność.|  
+|Wiadomość|Zabezpieczenia protokołu SOAP zapewniają uwierzytelnianie, integralność i poufność.|  
 |Brak|Zabezpieczenia są wyłączone.|  
 |Transport|Zabezpieczenia są udostępniane przy użyciu protokołu HTTPS.|  
 |TransportWithMessageCredential|Protokół HTTPS zapewnia uwierzytelnianie i poufność. Komunikaty protokołu SOAP zapewniają zaawansowane typy poświadczeń.|  
@@ -62,9 +64,10 @@ Definiuje ustawienia zabezpieczeń [\<netPeerTcpBinding>](netpeertcpbinding.md) 
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań [\<netPeerTcpBinding>](netpeertcpbinding.md) .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zabezpieczenia mogą dotyczyć zarówno komunikatów, jak i związanych z transportem.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement>
 - <xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>
@@ -74,5 +77,5 @@ Definiuje ustawienia zabezpieczeń [\<netPeerTcpBinding>](netpeertcpbinding.md) 
 - [Wybieranie typu poświadczeń](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

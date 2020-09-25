@@ -3,12 +3,12 @@ title: LINQ i katalogi plików (C#)
 description: Te zasoby języka C# LINQ dla operacji systemu plików nie są używane do zmiany zawartości plików lub folderów.
 ms.date: 07/20/2015
 ms.assetid: b66c55e4-0f72-44e5-b086-519f9962335c
-ms.openlocfilehash: ac00e29f90ee1c04ab9978b6ada3ae5f28991a1c
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: d8ef8ac8a8ff25f0bbac417c07e39f516eee27f2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165671"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170483"
 ---
 # <a name="linq-and-file-directories-c"></a>LINQ i katalogi plików (C#)
 
@@ -40,8 +40,9 @@ Wiele operacji systemu plików są zasadniczo zapytania i dlatego są dobrze dop
  Pokazuje, jak wykonać iterację folderów w drzewie, otworzyć każdy plik i zbadać zawartość pliku.  
   
 ## <a name="comments"></a>Komentarze  
+
  Istnieje pewna złożoność w tworzeniu źródła danych, które dokładnie reprezentuje zawartość systemu plików i w sposób łagodnie obsługuje wyjątki. W przykładach w tej sekcji przedstawiono tworzenie kolekcji migawek <xref:System.IO.FileInfo> obiektów, które reprezentują wszystkie pliki w określonym folderze głównym i jego podfolderach. Rzeczywisty stan każdego z nich <xref:System.IO.FileInfo> może ulec zmianie w czasie między rozpoczęciem i zakończeniem wykonywania zapytania. Na przykład można utworzyć listę <xref:System.IO.FileInfo> obiektów do użycia jako źródło danych. Jeśli spróbujesz uzyskać dostęp do `Length` właściwości w zapytaniu, <xref:System.IO.FileInfo> obiekt podejmie próbę uzyskania dostępu do systemu plików w celu zaktualizowania wartości `Length` . Jeśli plik już nie istnieje, pojawi się <xref:System.IO.FileNotFoundException> w zapytaniu, mimo że nie masz bezpośredniego zapytania dotyczącego systemu plików. Niektóre zapytania w tej sekcji wykorzystują osobną metodę, która wykorzystuje te konkretne wyjątki w niektórych przypadkach. Inna opcja polega na tym, że źródło danych jest aktualizowane dynamicznie przy użyciu <xref:System.IO.FileSystemWatcher> .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [LINQ to Objects (C#)](./linq-to-objects.md)

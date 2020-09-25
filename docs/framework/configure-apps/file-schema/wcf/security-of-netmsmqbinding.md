@@ -2,14 +2,15 @@
 title: <security> dla <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
-ms.openlocfilehash: 7877fd59aff581eee5b62a1ca224dbf51c956069
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 32b066fdf4d8edbbd36fdff7b14bdec87ddc970d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738670"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170080"
 ---
 # <a name="security-of-netmsmqbinding"></a>\<security> dla \<netMsmqBinding>
+
 Definiuje ustawienia zabezpieczeń dla powiązania usługi MSMQ. Określa, czy zabezpieczenia transportu lub protokołu SOAP są włączone i, jeśli tak, jakiego trybu uwierzytelniania i poziomów ochrony są używane.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Definiuje ustawienia zabezpieczeń dla powiązania usługi MSMQ. Określa, czy z
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -52,9 +54,9 @@ Definiuje ustawienia zabezpieczeń dla powiązania usługi MSMQ. Określa, czy z
   
 |Element|Opis|  
 |-------------|-----------------|  
-|powiązanie|Element Binding elementu[\<netMsmqBinding>](netmsmqbinding.md)|  
+|powiązanie|Element Binding elementu [\<netMsmqBinding>](netmsmqbinding.md)|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement>
 - <xref:System.ServiceModel.NetMsmqBinding.Security%2A>
@@ -63,6 +65,6 @@ Definiuje ustawienia zabezpieczeń dla powiązania usługi MSMQ. Określa, czy z
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)
 - [Kolejki programu WCF](../../../wcf/feature-details/queues-in-wcf.md)

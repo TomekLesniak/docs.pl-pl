@@ -8,14 +8,15 @@ helpviewer_keywords:
 - assemblyBinding element
 - container tags, <assemblyBinding> element
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
-ms.openlocfilehash: 202b063ad3f0f9696cdc12aff434d61fe5a813e6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b6a39bcecfd2485481677496adcf026d986c283b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154325"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170249"
 ---
 # <a name="assemblybinding-element-for-runtime"></a>\<assemblyBinding>, element dla \<runtime>
+
 Zawiera informacje o przekierowaniu wersji zestawu i lokalizacji zestawów.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Zawiera informacje o przekierowaniu wersji zestawu i lokalizacji zestawów.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -57,6 +59,7 @@ Zawiera informacje o przekierowaniu wersji zestawu i lokalizacji zestawów.
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak przekierować jedną wersję zestawu do innej i podać bazę kodu.  
   
 ```xml  
@@ -90,7 +93,7 @@ Zawiera informacje o przekierowaniu wersji zestawu i lokalizacji zestawów.
 </runtime>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

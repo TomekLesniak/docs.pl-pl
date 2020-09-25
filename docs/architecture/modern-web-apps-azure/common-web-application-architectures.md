@@ -4,12 +4,12 @@ description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyci
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: dc907e57adba0dd81e5cf27c2798759cee12bed2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: dd9cdf3cdda0605d9454fe096be01655e67a0d0a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539362"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169300"
 ---
 # <a name="common-web-application-architectures"></a>Typowe architektury aplikacji internetowych
 
@@ -205,7 +205,7 @@ Podejście monolityczne jest wspólne, a wiele organizacji opracowuje w ramach t
 
 ![Rysunek 5-14](./media/image5-14.png)
 
-Wdrażanie aplikacji monolitycznych w Microsoft Azure można osiągnąć przy użyciu dedykowanych maszyn wirtualnych dla każdego wystąpienia. Za pomocą [usługi Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/)można łatwo skalować maszyny wirtualne. [Usługa Azure App Services](https://azure.microsoft.com/services/app-service/) może uruchamiać aplikacje monolityczne i łatwo skalować wystąpienia bez potrzeby zarządzania maszynami wirtualnymi. Usługa Azure App Services może również uruchamiać pojedyncze wystąpienia kontenerów platformy Docker, upraszczając wdrażanie. Przy użyciu platformy Docker można wdrożyć pojedynczą maszynę wirtualną jako hosta platformy Docker i uruchamiać wiele wystąpień. Korzystając z modułu równoważenia obciążenia platformy Azure, jak pokazano na rysunku 5-14, można zarządzać skalowaniem.
+Wdrażanie aplikacji monolitycznych w Microsoft Azure można osiągnąć przy użyciu dedykowanych maszyn wirtualnych dla każdego wystąpienia. Za pomocą [usługi Azure Virtual Machine Scale Sets](/azure/virtual-machine-scale-sets/)można łatwo skalować maszyny wirtualne. [Usługa Azure App Services](https://azure.microsoft.com/services/app-service/) może uruchamiać aplikacje monolityczne i łatwo skalować wystąpienia bez potrzeby zarządzania maszynami wirtualnymi. Usługa Azure App Services może również uruchamiać pojedyncze wystąpienia kontenerów platformy Docker, upraszczając wdrażanie. Przy użyciu platformy Docker można wdrożyć pojedynczą maszynę wirtualną jako hosta platformy Docker i uruchamiać wiele wystąpień. Korzystając z modułu równoważenia obciążenia platformy Azure, jak pokazano na rysunku 5-14, można zarządzać skalowaniem.
 
 Wdrożenie na różnych hostach może być zarządzane przy użyciu tradycyjnych technik wdrażania. Hosty platformy Docker mogą być zarządzane za pomocą poleceń, takich jak **uruchomienie platformy Docker** , wykonywane ręcznie lub za pomocą automatyzacji, takich jak potoki ciągłego dostarczania (CD).
 

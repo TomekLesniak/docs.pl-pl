@@ -1,21 +1,23 @@
 ---
-title: 'Instrukcje: wyświetlanie LINQ to SQL poleceń'
+title: 'Instrukcje: Wyświetlanie poleceń LINQ to SQL'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1decb05e-37ad-4ed6-ab2f-071eb4c4f628
-ms.openlocfilehash: ec5010a42980e2d7a1a03c31d396cac6b6934a58
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: e703ea9be3ead50afae9b8f42aaa4f54a292c23c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002939"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169443"
 ---
-# <a name="how-to-display-linq-to-sql-commands"></a>Instrukcje: wyświetlanie LINQ to SQL poleceń
-Użyj <xref:System.Data.Linq.DataContext.GetCommand%2A>, aby wyświetlić polecenia SQL i inne informacje.  
+# <a name="how-to-display-linq-to-sql-commands"></a>Instrukcje: Wyświetlanie poleceń LINQ to SQL
+
+Służy <xref:System.Data.Linq.DataContext.GetCommand%2A> do wyświetlania poleceń SQL i innych informacji.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie w oknie konsoli są wyświetlane dane wyjściowe zapytania, a następnie polecenia SQL, które są generowane, typ poleceń i typ połączenia.  
   
  [!code-csharp[DLinqDebuggingSupport#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#3)]
@@ -48,6 +50,6 @@ Command Type: Text
 Connection: System.Data.SqlClient.SqlConnection  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Obsługa debugowania](debugging-support.md)

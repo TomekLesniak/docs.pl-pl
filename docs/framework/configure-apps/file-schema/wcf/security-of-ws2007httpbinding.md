@@ -2,14 +2,15 @@
 title: <security> dla <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: fdda0ff7-b462-4e26-af52-e87ddab71945
-ms.openlocfilehash: e88f55f3651d1ccd55631dce13a0349ac2772624
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 48b49bf69f791f90ed5b2eea8e6d412438cd9519
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736389"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169846"
 ---
 # <a name="security-of-ws2007httpbinding"></a>\<security> dla \<ws2007HttpBinding>
+
 Reprezentuje ustawienia zabezpieczeń używane z [\<ws2007HttpBinding>](ws2007httpbinding.md) elementem.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,6 +40,7 @@ Reprezentuje ustawienia zabezpieczeń używane z [\<ws2007HttpBinding>](ws2007ht
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -70,9 +72,10 @@ Reprezentuje ustawienia zabezpieczeń używane z [\<ws2007HttpBinding>](ws2007ht
 |[\<ws2007HttpBinding>](ws2007httpbinding.md)|Bezpieczne powiązanie dla aplikacji transportu HTTP.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element jest przeznaczony do współdziałania z usługami, które implementują specyfikacje WS-*. Zabezpieczenia transportu dla tego powiązania są SSL (SSL) za pośrednictwem protokołu HTTP lub HTTPS.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.WSHttpSecurity>
 - <xref:System.ServiceModel.WSHttpBinding.Security%2A>
@@ -82,5 +85,5 @@ Reprezentuje ustawienia zabezpieczeń używane z [\<ws2007HttpBinding>](ws2007ht
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

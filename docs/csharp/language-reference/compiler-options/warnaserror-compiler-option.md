@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -warnaserror compiler option [C#]
 - warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
-ms.openlocfilehash: 3ccd4546402dbc8e5d9245af6411ba2d831d4959
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9c3b307668968865b401aedc04c79f95d4f32513
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127246"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171341"
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror — (opcje kompilatora C#)
+
 Opcja **-warnaserror — +** traktuje wszystkie ostrzeżenia jako błędy  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,6 +27,7 @@ Opcja **-warnaserror — +** traktuje wszystkie ostrzeżenia jako błędy
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wszystkie komunikaty, które zwykle są raportowane jako ostrzeżenia, są raportowane jako błędy, a proces kompilacji jest zatrzymany (nie skompilowano plików wyjściowych).  
   
  Domyślnie **— warnaserror — —** obowiązuje, co powoduje, że ostrzeżenia nie uniemożliwiają generowania pliku wyjściowego. **-warnaserror —**, która jest taka sama jak **-warnaserror — +**, powoduje, że ostrzeżenia są traktowane jako błędy.  
@@ -45,6 +47,7 @@ Opcja **-warnaserror — +** traktuje wszystkie ostrzeżenia jako błędy
  Aby programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors> .  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj `in.cs` i czy kompilator nie wyświetli żadnych ostrzeżeń:  
   
 ```console  

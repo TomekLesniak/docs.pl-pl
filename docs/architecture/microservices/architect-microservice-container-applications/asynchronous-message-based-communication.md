@@ -2,12 +2,12 @@
 title: Asynchroniczna komunikacja oparta na komunikatach
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Asynchroniczna komunikacja oparta na komunikatach to podstawowe koncepcje w architekturze mikrousług, ponieważ jest to najlepszy sposób, aby mikrousługi były niezależne od siebie, a także ostatecznie zsynchronizowane.
 ms.date: 09/20/2018
-ms.openlocfilehash: 2bd79935cad3d62e488a57da6b40a0c87349960b
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 17b3fb3fe3f94d5387359061e3297ebfa6e5be7a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679178"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169248"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchroniczna komunikacja oparta na komunikatach
 
@@ -59,7 +59,7 @@ Ważnym punktem jest to, że możesz chcieć komunikować się z wieloma mikrous
 
 W przypadku asynchronicznej komunikacji opartej na zdarzeniach jedna mikrousługa publikuje zdarzenia do magistrali zdarzeń, a wiele mikrousług może subskrybować ten element, aby otrzymywać powiadomienia i działać na nim. Twoja implementacja określi, który protokół ma być używany na potrzeby komunikacji opartej na zdarzeniach. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) może pomóc w osiągnięciu niezawodnej komunikacji kolejkowanej.
 
-Korzystając z magistrali zdarzeń, można użyć poziomu abstrakcji (na przykład interfejsu magistrali zdarzeń) na podstawie powiązanej implementacji w klasach z kodem przy użyciu interfejsu API z brokera komunikatów, takiego jak [RabbitMQ](https://www.rabbitmq.com/) , lub usługi Service Bus, takiej jak [Azure Service Bus z tematami](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Alternatywnie możesz chcieć użyć magistrali usług wyższego poziomu, takiej jak NServiceBus, MassTransit lub jaśniejszy, aby ideach swoją magistralę zdarzeń i system publikowania/subskrybowania.
+Korzystając z magistrali zdarzeń, można użyć poziomu abstrakcji (na przykład interfejsu magistrali zdarzeń) na podstawie powiązanej implementacji w klasach z kodem przy użyciu interfejsu API z brokera komunikatów, takiego jak [RabbitMQ](https://www.rabbitmq.com/) , lub usługi Service Bus, takiej jak [Azure Service Bus z tematami](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Alternatywnie możesz chcieć użyć magistrali usług wyższego poziomu, takiej jak NServiceBus, MassTransit lub jaśniejszy, aby ideach swoją magistralę zdarzeń i system publikowania/subskrybowania.
 
 ## <a name="a-note-about-messaging-technologies-for-production-systems"></a>Uwaga dotycząca technologii obsługi komunikatów w systemach produkcyjnych
 
@@ -75,13 +75,13 @@ Wyzwanie w przypadku implementowania architektury opartej na zdarzeniach w wielu
 
 - Korzystanie z [wyszukiwania w dzienniku transakcji](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
-- Używanie wzorca [pozyskiwania pełnego zdarzenia](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing) .
+- Używanie wzorca [pozyskiwania pełnego zdarzenia](/azure/architecture/patterns/event-sourcing) .
 
 - Używanie [wzorca skrzynki nadawczej](https://www.kamilgrzybek.com/design/the-outbox-pattern/): transakcyjna tabela bazy danych jako kolejka komunikatów, która będzie podstawą dla składnika Event-Creator, który utworzy zdarzenie i opublikuje je.
 
 Dodatkowe tematy, które należy wziąć pod uwagę podczas korzystania z komunikacji asynchronicznej, to idempotentność komunikatów i Deduplikacja komunikatów. Te tematy zostały omówione w sekcji [implementowanie komunikacji opartej na zdarzeniach między mikrousługami (zdarzenia integracji)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md) w dalszej części tego przewodnika.
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Obsługa komunikatów opartych na zdarzeniach** \
   <https://patterns.arcitura.com/soa-patterns/design_patterns/event_driven_messaging>

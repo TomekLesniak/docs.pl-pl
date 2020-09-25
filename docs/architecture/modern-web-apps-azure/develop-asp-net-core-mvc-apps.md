@@ -7,12 +7,12 @@ ms.date: 08/12/2020
 no-loc:
 - Blazor
 - WebAssembly
-ms.openlocfilehash: 255a7f9b34752b3480ba5a8ffc5d506e6d7b05d3
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: e746362657a25487e98ddac09fa4337b00dfe805
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89515982"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169131"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Opracowywanie aplikacji ASP.NET Core MVC
 
@@ -241,7 +241,7 @@ Inne podejście do oddzielenia aplikacji od szczegółów implementacji ma na ce
 
 ### <a name="feature-organization"></a>Organizacja funkcji
 
-Domyślnie aplikacje ASP.NET Core organizują strukturę folderów w taki sposób, aby obejmowały kontrolery i widoki oraz często modele widoków. Kod po stronie klienta do obsługi tych struktur po stronie serwera jest zazwyczaj przechowywany osobno w folderze wwwroot. Jednak duże aplikacje mogą napotkać problemy z tą organizacją, ponieważ praca nad daną funkcją często wymaga przechodzenia między tymi folderami. Jest to bardziej trudne i trudniejsze w miarę zwiększania się liczby plików i podfolderów w każdym folderze, dzięki czemu można przewijać Eksplorator rozwiązań. Jednym z rozwiązań tego problemu jest organizowanie kodu aplikacji według _funkcji_ zamiast według typu plików. Ten styl organizacyjny jest zwykle określany jako foldery funkcji lub [wycinki funkcji](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) (Zobacz również: [wycinki pionowe](https://deviq.com/vertical-slices/)).
+Domyślnie aplikacje ASP.NET Core organizują strukturę folderów w taki sposób, aby obejmowały kontrolery i widoki oraz często modele widoków. Kod po stronie klienta do obsługi tych struktur po stronie serwera jest zazwyczaj przechowywany osobno w folderze wwwroot. Jednak duże aplikacje mogą napotkać problemy z tą organizacją, ponieważ praca nad daną funkcją często wymaga przechodzenia między tymi folderami. Jest to bardziej trudne i trudniejsze w miarę zwiększania się liczby plików i podfolderów w każdym folderze, dzięki czemu można przewijać Eksplorator rozwiązań. Jednym z rozwiązań tego problemu jest organizowanie kodu aplikacji według _funkcji_ zamiast według typu plików. Ten styl organizacyjny jest zwykle określany jako foldery funkcji lub [wycinki funkcji](/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) (Zobacz również: [wycinki pionowe](https://deviq.com/vertical-slices/)).
 
 ASP.NET Core MVC obsługuje obszary do tego celu. Korzystając z obszarów, można utworzyć osobne zestawy kontrolerów i folderów widoków (oraz wszelkich skojarzonych modeli) w każdym folderze obszaru. Rysunek 7-1 pokazuje przykładową strukturę folderów przy użyciu obszarów.
 
@@ -301,7 +301,7 @@ Następnie należy określić tę Konwencję jako opcję po dodaniu obsługi MVC
 services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 ```
 
-ASP.NET Core MVC używa również Konwencji do lokalizowania widoków. Można zastąpić go Konwencją niestandardową, aby widoki znajdowały się w folderach funkcji (przy użyciu nazwy funkcji dostarczonej przez FeatureConvention). Możesz dowiedzieć się więcej o tym podejściu i pobrać przykład roboczy z artykułu magazynowego MSDN, [wycinki funkcji dla ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
+ASP.NET Core MVC używa również Konwencji do lokalizowania widoków. Można zastąpić go Konwencją niestandardową, aby widoki znajdowały się w folderach funkcji (przy użyciu nazwy funkcji dostarczonej przez FeatureConvention). Możesz dowiedzieć się więcej o tym podejściu i pobrać przykład roboczy z artykułu magazynowego MSDN, [wycinki funkcji dla ASP.NET Core MVC](/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
 
 ### <a name="apis-and-no-locblazor-applications"></a>Interfejsy API i Blazor aplikacje
 
@@ -313,7 +313,7 @@ Dodanie Blazor WebAssembly interfejsu administratora do eShopOnWeb wymaga dodani
 
 Jeden z nich może zadawać, dlaczego należy dodać oddzielny `BlazorShared` projekt, jeśli istnieje już wspólny `ApplicationCore` projekt, którego można użyć do udostępniania dowolnego typu wymaganego przez oba `PublicApi` i `BlazorAdmin` ? Odpowiedź polega na tym, że ten projekt zawiera całą logikę biznesową aplikacji i jest dużo większy niż to konieczne, a także znacznie bardziej niezbędny jest bezpieczny na serwerze. Należy pamiętać, że każda biblioteka, do której odwołuje się `BlazorAdmin` program, zostanie pobrana do przeglądarek użytkowników podczas ładowania Blazor aplikacji.
 
-W zależności od tego, czy jest używany [wzorzec frontonu (BFF)](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends), interfejsy API używane przez Blazor WebAssembly aplikację nie mogą udostępniać ich typów 100% z Blazor . W szczególności publiczny interfejs API, który ma być używany przez wielu różnych klientów, może definiować własne żądanie i typy wyników, zamiast udostępniać je w projekcie udostępnionym specyficznym dla klienta. W przykładzie eShopOnWeb założono, że `PublicApi` projekt jest w rzeczywistości hostem publicznego interfejsu API, dlatego nie wszystkie typy żądań i odpowiedzi pochodzą z `BlazorShared` projektu.
+W zależności od tego, czy jest używany [wzorzec frontonu (BFF)](/azure/architecture/patterns/backends-for-frontends), interfejsy API używane przez Blazor WebAssembly aplikację nie mogą udostępniać ich typów 100% z Blazor . W szczególności publiczny interfejs API, który ma być używany przez wielu różnych klientów, może definiować własne żądanie i typy wyników, zamiast udostępniać je w projekcie udostępnionym specyficznym dla klienta. W przykładzie eShopOnWeb założono, że `PublicApi` projekt jest w rzeczywistości hostem publicznego interfejsu API, dlatego nie wszystkie typy żądań i odpowiedzi pochodzą z `BlazorShared` projektu.
 
 ### <a name="cross-cutting-concerns"></a>Zagadnienia ogólne
 
@@ -387,7 +387,7 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Aby dowiedzieć się więcej na temat implementowania filtrów i pobrać przykład roboczy z magazynu MSDN, zobacz [Real-World ASP.NET Core filters MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
+Aby dowiedzieć się więcej na temat implementowania filtrów i pobrać przykład roboczy z magazynu MSDN, zobacz [Real-World ASP.NET Core filters MVC](/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
 
 > ### <a name="references--structuring-applications"></a>References — Tworzenie struktury aplikacji
 >
@@ -443,7 +443,7 @@ Ważne jest, aby UseIdentity pojawił się przed UseMvc w metodzie Configure. Po
 
 Więcej informacji na temat [konfigurowania uwierzytelniania dwuskładnikowego](/aspnet/core/security/authentication/2fa) i [włączania zewnętrznych dostawców logowania](/aspnet/core/security/authentication/social/) można znaleźć w oficjalnym ASP.NET Core dokumentach.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Uwierzytelnianie
 
 Uwierzytelnianie to proces określania, kto uzyskuje dostęp do systemu. Jeśli używasz tożsamości ASP.NET Core i metod konfiguracji przedstawionych w poprzedniej sekcji, spowoduje to automatyczne skonfigurowanie niektórych ustawień uwierzytelniania w aplikacji. Można jednak również skonfigurować te ustawienia domyślne ręcznie lub zastąpić je zestawem AddIdentity. Jeśli używasz tożsamości, skonfigurujesz uwierzytelnianie na podstawie plików cookie jako *schemat*domyślny.
 

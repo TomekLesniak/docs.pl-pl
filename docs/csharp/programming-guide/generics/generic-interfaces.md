@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: b7225e295268a3e46e4e9bd446372ae87bbbbb10
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: ec86395a41baea75694572b59b2c76cbde24fedf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466147"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170392"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>Interfejsy ogólne (Przewodnik programowania w języku C#)
+
 Często warto zdefiniować interfejsy dla klas kolekcji generycznej lub dla klas ogólnych, które reprezentują elementy w kolekcji. Preferencją dla klas ogólnych jest użycie interfejsów ogólnych, takich jak <xref:System.IComparable%601> zamiast <xref:System.IComparable> , aby uniknąć pakowania i rozpakowywania operacji na typach wartości. Biblioteka klas .NET definiuje kilka ogólnych interfejsów do użycia z klasami kolekcji w <xref:System.Collections.Generic> przestrzeni nazw.  
   
  Gdy interfejs jest określony jako ograniczenie dla parametru typu, można użyć tylko typów, które implementują interfejs. Poniższy przykład kodu pokazuje `SortedList<T>` klasę, która dziedziczy z `GenericList<T>` klasy. Aby uzyskać więcej informacji, zobacz [wprowadzenie do typów ogólnych](./index.md). `SortedList<T>` dodaje ograniczenie `where T : IComparable<T>` . Dzięki temu `BubbleSort` Metoda w programie `SortedList<T>` może używać metody ogólnej <xref:System.IComparable%601.CompareTo%2A> dla elementów listy. W tym przykładzie elementy list są prostą klasą, `Person` która implementuje `IComparable<Person>` .  
@@ -44,7 +45,7 @@ Często warto zdefiniować interfejsy dla klas kolekcji generycznej lub dla klas
   
  Reguły przeciążania metody kontrolującej są takie same dla metod w klasach ogólnych, strukturach ogólnych lub w interfejsach ogólnych. Aby uzyskać więcej informacji, zobacz [metody ogólne](./generic-methods.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Wprowadzenie do typów ogólnych](./index.md)

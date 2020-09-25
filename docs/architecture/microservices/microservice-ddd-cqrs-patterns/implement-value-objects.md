@@ -2,12 +2,12 @@
 title: Implementowanie obiektów wartości
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się z informacjami i opcjami dotyczącymi implementowania obiektów wartości przy użyciu nowych funkcji Entity Framework.
 ms.date: 08/21/2020
-ms.openlocfilehash: 02eed7baaa364c62aa2df599f1d8b0e700dd215f
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 1cb7ce04b3ab2f6da25f398e016baf60b863fb6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811122"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169209"
 ---
 # <a name="implement-value-objects"></a>Implementowanie obiektów wartości
 
@@ -126,7 +126,7 @@ Właśnie pokazano, jak zdefiniować obiekt wartości w modelu domeny. Ale jak m
 
 ### <a name="background-and-older-approaches-using-ef-core-11"></a>W tle i starszych podejściach korzystających z EF Core 1,1
 
-W tle, ograniczenie w przypadku korzystania z EF Core 1,0 i 1,1 było niemożliwe, ponieważ nie można było użyć [typów złożonych](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute) zdefiniowanych w Ef 6. x w tradycyjnych .NET Framework. W związku z tym, jeśli jest używany EF Core 1,0 lub 1,1, należy przechowywać obiekt wartości jako jednostkę EF z polem ID. Następnie, aby wyglądała podobnie jak obiekt wartości bez tożsamości, można ukryć jego identyfikator, aby wyczyścić, że tożsamość obiektu wartości nie jest istotna w modelu domeny. Ten identyfikator można ukryć, używając identyfikatora jako [Właściwości cienia](https://docs.microsoft.com/ef/core/modeling/shadow-properties ). Ponieważ konfiguracja służąca do ukrywania identyfikatora w modelu jest skonfigurowana na poziomie infrastruktury EF, byłby on rodzaj przezroczysty dla modelu domeny.
+W tle, ograniczenie w przypadku korzystania z EF Core 1,0 i 1,1 było niemożliwe, ponieważ nie można było użyć [typów złożonych](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute) zdefiniowanych w Ef 6. x w tradycyjnych .NET Framework. W związku z tym, jeśli jest używany EF Core 1,0 lub 1,1, należy przechowywać obiekt wartości jako jednostkę EF z polem ID. Następnie, aby wyglądała podobnie jak obiekt wartości bez tożsamości, można ukryć jego identyfikator, aby wyczyścić, że tożsamość obiektu wartości nie jest istotna w modelu domeny. Ten identyfikator można ukryć, używając identyfikatora jako [Właściwości cienia](/ef/core/modeling/shadow-properties). Ponieważ konfiguracja służąca do ukrywania identyfikatora w modelu jest skonfigurowana na poziomie infrastruktury EF, byłby on rodzaj przezroczysty dla modelu domeny.
 
 W początkowej wersji programu eShopOnContainers (.NET Core 1,1) ukryty identyfikator, który jest wymagany przez EF Core infrastrukturę, został zaimplementowany w następujący sposób na poziomie DbContext, przy użyciu interfejsu API Fluent w projekcie infrastruktury. W związku z tym, identyfikator został ukryty z punktu modelu domeny w widoku, ale wciąż występuje w infrastrukturze.
 

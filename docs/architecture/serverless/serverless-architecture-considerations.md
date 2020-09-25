@@ -4,12 +4,12 @@ description: Zapoznaj się z wyzwaniami dotyczącymi tworzenia aplikacji bezserw
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/06/2020
-ms.openlocfilehash: 3c07e1149e6af41a6b9a9317238e5c71015d2c4e
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: fbbb0c38cea58902124743fb99f9ab31b3d09be9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135675"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171653"
 ---
 # <a name="serverless-architecture-considerations"></a>Zagadnienia dotyczące architektury bezserwerowej
 
@@ -23,7 +23,7 @@ Istnieje kilka rozwiązań do przyjęcia stanu bez naruszania korzyści związan
 
 - Korzystanie z tymczasowego magazynu danych lub rozproszonej pamięci podręcznej, takich jak Redis
 - Stan magazynu w bazie danych, na przykład SQL lub CosmosDB
-- Obsługa stanu za pomocą aparatu przepływu pracy, takiego jak [funkcje trwałe](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview)
+- Obsługa stanu za pomocą aparatu przepływu pracy, takiego jak [funkcje trwałe](/azure/azure-functions/durable/durable-functions-overview)
 
 Dolna linia polega na tym, że należy zwrócić uwagę na konieczność zarządzania stanami w ramach procesów, które są rozważane, aby wdrożyć je bezserwerowo.
 
@@ -63,7 +63,7 @@ Reguły często określają sposób skalowania w górę (zwiększenie zasobów h
 
 ## <a name="monitoring-tracing-and-logging"></a>Monitorowanie, śledzenie i rejestrowanie
 
-Często DevOpsm aspektem jest monitorowanie aplikacji po wdrożeniu. Ważne jest, aby mieć strategię monitorowania funkcji bezserwerowych. Największe wyzwanie jest często korelacją lub rozpoznawania, gdy użytkownik wywołuje wiele funkcji w ramach tej samej interakcji. Większość platform bezserwerowych umożliwia rejestrowanie konsoli, które mogą być importowane do narzędzi innych firm. Dostępne są również opcje automatyzacji zbierania danych telemetrycznych, generowania i śledzenia identyfikatorów korelacji oraz monitorowania określonych akcji w celu zapewnienia szczegółowych informacji. Platforma Azure udostępnia zaawansowaną [platformę Application Insights](https://docs.microsoft.com/azure/azure-functions/functions-monitoring) do monitorowania i analizy.
+Często DevOpsm aspektem jest monitorowanie aplikacji po wdrożeniu. Ważne jest, aby mieć strategię monitorowania funkcji bezserwerowych. Największe wyzwanie jest często korelacją lub rozpoznawania, gdy użytkownik wywołuje wiele funkcji w ramach tej samej interakcji. Większość platform bezserwerowych umożliwia rejestrowanie konsoli, które mogą być importowane do narzędzi innych firm. Dostępne są również opcje automatyzacji zbierania danych telemetrycznych, generowania i śledzenia identyfikatorów korelacji oraz monitorowania określonych akcji w celu zapewnienia szczegółowych informacji. Platforma Azure udostępnia zaawansowaną [platformę Application Insights](/azure/azure-functions/functions-monitoring) do monitorowania i analizy.
 
 ## <a name="inter-service-dependencies"></a>Zależności między usługami
 
@@ -82,5 +82,5 @@ Aby uzyskać więcej informacji, zobacz [implementowanie wzorca wyłącznika](..
 Główną zaletą bezserwerową jest możliwość uaktualnienia określonej funkcji bez konieczności ponownego wdrażania całej aplikacji. Aby uaktualnienia zostały wykonane pomyślnie, funkcje muszą być w wersji, tak aby usługi wywołujące je, były kierowane do odpowiedniej wersji kodu. Jest również ważna strategia wdrażania nowych wersji. Typowym podejściem jest użycie "zielone/niebieskie wdrożenia". Zielone wdrożenie jest bieżącą funkcją. Nowa wersja "niebieska" została wdrożona w środowisku produkcyjnym i przetestowana. Podczas testowania są wymieniane zielone i niebieskie wersje, aby nowa wersja była aktywna. Jeśli wystąpią jakieś problemy, można wymienić je ponownie. Obsługa wersji i wdrożenia zielone/niebieskie wymagają kombinacji tworzenia funkcji w celu uwzględnienia zmian wersji i pracy z platformą bezserwerową do obsługi wdrożeń.
 
 >[!div class="step-by-step"]
->[Poprzedni](serverless-architecture.md)
->[Następny](serverless-design-examples.md)
+>[Poprzedni](serverless-architecture.md) 
+> [Dalej](serverless-design-examples.md)

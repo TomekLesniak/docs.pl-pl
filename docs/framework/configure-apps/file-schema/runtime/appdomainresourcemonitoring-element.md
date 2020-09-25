@@ -5,14 +5,15 @@ helpviewer_keywords:
 - appDomainResourceMonitoring element
 - <appDomainResourceMonitoring> element
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
-ms.openlocfilehash: 3c6092b6c34bb13c0ad0e66df2d3b7e65ac3de7e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9ecf2e382b5d483377df871835793219b3f74760
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154379"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170275"
 ---
 # <a name="appdomainresourcemonitoring-element"></a>\<appDomainResourceMonitoring> Element
+
 Powoduje, że środowisko uruchomieniowe zbiera statystyki dotyczące wszystkich domen aplikacji w procesie przez cały czas trwania procesu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Powoduje, że środowisko uruchomieniowe zbiera statystyki dotyczące wszystkich
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,6 +45,7 @@ Powoduje, że środowisko uruchomieniowe zbiera statystyki dotyczące wszystkich
 |`false`|Nie są zbierane statystyki dotyczące monitorowania zasobów domeny aplikacji.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -53,6 +56,7 @@ Powoduje, że środowisko uruchomieniowe zbiera statystyki dotyczące wszystkich
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Monitorowanie zasobów domeny aplikacji jest dostępne za pomocą klasy domeny aplikacji zarządzanej, interfejsu hosta [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) i śledzenia zdarzeń systemu Windows (ETW). Po włączeniu monitorowania statystyki są zbierane dla wszystkich domen aplikacji w procesie przez cały czas trwania procesu.  
   
  Aby włączyć monitorowanie z kodu zarządzanego, użyj <xref:System.AppDomain.MonitoringIsEnabled%2A> właściwości.  
@@ -60,6 +64,7 @@ Powoduje, że środowisko uruchomieniowe zbiera statystyki dotyczące wszystkich
  Ten element konfiguracji jest dostępny tylko w .NET Framework 4 i nowszych.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak włączyć monitorowanie zasobów domeny aplikacji.  
   
 ```xml  
@@ -70,7 +75,7 @@ Powoduje, że środowisko uruchomieniowe zbiera statystyki dotyczące wszystkich
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>
 - [Schemat ustawień środowiska uruchomieniowego](index.md)

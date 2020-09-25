@@ -2,14 +2,15 @@
 title: <security> dla <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 727cf3d2-6f56-48ad-a59f-ba423edb9c83
-ms.openlocfilehash: 77009dc950a608da9e0db3a7d09be67e1ed46137
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 60b863a0a2a846a60dde2e4b323a305b5096b1cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738637"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169898"
 ---
 # <a name="security-of-webhttpbinding"></a>\<security> dla \<webHttpBinding>
+
 Określa wymagania dotyczące zabezpieczeń dla punktu końcowego skonfigurowanego za pomocą [\<webHttpBinding>](webhttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,6 +39,7 @@ Określa wymagania dotyczące zabezpieczeń dla punktu końcowego skonfigurowane
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -66,7 +68,7 @@ Określa wymagania dotyczące zabezpieczeń dla punktu końcowego skonfigurowane
 |-------------|-----------------|  
 |[\<webHttpBinding>](webhttpbinding.md)|Element powiązania, który jest używany do konfigurowania punktów końcowych dla usług sieci Web Windows Communication Foundation (WCF), które odpowiadają na żądania HTTP zamiast komunikatów protokołu SOAP.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.WebHttpBindingElement>
 - <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>
@@ -77,6 +79,6 @@ Określa wymagania dotyczące zabezpieczeń dla punktu końcowego skonfigurowane
 - [Wybieranie typu poświadczeń](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)
 - [Model programowania protokołu HTTP sieci Web w programie WCF](../../../wcf/feature-details/wcf-web-http-programming-model.md)
