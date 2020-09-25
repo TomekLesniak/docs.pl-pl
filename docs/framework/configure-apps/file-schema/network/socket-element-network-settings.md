@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <socket> element
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-ms.openlocfilehash: 0e2b369eccfbc658a790ef61a961315a88361669
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b8df32745007b2a145d35b8cfcc4cbd2bd17eb33
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74089089"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201736"
 ---
 # <a name="socket-element-network-settings"></a>\<socket>, element (ustawienia sieci)
+
 Określa, czy operacje gniazda używają portów zakończenia.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Określa, czy operacje gniazda używają portów zakończenia.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -45,6 +47,7 @@ Określa, czy operacje gniazda używają portów zakończenia.
 |`ipProtectionLevel`|Określa wartość domyślną <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> dla gniazda. Wartość domyślna zależy od wersji systemu Windows.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -54,6 +57,7 @@ Określa, czy operacje gniazda używają portów zakończenia.
 |[ustawienia](settings-element-network-settings.md)|Konfiguruje podstawowe opcje sieci dla <xref:System.Net> przestrzeni nazw.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `alwaysUseCompletionPortsForAccept`Atrybuty i służą `alwaysUseCompletionPortsForConnect` do określania domyślnego zachowania dotyczącego używania portów zakończenia przez klasy w <xref:System.Net.Sockets?displayProperty=nameWithType> przestrzeni nazw. Porty uzupełniania są zalecane w przypadku aplikacji serwera o wysokiej wydajności.  
   
  Wartość domyślna dla `alwaysUseCompletionPortsForAccept` atrybutów i jest równa `alwaysUseCompletionPortsForConnect` **false**.  
@@ -84,9 +88,11 @@ Określa, czy operacje gniazda używają portów zakończenia.
  <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A>Właściwość może służyć do uzyskiwania bieżącej wartości `ipProtectionLevel` atrybutu z odpowiednich plików konfiguracji.  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak określić, że powinny być używane porty zakończenia oraz że wartość domyślna <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> powinna być bez ograniczeń.  
   
 ```xml  
@@ -103,11 +109,11 @@ Określa, czy operacje gniazda używają portów zakończenia.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>
 - <xref:System.Net.Sockets?displayProperty=nameWithType>
 - <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>
 - <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

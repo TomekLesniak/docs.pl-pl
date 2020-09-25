@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 971a1bddc40521dc7381ecb2e39709c0fed282ed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8db75f486c7c08b6a02401af35c9edf9969f9063
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785982"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201281"
 ---
 # <a name="nesting-datarelations"></a>Zagnieżdżanie elementów DataRelation
-W relacyjnej reprezentacji danych poszczególne tabele zawierają wiersze, które są ze sobą powiązane, przy użyciu kolumny lub zestawu kolumn. W ADO.NET <xref:System.Data.DataSet>relacja między tabelami jest implementowana <xref:System.Data.DataRelation>przy użyciu. Podczas tworzenia **relacji**datarelationship relacje z relacją nadrzędny-podrzędny kolumn są zarządzane tylko za pomocą relacji. Tabele i kolumny są oddzielnymi jednostkami. W hierarchicznej reprezentacji danych dostarczanych przez XML, relacje nadrzędny-podrzędny są reprezentowane przez elementy nadrzędne, które zawierają zagnieżdżone elementy podrzędne.  
+
+W relacyjnej reprezentacji danych poszczególne tabele zawierają wiersze, które są ze sobą powiązane, przy użyciu kolumny lub zestawu kolumn. W ADO.NET <xref:System.Data.DataSet> relacja między tabelami jest implementowana przy użyciu <xref:System.Data.DataRelation> . Podczas tworzenia **relacji**datarelationship relacje z relacją nadrzędny-podrzędny kolumn są zarządzane tylko za pomocą relacji. Tabele i kolumny są oddzielnymi jednostkami. W hierarchicznej reprezentacji danych dostarczanych przez XML, relacje nadrzędny-podrzędny są reprezentowane przez elementy nadrzędne, które zawierają zagnieżdżone elementy podrzędne.  
   
- Aby ułatwić zagnieżdżanie obiektów podrzędnych, gdy **zestaw danych** jest synchronizowany <xref:System.Xml.XmlDataDocument> z lub zapisywany jako dane XML przy użyciu **WriteXml**, **relacja** danych ujawnia Właściwość **zagnieżdżoną** . Ustawienie właściwości **zagnieżdżonej** **relacji** na **wartość true** powoduje, że wiersze podrzędne relacji mają być zagnieżdżone w kolumnie nadrzędnej podczas zapisywania jako dane XML lub synchronizowane z **XmlDataDocument**. **Zagnieżdżona** właściwość elementu **DataRelation** ma domyślnie **wartość false**.  
+ Aby ułatwić zagnieżdżanie obiektów podrzędnych, gdy **zestaw danych** jest synchronizowany z <xref:System.Xml.XmlDataDocument> lub zapisywany jako dane XML przy użyciu **WriteXml**, **relacja** danych ujawnia Właściwość **zagnieżdżoną** . Ustawienie właściwości **zagnieżdżonej** **relacji** na **wartość true** powoduje, że wiersze podrzędne relacji mają być zagnieżdżone w kolumnie nadrzędnej podczas zapisywania jako dane XML lub synchronizowane z **XmlDataDocument**. **Zagnieżdżona** właściwość elementu **DataRelation** ma domyślnie **wartość false**.  
   
  Rozważmy na przykład następujący **zestaw danych**.  
   
@@ -131,7 +132,7 @@ customerOrders.Nested = true;
 </CustomerOrders>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie języka XML w elemencie DataSet](using-xml-in-a-dataset.md)
 - [Dodawanie elementów DataRelation](adding-datarelations.md)

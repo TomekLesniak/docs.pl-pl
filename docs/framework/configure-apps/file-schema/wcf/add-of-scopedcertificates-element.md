@@ -2,14 +2,15 @@
 title: <add><scopedCertificates>elementu
 ms.date: 03/30/2017
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
-ms.openlocfilehash: b00a342108beca69a906fbf6212915768e98778f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 28777ecac130295a8ba82a8e4d67cc519d088d8a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398349"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195145"
 ---
 # <a name="add-of-scopedcertificates-element"></a>\<add>\<scopedCertificates>elementu
+
 Dodaje certyfikat X. 509 do kolekcji certyfikatów z zakresem.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Dodaje certyfikat X. 509 do kolekcji certyfikatów z zakresem.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -70,6 +72,7 @@ Dodaje certyfikat X. 509 do kolekcji certyfikatów z zakresem.
 |Wyliczenie|Dostępne są następujące wartości: AddressBook, AuthRoot, urząd certyfikacji, niedozwolone, my, root, TrustedPeople i TrustedPublisher.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -79,6 +82,7 @@ Dodaje certyfikat X. 509 do kolekcji certyfikatów z zakresem.
 |[\<scopedCertificates>](scopedcertificates-element.md)|Reprezentuje kolekcję certyfikatów X. 509 dostarczonych przez określone usługi (w zakresie) do uwierzytelniania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element umożliwia klientowi skonfigurowanie certyfikatu usługi do użycia na podstawie adresu URL usługi, z którą się komunikuje. Jest to szczególnie przydatne w scenariuszach wystawionych tokenów, w których klient może komunikować się z wieloma usługami (usługą końcową oraz usługami tokenów zabezpieczających). W przypadku powiązań korzystających z zabezpieczeń komunikatów opartych na certyfikatach ten certyfikat jest używany do szyfrowania komunikatów do usługi i powinien być używany przez usługę do podpisywania odpowiedzi do klienta.  
   
  Jeśli powiązanie wymaga certyfikatu dla usługi i nie zostanie znaleziony konkretny certyfikat dla adresu URL usługi w ScopedCertificates, zostanie użyty certyfikat domyślny.  
@@ -86,6 +90,7 @@ Dodaje certyfikat X. 509 do kolekcji certyfikatów z zakresem.
  Aby uzyskać więcej informacji, zobacz sekcję "certyfikaty w zakresie" w temacie [How to: Create a Federation Client](../../../wcf/feature-details/how-to-create-a-federated-client.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład dodaje do kolekcji certyfikat X. 509.  
   
 ```xml  
@@ -108,7 +113,7 @@ Dodaje certyfikat X. 509 do kolekcji certyfikatów z zakresem.
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>
 - <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>
@@ -117,5 +122,5 @@ Dodaje certyfikat X. 509 do kolekcji certyfikatów z zakresem.
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>
 - [Instrukcje: tworzenie klienta federacyjnego](../../../wcf/feature-details/how-to-create-a-federated-client.md)
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
-- [Zabezpieczanie klientów](../../../wcf/securing-clients.md)
+- [Zabezpieczanie klientów [WCF]](../../../wcf/securing-clients.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

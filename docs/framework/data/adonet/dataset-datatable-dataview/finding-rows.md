@@ -5,25 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5da300e2-74c0-4d13-9202-fc20ed8212d8
-ms.openlocfilehash: cfd4587f0dde7687ecf88bf6b31c44b90a2287ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc0661e29e6d3ee5aa3f54179e8abf265cd67d58
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151146"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186981"
 ---
 # <a name="finding-rows"></a>Znajdowanie wierszy
-Wiersze można wyszukiwać zgodnie z ich wartościami <xref:System.Data.DataView.FindRows%2A> klucza <xref:System.Data.DataView>sortowania przy użyciu <xref:System.Data.DataView.Find%2A> metod i metody programu . Wielkość liter wartości wyszukiwania w find **and** **FindRows** metody jest określana przez **CaseSensitive** właściwość podstawowej <xref:System.Data.DataTable>. Wartości wyszukiwania muszą być zgodne z istniejącymi wartościami klucza sortowania w całości, aby uzyskać wynik.  
+
+Wiersze można wyszukiwać według ich wartości klucza sortowania przy użyciu <xref:System.Data.DataView.Find%2A> <xref:System.Data.DataView.FindRows%2A> metod i <xref:System.Data.DataView> . Wielkość liter w wartościach wyszukiwania w metodach **Find** i **FindRows** jest określana przez właściwość **CaseSensitive** elementu bazowego <xref:System.Data.DataTable> . Wartości wyszukiwania muszą być zgodne z istniejącymi wartościami klucza sortowania w całości w celu zwrócenia wyniku.  
   
- **Find** Metoda zwraca liczbę całkowitą z indeksem, <xref:System.Data.DataRowView> który odpowiada kryteriom wyszukiwania. Jeśli więcej niż jeden wiersz spełnia kryteria wyszukiwania, zwracany jest tylko indeks pierwszego pasującego **datarowview.** Jeśli nie zostaną znalezione żadne dopasowania, **funkcja Znajdź** zwraca wartość -1.  
+ Metoda **Find** zwraca liczbę całkowitą z indeksem odpowiadającym <xref:System.Data.DataRowView> kryteriom wyszukiwania. Jeśli więcej niż jeden wiersz pasuje do kryteriów wyszukiwania, zwracany jest tylko indeks pierwszego pasującej **DataRowView** . Jeśli nie znaleziono żadnych dopasowań, **Znajdź** zwraca wartość-1.  
   
- Aby zwrócić wyniki wyszukiwania, które pasują do wielu wierszy, użyj **Metody FindRows.** **Funkcja FindRows** działa podobnie jak metoda **Find,** z tą różnicą, że zwraca tablicę **DataRowView,** która odwołuje się do wszystkich pasujących wierszy w **pliku DataView**. Jeśli nie zostaną znalezione żadne dopasowania, **datarowview** tablica będzie pusta.  
+ Aby zwrócić wyniki wyszukiwania pasujące do wielu wierszy, użyj metody **FindRows** . **FindRows** działa podobnie jak Metoda **Find** , z tą różnicą, że zwraca tablicę **DataRowView** , która odwołuje się do wszystkich pasujących wierszy w **widoku**danych. Jeśli nie zostaną znalezione żadne dopasowania, tablica **DataRowView** będzie pusta.  
   
- Aby użyć **find** lub **FindRows** metody należy określić kolejność sortowania albo przez ustawienie **ApplyDefaultSort** **true** lub za pomocą **Sort właściwości.** Jeśli nie określono kolejności sortowania, zgłaszany jest wyjątek.  
+ Aby użyć metody **Find** lub **FindRows** , należy określić kolejność sortowania przez ustawienie **ApplyDefaultSort** na **true** lub przy użyciu właściwości **sort** . Jeśli kolejność sortowania nie zostanie określona, zostanie zgłoszony wyjątek.  
   
- **Find** i **FindRows** metody wziąć tablicę wartości jako dane wejściowe, których długość odpowiada liczbie kolumn w kolejności sortowania. W przypadku sortowania w jednej kolumnie można przekazać pojedynczą wartość. W przypadku zamówień sortowania zawierających wiele kolumn należy przekazać tablicę obiektów. Należy zauważyć, że w przypadku sortowania w wielu kolumnach wartości w tablicy obiektów muszą być zgodne z kolejnością kolumn określonych we właściwości **Sortowanie** **widoku DataView**.  
+ Metody **Find** i **FindRows** pobierają tablicę wartości jako dane wejściowe, których długość jest zgodna z liczbą kolumn w kolejności sortowania. W przypadku sortowania pojedynczej kolumny można przekazać pojedynczą wartość. W przypadku zamówień sortowania zawierających wiele kolumn należy przekazać tablicę obiektów. Należy pamiętać, że w przypadku sortowania dla wielu kolumn wartości w tablicy obiektów muszą być zgodne z kolejnością kolumn określonych we właściwości **sort** elementu **DataView**.  
   
- Poniższy przykład kodu pokazuje **Find** metoda wywoływana dla **DataView** z kolejnością sortowania pojedynczej kolumny.  
+ Poniższy przykład kodu pokazuje metodę **Find** wywoływaną względem elementu **DataView** z kolejnością sortowania pojedynczej kolumny.  
   
 ```vb  
 Dim custView As DataView = _  
@@ -55,7 +56,7 @@ else
     custView[rowIndex]["CompanyName"].ToString());  
 ```  
   
- Jeśli właściwość **Sort** określa wiele kolumn, należy przekazać tablicę obiektów z wartościami wyszukiwania dla każdej kolumny w kolejności określonej przez **sortowanie** właściwości, jak w poniższym przykładzie kodu.  
+ Jeśli właściwość **sortowania** określa wiele kolumn, należy przekazać tablicę obiektów z wartościami wyszukiwania dla każdej kolumny w kolejności określonej przez właściwość **sort** , jak w poniższym przykładzie kodu.  
   
 ```vb  
 Dim custView As DataView = _  

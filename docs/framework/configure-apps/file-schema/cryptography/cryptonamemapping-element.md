@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <cryptoNameMapping> element
 - cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
-ms.openlocfilehash: d31c5cd52ffe0e2a6eb5784735e76436d216444b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9ffae33a3c8a06d6cfcabf5a58b7d72baeda79c5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155222"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201801"
 ---
 # <a name="cryptonamemapping-element"></a>\<cryptoNameMapping> Element
+
 Zawiera mapowania klas do przyjaznych nazw.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,9 +32,11 @@ Zawiera mapowania klas do przyjaznych nazw.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -53,6 +56,7 @@ Zawiera mapowania klas do przyjaznych nazw.
 |`mscorlib`|Zawiera \<cryptographySettings> element.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, **\<cryptoNameMapping>** Aby odwoływać się do klasy kryptografii i skonfigurować środowisko uruchomieniowe. Następnie można przekazać ciąg "RSA" do <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metody i użyć <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metody do zwrócenia `MyCryptoRSAClass` obiektu.  
   
 ```xml  
@@ -74,7 +78,7 @@ Zawiera mapowania klas do przyjaznych nazw.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat pliku konfiguracji](../index.md)
 - [Schemat ustawień kryptografii](index.md)

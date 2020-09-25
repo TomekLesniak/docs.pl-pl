@@ -8,14 +8,15 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: cfd2917d330a9229338790c35911502be5cd9391
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bdf91f6f52a68309cfcd276b222083c8cb67a0cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559151"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176243"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Przewodnik: Pisanie zapytań w języku C# (LINQ)
+
 W tym instruktażu przedstawiono funkcje języka C#, które są używane do pisania wyrażeń zapytań LINQ.  
   
 ## <a name="create-a-c-project"></a>Utwórz projekt C#  
@@ -40,6 +41,7 @@ W tym instruktażu przedstawiono funkcje języka C#, które są używane do pisa
 5. Zwróć uwagę, że projekt zawiera odwołanie do System.Core.dll i `using` dyrektywy dla <xref:System.Linq?displayProperty=nameWithType> przestrzeni nazw.  
   
 ## <a name="create-an-in-memory-data-source"></a>Utwórz źródło danych w pamięci  
+
  Źródło danych dla zapytań jest prostą listą `Student` obiektów. Każdy `Student` rekord ma imię, nazwisko i tablicę liczb całkowitych, która reprezentuje wyniki testu w klasie. Skopiuj ten kod do projektu. Należy pamiętać o następujących cechach:  
   
 - `Student`Klasa składa się z właściwości, które są implementowane.  
@@ -173,6 +175,7 @@ W tym instruktażu przedstawiono funkcje języka C#, które są używane do pisa
      [!code-csharp[csLINQGettingStarted#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#21)]  
   
 ## <a name="next-steps"></a>Następne kroki  
+
  Po zapoznaniu się z podstawowymi aspektami pracy z zapytaniami w języku C# można przystąpić do zapoznania się z dokumentacją i przykładami dotyczącymi określonego typu dostawcy LINQ:  
   
  [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
@@ -183,7 +186,7 @@ W tym instruktażu przedstawiono funkcje języka C#, które są używane do pisa
   
  [LINQ to Objects (C#)](./linq-to-objects.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Language-Integrated Query (LINQ) (C#)](./index.md)
 - [Wyrażenia zapytania LINQ](../../../linq/index.md)

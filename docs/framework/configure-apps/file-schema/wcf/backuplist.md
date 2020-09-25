@@ -2,14 +2,15 @@
 title: <backupList>
 ms.date: 03/30/2017
 ms.assetid: a3d9d1f9-4a53-45e9-a880-86c8bee0b833
-ms.openlocfilehash: 478211755b9131c03b72777ee95ff7223b9092c9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8f4dcf8f7d71cfa2ed9944822d7cce974e7f1979
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850272"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201567"
 ---
 # \<backupList>
+
 Reprezentuje sekcję konfiguracji służącą do definiowania listy kopii zapasowych, która wylicza zestaw punktów końcowych, które mają być używane przez usługę routingu w przypadku, gdy podstawowy punkt końcowy nie zostanie osiągnięty. Jeśli pierwszy punkt końcowy na liście nie działa, usługa routingu automatycznie przejdzie w tryb failover do kolejnej listy.  Dzięki temu można szybko dodać niezawodność do aplikacji bez konieczności uczenia się aplikacji klienckiej, jak obsługiwać złożone wzorce lub wszystkie usługi są wdrażane.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Reprezentuje sekcję konfiguracji służącą do definiowania listy kopii zapaso
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -52,6 +54,7 @@ Reprezentuje sekcję konfiguracji służącą do definiowania listy kopii zapaso
 |[\<routing>](routing.md)|Lista punktów końcowych kopii zapasowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta sekcja zawiera uporządkowaną kolekcję punktów końcowych, do której zostanie wysłany komunikat w przypadku wyjątku komunikacji podczas wysyłania do podstawowego punktu końcowego.  
   
  Jeśli wysyłanie do podstawowego punktu końcowego wymienione w `endpointName` atrybucie [\<add>](add-of-entries.md) nie powiedzie się z wyjątkiem komunikacji, usługa routingu podejmie próbę wysłania komunikatu do pierwszego punktu końcowego w tej sekcji konfiguracji. Jeśli to również się nie powiedzie z wyjątkiem komunikacji, usługa routingu podejmie próbę wysłania komunikatu do następnego komunikatu zawartego w tej sekcji do momentu pomyślnej próby wysłania, zwracając błąd inny niż wyjątek komunikacji lub wszystkie punkty końcowe w kolekcji zwróciły błąd.  
@@ -74,6 +77,6 @@ Reprezentuje sekcję konfiguracji służącą do definiowania listy kopii zapaso
 </backupLists>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection?displayProperty=nameWithType>

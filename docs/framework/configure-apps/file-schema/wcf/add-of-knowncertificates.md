@@ -2,14 +2,15 @@
 title: <add> dla <knownCertificates>
 ms.date: 03/30/2017
 ms.assetid: 128aaabe-3f1a-4c3b-b59f-898d0f02910f
-ms.openlocfilehash: 29b067e6ec20992084f9ab3bab087222bdd56da2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 453593918de15613edb801cca8a16c9dbf71aa90
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400619"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176087"
 ---
 # <a name="add-of-knowncertificates"></a>\<add> dla \<knownCertificates>
+
 Dodaje certyfikat X. 509 do kolekcji znanych certyfikatów.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Dodaje certyfikat X. 509 do kolekcji znanych certyfikatów.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -70,6 +72,7 @@ Dodaje certyfikat X. 509 do kolekcji znanych certyfikatów.
 |Wyliczenie|Dostępne są następujące wartości: AddressBook, AuthRoot, urząd certyfikacji, niedozwolone, my, root, TrustedPeople i TrustedPublisher.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -79,6 +82,7 @@ Dodaje certyfikat X. 509 do kolekcji znanych certyfikatów.
 |[\<knownCertificates>](knowncertificates.md)|Reprezentuje kolekcję certyfikatów X. 509, które są dostarczane przez usługę tokenu zabezpieczającego (STS) do sprawdzania poprawności tokenów zabezpieczających.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Scenariusz wystawionego tokenu ma trzy etapy. Na pierwszym etapie klient próbujący uzyskać dostęp do usługi jest nazywany *usługą bezpiecznego tokenu*. Usługa Secure Tokens następnie uwierzytelnia klienta, a następnie wystawia klientowi token, zwykle tokena "Security Assertions Markup Language" (SAML). Klient następnie wraca do usługi przy użyciu tokenu. Usługa bada token dla danych, które umożliwiają usłudze uwierzytelnianie tokenu i w związku z tym klienta. Aby uwierzytelnić token, certyfikat, którego używa usługa bezpiecznego tokenu, musi być znany usłudze.  
   
  [\<issuedTokenAuthentication>](issuedtokenauthentication-of-servicecredentials.md)Element jest repozytorium dla wszystkich takich certyfikatów usługi Secure Token Service. Aby dodać certyfikaty, użyj [\<knownCertificates>](knowncertificates.md) . Wstaw [ \<add> \<knownCertificates> element](add-of-knowncertificates.md) elementu dla każdego certyfikatu, jak pokazano w poniższym przykładzie.  
@@ -99,6 +103,7 @@ Dodaje certyfikat X. 509 do kolekcji znanych certyfikatów.
  Aby sprawdzić warunki wymagane przez klienta do uwierzytelniania za pomocą usługi federacyjnej, a także więcej informacji na temat korzystania z tego elementu konfiguracji, zobacz [How to: Configure Credentials in a usługa federacyjna](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md). Aby uzyskać więcej informacji na temat scenariuszy federacyjnych, zobacz [federacyjnego i wystawione tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład dodaje certyfikat do repozytorium dla wszystkich certyfikatów usługi STS.  
   
 ```xml  
@@ -118,7 +123,7 @@ Dodaje certyfikat X. 509 do kolekcji znanych certyfikatów.
 </serviceBehaviors>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>
 - <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A>
@@ -130,5 +135,5 @@ Dodaje certyfikat X. 509 do kolekcji znanych certyfikatów.
 - [\<knownCertificates>](knowncertificates.md)
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [Federacja i wystawione tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
-- [Instrukcje: Konfigurowanie poświadczeń usługi federacyjnej](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [Instrukcje: konfigurowanie poświadczeń usługi federacyjnej](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

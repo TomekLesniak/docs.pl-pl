@@ -2,15 +2,16 @@
 title: MIĘDZY (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4dcdd754-ae01-4e78-bf28-8a117fb2b73e
-ms.openlocfilehash: a0f5dd19c439861451b1e88c3ae35f9f265288fa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17e3fe97942b34232640b0326eca2c5729e86989
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150496"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201177"
 ---
 # <a name="between-entity-sql"></a>MIĘDZY (Entity SQL)
-Określa, czy wyrażenie powoduje wartość w określonym zakresie. Wyrażenie [!INCLUDE[esql](../../../../../../includes/esql-md.md)] BETWEEN ma taką samą funkcjonalność jak wyrażenie Transact-SQL BETWEEN.  
+
+Określa, czy wynikiem wyrażenia jest wartość w określonym zakresie. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]Wyrażenie Between ma takie same funkcje jak wyrażenie Transact-SQL między wyrażeniami.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -19,33 +20,37 @@ expression [ NOT ] BETWEEN begin_expression AND end_expression
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `expression`  
- Dowolne prawidłowe wyrażenie do `begin_expression` przetestowania w zakresie zdefiniowanym przez i `end_expression`. `expression`musi być tego samego `begin_expression` `end_expression`typu co oba i .  
+ Dowolne prawidłowe wyrażenie do przetestowania w zakresie zdefiniowanym przez `begin_expression` i `end_expression` . `expression` musi być tego samego typu co `begin_expression` i `end_expression` .  
   
  `begin_expression`  
- Dowolne prawidłowe wyrażenie. `begin_expression`musi być tego samego `expression` `end_expression`typu co oba i . `begin_expression`powinna być `end_expression`mniejsza niż wartość zwracana, w przeciwnym razie wartość zwracana zostanie zanegowana.  
+ Dowolne prawidłowe wyrażenie. `begin_expression` musi być tego samego typu co `expression` i `end_expression` . `begin_expression` wartość nie może być mniejsza niż `end_expression` , w przeciwnym razie zwracana jest Negacja.  
   
  `end_expression`  
- Dowolne prawidłowe wyrażenie. `end_expression`musi być tego samego `expression` `begin_expression`typu co oba i .  
+ Dowolne prawidłowe wyrażenie. `end_expression` musi być tego samego typu co `expression` i `begin_expression` .  
   
  NOT  
- Określa, że wynik BETWEEN zostać zanegowany.  
+ Określa, że wynik między jest negacją.  
   
  AND  
- Działa jako symbol zastępczy, który wskazuje, `expression` powinien `begin_expression` `end_expression`mieszcząć się w zakresie wskazanym przez i .  
+ Działa jako symbol zastępczy, który wskazuje, że `expression` powinien znajdować się w zakresie wskazanym przez `begin_expression` i `end_expression` .  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `true`jeżeli `expression` znajduje się między `begin_expression` zakresem wskazanym przez i `end_expression`; w `false`przeciwnym razie , . `null`zostanie zwrócona, `null` jeśli `begin_expression` `end_expression` `null` `expression` jest lub jeśli lub jest .  
+
+ `true` Jeśli `expression` jest między zakresem wskazanym przez `begin_expression` i `end_expression` ; w przeciwnym razie, `false` . `null` zostanie zwrócona, jeśli `expression` jest `null` lub jeśli `begin_expression` lub `end_expression` jest `null` .  
   
 ## <a name="remarks"></a>Uwagi  
- Aby określić zakres wyłączności, należy użyć operatorów większych niż (>) i mniejszych niż (<) zamiast between.  
+
+ Aby określić zakres wyłącznych, użyj operatorów większe niż (>) i mniejsze niż (<), a nie między.  
   
 ## <a name="example"></a>Przykład  
- Następująca kwerenda SQL jednostki używa operatora BETWEEN, aby ustalić, czy wyrażenie powoduje wartość w określonym zakresie. Kwerenda jest oparta na modelu sprzedaży AdventureWorks. Aby skompilować i uruchomić tę kwerendę, wykonaj następujące kroki:  
+
+ Poniższe zapytanie Entity SQL używa operatora, aby określić, czy wynikiem wyrażenia jest wartość w określonym zakresie. Zapytanie jest oparte na modelu sprzedaży AdventureWorks. Aby skompilować i uruchomić to zapytanie, wykonaj następujące kroki:  
   
-1. Postępuj zgodnie z procedurą [w : Jak: Wykonać kwerendę, która zwraca wyniki structuraltype](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postępuj zgodnie z procedurą w temacie [How to: Execute a Query zwracającej wyniki StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Przekaż następującą kwerendę jako `ExecuteStructuralTypeQuery` argument do metody:  
+2. Przekaż następujące zapytanie jako argument do `ExecuteStructuralTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#BETWEEN](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#between)]  
   

@@ -2,14 +2,15 @@
 title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
-ms.openlocfilehash: 26537980a6be5c0fe12661d93a6ba5fe862ceb4e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8638d56ccb4aaa1c5ac735aa268823af2b1fbc6d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398158"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176074"
 ---
 # \<channelPoolSettings>
+
 Określa ustawienia puli kanałów dla niestandardowego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Określa ustawienia puli kanałów dla niestandardowego powiązania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -40,6 +42,7 @@ Określa ustawienia puli kanałów dla niestandardowego powiązania.
 |`maxOutboundChannelsPerEndpoint`|Dodatnia liczba całkowita, która określa maksymalną liczbę kanałów, które mogą być przechowywane w puli dla każdego zdalnego punktu końcowego. Wartość domyślna to 10.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -49,9 +52,10 @@ Określa ustawienia puli kanałów dla niestandardowego powiązania.
 |[\<oneWay>](oneway.md)|Włącza routing pakietów dla niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Przydziały są używane jako mechanizm zasad, aby zapobiec zużyciu nadmiernych zasobów. Uniemożliwiają one ataki typu "odmowa usługi" (DOS), które są złośliwe lub niezamierzone. Użyj tego elementu, gdy ustawiasz limity przydziału kanałów w niestandardowym kanale.  
   
- `ChannelPoolSettings`określa trzy przydziały:  
+ `ChannelPoolSettings` określa trzy przydziały:  
   
 - `idleTimeout`Przydział służy do zapobiegania atakom typu "odmowa usługi" (DOS) na serwerze, który polega na rozdzieleniu zasobów przez dłuższy czas. Ustawienie poprawnej wartości na kliencie może zwiększyć niezawodność połączenia z usługą. Wartość domyślna jest oparta na nieumiarkowanie niedostatecznej alokacji zasobów. Jest to odpowiednie dla środowiska programistycznego i małych scenariuszy instalacji. Administratorzy usługi powinni sprawdzić wartość w przypadku braku zasobów w ramach instalacji lub w przypadku ograniczonej liczby połączeń poza dostępnością dodatkowych zasobów.  
   
@@ -59,7 +63,7 @@ Określa ustawienia puli kanałów dla niestandardowego powiązania.
   
 - `maxOutboundChannelsPerEndpoint`Limity przydziału są ustawiane w pamięci podręcznej zarówno na serwerze, jak i na kliencie i są używane w celu zwiększenia niezawodności. Wartość domyślna jest oparta na niewielkiej ilości alokacji zasobów, która jest odpowiednia dla środowiska programistycznego i małych scenariuszy instalacji. Administratorzy usługi powinni sprawdzić wartość w przypadku braku zasobów w ramach instalacji lub w przypadku ograniczonej liczby połączeń poza dostępnością dodatkowych zasobów.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.OneWayBindingElement.ChannelPoolSettings%2A>
 - <xref:System.ServiceModel.Channels.ChannelPoolSettings>

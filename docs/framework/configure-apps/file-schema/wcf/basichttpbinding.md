@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - basicHttpBinding Element
 ms.assetid: 85cf1a4f-26c2-48c7-bda6-6c960d5d3fb3
-ms.openlocfilehash: 55f774ac02c9ea76b116d1ace55ca59a806cb648
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 87628f0966afe83d933dc5b629b5352c609386dc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557726"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201528"
 ---
 # \<basicHttpBinding>
+
 Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foundation (WCF) może skonfigurować i uwidocznić punkty końcowe, które mogą komunikować się z usługami sieci Web opartymi na usłudze ASMX i klientami oraz innymi usługami, które są zgodne ze standardem WS-I Basic Profile 1,1.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -57,6 +58,7 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -94,11 +96,13 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  BasicHttpBinding używa protokołu HTTP jako transportu do wysyłania komunikatów protokołu SOAP 1,1. Usługa może użyć tego powiązania, aby uwidocznić punkty końcowe, które są zgodne z usługą WS-I BP 1,1, taką jak te, które są używane przez klientów w ASMX. Podobnie klient może używać BasicHttpBinding do komunikowania się z usługami, które udostępniają punkty końcowe, które są zgodne z usługą WS-I BP 1,1, na przykład w przypadku usług sieci Web, które są skonfigurowane z BasicHttpBinding.  
   
  Zabezpieczenia są domyślnie wyłączone, ale można je dodać, ustawiając atrybut mode [\<security>](security-of-basichttpbinding.md) elementu podrzędnego na wartość inną niż `None` . Domyślnie używa kodowania tekstu "text" i kodowania tekstu UTF-8.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje użycie programu <xref:System.ServiceModel.BasicHttpBinding> , który zapewnia komunikację HTTP i maksymalną współdziałanie z usługami sieci Web pierwszej i drugiej generacji. Powiązanie jest określone w plikach konfiguracji klienta i usługi. Typ powiązania jest określany przy użyciu `binding` atrybutu `<endpoint>` elementu. Jeśli chcesz skonfigurować powiązanie podstawowe i zmienić niektóre z jego ustawień, musisz zdefiniować konfigurację powiązania. Punkt końcowy musi odwoływać się do konfiguracji powiązania przez nazwę przy użyciu `bindingConfiguration` atrybutu `<endpoint>` elementu, jak pokazano w poniższym kodzie konfiguracji usługi.  
   
 ```xml  
@@ -136,6 +140,7 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Począwszy od .NET Framework 4, powiązania i zachowania nie muszą mieć nazwy. Funkcję z poprzedniego przykładu można osiągnąć, usuwając bindingConfiguration z adresu punktu końcowego i nazwę z powiązania.  
   
 ```xml  
@@ -172,7 +177,7 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
   
  Aby uzyskać więcej informacji na temat konfiguracji domyślnej i powiązań pustego i zachowań, zobacz [Uproszczona konfiguracja](../../../wcf/simplified-configuration.md) i [Uproszczona konfiguracja dla usług WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>

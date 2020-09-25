@@ -8,14 +8,15 @@ helpviewer_keywords:
 - filter element for <add> for <listeners> for <trace>
 - <filter> element for <add> for <listeners> for <trace>
 ms.assetid: eb9c18f5-dfa8-47c5-b91b-e4b93e76e1cc
-ms.openlocfilehash: b6c2c2bf7fe953a75f9d8129039ef33b4d8a3f56
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d856fc742bc2dca51095ce0866dcbfdaadadf64d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153469"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176113"
 ---
 # <a name="filter-element-for-add-for-listeners-for-trace"></a>\<filter>\<add>Dla elementu for \<listeners>\<trace>
+
 Dodaje filtr do odbiornika w `Listeners` kolekcji w celu śledzenia.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Dodaje filtr do odbiornika w `Listeners` kolekcji w celu śledzenia.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -44,6 +46,7 @@ Dodaje filtr do odbiornika w `Listeners` kolekcji w celu śledzenia.
 |`initializeData`|Atrybut opcjonalny.<br /><br /> Ciąg przesłany do konstruktora dla określonej klasy filtru.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -57,11 +60,13 @@ Dodaje filtr do odbiornika w `Listeners` kolekcji w celu śledzenia.
 |`add`|Dodaje odbiornik do `Listeners` kolekcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<filter>`Element musi być zawarty w `<add>` elemencie dla odbiornika śledzenia, który określa typ odbiornika, a nie tylko nazwę odbiornika zdefiniowanego w [\<sharedListeners>](sharedlisteners-element.md) . Jeśli odbiornik jest zdefiniowany w [\<sharedListeners>](sharedlisteners-element.md) , filtr dla tego odbiornika musi być zdefiniowany w tym elemencie.  
   
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak za pomocą `<filter>` elementu dodać filtr do odbiornika `console` w `Listeners` kolekcji w celu śledzenia, określając poziom zdarzeń filtru jako `Error` .  
   
 ```xml  
@@ -81,7 +86,7 @@ Dodaje filtr do odbiornika w `Listeners` kolekcji w celu śledzenia.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.TraceListener>

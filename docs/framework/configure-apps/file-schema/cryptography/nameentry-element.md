@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <nameEntry> element
 - nameEntry element
 ms.assetid: 7d7535e9-4b4a-4b8c-82e2-e40dff5a7821
-ms.openlocfilehash: a339638587f8b544bbc1b0073553f6232ce09694
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4341b1fcd3762e5aa55f0ba988f7f49d4b5cacd6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71699779"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201775"
 ---
 # <a name="nameentry-element"></a>\<nameEntry> Element
+
 Mapuje nazwę klasy na przyjazną nazwę algorytmu, która pozwala jednej klasie mieć wiele przyjaznych nazw.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -31,6 +32,7 @@ Mapuje nazwę klasy na przyjazną nazwę algorytmu, która pozwala jednej klasie
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -41,6 +43,7 @@ Mapuje nazwę klasy na przyjazną nazwę algorytmu, która pozwala jednej klasie
 |**określonej**|Atrybut wymagany.<br /><br /> Określa wartość atrybutu **name** w [\<cryptoClass>](cryptoclass-element.md) elemencie.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -51,9 +54,11 @@ Mapuje nazwę klasy na przyjazną nazwę algorytmu, która pozwala jednej klasie
 |`system.web`|Określa element główny dla sekcji konfiguracji ASP.NET.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Atrybut **name** może być nazwą jednej z klas abstrakcyjnych znalezionych w <xref:System.Security.Cryptography> przestrzeni nazw. Po wywołaniu metody **Create** dla abstrakcyjnej klasy kryptograficznej, nazwa klasy abstrakcyjnej jest przenoszona do <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A> metody. Funkcja " **Nofrom** " zwraca wystąpienie typu wskazane przez atrybut **Class** . Jeśli atrybut **name** jest krótką nazwą, taką jak RSA, można **użyć tej nazwy podczas wywoływania metody.**  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, **\<nameEntry>** Aby odwoływać się do klasy kryptografii i skonfigurować środowisko uruchomieniowe. Następnie można przekazać ciąg "RSA" do <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metody i użyć <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metody do zwrócenia `MyCryptoRSAClass` obiektu.  
   
 ```xml  
@@ -75,7 +80,7 @@ Mapuje nazwę klasy na przyjazną nazwę algorytmu, która pozwala jednej klasie
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat pliku konfiguracji](../index.md)
 - [Schemat ustawień kryptografii](index.md)
