@@ -2,12 +2,12 @@
 title: Implementowanie warstwy aplikacji mikrousług za pomocą internetowego interfejsu API
 description: Zapoznaj się z iniekcją zależności i wzorcami mediator oraz ich szczegóły implementacji w warstwie aplikacji internetowego interfejsu API.
 ms.date: 08/17/2020
-ms.openlocfilehash: 72395acafb403a4e34858eb2b982ec83b9f3cee1
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 56d4eecb2831a57460b01ff4da8150d6dcce5bc5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608106"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173422"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementowanie warstwy aplikacji mikrousług za pomocą internetowego interfejsu API
 
@@ -23,7 +23,7 @@ Widok Eksplorator rozwiązań mikrousługi porządkowania. API, pokazujący podf
 
 **Rysunek 7-23**. Warstwa aplikacji w projekcie interfejsu API sieci Web programu porządkowanie. API ASP.NET Core
 
-ASP.NET Core obejmuje prosty [wbudowany kontener IOC](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) (reprezentowany przez interfejs IServiceProvider), który domyślnie obsługuje iniekcję konstruktora, a ASP.NET udostępnia niektóre usługi za pomocą di. ASP.NET Core używa *usługi* Term dla dowolnego typu rejestru, który zostanie dodany przez di. Należy skonfigurować usługi wbudowanego kontenera w metodzie ConfigureServices w klasie startowej aplikacji. Zależności są implementowane w usługach, które są wymagane przez typ i rejestrowane w kontenerze IoC.
+ASP.NET Core obejmuje prosty [wbudowany kontener IOC](/aspnet/core/fundamentals/dependency-injection) (reprezentowany przez interfejs IServiceProvider), który domyślnie obsługuje iniekcję konstruktora, a ASP.NET udostępnia niektóre usługi za pomocą di. ASP.NET Core używa *usługi* Term dla dowolnego typu rejestru, który zostanie dodany przez di. Należy skonfigurować usługi wbudowanego kontenera w metodzie ConfigureServices w klasie startowej aplikacji. Zależności są implementowane w usługach, które są wymagane przez typ i rejestrowane w kontenerze IoC.
 
 Zazwyczaj należy wstrzyknąć zależności, które implementują obiekty infrastruktury. Typową zależnością do iniekcji jest repozytorium. Można jednak wprowadzić inną zależność infrastruktury, którą może mieć. W przypadku prostszej implementacji można bezpośrednio wstrzyknąć obiekt wzorca jednostki pracy (obiekt EF DbContext), ponieważ DbContext jest również implementacją obiektów trwałości infrastruktury.
 
@@ -113,7 +113,7 @@ Typowym wzorcem rejestrowania typów w kontenerze IoC jest zarejestrowanie pary 
 
 W przypadku korzystania z funkcji DI w oprogramowaniu .NET Core warto mieć możliwość skanowania zestawu i automatycznego rejestrowania jego typów według Konwencji. Ta funkcja nie jest obecnie dostępna w ASP.NET Core. Można jednak użyć biblioteki [Scrutor](https://github.com/khellang/Scrutor) dla tego programu. Takie podejście jest wygodne, gdy masz dziesiątki typów, które muszą być zarejestrowane w kontenerze IoC.
 
-#### <a name="additional-resources"></a>Dodatkowe zasoby
+#### <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Matthew króla. Rejestrowanie usług w usłudze Scrutor** \
   <https://www.mking.net/blog/registering-services-with-scrutor>
@@ -168,7 +168,7 @@ Typ zakresu wystąpienia określa, jak wystąpienie jest udostępniane między �
 
 - Pojedyncze wystąpienie współużytkowane przez wszystkie obiekty używające kontenera IoC (określane w kontenerze ASP.NET Core IoC jako *pojedyncze*).
 
-#### <a name="additional-resources"></a>Dodatkowe zasoby
+#### <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Wprowadzenie do iniekcji zależności w ASP.NET Core** \
   [https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection](/aspnet/core/fundamentals/dependency-injection)
@@ -428,7 +428,7 @@ Są to dodatkowe kroki, które powinien wykonać procedura obsługi polecenia:
 
 - Jeśli wynik operacji agregacji zakończy się pomyślnie i po zakończeniu transakcji, zgłoś zdarzenia integracji. (Mogą one być również zgłaszane przez klasy infrastruktury, takie jak repozytoria).
 
-#### <a name="additional-resources"></a>Dodatkowe zasoby
+#### <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Oznacz Seemann. W granicach aplikacje nie są zorientowane obiektowo** \
   <https://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/>
@@ -899,7 +899,7 @@ Można utworzyć dodatkowe walidacje. Jest to bardzo czysty i elegancki sposób 
 
 W podobny sposób można zaimplementować inne zachowania dla dodatkowych aspektów lub obaw związanych z wycinaniem, które mają być stosowane do poleceń podczas ich obsługi.
 
-#### <a name="additional-resources"></a>Dodatkowe zasoby
+#### <a name="additional-resources"></a>Zasoby dodatkowe
 
 ##### <a name="the-mediator-pattern"></a>Wzorzec mediator
 

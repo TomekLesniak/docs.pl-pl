@@ -2,12 +2,12 @@
 title: Korzystanie z baz danych NoSQL jako infrastruktury trwałości
 description: Informacje ogólne na temat używania baz danych NoSql, a w szczególności Azure Cosmos DB jako opcji implementacji trwałości.
 ms.date: 01/30/2020
-ms.openlocfilehash: c4f9199b9e88a39581437eca340e92f4fd450003
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 2877c7eaf08dccfdf6126939b195a6a9a7195dfa
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738804"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173382"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Korzystanie z baz danych NoSQL jako infrastruktury trwałości
 
@@ -52,7 +52,7 @@ Na przykład poniższy kod JSON to Przykładowa implementacja agregacji zamówie
 
 ## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Wprowadzenie do Azure Cosmos DB i natywnego interfejsu API Cosmos DB
 
-[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) to usługa dystrybuowana globalnie bazy danych firmy Microsoft dla aplikacji o znaczeniu strategicznym. Usługa Azure Cosmos DB zapewnia [kompleksową globalną dystrybucję](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), [elastyczne skalowanie przepływności i pamięci](https://docs.microsoft.com/azure/cosmos-db/partition-data) w skali globalnej, milisekundowe opóźnienia w 99. percentylu, [pięć odpowiednio zdefiniowanych poziomów spójności](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) oraz gwarantowaną wysoką dostępność, wspierane przez [wiodące w branży umowy SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Usługa Azure Cosmos DB [automatycznie indeksuje dane](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) bez konieczności zarządzania schematami i indeksami. To usługa wielomodelowa, obsługująca modele oparte na dokumentach, parach klucz-wartość, grafach i kolumnach.
+[Azure Cosmos DB](/azure/cosmos-db/introduction) to usługa dystrybuowana globalnie bazy danych firmy Microsoft dla aplikacji o znaczeniu strategicznym. Usługa Azure Cosmos DB zapewnia [kompleksową globalną dystrybucję](/azure/cosmos-db/distribute-data-globally), [elastyczne skalowanie przepływności i pamięci](/azure/cosmos-db/partition-data) w skali globalnej, milisekundowe opóźnienia w 99. percentylu, [pięć odpowiednio zdefiniowanych poziomów spójności](/azure/cosmos-db/consistency-levels) oraz gwarantowaną wysoką dostępność, wspierane przez [wiodące w branży umowy SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Usługa Azure Cosmos DB [automatycznie indeksuje dane](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) bez konieczności zarządzania schematami i indeksami. To usługa wielomodelowa, obsługująca modele oparte na dokumentach, parach klucz-wartość, grafach i kolumnach.
 
 ![Diagram przedstawiający dystrybucję globalną Azure Cosmos DB.](./media/nosql-database-persistence-infrastructure/azure-cosmos-db-global-distribution.png)
 
@@ -122,7 +122,7 @@ Jednak w przypadku utrwalania modelu w bazie danych NoSQL zmiana kodu i interfej
 
 Dostęp do Azure Cosmos DB baz danych można uzyskać z kodu platformy .NET działającego w kontenerach, podobnie jak w przypadku dowolnej innej aplikacji platformy .NET. Na przykład w programie eShopOnContainers są implementowane mikrousługi lokalizacji. API i marketingu. API, dzięki czemu mogą korzystać z Azure Cosmos DB baz danych.
 
-Istnieje jednak ograniczenie Azure Cosmos DB z punktu widzenia środowiska projektowania platformy Docker. Mimo że istnieje [Azure Cosmos DB emulatora](https://docs.microsoft.com/azure/cosmos-db/local-emulator) lokalnego, który można uruchomić na lokalnym komputerze deweloperskim, obsługuje tylko system Windows. Linux i macOS nie są obsługiwane.
+Istnieje jednak ograniczenie Azure Cosmos DB z punktu widzenia środowiska projektowania platformy Docker. Mimo że istnieje [Azure Cosmos DB emulatora](/azure/cosmos-db/local-emulator) lokalnego, który można uruchomić na lokalnym komputerze deweloperskim, obsługuje tylko system Windows. Linux i macOS nie są obsługiwane.
 
 Istnieje również możliwość uruchomienia tego emulatora na platformie Docker, ale tylko w kontenerach systemu Windows, a nie w przypadku kontenerów z systemem Linux. Jest to wstępna ochrona środowiska programistycznego, jeśli aplikacja jest wdrażana jako kontenery systemu Linux, ponieważ obecnie nie można wdrażać kontenerów systemów Linux i Windows na Docker for Windows w tym samym czasie. Wszystkie wdrażane kontenery muszą być przeznaczone dla systemu Linux lub Windows.
 
@@ -138,7 +138,7 @@ Bazy danych Cosmos DB obsługują interfejs API MongoDB dla platformy .NET oraz 
 
 Jest to bardzo wygodne podejście do weryfikacji koncepcji w środowiskach platformy Docker z kontenerami systemu Linux, ponieważ [obraz platformy](https://hub.docker.com/r/_/mongo/) Docker MongoDB jest obrazem wielodostępnym, który obsługuje kontenery platformy Docker Linux i kontenery platformy Docker.
 
-Jak pokazano na poniższej ilustracji, za pomocą interfejsu API MongoDB, eShopOnContainers obsługuje kontenery systemu Linux i Windows dla lokalnego środowiska programistycznego, ale można przenieść do skalowalnego rozwiązania w chmurze PaaS jako Azure Cosmos DB przez [zmianę parametrów połączenia MongoDB w taki sposób, aby wskazywały Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+Jak pokazano na poniższej ilustracji, za pomocą interfejsu API MongoDB, eShopOnContainers obsługuje kontenery systemu Linux i Windows dla lokalnego środowiska programistycznego, ale można przenieść do skalowalnego rozwiązania w chmurze PaaS jako Azure Cosmos DB przez [zmianę parametrów połączenia MongoDB w taki sposób, aby wskazywały Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account).
 
 ![Diagram przedstawiający, że mikrousługa lokalizacji w eShopOnContainers może używać Cosmos DB lub Mongo DB.](./media/nosql-database-persistence-infrastructure/eshoponcontainers-mongodb-containers.png)
 
@@ -150,7 +150,7 @@ Niestandardowe kontenery programu .NET Core można uruchamiać na lokalnym hośc
 
 Oczywistą zaletą korzystania z interfejsu API MongoDB jest to, że rozwiązanie może działać zarówno w aparatach baz danych, MongoDB, jak i Azure Cosmos DB, dzięki czemu migracja do różnych środowisk powinna być łatwa. Jednak czasami jest wartościowa użycie natywnego interfejsu API (jest to natywny interfejs API Cosmos DB) w celu pełnego wykorzystania możliwości określonego aparatu bazy danych.
 
-Aby uzyskać dalsze porównanie między zwykłym użyciem MongoDB a Cosmos DB w chmurze, zobacz [zalety korzystania z Azure Cosmos DB na tej stronie](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction).
+Aby uzyskać dalsze porównanie między zwykłym użyciem MongoDB a Cosmos DB w chmurze, zobacz [zalety korzystania z Azure Cosmos DB na tej stronie](/azure/cosmos-db/mongodb-introduction).
 
 ### <a name="analyze-your-approach-for-production-applications-mongodb-api-vs-cosmos-db-api"></a>Analizowanie podejścia do aplikacji produkcyjnych: MongoDB API a interfejs API Cosmos DB
 
@@ -299,7 +299,7 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 #ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
 ```
 
-Usuń komentarz z wiersza ESHOP_AZURE_COSMOSDB i zaktualizuj go przy użyciu parametrów połączenia Azure Cosmos DB uzyskanych z Azure Portal, jak wyjaśniono w temacie [łączenie aplikacji MongoDB z Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+Usuń komentarz z wiersza ESHOP_AZURE_COSMOSDB i zaktualizuj go przy użyciu parametrów połączenia Azure Cosmos DB uzyskanych z Azure Portal, jak wyjaśniono w temacie [łączenie aplikacji MongoDB z Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account).
 
 Jeśli `ESHOP_AZURE_COSMOSDB` zmienna globalna jest pusta, co oznacza, że jest oznaczona jako komentarz do `.env` pliku, kontener używa domyślnych parametrów połączenia MongoDB. Te parametry połączenia wskazują lokalny kontener MongoDB wdrożony w eShopOnContainers o nazwie `nosqldata` i został zdefiniowany w pliku Docker-Zredaguj, jak pokazano w poniższym kodzie. yml:
 

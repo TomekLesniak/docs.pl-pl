@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <requiredRuntime> element
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
-ms.openlocfilehash: fe96673b95f48cb75d36662a680bf56a59363f9f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 19fa1561ca3acd845918d952379c5227121465b4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71697485"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174072"
 ---
 # <a name="requiredruntime-element"></a>\<requiredRuntime>, element
 
@@ -62,6 +62,7 @@ Brak.
 |`startup`|Zawiera `<requiredRuntime>` element.|
 
 ## <a name="remarks"></a>Uwagi
+
  Aplikacje skompilowane do obsługi tylko wersji 1,0 środowiska uruchomieniowego muszą używać `<requiredRuntime>` elementu. Aplikacje skompilowane przy użyciu wersji 1,1 lub nowszej środowiska uruchomieniowego muszą używać `<supportedRuntime>` elementu.
 
 > [!NOTE]
@@ -84,7 +85,7 @@ Poniższy przykład pokazuje, jak określić wersję środowiska uruchomienioweg
 </configuration>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień uruchamiania](index.md)
 - [Schemat pliku konfiguracji](../index.md)

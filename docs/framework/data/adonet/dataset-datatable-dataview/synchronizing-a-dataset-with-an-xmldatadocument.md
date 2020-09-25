@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: 2ee5b0937f24fac745f72cf6ef6e4bef9ec97ba8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 95f1d21805dde86cd4eb59147f2fd012279b6dc1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150784"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173747"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronizowanie elementu DataSet z elementem XmlDataDocument
-W tej sekcji przedstawiono jeden krok w przetwarzaniu zamówienia <xref:System.Data.DataSet> zakupu przy <xref:System.Xml.XmlDataDocument>użyciu silnie wpisanego zsynchronizowanego z programem . Przykłady, które należy wykonać utworzyć **DataSet** z zminimalizowanego schematu, który pasuje tylko część źródłowego dokumentu XML. W przykładach użyto **dokumentu XmlDataDocument,** aby zachować wierność źródłowego dokumentu XML, umożliwiając zestaw **danych** do udostępnienia podzbioru dokumentu XML.  
+
+W tej sekcji przedstawiono jeden krok w przetwarzaniu zamówienia zakupu przy użyciu silnie określonego typu <xref:System.Data.DataSet> synchronizacji z <xref:System.Xml.XmlDataDocument> . Poniższe przykłady tworzą **zestaw danych** ze zminimalizowanym schematem, który jest zgodny tylko z częścią źródłowego dokumentu XML. Przykłady używają **XmlDataDocument** , aby zachować wierność źródłowego dokumentu XML, co pozwala na użycie **zestawu danych** do udostępnienia podzestawu dokumentu XML.  
   
- Następujący dokument XML zawiera wszystkie informacje dotyczące zamówienia zakupu: informacje o kliencie, zamówione towary, informacje o wysyłce itd.  
+ Następujący dokument XML zawiera wszystkie informacje dotyczące zamówienia zakupu: informacje o klientach, elementy uporządkowane, informacje o wysyłce itd.  
   
 ```xml  
 <?xml version="1.0" standalone="yes"?>  
@@ -109,9 +110,9 @@ W tej sekcji przedstawiono jeden krok w przetwarzaniu zamówienia <xref:System.D
 </PurchaseOrder>  
 ```  
   
- Jednym z etapów przetwarzania informacji o zamówieniu zakupu zawartych w poprzednim dokumencie XML jest wypełnienie zamówienia z bieżącego magazynu firmy. Pracownik odpowiedzialny za wypełnienie zamówienia z magazynu firmy nie musi widzieć całej zawartości zamówienia zakupu; muszą tylko zobaczyć informacje o produkcie dla zamówienia. Aby udostępnić tylko informacje o produkcie z dokumentu XML, należy utworzyć silnie typiwany **zestaw danych** ze schematem napisanym jako schemat języka XSD (XSD), który jest mapowany na zamówione produkty i ilości. Aby uzyskać więcej informacji na temat silnie wpisanych obiektów **Zestawu danych,** zobacz [Typizowane zestawy danych](typed-datasets.md).  
+ Jednym z etapów przetwarzania informacji o zamówieniach zakupu zawartych w poprzednim dokumencie XML jest zamówienie, które ma zostać wypełnione w bieżącym spisie firmy. Pracownik odpowiedzialny za wypełnienie zamówienia z hurtowni firmy nie musi wyświetlać całej zawartości zamówienia zakupu. muszą oni tylko zobaczyć informacje o produkcie dla zamówienia. Aby uwidocznić tylko informacje o produkcie z dokumentu XML, należy utworzyć **zestaw danych** o jednoznacznie określonym typie ze schematem, napisany jako schemat języka definicji schematu XML (XSD), który jest mapowany na produkty i ilości uporządkowane. Aby uzyskać więcej informacji na temat obiektów typu **zestaw danych** o jednoznacznie określonym typie, zobacz [zestawy danych z określonym typem](typed-datasets.md).  
   
- Poniższy kod przedstawia schemat, z którego jest generowany silnie typiwany **zestaw danych** dla tego przykładu.  
+ Poniższy kod przedstawia schemat, z którego jest generowany **zestaw danych** o jednoznacznie określonym typie dla tego przykładu.  
   
 ```xml  
 <?xml version="1.0" standalone="yes"?>  
@@ -157,11 +158,11 @@ W tej sekcji przedstawiono jeden krok w przetwarzaniu zamówienia <xref:System.D
 </xs:schema>  
 ```  
   
- Należy zauważyć, że tylko informacje z **OrderDetails** i **produkty** elementów oryginalnego dokumentu XML są zawarte w schemacie **dla DataSet**. Synchronizacja **zestawu danych** z **dokumentem XmlDataDocument** gwarantuje, że elementy, które nie zostały uwzględnione w **zestawie danych,** będą zachowywać się w dokumencie XML.  
+ Należy zauważyć, że tylko informacje z elementów **OrderDetails** i **Products** oryginalnego dokumentu XML są zawarte w schemacie dla **zestawu danych**. Synchronizowanie **zestawu danych** z **XmlDataDocument** gwarantuje, że elementy, które nie znajdują się w **zestawie danych** , zostaną zachowane w dokumencie XML.  
   
- Dzięki silnie typizowanego **zestawowi danych** wygenerowanemu ze schematu XML (z przestrzenią nazw **Northwind.FillOrder)** część oryginalnego dokumentu XML może zostać ujawniona przez synchronizację **zestawu danych** z **dokumentem XmlDataDocument** załadowanym ze źródłowego dokumentu XML. Należy zauważyć, że **DataSet** generowane ze schematu zawiera strukturę, ale nie ma danych. Dane są wypełniane po załadowaniu pliku XML do dokumentu **XmlDataDocument**. Jeśli spróbujesz załadować **XmlDataDocument,** który został zsynchronizowany z **DataSet,** który już zawiera dane, zostanie zgłoszony wyjątek.  
+ W przypadku **zestawu danych** o jednoznacznie określonym typie wygenerowanego na podstawie schematu XML (z przestrzenią nazw **Northwind. FillOrder**) część oryginalnego dokumentu XML może być uwidoczniona przez zsynchronizowanie **zestawu danych** z **XmlDataDocument** załadowanym ze źródłowego dokumentu XML. Należy zauważyć, że **zestaw danych** wygenerowany przez schemat zawiera strukturę, ale nie dane. Dane są wypełniane podczas ładowania pliku XML do **XmlDataDocument**. Próba załadowania elementu **XmlDataDocument** , który został zsynchronizowany z **zestawem** danych, który zawiera już dane, zostanie wygenerowany wyjątek.  
   
- Po aktualizacji **zestawu danych** (i **XmlDataDocument),** **XmlDataDocument** może następnie zapisać zmodyfikowany dokument XML z elementami ignorowanymi przez **Zestaw danych,** jak pokazano poniżej. W scenariuszu zamówienia zakupu po wypełnieniu zapasów zamówienia zmodyfikowany dokument XML może zostać przekazany do następnego kroku w procesie zamówienia, być może do działu wysyłkowego firmy.  
+ Po zaktualizowaniu **zestawu danych** (i **XmlDataDocument**) **XmlDataDocument** może następnie napisać zmodyfikowany dokument XML z elementami ignorowanymi przez **zestaw danych** , jak pokazano poniżej. W scenariuszu zamówienia zakupu po wypełnieniu elementów zamówienia zmodyfikowany dokument XML można następnie przekazywać do następnego kroku w procesie zamówienia, na przykład do działu wysyłki firmy.  
   
 ```vb  
 Imports System  

@@ -2,20 +2,22 @@
 title: Tworzenie ról aplikacji w programie SQL Server
 ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
-ms.openlocfilehash: 212bda6f64829792e965dd6714428a05b30c995b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 764ae61cba4bf01681d658cc4aacc2aeaecedd3f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794278"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173552"
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Tworzenie ról aplikacji w programie SQL Server
+
 Role aplikacji umożliwiają przypisywanie uprawnień do aplikacji zamiast roli lub użytkownika bazy danych. Użytkownicy mogą łączyć się z bazą danych, aktywować rolę aplikacji i przypuszczać uprawnienia przyznane aplikacji. Uprawnienia przyznane roli aplikacji są obowiązujące na czas trwania połączenia.  
   
 > [!IMPORTANT]
 > Role aplikacji są aktywowane, gdy aplikacja kliencka poda nazwę roli aplikacji i hasło w parametrach połączenia. W aplikacji dwuwarstwowej występują luki w zabezpieczeniach, ponieważ hasło musi być przechowywane na komputerze klienckim. W aplikacji trójwarstwowej można przechowywać hasło, aby nie było dostępne dla użytkowników aplikacji.  
   
 ## <a name="application-role-features"></a>Funkcje roli aplikacji  
+
  Role aplikacji mają następujące funkcje:  
   
 - W przeciwieństwie do ról bazy danych role aplikacji nie zawierają żadnych członków.  
@@ -32,17 +34,20 @@ Role aplikacji umożliwiają przypisywanie uprawnień do aplikacji zamiast roli 
   
 - Jeśli członek `sysadmin` stałej roli serwera aktywuje rolę aplikacji, kontekst zabezpieczeń przełączy się do tej roli aplikacji na czas trwania połączenia.  
   
-- Jeśli utworzysz `guest` konto w bazie danych, która ma rolę aplikacji, nie musisz tworzyć konta użytkownika bazy danych dla roli aplikacji lub dla żadnego z nich, które go wywołują. Role aplikacji mogą bezpośrednio uzyskiwać dostęp do innej bazy danych `guest` tylko wtedy, gdy konto istnieje w drugiej bazie danych  
+- Jeśli utworzysz `guest` konto w bazie danych, która ma rolę aplikacji, nie musisz tworzyć konta użytkownika bazy danych dla roli aplikacji lub dla żadnego z nich, które go wywołują. Role aplikacji mogą bezpośrednio uzyskiwać dostęp do innej bazy danych tylko wtedy `guest` , gdy konto istnieje w drugiej bazie danych  
   
 - Wbudowane funkcje, które zwracają nazwy logowania, takie jak SYSTEM_USER, zwracają nazwę logowania, która wywołała rolę aplikacji. Wbudowane funkcje, które zwracają nazwy użytkowników bazy danych zwracają nazwę roli aplikacji.  
   
 ### <a name="the-principle-of-least-privilege"></a>Zasada najniższych uprawnień  
- Role aplikacji powinny mieć przyznane tylko wymagane uprawnienia w przypadku naruszenia zabezpieczeń hasła. Uprawnienia do `public` roli należy odwołać w dowolnej bazie danych przy użyciu roli aplikacji. `guest` Wyłącz konto w dowolnej bazie danych, której nie chcesz, aby wywołujący rolę aplikacji mieli dostęp do programu.  
+
+ Role aplikacji powinny mieć przyznane tylko wymagane uprawnienia w przypadku naruszenia zabezpieczeń hasła. Uprawnienia do `public` roli należy odwołać w dowolnej bazie danych przy użyciu roli aplikacji. Wyłącz `guest` konto w dowolnej bazie danych, której nie chcesz, aby wywołujący rolę aplikacji mieli dostęp do programu.  
   
 ### <a name="application-role-enhancements"></a>Udoskonalenia roli aplikacji  
- Kontekst wykonywania można przełączyć z powrotem do oryginalnego obiektu wywołującego po aktywowaniu roli aplikacji, usuwając konieczność wyłączenia puli połączeń. `sp_setapprole` Procedura zawiera nową opcję, która tworzy plik cookie, który zawiera informacje kontekstowe dotyczące obiektu wywołującego. Możesz przywrócić sesję, wywołując `sp_unsetapprole` procedurę, przekazując plik cookie.  
+
+ Kontekst wykonywania można przełączyć z powrotem do oryginalnego obiektu wywołującego po aktywowaniu roli aplikacji, usuwając konieczność wyłączenia puli połączeń. `sp_setapprole`Procedura zawiera nową opcję, która tworzy plik cookie, który zawiera informacje kontekstowe dotyczące obiektu wywołującego. Możesz przywrócić sesję `sp_unsetapprole` , wywołując procedurę, przekazując plik cookie.  
   
 ## <a name="application-role-alternatives"></a>Alternatywy ról aplikacji  
+
  Role aplikacji są zależne od zabezpieczeń hasła, co stanowi potencjalną lukę w zabezpieczeniach. Hasła mogą być uwidaczniane przez osadzanie w kodzie aplikacji lub zapisane na dysku.  
   
  Warto rozważyć następujące alternatywy.  
@@ -52,13 +57,14 @@ Role aplikacji umożliwiają przypisywanie uprawnień do aplikacji zamiast roli 
 - Podpisz procedury składowane z certyfikatami, przyznając tylko uprawnienia do wykonywania procedur. Aby uzyskać więcej informacji, zobacz [podpisywanie procedur składowanych w SQL Server](signing-stored-procedures-in-sql-server.md).  
   
 ## <a name="external-resources"></a>Zasoby zewnętrzne  
- Aby uzyskać więcej informacji, zobacz następujące zasoby.  
+
+ Więcej informacji zawierają poniższe zasoby.  
   
 |Zasób|Opis|  
 |--------------|-----------------|  
 |[Role aplikacji](/sql/relational-databases/security/authentication-access/application-roles)|Opisuje sposób tworzenia i używania ról aplikacji w SQL Server 2008.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczanie aplikacji ADO.NET](../securing-ado-net-applications.md)
 - [Przegląd zabezpieczeń serwera SQL](overview-of-sql-server-security.md)

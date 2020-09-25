@@ -1,5 +1,5 @@
 ---
-title: <filter>Element dla <add> elementu<sharedListeners>
+title: <filter> Element dla <add> elementu <sharedListeners>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners/add/filter
@@ -10,14 +10,15 @@ helpviewer_keywords:
 - filters, trace listeners
 - trace listeners, filters
 ms.assetid: 7d4e7faa-2e4e-4379-ac76-f6cd7f2f8fac
-ms.openlocfilehash: 6fb52cdfa5792ab6059b60d8dbb91c107cd666ca
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e140148a342e31d6ade7def8849d8a7738301704
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153456"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173929"
 ---
-# <a name="filter-element-for-add-for-sharedlisteners"></a>\<filter>Element dla \<add> elementu\<sharedListeners>
+# <a name="filter-element-for-add-for-sharedlisteners"></a>\<filter> Element dla \<add> elementu \<sharedListeners>
+
 Dodaje filtr do odbiornika w `sharedListeners` kolekcji.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Dodaje filtr do odbiornika w `sharedListeners` kolekcji.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -44,6 +46,7 @@ Dodaje filtr do odbiornika w `sharedListeners` kolekcji.
 |**initializeData**|Atrybut opcjonalny.<br /><br /> Ciąg przesłany do konstruktora dla określonej klasy.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,11 +59,13 @@ Dodaje filtr do odbiornika w `sharedListeners` kolekcji.
 |`add`|Dodaje odbiornik do kolekcji **sharedListeners** .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli odbiornik jest zdefiniowany w `<add>` elemencie `<sharedListeners>` elementu, filtr dla tego odbiornika powinien być zdefiniowany w `<filter>` elemencie, który jest elementem podrzędnym `<add>` elementu.  
   
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak za pomocą `<filter>` elementu dodać filtr do odbiornika śledzenia `console` w `sharedListeners` kolekcji.  
   
 ```xml  
@@ -85,7 +90,7 @@ Dodaje filtr do odbiornika w `sharedListeners` kolekcji.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceFilter>
 - <xref:System.Diagnostics.TraceListener>

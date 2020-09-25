@@ -3,17 +3,19 @@ title: Zarządzanie uprawnieniami za pomocą procedur składowanych w programie 
 description: Dowiedz się, jak ograniczyć dostęp do obiektów danych i baz danych, implementując dostęp za pomocą procedur składowanych lub funkcji zdefiniowanych przez użytkownika.
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: 890c1c6dd7003f3abd684d6c827b6a77a3a019c1
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 44f6a0c3ca6b913c8998c4e5ddb60eab2b64e71b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286291"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172726"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Zarządzanie uprawnieniami za pomocą procedur składowanych w programie SQL Server
+
 Jedną z metod tworzenia wielu wierszy obrony bazy danych jest zaimplementowanie całego dostępu do danych za pomocą procedur składowanych lub funkcji zdefiniowanych przez użytkownika. Wszystkie uprawnienia do obiektów bazowych, takie jak tabele, są odwoływane lub odrzucane. Dzięki temu powstaje obwód zabezpieczeń wokół obiektów danych i baz danych.  
   
 ## <a name="stored-procedure-benefits"></a>Korzyści z procedury składowanej  
+
  Procedury składowane mają następujące zalety:  
   
 - Reguły logiki danych i biznesowe mogą być hermetyzowane, dzięki czemu użytkownicy mogą uzyskiwać dostęp do danych i obiektów tylko w taki sposób, że deweloperzy i administratorzy baz danych mają.  
@@ -31,9 +33,11 @@ Jedną z metod tworzenia wielu wierszy obrony bazy danych jest zaimplementowanie
 - Procedury składowane mogą zmniejszyć ruch sieciowy przez połączenie wielu operacji w jedno wywołanie procedury.  
   
 ## <a name="stored-procedure-execution"></a>Wykonywanie procedury składowanej  
+
  Procedury składowane wykorzystują tworzenie łańcucha własności, aby zapewnić dostęp do danych, dzięki czemu użytkownicy nie muszą mieć jawnego uprawnienia dostępu do obiektów bazy danych. Łańcuch własności istnieje, gdy obiekty, które uzyskują dostęp do siebie nawzajem, są własnością tego samego użytkownika. Na przykład procedura składowana może wywołać inne procedury składowane lub procedura składowana może uzyskać dostęp do wielu tabel. Jeśli wszystkie obiekty w łańcuchu wykonywania mają tego samego właściciela, SQL Server sprawdza tylko uprawnienie EXECUTE dla obiektu wywołującego, a nie uprawnienia obiektu wywołującego na innych obiektach. W związku z tym należy przyznać tylko uprawnienia do wykonywania w procedurach składowanych; Możesz odwołać lub odrzucić wszystkie uprawnienia do tabel źródłowych.  
   
 ## <a name="best-practices"></a>Najlepsze rozwiązania  
+
  Zwykłe pisanie procedur składowanych jest niewystarczające, aby odpowiednio zabezpieczyć aplikację. Należy również wziąć pod uwagę następujące potencjalne luki w zabezpieczeniach.  
   
 - Przyznaj uprawnienia do wykonywania w procedurach składowanych dla ról bazy danych, które mają mieć możliwość uzyskiwania dostępu do danych.  
@@ -51,13 +55,14 @@ Jedną z metod tworzenia wielu wierszy obrony bazy danych jest zaimplementowanie
 - Unikaj dynamicznego SQL, chyba że jest to absolutnie konieczne. Funkcja cudzysłowu Transact-SQL Quote () służy do ograniczania wartości ciągu i ucieczki dowolnego wystąpienia ogranicznika w ciągu wejściowym.  
   
 ## <a name="external-resources"></a>Zasoby zewnętrzne  
+
  Więcej informacji zawierają poniższe zasoby.  
   
 |Zasób|Opis|  
 |--------------|-----------------|  
 |[Procedury składowane](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) i [iniekcja kodu SQL](/sql/relational-databases/security/sql-injection)|Artykuły opisują sposób tworzenia procedur składowanych i sposobu działania iniekcji języka SQL.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczanie aplikacji ADO.NET](../securing-ado-net-applications.md)
 - [Przegląd zabezpieczeń serwera SQL](overview-of-sql-server-security.md)

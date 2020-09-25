@@ -1,5 +1,5 @@
 ---
-title: <remove>Element dla <listeners> elementu<trace>
+title: <remove> Element dla <listeners> elementu <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
@@ -7,14 +7,15 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: f06973ec30d5061e4a200d6bf7e68adcf6302018
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 01b797e1fb62d32e9f0d44c54b803dd969615361
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088835"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173838"
 ---
-# <a name="remove-element-for-listeners-for-trace"></a>\<remove>Element dla \<listeners> elementu\<trace>
+# <a name="remove-element-for-listeners-for-trace"></a>\<remove> Element dla \<listeners> elementu \<trace>
+
 Usuwa odbiornik z kolekcji **odbiorników** .  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Usuwa odbiornik z kolekcji **odbiorników** .
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -39,6 +41,7 @@ Usuwa odbiornik z kolekcji **odbiorników** .
 |**Nazwij**|Atrybut wymagany.<br /><br /> Nazwa odbiornika, który ma zostać usunięty z kolekcji **odbiorników** .|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,6 +59,7 @@ Usuwa odbiornik z kolekcji **odbiorników** .
 > Usunięcie <xref:System.Diagnostics.DefaultTraceListener> z `Listeners` kolekcji powoduje zmianę zachowania <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> metod,, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> i <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> . Wywołanie `Assert` metody lub `Fail` zwykle powoduje wyświetlenie okna komunikatu, ale okno komunikatu nie jest wyświetlane, jeśli <xref:System.Diagnostics.DefaultTraceListener> nie znajduje się w `Listeners` kolekcji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak usunąć domyślny odbiornik śledzenia z kolekcji **detektorów** śledzenia.  
   
 ```xml  
@@ -70,7 +74,7 @@ Usuwa odbiornik z kolekcji **odbiorników** .
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - errorreport compiler option [C#]
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
-ms.openlocfilehash: 5b3143f4da81ac693626778263c277e3a484c45e
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6238ac392ff99d18d9cc7ea07e23b08ff235c14f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125725"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173233"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (opcje kompilatora C#)
+
 Ta opcja zapewnia wygodny sposób raportowania wewnętrznego błędu kompilatora języka C# do firmy Microsoft.
 
 > [!NOTE]
@@ -29,6 +30,7 @@ Ta opcja zapewnia wygodny sposób raportowania wewnętrznego błędu kompilatora
 ```
 
 ## <a name="arguments"></a>Argumenty
+
  **brak**  
  Raporty o błędach wewnętrznych kompilatora nie będą zbierane ani wysyłane do firmy Microsoft.
 
@@ -39,6 +41,7 @@ Ta opcja zapewnia wygodny sposób raportowania wewnętrznego błędu kompilatora
  **Wyślij** Automatycznie wysyła raporty wewnętrznych błędów kompilatora do firmy Microsoft. Aby włączyć tę opcję, musisz najpierw wyrazić zgodę na zasady zbierania danych firmy Microsoft. Podczas pierwszego określania **errorReport: Send** na komputerze komunikat kompilatora odwołuje się do witryny sieci Web zawierającej zasady zbierania danych firmy Microsoft.
 
 ## <a name="remarks"></a>Uwagi
+
  Wewnętrzny błąd kompilatora (lodem) powstaje, gdy kompilator nie może przetworzyć pliku kodu źródłowego. W przypadku wystąpienia lodu kompilator nie tworzy pliku wyjściowego ani żadnej przydatnej diagnostyki, której można użyć do naprawienia kodu.
 
  W poprzednich wersjach, gdy otrzymasz lód, zachęcamy do skontaktowania się z pomocą techniczną firmy Microsoft w celu zgłoszenia problemu. Za pomocą **-errorreport**, można podać informacje o lodem do zespołu Visual C#. Raporty o błędach mogą pomóc w ulepszaniu przyszłych wersji kompilatora.

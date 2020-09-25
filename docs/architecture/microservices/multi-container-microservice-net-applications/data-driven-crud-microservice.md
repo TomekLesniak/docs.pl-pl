@@ -2,12 +2,12 @@
 title: Tworzenie prostej mikrousługi CRUD na podstawie danych
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się z tworzeniem prostej mikrousługi CRUD (opartej na danych) w kontekście aplikacji mikrousług.
 ms.date: 08/14/2020
-ms.openlocfilehash: 46654b9e6283d913910b62621d056e034c18870e
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 056ba37965cf831e0fb176eb585042c440530c6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679152"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172368"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Tworzenie prostej mikrousługi CRUD na podstawie danych
 
@@ -27,7 +27,7 @@ Przykładem tego rodzaju prostej usługi dysków danych jest mikrousługa katalo
 
 **Rysunek 6-5**. Prosty projekt mikrousług oparty na danych/CRUD
 
-Poprzedni diagram przedstawia mikrousługę wykazu logicznego, która obejmuje jej bazę danych katalogu, która może być lub nie znajduje się na tym samym hoście platformy Docker. Posiadanie bazy danych na tym samym hoście platformy Docker może być dobrym rozwiązaniem do programowania, ale nie w środowisku produkcyjnym. Podczas opracowywania tego rodzaju usługi wymagany jest tylko [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) i interfejs API dostępu do danych lub ORM, jak [Entity Framework Core](https://docs.microsoft.com/ef/core/index). Możesz również generować metadane [struktury Swagger](https://swagger.io/) automatycznie za pomocą [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) , aby podać opis oferty usługi, zgodnie z opisem w następnej sekcji.
+Poprzedni diagram przedstawia mikrousługę wykazu logicznego, która obejmuje jej bazę danych katalogu, która może być lub nie znajduje się na tym samym hoście platformy Docker. Posiadanie bazy danych na tym samym hoście platformy Docker może być dobrym rozwiązaniem do programowania, ale nie w środowisku produkcyjnym. Podczas opracowywania tego rodzaju usługi wymagany jest tylko [ASP.NET Core](/aspnet/core/) i interfejs API dostępu do danych lub ORM, jak [Entity Framework Core](/ef/core/index). Możesz również generować metadane [struktury Swagger](https://swagger.io/) automatycznie za pomocą [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) , aby podać opis oferty usługi, zgodnie z opisem w następnej sekcji.
 
 Należy pamiętać, że uruchamianie serwera bazy danych, takiego jak SQL Server w kontenerze platformy Docker, jest doskonałe dla środowisk programistycznych, ponieważ wszystkie Twoje zależności mogą działać bez konieczności aprowizacji bazy danych w chmurze lub lokalnie. Jest to bardzo wygodne w przypadku uruchamiania testów integracji. Jednak w przypadku środowisk produkcyjnych nie zaleca się korzystania z serwera bazy danych w kontenerze, ponieważ zazwyczaj nie ma wysokiej dostępności. W środowisku produkcyjnym na platformie Azure zaleca się użycie usługi Azure SQL DB lub innej technologii bazy danych, która zapewnia wysoką dostępność i wysoką skalowalność. Na przykład w przypadku podejścia NoSQL można wybrać pozycję CosmosDB.
 
@@ -219,7 +219,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### <a name="additional-resources"></a>Dodatkowe zasoby
+### <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Wykonywanie zapytania dotyczącego danych** \
   [https://docs.microsoft.com/ef/core/querying/index](/ef/core/querying/index)
@@ -301,9 +301,9 @@ public class CatalogController : ControllerBase
     // Implementation ...
 ```
 
-Ten mechanizm przechowywania wersji jest prosty i zależy od serwera routingu żądania do odpowiedniego punktu końcowego. Jednak w celu uzyskania bardziej zaawansowanej wersji i najlepszej metody w przypadku korzystania z usługi REST należy użyć narzędzia z nośnika i zaimplementować [HATEOAS (hipertekst jako aparat stanu aplikacji)](https://docs.microsoft.com/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources).
+Ten mechanizm przechowywania wersji jest prosty i zależy od serwera routingu żądania do odpowiedniego punktu końcowego. Jednak w celu uzyskania bardziej zaawansowanej wersji i najlepszej metody w przypadku korzystania z usługi REST należy użyć narzędzia z nośnika i zaimplementować [HATEOAS (hipertekst jako aparat stanu aplikacji)](/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources).
 
-### <a name="additional-resources"></a>Dodatkowe zasoby
+### <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Scott Hanselman. Łatwość ASP.NET Core RESTful internetowego interfejsu API** \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
@@ -336,7 +336,7 @@ Główne przyczyny generowania metadanych struktury Swagger dla interfejsów API
 
 - [Microsoft powerapps](https://powerapps.microsoft.com/). Możesz automatycznie korzystać z interfejsu API z [aplikacji mobilnych powerapps](https://powerapps.microsoft.com/blog/register-and-use-custom-apis-in-powerapps/) utworzonych przy użyciu [powerapps Studio](https://powerapps.microsoft.com/build-powerapps/), bez konieczności umiejętności programistycznych.
 
-- [Logic Apps Azure App Service](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-what-are-logic-apps). Możesz automatycznie [używać interfejsu API i zintegrować go z aplikacją logiki Azure App Service](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-custom-hosted-api), bez wymaganych umiejętności programistycznych.
+- [Logic Apps Azure App Service](/azure/app-service-logic/app-service-logic-what-are-logic-apps). Możesz automatycznie [używać interfejsu API i zintegrować go z aplikacją logiki Azure App Service](/azure/app-service-logic/app-service-logic-custom-hosted-api), bez wymaganych umiejętności programistycznych.
 
 **Możliwość automatycznego generowania dokumentacji interfejsu API**. Podczas tworzenia interfejsów API RESTful o dużej skali, takich jak złożone aplikacje oparte na mikrousługach, należy obsługiwać wiele punktów końcowych z różnymi modelami danych używanymi w ładunku żądania i odpowiedzi. Posiadanie odpowiedniej dokumentacji i posiadanie pełnego Eksploratora interfejsów API, jak w przypadku programu Swagger, jest kluczem dla sukcesu interfejsu API i wdrażania przez deweloperów.
 
@@ -428,7 +428,7 @@ W szczegółach interfejsu API interfejsu użytkownika programu Swagger przedsta
 
 Jest to proste. I ponieważ jest generowany automatycznie, podczas dodawania większej funkcjonalności do interfejsu API zostaną powiększone metadane programu Swagger.
 
-### <a name="additional-resources"></a>Dodatkowe zasoby
+### <a name="additional-resources"></a>Zasoby dodatkowe
 
 - **Strony pomocy interfejsu API sieci Web ASP.NET korzystające z programu Swagger** \
   [https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger](/aspnet/core/tutorials/web-api-help-pages-using-swagger)

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: afee69eb894518b1c88483e34a1d64d452019244
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3eb32b7ae643efdb19892410b669c1e7ff80e0ad
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74802127"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174163"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching>, element (ustawienia sieci)
+
 Kontroluje mechanizm buforowania dla żądań sieci.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -36,6 +37,7 @@ Kontroluje mechanizm buforowania dla żądań sieci.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -65,7 +67,7 @@ Kontroluje mechanizm buforowania dla żądań sieci.
 |Element|Opis|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|Element opcjonalny.<br /><br /> Opisuje, czy buforowanie HTTP jest aktywne i opisuje domyślne zasady buforowania.|  
-|[\<defaultFtpCachePolicy>— Element (Ustawienia sieci)](defaultftpcachepolicy-element-network-settings.md)|Element opcjonalny.<br /><br /> Opisuje, czy buforowanie FTP jest aktywne i opisuje domyślne zasady buforowania.|  
+|[\<defaultFtpCachePolicy> — Element (Ustawienia sieci)](defaultftpcachepolicy-element-network-settings.md)|Element opcjonalny.<br /><br /> Opisuje, czy buforowanie FTP jest aktywne i opisuje domyślne zasady buforowania.|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
   
@@ -74,6 +76,7 @@ Kontroluje mechanizm buforowania dla żądań sieci.
 |[system.net](system-net-element-network-settings.md)|Zawiera ustawienia, które określają, w jaki sposób .NET Framework nawiązuje połączenie z siecią.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak wyłączyć wszystkie buforowanie.  
   
 ```xml  
@@ -86,7 +89,7 @@ Kontroluje mechanizm buforowania dla żądań sieci.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.Cache?displayProperty=nameWithType>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

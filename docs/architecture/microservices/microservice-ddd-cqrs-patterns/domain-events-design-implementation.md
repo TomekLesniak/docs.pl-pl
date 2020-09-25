@@ -2,12 +2,12 @@
 title: Zdarzenia domeny. Projektowanie i implementacja
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Uzyskaj szczegółowy widok zdarzeń domeny, kluczową koncepcję do ustanowienia komunikacji między agregacjami.
 ms.date: 10/08/2018
-ms.openlocfilehash: e786af9b5cd005573dcc9d08a3ccd19f25f13813
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 651d9cb98444c0729b97f523cc3d688f0f8d51d5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738778"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173373"
 ---
 # <a name="domain-events-design-and-implementation"></a>Zdarzenia w domenie: projektowanie i implementacja
 
@@ -342,7 +342,7 @@ Na koniec należy zauważyć, że czasami chcesz propagować zdarzenia w wielu m
 
 Jak wspomniano, użyj zdarzeń domeny w celu jawnego implementowania efektów ubocznych zmian w domenie. Aby użyć terminologii, użyj zdarzeń domeny w celu jawnego implementowania efektów ubocznych w jednej lub wielu agregacjach. Ponadto, aby zapewnić lepszą skalowalność i mniej wpływ na blokady bazy danych, należy użyć spójności ostatecznej między agregacjami w tej samej domenie.
 
-Aplikacja referencyjna używa [MediatR](https://github.com/jbogard/MediatR) do propagowania zdarzeń domeny synchronicznie w ramach agregacji w ramach jednej transakcji. Jednak można również użyć pewnej implementacji AMQP, takiej jak [RabbitMQ](https://www.rabbitmq.com/) lub [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) do propagowania zdarzeń domeny asynchronicznie, przy użyciu spójności ostatecznej, jak wspomniano powyżej, należy wziąć pod uwagę potrzebę działań kompensacyjnych w razie awarii.
+Aplikacja referencyjna używa [MediatR](https://github.com/jbogard/MediatR) do propagowania zdarzeń domeny synchronicznie w ramach agregacji w ramach jednej transakcji. Jednak można również użyć pewnej implementacji AMQP, takiej jak [RabbitMQ](https://www.rabbitmq.com/) lub [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview) do propagowania zdarzeń domeny asynchronicznie, przy użyciu spójności ostatecznej, jak wspomniano powyżej, należy wziąć pod uwagę potrzebę działań kompensacyjnych w razie awarii.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 

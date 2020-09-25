@@ -9,14 +9,15 @@ helpviewer_keywords:
 - trace sources
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-ms.openlocfilehash: 2a76816ee73f516b3c7544877a77531acaa8e09c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 670fb359f892d83feac56c849361c4b980d9a922
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153272"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173812"
 ---
 # <a name="sources-element"></a>\<sources> Element
+
 Określa źródła śledzenia, które inicjują komunikaty śledzenia.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,9 +33,11 @@ Określa źródła śledzenia, które inicjują komunikaty śledzenia.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -51,9 +54,11 @@ Określa źródła śledzenia, które inicjują komunikaty śledzenia.
 |`system.diagnostics`|Określa detektory śledzenia, które zbierają, przechowują i rozsyłają komunikaty oraz poziom, w którym ustawiono przełącznik śledzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, `<sources>` Aby dodać Źródło śledzenia `mySource` i ustawić poziom dla przełącznika źródła o nazwie `sourceSwitch` . Dodano odbiornik śledzenia konsoli, który zapisuje informacje o śledzeniu do konsoli.  
   
 ```xml  
@@ -79,7 +84,7 @@ Określa źródła śledzenia, które inicjują komunikaty śledzenia.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>

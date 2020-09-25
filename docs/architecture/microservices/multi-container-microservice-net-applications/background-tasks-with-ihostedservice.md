@@ -2,12 +2,12 @@
 title: Implementowanie zadań w tle w mikrousługach za pomocą IHostedService i klasy BackgroundService
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się z nowymi opcjami umożliwiającymi korzystanie z IHostedService i BackgroundService w celu zaimplementowania zadań w tle w mikrousługach .NET Core.
 ms.date: 08/14/2020
-ms.openlocfilehash: 4ab215f2196cd2e66b116465c3a582a9846c8066
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 279f9e0093deafab51e63d72dce233c8e9466a55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268000"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173357"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementowanie zadań w tle w mikrousługach za pomocą IHostedService i klasy BackgroundService
 
@@ -68,7 +68,7 @@ Bez korzystania z programu `IHostedService` można zawsze uruchomić wątek w tl
 
 ## <a name="the-ihostedservice-interface"></a>Interfejs IHostedService
 
-Po zarejestrowaniu `IHostedService` platforma .NET Core będzie wywoływała `StartAsync()` metody i, `StopAsync()` `IHostedService` podczas uruchamiania i zatrzymywania aplikacji. Aby uzyskać więcej informacji, zobacz [IHostedService Interface](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-3.1&tabs=visual-studio#ihostedservice-interface)
+Po zarejestrowaniu `IHostedService` platforma .NET Core będzie wywoływała `StartAsync()` metody i, `StopAsync()` `IHostedService` podczas uruchamiania i zatrzymywania aplikacji. Aby uzyskać więcej informacji, zobacz [IHostedService Interface](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.1#ihostedservice-interface)
 
 Jak można wyobrazić, można utworzyć wiele implementacji IHostedService i zarejestrować je w `ConfigureService()` metodzie w kontenerze di, jak pokazano wcześniej. Wszystkie te usługi hostowane zostaną uruchomione i zatrzymane wraz z aplikacją/mikrousługą.
 

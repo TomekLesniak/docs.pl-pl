@@ -7,14 +7,15 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-ms.openlocfilehash: fd12be1b775d7611ef3f16d23147470313bf9866
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 59d078f8dc573a1ce949d225f497dd4500fe808f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153376"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173864"
 ---
 # <a name="listeners-element-for-trace"></a>\<listeners>, element dla \<trace>
+
 Określa odbiornik, który zbiera, przechowuje i kieruje komunikaty. Odbiorniki kierują dane wyjściowe śledzenia do odpowiedniego obiektu docelowego.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -33,9 +34,11 @@ Określa odbiornik, który zbiera, przechowuje i kieruje komunikaty. Odbiorniki 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -55,13 +58,16 @@ Określa odbiornik, który zbiera, przechowuje i kieruje komunikaty. Odbiorniki 
 |`trace`|Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śledzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  <xref:System.Diagnostics.Debug>Klasy i <xref:System.Diagnostics.Trace> współużytkują tę samą kolekcję **detektorów** . Jeśli dodasz obiekt odbiornika do kolekcji w jednej z tych klas, inna Klasa używa tego samego odbiornika. Klasy odbiornika dostarczane z .NET Framework pochodzą od <xref:System.Diagnostics.TraceListener> klasy.  
   
 ## <a name="configuration-file"></a>Plik konfiguracji  
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład pokazuje, jak użyć elementu, **\<listeners>** Aby dodać detektory `MyListener` i `MyEventListener` do kolekcji **odbiorników** . `MyListener`tworzy plik o nazwie `MyListener.log` i zapisuje dane wyjściowe do pliku. `MyEventListener`tworzy wpis w dzienniku zdarzeń.  
+
+ Poniższy przykład pokazuje, jak użyć elementu, **\<listeners>** Aby dodać detektory `MyListener` i `MyEventListener` do kolekcji **odbiorników** . `MyListener` tworzy plik o nazwie `MyListener.log` i zapisuje dane wyjściowe do pliku. `MyEventListener` tworzy wpis w dzienniku zdarzeń.  
   
 ```xml  
 <configuration>  
@@ -84,7 +90,7 @@ Określa odbiornik, który zbiera, przechowuje i kieruje komunikaty. Odbiorniki 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceListener>
 - [Schemat ustawień śledzenia i debugowania](index.md)

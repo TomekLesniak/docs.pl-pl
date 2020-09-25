@@ -9,14 +9,15 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-ms.openlocfilehash: eb27716ec7c2936f32a7e4d4c983d1e175c4d044
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a6678a8fe7c6f962529f9d946b103b6224d58602
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504527"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174111"
 ---
 # <a name="servicepointmanager-element-network-settings"></a>\<servicePointManager>, element (ustawienia sieci)
+
 Konfiguruje połączenia z zasobami sieciowymi.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -39,6 +40,7 @@ Konfiguruje połączenia z zasobami sieciowymi.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -54,6 +56,7 @@ Konfiguruje połączenia z zasobami sieciowymi.
 |`useNagleAlgorithm`|Określa, czy połączenia kontrolowane przez Menedżera punktów usług używają algorytmu nagle. Wartość domyślna to `true`.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -65,10 +68,11 @@ Konfiguruje połączenia z zasobami sieciowymi.
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.ServicePointManager>
 - <xref:System.Net.Security.EncryptionPolicy>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

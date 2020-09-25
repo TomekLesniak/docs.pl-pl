@@ -2,12 +2,12 @@
 title: Implementowanie warstwy trwałości infrastruktury za pomocą programu Entity Framework Core
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Zapoznaj się ze szczegółami implementacji warstwy trwałości infrastruktury przy użyciu Entity Framework Core.
 ms.date: 01/30/2020
-ms.openlocfilehash: f9d97319d378b6fd3eb681fd2873e5fbeead787f
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: 878d4d64e92ca92fd2393d60d496f1c5671e7029
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86101004"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172355"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Zaimplementuj warstwę trwałości infrastruktury za pomocą Entity Framework Core
 
@@ -43,7 +43,7 @@ Na wzorce DDD należy hermetyzować zachowanie domeny i reguły w samej klasie j
 
 Ponieważ EF Core 1,1, aby spełnić te wymagania dotyczące DDD, w jednostkach można używać zwykłych pól zamiast właściwości publicznych. Jeśli nie chcesz, aby pole jednostki było dostępne na zewnątrz, możesz po prostu utworzyć atrybut lub pole zamiast właściwości. Można również użyć własnych metod ustawiających właściwości.
 
-W podobny sposób można teraz mieć dostęp tylko do odczytu do kolekcji przy użyciu właściwości publicznej wpisanej jako `IReadOnlyCollection<T>` , która jest objęta przez prywatny element członkowski dla kolekcji (na przykład `List<T>` ) w jednostce, która opiera się na EF dla trwałości. Poprzednie wersje Entity Framework wymaganych właściwości kolekcji do obsługi `ICollection<T>` , co oznacza, że każdy deweloper korzystający z klasy jednostki nadrzędnej może dodawać lub usuwać elementy za pośrednictwem swoich kolekcji właściwości. Taka możliwość będzie od zalecanych wzorców w DDD.
+W podobny sposób można teraz mieć dostęp tylko do odczytu do kolekcji przy użyciu właściwości publicznej wpisanej jako  `IReadOnlyCollection<T>` , która jest objęta przez prywatny element członkowski dla kolekcji (na przykład `List<T>` ) w jednostce, która opiera się na EF dla trwałości. Poprzednie wersje Entity Framework wymaganych właściwości kolekcji do obsługi `ICollection<T>` , co oznacza, że każdy deweloper korzystający z klasy jednostki nadrzędnej może dodawać lub usuwać elementy za pośrednictwem swoich kolekcji właściwości. Taka możliwość będzie od zalecanych wzorców w DDD.
 
 Możesz użyć prywatnej kolekcji podczas udostępniania obiektu tylko do odczytu `IReadOnlyCollection<T>` , jak pokazano w poniższym przykładzie kodu:
 
@@ -367,7 +367,7 @@ Można to zrobić przy użyciu pojedynczych pól lub kolekcji, takich jak `List<
 
 ### <a name="use-shadow-properties-in-ef-core-hidden-at-the-infrastructure-level"></a>Używanie właściwości cienia w EF Core, ukryte na poziomie infrastruktury
 
-Właściwości cienia w EF Core są właściwościami, które nie istnieją w modelu klasy jednostki. Wartości i Stany tych właściwości są utrzymywane wyłącznie w klasie [ChangeTracker](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) na poziomie infrastruktury.
+Właściwości cienia w EF Core są właściwościami, które nie istnieją w modelu klasy jednostki. Wartości i Stany tych właściwości są utrzymywane wyłącznie w klasie [ChangeTracker](/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) na poziomie infrastruktury.
 
 ## <a name="implement-the-query-specification-pattern"></a>Implementowanie wzorca specyfikacji zapytania
 

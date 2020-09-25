@@ -2,14 +2,15 @@
 title: <udpAnnouncementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 5b3fa9c5-f372-4df9-a9d6-1e426063b721
-ms.openlocfilehash: 8dabf8845126705d082d080b643688ed62883f39
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 67503b1bc3c6282ff5018adc20acbb89de49ba50
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854912"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173760"
 ---
 # \<udpAnnouncementEndpoint>
+
 Ten element konfiguracji definiuje standardowy punkt końcowy, który jest używany przez usługi do wysyłania komunikatów anonsu za pośrednictwem powiązania UDP. Ma ona ustaloną umowę i obsługuje dwie wersje odnajdywania. Oprócz tego ma stałe powiązanie UDP i domyślną wartość adresu określoną w specyfikacjach WS-Discovery (WS-Discovery Kwiecień 2005 lub WS-Discovery w wersji 1,1). Można określić adres multiemisji, który będzie używany do wysyłania i otrzymywania komunikatów anonsu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Ten element konfiguracji definiuje standardowy punkt końcowy, który jest używ
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -57,6 +59,7 @@ Ten element konfiguracji definiuje standardowy punkt końcowy, który jest używ
 |[\<standardEndpoints>](standardendpoints.md)|Kolekcja standardowych punktów końcowych, które są wstępnie zdefiniowanymi punktami końcowymi z co najmniej jedną z jej właściwości (adres, powiązanie, kontrakt).|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, że klient nasłuchuje anonsu za pośrednictwem transportu multiemisji UDP z domyślnym adresem multiemisji i transportem multiemisji UDP z określonym adresem multiemisji.  
   
 ```xml  
@@ -81,6 +84,6 @@ Ten element konfiguracji definiuje standardowy punkt końcowy, który jest używ
 </standardEndpoints>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>

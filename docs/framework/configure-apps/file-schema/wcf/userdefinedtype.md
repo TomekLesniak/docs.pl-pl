@@ -2,14 +2,15 @@
 title: <userDefinedType>
 ms.date: 03/30/2017
 ms.assetid: 0f70ec06-8249-4f0c-9f49-b4df59985fb8
-ms.openlocfilehash: 7a76e5a90fe3218bc0302501b71daa9de0b098bc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a4bbd677aba27d93389f8d2f99aadd801c86b65f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854833"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172843"
 ---
 # \<userDefinedType>
+
 Reprezentuje typ zdefiniowany przez użytkownika (UDT), który ma zostać uwzględniony w kontrakcie usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -36,6 +37,7 @@ Reprezentuje typ zdefiniowany przez użytkownika (UDT), który ma zostać uwzgl�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -48,6 +50,7 @@ Reprezentuje typ zdefiniowany przez użytkownika (UDT), który ma zostać uwzgl�
 |`TypeLibVersion`|Ciąg, który identyfikuje wersję biblioteki typów, która definiuje typ.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -57,6 +60,7 @@ Reprezentuje typ zdefiniowany przez użytkownika (UDT), który ma zostać uwzgl�
 |`userDefinedTypes`|Kolekcja `userDefinedType` elementów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko Integration Runtime środowiska COM+ tworzy usługi, sprawdzając bibliotekę typów. Gdy składnik COM+ zawiera metody, które przechodzą wariant, system nie może ustalić rzeczywistych typów do przekazania przed środowiskiem uruchomieniowym. W związku z tym podczas próby przekazania typu zdefiniowanego przez użytkownika (UDT) w ramach WARIANTu nie powiedzie się, ponieważ nie jest to znany typ serializacji.  
   
  Aby obejść ten problem, można dodać UDTs do pliku konfiguracji, aby można je było uwzględnić jako znane typy w odpowiednim kontrakcie usługi. Aby to zrobić, należy jednoznacznie zidentyfikować UDT i kontrakty, czyli oryginalne interfejsy COM, które z niego korzystają.  
@@ -92,7 +96,7 @@ Reprezentuje typ zdefiniowany przez użytkownika (UDT), który ma zostać uwzgl�
   
  Po zainicjowaniu usługi środowisko Integration Runtime wyszukuje określone typy i dodaje je do kolekcji znanych typów dla określonych kontraktów.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ComContractElement.UserDefinedTypes%2A>
 - <xref:System.ServiceModel.Configuration.ComUdtElementCollection>

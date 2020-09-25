@@ -2,12 +2,12 @@
 title: Migrowanie nowoczesnych aplikacji klasycznych
 description: Wszystko, czego potrzebujesz, aby poznać proces migracji nowoczesnych aplikacji klasycznych.
 ms.date: 05/12/2020
-ms.openlocfilehash: a015b266dc5c36fcef38dad04b9f4f048ee5906a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f7862d6379eeeb737c386b5ffeaab938d258b046
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446918"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173333"
 ---
 # <a name="migrating-modern-desktop-applications"></a>Migrowanie nowoczesnych aplikacji klasycznych
 
@@ -23,13 +23,13 @@ Pliki konfiguracji oferują możliwość przechowywania zestawów właściwości
 
 ### <a name="configuration-on-net-framework"></a>Konfiguracja na .NET Framework
 
-Jeśli masz działającą .NET Frameworkową aplikację klasyczną, prawdopodobnie masz dostęp do pliku *App. config* za pośrednictwem <xref:System.Configuration.AppSettingsSection> klasy z `System.Configuration` przestrzeni nazw.
+Jeśli masz działającą .NET Frameworkową aplikację klasyczną, prawdopodobnie masz plik *app.config* , do którego można uzyskać dostęp za pośrednictwem <xref:System.Configuration.AppSettingsSection> klasy z `System.Configuration` przestrzeni nazw.
 
-W ramach infrastruktury .NET Framework istnieje hierarchia plików konfiguracji, które dziedziczą właściwości z obiektów nadrzędnych. Można znaleźć plik *Machine. config* , który definiuje wiele właściwości i sekcji konfiguracyjnych, które mogą być używane lub zastępowane w dowolnym pliku konfiguracji podrzędnej.
+W ramach infrastruktury .NET Framework istnieje hierarchia plików konfiguracji, które dziedziczą właściwości z obiektów nadrzędnych. Można znaleźć plik *machine.config* , który definiuje wiele właściwości i sekcji konfiguracyjnych, które mogą być używane lub zastępowane w dowolnym pliku konfiguracji podrzędnej.
 
 ### <a name="configuration-on-net-core"></a>Konfiguracja w programie .NET Core
 
-W świecie .NET Core nie ma pliku *Machine. config* . Mimo że można nadal używać starej <xref:System.Configuration> przestrzeni nazw, można rozważyć przełączenie do nowoczesnej <xref:Microsoft.Extensions.Configuration> , która oferuje dobrą liczbę ulepszeń.
+W świecie .NET Core nie ma pliku *machine.config* . Mimo że można nadal używać starej <xref:System.Configuration> przestrzeni nazw, można rozważyć przełączenie do nowoczesnej <xref:Microsoft.Extensions.Configuration> , która oferuje dobrą liczbę ulepszeń.
 
 Interfejs API konfiguracji obsługuje koncepcję dostawcy konfiguracji, który definiuje źródło danych do użycia w celu załadowania konfiguracji. Istnieją różne rodzaje wbudowanych dostawców, takie jak:
 
@@ -49,15 +49,15 @@ Nowa konfiguracja umożliwia listę par nazwa-wartość, które mogą być pogru
 
 ### <a name="migrating-configuration-files"></a>Migrowanie plików konfiguracji
 
-Można nadal korzystać z istniejącego pliku XML App. config. Można jednak skorzystać z tej możliwości, aby przeprowadzić migrację konfiguracji w celu skorzystania z kilku ulepszeń programu .NET Core.
+Można nadal używać istniejącego pliku XML app.config. Można jednak skorzystać z tej możliwości, aby przeprowadzić migrację konfiguracji w celu skorzystania z kilku ulepszeń programu .NET Core.
 
-Aby przeprowadzić migrację ze starego pliku *App. config* do nowej konfiguracji, należy wybrać format XML i format JSON.
+Aby przeprowadzić migrację ze starego *app.config* do nowego pliku konfiguracji, należy wybrać format XML i format JSON.
 
-Jeśli wybierzesz opcję XML, konwersja jest prosta. Ponieważ zawartość jest taka sama, po prostu zmień nazwę pliku *App. config* na plik z rozszerzeniem XML. Następnie Zmień kod, który odwołuje się do AppSettings, aby użyć `ConfigurationBuilder` klasy. Ta zmiana powinna być łatwa.
+Jeśli wybierzesz opcję XML, konwersja jest prosta. Ponieważ zawartość jest taka sama, po prostu zmień nazwę pliku *app.config* na plik z rozszerzeniem XML. Następnie Zmień kod, który odwołuje się do AppSettings, aby użyć `ConfigurationBuilder` klasy. Ta zmiana powinna być łatwa.
 
-Jeśli chcesz użyć formatu JSON i nie chcesz migrować ręcznie, istnieje narzędzie o nazwie [dotnet-config2json](https://www.nuget.org/packages/dotnet-config2json/) dostępne na platformie .NET Core, które może skonwertować plik *App. config* do pliku konfiguracji JSON.
+Jeśli chcesz użyć formatu JSON i nie chcesz migrować ręcznie, istnieje narzędzie o nazwie [dotnet-config2json](https://www.nuget.org/packages/dotnet-config2json/) dostępne na platformie .NET Core, które może przekonwertować plik *app.config* na plik konfiguracyjny JSON.
 
-W przypadku korzystania z sekcji konfiguracyjnych, które zostały zdefiniowane w pliku *Machine. config* , mogą występować również problemy. Rozważmy na przykład następującą konfigurację:
+W przypadku korzystania z sekcji konfiguracyjnych, które zostały zdefiniowane w pliku *machine.config* , mogą występować również problemy. Rozważmy na przykład następującą konfigurację:
 
 ```xml
 <configuration>
@@ -82,9 +82,9 @@ Jeśli ta konfiguracja zostanie pobrana do programu .NET Core, zostanie wyświet
 
 Nierozpoznana sekcja konfiguracji system. Diagnostics
 
-Ten wyjątek występuje, ponieważ ta sekcja i zestaw odpowiedzialny za obsługę tej sekcji został zdefiniowany w pliku *Machine. config* , który już nie istnieje.
+Ten wyjątek występuje, ponieważ ta sekcja i zestaw odpowiedzialny za obsługę tej sekcji został zdefiniowany w pliku *machine.config* , który już nie istnieje.
 
-Aby łatwo rozwiązać ten problem, można skopiować definicję sekcji ze starego pliku *Machine. config* do nowej konfiguracji:
+Aby łatwo rozwiązać ten problem, możesz skopiować definicję sekcji ze starego *machine.config* do nowego pliku konfiguracji:
 
 ```xml
 <configSections>
@@ -108,7 +108,7 @@ Można nadal korzystać z ODBC na platformie .NET Core, ponieważ firma Microsof
 
 ### <a name="ole-db"></a>OLE DB
 
-[OLE DB](https://docs.microsoft.com/previous-versions/windows/desktop/ms722784(v=vs.85))   był doskonałym sposobem na dostęp do różnych źródeł danych w jednolity sposób. Jednak była oparta na modelu COM, który jest technologią tylko dla systemu Windows i dlatego nie jest najlepszym rozwiązaniem dla technologii międzyplatformowych, takich jak .NET Core. Jest on również nieobsługiwany w SQL Server wersji 2014 i nowszych. Z tego powodu OLE DB nie będą obsługiwane przez platformę .NET Core.
+[OLE DB](/previous-versions/windows/desktop/ms722784(v=vs.85))   był doskonałym sposobem na dostęp do różnych źródeł danych w jednolity sposób. Jednak była oparta na modelu COM, który jest technologią tylko dla systemu Windows i dlatego nie jest najlepszym rozwiązaniem dla technologii międzyplatformowych, takich jak .NET Core. Jest on również nieobsługiwany w SQL Server wersji 2014 i nowszych. Z tego powodu OLE DB nie będą obsługiwane przez platformę .NET Core.
 
 ### <a name="adonet"></a>ADO.NET
 

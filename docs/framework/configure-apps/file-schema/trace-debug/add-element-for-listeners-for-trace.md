@@ -1,5 +1,5 @@
 ---
-title: <add>Element dla <listeners> elementu<trace>
+title: <add> Element dla <listeners> elementu <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <add> element for <listeners>
 - add element for <listeners>
 ms.assetid: 81e804a3-ef11-4d39-bbde-bfa012c179e2
-ms.openlocfilehash: c64673908dc9afe67d97c08f93e5b9d9533bd34d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: da5c0ccae08a32c324a1633b5a7ff7592efa6e2d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153675"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174046"
 ---
-# <a name="add-element-for-listeners-for-trace"></a>\<add>Element dla \<listeners> elementu\<trace>
+# <a name="add-element-for-listeners-for-trace"></a>\<add> Element dla \<listeners> elementu \<trace>
+
 Dodaje odbiornik do kolekcji **odbiorników** .  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Dodaje odbiornik do kolekcji **odbiorników** .
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -59,6 +61,7 @@ Dodaje odbiornik do kolekcji **odbiorników** .
 |`trace`|Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śledzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  <xref:System.Diagnostics.Debug>Klasy i <xref:System.Diagnostics.Trace> współużytkują tę samą kolekcję **detektorów** . Jeśli dodasz obiekt odbiornika do kolekcji w jednej z tych klas, inna Klasa używa tego samego odbiornika. Klasy odbiornika pochodzą od <xref:System.Diagnostics.TraceListener> .  
   
  Jeśli nie określisz `name` atrybutu odbiornika śledzenia, wartość <xref:System.Diagnostics.TraceListener.Name%2A> Ustawienia odbiornik śledzenia domyślnie będzie pustym ciągiem (""). Jeśli aplikacja ma tylko jeden odbiornik, możesz ją dodać bez określania nazwy i usunąć ją, określając pusty ciąg w polu Nazwa. Jeśli jednak aplikacja ma więcej niż jeden odbiornik, należy określić unikatowe nazwy dla każdego odbiornika śledzenia, co pozwala identyfikować poszczególne detektory śledzenia i zarządzać nimi w ramach <xref:System.Diagnostics.Debug.Listeners%2A> <xref:System.Diagnostics.Trace.Listeners%2A> kolekcji i.  
@@ -83,7 +86,8 @@ Dodaje odbiornik do kolekcji **odbiorników** .
 |<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Nazwa pliku, w którym zapisuje dane <xref:System.Diagnostics.XmlWriterTraceListener> .|  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład pokazuje, jak używać **\<add>** elementów do dodawania odbiorników `MyListener` i `MyEventListener` do kolekcji **odbiorników** . `MyListener`tworzy plik o nazwie `MyListener.log` i zapisuje dane wyjściowe do pliku. `MyEventListener`tworzy wpis w dzienniku zdarzeń.  
+
+ Poniższy przykład pokazuje, jak używać **\<add>** elementów do dodawania odbiorników `MyListener` i `MyEventListener` do kolekcji **odbiorników** . `MyListener` tworzy plik o nazwie `MyListener.log` i zapisuje dane wyjściowe do pliku. `MyEventListener` tworzy wpis w dzienniku zdarzeń.  
   
 ```xml  
 <configuration>  
@@ -101,7 +105,7 @@ Dodaje odbiornik do kolekcji **odbiorników** .
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.Debug>

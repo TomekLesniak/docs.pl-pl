@@ -6,14 +6,15 @@ helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 6e4387fe7e78cd0e970531ae42f323efa8f181db
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 5439412231ab1bf9ed523d6786af67984ab2d0c3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299308"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172973"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Typy ogólne i odbicie (Przewodnik programowania w języku C#)
+
 Ponieważ środowisko uruchomieniowe języka wspólnego (CLR) ma dostęp do ogólnych informacji o typie w czasie wykonywania, można użyć odbicia w celu uzyskania informacji o typach ogólnych w taki sam sposób jak w przypadku typów innych niż ogólne. Aby uzyskać więcej informacji, zobacz [typy ogólne w czasie wykonywania](./generics-in-the-run-time.md).  
   
  W .NET Framework 2,0 dodano kilka nowych członków do <xref:System.Type> klasy w celu włączenia informacji w czasie wykonywania dla typów ogólnych. Zapoznaj się z dokumentacją dotyczącą tych klas, aby uzyskać więcej informacji na temat korzystania z tych metod i właściwości. <xref:System.Reflection.Emit>Przestrzeń nazw zawiera również nowych członków, którzy obsługują typy ogólne. Zobacz [jak: Definiowanie typu ogólnego przy użyciu emisji odbicia](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  

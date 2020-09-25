@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - <source> element
 - source element
-ms.openlocfilehash: 417722ce2f3865350158413307495e3ab435d386
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e9c6a06ca9e481ecc2277e1d1ea76a0b99edb158
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153298"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173825"
 ---
 # <a name="source-element"></a>\<source> Element
+
 Określa źródło śledzenia, które inicjuje komunikaty śledzenia.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Określa źródło śledzenia, które inicjuje komunikaty śledzenia.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -57,9 +59,11 @@ Określa źródło śledzenia, które inicjuje komunikaty śledzenia.
 |`sources`|Zawiera źródła śledzenia, które inicjują komunikaty śledzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, `<source>` Aby dodać Źródło śledzenia `mySource` i ustawić poziom dla przełącznika źródła o nazwie `sourceSwitch` . Dodano odbiornik śledzenia konsoli, który zapisuje informacje o śledzeniu do konsoli.  
   
 ```xml  
@@ -82,7 +86,7 @@ Określa źródło śledzenia, które inicjuje komunikaty śledzenia.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień śledzenia i debugowania](index.md)
 - [Przełączniki śledzenia](../../../debug-trace-profile/trace-switches.md)

@@ -2,14 +2,15 @@
 title: Ograniczenia wnioskowania
 ms.date: 03/30/2017
 ms.assetid: 78517994-5d57-44f8-9d20-38812977de09
-ms.openlocfilehash: 10347abc5b01edb4ec6fbf97221d44f4bfb88f54
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9d8191be137661200e1a6b84d68328c1202880ca
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784575"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172778"
 ---
 # <a name="inference-limitations"></a>Ograniczenia wnioskowania
+
 Proces wywnioskowania <xref:System.Data.DataSet> schematu z XML może skutkować różnymi schematami w zależności od elementów XML w poszczególnych dokumentach. Rozważmy na przykład następujące dokumenty XML.  
   
  Document1  
@@ -31,9 +32,9 @@ Proces wywnioskowania <xref:System.Data.DataSet> schematu z XML może skutkować
   
  W przypadku "document1" proces wnioskowania tworzy **zestaw danych** o nazwie "DocumentElement" i tabelę o nazwie "element1", ponieważ "element1" jest elementem powtarzającym się.  
   
- **Zestawu** DocumentElement  
+ **Zestaw danych:** DocumentElement  
   
- **Tabele** Element1  
+ **Tabela:** Element1  
   
 |Element1_Text|  
 |--------------------|  
@@ -42,9 +43,9 @@ Proces wywnioskowania <xref:System.Data.DataSet> schematu z XML może skutkować
   
  Jednak w przypadku "Document2" proces wnioskowania tworzy **zestaw danych** o nazwie "NewDataSet" i tabelę o nazwie "DocumentElement". Element "element1" jest wywnioskowany jako kolumna, ponieważ nie ma atrybutów ani elementów podrzędnych.  
   
- **Zestawu** NewDataSet  
+ **Zestaw danych:** NewDataSet  
   
- **Tabele** DocumentElement  
+ **Tabela:** DocumentElement  
   
 |Element1|  
 |--------------|  
@@ -54,7 +55,7 @@ Proces wywnioskowania <xref:System.Data.DataSet> schematu z XML może skutkować
   
  Aby uniknąć niezgodności, które mogą wystąpić podczas generowania schematu z dokumentu XML, zalecamy jawnie określić schemat przy użyciu języka definicji schematu XML (XSD) lub XML-Data zredukowany (XDR) podczas ładowania **zestawu danych** z pliku XML. Aby uzyskać więcej informacji na temat jawnego określania schematu **zestawu danych** ze schematem XML, zobacz [wyprowadzanie relacyjnej struktury zestawu danych ze schematu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wnioskowanie relacyjnej struktury elementu DataSet z pliku XML](inferring-dataset-relational-structure-from-xml.md)
 - [Ładowanie elementu DataSet z pliku XML](loading-a-dataset-from-xml.md)

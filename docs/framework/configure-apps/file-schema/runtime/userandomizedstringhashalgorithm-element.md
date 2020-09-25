@@ -8,14 +8,15 @@ helpviewer_keywords:
 - UseRandomizedStringHashAlgorithm element
 - <UseRandomizedStringHashAlgorithm> element
 ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
-ms.openlocfilehash: a9afa0db516a542b74d08a4c3754a3244abbbea7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 148d55c8b8a63737867c4bfdf3ab118dfdefd6f9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153780"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174098"
 ---
 # <a name="userandomizedstringhashalgorithm-element"></a>\<UseRandomizedStringHashAlgorithm> Element
+
 Określa, czy środowisko uruchomieniowe języka wspólnego oblicza kody skrótów dla ciągów na podstawie poszczególnych domen aplikacji.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Określa, czy środowisko uruchomieniowe języka wspólnego oblicza kody skrót�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,10 +44,11 @@ Określa, czy środowisko uruchomieniowe języka wspólnego oblicza kody skrót�
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|`0`|Środowisko uruchomieniowe języka wspólnego nie oblicza kodów skrótów dla ciągów na podstawie poszczególnych domen aplikacji; pojedynczy algorytm służy do obliczania kodów skrótów ciągów. Domyślnie włączone.|  
+|`0`|Środowisko uruchomieniowe języka wspólnego nie oblicza kodów skrótów dla ciągów na podstawie poszczególnych domen aplikacji; pojedynczy algorytm służy do obliczania kodów skrótów ciągów. Jest to opcja domyślna.|  
 |`1`|Środowisko uruchomieniowe języka wspólnego oblicza kody skrótów dla ciągów na podstawie poszczególnych domen aplikacji. Identyczne ciągi w różnych domenach aplikacji i w różnych procesach będą mieć różne kody skrótów.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,6 +59,7 @@ Określa, czy środowisko uruchomieniowe języka wspólnego oblicza kody skrót�
 |`runtime`|Zawiera informacje dotyczące opcji inicjowania środowiska uruchomieniowego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie <xref:System.StringComparer> Klasa i <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> Metoda używają jednego algorytmu wyznaczania wartości skrótu, który tworzy spójny kod skrótu w różnych domenach aplikacji. Jest to równoznaczne z ustawieniem `enabled` atrybutu `<UseRandomizedStringHashAlgorithm>` elementu na `0` . Jest to algorytm wyznaczania wartości skrótu używany w .NET Framework 4.  
   
  <xref:System.StringComparer>Klasa i <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> Metoda mogą również używać innego algorytmu wyznaczania wartości skrótu, który oblicza kody skrótów dla poszczególnych domen aplikacji. W związku z tym kody skrótów dla równoważnych ciągów różnią się w różnych domenach aplikacji. Jest to funkcja opcjonalna. Aby skorzystać z niego, należy ustawić `enabled` atrybut `<UseRandomizedStringHashAlgorithm>` elementu na `1` .  
@@ -63,6 +67,7 @@ Określa, czy środowisko uruchomieniowe języka wspólnego oblicza kody skrót�
  Wyszukiwanie ciągu w tabeli skrótów jest zazwyczaj operacją O (1). Jednak w przypadku wystąpienia dużej liczby kolizji wyszukiwanie może być operacją O (n<sup>2</sup>). Można użyć `<UseRandomizedStringHashAlgorithm>` elementu konfiguracji, aby wygenerować losowy algorytm wyznaczania wartości skrótu na domenę aplikacji, co z kolei ogranicza liczbę potencjalnych kolizji, szczególnie gdy klucze, z których są obliczane kody skrótów, są oparte na danych wejściowych użytkowników.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zdefiniowano `DisplayString` klasę, która zawiera znak prywatny w postaci ciągu, `s` którego wartością jest "to jest ciąg". Zawiera również `ShowStringHashCode` metodę, która wyświetla wartość ciągu i jego kod skrótu wraz z nazwą domeny aplikacji, w której jest wykonywana metoda.  
   
  [!code-csharp[System.String.GetHashCode#2](../../../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.String.GetHashCode/CS/perdomain.cs#2)]
@@ -93,7 +98,7 @@ String 'This is a string.' in domain 'PerDomain.exe': 5435776D
 String 'This is a string.' in domain 'NewDomain': 75CC8236  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType>
 - <xref:System.String.GetHashCode%2A?displayProperty=nameWithType>

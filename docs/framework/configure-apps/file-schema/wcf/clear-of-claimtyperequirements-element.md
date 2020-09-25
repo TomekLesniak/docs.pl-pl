@@ -2,14 +2,15 @@
 title: <clear><claimTypeRequirements>elementu
 ms.date: 03/30/2017
 ms.assetid: ef42fde7-f292-4610-9111-9fea382c3b5f
-ms.openlocfilehash: 01f101f7d0dd5da6a834a4ffb2c7e09df0e23cd8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: aa94a012da11bcec6fb5fe270ad9f3574f88e6d7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400528"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172908"
 ---
 # <a name="clear-of-claimtyperequirements-element"></a>\<clear>\<claimTypeRequirements>elementu
+
 Określa, że wszystkie typy roszczeń mają być usunięte w poświadczeniu federacyjnym. Dzięki temu zbieranie danych jest puste.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,12 +32,15 @@ Określa, że wszystkie typy roszczeń mają być usunięte w poświadczeniu fed
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -45,7 +49,7 @@ Określa, że wszystkie typy roszczeń mają być usunięte w poświadczeniu fed
 |-------------|-----------------|  
 |[\<claimTypeRequirements>](claimtyperequirements-for-message.md)|Określa kolekcję wymaganych typów roszczeń. Każdy element jest typu <xref:System.ServiceModel.Configuration.ClaimTypeElement> .<br /><br /> W scenariuszu federacyjnym usługi określają wymagania dotyczące poświadczeń przychodzących. Na przykład poświadczenia przychodzące muszą mieć określony zestaw typów roszczeń. Każdy element w tej kolekcji określa typy wymaganych i opcjonalnych oświadczeń, które powinny być wyświetlane w federacyjnym poświadczeniu.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>
 - <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: a6a388f837d00d63a39212843c3fa88b28482b26
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 050a791736e90b5daf46fd272197ca21a220afb0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545810"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172622"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Generowanie biblioteki klienta usługi danych (Usługi danych programu WCF)
+
 Usługa danych, która implementuje protokół Open Data Protocol (OData), może zwrócić dokument metadanych usługi, który opisuje model danych uwidoczniony przez kanał informacyjny OData. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą dokumentu metadanych usługi w artykule dotyczącym protokołu [OData: przegląd](https://www.odata.org/documentation/odata-version-2-0/overview/) . Możesz użyć okna dialogowego **Dodaj odwołanie do usługi** w programie Visual Studio, aby dodać odwołanie do usługi opartej na protokole OData. W przypadku użycia tego narzędzia do dodania odwołania do metadanych zwracanych przez źródło danych OData w projekcie klienta wykonywane są następujące akcje:  
   
 - Żąda dokumentu metadanych usługi z usługi danych i interpretuje zwrócone metadane.  
@@ -32,6 +33,7 @@ Usługa danych, która implementuje protokół Open Data Protocol (OData), może
  Klasy usługi danych klienta można również wygenerować przy użyciu narzędzia [DataSvcUtil.exe](wcf-data-service-client-utility-datasvcutil-exe.md) w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [jak: ręczne generowanie klas usługi danych klienta](how-to-manually-generate-client-data-service-classes-wcf-data-services.md).  
   
 ## <a name="client-data-type-mapping"></a>Mapowanie typu danych klienta  
+
  W przypadku korzystania z okna dialogowego **Dodaj odwołanie do usługi** w programie Visual Studio lub `DataSvcUtil.exe` Narzędzia do generowania klas danych klienta, które są oparte na strumieniowym źródle danych OData, typy danych .NET Framework są mapowane na typy pierwotne z modelu dane w następujący sposób:  
   
 |Typ modelu danych|Typ danych .NET Framework|  
@@ -52,7 +54,7 @@ Usługa danych, która implementuje protokół Open Data Protocol (OData), może
   
  Aby uzyskać więcej informacji, zobacz sekcję typy danych pierwotnych w artykule dotyczącym usługi [OData: przegląd](https://www.odata.org/documentation/odata-version-2-0/overview/) .
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Biblioteka klienta usług danych WCF](wcf-data-services-client-library.md)
 - [Szybki start](quickstart-wcf-data-services.md)

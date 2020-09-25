@@ -7,14 +7,15 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 392b69633e596f0682fdfb4a5875f46755203ff7
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 61a00e766b0f975691b9f2a7c7561bb4f1d33c02
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474894"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174306"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizatory (Przewodnik programowania w języku C#)
+
 Finalizatory (nazywane również **destruktorami**) służą do wykonywania wszelkich niezbędnych ostatecznych oczyszczeniów, gdy wystąpienie klasy jest zbierane przez moduł wyrzucania elementów bezużytecznych.  
   
 ## <a name="remarks"></a>Uwagi  
@@ -65,9 +66,11 @@ protected override void Finalize()
  Istnieje możliwość wymuszenia wyrzucania elementów bezużytecznych przez wywołanie <xref:System.GC.Collect%2A> , ale większość czasu, należy unikać tego wywołania, ponieważ może to spowodować problemy z wydajnością.  
   
 ## <a name="using-finalizers-to-release-resources"></a>Korzystanie z finalizatorów do zwolnienia zasobów  
+
  Ogólnie rzecz biorąc, język C# nie wymaga jak dużo zarządzania pamięcią w ramach dewelopera jako języków, które nie są przeznaczone do środowiska uruchomieniowego z wyrzucaniem elementów bezużytecznych. Dzieje się tak, ponieważ moduł wyrzucania elementów bezużytecznych platformy .NET niejawnie zarządza alokacją i ilością pamięci dla obiektów. Jeśli jednak aplikacja hermetyzuje niezarządzane zasoby, takie jak Windows, pliki i połączenia sieciowe, należy użyć finalizatorów do zwolnienia tych zasobów. Gdy obiekt kwalifikuje się do finalizacji, Moduł wyrzucania elementów bezużytecznych uruchamia `Finalize` metodę obiektu.
   
 ## <a name="explicit-release-of-resources"></a>Jawne wydanie zasobów  
+
  Jeśli aplikacja korzysta z kosztownych zasobów zewnętrznych, zalecamy również zapewnienie jawnie zwolnienia zasobu, zanim moduł wyrzucania elementów bezużytecznych zwolni obiekt. Aby zwolnić zasób, zaimplementuj `Dispose` metodę z <xref:System.IDisposable> interfejsu, który wykonuje niezbędne czyszczenie dla obiektu. Może to znacząco poprawić wydajność aplikacji. Nawet w przypadku tej jawnej kontroli nad zasobami finalizator jest środkiem do czyszczenia zasobów, jeśli wywołanie `Dispose` metody zakończy się niepowodzeniem.  
   
  Więcej informacji o czyszczeniu zasobów znajduje się w następujących artykułach:  
@@ -79,6 +82,7 @@ protected override void Finalize()
 - [using, instrukcja](../../language-reference/keywords/using-statement.md)  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład tworzy trzy klasy, które tworzą łańcuch dziedziczenia. Klasa `First` jest klasą bazową, pochodzi `Second` od `First` , i pochodzi `Third` od `Second` . Wszystkie trzy mają finalizatory. W programie `Main` tworzone jest wystąpienie klasy najczęściej pochodnej. Po uruchomieniu programu należy zauważyć, że finalizatory dla trzech klas są wywoływane automatycznie i w kolejności, od najbardziej pochodnego do najmniej pochodnego.  
   
  [!code-csharp[csProgGuideObjects#85](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#85)]  
@@ -87,7 +91,7 @@ protected override void Finalize()
 
 Aby uzyskać więcej informacji, zobacz sekcję [destruktory](~/_csharplang/spec/classes.md#destructors) w [specyfikacji języka C#](/dotnet/csharp/language-reference/language-specification/introduction).
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IDisposable>
 - [Przewodnik programowania w języku C#](../index.md)

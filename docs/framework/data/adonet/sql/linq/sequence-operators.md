@@ -2,21 +2,22 @@
 title: Operatory sekwencji
 ms.date: 03/30/2017
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
-ms.openlocfilehash: 4feca030d3c398f4286fe9d126cae884afe7945b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a2394ed57335431fe0246f66219392af5cc0e6b1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792685"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173448"
 ---
 # <a name="sequence-operators"></a>Operatory sekwencji
-Ogólnie mówiąc, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] program nie obsługuje operatorów sekwencji, które mają co najmniej jedną z następujących jakości:  
+
+Ogólnie mówiąc, program [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nie obsługuje operatorów sekwencji, które mają co najmniej jedną z następujących jakości:  
   
 - Wykonaj wyrażenie lambda z parametrem index.  
   
-- Polegaj na właściwościach sekwencyjnych wierszy, takich <xref:System.Linq.Queryable.TakeWhile%2A>jak.  
+- Polegaj na właściwościach sekwencyjnych wierszy, takich jak <xref:System.Linq.Queryable.TakeWhile%2A> .  
   
-- Polegaj na dowolnej implementacji środowiska CLR, takiej <xref:System.Collections.Generic.IComparer%601>jak.  
+- Polegaj na dowolnej implementacji środowiska CLR, takiej jak <xref:System.Collections.Generic.IComparer%601> .  
   
 |Przykłady nieobsługiwanych|  
 |-----------------------------|  
@@ -43,8 +44,9 @@ Ogólnie mówiąc, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-m
 |<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
 ## <a name="differences-from-net"></a>Różnice od platformy .NET  
- Wszystkie obsługiwane operatory sekwencji działają zgodnie z oczekiwaniami w środowisku uruchomieniowym języka wspólnego (CLR) `Average`, z wyjątkiem. `Average`Zwraca wartość tego samego typu co średnia, a w środowisku CLR `Average` zawsze zwraca <xref:System.Double> albo lub <xref:System.Decimal>. Jeśli argument źródłowy jest jawnie rzutowany na wartość typu Double/Decimal lub przerzutowanie selektora na wartość podwójną/dziesiętną, wynikowa SQL również będzie miała taką konwersję, a wynik będzie zgodnie z oczekiwaniami.  
+
+ Wszystkie obsługiwane operatory sekwencji działają zgodnie z oczekiwaniami w środowisku uruchomieniowym języka wspólnego (CLR), z wyjątkiem `Average` . `Average` Zwraca wartość tego samego typu co średnia, a w środowisku CLR `Average` zawsze zwraca albo <xref:System.Double> lub <xref:System.Decimal> . Jeśli argument źródłowy jest jawnie rzutowany na wartość typu Double/Decimal lub przerzutowanie selektora na wartość podwójną/dziesiętną, wynikowa SQL również będzie miała taką konwersję, a wynik będzie zgodnie z oczekiwaniami.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Typy danych i funkcje](data-types-and-functions.md)

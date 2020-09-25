@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <compilers> element
 - compilers element
 ms.assetid: d40fba59-98f9-4783-ae0c-2ebea27ce77b
-ms.openlocfilehash: 09b1efe321c39402c9280eda0e9def9112462470
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1aa096e185ae7f5957f173c03e221a31f30d5200
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155417"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172947"
 ---
 # <a name="compilers-element"></a>\<compilers> Element
+
 Kontener dla elementów konfiguracji kompilatora; zawiera zero lub więcej [\<compiler>](compiler-element.md) elementów.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,33 +33,38 @@ Kontener dla elementów konfiguracji kompilatora; zawiera zero lub więcej [\<co
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
   
 |Element|Opis|  
 |-------------|-----------------|  
-|[\<compiler>Postaci](compiler-element.md)|Określa atrybuty konfiguracji kompilatora dla dostawcy języka.|  
+|[\<compiler> Postaci](compiler-element.md)|Określa atrybuty konfiguracji kompilatora dla dostawcy języka.|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
   
 |Element|Opis|  
 |-------------|-----------------|  
-|[\<configuration>Postaci](../configuration-element.md)|Element główny w każdym pliku konfiguracji używanym przez środowisko uruchomieniowe języka wspólnego i aplikacje programu .NET Framework.|  
-|[\<system.codedom>Postaci](system-codedom-element.md)|Określa ustawienia konfiguracji kompilatora dla dostępnych dostawców języka.|  
+|[\<configuration> Postaci](../configuration-element.md)|Element główny w każdym pliku konfiguracji używanym przez środowisko uruchomieniowe języka wspólnego i aplikacje programu .NET Framework.|  
+|[\<system.codedom> Postaci](system-codedom-element.md)|Określa ustawienia konfiguracji kompilatora dla dostępnych dostawców języka.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  [\<compilers>](compilers-element.md)Element zawiera ustawienia konfiguracji kompilatora dla dostawców języka na komputerze. Każdy [\<compiler>](compiler-element.md) element określa atrybuty konfiguracji kompilatora dla określonego dostawcy języka.  
   
- .NET Framework definiuje początkowe ustawienia kompilatora i dostawcy języka w pliku konfiguracji komputera (Machine. config). Deweloperzy i dostawcy kompilatora mogą dodać ustawienia konfiguracji dla nowej <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementacji. Użyj <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> metody, aby programowo wyliczyć dostawcę języka i ustawienia konfiguracji kompilatora na komputerze.  
+ .NET Framework definiuje wstępne ustawienia kompilatora i dostawcy języka w pliku konfiguracji komputera (Machine.config). Deweloperzy i dostawcy kompilatora mogą dodać ustawienia konfiguracji dla nowej <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementacji. Użyj <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> metody, aby programowo wyliczyć dostawcę języka i ustawienia konfiguracji kompilatora na komputerze.  
   
 ## <a name="configuration-file"></a>Plik konfiguracji  
+
  Ten element może być używany w pliku konfiguracji komputera i w pliku konfiguracji aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje typowy element konfiguracji kompilatora.  
   
 ```xml  
@@ -77,10 +83,10 @@ Kontener dla elementów konfiguracji kompilatora; zawiera zero lub więcej [\<co
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
 - [Schemat pliku konfiguracji](../index.md)
 - [Schemat ustawień kompilatora i dostawcy języka](index.md)
-- [\<compiler>Postaci](compiler-element.md)
+- [\<compiler> Postaci](compiler-element.md)

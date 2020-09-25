@@ -2,28 +2,29 @@
 title: Mapowanie ograniczeń key schematu XML (XSD) na ograniczenia elementu DataSet
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: 5ebf333b065157fa9497cc1471a45698663638e5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b55b232faa01bf36788276caaf8bc2e97dddf697
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150938"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172791"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapowanie ograniczeń key schematu XML (XSD) na ograniczenia elementu DataSet
-W schemacie można określić ograniczenie klucza dla elementu lub atrybutu przy użyciu elementu **klucza.** Element lub atrybut, na którym określono ograniczenie klucza musi mieć unikatowe wartości w każdym wystąpieniu schematu i nie może mieć wartości null.  
+
+W schemacie można określić ograniczenie klucza dla elementu lub atrybutu przy użyciu elementu **klucza** . Element lub atrybut, w którym określono ograniczenie klucza, muszą mieć unikatowe wartości w dowolnym wystąpieniu schematu i nie może mieć wartości null.  
   
- Ograniczenie klucza jest podobne do ograniczenia unikatowego, z tą różnicą, że kolumna, w której zdefiniowano ograniczenie klucza, nie może mieć wartości null.  
+ Ograniczenie klucza jest podobne do ograniczenia UNIQUE, z tą różnicą, że kolumna, w której zdefiniowano ograniczenie klucza nie może mieć wartości null.  
   
- W poniższej tabeli przedstawiono atrybuty **msdata,** które można określić w **elemencie klucza.**  
+ Poniższa tabela zawiera opis atrybutów **msdata** , które można określić w elemencie **Key** .  
   
 |Nazwa atrybutu|Opis|  
 |--------------------|-----------------|  
-|**msdata:Nazwa więzów**|Jeśli ten atrybut jest określony, jego wartość jest używana jako nazwa ograniczenia. W przeciwnym razie atrybut **name** zawiera wartość nazwy ograniczenia.|  
-|**msdata:Klucz podstawowy**|Jeśli `PrimaryKey="true"` jest obecny, **IsPrimaryKey** constraint właściwość jest ustawiona na **true,** co czyni go kluczem podstawowym. Właściwość kolumny **AllowDBNull** jest ustawiona na **false,** ponieważ klucze podstawowe nie mogą mieć wartości null.|  
+|**msdata: ConstraintName**|Jeśli ten atrybut jest określony, jego wartość jest używana jako nazwa ograniczenia. W przeciwnym razie atrybut **name** zawiera wartość nazwy ograniczenia.|  
+|**msdata: PrimaryKey**|Jeśli `PrimaryKey="true"` jest obecny, właściwość ograniczenia **IsPrimaryKey** jest ustawiona na **wartość true**, co oznacza, że jest kluczem podstawowym. Właściwość Column **AllowDBNull** ma wartość **false**, ponieważ klucze podstawowe nie mogą mieć wartości null.|  
   
- Podczas konwertowania schematu, w którym określono ograniczenie klucza, proces mapowania tworzy unikatowe ograniczenie w tabeli z właściwość **Kolumny AllowDBNull** **ustawiona** na false dla każdej kolumny w ograniczeniu. **Właściwość IsPrimaryKey** unikatowego ograniczenia jest również ustawiona `msdata:PrimaryKey="true"` na **false,** chyba że określono w elemencie **klucza.** Jest to identyczne z unikatowym ograniczeniem w schemacie, w którym `PrimaryKey="true"`.  
+ W przypadku konwertowania schematu, w którym jest określone ograniczenie klucza, proces mapowania tworzy unikatowe ograniczenie dla tabeli z właściwością Column **AllowDBNull** ustawioną na **wartość false** dla każdej kolumny ograniczenia. Właściwość **IsPrimaryKey** ograniczenia UNIQUE jest również ustawiona na **wartość false** , chyba że określono `msdata:PrimaryKey="true"` element **Key** . Jest to identyczne z ograniczeniami unikatowymi w schemacie, w którym `PrimaryKey="true"` .  
   
- W poniższym przykładzie schematu **element klucza** określa ograniczenie klucza na **CustomerID** elementu.  
+ W poniższym przykładzie schematu element **klucza** określa ograniczenie klucza elementu **CustomerID** .  
   
 ```xml  
 <xs:schema id="cod"  
@@ -54,13 +55,13 @@ W schemacie można określić ograniczenie klucza dla elementu lub atrybutu przy
 </xs:schema>
 ```  
   
- Element **klucza** określa, że wartości **customerID** element podrzędny **CustomerID** elementu Customers element musi mieć unikatowe wartości i nie może mieć wartości null. Podczas tłumaczenia schematu języka XSD (XSD) schemat definicji schematu schematu schematu schematu xsd proces mapowania tworzy następującą tabelę:  
+ Element **klucza** określa, że wartości elementu podrzędnego **IDKlienta** elementu **Customers** muszą mieć unikatowe wartości i nie może zawierać wartości null. W przypadku tłumaczenia schematu języka definicji schematu XML (XSD) proces mapowania tworzy poniższą tabelę:  
   
 ```text  
 Customers(CustomerID, CompanyName, Phone)  
 ```  
   
- Mapowanie schematu XML tworzy również **uniqueconstraint** w kolumnie **CustomerID,** jak pokazano w poniższej . <xref:System.Data.DataSet> (Dla uproszczenia wyświetlane są tylko odpowiednie właściwości).  
+ Mapowanie schematu XML tworzy również **UniqueConstraint** w kolumnie **IDKlienta** , jak pokazano w poniższej tabeli <xref:System.Data.DataSet> . (Dla uproszczenia są wyświetlane tylko odpowiednie właściwości.)  
   
 ```text  
       DataSetName: MyDataSet  
@@ -74,9 +75,9 @@ TableName: customers
       IsPrimaryKey: True  
 ```  
   
- W **DataSet,** który jest generowany, **IsPrimaryKey** właściwość **UniqueConstraint** jest ustawiona `msdata:PrimaryKey="true"` na **true,** ponieważ schemat określa w **kluczowym** elemencie.  
+ W wygenerowanym **zestawie danych** Właściwość **IsPrimaryKey** elementu **UniqueConstraint** ma **wartość true** , ponieważ schemat określa `msdata:PrimaryKey="true"` element **Key** .  
   
- Wartość właściwości **Nazwana ograniczeń** **uniqueconstraint** w **zestawie danych** jest wartością atrybutu **msdata:ConstraintName** określoną w **kluczowym** elemencie w schemacie.  
+ Wartość właściwości **ConstraintName** **UniqueConstraint** w **zestawie danych** jest wartością atrybutu **msdata: ConstraintName** określonego w elemencie **Key** w schemacie.  
   
 ## <a name="see-also"></a>Zobacz też
 

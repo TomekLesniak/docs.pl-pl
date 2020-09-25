@@ -12,14 +12,15 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: 3b7a1c6e92d2c60ce289f29044774c3aa42ca84f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 74c9a23cd1b3a691063c2976a593c9b3a63ca618
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125881"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173272"
 ---
 # <a name="-define-c-compiler-options"></a>-define (opcje kompilatora C#)
+
 Opcja **-define** definiuje `name` jako symbol we wszystkich plikach kodu źródłowego tego programu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,17 +30,19 @@ Opcja **-define** definiuje `name` jako symbol we wszystkich plikach kodu źród
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `name`, `name2`  
  Nazwa co najmniej jednego symbolu, który ma zostać zdefiniowany.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Opcja **-define** ma ten sam skutek jak użycie dyrektywy preprocesora [#define](../preprocessor-directives/preprocessor-define.md) , z wyjątkiem tego, że opcja kompilatora obowiązuje dla wszystkich plików w projekcie. Symbol pozostaje zdefiniowany w pliku źródłowym do momentu usunięcia definicji [#undef](../preprocessor-directives/preprocessor-undef.md) dyrektywy w pliku źródłowym. W przypadku użycia opcji-define `#undef` dyrektywa w jednym pliku nie ma wpływu na inne pliki kodu źródłowego w projekcie.  
   
  Możesz użyć symboli utworzonych przez tę opcję z [#if](../preprocessor-directives/preprocessor-if.md), [#else](../preprocessor-directives/preprocessor-else.md), [#elif](../preprocessor-directives/preprocessor-elif.md)i [#endif](../preprocessor-directives/preprocessor-endif.md) , aby warunkowo kompilować pliki źródłowe.  
   
  **-d** jest krótką formą **-define**.  
   
- Można zdefiniować wiele symboli z **-Definiuj** przy użyciu średnika lub przecinka do oddzielenia nazw symboli. Przykład:  
+ Można zdefiniować wiele symboli z **-Definiuj** przy użyciu średnika lub przecinka do oddzielenia nazw symboli. Na przykład:  
   
 ```console  
 -define:DEBUG;TUESDAY  

@@ -2,14 +2,15 @@
 title: <service>
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-ms.openlocfilehash: c12f57d68de870123d92c8a101e2999c24bb988f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: dcc32f5aa055942408a3f01d37b5aa27ac0f51ee
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855018"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173773"
 ---
 # \<service>
+
 `service`Element zawiera ustawienia dla usługi Windows Communication Foundation (WCF). Zawiera również punkty końcowe, które uwidaczniają usługę.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,6 +27,7 @@ ms.locfileid: "70855018"
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -33,7 +35,7 @@ ms.locfileid: "70855018"
 |Atrybut|Opis|  
 |---------------|-----------------|  
 |behaviorConfiguration|Ciąg zawierający nazwę zachowania zachowania do użycia w celu utworzenia wystąpienia usługi. Nazwa zachowania musi znajdować się w zakresie, w którym jest zdefiniowana usługa. Wartością domyślną jest ciąg pusty.|  
-|name|Wymagany atrybut ciągu, który określa typ usługi do wystąpienia. To ustawienie musi być równe prawidłowemu typowi. Format powinien być`Namespace.Class.`|  
+|name|Wymagany atrybut ciągu, który określa typ usługi do wystąpienia. To ustawienie musi być równe prawidłowemu typowi. Format powinien być `Namespace.Class.`|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
   
@@ -49,6 +51,7 @@ ms.locfileid: "70855018"
 |[\<services>](services.md)|Element główny wszystkich elementów konfiguracji WCF.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Usługi są zdefiniowane w `services` sekcji pliku konfiguracji. Zestaw może zawierać dowolną liczbę usług. Każda usługa ma swoją własną `service` sekcję konfiguracyjną. Ta sekcja i jej zawartość definiują kontrakt usługi, zachowanie i punkty końcowe określonej usługi.  
   
  `behaviorConfiguration`Element jest również opcjonalny. Identyfikuje zachowanie wykorzystywane przez usługę. Zachowanie określone w tym atrybucie musi łączyć się z zachowaniem w zakresie w tym samym pliku konfiguracyjnym.  
@@ -56,6 +59,7 @@ ms.locfileid: "70855018"
  Każda usługa ujawnia jeden lub więcej punktów końcowych, które mają własne adresy i powiązania. Wszystkie powiązania używane w pliku konfiguracji muszą być zdefiniowane w zakresie pliku. Powiązanie jest połączone z punktami końcowymi przez kombinację atrybutów `name` i `bindingConfiguration` . Ten `name` atrybut opisuje sekcję, w której jest zdefiniowane powiązanie. Ten `bindingConfiguration` atrybut określa, która konfiguracja w sekcji powiązania jest używana. Sekcja powiązania może definiować kilka konfiguracji.  
   
 ## <a name="example"></a>Przykład  
+
  Jest to przykład konfiguracji usługi.  
   
 ```xml  
@@ -69,7 +73,7 @@ ms.locfileid: "70855018"
 </service>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ServiceElement>
 - [Konfigurowanie usług](../../../wcf/configuring-services.md)

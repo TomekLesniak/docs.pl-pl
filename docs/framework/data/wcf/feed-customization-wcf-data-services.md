@@ -10,14 +10,15 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: 495ce51a70e8738746d62eb032d23cc0bbcd8083
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bf25737d98a880ac720318de18b687b4df5b0708
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545888"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172635"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Dostosowywanie kanału informacyjnego (Usługi danych programu WCF)
+
 Usługi danych programu WCF używa protokołu Open Data Protocol (OData) do udostępniania danych jako źródła strumieniowego. Usługa OData obsługuje formaty Atom i JavaScript Object Notation (JSON) dla strumieniowych źródeł danych. Korzystając z kanału informacyjnego Atom, usługa OData zapewnia standardową metodę serializowania danych, takich jak jednostki i relacje, do formatu XML, który może zostać uwzględniony w treści wiadomości HTTP. Usługa OData definiuje domyślne mapowanie właściwości jednostki między danymi zawartymi w jednostkach i elementach Atom. Aby uzyskać więcej informacji, zobacz [Format OData: Atom](https://www.odata.org/documentation/odata-version-2-0/atom-format/).  
   
  Może istnieć scenariusz aplikacji, który wymaga, aby dane właściwości zwrócone przez usługę danych były serializowane w sposób dostosowany, a nie w standardowym formacie kanału informacyjnego. Za pomocą protokołu OData można dostosować serializację w strumieniowym źródle danych, tak aby właściwości jednostki mogły być mapowane do nieużywanych elementów i atrybutów wpisu lub do niestandardowych elementów wpisu w strumieniu.  
@@ -31,6 +32,7 @@ Usługi danych programu WCF używa protokołu Open Data Protocol (OData) do udos
 > Podczas definiowania niestandardowych kanałów informacyjnych należy zagwarantować, że wszystkie właściwości jednostki, które mają zdefiniowane mapowania niestandardowe, są uwzględniane w projekcji. Gdy właściwość mapowanego obiektu nie jest uwzględniona w projekcji, może dojść do utraty danych. Aby uzyskać więcej informacji, zobacz [projekcje zapytań](query-projections-wcf-data-services.md).  
   
 ## <a name="customizing-feeds-with-the-entity-framework-provider"></a>Dostosowywanie kanałów informacyjnych za pomocą dostawcy Entity Framework  
+
  Model danych używany z dostawcą Entity Framework jest reprezentowany jako XML w pliku edmx. W takim przypadku atrybuty definiujące niestandardowe źródła są dodawane do `EntityType` `Property` elementów i, które reprezentują typy jednostek i właściwości w modelu danych. Te atrybuty dostosowania kanału informacyjnego nie są zdefiniowane w tabeli [ \[ MC-CSDL \] : Format pliku definicji schematu koncepcyjnego](/openspecs/windows_protocols/mc-csdl/c03ad8c3-e8b7-4306-af96-a9e52bb3df12), który jest formatem używanym przez dostawcę Entity Framework do definiowania modelu danych. W związku z tym należy zadeklarować atrybuty dostosowania kanału informacyjnego w określonej przestrzeni nazw schematu, która jest zdefiniowana jako `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"` . Poniższy fragment kodu XML przedstawia atrybuty dostosowania źródła zastosowane do `Property` elementów `Products` typu jednostki, które definiują `ProductName` właściwości, `ReorderLevel` i `UnitsInStock` .  
   
  [!code-xml[Astoria Custom Feeds#EdmFeedAttributes](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/northwind.csdl#edmfeedattributes)]  
@@ -45,6 +47,7 @@ Usługi danych programu WCF używa protokołu Open Data Protocol (OData) do udos
 > Ponieważ rozszerzenia do modelu danych nie są obsługiwane przez Entity Designer, należy ręcznie zmodyfikować plik XML zawierający model danych. Aby uzyskać więcej informacji na temat pliku edmx, który jest generowany przez narzędzia Entity Data Model, zobacz [plik. edmx Entity Framework — Omówienie](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).  
   
 ### <a name="custom-feed-attributes"></a>Atrybuty niestandardowego kanału informacyjnego  
+
  W poniższej tabeli przedstawiono atrybuty XML, które dostosowują źródła danych, które można dodać do języka definicji schematu koncepcyjnego (CSDL) definiującego model. Te atrybuty są równoważne właściwościom <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> używanym z dostawcą odbicia.  
   
 |Nazwa atrybutu|Opis|  
@@ -60,6 +63,7 @@ Usługi danych programu WCF używa protokołu Open Data Protocol (OData) do udos
 > W nazwach atrybutów i wartościach jest rozróżniana wielkość liter. Atrybuty mogą być stosowane do `EntityType` elementu lub do jednego lub kilku `Property` elementów, ale nie do obu.  
   
 ## <a name="customizing-feeds-with-the-reflection-provider"></a>Dostosowywanie kanałów informacyjnych za pomocą dostawcy odbicia  
+
  Aby dostosować kanały informacyjne dla modelu danych, który został zaimplementowany przy użyciu dostawcy odbicia, Dodaj co najmniej jedno wystąpienie <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> atrybutu do klas, które reprezentują typy jednostek w modelu danych. Właściwości <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> klasy odpowiadają atrybutom dostosowania kanału informacyjnego, które są opisane w poprzedniej sekcji. Poniżej znajduje się przykład deklaracji `Order` typu z niestandardowym mapowaniem źródła danych zdefiniowanym dla obu właściwości.  
   
 > [!NOTE]
@@ -75,24 +79,28 @@ Usługi danych programu WCF używa protokołu Open Data Protocol (OData) do udos
  Aby uzyskać więcej informacji, zobacz [How to: Dostosowywanie kanałów informacyjnych za pomocą dostawcy odbicia](how-to-customize-feeds-with-the-reflection-provider-wcf-data-services.md).  
   
 ## <a name="customizing-feeds-with-a-custom-data-service-provider"></a>Dostosowywanie kanałów informacyjnych za pomocą niestandardowego dostawcy usługi danych  
+
  Dostosowanie kanału informacyjnego dla modelu danych zdefiniowanego za pomocą niestandardowego dostawcy usługi danych jest zdefiniowane dla typu zasobu przez wywołanie elementu <xref:System.Data.Services.Providers.ResourceType.AddEntityPropertyMappingAttribute%2A> <xref:System.Data.Services.Providers.ResourceType> , który reprezentuje typ jednostki w modelu danych. Aby uzyskać więcej informacji, zobacz [niestandardowe dostawcy usług danych](custom-data-service-providers-wcf-data-services.md).  
   
 ## <a name="consuming-custom-feeds"></a>Zużywanie niestandardowych kanałów informacyjnych  
+
  Gdy aplikacja bezpośrednio zużywa strumieniowe źródło danych OData, musi być w stanie przetwarzać wszelkie niestandardowe elementy i atrybuty w zwracanym źródle danych. W przypadku zaimplementowania niestandardowych kanałów informacyjnych w modelu danych, niezależnie od dostawcy usługi danych, `$metadata` punkt końcowy zwraca niestandardowe informacje o źródle jako atrybuty niestandardowego kanału informacyjnego w CSDL zwróconym przez usługę danych. W przypadku wygenerowania klas usługi danych klienta przy użyciu okna dialogowego **Dodaj odwołanie do usługi** lub narzędzia [datasvcutil.exe](wcf-data-service-client-utility-datasvcutil-exe.md) , niestandardowe atrybuty kanału informacyjnego są używane do zagwarantowania, że żądania i odpowiedzi do usługi danych są prawidłowo obsługiwane.  
   
 ## <a name="feed-customization-considerations"></a>Zagadnienia dotyczące dostosowywania kanału informacyjnego  
+
  Podczas definiowania mapowań niestandardowych kanałów informacyjnych należy wziąć pod uwagę następujące kwestie.  
   
 - Klient Usługi danych programu WCF traktuje zmapowane elementy w źródle danych jako puste, gdy zawierają tylko biały znak. W związku z tym mapowane elementy, które zawierają tylko biały znak, nie są w tym samym odstępie dostępne na kliencie. Aby zachować ten biały znak na kliencie, należy ustawić wartość `KeepInContext` na na `true` w atrybucie mapowanie źródła strumieniowego.  
   
 ## <a name="versioning-requirements"></a>Wymagania dotyczące wersji  
+
  Dostosowanie kanału informacyjnego ma następujące wymagania dotyczące wersji protokołu OData:  
   
 - Dostosowanie kanału informacyjnego wymaga, aby usługa klienta i danych obsługiwały wersję 2,0 protokołu OData i nowsze wersje.  
   
  Aby uzyskać więcej informacji, zobacz [przechowywanie wersji usługi danych](data-service-versioning-wcf-data-services.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dostawca odbicia](reflection-provider-wcf-data-services.md)
 - [Dostawca programu Entity Framework](entity-framework-provider-wcf-data-services.md)

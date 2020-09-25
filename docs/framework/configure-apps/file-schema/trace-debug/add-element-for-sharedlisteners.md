@@ -8,15 +8,16 @@ helpviewer_keywords:
 - <add> element for <sharedListeners>
 - add element for <sharedListeners>
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
-ms.openlocfilehash: 5588892ec75a791eda1eb043936c0af95e79354e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f0ede5f9dc19e9589afc888e7fcd01785bc1840c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153610"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174033"
 ---
 # <a name="add-element-for-sharedlisteners"></a>\<add>, element dla \<sharedListeners>
-Dodaje odbiornik do `sharedListeners` kolekcji. `sharedListeners`jest kolekcją odbiorników, do których dowolnych [\<source>](source-element.md) lub [\<trace>](trace-element.md) mogą się odwoływać.  Domyślnie odbiorniki w `sharedListeners` kolekcji nie są umieszczane w `Listeners` kolekcji. Muszą być dodawane przez nazwę do [\<source>](source-element.md) lub [\<trace>](trace-element.md) . Nie można uzyskać odbiorników w `sharedListeners` kolekcji w kodzie w czasie wykonywania.  
+
+Dodaje odbiornik do `sharedListeners` kolekcji. `sharedListeners` jest kolekcją odbiorników, do których dowolnych [\<source>](source-element.md) lub [\<trace>](trace-element.md) mogą się odwoływać.  Domyślnie odbiorniki w `sharedListeners` kolekcji nie są umieszczane w `Listeners` kolekcji. Muszą być dodawane przez nazwę do [\<source>](source-element.md) lub [\<trace>](trace-element.md) . Nie można uzyskać odbiorników w `sharedListeners` kolekcji w kodzie w czasie wykonywania.  
 
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
@@ -34,6 +35,7 @@ Dodaje odbiornik do `sharedListeners` kolekcji. `sharedListeners`jest kolekcją 
 ```
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -60,6 +62,7 @@ Dodaje odbiornik do `sharedListeners` kolekcji. `sharedListeners`jest kolekcją 
 |`sharedListeners`|Kolekcja detektorów, które mogą odwoływać się do każdego elementu źródłowego lub śledzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Klasy odbiornika dostarczane z .NET Framework pochodzą od <xref:System.Diagnostics.TraceListener> klasy. Wartość `name` atrybutu służy do dodawania udostępnionego odbiornika do `Listeners` kolekcji dla śladu lub źródła śledzenia. Wartość `initializeData` atrybutu zależy od typu tworzonego odbiornika. Nie wszystkie detektory śledzenia wymagają określenia `initializeData` .  
   
 > [!NOTE]
@@ -77,10 +80,12 @@ Dodaje odbiornik do `sharedListeners` kolekcji. `sharedListeners`jest kolekcją 
 |<xref:System.Diagnostics.XmlWriterTraceListener>|Nazwa pliku, w którym zapisuje dane <xref:System.Diagnostics.XmlWriterTraceListener> .|  
   
 ## <a name="configuration-file"></a>Plik konfiguracji  
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład pokazuje, jak za pomocą `<add>` elementów dodać <xref:System.Diagnostics.TextWriterTraceListener> `textListener` do `sharedListeners` kolekcji.   `textListener`jest dodawany przez nazwę do `Listeners` kolekcji dla źródła śledzenia `TraceSourceApp` . `textListener`Odbiornik zapisuje dane wyjściowe śledzenia do pliku listen. log.  
+
+ Poniższy przykład pokazuje, jak za pomocą `<add>` elementów dodać <xref:System.Diagnostics.TextWriterTraceListener> `textListener` do `sharedListeners` kolekcji.   `textListener` jest dodawany przez nazwę do `Listeners` kolekcji dla źródła śledzenia `TraceSourceApp` . `textListener`Odbiornik zapisuje dane wyjściowe śledzenia do pliku listen. log.  
   
 ```xml  
 <configuration>  
@@ -108,7 +113,7 @@ Dodaje odbiornik do `sharedListeners` kolekcji. `sharedListeners`jest kolekcją 
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TraceListener>
