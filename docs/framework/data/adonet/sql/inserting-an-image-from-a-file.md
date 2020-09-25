@@ -5,20 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-ms.openlocfilehash: 94ec554ca2dc5ed4eb6792b9b42ae6f1b856f51e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e70576637d44e874532aa06da4fe94115ac8ed9c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148611"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194586"
 ---
 # <a name="inserting-an-image-from-a-file"></a>Wstawianie obrazu z pliku
-Duży obiekt binarny (BLOB) w bazie danych można zapisać jako dane binarne lub znakowe, w zależności od typu pola w źródle danych. OBIEKT BLOB to termin ogólny, `text` `ntext`który `image` odwołuje się do , i typów danych, które zazwyczaj zawierają dokumenty i obrazy.  
+
+Można napisać obiekt binarny (BLOB) do bazy danych jako dane binarne lub znakowe, w zależności od typu pola w źródle danych. Obiekt BLOB to ogólny termin, który odwołuje się do `text` `ntext` typów danych,, i `image` , które zwykle zawierają dokumenty i obrazy.  
   
- Aby zapisać wartość obiektu BLOB w bazie danych, należy wydać odpowiednią instrukcję INSERT lub UPDATE i przekazać wartość obiektu BLOB jako parametr wejściowy (zobacz [Konfigurowanie parametrów i typów danych parametrów](../configuring-parameters-and-parameter-data-types.md)). Jeśli obiekt BLOB jest przechowywany jako tekst, na przykład pole programu SQL Server, `text` można przekazać obiekt BLOB jako parametr ciągu. Jeśli obiekt BLOB jest przechowywany w formacie `image` binarnym, takim jak `byte` pole programu SQL Server, można przekazać tablicę typu jako parametr binarny.  
+ Aby zapisać wartość obiektu BLOB do bazy danych, należy wydać odpowiednią instrukcję INSERT lub UPDATE i przekazać wartość obiektu BLOB jako parametr wejściowy (zobacz [Konfigurowanie parametrów i typów danych parametrów](../configuring-parameters-and-parameter-data-types.md)). Jeśli obiekt BLOB jest przechowywany jako tekst, na przykład pole SQL Server `text` , można przekazać obiekt BLOB jako parametr ciągu. Jeśli obiekt BLOB jest przechowywany w formacie binarnym, takim jak SQL Server `image` pole, można przekazać tablicę typu `byte` jako parametr binarny.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład kodu dodaje informacje o pracownikach do tabeli Pracownicy w bazie danych Northwind. Zdjęcie pracownika jest odczytywane z pliku i dodawane do pola Zdjęcie w tabeli, które jest polem obrazu.  
+
+ Poniższy przykład kodu dodaje informacje o pracowniku do tabeli Employees w bazie danych Northwind. Zdjęcie pracownika jest odczytywane z pliku i dodawane do pola zdjęcia w tabeli, czyli pola obrazu.  
   
 ```vb  
 Public Shared Sub AddEmployee( _  

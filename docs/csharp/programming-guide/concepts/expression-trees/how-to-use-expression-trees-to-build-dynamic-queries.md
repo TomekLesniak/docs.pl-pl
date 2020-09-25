@@ -3,14 +3,15 @@ title: Jak używać drzew wyrażeń do kompilowania zapytań dynamicznych (C#)
 description: Dowiedz się, jak tworzyć dynamiczne zapytania LINQ przy użyciu drzew wyrażeń. Te zapytania są przydatne, gdy szczegółowe dane zapytania są nieznane w czasie kompilacji.
 ms.date: 07/20/2015
 ms.assetid: 52cd44dd-a3ec-441e-b93a-4eca388119c7
-ms.openlocfilehash: edcef4068c19ba8e789683cf6ba4d5ef2477e0d8
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 284e7fa4534d1648c8e2bd6f4feaa62796ca60d8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105586"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202594"
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>Jak używać drzew wyrażeń do kompilowania zapytań dynamicznych (C#)
+
 W LINQ, drzewa wyrażeń służą do reprezentowania zapytań strukturalnych, które są docelowymi źródłami danych, które implementują <xref:System.Linq.IQueryable%601> . Na przykład dostawca LINQ implementuje <xref:System.Linq.IQueryable%601> interfejs do wykonywania zapytań dotyczących magazynów danych relacyjnych. Kompilator języka C# kompiluje zapytania, które są przeznaczone dla tych źródeł danych w kodzie, który kompiluje drzewo wyrażeń w czasie wykonywania. Dostawca zapytań może następnie przechodzenie przez strukturę danych drzewa wyrażenia i przetłumaczyć je do języka zapytań odpowiedniego dla źródła danych.  
   
  Drzewa wyrażeń są również używane w LINQ do reprezentowania wyrażeń lambda, które są przypisane do zmiennych typu <xref:System.Linq.Expressions.Expression%601> .  
@@ -18,6 +19,7 @@ W LINQ, drzewa wyrażeń służą do reprezentowania zapytań strukturalnych, kt
  W tym temacie opisano, jak używać drzew wyrażeń do tworzenia dynamicznych zapytań LINQ. Zapytania dynamiczne są przydatne, gdy określone zapytanie nie jest znane w czasie kompilacji. Na przykład aplikacja może udostępnić interfejs użytkownika, który umożliwia użytkownikowi końcowemu określenie co najmniej jednego predykatu w celu odfiltrowania danych. Aby można było używać LINQ do wykonywania zapytań, ten rodzaj aplikacji musi używać drzew wyrażeń do tworzenia zapytania LINQ w czasie wykonywania.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak używać drzew wyrażeń do konstruowania zapytania względem `IQueryable` źródła danych, a następnie wykonywania go. Kod kompiluje drzewo wyrażenia, aby reprezentować następujące zapytanie:  
   
  ```csharp

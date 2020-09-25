@@ -2,14 +2,15 @@
 title: <issuedTokenAuthentication> dla <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 5c2e288f-f603-4d13-839a-0fd6d1981bec
-ms.openlocfilehash: 6d468a27ee05fb4dd8cf087d10e5d170783d3454
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 88657b6982108596c8d9030161390f76fcff6609
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400358"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202477"
 ---
 # <a name="issuedtokenauthentication-of-servicecredentials"></a>\<issuedTokenAuthentication> dla \<serviceCredentials>
+
 Określa niestandardowy token wystawiony jako poświadczenia usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -43,6 +44,7 @@ Określa niestandardowy token wystawiony jako poświadczenia usługi.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -71,6 +73,7 @@ Określa niestandardowy token wystawiony jako poświadczenia usługi.
 |[\<serviceCredentials>](servicecredentials.md)|Określa poświadczenie, które ma być używane w uwierzytelnianiu usługi i ustawień związanych z walidacją poświadczeń klienta.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Scenariusz wystawionego tokenu ma trzy etapy. Na pierwszym etapie klient próbujący uzyskać dostęp do usługi jest nazywany *usługą bezpiecznego tokenu*. Usługa Secure Tokens następnie uwierzytelnia klienta, a następnie wystawia klientowi token, zwykle tokena "Security Assertions Markup Language" (SAML). Klient następnie wraca do usługi przy użyciu tokenu. Usługa bada token dla danych, które umożliwiają usłudze uwierzytelnianie tokenu i w związku z tym klienta. Aby uwierzytelnić token, certyfikat, którego używa usługa bezpiecznego tokenu, musi być znany usłudze.  
   
  Ten element jest repozytorium dla wszystkich takich certyfikatów usługi Secure Token Service. Aby dodać certyfikaty, użyj [\<knownCertificates>](knowncertificates.md) . Wstaw [\<add>](add-of-knowncertificates.md) dla każdego certyfikatu, jak pokazano w poniższym przykładzie.  
@@ -90,7 +93,7 @@ Określa niestandardowy token wystawiony jako poświadczenia usługi.
   
  Aby uzyskać więcej informacji na temat używania tego elementu konfiguracji, zobacz [How to: Configure Credentials in a a usługa federacyjna](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>
 - <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A>
@@ -100,4 +103,4 @@ Określa niestandardowy token wystawiony jako poświadczenia usługi.
 - <xref:System.ServiceModel.Description.ServiceCredentials.IssuedTokenAuthentication%2A>
 - <xref:System.ServiceModel.Security.IssuedTokenServiceCredential>
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
-- [Instrukcje: Konfigurowanie poświadczeń usługi federacyjnej](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [Instrukcje: konfigurowanie poświadczeń usługi federacyjnej](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)

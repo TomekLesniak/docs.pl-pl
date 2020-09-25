@@ -3,14 +3,15 @@ title: Grupowanie danych (C#)
 description: Grupowanie umieszcza dane w grupach elementów, które współużytkują atrybut. Zapoznaj się ze standardowymi metodami operatorów zapytań w LINQ w języku C#, które grupują elementy danych.
 ms.date: 07/20/2015
 ms.assetid: e414e9e4-343a-4e6e-858f-4a30c5e64492
-ms.openlocfilehash: 5e1bca1d360b0f44a081cf2770118a0551629b5b
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 584d50fc15dd8b4ce1cfdf4766f3bc8b8383eb12
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103675"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202568"
 ---
 # <a name="grouping-data-c"></a>Grupowanie danych (C#)
+
 Grupowanie odwołuje się do operacji umieszczania danych w grupach, tak aby elementy w każdej grupie miały wspólny atrybut.  
   
  Na poniższej ilustracji przedstawiono wyniki grupowania sekwencji znaków. Klucz dla każdej grupy jest znakiem.  
@@ -27,6 +28,7 @@ Grupowanie odwołuje się do operacji umieszczania danych w grupach, tak aby ele
 |ToLookup|Wstawia elementy do <xref:System.Linq.Lookup%602> (słownik jeden-do-wielu) w oparciu o funkcję selektora kluczy.|Nie dotyczy.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Przykład składni wyrażenia zapytania  
+
  Poniższy przykład kodu używa `group by` klauzuli do grupowania liczb całkowitych na liście zgodnie z tym, czy są one parzyste czy nieparzyste.  
   
 ```csharp  

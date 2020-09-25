@@ -8,14 +8,15 @@ helpviewer_keywords:
 - mscorlib element
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
-ms.openlocfilehash: d1d805f7154c18dba2dcd4eb7228cc200d8da811
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1788205997d0dc49df172c9dfe48faceb8fc3290
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155184"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201788"
 ---
 # <a name="mscorlib-element-for-cryptography-settings"></a>\<mscorlib>, element ustawień kryptografii
+
 Zawiera [ \<cryptographySettings> element](cryptographysettings-element.md).  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -29,9 +30,11 @@ Zawiera [ \<cryptographySettings> element](cryptographysettings-element.md).
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -47,6 +50,7 @@ Zawiera [ \<cryptographySettings> element](cryptographysettings-element.md).
 |`configuration`|Element główny w każdym pliku konfiguracji używanym przez środowisko uruchomieniowe języka wspólnego i aplikacje programu .NET Framework.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, **\<mscorlib>** Aby odwoływać się do klasy kryptografii i skonfigurować środowisko uruchomieniowe. Następnie można przekazać ciąg "RSA" do <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metody i użyć <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metody do zwrócenia `MyCryptoRSAClass` obiektu.  
   
 ```xml  
@@ -68,7 +72,7 @@ Zawiera [ \<cryptographySettings> element](cryptographysettings-element.md).
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>
 - <xref:System.Security.Cryptography>

@@ -2,14 +2,15 @@
 title: <xmlElement>
 ms.date: 03/30/2017
 ms.assetid: 395205c2-d8c0-4a5e-90f3-7ce3c085fccd
-ms.openlocfilehash: 841331f233bb8c42c25c88ad8e9b4fb1a86faa76
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0ab7fbd64cc92e940617f5334eeb16fcb3a50c4a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398989"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181235"
 ---
 # \<xmlElement>
+
 Określa element XML, który jest wysyłany w treści wiadomości do usługi tokenu zabezpieczającego podczas żądania tokenu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Określa element XML, który jest wysyłany w treści wiadomości do usługi tok
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -40,6 +42,7 @@ Określa element XML, który jest wysyłany w treści wiadomości do usługi tok
 |xmlElement|Ciąg określający element XML, który jest wysyłany w treści wiadomości do usługi tokenu zabezpieczającego podczas żądania tokenu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -48,12 +51,12 @@ Określa element XML, który jest wysyłany w treści wiadomości do usługi tok
 |-------------|-----------------|  
 |[\<tokenRequestParameters>](tokenrequestparameters.md)|Kolekcja parametrów żądania tokenu. Każdy parametr jest elementem XML.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.TokenRequestParameters%2A>
 - [Uwierzytelnianie i tożsamość usług](../../../wcf/feature-details/service-identity-and-authentication.md)
 - [Federacja i wystawione tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
-- [Możliwości zabezpieczeń powiązań niestandardowych](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Możliwości zabezpieczeń wiązań niestandardowych](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
 - [Federacja i wystawione tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
 - [Powiązania](../../../wcf/bindings.md)

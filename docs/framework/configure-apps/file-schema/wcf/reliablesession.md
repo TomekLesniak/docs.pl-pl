@@ -2,14 +2,15 @@
 title: <reliableSession>
 ms.date: 03/30/2017
 ms.assetid: 129b4a59-37f0-4030-b664-03795d257d29
-ms.openlocfilehash: 95f6646041dc2dd7bae7691a0a9f748c844f50b6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ec69d9194d98302a4744e290f23fbb150b2e87cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738747"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181316"
 ---
 # \<reliableSession>
+
 Definiuje ustawienie dla obsługi komunikatów w usłudze WS-niezawodny. Gdy ten element zostanie dodany do niestandardowego powiązania, otrzymany kanał może obsługiwać tylko jednokrotne gwarancje dostarczania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Definiuje ustawienie dla obsługi komunikatów w usłudze WS-niezawodny. Gdy ten
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -49,6 +51,7 @@ Definiuje ustawienie dla obsługi komunikatów w usłudze WS-niezawodny. Gdy ten
 |ReliableMessagingVersion określająca|Prawidłowa wartość <xref:System.ServiceModel.ReliableMessagingVersion> określająca, czy wersja protokołu WS-ReliableMessaging ma być używana.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -58,6 +61,7 @@ Definiuje ustawienie dla obsługi komunikatów w usłudze WS-niezawodny. Gdy ten
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Niezawodne sesje zapewniają funkcje niezawodnej obsługi komunikatów i sesji. Niezawodna komunikacja w celu komunikacji przy niepowodzeń i pozwala na określenie gwarancji dostarczania, takich jak wysyłanie komunikatów. Sesje utrzymują stan dla klientów między wywołaniami. Ten element również opcjonalnie udostępnia uporządkowane dostarczanie komunikatów. Ta zaimplementowana sesja może przekroczyć pośredniki SOAP i transportu.  
   
  Każdy element powiązania reprezentuje etap przetwarzania podczas wysyłania lub otrzymywania wiadomości. W czasie wykonywania elementy powiązania tworzą fabryki kanałów i odbiorniki, które są niezbędne do tworzenia stosów kanałów wychodzących i przychodzących wymaganych do wysyłania i odbierania wiadomości. `reliableSession`Zapewnia opcjonalną warstwę w stosie, która może nawiązywać niezawodne sesje między punktami końcowymi i skonfigurować zachowanie tej sesji.  
@@ -65,6 +69,7 @@ Definiuje ustawienie dla obsługi komunikatów w usłudze WS-niezawodny. Gdy ten
  Aby uzyskać więcej informacji, zobacz [niezawodne sesje](../../../wcf/feature-details/reliable-sessions.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje sposób konfigurowania powiązania niestandardowego z różnymi elementami transportu i transportem komunikatów, szczególnie w przypadku włączania niezawodnych sesji, które utrzymują stan klienta i określa gwarancje dostarczania w kolejności. Ta funkcja jest konfigurowana w plikach konfiguracji aplikacji dla klienta i usługi. W przykładzie przedstawiono konfigurację usługi.  
   
 ```xml  
@@ -120,7 +125,7 @@ Definiuje ustawienie dla obsługi komunikatów w usłudze WS-niezawodny. Gdy ten
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ReliableSessionElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>

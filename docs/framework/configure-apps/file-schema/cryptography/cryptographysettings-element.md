@@ -8,14 +8,15 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-ms.openlocfilehash: fe6de09213c6f980e8eb205a318aae50033b2a84
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3c3513c05485550202f2fc5bcae1faabb0e75d47
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155235"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201814"
 ---
 # <a name="cryptographysettings-element"></a>\<cryptographySettings> Element
+
 Zawiera ustawienia kryptografii.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -30,9 +31,11 @@ Zawiera ustawienia kryptografii.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -50,6 +53,7 @@ Zawiera ustawienia kryptografii.
 |`mscorlib`|Zawiera `cryptographySettings` element.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak używać **\<cryptographySettings>** elementu, aby zawierać mapowania nazw kryptograficznych i mapowania identyfikatorów OID. Ten przykład umożliwia skonfigurowanie środowiska uruchomieniowego w taki sposób, aby <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> zwracało `MyHashClass` obiekt i `MyCryptoClass` klasę do 1.3.36.2.1 identyfikatora obiektu.  
   
 ```xml  
@@ -76,7 +80,7 @@ Zawiera ustawienia kryptografii.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat pliku konfiguracji](../index.md)
 - [Schemat ustawień kryptografii](index.md)

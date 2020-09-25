@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <system.diagnostics> element
 - system.diagnostics element
 ms.assetid: 3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2
-ms.openlocfilehash: 4f831592d7d178276b1625e1ef7d8512085342af
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: aff324ac9952c95c78d7ca15572651dba23b79b7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153210"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195171"
 ---
 # <a name="systemdiagnostics-element"></a>\<system.diagnostics> Element
+
 Określa detektory śledzenia, które zbierają, przechowują i rozsyłają komunikaty oraz poziom, w którym ustawiono przełącznik śledzenia.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -29,9 +30,11 @@ Określa detektory śledzenia, które zbierają, przechowują i rozsyłają komu
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -52,6 +55,7 @@ Określa detektory śledzenia, które zbierają, przechowują i rozsyłają komu
 |`configuration`|Element główny w każdym pliku konfiguracji używanym przez środowisko uruchomieniowe języka wspólnego i aplikacje programu .NET Framework.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak osadzić przełącznik śledzenia i odbiornik śledzenia wewnątrz **\<system.diagnostics>** elementu. `General`Przełącznik śledzenia jest ustawiony na <xref:System.Diagnostics.TraceLevel> poziom. Odbiornik śledzenia `myListener` tworzy plik o nazwie `MyListener.log` i zapisuje dane wyjściowe do pliku.  
   
 > [!NOTE]
@@ -72,7 +76,7 @@ Określa detektory śledzenia, które zbierają, przechowują i rozsyłają komu
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.Debug>

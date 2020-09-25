@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 049f0636b1c2c2df33461714aea5a11810ef00ad
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 04d0120622697d1e0c84fc169dfc50951cb8aa3c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359197"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177296"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Samouczek: testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu programu Visual Studio
 
@@ -186,6 +186,12 @@ Aby przetestować kompilację wydania:
    > ![Menu kontekstowe StringLibrary z poleceniem Build](./media/testing-library-with-visual-studio/build-library-context-menu.png)
 
 1. Uruchom testy jednostkowe, wybierając pozycję **test Uruchom**  >  **wszystkie testy** z paska menu. Testy zostały zakończone pomyślnie.
+
+## <a name="debug-tests"></a>Debuguj testy
+
+Jeśli używasz programu Visual Studio jako środowiska IDE, możesz użyć tego samego procesu, który został przedstawiony w [samouczku: debugowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio](debugging-with-visual-studio.md) do debugowania kodu przy użyciu projektu testów jednostkowych. Zamiast rozpoczynać projekt aplikacji *Prezentacja* , kliknij prawym przyciskiem myszy projekt **StringLibraryTests** , a następnie wybierz polecenie **Debuguj testy** z menu kontekstowego.
+
+Program Visual Studio uruchamia projekt testowy z dołączonym debugerem. Wykonanie zostanie zatrzymane na dowolnym punkcie przerwania, który został dodany do projektu testowego lub kodu biblioteki źródłowej.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 

@@ -2,14 +2,15 @@
 title: <behavior> dla <serviceBehaviors>
 ms.date: 03/30/2017
 ms.assetid: 78fc0a08-55de-416a-ac12-a5e6ffc9a987
-ms.openlocfilehash: 115f94fc3f17dc5b4dd1ee3a090f2c9d121f810b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 739f95f527fd73062c8cec43efc6777efeb077f3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74139733"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195158"
 ---
 # <a name="behavior-of-servicebehaviors"></a>\<behavior> dla \<serviceBehaviors>
+
 `behavior` Element zawiera zbiór ustawień dotyczących zachowania usługi. Każde działanie jest indeksowane według jego `name`. Usługi mogą łączyć się z każdym zachowaniem za pomocą tej nazwy przy użyciu `behaviorConfiguration` atrybutu [\<endpoint>](endpoint-element.md) elementu. Dzięki temu punktów końcowych udostępnić typowych konfiguracji zachowanie bez ponownego definiowania ustawień. Począwszy od .NET Framework 4, powiązania i zachowania nie muszą mieć nazwy. Aby uzyskać więcej informacji na temat konfiguracji domyślnej i powiązań pustego i zachowań, zobacz [Uproszczona konfiguracja](../../../wcf/simplified-configuration.md) i [Uproszczona konfiguracja dla usług WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 > [!NOTE]
@@ -34,6 +35,7 @@ ms.locfileid: "74139733"
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  

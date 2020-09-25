@@ -10,14 +10,15 @@ helpviewer_keywords:
 - <disableCachingBindingFailures> element
 - disableCachingBindingFailures element
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
-ms.openlocfilehash: 23633cb282b8e59b4df4bcc2cd38717d805a207e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c9e608bfd54b641564a9095076455e10dd8653fb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117495"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176126"
 ---
 # <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures> Element
+
 Określa, czy należy wyłączyć buforowanie niepowodzeń powiązań, które wystąpiły, ponieważ nie można odnaleźć zestawu przez sondowanie.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Określa, czy należy wyłączyć buforowanie niepowodzeń powiązań, które wy
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -47,6 +49,7 @@ Określa, czy należy wyłączyć buforowanie niepowodzeń powiązań, które wy
 |1|Wyłącz buforowanie niepowodzeń powiązań, ponieważ zestaw nie został odnaleziony przez sondowanie. To ustawienie przywraca zachowanie powiązania .NET Framework w wersji 1,1.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -57,6 +60,7 @@ Określa, czy należy wyłączyć buforowanie niepowodzeń powiązań, które wy
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Począwszy od .NET Framework w wersji 2,0, domyślnym zachowaniem ładowania zestawów jest buforowanie wszystkich błędów powiązań i ładowania. Oznacza to, że jeśli próba załadowania zestawu nie powiedzie się, kolejne żądania załadowania tego samego zestawu kończą się niepowodzeniem, bez próby zlokalizowania zestawu. Ten element wyłącza zachowanie domyślne dla niepowodzeń powiązań, które występują, ponieważ nie można odnaleźć zestawu w ścieżce sondowania. Te błędy są wyrzucane <xref:System.IO.FileNotFoundException> .  
   
  Ten element nie ma wpływ na pewne błędy powiązań i ładowania i są zawsze buforowane. Te błędy występują, ponieważ zestaw został znaleziony, ale nie można go załadować. Zgłaszają <xref:System.BadImageFormatException> lub <xref:System.IO.FileLoadException> . Poniższa lista zawiera kilka przykładów takich niepowodzeń.  
@@ -68,6 +72,7 @@ Określa, czy należy wyłączyć buforowanie niepowodzeń powiązań, które wy
 - Jeśli co najmniej jedna wersja zestawu, który próbujesz załadować, znajduje się w ścieżce sondowania, ale określona wersja, której żądasz, nie należy do nich, kolejne próby załadowania tej wersji będą kończyć się niepowodzeniem, nawet jeśli poprawna wersja zostanie przeniesiona do ścieżki sondowania.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak wyłączyć buforowanie niepowodzeń powiązań zestawów, które występują, ponieważ nie znaleziono zestawu przez sondowanie.  
   
 ```xml  
@@ -78,7 +83,7 @@ Określa, czy należy wyłączyć buforowanie niepowodzeń powiązań, które wy
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

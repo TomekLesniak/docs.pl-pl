@@ -2,14 +2,15 @@
 title: <schemeSettings>, element (ustawienia identyfikatora URI)
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: c745c90bb61b9ee393687d7f6db4fd11565c7dc7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5a146b854239fd516125e66e05312e27b90c73ec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154650"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91187020"
 ---
 # <a name="schemesettings-element-uri-settings"></a>\<schemeSettings>, element (ustawienia identyfikatora URI)
+
 Określa, w jaki sposób <xref:System.Uri> będzie analizowana dla określonych schematów.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -24,9 +25,11 @@ Określa, w jaki sposób <xref:System.Uri> będzie analizowana dla określonych 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -44,6 +47,7 @@ Określa, w jaki sposób <xref:System.Uri> będzie analizowana dla określonych 
 |[adresu](uri-element-uri-settings.md)|Zawiera ustawienia, które określają, w jaki sposób .NET Framework obsługuje adresy sieci Web wyrażone przy użyciu Uniform Resource Identifier (URI).|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie <xref:System.Uri?displayProperty=nameWithType> Klasa cofa ograniczniki ścieżki kodowanej procentowo przed wykonaniem kompresji ścieżki. Ta implementacja została zaimplementowana jako mechanizm zabezpieczeń przed atakami podobnymi do następujących:  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
@@ -59,9 +63,11 @@ Określa, w jaki sposób <xref:System.Uri> będzie analizowana dla określonych 
  To zachowanie domyślne można zmodyfikować, aby nie wycofać ograniczników ścieżki zakodowanej procentowo przy użyciu opcji konfiguracji schemeSettings dla określonego schematu.  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie przedstawiono konfigurację używaną przez <xref:System.Uri> klasę do obsługi nieprawidłowych ograniczników ścieżki w kodzie procentowym dla schematu http.  
   
 ```xml  
@@ -83,7 +89,7 @@ Określa, w jaki sposób <xref:System.Uri> będzie analizowana dla określonych 
 |Plik walidacji||  
 |Może być puste||  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>
@@ -91,4 +97,4 @@ Określa, w jaki sposób <xref:System.Uri> będzie analizowana dla określonych 
 - <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>
 - <xref:System.GenericUriParserOptions?displayProperty=nameWithType>
 - <xref:System.Uri?displayProperty=nameWithType>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

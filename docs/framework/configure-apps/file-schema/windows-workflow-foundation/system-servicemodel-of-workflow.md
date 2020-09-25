@@ -3,14 +3,15 @@ title: <system. serviceModel> przepływu pracy
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a8eb2bf-f925-40e1-ba5c-a49b1d3a3ac6
-ms.openlocfilehash: 9aa2bf0fdfd6fe4528a3fda4d05b3ba8f23637d3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c18cc4886d3e7a19b750a005b27d00a841b9fc5d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79151952"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194859"
 ---
-# <a name="systemservicemodel-of-workflow"></a>\<system.serviceModel>przepływu pracy
+# <a name="systemservicemodel-of-workflow"></a>\<system.serviceModel> przepływu pracy
+
 Ta sekcja konfiguracji zawiera wszystkie elementy konfiguracji przepływu pracy.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -95,9 +96,11 @@ Ta sekcja konfiguracji zawiera wszystkie elementy konfiguracji przepływu pracy.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak  
   
 ### <a name="child-elements"></a>Elementy podrzędne  

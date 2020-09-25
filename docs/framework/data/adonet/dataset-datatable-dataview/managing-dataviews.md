@@ -5,19 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
-ms.openlocfilehash: 5e85fccddf6359791ea702667a36b44f611815dc
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c07f521b94f23b479281b0314d6b89a095ee9624
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784508"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181248"
 ---
 # <a name="managing-dataviews"></a>Zarządzanie elementami DataView
-Można użyć <xref:System.Data.DataViewManager> do zarządzania ustawieniami widoku dla wszystkich tabel <xref:System.Data.DataView>w. Jeśli masz kontrolkę, którą chcesz powiązać z wieloma tabelami, na przykład z siatką, która nawiguje relacje, obiekt **DataViewManager** jest idealny.  
+
+Można użyć <xref:System.Data.DataViewManager> do zarządzania ustawieniami widoku dla wszystkich tabel w <xref:System.Data.DataView> . Jeśli masz kontrolkę, którą chcesz powiązać z wieloma tabelami, na przykład z siatką, która nawiguje relacje, obiekt **DataViewManager** jest idealny.  
   
- Element **DataViewManager** zawiera kolekcję <xref:System.Data.DataViewSetting> obiektów, które są używane do ustawiania ustawienia widoku tabel w <xref:System.Data.DataSet>. Zawiera jeden <xref:System.Data.DataViewSetting> obiekt dla każdej tabeli w **zestawie danych.** <xref:System.Data.DataViewSettingCollection> Można ustawić domyślne właściwości **ApplyDefaultSort**, **sort**, **RowFilter**i **RowStateFilter** tabeli, do których istnieje odwołanie, przy użyciu jej **DataViewSetting**. Można odwołać się do **DataViewSetting** dla konkretnej tabeli według nazwy lub odwołania do liczby porządkowej lub przez przekazanie odwołania do tego konkretnego obiektu tabeli. Można uzyskać dostęp do kolekcji obiektów **DataViewSetting** w elemencie **DataViewManager** przy użyciu właściwości **DataViewSettings** .  
+ Element **DataViewManager** zawiera kolekcję <xref:System.Data.DataViewSetting> obiektów, które są używane do ustawiania ustawienia widoku tabel w <xref:System.Data.DataSet> . <xref:System.Data.DataViewSettingCollection>Zawiera jeden <xref:System.Data.DataViewSetting> obiekt dla każdej tabeli w **zestawie danych**. Można ustawić domyślne właściwości **ApplyDefaultSort**, **sort**, **RowFilter**i **RowStateFilter** tabeli, do których istnieje odwołanie, przy użyciu jej **DataViewSetting**. Można odwołać się do **DataViewSetting** dla konkretnej tabeli według nazwy lub odwołania do liczby porządkowej lub przez przekazanie odwołania do tego konkretnego obiektu tabeli. Można uzyskać dostęp do kolekcji obiektów **DataViewSetting** w elemencie **DataViewManager** przy użyciu właściwości **DataViewSettings** .  
   
- Poniższy przykład kodu wypełnia **zestaw danych** z SQL Server bazy danych **Northwind** tabele **Customers**, **Orders**i **Order Details**, tworzy relacje między tabelami, używa elementu **DataViewManager** do Ustaw domyślne ustawienia **widoku** danych i powiąże element **DataGrid** z elementem **DataViewManager**. Przykład ustawia domyślne ustawienia **DataView** dla wszystkich tabel w **zestawie danych** , aby sortować według klucza podstawowego tabeli (**ApplyDefaultSort** = **true**), a następnie modyfikuje kolejność sortowania tabeli **Customers** na Sortuj według **NazwaFirmy**.  
+ Poniższy przykład kodu wypełnia **zestaw danych** z SQL Server bazy danych **Northwind** tabele **Customers**, **Orders**i **Order Details**, tworzy relacje między tabelami, używa elementu **DataViewManager** do ustawiania domyślnych ustawień **widoku DataView** i wiąże element **DataGrid** z elementem **DataViewManager**. Przykład ustawia domyślne ustawienia **DataView** dla wszystkich tabel w **zestawie danych** , aby sortować według klucza podstawowego tabeli (**ApplyDefaultSort**  =  **true**), a następnie modyfikuje kolejność sortowania tabeli **Customers** , aby sortować według **NazwaFirmy**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection to Northwind.  
@@ -119,7 +120,7 @@ System.Windows.Forms.DataGrid grid = new System.Windows.Forms.DataGrid();
 grid.SetDataBinding(viewManager, "Customers");  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Data.DataSet>
 - <xref:System.Data.DataViewManager>

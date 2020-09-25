@@ -2,14 +2,15 @@
 title: <webHttp>
 ms.date: 03/30/2017
 ms.assetid: 1f9d0754-d41e-44ce-a298-e51cb3096c64
-ms.openlocfilehash: 00644d248e6fb85d7cf712620e6ac74405e6b0c3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 716d960e2d5f896976c22a60d419d9b165b36178
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399165"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202464"
 ---
 # \<webHttp>
+
 Ten element określa <xref:System.ServiceModel.Description.WebHttpBehavior> punkt końcowy za pomocą konfiguracji. Takie zachowanie, które jest używane w połączeniu ze [\<webHttpBinding>](webhttpbinding.md) standardowym powiązaniem, umożliwia model programowania sieci Web dla usługi Windows Communication Foundation (WCF).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,6 +27,7 @@ Ten element określa <xref:System.ServiceModel.Description.WebHttpBehavior> punk
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -39,6 +41,7 @@ Ten element określa <xref:System.ServiceModel.Description.WebHttpBehavior> punk
 |helpEnabled|Pobiera lub ustawia wartość określającą, czy strona pomocy jest włączona.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -47,7 +50,7 @@ Ten element określa <xref:System.ServiceModel.Description.WebHttpBehavior> punk
 |-------------|-----------------|  
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zestaw zachowań punktów końcowych.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.WebHttpElement>
 - <xref:System.ServiceModel.Description.WebHttpBehavior>
