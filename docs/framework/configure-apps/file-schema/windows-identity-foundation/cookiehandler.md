@@ -3,14 +3,15 @@ title: <cookieHandler>
 ms.date: 03/30/2017
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
 author: BrucePerlerMS
-ms.openlocfilehash: 853dc9817d080e59ac7a792576eda862bd0b1f1d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5f5b432830a61adab324b2b6cd2ebe6eeccca7f0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252028"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189841"
 ---
 # \<cookieHandler>
+
 Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , że program <xref:System.IdentityModel.Services.SessionAuthenticationModule> (sam) używa do odczytu i zapisu plików cookie.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,6 +39,7 @@ Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , że program <xr
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -45,7 +47,7 @@ Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , że program <xr
 |Atrybut|Opis|  
 |---------------|-----------------|  
 |name|Określa nazwę podstawową dla wszelkich zapisanych plików cookie. Wartość domyślna to "FedAuth".|  
-|ścieżka|Określa wartość ścieżki dla dowolnych plików cookie, które są zapisywane. Wartość domyślna to "HttpRuntime. AppDomainAppVirtualPath".|  
+|path|Określa wartość ścieżki dla dowolnych plików cookie, które są zapisywane. Wartość domyślna to "HttpRuntime. AppDomainAppVirtualPath".|  
 |tryb|Jedna z <xref:System.IdentityModel.Services.CookieHandlerMode> wartości, która określa rodzaj obsługi plików cookie używany przez sam. Można użyć następujących wartości:<br /><br /> -"Domyślne" — taka sama jak "fragmentaryczna".<br />-"Fragmentaryczne" — używa wystąpienia <xref:System.IdentityModel.Services.ChunkedCookieHandler> klasy. Ten program obsługi plików cookie zapewnia, że poszczególne pliki cookie nie przekraczają maksymalnego rozmiaru. Jest to realizowane przez potencjalnie "dzielenie" jednego logicznego pliku cookie na kilka plików cookie w sieci.<br />-"Custom" — używa wystąpienia klasy niestandardowej pochodzącej od <xref:System.IdentityModel.Services.CookieHandler> . Klasa pochodna odwołuje się do `<customCookieHandler>` elementu podrzędnego.<br /><br /> Wartość domyślna to "domyślne".|  
 |persistentSessionLifetime|Określa okres istnienia sesji trwałych. Jeśli wartość jest równa zero, sesje przejściowe są zawsze używane. Wartość domyślna to "0:0:0", która określa przejściową sesję. Wartość maksymalna to "365:0:0", która określa sesję z 365 dni. Wartość należy określić zgodnie z następującymi ograniczeniami: `<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />` , gdzie pierwsza wartość określa liczbę dni, wartość środkowa (jeśli jest obecna) określa godziny, a wartość z prawej strony (jeśli jest obecna) określa minuty.|  
 |requireSsl|Określa, czy flaga "Secure" jest emitowana dla dowolnych plików cookie pisanych. Jeśli ta wartość jest ustawiona, pliki cookie sesji logowania będą dostępne tylko za pośrednictwem protokołu HTTPS. Wartość domyślna to "true".|  
@@ -66,6 +68,7 @@ Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , że program <xr
 |[\<federationConfiguration>](federationconfiguration.md)|Zawiera ustawienia, które konfigurują <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) i <xref:System.IdentityModel.Services.SessionAuthenticationModule> (sam).|  
   
 ## <a name="remarks"></a>Uwagi  
+
  <xref:System.IdentityModel.Services.CookieHandler>Jest odpowiedzialny za odczytywanie i zapisywanie nieprzetworzonych plików cookie na poziomie protokołu HTTP. Można skonfigurować albo <xref:System.IdentityModel.Services.ChunkedCookieHandler> niestandardową procedurę obsługi plików cookie pochodną <xref:System.IdentityModel.Services.CookieHandler> klasy.  
   
  Aby skonfigurować procedurę obsługi plików cookie podzielony na fragmenty, ustaw atrybut Mode na "fragmentaryczny" lub "domyślny". Domyślny rozmiar fragmentu to 2000 bajtów, ale opcjonalnie można określić inny rozmiar fragmentu, dołączając `<chunkedCookieHandler>` element podrzędny.  
@@ -75,6 +78,7 @@ Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , że program <xr
  `<cookieHandler>`Element jest reprezentowany przez <xref:System.IdentityModel.Services.CookieHandlerElement> klasę. Procedura obsługi plików cookie określona w konfiguracji jest dostępna we <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> właściwości <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> obiektu ustawionego we <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> właściwości.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod XML pokazuje `<cookieHandler>` element. W tym przykładzie, ponieważ `mode` atrybut nie jest określony, domyślny program obsługi plików cookie będzie używany przez sam. Jest to wystąpienie <xref:System.IdentityModel.Services.ChunkedCookieHandler> klasy. Ponieważ `<chunkedCookieHandler>` element podrzędny nie jest określony, zostanie użyty domyślny rozmiar fragmentu. Protokół HTTPS nie będzie wymagany, ponieważ `requireSsl` atrybut jest ustawiony `false` .  
   
 > [!WARNING]
@@ -84,7 +88,7 @@ Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , że program <xr
 <cookieHandler requireSsl="false" />  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IdentityModel.Services.CookieHandler>
 - <xref:System.IdentityModel.Services.ChunkedCookieHandler>

@@ -5,14 +5,15 @@ helpviewer_keywords:
 - RelativeBindForResources element
 - <relativeBindForResources> element
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
-ms.openlocfilehash: cd49d424019a4e8422fee0ae16217d49cfc456b1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: daf576488e38bed28c7c0e5222bc053659372ff0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153909"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184004"
 ---
 # <a name="relativebindforresources-element"></a>\<relativeBindForResources> Element
+
 Optymalizuje sondę dla zestawów satelickich.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Optymalizuje sondę dla zestawów satelickich.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,6 +45,7 @@ Optymalizuje sondę dla zestawów satelickich.
 |`true`|Środowisko uruchomieniowe optymalizuje sondę dla zestawów satelickich.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -53,6 +56,7 @@ Optymalizuje sondę dla zestawów satelickich.
 |`runtime`|Zawiera informacje dotyczące opcji inicjowania środowiska uruchomieniowego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ogólnie rzecz biorąc, Menedżer zasobów sondy dla zasobów, zgodnie z opisem w temacie [pakowanie i wdrażanie zasobów](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md) . Oznacza to, że podczas Menedżer zasobów sond dla konkretnej zlokalizowanej wersji zasobu może on wyglądać w globalnej pamięci podręcznej zestawów, wyszukać w folderze specyficznym dla kultury w bazie kodu aplikacji, Instalator Windows zapytań dla zestawów satelickich i zgłosić <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> zdarzenie. `<relativeBindForResources>`Element optymalizuje sposób, w jaki Menedżer zasobów sondy dla zestawów satelickich. Może zwiększyć wydajność podczas sondowania zasobów w następujących warunkach:  
   
 - Gdy zestaw satelicki zostanie wdrożony w tej samej lokalizacji co zestaw kodu. Innymi słowy, jeśli zestaw kodu jest zainstalowany w globalnej pamięci podręcznej zestawów, należy również zainstalować w tym miejscu zestawy satelickie. Jeśli zestaw kodu jest zainstalowany w bazie kodu aplikacji, zestawy satelickie muszą być również zainstalowane w folderze specyficznym dla kultury w bazie kodu.  
@@ -69,7 +73,7 @@ Optymalizuje sondę dla zestawów satelickich.
   
 - Nie zgłasza <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> zdarzenia.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Opakowanie i wdrażanie zasobów](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md)
 - [Schemat ustawień środowiska uruchomieniowego](index.md)

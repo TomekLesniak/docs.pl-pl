@@ -3,14 +3,15 @@ title: <behavior><serviceBehaviors>przepływu pracy
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a4b718a-1b40-4957-935a-f6122819ab3c
-ms.openlocfilehash: 071cff8e9f6ec3fa0546a07d19160869d8b43f60
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 14c528746963a3078e0ab377d095414d2fca0dbe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152323"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189620"
 ---
 # <a name="behavior-of-servicebehaviors-of-workflow"></a>\<behavior>\<serviceBehaviors>przepływu pracy
+
 Element **Behavior** zawiera kolekcję ustawień zachowania usługi. Każde zachowanie jest indeksowane według jego **nazwy**. Usługi mogą łączyć się z każdym zachowaniem za pomocą tej nazwy przy użyciu atrybutu **behaviorConfiguration** [\<endpoint>](../wcf/endpoint-element.md) elementu. Dzięki temu punktów końcowych udostępnić typowych konfiguracji zachowanie bez ponownego definiowania ustawień.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -52,6 +53,7 @@ Element **Behavior** zawiera kolekcję ustawień zachowania usługi. Każde zach
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  

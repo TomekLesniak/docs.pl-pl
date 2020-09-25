@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], at run time
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
-ms.openlocfilehash: 8e072e7aa53177929dda0be931beb85863b6a12e
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 1d2afd34d1a80841ba711897492cd4cd6412fa53
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299230"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184121"
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a>Typy ogólne w czasie wykonywania (Przewodnik programowania w języku C#)
+
 Gdy typ ogólny lub metoda jest kompilowany do języka pośredniego firmy Microsoft (MSIL), zawiera metadane, które identyfikują go jako parametry typu. Sposób użycia MSIL dla typu ogólnego różni się w zależności od tego, czy dostarczony parametr typu jest typem wartości czy typem referencyjnym.  
   
  Gdy typ ogólny jest najpierw konstruowany z typem wartości jako parametr, środowisko uruchomieniowe tworzy wyspecjalizowany typ ogólny z dostarczonym parametrem lub parametrami zastępowanymi w odpowiednich lokalizacjach w języku MSIL. Wyspecjalizowane typy ogólne są tworzone jednokrotnie dla każdego unikatowego typu wartości, który jest używany jako parametr.  

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - clear element, connectionManagement
 - <connectionManagement>, clear element
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
-ms.openlocfilehash: a76df48a9de084e1121a5e96b22edf7aa3acba23
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 446bec116118ee8b604ef3664a6eb0452e6d5a38
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088482"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184108"
 ---
 # <a name="clear-element-for-connectionmanagement-network-settings"></a>\<clear>, element dla connectionManagement (ustawienia sieci)
+
 Czyści listę zarządzania połączeniami.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,12 +33,15 @@ Czyści listę zarządzania połączeniami.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -47,12 +51,15 @@ Czyści listę zarządzania połączeniami.
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Określa maksymalną liczbę połączeń z hostem sieciowym.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `clear`Element czyści wszystkie wpisy z listy zarządzania połączeniami.  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład czyści listę zarządzanie połączeniami, a następnie dodaje nowe wpisy zarządzania połączeniami dla serwera `www.contoso.com` i wszystkich innych hostów sieciowych.  
   
 ```xml  
@@ -67,8 +74,8 @@ Czyści listę zarządzania połączeniami.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

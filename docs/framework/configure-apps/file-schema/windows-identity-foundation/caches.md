@@ -3,14 +3,15 @@ title: <caches>
 ms.date: 03/30/2017
 ms.assetid: 4651091b-3a20-40d8-b293-4408c0710143
 author: BrucePerlerMS
-ms.openlocfilehash: 80f435b52fd7657c5cd44538028d6080beffe0b5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 791c5be8aa48db2b17a42a216ad2bf5e7b5a4bc1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252162"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189880"
 ---
 # \<caches>
+
 Rejestruje pamięci podręczne używane do tokenów sesji i wykrywania powtarzania tokenu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,9 +31,11 @@ Rejestruje pamięci podręczne używane do tokenów sesji i wykrywania powtarzan
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -50,11 +53,13 @@ Rejestruje pamięci podręczne używane do tokenów sesji i wykrywania powtarzan
 |[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Zapewnia konfigurację kolekcji programów obsługi tokenów zabezpieczających.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<caches>`Element można określić na poziomie usługi pod `<identityConfiguration>` elementem lub na poziomie kolekcji programu obsługi tokenów zabezpieczających w ramach `<securityTokenHandlerConfiguration>` elementu. Ustawienia w kolekcji obsługi tokenów zastępują te określone w usłudze.  
   
  `<caches>`Element jest reprezentowany przez <xref:System.IdentityModel.Configuration.IdentityModelCachesElement> klasę. Skonfigurowane pamięci podręczne są reprezentowane przez <xref:System.IdentityModel.Configuration.IdentityModelCaches> klasę.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym kodzie XML przedstawiono konfigurację niestandardowej pamięci podręcznej dla tokenów zabezpieczających sesji ( <xref:System.IdentityModel.Tokens.SessionSecurityToken> ). Konfiguracja jest pobierana z `ClaimsAwareWebFarm` przykładu.  
   
 ```xml  

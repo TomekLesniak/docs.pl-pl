@@ -2,14 +2,15 @@
 title: <byteStreamMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: bbadd8dd-60a2-4007-b959-89373a8a7d60
-ms.openlocfilehash: e2b92b88c3e2a8abb14f58af90aab6e2e58ce14a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ceb40558cd979a54f72c2e9aa88f3af47bee9b68
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557297"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183900"
 ---
 # \<byteStreamMessageEncoding>
+
 Określa kodowanie komunikatu jako strumień bajtów z opcją określenia kodowania znaków.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,6 +27,7 @@ Określa kodowanie komunikatu jako strumień bajtów z opcją określenia kodowa
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -46,7 +48,7 @@ Określa kodowanie komunikatu jako strumień bajtów z opcją określenia kodowa
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ByteStreamMessageEncodingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>

@@ -3,14 +3,15 @@ title: <audienceUris>
 ms.date: 03/30/2017
 ms.assetid: 7a3d8515-d756-4afe-a22d-07cbe2217ee3
 author: BrucePerlerMS
-ms.openlocfilehash: bd04e4ebdf5c58adaeea0ff0ca5993d7d9ce38f1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c9787d8e0d8d66494bbf2dbd0e24ff39178a4cde
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189906"
 ---
 # \<audienceUris>
+
 Określa zestaw identyfikatorów URI, które są akceptowalnymi identyfikatorami jednostki uzależnionej (RP). Tokeny nie zostaną zaakceptowane, chyba że zostaną objęte zakresem jednego z dozwolonych identyfikatorów URI odbiorców.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,6 +40,7 @@ Określa zestaw identyfikatorów URI, które są akceptowalnymi identyfikatorami
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -62,6 +64,7 @@ Określa zestaw identyfikatorów URI, które są akceptowalnymi identyfikatorami
 |[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Zapewnia konfigurację kolekcji programów obsługi tokenów zabezpieczających.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie kolekcja jest pusta; Użyj `<add>` `<clear>` elementów, i, `<remove>` Aby zmodyfikować kolekcję. <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler><xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>obiekty i używają wartości w kolekcji identyfikatorów URI odbiorców w celu skonfigurowania dozwolonych ograniczeń identyfikatorów URI odbiorców w <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> obiektach.  
   
  `<audienceUris>`Element jest reprezentowany przez <xref:System.IdentityModel.Configuration.AudienceUriElementCollection> klasę. Pojedynczy identyfikator URI dodany do kolekcji jest reprezentowany przez <xref:System.IdentityModel.Configuration.AudienceUriElement> klasę.  
@@ -70,6 +73,7 @@ Określa zestaw identyfikatorów URI, które są akceptowalnymi identyfikatorami
 > Użycie `<audienceUris>` elementu jako elementu podrzędnego [\<identityConfiguration>](identityconfiguration.md) elementu jest przestarzałe, ale nadal jest ono obsługiwane w celu zapewnienia zgodności z poprzednimi wersjami. Ustawienia w `<securityTokenHandlerConfiguration>` elemencie Przesłoń te elementy w `<identityConfiguration>` elemencie.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod XML przedstawia sposób konfigurowania akceptowalnych identyfikatorów URI odbiorców dla aplikacji. Ten przykład umożliwia skonfigurowanie pojedynczego identyfikatora URI. Tokeny należące do zakresu dla tego identyfikatora URI zostaną zaakceptowane. wszystkie pozostałe zostaną odrzucone.  
   
 ```xml  
