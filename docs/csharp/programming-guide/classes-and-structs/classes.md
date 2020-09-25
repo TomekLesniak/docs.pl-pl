@@ -6,16 +6,17 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: d726ab3a882d2e6913fa69c7b82f1d6db78dd47d
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 93fc0296eeb410ba7ca0e781bededbe79820506d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102050"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178869"
 ---
 # <a name="classes-c-programming-guide"></a>Klasy (Przewodnik programowania w języku C#)
 
 ## <a name="reference-types"></a>Typy odwołań  
+
 Typ, który jest zdefiniowany jako [Klasa](../../language-reference/keywords/class.md) , jest *typem referencyjnym*. W czasie wykonywania, gdy deklarujesz zmienną typu referencyjnego, zmienna zawiera wartość [null](../../language-reference/keywords/null.md) , dopóki nie utworzysz jawnie instancji klasy przy użyciu operatora [New](../../language-reference/operators/new-operator.md) , lub przypiszesz do niego obiekt zgodnego typu, który mógł zostać utworzony w innym miejscu, jak pokazano w następującym przykładzie:
 
 ```csharp

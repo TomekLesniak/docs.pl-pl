@@ -14,14 +14,15 @@ helpviewer_keywords:
 - public type information [C#]
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
-ms.openlocfilehash: 7b84953f85545c0400c7136c258849f259e8b48a
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: cd7346ae4094a84a398306394f771e040dd7b72f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124802"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193793"
 ---
 # <a name="-reference-c-compiler-options"></a>-Reference (opcje kompilatora C#)
+
 Opcja **-Reference** powoduje, że kompilator importuje informacje o typie [publicznym](../keywords/public.md) w określonym pliku do bieżącego projektu, co pozwala na odwoływanie się do metadanych z określonych plików zestawów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,6 +33,7 @@ Opcja **-Reference** powoduje, że kompilator importuje informacje o typie [publ
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `filename`  
  Nazwa pliku, który zawiera manifest zestawu. Aby zaimportować więcej niż jeden plik, należy dołączyć osobną opcję **odwołania** dla każdego pliku.  
   
@@ -39,6 +41,7 @@ Opcja **-Reference** powoduje, że kompilator importuje informacje o typie [publ
  Prawidłowy identyfikator języka C#, który będzie reprezentować główną przestrzeń nazw, która będzie zawierać wszystkie przestrzenie nazw w zestawie.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby zaimportować z więcej niż jednego pliku, należy dołączyć opcję **-odwołanie** dla każdego pliku.  
   
  Importowane pliki muszą zawierać manifest; plik wyjściowy musi być skompilowany za pomocą jednej z opcji [-Target](./target-compiler-option.md) [: module](./target-module-compiler-option.md).  
@@ -65,6 +68,7 @@ Opcja **-Reference** powoduje, że kompilator importuje informacje o typie [publ
 > W programie Visual Studio Użyj okna dialogowego **Dodaj odwołanie** . Aby uzyskać więcej informacji, zobacz [How to: Dodawanie lub usuwanie odwołań za pomocą Menedżera odwołań](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager). Aby zapewnić równoważne zachowanie między dodawaniem odwołań przy użyciu `-reference` i dodawaniu odwołań przy użyciu okna dialogowego **Dodaj odwołanie** , ustaw właściwość **Osadź typy** współdziałania na **wartość false** dla zestawu, który jest dodawany. Wartość **true** jest wartością domyślną właściwości.  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład pokazuje, jak używać funkcji [alias zewnętrzny](../keywords/extern-alias.md) .  
   
  Kompilowanie pliku źródłowego i Importowanie metadanych z `grid.dll` i `grid20.dll` , które zostały wcześniej skompilowane. Dwie biblioteki DLL zawierają oddzielne wersje tego samego składnika, a do kompilowania pliku źródłowego służą dwa **odwołania** z opcjami aliasów. Opcje wyglądają następująco:  

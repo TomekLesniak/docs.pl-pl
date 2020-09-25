@@ -9,14 +9,15 @@ helpviewer_keywords:
 - recurse compiler option [C#]
 - -recurse compiler option [C#]
 ms.assetid: 4e8212e5-04e3-45b1-8a42-41bc50e683b0
-ms.openlocfilehash: 3edd7e23358bc0569dae6204d519209df1ade290
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9e84ff95f7f0addac1c2c2d79af0ab53572da27f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124828"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193806"
 ---
 # <a name="-recurse-c-compiler-options"></a>-rekursywnie (opcje kompilatora C#)
+
 Opcja-rekursywnie umożliwia skompilowanie plików kodu źródłowego we wszystkich katalogach podrzędnych określonego katalogu (dir) lub katalogu projektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,6 +27,7 @@ Opcja-rekursywnie umożliwia skompilowanie plików kodu źródłowego we wszystk
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `dir` (opcjonalnie)  
  Katalog, w którym ma zostać rozpoczęte wyszukiwanie. Jeśli ta wartość nie jest określona, wyszukiwanie rozpoczyna się w katalogu projektu.  
   
@@ -33,6 +35,7 @@ Opcja-rekursywnie umożliwia skompilowanie plików kodu źródłowego we wszystk
  Pliki do wyszukania. Symbole wieloznaczne są dozwolone.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Opcja **-rekursywnie** umożliwia skompilowanie plików kodu źródłowego we wszystkich katalogach podrzędnych określonego katalogu ( `dir` ) lub katalogu projektu.  
   
  W nazwie pliku można użyć symboli wieloznacznych, aby skompilować wszystkie zgodne pliki w katalogu projektu bez użycia opcji **-rekursywnie**.  
@@ -40,6 +43,7 @@ Opcja-rekursywnie umożliwia skompilowanie plików kodu źródłowego we wszystk
  Ta opcja kompilatora jest niedostępna w programie Visual Studio i nie można jej zmienić programowo.  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluje wszystkie pliki C# w bieżącym katalogu:  
   
 ```console  

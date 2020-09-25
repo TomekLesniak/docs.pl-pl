@@ -8,12 +8,12 @@ helpviewer_keywords:
 - platform invoke, accessing APIs with C#
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-ms.openlocfilehash: d85eb51107d50e023270fcbe1ef6e08a7788ae78
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 84cdc16ccda7a5c629a90b0752071a98de81a9b4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302974"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178479"
 ---
 # <a name="interoperability-c-programming-guide"></a>Współdziałanie (Przewodnik programowania w języku C#)
 
@@ -22,6 +22,7 @@ Współdziałanie pozwala zachować istniejące inwestycje w kodzie niezarządza
 Platforma .NET umożliwia współdziałanie z kodem niezarządzanym za pomocą usług wywołania platformy, <xref:System.Runtime.InteropServices> przestrzeni nazw, współdziałania C++ i współdziałania modelu COM (międzyoperacyjna com)  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Przegląd współdziałania](./interoperability-overview.md)  
  Opisuje metody współpracy między kodem zarządzanym C# i niezarządzanym kodem.  
   

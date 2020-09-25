@@ -9,14 +9,15 @@ helpviewer_keywords:
 - pdb compiler option [C#]
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
-ms.openlocfilehash: 0dcafd0fd260488922c74a2330b312e80467e779
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ced1ee1f4f079830a032a628da96a389ba27da90
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124919"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193858"
 ---
 # <a name="-pdb-c-compiler-options"></a>-PDB (opcje kompilatora C#)
+
 **-PDB —** opcja kompilatora określa nazwę i lokalizację pliku symboli debugowania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,10 +27,12 @@ ms.locfileid: "89124919"
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `filename`  
  Nazwa i lokalizacja pliku symboli debugowania.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli określisz polecenie [-debug (opcje kompilatora C#)](./debug-compiler-option.md), kompilator utworzy plik. pdb w tym samym katalogu, w którym kompilator utworzy plik wyjściowy (. exe lub. dll) z nazwą pliku, która jest taka sama jak nazwa pliku wyjściowego.  
   
  **-PDB** umożliwia określenie niedomyślnej nazwy pliku i lokalizacji dla pliku. pdb.  
@@ -37,6 +40,7 @@ ms.locfileid: "89124919"
  Nie można ustawić tej opcji kompilatora w środowisku deweloperskim programu Visual Studio, ani programowo zmienić.  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj `t.cs` i Utwórz plik. pdb o nazwie TT. pdb:  
   
 ```console  

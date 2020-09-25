@@ -8,14 +8,15 @@ helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-ms.openlocfilehash: 89a057cba6e0d23c15fc9b652e5bfbc89b6ecbaa
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 8f7e222e194fc4ba96159ecd792765f64b4d1c57
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128650"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193757"
 ---
 # <a name="-c-compiler-options"></a>@ (opcje kompilatora C#)
+
 Opcja @ pozwala określić plik, który zawiera opcje kompilatora i pliki kodu źródłowego do skompilowania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,13 +26,15 @@ Opcja @ pozwala określić plik, który zawiera opcje kompilatora i pliki kodu �
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `response_file`  
  Plik, który zawiera listę opcji kompilatora lub plików kodu źródłowego do skompilowania.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Opcje kompilatora i pliki kodu źródłowego będą przetwarzane przez kompilator tak, jakby zostały określone w wierszu polecenia.  
   
- Aby określić więcej niż jeden plik odpowiedzi w kompilacji, określ wiele opcji plików odpowiedzi. Przykład:  
+ Aby określić więcej niż jeden plik odpowiedzi w kompilacji, określ wiele opcji plików odpowiedzi. Na przykład:  
   
 ```console  
 @file1.rsp @file2.rsp  
@@ -48,6 +51,7 @@ Opcja @ pozwala określić plik, który zawiera opcje kompilatora i pliki kodu �
  Nie można ustawić tej opcji kompilatora w środowisku deweloperskim programu Visual Studio, ani programowo zmienić.  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej przedstawiono kilka wierszy z przykładowego pliku odpowiedzi:  
   
 ```console  

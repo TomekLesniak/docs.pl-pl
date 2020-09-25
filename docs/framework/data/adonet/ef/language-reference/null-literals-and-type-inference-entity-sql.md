@@ -2,22 +2,25 @@
 title: Literały o wartości null i wnioskowanie o typie (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: edd56afb-af1b-4e7d-b210-cb8998143426
-ms.openlocfilehash: bb2d9184e17ee2a9916a731eb20eefa105a73753
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 5797c9f55b1a1c89cc27787af6f9ad7bfffc5767
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249824"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185070"
 ---
 # <a name="null-literals-and-type-inference-entity-sql"></a>Literały o wartości null i wnioskowanie o typie (Entity SQL)
+
 Literały null są zgodne z dowolnym typem w [!INCLUDE[esql](../../../../../../includes/esql-md.md)] systemie typów. Jednak dla typu literału wartości null, który ma zostać wywnioskowany prawidłowo, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nakłada pewne ograniczenia dotyczące miejsca, w którym można użyć literału o wartości null.  
   
 ## <a name="typed-nulls"></a>Wpisane wartości null  
+
  Wpisane wartości null mogą być używane w dowolnym miejscu. Wnioskowanie typu nie jest wymagane dla wpisanych wartości null, ponieważ typ jest znany. Na przykład można skonstruować wartość null typu Int16 przy użyciu następującej [!INCLUDE[esql](../../../../../../includes/esql-md.md)] konstrukcji:  
   
  `(cast(null as Int16))`  
   
 ## <a name="free-floating-null-literals"></a>Bezpłatne, zmiennoprzecinkowe literały o wartości null  
+
  W następujących kontekstach można używać wolnych zmiennoprzecinkowych literałów null:  
   
 - Jako argument do wyrażenia CAST lub TREAT. Jest to zalecany sposób tworzenia wyrażeniu o wartości null.  
@@ -40,6 +43,6 @@ Literały null są zgodne z dowolnym typem w [!INCLUDE[esql](../../../../../../i
   
  W innych scenariuszach nie można używać żadnych zmiennoprzecinkowych literałów null. Na przykład nie mogą być używane jako argumenty konstruktora wiersza.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie jednostki SQL](entity-sql-overview.md)

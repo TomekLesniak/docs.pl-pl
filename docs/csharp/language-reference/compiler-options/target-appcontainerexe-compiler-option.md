@@ -3,14 +3,15 @@ description: '-target: appcontainerexe (opcje kompilatora C#)'
 title: '-target: appcontainerexe (opcje kompilatora C#)'
 ms.date: 07/20/2015
 ms.assetid: e7e62229-23ea-4e53-bef5-380d951bf95f
-ms.openlocfilehash: 8c3b85c2f5a20788bd311e9bf3b300c32967da77
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: e4aa60ebc9dcc1a63b63863385b0ee9f13d6d78d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128585"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193741"
 ---
 # <a name="-targetappcontainerexe-c-compiler-options"></a>-target: appcontainerexe (opcje kompilatora C#)
+
 W przypadku użycia opcji kompilatora **-target: appcontainerexe** kompilator tworzy plik wykonywalny systemu Windows (exe), który musi być uruchamiany w kontenerze aplikacji. Ta opcja jest równoznaczna z parametrem [-target: winexe](./target-winexe-compiler-option.md) , ale jest przeznaczona dla aplikacji ze sklepu Windows 8. x.  
   
 ## <a name="syntax"></a>Składnia  
@@ -20,6 +21,7 @@ W przypadku użycia opcji kompilatora **-target: appcontainerexe** kompilator tw
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby wymagać uruchamiania aplikacji w kontenerze aplikacji, ta opcja ustawia bit w [przenośnym pliku wykonywalnym](/windows/desktop/Debug/pe-format) (PE). Gdy ten bit jest ustawiony, występuje błąd, jeśli metoda CreateProcess podejmie próbę uruchomienia pliku wykonywalnego poza kontenerem aplikacji.  
   
  O ile nie zostanie użyta opcja [-out](./out-compiler-option.md) , nazwa pliku wyjściowego przyjmuje nazwę pliku wejściowego, który zawiera metodę [Main](../../programming-guide/main-and-command-args/index.md) .  
@@ -37,6 +39,7 @@ W przypadku użycia opcji kompilatora **-target: appcontainerexe** kompilator tw
  Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.ProjectProperties3.OutputType%2A> .  
   
 ## <a name="example"></a>Przykład  
+
  Następujące polecenie kompiluje `filename.cs` do pliku wykonywalnego systemu Windows, który można uruchomić tylko w kontenerze aplikacji.  
   
 ```console  

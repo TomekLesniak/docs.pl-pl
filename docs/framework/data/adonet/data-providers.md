@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: 2be58251c767c937e817edf1ba19309f0c62ac33
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b61fede9144e554ee68f0b41adac36209adb7288
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554739"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177806"
 ---
 # <a name="net-framework-data-providers"></a>Dostawcy danych .NET Framework
+
 Dostawca danych .NET Framework jest używany do łączenia się z bazą danych, wykonywania poleceń i pobierania wyników. Te wyniki są przetwarzane bezpośrednio, umieszczane w, <xref:System.Data.DataSet> aby były udostępniane użytkownikowi w miarę potrzeby, w połączeniu z danymi z wielu źródeł lub zdalnie między warstwami. Dostawcy danych .NET Framework są lekkie, tworząc minimalną warstwę między źródłem danych i kodem, zwiększając wydajność bez ograniczania funkcjonalności.  
   
  Poniższa tabela zawiera listę dostawców danych uwzględnionych w .NET Framework.  
@@ -28,6 +29,7 @@ Dostawca danych .NET Framework jest używany do łączenia się z bazą danych, 
 |.NET Framework Dostawca danych SQL Server Compact 4,0.|Zapewnia dostęp do danych dla Microsoft SQL Server Compact 4,0. Używa przestrzeni nazw [System. Data. SqlServerCe](/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) .|  
   
 ## <a name="core-objects-of-net-framework-data-providers"></a>Podstawowe obiekty dostawców danych .NET Framework  
+
  W poniższej tabeli przedstawiono cztery podstawowe obiekty, które tworzą .NET Framework dostawcę danych.  
   
 |Obiekt|Opis|  
@@ -50,6 +52,7 @@ Dostawca danych .NET Framework jest używany do łączenia się z bazą danych, 
 |`ClientPermission`|Dostępne dla atrybutów zabezpieczeń dostępu kodu dostawcy danych .NET Framework. Klasa bazowa dla wszystkich `ClientPermission` obiektów jest <xref:System.Data.Common.DBDataPermission> klasą.|  
   
 ## <a name="net-framework-data-provider-for-sql-server-sqlclient"></a>.NET Framework Dostawca danych SQL Server (SqlClient)  
+
  Dostawca danych .NET Framework dla SQL Server (SqlClient) używa własnego protokołu do komunikowania się z SQL Server. Jest to lekkie i dobrze działa, ponieważ jest zoptymalizowany pod kątem dostępu do SQL Server bezpośrednio bez dodawania warstwy OLE DB lub Open Database Connectivity (ODBC). Poniższa ilustracja kontrastuje Dostawca danych .NET Framework dla SQL Server z .NET Framework Dostawca danych dla OLE DB. Dostawca danych .NET Framework dla OLE DB komunikuje się ze OLE DB źródłem danych za pomocą składnika usługi OLE DB, który zapewnia obsługę puli połączeń i usług transakcyjnych oraz dostawcę OLE DB dla źródła danych.  
   
 > [!NOTE]
@@ -73,6 +76,7 @@ using System.Data.SqlClient;
 ```  
   
 ## <a name="net-framework-data-provider-for-ole-db"></a>.NET Framework Dostawca danych OLE DB  
+
  .NET Framework Dostawca danych for OLE DB (OleDb) korzysta z natywnego OLE DB za pośrednictwem modelu COM Interop, aby umożliwić dostęp do danych. Dostawca danych .NET Framework dla OLE DB obsługuje zarówno transakcje lokalne, jak i rozproszone. W przypadku transakcji rozproszonych OLE DB Dostawca danych .NET Framework, domyślnie jest automatycznie rejestrowana w transakcji i uzyskuje szczegóły transakcji z usług składników systemu Windows. Aby uzyskać więcej informacji, zobacz [transakcje i współbieżność](transactions-and-concurrency.md).  
   
  W poniższej tabeli przedstawiono dostawców, którzy zostali przetestowani za pomocą ADO.NET.  
@@ -101,6 +105,7 @@ using System.Data.OleDb;
 ```  
   
 ## <a name="net-framework-data-provider-for-odbc"></a>.NET Framework Dostawca danych dla ODBC  
+
  .NET Framework Dostawca danych dla ODBC (ODBC) używa natywnego Menedżera sterowników ODBC (DM), aby umożliwić dostęp do danych. Dostawca danych ODBC obsługuje zarówno transakcje lokalne, jak i rozproszone. W przypadku transakcji rozproszonych dostawca danych ODBC jest domyślnie automatycznie zarejestrowany w transakcji i uzyskuje szczegóły transakcji z usług składowych systemu Windows. Aby uzyskać więcej informacji, zobacz [transakcje i współbieżność](transactions-and-concurrency.md).  
   
  W poniższej tabeli przedstawiono sterowniki ODBC testowane z ADO.NET.  
@@ -127,6 +132,7 @@ using System.Data.Odbc;
 > Dostawca danych .NET Framework dla ODBC wymaga programu MDAC 2,6 lub nowszej wersji, a zaleca się używanie programu MDAC 2,8 z dodatkiem SP1. Program MDAC 2,8 z dodatkiem SP1 można pobrać z [Centrum pobierania Microsoft](https://www.microsoft.com/download/details.aspx?id=5793).
   
 ## <a name="net-framework-data-provider-for-oracle"></a>.NET Framework Dostawca danych dla programu Oracle  
+
  .NET Framework Dostawca danych dla programu Oracle (OracleClient) umożliwia dostęp do danych w źródłach danych Oracle przy użyciu oprogramowania łączności klienta Oracle. Dostawca danych obsługuje oprogramowanie klienckie Oracle w wersji 8.1.7 lub nowszej. Dostawca danych obsługuje zarówno transakcje lokalne, jak i rozproszone. Aby uzyskać więcej informacji, zobacz [transakcje i współbieżność](transactions-and-concurrency.md).  
   
  Aby można było nawiązać połączenie ze źródłem danych Oracle, Dostawca danych .NET Framework dla systemu Oracle wymaga oprogramowania klienckiego Oracle (w wersji 8.1.7 lub nowszej).  
@@ -146,6 +152,7 @@ using System.Data.OracleClient;
 ```  
   
 ## <a name="choosing-a-net-framework-data-provider"></a>Wybieranie Dostawca danych .NET Framework  
+
  W zależności od projektu i źródła danych aplikacji wybór .NET Framework dostawcy danych może poprawić wydajność, możliwości i integralność aplikacji. W poniższej tabeli omówiono zalety i ograniczenia poszczególnych dostawców danych .NET Framework.  
   
 |Dostawca|Uwagi|  
@@ -156,9 +163,10 @@ using System.Data.OracleClient;
 |.NET Framework Dostawca danych dla programu Oracle|Zalecane w przypadku aplikacji środkowych i jednowarstwowych, które korzystają ze źródeł danych Oracle.|  
   
 ## <a name="entityclient-provider"></a>Dostawca EntityClient  
+
  Dostawca EntityClient służy do uzyskiwania dostępu do danych na podstawie Entity Data Model (EDM). W przeciwieństwie do innych dostawców danych .NET Framework, nie współdziała bezpośrednio ze źródłem danych. Zamiast tego używa Entity SQL do komunikowania się z dostawcą danych bazowych. Aby uzyskać więcej informacji, zobacz [EntityClient Provider for the Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie ADO.NET](ado-net-overview.md)
 - [Pobieranie i modyfikowanie danych ADO.NET](retrieving-and-modifying-data.md)

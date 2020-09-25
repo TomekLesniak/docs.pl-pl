@@ -5,27 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8b8bd3cb-86d4-4a3b-9906-61f68726dd1f
-ms.openlocfilehash: 058856243b2a8daaecd653a9b5999013de5407a8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 0fe32d8c3c37e99a50ca03262dc6184337b4450e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182524"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200209"
 ---
 # <a name="return-the-set-union-of-two-sequences"></a>Zwracanie sumy zbiorów dwóch sekwencji
-<xref:System.Linq.Queryable.Union%2A> Użyj operatora, aby zwrócić zestaw zbiorów dwóch sekwencji.  
+
+Użyj <xref:System.Linq.Queryable.Union%2A> operatora, aby zwrócić zestaw zbiorów dwóch sekwencji.  
   
 ## <a name="example"></a>Przykład  
- Ten przykład używa <xref:System.Linq.Queryable.Union%2A> do zwracania sekwencji wszystkich krajów/regionów, w których `Customers` jest albo lub `Employees`.  
+
+ Ten przykład używa <xref:System.Linq.Queryable.Union%2A> do zwracania sekwencji wszystkich krajów/regionów, w których jest albo `Customers` lub `Employees` .  
   
  [!code-csharp[DLinqQueryExamples#43](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#43)]
  [!code-vb[DLinqQueryExamples#43](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#43)]  
   
- W programie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]operatorjestzdefiniowany dla wielozbiorów jako nieuporządkowane łączenie wielozestawów (w efekcie w wyniku [`UNION ALL`](/sql/t-sql/language-elements/set-operators-union-transact-sql) klauzuli w języku SQL). <xref:System.Linq.Queryable.Union%2A>
+ W programie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Linq.Queryable.Union%2A> operator jest zdefiniowany dla wielozbiorów jako nieuporządkowane łączenie wielozestawów (w efekcie w wyniku [`UNION ALL`](/sql/t-sql/language-elements/set-operators-union-transact-sql) klauzuli w języku SQL).
 
-Aby uzyskać więcej informacji i przykładów, <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>Zobacz.
+Aby uzyskać więcej informacji i przykładów, zobacz <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType> .
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady zapytań](query-examples.md)
 - [Translacja standardowego operatora zapytania](standard-query-operator-translation.md)

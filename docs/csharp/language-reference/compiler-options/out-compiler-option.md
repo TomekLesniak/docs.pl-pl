@@ -9,14 +9,15 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: d1b79879639e1cbdc3dc040977d9fcd0c3a73602
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 409760ee0b147065a2128c62c304fb5d70cfcf42
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125023"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193884"
 ---
 # <a name="-out-c-compiler-options"></a>-out (opcje kompilatora C#)
+
 Opcja **-out** określa nazwę pliku wyjściowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,10 +27,12 @@ Opcja **-out** określa nazwę pliku wyjściowego.
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `filename`  
  Nazwa pliku wyjściowego utworzonego przez kompilator.  
   
 ## <a name="remarks"></a>Uwagi  
+
  W wierszu polecenia można określić wiele plików wyjściowych dla kompilacji. Kompilator oczekuje na znalezienie co najmniej jednego pliku kodu źródłowego po opcji **-out** . Następnie wszystkie pliki kodu źródłowego zostaną skompilowane do pliku wyjściowego określonego **przez tę opcję** .  
   
  Określ pełną nazwę i rozszerzenie pliku, który chcesz utworzyć.  
@@ -59,6 +62,7 @@ Opcja **-out** określa nazwę pliku wyjściowego.
      Aby programowo ustawić tę opcję kompilatora: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> jest to właściwość tylko do odczytu, która jest określana przez kombinację typu projektu (exe, biblioteka i tak dalej) i nazwę zestawu. Modyfikacja jednej lub obu tych właściwości będzie konieczna do ustawienia nazwy pliku wyjściowego.  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj `t.cs` i twórz plik wyjściowy `t.exe` , a także Kompiluj `t2.cs` i twórz plik wyjściowy modułu `mymodule.netmodule` :  
   
 ```console  

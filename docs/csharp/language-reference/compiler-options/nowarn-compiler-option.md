@@ -9,14 +9,15 @@ helpviewer_keywords:
 - /nowarn compiler option [C#]
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
-ms.openlocfilehash: ab906912bc4bfab40e459c92a823b915240b8d55
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 31a7ee5eacb2e7cd6b24c4a2276ce6e07fcc67e1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125088"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194027"
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn (opcje kompilatora C#)
+
 Opcja **-nowarn** pozwala pominąć kompilator z wyświetlania jednego lub kilku ostrzeżeń. Oddziel wiele numerów ostrzeżeń przecinkami.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,10 +27,12 @@ Opcja **-nowarn** pozwala pominąć kompilator z wyświetlania jednego lub kilku
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `number1`, `number2`  
  Liczba ostrzeżeń, które kompilator ma pominąć.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Należy określić tylko liczbowe części identyfikatora ostrzeżenia. Na przykład jeśli chcesz pominąć CS0028, możesz określić `-nowarn:28` .  
   
  Kompilator zignoruje w sposób cichy odpowiednie numery ostrzeżeń `-nowarn` , które były prawidłowe w poprzednich wersjach, ale zostały usunięte z kompilatora. Na przykład CS0679 był prawidłowy w kompilatorze w Visual Studio .NET 2002, ale został następnie usunięty.  

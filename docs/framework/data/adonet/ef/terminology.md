@@ -2,17 +2,18 @@
 title: Terminologia programu Entity Framework
 ms.date: 03/30/2017
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
-ms.openlocfilehash: ea889cfbc04e06e3308e31c6e282d8f2359ddeb9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: dbe03de44b8ae2a857b923cd9dc74c42ea18f4e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556541"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200943"
 ---
 # <a name="entity-framework-terminology"></a>Terminologia programu Entity Framework
+
 Ten temat zawiera definicje terminów często występujących w dokumentacji Entity Framework. Linki są udostępniane odpowiednim tematom, w których są dostępne dodatkowe informacje.  
   
-|Okres|Definicja|  
+|Termin|Definicja|  
 |----------|----------------|  
 |skojarzenie|Definicja relacji między typami jednostek.<br /><br /> Aby uzyskać więcej informacji, zobacz [element Association (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#association-element-csdl) i [Typ powiązania](../association-type.md).|  
 |zestaw skojarzeń|Logiczny kontener dla wystąpień skojarzeń tego samego typu.<br /><br /> Aby uzyskać więcej informacji, zobacz [element AssociationSet (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#associationset-element-csdl) i [zestaw skojarzeń](../association-set.md).|  
@@ -75,7 +76,7 @@ Ten temat zawiera definicje terminów często występujących w dokumentacji Ent
 |tabela na hierarchię|Metoda modelowania hierarchii typów w bazie danych, która zawiera atrybuty wszystkich typów w hierarchii w jednej tabeli.|  
 |typ tabeli|Metoda modelowania hierarchii typów w bazie danych, która korzysta z wielu tabel z relacjami jeden-do-jednego, aby modelować różne typy.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Program Entity Framework na platformie ADO.NET](index.md)
 - [Omówienie programu Entity Framework](overview.md)

@@ -3,14 +3,15 @@ title: Standardowe operatory zapytań — Omówienie (C#)
 description: Standardowe operatory zapytań LINQ zapewniają możliwości zapytań, w tym filtrowanie, projekcję, agregację i sortowanie w języku C#.
 ms.date: 07/20/2015
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-ms.openlocfilehash: 8a399f52881e10f8d94263843b5992101f96a5ea
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 1ff98e47641dbe7a884b7d6c7758c1fe61b95091
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302324"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178778"
 ---
 # <a name="standard-query-operators-overview-c"></a>Standardowe operatory zapytań — Omówienie (C#)
+
 *Standardowe operatory zapytań* to metody, które tworzą wzorzec LINQ. Większość z tych metod operuje na sekwencjach, gdzie sekwencja jest obiektem, którego typ implementuje <xref:System.Collections.Generic.IEnumerable%601> interfejs lub <xref:System.Linq.IQueryable%601> interfejs. Standardowe operatory zapytań zapewniają możliwości zapytań, w tym filtrowanie, projekcję, agregację, sortowanie i inne.  
   
  Istnieją dwa zestawy operatorów standardowego zapytania LINQ: jeden, który działa na obiektach typu <xref:System.Collections.Generic.IEnumerable%601> , inny, który działa na obiektach typu <xref:System.Linq.IQueryable%601> . Metody, które składają się na każdy zestaw są statycznymi elementami członkowskimi <xref:System.Linq.Enumerable> <xref:System.Linq.Queryable> klas i, odpowiednio. Są one definiowane jako *metody rozszerzające* typ, na którym działają. Metody rozszerzające można wywołać za pomocą składni metody statycznej lub składni metody wystąpienia.  
@@ -68,12 +69,15 @@ foreach (var obj in query)
 ```  
   
 ## <a name="query-expression-syntax"></a>Składnia wyrażenia zapytania  
+
  Niektóre z często używanych standardowych operatorów zapytań mają dedykowaną składnię słowa kluczowego języka C# i Visual Basic, która umożliwia ich wywoływanie jako część *query* *wyrażenia*zapytania. Aby uzyskać więcej informacji na temat standardowych operatorów zapytań, które mają dedykowane słowa kluczowe i ich odpowiednie składnie, zobacz [składnia wyrażeń zapytania dla standardowych operatorów zapytań (C#)](./query-expression-syntax-for-standard-query-operators.md).  
   
 ## <a name="extending-the-standard-query-operators"></a>Rozszerzanie standardowych operatorów zapytań  
+
  Zestaw standardowych operatorów zapytań można rozszerzyć przez utworzenie metod specyficznych dla domeny, które są odpowiednie dla domeny docelowej lub technologii. Możesz również zastąpić standardowe operatory zapytań własnymi implementacjami, które zapewniają dodatkowe usługi, takie jak Ocena zdalna, tłumaczenie zapytań i optymalizacja. Zobacz <xref:System.Linq.Enumerable.AsEnumerable%2A> , aby zapoznać się z przykładem.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  Poniższe linki prowadzą do artykułów, które dostarczają dodatkowych informacji na temat różnych standardowych operatorów zapytań opartych na funkcjonalności.  
   
  [Sortowanie danych (C#)](./sorting-data.md)  
@@ -111,4 +115,4 @@ foreach (var obj in query)
 - [Wprowadzenie do kwerend LINQ (C#)](./introduction-to-linq-queries.md)
 - [Składnia wyrażenia zapytania dla standardowych operatorów zapytań (C#)](./query-expression-syntax-for-standard-query-operators.md)
 - [Klasyfikacja standardowych operatorów zapytań według sposobu wykonywania (C#)](./classification-of-standard-query-operators-by-manner-of-execution.md)
-- [Metody rozszerzania](../../classes-and-structs/extension-methods.md)
+- [Metody rozszerzające](../../classes-and-structs/extension-methods.md)

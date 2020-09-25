@@ -3,14 +3,15 @@ title: <x509SecurityTokenHandlerRequirement>
 ms.date: 03/30/2017
 ms.assetid: aca22c2c-5ae7-42af-9bbd-15c2524692ce
 author: BrucePerlerMS
-ms.openlocfilehash: 30ce69a35cfdd34e0dfea5c682347eb9187e04ed
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a6a8185297e1345de9fa20c7d4d0dffbdcd8620f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152453"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185395"
 ---
 # \<x509SecurityTokenHandlerRequirement>
+
 Zapewnia opcjonalną konfigurację <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler> klasy lub klas pochodnych.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ Zapewnia opcjonalną konfigurację <xref:System.IdentityModel.Tokens.X509Securit
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -54,6 +56,7 @@ Zapewnia opcjonalną konfigurację <xref:System.IdentityModel.Tokens.X509Securit
 |certificateValidator|Typ niestandardowy, który pochodzi od <xref:System.IdentityModel.Selectors.X509CertificateValidator> . Jeśli `certificateValidationMode` atrybut jest "Custom", wystąpienie tego typu jest używane na potrzeby walidacji certyfikatu wystawcy.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  

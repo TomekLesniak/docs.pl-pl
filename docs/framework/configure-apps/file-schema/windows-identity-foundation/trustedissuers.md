@@ -3,14 +3,15 @@ title: <trustedIssuers>
 ms.date: 03/30/2017
 ms.assetid: d818c917-07b4-40db-9801-8676561859fd
 author: BrucePerlerMS
-ms.openlocfilehash: 50fc7194823fb0c5c426fb54ffd50b17c3714ed9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 08cddd19f40f039f86e100cc7ee6a78633502eb2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70251760"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185564"
 ---
 # \<trustedIssuers>
+
 Konfiguruje listę certyfikatów zaufanych wystawców używanych przez rejestr nazw wystawcy oparty na konfiguracji ( <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> ).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -42,9 +43,11 @@ Konfiguruje listę certyfikatów zaufanych wystawców używanych przez rejestr n
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -59,14 +62,16 @@ Konfiguruje listę certyfikatów zaufanych wystawców używanych przez rejestr n
   
 |Element|Opis|  
 |-------------|-----------------|  
-|[\<issuerNameRegistry>](issuernameregistry.md)|Konfiguruje rejestr nazwy wystawcy. **Ważne:**  `type`Atrybut `<issuerNameRegistry>` elementu musi odwoływać się do <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> klasy, aby `<trustedIssuers>` element był prawidłowy.|  
+|[\<issuerNameRegistry>](issuernameregistry.md)|Konfiguruje rejestr nazwy wystawcy. **Ważne:**  `type` Atrybut `<issuerNameRegistry>` elementu musi odwoływać się do <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> klasy, aby `<trustedIssuers>` element był prawidłowy.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Program Windows Identity Foundation (WIF) udostępnia jedną implementację <xref:System.IdentityModel.Tokens.IssuerNameRegistry> klasy z pola, <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> klasy. Nazwa wystawcy konfiguracji rejestru przechowuje listę zaufanych wystawców, które są ładowane z konfiguracji. Lista kojarzy nazwy poszczególnych wystawców z certyfikatem X. 509, który jest wymagany do zweryfikowania podpisu tokenów wygenerowanych przez wystawcę. Lista zaufanych certyfikatów wystawcy jest określona w `<trustedIssuers>` elemencie. Każdy element na liście kojarzy nazwę wystawcy z certyfikatem X. 509, który jest niezbędny do zweryfikowania sygnatury tokenów wytworzonych przez tego wystawcy. Certyfikaty zaufane są określane przy użyciu formy z certyfikatem ASN. 1 i są dodawane do kolekcji za pomocą `<add>` elementu. Wystawcy (certyfikaty) można wyczyścić lub usunąć z listy za pomocą `<clear>` `<remove>` elementów i.  
   
  `type`Atrybut `<issuerNameRegistry>` elementu musi odwoływać się do <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> klasy, aby `<trustedIssuers>` element był prawidłowy.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym kodzie XML pokazano, jak określić nazwę rejestru wystawcy na podstawie konfiguracji.  
   
 ```xml  
@@ -77,7 +82,7 @@ Konfiguruje listę certyfikatów zaufanych wystawców używanych przez rejestr n
 </issuerNameRegistry>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>
 - <xref:System.IdentityModel.Tokens.IssuerNameRegistry>

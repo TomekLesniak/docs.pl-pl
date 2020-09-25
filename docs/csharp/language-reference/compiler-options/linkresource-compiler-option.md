@@ -12,14 +12,15 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-ms.openlocfilehash: cd1150f3fa0dd0eca4e9352ce3809e73a15126c7
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 4efa0cbf286b40ad971bad66a7acce15e553eb39
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466108"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194105"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource — (opcje kompilatora C#)
+
 Tworzy łącze do zasobu .NET w pliku wyjściowym. Plik zasobów nie został dodany do pliku wyjściowego. Różni się to od opcji [-Resource](./resource-compiler-option.md) , która osadza plik zasobów w pliku wyjściowym.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ Tworzy łącze do zasobu .NET w pliku wyjściowym. Plik zasobów nie został dod
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `filename`  
  Plik zasobów platformy .NET, który ma zostać połączony z zestawu.  
   
@@ -39,6 +41,7 @@ Tworzy łącze do zasobu .NET w pliku wyjściowym. Plik zasobów nie został dod
  Dostępność zasobu: Public lub Private. Wartość domyślna to Public.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie połączone zasoby są publiczne w zestawie, gdy są tworzone za pomocą kompilatora języka C#. Aby udostępnić zasoby jako prywatne, określ `private` jako modyfikator dostępności. Inny modyfikator inny niż `public` lub `private` jest niedozwolony.  
   
  **-linkresource —** wymaga jednej z opcji [-Target](./target-compiler-option.md) innych niż **-target: module**.  
@@ -52,6 +55,7 @@ Tworzy łącze do zasobu .NET w pliku wyjściowym. Plik zasobów nie został dod
  Ta opcja kompilatora jest niedostępna w programie Visual Studio i nie można jej zmienić programowo.  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj `in.cs` i Połącz z plikiem zasobów `rf.resource` :  
   
 ```console  
@@ -59,6 +63,7 @@ csc -linkresource:rf.resource in.cs
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj do `A.cs` biblioteki DLL, Połącz się z natywną biblioteką dll N.dll i umieść dane wyjściowe w globalnej pamięci podręcznej zestawów (GAC). W tym przykładzie zarówno A.dll, jak i N.dll będą przechowywane w pamięci podręcznej GAC.  
   
 ```console  
@@ -67,6 +72,7 @@ gacutil -i A.dll
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład wykonuje te same czynności co w poprzednim, ale przy użyciu opcji konsolidatora zestawu.  
   
 ```console  
@@ -75,7 +81,7 @@ al -out:A.dll A.netmodule -link:N.dll
 gacutil -i A.dll  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Opcje kompilatora C#](./index.md)
 - [Al.exe (Konsolidator zestawu)](../../../framework/tools/al-exe-assembly-linker.md)

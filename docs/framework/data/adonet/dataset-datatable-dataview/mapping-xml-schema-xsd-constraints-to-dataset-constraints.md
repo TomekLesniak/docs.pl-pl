@@ -2,15 +2,16 @@
 title: Mapowanie ograniczeń schematu XML (XSD) na ograniczenia elementu DataSet
 ms.date: 03/30/2017
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
-ms.openlocfilehash: b44c3193e1b9e2e52e086111eab0ab0b0cae5c97
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a2b28b0dcb2e2858c7328854650667f51e83166a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786078"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185291"
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapowanie ograniczeń schematu XML (XSD) na ograniczenia elementu DataSet
-Język definicji schematu XML (XSD) umożliwia określenie ograniczeń dla elementów i atrybutów, które definiuje. Podczas mapowania schematu XML na schemat relacyjny w programie <xref:System.Data.DataSet>ograniczenia schematu XML są mapowane na odpowiednie ograniczenia relacyjne dla tabel i kolumn w **zestawie danych**.  
+
+Język definicji schematu XML (XSD) umożliwia określenie ograniczeń dla elementów i atrybutów, które definiuje. Podczas mapowania schematu XML na schemat relacyjny w programie <xref:System.Data.DataSet> ograniczenia schematu XML są mapowane na odpowiednie ograniczenia relacyjne dla tabel i kolumn w **zestawie danych**.  
   
  W tej sekcji omówiono mapowanie następujących ograniczeń schematu XML:  
   
@@ -27,6 +28,7 @@ Język definicji schematu XML (XSD) umożliwia określenie ograniczeń dla eleme
  Proces mapowania konwertuje te ograniczenia schematu na odpowiednie ograniczenia dotyczące tabel utworzonych w ramach **zestawu danych**.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Mapowanie ograniczeń unique schematu XML (XSD) na ograniczenia elementu DataSet](map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  Opisuje elementy schematu XML używane do tworzenia unikatowych ograniczeń w **zestawie danych**.  
   
@@ -37,12 +39,13 @@ Język definicji schematu XML (XSD) umożliwia określenie ograniczeń dla eleme
  Opisuje elementy schematu XML używane do tworzenia ograniczeń keyref (klucza obcego) w **zestawie danych**.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Pobieranie relacyjnej struktury elementu DataSet ze schematu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
  Opisuje strukturę relacyjną lub schemat **zestawu danych** , który jest tworzony na podstawie schematu XSD.  
   
  [Generowanie relacji elementu DataSet na podstawie schematu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)  
  Opisuje elementy schematu XML używane do tworzenia relacji między kolumnami tabeli w **zestawie danych**.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie ADO.NET](../ado-net-overview.md)

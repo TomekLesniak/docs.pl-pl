@@ -13,14 +13,15 @@ helpviewer_keywords:
 - compiler optimization [C#]
 - o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
-ms.openlocfilehash: 6fd268414c4e54e7b4865733480f8917389015d0
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1862794e4d823e38ce19780300a0b04f4e57dc44
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125036"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193988"
 ---
 # <a name="-optimize-c-compiler-options"></a>-Optymalizuj (opcje kompilatora C#)
+
 Opcja **-Optimize** włącza lub wyłącza optymalizacje wykonywane przez kompilator, aby plik wyjściowy był mniejszy, szybszy i bardziej wydajny.  
   
 ## <a name="syntax"></a>Składnia  
@@ -30,6 +31,7 @@ Opcja **-Optimize** włącza lub wyłącza optymalizacje wykonywane przez kompil
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  **-Optymalizuj** również informuje środowisko uruchomieniowe języka wspólnego, aby zoptymalizować kod w czasie wykonywania.  
   
  Optymalizacje są domyślnie wyłączone. Określ **-Optimize +** , aby włączyć optymalizacje.  
@@ -51,6 +53,7 @@ Opcja **-Optimize** włącza lub wyłącza optymalizacje wykonywane przez kompil
  Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A> .  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj `t2.cs` i Włącz optymalizacje kompilatora:  
   
 ```console  
