@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: 4564cf59e3b6cfbdcd9dca06cd0f966d524834de
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2207c934f5864890d9b7a5e22c43a1d53e29aaa5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088549"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91187111"
 ---
 # <a name="oidentry-element"></a>\<oidEntry> Element
+
 Mapuje identyfikator obiektu ASN. 1 (OID) na przyjazną nazwę.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Mapuje identyfikator obiektu ASN. 1 (OID) na przyjazną nazwę.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -41,6 +43,7 @@ Mapuje identyfikator obiektu ASN. 1 (OID) na przyjazną nazwę.
 |**Nazwij**|Atrybut wymagany.<br /><br /> Określa wartość atrybutu **name** w [\<nameEntry>](nameentry-element.md) tagu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -53,9 +56,11 @@ Mapuje identyfikator obiektu ASN. 1 (OID) na przyjazną nazwę.
 |`oidMap`|Zawiera mapowania identyfikatorów obiektów ASN. 1 (OID) do klas.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Identyfikatory obiektu ASN. 1 identyfikują algorytmy w niektórych formatach kryptograficznych. Mapuj identyfikatory obiektów na przyjazne nazwy dla algorytmów, które chcesz zidentyfikować.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak używać **\<oidEntry>** elementu do mapowania identyfikatora obiektu dla algorytmu wyznaczania wartości skrótu RIPEMD-160 do implementacji algorytmu wyznaczania wartości skrótu.  
   
 ```xml  
@@ -78,7 +83,7 @@ Mapuje identyfikator obiektu ASN. 1 (OID) na przyjazną nazwę.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat pliku konfiguracji](../index.md)
 - [Schemat ustawień kryptografii](index.md)

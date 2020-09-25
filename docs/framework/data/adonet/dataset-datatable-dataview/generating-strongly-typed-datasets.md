@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
-ms.openlocfilehash: 25419f8a810b52103e6b862cfe2fe6ab5a1fd981
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 1c65389c8c5664f86f3f0c04829a2422908d72d1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040090"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202295"
 ---
 # <a name="generating-strongly-typed-datasets"></a>Generowanie silnie typizowanych elementów DataSet
-Zgodnie ze schematem XML, który jest zgodny ze standardem XML schematu definicji języka (XSD), można wygenerować silnie wpisaną <xref:System.Data.DataSet> przy użyciu narzędzia XSD. exe dostępnego w zestawie Windows Software Development Kit (SDK).  
+
+W przypadku schematu XML, który jest zgodny ze standardem XML schematu definicji języka (XSD), można wygenerować silnie wpisaną <xref:System.Data.DataSet> przy użyciu narzędzia XSD.exe dostarczonego z zestawem Windows Software Development Kit (SDK).  
   
- (Aby utworzyć XSD z tabeli bazy danych, zobacz <xref:System.Data.DataSet.WriteXmlSchema%2A> lub [Working with datasetss in Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)).  
+ (Aby utworzyć XSD z tabel baz danych, zobacz <xref:System.Data.DataSet.WriteXmlSchema%2A> lub [Working with datasetss in Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)).  
   
  Poniższy kod przedstawia składnię generowania **zestawu danych** za pomocą tego narzędzia.  
   
@@ -23,17 +24,17 @@ Zgodnie ze schematem XML, który jest zgodny ze standardem XML schematu definicj
 xsd.exe /d /l:CS XSDSchemaFileName.xsd /eld /n:XSDSchema.Namespace  
 ```  
   
- W tej składni dyrektywa `/d` informuje narzędzie do wygenerowania **zestawu danych**, a `/l:` informuje narzędzie o języku, C# który ma być używany (na przykład lub Visual Basic .NET). Opcjonalna dyrektywa `/eld` określa, że można użyć LINQ to DataSet do wykonywania zapytań względem wygenerowanego **zestawu danych.** Ta opcja jest używana, gdy określono również opcję `/d`. Aby uzyskać więcej informacji, zobacz [wykonywanie zapytań dotyczących wpisanych zestawów danych](../querying-typed-datasets.md). Opcjonalna dyrektywa `/n:` informuje narzędzie, aby wygenerowało również przestrzeń nazw dla **zestawu danych** o nazwie **XSDSchema. Namespace**. Dane wyjściowe polecenia to XSDSchemaFileName.cs, które mogą być kompilowane i używane w aplikacji ADO.NET. Wygenerowany kod można skompilować jako bibliotekę lub moduł.  
+ W tej składni `/d` dyrektywa nakazuje narzędziu wygenerowanie **zestawu danych**, a także `/l:` informuje narzędzie o używanym języku (na przykład C# lub Visual Basic .NET). Opcjonalna `/eld` dyrektywa określa, że można użyć LINQ to DataSet do wykonywania zapytań względem wygenerowanego **zestawu danych.** Ta opcja jest używana, jeśli `/d` określono również opcję. Aby uzyskać więcej informacji, zobacz [wykonywanie zapytań dotyczących wpisanych zestawów danych](../querying-typed-datasets.md). Opcjonalna `/n:` dyrektywa informuje narzędzie, aby wygenerowało również przestrzeń nazw dla **zestawu danych** o nazwie **XSDSchema. Namespace**. Dane wyjściowe polecenia to XSDSchemaFileName.cs, które mogą być kompilowane i używane w aplikacji ADO.NET. Wygenerowany kod można skompilować jako bibliotekę lub moduł.  
   
- Poniższy kod przedstawia składnię kompilowania wygenerowanego kodu jako biblioteki przy użyciu C# kompilatora (CSC. exe).  
+ Poniższy kod przedstawia składnię kompilowania wygenerowanego kodu jako biblioteki przy użyciu kompilatora C# (csc.exe).  
   
 ```console  
 csc.exe /t:library XSDSchemaFileName.cs /r:System.dll /r:System.Data.dll  
 ```  
   
- Dyrektywa `/t:` informuje narzędzie do skompilowania do biblioteki, a dyrektywy `/r:` określają zależne biblioteki wymagane do skompilowania. Dane wyjściowe polecenia to XSDSchemaFileName. dll, które mogą być przekazywane do kompilatora podczas kompilowania aplikacji ADO.NET z dyrektywą `/r:`.  
+ `/t:`Dyrektywa informuje narzędzie do skompilowania do biblioteki, a `/r:` dyrektywy określają zależne biblioteki wymagane do skompilowania. Dane wyjściowe polecenia są XSDSchemaFileName.dll, które mogą być przekazywane do kompilatora podczas kompilowania aplikacji ADO.NET z `/r:` dyrektywą.  
   
- Poniższy kod przedstawia składnię dostępu do przestrzeni nazw przekazaną do pliku XSD. exe w aplikacji ADO.NET.  
+ Poniższy kod przedstawia składnię dostępu do przestrzeni nazw przekazaną do XSD.exe w aplikacji ADO.NET.  
   
 ```vb  
 Imports XSDSchema.Namespace  
@@ -94,7 +95,7 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataSet>

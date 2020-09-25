@@ -3,14 +3,15 @@ title: Tworzenie atrybutów niestandardowych (C#)
 description: Dowiedz się, jak tworzyć atrybuty niestandardowe w języku C# przez zdefiniowanie klasy atrybutu, która dziedziczy z klasy Attribute.
 ms.date: 07/20/2015
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
-ms.openlocfilehash: 7d6f98620388af8715652dcbcfe78366952b853d
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6946b707134b2bdbc245b8786f144517a5870440
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925088"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202608"
 ---
 # <a name="creating-custom-attributes-c"></a>Tworzenie atrybutów niestandardowych (C#)
+
 Można utworzyć własne atrybuty niestandardowe przez zdefiniowanie klasy atrybutów, klasy, która dziedziczy bezpośrednio lub pośrednio z <xref:System.Attribute> , co sprawia, że definicje atrybutów i są łatwe w użyciu w metadanych. Załóżmy, że chcesz oznakować typy nazwą programisty, który zapisał typ. Można zdefiniować `Author` klasę niestandardowego atrybutu:  
   
 ```csharp  
@@ -42,7 +43,7 @@ class SampleClass
 }  
 ```  
   
- `AttributeUsage`ma nazwany parametr, `AllowMultiple` za pomocą którego można wykonać pojedyncze użycie lub Multiuse atrybutu niestandardowego. W poniższym przykładzie kodu tworzony jest atrybut Multiuse.  
+ `AttributeUsage` ma nazwany parametr, `AllowMultiple` za pomocą którego można wykonać pojedyncze użycie lub Multiuse atrybutu niestandardowego. W poniższym przykładzie kodu tworzony jest atrybut Multiuse.  
   
 ```csharp  
 [System.AttributeUsage(System.AttributeTargets.Class |  
@@ -64,7 +65,7 @@ class SampleClass
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Reflection>
 - [Przewodnik programowania w języku C#](../../index.md)

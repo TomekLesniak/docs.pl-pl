@@ -3,14 +3,15 @@ title: Elementy DataTable
 description: Dowiedz się więcej o elemencie DataTable ADO.NET, który reprezentuje jedną tabelę danych relacyjnych w pamięci, która jest lokalna dla. Aplikacja oparta na sieci, w której znajduje się.
 ms.date: 03/30/2017
 ms.assetid: 52ff0e32-3e5a-41de-9a3b-7b04ea52b83e
-ms.openlocfilehash: da6c9201951a6c7916067011c0a4f01ef9fdeffd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d501096b4abe94653acdc5249c120abff94534d1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286911"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202308"
 ---
 # <a name="datatables"></a>Elementy DataTable
+
 <xref:System.Data.DataSet>Składa się z kolekcji tabel, relacji i ograniczeń. W ADO.NET <xref:System.Data.DataTable> obiekty są używane do reprezentowania tabel w **zestawie danych**. Element **DataTable** reprezentuje jedną tabelę danych relacyjnych w pamięci; dane są lokalne dla. Aplikacja oparta na sieci, w której znajduje się, ale może zostać wypełniona ze źródła danych, takiego jak Microsoft SQL Server przy użyciu elementu **DataAdapter** Aby uzyskać więcej informacji, zobacz [wypełnianie zestawu danych z elementu DataAdapter](../populating-a-dataset-from-a-dataadapter.md).  
   
  Klasa **DataTable** jest składową przestrzeni nazw **System. Data** w bibliotece klas .NET Framework. Można utworzyć i używać **DataTable** niezależnie lub jako elementu członkowskiego **zestawu danych**, a obiekty **DataTable** mogą być również używane w połączeniu z innymi obiektami .NET Framework, w tym <xref:System.Data.DataView> . Dostęp do kolekcji tabel w **zestawie danych** można uzyskać za pomocą właściwości **Tables** obiektu **DataSet** .  
@@ -22,6 +23,7 @@ ms.locfileid: "84286911"
  Można utworzyć relacje nadrzędny-podrzędny między tabelami przy użyciu co najmniej jednej powiązanej kolumny w tabelach. Utwórz relację między obiektami **DataTable** przy użyciu <xref:System.Data.DataRelation> . **Obiektów** można następnie użyć do zwrócenia powiązanych podrzędnych lub nadrzędnych wierszy określonego wiersza. Aby uzyskać więcej informacji, zobacz [Dodawanie relacji](adding-datarelations.md)danych.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Tworzenie elementu DataTable](creating-a-datatable.md)  
  Wyjaśnia, jak utworzyć element **DataTable** i dodać go do **zestawu danych**.  
   
@@ -35,6 +37,7 @@ ms.locfileid: "84286911"
  Zawiera informacje o zdarzeniach dostępnych do użycia z elementem **DataTable**, w tym zdarzenia, gdy wartości kolumn są modyfikowane, a wiersze są dodawane lub usuwane.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [ADO.NET](../index.md)  
  Opisuje architekturę i składniki ADO.NET oraz sposób ich używania do uzyskiwania dostępu do istniejących źródeł danych i zarządzania danymi aplikacji.  
   
@@ -56,6 +59,6 @@ ms.locfileid: "84286911"
  [Przegląd biblioteki klas](../../../../standard/class-library-overview.md)  
  Zawiera przegląd biblioteki klas .NET Framework, w tym przestrzeń nazw **systemu** , a także jej przestrzeń nazw drugiego poziomu, **System. Data**.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie ADO.NET](../ado-net-overview.md)

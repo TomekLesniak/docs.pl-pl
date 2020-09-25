@@ -3,14 +3,15 @@ title: Włączanie źródła danych do zapytań LINQ
 description: Dowiedz się, jak rozszerzając LINQ w języku C#, aby umożliwić wysyłanie zapytań do dowolnego źródła danych w wzorcu LINQ, co ułatwia klientom wykonywanie kwerend względem źródła danych.
 ms.date: 07/20/2015
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
-ms.openlocfilehash: a3a03aa3c67ef80507de4607e21eee4d247d622d
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: d7d751c0584072e740b4e5292071e400a5020f82
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103939"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202620"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Włączanie źródła danych do zapytań LINQ
+
 Istnieją różne sposoby, aby zwiększyć LINQ, aby umożliwić odszukanie dowolnego źródła danych w wzorcu LINQ. Źródłem danych może być między innymi struktura danych, usługi sieci Web, system plików lub baza danych. Wzorzec LINQ ułatwia klientom Wysyłanie zapytań do źródła danych, dla którego jest włączone zapytanie LINQ, ponieważ składnia i wzorzec zapytania nie są zmieniane. Sposoby rozszerzania LINQ do tych źródeł danych są następujące:  
   
 - Implementowanie <xref:System.Collections.Generic.IEnumerable%601> interfejsu w typie, aby umożliwić LINQ to Objects zapytania o ten typ.  
@@ -26,12 +27,15 @@ Istnieją różne sposoby, aby zwiększyć LINQ, aby umożliwić odszukanie dowo
 ## <a name="how-to-enable-linq-querying-of-your-data-source"></a>Jak włączyć wykonywanie zapytań LINQ w odniesieniu do źródła danych  
   
 ### <a name="in-memory-data"></a>Dane w pamięci  
+
  Istnieją dwa sposoby włączania zapytań LINQ do danych w pamięci. Jeśli dane są typu, który implementuje <xref:System.Collections.Generic.IEnumerable%601> , można wysyłać zapytania o dane przy użyciu LINQ to Objects. Jeśli nie ma sensu, aby włączyć wyliczanie typu przez implementację <xref:System.Collections.Generic.IEnumerable%601> interfejsu, można zdefiniować metody operatora zapytania w standardzie LINQ w tym typie lub utworzyć metody standardowego operatora zapytań LINQ, które zwiększają typ. Niestandardowe implementacje standardowych operatorów kwerendy powinny stosować odroczone wykonania w celu zwracania wyników.  
   
 ### <a name="remote-data"></a>Dane zdalne  
+
  Najlepszą opcją włączenia zapytania LINQ do zdalnego źródła danych jest zaimplementowanie <xref:System.Linq.IQueryable%601> interfejsu. Jednak różni się to od rozszerzania dostawcy, takiego jak [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] dla źródła danych. Żadne modele dostawcy do rozszerzania istniejących technologii LINQ, takich jak [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] , do innych typów źródeł danych, są dostępne w programie Visual Studio 2008.
   
 ## <a name="iqueryable-linq-providers"></a>Dostawy IQueryable LINQ  
+
  Dostawcy LINQ, którzy implementują <xref:System.Linq.IQueryable%601> możliwości, mogą się znacznie różnić w ich złożoności. W tej sekcji omówiono różne poziomy złożoności.  
   
  Mniej złożony `IQueryable` dostawca może interfejsować za pomocą jednej metody usługi sieci Web. Ten typ dostawcy jest bardzo specyficzny, ponieważ oczekuje określonych informacji w kwerendach, które obsługuje. Posiada system zamkniętego typu, być może podając pojedynczy typ wyniku. Większość wykonywania zapytania odbywa się lokalnie, na przykład przy użyciu <xref:System.Linq.Enumerable> implementacji standardowych operatorów zapytań. Mniej skomplikowany dostawca może zbadać tylko jedną metodę wyrażenie wywołania w drzewie wyrażeń, które reprezentuje zapytanie i pozwala, aby pozostała logiki kwerendy była obsługiwana gdzie indziej.  

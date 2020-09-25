@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsHttpBinding Element
 ms.assetid: 0eee8ced-ad68-427d-b95a-97260e98deed
-ms.openlocfilehash: 27b506a53aba3e7c58f850c7b3adb8a763c80b39
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 33d7c40faa0bf8b78ebc6f79c7db341bb44887ec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557271"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202438"
 ---
 # \<wsHttpBinding>
+
 Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie odpowiednie dla kontraktów usługi non-Duplex. Powiązanie implementuje następujące specyfikacje: niezawodna obsługa komunikatów w usłudze WS i zabezpieczeniach WS-Security na potrzeby zabezpieczeń i uwierzytelniania komunikatów. Transport to HTTP, a kodowanie wiadomości to kodowanie Text/XML.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -61,6 +62,7 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie odpowiednie dla k
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -98,6 +100,7 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie odpowiednie dla k
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `WSHttpBinding`Jest podobna do, `BasicHttpBinding` ale udostępnia więcej funkcji usługi sieci Web. Korzysta ona z transportu HTTP i zapewnia zabezpieczenia komunikatów, jak BasicHttpBinding, ale udostępnia również transakcje, niezawodne komunikaty i adresy WS-Addressing, które są domyślnie włączone lub dostępne za pośrednictwem jednego ustawienia formantu.  
   
 ## <a name="example"></a>Przykład  
@@ -138,7 +141,7 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie odpowiednie dla k
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.WSHttpBinding>
 - <xref:System.ServiceModel.Configuration.WSHttpBindingElement>
