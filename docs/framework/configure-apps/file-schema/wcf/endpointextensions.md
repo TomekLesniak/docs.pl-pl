@@ -2,14 +2,15 @@
 title: <endpointExtensions>
 ms.date: 03/30/2017
 ms.assetid: 33396e0a-1fae-4616-b822-923584eebfd1
-ms.openlocfilehash: fe57cb84cfa70b1f6b92abf1dbac89ddad9d4dc8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d0587ae942d1b0c7eb72bee830ca3ced76e4270c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69925711"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190036"
 ---
 # \<endpointExtensions>
+
 Ta sekcja rejestruje nowy standardowy punkt końcowy w sekcji rozszerzeń w pliku konfiguracyjnym komputera lub aplikacji. Można dodać standardowy punkt końcowy do tej kolekcji przy użyciu `add` słowa kluczowego i ustawić `type` atrybut elementu na typ punktu końcowego, a także `name` atrybut na nazwę standardowego punktu końcowego.  
   
  W poniższym przykładzie użyto `add` elementu, a także `name` atrybutu, aby dodać standardowy punkt końcowy do `<endpointExtensions>` sekcji pliku konfiguracji.  

@@ -3,14 +3,15 @@ title: <add>
 ms.date: 03/30/2017
 ms.assetid: 4712a888-f154-4395-8887-ef14a88a6497
 author: BrucePerlerMS
-ms.openlocfilehash: 7c2b6bdc62da63905d7ff33a9984808e7b7d114f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2f37019fa0787f5c5553dbd3debc173ec0a047ee
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544543"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189958"
 ---
 # \<add>
+
 Dodaje określony program obsługi tokenów zabezpieczających do kolekcji obsługi tokenów.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Dodaje określony program obsługi tokenów zabezpieczających do kolekcji obsł
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -59,6 +61,7 @@ Dodaje określony program obsługi tokenów zabezpieczających do kolekcji obsł
 |[\<securityTokenHandlers>](securitytokenhandlers.md)|Określa kolekcję programów obsługi tokenów zabezpieczających, które są zarejestrowane w punkcie końcowym.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<add>`Element może przyjmować jeden element podrzędny, który określa konfigurację programu obsługi tokenów. Jest to zależne od tego, czy Klasa obsługi, do której odwołuje się `type` atrybut `<add>` elementu, zapewnia obsługę tej funkcji. Klasy obsługi tokenów, które udostępniają tę funkcję, muszą uwidaczniać Konstruktor, który pobiera <xref:System.Xml.XmlElement> obiekt.  
 
 ```csharp  
@@ -78,6 +81,7 @@ public class CustomTokenHandler : Microsoft.IdentityModel.Tokens.SecurityTokenHa
  Ustawienia określone w ustawieniach przesłonięcia programu obsługi określone w kolekcji obsługi tokenów w [\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md) elemencie i określonych na poziomie usługi w ramach [\<identityConfiguration>](identityconfiguration.md) elementu.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod XML pokazuje użycie `<add>` elementów i, `<remove>` Aby zastąpić domyślną procedurę obsługi tokena sesji za pomocą procedury obsługi niestandardowego tokenu sesji. KOD XML jest pobierany z `ClaimsAwareWebFarm` przykładu.  
   
 ```xml  
