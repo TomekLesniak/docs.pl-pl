@@ -2,14 +2,15 @@
 title: <add> dla <baseAddresses>
 ms.date: 03/30/2017
 ms.assetid: 1bd7426f-5f4f-43fc-b8e9-de842219aa32
-ms.openlocfilehash: d75142209ad8706d0cad5ce188d9d991a5e881bc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cd0ef5cc5f0f809bdafa23bd312e7e30fcdccc21
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850582"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181612"
 ---
 # <a name="add-of-baseaddresses"></a>\<add> dla \<baseAddresses>
+
 Reprezentuje element konfiguracji, który określa adresy podstawowe używane przez hosta usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,9 +28,11 @@ Reprezentuje element konfiguracji, który określa adresy podstawowe używane pr
 ```  
   
 ## <a name="type"></a>Typ  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -39,6 +42,7 @@ Reprezentuje element konfiguracji, który określa adresy podstawowe używane pr
 |`baseAddress`|Ciąg określający adres podstawowy używany przez hosta usługi.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -47,7 +51,7 @@ Reprezentuje element konfiguracji, który określa adresy podstawowe używane pr
 |-------------|-----------------|  
 |[\<baseAddresses>](baseaddresses.md)|Kolekcja `baseAddress` elementów.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.HostElement>
 - <xref:System.ServiceModel.ServiceHost>

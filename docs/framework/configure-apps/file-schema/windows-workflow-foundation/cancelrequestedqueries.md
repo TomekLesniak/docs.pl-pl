@@ -3,14 +3,15 @@ title: <cancelRequestedQueries>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: eab5af7e-76fa-434d-9d36-873e995cee05
-ms.openlocfilehash: 89297b3a7d64f4300a735d8512230d441836c634
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4db30f3fed12b585b73339120fa5bc6602150e7d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152310"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189542"
 ---
 # \<cancelRequestedQueries>
+
 Reprezentuje kolekcję zapytań, które są używane do śledzenia żądań, aby anulować działanie podrzędne przez działanie nadrzędne. Zapytanie jest niezbędne do uczestnika śledzenia do subskrybowania Anuluj żądanie rekordu obiektów.  
   
  Aby uzyskać więcej informacji o śledzeniu zapytań profilowych, zobacz [śledzenie profilów](../../../windows-workflow-foundation/tracking-profiles.md)  
@@ -38,9 +39,11 @@ Reprezentuje kolekcję zapytań, które są używane do śledzenia żądań, aby
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -55,7 +58,7 @@ Reprezentuje kolekcję zapytań, które są używane do śledzenia żądań, aby
 |-------------|-----------------|  
 |[\<workflow>](workflow.md)|Element konfiguracji, który zawiera wszystkie zapytania dla określonego przepływu pracy identyfikowanego przez właściwość **activityDefinitionId** .|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Kontrola i śledzenie przepływu pracy](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
 - [Profile śledzenia](../../../windows-workflow-foundation/tracking-profiles.md)

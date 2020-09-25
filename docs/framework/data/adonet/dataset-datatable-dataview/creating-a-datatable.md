@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
-ms.openlocfilehash: 335137eeef02e590539c6d83e46cb39901a1e03f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 75c9bcf0e0b6180030825b4d1e7dd9e1f9686712
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286924"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198642"
 ---
 # <a name="creating-a-datatable"></a>Tworzenie elementu DataTable
+
 A <xref:System.Data.DataTable> , który reprezentuje jedną tabelę danych relacyjnych w pamięci, może być tworzony i używany niezależnie lub może być używany przez inne obiekty .NET Framework, najczęściej jako element członkowski <xref:System.Data.DataSet> .  
   
  Obiekt **DataTable** można utworzyć przy użyciu odpowiedniego konstruktora **DataTable** . Możesz dodać go do **zestawu danych** za pomocą metody **Add** , aby dodać go do kolekcji **tabel** obiektu **DataTable** .  
@@ -50,7 +51,7 @@ DataSet customers = new DataSet();
 DataTable customersTable = customers.Tables.Add("CustomersTable");  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataTableCollection>

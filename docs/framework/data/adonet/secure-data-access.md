@@ -2,17 +2,19 @@
 title: Bezpieczny dostęp do danych
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: 28d3a7d8ccfe2aeafbea0930b8655e41bc45c1a2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9e4af58ce845c0b57c433e4ad1b8dddf4ee2a0cb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550784"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189022"
 ---
 # <a name="secure-data-access"></a>Bezpieczny dostęp do danych
+
 Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabezpieczeń dostępnymi w podstawowym magazynie danych lub w bazie danych. Należy również wziąć pod uwagę implikacje zabezpieczeń innych funkcji lub składników, które może zawierać aplikacja.  
   
 ## <a name="authentication-authorization-and-permissions"></a>Uwierzytelnianie, autoryzacja i uprawnienia  
+
  Podczas nawiązywania połączenia z usługą Microsoft SQL Server można używać uwierzytelniania systemu Windows, znanego również jako zabezpieczenia zintegrowane, które korzysta z tożsamości bieżącego aktywnego użytkownika systemu Windows zamiast przekazywania identyfikatora użytkownika i hasła. Korzystanie z uwierzytelniania systemu Windows jest zdecydowanie zalecane, ponieważ poświadczenia użytkownika nie są ujawniane w parametrach połączenia. Jeśli nie można użyć uwierzytelniania systemu Windows w celu nawiązania połączenia z SQL Server, rozważ utworzenie parametrów połączenia w czasie wykonywania przy użyciu <xref:System.Data.SqlClient.SqlConnectionStringBuilder> .  
   
  Poświadczenia używane do uwierzytelniania muszą być obsługiwane w różny sposób w zależności od typu aplikacji. Na przykład w aplikacji Windows Forms użytkownik może zostać poproszony o podanie informacji dotyczących uwierzytelniania lub można użyć poświadczeń systemu Windows użytkownika. Jednak aplikacja sieci Web często uzyskuje dostęp do danych przy użyciu poświadczeń dostarczonych przez samą aplikację, a nie przez użytkownika.  
@@ -29,6 +31,7 @@ Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabez
 |[Przegląd zabezpieczeń serwera SQL](./sql/overview-of-sql-server-security.md)|Opisuje SQL Server architekturę zabezpieczeń.|  
   
 ## <a name="parameterized-commands-and-sql-injection"></a>Polecenia sparametryzowane i iniekcja kodu SQL  
+
  Używanie sparametryzowanych poleceń pomaga chronić przed atakami polegającymi na iniekcji SQL, w których osoba atakująca "wprowadza" polecenie do instrukcji SQL, która narusza zabezpieczenia na serwerze. Sparametryzowane polecenia Guard przed atakami polegającymi na iniekcji SQL przez zapewnienie, że wartości otrzymywane ze źródła zewnętrznego są przesyłane jako tylko wartości, a nie częścią instrukcji języka Transact-SQL. W związku z tym polecenia języka Transact-SQL wstawione do wartości nie są wykonywane w źródle danych. Zamiast tego są oceniane wyłącznie jako wartość parametru. Oprócz korzyści z zabezpieczeń, polecenia sparametryzowane zapewniają wygodną metodę organizowania wartości przekazaną za pomocą instrukcji języka Transact-SQL lub procedury składowanej.  
   
  Aby uzyskać więcej informacji na temat korzystania z sparametryzowanych poleceń, zobacz następujące zasoby.  
@@ -40,6 +43,7 @@ Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabez
 |[Zarządzanie uprawnieniami za pomocą procedur składowanych w programie SQL Server](./sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Opisuje sposób korzystania z procedur składowanych SQL Server w celu hermetyzacji dostępu do danych.|  
   
 ## <a name="script-exploits"></a>Luki w zabezpieczeniach skryptów  
+
  Wykorzystanie skryptów jest kolejną formą iniekcji, która używa złośliwych znaków wstawianych do strony sieci Web. Przeglądarka nie sprawdza poprawności wstawionych znaków i przetworzy je jako część strony.  
   
  Więcej informacji zawierają poniższe zasoby.  
@@ -49,6 +53,7 @@ Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabez
 |[Omówienie luk w zabezpieczeniach](/previous-versions/aspnet/w1sw53ds(v=vs.100))|Opisuje sposób zabezpieczania przed skryptami i programami wykorzystującymi luki w zabezpieczeniach języka SQL.|  
   
 ## <a name="probing-attacks"></a>Ataki na sondowanie  
+
  Osoby atakujące często wykorzystują informacje z wyjątku, takie jak nazwa serwera, bazy danych lub tabeli, w celu zainstalowania ataku w systemie. Ponieważ wyjątki mogą zawierać określone informacje o aplikacji lub źródle danych, można pomóc zapewnić lepszą ochronę aplikacji i źródła danych przez ujawnienie do klienta najważniejszych informacji.  
   
  Więcej informacji zawierają poniższe zasoby.  
@@ -59,6 +64,7 @@ Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabez
 |[Najlepsze rozwiązania dotyczące wyjątków](../../../standard/exceptions/best-practices-for-exceptions.md)|W tym artykule opisano najlepsze rozwiązania dotyczące obsługi wyjątków.|  
   
 ## <a name="protecting-microsoft-access-and-excel-data-sources"></a>Ochrona dostępu do źródeł danych programu Microsoft Access i programu Excel  
+
  Program Microsoft Access i program Microsoft Excel mogą działać jako magazyn danych dla aplikacji ADO.NET, gdy wymagania dotyczące zabezpieczeń są minimalne lub nieistniejące. Ich funkcje zabezpieczeń są skuteczne dla Deterrence, ale nie powinny być używane na potrzeby wykonywania więcej niż zniechęcić meddling przez użytkowników nieposiadających informacji. Pliki danych fizycznych dla programu Access i programu Excel istnieją w systemie plików i muszą być dostępne dla wszystkich użytkowników. Sprawia to, że są one podatne na ataki, które mogą spowodować kradzież lub utratę danych, ponieważ pliki mogą być łatwo kopiowane lub zmieniane. Gdy wymagane są niezawodne zabezpieczenia, należy użyć SQL Server lub innej bazy danych opartej na serwerze, w której pliki danych fizycznych nie są odczytywane z systemu plików.  
   
  Aby uzyskać więcej informacji na temat ochrony dostępu i danych programu Excel, zobacz następujące zasoby.  
@@ -67,7 +73,9 @@ Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabez
 |--------------|-----------------|  
 |[Zagadnienia dotyczące zabezpieczeń i wskazówki dotyczące dostępu 2007](/previous-versions/office/developer/office-2007/bb421308(v=office.12))|Opisuje techniki zabezpieczeń dotyczące dostępu 2007, takich jak szyfrowanie plików, administrowanie hasłami, konwertowanie baz danych do nowych formatów ACCDB i ACCDe oraz korzystanie z innych opcji zabezpieczeń.|  
 |[Wprowadzenie do zabezpieczeń 2010](https://support.office.com/article/Introduction-to-Access-2010-security-CAE6D764-0318-4622-955F-68D9F186D6CA)|Zawiera omówienie funkcji zabezpieczeń oferowanych przez program Access 2010.|  
+
 ## <a name="enterprise-services"></a>Usługi dla przedsiębiorstw  
+
  COM+ zawiera własny model zabezpieczeń, który opiera się na kontach systemu Windows NT i personifikacji procesu/wątku. <xref:System.EnterpriseServices>Przestrzeń nazw zawiera otoki, które umożliwiają aplikacjom .NET integrację kodu zarządzanego z usługami zabezpieczeń modelu COM+ za pomocą <xref:System.EnterpriseServices.ServicedComponent> klasy.  
   
  Aby uzyskać więcej informacji, zobacz następujący zasób.  
@@ -77,6 +85,7 @@ Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabez
 |[Zabezpieczenia oparte na rolach](/previous-versions/dotnet/netframework-1.1/s6y8k15h(v=vs.71))|W tym artykule omówiono sposób integrowania kodu zarządzanego z usługami zabezpieczeń modelu COM+.|  
   
 ## <a name="interoperating-with-unmanaged-code"></a>Współdziałanie z kodem niezarządzanym  
+
  .NET Framework zapewnia interakcję z niezarządzanym kodem, w tym składniki COM, usługi COM+, zewnętrzne biblioteki typów i wiele usług systemu operacyjnego. Praca z kodem niezarządzanym polega na przejściu poza obwód zabezpieczeń dla kodu zarządzanego. Zarówno kod, jak i dowolny kod, który wywołuje go musi mieć uprawnienia do kodu niezarządzanego ( <xref:System.Security.Permissions.SecurityPermission> z <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> określoną flagą). Kod niezarządzany może wprowadzić niezamierzone luki w zabezpieczeniach do aplikacji. W związku z tym należy unikać współdziałania z kodem niezarządzanym, chyba że jest to absolutnie konieczne.  
   
  Więcej informacji zawierają poniższe zasoby.  
@@ -86,7 +95,7 @@ Aby napisać bezpieczny kod ADO.NET, należy zapoznać się z mechanizmami zabez
 |[Współdziałanie z kodem niezarządzanym](../../interop/index.md)|Zawiera tematy opisujące, jak uwidocznić składniki COM w .NET Framework i jak uwidocznić składniki .NET Framework do modelu COM.|
 |[Zaawansowana współdziałanie COM](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Zawiera zaawansowane tematy, takie jak podstawowe zestawy międzyoperacyjności, wątkowość i organizowanie niestandardowe.|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczanie aplikacji ADO.NET](securing-ado-net-applications.md)
 - [Zabezpieczenia serwera SQL](./sql/sql-server-security.md)

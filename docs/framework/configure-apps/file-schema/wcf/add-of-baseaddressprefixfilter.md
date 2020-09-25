@@ -2,14 +2,15 @@
 title: <add> dla <baseAddressPrefixFilter>
 ms.date: 03/30/2017
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-ms.openlocfilehash: 2572a6ee6763ae26fe5c56669e10f8c9aef8a280
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: fefe85381aec113da123e6f2246aee340b0cf97a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811798"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181599"
 ---
 # <a name="add-of-baseaddressprefixfilter"></a>\<add> dla \<baseAddressPrefixFilter>
+
 Reprezentuje element konfiguracji, który określa filtr przekazywania, który udostępnia mechanizm wybierania odpowiednich powiązań Internet Information Services (IIS) podczas hostowania aplikacji Windows Communication Foundation (WCF) w usługach IIS.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Reprezentuje element konfiguracji, który określa filtr przekazywania, który u
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -38,6 +40,7 @@ Reprezentuje element konfiguracji, który określa filtr przekazywania, który u
 |prefiks|Identyfikator URI, który jest używany do dopasowania części adresu podstawowego.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -47,6 +50,7 @@ Reprezentuje element konfiguracji, który określa filtr przekazywania, który u
 |[\<baseAddressPrefixFilters>](baseaddressprefixfilters.md)|Kolekcja elementów konfiguracji, które określają filtry przekazywania, które zapewniają mechanizm wybierania odpowiednich powiązań usług IIS podczas hostowania aplikacji Windows Communication Foundation (WCF) w usługach IIS.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Filtr prefiksów umożliwia dostawcom hostingu współużytkowanie Określanie identyfikatorów URI, które mają być używane przez usługę. Umożliwia hostom udostępnionym hostowanie wielu aplikacji z różnymi adresami podstawowymi dla tego samego schematu w tej samej lokacji.  
   
  Witryny sieci Web usług IIS są kontenerami dla aplikacji wirtualnych, które zawierają katalogi wirtualne. Dostęp do aplikacji w lokacji można uzyskać za pomocą jednego lub kilku powiązań usług IIS. Powiązania usług IIS udostępniają dwie informacje: powiązania protokołu i powiązania. Protokół powiązania (na przykład HTTP) definiuje schemat, w którym odbywa się komunikacja, a informacje o powiązaniu (na przykład adres IP, port, nagłówek hosta) zawierają dane używane do uzyskiwania dostępu do witryny.  

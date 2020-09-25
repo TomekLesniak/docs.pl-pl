@@ -2,23 +2,25 @@
 title: Omówienie zabezpieczeń
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 4222dd36fe2f693bb16216e01d5e06a8176a7801
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ede9b24828da74c043bed103595073c4607c51f2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550693"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188996"
 ---
 # <a name="security-overview"></a>Omówienie zabezpieczeń
 
 Zabezpieczanie aplikacji jest procesem ciągłym. Nie będzie to miało miejsca, w którym deweloper może zagwarantować, że aplikacja jest bezpieczna przed atakami, ponieważ nie można przewidzieć, jakie rodzaje przyszłych ataków będą się pojawiać. Z drugiej strony, ponieważ nikt nie został jeszcze odnaleziony (lub opublikowany) wady zabezpieczeń w systemie nie oznacza, że nic nie istnieje lub nie istnieje. Należy zaplanować zabezpieczenia w fazie projektowania projektu, a także zaplanować, w jaki sposób zabezpieczenia będą utrzymywane w okresie istnienia aplikacji.
 
 ## <a name="design-for-security"></a>Projektowanie pod kątem zabezpieczeń
+
  Jednym z największych problemów związanych z tworzeniem bezpiecznych aplikacji jest to, że bezpieczeństwo jest często zostawiać, co do wdrożenia po zakończeniu projektu. Nietworzenie zabezpieczeń w aplikacji na początku prowadzi do niezabezpieczonych aplikacji, ponieważ niektóre uwagi zostały nadane w celu zabezpieczenia aplikacji.
 
  Implementacja zabezpieczeń Ostatnia minuta prowadzi do większej liczby usterek, ponieważ przerwy w oprogramowaniu w ramach nowych ograniczeń lub należy zapisać w celu uwzględnienia nieoczekiwanych funkcji. Każdy wiersz poprawionego kodu zawiera możliwość wprowadzenia nowego błędu. Z tego powodu należy wziąć pod uwagę wczesne zabezpieczenia w procesie opracowywania, tak aby można było kontynuować opracowywanie nowych funkcji.
 
 ### <a name="threat-modeling"></a>Modelowanie zagrożeń
+
  Nie można chronić systemu przed atakami, chyba że zrozumiesz wszystkie potencjalne ataki, dla których jest on narażony. Proces oceny zagrożeń bezpieczeństwa zwany *modelem zagrożeń*jest konieczny do określenia prawdopodobieństwa i konsekwencji naruszeń zabezpieczeń w aplikacji ADO.NET.
 
  Modelowanie zagrożeń składa się z trzech kroków wysokiego poziomu: zrozumienie widoku atakującej, scharakteryzowanie zabezpieczeń systemu i określanie zagrożeń.
@@ -32,6 +34,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 |Witryna [modelowania zagrożeń](https://www.microsoft.com/securityengineering/sdl/threatmodeling) w portalu inżynierii zabezpieczeń|Zasoby na tej stronie pomogą zrozumieć proces modelowania zagrożeń oraz modele zagrożeń kompilacji, których można użyć do zabezpieczenia własnych aplikacji|
 
 ## <a name="the-principle-of-least-privilege"></a>Zasada najniższych uprawnień
+
  Podczas projektowania, kompilowania i wdrażania aplikacji należy założyć, że aplikacja zostanie zaatakowana. Często te ataki pochodzą ze złośliwego kodu, który jest wykonywany z uprawnieniami użytkownika, na którym uruchomiono kod. Inne mogą pochodzić z dobrze zamierzonym kodem, który został wykorzystany przez osobę atakującą. W przypadku planowania zabezpieczeń zawsze zakłada się, że wystąpi scenariusz najgorszego przypadku.
 
  Jedną z miar liczników, których można użyć, jest próba przewinięcia możliwie największej liczby ścian w kodzie przez uruchomienie z najniższymi uprawnieniami. Zasada najniższych uprawnień oznacza, że każde z tych uprawnień powinno być przyznane najmniejszej ilości kodu niezbędnej przez najkrótszy czas wymagany do wykonania zadania.
@@ -105,7 +108,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 |[Zarządzanie zasadami zabezpieczeń](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|Zawiera informacje dotyczące tworzenia i administrowania zasadami zabezpieczeń.|
 |[Najlepsze rozwiązania dotyczące zasad zabezpieczeń](/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|Zawiera łącza opisujące sposób administrowania zasadami zabezpieczeń.|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczanie aplikacji ADO.NET](securing-ado-net-applications.md)
 - [Zabezpieczenia w .NET](../../../standard/security/index.md)

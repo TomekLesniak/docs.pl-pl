@@ -2,14 +2,15 @@
 title: <add> dla <authorizationPolicies>
 ms.date: 03/30/2017
 ms.assetid: 613a03d8-4384-4556-bce2-8c23286c0bb0
-ms.openlocfilehash: e2597bc51e788c919bfe3ce3422ae2911cc6b33b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 39cb89340907743c727a425bb2f140ac34842e3b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400702"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181677"
 ---
 # <a name="add-of-authorizationpolicies"></a>\<add> dla \<authorizationPolicies>
+
 Określa zasady autoryzacji dla transformacji odszkodowania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,9 +31,11 @@ Określa zasady autoryzacji dla transformacji odszkodowania.
 ```  
   
 ## <a name="type"></a>Typ  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,6 +45,7 @@ Określa zasady autoryzacji dla transformacji odszkodowania.
 |`policyType`|Wymagany atrybut ciągu.<br /><br /> Model kontroli dostępu Windows Communication Foundation (WCF) obsługuje Inicjowanie obsługi zestawu zasad autoryzacji jako typów. Ten atrybut określa zasady autoryzacji, które umożliwiają przekształcanie jednego zestawu oświadczeń wejściowych w inny zestaw oświadczeń. Na podstawie tego można udzielić lub odmówić kontroli dostępu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -51,9 +55,10 @@ Określa zasady autoryzacji dla transformacji odszkodowania.
 |[\<authorizationPolicies>](authorizationpolicies.md)|Określa kolekcję typów zasad autoryzacji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Każda zasada autoryzacji zawiera jeden wymagany `policyType` atrybut, który jest ciągiem. Ten atrybut określa zasady autoryzacji, które umożliwiają przekształcanie jednego zestawu oświadczeń wejściowych w inny zestaw oświadczeń. Na podstawie tego można udzielić lub odmówić kontroli dostępu. Aby uzyskać więcej informacji na temat działania zasad autoryzacji, zobacz <xref:System.IdentityModel.Policy.IAuthorizationPolicy> i [zasady autoryzacji](../../../wcf/samples/authorization-policy.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement>
 - <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A>

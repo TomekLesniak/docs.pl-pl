@@ -5,22 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
-ms.openlocfilehash: e5135aca49a63aafa3330832c54f2d28d31d60d0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 42843ec40f4f7271526e341dc53bdbc2ef11db38
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151354"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198733"
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>Tworzenie elementu DataTable przy użyciu elementu DataView
-Po pobraniu danych ze źródła danych i <xref:System.Data.DataTable> wypełnieniu danych można sortować, filtrować lub w inny sposób ograniczać zwracane dane bez ponownego pobierania. Klasa <xref:System.Data.DataView> sprawia, że jest to możliwe. Ponadto, jeśli chcesz utworzyć nowy <xref:System.Data.DataTable> z <xref:System.Data.DataView>programu , <xref:System.Data.DataView.ToTable%2A> można użyć metody kopiowania wszystkich wierszy i kolumn lub podzbioru danych do nowego <xref:System.Data.DataTable>. Metoda <xref:System.Data.DataView.ToTable%2A> zapewnia przeciążenia do:  
+
+Po pobraniu danych ze źródła danych, które zostały wypełnione <xref:System.Data.DataTable> danymi, możesz chcieć posortować, filtrować lub w inny sposób ograniczyć zwrócone dane bez konieczności pobierania ich. Jest <xref:System.Data.DataView> to możliwe. Ponadto, jeśli konieczne jest utworzenie nowego <xref:System.Data.DataTable> z programu <xref:System.Data.DataView> , można użyć <xref:System.Data.DataView.ToTable%2A> metody do skopiowania wszystkich wierszy i kolumn lub podzbioru danych do nowej <xref:System.Data.DataTable> . <xref:System.Data.DataView.ToTable%2A>Metoda zapewnia przeciążenia:  
   
-- Utwórz <xref:System.Data.DataTable> kolumny zawierające, które są podzbiorem <xref:System.Data.DataView>kolumn w pliku .  
+- Utwórz <xref:System.Data.DataTable> zawierające kolumny, które są podzbiorem kolumn w <xref:System.Data.DataView> .  
   
-- Utwórz, <xref:System.Data.DataTable> który zawiera tylko <xref:System.Data.DataView>różne wiersze z , analogicznie do distinct słowa kluczowego w Transact-SQL.  
+- Utwórz, <xref:System.Data.DataTable> który zawiera tylko unikatowe wiersze od <xref:System.Data.DataView> , analogicznie do DISTINCT słowo kluczowe w języku Transact-SQL.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład aplikacji <xref:System.Data.DataTable> konsoli tworzy, który zawiera dane z **person.contact** tabeli w **adventureworks** przykładowej bazy danych. Następnie w przykładzie tworzy posortowane i filtrowane <xref:System.Data.DataView> na podstawie <xref:System.Data.DataTable>. Po wyświetleniu zawartości <xref:System.Data.DataTable> i <xref:System.Data.DataView>, przykład tworzy <xref:System.Data.DataTable> nowy <xref:System.Data.DataView> z wywołując <xref:System.Data.DataView.ToTable%2A> metodę, wybierając tylko podzbiór dostępnych kolumn. Na koniec w przykładzie wyświetlana <xref:System.Data.DataTable>jest zawartość nowego pliku .  
+
+ Poniższy przykład aplikacji konsolowej tworzy <xref:System.Data.DataTable> , który zawiera dane z tabeli **Person. Contact** w przykładowej bazie danych **AdventureWorks** . Następnie przykład tworzy sortowanie i filtrowanie <xref:System.Data.DataView> na podstawie <xref:System.Data.DataTable> . Po wyświetleniu zawartości <xref:System.Data.DataTable> i <xref:System.Data.DataView> , przykład tworzy nowy <xref:System.Data.DataTable> z, <xref:System.Data.DataView> wywołując <xref:System.Data.DataView.ToTable%2A> metodę, wybierając tylko podzestaw dostępnych kolumn. Na koniec przykład wyświetla zawartość nowego <xref:System.Data.DataTable> .  
   
 ```vb  
 Private Sub DemonstrateDataView()  

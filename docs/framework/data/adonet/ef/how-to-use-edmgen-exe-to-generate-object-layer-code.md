@@ -2,14 +2,15 @@
 title: 'Instrukcje: Używanie EdmGen.exe, aby wygenerować kod warstwy obiektu'
 ms.date: 03/30/2017
 ms.assetid: c44d2ebe-f66f-42cb-9741-4a3f0c2dcffb
-ms.openlocfilehash: 9a73a803d310ebd847e49f4bd71609f8ef9f2944
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a243a588dcb6f7e7001de331cb9011a23ee2fdbe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546643"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198226"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-object-layer-code"></a>Instrukcje: Używanie EdmGen.exe, aby wygenerować kod warstwy obiektu
+
 W tym temacie przedstawiono sposób użycia narzędzia [Generator EDM (EdmGen.exe)](edm-generator-edmgen-exe.md) do generowania kodu warstwy obiektu na podstawie pliku. csdl.  
   
 ### <a name="to-generate-object-layer-code-for-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a>Aby wygenerować kod warstwy obiektu dla modelu szkoły dla Visual Basic projektu przy użyciu EdmGen.exe  
@@ -38,7 +39,7 @@ W tym temacie przedstawiono sposób użycia narzędzia [Generator EDM (EdmGen.ex
     /incsdl:.\School.csdl /outobjectlayer:.\School.Objects.cs /language:CSharp  
     ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Modelowanie i mapowanie](modeling-and-mapping.md)
 - [Instrukcje: ręczne Konfigurowanie projektu Entity Framework](/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))

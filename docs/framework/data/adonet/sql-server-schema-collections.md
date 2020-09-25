@@ -2,31 +2,32 @@
 title: Kolekcje schematów programu SQL Server
 ms.date: 03/30/2017
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
-ms.openlocfilehash: 0f65bbf2534eb7167baacb1405a8ce6e9769c23f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ebb0cea20aede3d04e37536c7c615678e109337a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794331"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197667"
 ---
 # <a name="sql-server-schema-collections"></a>Kolekcje schematów programu SQL Server
+
 Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kolekcje schematów oprócz wspólnych kolekcji schematów. Kolekcje schematów różnią się nieco od używanej wersji SQL Server. Aby określić listę obsługiwanych kolekcji schematów, wywołaj metodę **GetSchema** bez argumentów lub z nazwą kolekcji schematów "MetaDataCollections". Spowoduje to zwrócenie <xref:System.Data.DataTable> listy obsługiwanych kolekcji schematów, liczbę ograniczeń, które one obsługują, oraz liczbę używanych przez nich części identyfikatora.  
   
 ## <a name="databases"></a>Bazy danych  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |database_name|String|Nazwa bazy danych.|  
 |DBID|Int16|Identyfikator bazy danych.|  
-|create_date|DataGodzina|Data utworzenia bazy danych.|  
+|create_date|DateTime|Data utworzenia bazy danych.|  
   
 ## <a name="foreign-keys"></a>Klucze obce  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |CONSTRAINT_CATALOG|String|Katalog, do którego należy ograniczenie.|  
 |CONSTRAINT_SCHEMA|String|Schemat zawierający ograniczenie.|  
-|CONSTRAINT_NAME|String|Nazwij.|  
+|CONSTRAINT_NAME|String|Nazwa.|  
 |TABLE_CATALOG|String|Ograniczenie nazwy tabeli jest częścią.|  
 |TABLE_SCHEMA|String|Schemat, który zawiera tabelę.|  
 |TABLE_NAME|String|Nazwa tabeli|  
@@ -34,9 +35,9 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
 |IS_DEFERRABLE|String|Określa, czy ograniczenie jest opóźnione. Zwraca wartość nie.|  
 |INITIALLY_DEFERRED|String|Określa, czy ograniczenie jest początkowo odroczone. Zwraca wartość nie.|  
   
-## <a name="indexes"></a>Zwiększa  
+## <a name="indexes"></a>Indeksy  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|Katalog, do którego należy indeks.|  
 |constraint_schema|String|Schemat, który zawiera indeks.|  
@@ -46,16 +47,17 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
 |table_name|String|Nazwa tabeli.|  
 |index_name|String|Nazwa indeksu.|  
   
-### <a name="indexes-sql-server-2008"></a>Indexes (SQL Server 2008)  
+### <a name="indexes-sql-server-2008"></a>Indeksy (SQL Server 2008)  
+
  Począwszy od .NET Framework w wersji 3,5 SP1 i SQL Server 2008, następujące kolumny zostały dodane do kolekcji schematów indeksów w celu obsługi nowych typów przestrzennych, FILESTREAM i kolumn rozrzedzonych. Te kolumny nie są obsługiwane we wcześniejszych wersjach .NET Framework i SQL Server.  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
-|type_desc|String|Typ indeksu będzie jednym z następujących:<br /><br /> -STERTA<br />-KLASTROWANE<br />-NIEKLASTROWANE<br />-XML<br />-PRZESTRZENNY|  
+|type_desc|String|Typ indeksu będzie jednym z następujących:<br /><br /> -STERTa<br />-KLASTROWANE<br />-Nieklastrowane<br />-XML<br />-PRZESTRZENNY|  
   
 ## <a name="indexcolumns"></a>IndexColumns  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|Katalog, do którego należy indeks.|  
 |constraint_schema|String|Schemat, który zawiera indeks.|  
@@ -70,7 +72,7 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
   
 ## <a name="procedures"></a>Procedury  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |SPECIFIC_CATALOG|String|Określona nazwa katalogu.|  
 |SPECIFIC_SCHEMA|String|Określona nazwa schematu.|  
@@ -79,12 +81,12 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
 |ROUTINE_SCHEMA|String|Schemat zawierający procedurę składowaną.|  
 |ROUTINE_NAME|String|Nazwa procedury składowanej.|  
 |ROUTINE_TYPE|String|Zwraca procedurę dla procedur składowanych i funkcji dla funkcji.|  
-|UTWORZONY|DataGodzina|Czas utworzenia procedury.|  
-|LAST_ALTERED|DataGodzina|Czas ostatniej modyfikacji procedury.|  
+|UTWORZONY|DateTime|Czas utworzenia procedury.|  
+|LAST_ALTERED|DateTime|Czas ostatniej modyfikacji procedury.|  
   
 ## <a name="procedure-parameters"></a>Parametry procedury  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |SPECIFIC_CATALOG|String|Nazwa katalogu procedury, dla której jest parametrem.|  
 |SPECIFIC_SCHEMA|String|Schemat zawierający procedurę, do której należy ten parametr.|  
@@ -110,9 +112,9 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
 |INTERVAL_TYPE|String|NULL. Zarezerwowane do użytku w przyszłości przez SQL Server.|  
 |INTERVAL_PRECISION|Int16|NULL. Zarezerwowane do użytku w przyszłości przez SQL Server.|  
   
-## <a name="tables"></a>Tabelę  
+## <a name="tables"></a>Tabele  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabeli.|  
 |TABLE_SCHEMA|String|Schemat, który zawiera tabelę.|  
@@ -121,7 +123,7 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
   
 ## <a name="columns"></a>Kolumny  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabeli.|  
 |TABLE_SCHEMA|String|Schemat, który zawiera tabelę.|  
@@ -142,21 +144,23 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
 |CHARACTER_SET_NAME|String|Zwraca unikatową nazwę zestawu znaków, jeśli ta kolumna zawiera dane znakowe lub typ danych tekstowych. W przeciwnym razie zwracana jest wartość NULL.|  
 |COLLATION_CATALOG|String|Zwraca wzorzec wskazujący bazę danych, w której jest zdefiniowane sortowanie, jeśli kolumna zawiera dane znakowe lub dane tekstowe. W przeciwnym razie ta kolumna ma wartość NULL.|  
   
-### <a name="columns-sql-server-2008"></a>Columns (SQL Server 2008)  
+### <a name="columns-sql-server-2008"></a>Kolumny (SQL Server 2008)  
+
  Począwszy od .NET Framework wersji 3,5 SP1 i SQL Server 2008, następujące kolumny zostały dodane do kolekcji schematów kolumn, aby obsługiwały nowe typy przestrzenne, FILESTREAM i kolumny rozrzedzone. Te kolumny nie są obsługiwane we wcześniejszych wersjach .NET Framework i SQL Server.  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |IS_FILESTREAM|String|TAK, jeśli kolumna ma atrybut FILESTREAM.<br /><br /> NIE, jeśli kolumna nie ma atrybutu FILESTREAM.|  
 |IS_SPARSE|String|TAK, jeśli kolumna jest kolumną rozrzedzoną.<br /><br /> NIE, jeśli kolumna nie jest kolumną rozrzedzoną.|  
 |IS_COLUMN_SET|String|TAK, jeśli kolumna jest kolumną zestawu kolumn.<br /><br /> NIE, jeśli kolumna nie jest kolumną zestawu kolumn.|  
   
 ### <a name="allcolumns-sql-server-2008"></a>AllColumns (SQL Server 2008)  
+
  Począwszy od .NET Framework wersji 3,5 SP1 i SQL Server 2008, kolekcja schematów AllColumns została dodana do obsługi kolumn rozrzedzonych. AllColumns nie jest obsługiwane we wcześniejszych wersjach .NET Framework i SQL Server.  
   
  AllColumns ma takie same ograniczenia i wynikający ze schematu DataTable jako kolekcję schematów kolumn. Jedyną różnicą jest to, że AllColumns zawiera kolumny zestawu kolumn, które nie są uwzględnione w kolekcji schematów kolumn. W poniższej tabeli opisano te kolumny.  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabeli.|  
 |TABLE_SCHEMA|String|Schemat, który zawiera tabelę.|  
@@ -181,9 +185,10 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
 |IS_COLUMN_SET|String|TAK, jeśli kolumna jest kolumną zestawu kolumn.<br /><br /> NIE, jeśli kolumna nie jest kolumną zestawu kolumn.|  
   
 ### <a name="columnsetcolumns-sql-server-2008"></a>ColumnSetColumns (SQL Server 2008)  
+
  Począwszy od .NET Framework wersji 3,5 SP1 i SQL Server 2008, kolekcja schematów ColumnSetColumns została dodana do obsługi kolumn rozrzedzonych. ColumnSetColumns nie jest obsługiwane we wcześniejszych wersjach .NET Framework i SQL Server. Kolekcja schematów ColumnSetColumns zwraca schemat dla wszystkich kolumn w zestawie kolumn. W poniższej tabeli opisano te kolumny.  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabeli.|  
 |TABLE_SCHEMA|String|Schemat, który zawiera tabelę.|  
@@ -209,16 +214,16 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
   
 ## <a name="users"></a>Użytkownicy  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
-|UID|Int16|Unikatowy identyfikator użytkownika w tej bazie danych. 1 jest właścicielem bazy danych.|  
+|Identyfikator UID|Int16|Unikatowy identyfikator użytkownika w tej bazie danych. 1 jest właścicielem bazy danych.|  
 |user_name|String|Nazwa użytkownika lub grupy, unikatowa w tej bazie danych.|  
-|Data i godzina|DataGodzina|Data dodania konta.|  
-|updatedate|DataGodzina|Data ostatniej zmiany konta.|  
+|Data i godzina|DateTime|Data dodania konta.|  
+|updatedate|DateTime|Data ostatniej zmiany konta.|  
   
 ## <a name="views"></a>Widoki  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog widoku.|  
 |TABLE_SCHEMA|String|Schemat, który zawiera widok.|  
@@ -228,7 +233,7 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
   
 ## <a name="viewcolumns"></a>ViewColumns  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |VIEW_CATALOG|String|Katalog widoku.|  
 |VIEW_SCHEMA|String|Schemat, który zawiera widok.|  
@@ -240,7 +245,7 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
   
 ## <a name="userdefinedtypes"></a>UserDefinedTypes  
   
-|ColumnName|DataType|Opis|  
+|nazwa_kolumny|typ_danych|Opis|  
 |----------------|--------------|-----------------|  
 |assembly_name|String|Nazwa pliku zestawu.|  
 |udt_name|String|Nazwa klasy zestawu.|  
@@ -252,10 +257,10 @@ Microsoft .NET Framework Dostawca danych for SQL Server obsługuje dodatkowe kol
 |public_key|Obiekt|Klucz publiczny używany przez ten zestaw.|  
 |is_fixed_length|Boolean|Określa, czy długość typu jest zawsze taka sama jak max_length.|  
 |max_length|Int16|Maksymalna długość typu w bajtach.|  
-|Create_Date|DataGodzina|Data utworzenia/zarejestrowania zestawu.|  
+|Create_Date|DateTime|Data utworzenia/zarejestrowania zestawu.|  
 |Permission_set_desc|String|Przyjazna nazwa dla zestawu uprawnień/poziomu zabezpieczeń dla zestawu.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Pobieranie informacji o schemacie bazy danych](retrieving-database-schema-information.md)
 - [Omówienie ADO.NET](ado-net-overview.md)

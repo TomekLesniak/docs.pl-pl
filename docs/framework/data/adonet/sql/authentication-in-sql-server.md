@@ -3,14 +3,15 @@ title: Uwierzytelnianie w programie SQL Server
 description: Dowiedz się więcej o uwierzytelnianiu SQL Server ADO.NET, w tym trybem uwierzytelniania systemu Windows i trybem mieszanym.
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: e9915598acfbdefb59069d6a9c6ef4b7c824e4c6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2c4f62391a0d9b5ada27f56eef4c3467d99b4c6d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286549"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197535"
 ---
 # <a name="authentication-in-sql-server"></a>Uwierzytelnianie w programie SQL Server
+
 SQL Server obsługuje dwa tryby uwierzytelniania, tryb uwierzytelniania systemu Windows i tryb mieszany.  
   
 - Uwierzytelnianie systemu Windows jest ustawieniem domyślnym i jest często określane jako zabezpieczenia zintegrowane, ponieważ ten SQL Server model zabezpieczeń jest ściśle zintegrowany z systemem Windows. Określone konta użytkowników i grup systemu Windows są zaufane, aby zalogować się do SQL Server. Użytkownicy systemu Windows, którzy zostali już uwierzytelnieni, nie muszą przedstawić dodatkowych poświadczeń.  
@@ -30,6 +31,7 @@ SQL Server obsługuje dwa tryby uwierzytelniania, tryb uwierzytelniania systemu 
 > Nazwy logowania różnią się od użytkowników bazy danych. Musisz zamapować nazwy logowania lub grupy systemu Windows na użytkowników lub role bazy danych w osobnej operacji. Następnie Udziel uprawnień użytkownikom lub rolom dostępu do obiektów bazy danych.  
   
 ## <a name="authentication-scenarios"></a>Scenariusze uwierzytelniania  
+
  Uwierzytelnianie systemu Windows jest zazwyczaj najlepszym wyborem w następujących sytuacjach:  
   
 - Istnieje kontroler domeny.  
@@ -50,6 +52,7 @@ SQL Server obsługuje dwa tryby uwierzytelniania, tryb uwierzytelniania systemu 
 > Określenie uwierzytelniania systemu Windows nie powoduje wyłączenia logowania SQL Server. Użyj instrukcji ALTER LOGIN DISABLE Transact-SQL, aby wyłączyć logowanie o wysokim poziomie uprawnień SQL Server.  
   
 ## <a name="login-types"></a>Typy logowania  
+
  SQL Server obsługuje trzy typy logowań:  
   
 - Lokalne konto użytkownika systemu Windows lub zaufane konto domeny. SQL Server opiera się na systemie Windows do uwierzytelniania kont użytkowników systemu Windows.  
@@ -62,6 +65,7 @@ SQL Server obsługuje dwa tryby uwierzytelniania, tryb uwierzytelniania systemu 
 > SQL Server udostępnia nazwy logowania utworzone na podstawie certyfikatów lub kluczy asymetrycznych, które są używane tylko do podpisywania kodu. Nie można ich używać do nawiązywania połączenia z SQL Server.  
   
 ## <a name="mixed-mode-authentication"></a>Uwierzytelnianie w trybie mieszanym  
+
  Jeśli konieczne jest użycie uwierzytelniania w trybie mieszanym, należy utworzyć SQL Server nazwy logowania, które są przechowywane w SQL Server. Następnie należy podać nazwę użytkownika SQL Server i hasło w czasie wykonywania.  
   
 > [!IMPORTANT]
@@ -73,13 +77,14 @@ SQL Server obsługuje dwa tryby uwierzytelniania, tryb uwierzytelniania systemu 
 > Łączenie parametrów połączenia z danymi wejściowymi użytkownika może spowodować zagrożenie dla ataku polegającego na iniekcji parametrów połączenia. Użyj, <xref:System.Data.SqlClient.SqlConnectionStringBuilder> Aby utworzyć składniowo prawidłowe parametry połączenia w czasie wykonywania. Aby uzyskać więcej informacji, zobacz [konstruktory parametrów połączenia](../connection-string-builders.md).  
   
 ## <a name="external-resources"></a>Zasoby zewnętrzne  
+
  Więcej informacji zawierają poniższe zasoby.  
   
 |Zasób|Opis|  
 |--------------|-----------------|  
 |[Podmioty zabezpieczeń](/sql/relational-databases/security/authentication-access/principals-database-engine)|Opisuje nazwy logowania i inne podmioty zabezpieczeń w SQL Server.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczanie aplikacji ADO.NET](../securing-ado-net-applications.md)
 - [Scenariusze zabezpieczeń aplikacji w programie SQL Server](application-security-scenarios-in-sql-server.md)

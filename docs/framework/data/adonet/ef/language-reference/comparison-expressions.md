@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec7637a9-01d5-4a95-8bb0-478311cd263b
-ms.openlocfilehash: d0926bb1a0e35caa058f268f0a0c414e805a8674
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: d92020f353393eee683e578f4306cd4a2f214152
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251171"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197849"
 ---
 # <a name="comparison-expressions"></a>Wyrażenia porównania
+
 Wyrażenie porównania sprawdza, czy wartość stała, wartość właściwości lub wynik metody są równe, nie równe, większe niż lub mniejsze niż inna wartość. Jeśli określone porównanie nie jest prawidłowe dla LINQ to Entities, zostanie zgłoszony wyjątek. Wszystkie porównania, zarówno niejawne, jak i jawne, wymagają, aby wszystkie składniki były porównywalne w źródle danych. Wyrażenia porównania są często używane w `Where` klauzulach ograniczających wyniki zapytania.  
   
  Poniższy przykład w składni wyrażenia zapytania pokazuje zapytanie zwracające wyniki, w przypadku których numer zamówienia sprzedaży jest równy "SO43663":  
@@ -53,6 +54,6 @@ Wyrażenie porównania sprawdza, czy wartość stała, wartość właściwości 
  [!code-csharp[DP L2E Conceptual Examples#MethodAsConstantFails](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#methodasconstantfails)]
  [!code-vb[DP L2E Conceptual Examples#MethodAsConstantFails](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#methodasconstantfails)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wyrażenia w zapytaniach składnika LINQ to Entities](expressions-in-linq-to-entities-queries.md)

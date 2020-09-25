@@ -2,14 +2,15 @@
 title: <peerAuthentication> Element
 ms.date: 03/30/2017
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
-ms.openlocfilehash: 093b0c4b6a7fbf54455ec523b52c1f3a9884cfa8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7e4f86c361dc3ade5dedf4017921516357bb9a58
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90536018"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181586"
 ---
 # <a name="peerauthentication-element"></a>\<peerAuthentication> Element
+
 Określa opcje uwierzytelniania dla klientów równorzędnych.  
   
  Aby uzyskać więcej informacji na temat programowania peer-to-peer, zobacz [sieci peer-to-](../../../wcf/feature-details/peer-to-peer-networking.md)peer.  
@@ -33,6 +34,7 @@ Określa opcje uwierzytelniania dla klientów równorzędnych.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -48,7 +50,7 @@ Określa opcje uwierzytelniania dla klientów równorzędnych.
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|Ciąg|Określa nazwę typu i zestaw oraz inne dane używane do znajdowania typu. Minimalna nazwa przestrzeni nazw i typ są wymagane. Informacje opcjonalne obejmują: nazwę zestawu, numer wersji, kulturę i token klucza publicznego.|  
+|String|Określa nazwę typu i zestaw oraz inne dane używane do znajdowania typu. Minimalna nazwa przestrzeni nazw i typ są wymagane. Informacje opcjonalne obejmują: nazwę zestawu, numer wersji, kulturę i token klucza publicznego.|  
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode — atrybut  
   
@@ -69,6 +71,7 @@ Określa opcje uwierzytelniania dla klientów równorzędnych.
 |Wyliczenie|Jedna z następujących wartości: `LocalMachine` lub `CurrentUser` . Wartość domyślna to `CurrentUser`. Jeśli aplikacja kliencka jest uruchomiona na koncie systemowym, zwykle jest to certyfikat `LocalMachine` . Jeśli aplikacja kliencka jest uruchomiona w ramach konta użytkownika, certyfikat zazwyczaj znajduje się w temacie `CurrentUser` .|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -78,9 +81,11 @@ Określa opcje uwierzytelniania dla klientów równorzędnych.
 |[\<peer>](peer-of-clientcredentials-element.md)|Określa poświadczenie używane do uwierzytelniania klienta w usłudze równorzędnej.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<authentication>`Element odnosi się do <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication> klasy. Ten element określa moduł sprawdzania poprawności, który jest wywoływany podczas uwierzytelniania sąsiada-sąsiada w sieci. Gdy nowy element równorzędny podejmie próbę nawiązania połączenia sąsiada, przekazuje własne poświadczenie do elementu równorzędnego odpowiadającego. Moduł sprawdzania poprawności jest wywoływany w celu zweryfikowania poświadczeń strony zdalnej. Za każdym razem, gdy połączenie równorzędne jest nawiązane w sieci, oba elementy równorzędne są uwierzytelniane wzajemnie, co oznacza, że są wywoływane walidacje na obu końcach.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod ustawia tryb walidacji certyfikatu `PeerOrChainTrust` .  
   
 ```xml  
@@ -101,7 +106,7 @@ Określa opcje uwierzytelniania dla klientów równorzędnych.
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.PeerCredentialElement>
 - <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>

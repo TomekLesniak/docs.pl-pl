@@ -2,17 +2,19 @@
 title: Zabezpieczanie aplikacji klienckich
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
-ms.openlocfilehash: 8a946ab9b4cb75f7f890a01f0647f8a719c7bc03
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 96b43d28d3e22df66cb7f7010916b5c7f7a86b77
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551546"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189009"
 ---
 # <a name="secure-client-applications"></a>Zabezpieczanie aplikacji klienckich
+
 Aplikacje zwykle składają się z wielu części, które muszą być chronione przed lukami w zabezpieczeniach, co może spowodować utratę danych lub w inny sposób złamać system. Tworzenie bezpiecznych interfejsów użytkownika może zapobiec wielu problemom, blokując osoby atakujące przed uzyskaniem dostępu do danych lub zasobów systemowych.  
   
 ## <a name="validate-user-input"></a>Sprawdzanie poprawności danych wejściowych użytkownika  
+
  Podczas konstruowania aplikacji, która uzyskuje dostęp do danych, należy zastanowić się, że wszystkie dane wejściowe użytkownika są złośliwe, dopóki nie zostaną udowodnione. Niewykonanie tej czynności może spowodować, że aplikacja będzie narażona na ataki. .NET Framework zawiera klasy, które ułatwiają wymuszanie domeny wartości dla kontrolek wejściowych, takich jak ograniczenie liczby znaków, które można wprowadzić. Punkty zaczepienia zdarzeń umożliwiają pisanie procedur w celu sprawdzenia poprawności wartości. Dane wejściowe użytkownika mogą być zweryfikowane i jednoznacznie wpisane, ograniczając narażenie aplikacji na luki w zabezpieczeniach skryptów i iniekcji SQL.  
   
 > [!IMPORTANT]
@@ -31,6 +33,7 @@ Aplikacje zwykle składają się z wielu części, które muszą być chronione 
  Opisuje, w jaki sposób używać <xref:System.Text.RegularExpressions.Regex> klasy do sprawdzania poprawności danych wejściowych użytkownika.  
   
 ## <a name="windows-applications"></a>Aplikacje systemu Windows  
+
  W przeszłości aplikacje systemu Windows są zwykle wykonywane z pełnymi uprawnieniami. .NET Framework zapewnia infrastrukturę ograniczającą wykonywanie kodu w aplikacji systemu Windows przy użyciu zabezpieczeń dostępu kodu (CAS). Jednak tylko urzędy certyfikacji nie wystarczają do ochrony aplikacji.  
   
  [Zabezpieczenia formularzy systemu Windows](/dotnet/desktop/winforms/windows-forms-security)  
@@ -43,6 +46,7 @@ Aplikacje zwykle składają się z wielu części, które muszą być chronione 
  Opisuje sposób używania `ClickOnce` wdrożenia w aplikacji Windows Forms i omawia implikacje związane z bezpieczeństwem.  
   
 ## <a name="aspnet-and-xml-web-services"></a>ASP.NET i XML Web Services  
+
  Aplikacje ASP.NET zazwyczaj muszą ograniczyć dostęp do niektórych części witryny sieci Web i zapewnić inne mechanizmy ochrony danych i zabezpieczeń lokacji. Te linki zapewniają przydatne informacje na potrzeby zabezpieczania aplikacji ASP.NET.  
   
  Usługa sieci Web XML udostępnia dane, które mogą być używane przez aplikację ASP.NET, aplikację Windows Forms lub inną usługę sieci Web. Należy zarządzać zabezpieczeniami samej usługi sieci Web, a także zabezpieczeniami dla aplikacji klienckiej.  
@@ -57,6 +61,7 @@ Aplikacje zwykle składają się z wielu części, które muszą być chronione 
 |[Podstawowe rozwiązania w zakresie zabezpieczeń dla aplikacji sieci Web](/previous-versions/aspnet/zdh19h94(v=vs.100))|Ogólne informacje o zabezpieczeniach i linki do dalszych dyskusji,|  
   
 ## <a name="remoting"></a>Komunikacji zdalnej  
+
  Komunikacja zdalna platformy .NET umożliwia łatwe tworzenie rozproszonych aplikacji, niezależnie od tego, czy składniki aplikacji znajdują się na jednym komputerze, czy rozkładają się na całym świecie. Można tworzyć aplikacje klienckie, które używają obiektów w innych procesach na tym samym komputerze lub na innym komputerze, który jest dostępny w sieci. Można również użyć komunikacji zdalnej .NET do komunikowania się z innymi domenami aplikacji w tym samym procesie.  
   
 |Zasób|Opis|  
@@ -65,7 +70,7 @@ Aplikacje zwykle składają się z wielu części, które muszą być chronione 
 |[Zabezpieczenia w komunikacji zdalnej](/previous-versions/dotnet/netframework-4.0/9hwst9th(v=vs.100))|Zawiera opis uwierzytelniania i szyfrowania, a także dodatkowe tematy dotyczące zabezpieczeń związane z usługami zdalnymi.|  
 |[Zagadnienia dotyczące zabezpieczeń internetowych i zdalnego dostępu](../../misc/security-and-remoting-considerations.md)|Opisuje problemy z zabezpieczeniami dotyczące obiektów chronionych i przekroczenia domeny aplikacji.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczanie aplikacji ADO.NET](securing-ado-net-applications.md)
 - [Zalecenia dotyczące strategii dostępu do danych](/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))

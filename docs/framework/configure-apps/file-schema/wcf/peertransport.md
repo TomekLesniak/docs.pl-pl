@@ -2,14 +2,15 @@
 title: <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: c1a5013a-9dd4-4a27-b114-795b8b323177
-ms.openlocfilehash: 99fb013e052329ae4b99c4db89565ace8935c456
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 68832c3a5bd4cc423642a6272e70cbecab86d6a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736506"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181547"
 ---
 # \<peerTransport>
+
 Definiuje transport równorzędny dla niestandardowego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Definiuje transport równorzędny dla niestandardowego powiązania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -56,9 +58,10 @@ Definiuje transport równorzędny dla niestandardowego powiązania.
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Nie można używać tego transportu z kontraktami, które mają operacje żądania/odpowiedzi.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.PeerTransportElement>
 - <xref:System.ServiceModel.Channels.PeerTransportBindingElement>

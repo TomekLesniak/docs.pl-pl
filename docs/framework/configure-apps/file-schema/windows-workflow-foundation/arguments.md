@@ -3,14 +3,15 @@ title: <arguments>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 0f327196-f468-4be3-b6c4-68ba981a1bd6
-ms.openlocfilehash: f06a2188ea3561437c1453d3a1cb23d42d767f53
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cb1f96cb6ba2643e28552c354bdd5caf4d43285c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398912"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189646"
 ---
 # \<arguments>
+
 Reprezentuje kolekcję argumentów skojarzonych z kwerendą stanu działania.  
   
  Aby uzyskać więcej informacji na temat śledzenia kwerend profilu, zobacz [śledzenie profilów](../../../windows-workflow-foundation/tracking-profiles.md).  
@@ -42,9 +43,11 @@ Reprezentuje kolekcję argumentów skojarzonych z kwerendą stanu działania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -60,6 +63,7 @@ Reprezentuje kolekcję argumentów skojarzonych z kwerendą stanu działania.
 |[\<activityStateQuery>](activitystatequery.md)|Reprezentuje element konfiguracji, które jest używane do śledzenia żądań, aby anulować działanie podrzędne przez działanie nadrzędne. Zapytanie jest niezbędne do uczestnika śledzenia do subskrybowania Anuluj żądanie rekordu obiektów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jedno rozwiązanie ActivityStateQuery jest możliwość wyodrębniania danych podczas śledzenia wykonywania przepływu pracy. Umożliwia to dodatkowy kontekst podczas uzyskiwania dostępu do śledzenia rekordów post wykonywania. Można użyć [\<arguments>](arguments.md) [\<states>](states.md) elementów i, [\<states>](states.md) Aby wyodrębnić dowolną zmienną lub argument z dowolnego działania w przepływie pracy. W poniższym przykładzie przedstawiono zapytanie o stan działania, które wyodrębnia zmienne i argumenty podczas `Closed` emitowania rekordu śledzenia działania. Zmienne i argumenty mogą być wyodrębniane tylko za pomocą ActivityStateRecord i w ten sposób są subskrybowane w ramach profilu śledzenia przy użyciu [\<activityStateQuery>](activitystatequery.md) .  
   
 ```xml  
@@ -76,7 +80,7 @@ Reprezentuje kolekcję argumentów skojarzonych z kwerendą stanu działania.
 </activityStateQuery>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.ArgumentElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>
