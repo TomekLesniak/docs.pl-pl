@@ -2,30 +2,32 @@
 title: Dostosowywanie operacji wstawiania, aktualizowania i usuwania
 ms.date: 03/30/2017
 ms.assetid: 07eef055-8f6c-414d-850e-d323ff946cd0
-ms.openlocfilehash: ed3de95a8224f0b4d8f3d5d913274417a6879942
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 4b846d1e1f737cec85ecda75df5e3f66982def62
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70247613"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177348"
 ---
-# <a name="customizing-insert-update-and-delete-operations"></a><span data-ttu-id="8ae97-102">Dostosowywanie operacji wstawiania, aktualizowania i usuwania</span><span class="sxs-lookup"><span data-stu-id="8ae97-102">Customizing Insert, Update, and Delete Operations</span></span>
-<span data-ttu-id="8ae97-103">Domyślnie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] program generuje dynamiczny kod SQL w celu zaimplementowania operacji INSERT, Read, Update i DELETE.</span><span class="sxs-lookup"><span data-stu-id="8ae97-103">By default, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generates dynamic SQL to implement insert, read, update, and delete operations.</span></span> <span data-ttu-id="8ae97-104">W tym przypadku zwykle dostosowuje się do potrzeb Twojej firmy.</span><span class="sxs-lookup"><span data-stu-id="8ae97-104">In practice, however, you typically customize your application to suit your business needs.</span></span>  
+# <a name="customizing-insert-update-and-delete-operations"></a><span data-ttu-id="1b194-102">Dostosowywanie operacji wstawiania, aktualizowania i usuwania</span><span class="sxs-lookup"><span data-stu-id="1b194-102">Customizing Insert, Update, and Delete Operations</span></span>
+
+<span data-ttu-id="1b194-103">Domyślnie program [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generuje dynamiczny kod SQL w celu zaimplementowania operacji INSERT, Read, Update i DELETE.</span><span class="sxs-lookup"><span data-stu-id="1b194-103">By default, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generates dynamic SQL to implement insert, read, update, and delete operations.</span></span> <span data-ttu-id="1b194-104">W tym przypadku zwykle dostosowuje się do potrzeb Twojej firmy.</span><span class="sxs-lookup"><span data-stu-id="1b194-104">In practice, however, you typically customize your application to suit your business needs.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="8ae97-105">Jeśli używasz programu Visual Studio, możesz użyć Object Relational Designer, aby dostosować akcje insert, Update i DELETE.</span><span class="sxs-lookup"><span data-stu-id="8ae97-105">If you are using Visual Studio, you can use the Object Relational Designer to customize insert, update, and delete actions.</span></span>  
+> <span data-ttu-id="1b194-105">Jeśli używasz programu Visual Studio, możesz użyć Object Relational Designer, aby dostosować akcje insert, Update i DELETE.</span><span class="sxs-lookup"><span data-stu-id="1b194-105">If you are using Visual Studio, you can use the Object Relational Designer to customize insert, update, and delete actions.</span></span>  
   
- <span data-ttu-id="8ae97-106">W tej części tematów opisano metody umożliwiające [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dostosowywanie operacji wstawiania, odczytu, aktualizacji i usuwania w aplikacji.</span><span class="sxs-lookup"><span data-stu-id="8ae97-106">This section of topics describes the techniques that [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides for customizing insert, read, update, and delete operations in your application.</span></span>  
+ <span data-ttu-id="1b194-106">W tej części tematów opisano metody umożliwiające [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dostosowywanie operacji wstawiania, odczytu, aktualizacji i usuwania w aplikacji.</span><span class="sxs-lookup"><span data-stu-id="1b194-106">This section of topics describes the techniques that [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides for customizing insert, read, update, and delete operations in your application.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="8ae97-107">W tej sekcji</span><span class="sxs-lookup"><span data-stu-id="8ae97-107">In This Section</span></span>  
- [<span data-ttu-id="8ae97-108">Operacje dostosowywania: omówienie</span><span class="sxs-lookup"><span data-stu-id="8ae97-108">Customizing Operations: Overview</span></span>](customizing-operations-overview.md)  
- <span data-ttu-id="8ae97-109">Opisuje różne techniki [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] umożliwiające dostosowywanie operacji wstawiania, odczytu, aktualizacji i usuwania.</span><span class="sxs-lookup"><span data-stu-id="8ae97-109">Describes the various techniques [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides for customizing insert, read, update, and delete operations.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="1b194-107">W tej sekcji</span><span class="sxs-lookup"><span data-stu-id="1b194-107">In This Section</span></span>  
+
+ [<span data-ttu-id="1b194-108">Dostosowywanie operacji: Omówienie</span><span class="sxs-lookup"><span data-stu-id="1b194-108">Customizing Operations: Overview</span></span>](customizing-operations-overview.md)  
+ <span data-ttu-id="1b194-109">Opisuje różne techniki umożliwiające [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dostosowywanie operacji wstawiania, odczytu, aktualizacji i usuwania.</span><span class="sxs-lookup"><span data-stu-id="1b194-109">Describes the various techniques [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides for customizing insert, read, update, and delete operations.</span></span>  
   
- [<span data-ttu-id="8ae97-110">Operacje wstawiania, aktualizowania i usuwania</span><span class="sxs-lookup"><span data-stu-id="8ae97-110">Insert, Update, and Delete Operations</span></span>](insert-update-and-delete-operations.md)  
- <span data-ttu-id="8ae97-111">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Opisuje domyślne procesy manipulowania danymi bazy danych.</span><span class="sxs-lookup"><span data-stu-id="8ae97-111">Describes the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] default processes for manipulating database data.</span></span>  
+ [<span data-ttu-id="1b194-110">Operacje wstawiania, aktualizowania i usuwania</span><span class="sxs-lookup"><span data-stu-id="1b194-110">Insert, Update, and Delete Operations</span></span>](insert-update-and-delete-operations.md)  
+ <span data-ttu-id="1b194-111">Opisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] domyślne procesy manipulowania danymi bazy danych.</span><span class="sxs-lookup"><span data-stu-id="1b194-111">Describes the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] default processes for manipulating database data.</span></span>  
   
- [<span data-ttu-id="8ae97-112">Obowiązki dewelopera podczas zastępowania domyślnego zachowania</span><span class="sxs-lookup"><span data-stu-id="8ae97-112">Responsibilities of the Developer In Overriding Default Behavior</span></span>](responsibilities-of-the-developer-in-overriding-default-behavior.md)  
- <span data-ttu-id="8ae97-113">Opisuje rolę dewelopera w implementacji wymagań niewymuszonych przez [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]program.</span><span class="sxs-lookup"><span data-stu-id="8ae97-113">Describes the role of the developer in implementing requirements not enforced by [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
+ [<span data-ttu-id="1b194-112">Obowiązki dewelopera podczas zastępowania domyślnego zachowania</span><span class="sxs-lookup"><span data-stu-id="1b194-112">Responsibilities of the Developer In Overriding Default Behavior</span></span>](responsibilities-of-the-developer-in-overriding-default-behavior.md)  
+ <span data-ttu-id="1b194-113">Opisuje rolę dewelopera w implementacji wymagań niewymuszonych przez program [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="1b194-113">Describes the role of the developer in implementing requirements not enforced by [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
   
- [<span data-ttu-id="8ae97-114">Dodawanie logiki biznesowej przy użyciu metod częściowych</span><span class="sxs-lookup"><span data-stu-id="8ae97-114">Adding Business Logic By Using Partial Methods</span></span>](adding-business-logic-by-using-partial-methods.md)  
- <span data-ttu-id="8ae97-115">Opisuje sposób używania metod częściowych do przesłania metod generowanych automatycznie.</span><span class="sxs-lookup"><span data-stu-id="8ae97-115">Describes how to use partial methods to override autogenerated methods.</span></span>
+ [<span data-ttu-id="1b194-114">Dodawanie logiki biznesowej przy użyciu metod częściowych</span><span class="sxs-lookup"><span data-stu-id="1b194-114">Adding Business Logic By Using Partial Methods</span></span>](adding-business-logic-by-using-partial-methods.md)  
+ <span data-ttu-id="1b194-115">Opisuje sposób używania metod częściowych do przesłania metod generowanych automatycznie.</span><span class="sxs-lookup"><span data-stu-id="1b194-115">Describes how to use partial methods to override autogenerated methods.</span></span>
