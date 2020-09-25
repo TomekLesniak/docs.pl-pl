@@ -1,25 +1,26 @@
 ---
-title: <workflow>programu WCF
+title: <workflow> programu WCF
 ms.date: 03/30/2017
 ms.assetid: c0443eba-d3b4-4fae-886e-9878daf77691
-ms.openlocfilehash: c6c9e14a4ad3d9713ae2d35d6ade20690e0c3575
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cada3fca028562312be0272cb2a6021dfd1cf9cb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69932795"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194885"
 ---
-# <a name="workflow-of-wcf"></a><span data-ttu-id="0a47d-102">\<workflow>programu WCF</span><span class="sxs-lookup"><span data-stu-id="0a47d-102">\<workflow> of WCF</span></span>
-<span data-ttu-id="0a47d-103">Konfigurowanie śledzenia uczestnika nasłuchujący rekordów śledzenia jest emitowane bezpośrednio ze środowiska wykonawczego i przetworzyć je w sposób został skonfigurowany.</span><span class="sxs-lookup"><span data-stu-id="0a47d-103">Configure a tracking participant that listens to the tracking records being emitted from the runtime directly and process them in whatever way it was configured.</span></span> <span data-ttu-id="0a47d-104">Dotyczy to również zapis do określonych danych wyjściowych (np. PLik, konsoli, ETW), przetwarzania/agregowania rekordy lub dowolną kombinację, który może być wymagane.</span><span class="sxs-lookup"><span data-stu-id="0a47d-104">This includes writing to a specific output (e.g., file, Console, ETW), processing/aggregating the records, or any other combination that might be required.</span></span>  
+# <a name="workflow-of-wcf"></a><span data-ttu-id="2fb7e-102">\<workflow> programu WCF</span><span class="sxs-lookup"><span data-stu-id="2fb7e-102">\<workflow> of WCF</span></span>
+
+<span data-ttu-id="2fb7e-103">Konfigurowanie śledzenia uczestnika nasłuchujący rekordów śledzenia jest emitowane bezpośrednio ze środowiska wykonawczego i przetworzyć je w sposób został skonfigurowany.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-103">Configure a tracking participant that listens to the tracking records being emitted from the runtime directly and process them in whatever way it was configured.</span></span> <span data-ttu-id="2fb7e-104">Dotyczy to również zapis do określonych danych wyjściowych (np. PLik, konsoli, ETW), przetwarzania/agregowania rekordy lub dowolną kombinację, który może być wymagane.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-104">This includes writing to a specific output (e.g., file, Console, ETW), processing/aggregating the records, or any other combination that might be required.</span></span>  
   
- <span data-ttu-id="0a47d-105">Aby uzyskać więcej informacji o śledzeniu i śledzeniu przepływów pracy, zobacz [śledzenie przepływu pracy i](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) śledzenie i [Śledzenie uczestników](../../../windows-workflow-foundation/tracking-participants.md).</span><span class="sxs-lookup"><span data-stu-id="0a47d-105">For more information in workflow tracking and tracking participants, see [Workflow Tracking and Tracing](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) and [Tracking Participants](../../../windows-workflow-foundation/tracking-participants.md).</span></span>  
+ <span data-ttu-id="2fb7e-105">Aby uzyskać więcej informacji o śledzeniu i śledzeniu przepływów pracy, zobacz [śledzenie przepływu pracy i](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) śledzenie i [Śledzenie uczestników](../../../windows-workflow-foundation/tracking-participants.md).</span><span class="sxs-lookup"><span data-stu-id="2fb7e-105">For more information in workflow tracking and tracking participants, see [Workflow Tracking and Tracing](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) and [Tracking Participants](../../../windows-workflow-foundation/tracking-participants.md).</span></span>  
   
  \<system.serviceModel>  
 \<tracking>  
 \<participants>  
 \<add>  
   
-## <a name="syntax"></a><span data-ttu-id="0a47d-106">Składnia</span><span class="sxs-lookup"><span data-stu-id="0a47d-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2fb7e-106">Składnia</span><span class="sxs-lookup"><span data-stu-id="2fb7e-106">Syntax</span></span>  
   
 ```xml  
 <tracking>
@@ -31,37 +32,41 @@ ms.locfileid: "69932795"
 </tracking>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="0a47d-107">Atrybuty i elementy</span><span class="sxs-lookup"><span data-stu-id="0a47d-107">Attributes and Elements</span></span>  
- <span data-ttu-id="0a47d-108">W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.</span><span class="sxs-lookup"><span data-stu-id="0a47d-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2fb7e-107">Atrybuty i elementy</span><span class="sxs-lookup"><span data-stu-id="2fb7e-107">Attributes and Elements</span></span>  
+
+ <span data-ttu-id="2fb7e-108">W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="0a47d-109">Atrybuty</span><span class="sxs-lookup"><span data-stu-id="0a47d-109">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="2fb7e-109">Atrybuty</span><span class="sxs-lookup"><span data-stu-id="2fb7e-109">Attributes</span></span>  
   
-|<span data-ttu-id="0a47d-110">Element</span><span class="sxs-lookup"><span data-stu-id="0a47d-110">Element</span></span>|<span data-ttu-id="0a47d-111">Opis</span><span class="sxs-lookup"><span data-stu-id="0a47d-111">Description</span></span>|  
+|<span data-ttu-id="2fb7e-110">Element</span><span class="sxs-lookup"><span data-stu-id="2fb7e-110">Element</span></span>|<span data-ttu-id="2fb7e-111">Opis</span><span class="sxs-lookup"><span data-stu-id="2fb7e-111">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="0a47d-112">name</span><span class="sxs-lookup"><span data-stu-id="0a47d-112">name</span></span>|<span data-ttu-id="0a47d-113">Ciąg określający nazwę uczestnika śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-113">A string that specifies the name of a tracking participant.</span></span>|  
-|<span data-ttu-id="0a47d-114">Nazwa_profilu</span><span class="sxs-lookup"><span data-stu-id="0a47d-114">profileName</span></span>|<span data-ttu-id="0a47d-115">Ciąg określający nazwę profilu śledzenia, który definiuje rekordów śledzenia uczestnika śledzenia ma subskrypcję.</span><span class="sxs-lookup"><span data-stu-id="0a47d-115">A string that specifies the name of the tracking profile which defines the tracking records the tracking participant has subscribed to.</span></span>|  
-|<span data-ttu-id="0a47d-116">typ</span><span class="sxs-lookup"><span data-stu-id="0a47d-116">type</span></span>|<span data-ttu-id="0a47d-117">Ciąg, który określa typ uczestnika śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-117">A string that specifies the type of a tracking participant.</span></span>|  
+|<span data-ttu-id="2fb7e-112">name</span><span class="sxs-lookup"><span data-stu-id="2fb7e-112">name</span></span>|<span data-ttu-id="2fb7e-113">Ciąg określający nazwę uczestnika śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-113">A string that specifies the name of a tracking participant.</span></span>|  
+|<span data-ttu-id="2fb7e-114">Nazwa_profilu</span><span class="sxs-lookup"><span data-stu-id="2fb7e-114">profileName</span></span>|<span data-ttu-id="2fb7e-115">Ciąg określający nazwę profilu śledzenia, który definiuje rekordów śledzenia uczestnika śledzenia ma subskrypcję.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-115">A string that specifies the name of the tracking profile which defines the tracking records the tracking participant has subscribed to.</span></span>|  
+|<span data-ttu-id="2fb7e-116">typ</span><span class="sxs-lookup"><span data-stu-id="2fb7e-116">type</span></span>|<span data-ttu-id="2fb7e-117">Ciąg, który określa typ uczestnika śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-117">A string that specifies the type of a tracking participant.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="0a47d-118">Elementy podrzędne</span><span class="sxs-lookup"><span data-stu-id="0a47d-118">Child Elements</span></span>  
- <span data-ttu-id="0a47d-119">Brak.</span><span class="sxs-lookup"><span data-stu-id="0a47d-119">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="2fb7e-118">Elementy podrzędne</span><span class="sxs-lookup"><span data-stu-id="2fb7e-118">Child Elements</span></span>  
+
+ <span data-ttu-id="2fb7e-119">Brak.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-119">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="0a47d-120">Elementy nadrzędne</span><span class="sxs-lookup"><span data-stu-id="0a47d-120">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="2fb7e-120">Elementy nadrzędne</span><span class="sxs-lookup"><span data-stu-id="2fb7e-120">Parent Elements</span></span>  
   
-|<span data-ttu-id="0a47d-121">Element</span><span class="sxs-lookup"><span data-stu-id="0a47d-121">Element</span></span>|<span data-ttu-id="0a47d-122">Opis</span><span class="sxs-lookup"><span data-stu-id="0a47d-122">Description</span></span>|  
+|<span data-ttu-id="2fb7e-121">Element</span><span class="sxs-lookup"><span data-stu-id="2fb7e-121">Element</span></span>|<span data-ttu-id="2fb7e-122">Opis</span><span class="sxs-lookup"><span data-stu-id="2fb7e-122">Description</span></span>|  
 |-------------|-----------------|  
-|[\<participants>](../windows-workflow-foundation/participants.md)|<span data-ttu-id="0a47d-123">Lista śledzenia uczestników</span><span class="sxs-lookup"><span data-stu-id="0a47d-123">A list of tracking participants</span></span>|  
+|[\<participants>](../windows-workflow-foundation/participants.md)|<span data-ttu-id="2fb7e-123">Lista śledzenia uczestników</span><span class="sxs-lookup"><span data-stu-id="2fb7e-123">A list of tracking participants</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="0a47d-124">Uwagi</span><span class="sxs-lookup"><span data-stu-id="0a47d-124">Remarks</span></span>  
- <span data-ttu-id="0a47d-125">Śledzenie uczestników są stosowane w celu pobrania danych śledzenia emitowane z przepływu pracy i zapisać go w różne nośniki.</span><span class="sxs-lookup"><span data-stu-id="0a47d-125">Tracking participants are used to get the tracking data emitted from the workflow and store it into different mediums.</span></span> <span data-ttu-id="0a47d-126">Podobnie dowolny publikować przetwarzania śledzenia, które rekordy można również wykonać w ramach uczestnika śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-126">Likewise, any post processing on the tracking Records can also be done within the tracking participant.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2fb7e-124">Uwagi</span><span class="sxs-lookup"><span data-stu-id="2fb7e-124">Remarks</span></span>  
+
+ <span data-ttu-id="2fb7e-125">Śledzenie uczestników są stosowane w celu pobrania danych śledzenia emitowane z przepływu pracy i zapisać go w różne nośniki.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-125">Tracking participants are used to get the tracking data emitted from the workflow and store it into different mediums.</span></span> <span data-ttu-id="2fb7e-126">Podobnie dowolny publikować przetwarzania śledzenia, które rekordy można również wykonać w ramach uczestnika śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-126">Likewise, any post processing on the tracking Records can also be done within the tracking participant.</span></span>  
   
- <span data-ttu-id="0a47d-127">Wiele uczestników śledzenia może jednocześnie używać zdarzeń śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-127">Multiple tracking participants can consume the tracking events simultaneously.</span></span> <span data-ttu-id="0a47d-128">Uczestnik śledzenia mogą być skojarzone z profilem różnych śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-128">Each tracking participant can be associated with a different tracking profile.</span></span>  
+ <span data-ttu-id="2fb7e-127">Wiele uczestników śledzenia może jednocześnie używać zdarzeń śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-127">Multiple tracking participants can consume the tracking events simultaneously.</span></span> <span data-ttu-id="2fb7e-128">Uczestnik śledzenia mogą być skojarzone z profilem różnych śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-128">Each tracking participant can be associated with a different tracking profile.</span></span>  
   
- <span data-ttu-id="0a47d-129">Standardowe śledzenia uczestnika, który jest podawany jako który zapisuje rekordy śledzenia sesji funkcji ETW.</span><span class="sxs-lookup"><span data-stu-id="0a47d-129">A standard tracking participant is provided which writes the tracking records to an ETW session.</span></span> <span data-ttu-id="0a47d-130">Uczestnika jest skonfigurowany w usłudze przepływu pracy przez dodanie zachowania specyficzny dla śledzenia w PLiku konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="0a47d-130">The participant is configured on a workflow service by adding a tracking-specific behavior in a configuration file.</span></span> <span data-ttu-id="0a47d-131">Włączanie funkcji ETW śledzenia uczestnika, który umożliwia śledzenia się wyświetlić podglądu zdarzeń.</span><span class="sxs-lookup"><span data-stu-id="0a47d-131">Enabling an ETW tracking participant allows tracking records to be viewed in the event viewer.</span></span> <span data-ttu-id="0a47d-132">Które nie spełnia wymagań, można także napisać uczestnikiem niestandardowe śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-132">If that does not meet your requirements, you can also write a custom tracking participant.</span></span>  
+ <span data-ttu-id="2fb7e-129">Standardowe śledzenia uczestnika, który jest podawany jako który zapisuje rekordy śledzenia sesji funkcji ETW.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-129">A standard tracking participant is provided which writes the tracking records to an ETW session.</span></span> <span data-ttu-id="2fb7e-130">Uczestnika jest skonfigurowany w usłudze przepływu pracy przez dodanie zachowania specyficzny dla śledzenia w PLiku konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-130">The participant is configured on a workflow service by adding a tracking-specific behavior in a configuration file.</span></span> <span data-ttu-id="2fb7e-131">Włączanie funkcji ETW śledzenia uczestnika, który umożliwia śledzenia się wyświetlić podglądu zdarzeń.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-131">Enabling an ETW tracking participant allows tracking records to be viewed in the event viewer.</span></span> <span data-ttu-id="2fb7e-132">Które nie spełnia wymagań, można także napisać uczestnikiem niestandardowe śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-132">If that does not meet your requirements, you can also write a custom tracking participant.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="0a47d-133">Przykład</span><span class="sxs-lookup"><span data-stu-id="0a47d-133">Example</span></span>  
- <span data-ttu-id="0a47d-134">Poniższy przykład konfiguracji przedstawia standardowy Uczestnik śledzenia ETW skonfigurowany w pliku Web. config.</span><span class="sxs-lookup"><span data-stu-id="0a47d-134">The following configuration example shows the standard ETW tracking participant being configured in the Web.config file.</span></span>  
+## <a name="example"></a><span data-ttu-id="2fb7e-133">Przykład</span><span class="sxs-lookup"><span data-stu-id="2fb7e-133">Example</span></span>  
+
+ <span data-ttu-id="2fb7e-134">W poniższym przykładzie konfiguracji jest wyświetlany standardowy Uczestnik śledzenia ETW skonfigurowany w pliku Web.config.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-134">The following configuration example shows the standard ETW tracking participant being configured in the Web.config file.</span></span>  
   
- <span data-ttu-id="0a47d-135">Identyfikator dostawcy, który używa uczestnika śledzenia zdarzeń systemu Windows do zapisywania rekordów śledzenia zdarzeń systemu Windows jest zdefiniowany w `<diagnostics>` sekcji.</span><span class="sxs-lookup"><span data-stu-id="0a47d-135">The Provider Id that the ETW Tracking Participant uses for writing the Tracking Records to ETW is defined in the `<diagnostics>` section.</span></span> <span data-ttu-id="0a47d-136">Uczestnik śledzenia ma własny profil skojarzonych z nim do określania subskrybowany do rekordów śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-136">The tracking participant has a profile associated with it to specify the tracking records it has subscribed to.</span></span> <span data-ttu-id="0a47d-137">To jest definiowana za pomocą `profileName` atrybutu `<add>` elementu.</span><span class="sxs-lookup"><span data-stu-id="0a47d-137">This is defined by the `profileName` attribute of the `<add>` element.</span></span> <span data-ttu-id="0a47d-138">Te po zdefiniowaniu, śledzenie uczestnika zostanie dodany do `<etwTracking>` usługi zachowanie.</span><span class="sxs-lookup"><span data-stu-id="0a47d-138">Once these are defined, the Tracking Participant is added to the `<etwTracking>` service behavior.</span></span> <span data-ttu-id="0a47d-139">Spowoduje to dodanie wybranych uczestników śledzenia do rozszerzeń wystąpienie przepływu pracy, aby zaczynają one odbierać rekordów śledzenia.</span><span class="sxs-lookup"><span data-stu-id="0a47d-139">This will add the selected Tracking Participants to the Workflow instance’s extensions, so that they begin to receive the Tracking Records.</span></span>  
+ <span data-ttu-id="2fb7e-135">Identyfikator dostawcy, który używa uczestnika śledzenia zdarzeń systemu Windows do zapisywania rekordów śledzenia zdarzeń systemu Windows jest zdefiniowany w `<diagnostics>` sekcji.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-135">The Provider Id that the ETW Tracking Participant uses for writing the Tracking Records to ETW is defined in the `<diagnostics>` section.</span></span> <span data-ttu-id="2fb7e-136">Uczestnik śledzenia ma własny profil skojarzonych z nim do określania subskrybowany do rekordów śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-136">The tracking participant has a profile associated with it to specify the tracking records it has subscribed to.</span></span> <span data-ttu-id="2fb7e-137">To jest definiowana za pomocą `profileName` atrybutu `<add>` elementu.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-137">This is defined by the `profileName` attribute of the `<add>` element.</span></span> <span data-ttu-id="2fb7e-138">Te po zdefiniowaniu, śledzenie uczestnika zostanie dodany do `<etwTracking>` usługi zachowanie.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-138">Once these are defined, the Tracking Participant is added to the `<etwTracking>` service behavior.</span></span> <span data-ttu-id="2fb7e-139">Spowoduje to dodanie wybranych uczestników śledzenia do rozszerzeń wystąpienie przepływu pracy, aby zaczynają one odbierać rekordów śledzenia.</span><span class="sxs-lookup"><span data-stu-id="2fb7e-139">This will add the selected Tracking Participants to the Workflow instance’s extensions, so that they begin to receive the Tracking Records.</span></span>  
   
 ```xml  
 <configuration>
@@ -88,10 +93,10 @@ ms.locfileid: "69932795"
 </configuration>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="0a47d-140">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="0a47d-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2fb7e-140">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="2fb7e-140">See also</span></span>
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>
-- [<span data-ttu-id="0a47d-141">Kontrola i śledzenie przepływu pracy</span><span class="sxs-lookup"><span data-stu-id="0a47d-141">Workflow Tracking and Tracing</span></span>](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [<span data-ttu-id="0a47d-142">Uczestnicy śledzenia</span><span class="sxs-lookup"><span data-stu-id="0a47d-142">Tracking Participants</span></span>](../../../windows-workflow-foundation/tracking-participants.md)
+- [<span data-ttu-id="2fb7e-141">Kontrola i śledzenie przepływu pracy</span><span class="sxs-lookup"><span data-stu-id="2fb7e-141">Workflow Tracking and Tracing</span></span>](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [<span data-ttu-id="2fb7e-142">Uczestnicy śledzenia</span><span class="sxs-lookup"><span data-stu-id="2fb7e-142">Tracking Participants</span></span>](../../../windows-workflow-foundation/tracking-participants.md)
