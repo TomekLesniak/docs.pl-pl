@@ -6,12 +6,12 @@ metadata:
   description: Zapoznaj się z zalecanymi rozwiązaniami dotyczącymi tworzenia i migrowania aplikacji .NET.
   ms.topic: landing-page
   ms.date: 03/19/2020
-  ms.openlocfilehash: 0ea87b6e69df9a6edacd916d279a095d984af463
-  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+  ms.openlocfilehash: d0fc08eda01497aa07142ddfba3f98a4bf3fce2d
+  ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 08/17/2020
-  ms.locfileid: "88267922"
+  ms.lasthandoff: 09/24/2020
+  ms.locfileid: "91169183"
 landingContent:
 - title: Opracowywanie aplikacji ASP.NET Core
   linkLists:
@@ -38,7 +38,7 @@ landingContent:
     - text: Samouczek Hello world mikrousług
       url: https://dotnet.microsoft.com/learn/aspnet/microservice-tutorial/intro
     - text: Tworzenie i wdrażanie mikrousługi platformy ASP.NET Core natywnej dla chmury
-      url: https://docs.microsoft.com/learn/modules/microservices-aspnet-core
+      url: /learn/modules/microservices-aspnet-core
 - title: Migrowanie aplikacji .NET na platformę Azure
   linkLists:
   - linkListType: concept
