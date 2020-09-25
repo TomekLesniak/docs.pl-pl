@@ -2,14 +2,15 @@
 title: <defaultPorts>
 ms.date: 03/30/2017
 ms.assetid: 725d4ee5-bd46-4f0e-9c20-30ba75d6eb2c
-ms.openlocfilehash: 89ebad118c1c9210357d8fd281c9216b7f64b450
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 08ca8a2bfcf5b905152f7e64a45cbae4992a7b78
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398071"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192376"
 ---
 # \<defaultPorts>
+
 Kolekcja portów domyślnych wyświetla domyślne punkty końcowe komunikacji, do których nasłuchuje aplikacja kliencka.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,16 +33,18 @@ Kolekcja portów domyślnych wyświetla domyślne punkty końcowe komunikacji, d
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
   
 |Element|Opis|  
 |-------------|-----------------|  
-|[\<add>z\<defaultPorts>](add-of-defaultports.md)|Domyślny punkt końcowy komunikacji, do którego nasłuchuje aplikacja kliencka.|  
+|[\<add> z \<defaultPorts>](add-of-defaultports.md)|Domyślny punkt końcowy komunikacji, do którego nasłuchuje aplikacja kliencka.|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
   
@@ -49,6 +52,6 @@ Kolekcja portów domyślnych wyświetla domyślne punkty końcowe komunikacji, d
 |-------------|-----------------|  
 |[\<useRequestHeadersForMetadataAddress>](userequestheadersformetadataaddress.md)|Lista domyślnych portów.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.DefaultPortElementCollection>

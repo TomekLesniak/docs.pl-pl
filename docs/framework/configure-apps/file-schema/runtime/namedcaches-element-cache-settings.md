@@ -6,14 +6,15 @@ helpviewer_keywords:
 - caching [.NET Framework], configuration
 - <namedCaches> element
 ms.assetid: 6bd4fbc5-55a6-4dc4-998b-cdcc7e023330
-ms.openlocfilehash: e0640ca18d386141f3c03135019eb4fe959b5bf8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ad76c01bba859934be399d73262bd974309efe98
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153961"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192402"
 ---
 # <a name="namedcaches-element-cache-settings"></a>\<namedCaches>, element (ustawienia pamięci podręcznej)
+
 Określa kolekcję ustawień konfiguracji dla nazwanych <xref:System.Runtime.Caching.MemoryCache> wystąpień. <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A>Właściwość odwołuje się do kolekcji ustawień konfiguracji z co najmniej jednego `namedCaches` elementu pliku konfiguracji.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,9 +31,11 @@ Określa kolekcję ustawień konfiguracji dla nazwanych <xref:System.Runtime.Cac
 ```  
   
 ## <a name="type"></a>Typ  
+
  `None`  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -61,13 +64,15 @@ Określa kolekcję ustawień konfiguracji dla nazwanych <xref:System.Runtime.Cac
 |[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|Zawiera typy, które umożliwiają zaimplementowanie buforowania danych wyjściowych w aplikacjach wbudowanych w .NET Framework.|  
   
 ## <a name="remarks"></a>Uwagi  
- Sekcja konfiguracja pamięci podręcznej pamięci w pliku Web. config może `add` zawierać `remove` `clear` atrybuty dla kolekcji, i `namedCaches` . Każdy `namedCaches` wpis jest jednoznacznie identyfikowany przez `name` atrybut.  
+
+ Sekcja konfiguracji pamięci podręcznej w pliku Web.config może zawierać `add` `remove` `clear` atrybuty dla kolekcji,, i `namedCaches` . Każdy `namedCaches` wpis jest jednoznacznie identyfikowany przez `name` atrybut.  
   
  Wystąpienia wpisów pamięci podręcznej pamięci można pobrać, odwołując się do informacji w plikach konfiguracji aplikacji. Domyślnie tylko domyślne wystąpienie pamięci podręcznej ma wpis w pliku konfiguracji. Domyślne wystąpienie pamięci podręcznej jest wystąpieniem zwracanym z <xref:System.Runtime.Caching.MemoryCache.Default%2A> właściwości.  
   
  Jeśli ustawisz atrybut name na "default", element używa domyślnego wystąpienia pamięci podręcznej.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak ustawić nazwę pamięci podręcznej na domyślną nazwę wpisu pamięci podręcznej przez ustawienie `name` atrybutu na wartość "domyślny".  
   
  `cacheMemoryLimitMegabytes`Atrybut i `physicalMemoryPercentage` atrybut są ustawione na zero. Ustawienie tych atrybutów na zero oznacza, że używane są heurystyke autowymiarowania <xref:System.Runtime.Caching.MemoryCache> klasy. Implementacja pamięci podręcznej porównuje bieżące obciążenie pamięci dla limitów pamięci bezwzględnej i wartości procentowej co dwie minuty.  
@@ -89,6 +94,6 @@ Określa kolekcję ustawień konfiguracji dla nazwanych <xref:System.Runtime.Cac
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<memoryCache>— Element (ustawienia pamięci podręcznej)](memorycache-element-cache-settings.md)
+- [\<memoryCache> — Element (ustawienia pamięci podręcznej)](memorycache-element-cache-settings.md)

@@ -7,14 +7,15 @@ helpviewer_keywords:
 - DataContractSerializer
 - KnownTypes
 ms.assetid: f41fb4d5-24e7-4059-8010-286a30bfea93
-ms.openlocfilehash: e24dae47171f741af064ca2eaa822928690acf6e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2a994a8ba97d4c65fdaba5a85e779dd9935e3074
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400448"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195038"
 ---
 # \<dataContractSerializer>
+
 Zawiera dane konfiguracji dla programu <xref:System.Runtime.Serialization.DataContractSerializer> . Ten element występuje w dwóch różnych hierarchiach. Jeden z nich znajduje się w poniższej sekcji hierarchii schematu, a drugi jest wymieniony w sekcji uwagi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Zawiera dane konfiguracji dla programu <xref:System.Runtime.Serialization.DataCo
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,6 +44,7 @@ Zawiera dane konfiguracji dla programu <xref:System.Runtime.Serialization.DataCo
 |maxItemsInObjectGraph|Liczba całkowita, która określa maksymalną liczbę elementów do serializacji lub deserializacji. Ten atrybut to 65536.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -52,6 +55,7 @@ Zawiera dane konfiguracji dla programu <xref:System.Runtime.Serialization.DataCo
 |[\<system.runtime.serialization>](system-runtime-serialization.md)|Reprezentuje element główny dla <xref:System.Runtime.Serialization> sekcji przestrzeni nazw i zawiera elementy dla opcji ustawień <xref:System.Runtime.Serialization.DataContractSerializer> .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zgodnie z wprowadzeniem tego tematu jest to druga hierarchia, w której \<X509Extension> występuje element.  
   
  [\<system.runtime.serialization>](system-runtime-serialization.md)  
@@ -60,7 +64,7 @@ Zawiera dane konfiguracji dla programu <xref:System.Runtime.Serialization.DataCo
   
  Aby uzyskać więcej informacji na temat znanych typów, zobacz <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>

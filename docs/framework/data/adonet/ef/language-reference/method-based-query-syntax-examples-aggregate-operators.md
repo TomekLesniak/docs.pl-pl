@@ -1,72 +1,81 @@
 ---
-title: 'Przykłady składni zapytania oparte na metodzie: Operatory agregacji'
+title: Przykłady składni zapytania oparte na metodzie, operatory agregacji
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0e306067-5720-4782-9719-2286570a7e47
-ms.openlocfilehash: 17d3a5e221fc5f917e9e266b3af4fb844c6fd85e
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: f8754101e7ec55fe5f9836300de1d077e1db2478
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70397502"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192129"
 ---
-# <a name="method-based-query-syntax-examples-aggregate-operators"></a>Przykłady składni zapytania oparte na metodzie: Operatory agregacji
-W przykładach w tym temacie przedstawiono <xref:System.Linq.Enumerable.Aggregate%2A>sposób użycia metod, <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A> <xref:System.Linq.Enumerable.Max%2A> <xref:System.Linq.Enumerable.LongCount%2A> <xref:System.Linq.Enumerable.Min%2A>,,, i <xref:System.Linq.Enumerable.Sum%2A> do wysyłania zapytań do [modelu sprzedaży AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) przy użyciu Składnia zapytania oparta na metodzie. Model sprzedaży AdventureWorks używany w tych przykładach jest tworzony na podstawie tabel Contact, Address, Product, SalesOrderHeader i SalesOrderDetail w przykładowej bazie danych AdventureWorks.  
+# <a name="method-based-query-syntax-examples-aggregate-operators"></a>Przykłady składni zapytania oparte na metodzie, operatory agregacji
+
+W przykładach w tym temacie przedstawiono sposób użycia <xref:System.Linq.Enumerable.Aggregate%2A> metod,,,,, <xref:System.Linq.Enumerable.Average%2A> <xref:System.Linq.Enumerable.Count%2A> <xref:System.Linq.Enumerable.LongCount%2A> <xref:System.Linq.Enumerable.Max%2A> <xref:System.Linq.Enumerable.Min%2A> i <xref:System.Linq.Enumerable.Sum%2A> do wykonywania zapytań względem [modelu sprzedaży AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) przy użyciu składni zapytania opartego na metodzie. Model sprzedaży AdventureWorks używany w tych przykładach jest tworzony na podstawie tabel Contact, Address, Product, SalesOrderHeader i SalesOrderDetail w przykładowej bazie danych AdventureWorks.  
   
  Przykłady w tym temacie wykorzystują następujące `using` / `Imports` instrukcje:  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
   
-## <a name="average"></a>Average  
+## <a name="average"></a>Średnia  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Average%2A> metodę, aby znaleźć średnią cenę cennika produktów.  
   
  [!code-csharp[DP L2E Examples#Average_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#average_mq)]
  [!code-vb[DP L2E Examples#Average_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#average_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Average%2A> metodę w celu wyszukania średniej ceny za produkty poszczególnych stylów.  
   
  [!code-csharp[DP L2E Examples#Average2_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#average2_mq)]
  [!code-vb[DP L2E Examples#Average2_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#average2_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Average%2A> metodę, aby znaleźć średnią należną kwotę.  
   
  [!code-csharp[DP L2E Examples#AverageProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#averageprojection_mq)]
  [!code-vb[DP L2E Examples#AverageProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#averageprojection_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Average%2A> metodę, aby uzyskać średnią łączną ilość należną dla każdego identyfikatora osoby kontaktowej.  
   
  [!code-csharp[DP L2E Examples#AverageGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#averagegrouped_mq)]
  [!code-vb[DP L2E Examples#AverageGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#averagegrouped_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  Poniższy przykład używa metody, <xref:System.Linq.Enumerable.Average%2A> Aby uzyskać zamówienia z średnią sumą należną dla każdego kontaktu.  
   
  [!code-csharp[DP L2E Examples#AverageElements_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#averageelements_mq)]
  [!code-vb[DP L2E Examples#AverageElements_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#averageelements_mq)]  
   
-## <a name="count"></a>Count  
+## <a name="count"></a>Liczba  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Count%2A> metodę, aby zwrócić liczbę produktów w tabeli Product.  
   
  [!code-csharp[DP L2E Examples#Count](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#count)]
  [!code-vb[DP L2E Examples#Count](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#count)]  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Count%2A> metodę, aby zwrócić listę identyfikatorów kontaktu oraz liczbę zamówień, które każdy z nich ma.  
   
  [!code-csharp[DP L2E Examples#CountNested](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#countnested)]
  [!code-vb[DP L2E Examples#CountNested](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#countnested)]  
   
 ### <a name="example"></a>Przykład  
+
  Poniższy przykład grupuje produkty według koloru i używa <xref:System.Linq.Enumerable.Count%2A> metody do zwrócenia liczby produktów w każdej grupie kolorów.  
   
  [!code-csharp[DP L2E Examples#CountGrouped](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#countgrouped)]
@@ -75,6 +84,7 @@ W przykładach w tym temacie przedstawiono <xref:System.Linq.Enumerable.Aggregat
 ## <a name="longcount"></a>LongCount  
   
 ### <a name="example"></a>Przykład  
+
  Poniższy przykład pobiera liczbę kontaktów jako długą liczbę całkowitą.  
   
  [!code-csharp[DP L2E Examples#LongCountSimple](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#longcountsimple)]
@@ -83,18 +93,21 @@ W przykładach w tym temacie przedstawiono <xref:System.Linq.Enumerable.Aggregat
 ## <a name="max"></a>Maks.  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Max%2A> metodę w celu uzyskania największej wartości całkowitej.  
   
  [!code-csharp[DP L2E Examples#MaxProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#maxprojection_mq)]
  [!code-vb[DP L2E Examples#MaxProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#maxprojection_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Max%2A> metodę w celu uzyskania największego łącznego terminu dla każdego identyfikatora osoby kontaktowej.  
   
  [!code-csharp[DP L2E Examples#MaxGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#maxgrouped_mq)]
  [!code-vb[DP L2E Examples#MaxGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#maxgrouped_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  Poniższy przykład używa metody, <xref:System.Linq.Enumerable.Max%2A> Aby uzyskać zamówienia z największą sumą należną dla każdego identyfikatora osoby kontaktowej.  
   
  [!code-csharp[DP L2E Examples#MaxElements_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#maxelements_mq)]
@@ -103,18 +116,21 @@ W przykładach w tym temacie przedstawiono <xref:System.Linq.Enumerable.Aggregat
 ## <a name="min"></a>Min.  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Min%2A> metodę w celu uzyskania najmniejszej wartości całkowitej.  
   
  [!code-csharp[DP L2E Examples#MinProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#minprojection_mq)]
  [!code-vb[DP L2E Examples#MinProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#minprojection_mq)]  
   
 ### <a name="example"></a>Przykład  
- Poniższy przykład używa <xref:System.Linq.Enumerable.Min%2A> metody, aby uzyskać najmniejszą łączną ilość należną dla każdego identyfikatora osoby kontaktowej.  
+
+ Poniższy przykład używa metody, <xref:System.Linq.Enumerable.Min%2A> Aby uzyskać najmniejszą łączną ilość należną dla każdego identyfikatora osoby kontaktowej.  
   
  [!code-csharp[DP L2E Examples#MinGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#mingrouped_mq)]
  [!code-vb[DP L2E Examples#MinGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#mingrouped_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  Poniższy przykład używa metody, <xref:System.Linq.Enumerable.Min%2A> Aby uzyskać zamówienia o najmniejszej łącznej wartości należnej dla każdego kontaktu.  
   
  [!code-csharp[DP L2E Examples#MinElements_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#minelements_mq)]
@@ -123,17 +139,19 @@ W przykładach w tym temacie przedstawiono <xref:System.Linq.Enumerable.Aggregat
 ## <a name="sum"></a>Suma  
   
 ### <a name="example"></a>Przykład  
+
  Poniższy przykład używa metody, <xref:System.Linq.Enumerable.Sum%2A> Aby uzyskać łączną liczbę ilości zamówienia w tabeli SalesOrderDetail.  
   
  [!code-csharp[DP L2E Examples#SumProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#sumprojection_mq)]
  [!code-vb[DP L2E Examples#SumProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#sumprojection_mq)]  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Linq.Enumerable.Sum%2A> metodę, aby uzyskać łączną ilość należną dla każdego identyfikatora osoby kontaktowej.  
   
  [!code-csharp[DP L2E Examples#SumGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#sumgrouped_mq)]
  [!code-vb[DP L2E Examples#SumGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#sumgrouped_mq)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zapytania w składniku LINQ to Entities](queries-in-linq-to-entities.md)

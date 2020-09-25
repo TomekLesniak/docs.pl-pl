@@ -10,14 +10,15 @@ helpviewer_keywords:
 - container tags, <publisherPolicy> element
 - <publisherPolicy> element
 ms.assetid: 4613407e-d0a8-4ef2-9f81-a6acb9fdc7d4
-ms.openlocfilehash: 89fa8a991cc7d0352eb0a13cdfd3a6063ea468e7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bd6ab1123ef3f84f7e8a06b25ce48aed37e4bef7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73115845"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195262"
 ---
 # <a name="publisherpolicy-element"></a>\<publisherPolicy> Element
+
 Określa, czy środowisko uruchomieniowe stosuje zasady wydawcy.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Określa, czy środowisko uruchomieniowe stosuje zasady wydawcy.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -62,6 +64,7 @@ Brak.
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Gdy dostawca składnika zwalnia nową wersję zestawu, dostawca może uwzględnić zasady wydawcy, aby aplikacje używające starej wersji używały teraz nowej wersji. Aby określić, czy zastosować zasady wydawcy dla określonego zestawu, umieść **\<publisherPolicy>** element w **\<dependentAssembly>** elemencie.  
   
  Ustawieniem domyślnym dla atrybutu **apply** jest **tak**. Ustawienie atrybutu **Zastosuj** do **nie** zastępuje żadnych poprzednich ustawień **tak** dla zestawu.  
@@ -69,6 +72,7 @@ Brak.
  Aby aplikacja jawnie ignorował zasady wydawcy przy użyciu [\<publisherPolicy apply="no"/>](publisherpolicy-element.md) elementu w pliku konfiguracyjnym aplikacji, wymagane jest uprawnienie. Uprawnienie jest udzielane przez ustawienie <xref:System.Security.Permissions.SecurityPermissionFlag> flagi na <xref:System.Security.Permissions.SecurityPermission> . Aby uzyskać więcej informacji, zobacz [uprawnienia zabezpieczeń przekierowania powiązania zestawu](../../assembly-binding-redirection-security-permission.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład powoduje wyłączenie zasad wydawcy dla zestawu `myAssembly` .  
   
 ```xml  
@@ -86,7 +90,7 @@ Brak.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

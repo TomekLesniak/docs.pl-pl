@@ -4,18 +4,19 @@ description: Dowiedz się więcej na temat ADO.NET, klasy, które uwidaczniają 
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: 4f9b2ca42a2c25c1463b7d1ca38b4b8920b2dafd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 503977ab2bef6f03ab13fab168319d350aad9471
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286730"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194573"
 ---
 # <a name="adonet"></a>ADO.NET
 
 ADO.NET to zestaw klas, które uwidaczniają usługi dostępu do danych dla programistów .NET Framework. Usługa ADO.NET oferuje bogaty zestaw składników służących do tworzenia dystrybuowanych aplikacji do udostępniania danych. Jest to integralna część .NET Framework, zapewniająca dostęp do danych relacyjnych, XML i aplikacji. Program ADO.NET obsługuje różne potrzeby programistyczne, w tym tworzenie klientów baz danych frontonu oraz obiektów branżowych warstwy środkowej używanych przez aplikacje, narzędzia, Języki lub przeglądarki internetowe.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Nowości w programie ADO.NET](whats-new.md)  
  Wprowadza funkcje, które są nowe w ADO.NET.  
   
@@ -47,6 +48,7 @@ ADO.NET to zestaw klas, które uwidaczniają usługi dostępu do danych dla prog
  Opisuje funkcje i zachowania, które są specyficzne dla Dostawca danych .NET Framework dla programu Oracle.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Zapytanie zintegrowane z językiem (LINQ)-C #](../../../csharp/programming-guide/concepts/linq/index.md)  
  Oferuje linki do tematów i przykładów LINQ przy użyciu języka C#.  
   
@@ -62,7 +64,7 @@ ADO.NET to zestaw klas, które uwidaczniają usługi dostępu do danych dla prog
  [Przykłady i samouczki](../../../samples-and-tutorials/index.md)  
  Zawiera listę przykładów i samouczków dotyczących platformy .NET.
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Uzyskiwanie dostępu do danych w programie Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)
 - [Omówienie ADO.NET](ado-net-overview.md)

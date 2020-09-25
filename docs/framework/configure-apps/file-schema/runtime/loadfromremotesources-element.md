@@ -5,14 +5,15 @@ helpviewer_keywords:
 - loadFromRemoteSources element
 - <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-ms.openlocfilehash: 48da852bd1e209aed5ed5e75d8e510027a96d6d7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 568c0c814dcc57be0f5be435bb7750c970ffec19
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558012"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192454"
 ---
 # <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources>, element
+
 Określa, czy zestawy ładowane ze źródeł zdalnych powinny mieć przyznane pełne zaufanie w .NET Framework 4 i nowszych.
   
 > [!NOTE]
@@ -30,6 +31,7 @@ Określa, czy zestawy ładowane ze źródeł zdalnych powinny mieć przyznane pe
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -46,6 +48,7 @@ Określa, czy zestawy ładowane ze źródeł zdalnych powinny mieć przyznane pe
 |`true`|Przyznaj pełne zaufanie do aplikacji ze źródeł zdalnych.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -113,7 +116,7 @@ Poniższy przykład pokazuje, jak udzielić pełnego zaufania do zestawów łado
 </configuration>  
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Bardziej niejawne zastosowania zasad CAS: loadFromRemoteSources](/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources)
 - [Instrukcje: uruchamianie częściowo zaufanego kodu w piaskownicy](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)

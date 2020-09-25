@@ -3,17 +3,19 @@ title: Składnia wyrażenia zapytania dla standardowych operatorów zapytań (C#
 description: Informacje o składni wyrażeń zapytania dla standardowych operatorów zapytań. Zobacz listę standardowych operatorów zapytań z równoważnymi klauzulami wyrażenia zapytania.
 ms.date: 07/20/2015
 ms.assetid: e1e17ef2-68ff-4c26-b6e2-015668227fa5
-ms.openlocfilehash: b43d2095ee7d059be6f834b576ca0e6ab0a87585
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: f85563de496eaf423ea7a43c6d7100bb93eae5b1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299126"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195525"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a>Składnia wyrażenia zapytania dla standardowych operatorów zapytań (C#)
-Niektóre często używane standardowe operatory zapytań mają dedykowaną składnię słowa kluczowego języka C#, która umożliwia wywoływanie ich jako części *wyrażenia zapytania*. Wyrażenie zapytania jest inną, bardziej czytelną formą wyrażenia zapytania niż jego odpowiednik *oparty na metodzie* . Klauzule wyrażenia zapytania są tłumaczone na wywołania metod zapytania w czasie kompilacji.  
+
+Niektóre często używane standardowe operatory zapytań mają dedykowaną składnię słowa kluczowego języka C#, która umożliwia wywoływanie ich jako części *wyrażenia zapytania*. Wyrażenie zapytania jest inną, bardziej czytelną formą wyrażenia zapytania niż jego odpowiednik *oparty na metodzie*  . Klauzule wyrażenia zapytania są tłumaczone na wywołania metod zapytania w czasie kompilacji.  
   
 ## <a name="query-expression-syntax-table"></a>Tabela składni wyrażeń zapytania  
+
  W poniższej tabeli wymieniono standardowe operatory zapytań, które mają równoważne klauzule wyrażenia zapytania.  
   
 |Metoda|Składnia wyrażenia zapytania C#|  

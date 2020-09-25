@@ -2,14 +2,15 @@
 title: <diagnostics>
 ms.date: 03/30/2017
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
-ms.openlocfilehash: 2749bc6c66d491a8a160d98b508fb43aa027b806
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 775ec3a4d3dd8709c61fb46155b5085a3343d218
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398041"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192272"
 ---
 # \<diagnostics>
+
 `diagnostics`Element definiuje ustawienia, które mogą być używane przez administratora na potrzeby inspekcji i kontroli w czasie wykonywania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ ms.locfileid: "70398041"
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -65,6 +67,7 @@ ms.locfileid: "70398041"
 |Modelu|Element główny wszystkich elementów konfiguracji WCF.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `diagnostics`Sekcja definiuje ustawienia diagnostyki dla wszystkich usług znajdujących się w zestawie. Nie można definiować oddzielnych ustawień diagnostycznych na poziomie usługi, chyba że w zestawie znajduje się tylko jedna usługa. Atrybuty są ustawiane zgodnie z wymaganiami sekcji.  
   
 ## <a name="example"></a>Przykład  
@@ -85,7 +88,7 @@ ms.locfileid: "70398041"
 </diagnostics>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>

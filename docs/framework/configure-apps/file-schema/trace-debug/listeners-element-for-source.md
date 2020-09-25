@@ -7,14 +7,15 @@ helpviewer_keywords:
 - listeners element for <source>
 - <listeners> element for <source>
 ms.assetid: a2991f43-b4d3-4614-a8e7-da392de9697f
-ms.openlocfilehash: 0eee325e01b41a15a19e4f40f479596f9d70f73b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b7144b0a7004ba32b21cbc98513df574a5a9e1d9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153415"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195184"
 ---
 # <a name="listeners-element-for-source"></a>\<listeners>, element dla \<source>
+
 Dodaje lub usuwa detektory w <xref:System.Diagnostics.TraceSource.Listeners%2A> kolekcji dla elementu <xref:System.Diagnostics.TraceSource> . Odbiornik kieruje dane wyjściowe śledzenia do odpowiedniego obiektu docelowego, takiego jak dziennik, okno lub plik tekstowy.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -34,9 +35,11 @@ Dodaje lub usuwa detektory w <xref:System.Diagnostics.TraceSource.Listeners%2A> 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -59,9 +62,11 @@ Dodaje lub usuwa detektory w <xref:System.Diagnostics.TraceSource.Listeners%2A> 
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="configuration-file"></a>Plik konfiguracji  
- Ten element może być używany w pliku konfiguracji komputera (Machine. config) i w pliku konfiguracji aplikacji.  
+
+ Tego elementu można użyć w pliku konfiguracji komputera (Machine.config) i pliku konfiguracyjnym aplikacji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak użyć elementu, `<listeners>` Aby dodać odbiornik śledzenia konsoli do `mySource` źródła i usunąć domyślny odbiornik śledzenia.  
   
 ```xml  
@@ -87,7 +92,7 @@ Dodaje lub usuwa detektory w <xref:System.Diagnostics.TraceSource.Listeners%2A> 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceListener>
 - [Schemat ustawień śledzenia i debugowania](index.md)
