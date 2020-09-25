@@ -2,12 +2,12 @@
 title: Omówienie przewodników i wprowadzającej dokumentacji technicznej
 description: Modernizacja istniejących aplikacji .NET za pomocą chmury platformy Azure i kontenerów systemu Windows | Przewodniki i przegląd wprowadzenie techniczne
 ms.date: 04/28/2018
-ms.openlocfilehash: 4db6d449d27dcd4316d61305c8c2a8c2aa0bc65b
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 98d33b13d2b28bfe1c35894df45e525cff0520c1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89516128"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172147"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Omówienie przewodników i wprowadzającej dokumentacji technicznej
 
@@ -190,7 +190,7 @@ Pełny przewodnik techniczny jest dostępny na stronie wiki repozytorium eShopMo
 
 ### <a name="overview"></a>Omówienie
 
-[Azure Container Instances (ACI)](https://docs.microsoft.com/azure/container-instances/) to najszybszy sposób tworzenia kontenerów w środowisku deweloperskim/testowym/przejściowym, w którym można wdrożyć pojedyncze wystąpienia kontenerów.
+[Azure Container Instances (ACI)](/azure/container-instances/) to najszybszy sposób tworzenia kontenerów w środowisku deweloperskim/testowym/przejściowym, w którym można wdrożyć pojedyncze wystąpienia kontenerów.
 
 ### <a name="goals"></a>Cele
 

@@ -4,12 +4,12 @@ description: Azure Event Grid to rozwiązanie bezserwerowe do niezawodnego dosta
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/06/2020
-ms.openlocfilehash: 408e1b9cd1b1e5316c7c6a17bb1b0c76a38f9e11
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 30937bafd8069eb4508dce18351964103421373a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135714"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171887"
 ---
 # <a name="event-grid"></a>Event Grid
 
@@ -31,7 +31,7 @@ Event Grid dotyczy kilku różnych scenariuszy. W tej sekcji omówiono trzy najb
 
 ![Automatyzacja operacji](./media/ops-automation.png)
 
-Event Grid mogą pomóc przyspieszyć automatyzację i uprościć wymuszanie zasad, powiadamiając [Azure Automation](https://docs.microsoft.com/azure/automation) o aprowizacji infrastruktury.
+Event Grid mogą pomóc przyspieszyć automatyzację i uprościć wymuszanie zasad, powiadamiając [Azure Automation](/azure/automation) o aprowizacji infrastruktury.
 
 ### <a name="application-integration"></a>Integracja aplikacji
 
@@ -47,11 +47,11 @@ Event Grid może wyzwalać Azure Functions, Logic Apps lub własny kod niestanda
 
 ## <a name="event-grid-vs-other-azure-messaging-services"></a>Event Grid a inne usługi Azure Messaging
 
-Platforma Azure udostępnia kilka usług obsługi komunikatów, w tym [Event Hubs](https://docs.microsoft.com/azure/event-hubs) i [Service Bus](https://docs.microsoft.com/azure/service-bus-messaging). Każdy z nich został zaprojektowany w celu rozwiązania określonego zestawu przypadków użycia. Poniższy diagram zawiera ogólne omówienie różnic między usługami.
+Platforma Azure udostępnia kilka usług obsługi komunikatów, w tym [Event Hubs](/azure/event-hubs) i [Service Bus](/azure/service-bus-messaging). Każdy z nich został zaprojektowany w celu rozwiązania określonego zestawu przypadków użycia. Poniższy diagram zawiera ogólne omówienie różnic między usługami.
 
 ![Porównanie usługi Azure Messaging](./media/azure-messaging-services.png)
 
-Aby zapoznać się z bardziej szczegółowym porównaniem, zobacz [porównanie usług obsługi komunikatów](https://docs.microsoft.com/azure/event-grid/compare-messaging-services).
+Aby zapoznać się z bardziej szczegółowym porównaniem, zobacz [porównanie usług obsługi komunikatów](/azure/event-grid/compare-messaging-services).
 
 ## <a name="performance-targets"></a>Cele wydajności
 
@@ -84,7 +84,7 @@ Event Grid używa standardowego schematu do zawijania niestandardowych zdarzeń.
 }]
 ```
 
-Wszystko, czego dotyczy komunikat, jest standardowe `data` poza właściwością. Można sprawdzić komunikat i użyć `eventType` i `dataVersion` deserializować niestandardowego części ładunku.
+Wszystko, czego dotyczy komunikat, jest standardowe poza `data` właściwością. Można sprawdzić komunikat i użyć `eventType` i `dataVersion` deserializować niestandardowego części ładunku.
 
 ## <a name="azure-resources"></a>Zasoby platformy Azure
 
@@ -101,8 +101,8 @@ Główną zaletą korzystania z Event Grid są automatyczne komunikaty generowan
 | Blob Storage | Microsoft. Storage. BlobCreated | Uruchamiany po utworzeniu obiektu BLOB. |
 | | Microsoft. Storage. BlobDeleted | Uruchamiany, gdy obiekt BLOB zostanie usunięty. |
 | Usługa Event Hubs | Microsoft. EventHub. CaptureFileCreated | Uruchamiany podczas tworzenia pliku przechwytywania.
-| Usługa IoT Hub | Microsoft. Devices. DeviceCreated | Opublikowano, gdy urządzenie jest zarejestrowane w usłudze IoT Hub. |
-| | Microsoft. Devices. DeviceDeleted | Opublikowano, gdy urządzenie zostanie usunięte z Centrum IoT Hub. |
+| Usługa IoT Hub | Microsoft.Devices.DeviceCreated | Opublikowano, gdy urządzenie jest zarejestrowane w usłudze IoT Hub. |
+| | Microsoft.Devices.DeviceDeleted | Opublikowano, gdy urządzenie zostanie usunięte z Centrum IoT Hub. |
 | Grupy zasobów | Microsoft. resources. ResourceWriteSuccess | Uruchamiany, gdy operacja tworzenia lub aktualizowania zasobu zostanie zakończona pomyślnie. |
 | | Microsoft. resources. ResourceWriteFailure | Uruchamiany, gdy operacja tworzenia lub aktualizowania zasobu nie powiedzie się. |
 | | Microsoft. resources. ResourceWriteCancel | Uruchamiany, gdy operacja tworzenia lub aktualizowania zasobu zostanie anulowana. |
@@ -110,35 +110,35 @@ Główną zaletą korzystania z Event Grid są automatyczne komunikaty generowan
 | | Microsoft. resources. ResourceDeleteFailure | Uruchamiany, gdy operacja usunięcia zasobu nie powiedzie się. |
 | | Microsoft. resources. ResourceDeleteCancel | Uruchamiany, gdy operacja usunięcia zasobu zostanie anulowana. To zdarzenie występuje, gdy wdrożenie szablonu zostało anulowane. |
 
-Aby uzyskać więcej informacji, zobacz [Azure Event Grid schemacie zdarzeń](https://docs.microsoft.com/azure/event-grid/event-schema).
+Aby uzyskać więcej informacji, zobacz [Azure Event Grid schemacie zdarzeń](/azure/event-grid/event-schema).
 
 Możesz uzyskać dostęp do Event Grid z dowolnego typu aplikacji, nawet jednego działającego lokalnie.
 
 ## <a name="conclusion"></a>Podsumowanie
 
-W tym rozdziale przedstawiono platformę bezserwerową platformy Azure, która składa się z Azure Functions, Logic Apps i Event Grid. Za pomocą tych zasobów można utworzyć całkowicie bezserwerową architekturę aplikacji lub utworzyć rozwiązanie hybrydowe, które współdziała z innymi zasobami w chmurze i serwerami lokalnymi. W połączeniu z platformą danych bezserwerową, taką jak [Azure SQL](https://docs.microsoft.com/azure/sql-database) lub [CosmosDB](https://docs.microsoft.com/azure/cosmos-db/introduction), można tworzyć w pełni zarządzane aplikacje natywne w chmurze.
+W tym rozdziale przedstawiono platformę bezserwerową platformy Azure, która składa się z Azure Functions, Logic Apps i Event Grid. Za pomocą tych zasobów można utworzyć całkowicie bezserwerową architekturę aplikacji lub utworzyć rozwiązanie hybrydowe, które współdziała z innymi zasobami w chmurze i serwerami lokalnymi. W połączeniu z platformą danych bezserwerową, taką jak [Azure SQL](/azure/sql-database) lub [CosmosDB](/azure/cosmos-db/introduction), można tworzyć w pełni zarządzane aplikacje natywne w chmurze.
 
 ## <a name="recommended-resources"></a>Zalecane zasoby
 
-- [Plany usługi App Service](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)
-- [Application Insights](https://docs.microsoft.com/azure/application-insights)
-- [Analiza Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-analytics)
+- [Plany usługi App Service](/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)
+- [Application Insights](/azure/application-insights)
+- [Analiza Application Insights](/azure/application-insights/app-insights-analytics)
 - [Azure: Przenieś swoją aplikację do chmury, korzystając z bezserwerowego Azure Functions](https://channel9.msdn.com/events/Connect/2017/E102)
-- [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
-- [Schemat zdarzeń Azure Event Grid](https://docs.microsoft.com/azure/event-grid/event-schema)
-- [Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs)
-- [Dokumentacja usługi Azure Functions](https://docs.microsoft.com/azure/azure-functions)
-- [Pojęcia powiązań i wyzwalaczy usługi Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)
-- [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps)
-- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging)
-- [Azure Table Storage](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
-- [Łączenie z lokalnymi źródłami danych za pomocą bramy danych lokalnych platformy Azure](https://docs.microsoft.com/azure/analysis-services/analysis-services-gateway)
-- [Tworzenie pierwszej funkcji w witrynie Azure Portal](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)
-- [Tworzenie pierwszej funkcji z poziomu interfejsu wiersza polecenia platformy Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli)
-- [Tworzenie pierwszej funkcji przy użyciu programu Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)
-- [Obsługiwane języki](https://docs.microsoft.com/azure/azure-functions/supported-languages)
-- [Monitorowanie usługi Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
+- [Azure Event Grid](/azure/event-grid/overview)
+- [Schemat zdarzeń Azure Event Grid](/azure/event-grid/event-schema)
+- [Azure Event Hubs](/azure/event-hubs)
+- [Dokumentacja usługi Azure Functions](/azure/azure-functions)
+- [Pojęcia powiązań i wyzwalaczy usługi Azure Functions](/azure/azure-functions/functions-triggers-bindings)
+- [Azure Logic Apps](/azure/logic-apps)
+- [Azure Service Bus](/azure/service-bus-messaging)
+- [Azure Table Storage](/azure/cosmos-db/table-storage-overview)
+- [Łączenie z lokalnymi źródłami danych za pomocą bramy danych lokalnych platformy Azure](/azure/analysis-services/analysis-services-gateway)
+- [Tworzenie pierwszej funkcji w witrynie Azure Portal](/azure/azure-functions/functions-create-first-azure-function)
+- [Tworzenie pierwszej funkcji z poziomu interfejsu wiersza polecenia platformy Azure](/azure/azure-functions/functions-create-first-azure-function-azure-cli)
+- [Tworzenie pierwszej funkcji przy użyciu programu Visual Studio](/azure/azure-functions/functions-create-your-first-function-visual-studio)
+- [Obsługiwane języki](/azure/azure-functions/supported-languages)
+- [Monitorowanie usługi Azure Functions](/azure/azure-functions/functions-monitoring)
 
 >[!div class="step-by-step"]
->[Poprzedni](logic-apps.md)
->[Następny](durable-azure-functions.md)
+>[Poprzedni](logic-apps.md) 
+> [Dalej](durable-azure-functions.md)

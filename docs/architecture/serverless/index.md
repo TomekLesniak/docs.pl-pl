@@ -4,12 +4,12 @@ description: Przewodnik dotyczący architektury bezserwerowej. Dowiedz się, kie
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/22/2020
-ms.openlocfilehash: 16e658a99feda6537189a45b53da514e67766999
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 867765d29a7c50694a5de7b1de56346d86600a83
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135697"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171822"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Aplikacje bezserwerowe: architektura, wzorce i implementacja platformy Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "82135697"
 
 **Wersja 3.0** — zaktualizowane do Azure Functions v3
 
-> Pobieranie dostępne o:<https://aka.ms/serverlessbookpdf>
+> Pobieranie dostępne o: <https://aka.ms/serverlessbookpdf>
 
 OPUBLIKOWANA PRZEZ
 
@@ -31,13 +31,13 @@ Redmond, Waszyngton 98052-6399
 
 Copyright &copy; 2018-2020 od firmy Microsoft Corporation
 
-Wszelkie prawa zastrzeżone. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
+All rights reserved. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
 
 Ta książka jest świadczona w postaci "AS-IS" i zawiera widoki i opinie autora. Widoki, opinie i informacje wyrażone w tej książce, w tym adresy URL i inne odwołania do witryn internetowych, mogą ulec zmianie bez powiadomienia.
 
 Niektóre z przykładów przedstawiono wyłącznie do celów informacyjnych i są one fikcyjne. Żadne rzeczywiste skojarzenia lub związki nie są zamierzone ani wnioskowane.
 
-Firma Microsoft i znaki towarowe <https://www.microsoft.com> wymienione na stronie "znaki towarowe" są znakami towarowymi grupy firm Microsoft.
+Firma Microsoft i znaki towarowe wymienione na <https://www.microsoft.com> stronie "znaki towarowe" są znakami towarowymi grupy firm Microsoft.
 
 Komputery Mac i macOS są znakami towarowymi firmy Apple Inc.
 
@@ -47,7 +47,7 @@ Autor:
 
 > **[Jeremy Likness](https://twitter.com/jeremylikness)**, starszy kierownik ds. zarządzania danymi, Microsoft Corp.
 
-Trybu
+Współautor:
 
 > **[Cecil Phillip](https://twitter.com/cecilphillip)**, starszy ambasador w chmurze, Microsoft Corp.
 
@@ -74,7 +74,7 @@ Uczestnicy i recenzenci:
 
 Ten przewodnik koncentruje się na natywnym programowaniu aplikacji, które używają bezserwerowego programu. Książka wyróżnia korzyści i ujawnia potencjalne wady tworzenia aplikacji bezserwerowych i udostępnia Przegląd architektury bezserwerowej. Wiele przykładów wykorzystania bezserwerowego można zobaczyć wraz z różnymi wzorcami projektowymi bez użycia serwera.
 
-W tym przewodniku objaśniono składniki platformy bezserwerowej platformy Azure i koncentruje się na implementacji bezserwerowej przy użyciu [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview). Zapoznaj się z wyzwalaczami i powiązaniami oraz sposobem implementacji aplikacji bezserwerowych, które są zależne od stanu przy użyciu funkcji trwałych. Na koniec przykłady biznesowe i analizy przypadków ułatwią dostarczenie kontekstu i ramki odniesienia, aby określić, czy bezserwerowy jest właściwym podejściem do projektów.
+W tym przewodniku objaśniono składniki platformy bezserwerowej platformy Azure i koncentruje się na implementacji bezserwerowej przy użyciu [Azure Functions](/azure/azure-functions/functions-overview). Zapoznaj się z wyzwalaczami i powiązaniami oraz sposobem implementacji aplikacji bezserwerowych, które są zależne od stanu przy użyciu funkcji trwałych. Na koniec przykłady biznesowe i analizy przypadków ułatwią dostarczenie kontekstu i ramki odniesienia, aby określić, czy bezserwerowy jest właściwym podejściem do projektów.
 
 ## <a name="evolution-of-cloud-platforms"></a>Ewolucja platform w chmurze
 
@@ -92,7 +92,7 @@ Przed chmurą istniała różnica między programowaniem a operacją. Wdrożenie
 
 Ta lista jest włączona, a obciążenie było ogromne. W wielu sytuacjach działy IT były zmuszeni do postępowania z niezwykłą ilością odpadów. Przyczyną jest nadmierne przydzielanie serwerów jako maszyn zapasowych na potrzeby odzyskiwania po awarii i serwerów rezerwy, aby umożliwić skalowanie w poziomie. Na szczęście wprowadzenie technologii wirtualizacji (takich jak [Funkcja Hyper-V](/virtualization/hyper-v-on-windows/about/)) z Virtual Machines (maszyny wirtualne) spowodowało powstanie infrastruktury jako usługi (IaaS). Zwirtualizowana infrastruktura umożliwia wykonywanie operacji w celu skonfigurowania standardowego zestawu serwerów jako szkieletu, co prowadzi do elastycznego środowiska z możliwością aprowizacji unikatowych serwerów na żądanie. Co ważniejsze, wirtualizacja ustawia etap korzystania z chmury w celu zapewnienia maszyn wirtualnych "jako usługi". Firmy mogą łatwo uzyskać informacje o nadmiarowych maszynach lub komputerach fizycznych. Zamiast tego koncentrują się na środowisku wirtualnym.
 
-IaaS nadal wymaga dużego nakładu pracy, ponieważ operacje są nadal odpowiedzialne za różne zadania. Te zadania obejmują:
+IaaS nadal wymaga dużego nakładu pracy, ponieważ operacje są nadal odpowiedzialne za różne zadania. Do zadań tych należą:
 
 - Stosowanie poprawek i tworzenie kopii zapasowych serwerów.
 - Instalowanie pakietów.
@@ -116,12 +116,12 @@ Inna funkcja bezserwerowa to bardzo rozliczenia. Często aplikacje sieci Web mog
 
 ## <a name="what-this-guide-doesnt-cover"></a>Czym nie obejmuje ten przewodnik
 
-W tym przewodniku szczegółowo omówiono podejścia do architektury i wzorce projektowe i nie jest głębokie szczegółowe w szczegółach implementacji Azure Functions, [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps)lub innych platform bezserwerowych. Ten przewodnik nie obejmuje na przykład zaawansowanych przepływów pracy z Logic Appsami lub funkcjami Azure Functions, takimi jak Konfigurowanie udostępniania zasobów między źródłami (CORS), stosowanie domen niestandardowych lub przekazywanie certyfikatów SSL. Te szczegóły są dostępne w [dokumentacji Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-reference)online.
+W tym przewodniku szczegółowo omówiono podejścia do architektury i wzorce projektowe i nie jest głębokie szczegółowe w szczegółach implementacji Azure Functions, [Logic Apps](/azure/logic-apps/logic-apps-what-are-logic-apps)lub innych platform bezserwerowych. Ten przewodnik nie obejmuje na przykład zaawansowanych przepływów pracy z Logic Appsami lub funkcjami Azure Functions, takimi jak Konfigurowanie udostępniania zasobów między źródłami (CORS), stosowanie domen niestandardowych lub przekazywanie certyfikatów SSL. Te szczegóły są dostępne w [dokumentacji Azure Functions](/azure/azure-functions/functions-reference)online.
 
-### <a name="additional-resources"></a>Dodatkowe zasoby
+### <a name="additional-resources"></a>Zasoby dodatkowe
 
-- [Centrum architektury platformy Azure](https://docs.microsoft.com/azure/architecture/)
-- [Najlepsze rozwiązania dla aplikacji w chmurze](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
+- [Centrum architektury platformy Azure](/azure/architecture/)
+- [Najlepsze rozwiązania dla aplikacji w chmurze](/azure/architecture/best-practices/api-design)
 
 ## <a name="who-should-use-the-guide"></a>Kto powinien korzystać z przewodnika
 

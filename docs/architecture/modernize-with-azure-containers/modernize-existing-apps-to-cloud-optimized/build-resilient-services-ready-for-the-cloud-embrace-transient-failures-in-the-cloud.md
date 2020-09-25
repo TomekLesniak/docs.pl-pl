@@ -2,14 +2,14 @@
 title: Twórz odporne na błędy usługi w chmurze. Obsługa przejściowych błędów w chmurze
 description: Modernizacja istniejących aplikacji .NET za pomocą chmury platformy Azure i kontenerów systemu Windows | Twórz odporne na błędy usługi w chmurze. Obsługa przejściowych błędów w chmurze
 ms.date: 04/30/2018
-ms.openlocfilehash: 899084ac00d9be0df47ef88c026f4e8c19722bb6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 8e9f1eda71e4b98a56cbfc1c7a4ff34e67bee3f4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144255"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172160"
 ---
-# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Kompilowanie odpornych usług gotowych do użycia w chmurze: obsługa przejściowych błędów w chmurze
+# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Tworzenie odpornych usług gotowych do pracy w chmurze: Obsługa przejściowych błędów w chmurze
 
 Odporność to zdolność do odzyskiwania po awarii i kontynuowania działania. Odporność nie ma na uniknięcie niepowodzeń, ale akceptuje fakt, że wystąpią błędy, a następnie odpowiada na nie w taki sposób, aby uniknąć przestoju lub utraty danych. Celem odporności jest przywrócenie aplikacji do stanu w pełni funkcjonalnym po awarii.
 
@@ -33,7 +33,7 @@ Odporna na błędy aplikacja, taka jak pokazana na rysunku 4-9, powinna implemen
 
 Tych technik można używać zarówno w przypadku zasobów HTTP, jak i zasobów bazy danych. Na rysunku 4-9 aplikacja jest oparta na architekturze 3-warstwowej, więc te metody są wymagane na poziomie usług (HTTP) i na poziomie warstwy danych (TCP). W aplikacji monolitycznej, która korzysta tylko z jednej warstwy aplikacji oprócz bazy danych (bez dodatkowych usług lub mikrousług), obsługa błędów przejściowych na poziomie połączenia bazy danych może być wystarczająca. W tym scenariuszu wymagana jest tylko określona konfiguracja połączenia z bazą danych.
 
-W przypadku wdrażania odpornego na błędy dostępu do bazy danych, w zależności od używanej wersji platformy .NET, może to być proste (na przykład [Entity Framework 6 lub nowsza](/ef/ef6/fundamentals/connection-resiliency/retry-logic)). Jest to tylko kwestia konfigurowania połączenia z bazą danych. Może być też konieczne użycie dodatkowych bibliotek, takich jak [blok obsługi błędów przejściowych](https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)) (dla wcześniejszych wersji programu .NET), a nawet zaimplementowanie własnej biblioteki.
+W przypadku wdrażania odpornego na błędy dostępu do bazy danych, w zależności od używanej wersji platformy .NET, może to być proste (na przykład [Entity Framework 6 lub nowsza](/ef/ef6/fundamentals/connection-resiliency/retry-logic)). Jest to tylko kwestia konfigurowania połączenia z bazą danych. Może być też konieczne użycie dodatkowych bibliotek, takich jak [blok obsługi błędów przejściowych](/previous-versions/msp-n-p/hh680934(v=pandp.50)) (dla wcześniejszych wersji programu .NET), a nawet zaimplementowanie własnej biblioteki.
 
 W przypadku wdrażania ponownych prób HTTP i wyłączników, zalecenie dotyczące platformy .NET polega na użyciu biblioteki [Polly](https://github.com/App-vNext/Polly) , która jest przeznaczona dla .NET Framework 4,0, .NET Framework 4,5 i .NET standard 1,1, która obejmuje obsługę platformy .NET Core.
 
