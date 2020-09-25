@@ -9,14 +9,15 @@ helpviewer_keywords:
 - methods [C#], passing parameters
 - C# language, method parameters
 ms.assetid: a5c3003f-7441-4710-b8b1-c79de77e0b77
-ms.openlocfilehash: 875a42aacf3d7aa4124684aefafdcb07ff4c87d6
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 61ec6d31145df5a2aebe805fccdf7614a0ae74f6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864738"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186097"
 ---
 # <a name="passing-parameters-c-programming-guide"></a>Przekazywanie parametrów (Przewodnik programowania w języku C#)
+
 W języku C# argumenty mogą być przekazane do parametrów przez wartość lub przez odwołanie. Przekazywanie przez odwołanie umożliwia składowe, metody, właściwości, indeksatory, operatory i konstruktory, aby zmienić wartość parametrów i spowodować, że ta zmiana będzie trwała w środowisku wywołującym. Aby przekazać parametr przez odwołanie z intencją zmiany wartości, użyj `ref` `out` słowa kluczowego or. Aby przejść przez odwołanie z intencją uniknięcia kopiowania, ale nie zmiany wartości, użyj `in` modyfikatora. Dla uproszczenia tylko `ref` słowo kluczowe jest używane w przykładach w tym temacie. Aby uzyskać więcej informacji o różnicach między elementami `in` , `ref` , i `out` , zobacz [w](../../language-reference/keywords/in-parameter-modifier.md), [ref](../../language-reference/keywords/ref.md)i [out](../../language-reference/keywords/out-parameter-modifier.md).  
   
  Poniższy przykład ilustruje różnicę między parametrami Value i Reference.  
@@ -33,7 +34,7 @@ W języku C# argumenty mogą być przekazane do parametrów przez wartość lub 
 
 Aby uzyskać więcej informacji, zobacz [listy argumentów](~/_csharplang/spec/expressions.md#argument-lists) w [specyfikacji języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Metody](./methods.md)

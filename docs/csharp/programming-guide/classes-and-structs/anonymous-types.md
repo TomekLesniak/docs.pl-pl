@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: ccdee1a86ab0c292721e69346cb7cedb03d4c28b
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: f60c1ea4f3f029ec3b81a4197a711523ec372df9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474504"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186162"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Typy anonimowe (Przewodnik programowania w języku C#)
 
@@ -48,6 +48,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Typy anonimowe to typy [klas](../../language-reference/keywords/class.md) , które są wyprowadzane bezpośrednio z [obiektu](../../language-reference/builtin-types/reference-types.md)i nie mogą być rzutowane do żadnego typu poza [obiektem](../../language-reference/builtin-types/reference-types.md). Kompilator zawiera nazwę dla każdego typu anonimowego, chociaż aplikacja nie może uzyskać do niej dostępu. Z perspektywy środowiska uruchomieniowego języka wspólnego typ anonimowy nie różni się od żadnego innego typu odwołania.  
   
  Jeśli co najmniej dwa anonimowe Inicjatory obiektów w zestawie określają sekwencję właściwości, które są w tej samej kolejności i mają takie same nazwy i typy, kompilator traktuje obiekty jako wystąpienia tego samego typu. Korzystają one z tych samych informacji o typie wygenerowanym przez kompilator.  
@@ -56,7 +57,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
   
  Ponieważ <xref:System.Object.Equals%2A> metody i <xref:System.Object.GetHashCode%2A> dla typów anonimowych są zdefiniowane w kategoriach `Equals` i `GetHashCode` metodach właściwości, dwa wystąpienia tego samego typu anonimowego są równe tylko wtedy, gdy wszystkie ich właściwości są równe.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Inicjatory obiektów i kolekcji](./object-and-collection-initializers.md)
