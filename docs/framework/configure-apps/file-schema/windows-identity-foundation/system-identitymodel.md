@@ -3,14 +3,15 @@ title: <system.identityModel>
 ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
-ms.openlocfilehash: a54f5ce86aee1a5e831c0b10aa1471d4a82f40a5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 216b4c73e06469d6577c61338ad1af0fdd2dc05e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70251793"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185577"
 ---
 # \<system.identityModel>
+
 Zapewnia konfigurację umożliwiającą włączanie opcji Windows Identity Foundation (WIF) w aplikacjach.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -24,9 +25,11 @@ Zapewnia konfigurację umożliwiającą włączanie opcji Windows Identity Found
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -42,9 +45,11 @@ Zapewnia konfigurację umożliwiającą włączanie opcji Windows Identity Found
 |`<configuration>`|Element główny w każdym pliku konfiguracji używanym przez środowisko uruchomieniowe języka wspólnego i aplikacje programu .NET Framework.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dodaj `<system.identityModel>` sekcję do pliku konfiguracji, aby skonfigurować usługę lub aplikację do korzystania z programu Windows Identity Foundation (WIF). `<system.identityModel>`Element jest reprezentowany przez <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> klasę.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak dodać `<system.identityModel>` sekcję do pliku konfiguracji. Najpierw należy dodać sekcję konfiguracyjną i deklarację przestrzeni nazw w ramach `<configSections>` elementu. Następnie można dodać `<system.IdentityModel>` element do pliku konfiguracji, aby określić co najmniej jedną konfigurację tożsamości.  
   
 ```xml  
@@ -76,6 +81,6 @@ Zapewnia konfigurację umożliwiającą włączanie opcji Windows Identity Found
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IdentityModel.Configuration.SystemIdentityModelSection>

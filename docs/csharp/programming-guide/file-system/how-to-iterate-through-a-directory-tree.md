@@ -6,14 +6,15 @@ helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: c49a9d1eaea9d4d8967b105d753f2a611d80e795
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 9d927e8517ddbdb1c5a9a8aa8ca3c321bf7e8d9c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301986"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178544"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Jak wykonać iterację w drzewie katalogów (Przewodnik programowania w języku C#)
+
 Fraza "Iterowanie drzewa katalogów" oznacza, że uzyskuje dostęp do każdego pliku w każdym zagnieżdżonym podkatalogu w określonym folderze głównym, na dowolną głębokość. Nie trzeba otwierać każdego pliku. Można po prostu pobrać nazwę pliku lub podkatalogu jako lub `string` można pobrać dodatkowe informacje w postaci <xref:System.IO.FileInfo?displayProperty=nameWithType> <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> obiektu lub.  
   
 > [!NOTE]
@@ -37,6 +38,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
 > Systemy plików NTFS mogą zawierać *punkty ponownej analizy* w postaci *punktów połączenia*, *linków symbolicznych*i *twardych linków*. Metody .NET, takie jak <xref:System.IO.DirectoryInfo.GetFiles%2A> i, <xref:System.IO.DirectoryInfo.GetDirectories%2A> nie zwracają żadnych podkatalogów w punkcie ponownej analizy. To zachowanie chroni przed ryzykiem wprowadzenia do pętli nieskończonej, gdy dwa punkty ponownej analizy odnoszą się do siebie. Ogólnie rzecz biorąc, należy zachować szczególną ostrożność podczas postępowania z punktami ponownej analizy, aby upewnić się, że nie można przypadkowo modyfikować ani usuwać plików. Jeśli potrzebujesz precyzyjnej kontroli nad punktami ponownej analizy, użyj wywołania platformy lub kodu natywnego, aby bezpośrednio wywołać odpowiednie metody systemu plików Win32.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak przeprowadzić drzewo katalogów za pomocą rekursji. Podejście cykliczne to elegancki, ale może powodować wyjątek przepełnienia stosu, jeśli drzewo katalogów jest duże i głęboko zagnieżdżone.  
   
  Określone wyjątki, które są obsługiwane, oraz określone akcje wykonywane na każdym pliku lub folderze są dostępne jako tylko przykłady. Należy zmodyfikować ten kod w celu spełnienia określonych wymagań. Aby uzyskać więcej informacji, zobacz komentarze w kodzie.  
@@ -44,6 +46,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  [!code-csharp[csFilesandFolders#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#1)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak wykonać iterację plików i folderów w drzewie katalogów bez użycia rekursji. W tej metodzie <xref:System.Collections.Generic.Stack%601> jest używany typ kolekcji generycznej, który jest ostatnim wyjściem ze stosu (LIFO).  
   
  Określone wyjątki, które są obsługiwane, oraz określone akcje wykonywane na każdym pliku lub folderze są dostępne jako tylko przykłady. Należy zmodyfikować ten kod w celu spełnienia określonych wymagań. Aby uzyskać więcej informacji, zobacz komentarze w kodzie.  
@@ -55,6 +58,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  Jeśli zawartość drzewa katalogów ma być przechowywana w pamięci lub na dysku, najlepszym rozwiązaniem jest przechowywanie tylko <xref:System.IO.FileSystemInfo.FullName%2A> właściwości (typu `string` ) dla każdego pliku. Następnie można użyć tego ciągu do utworzenia nowego <xref:System.IO.FileInfo> lub <xref:System.IO.DirectoryInfo> obiektu w razie potrzeby lub otworzyć dowolny plik, który wymaga dodatkowego przetwarzania.  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  Niezawodny kod iteracji pliku musi uwzględniać wiele złożoności systemu plików. Aby uzyskać więcej informacji o systemie plików systemu Windows, zobacz [NTFS — Omówienie](/windows-server/storage/file-server/ntfs-overview).  
   
 ## <a name="see-also"></a>Zobacz też

@@ -5,14 +5,15 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: ca474cdcaeaac7b1c32efa5c58f4b5bb5b7f7895
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 963b25e57ae8c2cc59dcc3e50ae2a52cc04f54a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557245"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185642"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool>, element (ustawienia internetowe)
+
 Określa ustawienia konfiguracji, które są używane przez ASP.NET do zarządzania zachowaniem całego procesu, gdy aplikacja ASP.NET działa w trybie zintegrowanym w usługach IIS 7,0 lub nowszym.  
   
 > [!IMPORTANT]
@@ -44,6 +45,7 @@ W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzęd
 |`requestQueueLimit`|Określa maksymalną liczbę żądań, które mogą być umieszczone w kolejce dla ASP.NET w pojedynczym procesie. Gdy co najmniej dwie aplikacje ASP.NET są uruchamiane w jednej puli aplikacji, zestaw zbiorczy żądań wysyłanych do dowolnej aplikacji w puli aplikacji podlega temu ustawieniu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -97,6 +99,6 @@ Wartości w przykładzie są wartościami domyślnymi.
 |Plik walidacji||  
 |Może być puste||  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [\<system.web> — Element (Ustawienia sieci Web)](system-web-element-web-settings.md)

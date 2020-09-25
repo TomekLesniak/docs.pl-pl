@@ -2,14 +2,15 @@
 title: <webHttpEndpoint>
 ms.date: 03/30/2017
 ms.assetid: ecaaeb6f-ebd0-411d-8b53-92477cd45347
-ms.openlocfilehash: 8d4f55fd5b51ea77839b7fdbb930e937f5700417
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3282871bf8dbd25726ada7003d3066b9a42e2366
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854797"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177985"
 ---
 # \<webHttpEndpoint>
+
 Ten element konfiguracji definiuje standardowy punkt końcowy ze stałym [\<webHttpBinding>](webhttpbinding.md) powiązaniem, które automatycznie dodaje [\<webHttp>](webhttp.md) zachowanie. Użyj tego punktu końcowego podczas pisania usługi REST.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Ten element konfiguracji definiuje standardowy punkt końcowy ze stałym [\<webH
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -45,6 +47,7 @@ Ten element konfiguracji definiuje standardowy punkt końcowy ze stałym [\<webH
 |WebEndpointType|Ciąg określający typ punktu końcowego.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -53,7 +56,7 @@ Ten element konfiguracji definiuje standardowy punkt końcowy ze stałym [\<webH
 |-------------|-----------------|  
 |[\<standardEndpoints>](standardendpoints.md)|Kolekcja standardowych punktów końcowych, które są wstępnie zdefiniowanymi punktami końcowymi z co najmniej jedną z jej właściwości (adres, powiązanie, kontrakt).|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Description.WebHttpEndpoint>
 - <xref:System.ServiceModel.Configuration.WebHttpEndpointElement>

@@ -2,14 +2,15 @@
 title: <findCriteria>
 ms.date: 03/30/2017
 ms.assetid: 5454cd19-6bf5-4ba8-94d1-f58d10dc1917
-ms.openlocfilehash: 44e068ee205bc5e04382164e7ab00716b2c07dcf
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ce2b1fdd85e0454f901bac393e2f44ae0c6da43f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855169"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178150"
 ---
 # \<findCriteria>
+
 Element konfiguracji, który dostarcza zestaw kryteriów używanych przez aplikację kliencką do wyszukiwania usługi odnajdywania. Kryteria mogą być pogrupowane w kryteria wyszukiwania (określające, które usługi są szukane) i znajdować kryteria zakończenia (jak długo wyszukiwanie powinno trwać).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -48,6 +49,7 @@ Element konfiguracji, który dostarcza zestaw kryteriów używanych przez aplika
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -72,7 +74,7 @@ Element konfiguracji, który dostarcza zestaw kryteriów używanych przez aplika
 |-------------|-----------------|  
 |[\<standardEndpoints>](standardendpoints.md)|Zawiera ustawienia wymagane przez aplikację do uczestnictwa w procesie odnajdowania usług jako klient.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Discovery.FindCriteria>
 - <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>

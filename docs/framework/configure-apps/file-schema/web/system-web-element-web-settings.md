@@ -8,14 +8,15 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-ms.openlocfilehash: b37b05bdf90630251cbfcf86751243a3a8b77663
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c8b01ec217fc1b6b91ccf36c8667922b57f26852
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152844"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185590"
 ---
 # <a name="systemweb-element-web-settings"></a>\<system.web>, element (ustawienia internetowe)
+
 Zawiera informacje o sposobie zarządzania zachowaniem całego procesu przez warstwę hostingu ASP.NET.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -40,7 +41,7 @@ Brak.
   
 |Element|Opis|  
 |-------------|-----------------|  
-|[\<applicationPool>](applicationpool-element-web-settings.md)|Określa ustawienia konfiguracji dla pul aplikacji usług IIS w pliku aspnet. config.|  
+|[\<applicationPool>](applicationpool-element-web-settings.md)|Określa ustawienia konfiguracji dla pul aplikacji usług IIS w pliku aspnet.config.|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
   
@@ -54,7 +55,7 @@ Brak.
   
 ## <a name="example"></a>Przykład  
 
-Poniższy przykład pokazuje, jak skonfigurować zachowanie ASP.NET całego procesu w pliku aspnet. config, gdy ASP.NET jest hostowany w puli aplikacji IIS. W przykładzie przyjęto założenie, że usługi IIS działają w trybie zintegrowanym i że aplikacja korzysta z .NET Framework 3,5 z dodatkiem SP1 lub nowszej wersji. To zachowanie nie występuje w wersjach .NET Framework starszych niż .NET Framework 3,5 SP1. Wartości w przykładzie są wartościami domyślnymi.  
+Poniższy przykład pokazuje, jak skonfigurować zachowanie ASP.NET całego procesu w pliku aspnet.config, gdy ASP.NET jest hostowany w puli aplikacji IIS. W przykładzie przyjęto założenie, że usługi IIS działają w trybie zintegrowanym i że aplikacja korzysta z .NET Framework 3,5 z dodatkiem SP1 lub nowszej wersji. To zachowanie nie występuje w wersjach .NET Framework starszych niż .NET Framework 3,5 SP1. Wartości w przykładzie są wartościami domyślnymi.  
   
 ```xml  
 <configuration>  
@@ -76,6 +77,6 @@ Poniższy przykład pokazuje, jak skonfigurować zachowanie ASP.NET całego proc
 |Plik walidacji||  
 |Może być puste||  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<applicationPool>— Element (Ustawienia sieci Web)](applicationpool-element-web-settings.md)
+- [\<applicationPool> — Element (Ustawienia sieci Web)](applicationpool-element-web-settings.md)

@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-ms.openlocfilehash: 255de4cab9a72491eb3b9624d968539d432e0442
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: db723cb1e29181e9462c5b423c66cdf8de659259
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302012"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178674"
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>Przechwytywanie wyjątku typu non-CLS
+
 Niektóre języki .NET, w tym C++/CLI, umożliwiają obiektom zgłaszanie wyjątków, które nie pochodzą od <xref:System.Exception> . Takie wyjątki są nazywane *wyjątkami* nienależącymi do CLS lub *niewyjątkami*. W języku C# nie można zgłosić wyjątków nienależących do CLS, ale można je przechwycić na dwa sposoby:  
   
 - Wewnątrz `catch (RuntimeWrappedException e)` bloku.
@@ -28,6 +29,7 @@ Niektóre języki .NET, w tym C++/CLI, umożliwiają obiektom zgłaszanie wyjąt
 W `catch(RuntimeWrappedException e)` bloku Uzyskuj dostęp do oryginalnego wyjątku przez <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> Właściwość.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak przechwytywać wyjątek niezgodny ze specyfikacją CLS zgłoszoną przez bibliotekę klas zapisaną w języku C++/CLI. Należy zauważyć, że w tym przykładzie kod klienta C# wie z wyprzedzeniem, że zwracany typ wyjątku to <xref:System.String?displayProperty=nameWithType> . Można rzutować właściwość z powrotem na oryginalny typ, o ile <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> ten typ jest dostępny z kodu.  
   
 ```csharp

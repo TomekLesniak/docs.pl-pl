@@ -2,18 +2,20 @@
 title: Konstruowanie typów (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 41fa7bde-8d20-4a3f-a3d2-fb791e128010
-ms.openlocfilehash: 7113aaf1c2caa982a8ab4751928856c1271570cb
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 82c8e3f2bac0d13da4870e90878e0de6fc9ec063
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251120"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177530"
 ---
 # <a name="constructing-types-entity-sql"></a>Konstruowanie typów (Entity SQL)
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]zawiera trzy rodzaje konstruktorów: konstruktory wierszy, konstruktory nazwanych typów i konstruktory kolekcji.  
+
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] zawiera trzy rodzaje konstruktorów: konstruktory wierszy, konstruktory nazwanych typów i konstruktory kolekcji.  
   
 ## <a name="row-constructors"></a>Konstruktory wierszy  
- Konstruktory wierszy w programie [!INCLUDE[esql](../../../../../../includes/esql-md.md)] służą do konstruowania anonimowych, strukturalnie wpisanych rekordów z co najmniej jednej wartości. Typ wyniku konstruktora wierszy jest typem wiersza, którego typy pól odpowiadają typom wartości używanych do konstruowania wiersza. Na przykład następujące wyrażenie konstruuje wartość typu `Record(a int, b string, c int)`:  
+
+ Konstruktory wierszy w programie służą [!INCLUDE[esql](../../../../../../includes/esql-md.md)] do konstruowania anonimowych, strukturalnie wpisanych rekordów z co najmniej jednej wartości. Typ wyniku konstruktora wierszy jest typem wiersza, którego typy pól odpowiadają typom wartości używanych do konstruowania wiersza. Na przykład następujące wyrażenie konstruuje wartość typu `Record(a int, b string, c int)` :  
   
  `ROW(1 AS a, "abc" AS b, a + 34 AS c)`  
   
@@ -28,7 +30,8 @@ ms.locfileid: "70251120"
  Aby uzyskać więcej informacji na temat konstruktorów wierszy, zobacz [wiersz](row-entity-sql.md).  
   
 ## <a name="collection-constructors"></a>Konstruktory kolekcji  
- Za pomocą konstruktorów kolekcji [!INCLUDE[esql](../../../../../../includes/esql-md.md)] w programie można utworzyć wystąpienie zestawu wielokrotnego z listy wartości. Wszystkie wartości w konstruktorze muszą być wzajemnie zgodnego typu `T`, a Konstruktor tworzy kolekcję typu. `Multiset<T>` Na przykład następujące wyrażenie tworzy kolekcję liczb całkowitych:  
+
+ Za pomocą konstruktorów kolekcji w programie można [!INCLUDE[esql](../../../../../../includes/esql-md.md)] utworzyć wystąpienie zestawu wielokrotnego z listy wartości. Wszystkie wartości w konstruktorze muszą być wzajemnie zgodnego typu `T` , a Konstruktor tworzy kolekcję typu `Multiset<T>` . Na przykład następujące wyrażenie tworzy kolekcję liczb całkowitych:  
   
  `Multiset(1, 2, 3)`  
   
@@ -41,7 +44,8 @@ ms.locfileid: "70251120"
  Aby uzyskać więcej informacji, zobacz zestaw [wielokrotny](multiset-entity-sql.md).  
   
 ## <a name="named-type-constructors-namedtype-initializers"></a>Konstruktory nazwanych typów (inicjatory nazwanych)  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]zezwala na konstruktory typów (inicjatory) do tworzenia wystąpień o nazwanych typach złożonych i typów jednostek. Na przykład następujące wyrażenie tworzy wystąpienie `Person` typu.  
+
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zezwala na konstruktory typów (inicjatory) do tworzenia wystąpień o nazwanych typach złożonych i typów jednostek. Na przykład następujące wyrażenie tworzy wystąpienie `Person` typu.  
   
  `Person("abc", 12)`  
   
@@ -63,7 +67,7 @@ ms.locfileid: "70251120"
   
  Aby uzyskać więcej informacji, zobacz [nazwany Konstruktor typów](named-type-constructor-entity-sql.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie do jednostki SQL](entity-sql-reference.md)
 - [Omówienie jednostki SQL](entity-sql-overview.md)

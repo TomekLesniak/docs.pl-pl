@@ -1,37 +1,38 @@
 ---
-title: Kwerendy jednostołowe (LINQ do DataSet)
+title: Kwerendy pojedynczej tabeli (LINQ to DataSet)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0b74bcf8-3f87-449f-bff7-6bcb0d69d212
-ms.openlocfilehash: 89c90fd217285fac449aba40682aa947fcfb3a07
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 17a2fcf54cae64d9443b0cc0e8a37e1002bbd394
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249093"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91175359"
 ---
-# <a name="single-table-queries-linq-to-dataset"></a>Kwerendy jednostołowe (LINQ do DataSet)
-Zapytania zintegrowane z językiem (LINQ) działają na <xref:System.Collections.Generic.IEnumerable%601> źródłach <xref:System.Linq.IQueryable%601> danych, które implementują interfejs lub interfejs. Klasa <xref:System.Data.DataTable> nie implementuje żadnego interfejsu, więc <xref:System.Data.DataTableExtensions.AsEnumerable%2A> należy wywołać metodę, jeśli chcesz użyć <xref:System.Data.DataTable> jako źródło w `From` klauzuli kwerendy LINQ.  
+# <a name="single-table-queries-linq-to-dataset"></a>Kwerendy pojedynczej tabeli (LINQ to DataSet)
+
+Zapytania dotyczące języka (LINQ) są używane w źródłach danych, które implementują <xref:System.Collections.Generic.IEnumerable%601> interfejs lub <xref:System.Linq.IQueryable%601> interfejs. <xref:System.Data.DataTable>Klasa nie implementuje żadnego interfejsu, dlatego należy wywołać <xref:System.Data.DataTableExtensions.AsEnumerable%2A> metodę, jeśli chcesz użyć <xref:System.Data.DataTable> jako źródła w `From` klauzuli zapytania LINQ.  
   
- Poniższy przykład pobiera wszystkie zamówienia online z SalesOrderHeader tabeli i wyprowadza identyfikator zamówienia, datę zamówienia i numer zamówienia do konsoli.  
+ Poniższy przykład pobiera wszystkie zamówienia online z tabeli SalesOrderHeader i wyświetla identyfikator zamówienia, datę zamówienia i numer zamówienia w konsoli programu.  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where1)]  
  [!code-vb[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where1)]
   
- Kwerenda zmiennej lokalnej jest inicjowana za pomocą wyrażenia kwerendy, które działa na co najmniej jednym źródle informacji, stosując jeden lub więcej operatorów <xref:System.Data.DataSet> zapytań z operatorów zapytań standardowych lub, w przypadku LINQ do DataSet, operatorów specyficznych dla tej klasy. Wyrażenie kwerendy w poprzednim przykładzie używa dwóch `Where` standardowych `Select`operatorów zapytań: i .  
+ Zapytanie zmiennej lokalnej jest inicjowane z wyrażeniem zapytania, które działa na co najmniej jednym źródle informacji przez zastosowanie co najmniej jednego operatora zapytań z standardowych operatorów zapytań lub, w przypadku LINQ to DataSet, operatorów specyficznych dla <xref:System.Data.DataSet> klasy. W wyrażeniu zapytania w poprzednim przykładzie użyto dwóch standardowych operatorów zapytań: `Where` i `Select` .  
   
- Klauzula `Where` filtruje sekwencję na podstawie warunku, w tym przypadku, że jest ustawiona `OnlineOrderFlag` na `true`. Operator `Select` przydziela i zwraca wyliczalny obiekt, który przechwytuje argumenty przekazywane do operatora. W tym powyższym przykładzie tworzony jest typ `SalesOrderID` `OrderDate`anonimowy `SalesOrderNumber`z trzema właściwościami: , , i . Wartości tych trzech właściwości są ustawiane na `SalesOrderID` `OrderDate`wartości `SalesOrderNumber` , i `SalesOrderHeader` kolumny z tabeli.  
+ `Where`Klauzula filtruje sekwencję w oparciu o warunek, w tym przypadku `OnlineOrderFlag` jest ustawiona na `true` . `Select`Operator przydziela i zwraca wyliczalny obiekt, który przechwytuje argumenty przekazane do operatora. W tym przykładzie typ anonimowy jest tworzony z trzema właściwościami: `SalesOrderID` , `OrderDate` , i `SalesOrderNumber` . Wartości tych trzech właściwości są ustawiane na wartości `SalesOrderID` , `OrderDate` , i `SalesOrderNumber` kolumn z `SalesOrderHeader` tabeli.  
   
- Pętla `foreach` następnie wylicza wyliczany `Select` obiekt wyliczany przez i daje wyniki kwerendy. Ponieważ kwerenda <xref:System.Linq.Enumerable> jest typem, który implementuje, <xref:System.Collections.Generic.IEnumerable%601>ocena kwerendy jest odroczona, dopóki `foreach` zmienna kwerendy nie zostanie przesuń iterowana przy użyciu pętli. Odroczona ocena kwerendy umożliwia kwerendy, które mają być przechowywane jako wartości, które mogą być oceniane wiele razy, za każdym razem dając potencjalnie różne wyniki.  
+ `foreach`Pętla następnie wylicza wyliczalny obiekt zwracany przez `Select` i daje wyniki zapytania. Ponieważ zapytanie jest <xref:System.Linq.Enumerable> typu, który implementuje <xref:System.Collections.Generic.IEnumerable%601> , obliczanie zapytania jest odroczone do momentu, gdy zmienna zapytania zostanie powtórzona przy użyciu `foreach` pętli. Wywnioskowana Ocena zapytania umożliwia przechowywanie zapytań jako wartości, które mogą być oceniane wiele razy, za każdym razem, gdy dają one inne wyniki.  
   
- Metoda <xref:System.Data.DataRowExtensions.Field%2A> zapewnia dostęp do wartości <xref:System.Data.DataRow> kolumn <xref:System.Data.DataRowExtensions.SetField%2A> a i (nie pokazano w poprzednim <xref:System.Data.DataRow>przykładzie) ustawia wartości kolumn w . Zarówno <xref:System.Data.DataRowExtensions.Field%2A> metoda, <xref:System.Data.DataRowExtensions.SetField%2A> jak i metoda obsługują typy wartości nullable, więc nie trzeba jawnie sprawdzić wartości null. Obie metody są również metody ogólne, co oznacza, że nie trzeba rzutować typu zwracany. Można użyć istniejącego akcesora kolumny <xref:System.Data.DataRow> `o["OrderDate"]`w (na przykład ), ale w ten sposób wymagałoby to rzutowania obiektu zwracany do odpowiedniego typu.  Jeśli kolumna jest typu wartości nullable trzeba sprawdzić, czy <xref:System.Data.DataRow.IsNull%2A> wartość jest null przy użyciu metody. Aby uzyskać więcej informacji, zobacz [Ogólne pola i Metody Pola Zestawu](generic-field-and-setfield-methods-linq-to-dataset.md).  
+ <xref:System.Data.DataRowExtensions.Field%2A>Metoda zapewnia dostęp do wartości kolumn a <xref:System.Data.DataRow> i <xref:System.Data.DataRowExtensions.SetField%2A> (nie pokazano w poprzednim przykładzie) ustawia wartości kolumn w <xref:System.Data.DataRow> . <xref:System.Data.DataRowExtensions.Field%2A>Metody i <xref:System.Data.DataRowExtensions.SetField%2A> metody obsługują typy wartości null, więc nie trzeba jawnie sprawdzać wartości null. Obie metody są metodami ogólnymi, co oznacza, że nie trzeba rzutować zwracanego typu. Można użyć metody dostępu do istniejącej kolumny <xref:System.Data.DataRow> (na przykład `o["OrderDate"]` ), ale wykonanie tej operacji wymagałoby rzutowania obiektu powrotnego na odpowiedni typ.  Jeśli kolumna jest typem wartości null, należy sprawdzić, czy wartość jest równa null przy użyciu <xref:System.Data.DataRow.IsNull%2A> metody. Aby uzyskać więcej informacji, zobacz [pola ogólne i metody SetField](generic-field-and-setfield-methods-linq-to-dataset.md).  
   
- Należy zauważyć, że typ danych `T` określony <xref:System.Data.DataRowExtensions.Field%2A> w <xref:System.Data.DataRowExtensions.SetField%2A> parametrze ogólnym metody i metody <xref:System.InvalidCastException> musi odpowiadać typowi wartości podstawowej lub zostanie zgłoszony. Określona nazwa kolumny musi również odpowiadać <xref:System.Data.DataSet> nazwie <xref:System.ArgumentException> kolumny w lub zostanie rzucona. W obu przypadkach wyjątek jest generowany w czasie wykonywania wyliczenia danych podczas wykonywania kwerendy.  
+ Należy zauważyć, że typ danych określony w parametrze ogólnym `T` <xref:System.Data.DataRowExtensions.Field%2A> metody i <xref:System.Data.DataRowExtensions.SetField%2A> metody musi być zgodny z typem podstawowej wartości lub <xref:System.InvalidCastException> zostanie wygenerowany. Określona nazwa kolumny musi być również zgodna z nazwą kolumny w <xref:System.Data.DataSet> lub <xref:System.ArgumentException> zostanie wygenerowane. W obu przypadkach wyjątek jest generowany podczas wyliczania danych w czasie wykonywania, gdy zapytanie jest wykonywane.  
   
 ## <a name="see-also"></a>Zobacz też
 
 - [Zapytania wielotabelowe](cross-table-queries-linq-to-dataset.md)
 - [Wykonywanie zapytania do typizowanych zestawów danych](querying-typed-datasets.md)
-- [Pole ogólne i metody SetField](generic-field-and-setfield-methods-linq-to-dataset.md)
+- [Field i SetField, metody ogólne](generic-field-and-setfield-methods-linq-to-dataset.md)

@@ -2,14 +2,15 @@
 title: <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
-ms.openlocfilehash: e5a0e482cb391cf1440c9392bcd3a39a18955c6b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 26e0c707422518fbdaf289faa64bb73875f62a58
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551767"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177998"
 ---
 # \<webHttpBinding>
+
 Definiuje element powiązania, który jest używany do konfigurowania punktów końcowych dla usług sieci Web Windows Communication Foundation (WCF), które odpowiadają na żądania HTTP zamiast komunikatów protokołu SOAP.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -51,6 +52,7 @@ Definiuje element powiązania, który jest używany do konfigurowania punktów k
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -87,11 +89,12 @@ Definiuje element powiązania, który jest używany do konfigurowania punktów k
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Model programowania w sieci Web WCF umożliwia deweloperom udostępnianie usług sieci Web WCF za pośrednictwem żądań HTTP, które używają komunikatów o formacie "zwykły stary kod XML" (POX) zamiast komunikatów opartych na protokole SOAP. Aby klienci mogli komunikować się z usługą przy użyciu żądań HTTP, należy skonfigurować punkt końcowy usługi z [\<webHttpBinding>](webhttpbinding.md) \<WebHttpBehavior> dołączonym do niej elementem.  
   
  Obsługa funkcji WCF dla zespalania i ASP. Integracja AJAX jest oparta na modelu programowania sieci Web. Aby uzyskać więcej informacji na temat modelu, zobacz [model programowania HTTP sieci Web](../../../wcf/feature-details/wcf-web-http-programming-model.md)w programie WCF.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.WebHttpBinding>
 - <xref:System.ServiceModel.Configuration.WebHttpBindingElement>

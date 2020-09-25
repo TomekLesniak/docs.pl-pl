@@ -2,14 +2,15 @@
 title: <windows><clientCredentials>elementu
 ms.date: 03/30/2017
 ms.assetid: 793e41c2-31ea-4159-abbc-2123bf097233
-ms.openlocfilehash: 61ca99213f0b83a5af5df0184a8c1de405366288
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 115e1822659c04ee37a7364f7b25616b52dc5efe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399121"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177829"
 ---
 # <a name="windows-of-clientcredentials-element"></a>\<windows>\<clientCredentials>elementu
+
 Określa ustawienia poświadczeń systemu Windows, które mają być używane do reprezentowania klienta.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Określa ustawienia poświadczeń systemu Windows, które mają być używane do
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -38,6 +40,7 @@ Określa ustawienia poświadczeń systemu Windows, które mają być używane do
 |`allowNtlm`|Ustawienie tej właściwości umożliwia `true` uwierzytelnianie w przypadku, gdy protokół Kerberos jest niedostępny.<br /><br /> Ustawienie tej właściwości `false` powoduje, że Windows Communication Foundation (WCF), aby najlepszym wysiłku zgłosić wyjątek, jeśli jest używany protokół NTLM. Należy pamiętać, że ustawienie tej właściwości na `false` nie zapobiega wysyłaniu poświadczeń NTLM za pośrednictwem sieci.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -46,7 +49,7 @@ Określa ustawienia poświadczeń systemu Windows, które mają być używane do
 |-------------|-----------------|  
 |[\<clientCredentials>](clientcredentials.md)|Określa poświadczenia używane do uwierzytelniania klienta w usłudze.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.WindowsClientElement>
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
@@ -55,6 +58,6 @@ Określa ustawienia poświadczeń systemu Windows, które mają być używane do
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - <xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
-- [Zabezpieczanie klientów](../../../wcf/securing-clients.md)
+- [Zabezpieczanie klientów [WCF]](../../../wcf/securing-clients.md)
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

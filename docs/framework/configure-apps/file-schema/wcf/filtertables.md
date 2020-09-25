@@ -2,14 +2,15 @@
 title: <filterTables>
 ms.date: 03/30/2017
 ms.assetid: 41f1ac35-f559-473a-b2c3-8cc83a6a3831
-ms.openlocfilehash: c68479737cefe542a10a404a8b31a4820a430ffb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: faa26ca108010330475725f83dfd0c6668cfc6b1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855201"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178206"
 ---
 # \<filterTables>
+
 Reprezentuje sekcję konfiguracji definiującą tabele routingu, które zawierają mapowania między filtrami routingu i docelowymi punktami końcowymi, do których mają być wysyłane komunikaty, gdy filtr jest zgodny.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,9 +36,11 @@ Reprezentuje sekcję konfiguracji definiującą tabele routingu, które zawieraj
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -52,7 +55,7 @@ Reprezentuje sekcję konfiguracji definiującą tabele routingu, które zawieraj
 |-------------|-----------------|  
 |[\<routing>](routing.md)|Sekcja konfiguracji, która zawiera filtry routingu i tabele routingu.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Routing.Configuration.FilterTableCollection?displayProperty=nameWithType>

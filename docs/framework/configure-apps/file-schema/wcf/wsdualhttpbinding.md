@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsDualHttpBinding Element
 ms.assetid: fd8ac4e2-5641-473b-9115-73f14ab1c065
-ms.openlocfilehash: 3e32539900893297d2bac232138f9940a8ab100b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 114543e43306e4195f92ca625e894a532084be6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557648"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177777"
 ---
 # \<wsDualHttpBinding>
+
 Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpowiednie dla kontraktów usługi dupleksowej lub komunikacji za pośrednictwem pośredników SOAP.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -55,6 +56,7 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpo
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -92,6 +94,7 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpo
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `WSDualHttpBinding`Zapewnia taką samą obsługę protokołów usługi sieci Web jak `WSHttpBinding` , ale w przypadku kontraktów dupleksowych. `WSDualHttpBinding` obsługuje tylko zabezpieczenia protokołu SOAP i wymaga niezawodnej obsługi komunikatów. To powiązanie wymaga, aby klient miał publiczny identyfikator URI, który udostępnia punkt końcowy wywołania zwrotnego dla usługi. Jest to zapewniane przez `clientBaseAddress` atrybut. Podwójne powiązanie uwidacznia adres IP klienta w usłudze. Klient powinien korzystać z zabezpieczeń, aby upewnić się, że tylko nawiązuje połączenie z usługami, które ufają.  
   
  To powiązanie może służyć do niezawodnego komunikowania się przez jeden lub więcej pośredników SOAP.  
@@ -132,7 +135,7 @@ Definiuje bezpieczne, niezawodne i interoperacyjne powiązanie, które jest odpo
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.WSDualHttpBinding>
 - <xref:System.ServiceModel.Configuration.WSDualHttpBindingElement>

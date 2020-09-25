@@ -2,14 +2,15 @@
 title: <webMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: 892ca485-e21a-4a44-8e40-633161ef6796
-ms.openlocfilehash: 1cdce48f51b25732c256d3c867f1bba801ec4d8c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b250b64e1f073e00e4047ab6931a00d0b93b55b5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545457"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177881"
 ---
 # \<webMessageEncoding>
+
 Umożliwia kodowanie komunikatów XML, JavaScript Object Notation (JSON) i "nieprzetworzony" zawartość binarną, która ma zostać odczytana i zapisywana w przypadku użycia w powiązaniu Windows Communication Foundation (WCF).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Umożliwia kodowanie komunikatów XML, JavaScript Object Notation (JSON) i "niep
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -51,6 +53,7 @@ Umożliwia kodowanie komunikatów XML, JavaScript Object Notation (JSON) i "niep
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Kodowanie jest procesem przekształcania komunikatu w sekwencję bajtów. Dekodowanie jest procesem wycofywania. Procesy te wymagają specyfikacji kodowania znaków.  
   
  `webMessageEncoding`Element działa przez delegowanie do serii koderów wewnętrznych w celu obsługi kodowania XML i JSON oraz "RAW" danych binarnych. To delegowanie odbywa się za pomocą złożonego kodera komunikatów.  
@@ -72,7 +75,7 @@ Umożliwia kodowanie komunikatów XML, JavaScript Object Notation (JSON) i "niep
                     textEncoding="utf-8" />
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.WebMessageEncodingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>

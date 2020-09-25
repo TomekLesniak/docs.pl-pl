@@ -3,14 +3,15 @@ title: <userNameSecurityTokenHandlerRequirement>
 ms.date: 03/30/2017
 ms.assetid: 6ec3bac1-b014-49ae-843c-c54518cb709a
 author: BrucePerlerMS
-ms.openlocfilehash: 5863c01e97e7f5fb6fe07c43174c0d6cb7a0a25d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a49b41c04c8f184188b62e04c3b232bd33752fca
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70251745"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185525"
 ---
 # \<userNameSecurityTokenHandlerRequirement>
+
 Zapewnia konfigurację <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> klasy lub klas pochodnych.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -36,6 +37,7 @@ Zapewnia konfigurację <xref:System.IdentityModel.Services.Tokens.MembershipUser
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -45,6 +47,7 @@ Zapewnia konfigurację <xref:System.IdentityModel.Services.Tokens.MembershipUser
 |membershipProviderName|Określa <xref:System.Web.Security.MembershipProvider> , który ma być używany przez program obsługi tokenów zabezpieczających.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -54,6 +57,7 @@ Zapewnia konfigurację <xref:System.IdentityModel.Services.Tokens.MembershipUser
 |[\<add>](add.md)|Dodaje określony program obsługi tokenów zabezpieczających do kolekcji obsługi tokenów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<userNameSecurityTokenHandlerRequirement>`Element ustawia właściwość, <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.MembershipProvider%2A> gdy <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> obiekt jest inicjowany z konfiguracji.  
   
 ## <a name="example"></a>Przykład  

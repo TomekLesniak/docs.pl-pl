@@ -2,24 +2,26 @@
 title: wykonywanie zapytania w bazie danych
 ms.date: 03/30/2017
 ms.assetid: eefb8b0c-ff07-4e86-a3d3-567479523fe9
-ms.openlocfilehash: 6ca402600d43eb84c31c499d3f93aca95d4ea1d9
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: b4ce48ee3d49769a353bf7371140b1f5a645f34e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634317"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184881"
 ---
 # <a name="querying-the-database"></a>wykonywanie zapytania w bazie danych
-W tej grupie tematów opisano sposób tworzenia i wykonywania zapytań w projektach [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+
+W tej grupie tematów opisano sposób tworzenia i wykonywania zapytań w [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektach.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Instrukcje: Zapytanie dotyczące informacji](how-to-query-for-information.md)  
- Krótko pokazuje, jak często zapytania [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] są zasadniczo takie same jak zapytania LINQ.  
+ Zwięźle pokazuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , jak często zapytania są zasadniczo takie same jak zapytania LINQ.  
   
  [Instrukcje: Pobieranie informacji jako tylko do odczytu](how-to-retrieve-information-as-read-only.md)  
  Opisuje, jak zwiększyć wydajność zapytań, gdy nie są planowane żadne zmiany w danych.  
   
- [Instrukcje: kontrolowanie, ile jest pobieranych powiązanych danych](how-to-control-how-much-related-data-is-retrieved.md)  
+ [Instrukcje: Kontrolowanie, ile jest pobieranych powiązanych danych](how-to-control-how-much-related-data-is-retrieved.md)  
  Opisuje sposób kontrolowania, które powiązane dane są pobierane razem z głównym celem.  
   
  [Instrukcje: Filtrowanie powiązanych danych](how-to-filter-related-data.md)  
@@ -38,10 +40,10 @@ W tej grupie tematów opisano sposób tworzenia i wykonywania zapytań w projekt
  Opisuje sposób dołączania więcej niż jednej kolumny w zapytaniu, w którym operator akceptuje tylko jeden argument.  
   
  [Instrukcje: Pobieranie jednocześnie wielu obiektów](how-to-retrieve-many-objects-at-once.md)  
- Opisuje sposób korzystania z <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>.  
+ Opisuje sposób użycia programu <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> .  
   
  [Instrukcje: Filtrowanie na poziomie elementu DataContext](how-to-filter-at-the-datacontext-level.md)  
- Opisuje inne użycie <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>.  
+ Opisuje inne użycie programu <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> .  
   
  [Przykłady zapytań](query-examples.md)  
  Zawiera wiele przykładów zapytań.

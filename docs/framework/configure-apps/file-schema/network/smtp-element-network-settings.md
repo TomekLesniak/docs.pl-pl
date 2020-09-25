@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-ms.openlocfilehash: b30b82922a69ea660f4c4abfd808e89fa9945183
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 58f496b4a07f7d5531df897dd54bb6176111f1c4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504514"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178323"
 ---
 # <a name="smtp-element-network-settings"></a>\<smtp>, element (ustawienia sieci)
+
 Konfiguruje format dostarczania, metodę dostarczania i adres nadawcy wiadomości e-mail.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Konfiguruje format dostarczania, metodę dostarczania i adres nadawcy wiadomośc
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -58,9 +60,10 @@ Konfiguruje format dostarczania, metodę dostarczania i adres nadawcy wiadomośc
   
 |**Postaci**|**Opis**|  
 |-----------------|---------------------|  
-|[\<mailSettings>— Element (Ustawienia sieci)](mailsettings-element-network-settings.md)|Konfiguruje opcje wysyłania poczty.|  
+|[\<mailSettings> — Element (Ustawienia sieci)](mailsettings-element-network-settings.md)|Konfiguruje opcje wysyłania poczty.|  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie określono odpowiednie parametry SMTP do wysyłania wiadomości e-mail przy użyciu domyślnych poświadczeń sieciowych.  
   
 ```xml  
@@ -79,10 +82,10 @@ Konfiguruje format dostarczania, metodę dostarczania i adres nadawcy wiadomośc
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpDeliveryFormat>
 - <xref:System.Net.Mail.SmtpDeliveryMethod>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)
