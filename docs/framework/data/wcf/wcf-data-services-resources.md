@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: 9b0534c2d11b723458b52e219ba1ce2de4b3c550
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 52de0dc16ea2363c48ed48291883352b02f2015c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541529"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202152"
 ---
 # <a name="wcf-data-services-resources"></a>Zasoby Usługi danych programu WCF
+
 Tematy dotyczące wprowadzenia Usługi danych programu WCF można znaleźć w następujących lokalizacjach. Wiele z tych tematów zawiera również linki do powiązanych tematów, które zawierają bardziej szczegółowe informacje.  
   
  [Omówienie](wcf-data-services-overview.md)  
@@ -27,6 +28,7 @@ Tematy dotyczące wprowadzenia Usługi danych programu WCF można znaleźć w na
  Zawiera terminy używane w dokumentacji Usługi danych programu WCF i OData.  
   
 ## <a name="external-resources"></a>Zasoby zewnętrzne  
+
  Poniższe zasoby zewnętrzne zawierają dodatkowe informacje i pomoc techniczną do tworzenia aplikacji Usługi danych programu WCF, które uwidaczniają i wykorzystują źródła danych OData.  
   
  [Forum Usługi danych programu WCF](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetdataservices)  
@@ -53,6 +55,6 @@ Tematy dotyczące wprowadzenia Usługi danych programu WCF można znaleźć w na
  [Model relacji jednostki: w kierunku ujednoliconego widoku danych](https://dl.acm.org/doi/10.1145/320434.320440) przez Piotr PIN-Shan Chen, Massachusetts Institute of Technology  
  Opisuje podstawę dla modelu Entity-relacyjnego, który jest implementowany przez Usługi danych programu WCF. Zapisany w 1976, jest to jeden z najczęściej cytowanych dokumentów w polu komputer.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie](getting-started-with-wcf-data-services.md)

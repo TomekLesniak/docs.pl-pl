@@ -5,21 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b1cc02d1-23b1-4439-a998-0da1899f3442
-ms.openlocfilehash: 9d21b17068ff3ce5b0bd3990144383d7f9ded2f9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 539e9763c8aa4affdb6f3bd219a99dbca50cee01
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151341"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202346"
 ---
 # <a name="creating-a-dataview"></a>Tworzenie elementu DataView
-Istnieją dwa sposoby <xref:System.Data.DataView>tworzenia pliku . Można użyć konstruktora **DataView** lub można utworzyć <xref:System.Data.DataTable.DefaultView%2A> odwołanie <xref:System.Data.DataTable>do właściwości . **Konstruktor DataView** może być pusty lub może przyjmować **datatable** jako pojedynczy argument lub **DataTable** wraz z kryteriami filtrowania, kryteria sortowania i filtr stanu wiersza. Aby uzyskać więcej informacji na temat dodatkowych argumentów dostępnych do użycia w **widoku DataView,** zobacz [Sortowanie i filtrowanie danych](sorting-and-filtering-data.md).  
+
+Istnieją dwa sposoby tworzenia <xref:System.Data.DataView> . Można użyć konstruktora **DataView** lub można utworzyć odwołanie do <xref:System.Data.DataTable.DefaultView%2A> właściwości <xref:System.Data.DataTable> . Konstruktor **DataView** może być pusty lub może przyjmować element **DataTable** jako pojedynczy argument lub element **DataTable** wraz z kryteriami filtrowania, kryteriami sortowania i filtrem stanu wiersza. Aby uzyskać więcej informacji na temat dodatkowych argumentów dostępnych do użycia z **widokiem DataView**, zobacz [Sortowanie i filtrowanie danych](sorting-and-filtering-data.md).  
   
- Ponieważ indeks **dla DataView** jest zbudowany zarówno podczas tworzenia **DataView,** jak i po zmodyfikowaniu dowolnych właściwości **Sort,** **RowFilter**lub **RowStateFilter,** uzyskujesz najlepszą wydajność, podając dowolną początkową kolejność sortowania lub kryteria filtrowania jako argumenty konstruktora podczas tworzenia **pliku DataView**. Tworzenie **DataView** bez określania kryteriów sortowania lub filtrowania, a następnie ustawienie **Sort ,** **RowFilter**lub **RowStateFilter** właściwości później powoduje, że indeks ma być zbudowany co najmniej dwa razy: raz podczas tworzenia **DataView** i ponownie, gdy którykolwiek z sortowania lub właściwości filtru są modyfikowane.  
+ Ponieważ indeks dla elementu **DataView** jest kompilowany zarówno podczas tworzenia elementu **DataView** , jak i w przypadku zmodyfikowania właściwości **sort**, **RowFilter**lub **RowStateFilter** , można uzyskać najlepszą wydajność, dostarczając dowolny początkowy porządek sortowania lub kryteria filtrowania jako argumenty konstruktora podczas tworzenia elementu **DataView**. Tworzenie elementu **DataView** bez określania kryteriów sortowania lub filtrowania, a następnie Ustawianie właściwości **sort**, **RowFilter**lub **RowStateFilter** później powoduje, że indeks zostanie skompilowany co najmniej dwa razy: po utworzeniu elementu **DataView** i ponownym zmodyfikowaniu właściwości sortowania lub filtru.  
   
- Należy zauważyć, że jeśli utworzysz **DataView** przy użyciu konstruktora, który nie przyjmuje żadnych argumentów, nie będzie można użyć **DataView,** dopóki nie zostanie **ustawiona Table** właściwości.  
+ Należy pamiętać, że jeśli utworzysz **Widok DataView** przy użyciu konstruktora, który nie przyjmuje żadnych argumentów, nie będzie można użyć **widoku** danych, dopóki właściwość **Table** nie zostanie ustawiona.  
   
- Poniższy przykład kodu pokazuje, jak utworzyć **DataView** przy użyciu Konstruktora **DataView.** A **RowFilter**, **Sort kolumna** i **DataViewRowState** są dostarczane wraz z **DataTable**.  
+ Poniższy przykład kodu pokazuje, jak utworzyć **Widok DataView** przy użyciu konstruktora **DataView** . **RowFilter**, **sort** Column i **DataViewRowState** są dostarczane wraz z **DataTable**.  
   
 ```vb  
 Dim custDV As DataView = New DataView(custDS.Tables("Customers"), _  
@@ -35,7 +36,7 @@ DataView custDV = new DataView(custDS.Tables["Customers"],
     DataViewRowState.CurrentRows);  
 ```  
   
- Poniższy przykład kodu pokazuje, jak uzyskać odwołanie do domyślnego **DataView** **datatable** przy użyciu **DefaultView** właściwości tabeli.  
+ Poniższy przykład kodu demonstruje, jak uzyskać odwołanie do domyślnego elementu **DataView** obiektu **DataTable** przy użyciu właściwości **DefaultView** tabeli.  
   
 ```vb  
 Dim custDV As DataView = custDS.Tables("Customers").DefaultView  

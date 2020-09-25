@@ -9,14 +9,15 @@ helpviewer_keywords:
 - dependentAssembly element
 - <dependentAssembly> element
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
-ms.openlocfilehash: 2de8c752867d00708173d11d1851f415a2e8518d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6a924b1998651c923c64429029a118dd1e9ede69
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154208"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91199006"
 ---
 # <a name="dependentassembly-element"></a>\<dependentAssembly> Element
+
 Hermetyzuje zasady powiązań oraz lokalizację zestawu dla każdego zestawu. Użyj jednego `dependentAssembly` elementu dla każdego zestawu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,9 +33,11 @@ Hermetyzuje zasady powiązań oraz lokalizację zestawu dla każdego zestawu. U�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -55,6 +58,7 @@ Hermetyzuje zasady powiązań oraz lokalizację zestawu dla każdego zestawu. U�
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak hermetyzować informacje o zestawie dla dwóch zestawów.  
   
 ```xml  
@@ -78,7 +82,7 @@ Hermetyzuje zasady powiązań oraz lokalizację zestawu dla każdego zestawu. U�
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

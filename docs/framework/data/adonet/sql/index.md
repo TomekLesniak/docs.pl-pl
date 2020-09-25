@@ -4,22 +4,24 @@ description: Dowiedz się więcej na temat funkcji i zachowań Dostawca danych .
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-ms.openlocfilehash: eeb0ab69a68dfc2fc0faa1b4e833f80b307fffe5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a517bccd9b60d00f6c6c636c9164d63fb5966de3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286445"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197394"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server i ADO.NET
+
 W tej sekcji opisano funkcje i zachowania, które są specyficzne dla Dostawca danych .NET Framework dla SQL Server ( <xref:System.Data.SqlClient> ).  
   
- <xref:System.Data.SqlClient>zapewnia dostęp do wersji SQL Server, które hermetyzują protokoły specyficzne dla bazy danych. Funkcja dostawcy danych została zaprojektowana tak, aby była podobna do .NET Framework dostawców danych dla OLE DB, ODBC i Oracle. <xref:System.Data.SqlClient>zawiera Analizator strumienia danych tabelarycznych (TDS) do bezpośredniego komunikowania się z SQL Server.  
+ <xref:System.Data.SqlClient> zapewnia dostęp do wersji SQL Server, które hermetyzują protokoły specyficzne dla bazy danych. Funkcja dostawcy danych została zaprojektowana tak, aby była podobna do .NET Framework dostawców danych dla OLE DB, ODBC i Oracle. <xref:System.Data.SqlClient> zawiera Analizator strumienia danych tabelarycznych (TDS) do bezpośredniego komunikowania się z SQL Server.  
   
 > [!NOTE]
 > Aby można było użyć Dostawca danych .NET Framework na potrzeby SQL Server, aplikacja musi odwoływać się do <xref:System.Data.SqlClient> przestrzeni nazw.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Zabezpieczenia serwera SQL](sql-server-security.md)  
  Zawiera omówienie funkcji zabezpieczeń SQL Server i scenariuszy aplikacji do tworzenia bezpiecznych aplikacji ADO.NET, które są przeznaczone SQL Server.  
   
@@ -42,7 +44,7 @@ W tej sekcji opisano funkcje i zachowania, które są specyficzne dla Dostawca d
   
  [Książka SQL Server online](/sql/sql-server/sql-server-technical-documentation)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczanie aplikacji ADO.NET](../securing-ado-net-applications.md)
 - [Mapowanie typu danych w ADO.NET](../data-type-mappings-in-ado-net.md)

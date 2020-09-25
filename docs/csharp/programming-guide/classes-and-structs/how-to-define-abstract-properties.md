@@ -6,14 +6,15 @@ helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: 4db71721495857c634e8090b986704d8a592b4e2
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 01af1446097bbed25874b45d57a5dde85ae63891
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864400"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91199162"
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>Jak definiować właściwości abstrakcyjne (Przewodnik programowania w języku C#)
+
 Poniższy przykład pokazuje, jak definiować właściwości [abstrakcyjne](../../language-reference/keywords/abstract.md) . Deklaracja właściwości abstrakcyjnej nie zapewnia implementacji metod dostępu do właściwości — deklaruje, że Klasa obsługuje właściwości, ale pozostawia implementację metody dostępu do klas pochodnych. W poniższym przykładzie pokazano, jak zaimplementować właściwości abstrakcyjne dziedziczone z klasy bazowej.  
   
  Ten przykład składa się z trzech plików, z których każdy jest kompilowany indywidualnie, a jego wynikający z nich zestaw jest przywoływany przez następną kompilację:  
@@ -31,6 +32,7 @@ Poniższy przykład pokazuje, jak definiować właściwości [abstrakcyjne](../.
  Spowoduje to utworzenie pliku wykonywalnego shapetest.exe.  
   
 ## <a name="example"></a>Przykład  
+
  Ten plik deklaruje `Shape` klasę, która zawiera `Area` Właściwość typu `double` .  
   
  [!code-csharp[csProgGuideInheritance#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#1)]  
@@ -44,16 +46,18 @@ Poniższy przykład pokazuje, jak definiować właściwości [abstrakcyjne](../.
 - Podczas deklarowania właściwości abstrakcyjnej ( `Area` na przykład w tym przykładzie) można po prostu wskazać, jakie metody dostępu do właściwości są dostępne, ale nie należy ich wdrażać. W tym przykładzie dostępna jest tylko metoda dostępu [Get](../../language-reference/keywords/get.md) , więc właściwość jest tylko do odczytu.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod przedstawia trzy podklasy `Shape` i sposób, w jaki zastępują `Area` Właściwość w celu zapewnienia własnej implementacji.  
   
  [!code-csharp[csProgGuideInheritance#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#2)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod przedstawia program testowy, który tworzy wiele `Shape` obiektów pochodnych i drukuje ich obszary.  
   
  [!code-csharp[csProgGuideInheritance#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#3)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)

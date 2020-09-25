@@ -2,14 +2,15 @@
 title: <serviceDiscovery>
 ms.date: 03/30/2017
 ms.assetid: a3c68a4a-fc95-43c5-aacb-785936c0cf39
-ms.openlocfilehash: 7ac067e84f2a4d2724e3d8f2d0af9b220fd15538
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b38496b77d80fcb66b1b48485a9eef6abfd72299
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399644"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198824"
 ---
 # \<serviceDiscovery>
+
 Określa możliwość odnajdywania punktów końcowych usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,9 +42,11 @@ Określa możliwość odnajdywania punktów końcowych usługi.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -60,9 +63,11 @@ Określa możliwość odnajdywania punktów końcowych usługi.
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie elementu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Po dodaniu do konfiguracji zachowania usługi, ten element konfiguracji udostępnia wszystkie punkty końcowe tej usługi. Można skonfigurować funkcje odnajdywania takich punktów końcowych przy użyciu [\<discoveryEndpoint>](discoveryendpoint.md) [\<announcementEndpoint>](announcementendpoint.md) elementów podrzędnych lub. Skorzystaj z [\<announcementEndpoint>](announcementendpoint.md) sekcji, aby skonfigurować Anonsy, określając konfigurację punktu końcowego, który ma być używany do wysyłania anonsów usługi (online/Hello i offline/bye). Użyj [\<discoveryEndpoint>](discoveryendpoint.md) sekcji, aby ręcznie określić punkt końcowy, w którym mają być nasłuchiwani wiadomości odnajdowania.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład konfiguracji określa, że CalculatorService ma być wykrywalny, i opcjonalnie określa punkt końcowy anonsu, który ma być używany.  
   
 ```xml  
@@ -86,6 +91,6 @@ Określa możliwość odnajdywania punktów końcowych usługi.
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>

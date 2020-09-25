@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 019b36a328d4e9fb01b112ec79d8d8e0548142f7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: cbfe4b63dc27cf0a0b6aad87c4f011151bacd4e5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541880"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91199019"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Klasy statyczne i statyczni członkowie klas (Przewodnik programowania w języku C#)
 
@@ -58,11 +58,13 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  Klasy statyczne są zapieczętowane i w związku z tym nie można ich dziedziczyć. Nie mogą dziedziczyć z żadnej klasy z wyjątkiem <xref:System.Object> . Klasy statyczne nie mogą zawierać konstruktora wystąpień. Jednak mogą zawierać statyczny Konstruktor. Klasy niestatyczne powinny także definiować Konstruktor statyczny, jeśli Klasa zawiera statyczne składowe, które wymagają inicjalizacji nieuproszczonej. Aby uzyskać więcej informacji, zobacz [statyczne konstruktory](./static-constructors.md).  
   
 ## <a name="example"></a>Przykład  
+
  Oto przykład klasy statycznej zawierającej dwie metody, które konwertują temperaturę z Celsjusza na Fahrenheita i od Fahrenheita do c:  
   
  [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
   
 ## <a name="static-members"></a>Statyczne elementy członkowskie  
+
  Klasa niestatyczna może zawierać statyczne metody, pola, właściwości lub zdarzenia. Statyczny element członkowski jest wywoływany na klasie nawet wtedy, gdy nie utworzono żadnego wystąpienia klasy. Statyczny element członkowski jest zawsze używany przez nazwę klasy, a nie nazwę wystąpienia. Istnieje tylko jedna kopia statycznej składowej, niezależnie od tego, ile wystąpień klasy zostały utworzone. Metody i właściwości statyczne nie mogą uzyskać dostępu do niestatycznych pól i zdarzeń w ich typie zawierającym i nie mogą uzyskać dostępu do zmiennej wystąpienia dowolnego obiektu, chyba że jest on jawnie przekazywać w parametrze metody.  
   
  Bardziej typowym jest zadeklarowanie niestatycznej klasy z pewnymi statycznymi składowymi, niż w celu deklarowania całej klasy jako statycznej. Dwa typowe zastosowania pól statycznych mają na celu zachowanie liczby obiektów, które zostały utworzone, lub do przechowywania wartości, które muszą być współużytkowane przez wszystkie wystąpienia.  
@@ -89,7 +91,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 
 Aby uzyskać więcej informacji, zobacz [klasy statyczne](~/_csharplang/spec/classes.md#static-classes) i [elementy członkowskie statyczne i wystąpienia](~/_csharplang/spec/classes.md#static-and-instance-members) w [specyfikacji języka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specyfikacja języka jest ostatecznym źródłem informacji o składni i użyciu języka C#.
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [static](../../language-reference/keywords/static.md)

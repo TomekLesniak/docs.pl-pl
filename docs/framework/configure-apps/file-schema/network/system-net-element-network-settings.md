@@ -9,14 +9,15 @@ helpviewer_keywords:
 - system.Net element
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
-ms.openlocfilehash: 9f18c7a3586948c03391d609f437e216a91bc27f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 80d54df40c6798e146013b4f2d867386ae35169c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504488"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201723"
 ---
 # <a name="systemnet-element-network-settings"></a>\<system.Net>, element (ustawienia sieci)
+
 Zawiera ustawienia, które określają, w jaki sposób .NET Framework nawiązuje połączenie z siecią.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -30,9 +31,11 @@ Zawiera ustawienia, które określają, w jaki sposób .NET Framework nawiązuje
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -54,9 +57,11 @@ Zawiera ustawienia, które określają, w jaki sposób .NET Framework nawiązuje
 |[skonfigurować](../configuration-element.md)|Zawiera ustawienia dla wszystkich przestrzeni nazw.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  [\<system.net>](system-net-element-network-settings.md)Element zawiera ustawienia dla klas z <xref:System.Net> i powiązane podrzędne przestrzenie nazw. Ustawienia Konfiguruj moduły uwierzytelniania, zarządzanie połączeniami, ustawienia poczty, serwer proxy i moduły żądania internetowe, aby otrzymywać informacje z hostów internetowych.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład przedstawia typową konfigurację używaną przez <xref:System.Net> klasy.  
   
 ```xml  
@@ -93,6 +98,6 @@ Zawiera ustawienia, które określają, w jaki sposób .NET Framework nawiązuje
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

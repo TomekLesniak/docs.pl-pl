@@ -1,15 +1,16 @@
 ---
-title: <certificate>dla<identity>
+title: <certificate> dla <identity>
 ms.date: 03/30/2017
 ms.assetid: 4aeccaf7-8f23-495c-aa5f-5bd8b5d4a10c
-ms.openlocfilehash: 1cfd207afc72cc71359d9d262e30b0696ba63d2b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 24c39b5efaee7f8db12088d272efeb3783efab04
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850016"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198863"
 ---
-# <a name="certificate-for-identity"></a>\<certificate>dla\<identity>
+# <a name="certificate-for-identity"></a>\<certificate> dla \<identity>
+
 Określa certyfikat X. 509 używany do sprawdzania poprawności serwera dla klienta.  
   
 Aby uzyskać więcej informacji na temat ustawiania wartości elementu, zobacz [tożsamość usługi i uwierzytelnianie](../../../wcf/feature-details/service-identity-and-authentication.md).  
@@ -28,6 +29,7 @@ Aby uzyskać więcej informacji na temat ustawiania wartości elementu, zobacz [
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -37,6 +39,7 @@ Aby uzyskać więcej informacji na temat ustawiania wartości elementu, zobacz [
 |encodedValue|Kodowanie Base64 certyfikatu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -46,6 +49,7 @@ Aby uzyskać więcej informacji na temat ustawiania wartości elementu, zobacz [
 |[\<identity>](identity.md)|Określa tożsamość usługi do uwierzytelnienia przez klienta.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod określa zakodowaną reprezentację certyfikatu służącego do sprawdzania poprawności serwera dla klienta.  
   
 ```xml  
@@ -54,7 +58,7 @@ Aby uzyskać więcej informacji na temat ustawiania wartości elementu, zobacz [
 </identity>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>

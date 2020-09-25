@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -baseaddress compiler option [C#]
 - /baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
-ms.openlocfilehash: 17bca4f03c75f7d617e4e99ebab4d1602bb3214e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 76da496f7045f12778bba273947b913be1b94e3e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537252"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91196848"
 ---
 # <a name="-baseaddress-c-compiler-options"></a>-BaseAddress (opcje kompilatora C#)
+
 Opcja **-BaseAddress** pozwala określić preferowany adres podstawowy, przy użyciu którego ma zostać ZAŁADOWANA Biblioteka DLL. Aby uzyskać więcej informacji na temat tego, kiedy i dlaczego należy używać tej opcji, zobacz [dziennik sieci Web Larry Osterman](/archive/blogs/larryosterman/why-should-i-even-bother-to-use-dlls-in-my-system).  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,10 +27,12 @@ Opcja **-BaseAddress** pozwala określić preferowany adres podstawowy, przy uż
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `address`  
  Adres podstawowy biblioteki DLL. Ten adres można określić jako liczbę dziesiętną, szesnastkową lub ósemkową.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślny adres podstawowy dla biblioteki DLL jest ustawiany przez środowisko uruchomieniowe języka wspólnego platformy .NET.  
   
  Należy pamiętać, że Dolna kolejność wyrazów w tym adresie zostanie zaokrąglona. Na przykład, jeśli określisz 0x11110001, zostanie ona zaokrąglona do 0x11110000.  
@@ -48,7 +51,7 @@ Opcja **-BaseAddress** pozwala określić preferowany adres podstawowy, przy uż
   
      Aby programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.CSharpProjectConfigurationProperties3.BaseAddress%2A> .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.ProcessModule.BaseAddress%2A?displayProperty=nameWithType>
 - [Opcje kompilatora C#](./index.md)

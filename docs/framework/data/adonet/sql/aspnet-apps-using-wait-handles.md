@@ -5,28 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f588597a-49de-4206-8463-4ef377e112ff
-ms.openlocfilehash: d354dda05e8353a33c3a64440e5c2bad390743b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b590b504d1d497e35612b9d7ea047fe12c43c386
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148858"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197602"
 ---
 # <a name="aspnet-applications-using-wait-handles"></a>Aplikacje ASP.NET z wykorzystaniem uchwytów oczekiwania
-Wywołania zwrotnego i sondowania modeli do obsługi operacji asynchronicznych są przydatne, gdy aplikacja przetwarza tylko jedną operację asynchroniczną w czasie. Modele oczekiwania zapewniają bardziej elastyczny sposób przetwarzania wielu operacji asynchronicznych. Istnieją dwa modele oczekiwania, <xref:System.Threading.WaitHandle> nazwane dla metod używanych do ich zaimplementowania: wait (Any) model i wait (all) modelu.  
+
+Model wywołania zwrotnego i sondowania do obsługi operacji asynchronicznych jest przydatny, gdy aplikacja przetwarza tylko jedną operację asynchroniczną w danym momencie. Modele oczekiwania zapewniają bardziej elastyczny sposób przetwarzania wielu operacji asynchronicznych. Istnieją dwa modele oczekiwania, nazwane dla <xref:System.Threading.WaitHandle> metod używanych do ich implementacji: model oczekiwania (dowolny) i model oczekiwania (wszystkie).  
   
- Aby użyć modelu oczekiwania, należy użyć <xref:System.IAsyncResult.AsyncWaitHandle%2A> właściwości <xref:System.IAsyncResult> obiektu zwróconego <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>przez <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> , lub metody. I <xref:System.Threading.WaitHandle.WaitAny%2A> <xref:System.Threading.WaitHandle.WaitAll%2A> metody wymagają wysyłania <xref:System.Threading.WaitHandle> obiektów jako argument, zgrupowane w tablicy.  
+ Aby użyć dowolnego modelu oczekiwania, należy użyć <xref:System.IAsyncResult.AsyncWaitHandle%2A> właściwości <xref:System.IAsyncResult> obiektu zwróconego przez <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> metody, lub <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> . <xref:System.Threading.WaitHandle.WaitAny%2A>Metody i <xref:System.Threading.WaitHandle.WaitAll%2A> oba wymagają wysłania <xref:System.Threading.WaitHandle> obiektów jako argumentu, zgrupowane razem w tablicy.  
   
- Obie metody oczekiwania monitorują operacje asynchroniczne, oczekując na zakończenie. Metoda <xref:System.Threading.WaitHandle.WaitAny%2A> czeka na dowolną z operacji, aby zakończyć lub limit czasu. Gdy wiadomo, że określona operacja została ukończona, można przetworzyć jej wyniki, a następnie kontynuować oczekiwanie na następną operację, aby zakończyć lub limit czasu. Metoda <xref:System.Threading.WaitHandle.WaitAll%2A> czeka na wszystkie procesy w <xref:System.Threading.WaitHandle> tablicy wystąpień, aby zakończyć lub limit czasu przed kontynuowaniem.  
+ Obie metody oczekiwania monitorują operacje asynchroniczne, czekając na ukończenie. <xref:System.Threading.WaitHandle.WaitAny%2A>Metoda czeka na zakończenie dowolnej operacji lub przekroczenie limitu czasu. Po poznaniu określonej operacji można przetworzyć jej wyniki, a następnie kontynuować oczekiwanie na ukończenie następnej operacji lub przekroczenie limitu czasu. <xref:System.Threading.WaitHandle.WaitAll%2A>Metoda czeka na ukończenie wszystkich procesów w tablicy <xref:System.Threading.WaitHandle> wystąpień lub przekroczenie limitu czasu przed kontynuowaniem.  
   
- Korzyści modeli oczekiwania jest najbardziej uderzające, gdy trzeba uruchomić wiele operacji o określonej długości na różnych serwerach lub gdy serwer jest wystarczająco wydajny, aby przetwarzać wszystkie zapytania w tym samym czasie. W przykładach przedstawionych w tym miejscu trzy zapytania emulują długie procesy, dodając polecenia WAITFOR o różnej długości do nieistotnych zapytań SELECT.  
+ Korzyść modeli oczekiwania jest najtrudniejsza, gdy trzeba uruchomić wiele operacji na różnych serwerach lub gdy serwer jest wystarczająco wydajny, aby przetwarzać wszystkie zapytania w tym samym czasie. W przedstawionych tu przykładach trzy zapytania emulują długie procesy przez dodanie poleceń WAITFOR o różnej długości do niektórych zapytań SELECT.  
   
-## <a name="example-wait-any-model"></a>Przykład: Model wait (any)  
- W poniższym przykładzie przedstawiono model oczekiwania (dowolna). Po uruchomieniu trzech procesów <xref:System.Threading.WaitHandle.WaitAny%2A> asynchronicznych, metoda jest wywoływana czekać na zakończenie jednego z nich. Po zakończeniu każdego procesu <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> metoda jest wywoływana, a wynikowy <xref:System.Data.SqlClient.SqlDataReader> obiekt jest odczytywany. W tym momencie aplikacja w świecie <xref:System.Data.SqlClient.SqlDataReader> rzeczywistym prawdopodobnie użyje do zapełnienia części strony. W tym prostym przykładzie czas ukończenia procesu jest dodawany do pola tekstowego odpowiadającego procesowi. Razem wzięte, czasy w polach tekstowych ilustrują punkt: Kod jest wykonywany za każdym razem, gdy proces zostanie zakończony.  
+## <a name="example-wait-any-model"></a>Przykład: Zaczekaj (dowolny) model  
+
+ Poniższy przykład ilustruje model oczekiwania (any). Po rozpoczęciu trzech procesów asynchronicznych <xref:System.Threading.WaitHandle.WaitAny%2A> Metoda jest wywoływana w celu poczekania na zakończenie jednego z nich. Po zakończeniu każdego procesu <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> wywoływana jest metoda, a <xref:System.Data.SqlClient.SqlDataReader> obiekt wyniku jest odczytywany. W tym momencie aplikacja rzeczywista prawdopodobnie użyje, <xref:System.Data.SqlClient.SqlDataReader> Aby wypełnić część strony. W tym prostym przykładzie czas ukończenia procesu jest dodawany do pola tekstowego odpowiadającego procesowi. Razem, czasy w polach tekstowych ilustrują punkt: kod jest wykonywany za każdym razem, gdy proces zakończy się.  
   
- Aby skonfigurować ten przykład, utwórz nowy projekt ASP.NET witryny sieci Web. Umieść <xref:System.Web.UI.WebControls.Button> formant <xref:System.Web.UI.WebControls.TextBox> i cztery formanty na stronie (akceptując domyślną nazwę dla każdego formantu).  
+ Aby skonfigurować ten przykład, Utwórz nowy projekt witryny sieci Web ASP.NET. Umieść <xref:System.Web.UI.WebControls.Button> kontrolkę i cztery <xref:System.Web.UI.WebControls.TextBox> kontrolki na stronie (Zaakceptuj nazwę domyślną dla każdej kontrolki).  
   
- Dodaj następujący kod do klasy formularza, modyfikując parametry połączenia zgodnie z oczekiwaniami dla środowiska.  
+ Dodaj następujący kod do klasy formularza, modyfikując parametry połączenia jako niezbędne dla danego środowiska.  
   
 ```vb  
 ' Add these to the top of the class  
@@ -312,14 +314,15 @@ void Button1_Click(object sender, System.EventArgs e)
 }  
 ```  
   
-## <a name="example-wait-all-model"></a>Przykład: Model wait (all)  
- W poniższym przykładzie przedstawiono model oczekiwania (wszystkie). Po uruchomieniu trzech procesów <xref:System.Threading.WaitHandle.WaitAll%2A> asynchronicznych, metoda jest wywoływana czekać na procesy, aby zakończyć lub limit czasu.  
+## <a name="example-wait-all-model"></a>Przykład: Zaczekaj (wszystkie) model  
+
+ Poniższy przykład ilustruje model oczekiwania (wszystkie). Po rozpoczęciu trzech procesów asynchronicznych <xref:System.Threading.WaitHandle.WaitAll%2A> Metoda jest wywoływana w celu oczekiwania na ukończenie procesów lub przekroczenie limitu czasu.  
   
- Podobnie jak w przykładzie modelu oczekiwania (dowolny), czas zakończenia procesu jest dodawany do pola tekstowego odpowiadającego procesowi. Ponownie, czasy w polach tekstowych ilustrują punkt: Kod po <xref:System.Threading.WaitHandle.WaitAny%2A> metoda jest wykonywana tylko po zakończeniu wszystkich procesów.  
+ Podobnie jak w przypadku modelu oczekiwania (dowolnego), czas ukończenia procesu jest dodawany do pola tekstowego odpowiadającego procesowi. Ponownie, czasy w polach tekstowych ilustrują punkt: kod po <xref:System.Threading.WaitHandle.WaitAny%2A> metodzie jest wykonywany tylko po zakończeniu wszystkich procesów.  
   
- Aby skonfigurować ten przykład, utwórz nowy projekt ASP.NET witryny sieci Web. Umieść <xref:System.Web.UI.WebControls.Button> formant <xref:System.Web.UI.WebControls.TextBox> i cztery formanty na stronie (akceptując domyślną nazwę dla każdego formantu).  
+ Aby skonfigurować ten przykład, Utwórz nowy projekt witryny sieci Web ASP.NET. Umieść <xref:System.Web.UI.WebControls.Button> kontrolkę i cztery <xref:System.Web.UI.WebControls.TextBox> kontrolki na stronie (Zaakceptuj nazwę domyślną dla każdej kontrolki).  
   
- Dodaj następujący kod do klasy formularza, modyfikując parametry połączenia zgodnie z oczekiwaniami dla środowiska.  
+ Dodaj następujący kod do klasy formularza, modyfikując parametry połączenia jako niezbędne dla danego środowiska.  
   
 ```vb  
 ' Add these to the top of the class  

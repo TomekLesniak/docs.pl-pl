@@ -2,14 +2,15 @@
 title: <httpDigest> Element
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
-ms.openlocfilehash: 0ffaba218d31a77407c598f8b7fa0260daa4e39c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 523df7d5847ba7003e60f3882183b50cb18f6b51
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556905"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202490"
 ---
 # <a name="httpdigest-element"></a>\<httpDigest> Element
+
 Określa poświadczenia typu szyfrowanego używane podczas uwierzytelniania klienta w usłudze.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Określa poświadczenia typu szyfrowanego używane podczas uwierzytelniania klie
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -36,6 +38,7 @@ Określa poświadczenia typu szyfrowanego używane podczas uwierzytelniania klie
 |`impersonationLevel`|Ustawia preferencje personifikacji, które klient komunikuje się z serwerem. Tryb personifikacji wybierany przez klienta nie jest wymuszany na serwerze. Prawidłowe wartości to:<br /><br /> -Identyfikacja: serwer może uzyskać tożsamość i uprawnienia klienta, ale nie może personifikować klienta.<br />-Personifikacja: serwer może personifikować kontekst zabezpieczeń klienta w systemie lokalnym.<br />-Delegowanie: serwer może personifikować kontekst zabezpieczeń klienta w systemach zdalnych.<br />-Anonymous: serwer nie może personifikować lub zidentyfikować klienta.<br />-Brak: nie przypisano poziomu personifikacji.<br /><br /> Wartość domyślna to Identification. Ten atrybut jest typu <xref:System.Security.Principal.TokenImpersonationLevel> .|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -45,11 +48,12 @@ Określa poświadczenia typu szyfrowanego używane podczas uwierzytelniania klie
 |[\<clientCredentials>](clientcredentials.md)|Określa poświadczenia używane do uwierzytelniania klienta w usłudze.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Skrót jest skrótem określonym przy użyciu algorytmu i zestawu danych wejściowych. Wystawcy uwierzytelnienie i uwierzytelnienie zgadzają się na algorytm i wymieniają dane wykorzystywane jako dane wejściowe. Klient może obliczyć skrót i wysłać go do usługi. Usługa oblicza również wartość skrótu i porównuje wartości. Dopasowanie sprawdza poprawność klienta.  
   
  Ta funkcja musi być włączona z Active Directory w systemie Windows i Internet Information Services (IIS). Aby uzyskać więcej informacji, zobacz [uwierzytelnianie szyfrowane w usługach IIS 6,0](/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement.HttpDigest%2A>

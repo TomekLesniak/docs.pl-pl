@@ -10,14 +10,15 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: 7d8a989219d84e8604e767456c84c0092bc73b22
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 617b42a0be2be272a78b33be997cce632d1c6dcb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153169"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198928"
 ---
 # <a name="trace-element"></a>\<trace> Element
+
 Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śledzenia.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -33,6 +34,7 @@ Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śled
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -47,7 +49,7 @@ Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śled
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|`false`|Nie opróżnia bufora wyjściowego. Domyślnie włączone.|  
+|`false`|Nie opróżnia bufora wyjściowego. Jest to opcja domyślna.|  
 |`true`|Automatycznie opróżnia bufor wyjściowy.|  
   
 ## <a name="usegloballock-attribute"></a>useGlobalLock — Atrybut  
@@ -55,7 +57,7 @@ Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śled
 |Wartość|Opis|  
 |-----------|-----------------|  
 |`false`|Nie używa blokady globalnej, jeśli odbiornik jest bezpieczny wątkowo; w przeciwnym razie używa blokady globalnej.|  
-|`true`|Używa blokady globalnej niezależnie od tego, czy odbiornik jest bezpieczny wątkowo. Domyślnie włączone.|  
+|`true`|Używa blokady globalnej niezależnie od tego, czy odbiornik jest bezpieczny wątkowo. Jest to opcja domyślna.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
   
@@ -71,7 +73,8 @@ Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śled
 |`system.diagnostics`|Określa detektory śledzenia, które zbierają, przechowują i rozsyłają komunikaty oraz poziom, w którym ustawiono przełącznik śledzenia.|  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład pokazuje, jak użyć elementu, `<trace>` Aby dodać odbiornik `MyListener` do `Listeners` kolekcji. `MyListener`tworzy plik o nazwie `MyListener.log` i zapisuje dane wyjściowe do pliku. `useGlobalLock`Atrybut jest ustawiony na `false` , co powoduje, że globalna blokada nie zostanie użyta, jeśli odbiornik śledzenia jest bezpieczny wątkowo. `autoflush`Atrybut jest ustawiony na `true` , co powoduje, że odbiornik śledzenia ma zapisywać do pliku bez względu na to, czy <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> Metoda jest wywoływana. `indentsize`Atrybut jest ustawiony na 0 (zero), co powoduje, że odbiornik ma wcięcie zerowej spacji, gdy <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> wywoływana jest metoda.  
+
+ Poniższy przykład pokazuje, jak użyć elementu, `<trace>` Aby dodać odbiornik `MyListener` do `Listeners` kolekcji. `MyListener` tworzy plik o nazwie `MyListener.log` i zapisuje dane wyjściowe do pliku. `useGlobalLock`Atrybut jest ustawiony na `false` , co powoduje, że globalna blokada nie zostanie użyta, jeśli odbiornik śledzenia jest bezpieczny wątkowo. `autoflush`Atrybut jest ustawiony na `true` , co powoduje, że odbiornik śledzenia ma zapisywać do pliku bez względu na to, czy <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> Metoda jest wywoływana. `indentsize`Atrybut jest ustawiony na 0 (zero), co powoduje, że odbiornik ma wcięcie zerowej spacji, gdy <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> wywoływana jest metoda.  
   
 ```xml  
 <configuration>  
@@ -85,7 +88,7 @@ Zawiera detektory, które zbierają, przechowują i rozsyłają komunikaty śled
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>

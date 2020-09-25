@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: e4d7c96cdcfd7751e80703fe4c5a56e66f4c18c6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9eff44f3260f0f50fef956ba60b01e2497d7d2dd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555357"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91199214"
 ---
 # <a name="constants-c-programming-guide"></a>Stałe (Przewodnik programowania w języku C#)
+
 Stałe są niezmienne wartości, które są znane w czasie kompilacji i nie zmieniają się w okresie istnienia programu. Stałe są zadeklarowane za pomocą modyfikatora [const](../../language-reference/keywords/const.md) . Tylko [typy wbudowane](../../language-reference/builtin-types/built-in-types.md) języka C# (z wyjątkiem <xref:System.Object?displayProperty=nameWithType> ) mogą być zadeklarowane jako `const` . Typy zdefiniowane przez użytkownika, w tym klasy, struktury i tablice, nie mogą być `const` . Użyj modyfikatora [tylko do odczytu](../../language-reference/keywords/readonly.md) , aby utworzyć klasę, strukturę lub tablicę, która jest inicjowana jednokrotnie w czasie wykonywania (na przykład w konstruktorze) i nie można jej zmienić.  
   
  Język C# nie obsługuje `const` metod, właściwości ani zdarzeń.  
@@ -44,9 +45,10 @@ Stałe są niezmienne wartości, które są znane w czasie kompilacji i nie zmie
  [!code-csharp[csProgGuideObjects#67](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#67)]  
   
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)

@@ -2,14 +2,15 @@
 title: <clientCredentials>
 ms.date: 03/30/2017
 ms.assetid: 1e6eef0d-a34e-4d74-b0f7-f65d2181858d
-ms.openlocfilehash: f295fe48e194611c80b78c0c23ab3e66ea1c0b64
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6094006df24ee824c419a783ab29d7604757577c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400497"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201463"
 ---
 # \<clientCredentials>
+
 Określa poświadczenia używane do uwierzytelniania klienta w usłudze.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -40,6 +41,7 @@ Określa poświadczenia używane do uwierzytelniania klienta w usłudze.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -67,11 +69,12 @@ Określa poświadczenia używane do uwierzytelniania klienta w usłudze.
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie punktu końcowego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Poświadczenia klienta służą do uwierzytelniania klienta programu w przypadku, gdy wymagane jest uwierzytelnianie wzajemne. Ta sekcja konfiguracji może również służyć do określania certyfikatów usługi dla scenariuszy, w których klient musi zabezpieczyć komunikaty do usługi za pomocą certyfikatu usługi.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - [Zachowania zabezpieczeń](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Zabezpieczanie klientów](../../../wcf/securing-clients.md)
+- [Zabezpieczanie klientów [WCF]](../../../wcf/securing-clients.md)

@@ -2,14 +2,15 @@
 title: 'Instrukcje: Marka, model i mapowanie plików zasobów osadzonych'
 ms.date: 03/30/2017
 ms.assetid: 20dfae4d-e95a-4264-9540-f5ad23b462d3
-ms.openlocfilehash: aaab2ccc96497cb718b868f7ac63995ad4ba35c8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8496dcad5422d1a45af52e58325efd360768da34
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546682"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198291"
 ---
 # <a name="how-to-make-model-and-mapping-files-embedded-resources"></a>Instrukcje: Marka, model i mapowanie plików zasobów osadzonych
+
 Entity Framework umożliwia wdrażanie modelu i plików mapowania jako zasobów osadzonych aplikacji. Zestaw z osadzonym modelem i plikami mapowania musi być załadowany w tej samej domenie aplikacji co połączenie jednostki. Aby uzyskać więcej informacji, zobacz [Parametry połączenia](connection-strings.md). Domyślnie narzędzia Entity Data Model osadzają model i pliki mapowania. Podczas ręcznego definiowania modelu i plików mapowania Użyj tej procedury, aby upewnić się, że pliki są wdrażane jako zasoby osadzone razem z aplikacją Entity Framework.  
   
 > [!NOTE]
@@ -34,9 +35,10 @@ Entity Framework umożliwia wdrażanie modelu i plików mapowania jako zasobów 
      Aby uzyskać więcej informacji, zobacz [Parametry połączenia](connection-strings.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższe parametry połączenia odwołują się do osadzonego modelu i plików mapowania dla [modelu sprzedaży AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks). Te parametry połączenia są przechowywane w pliku App.config projektu.  
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Modelowanie i mapowanie](modeling-and-mapping.md)
 - [Instrukcje: Określanie parametrów połączenia](how-to-define-the-connection-string.md)

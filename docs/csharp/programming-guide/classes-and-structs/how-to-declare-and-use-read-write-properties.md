@@ -9,22 +9,25 @@ helpviewer_keywords:
 - read/write properties [C#]
 - accessors [C#], declaring properties with
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
-ms.openlocfilehash: 08bdaa9446491d473cfb16e3b82bac41d7af5b79
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: a2bfc3f43db84ebf69f9a5f41c118c5981e33c19
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864452"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91199149"
 ---
 # <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Jak deklarować i używać właściwości odczytu zapisu (Przewodnik programowania w języku C#)
+
 Właściwości zapewniają wygodę publicznych członków danych bez ryzyka związanego z niechronionym, niekontrolowanym i niezweryfikowanym dostępem do danych obiektu. Jest to realizowane za pośrednictwem metod *dostępu*: specjalne metody, które przypisują i pobierają wartości z bazowego elementu członkowskiego danych. Metoda dostępu [Set](../../language-reference/keywords/set.md) umożliwia składowe danych, a metoda dostępu [Get](../../language-reference/keywords/get.md) pobiera wartości elementu członkowskiego danych.  
   
  Ten przykład pokazuje `Person` klasę, która ma dwie właściwości: `Name` (String) i `Age` (int). Obie właściwości zapewniają `get` i metody `set` dostępu, więc są uznawane za właściwości odczytu i zapisu.  
   
 ## <a name="example"></a>Przykład  
+
  [!code-csharp[csProgGuideObjects#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#33)]  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  W poprzednim przykładzie `Name` `Age` właściwości i są [publiczne](../../language-reference/keywords/public.md) i zawierają `get` `set` metodę dostępu a i. Dzięki temu każdy obiekt może odczytywać i zapisywać te właściwości. Jednak czasami pożądane jest wyłączenie jednego z metod dostępu. Z pominięciem `set` metody dostępu, na przykład, powoduje, że właściwość jest tylko do odczytu:  
   
  [!code-csharp[csProgGuideObjects#87](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#87)]  
@@ -55,7 +58,7 @@ person.SetAge(person.GetAge() + 1);
   
  Należy zauważyć, że `ToString` nie jest on jawnie używany w programie. Jest wywoływana domyślnie przez `WriteLine` wywołania.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Właściwości](./properties.md)

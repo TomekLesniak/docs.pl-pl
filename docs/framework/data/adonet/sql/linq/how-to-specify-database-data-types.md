@@ -2,27 +2,28 @@
 title: 'Instrukcje: Określanie typów danych bazy danych'
 ms.date: 03/30/2017
 ms.assetid: 2228fdad-7e6a-4b1b-b4d1-79d0198b7c28
-ms.openlocfilehash: 09ca8dc6fa440138523bcd2905335a04517dd806
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f070ff718ac10b9681c5ab3c0f4b46547349101b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793272"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197238"
 ---
 # <a name="how-to-specify-database-data-types"></a>Instrukcje: Określanie typów danych bazy danych
-Użyj właściwości dla<xref:System.Data.Linq.Mapping.ColumnAttribute> atrybutu, aby określić dokładny tekst, który definiuje kolumnę w deklaracji tabeli T-SQL. <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]  
+
+Użyj [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> właściwości dla atrybutu, <xref:System.Data.Linq.Mapping.ColumnAttribute> Aby określić dokładny tekst, który definiuje kolumnę w deklaracji tabeli T-SQL.  
   
- <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> Właściwość należy określić tylko wtedy, gdy planujesz użyć <xref:System.Data.Linq.DataContext.CreateDatabase%2A> , aby utworzyć wystąpienie bazy danych.  
+ Właściwość należy określić <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> tylko wtedy, gdy planujesz użyć, <xref:System.Data.Linq.DataContext.CreateDatabase%2A> Aby utworzyć wystąpienie bazy danych.  
   
- Aby zapoznać się z przykładami kodu, zobacz <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>.  
+ Aby zapoznać się z przykładami kodu, zobacz <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> .  
   
 ### <a name="to-specify-text-to-define-a-data-type-in-a-t-sql-table"></a>Aby określić tekst definiujący typ danych w tabeli T-SQL  
   
-1. <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> Dodaj Właściwość<xref:System.Data.Linq.Mapping.ColumnAttribute> do atrybutu.  
+1. Dodaj <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> Właściwość do <xref:System.Data.Linq.Mapping.ColumnAttribute> atrybutu.  
   
 2. Ustaw wartość <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> właściwości na dokładny tekst, który jest używany przez język T-SQL.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Model obiektu LINQ to SQL](the-linq-to-sql-object-model.md)
-- [Instrukcje: Dostosowywanie klas jednostek przy użyciu edytora kodu](how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Instrukcje: Dostosowywanie klas jednostek za pomocą edytora kodu](how-to-customize-entity-classes-by-using-the-code-editor.md)

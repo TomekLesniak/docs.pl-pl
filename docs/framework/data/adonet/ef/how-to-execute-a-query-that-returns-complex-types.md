@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2209fdb-70ef-4dea-8bb8-097fe96f5563
-ms.openlocfilehash: 01958637cedcd6d502d51e9f0821ff3a9faae840
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e5358e3a1295b180356ed6c127111313b44de277
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545327"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198486"
 ---
 # <a name="how-to-execute-a-query-that-returns-complex-types"></a>Instrukcje: Wykonywanie zapytania, które zwraca typy złożone
+
 W tym temacie pokazano, jak wykonać [!INCLUDE[esql](../../../../../includes/esql-md.md)] zapytanie, które zwraca obiekty typu jednostki, które zawierają właściwość typu złożonego.  
   
 ### <a name="to-run-the-code-in-this-example"></a>Aby uruchomić kod w tym przykładzie  
@@ -31,6 +32,7 @@ W tym temacie pokazano, jak wykonać [!INCLUDE[esql](../../../../../includes/esq
      Aby uzyskać informacje o tworzeniu i modyfikowaniu typów złożonych przy użyciu kreatora Entity Data Model, zobacz [How to: refaktoryzacje istniejące właściwości w typie złożonym](/previous-versions/dotnet/netframework-4.0/dd456814(v=vs.100)) i [instrukcje: Tworzenie i modyfikowanie typów złożonych](/previous-versions/dotnet/netframework-4.0/dd456820(v=vs.100)).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład wykonuje zapytanie, które zwraca kolekcję `Contact` obiektów i wyświetla dwie właściwości `Contact` obiektów: `ContactID` oraz wartości `EmailPhoneComplexType` typu złożonego.  
   
  [!code-csharp[DP EntityServices Concepts#ComplexTypeWithEntityCommand](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#complextypewithentitycommand)]
