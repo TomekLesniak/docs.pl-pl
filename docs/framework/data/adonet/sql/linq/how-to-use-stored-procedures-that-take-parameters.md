@@ -5,20 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b935fd84-cb9c-4205-8c48-658d5db2ec93
-ms.openlocfilehash: 05ecc467f75fbeda785b4bac1c3b8b1ceeb173b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a54e2ee553629179022b68658d44cbcb02ab590f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174332"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184966"
 ---
 # <a name="how-to-use-stored-procedures-that-take-parameters"></a>Instrukcje: Używanie procedur składowanych, które przyjmują parametry
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mapuje parametry wyjściowe do parametrów referencyjnych, a dla typów wartości deklaruje parametr jako nullable.  
+
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje parametry wyjściowe do parametrów referencyjnych, a dla typów wartości deklaruje parametr jako wartość null.  
   
- Na przykład, jak używać parametru wejściowego w kwerendzie zwracającej zestaw wierszy, zobacz [Jak: Zwracanie zestawów wierszy](how-to-return-rowsets.md).  
+ Aby zapoznać się z przykładem użycia parametru wejściowego w zapytaniu, które zwraca zestaw wierszy, zobacz [How to: Return Rowsets](how-to-return-rowsets.md).  
   
 ## <a name="example"></a>Przykład  
- W poniższym przykładzie przyjmuje jeden parametr wejściowy (identyfikator odbiorcy) i zwraca parametr out (całkowita sprzedaż dla tego odbiorcy).  
+
+ Poniższy przykład przyjmuje jeden parametr wejściowy (identyfikator klienta) i zwraca parametr out (całkowita sprzedaż dla tego klienta).  
   
 ```sql
 CREATE PROCEDURE [dbo].[CustOrderTotal]
@@ -34,14 +36,15 @@ where O.CUSTOMERID = @CustomerID AND O.ORDERID = OD.ORDERID
  [!code-vb[DLinqSprox#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#2)]  
   
 ## <a name="example"></a>Przykład  
- Tę procedurę składowaną można wywołać w następujący sposób:  
+
+ Tę procedurę składowaną należy wywołać w następujący sposób:  
   
  [!code-csharp[DLinqSprox#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/Program.cs#3)]
  [!code-vb[DLinqSprox#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/Module1.vb#3)]  
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Procedury przechowywane](stored-procedures.md)
+- [Procedury składowane](stored-procedures.md)
 - [Pobieranie przykładowych baz danych](downloading-sample-databases.md)
-- [Typy wartości z dopuszczalną wartości (C#)](../../../../../csharp/language-reference/builtin-types/nullable-value-types.md)
+- [Typy wartości null (C#)](../../../../../csharp/language-reference/builtin-types/nullable-value-types.md)
 - [Typy o wartości zerowalnej (Visual Basic)](../../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

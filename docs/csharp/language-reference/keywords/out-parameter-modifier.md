@@ -5,16 +5,16 @@ ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: 23bf841c002f9be5fdd4e8d8da48e68e9f6e5fcc
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6addfa3a654c0bb4e10213a3fb4fc0368f2570b2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89122436"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200189"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out — Modyfikator parametrów (odwołanie w C#)
 
-`out`Słowo kluczowe powoduje, że argumenty są przekazane przez odwołanie. Sprawia, że parametr formalny jest aliasem dla argumentu, który musi być zmienną. Innymi słowy, każda operacja na parametrze jest wykonywana na argumencie. Jest to podobne do słowa kluczowego [ref](ref.md) , z wyjątkiem tego, że `ref` wymaga, aby zmienna została zainicjowana przed przekazaniem. Jest on również podobny do słowa kluczowego [in](in-parameter-modifier.md) , z wyjątkiem tego, że `in` wywołana metoda nie zezwala na modyfikowanie wartości argumentu. Aby użyć `out` parametru, zarówno definicja metody, jak i Metoda wywołująca muszą jawnie użyć `out` słowa kluczowego. Przykład:  
+`out`Słowo kluczowe powoduje, że argumenty są przekazane przez odwołanie. Sprawia, że parametr formalny jest aliasem dla argumentu, który musi być zmienną. Innymi słowy, każda operacja na parametrze jest wykonywana na argumencie. Jest to podobne do słowa kluczowego [ref](ref.md) , z wyjątkiem tego, że `ref` wymaga, aby zmienna została zainicjowana przed przekazaniem. Jest on również podobny do słowa kluczowego [in](in-parameter-modifier.md) , z wyjątkiem tego, że `in` wywołana metoda nie zezwala na modyfikowanie wartości argumentu. Aby użyć `out` parametru, zarówno definicja metody, jak i Metoda wywołująca muszą jawnie użyć `out` słowa kluczowego. Na przykład:  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#1)]  
 
@@ -76,6 +76,7 @@ W poprzednim przykładzie `number` zmienna jest silnie wpisana jako `int` . Moż
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#6)]  
 
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
+
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Zobacz też

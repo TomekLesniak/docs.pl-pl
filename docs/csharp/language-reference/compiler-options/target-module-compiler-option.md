@@ -9,14 +9,15 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 2074e170ab177c39fdf3954fa93ae4b666bf853d
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: d8691e5e4477dbbe989344469b44382d5e0e7c8b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466056"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193611"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target: module (opcje kompilatora C#)
+
 Ta opcja powoduje, że kompilator nie generuje manifestu zestawu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,6 +27,7 @@ Ta opcja powoduje, że kompilator nie generuje manifestu zestawu.
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie plik wyjściowy utworzony przez kompilację z tą opcją będzie miał rozszerzenie.  
   
  Nie można załadować pliku, który nie zawiera manifestu zestawu, przez środowisko uruchomieniowe platformy .NET. Jednak taki plik można włączyć do manifestu zestawu zestawu za pomocą [-addmodule](./addmodule-compiler-option.md).  
@@ -37,13 +39,14 @@ Ta opcja powoduje, że kompilator nie generuje manifestu zestawu.
  Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.ProjectProperties3.OutputType%2A> .  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj `in.cs` , Utwórz `in.netmodule` :  
   
 ```console  
 csc -target:module in.cs  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [-Target (opcje kompilatora C#)](./target-compiler-option.md)
 - [Opcje kompilatora C#](./index.md)

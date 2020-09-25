@@ -2,14 +2,15 @@
 title: <userNameAuthentication>
 ms.date: 03/30/2017
 ms.assetid: 24d8b398-770f-418f-ba23-c4325419cfa6
-ms.openlocfilehash: dc5c00a2204646863ae2570bb97b8d70e22a72d4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 30fd78d6c56e8b22e0e744a38f18ac076dc70162
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399188"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178037"
 ---
 # \<userNameAuthentication>
+
 Określa poświadczenia usługi na podstawie nazwy użytkownika i hasła.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Określa poświadczenia usługi na podstawie nazwy użytkownika i hasła.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -48,6 +50,7 @@ Określa poświadczenia usługi na podstawie nazwy użytkownika i hasła.
 |`userNamePasswordValidationMode`|Określa sposób sprawdzania poprawności hasła nazwy użytkownika. Prawidłowe wartości:<br /><br /> — System Windows<br />- MembershipProvider<br />-Niestandardowe<br /><br /> Wartość domyślna to Windows. Ten atrybut jest typu <xref:System.ServiceModel.Security.UserNamePasswordValidationMode> .|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -57,11 +60,12 @@ Określa poświadczenia usługi na podstawie nazwy użytkownika i hasła.
 |[\<serviceCredentials>](servicecredentials.md)|Określa poświadczenie, które ma być używane w uwierzytelnianiu usługi oraz ustawienia powiązane z walidacją poświadczeń klienta.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli żaden z powiązań używanych przez usługę nie jest skonfigurowany do uwierzytelniania opartego na nazwie użytkownika/hasła, atrybuty tego elementu są ignorowane. Należą `customUserNamePasswordValidatorType` do nich, `includeWindowsGroups` , `membershipProviderName` , i `userNamePasswordValidationMode` .  
   
  Jeśli żaden z powiązań używanych przez usługę nie jest skonfigurowany do korzystania z uwierzytelniania systemu Windows dla nazwy użytkownika/hasła, ustawienia związane z buforowaniem tokenów logowania są ignorowane. Należą do nich `cacheLogonTokenLifetime` , `cacheLogonTokens` i `maxCacheLogonTokens` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.UserNameServiceElement>
 - <xref:System.ServiceModel.Description.ServiceCredentials.UserNameAuthentication%2A>

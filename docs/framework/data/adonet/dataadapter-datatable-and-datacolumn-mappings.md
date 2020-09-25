@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-ms.openlocfilehash: 6380dd0512bd7834f50b87f90f445cb01b7a8b95
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b979431836b55b23ac9ba6ec4535f33765dce555
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151562"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177738"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Element DataAdapter DataTable i mapowania elementu DataColumn
-A **DataAdapter** zawiera kolekcję <xref:System.Data.Common.DataTableMapping> zero lub więcej obiektów w jego **TableMappings** właściwości. **DataTableMapping** zapewnia mapowanie wzorcowe między danymi zwróconych z <xref:System.Data.DataTable>kwerendy względem źródła danych i . **Nazwa DataTableMapping** może być przekazywana zamiast nazwy **DataTable** do **metody Wypełnianie** **dataAdapter**. Poniższy przykład tworzy **DataTableMapping** o nazwie **AuthorsMapping** dla **autorzy** tabeli.  
+
+Element **DataAdapter** zawiera kolekcję zero lub więcej <xref:System.Data.Common.DataTableMapping> obiektów we właściwości **TableMappings** . **DataTableMapping** zapewnia mapowanie wzorca między danymi zwracanymi z zapytania do źródła danych i <xref:System.Data.DataTable> . Nazwę **DataTableMapping** można przesłać zamiast nazwy **DataTable** do metody **Fill** elementu **DataAdapter**. Poniższy przykład tworzy **DataTableMapping** o nazwie **AuthorsMapping** dla tabeli **autorów** .  
   
 ```vb  
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors")  
@@ -23,11 +24,11 @@ workAdapter.TableMappings.Add("AuthorsMapping", "Authors")
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors");  
 ```  
   
- **DataTableMapping** umożliwia użycie nazw kolumn w **DataTable,** które różnią się od tych w bazie danych. **DataAdapter** używa mapowania, aby dopasować kolumny, gdy tabela jest aktualizowana.  
+ **DataTableMapping** umożliwia używanie nazw kolumn w **elemencie DataTable** , które różnią się od tych w bazie danych. Element **DataAdapter** używa mapowania, aby dopasować kolumny po zaktualizowaniu tabeli.  
   
- Jeśli nazwa **TableName** lub **DataTableMapping** nie zostanie określona podczas wywoływania metody **Wypełniania** lub **aktualizacji** **programu DataAdapter,** **program DataAdapter** wyszukuje **mapowanie tabeli danych** o nazwie "Tabela". Jeśli **datatableMapping** nie istnieje, **TableName** **datatable** jest "Tabela". Można określić domyślny **DataTableMapping,** tworząc **DataTableMapping** o nazwie "Tabela".  
+ Jeśli nie określisz nazwy **TableName** lub **DataTableMapping** podczas wywoływania metody **Fill** lub **Update** elementu **DataAdapter**, obiekt **DataAdapter** szuka **DataTableMapping** o nazwie "Table". Jeśli **DataTableMapping** nie istnieje, **tabelaname tabeli** **DataTable** ma wartość "Table". Można określić domyślny **DataTableMapping** , tworząc **DataTableMapping** o nazwie "Table".  
   
- Poniższy przykład kodu tworzy **DataTableMapping** (z obszaru <xref:System.Data.Common> nazw) i sprawia, że domyślne mapowanie dla określonego **DataAdapter** przez nadanie jej nazwy "Tabela". W przykładzie następnie mapuje kolumny z pierwszej tabeli w wyniku kwerendy (tabela **Klienci** bazy danych **Northwind)** do <xref:System.Data.DataSet>zestawu bardziej przyjaznych dla użytkownika nazw w tabeli **Klienci Northwind** w tabeli . W przypadku kolumn, które nie są mapowane, używana jest nazwa kolumny ze źródła danych.  
+ Poniższy przykład kodu tworzy **DataTableMapping** (z <xref:System.Data.Common> przestrzeni nazw) i tworzy mapowanie domyślne dla określonego elementu **DataAdapter** przez nadanie jej nazwy "Table". Następnie przykład mapuje kolumny z pierwszej tabeli w wyniku zapytania (tabela **Customers** bazy danych **Northwind** ) do zestawu większej liczby przyjaznych nazw użytkowników w tabeli **Klienci Northwind** w <xref:System.Data.DataSet> . W przypadku kolumn, które nie są zamapowane, używana jest nazwa kolumny ze źródła danych.  
   
 ```vb  
 Dim mapping As DataTableMapping = _  
@@ -49,11 +50,11 @@ mapping.ColumnMappings.Add("PostalCode", "ZIPCode");
 adapter.Fill(custDS);  
 ```  
   
- W bardziej zaawansowanych sytuacjach można zdecydować, że chcesz, aby ten sam **DataAdapter** obsługiwać ładowanie różnych tabel z różnych mapowań. Aby to zrobić, wystarczy dodać dodatkowe **obiekty DataTableMapping.**  
+ W bardziej zaawansowanych sytuacjach możesz zdecydować, że chcesz, aby ten sam element **DataAdapter** obsługiwał ładowanie różnych tabel z różnymi mapowaniami. W tym celu wystarczy dodać dodatkowe obiekty **DataTableMapping** .  
   
- Gdy **Fill** metoda jest przekazywana wystąpienie **DataSet** i **DataTableMapping** nazwę, jeśli mapowanie o tej nazwie istnieje jest używany; w przeciwnym razie **datatable** o tej nazwie jest używany.  
+ Gdy metoda **Fill** jest przenoszona do wystąpienia **zestawu danych** i nazwy **DataTableMapping** , jeśli istnieje mapowanie o tej nazwie, jest ono używane; w przeciwnym razie zostanie użyta **tabela DataTable** o tej nazwie.  
   
- Poniższe przykłady tworzą **DataTableMapping** z nazwą **klientów** i nazwą **DataTable** **programu BizTalkSchema**. W przykładzie następnie mapuje wiersze zwrócone przez select instrukcji do **BizTalkSchema** **DataTable**.  
+ Poniższe przykłady umożliwiają utworzenie **DataTableMapping** z nazwą **klientów** i nazwą **elementu DataTable** **BizTalkSchema**. Następnie przykład mapuje wiersze zwracane przez instrukcję SELECT do **elementu DataTable** **BizTalkSchema** .  
   
 ```vb  
 Dim mapping As ITableMapping = _  
@@ -78,13 +79,14 @@ adapter.Fill(custDS, "Customers");
 ```  
   
 > [!NOTE]
-> Jeśli nazwa kolumny źródłowej nie jest podana dla mapowania kolumn lub nazwa tabeli źródłowej nie jest podana dla mapowania tabeli, nazwy domyślne zostaną wygenerowane automatycznie. Jeśli dla mapowania kolumn nie jest dostarczana żadna kolumna źródłowa, mapowanie kolumn otrzymuje przyrostową domyślną nazwę **SourceColumn** *N,* zaczynając od **SourceColumn1**. Jeśli dla mapowania tabeli nie podano żadnej nazwy tabeli źródłowej, mapowanie tabeli otrzymuje przyrostową domyślną nazwę **Tabeli SourceTable** *N,* zaczynając od **tabeli SourceTable1**.  
+> Jeśli nie podano nazwy kolumny źródłowej dla mapowania kolumn lub nie podano nazwy tabeli źródłowej dla mapowania tabeli, automatycznie generowane są domyślne nazwy. Jeśli nie podano kolumny źródłowej dla mapowania kolumn, mapowanie kolumny otrzymuje przyrostową domyślną nazwę **SourceColumn** *N,* rozpoczynając od **SourceColumn1**. Jeśli nie podano nazwy tabeli źródłowej dla mapowania tabeli, mapowanie tabeli uzyskuje przyrostową domyślną nazwę elementu **SourceName** *N*, rozpoczynając od **SourceTable1**.  
   
 > [!NOTE]
-> Zaleca się unikanie konwencji nazewnictwa **SourceColumn** *N* dla mapowania kolumn lub **SourceTable** *N* dla mapowania tabeli, ponieważ podana nazwa może kolidować z istniejącą domyślną nazwą mapowania kolumn w **nazwie mapowania kolumn lub** mapowania tabeli w **datatablemappingcollection**. Jeśli podana nazwa już istnieje, zostanie zgłoszony wyjątek.  
+> Zalecamy uniknięcie konwencji nazewnictwa elementu **SourceColumn** *N* na potrzeby mapowania kolumn lub elementu **sources** *n* dla mapowania tabeli, ponieważ dostarczona nazwa może powodować konflikt z istniejącą domyślną nazwą mapowania kolumn w **DataTableMappingCollection**. **ColumnMappingCollection** Jeśli podana nazwa już istnieje, zostanie zgłoszony wyjątek.  
   
 ## <a name="handling-multiple-result-sets"></a>Obsługa wielu zestawów wyników  
- Jeśli **selectcommand** zwraca wiele tabel, **Fill** automatycznie generuje nazwy tabel z wartościami przyrostowymi dla tabel w **Zestawie danych,** począwszy od określonej nazwy tabeli i kontynuując w **formularzu TableName** *N*, począwszy od **TableName1**. Za pomocą mapowań tabel można mapować automatycznie wygenerowaną nazwę tabeli na nazwę określoną dla tabeli w **zestawie danych**. Na przykład dla **SelectCommand,** który zwraca dwie tabele, **Klienci** i **Zamówienia**, wystawić następujące wywołanie **Fill**.  
+
+ Jeśli **Właściwość SelectCommand** zwraca wiele tabel, **Funkcja Fill** automatycznie generuje nazwy tabel z przyrostowymi wartościami dla tabel w **zestawie danych**, rozpoczynając od określonej nazwy tabeli i kontynuuje w formularzu **TableName** *N*, rozpoczynając od **TableName1**. Mapowania tabeli można użyć, aby zamapować automatycznie wygenerowaną nazwę tabeli na nazwę, która ma być określona dla tabeli w **zestawie danych**. Na przykład dla elementu **SelectCommand** , który zwraca dwie tabele, **klienci** i **zamówienia**, wydaj następujące wywołanie do **wypełnienia**.  
   
 ```vb  
 adapter.Fill(customersDataSet, "Customers")  
@@ -94,7 +96,7 @@ adapter.Fill(customersDataSet, "Customers")
 adapter.Fill(customersDataSet, "Customers");  
 ```  
 
- W zestawie **danych**tworzone są dwie tabele: **Klienci** i **Klienci1**. Można użyć mapowań tabel, aby upewnić się, że druga tabela ma nazwę **Zamówienia** zamiast **Customers1**. Aby to zrobić, mapuj tabelę źródłową **Customers1** do tabeli **DataSet** **Zamówienia**, jak pokazano w poniższym przykładzie.  
+ W **zestawie danych**są tworzone dwie tabele: **Customers** i **Customers1**. Mapowania tabel można użyć, aby upewnić się, że druga tabela ma nazwę **Orders** zamiast **Customers1**. W tym celu należy zmapować tabelę źródłową **Customers1** do **kolejności**tabel **zestawu danych** , jak pokazano w poniższym przykładzie.  
   
 ```vb  
 adapter.TableMappings.Add("Customers1", "Orders")  

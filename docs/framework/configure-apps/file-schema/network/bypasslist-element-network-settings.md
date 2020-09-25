@@ -9,14 +9,15 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: 42b6ddf4c3d09bcf8ef0ada105cefedccc63b505
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 58cdcf046b2a5a292493c5704739b22aa4ec4f17
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504631"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178414"
 ---
 # <a name="bypasslist-element-network-settings"></a>\<bypasslist>, element (ustawienia sieci)
+
 Zawiera zestaw wyrażeń regularnych, które opisują adresy, które nie korzystają z serwera proxy.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,9 +33,11 @@ Zawiera zestaw wyrażeń regularnych, które opisują adresy, które nie korzyst
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -52,6 +55,7 @@ Zawiera zestaw wyrażeń regularnych, które opisują adresy, które nie korzyst
 |[defaultProxy](defaultproxy-element-network-settings.md)|Konfiguruje serwer proxy protokołu HTTP (Hypertext Transfer Protocol).|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Lista obejścia zawiera wyrażenia regularne, które opisują identyfikatory URI, które <xref:System.Net.WebRequest> uzyskują dostęp bezpośrednio, zamiast za pomocą serwera proxy.  
   
  Należy zachować ostrożność podczas określania wyrażenia regularnego dla tego elementu. Wyrażenie regularne "[a-z] + \\ . contoso \\ . com" dopasowuje dowolny host w domenie contoso.com, ale również jest zgodny z dowolnym hostem w domenie contoso.com.cpandl.com. Aby dopasować tylko hosta w domenie contoso.com, użyj kotwicy ("$"): "[a-z] + \\ . contoso \\ . com $".  
@@ -59,9 +63,11 @@ Zawiera zestaw wyrażeń regularnych, które opisują adresy, które nie korzyst
  Aby uzyskać więcej informacji na temat wyrażeń regularnych, zobacz. [.NET Framework wyrażeń regularnych](../../../../standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład dodaje dwa adresy do listy pomijania. Najpierw pomija serwer proxy dla wszystkich serwerów w domenie contoso.com; drugi pomija serwer proxy dla wszystkich serwerów, których adresy IP zaczynają się od 192,168.  
   
 ```xml  
@@ -77,7 +83,7 @@ Zawiera zestaw wyrażeń regularnych, które opisują adresy, które nie korzyst
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)
