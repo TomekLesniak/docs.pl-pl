@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -target compiler options [C#], /target:winexe
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
-ms.openlocfilehash: 5f8717115464ec3d9798228d7d50a8f08b2db300
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 6e14a2aac427c7adfd69f66eaf624816b75f6ea2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466095"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168936"
 ---
 # <a name="-targetwinexe-c-compiler-options"></a>-target: winexe (opcje kompilatora C#)
+
 Opcja **-target: winexe** powoduje, że kompilator tworzy plik wykonywalny (exe), program systemu Windows.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,6 +27,7 @@ Opcja **-target: winexe** powoduje, że kompilator tworzy plik wykonywalny (exe)
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Plik wykonywalny zostanie utworzony z rozszerzeniem. exe. Program systemu Windows to taki, który udostępnia interfejs użytkownika z biblioteki .NET lub interfejsów API systemu Windows.  
   
  Użyj [-target: exe](./target-exe-compiler-option.md) , aby utworzyć aplikację konsolową.  
@@ -47,13 +49,14 @@ Opcja **-target: winexe** powoduje, że kompilator tworzy plik wykonywalny (exe)
  Aby uzyskać informacje na temat sposobu, w jaki można programowo ustawić tę opcję kompilatora, zobacz <xref:VSLangProj80.ProjectProperties3.OutputType%2A> .  
   
 ## <a name="example"></a>Przykład  
+
  Kompiluj `in.cs` do programu Windows:  
   
 ```console  
 csc -target:winexe in.cs  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [-Target (opcje kompilatora C#)](./target-compiler-option.md)
 - [Opcje kompilatora C#](./index.md)

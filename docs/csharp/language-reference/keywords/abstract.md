@@ -8,17 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: 095c4dea838aff4f14833d78fb10a2f831cf5173
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 276e3f6ab50a069e3852c529c13eaad3c64e42ad
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127207"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168884"
 ---
 # <a name="abstract-c-reference"></a>abstract (odwołanie w C#)
+
 `abstract`Modyfikator wskazuje, że modyfikowany element nie ma lub niekompletnej implementacji. Modyfikator abstrakcyjny może być używany z klasami, metodami, właściwościami, indeksatorami i zdarzeniami. Użyj `abstract` modyfikatora w deklaracji klasy, aby wskazać, że Klasa jest przeznaczona tylko jako klasa bazowa innych klas, ale nie jest tworzona samodzielnie. Elementy członkowskie oznaczone jako abstrakcyjne muszą być zaimplementowane przez nieabstrakcyjne klasy, które pochodzą z klasy abstrakcyjnej.
   
 ## <a name="example"></a>Przykład  
+
  W tym przykładzie Klasa `Square` musi dostarczyć implementację, `GetArea` ponieważ pochodzi ona z `Shape` :  
   
  [!code-csharp[csrefKeywordsModifiers#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#1)]
@@ -66,6 +68,7 @@ ms.locfileid: "89127207"
 [!code-csharp[csrefKeywordsModifiers#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#2)]
   
 ## <a name="example"></a>Przykład  
+
  W tym przykładzie Klasa pochodzi `DerivedClass` od klasy abstrakcyjnej `BaseClass` . Klasa abstrakcyjna zawiera metodę abstrakcyjną, `AbstractMethod` i dwie właściwości abstrakcyjne `X` oraz `Y` .  
   
 [!code-csharp[csrefKeywordsModifiers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#3)]
@@ -79,6 +82,7 @@ BaseClass bc = new BaseClass();   // Error
 Zostanie wyświetlony komunikat o błędzie informujący, że kompilator nie może utworzyć wystąpienia klasy abstrakcyjnej "BaseClass".  
   
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Zobacz też
