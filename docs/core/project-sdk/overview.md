@@ -1,39 +1,41 @@
 ---
-title: Omówienie zestawu SDK programu .NET Core
+title: Omówienie zestawu SDK programu .NET
 titleSuffix: ''
-description: Dowiedz się więcej o zestawach SDK projektu .NET Core.
-ms.date: 02/02/2020
+description: Dowiedz się więcej o zestawach SDK projektu .NET.
+ms.date: 09/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 873c06007307c5892c4828f987486b4dd98dc9ae
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 6b6651f674f09d5d0d18ddb873096037ad3b2ba5
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187919"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247579"
 ---
-# <a name="net-core-project-sdks"></a>Zestawy SDK projektu .NET Core
+# <a name="net-project-sdks"></a>Zestawy SDK projektu .NET
 
-Projekty .NET Core są skojarzone z zestawem SDK (Software Development Kit). Każdy *zestaw SDK projektu* to zestaw [obiektów docelowych](/visualstudio/msbuild/msbuild-targets) programu MSBuild i skojarzonych [zadań](/visualstudio/msbuild/msbuild-tasks) , które są odpowiedzialne za kompilowanie, pakowanie i publikowanie kodu. Projekt, który odwołuje się do zestawu SDK projektu, jest czasami określany jako *projekt w stylu zestawu SDK*.
+Projekty .NET Core i .NET 5,0 i nowsze są skojarzone z zestawem SDK (Software Development Kit). Każdy *zestaw SDK projektu* to zestaw [obiektów docelowych](/visualstudio/msbuild/msbuild-targets) programu MSBuild i skojarzonych [zadań](/visualstudio/msbuild/msbuild-tasks) , które są odpowiedzialne za kompilowanie, pakowanie i publikowanie kodu. Projekt, który odwołuje się do zestawu SDK projektu, jest czasami określany jako *projekt w stylu zestawu SDK*.
 
 ## <a name="available-sdks"></a>Dostępne zestawy SDK
 
-Dostępne są następujące zestawy SDK dla platformy .NET Core:
+Dostępne są następujące zestawy SDK:
 
-| ID | Opis | Repozytorium|
+| ID (Identyfikator) | Opis | Repozytorium|
 | - | - | - |
-| `Microsoft.NET.Sdk` | Zestaw .NET Core SDK | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Web` | [Zestaw SDK sieci Web](/aspnet/core/razor-pages/web-sdk) platformy .NET Core | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Razor` | [Zestaw SDK](/aspnet/core/razor-pages/sdk) programu .NET Core Razor |
-| `Microsoft.NET.Sdk.Worker` | Zestaw SDK usługi procesu roboczego platformy .NET Core |
-| `Microsoft.NET.Sdk.WindowsDesktop` | Podstawowe WinForms i zestaw WPF SDK platformy .NET |
+| `Microsoft.NET.Sdk` | Zestaw SDK platformy .NET | <https://github.com/dotnet/sdk> |
+| `Microsoft.NET.Sdk.Web` | [Zestaw SDK sieci Web](/aspnet/core/razor-pages/web-sdk) platformy .NET | <https://github.com/dotnet/sdk> |
+| `Microsoft.NET.Sdk.Razor` | [Zestaw SDK Razor](/aspnet/core/razor-pages/sdk) dla platformy .NET |
+| `Microsoft.NET.Sdk.Worker` | Zestaw SDK usługi programu .NET Worker |
+| `Microsoft.NET.Sdk.WindowsDesktop` | Zestawy kontrolne i zestaw SDK WPF\* | <https://github.com/dotnet/winforms> i <https://github.com/dotnet/wpf> |
 
-Zestaw .NET Core SDK jest podstawowym zestawem SDK dla platformy .NET Core. Inne zestawy SDK odwołują się do zestaw .NET Core SDK i projekty, które są skojarzone z innymi zestawami SDK, mają dostępne wszystkie właściwości zestaw .NET Core SDK. Zestaw SDK sieci Web, na przykład, zależy od zestaw .NET Core SDK i zestawu Razor SDK.
+Zestaw SDK platformy .NET jest podstawowym zestawem SDK dla platformy .NET. Inne zestawy SDK odwołują się do zestawu .NET SDK i projekty, które są skojarzone z innymi zestawami SDK, mają wszystkie dostępne dla nich właściwości. Zestaw SDK sieci Web, na przykład, zależy od zestawu .NET SDK i zestawu Razor SDK.
 
 Możesz również utworzyć własny zestaw SDK, który może być dystrybuowany za pośrednictwem programu NuGet.
 
+\* Począwszy od platformy .NET 5,0, projekty Windows Forms i Windows Presentation Foundation (WPF) powinny określać zestaw .NET SDK ( `Microsoft.NET.Sdk` ), a nie `Microsoft.NET.Sdk.WindowsDesktop` . W przypadku tych projektów ustawienie `TargetFramework` dla opcji `net5.0-windows` i `UseWPF` lub `UseWindowsForms` na `true` spowoduje automatyczne zaimportowanie zestawu Windows Desktop SDK. Jeśli projekt jest przeznaczony dla programu .NET 5,0 lub nowszego i określa `Microsoft.NET.Sdk.WindowsDesktop` zestaw SDK, uzyskasz NETSDK1137 z ostrzeżeniem dotyczącym kompilacji.
+
 ## <a name="project-files"></a>Pliki projektu
 
-Projekty .NET Core są oparte na formacie programu [MSBuild](/visualstudio/msbuild/msbuild) . Pliki projektu, które mają rozszerzenia, takie jak *. csproj* dla projektów C# i *. fsproj* dla projektów F #, są w formacie XML. Głównym elementem pliku projektu MSBuild jest element [projektu](/visualstudio/msbuild/project-element-msbuild) . `Project`Element ma opcjonalny `Sdk` atrybut, który określa zestaw SDK (i wersję) do użycia. Aby użyć narzędzi .NET Core i skompilować swój kod, należy ustawić `Sdk` atrybut na jeden z identyfikatorów w tabeli [dostępnych zestawów SDK](#available-sdks) .
+Projekty platformy .NET są oparte na formacie programu [MSBuild](/visualstudio/msbuild/msbuild) . Pliki projektu, które mają rozszerzenia, takie jak *. csproj* dla projektów C# i *. fsproj* dla projektów F #, są w formacie XML. Głównym elementem pliku projektu MSBuild jest element [projektu](/visualstudio/msbuild/project-element-msbuild) . `Project`Element ma opcjonalny `Sdk` atrybut, który określa zestaw SDK (i wersję) do użycia. Aby użyć narzędzi .NET i skompilować swój kod, należy ustawić `Sdk` atrybut na jeden z identyfikatorów w tabeli [dostępnych zestawów SDK](#available-sdks) .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -58,7 +60,7 @@ Innym sposobem określenia zestawu SDK jest element najwyższego poziomu [zestaw
 </Project>
 ```
 
-Odwołujące się do zestawu SDK w jednym z tych sposobów znacznie upraszczają pliki projektu dla platformy .NET Core. Podczas oceniania projektu, MSBuild dodaje niejawne Importy w `Sdk.props` górnej części pliku projektu i `Sdk.targets` w dolnej części.
+Odwołanie do zestawu SDK w jednym z tych sposobów znacznie upraszcza pliki projektu dla platformy .NET. Podczas oceniania projektu, MSBuild dodaje niejawne Importy w `Sdk.props` górnej części pliku projektu i `Sdk.targets` w dolnej części.
 
 ```xml
 <Project>
@@ -85,7 +87,7 @@ Jeśli projekt ma wiele platform docelowych, należy skoncentrować wyniki polec
 
 Wartość domyślna to include i Exclude dla elementów kompilowania, zasobów osadzonych i `None` elementów zdefiniowanych w zestawie SDK. W przeciwieństwie do projektów .NET Framework nie należących do zestawu SDK, nie trzeba określać tych elementów w pliku projektu, ponieważ ustawienia domyślne obejmują najczęściej spotykane przypadki użycia. Sprawia to, że plik projektu jest mniejszy i łatwiejszy do zrozumienia i edycji, w razie potrzeby.
 
-W poniższej tabeli pokazano, które elementy i które [elementy globalne](https://en.wikipedia.org/wiki/Glob_(programming)) są uwzględnione i wykluczone w zestaw .NET Core SDK:
+W poniższej tabeli pokazano, które elementy i które [elementy globalne](https://en.wikipedia.org/wiki/Glob_(programming)) są uwzględnione i wykluczone w zestawie SDK platformy .NET:
 
 | Element           | Uwzględnij globalizowania                              | Wyklucz globalizowania                                                  | Usuń globalizowania              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
@@ -132,11 +134,11 @@ Aby rozwiązać te błędy, wykonaj jedną z następujących czynności:
 
 ## <a name="customize-the-build"></a>Dostosuj kompilację
 
-Istnieją różne sposoby [dostosowywania kompilacji](/visualstudio/msbuild/customize-your-build). Możesz chcieć przesłonić Właściwość przez przekazanie jej jako argumentu do polecenia [MSBuild](/visualstudio/msbuild/msbuild-command-line-reference) lub [dotnet](../tools/index.md) . Możesz również dodać właściwość do pliku projektu lub do pliku *Directory. Build. props* . Aby uzyskać listę przydatnych właściwości projektów .NET Core, zobacz [Dokumentacja programu MSBuild dla projektów zestaw .NET Core SDK](msbuild-props.md).
+Istnieją różne sposoby [dostosowywania kompilacji](/visualstudio/msbuild/customize-your-build). Możesz chcieć przesłonić Właściwość przez przekazanie jej jako argumentu do polecenia [MSBuild](/visualstudio/msbuild/msbuild-command-line-reference) lub [dotnet](../tools/index.md) . Możesz również dodać właściwość do pliku projektu lub do pliku *Directory. Build. props* . Aby uzyskać listę przydatnych właściwości projektów .NET, zobacz [Dokumentacja programu MSBuild dla projektów zestawu SDK platformy .NET](msbuild-props.md).
 
 ### <a name="custom-targets"></a>Niestandardowe elementy docelowe
 
-Projekty .NET Core mogą spakować niestandardowe cele programu MSBuild i właściwości do użycia przez projekty korzystające z pakietu. Użyj tego typu rozszerzalności, gdy chcesz:
+Projekty platformy .NET mogą spakować niestandardowe cele programu MSBuild i właściwości do użycia przez projekty korzystające z pakietu. Użyj tego typu rozszerzalności, gdy chcesz:
 
 - Rozwiń proces kompilacji.
 - Dostęp do artefaktów procesu kompilacji, takich jak wygenerowane pliki.

@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: f309f5fb2e705d220b8b0b743ec2f68901ee8f53
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 6a0227b408b894fe450c2a6bb6017d9059d229c0
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91178401"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247621"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -48,7 +48,6 @@ Definicja rekordu tworzy `Person` Typ, który zawiera dwie właściwości ReadOn
 - Przesłoń dla <xref:System.Object.GetHashCode>
 - Kopiowanie i klonowanie elementów członkowskich
 - `PrintMembers` i <xref:System.Object.ToString>
-- Metoda `Deconstruct`
 
 Rekordy obsługują dziedziczenie. Można zadeklarować nowy rekord pochodzący z `Person` następujących metod:
 
@@ -64,7 +63,6 @@ Kompilator syntezuje różne wersje powyższych metod. Sygnatury metod są zale�
 - Rekordy mają wygenerowaną spójną reprezentację ciągu.
 - Rekordy obsługują konstrukcję kopiowania. Poprawna konstrukcja kopii musi zawierać hierarchie dziedziczenia i właściwości dodawane przez deweloperów.
 - Rekordy można kopiować z modyfikacją. Te operacje kopiowania i modyfikowania obsługują mutację nieniszczącą.
-- Wszystkie rekordy obsługują dekonstrukcja.
 
 Oprócz znanych `Equals` przeciążeń, i kompilator umożliwia wypróbowanie `operator ==` `operator !=` nowej `EqualityContract` właściwości. Właściwość zwraca `Type` obiekt, który jest zgodny z typem rekordu. Jeśli typem podstawowym jest `object` , właściwość jest `virtual` . Jeśli typ podstawowy jest innym typem rekordu, właściwość jest `override` . Jeśli typem rekordu jest `sealed` , właściwość jest `sealed` . W syntezie są `GetHashCode` stosowane `GetHashCode` wszystkie właściwości i pola zadeklarowane w typie podstawowym oraz typ rekordu. Te metody, które zostały opisane w tej metodzie, wymuszają równość opartych na wartościach w hierarchii dziedziczenia Oznacza to, że `Student` nigdy nie będzie traktowane jako równe a `Person` o tej samej nazwie. Typy dwóch rekordów muszą być zgodne oraz wszystkie właściwości, które są współużytkowane przez typy rekordów równe.
 
@@ -226,7 +224,7 @@ Można zwrócić wystąpienie utworzone przez konstruktora domyślnego przy uży
 
 Podobna funkcja ulepsza rozpoznawanie typu docelowego [wyrażeń warunkowych](../language-reference/operators/conditional-operator.md). W przypadku tej zmiany dwa wyrażenia nie muszą mieć jawnej konwersji z jednego do drugiego, ale mogą jednocześnie mieć niejawne konwersje na typ docelowy. Ta zmiana jest niezauważalna. Informacje o tym, że niektóre wyrażenia warunkowe, które wcześniej wymagały rzutowania lub nie spowodują skompilowania, już teraz działają.
 
-Począwszy od języka C# 9,0, można dodać `static` modyfikator do wyrażeń lambda lub metod anonimowych. Statyczne wyrażenia lambda są analogiczne do `static` funkcji lokalnych: statyczna funkcja lambda lub anonimowa nie może przechwycić lokalnych zmiennych lub stanu wystąpienia. `static`Modyfikator zapobiega przypadkowemu przechwyceniu innych zmiennych.
+Począwszy od języka C# 9,0, można dodać `static` modyfikator do [wyrażeń lambda](../language-reference/operators/lambda-expressions.md) lub [metod anonimowych](../language-reference/operators/delegate-operator.md). Statyczne wyrażenia lambda są analogiczne do `static` funkcji lokalnych: statyczna metoda lambda lub anonimowa nie może przechwycić lokalnych zmiennych lub stanu wystąpienia. `static`Modyfikator zapobiega przypadkowemu przechwyceniu innych zmiennych.
 
 Typy zwracane przez współwarianty zapewniają elastyczność dla zwracanych typów funkcji zastąpionych. Zastąpiona funkcja wirtualna może zwrócić typ pochodzący od typu zwracanego zadeklarowanego w metodzie klasy bazowej. Może to być przydatne w przypadku rekordów i dla innych typów, które obsługują wirtualne klony lub metody fabryki.
 

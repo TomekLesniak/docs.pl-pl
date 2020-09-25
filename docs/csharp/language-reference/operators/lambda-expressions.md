@@ -1,7 +1,7 @@
 ---
 title: Wyrażenia lambda — odwołanie w C#
 description: Informacje o wyrażeniach lambda. Istnieją wyrażenia lambda, które mają wyrażenie jako treść, lub instrukcji lambda, które mają blok instrukcji jako treść.
-ms.date: 09/22/2020
+ms.date: 09/25/2020
 helpviewer_keywords:
 - lambda expressions [C#]
 - outer variables [C#]
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: afabca0b4ba4d5f7c6f4a7ba8aa97301456b0941
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: a3a753ccea45193c57f31453d7318c14f4898864
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90871714"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247712"
 ---
 # <a name="lambda-expressions-c-reference"></a>Wyrażenia lambda (odwołanie w C#)
 
@@ -68,7 +68,7 @@ Instrukcja lambda przypomina wyrażenie lambda, z tą różnicą, że jego instr
 
 Treść lambdy instrukcji może składać się z dowolnej liczby instrukcji, jednak w praktyce jest ich zwykle nie więcej niż dwie lub trzy.
 
-:::code interactive="try-dotnet" source="snippets/lambda-expressions/ExpressionAndStatementLambdas.cs" id="SnippetStatementLambda":::
+:::code language="csharp" interactive="try-dotnet-method" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetStatementLambda":::
 
 Instrukcji lambda nie można używać do tworzenia drzew wyrażeń.
 
@@ -76,25 +76,25 @@ Instrukcji lambda nie można używać do tworzenia drzew wyrażeń.
 
 Parametry wejściowe wyrażenia lambda są umieszczane w nawiasach. Określanie braku parametrów wejściowych za pomocą pustych nawiasów:  
 
-[!code-csharp[zero parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ZeroParameters)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetZeroParameters":::
 
 Jeśli wyrażenie lambda ma tylko jeden parametr wejściowy, nawiasy są opcjonalne:
 
-[!code-csharp[one parameter](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#OneParameter)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetOneParameter":::
 
 Dwa lub więcej parametrów wejściowych są rozdzielone przecinkami:
 
-[!code-csharp[two parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#TwoParameters)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetTwoParameters":::
 
 Czasami kompilator nie może wywnioskować typów parametrów wejściowych. Możesz określić typy jawnie, jak pokazano w następującym przykładzie:
 
-[!code-csharp[explicitly typed parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ExplicitlyTypedParameters)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetExplicitlyTypedParameters":::
 
 Typy parametrów wejściowych muszą być jawne lub niejawne; w przeciwnym razie wystąpi błąd kompilatora [CS0748](../../misc/cs0748.md) .
 
 Począwszy od języka C# 9,0, można użyć [odrzucania](../../discards.md) , aby określić dwa lub więcej parametrów wejściowych wyrażenia lambda, które nie są używane w wyrażeniu:
 
-:::code language="csharp" source="snippets/lambda-expressions/ExpressionAndStatementLambdas.cs" id="SnippetDiscards":::
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetDiscards":::
 
 Parametry lambda Discard mogą być przydatne w przypadku używania wyrażenia lambda do [zapewnienia obsługi zdarzeń](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
@@ -231,11 +231,20 @@ Do zakresu zmiennych w wyrażeniach lambda są stosowane następujące reguły:
 
 - Wyrażenie lambda nie może zawierać instrukcji [goto](../keywords/goto.md), [Break](../keywords/break.md)ani [Continue](../keywords/continue.md) , jeśli element docelowy instrukcji skoku znajduje się poza blokiem wyrażenia lambda. Występuje również błąd instrukcji skoku poza blokiem wyrażenia lambda, jeśli obiekt docelowy znajduje się wewnątrz bloku.
 
+Począwszy od języka C# 9,0, można zastosować `static` modyfikator do wyrażenia lambda, aby zapobiec przypadkowemu przechwyceniu zmiennych lokalnych lub stanu wystąpienia przez wyrażenie lambda:
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetStatic":::
+
+Statyczny element lambda nie może przechwycić lokalnych zmiennych lub stanu wystąpienia z otaczających zakresów, ale może odwoływać się do statycznych elementów członkowskich i definicji stałych.
+
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
 Aby uzyskać więcej informacji, zobacz sekcję [wyrażenia funkcji anonimowej](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-Aby uzyskać więcej informacji na temat odrzucania lambda parametrów, zobacz [uwagi dotyczące propozycji funkcji](~/_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md)
+Aby uzyskać więcej informacji na temat funkcji dodanych w języku C# 9,0, zobacz następujące uwagi dotyczące propozycji funkcji:
+
+- [Parametry odrzucania wyrażenia lambda](~/_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md)
+- [Statyczne funkcje anonimowe](~/_csharplang/proposals/csharp-9.0/static-anonymous-functions.md)
 
 ## <a name="see-also"></a>Zobacz też
 
