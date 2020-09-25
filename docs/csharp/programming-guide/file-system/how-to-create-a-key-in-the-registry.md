@@ -7,14 +7,15 @@ helpviewer_keywords:
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: 6db076bc22e098c285b74a8c10e8b5f456c2c55e
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: c51fa61aa4c501921d5c7ace99a8c5aaf7b29f58
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299984"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203920"
 ---
 # <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>Jak utworzyć klucz w rejestrze (Przewodnik programowania w języku C#)
+
 Ten przykład dodaje parę wartości "name" i "Isabella" do rejestru bieżącego użytkownika w kluczu "names" (nazwy).  
   
 ## <a name="example"></a>Przykład  
@@ -35,6 +36,7 @@ key.Close();
 - Zastąp `Name` parametr nazwą wartości, która istnieje bezpośrednio pod węzłem nazwy.  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  Sprawdź strukturę rejestru, aby znaleźć odpowiednią lokalizację klucza. Na przykład możesz chcieć otworzyć klucz oprogramowania bieżącego użytkownika i utworzyć klucz z nazwą swojej firmy. Następnie Dodaj wartości rejestru do klucza firmy.  
   
  Następujące warunki mogą spowodować wyjątek:  
@@ -50,6 +52,7 @@ key.Close();
 - Klucz rejestru jest tylko do odczytu.  
   
 ## <a name="net-security"></a>Zabezpieczenia platformy .NET  
+
  Bardziej bezpieczne jest zapisanie danych do folderu użytkownika — `Microsoft.Win32.Registry.CurrentUser` a nie na komputerze lokalnym — `Microsoft.Win32.Registry.LocalMachine` .  
   
  Podczas tworzenia wartości rejestru należy zdecydować, co należy zrobić, jeśli ta wartość już istnieje. Inny proces, prawdopodobnie złośliwy, mógł już utworzyć wartość i uzyskać do niej dostęp. Po umieszczeniu danych w wartości rejestru, dane są dostępne dla drugiego procesu. Aby temu zapobiec, użyj.`Overload:Microsoft.Win32.RegistryKey.GetValue` Method. Zwraca wartość null, jeśli klucz jeszcze nie istnieje.  

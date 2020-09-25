@@ -2,14 +2,15 @@
 title: <msmqTransport>
 ms.date: 03/30/2017
 ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
-ms.openlocfilehash: fae7c9fbc82dafc0f6be58f5404397d751033b45
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6117a2d4323dce8c2772da46096164639b27032a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738851"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204661"
 ---
 # \<msmqTransport>
+
 Powoduje, że kanał przesyła komunikaty w ramach transportu usługi MSMQ, gdy jest on uwzględniony w niestandardowym powiązaniu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -46,6 +47,7 @@ Powoduje, że kanał przesyła komunikaty w ramach transportu usługi MSMQ, gdy 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -63,7 +65,7 @@ Powoduje, że kanał przesyła komunikaty w ramach transportu usługi MSMQ, gdy 
 |maxReceivedMessageSize|Dodatnia liczba całkowita, która określa maksymalny rozmiar wiadomości w bajtach, włącznie z nagłówkami. Nadawca komunikatu otrzymuje błąd protokołu SOAP, gdy komunikat jest zbyt duży dla odbiornika. Odbiorca odrzuca komunikat i tworzy wpis zdarzenia w dzienniku śledzenia. Wartość domyślna to 65536.|  
 |maxRetryCycles|Liczba całkowita określająca maksymalną liczbę ponownych prób dostarczenia komunikatów do aplikacji odbiorczej. Wartość domyślna to <xref:System.Int32.MaxValue>.<br /><br /> Pojedynczy cykl ponowień próbuje dostarczyć komunikat do aplikacji przez określoną liczbę razy. Liczba podjętych prób jest ustawiana przez `maxImmediateRetries` atrybut. Jeśli aplikacja nie będzie mogła użyć komunikatu po wyczerpaniu prób dostarczenia, komunikat jest wysyłany do kolejki ponownych prób. Kolejne cykle ponowień obejmują komunikat zwracany z kolejki ponownych prób do kolejki aplikacji, aby ponowić próbę dostarczenia do aplikacji po opóźnieniu określonym przez `retryCycleDelay` atrybut. Ten `maxRetryCycles` atrybut określa liczbę ponownych prób dostarczenia wiadomości przez aplikację.|  
 |queueTransferProtocol|Określa transport kanałów komunikacji umieszczonych w kolejce, który jest wykorzystywany przez to powiązanie. Prawidłowe wartości to<br /><br /> -Native: Użyj natywnego protokołu MSMQ.<br />-SRMP: Użyj protokołu SOAP Messaging Protocol (SRMP).<br />-SrmpSecure: Użyj transportu protokołu niezawodnej obsługi komunikatów SOAP Secure (SRMP).<br /><br /> Ten atrybut jest typu <xref:System.ServiceModel.QueueTransferProtocol> .<br /><br /> Ponieważ usługa MSMQ nie obsługuje adresów Active Directory podczas korzystania z protokołu niezawodnych komunikatów protokołu SOAP, nie należy ustawiać tego atrybutu na wartość SRMP ani SRMP, gdy `useActiveDirectory` jest ustawiony na `true` .|  
-|rejectAfterLastRetry|Wartość logiczna określająca, która akcja ma zostać podjęta dla komunikatu, którego dostarczenie nie powiodło się po osiągnięciu maksymalnej liczby ponownych prób.<br /><br /> `true`oznacza, że zwroty negatywne są zwracane do nadawcy, a komunikat zostanie porzucony. `false`oznacza, że wiadomość jest wysyłana do kolejki skażonych komunikatów. Wartość domyślna to `false`.<br /><br /> Jeśli wartość to `false` , aplikacja otrzymująca może odczytać trującą kolejkę komunikatów w celu przetworzenia skażonych komunikatów (czyli komunikatów, których dostarczenie nie powiodło się).<br /><br /> Usługa MSMQ 3,0 nie obsługuje zwracania negatywnego potwierdzenia do nadawcy, więc ten atrybut zostanie zignorowany w usłudze MSMQ 3,0.|  
+|rejectAfterLastRetry|Wartość logiczna określająca, która akcja ma zostać podjęta dla komunikatu, którego dostarczenie nie powiodło się po osiągnięciu maksymalnej liczby ponownych prób.<br /><br /> `true` oznacza, że zwroty negatywne są zwracane do nadawcy, a komunikat zostanie porzucony. `false` oznacza, że wiadomość jest wysyłana do kolejki skażonych komunikatów. Wartość domyślna to `false`.<br /><br /> Jeśli wartość to `false` , aplikacja otrzymująca może odczytać trującą kolejkę komunikatów w celu przetworzenia skażonych komunikatów (czyli komunikatów, których dostarczenie nie powiodło się).<br /><br /> Usługa MSMQ 3,0 nie obsługuje zwracania negatywnego potwierdzenia do nadawcy, więc ten atrybut zostanie zignorowany w usłudze MSMQ 3,0.|  
 |retryCycleDelay|A <xref:System.TimeSpan> Określa opóźnienie czasu między kolejnymi próbami dostarczenia komunikatu, którego nie można było dostarczyć natychmiast. Wartość domyślna to 00:10:00.<br /><br /> Pojedynczy cykl ponowień próbuje dostarczyć komunikat do aplikacji odbiorczej określoną liczbę razy. Liczba podjętych prób jest określona przez `maxImmediateRetries` atrybut. Jeśli aplikacja nie wykorzysta komunikatu po określonej liczbie natychmiastowych ponownych prób, komunikat zostanie wysłany do kolejki ponownych prób. Kolejne cykle ponowień obejmują komunikat zwracany z kolejki ponownych prób do kolejki aplikacji, aby ponowić próbę dostarczenia do aplikacji po opóźnieniu określonym przez `retryCycleDelay` atrybut. Liczba cykli ponowień jest określona przez `maxRetryCycles` atrybut.|  
 |timeToLive|A <xref:System.TimeSpan> , która określa, jak długo komunikaty są prawidłowe i są umieszczane w kolejce wiadomości utraconych. Wartość domyślna to 1,00:00:00, co oznacza 1 dzień.<br /><br /> Ten atrybut jest ustawiony w celu zapewnienia, że komunikaty zależne od czasu nie stają się nieodświeżone przed przetworzeniem przez aplikacje do odebrania. Wiadomość w kolejce, która nie jest używana przez aplikację otrzymującą w określonym przedziale czasu, jest uznawana za wygasłą. Wygasłe komunikaty są wysyłane do kolejki specjalnej zwanej kolejką utraconych wiadomości. Lokalizacja kolejki utraconych wiadomości jest ustawiana z `customDeadLetterQueue` atrybutem lub z odpowiednim ustawieniem domyślnym w oparciu o gwarancje.|  
 |UseActiveDirectory|Wartość logiczna określająca, czy adresy kolejek mają być konwertowane przy użyciu Active Directory.<br /><br /> Adresy kolejki MSMQ mogą składać się z nazw ścieżek lub bezpośrednich nazw formatu. W przypadku bezpośredniej nazwy formatu usługa MSMQ rozpoznaje nazwę komputera przy użyciu systemu DNS, NetBIOS lub IP. Przy użyciu nazwy ścieżki usługa MSMQ rozpoznaje nazwę komputera przy użyciu Active Directory. Domyślnie usługa Windows Communication Framework (WCF) w kolejce jest konwertowana identyfikator URI kolejki komunikatów na nazwę formatu bezpośredniego. Ustawienie tego atrybutu na `true` , aplikacja może określić, że transport w kolejce powinien rozpoznać nazwę komputera przy użyciu Active Directory, a nie DNS, NetBIOS lub IP.|  
@@ -83,11 +85,12 @@ Powoduje, że kanał przesyła komunikaty w ramach transportu usługi MSMQ, gdy 
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `msmqTransport`Element umożliwia użytkownikowi ustawianie właściwości kanału komunikacyjnego znajdującego się w kolejce. Kanał komunikacji umieszczonych w kolejce używa usługi kolejkowania komunikatów do transportu.  
   
  Ten element powiązania jest domyślnym elementem powiązania używanym przez standardowe powiązanie usługi kolejkowania komunikatów ( `netMsmqBinding` ).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.MsmqTransportElement>
 - <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>

@@ -2,14 +2,15 @@
 title: <netHttpsBinding>
 ms.date: 03/30/2017
 ms.assetid: ff122116-6042-4792-9f21-275b4f97a105
-ms.openlocfilehash: d13800ea5d8fe23909fd1af1ac790e28633650ef
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f6eca792f9bae6712a327fbcb5bdf47be9699062
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555474"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204596"
 ---
 # \<netHttpsBinding>
+
 Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foundation (WCF) może skonfigurować i uwidocznić punkty końcowe, które mogą komunikować się za pośrednictwem protokołu HTTPS. W przypadku użycia z umową dupleksową będą używane gniazda sieci Web, w przeciwnym razie będą używane połączenia HTTPS.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -54,9 +55,11 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
 ```  
   
 ## <a name="type"></a>Typ  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -95,11 +98,13 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Protokół Httpsbinding używa protokołu HTTPS jako transportu do wysyłania wiadomości. W przypadku użycia z umową dupleksową będą używane gniazda sieci Web.  W przypadku użycia z kontraktem typu żądanie-odpowiedź element Httpsbinding będzie zachowywać się jak BasicHttpsBinding z koderem binarnym.  
   
  Zabezpieczenia są domyślnie wyłączone, ale można je dodać, ustawiając atrybut mode [\<security>](security-of-basichttpbinding.md) elementu podrzędnego na wartość inną niż `None` . Domyślnie używa kodowania tekstu "text" i kodowania tekstu UTF-8.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje użycie programu <xref:System.ServiceModel.NetHttpBinding> , który zapewnia komunikację https i maksymalną współdziałanie z usługami sieci Web pierwszej i drugiej generacji. Powiązanie jest określone w plikach konfiguracji klienta i usługi. Typ powiązania jest określany przy użyciu `binding` atrybutu `<endpoint>` elementu. Jeśli chcesz skonfigurować powiązanie podstawowe i zmienić niektóre z jego ustawień, musisz zdefiniować konfigurację powiązania. Punkt końcowy musi odwoływać się do konfiguracji powiązania przez nazwę przy użyciu `bindingConfiguration` atrybutu `<endpoint>` elementu, jak pokazano w poniższym kodzie konfiguracji usługi.  
   
 ```xml  
@@ -137,6 +142,7 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Począwszy od .NET Framework 4, powiązania i zachowania nie muszą mieć nazwy. Funkcję z poprzedniego przykładu można osiągnąć, usuwając bindingConfiguration z adresu punktu końcowego i nazwę z powiązania.  
   
 ```xml  
@@ -173,7 +179,7 @@ Reprezentuje powiązanie, za pomocą którego usługa Windows Communication Foun
   
  Aby uzyskać więcej informacji na temat konfiguracji domyślnej i powiązań pustego i zachowań, zobacz [Uproszczona konfiguracja](../../../wcf/simplified-configuration.md) i [Uproszczona konfiguracja dla usług WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>

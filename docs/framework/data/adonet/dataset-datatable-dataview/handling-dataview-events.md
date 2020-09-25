@@ -5,21 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5675663-fc91-4e0d-87a9-481b25b64c0f
-ms.openlocfilehash: b625fad846c4c6cf008843bff1f6b0eabe0e1de4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2a67cb040c5d438d17ad91d41e97f24f3166262b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151107"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204544"
 ---
 # <a name="handling-dataview-events"></a>Obsługa zdarzeń elementu DataView
-Można użyć <xref:System.Data.DataView.ListChanged> zdarzenia, <xref:System.Data.DataView> aby ustalić, czy widok został zaktualizowany. Aktualizacje, które podnoszą zdarzenie obejmują dodawanie, usuwanie lub modyfikowanie wiersza w tabeli źródłowej; dodawanie lub usuwanie kolumny do schematu tabeli źródłowej; oraz zmiany relacji rodzica lub dziecka. **Zdarzenie ListChanged** powiadamia również, jeśli lista przeglądanych wierszy uległa znacznej zmianie ze względu na zastosowanie nowej kolejności sortowania lub filtru.  
+
+<xref:System.Data.DataView.ListChanged>Aby określić, czy widok został zaktualizowany, można użyć zdarzenia <xref:System.Data.DataView> . Aktualizacje, które powodują wygenerowanie zdarzenia, obejmują dodawanie, usuwanie lub modyfikowanie wiersza w tabeli źródłowej; Dodawanie lub usuwanie kolumny do schematu tabeli bazowej; i zmiana relacji nadrzędnej lub podrzędnej. Zdarzenie **ListChanged** powiadamia również o tym, czy lista wyświetlanych wierszy została znacząco zmieniona z powodu zastosowania nowej kolejności sortowania lub filtru.  
   
- **Zdarzenie ListChanged** implementuje **listChangedEventHandler** delegata obszaru <xref:System.ComponentModel> nazw i <xref:System.ComponentModel.ListChangedEventArgs> przyjmuje jako dane wejściowe obiektu. Można określić, jaki typ zmiany <xref:System.ComponentModel.ListChangedType> wystąpił przy użyciu wartości wyliczenia we właściwości **ListChangedType** obiektu **ListChangedEventArgs.** W przypadku zmian, które obejmują dodawanie, usuwanie lub przenoszenie wierszy, nowy indeks dodanego lub przeniesionego wiersza i poprzedniego indeksu usuniętego wiersza można uzyskać za pomocą właściwości **NewIndex** obiektu **ListChangedEventArgs.** W przypadku przeniesiony wiersz, poprzedni indeks przeniesiony wiersz można uzyskać za pomocą **OldIndex** właściwości **ListChangedEventArgs** obiektu.  
+ Zdarzenie **ListChanged** implementuje delegata **ListChangedEventHandler** <xref:System.ComponentModel> przestrzeni nazw i przyjmuje jako obiekt wejściowy <xref:System.ComponentModel.ListChangedEventArgs> . Można określić, jakiego typu zmiany wystąpiły przy użyciu <xref:System.ComponentModel.ListChangedType> wartości wyliczenia we właściwości **ListChangedType** obiektu **ListChangedEventArgs** . W przypadku zmian, które obejmują dodawanie, usuwanie lub przenoszenie wierszy, nowy indeks dodanego lub przeniesionego wiersza i poprzedni indeks usuniętego wiersza są dostępne za pomocą właściwości **NewIndex** obiektu **ListChangedEventArgs** . W przypadku przenoszonego wiersza poprzedni indeks przenoszonego wiersza można uzyskać za pomocą właściwości **OldIndex** obiektu **ListChangedEventArgs** .  
   
- **DataViewManager** udostępnia również **ListChanged** zdarzenia, aby powiadomić, jeśli tabela została dodana lub usunięta, lub jeśli wprowadzono zmianę do **relacji** kolekcji podstawowej **DataSet**.  
+ Element **DataViewManager** udostępnia również zdarzenie **ListChanged** w celu powiadomienia użytkownika o dodaniu lub usunięciu tabeli lub wprowadzeniu zmiany do kolekcji **relacji** bazowego **zestawu danych**.  
   
- Poniższy przykład kodu pokazuje, jak dodać program obsługi zdarzeń **ListChanged.**  
+ Poniższy przykład kodu pokazuje, jak dodać program obsługi zdarzeń **ListChanged** .  
   
 ```vb  
 AddHandler custView.ListChanged, _  

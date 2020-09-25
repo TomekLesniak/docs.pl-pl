@@ -2,14 +2,15 @@
 title: Elementy DataView
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: fe6adac35c157b454f5e33d3526196d4f408fd89
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c5692fcfd1863642bcdf87cbd495d793bce0cbe4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546871"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203712"
 ---
 # <a name="dataviews"></a>Elementy DataView
+
 A <xref:System.Data.DataView> umożliwia tworzenie różnych widoków danych przechowywanych w programie <xref:System.Data.DataTable> , które są często używane w aplikacjach do wiązania danych. Za pomocą elementu **DataView**można uwidocznić dane w tabeli z różnymi kolejności sortowania i można filtrować dane według stanu wiersza lub w oparciu o wyrażenie filtru.
 
  **Element DataView** udostępnia dynamiczny widok danych w źródłowej **tabeli DataTable**: zawartość, kolejność i członkostwo odzwierciedlają zmiany w miarę ich występowania. To zachowanie różni się od metody **SELECT** **elementu DataTable**, która zwraca <xref:System.Data.DataRow> tablicę z tabeli na podstawie określonego filtru i/lub porządku sortowania: Ta zawartość odzwierciedla zmiany w tabeli źródłowej, ale jej członkostwo i porządkowanie pozostają statyczne. Dynamiczne możliwości obiektu **DataView** sprawiają, że są idealnym rozwiązaniem dla aplikacji do wiązania danych.
@@ -19,6 +20,7 @@ A <xref:System.Data.DataView> umożliwia tworzenie różnych widoków danych prz
  <xref:System.Data.DataView.DataViewManager%2A>Aby zarządzać ustawieniami widoku dla wszystkich tabel w **zestawie danych**, można użyć elementu. Element **DataViewManager** zapewnia wygodny sposób zarządzania domyślnymi ustawieniami widoku dla każdej tabeli. W przypadku wiązania kontrolki z więcej niż jedną tabelą **zestawu danych**powiązanie z elementem **DataViewManager** jest idealnym wyborem.
 
 ## <a name="in-this-section"></a>W tej sekcji
+
  [Tworzenie elementu DataView](creating-a-dataview.md) Opisuje sposób tworzenia elementu **DataView** dla **elementu DataTable**.
 
  [Sortowanie i filtrowanie danych](sorting-and-filtering-data.md) Opisuje sposób ustawiania właściwości elementu **DataView** do zwracania podzbiorów wierszy danych spełniających kryteria filtrowania lub do zwracania danych w określonej kolejności sortowania.
@@ -36,6 +38,7 @@ A <xref:System.Data.DataView> umożliwia tworzenie różnych widoków danych prz
  [Zarządzanie widokami](managing-dataviews.md) Opisuje, w jaki sposób używać elementu **DataViewManager** do zarządzania ustawieniami **DataView** dla każdej tabeli w **zestawie danych**.
 
 ## <a name="related-sections"></a>Sekcje pokrewne
+
  [ASP.NET aplikacje sieci Web](/previous-versions/655cec97(v=vs.100)) Oferuje przeglądy i szczegółowe procedury krok po kroku dotyczące tworzenia aplikacji ASP.NET, formularzy sieci Web i usług sieci Web.
 
  [Aplikacje systemu Windows](/previous-versions/ms184421(v=vs.100)) Zawiera szczegółowe informacje dotyczące pracy z aplikacjami Windows Forms i konsolą programu.
@@ -46,6 +49,6 @@ A <xref:System.Data.DataView> umożliwia tworzenie różnych widoków danych prz
 
  [ADO.NET](../index.md) Opisuje architekturę i składniki ADO.NET oraz sposób używania ADO.NET do uzyskiwania dostępu do istniejących źródeł danych i zarządzania danymi aplikacji.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie ADO.NET](../ado-net-overview.md)

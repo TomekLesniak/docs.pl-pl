@@ -2,14 +2,15 @@
 title: <namedPipeTransport>
 ms.date: 03/30/2017
 ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
-ms.openlocfilehash: 00631ad88d771ed8f45638f28c84df05917fd3a0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4582066098feaf50b33b083de56bcb8c3e04df0f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736587"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204622"
 ---
 # \<namedPipeTransport>
+
 Definiuje transport, który powoduje, że kanał przesyła komunikaty przy użyciu nazwanych potoków, gdy zostanie uwzględniony w niestandardowym powiązaniu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -40,9 +41,11 @@ Definiuje transport, który powoduje, że kanał przesyła komunikaty przy użyc
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
 W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
 Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -60,7 +63,7 @@ Brak.
 |maxPendingConnections|Pobiera lub ustawia maksymalną liczbę połączeń oczekujących na wysłanie usługi.|  
 |maxReceivedMessageSize|Pobiera i ustawia maksymalny dopuszczalny rozmiar wiadomości (w bajtach), która może zostać odebrana.|  
 |Elementy TransferMode|Pobiera lub ustawia wartość wskazującą, czy komunikaty są buforowane, czy przesyłane strumieniowo przy użyciu transportu zorientowanego na połączenia.|  
-|[\<connectionPoolSettings>z\<namedPipeTransport>](connectionpoolsettings.md)|Określa dodatkowe ustawienia puli połączeń dla powiązania nazwanego potoku.|  
+|[\<connectionPoolSettings> z \<namedPipeTransport>](connectionpoolsettings.md)|Określa dodatkowe ustawienia puli połączeń dla powiązania nazwanego potoku.|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
   
@@ -69,11 +72,12 @@ Brak.
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
 Ten transport używa identyfikatorów URI w postaci "net. pipe://hostname/Path". Inne składniki URI są opcjonalne.  
   
 `namedPipeTransport`Element jest punktem początkowym do tworzenia niestandardowego powiązania, które implementuje protokół transportu nazwanych potoków. Ten transport jest używany w przypadku komunikacji między maszynami Windows Communication Foundation (WCF).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.NamedPipeTransportElement>
 - <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>

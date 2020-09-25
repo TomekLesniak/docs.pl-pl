@@ -2,14 +2,15 @@
 title: <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: 00a8580b-face-47a4-838d-b9fed48e72df
-ms.openlocfilehash: 2364eb9d82fd17bd0b80b01070a0f1d789be3d90
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f1ec6091d72c1d1c6d75c44dd1f98d6d4e10ea12
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556157"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204570"
 ---
 # \<netNamedPipeBinding>
+
 Definiuje powiązanie, które jest bezpieczne, niezawodne i zoptymalizowane pod kątem komunikacji między procesami na komputerze. Domyślnie generuje stos komunikacji środowiska uruchomieniowego za pomocą protokołu WS-ReliableMessaging w celu zapewnienia niezawodności, zabezpieczeń transportu na potrzeby przesyłania komunikatów i nazwanych potoków na potrzeby dostarczania wiadomości i kodowania komunikatów binarnych.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -47,6 +48,7 @@ Definiuje powiązanie, które jest bezpieczne, niezawodne i zoptymalizowane pod 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -81,11 +83,13 @@ Definiuje powiązanie, które jest bezpieczne, niezawodne i zoptymalizowane pod 
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `NetNamedPipeBinding`Generuje stos komunikacji w czasie wykonywania domyślnie, który używa zabezpieczeń transportu, potoków nazwanych do dostarczania komunikatów i kodowania komunikatów binarnych. To powiązanie jest odpowiednim wyborem systemu Windows Communication Foundation (WCF) w przypadku komunikacji na komputerze. Obsługuje ona również transakcje.  
   
  Konfiguracja domyślna dla programu `NetNamedPipeBinding` jest podobna do konfiguracji zapewnianej przez `NetTcpBinding` program, ale jest prostsze, ponieważ implementacja programu WCF jest przeznaczona tylko do użytku na komputerze i w związku z tym jest mniej narażonych funkcji. Najbardziej istotną różnicą jest to, że `securityMode` ustawienie oferuje `None` tylko `Transport` Opcje i. Obsługa zabezpieczeń protokołu SOAP nie jest uwzględnioną opcją. Zachowanie zabezpieczeń można skonfigurować przy użyciu opcjonalnego `securityMode` atrybutu.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje powiązanie netNamedPipeBinding, które zapewnia komunikację między procesami na tym samym komputerze. Nazwane potoki nie działają między maszynami.  
   
  Powiązanie jest określone w plikach konfiguracji klienta i usługi. Typ powiązania jest określony w `binding` atrybucie `<endpoint>` elementu. Jeśli chcesz skonfigurować powiązanie netNamedPipeBinding i zmienić niektóre z jego ustawień, musisz zdefiniować konfigurację powiązania. Punkt końcowy musi odwoływać się do konfiguracji powiązania za pomocą nazwy z `bindingConfiguration` atrybutem. W tym przykładzie Konfiguracja powiązania ma nazwę Binding1.  
@@ -144,7 +148,7 @@ Definiuje powiązanie, które jest bezpieczne, niezawodne i zoptymalizowane pod 
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>
 - <xref:System.ServiceModel.NetNamedPipeBinding>

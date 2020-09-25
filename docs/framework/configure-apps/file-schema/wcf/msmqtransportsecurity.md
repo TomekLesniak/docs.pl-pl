@@ -2,14 +2,15 @@
 title: <msmqTransportSecurity>
 ms.date: 03/30/2017
 ms.assetid: 092e911b-ab1b-4069-a26e-6134c3299e06
-ms.openlocfilehash: 5899c609b3cf52c4a275ba6fb10c5826fcf37f1e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9d28f3f08e9c3984c055567df03f2839709a1522
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153012"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204648"
 ---
 # \<msmqTransportSecurity>
+
 Określa ustawienia zabezpieczeń transportu usługi MSMQ dla niestandardowego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Określa ustawienia zabezpieczeń transportu usługi MSMQ dla niestandardowego p
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,6 +45,7 @@ Określa ustawienia zabezpieczeń transportu usługi MSMQ dla niestandardowego p
 |`msmqSecureHashAlgorithm`|Określa algorytm, który ma być używany podczas obliczania skrótu jako części podpisów. Prawidłowe wartości to:<br /><br /> -MD5<br />-SHA1<br />-SHA256<br />-SHA512<br /><br /> Wartość domyślna to SHA1. Ten atrybut jest typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm> .<br>Ze względu na kolizje problemów z algorytmem MD5 i algorytmem SHA1 firma Microsoft zaleca SHA256ą lub lepszą.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -53,9 +56,10 @@ Określa ustawienia zabezpieczeń transportu usługi MSMQ dla niestandardowego p
 |[\<msmqTransport>](msmqtransport.md)|Określa właściwości komunikacji kolejkowania dla usługi Windows Communication Foundation (WCF), która używa natywnego protokołu MSMQ.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby uzyskać więcej informacji na temat zabezpieczeń transportu, zobacz [Transport Security](../../../wcf/feature-details/transport-security.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity>
 - <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>

@@ -5,14 +5,15 @@ helpviewer_keywords:
 - disableFusionUpdatesFromADManager element
 - <disableFusionUpdatesFromADManager> element
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
-ms.openlocfilehash: 4e7375fddaa98b45766b29d911d555f773edcafa
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c3971379b358ae16fc463df2b8d6288cf8881391
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117444"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91205038"
 ---
 # <a name="disablefusionupdatesfromadmanager-element"></a>\<disableFusionUpdatesFromADManager> Element
+
 Określa, czy domyślne zachowanie, które umożliwia hostowi środowiska uruchomieniowego przesłonięcie ustawień konfiguracji dla domeny aplikacji, jest wyłączone.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,6 +27,7 @@ Określa, czy domyślne zachowanie, które umożliwia hostowi środowiska urucho
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,6 +44,7 @@ Określa, czy domyślne zachowanie, które umożliwia hostowi środowiska urucho
 |1|Wyłącz możliwość przesłonięcia ustawień Fusion. Spowoduje to przywrócenie zachowania wcześniejszych wersji .NET Framework.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -52,6 +55,7 @@ Określa, czy domyślne zachowanie, które umożliwia hostowi środowiska urucho
 |`runtime`|Zawiera informacje dotyczące powiązania zestawu oraz wyrzucania elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Począwszy od .NET Framework 4, domyślnym zachowaniem jest umożliwienie <xref:System.AppDomainManager> obiektowi przesłania ustawień konfiguracji przy użyciu <xref:System.AppDomainSetup.ConfigurationFile%2A> właściwości lub <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metody <xref:System.AppDomainSetup> obiektu, który jest przesyłany do implementacji <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metody w podklasy <xref:System.AppDomainManager> . W przypadku domyślnej domeny aplikacji zmiany ustawień zastępują ustawienia, które zostały określone przez plik konfiguracyjny aplikacji. W przypadku innych domen aplikacji zastępują one ustawienia konfiguracji, które zostały przesłane do <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> metody lub.  
   
  Można przekazać nowe informacje konfiguracyjne lub przekazać wartość null ( `Nothing` w Visual Basic), aby wyeliminować przekazane informacje o konfiguracji.  
@@ -63,6 +67,7 @@ Określa, czy domyślne zachowanie, które umożliwia hostowi środowiska urucho
  Alternatywą wobec korzystania z `<disableFusionUpdatesFromADManager>` elementu jest wyłączenie domyślnego zachowania przez utworzenie ustawienia rejestru lub ustawienie zmiennej środowiskowej. W rejestrze utwórz wartość DWORD o nazwie `COMPLUS_disableFusionUpdatesFromADManager` w obszarze `HKCU\Software\Microsoft\.NETFramework` lub `HKLM\Software\Microsoft\.NETFramework` , a następnie ustaw wartość 1. W wierszu polecenia Ustaw wartość zmiennej środowiskowej `COMPLUS_disableFusionUpdatesFromADManager` na 1.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak wyłączyć możliwość zastąpienia ustawień Fusion przy użyciu `<disableFusionUpdatesFromADManager>` elementu.  
   
 ```xml  
@@ -73,7 +78,7 @@ Określa, czy domyślne zachowanie, które umożliwia hostowi środowiska urucho
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień środowiska uruchomieniowego](index.md)
 - [Schemat pliku konfiguracji](../index.md)

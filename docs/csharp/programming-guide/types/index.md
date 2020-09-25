@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 5a9eb3747a6b4da316bca3f1d450c1ea0f774ada
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: ad14c3367809c16268abedc99596089514986e3f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382051"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91205116"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Przewodnik programowania w języku C#)
 
@@ -64,7 +64,7 @@ Aby uzyskać więcej informacji, zobacz [rzutowanie i konwersje typów](./castin
 
 ## <a name="built-in-types"></a>Typy wbudowane
 
-Język C# zawiera standardowy zestaw wbudowanych typów liczbowych reprezentujących liczby całkowite, wartości zmiennoprzecinkowe, wyrażenia logiczne, znaki tekstowe, wartości dziesiętne i inne typy danych. Istnieją także wbudowane `string` i `object` typy. Są one dostępne do użycia w dowolnym programie w języku C#. Aby zapoznać się z pełną listą typów wbudowanych, zobacz [typy wbudowane](../../language-reference/builtin-types/built-in-types.md).
+Język C# zawiera standardowy zestaw wbudowanych typów do reprezentowania liczb całkowitych, wartości zmiennoprzecinkowych, wyrażeń logicznych, znaków tekstowych, wartości dziesiętnych i innych typów danych. Istnieją także wbudowane `string` i `object` typy. Są one dostępne do użycia w dowolnym programie w języku C#. Aby zapoznać się z pełną listą typów wbudowanych, zobacz [typy wbudowane](../../language-reference/builtin-types/built-in-types.md).
 
 ## <a name="custom-types"></a>Typy niestandardowe
 

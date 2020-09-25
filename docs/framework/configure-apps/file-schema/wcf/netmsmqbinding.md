@@ -2,14 +2,15 @@
 title: <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: a68b44d7-7799-43a3-9e63-f07c782810a6
-ms.openlocfilehash: 4070b9659b6d3936dec38fc6a30cf7cd673691f5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7dca85e4095e581c262611f0120ffb85e2174fee
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204583"
 ---
 # \<netMsmqBinding>
+
 Definiuje powiązanie kolejkowane odpowiednie dla komunikacji między komputerami.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -61,6 +62,7 @@ Definiuje powiązanie kolejkowane odpowiednie dla komunikacji między komputeram
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -102,6 +104,7 @@ Definiuje powiązanie kolejkowane odpowiednie dla komunikacji między komputeram
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `netMsmqBinding`Powiązanie zapewnia obsługę kolejkowania, wykorzystując usługę kolejkowania komunikatów (MSMQ) jako Transport i umożliwia obsługę luźno sprzężonych aplikacji, izolacja niepowodzeń, przeciążania obciążeń i rozłączonych operacji. Dyskusje na temat tych funkcji znajdują się [w temacie Queues in WCF](../../../wcf/feature-details/queues-in-wcf.md).  
   
 ## <a name="example"></a>Przykład  
@@ -138,7 +141,7 @@ Definiuje powiązanie kolejkowane odpowiednie dla komunikacji między komputeram
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.NetMsmqBinding>
 - <xref:System.ServiceModel.Configuration.NetMsmqBindingElement>

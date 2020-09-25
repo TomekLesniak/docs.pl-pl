@@ -2,14 +2,15 @@
 title: <clientCertificate><clientCredentials>elementu
 ms.date: 03/30/2017
 ms.assetid: 3b3fa000-3434-4142-a178-11903bdd2c5d
-ms.openlocfilehash: fb95ef3168378227e41e55c6fd5e5b772cb7ad0f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 74209c43dcafb1e27bb1d7943ee7832eaea0ef57
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400517"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204947"
 ---
 # <a name="clientcertificate-of-clientcredentials-element"></a>\<clientCertificate>\<clientCredentials>elementu
+
 Definiuje certyfikat X. 509 używany do uwierzytelniania klienta w usłudze.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Definiuje certyfikat X. 509 używany do uwierzytelniania klienta w usłudze.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -42,6 +44,7 @@ Definiuje certyfikat X. 509 używany do uwierzytelniania klienta w usłudze.
 |X509FindType|Określa typ wyszukiwania X. 509, który ma zostać wykonany. Typ zawarty w `findValue` atrybucie musi spełniać wymagania tego atrybutu. Prawidłowe wartości to:<br /><br /> - FindByThumbPrint<br />- FindBySubjectName<br />- FindBySubjectDistinguishedName<br />- FindByIssuerName<br />- FindByIssuerDistinguishedName<br />- FindBySerialNumber<br />- FindByTimeValid<br />- FindByTimeNotYetValid<br />- FindByTemplateName<br />- FindByApplicationPolicy<br />- FindByCertificatePolicy<br />- FindByExtension<br />- FindByKeyUsage<br />- FindBySubjectKeyIdentifier<br /><br /> Wartość domyślna to FindBySubjectDistinguishedName. Ten atrybut jest typu <xref:System.Security.Cryptography.X509Certificates.X509FindType> .|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -51,9 +54,10 @@ Definiuje certyfikat X. 509 używany do uwierzytelniania klienta w usłudze.
 |[\<clientCredentials>](clientcredentials.md)|Określa poświadczenia używane do uwierzytelniania klienta w usłudze.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element konfiguracji określa certyfikat używany do uwierzytelniania klienta przy użyciu tego elementu. Aby uzyskać więcej informacji, zobacz [How to: Określanie wartości poświadczeń klienta](../../../wcf/how-to-specify-client-credential-values.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ClientCertificate%2A>
@@ -62,7 +66,7 @@ Definiuje certyfikat X. 509 używany do uwierzytelniania klienta w usłudze.
 - <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>
 - [Zachowania zabezpieczeń](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Instrukcje: określanie wartości poświadczeń klienta](../../../wcf/how-to-specify-client-credential-values.md)
-- [Zabezpieczanie klientów](../../../wcf/securing-clients.md)
+- [Instrukcje: Określanie wartości poświadczeń klienta](../../../wcf/how-to-specify-client-credential-values.md)
+- [Zabezpieczanie klientów [WCF]](../../../wcf/securing-clients.md)
 - [Praca z certyfikatami](../../../wcf/feature-details/working-with-certificates.md)
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)

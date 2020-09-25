@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d475d356-6abb-4701-8fd1-2906fb93dfba
-ms.openlocfilehash: cf67304f564729172d1b7f3565d52abffeb90049
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74b2de7a9ee62ae42a932c94261cf425d6a94808
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151484"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203738"
 ---
 # <a name="childviews-and-relations"></a>Elementy ChildView i relacje
-Jeśli istnieje relacja między tabelami <xref:System.Data.DataSet>w , <xref:System.Data.DataView> można utworzyć zawierające wiersze z <xref:System.Data.DataRowView.CreateChildView%2A> powiązanej <xref:System.Data.DataRowView> tabeli podrzędnej przy użyciu metody wierszy w tabeli nadrzędnej. Na przykład w poniższym kodzie są wyświetlane **kategorie** i powiązane z nimi **produkty** w kolejności alfabetycznej posortowane według **Nazwy kategorii** i **Nazwy produktu.**  
+
+Jeśli istnieje relacja między tabelami w <xref:System.Data.DataSet> , można utworzyć <xref:System.Data.DataView> zawierające wiersze z powiązanej tabeli podrzędnej przy użyciu <xref:System.Data.DataRowView.CreateChildView%2A> metody <xref:System.Data.DataRowView> dla wierszy w tabeli nadrzędnej. Na przykład poniższy kod wyświetla **Kategorie** i powiązane **produkty** w kolejności alfabetycznej posortowane według **CategoryName** i **ProductName**.  
   
 ```vb  
 Dim catTable As DataTable = catDS.Tables("Categories")  

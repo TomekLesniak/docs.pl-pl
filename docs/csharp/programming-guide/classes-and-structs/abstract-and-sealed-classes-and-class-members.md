@@ -8,19 +8,21 @@ helpviewer_keywords:
 - C# language, abstract classes
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
-ms.openlocfilehash: 391a8ccbb1fbe6626d1cd5a4b6fcfd9ace3506e6
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: ccbc6734d4e9bafe059dd45bfdf82af7c84438a2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474491"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204037"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Klasy abstrakcyjne i zapieczętowane oraz członkowie klas (Przewodnik programowania w języku C#)
+
 [Abstrakcyjne](../../language-reference/keywords/abstract.md) słowo kluczowe umożliwia tworzenie klas i składowych [klas](../../language-reference/keywords/class.md) , które są niekompletne i muszą być zaimplementowane w klasie pochodnej.  
   
  [Zapieczętowane](../../language-reference/keywords/sealed.md) słowo kluczowe pozwala uniknąć dziedziczenia klasy lub niektórych elementów członkowskich klasy, które zostały wcześniej oznaczone jako [wirtualne](../../language-reference/keywords/virtual.md).  
   
 ## <a name="abstract-classes-and-class-members"></a>Klasy abstrakcyjne i składowe klas  
+
  Klasy mogą być deklarowane jako abstrakcyjne poprzez umieszczenie słowa kluczowego `abstract` przed definicją klasy. Na przykład:  
   
  [!code-csharp[csProgGuideInheritance#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#13)]  
@@ -38,6 +40,7 @@ ms.locfileid: "86474491"
  Jeśli `virtual` Metoda jest zadeklarowana `abstract` , jest nadal wirtualna dla każdej klasy dziedziczące z klasy abstrakcyjnej. Klasa dziedziczące metodę abstrakcyjną nie może uzyskać dostępu do oryginalnej implementacji metody — w poprzednim przykładzie w `DoWork` klasie F nie można wywołać `DoWork` klasy D. W ten sposób Klasa abstrakcyjna może wymusić, aby klasy pochodne zapewniały nowe implementacje metod wirtualnych.  
   
 ## <a name="sealed-classes-and-class-members"></a>Klasy zapieczętowane i składowe klas  
+
  Klasy mogą być deklarowane jako [zapieczętowane](../../language-reference/keywords/sealed.md) poprzez umieszczenie słowa kluczowego `sealed` przed definicją klasy. Na przykład:  
   
  [!code-csharp[csProgGuideInheritance#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#16)]  
@@ -48,7 +51,7 @@ ms.locfileid: "86474491"
   
  [!code-csharp[csProgGuideInheritance#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#17)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)

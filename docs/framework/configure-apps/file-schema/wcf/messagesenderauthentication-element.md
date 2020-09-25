@@ -2,14 +2,15 @@
 title: <messageSenderAuthentication>, element
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
-ms.openlocfilehash: 3693b2b4c6b6cbc3705a25967aedc88e36291407
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e7e636571c0dbb1845438c22f7e7509dfc7987f9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547014"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204791"
 ---
 # <a name="messagesenderauthentication-element"></a>\<messageSenderAuthentication>, element
+
 Określa opcje uwierzytelniania dla nadawców wiadomości równorzędnych.  
   
  Aby uzyskać więcej informacji na temat programowania peer-to-peer, zobacz [sieci peer-to-](../../../wcf/feature-details/peer-to-peer-networking.md)peer.  
@@ -33,6 +34,7 @@ Określa opcje uwierzytelniania dla nadawców wiadomości równorzędnych.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -69,6 +71,7 @@ Określa opcje uwierzytelniania dla nadawców wiadomości równorzędnych.
 |Wyliczenie|Jedna z następujących wartości: `LocalMachine` lub `CurrentUser` . Wartość domyślna to `CurrentUser`. Jeśli aplikacja kliencka jest uruchomiona na koncie systemowym, zwykle jest to certyfikat `LocalMachine` . Jeśli aplikacja kliencka jest uruchomiona w ramach konta użytkownika, certyfikat zazwyczaj znajduje się w temacie `CurrentUser` . Wartość domyślna to `CurrentUser`.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -78,9 +81,11 @@ Określa opcje uwierzytelniania dla nadawców wiadomości równorzędnych.
 |[\<peer>](peer-of-clientcredentials-element.md)|Określa poświadczenie używane do uwierzytelniania klienta w usłudze równorzędnej.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element musi być skonfigurowany, jeśli wybrano opcję Uwierzytelnianie wiadomości. W przypadku kanałów wyjściowych każdy komunikat jest podpisywany przy użyciu certyfikatu dostarczonego przez [\<certificate>](certificate-element.md) . Wszystkie komunikaty, przed dostarczeniem do aplikacji, są sprawdzane pod kątem poświadczeń komunikatów przy użyciu modułu walidacji określonego przez `customCertificateValidatorType` atrybut tego elementu. Moduł sprawdzania poprawności może zaakceptować lub odrzucić poświadczenie.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod ustawia tryb walidacji nadawcy wiadomości `PeerOrChainTrust` .  
   
 ```xml  
@@ -101,7 +106,7 @@ Określa opcje uwierzytelniania dla nadawców wiadomości równorzędnych.
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>
 - <xref:System.ServiceModel.Security.PeerCredential.MessageSenderAuthentication%2A>

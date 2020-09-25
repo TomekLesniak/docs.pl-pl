@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-ms.openlocfilehash: ba28a81dd2ea0684ed863821afd3a8f31c0fb064
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bc2b1648ad404ba13920d9f276c299756554b5d4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74140767"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204674"
 ---
 # \<msmqIntegrationBinding>
+
 Definiuje powiązanie, które zapewnia obsługę kolejkowania przez kierowanie komunikatów za pośrednictwem usługi MSMQ.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -49,6 +50,7 @@ Definiuje powiązanie, które zapewnia obsługę kolejkowania przez kierowanie k
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -79,11 +81,11 @@ Definiuje powiązanie, które zapewnia obsługę kolejkowania przez kierowanie k
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|Xml|XML format|  
+|Xml|Format XML|  
 |Binarne|Format binarny|  
 |ActiveX|Format ActiveX|  
 |ByteArray|Serializacja obiektu do tablicy bajtów.|  
-|Strumień|Treść sformatowana jako strumień|  
+|Stream|Treść sformatowana jako strumień|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
   
@@ -98,6 +100,7 @@ Definiuje powiązanie, które zapewnia obsługę kolejkowania przez kierowanie k
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element powiązania może służyć do włączania aplikacji Windows Communication Foundation (WCF) do wysyłania komunikatów do i odbierania komunikatów z istniejących aplikacji MSMQ, które korzystają z natywnych interfejsów API COM, MSMQ lub typów zdefiniowanych w <xref:System.Messaging?displayProperty=nameWithType> przestrzeni nazw, można użyć tego elementu konfiguracji, aby określić sposoby rozwiązania kolejki, gwarancje transferu, czy komunikaty muszą być przechowywane i uwierzytelniane. Aby uzyskać więcej informacji, zobacz [jak: wymienianie komunikatów z punktami końcowymi WCF i aplikacjami usługi kolejkowania komunikatów](../../../wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
   
 ## <a name="example"></a>Przykład  
@@ -132,7 +135,7 @@ Definiuje powiązanie, które zapewnia obsługę kolejkowania przez kierowanie k
 </configuration>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>
@@ -140,5 +143,5 @@ Definiuje powiązanie, które zapewnia obsługę kolejkowania przez kierowanie k
 - [\<binding>](bindings.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [Kolejki programu WCF](../../../wcf/feature-details/queues-in-wcf.md)

@@ -2,14 +2,15 @@
 title: <message> dla <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9ffd8db6-84a8-4b38-a9fe-2cb1a87a1c97
-ms.openlocfilehash: 3396f74f76d790759f4c32de2907607486701b1a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0979bd1c74061bb13a240bb46e1a37cd7ea1129c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738946"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204843"
 ---
 # <a name="message-of-ws2007httpbinding"></a>\<message> dla \<ws2007HttpBinding>
+
 Definiuje ustawienia zabezpieczeń na poziomie wiadomości [\<ws2007HttpBinding>](ws2007httpbinding.md) elementu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,9 +38,11 @@ Definiuje ustawienia zabezpieczeń na poziomie wiadomości [\<ws2007HttpBinding>
 ```  
   
 ## <a name="type"></a>Typ  
+
  <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -83,6 +86,7 @@ Definiuje ustawienia zabezpieczeń na poziomie wiadomości [\<ws2007HttpBinding>
 |`Windows`|Umożliwia wymianę protokołu SOAP w ramach uwierzytelnionego kontekstu `Windows` poświadczenia. Jeśli `negotiateServiceCredential` atrybut jest ustawiony na `true` , to wykonuje negocjowanie interfejsu SSPI lub Kerberos (standard interoperacyjny).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -91,7 +95,7 @@ Definiuje ustawienia zabezpieczeń na poziomie wiadomości [\<ws2007HttpBinding>
 |-------------|-----------------|  
 |[\<security>](security-of-ws2007httpbinding.md)|Definiuje ustawienia zabezpieczeń dla [\<ws2007HttpBinding>](ws2007httpbinding.md) .|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>
 - <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Message%2A>
@@ -100,5 +104,5 @@ Definiuje ustawienia zabezpieczeń na poziomie wiadomości [\<ws2007HttpBinding>
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

@@ -2,15 +2,16 @@
 title: GROUPPARTITION (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: d0482e9b-086c-451c-9dfa-ccb024a9efb6
-ms.openlocfilehash: 19df566c254a3f3202eb3554ab43ee0d7c944181
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 11abebeac682fed9e3a007986bb2f5c7bdb80f16
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833755"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204479"
 ---
 # <a name="grouppartition-entity-sql"></a>GROUPPARTITION (Entity SQL)
-Zwraca kolekcję wartości argumentów, które są rzutowane na bieżącą partycję grupy, z którą jest powiązana agregacja. Agregacja `GroupPartition` jest agregacją opartą na grupach i nie ma formy opartej na kolekcji.  
+
+Zwraca kolekcję wartości argumentów, które są rzutowane na bieżącą partycję grupy, z którą jest powiązana agregacja. `GroupPartition`Agregacja jest agregacją opartą na grupach i nie ma formy opartej na kolekcji.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -19,10 +20,12 @@ GROUPPARTITION( [ALL|DISTINCT] expression )
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `expression`  
- Dowolne wyrażenie [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+ Dowolne [!INCLUDE[esql](../../../../../../includes/esql-md.md)] wyrażenie.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Następujące zapytanie tworzy listę produktów i zbiór ilości wierszy zamówień dla każdego produktu:  
   
 ```sql  
@@ -39,7 +42,7 @@ SELET p, Sum(ol.Quantity) FROM LOB.OrderLines AS ol
   group by ol.Product as p  
 ```  
   
- Operatora `GROUPPARTITION` można używać w połączeniu z funkcjami agregującymi zdefiniowanymi przez użytkownika.  
+ `GROUPPARTITION`Operatora można używać w połączeniu z funkcjami agregującymi zdefiniowanymi przez użytkownika.  
   
 `GROUPPARTITION` jest specjalnym operatorem agregującym, który przechowuje odwołanie do zgrupowanego zestawu danych wejściowych. Tego odwołania można użyć w dowolnym miejscu w zapytaniu, w którym Grupuj według znajduje się w zakresie. Na przykład:
   
@@ -47,7 +50,7 @@ SELET p, Sum(ol.Quantity) FROM LOB.OrderLines AS ol
 SELECT p, GroupPartition(ol.Quantity) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
 ```  
   
- W przypadku zwykłego `GROUP BY` wyniki grupowania są ukryte. Wyniki można używać tylko w funkcji agregującej. Aby wyświetlić wyniki grupowania, należy skorelować wyniki grupowania i zestawu wejściowego za pomocą podzapytania... Następujące dwa zapytania są równoważne:  
+ Z regularnymi `GROUP BY` wynikami grupowania są ukryte. Wyniki można używać tylko w funkcji agregującej. Aby wyświetlić wyniki grupowania, należy skorelować wyniki grupowania i zestawu wejściowego za pomocą podzapytania... Następujące dwa zapytania są równoważne:  
   
 ```sql  
 SELET p, (SELECT q FROM GroupPartition(ol.Quantity) AS q) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
@@ -56,7 +59,7 @@ SELECT p, (SELECT ol.Quantity AS q FROM LOB.OrderLines AS ol2 WHERE ol2.Product 
   
  Jak pokazano na przykładzie, operator agregujący GROUPPARTITION ułatwia uzyskanie odwołania do zestawu wejściowego po grupowaniu.  
   
- Operator GROUPPARTITION może określić dowolne wyrażenie [!INCLUDE[esql](../../../../../../includes/esql-md.md)] w danych wejściowych operatora, gdy używany jest parametr `expression`.  
+ Operator GROUPPARTITION może określić dowolne [!INCLUDE[esql](../../../../../../includes/esql-md.md)] wyrażenie w danych wejściowych operatora, gdy jest używany `expression` parametr.  
   
  Dla wystąpienia wszystkie następujące wyrażenia wejściowe do partycji grupy są prawidłowe:  
   
@@ -70,6 +73,7 @@ SELECT groupkey, GroupPartition(b > a) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b
 ```  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład pokazuje, jak używać klauzuli GROUPPARTITION z klauzulą GROUP BY. Klauzula GROUP BY grupuje jednostki `SalesOrderHeader` według ich `Contact`. Klauzula GROUPPARTITION następnie projektuje Właściwość `TotalDue` dla każdej grupy, co skutkuje kolekcją miejsc dziesiętnych.  
+
+ Poniższy przykład pokazuje, jak używać klauzuli GROUPPARTITION z klauzulą GROUP BY. Klauzula GROUP BY grupuje `SalesOrderHeader` jednostki według ich `Contact` . Klauzula GROUPPARTITION następnie projektuje `TotalDue` Właściwość dla każdej grupy, co skutkuje kolekcją miejsc dziesiętnych.  
   
  [!code-sql[DP EntityServices Concepts#Collection_GroupPartition](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#collection_grouppartition)]

@@ -6,19 +6,21 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 1bb494ded34065bb76b72db40375555ca1eb6953
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 07b3e54c9ffeb1abacaf5ddd04d2058697e653e4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541854"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203972"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Konstruktory statyczne (Przewodnik programowania w języku C#)
+
 Statyczny Konstruktor jest używany do inicjowania wszelkich danych [statycznych](../../language-reference/keywords/static.md) lub wykonywania określonej akcji, która musi zostać wykonana tylko raz. Jest wywoływana automatycznie przed utworzeniem pierwszego wystąpienia lub odwołaniem do jakiegokolwiek statycznego członka.  
   
  [!code-csharp[csProgGuideObjects#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#14)]  
 
 ## <a name="remarks"></a>Uwagi
+
 Konstruktory statyczne mają następujące właściwości:  
   
 - Konstruktor statyczny nie przyjmuje modyfikatorów dostępu ani nie ma parametrów.  
@@ -52,14 +54,16 @@ Konstruktory statyczne mają następujące właściwości:
 - Konstruktory statyczne są również wygodnym miejscem do wymuszania sprawdzania w czasie wykonywania na parametrze typu, który nie może być sprawdzany w czasie kompilacji za pomocą ograniczeń (ograniczenia parametru typu).
 
 ## <a name="example"></a>Przykład
+
  W tym przykładzie Klasa `Bus` ma Konstruktor statyczny. Po utworzeniu pierwszego wystąpienia elementu `Bus` ( `bus1` ) statyczny Konstruktor jest wywoływany, aby zainicjować klasę. Przykładowe dane wyjściowe sprawdzają, czy Konstruktor statyczny działa tylko raz, nawet jeśli utworzono dwa wystąpienia `Bus` , i że jest on uruchamiany przed uruchomieniem konstruktora wystąpień.  
   
  [!code-csharp[csProgGuideObjects#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#15)]
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
+
 Aby uzyskać więcej informacji, zobacz sekcję [konstruktory statyczne](~/_csharplang/spec/classes.md#static-constructors) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)

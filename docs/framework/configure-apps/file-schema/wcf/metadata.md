@@ -2,14 +2,15 @@
 title: <metadata>
 ms.date: 03/30/2017
 ms.assetid: d09653eb-e355-4c73-b87b-28f93d56480d
-ms.openlocfilehash: 028e4d3fbe7bce06caa7497c8f95f3b293a4b068
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: aad0bbde964644448fbafc6c628c00c9faaad497
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855226"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204765"
 ---
 # \<metadata>
+
 Określa sposób przetwarzania metadanych usługi.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,9 +36,11 @@ Określa sposób przetwarzania metadanych usługi.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Brak.  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -53,7 +56,7 @@ Określa sposób przetwarzania metadanych usługi.
 |-------------|-----------------|  
 |[\<client>](client.md)|Sekcja klienta definiuje listę punktów końcowych, z którymi klient może się połączyć.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.MetadataElement>
 - <xref:System.ServiceModel.Configuration.PolicyImporterElementCollection>

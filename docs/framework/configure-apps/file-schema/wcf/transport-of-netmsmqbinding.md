@@ -2,14 +2,15 @@
 title: <transport> dla <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
-ms.openlocfilehash: cc47c01cccc931e81ba57ab37ad9e3accfaa693b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 84a5437de851ecdb96d0463ec574186ba5f91d9e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152934"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203881"
 ---
 # <a name="transport-of-netmsmqbinding"></a>\<transport> dla \<netMsmqBinding>
+
 Definiuje ustawienia zabezpieczeń transportu.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -36,6 +37,7 @@ Definiuje ustawienia zabezpieczeń transportu.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -48,6 +50,7 @@ Definiuje ustawienia zabezpieczeń transportu.
 |msmqSecureHashAlgorithm|Określa algorytm wyznaczania wartości skrótu, który ma być używany do obliczania skrótu wiadomości. Prawidłowe wartości to:<br /><br /> -MD5<br />-SHA1<br />-SHA256<br />-SHA512<br /><br /> Wartość domyślna to `SHA1`. Ten atrybut jest typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm> .<br>Ze względu na kolizje problemów z algorytmem MD5 i algorytmem SHA1 firma Microsoft zaleca SHA256ą lub lepszą.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,7 +59,7 @@ Definiuje ustawienia zabezpieczeń transportu.
 |-------------|-----------------|  
 |[\<security>](security-of-netmsmqbinding.md)|Definiuje ustawienia zabezpieczeń transportu dla transportów umieszczonych w kolejce.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>
 - <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Transport%2A>
@@ -66,5 +69,5 @@ Definiuje ustawienia zabezpieczeń transportu.
 - [Zabezpieczanie usług i klientów](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

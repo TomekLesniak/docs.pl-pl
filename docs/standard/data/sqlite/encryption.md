@@ -1,13 +1,13 @@
 ---
 title: Szyfrowanie
-ms.date: 12/13/2019
+ms.date: 09/08/2020
 description: Dowiedz się, jak zaszyfrować plik bazy danych.
-ms.openlocfilehash: ccdd4b6b8642b3cde1c2667c9ca432a9b0ef21f2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1b33e1510a269aba87caba2cd39faab33791aa55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447266"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203413"
 ---
 # <a name="encryption"></a>Szyfrowanie
 
@@ -37,14 +37,17 @@ Aby uzyskać więcej informacji na temat korzystania z innej biblioteki natywnej
 
 ## <a name="specify-the-key"></a>Określ klucz
 
-Aby włączyć szyfrowanie, określ klucz za pomocą słowa `Password` kluczowego Connection. Służy <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> do dodawania lub aktualizowania wartości z danych wejściowych użytkownika i zapobiegania atakom z iniekcją parametrów połączenia.
+Aby włączyć szyfrowanie dla nowej bazy danych, określ klucz za pomocą `Password` słowa kluczowego Connection. Służy <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> do dodawania lub aktualizowania wartości z danych wejściowych użytkownika i zapobiegania atakom z iniekcją parametrów połączenia.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/EncryptionSample/Program.cs?name=snippet_ConnectionStringBuilder)]
 
+> [!TIP]
+> Metoda szyfrowania i odszyfrowywania istniejących baz danych różni się w zależności od używanego rozwiązania. Na przykład należy użyć `sqlcipher_export()` funkcji dla elementu SQLCIPHER. Aby uzyskać szczegółowe informacje, zapoznaj się z dokumentacją rozwiązania.
+
 ## <a name="rekeying-the-database"></a>Ponowne tworzenie klucza bazy danych
 
-Jeśli chcesz zmienić klucz szyfrowania bazy danych, wygeneruj `PRAGMA rekey` instrukcję. Aby odszyfrować bazę danych, `NULL`Określ wartość.
+Jeśli chcesz zmienić klucz zaszyfrowanej bazy danych, wygeneruj `PRAGMA rekey` instrukcję.
 
-Niestety, program SQLite nie obsługuje parametrów `PRAGMA` w instrukcjach. Zamiast tego należy użyć `quote()` funkcji, aby zapobiec iniekcji kodu SQL.
+Niestety, program SQLite nie obsługuje parametrów w `PRAGMA` instrukcjach. Zamiast tego należy użyć `quote()` funkcji, aby zapobiec iniekcji kodu SQL.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/EncryptionSample/Program.cs?name=snippet_Rekey)]

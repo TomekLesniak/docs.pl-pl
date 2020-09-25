@@ -1,16 +1,17 @@
 ---
-title: ISNULL (Jednostka SQL)
+title: ISNULL (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: dc7a0173-3664-4c90-a57b-5cbb0a8ed7ee
-ms.openlocfilehash: b3fc2484e80b637ed5841375985f7bae476bbbf7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3360ad4ca7306a8cc1b7d6948204f825ff9a93c6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150203"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203621"
 ---
-# <a name="isnull-entity-sql"></a>ISNULL (Jednostka SQL)
-Określa, czy wyrażenie kwerendy ma wartość null.  
+# <a name="isnull-entity-sql"></a>ISNULL (Entity SQL)
+
+Określa, czy wyrażenie zapytania ma wartość null.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -19,17 +20,20 @@ expression IS [ NOT ] NULL
 ```  
   
 ## <a name="arguments"></a>Argumenty  
+
  `expression`  
- Dowolne prawidłowe wyrażenie kwerendy. Nie może być kolekcją, mają członków kolekcji lub typu rekordu z właściwościami typu kolekcji.  
+ Dowolne prawidłowe wyrażenie zapytania. Nie może być kolekcją, mieć składowe kolekcji lub typem rekordu z właściwościami typu kolekcji.  
   
  NOT  
- Neguje EDM. Wynik logiczny wartości NULL.  
+ Negacja modelu EDM. Wynik wartości logicznej jest równy NULL.  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `true`jeśli `expression` zwraca wartość null; w `false`przeciwnym razie , .  
+
+ `true` Jeśli `expression` zwraca wartość null; w przeciwnym razie `false` .  
   
 ## <a name="remarks"></a>Uwagi  
- Służy `IS NULL` do określenia, czy element sprzężenia zewnętrznego ma wartość null:  
+
+ Użyj `IS NULL` , aby określić, czy element sprzężenia zewnętrznego ma wartość null:  
   
 ```sql  
 select c
@@ -38,30 +42,31 @@ select c
       where o is not null and o.OrderQuantity = @x  
 ```  
   
- Służy `IS NULL` do określenia, czy element członkowski ma rzeczywistą wartość:  
+ Użyj `IS NULL` , aby określić, czy element członkowski ma rzeczywistą wartość:  
   
 ```sql  
 select c from LOB.Customer as c where c.DOB is not null  
 ```  
   
- W poniższej tabeli `IS NULL` przedstawiono zachowanie ponad niektóre wzorce. Wszystkie wyjątki są generowane od strony klienta, zanim dostawca zostanie wywołany:  
+ W poniższej tabeli przedstawiono zachowanie `IS NULL` niektórych wzorców. Wszystkie wyjątki są zgłaszane po stronie klienta przed wywołaniem dostawcy:  
   
 |Wzorce|Zachowanie|  
 |-------------|--------------|  
-|wartość null jest zerowa|Zwraca wartość `true`.|  
-|TREAT (null AS EntityType) MA WARTOŚĆ NULL|Zwraca wartość `true`.|  
-|TREAT (null AS ComplexType) MA WARTOŚĆ NULL|Zgłasza błąd.|  
-|TREAT (null AS RowType) MA WARTOŚĆ NULL|Zgłasza błąd.|  
-|Typ encji ma wartość NULL|Zwraca `true` `false`lub .|  
-|Typ kompleksu JEST NULL|Zgłasza błąd.|  
-|Typ wiersza ma wartość null|Zgłasza błąd.|  
+|wartość zerowa ma wartość NULL|Zwraca wartość `true`.|  
+|TRAKTOWANIe (null jako EntityType) ma wartość NULL|Zwraca wartość `true`.|  
+|TRAKTOWANIe (null jako ComplexType) ma wartość NULL|Zgłasza błąd.|  
+|TRAKTOWANIe (null AS RowType) ma wartość NULL|Zgłasza błąd.|  
+|Obiekt EntityType ma wartość NULL|Zwraca `true` lub `false` .|  
+|ComplexType ma wartość NULL|Zgłasza błąd.|  
+|RowType ma wartość NULL|Zgłasza błąd.|  
   
 ## <a name="example"></a>Przykład  
- Następująca [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kwerenda używa operatora IS NOT NULL do określenia, czy wyrażenie kwerendy nie ma wartości null. Kwerenda jest oparta na modelu sprzedaży AdventureWorks. Aby skompilować i uruchomić tę kwerendę, wykonaj następujące kroki:  
+
+ Następujące [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zapytanie używa operatora is not null, aby określić, czy wyrażenie zapytania nie ma wartości null. Zapytanie jest oparte na modelu sprzedaży AdventureWorks. Aby skompilować i uruchomić to zapytanie, wykonaj następujące kroki:  
   
-1. Postępuj zgodnie z procedurą [w : Jak: Wykonać kwerendę, która zwraca wyniki structuraltype](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postępuj zgodnie z procedurą w temacie [How to: Execute a Query zwracającej wyniki StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Przekaż następującą kwerendę jako `ExecuteStructuralTypeQuery` argument do metody:  
+2. Przekaż następujące zapytanie jako argument do `ExecuteStructuralTypeQuery` metody:  
   
  [!code-sql[DP EntityServices Concepts#ISNULL](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#isnull)]  
   

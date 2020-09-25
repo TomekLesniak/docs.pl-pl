@@ -2,14 +2,15 @@
 title: typ złożony
 ms.date: 03/30/2017
 ms.assetid: 63efbd23-11d4-4871-bc88-ad01b9837553
-ms.openlocfilehash: e21ca90a7be8f2bd9be9483c66a1e95e6ba1bee2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ef20de6a9e72d3123d745ef5501ecdb7fa63967d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738546"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203790"
 ---
 # <a name="complex-type"></a>typ złożony
+
 *Typ złożony* to szablon służący do definiowania bogatych, strukturalnych właściwości w [typach jednostek](entity-type.md) lub w innych typach złożonych. Każdy szablon zawiera następujące elementy:  
   
 - Unikatowa nazwa. Potrzeb  
@@ -17,7 +18,7 @@ ms.locfileid: "73738546"
     > [!NOTE]
     > Nazwa typu złożonego nie może być taka sama jak nazwa typu jednostki w obrębie tej samej przestrzeni nazw.  
   
-- Dane w postaci jednej lub wielu [Właściwości](property.md). (Opcjonalnie).  
+- Dane w postaci jednej lub wielu [Właściwości](property.md). (opcjonalnie)  
   
     > [!NOTE]
     > Właściwość typu złożonego może być innym typem złożonym.  
@@ -29,15 +30,16 @@ ms.locfileid: "73738546"
 - Typy złożone nie mogą uczestniczyć w [skojarzeniach](association-type.md). Żadne zakończenie skojarzenia nie może być typem złożonym, dlatego [właściwości nawigacji](navigation-property.md) nie mogą być zdefiniowane w typach złożonych.  
   
 ## <a name="example"></a>Przykład  
- [ADO.NET Entity Framework](./ef/index.md) używa języka specyficznego dla domeny (DSL) zwanego językiem definicji schematu koncepcyjnego ([CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)) do definiowania modeli koncepcyjnych. Poniższy identyfikator CSDL definiuje typ złożony, adres z właściwościami typu pierwotnego `StreetAddress`, `City`, `StateOrProvince`, `Country`i `PostalCode`.  
+
+ [ADO.NET Entity Framework](./ef/index.md) używa języka specyficznego dla domeny (DSL) zwanego językiem definicji schematu koncepcyjnego ([CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)) do definiowania modeli koncepcyjnych. Następujący CSDL definiuje typ złożony, adres, z właściwościami typu pierwotnego `StreetAddress` ,,,, `City` `StateOrProvince` `Country` i `PostalCode` .  
   
  [!code-xml[EDM_Example_Model#ComplexTypeExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books2.edmx#complextypeexample)]  
   
- Aby zdefiniować typ złożony `Address` (powyżej) jako właściwość typu jednostki, należy zadeklarować typ właściwości w definicji typu jednostki. Następujący CSDL deklaruje Właściwość `Address` jako typ złożony dla typu jednostki (wydawca):  
+ Aby zdefiniować typ złożony `Address` (powyżej) jako właściwość typu jednostki, należy zadeklarować typ właściwości w definicji typu jednostki. Następujący CSDL deklaruje `Address` Właściwość jako typ złożony dla typu jednostki (wydawca):  
   
  [!code-xml[EDM_Example_Model#EntityWithComplexType](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books3.edmx#entitywithcomplextype)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Kluczowe założenia modelu danych jednostki](entity-data-model-key-concepts.md)
-- [Model danych jednostki](entity-data-model.md)
+- [Entity Data Model](entity-data-model.md)

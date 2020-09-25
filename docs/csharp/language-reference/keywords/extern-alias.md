@@ -9,14 +9,15 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: 301ae06ec02fa6f09257dc87383bc2ec7f589b6d
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5ecafa5a989bc183d7f52ac3d4b4d50a81b36014
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139011"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203348"
 ---
 # <a name="extern-alias-c-reference"></a>extern alias (odwołanie w C#)
+
 Może zajść konieczność odwołująca się do dwóch wersji zestawów, które mają te same nazwy typów w pełni kwalifikowana. Na przykład może być konieczne użycie co najmniej dwóch wersji zestawu w tej samej aplikacji. Korzystając z zewnętrznego aliasu zestawu, przestrzenie nazw z każdego zestawu mogą być opakowane w przestrzenie nazw poziomu głównego o nazwie alias, co umożliwia ich użycie w tym samym pliku.  
   
 > [!NOTE]
@@ -28,7 +29,7 @@ Może zajść konieczność odwołująca się do dwóch wersji zestawów, które
   
  `/r:GridV2=grid20.dll`  
   
- Spowoduje to utworzenie aliasów zewnętrznych `GridV1` i `GridV2` . Aby użyć tych aliasów z poziomu programu, odwołując się do nich za pomocą `extern` słowa kluczowego. Przykład:  
+ Spowoduje to utworzenie aliasów zewnętrznych `GridV1` i `GridV2` . Aby użyć tych aliasów z poziomu programu, odwołując się do nich za pomocą `extern` słowa kluczowego. Na przykład:  
   
  `extern alias GridV1;`  
   
@@ -61,6 +62,7 @@ using Class1V2 = GridV2::Namespace.Class1;
 ```
 
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Zobacz też

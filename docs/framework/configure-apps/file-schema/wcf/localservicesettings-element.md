@@ -2,14 +2,15 @@
 title: <localServiceSettings>, element
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
-ms.openlocfilehash: 4883fd563ecf989d67c369085df4fc43d0c5f078
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3043c07afd316d90cc5525a67bef144f33d9b136
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400300"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204934"
 ---
 # <a name="localservicesettings-element"></a>\<localServiceSettings>, element
+
 Określa ustawienia zabezpieczeń usługi lokalnej dla tego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -42,6 +43,7 @@ Określa ustawienia zabezpieczeń usługi lokalnej dla tego powiązania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -64,6 +66,7 @@ Określa ustawienia zabezpieczeń usługi lokalnej dla tego powiązania.
 |`timestampValidityDuration`|Wartość dodatnia określająca <xref:System.TimeSpan> czas ważności sygnatury czasowej. Wartość domyślna to "00:15:00".|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -74,6 +77,7 @@ Określa ustawienia zabezpieczeń usługi lokalnej dla tego powiązania.
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Określa wartości domyślne używane do inicjowania usługi bezpiecznej konwersacji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ustawienia są lokalne, ponieważ nie są publikowane w ramach zasad zabezpieczeń usługi i nie mają wpływu na powiązanie klienta.  
   
  Następujące atrybuty `localServiceSecuritySettings` elementu mogą pomóc w ograniczeniu ataku typu "odmowa usługi" (DOS):  
@@ -88,7 +92,7 @@ Określa ustawienia zabezpieczeń usługi lokalnej dla tego powiązania.
   
  W sesji bezpiecznej konwersacji należy zauważyć, że zarówno, `inactivityTimeout` jak i `receiveTimeout` atrybuty dotyczące powiązań wpływają na limit czasu sesji. Krótszy z dwóch określa czas wystąpienia przekroczeń limitu czasu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>
 - <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalServiceSettings%2A>
@@ -99,5 +103,5 @@ Określa ustawienia zabezpieczeń usługi lokalnej dla tego powiązania.
 - [Rozszerzanie powiązań](../../../wcf/extending/extending-bindings.md)
 - [Powiązania niestandardowe](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Zabezpieczenia wiązania niestandardowego](../../../wcf/samples/custom-binding-security.md)

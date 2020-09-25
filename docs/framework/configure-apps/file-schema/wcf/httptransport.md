@@ -2,14 +2,15 @@
 title: <httpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8b30c065-b32a-4fa3-8eb4-5537a9c6b897
-ms.openlocfilehash: b3558db6018d79f0fad27ff28657bfadb5637467
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 14d774ba7711c9ce60fb1db5a2b050c310550ec1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736768"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203894"
 ---
 # \<httpTransport>
+
 Określa transport HTTP do przesyłania komunikatów SOAP dla niestandardowego powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Określa transport HTTP do przesyłania komunikatów SOAP dla niestandardowego p
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -57,6 +59,7 @@ Określa transport HTTP do przesyłania komunikatów SOAP dla niestandardowego p
 |useDefaultWebProxy|Wartość logiczna określająca, czy są używane ustawienia serwera proxy dla całego komputera, a nie ustawienia specyficzne dla użytkownika. Wartość domyślna to `true`.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -66,9 +69,10 @@ Określa transport HTTP do przesyłania komunikatów SOAP dla niestandardowego p
 |[\<binding>](bindings.md)|Definiuje wszystkie możliwości powiązań niestandardowego powiązania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `httpTransport`Element jest punktem początkowym do tworzenia niestandardowego powiązania, które implementuje protokół transportu HTTP. Protokół HTTP to podstawowy transport używany do celów współdziałania. Ten transport jest obsługiwany przez Windows Communication Foundation (WCF) w celu zapewnienia współdziałania z innymi stosami usług sieci Web innych niż WCF.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.HttpTransportElement>
 - <xref:System.ServiceModel.Channels.HttpTransportBindingElement>

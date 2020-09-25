@@ -2,14 +2,15 @@
 title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-ms.openlocfilehash: 9291c38af28c18d20e23e34e8316b4a9fe523123
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fd4d678b1e861a47762d8a64f85dcc052a30fe2b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855124"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204804"
 ---
 # \<messageLogging>
+
 Ten element definiuje ustawienia dla możliwości rejestrowania komunikatów Windows Communication Foundation (WCF).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Ten element definiuje ustawienia dla możliwości rejestrowania komunikatów Win
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -63,6 +65,7 @@ Ten element definiuje ustawienia dla możliwości rejestrowania komunikatów Win
 |Diagnostyka|Definiuje ustawienia WCF na potrzeby inspekcji i kontroli środowiska uruchomieniowego dla administratora.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Komunikaty są rejestrowane na trzech różnych poziomach w stosie: Service, transport i źle sformułowane. Każdy poziom można aktywować osobno.  
   
  Filtry XPath można dodawać do rejestrowania określonych komunikatów na poziomie transportu i usług. Jeśli żadne filtry nie są zdefiniowane, wszystkie komunikaty są rejestrowane. Filtry są stosowane tylko do nagłówków wiadomości. Treść jest ignorowana. Funkcja WCF ignoruje treść komunikatu w celu zwiększenia wydajności. Jeśli chcesz filtrować w oparciu o zawartość treści, możesz utworzyć niestandardowy odbiornik z filtrem, który to robi.  
@@ -122,7 +125,7 @@ Ten element definiuje ustawienia dla możliwości rejestrowania komunikatów Win
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>

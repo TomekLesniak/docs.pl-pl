@@ -3,19 +3,21 @@ title: Polecenia i parametry
 description: Dowiedz się, jak używać obiektów poleceń dla każdego dostawcy danych .NET Framework, aby uruchamiać polecenia i zwracać wyniki ze źródła danych.
 ms.date: 03/30/2017
 ms.assetid: b623f810-d871-49a5-b0f5-078cc3c34db6
-ms.openlocfilehash: c0baec4d6c3984cb50178c3aa7f9ed3878055bb6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: fb7b86dc3c826805e0e1dcec4764be2e484ec40b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287145"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203829"
 ---
 # <a name="commands-and-parameters"></a>Polecenia i parametry
+
 Po ustanowieniu połączenia ze źródłem danych można wykonać polecenia i zwrócić wyniki ze źródła danych za pomocą <xref:System.Data.Common.DbCommand> obiektu. Można utworzyć polecenie przy użyciu jednego z konstruktorów poleceń dla dostawcy danych .NET Framework, z którym pracujesz. Konstruktory mogą przyjmować opcjonalne argumenty, takie jak instrukcja SQL do wykonania w źródle danych, <xref:System.Data.Common.DbConnection> obiekcie lub <xref:System.Data.Common.DbTransaction> obiekcie. Można również skonfigurować te obiekty jako właściwości polecenia. Możesz również utworzyć polecenie dla określonego połączenia przy użyciu <xref:System.Data.Common.DbConnection.CreateCommand%2A> metody `DbConnection` obiektu. Instrukcję SQL wykonywaną przez polecenie można skonfigurować przy użyciu <xref:System.Data.Common.DbCommand.CommandText%2A> właściwości.  
   
  Każdy dostawca danych .NET Framework dołączony do .NET Framework ma `Command` obiekt. Dostawca danych .NET Framework dla OLE DB zawiera obiekt <xref:System.Data.OleDb.OleDbCommand> , .NET Framework dostawca danych dla SQL Server zawiera obiekt <xref:System.Data.SqlClient.SqlCommand> , .NET Framework dostawca danych dla ODBC zawiera obiekt <xref:System.Data.Odbc.OdbcCommand> , a .NET Framework dostawca danych dla programu Oracle zawiera <xref:System.Data.OracleClient.OracleCommand> obiekt.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Wykonywanie polecenia](executing-a-command.md)  
  Opisuje obiekt ADO.NET `Command` i sposób jego użycia do wykonywania zapytań i poleceń względem źródła danych.  
   
@@ -31,7 +33,7 @@ Po ustanowieniu połączenia ze źródłem danych można wykonać polecenia i zw
  [Używanie poleceń do modyfikacji danych](using-commands-to-modify-data.md)  
  Opisuje sposób użycia dostawcy danych w celu wykonania procedur składowanych lub instrukcji języka definicji danych (DDL).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Elementy DataAdapter i DataReader](dataadapters-and-datareaders.md)
 - [Elementy DataSet, DataTable i DataView](./dataset-datatable-dataview/index.md)
