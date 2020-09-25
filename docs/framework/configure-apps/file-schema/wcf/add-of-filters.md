@@ -2,14 +2,15 @@
 title: <add> dla <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
-ms.openlocfilehash: 280c516b17a133930bc4b6621a8c9bc7f4781085
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c1de0605bc8afc502a85d9b2917b975ee45a3d26
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850567"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201658"
 ---
 # <a name="add-of-filters"></a>\<add> dla \<filters>
+
 Filtr XPath określa rodzaj wiadomości do zarejestrowania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Filtr XPath określa rodzaj wiadomości do zarejestrowania.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -37,6 +39,7 @@ Filtr XPath określa rodzaj wiadomości do zarejestrowania.
 |filtr|Ciąg określający zapytanie na dokumencie XML zdefiniowanym przez wyrażenie XPath 1,0. Aby uzyskać więcej informacji, zobacz <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -46,6 +49,7 @@ Filtr XPath określa rodzaj wiadomości do zarejestrowania.
 |[\<filters>](filters.md)|Zawiera kolekcję filtrów XPath używanych do kontroli rodzaju rejestrowanych komunikatów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Filtry są stosowane tylko w warstwie transportowej, określonej przez `logMessagesAtTransportLevel` is `true` . Filtry nie wpływają na poziom usług i źle sformułowane rejestrowanie komunikatów.  
   
  Aby dodać filtr do kolekcji, użyj `add` słowa kluczowego. Jeśli zdefiniowano co najmniej jeden filtr, rejestrowane są tylko komunikaty zgodne z co najmniej jednym filtrem. Jeśli żaden filtr nie jest zdefiniowany, wszystkie komunikaty są przekazywane.  
@@ -55,6 +59,7 @@ Filtr XPath określa rodzaj wiadomości do zarejestrowania.
  Poniżej przedstawiono przykład sposobu konfigurowania filtru, który rejestruje tylko komunikaty, które mają sekcję nagłówka SOAP.  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej przedstawiono przykład sposobu konfigurowania filtru, który rejestruje tylko komunikaty, które mają sekcję nagłówka SOAP.  
   
 ```xml  
@@ -71,7 +76,7 @@ Filtr XPath określa rodzaj wiadomości do zarejestrowania.
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>

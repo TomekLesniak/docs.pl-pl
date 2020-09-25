@@ -2,14 +2,15 @@
 title: <basicHttpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 39b16b82-4ec6-4eff-8031-67e026870961
-ms.openlocfilehash: d7d825e4fb17c3d864f0ac40daaee9d492c7f8e8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 038841c2710466e8cddd0909804b01af6f03b2c1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557661"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201515"
 ---
 # \<basicHttpContextBinding>
+
 Określanie powiązania, które dostarcza kontekst <xref:System.ServiceModel.BasicHttpBinding> do wymiany przez włączenie plików cookie protokołu HTTP jako mechanizm wymiany.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -54,6 +55,7 @@ Określanie powiązania, które dostarcza kontekst <xref:System.ServiceModel.Bas
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -92,9 +94,10 @@ Określanie powiązania, które dostarcza kontekst <xref:System.ServiceModel.Bas
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten element powiązania zapewnia poziom ochrony i mechanizm wymiany w ramach kontekstu dla `BasicHttpBinding` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.BasicHttpBinding>
 - <xref:System.ServiceModel.BasicHttpContextBinding>

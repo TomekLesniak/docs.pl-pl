@@ -8,17 +8,19 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-ms.openlocfilehash: 6a44d61f29fad7fa7d5304deb8b1e329478bc5b4
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 02e45f4e67a80d3afb600f44ea9fa6a5e175310c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202007"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186681"
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>Uzyskiwanie dostępu do zasobów usługi danych (Usługi danych programu WCF)
+
 Usługi danych programu WCF obsługuje protokół Open Data Protocol (OData), aby udostępnić dane jako źródło danych z zasobami, które są adresowane przez identyfikatory URI. Te zasoby są reprezentowane zgodnie z konwencjami relacji jednostek [Entity Data Model](../adonet/entity-data-model.md). W tym modelu jednostki reprezentują jednostki operacyjne danych, które są typami danych w domenie aplikacji, takie jak klienci, zamówienia, elementy i produkty. Dostęp do danych jednostki jest uzyskiwany i zmieniany przy użyciu semantyki przenoszonego transferu Stanów (REST), w tym standardowych czasowników HTTP GET, PUT, POST i DELETE.  
   
 ## <a name="addressing-resources"></a>Adresowanie zasobów  
+
  W protokole OData wszystkie dane udostępniane przez model danych są rozwiązywane przy użyciu identyfikatora URI. Na przykład następujący identyfikator URI zwraca źródło, które jest zestawem jednostek Customers, który zawiera wpisy dla wszystkich wystąpień typu jednostki klienta:  
   
 <https://services.odata.org/Northwind/Northwind.svc/Customers>
@@ -50,6 +52,7 @@ Usługi danych programu WCF obsługuje protokół Open Data Protocol (OData), ab
  Aby uzyskać więcej informacji, zobacz [konwencje protokołu OData: URI](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/).
   
 ## <a name="system-query-options"></a>Opcje zapytania systemowego  
+
  Usługa OData definiuje zestaw opcji zapytania systemowego, których można użyć do wykonywania tradycyjnych operacji zapytania względem zasobów, takich jak filtrowanie, sortowanie i stronicowanie. Na przykład następujący identyfikator URI zwraca zestaw wszystkich `Order` jednostek, wraz z powiązanymi `Order_Detail` jednostkami, kody pocztowe, dla których nie kończy się `100` :  
   
 `https://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(ShipPostalCode,'100')&$expand=Order_Details&$orderby=ShipCity`
@@ -69,6 +72,7 @@ Usługi danych programu WCF obsługuje protokół Open Data Protocol (OData), ab
 |`$inlinecount`|Żąda dołączenia liczby jednostek zwracanych w strumieniu informacyjnym do źródła danych.|  
   
 ## <a name="addressing-relationships"></a>Relacje adresów  
+
  Oprócz adresów zestawów jednostek i wystąpień jednostek usługa OData umożliwia również rozwiązywanie skojarzeń reprezentujących relacje między jednostkami. Ta funkcja jest wymagana, aby można było utworzyć lub zmienić relację między dwoma wystąpieniami jednostek, takimi jak spedytor, który jest powiązany z daną kolejnością w przykładowej bazie danych Northwind. Usługa OData obsługuje `$link` operator w celu zaadresowania skojarzeń między jednostkami. Na przykład następujący identyfikator URI jest określony w komunikacie żądania HTTP PUT, aby zmienić spedytora dla określonej kolejności dla nowego nadawcy.  
   
 `https://services.odata.org/Northwind/Northwind.svc/Orders(10643)/$links/Shipper`
@@ -76,8 +80,9 @@ Usługi danych programu WCF obsługuje protokół Open Data Protocol (OData), ab
  Aby uzyskać więcej informacji, zobacz sekcję `3.2. Addressing Links between Entries` w temacie [OData: konwencje URI](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/).
   
 ## <a name="consuming-the-returned-feed"></a>Zużywanie zwróconego kanału informacyjnego  
+
  Identyfikator URI zasobu OData umożliwia adresowanie danych jednostki udostępnianych przez usługę. Po wprowadzeniu identyfikatora URI w polu adres przeglądarki sieci Web zwracana jest reprezentacja źródła danych OData dla żądanego zasobu. Aby uzyskać więcej informacji, zobacz [usługi danych programu WCF przewodnika Szybki Start](quickstart-wcf-data-services.md). Mimo że przeglądarka sieci Web może być przydatna do testowania, że zasób usługi danych zwraca oczekiwane dane, usługi danych produkcyjnych, które mogą również tworzyć, aktualizować i usuwać dane, są zwykle używane przez kod aplikacji lub języki skryptów na stronie sieci Web. Aby uzyskać więcej informacji, zobacz [Korzystanie z usługi danych w aplikacji klienckiej](using-a-data-service-in-a-client-application-wcf-data-services.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Otwórz witrynę sieci Web protokołu Data Protocol](https://www.odata.org/)

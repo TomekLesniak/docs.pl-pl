@@ -8,12 +8,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: 4517aab98235ec2172da355ad0e05d95ebee46c5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 79b49cbc9b122e6591d07643a341841b262edff4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554042"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201710"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime>, element
 
@@ -55,7 +55,9 @@ Jeśli **\<supportedRuntime>** element z `sku` atrybutem jest obecny w pliku kon
 Zalecane jest, aby testować aplikacje z każdą wersją programu .NET Framework, za pomocą której mogą być uruchamiane.
 
 <a name="version"></a>
+
 ## <a name="runtime-version-values"></a>wartości "wersja środowiska uruchomieniowego"
+
 Ten `runtime` atrybut określa wersję środowiska uruchomieniowego języka wspólnego (CLR), która jest wymagana dla danej aplikacji. Należy pamiętać, że wszystkie wersje .NET Framework v4. x określają `v4.0` środowisko CLR. Poniższa tabela zawiera listę prawidłowych wartości dla wartości *wersji środowiska uruchomieniowego* `version` atrybutu.
 
 |Wersja programu .NET Framework|Atrybut `version`|
@@ -87,7 +89,7 @@ Ten `sku` atrybut używa monikera platformy docelowej (TFM) w celu wskazania wer
 |4,6|". NETFramework, Version = v 4.6|
 |4.6.1|". NETFramework, wersja = v 4.6.1|
 |4.6.2|". NETFramework, Version = v 4.6.2 "|
-|4,7|". NETFramework, wersja = v 4.7|
+|4.7|". NETFramework, wersja = v 4.7|
 |4.7.1|". NETFramework, Version = v 4.7.1 "|
 |4.7.2|". NETFramework, Version = v 4.7.2 "|
 |4,8|". NETFramework, wersja = v 4.8|
@@ -108,7 +110,7 @@ Poniższy przykład pokazuje, jak określić obsługiwaną wersję środowiska u
 
 Tego elementu można użyć w pliku konfiguracji aplikacji.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat ustawień uruchamiania](index.md)
 - [Schemat pliku konfiguracji](../index.md)

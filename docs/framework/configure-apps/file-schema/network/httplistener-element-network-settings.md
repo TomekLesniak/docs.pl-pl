@@ -2,14 +2,15 @@
 title: <httpListener>, element (ustawienia sieci)
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-ms.openlocfilehash: 0054be3d2002e4ea5247f25d8094386ac7242422
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 78526559164939667eab8848bc5fd2af6749d474
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088376"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195444"
 ---
 # <a name="httplistener-element-network-settings"></a>\<httpListener>, element (ustawienia sieci)
+
 Dostosowuje parametry używane przez <xref:System.Net.HttpListener> klasę.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Dostosowuje parametry używane przez <xref:System.Net.HttpListener> klasę.
 ## <a name="type"></a>Typ  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -37,6 +39,7 @@ Dostosowuje parametry używane przez <xref:System.Net.HttpListener> klasę.
 |unescapeRequestUrl|Wartość logiczna wskazująca, czy <xref:System.Net.HttpListener> wystąpienie używa nieprzetworzonego niezmienionego identyfikatora URI zamiast przekonwertowanego identyfikatora URI.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -46,6 +49,7 @@ Dostosowuje parametry używane przez <xref:System.Net.HttpListener> klasę.
 |[ustawienia](settings-element-network-settings.md)|Konfiguruje podstawowe opcje sieci dla <xref:System.Net> przestrzeni nazw.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Atrybut **unescapeRequestUrl** wskazuje, czy <xref:System.Net.HttpListener> używa nieprzetworzonego NIEzmienionego identyfikatora URI zamiast PRZEKONWERTOWANEgo identyfikatora URI, gdzie wszystkie wartości kodowane w procentach są konwertowane i są wykonywane inne czynności normalizacji.  
   
  Gdy <xref:System.Net.HttpListener> wystąpienie odbiera żądanie przez `http.sys` usługę, tworzy wystąpienie ciągu identyfikatora URI dostarczonego przez `http.sys` i uwidacznia je jako <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType> Właściwość.  
@@ -85,7 +89,7 @@ Dostosowuje parametry używane przez <xref:System.Net.HttpListener> klasę.
 |Klucz rejestru|Wartość domyślna|Opis|  
 |------------------|-------------------|-----------------|  
 |EnableNonUTF8|1|Jeśli zero, `http.sys` akceptuje tylko adresy URL zakodowane w formacie UTF-8.<br /><br /> Jeśli wartość jest różna od zera, `http.sys` w żądaniach akceptowane są również adresy URL kodowane w formacie ANSI lub DBCS.|  
-|FavorUTF8|1|Jeśli wartość jest różna od zera, program `http.sys` zawsze próbuje zdekodować adres URL jako pierwszy w formacie UTF-8. Jeśli konwersja nie powiedzie się, a EnableNonUTF8 jest różna od zera, http. sys próbuje zdekodować ją jako ANSI lub DBCS.<br /><br /> Jeśli zero (i EnableNonUTF8 jest różna od zera), `http.sys` próbuje zdekodować ją jako ANSI lub DBCS; Jeśli to nie powiodło się, próbuje konwersję UTF-8.|  
+|FavorUTF8|1|Jeśli wartość jest różna od zera, program `http.sys` zawsze próbuje zdekodować adres URL jako pierwszy w formacie UTF-8. Jeśli konwersja nie powiedzie się, a EnableNonUTF8 jest różna od zera, Http.sys następnie próbuje zdekodować ją jako ANSI lub DBCS.<br /><br /> Jeśli zero (i EnableNonUTF8 jest różna od zera), `http.sys` próbuje zdekodować ją jako ANSI lub DBCS; Jeśli to nie powiodło się, próbuje konwersję UTF-8.|  
   
  Po <xref:System.Net.HttpListener> odebraniu żądania korzysta z przekonwertowanego identyfikatora URI z `http.sys` jako danych wejściowych <xref:System.Net.HttpListenerRequest.Url%2A> właściwości.  
   
@@ -114,6 +118,7 @@ Dostosowuje parametry używane przez <xref:System.Net.HttpListener> klasę.
  <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>Właściwość może służyć do uzyskiwania bieżącej wartości atrybutu **unescapeRequestUrl** z odpowiednich plików konfiguracji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak skonfigurować klasę, <xref:System.Net.HttpListener> gdy odbierze żądanie użycia nieprzetworzonego identyfikatora URI zamiast przekonwertowanego identyfikatora URI z `http.sys` jako danych wejściowych <xref:System.Net.HttpListenerRequest.Url%2A> właściwości.  
   
 ```xml  
@@ -137,9 +142,9 @@ Dostosowuje parametry używane przez <xref:System.Net.HttpListener> klasę.
 |Plik walidacji||  
 |Może być puste||  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.Configuration.HttpListenerElement>
 - <xref:System.Net.HttpListener>
 - <xref:System.Net.HttpListenerRequest.Url%2A>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

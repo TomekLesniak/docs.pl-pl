@@ -5,14 +5,15 @@ helpviewer_keywords:
 - add element for <namedCaches>
 - <add> element for <namedCaches>
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
-ms.openlocfilehash: c1345022b79df371ad9c89a39a0a8b625e26608c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cd920b58290050fcc30ea5d0a1ac113a333902fa
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154508"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195366"
 ---
 # <a name="add-element-for-namedcaches"></a>\<add>, element dla \<namedCaches>
+
 Dodaje `namedCache` wpis do `namedCaches` kolekcji dla pamięci podręcznej pamięci.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,9 +32,11 @@ Dodaje `namedCache` wpis do `namedCaches` kolekcji dla pamięci podręcznej pami
 ```  
   
 ## <a name="type"></a>Typ  
+
  `None`  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -46,6 +49,7 @@ Dodaje `namedCache` wpis do `namedCaches` kolekcji dla pamięci podręcznej pami
 |`PollingInterval`|Wartość, która wskazuje przedział czasu, po upływie którego implementacja pamięci podręcznej porównuje bieżące obciążenie pamięci z limitami pamięci bezwzględnej i procentową ustawioną dla wystąpienia pamięci podręcznej. Ta wartość jest wprowadzana w formacie "gg: MM: SS".|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  `None`  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -55,9 +59,11 @@ Dodaje `namedCache` wpis do `namedCaches` kolekcji dla pamięci podręcznej pami
 |[\<namedCaches>](namedcaches-element-cache-settings.md)|Zawiera kolekcję ustawień konfiguracji dla nazwanych <xref:System.Runtime.Caching.MemoryCache> wystąpień.|  
   
 ## <a name="remarks"></a>Uwagi  
- `add`Element dodaje wpis do `namedCaches` kolekcji dla pamięci podręcznej pamięci. Można użyć elementu [Clear](clear-element-for-namedcaches.md) przed użyciem `add` elementu, aby mieć pewność, że w kolekcji nie ma innych nazwanych pamięci podręcznych. Ten element może być używany w pliku Machine. config i w pliku Web. config.  
+
+ `add`Element dodaje wpis do `namedCaches` kolekcji dla pamięci podręcznej pamięci. Można użyć elementu [Clear](clear-element-for-namedcaches.md) przed użyciem `add` elementu, aby mieć pewność, że w kolekcji nie ma innych nazwanych pamięci podręcznych. Ten element może być używany w pliku machine.config i w pliku Web.config.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak zdefiniować ustawienia domyślnego `namedCache` wpisu do `namedCaches` kolekcji dla pamięci podręcznej.  
   
 ```xml  
@@ -77,6 +83,6 @@ Dodaje `namedCache` wpis do `namedCaches` kolekcji dla pamięci podręcznej pami
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<namedCaches>— Element (ustawienia pamięci podręcznej)](namedcaches-element-cache-settings.md)
+- [\<namedCaches> — Element (ustawienia pamięci podręcznej)](namedcaches-element-cache-settings.md)

@@ -2,12 +2,12 @@
 title: <idn>, element (ustawienia identyfikatora URI)
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
-ms.openlocfilehash: 533b2562f6e5c8d6c2bf452e56dff9a8bf8ab376
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f45922ecd5f7476362aab5348d91415d8e31c53f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71698173"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195405"
 ---
 # <a name="idn-element-uri-settings"></a>\<idn>, element (ustawienia identyfikatora URI)
 
@@ -26,6 +26,7 @@ Określa, czy do nazwy domeny jest stosowane analizowanie międzynarodowych nazw
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -50,13 +51,13 @@ Istniejąca <xref:System.Uri> Klasa została rozszerzona w .NET Framework 3,5. 3
 
 Aby włączyć obsługę IRI, wymagane są następujące dwie zmiany:
 
-1. Dodaj następujący wiersz do pliku Machine. config w katalogu .NET Framework 2,0:
+1. Dodaj następujący wiersz do pliku machine.config w katalogu .NET Framework 2,0:
   
     ```xml  
     <section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
     ```  
   
-2. Określ, czy do nazwy domeny mają być stosowane analizy międzynarodowej nazwy domeny (IDN) i czy mają być stosowane reguły analizy IRI. Tę czynność można wykonać w pliku Machine. config lub w oknie App. config.
+2. Określ, czy do nazwy domeny mają być stosowane analizy międzynarodowej nazwy domeny (IDN) i czy mają być stosowane reguły analizy IRI. Można to zrobić w machine.config lub w pliku app.config.
 
  Istnieją trzy możliwe wartości IDN w zależności od używanych serwerów DNS:
 
@@ -76,7 +77,7 @@ Aby włączyć obsługę IRI, wymagane są następujące dwie zmiany:
 
 ### <a name="configuration-files"></a>Pliki konfiguracji
 
-Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).
+Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).
 
 ## <a name="example"></a>Przykład
 
@@ -91,8 +92,8 @@ W poniższym przykładzie przedstawiono konfigurację używaną przez <xref:Syst
 </configuration>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Configuration.IdnElement?displayProperty=nameWithType>
 - <xref:System.Configuration.UriSection?displayProperty=nameWithType>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

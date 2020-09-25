@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#], displaying
 ms.assetid: b8479f2d-9e05-4d38-82da-2e61246e5437
-ms.openlocfilehash: 1ac5dc5a5f4e974c9202d2ce23f61071494e1977
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 717e27c23724e63c03a38b028ef99dc6530b4745
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381817"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195483"
 ---
 # <a name="how-to-display-command-line-arguments-c-programming-guide"></a>Wyświetlanie argumentów wiersza polecenia (Przewodnik programowania w języku C#)
+
 Argumenty dostarczone do pliku wykonywalnego w wierszu polecenia są dostępne za pomocą opcjonalnego parametru do `Main` . Argumenty są podane w postaci tablicy ciągów. Każdy element tablicy zawiera jeden argument. Odstęp między argumentami jest usuwany. Rozważmy na przykład następujące wywołania wiersza polecenia fikcyjnego pliku wykonywalnego:  
   
 |Dane wejściowe w wierszu polecenia|Tablica ciągów przeniesiona do głównej|  
@@ -25,6 +26,7 @@ Argumenty dostarczone do pliku wykonywalnego w wierszu polecenia są dostępne z
 > W przypadku uruchamiania aplikacji w programie Visual Studio, można określić argumenty wiersza polecenia na [stronie debugowanie, Projektant projektu](/visualstudio/ide/reference/debug-page-project-designer).  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład wyświetla argumenty wiersza polecenia przekazane do aplikacji wiersza polecenia. Wyświetlane dane wyjściowe dotyczą pierwszego wpisu w powyższej tabeli.  
   
  [!code-csharp[csProgGuideMain#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#9)]  

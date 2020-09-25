@@ -3,14 +3,15 @@ title: Sortowanie danych (C#)
 description: Informacje o operacjach sortowania i standardowych metodach operatora zapytań, które wykonują operacje sortowania w LINQ w języku C#.
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: 5feeb0e2229fc370fdcb9608817f41832bffd7cc
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 0665e5dec95fd2929d24d82568de66597df1c0bd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302337"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195509"
 ---
 # <a name="sorting-data-c"></a>Sortowanie danych (C#)
+
 Operacja sortowania Porządkuje elementy sekwencji na podstawie jednego lub większej liczby atrybutów. Pierwsze kryterium sortowania wykonuje podstawowe sortowanie elementów. Określając drugie kryterium sortowania, można sortować elementy w ramach każdej podstawowej grupy sortowania.  
   
  Na poniższej ilustracji przedstawiono wyniki alfabetycznej operacji sortowania na sekwencji znaków:
@@ -34,6 +35,7 @@ Operacja sortowania Porządkuje elementy sekwencji na podstawie jednego lub wię
 ### <a name="primary-sort-examples"></a>Główne przykłady sortowania  
   
 #### <a name="primary-ascending-sort"></a>Podstawowe sortowanie rosnące  
+
  Poniższy przykład ilustruje sposób użycia `orderby` klauzuli w zapytaniu LINQ do sortowania ciągów w tablicy według długości ciągu w kolejności rosnącej.  
   
 ```csharp  
@@ -57,6 +59,7 @@ foreach (string str in query)
 ```  
   
 #### <a name="primary-descending-sort"></a>Sortowanie sortowania podstawowego  
+
  W następnym przykładzie pokazano, jak używać `orderby descending` klauzuli w zapytaniu LINQ do sortowania ciągów według ich pierwszej litery, w kolejności malejącej.  
   
 ```csharp  
@@ -82,6 +85,7 @@ foreach (string str in query)
 ### <a name="secondary-sort-examples"></a>Przykłady sortowania pomocniczego  
   
 #### <a name="secondary-ascending-sort"></a>Sortowanie pomocnicze rosnąco  
+
  Poniższy przykład ilustruje sposób użycia `orderby` klauzuli w zapytaniu LINQ do wykonywania podstawowego i pomocniczego sortowania ciągów w tablicy. Ciągi są sortowane głównie według długości i secondarily przez pierwszą literę ciągu, zarówno w kolejności rosnącej.  
   
 ```csharp  
@@ -105,6 +109,7 @@ foreach (string str in query)
 ```  
   
 #### <a name="secondary-descending-sort"></a>Sortowanie malejąco  
+
  W następnym przykładzie pokazano, jak używać `orderby descending` klauzuli w zapytaniu LINQ do wykonywania sortowania podstawowego w kolejności rosnącej i sortowania pomocniczego w kolejności malejącej. Ciągi są sortowane głównie według długości i secondarily przez pierwszą literę ciągu.  
   
 ```csharp  

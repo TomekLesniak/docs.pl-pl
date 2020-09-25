@@ -3,17 +3,19 @@ title: Używanie elementu System.Transactions w programie ASP.NET
 description: Użyj elementu System. Transactions w aplikacji ASP.NET. Włącz uprawnienia transakcji rozproszonych i pracuj z kompilacją dynamiczną.
 ms.date: 03/30/2017
 ms.assetid: 1982c300-7ea6-4242-95ed-dc28ccfacac9
-ms.openlocfilehash: f8bf485389d9633a37201f6293fab8ccae7cf26f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b6663e9258e98e94d7b739ee75c826ced1e2f897
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544469"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186721"
 ---
 # <a name="using-systemtransactions-in-aspnet"></a>Używanie elementu System.Transactions w programie ASP.NET
+
 W tym temacie opisano, jak można pomyślnie użyć <xref:System.Transactions> wewnątrz aplikacji ASP.NET.
 
 ## <a name="enable-distributedtransactionpermission-in-aspnet"></a>Włącz DistributedTransactionPermission w programie ASP.NET
+
  <xref:System.Transactions> obsługuje częściowo zaufane obiekty wywołujące i jest oznaczony `AllowPartiallyTrustedCallers` atrybutem (APTCA). Poziomy zaufania dla programu <xref:System.Transactions> są zdefiniowane w oparciu o typy zasobów (na przykład pamięć systemowa, udostępnione zasoby dla całego procesu, zasoby systemowe i inne zasoby), które <xref:System.Transactions> udostępniają i poziom zaufania, który powinien być wymagany do uzyskiwania dostępu do tych zasobów. W środowisku częściowej relacji zaufania niepełnym zestawem zaufania można używać tylko transakcji w domenie aplikacji (w tym przypadku jedynym chronionym zasobem jest pamięć systemowa), chyba że zostanie on udzielony <xref:System.Transactions.DistributedTransactionPermission> .
 
  <xref:System.Transactions.DistributedTransactionPermission>jest wymagany przy każdym eskalacji transakcji zarządzania można zarządzać przez transakcję Koordynator MSDTC (Microsoft Distributed). Tego rodzaju scenariusza wykorzystuje zasoby całego procesu i szczególnie globalne zasób, który jest zarezerwowane miejsce w dzienniku MSDTC. Przykładem tego użycia jest fronton sieci Web do bazy danych lub aplikacji, która korzysta z bazy danych w ramach usług, które zapewnia.
@@ -44,6 +46,7 @@ W tym temacie opisano, jak można pomyślnie użyć <xref:System.Transactions> w
  Aby uzyskać więcej informacji na temat zasad zabezpieczeń ASP.NET, zobacz [SecurityPolicy elementu (ASP.NET Settings Schema)](/previous-versions/dotnet/netframework-4.0/zhs35b56(v=vs.100)).
 
 ## <a name="dynamic-compilation"></a>Dynamicznej kompilacji
+
  Jeśli chcesz zaimportować i używać <xref:System.Transactions> w aplikacji ASP.NET, która jest dynamicznie kompilowana w programie Access, należy umieścić odwołanie do <xref:System.Transactions> zestawu w pliku konfiguracji. W konkretnym przypadku należy dodać odwołanie w `compilation/assemblies` sekcji domyślnego pliku konfiguracyjnego **Web.config** głównego lub pliku konfiguracji konkretnej aplikacji sieci Web. Poniższy przykład ilustruje to.
 
 ```xml
@@ -60,7 +63,7 @@ W tym temacie opisano, jak można pomyślnie użyć <xref:System.Transactions> w
 
  Aby uzyskać więcej informacji, zobacz [Dodawanie elementu do zestawów dla kompilacji (Schemat ustawień ASP.NET)](/previous-versions/dotnet/netframework-4.0/37e2zyhb(v=vs.100)).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [ASP.NET poziomów zaufania i plików zasad](/previous-versions/aspnet/wyts434y(v=vs.100))
 - [securityPolicy, element (Schemat ustawień ASP.NET)](/previous-versions/dotnet/netframework-4.0/zhs35b56(v=vs.100))

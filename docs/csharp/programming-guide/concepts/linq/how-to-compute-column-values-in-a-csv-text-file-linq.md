@@ -3,14 +3,15 @@ title: Jak obliczyć wartości kolumn w pliku tekstowym CSV (LINQ) (C#)
 description: Ten przykład przedstawia sposób wykonywania obliczeń agregacji przy użyciu LINQ w języku C#, takich jak sum, Average, min i Max, w kolumnach pliku CSV.
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 9137779f9767c8a9531489f7894ba3e69eb1faee
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a475de9c769a66fdded490a3f7eccdb74a434186
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105319"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195600"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Jak obliczyć wartości kolumn w pliku tekstowym CSV (LINQ) (C#)
+
 Ten przykład pokazuje, jak wykonywać obliczenia zagregowane, takie jak sum, Average, min i Max w kolumnach pliku CSV. Przykładowe zasady, które są wyświetlane w tym miejscu, można zastosować do innych typów tekstu strukturalnego.  
   
 ## <a name="to-create-the-source-file"></a>Aby utworzyć plik źródłowy  
@@ -160,6 +161,7 @@ class SumColumns
  Zapytanie działa przy użyciu metody, <xref:System.String.Split%2A> Aby przekonwertować każdy wiersz tekstu na tablicę. Każdy element tablicy reprezentuje kolumnę. Na koniec tekst w każdej kolumnie jest konwertowany na jego reprezentację liczbową. Jeśli plik jest plikiem rozdzielanym tabulatorami, po prostu zaktualizuj argument w `Split` metodzie do `\t` .  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
  Utwórz projekt aplikacji konsolowej w języku C# z `using` dyrektywami dotyczącymi przestrzeni nazw System. LINQ i system.IO.  
   
 ## <a name="see-also"></a>Zobacz też
