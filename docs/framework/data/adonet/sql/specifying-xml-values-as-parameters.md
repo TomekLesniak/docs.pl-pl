@@ -5,25 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-ms.openlocfilehash: acb94efd8b6b6b66d0cc84309c2d68ad692b08d3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 20a573da0221704451f10138cb854523d5a17f17
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174501"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183055"
 ---
 # <a name="specifying-xml-values-as-parameters"></a>Określanie wartości XML jako parametrów
-Jeśli kwerenda wymaga parametru, którego wartość jest ciągiem XML, deweloperzy mogą podać tę wartość przy użyciu wystąpienia typu danych **SqlXml.** Naprawdę nie ma żadnych sztuczek; Kolumny XML w programie SQL Server akceptują wartości parametrów w taki sam sposób, jak inne typy danych.  
+
+Jeśli zapytanie wymaga parametru, którego wartość jest ciągiem XML, deweloperzy mogą podać tę wartość przy użyciu wystąpienia typu danych **SQLXML** . Naprawdę nie ma żadnych lew; Kolumny XML w SQL Server akceptują wartości parametrów w taki sam sposób jak inne typy danych.  
   
 ## <a name="example"></a>Przykład  
- Następująca aplikacja konsoli tworzy nową tabelę w bazie danych **AdventureWorks.** Nowa tabela zawiera kolumnę o nazwie **SalesID** i kolumnę XML o nazwie **SalesInfo**.  
+
+ Następująca aplikacja konsolowa tworzy nową tabelę w bazie danych **AdventureWorks** . Nowa tabela zawiera kolumnę o nazwie **SalesId** i kolumnę XML o nazwie **SalesInfo**.  
   
 > [!NOTE]
-> Przykładowa baza danych **AdventureWorks** nie jest domyślnie instalowana podczas instalowania programu SQL Server. Można go zainstalować, uruchamiając instalator programu SQL Server.  
+> Przykładowa baza danych **AdventureWorks** nie jest instalowana domyślnie podczas instalowania SQL Server. Można go zainstalować, uruchamiając Instalatora SQL Server.  
   
- W przykładzie <xref:System.Data.SqlClient.SqlCommand> przygotowuje obiekt do wstawienia wiersza w nowej tabeli. Zapisany plik zawiera dane XML potrzebne dla kolumny **SalesInfo.**  
+ Przykład przygotowuje <xref:System.Data.SqlClient.SqlCommand> obiekt do wstawienia wiersza w nowej tabeli. Zapisany plik zawiera dane XML, które są zbędne dla kolumny **SalesInfo** .  
   
- Aby utworzyć plik potrzebny do uruchomienia przykładu, utwórz nowy plik tekstowy w tym samym folderze co projekt. Nazwij plik MyTestStoreData.xml. Otwórz plik w Notatniku i skopiuj i wklej następujący tekst:  
+ Aby utworzyć plik wymagany do uruchomienia przykładu, Utwórz nowy plik tekstowy w tym samym folderze co projekt. Nadaj plikowi nazwę MyTestStoreData.xml. Otwórz plik w programie Notepad i skopiuj i wklej następujący tekst:  
   
 ```xml  
 <StoreSurvey xmlns="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/StoreSurvey">  

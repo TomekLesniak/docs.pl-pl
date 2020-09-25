@@ -25,14 +25,15 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 92ecc4a430aa3c238a7cd8705dc0cec5a9d0cb11
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e40744c9c73e02fe96864d6b1320eb3dde4d1144
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559294"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183458"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurowanie aplikacji za pomocą plików konfiguracji
+
 .NET Framework, za pomocą plików konfiguracji, oferuje deweloperom i administratorom kontrolę i elastyczność nad sposobem uruchamiania aplikacji. Pliki konfiguracji to pliki XML, które można zmieniać w razie potrzeby. Administrator może kontrolować, do których chronionych zasobów aplikacja może uzyskać dostęp, które wersje zestawów będą używane przez aplikację, oraz miejsce, w którym znajdują się aplikacje zdalne i obiekty. Deweloperzy mogą umieszczać ustawienia w plikach konfiguracji, eliminując konieczność ponownego kompilowania aplikacji za każdym razem, gdy zmieni się ustawienie. W tej sekcji opisano, co można skonfigurować i dlaczego Konfigurowanie aplikacji może być przydatne.  
   
 > [!NOTE]
@@ -41,6 +42,7 @@ ms.locfileid: "90559294"
  W tym temacie opisano składnię plików konfiguracji i podano informacje o trzech typach plików konfiguracji: komputera, aplikacji i zabezpieczeń.  
   
 ## <a name="configuration-file-format"></a>Format pliku konfiguracji  
+
  Pliki konfiguracji zawierają elementy, które są logicznymi strukturami danych określającymi informacje o konfiguracji. Do oznaczania początku i końca elementu w pliku konfiguracji służą tagi. Na przykład `<runtime>` element składa się z `<runtime>` *elementów podrzędnych* `</runtime>` . Pusty element zostanie zapisany jako `<runtime/>` lub `<runtime></runtime>` .  
   
  Podobnie jak w przypadku wszystkich plików XML, w składni plików konfiguracji jest uwzględniana wielkość liter.  
@@ -53,6 +55,7 @@ ms.locfileid: "90559294"
 ```  
   
 ## <a name="machine-configuration-files"></a>Pliki konfiguracji komputera  
+
  Plik konfiguracji komputera — Machine.config — zawiera ustawienia, które są stosowane do całego komputera. Ten plik znajduje się w katalogu% \ config*instalacji systemu plików wykonywalnych*. Machine.config zawiera ustawienia konfiguracji dla powiązań zestawów dla całej maszyny, wbudowanych [kanałów komunikacji zdalnej](/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))i ASP.NET.  
   
  System konfiguracyjny najpierw przeszukuje plik konfiguracji komputera dla [ **\<appSettings>** elementu](./file-schema/appsettings/index.md) i innych sekcji konfiguracyjnych, które może zdefiniować Deweloper. Następnie przeszukuje plik konfiguracji aplikacji. Aby zachować możliwość zarządzania plikiem konfiguracji komputera, najlepiej jest umieścić te ustawienia w pliku konfiguracji aplikacji. Jednak umieszczenie tych ustawień w pliku konfiguracji komputera może sprawić, że system będzie łatwiejszy w utrzymaniu. Na przykład, jeśli zarówno aplikacja kliencka, jak i serwerowa, używa składnika innej firmy, łatwiej jest umieścić ustawienia dla tego składnika w jednym miejscu. W tym przypadku plik konfiguracji komputera jest właściwym miejscem dla tych ustawień, ponieważ dzięki temu te same ustawienia nie znajdują się w dwóch różnych plikach.  
@@ -63,6 +66,7 @@ ms.locfileid: "90559294"
  Aby uzyskać więcej informacji na temat sposobu, w jaki środowisko uruchomieniowe języka wspólnego używa pliku konfiguracji komputera do powiązania zestawu, zobacz [jak środowisko uruchomieniowe lokalizuje zestawy](../deployment/how-the-runtime-locates-assemblies.md).  
   
 ## <a name="application-configuration-files"></a>Pliki konfiguracji aplikacji  
+
  Plik konfiguracji aplikacji zawiera ustawienia specyficzne dla danej aplikacji. Ten plik zawiera ustawienia konfiguracji odczytywane przez środowisko uruchomieniowe języka wspólnego (takie jak zasady tworzenia powiązań zestawów, obiekty usług zdalnych itd.), i ustawienia, które może odczytać aplikacja.  
   
  Nazwa i lokalizacja pliku konfiguracji aplikacji są zależne od hosta aplikacji, który może być jednym z następujących:  
@@ -88,6 +92,7 @@ ms.locfileid: "90559294"
      W tym tagu `location` jest to adres URL pliku konfiguracji. Ta wartość określa podstawę aplikacji. Plik konfiguracji musi znajdować się w tej samej witrynie sieci web, co aplikacja.  
   
 ## <a name="security-configuration-files"></a>Pliki konfiguracji zabezpieczeń  
+
  Pliki konfiguracji zabezpieczeń zawierają informacje dotyczące hierarchii grup kodu i zestawów uprawnień skojarzonych z poziomem zasad. Zdecydowanie zalecamy użycie [narzędzia zasad zabezpieczeń dostępu kodu (Caspol.exe)](../tools/caspol-exe-code-access-security-policy-tool.md) w celu zmodyfikowania zasad zabezpieczeń, aby upewnić się, że zmiany zasad nie uszkadzają plików konfiguracji zabezpieczeń.  
   
 > [!NOTE]
@@ -102,6 +107,7 @@ ms.locfileid: "90559294"
 - Plik konfiguracji zasad użytkownika:%USERPROFILE%\Application data\Microsoft\CLR Security config\v*XX. xx*\Security.config  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Instrukcje: Lokalizowanie zestawów za pomocą DEVPATH](how-to-locate-assemblies-by-using-devpath.md)  
  Opisuje sposób kierowania środowiska uruchomieniowego do używania zmiennej środowiskowej DEVPATH podczas wyszukiwania zestawów.  
   
@@ -120,7 +126,7 @@ ms.locfileid: "90559294"
  [Schemat pliku konfiguracji](./file-schema/index.md)  
  Opisuje hierarchię schematów dla uruchamiania, środowiska uruchomieniowego, sieci i innych typów ustawień konfiguracji.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat pliku konfiguracji](./file-schema/index.md)
 - [Określanie lokalizacji zestawu](specify-assembly-location.md)

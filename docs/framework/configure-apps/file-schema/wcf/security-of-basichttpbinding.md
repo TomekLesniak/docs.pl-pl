@@ -2,14 +2,15 @@
 title: <security> dla <basicHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 6432708d-5465-4bd9-bfc2-466742db99cb
-ms.openlocfilehash: c8e4f2d000a155eecd2a6c7faaaf4af525b24ca3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6144e5448526d7f2a7c89693f70f71a7f26c4a22
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738713"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183666"
 ---
 # <a name="security-of-basichttpbinding"></a>\<security> dla \<basicHttpBinding>
+
 Definiuje możliwości zabezpieczeń programu [\<basicHttpBinding>](basichttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Definiuje możliwości zabezpieczeń programu [\<basicHttpBinding>](basichttpbin
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -46,7 +48,7 @@ Definiuje możliwości zabezpieczeń programu [\<basicHttpBinding>](basichttpbin
 |-----------|-----------------|  
 |Brak|-Komunikaty nie są zabezpieczane podczas transferu.|  
 |Transport|Zabezpieczenia są udostępniane przy użyciu protokołu HTTPS. Komunikaty protokołu SOAP są zabezpieczone przy użyciu protokołu HTTPS. Usługa jest uwierzytelniana na kliencie przy użyciu certyfikatu X. 509 usługi. Klient jest uwierzytelniany przy użyciu dostarczonego obiekt ClientCredentialtype. Zobacz [\<transport>](transport-of-basichttpbinding.md) .|  
-|Komunikat|Zabezpieczenia są udostępniane przy użyciu zabezpieczeń komunikatów protokołu SOAP. Domyślnie treść jest zaszyfrowana i podpisana. W przypadku tego powiązania system wymaga, aby certyfikat serwera został dostarczony do klienta poza pasmem. Jedyna prawidłowa `ClientCredentialType` dla tego powiązania to `Certificate` .|  
+|Wiadomość|Zabezpieczenia są udostępniane przy użyciu zabezpieczeń komunikatów protokołu SOAP. Domyślnie treść jest zaszyfrowana i podpisana. W przypadku tego powiązania system wymaga, aby certyfikat serwera został dostarczony do klienta poza pasmem. Jedyna prawidłowa `ClientCredentialType` dla tego powiązania to `Certificate` .|  
 |TransportWithMessageCredential|Integralność, poufność i uwierzytelnianie serwera są udostępniane przez zabezpieczenia transportu. Uwierzytelnianie klienta jest zapewniane przez zabezpieczenia komunikatów protokołu SOAP. Ten tryb jest istotny, gdy użytkownik jest uwierzytelniany przy użyciu nazwy użytkownika/hasła i istnieje wdrożenie HTTP na potrzeby zabezpieczania transferu komunikatów.|  
 |TransportCredentialOnly|Ten tryb nie zapewnia integralności i poufności komunikatów. Zapewnia uwierzytelnianie klienta oparte na protokole HTTP. Ten tryb powinien być używany z zachowaniem ostrożności. Powinna być używana w środowiskach, w których zabezpieczenia transportu są dostarczane przy użyciu innych metod (takich jak IPSec) i tylko uwierzytelnianie klienta jest udostępniane przez infrastrukturę WCF.|  
   
@@ -64,9 +66,10 @@ Definiuje możliwości zabezpieczeń programu [\<basicHttpBinding>](basichttpbin
 |powiązanie|Element Binding elementu [\<basicHttpBinding>](basichttpbinding.md) .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Domyślnie komunikat protokołu SOAP nie jest zabezpieczony i klient nie jest uwierzytelniany. Ten element umożliwia skonfigurowanie dodatkowych ustawień zabezpieczeń dla `basicHttpBinding` elementu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.BasicHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.BasicHttpBindingElement.Security%2A>
@@ -76,5 +79,5 @@ Definiuje możliwości zabezpieczeń programu [\<basicHttpBinding>](basichttpbin
 - [Wybieranie typu poświadczeń](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Powiązania](../../../wcf/bindings.md)
 - [Konfigurowanie powiązań dostarczanych przez system](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [Konfigurowanie usług i klientów za pomocą powiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)

@@ -2,12 +2,12 @@
 title: Testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu Visual Studio dla komputerów Mac
 description: Utwórz projekt testu jednostkowego dla biblioteki klas .NET Core. Sprawdź, czy biblioteka klas .NET Core działa prawidłowo z testami jednostkowymi.
 ms.date: 06/08/2020
-ms.openlocfilehash: d3c8a5e01d16047949e977f3af6a429970d996d0
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 3adcddc96abf77012f89a28c1cf60ea57ae506a2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359223"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180533"
 ---
 # <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu programu Visual Studio
 
@@ -165,7 +165,9 @@ Aby przetestować kompilację wydania:
 
 ## <a name="debug-tests"></a>Debuguj testy
 
-Można użyć tego samego procesu, który został przedstawiony w [samouczku: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac](debugging-with-visual-studio-mac.md) do debugowania kodu przy użyciu projektu testów jednostkowych. Zamiast rozpoczynać projekt aplikacji <kbd>Pokaz, kliknij</kbd>projekt **StringLibraryTests** i wybierz pozycję **Rozpocznij debugowanie projektu** z menu kontekstowego. Program Visual Studio uruchamia projekt testowy z dołączonym debugerem. Wykonanie zostanie zatrzymane na dowolnym punkcie przerwania, który został dodany do projektu testowego lub kodu biblioteki źródłowej.
+Jeśli używasz Visual Studio dla komputerów Mac jako środowiska IDE, możesz użyć tego samego procesu, który został przedstawiony w [samouczku: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio dla komputerów Mac](debugging-with-visual-studio-mac.md) do debugowania kodu przy użyciu projektu testu jednostkowego. Zamiast rozpoczynać projekt aplikacji *Pokaz* <kbd>, kliknij</kbd>projekt **StringLibraryTests** i wybierz pozycję **Rozpocznij debugowanie projektu** z menu kontekstowego.
+
+Program Visual Studio uruchamia projekt testowy z dołączonym debugerem. Wykonanie zostanie zatrzymane na dowolnym punkcie przerwania, który został dodany do projektu testowego lub kodu biblioteki źródłowej.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 

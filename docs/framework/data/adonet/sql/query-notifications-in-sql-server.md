@@ -3,14 +3,15 @@ title: Powiadomienia zapytań w programie SQL Server
 description: Informacje na temat używania powiadomień o zapytaniach w celu powiadomienia aplikacji o zmianie danych w bazie danych SQL Server, na przykład w celu odświeżenia wyświetlania aplikacji.
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: 43b496db74f7e6fc9bc9f17d946bf34398b32312
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8001f75d7e278a965b6e8e00e4b9af7b770a8bb5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543988"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183094"
 ---
 # <a name="query-notifications-in-sql-server"></a>Powiadomienia zapytań w programie SQL Server
+
 W oparciu o infrastrukturę Service Broker powiadomienia o zapytaniach umożliwiają powiadamianie aplikacji o zmianach danych. Ta funkcja jest szczególnie przydatna w przypadku aplikacji, które udostępniają pamięć podręczną informacji z bazy danych, takiej jak aplikacja sieci Web, i należy powiadamiać o zmianach danych źródłowych.  
   
  Istnieją trzy sposoby implementacji powiadomień o zapytaniach przy użyciu ADO.NET:  
@@ -40,6 +41,7 @@ W oparciu o infrastrukturę Service Broker powiadomienia o zapytaniach umożliwi
 - [Przewodnik dewelopera (Service Broker)](/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Włączanie powiadomień o zapytaniach](enabling-query-notifications.md)  
  W tym artykule omówiono sposób używania powiadomień o zapytaniach, w tym wymagania dotyczące włączania i korzystania z nich.  
   
@@ -53,6 +55,7 @@ W oparciu o infrastrukturę Service Broker powiadomienia o zapytaniach umożliwi
  Demonstruje Konfigurowanie <xref:System.Data.SqlClient.SqlCommand> obiektu do pracy z powiadomieniem o zapytaniach.  
   
 ## <a name="reference"></a>Tematy pomocy  
+
  <xref:System.Data.Sql.SqlNotificationRequest>  
  Opisuje <xref:System.Data.Sql.SqlNotificationRequest> klasę i wszystkich jej członków.  
   
@@ -62,7 +65,7 @@ W oparciu o infrastrukturę Service Broker powiadomienia o zapytaniach umożliwi
  <xref:System.Web.Caching.SqlCacheDependency>  
  Opisuje <xref:System.Web.Caching.SqlCacheDependency> klasę i wszystkich jej członków.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [SQL Server i ADO.NET](index.md)
 - [Omówienie ADO.NET](../ado-net-overview.md)

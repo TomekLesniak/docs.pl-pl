@@ -2,14 +2,15 @@
 title: <workflowRuntime>
 ms.date: 03/30/2017
 ms.assetid: 304c70fa-78d1-4d0f-b89f-0ca23d734c6f
-ms.openlocfilehash: 43cdec2403e8d80256279388a1adf7cf3cedbb73
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4a450fb6f02bbf0f1681f7b2fabea9da7b65cbea
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558787"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183601"
 ---
 # \<workflowRuntime>
+
 Określa ustawienia dla wystąpienia programu <xref:System.Workflow.Runtime.WorkflowRuntime> do hostowania usług Windows Communication Foundation opartych na przepływie pracy (WCF).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Określa ustawienia dla wystąpienia programu <xref:System.Workflow.Runtime.Work
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -62,6 +64,7 @@ Określa ustawienia dla wystąpienia programu <xref:System.Workflow.Runtime.Work
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Określa zachowanie elementu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby uzyskać więcej informacji na temat używania pliku konfiguracji do sterowania zachowaniem <xref:System.Workflow.Runtime.WorkflowRuntime> obiektu Windows Workflow Foundation aplikacji hosta, zobacz [pliki konfiguracji przepływu pracy](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
   
 ## <a name="example"></a>Przykład  
@@ -84,7 +87,7 @@ Określa ustawienia dla wystąpienia programu <xref:System.Workflow.Runtime.Work
 </serviceBehaviors>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>
 - <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>

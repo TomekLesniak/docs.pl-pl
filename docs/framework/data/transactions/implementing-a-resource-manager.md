@@ -3,14 +3,15 @@ title: Implementowanie Menedżera zasobów
 description: Implementowanie Menedżera zasobów w programie .NET. Menedżer zasobów zarządza zasobami używanymi w transakcjach. Menedżer transakcji koordynuje akcje Menedżera zasobów.
 ms.date: 03/30/2017
 ms.assetid: d5c153f6-4419-49e3-a5f1-a50ae4c81bf3
-ms.openlocfilehash: bf40c6eaee35a5a548c6de4a286e46c4d4a66aca
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: e6370f6b544255ebdc402f06b7977d4a3a587c32
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141852"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91182899"
 ---
 # <a name="implementing-a-resource-manager"></a>Implementowanie Menedżera zasobów
+
 Poszczególne zasoby używane w transakcji jest zarządzane przez Menedżera zasobów, których działania są koordynowany przez Menedżera transakcji. Menedżerowie zasobów pracują we współpracy z menedżerem transakcji w celu zapewnienia aplikacji z gwarancją niepodzielności i izolacji. Microsoft SQL Server, trwałe kolejki komunikatów, tabele skrótów w pamięci to wszystkie przykłady menedżerów zasobów.  
   
  Menedżer zasobów zarządza trwałe lub nietrwała danych. Trwałość (lub odwrotnie niestabilności ich) zasobu menedżera odwołuje się do tego, czy Menedżera zasobów obsługuje odzyskiwanie po awarii. Jeśli Menedżera zasobów obsługuje odzyskiwanie po awarii, utrzymuje danych do trwałego magazynu podczas fazy 1. (przygotowanie) tak, aby w przypadku awarii Menedżera zasobów, można ponownie zarejestrować transakcji po odzyskiwania i wykonać odpowiednie akcje w oparciu o powiadomienia otrzymane z menedżerem transakcji. Ogólnie rzecz biorąc Menedżerowie zasobów lotnych zarządzają zasobami nietrwałymi, takimi jak struktura danych w pamięci (na przykład w pamięci podręcznej), a trwałe Menedżerowie zasobów zarządzają zasobami, które mają bardziej trwały magazyn zapasowy (na przykład baza danych, której magazyn zapasowy jest dyskiem).  
@@ -34,13 +35,14 @@ Poszczególne zasoby używane w transakcji jest zarządzane przez Menedżera zas
  <xref:System.Transactions.Transaction> Klasa udostępnia także <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> metodę, aby zarejestrować awansowanie jednego etapu rejestracji (PSPE). Dzięki temu trwałe zasobu manager (MB), hosta i "własnością" transakcji, która może zostać później przekazany do były zarządzane przez MSDTC, jeśli to konieczne. Aby uzyskać więcej informacji na ten temat, zobacz [Optymalizacja przy użyciu jednej fazy zatwierdzania i powiadomienia o pojedynczej fazie](optimization-spc-and-promotable-spn.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  W następujących tematach opisano kroki zwykle następuje Menedżera zasobów.  
   
  [Rejestrowanie zasobów jako uczestników transakcji](enlisting-resources-as-participants-in-a-transaction.md)  
   
  Opisuje, jak trwałe zasobu można zarejestrować w transakcji.  
   
- [Zatwierdzanie transakcji jednofazowe i wielofazowe](committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [Jednofazowe i wielofazowe zatwierdzanie transakcji](committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  Opisuje, jak Zatwierdź powiadomień i przygotowania zatwierdzanie z użytkownikiem odpowiada Menedżera zasobów.  
   

@@ -2,14 +2,15 @@
 title: <peerAuthentication>
 ms.date: 03/30/2017
 ms.assetid: ad545e6f-f06e-4549-ac92-09d758d5c636
-ms.openlocfilehash: 6f0ae05d3397e8fd981037dc58be1f80a661b5c5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a88a3c0bbbd36d2372520f70b3c5692757b35ade
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90536005"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181560"
 ---
 # \<peerAuthentication>
+
 Określa ustawienia uwierzytelniania dla certyfikatu równorzędnego używanego przez węzeł równorzędny.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Określa ustawienia uwierzytelniania dla certyfikatu równorzędnego używanego 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,6 +45,7 @@ Określa ustawienia uwierzytelniania dla certyfikatu równorzędnego używanego 
 |`trustedStoreLocation`|Opcjonalne Wyliczenie. Określa lokalizację zaufanego magazynu, w której certyfikat równorzędny jest sprawdzany przez system zabezpieczeń WCF. Ten atrybut jest typu <xref:System.Security.Cryptography.X509Certificates.StoreLocation> .|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -52,9 +55,10 @@ Określa ustawienia uwierzytelniania dla certyfikatu równorzędnego używanego 
 |[\<peer>](peer-of-servicecredentials.md)|Określa bieżące poświadczenia dla węzła równorzędnego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<authentication>`Element odnosi się do <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication> klasy. Ten element określa moduł sprawdzania poprawności, który jest wywoływany podczas uwierzytelniania sąsiada-sąsiada w sieci. Gdy nowy element równorzędny podejmie próbę nawiązania połączenia sąsiada, przekazuje własne poświadczenie do elementu równorzędnego odpowiadającego. Moduł sprawdzania poprawności jest wywoływany w celu zweryfikowania poświadczeń strony zdalnej. Za każdym razem, gdy połączenie równorzędne jest nawiązane w sieci, oba elementy równorzędne są uwierzytelniane wzajemnie, co oznacza, że są wywoływane walidacje na obu końcach.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.PeerCredentialElement>
 - <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>

@@ -14,14 +14,15 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 46b9dc23644e68aea2767f2b990fe7f243a4f357
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3961489f7fc801a0170f9d48293109206a83faaf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864985"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181963"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Argumenty nazwane i opcjonalne (Przewodnik programowania w języku C#)
+
 W języku C# 4 wprowadzono argumenty nazwane i opcjonalne. *Nazwane argumenty* umożliwiają określenie argumentu dla określonego parametru przez skojarzenie argumentu z nazwą parametru, a nie z pozycją parametru na liście parametrów. *Argumenty opcjonalne* umożliwiają pominięcie argumentów dla niektórych parametrów. Obie techniki mogą być używane z metodami, indeksatorami, konstruktorami i delegatami.  
   
  W przypadku używania argumentów nazwanych i opcjonalnych argumenty są oceniane w kolejności, w jakiej są wyświetlane na liście argumentów, a nie na liście parametrów.  
@@ -29,6 +30,7 @@ W języku C# 4 wprowadzono argumenty nazwane i opcjonalne. *Nazwane argumenty* u
  Parametry nazwane i opcjonalne, gdy są używane razem, umożliwiają dostarczenie argumentów dla tylko kilku parametrów z listy opcjonalnych parametrów. Ta funkcja znacznie ułatwia wywoływanie interfejsów COM, takich jak interfejsy API automatyzacji Microsoft Office.  
   
 ## <a name="named-arguments"></a>Nazwane argumenty  
+
  Nazwane argumenty uwalniają użytkownika od konieczności zapamiętania lub wyszukiwania kolejności parametrów na listach parametrów wywoływanych metod. Parametr dla każdego argumentu można określić za pomocą nazwy parametru. Na przykład funkcja, która drukuje szczegóły zamówienia (takie jak nazwa sprzedawcy, numer zamówienia & Nazwa produktu), może być wywoływana w standardowy sposób przez wysłanie argumentów według pozycji w kolejności zdefiniowanej przez funkcję.
   
  `PrintOrderDetails("Gift Shop", 31, "Red Mug");`
@@ -59,11 +61,13 @@ W języku C# 4 wprowadzono argumenty nazwane i opcjonalne. *Nazwane argumenty* u
  ```
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod implementuje przykłady z tej sekcji wraz z dodatkowymi.  
   
  [!code-csharp[csProgGuideNamedAndOptional#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/program.cs#1)]  
   
 ## <a name="optional-arguments"></a>Argumenty opcjonalne  
+
  Definicja metody, konstruktora, indeksatora lub delegata może określać, że parametry są wymagane lub są opcjonalne. Każde wywołanie musi udostępniać argumenty dla wszystkich wymaganych parametrów, ale może pominąć argumenty dla parametrów opcjonalnych.  
   
  Każdy opcjonalny parametr ma wartość domyślną w ramach swojej definicji. Jeśli żaden argument nie jest wysyłany dla tego parametru, zostanie użyta wartość domyślna. Wartość domyślna musi być jednym z następujących typów wyrażeń:  
@@ -91,14 +95,16 @@ W języku C# 4 wprowadzono argumenty nazwane i opcjonalne. *Nazwane argumenty* u
  ![Zrzut ekranu przedstawiający funkcję IntelliSense Quick info dla metody ExampleMethod.](./media/named-and-optional-arguments/optional-examplemethod-parameters.png)  
   
 > [!NOTE]
-> Można również zadeklarować parametry opcjonalne przy użyciu klasy .NET <xref:System.Runtime.InteropServices.OptionalAttribute> . `OptionalAttribute`parametry nie wymagają wartości domyślnej.  
+> Można również zadeklarować parametry opcjonalne przy użyciu klasy .NET <xref:System.Runtime.InteropServices.OptionalAttribute> . `OptionalAttribute` parametry nie wymagają wartości domyślnej.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie Konstruktor dla `ExampleClass` ma jeden parametr, który jest opcjonalny. Metoda wystąpienia `ExampleMethod` ma jeden wymagany parametr, `required` i dwa parametry opcjonalne `optionalstr` oraz `optionalint` . Kod w `Main` pokazuje różne sposoby wywoływania konstruktora i metody.  
   
  [!code-csharp[csProgGuideNamedAndOptional#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/optional.cs#2)]  
   
 ## <a name="com-interfaces"></a>Interfejsy COM  
+
  Argumenty nazwane i opcjonalne wraz z obsługą obiektów dynamicznych i innych ulepszeń znacznie zwiększają współdziałanie z interfejsami API modelu COM, takimi jak interfejsy API usługi Office Automation.  
   
  Na przykład <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> Metoda w interfejsie programu Excel Microsoft Office <xref:Microsoft.Office.Interop.Excel.Range> ma siedem parametrów, z których wszystkie są opcjonalne. Te parametry przedstawiono na poniższej ilustracji:  
@@ -116,6 +122,7 @@ W języku C# 4 wprowadzono argumenty nazwane i opcjonalne. *Nazwane argumenty* u
  Aby uzyskać więcej informacji i przykładów, zobacz [jak używać argumentów nazwanych i opcjonalnych w programowaniu pakietu Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) oraz [jak uzyskiwać dostęp do obiektów międzyoperacyjności pakietu Office za pomocą funkcji języka C#](../interop/how-to-access-office-onterop-objects.md).  
   
 ## <a name="overload-resolution"></a>Rozpoznanie przeciążenia  
+
  Użycie argumentów nazwanych i opcjonalnych wpływa na rozpoznawanie przeciążenia w następujący sposób:  
   
 - Metoda, indeksator lub Konstruktor jest kandydatem do wykonania, jeśli każdy z jego parametrów jest opcjonalny lub odpowiada według nazwy lub według pozycji, do pojedynczego argumentu w instrukcji wywołującej i ten argument można przekonwertować na typ parametru.  
@@ -125,9 +132,10 @@ W języku C# 4 wprowadzono argumenty nazwane i opcjonalne. *Nazwane argumenty* u
 - Jeśli dwie kandydaci są uważane za równie dobre, preferencja przechodzi do kandydata, który nie ma parametrów opcjonalnych, dla których argumenty zostały pominięte w wywołaniu. Jest to konsekwencja ogólne preferencje rozpoznawania przeciążenia dla kandydatów, które mają mniej parametrów.  
   
 ## <a name="c-language-specification"></a>Specyfikacja języka C#  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Porada: użycie argumentów nazwanych i opcjonalnych w programowaniu pakietu Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
 - [Używanie typu dynamicznego](../types/using-type-dynamic.md)

@@ -3,17 +3,19 @@ title: Funkcje oferowane przez bibliotekę System.Transactions
 description: Zapoznaj się z funkcjami dostarczanymi przez przestrzeń nazw System. Transactions w programie .NET, aby napisać własną aplikację transakcji i Menedżera zasobów.
 ms.date: 03/30/2017
 ms.assetid: e458cef9-63b5-4401-b448-1536dcd9d9e5
-ms.openlocfilehash: 0278e9248305572c6156c6500f1fe51a8b3f3338
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 27c6224530b4faa1ada93db8147f9334f38b93ab
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141865"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91182925"
 ---
 # <a name="features-provided-by-systemtransactions"></a>Funkcje oferowane przez bibliotekę System.Transactions
+
 W tej sekcji opisano, jak za pomocą funkcji udostępnionych przez <xref:System.Transactions> przestrzeń nazw napisać własną transakcyjną aplikację i Menedżera zasobów. W tej sekcji opisano sposób tworzenia i uczestniczenia w transakcji (lokalnej lub rozproszonej) z jednym lub wieloma uczestnikami.  
   
 ## <a name="overview-of-systemtransactions"></a>Omówienie System.Transactions  
+
  Infrastruktura dostarczana przez klasy w <xref:System.Transactions> przestrzeni nazw sprawia, że programowanie transakcyjne jest proste i wydajne dzięki obsłudze transakcji zainicjowanych w SQL Server, ADO.NET, kolejkowania komunikatów (MSMQ) i Microsoft Distributed Transaction Coordinator (MSDTC). <xref:System.Transactions>Przestrzeń nazw zapewnia jawny model programowania oparty na <xref:System.Transactions.Transaction> klasie, a także niejawny model programowania korzystający z <xref:System.Transactions.TransactionScope> klasy, w którym transakcje są automatycznie zarządzane przez infrastrukturę. Aby uzyskać więcej informacji na temat tworzenia aplikacji transakcyjnej przy użyciu tych dwóch modeli, zobacz [pisanie aplikacji transakcyjnej](writing-a-transactional-application.md).  
   
  <xref:System.Transactions>Przestrzeń nazw udostępnia również typy umożliwiające zaimplementowanie Menedżera zasobów. Menedżer zasobów zarządza trwałymi lub nietrwałymi danymi używanymi w transakcji i współpracuje z menedżerem transakcji w celu zapewnienia aplikacji z gwarancją niepodzielności i izolacji. Menedżer transakcji, który jest dostarczany przez <xref:System.Transactions> infrastrukturę, obsługuje transakcje obejmujące wiele zasobów trwałych lub pojedynczy zasób trwały. Aby uzyskać więcej informacji na temat implementowania Menedżera zasobów, zobacz [implementowanie Menedżer zasobów](implementing-a-resource-manager.md).  
@@ -29,6 +31,7 @@ W tej sekcji opisano, jak za pomocą funkcji udostępnionych przez <xref:System.
 ## <a name="in-this-section"></a>W tej sekcji  
   
 ### <a name="writing-a-transactional-application"></a>Pisanie aplikacji transakcyjnej  
+
  <xref:System.Transactions>Przestrzeń nazw zawiera dwa modele do tworzenia aplikacji transakcyjnych. [Implementacja niejawnej transakcji przy użyciu zakresu transakcji](implementing-an-implicit-transaction-using-transaction-scope.md) opisuje sposób, w jaki <xref:System.Transactions> przestrzeń nazw obsługuje tworzenie niejawnych transakcji przy użyciu <xref:System.Transactions.TransactionScope> klasy.  
   
  [Implementacja jawnej transakcji przy użyciu CommittableTransaction](implementing-an-explicit-transaction-using-committabletransaction.md) opisuje sposób, w jaki <xref:System.Transactions> przestrzeń nazw obsługuje tworzenie jawnych transakcji przy użyciu <xref:System.Transactions.CommittableTransaction> klasy.  
@@ -36,4 +39,5 @@ W tej sekcji opisano, jak za pomocą funkcji udostępnionych przez <xref:System.
  Aby uzyskać dodatkowe tematy dotyczące pisania aplikacji transakcyjnej, zobacz [pisanie aplikacji transakcyjnej](writing-a-transactional-application.md).  
   
 ### <a name="implementing-a-resource-manager"></a>Implementowanie Menedżer zasobów  
+
  Aby zaimplementować Menedżera zasobów, który może uczestniczyć w transakcji, zobacz [implementowanie Menedżer zasobów](implementing-a-resource-manager.md). W tej sekcji opisano rejestracja zasobu, zatwierdzanie transakcji, odzyskiwania po awarii i optymalizacji najlepszych rozwiązań.

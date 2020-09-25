@@ -2,14 +2,15 @@
 title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: b2ff39e1292cfaad1165e14e693acda2518477a6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 730a051e6823a89c05f8eb894b261e93c0511dcc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559047"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183641"
 ---
 # \<udpBinding>
+
 Element konfiguracji służący do konfigurowania <xref:System.ServiceModel.UdpBinding> powiązania.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -45,6 +46,7 @@ Element konfiguracji służący do konfigurowania <xref:System.ServiceModel.UdpB
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -79,9 +81,11 @@ Element konfiguracji służący do konfigurowania <xref:System.ServiceModel.UdpB
 |[\<bindings>](bindings.md)|Ten element zawiera kolekcję powiązań standardowych i niestandardowych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  UdpBinding umożliwia usługom WCF komunikowanie się za pośrednictwem transportu UDP. Umożliwia ona wymianę komunikatów "Fire" i "zapomnij", gdy klient wysyła komunikat do usługi i oczekuje braku odpowiedzi.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak skonfigurować <xref:System.ServiceModel.UdpBinding> przy użyciu <`udpBinding`> elementu.  
   
 ```xml  
@@ -104,7 +108,7 @@ Element konfiguracji służący do konfigurowania <xref:System.ServiceModel.UdpB
 </udpBinding>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>

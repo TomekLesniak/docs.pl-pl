@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: c2630741e1055a14dd5b9e4445d660cfd68891b0
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 13321cdc83637105a2b981902ce984e6a90a25d9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863867"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181820"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Przechowywanie wersji przesłonięć i nowych słów kluczowych (Przewodnik programowania w języku C#)
+
 Język C# został zaprojektowany tak, aby przechowywanie wersji między klasą [podstawową](../../language-reference/keywords/base.md) i pochodną w różnych bibliotekach można było rozwijać i obsługiwać zgodność z poprzednimi wersjami. Oznacza to, na przykład, że wprowadzenie nowego elementu członkowskiego w [klasie](../../language-reference/keywords/class.md) bazowej o takiej samej nazwie jak element członkowski w klasie pochodnej jest w pełni obsługiwane przez język C# i nie prowadzi do nieoczekiwanego zachowania. Oznacza to również, że klasa musi jawnie określać, czy metoda jest przeznaczona do przesłania dziedziczonej metody lub czy metoda jest nową metodą, która ukrywa podobną metodę o nazwie dziedziczone.  
   
  W języku C# klasy pochodne mogą zawierać metody o takiej samej nazwie jak metody klasy bazowej.  
@@ -65,6 +66,7 @@ Język C# został zaprojektowany tak, aby przechowywanie wersji między klasą [
  Użycie `new` słowa kluczowego informuje kompilator, że definicja ukrywa definicję, która jest zawarta w klasie bazowej. Jest to zachowanie domyślne.  
   
 ## <a name="override-and-method-selection"></a>Przesłoń i wybór metody  
+
  Gdy metoda jest nazywana w klasie, kompilator języka C# wybiera najlepszą metodę wywołania, jeśli więcej niż jedna metoda jest zgodna z wywołaniem, na przykład wtedy, gdy istnieją dwie metody o tej samej nazwie i parametry, które są zgodne z przekazaniem parametru. Następujące metody byłyby zgodne:  
   
  [!code-csharp[csProgGuideInheritance#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#32)]  
@@ -79,7 +81,7 @@ Język C# został zaprojektowany tak, aby przechowywanie wersji między klasą [
   
  Aby uzyskać więcej przykładów dla `new` i `override` , zobacz artykuł [wiedzą, kiedy używać przesłonięć i nowych słów kluczowych](./knowing-when-to-use-override-and-new-keywords.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)

@@ -6,17 +6,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 29efe5e5-897b-46c2-a35f-e599a273acc8
-ms.openlocfilehash: 40001422e665a7dda3fb938c8d57860909525404
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 7e1d78b581fcb3c4b2265f1d04cf2aba83faa28a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141994"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91182886"
 ---
 # <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>Implementowanie transakcji jawnej przy użyciu CommitableTransaction
+
 <xref:System.Transactions.CommittableTransaction>Klasa zapewnia jawny sposób używania transakcji przez aplikacje, w przeciwieństwie do <xref:System.Transactions.TransactionScope> niejawnie używanej klasy. Jest to przydatne w przypadku aplikacji, które chcą używać tej samej transakcji w wielu wywołaniach funkcji lub wielu wywołaniach wątków. W przeciwieństwie do <xref:System.Transactions.TransactionScope> klasy, moduł zapisujący aplikacji musi wywoływać <xref:System.Transactions.CommittableTransaction.Commit%2A> <xref:System.Transactions.Transaction.Rollback%2A> metody i w celu zatwierdzenia lub przerwania transakcji.  
   
 ## <a name="overview-of-the-committabletransaction-class"></a>Przegląd klasy CommittableTransaction  
+
  <xref:System.Transactions.CommittableTransaction> Klasa pochodzi z <xref:System.Transactions.Transaction> klasy, dlatego dostarczanie wszystkich funkcji drugiego. Jest szczególnie przydatna <xref:System.Transactions.Transaction.Rollback%2A> metody w <xref:System.Transactions.Transaction> klasa, która umożliwia także wycofać <xref:System.Transactions.CommittableTransaction> obiektu.  
   
  <xref:System.Transactions.Transaction> Klasa jest podobna do <xref:System.Transactions.CommittableTransaction> klasy, ale nie oferuje `Commit` metody. Umożliwia to przekazania obiektu transakcji (lub klony jego) do innych metod (potencjalnie na inny wątek) przy zachowaniu kontroli nad kiedy transakcja została zatwierdzona. Dzwonić kodu jest w stanie zarejestrować i oddawać głosy na transakcji, ale tylko twórca <xref:System.Transactions.CommittableTransaction> obiekt ma możliwość zatwierdzania transakcji.  
@@ -28,6 +30,7 @@ ms.locfileid: "85141994"
 - Element <xref:System.Transactions.CommittableTransaction> obiektu nie może być używany ponownie. Po <xref:System.Transactions.CommittableTransaction> obiektu została przekazana lub wycofana, nie może być używana ponownie w transakcji. Oznacza to, że nie można ustawić jako bieżący kontekst transakcji otoczenia.  
   
 ## <a name="creating-a-committabletransaction"></a>Tworzenie CommittableTransaction  
+
  Poniższy przykład tworzy nowy <xref:System.Transactions.CommittableTransaction> i zatwierdza go.  
   
  [!code-csharp[Tx_CommittableTx#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/tx_committabletx/cs/committabletxwithsql.cs#1)]
@@ -40,6 +43,7 @@ ms.locfileid: "85141994"
  Element <xref:System.Transactions.CommittableTransaction> obiektu można stosować w przypadku wywołania funkcji i wątków. Jednak do deweloperów aplikacji można obsługiwać wyjątki i <xref:System.Transactions.Transaction.Rollback%28System.Exception%29> w przypadku awarii wywołać metodę.  
   
 ## <a name="asynchronous-commit"></a>Zatwierdzanie asynchroniczne  
+
  <xref:System.Transactions.CommittableTransaction> Klasa zawiera także mechanizm asynchronicznie Zatwierdzanie transakcji. Zatwierdzenie transakcji może trwać bardzo długo, ponieważ może to wymagać wielu dostępu do bazy danych i możliwego opóźnienia sieci. Aby uniknąć zakleszczenii w aplikacjach o wysokiej przepływności, można użyć zatwierdzania asynchronicznego, aby zakończyć pracę transakcyjną najszybciej, jak to możliwe, i uruchomić operację zatwierdzania jako zadanie w tle. <xref:System.Transactions.CommittableTransaction.BeginCommit%2A> i <xref:System.Transactions.CommittableTransaction.EndCommit%2A> metody <xref:System.Transactions.CommittableTransaction> klasy pozwalają w tym celu.  
   
  Można wywołać metodę <xref:System.Transactions.CommittableTransaction.BeginCommit%2A> wysłania Napad zatwierdzania do wątków z puli wątków. Można również wywołać <xref:System.Transactions.CommittableTransaction.EndCommit%2A> do określenia, czy transakcja faktycznie została zatwierdzona. Jeśli nie można przekazać z jakiegokolwiek powodu, transakcji <xref:System.Transactions.CommittableTransaction.EndCommit%2A> zgłasza wyjątek transakcji. Jeśli transakcja nie jest jeszcze przekazano do czasu <xref:System.Transactions.CommittableTransaction.EndCommit%2A> jest wywoływana, obiekt wywołujący zostało zablokowane do chwili transakcji nie zostanie przekazana lub zostało przerwane.  

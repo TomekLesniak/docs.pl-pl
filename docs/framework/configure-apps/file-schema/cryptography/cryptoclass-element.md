@@ -8,14 +8,15 @@ helpviewer_keywords:
 - cryptoClass element
 - <cryptoClass> element
 ms.assetid: 03db52ef-010e-44ea-b6fd-b9c900ecad50
-ms.openlocfilehash: 4872fbd6fa043902e8c69f158bee5d0c915ec83a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f7fe6d02b4697af3a1d0d04471a2736045fc9ecc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088662"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181807"
 ---
 # <a name="cryptoclass-element"></a>\<cryptoClass> Element
+
 Zawiera klasę kryptografii, która ma mapowanie do przyjaznej nazwy w [\<nameEntry>](nameentry-element.md) elemencie.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Zawiera klasę kryptografii, która ma mapowanie do przyjaznej nazwy w [\<nameEn
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -41,6 +43,7 @@ Zawiera klasę kryptografii, która ma mapowanie do przyjaznej nazwy w [\<nameEn
 |`customClassName`|Atrybut wymagany.<br /><br /> Zawiera informacje dotyczące klasy kryptografii. Użyj tego atrybutu, aby podać krótką nazwę klasy. Należy określić ciąg, który spełnia wymagania określone w polu [Określanie w pełni kwalifikowanych nazw typów](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -54,6 +57,7 @@ Zawiera klasę kryptografii, która ma mapowanie do przyjaznej nazwy w [\<nameEn
 |`mscorlib`|Zawiera [\<cryptographySettings>](cryptographysettings-element.md) element.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak używać **\<cryptoClass>** elementu do odwoływania się do klasy kryptografii i konfigurowania środowiska uruchomieniowego. Następnie można przekazać ciąg "RSA" do <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metody i użyć <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metody do zwrócenia `MyCryptoRSAClass` obiektu.  
   
 ```xml  
@@ -75,7 +79,7 @@ Zawiera klasę kryptografii, która ma mapowanie do przyjaznej nazwy w [\<nameEn
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Schemat pliku konfiguracji](../index.md)
 - [Schemat ustawień kryptografii](index.md)

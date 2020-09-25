@@ -3,14 +3,15 @@ title: <certificateValidation>
 ms.date: 03/30/2017
 ms.assetid: 6c54c704-b55e-4631-88ff-4d4a5621554c
 author: BrucePerlerMS
-ms.openlocfilehash: c2d1a5d36cb5616ef06eedc093dd70a68a164a81
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 583fef7eb364c39890b3f9304770b383c1ea6d2a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252139"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183510"
 ---
 # \<certificateValidation>
+
 Kontroluje ustawienia używane przez programy obsługi do sprawdzania poprawności certyfikatów. Te ustawienia są zastępowane, jeśli określony program obsługi jest skonfigurowany przy użyciu własnego modułu sprawdzania poprawności.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Kontroluje ustawienia używane przez programy obsługi do sprawdzania poprawnoś
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -57,6 +59,7 @@ Kontroluje ustawienia używane przez programy obsługi do sprawdzania poprawnoś
 |[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Zapewnia konfigurację kolekcji programów obsługi tokenów zabezpieczających.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<certificateValidation>`Element można określić na poziomie usługi pod `<identityConfiguration>` elementem lub na poziomie kolekcji programu obsługi tokenów zabezpieczających w ramach `<securityTokenHandlerConfiguration>` elementu. Ustawienia w kolekcji obsługi tokenów zastępują te określone w usłudze. Niektóre programy obsługi tokenów umożliwiają określanie ustawień weryfikacji certyfikatu w konfiguracji. Ustawienia poszczególnych programów obsługi tokenów przesłaniają te określone zarówno na poziomie usługi, jak i w kolekcji obsługi tokenów zabezpieczających.  
   
 ## <a name="example"></a>Przykład  

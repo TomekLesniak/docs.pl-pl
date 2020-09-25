@@ -6,20 +6,22 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: b54db325c568dec702e4e50c3c265286662092fe
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 61d79f5647fa05edade9aef90653544b08c20c83
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864764"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181833"
 ---
 # <a name="objects-c-programming-guide"></a>Obiekty (Przewodnik programowania w języku C#)
+
 Definicja klasy lub struktury jest taka sama jak w przypadku planu, który określa, jaki typ może być wykonywany. Obiekt jest w zasadzie blok pamięci, który został przydzielony i skonfigurowany zgodnie z planem. Program może utworzyć wiele obiektów tej samej klasy. Obiekty są również nazywane wystąpieniami i mogą być przechowywane w zmiennej nazwanej lub w tablicy lub kolekcji. Kod klienta to kod, który używa tych zmiennych do wywoływania metod i uzyskiwania dostępu do właściwości publicznych obiektu. W języku zorientowanym obiektowo, takim jak C#, typowy program składa się z wielu obiektów, które współpracują dynamicznie.  
   
 > [!NOTE]
 > Typy statyczne zachowują się inaczej niż opisane w tym miejscu. Aby uzyskać więcej informacji, zobacz [klasy statyczne i statyczne elementy członkowskie klas](./static-classes-and-static-class-members.md).
   
 ## <a name="struct-instances-vs-class-instances"></a>Wystąpienia struktury a wystąpienia klas  
+
  Ponieważ klasy są typami odwołań, zmienna obiektu klasy przechowuje odwołanie do adresu obiektu na zarządzanym stosie. Jeśli drugi obiekt tego samego typu jest przypisany do pierwszego obiektu, obie zmienne odwołują się do obiektu na tym adresie. Ten punkt jest omówiona bardziej szczegółowo w dalszej części tego tematu.  
   
  Wystąpienia klas są tworzone przy użyciu [operatora new](../../language-reference/operators/new-operator.md). W poniższym przykładzie `Person` jest typem i `person1` i `person 2` są wystąpieniami lub obiektami tego typu.  
@@ -36,6 +38,7 @@ Definicja klasy lub struktury jest taka sama jak w przypadku planu, który okre�
 > Alokacja i cofanie alokacji pamięci na stercie zarządzanej jest wysoce zoptymalizowana w środowisku uruchomieniowym języka wspólnego. W większości przypadków nie ma znaczącej różnicy kosztu wydajności alokacji wystąpienia klasy na stercie i przydzielania wystąpienia struktury na stosie.
   
 ## <a name="object-identity-vs-value-equality"></a>Tożsamość obiektu a równość wartości  
+
  Porównując dwa obiekty pod kątem równości, należy najpierw rozróżnić, czy chcesz wiedzieć, czy dwie zmienne reprezentują ten sam obiekt w pamięci, czy też wartości co najmniej jednego z tych pól są równoważne. Jeśli zamierzasz porównywać wartości, należy wziąć pod uwagę, czy obiekty są wystąpieniami typów wartości (struktur) czy typy odwołań (klasy, delegatów, tablice).  
   
 - Aby określić, czy dwa wystąpienia klasy odwołują się do tej samej lokalizacji w pamięci (co oznacza, że mają tę samą *tożsamość*), użyj metody statycznej <xref:System.Object.Equals%2A> . ( <xref:System.Object?displayProperty=nameWithType> jest niejawną klasą bazową dla wszystkich typów wartości i typów referencyjnych, łącznie z strukturami i klasami zdefiniowanymi przez użytkownika).  
@@ -49,6 +52,7 @@ Definicja klasy lub struktury jest taka sama jak w przypadku planu, który okre�
 - Aby określić, czy wartości pól w dwóch wystąpieniach klasy są równe, może być możliwe użycie <xref:System.Object.Equals%2A> metody lub [operatora = =](../../language-reference/operators/equality-operators.md#equality-operator-). Jednak należy ich używać tylko wtedy, gdy klasa została zastąpiona lub przeciążona, aby zapewnić niestandardową definicję "Równość" dla obiektów tego typu. Klasa może również implementować <xref:System.IEquatable%601> interfejs lub <xref:System.Collections.Generic.IEqualityComparer%601> interfejs. Oba interfejsy zapewniają metody, których można użyć do testowania równości wartości. Podczas projektowania własnych klas, które zastępują `Equals` , należy postępować zgodnie ze wskazówkami podanymi w temacie [jak zdefiniować równość wartości dla typu](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md) i <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> .
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  Więcej informacji:  
   
 - [Klasy](./classes.md)  
@@ -59,7 +63,7 @@ Definicja klasy lub struktury jest taka sama jak w przypadku planu, który okre�
   
 - [Zdarzenia](../events/index.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [object](../../language-reference/builtin-types/reference-types.md)
