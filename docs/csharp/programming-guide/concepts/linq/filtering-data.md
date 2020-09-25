@@ -3,14 +3,15 @@ title: Filtrowanie danych (C#)
 description: Filtrowanie, znane także jako zaznaczenie, ogranicza wyniki na podstawie warunku. Dowiedz się więcej na temat standardowych metod operatorów zapytań w LINQ w języku C#, które wykonują filtrowanie.
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
-ms.openlocfilehash: f9f6d691da73b566e5135f6692c87ba3a8978005
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 51bf9f930ba67ba07c7c0f357910d5e36014138d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103923"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186045"
 ---
 # <a name="filtering-data-c"></a>Filtrowanie danych (C#)
+
 Filtrowanie odwołuje się do operacji ograniczającej zestaw wyników tak, aby zawierała tylko te elementy, które spełniają określony warunek. Jest on również znany jako wybór.  
   
  Na poniższej ilustracji przedstawiono wyniki filtrowania sekwencji znaków. Predykat dla operacji filtrowania określa, że znak musi mieć wartość "A".  
@@ -27,6 +28,7 @@ Filtrowanie odwołuje się do operacji ograniczającej zestaw wyników tak, aby 
 |Lokalizacja|Wybiera wartości, które są oparte na funkcji predykatu.|`where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Przykład składni wyrażenia zapytania  
+
  W poniższym przykładzie zastosowano `where` klauzulę do filtrowania z tablicy te ciągi mające określoną długość.  
   
 ```csharp  
@@ -50,7 +52,7 @@ foreach (string str in query)
 
 - <xref:System.Linq>
 - [Standardowe operatory zapytań — Omówienie (C#)](./standard-query-operators-overview.md)
-- [Klauzula where](../../../language-reference/keywords/where-clause.md)
+- [klauzula WHERE](../../../language-reference/keywords/where-clause.md)
 - [Dynamiczne określanie filtrów predykatów w środowisku uruchomieniowym](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
 - [Jak wykonać zapytanie dotyczące metadanych zestawu z odbiciem (LINQ) (C#)](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
 - [Jak wykonać zapytanie o pliki o określonym atrybucie lub nazwie (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)

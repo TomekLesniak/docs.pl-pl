@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: d70e786446fb198afb4e0311757cacb65b706f47
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: f1845601f2a0237206d05e3cc3cbbca68492020c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864205"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186136"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Konstruktory wystąpień (Przewodnik programowania w języku C#)
 
@@ -41,11 +41,13 @@ Konstruktory wystąpień są używane do tworzenia i inicjowania wszelkich zmien
  W tym przykładzie `Circle` Klasa przekazuje wartości reprezentujące promień i wysokość do konstruktora dostarczonego przez, `Shape` z którego pochodzi `Circle` . Kompletny przykład korzystania z `Shape` i `Circle` pojawia się w tym temacie jako przykład 3.  
   
 ## <a name="example-1"></a>Przykład 1  
+
  Poniższy przykład ilustruje klasę z dwoma konstruktorami klas, jeden bez argumentów i jeden z dwoma argumentami.  
   
  [!code-csharp[csProgGuideObjects#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#4)]  
   
 ## <a name="example-2"></a>Przykład 2  
+
  W tym przykładzie Klasa nie `Person` ma żadnych konstruktorów, w tym przypadku jest automatycznie dostarczany Konstruktor bez parametrów i pola są inicjowane do ich wartości domyślnych.  
   
  [!code-csharp[csProgGuideObjects#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#8)]  
@@ -53,13 +55,14 @@ Konstruktory wystąpień są używane do tworzenia i inicjowania wszelkich zmien
  Zwróć uwagę, że wartość domyślna `age` to `0` i wartość domyślna `name` to `null` .
   
 ## <a name="example-3"></a>Przykład 3  
+
  Poniższy przykład ilustruje użycie inicjatora klasy bazowej. `Circle`Klasa pochodzi od klasy ogólnej `Shape` , a `Cylinder` Klasa pochodzi od `Circle` klasy. Konstruktor dla każdej klasy pochodnej używa jej inicjatora klasy bazowej.  
   
  [!code-csharp[csProgGuideObjects#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#9)]  
   
  Aby uzyskać więcej przykładów dotyczących wywoływania konstruktorów klasy bazowej, zobacz [Virtual](../../language-reference/keywords/virtual.md), [override](../../language-reference/keywords/override.md)i [Base](../../language-reference/keywords/base.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Klasy i struktury](./index.md)

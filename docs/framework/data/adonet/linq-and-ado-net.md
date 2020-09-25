@@ -4,12 +4,12 @@ description: Informacje na temat sposobu tworzenia zapytań opartych na zestawie
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-ms.openlocfilehash: a663d36f1e07c53d20e22d051e38123bd8873f06
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 50e048a67d4a9bf62b2224664acb654b96da0cb7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286756"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194690"
 ---
 # <a name="linq-and-adonet"></a>LINQ i ADO.NET
 
@@ -30,19 +30,22 @@ Obecnie wielu deweloperów w biznesie musi korzystać z dwóch (lub więcej) ję
  Poniższe sekcje zawierają więcej informacji na temat LINQ to DataSet, [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] i LINQ to Entities.  
   
 ## <a name="linq-to-dataset"></a>LINQ do DataSet  
+
  <xref:System.Data.DataSet>Jest elementem klucza w odłączonym modelu programowania, który ADO.NET jest zbudowany i jest szeroko używany. LINQ to DataSet umożliwia deweloperom tworzenie bogatszych możliwości zapytań do programu przy <xref:System.Data.DataSet> użyciu tego samego mechanizmu formułowania zapytań, który jest dostępny dla wielu innych źródeł danych. Aby uzyskać więcej informacji, zobacz [LINQ to DataSet](linq-to-dataset.md).  
   
 ## <a name="linq-to-sql"></a>LINQ to SQL  
- [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)]jest użytecznym narzędziem dla deweloperów, którzy nie wymagają mapowania do modelu koncepcyjnego. Korzystając z programu [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] , można użyć modelu programowania LINQ bezpośrednio przez istniejący schemat bazy danych. [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)]umożliwia deweloperom generowanie klas .NET Framework, które reprezentują dane. Zamiast mapowania na model danych koncepcyjnych, te wygenerowane klasy mapują się bezpośrednio do tabel bazy danych, widoków, procedur składowanych i funkcji zdefiniowanych przez użytkownika.  
+
+ [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] jest użytecznym narzędziem dla deweloperów, którzy nie wymagają mapowania do modelu koncepcyjnego. Korzystając z programu [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] , można użyć modelu programowania LINQ bezpośrednio przez istniejący schemat bazy danych. [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] umożliwia deweloperom generowanie klas .NET Framework, które reprezentują dane. Zamiast mapowania na model danych koncepcyjnych, te wygenerowane klasy mapują się bezpośrednio do tabel bazy danych, widoków, procedur składowanych i funkcji zdefiniowanych przez użytkownika.  
   
  Dzięki [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] programowi deweloperzy mogą pisać kod bezpośrednio w schemacie magazynów przy użyciu tego samego wzorca programowania LINQ jak kolekcje w pamięci i <xref:System.Data.DataSet> , poza innymi źródłami danych, takimi jak XML. Aby uzyskać więcej informacji, zobacz [LINQ to SQL](./sql/linq/index.md).  
   
 ## <a name="linq-to-entities"></a>LINQ do Jednostek  
+
  Większość aplikacji jest obecnie zapisywana w relacyjnych bazach danych. W pewnym momencie te aplikacje będą musiały korzystać z danych przedstawionych w formie relacyjnej. Schematy bazy danych nie zawsze są idealne do kompilowania aplikacji, a modele pojęciowe aplikacji nie są takie same jak modele logiczne baz danych. Entity Data Model to koncepcyjny model danych, którego można użyć do modelowania danych konkretnej domeny, dzięki czemu aplikacje mogą współdziałać z danymi jako obiektami. Aby uzyskać więcej informacji, zobacz [ADO.NET Entity Framework](./ef/index.md).  
   
  Za pomocą Entity Data Model dane relacyjne są ujawniane jako obiekty w środowisku .NET. Sprawia to, że obiekt jest idealnym miejscem docelowym dla obsługi LINQ, dzięki czemu deweloperzy mogą tworzyć zapytania względem bazy danych w języku używanym do tworzenia logiki biznesowej. Ta funkcja jest znana jako LINQ to Entities. Aby uzyskać więcej informacji, zobacz [LINQ to Entities](./ef/language-reference/linq-to-entities.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [LINQ do DataSet](linq-to-dataset.md)
 - [LINQ to SQL](./sql/linq/index.md)

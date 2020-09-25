@@ -2,18 +2,20 @@
 title: Definicje typów (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 306b204a-ade5-47ef-95b5-c785d2da4a7e
-ms.openlocfilehash: 35f660a66fd706b37187056830af5e06ac586caa
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7e4e6f0e9f64816d10a69a8b0639728e4cd7af80
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319249"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201021"
 ---
 # <a name="type-definitions-entity-sql"></a>Definicje typów (Entity SQL)
-Definicja typu jest używana w instrukcji deklaracji funkcji wbudowanej [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+
+Definicja typu jest używana w instrukcji deklaracji [!INCLUDE[esql](../../../../../../includes/esql-md.md)] funkcji wbudowanej.  
   
 ## <a name="remarks"></a>Uwagi  
- Instrukcja deklaracji dla wbudowanej funkcji składa się ze słowa kluczowego [Function](function-entity-sql.md) , po którym następuje identyfikator reprezentujący nazwę funkcji (na przykład "myavg"), po której następuje lista definicji parametrów w nawiasie (na przykład "Kolekcja opłat ( Decimal) ").  
+
+ Instrukcja deklaracji dla wbudowanej funkcji składa się ze słowa kluczowego [Function](function-entity-sql.md) , po którym następuje identyfikator reprezentujący nazwę funkcji (na przykład "myavg"), po której następuje lista definicji parametrów w nawiasie (na przykład "Kolekcja opłat (liczba dziesiętna)").  
   
  Lista definicji parametrów składa się z zero lub więcej definicji parametrów. Każda definicja parametru składa się z identyfikatora (nazwa parametru do funkcji, na przykład "należności"), po której następuje definicja typu (na przykład "Kolekcja (liczba dziesiętna)").  
   
@@ -21,9 +23,9 @@ Definicja typu jest używana w instrukcji deklaracji funkcji wbudowanej [!INCLUD
   
 - Typ identyfikatora (na przykład "Int32" lub "AdventureWorks. Order").  
   
-- Słowo kluczowe `COLLECTION` następuje przez inną definicję typu w nawiasie (na przykład "Kolekcja (AdventureWorks. Order)").  
+- Słowo kluczowe, `COLLECTION` po którym następuje inna definicja typu w nawiasie (na przykład "Kolekcja (AdventureWorks. Order)").  
   
-- WIERSZ słowa kluczowego, po którym następuje lista definicji właściwości w nawiasie (na przykład "wiersz (x AdventureWorks. Order)"). Definicje właściwości mają format, taki jak "`identifier type_definition`, `identifier type_definition`,...".  
+- WIERSZ słowa kluczowego, po którym następuje lista definicji właściwości w nawiasie (na przykład "wiersz (x AdventureWorks. Order)"). Definicje właściwości mają format, taki jak " `identifier type_definition` , `identifier type_definition` ,...".  
   
 - Słowo kluczowe REF, po którym następuje Typ identyfikatora w nawiasie (na przykład "ref (AdventureWorks. Order)"). Operator definicji typu REF wymaga jako argumentu typu jednostki. Nie można określić typu pierwotnego jako argumentu.  
   
@@ -31,21 +33,22 @@ Definicja typu jest używana w instrukcji deklaracji funkcji wbudowanej [!INCLUD
   
  Opcje definicji typu są następujące:  
   
-- `IdentifierName supported_type` lub  
+- `IdentifierName supported_type`lub  
   
-- Kolekcja `IdentifierName` (`type_definition`) lub  
+- `IdentifierName` Kolekcja ( `type_definition` ) lub  
   
-- `IdentifierName` wiersz (`property_definition`) lub  
+- `IdentifierName` WIERSZ ( `property_definition` ) lub  
   
-- `IdentifierName` REF (`supported_entity_type`)  
+- `IdentifierName` REF ( `supported_entity_type` )  
   
- Opcja definicji właściwości jest `IdentifierName type_definition`.  
+ Opcja definicji właściwości to `IdentifierName type_definition` .  
   
  Obsługiwane typy to wszystkie typy w bieżącej przestrzeni nazw. Obejmują one zarówno pierwotne, jak i typy jednostek.  
   
  Obsługiwane typy jednostek odwołują się tylko do typów jednostek w bieżącej przestrzeni nazw. Nie obejmują one typów pierwotnych.  
   
 ## <a name="examples"></a>Przykłady  
+
  Poniżej znajduje się przykład definicji typu prostego.  
   
 ```sql  
@@ -86,7 +89,7 @@ Function UnReference(p1 Ref(AdventureWorks.Order)) AS (
 select Ref(x) from AdventureWorksEntities.SalesOrderHeaders as x  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie jednostki SQL](entity-sql-overview.md)
 - [Odwołanie do jednostki SQL](entity-sql-reference.md)

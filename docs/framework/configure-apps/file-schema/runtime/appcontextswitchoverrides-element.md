@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 0ead35559a17eb06304e6c251d2fe388ca178a30
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ab74886edcc86c900c56017867a3b81c9cb7886e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552287"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176152"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides>, element
 
@@ -29,6 +29,7 @@ Definiuje jeden lub więcej przełączników używanych przez <xref:System.AppCo
 ```
 
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.
 
 ### <a name="attributes"></a>Atrybuty
@@ -44,6 +45,7 @@ Definiuje jeden lub więcej przełączników używanych przez <xref:System.AppCo
 |"nazwa = wartość"|Wstępnie zdefiniowana nazwa przełącznika wraz z jego wartością ( `true` lub `false` ). Wiele par nazwa/wartość przełącznika jest oddzielonych średnikami (";"). Aby zapoznać się z listą wstępnie zdefiniowanych nazw przełączników obsługiwanych przez .NET Framework, zobacz sekcję Uwagi.|
 
 ### <a name="child-elements"></a>Elementy podrzędne
+
  Brak.
 
 ### <a name="parent-elements"></a>Elementy nadrzędne
@@ -54,6 +56,7 @@ Definiuje jeden lub więcej przełączników używanych przez <xref:System.AppCo
 |`runtime`|Zawiera informacje dotyczące opcji inicjowania środowiska uruchomieniowego.|
 
 ## <a name="remarks"></a>Uwagi
+
  Począwszy od .NET Framework 4,6, `<AppContextSwitchOverrides>` element w pliku konfiguracji umożliwia wywoływania interfejsu API, aby określić, czy aplikacja może korzystać z nowych funkcji, czy też zachować zgodność z poprzednimi wersjami biblioteki. Na przykład, jeśli zachowanie interfejsu API uległo zmianie między dwiema wersjami biblioteki, `<AppContextSwitchOverrides>` element umożliwia wywołujących tego interfejsu API rezygnację z nowego zachowania w wersjach biblioteki, które obsługują nową funkcję. W przypadku aplikacji, które wywołują interfejsy API w .NET Framework, `<AppContextSwitchOverrides>` element może również zezwalać wywołującym, których aplikacje są przeznaczone dla starszej wersji .NET Framework, aby zadecydować o nowych funkcjach, jeśli ich aplikacja działa w wersji .NET Framework, która zawiera tę funkcję.
 
  `value`Atrybut `<AppContextSwitchOverrides>` elementu składa się z pojedynczego ciągu składającego się z jednej lub więcej par nazw/wartości rozdzielanych średnikami.  Każda nazwa identyfikuje przełącznik zgodności, a jego odpowiadająca wartość jest wartością logiczną ( `true` lub `false` ), która wskazuje, czy przełącznik jest ustawiony. Domyślnie przełącznik jest `false` , a biblioteki udostępniają nową funkcję. Zapewniają one tylko poprzednie funkcje, jeśli przełącznik jest ustawiony (to oznacza, że jego wartość to `true` ). Dzięki temu biblioteki mogą udostępniać nowe zachowanie dla istniejącego interfejsu API, jednocześnie umożliwiając wywoływanie, które zależą od poprzedniego zachowania, aby zrezygnować z nowych funkcji.
@@ -176,7 +179,7 @@ Poniższy przykład używa elementu, `<add>` Aby dodać dwa ustawienia do `<appS
 </configuration>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Eliminowanie nowych zachowań w .NET Framework 4,6 i nowszych](../../../migration-guide/mitigations.md)
 - <xref:System.AppContext?displayProperty=nameWithType>

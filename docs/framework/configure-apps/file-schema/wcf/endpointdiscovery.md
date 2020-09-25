@@ -2,14 +2,15 @@
 title: <endpointDiscovery>
 ms.date: 03/30/2017
 ms.assetid: 70812717-888a-4748-9640-0df6715ff029
-ms.openlocfilehash: 98b1655f42b7b43604ed4ab9d66870ec204a9590
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 621c742e3bb06ce91fa5a6b8951351295f73df9e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398022"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185811"
 ---
 # \<endpointDiscovery>
+
 Określa różne ustawienia odnajdywania dla punktu końcowego, takie jak jego wykrywalność, zakresy i wszelkie niestandardowe rozszerzenia do swoich metadanych.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Określa różne ustawienia odnajdywania dla punktu końcowego, takie jak jego w
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -50,7 +52,7 @@ Określa różne ustawienia odnajdywania dla punktu końcowego, takie jak jego w
 |Element|Opis|  
 |-------------|-----------------|  
 |[\<scopes>](scopes.md)|Kolekcja identyfikatorów URI zakresu dla punktu końcowego. Więcej niż jeden identyfikator URI zakresu może być skojarzony z jednym punktem końcowym.|  
-|[\<extensions>](extensions.md)[z \<endpointDiscovery> ]|Kolekcja elementów XML, która umożliwia określenie niestandardowych metadanych do opublikowania dla punktu końcowego.|  
+|[\<extensions>](extensions.md) [z \<endpointDiscovery> ]|Kolekcja elementów XML, która umożliwia określenie niestandardowych metadanych do opublikowania dla punktu końcowego.|  
 |\<types>|Kolekcja interfejsów do wyszukania.|  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -61,11 +63,13 @@ Określa różne ustawienia odnajdywania dla punktu końcowego, takie jak jego w
 |||  
   
 ## <a name="remarks"></a>Uwagi  
+
  Po dodaniu do konfiguracji zachowania punktu końcowego i z `enabled` atrybutem ustawionym na `true` , ten element konfiguracji umożliwia odnajdywanie. Ponadto można użyć [\<scopes>](scopes.md) elementu podrzędnego, aby określić niestandardowe identyfikatory URI, których można użyć do filtrowania punktów końcowych usługi podczas zapytania, a także [\<extensions>](extensions.md) element podrzędny, aby określić niestandardowe metadane, które powinny być publikowane wraz ze standardowym odnajdywaniem metadanych (EPR, ContractTypeName, BindingName, Scope i ListenUri).  
   
  Ten element konfiguracji zależy od [\<serviceDiscovery>](servicediscovery.md) elementu, który zapewnia kontrolę poziomu usługi odnajdowania. Oznacza to, że ustawienia tego elementu są ignorowane, jeśli [\<serviceDiscovery>](servicediscovery.md) nie są obecne w konfiguracji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład konfiguracji określa zakresy filtrowania i metadane rozszerzenia do opublikowania dla punktu końcowego.  
   
 ```xml  
@@ -105,6 +109,6 @@ Określa różne ustawienia odnajdywania dla punktu końcowego, takie jak jego w
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

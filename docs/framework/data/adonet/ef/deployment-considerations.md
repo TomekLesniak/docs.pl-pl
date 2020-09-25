@@ -2,14 +2,15 @@
 title: Zagadnienia dotyczące wdrażania (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 3a847a22-4eb8-4565-b18b-453bbca070db
-ms.openlocfilehash: bdc7a6211681c78d81ba750844611b35e779abd2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 034fb48050fb0e6a9aabf6c183f8721f0a7115e4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542695"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181131"
 ---
 # <a name="deployment-considerations-entity-framework"></a>Zagadnienia dotyczące wdrażania (Entity Framework)
+
 Ten temat zawiera informacje dotyczące wdrażania aplikacji, które używają Entity Framework ADO.NET do uzyskiwania dostępu do danych. Aby uzyskać więcej informacji na temat Entity Framework, zobacz [wprowadzenie](getting-started.md).  
   
  Entity Framework zawiera zestaw narzędzi, które integrują się z programem i ułatwiają tworzenie w programie Visual Studio. Aby uzyskać więcej informacji, zobacz [narzędzia ADO.NET Entity Data Model](/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100)). W tym temacie nie opisano, jak używać określonych technologii do wdrażania aplikacji opartej na Entity Framework.  
@@ -28,7 +29,7 @@ Ten temat zawiera informacje dotyczące wdrażania aplikacji, które używają E
   
 - Ponieważ Entity Framework jest składnikiem .NET Framework, można go rozpowszechniać z aplikacją zgodnie z umową licencyjną .NET Framework.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Program Entity Framework na platformie ADO.NET](index.md)
 - [Projektowanie i zagadnienia dotyczące wdrażania](development-and-deployment-considerations.md)

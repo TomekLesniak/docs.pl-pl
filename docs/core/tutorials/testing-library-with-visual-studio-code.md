@@ -2,12 +2,12 @@
 title: Testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu Visual Studio Code
 description: Utwórz projekt testu jednostkowego dla biblioteki klas .NET Core. Sprawdź, czy biblioteka klas .NET Core działa prawidłowo z testami jednostkowymi.
 ms.date: 06/08/2020
-ms.openlocfilehash: f49974e1b918424ae5b5d7f3969f52c371e37154
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 6ae8f6637319cd2c8c24f3e673fb6094f36b9f2f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359171"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180456"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Samouczek: testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu Visual Studio Code
 
@@ -120,7 +120,7 @@ Aby utworzyć metody testowe:
    Test Run Successful.
    Total tests: 3
         Passed: 3
-   Total time: 5.1116 Seconds
+    Total time: 5.1116 Seconds
    ```
 
 ## <a name="handle-test-failures"></a>Obsługa niepowodzeń testów
@@ -150,14 +150,14 @@ Jeśli wykonujesz programowanie sterowane testami (TDD), najpierw napiszesz test
      Error Message:
       Assert.IsFalse failed. Expected for 'Error': false; Actual: True
      Stack Trace:
-     at StringLibraryTest.UnitTest1.TestDoesNotStartWithUpper()
-       in C:\Projects\ClassLibraryProjects\StringLibraryTest\UnitTest1.cs:line 33
+        at StringLibraryTest.UnitTest1.TestDoesNotStartWithUpper() in C:\
+   Projects\ClassLibraryProjects\StringLibraryTest\UnitTest1.cs:line 33
 
    Test Run Failed.
    Total tests: 3
         Passed: 2
         Failed: 1
-   Total time: 1.7825 Seconds
+    Total time: 1.7825 Seconds
    ```
 
 1. Usuń ciąg "Error", który został dodany w kroku 1. Uruchom ponownie test i testy zakończone powodzeniem.
@@ -173,6 +173,12 @@ Teraz, gdy testy zostały zakończone przed uruchomieniem kompilacji biblioteki,
    ```
 
    Testy zostały zakończone pomyślnie.
+
+## <a name="debug-tests"></a>Debuguj testy
+
+Jeśli używasz Visual Studio Code jako środowiska IDE, możesz użyć tego samego procesu, który jest wyświetlany w [debugowaniu aplikacji konsolowej .NET Core przy użyciu Visual Studio Code](debugging-with-visual-studio-code.md) do debugowania kodu przy użyciu projektu testu jednostkowego. Zamiast rozpoczynać projekt aplikacji *pokazu* Otwórz *StringLibraryTest/UnitTest1. cs*, a następnie wybierz opcję **Uruchom wszystkie testy** między wierszami 7 i 8. Jeśli nie możesz go znaleźć, naciśnij klawisz <kbd>Ctrl</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> , aby otworzyć paletę poleceń i wprowadzić **ponowne załadowanie okna**.
+
+Visual Studio Code uruchamia projekt testowy z dołączonym debugerem. Wykonanie zostanie zatrzymane na dowolnym punkcie przerwania, który został dodany do projektu testowego lub kodu biblioteki źródłowej.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 

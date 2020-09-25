@@ -2,14 +2,15 @@
 title: <endpoint> dla <client>
 ms.date: 03/30/2017
 ms.assetid: de6238ae-bbf8-48e9-a1b5-e24c0bea8afa
-ms.openlocfilehash: f1ffbc1e8efac70523d7f631c8cf9ba9a1622bfc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 79d827691ec3898ad94af9835077c61ea35990ab
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855319"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185850"
 ---
 # <a name="endpoint-of-client"></a>\<endpoint> dla \<client>
+
 Określa właściwości kontraktu, powiązania i adresu punktu końcowego kanału, który jest używany przez klientów do łączenia się z punktami końcowymi usługi na serwerze.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Określa właściwości kontraktu, powiązania i adresu punktu końcowego kanał
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -44,7 +46,7 @@ Określa właściwości kontraktu, powiązania i adresu punktu końcowego kanał
 |bindingConfiguration|Opcjonalny. Ciąg zawierający nazwę konfiguracji powiązania, która ma być używana podczas tworzenia wystąpienia punktu końcowego. Konfiguracja powiązania musi znajdować się w zakresie w punkcie, w którym jest zdefiniowany punkt końcowy. Wartość domyślna to pusty ciąg.<br /><br /> Ten atrybut jest używany w połączeniu z programem w `binding` celu odwoływania się do określonej konfiguracji powiązań w pliku konfiguracji. Ustaw ten atrybut, jeśli próbujesz użyć niestandardowego powiązania. W przeciwnym razie może zostać zgłoszony wyjątek.|  
 |przedsiębiorc|Wymagany atrybut ciągu.<br /><br /> Ciąg wskazujący, który kontrakt jest ujawniany przez ten punkt końcowy. Zestaw musi implementować typ kontraktu.|  
 |endpointConfiguration|Ciąg określający nazwę standardowego punktu końcowego, który jest ustawiany przez `kind` atrybut, który odwołuje się do dodatkowych informacji konfiguracyjnych tego standardowego punktu końcowego. Ta sama nazwa musi być zdefiniowana w `<standardEndpoints>` sekcji.|  
-|Natur|Ciąg określający typ stosowanego standardowego punktu końcowego. Typ musi być zarejestrowany w `<extensions>` sekcji lub pliku Machine. config. Jeśli nic nie jest określone, tworzony jest wspólny punkt końcowy kanału.|  
+|Natur|Ciąg określający typ stosowanego standardowego punktu końcowego. Typ musi być zarejestrowany w `<extensions>` sekcji lub w machine.config. Jeśli nic nie jest określone, tworzony jest wspólny punkt końcowy kanału.|  
 |name|Opcjonalny atrybut ciągu. Ten atrybut jednoznacznie identyfikuje punkt końcowy dla danego kontraktu. Można zdefiniować wielu klientów dla danego typu kontraktu. Każda definicja musi być zróżnicowana przy użyciu unikatowej nazwy konfiguracji. Jeśli ten atrybut zostanie pominięty, odpowiadający mu punkt końcowy jest używany jako domyślny punkt końcowy skojarzony z określonym typem kontraktu. Wartość domyślna to pusty ciąg.<br /><br /> `name`Atrybut powiązania służy do eksportowania definicji za pomocą języka WSDL.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
@@ -61,6 +63,7 @@ Określa właściwości kontraktu, powiązania i adresu punktu końcowego kanał
 |[\<client>](client.md)|Sekcja konfiguracji, która definiuje listę punktów końcowych, z którymi klient może się połączyć.|  
   
 ## <a name="example"></a>Przykład  
+
  Jest to przykład konfiguracji punktu końcowego kanału.  
   
 ```xml  
@@ -72,7 +75,7 @@ Określa właściwości kontraktu, powiązania i adresu punktu końcowego kanał
 </endpoint>
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ChannelEndpointElement>
 - <xref:System.ServiceModel.Configuration.ClientSection>

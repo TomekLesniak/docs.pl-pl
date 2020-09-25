@@ -3,19 +3,21 @@ title: Korzystanie z wariancji w delegatach (C#)
 description: Dowiedz się, jak używać wariancji w delegatach przy użyciu dołączonych przykładów kodu Kowariancja i kontrawariancja.
 ms.date: 07/20/2015
 ms.assetid: 1638c95d-dc8b-40c1-972c-c2dcf84be55e
-ms.openlocfilehash: 62b0555ee29c5e7d2ba0954a8949d61596122cc7
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 6704c3bf09dd854335f1e2719ccc8462cb7cde26
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105685"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176321"
 ---
 # <a name="using-variance-in-delegates-c"></a>Korzystanie z wariancji w delegatach (C#)
+
 Podczas przypisywania metody do delegata, *Kowariancja* i *kontrawariancja* zapewniają elastyczność dla dopasowania typu delegata z sygnaturą metody. Kowariancja zezwala metodzie na typ zwracany, który jest bardziej pochodny niż zdefiniowany w delegatze. Kontrawariancja zezwala na metodę, która ma typy parametrów, które są mniej pochodne niż te w typie delegata.  
   
 ## <a name="example-1-covariance"></a>Przykład 1: Kowariancja  
   
 ### <a name="description"></a>Opis  
+
  Ten przykład pokazuje, jak obiekty delegowane mogą być używane z metodami, które mają typy zwracane, które pochodzą z typu zwracanego w sygnaturze delegata. Typ danych zwracanych przez element `DogsHandler` jest typu `Dogs` , który pochodzi od `Mammals` typu, który jest zdefiniowany w delegacie.  
   
 ### <a name="code"></a>Kod  
@@ -67,7 +69,7 @@ W tym przykładzie pokazano, jak obiekty delegowane mogą być używane z metoda
    public delegate void MouseEventHandler(object sender, MouseEventArgs e)
    ```
 
-W przykładzie zdefiniowano procedurę obsługi zdarzeń z <xref:System.EventArgs> parametrem i używa jej do obsługi zarówno `Button.KeyDown` zdarzenia, jak i `Button.MouseClick` . Można to zrobić, ponieważ <xref:System.EventArgs> jest typem podstawowym obu <xref:System.Windows.Forms.KeyEventArgs> i <xref:System.Windows.Forms.MouseEventArgs> .
+W przykładzie zdefiniowano procedurę obsługi zdarzeń z <xref:System.EventArgs> parametrem i używa jej do obsługi zarówno `Button.KeyDown` zdarzenia, jak i `Button.MouseClick` . Można to zrobić, ponieważ <xref:System.EventArgs> jest typem podstawowym obu <xref:System.Windows.Forms.KeyEventArgs>  i <xref:System.Windows.Forms.MouseEventArgs> .
   
 ### <a name="code"></a>Kod  
   

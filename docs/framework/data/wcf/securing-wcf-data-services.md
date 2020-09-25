@@ -8,12 +8,12 @@ helpviewer_keywords:
 - securing application [WCF Data Services]
 - WCF Data Services, security
 ms.assetid: 99fc2baa-a040-4549-bc4d-f683d60298af
-ms.openlocfilehash: 097e387fa8f79345e4f0b64f1368435fddc3417f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e45e09e821928d110e67f82810f51e2d9d4a85e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543423"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180689"
 ---
 # <a name="securing-wcf-data-services"></a>Zabezpieczanie usług danych WCF
 
@@ -22,9 +22,11 @@ W tym artykule opisano zagadnienia dotyczące zabezpieczeń, które są specyfic
 Planując sposób zabezpieczania usługi OData opartej na Usługi danych programu WCF, należy rozwiązać zarówno uwierzytelnianie, proces odnajdywania i weryfikacji tożsamości podmiotu zabezpieczeń, jak i autoryzacji, a także proces ustalania, czy uwierzytelniony podmiot zabezpieczeń może uzyskać dostęp do żądanych zasobów. Należy również wziąć pod uwagę, czy należy zaszyfrować komunikat przy użyciu protokołu SSL.  
   
 ## <a name="authenticating-client-requests"></a>Uwierzytelnianie żądań klientów  
+
 Usługi danych programu WCF nie implementuje żadnego rodzaju uwierzytelniania, ale raczej opiera się na postanowieniach uwierzytelniania hosta usługi danych. Oznacza to, że usługa zakłada, że wszelkie odebrane żądania zostały już uwierzytelnione przez hosta sieci i że host prawidłowo zidentyfikował zasadę dla żądania odpowiednio za pośrednictwem interfejsów zapewnianych przez Usługi danych programu WCF. Te opcje uwierzytelniania i podejścia opisano szczegółowo w wieloczęściowych [seriach OData i uwierzytelniania](https://devblogs.microsoft.com/odata/?s=%22OData+and+authentication%22).  
   
 ### <a name="authentication-options-for-a-wcf-data-service"></a>Opcje uwierzytelniania dla usługi danych programu WCF  
+
  W poniższej tabeli wymieniono niektóre z dostępnych mechanizmów uwierzytelniania, które pomagają w uwierzytelnieniu żądań kierowanych do usługi danych programu WCF.  
   
 |Opcje uwierzytelniania|Opis|  
@@ -36,7 +38,9 @@ Usługi danych programu WCF nie implementuje żadnego rodzaju uwierzytelniania, 
 |Uwierzytelnianie oparte na oświadczeniach|W przypadku uwierzytelniania opartego na oświadczeniach usługa danych opiera się na zaufanej usłudze dostawcy tożsamości "innej firmy" w celu uwierzytelnienia użytkownika. Dostawca tożsamości pozytywnie uwierzytelnia użytkownika, który żąda dostępu do zasobów usługi danych, i wystawia token udzielający dostępu do żądanych zasobów. Token ten jest następnie prezentowany usłudze danych, która udziela użytkownikowi dostępu na podstawie relacji zaufania z usługą tożsamości, która wystawiła token dostępu.<br /><br /> Zaletą używania dostawcy uwierzytelniania opartego na oświadczeniach jest to, że tej metody można używać do uwierzytelniania różnych typów klientów między domenami zaufania. Korzystając z takiego dostawcy innej firmy, usługa danych zdejmuje z siebie ciężar obsługi i uwierzytelniania użytkowników. OAuth 2,0 to protokół uwierzytelniania oparty na oświadczeniach, który jest obsługiwany przez usługę Azure AppFabric Access Control do autoryzacji federacyjnej jako usługa. Protokół ten obsługuje usługi oparte na protokole REST. Przykład korzystania z protokołu OAuth 2,0 z Usługi danych programu WCF można znaleźć w blogu wpis [OData i uwierzytelnianie — część 8 — Zawijanie OAuth](https://devblogs.microsoft.com/odata/odata-and-authentication-part-8-oauth-wrap/).|  
   
 <a name="clientAuthentication"></a>
+
 ### <a name="authentication-in-the-client-library"></a>Uwierzytelnianie w bibliotece klienta  
+
  Domyślnie Biblioteka klienta Usługi danych programu WCF nie dostarcza poświadczeń podczas wykonywania żądania do usługi OData. Poświadczenia logowania są wymagane przez usługę danych do uwierzytelnienia użytkownika, ale te poświadczenia mogą być dostarczane w celu <xref:System.Net.NetworkCredential> uzyskania dostępu z <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> właściwości <xref:System.Data.Services.Client.DataServiceContext> , jak w poniższym przykładzie:  
   
 ```csharp  
@@ -56,31 +60,39 @@ context.Credentials = _
  Gdy usługa danych wymaga poświadczeń logowania, których nie można określić za pomocą <xref:System.Net.NetworkCredential> obiektu, takiego jak token lub plik cookie oparty na oświadczeniach, należy ręcznie ustawić nagłówki w ŻĄDANIU http, zazwyczaj w `Authorization` `Cookie` nagłówkach i. Aby uzyskać więcej informacji na temat tego rodzaju scenariusza uwierzytelniania, zobacz wpis w blogu dane [ OData i uwierzytelnianie — część 3 — punkty zaczepienia opóźnienie](https://devblogs.microsoft.com/odata/odata-and-authentication-part-3-clientside-hooks/). Przykład sposobu ustawiania nagłówków HTTP w komunikacie żądania można znaleźć w temacie [How to: Set Headers in a Request Client](how-to-set-headers-in-the-client-request-wcf-data-services.md).  
   
 ## <a name="impersonation"></a>Personifikacja  
+
  Na ogół usługa danych uzyskuje dostęp do wymaganych zasobów, takich jak pliki na serwerze lub baza danych, przy użyciu poświadczeń procesu roboczego hostującego usługę danych. W przypadku korzystania z personifikacji aplikacje ASP.NET mogą być wykonywane przy użyciu tożsamości systemu Windows (konta użytkownika) użytkownika wysyłającego żądanie. Personifikacja jest powszechnie stosowana w aplikacjach, które przy uwierzytelnieniu użytkownika opierają się na programie IIS, i poświadczenia tego podmiotu zabezpieczeń są używane do uzyskiwania dostępu do wymaganych zasobów. Aby uzyskać więcej informacji, zobacz [ASP.NET personifikacji](/previous-versions/aspnet/xh507fc5(v=vs.100)).  
   
 ## <a name="configuring-data-service-authorization"></a>Konfigurowanie autoryzacji usługi danych  
+
  Autoryzacja to udzielenie dostępu do zasobów aplikacji podmiotowi zabezpieczeń lub procesowi, który został zidentyfikowany na podstawie przeprowadzonego wcześniej pomyślnego uwierzytelnienia. Ogólną praktyką jest udzielanie użytkownikom usługi danych tylko uprawnień wystarczających do wykonywania operacji wymaganych przez aplikacje klienta.  
   
 ### <a name="restrict-access-to-data-service-resources"></a>Ograniczanie dostępu do zasobów usługi danych  
+
  Domyślnie Usługi danych programu WCF umożliwia przyznawanie typowego dostępu do odczytu i zapisu do zasobów usługi danych (zestawów jednostek i operacji usługi) wszystkim użytkownikom, którzy mogą uzyskać dostęp do usługi danych. Reguły, które definiują prawa do odczytu i zapisu, można określić osobno dla każdego zestawu jednostek uwidacznianego przez usługę danych, a także dla każdej operacji usługi. Zaleca się zawężenie zarówno praw do odczytu, jak i do zapisu tylko do zasobów, które są wymagane przez aplikację klienta. Aby uzyskać więcej informacji, zobacz [minimalne wymagania dotyczące dostępu do zasobów](configuring-the-data-service-wcf-data-services.md#accessRequirements).  
   
 ### <a name="implement-role-based-interceptors"></a>Wdrażanie interceptorów opartych na rolach  
+
  Interceptory umożliwiają przechwytywanie żądań zasobów usługi danych, zanim zostaną one przetworzone przez usługę danych. Aby uzyskać więcej informacji, zobacz [Interceptory](interceptors-wcf-data-services.md). Interceptory pozwalają na podejmowanie decyzji dotyczących autoryzacji na podstawie uwierzytelnionego użytkownika, który wysłał żądanie. Przykład sposobu ograniczania dostępu do zasobów usługi danych na podstawie tożsamości uwierzytelnionego użytkownika można znaleźć w temacie [How to: Przechwytywanie danych usługi messages](how-to-intercept-data-service-messages-wcf-data-services.md).  
   
 ### <a name="restrict-access-to-the-persisted-data-store-and-local-resources"></a>Ograniczanie dostępu do trwałego magazynu danych i zasobów lokalnych  
+
  Kontom, które są używane do uzyskiwania dostępu do magazynu trwałego, należy udzielić w bazie danych lub systemie plików praw wystarczających do obsługi wymagań usługi danych. Jeśli jest używane uwierzytelnianie anonimowe, jest to konto używane do uruchamiania aplikacji macierzystej. Aby uzyskać więcej informacji, zobacz [How to: programowanie usługi danych programu WCF działającej w usługach IIS](how-to-develop-a-wcf-data-service-running-on-iis.md). Jeśli jest używana personifikacja, uwierzytelnionym użytkownikom należy udzielić dostępu do tych zasobów, zwykle jako części grupy systemu Windows.  
   
 ## <a name="other-security-considerations"></a>Inne uwagi dotyczące zabezpieczeń  
   
 ### <a name="secure-the-data-in-the-payload"></a>Zabezpieczanie danych w ładunku  
+
 Usługa OData jest oparta na protokole HTTP. W komunikacie HTTP nagłówek może zawierać cenne poświadczenia użytkownika, zależnie od uwierzytelniania implementowanego przez usługę danych. Treść komunikatu może również zawierać cenne dane klienta, które muszą być chronione. W obu tych przypadkach zaleca się używanie protokołu SSL do ochrony tych informacji w sieci.  
   
 ### <a name="ignored-message-headers-and-cookies"></a>Ignorowane nagłówki komunikatów i pliki cookie  
+
  Nagłówki żądania HTTP inne niż te, które deklarują typy zawartości i lokalizacje zasobów, są ignorowane i nigdy nie są ustawiane przez usługę danych.  
   
  Pliki cookie mogą służyć jako część schematu uwierzytelniania, na przykład z uwierzytelnianiem formularzy ASP.NET. Jednak wszystkie pliki cookie HTTP ustawione w żądaniu przychodzącym są ignorowane przez usługi DataService. Host usługi danych może przetworzyć plik cookie, ale środowisko uruchomieniowe Usługi danych programu WCF nigdy nie analizuje ani nie zwraca plików cookie. Biblioteka klienta Usługi danych programu WCF również nie przetwarza plików cookie wysyłanych w odpowiedzi.  
   
 ### <a name="custom-hosting-requirements"></a>Niestandardowe wymagania hostingu  
+
  Domyślnie Usługi danych programu WCF jest tworzona jako aplikacja ASP.NET hostowana w usługach IIS. Pozwala to usłudze danych na korzystanie z zachowań związanych z zabezpieczeniami zaimplementowanych na tej platformie. Można zdefiniować Usługi danych programu WCF, które są hostowane przez niestandardowego hosta. Aby uzyskać więcej informacji, zobacz [hosting usługi danych](hosting-the-data-service-wcf-data-services.md). Składniki i platforma hostująca usługę danych muszą zapewnić następujące zachowania związane z zabezpieczeniami, aby zapobiec atakom na usługę danych:  
   
 - Ogranicz długość identyfikatora URI akceptowanego w żądaniu usługi danych dla wszystkich możliwych operacji.  
@@ -94,9 +106,11 @@ Usługa OData jest oparta na protokole HTTP. W komunikacie HTTP nagłówek może
 - Wykrywaj i odpieraj znane ataki, takie jak TCP SYN i ataki przez powtórzenie komunikatu.  
   
 ### <a name="values-are-not-further-encoded"></a>Wartości nie są już kodowane  
+
  Wartości właściwości wysyłane do usługi danych nie są jeszcze kodowane przez środowisko uruchomieniowe Usługi danych programu WCF. Jeśli na przykład właściwość ciągu jednostki zawiera sformatowaną zawartość HTML, znaczniki nie są kodowane w formacie HTML przez usługę danych. Ponadto usługa danych nie koduje już wartości właściwości w odpowiedzi. Biblioteka klienta również nie przeprowadza dodatkowego kodowania.  
   
 ### <a name="considerations-for-client-applications"></a>Uwagi dotyczące aplikacji klienta  
+
  Następujące zagadnienia dotyczące zabezpieczeń dotyczą aplikacji korzystających z Usługi danych programu WCF klienta programu w celu uzyskiwania dostępu do usług OData:  
   
 - Biblioteka klienta zakłada, że protokoły używane w celu uzyskania dostępu do usługi danych zapewniają odpowiedni poziom zabezpieczeń.  
@@ -111,7 +125,7 @@ Usługa OData jest oparta na protokole HTTP. W komunikacie HTTP nagłówek może
   
 - Firma Microsoft zaleca, aby aplikacje klienta zawsze weryfikowały dane wprowadzone przez użytkownika, a także akceptowane dane pochodzące z niezaufanych usług.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Definiowanie usług danych WCF](defining-wcf-data-services.md)
 - [Biblioteka klienta usług danych WCF](wcf-data-services-client-library.md)

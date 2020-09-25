@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 5e9a00ab78a57c3c1686d7c87ed8b45d9b2649af
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d7897815874f2e9de2f4c24d3c141d464a296b31
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150834"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201242"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Wykonywanie zapytania XPath w elemencie DataSet
-Relacja <xref:System.Data.DataSet> między zsynchronizowanym i <xref:System.Xml.XmlDataDocument> umożliwia korzystanie z usług XML, takich jak xml path language (XPath), które uzyskują dostęp do **XmlDataDocument** i można wykonywać pewne funkcje wygodniej niż dostęp do **DataSet** bezpośrednio. Na przykład zamiast używać **Select** metody Select <xref:System.Data.DataTable> a do nawigowania relacji do innych tabel w **zestawie danych,** można wykonać kwerendę XPath na **XmlDataDocument,** który jest zsynchronizowany z **Zestawem danych**, aby uzyskać listę elementów XML w postaci <xref:System.Xml.XmlNodeList>pliku . Węzły w **XmlNodeList**, <xref:System.Xml.XmlElement> rzutowane jako węzły, mogą być następnie przekazywane do **Metody GetRowFromElement** dokumentu <xref:System.Data.DataRow> **XmlDataDocument**, aby zwrócić pasujące odwołania do wierszy tabeli w zsynchronizowanym zestawie **danych**.  
+
+Relacja między zsynchronizowaną <xref:System.Data.DataSet> i <xref:System.Xml.XmlDataDocument> umożliwia korzystanie z usług XML, takich jak zapytanie XML Path Language (XPath), które uzyskuje dostęp do **XmlDataDocument** i może działać bardziej wygodnie niż bezpośredni dostęp do **zestawu danych** . Na przykład zamiast używać metody **SELECT** elementu <xref:System.Data.DataTable> do nawigacji relacji do innych tabel w **zestawie danych**, można wykonać zapytanie XPath na **XmlDataDocument** , który jest synchronizowany z **zestawem danych**, aby uzyskać listę elementów XML w postaci <xref:System.Xml.XmlNodeList> . Węzły w **XmlNodeList**, rzutowania jako <xref:System.Xml.XmlElement> węzły, mogą następnie zostać przesłane do metody **GetRowFromElement** **XmlDataDocument**, aby zwracały pasujące <xref:System.Data.DataRow> odwołania do wierszy tabeli w synchronizowanym **zestawie danych**.  
   
- Na przykład poniższy przykład kodu wykonuje kwerendę XPath "wnuk". Zestaw **danych** jest wypełniony trzema tabelami: **Klienci,** **Zamówienia**i **Szczegóły zamówienia.** W przykładzie relacja nadrzędny podrzędny jest najpierw tworzony między **klientami** i **zamówienia** tabel oraz między **zamówieniami** i **OrderDetails** tabel. Następnie wykonuje się kwerendę XPath w celu zwrócenia **XmlNodeList** węzłów **klientów,** w których węzeł **OrderDetails** wnuka ma węzeł **ProductID** o wartości 43. W istocie przykład używa XPath kwerendy, aby ustalić, którzy klienci zamówili produkt, który ma **ProductID** 43.  
+ Na przykład poniższy kod przykład wykonuje zapytanie XPath "grandchild". **Zestaw danych** jest wypełniony trzema tabelami **: Customers**, **Orders**i **OrderDetails**. W przykładzie relacja nadrzędny-podrzędny jest najpierw tworzona między tabelami **Customers** i **Orders** oraz między tabelami **Orders** i **OrderDetails** . Następnie zostanie wykonane zapytanie XPath w celu zwrócenia **XmlNodeList** węzłów **klientów** , gdzie węzeł grandchild **OrderDetails** ma węzeł **ProductID** o wartości 43. W zasadzie przykład używa zapytania XPath, aby określić, którzy klienci mają zamówiony produkt o identyfikatorze **ProductID** 43.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  

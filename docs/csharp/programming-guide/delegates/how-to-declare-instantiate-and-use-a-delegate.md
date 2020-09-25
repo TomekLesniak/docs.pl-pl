@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: b741b3bc9c03faaa5fa2c01bd8f70d4be9b099c2
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 83dbd2dc497fafaf1922f8ad53208d0ab14f14a9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063669"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185902"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Sposób deklarowania, tworzenia wystąpienia i używania delegata (Przewodnik programowania w języku C#)
+
 W języku C# 1,0 i nowszych można zadeklarować delegatów, jak pokazano w poniższym przykładzie.  
   
  [!code-csharp[csProgGuideDelegates#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#13)]  
@@ -38,6 +39,7 @@ W języku C# 1,0 i nowszych można zadeklarować delegatów, jak pokazano w poni
  Użycie delegatów promuje dobre rozdzielenie funkcjonalności między bazą danych księgarni i kodem klienta. Kod klienta nie ma informacji o tym, w jaki sposób są przechowywane książki lub jak kod księgarni znajduje książki drukowanego podręcznika. Kod księgarni nie ma informacji o tym, jakie przetwarzanie jest wykonywane w książkach drukowanego podręcznika po ich znalezieniu.  
   
 ## <a name="example"></a>Przykład  
+
  [!code-csharp[csProgGuideDelegates#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#12)]  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
@@ -72,8 +74,8 @@ W języku C# 1,0 i nowszych można zadeklarować delegatów, jak pokazano w poni
   
      Delegat może być wywołany synchronicznie, jak w tym przykładzie lub asynchronicznie przy użyciu `BeginInvoke` metod i `EndInvoke` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Zdarzenia](../events/index.md)
-- [Delegaty](./index.md)
+- [Delegaci](./index.md)

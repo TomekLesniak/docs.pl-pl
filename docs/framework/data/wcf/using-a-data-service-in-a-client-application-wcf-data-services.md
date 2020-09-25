@@ -5,22 +5,25 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, getting started
 ms.assetid: 90872d0c-e989-4490-b3e9-54afb10d33d4
-ms.openlocfilehash: 49e5ad2e6ae3dc50a0f48fcc3df2f7ec49ed7f88
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b921e78c1b3d3d90d9ac8b4a459df496cf6d14dd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544404"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180585"
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Korzystanie z usługi danych w aplikacji klienckiej (Usługi danych programu WCF)
+
 Możesz uzyskać dostęp do usługi, która udostępnia kanał informacyjny protokołu Open Data Protocol (OData), dostarczając identyfikator URI do przeglądarki sieci Web. Identyfikator URI zapewnia adres zasobu, a komunikaty żądań są wysyłane na te adresy w celu uzyskania dostępu lub zmiany danych źródłowych, które reprezentuje zasób. Przeglądarka wysyła polecenie HTTP GET i zwraca żądany zasób jako źródło danych OData. Aby uzyskać więcej informacji, zobacz [Uzyskiwanie dostępu do usługi z przeglądarki sieci Web](accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
   
  Mimo że przeglądarka sieci Web może być przydatna do testowania, że usługa OData zwraca oczekiwane dane, produkcyjne usługi OData, które umożliwiają również tworzenie, aktualizowanie i usuwanie danych, są zwykle używane przez kod aplikacji lub języki skryptów na stronie sieci Web. Ten temat zawiera omówienie sposobu uzyskiwania dostępu do źródeł danych OData z aplikacji klienckiej.  
   
 ## <a name="accessing-and-changing-data-using-rest-semantics"></a>Uzyskiwanie dostępu do danych i zmiana ich przy użyciu semantyki REST  
+
  Usługa OData pomaga zagwarantować współdziałanie między usługami, które uwidaczniają źródła danych OData i aplikacje korzystające ze źródeł danych OData. Aplikacje uzyskują dostęp do danych w usłudze opartej na protokole OData i je zmieniać, wysyłając komunikaty żądań określonej akcji HTTP i z identyfikatorem URI, który jest adresem zasobu jednostki, względem którego ma zostać wykonana akcja. Gdy muszą zostać dostarczone dane jednostki, są one dostarczane jako zaszyfrowane ładunki w treści wiadomości.  
   
 ### <a name="http-actions"></a>Akcje HTTP  
+
  Usługa OData obsługuje następujące akcje HTTP do wykonywania operacji tworzenia, odczytu, aktualizacji i usuwania na danych jednostki, które reprezentuje zasób:  
   
 - **Http Get** — jest to domyślna akcja podczas uzyskiwania dostępu do zasobu z przeglądarki. W komunikacie żądania nie podano żadnego ładunku i zwracana jest metoda odpowiedzi z ładunkiem zawierającym żądane dane.  
@@ -36,6 +39,7 @@ Możesz uzyskać dostęp do usługi, która udostępnia kanał informacyjny prot
  Aby uzyskać więcej informacji, zobacz [OData: Operations](https://www.odata.org/documentation/odata-version-2-0/operations/).
   
 ### <a name="payload-formats"></a>Formaty ładunku  
+
  W przypadku żądania HTTP PUT, POST HTTP lub HTTP, ładunek komunikatu żądania zawiera dane jednostki wysyłane do usługi danych. Zawartość ładunku zależy od formatu danych wiadomości. Odpowiedzi HTTP na wszystkie akcje z wyjątkiem usuwania również zawierają takie ładunki. Usługa OData obsługuje następujące formaty ładunków do uzyskiwania dostępu do danych i zmiany ich w usłudze:  
   
 - **Atom** — kodowanie komunikatów opartych na języku XML zdefiniowane przez funkcję OData jako rozszerzenie protokołu publikowania Atom (AtomPub) w celu umożliwienia wymiany danych za pośrednictwem protokołu HTTP dla kanałów informacyjnych sieci Web, podkastów, stron typu wiki i funkcji internetowych opartych na języku XML. Aby uzyskać więcej informacji, zobacz [Format OData: Atom](https://www.odata.org/documentation/odata-version-2-0/atom-format/).
@@ -45,13 +49,14 @@ Możesz uzyskać dostęp do usługi, która udostępnia kanał informacyjny prot
  W nagłówku komunikatu żądania HTTP jest żądany format komunikatu ładunku. Aby uzyskać więcej informacji, zobacz [OData: Operations](https://www.odata.org/documentation/odata-version-2-0/operations/).
   
 ## <a name="accessing-and-changing-data-using-client-libraries"></a>Uzyskiwanie dostępu do danych i zmiana ich przy użyciu bibliotek klienckich  
+
  Usługi danych programu WCF obejmuje biblioteki klienckie, które umożliwiają łatwiejsze korzystanie z kanału informacyjnego OData z .NET Framework i aplikacji klienckich opartych na technologii Silverlight. Te biblioteki upraszczają wysyłanie i otrzymywanie komunikatów HTTP. Tłumaczą one również ładunek komunikatów na obiekty CLR, które reprezentują dane jednostki. Biblioteki klienckie są wyposażone w dwie klasy podstawowe <xref:System.Data.Services.Client.DataServiceContext> i <xref:System.Data.Services.Client.DataServiceQuery%601> . Te klasy umożliwiają wykonywanie zapytań do usługi danych, a następnie współpracują z zwróconymi danymi jednostki jako obiektami CLR. Aby uzyskać więcej informacji, zobacz [usługi danych programu WCF biblioteki klienta](wcf-data-services-client-library.md) i [usługi danych programu WCF (Silverlight)](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95)).  
   
  Możesz użyć okna dialogowego **Dodaj odwołanie do usługi** w programie Visual Studio, aby dodać odwołanie do usługi danych. To narzędzie żąda metadanych usługi z usługi danych, której dotyczy odwołanie, i generuje <xref:System.Data.Services.Client.DataServiceContext> element reprezentujący usługę danych, a także generuje klasy usługi danych klienta, które reprezentują jednostki. Aby uzyskać więcej informacji, zobacz [generowanie biblioteki klienta usługi danych](generating-the-data-service-client-library-wcf-data-services.md).  
   
  Dostępne są biblioteki programistyczne, których można użyć do użycia źródła danych OData w innych rodzajach aplikacji klienckich. Aby uzyskać więcej informacji na temat zestawu OData SDK, zobacz [kod przykładowy usługi OData SDK](https://www.odata.org/ecosystem/#sdk).
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Uzyskiwanie dostępu do zasobów usługi danych](accessing-data-service-resources-wcf-data-services.md)
 - [Szybki start](quickstart-wcf-data-services.md)

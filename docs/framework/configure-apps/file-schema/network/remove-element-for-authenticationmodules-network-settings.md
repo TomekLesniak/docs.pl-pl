@@ -10,14 +10,15 @@ helpviewer_keywords:
 - <remove> element, authenticationModules
 - authenticationModules, remove element
 ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
-ms.openlocfilehash: d171fea193bbae068e69b8976abb8e56a5623f02
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0829f57d8dca91c2d895085dceaeea422229537c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154780"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176204"
 ---
 # <a name="remove-element-for-authenticationmodules-network-settings"></a>\<remove>, element dla authenticationModules (ustawienia sieci)
+
 Usuwa moduł uwierzytelniania z aplikacji.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Usuwa moduł uwierzytelniania z aplikacji.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -43,6 +45,7 @@ Usuwa moduł uwierzytelniania z aplikacji.
 |**Wprowadź**|Nazwa modułu uwierzytelniania do usunięcia.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -52,14 +55,17 @@ Usuwa moduł uwierzytelniania z aplikacji.
 |[authenticationModules](authenticationmodules-element-network-settings.md)|Określa moduły używane do uwierzytelniania żądań sieci.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `remove`Element usuwa moduły uwierzytelniania zdefiniowane wcześniej w pliku konfiguracyjnym lub na wyższym poziomie w hierarchii konfiguracji.  
   
  Wartość `type` atrybutu powinna być prawidłową nazwą klasy.  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład usuwa moduł uwierzytelniania.  
   
 ```xml  
@@ -72,8 +78,8 @@ Usuwa moduł uwierzytelniania z aplikacji.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

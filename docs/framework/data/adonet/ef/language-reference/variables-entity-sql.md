@@ -1,19 +1,21 @@
 ---
-title: Zmienne (entity SQL)
+title: Zmienne (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 3eed222a-f8f6-46b6-9cd5-220cc0e4e5d8
-ms.openlocfilehash: 88ee41bc08711cf84b8b2e273c9ac0f4267d1d34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: af6d586a22f14a04bfc7ec339d0aa8e9ba7c66c7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149820"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181001"
 ---
-# <a name="variables-entity-sql"></a>Zmienne (entity SQL)
+# <a name="variables-entity-sql"></a>Zmienne (Entity SQL)
+
 ## <a name="variable"></a>Zmienna  
- Wyrażenie zmiennej jest odwołaniem do nazwanego wyrażenia zdefiniowanego w bieżącym zakresie. Odwołanie do zmiennej [!INCLUDE[esql](../../../../../../includes/esql-md.md)] musi być prawidłowym identyfikatorem, zgodnie z definicją w [identyfikatorach](identifiers-entity-sql.md).  
+
+ Wyrażenie zmiennej jest odwołaniem do nazwanego wyrażenia zdefiniowanego w bieżącym zakresie. Odwołanie do zmiennej musi być prawidłowym [!INCLUDE[esql](../../../../../../includes/esql-md.md)] identyfikatorem, zgodnie z definicją w [identyfikatorach](identifiers-entity-sql.md).  
   
- Poniższy przykład pokazuje użycie zmiennej w wyrażeniu. W `c` klauzuli FROM jest definicja zmiennej. Użycie `c` w select klauzuli reprezentuje odwołanie do zmiennej.  
+ W poniższym przykładzie pokazano użycie zmiennej w wyrażeniu. `c`W klauzuli FROM jest definicją zmiennej. Użycie `c` w klauzuli select reprezentuje odwołanie do zmiennej.  
   
 ```sql  
 select c
