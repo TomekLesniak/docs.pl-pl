@@ -4,12 +4,12 @@ description: Dowiedz się, jak używać dziedziczenia w bibliotekach i aplikacja
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 70db8716bea84984ad56d79fa9e26aab3a8182fa
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: b0d6a4a3db4d6606375cc3364ee7abc3029f1d9b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063513"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190465"
 ---
 # <a name="inheritance-in-c-and-net"></a>Dziedziczenie w języku C# i .NET
 
@@ -214,9 +214,9 @@ Poniższy przykład pokazuje kod źródłowy dla `Publication` klasy, a także `
 
 - Dwie właściwości powiązane z publikacją
 
-  `Title`jest właściwością tylko do odczytu <xref:System.String> , której wartość jest dostarczana przez wywołanie `Publication` konstruktora.
+  `Title` jest właściwością tylko do odczytu <xref:System.String> , której wartość jest dostarczana przez wywołanie `Publication` konstruktora.
 
-  `Pages`jest właściwością do odczytu i zapisu <xref:System.Int32> , która wskazuje, ile razem stron publikacji ma. Wartość jest przechowywana w prywatnym polu o nazwie `totalPages` . Musi być liczbą dodatnią lub <xref:System.ArgumentOutOfRangeException> jest generowany.
+  `Pages` jest właściwością do odczytu i zapisu <xref:System.Int32> , która wskazuje, ile razem stron publikacji ma. Wartość jest przechowywana w prywatnym polu o nazwie `totalPages` . Musi być liczbą dodatnią lub <xref:System.ArgumentOutOfRangeException> jest generowany.
 
 - Elementy członkowskie powiązane z wydawcą
 
@@ -277,6 +277,7 @@ Teraz można utworzyć wystąpienie `Book` obiektu, wywołać zarówno unikatowy
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
 
 ## <a name="designing-abstract-base-classes-and-their-derived-classes"></a>Projektowanie abstrakcyjnych klas podstawowych i ich klas pochodnych
+
 <a name="abstract"></a>
 
 W poprzednim przykładzie zdefiniowano klasę bazową, która udostępnia implementację wielu metod, aby umożliwić pochodnym klasom współużytkowanie kodu. W wielu przypadkach jednak Klasa bazowa nie powinna dostarczyć implementacji. Zamiast tego Klasa bazowa jest *klasą abstrakcyjną* , która deklaruje *metody abstrakcyjne*; służy jako szablon definiujący składowe, które muszą zostać zaimplementowane przez każdą klasę pochodną. Zwykle w abstrakcyjnej klasie podstawowej implementacja każdego typu pochodnego jest unikatowa dla tego typu. Klasa jest oznaczona za pomocą abstrakcyjnego słowa kluczowego, ponieważ nie ma sensu tworzenia wystąpienia `Publication` obiektu, chociaż Klasa zapewniała implementacje wspólnych funkcji dla publikacji.
@@ -295,6 +296,6 @@ W poniższym przykładzie zastosowano obiekty pochodne od `Shape` . Tworzy wyst�
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dziedziczenie (Przewodnik programowania w języku C#)](../programming-guide/classes-and-structs/inheritance.md)

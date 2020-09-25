@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 8ae30b8c29dcf3aaa183ff295c7ee8592322797f
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 54b324dcd27d5827159bc2d773365e388a367d26
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141784"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190218"
 ---
 # <a name="proxy-element-network-settings"></a>\<proxy>, element (ustawienia sieci)
+
 Definiuje serwer proxy.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Definiuje serwer proxy.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -50,6 +52,7 @@ Definiuje serwer proxy.
 |`usesystemdefault`|Określa, czy mają być używane ustawienia serwera proxy programu Internet Explorer. Jeśli jest ustawiona na `True` , kolejne atrybuty zastąpią ustawienia proxy programu Internet Explorer. Wartość domyślna to `Unspecified`.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -61,6 +64,7 @@ Definiuje serwer proxy.
 ## <a name="text-value"></a>Wartość tekstowa  
   
 ## <a name="remarks"></a>Uwagi  
+
  `proxy`Element definiuje serwer proxy dla aplikacji. Jeśli w pliku konfiguracji brakuje tego elementu, .NET Framework będzie używać ustawień serwera proxy w programie Internet Explorer.  
   
  Wartość `proxyaddress` atrybutu powinna być poprawnie sformułowanym jednolitym wskaźnikiem zasobów (URI).  
@@ -72,9 +76,11 @@ Definiuje serwer proxy.
  Wyjątek jest generowany, jeśli `proxyaddress` atrybut określa nieprawidłowy domyślny serwer proxy. <xref:System.Exception.InnerException%2A>Właściwość wyjątku powinna zawierać więcej informacji o głównej przyczynie błędu.  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
+
  Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie używane są wartości domyślne z serwera proxy programu Internet Explorer, określa adres serwera proxy i pomija serwer proxy na potrzeby dostępu lokalnego.  
   
 ```xml  
@@ -94,4 +100,4 @@ Definiuje serwer proxy.
 ## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - performanceCounter element
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: 58a2bf5118a3a2cd9c33301eca5dcc751c2351bf
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4859f3a9e6de4f1bf8a56212bfe01f94d66f5650
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74283093"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190244"
 ---
 # <a name="performancecounter-element-network-settings"></a>\<performanceCounter>, element (ustawienia sieci)
+
 Włącza lub wyłącza liczniki wydajności sieci.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Włącza lub wyłącza liczniki wydajności sieci.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -41,6 +43,7 @@ Włącza lub wyłącza liczniki wydajności sieci.
 |`enabled`|Określa, czy są włączone liczniki wydajności sieci. Wartość domyślna to `false`.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -50,7 +53,8 @@ Włącza lub wyłącza liczniki wydajności sieci.
 |[ustawienia](settings-element-network-settings.md)|Konfiguruje podstawowe opcje sieci dla <xref:System.Net> przestrzeni nazw.|  
   
 ## <a name="remarks"></a>Uwagi  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
  Liczniki wydajności sieci muszą być włączone w pliku konfiguracji, który ma być używany. Wszystkie liczniki wydajności sieci są włączone lub wyłączone przy użyciu jednego ustawienia w pliku konfiguracji. Nie można włączyć lub wyłączyć poszczególnych liczników wydajności sieci. Aby uzyskać więcej informacji na temat określonych liczników wydajności sieci, zobacz [Network Performance Counters](../../../debug-trace-profile/performance-counters.md#networking-performance-counters).  
   
@@ -59,6 +63,7 @@ Włącza lub wyłącza liczniki wydajności sieci.
  <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>Właściwość może służyć do uzyskiwania bieżącej wartości **włączonego** atrybutu z odpowiednich plików konfiguracji.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak skonfigurować <xref:System.Net> i powiązane przestrzenie nazw w celu włączenia liczników wydajności sieci.  
   
 ```xml  
@@ -73,9 +78,9 @@ Włącza lub wyłącza liczniki wydajności sieci.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.Configuration.PerformanceCountersElement?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)
 - [Liczniki wydajności sieci](../../../debug-trace-profile/performance-counters.md#networking-performance-counters)

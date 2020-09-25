@@ -8,14 +8,15 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-ms.openlocfilehash: c5029a7d1e53c28d0abb232efdc3e0bd2c9658d4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4120c57fbb65da1c124414cbe9cfba7ae64388f8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088419"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190322"
 ---
 # <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy>, element (ustawienia sieci)
+
 Opisuje, czy buforowanie HTTP jest aktywne i opisuje domyślne zasady buforowania.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Opisuje, czy buforowanie HTTP jest aktywne i opisuje domyślne zasady buforowani
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -47,6 +49,7 @@ Opisuje, czy buforowanie HTTP jest aktywne i opisuje domyślne zasady buforowani
 |`policyLevel`|Określa, czy zasady buforowania są wykonywane automatycznie, czy pamięć podręczna jest pomijana. Wartość domyślna to `BypassCache`.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,14 +59,17 @@ Opisuje, czy buforowanie HTTP jest aktywne i opisuje domyślne zasady buforowani
 |[requestCaching](requestcaching-element-network-settings.md)|Kontroluje mechanizm buforowania dla żądań sieci.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wartość `policyLevel` atrybutu jest albo `BypassCache` `Default` .  
   
  Wartości dla `maximumAge` elementów, `maximumStale` i `minimumFresh` są jawnym przedziałem czasu o formacie *d*.* HH*:*mm*:*SS* (dni, godziny, minuty i sekundy) albo stałe `minValue` lub `maxValue` , zgodnie z potrzebami.  
   
 ## <a name="configuration-files"></a>Pliki konfiguracji  
- Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine. config).  
+
+ Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak określić minimalny czas trwania sześciu godzin, maksymalny czas trwania okresu ważności wynoszący dwa dni i maksymalny czas nieodświeżony wynoszący 4 godziny.  
   
 ```xml  
@@ -80,9 +86,9 @@ Opisuje, czy buforowanie HTTP jest aktywne i opisuje domyślne zasady buforowani
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.Cache.RequestCacheLevel>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)

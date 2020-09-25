@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: 9261a430642cb4d5ac4507835bd0fd3561bd8c02
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e081882aa8df89c0a1bf5d4c60f1395a3319c417
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088426"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190374"
 ---
 # <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy>, element (ustawienia sieci)
+
 Opisuje, czy buforowanie FTP jest aktywne i opisuje domyślne zasady buforowania.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Opisuje, czy buforowanie FTP jest aktywne i opisuje domyślne zasady buforowania
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -54,6 +56,7 @@ Opisuje, czy buforowanie FTP jest aktywne i opisuje domyślne zasady buforowania
 |`Revalidate`|Program spełnia żądanie przy użyciu buforowanej kopii zasobu, jeśli sygnatura czasowa jest taka sama jak sygnatura czasowa zasobu na serwerze; w przeciwnym razie zasób zostanie pobrany z serwera, który jest przedstawiony dla obiektu wywołującego i zapisany w pamięci podręcznej.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -65,6 +68,7 @@ Opisuje, czy buforowanie FTP jest aktywne i opisuje domyślne zasady buforowania
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak określić zasady buforowania FTP `NoCacheNoStore` .  
   
 ```xml  
@@ -79,9 +83,9 @@ Opisuje, czy buforowanie FTP jest aktywne i opisuje domyślne zasady buforowania
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.Cache.RequestCacheLevel>
-- [Schemat ustawień sieci](index.md)
+- [Schemat ustawień sieciowych](index.md)
