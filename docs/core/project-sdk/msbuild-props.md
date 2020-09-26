@@ -4,12 +4,12 @@ description: Odwołanie do właściwości i elementów programu MSBuild, które 
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: faa0dc0e94800a49b56af8810562ee0540f118d2
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: ac5d082acae582352680782deadb71a86f977f3b
+ms.sourcegitcommit: 2e4adc490c1d2a705a0592b295d606b10b9f51f1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247578"
+ms.locfileid: "91354456"
 ---
 # <a name="msbuild-reference-for-net-sdk-projects"></a>Dokumentacja programu MSBuild dla projektów zestawu .NET SDK
 
@@ -190,7 +190,7 @@ W poniższej tabeli przedstawiono dostępne opcje.
 
 ### <a name="analysismode"></a>Analizamode
 
-Począwszy od platformy .NET 5,0 RC2, zestaw .NET SDK jest dostarczany ze wszystkimi [regułami dotyczącymi jakości kodu "CA"](../../fundamentals/code-analysis/rules/quality-rules-reference.md). Domyślnie tylko [niektóre reguły są włączane](../../fundamentals/code-analysis/overview.md#enabled-rules) jako ostrzeżenia kompilacji. `AnalysisMode`Właściwość umożliwia dostosowanie zestawu reguł, które są domyślnie włączone. Można przełączać się na bardziej agresywny tryb analizy lub bardziej ostrożny tryb analizy. Na przykład jeśli chcesz włączyć wszystkie reguły domyślnie jako ostrzeżenia kompilacji, ustaw wartość na `AllEnabledByDefault` .
+Począwszy od platformy .NET 5,0 RC2, zestaw .NET SDK jest dostarczany ze wszystkimi [regułami dotyczącymi jakości kodu "CA"](../../fundamentals/code-analysis/quality-rules/index.md). Domyślnie tylko [niektóre reguły są włączane](../../fundamentals/code-analysis/overview.md#enabled-rules) jako ostrzeżenia kompilacji. `AnalysisMode`Właściwość umożliwia dostosowanie zestawu reguł, które są domyślnie włączone. Można przełączać się na bardziej agresywny tryb analizy lub bardziej ostrożny tryb analizy. Na przykład jeśli chcesz włączyć wszystkie reguły domyślnie jako ostrzeżenia kompilacji, ustaw wartość na `AllEnabledByDefault` .
 
 ```xml
 <PropertyGroup>
