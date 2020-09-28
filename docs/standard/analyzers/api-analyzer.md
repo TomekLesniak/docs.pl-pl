@@ -4,12 +4,12 @@ description: Dowiedz się, jak Analizator interfejsu API platformy .NET może po
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 8da4b2add206daa431124a7d24efc2676cbcaa69
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: f1268d5f208e19f1b69ed487370fb4c96723a204
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598102"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406248"
 ---
 # <a name="net-api-analyzer"></a>Analizator interfejsów API platformy .NET
 
@@ -85,6 +85,9 @@ Globalne pomijanie jest zalecanym sposobem zapewnienia spójności użycia inter
 
 ## <a name="discover-cross-platform-issues"></a>Odkryj problemy dotyczące wielu platform
 
+> [!NOTE]
+> W programie .NET 5,0 wprowadzono [analizatora zgodności platformy](platform-compat-analyzer.md) jako zamiennik tej funkcji. Analizator zgodności platformy jest dołączony do zestawu .NET SDK (nie trzeba go instalować oddzielnie) i jest domyślnie włączony.
+
 Podobnie jak w przypadku przestarzałych interfejsów API, Analizator identyfikuje wszystkie interfejsy API, które nie są dla wielu platform. Na przykład <xref:System.Console.WindowWidth?displayProperty=nameWithType> program działa w systemie Windows, ale nie w systemie Linux i macOS. Identyfikator diagnostyki jest wyświetlany w oknie **Lista błędów** . Możesz pominąć to ostrzeżenie, klikając prawym przyciskiem myszy i wybierając polecenie **szybkie akcje i refaktoryzacje**. W przeciwieństwie do przypadków wycofania, w których są dostępne dwie opcje (można nadal korzystać z przestarzałego elementu członkowskiego i pomijać ostrzeżenia lub nie używać ich wcale), tutaj jeśli tworzysz kod tylko dla niektórych platform, możesz pominąć wszystkie ostrzeżenia dla wszystkich innych platform, które nie są planowane do uruchamiania kodu. Aby to zrobić, wystarczy edytować plik projektu i dodać `PlatformCompatIgnore` Właściwość, która wyświetla listę wszystkich platform do zignorowania. Akceptowane są następujące wartości: `Linux` , `macOS` , i `Windows` .
 
 ```xml
@@ -119,13 +122,14 @@ Obecnie Analizator obsługuje następujące przypadki:
 
 Wszystkie te diagnostyki są dostępne nie tylko w środowisku IDE, ale również w wierszu polecenia w ramach konstruowania projektu, który obejmuje serwer CI.
 
-## <a name="configuration"></a>Konfiguracja
+## <a name="configuration"></a>Konfigurowanie
 
 Użytkownik decyduje o sposobie traktowania diagnostyki: w postaci ostrzeżeń, błędów, sugestii lub wyłączania. Na przykład jako architekt można zdecydować, że problemy ze zgodnością powinny być traktowane jako błędy, wywołania niektórych przestarzałych interfejsów API generują ostrzeżenia, podczas gdy inne tylko generują sugestie. Można ją skonfigurować osobno według identyfikatora diagnostyki i projektu. W tym celu w **Eksplorator rozwiązań**przejdź do węzła **zależności** w ramach projektu. Rozwiń węzeł **Dependencies**  >  **analizatory**zależności węzłów  >  **Microsoft. dotnet. analizatory. zgodność**. Kliknij prawym przyciskiem myszy identyfikator diagnostyczny, wybierz pozycję **Ustaw ważność zestawu reguł** i wybierz żądaną opcję.
 
 ![Zrzut ekranu przedstawiający Eksplorator rozwiązań wyświetlania diagnostyki i wyskakujących okienek z ważnością zestawu reguł.](media/api-analyzer/disable-notifications.jpg)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - Wprowadzenie do wpisu w blogu [analizatora interfejsu API](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) .
 - Wideo z pokazem [interfejsu API Analyzer](https://youtu.be/eeBEahYXGd0) w serwisie YouTube.
+- [Analizator zgodności platformy](platform-compat-analyzer.md)

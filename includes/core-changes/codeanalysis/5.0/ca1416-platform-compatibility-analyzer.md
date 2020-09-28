@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cd7860a5dfff1eb595625665382689733cffc94a
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 4a7616d2ffaabab5279342ebc1082c93a174a52d
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90721239"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406179"
 ---
 ### <a name="ca1416-platform-compatibility"></a>CA1416: zgodność platformy
 
@@ -20,7 +20,7 @@ W projektach przeznaczonych dla platform, dla których używane interfejsy API s
 
 #### <a name="examples"></a>Przykłady
 
-- <xref:System.Console.Beep(System.Int32,System.Int32)?displayProperty=nameWithType>Metoda jest obsługiwana tylko w systemie Windows (z systemem `[SupportedOSPlatform("windows")]` ). Poniższy kod generuje ostrzeżenie CA1416 w czasie kompilacji, jeśli [obiekt docelowy](../../../../docs/standard/frameworks.md) projektu `net5.0` (ale nie `net5.0-windows` ). W przypadku akcji, które można wykonać, aby uniknąć tego ostrzeżenia, zobacz [zalecane działanie](#recommended-action).
+- <xref:System.Console.Beep(System.Int32,System.Int32)?displayProperty=nameWithType>Metoda jest obsługiwana tylko w systemie Windows i jest dekoracyjna `[SupportedOSPlatform("windows")]` . Poniższy kod generuje ostrzeżenie CA1416 w czasie kompilacji, jeśli [obiekt docelowy](../../../../docs/standard/frameworks.md) projektu `net5.0` (ale nie `net5.0-windows` ). W przypadku akcji, które można wykonać, aby uniknąć tego ostrzeżenia, zobacz [zalecane działanie](#recommended-action).
 
   ```csharp
   public void PlayCMajor()
@@ -29,7 +29,7 @@ W projektach przeznaczonych dla platform, dla których używane interfejsy API s
   }
   ```
 
-- <xref:System.Drawing.Image.FromFile(System.String)?displayProperty=nameWithType>Metoda nie jest obsługiwana w przeglądarce (jest dekoracyjna `[UnsupportedOSPlatform("browser")]` ). Poniższy kod generuje ostrzeżenie CA1416 w czasie kompilacji, jeśli projekt używa zestawu webassembly Blazor ( `<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">` ) lub zawiera `browser` jako obsługiwaną platformę ( `<SupportedPlatform Include="browser" />` ) w pliku projektu.
+- <xref:System.Drawing.Image.FromFile(System.String)?displayProperty=nameWithType>Metoda nie jest obsługiwana w przeglądarce i jest dekoracyjna `[UnsupportedOSPlatform("browser")]` . Poniższy kod generuje ostrzeżenie CA1416 w czasie kompilacji, jeśli projekt obsługuje platformę przeglądarki.
 
   ```csharp
   public void CreateImage()
@@ -37,6 +37,17 @@ W projektach przeznaczonych dla platform, dla których używane interfejsy API s
       Image newImage = Image.FromFile("SampImag.jpg");
   }
   ```
+
+  > [!TIP]
+  >
+  > - Projekty Blazor webassembly i projekty biblioteki klas Razor obejmują obsługę przeglądarki automatycznie.
+  > - Aby ręcznie dodać przeglądarkę jako obsługiwaną platformę dla projektu, Dodaj następujący wpis do pliku projektu:
+  >
+  >  ```xml
+  >  <ItemGroup>
+  >    <SupportedPlatform Include="browser" />
+  >  </ItemGroup>
+  >  ```
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
@@ -68,7 +79,7 @@ public void PlayCMajor()
 }
 ```
 
-Możesz również oznaczyć interfejs API jako specyficzny dla platformy, w którym to przypadku obciążenie wymagające sprawdzenia wymagań znajduje się w obiektach wywołujących. Można oznaczyć konkretne metody lub typy lub cały zestaw.
+Jeśli tworzysz bibliotekę, możesz oznaczyć interfejs API jako specyficzny dla platformy. W takim przypadku obciążenie związane z sprawdzaniem wymagań znajduje się w programie wywołującym. Można oznaczyć konkretne metody lub typy lub cały zestaw.
 
 ```csharp
 [SupportedOSPlatform("windows")]
@@ -120,7 +131,7 @@ Na platformie Blazor webassembly:
 
 -->
 
-#### <a name="see-also"></a>Zobacz też
+#### <a name="see-also"></a>Zobacz także
 
 - [CA1416: Weryfikowanie zgodności platformy](/visualstudio/code-quality/ca1416)
 - [Analizator interfejsów API platformy .NET](../../../../docs/standard/analyzers/api-analyzer.md)

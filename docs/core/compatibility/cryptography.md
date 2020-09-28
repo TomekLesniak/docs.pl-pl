@@ -2,12 +2,12 @@
 title: Krytyczne zmiany kryptografii
 description: Wyświetla listę istotnych zmian związanych z kryptografią w programie .NET Core.
 ms.date: 04/22/2020
-ms.openlocfilehash: 621a3dad28b67ee33056dce3df0379efaeb90776
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 667d983fc6f2592c2169f97d328cd7947c8bcc81
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065110"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406153"
 ---
 # <a name="cryptography-breaking-changes"></a>Krytyczne zmiany kryptografii
 
@@ -15,6 +15,7 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
+| [Interfejsy API System. Security. Cryptography nie są obsługiwane w zestawie webassembly Blazor](#systemsecuritycryptography-apis-not-supported-on-blazor-webassembly) | 5,0 |
 | [System. Security. Cryptography. OID jest funkcjonalnie init-Only](#systemsecuritycryptographyoid-is-functionally-init-only) | 5,0 |
 | [Rozpocznij składnię ZAUFANEgo certyfikatu nie jest już obsługiwana w systemie Linux](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3,0 |
 | [EnvelopedCms domyślnie szyfrowanie AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3,0 |
@@ -24,6 +25,10 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 | [Parametr logiczny elementu SignedCms. ComputeSignature jest przestrzegany](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE[Cryptography APIs not supported on Blazor WebAssembly](~/includes/core-changes/cryptography/5.0/cryptography-apis-not-supported-on-blazor-webassembly.md)]
+
+***
 
 [!INCLUDE [cryptography-oid-init-only](../../../includes/core-changes/cryptography/5.0/cryptography-oid-init-only.md)]
 
