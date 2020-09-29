@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-ms.openlocfilehash: 0445ac33473c7e2d1916705893b22ba21bb981ff
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4e73b34390143a2ac9b839e1da79b7894232c4b4
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90536849"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437885"
 ---
 # <a name="partial-type-c-reference"></a>Typ częściowy (odwołanie w C#)
 
-Definicje typu częściowego umożliwiają poddzielenie definicji klasy, struktury lub interfejsu na wiele plików.
+Definicje typu częściowego umożliwiają poddzielenie definicji klasy, struktury, interfejsu lub rekordu na wiele plików.
 
 W *file1.cs*:
 
@@ -35,7 +35,7 @@ Dzielenie klasy, struktury lub interfejsu za pomocą kilku plików może być pr
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie w C#](../index.md)
 - [Przewodnik programowania w języku C#](../../programming-guide/index.md)

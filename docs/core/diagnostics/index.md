@@ -3,12 +3,12 @@ title: Omówienie narzędzi diagnostycznych — .NET Core
 description: Przegląd narzędzi i technik dostępnych do diagnozowania aplikacji .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: e97acccbe3bdd577ee600cefb9f1f0528d3c1ac0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d78b73e53637927ecb877dd69054f75a1f5ac91f
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538530"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438000"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Jakie narzędzia diagnostyczne są dostępne w środowisku .NET Core?
 
@@ -27,6 +27,10 @@ Ten artykuł ułatwia znalezienie różnych potrzebnych narzędzi.
 ## <a name="unit-testing"></a>Testowanie jednostek
 
 [Testowanie jednostkowe](../testing/index.md) to kluczowy składnik ciągłej integracji i wdrażania wysokiej jakości oprogramowania. Testy jednostkowe zostały zaprojektowane w celu zapewnienia wczesnego ostrzegania w przypadku wystąpienia elementu.
+
+## <a name="collect-diagnostics-in-containers"></a>Zbieranie danych diagnostycznych w kontenerach
+
+Te same narzędzia diagnostyczne, które są używane w środowiskach z systemem Linux, mogą również służyć do [zbierania danych diagnostycznych w kontenerach](diagnostics-in-containers.md). Istnieje tylko kilka zmian użycia wymaganych do upewnienia się, że narzędzia działają w kontenerze platformy Docker.
 
 ## <a name="debug-linux-dumps"></a>Debugowanie zrzutów systemu Linux
 

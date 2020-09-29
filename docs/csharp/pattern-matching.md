@@ -4,12 +4,12 @@ description: 'Informacje na temat wyrażeń dopasowania wzorców w języku C #'
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 2dd1401e3ef22a02f327e44ff884182ee3e22278
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: aabd8afe9a94022557275adb313ca3bf95da7548
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414997"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438025"
 ---
 # <a name="pattern-matching"></a>Dopasowanie wzorca
 
@@ -139,4 +139,4 @@ Porównaj kod z tego przykładu z projektem, który byłby następujący po utwo
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Samouczek: Używanie funkcji dopasowania wzorców do zwiększania typów danych](tutorials/pattern-matching.md)
+- [Samouczek: używanie dopasowania wzorców do tworzenia algorytmów opartych na typach i danych](tutorials/pattern-matching.md)

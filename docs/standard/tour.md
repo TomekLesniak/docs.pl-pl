@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: a44c3692dc9ed9b3de37955191edfb279403f152
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 0cfd9d6da2c53b46c04773f429ab2e52f2b65c7f
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89516024"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438083"
 ---
 # <a name="tour-of-net"></a>Przewodnik po środowisku .NET
 
@@ -33,7 +33,7 @@ Firma Microsoft aktywnie opracowuje i obsługuje trzy języki .NET: C#, F # i Vi
 
 * F # to międzyplatformowy, funkcjonalny język programowania, który obsługuje także tradycyjne programowanie zorientowane obiektowo i bezwzględne. Zapoznaj się z [przewodnikiem f #](../fsharp/index.yml) , aby dowiedzieć się więcej o języku f #.
 
-* Visual Basic to prosty język, dzięki któremu można dowiedzieć się, jak tworzyć różne aplikacje działające na platformie .NET. W językach .NET składnia Visual Basic jest najbardziej zbliżona do zwykłego języka ludzkiego, często ułatwiająca tworzenie nowych oprogramowania przez inne osoby.
+* Visual Basic to prosty język, dzięki któremu można dowiedzieć się, jak tworzyć różne aplikacje działające na platformie .NET. W językach .NET składnia Visual Basic jest najbardziej zbliżona do zwykłego języka ludzkiego, często ułatwiająca tworzenie nowych oprogramowania przez inne osoby. Zapoznaj się z [przewodnikiem Visual Basic](../visual-basic/index.yml) , aby dowiedzieć się więcej o Visual Basic.
 
 ## <a name="automatic-memory-management"></a>Automatyczne zarządzanie pamięcią
 

@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: ac2b4193849c56002c5bba35932f2882b987a0d6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: fae6ffc56c90ef8f5340d3d7fd34cda82e3b4ca4
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537499"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437971"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co nowego w programie .NET Core 3.0
 
@@ -27,7 +27,13 @@ Aby uzyskać więcej informacji o wersji, zobacz [anons programu .NET Core 3,0](
 
 ## <a name="language-improvements-c-80"></a>Udoskonalenia języka C# 8,0
 
-Język C# 8,0 jest również częścią tej wersji, która obejmuje funkcję [typów referencyjnych dopuszczających wartość null](../../csharp/tutorials/nullable-reference-types.md) , [strumienie asynchroniczne](../../csharp/tutorials/generate-consume-asynchronous-stream.md)i [więcej wzorców](../../csharp/tutorials/pattern-matching.md). Aby uzyskać więcej informacji na temat funkcji języka C# 8,0, zobacz [co nowego w języku c# 8,0](../../csharp/whats-new/csharp-8.md).
+Język C# 8,0 jest również częścią tej wersji, która obejmuje funkcję [typów referencyjnych dopuszczających wartość null](../../csharp/language-reference/builtin-types/nullable-reference-types.md) , strumienie asynchroniczne i więcej wzorców. Aby uzyskać więcej informacji na temat funkcji języka C# 8,0, zobacz [co nowego w języku c# 8,0](../../csharp/whats-new/csharp-8.md).
+
+Samouczki dotyczące funkcji języka C# 8,0:
+
+- [Samouczek: wyraźny cel projektowania dokładniej z typami referencyjnymi nullable i niedopuszczających wartości null](../../csharp/tutorials/nullable-reference-types.md)
+- [Samouczek: generowanie strumieni asynchronicznych i korzystanie z nich przy użyciu języków C# 8,0 i .NET Core 3,0](../../csharp/tutorials/generate-consume-asynchronous-stream.md)
+- [Samouczek: używanie dopasowania wzorców do tworzenia algorytmów opartych na typach i danych](../../csharp/tutorials/pattern-matching.md)
 
 Wprowadzono ulepszenia dotyczące języka w celu obsługi następujących funkcji API poniżej:
 

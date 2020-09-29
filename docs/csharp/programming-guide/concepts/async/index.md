@@ -2,12 +2,12 @@
 title: 'Programowanie asynchroniczne w języku C #'
 description: Omówienie obsługi języka C# w programowaniu asynchronicznym przy użyciu asynchronicznego, await, zadania i zadania<T>
 ms.date: 06/04/2020
-ms.openlocfilehash: 853019c39880b1f4ef6536aed5841ecab53d7304
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 02290e374aa97cb5d5ec6410c917751066949b23
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414984"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438101"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Programowanie asynchroniczne przy użyciu elementów async i await
 
@@ -56,7 +56,7 @@ Zacznijmy od zaktualizowania tego kodu, aby wątek nie zablokuje wykonywania zad
 :::code language="csharp" source="snippets/index/AsyncBreakfast-V2/Program.cs" id="SnippetMain":::
 
 > [!IMPORTANT]
-> Łączny czas, który upłynął, jest w przybliżeniu taki sam, jak początkowa wersja synchonous. Kod nie może jeszcze korzystać z niektórych kluczowych funkcji programowania asynchronicznego.
+> Łączny czas, który upłynął, jest w przybliżeniu taki sam jak początkowa wersja synchroniczna. Kod nie może jeszcze korzystać z niektórych kluczowych funkcji programowania asynchronicznego.
 
 > [!TIP]
 > Treści metod `FryEggsAsync` , `FryBaconAsync` , i, `ToastBreadAsync` zostały zaktualizowane, aby zwracały `Task<Egg>` , `Task<Bacon>` i `Task<Toast>` odpowiednio. Metody są zmieniane z oryginalnej wersji w celu uwzględnienia sufiksu "Async". Ich wdrożenia są wyświetlane [w dalszej części tego artykułu](#final-version) .
@@ -123,7 +123,7 @@ Console.WriteLine("bacon is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
-:::image type="content" source="media/asynchronous-breakfast.png" alt-text="śniadanie asynchroniczne":::
+:::image type="content" source="media/asynchronous-breakfast.png" alt-text="śniadanie synchroniczne":::
 
 Asynchroniczne przygotowanie śniadania trwało około 20 minut, jest to spowodowane tym, że niektóre zadania mogły być uruchamiane współbieżnie.
 
@@ -184,7 +184,7 @@ while (breakfastTasks.Count > 0)
 Po wprowadzeniu wszystkich zmian końcowa wersja kodu będzie wyglądać następująco: <a id="final-version"></a>
 :::code language="csharp" source="snippets/index/AsyncBreakfast-final/Program.cs" highlight="9-40":::
 
-:::image type="content" source="media/whenany-async-breakfast.png" alt-text="gdy dowolny śniadanie Async":::
+:::image type="content" source="media/whenany-async-breakfast.png" alt-text="śniadanie synchroniczne":::
 
 Końcowa wersja przygotowanych asynchronicznie zakończyła się około 15 minut. jest to spowodowane tym, że niektóre zadania mogły być uruchamiane współbieżnie, a kod mógł monitorować wiele zadań jednocześnie i podejmować działania tylko wtedy, gdy było to konieczne.
 
