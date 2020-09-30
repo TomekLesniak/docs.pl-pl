@@ -4,22 +4,52 @@ description: Dowiedz się, co to jest aplikacja z pojedynczym plikiem i dlaczego
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: 795ea98a9fd9d672b199eb2d9b24151340ef8246
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 8149f912c2d92c3eff8d248353e11c01bcfc24ba
+ms.sourcegitcommit: 665f8fc55258356f4d2f4a6585b750c974b26675
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495800"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91573673"
 ---
-# <a name="single-file-deployment-and-executable"></a>Wdrożenie pojedynczego pliku i plik wykonywalny
+# <a name="single-file-deployment-and-executable"></a>Wdrażanie i wykonywanie przy użyciu jednego pliku
 
 Zgrupowanie wszystkich plików zależnych od aplikacji do jednego pliku binarnego zapewnia deweloperowi aplikacji z opcją atrakcyjną w celu wdrożenia i dystrybucji aplikacji jako pojedynczy plik. Ten model wdrażania został udostępniony od platformy .NET Core 3,0 i został ulepszony w programie .NET 5,0. Wcześniej w programie .NET Core 3,0, gdy użytkownik uruchamia aplikację z jednym plikiem, host .NET Core najpierw wyodrębnia wszystkie pliki do katalogu tymczasowego przed uruchomieniem aplikacji. Program .NET 5,0 podnosi to środowisko, bezpośrednio uruchamiając kod bez konieczności wyodrębniania plików z aplikacji.
 
 Wdrożenie pojedynczego pliku jest dostępne zarówno dla [modelu wdrażania zależnego od platformy](index.md#publish-framework-dependent) , jak i [aplikacji samodzielnych](index.md#publish-self-contained). Rozmiar pojedynczego pliku w aplikacji samodzielnej jest duży, ponieważ będzie obejmował środowisko uruchomieniowe i biblioteki struktury. Opcja wdrożenia pojedynczego pliku może być łączona z [ReadyToRun](../tools/dotnet-publish.md) i [Trim (funkcja eksperymentalna w programie .NET 5,0)](trim-self-contained.md) opcje publikowania.
 
-Istnieją pewne ograniczenia, które należy wziąć pod uwagę przy użyciu pojedynczych plików, przy czym najpierw są używane informacje o ścieżce do lokalizowania plików względem lokalizacji aplikacji. <xref:System.Reflection.Assembly.Location?displayProperty=nameWithType>Interfejs API zwróci pusty ciąg, który jest domyślnym zachowaniem dla zestawów ładowanych z pamięci. Kompilator wyświetli ostrzeżenie dla tego interfejsu API w czasie kompilacji, aby poinformować dewelopera o określonym zachowaniu. Jeśli wymagana jest ścieżka do katalogu aplikacji, <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType> interfejs API zwróci katalog, w którym znajduje się AppHost (sam pakiet pojedynczego pliku). Zarządzane aplikacje C++ nie są dobrze dopasowane do wdrożenia jednoplikowego i zalecamy zapisanie aplikacji w języku C# w celu zapewnienia zgodności z pojedynczym plikiem.
+## <a name="api-incompatibility"></a>Niezgodność interfejsu API
+
+Niektóre interfejsy API nie są zgodne z wdrożeniem pojedynczego pliku, a aplikacje mogą wymagać modyfikacji, jeśli korzystają z tych interfejsów API. Jeśli używasz struktury lub pakietu innej firmy, istnieje możliwość, że mogą one również korzystać z jednego z tych interfejsów API i wymagać modyfikacji. Najczęstsze przyczyny problemów są zależne od ścieżek plików plików lub bibliotek DLL dostarczanych z aplikacją.
+
+W poniższej tabeli znajdują się odpowiednie szczegóły interfejsu API biblioteki środowiska uruchomieniowego dotyczące użycia pojedynczego pliku.
+
+| interfejs API                            | Uwaga                                                                   |
+|--------------------------------|------------------------------------------------------------------------|
+| `Assembly.Location`            | Zwraca pusty ciąg.                                               |
+| `Module.FullyQualifiedName`    | Zwraca ciąg z wartością `<Unknown>` lub zgłasza wyjątek. |
+| `Module.Name`                  | Zwraca ciąg o wartości `<Unknown>` .                        |
+| `Assembly.GetFile`             | Zgłasza <xref:System.IO.IOException> .                                   |
+| `Assembly.GetFiles`            | Zgłasza <xref:System.IO.IOException> .                                   |
+| `Assembly.CodeBase`            | Zgłasza <xref:System.PlatformNotSupportedException> .                    |
+| `Assembly.EscapedCodeBase`     | Zgłasza <xref:System.PlatformNotSupportedException> .                    |
+| `AssemblyName.CodeBase`        | Zwraca wartość `null`.                                                        |
+| `AssemblyName.EscapedCodeBase` | Zwraca wartość `null`.                                                        |
+
+Mamy pewne zalecenia dotyczące rozwiązywania typowych scenariuszy:
+
+* Aby uzyskać dostęp do plików obok pliku wykonywalnego, użyj <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType>
+
+* Aby znaleźć nazwę pliku wykonywalnego, użyj pierwszego elementu <xref:System.Environment.GetCommandLineArgs()?displayProperty=nameWithType>
+
+* Aby uniknąć całkowitego wysyłania luźnych plików, rozważ użycie [zasobów osadzonych](https://docs.microsoft.com/en-us/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
+
+## <a name="other-considerations"></a>Inne zagadnienia
 
 Pojedynczy plik domyślnie nie obsługuje bibliotek natywnych. W systemie Linux wstępnie łączymy środowisko uruchomieniowe z pakietem i tylko biblioteki natywne aplikacji są wdrażane w tym samym katalogu, w którym znajduje się aplikacja Jednoplikowa. W systemie Windows połączymy tylko kod hostingu, a biblioteki natywne środowiska uruchomieniowego i aplikacji są wdrażane w tym samym katalogu, w którym znajduje się aplikacja pojedynczego pliku. Jest to konieczne w celu zapewnienia dobrego środowiska debugowania, które wymaga wykluczenia plików natywnych z pojedynczego pliku. Istnieje możliwość ustawienia flagi, `IncludeNativeLibrariesForSelfExtract` Aby uwzględnić biblioteki natywne w pojedynczym zbiorze plików, ale te pliki zostaną wyodrębnione do katalogu tymczasowego na komputerze klienckim po uruchomieniu aplikacji pojedynczego pliku.
+
+Aplikacja Jednoplikowa będzie zawierała wszystkie powiązane pliki PDB obok niej i nie zostanie domyślnie zawiązana. Jeśli chcesz uwzględnić plików pdb wewnątrz zestawu dla projektów, które tworzysz, ustaw polecenie `DebugType` na zgodnie z `embedded` [poniższym](#include-pdb-files-inside-the-bundle) opisem.
+
+Zarządzane składniki języka C++ nie są dobrze dopasowane do wdrożenia jednoplikowego i zalecamy zapisanie aplikacji w języku C# lub innym niezarządzanym języku C++ w celu zapewnienia zgodności z pojedynczym plikiem.
 
 ## <a name="exclude-files-from-being-embedded"></a>Wykluczanie plików z osadzania
 
@@ -38,6 +68,22 @@ Na przykład w celu umieszczenia niektórych plików w katalogu publikowania, al
     <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
   </Content>
 </ItemGroup>
+```
+
+## <a name="include-pdb-files-inside-the-bundle"></a>Uwzględnij pliki PDB wewnątrz pakietu
+
+Plik PDB zestawu może być osadzony w samym zestawie ( `.dll` ) przy użyciu poniższego ustawienia. Ponieważ symbole są częścią zestawu, będą również częścią aplikacji jednoplikowej:
+
+```xml
+<DebugType>embedded</DebugType>
+```
+
+Na przykład Dodaj następującą właściwość do pliku projektu zestawu, aby osadzić plik PDB w tym zestawie:
+
+```xml
+<PropertyGroup>
+  <DebugType>embedded</DebugType>
+</PropertyGroup>
 ```
 
 ## <a name="publish-a-single-file-app---cli"></a>Publikowanie pojedynczego pliku aplikacji — interfejs wiersza polecenia
@@ -73,7 +119,7 @@ Program Visual Studio tworzy Profile publikowania wielokrotnego użytku, które 
 
 01. Wybierz pozycję **Edytuj**.
 
-    :::image type="content" source="media/single-file/visual-studio-publish-edit-settings.png" alt-text="Profil publikacji programu Visual Studio za pomocą przycisku Edytuj.":::
+    :::image type="content" source="media/single-file/visual-studio-publish-edit-settings.png" alt-text="Eksplorator rozwiązań z menu po kliknięciu prawym przyciskiem myszy wyróżnianie opcji Publikuj.":::
 
 01. W oknie dialogowym **Ustawienia profilu** ustaw następujące opcje:
 
@@ -83,7 +129,7 @@ Program Visual Studio tworzy Profile publikowania wielokrotnego użytku, które 
 
     Wybierz pozycję **Zapisz** , aby zapisać ustawienia i powrócić do okna dialogowego **Publikowanie** .
 
-    :::image type="content" source="media/single-file/visual-studio-publish-single-file-properties.png" alt-text="Okno dialogowe ustawień profilu z trybem wdrożenia, docelowym środowiskiem uruchomieniowym i opcją pojedynczego pliku.":::
+    :::image type="content" source="media/single-file/visual-studio-publish-single-file-properties.png" alt-text="Eksplorator rozwiązań z menu po kliknięciu prawym przyciskiem myszy wyróżnianie opcji Publikuj.":::
 
 01. Wybierz pozycję **Publikuj** , aby opublikować aplikację jako pojedynczy plik.
 
@@ -93,7 +139,7 @@ Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pom
 
 Visual Studio dla komputerów Mac nie udostępnia opcji publikowania aplikacji jako pojedynczego pliku. Należy opublikować ręcznie, postępując zgodnie z instrukcjami zawartymi w sekcji [Publikowanie pojedynczego pliku App-CLI](#publish-a-single-file-app---cli) . Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wdrażanie aplikacji .NET Core](index.md).
 - [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](deploy-with-cli.md).

@@ -2,12 +2,12 @@
 title: Schemat konfiguracji programu WCF
 ms.date: 03/30/2017
 ms.assetid: c282aeb5-91f0-4522-8e2f-704c1ef3651f
-ms.openlocfilehash: ab64b41e6e79c934ac0145dd7eec0a943f5dc473
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 44d5e0acc6f5a9ca43949bce0c7964354ad18270
+ms.sourcegitcommit: 665f8fc55258356f4d2f4a6585b750c974b26675
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91165133"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91573660"
 ---
 # <a name="wcf-configuration-schema"></a>Schemat konfiguracji programu WCF
 
@@ -19,12 +19,12 @@ Elementy konfiguracji programu Windows Communication Foundation (WCF) umożliwia
   
  [Blokowanie ustawień konfiguracji](/previous-versions/aspnet/55th21y4(v=vs.100))  
   
- W tej sekcji opisano wszystkie możliwe wartości poszczególnych elementów konfiguracji oraz sposób współdziałania z innymi elementami konfiguracji WCF. Poniższa mapa ilustruje Schemat konfiguracji programu WCF:  
-  
- ![Diagram przedstawiający Schemat konfiguracji programu WCF.](./media/index/windows-communication-foundation-configuration-schema.gif)  
+ W tej sekcji opisano wszystkie możliwe wartości poszczególnych elementów konfiguracji oraz sposób współdziałania z innymi elementami konfiguracji WCF. Poniższa mapa ilustruje Schemat konfiguracji programu WCF:
+
+:::image type="content" source="./media/index/windows-communication-foundation-configuration-schema.gif" alt-text="Diagram przedstawiający Schemat konfiguracji programu WCF." lightbox="./media/index/windows-communication-foundation-configuration-schema.gif":::
   
 > [!CAUTION]
-> Aby zapobiec potencjalnym zagrożeniom bezpieczeństwa, należy chronić sekcje konfiguracyjne programu WCF w plikach konfiguracyjnych aplikacji (app.config) z odpowiednimi listami Access Control (ACL).  Należy na przykład upewnić się, że tylko odpowiednie osoby mają dostęp do ustawień zabezpieczeń powiązań aplikacji lub je modyfikować, a także w sekcji model usługi w pliku konfiguracji usługi.  
+> Aby zapobiec potencjalnym zagrożeniom bezpieczeństwa, należy chronić sekcje konfiguracyjne programu WCF w plikach konfiguracyjnych aplikacji (app.config) z odpowiednimi listami Access Control. Należy na przykład upewnić się, że tylko odpowiednie osoby mogą uzyskać dostęp do ustawień zabezpieczeń dla powiązań aplikacji lub zmodyfikować je w sekcji model usługi w pliku konfiguracji usługi.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
 
