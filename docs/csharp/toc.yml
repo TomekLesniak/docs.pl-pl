@@ -56,7 +56,7 @@
       href: tutorials/upgrade-to-nullable-references.md
     - name: Generowanie i używanie strumieni asynchronicznych
       href: tutorials/generate-consume-asynchronous-stream.md
-    - name: Zwiększanie możliwości danych za pomocą dopasowania wzorca
+    - name: Tworzenie algorytmów opartych na danych z dopasowywaniem do wzorców
       href: tutorials/pattern-matching.md
     - name: Aplikacja konsoli
       href: tutorials/console-teleprompter.md
