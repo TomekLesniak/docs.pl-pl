@@ -11,13 +11,12 @@ helpviewer_keywords:
 - ServiceInstaller class, adding installers to services
 - ServiceProcessInstaller class, adding installers to services
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
-author: ghogen
-ms.openlocfilehash: f82dd6635555ccb8fcbcdf63cba2495084194731
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 9a6954c75595f5297a31dcaf37e744e655733df4
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925647"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608689"
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Instrukcje: Dodawanie instalatorów od aplikacji usług
 Program Visual Studio jest dostarczany ze składnikami instalacji, które mogą instalować zasoby skojarzone z aplikacjami usługi. Składniki instalacji rejestrują poszczególne usługi w systemie, w którym jest instalowana, i pozwalają menedżerowi sterowania usługami znać, że usługa istnieje. Podczas pracy z aplikacją usługi można wybrać łącze w okno Właściwości, aby automatycznie dodać odpowiednie Instalatory do projektu.  
@@ -61,7 +60,7 @@ Program Visual Studio jest dostarczany ze składnikami instalacji, które mogą 
     > [!NOTE]
     > Dla każdej dodatkowej usługi w projekcie należy dodać dodatkowy <xref:System.ServiceProcess.ServiceInstaller> składnik do `ProjectInstaller` klasy projektu. <xref:System.ServiceProcess.ServiceProcessInstaller>Składnik dodany w kroku 3 współdziała ze wszystkimi instalacjami poszczególnych usług w projekcie.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie do aplikacji usług systemu Windows](introduction-to-windows-service-applications.md)
 - [Instrukcje: Instalowanie i odinstalowywanie usług](how-to-install-and-uninstall-services.md)

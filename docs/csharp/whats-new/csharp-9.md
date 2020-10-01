@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 6a0227b408b894fe450c2a6bb6017d9059d229c0
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: e109deaa26b33a7780df11031c1f3e0477cd5431
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247621"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609196"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -204,11 +204,11 @@ Te funkcje mogą zwiększyć wydajność w niektórych scenariuszach. Powinny by
 
 ## <a name="fit-and-finish-features"></a>Funkcje dopasowywania i kończenia
 
-Wiele innych funkcji ułatwia bardziej wydajne pisanie kodu. W języku C# 9,0 można pominąć typ w nowym wyrażeniu, gdy typ tworzonego obiektu jest już znany. Najbardziej typowym zastosowaniem jest deklaracja pól:
+Wiele innych funkcji ułatwia bardziej wydajne pisanie kodu. W języku C# 9,0 można pominąć typ w [ `new` wyrażeniu](../language-reference/operators/new-operator.md) , gdy typ tworzonego obiektu jest już znany. Najbardziej typowym zastosowaniem jest deklaracja pól:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="WeatherStationField":::
 
-Typ docelowy New może być również używany, gdy trzeba utworzyć nowy obiekt do przekazania jako parametr do metody. Rozważmy `ForecastFor()` metodę o następującym podpisie:
+Typ docelowy `new` może być również używany, gdy trzeba utworzyć nowy obiekt do przekazania jako argument do metody. Rozważmy `ForecastFor()` metodę o następującym podpisie:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="ForecastSignature":::
 
@@ -220,7 +220,7 @@ Innym świetnym użyciem tej funkcji jest połączenie z właściwościami tylko
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="InitWeatherStation":::
 
-Można zwrócić wystąpienie utworzone przez konstruktora domyślnego przy użyciu `return new();` wyrażenia.
+Można zwrócić wystąpienie utworzone przez konstruktora domyślnego przy użyciu `return new();` instrukcji.
 
 Podobna funkcja ulepsza rozpoznawanie typu docelowego [wyrażeń warunkowych](../language-reference/operators/conditional-operator.md). W przypadku tej zmiany dwa wyrażenia nie muszą mieć jawnej konwersji z jednego do drugiego, ale mogą jednocześnie mieć niejawne konwersje na typ docelowy. Ta zmiana jest niezauważalna. Informacje o tym, że niektóre wyrażenia warunkowe, które wcześniej wymagały rzutowania lub nie spowodują skompilowania, już teraz działają.
 

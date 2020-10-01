@@ -15,22 +15,21 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, service application code model
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
-author: ghogen
-ms.openlocfilehash: c59ccc5a8b2f11fda9c4734487092c1aabb74908
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 386311228abb08600acc249e80702c724c137900
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925582"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609268"
 ---
 # <a name="service-application-programming-architecture"></a>Architektura programowania aplikacji usług
 Aplikacje usług systemu Windows są oparte na klasie, która dziedziczy z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> klasy. Zastąpisz metody z tej klasy i zdefiniujesz dla nich funkcję, aby określić sposób zachowania usługi.  
   
  Główne klasy wykorzystywane podczas tworzenia usług są następujące:  
   
-- <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>— Przesłonięcia metod z <xref:System.ServiceProcess.ServiceBase> klasy podczas tworzenia usługi i definiowania kodu w celu określenia sposobu działania usługi w tej dziedziczonej klasie.  
+- <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> — Przesłonięcia metod z <xref:System.ServiceProcess.ServiceBase> klasy podczas tworzenia usługi i definiowania kodu w celu określenia sposobu działania usługi w tej dziedziczonej klasie.  
   
-- <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType>i <xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> — te klasy są używane do instalowania i odinstalowywania usługi.  
+- <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType> i <xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> — te klasy są używane do instalowania i odinstalowywania usługi.  
   
  Ponadto klasy o nazwie <xref:System.ServiceProcess.ServiceController> można użyć do manipulowania samą usługą. Ta klasa nie obejmuje tworzenia usługi, ale może służyć do uruchamiania i zatrzymywania usługi, przekazywania do niej poleceń i zwracania serii wyliczeń.  
   

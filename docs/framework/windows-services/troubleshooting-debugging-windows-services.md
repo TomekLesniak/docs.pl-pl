@@ -12,13 +12,12 @@ helpviewer_keywords:
 - services, debugging
 - Windows Service applications, troubleshooting
 ms.assetid: cf859d4c-f04c-4cb7-81e3-bc7de8bea190
-author: ghogen
-ms.openlocfilehash: 935f5dcbd369ba5d723cc0e947ba708afdd590ea
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 5846692fa0d90a62dd569253abbd81aa63b5798d
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925543"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608897"
 ---
 # <a name="troubleshooting-debugging-windows-services"></a>Rozwiązywanie problemów: debugowanie usług systemu Windows
 Gdy debugujesz aplikację usługi systemu Windows, usługa i **Service Manager systemu Windows** współpracują. **Service Manager** uruchamia usługę <xref:System.ServiceProcess.ServiceBase.OnStart%2A> , wywołując metodę, a następnie czeka 30 sekund na <xref:System.ServiceProcess.ServiceBase.OnStart%2A> zwrócenie metody. Jeśli metoda nie zwróci tego czasu, Menedżer pokazuje błąd, że nie można uruchomić usługi.  

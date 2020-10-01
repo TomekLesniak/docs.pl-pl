@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 09/16/2020
 ms.topic: overview
-ms.openlocfilehash: f6b3bcd6633665d837360384f3610fe51b7fd8cd
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: f5dc7c99b209b16dfb8595f9d50dcb1428bbde84
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874729"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91607997"
 ---
 # <a name="configuration-in-net"></a>Konfiguracja w programie .NET
 
@@ -64,7 +64,8 @@ W poniższej tabeli przedstawiono dostawców konfiguracji dostępnych dla aplika
 
 Aby uzyskać więcej informacji na temat różnych dostawców konfiguracji, zobacz [dostawcy konfiguracji w programie .NET](configuration-providers.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dostawcy konfiguracji w programie .NET](configuration-providers.md)
 - [Implementowanie niestandardowego dostawcy konfiguracji](custom-configuration-provider.md)
+- Usterki konfiguracji należy utworzyć w repozytorium [GitHub.com/dotnet/Extensions](https://github.com/dotnet/extensions/issues)

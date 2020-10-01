@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: 6ea848d4a60069e6702b9d60fd90a55f572fb043
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: b52afd80c10afb6723679b2a74f11c7a4f59091f
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842528"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608377"
 ---
 # <a name="net-globalization-and-icu"></a>Globalizacja i ICU platformy .NET
 
@@ -33,7 +33,7 @@ Począwszy od platformy .NET 5,0, deweloperzy mają większą kontrolę nad uży
 
 ## <a name="icu-on-windows"></a>ICU w systemie Windows
 
-System Windows 10 maja 2019 Update i nowsze wersje zawierają [ICU. dll](/windows/win32/intl/international-components-for-unicode--icu-) w ramach systemu operacyjnego, a program .NET 5,0 i nowsze wersje domyślnie korzystają z ICU. W przypadku uruchamiania w systemie Windows program .NET 5,0 i nowsze wersje próbują załadować, `icu.dll` a jeśli jest dostępny, używa go do implementacji globalizacji.  Jeśli ta biblioteka nie może zostać znaleziona lub załadowana, na przykład w przypadku korzystania ze starszych wersji systemu Windows, program .NET 5,0 i jego nowsze wersje powracają do implementacji opartej na witrynie NLS.
+System Windows 10 maja 2019 Update i nowsze wersje zawierają [icu.dll](/windows/win32/intl/international-components-for-unicode--icu-) w ramach systemu operacyjnego, a program .NET 5,0 i nowsze wersje domyślnie używają ICU. W przypadku uruchamiania w systemie Windows program .NET 5,0 i nowsze wersje próbują załadować, `icu.dll` a jeśli jest dostępny, używa go do implementacji globalizacji.  Jeśli ta biblioteka nie może zostać znaleziona lub załadowana, na przykład w przypadku korzystania ze starszych wersji systemu Windows, program .NET 5,0 i jego nowsze wersje powracają do implementacji opartej na witrynie NLS.
 
 > [!NOTE]
 > Nawet w przypadku używania ICU, `CurrentCulture` , `CurrentUICulture` i `CurrentRegion` elementy członkowskie nadal używają interfejsów API systemu operacyjnego Windows do zapamiętania ustawień użytkownika.
@@ -120,7 +120,7 @@ Należy to zrobić dla wszystkich plików binarnych ICU dla obsługiwanych środ
 
 ### <a name="macos-behavior"></a>zachowanie macOS
 
-`macOS`Program ma inne zachowanie w zakresie rozpoznawania zależnych bibliotek dynamicznych z poleceń ładowania określonych w `match-o` pliku niż moduł ładujący systemu Linux. W module ładującym systemu Linux .NET może próbować `libicudata` , `libicuuc` i `libicui18n` (w tej kolejności), aby SPEŁNIAŁ wykres zależności ICU. Jednak w macOS nie działa. Podczas kompilowania ICU na macOS, domyślnie Pobierz bibliotekę dynamiczną z tymi poleceniami ładowania w `libicuuc` . Na przykład:
+`macOS` Program ma inne zachowanie w zakresie rozpoznawania zależnych bibliotek dynamicznych z poleceń ładowania określonych w `match-o` pliku niż moduł ładujący systemu Linux. W module ładującym systemu Linux .NET może próbować `libicudata` , `libicuuc` i `libicui18n` (w tej kolejności), aby SPEŁNIAŁ wykres zależności ICU. Jednak w macOS nie działa. Podczas kompilowania ICU na macOS, domyślnie Pobierz bibliotekę dynamiczną z tymi poleceniami ładowania w `libicuuc` . Na przykład:
 
 ```sh
 ~/ % otool -L /Users/santifdezm/repos/icu-build/icu/install/lib/libicuuc.67.1.dylib
@@ -145,10 +145,28 @@ install_name_tool -change "libicudata.67.dylib" "@loader_path/libicudata.67.dyli
 install_name_tool -change "libicuuc.67.dylib" "@loader_path/libicuuc.67.dylib" /path/to/libicui18n.67.1.dylib
 ```
 
-- Poprawka ICU do tworzenia nazw instalacji z`@loader_path`
+- Poprawka ICU do tworzenia nazw instalacji z `@loader_path`
 
   Przed uruchomieniem AUTOCONF ( `./runConfigureICU` ) Zmień [następujące wiersze](https://github.com/unicode-org/icu/blob/ef91cc3673d69a5e00407cda94f39fcda3131451/icu4c/source/config/mh-darwin#L32-L37) na:
 
 ```
 LD_SONAME = -Wl,-compatibility_version -Wl,$(SO_TARGET_VERSION_MAJOR) -Wl,-current_version -Wl,$(SO_TARGET_VERSION) -install_name @loader_path/$(notdir $(MIDDLE_SO_TARGET))
 ```
+
+## <a name="icu-on-webassembly"></a>ICU na webassembly
+
+Dostępna jest wersja ICU, która jest przeznaczona dla obciążeń zestawu webassembly. Ta wersja zapewnia zgodność globalizacji z profilami pulpitu. Aby zmniejszyć rozmiar pliku danych ICU z 24 MB do 1,4 MB (lub ~ 0,3 MB w przypadku kompresji z Brotli), to obciążenie ma kilku ograniczenia.
+
+Następujące interfejsy API nie są obsługiwane:
+
+- <xref:System.Globalization.CultureInfo.EnglishName?displayProperty=nameWithType>
+- <xref:System.Globalization.CultureInfo.NativeName?displayProperty=nameWithType>
+- <xref:System.Globalization.DateTimeFormatInfo.NativeCalendarName?displayProperty=nameWithType>
+- <xref:System.Globalization.RegionInfo.NativeName?displayProperty=nameWithType>
+
+Następujące interfejsy API są obsługiwane z ograniczeniami:
+
+- <xref:System.String.Normalize(System.Text.NormalizationForm)?displayProperty=nameWithType> i <xref:System.String.IsNormalized(System.Text.NormalizationForm)?displayProperty=nameWithType> nie obsługują rzadko używanych <xref:System.Text.NormalizationForm.FormKC?displayProperty=nameWithType> i <xref:System.Text.NormalizationForm.FormKD?displayProperty=nameWithType> formularzy.
+- <xref:System.Globalization.RegionInfo.CurrencyNativeName?displayProperty=nameWithType> zwraca tę samą wartość, co <xref:System.Globalization.RegionInfo.CurrencyEnglishName?displayProperty=nameWithType> .
+
+Ponadto listę obsługiwanych ustawień regionalnych można znaleźć w [repozytorium dotnet/ICU](https://github.com/dotnet/icu/blob/0f49268ddfd3331ca090f1c51d2baa2f75f6c6c0/icu-filters/optimal.json#L6-L54)

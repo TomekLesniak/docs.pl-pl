@@ -4,12 +4,12 @@ author: IEvangelist
 description: Dowiedz się więcej na temat hosta ogólnego platformy .NET, który jest odpowiedzialny za uruchamianie aplikacji i zarządzanie okresem istnienia.
 ms.author: dapine
 ms.date: 09/18/2020
-ms.openlocfilehash: c1b22b4490dc54d462482976d1c2e512f812c9a9
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: a1f82f6c6b5d250d6e81351aa02e50e23636280b
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90875863"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608274"
 ---
 # <a name="net-generic-host"></a>Host ogólny .NET
 
@@ -138,7 +138,8 @@ Konfiguracja utworzona przez program `ConfigureAppConfiguration` jest dostępna 
 
 Aby uzyskać więcej informacji, zobacz [Konfiguracja w programie .NET](configuration.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Konfiguracja w programie .NET](configuration.md)
 - [ASP.NET Core hosta sieci Web](/aspnet/core/fundamentals/host/web-host)
+- Błędy hostów ogólnych powinny być tworzone w repozytorium [GitHub.com/dotnet/Extensions](https://github.com/dotnet/extensions/issues)

@@ -6,13 +6,12 @@ helpviewer_keywords:
 - Windows Service applications, creating
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
-author: ghogen
-ms.openlocfilehash: 6918225e39c15a52710fd0d56342aae869b42325
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 35d78acd4fae7bf98a2b3f4ce6ac8a32393c35d4
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925777"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608598"
 ---
 # <a name="how-to-create-windows-services"></a>Instrukcje: Tworzenie usług systemu Windows
 Podczas tworzenia usługi można użyć szablonu projektu programu Visual Studio o nazwie **Usługa systemu Windows**. Ten szablon automatycznie wykonuje większość pracy za Ciebie, odwołując się do odpowiednich klas i przestrzeni nazw, konfigurując dziedziczenie z klasy podstawowej dla usług i zastępując kilka metod, które mogą zostać przesłonięte.  
@@ -46,11 +45,11 @@ Podczas tworzenia usługi można użyć szablonu projektu programu Visual Studio
   
     |Właściwość|Ustawienie|  
     |--------------|-------------|  
-    |<xref:System.ServiceProcess.ServiceBase.CanStop%2A>|`True`, aby wskazać, że usługa będzie akceptować żądania zatrzymania działania; `false`, aby zapobiec zatrzymaniu usługi.|  
-    |<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>|`True`, aby wskazać, że usługa chce otrzymywać powiadomienie, gdy komputer, na którym się znajduje, jest zamykana, umożliwiając mu wywołanie <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> procedury.|  
-    |<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>|`True`, aby wskazać, że usługa będzie akceptować żądania wstrzymania lub wznowienia działania. `false`Aby zapobiec wstrzymaniu i wznowieniu usługi.|  
-    |<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>|`True`Aby wskazać, że usługa może obsługiwać powiadomienia o zmianach stanu zasilacza komputera; `false`Aby zapobiec powiadamianiu usługi o tych zmianach.|  
-    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|`True`w celu zapisania wpisów informacyjnych w dzienniku zdarzeń aplikacji, gdy usługa wykonuje akcję; `false`Aby wyłączyć tę funkcję. Aby uzyskać więcej informacji, zobacz [jak: rejestrować informacje o usługach](how-to-log-information-about-services.md). **Uwaga:**  Domyślnie <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> jest ustawiony na `true` .|  
+    |<xref:System.ServiceProcess.ServiceBase.CanStop%2A>|`True` , aby wskazać, że usługa będzie akceptować żądania zatrzymania działania; `false` , aby zapobiec zatrzymaniu usługi.|  
+    |<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>|`True` , aby wskazać, że usługa chce otrzymywać powiadomienie, gdy komputer, na którym się znajduje, jest zamykana, umożliwiając mu wywołanie <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> procedury.|  
+    |<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>|`True` , aby wskazać, że usługa będzie akceptować żądania wstrzymania lub wznowienia działania. `false` Aby zapobiec wstrzymaniu i wznowieniu usługi.|  
+    |<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>|`True` Aby wskazać, że usługa może obsługiwać powiadomienia o zmianach stanu zasilacza komputera; `false` Aby zapobiec powiadamianiu usługi o tych zmianach.|  
+    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|`True` w celu zapisania wpisów informacyjnych w dzienniku zdarzeń aplikacji, gdy usługa wykonuje akcję; `false` Aby wyłączyć tę funkcję. Aby uzyskać więcej informacji, zobacz [jak: rejestrować informacje o usługach](how-to-log-information-about-services.md). **Uwaga:**  Domyślnie <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> jest ustawiony na `true` .|  
   
     > [!NOTE]
     > Gdy <xref:System.ServiceProcess.ServiceBase.CanStop%2A> lub <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> jest ustawiona na `false` , **Menedżer sterowania usługami** wyłącza odpowiednie opcje menu, aby zatrzymać, wstrzymać lub kontynuować usługę.  

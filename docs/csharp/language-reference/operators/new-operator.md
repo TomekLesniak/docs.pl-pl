@@ -1,18 +1,18 @@
 ---
 description: New — odwołanie w C#
 title: New — odwołanie w C#
-ms.date: 06/25/2019
+ms.date: 10/02/2020
 f1_keywords:
 - new_CSharpKeyword
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 88ec929317d4e6c6651233c1a1aa0ce8a8cce611
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 3125f3d2c694dcfc5682ee482f3f76072ac3726d
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118276"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609385"
 ---
 # <a name="new-operator-c-reference"></a>New — Operator (odwołanie w C#)
 
@@ -29,6 +29,14 @@ Aby utworzyć nowe wystąpienie typu, zazwyczaj wywoływany jest jeden z [konstr
 Można użyć [inicjatora obiektu lub kolekcji](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) z `new` operatorem, aby utworzyć wystąpienie i zainicjować obiekt w jednej instrukcji, jak pokazano w poniższym przykładzie:
 
 [!code-csharp-interactive[constructor with initializer](snippets/shared/NewOperator.cs#ConstructorWithInitializer)]
+
+Począwszy od języka C# 9,0, wyrażenia wywołania konstruktora mają typ docelowy. Oznacza to, że jeśli jest znany typ docelowy wyrażenia, można pominąć nazwę typu, jak pokazano na poniższym przykładzie:
+
+:::code language="csharp" source="snippets/shared/NewOperator.cs" id="SnippetTargetTyped":::
+
+Jak pokazano w powyższym przykładzie, zawsze używaj nawiasów w wyrażeniu z typem docelowym `new` .
+
+Jeśli typ docelowy `new` wyrażenia jest nieznany (na przykład w przypadku użycia [`var`](../keywords/var.md) słowa kluczowego), należy określić nazwę typu.
 
 ## <a name="array-creation"></a>Tworzenie tablicy
 
@@ -62,7 +70,9 @@ Typ zdefiniowany przez użytkownika nie może przeciążać `new` operatora.
 
 Aby uzyskać więcej informacji, zobacz sekcję [New Operator](~/_csharplang/spec/expressions.md#the-new-operator) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz też
+Aby uzyskać więcej informacji na temat wyrażenia z określonym typem docelowym `new` , zobacz [Uwaga dotycząca oferty funkcji](~/_csharplang/proposals/csharp-9.0/target-typed-new.md).
+
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

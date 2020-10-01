@@ -3,12 +3,12 @@ title: Klasy i obiekty — wprowadzenie do samouczka języka C#
 description: Utwórz pierwszy program w języku C# i Eksploruj koncepcje zorientowane obiektowo
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 5edb2d7b11caace2d794b7958dfeb75ef502ee2b
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 57394ecb02745d69e22f4d9f1dbd4213f290cd5a
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396867"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609053"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Eksploruj programowanie zorientowane obiektowo przy użyciu klas i obiektów
 
@@ -16,7 +16,7 @@ Ten samouczek oczekuje, że masz maszynę, której możesz użyć do programowan
 
 ## <a name="create-your-application"></a>Tworzenie aplikacji
 
-Za pomocą okna terminalu Utwórz katalog o nazwie *Classes*. W tym miejscu utworzysz aplikację. Przejdź do tego katalogu i wpisz `dotnet new console` w oknie konsoli. To polecenie tworzy aplikację. Otwórz *program.cs*. Powinny wyglądać następująco:
+Za pomocą okna terminalu Utwórz katalog o nazwie *Classes*. W tym miejscu utworzysz aplikację. Przejdź do tego katalogu i wpisz `dotnet new console` w oknie konsoli. To polecenie tworzy aplikację. Otwórz *program.cs*. Powinien on wyglądać następująco:
 
 ```csharp
 using System;
@@ -73,7 +73,7 @@ namespace classes
 
 Przed rozpoczęciem przejdźmy do tego, co zostało skompilowane.  `namespace`Deklaracja umożliwia logicznie organizowanie kodu. Ten samouczek jest stosunkowo mały, więc umieścisz cały kod w jednej przestrzeni nazw.
 
-`public class BankAccount`definiuje klasę lub typ, który tworzysz. Wszystko wewnątrz `{` i `}` , które następuje po deklaracji klasy, definiuje stan i zachowanie klasy. Istnieje pięć ***członków*** `BankAccount` klasy. Pierwsze trzy są ***właściwościami***. Właściwości są elementami danych i mogą mieć kod, który wymusza walidację lub inne reguły. Ostatnie dwa są ***metodami***. Metody to bloki kodu, które wykonują pojedynczą funkcję. Odczytywanie nazw każdego z członków powinno zapewnić wystarczającą ilość informacji dla Ciebie lub innego dewelopera, aby zrozumieć, co robi Klasa.
+`public class BankAccount` definiuje klasę lub typ, który tworzysz. Wszystko wewnątrz `{` i `}` , które następuje po deklaracji klasy, definiuje stan i zachowanie klasy. Istnieje pięć ***członków*** `BankAccount` klasy. Pierwsze trzy są ***właściwościami***. Właściwości są elementami danych i mogą mieć kod, który wymusza walidację lub inne reguły. Ostatnie dwa są ***metodami***. Metody to bloki kodu, które wykonują pojedynczą funkcję. Odczytywanie nazw każdego z członków powinno zapewnić wystarczającą ilość informacji dla Ciebie lub innego dewelopera, aby zrozumieć, co robi Klasa.
 
 ## <a name="open-a-new-account"></a>Otwórz nowe konto
 
@@ -121,11 +121,11 @@ Twoja Klasa konta bankowego musi akceptować depozyty i wycofywania, aby działa
 
 Zacznijmy od utworzenia nowego typu do reprezentowania transakcji. Jest to prosty typ, który nie ma żadnych obowiązków. Potrzebuje on kilku właściwości. Utwórz nowy plik o nazwie *Transaction.cs*. Dodaj do niej następujący kod:
 
-[!code-csharp[Transaction](~/samples/snippets/csharp/classes-quickstart/Transaction.cs)]
+:::code language="csharp" source="./snippets/introduction-to-classes/Transaction.cs":::
 
 Teraz Dodajmy <xref:System.Collections.Generic.List%601> `Transaction` obiekty do `BankAccount` klasy. Dodaj następującą deklarację po konstruktorze w pliku *BankAccount.cs* :
 
-[!code-csharp[TransactionDecl](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#TransactionDeclaration)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="TransactionDeclaration":::
 
 <xref:System.Collections.Generic.List%601>Klasa wymaga zaimportowania innej przestrzeni nazw. Dodaj następujące elementy na początku *BankAccount.cs*:
 
@@ -135,7 +135,7 @@ using System.Collections.Generic;
 
 Teraz Zmieńmy sposób `Balance` zgłaszania raportu.  Można go znaleźć, sumując wartości wszystkich transakcji. Zmodyfikuj deklarację `Balance` `BankAccount` klasy w klasie w następujący sposób:
 
-[!code-csharp[BalanceComputation](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#BalanceComputation)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="BalanceComputation":::
 
 Ten przykład pokazuje istotny aspekt ***Właściwości***. Teraz trwa obliczanie salda, gdy inny programista pyta o wartość. Wyliczenie wylicza wszystkie transakcje i zawiera sumę jako bieżące saldo.
 
@@ -143,15 +143,15 @@ Następnie Zaimplementuj `MakeDeposit` metody i `MakeWithdrawal` . Te metody wym
 
 Wprowadza to koncepcję ***wyjątków***. Standardowy sposób wskazujący, że metoda nie może zakończyć pracy, to zgłosić wyjątek. Typ wyjątku i komunikat skojarzony z nim opisują błąd. W tym miejscu `MakeDeposit` Metoda zgłasza wyjątek, jeśli kwota depozytu jest ujemna. `MakeWithdrawal`Metoda zgłasza wyjątek, jeśli kwota wycofania jest ujemna lub jeśli zastosowanie wycofania powoduje ujemne saldo. Dodaj następujący kod po deklaracji `allTransactions` listy:
 
-[!code-csharp[DepositAndWithdrawal](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#DepositAndWithdrawal)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="DepositAndWithdrawal":::
 
 [`throw`](../../language-reference/keywords/throw.md)Instrukcja **zgłasza** wyjątek. Wykonanie bieżącego bloku i sterowanie transferami do pierwszego zgodnego `catch` bloku znalezionego w stosie wywołań. Dodasz blok, `catch` Aby przetestować ten kod nieco później.
 
 Konstruktor powinien otrzymać jedną zmianę, aby dodać początkową transakcję zamiast bezpośrednio aktualizować saldo. Ponieważ już zapisano `MakeDeposit` metodę, wywołaj ją z konstruktora. Gotowy Konstruktor powinien wyglądać następująco:
 
-[!code-csharp[Constructor](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#Constructor)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="Constructor":::
 
-<xref:System.DateTime.Now?displayProperty=nameWithType>jest właściwością zwracającą bieżącą datę i godzinę. Przetestuj to poprzez dodanie kilku depozytów i wycofań w `Main` metodzie, po kodzie, który tworzy nowy `BankAccount` :
+<xref:System.DateTime.Now?displayProperty=nameWithType> jest właściwością zwracającą bieżącą datę i godzinę. Przetestuj to poprzez dodanie kilku depozytów i wycofań w `Main` metodzie, po kodzie, który tworzy nowy `BankAccount` :
 
 ```csharp
 account.MakeWithdrawal(500, DateTime.Now, "Rent payment");
@@ -196,7 +196,7 @@ Zapisz plik i wpisz, `dotnet run` Aby go wypróbować.
 
 Aby ukończyć ten samouczek, można napisać `GetAccountHistory` metodę, która tworzy `string` dla historii transakcji. Dodaj tę metodę do `BankAccount` typu:
 
-[!code-csharp[History](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#History)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="History":::
 
 Używa <xref:System.Text.StringBuilder> klasy do formatowania ciągu, który zawiera jeden wiersz dla każdej transakcji. W tych samouczkach pojawił się kod formatowania ciągu. Jeden nowy znak to `\t` . Spowoduje to wstawienie karty w celu sformatowania danych wyjściowych.
 
@@ -212,4 +212,11 @@ Uruchom program, aby zobaczyć wyniki.
 
 Jeśli zawiesz, że możesz zobaczyć źródło tego samouczka [w naszym repozytorium GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/classes-quickstart/).
 
-Gratulacje, udało Ci się ukończyć wszystkie nasze wprowadzenie do samouczków języka C#. Jeśli eager chcesz dowiedzieć się więcej, wypróbuj więcej naszych [samouczków](../index.md).
+Możesz kontynuować pracę z samouczkiem [programowanie zorientowane obiektowo](object-oriented-programming.md) .
+
+Więcej informacji na temat tych pojęć można znaleźć w następujących artykułach:
+
+- [if i else, instrukcje](../../language-reference/keywords/if-else.md)
+- [While, instrukcja](../../language-reference/keywords/while.md)
+- [do, instrukcja](../../language-reference/keywords/do.md)
+- [For — instrukcja](../../language-reference/keywords/for.md)

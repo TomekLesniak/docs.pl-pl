@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: ed669364efe9dd8f57d831a3764dd3fc68cd5e05
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: d61a3b3dd855d783d7bff7cb74e5b84969e60860
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89496763"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608054"
 ---
 ### <a name="aspnet-incorrect-multipart-handling-may-result-in-lost-form-data"></a>Niewłaściwa obsługa wieloczęściowej ASP.NET może spowodować utratę danych formularza.
 
 #### <a name="details"></a>Szczegóły
 
-W aplikacjach, które są przeznaczone .NET Framework 4.7.2 i starszych wersji, ASP.Net może niepoprawnie analizować wieloczęściowe wartości graniczne, dzięki czemu dane formularza są niedostępne podczas wykonywania żądania. Aplikacje przeznaczone dla .NET Framework 4,8 lub nowszych wersji poprawnie analizują wieloczęściowe dane, dlatego wartości formularza są dostępne podczas wykonywania żądania.
+W aplikacjach, które są przeznaczone .NET Framework 4.7.2 i starszych wersji, ASP.NET może niepoprawnie analizować wieloczęściowe wartości graniczne, dzięki czemu dane formularza są niedostępne podczas wykonywania żądania. Aplikacje przeznaczone dla .NET Framework 4,8 lub nowszych wersji poprawnie analizują wieloczęściowe dane, dlatego wartości formularza są dostępne podczas wykonywania żądania.
 
 #### <a name="suggestion"></a>Sugestia
 

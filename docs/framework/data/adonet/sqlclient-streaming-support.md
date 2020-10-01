@@ -2,12 +2,12 @@
 title: Obsługa przesyłania strumieniowego SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: 9dc7ee573bd011bd18d6c4b8bbd2d147b1fe907f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a396e3e172c63b0b71b085d4694184c42cc42f3e
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791409"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609248"
 ---
 # <a name="sqlclient-streaming-support"></a>Obsługa przesyłania strumieniowego SqlClient
 
@@ -18,15 +18,15 @@ Obsługa przesyłania strumieniowego do i z SQL Server upraszcza pisanie aplikac
 Obsługa przesyłania strumieniowego włącza również aplikacje warstwy środkowej do lepszego skalowania, szczególnie w scenariuszach, w których obiekty biznesowe łączą się z usługą SQL Azure w celu wysyłania i pobierania dużych obiektów blob oraz manipulowania nimi.
 
 > [!WARNING]
-> Wywołania asynchroniczne nie są obsługiwane, `Context Connection` Jeśli aplikacja używa również słowa kluczowego parametrów połączenia.
+> Wywołania asynchroniczne nie są obsługiwane, jeśli aplikacja używa również `Context Connection` słowa kluczowego parametrów połączenia.
 >
-> Członkowie dodani do obsługi przesyłania strumieniowego są używani do pobierania danych z zapytań i przekazywania parametrów do zapytań i procedur składowanych. Funkcja przesyłania strumieniowego obejmuje podstawowe scenariusze operacji OLTP i migracji danych i ma zastosowanie do lokalnych i wyłączonych migracji danych lokalnych. środowiska.
+> Członkowie dodani do obsługi przesyłania strumieniowego są używani do pobierania danych z zapytań i przekazywania parametrów do zapytań i procedur składowanych. Funkcja przesyłania strumieniowego obejmuje podstawowe scenariusze przetwarzania OLTP i danych oraz ma zastosowanie do środowisk migracji danych lokalnych i przechowywanych lokalnie.
 
 ## <a name="streaming-support-from-sql-server"></a>Obsługa przesyłania strumieniowego z SQL Server
 
-Obsługa przesyłania strumieniowego z SQL Server wprowadza nowe funkcje <xref:System.Data.Common.DbDataReader> w i <xref:System.Data.SqlClient.SqlDataReader> w klasach, które umożliwiają <xref:System.IO.Stream>uzyskiwanie, <xref:System.IO.TextReader> <xref:System.Xml.XmlReader>, i reagowanie na nie. Te klasy są używane do pobierania danych z zapytań. W związku z tym obsługa przesyłania strumieniowego SQL Server rozwiązuje scenariusze OLTP i ma zastosowanie do środowisk lokalnych i przechowywanych lokalnie.
+Obsługa przesyłania strumieniowego z SQL Server wprowadza nowe funkcje w <xref:System.Data.Common.DbDataReader> i w <xref:System.Data.SqlClient.SqlDataReader> klasach, które umożliwiają uzyskiwanie <xref:System.IO.Stream> , <xref:System.Xml.XmlReader> , i <xref:System.IO.TextReader> reagowanie na nie. Te klasy są używane do pobierania danych z zapytań. W związku z tym obsługa przesyłania strumieniowego SQL Server rozwiązuje scenariusze OLTP i ma zastosowanie do środowisk lokalnych i terenowych.
 
-Dodano <xref:System.Data.SqlClient.SqlDataReader> następujące składowe w celu włączenia obsługi przesyłania strumieniowego z SQL Server:
+Dodano następujące składowe w celu <xref:System.Data.SqlClient.SqlDataReader> włączenia obsługi przesyłania strumieniowego z SQL Server:
 
 1. <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>
 
@@ -40,7 +40,7 @@ Dodano <xref:System.Data.SqlClient.SqlDataReader> następujące składowe w celu
 
 6. <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>
 
-Dodano <xref:System.Data.Common.DbDataReader> następujące składowe w celu włączenia obsługi przesyłania strumieniowego z SQL Server:
+Dodano następujące składowe w celu <xref:System.Data.Common.DbDataReader> włączenia obsługi przesyłania strumieniowego z SQL Server:
 
 1. <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>
 
@@ -50,17 +50,17 @@ Dodano <xref:System.Data.Common.DbDataReader> następujące składowe w celu wł
 
 ## <a name="streaming-support-to-sql-server"></a>Obsługa przesyłania strumieniowego do SQL Server
 
-Obsługa przesyłania strumieniowego do SQL Server wprowadza nowe funkcje <xref:System.Data.SqlClient.SqlParameter> w klasie, dzięki czemu można akceptować <xref:System.Xml.XmlReader>i <xref:System.IO.Stream>reagować na <xref:System.IO.TextReader> obiekty, i. <xref:System.Data.SqlClient.SqlParameter>służy do przekazywania parametrów do zapytań i procedur składowanych.
+Obsługa przesyłania strumieniowego do SQL Server wprowadza nowe funkcje w <xref:System.Data.SqlClient.SqlParameter> klasie, dzięki czemu można akceptować i reagować na <xref:System.Xml.XmlReader> <xref:System.IO.Stream> obiekty, i <xref:System.IO.TextReader> . <xref:System.Data.SqlClient.SqlParameter> służy do przekazywania parametrów do zapytań i procedur składowanych.
 
-Usuwanie obiektu lub wywoływanie <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> musi anulować wszystkie operacje przesyłania strumieniowego. <xref:System.Data.SqlClient.SqlCommand> Jeśli aplikacja zostanie wysłana <xref:System.Threading.CancellationToken>, anulowanie nie jest gwarantowane.
+Usuwanie <xref:System.Data.SqlClient.SqlCommand> obiektu lub wywoływanie <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> musi anulować wszystkie operacje przesyłania strumieniowego. Jeśli aplikacja zostanie wysłana <xref:System.Threading.CancellationToken> , anulowanie nie jest gwarantowane.
 
-Następujące <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy zostaną <xref:System.Data.SqlClient.SqlParameter.Value%2A> zaakceptowane z <xref:System.IO.Stream>:
+Następujące <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy zostaną zaakceptowane <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.Stream> :
 
-- **Binary**
+- **Binarne**
 
 - **Liczby**
 
-Następujące <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy zostaną <xref:System.Data.SqlClient.SqlParameter.Value%2A> zaakceptowane z <xref:System.IO.TextReader>:
+Następujące <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy zostaną zaakceptowane <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.TextReader> :
 
 - **Delikatn**
 
@@ -68,13 +68,13 @@ Następujące <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy zostan
 
 - **NVarChar**
 
-- **Xml**
+- **Dokument**
 
-Typ **XML** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A>zostaniezaakceptowany przez.<xref:System.Xml.XmlReader> <xref:System.Data.SqlClient.SqlParameter.Value%2A>
+Typ **XML** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> zostanie zaakceptowany <xref:System.Data.SqlClient.SqlParameter.Value%2A> przez <xref:System.Xml.XmlReader> .
 
-<xref:System.Data.SqlClient.SqlParameter.SqlValue%2A>można akceptować wartości typu <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, i <xref:System.IO.Stream>.
+<xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> można akceptować wartości typu <xref:System.Xml.XmlReader> , <xref:System.IO.TextReader> , i <xref:System.IO.Stream> .
 
-Obiekt <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, i <xref:System.IO.Stream> zostanie przekazanydowartości<xref:System.Data.SqlClient.SqlParameter.Size%2A>zdefiniowanej przez.
+<xref:System.Xml.XmlReader>Obiekt, <xref:System.IO.TextReader> , i <xref:System.IO.Stream> zostanie przekazany do wartości zdefiniowanej przez <xref:System.Data.SqlClient.SqlParameter.Size%2A> .
 
 ## <a name="sample----streaming-from-sql-server"></a>Przykład — przesyłanie strumieniowe z SQL Server
 

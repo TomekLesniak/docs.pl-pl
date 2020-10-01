@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 09/23/2020
 ms.topic: overview
-ms.openlocfilehash: b986f414dcc0e81578e6cf57304f6e5c31578e88
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 2aaa24e54dad7b765781bf7c790890a57a77af14
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247913"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608353"
 ---
 # <a name="dependency-injection-in-net"></a>Iniekcja zależności w programie .NET
 
@@ -287,10 +287,11 @@ Dostawca usług głównych jest tworzony, gdy <xref:Microsoft.Extensions.Depende
 
 Usługi o określonym zakresie są usuwane przez kontener, który go utworzył. Jeśli w kontenerze głównym zostanie utworzona usługa o określonym zakresie, okres istnienia usługi zostanie skutecznie podwyższony do pojedynczej, ponieważ jest usuwany tylko przez kontener główny po zamknięciu aplikacji. Sprawdzanie poprawności zakresów usług przechwytuje te sytuacje, gdy `BuildServiceProvider` jest wywoływana.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Używanie iniekcji zależności w programie .NET](dependency-injection-usage.md)
-- [Wskazówki dotyczące iniekcji zależności](dependency-injection-guidelines.md)
+- [Wskazówki dotyczące wstrzykiwania zależności](dependency-injection-guidelines.md)
 - [Wzorce konferencji NDC na potrzeby tworzenia aplikacji](https://www.youtube.com/watch?v=x-C-CNBVTaY)
 - [Zasada jawnych zależności](../../architecture/modern-web-apps-azure/architectural-principles.md#explicit-dependencies)
 - [Niewersja kontenerów sterowania i wzorzec iniekcji zależności (Martin Fowlera)](https://www.martinfowler.com/articles/injection.html)
+- W repozytorium [GitHub.com/dotnet/Extensions](https://github.com/dotnet/extensions/issues) należy utworzyć di usterki

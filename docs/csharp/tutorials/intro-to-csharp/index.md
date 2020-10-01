@@ -3,12 +3,12 @@ title: Wprowadzenie do samouczków języka C# — interaktywny
 description: Poznaj język C# w przeglądarce i Rozpocznij pracę z własnym środowiskiem programistycznym
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 9a93e34f7b54d12b3f69589d7bb2181fc240403c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 52b680ffe8c477624f3b5e085b7f2de13c271d81
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554570"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609183"
 ---
 # <a name="introduction-to-c"></a>Wprowadzenie do języka C\#
 
@@ -52,7 +52,13 @@ W tym samouczku przyjęto założenie, że zostały zakończone lekcje wymienion
 
 ## <a name="introduction-to-classes"></a>[Wprowadzenie do klas](introduction-to-classes.md)
 
-Ten końcowy samouczek jest dostępny tylko do uruchamiania na komputerze przy użyciu własnego lokalnego środowiska deweloperskiego i platformy .NET Core.
+Ten samouczek jest dostępny tylko do uruchamiania na komputerze przy użyciu własnego lokalnego środowiska deweloperskiego i platformy .NET Core.
 Utworzysz aplikację konsolową i zobaczysz podstawowe funkcje zorientowane obiektowo, które są częścią języka C#.
 
 W tym samouczku założono, że zakończono pracę z samouczkami wprowadzającymi w trybie online, a zainstalowano [zestaw .NET Core SDK](https://dotnet.microsoft.com/download) i [Visual Studio Code](https://code.visualstudio.com/).
+
+## <a name="object-oriented-programming"></a>[Programowanie zorientowane obiektowo](object-oriented-programming.md)
+
+W tym samouczku przedstawiono koncepcje używane w programowaniu zorientowanym obiektowo. Zapoznaj się z pojęciami dotyczącymi *abstrakcji*, *hermetyzacji*, *dziedziczenia*i *polimorfizmu* przy użyciu przykładów języka C#.
+
+W tym samouczku założono, że zakończono pracę z samouczkami wprowadzającymi w trybie online, a zainstalowano [zestaw .NET Core SDK](https://dotnet.microsoft.com/download) i [Visual Studio Code](https://code.visualstudio.com/) lub [program Visual Studio](https://visualstudio.com) na komputerze deweloperskim.
