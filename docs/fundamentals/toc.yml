@@ -331,6 +331,8 @@ items:
             href: ../core/diagnostics/event-counters.md
           - name: Rejestrowanie i śledzenie
             href: ../core/diagnostics/logging-tracing.md
+          - name: Zbieranie danych diagnostycznych w kontenerach
+            href: ../core/diagnostics/diagnostics-in-containers.md
           - name: Narzędzia globalne interfejsu wiersza polecenia platformy .NET Core
             items:
               - name: dotnet-counters
@@ -929,6 +931,8 @@ items:
                         href: code-analysis/quality-rules/ca2249.md
               - name: Reguły dotyczące stylu kodu
                 href: /visualstudio/ide/editorconfig-language-conventions
+          - name: Analizator zgodności platformy
+            href: ../standard/analyzers/platform-compat-analyzer.md
           - name: Analizator interfejsu API
             href: ../standard/analyzers/api-analyzer.md
           - name: Analizator przenośności
