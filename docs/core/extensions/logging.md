@@ -4,12 +4,12 @@ author: IEvangelist
 description: Dowiedz się, jak używać struktury rejestrowania dostarczonej przez pakiet NuGet Microsoft. Extensions. Logging.
 ms.author: dapine
 ms.date: 09/30/2020
-ms.openlocfilehash: a742e192f8e080e2c76ebeb005168647e440d8ef
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 2e6d8710015d8e998a9710f2cdeb86d925236196
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614763"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654834"
 ---
 # <a name="logging-in-net"></a>Rejestrowanie w programie .NET
 
@@ -180,8 +180,8 @@ W poniższej tabeli wymieniono <xref:Microsoft.Extensions.Logging.LogLevel> wart
 | LogLevel | Wartość | Metoda | Opis |
 |--|--|--|--|
 | [Ślad](xref:Microsoft.Extensions.Logging.LogLevel) | 0 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogTrace%2A> | Zawierają najwięcej szczegółowych komunikatów. Te komunikaty mogą zawierać poufne dane aplikacji. Te komunikaty są domyślnie wyłączone i ***nie*** powinny być włączone w środowisku produkcyjnym. |
-| [Rozpocząć](xref:Microsoft.Extensions.Logging.LogLevel) | 1 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogDebug%2A> | Na potrzeby debugowania i programowania. W środowisku produkcyjnym należy używać ostrożnie z powodu dużego wolumenu. |
-| [Informacje](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Śledzi ogólny przepływ aplikacji. Może mieć wartość długoterminową. |
+| [Debugowanie](xref:Microsoft.Extensions.Logging.LogLevel) | 1 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogDebug%2A> | Na potrzeby debugowania i programowania. W środowisku produkcyjnym należy używać ostrożnie z powodu dużego wolumenu. |
+| [Zawartych](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Śledzi ogólny przepływ aplikacji. Może mieć wartość długoterminową. |
 | [Wyświetlania](xref:Microsoft.Extensions.Logging.LogLevel) | 3 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogWarning%2A> | Dla nietypowych lub nieoczekiwanych zdarzeń. Zwykle zawiera błędy lub warunki, które nie powodują błędu aplikacji. |
 | [Błąd](xref:Microsoft.Extensions.Logging.LogLevel) | 4 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogError%2A> | W przypadku błędów i wyjątków, których nie można obsłużyć. Te komunikaty wskazują na niepowodzenie podczas bieżącej operacji lub żądania, a nie awarię całej aplikacji. |
 | [Krytyczne](xref:Microsoft.Extensions.Logging.LogLevel) | 5 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogCritical%2A> | Dla niepowodzeń, które wymagają natychmiastowej uwagi. Przykłady: scenariusze utraty danych, brak miejsca na dysku. |
@@ -222,7 +222,7 @@ public async Task<T> GetAsync<T>(string id)
 
 W poprzednim kodzie pierwszy `Log{LogLevel}` parametr, `AppLogEvents.Read` , jest [Identyfikator zdarzenia dziennika](#log-event-id). Drugi parametr jest szablonem wiadomości z symbolami zastępczymi dla wartości argumentów dostarczonych przez pozostałe parametry metody. Parametry metody zostały wyjaśnione w sekcji [szablon komunikatu](#log-message-template) w dalszej części tego artykułu.
 
-Skonfiguruj odpowiedni poziom dziennika i Wywołaj odpowiednie metody, `Log{LogLevel}` Aby kontrolować, ile danych wyjściowych dziennika jest zapisywana w określonym nośniku magazynowania. Na przykład:
+Skonfiguruj odpowiedni poziom dziennika i Wywołaj odpowiednie metody, `Log{LogLevel}` Aby kontrolować, ile danych wyjściowych dziennika jest zapisywana w określonym nośniku magazynowania. Przykład:
 
 - W środowisku produkcyjnym:
   - Rejestrowanie na poziomie `Trace` lub `Information` powoduje utworzenie dużej ilości szczegółowych komunikatów dziennika. Aby kontrolować koszty i nie przekraczać limitów magazynowania danych `Trace` , `Information` komunikaty dzienników i na poziomie magazynu o dużej ilości danych. Rozważ ograniczenie `Trace` i `Information` do określonych kategorii.
@@ -433,7 +433,7 @@ class Program
 
 ## <a name="non-host-console-app"></a>Aplikacja konsolowa niebędąca hostem
 
-Rejestrowanie kodu dla aplikacji, które nie jest [hostem ogólnym](generic-host.md) , różni się w sposób, w jaki [są dodawane dostawcy](#add-providers) i [są tworzone rejestratory](#create-logs). W aplikacji konsolowej innej niż host Wywołaj `Add{provider name}` metodę rozszerzenia dostawcy podczas tworzenia `LoggerFactory` :
+Rejestrowanie kodu dla aplikacji, które nie jest [hostem ogólnym](generic-host.md) , różni się w sposób, w jaki [są dodawane dostawcy](logging-providers.md#built-in-logging-providers) i [są tworzone rejestratory](#create-logs). W aplikacji konsolowej innej niż host Wywołaj `Add{provider name}` metodę rozszerzenia dostawcy podczas tworzenia `LoggerFactory` :
 
 ```csharp
 class Program
@@ -526,7 +526,7 @@ class Program
 - Poziom dziennika `Information` lub wyższy.
 - Wszystkie kategorie zaczynające się od `"Microsoft"` .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dostawcy rejestrowania w programie .NET](logging-providers.md)
 - [Implementowanie niestandardowego dostawcy rejestrowania w programie .NET](custom-logging-provider.md)

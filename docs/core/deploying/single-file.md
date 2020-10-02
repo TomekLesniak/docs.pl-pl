@@ -4,12 +4,12 @@ description: Dowiedz się, co to jest aplikacja z pojedynczym plikiem i dlaczego
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: 8149f912c2d92c3eff8d248353e11c01bcfc24ba
-ms.sourcegitcommit: 665f8fc55258356f4d2f4a6585b750c974b26675
+ms.openlocfilehash: b7693d6c119d00a798ef03ed1019f2f04c1828cf
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91573673"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654655"
 ---
 # <a name="single-file-deployment-and-executable"></a>Wdrażanie i wykonywanie przy użyciu jednego pliku
 
@@ -23,7 +23,7 @@ Niektóre interfejsy API nie są zgodne z wdrożeniem pojedynczego pliku, a apli
 
 W poniższej tabeli znajdują się odpowiednie szczegóły interfejsu API biblioteki środowiska uruchomieniowego dotyczące użycia pojedynczego pliku.
 
-| interfejs API                            | Uwaga                                                                   |
+| Interfejs API                            | Uwaga                                                                   |
 |--------------------------------|------------------------------------------------------------------------|
 | `Assembly.Location`            | Zwraca pusty ciąg.                                               |
 | `Module.FullyQualifiedName`    | Zwraca ciąg z wartością `<Unknown>` lub zgłasza wyjątek. |
@@ -37,11 +37,11 @@ W poniższej tabeli znajdują się odpowiednie szczegóły interfejsu API biblio
 
 Mamy pewne zalecenia dotyczące rozwiązywania typowych scenariuszy:
 
-* Aby uzyskać dostęp do plików obok pliku wykonywalnego, użyj <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType>
+* Aby uzyskać dostęp do plików obok pliku wykonywalnego, użyj programu <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType> .
 
-* Aby znaleźć nazwę pliku wykonywalnego, użyj pierwszego elementu <xref:System.Environment.GetCommandLineArgs()?displayProperty=nameWithType>
+* Aby znaleźć nazwę pliku wykonywalnego, użyj pierwszego elementu <xref:System.Environment.GetCommandLineArgs?displayProperty=nameWithType> .
 
-* Aby uniknąć całkowitego wysyłania luźnych plików, rozważ użycie [zasobów osadzonych](https://docs.microsoft.com/en-us/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
+* Aby uniknąć całkowitego wysyłania luźnych plików, należy rozważyć użycie [zasobów osadzonych](../../framework/resources/creating-resource-files-for-desktop-apps.md).
 
 ## <a name="other-considerations"></a>Inne zagadnienia
 

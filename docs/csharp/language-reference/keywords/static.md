@@ -8,18 +8,20 @@ f1_keywords:
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: ccd575748c2286fa7348e2880acbfadd036d9ccd
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 239163fc2f91ccbfe8b1c111a358db87d36a8308
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247725"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654642"
 ---
 # <a name="static-c-reference"></a>static (odwołanie w C#)
 
 Na tej stronie omówiono `static` słowo kluczowe modyfikator. `static`Słowo kluczowe jest również częścią [`using static`](using-static.md) dyrektywy.
 
 Użyj `static` modyfikatora, aby zadeklarować statyczną składową, która należy do samego typu, a nie do określonego obiektu. `static`Modyfikator może służyć do deklarowania `static` klas. W klasach, interfejsach i strukturach można dodać `static` modyfikator do pól, metod, właściwości, operatorów, zdarzeń i konstruktorów. `static`Modyfikator nie może być używany z indeksatorami lub finalizatorami. Aby uzyskać więcej informacji, zobacz [klasy statyczne i statyczne elementy członkowskie klas](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
+
+Począwszy od języka C# 8,0, można dodać `static` modyfikator do [funkcji lokalnej](../../programming-guide/classes-and-structs/local-functions.md). Statyczna funkcja lokalna nie może przechwycić lokalnych zmiennych lub stanu wystąpienia.
 
 Począwszy od języka C# 9,0, można dodać `static` modyfikator do [wyrażenia lambda](../operators/lambda-expressions.md) lub [metody anonimowej](../operators/delegate-operator.md). Statyczna metoda lambda lub anonimowa nie może przechwycić lokalnych zmiennych lub stanu wystąpienia.
 

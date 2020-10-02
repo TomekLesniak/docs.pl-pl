@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 8,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 8,0.
 ms.date: 04/07/2020
-ms.openlocfilehash: eee395c33585028cd81861045f05f7790d8db949
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 43b9c69c649b83d4cf78ef4c7d131ce900a49d11
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414893"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654871"
 ---
 # <a name="whats-new-in-c-80"></a>Co nowego w języku C# 8.0
 
@@ -322,7 +322,7 @@ W obu przypadkach kompilator generuje wywołanie `Dispose()` . Kompilator generu
 
 ## <a name="static-local-functions"></a>Statyczne funkcje lokalne
 
-Teraz można dodać `static` modyfikator do funkcji lokalnych, aby upewnić się, że funkcja lokalna nie przechwytuje (nie dotyczy) żadnych zmiennych z zakresu otaczającego. Spowoduje to wygenerowanie `CS8421` , "statyczna funkcja lokalna nie może zawierać odwołania do \<variable> ".
+Teraz można dodać `static` modyfikator do [funkcji lokalnych](../programming-guide/classes-and-structs/local-functions.md) , aby upewnić się, że funkcja lokalna nie przechwytuje (nie dotyczy) żadnych zmiennych z zakresu otaczającego. Spowoduje to wygenerowanie `CS8421` , "statyczna funkcja lokalna nie może zawierać odwołania do \<variable> ".
 
 Rozważmy następujący kod. Funkcja lokalna `LocalFunction` uzyskuje dostęp do zmiennej `y` zadeklarowanej w zakresie otaczającym (Metoda `M` ). W związku `LocalFunction` z tym nie można zadeklarować z `static` modyfikatorem:
 

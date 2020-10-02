@@ -4,12 +4,12 @@ description: Dowiedz się, w jaki sposób interfejs API dostawcy rejestrowania j
 author: IEvangelist
 ms.author: dapine
 ms.date: 09/25/2020
-ms.openlocfilehash: 936413be1514e6cea20e28a7d4431c572560d193
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 3bd10564f23744d4798d0a6a4b49a7a29be2bc19
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614760"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654684"
 ---
 # <a name="logging-providers-in-net"></a>Dostawcy rejestrowania w programie .NET
 
@@ -20,7 +20,7 @@ Domyślne szablony aplikacji programu .NET Worker:
 - Użyj [hosta ogólnego](generic-host.md).
 - Wywołanie <xref:Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder%2A> , które dodaje następujących dostawców rejestrowania:
   - [Konsola](#console)
-  - [Rozpocząć](#debug)
+  - [Debugowanie](#debug)
   - [EventSource](#event-source)
   - [EventLog](#windows-eventlog): tylko system Windows
 
@@ -68,7 +68,7 @@ Poprzedzający kod to [Func<IServiceProvider, IExampleService>](/dotnet/api/syst
 Rozszerzenia firmy Microsoft obejmują następujących dostawców rejestrowania w ramach bibliotek środowiska uruchomieniowego:
 
 - [Konsola](#console)
-- [Rozpocząć](#debug)
+- [Debugowanie](#debug)
 - [EventSource](#event-source)
 - [Elemencie](#windows-eventlog)
 
@@ -79,7 +79,7 @@ Następujący dostawcy rejestrowania są dostarczani przez firmę Microsoft, ale
 
 ### <a name="console"></a>Konsola
 
-`Console`Dostawca rejestruje dane wyjściowe w konsoli programu. Aby uzyskać więcej informacji na temat wyświetlania `Console` dzienników w programie Development, zobacz [Rejestrowanie danych wyjściowych z uruchamiania programu dotnet i programu Visual Studio](logging.md#logging-output-from-dotnet-run-and-visual-studio).
+`Console`Dostawca rejestruje dane wyjściowe w konsoli programu.
 
 ### <a name="debug"></a>Debugowanie
 
@@ -230,7 +230,7 @@ Korzystanie z struktury innej firmy jest podobne do korzystania z jednego z wbud
 
 Aby uzyskać więcej informacji, zobacz dokumentację każdego dostawcy. Dostawcy rejestrowania innych firm nie są obsługiwani przez firmę Microsoft.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie w programie .NET](logging.md).
 - [Zaimplementuj niestandardowego dostawcę rejestrowania w programie .NET](custom-logging-provider.md).

@@ -3,12 +3,12 @@ title: Definiowanie rozwiązań natywnych dla chmury
 description: Poznaj filary podstawowe, które zapewniają nimi dla systemów natywnych w chmurze
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: dce8da57b90519880e322a26de403d8e7cb718c2
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 1f0d842a2369ae04ffc1c634f9de60398a88e86f
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91160908"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654695"
 ---
 # <a name="defining-cloud-native"></a>Definiowanie natywnego chmury
 
@@ -26,7 +26,7 @@ Natywna platforma obliczeniowa w chmurze zapewnia [oficjalną definicję](https:
 
 Aplikacje stają się coraz bardziej skomplikowane z użytkownikami wymagającymi więcej i więcej. Użytkownicy oczekują szybkiego reagowania, innowacyjnych funkcji i zerowego przestoju. Problemy z wydajnością, błędy cykliczne i niezdolność do przenoszenia szybko nie są już akceptowalne. Użytkownicy będą mogli w łatwy sposób przejść do konkurencji.
 
-Natywna Chmura zapewnia dużą *szybkość* i *elastyczność*. Systemy biznesowe są rozwijane z możliwością korzystania z funkcji firmy w celu wyróżnienia strategii strategicznej, przyspieszania i zwiększania szybkości działania firmy. Koniecznie należy natychmiast uzyskać pomysły na rynek.
+Natywna usługa w chmurze zapewnia *szybkość* i *elastyczność*. Systemy biznesowe rozwijają się, aby umożliwić im broń transformacji strategicznej, która przyspiesza i zwiększa szybkość pracy. Koniecznie należy natychmiast uzyskać pomysły na rynek.
 
 Oto kilka firm, które wdrożyły te techniki. Pomyśl o szybkości, elastyczności i skalowalności, które zostały osiągnięte.
 
@@ -177,7 +177,7 @@ Program .NET Core jest wysoce wydajny i został wyliczony w porównaniu do Node.
 
 Platforma .NET Core jest obsługiwana przez firmę Microsoft i społeczność programu .NET w witrynie GitHub.
 
-## <a name="containers"></a>Containers
+## <a name="containers"></a>Kontenery
 
 Obecnie, że jest to naturalne, aby poznać termin *kontenera* wymieniony w dowolnej konwersacji dotyczącej *natywnej chmury*. W książce, [wzorce natywne chmury](https://www.manning.com/books/cloud-native-patterns), autor Cornelia Davis obserwuje, że "kontenery są doskonałym rozwiązaniem w przypadku oprogramowania natywnego w chmurze". Natywna platforma obliczeniowa w chmurze wprowadza mikrousługi kontenerach jako pierwszy krok w swojej [natywnej mapie w chmurze](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) — wskazówki dla przedsiębiorstw, które rozpoczynają podróż w chmurze.
 
@@ -276,7 +276,7 @@ Dostawcy chmury dostarczają interfejsy API umożliwiające komunikowanie się z
 
 Usługi zapasowe zostały omówione szczegółowo w rozdziale 5, *wzorcach danych natywnych w chmurze*i rozdziale 4 w *natywnych wzorcach komunikacji w chmurze*.
 
-## <a name="automation"></a>Automatyzacja
+## <a name="automation"></a>Automation
 
 Jak widać, systemy natywne w chmurze uwzględniają mikrousługi, kontenery i nowoczesne projektowanie systemu, aby osiągnąć szybkość i elastyczność. Ale jest to tylko część wątku. Jak można zainicjować obsługę środowisk w chmurze, na których są uruchamiane te systemy? Jak szybko wdrażać funkcje i aktualizacje aplikacji? Jak zaokrąglić pełny obraz?
 

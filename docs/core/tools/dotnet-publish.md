@@ -2,12 +2,12 @@
 title: polecenie dotnet publish
 description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
 ms.date: 02/24/2020
-ms.openlocfilehash: 53dc6010352d92489017c3aa776bcb6a3601ec2d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2c33f99ce652dadc6e0c1a4c5e9e78fff9f54254
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537772"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654897"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -53,7 +53,7 @@ dotnet publish -h|--help
 
 `dotnet publish`Polecenie akceptuje Opcje programu MSBuild, takie jak `-p` Ustawienia właściwości i `-l` definiowania rejestratora. Na przykład można ustawić właściwość programu MSBuild przy użyciu formatu: `-p:<NAME>=<VALUE>` .
 
-Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Na przykład:
+Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Przykład:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -145,7 +145,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 - **`-p:PublishReadyToRun=true`**
 
-  Kompiluje zestawy aplikacji jako format ReadyToRun (R2R). R2R to forma kompilacji z wyprzedzeniem (AOT). Aby uzyskać więcej informacji, zobacz [ReadyToRun images](../whats-new/dotnet-core-3-0.md#readytorun-images). Dostępne od wersji .NET Core 3,0 SDK.
+  Kompiluje zestawy aplikacji jako format ReadyToRun (R2R). R2R to forma kompilacji z wyprzedzeniem (AOT). Aby uzyskać więcej informacji, zobacz [ReadyToRun images](../deploying/ready-to-run.md). Dostępne od wersji .NET Core 3,0 SDK.
 
   Zalecamy określenie tej opcji w profilu publikowania, a nie w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [MSBuild](#msbuild).
 
@@ -229,7 +229,7 @@ Więcej informacji można znaleźć w następujących zasobach:
   dotnet publish --no-dependencies
   ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Omówienie publikowania aplikacji .NET Core](../deploying/index.md)
 - [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](../deploying/deploy-with-cli.md)

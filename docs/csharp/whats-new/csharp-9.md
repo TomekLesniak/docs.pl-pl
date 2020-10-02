@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: e109deaa26b33a7780df11031c1f3e0477cd5431
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: c165ca764d93b74aac21028ed3e55e80f2a23ee0
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609196"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654910"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -194,7 +194,7 @@ Któregokolwiek z tych wzorców można używać w dowolnym kontekście, w który
 
 Trzy nowe funkcje ulepszają obsługę natywnych bibliotek międzyoperacyjnych i niskiego poziomu, które wymagają wysokiej wydajności: natywnych liczb całkowitych, wskaźników funkcji i pomijania `localsinit` flagi.
 
-Liczby całkowite o rozmiarze natywnym `nint` i `nuint` są typami całkowitymi. Są one wyrażone przez typy podstawowe <xref:System.IntPtr?displayProperty=nameWithType> i <xref:System.UIntPtr?displayProperty=nameWithType> . Kompilator wyświetla dodatkowe konwersje i operacje dla tych typów jako natywny liczby całkowite. Liczby całkowite rozmiaru natywnego nie mają stałych dla `MaxValue` lub `MinValue` , z wyjątkiem `nuint.MinValue` , który ma wartość `MinValue` `0` . Inne wartości nie mogą być wyrażone jako stałe, ponieważ są zależne od natywnego rozmiaru liczby całkowitej na maszynie docelowej. Można użyć wartości stałych dla `nint` zakresu [ `int.MinValue` .. `int.MaxValue`]. Można użyć wartości stałych dla `nuint` zakresu [ `uint.MinValue` .. `uint.MaxValue`]. Kompilator wykonuje stałe łamanie dla wszystkich operatorów jednoargumentowych i binarnych przy użyciu <xref:System.Int32?displayProperty=nameWithType> <xref:System.UInt32?displayProperty=nameWithType> typów i. Jeśli wynik nie mieści się w 32 bitów, operacja jest wykonywana w czasie wykonywania i nie jest traktowana jako stała. Natywne liczby całkowite mogą zwiększyć wydajność w scenariuszach, w których liczba obliczeń matematycznych jest szeroko stosowana i musi mieć możliwie najszybszą wydajność.
+Liczby całkowite o rozmiarze natywnym `nint` i `nuint` są typami całkowitymi. Są one wyrażone przez typy podstawowe <xref:System.IntPtr?displayProperty=nameWithType> i <xref:System.UIntPtr?displayProperty=nameWithType> . Kompilator wyświetla dodatkowe konwersje i operacje dla tych typów jako natywny liczby całkowite. Liczby całkowite o rozmiarze natywnym definiują właściwości dla `MaxValue` lub `MinValue` . Te wartości nie mogą być wyrażone jako stałe czasu kompilacji, ponieważ zależą od natywnego rozmiaru liczby całkowitej na maszynie docelowej. Te wartości są tylko do odczytu w czasie wykonywania. Można użyć wartości stałych dla `nint` zakresu [ `int.MinValue` .. `int.MaxValue`]. Można użyć wartości stałych dla `nuint` zakresu [ `uint.MinValue` .. `uint.MaxValue`]. Kompilator wykonuje stałe łamanie dla wszystkich operatorów jednoargumentowych i binarnych przy użyciu <xref:System.Int32?displayProperty=nameWithType> <xref:System.UInt32?displayProperty=nameWithType> typów i. Jeśli wynik nie mieści się w 32 bitów, operacja jest wykonywana w czasie wykonywania i nie jest traktowana jako stała. Natywne liczby całkowite mogą zwiększyć wydajność w scenariuszach, w których liczba obliczeń matematycznych jest szeroko stosowana i musi mieć możliwie najszybszą wydajność.
 
 Wskaźniki funkcji umożliwiają łatwą składnię dostępu do kodów opcode IL `ldftn` i `calli` . Można zadeklarować wskaźniki funkcji przy użyciu nowej `delegate*` składni. `delegate*`Typ jest typem wskaźnika. Wywoływanie `delegate*` użycia typu `calli` , w przeciwieństwie do delegata, który używa `callvirt` `Invoke()` metody. Syntaktycznie wywołania są identyczne. Wywołanie wskaźnika funkcji używa `managed` konwencji wywoływania. Dodaj `unmanaged` słowo kluczowe po `delegate*` składni, aby zadeklarować, że chcesz `unmanaged` konwencję wywoływania. Inne konwencje wywoływania można określić przy użyciu atrybutów w `delegate*` deklaracji.
 

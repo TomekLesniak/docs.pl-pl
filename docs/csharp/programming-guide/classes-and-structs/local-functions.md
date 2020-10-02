@@ -1,22 +1,22 @@
 ---
 title: Funkcje lokalne — Przewodnik programowania w języku C#
 description: Funkcje lokalne w języku C# to metody prywatne, które są zagnieżdżone w innym elemencie członkowskim i mogą być wywoływane z ich składowych.
-ms.date: 06/14/2017
+ms.date: 10/02/2020
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: c1c6c6becb3894b05cb9ed89f7f33dcf249b20eb
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: a91995757048c8c54253d7f4b923d5194f69bc7b
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656188"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654923"
 ---
 # <a name="local-functions-c-programming-guide"></a>Funkcje lokalne (Przewodnik programowania w języku C#)
 
 Począwszy od języka C# 7,0, C# obsługuje *funkcje lokalne*. Funkcje lokalne są prywatnymi metodami typu, które są zagnieżdżone w innym elemencie członkowskim. Mogą być wywoływane tylko z ich składowych. Funkcje lokalne można zadeklarować w i wywołać z:
 
 - Metody, zwłaszcza metody iteratorów i metody asynchroniczne
-- Konstruktory
+- Konstruktorów
 - Metody dostępu do właściwości
 - Metody dostępu zdarzeń
 - Metody anonimowe
@@ -36,17 +36,19 @@ Funkcje lokalne sprawiają, że zamiar kodu jest przejrzysty. Każda osoba odczy
 Funkcja lokalna jest definiowana jako metoda zagnieżdżona wewnątrz składowej zawierającej. Jego definicja ma następującą składnię:
 
 ```csharp
-<modifiers: async | unsafe> <return-type> <method-name> <parameter-list>
+<modifiers> <return-type> <method-name> <parameter-list>
 ```
 
-Funkcje lokalne mogą używać modyfikatorów [Async](../../language-reference/keywords/async.md) i [UNSAFE](../../language-reference/keywords/unsafe.md) .
+Można użyć następujących modyfikatorów z funkcją lokalną:
 
-Należy zauważyć, że wszystkie zmienne lokalne, które są zdefiniowane w składowej zawierającej, łącznie z parametrami metody, są dostępne w funkcji lokalnej.
+- [`async`](../../language-reference/keywords/async.md)
+- [`unsafe`](../../language-reference/keywords/unsafe.md)
+- [`static`](../../language-reference/keywords/static.md) (w języku C# 8,0 i nowszych). Statyczna funkcja lokalna nie może przechwycić lokalnych zmiennych lub stanu wystąpienia.
+- [`extern`](../../language-reference/keywords/extern.md) (w języku C# 9,0 i nowszych). Zewnętrzna funkcja lokalna musi być `static` .
+
+Wszystkie zmienne lokalne, które są zdefiniowane w składowej zawierającej, łącznie z parametrami metody, są dostępne w niestatycznej funkcji lokalnej.
 
 W przeciwieństwie do definicji metody lokalnej definicja funkcji nie może zawierać modyfikatora dostępu do składowej. Ponieważ wszystkie funkcje lokalne są prywatne, łącznie z modyfikatorem dostępu, takim jak `private` słowo kluczowe, generuje błąd kompilatora CS0106 "modyfikator" Private "jest nieprawidłowy dla tego elementu".
-
-> [!NOTE]
-> W systemach wcześniejszych niż C# 8,0 funkcja lokalna nie może zawierać `static` modyfikatora. Włączenie `static` słowa kluczowego generuje błąd kompilatora CS0106, "modyfikator" static "jest nieprawidłowy dla tego elementu.", lub błąd kompilatora informujący, że należy użyć języka C# 8,0 lub nowszego.
 
 Ponadto atrybuty nie mogą być stosowane do funkcji lokalnej ani do jej parametrów i parametrów typu.
 
@@ -128,6 +130,6 @@ Jedną z końcowych zalet nie pokazanych w tym przykładzie jest to, że funkcje
 
 Podczas gdy funkcje lokalne mogą wydawać się nadmiarowe w wyrażeniach lambda, są one w rzeczywistości wykorzystywane do różnych celów i mają różne zastosowania. Funkcje lokalne są wydajniejsze w przypadku, gdy chcesz napisać funkcję, która jest wywoływana tylko z kontekstu innej metody.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Metody](methods.md)

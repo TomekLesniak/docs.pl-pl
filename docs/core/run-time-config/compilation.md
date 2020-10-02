@@ -3,12 +3,12 @@ title: Ustawienia konfiguracji kompilacji
 description: Informacje o ustawieniach czasu wykonywania, które konfigurują sposób działania kompilatora JIT dla aplikacji platformy .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: cfcf9b5fc8d11a4ae35ab9b152f32133cd6930bf
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: e5f9e1245b749864787fb808527d022665197edf
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762009"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654845"
 ---
 # <a name="run-time-configuration-options-for-compilation"></a>Opcje konfiguracji czasu wykonywania dla kompilacji
 
@@ -23,13 +23,13 @@ ms.locfileid: "83762009"
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Runtime.TieredCompilation` | `true`-włączone<br/>`false`-wyłączone |
-| **Właściwość programu MSBuild** | `TieredCompilation` | `true`-włączone<br/>`false`-wyłączone |
-| **Zmienna środowiskowa** | `COMPlus_TieredCompilation` | `1`-włączone<br/>`0`-wyłączone |
+| **runtimeconfig.jsna** | `System.Runtime.TieredCompilation` | `true` -włączone<br/>`false` -wyłączone |
+| **Właściwość programu MSBuild** | `TieredCompilation` | `true` -włączone<br/>`false` -wyłączone |
+| **Zmienna środowiskowa** | `COMPlus_TieredCompilation` | `1` -włączone<br/>`0` -wyłączone |
 
 ### <a name="examples"></a>Przykłady
 
-plik *runtimeconfig. JSON* :
+*runtimeconfig.js* pliku:
 
 ```json
 {
@@ -63,13 +63,13 @@ Plik projektu:
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Runtime.TieredCompilation.QuickJit` | `true`-włączone<br/>`false`-wyłączone |
-| **Właściwość programu MSBuild** | `TieredCompilationQuickJit` | `true`-włączone<br/>`false`-wyłączone |
-| **Zmienna środowiskowa** | `COMPlus_TC_QuickJit` | `1`-włączone<br/>`0`-wyłączone |
+| **runtimeconfig.jsna** | `System.Runtime.TieredCompilation.QuickJit` | `true` -włączone<br/>`false` -wyłączone |
+| **Właściwość programu MSBuild** | `TieredCompilationQuickJit` | `true` -włączone<br/>`false` -wyłączone |
+| **Zmienna środowiskowa** | `COMPlus_TC_QuickJit` | `1` -włączone<br/>`0` -wyłączone |
 
 ### <a name="examples"></a>Przykłady
 
-plik *runtimeconfig. JSON* :
+*runtimeconfig.js* pliku:
 
 ```json
 {
@@ -102,13 +102,13 @@ Plik projektu:
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Runtime.TieredCompilation.QuickJitForLoops` | `false`-wyłączone<br/>`true`-włączone |
-| **Właściwość programu MSBuild** | `TieredCompilationQuickJitForLoops` | `false`-wyłączone<br/>`true`-włączone |
-| **Zmienna środowiskowa** | `COMPlus_TC_QuickJitForLoops` | `0`-wyłączone<br/>`1`-włączone |
+| **runtimeconfig.jsna** | `System.Runtime.TieredCompilation.QuickJitForLoops` | `false` -wyłączone<br/>`true` -włączone |
+| **Właściwość programu MSBuild** | `TieredCompilationQuickJitForLoops` | `false` -wyłączone<br/>`true` -włączone |
+| **Zmienna środowiskowa** | `COMPlus_TC_QuickJitForLoops` | `0` -wyłączone<br/>`1` -włączone |
 
 ### <a name="examples"></a>Przykłady
 
-plik *runtimeconfig. JSON* :
+*runtimeconfig.js* pliku:
 
 ```json
 {
@@ -135,9 +135,9 @@ Plik projektu:
 ## <a name="readytorun"></a>ReadyToRun
 
 - Określa, czy środowisko uruchomieniowe programu .NET Core używa wstępnie skompilowanego kodu dla obrazów z dostępnymi danymi ReadyToRun. Wyłączenie tej opcji zmusza środowisko uruchomieniowe do kompilowania kodu struktury JIT.
-- Aby uzyskać więcej informacji, zobacz [ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images).
+- Aby uzyskać więcej informacji, zobacz [gotowy do uruchomienia](../deploying/ready-to-run.md).
 - W przypadku pominięcia tego ustawienia platforma .NET będzie używać danych ReadyToRun, gdy jest ona dostępna. Jest to równoznaczne z ustawieniem wartości `1` .
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **Zmienna środowiskowa** | `COMPlus_ReadyToRun` | `1`-włączone<br/>`0`-wyłączone |
+| **Zmienna środowiskowa** | `COMPlus_ReadyToRun` | `1` -włączone<br/>`0` -wyłączone |

@@ -4,12 +4,12 @@ description: Dowiedz się, jak używać tokenów anulowania do sygnalizowania ż
 ms.date: 08/19/2020
 ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 30bef5d1a5082fbd3757377dbedb8f9b9d17e218
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 84cd1bb413d20b6c13be8415c13c72b57873b1cf
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053096"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654708"
 ---
 # <a name="cancel-a-list-of-tasks-c"></a>Anulowanie listy zadań (C#)
 
@@ -159,14 +159,14 @@ Dodaj następującą `ProcessUrlAsync` metodę poniżej `SumPageSizesAsync` meto
 static async Task<int> ProcessUrlAsync(string url, HttpClient client, CancellationToken token)
 {
     HttpResponseMessage response = await client.GetAsync(url, token);
-    byte[] content = await response.Content.ReadAsByteArrayAsync(token);
+    byte[] content = await response.Content.ReadAsByteArrayAsync();
     Console.WriteLine($"{url,-60} {content.Length,10:#,#}");
 
     return content.Length;
 }
 ```
 
-W przypadku dowolnego podanego adresu URL metoda użyje `client` dostarczonego wystąpienia w celu uzyskania odpowiedzi jako `byte[]` . <xref:System.Threading.CancellationToken>Wystąpienie jest przesyłane do <xref:System.Net.Http.HttpClient.GetAsync(System.String,System.Threading.CancellationToken)?displayProperty=nameWithType> <xref:System.Net.Http.HttpContent.ReadAsByteArrayAsync(System.Threading.CancellationToken)?displayProperty=nameWithType> metod i. `token`Jest używany do rejestracji w celu zażądania anulowania. Długość jest zwracana po zapisaniu adresu URL i długości w konsoli.
+W przypadku dowolnego podanego adresu URL metoda użyje `client` dostarczonego wystąpienia w celu uzyskania odpowiedzi jako `byte[]` . <xref:System.Threading.CancellationToken>Wystąpienie jest przesyłane do <xref:System.Net.Http.HttpClient.GetAsync(System.String,System.Threading.CancellationToken)?displayProperty=nameWithType> <xref:System.Net.Http.HttpContent.ReadAsByteArrayAsync?displayProperty=nameWithType> metod i. `token`Jest używany do rejestracji w celu zażądania anulowania. Długość jest zwracana po zapisaniu adresu URL i długości w konsoli.
 
 ### <a name="example-application-output"></a>Przykładowe dane wyjściowe aplikacji
 

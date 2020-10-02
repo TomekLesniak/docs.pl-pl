@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: b52afd80c10afb6723679b2a74f11c7a4f59091f
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 60533fbb215ffe8baba7e2d200faa1c4937294b9
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91608377"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654884"
 ---
 # <a name="net-globalization-and-icu"></a>Globalizacja i ICU platformy .NET
 
@@ -107,7 +107,7 @@ W przypadku aplikacji, które nie są wymagane przez użytkownika, nie jest wyma
 
 Jeśli korzystasz z ICU za pośrednictwem pakietu NuGet, działa to w aplikacjach zależnych od platformy. Pakiet NuGet rozwiązuje natywne zasoby i dołącza je do `deps.json` pliku oraz do katalogu wyjściowego dla aplikacji w `runtimes` katalogu. Platforma .NET ładuje ją z tego miejsca.
 
-W przypadku aplikacji zależnych od platformy (nie zawartych w nich), gdzie ICU jest zużywana z lokalnej kompilacji, należy wykonać dodatkowe czynności. Zestaw .NET SDK nie ma jeszcze funkcji "luźnych" natywnych plików binarnych, które mają być włączone `deps.json` (zobacz [ten problem z zestawem SDK](https://github.com/dotnet/sdk/issues/11373)). Zamiast tego można je włączyć przez dodanie dodatkowych informacji do pliku projektu aplikacji. Na przykład:
+W przypadku aplikacji zależnych od platformy (nie zawartych w nich), gdzie ICU jest zużywana z lokalnej kompilacji, należy wykonać dodatkowe czynności. Zestaw .NET SDK nie ma jeszcze funkcji "luźnych" natywnych plików binarnych, które mają być włączone `deps.json` (zobacz [ten problem z zestawem SDK](https://github.com/dotnet/sdk/issues/11373)). Zamiast tego można je włączyć przez dodanie dodatkowych informacji do pliku projektu aplikacji. Przykład:
 
 ```xml
 <ItemGroup>
@@ -166,7 +166,7 @@ Następujące interfejsy API nie są obsługiwane:
 
 Następujące interfejsy API są obsługiwane z ograniczeniami:
 
-- <xref:System.String.Normalize(System.Text.NormalizationForm)?displayProperty=nameWithType> i <xref:System.String.IsNormalized(System.Text.NormalizationForm)?displayProperty=nameWithType> nie obsługują rzadko używanych <xref:System.Text.NormalizationForm.FormKC?displayProperty=nameWithType> i <xref:System.Text.NormalizationForm.FormKD?displayProperty=nameWithType> formularzy.
+- <xref:System.String.Normalize(System.Text.NormalizationForm)?displayProperty=nameWithType> i <xref:System.String.IsNormalized(System.Text.NormalizationForm)?displayProperty=nameWithType> nie obsługują rzadko używanych <xref:System.Text.NormalizationForm.FormKC> i <xref:System.Text.NormalizationForm.FormKD> formularzy.
 - <xref:System.Globalization.RegionInfo.CurrencyNativeName?displayProperty=nameWithType> zwraca tę samą wartość, co <xref:System.Globalization.RegionInfo.CurrencyEnglishName?displayProperty=nameWithType> .
 
-Ponadto listę obsługiwanych ustawień regionalnych można znaleźć w [repozytorium dotnet/ICU](https://github.com/dotnet/icu/blob/0f49268ddfd3331ca090f1c51d2baa2f75f6c6c0/icu-filters/optimal.json#L6-L54)
+Ponadto listę obsługiwanych ustawień regionalnych można znaleźć w [repozytorium dotnet/ICU](https://github.com/dotnet/icu/blob/0f49268ddfd3331ca090f1c51d2baa2f75f6c6c0/icu-filters/optimal.json#L6-L54).

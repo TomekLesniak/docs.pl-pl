@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: fae6ffc56c90ef8f5340d3d7fd34cda82e3b4ca4
-ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
+ms.openlocfilehash: 60b511adecf37855de91f45245fc55911ba281dc
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437971"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654774"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co nowego w programie .NET Core 3.0
 
@@ -69,7 +69,7 @@ W trakcie `dotnet build` lub `dotnet publish` , tworzony jest plik wykonywalny (
 
 ### <a name="macos-apphost-and-notarization"></a>macOS appHost i notarization
 
-*tylko macOS*
+*Tylko macOS*
 
 Począwszy od zestaw .NET Core SDK 3,0 dla usługi macOS, ustawienie służące do tworzenia domyślnego pliku wykonywalnego (znanego jako appHost) jest domyślnie wyłączone. Aby uzyskać więcej informacji, zobacz [MacOS Catalina Notarization i wpływ na pobieranie i projekty platformy .NET Core](../install/macos-notarization-issues.md).
 
@@ -211,6 +211,8 @@ Wyjątki dla wielu elementów docelowych:
 - System Windows x64 może służyć do kompilowania obrazów systemów Windows ARM32, ARM64 i x86.
 - System Windows x86 może służyć do kompilowania obrazów ARM32 systemu Windows.
 - System Linux x64 może służyć do kompilowania obrazów systemu Linux ARM32 i ARM64.
+
+Aby uzyskać więcej informacji, zobacz [gotowy do uruchomienia](../deploying/ready-to-run.md).
 
 ## <a name="runtimesdk"></a>Środowisko uruchomieniowe/zestaw SDK
 
@@ -518,7 +520,7 @@ Aby uzyskać więcej informacji, zobacz elementy [wewnętrzne zależne od platfo
 
 ### <a name="improved-net-core-version-apis"></a>Ulepszone interfejsy API wersji platformy .NET Core
 
-Począwszy od platformy .NET Core 3,0, interfejsy API wersji dostarczone z platformą .NET Core teraz zwracają oczekiwane informacje. Na przykład:
+Począwszy od platformy .NET Core 3,0, interfejsy API wersji dostarczone z platformą .NET Core teraz zwracają oczekiwane informacje. Przykład:
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");

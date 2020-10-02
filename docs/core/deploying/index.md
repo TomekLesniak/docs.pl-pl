@@ -2,12 +2,12 @@
 title: Publikowanie aplikacji
 description: Dowiedz się więcej na temat sposobów publikowania aplikacji platformy .NET Core. Platforma .NET Core może publikować aplikacje zależne od platformy lub dla wielu platform. Można opublikować aplikację jako samodzielną lub zależną od struktury. Każdy tryb ma wpływ na sposób uruchamiania aplikacji przez użytkownika.
 ms.date: 04/01/2020
-ms.openlocfilehash: ece5e46162fd4a8de0b996ba239e89cceca4dbca
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: 27206065c899e41a44685f72cfb35ae57986aa4c
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720114"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654675"
 ---
 # <a name="net-core-application-publishing-overview"></a>Omówienie publikowania aplikacji .NET Core
 
@@ -151,7 +151,35 @@ Publikuj samodzielną aplikację. Tworzony jest plik wykonywalny systemu Windows
 dotnet publish -r win-x64
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="publish-with-readytorun-images"></a>Publikowanie przy użyciu obrazów ReadyToRun
+
+Publikowanie przy użyciu obrazów ReadyToRun zwiększy czas uruchamiania aplikacji przy kosztach zwiększenia rozmiaru aplikacji. Aby uzyskać więcej informacji, zobacz [ReadyToRun](ready-to-run.md) .
+
+### <a name="advantages"></a>Zalety
+
+- **Ulepszony czas uruchamiania**\
+Aplikacja będzie poświęcać mniej czasu na uruchomienie JIT.
+
+### <a name="disadvantages"></a>Wady
+
+- **Większy rozmiar**\
+Aplikacja będzie większa na dysku.
+
+### <a name="examples"></a>Przykłady
+
+Publikuj samodzielną aplikację i ReadyToRun. Tworzony jest plik wykonywalny macOS 64-bitowy.
+
+```dotnet
+dotnet publish -c Release -r osx-x64 -p:PublishReadyToRun=true
+```
+
+Publikuj samodzielną aplikację i ReadyToRun. Tworzony jest plik wykonywalny systemu Windows 64-bitowy.
+
+```dotnet
+dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true
+```
+
+## <a name="see-also"></a>Zobacz też
 
 - [Wdrażanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core.](deploy-with-cli.md)
 - [Wdrażanie aplikacji .NET Core za pomocą programu Visual Studio.](deploy-with-vs.md)
