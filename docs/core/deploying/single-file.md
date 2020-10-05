@@ -4,12 +4,12 @@ description: Dowiedz się, co to jest aplikacja z pojedynczym plikiem i dlaczego
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: b7693d6c119d00a798ef03ed1019f2f04c1828cf
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 0167e62ea46e1c23c3d4ef6ea505ee051ffaf264
+ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654655"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712643"
 ---
 # <a name="single-file-deployment-and-executable"></a>Wdrażanie i wykonywanie przy użyciu jednego pliku
 
@@ -42,6 +42,16 @@ Mamy pewne zalecenia dotyczące rozwiązywania typowych scenariuszy:
 * Aby znaleźć nazwę pliku wykonywalnego, użyj pierwszego elementu <xref:System.Environment.GetCommandLineArgs?displayProperty=nameWithType> .
 
 * Aby uniknąć całkowitego wysyłania luźnych plików, należy rozważyć użycie [zasobów osadzonych](../../framework/resources/creating-resource-files-for-desktop-apps.md).
+
+## <a name="attaching-a-debugger"></a>Dołączanie debugera
+
+W systemie Linux jedynym debugerem, który może dołączyć do samodzielnego procesu pojedynczego pliku lub Zrzuty awaryjne debugowania, jest [sos z LLDB](../diagnostics/dotnet-sos.md).
+
+W systemach Windows i Mac program Visual Studio i VS Code mogą służyć do debugowania zrzutów awaryjnych. Dołączanie do uruchomionego samodzielnego pliku wykonywalnego wymaga dodatkowego pliku: _mscordbi. { DLL, dlatego}_.
+
+Bez tego pliku program Visual Studio może generować błąd "nie można dołączyć do procesu. Składnik debugowania nie jest zainstalowany. i VS Code mogą generować błąd "nie można dołączyć do procesu: nieznany błąd: 0x80131c3c".
+
+Aby naprawić te błędy, _mscordbi_ musi zostać skopiowana obok pliku wykonywalnego. _mscordbi_ jest `publish` Domyślnie ED w PODkatalogu z identyfikatorem środowiska uruchomieniowego aplikacji. Na przykład jeśli jedna z nich była opublikowana samodzielny plik wykonywalny przy użyciu `dotnet` interfejsu wiersza polecenia dla systemu Windows za pomocą parametrów `-r win-x64` , plik wykonywalny zostanie umieszczony w pliku _bin/debug/NET 5.0/win-x64/Publish_. Kopia _mscordbi.dll_ byłaby obecna w _bin/debug/NET 5.0/win-x64_.
 
 ## <a name="other-considerations"></a>Inne zagadnienia
 

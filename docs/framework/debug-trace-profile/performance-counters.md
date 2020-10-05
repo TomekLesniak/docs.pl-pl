@@ -7,12 +7,12 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 1b5ca6484f45dcee33009d8b8c12a43fa41f63de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c5ee2fae9167dd508332d8e97a589a8ddb0394ac
+ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554452"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712629"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Liczniki wydajności w .NET Framework
 
@@ -130,8 +130,8 @@ Kategoria sieci środowiska CLR programu .NET Console zawiera liczniki, które z
 |**Nawiązano połączenia**|Skumulowana łączna liczba <xref:System.Net.Sockets.Socket> obiektów dla gniazd strumienia, które zostały kiedykolwiek połączone w ramach <xref:System.AppDomain> od momentu rozpoczęcia procesu.|  
 |**Odebrane datagramy**|Skumulowana łączna liczba pakietów datagramów odebranych przez wszystkie <xref:System.Net.Sockets.Socket> obiekty w ramach <xref:System.AppDomain> od momentu rozpoczęcia procesu.|  
 |**Wysłane datagramy**|Skumulowana łączna liczba pakietów datagramów wysłanych przez wszystkie <xref:System.Net.Sockets.Socket> obiekty w ramach <xref:System.AppDomain> od momentu rozpoczęcia procesu.|  
-|**Średni czas istnienia HttpWebRequest**|Średni czas ukończenia dla wszystkich <xref:System.Net.HttpWebRequest> obiektów, które zakończyły się w ostatnim interwale w czasie <xref:System.AppDomain> od momentu rozpoczęcia procesu.|  
-|**Średni czas kolejki HttpWebRequest**|Średni czas trwania kolejki dla wszystkich <xref:System.Net.HttpWebRequest> obiektów, które opuściły kolejkę w ostatnim interwale w czasie <xref:System.AppDomain> od momentu rozpoczęcia procesu.|  
+|**Średni czas istnienia HttpWebRequests**|Średni czas ukończenia dla wszystkich <xref:System.Net.HttpWebRequest> obiektów, które zakończyły się w ostatnim interwale w czasie <xref:System.AppDomain> od momentu rozpoczęcia procesu.|  
+|**Średni czas kolejki HttpWebRequests**|Średni czas trwania kolejki dla wszystkich <xref:System.Net.HttpWebRequest> obiektów, które opuściły kolejkę w ostatnim interwale w czasie <xref:System.AppDomain> od momentu rozpoczęcia procesu.|  
 |**HttpWebRequests utworzone/s**|Liczba <xref:System.Net.HttpWebRequest> obiektów utworzonych na sekundę w ramach <xref:System.AppDomain> .|  
 |**HttpWebRequests w kolejce/s**|Liczba <xref:System.Net.HttpWebRequest> obiektów, które zostały dodane do kolejki na sekundę w obrębie <xref:System.AppDomain> .|  
 |**HttpWebRequests przerwane/s**|Liczba <xref:System.Net.HttpWebRequest> obiektów, w których aplikacja wywołała <xref:System.Net.HttpWebRequest.Abort%2A> metodę na sekundę w obrębie <xref:System.AppDomain> .|  
@@ -169,11 +169,11 @@ Dostępne są następujące liczniki wydajności sieci dla zdarzeń:
   
  Istnieją dwa liczniki czasu trwania, które mierzą, jak długo zajęło <xref:System.Net.HttpWebRequest> przekazanie obiektów przez cały cykl życia lub po prostu jej część:  
   
-- **Średni czas istnienia HttpWebRequest**  
+- **Średni czas istnienia HttpWebRequests**  
   
-- **Średni czas kolejki HttpWebRequest**  
+- **Średni czas kolejki HttpWebRequests**  
   
- W przypadku licznika **okresu istnienia HttpWebRequest średniego** okres istnienia większości <xref:System.Net.HttpWebRequest> obiektów zawsze rozpoczyna się od momentu utworzenia obiektu do momentu zamknięcia strumienia odpowiedzi przez aplikację. Istnieją dwa nietypowe przypadki:  
+ W przypadku licznika **okresu istnienia HttpWebRequests średniego** okres istnienia większości <xref:System.Net.HttpWebRequest> obiektów zawsze rozpoczyna się od momentu utworzenia obiektu do momentu zamknięcia strumienia odpowiedzi przez aplikację. Istnieją dwa nietypowe przypadki:  
   
 - Jeśli aplikacja nigdy nie wywołuje <xref:System.Net.HttpWebRequest.GetResponse%2A> metod lub <xref:System.Net.HttpWebRequest.BeginGetResponse%2A> , okres istnienia <xref:System.Net.HttpWebRequest> obiektu jest ignorowany.  
   
@@ -228,7 +228,7 @@ for (int i = 0; i < Array.Length; i++)
 |**Głębokość przechodzenia stosu**|Wyświetla głębokość stosu podczas ostatniego sprawdzenia zabezpieczeń dostępu kodu w czasie wykonywania. Sprawdzanie zabezpieczeń dostępu kodu w czasie wykonywania odbywa się przez przechodzenie stosu. Ten licznik nie jest średnią; zostanie wyświetlona tylko Ostatnia obserwowana wartość.|  
 |**Łączna liczba sprawdzeń środowiska uruchomieniowego**|Przedstawia łączną liczbę testów zabezpieczeń dostępu kodu w czasie wykonywania wykonanych od chwili uruchomienia aplikacji. Sprawdzanie zabezpieczeń dostępu kodu środowiska uruchomieniowego jest wykonywane, gdy wywołujący żąda określonego uprawnienia. Sprawdzanie środowiska uruchomieniowego jest wykonywane dla każdego wywołania przez obiekt wywołujący i sprawdza bieżący stos wątków obiektu wywołującego. Gdy jest używany z licznikiem głębokości przeszukiwania **stosu** , ten licznik wskazuje na spadek wydajności, który występuje w przypadku kontroli zabezpieczeń.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Liczniki wydajności](performance-counters.md)
 - [Profilowanie środowiska uruchomieniowego](runtime-profiling.md)
