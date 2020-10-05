@@ -362,10 +362,12 @@ items:
           - name: Omówienie
             href: code-analysis/overview.md
             displayName: 'code analysis, analyzers'
-          - name: Konfigurowanie
+          - name: Konfiguracja
             items:
               - name: Opcje ogólne
                 href: code-analysis/configuration-options.md
+              - name: Pliki konfiguracji
+                href: code-analysis/configuration-files.md
               - name: Reguły jakości kodu
                 items:
                   - name: Opcje reguły
@@ -1318,9 +1320,17 @@ items:
       - name: Host ogólny
         href: ../core/extensions/generic-host.md
       - name: Rejestrowanie
-        href: /aspnet/core/fundamentals/logging
+        items:
+          - name: Omówienie
+            href: ../core/extensions/logging.md
+          - name: Dostawcy rejestrowania
+            href: ../core/extensions/logging-providers.md
+          - name: Implementowanie niestandardowego dostawcy rejestrowania
+            href: ../core/extensions/custom-logging-provider.md
+          - name: Rejestrowanie o wysokiej wydajności
+            href: ../core/extensions/high-performance-logging.md
       - name: Wzorzec opcji
-        href: /aspnet/core/fundamentals/configuration/options
+        href: ../core/extensions/options.md
   - name: Dostęp do danych
     items:
       - name: LINQ
