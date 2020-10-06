@@ -1,41 +1,61 @@
 ---
-title: Rozpoczęcie pracy z programem .NET
-description: Wyświetla listę różnych artykułów dotyczących rozpoczynania pracy z .NET, zarówno z punktu widzenia języka, jak i platformy.
-author: cartermp
-ms.date: 01/21/2020
+title: Samouczki dotyczące rozpoczynania pracy z platformą .NET
+description: Wybierz samouczek dotyczący programowania aplikacji .NET lub jednego z języków programowania .NET.
+author: tdykstra
+ms.date: 09/30/2020
 ms.technology: dotnet-standard
-ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
-ms.openlocfilehash: f1d5854d8bddea21bbb8a0a7fa032c9fbd15f3d5
-ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
+ms.openlocfilehash: da98bda4a6a2d637a8a899c9d7315d5cbfcb18fa
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80438177"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755879"
 ---
-# <a name="get-started"></a>Rozpoczęcie pracy
+# <a name="tutorials-for-getting-started-with-net"></a>Samouczki dotyczące rozpoczynania pracy z platformą .NET
 
-Istnieje wiele sposobów, aby rozpocząć korzystanie z platformy .NET. Ponieważ .NET jest platformą massive, istnieje wiele artykułów w tej dokumentacji, które mogą pomóc w rozpoczęciu pracy z .NET, każdy z innej perspektywy.
+Poniższe Samouczki krok po kroku działają w systemach Windows, Linux lub macOS, z wyjątkiem sytuacji, w których zostały wymienione.
 
-## <a name="get-started-using-net-languages"></a>Wprowadzenie do korzystania z języków platformy .NET
+## <a name="tutorials-for-creating-apps"></a>Samouczki dotyczące tworzenia aplikacji
 
-Aby zapoznać się z samouczkami wprowadzającymi w językach C#, Visual Basic i F#, zobacz:
+* tworzenie aplikacji konsoli
+  * [Używanie Visual Studio Code](../core/tutorials/with-visual-studio-code.md)
+  * [Korzystanie z programu Visual Studio](../core/tutorials/with-visual-studio.md) (Windows)
+  * [Korzystanie z Visual Studio dla komputerów Mac](../core/tutorials/with-visual-studio-mac.md) (macOS)
+* Tworzenie aplikacji internetowej
+  * [za pomocą interfejsu użytkownika sieci Web po stronie serwera](/aspnet/core/tutorials/razor-pages/razor-pages-start)
+  * [za pomocą interfejsu użytkownika sieci Web po stronie klienta](https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/intro)
+* [Tworzenie internetowego interfejsu API](/aspnet/core/tutorials/first-web-api)
+* [Tworzenie aplikacji sieci Web zdalnego wywołania procedury](/aspnet/core/tutorials/grpc/grpc-start)
+* [Tworzenie aplikacji sieci Web w czasie rzeczywistym](/aspnet/core/tutorials/signalr)
+* [Tworzenie funkcji bezserwerowej w chmurze](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-csharp)
+* [Tworzenie aplikacji mobilnej dla systemów Android i iOS](https://dotnet.microsoft.com/learn/xamarin/hello-world-tutorial/intro) (Windows)
+* Tworzenie aplikacji klasycznej systemu Windows
+  * [WPF](/visualstudio/get-started/csharp/tutorial-wpf)
+  * [Windows Forms](/visualstudio/ide/create-csharp-winform-visual-studio)
+  * [Platforma uniwersalna systemu Windows (UWP)](/visualstudio/get-started/csharp/tutorial-uwp)
+* [Tworzenie gry przy użyciu aparatu Unity](https://dotnet.microsoft.com/learn/games/unity-tutorial/intro)
+* [Tworzenie usługi systemu Windows](/aspnet/core/host-and-deploy/windows-service)
 
-* [Wprowadzenie do języka C#](../csharp/getting-started/index.md)
-* [Samouczki języka C#](../csharp/tutorials/index.md)
-* [Samouczki wprowadzające f##](../fsharp/get-started/index.md)
+## <a name="tutorials-for-creating-class-libraries"></a>Samouczki dotyczące tworzenia bibliotek klas
+
+* Tworzenie biblioteki klas
+  * [Używanie Visual Studio Code](../core/tutorials/library-with-visual-studio-code.md)
+  * [Korzystanie z programu Visual Studio](../core/tutorials/library-with-visual-studio.md) (Windows)
+  * [Korzystanie z Visual Studio dla komputerów Mac](../core/tutorials/library-with-visual-studio-mac.md) (macOS)
+
+## <a name="resources-for-learning-net-languages"></a>Zasoby na potrzeby uczenia języków .NET
+
+* [Wprowadzenie do języka C #](../csharp/getting-started/index.md)
+* [Wprowadzenie do języka F #](../fsharp/get-started/index.md)
 * [Wprowadzenie do języka Visual Basic](../visual-basic/getting-started/index.md)
 
-## <a name="get-started-using-net-core"></a>Wprowadzenie do korzystania z programu .NET Core
+## <a name="other-get-started-resources"></a>Inne zasoby Get-Started
 
-Aby uzyskać wskazówki dotyczące rdzenia .NET, zobacz:
+Poniżej przedstawiono zasoby dotyczące rozpoczynania pracy z aplikacjami .NET, ale nie są to Samouczki krok po kroku:
 
-* [Wprowadzenie do platformy .NET Core](../core/get-started.md)
-* [Samouczki .NET Core](../core/tutorials/index.md)
+* [Internet rzeczy (IoT)](https://dotnet.microsoft.com/apps/iot)
+* [Uczenie maszynowe](../machine-learning/index.yml)
 
-## <a name="get-started-using-net-standard"></a>Wprowadzenie do korzystania ze standardu .NET
+## <a name="next-steps"></a>Następne kroki
 
-Aby zapoznać się z samouczkiem wprowadzającym, zobacz [Tworzenie biblioteki .NET Standard w programie Visual Studio](../core/tutorials/library-with-visual-studio.md).
-
-## <a name="get-started-using-net-core-on-docker"></a>Wprowadzenie do korzystania z platformy .NET Core w programie Docker
-
-[Wprowadzenie do platformy .NET i platformy Docker](../core/docker/introduction.md) pokazuje, jak można używać programu .NET Core w kontenerach platformy Windows Docker.
+Aby dowiedzieć się więcej na temat platformy .NET, zobacz [wprowadzenie do platformy .NET](../core/introduction.md).

@@ -1,80 +1,80 @@
 ---
-title: Projektowanie z typami odwołań z wartością nullable
-description: Ten zaawansowany samouczek zawiera wprowadzenie do typów odwołań nullable. Nauczysz się wyrażać intencji projektu, gdy wartości odwołania mogą być null i kompilator wymusić, gdy nie mogą być null.
+title: Projektowanie przy użyciu typów referencyjnych dopuszczających wartość null
+description: Ten zaawansowany samouczek zawiera wprowadzenie do typów referencyjnych dopuszczających wartość null. Dowiesz się, w jaki sposób projekt zostanie zastosowany, gdy wartości odniesienia mogą mieć wartość null, i że kompilator wymusi, gdy nie mogą mieć wartości null.
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 54cf9d812999cae837483b48cdedd89d9dc40fc9
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 70e6a7a906bc9a35918cf3e26c3e23bd0cfdafde
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249132"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755853"
 ---
-# <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Samouczek: Wyraź swój zamiar projektu jaśniej z nullable i non-null typów odwołań
+# <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Samouczek: wyraźny cel projektowania dokładniej z typami referencyjnymi nullable i niedopuszczających wartości null
 
-C# 8.0 wprowadza [nullable typy odwołań](../nullable-references.md), które uzupełniają typy odwołań w taki sam sposób typy wartości nullable uzupełnienia typów wartości. Deklarujesz zmienną jako **typ odwołania powodujący wartość null,** dołączając go `?` do typu. Na przykład `string?` reprezentuje nullable `string`. Można użyć tych nowych typów, aby wyraźniej wyrazić swoje intencje projektowe: niektóre zmienne *muszą zawsze mieć wartość,* inne *mogą brakować wartości.*
+W języku C# 8,0 wprowadzono wartości [null typów referencyjnych](../nullable-references.md), które uzupełniają typy odwołań w taki sam sposób, jak typy wartości dopełnień. Należy zadeklarować zmienną jako **typ referencyjny dopuszczający wartość null** poprzez dołączenie `?` do typu. Na przykład `string?` reprezentuje wartość null `string` . Możesz użyć tych nowych typów, aby dokładniej wyznaczać intencje projektowania: niektóre zmienne *muszą zawsze mieć wartość*, inne *mogą nie mieć wartości*.
 
-Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
+Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
 > [!div class="checklist"]
 >
-> - Uwzględnianie do swoich projektów typów odwołań, których nie można unieważnić i nie można ich unieważnić
-> - Włącz sprawdzanie typu odwołania z nullable w całym kodzie.
+> - Uwzględnianie typów referencyjnych dopuszczających wartości null i niedopuszczających wartości null do Twoich projektów
+> - Włącz kontrolę typu odwołania do wartości null w całym kodzie.
 > - Napisz kod, w którym kompilator wymusza te decyzje projektowe.
-> - Użyj funkcji odniesienia, której można anulować we własnych projektach
+> - Używanie funkcji referencyjnej nullable we własnych projektach
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Musisz skonfigurować komputer do uruchamiania .NET Core, w tym kompilatora C# 8.0. Kompilator języka C# 8.0 jest dostępny w [programie Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)lub [.NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+Musisz skonfigurować maszynę do uruchamiania programu .NET Core, w tym kompilatora C# 8,0. Kompilator języka C# 8,0 jest dostępny w programie [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)lub [.NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
-W tym samouczku założono, że znasz c# i .NET, w tym visual studio lub .NET Core CLI.
+W tym samouczku założono, że znasz języki C# i .NET, w tym Visual Studio lub interfejs wiersza polecenia platformy .NET Core.
 
-## <a name="incorporate-nullable-reference-types-into-your-designs"></a>Uwzględnianie typów odwołań, których można anulować, do wzorów
+## <a name="incorporate-nullable-reference-types-into-your-designs"></a>Dołączanie typów odwołań do wartości null do projektów
 
-W tym samouczku utworzysz bibliotekę, która modeluje z udziałem ankiety. Kod używa zarówno nullable typów odwołań i typów odwołań nie nullable do reprezentowania rzeczywistych pojęć. Pytania ankietowe nigdy nie mogą być zerowe. Respondent może nie odpowiadać na pytanie. Odpowiedzi mogą być `null` w tym przypadku.
+W tym samouczku utworzysz bibliotekę, w której będą wykonywane ankiety. Kod używa zarówno typów referencyjnych dopuszczających wartości null, jak i niedopuszczających wartości null typy odwołań do reprezentowania rzeczywistych koncepcji. Pytania dotyczące ankiety nigdy nie mogą mieć wartości null. Respondent może preferować nie odpowiedzieć na pytanie. `null`W takim przypadku odpowiedzi mogą być w tym przypadku.
 
-Kod, który napiszesz dla tego przykładu wyraża tę intencję, a kompilator wymusza tę intencję.
+Kod, który napiszesz dla tego przykładu, oznacza, że zamiar, a kompilator wymusza ten cel.
 
-## <a name="create-the-application-and-enable-nullable-reference-types"></a>Tworzenie aplikacji i włączanie typów odwołań z dopuszczalną wartością null
+## <a name="create-the-application-and-enable-nullable-reference-types"></a>Tworzenie aplikacji i włączanie typów referencyjnych dopuszczających wartość null
 
-Utwórz nową aplikację konsoli w programie Visual Studio `dotnet new console`lub z wiersza polecenia za pomocą programu . Nazwij `NullableIntroduction`aplikację . Po utworzeniu aplikacji należy określić, że cały projekt kompiluje się w włączonym **kontekście adnotacji z możliwością null.** Otwórz plik *csproj* i `Nullable` dodaj element `PropertyGroup` do elementu. Ustaw dla niej wartość `enable`. Należy wybrać funkcję **typów odwołań, których można anulować,** nawet w projektach języka C# 8.0. Dzieje się tak dlatego, że po włączeniu funkcji istniejące deklaracje zmiennych referencyjnych stają się **typami odwołań niepodważalnych.** Chociaż ta decyzja pomoże znaleźć problemy, w których istniejący kod może nie mieć odpowiednich kontroli zerowych, może nie odzwierciedlać dokładnie oryginalnego zamiaru projektu:
+Utwórz nową aplikację konsolową w programie Visual Studio lub za pomocą polecenia `dotnet new console` . Nadaj nazwę aplikacji `NullableIntroduction` . Po utworzeniu aplikacji należy określić, że cały projekt zostanie skompilowany w włączonym **kontekście dopuszczającym wartość null**. Otwórz plik *. csproj* i Dodaj `Nullable` element do `PropertyGroup` elementu. Ustaw dla niej wartość `enable`. Należy wybrać funkcję **typów referencyjnych dopuszczających wartość null** , nawet w projektach C# 8,0. Dzieje się tak, ponieważ po włączeniu tej funkcji istniejące deklaracje zmiennej odwołania stają się **typami odwołań niedopuszczających wartości null**. Chociaż ta decyzja pomoże w znalezieniu problemów, w których istniejący kod może nie mieć odpowiednich testów o wartości null, może nie dokładnie odzwierciedlać pierwotny cel projektowania:
 
 ```xml
 <Nullable>enable</Nullable>
 ```
 
-### <a name="design-the-types-for-the-application"></a>Projektowanie typów dla aplikacji
+### <a name="design-the-types-for-the-application"></a>Projektowanie typów aplikacji
 
-Ta aplikacja ankietowa wymaga utworzenia wielu klas:
+Ta aplikacja do ankiety wymaga utworzenia szeregu klas:
 
 - Klasa, która modeluje listę pytań.
-- Klasa, która modeluje listę osób, z którymi skontaktowano się w celu wykonania ankiety.
-- Klasa, która modeluje odpowiedzi od osoby, która wzięła udział w ankiecie.
+- Klasa, która modeluje listę osób, którym kontaktowali się na potrzeby ankiety.
+- Klasa, która modeluje odpowiedzi od osoby, która przeprowadziła ankietę.
 
-Te typy będą korzystać z typów odwołań nullable i nie nullable wyrazić, które elementy członkowskie są wymagane, a które są opcjonalne. Typy odwołań dopuszczania do wartości null komunikują intencję projektu wyraźnie:
+Te typy będą używały typów referencyjnych dopuszczających wartości null i niedopuszczających wartości null do wyznaczania, które elementy członkowskie są wymagane i które są opcjonalne. Typy referencyjne dopuszczające wartość null komunikują się, że projekt zamierzenia
 
-- Pytania, które są częścią badania nigdy nie może być null: Nie ma sensu zadać puste pytanie.
-- Respondenci nigdy nie mogą być zerowi. Będziesz chciał śledzić osoby, z którymi się skontaktowałeś, a nawet respondentów, którzy odmówili udziału.
-- Każda odpowiedź na pytanie może mieć wartość null. Respondenci mogą odmówić odpowiedzi na niektóre lub wszystkie pytania.
+- Pytania, które są częścią ankiety, nie mogą mieć wartości null: nie ma sensu, aby zadać puste pytanie.
+- Respondenci nie mogą być puste. Użytkownik chce śledzić osoby, którym nastąpi kontakt, nawet respondentów, którzy odrzucili uczestnictwo.
+- Każda odpowiedź na pytanie może mieć wartość null. Respondenci mogą odrzucić niektóre lub wszystkie pytania.
 
-Jeśli masz zaprogramowane w języku C#, może być tak `null` przyzwyczajony do typów odwołań, które pozwalają na wartości, które mogą mieć pominięte inne możliwości deklarowania wystąpienia nienastępne do null:
+Jeśli zaznaczono program w języku C#, można to zrobić na typy odwołań, które zezwalają na `null` wartości, które mogły pominąć inne możliwości deklarowania wystąpień niedopuszczających wartości null:
 
-- Zbieranie pytań powinno być nie można anulować.
-- Zbieranie respondentów powinno być niedościwidalne.
+- Kolekcje pytań nie mogą dopuszczać wartości null.
+- Kolekcja respondentów nie powinna być dopuszczana do wartości null.
 
-Podczas pisania kodu zobaczysz, że typ odwołania nienależytego do wartości null jako domyślny <xref:System.NullReferenceException>dla odwołań pozwala uniknąć typowych błędów, które mogą prowadzić do s. Jedną z lekcji z tego samouczka jest to, że `null`podjąłeś decyzje o tym, które zmienne mogą lub nie mogą być . Język nie podał składni, aby wyrazić te decyzje. Teraz tak.
+Podczas pisania kodu zobaczysz, że typ referencyjny niedopuszczający wartości null jako domyślny dla odwołań pozwala uniknąć częstych pomyłek, które mogą prowadzić do <xref:System.NullReferenceException> s. Jedną z lekcji w tym samouczku jest to, że podjęto decyzję o tym, które zmienne mogły lub nie mogą być `null` . Język nie dostarczył składni do wyrażania tych decyzji. Teraz.
 
-Aplikacja, którą skompilujesz, wykonuje następujące czynności:
+Aplikacja, którą utworzysz, wykonuje następujące czynności:
 
 1. Tworzy ankietę i dodaje do niej pytania.
-1. Tworzy pseudolosowy zestaw respondentów do badania.
-1. Kontaktuje się z respondentami, dopóki wypełniony rozmiar ankiety nie osiągnie numeru celu.
-1. Zapisuje ważne statystyki dotyczące odpowiedzi na ankietę.
+1. Tworzy pseudo-losowy zbiór respondentów dla ankiety.
+1. Osoby odpowiedzialne za kontakty do momentu, aż ukończony rozmiar ankiety osiągnie numer celu.
+1. Zapisuje ważne dane statystyczne odpowiedzi na ankiety.
 
-## <a name="build-the-survey-with-nullable-and-non-nullable-reference-types"></a>Tworzenie ankiety z typami odwołań z których można anulować i nienastępującym do wartości null
+## <a name="build-the-survey-with-nullable-and-non-nullable-reference-types"></a>Kompilowanie ankiety przy użyciu typów referencyjnych dopuszczających wartości null i niedopuszczających wartości null
 
-Pierwszy kod, który napiszesz, tworzy ankietę. Będziesz pisać klasy do modelowania pytania ankiety i badania. Ankieta zawiera trzy rodzaje pytań, wyróżniające się formatem odpowiedzi: Tak/Nie odpowiedzi, odpowiedzi liczbowe i odpowiedzi tekstowe. Tworzenie `public SurveyQuestion` klasy:
+Pierwszy kod, który napiszesz, tworzy ankietę. Należy napisać klasy do modelowania pytania ankietowego i uruchomienia ankiety. Ankieta zawiera trzy typy pytań, które różnią się formatem odpowiedzi: tak/nie odpowiedzi, odpowiedzi na liczbę i odpowiedzi tekstowe. Utwórz `public SurveyQuestion` klasę:
 
 ```csharp
 namespace NullableIntroduction
@@ -85,7 +85,7 @@ namespace NullableIntroduction
 }
 ```
 
-Kompilator interpretuje każdą deklarację zmiennej typu odwołania jako typ odwołania **niepodważalny** dla kodu w włączonym kontekście adnotacji z możliwością null. Pierwsze ostrzeżenie można wyświetlić, dodając właściwości tekstu pytania i typu pytania, jak pokazano w poniższym kodzie:
+Kompilator interpretuje każdą deklarację zmiennej typu odwołania jako typ referencyjny **niedopuszczający wartości null** dla kodu w włączonym kontekście dopuszczającym wartość null. Pierwsze ostrzeżenie można zobaczyć, dodając właściwości dla tekstu pytania i typ pytania, jak pokazano w poniższym kodzie:
 
 ```csharp
 namespace NullableIntroduction
@@ -105,13 +105,13 @@ namespace NullableIntroduction
 }
 ```
 
-Ponieważ nie zostały zainicjowane, `QuestionText`kompilator generuje ostrzeżenie, że właściwość nie można anulować nie została zainicjowana. Projekt wymaga, aby tekst pytania był nietrwały, więc należy dodać `QuestionType` konstruktora, aby zainicjować go i wartość, jak również. Definicja gotowej klasy wygląda następująco:
+Ponieważ nie zainicjowano `QuestionText` , kompilator generuje ostrzeżenie, że nie zainicjowano właściwości, która nie dopuszcza wartości null. Projekt wymaga, aby tekst pytania miał wartość różną od null, więc można dodać konstruktora, aby go zainicjować i `QuestionType` wartość. Gotowa definicja klasy wygląda podobnie do następującego kodu:
 
 [!code-csharp[DefineQuestion](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/SurveyQuestion.cs)]
 
-Dodanie konstruktora usuwa ostrzeżenie. Argument konstruktora jest również typem odwołania, którego nie można unieważnić, więc kompilator nie wydaje żadnych ostrzeżeń.
+Dodanie konstruktora spowoduje usunięcie ostrzeżenia. Argument konstruktora jest również typem referencyjnym, który nie dopuszcza wartości null, więc kompilator nie wystawia żadnych ostrzeżeń.
 
-Następnie utwórz `public` klasę `SurveyRun`o nazwie . Ta klasa zawiera `SurveyQuestion` listę obiektów i metod dodawania pytań do ankiety, jak pokazano w poniższym kodzie:
+Następnie Utwórz `public` klasę o nazwie `SurveyRun` . Ta klasa zawiera listę `SurveyQuestion` obiektów i metod, które umożliwiają dodawanie pytań do ankiety, jak pokazano w poniższym kodzie:
 
 ```csharp
 using System.Collections.Generic;
@@ -129,27 +129,27 @@ namespace NullableIntroduction
 }
 ```
 
-Tak jak poprzednio, należy zainicjować obiekt listy do wartości innej niż null lub kompilator generuje ostrzeżenie. Nie ma żadnych kontroli null w `AddQuestion` drugim przeciążenie, ponieważ nie są one potrzebne: Zadeklarowałeś, że zmienna jest nie można anulować. Jego wartość nie `null`może być .
+Tak jak wcześniej, należy zainicjować obiekt listy w wartości innej niż null lub kompilator generuje ostrzeżenie. Brak testów null w drugim przeciążeniu, `AddQuestion` ponieważ nie są one potrzebne: zadeklarowano, że zmienna nie dopuszcza wartości null. Wartość nie może być `null` .
 
-Przełącz się na *Program.cs* w edytorze `Main` i zastąp zawartość następujących wierszy kodu:
+Przejdź do *program.cs* w edytorze i Zastąp zawartość `Main` następującym wierszem kodu:
 
 [!code-csharp[AddQuestions](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/Program.cs#AddQuestions)]
 
-Ponieważ cały projekt znajduje się w włączonym kontekście adnotacji z `null` możliwością null, otrzymasz ostrzeżenia po przejściu do dowolnej metody oczekującej typu odwołania, którego nie można anulować. Spróbuj, dodając następujący wiersz `Main`do:
+Ponieważ cały projekt jest w włączonym kontekście adnotacji dopuszczający wartość null, otrzymasz ostrzeżenia, gdy przejdziesz `null` do dowolnej metody, która oczekuje typu referencyjnego, który nie dopuszcza wartości null. Wypróbuj go, dodając następujący wiersz do `Main` :
 
 ```csharp
 surveyRun.AddQuestion(QuestionType.Text, default);
 ```
 
-## <a name="create-respondents-and-get-answers-to-the-survey"></a>Tworzenie respondentów i uzyskiwanie odpowiedzi na ankietę
+## <a name="create-respondents-and-get-answers-to-the-survey"></a>Twórz respondenci i uzyskuj odpowiedzi na ankietę
 
-Następnie napisz kod, który generuje odpowiedzi na ankietę. Proces ten obejmuje kilka małych zadań:
+Następnie napisz kod, który generuje odpowiedzi na ankietę. Ten proces obejmuje kilka małych zadań:
 
-1. Tworzenie metody, która generuje respondenta obiektów. Reprezentują one osoby proszone o wypełnienie ankiety.
-1. Tworzenie logiki do symulowania zadawania pytań do respondenta i zbierania odpowiedzi lub zauważyć, że respondent nie odpowiedział.
-1. Powtarzaj, aż wystarczająca liczba respondentów odpowie na ankietę.
+1. Kompiluj metodę generującą obiekty respondentów. Reprezentują one osoby, które poprosiły o wypełnienie ankiety.
+1. Utwórz logikę, aby symulować pytania do respondenta i zbierać odpowiedzi lub zauważyć, że respondent nie odpowiedział.
+1. Powtarzaj do momentu, aż wystarczające respondenci przepowieli ankietę.
 
-Będziesz potrzebować klasy do reprezentowania odpowiedzi na ankietę, więc dodaj ją teraz. Włącz obsługę można anulować. Dodaj `Id` właściwość i konstruktora, który inicjuje go, jak pokazano w poniższym kodzie:
+Potrzebujesz klasy do reprezentowania odpowiedzi ankiety, więc Dodaj ją teraz. Włącz obsługę dopuszczania wartości null. Dodaj `Id` Właściwość i konstruktora, która go inicjuje, jak pokazano w poniższym kodzie:
 
 ```csharp
 namespace NullableIntroduction
@@ -163,61 +163,64 @@ namespace NullableIntroduction
 }
 ```
 
-Następnie dodaj `static` metodę tworzenia nowych uczestników, generując losowy identyfikator:
+Następnie Dodaj metodę, `static` Aby utworzyć nowych uczestników przez wygenerowanie losowego identyfikatora:
 
 [!code-csharp[GenerateRespondents](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#Random)]
 
-Głównym obowiązkiem tej klasy jest generowanie odpowiedzi dla uczestnika na pytania w ankiecie. Odpowiedzialność ta ma kilka kroków:
+Główną odpowiedzialnością tej klasy jest generowanie odpowiedzi dla uczestnika na pytania w ankiecie. Ta odpowiedzialność obejmuje kilka kroków:
 
-1. Poproś o udział w ankiecie. Jeśli dana osoba nie wyrazi zgody, zwróć brakującą (lub null) odpowiedź.
-1. Zadaj każde pytanie i zapisz odpowiedź. Każda odpowiedź może również brakować (lub null).
+1. Poproś o uczestnictwo w ankiecie. Jeśli osoba nie wyraża zgody, zwróć odpowiedź o brakującą wartość (lub null).
+1. Zadawaj każde pytanie i zanotuj odpowiedź. Każda odpowiedź może być również brakująca (lub mieć wartość null).
 
-Dodaj następujący kod `SurveyResponse` do swojej klasy:
+Dodaj następujący kod do `SurveyResponse` klasy:
 
 [!code-csharp[AnswerSurvey](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#AnswerSurvey)]
 
-Magazyn odpowiedzi na ankietę `Dictionary<int, string>?`jest , wskazując, że może być null. Używasz nowej funkcji języka, aby zadeklarować intencji projektu, zarówno do kompilatora i dla każdego, kto czyta kod później. Jeśli kiedykolwiek wyłuskania `surveyResponses` bez `null` sprawdzania wartości po raz pierwszy, otrzymasz ostrzeżenie kompilatora. Nie otrzymasz ostrzeżenia w `AnswerSurvey` metodzie, ponieważ kompilator może `surveyResponses` określić, że zmienna została ustawiona na wartość nie null powyżej.
+Magazyn dla odpowiedzi na ankiety jest `Dictionary<int, string>?` , co oznacza, że może mieć wartość null. Używasz nowej funkcji języka do deklarowania zamiaru projektu, zarówno do kompilatora, jak i do każdego, kto czyta kod później. Jeśli kiedykolwiek wyjdziesz `surveyResponses` do wcześniejszego odwołania bez sprawdzania, otrzymasz `null` Ostrzeżenie kompilatora. Nie otrzymujesz ostrzeżenia w `AnswerSurvey` metodzie, ponieważ kompilator może określić, że dla `surveyResponses` zmiennej została ustawiona wartość inna niż null.
 
-Używanie `null` brakujących odpowiedzi wyróżnia kluczowy punkt do pracy z typami odwołań, `null` których można anulować: celem nie jest usunięcie wszystkich wartości z programu. Zamiast tego Twoim celem jest zapewnienie, że kod, który piszesz wyraża intencję projektu. Brakujące wartości są niezbędne pojęcie do wyrażenia w kodzie. Wartość `null` jest jasnym sposobem wyrażania tych brakujących wartości. Próba usunięcia `null` wszystkich wartości prowadzi tylko do zdefiniowania innego `null`sposobu wyrażania brakujących wartości bez .
+Użycie `null` w przypadku brakujących odpowiedzi podświetla kluczowy punkt do pracy z typami odwołań dopuszczających wartość null: nie można usunąć wszystkich `null` wartości z programu. Zamiast tego celem jest upewnienie się, że napisany kod wyraża zamiar Twojego projektu. Brakujące wartości są koniecznym pojęciem do wyrażania w kodzie. `null`Wartość jest jasne, aby wyrazić te brakujące wartości. Próba usunięcia wszystkich `null` wartości powoduje tylko określenie, że nie są to wartości brakujące `null` .
 
-Następnie należy napisać `PerformSurvey` metodę w `SurveyRun` klasie. Dodaj następujący kod `SurveyRun` w klasie:
+Następnie należy napisać `PerformSurvey` metodę w `SurveyRun` klasie. Dodaj następujący kod do `SurveyRun` klasy:
 
 [!code-csharp[PerformSurvey](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/SurveyRun.cs#PerformSurvey)]
 
-W tym miejscu ponownie, `List<SurveyResponse>?` wybór nullable wskazuje odpowiedź może być null. Oznacza to, że ankieta nie została jeszcze przekazana żadnym respondentom. Należy zauważyć, że respondenci są dodawane, dopóki nie wystarczająco wyrazisz na to zgodę.
+W tym przypadku wybór wartości null wskazuje, `List<SurveyResponse>?` że odpowiedź może mieć wartość null. Oznacza to, że ankieta nie została jeszcze udzielona żadnym respondentom. Zwróć uwagę, że respondenci są dodawani, dopóki nie zostanie osiągnięta wystarczająca liczba.
 
-Ostatnim krokiem do uruchomienia ankiety jest dodanie połączenia w celu `Main` przeprowadzenia ankiety na końcu metody:
+Ostatnim krokiem do uruchomienia ankiety jest dodanie wywołania do wykonania ankiety na końcu `Main` metody:
 
 [!code-csharp[RunSurvey](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/Program.cs#RunSurvey)]
 
-## <a name="examine-survey-responses"></a>Sprawdzanie odpowiedzi na ankietę
+## <a name="examine-survey-responses"></a>Zbadaj odpowiedzi na ankietę
 
-Ostatnim krokiem jest wyświetlenie wyników ankiety. Dodasz kod do wielu napisanych klas. Ten kod pokazuje wartość rozróżniania typów odwołań nullable i non-nullable. Zacznij od dodania następujących dwóch członków zabudowanych wyrażeniami `SurveyResponse` do klasy:
+Ostatnim krokiem jest wyświetlenie wyników ankiety. Dodasz kod do wielu utworzonych klas. Ten kod demonstruje wartość odróżniania typów referencyjnych dopuszczających wartości null i niedopuszczających wartości null. Zacznij od dodania następujących dwóch składowych wyrażeń do `SurveyResponse` klasy:
 
 [!code-csharp[ReportResponses](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#SurveyStatus)]
 
-Ponieważ `surveyResponses` jest typu odwołania nullable, null kontroli są niezbędne przed odsyłanie go. Metoda `Answer` zwraca ciąg nienastępujący do wartości null, więc musimy omówić przypadek brakującej odpowiedzi przy użyciu operatora scalania wartości null.
+Ponieważ `surveyResponses` jest typem referencyjnym dopuszczającym wartość null, sprawdzanie wartości null jest niezbędne przed cofnięciem odwołania do niego. `Answer`Metoda zwraca ciąg niedopuszczający wartości null, dlatego musimy uwzględnić przypadek brakującej odpowiedzi przy użyciu operatora łączenia wartości null.
 
-Następnie dodaj te trzy elementy członkowskie zabudowane wyrażeniami `SurveyRun` do klasy:
+Następnie Dodaj te trzy składowe z wyrażeniami do `SurveyRun` klasy:
 
 [!code-csharp[ReportResults](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/SurveyRun.cs#RunReport)]
 
-Element `AllParticipants` członkowski musi wziąć `respondents` pod uwagę, że zmienna może mieć wartość null, ale wartość zwracana nie może być null. Jeśli zmienisz to wyrażenie, `??` usuwając i puste sekwencji, która następuje, kompilator ostrzega, że metoda może powrócić `null` i jego podpis zwraca typ nie nullable.
+`AllParticipants`Element członkowski musi wziąć pod uwagę, że `respondents` zmienna może mieć wartość null, ale zwracana wartość nie może być równa null. Jeśli zmienisz to wyrażenie poprzez usunięcie `??` i pustej sekwencji, która następuje, kompilator ostrzega o tym, że metoda może zostać zwrócona, `null` a jej sygnatura zwrotna zwraca typ niedopuszczający wartości null.
 
-Na koniec dodaj następującą pętlę `Main` u dołu metody:
+Na koniec Dodaj następującą pętlę w dolnej części `Main` metody:
 
 [!code-csharp[DisplaySurveyResults](~/samples/snippets/csharp/NullableIntroduction/NullableIntroduction/Program.cs#WriteAnswers)]
 
-Nie trzeba żadnych `null` kontroli w tym kodzie, ponieważ zostały zaprojektowane interfejsów bazowych, tak aby wszystkie one zwracają typy odwołania bez null.
+Nie musisz `null` już sprawdzać w tym kodzie, ponieważ zostały zaprojektowane bazowe interfejsy, aby wszystkie zwracane były typy odwołań niedopuszczające wartości null.
 
 ## <a name="get-the-code"></a>Uzyskiwanie kodu
 
-Możesz pobrać kod gotowego samouczka z naszego repozytorium [próbek](https://github.com/dotnet/samples) w folderze [csharp/NullIntroduction.](https://github.com/dotnet/samples/tree/master/csharp/NullableIntroduction)
+Możesz uzyskać kod gotowego samouczka z naszego repozytorium [przykładów](https://github.com/dotnet/samples) w folderze [CSharp/NullableIntroduction](https://github.com/dotnet/samples/tree/master/csharp/NullableIntroduction) .
 
-Eksperymentuj, zmieniając deklaracje typów między typami odwołań, których można anulować i nie można anulować. Zobacz, jak to generuje różne ostrzeżenia, aby upewnić `null`się, że nie przypadkowo wyłuskać .
+Eksperymentowanie, zmieniając deklaracje typu między typami odwołań dopuszczających wartości null i niedopuszczające wartości null. Zobacz, jak generuje różne ostrzeżenia, aby zapobiec przypadkowemu wykorzystaniu `null` .
 
 ## <a name="next-steps"></a>Następne kroki
 
-Dowiedz się więcej, migrując istniejącą aplikację w celu użycia typów odwołań powodujących wartość null:
+Dowiedz się więcej przez Migrowanie istniejącej aplikacji w celu używania typów referencyjnych dopuszczających wartości null:
 > [!div class="nextstepaction"]
-> [Uaktualnianie aplikacji w celu użycia typów odwołań z dopuszczalną wartością null](upgrade-to-nullable-references.md)
+> [Uaktualnianie aplikacji w celu używania typów referencyjnych dopuszczających wartości null](upgrade-to-nullable-references.md)
+
+Dowiedz się, jak używać typu referencyjnego nullable podczas korzystania z Entity Framework:
+> [Podstawy Entity Framework Core: Praca z typami odwołań dopuszczających wartości null](https://docs.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types)

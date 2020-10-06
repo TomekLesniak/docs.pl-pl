@@ -3,12 +3,12 @@ title: Analizator zgodności platformy
 description: Analizator Roslyn, który może pomóc w wykrywaniu problemów ze zgodnością platformy w aplikacjach i bibliotekach dla wielu platform.
 author: buyaa-n
 ms.date: 09/17/2020
-ms.openlocfilehash: 4e842e5bbe90dd5006d9b27d0365f908b6441997
-ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
+ms.openlocfilehash: fcd5ec755789ff7f2472d8077dd52f321bf9f167
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91406604"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756185"
 ---
 # <a name="platform-compatibility-analyzer"></a>Analizator zgodności platformy
 
@@ -70,7 +70,7 @@ Aby uzyskać więcej informacji, zobacz [przykłady działania atrybutów i ich 
     ```
 
   - **Nieobsługiwana lista**. Jeśli najniższa wersja dla każdej platformy systemu operacyjnego jest `[UnsupportedOSPlatform]` atrybutem, interfejs API jest uznawany za nieobsługiwany przez wymienione platformy i obsługiwany przez wszystkie inne platformy. Lista może mieć `[SupportedOSPlatform]` atrybut o tej samej platformie, ale wyższej wersji, co oznacza, że interfejs API jest obsługiwany w tej wersji.
-  
+
     ```csharp
     // The API was unsupported on Windows until version 10.0.19041.0.
     // The API is considered supported everywhere else without constraints.
@@ -79,16 +79,16 @@ Aby uzyskać więcej informacji, zobacz [przykłady działania atrybutów i ich 
     public void ApiSupportedFromWindows8UnsupportFromWindows10();
     ```
 
-  - **Niespójna lista**. Jeśli najniższa wersja dla niektórych platform jest inna niż w przypadku `[SupportedOSPlatform]` `[UnsupportedOSPlatform]` innych platform, jest traktowana jako niespójna, co nie jest obsługiwane przez analizator.
+  - **Niespójna lista**. Jeśli najniższa wersja dla niektórych platform jest inna niż w przypadku `[SupportedOSPlatform]` `[UnsupportedOSPlatform]` innych platform, jest uważana za niespójną, co nie jest obsługiwane w przypadku analizatora.
   - Jeśli najmniejsze wersje `[SupportedOSPlatform]` i `[UnsupportedOSPlatform]` atrybuty są równe, Analizator traktuje platformę jako część **obsługiwanej listy**.
-- Atrybuty platformy można stosować do typów, elementów członkowskich (metod, pól, właściwości i zdarzeń) i zestawów z inną nazwą platformy i/lub wersją.
+- Atrybuty platformy można stosować do typów, elementów członkowskich (metod, pól, właściwości i zdarzeń) i zestawów z różnymi nazwami lub wersjami platform.
   - Atrybuty zastosowane na najwyższym poziomie `target` mają wpływ na wszystkie jej składowe i typy.
-  - Atrybuty poziomu podrzędnego są stosowane tylko wtedy, gdy są zgodne z regułą "adnotacje potomne mogą zawęzić obsługę platform, ale nie mogą ich poszerzyć".
-    - Gdy element nadrzędny ma **obsługiwaną tylko** listę, a następnie podrzędne atrybuty elementu członkowskiego nie mogą dodać nowej obsługi platformy, która mogłaby rozszerzać wsparcie nadrzędne, Nowa obsługa platformy może zostać dodana tylko do samego siebie. Ale może mieć `Supported` atrybut dla tej samej platformy z nowszymi wersjami, co spowoduje zawężenie obsługi. Ponadto może mieć `Unsupported` atrybut o tej samej platformie, co spowoduje również zawężenie nadrzędnego wsparcia.
-    - Gdy element nadrzędny ma **nieobsługiwaną** listę, wówczas atrybuty elementu członkowskiego podrzędnego mogą dodać nową obsługę platformy, która spowodowałaby zawężenie obsługi nadrzędnej, ale nie może mieć `Supported` atrybutu dla tej samej platformy jak w elemencie nadrzędnym, który mógłby zwiększyć obsługę elementu nadrzędnego. Pomoc techniczną dla tej samej platformy można dodać tylko do poziomu nadrzędnego, w którym `Unsupported` zastosowano oryginalny atrybut.
-  - Jeśli `[SupportedOSPlatform("platformVersion")]` zastosowano więcej niż jeden raz dla interfejsu API o tej samej `platform` nazwie tylko ten z minimalną wersją jest uznawany przez analizatora.
-  - Jeśli `[UnsupportedOSPlatform("platformVersion")]` zastosowano więcej niż dwa razy dla interfejsu API o tej samej `platform` nazwie, Analizator jest traktowany jako tylko dwa z najwcześniejszymi wersjami.
-  
+  - Atrybuty na poziomie podrzędnym są stosowane tylko wtedy, gdy są zgodne z regułą "adnotacje potomne mogą zawęzić obsługę platform, ale nie mogą ich poszerzyć".
+    - Gdy element nadrzędny ma **obsługiwaną tylko** listę, a następnie podrzędne atrybuty elementu członkowskiego nie można dodać nowej obsługi platformy, ponieważ spowodowałoby to rozszerzenie obsługi nadrzędnej. Obsługę nowej platformy można dodać tylko do samego siebie. Ale element podrzędny może mieć `Supported` atrybut dla tej samej platformy z nowszymi wersjami, co zawęża pomoc techniczną. Ponadto element podrzędny może mieć `Unsupported` atrybut o tej samej platformie, co umożliwia również zawężenie obsługi nadrzędnej.
+    - Gdy element nadrzędny ma **nieobsługiwaną** listę, wówczas atrybuty elementu członkowskiego podrzędnego mogą dodać obsługę nowej platformy, ponieważ powoduje to zawężenie obsługi nadrzędnej. Ale nie może mieć `Supported` atrybutu dla tej samej platformy, co element nadrzędny, ponieważ rozszerza obsługę elementu nadrzędnego. Obsługę tej samej platformy można dodać tylko do elementu nadrzędnego, w którym `Unsupported` zastosowano oryginalny atrybut.
+  - Jeśli `[SupportedOSPlatform("platformVersion")]` zastosowano więcej niż jeden raz dla interfejsu API o tej samej `platform` nazwie, Analizator traktuje tylko ten element z minimalną wersją.
+  - Jeśli `[UnsupportedOSPlatform("platformVersion")]` zastosowano więcej niż dwa razy dla interfejsu API o tej samej `platform` nazwie, Analizator uwzględnia tylko dwa z najwcześniejszymi wersjami.
+
   > [!NOTE]
   > Nie oczekuje się, że interfejs API, który był obsługiwany początkowo, ale nie jest obsługiwany (usunięty) w nowszej wersji.
 
@@ -123,7 +123,7 @@ Aby uzyskać więcej informacji, zobacz [przykłady działania atrybutów i ich 
       // warns: 'SupportedOnWindowsAndLinuxOnly' is supported on 'Linux'
       SupportedOnWindowsAndLinuxOnly();
 
-      // warns: 'ApiSupportedFromWindows8UnsupportFromWindows10' is supported on 'windows' 8.0 and later  
+      // warns: 'ApiSupportedFromWindows8UnsupportFromWindows10' is supported on 'windows' 8.0 and later
       // warns: 'ApiSupportedFromWindows8UnsupportFromWindows10' is unsupported on 'windows' 10.0.19041.0 and later
       ApiSupportedFromWindows8UnsupportFromWindows10();
 
@@ -133,7 +133,7 @@ Aby uzyskać więcej informacji, zobacz [przykłady działania atrybutów i ich 
   }
 
   // an API not supported on android but supported on all other.
-  [UnsupportedOSPlatform("android")]  
+  [UnsupportedOSPlatform("android")]
   public void DoesNotWorkOnAndroid() { }
 
   // an API was unsupported on Windows until version 8.0.
@@ -154,11 +154,11 @@ Aby uzyskać więcej informacji, zobacz [przykłady działania atrybutów i ich 
   {
       DoesNotWorkOnAndroid(); // warns 'DoesNotWorkOnAndroid' is unsupported on 'android'
 
-      // warns:'StartedWindowsSupportFromVersion8' is unsupported on 'windows'  
+      // warns:'StartedWindowsSupportFromVersion8' is unsupported on 'windows'
       // warns:'StartedWindowsSupportFromVersion8' is supported on 'windows' 8.0 and later
       StartedWindowsSupportFromVersion8();
 
-      // warns:'StartedWindowsSupportFrom8UnsupportedFrom10' is unsupported on 'windows'  
+      // warns:'StartedWindowsSupportFrom8UnsupportedFrom10' is unsupported on 'windows'
       // warns:'StartedWindowsSupportFrom8UnsupportedFrom10' is supported on 'windows' 8.0 and later
       // even there were 3 diagnostics found analyzer warn only for the first 2.
       StartedWindowsSupportFrom8UnsupportedFrom10();
@@ -177,7 +177,7 @@ Zalecanym sposobem postępowania z tą diagnostyką jest upewnienie się, że in
 
 - **Usuń kod**. Na ogół nie jest to potrzebne, ponieważ oznacza to utratę wierności, gdy kod jest używany przez użytkowników systemu Windows. W przypadku, gdy istnieje alternatywa dla wielu platform, najlepiej jest ją używać w przypadku interfejsów API specyficznych dla platformy.
 
-- **Pomiń ostrzeżenie**. Można również po prostu pominąć ostrzeżenie, za pośrednictwem editor.config lub `#pragma warning disable ca1416` . Jednak ta opcja powinna być ostatnią możliwością w przypadku korzystania z interfejsów API specyficznych dla platformy.
+- **Pomiń ostrzeżenie**. Możesz również po prostu pominąć ostrzeżenie za pośrednictwem wpisu EditorConfig lub `#pragma warning disable ca1416` . Jednak ta opcja powinna być ostatnią możliwością w przypadku korzystania z interfejsów API specyficznych dla platformy.
 
 ### <a name="guard-platform-specific-apis-with-guard-methods"></a>Ochrona interfejsów API specyficznych dla platformy przy użyciu metod Guard
 
@@ -231,7 +231,7 @@ Nazwa platformy metody Guard powinna być zgodna z nazwą platformy interfejsu A
   }
   ```
 
-- Jeśli musisz chronić kod, który jest przeznaczony dla standardu lub netcoreapp, gdzie nowe <xref:System.OperatingSystem> interfejsy API nie są dostępne <xref:System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform%2A?displayProperty=nameWithType> , może być używany przez analizator. Ale nie jest tak zoptymalizowany jak nowe interfejsy API dodane w programie <xref:System.OperatingSystem> . W przypadku, gdy platforma nie jest obsługiwana w <xref:System.Runtime.InteropServices.OSPlatform> strukturze, można użyć <xref:System.Runtime.InteropServices.OSPlatform.Create%2A?displayProperty=nameWithType> ("platforma"), która jest również przestrzegana przez analizator.
+- Jeśli musisz zabezpieczyć kod, którego dotyczy `netstandard` lub `netcoreapp` gdzie nowe <xref:System.OperatingSystem> interfejsy API nie są dostępne, <xref:System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform%2A?displayProperty=nameWithType> można użyć interfejsu API i będzie on przestrzegany przez analizator. Ale nie jest tak zoptymalizowany jak nowe interfejsy API dodane w programie <xref:System.OperatingSystem> . Jeśli platforma nie jest obsługiwana w <xref:System.Runtime.InteropServices.OSPlatform> strukturze, można wywołać metodę <xref:System.Runtime.InteropServices.OSPlatform.Create(System.String)?displayProperty=nameWithType> i przekazać ją do nazwy platformy, która również odnosi się do analizatora.
 
   ```csharp
   public void CallingSupportedOnlyApis()
@@ -316,7 +316,7 @@ Nazwy platform powinny być zgodne z interfejsem API zależnym od platformy wywo
   }
 
   // an API not supported on Android but supported on all other.
-  [UnsupportedOSPlatform("android")]  
+  [UnsupportedOSPlatform("android")]
   public void DoesNotWorkOnAndroid() { }
 
   // an API was unsupported on Windows until version 8.0.
@@ -376,7 +376,7 @@ Jako warunek dla programu można również użyć wszystkich testów warunkowych
   }
   ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Nazwy platformy docelowej w programie .NET 5](https://github.com/dotnet/designs/blob/master/accepted/2020/net5/net5.md)
 - [Dodawanie adnotacji do interfejsów API specyficznych dla platformy i wykrywanie ich użycia](https://github.com/dotnet/designs/blob/master/accepted/2020/platform-checks/platform-checks.md)

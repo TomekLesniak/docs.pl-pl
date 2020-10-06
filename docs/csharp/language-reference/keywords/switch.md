@@ -13,12 +13,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 20c1d9786eaa184088500cf1b37d33afc421b5e7
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d8fae870bb3a6fdda735a028dc1da20213a68a31
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142027"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756042"
 ---
 # <a name="switch-c-reference"></a>Switch (odwołanie w C#)
 
@@ -87,7 +87,7 @@ Wykonanie listy instrukcji w sekcji Switch z etykietą Case, która pasuje do wy
 
 Każda etykieta przypadku określa wzorzec do porównania z wyrażeniem dopasowania ( `caseSwitch` zmienna w poprzednich przykładach). Jeśli są one zgodne, sterowanie jest przekazywane do sekcji Switch, która zawiera **pierwszą** pasującą etykietę case. Jeśli żaden wzorzec etykiety case nie jest zgodny z wyrażeniem Match, formant jest przenoszony do sekcji z `default` etykietą przypadku, jeśli istnieje. Jeśli nie ma żadnego `default` przypadku, nie są wykonywane żadne instrukcje, a kontrolka jest transferowana poza `switch` instrukcją.
 
-Aby uzyskać informacje na temat `switch` dopasowania do instrukcji i wzorca, zobacz Zgodność [wzorca z sekcją `switch` instrukcji](#pattern-matching with-the-switch-statement) .
+Aby uzyskać informacje na temat `switch` dopasowania do instrukcji i wzorca, zobacz Zgodność [wzorca z sekcją `switch` instrukcji](#pattern-matching-with-the-switch-statement) .
 
 Ponieważ C# 6 obsługuje tylko wzorce stałe i nie zezwala na powtarzanie wartości stałych, etykiety przypadków definiują wzajemnie wykluczające się wartości, a tylko jeden wzorzec może być zgodny z wyrażeniem Match. W związku z tym kolejność, w której `case` wyświetlane są instrukcje, jest nieważna.
 

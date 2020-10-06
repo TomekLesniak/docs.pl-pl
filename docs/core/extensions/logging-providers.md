@@ -4,12 +4,12 @@ description: Dowiedz się, w jaki sposób interfejs API dostawcy rejestrowania j
 author: IEvangelist
 ms.author: dapine
 ms.date: 09/25/2020
-ms.openlocfilehash: 3bd10564f23744d4798d0a6a4b49a7a29be2bc19
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 96a5ece10068e39c991e67a36f22e725d6380af5
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654684"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755888"
 ---
 # <a name="logging-providers-in-net"></a>Dostawcy rejestrowania w programie .NET
 
@@ -20,7 +20,7 @@ Domyślne szablony aplikacji programu .NET Worker:
 - Użyj [hosta ogólnego](generic-host.md).
 - Wywołanie <xref:Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder%2A> , które dodaje następujących dostawców rejestrowania:
   - [Konsola](#console)
-  - [Debugowanie](#debug)
+  - [Rozpocząć](#debug)
   - [EventSource](#event-source)
   - [EventLog](#windows-eventlog): tylko system Windows
 
@@ -68,7 +68,7 @@ Poprzedzający kod to [Func<IServiceProvider, IExampleService>](/dotnet/api/syst
 Rozszerzenia firmy Microsoft obejmują następujących dostawców rejestrowania w ramach bibliotek środowiska uruchomieniowego:
 
 - [Konsola](#console)
-- [Debugowanie](#debug)
+- [Rozpocząć](#debug)
 - [EventSource](#event-source)
 - [Elemencie](#windows-eventlog)
 
@@ -212,7 +212,7 @@ Oto kilka platform rejestrowania innych firm, które współpracują z różnymi
 
 - [ELMAH.IO](https://elmah.io) ([repozytorium GitHub](https://github.com/elmahio/Elmah.Io.Extensions.Logging))
 - [Gelf](https://docs.graylog.org/en/2.3/pages/gelf.html) ([repozytorium GitHub](https://github.com/mattwcole/gelf-extensions-logging))
-- [JSNLog](https://jsnlog.com) ([repozytorium GitHub](https://github.com/mperdeck/jsnlog))
+- [JSNLog](http://jsnlog.com) ([repozytorium GitHub](https://github.com/mperdeck/jsnlog))
 - [KissLog.NET](https://kisslog.net) ([repozytorium GitHub](https://github.com/catalingavan/KissLog-net))
 - [Log4Net](https://logging.apache.org/log4net) ([repozytorium GitHub](https://github.com/apache/logging-log4net))
 - [Loggr](https://loggr.net) ([repozytorium GitHub](https://github.com/imobile3/Loggr.Extensions.Logging))

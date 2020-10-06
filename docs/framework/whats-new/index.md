@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 15350f93ffabb10136af1b9a4d12d5301e661b29
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1e9657c60ef2ff0ef30ae1607a0e7f2cedd01187
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551715"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756081"
 ---
 # <a name="whats-new-in-net-framework"></a>Co nowego w .NET Framework
 
@@ -102,7 +102,7 @@ Punkty końcowe kondycji są szeroko używane przez narzędzia aranżacji do zar
 
 Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania informacji o kondycji usługi WCF:
 
-- Za poorednictwem kodu. Na przykład:
+- Za poorednictwem kodu. Przykład:
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
@@ -124,7 +124,7 @@ Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania in
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- Przy użyciu pliku konfiguracji. Na przykład:
+- Przy użyciu pliku konfiguracji. Przykład:
 
   ```xml
   <behaviors>
@@ -136,7 +136,7 @@ Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania in
   </behaviors>
   ```
 
-Za pomocą parametrów zapytania, takich jak,,,) można zbadać stan kondycji usługi `OnServiceFailure` `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` , a dla każdego parametru zapytania można określić kod odpowiedzi HTTP. Jeśli kod odpowiedzi HTTP zostanie pominięty dla parametru zapytania, domyślnie używany jest kod odpowiedzi HTTP 503. Na przykład:
+Za pomocą parametrów zapytania, takich jak,,,) można zbadać stan kondycji usługi `OnServiceFailure` `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` , a dla każdego parametru zapytania można określić kod odpowiedzi HTTP. Jeśli kod odpowiedzi HTTP zostanie pominięty dla parametru zapytania, domyślnie używany jest kod odpowiedzi HTTP 503. Przykład:
 
 - OnServiceFailure: `https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -252,7 +252,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-<xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType>Metody i <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> pozwalają generować nowe <xref:System.Security.Cryptography.DSA> lub <xref:System.Security.Cryptography.RSA> klucze o określonym rozmiarze klucza. Na przykład:
+<xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType>Metody i <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> pozwalają generować nowe <xref:System.Security.Cryptography.DSA> lub <xref:System.Security.Cryptography.RSA> klucze o określonym rozmiarze klucza. Przykład:
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -350,7 +350,7 @@ Obsługa dekompresji przy użyciu interfejsów API systemu Windows jest włączo
 
 **Dodatkowe interfejsy API kolekcji**
 
-.NET Framework 4.7.2 dodaje wiele nowych interfejsów API do <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typów i. Należą do nich następujące elementy:
+.NET Framework 4.7.2 dodaje wiele nowych interfejsów API do <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typów i. Należą do nich:
 
 - `TryGetValue` metody, które zwiększają wzorzec try użyty w innych typach kolekcji do tych dwóch typów. Dostępne metody:
 
@@ -467,7 +467,7 @@ Program NET Framework 4.7.2 dodaje obsługę dla Always Encrypted opartych na en
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, która zapewnia parametry zaświadczania używane przez SQL Server do uzyskiwania informacji wymaganych do wykonania określonego protokołu zaświadczania.
 
-Następnie plik konfiguracji aplikacji określa konkretną implementację klasy abstrakcyjnej <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> , która udostępnia funkcje dostawcy enklawy. Na przykład:
+Następnie plik konfiguracji aplikacji określa konkretną implementację klasy abstrakcyjnej <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> , która udostępnia funkcje dostawcy enklawy. Przykład:
 
 ```xml
 <configuration>
@@ -650,7 +650,7 @@ ASP.NET przetwarza żądania we wstępnie zdefiniowanym potoku zawierającym 23 
 
 **Opcje wyznaczania wartości skrótu SHA-2 dla poświadczeń uwierzytelniania ASP.NET Forms**
 
-W .NET Framework 4,7 i wcześniejszych wersjach ASP.NET zezwolenie deweloperom na przechowywanie poświadczeń użytkownika z użyciem skrótów haseł w plikach konfiguracji przy użyciu algorytmu MD5 lub SHA1. Począwszy od .NET Framework 4.7.1, ASP.NET obsługuje również nowe bezpieczne opcje skrótu SHA-2, takie jak SHA256, SHA384 i SHA512. Algorytm SHA1 pozostaje domyślny, a w pliku konfiguracyjnym sieci Web można zdefiniować niedomyślnego algorytmu wyznaczania wartości skrótu. Na przykład:
+W .NET Framework 4,7 i wcześniejszych wersjach ASP.NET zezwolenie deweloperom na przechowywanie poświadczeń użytkownika z użyciem skrótów haseł w plikach konfiguracji przy użyciu algorytmu MD5 lub SHA1. Począwszy od .NET Framework 4.7.1, ASP.NET obsługuje również nowe bezpieczne opcje skrótu SHA-2, takie jak SHA256, SHA384 i SHA512. Algorytm SHA1 pozostaje domyślny, a w pliku konfiguracyjnym sieci Web można zdefiniować niedomyślnego algorytmu wyznaczania wartości skrótu. Przykład:
 
 ```xml
 <system.web>
@@ -731,7 +731,7 @@ Windows Communication Foundation (WCF) dodaje następujące funkcje i zmiany:
 
 **Możliwość skonfigurowania domyślnych ustawień zabezpieczeń komunikatów do protokołu TLS 1,1 lub TLS 1,2**
 
-Począwszy od .NET Framework 4,7, usługa WCF umożliwia skonfigurowanie programu TSL 1,1 lub TLS 1,2 oprócz protokołu SSL 3,0 i TSL 1,0 jako domyślnego protokołu zabezpieczeń komunikatów. Jest to ustawienie zgody. Aby ją włączyć, należy dodać następujący wpis do pliku konfiguracji aplikacji:
+Począwszy od .NET Framework 4,7, usługa WCF umożliwia skonfigurowanie protokołu TLS 1,1 lub TLS 1,2 oprócz protokołu SSL 3,0 i TLS 1,0 jako domyślny protokół zabezpieczeń komunikatów. Jest to ustawienie zgody. Aby ją włączyć, należy dodać następujący wpis do pliku konfiguracji aplikacji:
 
 ```xml
 <runtime>
@@ -741,7 +741,7 @@ Począwszy od .NET Framework 4,7, usługa WCF umożliwia skonfigurowanie program
 
 **Zwiększona niezawodność aplikacji WCF i serializacji WCF**
 
-Program WCF zawiera szereg zmian w kodzie, które eliminują sytuacje wyścigu, co poprawia wydajność i niezawodność opcji serializacji. Należą do nich następujące elementy:
+Program WCF zawiera szereg zmian w kodzie, które eliminują sytuacje wyścigu, co poprawia wydajność i niezawodność opcji serializacji. Należą do nich:
 
 - Lepsza obsługa mieszania kodu asynchronicznego i synchronicznego w wywołaniach **SocketConnection. BeginRead** i **SocketConnection. Read**.
 - Zwiększona niezawodność podczas przerywania połączenia z **SharedConnectionListener** i **DuplexChannelBinder**.
@@ -965,7 +965,7 @@ Aby rozwiązać ten wpływ na .NET Framework 4.6.2, do klasy bazowej dodano nast
 
 Biblioteka kryptografii systemu Windows (CNG) dodaliśmy obsługę przechowywania utrwalonych kluczy symetrycznych i używania kluczy symetrycznych przechowywanych sprzętowo, a .NET Framework 4.6.2, że deweloperzy mogą korzystać z tej funkcji.  Ponieważ pojęcie nazw kluczy i dostawców kluczy jest specyficzne dla implementacji, użycie tej funkcji wymaga użycia konstruktora konkretnych typów implementacji zamiast preferowanego podejścia do fabryki (na przykład wywoływanie `Aes.Create` ).
 
-Obsługa szyfrowania symetrycznego klucza istnieje dla algorytmów AES ( <xref:System.Security.Cryptography.AesCng> ) i 3DES ( <xref:System.Security.Cryptography.TripleDESCng> ). Na przykład:
+Obsługa szyfrowania symetrycznego klucza istnieje dla algorytmów AES ( <xref:System.Security.Cryptography.AesCng> ) i 3DES ( <xref:System.Security.Cryptography.TripleDESCng> ). Przykład:
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1343,7 +1343,7 @@ We wcześniejszych wersjach programu WPF Słowniki niestandardowe nie rozpoznaj�
 > [!NOTE]
 > Te nowe formaty plików nie są bezpośrednio obsługiwane przez interfejsy API sprawdzania pisowni WPF, a Słowniki niestandardowe dostarczane do WPF w aplikacjach powinny nadal używać plików. lex.
 
-**Przykłady**
+**Samples**
 
 Istnieje kilka przykładów WPF w repozytorium GitHub [Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples) . Pomóż nam ulepszyć nasze przykłady, wysyłając do nas żądanie ściągnięcia lub otwierając [problem usługi GitHub](https://github.com/Microsoft/WPF-Samples/issues).
 
@@ -1431,7 +1431,7 @@ W programie .NET 2015 wprowadzono .NET Framework 4,6 i .NET Core. Niektóre nowe
 
     Protokół HTTP/2 jest również obsługiwany i domyślnie włączony w przypadku aplikacji z systemem Windows 10 platforma uniwersalna systemu Windows (platformy UWP), które używają <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> interfejsu API.
 
-    Aby zapewnić możliwość korzystania z funkcji [PUSH_PROMISE](https://http2.github.io/http2-spec/#PUSH_PROMISE) w aplikacjach ASP.NET, Nowa metoda z dwoma przeciążeń <xref:System.Web.HttpResponse.PushPromise%28System.String%29> i <xref:System.Web.HttpResponse.PushPromise%28System.String%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29> została dodana do <xref:System.Web.HttpResponse> klasy.
+    Aby zapewnić możliwość korzystania z funkcji [PUSH_PROMISE](https://httpwg.github.io/http2-spec/#PUSH_PROMISE) w aplikacjach ASP.NET, Nowa metoda z dwoma przeciążeń <xref:System.Web.HttpResponse.PushPromise%28System.String%29> i <xref:System.Web.HttpResponse.PushPromise%28System.String%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29> została dodana do <xref:System.Web.HttpResponse> klasy.
 
     > [!NOTE]
     > Mimo że ASP.NET Core obsługuje protokół HTTP/2, obsługa funkcji WYPYCHANia PROMISe nie została jeszcze dodana.
@@ -2124,7 +2124,7 @@ Aplikacje ze sklepu Windows 8. x są przeznaczone do określonych współczynnik
 
 Przenośna biblioteka klas w programie Visual Studio 2012 (i nowszych wersjach) umożliwia pisanie i kompilowanie zestawów zarządzanych, które działają na wielu platformach .NET Framework. Korzystając z projektu biblioteki klas przenośnych, należy wybrać platformy (takie jak Windows Phone i .NET dla systemu Windows 8. x aplikacji do sklepu). Dostępne typy i elementy członkowskie w projekcie są automatycznie ograniczone do wspólnych typów i elementów członkowskich na tych platformach. Aby uzyskać więcej informacji, zobacz [Przenośna biblioteka klas](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Program .NET Framework i wydania poza harmonogramem (OOB)](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co nowego w ułatwieniach dostępu w .NET Framework](whats-new-in-accessibility.md)
