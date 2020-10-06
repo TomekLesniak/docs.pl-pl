@@ -1,30 +1,29 @@
 ---
-title: <performanceCounter>, element (ustawienia sieci)
+title: <performanceCounters>, element (ustawienia sieci)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/performanceCounters
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#performanceCounters
 helpviewer_keywords:
-- performanceCounter element
-- <performanceCounter> element
+- performanceCounters element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: 4859f3a9e6de4f1bf8a56212bfe01f94d66f5650
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 584bdafbbd60303401cbc6ad96b8654fe11c7077
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91190244"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756263"
 ---
-# <a name="performancecounter-element-network-settings"></a><span data-ttu-id="79abc-102">\<performanceCounter>, element (ustawienia sieci)</span><span class="sxs-lookup"><span data-stu-id="79abc-102">\<performanceCounter> Element (Network Settings)</span></span>
+# <a name="performancecounters-element-network-settings"></a><span data-ttu-id="3669d-102">\<performanceCounters>, element (ustawienia sieci)</span><span class="sxs-lookup"><span data-stu-id="3669d-102">\<performanceCounters> Element (Network Settings)</span></span>
 
-<span data-ttu-id="79abc-103">Włącza lub wyłącza liczniki wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="79abc-103">Enables or disables networking performance counters.</span></span>  
+<span data-ttu-id="3669d-103">Włącza lub wyłącza liczniki wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="3669d-103">Enables or disables networking performance counters.</span></span>  
 
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<settings>**](settings-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<performanceCounters>**
 
-## <a name="syntax"></a><span data-ttu-id="79abc-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="79abc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3669d-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="3669d-104">Syntax</span></span>  
   
 ```xml  
 <performanceCounters  
@@ -32,39 +31,39 @@ ms.locfileid: "91190244"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="79abc-105">Atrybuty i elementy</span><span class="sxs-lookup"><span data-stu-id="79abc-105">Attributes and Elements</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="3669d-105">Atrybuty i elementy</span><span class="sxs-lookup"><span data-stu-id="3669d-105">Attributes and Elements</span></span>  
 
- <span data-ttu-id="79abc-106">W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.</span><span class="sxs-lookup"><span data-stu-id="79abc-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
+ <span data-ttu-id="3669d-106">W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.</span><span class="sxs-lookup"><span data-stu-id="3669d-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="79abc-107">Atrybuty</span><span class="sxs-lookup"><span data-stu-id="79abc-107">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="3669d-107">Atrybuty</span><span class="sxs-lookup"><span data-stu-id="3669d-107">Attributes</span></span>  
   
-|<span data-ttu-id="79abc-108">Atrybut</span><span class="sxs-lookup"><span data-stu-id="79abc-108">Attribute</span></span>|<span data-ttu-id="79abc-109">Opis</span><span class="sxs-lookup"><span data-stu-id="79abc-109">Description</span></span>|  
+|<span data-ttu-id="3669d-108">Atrybut</span><span class="sxs-lookup"><span data-stu-id="3669d-108">Attribute</span></span>|<span data-ttu-id="3669d-109">Opis</span><span class="sxs-lookup"><span data-stu-id="3669d-109">Description</span></span>|  
 |---------------|-----------------|  
-|`enabled`|<span data-ttu-id="79abc-110">Określa, czy są włączone liczniki wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="79abc-110">Specifies whether the networking performance counters are enabled.</span></span> <span data-ttu-id="79abc-111">Wartość domyślna to `false`.</span><span class="sxs-lookup"><span data-stu-id="79abc-111">The default value is `false`.</span></span>|  
+|`enabled`|<span data-ttu-id="3669d-110">Określa, czy są włączone liczniki wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="3669d-110">Specifies whether the networking performance counters are enabled.</span></span> <span data-ttu-id="3669d-111">Wartość domyślna to `false`.</span><span class="sxs-lookup"><span data-stu-id="3669d-111">The default value is `false`.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="79abc-112">Elementy podrzędne</span><span class="sxs-lookup"><span data-stu-id="79abc-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="3669d-112">Elementy podrzędne</span><span class="sxs-lookup"><span data-stu-id="3669d-112">Child Elements</span></span>  
 
- <span data-ttu-id="79abc-113">Brak.</span><span class="sxs-lookup"><span data-stu-id="79abc-113">None.</span></span>  
+ <span data-ttu-id="3669d-113">Brak.</span><span class="sxs-lookup"><span data-stu-id="3669d-113">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="79abc-114">Elementy nadrzędne</span><span class="sxs-lookup"><span data-stu-id="79abc-114">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="3669d-114">Elementy nadrzędne</span><span class="sxs-lookup"><span data-stu-id="3669d-114">Parent Elements</span></span>  
   
-|<span data-ttu-id="79abc-115">Element</span><span class="sxs-lookup"><span data-stu-id="79abc-115">Element</span></span>|<span data-ttu-id="79abc-116">Opis</span><span class="sxs-lookup"><span data-stu-id="79abc-116">Description</span></span>|  
+|<span data-ttu-id="3669d-115">Element</span><span class="sxs-lookup"><span data-stu-id="3669d-115">Element</span></span>|<span data-ttu-id="3669d-116">Opis</span><span class="sxs-lookup"><span data-stu-id="3669d-116">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="79abc-117">ustawienia</span><span class="sxs-lookup"><span data-stu-id="79abc-117">settings</span></span>](settings-element-network-settings.md)|<span data-ttu-id="79abc-118">Konfiguruje podstawowe opcje sieci dla <xref:System.Net> przestrzeni nazw.</span><span class="sxs-lookup"><span data-stu-id="79abc-118">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
+|[<span data-ttu-id="3669d-117">ustawienia</span><span class="sxs-lookup"><span data-stu-id="3669d-117">settings</span></span>](settings-element-network-settings.md)|<span data-ttu-id="3669d-118">Konfiguruje podstawowe opcje sieci dla <xref:System.Net> przestrzeni nazw.</span><span class="sxs-lookup"><span data-stu-id="3669d-118">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="79abc-119">Uwagi</span><span class="sxs-lookup"><span data-stu-id="79abc-119">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3669d-119">Uwagi</span><span class="sxs-lookup"><span data-stu-id="3669d-119">Remarks</span></span>  
 
- <span data-ttu-id="79abc-120">Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="79abc-120">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+ <span data-ttu-id="3669d-120">Tego elementu można użyć w pliku konfiguracyjnym aplikacji lub pliku konfiguracji komputera (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="3669d-120">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
- <span data-ttu-id="79abc-121">Liczniki wydajności sieci muszą być włączone w pliku konfiguracji, który ma być używany.</span><span class="sxs-lookup"><span data-stu-id="79abc-121">Networking performance counters need to be enabled in the configuration file to be used.</span></span> <span data-ttu-id="79abc-122">Wszystkie liczniki wydajności sieci są włączone lub wyłączone przy użyciu jednego ustawienia w pliku konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="79abc-122">All networking performance counters are enabled or disabled with a single setting in the configuration file.</span></span> <span data-ttu-id="79abc-123">Nie można włączyć lub wyłączyć poszczególnych liczników wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="79abc-123">Individual networking performance counters cannot be enabled or disabled.</span></span> <span data-ttu-id="79abc-124">Aby uzyskać więcej informacji na temat określonych liczników wydajności sieci, zobacz [Network Performance Counters](../../../debug-trace-profile/performance-counters.md#networking-performance-counters).</span><span class="sxs-lookup"><span data-stu-id="79abc-124">For more information on the specific networking performance counters, see [Networking performance counters](../../../debug-trace-profile/performance-counters.md#networking-performance-counters).</span></span>  
+ <span data-ttu-id="3669d-121">Liczniki wydajności sieci muszą być włączone w pliku konfiguracji, który ma być używany.</span><span class="sxs-lookup"><span data-stu-id="3669d-121">Networking performance counters need to be enabled in the configuration file to be used.</span></span> <span data-ttu-id="3669d-122">Wszystkie liczniki wydajności sieci są włączone lub wyłączone przy użyciu jednego ustawienia w pliku konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="3669d-122">All networking performance counters are enabled or disabled with a single setting in the configuration file.</span></span> <span data-ttu-id="3669d-123">Nie można włączyć lub wyłączyć poszczególnych liczników wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="3669d-123">Individual networking performance counters cannot be enabled or disabled.</span></span> <span data-ttu-id="3669d-124">Aby uzyskać więcej informacji na temat określonych liczników wydajności sieci, zobacz [Network Performance Counters](../../../debug-trace-profile/performance-counters.md#networking-performance-counters).</span><span class="sxs-lookup"><span data-stu-id="3669d-124">For more information on the specific networking performance counters, see [Networking performance counters](../../../debug-trace-profile/performance-counters.md#networking-performance-counters).</span></span>  
   
- <span data-ttu-id="79abc-125">Wartością domyślną jest to, że liczniki wydajności sieci są wyłączone.</span><span class="sxs-lookup"><span data-stu-id="79abc-125">The default value is that networking performance counters are disabled.</span></span>  
+ <span data-ttu-id="3669d-125">Wartością domyślną jest to, że liczniki wydajności sieci są wyłączone.</span><span class="sxs-lookup"><span data-stu-id="3669d-125">The default value is that networking performance counters are disabled.</span></span>  
   
- <span data-ttu-id="79abc-126"><xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>Właściwość może służyć do uzyskiwania bieżącej wartości **włączonego** atrybutu z odpowiednich plików konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="79abc-126">The <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> property can be used to get the current value of the **enabled** attribute from applicable configuration files.</span></span>  
+ <span data-ttu-id="3669d-126"><xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>Właściwość może służyć do uzyskiwania bieżącej wartości **włączonego** atrybutu z odpowiednich plików konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="3669d-126">The <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> property can be used to get the current value of the **enabled** attribute from applicable configuration files.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="79abc-127">Przykład</span><span class="sxs-lookup"><span data-stu-id="79abc-127">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="3669d-127">Przykład</span><span class="sxs-lookup"><span data-stu-id="3669d-127">Example</span></span>  
 
- <span data-ttu-id="79abc-128">Poniższy przykład pokazuje, jak skonfigurować <xref:System.Net> i powiązane przestrzenie nazw w celu włączenia liczników wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="79abc-128">The following example shows how to configure the <xref:System.Net> and related namespaces to enable networking performance counters.</span></span>  
+ <span data-ttu-id="3669d-128">Poniższy przykład pokazuje, jak skonfigurować <xref:System.Net> i powiązane przestrzenie nazw w celu włączenia liczników wydajności sieci.</span><span class="sxs-lookup"><span data-stu-id="3669d-128">The following example shows how to configure the <xref:System.Net> and related namespaces to enable networking performance counters.</span></span>  
   
 ```xml  
 <configuration>  
@@ -78,9 +77,9 @@ ms.locfileid: "91190244"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="79abc-129">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="79abc-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3669d-129">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="3669d-129">See also</span></span>
 
 - <xref:System.Net.Configuration.PerformanceCountersElement?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="79abc-130">Schemat ustawień sieciowych</span><span class="sxs-lookup"><span data-stu-id="79abc-130">Network Settings Schema</span></span>](index.md)
-- [<span data-ttu-id="79abc-131">Liczniki wydajności sieci</span><span class="sxs-lookup"><span data-stu-id="79abc-131">Networking Performance Counters</span></span>](../../../debug-trace-profile/performance-counters.md#networking-performance-counters)
+- [<span data-ttu-id="3669d-130">Schemat ustawień sieciowych</span><span class="sxs-lookup"><span data-stu-id="3669d-130">Network Settings Schema</span></span>](index.md)
+- [<span data-ttu-id="3669d-131">Liczniki wydajności sieci</span><span class="sxs-lookup"><span data-stu-id="3669d-131">Networking Performance Counters</span></span>](../../../debug-trace-profile/performance-counters.md#networking-performance-counters)
