@@ -2,15 +2,15 @@
 title: ASP.NET Core istotne zmiany
 titleSuffix: ''
 description: Wyświetla listę istotnych zmian w ASP.NET Core.
-ms.date: 09/29/2020
+ms.date: 10/06/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 0c7ed795868ad4a03dd52e2e23014a3d0f220c86
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 37a366e30f7dc25a5da430de777755b8c9f6dd38
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609333"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804949"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core istotne zmiany
 
@@ -41,6 +41,7 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 - [Blazor: funkcja ProtectedBrowserStorage została przeniesiona do platformy udostępnionej](#blazor-protectedbrowserstorage-feature-moved-to-shared-framework)
 - [Blazor: RenderTreeFrame pola publiczne ReadOnly mają właściwości](#blazor-rendertreeframe-readonly-public-fields-have-become-properties)
 - [Blazor: zmieniono platformę docelową pakietów NuGet](#blazor-target-framework-of-nuget-packages-changed)
+- [Blazor: Zaktualizowano obsługę przeglądarki](#blazor-updated-browser-support)
 - [Buforowanie: Usunięto Właściwość CompactOnMemoryPressure](#caching-compactonmemorypressure-property-removed)
 - [Buforowanie: Microsoft. Extensions. buforowanie. SqlServer używa nowego pakietu SqlClient](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
 - [Buforowanie: typy ResponseCaching "pubternal" zostały zmienione na wewnętrzne](#caching-responsecaching-pubternal-types-changed-to-internal)
@@ -122,7 +123,7 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 
 ***
 
-[!INCLUDE [binaryformatter-serialization-obsolete](../../../includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
+[!INCLUDE[Serialization: BinaryFormatter serialization obsolete](~/includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
 
 ***
 
@@ -143,6 +144,10 @@ Następujące istotne zmiany w ASP.NET Core 3,0, 3,1 i 5,0 są udokumentowane na
 ***
 
 [!INCLUDE[Blazor: Target framework of NuGet packages changed](~/includes/core-changes/aspnetcore/5.0/blazor-packages-target-framework-changed.md)]
+
+***
+
+[!INCLUDE[Blazor: Updated browser support](~/includes/core-changes/aspnetcore/5.0/blazor-browser-support-updated.md)]
 
 ***
 

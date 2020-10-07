@@ -4,12 +4,12 @@ description: W tym samouczku przedstawiono szereg funkcji platformy .NET Core i 
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: dbe64fe0a01ddab9e7a3ad0a9118b3fe59fba8aa
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 4c32b08c3e7eeaedce687ea5bc572e6a7bee0d3e
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656986"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804897"
 ---
 # <a name="console-app"></a>Aplikacja konsolowa
 
@@ -187,7 +187,7 @@ ShowTeleprompter().Wait();
 W tym miejscu `Main` kod wykonuje synchronicznie oczekiwania. `await`Jeśli to możliwe, należy użyć operatora zamiast synchronicznego oczekiwania. Ale w metodzie aplikacji konsolowej `Main` nie można używać `await` operatora. Spowoduje to zakończenie działania aplikacji przed ukończeniem wszystkich zadań.
 
 > [!NOTE]
-> Jeśli używasz języka C# 7,1 lub nowszego, możesz tworzyć aplikacje konsolowe za pomocą [ `async` `Main` metody](../whats-new/csharp-7-1.md#async-main).
+> Jeśli używasz języka C# 7,1 lub nowszego, możesz tworzyć aplikacje konsolowe za pomocą [ `async` `Main` metody](../whats-new/csharp-7.md#async-main).
 
 Następnie należy napisać drugą metodę asynchroniczną w celu odczytania z konsoli i obserwowania dla "<" (mniejszej niż), ">" (większe niż) i "X" lub "x". Oto Metoda dodawana do tego zadania:
 

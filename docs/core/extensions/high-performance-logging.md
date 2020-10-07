@@ -4,12 +4,12 @@ author: IEvangelist
 description: Dowiedz się, jak używać LoggerMessage do tworzenia delegatów z pamięcią podręczną, które wymagają mniejszej liczby alokacji obiektów do scenariuszy rejestrowania o wysokiej wydajności.
 ms.author: dapine
 ms.date: 09/25/2020
-ms.openlocfilehash: d722a3a5cb38f33b6833a5c280687ce6c1e46bf9
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 9111b9553c913cff2937b574250b65e633250f4f
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614757"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804762"
 ---
 # <a name="high-performance-logging-in-net"></a>Rejestrowanie o wysokiej wydajności w programie .NET
 
@@ -93,7 +93,7 @@ info: WorkerServiceOptions.Example.Worker[1]
 
 Metoda [DefineScope — (String)](xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A) tworzy <xref:System.Func%601> delegat do definiowania [zakresu dziennika](logging.md#log-scopes). <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> przeciążenia dopuszczają przekazywanie do trzech parametrów typu do nazwanego ciągu formatu (szablonu).
 
-Podobnie jak w przypadku <xref:Microsoft.Extensions.Logging.LoggerMessage.Define%2A> metody, ciąg dostarczony do <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> metody jest szablonem, a nie ciągiem interpolowanym. Symbole zastępcze są wypełniane w kolejności, w jakiej są określone typy. Nazwy symboli zastępczych w szablonie powinny być opisowe i spójne w szablonach. Służą one jako nazwy właściwości w danych dziennika strukturalnego. Zalecamy używanie [wielkości liter](/dotnet/standard/design-guidelines/capitalization-conventions) w języku Pascal dla nazw zastępczych. Na przykład `{Item}` , `{DateTime}` .
+Podobnie jak w przypadku <xref:Microsoft.Extensions.Logging.LoggerMessage.Define%2A> metody, ciąg dostarczony do <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> metody jest szablonem, a nie ciągiem interpolowanym. Symbole zastępcze są wypełniane w kolejności, w jakiej są określone typy. Nazwy symboli zastępczych w szablonie powinny być opisowe i spójne w szablonach. Służą one jako nazwy właściwości w danych dziennika strukturalnego. Zalecamy używanie [wielkości liter](../../standard/design-guidelines/capitalization-conventions.md) w języku Pascal dla nazw zastępczych. Na przykład `{Item}` , `{DateTime}` .
 
 Zdefiniuj [zakres dziennika](logging.md#log-scopes) , który ma zostać zastosowany do serii komunikatów dziennika przy użyciu <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> metody.
 
@@ -151,6 +151,6 @@ info: WorkerServiceOptions.Example.Worker[1]
       Processing priority item: Priority-Deferred (37bf736c-7a26-4a2a-9e56-e89bcf3b8f35): 'Set process state'
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie w programie .NET](logging.md)

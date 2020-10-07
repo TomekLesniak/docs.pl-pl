@@ -2,12 +2,12 @@
 title: Metryki ML.NET
 description: Informacje o metrykach, które są używane do oceny wydajności modelu ML.NET
 ms.date: 12/17/2019
-ms.openlocfilehash: 4aca8dbdd9f137509ab9167ecc77f9ca6994e415
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 046e0a3feea2da702dfef5ca9ce4f498fce5fb26
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679511"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804825"
 ---
 # <a name="evaluate-your-mlnet-model-with-metrics"></a>Oceń model ML.NET przy użyciu metryk
 
@@ -23,7 +23,7 @@ Na przykład dla zadania klasyfikacji model jest oceniany przez zmierzenie, jak 
 |-----------|-----------------------|-----------|
 | **Odpowiedni** |  [Dokładność](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification) jest proporcją prawidłowych prognoz z zestawem danych testowych. Jest to stosunek liczby poprawnych prognoz do całkowitej liczby próbek wejściowych. Działa dobrze, jeśli istnieje podobna liczba próbek należących do każdej klasy.| **Im bliżej 1,00, tym lepiej**. Ale dokładnie 1,00 wskazuje na problem (często: wyciek etykiet/obiektu docelowego, nadmierne dopasowanie lub testowanie przy użyciu danych szkoleniowych). Gdy dane testowe są niezrównoważone (gdy większość wystąpień należy do jednej z klas), zestaw danych jest mały lub wyniki zbliżają się do 0,00 lub 1,00, a dokładność nie przechwytuje skuteczności klasyfikatora i należy sprawdzić dodatkowe metryki. |
 | **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) lub *obszar pod krzywą* mierzy obszar pod krzywą utworzoną przez wyczyszczenie prawdziwej dodatniej stawki w porównaniu z fałszywą dodatnią częstotliwością.  |   **Im bliżej 1,00, tym lepiej**. Aby model mógł zostać akceptowalny, powinien być większy niż 0,50. Model z AUCem 0,50 lub mniej to bezwartościowe. |
-| **AUCPR** | [aucPR](https://www.coursera.org/lecture/ml-classification/precision-recall-curve-rENu8) lub *obszar pod krzywą krzywej odwołania z dokładnością*: użyteczna miara sukcesu w przypadku, gdy klasy są niezrównoważone (zestawy danych o wysokim stopniu skośnym). |  **Im bliżej 1,00, tym lepiej**. Wysokie wyniki zbliżone do 1,00 pokazują, że klasyfikator zwraca dokładne wyniki (wysoka precyzja), a także zwraca większość pozytywnych wyników (wysoki stopień odwołania). |
+| **AUCPR** | aucPR lub *obszar pod krzywą krzywej odwołania z dokładnością*: użyteczna miara sukcesu w przypadku, gdy klasy są niezrównoważone (zestawy danych o wysokim stopniu skośnym). |  **Im bliżej 1,00, tym lepiej**. Wysokie wyniki zbliżone do 1,00 pokazują, że klasyfikator zwraca dokładne wyniki (wysoka precyzja), a także zwraca większość pozytywnych wyników (wysoki stopień odwołania). |
 | **F1-Score** | [Wynik F1](https://en.wikipedia.org/wiki/F1_score) jest znany również jako współczynnik *f-Score lub f-Measure*. Jest to średnia harmoniczna precyzji i odwołania. Wynik F1 jest przydatny, gdy chcesz uzyskać równowagę między dokładnością a odwołaniem.| **Im bliżej 1,00, tym lepiej**.  Wynik F1 osiąga swoją najlepszą wartość w 1,00 i najgorszy wynik o godzinie 0,00. Informuje o tym, jak precyzyjnym klasyfikatorem jest. |
 
 Aby uzyskać więcej informacji na temat metryk klasyfikacji danych binarnych, przeczytaj następujące artykuły:

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
-ms.openlocfilehash: f2cb1004ef6316bc67189c4e00930f6086cf0dad
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 178d77c225144497982487afa00f4493e17d1744
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91152926"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805216"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Powiązywanie danych z kontrolkami (Usługi danych programu WCF)
 
@@ -36,7 +36,7 @@ Za pomocą Usługi danych programu WCF można powiązać kontrolki, takie jak `C
   
 ## <a name="binding-data-to-windows-presentation-foundation-elements"></a>Powiązywanie danych z Windows Presentation Foundation elementami  
 
- Ponieważ <xref:System.Data.Services.Client.DataServiceCollection%601> Klasa dziedziczy z <xref:System.Collections.ObjectModel.ObservableCollection%601> klasy, można powiązać obiekty z elementem lub kontrolką w aplikacji Windows Presentation Foundation (WPF) tak jak w przypadku używania <xref:System.Collections.ObjectModel.ObservableCollection%601> klasy do powiązania. Aby uzyskać więcej informacji, zobacz [powiązanie danych (Windows Presentation Foundation)](../../../desktop-wpf/data/data-binding-overview.md). Jednym ze sposobów powiązania danych usługi danych z kontrolkami WPF jest ustawienie `DataContext` właściwości elementu na wystąpienie klasy zawierającej <xref:System.Data.Services.Client.DataServiceCollection%601> wynik zapytania. W takim przypadku należy użyć właściwości, <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> Aby ustawić źródło obiektu dla kontrolki. Użyj <xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A> właściwości, aby określić, która właściwość powiązanego obiektu ma być wyświetlana. W przypadku powiązania elementu z obiektem pokrewnym, który jest zwracany przez właściwość nawigacji, należy uwzględnić ścieżkę w powiązaniu zdefiniowanym dla <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> właściwości. Ta ścieżka jest określana względem obiektu głównego ustawionego przez <xref:System.Windows.FrameworkElement.DataContext%2A> Właściwość kontrolki nadrzędnej. Poniższy przykład ustawia <xref:System.Windows.FrameworkElement.DataContext%2A> Właściwość <xref:System.Windows.Controls.StackPanel> elementu, aby powiązać formant nadrzędny z <xref:System.Data.Services.Client.DataServiceCollection%601> obiektami klienta:  
+ Ponieważ <xref:System.Data.Services.Client.DataServiceCollection%601> Klasa dziedziczy z <xref:System.Collections.ObjectModel.ObservableCollection%601> klasy, można powiązać obiekty z elementem lub kontrolką w aplikacji Windows Presentation Foundation (WPF) tak jak w przypadku używania <xref:System.Collections.ObjectModel.ObservableCollection%601> klasy do powiązania. Aby uzyskać więcej informacji, zobacz [powiązanie danych (Windows Presentation Foundation)](/dotnet/desktop/wpf/data/data-binding-overview). Jednym ze sposobów powiązania danych usługi danych z kontrolkami WPF jest ustawienie `DataContext` właściwości elementu na wystąpienie klasy zawierającej <xref:System.Data.Services.Client.DataServiceCollection%601> wynik zapytania. W takim przypadku należy użyć właściwości, <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> Aby ustawić źródło obiektu dla kontrolki. Użyj <xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A> właściwości, aby określić, która właściwość powiązanego obiektu ma być wyświetlana. W przypadku powiązania elementu z obiektem pokrewnym, który jest zwracany przez właściwość nawigacji, należy uwzględnić ścieżkę w powiązaniu zdefiniowanym dla <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> właściwości. Ta ścieżka jest określana względem obiektu głównego ustawionego przez <xref:System.Windows.FrameworkElement.DataContext%2A> Właściwość kontrolki nadrzędnej. Poniższy przykład ustawia <xref:System.Windows.FrameworkElement.DataContext%2A> Właściwość <xref:System.Windows.Controls.StackPanel> elementu, aby powiązać formant nadrzędny z <xref:System.Data.Services.Client.DataServiceCollection%601> obiektami klienta:  
   
  [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderscustom.xaml.cs#masterdetailbinding)]
  [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderswpf.xaml.cs#masterdetailbinding)]

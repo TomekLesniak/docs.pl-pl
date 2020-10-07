@@ -4,12 +4,12 @@ description: Dowiedz się, jak używać tokenów anulowania do sygnalizowania ż
 ms.date: 08/19/2020
 ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 84cd1bb413d20b6c13be8415c13c72b57873b1cf
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 79c9db53674182489c89d657786bf39e8bb44b21
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654708"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805255"
 ---
 # <a name="cancel-a-list-of-tasks-c"></a>Anulowanie listy zadań (C#)
 
@@ -115,7 +115,7 @@ static async Task Main()
 }
 ```
 
-Zaktualizowana `Main` Metoda jest teraz uważana za [asynchroniczny element główny](../../../whats-new/csharp-7-1.md#async-main), który umożliwia asynchroniczny punkt wejścia do pliku wykonywalnego. Zapisuje kilka komunikatów instruktażowych w konsoli programu, a następnie deklaruje <xref:System.Threading.Tasks.Task> wystąpienie o nazwie `cancelTask` , które odczytaje klucze konsoli. Po naciśnięciu klawisza <kbd>Enter</kbd> następuje wywołanie <xref:System.Threading.CancellationTokenSource.Cancel?displayProperty=nameWithType> . Spowoduje to anulowanie tego sygnału. Następnie `sumPageSizesTask` zmienna jest przypisywana z `SumPageSizesAsync` metody. Oba zadania są następnie przenoszone do <xref:System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[])?displayProperty=nameWithType> , które będą kontynuowane po zakończeniu jednego z tych dwóch zadań.
+Zaktualizowana `Main` Metoda jest teraz uważana za [asynchroniczny element główny](../../../whats-new/csharp-7.md#async-main), który umożliwia asynchroniczny punkt wejścia do pliku wykonywalnego. Zapisuje kilka komunikatów instruktażowych w konsoli programu, a następnie deklaruje <xref:System.Threading.Tasks.Task> wystąpienie o nazwie `cancelTask` , które odczytaje klucze konsoli. Po naciśnięciu klawisza <kbd>Enter</kbd> następuje wywołanie <xref:System.Threading.CancellationTokenSource.Cancel?displayProperty=nameWithType> . Spowoduje to anulowanie tego sygnału. Następnie `sumPageSizesTask` zmienna jest przypisywana z `SumPageSizesAsync` metody. Oba zadania są następnie przenoszone do <xref:System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[])?displayProperty=nameWithType> , które będą kontynuowane po zakończeniu jednego z tych dwóch zadań.
 
 ## <a name="create-the-asynchronous-sum-page-sizes-method"></a>Tworzenie asynchronicznej metody rozmiarów stron sum
 

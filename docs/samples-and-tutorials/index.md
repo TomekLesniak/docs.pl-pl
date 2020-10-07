@@ -4,12 +4,12 @@ description: Informacje na temat przykładów i samouczków dotyczących platfor
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/19/2020
-ms.openlocfilehash: 7e477683834b46439626e03e6ff411fabc52672d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 00718491df00e5747ba6e0043b70dc1019dd906b
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557193"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805014"
 ---
 # <a name="net-samples-and-tutorials"></a>Przykłady i samouczki dotyczące platformy .NET
 
@@ -17,7 +17,7 @@ Dokumentacja platformy .NET zawiera zestaw przykładów i samouczków, które po
 
 ## <a name="net-core"></a>.NET Core
 
-### <a name="samples"></a>Przykłady
+### <a name="samples"></a>Samples
 
 **[Testowanie jednostkowe w programie .NET Core przy użyciu testu dotnet](../core/testing/unit-testing-with-dotnet-test.md)**
 
@@ -39,7 +39,7 @@ Zobacz [samouczki ASP.NET Core](/aspnet/core/tutorials/). Wiele artykułów w do
 
 ## <a name="c-language"></a>C# — język
 
-### <a name="samples"></a>Przykłady
+### <a name="samples"></a>Samples
 
 **[Iteratory](../csharp/iterators.md)**
 
@@ -99,7 +99,7 @@ W tym samouczku pokazano, jak utworzyć prostą aplikację na platformie .NET Co
 
 **[Uruchamianie aplikacji ASP.NET MVC w kontenerach platformy Docker systemu Windows](/aspnet/mvc/overview/deployment/docker-aspnetmvc)**
 
-W tym samouczku przedstawiono sposób wdrażania istniejącej aplikacji ASP.NET MVC w kontenerze platformy Docker systemu Windows. [Ukończony przykład](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator) jest dostępny w repozytorium dotnet/Samples w witrynie GitHub.
+W tym samouczku przedstawiono sposób wdrażania istniejącej aplikacji ASP.NET MVC w kontenerze platformy Docker systemu Windows.
 
 ## <a name="view-and-download-samples"></a>Wyświetl i Pobierz przykłady
 

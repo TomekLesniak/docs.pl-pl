@@ -4,12 +4,12 @@ description: Dowiedz się, w jaki sposób interfejs API dostawcy rejestrowania j
 author: IEvangelist
 ms.author: dapine
 ms.date: 09/25/2020
-ms.openlocfilehash: 96a5ece10068e39c991e67a36f22e725d6380af5
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 4d4658b7ca892d101af32f5cf8ac48a4beabfb92
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755888"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804755"
 ---
 # <a name="logging-providers-in-net"></a>Dostawcy rejestrowania w programie .NET
 
@@ -98,7 +98,7 @@ W systemie Linux `Debug` Lokalizacja dziennika dostawcy jest zależna od dystryb
 
 Narzędzie do [śledzenia dotnet](../diagnostics/dotnet-trace.md) to międzyplatformowe narzędzie globalne interfejsu wiersza polecenia, które umożliwia zbieranie śladów programu .NET Core uruchomionego procesu. Narzędzie zbiera <xref:Microsoft.Extensions.Logging.EventSource> dane dostawcy za pomocą <xref:Microsoft.Extensions.Logging.EventSource.LoggingEventSource> .
 
-Aby uzyskać instrukcje dotyczące instalacji, zobacz [dotnet-Trace](../diagnostics/dotnet-trace.md) . Aby zapoznać się z samouczkiem diagnostycznym korzystającym z programu `dotnet-trace` , zobacz [debugowanie wysokiego użycia procesora CPU w programie .NET Core](/../diagnostics/debug-highcpu.md).
+Aby uzyskać instrukcje dotyczące instalacji, zobacz [dotnet-Trace](../diagnostics/dotnet-trace.md) . Aby zapoznać się z samouczkiem diagnostycznym korzystającym z programu `dotnet-trace` , zobacz [debugowanie wysokiego użycia procesora CPU w programie .NET Core](../diagnostics/debug-highcpu.md).
 
 ### <a name="windows-eventlog"></a>Dziennik zdarzeń systemu Windows
 

@@ -2,12 +2,12 @@
 title: Windows Forms istotne zmiany
 description: Wyświetla listę istotnych zmian w Windows Forms dla platform .NET Core i .NET 5.
 ms.date: 09/08/2020
-ms.openlocfilehash: 3e7d077d07203d9c231ae4a7805e593c5432c135
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 2311faab026bf1dfde348e231937eff73ec46172
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679006"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804867"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Istotne zmiany w Windows Forms
 
@@ -17,6 +17,7 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
+| [Formant DataGridView nie jest już resetowany czcionek dla niestandardowych stylów komórek](#datagridview-no-longer-resets-fonts-for-customized-cell-styles) | 5,0 |
 | [OutputType ustawiony na WinExe dla aplikacji WPF i WinForms](#outputtype-set-to-winexe-for-wpf-and-winforms-apps) | 5,0 |
 | [Interfejsy API związane z formantem DataGridView teraz zgłaszają InvalidOperationException](#datagridview-related-apis-now-throw-invalidoperationexception) | 5,0 |
 | [WinForms i aplikacje WPF używają Microsoft. NET. Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5,0 |
@@ -39,6 +40,10 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 | [Nieobsługiwany przełącznik zgodności UseLegacyImages](#uselegacyimages-compatibility-switch-not-supported) | 3,0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [datagridview-doesnt-reset-custom-font-settings](../../../includes/core-changes/windowsforms/5.0/datagridview-doesnt-reset-custom-font-settings.md)]
+
+***
 
 [!INCLUDE [automatically-infer-winexe-output-type](../../../includes/core-changes/windowsforms/5.0/automatically-infer-winexe-output-type.md)]
 
@@ -124,6 +129,6 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 ***
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Port aplikacji Windows Forms do programu .NET Core](../porting/winforms.md)

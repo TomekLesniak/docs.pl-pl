@@ -4,12 +4,12 @@ description: Ten zaawansowany samouczek zawiera wprowadzenie do typów referency
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 70e6a7a906bc9a35918cf3e26c3e23bd0cfdafde
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: bd575b226a2ff61e938719b064ff5ede0cf66013
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755853"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805183"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Samouczek: wyraźny cel projektowania dokładniej z typami referencyjnymi nullable i niedopuszczających wartości null
 
@@ -223,4 +223,4 @@ Dowiedz się więcej przez Migrowanie istniejącej aplikacji w celu używania ty
 > [Uaktualnianie aplikacji w celu używania typów referencyjnych dopuszczających wartości null](upgrade-to-nullable-references.md)
 
 Dowiedz się, jak używać typu referencyjnego nullable podczas korzystania z Entity Framework:
-> [Podstawy Entity Framework Core: Praca z typami odwołań dopuszczających wartości null](https://docs.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types)
+> [Podstawy Entity Framework Core: Praca z typami odwołań dopuszczających wartości null](/ef/core/miscellaneous/nullable-reference-types)

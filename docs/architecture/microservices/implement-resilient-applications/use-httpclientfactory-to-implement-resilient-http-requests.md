@@ -2,12 +2,12 @@
 title: Używanie elementu IHttpClientFactory do implementowania odpornych na błędy żądań HTTP
 description: Dowiedz się, jak używać usługi IHttpClientFactory, dostępnej od platformy .NET Core 2,1, do tworzenia `HttpClient` wystąpień, co ułatwia korzystanie z niej w aplikacjach.
 ms.date: 08/31/2020
-ms.openlocfilehash: ae093ef960b2540bf4916bf72ad3bec51fa33ebe
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 4ebb82395dd685d30846b3549b654abf7c41d43f
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91152575"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804812"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>Używanie elementu IHttpClientFactory do implementowania odpornych na błędy żądań HTTP
 
@@ -188,13 +188,13 @@ namespace Microsoft.eShopOnContainers.WebMVC.Controllers
 
 Do tego momentu Powyższy fragment kodu pokazuje przykład wykonywania zwykłych żądań HTTP. Ale "Magic" znajduje się w następujących sekcjach, w których pokazano, jak wszystkie żądania HTTP wykonywane przez `HttpClient` program, mogą mieć odporne na błędy zasady, takie jak ponowne próby przy użyciu wykładniczej wycofywania, wyłączników, funkcji zabezpieczeń przy użyciu tokenów uwierzytelniania, a nawet innych funkcji niestandardowych. Wszystkie te czynności można wykonać tylko przez dodanie zasad i delegowanie programów obsługi do zarejestrowanych klientów z określonym typem.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Używanie HttpClientFactory w programie .NET Core**  
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)
 
 - **Kod źródłowy HttpClientFactory w `dotnet/extensions` repozytorium GitHub**  
-  <https://github.com/dotnet/extensions/tree/master/src/HttpClientFactory>
+  <https://github.com/dotnet/extensions/tree/v3.1.8/src/HttpClientFactory>
 
 - **Polly (odporność platformy .NET i Biblioteka obsługi błędów przejściowych)**  
   <http://www.thepollyproject.org/>

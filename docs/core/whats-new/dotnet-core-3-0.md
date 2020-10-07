@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 60b511adecf37855de91f45245fc55911ba281dc
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 8ba64a6e3bee4a5d27a07ab4ad4ef3a3f0749778
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654774"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804635"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co nowego w programie .NET Core 3.0
 
@@ -307,7 +307,7 @@ dotnet new winforms
 
 Program Visual Studio 2019 dodaje **nowe szablony projektów** dla platformy .net Core 3,0 Windows Forms i WPF.
 
-Aby uzyskać więcej informacji na temat sposobu przenoszenia istniejącej aplikacji .NET Framework, zobacz [port WPF projekty](../../desktop-wpf/migration/convert-project-from-net-framework.md) i [projekty Windows Forms portów](../porting/winforms.md).
+Aby uzyskać więcej informacji na temat sposobu przenoszenia istniejącej aplikacji .NET Framework, zobacz [port WPF projekty](/dotnet/desktop/wpf/migration/convert-project-from-net-framework) i [projekty Windows Forms portów](../porting/winforms.md).
 
 #### <a name="winforms-high-dpi"></a>Bardzo wysokie wartości DPI
 
@@ -520,7 +520,7 @@ Aby uzyskać więcej informacji, zobacz elementy [wewnętrzne zależne od platfo
 
 ### <a name="improved-net-core-version-apis"></a>Ulepszone interfejsy API wersji platformy .NET Core
 
-Począwszy od platformy .NET Core 3,0, interfejsy API wersji dostarczone z platformą .NET Core teraz zwracają oczekiwane informacje. Przykład:
+Począwszy od platformy .NET Core 3,0, interfejsy API wersji dostarczone z platformą .NET Core teraz zwracają oczekiwane informacje. Na przykład:
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");

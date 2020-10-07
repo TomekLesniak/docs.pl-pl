@@ -3,12 +3,12 @@ title: Programowanie funkcjonalne a bezwzględne programowanie — LINQ to XML
 description: Poznaj programowanie funkcjonalne i różnice między tradycyjnymi, niezależnymi (proceduralnymi) programowaniem.
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
-ms.openlocfilehash: c7d16d61f9865cda7c625f91c2c822be1a327fd6
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: e99cffa9500c07c507962f41b17ab3f3b05c7781
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679369"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805290"
 ---
 # <a name="functional-programming-vs-imperative-programming-linq-to-xml"></a>Programowanie funkcjonalne a programowanie bezwzględne (LINQ to XML)
 
@@ -54,8 +54,8 @@ W przeciwieństwie do programowania funkcjonalnego podejścia do problemów obli
 
 Na szczęście język C# i Visual Basic nie wymagają pełnego przestępności do programowania funkcjonalnego, ponieważ obsługują zarówno metody programowania zasadniczego, jak i funkcjonalnego. Deweloper może wybrać, które podejście jest najbardziej odpowiednie dla konkretnego scenariusza. W rzeczywistości programy często łączą oba podejścia.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie do czystych przekształceń funkcjonalnych](introduction-pure-functional-transformations.md)
-- [Przekształcenia XSLT](/../../standard/data/xml/xslt-transformations.md)
+- [Przekształcenia XSLT](../data/xml/xslt-transformations.md)
 - [Refaktoryzacja do czystych funkcji](refactor-pure-functions.md)

@@ -3,12 +3,12 @@ title: Analizator zgodności platformy
 description: Analizator Roslyn, który może pomóc w wykrywaniu problemów ze zgodnością platformy w aplikacjach i bibliotekach dla wielu platform.
 author: buyaa-n
 ms.date: 09/17/2020
-ms.openlocfilehash: fcd5ec755789ff7f2472d8077dd52f321bf9f167
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 44c2c2d9674b13f314a057f847df2d4d474cc2be
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756185"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805301"
 ---
 # <a name="platform-compatibility-analyzer"></a>Analizator zgodności platformy
 
@@ -25,7 +25,7 @@ Nowe interfejsy API obejmują:
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Analizator zgodności platformy jest jednym z Roslynjących analiz jakości kodu. Począwszy od platformy .NET 5,0, analizatory te są [dołączone do zestawu .NET SDK](../../fundamentals/productivity/code-analysis.md). Analizator zgodności platformy jest domyślnie włączony tylko w przypadku projektów docelowych `net5.0` lub nowszych. Można go jednak [włączyć](/visualstudio/code-quality/ca1416.md#configurability) dla projektów przeznaczonych dla innych platform.
+Analizator zgodności platformy jest jednym z Roslynjących analiz jakości kodu. Począwszy od platformy .NET 5,0, analizatory te są [dołączone do zestawu .NET SDK](../../fundamentals/code-analysis/overview.md). Analizator zgodności platformy jest domyślnie włączony tylko w przypadku projektów docelowych `net5.0` lub nowszych. Można go jednak [włączyć](/visualstudio/code-quality/ca1416.md#configurability) dla projektów przeznaczonych dla innych platform.
 
 ## <a name="how-the-analyzer-determines-platform-dependency"></a>Jak Analizator określa zależność platformy
 
@@ -381,5 +381,5 @@ Jako warunek dla programu można również użyć wszystkich testów warunkowych
 - [Nazwy platformy docelowej w programie .NET 5](https://github.com/dotnet/designs/blob/master/accepted/2020/net5/net5.md)
 - [Dodawanie adnotacji do interfejsów API specyficznych dla platformy i wykrywanie ich użycia](https://github.com/dotnet/designs/blob/master/accepted/2020/platform-checks/platform-checks.md)
 - [Dodawanie adnotacji do interfejsów API jako nieobsługiwanych na określonych platformach](https://github.com/dotnet/designs/blob/master/accepted/2020/platform-exclusion/platform-exclusion.md)
-- [Analizator zgodności platformy CA1416](/visualstudio/code-quality/ca1416)
+- [Analizator zgodności platformy CA1416](../../fundamentals/code-analysis/quality-rules/ca1416.md)
 - [Analizator interfejsów API platformy .NET](../../standard/analyzers/api-analyzer.md)

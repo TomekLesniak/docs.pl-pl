@@ -3,12 +3,12 @@ title: Co nowego w języku C# 7,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji w wersji 7,0 języka C#.
 ms.date: 10/02/2020
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 774bf9860d929d725f3a2bda4a52bc75ae3921fe
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 28f2d8f0b61d8f05e558834fc1a96fc020201a08
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755827"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805268"
 ---
 # <a name="whats-new-in-c-70-through-c-73"></a>Co nowego w języku C# 7,0 za poorednictwem języka C# 7,3
 
@@ -41,9 +41,9 @@ C# 7.0 — 7.3 dodaje te funkcje i motywy do języka C#:
   - Po nazwanych argumentach mogą występować argumenty pozycyjne.
 - [`private protected` Modyfikator dostępu](#private-protected-access-modifier)
   - `private protected`Modyfikator dostępu umożliwia dostęp do klas pochodnych w tym samym zestawie.
-- [Ulepszone rozwiązanie przeciążania](#improved-overload-resolution)
+- [Ulepszone rozwiązanie przeciążania](#improved-overload-candidates)
   - Nowe reguły do rozwiązywania niejednoznaczności rozpoznawania przeciążenia.
-- [Techniki pisania bezpiecznego wydajnego kodu](#safe-efficient-code-enhancements)
+- [Techniki pisania bezpiecznego wydajnego kodu](#enabling-more-efficient-safe-code)
   - Kombinacja ulepszeń składni, które umożliwiają pracę z typami wartości przy użyciu semantyki referencyjnej.
 
 Na koniec kompilator ma nowe opcje:

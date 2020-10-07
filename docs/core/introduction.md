@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat platformy .NET, bezpłatnej platformy
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: c161daed58c94940734d057bb1b42f3b87caf97c
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 2b339db769c283ff21e6ad48d5b672794e43a76b
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756068"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804799"
 ---
 # <a name="introduction-to-net"></a>Wprowadzenie do platformy .NET
 
@@ -17,7 +17,7 @@ ms.locfileid: "91756068"
 
 * [Aplikacje sieci Web, interfejsy API sieci Web i mikrousługi](/aspnet/core/introduction-to-aspnet-core#recommended-learning-path)
 * [Funkcje bezserwerowe w chmurze](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-csharp)
-* [Aplikacje natywne dla chmury](/dotnet/architecture/cloud-native/)
+* [Aplikacje natywne dla chmury](../architecture/cloud-native/index.md)
 * [Aplikacje mobilne](https://dotnet.microsoft.com/learn/xamarin/hello-world-tutorial/intro)
 * Aplikacje klasyczne
   * [WPF systemu Windows](/dotnet/desktop/wpf/)
@@ -99,9 +99,9 @@ Poniżej przedstawiono niektóre możliwości obsługiwane przez Języki .NET:
 * [Bezpieczeństwo typów](../standard/base-types/common-type-system.md)
 * Wnioskowanie o typie — [C#](../csharp/programming-guide/types/index.md#specifying-types-in-variable-declarations), [F #](../fsharp/language-reference/type-inference.md), [Visual Basic](../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 * [Typy ogólne](../standard/generics.md)
-* [Delegaci](../standard/delegates-lambdas.md)
+* [Delegaty](../standard/delegates-lambdas.md)
 * [Wyrażeń lambda](../standard/delegates-lambdas.md)
-* [Wydarzeniach](../standard/events/index.md)
+* [Zdarzenia](../standard/events/index.md)
 * [Wyjątki](../standard/exceptions/index.md)
 * [Atrybuty](../standard/attributes/index.md)
 * [Kod asynchroniczny](../standard/async.md)

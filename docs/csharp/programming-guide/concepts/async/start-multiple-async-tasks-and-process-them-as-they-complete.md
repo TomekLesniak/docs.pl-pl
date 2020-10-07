@@ -3,12 +3,12 @@ title: Przetwarzanie zadań asynchronicznych po ich zakończeniu
 description: Ten przykład pokazuje, jak używać Task. WhenAny w języku C# do uruchamiania wielu zadań i przetwarzać wyniki po zakończeniu, zamiast przetwarzać je w kolejności, w jakiej zostały uruchomione.
 ms.date: 08/19/2020
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: 520953eaf851dc82440e39b348aa4b246255e126
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 860e94a9c3973ce56e7321741a1136f752aa3d18
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557310"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805242"
 ---
 # <a name="process-asynchronous-tasks-as-they-complete-c"></a>Przetwarzaj zadania asynchroniczne w miarę ich ukończenia (C#)
 
@@ -77,7 +77,7 @@ Głównym punktem wejścia do aplikacji konsolowej jest `Main` Metoda. Zastąp i
 static Task Main() => SumPageSizesAsync();
 ```
 
-Zaktualizowana `Main` Metoda jest teraz uważana za [asynchroniczny element główny](../../../whats-new/csharp-7-1.md#async-main), który umożliwia asynchroniczny punkt wejścia do pliku wykonywalnego. Jest on wyrażony jako wywołanie `SumPageSizesAsync` .
+Zaktualizowana `Main` Metoda jest teraz uważana za [asynchroniczny element główny](../../../whats-new/csharp-7.md#async-main), który umożliwia asynchroniczny punkt wejścia do pliku wykonywalnego. Jest on wyrażony jako wywołanie `SumPageSizesAsync` .
 
 ## <a name="create-the-asynchronous-sum-page-sizes-method"></a>Tworzenie asynchronicznej metody rozmiarów stron sum
 
@@ -170,7 +170,7 @@ Poniższy kod jest pełnym tekstem pliku *program.cs* na przykład.
 
 :::code language="csharp" source="snippets/multiple-tasks/Program.cs":::
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
 - [Programowanie asynchroniczne z Async i Await (C#)](index.md)

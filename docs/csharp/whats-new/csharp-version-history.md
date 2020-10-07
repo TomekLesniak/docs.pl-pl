@@ -3,12 +3,12 @@ title: Historia języka C# — Przewodnik c#
 description: Jak wygląda ten język we wcześniejszych wersjach i jak został on rozwijający od?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: b5c320e4c55803547fa44793a46e4a3da65bd0cb
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 349f2cfbe0fc93060eb6927ee8c3528c16b99aca
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063474"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805092"
 ---
 # <a name="the-history-of-c"></a>Historia języka C\#
 
@@ -19,11 +19,11 @@ Ten artykuł zawiera historię poszczególnych głównych wersji języka C#. Zes
 
 Narzędzia kompilacji w języku C# uwzględniają najnowszą wersję językową domyślnej wersji językowej. Między wersjami głównymi mogą występować wersje punktów, które opisano w innych artykułach w tej sekcji. Aby użyć najnowszych funkcji w wersji próbnej, należy [skonfigurować wersję języka kompilatora](../language-reference/configure-language-version.md) i wybrać wersję. Istnieją trzy punkty wersji od języka C# 7,0:
 
-- [C# 7,3](csharp-7-3.md):
+- C# 7,3:
   - Język C# 7,3 jest dostępny w programie [Visual Studio 2017 w wersji 15,7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) i [.NET Core 2,1 SDK](../../core/whats-new/dotnet-core-2-1.md).
-- [C# 7,2](csharp-7-2.md):
+- C# 7,2:
   - Język C# 7,2 jest dostępny w programie [Visual Studio 2017 w wersji 15,5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) i [.NET Core 2,0 SDK](../../core/whats-new/dotnet-core-2-0.md).
-- [C# 7,1](csharp-7-1.md):
+- C# 7,1:
   - Język C# 7,1 jest dostępny w programie [Visual Studio 2017 w wersji 15,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) i [.NET Core 2,0 SDK](../../core/whats-new/dotnet-core-2-0.md).
 
 ## <a name="c-version-10"></a>C#, wersja 1,0
@@ -70,7 +70,7 @@ Inne funkcje języka C# 2,0 dodaliśmy możliwości do istniejących funkcji:
 
 Chociaż język C# mógł rozpocząć pracę jako ogólny OO (zorientowany obiektowo), w języku C# wersja 2,0 zmieniła się w pospiesz. Gdy miały swoje stopy w nich, zakończyły się po kilku poważnych punktach bólu deweloperów. I zostały one w znaczący sposób.
 
-W przypadku typów ogólnych typy i metody mogą działać na dowolnym typie przy zachowaniu bezpieczeństwa typu. Na przykład, jeśli istnieje, <xref:System.Collections.Generic.List%601> a umożliwia `List<string>` `List<int>` wykonywanie operacji bezpiecznych typu na tych ciągach lub liczbach całkowitych w trakcie iteracji. Używanie typów ogólnych jest lepszym rozwiązaniem niż tworzenie `ListInt` , które wynika z `ArrayList` lub rzutowanie z `Object` dla każdej operacji.
+W przypadku typów ogólnych typy i metody mogą działać na dowolnym typie przy zachowaniu bezpieczeństwa typu. Na przykład, jeśli istnieje, <xref:System.Collections.Generic.List%601> a umożliwia `List<string>` `List<int>` wykonywanie operacji bezpiecznych typu na tych ciągach lub liczbach całkowitych w trakcie iteracji. Używanie typów ogólnych jest lepszym rozwiązaniem niż tworzenie `ListInt` , które wynika z `ArrayList`  lub rzutowanie z `Object` dla każdej operacji.
 
 W języku C# w wersji 2,0 zostały wprowadzone Iteratory. Aby umieścić je w sposób zwięzły, Iteratory umożliwiają badanie wszystkich elementów w `List` (lub innych wyliczalnych typach) za pomocą `foreach` pętli. Posiadanie iteratorów jako pierwszej klasy języka znacznie zwiększa czytelność języka i zdolności osób do uzyskania informacji o kodzie.
 
@@ -85,7 +85,7 @@ Język C# w wersji 3,0 znajduje się w późnej 2007, wraz z programem Visual St
 - [Wyrażenia zapytań](../linq/query-expression-basics.md)
 - [Wyrażenia lambda](../language-reference/operators/lambda-expressions.md)
 - [Drzewa wyrażeń](../expression-trees.md)
-- [Metody rozszerzające](../programming-guide/classes-and-structs/extension-methods.md)
+- [Metody rozszerzeń](../programming-guide/classes-and-structs/extension-methods.md)
 - [Niejawnie wpisane zmienne lokalne](../language-reference/keywords/var.md)
 - [Metody częściowe](../language-reference/keywords/partial-method.md)
 - [Inicjatory obiektów i kolekcji](../programming-guide/classes-and-structs/object-and-collection-initializers.md)
@@ -157,7 +157,7 @@ Te osoby były jednym innym elementem wraz z tą wersją, chociaż nie jest trad
 Język C# w wersji 7,0 został opublikowany z Visual Studio 2017. Ta wersja ma pewne ewolucje i chłodnie w przerostach języka C# 6,0, ale bez kompilatora jako usługi. Oto niektóre z nowych funkcji:
 
 - [Zmienne out](./csharp-7.md#out-variables)
-- [Krotki i dekonstrukcja](./csharp-7.md#tuples)
+- [Krotki i dekonstrukcja](./csharp-7.md#tuples-and-discards)
 - [Dopasowanie wzorca](./csharp-7.md#pattern-matching)
 - [Funkcje lokalne](./csharp-7.md#local-functions)
 - [Rozwinięte składowe wyrażeń](./csharp-7.md#more-expression-bodied-members)
@@ -165,7 +165,7 @@ Język C# w wersji 7,0 został opublikowany z Visual Studio 2017. Ta wersja ma p
 
 Dostępne są inne funkcje:
 
-- [Odrzucenia](./csharp-7.md#discards)
+- [Odrzucenia](./csharp-7.md#tuples-and-discards)
 - [Literały binarne i separatory cyfr](./csharp-7.md#numeric-literal-syntax-improvements)
 - [Wyrażenia throw](./csharp-7.md#throw-expressions)
 
@@ -179,30 +179,30 @@ W języku c# rozpoczęto zwalnianie *wydań punktów* w języku c# 7,1. Ta wersj
 
 Nowe funkcje języka w tej wersji są następujące:
 
-- [`async``Main`Metoda](./csharp-7-1.md#async-main)
+- [`async``Main`Metoda](./csharp-7.md#async-main)
   - Punkt wejścia dla aplikacji może mieć `async` modyfikator.
-- [`default`wyrażenia literału](./csharp-7-1.md#default-literal-expressions)
+- [`default` wyrażenia literału](./csharp-7.md#default-literal-expressions)
   - Można użyć domyślnych wyrażeń literałów w wyrażeniach wartości domyślnych, gdy można wywnioskować typ docelowy.
-- [Wywnioskowane nazwy elementów krotki](./csharp-7-1.md#inferred-tuple-element-names)
+- [Wywnioskowane nazwy elementów krotki](./csharp-7.md#tuples-and-discards)
   - Nazwy elementów krotki można wywnioskować na podstawie inicjalizacji krotki w wielu przypadkach.
-- [Dopasowanie wzorca dla parametrów typu ogólnego](./csharp-7-1.md#pattern-matching-on-generic-type-parameters)
+- [Dopasowanie wzorca dla parametrów typu ogólnego](./csharp-7.md#pattern-matching)
   - Wyrażeń dopasowania wzorców można używać w zmiennych, których typem jest parametr typu ogólnego.
 
-Na koniec kompilator ma dwie opcje `-refout` i `-refonly` umożliwia [wygenerowanie zestawu odwołań](./csharp-7-1.md#reference-assembly-generation).
+Na koniec kompilator ma dwie opcje `-refout` i `-refonly` umożliwia [wygenerowanie zestawu odwołań](./csharp-7.md#reference-assembly-generation).
 
 ## <a name="c-version-72"></a>C#, wersja 7,2
 
 W języku C# 7,2 dodano kilka małych funkcji języka:
 
-- [Techniki pisania bezpiecznego wydajnego kodu](./csharp-7-2.md#safe-efficient-code-enhancements)
+- [Techniki pisania bezpiecznego wydajnego kodu](./csharp-7.md#enabling-more-efficient-safe-code)
   - Kombinacja ulepszeń składni, które umożliwiają pracę z typami wartości przy użyciu semantyki referencyjnej.
-- [Argumenty nazwane inne niż końcowe](./csharp-7-2.md#non-trailing-named-arguments)
+- [Argumenty nazwane inne niż końcowe](./csharp-7.md#non-trailing-named-arguments)
   - Po nazwanych argumentach mogą występować argumenty pozycyjne.
-- [Wiodące znaki podkreślenia w literałach numerycznych](./csharp-7-2.md#leading-underscores-in-numeric-literals)
+- [Wiodące znaki podkreślenia w literałach numerycznych](./csharp-7.md#numeric-literal-syntax-improvements)
   - Literały numeryczne mogą teraz zawierać podkreślenia wiodące przed wszelkimi drukowanymi cyframi.
-- [`private protected`Modyfikator dostępu](./csharp-7-2.md#private-protected-access-modifier)
+- [`private protected` Modyfikator dostępu](./csharp-7.md#private-protected-access-modifier)
   - `private protected`Modyfikator dostępu umożliwia dostęp do klas pochodnych w tym samym zestawie.
-- [Wyrażenia warunkowe `ref`](./csharp-7-2.md#conditional-ref-expressions)
+- [Wyrażenia warunkowe `ref`](./csharp-7.md#conditional-ref-expressions)
   - Wynik wyrażenia warunkowego ( `?:` ) może teraz być odwołaniem.
 
 ## <a name="c-version-73"></a>C#, wersja 7,3
@@ -211,24 +211,24 @@ Istnieją dwa główne motywy w wersji C# 7,3. Jeden motyw udostępnia funkcje, 
 
 Poniższe nowe funkcje obsługują motyw lepszej wydajności dla bezpiecznego kodu:
 
-- [Można uzyskać dostęp do stałych pól bez przypinania.](csharp-7-3.md#indexing-fixed-fields-does-not-require-pinning)
-- [Zmienne lokalne można przypisywać ponownie `ref` .](csharp-7-3.md#ref-local-variables-may-be-reassigned)
-- [Inicjatorów można używać w `stackalloc` tablicach.](csharp-7-3.md#stackalloc-arrays-support-initializers)
-- [Można używać `fixed` instrukcji z dowolnym typem, który obsługuje wzorzec.](csharp-7-3.md#more-types-support-the-fixed-statement)
-- [Można użyć dodatkowych ograniczeń ogólnych.](csharp-7-3.md#enhanced-generic-constraints)
+- [Można uzyskać dostęp do stałych pól bez przypinania.](csharp-7.md#indexing-fixed-fields-does-not-require-pinning)
+- [Zmienne lokalne można przypisywać ponownie `ref` .](csharp-7.md#enabling-more-efficient-safe-code)
+- [Inicjatorów można używać w `stackalloc` tablicach.](csharp-7.md#stackalloc-arrays-support-initializers)
+- [Można używać `fixed` instrukcji z dowolnym typem, który obsługuje wzorzec.](csharp-7.md#more-types-support-the-fixed-statement)
+- [Można użyć dodatkowych ograniczeń ogólnych.](csharp-7.md#enhanced-generic-constraints)
 
 W istniejących funkcjach wprowadzono następujące ulepszenia:
 
-- [Można testować `==` i `!=` z typami krotek.](csharp-7-3.md#tuples-support--and-)
-- [Zmiennych wyrażeń można używać w większej liczbie lokalizacji.](csharp-7-3.md#extend-expression-variables-in-initializers)
-- [Możesz dołączyć atrybuty do pola zapasowego właściwości, które są implementowane automatycznie.](csharp-7-3.md#attach-attributes-to-the-backing-fields-for-auto-implemented-properties)
-- [Ulepszono metodę rozdzielczości, gdy argumenty różnią się od `in` .](csharp-7-3.md#in-method-overload-resolution-tiebreaker)
-- [Rozwiązanie przeciążenia ma teraz mniej niejednoznaczne przypadki.](csharp-7-3.md#improved-overload-candidates)
+- Można testować `==` i `!=` z typami krotek.
+- Zmiennych wyrażeń można używać w większej liczbie lokalizacji.
+- Możesz dołączyć atrybuty do pola zapasowego właściwości, które są implementowane automatycznie.
+- Ulepszono metodę rozdzielczości, gdy argumenty różnią się od `in` .
+- Rozwiązanie przeciążenia ma teraz mniej niejednoznaczne przypadki.
 
 Nowe opcje kompilatora są następujące:
 
-- [`-publicsign`Aby włączyć podpisywanie zestawów przez oprogramowanie typu Open Source (OSS).](csharp-7-3.md#public-or-open-source-signing)
-- [`-pathmap`w celu zapewnienia mapowania dla katalogów źródłowych.](csharp-7-3.md#pathmap)
+- `-publicsign` Aby włączyć podpisywanie zestawów przez oprogramowanie typu Open Source (OSS).
+- `-pathmap` w celu zapewnienia mapowania dla katalogów źródłowych.
 
 ## <a name="c-version-80"></a>C#, wersja 8,0
 
