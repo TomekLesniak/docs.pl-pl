@@ -4,12 +4,12 @@ description: Przechowuj dane niestrukturalne w chmurze za pomocą usługi Azure 
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: d9c587cdd21a1b81205d182652b3690b976687c0
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 91aec8fc2b57c71ce4ba47d62619912af6c71e59
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100155"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756250"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Rozpoczynanie pracy z usługą Azure Blob Storage przy użyciu języka F\#
 
@@ -43,7 +43,7 @@ W samouczku wprowadzono parametry połączenia w skrypcie, takie jak:
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L11-L11)]
 
-Nie jest to jednak **zalecane** w przypadku rzeczywistych projektów. Klucz konta magazynu jest podobny do hasła głównego konta magazynu. Zawsze chroń klucz konta magazynu. Nie udostępniaj go innym użytkownikom, nie koduj go trwale ani nie zapisuj w zwykłym pliku tekstowym, do którego mają dostęp inne osoby. Możesz ponownie wygenerować klucz za pomocą witryny Azure Portal, jeśli uważasz, że jego zabezpieczenia mogły zostać naruszone.
+Nie jest to jednak **zalecane** w przypadku rzeczywistych projektów. Klucz konta magazynu jest podobny do hasła głównego konta magazynu. Zawsze chroń klucz konta magazynu. Nie udostępniaj go innym użytkownikom, nie koduj go trwale ani nie zapisuj w zwykłym pliku tekstowym, do którego mają dostęp inne osoby. Możesz ponownie wygenerować klucz przy użyciu Azure Portal, jeśli uważasz, że jego zabezpieczenia mogły zostać naruszone.
 
 W przypadku prawdziwych aplikacji najlepszym sposobem obsługi parametrów połączenia magazynu jest w pliku konfiguracji. Aby pobrać parametry połączenia z pliku konfiguracji, można to zrobić:
 
@@ -99,7 +99,7 @@ Aby wyświetlić listę obiektów blob w kontenerze, należy najpierw uzyskać o
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L67-L80)]
 
-Można także nazywać obiekty blob z informacjami o ścieżce w ich nazwach. Powoduje to utworzenie wirtualnej struktury katalogów, które można organizować i przechodzić między nimi tak jak w przypadku tradycyjnego systemu plików. Należy pamiętać, że struktura katalogów jest wyłącznie wirtualna — jedyne zasoby dostępne w Magazynie obiektów blob to kontenery i obiekty blob. Jednak Biblioteka klienta magazynu oferuje `CloudBlobDirectory` obiekt do odwoływania się do katalogu wirtualnego i upraszcza proces pracy z obiektami BLOB zorganizowanymi w ten sposób.
+Można także nazywać obiekty blob z informacjami o ścieżce w ich nazwach. Powoduje to utworzenie wirtualnej struktury katalogów, które można organizować i przechodzić między nimi tak jak w przypadku tradycyjnego systemu plików. Struktura katalogów jest tylko wirtualna — jedyne zasoby dostępne w usłudze BLOB Storage to kontenery i obiekty blob. Jednak Biblioteka klienta magazynu oferuje `CloudBlobDirectory` obiekt do odwoływania się do katalogu wirtualnego i upraszcza proces pracy z obiektami BLOB zorganizowanymi w ten sposób.
 
 Rozważmy na przykład następujący zestaw blokowych obiektów blob w kontenerze o nazwie `photos`:
 
@@ -173,7 +173,7 @@ Teraz Wywołaj procedurę. Używasz, `Async.RunSynchronously` Aby wymusić wykon
 
 ## <a name="writing-to-an-append-blob"></a>Zapisywanie do uzupełnialnego obiektu blob
 
-Uzupełnialny obiekt blob jest zoptymalizowany pod kątem operacji dołączania, takich jak rejestrowanie. Podobnie jak blokowy obiekt blob, uzupełnialny obiekt blob jest złożony z bloków, ale nowy blok dodany do uzupełnialnego obiektu blob jest zawsze dołączany na końcu obiektu blob. Nie można zaktualizować lub usunąć istniejącego bloku w uzupełnialnym obiekcie blob. Identyfikatory bloków w uzupełnialnym obiekcie blob nie są widoczne, jak w przypadku blokowego obiektu blob.
+Uzupełnialny obiekt blob jest zoptymalizowany pod kątem operacji dołączania, takich jak rejestrowanie. Podobnie jak blokowy obiekt BLOB, obiekt BLOB dołączania składa się z bloków, ale po dodaniu nowego bloku do dołączanego obiektu BLOB jest on zawsze dołączany na końcu obiektu BLOB. Nie można zaktualizować lub usunąć istniejącego bloku w uzupełnialnym obiekcie blob. Identyfikatory bloków w uzupełnialnym obiekcie blob nie są widoczne, jak w przypadku blokowego obiektu blob.
 
 Każdy blok w uzupełnialnym obiekcie blob może różnić się rozmiarem, który może wynosić maksymalnie 4 MB, a uzupełnialny obiekt blob może zawierać do 50 000 bloków. Z tego względu maksymalny rozmiar uzupełnialnego obiektu blob nieznacznie przekracza 195 GB (4 MB X 50 000 bloków).
 
@@ -189,7 +189,7 @@ Aby zapewnić obsługę współbieżnego dostępu do obiektu BLOB z wielu klient
 
 - **ETag** — umożliwia wykrycie, że obiekt BLOB lub kontener został zmodyfikowany przez inny proces
 
-- **Dzierżawa** — umożliwia uzyskanie dostępu do obiektu BLOB z wyłącznym, odnawialnym, zapisem lub usunięciem w danym okresie czasu
+- **Dzierżawa** — umożliwia uzyskanie dostępu do obiektu BLOB na wyłączność, odnowienie, zapis lub usunięcie w danym okresie czasu
 
 Aby uzyskać więcej informacji, zobacz [Zarządzanie współbieżnością w Microsoft Azure Storage](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/).
 
@@ -207,7 +207,7 @@ Nazwa kontenera musi być prawidłową nazwą DNS zgodną z następującymi zasa
 1. Wszystkie litery w nazwie kontenera muszą być małymi literami.
 1. Nazwy kontenerów muszą zawierać od 3 do 63 znaków.
 
-Należy pamiętać, że nazwa kontenera może zawierać tylko małe litery. Jeśli w nazwie kontenera wystąpi wielka litera lub reguły nazewnictwa dotyczące kontenerów zostaną naruszone w inny sposób, może zostać wyświetlony błąd 400 (Nieprawidłowe żądanie).
+Nazwa kontenera musi być zawsze małymi literami. Jeśli w nazwie kontenera wystąpi wielka litera lub reguły nazewnictwa dotyczące kontenerów zostaną naruszone w inny sposób, może zostać wyświetlony błąd 400 (Nieprawidłowe żądanie).
 
 ## <a name="managing-security-for-blobs"></a>Zarządzanie zabezpieczeniami obiektów blob
 

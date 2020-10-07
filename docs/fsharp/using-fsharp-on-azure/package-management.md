@@ -4,12 +4,12 @@ description: 'Korzystanie z usługi Paket lub NuGet do zarządzania zależności
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: 011a363b264079599e8b7d402fe9896045b1fe04
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 7816c82e87db113a35fef967886c8c3e27959332
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100116"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756237"
 ---
 # <a name="package-management-for-f-azure-dependencies"></a>Zarządzanie pakietami dla zależności platformy Azure w języku F#
 
@@ -17,7 +17,7 @@ Uzyskiwanie pakietów do programowania na platformie Azure jest proste w przypad
 
 ## <a name="using-paket"></a>Korzystanie z Paket
 
-Jeśli używasz [Paket](https://fsprojects.github.io/Paket/) jako Menedżera zależności, możesz użyć `paket.exe` Narzędzia, aby dodać zależności platformy Azure. Na przykład:
+Jeśli używasz [Paket](https://fsprojects.github.io/Paket/) jako Menedżera zależności, możesz użyć `paket.exe` Narzędzia, aby dodać zależności platformy Azure. Przykład:
 
 ```console
 > paket add nuget WindowsAzure.Storage
@@ -55,7 +55,7 @@ Lub, w przypadku programowania mono:
 
 ## <a name="using-nuget"></a>Korzystanie z NuGet
 
-Jeśli używasz programu [NuGet](https://www.nuget.org/) jako Menedżera zależności, możesz użyć `nuget.exe` Narzędzia, aby dodać zależności platformy Azure. Na przykład:
+Jeśli używasz programu [NuGet](https://www.nuget.org/) jako Menedżera zależności, możesz użyć `nuget.exe` Narzędzia, aby dodać zależności platformy Azure. Przykład:
 
 ```console
 > nuget install WindowsAzure.Storage -ExcludeVersion
@@ -93,7 +93,7 @@ Lub, w przypadku programowania mono:
 
 ## <a name="referencing-assemblies"></a>Odwoływanie się do zestawów
 
-Aby można było używać pakietów w skrypcie języka F #, należy odwołać się do zestawów zawartych w pakietach przy użyciu `#r` dyrektywy. Na przykład:
+Aby można było używać pakietów w skrypcie języka F #, należy odwołać się do zestawów zawartych w pakietach przy użyciu `#r` dyrektywy. Przykład:
 
 ```fsharp
 > #r "packages/WindowsAzure.Storage/lib/net40/Microsoft.WindowsAzure.Storage.dll"
