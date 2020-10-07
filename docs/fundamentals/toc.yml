@@ -49,16 +49,12 @@ items:
             href: ../core/install/localized-intellisense.md
   - name: Omówienie (1. tydzień)
     items:
-      - name: Przewodnik po środowisku .NET
-        href: ../standard/tour.md
+      - name: Wprowadzenie do platformy .NET
+        href: ../core/introduction.md
       - name: Składniki architektury .NET
         href: ../standard/components.md
       - name: Biblioteki klas .NET
         href: ../standard/class-libraries.md
-      - name: Wprowadzenie do platformy .NET Core
-        href: ../core/introduction.md
-      - name: Omówienie platformy .NET Core
-        href: ../core/about.md
       - name: Omówienie platformy .NET Standard
         href: ../standard/net-standard.md
       - name: Słownik platformy .NET
