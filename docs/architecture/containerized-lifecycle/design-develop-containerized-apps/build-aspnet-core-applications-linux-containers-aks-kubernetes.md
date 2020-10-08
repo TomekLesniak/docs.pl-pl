@@ -2,12 +2,12 @@
 title: Kompiluj ASP.NET Core aplikacje wdrożone jako kontenery systemu Linux w klastrach AKS/Kubernetes
 description: Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
 ms.date: 08/06/2020
-ms.openlocfilehash: 4b04e5d56c73918c665ad6e2825205870aac9606
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 8b3141d79eeb252ec3721d57293bed0e335b41d3
+ms.sourcegitcommit: a6bd4cad438fe479cbd112eae10f2cd449f06e40
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916456"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91844566"
 ---
 # <a name="build-aspnet-core-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Kompiluj ASP.NET Core aplikacje wdrożone jako kontenery systemu Linux w programie Orchestrator AKS/Kubernetes
 
@@ -128,7 +128,7 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 ```
 
-Aby aplikacja była uruchamiana z Docker Compose wystarczy tylko wprowadzić kilka dostosowań`docker-compose.override.yml`
+Aby aplikacja była uruchamiana z Docker Compose wystarczy tylko wprowadzić kilka dostosowań `docker-compose.override.yml`
 
 ```yml
 services:
@@ -199,6 +199,9 @@ Uruchom następujące polecenie w **interfejsie AZ CLI**:
 az acr create --name exploredocker --resource-group explore-docker-aks-rg --sku basic --admin-enabled
 ```
 
+> [!NOTE]
+> Nazwa rejestru kontenerów (np `exploredocker` .) musi być unikatowa w obrębie platformy Azure i zawierać 5-50 znaków alfanumerycznych. Aby uzyskać więcej informacji, zobacz [Tworzenie rejestru kontenerów](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli#create-a-container-registry)
+
 ### <a name="create-the-image-in-release-mode"></a>Tworzenie obrazu w trybie wydania
 
 Teraz utworzysz obraz w trybie **wersji** (gotowy do produkcji), zmieniając do **wersji**, jak pokazano na rysunku 4-46 i uruchamiając aplikację tak jak wcześniej.
@@ -257,7 +260,7 @@ Wypchnij obraz do usługi Azure ACR za pomocą następującego polecenia:
 docker push <login-server-name>/<image-name>:v1
 ```
 
-To polecenie pobiera obrazy, ale zawiera informacje zwrotne w procesie. Na poniższej ilustracji można zobaczyć dane wyjściowe z jednego obrazu i inne w toku.
+To polecenie pobiera obrazy, ale zawiera informacje zwrotne w procesie. Na poniższej ilustracji widać dane wyjściowe z jednego obrazu i inne w toku.
 
 ![Dane wyjściowe konsoli z polecenia Docker push.](media/build-aspnet-core-applications-linux-containers-aks-kubernetes/uploading-docker-images-complete.png)
 
@@ -426,7 +429,7 @@ Okno przeglądarki powinno mieć otwarty w `http://127.0.0.1:8001` widoku podobn
 Teraz masz aplikację ASP.NET Core, działającą w kontenerach systemu Linux i wdrożoną w klastrze AKS na platformie Azure.
 
 > [!NOTE]
-> Aby uzyskać więcej informacji na temat wdrażania przy użyciu usługi Kubernetes, zobacz:<https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
+> Aby uzyskać więcej informacji na temat wdrażania przy użyciu usługi Kubernetes, zobacz: <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
 
 > [!div class="step-by-step"]
 > [Poprzedni](set-up-windows-containers-with-powershell.md) 
