@@ -32,7 +32,7 @@
     - name: Debugowanie aplikacji
       href: how-to-guides/debug.md
     - name: Przesyłanie zadań do usługi Azure Synapse Analytics
-      href: 'https://docs.microsoft.com/azure/synapse-analytics/spark/spark-dotnet'
+      href: /azure/synapse-analytics/spark/spark-dotnet
     - name: Przesyłanie zadań do usługi HDInsight
       href: how-to-guides/hdinsight-deploy-methods.md
     - name: Przesyłanie zadań do usługi Databricks
