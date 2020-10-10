@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat platformy .NET, bezpłatnej platformy
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 2b339db769c283ff21e6ad48d5b672794e43a76b
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 0539519c2e1dd429983226065e8508ac148e25a8
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804799"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877564"
 ---
 # <a name="introduction-to-net"></a>Wprowadzenie do platformy .NET
 
@@ -72,7 +72,7 @@ Dystrybucje binarne platformy .NET od firmy Microsoft zostały skompilowane i pr
 
 [Tizen obsługuje](https://developer.tizen.org/development/training/.net-application) platformę .NET na platformach Tizen.
 
-Aby uzyskać więcej informacji, zobacz [zasady pomocy technicznej](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
+Aby uzyskać więcej informacji, zobacz [wersje i obsługa oprogramowania .NET Core i .NET 5](releases-and-support.md).
 
 ## <a name="tools-and-productivity"></a>Narzędzia i produktywność
 
@@ -201,7 +201,7 @@ Aby uzyskać więcej informacji, zobacz [dokumentację programu NuGet](/nuget/).
 
 Więcej informacji można znaleźć w następujących zasobach:
 
-* [Samouczek platformy .NET w przeglądarce](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1)
+* [Samouczek platformy .NET In-Browser](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1)
 * [Korzystanie z notesów platformy .NET z programem Jupyter na maszynie](https://github.com/dotnet/interactive/blob/main/docs/NotebooksLocalExperience.md)
 * [Dokumentacja programu .NET Interactive](https://github.com/dotnet/interactive/blob/main/docs/README.md)
 

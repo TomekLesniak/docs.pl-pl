@@ -2,12 +2,12 @@
 title: Korzystanie z kontenerów i orkiestratorów
 description: Korzystanie z kontenerów platformy Docker i koordynatorów Kubernetes na platformie Azure
 ms.date: 05/31/2020
-ms.openlocfilehash: b4bdbe5c6b3946658e6c11a40cbbb2feb07cc951
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 07e66ece1d1d1b3f252e56789461ae2922d9649a
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755912"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877577"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Korzystanie z kontenerów i orkiestratorów
 
@@ -25,7 +25,7 @@ Chociaż mają zalety prostoty, monolityczne architektury mają kilka wyzwań:
 
 ### <a name="deployment"></a>Wdrożenie
 
-Aplikacje monolityczne wymagają pełnego wdrożenia całej aplikacji, nawet jeśli została wprowadzona tylko niewielka zmiana. Pełne wdrożenia mogą być kosztowne i podatne na błędy. Ponadto wymagają ponownego uruchomienia aplikacji, która tymczasowo ma wpływ na niedostępność.
+Ponadto wymagają ponownego uruchomienia aplikacji, co może tymczasowo mieć wpływ na dostępność, jeśli nie zostaną zastosowane techniki bez przestojów podczas wdrażania.
 
 ### <a name="scaling"></a>Skalowanie
 
@@ -139,7 +139,7 @@ Organizacje, które wdrażają i utrzymują dużą liczbę aplikacji, korzystaj�
 
 ## <a name="when-should-you-avoid-using-containers-and-orchestrators"></a>Kiedy należy unikać używania kontenerów i koordynatorów?
 
-Jeśli nie możesz skompilować aplikacji przy użyciu zasad aplikacji 12-składnikowych, rozważ uniknięcie kontenerów i Orchestrator. W takich przypadkach należy wziąć pod uwagę platformę hostingu opartą na maszynach wirtualnych lub kilka systemów hybrydowych. Dzięki niej można zawsze wyłączać niektóre elementy funkcjonalności do oddzielnych kontenerów lub nawet funkcji bezserwerowych.
+Jeśli nie możesz skompilować aplikacji przy użyciu zasad aplikacji Twelve-Factor, rozważ uniknięcie kontenerów i Orchestrator. W takich przypadkach należy wziąć pod uwagę platformę hostingu opartą na maszynach wirtualnych lub kilka systemów hybrydowych. Dzięki niej można zawsze wyłączać niektóre elementy funkcjonalności do oddzielnych kontenerów lub nawet funkcji bezserwerowych.
 
 ## <a name="development-resources"></a>Zasoby programistyczne
 

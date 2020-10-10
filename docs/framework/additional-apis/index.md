@@ -9,12 +9,12 @@ helpviewer_keywords:
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 ms.topic: conceptual
-ms.openlocfilehash: c6404df5d4f0be381bc0a9c1924fcf82cf078306
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.openlocfilehash: 55cb37cc2c9184eeb55ee0aab39e97f4a3f7b7d8
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88075478"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877642"
 ---
 # <a name="additional-class-libraries-and-apis"></a>Dodatkowe biblioteki klas i interfejsy API
 
@@ -24,25 +24,25 @@ Ten artykuł zawiera listę .NET Framework interfejsów API, które zostały wyd
 
 Aby ulepszyć Programowanie dla wielu platform i wprowadzić nowe funkcje wczesne, niektóre .NET Framework funkcje zostały wydane poza pasmem (OOB).
 
-| Projekt | Opis |  
-| ------- | ----------- |  
+| Projekt | Opis |
+| ------- | ----------- |
 | <xref:System.Collections.Immutable> | Zapewnia kolekcje, które są bezpieczne dla wątków i gwarantują, że nigdy nie zmieniają ich zawartości. |
 | <xref:System.Net.Http.WinHttpHandler> | Zapewnia obsługę komunikatów dla programu na <xref:System.Net.Http.HttpClient> podstawie interfejsu WinHTTP systemu Windows. |
 | <xref:System.Numerics> | Udostępnia bibliotekę typów wektorów, które mogą korzystać z przyspieszania sprzętowego SIMD.|
-| <xref:System.Threading.Tasks.Dataflow> | Biblioteka TPL przepływu danych zawiera składniki przepływu danych, które ułatwiają zwiększenie niezawodności aplikacji z obsługą współbieżności. |  
+| <xref:System.Threading.Tasks.Dataflow> | Biblioteka TPL przepływu danych zawiera składniki przepływu danych, które ułatwiają zwiększenie niezawodności aplikacji z obsługą współbieżności. |
 
 ## <a name="platform-specific-libraries"></a>Biblioteki specyficzne dla platformy
 
 Niektóre biblioteki są przeznaczone dla konkretnych platform. Na przykład <xref:System.Text.CodePagesEncodingProvider> Klasa udostępnia kodowanie stron kodowych dla aplikacji platformy UWP utworzonych przy użyciu .NET Framework.
-  
-| Projekt | Opis |  
-| ------- | ----------- |  
-| <xref:System.Text.CodePagesEncodingProvider> | Rozszerza <xref:System.Text.EncodingProvider> klasę, aby umożliwić dostęp do kodowania stron kodowych aplikacjom przeznaczonym dla platforma uniwersalna systemu Windows. |  
-  
-## <a name="private-apis"></a>Prywatne interfejsy API  
 
-Te interfejsy API obsługują infrastrukturę produktu i nie są przeznaczone do użycia bezpośrednio w kodzie.  
-  
+| Projekt | Opis |
+| ------- | ----------- |
+| <xref:System.Text.CodePagesEncodingProvider> | Rozszerza <xref:System.Text.EncodingProvider> klasę, aby umożliwić dostęp do kodowania stron kodowych aplikacjom przeznaczonym dla platforma uniwersalna systemu Windows. |
+
+## <a name="private-apis"></a>Prywatne interfejsy API
+
+Te interfejsy API obsługują infrastrukturę produktu i nie są przeznaczone do użycia bezpośrednio w kodzie.
+
 * [Microsoft. SqlServer. Server. SmiOrderProperty. Item — Właściwość](microsoft.sqlserver.server.smiorderproperty.item.md)
 * [System. Exception. PrepForRemoting — Metoda](system.exception.prepforremoting.md)
 * [System. Data. SqlTypes. SqlChars. Stream — Właściwość](system.data.sqltypes.sqlchars.stream.md)
@@ -82,12 +82,15 @@ Te interfejsy API obsługują infrastrukturę produktu i nie są przeznaczone do
 * [Pole System .NET. ServicePoint. m \_ ConnectionGroupList](m_connectiongrouplist.md)
 * [System .NET. ServicePointManager. CloseConnectionGroups — Metoda](system.net.servicepointmanager.closeconnectiongroups.md)
 * [System .NET. ServicePointManager. s — \_ pole ServicePoint](s_servicepointtable.md)
-* [Pole System .NET. TlsStream. m_Worker](system.net.tlsstream.m_worker.md)
+* [Pole System.Net.TlsStream.m_Worker](system.net.tlsstream.m_worker.md)
 * [System .NET. UnsafeNclNativeMethods, Klasa](system.net.unsafenclnativemethods.md)
 * [System .NET. WebHeaderCollection. addinternal — Metoda](system.net.webheadercollection.addinternal.md)
 * [System. ServiceModel. Channels. Message. BodyToString — Metoda](system.servicemodel.channels.message.bodytostring.md)
 * [System. ServiceModel. Channels. Message. WriteStartHeaders — Metoda](system.servicemodel.channels.message.writestartheaders.md)
 * [System. Web. compilation. ControlBuilderInterceptor — Klasa](controlbuilderinterceptor-class.md)
+* [System. Windows. Controls. GridViewHeaderRowPresenter. FindHeaderByColumn — Metoda](system.windows.controls.gridviewheaderrowpresenter.findheaderbycolumn.md)
+* [System. Windows. Controls. GridViewHeaderRowPresenter. MakeParentItemsControlGotFocus — Metoda](system.windows.controls.gridviewheaderrowpresenter.makeparentitemscontrolgotfocus.md)
+* [System. Windows. Controls. GridViewHeaderRowPresenter. PrepareHeaderDrag — Metoda](system.windows.controls.gridviewheaderrowpresenter.prepareheaderdrag.md)
 * [Pole System. Windows. Diagnostics. VisualDiagnostics. s \_ isDebuggerCheckDisabledForTestPurposes](s-isdebuggercheckdisabledfortestpurposes-field.md)
 * [System. Windows. Forms. Design. DataMemberFieldEditor — Klasa](datamemberfieldeditor-class.md)
 * [System. Windows. Forms. Design. Datamemberfieldeditor — Klasa](datamemberlisteditor-class.md)
@@ -103,7 +106,7 @@ Te interfejsy API obsługują infrastrukturę produktu i nie są przeznaczone do
 * [stdole. IPictureDisp. Handle — właściwość](stdole.ipicturedisp.handle.md)
 * [stdole. StdFont, interfejs](stdole.stdfont.md)
 * [stdole. StdPicture, interfejs](stdole.stdpicture.md)
-  
-## <a name="see-also"></a>Zobacz także
+
+## <a name="see-also"></a>Zobacz też
 
 * [.NET Framework i wersje poza pasmem](../get-started/the-net-framework-and-out-of-band-releases.md)

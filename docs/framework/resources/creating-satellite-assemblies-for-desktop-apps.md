@@ -24,12 +24,12 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-ms.openlocfilehash: 3e515028919518cb93cdbec3417eef061a512832
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 95f6303976eff35c5eb17b9e3af205f4b38957bc
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558416"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877551"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Tworzenie zestawów satelickich dla aplikacji klasycznych
 
@@ -95,13 +95,8 @@ Poniżej znajduje się prosty przykład "Hello World", który wyświetla okno ko
 
 2. Aby wskazać, że angielski (EN) jest kulturą domyślną aplikacji, Dodaj następujący <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> atrybut do pliku AssemblyInfo aplikacji lub do głównego pliku kodu źródłowego, który zostanie skompilowany do głównego zestawu aplikacji.
 
-    ```csharp
-    [assembly: NeutralResourcesLanguageAttribute("en")]
-    ```
-
-    ```vb
-    <Assembly: NeutralResourcesLanguageAttribute("en")>
-    ```
+    [!code-csharp[Conceptual.Resources.Locating#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
+    [!code-vb[Conceptual.Resources.Locating#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
   
 3. Dodaj obsługę dodatkowych kultur (EN-US, fr-FR i ru-RU) do aplikacji w następujący sposób:  
   
@@ -125,7 +120,7 @@ Poniżej znajduje się prosty przykład "Hello World", który wyświetla okno ko
 5. Skompiluj następujący kod źródłowy wraz z zasobami dla domyślnej kultury w zestawie głównym aplikacji:
 
     > [!IMPORTANT]
-    > Jeśli używasz wiersza polecenia zamiast programu Visual Studio do utworzenia przykładu, należy zmodyfikować wywołanie <xref:System.Resources.ResourceManager> konstruktora klasy w następujący sposób: `ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`
+    > Jeśli używasz wiersza polecenia zamiast programu Visual Studio do utworzenia przykładu, należy zmodyfikować wywołanie <xref:System.Resources.ResourceManager> konstruktora klasy w następujący sposób: `ResourceManager rm = new ResourceManager("Greeting", typeof(Example).Assembly);`
 
     [!code-csharp[Conceptual.Resources.Locating#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]
     [!code-vb[Conceptual.Resources.Locating#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]

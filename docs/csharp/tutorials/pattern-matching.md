@@ -1,19 +1,19 @@
 ---
 title: 'Samouczek: kompilowanie algorytmów z dopasowaniem do wzorca'
 description: W tym zaawansowanym samouczku pokazano, jak używać technik dopasowywania wzorców do tworzenia funkcji przy użyciu danych i algorytmów, które są tworzone osobno.
-ms.date: 03/13/2019
+ms.date: 10/06/2020
 ms.technology: csharp-whats-new
 ms.custom: contperfq1
-ms.openlocfilehash: 9fff9f286bd0aa7baf7632f9144dfe693bab0c32
-ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
+ms.openlocfilehash: 015bab574ca4255ffe355bd02bfb54b58e4ea7e0
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437980"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877668"
 ---
 # <a name="tutorial-use-pattern-matching-to-build-type-driven-and-data-driven-algorithms"></a>Samouczek: używanie dopasowania wzorców do tworzenia algorytmów opartych na typach i danych.
 
-W języku C# 7 wprowadzono podstawowe funkcje zgodne z wzorcem. Te funkcje są rozszerzane w języku C# 8 z nowymi wyrażeniami i wzorcami. Można napisać funkcję, która zachowuje się tak, jakby rozszerzone typy, które mogą znajdować się w innych bibliotekach. Innym zastosowaniem wzorców jest tworzenie funkcji wymaganych przez aplikację, która nie jest podstawową funkcją rozszerzania typu.
+W języku C# 7 wprowadzono podstawowe funkcje zgodne z wzorcem. Te funkcje zostały rozszerzone w językach C# 8 i C# 9 z nowymi wyrażeniami i wzorcami. Można napisać funkcję, która zachowuje się tak, jakby rozszerzone typy, które mogą znajdować się w innych bibliotekach. Innym zastosowaniem wzorców jest tworzenie funkcji wymaganych przez aplikację, która nie jest podstawową funkcją rozszerzania typu.
 
 Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
@@ -25,7 +25,7 @@ Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Musisz skonfigurować maszynę do uruchamiania programu .NET Core, w tym kompilatora C# 8,0. Kompilator języka C# 8 jest dostępny w programie [Visual Studio 2019 w wersji 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) lub [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
+Musisz skonfigurować maszynę do uruchamiania programu .NET 5, który obejmuje kompilator C# 9. Kompilator języka C# 8 jest dostępny w programie [Visual Studio 2019 w wersji 16,9 Preview 1](https://visualstudio.microsoft.com/vs/preview/) lub [.NET 5,0 SDK](https://dot.net/get-dotnet5).
 
 W tym samouczku założono, że znasz języki C# i .NET, w tym Visual Studio lub interfejs wiersza polecenia platformy .NET Core.
 
@@ -47,7 +47,7 @@ Możesz pobrać kod początkowy z repozytorium usługi GitHub [/przykłady](http
 
 ## <a name="pattern-matching-designs"></a>Projekty dopasowania wzorców
 
-W scenariuszu używanym w tym samouczku przedstawiono rodzaje problemów, których dopasowanie do wzorców jest odpowiednie do rozwiązania:
+W scenariuszu używanym w tym samouczku przedstawiono rodzaje problemów, które są zgodne z wzorcem, aby rozwiązać ten problem:
 
 - Obiekty potrzebne do pracy nie należą do hierarchii obiektów pasujących do Twoich celów. Być może pracujesz z klasami, które są częścią niepowiązanych systemów.
 - Dodawane funkcje nie są częścią abstrakcji rdzeni dla tych klas. Opłaty za przejazd przez pojazd *zmieniają* się w zależności od typu pojazdów, ale opłata nie jest podstawową funkcją pojazdu.
@@ -127,7 +127,7 @@ namespace toll_calculator
             }
             try
             {
-                tollCalc.CalculateToll(null);
+                tollCalc.CalculateToll(null!);
             }
             catch (ArgumentNullException e)
             {
@@ -157,10 +157,10 @@ Te reguły można zaimplementować przy użyciu **wzorca właściwości** w tym 
 ```csharp
 vehicle switch
 {
-    Car { Passengers: 0}        => 2.00m + 0.50m,
-    Car { Passengers: 1 }       => 2.0m,
-    Car { Passengers: 2}        => 2.0m - 0.50m,
-    Car c                       => 2.00m - 1.0m,
+    Car {Passengers: 0}        => 2.00m + 0.50m,
+    Car {Passengers: 1}        => 2.0m,
+    Car {Passengers: 2}        => 2.0m - 0.50m,
+    Car c                      => 2.00m - 1.0m,
 
     // ...
 };
@@ -175,10 +175,10 @@ vehicle switch
 {
     // ...
 
-    Taxi { Fares: 0}  => 3.50m + 1.00m,
-    Taxi { Fares: 1 } => 3.50m,
-    Taxi { Fares: 2}  => 3.50m - 0.50m,
-    Taxi t            => 3.50m - 1.00m,
+    Taxi {Fares: 0}  => 3.50m + 1.00m,
+    Taxi {Fares: 1}  => 3.50m,
+    Taxi {Fares: 2}  => 3.50m - 0.50m,
+    Taxi t           => 3.50m - 1.00m,
 
     // ...
 };
@@ -219,20 +219,20 @@ vehicle switch
 };
 ```
 
-Poprzedni kod pokazuje `when` klauzulę ramienia przełącznika. `when`Klauzula służy do testowania warunków innych niż równość dla właściwości. Po zakończeniu będziesz mieć metodę, która wygląda podobnie do następującej:
+Poprzedni kod pokazuje `when` klauzulę ramienia przełącznika. `when`Klauzula służy do testowania warunków innych niż równość dla właściwości. Po zakończeniu będziesz mieć metodę, która wygląda podobnie do poniższego kodu:
 
 ```csharp
 vehicle switch
 {
-    Car { Passengers: 0}        => 2.00m + 0.50m,
-    Car { Passengers: 1}        => 2.0m,
-    Car { Passengers: 2}        => 2.0m - 0.50m,
-    Car c                       => 2.00m - 1.0m,
+    Car {Passengers: 0}        => 2.00m + 0.50m,
+    Car {Passengers: 1}        => 2.0m,
+    Car {Passengers: 2}        => 2.0m - 0.50m,
+    Car c                      => 2.00m - 1.0m,
 
-    Taxi { Fares: 0}  => 3.50m + 1.00m,
-    Taxi { Fares: 1 } => 3.50m,
-    Taxi { Fares: 2}  => 3.50m - 0.50m,
-    Taxi t            => 3.50m - 1.00m,
+    Taxi {Fares: 0}  => 3.50m + 1.00m,
+    Taxi {Fares: 1}  => 3.50m,
+    Taxi {Fares: 2}  => 3.50m - 0.50m,
+    Taxi t           => 3.50m - 1.00m,
 
     Bus b when ((double)b.Riders / (double)b.Capacity) < 0.50 => 5.00m + 2.00m,
     Bus b when ((double)b.Riders / (double)b.Capacity) > 0.90 => 5.00m - 1.00m,
@@ -288,9 +288,11 @@ W powyższym przykładzie, przy użyciu wyrażenia cyklicznego oznacza, że nie 
 
 ## <a name="add-peak-pricing"></a>Dodawanie cen szczytowych
 
-W przypadku ostatecznej funkcji urząd opłat umożliwia dodanie cen szczytowych z uwzględnieniem czasu. W godzinach rano i wieczorem szczytu opłaty są napadane podwójnie. Ta reguła ma wpływ tylko na ruch w jednym kierunku: przychodzące do miasta rano i wychodzące w godzinie wieczorem szczytu. W innym czasie w ciągu dnia roboczego opłata zostanie zwiększona o 50%. Późne i wczesne rano, opłaty są ograniczone o 25%. W weekendie jest to normalna stawka, niezależnie od czasu.
+W przypadku ostatecznej funkcji urząd opłat umożliwia dodanie cen szczytowych z uwzględnieniem czasu. W godzinach rano i wieczorem szczytu opłaty są napadane podwójnie. Ta reguła ma wpływ tylko na ruch w jednym kierunku: przychodzące do miasta rano i wychodzące w godzinie wieczorem szczytu. W innym czasie w ciągu dnia roboczego opłata zostanie zwiększona o 50%. Późne i wczesne rano, opłaty są ograniczone o 25%. W weekendie jest to normalna stawka, niezależnie od czasu. Możesz użyć `if` instrukcji if i, `else` Aby wyrazić to przy użyciu następującego kodu:
 
-Użyjesz dopasowania do wzorca dla tej funkcji, ale będziesz zintegrować ją z innymi technikami. Można utworzyć wyrażenie dopasowania pojedynczego wzorca, które będzie uwzględniać wszystkie kombinacje kierunku, dzień tygodnia i godzinę. Wynikiem będzie wyrażenie złożone. Trudno jest czytać i trudny do zrozumienia. Dzięki temu trudno jest zapewnić poprawność. Zamiast tego Połącz te metody, aby utworzyć krotkę wartości, która zwięzłie opisuje wszystkie te Stany. Następnie użyj dopasowania wzorca, aby obliczyć mnożnik dla opłaty za połączenie. Krotka zawiera trzy warunki dyskretne:
+[!code-csharp[FullTuplePattern](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#SnippetPremiumWithoutPattern)]
+
+Poprzedni kod działa prawidłowo, ale nie można go odczytać. Musisz przeciągać się między wszystkimi przypadkami wejściowymi i zagnieżdżonymi `if` instrukcjami, aby przyczynić się do wykonywania kodu. Zamiast tego użyjesz dopasowania wzorca dla tej funkcji, ale będziesz zintegrować ją z innymi technikami. Można utworzyć wyrażenie dopasowania pojedynczego wzorca, które będzie uwzględniać wszystkie kombinacje kierunku, dzień tygodnia i godzinę. Wynikiem będzie wyrażenie złożone. Trudno jest czytać i trudny do zrozumienia. Dzięki temu trudno jest zapewnić poprawność. Zamiast tego Połącz te metody, aby utworzyć krotkę wartości, która zwięzłie opisuje wszystkie te Stany. Następnie użyj dopasowania wzorca, aby obliczyć mnożnik dla opłaty za połączenie. Krotka zawiera trzy warunki dyskretne:
 
 - Dzień jest dniem tygodnia lub weekendem.
 - Pasmo czasu, w którym jest zbierane połączenie płatne.
@@ -335,7 +337,7 @@ private static bool IsWeekDay(DateTime timeOfToll) =>
     };
 ```
 
-Ta metoda działa, ale jest repetitious. Można uprościć ten sposób, jak pokazano w poniższym kodzie:
+Ta metoda jest poprawna, ale jest repetitious. Można uprościć ten sposób, jak pokazano w poniższym kodzie:
 
 [!code-csharp[IsWeekDay](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
 
@@ -343,7 +345,7 @@ Następnie Dodaj podobną funkcję, aby przydzielić czas do bloków:
 
 [!code-csharp[GetTimeBand](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
 
-Poprzednia metoda nie używa dopasowania do wzorca. Jest to wyraźniejsze użycie dobrze znanego `if` zestawienia instrukcji. Dodaj prywatny, `enum` Aby przekonwertować każdy zakres czasu na wartość dyskretną.
+Należy dodać prywatny, `enum` Aby przekonwertować każdy zakres czasu na wartość dyskretną. Następnie `GetTimeBand` Metoda używa *wzorców relacyjnych*i *conjunctive lub wzorców*, które zostały dodane w języku C# 9,0. Wzorzec relacyjny umożliwia przetestowanie wartości liczbowej przy użyciu `<` , `>` , `<=` , lub `>=` . `or`Wzorzec testuje, czy wyrażenie pasuje do jednego lub większej liczby wzorców. Można również użyć `and` wzorca, aby upewnić się, że wyrażenie dopasowuje dwa odrębne wzorce, oraz `not` wzorzec, aby sprawdzić, czy wyrażenie nie jest zgodne ze wzorcem.
 
 Po utworzeniu tych metod można użyć innego `switch` wyrażenia z **wzorcem spójności** , aby obliczyć cenę Premium. Można utworzyć `switch` wyrażenie ze wszystkimi 16 bronią:
 
