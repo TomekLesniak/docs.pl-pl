@@ -7,8 +7,11 @@
       href: whats-new.md
     - name: Co nowego w programie Windows Workflow Foundation na platformie .NET 4.5
       href: whats-new-in-wf-in-dotnet.md
-    - name: Przestarzałe typy w programie Windows Workflow Foundation
+    - name: Przestarzałe typy i narzędzia
       href: deprecated-types.md
+      items:
+        - name: Narzędzie kompilatora przepływu pracy wfc.exe
+          href: wfc-exe-workflow-compiler-tool.md
     - name: Charakterystyka funkcji programu Windows Workflow Foundation
       href: feature-specifics.md
     - name: Omówienie pojęć związanych z programem Windows Workflow
