@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: c165ca764d93b74aac21028ed3e55e80f2a23ee0
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 0ac3b410cd9ba886ee55aede952700f145f1b31b
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654910"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955170"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -232,7 +232,7 @@ Ponadto [ `foreach` Pętla](../language-reference/keywords/foreach-in.md) rozpoz
 
 Następnie można użyć odrzutów jako parametrów w wyrażeniach lambda. Ta wygoda pozwala uniknąć nazywania argumentu, a kompilator może uniknąć korzystania z niego. Używasz `_` argumentu for. Aby uzyskać więcej informacji, zobacz [Parametry wejściowe sekcji wyrażenie lambda](../language-reference/operators/lambda-expressions.md#input-parameters-of-a-lambda-expression) w artykule [wyrażenia lambda](../language-reference/operators/lambda-expressions.md) .
 
-Na koniec możesz teraz zastosować atrybuty do funkcji lokalnych. Na przykład można zastosować adnotacje atrybutu nullable do funkcji lokalnych.
+Na koniec możesz teraz zastosować atrybuty do [funkcji lokalnych](../programming-guide/classes-and-structs/local-functions.md). Na przykład można zastosować [Adnotacje atrybutu nullable](../language-reference/attributes/nullable-analysis.md) do funkcji lokalnych.
 
 ## <a name="support-for-code-generators"></a>Obsługa generatorów kodu
 

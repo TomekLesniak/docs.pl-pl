@@ -4,12 +4,12 @@ description: Dowiedz się, jak nawiązać połączenie z usługą Azure Event Hu
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 3956a8152feb743f205f29334f0d42b3165cb27b
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: 4de4836ba2b63429e29ae819afac09c7a3998480
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877890"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954974"
 ---
 # <a name="connect-net-for-apache-spark-to-azure-event-hubs"></a>Połącz platformę .NET dla Apache Spark z platformą Azure Event Hubs
 
@@ -17,15 +17,15 @@ W tym artykule dowiesz się, jak połączyć aplikację [.net for Apache Spark](
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-1. Zapoznaj się z centrum zdarzeń Event Hubs przestrzeni nazw, aby zapoznać się z [tym dokumentem](https://docs.microsoft.com/azure/event-hubs/event-hubs-create) , aby zapoznać się z przewodnikiem krok po kroku na temat tego, jak to zrobić. Pamiętaj, aby wybrać warstwę cenową standardowa podczas tworzenia przestrzeni nazw centrum zdarzeń.
+Przygotuj Event Hubs przestrzeń nazw z centrum zdarzeń. Aby zapoznać się z przewodnikiem krok po kroku, zobacz [Szybki Start: tworzenie centrum zdarzeń przy użyciu Azure Portal](/azure/event-hubs/event-hubs-create). Pamiętaj, aby wybrać warstwę cenową standardowa podczas tworzenia przestrzeni nazw centrum zdarzeń.
 
 ## <a name="what-is-azure-event-hubs"></a>Co to jest usługa Azure Event Hubs?
 
-[Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about) to usługa pozyskiwania danych Big Data i usługi pozyskiwania zdarzeń. Jest to w pełni zarządzana platforma jako usługa (PaaS), którą można łatwo zintegrować z [Apache Kafka](https://kafka.apache.org/) , aby zapewnić środowisko PaaS Kafka, bez konieczności zarządzania, konfigurowania lub uruchamiania własnych klastrów.
+[Azure Event Hubs](/azure/event-hubs/event-hubs-about) to platforma przesyłania strumieniowego i usługa pozyskiwania zdarzeń. Jest to w pełni zarządzana platforma jako usługa (PaaS), którą można łatwo zintegrować z [Apache Kafka](https://kafka.apache.org/) , aby zapewnić obsługę PaaS Kafka bez konieczności zarządzania, konfigurowania lub uruchamiania własnych klastrów.
 
 ## <a name="connect-your-application-to-azure-event-hubs"></a>Łączenie aplikacji z platformą Azure Event Hubs
 
-1. Pobierz parametry połączenia usługi Event Hubs i w pełni kwalifikowaną nazwę domeny (FQDN) w celu późniejszego użycia. Aby uzyskać instrukcje, zobacz [Get an Event Hubs connection string](https://docs.microsoft.com/azure/event-hubs/event-hubs-get-connection-string) (Pobieranie parametrów połączenia usługi Event Hubs).
+1. Pobierz parametry połączenia usługi Event Hubs i w pełni kwalifikowaną nazwę domeny (FQDN) w celu późniejszego użycia. Aby uzyskać instrukcje, zobacz [Get an Event Hubs connection string](/azure/event-hubs/event-hubs-get-connection-string) (Pobieranie parametrów połączenia usługi Event Hubs).
 2. Ustaw następujące konfiguracje ze szczegółami z przestrzeni nazw w kodzie, aby rozpocząć odczytywanie z Event Hubs dla Kafka:
     1. Zaktualizuj **BOOTSTRAP_SERVERS** i **EH_SASL** w aplikacji, takie jak:
 
@@ -84,7 +84,7 @@ df.WriteStream()
 
 ## <a name="run-your-application"></a>Uruchamianie aplikacji
 
-Aby można było uruchomić aplikację .NET for Apache Spark, należy zdefiniować `spark-sql-kafka-0-10` moduł jako część definicji kompilacji w projekcie platformy Spark, używając `libraryDependency` w tym `build.sbt` celu projektów SBT. W przypadku środowisk Spark, takich jak `spark-submit` (lub `spark-shell` ) należy użyć `--packages` opcji wiersza polecenia, takiej jak:
+Aby uruchomić platformę .NET dla aplikacji Apache Spark, zdefiniuj `spark-sql-kafka-0-10` moduł jako część definicji kompilacji w projekcie platformy Spark, używając `libraryDependency` w tym `build.sbt` celu projektów SBT. W przypadku środowisk Spark, takich jak `spark-submit` (lub `spark-shell` ), użyj `--packages` opcji wiersza polecenia, takiej jak:
 
 ```bash
 spark-shell --packages org.apache.spark:spark-sql-kafka-0-10_2.12:2.4.5

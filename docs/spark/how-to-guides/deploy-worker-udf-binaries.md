@@ -1,26 +1,26 @@
 ---
 title: Wdróż platformę .NET dla Apache Spark procesów roboczych i plików binarnych funkcji zdefiniowanych przez użytkownika
 description: Dowiedz się, jak wdrożyć platformę .NET dla Apache Spark procesów roboczych i plików binarnych funkcji zdefiniowanych przez użytkownika.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 672a32c430bd702167a294d2b895ac1ac90bf67e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 001798bfda628ce979570bcd89e7c5553347b275
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617720"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954961"
 ---
 # <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Wdróż platformę .NET dla Apache Spark procesów roboczych i plików binarnych funkcji zdefiniowanych przez użytkownika
 
 Ten opis zawiera ogólne instrukcje dotyczące wdrażania programu .NET dla Apache Spark procesów roboczych i plików binarnych funkcji zdefiniowanych przez użytkownika. Dowiesz się, które zmienne środowiskowe mają być skonfigurowane, a także kilka często używanych parametrów do uruchamiania aplikacji za pomocą programu `spark-submit` .
 
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
-
 ## <a name="configurations"></a>Konfiguracje
+
 Konfiguracje zawierają ogólne ustawienia zmiennych środowiskowych i parametrów w celu wdrożenia platformy .NET dla Apache Spark procesów roboczych i plików binarnych funkcji zdefiniowanych przez użytkownika.
 
 ### <a name="environment-variables"></a>Zmienne środowiskowe
+
 Podczas wdrażania procesów roboczych i pisania UDF istnieje kilka często używanych zmiennych środowiskowych, które mogą być konieczne do ustawienia:
 
 | Zmienna środowiskowa         | Opis
@@ -36,8 +36,8 @@ Po dodaniu aplikacji platformy [bundled](https://spark.apache.org/docs/latest/su
 | :---------------------| :----------
 | --Klasa               | Punkt wejścia aplikacji.</br>_np. org. Apache. Spark. deploy. dotnet. DotnetRunner_
 | --Master              | <a href="https://spark.apache.org/docs/latest/submitting-applications.html#master-urls">Główny adres URL</a> klastra.</br>_np. przędza_
-| --Tryb wdrażania         | Czy wdrożyć sterownik na węzłach procesu roboczego ( <code>cluster</code> ), czy lokalnie jako Klient zewnętrzny ( <code>client</code> ).</br>Wartooć<code>client</code>
-| --conf                | Dowolnych właściwości konfiguracji platformy Spark w <code>key=value</code> formacie.</br>_na przykład Spark. przędz. appMasterEnv. DOTNET_WORKER_DIR = .\worker\Microsoft.Spark.Worker_
+| --Tryb wdrażania         | Czy wdrożyć sterownik na węzłach procesu roboczego ( <code>cluster</code> ), czy lokalnie jako Klient zewnętrzny ( <code>client</code> ).</br>Wartooć <code>client</code>
+| --conf                | Dowolnych właściwości konfiguracji platformy Spark w <code>key=value</code> formacie.</br>_np. spark.yarn.appMasterEnv.DOTNET_WORKER_DIR = .\worker\Microsoft.Spark.Worker_
 | --pliki               | Rozdzielana przecinkami lista plików, które mają zostać umieszczone w katalogu roboczym każdego wykonawcy.<br/><ul><li>Należy pamiętać, że ta opcja ma zastosowanie tylko w przypadku trybu przędzy.</li><li>Obsługuje ona Określanie nazw plików przy użyciu # podobnego do usługi Hadoop.</br></ul>_np. <code>myLocalSparkApp.dll#appSeen.dll</code> . Aplikacja powinna używać nazwy jako odniesienia w <code>appSeen.dll</code> <code>myLocalSparkApp.dll</code> przypadku uruchamiania w ramach przędzy._</li>
 | --Archiwa          | Rozdzielana przecinkami lista archiwów, które mają zostać wyodrębnione do katalogu roboczego każdego wykonawcy.</br><ul><li>Należy pamiętać, że ta opcja ma zastosowanie tylko w przypadku trybu przędzy.</li><li>Obsługuje ona Określanie nazw plików przy użyciu # podobnego do usługi Hadoop.</br></ul>_np. <code>hdfs://&lt;path to your worker file&gt;/Microsoft.Spark.Worker.zip#worker</code> . Spowoduje to skopiowanie i wyodrębnienie pliku zip do <code>worker</code> folderu._</li>
 | Aplikacja — jar       | Ścieżka do powiązanego jar, w tym aplikacji i wszystkich zależności.</br>_np. hdfs:// &lt; ścieżka do/Microsoft-Spark-w &gt; &lt; wersji jar &gt; . jar_

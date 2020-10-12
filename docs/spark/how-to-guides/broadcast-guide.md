@@ -1,23 +1,21 @@
 ---
 title: Używanie zmiennych emisji w programie .NET dla Apache Spark
 description: Dowiedz się, jak używać zmiennych emisji w programie .NET dla aplikacji Apache Spark.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: d86b160855cc4d3f3a6502f5606d4766b7c06aa0
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3cf2215f59ce28878f44138386c01597ec852905
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617859"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955026"
 ---
 # <a name="use-broadcast-variables-in-net-for-apache-spark"></a>Używanie zmiennych emisji w programie .NET dla Apache Spark
 
 W tym artykule dowiesz się, jak używać zmiennych emisji w programie .NET dla Apache Spark. [Zmienne emisji w Apache Spark](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) są mechanizmami do udostępniania zmiennych w ramach wykonawców, które są przeznaczone tylko do odczytu. Zmienne emisji umożliwiają zachowanie zmiennej tylko do odczytu w pamięci podręcznej na poszczególnych maszynach, a nie dostarczenie kopii jej z zadaniami. Zmiennych emisji można użyć, aby przydzielić każdemu węzłowi kopię dużego wejściowego zestawu danych w efektywny sposób.
 
 Ponieważ dane są wysyłane tylko raz, zmienne emisji mają korzyści z wydajności w porównaniu do zmiennych lokalnych, które są wysyłane do modułów wykonujących wszystkie zadania. Zapoznaj się z [dokumentacją oficjalną zmienna emisji](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) , aby lepiej zrozumieć zmienne emisji i dlaczego są one używane.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="create-broadcast-variables"></a>Utwórz zmienne emisji
 
@@ -41,7 +39,7 @@ Zmienną emisji można usunąć ze wszystkich modułów wykonujących, wywołuj�
 bv.Destroy();
 ```
 
-`Destroy()`usuwa wszystkie dane i metadane związane ze zmienną emisji i powinny być używane z zachowaniem ostrożności. Gdy zmienna emisji zostanie zniszczona, nie można jej użyć ponownie.
+`Destroy()` usuwa wszystkie dane i metadane związane ze zmienną emisji i powinny być używane z zachowaniem ostrożności. Gdy zmienna emisji zostanie zniszczona, nie można jej użyć ponownie.
 
 ## <a name="limit-broadcast-variable-scope-in-udfs"></a>Ogranicz zakres zmiennej emisji w UDF
 

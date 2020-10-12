@@ -1,21 +1,21 @@
 ---
 title: Wdrażanie aplikacji platformy .NET dla Apache Spark w kostkach
 description: Dowiedz się, jak wdrożyć aplikację platformy .NET dla Apache Spark w usłudze datakostki.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 904aeea4fa8b134c8c36ebb83779dc044154e6f3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1f705878a577a7fa375346cae18010d8c8cc77e1
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552170"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955450"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Samouczek: wdrażanie aplikacji .NET dla Apache Spark w kostkach
 
 W tym samouczku przedstawiono sposób wdrażania aplikacji w chmurze za pośrednictwem Azure Databricks, opartej na Apache Sparkj platformie analitycznej z instalacją jednym kliknięciem, usprawnionych przepływów pracy i interaktywnego obszaru roboczego, który umożliwia współpracę.
 
-Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
+Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
 > [!div class="checklist"]
 >
@@ -23,8 +23,6 @@ Ten samouczek zawiera informacje na temat wykonywania następujących czynności
 > - Opublikuj aplikację .NET dla Apache Spark.
 > - Utwórz zadanie platformy Spark i klaster Spark.
 > - Uruchom aplikację w klastrze Spark.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 

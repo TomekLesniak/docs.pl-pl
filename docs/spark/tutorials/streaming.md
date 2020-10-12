@@ -3,28 +3,26 @@ title: Tworzenie strukturalnego przesyłania strumieniowego za pomocą platformy
 description: W ramach tego samouczka nauczysz się używać platformy .NET do Apache Spark na potrzeby przesyłania strumieniowego platformy Spark.
 author: mamccrea
 ms.author: mamccrea
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 5420fe081db1704d7af647e8c88826c1bcf614d9
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 47c716db931dc912b80844fe69283b12d030c238
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617846"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955580"
 ---
 # <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>Samouczek: strukturalne przesyłanie strumieniowe za pomocą platformy .NET dla Apache Spark
 
 W tym samouczku pokazano, jak wywoływać strukturalne przesyłanie strumieniowe platformy Spark przy użyciu platformy .NET dla Apache Spark. Przetwarzanie strumieni danych w czasie rzeczywistym jest obsługiwane Apache Spark. Przetwarzanie strumieniowe oznacza analizowanie danych na żywo w miarę ich produkcji.
 
-Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
+Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
 > [!div class="checklist"]
 >
 > * Utwórz i Uruchom platformę .NET dla aplikacji Apache Spark
 > * Tworzenie strumienia danych za pomocą netcat
 > * Korzystanie z funkcji zdefiniowanych przez użytkownika i SparkSQL do analizowania danych przesyłanych strumieniowo
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 

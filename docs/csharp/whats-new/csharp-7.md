@@ -3,12 +3,12 @@ title: Co nowego w języku C# 7,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji w wersji 7,0 języka C#.
 ms.date: 10/02/2020
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 28f2d8f0b61d8f05e558834fc1a96fc020201a08
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 84f5961d573b99438320a75d7f89bc7fd94f6266
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805268"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955216"
 ---
 # <a name="whats-new-in-c-70-through-c-73"></a>Co nowego w języku C# 7,0 za poorednictwem języka C# 7,3
 
@@ -211,7 +211,7 @@ Więcej informacji na temat szczegółowych informacji można znaleźć w artyku
 
 ## <a name="local-functions"></a>Funkcje lokalne
 
-Wiele projektów klas obejmuje metody, które są wywoływane tylko z jednej lokalizacji. Te dodatkowe metody prywatne przechowują każdą metodę na małe i skoncentrowane. *Funkcje lokalne* umożliwiają korzystanie z metod wewnątrz kontekstu innej metody. Funkcje lokalne ułatwiają czytelnikom klasy sprawdzenie, czy metoda lokalna jest wywoływana tylko z kontekstu, w którym jest zadeklarowana.
+Wiele projektów klas obejmuje metody, które są wywoływane tylko z jednej lokalizacji. Te dodatkowe metody prywatne przechowują każdą metodę na małe i skoncentrowane. *Funkcje lokalne* umożliwiają deklarowanie metod wewnątrz kontekstu innej metody. Funkcje lokalne ułatwiają czytelnikom klasy sprawdzenie, czy metoda lokalna jest wywoływana tylko z kontekstu, w którym jest zadeklarowana.
 
 Istnieją dwa typowe przypadki użycia funkcji lokalnych: metody iteratora publicznego i publiczne metody async. Oba typy metod generują kod, który zgłasza błędy później niż programiści mogą oczekiwać. W metodach iteratora wszystkie wyjątki są obserwowane tylko podczas wywoływania kodu, który wylicza zwracaną sekwencję. W metodach asynchronicznych wszelkie wyjątki są przestrzegane tylko wtedy, gdy zwracane `Task` jest oczekiwane. Poniższy przykład ilustruje oddzielanie walidacji parametrów od implementacji iteratora przy użyciu funkcji lokalnej:
 

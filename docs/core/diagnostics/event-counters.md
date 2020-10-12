@@ -2,12 +2,12 @@
 title: EventCounters na platformie .NET Core
 description: W tym artykule dowiesz się, co EventCounters, jak je wdrożyć i jak je wykorzystać.
 ms.date: 08/07/2020
-ms.openlocfilehash: fc2f945e3de732a81b9ce3fd82eff10e455cae87
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: be273776b888f13893fc694a111093cca1fa8a5e
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062967"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955320"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters na platformie .NET Core
 
@@ -103,7 +103,7 @@ var workingSetCounter = new PollingCounter(
 };
 ```
 
-<xref:System.Diagnostics.Tracing.PollingCounter>Raport przedstawia bieżącą ilość pamięci fizycznej zamapowanej na proces (zestaw roboczy) aplikacji, ponieważ w momencie przechwytuje ona metrykę. Wywołanie zwrotne do sondowania wartości jest podanym wyrażeniem lambda, które jest tylko wywołaniem <xref:System.Environment.WorkingSet?displayProperty=fullName> interfejsu API. <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayName>i <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayUnits> są opcjonalnymi właściwościami, które można ustawić, aby ułatwić konsumentowi licznika Wyświetlanie wartości dokładniej. Na przykład, program [dotnet-Counters](dotnet-counters.md) używa tych właściwości do wyświetlania większej przyjaznej dla wyświetlania wersji nazw liczników.
+<xref:System.Diagnostics.Tracing.PollingCounter>Raport przedstawia bieżącą ilość pamięci fizycznej zamapowanej na proces (zestaw roboczy) aplikacji, ponieważ w momencie przechwytuje ona metrykę. Wywołanie zwrotne do sondowania wartości jest podanym wyrażeniem lambda, które jest tylko wywołaniem <xref:System.Environment.WorkingSet?displayProperty=fullName> interfejsu API. <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayName> i <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayUnits> są opcjonalnymi właściwościami, które można ustawić, aby ułatwić konsumentowi licznika Wyświetlanie wartości dokładniej. Na przykład, program [dotnet-Counters](dotnet-counters.md) używa tych właściwości do wyświetlania większej przyjaznej dla wyświetlania wersji nazw liczników.
 
 > [!IMPORTANT]
 > `DisplayName`Właściwości nie są zlokalizowane.
@@ -144,6 +144,16 @@ Rozważmy na przykład następujące, <xref:System.Diagnostics.Tracing.EventSour
 
 ```csharp
 public void AddRequest() => Interlocked.Increment(ref _requestCount);
+```
+
+Aby zapobiec rozdartym odczytom (na 32-bitowych architekturach) `long` `_requestCount` użycia pola <xref:System.Threading.Interlocked.Read%2A?displayProperty=nameWithType> .
+
+```csharp
+_requestRateCounter = new IncrementingPollingCounter("request-rate", this, () => Interlocked.Read(ref _requestCount))
+{
+    DisplayName = "Request Rate",
+    DisplayRateTimeScale = TimeSpan.FromSeconds(1)
+};
 ```
 
 ## <a name="consume-eventcounters"></a>Korzystanie z EventCounters
@@ -197,7 +207,7 @@ Poniżej znajduje się przykładowa <xref:System.Diagnostics.Tracing.EventListen
 
 Jak pokazano powyżej, _należy_ upewnić się, że `"EventCounterIntervalSec"` argument jest ustawiony w `filterPayload` argumencie podczas wywoływania <xref:System.Diagnostics.Tracing.EventListener.EnableEvents%2A> . W przeciwnym razie liczniki nie będą mogły opróżniać wartości, ponieważ nie wie, z jakim interwałem należy uzyskać opróżnianie.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [dotnet-counters](dotnet-counters.md)
 - [dotnet-trace](dotnet-trace.md)

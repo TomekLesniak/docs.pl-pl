@@ -2,18 +2,18 @@
 title: 'Atrybuty zastrzeżone języka C#: statycznej analizy dopuszczające wartość null'
 ms.date: 04/14/2020
 description: Te atrybuty są interpretowane przez kompilator w celu zapewnienia lepszej statycznej analizy dla typów odwołań dopuszczających wartości null i niedopuszczających wartości null.
-ms.openlocfilehash: d2405162ece3df209111de65fdef54f70cc86d45
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: 6678cd21de23d4ed391eff089e33939b5adff0fa
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656314"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955606"
 ---
 # <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>Atrybuty zastrzeżone przyczyniają się do analizy statycznej stanu kompilatora o wartości null
 
 W kontekście dopuszczającym wartość null kompilator wykonuje statyczną analizę kodu, aby określić stan null dla wszystkich zmiennych typu odwołania:
 
-- *nie null*: analiza statyczna ustaliła, że zmienna jest przypisana do wartości innej niż null.
+- *nie null*: analiza statyczna określa, że zmienna ma przypisaną wartość różną od null.
 - może *mieć wartość null*: analiza statyczna nie może określić, że zmienna ma przypisaną wartość różną od null.
 
 Można zastosować wiele atrybutów, które dostarczają informacje dla kompilatora o semantyki interfejsów API. Te informacje ułatwiają kompilatorowi wykonywanie analizy statycznej i określanie, kiedy zmienna nie ma wartości null. W tym artykule przedstawiono krótki opis każdego z tych atrybutów oraz sposób ich używania. We wszystkich przykładach przyjęto język C# 8,0 lub nowszy, a kod jest w kontekście dopuszczającym wartość null.

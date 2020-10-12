@@ -4,12 +4,12 @@ description: Dowiedz się, jak pisać i wywoływać UDF w programie .NET dla Apa
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: d02ce7ec92ac1758b490b66d241d4957082eb20e
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: 7f050b39b1d2f0e2f506c522259485d87c7a185a
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877931"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955013"
 ---
 # <a name="write-and-call-udfs-in-net-for-apache-spark-interactive-environments"></a>Pisz i Wywołaj UDF w programie .NET dla środowisk interaktywnych Apache Spark
 
@@ -20,7 +20,7 @@ W tym artykule dowiesz się, jak używać funkcji zdefiniowanych przez użytkown
 1. Instalowanie [programu .NET Interactive](https://github.com/dotnet/interactive)
 2. Zainstaluj [laboratorium Jupyter Lab](https://jupyter.org/)
 
-## <a name="net-for-apach-spark-interactive-experience"></a>Środowisko .NET for Apach Spark Interactive
+## <a name="net-for-apache-spark-interactive-experience"></a>Środowisko interaktywne platformy .NET dla Apache Spark
 
 [Platforma .NET dla Apache Spark](https://github.com/dotnet/spark) używa [programu .NET Interactive](https://devblogs.microsoft.com/dotnet/net-interactive-is-here-net-notebooks-preview-2/) , aby zapewnić obsługę środowiska interaktywnego w środowisku Spark. Aby dowiedzieć się, jak skonfigurować środowisko w celu wypróbowania programu .NET Interactive z notesami Jupyter, zobacz [repozytorium interaktywne platformy .NET](https://github.com/dotnet/interactive).
 
@@ -51,23 +51,24 @@ Poniżej przedstawiono kilka istotnych kwestii, które należy wziąć pod uwag�
 
 ## <a name="faqs"></a>Często zadawane pytania
 
-1. **Dlaczego mój element UDF odwołujący się do niestandardowego obiektu zdefiniowanego przez użytkownika zgłasza błąd `Type Submission#_ is not marked as serializable` ?**  
+1. **Dlaczego mój element UDF odwołujący się do niestandardowego obiektu zdefiniowanego przez użytkownika Zgłoś błąd `Type Submission#_ is not marked as serializable` ?**
     Środowisko .NET Interactive zawija każdą z tych komórek z klasą otoki numeru przesyłania komórki, aby jednoznacznie identyfikować każdą komórkę, która jest przesyłana. Jak opisano szczegółowo w [tym przewodniku](udf-guide.md), podczas serializacji elementu UDF, który odwołuje się do obiektu niestandardowego, jego obiekt docelowy jest również wybierany do serializacji, który w przypadku programu .NET Interactive jest opakowany przez klasę otoki komórki, w której jest zdefiniowany obiekt niestandardowy.
-   Teraz zobaczmy, jak ma to wpływ na definicję formatu UDF w notesie:
+    Teraz zobaczmy, jak ma to wpływ na definicję formatu UDF w notesie:
 
     ![Błąd serializacji UDF](./media/dotnet-interactive/udf-serialization-error.png)
 
-    Jak widać w przypadku `udf2_fails` , zobaczysz komunikat o błędzie informujący, że typ `Submission#7` nie jest oznaczony jako możliwy do serializacji. jest to spowodowane tym, że program .NET Interactive Works otacza każdy obiekt zdefiniowany w komórce `Submission#` klasą, która jest generowana na bieżąco i dlatego nie jest oznaczona jako, a tym `Serializable` błędem.
+    Jak widać w przypadku `udf2_fails` , zobaczysz komunikat o błędzie informujący o tym, że typ `Submission#7` nie jest oznaczony jako możliwy do serializacji. jest to spowodowane tym, że program .NET Interactive zawija każdy obiekt zdefiniowany w komórce z `Submission#` klasą, która jest generowana na bieżąco i dlatego nie jest oznaczona jako `Serializable` .
+
     Z tego powodu jest wymagane, **aby element UDF odwołujący się do obiektu niestandardowego został zdefiniowany w tej samej komórce co ten obiekt**.
 
-2. **Dlaczego zmienne emisji nie współpracują z programem .NET Interactive?**  
-    Ze względu na przyczyny opisane powyżej zmienne emisji nie działają w programie .NET Interactive. Warto zapoznać się z [tym przewodnikiem dotyczącym zmiennych emisji](broadcast-guide.md) , aby lepiej zrozumieć, jakie zmienne emisji są i jak ich używać. Zmienne emisji nie współpracują ze scenariuszami interaktywnymi wynikają z tego, że projekt programu .NET Interactive jest dołączany do każdego obiektu zdefiniowanego w komórce przy użyciu klasy przesłanej komórek, która nie jest oznaczona jako możliwa do serializacji, kończy się niepowodzeniem z wyjątkiem tego samego wyjątku, jak pokazano wcześniej.
-   Szczegółowemy nieco więcej z poniższym przykładem:
+2. **Dlaczego zmienne nie są emitowane w programie .NET Interactive?**
+    Ze względów opisanych wcześniej zmienne emisji nie działają w programie .NET Interactive. Warto zapoznać się z [tym przewodnikiem dotyczącym zmiennych emisji](broadcast-guide.md) , aby lepiej zrozumieć, jakie zmienne emisji są i jak ich używać. Zmienne emisji przyczyn nie współpracują ze scenariuszami interaktywnymi wynikają z tego, że projekt programu .NET Interactive jest dołączany do każdego obiektu zdefiniowanego w komórce z jego klasą przesłaniania, która nie jest oznaczona jako możliwa do serializacji, kończy się niepowodzeniem z wyjątkiem tego samego wyjątku jak pokazano wcześniej.
+    Szczegółowemy nieco więcej z poniższym przykładem:
 
     ![Zmienne emisji kończą się niepowodzeniem](./media/dotnet-interactive/broadcast-fails.png)
 
-    Zgodnie z zaleceniami w poprzednich sekcjach definiujemy zarówno format UDF, jak i obiekt, do którego się odwołuje (zmienna emisji w tym przypadku) w tej samej komórce, ale nadal widzimy `SerializationException` błąd podczas tworzenia wniosku o `Microsoft.Spark.Sql.Session` nieoznaczony jako możliwy do serializacji. Jest to spowodowane tym, że gdy kompilator próbuje serializować obiekt zmiennej emisji `bv` , odnajdzie jego nazwę do dołączenia do [`SparkSession`](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Sql/SparkSession.cs#L20) obiektu `spark` , którego wymaga do oznaczenia jako możliwego do serializacji. Może to być bardziej łatwe dzięki przejęciu wglądu w kompilację z dekompilowanym zestawem tej komórki:
+    Zgodnie z zaleceniami w poprzednich sekcjach definiujemy zarówno format UDF, jak i obiekt, do którego się odwołuje (zmienna emisji w tym przypadku) w tej samej komórce, ale nadal widzimy `SerializationException` błąd podczas tworzenia wniosku o `Microsoft.Spark.Sql.Session` nieoznaczony jako możliwy do serializacji. Wynika to z faktu, że gdy kompilator próbuje serializować obiekt zmiennej emisji `bv` , odnajdzie jego nazwę do dołączenia do [`SparkSession`](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Sql/SparkSession.cs#L20) obiektu `spark` , który musi być oznaczony jako możliwy do serializacji. Może to być bardziej łatwe dzięki przejęciu wglądu w kompilację z dekompilowanym zestawem tej komórki:
 
     ![Dekompilowany kod zestawu](./media/dotnet-interactive/decompiledAssembly.png)
 
-    Jeśli oznaczemy [`SparkSession`](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Sql/SparkSession.cs#L20) klasę jako `[Serializable]` , możemy to zrobić, ale nie jest to idealne rozwiązanie, ponieważ nie chcemy, aby użytkownik mógł serializować obiekt SparkSession, ponieważ może to spowodować niebrzmieniae niepożądane zachowanie. Jest to znany problem, który jest śledzony w [tym miejscu](https://github.com/dotnet/spark/issues/619) i zostanie rozwiązany w przyszłych wersjach.
+    Jeśli oznaczemy [`SparkSession`](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Sql/SparkSession.cs#L20) klasę jako `[Serializable]` , możemy to zrobić, ale nie jest to idealne rozwiązanie, ponieważ nie chcemy, aby użytkownik mógł serializować obiekt SparkSession, ponieważ może to prowadzić do niektórych brzmienia, niepożądanego zachowania. Jest to [znany problem](https://github.com/dotnet/spark/issues/619) i zostanie rozwiązany w przyszłych wersjach.

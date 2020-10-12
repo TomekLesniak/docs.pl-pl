@@ -1,21 +1,19 @@
 ---
 title: Przesyłanie zadania platformy .NET dla Apache Spark do kostek
 description: Dowiedz się, jak przesłać zadanie platformy .NET dla Apache Spark do datakostki przy użyciu platformy Spark — przesyłanie i Ustawianie jar.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 88dc321a08f805ef8c3bf8d4d01d32dd890548d2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: fd04f78c47b34ca07042a4e60e2214f5f1ecac55
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557180"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955000"
 ---
 # <a name="submit-a-net-for-apache-spark-job-to-databricks"></a>Przesyłanie zadania platformy .NET dla Apache Spark do kostek
 
 Możesz uruchamiać zadania programu .NET dla Apache Spark w klastrach datakostków, ale nie jest to dostępne dla Ciebie. Istnieją dwa sposoby wdrażania zadania programu .NET dla Apache Spark w kostkach: `spark-submit` i ustawić jar.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="deploy-using-spark-submit"></a>Wdrażanie przy użyciu platformy Spark — przesyłanie
 

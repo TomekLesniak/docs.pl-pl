@@ -2,12 +2,12 @@
 title: Podstawowe zmiany w bibliotece klas podstawowych
 description: Wyświetla istotne zmiany w podstawowych bibliotekach programu .NET.
 ms.date: 07/27/2020
-ms.openlocfilehash: b86ceab784fd295acf500986f7e64731eb8ed0a3
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: d4deef295479b1f32bd72a69369a11c7375835f4
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756117"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955564"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Podstawowe zmiany w bibliotekach .NET
 
@@ -17,6 +17,7 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 
 | Zmiana podziału | Wprowadzona wersja |
 | - | :-: |
+| [Zmiany zachowania interfejsu API związane z zestawem dla formatu publikowania pojedynczego pliku](#assembly-related-api-behavior-changes-for-single-file-publishing-format) | 5,0 |
 | [Kolejność tagów w działaniu. Tagi są odwrócone](#order-of-tags-in-activitytags-is-reversed) | 5,0 |
 | [Nazwy parametrów zostały zmienione w wersji RC1](#parameter-names-changed-in-rc1) | 5,0 |
 | [Atrybuty OSPlatform zostały zmienione lub usunięte](#osplatform-attributes-renamed-or-removed) | 5,0 |
@@ -56,6 +57,10 @@ Następujące istotne zmiany zostały udokumentowane na tej stronie:
 | [Proces. element StartInfo zgłasza InvalidOperationException dla procesów, które nie zostały uruchomione](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [assembly-api-behavior-changes-for-single-file-publish](../../../includes/core-changes/corefx/5.0/assembly-api-behavior-changes-for-single-file-publish.md)]
+
+***
 
 [!INCLUDE [reverse-order-of-tags-in-activity-property](../../../includes/core-changes/corefx/5.0/reverse-order-of-tags-in-activity-property.md)]
 

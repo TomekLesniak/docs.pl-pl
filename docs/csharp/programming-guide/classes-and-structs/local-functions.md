@@ -1,22 +1,22 @@
 ---
 title: Funkcje lokalne — Przewodnik programowania w języku C#
 description: Funkcje lokalne w języku C# to metody prywatne, które są zagnieżdżone w innym elemencie członkowskim i mogą być wywoływane z ich składowych.
-ms.date: 10/02/2020
+ms.date: 10/09/2020
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: e7c49554da56d8682d37a236024922b3fa3ec600
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: a2d389c8b1c687dc4885004fcdc33e0ed7ada977
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877538"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955684"
 ---
 # <a name="local-functions-c-programming-guide"></a>Funkcje lokalne (Przewodnik programowania w języku C#)
 
 Począwszy od języka C# 7,0, C# obsługuje *funkcje lokalne*. Funkcje lokalne są prywatnymi metodami typu, które są zagnieżdżone w innym elemencie członkowskim. Mogą być wywoływane tylko z ich składowych. Funkcje lokalne można zadeklarować w i wywołać z:
 
 - Metody, zwłaszcza metody iteratorów i metody asynchroniczne
-- Konstruktorów
+- Konstruktory
 - Metody dostępu do właściwości
 - Metody dostępu zdarzeń
 - Metody anonimowe
@@ -50,11 +50,15 @@ Wszystkie zmienne lokalne, które są zdefiniowane w składowej zawierającej, �
 
 W przeciwieństwie do definicji metody lokalnej definicja funkcji nie może zawierać modyfikatora dostępu do składowej. Ponieważ wszystkie funkcje lokalne są prywatne, łącznie z modyfikatorem dostępu, takim jak `private` słowo kluczowe, generuje błąd kompilatora CS0106 "modyfikator" Private "jest nieprawidłowy dla tego elementu".
 
-Ponadto atrybuty nie mogą być stosowane do funkcji lokalnej ani do jej parametrów i parametrów typu.
-
 W poniższym przykładzie zdefiniowano funkcję lokalną o nazwie `AppendPathSeparator` , która jest prywatna dla metody o nazwie `GetText` :
 
 :::code language="csharp" source="snippets/local-functions/Program.cs" id="Basic" :::
+
+Począwszy od języka C# 9,0, można zastosować atrybuty do funkcji lokalnej, jej parametrów i parametrów typu, jak pokazano na poniższym przykładzie:
+
+:::code language="csharp" source="snippets/local-functions/Program.cs" id="WithAttributes" :::
+
+Poprzedni przykład używa [specjalnego atrybutu](../../language-reference/attributes/nullable-analysis.md) , aby pomóc kompilatorowi w analizie statycznej w kontekście dopuszczającym wartość null.
 
 ## <a name="local-functions-and-exceptions"></a>Lokalne funkcje i wyjątki
 

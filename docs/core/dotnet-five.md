@@ -1,20 +1,20 @@
 ---
-title: Ewolucja platformy .NET Core do platformy .NET 5
+title: Co nowego w programie .NET 5
 description: Dowiedz się więcej na temat platformy .NET 5 — platformy deweloperskiej obejmującej wiele platform i typu "open source", która jest kolejną ewolucją platformy .NET Core.
 ms.date: 09/02/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 9318b1afbe22c97f056bd38732306c6a6b60ad00
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 9d4fc514c9de7a668f909286f10d6fe28ada7f90
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598119"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955205"
 ---
-# <a name="the-evolution-of-net-core-to-net-5"></a>Ewolucja platformy .NET Core do platformy .NET 5
+# <a name="whats-new-in-net-5"></a>Co nowego w programie .NET 5
 
-W tym artykule przedstawiono szczegółowe informacje zawarte w programie .NET 5, który jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. ASP.NET Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Ponadto Entity Framework Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
+.NET 5 to ewolucja platformy .NET Core. W tym artykule przedstawiono szczegółowe informacje zawarte w programie .NET 5, który jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. ASP.NET Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Ponadto Entity Framework Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
 
 Pojawieniu platformy .NET Core rozwinęły ekosystem platformy .NET w atrakcyjny sposób. Zostało ono dojrzałe jako projekt Open Source w witrynie GitHub, świętujemy wkłady społecznościowe i humbly ulepszenie w miarę upływu czasu.
 
@@ -46,13 +46,13 @@ Platforma .NET 5 rozszerza te charakterystyki, wprowadzając przyrostowe ulepsze
 
 ### <a name="what-net-5-is-not"></a>Co to jest platforma .NET 5
 
-Platforma .NET 5 nie zastępuje .NET Framework. Nie istnieją plany dotyczące portów następujących technologii z .NET Framework do platformy .NET 5, ale istnieją obsługiwane alternatywy zawarte w programie .NET 5:
+Platforma .NET 5 nie jest kompletną wymianą dla .NET Framework. Nie istnieją plany dotyczące portów następujących technologii z .NET Framework do platformy .NET 5, ale istnieją obsługiwane alternatywy:
 
-| Technologia                             | Zalecenie                                              |
-|----------------------------------------|-------------------------------------------------------------|
-| Formularze sieci Web                              | [ASP.NET Core Blazor](/aspnet/core/blazor)                  |
-| Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                   |
-| Windows Workflow (WF)                  | [CoreWF "open source"](https://github.com/UiPath-Open/corewf) |
+| Technologia                             | Zalecana alternatywa                                                                         |
+|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| Formularze sieci Web                              | ASP.NET Core [Blazor](/aspnet/core/blazor) lub [Razor Pages](/aspnet/core/tutorials/razor-pages) |
+| Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                                                       |
+| Windows Workflow (WF)                  | [CoreWF "open source"](https://github.com/UiPath-Open/corewf)                                     |
 
 ## <a name="net-standard"></a>.NET Standard
 

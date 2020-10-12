@@ -3,20 +3,20 @@ title: Analiza tonacji za pomocą platformy .NET dla Apache Spark i samouczka ML
 description: W ramach tego samouczka nauczysz się używać ML.NET z platformą .NET do Apache Spark na potrzeby analizy tonacji.
 author: mamccrea
 ms.author: mamccrea
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 69deb30419b98536fa309547d94f59bb266e413c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 16b4d34e4c581da2cd0ba798d87e53ccfc49f0e9
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617586"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954896"
 ---
 # <a name="tutorial-sentiment-analysis-with-net-for-apache-spark-and-mlnet"></a>Samouczek: Analiza tonacji z platformą .NET dla Apache Spark i ML.NET
 
 W tym samouczku przedstawiono, jak przeprowadzić analizę tonacjiych przeglądów online przy użyciu ML.NET i platformy .NET dla Apache Spark. [Ml.NET](http://dot.net/ml) to bezpłatna, międzyplatformowa platforma uczenia maszynowego typu open source. Możesz użyć ML.NET z platformą .NET dla Apache Spark do skalowania szkoleń i przewidywania algorytmów uczenia maszynowego.
 
-Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
+Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
 > [!div class="checklist"]
 >
@@ -24,8 +24,6 @@ Ten samouczek zawiera informacje na temat wykonywania następujących czynności
 > * Utwórz aplikację konsolową platformy .NET dla Apache Spark.
 > * Pisanie i implementowanie funkcji zdefiniowanej przez użytkownika.
 > * Uruchom aplikację konsolową platformy .NET dla Apache Spark.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 

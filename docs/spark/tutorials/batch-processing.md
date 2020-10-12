@@ -3,14 +3,14 @@ title: Przetwarzanie wsadowe za pomocą platformy .NET dla Apache Spark — samo
 description: Dowiedz się, jak przeprowadzić przetwarzanie wsadowe przy użyciu platformy .NET dla Apache Spark.
 author: mamccrea
 ms.author: mamccrea
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: dbc3ab5cc4bd7f438e9f3f8e5d36c764d785ce4b
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 666292fa2e9cecbd4e0aacd291f1008810eb257e
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618288"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955398"
 ---
 # <a name="tutorial-do-batch-processing-with-net-for-apache-spark"></a>Samouczek: wykonywanie przetwarzania wsadowego za pomocą platformy .NET dla Apache Spark
 
@@ -18,15 +18,13 @@ W tym samouczku dowiesz się, jak przeprowadzić przetwarzanie wsadowe przy uży
 
 Przetwarzanie wsadowe jest zwykle wykonywane nad dużymi, płaskimi zestawami danych, które muszą zostać przygotowane do dalszej analizy. Przetwarzanie dzienników i magazynowanie danych to typowe scenariusze przetwarzania wsadowego. W tym scenariuszu analizujesz informacje o projektach GitHub, takich jak liczba różnych projektów przewidzianych do przetworzenia lub czas ich aktualizacji.
 
-Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
+Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
 > [!div class="checklist"]
 >
 > * Utwórz i Uruchom platformę .NET dla aplikacji Apache Spark
 > * Odczytywanie danych do ramki Dataframe i przygotowywanie jej do analizy
 > * Przetwarzanie danych przy użyciu platformy Spark SQL
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
