@@ -4,15 +4,14 @@ description: Użyj wyrażeń wartości domyślnych, aby uzyskać wartość domy�
 ms.date: 03/13/2020
 f1_keywords:
 - default_CSharpKeyword
-- default
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: f03971efa87bf03967c79512e44d22134dd80c17
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 92ad8e919567e1f9f57e6875d53c4055eb960829
+ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916870"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91997647"
 ---
 # <a name="default-value-expressions-c-reference"></a>wyrażenia wartości domyślnych (odwołanie w C#)
 
@@ -45,7 +44,7 @@ Aby uzyskać więcej informacji, zobacz sekcję [wyrażenia wartości domyślnej
 
 Aby uzyskać więcej informacji na temat `default` literału, zapoznaj się z [uwagami](~/_csharplang/proposals/csharp-7.1/target-typed-default.md)dotyczącymi funkcji.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

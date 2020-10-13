@@ -1,15 +1,15 @@
 ---
-title: Programowanie zorientowane obiektowo (C#)
+title: Programowanie Object-Oriented (C#)
 description: Język C# zapewnia pełną obsługę programowania zorientowanego obiektowo, w tym abstrakcję, hermetyzację, dziedziczenie i polimorfizm.
 ms.date: 09/30/2020
-ms.openlocfilehash: 8a8dc8dc6d40c539b988ea203654d994e88c357a
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 6e0155621be544b01453b8c107debb3a9b6c38f9
+ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614797"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91997656"
 ---
-# <a name="object-oriented-programming-c"></a>Programowanie zorientowane obiektowo (C#)
+# <a name="object-oriented-programming-c"></a>Programowanie Object-Oriented (C#)
 
 C# to język zorientowany obiektowo. Cztery z kluczowych technik używanych w programowaniu zorientowanym na obiektach są następujące:
 
@@ -162,7 +162,7 @@ Zastąp go następującym kodem:
 
 :::code language="csharp" source="./snippets/object-oriented-programming/BankAccount.cs" ID="RefactoredMakeWithdrawal":::
 
-Dodana Metoda to, co oznacza, że może być wywoływana tylko z klas pochodnych. Ta deklaracja uniemożliwia innym klientom wywoływanie metody. Istnieje również `virtual` możliwość zmiany zachowania klas pochodnych. Zwracanym typem jest `Transaction?` . `?`Adnotacja wskazuje, że metoda może zwrócić `null` . Dodaj następującą implementację w programie, `LineOfCreditAccount` Aby obciążać opłatę w przypadku przekroczenia limitu wycofania:
+Dodana Metoda to `protected` , co oznacza, że może być wywoływana tylko z klas pochodnych. Ta deklaracja uniemożliwia innym klientom wywoływanie metody. Istnieje również `virtual` możliwość zmiany zachowania klas pochodnych. Zwracanym typem jest `Transaction?` . `?`Adnotacja wskazuje, że metoda może zwrócić `null` . Dodaj następującą implementację w programie, `LineOfCreditAccount` Aby obciążać opłatę w przypadku przekroczenia limitu wycofania:
 
 :::code language="csharp" source="./snippets/object-oriented-programming/LineOfCreditAccount.cs" ID="AddOverdraftFee":::
 
@@ -174,7 +174,7 @@ Uruchom program i sprawdź wyniki.
 
 ## <a name="summary"></a>Podsumowanie
 
-Ten samouczek przedstawia wiele technik używanych w programowaniu zorientowanym obiektowo:
+W tym samouczku przedstawiono wiele technik używanych w programowaniu Object-Oriented:
 
 - Wykorzystano *abstrakcję* , gdy przechowujesz wiele szczegółów `private` w każdej klasie.
 - Użyto *hermetyzacji* podczas definiowania klas dla każdego z różnych typów kont. Te klasy zostały opisane zachowanie dla tego typu konta.
