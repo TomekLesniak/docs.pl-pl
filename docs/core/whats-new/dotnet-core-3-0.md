@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 8ba64a6e3bee4a5d27a07ab4ad4ef3a3f0749778
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: b0b1f4492d68ff2f2218b7c977f57cad3f582bb0
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804635"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050283"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co nowego w programie .NET Core 3.0
 
@@ -395,7 +395,7 @@ Platforma .NET Core wykorzystuje teraz zalety [protokołu TLS 1,3 w OpenSSL 1.1.
 Jeśli jest dostępny, program .NET Core 3,0 używa **OpenSSL 1.1.1**, **OpenSSL 1.1.0**lub **OpenSSL 1.0.2** w systemie Linux. Gdy **OpenSSL 1.1.1** jest dostępny, oba <xref:System.Net.Security.SslStream?displayProperty=nameWithType> <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> typy i używają **protokołu TLS 1,3** (przy założeniu, że zarówno klient, jak i serwer obsługują **protokół TLS 1,3**).
 
 > [!IMPORTANT]
-> Systemy Windows i macOS nie obsługują jeszcze **protokołu TLS 1,3**. Platforma .NET Core 3,0 będzie obsługiwać **protokół TLS 1,3** w tych systemach operacyjnych, gdy będzie dostępna pomoc techniczna.
+> Systemy Windows i macOS nie obsługują jeszcze **protokołu TLS 1,3**.
 
 Poniższy przykład w języku C# 8,0 ilustruje platformę .NET Core 3,0 na Ubuntu 18,10 z <https://www.cloudflare.com> :
 
@@ -510,13 +510,13 @@ Odnosi się do `fma` operacji IEEE, dlatego wykonuje odrzucane mnożenie dodawan
 - <xref:System.Math.CopySign(System.Double,System.Double)>\
 Odpowiada `copySign` operacji IEEE, zwraca wartość `x` , ale ze znakiem `y` .
 
-### <a name="net-platform-dependent-intrinsics"></a>Elementy wewnętrzne zależne od platformy .NET
+### <a name="net-platform-dependent-intrinsics"></a>Wewnętrzne Platform-Dependent .NET
 
 Dodano interfejsy API, które umożliwiają dostęp do pewnych instrukcji procesora CPU zorientowanych na wydajność, takich jak **SIMD** lub **bitowe zestawy instrukcji manipulowania** . Te instrukcje mogą pomóc w osiągnięciu znaczących ulepszeń wydajności w niektórych scenariuszach, takich jak wydajne przetwarzanie danych.
 
 W odpowiednich przypadkach biblioteki .NET zaczęły korzystać z tych instrukcji w celu zwiększenia wydajności.
 
-Aby uzyskać więcej informacji, zobacz elementy [wewnętrzne zależne od platformy .NET](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md).
+Aby uzyskać więcej informacji, zobacz [.net Platform-Dependent wewnętrznie](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md).
 
 ### <a name="improved-net-core-version-apis"></a>Ulepszone interfejsy API wersji platformy .NET Core
 

@@ -1,70 +1,66 @@
 ---
 title: .NET Standard
 description: Dowiedz się więcej na temat .NET Standard, jej wersji i implementacji platformy .NET, które go obsługują.
-ms.date: 02/13/2020
+ms.date: 10/05/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: e96a03ca55682d3e30bc13fb20a8e443105301fc
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: a4a59fea3ab1a6bc93a12e3f0aa13dea726d8121
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359314"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050403"
 ---
 # <a name="net-standard"></a>.NET Standard
 
-[.NET Standard](https://github.com/dotnet/standard) to formalna Specyfikacja interfejsów API platformy .NET, które mają być dostępne we wszystkich implementacjach platformy .NET. Uzasadnienie w .NET Standard polega na ustanowieniu większej jednorodności w ekosystemie platformy .NET. [Ecma 335](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) nadal ustala jednolitość dla zachowania implementacji platformy .NET, a podczas gdy ECMA 335 określa mały zestaw bibliotek standardowych, specyfikacja .NET Standard obejmuje szerszy zakres interfejsów API platformy .NET.
-
-.NET Standard włącza następujące kluczowe scenariusze:
-
-- Definiuje jednolity zestaw interfejsów API BCL dla wszystkich implementacji platformy .NET do implementacji, niezależnie od obciążenia.
-- Umożliwia deweloperom tworzenie przenośnych bibliotek, których można użyć w implementacjach platformy .NET, przy użyciu tego samego zestawu interfejsów API.
-- Zmniejsza lub nawet eliminuje warunkową kompilację źródła udostępnionego ze względu na interfejsy API platformy .NET, tylko w przypadku interfejsów API systemu operacyjnego.
-
-Różne implementacje platformy .NET przeznaczone dla konkretnych wersji .NET Standard. Każda wersja implementacji platformy .NET anonsuje najwyższą obsługiwaną przez nią wersję .NET Standard, instrukcję, która oznacza, że obsługuje także poprzednie wersje. Na przykład .NET Framework 4,6 implementuje .NET Standard 1,3, co oznacza, że uwidacznia wszystkie interfejsy API zdefiniowane w .NET Standard wersje 1,0 za pośrednictwem 1,3. Podobnie .NET Framework 4.6.1 implementuje .NET Standard 1,4, podczas gdy .NET Core 1,0 implementuje .NET Standard 1,6.
+[.NET Standard](https://github.com/dotnet/standard) to formalna Specyfikacja interfejsów API platformy .NET, które są dostępne w wielu implementacjach platformy .NET. Uzasadnienie .NET Standard było bardziej jednorodne w ekosystemie platformy .NET. Jednak w programie .NET 5 jest stosowane inne podejście do ustanowienia jednorodności, a nowe podejście eliminuje konieczność .NET Standard w wielu scenariuszach. Aby uzyskać więcej informacji, zobacz [.NET 5 i .NET Standard](#net-5-and-net-standard) w dalszej części tego artykułu.
 
 ## <a name="net-implementation-support"></a>Obsługa implementacji platformy .NET
 
-W poniższej tabeli wymieniono **minimalne** wersje platformy obsługujące każdą wersję .NET Standard. Oznacza to, że nowsze wersje wymienionej platformy obsługują również odpowiednią wersję .NET Standard. Na przykład platforma .NET Core 2,2 obsługuje .NET Standard 2,0 i starsze.
+Różne implementacje platformy .NET przeznaczone dla konkretnych wersji .NET Standard. Każda wersja implementacji platformy .NET anonsuje najwyższą obsługiwaną przez nią wersję .NET Standard, instrukcję, która oznacza, że obsługuje także poprzednie wersje. Na przykład .NET Framework 4,6 implementuje .NET Standard 1,3, co oznacza, że uwidacznia wszystkie interfejsy API zdefiniowane w .NET Standard wersje 1,0 za pośrednictwem 1,3. Podobnie .NET Framework 4.6.1 implementuje .NET Standard 1,4, podczas gdy .NET 5,0 implementuje .NET Standard 2,1.
+
+W poniższej tabeli wymieniono **minimalne** wersje implementacji, które obsługują każdą wersję .NET Standard. Oznacza to, że nowsze wersje wymienionej implementacji obsługują również odpowiednią wersję .NET Standard. Na przykład program .NET Core 2,1 i jego nowsze wersje obsługują .NET Standard 2,0 i wcześniejszych wersjach.
 
 [!INCLUDE [net-standard-table](../../includes/net-standard-table.md)]
 
 Aby znaleźć najwyższą wersję .NET Standard, która może być docelowa, wykonaj następujące czynności:
 
 1. Znajdź wiersz wskazujący implementację platformy .NET, która ma zostać uruchomiona.
-2. Znajdź w tym wierszu kolumnę, która wskazuje wersję rozpoczynającą od prawej do lewej.
-3. Nagłówek kolumny wskazuje wersję .NET Standard obsługiwaną przez element docelowy. Możesz również określić dowolną niższą wersję .NET Standard. Nowsze wersje .NET Standard obsługują również Twoją implementację.
-4. Powtórz ten proces dla każdej platformy, która ma być docelowa. Jeśli masz więcej niż jedną platformę docelową, należy wybrać mniejszą wersję między nimi. Na przykład jeśli chcesz uruchomić na .NET Framework 4,5 i .NET Core 1,0, najwyższa .NET Standard wersja, której można użyć, to .NET Standard 1,1.
+1. Znajdź w tym wierszu kolumnę, która wskazuje wersję rozpoczynającą od prawej do lewej.
+1. Nagłówek kolumny wskazuje wersję .NET Standard obsługiwaną przez element docelowy. Możesz również określić dowolną niższą wersję .NET Standard. Nowsze wersje .NET Standard obsługują również Twoją implementację.
+1. Powtórz ten proces dla każdej platformy, która ma być docelowa. Jeśli masz więcej niż jedną platformę docelową, należy wybrać mniejszą wersję między nimi. Na przykład jeśli chcesz uruchomić na .NET Framework 4,8 i .NET 5,0, najwyższa .NET Standard wersja, której można użyć, to .NET Standard 2,0.
 
 ### <a name="which-net-standard-version-to-target"></a>Która wersja .NET Standard ma być docelowa
 
-W przypadku wybrania wersji .NET Standard należy wziąć pod uwagę tę wymianę:
+W przypadku wybrania wersji .NET Standard docelowej należy wziąć pod uwagę tę wymianę:
 
-- Im wyższa wersja, tym więcej interfejsów API są dostępne dla Ciebie.
-- Im niższa wersja, tym więcej platform implementuje ją.
+- Im wyższa wersja, tym więcej interfejsów API są dostępne dla kodu biblioteki.
+- Im niższa wersja, tym więcej aplikacji i bibliotek może korzystać z biblioteki.
 
-Ogólnie rzecz biorąc, zalecamy przeprowadzenie *najmniejszej* możliwej wersji .NET Standard. Po znalezieniu największej wersji .NET Standard można dowiedzieć się, wykonaj następujące kroki:
+Zalecamy, aby była dostępna *Najniższa* wersja .NET Standard. Po znalezieniu największej wersji .NET Standard można dowiedzieć się, wykonaj następujące kroki:
 
 1. Wybierz następną niższą wersję .NET Standard i skompiluj projekt.
 2. Jeśli projekt zostanie pomyślnie skompilowany, Powtórz krok 1. W przeciwnym razie Przekieruj do następnej wyższej wersji i jest to wersja, której chcesz użyć.
 
-Jednak w przypadku mniejszych wersji .NET Standard wprowadzono kilka zależności pomocy technicznej. Jeśli projekt jest obiektem docelowym .NET Standard 1. x, zalecamy *również* przeprowadzenie .NET Standard 2,0. Upraszcza to wykres zależności dla użytkowników biblioteki, które działają na .NET Standard 2,0 zgodnych platform i zmniejsza liczbę pakietów potrzebnych do pobrania.
+Jednak w przypadku mniejszych wersji .NET Standard wprowadzono kilka zależności pomocy technicznej. Jeśli projekt jest obiektem docelowym .NET Standard 1. x, zalecamy *również* przeprowadzenie .NET Standard 2,0. Upraszcza to wykres zależności dla użytkowników biblioteki, które działają na .NET Standard 2,0 zgodnych implementacji i zmniejsza liczbę pakietów potrzebnych do pobrania.
 
 ### <a name="net-standard-versioning-rules"></a>Reguły obsługi wersji .NET Standard
 
 Istnieją dwie podstawowe reguły obsługi wersji:
 
 - Dodatek: wersje .NET Standard są logicznie skoncentrowane koła: wyższe wersje obejmują wszystkie interfejsy API z poprzednich wersji. Nie ma żadnych istotnych zmian między wersjami.
-- Niezmienne: po wysłaniu wersje .NET Standard są zamrożone. Nowe interfejsy API najpierw stają się dostępne w określonych implementacjach platformy .NET, takich jak .NET Core. Jeśli na tablicy przeglądu .NET Standard warto udostępnić nowe interfejsy API dla wszystkich implementacji platformy .NET, są one dodawane w nowej wersji .NET Standard.
+- Niezmienne: po wysłaniu wersje .NET Standard są zamrożone.
+
+Nie będą dostępne żadne nowe wersje .NET Standard po 2,1. Aby uzyskać więcej informacji, zobacz [.NET 5 i .NET Standard](#net-5-and-net-standard) w dalszej części tego artykułu.
 
 ## <a name="specification"></a>Specyfikacja
 
-Specyfikacja .NET Standard to standardowy zestaw interfejsów API. Specyfikacja jest obsługiwana przez implementacje platformy .NET, w tym dla firmy Microsoft (w tym .NET Framework, .NET Core i mono) i Unity. Publiczny proces przesyłania opinii jest używany w ramach ustanawiania nowych wersji .NET Standard za pomocą usługi [GitHub](https://github.com/dotnet/standard).
+Specyfikacja .NET Standard to standardowy zestaw interfejsów API. Specyfikacja jest obsługiwana przez implementacje platformy .NET, w tym dla firmy Microsoft (w tym .NET Framework, .NET Core i mono) i Unity.
 
 ### <a name="official-artifacts"></a>Oficjalne artefakty
 
-Oficjalną specyfikacją jest zestaw plików CS, które definiują interfejsy API, które są częścią standardu. [Katalog ref](https://github.com/dotnet/standard/tree/master/src/netstandard/ref) w [repozytorium dotnet/Standard](https://github.com/dotnet/standard) definiuje .NET Standard interfejsów API.
+Oficjalną specyfikacją jest zestaw plików *CS* , które definiują interfejsy API, które są częścią standardu. [Katalog ref](https://github.com/dotnet/standard/tree/master/src/netstandard/ref) w [repozytorium dotnet/Standard](https://github.com/dotnet/standard) definiuje .NET Standard interfejsów API.
 
 Pakiet webpackage [. Library](https://www.nuget.org/packages/NETStandard.Library) ([Źródło](https://github.com/dotnet/standard/blob/master/src/netstandard/pkg/NETStandard.Library.dependencies.props)) opisuje zestaw bibliotek, które definiują (w części) co najmniej jedną wersję .NET Standard.
 
@@ -82,27 +78,21 @@ Są udostępniane artefakty pochodne umożliwiające wygodniejsze odczytywanie i
 
 Podstawowym nośnikiem dystrybucji dla zestawów odwołań .NET Standard są pakiety NuGet. Implementacje są dostarczane na różne sposoby, odpowiednie dla każdej implementacji platformy .NET.
 
-Pakiety NuGet mają co najmniej jedną [platformę](frameworks.md). Pakiety .NET Standard są przeznaczone dla struktury ".NET Standard". Można kierować platformą .NET Standard przy użyciu `netstandard` [TFM kompaktowy](frameworks.md) (na przykład `netstandard1.4` ). Biblioteki przeznaczone do uruchamiania w wielu środowiskach uruchomieniowych powinny wskazywać tę strukturę. Dla najszerszego zestawu interfejsów API, miejsce docelowe, `netstandard2.0` ponieważ liczba dostępnych interfejsów API jest większa niż dwa .NET Standard 1,6 i 2,0.
+Pakiety NuGet mają co najmniej jedną [platformę](frameworks.md). Pakiety .NET Standard są przeznaczone dla struktury ".NET Standard". Można kierować platformą .NET Standard przy użyciu `netstandard` [TFM kompaktowy](frameworks.md) (na przykład `netstandard1.4` ). Biblioteki przeznaczone do uruchamiania w wielu implementacjach platformy .NET powinny wskazywać tę strukturę. Dla najszerszego zestawu interfejsów API, miejsce docelowe, `netstandard2.0` ponieważ liczba dostępnych interfejsów API jest większa niż dwa .NET Standard 1,6 i 2,0.
 
 [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/)Pakiet webpackage odwołuje się do kompletnego zestawu pakietów NuGet, które definiują .NET Standard.  Najbardziej typowym sposobem docelowym `netstandard` jest odwołanie do tego pakietu. Opisuje i zapewnia dostęp do bibliotek platformy .NET ~ 40 i skojarzonych z nimi interfejsów API, które definiują .NET Standard. Możesz odwoływać się do dodatkowych pakietów, których celem jest `netstandard` uzyskanie dostępu do dodatkowych interfejsów API.
 
-### <a name="versioning"></a>Obsługa wersji
+### <a name="versioning"></a>Przechowywanie wersji
 
-Specyfikacja nie jest pojedyncza, ale przyrostowo rośnie i liniowo zestaw interfejsów API. Pierwsza wersja standardu ustanawia zestaw bazowy interfejsów API. Kolejne wersje dodają interfejsy API i dziedziczą interfejsy API zdefiniowane przez poprzednie wersje. Nie ma ustanowionego udostępniania do usuwania interfejsów API ze standardu.
+Specyfikacja nie jest pojedyncza, ale zestaw interfejsów API z określoną wersją. Pierwsza wersja standardu ustanawia zestaw bazowy interfejsów API. Kolejne wersje dodają interfejsy API i dziedziczą interfejsy API zdefiniowane przez poprzednie wersje. Nie ma ustanowionego udostępniania do usuwania interfejsów API ze standardu.
 
-.NET Standard nie jest specyficzna dla żadnej z implementacji platformy .NET ani nie jest zgodna ze schematem przechowywania wersji żadnego z tych środowisk.
+.NET Standard nie jest specyficzna dla żadnej z implementacji platformy .NET ani nie jest zgodna ze schematem przechowywania wersji żadnej z tych implementacji.
 
-Interfejsy API dodane do dowolnej implementacji platformy .NET (na przykład .NET Framework, .NET Core i mono) mogą być uznawane za kandydatów do dodania do specyfikacji, szczególnie jeśli są uważane za podstawę. Nowe [wersje .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) są tworzone na podstawie wydań implementacji platformy .NET, co umożliwia kierowanie nowych interfejsów API za pomocą .NET Standard przenośnej biblioteki klas (PCL). Informacje o wersji Mechanics są opisane bardziej szczegółowo w temacie [Versioning .NET Core](../core/versions/index.md).
-
-Obsługa wersji .NET Standard jest ważna w przypadku użycia. Mając .NET Standard wersję, można użyć bibliotek przeznaczonych dla tej samej lub niższej wersji. Poniższe podejście opisuje przepływ pracy służący do używania .NET Standard PCLs, charakterystyczny dla .NET Standard określania wartości docelowej.
-
-- Wybierz wersję .NET Standard, która ma być używana na potrzeby PCL.
-- Użyj bibliotek, które są zależne od tej samej wersji .NET Standard lub niższej.
-- Jeśli znajdziesz bibliotekę, która zależy od nowszej wersji .NET Standard, musisz przyjąć tę samą wersję lub zrezygnować z używania tej biblioteki.
+Jak wspomniano wcześniej, nie będą dostępne żadne nowe wersje .NET Standard po 2,1.
 
 ## <a name="target-net-standard"></a>.NET Standard docelowe
 
-Można [tworzyć biblioteki .NET Standard](../core/tutorials/libraries.md) przy użyciu kombinacji `netstandard` struktury i pakietu.
+Można [tworzyć .NET Standard bibliotek](../core/tutorials/libraries.md) przy użyciu kombinacji `netstandard` struktury i `NETStandard.Library` pakietu.
 
 ## <a name="net-framework-compatibility-mode"></a>.NET Framework tryb zgodności
 
@@ -116,51 +106,66 @@ Aby można było tworzyć biblioteki .NET Standard w programie Visual Studio, up
 
 Jeśli potrzebujesz korzystać tylko z bibliotek .NET Standard 2,0 w projektach, możesz to zrobić również w programie Visual Studio 2015. Konieczne jest jednak zainstalowanie klienta NuGet 3,6 lub nowszego. Klienta NuGet dla programu Visual Studio 2015 można pobrać ze strony [plików do pobrania](https://www.nuget.org/downloads) w programie NuGet.
 
-## <a name="comparison-to-portable-class-libraries"></a>Porównanie z bibliotekami klas przenośnych
+## <a name="net-5-and-net-standard"></a>.NET 5 i .NET Standard
 
-.NET Standard jest zamiennikiem [bibliotek klas przenośnych (PCL)](./cross-platform/cross-platform-development-with-the-portable-class-library.md). .NET Standard ulepszenia środowiska tworzenia bibliotek przenośnych przez opiekę standardowego BCL i ustanowienie większej jednorodności w ramach implementacji platformy .NET. Biblioteka, która jest przeznaczona dla .NET Standard to PCL lub "PCL oparty na .NET Standard". Istniejący PCLs są "PCLs oparte na profilach".
+.NET 5 to implementacja platformy .NET, którą aktywnie opracowuje firma Microsoft. Jest to jeden produkt z jednolitym zestawem możliwości i interfejsów API, które mogą być używane dla aplikacji klasycznych systemu Windows i aplikacji konsolowych dla wielu platform, usług w chmurze i witryn sieci Web. [TFMs](frameworks.md) .NET 5,0 odzwierciedla te szerokie zakresy scenariuszy:
 
-Profile .NET Standard i PCL zostały utworzone do podobnych celów, ale różnią się również kluczowymi sposobami.
+* `net5.0`
 
-Podobieństwa
+  Ten TFM jest przeznaczony dla kodu, który działa wszędzie. Kilka wyjątków zawiera tylko technologie, które działają na wielu platformach. W przypadku kodu platformy .NET 5 `net5.0` zastępuje zarówno parametr, `netcoreapp` jak i `netstandard` TFMs.
 
-- Zdefiniuj interfejsy API, które mogą być używane do udostępniania kodu binarnego.
+* `net5.0-windows`
 
-Wynikających
+  Jest to przykład [TFMs specyficzny dla systemu](frameworks.md#net-5-os-specific-tfms) operacyjnego, który dodaje funkcję specyficzną dla systemu operacyjnego do wszystkich elementów, które `net5.0` odwołują się do programu.
 
-- .NET Standard jest nadzorowanym zestawem interfejsów API, natomiast profile PCL są definiowane przez przedziały istniejących platform.
-- .NET Standard wersje liniowe, natomiast profile PCL nie są obsługiwane.
-- Profile PCL reprezentują platformy firmy Microsoft, podczas gdy .NET Standard jest platformą niezależny od.
+### <a name="when-to-target-net50-vs-netstandard"></a>Kiedy należy kierować do programu NET 5.0 a Standard
 
-### <a name="pcl-compatibility"></a>Zgodność z PCL
+Dla istniejącego kodu, który `netstandard` jest celem, nie ma potrzeby zmiany TFM na `net5.0` . .NET 5,0 implementuje .NET Standard 2,1 i starsze. Jedyną przyczyną przekierowania z .NET Standard do programu .NET 5,0 jest uzyskanie dostępu do większej liczby funkcji środowiska uruchomieniowego, funkcji języka lub interfejsów API. Na przykład w celu użycia języka C# 9 należy wskazać platformę .NET 5,0. W celu uzyskania dostępu do nowszych funkcji można uzyskać dostęp do programu .NET 5,0 i .NET Standard, aby udostępnić bibliotekę innym implementacjom platformy .NET.
 
-.NET Standard jest zgodny z podzbiorem profilów PCL. .NET Standard 1,0, 1,1 i 1,2 każde nakładanie się z zestawem profilów PCL. Ten nakładanie zostało utworzone z dwóch powodów:
+Poniżej przedstawiono niektóre wskazówki dotyczące nowego kodu dla programu .NET 5:
 
-- Włącz PCLs oparte na .NET Standard, aby odwołać się do PCLs opartego na profilach.
-- Włącz PCLs w oparciu o profilowanie jako PCLs oparty na .NET Standard.
+* Składniki aplikacji
 
-Zgodność PCL oparta na profilach jest zapewniana przez pakiet NuGet [Microsoft. Core. Portable. Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) . Ta zależność jest wymagana w przypadku odwoływania się do pakietów NuGet, które zawierają PCLs oparte na profilach.
+  Jeśli używasz bibliotek do podziału aplikacji na kilka składników, zalecamy, aby określić, `net5.x` gdzie `5.x` jest najwcześniejszą wersją programu .NET 5, którą aplikacja może kierować. Dla uproszczenia najlepiej zachować wszystkie projekty, które tworzą aplikację w tej samej wersji platformy .NET. Następnie możesz założyć te same funkcje BCL wszędzie.
 
-PCLs spakowane na podstawie profilu jako `netstandard` łatwiejsze do użycia niż zwykle spakowane PCLs oparte na profilach. `netstandard` Pakowanie jest zgodne z istniejącymi użytkownikami.
+* Biblioteki wielokrotnego użytku
 
-Można wyświetlić zestaw profilów PCL, które są zgodne z .NET Standard:
+  Jeśli tworzysz biblioteki wielokrotnego użytku, które planujesz dostarczać przy użyciu narzędzia NuGet, weź pod uwagę różnice między zasięgiem i dostępnym zestawem funkcji. .NET Standard 2,0 to Najnowsza wersja obsługiwana przez .NET Framework, dzięki czemu zapewnia dobry zasięg z dość dużym zestawem funkcji. Nie zaleca się określania wartości docelowej .NET Standard 1. x, ponieważ ograniczenie dostępnego zestawu funkcji jest minimalne.
 
-| Profil PCL | .NET Standard | Platformy PCL
-|:-----------:|:-------------:|------------------------------------------------------------------------------
-| Profile7    | 1,1           | .NET Framework 4,5, Windows 8
-| Profile31   | 1,0           | Windows 8.1, Windows Phone Silverlight 8,1
-| Profile32   | 1,2           | Windows 8.1, Windows Phone 8,1
-| Profile44   | 1,2           | .NET Framework 4.5.1, Windows 8.1
-| Profile49   | 1,0           | .NET Framework 4,5, Windows Phone Silverlight 8
-| Profile78   | 1,0           | .NET Framework 4,5, Windows 8, Windows Phone Silverlight 8
-| Profile84   | 1,0           | Windows Phone 8,1, Windows Phone Silverlight 8,1
-| Profile111  | 1,1           | .NET Framework 4,5, Windows 8, Windows Phone 8,1
-| Profile151  | 1,2           | .NET Framework 4.5.1, Windows 8.1, Windows Phone 8,1
-| Profile157  | 1,0           | Windows 8.1, Windows Phone 8,1, Windows Phone Silverlight 8,1
-| Profile259  | 1,0           | .NET Framework 4,5, Windows 8, Windows Phone 8,1, Windows Phone Silverlight 8
+  Jeśli nie musisz obsługiwać .NET Framework, możesz przejść do .NET Standard 2,1 lub .NET 5. Zalecamy pominięcie .NET Standard 2,1 i przejście bezpośrednio do programu .NET 5. Najczęściej używane biblioteki będą kończyć wiele elementów docelowych dla .NET Standard 2,0 i .NET 5. Obsługa .NET Standard 2,0 zapewnia największą zasięg, a obsługa programu .NET 5 zapewnia możliwość korzystania z najnowszych funkcji platformy dla klientów, którzy znajdują się już w programie .NET 5.
+
+### <a name="net-standard-problems"></a>.NET Standard problemy
+
+Poniżej przedstawiono niektóre problemy dotyczące .NET Standard, które pomagają w wyjaśnieniu, dlaczego platforma .NET 5 jest lepszym sposobem udostępniania kodu między platformami i obciążeniami:
+
+- Powolne Dodawanie nowych interfejsów API
+
+  .NET Standard został utworzony jako zestaw interfejsów API, że wszystkie implementacje platformy .NET będą musiały być obsługiwane, w związku z czym wystąpił proces recenzowania w celu dodania nowych interfejsów API. Celem było ujednolicenie tylko interfejsów API, które można zaimplementować we wszystkich bieżących i przyszłych platformach .NET. W efekcie, gdyby funkcja była niedostępna do określonej wersji, może być konieczne odczekanie przez kilka lat przed dodaniem jej do wersji Standard. Następnie poczekaj, aż Nowa wersja .NET Standard będzie ogólnie obsługiwana.
+
+  **Rozwiązanie w programie .NET 5:** Gdy funkcja jest zaimplementowana, jest już dostępna dla każdej aplikacji i biblioteki platformy .NET 5, ponieważ baza kodu jest udostępniona. I ponieważ nie ma żadnych różnic między specyfikacją interfejsu API i jego implementacją, można korzystać z nowych funkcji znacznie szybciej niż w przypadku .NET Standard.
+
+- Wersja złożona
+
+  Oddzielenie specyfikacji interfejsu API od jej implementacji powoduje złożone mapowanie między wersjami specyfikacji interfejsu API i wersjami implementacji. Ta złożoność jest widoczna w tabeli pokazanej wcześniej w tym artykule i instrukcje dotyczące sposobu jej interpretacji.
+
+  **Rozwiązanie w programie .NET 5:** Nie ma rozdzielenia między specyfikacją interfejsu API programu .NET 5. x i jej implementacją. Wynikiem jest uproszczony schemat TFM. Istnieje jeden prefiks TFM dla wszystkich obciążeń: `net5.0` jest używany w bibliotekach, aplikacjach konsolowych i aplikacjach sieci Web. Jedyną różnicą jest [sufiks określający interfejsy API specyficzne dla platformy](frameworks.md#net-5-os-specific-tfms) dla określonej platformy, takie jak `net5.0-windows` . Dzięki tej konwencji nazewnictwa TFM można łatwo stwierdzić, czy dana aplikacja może korzystać z danej biblioteki. Nie jest wymagana tabela odpowiedników numerów wersji, taka jak ta dla .NET Standard.
+
+- Platforma — nieobsługiwane wyjątki w czasie wykonywania
+
+  .NET Standard udostępnia interfejsy API specyficzne dla platformy. Kod może kompilować bez błędów i prawdopodobnie być przenośny na dowolną platformę, nawet jeśli nie jest przenośny. Gdy jest uruchomiona na platformie, która nie ma implementacji dla danego interfejsu API, pojawiają się błędy czasu wykonywania.
+
+  **Rozwiązanie w programie .NET 5:** Zestaw SDK programu .NET 5 zawiera analizatory kodu, które są domyślnie włączone. Analizator zgodności platformy wykrywa niezamierzone użycie interfejsów API, które nie są obsługiwane na platformach, na których zamierzasz pracować. Aby uzyskać więcej informacji, zobacz [Analizator zgodności platformy](analyzers/platform-compat-analyzer.md).
+
+### <a name="net-standard-not-deprecated"></a>Nie .NET Standard przestarzałe
+
+.NET Standard jest nadal wymagana dla bibliotek, które mogą być używane przez wiele implementacji platformy .NET. Zalecamy .NET Standard w następujących scenariuszach:
+
+* Służy `netstandard2.0` do udostępniania kodu między .NET Framework i wszystkimi innymi implementacjami programu .NET.
+* Służy `netstandard2.1` do udostępniania kodu między programami mono, Xamarin i .NET Core 3. x.
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Wersje .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md)
+- [Wersje .NET Standard (Źródło)](https://github.com/dotnet/standard/blob/master/docs/versions.md)
+- [Wersje .NET Standard (interaktywny interfejs użytkownika)](https://dotnet.microsoft.com/platform/dotnet-standard#versions)
 - [Kompilowanie biblioteki .NET Standard](../core/tutorials/library-with-visual-studio.md)
 - [Obsługiwane rozwiązania międzyplatformowe](./library-guidance/cross-platform-targeting.md)

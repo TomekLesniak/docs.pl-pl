@@ -25,24 +25,46 @@
       href: tutorials/ml-sentiment-analysis.md
 - name: Przewodniki z instrukcjami
   items:
+    - name: Łączenie się z danymi
+      items:
+        - name: Azure Storage
+          href: how-to-guides/connect-to-azure-storage.md
+        - name: Event Hubs
+          href: how-to-guides/connect-to-event-hub.md
+        - name: Mongo DB
+          href: how-to-guides/connect-to-mongo-db.md
+        - name: SQL Server
+          href: how-to-guides/connect-to-sql-server.md
+    - name: Kompilowanie aplikacji
+      items:
+        - name: Ubuntu
+          href: how-to-guides/ubuntu-instructions.md
+        - name: Windows
+          href: how-to-guides/windows-instructions.md
+    - name: Przesyłanie zadań zdalnych
+      items:
+        - name: Przesyłanie zadań do usługi Azure Synapse Analytics
+          href: /azure/synapse-analytics/spark/spark-dotnet
+        - name: Przesyłanie zadań do usługi Databricks
+          href: how-to-guides/databricks-deploy-methods.md
+        - name: Przesyłanie zadań do usługi HDInsight
+          href: how-to-guides/hdinsight-deploy-methods.md
+    - name: Funkcje zdefiniowane przez użytkownika (UDF)
+      items:
+        - name: Przewodnik po funkcjach zdefiniowanych przez użytkownika
+          href: how-to-guides/udf-guide.md
+        - name: Funkcje UDF języka Java na platformie .NET
+          href: how-to-guides/java-udf-from-dotnet.md
+        - name: Funkcje UDF w narzędziach .NET Interactive
+          href: how-to-guides/dotnet-interactive-udf-issue.md
+        - name: Wdrażanie procesu roboczego i plików binarnych UDF
+          href: how-to-guides/deploy-worker-udf-binaries.md
+    - name: Korzystanie z notesów programu Jupyter
+      href: how-to-guides/dotnet-spark-jupyter-notebooks.md
     - name: Przewodnik po emisji
       href: how-to-guides/broadcast-guide.md
-    - name: Przewodnik po funkcjach zdefiniowanych przez użytkownika
-      href: how-to-guides/udf-guide.md
     - name: Debugowanie aplikacji
       href: how-to-guides/debug.md
-    - name: Przesyłanie zadań do usługi Azure Synapse Analytics
-      href: /azure/synapse-analytics/spark/spark-dotnet
-    - name: Przesyłanie zadań do usługi HDInsight
-      href: how-to-guides/hdinsight-deploy-methods.md
-    - name: Przesyłanie zadań do usługi Databricks
-      href: how-to-guides/databricks-deploy-methods.md
-    - name: Wdrażanie procesu roboczego i plików binarnych UDF
-      href: how-to-guides/deploy-worker-udf-binaries.md
-    - name: Tworzenie aplikacji w systemie Ubuntu
-      href: how-to-guides/ubuntu-instructions.md
-    - name: Tworzenie aplikacji w systemie Windows
-      href: how-to-guides/windows-instructions.md
     - name: Instalowanie interakcyjnych notesów w usłudze Azure HDInsight
       href: how-to-guides/hdinsight-notebook-installation.md
 - name: Tematy pomocy
@@ -53,7 +75,7 @@
   items:
     - name: Omówienie zasobów
       href: resources/index.md
-    - name: GitHub
+    - name: Platforma .NET dla Apache Spark GitHub
       href: 'https://github.com/dotnet/spark'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/.net-spark'

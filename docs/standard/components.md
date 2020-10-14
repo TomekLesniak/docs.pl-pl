@@ -2,49 +2,60 @@
 title: Składniki architektury .NET
 description: Opisuje składniki architektury .NET, takie jak .NET Standard, implementacje platformy .NET, środowiska uruchomieniowe platformy .NET i narzędzia.
 author: cartermp
-ms.date: 08/23/2017
+ms.date: 10/05/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: fc34cf35e82e3a401f32561aa239996c7697aa03
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0cdd2485e81626ffc9d17380427c29fee0f82083
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547678"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050256"
 ---
 # <a name="net-architectural-components"></a>Składniki architektury .NET
 
-Aplikacja platformy .NET jest opracowana dla i działa w co najmniej jednej *implementacji platformy .NET*.  Implementacje programu .NET obejmują .NET Framework, .NET Core i mono. Istnieje Specyfikacja interfejsu API wspólna dla wszystkich implementacji platformy .NET, która nazywa się .NET Standard. Ten artykuł zawiera krótkie wprowadzenie do każdego z tych koncepcji.
+Aplikacja platformy .NET jest opracowana dla i działa w co najmniej jednej *implementacji platformy .NET*. Implementacje programu .NET obejmują .NET Framework, .NET 5 (oraz .NET Core) i mono. Istnieje Specyfikacja interfejsu API wspólna dla wielu implementacji platformy .NET, która jest nazywana .NET Standard. Ten artykuł zawiera krótkie wprowadzenie do każdego z tych koncepcji.
 
 ## <a name="net-standard"></a>.NET Standard
 
-.NET Standard to zestaw interfejsów API, które są implementowane przez podstawową bibliotekę klas implementacji platformy .NET. Bardziej formalnie jest to specyfikacja interfejsów API platformy .NET, które składają się na jednolity zestaw kontraktów, dla których kompilujesz swój kod. Te kontrakty są implementowane w każdej implementacji platformy .NET. Pozwala to na przenośność różnych implementacji platformy .NET, co skutecznie pozwala na uruchamianie kodu wszędzie.
+.NET Standard to zestaw interfejsów API, które są implementowane przez podstawową bibliotekę klas implementacji platformy .NET. Bardziej formalnie jest to specyfikacja interfejsów API platformy .NET, które składają się na jednolity zestaw kontraktów, dla których kompilujesz swój kod. Te kontrakty są implementowane w wielu implementacjach platformy .NET.
 
-.NET Standard jest również [platformą docelową](glossary.md#target-framework). Jeśli kod jest przeznaczony dla wersji .NET Standard, można go uruchomić w dowolnej implementacji platformy .NET, która obsługuje tę wersję programu .NET Standard.
+.NET Standard jest [platformą docelową](glossary.md#target-framework). Jeśli kod jest przeznaczony dla wersji .NET Standard, można go uruchomić w dowolnej implementacji platformy .NET, która obsługuje tę wersję programu .NET Standard.
 
-Aby dowiedzieć się więcej na temat .NET Standard i sposobu ich określania jako docelowej, zobacz [.NET Standard](net-standard.md).
+.NET Standard został utworzony w celu umożliwienia przenośności w różnych implementacjach platformy .NET, ale teraz platforma .NET 5 oferuje lepszy sposób udostępniania kodu na wielu platformach i obciążeń. Aby uzyskać więcej informacji, zobacz [.NET 5 i .NET Standard](net-standard.md#net-5-and-net-standard).
 
 ## <a name="net-implementations"></a>Implementacje platformy .NET
 
 Każda implementacja platformy .NET obejmuje następujące składniki:
 
-- Co najmniej jedno środowisko uruchomieniowe. Przykłady: CLR dla .NET Framework, CoreCLR i CoreRT dla platformy .NET Core.
-- Biblioteka klas, która implementuje .NET Standard i może implementować dodatkowe interfejsy API. Przykłady: .NET Framework podstawowa Biblioteka klas, podstawowa Biblioteka klas .NET Core.
-- Opcjonalnie co najmniej jedna struktura aplikacji. Przykłady: [ASP.NET](https://www.asp.net/), [Windows Forms](/dotnet/desktop/winforms/windows-forms-overview)i [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) są zawarte w .NET Framework i .NET Core.
+- Co najmniej jedno środowisko uruchomieniowe. Przykłady: .NET Framework CLR, .NET 5 CLR.
+- Biblioteka klas. Przykłady: .NET Framework podstawowa Biblioteka klas, .NET 5 podstawowa Biblioteka klas.
+- Opcjonalnie co najmniej jedna struktura aplikacji. Przykłady: [ASP.NET](https://www.asp.net/), [Windows Forms](/dotnet/desktop/winforms/windows-forms-overview)i [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) są zawarte w .NET Framework i .NET 5.
 - Opcjonalnie narzędzia programistyczne. Niektóre narzędzia programistyczne są współużytkowane przez wiele implementacji.
 
-Istnieją cztery podstawowe implementacje platformy .NET, które firma Microsoft aktywnie opracowuje i utrzymuje: .NET Core, .NET Framework, mono i platformy UWP.
+Istnieją cztery implementacje platformy .NET obsługiwane przez firmę Microsoft:
 
-### <a name="net-core"></a>.NET Core
+- .NET 5 (i .NET Core) i nowsze wersje
+- .NET Framework
+- Mono
+- Platforma UWP
 
-.NET Core to wieloplatformowa implementacja programu .NET i zaprojektowana pod kątem obsługi obciążeń serwera i chmury na dużą skalę. Działa w systemach Windows, macOS i Linux. Implementuje .NET Standard, więc kod, który jest przeznaczony dla .NET Standard można uruchomić na platformie .NET Core. [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core), [Windows Forms](/dotnet/desktop/winforms/windows-forms-overview)i [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) działają na platformie .NET Core.
+.NET 5 to teraz podstawowa implementacja, która jest fokusem trwającego rozwoju. Program .NET 5 jest oparty na pojedynczej bazie kodu, która obsługuje wiele platform i wiele obciążeń, takich jak aplikacje klasyczne systemu Windows i aplikacje konsolowe dla wielu platform, usługi w chmurze i witryny sieci Web.
 
-Aby dowiedzieć się więcej na temat platformy .NET Core, zobacz [wprowadzenie do platformy .NET Core](../core/introduction.md) i [wybór między platformą .net core i .NET Framework dla aplikacji serwerowych](choosing-core-framework-server.md).
+### <a name="net-5"></a>.NET 5
+
+.NET 5 to wieloplatformowa implementacja programu .NET, która jest przeznaczona do obsługi obciążeń serwera i chmury na dużą skalę. Obsługuje również inne obciążenia, w tym aplikacje klasyczne. Działa w systemach Windows, macOS i Linux. Implementuje .NET Standard, więc kod, który jest przeznaczony .NET Standard można uruchomić na platformie .NET 5. [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core), [Windows Forms](/dotnet/desktop/winforms/windows-forms-overview)i [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) działają na platformie .NET 5.
+
+Więcej informacji można znaleźć w następujących zasobach:
+
+- [Wprowadzenie do platformy .NET](../core/introduction.md)
+- [Wybór między platformą .NET 5 i .NET Framework dla aplikacji serwerowych](choosing-core-framework-server.md)
+- [.NET 5 i .NET Standard](net-standard.md#net-5-and-net-standard)
 
 ### <a name="net-framework"></a>.NET Framework
 
 .NET Framework to oryginalna implementacja platformy .NET, która istniała od 2002. Wersje 4,5 i nowsze implementują .NET Standard, więc kod, który jest przeznaczony .NET Standard można uruchamiać w tych wersjach .NET Framework. Zawiera dodatkowe interfejsy API specyficzne dla systemu Windows, takie jak interfejsy API dla deweloperów aplikacji klasycznych systemu Windows z Windows Forms i WPF. .NET Framework jest zoptymalizowany do tworzenia aplikacji klasycznych systemu Windows.
 
-Aby dowiedzieć się więcej na temat .NET Framework, zobacz [Przewodnik po .NET Framework](../framework/index.yml).
+Aby uzyskać więcej informacji, zobacz [przewodnik .NET Framework](../framework/index.yml).
 
 ### <a name="mono"></a>Mono
 
@@ -56,20 +67,20 @@ W przeszłości, mono zaimplementowano większy interfejs API .NET Framework i e
 
 Mono jest zazwyczaj używany z kompilatorem just-in-Time, ale również zawiera pełny statyczny kompilator (kompilacja przed czasem), która jest używana na platformach takich jak iOS.
 
-Aby dowiedzieć się więcej o programie mono, zobacz [dokumentację narzędzia mono](https://www.mono-project.com/docs/).
+Aby uzyskać więcej informacji, zobacz [dokumentację narzędzia mono](https://www.mono-project.com/docs/).
 
 ### <a name="universal-windows-platform-uwp"></a>Platforma uniwersalna systemu Windows (UWP)
 
-PLATFORMY UWP to implementacja platformy .NET, która jest używana do tworzenia nowoczesnych aplikacji i oprogramowania systemu Windows z obsługą dotykową dla Internet rzeczy (IoT). Ma ona na celu ujednolicenie różnych typów urządzeń docelowych, w tym komputerów, tabletów, telefonów, a nawet konsoli Xbox. Usługa platformy UWP udostępnia wiele usług, takich jak scentralizowany magazyn aplikacji, środowisko wykonawcze i zestaw interfejsów API systemu Windows, które mają być używane zamiast Win32 (WinRT). Aplikacje można napisać w językach C++, C#, Visual Basic i JavaScript. W przypadku korzystania z języka C# i Visual Basic interfejsy API platformy .NET są udostępniane przez platformę .NET Core.
+PLATFORMY UWP to implementacja platformy .NET, która jest używana do tworzenia nowoczesnych aplikacji i oprogramowania systemu Windows z obsługą dotykową dla Internet rzeczy (IoT). Ma ona na celu ujednolicenie różnych typów urządzeń docelowych, w tym komputerów, tabletów, telefonów, a nawet konsoli Xbox. Usługa platformy UWP udostępnia wiele usług, takich jak scentralizowany magazyn aplikacji, środowisko wykonawcze i zestaw interfejsów API systemu Windows, które mają być używane zamiast Win32 (WinRT). Aplikacje można napisać w językach C++, C#, Visual Basic i JavaScript.
 
-Aby dowiedzieć się więcej na temat platformy UWP, zobacz [wprowadzenie do platforma uniwersalna systemu Windows](/windows/uwp/get-started/universal-application-platform-guide).
+Aby uzyskać więcej informacji, zobacz [wprowadzenie do platforma uniwersalna systemu Windows](/windows/uwp/get-started/universal-application-platform-guide).
 
 ## <a name="net-runtimes"></a>Środowiska uruchomieniowe platformy .NET
 
 Środowisko uruchomieniowe jest środowiskiem wykonywania programu zarządzanego. System operacyjny jest częścią środowiska uruchomieniowego, ale nie należy do środowiska uruchomieniowego .NET. Poniżej przedstawiono kilka przykładów środowiska uruchomieniowego platformy .NET:
 
 - Środowisko uruchomieniowe języka wspólnego (CLR) dla .NET Framework
-- Podstawowe środowisko uruchomieniowe języka wspólnego (CoreCLR) dla platformy .NET Core
+- Środowisko uruchomieniowe języka wspólnego (CLR) dla platformy .NET 5
 - .NET Native platforma uniwersalna systemu Windows
 - Środowisko uruchomieniowe mono dla platformy Xamarin. iOS, Xamarin. Android, Xamarin. Mac i programu mono Desktop
 
@@ -83,11 +94,13 @@ Masz dostęp do obszernego zestawu narzędzi i składników infrastruktury, któ
 - Pakiet [NuGet](/nuget/), Menedżer pakietów firmy Microsoft dla platformy .NET
 - Narzędzia aranżacji kompilacji typu open source, takie jak [ciastka](https://cakebuild.net/) i [fałszywe](https://fake.build/)
 
+Aby uzyskać więcej informacji, zobacz [Narzędzia i produktywność](../core/introduction.md#tools-and-productivity).
+
 ## <a name="applicable-standards"></a>Odpowiednie standardy
 
 Specyfikacje języka C# i Common Language Infrastructure (CLI) są znormalizowane przez [Ecma International &reg; ](https://www.ecma-international.org/). Pierwsze wersje tych standardów zostały opublikowane przez ECMA w grudniu 2001.
 
-Kolejne zmiany w standardach zostały opracowane przez grupy zadań TC49-TG2 (C#) i TC49-TG3 (CLI) w ramach języka programowania ([TC49](https://www.ecma-international.org/memento/tc49.htm)), a następnie zgodnie z normą ISO/IEC JTC 1 za pośrednictwem procesu szybkiej ścieżki ISO.
+Kolejne zmiany w standardach zostały opracowane przez grupy zadań TC49-TG2 (C#) i TC49-TG3 (CLI) w ramach języka programowania ([TC49](https://www.ecma-international.org/memento/tc49.htm)), a następnie przez proces Fast-Track ISO/IEC JTC 1 za pośrednictwem tego procesu.
 
 ### <a name="latest-standards"></a>Najnowsze standardy
 
@@ -103,11 +116,11 @@ Oficjalne dokumenty ISO/IEC są dostępne na stronie [standardy dostępne public
 - **Technologia informacyjna — Common Language Infrastructure (CLI) partycje I do VI**: [ISO/IEC 23271:2012](https://standards.iso.org/ittf/PubliclyAvailableStandards/c058046_ISO_IEC_23271_2012(E).zip)
 - **Technologia informacyjna — Common Language Infrastructure (CLI) — raport techniczny dotyczący informacji pochodnych z pliku XML partycji IV**: [ISO/IEC TR 23272:2011](https://standards.iso.org/ittf/PubliclyAvailableStandards/c057955_ISO_IEC_TR_23272_2011.zip)
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Wybieranie między programami .NET Core i .NET Framework na potrzeby aplikacji serwerowych](choosing-core-framework-server.md)
+- [Wprowadzenie do platformy .NET](../core/introduction.md)
 - [.NET Standard wprowadzenie](net-standard.md)
-- [Wprowadzenie do platformy .NET Core](../core/introduction.md)
+- [Wybór między platformą .NET 5 i .NET Framework dla aplikacji serwerowych](choosing-core-framework-server.md)
 - [Przewodnik programu .NET Framework](../framework/index.yml)
 - [Przewodnik języka C#](../csharp/index.yml)
 - [Przewodnik języka F#](../fsharp/index.yml)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-ms.openlocfilehash: 1c260c349f035de67257adbca06fb447ff993329
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4491b83db195a8d0f5bbf4f4326d92ed9ebd24e7
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277677"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050445"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Znaki specjalne w wyrażeniach regularnych
 Ukośnik odwrotny ( \\ ) w wyrażeniu regularnym wskazuje jedną z następujących wartości:  
@@ -47,8 +47,8 @@ Ukośnik odwrotny ( \\ ) w wyrażeniu regularnym wskazuje jedną z następujący
 |`\n`|Dopasowuje nowy wiersz `\u000A` .|  
 |`\e`|Dopasowuje znak ucieczki `\u001B` .|  
 |`\`*nnn*|Dopasowuje znak ASCII, gdzie *nnn* składa się z dwóch lub trzech cyfr reprezentujących kod znaku ósemkowego. Na przykład `\040` reprezentuje znak spacji. Ta konstrukcja jest interpretowana jako odwołanie wsteczne, jeśli ma tylko jedną cyfrę (na przykład `\2` ) lub, jeśli odpowiada liczbie grupy przechwytywania. (Zobacz [konstrukcje odwołań wstecznych](backreference-constructs-in-regular-expressions.md)).|  
-|`\x`*NN*|Dopasowuje znak ASCII, gdzie *NN* jest dwucyfrowym kodem znaku szesnastkowego.|  
-|`\c` *X*|Dopasowuje znak kontrolny ASCII, gdzie X jest literą znaku kontrolnego. Na przykład `\cC` jest Ctrl-C.|  
+|`\x` *nn*|Dopasowuje znak ASCII, gdzie *NN* jest dwucyfrowym kodem znaku szesnastkowego.|  
+|`\c`*X*|Dopasowuje znak kontrolny ASCII, gdzie X jest literą znaku kontrolnego. Na przykład `\cC` jest Ctrl-C.|  
 |`\u`*nnnn*|Dopasowuje jednostkę kodu UTF-16, której wartość to *nnnn* szesnastkowa. **Uwaga:**  Język Perl 5 znaku ucieczki, który jest używany do określenia Unicode, nie jest obsługiwany przez platformę .NET. Znak w języku Perl 5 ma postać `\x{` *####* `…}` , gdzie *####* `…` jest serią cyfr szesnastkowych. Zamiast tego należy użyć `\u` *nnnn*.|  
 |`\`|Gdy następuje znak, który nie jest rozpoznawany jako znak ucieczki, dopasowuje ten znak. Na przykład `\*` dopasowuje znak gwiazdki (*) i jest taka sama jak `\x2A` .|  
   
@@ -58,7 +58,7 @@ Ukośnik odwrotny ( \\ ) w wyrażeniu regularnym wskazuje jedną z następujący
  [!code-csharp[RegularExpressions.Language.Escapes#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.escapes/cs/escape1.cs#1)]
  [!code-vb[RegularExpressions.Language.Escapes#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.escapes/vb/escape1.vb#1)]  
   
- Wyrażenie regularne `\G(.+)[\t|\u007c](.+)\r?\n` jest interpretowane jak pokazano w poniższej tabeli.  
+ Wyrażenie regularne `\G(.+)[\t\u007c](.+)\r?\n` jest interpretowane jak pokazano w poniższej tabeli.  
   
 |Wzorce|Opis|  
 |-------------|-----------------|  
@@ -68,6 +68,6 @@ Ukośnik odwrotny ( \\ ) w wyrażeniu regularnym wskazuje jedną z następujący
 |`(.+)`|Dopasowuje dowolny znak jeden lub więcej razy. Jest to druga grupa przechwytywania.|  
 |`\r?\n`|Dopasowanie do zera lub jednego wystąpienia znaku powrotu karetki, po którym następuje nowy wiersz.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Język wyrażeń regularnych — podręczny wykaz](regular-expression-language-quick-reference.md)

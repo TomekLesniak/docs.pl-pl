@@ -1,14 +1,14 @@
 ---
 title: Słownik platformy .NET
 description: Sprawdź znaczenie wybranych terminów używanych w dokumentacji programu .NET.
-ms.date: 01/22/2019
+ms.date: 10/13/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: b79580baa12cc8081346678f06d49a9d0455375c
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 1d9330b68f80da934777cb3aee6d2b3cb52c8256
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89415013"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050347"
 ---
 # <a name="net-glossary"></a>Słownik platformy .NET
 
@@ -21,6 +21,18 @@ Kompilator przed czasem.
 Podobnie jak w przypadku [JIT](#jit), ten kompilator tłumaczy również [Il](#il) na kod maszynowy. W przeciwieństwie do kompilacji JIT kompilacja AOT jest wykonywana przed wykonaniem aplikacji i zwykle jest wykonywana na innym komputerze. Ponieważ w czasie wykonywania nie są kompilowane łańcuchy narzędzi AOT, nie trzeba minimalizować czasu kompilowania. Oznacza to, że mogą oni poświęcać więcej czasu na optymalizację. Ponieważ kontekst AOT jest całą aplikacją, kompilator AOT wykonuje również łączenie między modułami i analizę całego programu, co oznacza, że wszystkie odwołania są obserwowane i tworzony jest pojedynczy plik wykonywalny.
 
 Zobacz [CoreRT](#corert) i [.NET Native](#net-native).
+
+## <a name="app-model"></a>model aplikacji
+
+Interfejs API specyficzny dla [obciążenia](#workload). Oto kilka przykładów:
+
+* ASP.NET
+* ASP.NET Web API
+* Entity Framework (EF)
+* Windows Presentation Foundation (WPF)
+* Windows Communication Foundation (WCF)
+* Program Windows Workflow Foundation (WF)
+* Windows Forms (WinForms)
 
 ## <a name="aspnet"></a>ASP.NET
 
@@ -292,9 +304,15 @@ platforma uniwersalna systemu Windows.
 
 Implementacja platformy .NET, która jest używana do tworzenia nowoczesnych aplikacji i oprogramowania systemu Windows z obsługą dotykową dla Internet rzeczy (IoT). Ma ona na celu ujednolicenie różnych typów urządzeń docelowych, w tym komputerów, tabletów, telefonów, a nawet konsoli Xbox. Usługa platformy UWP udostępnia wiele usług, takich jak scentralizowany magazyn aplikacji, środowisko wykonawcze i zestaw interfejsów API systemu Windows, które mają być używane zamiast Win32 (WinRT). Aplikacje można napisać w językach C++, C#, Visual Basic i JavaScript. W przypadku korzystania z języka C# i Visual Basic interfejsy API platformy .NET są udostępniane przez platformę .NET 5 (i platformę .NET Core) i nowsze wersje.
 
+## <a name="workload"></a>workload
+
+Typ kogoś, kto kompiluje aplikację. Bardziej ogólny niż [model aplikacji](#app-model). Na przykład w górnej części każdej strony z dokumentacją platformy .NET, w tym ten, jest listą rozwijaną dla **obciążeń**, która umożliwia przełączenie do dokumentacji dotyczącej **sieci Web**, **urządzeń przenośnych**, **chmury**, **pulpitu**i **Machine Learning \& danych**.
+
+W niektórych kontekstach *obciążenie* dotyczy kolekcji funkcji programu Visual Studio, które można zainstalować w celu obsługi określonego typu aplikacji. Aby zapoznać się z przykładem, zobacz [Wybieranie obciążenia](../core/install/windows.md#select-a-workload).
+
 ## <a name="see-also"></a>Zobacz też
 
-- [Podstawy platformy .NET](../fundamentals/index.yml)
-- [Przewodnik .NET Framework](../framework/index.yml)
+- [Podstawy programu .NET](../fundamentals/index.yml)
+- [Przewodnik programu .NET Framework](../framework/index.yml)
 - [ASP.NET — Omówienie](/aspnet/index#pivot=aspnet)
 - [Przegląd ASP.NET Core](/aspnet/index#pivot=core)

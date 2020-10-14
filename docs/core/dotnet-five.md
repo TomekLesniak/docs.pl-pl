@@ -1,18 +1,18 @@
 ---
-title: Co nowego w programie .NET 5
+title: Co nowego w wersji .NET 5
 description: Dowiedz się więcej na temat platformy .NET 5 — platformy deweloperskiej obejmującej wiele platform i typu "open source", która jest kolejną ewolucją platformy .NET Core.
-ms.date: 09/02/2020
+ms.date: 10/13/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 9d4fc514c9de7a668f909286f10d6fe28ada7f90
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: cc86784e3fcac7e8a3b6f54c32f66763ae416d99
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955205"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050369"
 ---
-# <a name="whats-new-in-net-5"></a>Co nowego w programie .NET 5
+# <a name="whats-new-in-net-5"></a>Co nowego w wersji .NET 5
 
 .NET 5 to ewolucja platformy .NET Core. W tym artykule przedstawiono szczegółowe informacje zawarte w programie .NET 5, który jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. ASP.NET Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Ponadto Entity Framework Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
 
@@ -38,7 +38,7 @@ Platforma .NET 5 rozszerza te charakterystyki, wprowadzając przyrostowe ulepsze
   - [System.Text.RegularExpressions](https://devblogs.microsoft.com/dotnet/regex-performance-improvements-in-net-5)
   - [Asynchroniczne buforowanie ValueTask](https://devblogs.microsoft.com/dotnet/async-valuetask-pooling-in-net-5)
   - [Wiele więcej obszarów](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5)
-- Optymalizacje rozmiaru kontenera
+- [Optymalizacje rozmiaru kontenera](https://github.com/dotnet/dotnet-docker/issues/1814#issuecomment-625294750)
 - [Przycinanie aplikacji](https://devblogs.microsoft.com/dotnet/app-trimming-in-net-5)
 - [Udoskonalenia kompilatora języka C#](https://devblogs.microsoft.com/dotnet/automatically-find-latent-bugs-in-your-code-with-net-5)
 - Narzędzia obsługujące debugowanie zrzutów

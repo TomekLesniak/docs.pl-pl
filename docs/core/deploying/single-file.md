@@ -4,18 +4,18 @@ description: Dowiedz się, co to jest aplikacja z pojedynczym plikiem i dlaczego
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: 0167e62ea46e1c23c3d4ef6ea505ee051ffaf264
-ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
+ms.openlocfilehash: 16e9586cfc29072fa2ca70dc482272a5a0e7306a
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712643"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050419"
 ---
 # <a name="single-file-deployment-and-executable"></a>Wdrażanie i wykonywanie przy użyciu jednego pliku
 
 Zgrupowanie wszystkich plików zależnych od aplikacji do jednego pliku binarnego zapewnia deweloperowi aplikacji z opcją atrakcyjną w celu wdrożenia i dystrybucji aplikacji jako pojedynczy plik. Ten model wdrażania został udostępniony od platformy .NET Core 3,0 i został ulepszony w programie .NET 5,0. Wcześniej w programie .NET Core 3,0, gdy użytkownik uruchamia aplikację z jednym plikiem, host .NET Core najpierw wyodrębnia wszystkie pliki do katalogu tymczasowego przed uruchomieniem aplikacji. Program .NET 5,0 podnosi to środowisko, bezpośrednio uruchamiając kod bez konieczności wyodrębniania plików z aplikacji.
 
-Wdrożenie pojedynczego pliku jest dostępne zarówno dla [modelu wdrażania zależnego od platformy](index.md#publish-framework-dependent) , jak i [aplikacji samodzielnych](index.md#publish-self-contained). Rozmiar pojedynczego pliku w aplikacji samodzielnej jest duży, ponieważ będzie obejmował środowisko uruchomieniowe i biblioteki struktury. Opcja wdrożenia pojedynczego pliku może być łączona z [ReadyToRun](../tools/dotnet-publish.md) i [Trim (funkcja eksperymentalna w programie .NET 5,0)](trim-self-contained.md) opcje publikowania.
+Wdrożenie pojedynczego pliku jest dostępne zarówno dla [modelu wdrażania zależnego od platformy](index.md#publish-framework-dependent) , jak i [aplikacji samodzielnych](index.md#publish-self-contained). Rozmiar pojedynczego pliku w aplikacji samodzielnej jest duży, ponieważ będzie obejmował środowisko uruchomieniowe i biblioteki struktury. Opcja wdrożenia pojedynczego pliku może być łączona z [ReadyToRun](ready-to-run.md) i [Trim (funkcja eksperymentalna w programie .NET 5,0)](trim-self-contained.md) opcje publikowania.
 
 ## <a name="api-incompatibility"></a>Niezgodność interfejsu API
 
