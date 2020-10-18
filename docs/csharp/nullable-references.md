@@ -3,12 +3,12 @@ title: Typy referencyjne dopuszczające wartość null
 description: Ten artykuł zawiera omówienie typów referencyjnych dopuszczających wartość null, które dodano w języku C# 8,0. Dowiesz się, jak funkcja zapewnia bezpieczeństwo przed wyjątkami odwołania o wartości null dla nowych i istniejących projektów.
 ms.technology: csharp-null-safety
 ms.date: 04/21/2020
-ms.openlocfilehash: 6d068760805a21e41712a4f70735bef41ce2052f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9c253d02c287d7a113536ac148b352486d450cc2
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446675"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160883"
 ---
 # <a name="nullable-reference-types"></a>Typy referencyjne dopuszczające wartość null
 
@@ -125,7 +125,85 @@ Kompilator generuje ostrzeżenia, gdy zostanie wykorzystana zmienna lub wyrażen
 
 Dodaj atrybuty do interfejsów API, które udostępniają kompilatorowi więcej informacji na temat sytuacji, gdy argumenty lub wartości zwracane mogą lub nie mogą mieć wartości null. Więcej informacji o tych atrybutach można znaleźć w naszym artykule w dokumentacji języka obejmującej [atrybuty dopuszczające wartość null](language-reference/attributes/nullable-analysis.md). Te atrybuty są dodawane do bibliotek .NET za pośrednictwem bieżących i przyszłych wersji. Najczęściej używane interfejsy API są aktualizowane jako pierwsze.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="known-pitfalls"></a>Znane pułapek
+
+Tablice i struktury, które zawierają typy odwołań, są znane pułapek w funkcji typów referencyjnych dopuszczających wartość null.
+
+### <a name="structs"></a>Struktury
+
+Struktura, która zawiera typy odwołań niedopuszczających wartości null, umożliwia przypisanie `default` do niego bez żadnych ostrzeżeń. Rozpatrzmy następujący przykład:
+
+```csharp
+using System;
+
+#nullable enable
+
+public struct Student
+{
+    public string FirstName;
+    public string? MiddleName;
+    public string LastName;
+}
+
+public static class Program
+{
+    public static void PrintStudent(Student student)
+    {
+        Console.WriteLine($"First name: {student.FirstName.ToUpper()}");
+        Console.WriteLine($"Middle name: {student.MiddleName.ToUpper()}");
+        Console.WriteLine($"Last name: {student.LastName.ToUpper()}");
+    }
+
+    public static void Main() => PrintStudent(default);
+}
+```
+
+W powyższym przykładzie nie ma żadnego ostrzeżenia w `PrintStudent(default)` czasie, gdy typy odwołań niedopuszczających wartości null `FirstName` i `LastName` mają wartość null.
+
+Innym często spotykanym przypadkiem jest to, że należy zająć się ogólnymi strukturami. Rozpatrzmy następujący przykład:
+
+```csharp
+#nullable enable
+
+public struct Foo<T>
+{
+    public T Bar { get; set; }
+}
+
+public static class Program
+{
+    public static void Main()
+    {
+        string s = default(Foo<string>).Bar;
+    }
+}
+```
+
+W poprzednim przykładzie właściwość `Bar` ma być `null` w czasie wykonywania i jest przypisywana do niedopuszczających wartości null ciągów bez żadnych ostrzeżeń.
+
+### <a name="arrays"></a>Tablice
+
+Tablice są również znanymi Pitfall w typach referencyjnych dopuszczających wartość null. Rozważmy następujący przykład, który nie wygenerował żadnych ostrzeżeń:
+
+```csharp
+using System;
+
+#nullable enable
+
+public static class Program
+{
+    public static void Main()
+    {
+        string[] values = new string[10];
+        string s = values[0];
+        Console.WriteLine(s.ToUpper());
+    }
+}
+```
+
+W poprzednim przykładzie deklaracja tablicy pokazuje, że zawiera ciągi niedopuszczające wartości null, podczas gdy jego elementy są zainicjowane do wartości null. Następnie zmienna `s` ma przypisaną wartość null (pierwszy element tablicy). Na koniec zmienna jest usuwana z `s` powodu wyjątku czasu wykonywania.
+
+## <a name="see-also"></a>Zobacz też
 
 - [Specyfikacja typu referencyjnego dopuszczająca wartość null](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
 - [Samouczek wprowadzający do odwołań do wartości null](tutorials/nullable-reference-types.md)

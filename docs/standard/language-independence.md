@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 813558299b40e0b90e8047f22b788c8f1419eb5e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 524f8dc9838d7c438e8155da683c4fa5b01f36a3
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504657"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162989"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Niezależność od języka i składniki niezależne od języka
 
@@ -184,7 +184,7 @@ Indeksuj do podsekcji:
 
 ### <a name="types-and-type-member-signatures"></a>Typy i podpisy elementów członkowskich typu
 
-Typ [System. Object](xref:System.Object) jest zgodny ze specyfikacją CLS i jest typem podstawowym wszystkich typów obiektów w systemie .NET Framework typu. Dziedziczenie w .NET Framework jest niejawne (na przykład Klasa [String](xref:System.String) niejawnie dziedziczy z `Object` klasy) lub explicit (na przykład Klasa [CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) jawnie dziedziczy z klasy [ArgumentException](xref:System.ArgumentException) , która jawnie dziedziczy z klasy [Exception](xref:System.Exception) . Aby typ pochodny był zgodny ze specyfikacją CLS, jego typ podstawowy również musi być zgodny ze specyfikacją CLS.
+Typ [System. Object](xref:System.Object) jest zgodny ze specyfikacją CLS i jest typem podstawowym wszystkich typów obiektów w systemie typu .NET. Dziedziczenie w programie .NET jest niejawne (na przykład Klasa [String](xref:System.String) niejawnie dziedziczy z `Object` klasy) lub explicit (na przykład Klasa [CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) jawnie dziedziczy z klasy [ArgumentException](xref:System.ArgumentException) , która jawnie dziedziczy z klasy [Exception](xref:System.Exception) . Aby typ pochodny był zgodny ze specyfikacją CLS, jego typ podstawowy również musi być zgodny ze specyfikacją CLS.
 
 Poniższy przykład przedstawia typ pochodny, którego typ podstawowy nie jest zgodny ze specyfikacją CLS. Definiuje klasę bazową `Counter` , która używa niepodpisanej 32-bitowej liczby całkowitej jako licznika. Ponieważ Klasa udostępnia funkcje licznika przez Zawijanie liczby całkowitej bez znaku, Klasa jest oznaczona jako niezgodna ze specyfikacją CLS. W związku z tym Klasa pochodna, `NonZeroCounter` , również nie jest zgodna ze specyfikacją CLS.
 
@@ -301,9 +301,9 @@ Typ zgodny ze specyfikacją CLS | Opis
 [Int16](xref:System.Int16) | 16-bitowa liczba całkowita ze znakiem
 [Int32](xref:System.Int32) | 32-bitowa liczba całkowita ze znakiem
 [Int64](xref:System.Int64) | 64-bitowa liczba całkowita ze znakiem
-[Single](xref:System.Single) | Wartość zmiennoprzecinkowa o pojedynczej precyzji
+[Pojedynczy](xref:System.Single) | Wartość zmiennoprzecinkowa o pojedynczej precyzji
 [Double](xref:System.Double) | Wartość zmiennoprzecinkowa o podwójnej precyzji
-[Boolean](xref:System.Boolean) | Typ wartości true lub false
+[Wartość logiczna](xref:System.Boolean) | Typ wartości true lub false
 [Delikatn](xref:System.Char) | Jednostka kodu zakodowana w formacie UTF-16
 [Dokładności](xref:System.Decimal) | Liczba dziesiętna liczb zmiennoprzecinkowych
 [IntPtr](xref:System.IntPtr) | Wskaźnik lub uchwyt rozmiaru zdefiniowanego przez platformę
@@ -319,7 +319,7 @@ Niezgodny typ | Opis | Alternatywa zgodna ze specyfikacją CLS
 [UInt64](xref:System.UInt64) | 64-bitowa liczba całkowita bez znaku | [Int64](xref:System.Int64) (może przepełnić się), [BigInteger](xref:System.Numerics.BigInteger)lub [Double](xref:System.Double)
 [UIntPtr](xref:System.UIntPtr) | Niepodpisany wskaźnik lub dojście | [IntPtr](xref:System.IntPtr)
 
-Biblioteka klas .NET Framework lub jakakolwiek inna Biblioteka klas może zawierać inne typy, które nie są zgodne ze specyfikacją CLS; na przykład:
+Biblioteka klas .NET lub jakakolwiek inna Biblioteka klas może zawierać inne typy, które nie są zgodne ze specyfikacją CLS; na przykład:
 
 * Opakowane typy wartości. Poniższy przykład w języku C# tworzy klasę, która ma właściwość publiczną typu `int*` o nazwie `Value` . Ponieważ `int*` jest to opakowany typ wartości, kompilator flaguje go jako niezgodny ze specyfikacją CLS.
 
@@ -1829,7 +1829,7 @@ End Class
 
 Common Language Specification nakładają się na model tworzenia wystąpień dla zagnieżdżonych typów i chronionych elementów członkowskich. Otwarte typy ogólne nie mogą ujawniać pól ani członków z podpisami zawierającymi określone wystąpienie zagnieżdżonego, chronionego typu ogólnego. Typy nieogólne, które zwiększają wystąpienie określonego wystąpienia generycznej klasy podstawowej lub interfejsu, nie mogą ujawniać pól ani elementów członkowskich z podpisami zawierającymi różne wystąpienia zagnieżdżonego, chronionego typu ogólnego.
 
-Poniższy przykład definiuje typ ogólny, `C1<T>` i chronioną klasę `C1<T>.N` . `C1<T>`ma dwie metody `M1` i `M2` . Jednakże `M1` nie jest zgodny ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt z `C1<T>` . Druga klasa, `C2` ,, pochodzi od `C1<long>` . Ma dwie metody `M3` i `M4` . `M3`nie jest zgodne ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt z podklasy `C1<long>` . Kompilatory języka mogą być jeszcze bardziej restrykcyjne. W tym przykładzie Visual Basic wyświetla błąd podczas próby skompilowania `M4` .
+Poniższy przykład definiuje typ ogólny, `C1<T>` i chronioną klasę `C1<T>.N` . `C1<T>` ma dwie metody `M1` i `M2` . Jednakże `M1` nie jest zgodny ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt z `C1<T>` . Druga klasa, `C2` ,, pochodzi od `C1<long>` . Ma dwie metody `M3` i `M4` . `M3` nie jest zgodne ze specyfikacją CLS, ponieważ próbuje zwrócić `C1<int>.N` obiekt z podklasy `C1<long>` . Kompilatory języka mogą być jeszcze bardziej restrykcyjne. W tym przykładzie Visual Basic wyświetla błąd podczas próby skompilowania `M4` .
 
 ```csharp
 using System;
@@ -2479,7 +2479,7 @@ End Module
 
 ### <a name="attributes"></a>Atrybuty
 
-Zestawy platformy In.NET Framework, atrybuty niestandardowe oferują rozszerzalny mechanizm do przechowywania atrybutów niestandardowych i pobierania metadanych dotyczących obiektów programistycznych, takich jak zestawy, typy, elementy członkowskie i parametry metody. Atrybuty niestandardowe muszą pochodzić od klasy [System. Attribute](xref:System.Attribute) lub z typu pochodnego od `System.Attribute` .
+W zestawach .NET atrybuty niestandardowe oferują rozszerzalny mechanizm do przechowywania atrybutów niestandardowych i pobierania metadanych dotyczących obiektów programistycznych, takich jak zestawy, typy, elementy członkowskie i parametry metody. Atrybuty niestandardowe muszą pochodzić od klasy [System. Attribute](xref:System.Attribute) lub z typu pochodnego od `System.Attribute` .
 
 Poniższy przykład narusza tę regułę. Definiuje `NumericAttribute` klasę, która nie pochodzi od `System.Attribute` . Błąd kompilatora występuje tylko wtedy, gdy jest stosowany atrybut niezgodny ze specyfikacją CLS, nie gdy Klasa jest zdefiniowana.
 
@@ -2544,7 +2544,7 @@ End Structure
 
 Konstruktor lub właściwości atrybutu zgodnego ze specyfikacją CLS mogą uwidaczniać tylko następujące typy:
 
-* [Boolean](xref:System.Boolean)
+* [Wartość logiczna](xref:System.Boolean)
 
 * [Bajc](xref:System.Byte)
 
@@ -2558,7 +2558,7 @@ Konstruktor lub właściwości atrybutu zgodnego ze specyfikacją CLS mogą uwid
 
 * [Int64](xref:System.Int64)
 
-* [Single](xref:System.Single)
+* [Pojedynczy](xref:System.Single)
 
 * [Ciąg](xref:System.String)
 
@@ -2636,7 +2636,7 @@ W czasie kompilacji kompilator wykrywa niezgodne elementy, które są zgodne ze 
 
 Deweloperzy składników mogą używać `CLSCompliantAttribute` atrybutu na dwa sposoby:
 
-* Do definiowania części interfejsu publicznego uwidocznionych przez składnik, który jest zgodny ze specyfikacją CLS, i części, które nie są zgodne ze specyfikacją CLS. Gdy atrybut jest używany do oznaczania określonych elementów programu jako zgodnych ze specyfikacją CLS, jego użycie gwarantuje, że te elementy są dostępne we wszystkich językach i narzędziach przeznaczonych dla .NET Framework.
+* Do definiowania części interfejsu publicznego uwidocznionych przez składnik, który jest zgodny ze specyfikacją CLS, i części, które nie są zgodne ze specyfikacją CLS. Gdy atrybut jest używany do oznaczania określonych elementów programu jako zgodnych ze specyfikacją CLS, jego użycie gwarantuje, że te elementy są dostępne we wszystkich językach i narzędziach przeznaczonych dla platformy .NET.
 
 * Aby zapewnić, że interfejs publiczny biblioteki składników uwidacznia tylko elementy programu, które są zgodne ze specyfikacją CLS. Jeśli elementy nie są zgodne ze specyfikacją CLS, kompilatory zwykle wygenerują ostrzeżenie.
 
@@ -2788,9 +2788,9 @@ Jeśli tworzysz aplikację, a nie bibliotekę (czyli jeśli nie ujawniasz typów
 
 ## <a name="cross-language-interoperability"></a>Współdziałanie między językami
 
-Niezależność od języka ma wiele możliwych znaczenia. Jedno z tych problemów obejmuje bezproblemowe zużywanie typów pisanych w jednym języku z aplikacji w innym języku. Drugie znaczenie, które jest fokusem tego artykułu, obejmuje łączenie kodu pisanego w wielu językach w jeden zestaw .NET Framework.
+Niezależność od języka ma wiele możliwych znaczenia. Jedno z tych problemów obejmuje bezproblemowe zużywanie typów pisanych w jednym języku z aplikacji w innym języku. Drugie znaczenie, które jest fokusem tego artykułu, obejmuje łączenie kodu pisanego w wielu językach w jeden zestaw .NET.
 
-Poniższy przykład ilustruje współdziałanie między językami przez utworzenie biblioteki klas o nazwie Utilities. dll, która zawiera dwie klasy, `NumericLib` i `StringLib` . `NumericLib`Klasa jest zapisywana w języku C#, a `StringLib` Klasa jest zapisywana w Visual Basic. Oto kod źródłowy dla `StringUtil.vb` , który zawiera pojedynczy element członkowski, `ToTitleCase` w swojej `StringLib` klasie.
+Poniższy przykład ilustruje współdziałanie między językami przez utworzenie biblioteki klas o nazwie Utilities.dll zawierającej dwie klasy `NumericLib` i `StringLib` . `NumericLib`Klasa jest zapisywana w języku C#, a `StringLib` Klasa jest zapisywana w Visual Basic. Oto kod źródłowy dla `StringUtil.vb` , który zawiera pojedynczy element członkowski, `ToTitleCase` w swojej `StringLib` klasie.
 
 ```vb
 Imports System.Collections.Generic
@@ -2869,7 +2869,7 @@ Aby skompilować plik kodu źródłowego C# do modułu, użyj tego polecenia:
 csc /t:module NumberUtil.cs
 ```
 
-Następnie użyj narzędzia link (link. exe), aby skompilować dwa moduły do zestawu:
+Następnie użyj narzędzia do łączenia (Link.exe), aby skompilować dwa moduły do zestawu:
 
 ```console
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll

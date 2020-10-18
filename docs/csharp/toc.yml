@@ -2,11 +2,19 @@
   href: index.yml
 - name: Wprowadzenie
   items:
-    - name: Omówienie
+    - name: Wprowadzenie do języka C# i programu .NET
       displayName: get started
       href: getting-started/index.md
-    - name: Wprowadzenie do języka C# i programu .NET
-      href: getting-started/introduction-to-the-csharp-language-and-the-net-framework.md
+    - name: Przewodnik po środowisku C#
+      items:
+        - name: Wprowadzenie
+          href: tour-of-csharp/index.md
+        - name: Types
+          href: tour-of-csharp/types.md
+        - name: Bloki konstrukcyjne programu
+          href: tour-of-csharp/program-building-blocks.md
+        - name: Główne obszary języka
+          href: tour-of-csharp/features.md
 - name: Samouczki
   items:
     - name: Omówienie
@@ -70,16 +78,6 @@
       href: tutorials/working-with-linq.md
     - name: Korzystanie z atrybutów
       href: tutorials/attributes.md
-- name: Przewodnik po środowisku C#
-  items:
-    - name: Wprowadzenie
-      href: tour-of-csharp/index.md
-    - name: Types
-      href: tour-of-csharp/types.md
-    - name: Bloki konstrukcyjne programu
-      href: tour-of-csharp/program-building-blocks.md
-    - name: Główne obszary języka
-      href: tour-of-csharp/features.md
 - name: Co nowego w języku C#
   items:
     - name: C# 9.0

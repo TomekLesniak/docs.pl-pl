@@ -1,5 +1,5 @@
 ---
-title: Dostęp do właściwości domyślnej jest niejednoznaczny dla dziedziczonego elementu członkowskiego interfejsu "<defaultpropertyname>" interfejsu "<interfacename1>" i "<defaultpropertyname>" interfejsu "<interfacename2>"
+title: Dostęp do właściwości domyślnej jest niejednoznaczny dla dziedziczonego członka „<defaultpropertyname>" interfejsu „<interfacename1>" i dziedziczonego członka „<defaultpropertyname>" interfejsu „<interfacename2>"
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30686
@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30686
 ms.assetid: 784fefec-ef57-48cf-b960-957df419b439
-ms.openlocfilehash: f76163d58f3f11d3ca946525a1604abc3ebba68d
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: b7c4c9c75de1b3777f34a70470b89f323a5699f9
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72250366"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162066"
 ---
-# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-defaultpropertyname-of-interface-interfacename1-and-defaultpropertyname-of-interface-interfacename2"></a>Dostęp do właściwości domyślnej jest niejednoznaczny dla dziedziczonego elementu członkowskiego interfejsu "\<defaultpropertyname >" interfejsu "\<interfacename1 >" i "\<defaultpropertyname >" interfejsu "\<interfacename2 >"
+# <a name="bc30686-default-property-access-is-ambiguous-between-the-inherited-interface-members-defaultpropertyname-of-interface-interfacename1-and-defaultpropertyname-of-interface-interfacename2"></a>BC30686: dostęp do właściwości domyślnej jest niejednoznaczny między dziedziczonymi elementami członkowskimi interfejsu "" \<defaultpropertyname> interfejsu " \<interfacename1> " i " \<defaultpropertyname> " interfejsu " \<interfacename2> "
 
-Interfejs dziedziczy z dwóch interfejsów, z których każdy deklaruje właściwość domyślną o tej samej nazwie. Kompilator nie może rozpoznać dostępu do tej właściwości domyślnej bez kwalifikacji. Ilustruje to Poniższy przykład.
+Interfejs dziedziczy z dwóch interfejsów, z których każdy deklaruje właściwość domyślną o tej samej nazwie. Kompilator nie może rozpoznać dostępu do tej właściwości domyślnej bez kwalifikacji. Ilustruje to poniższy przykład.
 
 ```vb
 Public Interface Iface1
@@ -36,21 +36,21 @@ Public Class testClass
 End Class
 ```
 
-Po określeniu `testObj(1)` kompilator próbuje rozwiązać ten problem do właściwości domyślnej. Istnieją jednak dwie możliwe właściwości domyślne ze względu na dziedziczone interfejsy, więc kompilator sygnalizuje ten błąd.
+Po określeniu `testObj(1)` , kompilator próbuje rozwiązać ten problem do właściwości domyślnej. Istnieją jednak dwie możliwe właściwości domyślne ze względu na dziedziczone interfejsy, więc kompilator sygnalizuje ten błąd.
 
 **Identyfikator błędu:** BC30686
 
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
 
-- Należy unikać dziedziczenia wszystkich elementów członkowskich o tej samej nazwie. W poprzednim przykładzie, jeśli `testObj` nie potrzebuje żadnego z elementów członkowskich, powiedz `Iface2`, a następnie zadeklaruj go w następujący sposób:
+- Należy unikać dziedziczenia wszystkich elementów członkowskich o tej samej nazwie. W poprzednim przykładzie, jeśli nie `testObj` potrzebuje któregokolwiek z członków, powiedz, `Iface2` , a następnie zadeklaruj go w następujący sposób:
 
   ```vb
   Dim testObj As Iface1
   ```
 
-  \-or-
+  \-oraz
 
-- Zaimplementuj interfejs dziedziczenia w klasie. Następnie można zaimplementować każdą z dziedziczonych właściwości o różnych nazwach. Jednak tylko jeden z nich może być właściwością domyślną klasy implementującej. Ilustruje to Poniższy przykład.
+- Zaimplementuj interfejs dziedziczenia w klasie. Następnie można zaimplementować każdą z dziedziczonych właściwości o różnych nazwach. Jednak tylko jeden z nich może być właściwością domyślną klasy implementującej. Ilustruje to poniższy przykład.
 
   ```vb
   Public Class useIface3
@@ -64,6 +64,6 @@ Po określeniu `testObj(1)` kompilator próbuje rozwiązać ten problem do wła�
   End Class
   ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Interfejsów](../../programming-guide/language-features/interfaces/index.md)
+- [Interfejsy](../../programming-guide/language-features/interfaces/index.md)

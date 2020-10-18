@@ -5,7 +5,7 @@ ms.date: 08/19/2019
 helpviewer_keywords:
 - deferring assembly signing
 - signing assemblies
-- assemblies [.NET Framework], signing
+- assemblies [.NET], signing
 - strong-named assemblies, delaying assembly signing
 - partial assembly signing
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 7b5c8c8463fdc573782fa457bf5671c72a7e25f7
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 704ddbec3ddd179622fdc7289036247763449256
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378502"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162898"
 ---
 # <a name="delay-sign-an-assembly"></a>Podpisywanie zestawu z opóźnieniem
 
@@ -28,7 +28,7 @@ Możesz użyć opóźnionego lub częściowego podpisywania w czasie kompilacji,
 
 Aby podpisać zestaw z opóźnieniem:
 
-1. Pobierz część klucza publicznego pary kluczy z organizacji, która będzie podpisywać ostateczne. Zazwyczaj ten klucz jest w formie pliku *. snk* , który można utworzyć za pomocą [Narzędzia silnej nazwy (SN. exe)](../../framework/tools/sn-exe-strong-name-tool.md) dostarczonego przez Windows SDK.
+1. Pobierz część klucza publicznego pary kluczy z organizacji, która będzie podpisywać ostateczne. Zazwyczaj ten klucz jest w formie pliku *. snk* , który można utworzyć za pomocą [Narzędzia silnej nazwy (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) dostarczonego przez Windows SDK.
 
 2. Dodaj adnotację do kodu źródłowego dla zestawu z dwoma atrybutami niestandardowymi z <xref:System.Reflection> :
 
@@ -36,7 +36,7 @@ Aby podpisać zestaw z opóźnieniem:
 
    - <xref:System.Reflection.AssemblyDelaySignAttribute>, co oznacza, że jest używane podpisywanie opóźnień, przekazując **wartość true** jako parametr do jego konstruktora.
 
-   Przykład:
+   Na przykład:
 
    ```cpp
    [assembly:AssemblyKeyFileAttribute("myKey.snk")];
@@ -57,7 +57,7 @@ Aby podpisać zestaw z opóźnieniem:
 
 4. Ponieważ zestaw nie ma prawidłowego podpisu silnej nazwy, weryfikacja tej sygnatury musi być wyłączona. Można to zrobić za pomocą opcji **– VR** za pomocą narzędzia silnej nazwy.
 
-     Poniższy przykład wyłącza weryfikację dla zestawu o nazwie Moja *Assembly. dll*.
+     Poniższy przykład wyłącza weryfikację dla zestawu o nazwie *myAssembly.dll*.
 
    ```console
    sn –Vr myAssembly.dll
@@ -75,11 +75,11 @@ Aby podpisać zestaw z opóźnieniem:
    > Nie należy polegać na silnych nazwach zabezpieczeń. Zapewniają one tylko unikatową tożsamość.
 
    > [!NOTE]
-   > Jeśli używasz opóźnienia podpisywania podczas opracowywania w programie Visual Studio na komputerze 64-bitowym i kompilujesz zestaw dla **dowolnego procesora**, może być konieczne dwukrotne zastosowanie opcji **-VR** . (W programie Visual Studio **każdy procesor CPU** jest wartością właściwości kompilacji **docelowej platformy** ; podczas kompilowania z wiersza polecenia jest to wartość domyślna). Aby uruchomić aplikację z poziomu wiersza polecenia lub Eksploratora plików, użyj 64-bitowej wersji [SN. exe (Narzędzie silnej nazwy)](../../framework/tools/sn-exe-strong-name-tool.md) , aby zastosować opcję **-VR** do zestawu. Aby załadować zestaw do programu Visual Studio w czasie projektowania (na przykład jeśli zestaw zawiera składniki, które są używane przez inne zestawy w aplikacji), użyj 32-bitowej wersji narzędzia silnej nazwy. Dzieje się tak, ponieważ kompilator just-in-Time (JIT) kompiluje zestaw do 64-bitowego kodu natywnego, gdy zestaw jest uruchamiany z wiersza polecenia i do 32-bitowy kod natywny, gdy zestaw jest ładowany do środowiska czasu projektowania.
+   > Jeśli używasz opóźnienia podpisywania podczas opracowywania w programie Visual Studio na komputerze 64-bitowym i kompilujesz zestaw dla **dowolnego procesora**, może być konieczne dwukrotne zastosowanie opcji **-VR** . (W programie Visual Studio **każdy procesor CPU** jest wartością właściwości kompilacji **docelowej platformy** ; podczas kompilowania z wiersza polecenia jest to wartość domyślna). Aby uruchomić aplikację z poziomu wiersza polecenia lub Eksploratora plików, użyj 64-bitowej wersji [Sn.exe (Narzędzie silnej nazwy)](../../framework/tools/sn-exe-strong-name-tool.md) , aby zastosować opcję **-VR** do zestawu. Aby załadować zestaw do programu Visual Studio w czasie projektowania (na przykład jeśli zestaw zawiera składniki, które są używane przez inne zestawy w aplikacji), użyj 32-bitowej wersji narzędzia silnej nazwy. Dzieje się tak, ponieważ kompilator just-in-Time (JIT) kompiluje zestaw do 64-bitowego kodu natywnego, gdy zestaw jest uruchamiany z wiersza polecenia i do 32-bitowy kod natywny, gdy zestaw jest ładowany do środowiska czasu projektowania.
 
 5. Później, zazwyczaj tuż przed wysyłką, przesyłasz zestaw do urzędu podpisywania w organizacji w celu zapewnienia rzeczywistego podpisywania silnej nazwy przy użyciu opcji **– R** z narzędziem silnej nazwy.
 
-   Poniższy przykład podpisuje zestaw o nazwie *plik. dll* o silnej nazwie przy użyciu pary kluczy *sgKey. snk* .
+   Poniższy przykład podpisuje zestaw o nazwie *myAssembly.dll* o silnej nazwie przy użyciu pary kluczy *sgKey. snk* .
 
    ```console
    sn -R myAssembly.dll sgKey.snk
@@ -89,4 +89,4 @@ Aby podpisać zestaw z opóźnieniem:
 
 - [Tworzenie zestawów](create.md)
 - [Instrukcje: Tworzenie pary kluczy publiczny-prywatny](create-public-private-key-pair.md)
-- [SN. exe (Narzędzie silnej nazwy)](../../framework/tools/sn-exe-strong-name-tool.md)
+- [Sn.exe (Narzędzie silnej nazwy)](../../framework/tools/sn-exe-strong-name-tool.md)

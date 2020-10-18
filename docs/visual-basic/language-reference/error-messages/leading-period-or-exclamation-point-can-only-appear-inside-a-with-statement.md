@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30157
 ms.assetid: 70daaee1-14f9-45b7-9f30-53794310b95e
-ms.openlocfilehash: c39339a49c4aad4ba643facc2372333e7379ffa7
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 4ff273d5930fe58a5bccf0f4f4c10e971d777d01
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873850"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162508"
 ---
-# <a name="leading--or--can-only-appear-inside-a-with-statement"></a>Wiodący znak „.” lub „!” może wystąpić tylko wewnątrz instrukcji „With”
+# <a name="bc30157-leading--or--can-only-appear-inside-a-with-statement"></a>BC30157: wiodący znak "." lub "!" może wystąpić tylko wewnątrz instrukcji "with"
 
-Kropka (.) lub wykrzyknik (!), które nie znajduje się wewnątrz `With` bloku, nie ma wyrażenia po lewej stronie. Dostęp do składowych ( `.` ) i dostęp do składowych słownika ( `!` ) wymagają wyrażenia określającego element, który zawiera element członkowski. Musi on pojawić się natychmiast po lewej stronie metody dostępu lub jako obiekt docelowy `With` bloku zawierającego dostęp do elementu członkowskiego.  
-  
- **Identyfikator błędu:** BC30157  
-  
-## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
-  
-1. Upewnij się, że `With` blok jest poprawnie sformatowany.  
-  
-2. Jeśli nie ma `With` bloku, Dodaj wyrażenie z lewej strony metody dostępu, które jest obliczane do zdefiniowanego elementu zawierającego element członkowski.  
-  
+Kropka (.) lub wykrzyknik (!), które nie znajduje się wewnątrz `With` bloku, nie ma wyrażenia po lewej stronie. Dostęp do składowych ( `.` ) i dostęp do składowych słownika ( `!` ) wymagają wyrażenia określającego element, który zawiera element członkowski. Musi on pojawić się natychmiast po lewej stronie metody dostępu lub jako obiekt docelowy `With` bloku zawierającego dostęp do elementu członkowskiego.
+
+ **Identyfikator błędu:** BC30157
+
+## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
+
+1. Upewnij się, że `With` blok jest poprawnie sformatowany.
+
+2. Jeśli nie ma `With` bloku, Dodaj wyrażenie z lewej strony metody dostępu, które jest obliczane do zdefiniowanego elementu zawierającego element członkowski.
+
 ## <a name="see-also"></a>Zobacz też
 
 - [Znaki specjalne w kodzie](../../programming-guide/program-structure/special-characters-in-code.md)

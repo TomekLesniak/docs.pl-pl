@@ -7,53 +7,53 @@ f1_keywords:
 helpviewer_keywords:
 - BC33107
 ms.assetid: 493c8899-3f6b-4471-8eb6-9284e8492768
-ms.openlocfilehash: a93dd0a5422ce2a01a01c6fc77224e3ee946910e
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: bca9b74a68815b4e5a3bb2dc114b9031cdf24099
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874146"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162742"
 ---
-# <a name="first-operand-in-a-binary-if-expression-must-be-nullable-or-a-reference-type"></a>Typem pierwszego operandu w binarnym wyrażeniu „If” musi być typ zerowalny lub typ referencyjny
+# <a name="bc33107-first-operand-in-a-binary-if-expression-must-be-nullable-or-a-reference-type"></a>BC33107: pierwszy operand w binarnym wyrażeniu "If" musi dopuszczać wartość null lub typ referencyjny
 
-`If`Wyrażenie może przyjmować dwa lub trzy argumenty. W przypadku wysyłania tylko dwóch argumentów pierwszy argument musi być typem referencyjnym lub typem wartości null. Jeśli pierwszy argument ma wartość inną niż `Nothing` , jest zwracana. Jeśli pierwszy argument ma wartość `Nothing` , drugi argument jest obliczany i zwracany.  
-  
- Na przykład poniższy kod zawiera dwa `If` wyrażenia, jeden z trzema argumentami i jeden z dwoma argumentami. Wyrażenia obliczają i zwracają tę samą wartość.  
-  
-```vb  
-' firstChoice is a nullable value type.  
-Dim firstChoice? As Integer = Nothing  
-Dim secondChoice As Integer = 1128  
-' If expression with three arguments.  
-Console.WriteLine(If(firstChoice IsNot Nothing, firstChoice, secondChoice))  
-' If expression with two arguments.  
-Console.WriteLine(If(firstChoice, secondChoice))  
-```  
-  
- Następujące wyrażenia powodują wystąpienie tego błędu:  
-  
-```vb  
-Dim choice1 = 4  
-Dim choice2 = 5  
-Dim booleanVar = True  
-  
-' Not valid.  
-'Console.WriteLine(If(choice1 < choice2, 1))  
-' Not valid.  
-'Console.WriteLine(If(booleanVar, "Test returns True."))  
-```  
-  
- **Identyfikator błędu:** BC33107  
-  
-## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
-  
-- Jeśli nie możesz zmienić kodu tak, aby pierwszy argument był typem wartości null lub typem referencyjnym, rozważ konwersję na wyrażenie z trzema argumentami `If` lub do `If...Then...Else` instrukcji.  
-  
-```vb  
-Console.WriteLine(If(choice1 < choice2, 1, 2))  
-Console.WriteLine(If(booleanVar, "Test returns True.", "Test returns False."))  
-```  
-  
+`If`Wyrażenie może przyjmować dwa lub trzy argumenty. W przypadku wysyłania tylko dwóch argumentów pierwszy argument musi być typem referencyjnym lub typem wartości null. Jeśli pierwszy argument ma wartość inną niż `Nothing` , jest zwracana. Jeśli pierwszy argument ma wartość `Nothing` , drugi argument jest obliczany i zwracany.
+
+ Na przykład poniższy kod zawiera dwa `If` wyrażenia, jeden z trzema argumentami i jeden z dwoma argumentami. Wyrażenia obliczają i zwracają tę samą wartość.
+
+```vb
+' firstChoice is a nullable value type.
+Dim firstChoice? As Integer = Nothing
+Dim secondChoice As Integer = 1128
+' If expression with three arguments.
+Console.WriteLine(If(firstChoice IsNot Nothing, firstChoice, secondChoice))
+' If expression with two arguments.
+Console.WriteLine(If(firstChoice, secondChoice))
+```
+
+ Następujące wyrażenia powodują wystąpienie tego błędu:
+
+```vb
+Dim choice1 = 4
+Dim choice2 = 5
+Dim booleanVar = True
+
+' Not valid.
+'Console.WriteLine(If(choice1 < choice2, 1))
+' Not valid.
+'Console.WriteLine(If(booleanVar, "Test returns True."))
+```
+
+ **Identyfikator błędu:** BC33107
+
+## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
+
+- Jeśli nie możesz zmienić kodu tak, aby pierwszy argument był typem wartości null lub typem referencyjnym, rozważ konwersję na wyrażenie z trzema argumentami `If` lub do `If...Then...Else` instrukcji.
+
+```vb
+Console.WriteLine(If(choice1 < choice2, 1, 2))
+Console.WriteLine(If(booleanVar, "Test returns True.", "Test returns False."))
+```
+
 ## <a name="see-also"></a>Zobacz też
 
 - [If, operator](../operators/if-operator.md)

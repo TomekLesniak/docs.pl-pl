@@ -4,16 +4,16 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID91
 ms.assetid: 2f03e611-f0ed-465c-99a2-a816e034faa3
-ms.openlocfilehash: 0264a4235a056c93edb703ec2ef70e7124e0df4e
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 5eff7622ce2a35cf2846c5141cede98ea033d708
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873626"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159888"
 ---
 # <a name="object-variable-or-with-block-variable-not-set"></a>Zmienna obiektu lub zmienna bloku With nie jest ustawiona
 
-Odwołuje się do nieprawidłowej zmiennej obiektu.   Ten błąd może wystąpić z kilku powodów:
+Odwołuje się do nieprawidłowej zmiennej obiektu. Ten błąd może wystąpić z kilku powodów:
 
 - Zmienna została zadeklarowana bez określenia typu. Jeśli zmienna jest zadeklarowana bez określenia typu, wartość domyślna to Type `Object` .
 
@@ -31,7 +31,7 @@ Odwołuje się do nieprawidłowej zmiennej obiektu.   Ten błąd może wystąpi�
 - Próbujesz uzyskać dostęp do kodu w `With...End With` bloku przed zainicjowaniem bloku.   `With...End With`Blok musi być zainicjowany przez wykonanie `With` punktu wejścia instrukcji.
 
 > [!NOTE]
-> We wcześniejszych wersjach Visual Basic lub VBA ten błąd został również wyzwolony przez przypisanie wartości do zmiennej bez użycia `Set` słowa kluczowego ( `x = "name"` zamiast `Set x = "name"` ). `Set`Słowo kluczowe nie jest już prawidłowe w Visual Basic .NET.
+> W starszych wersjach Visual Basic lub VBA ten błąd został również wyzwolony przez przypisanie wartości do zmiennej bez użycia `Set` słowa kluczowego ( `x = "name"` zamiast `Set x = "name"` ). `Set`Słowo kluczowe nie jest już prawidłowe w Visual Basic .NET.
 
 ## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
 

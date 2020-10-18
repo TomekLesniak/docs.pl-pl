@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30036
 ms.assetid: b2c83de9-a132-449a-870b-e7c409d4d7ee
-ms.openlocfilehash: 3db6a4b15444d8cfab264d41fb8395ec8679dead
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 134e849c8cafe489f939e60acca4e82e3b0cbe6e
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90871229"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162404"
 ---
-# <a name="overflow-visual-basic-error"></a>Przepełnienie (Błąd w Visual Basic)
+# <a name="bc30036-overflow-visual-basic-error"></a>BC30036: przepełnienie (Visual Basic błąd)
 
-Literał reprezentuje wartość spoza granic typu danych, do którego jest przypisane.  
-  
- **Identyfikator błędu:** BC30036  
-  
-## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
-  
-- Zapoznaj się z zakresem wartości dla docelowego typu danych i napisz ponownie literał, aby był zgodny z tym zakresem.  
-  
+Literał reprezentuje wartość spoza granic typu danych, do którego jest przypisane.
+
+ **Identyfikator błędu:** BC30036
+
+## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
+
+- Zapoznaj się z zakresem wartości dla docelowego typu danych i napisz ponownie literał, aby był zgodny z tym zakresem.
+
 ## <a name="see-also"></a>Zobacz też
 
 - [Typy danych](../data-types/index.md)

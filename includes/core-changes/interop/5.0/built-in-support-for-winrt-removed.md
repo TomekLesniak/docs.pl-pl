@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d21b2e092d460fdfc367d0f490228ed44ad5c6cc
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: 47c676122df4f0990949a7bfbcd7af8c6144d870
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365658"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160550"
 ---
 ### <a name="built-in-support-for-winrt-is-removed-from-net"></a>Wbudowana obsługa środowiska WinRT jest usuwana z platformy .NET
 
@@ -29,9 +29,13 @@ Ta nieprzerwana zmiana została wprowadzona z następujących powodów:
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-- Usuń odwołania do [pakietu Microsoft. Windows. Sdk.](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) Contracts i zastąp je odwołaniami do [pakietu Microsoft.Windows.Sdk.NET](https://www.nuget.org/packages/microsoft.windows.sdk.net).
+- Usuń odwołania do [pakietu Microsoft. Windows. Sdk. kontrakts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts).  Zamiast tego należy określić wersję interfejsów API systemu Windows, do których chcesz uzyskać dostęp za pośrednictwem `TargetFramework` właściwości projektu.  Na przykład:
 
-- Za pomocą łańcucha narzędzi [/WinRT języka C#](/windows/uwp/csharp-winrt/) można generować lub dostosowywać interfejsy API i typy środowiska WinRT w programie .NET 5,0 i nowszych wersjach.
+  ```xml
+  <TargetFramework>net5.0-windows10.0.19041</TargetFramework>
+  ```
+
+- Za pomocą łańcucha narzędzi [/WinRT języka C#](/windows/uwp/csharp-winrt/) można generować lub dostosowywać interfejsy API i typy środowiska WinRT dla programu .NET 5,0 i nowszych wersji.
 
 #### <a name="category"></a>Kategoria
 
