@@ -7,27 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - BC30561
 ms.assetid: 761091f7-1018-4299-b481-3966a4a2c126
-ms.openlocfilehash: fe67dc70c18297319225c3d2ae97f1ce949603d6
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 73cc604f1e3a06687ca93779a01e698512be198b
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90871527"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160187"
 ---
-# <a name="name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a><span data-ttu-id="7b09e-102">Element „\<name1>” jest niejednoznaczny, po imporcie z przestrzeni nazw lub typów „\<name2>”</span><span class="sxs-lookup"><span data-stu-id="7b09e-102">'\<name1>' is ambiguous, imported from the namespaces or types '\<name2>'</span></span>
+# <a name="bc30561-name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a><span data-ttu-id="52dd9-102">BC30561: element " \<name1> " jest niejednoznaczny, importowany z przestrzeni nazw lub typów " \<name2> "</span><span class="sxs-lookup"><span data-stu-id="52dd9-102">BC30561: '\<name1>' is ambiguous, imported from the namespaces or types '\<name2>'</span></span>
 
-<span data-ttu-id="7b09e-103">Podana nazwa jest niejednoznaczna i dlatego powoduje konflikt z inną nazwą.</span><span class="sxs-lookup"><span data-stu-id="7b09e-103">You have provided a name that is ambiguous and therefore conflicts with another name.</span></span> <span data-ttu-id="7b09e-104">Kompilator Visual Basic nie ma żadnych reguł rozwiązywania konfliktów; należy samodzielnie odróżnić nazwy.</span><span class="sxs-lookup"><span data-stu-id="7b09e-104">The Visual Basic compiler does not have any conflict resolution rules; you must disambiguate names yourself.</span></span>  
-  
- <span data-ttu-id="7b09e-105">**Identyfikator błędu:** BC30561</span><span class="sxs-lookup"><span data-stu-id="7b09e-105">**Error ID:** BC30561</span></span>  
-  
-## <a name="to-correct-this-error"></a><span data-ttu-id="7b09e-106">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="7b09e-106">To correct this error</span></span>  
-  
-1. <span data-ttu-id="7b09e-107">Usuń niejednoznaczność nazwy, usuwając Importy przestrzeni nazw.</span><span class="sxs-lookup"><span data-stu-id="7b09e-107">Disambiguate the name by removing namespace imports.</span></span>  
-  
-2. <span data-ttu-id="7b09e-108">W pełni Zakwalifikuj nazwę.</span><span class="sxs-lookup"><span data-stu-id="7b09e-108">Fully qualify the name.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="7b09e-109">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="7b09e-109">See also</span></span>
+<span data-ttu-id="52dd9-103">Podana nazwa jest niejednoznaczna i dlatego powoduje konflikt z inną nazwą.</span><span class="sxs-lookup"><span data-stu-id="52dd9-103">You have provided a name that is ambiguous and therefore conflicts with another name.</span></span> <span data-ttu-id="52dd9-104">Kompilator Visual Basic nie ma żadnych reguł rozwiązywania konfliktów; należy samodzielnie odróżnić nazwy.</span><span class="sxs-lookup"><span data-stu-id="52dd9-104">The Visual Basic compiler does not have any conflict resolution rules; you must disambiguate names yourself.</span></span>
 
-- [<span data-ttu-id="7b09e-110">Imports — Instrukcja (.NET Namespace i Type)</span><span class="sxs-lookup"><span data-stu-id="7b09e-110">Imports Statement (.NET Namespace and Type)</span></span>](../statements/imports-statement-net-namespace-and-type.md)
-- [<span data-ttu-id="7b09e-111">Przestrzenie nazw w Visual Basic</span><span class="sxs-lookup"><span data-stu-id="7b09e-111">Namespaces in Visual Basic</span></span>](../../programming-guide/program-structure/namespaces.md)
-- [<span data-ttu-id="7b09e-112">Namespace — Instrukcja</span><span class="sxs-lookup"><span data-stu-id="7b09e-112">Namespace Statement</span></span>](../statements/namespace-statement.md)
+ <span data-ttu-id="52dd9-105">**Identyfikator błędu:** BC30561</span><span class="sxs-lookup"><span data-stu-id="52dd9-105">**Error ID:** BC30561</span></span>
+
+## <a name="to-correct-this-error"></a><span data-ttu-id="52dd9-106">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="52dd9-106">To correct this error</span></span>
+
+- <span data-ttu-id="52dd9-107">Usuń niejednoznaczność nazwy, usuwając Importy przestrzeni nazw.</span><span class="sxs-lookup"><span data-stu-id="52dd9-107">Disambiguate the name by removing namespace imports.</span></span>
+
+- <span data-ttu-id="52dd9-108">W pełni Zakwalifikuj nazwę.</span><span class="sxs-lookup"><span data-stu-id="52dd9-108">Fully qualify the name.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="52dd9-109">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="52dd9-109">See also</span></span>
+
+- [<span data-ttu-id="52dd9-110">Imports — Instrukcja (.NET Namespace i Type)</span><span class="sxs-lookup"><span data-stu-id="52dd9-110">Imports Statement (.NET Namespace and Type)</span></span>](../statements/imports-statement-net-namespace-and-type.md)
+- [<span data-ttu-id="52dd9-111">Przestrzenie nazw w Visual Basic</span><span class="sxs-lookup"><span data-stu-id="52dd9-111">Namespaces in Visual Basic</span></span>](../../programming-guide/program-structure/namespaces.md)
+- [<span data-ttu-id="52dd9-112">Namespace — Instrukcja</span><span class="sxs-lookup"><span data-stu-id="52dd9-112">Namespace Statement</span></span>](../statements/namespace-statement.md)

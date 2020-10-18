@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30481
 ms.assetid: 583f3029-bc3a-4e06-866f-92dbecc46f19
-ms.openlocfilehash: d67f0e71dbdbf97420ec5b5ba4b6f06acfba1bd9
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 6889e97aad913f6911ce438892752542de0d10f0
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874617"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92163197"
 ---
-# <a name="class-statement-must-end-with-a-matching-end-class"></a><span data-ttu-id="cfa08-102">Instrukcja „Class” musi być zakończona odpowiadającą jej instrukcją „End Class”</span><span class="sxs-lookup"><span data-stu-id="cfa08-102">'Class' statement must end with a matching 'End Class'</span></span>
+# <a name="bc30481-class-statement-must-end-with-a-matching-end-class"></a><span data-ttu-id="b62c1-102">BC30481: Instrukcja "Class" musi być zakończona odpowiadającą jej instrukcją "End Class"</span><span class="sxs-lookup"><span data-stu-id="b62c1-102">BC30481: 'Class' statement must end with a matching 'End Class'</span></span>
 
-<span data-ttu-id="cfa08-103">`Class` służy do inicjowania `Class` bloku; w związku z tym może wystąpić tylko na początku bloku, z odpowiadającą instrukcją `End Class` kończącą blok.</span><span class="sxs-lookup"><span data-stu-id="cfa08-103">`Class` is used to initiate a `Class` block; hence it can only appear at the beginning of the block, with a matching `End Class` statement ending the block.</span></span> <span data-ttu-id="cfa08-104">Istnieje instrukcja nadmiarowa `Class` lub nie zakończono `Class` blokady przy użyciu `End Class` .</span><span class="sxs-lookup"><span data-stu-id="cfa08-104">Either you have a redundant `Class` statement, or you have not ended your `Class` block with `End Class`.</span></span>  
-  
- <span data-ttu-id="cfa08-105">**Identyfikator błędu:** BC30481</span><span class="sxs-lookup"><span data-stu-id="cfa08-105">**Error ID:** BC30481</span></span>  
-  
-## <a name="to-correct-this-error"></a><span data-ttu-id="cfa08-106">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="cfa08-106">To correct this error</span></span>  
-  
-- <span data-ttu-id="cfa08-107">Znajdź i Usuń niezbędną `Class` instrukcję.</span><span class="sxs-lookup"><span data-stu-id="cfa08-107">Locate and remove the unnecessary `Class` statement.</span></span>  
-  
-- <span data-ttu-id="cfa08-108">Zakończ `Class` blok ze zgodnym elementem `End Class` .</span><span class="sxs-lookup"><span data-stu-id="cfa08-108">Conclude the `Class` block with a matching `End Class`.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="cfa08-109">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="cfa08-109">See also</span></span>
+<span data-ttu-id="b62c1-103">`Class` służy do inicjowania `Class` bloku; w związku z tym może wystąpić tylko na początku bloku, z odpowiadającą instrukcją `End Class` kończącą blok.</span><span class="sxs-lookup"><span data-stu-id="b62c1-103">`Class` is used to initiate a `Class` block; hence it can only appear at the beginning of the block, with a matching `End Class` statement ending the block.</span></span> <span data-ttu-id="b62c1-104">Istnieje instrukcja nadmiarowa `Class` lub nie zakończono `Class` blokady przy użyciu `End Class` .</span><span class="sxs-lookup"><span data-stu-id="b62c1-104">Either you have a redundant `Class` statement, or you have not ended your `Class` block with `End Class`.</span></span>
 
-- [<span data-ttu-id="cfa08-110">End — \<keyword> instrukcja</span><span class="sxs-lookup"><span data-stu-id="cfa08-110">End \<keyword> Statement</span></span>](../statements/end-keyword-statement.md)
-- [<span data-ttu-id="cfa08-111">Class, instrukcja</span><span class="sxs-lookup"><span data-stu-id="cfa08-111">Class Statement</span></span>](../statements/class-statement.md)
+ <span data-ttu-id="b62c1-105">**Identyfikator błędu:** BC30481</span><span class="sxs-lookup"><span data-stu-id="b62c1-105">**Error ID:** BC30481</span></span>
+
+## <a name="to-correct-this-error"></a><span data-ttu-id="b62c1-106">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="b62c1-106">To correct this error</span></span>
+
+- <span data-ttu-id="b62c1-107">Znajdź i Usuń niezbędną `Class` instrukcję.</span><span class="sxs-lookup"><span data-stu-id="b62c1-107">Locate and remove the unnecessary `Class` statement.</span></span>
+
+- <span data-ttu-id="b62c1-108">Zakończ `Class` blok ze zgodnym elementem `End Class` .</span><span class="sxs-lookup"><span data-stu-id="b62c1-108">Conclude the `Class` block with a matching `End Class`.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="b62c1-109">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="b62c1-109">See also</span></span>
+
+- [<span data-ttu-id="b62c1-110">End — \<keyword> instrukcja</span><span class="sxs-lookup"><span data-stu-id="b62c1-110">End \<keyword> Statement</span></span>](../statements/end-keyword-statement.md)
+- [<span data-ttu-id="b62c1-111">Class, instrukcja</span><span class="sxs-lookup"><span data-stu-id="b62c1-111">Class Statement</span></span>](../statements/class-statement.md)
