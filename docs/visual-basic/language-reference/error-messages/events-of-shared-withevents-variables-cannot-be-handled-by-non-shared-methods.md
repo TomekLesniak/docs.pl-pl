@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC30594
 ms.assetid: 5b9fceb4-ab11-41bb-ad3b-6f1a9da8ae7e
-ms.openlocfilehash: d519463e036de215143efad5be3745484ac17d82
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 02039b81251e59a951a0fe37ec2c9534b458b6a5
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874294"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161923"
 ---
-# <a name="events-of-shared-withevents-variables-cannot-be-handled-by-non-shared-methods"></a><span data-ttu-id="03e51-102">Zdarzenia zmiennych WithEvents nie mogą być obsługiwane przez metody nieudostępnione</span><span class="sxs-lookup"><span data-stu-id="03e51-102">Events of shared WithEvents variables cannot be handled by non-shared methods</span></span>
+# <a name="bc30594-events-of-shared-withevents-variables-cannot-be-handled-by-non-shared-methods"></a><span data-ttu-id="c8a03-102">BC30594: zdarzenia udostępnionych zmiennych WithEvents nie mogą być obsługiwane przez metody nieudostępnione</span><span class="sxs-lookup"><span data-stu-id="c8a03-102">BC30594: Events of shared WithEvents variables cannot be handled by non-shared methods</span></span>
 
-<span data-ttu-id="03e51-103">Zmienna zadeklarowana z `Shared` modyfikatorem jest zmienną udostępnioną.</span><span class="sxs-lookup"><span data-stu-id="03e51-103">A variable declared with the `Shared` modifier is a shared variable.</span></span> <span data-ttu-id="03e51-104">Zmienna współdzielona identyfikuje dokładnie jedną lokalizację magazynu.</span><span class="sxs-lookup"><span data-stu-id="03e51-104">A shared variable identifies exactly one storage location.</span></span> <span data-ttu-id="03e51-105">Zmienna zadeklarowana z `WithEvents` modyfikatorem modyfikującym, że typ, do którego należy zmienna, obsługuje zestaw zdarzeń zgłaszanych przez zmienną.</span><span class="sxs-lookup"><span data-stu-id="03e51-105">A variable declared with the `WithEvents` modifier asserts that the type to which the variable belongs handles the set of events the variable raises.</span></span> <span data-ttu-id="03e51-106">Gdy wartość jest przypisana do zmiennej, właściwość utworzona przez `WithEvents` deklarację odłączy wszelkie istniejące procedury obsługi zdarzeń i przechwytuje nowy program obsługi zdarzeń za pośrednictwem `Add` metody.</span><span class="sxs-lookup"><span data-stu-id="03e51-106">When a value is assigned to the variable, the property created by the `WithEvents` declaration unhooks any existing event handler and hooks up the new event handler via the `Add` method.</span></span>  
-  
- <span data-ttu-id="03e51-107">**Identyfikator błędu:** BC30594</span><span class="sxs-lookup"><span data-stu-id="03e51-107">**Error ID:** BC30594</span></span>  
-  
-## <a name="to-correct-this-error"></a><span data-ttu-id="03e51-108">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="03e51-108">To correct this error</span></span>  
-  
-- <span data-ttu-id="03e51-109">Zadeklaruj procedurę obsługi zdarzeń `Shared` .</span><span class="sxs-lookup"><span data-stu-id="03e51-109">Declare your event handler `Shared`.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="03e51-110">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="03e51-110">See also</span></span>
+<span data-ttu-id="c8a03-103">Zmienna zadeklarowana z `Shared` modyfikatorem jest zmienną udostępnioną.</span><span class="sxs-lookup"><span data-stu-id="c8a03-103">A variable declared with the `Shared` modifier is a shared variable.</span></span> <span data-ttu-id="c8a03-104">Zmienna współdzielona identyfikuje dokładnie jedną lokalizację magazynu.</span><span class="sxs-lookup"><span data-stu-id="c8a03-104">A shared variable identifies exactly one storage location.</span></span> <span data-ttu-id="c8a03-105">Zmienna zadeklarowana z `WithEvents` modyfikatorem modyfikującym, że typ, do którego należy zmienna, obsługuje zestaw zdarzeń zgłaszanych przez zmienną.</span><span class="sxs-lookup"><span data-stu-id="c8a03-105">A variable declared with the `WithEvents` modifier asserts that the type to which the variable belongs handles the set of events the variable raises.</span></span> <span data-ttu-id="c8a03-106">Gdy wartość jest przypisana do zmiennej, właściwość utworzona przez `WithEvents` deklarację odłączy wszelkie istniejące procedury obsługi zdarzeń i przechwytuje nowy program obsługi zdarzeń za pośrednictwem `Add` metody.</span><span class="sxs-lookup"><span data-stu-id="c8a03-106">When a value is assigned to the variable, the property created by the `WithEvents` declaration unhooks any existing event handler and hooks up the new event handler via the `Add` method.</span></span>
 
-- [<span data-ttu-id="03e51-111">Shared</span><span class="sxs-lookup"><span data-stu-id="03e51-111">Shared</span></span>](../modifiers/shared.md)
-- [<span data-ttu-id="03e51-112">WithEvents</span><span class="sxs-lookup"><span data-stu-id="03e51-112">WithEvents</span></span>](../modifiers/withevents.md)
+ <span data-ttu-id="c8a03-107">**Identyfikator błędu:** BC30594</span><span class="sxs-lookup"><span data-stu-id="c8a03-107">**Error ID:** BC30594</span></span>
+
+## <a name="to-correct-this-error"></a><span data-ttu-id="c8a03-108">Aby poprawić ten błąd</span><span class="sxs-lookup"><span data-stu-id="c8a03-108">To correct this error</span></span>
+
+- <span data-ttu-id="c8a03-109">Zadeklaruj procedurę obsługi zdarzeń `Shared` .</span><span class="sxs-lookup"><span data-stu-id="c8a03-109">Declare your event handler `Shared`.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="c8a03-110">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="c8a03-110">See also</span></span>
+
+- [<span data-ttu-id="c8a03-111">Shared</span><span class="sxs-lookup"><span data-stu-id="c8a03-111">Shared</span></span>](../modifiers/shared.md)
+- [<span data-ttu-id="c8a03-112">WithEvents</span><span class="sxs-lookup"><span data-stu-id="c8a03-112">WithEvents</span></span>](../modifiers/withevents.md)
