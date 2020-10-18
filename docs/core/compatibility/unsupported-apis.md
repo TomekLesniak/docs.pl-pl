@@ -1,25 +1,25 @@
 ---
-title: Nieobsługiwane interfejsy API w programie .NET Core
+title: Nieobsługiwane interfejsy API w oprogramowaniu .NET Core i .NET 5 +
 titleSuffix: ''
-description: Dowiedz się, które interfejsy API z .NET Framework, które zawsze zgłaszają wyjątek na platformie .NET Core.
-ms.date: 12/23/2019
-ms.openlocfilehash: 94f334d7e4b7daf407f489ba274172ced9eefa81
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+description: Dowiedz się, które interfejsy API platformy .NET zawsze zgłaszają wyjątek w oprogramowaniu .NET Core i .NET 5,0 i nowszych wersjach.
+ms.date: 10/13/2020
+ms.openlocfilehash: 0164ebff51de82d548a02f9fde754c1052a9c2b5
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414438"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159342"
 ---
-# <a name="apis-that-always-throw-exceptions-on-net-core"></a>Interfejsy API, które zawsze generują wyjątki w programie .NET Core
+# <a name="apis-that-always-throw-exceptions-on-net-core-and-net-5"></a>Interfejsy API, które zawsze generują wyjątki w oprogramowaniu .NET Core i .NET 5 +
 
-Następujące interfejsy API zawsze będą zgłaszać <xref:System.PlatformNotSupportedException> na platformie .NET Core na wszystkich lub podzestawach platform.
+Następujące interfejsy API zawsze będą zgłaszać <xref:System.PlatformNotSupportedException> na platformie .net 5,0 i nowszych wersjach (łącznie ze wszystkimi wersjami programu .NET Core) na wszystkich lub podzestawach platform.
 
-Ten artykuł organizuje elementy członkowskie interfejsu API według przestrzeni nazw.
+Ten artykuł organizuje interfejsy API, których to dotyczy, według przestrzeni nazw.
 
 > [!NOTE]
 >
-> - Ten artykuł jest pracą w toku. Nie jest to kompletna lista interfejsów API, które generują wyjątki w programie .NET Core.
-> - Ten artykuł nie zawiera jawnych implementacji interfejsu dla serializacji binarnej, która zgłasza na platformie .NET Core. Aby uzyskać więcej informacji, zobacz [Serializacja binarna w programie .NET Core](../../standard/serialization/binary-serialization.md#net-core).
+> - Ten artykuł jest pracą w toku. Nie jest to kompletna lista interfejsów API, które generują wyjątki w programie .NET 5 lub nowszym.
+> - Ten artykuł nie zawiera jawnych implementacji interfejsu dla serializacji binarnej, która jest zgłaszana w programie .NET 5 lub nowszym. Aby uzyskać więcej informacji, zobacz [Serializacja binarna w programie .NET Core](../../standard/serialization/binary-serialization.md#net-core).
 
 ## <a name="system"></a>System
 

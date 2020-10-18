@@ -3,12 +3,12 @@ title: Co to jest Konstruktor modelu i jak to działa?
 description: Jak korzystać z konstruktora modelu ML.NET w celu automatycznego uczenia modelu uczenia maszynowego
 ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 80f5f5d064c4e0c4097dacc6022d4624c1516ab9
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: da6348fb5dde83827558b66b6115d681f08948db
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679680"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161143"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co to jest Konstruktor modelu i jak to działa?
 
@@ -54,9 +54,15 @@ Regresja służy do przewidywania liczby.
 
 #### <a name="image-classification"></a>Klasyfikacja obrazów
 
-Klasyfikacja obrazu może służyć do identyfikowania obrazów różnych kategorii. Na przykład różne rodzaje terenów lub zwierząt lub wady produkcji.
+Klasyfikacja obrazu służy do identyfikowania obrazów różnych kategorii. Na przykład różne rodzaje terenów lub zwierząt lub wady produkcji.
 
 Możesz użyć scenariusza klasyfikacji obrazu, jeśli masz zestaw obrazów i chcesz sklasyfikować obrazy w różnych kategoriach.
+
+#### <a name="object-detection"></a>Wykrywanie obiektów
+
+Wykrywanie obiektów służy do lokalizowania i kategoryzowania jednostek w obrazach.  Na przykład lokalizowanie i identyfikowanie samochodów i osób w obrazie.
+
+Można użyć wykrywania obiektów, gdy obrazy zawierają wiele obiektów różnych typów.
 
 #### <a name="recommendation"></a>Zalecenie
 
@@ -66,13 +72,15 @@ Scenariusza zalecenia można użyć, jeśli masz zestaw użytkowników i zestaw 
 
 ## <a name="environment"></a>Środowisko
 
-Model uczenia maszynowego można uczenie lokalnie na komputerze lub w chmurze na platformie Azure.
+Model uczenia maszynowego można uczenie lokalnie na komputerze lub w chmurze na platformie Azure, w zależności od tego scenariusza.
 
 W przypadku nauczenia lokalnego można obejść ograniczenia zasobów komputera (procesor CPU, pamięć i dysk). Podczas uczenia się w chmurze można skalować zasoby w górę w celu spełnienia wymagań scenariusza, szczególnie w przypadku dużych zestawów danych.
 
-Szkolenia lokalne są obsługiwane we wszystkich scenariuszach.
+Lokalne szkolenie procesora CPU jest obsługiwane we wszystkich scenariuszach z wyjątkiem wykrywania obiektów.
 
-Szkolenia platformy Azure są obsługiwane na potrzeby klasyfikacji obrazów.
+Na potrzeby klasyfikacji obrazów jest obsługiwane szkolenie lokalnego procesora GPU.
+
+Szkolenia platformy Azure są obsługiwane na potrzeby klasyfikacji obrazów i wykrywania obiektów.
 
 ## <a name="data"></a>Dane
 
@@ -109,10 +117,10 @@ Jeśli nie masz jeszcze własnych danych, wypróbuj jeden z tych zestawów danyc
 
 |Scenariusz|Przykład|Dane|Etykieta|Funkcje|
 |-|-|-|-|-|
-|Klasyfikacja|Przewidywanie anomalii sprzedaży|[dane sprzedaży produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Sprzedaż produktu|Month (Miesiąc)|
+|Klasyfikacja|Przewidywanie anomalii sprzedaży|[dane sprzedaży produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Sprzedaż produktu|Miesiąc|
 ||Przewidywanie tonacji z komentarzy w witrynie sieci Web|[dane komentarzy witryny sieci Web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Etykieta (0 w przypadku wartości ujemnej tonacji, 1, gdy wartość jest dodatnia)|Komentarz, rok|
 ||Przewidywanie oszustw transakcji kart kredytowych|[dane karty kredytowej](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CCFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Klasa (1 w przypadku oszustwa, 0 w przeciwnym razie)|Kwota, v1 — v28 (funkcje anonimowe)|
-||Przewidywanie typu problemu w repozytorium GitHub|[Dane problemu w usłudze GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Obszar|Tytuł, opis|
+||Przewidywanie typu problemu w repozytorium GitHub|[Dane problemu w usłudze GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Warstwowy|Tytuł, opis|
 |Przewidywanie wartości|Przewidywanie ceny opłat za taksówkę|[dane dotyczące opłat za taksówki](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Bezprzewodow|Czas podróży, odległość|
 |Klasyfikacja obrazów|Przewidywanie kategorii kwiatów |[obrazy kwiatów](http://download.tensorflow.org/example_images/flower_photos.tgz)|Typ kwitnienia: wirujące, Dandelion, róże, przepływy, Tulips|Same dane obrazu|
 |Zalecenie|Przewidywania filmów, które ktoś chce|[Klasyfikacje filmów](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|Użytkownicy, filmy|Klasyfikacje|

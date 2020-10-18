@@ -3,12 +3,12 @@ title: Wprowadzenie do samouczków języka C# — interaktywny
 description: Poznaj język C# w przeglądarce i Rozpocznij pracę z własnym środowiskiem programistycznym
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 52b680ffe8c477624f3b5e085b7f2de13c271d81
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 6037862c52fd59ba540e1f65297d787f0a964762
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609183"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162157"
 ---
 # <a name="introduction-to-c"></a>Wprowadzenie do języka C\#
 
@@ -62,3 +62,7 @@ W tym samouczku założono, że zakończono pracę z samouczkami wprowadzającym
 W tym samouczku przedstawiono koncepcje używane w programowaniu zorientowanym obiektowo. Zapoznaj się z pojęciami dotyczącymi *abstrakcji*, *hermetyzacji*, *dziedziczenia*i *polimorfizmu* przy użyciu przykładów języka C#.
 
 W tym samouczku założono, że zakończono pracę z samouczkami wprowadzającymi w trybie online, a zainstalowano [zestaw .NET Core SDK](https://dotnet.microsoft.com/download) i [Visual Studio Code](https://code.visualstudio.com/) lub [program Visual Studio](https://visualstudio.com) na komputerze deweloperskim.
+
+## <a name="101-linq-samples"></a>[Przykłady dla LINQ 101](https://github.com/dotnet/try-samples/tree/master/101-linq-samples)
+
+Ten przykład wymaga globalnego narzędzia [dotnet-try](https://github.com/dotnet/try/blob/main/README.md#setup) . Po zainstalowaniu narzędzia i sklonowaniu repozytorium [try-Samples](https://github.com/dotnet/try-samples) można nauczyć się języka Integrated Language Query (LINQ) za pomocą zestawu 101 przykładów, które można uruchomić interaktywnie. Możesz poznać różne sposoby wykonywania zapytań, eksplorowania i przekształcania sekwencji danych.

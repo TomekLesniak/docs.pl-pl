@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC30971
 ms.assetid: 75d2e8b5-2fdc-4623-8b32-cba805dab7db
-ms.openlocfilehash: cd2c00bda5b63abbd6bf7069ef28d0a812b22044
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 9340c5c58c0cdb70c517534a339f57eb9ec1f906
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873784"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162430"
 ---
-# <a name="message-this-error-could-also-be-due-to-mixing-a-file-reference-with-a-project-reference-to-assembly-assemblyname"></a>\<message> Przyczyną tego błędu może być również połączenie odwołania pliku z odwołaniem projektu do zestawu „\<assemblyname>"
+# <a name="bc30971-message-this-error-could-also-be-due-to-mixing-a-file-reference-with-a-project-reference-to-assembly-assemblyname"></a>BC30971: \<message> ten błąd może również być spowodowany mieszaniem odwołania do pliku z odwołaniem projektu do zestawu " \<assemblyname> "
 
-\<message> Ten błąd może również być spowodowany mieszaniem odwołania do pliku z odwołaniem projektu do zestawu " \<assemblyname> . W takim przypadku Spróbuj zastąpić odwołanie do pliku " \<assemblyfilename> " w projekcie " \<projectname1> " z odwołaniem projektu do " \<projectname2> ".  
-  
- Kod w projekcie uzyskuje dostęp do elementu członkowskiego innego projektu, ale Konfiguracja rozwiązania nie zezwala kompilatorowi Visual Basicemu na rozpoznanie odwołania.  
-  
- Aby uzyskać dostęp do typu zdefiniowanego w innym zestawie, kompilator Visual Basic musi mieć odwołanie do tego zestawu. Musi to być jedno, niejednoznaczne odwołanie, które nie powoduje cyklicznych odwołań między projektami.  
-  
- **Identyfikator błędu:** BC30971  
-  
-## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
-  
-1. Ustal, który projekt tworzy najlepszy zestaw dla projektu do odwołania. W przypadku tej decyzji można użyć kryteriów, takich jak łatwość dostępu do plików i częstotliwość aktualizacji.  
-  
-2. We właściwościach projektu Dodaj odwołanie do projektu zawierającego zestaw, który definiuje używany typ.  
-  
+\<message> Ten błąd może również być spowodowany mieszaniem odwołania do pliku z odwołaniem projektu do zestawu " \<assemblyname> . W takim przypadku Spróbuj zastąpić odwołanie do pliku " \<assemblyfilename> " w projekcie " \<projectname1> " z odwołaniem projektu do " \<projectname2> ".
+
+ Kod w projekcie uzyskuje dostęp do elementu członkowskiego innego projektu, ale Konfiguracja rozwiązania nie zezwala kompilatorowi Visual Basicemu na rozpoznanie odwołania.
+
+ Aby uzyskać dostęp do typu zdefiniowanego w innym zestawie, kompilator Visual Basic musi mieć odwołanie do tego zestawu. Musi to być jedno, niejednoznaczne odwołanie, które nie powoduje cyklicznych odwołań między projektami.
+
+ **Identyfikator błędu:** BC30971
+
+## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
+
+1. Ustal, który projekt tworzy najlepszy zestaw dla projektu do odwołania. W przypadku tej decyzji można użyć kryteriów, takich jak łatwość dostępu do plików i częstotliwość aktualizacji.
+
+2. We właściwościach projektu Dodaj odwołanie do projektu zawierającego zestaw, który definiuje używany typ.
+
 ## <a name="see-also"></a>Zobacz też
 
 - [Zarządzanie odwołaniami w projekcie](/visualstudio/ide/managing-references-in-a-project)

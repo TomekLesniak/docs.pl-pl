@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30001
 ms.assetid: 43c1b509-15f9-4e91-bcad-90bcb5f6f191
-ms.openlocfilehash: f1887e0cf71ee79f3fd0a991cd3038bcc910588c
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 5307b7354d3c6b91ea2a1993f5f84384784a61e5
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90870676"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159693"
 ---
-# <a name="statement-is-not-valid-in-a-namespace"></a>Instrukcja nie jest prawidłowa w przestrzeni nazw
+# <a name="bc30001-statement-is-not-valid-in-a-namespace"></a>BC30001: instrukcja nie jest prawidłowa w przestrzeni nazw
 
-Instrukcja nie może pojawić się na poziomie przestrzeni nazw. Jedyne deklaracje dozwolone na poziomie przestrzeni nazw to deklaracje modułu, interfejsu, klasy, delegata, wyliczenia i struktury.  
-  
- **Identyfikator błędu:** BC30001  
-  
-## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
-  
-- Przenieś instrukcję do lokalizacji w ramach modułu, klasy, interfejsu, struktury, wyliczenia lub delegata definicji.  
-  
+Instrukcja nie może pojawić się na poziomie przestrzeni nazw. Jedyne deklaracje dozwolone na poziomie przestrzeni nazw to deklaracje modułu, interfejsu, klasy, delegata, wyliczenia i struktury.
+
+ **Identyfikator błędu:** BC30001
+
+## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
+
+- Przenieś instrukcję do lokalizacji w ramach modułu, klasy, interfejsu, struktury, wyliczenia lub delegata definicji.
+
 ## <a name="see-also"></a>Zobacz też
 
 - [Zakres w Visual Basic](../../programming-guide/language-features/declared-elements/scope.md)

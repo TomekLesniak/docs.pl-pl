@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30202
 ms.assetid: 6f75060c-2db4-4a79-b5d1-5780c09a74cd
-ms.openlocfilehash: e212939cf814a9ac632571b2203f2f256dea61ae
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 9c717cef2052722563e04595ef7a808ea103a75d
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873601"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159823"
 ---
-# <a name="optional-expected"></a>Oczekiwano instrukcji „Optional”
+# <a name="bc30202-optional-expected"></a>BC30202: Oczekiwano instrukcji "optional"
 
-Po argumencie opcjonalnym w deklaracji procedury występuje wymagany argument. Każdy argument po opcjonalnym argumencie musi być również opcjonalny.  
-  
- **Identyfikator błędu:** BC30202  
-  
-## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
-  
-1. Jeśli argument jest wymagany, przenieś go, aby poprzedzał pierwszy opcjonalny argument na liście argumentów.  
-  
-2. Jeśli argument jest zamierzony jako opcjonalny, użyj `Optional` słowa kluczowego.  
-  
+Po argumencie opcjonalnym w deklaracji procedury występuje wymagany argument. Każdy argument po opcjonalnym argumencie musi być również opcjonalny.
+
+ **Identyfikator błędu:** BC30202
+
+## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
+
+- Jeśli argument jest wymagany, przenieś go, aby poprzedzał pierwszy opcjonalny argument na liście argumentów.
+
+- Jeśli argument jest zamierzony jako opcjonalny, użyj `Optional` słowa kluczowego.
+
 ## <a name="see-also"></a>Zobacz też
 
 - [Parametry opcjonalne](../../programming-guide/language-features/procedures/optional-parameters.md)

@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC42110
 ms.assetid: ef4442eb-08d1-434f-a03b-4aa2ed4e4414
-ms.openlocfilehash: 1ad7b9d0a610842dd6c50ee198f5bb5fa3eb68cf
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 3e76ffea283de2843fc5586179074c01a053ece8
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90870474"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161286"
 ---
-# <a name="the-type-for-variable-variablename-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>Typ zmiennej „\<variablename>” nie zostanie wywnioskowany, ponieważ jest powiązany z polem w zakresie otaczającym
+# <a name="bc42110-the-type-for-variable-variablename-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>BC42110: typ zmiennej " \<variablename> " nie zostanie wywnioskowany, ponieważ jest powiązany z polem w zakresie otaczającym
 
 Typ zmiennej " \<variablename> " nie zostanie wywnioskowany, ponieważ jest powiązany z polem w otaczającym zakresie. Zmień nazwę " \<variablename> " lub użyj w pełni kwalifikowanej nazwy (na przykład "Me. VariableName" lub "MyBase. VariableName").
 
@@ -43,7 +43,7 @@ Domyślnie ten komunikat jest ostrzeżeniem. Aby uzyskać informacje o sposobach
 
 **Identyfikator błędu:** BC42110
 
-### <a name="to-address-this-warning"></a>Aby rozwiązać ten komunikat ostrzegawczy
+## <a name="to-address-this-warning"></a>Aby rozwiązać ten komunikat ostrzegawczy
 
 - Ustaw zmienną sterującą pętli jako lokalną, zmieniając jej nazwę na identyfikator, który nie jest również nazwą pola klasy.
 

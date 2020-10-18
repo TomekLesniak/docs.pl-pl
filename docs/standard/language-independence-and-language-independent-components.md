@@ -13,16 +13,16 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: b440bce7ad73cfd526b1589e7f19b4cc06be238c
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 1097d156aad06b7a17141e4d6786e5411cbaa571
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679615"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160844"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Niezależność od języka i elementy niezależne od języka
 
-.NET Framework jest niezależny od języka. Oznacza to, że jako programista można opracowywać w jednym z wielu języków, które są przeznaczone dla .NET Framework, takich jak C#, C++/CLI, Eiffel, F #, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL i Windows PowerShell. Można uzyskać dostęp do typów i elementów członkowskich bibliotek klas opracowanych dla .NET Framework bez konieczności znajomości języka, w którym zostały pierwotnie napisane, i bez konieczności przestrzegania jakichkolwiek Konwencji języka oryginalnego. Jeśli jesteś deweloperem składnika, dostęp do składnika można uzyskać za pomocą dowolnej aplikacji .NET Framework niezależnie od języka.
+.NET jest niezależny od języka. Oznacza to, że jako programista można opracowywać w jednym z wielu języków przeznaczonych dla platformy .NET, takich jak C#, C++/CLI, Eiffel, F #, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL i Windows PowerShell. Można uzyskać dostęp do typów i elementów członkowskich bibliotek klas opracowanych dla platformy .NET bez konieczności znajomości języka, w którym zostały one pierwotnie zaprojektowane i bez konieczności przestrzegania jakichkolwiek Konwencji języka oryginalnego. Jeśli jesteś deweloperem składnika, dostęp do składnika można uzyskać za pomocą dowolnej aplikacji platformy .NET, niezależnie od jego języka.
 
 > [!NOTE]
 > W pierwszej części tego artykułu omówiono Tworzenie składników niezależnych od języka — to znaczy składników, które mogą być używane przez aplikacje, które są zapisywane w dowolnym języku. Możesz również utworzyć pojedynczy składnik lub aplikację z kodu źródłowego zapisaną w wielu językach. Zobacz [współdziałanie między językami](#CrossLang) w drugiej części tego artykułu.
@@ -157,7 +157,7 @@ Reguły zgodności ze specyfikacją CLS są wymienione w poniższej tabeli. Teks
 
 ### <a name="types-and-type-member-signatures"></a>Typy i podpisy elementów członkowskich typu
 
-<xref:System.Object?displayProperty=nameWithType>Typ jest zgodny ze specyfikacją CLS i jest typem podstawowym wszystkich typów obiektów w systemie .NET Framework typu. Dziedziczenie w .NET Framework jest niejawne (na przykład <xref:System.String> Klasa niejawnie dziedziczy z <xref:System.Object> klasy) lub jawna (na przykład klasa dziedziczy jawnie z klasy, która jawnie dziedziczy z klasy, która jawnie dziedziczy z <xref:System.Globalization.CultureNotFoundException> <xref:System.ArgumentException> <xref:System.SystemException> <xref:System.Exception> klasy). Aby typ pochodny był zgodny ze specyfikacją CLS, jego typ podstawowy również musi być zgodny ze specyfikacją CLS.
+<xref:System.Object?displayProperty=nameWithType>Typ jest zgodny ze specyfikacją CLS i jest typem podstawowym wszystkich typów obiektów w systemie typu .NET. Dziedziczenie w programie .NET jest niejawne (na przykład <xref:System.String> Klasa niejawnie dziedziczy z <xref:System.Object> klasy) lub jawna (na przykład klasa dziedziczy jawnie z klasy, która jawnie dziedziczy z klasy <xref:System.Globalization.CultureNotFoundException> , która jawnie dziedziczy <xref:System.ArgumentException> <xref:System.SystemException> z <xref:System.Exception> klasy). Aby typ pochodny był zgodny ze specyfikacją CLS, jego typ podstawowy również musi być zgodny ze specyfikacją CLS.
 
 Poniższy przykład przedstawia typ pochodny, którego typ podstawowy nie jest zgodny ze specyfikacją CLS. Definiuje klasę bazową `Counter` , która używa niepodpisanej 32-bitowej liczby całkowitej jako licznika. Ponieważ Klasa udostępnia funkcje licznika przez Zawijanie liczby całkowitej bez znaku, Klasa jest oznaczona jako niezgodna ze specyfikacją CLS. W związku z tym Klasa pochodna, `NonZeroCounter` , również nie jest zgodna ze specyfikacją CLS.
 
@@ -170,7 +170,7 @@ Wszystkie typy, które pojawiają się w sygnaturach składowych, łącznie z ty
 
 - Wszystkie typy używane jako ograniczenia parametrów ogólnych muszą być zgodne ze specyfikacją CLS.
 
-[Wspólny system typów](base-types/common-type-system.md) .NET Framework obejmuje wiele wbudowanych typów, które są obsługiwane bezpośrednio przez środowisko uruchomieniowe języka wspólnego i są specjalnie kodowane w metadanych zestawu. Z tych typów wewnętrznych typy wymienione w poniższej tabeli są zgodne ze specyfikacją CLS.
+[Wspólny system typów](base-types/common-type-system.md) .NET zawiera wiele wbudowanych typów, które są obsługiwane bezpośrednio przez środowisko uruchomieniowe języka wspólnego i są specjalnie zakodowane w metadanych zestawu. Z tych typów wewnętrznych typy wymienione w poniższej tabeli są zgodne ze specyfikacją CLS.
 
 |Typ zgodny ze specyfikacją CLS|Opis|
 |-------------------------|-----------------|
@@ -197,13 +197,13 @@ Typy wewnętrzne wymienione w poniższej tabeli są niezgodne ze specyfikacją C
 |<xref:System.UInt64>|64-bitowa liczba całkowita bez znaku|<xref:System.Int64> (może przepełnić się), <xref:System.Numerics.BigInteger> lub <xref:System.Double>|
 |<xref:System.UIntPtr>|Niepodpisany wskaźnik lub dojście|<xref:System.IntPtr>|
 
-Biblioteka klas .NET Framework lub jakakolwiek inna Biblioteka klas może zawierać inne typy, które nie są zgodne ze specyfikacją CLS; na przykład:
+Biblioteka klas .NET lub jakakolwiek inna Biblioteka klas może zawierać inne typy, które nie są zgodne ze specyfikacją CLS; na przykład:
 
 - Opakowane typy wartości. Poniższy przykład w języku C# tworzy klasę, która ma właściwość publiczną typu `int*` o nazwie `Value` . Ponieważ `int*` jest to opakowany typ wartości, kompilator flaguje go jako niezgodny ze specyfikacją CLS.
 
   [!code-csharp[Conceptual.CLSCompliant#26](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/box2.cs#26)]
 
-- Typy odwołań, które są specjalnymi konstrukcjami, które zawierają odwołanie do obiektu i odwołanie do typu. Wpisane odwołania są reprezentowane w .NET Framework przez <xref:System.TypedReference> klasę.
+- Typy odwołań, które są specjalnymi konstrukcjami, które zawierają odwołanie do obiektu i odwołanie do typu. Wpisane odwołania są reprezentowane w programie .NET przez <xref:System.TypedReference> klasę.
 
 Jeśli typ nie jest zgodny ze specyfikacją CLS, należy zastosować <xref:System.CLSCompliantAttribute> atrybut z `isCompliant` wartością `false` do. Aby uzyskać więcej informacji, zobacz sekcję [atrybut CLSCompliantAttribute](#CLSAttribute) .
 
@@ -487,7 +487,7 @@ Aby naprawić ten błąd, `ErrorClass` Klasa musi dziedziczyć po elemencie <xre
 
 ### <a name="attributes"></a>Atrybuty
 
-Zestawy platformy In.NET Framework, atrybuty niestandardowe oferują rozszerzalny mechanizm do przechowywania atrybutów niestandardowych i pobierania metadanych dotyczących obiektów programistycznych, takich jak zestawy, typy, elementy członkowskie i parametry metody. Atrybuty niestandardowe muszą pochodzić od <xref:System.Attribute?displayProperty=nameWithType> lub z typu pochodnego od elementu <xref:System.Attribute?displayProperty=nameWithType> .
+W zestawach .NET atrybuty niestandardowe oferują rozszerzalny mechanizm do przechowywania atrybutów niestandardowych i pobierania metadanych dotyczących obiektów programistycznych, takich jak zestawy, typy, elementy członkowskie i parametry metody. Atrybuty niestandardowe muszą pochodzić od <xref:System.Attribute?displayProperty=nameWithType> lub z typu pochodnego od elementu <xref:System.Attribute?displayProperty=nameWithType> .
 
 Poniższy przykład narusza tę regułę. Definiuje `NumericAttribute` klasę, która nie pochodzi od <xref:System.Attribute?displayProperty=nameWithType> . Należy zauważyć, że błąd kompilatora występuje tylko wtedy, gdy jest stosowany atrybut niezgodny ze specyfikacją CLS, nie gdy Klasa jest zdefiniowana.
 
@@ -533,7 +533,7 @@ W czasie kompilacji kompilator wykrywa niezgodne elementy, które są zgodne ze 
 
 Deweloperzy składników mogą używać <xref:System.CLSCompliantAttribute> atrybutu na dwa sposoby:
 
-- Do definiowania części interfejsu publicznego uwidocznionych przez składnik, który jest zgodny ze specyfikacją CLS, i części, które nie są zgodne ze specyfikacją CLS. Gdy atrybut jest używany do oznaczania określonych elementów programu jako zgodnych ze specyfikacją CLS, jego użycie gwarantuje, że te elementy są dostępne we wszystkich językach i narzędziach przeznaczonych dla .NET Framework.
+- Do definiowania części interfejsu publicznego uwidocznionych przez składnik, który jest zgodny ze specyfikacją CLS, i części, które nie są zgodne ze specyfikacją CLS. Gdy atrybut jest używany do oznaczania określonych elementów programu jako zgodnych ze specyfikacją CLS, jego użycie gwarantuje, że te elementy są dostępne we wszystkich językach i narzędziach przeznaczonych dla platformy .NET.
 
 - Aby zapewnić, że interfejs publiczny biblioteki składników uwidacznia tylko elementy programu, które są zgodne ze specyfikacją CLS. Jeśli elementy nie są zgodne ze specyfikacją CLS, kompilatory zwykle wygenerują ostrzeżenie.
 
@@ -571,7 +571,7 @@ Jeśli tworzysz aplikację, a nie bibliotekę (czyli jeśli nie ujawniasz typów
 
 ## <a name="cross-language-interoperability"></a>Współdziałanie między językami
 
-Niezależność od języka ma wiele możliwych znaczenia. Jednym z nich, który jest omawiany w [zależności od języka artykułu i składników niezależnych od języka](language-independence-and-language-independent-components.md), obejmuje bezproblemowe zużywanie typów pisanych w jednym języku z aplikacji w innym języku. Drugie znaczenie, które jest fokusem tego artykułu, obejmuje łączenie kodu pisanego w wielu językach w jeden zestaw .NET Framework.
+Niezależność od języka ma wiele możliwych znaczenia. Jedno znaczenie, które jest omówione w artykule [niezależność od języka i Language-Independent składniki](language-independence-and-language-independent-components.md), obejmuje bezproblemowe zużywanie typów pisanych w jednym języku z aplikacji w innym języku. Drugie znaczenie, które jest fokusem tego artykułu, obejmuje łączenie kodu pisanego w wielu językach w jeden zestaw .NET.
 
 Poniższy przykład ilustruje współdziałanie między językami przez utworzenie biblioteki klas o nazwie Utilities.dll zawierającej dwie klasy `NumericLib` i `StringLib` . `NumericLib`Klasa jest zapisywana w języku C#, a `StringLib` Klasa jest zapisywana w Visual Basic. Oto kod źródłowy dla StringUtil. vb, który zawiera pojedynczy element członkowski, `ToTitleCase` w swojej `StringLib` klasie.
 
@@ -620,6 +620,6 @@ Aby skompilować przy użyciu języka C#, Zmień nazwę kompilatora z **VBC** na
 csc example.cs /r:UtilityLib.dll
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.CLSCompliantAttribute>

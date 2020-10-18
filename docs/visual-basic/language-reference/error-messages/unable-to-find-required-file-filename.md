@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30655
 ms.assetid: 756db378-e758-48a9-88ff-496bc55bc0b6
-ms.openlocfilehash: e05d298570b45415b567a6db41764fc0163eee77
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 2892ea3173557602a998303a485a766585f5f885
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90875709"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161637"
 ---
-# <a name="unable-to-find-required-file-filename"></a>Nie można odnaleźć wymaganego pliku „\<filename>”
+# <a name="bc30655-unable-to-find-required-file-filename"></a>BC30655: nie można odnaleźć wymaganego pliku " \<filename> "
 
-Plik, którego wymaga program Visual Studio, jest uszkodzony lub nie istnieje.  
-  
- **Identyfikator błędu:** BC30655  
-  
-## <a name="to-correct-this-error"></a>Aby poprawić ten błąd  
-  
-- Zainstaluj ponownie program Visual Studio.  
-  
+Plik, którego wymaga program Visual Studio, jest uszkodzony lub nie istnieje.
+
+ **Identyfikator błędu:** BC30655
+
+## <a name="to-correct-this-error"></a>Aby poprawić ten błąd
+
+- Zainstaluj ponownie program Visual Studio.
+
 ## <a name="see-also"></a>Zobacz też
 
 - [Porozmawiaj z nami](/visualstudio/ide/feedback-options)

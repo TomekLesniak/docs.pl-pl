@@ -3,12 +3,12 @@ title: Zabezpieczanie mikrousług i aplikacji sieci Web platformy .NET
 description: Zabezpieczenia w mikrousługach .NET i aplikacjach sieci Web — Uzyskaj informacje na temat opcji uwierzytelniania w ASP.NET Core aplikacji sieci Web.
 author: mjrousos
 ms.date: 08/07/2020
-ms.openlocfilehash: 1dcdb5d2987360ac583fa700a387d977f498d1d9
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 01797189ce946c39bc7b8cafdff1e69ff9760e4e
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608099"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160675"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Tworzenie bezpiecznych mikrousług i aplikacji sieci Web platformy .NET
 
@@ -77,7 +77,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 ```
 
 > [!IMPORTANT]
-> Wiersze poprzedzające kod **muszą być w kolejności POkazanej** do poprawnego działania tożsamości.
+> Wiersze w poprzednim kodzie **muszą być w kolejności POkazanej** do poprawnego działania tożsamości.
 
 Korzystanie z ASP.NET Core Identity umożliwia wykonywanie kilku scenariuszy:
 

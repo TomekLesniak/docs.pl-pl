@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cc2687cf-d648-451e-88ac-3847c6c967c8
-ms.openlocfilehash: 35e48defb2fa010a4403d50373f6e491fad6c293
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 846816a38d32b16ec1252b67dd4eed2d8512f815
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553690"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160443"
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-linq-to-xml"></a>Jak pobrać akapity z dokumentu Office Open XML (LINQ to XML)
 
 Ten artykuł zawiera przykład otwierania dokumentu Office Open XML i pobierania kolekcji wszystkich akapitów w dokumencie.
 
-Aby uzyskać więcej informacji na temat pakietu Office Open XML, zobacz artykuł [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) i [blog Eric](http://www.ericwhite.com/).
+Aby uzyskać więcej informacji na temat pakietu Office Open XML, zobacz artykuł [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) i [blog Eric](https://www.ericwhite.com/).
 
 ## <a name="example-retrieve-the-paragraphs-from-an-office-open-xml-document"></a>Przykład: pobieranie akapitów z dokumentu Office Open XML
 
