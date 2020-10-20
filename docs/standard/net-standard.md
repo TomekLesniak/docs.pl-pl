@@ -5,12 +5,12 @@ ms.date: 10/05/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: a4a59fea3ab1a6bc93a12e3f0aa13dea726d8121
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: a4736e46eb7c25b64278bed8f2c2457002936b81
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050403"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224155"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -82,7 +82,7 @@ Pakiety NuGet mają co najmniej jedną [platformę](frameworks.md). Pakiety .NET
 
 [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/)Pakiet webpackage odwołuje się do kompletnego zestawu pakietów NuGet, które definiują .NET Standard.  Najbardziej typowym sposobem docelowym `netstandard` jest odwołanie do tego pakietu. Opisuje i zapewnia dostęp do bibliotek platformy .NET ~ 40 i skojarzonych z nimi interfejsów API, które definiują .NET Standard. Możesz odwoływać się do dodatkowych pakietów, których celem jest `netstandard` uzyskanie dostępu do dodatkowych interfejsów API.
 
-### <a name="versioning"></a>Przechowywanie wersji
+### <a name="versioning"></a>Obsługa wersji
 
 Specyfikacja nie jest pojedyncza, ale zestaw interfejsów API z określoną wersją. Pierwsza wersja standardu ustanawia zestaw bazowy interfejsów API. Kolejne wersje dodają interfejsy API i dziedziczą interfejsy API zdefiniowane przez poprzednie wersje. Nie ma ustanowionego udostępniania do usuwania interfejsów API ze standardu.
 

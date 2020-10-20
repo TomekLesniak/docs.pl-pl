@@ -4,12 +4,12 @@ description: Dowiedz się, jak tworzyć biblioteki platformy .NET Core przy uży
 author: cartermp
 ms.topic: how-to
 ms.date: 05/01/2017
-ms.openlocfilehash: 7aadaf7bf7819d52a57c3a137beff46d924d8cb0
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: e98ce9e08c8d92bb4c89348e21cece60de811848
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396198"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223701"
 ---
 # <a name="develop-libraries-with-the-net-core-cli"></a>Tworzenie bibliotek przy użyciu interfejs wiersza polecenia platformy .NET Core
 
@@ -26,14 +26,14 @@ Ponadto, jeśli chcesz obsługiwać starsze elementy docelowe .NET Framework, mu
 | Wersja programu .NET Framework | Co należy pobrać                                       |
 | ---------------------- | ------------------------------------------------------ |
 | 4.6.1                  | .NET Framework 4.6.1                    |
-| 4.6                    | Pakiet docelowy .NET Framework 4,6                      |
+| 4,6                    | Pakiet docelowy .NET Framework 4,6                      |
 | 4.5.2                  | .NET Framework 4.5.2 — Pakiet dewelopera                    |
 | 4.5.1                  | .NET Framework 4.5.1 — pakiet dewelopera                    |
 | 4.5                    | Zestaw Windows Software Development Kit dla systemu Windows 8         |
-| 4.0                    | Windows SDK dla systemów Windows 7 i .NET Framework 4         |
+| 4,0                    | Windows SDK dla systemów Windows 7 i .NET Framework 4         |
 | 2,0, 3,0 i 3,5      | Środowisko uruchomieniowe .NET Framework 3,5 z dodatkiem SP1 (lub Windows 8 + wersja) |
 
-## <a name="how-to-target-the-net-standard"></a>Jak kierować .NET Standard
+## <a name="how-to-target-net-standard"></a>Jak kierować .NET Standard
 
 Jeśli nie znasz .NET Standard, zapoznaj się z [.NET Standard](../../standard/net-standard.md) , aby dowiedzieć się więcej.
 
@@ -84,7 +84,7 @@ Jeśli chcesz osiągnąć maksymalną liczbę deweloperów i projektów, użyj .
 | Program .NET Framework 4.6     | `net46`  |
 | .NET Framework 4.6.1   | `net461` |
 | .NET Framework 4.6.2   | `net462` |
-| .NET Framework 4,7     | `net47`  |
+|  .NET Framework 4.7     | `net47`  |
 |  .NET Framework 4.8     | `net48`  |
 
 Następnie należy wstawić ten TFM do `TargetFramework` sekcji pliku projektu. Załóżmy na przykład, że napiszesz bibliotekę, która jest przeznaczona dla .NET Framework 4,0:

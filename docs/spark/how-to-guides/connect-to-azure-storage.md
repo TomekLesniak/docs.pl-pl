@@ -1,15 +1,17 @@
 ---
 title: Nawiązywanie połączenia z magazynem zdalnym z komputera lokalnego
 description: Połącz się z kontami usługi Azure Storage przy użyciu platformy .NET dla Apache Spark z komputera lokalnego.
+ms.author: nidutta
+author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 09e92b0cae848f9c98b691a11842f131f613396b
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: dc0c3b44279756596f3d456616821e690710ae04
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877895"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224017"
 ---
 # <a name="connect-to-azure-data-lake-storage-gen-2-or-wasb-account"></a>Nawiązywanie połączenia z kontem Azure Data Lake Storage generacji 2 lub WASB
 

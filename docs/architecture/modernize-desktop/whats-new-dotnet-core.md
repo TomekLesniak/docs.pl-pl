@@ -2,12 +2,12 @@
 title: Co nowego w programie .NET Core for Desktop?
 description: Dowiedz się więcej na temat platformy .NET Core, różnic między platformą .NET Core i .NET Framework oraz nowych funkcji, które zostały dodane.
 ms.date: 05/12/2020
-ms.openlocfilehash: b4fc0cb2841fe13b000223aefc5eaf63bd911994
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 796facaf8cd4f0d23fbcd04b90cb78fb28ebc465
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144264"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223642"
 ---
 # <a name="whats-new-with-net-core-for-desktop"></a>Co nowego w programie .NET Core for Desktop?
 
@@ -83,7 +83,7 @@ W przypadku nowych aplikacji klasycznych zalecamy rozpoczęcie od platformy .NET
 
 ## <a name="net-standard-vs-pcl"></a>.NET Standard a PCL
 
-[.NET Standard](../../standard/net-standard.md) to formalna Specyfikacja interfejsów API platformy .NET, które mają być dostępne we wszystkich implementacjach platformy .NET. Uzasadnienie związane z .NET Standardem jest ustanowienie większej jednorodności w ekosystemie platformy .NET. .NET Standard to specyfikacja interfejsów API platformy .NET, które tworzą jednolity zestaw umów do kompilowania kodu. Te kontrakty są implementowane w każdej wersji platformy .NET, co pozwala na przenoszenie różnych implementacji platformy .NET.
+[.NET Standard](../../standard/net-standard.md) to formalna Specyfikacja interfejsów API platformy .NET, które mają być dostępne we wszystkich implementacjach platformy .NET. Motywacja za .NET Standard ma większą jednorodność w ekosystemie platformy .NET. .NET Standard to specyfikacja interfejsów API platformy .NET, które tworzą jednolity zestaw umów do kompilowania kodu. Te kontrakty są implementowane w każdej wersji platformy .NET, co pozwala na przenoszenie różnych implementacji platformy .NET.
 
 .NET Standard włącza następujące kluczowe scenariusze:
 

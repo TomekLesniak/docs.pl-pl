@@ -1,15 +1,17 @@
 ---
 title: Połącz platformę .NET dla Apache Spark z programem MongoDB
 description: Dowiedz się, jak nawiązać połączenie z wystąpieniem usługi MongoDB z poziomu aplikacji .NET for Apache Spark.
+ms.author: nidutta
+author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 4cb78998ddb54621a84e9d224a814047e3c40246
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: 928cc8e3559e13af66268f3d1b3766cf2df9041f
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877901"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223970"
 ---
 # <a name="connect-net-for-apache-spark-to-mongodb"></a>Połącz platformę .NET dla Apache Spark z programem MongoDB
 

@@ -4,12 +4,12 @@ description: Zapoznaj się z najlepszymi rozwiązaniami dotyczącymi pisania tes
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: ffeaa1e11512cab64695c120f844594b8c5014a8
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 18f17839361d0cb60a52fbf4415665855f1d53be
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281111"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223490"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Najlepsze rozwiązania dotyczące testów jednostkowych przy użyciu platformy .NET Core i .NET Standard
 
@@ -93,7 +93,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-Zmieniając nazwę klasy na, została `FakeOrder` utworzona bardziej generyczna Klasa, Klasa może być używana jako imitacja lub element zastępczy. W zależności od tego do przypadku testowego. W powyższym przykładzie `FakeOrder` jest używany jako zastępczy. Nie używasz `FakeOrder` w żadnym kształcie ani formularzu podczas potwierdzeń. `FakeOrder`został przesłany do `Purchase` klasy w celu spełnienia wymagań konstruktora.
+Zmieniając nazwę klasy na, została `FakeOrder` utworzona bardziej generyczna Klasa, Klasa może być używana jako imitacja lub element zastępczy. W zależności od tego do przypadku testowego. W powyższym przykładzie `FakeOrder` jest używany jako zastępczy. Nie używasz `FakeOrder` w żadnym kształcie ani formularzu podczas potwierdzeń. `FakeOrder` został przesłany do `Purchase` klasy w celu spełnienia wymagań konstruktora.
 
 Aby użyć go jako makiety, możesz zrobić coś podobnego do tego
 
@@ -114,6 +114,8 @@ W tym przypadku sprawdzasz właściwość dla fałszywego (potwierdzania), więc
 Głównym elementem, który należy pamiętać o makietach i fragmentów, jest to, że makiety są tak samo jak wycinki
 
 ## <a name="best-practices"></a>Najlepsze rozwiązania
+
+Nie należy wprowadzać zależności od infrastruktury podczas pisania testów jednostkowych. Te testy są powolne i kruchy i powinny być zarezerwowane dla testów integracji. Można uniknąć tych zależności w aplikacji, postępując zgodnie z [zasadami jawnych zależności](https://deviq.com/explicit-dependencies-principle) i przy użyciu [iniekcji zależności](../extensions/dependency-injection.md). Możesz również utrzymać testy jednostkowe w osobnym projekcie od testów integracji. Gwarantuje to, że projekt testu jednostkowego nie zawiera odwołań do pakietów infrastruktury ani ich zależności.
 
 ### <a name="naming-your-tests"></a>Nazywanie testów
 

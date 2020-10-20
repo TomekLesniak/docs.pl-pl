@@ -7,16 +7,16 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 91807fa05ce49b8507ee6913ff2620452fcbfab5
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 71c853b38e56c56d0077d7eb20e36cd83d3cd23c
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301947"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224310"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Ograniczenia dotyczące parametrów typu (Przewodnik programowania w języku C#)
 
-Ograniczenia informują kompilator o możliwościach, które argument typu musi zawierać. Bez żadnych ograniczeń argument typu może być dowolnym typem. Kompilator może przyjąć tylko elementy członkowskie <xref:System.Object?displayProperty=nameWithType> , które jest ostateczną klasą bazową dla dowolnego typu .NET. Aby uzyskać więcej informacji, zobacz [Dlaczego należy używać ograniczeń](#why-use-constraints). Jeśli kod klienta używa typu, który nie spełnia warunków ograniczenia, kompilator wygeneruje błąd. Ograniczenia są określone za pomocą `where` kontekstowego słowa kluczowego. W poniższej tabeli wymieniono siedem typów ograniczeń:
+Ograniczenia informują kompilator o możliwościach, które argument typu musi zawierać. Bez żadnych ograniczeń argument typu może być dowolnym typem. Kompilator może przyjąć tylko elementy członkowskie <xref:System.Object?displayProperty=nameWithType> , które jest ostateczną klasą bazową dla dowolnego typu .NET. Aby uzyskać więcej informacji, zobacz [Dlaczego należy używać ograniczeń](#why-use-constraints). Jeśli kod klienta używa typu, który nie spełnia warunków ograniczenia, kompilator wygeneruje błąd. Ograniczenia są określone za pomocą `where` kontekstowego słowa kluczowego. W poniższej tabeli wymieniono różne typy ograniczeń:
 
 |Typu|Opis|
 |----------------|-----------------|
@@ -29,7 +29,7 @@ Ograniczenia informują kompilator o możliwościach, które argument typu musi 
 |`where T :` *\<base class name>*|Argument typu musi być lub pochodzić od określonej klasy bazowej. W kontekście dopuszczającym wartość null w języku C# 8,0 i nowszych `T` musi to być typ referencyjny niedopuszczający wartości null pochodzący od określonej klasy bazowej. |
 |`where T :` *\<base class name>?*|Argument typu musi być lub pochodzić od określonej klasy bazowej. W kontekście dopuszczającym wartość null w języku C# 8,0 i nowszych `T` może to być typ dopuszczający wartości null lub niedopuszczający wartości null pochodzący z określonej klasy bazowej. |
 |`where T :` *\<interface name>*|Argument typu musi być lub zaimplementować określony interfejs. Można określić wiele ograniczeń interfejsu. Interfejs ograniczający może być również ogólny. W kontekście dopuszczającym wartość null w języku C# 8,0 i nowszych `T` musi być typem niedopuszczającym wartości null, który implementuje określony interfejs.|
-|`where T :` *\<interface name>?*|Argument typu musi być lub zaimplementować określony interfejs. Można określić wiele ograniczeń interfejsu. Interfejs ograniczający może być również ogólny. W kontekście dopuszczającym wartość null w języku C# 8,0 `T` może to być typ referencyjny dopuszczający wartość null, typ referencyjny niedopuszczający wartości null lub typ wartości. `T`nie może być typem wartości null.|
+|`where T :` *\<interface name>?*|Argument typu musi być lub zaimplementować określony interfejs. Można określić wiele ograniczeń interfejsu. Interfejs ograniczający może być również ogólny. W kontekście dopuszczającym wartość null w języku C# 8,0 `T` może to być typ referencyjny dopuszczający wartość null, typ referencyjny niedopuszczający wartości null lub typ wartości. `T` nie może być typem wartości null.|
 |`where T : U`|Argument typu dostarczony dla elementu `T` musi być lub dziedziczyć z argumentu dostarczonego dla `U` . W kontekście dopuszczającym wartość null, jeśli `U` jest typem referencyjnym niedopuszczający wartości null, `T` musi być typem referencyjnym, który nie dopuszcza wartości null. Jeśli `U` jest typem referencyjnym dopuszczającym wartość null, `T` może mieć wartość null lub nie dopuszczający wartości null. |
 
 ## <a name="why-use-constraints"></a>Dlaczego warto używać ograniczeń
@@ -114,7 +114,7 @@ Począwszy od języka C# 7,3, można również określić <xref:System.Enum?disp
 
 [!code-csharp[using the enum constraint](snippets/GenericWhereConstraints.cs#18)]
 
-`Enum.GetValues`i `Enum.GetName` Użyj odbicia, które ma wpływ na wydajność. Można wywołać, `EnumNamedValues` Aby utworzyć kolekcję, która jest buforowana i ponownie używana zamiast powtarzania wywołań, które wymagają odbicia.
+`Enum.GetValues` i `Enum.GetName` Użyj odbicia, które ma wpływ na wydajność. Można wywołać, `EnumNamedValues` Aby utworzyć kolekcję, która jest buforowana i ponownie używana zamiast powtarzania wywołań, które wymagają odbicia.
 
 Można go użyć, jak pokazano w poniższym przykładzie, aby utworzyć Wyliczenie i skompilować słownik jego wartości i nazw:
 

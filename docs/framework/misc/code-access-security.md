@@ -16,17 +16,20 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: b5c32afb26c7b4bf7f8585c43ac11e57ebb5d015
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 528824e2d1b5d854f9eef816d3f7b20ba0f2b7db
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554869"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224357"
 ---
 # <a name="code-access-security"></a>Zabezpieczenia dostępu kodu
 
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
-  
+
+> [!NOTE]
+> Ponieważ zabezpieczenia dostępu kodu są przestarzałe, Większość nowoczesnych kodów w ekosystemie .NET nie jest przeznaczona do działania w ramach częściowego środowiska zaufania. Aplikacje korzystające z urzędów certyfikacji nie powinny oczekiwać, że nowoczesne biblioteki działają poprawnie w tych środowiskach, chyba że deweloper biblioteki nie przeprowadził wyraźnych kroków w celu zapewnienia zgodności w piaskownicy urzędów certyfikacji.  
+
  Współczesne systemy komputerowe o wysokiej dostępności są często uwidaczniane dla kodu pochodzącego z różnych, prawdopodobnie nieznanych źródeł. Kod można dołączyć do poczty e-mail, zawartej w dokumentach lub pobranej przez Internet. Niestety wielu użytkowników komputerów ręki skutki złośliwego kodu mobilnego, w tym wirusów i robaków, które mogą uszkodzić lub niszczyć dane, a także zaoszczędzić czas i pieniądze.  
   
  Większość typowych mechanizmów zabezpieczeń daje prawo użytkownikom na podstawie ich poświadczeń (zazwyczaj hasła) i ogranicza zasoby (często katalogi i pliki), do których użytkownik może uzyskać dostęp. Niemniej jednak rozwiązanie nie rozwiąże się z kilkoma problemami: użytkownicy uzyskują kod z wielu źródeł, a niektóre z nich mogą być zawodne. kod może zawierać usterki lub luki w zabezpieczeniach, które umożliwiają wykorzystanie złośliwego kodu; a kod czasami robi, że użytkownik nie wie. W związku z tym systemy komputerowe mogą być uszkodzone, a dane prywatne mogą być przeciekowe, gdy ostrożność i godna zaufania użytkownicy uruchamiają złośliwe lub wypełnione przez nie oprogramowanie. Większość mechanizmów zabezpieczeń systemu operacyjnego wymaga, aby każdy fragment kodu musiał być zaufany w celu uruchomienia, z wyjątkiem skryptów na stronie sieci Web. W związku z tym nadal konieczne jest stosowanie powszechnie stosowanego mechanizmu zabezpieczeń, który umożliwia wykonywanie kodu pochodzącego z jednego systemu komputerowego z ochroną w innym systemie nawet wtedy, gdy nie istnieje relacja zaufania między systemami.  

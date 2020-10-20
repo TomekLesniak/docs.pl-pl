@@ -3,12 +3,12 @@ title: 'Samouczek: Napisz pierwszy Analizator i poprawkę kodu'
 description: Ten samouczek zawiera instrukcje krok po kroku dotyczące kompilowania analizatora i poprawki kodu przy użyciu zestawu SDK kompilatora .NET (interfejsy API Roslyn).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: e79907f364939462b7d0d5814c4752be23bcfdf3
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 33c00e90d768021e36a7987be0ddd7daec4cfcec
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381596"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224044"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Samouczek: Napisz pierwszy Analizator i poprawkę kodu
 
@@ -18,27 +18,7 @@ W tym samouczku przedstawiono tworzenie **analizatora** i dołączoną **poprawk
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-> [!NOTE]
-> Bieżąca wersja programu Visual Studio **Analyzer z szablonem poprawki kodu (.NET standard)** zawiera znaną usterkę w nim i powinna zostać naprawiona w programie Visual Studio 2019 w wersji 16,7. Projekty w szablonie nie zostaną skompilowane, chyba że zostaną wykonane następujące zmiany:
->
-> 1. Wybieranie **narzędzi**  >  **Opcje**narzędzia  >  **Menedżer pakietów NuGet**  >  **źródła pakietów**
->    - Wybierz przycisk Plus, aby dodać nowe źródło:
->    - Ustaw **Źródło** na `https://dotnet.myget.org/F/roslyn-analyzers/api/v3/index.json` i wybierz pozycję **Aktualizuj**
-> 1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt **MakeConst. vsix** i wybierz polecenie **Edytuj plik projektu**
->    - Zaktualizuj `<AssemblyName>` węzeł, aby dodać `.Visx` sufiks:
->      - `<AssemblyName>MakeConst.Vsix</AssemblyName>`
->    - `<ProjectReference>`Aby zmienić wartość, zaktualizuj węzeł w wierszu 41 `TargetFramework` :
->      - `<ProjectReference Update="@(ProjectReference)" AdditionalProperties="TargetFramework=netstandard2.0" />`
-> 1. Zaktualizuj plik *MakeConstUnitTests.cs* w projekcie *MakeConst. test* :
->    - Zmień wiersz 9 na następujący, Zauważ zmianę przestrzeni nazw:
->      - `using Verify = Microsoft.CodeAnalysis.CSharp.Testing.MSTest.CodeFixVerifier<`
->    - Zmień wiersz 24 na następującą metodę:
->      - `await Verify.VerifyAnalyzerAsync(test);`
->    - Zmień wiersz 62 na następującą metodę:
->      - `await Verify.VerifyCodeFixAsync(test, expected, fixtest);`
-
-- [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
-- [Visual Studio 2019](https://www.visualstudio.com/downloads)
+- [Visual Studio 2019](https://www.visualstudio.com/downloads) w wersji 16,7 lub nowszej
 
 Musisz zainstalować **zestaw SDK .NET compiler platform** za pomocą Instalator programu Visual Studio:
 
@@ -87,7 +67,7 @@ Szablon tworzy Analizator, który raportuje Ostrzeżenie dla każdej deklaracji 
 
 Szablon zawiera również poprawkę kodu, która zmienia nazwę dowolnego typu zawierającego małe litery na wielkie litery. Możesz kliknąć ikonę żarówki wyświetlaną z ostrzeżeniem, aby zobaczyć sugerowane zmiany. Zaakceptowanie sugerowanych zmian aktualizuje nazwę typu i wszystkie odwołania do tego typu w rozwiązaniu. Teraz, gdy już widzisz początkową analizator w działaniu, Zamknij drugie wystąpienie programu Visual Studio i wróć do projektu analizatora.
 
-Nie trzeba rozpoczynać drugiej kopii programu Visual Studio i utworzyć nowego kodu do testowania każdej zmiany w analizatorze. Szablon tworzy również projekt testu jednostkowego. Ten projekt zawiera dwa testy. `TestMethod1`pokazuje typowy format testu, który analizuje kod bez wyzwalania diagnostyki. `TestMethod2`pokazuje format testu, który wyzwala diagnostykę, a następnie stosuje sugerowaną poprawkę kodu. Podczas kompilowania analizatora i poprawki kodu należy napisać testy dla różnych struktur kodu w celu zweryfikowania pracy. Testy jednostkowe dla analizatorów są znacznie szybsze niż testowanie ich interaktywnie przy użyciu programu Visual Studio.
+Nie trzeba rozpoczynać drugiej kopii programu Visual Studio i utworzyć nowego kodu do testowania każdej zmiany w analizatorze. Szablon tworzy również projekt testu jednostkowego. Ten projekt zawiera dwa testy. `TestMethod1` pokazuje typowy format testu, który analizuje kod bez wyzwalania diagnostyki. `TestMethod2` pokazuje format testu, który wyzwala diagnostykę, a następnie stosuje sugerowaną poprawkę kodu. Podczas kompilowania analizatora i poprawki kodu należy napisać testy dla różnych struktur kodu w celu zweryfikowania pracy. Testy jednostkowe dla analizatorów są znacznie szybsze niż testowanie ich interaktywnie przy użyciu programu Visual Studio.
 
 > [!TIP]
 > Testy jednostkowe analizatora są doskonałym narzędziem, gdy wiesz, jakie konstrukcje kodu powinny być i nie powinny wyzwalać analizatora. Ładowanie analizatora w innej kopii programu Visual Studio to doskonałe narzędzie do eksplorowania i znajdowania konstrukcji, które nie zostały jeszcze przemyślane.
@@ -280,7 +260,7 @@ Wykonano wiele postępów. W deklaracji, które mogą zostać wykonane, znajduj�
 
 Analizator i poprawka kodu działają w prostym przypadku pojedynczej deklaracji, która może być poddana stałej. Istnieje wiele możliwych instrukcji deklaracji, w których ta implementacja wprowadza błędy. Te przypadki są rozwiązywane przez pracę z biblioteką testów jednostkowych zapisaną przez szablon. Jest to znacznie szybsze niż Wielokrotne otwieranie drugiej kopii programu Visual Studio.
 
-Otwórz plik **MakeConstUnitTests.cs** w projekcie testów jednostkowych. Szablon utworzył dwa testy, które są zgodne z dwoma typowymi wzorcami w celu sprawdzenia, czy kod naprawi test jednostkowy. `TestMethod1`pokazuje wzorzec dla testu, który gwarantuje, że analizator nie raportuje diagnostyki, gdy nie powinien. `TestMethod2`pokazuje wzorzec zgłaszania diagnostyki i uruchamiania poprawki kodu.
+Otwórz plik **MakeConstUnitTests.cs** w projekcie testów jednostkowych. Szablon utworzył dwa testy, które są zgodne z dwoma typowymi wzorcami w celu sprawdzenia, czy kod naprawi test jednostkowy. `TestMethod1` pokazuje wzorzec dla testu, który gwarantuje, że analizator nie raportuje diagnostyki, gdy nie powinien. `TestMethod2` pokazuje wzorzec zgłaszania diagnostyki i uruchamiania poprawki kodu.
 
 Kod prawie każdego testu dla analizatora jest zgodny z jednym z tych dwóch wzorców. W pierwszym kroku można wykonać te testy jako testy oparte na danych. Następnie można łatwo utworzyć nowe testy przez dodanie nowych stałych ciągów, aby reprezentować różne dane wejściowe testu.
 

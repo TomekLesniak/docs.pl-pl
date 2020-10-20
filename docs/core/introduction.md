@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat platformy .NET, bezpłatnej platformy
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 0539519c2e1dd429983226065e8508ac148e25a8
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: d008fbeabf58a3dddf1ee96fc655b6a685f8edfd
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877564"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223580"
 ---
 # <a name="introduction-to-net"></a>Wprowadzenie do platformy .NET
 
@@ -108,7 +108,7 @@ Poniżej przedstawiono niektóre możliwości obsługiwane przez Języki .NET:
 * [Programowanie równoległe](../standard/parallel-programming/index.md)
 * [Analizatory kodu](../fundamentals/code-analysis/overview.md)
 
-### <a name="ides"></a>Środowisk IDE
+### <a name="ides"></a>Środowiska IDE
 
 Zintegrowane środowiska programistyczne dla platformy .NET obejmują:
 
@@ -344,7 +344,7 @@ Niektóre terminologia dla programu .NET mogą być mylące, ponieważ ten sam w
   | Platforma docelowa | Kolekcja interfejsów API, na których opiera się aplikacja lub biblioteka platformy .NET. Przykłady: .NET Core 3,1, .NET Standard 2,0 |
   | Moniker platformy docelowej (TFM)  | TFM to standardowy format tokenu służący do określania docelowej platformy aplikacji lub biblioteki platformy .NET. Przykład: `net462` dla .NET Framework 4.6.2. |
   | aplikacja zależna od struktury | Aplikacja, która może być uruchamiana tylko na komputerze, na którym zainstalowano środowisko uruchomieniowe ze [strony pobierania platformy .NET](https://dotnet.microsoft.com/download/dotnet-core). "Struktura" w tym wykorzystaniu jest taka sama jak "środowisko uruchomieniowe" pobieranej ze strony pobierania platformy .NET. |
-  
+
 * **SDK**
 
   |Kontekst  | "SDK" znaczenie |

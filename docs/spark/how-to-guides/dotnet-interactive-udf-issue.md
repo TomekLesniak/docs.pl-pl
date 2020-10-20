@@ -1,15 +1,17 @@
 ---
 title: Pisz i Wywołaj UDF w programie .NET dla środowisk interaktywnych Apache Spark.
 description: Dowiedz się, jak pisać i wywoływać UDF w programie .NET dla Apache Spark Interactive shells.
+ms.author: nidutta
+author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 7f050b39b1d2f0e2f506c522259485d87c7a185a
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: d07d757f9e47a84c75f46b190bdb613b8d2db7c1
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955013"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224135"
 ---
 # <a name="write-and-call-udfs-in-net-for-apache-spark-interactive-environments"></a>Pisz i Wywołaj UDF w programie .NET dla środowisk interaktywnych Apache Spark
 

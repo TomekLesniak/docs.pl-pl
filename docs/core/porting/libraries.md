@@ -3,12 +3,12 @@ title: Biblioteki portów do programu .NET Core
 description: Dowiedz się, jak przenieść projekty biblioteki z .NET Framework do programu .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: ac9da2f850bf1e4e36367ad2154849a0c7efd535
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: dcacf4d59964e0ef2009b4e9694d7f562e3a1547
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164290"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223563"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porty .NET Framework biblioteki do programu .NET Core
 

@@ -4,18 +4,18 @@ description: Dowiedz się, jak wdrożyć aplikację platformy .NET dla Apache Sp
 ms.date: 10/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 8ef1429d265c87347bb8771dc01b319fcb9e84d0
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: c745231f76142c11002ac6663906c8c44c69cdae
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955373"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223353"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Samouczek: wdrażanie aplikacji .NET dla Apache Spark w usłudze Azure HDInsight
 
 W tym samouczku przedstawiono sposób wdrażania aplikacji platformy .NET dla Apache Spark w chmurze za pomocą klastra usługi Azure HDInsight. Usługa HDInsight ułatwia tworzenie i Konfigurowanie klastra Spark na platformie Azure, ponieważ klastry Spark w usłudze HDInsight są zgodne z usługą Azure Storage i Azure Data Lake Storage.
 
-Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
+Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
 
 > [!div class="checklist"]
 >
@@ -100,11 +100,11 @@ Następnie opublikujesz *mySparkApp* utworzone w programie [.NET dla Apache Spar
    foo@bar:~/path/to/app$ dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
    ```
 
-2. Wykonaj następujące zadania w celu przesłania plików opublikowanych aplikacji, aby można je było łatwo przekazać do klastra usługi HDInsight.
+2. Wykonaj następujące zadania w celu przesłania plików opublikowanych aplikacji, aby można je było łatwo przekazać do klastra usługi HDInsight. Zanotuj zawartość folderu publikowania, *publish.zip* na przykład, który został utworzony w wyniku kroku 1. Wszystkie zestawy powinny znajdować się w pierwszej warstwie pliku ZIP i nie powinna być pośrednia warstwa folderów. Oznacza to, że podczas rozpakowania *publish.zip*wszystkie zestawy są wyodrębniane do bieżącego katalogu roboczego.
 
    **W systemie Windows:**
 
-   Przejdź do *mySparkApp/bin/Release/netcoreapp 3.0/Ubuntu. 16.04-x64*. Następnie kliknij prawym przyciskiem myszy folder **Publikowanie** i wybierz polecenie **Wyślij do > folder skompresowany (zip)**. Nadaj nazwę nowemu folderowi **publish.zip**.
+   Użyj programu wyodrębniania, takiego jak 7-zip lub WinZip, aby wyodrębnić plik do katalogu bin ze wszystkimi opublikowanymi plikami binarnymi.
 
    **W systemie Linux Uruchom następujące polecenie:**
 

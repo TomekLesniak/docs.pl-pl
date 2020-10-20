@@ -3,12 +3,12 @@ title: Słownik platformy .NET
 description: Sprawdź znaczenie wybranych terminów używanych w dokumentacji programu .NET.
 ms.date: 10/13/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 1d9330b68f80da934777cb3aee6d2b3cb52c8256
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: 3de9e0aea253b42d65199dc3d66f026dd023f4c7
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050347"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224401"
 ---
 # <a name="net-glossary"></a>Słownik platformy .NET
 
@@ -244,7 +244,7 @@ System operacyjny i sprzęt, na którym działa program, na przykład Windows, m
 Poniżej przedstawiono przykłady użycia w zdaniach:
 
 - ".NET Core to wieloplatformowa implementacja platformy .NET".
-- "Profile PCL reprezentują platformy firmy Microsoft, podczas gdy .NET Standard jest niezależny od na platformę".
+- "Profile PCL reprezentują platformy firmy Microsoft, a .NET Standard są niezależny od na platformę".
 
 Starsza dokumentacja platformy .NET czasami używa "platformy .NET" do oznaczania [implementacji platformy .NET](#implementation-of-net) lub [stosu](#stack) .NET, w tym wszystkich implementacji. Oba te zastosowania mogą być pomylone z podstawowym (system operacyjny/sprzętowy) znaczeniem, więc spróbujemy uniknąć tych zastosowań.
 

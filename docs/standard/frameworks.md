@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat platform docelowych dla aplikacji i b
 ms.date: 09/08/2020
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 22689f6c1f161a67978dc0f41c6bc9a6b5acfad7
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 85bc05f07cfcc5f59a8a27790ee3d78a497cecdc
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065256"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223460"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Platformy docelowe w projektach w stylu zestawu SDK
 
@@ -25,11 +25,11 @@ W przypadku platform docelowych opartych na pakietach (na przykład .NET Standar
 
 ## <a name="latest-versions"></a>Najnowsze wersje
 
-Poniższa tabela zawiera definicje najpopularniejszych platform docelowych, sposobu ich odwoływania oraz wersji zaimplementowanych [.NET Standard](net-standard.md) . Te wersje platformy docelowej są najnowszymi stabilnymi wersjami. Wersje wstępne nie są wyświetlane. Moniker platformy docelowej (TFM) to standardowy format tokenu służący do określania docelowej platformy aplikacji lub biblioteki platformy .NET.
+Poniższa tabela zawiera definicje najpopularniejszych platform docelowych, ich odwołań oraz wersji [.NET Standard](net-standard.md) implementujących te platformy. Te wersje platformy docelowej są najnowszymi stabilnymi wersjami. Wersje wstępne nie są wyświetlane. Moniker platformy docelowej (TFM) to standardowy format tokenu służący do określania docelowej platformy aplikacji lub biblioteki platformy .NET.
 
 | Platforma docelowa      | Najnowsza <br/> stabilna wersja | Moniker platformy docelowej (TFM) | Realizowane <br/> Wersja .NET Standard |
 | :-: | :-: | :-: | :-: |
-| .NET Standard         | 2.1                         | Standard 2.1                 | Brak                                     |
+| .NET Standard         | 2.1                         | Standard 2.1                 | Nie dotyczy                                     |
 | .NET Core             | 3,1                         | netcoreapp 3.1                  | 2.1                                     |
 | .NET Framework        | 4,8                         | net48                          | 2,0                                     |
 
@@ -116,7 +116,7 @@ public class MyClass
     {
 #if NET40
         Console.WriteLine("Target framework: .NET Framework 4.0");
-#elif NET45  
+#elif NET45
         Console.WriteLine("Target framework: .NET Framework 4.5");
 #else
         Console.WriteLine("Target framework: .NET Standard 1.4");
@@ -146,7 +146,7 @@ Poniższe Platformy docelowe są przestarzałe. Pakiety, które są przeznaczone
 | Win10                                                                                      | UAP 10.0     |
 | środowiska                                                                                      | netcore45   |
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Tworzenie bibliotek za pomocą narzędzi międzyplatformowych](../core/tutorials/libraries.md)
 - [.NET Standard](net-standard.md)

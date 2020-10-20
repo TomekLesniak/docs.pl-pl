@@ -4,12 +4,12 @@ description: Przegląd metod, parametrów metody i wartości zwracanych metody
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 520aeed85ee00127c2bd3eee681b980d05f46d05
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: d5ca96ab3a07b85fa525dd06c975f8e3221c82e8
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874702"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223667"
 ---
 # <a name="methods-in-c"></a>Metody w (C#)
 
@@ -198,7 +198,7 @@ Obiekt wywołujący może następnie użyć zwróconej krotki z kodem podobnym d
 
 ```csharp
 var person = GetPersonalInfo("111111111")
-Console.WriteLine("{person.Item1} {person.Item3}: age = {person.Item4}");
+Console.WriteLine($"{person.Item1} {person.Item3}: age = {person.Item4}");
 ```
 
 Nazwy można także przypisać do elementów krotki w definicji typu krotki. W poniższym przykładzie pokazano alternatywną wersję `GetPersonalInfo` metody używającej nazwanych elementów:
@@ -215,7 +215,7 @@ Poprzednie wywołanie `GetPersonInfo` metody można następnie zmodyfikować w n
 
 ```csharp
 var person = GetPersonalInfo("111111111");
-Console.WriteLine("{person.FName} {person.LName}: age = {person.Age}");
+Console.WriteLine($"{person.FName} {person.LName}: age = {person.Age}");
 ```
 
 Jeśli metoda przekazuje tablicę jako argument i modyfikuje wartość poszczególnych elementów, nie jest to konieczne, aby Metoda zwracała tablicę, chociaż można to zrobić dla dobrego stylu lub przepływu funkcjonalnych wartości.  Wynika to z faktu, że C# przekazuje wszystkie typy odwołań według wartości, a wartość odwołania tablicy jest wskaźnikiem do tablicy. W poniższym przykładzie zmiany zawartości `values` tablicy, które są wykonywane w `DoubleValues` metodzie, są zauważalne przez dowolny kod, który zawiera odwołanie do tablicy.
