@@ -1,48 +1,48 @@
 ---
 title: F# — przewodnik dotyczący stylu
-description: Poznaj pięć zasad dobrego kodu F#.
+description: 'Poznaj pięć zasad dobrego kodu języka F #.'
 ms.date: 12/10/2018
 ms.openlocfilehash: 9f47257626e04b09b546de2ae315d48d791678be
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400268"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223651"
 ---
 # <a name="f-style-guide"></a>F# — przewodnik dotyczący stylu
 
-W poniższych artykułach opisano wskazówki dotyczące formatowania kodu F# i aktualne wskazówki dotyczące funkcji języka i sposobu ich użycia.
+W poniższych artykułach opisano wskazówki dotyczące formatowania kodu F # i wskazówki dotyczące istotna dla funkcji języka i sposobu ich używania.
 
-Te wskazówki zostały sformułowane na podstawie użycia Języka F# w dużych bazach kodu z różnorodną grupą programistów. Te wskazówki zazwyczaj prowadzi do pomyślnego użycia Języka F# i minimalizuje frustracje, gdy wymagania dotyczące programów zmieniają się wraz z uchwa.
+Wskazówki te zostały sformułowane w oparciu o użycie języka F # w dużych bazach kodu z różnorodną grupą programistów. Te wskazówki zazwyczaj prowadzą do pomyślnego użycia języka F # i minimalizują frustrations, gdy wymagania dotyczące programów zmieniają się wraz z upływem czasu.
 
-## <a name="five-principles-of-good-f-code"></a>Pięć zasad dobrego kodu F#
+## <a name="five-principles-of-good-f-code"></a>Pięć zasad dobrego kodu języka F #
 
-Należy pamiętać o następujących zasadach za każdym razem, gdy piszesz kod F#, szczególnie w systemach, które będą się zmieniać wraz z urazem. Każdy element wskazówek w dalszych artykułach wynika z tych pięciu punktów.
+Należy pamiętać o każdorazowym zapisaniu kodu w języku F #, szczególnie w systemach, które zmieniają się w miarę upływu czasu. Każda część wskazówek w dalszych artykułach jest odnosząca się do tych pięciu punktów.
 
-1. **Dobry kod F# jest zwięzły, wyrazisty i komposable**
+1. **Dobry kod języka F # to zwięzły, wyraźny i umożliwiający utworzenie**
 
-    F# ma wiele funkcji, które umożliwiają wyrażanie akcji w mniejszej liczbie wierszy kodu i ponowne użycie funkcji ogólnych. Biblioteka rdzenia F# zawiera również wiele przydatnych typów i funkcji do pracy z typowymi zbiorami danych. Skład własnych funkcji i tych w bibliotece podstawowej F# (lub innych bibliotek) jest częścią rutynowego programowania idiomatycznego F#. Z reguły, jeśli można wyrazić rozwiązanie problemu w mniejszej liczbie wierszy kodu, inni deweloperzy (lub twoja przyszła ja) będą doceniać. Zaleca się również użycie biblioteki, takiej jak FSharp.Core, [rozległe biblioteki .NET,](../../../api/index.md) na których działa F#, lub pakietu innej firmy na [NuGet,](https://www.nuget.org/) gdy trzeba wykonać zadanie nietrywialne.
+    Język F # ma wiele funkcji, które umożliwiają wyrażanie działań w mniejszej liczbie wierszy kodu i ponowne użycie funkcji ogólnych. Biblioteka podstawowa F # zawiera również wiele przydatnych typów i funkcji służących do pracy z typowymi kolekcjami danych. Skład własnych funkcji i tych w bibliotece podstawowej F # (lub innych bibliotekach) jest częścią rutynowego programowania w języku F #. Zgodnie z ogólną zasadą, jeśli można wyrazić rozwiązanie problemu w mniejszej liczbie wierszy kodu, inni deweloperzy (lub w przyszłości) będą znaczących. Zdecydowanie zaleca się również korzystanie z biblioteki, takiej jak FSharp. Core, szerokich [bibliotek .NET](../../../api/index.md) , na których działa program F #, lub pakietu innej firmy na platformie [NuGet](https://www.nuget.org/) , gdy trzeba wykonać nieproste zadanie.
 
-2. **Dobry kod F# jest interoperacyjny**
+2. **Dobry kod języka F # jest interoperacyjny**
 
-    Współdziałanie może przybrać wiele form, w tym używanie kodu w różnych językach. Granice kodu, z którymi współpracują inne obiekty wywołujące, są krytyczne elementy, aby uzyskać prawo, nawet jeśli obiekty wywołujące są również w F#. Podczas pisania F#, zawsze należy myśleć o tym, jak inny kod wywoła kod piszesz, w tym jeśli robią to z innego języka, takich jak C#. [Wytyczne dotyczące projektowania składników F#](component-design-guidelines.md) szczegółowo opisują współdziałanie.
+    Międzyoperacyjność może przyjmować wiele form, w tym używanie kodu w różnych językach. Granice kodu, z którymi korzystają inne obiekty wywołujące, to elementy o znaczeniu krytycznym, nawet jeśli obiekty wywołujące znajdują się również w języku F #. Podczas pisania języka F # zawsze należy zastanawiać się, jak inny kod będzie wywoływał kod, który jest pisany, w tym, jeśli to zrobi, z innego języka, takiego jak C#. [Wskazówki dotyczące projektowania składników F #](component-design-guidelines.md) opisują szczegółowo współdziałanie.
 
-3. **Dobry kod F# korzysta z programowania obiektów, a nie orientacji obiektu**
+3. **Dobry kod języka F # wykorzystuje programowanie obiektów, a nie orientację obiektu.**
 
-    F# ma pełną obsługę programowania z obiektami w .NET, w tym [klas](../language-reference/classes.md), [interfejsów](../language-reference/interfaces.md), [modyfikatorów dostępu](../language-reference/access-control.md), [klas abstrakcyjnych](../language-reference/abstract-classes.md)i tak dalej. Dla bardziej skomplikowanego kodu funkcjonalnego, takich jak funkcje, które muszą być zgodne z kontekstem, obiekty można łatwo hermetyzować informacje kontekstowe w sposób, który nie może. Funkcje, takie jak [parametry opcjonalne](../language-reference/members/methods.md#optional-arguments) i ostrożne korzystanie z [przeciążenia](../language-reference/members/methods.md#overloaded-methods) może ułatwić korzystanie z tej funkcji dla rozmówców.
+    Język F # ma pełną obsługę programowania z obiektami w programie .NET, w tym [klasy](../language-reference/classes.md), [interfejsy](../language-reference/interfaces.md), [Modyfikatory dostępu](../language-reference/access-control.md), [klasy abstrakcyjne](../language-reference/abstract-classes.md)i tak dalej. Aby uzyskać bardziej skomplikowany kod funkcjonalny, taki jak funkcje, które muszą być oparte na kontekście, obiekty mogą łatwo hermetyzować informacje kontekstowe w sposób, w jaki funkcje nie mogą. Funkcje takie jak [Parametry opcjonalne](../language-reference/members/methods.md#optional-arguments) i staranne użycie [przeciążenia](../language-reference/members/methods.md#overloaded-methods) mogą ułatwić wywoływanie tej funkcji.
 
-4. **Dobry kod F# działa dobrze bez narażania mutacji**
+4. **Dobry kod języka F # działa dobrze bez uwidaczniania mutacji**
 
-    Nie jest tajemnicą, że aby napisać kod o wysokiej wydajności, należy użyć mutacji. W końcu tak działają komputery. Taki kod jest często podatny na błędy i trudno jest uzyskać prawo. Unikaj narażania mutacji na osoby dzwoniące. Zamiast tego [należy utworzyć interfejs funkcjonalny, który ukrywa implementacji opartej na mutacji,](conventions.md#performance) gdy wydajność jest krytyczna.
+    Nie jest tajny, który umożliwia zapisanie kodu o wysokiej wydajności, należy użyć mutacji. Jest to sposób, w jaki komputery działają. Taki kod jest często podatny na błędy i trudno uzyskać prawo. Unikaj ujawniania mutacji dla obiektów wywołujących. Zamiast tego należy [utworzyć interfejs funkcjonalny, który ukrywa implementację opartą na mutacji](conventions.md#performance) , gdy wydajność jest krytyczna.
 
-5. **Dobry kod F# jest toolable**
+5. **Dobry kod języka F # jest narzędziem**
 
-    Narzędzia są nieocenione do pracy w dużych baz kodu i można napisać kod F#, tak aby można go było używać bardziej efektywnie z języka F#tooling. Jednym z przykładów jest upewnienie się, że nie przesadzasz z bezpunktowym stylem programowania, dzięki czemu wartości pośrednie mogą być kontrolowane za pomocą debugera. Innym przykładem jest użycie [komentarzy dokumentacji XML](../language-reference/xml-documentation.md) opisujących konstrukcje, które etykietki narzędzi w edytorach mogą wyświetlać te komentarze w witrynie wywołania. Zawsze pomyśl o tym, jak kod będzie odczytywany, nawigowany, debugowany i manipulowany przez innych programistów za pomocą ich narzędzi.
+    Narzędzia są niecenne do pracy w dużych bazach kodu, a można napisać kod języka F #, który może być bardziej efektywnie używany z narzędziami języka F #. Jednym z przykładów jest upewnienie się, że nie nadużywać go z niezależnym stylem programowania, dzięki czemu wartości pośrednie można sprawdzić za pomocą debugera. Innym przykładem jest użycie [komentarzy dokumentacji XML](../language-reference/xml-documentation.md) opisujących konstrukcje takie jak etykietki narzędzi w edytorach mogą wyświetlać te komentarze w witrynie wywołania. Zawsze Pomyśl o tym, w jaki sposób kod będzie odczytywany, przechodzenia, debugowane i manipulowany przez innych programistów przy użyciu narzędzi.
 
 ## <a name="next-steps"></a>Następne kroki
 
-[Wskazówki dotyczące formatowania kodu F#](formatting.md) zawierają wskazówki dotyczące formatowania kodu, dzięki czemu jest łatwy do odczytania.
+[Wskazówki dotyczące formatowania kodu w języku F #](formatting.md) zawierają wskazówki dotyczące formatowania kodu, dzięki czemu można go łatwo odczytać.
 
-[Konwencje kodowania F#](conventions.md) zawierają wskazówki dotyczące idiomów programowania F#, które pomogą w długoterminowej konserwacji większych baz kodu F#.
+[Konwencje kodowania języka f #](conventions.md) zawierają wskazówki dotyczące idiomy programowania f #, które będą pomocne w długoterminowej konserwacji większych baz kodu języka f #.
 
-[Wskazówki dotyczące projektowania składników F#](component-design-guidelines.md) zawierają wskazówki dotyczące tworzenia składników F#, takich jak biblioteki.
+[Wskazówki dotyczące projektowania składników języka f #](component-design-guidelines.md) zawierają wskazówki dotyczące tworzenia składników języka f #, takich jak biblioteki.

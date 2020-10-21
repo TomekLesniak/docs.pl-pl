@@ -1,40 +1,40 @@
 ---
 title: Dziedziczenie
-description: Dowiedz się, jak określić relacje dziedziczenia F# przy użyciu słowa kluczowego "dziedziczyć".
+description: 'Dowiedz się, jak określić relacje dziedziczenia F # za pomocą słowa kluczowego "inherit".'
 ms.date: 05/16/2016
 ms.openlocfilehash: 5ab891a93528427a66e4eb8f7bfeccbf6e4d2c7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400289"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223841"
 ---
 # <a name="inheritance"></a>Dziedziczenie
 
-Dziedziczenie służy do modelowania relacji "is-a" lub podtypowania w programowaniu obiektowym.
+Dziedziczenie służy do modelowania relacji "is-a" lub podpisywania w programowaniu zorientowanym obiektowo.
 
 ## <a name="specifying-inheritance-relationships"></a>Określanie relacji dziedziczenia
 
-Relacje dziedziczenia można `inherit` określić przy użyciu słowa kluczowego w deklaracji klasy. Podstawowy formularz syntaktyczny jest pokazany w poniższym przykładzie.
+Relacje dziedziczenia można określić za pomocą `inherit` słowa kluczowego w deklaracji klasy. W poniższym przykładzie przedstawiono podstawową formę składni.
 
 ```fsharp
 type MyDerived(...) =
     inherit MyBase(...)
 ```
 
-Klasa może mieć co najwyżej jedną bezpośrednią klasę podstawową. Jeśli klasa podstawowa nie zostanie `inherit` określona przy użyciu słowa kluczowego, klasa niejawnie dziedziczy po pliku `System.Object`.
+Klasa może mieć co najwyżej jedną bezpośrednią klasę bazową. Jeśli nie określisz klasy bazowej przy użyciu `inherit` słowa kluczowego, Klasa niejawnie dziedziczy z `System.Object` .
 
 ## <a name="inherited-members"></a>Dziedziczone elementy członkowskie
 
-Jeśli klasa dziedziczy z innej klasy, metody i elementy członkowskie klasy podstawowej są dostępne dla użytkowników klasy pochodnej, tak jakby byli bezpośrednimi członkami klasy pochodnej.
+Jeśli klasa dziedziczy z innej klasy, metody i składowe klasy bazowej są dostępne dla użytkowników klasy pochodnej, tak jakby były bezpośrednimi elementami członkowskimi klasy pochodnej.
 
-Wszelkie let powiązania i parametry konstruktora są prywatne do klasy i w związku z tym nie można uzyskać dostępu z klas pochodnych.
+Wszystkie powiązania let i konstruktory są prywatne z klasą, w związku z czym nie można uzyskać do nich dostępu z klas pochodnych.
 
-Słowo `base` kluczowe jest dostępne w klasach pochodnych i odwołuje się do wystąpienia klasy podstawowej. Jest on używany jako własny identyfikator.
+Słowo kluczowe `base` jest dostępne w klasach pochodnych i odwołuje się do wystąpienia klasy bazowej. Jest on używany jako identyfikator samoobsługi.
 
-## <a name="virtual-methods-and-overrides"></a>Metody wirtualne i zastępowanie
+## <a name="virtual-methods-and-overrides"></a>Metody wirtualne i zastąpienia
 
-Metody wirtualne (i właściwości) działają nieco inaczej w języku F# w porównaniu z innymi językami .NET. Aby zadeklarować nowego wirtualnego `abstract` członka, użyj słowa kluczowego. Można to zrobić niezależnie od tego, czy należy podać implementację domyślną dla tej metody. W związku z tym pełna definicja metody wirtualnej w klasie podstawowej następuje następujący po zwzorzec:
+Metody wirtualne (i właściwości) działają nieco inaczej w języku F # w porównaniu z innymi językami .NET. Aby zadeklarować nową wirtualną składową, należy użyć `abstract` słowa kluczowego. Należy to zrobić niezależnie od tego, czy podajesz domyślną implementację dla tej metody. W rezultacie pełna definicja metody wirtualnej w klasie podstawowej jest zgodna z tym wzorcem:
 
 ```fsharp
 abstract member [method-name] : [type]
@@ -42,27 +42,27 @@ abstract member [method-name] : [type]
 default [self-identifier].[method-name] [argument-list] = [method-body]
 ```
 
-W klasie pochodnej zastąpienie tej metody wirtualnej następuje po tym wzorcu:
+I w klasie pochodnej przesłonięcie tej metody wirtualnej następuje po tym wzorcu:
 
 ```fsharp
 override [self-identifier].[method-name] [argument-list] = [method-body]
 ```
 
-Jeśli pominiesz domyślną implementację w klasie podstawowej, klasa podstawowa staje się klasą abstrakcyjną.
+Jeśli pominięto implementację domyślną w klasie bazowej, Klasa bazowa zostanie klasą abstrakcyjną.
 
-Poniższy przykład kodu ilustruje deklarację `function1` nowej metody wirtualnej w klasie podstawowej i jak zastąpić ją w klasie pochodnej.
+Poniższy przykład kodu ilustruje deklarację nowej metody wirtualnej `function1` w klasie bazowej i jak zastąpić ją w klasie pochodnej.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2601.fs)]
 
-## <a name="constructors-and-inheritance"></a>Konstruktorzy i dziedziczenie
+## <a name="constructors-and-inheritance"></a>Konstruktory i dziedziczenie
 
-Konstruktor klasy podstawowej musi być wywoływana w klasie pochodnej. Argumenty dla konstruktora klasy podstawowej `inherit` są wyświetlane na liście argumentów w klauzuli. Wartości, które są używane musi być określona na podstawie argumentów dostarczonych do konstruktora klasy pochodnej.
+Konstruktor klasy bazowej musi być wywołany w klasie pochodnej. Argumenty konstruktora klasy bazowej pojawiają się na liście argumentów w `inherit` klauzuli. Wartości, które są używane, muszą być określone na podstawie argumentów dostarczonych do konstruktora klasy pochodnej.
 
-Poniższy kod przedstawia klasę podstawową i klasę pochodną, gdzie klasa pochodna wywołuje konstruktora klasy podstawowej w klauzuli dziedziczenia:
+Poniższy kod przedstawia klasę bazową i klasę pochodną, gdzie Klasa pochodna wywołuje konstruktora klasy bazowej w klauzuli inherit:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2602.fs)]
 
-W przypadku wielu konstruktorów można użyć następującego kodu. Pierwszy wiersz konstruktorów klasy pochodnej `inherit` jest klauzula, a pola są wyświetlane `val` jako jawne pola, które są zadeklarowane za pomocą słowa kluczowego. Aby uzyskać więcej informacji, zobacz [Pola jawne: `val` Słowo kluczowe](./members/explicit-fields-the-val-keyword.md).
+W przypadku wielu konstruktorów można użyć poniższego kodu. Pierwszym wierszem konstruktorów klas pochodnych jest `inherit` klauzula, a pola są wyświetlane jako jawne pola, które są zadeklarowane za pomocą `val` słowa kluczowego. Aby uzyskać więcej informacji, zobacz [pola jawne: `val` słowo kluczowe](./members/explicit-fields-the-val-keyword.md).
 
 ```fsharp
 type BaseClass =
@@ -81,17 +81,17 @@ let obj1 = DerivedClass("A", "B")
 let obj2 = DerivedClass("A")
 ```
 
-## <a name="alternatives-to-inheritance"></a>Alternatywy dla dziedziczenia
+## <a name="alternatives-to-inheritance"></a>Alternatywy do dziedziczenia
 
-W przypadkach, gdy wymagana jest niewielka modyfikacja typu, należy rozważyć użycie wyrażenia obiektu jako alternatywy dla dziedziczenia. W poniższym przykładzie przedstawiono użycie wyrażenia obiektu jako alternatywy dla tworzenia nowego typu pochodnego:
+W przypadkach, gdy wymagana jest drobna modyfikacja typu, rozważ użycie wyrażenia obiektu jako alternatywy dla dziedziczenia. Poniższy przykład ilustruje użycie wyrażenia obiektu jako alternatywę do tworzenia nowego typu pochodnego:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2603.fs)]
 
-Aby uzyskać więcej informacji o wyrażeniach obiektów, zobacz [Wyrażenia obiektów](object-expressions.md).
+Aby uzyskać więcej informacji na temat wyrażeń obiektów, zobacz [wyrażenia obiektów](object-expressions.md).
 
-Podczas tworzenia hierarchii obiektów należy rozważyć użycie unii dyskryminowanej zamiast dziedziczenia. Dyskryminowane związki mogą również modelować zróżnicowane zachowanie różnych obiektów, które mają wspólny typ ogólny. Pojedyncza unia dyskryminowana może często wyeliminować potrzebę wielu klas pochodnych, które są mniejszymi zmianami siebie nawzajem. Aby uzyskać informacje na temat związków dyskryminowanych, zobacz [Związki dyskryminowane](discriminated-unions.md).
+Podczas tworzenia hierarchii obiektów należy rozważyć użycie Unii rozłącznych zamiast dziedziczenia. Związki rozłączne mogą również modelować różne zachowania różnych obiektów, które współużytkują wspólny typ ogólny. Pojedyncza Unia rozłączna może często wyeliminować konieczność stosowania szeregu klas pochodnych, które są niewielkimi zmianami. Aby uzyskać informacje na temat związków rozłącznych, zobacz [związki](discriminated-unions.md)rozłączne.
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Wyrażenia obiektów](object-expressions.md)
-- [Odwołanie do języka F#](index.md)
+- [Dokumentacja języka F #](index.md)
