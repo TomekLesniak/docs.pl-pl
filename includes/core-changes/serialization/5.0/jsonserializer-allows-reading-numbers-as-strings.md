@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0dfe04ba1313480f15a8e7a7e26da613799180b2
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: a93856aac97af5c392a2e4698d2da42413cfc3c8
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332887"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434984"
 ---
 ### <a name="aspnet-core-apps-allow-deserializing-quoted-numbers"></a>Aplikacje ASP.NET Core umożliwiają deserializacji liczby ujęte w cudzysłów
 
@@ -20,7 +20,7 @@ Począwszy od platformy .NET 5,0, cytowane liczby w ładunków JSON są uznawane
 >
 > - Nie ma żadnej zmiany zachowania dla domyślnej, autonomicznej <xref:System.Text.Json.JsonSerializer> lub <xref:System.Text.Json.JsonSerializerOptions> .
 > - Nie jest to technicznie istotna zmiana, ponieważ sprawia, że scenariusz jest bardziej ograniczany, a nie bardziej restrykcyjny (to oznacza, że powiodło się przekształcenie numeru z ciągu JSON zamiast zgłaszania wyjątku). Jednak ponieważ jest to znacząca zmiana behawioralna wpływająca na wiele aplikacji ASP.NET Core, zostanie ona udokumentowana w tym miejscu.
-> - <xref:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync%2A> <xref:System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync%2A> Metody rozszerzające również używają <xref:System.Text.Json.JsonSerializerDefaults.Web> zestawu opcji serializacji.
+> - <xref:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync%2A?displayProperty=nameWithType> <xref:System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync%2A?displayProperty=nameWithType> Metody rozszerzające również używają <xref:System.Text.Json.JsonSerializerDefaults.Web> zestawu opcji serializacji.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 

@@ -3,12 +3,12 @@ title: Klasy i obiekty — wprowadzenie do samouczka języka C#
 description: Utwórz pierwszy program w języku C# i Eksploruj koncepcje zorientowane obiektowo
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 90abe3836292029ce7ebf26ae9be3253c4eface1
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 0955b0ac33b346b9880c8af70bd73cb458120f35
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756055"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434895"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Eksploruj programowanie zorientowane obiektowo przy użyciu klas i obiektów
 
@@ -35,7 +35,7 @@ namespace classes
 
 W tym samouczku utworzysz nowe typy reprezentujące konto bankowe. Zazwyczaj deweloperzy definiują każdą klasę w innym pliku tekstowym. Ułatwia to zarządzanie w miarę zwiększania się rozmiaru programu. Utwórz nowy plik o nazwie *BankAccount.cs* w katalogu *Classes* .
 
-Ten plik będzie zawierać definicję ***konta bankowego***. Programowanie zorientowane obiektowo organizuje kod przez tworzenie typów w postaci ***klas***. Klasy te zawierają kod, który reprezentuje konkretną jednostkę. `BankAccount`Klasa reprezentuje konto bankowe. Kod implementuje określone operacje za pomocą metod i właściwości. W tym samouczku konto bankowe obsługuje takie zachowanie:
+Ten plik będzie zawierać definicję ***konta bankowego**_. Programowanie zorientowane obiektowo organizuje kod przez tworzenie typów w postaci _*_klas_*_. Klasy te zawierają kod, który reprezentuje konkretną jednostkę. `BankAccount`Klasa reprezentuje konto bankowe. Kod implementuje określone operacje za pomocą metod i właściwości. W tym samouczku konto bankowe obsługuje takie zachowanie:
 
 1. Ma 10-cyfrowy numer, który jednoznacznie identyfikuje konto bankowe.
 1. Zawiera on ciąg przechowujący nazwę lub nazwy właścicieli.
@@ -47,7 +47,7 @@ Ten plik będzie zawierać definicję ***konta bankowego***. Programowanie zorie
 
 ## <a name="define-the-bank-account-type"></a>Definiowanie typu konta bankowego
 
-Można rozpocząć od utworzenia podstawowych podstaw klasy, które definiują takie zachowanie. Utwórz nowy plik przy użyciu polecenia **File: New** . Nadaj mu nazwę *BankAccount.cs*. Dodaj następujący kod do pliku *BankAccount.cs* :
+Można rozpocząć od utworzenia podstawowych podstaw klasy, które definiują takie zachowanie. Utwórz nowy plik przy użyciu _*pliku: New** polecenie. Nadaj mu nazwę *BankAccount.cs*. Dodaj następujący kod do pliku *BankAccount.cs* :
 
 ```csharp
 using System;
@@ -73,13 +73,13 @@ namespace classes
 
 Przed rozpoczęciem przejdźmy do tego, co zostało skompilowane.  `namespace`Deklaracja umożliwia logicznie organizowanie kodu. Ten samouczek jest stosunkowo mały, więc umieścisz cały kod w jednej przestrzeni nazw.
 
-`public class BankAccount` definiuje klasę lub typ, który tworzysz. Wszystko wewnątrz `{` i `}` , które następuje po deklaracji klasy, definiuje stan i zachowanie klasy. Istnieje pięć ***członków*** `BankAccount` klasy. Pierwsze trzy są ***właściwościami***. Właściwości są elementami danych i mogą mieć kod, który wymusza walidację lub inne reguły. Ostatnie dwa są ***metodami***. Metody to bloki kodu, które wykonują pojedynczą funkcję. Odczytywanie nazw każdego z członków powinno zapewnić wystarczającą ilość informacji dla Ciebie lub innego dewelopera, aby zrozumieć, co robi Klasa.
+`public class BankAccount` definiuje klasę lub typ, który tworzysz. Wszystko wewnątrz `{` i `}` , które następuje po deklaracji klasy, definiuje stan i zachowanie klasy. Istnieje pięć ***członków**_ `BankAccount` klasy. Pierwsze trzy są _*_właściwościami_*_. Właściwości są elementami danych i mogą mieć kod, który wymusza walidację lub inne reguły. Ostatnie dwa są _*_metodami_*_. Metody to bloki kodu, które wykonują pojedynczą funkcję. Odczytywanie nazw każdego z członków powinno zapewnić wystarczającą ilość informacji dla Ciebie lub innego dewelopera, aby zrozumieć, co robi Klasa.
 
 ## <a name="open-a-new-account"></a>Otwórz nowe konto
 
 Pierwsza funkcja do wdrożenia polega na otwarciu konta bankowego. Gdy klient otworzy konto, musi podać początkowe saldo i informacje o właścicielu lub właściciele tego konta.
 
-Tworzenie nowego obiektu `BankAccount` typu oznacza zdefiniowanie ***konstruktora*** , który przypisuje te wartości. ***Konstruktor*** jest członkiem, który ma taką samą nazwę jak Klasa. Służy do inicjowania obiektów tego typu klasy. Dodaj do typu następujący Konstruktor `BankAccount` . Umieść poniższy kod powyżej deklaracji `MakeDeposit` :
+Tworzenie nowego obiektu `BankAccount` typu oznacza zdefiniowanie _*_konstruktora_*_ , który przypisuje te wartości. _*_Konstruktor_*_ jest członkiem, który ma taką samą nazwę jak Klasa. Służy do inicjowania obiektów tego typu klasy. Dodaj do typu następujący Konstruktor `BankAccount` . Umieść poniższy kod powyżej deklaracji `MakeDeposit` :
 
 ```csharp
 public BankAccount(string name, decimal initialBalance)
@@ -89,7 +89,7 @@ public BankAccount(string name, decimal initialBalance)
 }
 ```
 
-Konstruktory są wywoływane podczas tworzenia obiektu za pomocą [`new`](../../language-reference/operators/new-operator.md) . Zastąp wiersz `Console.WriteLine("Hello World!");` w *program.cs* następującym kodem (Zastąp `<name>` nazwą):
+Konstruktory są wywoływane podczas tworzenia obiektu za pomocą [`new`](../../language-reference/operators/new-operator.md) . Zastąp wiersz `Console.WriteLine("Hello World!");` w _Program. cs * następującym kodem (Zastąp `<name>` nazwą):
 
 ```csharp
 var account = new BankAccount("<name>", 1000);
@@ -133,19 +133,19 @@ Teraz Dodajmy <xref:System.Collections.Generic.List%601> `Transaction` obiekty d
 using System.Collections.Generic;
 ```
 
-Teraz Zmieńmy sposób `Balance` zgłaszania raportu.  Można go znaleźć, sumując wartości wszystkich transakcji. Zmodyfikuj deklarację `Balance` `BankAccount` klasy w klasie w następujący sposób:
+Teraz poprawnie Obliczmy `Balance` . Bieżące saldo można znaleźć, sumując wartości wszystkich transakcji. Ponieważ kod jest obecnie, możesz uzyskać tylko początkowe saldo konta, więc musisz zaktualizować `Balance` Właściwość. Zastąp wiersz `public decimal Balance { get; }` w *BankAccount.cs* następującym kodem:
 
 :::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="BalanceComputation":::
 
-Ten przykład pokazuje istotny aspekt ***Właściwości***. Teraz trwa obliczanie salda, gdy inny programista pyta o wartość. Wyliczenie wylicza wszystkie transakcje i zawiera sumę jako bieżące saldo.
+Ten przykład pokazuje istotny aspekt ***Właściwości**_. Teraz trwa obliczanie salda, gdy inny programista pyta o wartość. Wyliczenie wylicza wszystkie transakcje i zawiera sumę jako bieżące saldo.
 
 Następnie Zaimplementuj `MakeDeposit` metody i `MakeWithdrawal` . Te metody wymuszą dwie ostatnie reguły: początkowe saldo musi być dodatnie i że każde wycofanie nie może utworzyć salda ujemnego.
 
-Wprowadza to koncepcję ***wyjątków***. Standardowy sposób wskazujący, że metoda nie może zakończyć pracy, to zgłosić wyjątek. Typ wyjątku i komunikat skojarzony z nim opisują błąd. W tym miejscu `MakeDeposit` Metoda zgłasza wyjątek, jeśli kwota depozytu jest ujemna. `MakeWithdrawal`Metoda zgłasza wyjątek, jeśli kwota wycofania jest ujemna lub jeśli zastosowanie wycofania powoduje ujemne saldo. Dodaj następujący kod po deklaracji `allTransactions` listy:
+Wprowadza to koncepcję _*_wyjątków_*_. Standardowy sposób wskazujący, że metoda nie może zakończyć pracy, to zgłosić wyjątek. Typ wyjątku i komunikat skojarzony z nim opisują błąd. W tym miejscu `MakeDeposit` Metoda zgłasza wyjątek, jeśli kwota depozytu jest ujemna. `MakeWithdrawal`Metoda zgłasza wyjątek, jeśli kwota wycofania jest ujemna lub jeśli zastosowanie wycofania powoduje ujemne saldo. Dodaj następujący kod po deklaracji `allTransactions` listy:
 
 :::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="DepositAndWithdrawal":::
 
-[`throw`](../../language-reference/keywords/throw.md)Instrukcja **zgłasza** wyjątek. Wykonanie bieżącego bloku i sterowanie transferami do pierwszego zgodnego `catch` bloku znalezionego w stosie wywołań. Dodasz blok, `catch` Aby przetestować ten kod nieco później.
+[`throw`](../../language-reference/keywords/throw.md)Instrukcja _*zwraca*wyjątek. Wykonanie bieżącego bloku i sterowanie transferami do pierwszego zgodnego `catch` bloku znalezionego w stosie wywołań. Dodasz blok, `catch` Aby przetestować ten kod nieco później.
 
 Konstruktor powinien otrzymać jedną zmianę, aby dodać początkową transakcję zamiast bezpośrednio aktualizować saldo. Ponieważ już zapisano `MakeDeposit` metodę, wywołaj ją z konstruktora. Gotowy Konstruktor powinien wyglądać następująco:
 

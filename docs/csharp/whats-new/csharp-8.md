@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 8,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 8,0.
 ms.date: 04/07/2020
-ms.openlocfilehash: 43b9c69c649b83d4cf78ef4c7d131ce900a49d11
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 1d6d33a36092ba685247f894375888da278b7e6e
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654871"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434802"
 ---
 # <a name="whats-new-in-c-80"></a>Co nowego w języku C# 8.0
 
@@ -39,7 +39,7 @@ W pozostałej części tego artykułu krótko opisano te funkcje. Tam, gdzie są
 1. Zainstaluj narzędzie [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
 1. Sklonuj repozytorium [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
 1. Ustaw bieżący katalog na podkatalog *csharp8* dla repozytorium *try-Samples* .
-1. Uruchom polecenie `dotnet try`.
+1. Należy uruchomić polecenie `dotnet try`.
 
 ## <a name="readonly-members"></a>Elementy członkowskie tylko do odczytu
 
@@ -271,7 +271,6 @@ Techniki dopasowania wzorców można eksplorować w tym [zaawansowanym samouczku
 static int WriteLinesToFile(IEnumerable<string> lines)
 {
     using var file = new System.IO.StreamWriter("WriteLines2.txt");
-    // Notice how we declare skippedLines after the using statement.
     int skippedLines = 0;
     foreach (string line in lines)
     {
@@ -295,11 +294,9 @@ W poprzednim przykładzie plik jest usuwany po osiągnięciu zamykającego nawia
 ```csharp
 static int WriteLinesToFile(IEnumerable<string> lines)
 {
-    // We must declare the variable outside of the using block
-    // so that it is in scope to be returned.
-    int skippedLines = 0;
     using (var file = new System.IO.StreamWriter("WriteLines2.txt"))
     {
+        int skippedLines = 0;
         foreach (string line in lines)
         {
             if (!line.Contains("Second"))
