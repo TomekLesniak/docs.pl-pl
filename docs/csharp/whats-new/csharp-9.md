@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 0ac3b410cd9ba886ee55aede952700f145f1b31b
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 57fd5f8775f95b2588e4a7120e35d6d531be4f01
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955170"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434828"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -34,7 +34,7 @@ Język C# 9,0 jest obsługiwany w **programie .NET 5**. Aby uzyskać więcej inf
 
 ## <a name="record-types"></a>Typy rekordów
 
-W języku C# 9,0 wprowadzono ***typy rekordów***, które są typem referencyjnym, które udostępniają metody z syntezą, aby zapewnić semantykę wartości dla równości. Rekordy są domyślnie niezmienne.
+W języku C# 9,0 wprowadzono **_typy rekordów_*_, które są typu referencyjnego, który dostarcza metody, które umożliwiają syntezę wartości dla równości. Rekordy są domyślnie niezmienne.
 
 Typy rekordów ułatwiają tworzenie niemodyfikowalnych typów referencyjnych w programie .NET. Historycznie typy .NET są w znacznym stopniu klasyfikowane jako typy referencyjne (w tym klasy i typy anonimowe) i typy wartości (w tym struktury i krotki). Chociaż zaleca się niezmienne typy wartości, modyfikowalne typy wartości nie często wprowadzają błędy. Zmienne typu wartości przechowują wartości, więc zmiany są wprowadzane do kopii oryginalnych danych, gdy typy wartości są przekazywane do metod.
 
@@ -86,7 +86,7 @@ Kompilator syntezuje dwie metody, które obsługują wydruk wyjściowy: <xref:Sy
 "Student { LastName = Wagner, FirstName = Bill, Level = 11 }"
 ```
 
-Przykłady pokazane do użycia tradycyjną składnią do deklarowania właściwości. Istnieje bardziej zwięzła forma o nazwie ***rekordy pozycyjne***.  Oto trzy typy rekordów zdefiniowane wcześniej jako rekordy pozycyjne:
+Przykłady pokazane do użycia tradycyjną składnią do deklarowania właściwości. Istnieje bardziej zwięzła forma o nazwie _*_rekordy pozycyjne_*_.  Oto trzy typy rekordów zdefiniowane wcześniej jako rekordy pozycyjne:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="PositionalRecords":::
 
@@ -98,7 +98,7 @@ Kompilator tworzy `Deconstruct` metodę dla rekordów pozycyjnych. `Deconstruct`
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="DeconstructRecord":::
 
-Na koniec rejestruje obsługę ***wyrażeń z wyrażeniami***. ***Wyrażenie with*** powoduje, że kompilator tworzy kopię rekordu, ale *o* określonych właściwościach zmodyfikowano:
+Na koniec rejestruje obsługę _*_wyrażeń z wyrażeniami_*_. _*_Wyrażenie with_*_ powoduje, że kompilator tworzy kopię rekordu, ale _with * określone właściwości są modyfikowane:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="Wither":::
 
@@ -106,7 +106,7 @@ Powyższy wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwoś�
 
 ## <a name="init-only-setters"></a>Metody ustawiające tylko do inicjowania
 
-***Tylko metody init*** zapewniają spójną składnię, aby inicjować elementy członkowskie obiektu. Inicjatory właściwości sprawiają, że wartość jest ustawiana dla właściwości. Minusemem jest to, że te właściwości muszą mieć wartość settable. Począwszy od języka C# 9,0, można tworzyć metody `init` dostępu zamiast `set` metod dostępu do właściwości i indeksatorów. Obiekty wywołujące mogą używać składni inicjatora właściwości do ustawiania tych wartości w wyrażeniach tworzenia, ale te właściwości są tylko do odczytu, gdy konstrukcja została ukończona. Tylko metody init umożliwiają zmianę stanu okna. To okno zostanie zamknięte po zakończeniu fazy budowania. Faza konstruowania skutecznie kończy działanie po wszystkich inicjalizacjach, w tym inicjatorach właściwości i wyrażeniach z.
+***Tylko metody init**_ mają spójną składnię, aby inicjować elementy członkowskie obiektu. Inicjatory właściwości sprawiają, że wartość jest ustawiana dla właściwości. Minusemem jest to, że te właściwości muszą mieć wartość settable. Począwszy od języka C# 9,0, można tworzyć metody `init` dostępu zamiast `set` metod dostępu do właściwości i indeksatorów. Obiekty wywołujące mogą używać składni inicjatora właściwości do ustawiania tych wartości w wyrażeniach tworzenia, ale te właściwości są tylko do odczytu, gdy konstrukcja została ukończona. Tylko metody init umożliwiają zmianę stanu okna. To okno zostanie zamknięte po zakończeniu fazy budowania. Faza konstruowania skutecznie kończy działanie po wszystkich inicjalizacjach, w tym inicjatorach właściwości i wyrażeniach z.
 
 W powyższym przykładzie dla rekordów pozycyjnych zademonstrowano użycie metody tylko init-Only do ustawiania właściwości przy użyciu wyrażenia with. Można zadeklarować tylko metody init w dowolnym typie, który napiszesz. Na przykład następująca struktura definiuje strukturę obserwacji pogody:
 
@@ -127,7 +127,7 @@ Tylko metody init mogą być przydatne do ustawiania właściwości klasy bazowe
 
 ## <a name="top-level-statements"></a>Instrukcje najwyższego poziomu
 
-***Instrukcje najwyższego poziomu*** usuwają niepotrzebne procedury z wielu aplikacji. Rozważmy kanoniczną "Hello world!" Program
+_*_Instrukcje najwyższego poziomu_*_ usuwają niepotrzebne procedury z wielu aplikacji. Rozważmy kanoniczną "Hello world!" Program
 
 ```csharp
 using System;
@@ -164,12 +164,12 @@ Co najważniejsze, instrukcje najwyższego poziomu nie ograniczają zakresu lub 
 
 W języku C# 9 wprowadzono nowe ulepszenia dopasowania do wzorca:
 
-- ***Wzorce typu*** zgodne ze zmienną jest typem
-- ***Wzorce w nawiasach*** wymuszają lub podkreślają pierwszeństwo kombinacji wzorców
-- *** `and` Wzorce conjunctive*** wymagają dopasowania obu wzorców
-- *** `or` Wzorce disjunctive*** wymagają dopasowania do wzorca
-- *** `not` Wzorce negacji*** wymagają, aby wzorzec nie był zgodny
-- ***Wzorce relacyjne*** wymagają, aby dane wejściowe były mniejsze niż, większe niż lub równe lub większe niż lub równe danej stałej.
+- _*_Wzorce typu_*_ zgodne ze zmienną jest typem
+- _*_Wzorce w nawiasach_*_ wymuszają lub podkreślają pierwszeństwo kombinacji wzorców
+- _*_ `and` Wzorce conjunctive_*_ wymagają dopasowania obu wzorców
+- _*_ `or` Wzorce disjunctive_*_ wymagają dopasowania do wzorca
+- _*_ `not` Wzorce negacji_*_ wymagają, aby wzorzec nie był zgodny
+- _*_Wzorce relacyjne_*_ wymagają, aby dane wejściowe były mniejsze niż, większe niż lub równe lub większe niż lub równe danej stałej.
 
 Wzorce te wzbogacają składnię wzorców. Rozważ następujące przykłady:
 
@@ -196,7 +196,7 @@ Trzy nowe funkcje ulepszają obsługę natywnych bibliotek międzyoperacyjnych i
 
 Liczby całkowite o rozmiarze natywnym `nint` i `nuint` są typami całkowitymi. Są one wyrażone przez typy podstawowe <xref:System.IntPtr?displayProperty=nameWithType> i <xref:System.UIntPtr?displayProperty=nameWithType> . Kompilator wyświetla dodatkowe konwersje i operacje dla tych typów jako natywny liczby całkowite. Liczby całkowite o rozmiarze natywnym definiują właściwości dla `MaxValue` lub `MinValue` . Te wartości nie mogą być wyrażone jako stałe czasu kompilacji, ponieważ zależą od natywnego rozmiaru liczby całkowitej na maszynie docelowej. Te wartości są tylko do odczytu w czasie wykonywania. Można użyć wartości stałych dla `nint` zakresu [ `int.MinValue` .. `int.MaxValue`]. Można użyć wartości stałych dla `nuint` zakresu [ `uint.MinValue` .. `uint.MaxValue`]. Kompilator wykonuje stałe łamanie dla wszystkich operatorów jednoargumentowych i binarnych przy użyciu <xref:System.Int32?displayProperty=nameWithType> <xref:System.UInt32?displayProperty=nameWithType> typów i. Jeśli wynik nie mieści się w 32 bitów, operacja jest wykonywana w czasie wykonywania i nie jest traktowana jako stała. Natywne liczby całkowite mogą zwiększyć wydajność w scenariuszach, w których liczba obliczeń matematycznych jest szeroko stosowana i musi mieć możliwie najszybszą wydajność.
 
-Wskaźniki funkcji umożliwiają łatwą składnię dostępu do kodów opcode IL `ldftn` i `calli` . Można zadeklarować wskaźniki funkcji przy użyciu nowej `delegate*` składni. `delegate*`Typ jest typem wskaźnika. Wywoływanie `delegate*` użycia typu `calli` , w przeciwieństwie do delegata, który używa `callvirt` `Invoke()` metody. Syntaktycznie wywołania są identyczne. Wywołanie wskaźnika funkcji używa `managed` konwencji wywoływania. Dodaj `unmanaged` słowo kluczowe po `delegate*` składni, aby zadeklarować, że chcesz `unmanaged` konwencję wywoływania. Inne konwencje wywoływania można określić przy użyciu atrybutów w `delegate*` deklaracji.
+Wskaźniki funkcji umożliwiają łatwą składnię dostępu do kodów opcode IL `ldftn` i `calli` . Można zadeklarować wskaźniki funkcji przy użyciu nowej `delegate_` składni. `delegate*`Typ jest typem wskaźnika. Wywoływanie `delegate*` użycia typu `calli` , w przeciwieństwie do delegata, który używa `callvirt` `Invoke()` metody. Syntaktycznie wywołania są identyczne. Wywołanie wskaźnika funkcji używa `managed` konwencji wywoływania. Dodaj `unmanaged` słowo kluczowe po `delegate*` składni, aby zadeklarować, że chcesz `unmanaged` konwencję wywoływania. Inne konwencje wywoływania można określić przy użyciu atrybutów w `delegate*` deklaracji.
 
 Na koniec możesz dodać polecenie, <xref:System.Runtime.CompilerServices.SkipLocalsInitAttribute?displayProperty=nameWithType> aby poinstruować kompilator, aby nie emitują `localsinit` flagi. Ta flaga instruuje CLR, aby nie zainicjowano wszystkich zmiennych lokalnych. `localsinit`Flaga była domyślnym zachowaniem języka C# od 1,0. Jednak dodatkowe zero inicjacji może mieć wymierny wpływ na wydajność w niektórych scenariuszach. W szczególności w przypadku korzystania z programu `stackalloc` . W takich przypadkach można dodać <xref:System.Runtime.CompilerServices.SkipLocalsInitAttribute> . Możesz dodać go do pojedynczej metody lub właściwości, lub do `class` modułu,, `struct` , `interface` lub nawet. Ten atrybut nie ma wpływu na `abstract` metody; wpływa na kod wygenerowany dla implementacji.
 
@@ -226,7 +226,7 @@ Podobna funkcja ulepsza rozpoznawanie typu docelowego [wyrażeń warunkowych](..
 
 Począwszy od języka C# 9,0, można dodać `static` modyfikator do [wyrażeń lambda](../language-reference/operators/lambda-expressions.md) lub [metod anonimowych](../language-reference/operators/delegate-operator.md). Statyczne wyrażenia lambda są analogiczne do `static` funkcji lokalnych: statyczna metoda lambda lub anonimowa nie może przechwycić lokalnych zmiennych lub stanu wystąpienia. `static`Modyfikator zapobiega przypadkowemu przechwyceniu innych zmiennych.
 
-Typy zwracane przez współwarianty zapewniają elastyczność dla zwracanych typów funkcji zastąpionych. Zastąpiona funkcja wirtualna może zwrócić typ pochodzący od typu zwracanego zadeklarowanego w metodzie klasy bazowej. Może to być przydatne w przypadku rekordów i dla innych typów, które obsługują wirtualne klony lub metody fabryki.
+Typy zwracane przez współwarianty zapewniają elastyczność dla zwracanych typów metod [zastąpień](../language-reference/keywords/override.md) . Metoda przesłaniania może zwracać typ pochodzący od typu zwracanego przesłoniętej metody bazowej. Może to być przydatne w przypadku rekordów i dla innych typów, które obsługują wirtualne klony lub metody fabryki.
 
 Ponadto [ `foreach` Pętla](../language-reference/keywords/foreach-in.md) rozpoznaje i używa metody rozszerzenia `GetEnumerator` , która w przeciwnym razie spełnia warunki `foreach` wzorca. Ta zmiana oznacza `foreach` spójność z innymi konstrukcjami opartymi na wzorcu, takimi jak wzorzec asynchroniczny i dekonstrukcja oparta na wzorcu. W tym przypadku ta zmiana oznacza, że można dodać `foreach` obsługę dowolnego typu. Należy ograniczyć jego użycie do momentu, gdy Wyliczenie obiektu ma sens w projekcie.
 
@@ -240,9 +240,9 @@ Dwie funkcje końcowe obsługują generatory kodu w języku C#. Generatory kodu 
 
 Generator kodu odczytuje atrybuty lub inne elementy kodu przy użyciu interfejsów API analizy Roslyn. Z tych informacji dodaje nowy kod do kompilacji. Generatory źródła mogą jedynie dodawać kod; nie mogą modyfikować żadnego istniejącego kodu w kompilacji.
 
-Dwie funkcje, które zostały dodane dla generatorów kodu są rozszerzeniami ***składni metody częściowej***i ***inicjatorami modułu***. Najpierw zmiany w metodach częściowych. Przed C# 9,0 metody częściowe są, `private` ale nie można określić modyfikatora dostępu, mają `void` Return i nie mogą mieć `out` parametrów. Te ograniczenia mające na celu, że jeśli nie zostanie podana implementacja metody, kompilator usuwa wszystkie wywołania metody częściowej. Język C# 9,0 usuwa te ograniczenia, ale wymaga, aby częściowa deklaracja metod była implementacją. Generatory kodu mogą zapewnić, że implementacja. Aby uniknąć wprowadzenia zmiany, kompilator traktuje każdą metodę częściową bez modyfikatora dostępu, aby przestrzegać starych reguł. Jeśli metoda częściowa zawiera `private` modyfikator dostępu, nowe reguły regulują tę metodę częściową.
+Dwie funkcje, które zostały dodane dla generatorów kodu, to rozszerzenia ***Składnia metody częściowej**_ i _*_inicjatory modułów_*_. Najpierw zmiany w metodach częściowych. Przed C# 9,0 metody częściowe są, `private` ale nie można określić modyfikatora dostępu, mają `void` Return i nie mogą mieć `out` parametrów. Te ograniczenia mające na celu, że jeśli nie zostanie podana implementacja metody, kompilator usuwa wszystkie wywołania metody częściowej. Język C# 9,0 usuwa te ograniczenia, ale wymaga, aby częściowa deklaracja metod była implementacją. Generatory kodu mogą zapewnić, że implementacja. Aby uniknąć wprowadzenia zmiany, kompilator traktuje każdą metodę częściową bez modyfikatora dostępu, aby przestrzegać starych reguł. Jeśli metoda częściowa zawiera `private` modyfikator dostępu, nowe reguły regulują tę metodę częściową.
 
-Drugą nową funkcją dla generatorów kodu są ***inicjatory modułów***. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe podczas ładowania zestawu. Metoda inicjatora modułu:
+Druga Nowa funkcja dla generatorów kodu jest _ *_inicjatorów modułów_* *. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe podczas ładowania zestawu. Metoda inicjatora modułu:
 
 - Musi być statyczna
 - Musi być bez parametrów

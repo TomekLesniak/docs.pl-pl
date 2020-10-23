@@ -3,12 +3,12 @@ title: Dane relacyjne a NoSQL
 description: Informacje o relacyjnych i NoSQL danych w aplikacjach natywnych w chmurze
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: 6e7725c2d67452218d1c6bda89c2fec6aa4a2b96
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 11db5cdca06b9c2c8ce12598456c4b147ac379ba
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91163638"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434864"
 ---
 # <a name="relational-vs-nosql-data"></a>Dane relacyjne a NoSQL
 
@@ -30,7 +30,7 @@ Bazy danych NoSQL obejmują kilka różnych modeli do uzyskiwania dostępu do da
 | :-------- | :-------- |
 | Magazyn dokumentów | Dane i metadane są przechowywane hierarchicznie w dokumentach opartych na notacji JSON w bazie danych. |
 | Magazyn wartości klucza | Najprostszym z baz danych NoSQL, dane są reprezentowane jako kolekcja par klucz-wartość. |
-| Magazyn szerokiej kolumny | Powiązane dane są przechowywane jako zestaw zagnieżdżonych par klucz-wartość w jednej kolumnie. |
+| Magazyn Wide-Column | Powiązane dane są przechowywane jako zestaw zagnieżdżonych par klucz-wartość w jednej kolumnie. |
 | Magazyn grafowy | Dane są przechowywane w strukturze grafu jako właściwości węzła, krawędzi i danych. |
 
 ## <a name="the-cap-theorem"></a>Theorem zakończenia
@@ -65,7 +65,7 @@ Ten rodzaj wyników jest znany jako spójność ostateczna, charakterystyczne dl
 
 Wysoka dostępność i ogromne skalowalność są często bardziej krytyczne dla działalności firmy niż silna spójność. Deweloperzy mogą zaimplementować techniki i wzorce, takie jak sagach, CQRS i asynchroniczne komunikaty, aby zachować spójność ostateczną.
 
-> Obecnie należy zachować ostrożność podczas conidering ograniczeń theorem CAP. Nowy typ bazy danych o nazwie NewSQL, spowodował, że rozszerza aparat relacyjnej bazy danych w celu zapewnienia obsługi skalowalnej w poziomie i skalowalnej wydajności systemów NoSQL.
+> Obecnie należy zachować ostrożność podczas rozważania ograniczeń theorem CAP. Nowy typ bazy danych o nazwie NewSQL, spowodował, że rozszerza aparat relacyjnej bazy danych w celu zapewnienia obsługi skalowalnej w poziomie i skalowalnej wydajności systemów NoSQL.
 
 ## <a name="considerations-for-relational-vs-nosql-systems"></a>Zagadnienia dotyczące systemów relacyjnych i NoSQL
 
@@ -131,7 +131,7 @@ Jednak firma Microsoft kontynuuje zobowiązania do utrzymania platformy Azure ja
 
 ### <a name="azure-database-for-mysql"></a>Azure Database for MySQL
 
-[Baza danych MySQL](https://en.wikipedia.org/wiki/MySQL)   to relacyjna baza danych typu open source oraz filar dla aplikacji zbudowanych na [stosie oprogramowania lampy](https://en.wikipedia.org/wiki/LAMP_(software_bundle)). Szeroko wybierany do *odczytu* dużych obciążeń, jest używany przez wiele różnych organizacji, w tym Facebook, Twitter i YouTube. Wersja Community jest dostępna bezpłatnie, podczas gdy wersja Enterprise wymaga zakupu licencji. Pierwotnie utworzony w 1995, produkt został zakupiony przez Sun Microsystems w 2008. Firma Oracle nabyła słońce i MySQL w 2010.
+[MySQL](https://en.wikipedia.org/wiki/MySQL) to relacyjna baza danych typu open source oraz filar dla aplikacji zbudowanych na [stosie oprogramowania lampy](https://en.wikipedia.org/wiki/LAMP_(software_bundle)). Szeroko wybierany do *odczytu* dużych obciążeń, jest używany przez wiele różnych organizacji, w tym Facebook, Twitter i YouTube. Wersja Community jest dostępna bezpłatnie, podczas gdy wersja Enterprise wymaga zakupu licencji. Pierwotnie utworzony w 1995, produkt został zakupiony przez Sun Microsystems w 2008. Firma Oracle nabyła słońce i MySQL w 2010.
 
 [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/) to zarządzana usługa relacyjnej bazy danych oparta na aparacie serwera MySQL typu open source. Używa programu MySQL Community Edition. Serwer Azure MySQL jest punktem administracyjnym usługi. Jest to ten sam aparat serwera MySQL używany do wdrożeń lokalnych. Aparat może utworzyć pojedynczą bazę danych na serwer lub wiele baz danych na serwer, który współużytkuje zasoby. Można nadal zarządzać danymi za pomocą tych samych narzędzi "open source" bez konieczności uczenia się nowych umiejętności ani zarządzania maszynami wirtualnymi.
 
@@ -258,7 +258,7 @@ Wewnętrznie program Cosmos DB automatycznie zarządza umieszczaniem [partycji l
 
 ## <a name="newsql-databases"></a>Bazy danych SQL
 
-*NewSQL*   jest nową technologią bazy danych, która łączy rozproszoną skalowalność NoSQL za pomocą gwarancji KWASowej relacyjnej bazy danych. Bazy danych NewSQL są ważne dla systemów firmowych, które muszą przetwarzać duże ilości danych, w środowiskach rozproszonych, z pełną obsługą transakcyjną i zgodnością KWASów. Baza danych NoSQL może zapewniać ogromną skalowalność, ale nie gwarantuje spójności danych. Sporadyczne problemy z niespójnymi danymi mogą stanowić obciążenie zespołu deweloperów. Deweloperzy muszą konstruować zabezpieczenia w swoim kodzie mikrousług, aby zarządzać problemami spowodowanymi niespójnymi danymi.
+*NewSQL* to rozwijana technologia baz danych, która łączy rozproszoną skalowalność NoSQL przy użyciu gwarancji kwaśnych relacyjnej bazy danych. Bazy danych NewSQL są ważne dla systemów firmowych, które muszą przetwarzać duże ilości danych, w środowiskach rozproszonych, z pełną obsługą transakcyjną i zgodnością KWASów. Baza danych NoSQL może zapewniać ogromną skalowalność, ale nie gwarantuje spójności danych. Sporadyczne problemy z niespójnymi danymi mogą stanowić obciążenie zespołu deweloperów. Deweloperzy muszą konstruować zabezpieczenia w swoim kodzie mikrousług, aby zarządzać problemami spowodowanymi niespójnymi danymi.
 
 Natywna platforma obliczeniowa w chmurze (CNCF) zawiera kilka projektów bazy danych NewSQL.
 
@@ -279,7 +279,7 @@ Kubernetes używa *konstrukcji usług* , aby umożliwić klientowi adresowanie g
 
 W tym scenariuszu wszystkie wystąpienia bazy danych są równe. Brak relacji podstawowej lub pomocniczej. Techniki, takie jak *jednomyślna replikacja* znaleziono w CockroachDB, zezwalają dowolnym węzłowi bazy danych na obsługę dowolnego żądania. Jeśli węzeł, który odbiera żądanie o zrównoważonym obciążeniu, ma wymagane dane lokalnie, reaguje natychmiast. W przeciwnym razie węzeł jest bramą i przekazuje żądanie do odpowiednich węzłów w celu uzyskania prawidłowej odpowiedzi. Z punktu widzenia klienta każdy węzeł bazy danych jest taki sam: pojawia się jako pojedyncza *logiczna* baza danych z gwarancjami spójności jednego systemu komputera, pomimo że mają dziesiątki lub nawet setki węzłów, które działają w tle.
 
-Aby zapoznać się ze szczegółowymi informacjami o Mechanics za bazami danych NewSQL, zobacz [myślnik: cztery właściwości artykułu bazy danych Kubernetes-Native](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/) .
+Aby zapoznać się ze szczegółowymi informacjami o Mechanics za bazami danych NewSQL, zobacz [myślnik: cztery właściwości Kubernetes-Native baz danych](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/) .
 
 ## <a name="data-migration-to-the-cloud"></a>Migracja danych do chmury
 
