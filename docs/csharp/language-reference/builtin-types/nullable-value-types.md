@@ -4,12 +4,12 @@ description: Dowiedz się więcej o typach wartości null języka C# i sposobach
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 8c3a8b997fbb8154f79dff04018cf3ea76f85d7a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3ab2dff6b7399b0458a69d4498b2ebda24f6c5cc
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537356"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471838"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy wartości null (odwołanie w C#)
 
@@ -24,9 +24,9 @@ Typ wartości null jest zazwyczaj używany, gdy trzeba reprezentować niezdefini
 
 ## <a name="declaration-and-assignment"></a>Deklaracja i przypisanie
 
-Ponieważ typ wartości jest niejawnie konwertowany do odpowiadającego typu wartości null, można przypisać wartość do zmiennej typu wartości null, tak jak w przypadku jego bazowego typu wartości. Możesz również przypisać `null` wartość. Na przykład:
+Ponieważ typ wartości jest niejawnie konwertowany do odpowiadającego typu wartości null, można przypisać wartość do zmiennej typu wartości null, tak jak w przypadku jego bazowego typu wartości. Możesz również przypisać `null` wartość. Przykład:
 
-[!code-csharp[declare and assign](snippets/NullableValueTypes.cs#Declaration)]
+[!code-csharp[declare and assign](snippets/shared/NullableValueTypes.cs#Declaration)]
 
 Wartość domyślna typu wartości null reprezentuje `null` , czyli to wystąpienie, którego <xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType> Właściwość zwraca `false` .
 
@@ -34,7 +34,7 @@ Wartość domyślna typu wartości null reprezentuje `null` , czyli to wystąpie
 
 Począwszy od języka C# 7,0, można użyć [ `is` operatora ze wzorcem typu](../operators/type-testing-and-cast.md#type-testing-with-pattern-matching) do obu badań wystąpienie typu wartości null dla `null` i pobrać wartość typu podstawowego:
 
-[!code-csharp-interactive[use pattern matching](snippets/NullableValueTypes.cs#PatternMatching)]
+[!code-csharp-interactive[use pattern matching](snippets/shared/NullableValueTypes.cs#PatternMatching)]
 
 Aby sprawdzać i pobierać wartość zmiennej typu wartości null, zawsze można użyć następujących właściwości tylko do odczytu:
 
@@ -44,23 +44,23 @@ Aby sprawdzać i pobierać wartość zmiennej typu wartości null, zawsze można
 
 Poniższy przykład używa właściwości, `HasValue` Aby sprawdzić, czy zmienna zawiera wartość przed wyświetleniem:
 
-[!code-csharp-interactive[use HasValue](snippets/NullableValueTypes.cs#HasValue)]
+[!code-csharp-interactive[use HasValue](snippets/shared/NullableValueTypes.cs#HasValue)]
 
 Możesz również porównać zmienną typu wartości null z `null` zamiast używać `HasValue` właściwości, jak pokazano w poniższym przykładzie:
 
-[!code-csharp-interactive[use comparison with null](snippets/NullableValueTypes.cs#CompareWithNull)]
+[!code-csharp-interactive[use comparison with null](snippets/shared/NullableValueTypes.cs#CompareWithNull)]
 
 ## <a name="conversion-from-a-nullable-value-type-to-an-underlying-type"></a>Konwersja z typu wartości null na typ podstawowy
 
 Jeśli chcesz przypisać wartość typu wartości null do zmiennej typu wartości, która nie dopuszcza wartości null, może być konieczne określenie wartości, która ma zostać przypisana zamiast `null` . Użyj [ `??` operatora łączenia wartości null](../operators/null-coalescing-operator.md) , aby to zrobić (można również użyć <xref:System.Nullable%601.GetValueOrDefault(%600)?displayProperty=nameWithType> metody do tego samego celu):
 
-[!code-csharp-interactive[?? operator](snippets/NullableValueTypes.cs#NullCoalescing)]
+[!code-csharp-interactive[?? operator](snippets/shared/NullableValueTypes.cs#NullCoalescing)]
 
 Jeśli chcesz użyć [domyślnej](default-values.md) wartości bazowego typu wartości zamiast `null` , użyj <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> metody.
 
 Można również jawnie rzutować typ wartości null na typ niedopuszczający wartości null, co ilustruje poniższy przykład:
 
-[!code-csharp[explicit cast](snippets/NullableValueTypes.cs#Cast)]
+[!code-csharp[explicit cast](snippets/shared/NullableValueTypes.cs#Cast)]
 
 W czasie wykonywania, jeśli wartość typu wartości null to `null` , jawne rzutowanie zgłosi <xref:System.InvalidOperationException> .
 
@@ -68,9 +68,9 @@ Typ wartości niedopuszczający wartości null `T` jest niejawnie konwertowany n
 
 ## <a name="lifted-operators"></a>Podniesione operatory
 
-Wstępnie zdefiniowane [Operatory](../operators/index.md) jednoargumentowe i binarne lub wszelkie przeciążone operatory obsługiwane przez typ wartości `T` są również obsługiwane przez odpowiedni typ wartości null `T?` . Te operatory, znane także jako *zniesione operatory*, tworzą, `null` Jeśli jeden lub oba operandy są `null` ; w przeciwnym razie operator używa zawartych wartości argumentów operacji, aby obliczyć wynik. Na przykład:
+Wstępnie zdefiniowane [Operatory](../operators/index.md) jednoargumentowe i binarne lub wszelkie przeciążone operatory obsługiwane przez typ wartości `T` są również obsługiwane przez odpowiedni typ wartości null `T?` . Te operatory, znane także jako *zniesione operatory*, tworzą, `null` Jeśli jeden lub oba operandy są `null` ; w przeciwnym razie operator używa zawartych wartości argumentów operacji, aby obliczyć wynik. Przykład:
 
-[!code-csharp[lifted operators](snippets/NullableValueTypes.cs#LiftedOperator)]
+[!code-csharp[lifted operators](snippets/shared/NullableValueTypes.cs#LiftedOperator)]
 
 > [!NOTE]
 > Dla `bool?` typu, wstępnie zdefiniowane `&` Operatory i `|` nie przestrzegają zasad opisanych w tej sekcji: wynik oceny operatora może być inny niż null, nawet jeśli jeden z operandów jest `null` . Aby uzyskać więcej informacji, zobacz sekcję [Operatory logiczne wartości null](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) w artykule [Operatory logiczne Boolean](../operators/boolean-logical-operators.md) .
@@ -80,7 +80,7 @@ W przypadku [operatorów porównania](../operators/comparison-operators.md) `<` 
 - nie większe niż lub równe `null`
 - nie mniejsze niż `null`
 
-[!code-csharp-interactive[relational and equality operators](snippets/NullableValueTypes.cs#ComparisonOperators)]
+[!code-csharp-interactive[relational and equality operators](snippets/shared/NullableValueTypes.cs#ComparisonOperators)]
 
 W przypadku [operatora równości](../operators/equality-operators.md#equality-operator-) `==` , jeśli oba operandy są `null` , wynikiem jest `true` , jeśli tylko jeden z operandów ma wartość, `null` wynik to `false` ; w przeciwnym razie zawarte wartości argumentów operacji są porównywane.
 
@@ -97,27 +97,27 @@ Wystąpienie typu wartości null `T?` jest [opakowane](../../programming-guide/t
 
 Można Unbox wartość opakowaną typu wartości `T` do odpowiadającego typu wartości null `T?` , co ilustruje poniższy przykład:
 
-[!code-csharp-interactive[boxing and unboxing](snippets/NullableValueTypes.cs#Boxing)]
+[!code-csharp-interactive[boxing and unboxing](snippets/shared/NullableValueTypes.cs#Boxing)]
 
 ## <a name="how-to-identify-a-nullable-value-type"></a>Jak zidentyfikować typ wartości null
 
 Poniższy przykład pokazuje, jak ustalić, czy <xref:System.Type?displayProperty=nameWithType> wystąpienie reprezentuje skonstruowany typ wartości null, czyli <xref:System.Nullable%601?displayProperty=nameWithType> Typ z określonym parametrem typu `T` :
 
-[!code-csharp-interactive[whether Type is nullable](snippets/NullableValueTypes.cs#IsTypeNullable)]
+[!code-csharp-interactive[whether Type is nullable](snippets/shared/NullableValueTypes.cs#IsTypeNullable)]
 
 Jak pokazano w przykładzie, należy użyć operatora [typeof](../operators/type-testing-and-cast.md#typeof-operator) do utworzenia <xref:System.Type?displayProperty=nameWithType> wystąpienia.
 
 Aby określić, czy wystąpienie ma typ wartości null, nie należy używać <xref:System.Object.GetType%2A?displayProperty=nameWithType> metody, aby uzyskać <xref:System.Type> wystąpienie do przetestowania przy użyciu poprzedniego kodu. Gdy wywoływana jest <xref:System.Object.GetType%2A?displayProperty=nameWithType> Metoda w wystąpieniu typu wartości null, wystąpienie jest [opakowane](#boxing-and-unboxing) na <xref:System.Object> . Jako opakowanie niezerowego typu wartości null jest równoważne z opakowaniem wartości typu podstawowego, <xref:System.Object.GetType%2A> zwraca <xref:System.Type> wystąpienie reprezentujące typ podstawowy typu wartości null:
 
-[!code-csharp-interactive[GetType example](snippets/NullableValueTypes.cs#GetType)]
+[!code-csharp-interactive[GetType example](snippets/shared/NullableValueTypes.cs#GetType)]
 
 Ponadto nie należy używać operatora [is](../operators/type-testing-and-cast.md#is-operator) , aby określić, czy wystąpienie ma typ wartości null. Jak pokazano na poniższym przykładzie, nie można rozróżnić typów wystąpienia typu wartości null i jego wystąpienia podstawowego z `is` operatorem:
 
-[!code-csharp-interactive[is operator example](snippets/NullableValueTypes.cs#IsOperator)]
+[!code-csharp-interactive[is operator example](snippets/shared/NullableValueTypes.cs#IsOperator)]
 
 Możesz użyć kodu przedstawionego w poniższym przykładzie, aby określić, czy wystąpienie ma typ wartości null:
 
-[!code-csharp-interactive[whether an instance is of a nullable type](snippets/NullableValueTypes.cs#IsInstanceNullable)]
+[!code-csharp-interactive[whether an instance is of a nullable type](snippets/shared/NullableValueTypes.cs#IsInstanceNullable)]
 
 > [!NOTE]
 > Metody opisane w tej sekcji nie mają zastosowania w przypadku [typów referencyjnych dopuszczających wartość null](nullable-reference-types.md).
@@ -132,7 +132,7 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języ
 - [Jawne konwersje dopuszczające wartość null](~/_csharplang/spec/conversions.md#explicit-nullable-conversions)
 - [Przenoszone operatory konwersji](~/_csharplang/spec/conversions.md#lifted-conversion-operators)
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Co dokładnie ma znaczenie "zniesione"?](/archive/blogs/ericlippert/what-exactly-does-lifted-mean)

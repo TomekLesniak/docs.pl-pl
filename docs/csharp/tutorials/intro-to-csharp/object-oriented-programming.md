@@ -2,12 +2,12 @@
 title: Programowanie Object-Oriented (C#)
 description: Język C# zapewnia pełną obsługę programowania zorientowanego obiektowo, w tym abstrakcję, hermetyzację, dziedziczenie i polimorfizm.
 ms.date: 09/30/2020
-ms.openlocfilehash: 6e0155621be544b01453b8c107debb3a9b6c38f9
-ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
+ms.openlocfilehash: 353edf8fc68f495f3d875fa678aaaf91f1fd6406
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997656"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471598"
 ---
 # <a name="object-oriented-programming-c"></a>Programowanie Object-Oriented (C#)
 
@@ -140,7 +140,7 @@ Zauważ, że `LineOfCreditAccount` Konstruktor zmienia znak `creditLimit` parame
 
 Ostatnia funkcja do dodania umożliwia `LineOfCreditAccount` naliczenie opłaty za przekroczenie limitu kredytowego zamiast odmowy transakcji.
 
-Jedną z technik jest zdefiniowanie funkcji wirtualnej, w której implementowane jest wymagane zachowanie. `Bank Account`Klasa refaktoryzacji `MakeWithdrawal` metody do dwóch metod. Nowa metoda wykonuje określoną akcję, gdy wycofanie ma saldo poniżej wartości minimalnej. Istniejąca `MakeWithdrawal` Metoda ma następujący kod:
+Jedną z technik jest zdefiniowanie funkcji wirtualnej, w której implementowane jest wymagane zachowanie. `BankAccount`Klasa refaktoryzacji `MakeWithdrawal` metody do dwóch metod. Nowa metoda wykonuje określoną akcję, gdy wycofanie ma saldo poniżej wartości minimalnej. Istniejąca `MakeWithdrawal` Metoda ma następujący kod:
 
 ```csharp
 public void MakeWithdrawal(decimal amount, DateTime date, string note)

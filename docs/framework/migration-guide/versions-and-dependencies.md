@@ -5,12 +5,12 @@ ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: 74a1e244fa47cf7c6ea36454013b46b6e44f62c9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f807a9d9a7ccebf2ae71d47e01fbfba7338b1799
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557674"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92472000"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework wersje i zależności
 
@@ -18,12 +18,14 @@ Każda wersja .NET Framework zawiera środowisko uruchomieniowe języka wspólne
 
 Każda nowa wersja .NET Framework dodaje nowe funkcje, ale zachowuje funkcje z poprzednich wersji.
 
+[!INCLUDE [net-framework-future](../../../includes/net-framework-future.md)]
+
 Środowisko CLR jest identyfikowane za pomocą własnego numeru wersji. Numer wersji .NET Framework jest zwiększany przy każdej wersji, ale wersja środowiska CLR nie zawsze jest zwiększana. Na przykład .NET Framework 4, 4,5 i nowsze wersje obejmują środowisko CLR 4, ale .NET Framework 2,0, 3,0 i 3,5 zawierają środowisko CLR 2,0. (Nie było wersji 3 środowiska CLR).
 
 > [!TIP]
 >
 > - Aby uzyskać pełną listę obsługiwanych systemów operacyjnych, zobacz [wymagania systemowe](../get-started/system-requirements.md).
-> - Aby uzyskać pliki do pobrania, zobacz [Install the .NET Framework for Developers](../install/guide-for-developers.md).
+> - Aby uzyskać pliki do pobrania, zobacz [Install .NET Framework for Developers](../install/guide-for-developers.md).
 > - Aby uzyskać informacje dotyczące ustalania, które wersje .NET Framework są zainstalowane na komputerze, zobacz [jak określić, które wersje .NET Framework są zainstalowane](how-to-determine-which-versions-are-installed.md).
 
 ## <a name="version-information"></a>Informacje o wersji
@@ -32,7 +34,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 - Ikona znacznika wyboru ✔️ wskazuje wersje systemu operacyjnego, na których .NET Framework jest instalowany domyślnie.
 - Ikona znaku plus ➕ wskazuje wersje systemu operacyjnego, na których .NET Framework nie są zainstalowane, ale można je zainstalować.
-- Gwiazdka **\*** wskazuje wersje systemu operacyjnego, na których .NET Framework (czy funkcja preinstalacji lub nie) musi być włączona [w panelu sterowania](../install/dotnet-35-windows-10.md) lub dla systemu Windows Server, za pomocą Menedżer serwera.
+- Gwiazdka * *\** _ wskazuje wersje systemu operacyjnego, na których .NET Framework (czy funkcja preinstalacji lub nie) musi być włączona [w panelu sterowania](../install/dotnet-35-windows-10.md) lub dla systemu Windows Server, za pomocą Menedżer serwera.
 
 | | |
 | - | - |
@@ -49,7 +51,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 |||
 |-|-|
-|**Wersja środowiska CLR**|4|
+|_*Wersja środowiska CLR**|4|
 |**Wersje systemu Windows**|Aktualizacja ✔️ 10 maja 2019<br/>➕ 10 października 2018 Update (wersja 1809)<br/>➕ 10 kwietnia 2018 Update (wersja 1803)<br/>➕ 10 jesień Update (wersja 1709)<br/>Aktualizacja ➕ 10 dla twórców (wersja 1703)<br/>➕ 10 rocznicowej aktualizacji (wersja 1607)<br/>➕ 8,1<br/>➕ 7|
 |**Wersje systemu Windows Server**|➕ Windows Server 2019<br/>➕ Systemu Windows Server w wersji 1809<br/>➕ Systemu Windows Server w wersji 1803<br/>➕ 2016<br/>➕ 2012 R2<br/>➕ 2012<br/>➕ 2008 R2 Z DODATKIEM SP1|
 |**Aby określić zainstalowaną wersję programu .NET**|Użyj wartości `Release` DWORD:<br/>-528040 (Aktualizacja systemu Windows 10 może 2019)<br/>-528049 (wszystkie inne wersje systemu operacyjnego)<br/>(Zobacz [instrukcje](how-to-determine-which-versions-are-installed.md))|
@@ -237,7 +239,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 |-|-|
 |**Wersja środowiska CLR**|2,0|
 |**Uwzględnione w wersji programu Visual Studio**|2005|
-|**Wersje systemu Windows**|Brak|
+|**Wersje systemu Windows**|Nie dotyczy|
 |**Wersje systemu Windows Server**|✔️ 2008 R2 Z DODATKIEM SP1<br />✔️ 2008 Z DODATKIEM SP2<br />✔️ 2003|
 |**Aby określić zainstalowaną wersję programu .NET**|Zobacz [instrukcje](how-to-determine-which-versions-are-installed.md)|
 
@@ -253,7 +255,7 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 |-|-|
 |**Wersja środowiska CLR**|1,1|
 |**Uwzględnione w wersji programu Visual Studio**|2003|
-|**Wersje systemu Windows**|Brak|
+|**Wersje systemu Windows**|Nie dotyczy|
 |**Wersje systemu Windows Server**|✔️ 2003|
 |**Aby określić zainstalowaną wersję programu .NET**|Zobacz [instrukcje](how-to-determine-which-versions-are-installed.md)|
 
@@ -261,10 +263,10 @@ Poniższe tabele podsumowują historię wersji .NET Framework i skorelowania pos
 
 |||
 |-|-|
-|**Wersja środowiska CLR**|1,0|
+|**Wersja środowiska CLR**|1.0|
 |**Uwzględnione w wersji programu Visual Studio**|Visual Studio .NET|
-|**Wersje systemu Windows**|Brak|
-|**Wersje systemu Windows Server**|Brak|
+|**Wersje systemu Windows**|Nie dotyczy|
+|**Wersje systemu Windows Server**|Nie dotyczy|
 |**Aby określić zainstalowaną wersję programu .NET**|Zobacz [instrukcje](how-to-determine-which-versions-are-installed.md)|
 
 > [!NOTE]
@@ -303,7 +305,7 @@ Ponadto, jeśli aplikacja jest przeznaczona dla wersji 2,0, 3,0 lub 3,5, użytko
 
 - Aby uzyskać informacje dotyczące ustalania, które wersje lub aktualizacje są zainstalowane na komputerze, zobacz [How to: Określanie, które wersje .NET Framework są zainstalowane](how-to-determine-which-versions-are-installed.md) , i [instrukcje: Określanie, które aktualizacje .NET Framework są zainstalowane](how-to-determine-which-net-framework-updates-are-installed.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zgodność wersji](version-compatibility.md) 
 |  [.NET Framework oficjalne zasady pomocy technicznej](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)

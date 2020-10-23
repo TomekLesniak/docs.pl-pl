@@ -1,32 +1,32 @@
 ---
-title: Typy odwołań z dopuszczalną wartością null — odwołanie do języka C#
-description: Dowiedz się więcej o typach odwołań do wartości null w języku C# i o tym, jak z nich korzystać
+title: Typy odwołań do wartości null — odwołanie w C#
+description: Dowiedz się więcej o typach referencyjnych języka C# do dopuszczających wartość null
 ms.date: 04/06/2020
-ms.openlocfilehash: cb61b162b06faa51faabbcdd91e55618cdeaca73
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 274a613a8381a2b7718c9025f51aadb2eb32af36
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102700"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471866"
 ---
-# <a name="nullable-reference-types-c-reference"></a>Typy odwołań z dopuszczalną wartości null (odwołanie do języka C#)
+# <a name="nullable-reference-types-c-reference"></a>Typy odwołań dopuszczających wartość null (odwołanie w C#)
 
 > [!NOTE]
-> W tym artykule opisano typy odwołań z dopuszczalną wartością null. Można również zadeklarować [typy wartości nullable](nullable-value-types.md).
+> Ten artykuł dotyczy typów referencyjnych dopuszczających wartość null. Można również zadeklarować [wartości null dla typów](nullable-value-types.md).
 
-Nullowe typy odwołań są dostępne począwszy od języka C# 8.0, w kodzie, który zdecydował się na *kontekst świadomości nullable*. Typy odwołań null, ostrzeżenia analizy statycznej null i [operator wyrozumiały o wartości null](../operators/null-forgiving.md) są opcjonalnymi funkcjami języka. Wszystkie są domyślnie wyłączone. *Kontekst z dopuszczalny do wartości null* jest kontrolowany na poziomie projektu przy użyciu ustawień kompilacji lub w kodzie przy użyciu pragmas.
+Typy odwołań dopuszczających wartość null są dostępne począwszy od języka C# 8,0, w kodzie, który został wybrał w *kontekście obsługującym wartość null*. Typy odwołań dopuszczających wartość null, ostrzeżenia analityczne o wartości null i [Operatory null-łagodniejszej](../operators/null-forgiving.md) są opcjonalnymi funkcjami języka. Wszystkie są domyślnie wyłączone. *Kontekst dopuszczający wartość null* jest kontrolowany na poziomie projektu przy użyciu ustawień kompilacji lub kodu przy użyciu pragm.
 
- W kontekście świadomości możliwej do unieważnienia:
+ W kontekście dopuszczającym wartość null:
 
-- Zmienna typu `T` odwołania musi być zainicjowana z wartością null i nigdy nie `null`może być przypisana do wartości, która może być .
-- `T?` Zmienna typu odwołania może być `null` inicjowana lub przypisana, `null`ale `null` musi być sprawdzona przed odwołując się.
-- Zmienna `m` typu `T?` jest uważana za niekwaśną po zastosowaniu `m!`operatora wyrozumiałości zerowej, jak w .
+- Zmienna typu referencyjnego `T` musi zostać zainicjowana przy użyciu wartości innej niż null i nigdy nie może zostać przypisana wartość, która może być `null` .
+- Zmienna typu referencyjnego `T?` może zostać zainicjowana z `null` lub przypisana `null` , ale jest wymagana do sprawdzenia `null` przed cofnięciem odwołania.
+- Zmienna `m` typu `T?` jest traktowana jako inna niż null w przypadku zastosowania operatora null-łagodniejszej, jak w `m!` .
 
-Rozróżnienia między typem `T` odwołania nienastępnego do `T?` wartości null i typu odwołania nullable są wymuszane przez interpretację kompilatora poprzednich reguł. Zmienna typu `T` i zmienna `T?` typu są reprezentowane przez ten sam typ .NET. Poniższy przykład deklaruje ciąg nienastępny do wartości null i ciąg dopuszczalny do wartości null, a następnie używa operatora zuprzejący się zerem, aby przypisać wartość do ciągu nienastępnego do wartości null:
+Różnice między typem referencyjnym niedopuszczający wartości null `T` a typem referencyjnym dopuszczającym wartość null `T?` są wymuszane przez interpretację przez kompilator powyższych reguł. Zmienna typu `T` i zmienna typu `T?` są reprezentowane przez ten sam typ .NET. Poniższy przykład deklaruje ciąg niedopuszczający wartości null i ciąg dopuszczający wartość null, a następnie używa operatora null-łagodniejszej do przypisywania wartości do ciągu niedopuszczający wartości null:
 
-:::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetCoreSyntax":::
+:::code language="csharp" source="snippets/shared/NullableReferenceTypes.cs" id="SnippetCoreSyntax":::
 
-Zmienne `notNull` i `nullable` są reprezentowane <xref:System.String> przez typ. Ponieważ typy nienastępne i nullowe są przechowywane jako ten sam typ, istnieje kilka lokalizacji, w których użycie typu odwołania z możliwością null jest niedozwolone. Ogólnie rzecz biorąc typu odwołania nullable nie może służyć jako klasy podstawowej lub zaimplementowanego interfejsu. Typ odwołania z wartością null nie może być używany w żadnym wyrażeniu testowania obiektów lub typów. Typ odwołania z wartością null nie może być typem wyrażenia dostępu elementu członkowskiego. Poniższe przykłady przedstawiają następujące konstrukcje:
+Zmienne `notNull` i `nullable` są reprezentowane przez <xref:System.String> Typ. Ponieważ typy niedopuszczające wartości null i dopuszczające wartość null są przechowywane jako ten sam typ, istnieje kilka lokalizacji, w których użycie typu odwołania do wartości null jest niedozwolone. Ogólnie rzecz biorąc typ referencyjny dopuszczający wartość null nie może być używany jako klasa bazowa ani zaimplementowany interfejs. Nie można użyć typu referencyjnego dopuszczającego wartość null w żadnym wyrażeniu do tworzenia obiektów lub testowania typu. Typ referencyjny dopuszczający wartość null nie może być typem wyrażenia dostępu do składowej. Następujące przykłady przedstawiają te konstrukcje:
 
 ```csharp
 public MyClass : System.Object? // not allowed
@@ -45,36 +45,36 @@ try
 }
 ```
 
-## <a name="nullable-references-and-static-analysis"></a>Nullable odwołania i analizy statycznej
+## <a name="nullable-references-and-static-analysis"></a>Odwołania do wartości null i analizy statycznej
 
-Przykłady w poprzedniej sekcji ilustrują charakter nullable typów odwołań. Typy odwołań nullable nie są nowe typy klas, ale raczej adnotacje na istniejących typów odwołań. Kompilator używa tych adnotacji, aby ułatwić znajdowanie potencjalnych błędów odwołania null w kodzie. Nie ma różnicy w czasie wykonywania między typem odwołania nienastępnym wartością null a typem odwołania, którego można anulować. Kompilator nie dodaje żadnych sprawdzania środowiska uruchomieniowego dla typów odwołań niepodjętych wartości null. Korzyści są w analizie w czasie kompilacji. Kompilator generuje ostrzeżenia, które ułatwiają znajdowanie i naprawianie potencjalnych błędów null w kodzie. Deklarujesz swój zamiar, a kompilator ostrzega, gdy kod narusza tę intencję.
+Przykłady w poprzedniej sekcji ilustrują charakter typów referencyjnych dopuszczających wartość null. Typy referencyjne dopuszczające wartość null nie są nowymi typami klas, ale zamiast adnotacji dla istniejących typów odwołań. Kompilator używa tych adnotacji, aby znaleźć potencjalne błędy odwołania o wartości null w kodzie. Nie istnieje różnica czasu wykonywania między typem referencyjnym niedopuszczanym do wartości null i typem referencyjnym dopuszczającym wartość null. Kompilator nie dodaje żadnego sprawdzenia dla typów referencyjnych, które nie dopuszcza wartości null. Korzyści są w analizie w czasie kompilacji. Kompilator generuje ostrzeżenia, które ułatwiają znajdowanie i naprawianie potencjalnych błędów o wartości null w kodzie. Zadeklarujesz swój cel, a kompilator ostrzega o tym, gdy kod narusza ten cel.
 
-W kontekście włączonym nullable kompilator wykonuje analizę statyczną na zmiennych dowolnego typu odwołania, zarówno nullable i non-nullable. Kompilator śledzi stan null każdej zmiennej referencyjnej jako *nie null* lub *może null*. Domyślny stan odwołania, którego nie można unieważnić, nie jest *zerowy.* Domyślny stan odwołania do nullable jest *może null*.
+W kontekście obsługującym wartość null kompilator wykonuje statyczną analizę dla zmiennych dowolnego typu referencyjnego, zarówno wartości null, jak i niedopuszczających wartości null. Kompilator śledzi stan wartości null dla każdej zmiennej odwołania jako *nie null* lub *może mieć wartość null*. Domyślny stan odwołania niedopuszczający wartości null jest *inny niż null*. Domyślny stan odwołania do wartości null *może mieć wartość null*.
 
-Typy odwołań nienastępualnych powinny być zawsze bezpieczne do wyłudania, ponieważ ich stan zerowy nie jest *zerowy.* Aby wymusić tę regułę, kompilator wydaje ostrzeżenia, jeśli typ odwołania nie można anulować nie jest inicjowany do wartości innej niż null. Zmienne lokalne muszą być przypisane w miejscu, w którym są zadeklarowane. Każdy konstruktor musi przypisać każde pole, w jego treści, o nazwie konstruktora lub przy użyciu inicjatora pola. Kompilator wydaje ostrzeżenia, jeśli odwołanie niepodjętalne jest przypisane do odwołania, którego stan jest *może null*. Jednak ponieważ odwołanie nie można null nie jest *null,* nie ostrzeżenia są wydawane, gdy te zmienne są odwołują się.
+Typy odwołań niedopuszczających wartości null powinny zawsze być bezpieczne, aby można było usunąć odwołanie, ponieważ ich stan zerowy *nie ma wartości null*. Aby wymusić tę regułę, kompilator wystawia ostrzeżenia, jeśli typ referencyjny niedopuszczający wartości null nie został zainicjowany do wartości innej niż null. Zmienne lokalne muszą być przypisane, gdy są one zadeklarowane. Każdy Konstruktor musi przypisywać każde pole, w jego treści, Konstruktor wywoływany lub przy użyciu inicjatora pola. Kompilator wystawia ostrzeżenia, jeśli odwołanie niedopuszczające wartości null jest przypisane do odwołania, którego stan *może mieć wartość null*. Jednak ze względu na to, że odwołanie niedopuszczające wartości null *nie ma wartości null*, nie są wyświetlane żadne ostrzeżenia, gdy te zmienne zostały cofnięte.
 
-Typy odwołań do wartości null `null`mogą być inicjowane lub przypisane do . W związku z tym analiza statyczna musi ustalić, że zmienna nie jest *null* przed jej wyłuskiwane. Jeśli odwołanie nullable jest określana *jako może być null*, nie można przypisać do zmiennej odwołania niepodjęwalne. W poniższej klasie przedstawiono przykłady tych ostrzeżeń:
+Typy odwołań dopuszczających wartość null mogą być zainicjowane lub przypisane do `null` . Dlatego analiza statyczna musi określać, że zmienna *nie ma wartości null* , zanim zostanie wykorzystana. Jeśli odwołanie dopuszczające wartość null jest określone jako mające *wartość null*, nie można go przypisać do zmiennej odwołania, która nie dopuszcza wartości null. W poniższej klasie przedstawiono przykłady tych ostrzeżeń:
 
-:::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetClassWithNullable":::
+:::code language="csharp" source="snippets/shared/NullableReferenceTypes.cs" id="SnippetClassWithNullable":::
 
 Poniższy fragment kodu pokazuje, gdzie kompilator emituje ostrzeżenia podczas korzystania z tej klasy:
 
-:::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetLocalWarnings":::
+:::code language="csharp" source="snippets/shared/NullableReferenceTypes.cs" id="SnippetLocalWarnings":::
 
-W poprzednich przykładach pokazano analizy statycznej kompilatora w celu określenia stanu null zmiennych referencyjnych. Kompilator stosuje reguły języka dla kontroli null i przypisań do informowania o swojej analizie.  Kompilator nie może tworzyć założeń dotyczących semantyki metod lub właściwości. Jeśli wywołasz metody, które wykonują kontrole null, kompilator nie może wiedzieć, te metody wpływają na stan null zmiennej. Istnieje wiele atrybutów, które można dodać do interfejsów API, aby poinformować kompilator o semantyki argumentów i zwracać wartości. Te atrybuty zostały zastosowane do wielu typowych interfejsów API w bibliotekach .NET Core. Na przykład <xref:System.String.IsNullOrEmpty%2A> został zaktualizowany, a kompilator poprawnie interpretuje tę metodę jako sprawdzenie wartości null. Aby uzyskać więcej informacji na temat atrybutów, które mają zastosowanie do analizy statycznej stanu null, zobacz artykuł o [atrybutach nullable](../attributes/nullable-analysis.md).
+Powyższe przykłady przedstawiają analizę statyczną kompilatora w celu określenia stanu null zmiennych odwołania. Kompilator stosuje reguły języka do sprawdzania wartości null i przypisań, aby poinformować o analizie.  Kompilator nie może wykonać założeń dotyczących semantyki metod lub właściwości. Jeśli wywołasz metody, które wykonują sprawdzenia wartości null, kompilator nie może znać tych metod wpływ na stan null zmiennej. Istnieje wiele atrybutów, które można dodać do interfejsów API, aby poinformować kompilator o semantyki argumentów i zwracanych wartości. Te atrybuty zostały zastosowane do wielu popularnych interfejsów API w bibliotekach programu .NET Core. Na przykład program <xref:System.String.IsNullOrEmpty%2A> został zaktualizowany, a kompilator prawidłowo interpretuje tę metodę jako sprawdzenie wartości null. Aby uzyskać więcej informacji o atrybutach, które mają zastosowanie do statycznej analizy stanu o wartości null, zobacz artykuł dotyczący [atrybutów dopuszczających wartość null](../attributes/nullable-analysis.md).
 
-## <a name="setting-the-nullable-context"></a>Ustawianie kontekstu możliwego do przełowienia
+## <a name="setting-the-nullable-context"></a>Ustawianie kontekstu dopuszczającego wartość null
 
-Istnieją dwa sposoby kontrolowania kontekstu możliwego do anulowania. Na poziomie projektu można dodać `<Nullable>enable</Nullable>` ustawienie projektu. W jednym pliku źródłowym języka C# można dodać `#nullable enable` pragma, aby włączyć kontekst nullable. Zobacz artykuł dotyczący [ustawiania strategii możliwej do anulowania](../../nullable-migration-strategies.md).
+Istnieją dwa sposoby sterowania kontekstem dopuszczania wartości null. Na poziomie projektu można dodać `<Nullable>enable</Nullable>` ustawienie projektu. W jednym pliku źródłowym języka C# można dodać `#nullable enable` pragmę, aby włączyć kontekst dopuszczający wartość null. Zapoznaj się z artykułem dotyczącym [ustawiania strategii dopuszczania wartości null](../../nullable-migration-strategies.md).
 
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
-Aby uzyskać więcej informacji, zobacz następujące propozycje [specyfikacji języka języka C#:](~/_csharplang/spec/introduction.md)
+Aby uzyskać więcej informacji, zobacz następujące propozycje dotyczące [specyfikacji języka C#](~/_csharplang/spec/introduction.md):
 
 - [Typy referencyjne dopuszczające wartość null](~/_csharplang/proposals/csharp-8.0/nullable-reference-types.md)
-- [Specyfikacja typów odwołań z nieważność](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
+- [Specyfikacja typu referencyjnego dopuszczająca wartość null](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
-- [Typy wartości dopuszczające wartość null](nullable-value-types.md)
+- [Typy wartości null](nullable-value-types.md)

@@ -1,24 +1,23 @@
 ---
 title: Wprowadzenie do .NET Framework
-description: Zacznij korzystać z platformy .NET, czyli środowiska wykonawczego środowiska uruchomieniowego, które zarządza aplikacjami. Zawiera środowisko uruchomieniowe języka wspólnego (CLR) i szeroką bibliotekę klas.
-ms.date: 04/02/2019
+description: Zacznij korzystać z .NET Framework, czyli środowiska wykonawczego środowiska uruchomieniowego, które zarządza aplikacjami. Zawiera środowisko uruchomieniowe języka wspólnego (CLR) i szeroką bibliotekę klas.
+ms.date: 10/21/2020
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: 85ba856fd695f264f75a6dab2dca3aded4e5cdc1
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 02480641af5ad2c973f7dbbbc233d3d89ff4617e
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414971"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471677"
 ---
 # <a name="get-started-with-net-framework"></a>Wprowadzenie do .NET Framework
 
 .NET Framework to środowisko wykonawcze środowiska uruchomieniowego, które zarządza aplikacjami przeznaczonymi .NET Framework. Obejmuje środowisko uruchomieniowe języka wspólnego, które zapewnia zarządzanie pamięcią i inne usługi systemowe oraz szeroką bibliotekę klas, która umożliwia programistom korzystanie z niezawodnego, niezawodnego kodu dla wszystkich głównych obszarów tworzenia aplikacji.
 
-> [!NOTE]
-> .NET Framework jest dostępna tylko w systemach Windows. [Platformy .NET Core](../../core/introduction.md) można używać do tworzenia i uruchamiania aplikacji w systemach Windows, MacOS i Linux.
+[!INCLUDE [net-framework-future](../../../includes/net-framework-future.md)]
 
 ## <a name="what-is-net-framework"></a>Co to jest .NET Framework?
 
@@ -41,7 +40,7 @@ ms.locfileid: "89414971"
 - Wielowersyjności kodu. Według [.NET Standard](../../standard/net-standard.md), deweloperzy tworzą biblioteki klas, które działają na wielu platformach .NET Framework obsługiwanych przez tę wersję Standard. Na przykład biblioteki, które są przeznaczone dla .NET Standard 2,0 mogą być używane przez aplikacje przeznaczone dla .NET Framework 4.6.1, .NET Core 2,0 i platformy UWP 10.0.16299.
 
 <a name="ForUsers"></a>
-## <a name="the-net-framework-for-users"></a>.NET Framework dla użytkowników
+## <a name="net-framework-for-users"></a>.NET Framework dla użytkowników
 
 Jeśli nie opracowujesz aplikacji .NET Framework, ale ich używasz, nie musisz mieć konkretnej wiedzy na temat .NET Framework lub jego działania. W większości przypadków platforma jest całkowicie niewidoczna dla użytkowników.
 
@@ -76,7 +75,7 @@ Aby uzyskać więcej informacji na temat tworzenia aplikacji przeznaczonych do .
 | Tytuł | Opis |
 | ----- |------------ |
 | [Omówienie](overview.md) | Zawiera szczegółowe informacje dla deweloperów, którzy tworzą aplikacje, które są przeznaczone .NET Framework. |
-| [Przewodnik instalacji](../install/index.md) | Zawiera informacje o instalowaniu .NET Framework. |  
+| [Przewodnik instalacji](../install/index.md) | Zawiera informacje o instalowaniu .NET Framework. |
 | [.NET Framework i wersje poza pasmem](the-net-framework-and-out-of-band-releases.md) | Opisuje .NET Framework wersje poza pasmem oraz sposób ich używania w aplikacji. |
 | [Wymagania systemowe](system-requirements.md) | Zawiera listę wymagań sprzętowych i programowych dotyczących uruchamiania .NET Framework. |
 | [Oprogramowanie .NET Core i Open-Source](net-core-and-open-source.md) | Opisuje platformę .NET Core w odniesieniu do .NET Framework i sposób uzyskiwania dostępu do projektów platformy .NET Core Open Source. |

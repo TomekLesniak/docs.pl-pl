@@ -1,38 +1,39 @@
 ---
-title: Przegląd programu .NET Framework
-description: Zapoznaj się z omówieniem platformy .NET, który jest technologią, która obsługuje tworzenie i uruchamianie aplikacji systemu Windows i usług sieci Web.
-ms.date: 03/30/2017
+title: Omówienie platformy .NET Framework
+description: Zapoznaj się z omówieniem .NET Framework, który jest technologią, która obsługuje Kompilowanie i uruchamianie aplikacji systemu Windows i usług sieci Web.
+ms.date: 10/21/2020
 helpviewer_keywords:
 - application development [.NET Framework]
 - common language runtime
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: 3577a3ad13d9ef6935a1bed8a29e3d594857928e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 75b2e94b93eabdbf8a6a40f38c1b12a8caddd98a
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557765"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471747"
 ---
 # <a name="overview-of-net-framework"></a>Omówienie platformy .NET Framework
 
 .NET Framework to technologia, która obsługuje tworzenie i uruchamianie aplikacji i usług sieci Web systemu Windows. .NET Framework zaprojektowano w celu spełnienia następujących celów:
 
-- Zapewnianie spójnego zorientowanego obiektowo środowiska programowania, niezależnie od tego, czy kod obiektu jest przechowywany i wykonywany lokalnie, wykonywany lokalnie, ale w Internecie, czy wykonywany zdalnie.
+- Zapewnianie spójnego, zorientowanego obiektowo środowiska programowania, niezależnie od tego, czy kod obiektu jest przechowywany i wykonywany lokalnie, wykonywany lokalnie, ale w sieci Web, czy wykonywany zdalnie.
 
-- Zapewnienie środowiska wykonania kodu, które minimalizuje konflikty wdrażania oprogramowania i przechowywania wersji.
+- Podaj środowisko wykonywania kodu, które:
 
-- Aby zapewnić środowisko wykonywania kodu, które wspiera bezpieczne wykonywanie kodu, w tym kod utworzony przez nieznaną lub częściowo zaufaną stronę trzecią.
+  - Minimalizuje konflikty wdrażania oprogramowania i przechowywania wersji.
 
-- Zapewnienie środowiska wykonania kodu, które eliminuje problemy z wydajnością w środowiskach ze skryptami lub interpretowane.
+  - Promuje bezpieczne wykonywanie kodu, w tym kod utworzony przez nieznaną lub częściowo zaufaną stronę trzecią.
 
-- Aby zapewnić spójność dla deweloperów w różnych różnych typach aplikacji, takich jak aplikacje oparte na systemie Windows i aplikacje oparte na sieci Web.
+  - Eliminuje problemy z wydajnością w środowiskach ze skryptami lub interpretowane.
 
-- Aby utworzyć całą komunikację z normami branżowymi w celu zapewnienia, że kod oparty na .NET Framework integruje się z jakimkolwiek innym kodem.
+- Zapewniaj spójność dla deweloperów w różnych typach aplikacji, takich jak aplikacje oparte na systemie Windows i aplikacje oparte na sieci Web.
 
-> [!NOTE]
-> Aby uzyskać ogólne wprowadzenie do .NET Framework dla użytkowników i deweloperów, zobacz [wprowadzenie](index.md).
+- Kompiluj całą komunikację z normami branżowymi, aby upewnić się, że kod oparty na .NET Framework integruje się z jakimkolwiek innym kodem.
+
+[!INCLUDE [net-framework-future](../../../includes/net-framework-future.md)]
 
 .NET Framework składa się ze środowiska uruchomieniowego języka wspólnego (CLR) i biblioteki klas .NET Framework. Środowisko uruchomieniowe języka wspólnego jest podstawą .NET Framework. Należy traktować środowisko uruchomieniowe jako agenta, który zarządza kodem w czasie wykonywania, zapewniającym podstawowe usługi, takie jak zarządzanie pamięcią, zarządzanie wątkami i komunikacja zdalna, a także wymuszanie ścisłego bezpieczeństwa typów i inne formy dokładności kodu, które promują bezpieczeństwo i niezawodność. W rzeczywistości koncepcja zarządzania kodem jest podstawową zasadą środowiska uruchomieniowego. Kod przeznaczony dla środowiska uruchomieniowego jest znany jako kod zarządzany, podczas gdy kod, który nie jest celem środowiska uruchomieniowego, jest znany jako kod niezarządzany. Biblioteka klas to kompleksowa, zorientowana obiektowo Kolekcja typów wielokrotnego użytku, które służą do opracowywania aplikacji w oparciu o tradycyjne aplikacje wiersza polecenia lub graficznego interfejsu użytkownika (GUI) do aplikacji na podstawie najnowszych innowacji zapewnianych przez ASP.NET, takich jak formularze sieci Web i usługi sieci Web XML.
 
@@ -90,7 +91,7 @@ Zgodnie z oczekiwaniami z biblioteki klas zorientowanej obiektowo typy .NET Fram
 
 Klasy Windows Forms to kompleksowy zestaw typów wielokrotnego użytku, które znacznie upraszczają tworzenie interfejsu GUI systemu Windows. Jeśli piszesz aplikację formularza sieci Web ASP.NET, możesz użyć klas formularzy sieci Web.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wymagania systemowe](system-requirements.md)
 - [Przewodnik instalacji](../install/index.md)

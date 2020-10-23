@@ -9,18 +9,18 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 7f3940ce487b9e382150234f317cf1dba34bb060
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5f446dae6a84706e1398a65ffb5a52270cfd92cf
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89132732"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471816"
 ---
 # <a name="structure-types-c-reference"></a>Typy struktur (odwołanie w C#)
 
 *Typ struktury* (lub *Typ struktury*) jest [typem wartości](value-types.md) , który może hermetyzować dane i powiązane funkcje. Użyj `struct` słowa kluczowego, aby zdefiniować typ struktury:
 
-[!code-csharp[struct example](snippets/StructType.cs#StructExample)]
+[!code-csharp[struct example](snippets/shared/StructType.cs#StructExample)]
 
 Typy struktury mają *semantykę wartości*. Oznacza to, że zmienna typu struktury zawiera wystąpienie typu. Domyślnie wartości zmiennych są kopiowane przy przypisywaniu, przekazywanie argumentu do metody i zwracanie wyniku metody. W przypadku zmiennej typu struktury jest kopiowane wystąpienie typu. Aby uzyskać więcej informacji, zobacz [typy wartości](value-types.md).
 
@@ -32,7 +32,7 @@ Ponieważ typy struktury mają semantykę wartości, zalecamy zdefiniowanie *nie
 
 Począwszy od języka C# 7,2, używasz `readonly` modyfikatora, aby zadeklarować, że typ struktury jest niezmienny:
 
-[!code-csharp[readonly struct](snippets/StructType.cs#ReadonlyStruct)]
+[!code-csharp[readonly struct](snippets/shared/StructType.cs#ReadonlyStruct)]
 
 Wszystkie elementy członkowskie danych `readonly` struktury muszą być tylko do odczytu w następujący sposób:
 
@@ -54,15 +54,15 @@ Zazwyczaj należy zastosować `readonly` modyfikator do następujących rodzajó
 
 - form
 
-  [!code-csharp[readonly method](snippets/StructType.cs#ReadonlyMethod)]
+  [!code-csharp[readonly method](snippets/shared/StructType.cs#ReadonlyMethod)]
 
   Można również zastosować `readonly` modyfikator do metod, które zastępują metody zadeklarowane w <xref:System.Object?displayProperty=nameWithType> :
 
-  [!code-csharp[readonly override](snippets/StructType.cs#ReadonlyOverride)]
+  [!code-csharp[readonly override](snippets/shared/StructType.cs#ReadonlyOverride)]
 
 - Właściwości i indeksatory:
 
-  [!code-csharp[readonly property get](snippets/StructType.cs#ReadonlyProperty)]
+  [!code-csharp[readonly property get](snippets/shared/StructType.cs#ReadonlyProperty)]
 
   Jeśli musisz zastosować `readonly` modyfikator do obu metod dostępu właściwości lub indeksatora, zastosuj go w deklaracji właściwości lub indeksatora.
 
@@ -95,7 +95,7 @@ Zazwyczaj tworzysz typ struktury, wywołując odpowiedni Konstruktor z [`new`](.
 
 Jeśli wszystkie pola wystąpienia typu struktury są dostępne, można również utworzyć wystąpienie go bez `new` operatora. W takim przypadku należy zainicjować wszystkie pola wystąpienia przed pierwszym użyciem wystąpienia. Poniższy przykład pokazuje, jak to zrobić:
 
-[!code-csharp[without new](snippets/StructType.cs#WithoutNew)]
+[!code-csharp[without new](snippets/shared/StructType.cs#WithoutNew)]
 
 W przypadku [wbudowanych typów wartości](value-types.md#built-in-value-types)Użyj odpowiednich literałów, aby określić wartość typu.
 
@@ -118,11 +118,11 @@ Począwszy od języka C# 7,2, można użyć `ref` modyfikatora w deklaracji typu
 
 Typowo, należy zdefiniować `ref` Typ struktury, gdy potrzebny jest również element członkowski danych `ref` typów struktury:
 
-[!code-csharp[ref struct](snippets/StructType.cs#RefStruct)]
+[!code-csharp[ref struct](snippets/shared/StructType.cs#RefStruct)]
 
 Aby zadeklarować `ref` strukturę jako [`readonly`](#readonly-struct) , Połącz `readonly` `ref` modyfikatory i w deklaracji typu ( `readonly` modyfikator musi występować przed `ref` modyfikatorem):
 
-[!code-csharp[readonly ref struct](snippets/StructType.cs#ReadonlyRef)]
+[!code-csharp[readonly ref struct](snippets/shared/StructType.cs#ReadonlyRef)]
 
 W programie .NET przykłady `ref` struktury są <xref:System.Span%601?displayProperty=nameWithType> i <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> .
 

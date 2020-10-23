@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 636e032ac22b48ebc471780ffa85148bf952cdd2
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 1cb40759b81a1fcedcf5962b57d79cf3a64df561
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465094"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471879"
 ---
 # <a name="char-c-reference"></a>char (odwołanie w C#)
 
@@ -37,7 +37,7 @@ Możesz określić `char` wartość przy użyciu:
 - sekwencja unikowa Unicode, która `\u` następuje po czterech symbolach szesnastkowej reprezentacji kodu znaku.
 - szesnastkowa sekwencja ucieczki, `\x` po której następuje reprezentacja szesnastkowa kodu znaku.
 
-[!code-csharp-interactive[char literals](snippets/CharType.cs#Literals)]
+[!code-csharp-interactive[char literals](snippets/shared/CharType.cs#Literals)]
 
 Jak pokazano w powyższym przykładzie, można także rzutować wartość kodu znaku na odpowiadającą `char` wartość.
 
@@ -56,7 +56,7 @@ Nie istnieją niejawne konwersje z innych typów do `char` typu. Jednak każdy t
 
 Aby uzyskać więcej informacji, zobacz sekcję [Typy całkowite](~/_csharplang/spec/types.md#integral-types) [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Typy wartości](value-types.md)
