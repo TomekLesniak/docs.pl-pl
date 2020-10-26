@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 57fd5f8775f95b2588e4a7120e35d6d531be4f01
-ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
+ms.openlocfilehash: c256c03831ac759bc45467f38e85fd3a2884dda4
+ms.sourcegitcommit: 532b03d5bbab764d63356193b04cd2281bc01239
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434828"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92526594"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -108,7 +108,7 @@ Powyższy wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwoś�
 
 ***Tylko metody init**_ mają spójną składnię, aby inicjować elementy członkowskie obiektu. Inicjatory właściwości sprawiają, że wartość jest ustawiana dla właściwości. Minusemem jest to, że te właściwości muszą mieć wartość settable. Począwszy od języka C# 9,0, można tworzyć metody `init` dostępu zamiast `set` metod dostępu do właściwości i indeksatorów. Obiekty wywołujące mogą używać składni inicjatora właściwości do ustawiania tych wartości w wyrażeniach tworzenia, ale te właściwości są tylko do odczytu, gdy konstrukcja została ukończona. Tylko metody init umożliwiają zmianę stanu okna. To okno zostanie zamknięte po zakończeniu fazy budowania. Faza konstruowania skutecznie kończy działanie po wszystkich inicjalizacjach, w tym inicjatorach właściwości i wyrażeniach z.
 
-W powyższym przykładzie dla rekordów pozycyjnych zademonstrowano użycie metody tylko init-Only do ustawiania właściwości przy użyciu wyrażenia with. Można zadeklarować tylko metody init w dowolnym typie, który napiszesz. Na przykład następująca struktura definiuje strukturę obserwacji pogody:
+Można zadeklarować `init` tylko metody ustawiające w dowolnym typie, który napiszesz. Na przykład następująca struktura definiuje strukturę obserwacji pogody:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/WeatherObservation.cs" ID="DeclareWeatherObservation":::
 
