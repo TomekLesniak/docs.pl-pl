@@ -11,40 +11,40 @@ helpviewer_keywords:
 - Regex class
 - Match class
 - pattern-matching with regular expressions, backreferences
-- .NET Framework regular expressions, classes
+- .NET regular expressions, classes
 - CaptureCollection class
 - Group class
-- characters [.NET Framework], backreferences
+- characters [.NET], backreferences
 - substrings
-- .NET Framework regular expressions, backreferences
+- .NET regular expressions, backreferences
 - searching with regular expressions, classes
 - backreferences
 - Capture class
 - repeating groups of characters
 - MatchCollection class
 - parsing text with regular expressions, backreferences
-- regular expressions [.NET Framework]
-- characters [.NET Framework], regular expressions
-- classes [.NET Framework], regular expression
-- regular expressions [.NET Framework], classes
-- characters [.NET Framework], metacharacters
+- regular expressions [.NET]
+- characters [.NET], regular expressions
+- classes [.NET], regular expression
+- regular expressions [.NET], classes
+- characters [.NET], metacharacters
 - metacharacters, regular expression classes
 - metacharacters, backreferences
 - parsing text with regular expressions, classes
-- regular expressions [.NET Framework], backreferences
-- strings [.NET Framework], regular expressions
+- regular expressions [.NET], backreferences
+- strings [.NET], regular expressions
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: 43672b85ecb64a15179881ec23c7fadd13d64868
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: d6f85d74b40902037620d065f63f1d0ad6cfc205
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768056"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888649"
 ---
 # <a name="the-regular-expression-object-model"></a>Model obiektów wyrażeń regularnych
-<a name="introduction"></a>W tym temacie opisano model obiektów używany w pracy z wyrażeniami regularnymi programu .NET. Ten temat zawiera następujące sekcje:  
+<a name="introduction"></a> W tym temacie opisano model obiektów używany w pracy z wyrażeniami regularnymi programu .NET. Ten temat zawiera następujące sekcje:  
   
 - [Aparat wyrażeń regularnych](#Engine)  
   
@@ -166,7 +166,7 @@ ms.locfileid: "84768056"
   
 <a name="the_match_collection"></a>
 ### <a name="the-match-collection"></a>Kolekcja dopasowania  
- <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>Metoda zwraca <xref:System.Text.RegularExpressions.MatchCollection> obiekt, który zawiera <xref:System.Text.RegularExpressions.Match> obiekty, które reprezentują wszystkie dopasowania wykryte przez aparat wyrażeń regularnych w kolejności, w jakiej występują w ciągu wejściowym. Jeśli nie ma żadnych dopasowań, metoda zwraca <xref:System.Text.RegularExpressions.MatchCollection> obiekt bez elementów członkowskich. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType>Właściwość umożliwia dostęp do poszczególnych elementów członkowskich kolekcji przez indeks, od zera do jednego mniejszego od wartości <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> właściwości. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A>jest indeksatorem kolekcji (w języku C#) i właściwością domyślną (w Visual Basic).  
+ <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>Metoda zwraca <xref:System.Text.RegularExpressions.MatchCollection> obiekt, który zawiera <xref:System.Text.RegularExpressions.Match> obiekty, które reprezentują wszystkie dopasowania wykryte przez aparat wyrażeń regularnych w kolejności, w jakiej występują w ciągu wejściowym. Jeśli nie ma żadnych dopasowań, metoda zwraca <xref:System.Text.RegularExpressions.MatchCollection> obiekt bez elementów członkowskich. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType>Właściwość umożliwia dostęp do poszczególnych elementów członkowskich kolekcji przez indeks, od zera do jednego mniejszego od wartości <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> właściwości. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A> jest indeksatorem kolekcji (w języku C#) i właściwością domyślną (w Visual Basic).  
   
  Domyślnie wywołanie <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metody używa oceny z opóźnieniem do wypełnienia <xref:System.Text.RegularExpressions.MatchCollection> obiektu. Dostęp do właściwości, które wymagają w pełni wypełnionej kolekcji, takiej <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> jak <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> właściwości i, mogą spowodować spadek wydajności. W związku z tym zalecamy dostęp do kolekcji przy użyciu <xref:System.Collections.IEnumerator> obiektu, który jest zwracany przez <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType> metodę. Poszczególne języki udostępniają konstrukcje, takie jak `For Each` w Visual Basic i `foreach` w języku C#, które zawijają <xref:System.Collections.IEnumerator> interfejs kolekcji.  
   
@@ -350,7 +350,7 @@ ms.locfileid: "84768056"
 |`;`|Dopasowuje średnika.|  
 |`((\w+(\s\w+)*),(\d+);)+`|Dopasowuje wzorzec wyrazu, po którym następuje wszelkie dodatkowe słowa, po których następuje przecinek, jedna lub więcej cyfr i średnik, jeden lub więcej razy. Jest to pierwsza grupa przechwytywania.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Text.RegularExpressions>
 - [Wyrażenia regularne .NET](regular-expressions.md)

@@ -9,19 +9,19 @@ dev_langs:
 helpviewer_keywords:
 - type system
 - common type system
-- assemblies [.NET Framework], types
+- assemblies [.NET], types
 - reference types
 - value types
 - cross-language interoperability
-- namespaces [.NET Framework], types
+- namespaces [.NET], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: 4e3fc4cb03a0b8fd63b41bd912374c29eef3a29a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ad42a77f9c6280211902fc4ffbf25871c537baa5
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555162"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889507"
 ---
 # <a name="common-type-system"></a>System typu wspólnego
 
@@ -306,6 +306,6 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Przeglądarka interfejsów API platformy .NET](../../../api/index.md)
+- [Przeglądarka interfejsów API na platformie .NET](../../../api/index.md)
 - [środowiska uruchomieniowe w trakcie wykonania](../clr.md)
 - [Konwersja typów w programie .NET](type-conversion.md)

@@ -9,16 +9,16 @@ dev_langs:
 helpviewer_keywords:
 - regular expressions, options
 - constructs, options
-- .NET Framework regular expressions, options
+- .NET regular expressions, options
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: 268e05c2212539b030ccc3c7195f618bb3afa707
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 5687d1e5a11e69cc9ecf2bd34067329cc52955d2
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662878"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889000"
 ---
 # <a name="regular-expression-options"></a>Opcje wyrażeń regularnych
 
@@ -30,7 +30,7 @@ Domyślnie porównanie ciągu wejściowego z dowolnym znakiem literału we wzorc
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|Używa dopasowywania bez uwzględniania wielkości liter. Aby uzyskać więcej informacji, zobacz [Dopasowanie bez uwzględniania wielkości](#case-insensitive-matching)liter.|
 |<xref:System.Text.RegularExpressions.RegexOptions.Multiline>|`m`|Użyj trybu wielowierszowego, gdzie `^` i `$` pasuje do początku i końca każdego wiersza (zamiast początku i końca ciągu wejściowego). Aby uzyskać więcej informacji, zobacz [tryb wielowierszowy](#multiline-mode).|
 |<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|Użyj trybu jednowierszowego, gdzie kropka (.) dopasowuje każdy znak (zamiast każdego znaku z wyjątkiem `\n` ). Aby uzyskać więcej informacji, zobacz [tryb jednowierszowy](#single-line-mode).|
-|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|Nie przechwytuje nienazwanych grup. Jedyne prawidłowe przechwycenia są jawnie nazwanymi lub numerowanymi grupami `(?<` *name* `>` *podwyrażenia*nazwy formularza `)` . Aby uzyskać więcej informacji, zobacz [tylko jawne przechwycenia](#explicit-captures-only).|
+|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|Nie przechwytuje nienazwanych grup. Jedyne prawidłowe przechwycenia są jawnie nazwanymi lub numerowanymi grupami `(?<` *name* `>` *podwyrażenia* nazwy formularza `)` . Aby uzyskać więcej informacji, zobacz [tylko jawne przechwycenia](#explicit-captures-only).|
 |<xref:System.Text.RegularExpressions.RegexOptions.Compiled>|Niedostępne|Kompiluj wyrażenie regularne do zestawu. Aby uzyskać więcej informacji, zobacz [skompilowane wyrażenia regularne](#compiled-regular-expressions).|
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|Wyklucz niezmieniony znak ze wzorca i Włącz Komentarze po znaku cyfry ( `#` ). Aby uzyskać więcej informacji, zobacz [Ignorowanie białych znaków](#ignore-white-space).|
 |<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft>|Niedostępne|Zmień kierunek wyszukiwania. Wyszukiwanie przechodzi od prawej do lewej zamiast od lewej do prawej. Aby uzyskać więcej informacji, zobacz [tryb od prawej do lewej](#right-to-left-mode).|
@@ -57,7 +57,7 @@ Możesz określić opcje dla wyrażeń regularnych na jeden z trzech sposobów:
   [!code-csharp[Conceptual.Regex.Language.Options#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#7)]
   [!code-vb[Conceptual.Regex.Language.Options#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#7)]
 
-- Stosując opcje wbudowane w określonej konstrukcji grupowania we wzorcu wyrażenia regularnego z `(?imnsx-imnsx:` *podwyrażeniem*składni `)` . Nie pisz przed zestawem opcji ustawia włączony; znak minus przed zestawem opcji powoduje wyłączenie zestawu. ( `?` to stała część składni konstrukcji języka, która jest wymagana, czy opcje są włączone, czy wyłączone). Ta opcja ma zastosowanie tylko do tej grupy. Aby uzyskać więcej informacji, zobacz [grupowanie konstrukcji](grouping-constructs-in-regular-expressions.md).
+- Stosując opcje wbudowane w określonej konstrukcji grupowania we wzorcu wyrażenia regularnego z `(?imnsx-imnsx:` *podwyrażeniem* składni `)` . Nie pisz przed zestawem opcji ustawia włączony; znak minus przed zestawem opcji powoduje wyłączenie zestawu. ( `?` to stała część składni konstrukcji języka, która jest wymagana, czy opcje są włączone, czy wyłączone). Ta opcja ma zastosowanie tylko do tej grupy. Aby uzyskać więcej informacji, zobacz [grupowanie konstrukcji](grouping-constructs-in-regular-expressions.md).
 
   Poniższy przykład stanowi ilustrację. Używa wbudowanych opcji w konstrukcji grupującej, aby umożliwić Dopasowywanie bez uwzględniania wielkości liter i ignorować biały znak w przypadku identyfikowania wyrazów rozpoczynających się od litery "d".
 
@@ -134,7 +134,7 @@ W poniższych sekcjach wymieniono opcje obsługiwane przez wyrażenie regularne 
 
 Ponieważ <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> opcja reprezentuje domyślne zachowanie aparatu wyrażeń regularnych, jest rzadko jawnie określona w wywołaniu metody. Zamiast tego wywołano Konstruktor lub statyczną metodę dopasowania do wzorca bez `options` parametru.
 
-## <a name="case-insensitive-matching"></a>Dopasowywanie bez uwzględniania wielkości liter
+## <a name="case-insensitive-matching"></a>Dopasowanie Case-Insensitive
 
 <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>Opcja, lub `i` opcja wbudowana, zapewnia Dopasowywanie bez uwzględniania wielkości liter. Domyślnie używane są konwencje wielkości liter bieżącej kultury.
 
@@ -191,7 +191,7 @@ Poniższy przykład jest równoważny poprzedniemu, z tą różnicą, że używa
 
 ## <a name="explicit-captures-only"></a>Tylko jawne przechwycenia
 
-Domyślnie grupy przechwytywania są definiowane przy użyciu nawiasów we wzorcu wyrażenia regularnego. Do nazwanych grup są przypisywane nazwy lub liczby przez `(?<` *name* `>` opcję języka*podwyrażenia* nazwy `)` , podczas gdy grupy nienazwane są dostępne przez indeks. W <xref:System.Text.RegularExpressions.GroupCollection> obiekcie nienazwane grupy poprzedzają nazwane grupy.
+Domyślnie grupy przechwytywania są definiowane przy użyciu nawiasów we wzorcu wyrażenia regularnego. Do nazwanych grup są przypisywane nazwy lub liczby przez `(?<` *name* `>` opcję języka *podwyrażenia* nazwy `)` , podczas gdy grupy nienazwane są dostępne przez indeks. W <xref:System.Text.RegularExpressions.GroupCollection> obiekcie nienazwane grupy poprzedzają nazwane grupy.
 
 Konstrukcje grupujące są często używane tylko do zastosowania kwantyfikatorów do wielu elementów języka, a przechwycone podciągi nie są istotne. Na przykład, jeśli następujące wyrażenie regularne:
 
@@ -267,7 +267,7 @@ Jednak w następujących przypadkach znaki odstępu w wyrażeniu regularnym nie 
 
 - Biały znak jest niedozwolony w sekwencji znaków, która wprowadza element języka. Na przykład:
 
-  - Podwyrażenie elementu języka `(?:` *subexpression* `)` reprezentuje grupę nieprzechwytującą, a `(?:` część elementu nie może mieć osadzonych spacji. Podwyrażenie wzorca `(? :` *subexpression* `)` zgłasza <xref:System.ArgumentException> w czasie wykonywania, ponieważ aparat wyrażeń regularnych nie może przeanalizować wzorca, a `( ?:` *Podwyrażenie* wzorca `)` nie będzie pasować do *podwyrażenia*.
+  - Podwyrażenie elementu języka `(?:` *subexpression* `)` reprezentuje grupę nieprzechwytującą, a `(?:` część elementu nie może mieć osadzonych spacji. Podwyrażenie wzorca `(? :` *subexpression* `)` zgłasza <xref:System.ArgumentException> w czasie wykonywania, ponieważ aparat wyrażeń regularnych nie może przeanalizować wzorca, a `( ?:` *Podwyrażenie* wzorca `)` nie będzie pasować do *podwyrażenia* .
 
   - Nazwa elementu języka `\p{` *name* `}` , która reprezentuje kategorię Unicode lub nazwany blok, nie może zawierać osadzonych spacji w `\p{` części elementu. Jeśli zostanie uwzględniony biały znak, element zgłasza <xref:System.ArgumentException> czas wykonywania.
 
@@ -350,15 +350,15 @@ Zachowanie ECMAScript i kanoniczne wyrażenia regularne różnią się w trzech 
 
   |Wyrażenie regularne|Zachowanie kanoniczne|Zachowanie języka ECMAScript|
   |------------------------|------------------------|-------------------------|
-  |`\0`następują cyfry ósemkowe od 0 do 2|Interpretuj jako ósemkowy. Na przykład `\044` zawsze jest interpretowana jako wartość ósemkowa i oznacza "$".|Takie samo zachowanie.|
-  |`\`po którym następuje cyfra od 1 do 9, po której następuje brak dodatkowych cyfr dziesiętnych,|Interpretuj jako odwołanie wsteczne. Na przykład `\9` zawsze oznacza odwołanie wsteczne 9, nawet jeśli dziewiąta grupa przechwytywania nie istnieje. Jeśli grupa przechwytywania nie istnieje, Analizator wyrażeń regularnych zgłasza <xref:System.ArgumentException> .|Jeśli istnieje pojedyncza cyfra dziesiętna grupa przechwytywania, odwołuje się do tej cyfry. W przeciwnym razie interpretuje wartość jako literał.|
-  |`\`następuje cyfra od 1 do 9, po której następuje dodatkowe cyfry dziesiętne|Interpretuj cyfry jako wartość dziesiętną. Jeśli ta grupa przechwytywania istnieje, interpretuj wyrażenie jako odwołanie wsteczne.<br /><br /> W przeciwnym razie Interpretuj wiodące cyfry ósemkowe do ósemkowego 377; oznacza to, że należy wziąć pod uwagę tylko 8 bitów wartości. Interpretuj pozostałe cyfry jako literały. Na przykład w wyrażeniu `\3000` , jeśli grupa przechwytywania 300 istnieje, interpretuj jako odwołanie wsteczne 300; jeśli 300 grupa przechwytywania nie istnieje, interpretuj jako ósemkową 300, a następnie 0.|Interpretuj jako odwołanie wsteczne, konwertując dowolną liczbę cyfr na wartość dziesiętną, która może odwoływać się do przechwytywania. Jeśli nie można przekonwertować cyfr, interpretuj jako ósemkowy przy użyciu wiodących cyfr ósemkowych do ósemkowego 377; Interpretuj pozostałe cyfry jako literały.|
+  |`\0` następują cyfry ósemkowe od 0 do 2|Interpretuj jako ósemkowy. Na przykład `\044` zawsze jest interpretowana jako wartość ósemkowa i oznacza "$".|Takie samo zachowanie.|
+  |`\` po którym następuje cyfra od 1 do 9, po której następuje brak dodatkowych cyfr dziesiętnych,|Interpretuj jako odwołanie wsteczne. Na przykład `\9` zawsze oznacza odwołanie wsteczne 9, nawet jeśli dziewiąta grupa przechwytywania nie istnieje. Jeśli grupa przechwytywania nie istnieje, Analizator wyrażeń regularnych zgłasza <xref:System.ArgumentException> .|Jeśli istnieje pojedyncza cyfra dziesiętna grupa przechwytywania, odwołuje się do tej cyfry. W przeciwnym razie interpretuje wartość jako literał.|
+  |`\` następuje cyfra od 1 do 9, po której następuje dodatkowe cyfry dziesiętne|Interpretuj cyfry jako wartość dziesiętną. Jeśli ta grupa przechwytywania istnieje, interpretuj wyrażenie jako odwołanie wsteczne.<br /><br /> W przeciwnym razie Interpretuj wiodące cyfry ósemkowe do ósemkowego 377; oznacza to, że należy wziąć pod uwagę tylko 8 bitów wartości. Interpretuj pozostałe cyfry jako literały. Na przykład w wyrażeniu `\3000` , jeśli grupa przechwytywania 300 istnieje, interpretuj jako odwołanie wsteczne 300; jeśli 300 grupa przechwytywania nie istnieje, interpretuj jako ósemkową 300, a następnie 0.|Interpretuj jako odwołanie wsteczne, konwertując dowolną liczbę cyfr na wartość dziesiętną, która może odwoływać się do przechwytywania. Jeśli nie można przekonwertować cyfr, interpretuj jako ósemkowy przy użyciu wiodących cyfr ósemkowych do ósemkowego 377; Interpretuj pozostałe cyfry jako literały.|
 
 ## <a name="comparison-using-the-invariant-culture"></a>Porównanie przy użyciu niezmiennej kultury
 
 Domyślnie, gdy aparat wyrażeń regularnych wykonuje porównania bez uwzględniania wielkości liter, używa konwencji osłony dla bieżącej kultury, aby określić równoważne wielkie i małe litery.
 
-Jednak takie zachowanie jest niepożądane w przypadku niektórych typów porównań, szczególnie w przypadku porównywania danych wejściowych użytkownika z nazwami zasobów systemowych, takich jak hasła, pliki lub adresy URL. Poniższy przykład ilustruje przykład scenariusza. Kod jest przeznaczony do blokowania dostępu do dowolnego zasobu, którego adres URL jest poprzedzony **File://**. Wyrażenie regularne próbuje dopasować wielkość liter do ciągu przy użyciu wyrażenia regularnego `$FILE://` . Jednakże gdy bieżącą kulturą systemu jest TR-TR (turecki-Turcja), "I" nie jest odpowiednikiem litery "i". W związku z tym wywołanie <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody zwraca `false` i dostęp do pliku jest dozwolone.
+Jednak takie zachowanie jest niepożądane w przypadku niektórych typów porównań, szczególnie w przypadku porównywania danych wejściowych użytkownika z nazwami zasobów systemowych, takich jak hasła, pliki lub adresy URL. Poniższy przykład ilustruje przykład scenariusza. Kod jest przeznaczony do blokowania dostępu do dowolnego zasobu, którego adres URL jest poprzedzony **File://** . Wyrażenie regularne próbuje dopasować wielkość liter do ciągu przy użyciu wyrażenia regularnego `$FILE://` . Jednakże gdy bieżącą kulturą systemu jest TR-TR (turecki-Turcja), "I" nie jest odpowiednikiem litery "i". W związku z tym wywołanie <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody zwraca `false` i dostęp do pliku jest dozwolone.
 
 [!code-csharp[Conceptual.Regex.Language.Options#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/culture1.cs#14)]
 [!code-vb[Conceptual.Regex.Language.Options#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#14)]

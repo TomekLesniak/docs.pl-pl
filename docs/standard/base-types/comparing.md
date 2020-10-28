@@ -13,23 +13,23 @@ helpviewer_keywords:
 - CompareTo method
 - IndexOf method
 - Compare method
-- strings [.NET Framework], comparing
+- strings [.NET], comparing
 - CompareOrdinal method
 - EndsWith method
 - Equals method
 - StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-ms.openlocfilehash: 5ed73d18341c3b9c6e61e12fdf322b9a67affd4a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 658f8b2cf7d7b2431654df1caebdac8118b3674b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602196"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889494"
 ---
 # <a name="comparing-strings-in-net"></a>Porównywanie ciągów w programie .NET
 Platforma .NET udostępnia kilka metod porównywania wartości ciągów. W poniższej tabeli wymieniono i opisano metody porównywania wartości.  
   
-|Nazwa metody|Użycie|  
+|Nazwa metody|Zastosowanie|  
 |-----------------|---------|  
 |<xref:System.String.Compare%2A?displayProperty=nameWithType>|Porównuje wartości dwóch ciągów. Zwraca wartość całkowitą.|  
 |<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>|Porównuje dwa ciągi bez względu na lokalną kulturę. Zwraca wartość całkowitą.|  
@@ -60,7 +60,7 @@ Platforma .NET udostępnia kilka metod porównywania wartości ciągów. W poni�
   
  Ten przykład jest wyświetlany w `-1` konsoli programu.  
   
- Poprzedni przykład jest domyślnie uwzględniany w kulturze. Aby wykonać Porównywanie ciągów niewrażliwych na kulturę, Użyj przeciążenia <xref:System.String.Compare%2A?displayProperty=nameWithType> metody, która pozwala określić kulturę do użycia przez dostarczenie parametru *kultury* . Aby zapoznać się z przykładem, który pokazuje <xref:System.String.Compare%2A?displayProperty=nameWithType> , jak używać metody do wykonywania porównania niewrażliwego na kulturę, zobacz [wykonywanie porównania ciągów nieuwzględniających kulturowo](../globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ Poprzedni przykład jest domyślnie uwzględniany w kulturze. Aby wykonać Porównywanie ciągów niewrażliwych na kulturę, Użyj przeciążenia <xref:System.String.Compare%2A?displayProperty=nameWithType> metody, która pozwala określić kulturę do użycia przez dostarczenie parametru *kultury* . Aby zapoznać się z przykładem, który ilustruje sposób użycia <xref:System.String.Compare%2A?displayProperty=nameWithType> metody do wykonywania porównania niewrażliwego na kulturę, zobacz [wykonywanie porównań ciągów Culture-Insensitive](../globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
 ## <a name="compareordinal"></a>CompareOrdinal  
  <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>Metoda porównuje dwa obiekty String bez rozważania lokalnej kultury. Wartości zwracane tej metody są identyczne z wartościami zwracanymi przez metodę **Compare** w poprzedniej tabeli.  
@@ -90,7 +90,7 @@ Platforma .NET udostępnia kilka metod porównywania wartości ciągów. W poni�
   
  Ten przykład jest wyświetlany w `-1` konsoli programu.  
   
- Wszystkie przeciążenia <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody domyślnie wykonują porównania uwzględniające kulturę i wielkość liter. Nie są dostarczane żadne przeciążenia tej metody, które umożliwiają wykonanie porównania niewrażliwego na kulturę. W przypadku przejrzystości kodu zalecamy użycie metody **String. Compare** , określając <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> dla operacji zależnych od kultury lub <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dla operacji niewrażliwych na kulturę. Przykłady pokazujące, jak używać metody **String. Compare** do wykonywania porównań zarówno z uwzględnieniem kulturowym, jak i niewrażliwym na kulturę, można znaleźć w temacie [wykonywanie porównania ciągów bez uwzględniania kultury](../globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ Wszystkie przeciążenia <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody domyślnie wykonują porównania uwzględniające kulturę i wielkość liter. Nie są dostarczane żadne przeciążenia tej metody, które umożliwiają wykonanie porównania niewrażliwego na kulturę. W przypadku przejrzystości kodu zalecamy użycie metody **String. Compare** , określając <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> dla operacji zależnych od kultury lub <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dla operacji niewrażliwych na kulturę. Przykłady pokazujące, jak używać metody **String. Compare** do wykonywania porównań zarówno z uwzględnieniem kulturowym, jak i niewrażliwym na kulturę, można znaleźć w temacie [wykonywanie porównań ciągów Culture-Insensitive](../globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
 ## <a name="equals"></a>Równa się  
  Metoda **String. Equals** może łatwo określić, czy dwa ciągi są takie same. Ta metoda uwzględniania wielkości liter zwraca wartość logiczną **true** lub **false** . Można go użyć z istniejącej klasy, jak pokazano w następnym przykładzie. W poniższym przykładzie zastosowano metodę **Equals** , aby określić, czy obiekt String zawiera frazę "Hello World".  
@@ -149,7 +149,7 @@ Platforma .NET udostępnia kilka metod porównywania wartości ciągów. W poni�
   
  Obie metody są przydatne, gdy są używane w połączeniu z metodą **String. Remove** . Można użyć metody **IndexOf** lub **LastIndexOf** , aby pobrać pozycję znaku, a następnie podać tę pozycję do metody **Remove** , aby usunąć znak lub wyraz zaczynający się od tego znaku.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podstawowe operacje na ciągach](basic-string-operations.md)
 - [Wykonywanie niezależnych od kultury operacji na ciągach](../globalization-localization/performing-culture-insensitive-string-operations.md)

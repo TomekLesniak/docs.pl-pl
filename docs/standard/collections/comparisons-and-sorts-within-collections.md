@@ -11,14 +11,14 @@ helpviewer_keywords:
 - IComparable.CompareTo method
 - Collections classes
 - Equals method
-- collections [.NET Framework], comparisons
+- collections [.NET], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: aa001e8469947a532d77059bd52024c6b47b508e
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 40a59809723298ddda21e642098ec8ae74a1828b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769200"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889377"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porównywanie i sortowanie w kolekcjach
 
@@ -52,7 +52,7 @@ Domyślna funkcja porównująca polega na co najmniej jednym z obiektów, które
 
 Aby zapewnić jawne porównania, niektóre metody akceptują implementację **IComparer** jako parametr. Na przykład <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> Metoda akceptuje <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementację.
 
-Bieżące ustawienie kultury systemu może wpływać na porównania i sortować je w obrębie kolekcji. Domyślnie porównania i sortowania w klasach **kolekcji** są zależne od kultury. Aby zignorować ustawienie kultury i w związku z tym uzyskać spójne wyniki porównania i sortowania, użyj <xref:System.Globalization.CultureInfo.InvariantCulture%2A> z przeciążeniami składowymi, które akceptują <xref:System.Globalization.CultureInfo> . Aby uzyskać więcej informacji, zobacz [wykonywanie operacji na ciągach bez uwzględniania kultur w kolekcjach](../globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) i [wykonywanie operacji na ciągach nieuwzględniających kulturę w tablicach](../globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).
+Bieżące ustawienie kultury systemu może wpływać na porównania i sortować je w obrębie kolekcji. Domyślnie porównania i sortowania w klasach **kolekcji** są zależne od kultury. Aby zignorować ustawienie kultury i w związku z tym uzyskać spójne wyniki porównania i sortowania, użyj <xref:System.Globalization.CultureInfo.InvariantCulture%2A> z przeciążeniami składowymi, które akceptują <xref:System.Globalization.CultureInfo> . Aby uzyskać więcej informacji, zobacz [wykonywanie operacji Culture-Insensitive String w kolekcjach](../globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) i [wykonywanie Culture-Insensitive operacji na ciągach w tablicach](../globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).
 
 <a name="BKMK_Equalityandsortexample"></a>
 ## <a name="equality-and-sort-example"></a>Przykład równości i sortowania
@@ -62,7 +62,7 @@ Poniższy kod ilustruje implementację <xref:System.IEquatable%601> i <xref:Syst
 [!code-csharp[System.Collections.Generic.List.Sort#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.list.sort/cs/program.cs#1)]
 [!code-vb[System.Collections.Generic.List.Sort#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.list.sort/vb/module1.vb#1)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.IComparer>
 - <xref:System.IEquatable%601>

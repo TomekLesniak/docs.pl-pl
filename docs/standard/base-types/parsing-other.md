@@ -8,17 +8,17 @@ dev_langs:
 - cpp
 helpviewer_keywords:
 - Char data type, parsing strings
-- enumerations [.NET Framework], parsing strings
+- enumerations [.NET], parsing strings
 - base types, parsing strings
 - parsing strings, other strings
 - Boolean data type, parsing strings
 ms.assetid: d139bc00-3c4e-4d78-ac9a-5c951b258d28
-ms.openlocfilehash: a3503e0e499c6010fcc3d8669fa5c1eaf2dbf570
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5a8afde40dddd69a9648439be5c0f232db23b37b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277547"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889013"
 ---
 # <a name="parsing-other-strings-in-net"></a>Analizowanie innych ciągów w programie .NET
 Oprócz liczb i <xref:System.DateTime> ciągów, można również analizować ciągi reprezentujące typy <xref:System.Char> , <xref:System.Boolean> i <xref:System.Enum> do typów danych.  
@@ -30,7 +30,7 @@ Oprócz liczb i <xref:System.DateTime> ciągów, można również analizować ci
  [!code-csharp[Conceptual.String.Parse#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.parse/cs/parse.cs#2)]
  [!code-vb[Conceptual.String.Parse#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.parse/vb/parse.vb#2)]  
   
-## <a name="boolean"></a>Boolean (wartość logiczna)  
+## <a name="boolean"></a>Boolean  
  Typ danych **Boolean** zawiera metodę **analizy** , której można użyć do przekonwertowania ciągu, który reprezentuje wartość logiczną w rzeczywistym typie **Boolean** . W tej metodzie nie jest rozróżniana wielkość liter i można pomyślnie przeanalizować ciąg zawierający wartość "true" lub "false". Metoda **Parse** skojarzona z typem **Boolean** może również analizować ciągi, które są ujęte w białe znaki. W przypadku przekazanie dowolnego innego ciągu <xref:System.FormatException> jest zgłaszany.  
   
  Poniższy przykład kodu używa metody **Parse** do przekonwertowania ciągu na wartość logiczną.  

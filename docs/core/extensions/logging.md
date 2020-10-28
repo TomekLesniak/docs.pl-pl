@@ -4,12 +4,12 @@ author: IEvangelist
 description: Dowiedz się, jak używać struktury rejestrowania dostarczonej przez pakiet NuGet Microsoft. Extensions. Logging.
 ms.author: dapine
 ms.date: 09/30/2020
-ms.openlocfilehash: 2e6d8710015d8e998a9710f2cdeb86d925236196
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: d409d78698e4e85eaf9f2894ee1ed00cea0c0583
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654834"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888559"
 ---
 # <a name="logging-in-net"></a>Rejestrowanie w programie .NET
 
@@ -30,11 +30,11 @@ Poniższy przykład:
 
 ## <a name="configure-logging"></a>Konfigurowanie rejestrowania
 
-Konfiguracja rejestrowania jest zwykle udostępniana w `Logging` sekcji *AppSettings*. `{Environment}` pliki *. JSON* . Następujące *appsettings.Development.js* pliku są generowane przez szablony usługi procesu roboczego platformy .NET:
+Konfiguracja rejestrowania jest zwykle udostępniana w `Logging` sekcji *AppSettings* . `{Environment}` pliki *. JSON* . Następujące *appsettings.Development.js* pliku są generowane przez szablony usługi procesu roboczego platformy .NET:
 
 :::code language="json" source="snippets/configuration/worker-service/appsettings.Development.json":::
 
-W powyższym formacie JSON:
+W powyższym kodzie JSON:
 
 - `"Default"`Określono, `"Microsoft"` , i `"Microsoft.Hosting.Lifetime"` Kategorie.
 - `"Microsoft"`Kategoria dotyczy wszystkich kategorii, które zaczynają się od `"Microsoft"` .
@@ -64,7 +64,7 @@ Minimalny poziom dziennika można określić dla dowolnego z:
 - Określone kategorie: na przykład `Logging:LogLevel:Microsoft:Warning`
 - Wszyscy dostawcy i wszystkie kategorie: `Logging:LogLevel:Default:Warning`
 
-Wszystkie dzienniki poniżej minimalnego poziomu ***nie***są następujące:
+Wszystkie dzienniki poniżej minimalnego poziomu są * **not** _:
 
 - Przeszedł do dostawcy.
 - Zarejestrowane lub wyświetlone.
@@ -73,7 +73,7 @@ Aby pominąć wszystkie dzienniki, należy określić [wartość LogLevel. None]
 
 Jeśli dostawca obsługuje [zakresy rejestrowania](#log-scopes), `IncludeScopes` wskazuje, czy są one włączone. Aby uzyskać więcej informacji, zobacz [zakresy dzienników](#log-scopes)
 
-Następujący *appsettings.js* pliku zawiera ustawienia dla wszystkich wbudowanych dostawców:
+Następujące _appsettings.jsw pliku * zawierają ustawienia dla wszystkich wbudowanych dostawców:
 
 :::code language="json" source="snippets/configuration/worker-service/appsettings.Production.json":::
 
@@ -179,10 +179,10 @@ W poniższej tabeli wymieniono <xref:Microsoft.Extensions.Logging.LogLevel> wart
 
 | LogLevel | Wartość | Metoda | Opis |
 |--|--|--|--|
-| [Ślad](xref:Microsoft.Extensions.Logging.LogLevel) | 0 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogTrace%2A> | Zawierają najwięcej szczegółowych komunikatów. Te komunikaty mogą zawierać poufne dane aplikacji. Te komunikaty są domyślnie wyłączone i ***nie*** powinny być włączone w środowisku produkcyjnym. |
+| [Ślad](xref:Microsoft.Extensions.Logging.LogLevel) | 0 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogTrace%2A> | Zawierają najwięcej szczegółowych komunikatów. Te komunikaty mogą zawierać poufne dane aplikacji. Te komunikaty są domyślnie wyłączone i **nie** powinny być włączone w środowisku produkcyjnym. |
 | [Debugowanie](xref:Microsoft.Extensions.Logging.LogLevel) | 1 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogDebug%2A> | Na potrzeby debugowania i programowania. W środowisku produkcyjnym należy używać ostrożnie z powodu dużego wolumenu. |
-| [Zawartych](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Śledzi ogólny przepływ aplikacji. Może mieć wartość długoterminową. |
-| [Wyświetlania](xref:Microsoft.Extensions.Logging.LogLevel) | 3 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogWarning%2A> | Dla nietypowych lub nieoczekiwanych zdarzeń. Zwykle zawiera błędy lub warunki, które nie powodują błędu aplikacji. |
+| [Informacje](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Śledzi ogólny przepływ aplikacji. Może mieć wartość długoterminową. |
+| [Ostrzeżenie](xref:Microsoft.Extensions.Logging.LogLevel) | 3 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogWarning%2A> | Dla nietypowych lub nieoczekiwanych zdarzeń. Zwykle zawiera błędy lub warunki, które nie powodują błędu aplikacji. |
 | [Błąd](xref:Microsoft.Extensions.Logging.LogLevel) | 4 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogError%2A> | W przypadku błędów i wyjątków, których nie można obsłużyć. Te komunikaty wskazują na niepowodzenie podczas bieżącej operacji lub żądania, a nie awarię całej aplikacji. |
 | [Krytyczne](xref:Microsoft.Extensions.Logging.LogLevel) | 5 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogCritical%2A> | Dla niepowodzeń, które wymagają natychmiastowej uwagi. Przykłady: scenariusze utraty danych, brak miejsca na dysku. |
 | [Brak](xref:Microsoft.Extensions.Logging.LogLevel) | 6 |  | Określa, że nie należy zapisywać żadnych komunikatów. |
@@ -222,7 +222,7 @@ public async Task<T> GetAsync<T>(string id)
 
 W poprzednim kodzie pierwszy `Log{LogLevel}` parametr, `AppLogEvents.Read` , jest [Identyfikator zdarzenia dziennika](#log-event-id). Drugi parametr jest szablonem wiadomości z symbolami zastępczymi dla wartości argumentów dostarczonych przez pozostałe parametry metody. Parametry metody zostały wyjaśnione w sekcji [szablon komunikatu](#log-message-template) w dalszej części tego artykułu.
 
-Skonfiguruj odpowiedni poziom dziennika i Wywołaj odpowiednie metody, `Log{LogLevel}` Aby kontrolować, ile danych wyjściowych dziennika jest zapisywana w określonym nośniku magazynowania. Przykład:
+Skonfiguruj odpowiedni poziom dziennika i Wywołaj odpowiednie metody, `Log{LogLevel}` Aby kontrolować, ile danych wyjściowych dziennika jest zapisywana w określonym nośniku magazynowania. Na przykład:
 
 - W środowisku produkcyjnym:
   - Rejestrowanie na poziomie `Trace` lub `Information` powoduje utworzenie dużej ilości szczegółowych komunikatów dziennika. Aby kontrolować koszty i nie przekraczać limitów magazynowania danych `Trace` , `Information` komunikaty dzienników i na poziomie magazynu o dużej ilości danych. Rozważ ograniczenie `Trace` i `Information` do określonych kategorii.
@@ -239,7 +239,7 @@ Następujące zestawy JSON `Logging:Console:LogLevel:Microsoft:Information` :
 
 ## <a name="log-event-id"></a>Identyfikator zdarzenia dziennika
 
-Każdy dziennik może określać *Identyfikator zdarzeń*, <xref:Microsoft.Extensions.Logging.EventId> jest to struktura z `Id` opcjonalnymi `Name` właściwościami tylko do odczytu. Przykładowy kod źródłowy używa `AppLogEvents` klasy do definiowania identyfikatorów zdarzeń:
+Każdy dziennik może określać _event identyfikator *, <xref:Microsoft.Extensions.Logging.EventId> jest strukturą z `Id` i opcjonalnymi `Name` właściwościami tylko do odczytu. Przykładowy kod źródłowy używa `AppLogEvents` klasy do definiowania identyfikatorów zdarzeń:
 
 ```csharp
 internal static class AppLogEvents
@@ -299,7 +299,7 @@ Na przykład podczas rejestrowania w usłudze Azure Table Storage:
 - Każda jednostka tabeli platformy Azure może `ID` mieć `RunTime` właściwości i.
 - Tabele z właściwościami upraszczają zapytania dotyczące zarejestrowanych danych. Na przykład zapytanie może znaleźć wszystkie dzienniki w określonym `RunTime` zakresie bez konieczności analizowania limitu czasu wiadomości tekstowej.
 
-## <a name="log-exceptions"></a>Wyjątki dziennika
+## <a name="log-exceptions"></a>Rejestrowanie wyjątków
 
 Metody rejestratora mają przeciążenia przyjmujące parametr wyjątku:
 
@@ -526,9 +526,10 @@ class Program
 - Poziom dziennika `Information` lub wyższy.
 - Wszystkie kategorie zaczynające się od `"Microsoft"` .
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dostawcy rejestrowania w programie .NET](logging-providers.md)
 - [Implementowanie niestandardowego dostawcy rejestrowania w programie .NET](custom-logging-provider.md)
+- [Formatowanie dziennika konsoli](console-log-formatter.md)
 - [Rejestrowanie o wysokiej wydajności w programie .NET](high-performance-logging.md)
 - Błędy rejestrowania należy utworzyć w repozytorium [GitHub.com/dotnet/Extensions](https://github.com/dotnet/extensions/issues)

@@ -7,22 +7,22 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- .NET Framework regular expressions, backtracking
+- .NET regular expressions, backtracking
 - alternative matching patterns
 - optional matching patterns
 - searching with regular expressions, backtracking
 - pattern-matching with regular expressions, backtracking
 - backtracking
-- regular expressions [.NET Framework], backtracking
-- strings [.NET Framework], regular expressions
+- regular expressions [.NET], backtracking
+- strings [.NET], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-ms.openlocfilehash: d9fb976c73891646df60b5329beb09493acbae8a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b8bd8308b91c2c358f4a462967424f55fa316504
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277807"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889143"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Śledzenie wsteczne w wyrażeniach regularnych
 Wycofywanie występuje, gdy wzorzec wyrażenia regularnego zawiera opcjonalne [Kwantyfikatory](quantifiers-in-regular-expressions.md) lub [konstrukcje warunkowe](alternation-constructs-in-regular-expressions.md), a aparat wyrażeń regularnych powraca do poprzedniego zapisanego stanu, aby kontynuować wyszukiwanie zgodności. Wycofywanie stanowi podstawę dużych możliwości wyrażeń regularnych, ponieważ dzięki niemu wyrażenia oferują duże możliwości i są elastyczne, a także umożliwiają dopasowywanie bardzo złożonych wzorców. Jednocześnie te możliwości są obciążone kosztami. Wycofywanie często jest najważniejszym czynnikiem wpływającym na wydajność aparatu wyrażeń regularnych. Na szczęście deweloper ma kontrolę nad zachowaniem aparatu wyrażeń regularnych i sposobem użycia wycofywania. W tym temacie opisano zasadę działania wycofywania i możliwości sterowania nim.  
@@ -100,7 +100,7 @@ Wycofywanie występuje, gdy wzorzec wyrażenia regularnego zawiera opcjonalne [K
   
 - Powraca do wcześniej zapisanego dopasowania 3. Ustala, że istnieją dwa dodatkowe znaki „a”, które można przypisać do dodatkowej przechwyconej grupy. Jednak test końca ciągu kończy się niepowodzeniem. Następnie aparat wraca do dopasowania 3 i próbuje dopasować dwa dodatkowe znaki „a” w dwóch dodatkowych przechwyconych grupach. Test końca ciągu nadal kończy się niepowodzeniem. Te nieudane dopasowania wymagały wykonania 12 porównań. Do tej pory zostały wykonane wszystkie 25 porównań.  
   
- Porównywanie ciągu wejściowego z wyrażeniem regularnym w ten sposób będzie kontynuowane, dopóki aparat wyrażeń regularnych nie wypróbuje wszystkich możliwych kombinacji dopasowań, a następnie uzna, że nie istnieje dopasowanie. Ze względu na zagnieżdżone kwantyfikatory to porównanie jest operacją O (2<sup>n</sup>) lub wykładniczą, gdzie *n* to liczba znaków w ciągu wejściowym. Oznacza to, że w najgorszym przypadku ciąg wejściowy o długości 30 znaków będzie wymagał wykonania ok. 1 073 741 824 porównań, a ciąg wejściowy o długości 40 znaków będzie wymagał wykonania ok. 1 099 511 627 776 porównań. Gdy są używane ciągi o takiej lub większej długości, wykonanie metod opartych na wyrażeniach regularnych może trwać niezwykle długo, jeśli w przetwarzanych ciągach nie będą znajdować się dopasowania do wzorca wyrażenia regularnego.
+ Porównywanie ciągu wejściowego z wyrażeniem regularnym w ten sposób będzie kontynuowane, dopóki aparat wyrażeń regularnych nie wypróbuje wszystkich możliwych kombinacji dopasowań, a następnie uzna, że nie istnieje dopasowanie. Ze względu na zagnieżdżone kwantyfikatory to porównanie jest operacją O (2 <sup>n</sup>) lub wykładniczą, gdzie *n* to liczba znaków w ciągu wejściowym. Oznacza to, że w najgorszym przypadku ciąg wejściowy o długości 30 znaków będzie wymagał wykonania ok. 1 073 741 824 porównań, a ciąg wejściowy o długości 40 znaków będzie wymagał wykonania ok. 1 099 511 627 776 porównań. Gdy są używane ciągi o takiej lub większej długości, wykonanie metod opartych na wyrażeniach regularnych może trwać niezwykle długo, jeśli w przetwarzanych ciągach nie będą znajdować się dopasowania do wzorca wyrażenia regularnego.
 
 ## <a name="controlling-backtracking"></a>Sterowanie wycofywaniem  
  Wycofywanie umożliwia tworzenie zaawansowanych, elastycznych wyrażeń regularnych. Jednak, tak jak pokazano w poprzedniej sekcji, ich zalety może przesłonić nieakceptowalnie niska wydajność. Aby zapobiec nadmiernemu śledzeniu, należy zdefiniować interwał limitu czasu podczas tworzenia wystąpienia <xref:System.Text.RegularExpressions.Regex> obiektu lub wywołania statycznej metody dopasowania wyrażenia regularnego. Ta czynność została omówiona w następnej sekcji. Ponadto platforma .NET obsługuje trzy elementy języka wyrażeń regularnych, które ograniczają lub pomijają funkcję wycofywania oraz obsługują złożone wyrażenia regularne z małą ilością lub brakiem wydajności: [grupy niepodzielne](#atomic-groups), [potwierdzenia asercja wsteczna](#lookbehind-assertions)i [potwierdzenia naprzód](#lookahead-assertions). Aby uzyskać więcej informacji na temat każdego elementu języka, zobacz [Grouping konstrukcjes](grouping-constructs-in-regular-expressions.md).  
@@ -127,9 +127,9 @@ Wycofywanie występuje, gdy wzorzec wyrażenia regularnego zawiera opcjonalne [K
  [!code-vb[Conceptual.RegularExpressions.Backtracking#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/vb/backtracking4.vb#4)]  
 
 ### <a name="lookbehind-assertions"></a>Asercje wsteczne  
- Platforma .NET zawiera dwa elementy języka, `(?<=` *Podwyrażenie* `)` i `(?<!` *Podwyrażenie* `)` , które pasują do poprzedniego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki bezpośrednio poprzedzające bieżący znak mogą być dopasowane przez *Podwyrażenie*, bez przeciągania lub wycofywania.  
+ Platforma .NET zawiera dwa elementy języka, `(?<=` *Podwyrażenie* `)` i `(?<!` *Podwyrażenie* `)` , które pasują do poprzedniego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki bezpośrednio poprzedzające bieżący znak mogą być dopasowane przez *Podwyrażenie* , bez przeciągania lub wycofywania.  
   
- `(?<=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem asercja wsteczna; oznacza to, że znak lub znaki przed bieżącą pozycją muszą pasować do *podwyrażenia*. `(?<!`*Podwyrażenie* `)` jest ujemną asercja wstecznaą; oznacza to, że znak lub znaki przed bieżącą pozycją nie mogą pasować do *podwyrażenia*. Pozytywne i negatywne potwierdzenia asercja wsteczna są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem poprzedniego podwyrażenia.  
+ `(?<=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem asercja wsteczna; oznacza to, że znak lub znaki przed bieżącą pozycją muszą pasować do *podwyrażenia* . `(?<!`*Podwyrażenie* `)` jest ujemną asercja wstecznaą; oznacza to, że znak lub znaki przed bieżącą pozycją nie mogą pasować do *podwyrażenia* . Pozytywne i negatywne potwierdzenia asercja wsteczna są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem poprzedniego podwyrażenia.  
   
  W poniższym przykładzie są używane dwa równoważne wzorce wyrażeń regularnych, które weryfikują nazwę użytkownika w adresie e-mail. Pierwszy wzorzec działa z niską wydajnością z powodu nadmiernego wycofywania. Drugi wzorzec modyfikuje pierwsze wyrażenie regularne, zastępując zagnieżdżony kwantyfikator pozytywną asercją wsteczną. Dane wyjściowe z przykładu wyświetlają czas wykonywania <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody.  
   
@@ -158,9 +158,9 @@ Wycofywanie występuje, gdy wzorzec wyrażenia regularnego zawiera opcjonalne [K
 |`@`|Dopasowuje znak (" \@ ").|  
 
 ### <a name="lookahead-assertions"></a>Asercje wyprzedzające  
- Platforma .NET zawiera dwa elementy języka, `(?=` *Podwyrażenie* `)` i `(?!` *Podwyrażenie* `)` , które pasują do następnego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki znajdujące się bezpośrednio po bieżącym znaku mogą być dopasowane przez *Podwyrażenie*, bez przeciągania lub wycofywania.  
+ Platforma .NET zawiera dwa elementy języka, `(?=` *Podwyrażenie* `)` i `(?!` *Podwyrażenie* `)` , które pasują do następnego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki znajdujące się bezpośrednio po bieżącym znaku mogą być dopasowane przez *Podwyrażenie* , bez przeciągania lub wycofywania.  
   
- `(?=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji muszą pasować do *podwyrażenia*. `(?!`*Podwyrażenie* `)` jest negatywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji nie mogą pasować do *podwyrażenia*. Pozytywne i negatywne potwierdzenia naprzód są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem następnego podwyrażenia.  
+ `(?=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji muszą pasować do *podwyrażenia* . `(?!`*Podwyrażenie* `)` jest negatywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji nie mogą pasować do *podwyrażenia* . Pozytywne i negatywne potwierdzenia naprzód są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem następnego podwyrażenia.  
   
  W poniższym przykładzie są używane dwa równoważne wzorce wyrażenia regularnego sprawdzające w pełni kwalifikowaną nazwę typu. Pierwszy wzorzec działa z niską wydajnością z powodu nadmiernego wycofywania. Drugi wzorzec modyfikuje pierwsze wyrażenie regularne, zastępując zagnieżdżony kwantyfikator pozytywną asercją wyprzedzającą. Dane wyjściowe z przykładu wyświetlają czas wykonywania <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody.  
   

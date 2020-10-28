@@ -3,12 +3,12 @@ title: Przenoszenie z programu .NET Framework na platformę .NET Core
 description: Poznaj proces przenoszenia i odnajdywanie narzędzi, które mogą okazać się przydatne podczas przenoszenia projektu .NET Framework do programu .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: 74fe4519e41a07bc78a4dc346f8d1b52b5c7d092
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c206e56e095d1ca068fa2aa6f60e891895f7f999
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502772"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888577"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Przegląd portów z .NET Framework do platformy .NET Core
 
@@ -49,13 +49,13 @@ Zalecamy użycie następującego procesu podczas przenoszenia projektu do progra
 
 1. Przekonwertuj wszystkie `packages.config` zależności na format [PackageReference](/nuget/consume-packages/package-references-in-project-files) za pomocą [narzędzia konwersji w programie Visual Studio](/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
-   Ten krok obejmuje przekonwertowanie zależności z starszego `packages.config` formatu. `packages.config`nie działa w programie .NET Core, dlatego ta konwersja jest wymagana, jeśli masz zależności pakietu. Wymaga również tylko zależności, które są bezpośrednio używane w projekcie, co sprawia, że dalsze kroki są łatwiejsze poprzez zmniejszenie liczby zależności, którymi należy zarządzać.
+   Ten krok obejmuje przekonwertowanie zależności z starszego `packages.config` formatu. `packages.config` nie działa w programie .NET Core, dlatego ta konwersja jest wymagana, jeśli masz zależności pakietu. Wymaga również tylko zależności, które są bezpośrednio używane w projekcie, co sprawia, że dalsze kroki są łatwiejsze poprzez zmniejszenie liczby zależności, którymi należy zarządzać.
 
 1. Przekonwertuj plik projektu na nową strukturę plików stylu zestawu SDK. Można tworzyć nowe projekty dla platformy .NET Core i kopiować je na pliki źródłowe lub próbować skonwertować istniejący plik projektu za pomocą narzędzia.
 
    W przypadku programu .NET Core jest stosowany uproszczony (i różny) [Format pliku projektu](../tools/csproj.md) niż .NET Framework. Aby kontynuować, musisz przekonwertować pliki projektu w ten format. Ten styl projektu umożliwia również kierowanie .NET Framework, co w tym momencie nadal będzie miało miejsce docelowe.
 
-   Możesz próbować przenieść mniejsze rozwiązania lub pojedyncze projekty w jednej operacji do formatu pliku projektu .NET Core za pomocą narzędzia [dotnet try-Convert](https://github.com/dotnet/try-convert) . `dotnet try-convert`nie ma gwarancji na wszystkie projekty i może spowodować drobne zmiany w zachowaniu, od którego zależy. Użyj jej jako _punktu wyjścia_ , który automatyzuje podstawowe elementy, które mogą być zautomatyzowane. Nie jest to gwarantowane rozwiązanie do migrowania projektu, ponieważ istnieje wiele różnic w obiektach docelowych używanych przez projekty stylów zestawu SDK w porównaniu do plików projektu starego stylu.
+   Możesz próbować przenieść mniejsze rozwiązania lub pojedyncze projekty w jednej operacji do formatu pliku projektu .NET Core za pomocą narzędzia [dotnet try-Convert](https://github.com/dotnet/try-convert) . `dotnet try-convert` nie ma gwarancji na wszystkie projekty i może spowodować drobne zmiany w zachowaniu, od którego zależy. Użyj jej jako _punktu wyjścia_ , który automatyzuje podstawowe elementy, które mogą być zautomatyzowane. Nie jest to gwarantowane rozwiązanie do migrowania projektu, ponieważ istnieje wiele różnic w obiektach docelowych używanych przez projekty stylów zestawu SDK w porównaniu do plików projektu starego stylu.
 
 1. Przekieruj wszystkie projekty, które chcesz przenieść do elementu docelowego .NET Framework 4.7.2 lub wyższy.
 
@@ -113,5 +113,10 @@ Zalecamy użycie następującego procesu podczas przenoszenia projektu do progra
 
 > [!div class="nextstepaction"]
 > [Analizowanie zależności](third-party-deps.md) 
->  [Pakiet](../deploying/creating-nuget-packages.md) 
->  NuGet pakietu [ASP.NET Core ASP.NET migracji](/aspnet/core/migration/proper-to-2x)
+>  [Pakowanie pakietu NuGet](../deploying/creating-nuget-packages.md)
+
+## <a name="see-also"></a>Zobacz także
+
+- [ASP.NET Core ASP.NET migracji](/aspnet/core/migration/proper-to-2x)
+- [Migrowanie aplikacji WPF do programu .NET Core](/dotnet/desktop/wpf/migration/convert-project-from-net-framework)
+- [Migrowanie aplikacji Windows Forms do programu .NET Core](winforms.md)

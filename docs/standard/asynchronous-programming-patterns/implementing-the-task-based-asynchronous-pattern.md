@@ -6,18 +6,17 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- .NET Framework, and TAP
-- asynchronous design patterns, .NET Framework
-- TAP, .NET Framework support for
-- Task-based Asynchronous Pattern, .NET Framework support for
-- .NET Framework, asynchronous design patterns
+- asynchronous design patterns, .NET
+- TAP, .NET support for
+- Task-based Asynchronous Pattern, .NET support for
+- .NET, asynchronous design patterns
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
-ms.openlocfilehash: 1f2f44b6b92f66f95816778c6dc8e893f1291abe
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8bac9d265211d2f266db634d4bcebb87c2debd9a
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289369"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888779"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>Implementacja wzorca asynchronicznego opartego na zadaniach
 Wzorzec asynchroniczny oparty na zadaniach (TAP) można zaimplementować na trzy sposoby: za pomocą kompilatorów C# i Visual Basic w programie Visual Studio, ręcznie lub za pomocą kombinacji kompilatora i metod ręcznych. W poniższych sekcjach szczegółowo omówiono każdą metodę. Możesz użyć wzorca TAP, aby zaimplementować operacje asynchroniczne powiązane z obliczaniem i we/wy. W sekcji [obciążenia](#workloads) omówiono każdy typ operacji.
@@ -49,9 +48,9 @@ Można zaimplementować operacje asynchroniczne powiązane z obliczeniami i we/w
 
 Zadania związane z obliczeniami można generować w następujący sposób:
 
-- W .NET Framework 4 Użyj <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metody, która akceptuje obiekt delegowany (zwykle <xref:System.Action%601> lub a), który <xref:System.Func%601> ma być wykonywany asynchronicznie. W przypadku podania <xref:System.Action%601> delegata Metoda zwraca <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> obiekt, który reprezentuje asynchroniczne wykonywanie tego delegata. W przypadku podania <xref:System.Func%601> delegata Metoda zwraca <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> obiekt. Przeciążenia <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> metody akceptują token anulowania ( <xref:System.Threading.CancellationToken> ), opcje tworzenia zadań ( <xref:System.Threading.Tasks.TaskCreationOptions> ) i harmonogram zadań ( <xref:System.Threading.Tasks.TaskScheduler> ), które zapewniają szczegółową kontrolę nad planowaniem i wykonywaniem zadania. Wystąpienie fabryki, które jest celem bieżącego harmonogramu zadań, jest dostępne jako właściwość statyczna ( <xref:System.Threading.Tasks.Task.Factory%2A> ) <xref:System.Threading.Tasks.Task> klasy; na przykład: `Task.Factory.StartNew(…)` .
+- W .NET Framework 4,5 i nowszych wersjach (w tym .NET Core i .NET 5 +) Użyj metody statycznej <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> jako skrótu do <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> . Można użyć, <xref:System.Threading.Tasks.Task.Run%2A> Aby łatwo uruchomić zadanie powiązane z obliczeniami, które jest przeznaczone dla puli wątków. Jest to preferowany mechanizm uruchamiania zadania związanego z obliczaniem. Używaj `StartNew` bezpośrednio tylko wtedy, gdy potrzebujesz bardziej precyzyjnej kontroli nad zadaniem.
 
-- W .NET Framework 4,5 i nowszych wersjach (w tym .NET Core i .NET Standard) Użyj metody statycznej <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> jako skrótu do <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> . Można użyć, <xref:System.Threading.Tasks.Task.Run%2A> Aby łatwo uruchomić zadanie powiązane z obliczeniami, które jest przeznaczone dla puli wątków. W .NET Framework 4,5 i nowszych wersjach jest to preferowany mechanizm uruchamiania zadania związanego z obliczaniem. Używaj `StartNew` bezpośrednio tylko wtedy, gdy potrzebujesz bardziej precyzyjnej kontroli nad zadaniem.
+- W .NET Framework 4 Użyj <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metody, która akceptuje obiekt delegowany (zwykle <xref:System.Action%601> lub a), który <xref:System.Func%601> ma być wykonywany asynchronicznie. W przypadku podania <xref:System.Action%601> delegata Metoda zwraca <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> obiekt, który reprezentuje asynchroniczne wykonywanie tego delegata. W przypadku podania <xref:System.Func%601> delegata Metoda zwraca <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> obiekt. Przeciążenia <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> metody akceptują token anulowania ( <xref:System.Threading.CancellationToken> ), opcje tworzenia zadań ( <xref:System.Threading.Tasks.TaskCreationOptions> ) i harmonogram zadań ( <xref:System.Threading.Tasks.TaskScheduler> ), które zapewniają szczegółową kontrolę nad planowaniem i wykonywaniem zadania. Wystąpienie fabryki, które jest celem bieżącego harmonogramu zadań, jest dostępne jako właściwość statyczna ( <xref:System.Threading.Tasks.Task.Factory%2A> ) <xref:System.Threading.Tasks.Task> klasy; na przykład: `Task.Factory.StartNew(…)` .
 
 - Użyj konstruktorów `Task` typu lub `Start` metody, jeśli chcesz generować i planować zadanie osobno. Metody publiczne muszą zwracać tylko zadania, które zostały już uruchomione.
 
@@ -82,7 +81,7 @@ Załóżmy, że chcesz utworzyć zadanie, które zostanie ukończone po upływie
 [!code-csharp[Conceptual.TAP_Patterns#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#4)]
 [!code-vb[Conceptual.TAP_Patterns#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#4)]
 
-Począwszy od .NET Framework 4,5, <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> Metoda jest dostępna do tego celu i można jej użyć w innej metodzie asynchronicznej, na przykład w celu zaimplementowania asynchronicznej pętli sondowania:
+<xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType>Ta metoda jest dostępna do tego celu i można jej użyć w innej metodzie asynchronicznej, na przykład w celu zaimplementowania asynchronicznej pętli sondowania:
 
 [!code-csharp[Conceptual.TAP_Patterns#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#5)]
 [!code-vb[Conceptual.TAP_Patterns#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#5)]

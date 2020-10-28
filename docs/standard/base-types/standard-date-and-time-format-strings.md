@@ -7,20 +7,20 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- formatting [.NET Framework], dates
+- formatting [.NET], dates
 - custom DateTime format string
 - format specifiers, custom date and time
 - format strings
 - custom date and time format strings
-- formatting [.NET Framework], time
+- formatting [.NET], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 95f655ace1b2fb38100e3cc1089c4a3f61c5b264
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 36aaef2676383263b2009fd283f1671ef970f20e
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557362"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888636"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardowe ciągi formatujące datę i godzinę
 
@@ -31,7 +31,7 @@ W ciągu standardowego formatu daty i godziny pojedynczy specyfikator formatu je
 - Aby zdefiniować tekstową reprezentację wartości daty i godziny, która może zostać przekonwertowana <xref:System.DateTime> na <xref:System.DateTimeOffset> wartość lub przez operację analizowania.
 
 > [!TIP]
-> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Możesz pobrać **Narzędzie formatowania** , aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 Standardowe ciągi formatujące datę i godzinę mogą być używane z obu <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości.
 

@@ -8,25 +8,25 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - parameter specifiers
-- strings [.NET Framework], alignment
+- strings [.NET], alignment
 - format specifiers, composite formatting
-- strings [.NET Framework], composite
+- strings [.NET], composite
 - composite formatting
-- objects [.NET Framework], formatting multiple objects
+- objects [.NET], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: 36197b382c449a2570e1d5530f307c4e66b0d983
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e15452016aa61cf44950e8b9e7fca58f23471ae7
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447267"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889468"
 ---
 # <a name="composite-formatting"></a>Złożone formatowanie
 
 Funkcja formatowania złożonego .NET przyjmuje listę obiektów i ciąg formatu złożonego jako dane wejściowe. Ciąg formatu złożonego składa się ze stałego tekstu zmieszanego z indeksowanymi symbolami zastępczymi (nazywanymi też elementami formatu), które odpowiadają obiektom na liście. Operacja formatowania zwraca ciąg wynikowy, który składa się z oryginalnego stałego tekstu zmieszanego z ciągiem reprezentującym obiekty na liście.  
   
 > [!IMPORTANT]
-> Zamiast korzystać z ciągów formatu złożonego, można użyć *interpolowanych ciągów* , jeśli używany język i wersja językowa są obsługiwane. Ciąg interpolowany jest ciągiem, który zawiera *interpolowane wyrażenia*. Każde wyrażenie interpolowane jest rozpoznawane za pomocą wartości wyrażenia i uwzględniane w ciągu wynikowym, gdy ciąg jest przypisany. Aby uzyskać więcej informacji, zobacz [Interpolacja ciągów (odwołanie w C#)](../../csharp/language-reference/tokens/interpolated.md) i [ciągi interpolowane (odwołanie Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+> Zamiast korzystać z ciągów formatu złożonego, można użyć *interpolowanych ciągów* , jeśli używany język i wersja językowa są obsługiwane. Ciąg interpolowany jest ciągiem, który zawiera *interpolowane wyrażenia* . Każde wyrażenie interpolowane jest rozpoznawane za pomocą wartości wyrażenia i uwzględniane w ciągu wynikowym, gdy ciąg jest przypisany. Aby uzyskać więcej informacji, zobacz [Interpolacja ciągów (odwołanie w C#)](../../csharp/language-reference/tokens/interpolated.md) i [ciągi interpolowane (odwołanie Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
 
 Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:  
   
@@ -56,7 +56,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
 ## <a name="format-item-syntax"></a>Formatuj element składni  
  Każdy element formatu ma następującą postać i składa się z następujących składników:  
   
- `{`*indeks*[ `,` *wyrównanie*] [ `:` *FormatString*]`}`  
+ `{`*indeks* [ `,` *wyrównanie* ] [ `:` *FormatString* ]`}`  
   
  Dopasowujące nawiasy klamrowe („{” i „}”) są wymagane.  
   
@@ -74,7 +74,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
  Każdy element formatu może odwoływać się do dowolnego obiektu na liście. Na przykład jeśli istnieją trzy obiekty, można sformatować drugi, pierwszy i trzeci obiekt przez określenie ciągu formatu złożonego, takiego jak: " {1} {0} {2} ". Obiekt, do którego nie odwołuje się element formatu, zostanie zignorowany. <xref:System.FormatException>Jest generowany w czasie wykonywania, jeśli specyfikator parametru wyznacza element poza granicami listy obiektów.  
   
 ### <a name="alignment-component"></a>Składnik wyrównania  
- Opcjonalny składnik *wyrównania* jest ze znakiem liczby całkowitej wskazującej preferowaną szerokość pola sformatowanego. Jeśli wartość *wyrównania* jest mniejsza niż długość sformatowanego ciągu, *wyrównanie* jest ignorowane i długość sformatowanego ciągu jest używana jako szerokość pola. Sformatowane dane w polu są wyrównane do prawej, jeśli *wyrównanie* jest dodatnie i wyrównane do lewej, jeśli *wyrównanie* jest ujemne. Jeśli potrzebne jest dopełnienie, będą używane znaki odstępu. Przecinek jest wymagany w przypadku określenia *wyrównania* .  
+ Opcjonalny składnik *wyrównania* jest ze znakiem liczby całkowitej wskazującej preferowaną szerokość pola sformatowanego. Jeśli wartość *wyrównania* jest mniejsza niż długość sformatowanego ciągu, *wyrównanie* jest ignorowane i długość sformatowanego ciągu jest używana jako szerokość pola. Sformatowane dane w polu są wyrównane do prawej, jeśli *wyrównanie* jest dodatnie i wyrównane do lewej, jeśli *wyrównanie* jest ujemne. Jeśli potrzebne jest dopełnienie, będą używane znaki odstępu. Przecinek jest wymagany w przypadku określenia *wyrównania*  .  
   
  W poniższym przykładzie zdefiniowano dwie tablice, z których jedna zawiera nazwy pracowników i drugi zawierający godziny, w których pracują w okresie dwóch tygodni. Ciąg formatu złożonego w lewo — wyrównuje nazwy w polu 20 znaków, a następnie w polu 5-znakowym wyrównanym do prawej godziny. Należy zauważyć, że ciąg formatu standardowego "N1" służy również do formatowania godzin przy użyciu jednej cyfry ułamkowej.  
   
@@ -84,13 +84,13 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
 ### <a name="format-string-component"></a>Element ciągu formatującego  
  Opcjonalny składnik *FormatString* jest ciągiem formatu, który jest odpowiedni dla typu formatowanego obiektu. Określ standardowy lub niestandardowy ciąg formatu liczbowego, jeśli odpowiedni obiekt jest wartością liczbową, standardowym lub niestandardowym ciągiem formatu daty i godziny, jeśli odpowiedni obiekt jest <xref:System.DateTime> obiektem lub [ciągiem formatu wyliczenia](enumeration-format-strings.md) , jeśli odpowiedni obiekt jest wartością wyliczenia. Jeśli element *FormatString* nie zostanie określony, używany jest specyfikator formatu ogólnego ("G") dla typu liczbowego, daty i godziny lub wyliczenia. Dwukropek jest wymagany, jeśli jest określony parametr *FormatString* .  
   
- Poniższa tabela zawiera listę typów lub kategorii typów w bibliotece klas programu .NET Framework, które obsługują wstępnie zdefiniowany zestaw ciągów formatu i zawiera łącza do tematów zawierających opisy obsługiwanych ciągów formatu. Należy zauważyć, że formatowanie ciągów jest rozszerzalnym mechanizmem, który umożliwia definiowanie nowych ciągów formatu dla każdego istniejącego typu, podobnie jak definiowanie zestawu ciągów formatu obsługiwanych przez typ zdefiniowany przez aplikację. Aby uzyskać więcej informacji, zobacz <xref:System.IFormattable> <xref:System.ICustomFormatter> Tematy dotyczące interfejsu i.  
+ Poniższa tabela zawiera listę typów lub kategorii typów w bibliotece klas .NET, która obsługuje wstępnie zdefiniowany zestaw ciągów formatujących, oraz zawiera linki do tematów, które zawierają listę obsługiwanych ciągów formatu. Należy zauważyć, że formatowanie ciągów jest rozszerzalnym mechanizmem, który umożliwia definiowanie nowych ciągów formatu dla każdego istniejącego typu, podobnie jak definiowanie zestawu ciągów formatu obsługiwanych przez typ zdefiniowany przez aplikację. Aby uzyskać więcej informacji, zobacz <xref:System.IFormattable> <xref:System.ICustomFormatter> Tematy dotyczące interfejsu i.  
   
 |Typ lub kategoria typów|Zobacz|  
 |---------------------------|---------|  
 |Typy daty i godziny ( <xref:System.DateTime> , <xref:System.DateTimeOffset> )|[Standardowe ciągi formatujące datę i godzinę](standard-date-and-time-format-strings.md)<br /><br /> [Niestandardowe ciągi formatujące datę i godzinę](custom-date-and-time-format-strings.md)|  
 |Typy wyliczeniowe (wszystkie typy pochodne od <xref:System.Enum?displayProperty=nameWithType> )|[Ciągi formatujące Wyliczenie](enumeration-format-strings.md)|  
-|Typy liczbowe ( <xref:System.Numerics.BigInteger> ,,,,,,,,, <xref:System.Byte> <xref:System.Decimal> <xref:System.Double> <xref:System.Int16> <xref:System.Int32> <xref:System.Int64> <xref:System.SByte> <xref:System.Single> <xref:System.UInt16> , <xref:System.UInt32> , <xref:System.UInt64> )|[Standardowe ciągi formatujące liczby](standard-numeric-format-strings.md)<br /><br /> [Niestandardowe ciągi formatujące liczby](custom-numeric-format-strings.md)|  
+|Typy liczbowe ( <xref:System.Numerics.BigInteger> ,,,,,,,,, <xref:System.Byte> <xref:System.Decimal> <xref:System.Double> <xref:System.Int16> <xref:System.Int32> <xref:System.Int64> <xref:System.SByte> <xref:System.Single> <xref:System.UInt16> , <xref:System.UInt32> , <xref:System.UInt64> )|[Standardowe ciągi formatów liczbowych](standard-numeric-format-strings.md)<br /><br /> [Niestandardowe ciągi formatujące liczby](custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.TimeSpan>|[Standardowe ciągi formatujące TimeSpan](standard-timespan-format-strings.md)<br /><br /> [Niestandardowe ciągi formatujące TimeSpan](custom-timespan-format-strings.md)|  
   
@@ -143,7 +143,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
   
  Przy założeniu, że bieżący dzień jest czwartek w maju, wartość obu ciągów w powyższym przykładzie znajduje się `Thursday May` w kulturze angielskiej w Stanach Zjednoczonych.  
   
- <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>udostępnia te same funkcje co <xref:System.String.Format%2A?displayProperty=nameWithType> . Jedyną różnicą między dwoma metodami jest <xref:System.String.Format%2A?displayProperty=nameWithType> zwrócenie wyniku w postaci ciągu, podczas gdy <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> zapisuje wynik do strumienia wyjściowego skojarzonego z <xref:System.Console> obiektem. W poniższym przykładzie zastosowano <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodę, aby sformatować wartość `MyInt` do wartości walutowej.  
+ <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> udostępnia te same funkcje co <xref:System.String.Format%2A?displayProperty=nameWithType> . Jedyną różnicą między dwoma metodami jest <xref:System.String.Format%2A?displayProperty=nameWithType> zwrócenie wyniku w postaci ciągu, podczas gdy <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> zapisuje wynik do strumienia wyjściowego skojarzonego z <xref:System.Console> obiektem. W poniższym przykładzie zastosowano <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodę, aby sformatować wartość `MyInt` do wartości walutowej.  
   
  [!code-csharp[Formatting.Composite#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#4)]
  [!code-vb[Formatting.Composite#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#4)]  
@@ -165,7 +165,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
 - [Interpolacja ciągów (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [Interpolacja ciągów (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
 - [Formatowanie typów](formatting-types.md)
-- [Standardowe ciągi formatujące liczby](standard-numeric-format-strings.md)
+- [Standardowe ciągi formatów liczbowych](standard-numeric-format-strings.md)
 - [Niestandardowe ciągi formatujące liczby](custom-numeric-format-strings.md)
 - [Standardowe ciągi formatujące datę i godzinę](standard-date-and-time-format-strings.md)
 - [Niestandardowe ciągi formatujące datę i godzinę](custom-date-and-time-format-strings.md)

@@ -10,25 +10,26 @@ helpviewer_keywords:
 - regular expressions, substitutions
 - replacement patterns
 - metacharacters, substitutions
-- .NET Framework regular expressions, substitutions
+- .NET regular expressions, substitutions
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: ab2ed6ff87f2d50d0f518ac64188bf8b5c98351c
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 935fbf573c00aeaec639884888d7e3e6a83c7056
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768108"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888935"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Podstawienia w wyrażeniach regularnych
+
 Podstawienia są elementami języka, które są rozpoznawane tylko w obrębie wzorców zamiennych. Używają one wzorca wyrażenia regularnego w celu zdefiniowania całości lub części teksu, który ma zastąpić dopasowany tekst w ciągu wejściowym. Wzorzec zamieniania może składać się z co najmniej jednego podstawienia oraz znaków literału. Wzorce zastępujące są dostarczane do przeciążenia <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metody, która ma `replacement` parametr i <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metodę. Metody zastępują pasujący wzorzec wzorcem zdefiniowanym przez `replacement` parametr.  
   
- Program .NET Framework definiuje elementy podstawień wymienione w poniższej tabeli.  
+ Platforma .NET definiuje elementy podstawienia wymienione w poniższej tabeli.  
   
 |Podstawienie|Opis|  
 |------------------|-----------------|  
-|$ *Liczba*|Zawiera ostatni podciąg dopasowany przez grupę przechwytywania, która jest identyfikowana przez *liczbę*, gdzie *Number* jest wartością dziesiętną w ciągu zamiennym. Aby uzyskać więcej informacji, zobacz [podstawianie numerowanej grupy](#substituting-a-numbered-group).|  
+|$ *Liczba*|Zawiera ostatni podciąg dopasowany przez grupę przechwytywania, która jest identyfikowana przez *liczbę* , gdzie *Number* jest wartością dziesiętną w ciągu zamiennym. Aby uzyskać więcej informacji, zobacz [podstawianie numerowanej grupy](#substituting-a-numbered-group).|  
 |$ { *name* }|Zawiera ostatni podciąg dopasowany przez nazwaną grupę, która jest oznaczona `(?<` *nazwą* `> )` w ciągu zamiennym. Aby uzyskać więcej informacji, zobacz [podstawianie nazwanej grupy](#substituting-a-named-group).|  
 |$$|Zawiera pojedynczy literał „$” w ciągu zamiennym. Aby uzyskać więcej informacji, zobacz [podstawianie symbolu "$"](#substituting-a--character).|  
 |$&|Zawiera kopię całego dopasowania w ciągu zamiennym. Aby uzyskać więcej informacji, zobacz [Podstawianie całego dopasowania](#substituting-the-entire-match).|  
@@ -141,14 +142,14 @@ Podstawienia są elementami języka, które są rozpoznawane tylko w obrębie wz
   
 |Dopasowanie|Położenie|Ciąg przed dopasowaniem|Ciąg wynikowy|  
 |-----------|--------------|-------------------------|-------------------|  
-|1|2|aa|AA**AA**bb2cc3dd4ee5|  
-|2|5|aa1bb|aaaabb**aa1bb**cc3dd4ee5|  
-|3|8|aa1bb2cc|aaaabbaa1bbcc**aa1bb2cc**dd4ee5|  
-|4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**EE5|  
-|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**|
+|1|2|aa|AA **AA** bb2cc3dd4ee5|  
+|2|5|aa1bb|aaaabb **aa1bb** cc3dd4ee5|  
+|3|8|aa1bb2cc|aaaabbaa1bbcc **aa1bb2cc** dd4ee5|  
+|4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd **aa1bb2cc3dd** EE5|  
+|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee **aa1bb2cc3dd4ee**|
 
 ## <a name="substituting-the-text-after-the-match"></a>Podstawianie tekstu po dopasowaniu  
- `$'`Podstawienie zastępuje dopasowany ciąg do całego ciągu wejściowego po dopasowaniu. Oznacza to, że duplikuje ciąg wejściowy za dopasowaniem, a jednocześnie usuwa dopasowany tekst. Ciąg znajdujący się przed dopasowanym tekstem zostanie umieszczony w ciągu wynikowym bez zmian. Jeśli nie ma dopasowania, `$'` podstawienie nie ma żadnego wpływu.  
+ `$'`Podstawienie zastępuje dopasowany ciąg do całego ciągu wejściowego po dopasowaniu. Oznacza to, że duplikuje ciąg wejściowy za dopasowaniem, a jednocześnie usuwa dopasowany tekst. Ciąg znajdujący się przed dopasowanym tekstem zostanie umieszczony w ciągu wynikowym bez zmian. Jeśli nie ma dopasowania,  `$'` podstawienie nie ma żadnego wpływu.  
   
  W poniższym przykładzie zastosowano wzorzec wyrażenia regularnego w `\d+` celu dopasowania sekwencji jednej lub więcej cyfr dziesiętnych w ciągu wejściowym. Ciąg zastępujący `$'` zastępuje te cyfry tekstem, który następuje po dopasowaniu.  
   
@@ -159,10 +160,10 @@ Podstawienia są elementami języka, które są rozpoznawane tylko w obrębie wz
   
 |Dopasowanie|Położenie|Ciąg po dopasowaniu|Ciąg wynikowy|  
 |-----------|--------------|------------------------|-------------------|  
-|1|2|bb2cc3dd4ee5|**bb2cc3dd4ee5**bb2cc3dd4ee5|  
-|2|5|cc3dd4ee5|aabb2cc3dd4ee5bb**cc3dd4ee5**cc3dd4ee5|  
-|3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc**dd4ee5**dd4ee5|  
-|4|11|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**EE5**EE5|  
+|1|2|bb2cc3dd4ee5|**bb2cc3dd4ee5** bb2cc3dd4ee5|  
+|2|5|cc3dd4ee5|aabb2cc3dd4ee5bb **cc3dd4ee5** cc3dd4ee5|  
+|3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc **dd4ee5** dd4ee5|  
+|4|11|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd **EE5** EE5|  
 |5|14|<xref:System.String.Empty?displayProperty=nameWithType>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
 
 ## <a name="substituting-the-last-captured-group"></a>Podstawianie ostatniej przechwyconej grupy  
@@ -195,9 +196,9 @@ Podstawienia są elementami języka, które są rozpoznawane tylko w obrębie wz
   
 |Dopasowanie|Położenie|Dopasowanie|Ciąg wynikowy|  
 |-----------|--------------|-----------|-------------------|  
-|1|3|123|**ABC123DEF456**ABC DEF456|  
-|2|5|456|ABCABC123DEF456DEF**ABC123DEF456**|  
+|1|3|123|**ABC123DEF456** ABC DEF456|  
+|2|5|456|ABCABC123DEF456DEF **ABC123DEF456**|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Język wyrażeń regularnych — podręczny wykaz](regular-expression-language-quick-reference.md)

@@ -11,18 +11,19 @@ helpviewer_keywords:
 - Join method
 - Format method
 - Concat method
-- strings [.NET Framework], creating
+- strings [.NET], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: b44d0f8e1717ead72e28f0be644644961d1482b6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7dedaf61f56f19343299c841bb4cee70fb9c767a
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596451"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889442"
 ---
 # <a name="creating-new-strings-in-net"></a>Tworzenie nowych ciągów w programie .NET
-.NET Framework umożliwia tworzenie ciągów przy użyciu prostego przypisywania, a także przeciążenie konstruktora klasy do obsługi tworzenia ciągów przy użyciu wielu różnych parametrów. .NET Framework udostępnia również kilka metod <xref:System.String?displayProperty=nameWithType> klasy, które tworzą nowe obiekty ciągu przez połączenie kilku ciągów, tablic ciągów lub obiektów.  
+
+Platforma .NET umożliwia tworzenie ciągów przy użyciu prostego przypisywania, a także przeciążenie konstruktora klasy w celu obsługi ciągów przy użyciu wielu różnych parametrów. Platforma .NET udostępnia również kilka metod <xref:System.String?displayProperty=nameWithType> klasy, które tworzą nowe obiekty ciągu przez połączenie kilku ciągów, tablic ciągów lub obiektów.  
   
 ## <a name="creating-strings-using-assignment"></a>Tworzenie ciągów przy użyciu przypisania  
  Najprostszym sposobem utworzenia nowego <xref:System.String> obiektu jest przypisanie literału ciągu do <xref:System.String> obiektu.  
@@ -33,7 +34,7 @@ ms.locfileid: "84596451"
 ## <a name="methods-that-return-strings"></a>Metody, które zwracają ciągi  
  Poniższa tabela zawiera kilka przydatnych metod, które zwracają nowe obiekty ciągu.  
   
-|Nazwa metody|Użycie|  
+|Nazwa metody|Zastosowanie|  
 |-----------------|---------|  
 |<xref:System.String.Format%2A?displayProperty=nameWithType>|Kompiluje sformatowany ciąg z zestawu obiektów wejściowych.|  
 |<xref:System.String.Concat%2A?displayProperty=nameWithType>|Kompiluje ciągi z dwóch lub więcej ciągów.|  
@@ -52,7 +53,7 @@ ms.locfileid: "84596451"
  W tym przykładzie <xref:System.DateTime.Now%2A?displayProperty=nameWithType> wyświetla bieżącą datę i godzinę w sposób określony przez kulturę skojarzoną z bieżącym wątkiem.  
   
 ### <a name="concat"></a>Concat  
- Metoda **String. Concat** może służyć do łatwego tworzenia nowego obiektu ciągu z dwóch lub więcej istniejących obiektów. Zapewnia on niezależny od języka sposób łączenia ciągów. Ta metoda akceptuje wszelkie klasy, które pochodzą z **obiektu System. Object**. Poniższy przykład tworzy ciąg z dwóch istniejących obiektów String i oddzielający znak.  
+ Metoda **String. Concat** może służyć do łatwego tworzenia nowego obiektu ciągu z dwóch lub więcej istniejących obiektów. Zapewnia on niezależny od języka sposób łączenia ciągów. Ta metoda akceptuje wszelkie klasy, które pochodzą z **obiektu System. Object** . Poniższy przykład tworzy ciąg z dwóch istniejących obiektów String i oddzielający znak.  
   
  [!code-csharp[Strings.Creating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#2)]
  [!code-vb[Strings.Creating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#2)]  
@@ -79,7 +80,7 @@ ms.locfileid: "84596451"
  [!code-csharp[Strings.Creating#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#5)]
  [!code-vb[Strings.Creating#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#5)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podstawowe operacje na ciągach](basic-string-operations.md)
 - [Formatowanie złożone](composite-formatting.md)

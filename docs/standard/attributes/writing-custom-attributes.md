@@ -10,19 +10,19 @@ dev_langs:
 helpviewer_keywords:
 - multiple attribute instances
 - AttributeTargets enumeration
-- attributes [.NET Framework], custom
+- attributes [.NET], custom
 - AllowMultiple property
 - custom attributes
 - AttributeUsageAttribute class, custom attributes
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: f047e18531b46f0c89be9a6feaa9aa50341205e3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 670f34083834b35d26e6018372948022eec17d47
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550928"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889195"
 ---
 # <a name="writing-custom-attributes"></a>Wpisywanie atrybutów niestandardowych
 Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzenia wzorców wielu nowych koncepcji. Jeśli znasz programowanie zorientowane obiektowo i wiesz, jak projektować klasy, masz już większość koniecznych informacji. Atrybuty niestandardowe są zasadniczo tradycyjnymi klasami, które są wyprowadzane bezpośrednio lub pośrednio z <xref:System.Attribute?displayProperty=nameWithType> . Podobnie jak tradycyjne klasy, atrybuty niestandardowe zawierają metody, które przechowują i pobierają dane.  
@@ -104,7 +104,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
   
 - Klasy atrybutów muszą być zadeklarowane jako klasy publiczne.  
   
-- Zgodnie z Konwencją nazwa klasy ma kończyć się **atrybutem**programu Word. Chociaż nie jest to wymagane, ta konwencja jest zalecana dla czytelności. Gdy atrybut jest stosowany, włączenie atrybutu słowa jest opcjonalne.  
+- Zgodnie z Konwencją nazwa klasy ma kończyć się **atrybutem** programu Word. Chociaż nie jest to wymagane, ta konwencja jest zalecana dla czytelności. Gdy atrybut jest stosowany, włączenie atrybutu słowa jest opcjonalne.  
   
 - Wszystkie klasy atrybutów muszą dziedziczyć bezpośrednio lub pośrednio z <xref:System.Attribute?displayProperty=nameWithType> .  
   

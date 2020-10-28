@@ -10,16 +10,16 @@ helpviewer_keywords:
 - lookbehinds
 - regular expressions, grouping constructs
 - lookaheads
-- .NET Framework regular expressions, grouping constructs
+- .NET regular expressions, grouping constructs
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-ms.openlocfilehash: d737e5758ee7a940aeea3ded9a7937d687393116
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: de424b4a022a5e2d2f8a9c12b4147383082f019b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662631"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888511"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Konstrukcje grupujące w wyrażeniach regularnych
 Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przechwytuje podciągi ciągu wejściowego. Można użyć konstrukcji grupowania, aby wykonać następujące czynności:  
@@ -62,9 +62,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
   
  Dostęp do przechwyconych grup można uzyskać na cztery sposoby:  
   
-- Za pomocą konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\` *numeru*składni, gdzie *Number* jest numerem porządkowym przechwyconego podwyrażenia.  
+- Za pomocą konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\` *numeru* składni, gdzie *Number* jest numerem porządkowym przechwyconego podwyrażenia.  
   
-- Za pomocą nazwanej konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\k<` *nazwy*składni `>` , gdzie *name* jest nazwą grupy przechwytywania lub `\k<` *cyfrą* `>` , gdzie *Number* jest numerem porządkowym grupy przechwytywania. Grupa przechwytywania ma nazwę domyślną, która jest identyczna z numerem porządkowym. Aby uzyskać więcej informacji, zobacz [nazwane dopasowane podwyrażenia](#named_matched_subexpression) w dalszej części tego tematu.  
+- Za pomocą nazwanej konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\k<` *nazwy* składni `>` , gdzie *name* jest nazwą grupy przechwytywania lub `\k<` *cyfrą* `>` , gdzie *Number* jest numerem porządkowym grupy przechwytywania. Grupa przechwytywania ma nazwę domyślną, która jest identyczna z numerem porządkowym. Aby uzyskać więcej informacji, zobacz [nazwane dopasowane podwyrażenia](#named_matched_subexpression) w dalszej części tego tematu.  
   
 - Przy użyciu `$` sekwencji zastępczej *liczb* w <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> wywołaniu metody lub, gdzie *Number* jest numerem porządkowym przechwyconego podwyrażenia.  
   
@@ -105,9 +105,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
   
  Można uzyskać dostęp do nazwanych przechwyconych grup w następujący sposób:  
   
-- Za pomocą nazwanej konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\k<` *nazwy*składni `>` , gdzie *name* to nazwa przechwyconego podwyrażenia.  
+- Za pomocą nazwanej konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\k<` *nazwy* składni `>` , gdzie *name* to nazwa przechwyconego podwyrażenia.  
   
-- Za pomocą konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\` *numeru*składni, gdzie *Number* jest numerem porządkowym przechwyconego podwyrażenia. Nazwane dopasowane podwyrażenia są numerowane kolejno od lewej do prawej po dopasowaniu podwyrażeń.  
+- Za pomocą konstrukcji odwołania wstecznego w wyrażeniu regularnym. Dopasowane Podwyrażenie jest przywoływane w tym samym wyrażeniu regularnym przy użyciu `\` *numeru* składni, gdzie *Number* jest numerem porządkowym przechwyconego podwyrażenia. Nazwane dopasowane podwyrażenia są numerowane kolejno od lewej do prawej po dopasowaniu podwyrażeń.  
   
 - Przy użyciu `${` *name* `}` kolejności zamieniania nazw w <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> wywołaniu metody lub, gdzie *name* jest nazwą przechwyconego podwyrażenia.  
   
@@ -172,7 +172,7 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
   
 `(?'name1-name2' subexpression)`
   
- gdzie *Name1* jest bieżącą grupą (opcjonalnie), *NAME2* jest wcześniej zdefiniowaną grupą i *podwyrażeniem* jest dowolnym prawidłowym wzorcem wyrażenia regularnego. Definicja grupy równoważenia usuwa definicję *NAME2* i przechowuje interwał między *NAME2* i *Name1* w *Name1*. Jeśli nie zdefiniowano żadnej grupy *NAME2* , dopasowanie wsteczne. Ponieważ usunięcie ostatniej definicji elementu *NAME2* ujawnia poprzednią definicję *NAME2*, konstrukcja ta umożliwia użycie stosu przechwytywania dla grupy *NAME2* jako licznika do śledzenia zagnieżdżonych konstrukcji, takich jak nawiasy lub otwierające i zamykające nawiasy.  
+ gdzie *Name1* jest bieżącą grupą (opcjonalnie), *NAME2* jest wcześniej zdefiniowaną grupą i *podwyrażeniem* jest dowolnym prawidłowym wzorcem wyrażenia regularnego. Definicja grupy równoważenia usuwa definicję *NAME2* i przechowuje interwał między *NAME2* i *Name1* w *Name1* . Jeśli nie zdefiniowano żadnej grupy *NAME2* , dopasowanie wsteczne. Ponieważ usunięcie ostatniej definicji elementu *NAME2* ujawnia poprzednią definicję *NAME2* , konstrukcja ta umożliwia użycie stosu przechwytywania dla grupy *NAME2* jako licznika do śledzenia zagnieżdżonych konstrukcji, takich jak nawiasy lub otwierające i zamykające nawiasy.  
   
  Definicja grupy równoważenia używa *NAME2* jako stosu. Początkowy znak każdej zagnieżdżonej konstrukcji jest umieszczany w grupie i w swojej <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> kolekcji. Po dopasowaniu znaku zamykającego jego odpowiedni znak otwierający jest usuwany z grupy, a <xref:System.Text.RegularExpressions.Group.Captures%2A> kolekcja zostanie zmniejszona o jeden. Po dopasowaniu i zamykaniu znaków wszystkich zagnieżdżonych konstrukcji *NAME2* jest puste.  
   
@@ -291,7 +291,7 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
   
  `(?=`*Podwyrażenie*`)`  
   
- gdzie *subexpression* jest dowolnym wzorcem wyrażenia regularnego. Aby dopasowanie zakończyło się pomyślnie, ciąg wejściowy musi być zgodny ze wzorcem wyrażenia regularnego w *podrażeniu*, chociaż dopasowany podciąg nie jest uwzględniony w wyniku dopasowania. Potwierdzenie o zerowej szerokości nie nawrotu.  
+ gdzie *subexpression* jest dowolnym wzorcem wyrażenia regularnego. Aby dopasowanie zakończyło się pomyślnie, ciąg wejściowy musi być zgodny ze wzorcem wyrażenia regularnego w *podrażeniu* , chociaż dopasowany podciąg nie jest uwzględniony w wyniku dopasowania. Potwierdzenie o zerowej szerokości nie nawrotu.  
   
  Zazwyczaj na końcu wzorca wyrażenia regularnego zostanie znalezione pozytywne potwierdzenie o zerowej szerokości. Definiuje podciąg, który musi zostać znaleziony na końcu ciągu, aby nastąpiło dopasowanie, ale nie powinien być uwzględniony w dopasowaniu. Jest on również przydatny do zapobiegania nadmiernemu wycofywaniu. Możesz użyć pozytywnego potwierdzenia naprzódgo o zerowej szerokości, aby upewnić się, że określona przechwycona Grupa rozpoczyna się od tekstu, który jest zgodny z podzbiorem wzorca zdefiniowanego dla tej przechwyconej grupy. Na przykład, jeśli grupa przechwytywania dopasowuje kolejne znaki wyrazu, można użyć pozytywnej wartości zerowej z wyprzedzeniem, aby wymagać, aby pierwszy znak był wielką literą.  
   
@@ -314,7 +314,7 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
   
  `(?!`*Podwyrażenie*`)`  
   
- gdzie *subexpression* jest dowolnym wzorcem wyrażenia regularnego. Aby dopasowanie zakończyło się pomyślnie, ciąg wejściowy nie może być zgodny ze wzorcem wyrażenia regularnego w *podrażeniu*, chociaż dopasowany ciąg nie jest uwzględniony w wyniku dopasowania.  
+ gdzie *subexpression* jest dowolnym wzorcem wyrażenia regularnego. Aby dopasowanie zakończyło się pomyślnie, ciąg wejściowy nie może być zgodny ze wzorcem wyrażenia regularnego w *podrażeniu* , chociaż dopasowany ciąg nie jest uwzględniony w wyniku dopasowania.  
   
  Potwierdzenie negatywnej zerowej szerokości jest zwykle używane na początku lub na końcu wyrażenia regularnego. Na początku wyrażenia regularnego można zdefiniować konkretny wzorzec, który nie powinien być dopasowany, gdy początek wyrażenia regularnego definiuje podobny, ale bardziej ogólny wzorzec do dopasowania. W takim przypadku jest często używany do ograniczania wycofywania. Na końcu wyrażenia regularnego można zdefiniować Podwyrażenie, które nie może wystąpić na końcu dopasowania.  
   

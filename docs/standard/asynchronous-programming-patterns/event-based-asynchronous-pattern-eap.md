@@ -8,12 +8,12 @@ helpviewer_keywords:
 - asynchronous programming, design patterns
 - asynchronous programming
 ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
-ms.openlocfilehash: 03b4d914d72b96b882c774565654c022b145b5f2
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 16aabeb55a56c63449a865d00044c463657de740
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768875"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888844"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>Asynchroniczny wzorzec oparty na zdarzeniach (EAP)
 
@@ -27,7 +27,7 @@ Istnieje wiele sposobów udostępniania funkcji asynchronicznych kodowi klienta.
  [Asynchroniczny wzorzec oparty na zdarzeniach — przegląd](event-based-asynchronous-pattern-overview.md)  
  Opisuje sposób, w jaki wzorzec asynchroniczny oparty na zdarzeniach udostępnia zalety aplikacji wielowątkowych, jednocześnie ukrywając wiele złożonych problemów niezależnych od projektów wielowątkowych.  
   
- [Implementowanie wzorca asynchronicznego opartego na zdarzeniach](implementing-the-event-based-asynchronous-pattern.md)  
+ [Implementacja wzorca asynchronicznego opartego na zdarzeniach](implementing-the-event-based-asynchronous-pattern.md)  
  Opisuje ustandaryzowany sposób spakowania klasy, która ma funkcje asynchroniczne.  
   
  [Najlepsze rozwiązania w zakresie implementacji wzorca asynchronicznego opartego na zdarzeniach](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)  
@@ -64,7 +64,7 @@ Istnieje wiele sposobów udostępniania funkcji asynchronicznych kodowi klienta.
  [Wątkowość](../threading/index.md)  
  Opisuje funkcje wielowątkowości w programie .NET.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zarządzana wątkowość — najlepsze rozwiązania](../threading/managed-threading-best-practices.md)
 - [Zdarzenia](../events/index.md)

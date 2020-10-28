@@ -13,12 +13,12 @@ helpviewer_keywords:
 - runtime, attributes
 - extending metadata
 ms.assetid: 30386922-1e00-4602-9ebf-526b271a8b87
-ms.openlocfilehash: 5678e904afae4d348fbb56b189c95cd59b8e7a4d
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 9a83c0e8ee3476f43ccc2e88c21ccbbc0661bd19
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92162846"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889221"
 ---
 # <a name="extend-metadata-using-attributes"></a>Rozszerzanie metadanych przy użyciu atrybutów
 
@@ -33,7 +33,7 @@ Platforma .NET używa atrybutów z różnych powodów i rozwiązywania wielu pro
 |[Stosowanie atrybutów](applying-attributes.md)|Opisuje sposób zastosowania atrybutu do elementu kodu.|
 |[Wpisywanie atrybutów niestandardowych](writing-custom-attributes.md)|Opisuje sposób projektowania klas atrybutów niestandardowych.|
 |[Pobieranie informacji przechowywanych w atrybutach](retrieving-information-stored-in-attributes.md)|Opisuje sposób pobierania atrybutów niestandardowych dla kodu, który jest ładowany do kontekstu wykonywania.|
-|[Metadane i składniki Self-Describing](../metadata-and-self-describing-components.md)|Zawiera omówienie metadanych i opis sposobu ich implementacji w .NET Framework przenośnym pliku wykonywalnym (PE).|
+|[Metadane i składniki Self-Describing](../metadata-and-self-describing-components.md)|Zawiera omówienie metadanych i opis sposobu ich implementacji w przenośnym pliku wykonywalnym (PE) platformy .NET.|
 |[Instrukcje: Ładowanie zestawów do kontekstu Reflection-Only](../../framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|Wyjaśnia, jak pobrać informacje o atrybutach niestandardowych w kontekście tylko odbicia.|
 
 ## <a name="reference"></a>Tematy pomocy

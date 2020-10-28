@@ -6,24 +6,25 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- numeric format strings [.NET Framework]
-- formatting [.NET Framework], numbers
-- number formatting [.NET Framework]
+- numeric format strings [.NET]
+- formatting [.NET], numbers
+- number formatting [.NET]
 - custom numeric format strings
-- numbers [.NET Framework], custom numeric format strings
+- numbers [.NET], custom numeric format strings
 - displaying date and time data
-- format providers [.NET Framework]
+- format providers [.NET]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-ms.openlocfilehash: d12899fff7d9e6cb63728ba0b160b70fa2a41a1a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 38c1890684bd89b2bc4719637209569f01bd17a2
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290516"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888485"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Instrukcje: Definiowanie i używanie niestandardowych dostawców formatu liczbowego
-.NET Framework zapewnia szeroką kontrolę nad reprezentacją ciągu wartości liczbowych. Program obsługuje następujące funkcje dostosowywania formatu wartości liczbowych:  
+
+Program .NET zapewnia szeroką kontrolę nad reprezentacją ciągu wartości liczbowych. Program obsługuje następujące funkcje dostosowywania formatu wartości liczbowych:  
   
 - Standardowe ciągi formatujące liczbę, które zapewniają wstępnie zdefiniowany zestaw formatów do konwertowania liczb na ich reprezentację w postaci ciągu. Można ich używać z dowolną metodą formatowania liczbowego, taką jak <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType> , która ma `format` parametr. Aby uzyskać szczegółowe informacje, zobacz [Standardowe ciągi formatujące liczby](standard-numeric-format-strings.md).  
   
@@ -31,13 +32,13 @@ ms.locfileid: "84290516"
   
 - Niestandardowe <xref:System.Globalization.CultureInfo> lub <xref:System.Globalization.NumberFormatInfo> obiekty, które definiują symbole i wzorce formatu używane do wyświetlania reprezentacji ciągów wartości liczbowych. Można ich używać z dowolną metodą formatowania liczbowego, taką jak <xref:System.Int32.ToString%2A> , która ma `provider` parametr. Zazwyczaj `provider` parametr służy do określania formatowania specyficznego dla kultury.  
   
- W niektórych przypadkach (na przykład gdy aplikacja musi wyświetlić sformatowany numer konta, numer identyfikacyjny lub kod pocztowy) te trzy techniki są nieodpowiednie. .NET Framework umożliwia również zdefiniowanie obiektu formatowania, który nie jest <xref:System.Globalization.CultureInfo> ani <xref:System.Globalization.NumberFormatInfo> obiektem, aby określić, jak jest sformatowana wartość liczbowa. Ten temat zawiera instrukcje krok po kroku dotyczące implementowania takiego obiektu i zawiera przykład formatowania numerów telefonów.  
+ W niektórych przypadkach (na przykład gdy aplikacja musi wyświetlić sformatowany numer konta, numer identyfikacyjny lub kod pocztowy) te trzy techniki są nieodpowiednie. Platforma .NET umożliwia również zdefiniowanie obiektu formatowania, który nie jest <xref:System.Globalization.CultureInfo> ani <xref:System.Globalization.NumberFormatInfo> obiektem, aby określić, jak jest sformatowana wartość liczbowa. Ten temat zawiera instrukcje krok po kroku dotyczące implementowania takiego obiektu i zawiera przykład formatowania numerów telefonów.  
   
-### <a name="to-define-a-custom-format-provider"></a>Aby zdefiniować niestandardowego dostawcę formatowania  
+## <a name="define-a-custom-format-provider"></a>Zdefiniuj niestandardowego dostawcę formatowania  
   
 1. Zdefiniuj klasę implementującą <xref:System.IFormatProvider> <xref:System.ICustomFormatter> interfejsy i.  
   
-2. Zaimplementuj <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metodę. <xref:System.IFormatProvider.GetFormat%2A>to metoda wywołania zwrotnego, która Metoda formatowania (taka jak <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> Metoda) wywołuje, aby pobrać obiekt, który jest odpowiedzialny za wykonywanie formatowania niestandardowego. Typowa implementacja programu <xref:System.IFormatProvider.GetFormat%2A> wykonuje następujące czynności:  
+2. Zaimplementuj <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metodę. <xref:System.IFormatProvider.GetFormat%2A> to metoda wywołania zwrotnego, która Metoda formatowania (taka jak <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> Metoda) wywołuje, aby pobrać obiekt, który jest odpowiedzialny za wykonywanie formatowania niestandardowego. Typowa implementacja programu <xref:System.IFormatProvider.GetFormat%2A> wykonuje następujące czynności:  
   
     1. Określa, czy <xref:System.Type> obiekt przesłany jako parametr metody reprezentuje <xref:System.ICustomFormatter> interfejs.  
   
@@ -55,13 +56,14 @@ ms.locfileid: "84290516"
   
     4. Zwraca reprezentację ciągu dla `arg` parametru.  
   
-### <a name="to-use-a-custom-numeric-formatting-object"></a>Aby użyć niestandardowego obiektu formatowania liczbowego  
+## <a name="use-a-custom-numeric-formatting-object"></a>Użyj niestandardowego obiektu formatowania liczbowego  
   
 1. Utwórz nowe wystąpienie niestandardowej klasy formatowania.  
   
 2. Wywołaj <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metodę formatowania, przekazując ją do niestandardowego obiektu formatowania, specyfikator formatowania (lub <xref:System.String.Empty?displayProperty=nameWithType> , jeśli taki nie jest używany) i wartość liczbową do sformatowania.  
   
-## <a name="example"></a>Przykład  
+## <a name="example"></a>Przykład
+
  W poniższym przykładzie zdefiniowano niestandardowego dostawcę formatu liczbowego `TelephoneFormatter` , który konwertuje liczbę reprezentującą numer telefonu w Stanach Zjednoczonych do formatu NANP lub E. 123. Metoda obsługuje dwa specyfikatory formatu: "N" (który wyprowadza format NANP) i "I" (który wyprowadza międzynarodowy format E. 123).  
   
  [!code-csharp[Formatting.HowTo.NumericValue#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#1)]

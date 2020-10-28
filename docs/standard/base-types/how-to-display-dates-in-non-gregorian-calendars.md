@@ -6,17 +6,17 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- formatting [.NET Framework], dates
-- dates [.NET Framework], formatting
-- calendars [.NET Framework], displaying dates
+- formatting [.NET], dates
+- dates [.NET], formatting
+- calendars [.NET], displaying dates
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
-ms.openlocfilehash: 8d02b74f63ec5b6260679ae4cea04791681ec238
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 6c1ab51114a1b39234adbc89526d111b3b9ba44c
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523928"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888446"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Instrukcje: Wyświetlanie dat w kalendarzach innych niż gregoriański
 <xref:System.DateTime>Typy i <xref:System.DateTimeOffset> używają kalendarza gregoriańskiego jako kalendarza domyślnego. Oznacza to, że wywołanie metody daty i godziny `ToString` powoduje wyświetlenie ciągu reprezentującego datę i godzinę w kalendarzu gregoriańskim, nawet jeśli ta data i godzina zostały utworzone przy użyciu innego kalendarza. Jest to zilustrowane w poniższym przykładzie, który używa dwóch różnych sposobów tworzenia wartości daty i godziny w kalendarzu perski, ale nadal wyświetla te wartości daty i godziny w kalendarzu gregoriańskim, gdy wywołuje <xref:System.DateTime.ToString%2A> metodę. W tym przykładzie przedstawiono dwa często używane, ale nieprawidłowe techniki wyświetlania daty w określonym kalendarzu.  
@@ -61,7 +61,7 @@ ms.locfileid: "80523928"
   
     - <xref:System.Globalization.Calendar.GetSecond%2A>, aby wyświetlić sekundy (w minutach) w odpowiednim kalendarzu.  
   
-    - <xref:System.Globalization.Calendar.GetMilliseconds%2A>, aby wyświetlić milisekundy w drugim w odpowiednim kalendarzu.  
+    - <xref:System.Globalization.Calendar.GetMilliseconds%2A> , aby wyświetlić milisekundy w drugim w odpowiednim kalendarzu.  
   
 ## <a name="example"></a>Przykład  
  Przykład wyświetla datę przy użyciu dwóch różnych kalendarzy. Wyświetla datę po zdefiniowaniu kalendarza Hidżry jako kalendarz domyślny dla kultury AR-JO i wyświetla datę przy użyciu kalendarza perskiego, który nie jest obsługiwany jako opcjonalny Kalendarz przez kulturę FA-IR.  

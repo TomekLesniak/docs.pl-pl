@@ -7,33 +7,34 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- formatting [.NET Framework], dates
+- formatting [.NET], dates
 - DateTime.DayOfWeek property
 - DateTime.ToString method
-- dates [.NET Framework], retrieving week information
+- dates [.NET], retrieving week information
 - DateTimeOffset.DayOfWeek property
-- dates [.NET Framework], day of week
+- dates [.NET], day of week
 - Weekday function
-- day of week [.NET Framework]
+- day of week [.NET]
 - extracting day of week
 - weekday names
 - WeekdayName function
-- numbers [.NET Framework], day of week
-- formatting [.NET Framework], time
+- numbers [.NET], day of week
+- formatting [.NET], time
 - DateTimeOffset.ToString method
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
-ms.openlocfilehash: fa0eb6c36b88594543d08680af104b5408c295f9
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: f7a18a3ab414a07fa4908c67c5ec9334ce63953f
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662618"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888524"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Instrukcje: Wyodrębnianie dnia tygodnia z określonej daty
-.NET Framework ułatwia określenie dnia tygodnia dla określonej daty i wyświetlanie zlokalizowanej nazwy dnia tygodnia dla konkretnej daty. Wartość wyliczana wskazująca dzień tygodnia odpowiadający określonej dacie jest dostępna z <xref:System.DateTime.DayOfWeek%2A> <xref:System.DateTimeOffset.DayOfWeek%2A> właściwości lub. Z kolei pobieranie nazwy dnia tygodnia jest operacją formatowania, którą można wykonać, wywołując metodę formatowania, taką jak metoda wartości daty i godziny `ToString` lub <xref:System.String.Format%2A?displayProperty=nameWithType> Metoda. W tym temacie przedstawiono sposób wykonywania tych operacji formatowania.  
+
+Platforma .NET ułatwia ustalanie porządkowego dnia tygodnia dla określonej daty i wyświetlanie zlokalizowanej nazwy dnia tygodnia dla konkretnej daty. Wartość wyliczana wskazująca dzień tygodnia odpowiadający określonej dacie jest dostępna z <xref:System.DateTime.DayOfWeek%2A> <xref:System.DateTimeOffset.DayOfWeek%2A> właściwości lub. Z kolei pobieranie nazwy dnia tygodnia jest operacją formatowania, którą można wykonać, wywołując metodę formatowania, taką jak metoda wartości daty i godziny `ToString` lub <xref:System.String.Format%2A?displayProperty=nameWithType> Metoda. W tym temacie przedstawiono sposób wykonywania tych operacji formatowania.  
   
-### <a name="to-extract-a-number-indicating-the-day-of-the-week-from-a-specific-date"></a>Aby wyodrębnić liczbę wskazującą dzień tygodnia z określonej daty  
+## <a name="extract-a-number-indicating-the-day-of-the-week"></a>Wyodrębnij liczbę wskazującą dzień tygodnia
   
 1. Jeśli pracujesz z ciągiem znaków reprezentującym datę, należy przekonwertować ciąg do wartości <xref:System.DateTime> lub <xref:System.DateTimeOffset> przy użyciu statycznej metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> lub <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
@@ -46,7 +47,7 @@ ms.locfileid: "84662618"
  [!code-csharp[Formatting.Howto.WeekdayName#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/weekdaynumber7.cs#7)]
  [!code-vb[Formatting.Howto.WeekdayName#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/weekdaynumber7.vb#7)]  
   
-### <a name="to-extract-the-abbreviated-weekday-name-from-a-specific-date"></a>Aby wyodrębnić skróconą nazwę dnia tygodnia z określonej daty  
+## <a name="extract-the-abbreviated-weekday-name"></a>Wyodrębnij nazwę skróconego dnia tygodnia
   
 1. Jeśli pracujesz z ciągiem znaków reprezentującym datę, należy przekonwertować ciąg do wartości <xref:System.DateTime> lub <xref:System.DateTimeOffset> przy użyciu statycznej metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> lub <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
@@ -62,7 +63,7 @@ ms.locfileid: "84662618"
          [!code-csharp[Formatting.Howto.WeekdayName#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname2.cs#2)]
          [!code-vb[Formatting.Howto.WeekdayName#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname2.vb#2)]  
   
-### <a name="to-extract-the-full-weekday-name-from-a-specific-date"></a>Aby wyodrębnić pełną nazwę dnia tygodnia z określonej daty  
+## <a name="extract-the-full-weekday-name"></a>Wyodrębnij pełną nazwę dnia tygodnia
   
 1. Jeśli pracujesz z ciągiem znaków reprezentującym datę, należy przekonwertować ciąg do wartości <xref:System.DateTime> lub <xref:System.DateTimeOffset> przy użyciu statycznej metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> lub <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
@@ -84,7 +85,7 @@ ms.locfileid: "84662618"
  [!code-csharp[Formatting.Howto.WeekdayName#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/example6.cs#6)]
  [!code-vb[Formatting.Howto.WeekdayName#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/example6.vb#6)]  
   
- Poszczególne języki mogą zapewniać funkcje, które duplikują lub uzupełniają funkcje udostępniane przez .NET Framework. Na przykład Visual Basic obejmuje dwie takie funkcje:  
+ Poszczególne języki mogą zapewniać funkcje, które duplikują lub uzupełniają funkcje zapewniane przez platformę .NET. Na przykład Visual Basic obejmuje dwie takie funkcje:  
   
 - `Weekday`, która zwraca liczbę wskazującą dzień tygodnia określonej daty. Uważa wartość porządkową pierwszego dnia tygodnia, która ma być taka, natomiast Właściwość uważa, że jest <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> równa zero.  
   

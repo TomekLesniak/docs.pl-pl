@@ -9,17 +9,18 @@ helpviewer_keywords:
 - calling synchronous methods in asynchronous manner
 - EndInvoke method
 - calling asynchronous methods
-- delegates [.NET Framework], asynchronous
+- delegates [.NET], asynchronous
 - synchronous calling in asynchronous manner
 ms.assetid: 38a345ca-6963-4436-9608-5c9defef9c64
-ms.openlocfilehash: 82e0a57c3d8e180456aed48886e38ca466db16c8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 05e574536abe4eac823b7b74369f5b191724e5b5
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289970"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889260"
 ---
 # <a name="asynchronous-programming-using-delegates"></a>Programowanie asynchroniczne przy użyciu delegatów
+
 Delegaty umożliwiają wywoływanie metody synchronicznej w sposób asynchroniczny. W przypadku wywołania delegata synchronicznie `Invoke` Metoda wywołuje metodę docelową bezpośrednio w bieżącym wątku. Jeśli `BeginInvoke` Metoda jest wywoływana, środowisko uruchomieniowe języka wspólnego (CLR) kolejkuje żądanie i natychmiast wraca do obiektu wywołującego. Metoda docelowa jest wywoływana asynchronicznie w wątku z puli wątków. Oryginalny wątek, który przesłał żądanie, jest bezpłatny, aby kontynuować wykonywanie równolegle z metodą docelową. Jeśli metoda wywołania zwrotnego została określona w wywołaniu `BeginInvoke` metody, metoda wywołania zwrotnego jest wywoływana, gdy metoda docelowa zostanie zakończona. W metodzie wywołania zwrotnego `EndInvoke` metoda uzyskuje wartość zwracaną oraz wszystkie parametry wejściowe/wyjściowe lub wyjściowe. Jeśli metoda wywołania zwrotnego nie zostanie określona podczas wywoływania `BeginInvoke` , `EndInvoke` można wywołać z wątku, który wywołał `BeginInvoke` .  
   
 > [!IMPORTANT]
@@ -31,7 +32,7 @@ Delegaty umożliwiają wywoływanie metody synchronicznej w sposób asynchronicz
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
  [Asynchroniczny wzorzec oparty na zdarzeniach (EAP)](event-based-asynchronous-pattern-eap.md)  
- Opisuje programowanie asynchroniczne przy użyciu .NET Framework.  
+ Opisuje programowanie asynchroniczne w programie .NET.  
   
 ## <a name="see-also"></a>Zobacz także
 

@@ -7,15 +7,15 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- assemblies [.NET Framework], attributes
-- attributes [.NET Framework], applying
+- assemblies [.NET], attributes
+- attributes [.NET], applying
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
-ms.openlocfilehash: 76591de6a4305b21b89d348f9ffe53f4e67e7334
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 24fe58ddf48e40b422652baa4c5bba86eea6b84f
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92162833"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889234"
 ---
 # <a name="apply-attributes"></a>Stosowanie atrybutów
 
@@ -33,11 +33,11 @@ W celu zastosowania atrybutu do elementu kodu należy wykonać procedurę opisan
 
  Atrybut jest emitowany do metadanych podczas kompilowania kodu. Jego udostępnianie środowisku uruchomieniowemu języka wspólnego i niestandardowym narzędziom lub aplikacjom odbywa się za pośrednictwem usług odbicia środowiska uruchomieniowego.
 
- Według Konwencji wszystkie nazwy atrybutów kończą się znakiem "Attribute". Jednak niektóre języki przeznaczone dla tego środowiska uruchomieniowego, np. Visual Basic i C#, nie wymagają określania pełnej nazwy atrybutu. Na przykład, jeśli chcesz zainicjować, musisz <xref:System.ObsoleteAttribute?displayProperty=nameWithType> tylko odwołać się do niego jako **przestarzałe**.
+ Według Konwencji wszystkie nazwy atrybutów kończą się znakiem "Attribute". Jednak niektóre języki przeznaczone dla tego środowiska uruchomieniowego, np. Visual Basic i C#, nie wymagają określania pełnej nazwy atrybutu. Na przykład, jeśli chcesz zainicjować, musisz <xref:System.ObsoleteAttribute?displayProperty=nameWithType> tylko odwołać się do niego jako **przestarzałe** .
 
 ## <a name="apply-an-attribute-to-a-method"></a>Zastosuj atrybut do metody
 
- Poniższy przykład kodu pokazuje, jak używać **System. ObsoleteAttribute**, który oznacza kod jako przestarzały. Ciąg tekstowy `"Will be removed in next version"` jest przekazywany do atrybutu. Atrybut sprawia, że podczas wywoływania kodu opisywanego przez atrybut kompilator generuje ostrzeżenie pokazujące przekazany ciąg.
+ Poniższy przykład kodu pokazuje, jak używać **System. ObsoleteAttribute** , który oznacza kod jako przestarzały. Ciąg tekstowy `"Will be removed in next version"` jest przekazywany do atrybutu. Atrybut sprawia, że podczas wywoływania kodu opisywanego przez atrybut kompilator generuje ostrzeżenie pokazujące przekazany ciąg.
 
  [!code-cpp[Conceptual.Attributes.Usage#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source1.cpp#3)]
  [!code-csharp[Conceptual.Attributes.Usage#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#3)]
@@ -53,7 +53,7 @@ W celu zastosowania atrybutu do elementu kodu należy wykonać procedurę opisan
 
  Zastosowanie tego atrybutu sprawia, że w manifeście zestawu w części pliku określającej metadane jest umieszczany ciąg `"My Assembly"`. Można wyświetlić atrybut przy użyciu [Dezasembler MSIL (Ildasm.exe)](../../framework/tools/ildasm-exe-il-disassembler.md) lub tworząc niestandardowy program do pobrania atrybutu.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Atrybuty](index.md)
 - [Pobieranie informacji przechowywanych w atrybutach](retrieving-information-stored-in-attributes.md)

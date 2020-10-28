@@ -7,23 +7,23 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- strings [.NET Framework],searching
+- strings [.NET],searching
 - best practices,string comparison and sorting
-- strings [.NET Framework],best practices
-- strings [.NET Framework],basic string operations
+- strings [.NET],best practices
+- strings [.NET],basic string operations
 - sorting strings
-- strings [.NET Framework],sorting
-- string comparison [.NET Framework],best practices
+- strings [.NET],sorting
+- string comparison [.NET],best practices
 - string sorting
 - comparing strings
-- strings [.NET Framework],comparing
+- strings [.NET],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: 28c1397c71debeed181acb2c1acb01b0f8cee7c9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ed85d04ffbee0493745c4a5ef63313571b44628b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289368"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889104"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Najlepsze rozwiązania dotyczące używania ciągów w programie .NET
 
@@ -108,12 +108,12 @@ Porównania bez uwzględniania wielkości liter, które używają bieżącej kul
 
 Porównania, które używają bieżącej semantyki kultury, są domyślne dla następujących metod:
 
-- <xref:System.String.Compare%2A?displayProperty=nameWithType>przeciążenia, które nie zawierają <xref:System.StringComparison> parametru.
-- <xref:System.String.CompareTo%2A?displayProperty=nameWithType>przeciążenia.
+- <xref:System.String.Compare%2A?displayProperty=nameWithType> przeciążenia, które nie zawierają <xref:System.StringComparison> parametru.
+- <xref:System.String.CompareTo%2A?displayProperty=nameWithType> przeciążenia.
 - Metoda Domyślna <xref:System.String.StartsWith%28System.String%29?displayProperty=nameWithType> oraz <xref:System.String.StartsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> Metoda z `null` <xref:System.Globalization.CultureInfo> parametrem.
 - Metoda Domyślna <xref:System.String.EndsWith%28System.String%29?displayProperty=nameWithType> oraz <xref:System.String.EndsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> Metoda z `null` <xref:System.Globalization.CultureInfo> parametrem.
-- <xref:System.String.IndexOf%2A?displayProperty=nameWithType>przeciążenia, które akceptują <xref:System.String> jako parametr wyszukiwania i nie mają <xref:System.StringComparison> parametru.
-- <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>przeciążenia, które akceptują <xref:System.String> jako parametr wyszukiwania i nie mają <xref:System.StringComparison> parametru.
+- <xref:System.String.IndexOf%2A?displayProperty=nameWithType> przeciążenia, które akceptują <xref:System.String> jako parametr wyszukiwania i nie mają <xref:System.StringComparison> parametru.
+- <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> przeciążenia, które akceptują <xref:System.String> jako parametr wyszukiwania i nie mają <xref:System.StringComparison> parametru.
 
 W każdym przypadku zalecamy wywołanie przeciążenia, które ma <xref:System.StringComparison> parametr, aby przeznaczenie metody zostało wyczyszczone.
 
@@ -199,7 +199,7 @@ W przypadku niezmiennej kultura ma bardzo kilka właściwości, które ułatwiaj
 
 Poniższa tabela zawiera opis mapowania z kontekstu ciągu semantycznego do <xref:System.StringComparison> elementu członkowskiego wyliczenia:
 
-|Dane|Zachowanie|Odpowiadający system. StringComparison<br /><br /> value|
+|Dane|Zachowanie|Odpowiadający system. StringComparison<br /><br /> wartość|
 |----------|--------------|-----------------------------------------------------|
 |Identyfikatory wewnętrzne z uwzględnieniem wielkości liter.<br /><br /> Identyfikatory z uwzględnieniem wielkości liter w standardach, takich jak XML i HTTP.<br /><br /> Ustawienia związane z zabezpieczeniami z uwzględnieniem wielkości liter.|Identyfikator niebędący językiem, gdzie bajty są dokładnie zgodne.|<xref:System.StringComparison.Ordinal>|
 |Identyfikatory wewnętrzne bez uwzględniania wielkości liter.<br /><br /> Identyfikatory bez uwzględniania wielkości liter w standardach, takich jak XML i HTTP.<br /><br /> Ścieżki plików.<br /><br /> Klucze i wartości rejestru.<br /><br /> Zmienne środowiskowe.<br /><br /> Identyfikatory zasobów (na przykład nazwy uchwytów).<br /><br /> Ustawienia związane z zabezpieczeniami bez uwzględniania wielkości liter.|Identyfikator niebędący językiem, gdzie przypadek jest nieistotny; szczególnie dane przechowywane w większości usług systemu Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|
@@ -241,7 +241,7 @@ Domyślna interpretacja: <xref:System.StringComparison.CurrentCulture?displayPro
 
 Należy zachować ostrożność w przypadku korzystania z tych metod, ponieważ wymuszanie ciągu do wielkich lub małych liter jest często używane jako mała normalizacja do porównywania ciągów, niezależnie od wielkości liter. Jeśli tak, rozważ użycie porównania bez uwzględniania wielkości liter.
 
-<xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> Dostępne są również metody i. <xref:System.String.ToUpperInvariant%2A>jest standardowym sposobem normalizacji wielkości liter. Porównania wykonywane przy użyciu <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> są zachowaniem składu dwóch wywołań: wywoływanie <xref:System.String.ToUpperInvariant%2A> dla obu argumentów ciągów i wykonywanie porównania przy użyciu <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> .
+<xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> Dostępne są również metody i. <xref:System.String.ToUpperInvariant%2A> jest standardowym sposobem normalizacji wielkości liter. Porównania wykonywane przy użyciu <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> są zachowaniem składu dwóch wywołań: wywoływanie <xref:System.String.ToUpperInvariant%2A> dla obu argumentów ciągów i wykonywanie porównania przy użyciu <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> .
 
 Przeciążenia są również dostępne do przekonwertowania na wielkie i małe litery w określonej kulturze, przekazując <xref:System.Globalization.CultureInfo> obiekt, który reprezentuje tę kulturę do metody.
 

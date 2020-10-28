@@ -5,16 +5,21 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 09/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: f2298cb0be6d555a7636903dc251f022a6a62a43
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+no-loc:
+- Transient
+- Scoped
+- Singleton
+- Example
+ms.openlocfilehash: 589e15736c07b465fda308b04c91384a2502755c
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247909"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888586"
 ---
 # <a name="tutorial-use-dependency-injection-in-net"></a>Samouczek: używanie iniekcji zależności w programie .NET
 
-W tym samouczku pokazano, jak używać [iniekcji zależności (di) w programie .NET](dependency-injection.md). Przy użyciu *rozszerzeń Microsoft*di jest obywatelem pierwszej klasy, gdzie usługi są dodawane i konfigurowane w <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection> . <xref:Microsoft.Extensions.Hosting.IHost>Interfejs uwidacznia <xref:System.IServiceProvider> wystąpienie, które działa jako kontener wszystkich zarejestrowanych usług.
+W tym samouczku pokazano, jak używać [iniekcji zależności (di) w programie .NET](dependency-injection.md). Przy użyciu *rozszerzeń Microsoft* di jest obywatelem pierwszej klasy, gdzie usługi są dodawane i konfigurowane w <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection> . <xref:Microsoft.Extensions.Hosting.IHost>Interfejs uwidacznia <xref:System.IServiceProvider> wystąpienie, które działa jako kontener wszystkich zarejestrowanych usług.
 
 Ten samouczek zawiera informacje na temat wykonywania następujących czynności:
 
@@ -27,13 +32,12 @@ Ten samouczek zawiera informacje na temat wykonywania następujących czynności
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- [.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) lub nowsza wersja.
-- Zintegrowane środowisko programistyczne (IDE), [Visual Studio, Visual Studio Code lub Visual Studio dla komputerów Mac](https://visualstudio.microsoft.com) są prawidłowymi opcjami.
+- [.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) lub nowszy.
 - Znajomość tworzenia nowych aplikacji .NET i instalowania pakietów NuGet.
 
 ## <a name="create-a-new-console-application"></a>Utwórz nową aplikację konsolową
 
-Za pomocą [nowego polecenia dotnet](../tools/dotnet-new.md) lub Kreatora nowego projektu środowiska IDE Utwórz nową aplikację konsolową .NET o nazwie **ConsoleDI. example**. Dodaj pakiet NuGet [Microsoft. Extensions. host](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) do projektu.
+Za pomocą [nowego polecenia dotnet](../tools/dotnet-new.md) lub Kreatora nowego projektu środowiska IDE Utwórz nową aplikację konsolową .NET o nazwie **ConsoleDI. Example** . Dodaj pakiet NuGet [Microsoft. Extensions. host](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) do projektu.
 
 ## <a name="add-interfaces"></a>Dodaj interfejsy
 
@@ -45,19 +49,19 @@ Dodaj następujące interfejsy do katalogu głównego projektu:
 
 `IOperation`Interfejs definiuje pojedynczą `OperationId` Właściwość.
 
-*ITransientOperation.cs*
+*TransientOperation.cs*
 
-:::code language="csharp" source="snippets/configuration/console-di/ITransientOperation.cs":::
+::: Code Language = "CSharp" source = "fragmenty kodu/Configuration/Console-di/I Transient Operation.cs"::
 
-*IScopedOperation.cs*
+*ScopedOperation.cs*
 
-:::code language="csharp" source="snippets/configuration/console-di/IScopedOperation.cs":::
+::: Code Language = "CSharp" source = "fragmenty kodu/Configuration/Console-di/I Scoped Operation.cs"::
 
-*ISingletonOperation.cs*
+*SingletonOperation.cs*
 
-:::code language="csharp" source="snippets/configuration/console-di/ISingletonOperation.cs":::
+::: Code Language = "CSharp" source = "fragmenty kodu/Configuration/Console-di/I Singleton Operation.cs"::
 
-Wszystkie podinterfejsy `IOperation` nazwy mają swój przewidziany okres istnienia usługi. Na przykład "przejściowe" lub "pojedyncze".
+Wszystkie podinterfejsy `IOperation` nazwy mają swój przewidziany okres istnienia usługi. Na przykład " Transient " lub " Singleton ".
 
 ## <a name="add-default-implementation"></a>Dodaj implementację domyślną
 
@@ -67,21 +71,21 @@ Dodaj następującą implementację domyślną dla różnych operacji:
 
 :::code language="csharp" source="snippets/configuration/console-di/DefaultOperation.cs":::
 
-`DefaultOperation`Implementuje wszystkie interfejsy nazwanego/znacznika i inicjuje `OperationId` Właściwość dla ostatnich czterech znaków nowego unikatowego identyfikatora globalnego (GUID).
+`DefaultOperation`Implementuje wszystkie nazwane interfejsy znacznika i inicjuje `OperationId` Właściwość do czterech ostatnich znaków nowego unikatowego identyfikatora globalnego (GUID).
 
 ## <a name="add-service-that-requires-di"></a>Dodaj usługę wymagającą DI
 
-Dodaj następujący obiekt rejestratora operacji, który działa jako usługa dla aplikacji konsolowej:
+Dodaj następujący obiekt rejestratora operacji, który działa jako usługa aplikacji konsolowej:
 
 *OperationLogger.cs*
 
 :::code language="csharp" source="snippets/configuration/console-di/OperationLogger.cs":::
 
-`OperationLogger`Definiuje konstruktora, który wymaga każdego z powyższych interfejsów znacznika, czyli,, `ITransientOperation` `IScopedOperation` i `ISingletonOperation` . Obiekt ujawnia pojedynczą metodę, która umożliwia konsumentowi zarejestrowanie operacji przy użyciu danego `scope` parametru. Po wywołaniu `LogOperations` Metoda będzie rejestrować unikatowy identyfikator każdej operacji z ciągiem zakresu i komunikatem.
+`OperationLogger`Definiuje konstruktora, który wymaga każdego z powyższych interfejsów znacznika, czyli,, `ITransientOperation` `IScopedOperation` i `ISingletonOperation` . Obiekt ujawnia pojedynczą metodę, która umożliwia konsumentowi zarejestrowanie operacji przy użyciu danego `scope` parametru. Po wywołaniu `LogOperations` Metoda rejestruje unikatowy identyfikator każdej operacji przy użyciu ciągu zakresu i komunikatu.
 
 ## <a name="register-services-for-di"></a>Zarejestruj usługi dla DI
 
-Na koniec Zaktualizuj plik *program.cs* tak, aby był zgodny z następującymi:
+Zaktualizuj *program.cs* przy użyciu następującego kodu:
 
 :::code language="csharp" source="snippets/configuration/console-di/Program.cs" range="1-18,35-60" highlight="22-26":::
 
@@ -94,7 +98,7 @@ Aplikacja:
 
 ## <a name="conclusion"></a>Podsumowanie
 
-Aplikacja generuje dane wyjściowe podobne do następującego przykładu:
+Aplikacja wyświetli dane wyjściowe podobne do następującego przykładu:
 
 ```console
 Scope 1-Call 1 .GetRequiredService<OperationLogger>(): ITransientOperation [ 80f4...Always different        ]
@@ -116,11 +120,11 @@ Scope 2-Call 2 .GetRequiredService<OperationLogger>(): ISingletonOperation [ 158
 
 W danych wyjściowych aplikacji można zobaczyć, że:
 
-- Operacje przejściowe są zawsze różne, co oznacza, że nowe wystąpienie jest tworzone przy każdym pobieraniu usługi.
-- Operacje w zakresie zmieniają się tylko z nowym zakresem, ale są tego samego wystąpienia w zakresie.
-- Operacje pojedyncze są zawsze takie same, co oznacza, że nowe wystąpienie jest tworzone tylko raz.
+- Transient operacje są zawsze różne, nowe wystąpienie jest tworzone przy każdym pobieraniu usługi.
+- Scoped operacje zmieniają się tylko z nowym zakresem, ale są tego samego wystąpienia w zakresie.
+- Singleton operacje są zawsze takie same. nowe wystąpienie jest tworzone tylko raz.
 
-## <a name="next-steps"></a>Następne kroki
+## <a name="see-also"></a>Zobacz także
 
-> [!div class="nextstepaction"]
-> [Wskazówki dotyczące iniekcji zależności](dependency-injection-guidelines.md)
+* [Wskazówki dotyczące wstrzykiwania zależności](dependency-injection-guidelines.md)
+* [Wstrzykiwanie zależności w ASP.NET Core](/aspnet/core/fundamentals/dependency-injection)

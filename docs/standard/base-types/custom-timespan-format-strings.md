@@ -9,17 +9,17 @@ dev_langs:
 helpviewer_keywords:
 - format specifiers, custom time interval
 - format strings
-- formatting [.NET Framework], time interval
+- formatting [.NET], time interval
 - custom time interval format strings
-- formatting [.NET Framework], time
+- formatting [.NET], time
 - custom TimeSpan format strings
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
-ms.openlocfilehash: 54079975b9b73844f598a7c7a7fea1a64bd6450c
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: b760e7ab7f39d4e4682d5d4c3a6421b9843e1d59
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768563"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888688"
 ---
 # <a name="custom-timespan-format-strings"></a>Niestandardowe ciągi formatujące TimeSpan
 
@@ -40,25 +40,25 @@ Niestandardowe <xref:System.TimeSpan> ciągi formatujące są również używane
 [!code-csharp[Conceptual.TimeSpan.Custom#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customparseexample1.cs#2)]
 [!code-vb[Conceptual.TimeSpan.Custom#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customparseexample1.vb#2)]
 
-<a name="table"></a>W poniższej tabeli opisano specyfikatory niestandardowego formatu daty i godziny.
+<a name="table"></a> W poniższej tabeli opisano specyfikatory niestandardowego formatu daty i godziny.
 
 | Specyfikator formatu | Opis | Przykład |
 |----------------------|-----------------|-------------|
-|"d", "% d"|Liczba pełnych dni w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "d"](#dSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%d`--> "6"<br /><br /> `d\.hh\:mm`--> "6.14:32"|
-|"DD" — "dddddddd"|Liczba pełnych dni w przedziale czasu, uzupełniona wiodącymi zerami, zgodnie z potrzebami.<br /><br /> Więcej informacji: [specyfikatory formatu niestandardowego "DD"-"dddddddd"](#ddSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `ddd`--> "006"<br /><br /> `dd\.hh\:mm`--> "06.14:32"|
-|"h", "% h"|Liczba pełnych godzin w przedziale czasu, które nie są zliczane jako część dni. Godziny z pojedynczą cyfrą nie mają zera wiodącego.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "h"](#hSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%h`--> "14"<br /><br /> `hh\:mm`--> "14:32"|
-|„hh”|Liczba pełnych godzin w przedziale czasu, które nie są zliczane jako część dni. Godziny z jedną cyfrą mają zero wiodące.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "HH"](#hhSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `hh`--> "14"<br /><br /> `new TimeSpan(6, 8, 32, 17, 685):`<br /><br /> `hh`--> 08|
-|"m", "% m"|Liczba pełnych minut w przedziale czasu, które nie są uwzględnione w godzinach lub dniach. Minuty z pojedynczą cyfrą nie mają zera wiodącego.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "m"](#mSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `%m`--> "8"<br /><br /> `h\:m`--> "14:8"|
-|„mm”|Liczba pełnych minut w przedziale czasu, które nie są uwzględnione w godzinach lub dniach. Minuty z jedną cyfrą mają wiodące zero.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "mm"](#mmSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `mm`--> "08"<br /><br /> `new TimeSpan(6, 8, 5, 17, 685):`<br /><br /> `d\.hh\:mm\:ss`--> 6.08:05:17|
-|"s", "% s"|Liczba pełnych sekund w przedziale czasu, które nie są uwzględnione w godzinach, dniach lub minutach. Sekundy o pojedynczej cyfrze nie mają zera wiodącego.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "s"](#sSpecifier).|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s`--> 12<br /><br /> `s\.fff`--> 12,965|
-|„ss”|Liczba pełnych sekund w przedziale czasu, które nie są uwzględnione w godzinach, dniach lub minutach.  Kilka sekund ma wiodące zero.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "SS"](#ssSpecifier).|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss`--> 06<br /><br /> `ss\.fff`--> 06,965|
-|"f", "% f"|Dziesiątki sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "f"](#fSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f`--> 8<br /><br /> `ss\.f`--> 06,8|
-|„ff”|Setne części sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FF"](#ffSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff`--> 89<br /><br /> `ss\.ff`--> 06,89|
-|„fff”|Milisekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFF"](#f3Specifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff`--> 895<br /><br /> `ss\.fff`--> 06,895|
-|„ffff”|Dziesięć stutysięcznych sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFF"](#f4Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff`--> 8954<br /><br /> `ss\.ffff`--> 06,8954|
-|„fffff”|Setki stutysięcznych sekund w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffff"](#f5Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff`--> 89543<br /><br /> `ss\.fffff`--> 06,89543|
-|„ffffff”|Dziesięciomilionowych sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFF"](#f6Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffffff`--> 895432<br /><br /> `ss\.ffffff`--> 06,895432|
-|„fffffff”|Dziesięć dziesięciomilionowych sekund (lub kresek ułamkowych) w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffffff"](#f7Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffffff`--> 8954321<br /><br /> `ss\.fffffff`--> 06,8954321|
+|"d", "% d"|Liczba pełnych dni w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "d"](#dSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%d` --> "6"<br /><br /> `d\.hh\:mm` --> "6.14:32"|
+|"DD" — "dddddddd"|Liczba pełnych dni w przedziale czasu, uzupełniona wiodącymi zerami, zgodnie z potrzebami.<br /><br /> Więcej informacji: [specyfikatory formatu niestandardowego "DD"-"dddddddd"](#ddSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `ddd` --> "006"<br /><br /> `dd\.hh\:mm` --> "06.14:32"|
+|"h", "% h"|Liczba pełnych godzin w przedziale czasu, które nie są zliczane jako część dni. Godziny z pojedynczą cyfrą nie mają zera wiodącego.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "h"](#hSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%h` --> "14"<br /><br /> `hh\:mm` --> "14:32"|
+|„hh”|Liczba pełnych godzin w przedziale czasu, które nie są zliczane jako część dni. Godziny z jedną cyfrą mają zero wiodące.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "HH"](#hhSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `hh` --> "14"<br /><br /> `new TimeSpan(6, 8, 32, 17, 685):`<br /><br /> `hh` --> 08|
+|"m", "% m"|Liczba pełnych minut w przedziale czasu, które nie są uwzględnione w godzinach lub dniach. Minuty z pojedynczą cyfrą nie mają zera wiodącego.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "m"](#mSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `%m` --> "8"<br /><br /> `h\:m` --> "14:8"|
+|„mm”|Liczba pełnych minut w przedziale czasu, które nie są uwzględnione w godzinach lub dniach. Minuty z jedną cyfrą mają wiodące zero.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "mm"](#mmSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `mm` --> "08"<br /><br /> `new TimeSpan(6, 8, 5, 17, 685):`<br /><br /> `d\.hh\:mm\:ss` --> 6.08:05:17|
+|"s", "% s"|Liczba pełnych sekund w przedziale czasu, które nie są uwzględnione w godzinach, dniach lub minutach. Sekundy o pojedynczej cyfrze nie mają zera wiodącego.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "s"](#sSpecifier).|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s` --> 12<br /><br /> `s\.fff` --> 12,965|
+|„ss”|Liczba pełnych sekund w przedziale czasu, które nie są uwzględnione w godzinach, dniach lub minutach.  Kilka sekund ma wiodące zero.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "SS"](#ssSpecifier).|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss` --> 06<br /><br /> `ss\.fff` --> 06,965|
+|"f", "% f"|Dziesiątki sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "f"](#fSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f` --> 8<br /><br /> `ss\.f` --> 06,8|
+|„ff”|Setne części sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FF"](#ffSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff` --> 89<br /><br /> `ss\.ff` --> 06,89|
+|„fff”|Milisekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFF"](#f3Specifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff` --> 895<br /><br /> `ss\.fff` --> 06,895|
+|„ffff”|Dziesięć stutysięcznych sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFF"](#f4Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff` --> 8954<br /><br /> `ss\.ffff` --> 06,8954|
+|„fffff”|Setki stutysięcznych sekund w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffff"](#f5Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff` --> 89543<br /><br /> `ss\.fffff` --> 06,89543|
+|„ffffff”|Dziesięciomilionowych sekundy w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFF"](#f6Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffffff` --> 895432<br /><br /> `ss\.ffffff` --> 06,895432|
+|„fffffff”|Dziesięć dziesięciomilionowych sekund (lub kresek ułamkowych) w przedziale czasu.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffffff"](#f7Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffffff` --> 8954321<br /><br /> `ss\.fffffff` --> 06,8954321|
 |"F", "% F"|Dziesiątki sekundy w przedziale czasu. Nic nie jest wyświetlane, jeśli cyfra jest równa zero.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "F"](#F_Specifier).|`TimeSpan.Parse("00:00:06.32")`:<br /><br /> `%F`: 3<br /><br /> `TimeSpan.Parse("0:0:3.091")`:<br /><br /> `ss\.F`3.|
 |„FF”|Setne części sekundy w przedziale czasu. Nie są uwzględniane żadne zera końcowe lub dwie cyfry zerowe.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FF"](#FF_Specifier).|`TimeSpan.Parse("00:00:06.329")`:<br /><br /> `FF`: 32<br /><br /> `TimeSpan.Parse("0:0:3.101")`:<br /><br /> `ss\.FF`: 03,1|
 |„FFF”|Milisekundy w przedziale czasu. Wszystkie zera końcowe nie są uwzględniane.<br /><br /> Więcej informacji:|`TimeSpan.Parse("00:00:06.3291")`:<br /><br /> `FFF`: 329<br /><br /> `TimeSpan.Parse("0:0:3.1009")`:<br /><br /> `ss\.FFF`: 03,1|
@@ -66,11 +66,11 @@ Niestandardowe <xref:System.TimeSpan> ciągi formatujące są również używane
 |„FFFFF”|Setki stutysięcznych sekund w przedziale czasu. Wszystkie zera końcowe nie są uwzględniane.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "fffff"](#F5_Specifier).|`TimeSpan.Parse("00:00:06.329179")`:<br /><br /> `FFFFF`: 32917<br /><br /> `TimeSpan.Parse("0:0:3.100009")`:<br /><br /> `ss\.FFFFF`: 03,1|
 |„FFFFFF”|Dziesięciomilionowych sekundy w przedziale czasu. Wszystkie zera końcowe nie są wyświetlane.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFF"](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03,1|
 |„FFFFFFF”|Dziesięć milionów sekund w przedziale czasu. Nie są wyświetlane żadne zera końcowe lub siedem zer.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "FFFFFFF"](#F7_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03,19|
-|"*String*"|Ogranicznik ciągu literału.<br /><br /> Więcej informacji: [inne znaki](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss`--> "14:32:17"|
-|&#92;|Znak ucieczki.<br /><br /> Więcej informacji: [inne znaki](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss`--> "14:32:17"|
-|Jakikolwiek inny znak|Każdy inny niezmieniony znak jest interpretowany jako specyfikator formatu niestandardowego.<br /><br /> Więcej informacji: [inne znaki](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss`--> "14:32:17"|
+|" *String* "|Ogranicznik ciągu literału.<br /><br /> Więcej informacji: [inne znaki](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --> "14:32:17"|
+|&#92;|Znak ucieczki.<br /><br /> Więcej informacji: [inne znaki](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
+|Jakikolwiek inny znak|Każdy inny niezmieniony znak jest interpretowany jako specyfikator formatu niestandardowego.<br /><br /> Więcej informacji: [inne znaki](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 
-## <a name="the-d-custom-format-specifier"></a><a name="dSpecifier"></a>Specyfikator formatu niestandardowego "d"
+## <a name="the-d-custom-format-specifier"></a><a name="dSpecifier"></a> Specyfikator formatu niestandardowego "d"
 
 Specyfikator formatu niestandardowego "d" wyprowadza wartość <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> właściwości, która reprezentuje liczbę pełnych dni w przedziale czasu. Wyświetla pełną liczbę dni w <xref:System.TimeSpan> wartości, nawet jeśli wartość ma więcej niż jedną cyfrę. Jeśli wartość <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> właściwości jest równa zero, specyfikator zwraca wartość "0".
 
@@ -86,7 +86,7 @@ Poniższy przykład ilustruje użycie specyfikatora formatu niestandardowego "d"
 
 [Wróć do tabeli](#table)
 
-## <a name="the-dd-dddddddd-custom-format-specifiers"></a><a name="ddSpecifier"></a>Specyfikatory formatu niestandardowego "DD"-"dddddddd"
+## <a name="the-dd-dddddddd-custom-format-specifiers"></a><a name="ddSpecifier"></a> Specyfikatory formatu niestandardowego "DD"-"dddddddd"
 
 Specyfikatory formatu niestandardowego "DD", "ddd", "dddd", "dddd", "DDDDDD", "ddddddd" i "dddddddd" wyprowadzają wartość <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> właściwości, która reprezentuje liczbę pełnych dni w przedziale czasu.
 
@@ -99,7 +99,7 @@ W poniższym przykładzie zastosowano te specyfikatory formatu, aby wyświetlić
 
 [Wróć do tabeli](#table)
 
-## <a name="the-h-custom-format-specifier"></a><a name="hSpecifier"></a>Specyfikator formatu niestandardowego "h"
+## <a name="the-h-custom-format-specifier"></a><a name="hSpecifier"></a> Specyfikator formatu niestandardowego "h"
 
 Specyfikator formatu niestandardowego "h" wyprowadza wartość <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> właściwości, która reprezentuje liczbę pełnych godzin w przedziale czasu, który nie jest liczony jako część jego składnika dnia. Zwraca wartość ciągu jednocyfrowego, jeśli wartość <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> właściwości jest 0 do 9 i zwraca dwucyfrową wartość ciągu, jeśli wartość <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> właściwości jest z zakresu od 10 do 23.
 
@@ -120,7 +120,7 @@ Poniższy przykład ilustruje użycie specyfikatora formatu niestandardowego "h"
 
 [Wróć do tabeli](#table)
 
-## <a name="the-hh-custom-format-specifier"></a><a name="hhSpecifier"></a>Specyfikator formatu niestandardowego "HH"
+## <a name="the-hh-custom-format-specifier"></a><a name="hhSpecifier"></a> Specyfikator formatu niestandardowego "HH"
 
 Specyfikator formatu niestandardowego "HH" <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> zwraca wartość właściwości, która reprezentuje liczbę pełnych godzin w przedziale czasu, który nie jest liczony jako część jego składnika dnia. W przypadku wartości z przewidzianych od 0 do 9 ciąg wyjściowy zawiera wiodące zero.
 
@@ -136,7 +136,7 @@ Poniższy przykład ilustruje użycie specyfikatora formatu niestandardowego "HH
 
 [Wróć do tabeli](#table)
 
-## <a name="the-m-custom-format-specifier"></a><a name="mSpecifier"></a>Specyfikator formatu niestandardowego "m"
+## <a name="the-m-custom-format-specifier"></a><a name="mSpecifier"></a> Specyfikator formatu niestandardowego "m"
 
 Specyfikator formatu niestandardowego "m" wyprowadza wartość <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> właściwości, która reprezentuje liczbę pełnych minut w interwale czasu, który nie jest liczony jako część jego składnika dnia. Zwraca wartość ciągu jednocyfrowego, jeśli wartość <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> właściwości jest 0 do 9 i zwraca dwucyfrową wartość ciągu, jeśli wartość <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> właściwości jest z zakresu od 10 do 59.
 
@@ -157,7 +157,7 @@ Poniższy przykład ilustruje użycie specyfikatora formatu niestandardowego "m"
 
 [Wróć do tabeli](#table)
 
-## <a name="the-mm-custom-format-specifier"></a><a name="mmSpecifier"></a>Specyfikator formatu niestandardowego "mm"
+## <a name="the-mm-custom-format-specifier"></a><a name="mmSpecifier"></a> Specyfikator formatu niestandardowego "mm"
 
 Specyfikator formatu niestandardowego "mm" wyświetla wartość <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> właściwości, która reprezentuje liczbę pełnych minut w interwale czasu, która nie jest uwzględniona w jego składniku godziny lub dni. W przypadku wartości z przewidzianych od 0 do 9 ciąg wyjściowy zawiera wiodące zero.
 
@@ -173,7 +173,7 @@ Poniższy przykład ilustruje użycie specyfikatora formatu niestandardowego "mm
 
 [Wróć do tabeli](#table)
 
-## <a name="the-s-custom-format-specifier"></a><a name="sSpecifier"></a>Specyfikator formatu niestandardowego "s"
+## <a name="the-s-custom-format-specifier"></a><a name="sSpecifier"></a> Specyfikator formatu niestandardowego "s"
 
 Specyfikator formatu niestandardowego "s" wyprowadza wartość <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> właściwości, która reprezentuje liczbę całych sekund w interwale czasu, która nie jest uwzględniona w godzinach, dniach lub minutach. Zwraca wartość ciągu jednocyfrowego, jeśli wartość <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> właściwości jest 0 do 9 i zwraca dwucyfrową wartość ciągu, jeśli wartość <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> właściwości jest z zakresu od 10 do 59.
 
@@ -194,7 +194,7 @@ Poniższy przykład ilustruje użycie specyfikatora formatu niestandardowego "s"
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ss-custom-format-specifier"></a><a name="ssSpecifier"></a>Specyfikator formatu niestandardowego "SS"
+## <a name="the-ss-custom-format-specifier"></a><a name="ssSpecifier"></a> Specyfikator formatu niestandardowego "SS"
 
 Specyfikator formatu niestandardowego "SS" wyprowadza wartość <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> właściwości, która reprezentuje liczbę całych sekund w interwale czasu, która nie jest uwzględniona w godzinach, dniach lub minutach. W przypadku wartości z przewidzianych od 0 do 9 ciąg wyjściowy zawiera wiodące zero.
 
@@ -210,7 +210,7 @@ Poniższy przykład ilustruje użycie specyfikatora formatu niestandardowego "SS
 
 [Wróć do tabeli](#table)
 
-## <a name="the-f-custom-format-specifier"></a><a name="fSpecifier"></a>Specyfikator formatu niestandardowego "f"
+## <a name="the-f-custom-format-specifier"></a><a name="fSpecifier"></a> Specyfikator formatu niestandardowego "f"
 
 Specyfikator formatu niestandardowego "f" wyświetla dziesiątki sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , ciąg wejściowy musi zawierać dokładnie jedną cyfrę ułamkową.
 
@@ -223,7 +223,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "f", aby wyśw
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ff-custom-format-specifier"></a><a name="ffSpecifier"></a>Specyfikator formatu niestandardowego "FF"
+## <a name="the-ff-custom-format-specifier"></a><a name="ffSpecifier"></a> Specyfikator formatu niestandardowego "FF"
 
 Specyfikator formatu niestandardowego "FF" wyprowadza setne części sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , ciąg wejściowy musi zawierać dokładnie dwie cyfry ułamkowe.
 
@@ -234,7 +234,7 @@ W poniższym przykładzie zastosowano specyfikator formatu niestandardowego "FF"
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fff-custom-format-specifier"></a><a name="f3Specifier"></a>Specyfikator formatu niestandardowego "FFF"
+## <a name="the-fff-custom-format-specifier"></a><a name="f3Specifier"></a> Specyfikator formatu niestandardowego "FFF"
 
 Specyfikator formatu niestandardowego "FFF" (z trzema znakami "f") wyświetla liczbę milisekund w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , ciąg wejściowy musi zawierać dokładnie trzy cyfry ułamkowe.
 
@@ -245,7 +245,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "FFF", aby wy�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffff-custom-format-specifier"></a><a name="f4Specifier"></a>Specyfikator formatu niestandardowego "FFFF"
+## <a name="the-ffff-custom-format-specifier"></a><a name="f4Specifier"></a> Specyfikator formatu niestandardowego "FFFF"
 
 Specyfikator formatu niestandardowego "FFFF" (z czterema znakami "f") wyświetla dziesięć stutysięcznych sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , ciąg wejściowy musi zawierać dokładnie cztery cyfry ułamkowe.
 
@@ -256,7 +256,7 @@ W poniższym przykładzie zastosowano specyfikator formatu niestandardowego "FFF
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffff-custom-format-specifier"></a><a name="f5Specifier"></a>Specyfikator formatu niestandardowego "fffff"
+## <a name="the-fffff-custom-format-specifier"></a><a name="f5Specifier"></a> Specyfikator formatu niestandardowego "fffff"
 
 Specyfikator formatu niestandardowego "fffff" (z pięcioma znakami "f") wyświetla liczbę setek-stutysięcznych sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , ciąg wejściowy musi zawierać dokładnie pięć cyfr ułamkowych.
 
@@ -267,7 +267,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "fffff", aby w
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffffff-custom-format-specifier"></a><a name="f6Specifier"></a>Specyfikator formatu niestandardowego "FFFFFF"
+## <a name="the-ffffff-custom-format-specifier"></a><a name="f6Specifier"></a> Specyfikator formatu niestandardowego "FFFFFF"
 
 Specyfikator formatu niestandardowego "FFFFFF" (z sześcioma znakami "f") wyświetla dziesięciomilionowych sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , ciąg wejściowy musi zawierać dokładnie sześć cyfr ułamkowych.
 
@@ -278,7 +278,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "FFFFFF", aby 
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffffff-custom-format-specifier"></a><a name="f7Specifier"></a>Specyfikator formatu niestandardowego "fffffff"
+## <a name="the-fffffff-custom-format-specifier"></a><a name="f7Specifier"></a> Specyfikator formatu niestandardowego "fffffff"
 
 Specyfikator formatu niestandardowego "fffffff" (z siedmiu znakami "f") wyprowadza dziesięć dziesięciomilionowych sekund (lub ułamkową liczbę znaczników) w przedziale czasu. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , ciąg wejściowy musi zawierać dokładnie siedem cyfr.
 
@@ -289,7 +289,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "fffffff" do w
 
 [Wróć do tabeli](#table)
 
-## <a name="the-f-custom-format-specifier"></a><a name="F_Specifier"></a>Specyfikator formatu niestandardowego "F"
+## <a name="the-f-custom-format-specifier"></a><a name="F_Specifier"></a> Specyfikator formatu niestandardowego "F"
 
 Specyfikator formatu niestandardowego "F" wyświetla dziesiątki sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. Jeśli wartość dziesiąty przedziału czasu jest równa zero, nie jest ona uwzględniona w ciągu wynikowym. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , obecność dziesiątek drugiej cyfry jest opcjonalna.
 
@@ -302,7 +302,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "F", aby wyśw
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ff-custom-format-specifier"></a><a name="FF_Specifier"></a>Specyfikator formatu niestandardowego "FF"
+## <a name="the-ff-custom-format-specifier"></a><a name="FF_Specifier"></a> Specyfikator formatu niestandardowego "FF"
 
 Specyfikator formatu niestandardowego "FF" wyprowadza setne części sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. Jeśli istnieją końcowe zera, nie są one uwzględnione w ciągu wynikowym. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , obecność dziesiątek i setnych części sekundy jest opcjonalna.
 
@@ -313,7 +313,7 @@ W poniższym przykładzie zastosowano specyfikator formatu niestandardowego "FF"
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fff-custom-format-specifier"></a><a name="F3_Specifier"></a>Specyfikator formatu niestandardowego "FFF"
+## <a name="the-fff-custom-format-specifier"></a><a name="F3_Specifier"></a> Specyfikator formatu niestandardowego "FFF"
 
 Specyfikator formatu niestandardowego "FFF" (z trzema znakami "F") wyświetla liczbę milisekund w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. Jeśli istnieją końcowe zera, nie są one uwzględnione w ciągu wynikowym. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , obecność dziesiątek, setnych i stutysięcznych drugiej cyfry jest opcjonalna.
 
@@ -324,7 +324,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "FFF", aby wy�
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffff-custom-format-specifier"></a><a name="F4_Specifier"></a>Specyfikator formatu niestandardowego "FFFF"
+## <a name="the-ffff-custom-format-specifier"></a><a name="F4_Specifier"></a> Specyfikator formatu niestandardowego "FFFF"
 
 Specyfikator formatu niestandardowego "FFFF" (z czterema znakami "F") wyświetla dziesięć stutysięcznych sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. Jeśli istnieją końcowe zera, nie są one uwzględnione w ciągu wynikowym. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , obecność dziesiątek, setnych, stutysięcznych i dziesięciu-stutysięcznych w drugiej cyfra jest opcjonalna.
 
@@ -335,7 +335,7 @@ W poniższym przykładzie zastosowano specyfikator formatu niestandardowego "FFF
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffff-custom-format-specifier"></a><a name="F5_Specifier"></a>Specyfikator formatu niestandardowego "FFFFF"
+## <a name="the-fffff-custom-format-specifier"></a><a name="F5_Specifier"></a> Specyfikator formatu niestandardowego "FFFFF"
 
 Specyfikator formatu niestandardowego "FFFFF" (z pięcioma znakami "F") wyświetla liczbę setek-stutysięcznych sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. Jeśli istnieją końcowe zera, nie są one uwzględnione w ciągu wynikowym. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , obecność dziesiątek, setnych, stutysięcznych, dziesięciu-stutysięcznych i setek-stutysięcznych w drugiej cyfra jest opcjonalna.
 
@@ -346,7 +346,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "FFFFF", aby w
 
 [Wróć do tabeli](#table)
 
-## <a name="the-ffffff-custom-format-specifier"></a><a name="F6_Specifier"></a>Specyfikator formatu niestandardowego "FFFFFF"
+## <a name="the-ffffff-custom-format-specifier"></a><a name="F6_Specifier"></a> Specyfikator formatu niestandardowego "FFFFFF"
 
 Specyfikator formatu niestandardowego "FFFFFF" (z sześcioma znakami "F") wyświetla dziesięciomilionowych sekundy w przedziale czasu. W operacji formatowania wszystkie pozostałe cyfry ułamkowe są obcinane. Jeśli istnieją końcowe zera, nie są one uwzględnione w ciągu wynikowym. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , obecność dziesiątek, setnych, stutysięcznych, dziesięciu-stutysięcznych, setek-stutysięcznych i dziesięciomilionowych drugiej cyfry jest opcjonalna.
 
@@ -357,7 +357,7 @@ Poniższy przykład używa specyfikatora formatu niestandardowego "FFFFFF", aby 
 
 [Wróć do tabeli](#table)
 
-## <a name="the-fffffff-custom-format-specifier"></a><a name="F7_Specifier"></a>Specyfikator formatu niestandardowego "FFFFFFF"
+## <a name="the-fffffff-custom-format-specifier"></a><a name="F7_Specifier"></a> Specyfikator formatu niestandardowego "FFFFFFF"
 
 Specyfikator formatu niestandardowego "FFFFFFF" (z siedmiu znakami "F") wyprowadza dziesięć dziesięciomilionowych sekund (lub ułamkową liczbę znaczników) w przedziale czasu. Jeśli istnieją końcowe zera, nie są one uwzględnione w ciągu wynikowym. W operacji analizowania, która wywołuje <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodę lub <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , obecność siedmiu cyfr ułamkowych w ciągu wejściowym jest opcjonalna.
 
@@ -392,7 +392,7 @@ Poniższy przykład używa znaku ucieczki i pojedynczego cudzysłowu do definiow
 
 [Wróć do tabeli](#table)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Formatowanie typów](formatting-types.md)
 - [Standardowe ciągi formatujące TimeSpan](standard-timespan-format-strings.md)

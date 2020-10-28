@@ -11,16 +11,16 @@ helpviewer_keywords:
 - metacharacters, quantifiers
 - minimal matching quantifiers
 - quantifiers in regular expressions
-- .NET Framework regular expressions, quantifiers
+- .NET regular expressions, quantifiers
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 3ffdd481ac001b4e1bd229c6f5fa0bf285b508b2
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 361286b992180e1d7fdf18d88022780cc3aa53fc
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063812"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889429"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kwantyfikatory w wyrażeniach regularnych
 Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi być obecne w danych wejściowych, aby można było znaleźć dopasowanie.  W poniższej tabeli wymieniono Kwantyfikatory obsługiwane przez platformę .NET.  
@@ -46,7 +46,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 > Jeśli znaki *, +,?, {i} są napotkane we wzorcu wyrażenia regularnego, aparat wyrażeń regularnych interpretuje je jako Kwantyfikatory lub część konstrukcji kwantyfikatora, chyba że znajdują się w [klasie znaków](character-classes-in-regular-expressions.md). Aby interpretować te jako znaki literału poza klasą znaków, należy je zmienić, poprzedzając je ukośnikiem odwrotnym. Na przykład ciąg `\*` we wzorcu wyrażenia regularnego jest interpretowany jako literał gwiazdki (" \* ").  
   
 ### <a name="match-zero-or-more-times-"></a>Dopasowanie zero lub więcej razy: *  
- `*`Kwantyfikator dopasowuje poprzedni element zero lub więcej razy. Jest to odpowiednik `{0,}` kwantyfikatora. `*`jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `*?` .  
+ `*`Kwantyfikator dopasowuje poprzedni element zero lub więcej razy. Jest to odpowiednik `{0,}` kwantyfikatora. `*` jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `*?` .  
   
  Poniższy przykład ilustruje to wyrażenie regularne. Dziewięciu grup cyfr w ciągu wejściowym, pięć dopasowuje wzorzec i cztery ( `95` ,,, `929` `9219` i) nie `9919` .  
   
@@ -63,7 +63,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Kończy na granicy wyrazu.|  
   
 ### <a name="match-one-or-more-times-"></a>Dopasowuje jeden lub więcej razy: +  
- `+`Kwantyfikator dopasowuje poprzedni element jeden lub więcej razy. Jest równoważne `{1,}` . `+`jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `+?` .  
+ `+`Kwantyfikator dopasowuje poprzedni element jeden lub więcej razy. Jest równoważne `{1,}` . `+` jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `+?` .  
   
  Na przykład wyrażenie regularne `\ban+\w*?\b` próbuje dopasować całe wyrazy, które zaczynają się od litery, `a` po którym następuje co najmniej jedno wystąpienie litery `n` . Poniższy przykład ilustruje to wyrażenie regularne. Wyrażenie regularne pasuje do wyrazów `an` , `annual` , `announcement` , i `antique` i prawidłowo nie można dopasować `autumn` i `all` .  
   
@@ -80,7 +80,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Kończy na granicy wyrazu.|  
   
 ### <a name="match-zero-or-one-time-"></a>Dopasowanie zero lub jeden raz:?  
- `?`Kwantyfikator dopasowuje poprzedni element zero lub jeden raz. Jest równoważne `{0,1}` . `?`jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `??` .  
+ `?`Kwantyfikator dopasowuje poprzedni element zero lub jeden raz. Jest równoważne `{0,1}` . `?` jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `??` .  
   
  Na przykład wyrażenie regularne `\ban?\b` próbuje dopasować całe wyrazy rozpoczynające się od litery, `a` po której następuje zero lub jedno wystąpienie litery `n` . Innymi słowy, próbuje dopasować słowa `a` i `an` . Poniższy przykład ilustruje to wyrażenie regularne.  
   

@@ -4,21 +4,21 @@ description: Poznaj często używane typy kolekcji w programie .NET, takie jak t
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- collections [.NET Framework], generic
-- objects [.NET Framework], grouping in collections
-- generics [.NET Framework], collections
+- collections [.NET], generic
+- objects [.NET], grouping in collections
+- generics [.NET], collections
 - IList interface, grouping data in collections
 - IDictionary interface, grouping data in collections
 - grouping data in collections, generic collection types
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: d0f2abc71524408c2bd2fa35a1a2dde0e664d273
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8677ba5b4404d49e2f6e07cda19ac437254a5897
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600844"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889390"
 ---
 # <a name="commonly-used-collection-types"></a>Często używane typy kolekcji
 Typy kolekcji to typowe różnice między kolekcjami danych, takie jak tabele skrótów, kolejki, stosy, torby, słowniki i listy.  
@@ -35,10 +35,10 @@ Typy kolekcji to typowe różnice między kolekcjami danych, takie jak tabele sk
   
 |Tytuł|Opis|  
 |-----------|-----------------|  
-|[Kolekcje i struktury danych](index.md)|Omawia różne typy kolekcji dostępne w .NET Framework, w tym stosy, kolejki, listy, tablice i słowniki.|  
+|[Kolekcje i struktury danych](index.md)|Omawia różne typy kolekcji dostępne w programie .NET, w tym stosy, kolejki, listy, tablice i słowniki.|  
 |[Typy kolekcji tablic wartości funkcji mieszającej i słowników](hashtable-and-dictionary-collection-types.md)|Opisuje funkcje rodzajowych i nieogólnych typów słowników opartych na wykorzystaniu skrótów.|  
 |[Posortowane typy kolekcji](sorted-collection-types.md)|Opisuje klasy, które udostępniają funkcje sortowania list i zestawów.|  
-|[Typy ogólne](../generics/index.md)|Opisuje funkcje ogólne, w tym kolekcje ogólne, Delegaty i interfejsy udostępniane przez .NET Framework. Zawiera łącza do dokumentacji funkcji dla języków C#, Visual Basic i Visual C++ oraz do obsługi technologii, takich jak odbicie.|  
+|[Typy ogólne](../generics/index.md)|Opisuje funkcje ogólne, w tym kolekcje ogólne, Delegaty i interfejsy udostępniane przez platformę .NET. Zawiera łącza do dokumentacji funkcji dla języków C#, Visual Basic i Visual C++ oraz do obsługi technologii, takich jak odbicie.|  
   
 ## <a name="reference"></a>Tematy pomocy  
  <xref:System.Collections?displayProperty=nameWithType>  

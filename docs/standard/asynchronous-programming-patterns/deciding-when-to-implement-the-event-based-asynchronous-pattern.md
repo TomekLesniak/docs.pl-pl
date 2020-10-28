@@ -6,22 +6,22 @@ helpviewer_keywords:
 - Event-based Asynchronous Pattern
 - ProgressChangedEventArgs class
 - BackgroundWorker component
-- events [.NET Framework], asynchronous
+- events [.NET], asynchronous
 - AsyncOperationManager class
-- threading [.NET Framework], asynchronous features
+- threading [.NET], asynchronous features
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: a00046aa-785d-4f7f-a8e5-d06475ea50da
-ms.openlocfilehash: c235a838504889a105ef98df47f7373a145503da
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b9c3edeb468445e6f7a58ead194559bed5636579
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289450"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888857"
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a>Decydowanie o czasie implementacji klienta wzorca asynchronicznego opartego na zdarzeniach
 
-Wzorzec asynchroniczny oparty na zdarzeniach udostępnia wzorzec do ujawniania asynchronicznego zachowania klasy. Wraz z wprowadzeniem tego wzorca .NET Framework definiuje dwa wzorce na potrzeby ujawniania zachowań asynchronicznych: wzorzec asynchroniczny oparty na <xref:System.IAsyncResult?displayProperty=nameWithType> interfejsie oraz wzorzec oparty na zdarzeniach. W tym temacie opisano, kiedy jest to odpowiednie dla implementacji obu wzorców.
+Wzorzec asynchroniczny oparty na zdarzeniach udostępnia wzorzec do ujawniania asynchronicznego zachowania klasy. Wraz z wprowadzeniem tego wzorca platforma .NET definiuje dwa wzorce na potrzeby ujawniania zachowań asynchronicznych: wzorzec asynchroniczny oparty na <xref:System.IAsyncResult?displayProperty=nameWithType> interfejsie oraz wzorzec oparty na zdarzeniach. W tym artykule opisano, kiedy jest to odpowiednie dla implementacji obu wzorców.
 
 Aby uzyskać więcej informacji o programowaniu asynchronicznym z <xref:System.IAsyncResult> interfejsem, zobacz [asynchroniczny model programowania (APM)](asynchronous-programming-model-apm.md).
 
@@ -62,11 +62,11 @@ Chociaż wzorzec asynchroniczny oparty na zdarzeniach ma wiele korzyści w ramac
 
 Istnieją trzy scenariusze, w których wzorzec oparty na zdarzeniach nie dotyczy i <xref:System.IAsyncResult> wzorca:
 
-- Blokowanie oczekiwania na jeden<xref:System.IAsyncResult>
+- Blokowanie oczekiwania na jeden <xref:System.IAsyncResult>
 
 - Blokowanie oczekiwania na wiele <xref:System.IAsyncResult> obiektów
 
-- Sondowanie w celu ukończenia<xref:System.IAsyncResult>
+- Sondowanie w celu ukończenia <xref:System.IAsyncResult>
 
 Te scenariusze można rozwiązać przy użyciu wzorca zdarzeń, ale robi to bardziej skomplikowany niż używanie <xref:System.IAsyncResult> wzorca.
 
@@ -88,6 +88,6 @@ Na poniższej liście przedstawiono zalecenia, które należy wykonać, jeśli z
 
 - [Instrukcje: Implementacja składnika obsługującego wzorzec asynchroniczny oparty na zdarzeniach](component-that-supports-the-event-based-asynchronous-pattern.md)
 - [Asynchroniczny wzorzec oparty na zdarzeniach (EAP)](event-based-asynchronous-pattern-eap.md)
-- [Implementowanie wzorca asynchronicznego opartego na zdarzeniach](implementing-the-event-based-asynchronous-pattern.md)
+- [Implementacja wzorca asynchronicznego opartego na zdarzeniach](implementing-the-event-based-asynchronous-pattern.md)
 - [Najlepsze rozwiązania w zakresie implementacji wzorca asynchronicznego opartego na zdarzeniach](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
 - [Asynchroniczny wzorzec oparty na zdarzeniach — przegląd](event-based-asynchronous-pattern-overview.md)

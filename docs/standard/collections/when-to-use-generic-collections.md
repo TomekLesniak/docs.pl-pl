@@ -3,15 +3,15 @@ title: Kiedy należy używać kolekcji ogólnych
 ms.date: 04/30/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- collections [.NET Framework], generic
-- generic collections [.NET Framework]
+- collections [.NET], generic
+- generic collections [.NET]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-ms.openlocfilehash: c59a125a8df95e3c4fe6e1839956d800bd6ee910
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e528c712aaddfdc4182940c36e52b968a071daa7
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290386"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888537"
 ---
 # <a name="when-to-use-generic-collections"></a>Kiedy należy używać kolekcji ogólnych
 
@@ -21,13 +21,13 @@ W przypadku programów przeznaczonych dla .NET Standard 1,0 lub nowszych Użyj k
 
 Następujące typy ogólne odpowiadają istniejącym typom kolekcji:
 
-- <xref:System.Collections.Generic.List%601>jest klasą rodzajową, która odnosi się do <xref:System.Collections.ArrayList> .
+- <xref:System.Collections.Generic.List%601> jest klasą rodzajową, która odnosi się do <xref:System.Collections.ArrayList> .
 
-- <xref:System.Collections.Generic.Dictionary%602>i <xref:System.Collections.Concurrent.ConcurrentDictionary%602> są klasami ogólnymi, które odpowiadają <xref:System.Collections.Hashtable> .
+- <xref:System.Collections.Generic.Dictionary%602> i <xref:System.Collections.Concurrent.ConcurrentDictionary%602> są klasami ogólnymi, które odpowiadają <xref:System.Collections.Hashtable> .
 
-- <xref:System.Collections.ObjectModel.Collection%601>jest klasą rodzajową, która odnosi się do <xref:System.Collections.CollectionBase> . <xref:System.Collections.ObjectModel.Collection%601>może być używana jako klasa bazowa, ale w przeciwieństwie <xref:System.Collections.CollectionBase> do siebie, nie jest abstrakcyjna, co znacznie ułatwia użycie.
+- <xref:System.Collections.ObjectModel.Collection%601> jest klasą rodzajową, która odnosi się do <xref:System.Collections.CollectionBase> . <xref:System.Collections.ObjectModel.Collection%601> może być używana jako klasa bazowa, ale w przeciwieństwie <xref:System.Collections.CollectionBase> do siebie, nie jest abstrakcyjna, co znacznie ułatwia użycie.
 
-- <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>jest klasą rodzajową, która odnosi się do <xref:System.Collections.ReadOnlyCollectionBase> . <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>nie jest abstrakcyjny i ma konstruktora, który ułatwia udostępnianie istniejącej <xref:System.Collections.Generic.List%601> jako kolekcji tylko do odczytu.
+- <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> jest klasą rodzajową, która odnosi się do <xref:System.Collections.ReadOnlyCollectionBase> . <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> nie jest abstrakcyjny i ma konstruktora, który ułatwia udostępnianie istniejącej <xref:System.Collections.Generic.List%601> jako kolekcji tylko do odczytu.
 
 - <xref:System.Collections.Generic.Queue%601>Klasy, <xref:System.Collections.Concurrent.ConcurrentQueue%601> , <xref:System.Collections.Immutable.ImmutableQueue%601> , <xref:System.Collections.Immutable.ImmutableArray%601> , <xref:System.Collections.Generic.SortedList%602> i <xref:System.Collections.Immutable.ImmutableSortedSet%601> Ogólne odpowiadają odpowiednim klasom nieogólnym o tych samych nazwach.
 
@@ -35,15 +35,15 @@ Następujące typy ogólne odpowiadają istniejącym typom kolekcji:
 
 Kilka rodzajowych typów kolekcji nie ma odpowiedników nierodzajowych. Należą do nich następujące elementy:
 
-- <xref:System.Collections.Generic.LinkedList%601>jest listą połączoną ogólnego przeznaczenia, która zapewnia operacje wstawiania i usuwania O (1).
+- <xref:System.Collections.Generic.LinkedList%601> jest listą połączoną ogólnego przeznaczenia, która zapewnia operacje wstawiania i usuwania O (1).
 
-- <xref:System.Collections.Generic.SortedDictionary%602>to posortowany słownik z `n` operacjami wstawiania i pobierania (log), co sprawia, że jest to użyteczna alternatywa dla programu <xref:System.Collections.Generic.SortedList%602> .
+- <xref:System.Collections.Generic.SortedDictionary%602> to posortowany słownik z `n` operacjami wstawiania i pobierania (log), co sprawia, że jest to użyteczna alternatywa dla programu <xref:System.Collections.Generic.SortedList%602> .
 
-- <xref:System.Collections.ObjectModel.KeyedCollection%602>jest hybrydem między listą a słownikiem, który umożliwia przechowywanie obiektów zawierających własne klucze.
+- <xref:System.Collections.ObjectModel.KeyedCollection%602> jest hybrydem między listą a słownikiem, który umożliwia przechowywanie obiektów zawierających własne klucze.
 
-- <xref:System.Collections.Concurrent.BlockingCollection%601>implementuje klasę kolekcji z funkcją ograniczenia i blokowania.
+- <xref:System.Collections.Concurrent.BlockingCollection%601> implementuje klasę kolekcji z funkcją ograniczenia i blokowania.
 
-- <xref:System.Collections.Concurrent.ConcurrentBag%601>umożliwia szybkie Wstawianie i usuwanie nieuporządkowanych elementów.
+- <xref:System.Collections.Concurrent.ConcurrentBag%601> umożliwia szybkie Wstawianie i usuwanie nieuporządkowanych elementów.
 
 ### <a name="immutable-builders"></a>Niezmienne kompilacje
 

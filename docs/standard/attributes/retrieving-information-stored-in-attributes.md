@@ -10,20 +10,20 @@ dev_langs:
 helpviewer_keywords:
 - retrieving attributes
 - multiple attribute instances
-- attributes [.NET Framework], retrieving
+- attributes [.NET], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-ms.openlocfilehash: cf147a0ae6833039247c4c0878996973cc3db545
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 710f3e3d1051bad4a61e59e330204d622b9fd683
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84661864"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889208"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Pobieranie informacji przechowywanych w atrybutach
 Pobieranie atrybutu niestandardowego jest procesem prostym. Najpierw Zadeklaruj wystąpienie atrybutu, który ma zostać pobrany. Następnie użyj metody, <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> Aby zainicjować nowy atrybut do wartości atrybutu, który ma zostać pobrany. Po zainicjowaniu nowego atrybutu wystarczy użyć jego właściwości w celu uzyskania wartości.  
   
 > [!IMPORTANT]
-> W tym temacie opisano sposób pobierania atrybutów dla kodu załadowanego do kontekstu wykonywania. Aby pobrać atrybuty dla kodu załadowanego do kontekstu tylko odbicie, należy użyć <xref:System.Reflection.CustomAttributeData> klasy, jak pokazano w [instrukcje: ładowanie zestawów do kontekstu tylko odbicie](../../framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+> W tym temacie opisano sposób pobierania atrybutów dla kodu załadowanego do kontekstu wykonywania. Aby pobrać atrybuty dla kodu załadowanego do kontekstu tylko odbicie, należy użyć <xref:System.Reflection.CustomAttributeData> klasy, jak pokazano w [instrukcje: ładowanie zestawów do kontekstu Reflection-Only](../../framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
  W tej sekcji opisano następujące metody pobierania atrybutów:  
   
@@ -71,7 +71,7 @@ The attribute was not found.
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes"></a>
 ## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-different-scopes"></a>Pobieranie wielu wystąpień atrybutu zastosowanych do różnych zakresów  
- <xref:System.Attribute.GetCustomAttributes%2A>Metody i <xref:System.Attribute.GetCustomAttribute%2A> nie przeszukują całej klasy i zwracają wszystkie wystąpienia atrybutu w tej klasie. Zamiast tego przeszukują tylko jedną określoną metodę lub element członkowski jednocześnie. Jeśli masz klasę z tym samym atrybutem, który jest stosowany do każdego elementu członkowskiego i chcesz pobrać wartości we wszystkich atrybutach zastosowanych do tych elementów członkowskich, musisz dostarczyć każdą metodę lub element członkowski oddzielnie do **GetCustomAttributes —** i **GetCustomAttribute**.  
+ <xref:System.Attribute.GetCustomAttributes%2A>Metody i <xref:System.Attribute.GetCustomAttribute%2A> nie przeszukują całej klasy i zwracają wszystkie wystąpienia atrybutu w tej klasie. Zamiast tego przeszukują tylko jedną określoną metodę lub element członkowski jednocześnie. Jeśli masz klasę z tym samym atrybutem, który jest stosowany do każdego elementu członkowskiego i chcesz pobrać wartości we wszystkich atrybutach zastosowanych do tych elementów członkowskich, musisz dostarczyć każdą metodę lub element członkowski oddzielnie do **GetCustomAttributes —** i **GetCustomAttribute** .  
   
  Poniższy przykład kodu przyjmuje klasę jako parametr i wyszukuje `DeveloperAttribute` (zdefiniowane wcześniej) na poziomie klasy i dla każdej indywidualnej metody tej klasy.  
   

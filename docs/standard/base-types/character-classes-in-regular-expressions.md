@@ -10,14 +10,14 @@ helpviewer_keywords:
 - character classes
 - regular expressions, character classes
 - characters, matching syntax
-- .NET Framework regular expressions, character classes
+- .NET regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.openlocfilehash: 85107bf2234eda1705126e524acd5b35952094bc
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 619a32d98d697b3b1d461921bfe581acb720be68
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292101"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888727"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Klasy znaków w wyrażeniach regularnych
 
@@ -48,7 +48,7 @@ Klasa znaków definiuje zestaw znaków, z którego każdy jeden znak może wyst�
  Platforma .NET obsługuje wyrażenia odejmowania klas znaków, które umożliwiają zdefiniowanie zestawu znaków jako wyniku wykluczenia jednej klasy znaków z innej klasy znaków. Aby uzyskać więcej informacji, zobacz [odejmowanie klasy znaków](#CharacterClassSubtraction).  
   
 > [!NOTE]
-> Klasy znaków, które pasują do znaków według kategorii, takich jak [\w](#WordCharacter) , aby dopasować znaki wyrazu lub [ {} \p](#CategoryOrBlock) w celu dopasowania do kategorii Unicode, polegają na <xref:System.Globalization.CharUnicodeInfo> klasie w celu podania informacji o kategoriach znaków.  Począwszy od .NET Framework 4.6.2, kategorie znaków są oparte na [standardzie Unicode w wersji 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). W .NET Framework 4 za pośrednictwem .NET Framework 4.6.1 są one oparte na [standardzie Unicode w wersji 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
+> Klasy znaków, które pasują do znaków według kategorii, takich jak [\w](#WordCharacter) , aby dopasować znaki wyrazu lub [ {} \p](#CategoryOrBlock) w celu dopasowania do kategorii Unicode, polegają na <xref:System.Globalization.CharUnicodeInfo> klasie w celu podania informacji o kategoriach znaków. W .NET Framework 4.6.2 i nowszych wersjach kategorie znaków są oparte na [standardzie Unicode w wersji 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/).
   
 <a name="PositiveGroup"></a>
 ## <a name="positive-character-group--"></a>Grupa znaków pozytywnych: []  
@@ -224,7 +224,7 @@ gdzie *firstCharacter* jest znakiem, który rozpoczyna zakres, a *lastCharacter*
   
 <a name="WordCharacter"></a>
 ## <a name="word-character-w"></a>Znak wyrazu: \w  
- `\w`Dopasowuje dowolny znak słowa. Znak słowa jest elementem członkowskim każdej z kategorii Unicode wymienionej w poniższej tabeli.  
+ `\w` Dopasowuje dowolny znak słowa. Znak słowa jest elementem członkowskim każdej z kategorii Unicode wymienionej w poniższej tabeli.  
   
 |Kategoria|Opis|  
 |--------------|-----------------|  
@@ -254,7 +254,7 @@ gdzie *firstCharacter* jest znakiem, który rozpoczyna zakres, a *lastCharacter*
   
 <a name="NonWordCharacter"></a>
 ## <a name="non-word-character-w"></a>Znak niebędący słowem: \w  
- `\W`Dopasowuje dowolny znak niebędący słowem. Element języka \W jest równoważny z następującą klasą znaków:  
+ `\W` Dopasowuje dowolny znak niebędący słowem. Element języka \W jest równoważny z następującą klasą znaków:  
   
 `[^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`  
   
@@ -291,7 +291,7 @@ gdzie *firstCharacter* jest znakiem, który rozpoczyna zakres, a *lastCharacter*
   
 <a name="WhitespaceCharacter"></a>
 ## <a name="whitespace-character-s"></a>Znak odstępu: \s  
- `\s`Dopasowuje dowolny znak odstępu. Jest to równoważne z sekwencjami ucieczki oraz kategoriami Unicode wymienionymi w poniższej tabeli.  
+ `\s` Dopasowuje dowolny znak odstępu. Jest to równoważne z sekwencjami ucieczki oraz kategoriami Unicode wymienionymi w poniższej tabeli.  
   
 |Kategoria|Opis|  
 |--------------|-----------------|  
@@ -320,9 +320,9 @@ gdzie *firstCharacter* jest znakiem, który rozpoczyna zakres, a *lastCharacter*
   
 <a name="NonWhitespaceCharacter"></a>
 ## <a name="non-whitespace-character-s"></a>Znak niebędący odstępem: \s  
- `\S`Dopasowuje dowolny znak niebędący odstępem. Jest odpowiednikiem `[^\f\n\r\t\v\x85\p{Z}]` wzorca wyrażenia regularnego lub przeciwieństwem wzorca wyrażenia regularnego, który jest odpowiednikiem `\s` , który jest zgodny ze znakami odstępu. Aby uzyskać więcej informacji, zobacz znak odstępu [: \s](#WhitespaceCharacter).  
+ `\S` Dopasowuje dowolny znak niebędący odstępem. Jest odpowiednikiem `[^\f\n\r\t\v\x85\p{Z}]` wzorca wyrażenia regularnego lub przeciwieństwem wzorca wyrażenia regularnego, który jest odpowiednikiem `\s` , który jest zgodny ze znakami odstępu. Aby uzyskać więcej informacji, zobacz znak odstępu [: \s](#WhitespaceCharacter).  
   
- Jeśli określono zachowanie zgodne ze standardem ECMAScript, `\S` jest równoważne `[^ \f\n\r\t\v]` . Aby uzyskać informacje na temat wyrażeń regularnych języka ECMAScript, zobacz sekcję "zachowanie zgodne z językiem ECMAScript" w [opcjach wyrażeń regularnych](regular-expression-options.md).  
+ Jeśli określono zachowanie zgodne ze standardem ECMAScript, `\S` jest równoważne  `[^ \f\n\r\t\v]` . Aby uzyskać informacje na temat wyrażeń regularnych języka ECMAScript, zobacz sekcję "zachowanie zgodne z językiem ECMAScript" w [opcjach wyrażeń regularnych](regular-expression-options.md).  
   
  Poniższy przykład ilustruje `\S` element języka. Wzorzec wyrażenia regularnego `\b(\S+)\s?` dopasowuje ciągi, które są rozdzielane znakami odstępu. Drugi element w obiekcie Matcher <xref:System.Text.RegularExpressions.GroupCollection> zawiera dopasowany ciąg. Wyrażenie regularne może być interpretowane tak jak pokazano w poniższej tabeli.  
   
@@ -337,9 +337,9 @@ gdzie *firstCharacter* jest znakiem, który rozpoczyna zakres, a *lastCharacter*
   
 <a name="DigitCharacter"></a>
 ## <a name="decimal-digit-character-d"></a>Znak cyfry dziesiętnej: \d  
- `\d`Dopasowuje dowolną cyfrę dziesiętną. Jest to odpowiednik `\p{Nd}` wzorca wyrażenia regularnego, który zawiera standardowe cyfry dziesiętne 0-9, a także cyfry dziesiętne wielu innych zestawów znaków.  
+ `\d` Dopasowuje dowolną cyfrę dziesiętną. Jest to odpowiednik `\p{Nd}` wzorca wyrażenia regularnego, który zawiera standardowe cyfry dziesiętne 0-9, a także cyfry dziesiętne wielu innych zestawów znaków.  
   
- Jeśli określono zachowanie zgodne ze standardem ECMAScript, `\d` jest równoważne `[0-9]` . Aby uzyskać informacje na temat wyrażeń regularnych języka ECMAScript, zobacz sekcję "zachowanie zgodne z językiem ECMAScript" w [opcjach wyrażeń regularnych](regular-expression-options.md).  
+ Jeśli określono zachowanie zgodne ze standardem ECMAScript, `\d` jest równoważne  `[0-9]` . Aby uzyskać informacje na temat wyrażeń regularnych języka ECMAScript, zobacz sekcję "zachowanie zgodne z językiem ECMAScript" w [opcjach wyrażeń regularnych](regular-expression-options.md).  
   
  Poniższy przykład ilustruje `\d` element języka. Sprawdza, czy ciąg wejściowy reprezentuje prawidłowy numeru telefonu w Stanach Zjednoczonych i Kanadzie. Wzorzec wyrażenia regularnego `^(\(?\d{3}\)?[\s-])?\d{3}-\d{4}$` jest zdefiniowany, jak pokazano w poniższej tabeli.  
   
@@ -359,9 +359,9 @@ gdzie *firstCharacter* jest znakiem, który rozpoczyna zakres, a *lastCharacter*
   
 <a name="NonDigitCharacter"></a>
 ## <a name="non-digit-character-d"></a>Znak niebędący cyfrą: \d  
- `\D`Dopasowuje dowolny znak niebędący cyfrą. Jest to odpowiednik `\P{Nd}` wzorca wyrażenia regularnego.  
+ `\D` Dopasowuje dowolny znak niebędący cyfrą. Jest to odpowiednik `\P{Nd}` wzorca wyrażenia regularnego.  
   
- Jeśli określono zachowanie zgodne ze standardem ECMAScript, `\D` jest równoważne `[^0-9]` . Aby uzyskać informacje na temat wyrażeń regularnych języka ECMAScript, zobacz sekcję "zachowanie zgodne z językiem ECMAScript" w [opcjach wyrażeń regularnych](regular-expression-options.md).  
+ Jeśli określono zachowanie zgodne ze standardem ECMAScript, `\D` jest równoważne  `[^0-9]` . Aby uzyskać informacje na temat wyrażeń regularnych języka ECMAScript, zobacz sekcję "zachowanie zgodne z językiem ECMAScript" w [opcjach wyrażeń regularnych](regular-expression-options.md).  
   
  W poniższym przykładzie pokazano element języka \D. Sprawdza, czy ciąg, taki jak numer części, zawiera odpowiednią kombinację znaków dziesiętnych oraz niebędących dziesiętnymi. Wzorzec wyrażenia regularnego `^\D\d{1,5}\D*$` jest zdefiniowany, jak pokazano w poniższej tabeli.  
   

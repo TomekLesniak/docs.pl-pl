@@ -7,17 +7,17 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- numeric format strings [.NET Framework]
-- formatting [.NET Framework], numbers
-- number formatting [.NET Framework]
-- numbers [.NET Framework], format strings
+- numeric format strings [.NET]
+- formatting [.NET], numbers
+- number formatting [.NET]
+- numbers [.NET], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-ms.openlocfilehash: 6ef0ddb37f1bc73254aa639d7c018ec6a01abd9b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7c3ee376fde34663ee0599c0b1ae654871a71206
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447189"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888459"
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>Instrukcje: Uzupełnianie liczby zerami wiodącymi
 
@@ -29,9 +29,9 @@ Można dodać Wiodące zera do liczby całkowitej przy użyciu [standardowego ci
 
 1. Określ, czy chcesz wyświetlić liczbę całkowitą jako wartość dziesiętną, czy wartość szesnastkową.
 
-    - Aby wyświetlić liczbę całkowitą jako wartość dziesiętną, wywołaj `ToString(String)` metodę i przekaż ciąg "D*n*" jako wartość `format` parametru, gdzie *n* reprezentuje minimalną długość ciągu.
+    - Aby wyświetlić liczbę całkowitą jako wartość dziesiętną, wywołaj `ToString(String)` metodę i przekaż ciąg "D *n* " jako wartość `format` parametru, gdzie *n* reprezentuje minimalną długość ciągu.
 
-    - Aby wyświetlić liczbę całkowitą jako wartość szesnastkową, wywołaj `ToString(String)` metodę i przekaż ciąg "X*n*" jako wartość parametru formatu, gdzie *n* reprezentuje minimalną długość ciągu.
+    - Aby wyświetlić liczbę całkowitą jako wartość szesnastkową, wywołaj `ToString(String)` metodę i przekaż ciąg "X *n* " jako wartość parametru formatu, gdzie *n* reprezentuje minimalną długość ciągu.
 
 Możesz również użyć ciągu w formacie interpolowanym w [języku C#](../../csharp/language-reference/tokens/interpolated.md) i [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)lub wywołać metodę, taką jak <xref:System.String.Format%2A?displayProperty=nameWithType> lub <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> , która używa [formatowania złożonego](composite-formatting.md).
 
@@ -54,7 +54,7 @@ Poniższy przykład formatuje kilka wartości całkowitych wiodących zer, tak a
 
 1. Dodaj liczbę zer wiodących, które mają być uwzględnione w ciągu sformatowanym do długości nieuzupełnionego ciągu liczbowego. Dodanie liczby zer wiodących określa łączną długość uzupełnionego ciągu.
 
-1. Wywołaj metodę wartości całkowitej `ToString(String)` i przekaż ciąg "D*n*" dla ciągów dziesiętnych i "X*n*" dla ciągów szesnastkowych, gdzie *n* reprezentuje łączną długość uzupełnionego ciągu. Można również użyć ciągu formatu "D*n*" lub "X*n*" w metodzie, która obsługuje formatowanie złożone.
+1. Wywołaj metodę wartości całkowitej `ToString(String)` i przekaż ciąg "D *n* " dla ciągów dziesiętnych i "X *n* " dla ciągów szesnastkowych, gdzie *n* reprezentuje łączną długość uzupełnionego ciągu. Można również użyć ciągu formatu "D *n* " lub "X *n* " w metodzie, która obsługuje formatowanie złożone.
 
 Poniższy przykład ilustruje liczbę całkowitą z pięciu wiodących zer.
 
@@ -104,5 +104,5 @@ W poniższym przykładzie są umieszczane dwie <xref:System.Double> wartości z 
 ## <a name="see-also"></a>Zobacz także
 
 - [Niestandardowe ciągi formatujące liczby](custom-numeric-format-strings.md)
-- [Standardowe ciągi formatujące liczby](standard-numeric-format-strings.md)
+- [Standardowe ciągi formatów liczbowych](standard-numeric-format-strings.md)
 - [Formatowanie złożone](composite-formatting.md)

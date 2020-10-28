@@ -8,24 +8,24 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- strings [.NET Framework], padding
+- strings [.NET], padding
 - white space
 - PadRight method
 - PadLeft method
 - padding strings
 ms.assetid: 84a9f142-3244-4c90-ba02-21af9bbaff71
-ms.openlocfilehash: 5bf7023a3429e932a44ad0a0bd3409012f77cbf9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f90a95f0ceb5ad7cc32d451897544fffe56afb6d
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594533"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889052"
 ---
 # <a name="padding-strings-in-net"></a>Uzupełnianie ciągów w programie .NET
 
 Użyj jednej z następujących <xref:System.String> metod, aby utworzyć nowy ciąg, który składa się z oryginalnego ciągu, który jest uzupełniony znakami początkowymi lub końcowymi do określonej całkowitej długości. Znak uzupełniania może być spacją lub określonym znakiem. Ciąg wyników wydaje się być wyrównany do prawej lub wyrównany do lewej. Jeśli pierwotna długość ciągu jest już równa lub większa od żądanej całkowitej długości, metody uzupełniania zwracają oryginalny ciąg niezmieniony; Aby uzyskać więcej informacji, zobacz sekcje **zwraca** dwa przeciążenia <xref:System.String.PadLeft%2A?displayProperty=nameWithType> <xref:System.String.PadRight%2A?displayProperty=nameWithType> metod i.
   
-|Nazwa metody|Użycie|  
+|Nazwa metody|Zastosowanie|  
 |-----------------|---------|  
 |<xref:System.String.PadLeft%2A?displayProperty=nameWithType>|Tworzy w postaci ciągu znaki wiodące z określoną łączną długością.|  
 |<xref:System.String.PadRight%2A?displayProperty=nameWithType>|Tworzy w postaci ciągu znaki końcowe z określoną całkowitą długością.|  
@@ -48,6 +48,6 @@ Użyj jednej z następujących <xref:System.String> metod, aby utworzyć nowy ci
  [!code-csharp[Conceptual.String.BasicOps#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/padding.cs#4)]
  [!code-vb[Conceptual.String.BasicOps#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/padding.vb#4)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podstawowe operacje na ciągach](basic-string-operations.md)

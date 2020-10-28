@@ -7,31 +7,31 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- data formatting [.NET Framework]
-- dates [.NET Framework], formatting
-- date formatting [.NET Framework]
-- number formatting [.NET Framework]
+- data formatting [.NET]
+- dates [.NET], formatting
+- date formatting [.NET]
+- number formatting [.NET]
 - ToString method
-- custom cultural settings [.NET Framework]
-- numbers [.NET Framework], formatting
-- formatting strings [.NET Framework]
-- time [.NET Framework], formatting
-- currency [.NET Framework], formatting
-- types [.NET Framework], formatting
-- format specifiers [.NET Framework]
-- times [.NET Framework], formatting
-- culture [.NET Framework], formatting
-- formatting [.NET Framework], types supported
-- base types [.NET Framework], formatting
-- custom formatting [.NET Framework]
-- strings [.NET Framework], formatting
+- custom cultural settings [.NET]
+- numbers [.NET], formatting
+- formatting strings [.NET]
+- time [.NET], formatting
+- currency [.NET], formatting
+- types [.NET], formatting
+- format specifiers [.NET]
+- times [.NET], formatting
+- culture [.NET], formatting
+- formatting [.NET], types supported
+- base types [.NET], formatting
+- custom formatting [.NET]
+- strings [.NET], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: 5d280b53d15bc674f325a726d69915d763aec34f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f100c1abcb32e907b92c42f8cfa460d2c1927803
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447085"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888498"
 ---
 # <a name="format-types-in-net"></a>Typy formatów w programie .NET
 
@@ -52,7 +52,7 @@ Platforma .NET zapewnia obsługę formatowania zaawansowanego, która umożliwia
 
 ## <a name="formatting-in-net"></a>Formatowanie w programie .NET
 
-Podstawowym mechanizmem formatowania jest domyślna implementacja <xref:System.Object.ToString%2A?displayProperty=nameWithType> metody, która została omówiona w [domyślnym formatowaniu przy użyciu metody ToString](#default-formatting-using-the-tostring-method) w dalszej części tego tematu. Jednak platforma .NET oferuje kilka sposobów modyfikowania i zwiększania obsługi formatowania domyślnego. Należą do nich między innymi:
+Podstawowym mechanizmem formatowania jest domyślna implementacja <xref:System.Object.ToString%2A?displayProperty=nameWithType> metody, która została omówiona w [domyślnym formatowaniu przy użyciu metody ToString](#default-formatting-using-the-tostring-method) w dalszej części tego tematu. Jednak platforma .NET oferuje kilka sposobów modyfikowania i zwiększania obsługi formatowania domyślnego. Należą do nich:
 
 - Zastępowanie <xref:System.Object.ToString%2A?displayProperty=nameWithType> metody, aby zdefiniować niestandardową reprezentację obiektu w postaci ciągu. Aby uzyskać więcej informacji, zobacz sekcję [Zastępowanie metody ToString](#override-the-tostring-method) w dalszej części tego tematu.
 
@@ -214,7 +214,7 @@ Wszystkie typy liczbowe (takie jak,,,,,,,,,, <xref:System.Byte> <xref:System.Dec
 
 |Tytuł|Definicja|
 |-----------|----------------|
-|[Standardowe ciągi formatujące liczby](standard-numeric-format-strings.md)|Opisuje ciągi formatu standardowego, które tworzą często używane reprezentacje ciągów wartości liczbowych.|
+|[Standardowe ciągi formatów liczbowych](standard-numeric-format-strings.md)|Opisuje ciągi formatu standardowego, które tworzą często używane reprezentacje ciągów wartości liczbowych.|
 |[Niestandardowe ciągi formatujące liczby](custom-numeric-format-strings.md)|Opisuje niestandardowe ciągi formatujące, które tworzą formaty specyficzne dla aplikacji dla wartości liczbowych.|
 |[Standardowe ciągi formatujące datę i godzinę](standard-date-and-time-format-strings.md)|Opisuje ciągi formatu standardowego, które tworzą często używane reprezentacje ciągu <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości.|
 |[Niestandardowe ciągi formatujące datę i godzinę](custom-date-and-time-format-strings.md)|Opisuje niestandardowe ciągi formatujące, które tworzą formaty dla i wartości specyficzne dla aplikacji <xref:System.DateTime> <xref:System.DateTimeOffset> .|
@@ -225,21 +225,21 @@ Wszystkie typy liczbowe (takie jak,,,,,,,,,, <xref:System.Byte> <xref:System.Dec
 
 ## <a name="culture-sensitive-formatting-with-format-providers"></a>Uwzględnianie kulturowe formatowania z dostawcami formatowania
 
-Chociaż specyfikatory formatu pozwalają dostosować formatowanie obiektów, generowanie znaczących reprezentacji obiektów często wymaga dodatkowych informacji o formatowaniu. Na przykład formatowanie liczby jako wartości walutowej przy użyciu standardowego ciągu formatu "C" lub niestandardowego ciągu formatu, takiego jak "$ #, #. 00" wymaga co najmniej informacji o poprawnym symbolu waluty, separatorze grup i separatorze dziesiętnym, który ma być dostępny do uwzględnienia w sformatowanym ciągu. W programie .NET te dodatkowe informacje o formatowaniu są udostępniane za pomocą <xref:System.IFormatProvider> interfejsu, który jest dostarczany jako parametr do jednego lub większej liczby przeciążeń `ToString` metody typów liczbowych i typów dat i godzin. <xref:System.IFormatProvider>implementacje są używane w programie .NET do obsługi formatowania specyficznego dla kultury. Poniższy przykład ilustruje sposób, w jaki ciąg reprezentujący obiekt ulega zmianie, gdy jest sformatowany przy użyciu trzech <xref:System.IFormatProvider> obiektów, które reprezentują różne kultury.
+Chociaż specyfikatory formatu pozwalają dostosować formatowanie obiektów, generowanie znaczących reprezentacji obiektów często wymaga dodatkowych informacji o formatowaniu. Na przykład formatowanie liczby jako wartości walutowej przy użyciu standardowego ciągu formatu "C" lub niestandardowego ciągu formatu, takiego jak "$ #, #. 00" wymaga co najmniej informacji o poprawnym symbolu waluty, separatorze grup i separatorze dziesiętnym, który ma być dostępny do uwzględnienia w sformatowanym ciągu. W programie .NET te dodatkowe informacje o formatowaniu są udostępniane za pomocą <xref:System.IFormatProvider> interfejsu, który jest dostarczany jako parametr do jednego lub większej liczby przeciążeń `ToString` metody typów liczbowych i typów dat i godzin. <xref:System.IFormatProvider> implementacje są używane w programie .NET do obsługi formatowania specyficznego dla kultury. Poniższy przykład ilustruje sposób, w jaki ciąg reprezentujący obiekt ulega zmianie, gdy jest sformatowany przy użyciu trzech <xref:System.IFormatProvider> obiektów, które reprezentują różne kultury.
 
 [!code-csharp[Conceptual.Formatting.Overview#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/iformatprovider1.cs#11)]
 [!code-vb[Conceptual.Formatting.Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/iformatprovider1.vb#11)]
 
 <xref:System.IFormatProvider>Interfejs zawiera jedną metodę, <xref:System.IFormatProvider.GetFormat%28System.Type%29> , która ma jeden parametr, który określa typ obiektu, który zawiera informacje o formatowaniu. Jeśli metoda może dostarczyć obiekt tego typu, zwraca go. W przeciwnym razie zwraca odwołanie o wartości null ( `Nothing` w Visual Basic).
 
-<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>jest metodą wywołania zwrotnego. Po wywołaniu `ToString` przeciążenia metody, która zawiera <xref:System.IFormatProvider> parametr, wywołuje <xref:System.IFormatProvider.GetFormat%2A> metodę tego <xref:System.IFormatProvider> obiektu. <xref:System.IFormatProvider.GetFormat%2A>Metoda jest odpowiedzialna za zwracanie obiektu, który dostarcza niezbędne informacje o formatowaniu, jak określono przez jego `formatType` parametr, do `ToString` metody.
+<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> jest metodą wywołania zwrotnego. Po wywołaniu `ToString` przeciążenia metody, która zawiera <xref:System.IFormatProvider> parametr, wywołuje <xref:System.IFormatProvider.GetFormat%2A> metodę tego <xref:System.IFormatProvider> obiektu. <xref:System.IFormatProvider.GetFormat%2A>Metoda jest odpowiedzialna za zwracanie obiektu, który dostarcza niezbędne informacje o formatowaniu, jak określono przez jego `formatType` parametr, do `ToString` metody.
 
 Wiele metod formatowania lub konwersji ciągów zawiera parametr typu <xref:System.IFormatProvider> , ale w wielu przypadkach wartość parametru jest ignorowana, gdy wywoływana jest metoda. W poniższej tabeli wymieniono niektóre metody formatowania, które używają parametru i typu <xref:System.Type> obiektu, który przekazuje do <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metody.
 
 |Metoda|Typ `formatType` parametru|
 |------------|------------------------------------|
-|`ToString`Metoda typów liczbowych|<xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>|
-|`ToString`Metoda typów daty i godziny|<xref:System.Globalization.DateTimeFormatInfo?displayProperty=nameWithType>|
+|`ToString` Metoda typów liczbowych|<xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>|
+|`ToString` Metoda typów daty i godziny|<xref:System.Globalization.DateTimeFormatInfo?displayProperty=nameWithType>|
 |<xref:System.String.Format%2A?displayProperty=nameWithType>|<xref:System.ICustomFormatter?displayProperty=nameWithType>|
 |<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>|<xref:System.ICustomFormatter?displayProperty=nameWithType>|
 
@@ -352,7 +352,7 @@ Poniższy przykład używa `ByteByByteFormatter` klasy do formatowania wartości
 
 |Tytuł|Definicja|
 |-----------|----------------|
-|[Standardowe ciągi formatujące liczby](standard-numeric-format-strings.md)|Opisuje ciągi formatu standardowego, które tworzą często używane reprezentacje ciągów wartości liczbowych.|
+|[Standardowe ciągi formatów liczbowych](standard-numeric-format-strings.md)|Opisuje ciągi formatu standardowego, które tworzą często używane reprezentacje ciągów wartości liczbowych.|
 |[Niestandardowe ciągi formatujące liczby](custom-numeric-format-strings.md)|Opisuje niestandardowe ciągi formatujące, które tworzą formaty specyficzne dla aplikacji dla wartości liczbowych.|
 |[Standardowe ciągi formatujące datę i godzinę](standard-date-and-time-format-strings.md)|Opisuje ciągi formatu standardowego, które tworzą często używane reprezentacje ciągów <xref:System.DateTime> wartości.|
 |[Niestandardowe ciągi formatujące datę i godzinę](custom-date-and-time-format-strings.md)|Opisuje niestandardowe ciągi formatujące, które tworzą formaty charakterystyczne dla aplikacji dla <xref:System.DateTime> wartości.|

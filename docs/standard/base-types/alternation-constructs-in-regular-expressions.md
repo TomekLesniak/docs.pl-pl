@@ -13,14 +13,14 @@ helpviewer_keywords:
 - alternation constructs
 - optional matching patterns
 - constructs, alternation
-- .NET Framework regular expressions, alternation constructs
+- .NET regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-ms.openlocfilehash: 506c1cdeb577452628d67ab00df20dd30881f406
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 30af871502e0db48853705206db5e2b3da28bb76
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495437"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889182"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukcje alternacyjne w wyrażeniach regularnych
 
@@ -49,7 +49,7 @@ Wyrażenie regularne, które używa `|` znaku, `\bgr(a|e)y\b` , jest interpretow
 |<code>(a&#124;e)</code>|Dopasowuje znak „a” lub „e”.|  
 |`y\b`|Dopasowuje znak "y" na granicy słowa.|  
 
-`|`Znaku można także użyć do wykonania elementu/lub dopasowania z wieloma znakami lub podwyrażeniami, które mogą zawierać dowolną kombinację literałów znakowych i elementy języka wyrażeń regularnych. (Klasa znaku nie zapewnia tej funkcji). Poniższy przykład używa `|` znaku, aby wyodrębnić numer PESEL (USA), który jest 9-cyfrowym numerem w formacie *ddd* - *DD* - *dddd*lub numerem identyfikacyjnym pracodawcy USA (EIN), który jest 9-cyfrowym numerem w formacie *DD* - *ddddddd*.
+`|`Znaku można także użyć do wykonania elementu/lub dopasowania z wieloma znakami lub podwyrażeniami, które mogą zawierać dowolną kombinację literałów znakowych i elementy języka wyrażeń regularnych. (Klasa znaku nie zapewnia tej funkcji). Poniższy przykład używa `|` znaku, aby wyodrębnić numer PESEL (USA), który jest 9-cyfrowym numerem w formacie *ddd* - *DD* - *dddd* lub numerem identyfikacyjnym pracodawcy USA (EIN), który jest 9-cyfrowym numerem w formacie *DD* - *ddddddd* .
 
 [!code-csharp[RegularExpressions.Language.Alternation#2](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation2.cs#2)]
 [!code-vb[RegularExpressions.Language.Alternation#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation2.vb#2)]  
@@ -69,11 +69,11 @@ Ten element języka próbuje dopasować jeden z dwóch wzorców w zależności o
 
 `(?(`*wyrażenie* `)` *tak* `|` *nie*`)`
 
-*wyrażenie* WHERE jest wzorcem początkowym, *tak* aby pasowało do wzorca, jeśli *wyrażenie* jest dopasowane, a *nie* jest opcjonalnym wzorcem do dopasowania, jeśli *wyrażenie* nie jest zgodne. Aparat wyrażeń regularnych traktuje *wyrażenie* jako potwierdzenie o zerowej szerokości; oznacza to, że aparat wyrażeń regularnych nie postępuje w strumieniu wejściowym po obliczeniu *wyrażenia*. W związku z tym konstrukcja ta jest równoważna następującym:
+*wyrażenie* WHERE jest wzorcem początkowym, *tak* aby pasowało do wzorca, jeśli *wyrażenie* jest dopasowane, a *nie* jest opcjonalnym wzorcem do dopasowania, jeśli *wyrażenie* nie jest zgodne. Aparat wyrażeń regularnych traktuje *wyrażenie* jako potwierdzenie o zerowej szerokości; oznacza to, że aparat wyrażeń regularnych nie postępuje w strumieniu wejściowym po obliczeniu *wyrażenia* . W związku z tym konstrukcja ta jest równoważna następującym:
 
 `(?(?=`*wyrażenie* `)` *tak* `|` *nie*`)`
 
-`(?=` *wyrażenie* Where `)` ma konstrukcję "Assertion" o zerowej szerokości. (Aby uzyskać więcej informacji, zobacz [grupowanie konstrukcji](grouping-constructs-in-regular-expressions.md)). Ponieważ aparat wyrażeń regularnych interpretuje *wyrażenie* jako zakotwiczenie (potwierdzenie o zerowej szerokości), *wyrażenie* musi być potwierdzeniem o zerowej szerokości (Aby uzyskać więcej informacji, zobacz [kotwice](anchors-in-regular-expressions.md)) lub Podwyrażenie, które jest również zawarte w wartości *tak*. W przeciwnym razie nie można dopasować wzorca *tak* .  
+`(?=` *wyrażenie* Where `)` ma konstrukcję "Assertion" o zerowej szerokości. (Aby uzyskać więcej informacji, zobacz [grupowanie konstrukcji](grouping-constructs-in-regular-expressions.md)). Ponieważ aparat wyrażeń regularnych interpretuje *wyrażenie* jako zakotwiczenie (potwierdzenie o zerowej szerokości), *wyrażenie* musi być potwierdzeniem o zerowej szerokości (Aby uzyskać więcej informacji, zobacz [kotwice](anchors-in-regular-expressions.md)) lub Podwyrażenie, które jest również zawarte w wartości *tak* . W przeciwnym razie nie można dopasować wzorca *tak* .  
   
 > [!NOTE]
 > Jeśli *wyrażenie* jest nazwaną lub numerowaną grupą przechwytywania, konstrukcja alternatywna jest interpretowana jako test przechwytywania. Aby uzyskać więcej informacji, zobacz następną sekcję, [Dopasowanie warunkowe na podstawie prawidłowej grupy przechwytywania](#Conditional_Group). Innymi słowy aparat wyrażeń regularnych nie próbuje dopasować przechwyconego podciągu, ale zamiast tego testuje obecność lub brak grupy.  

@@ -10,19 +10,19 @@ helpviewer_keywords:
 - Event-based Asynchronous Pattern
 - ProgressChangedEventArgs class
 - BackgroundWorker component
-- events [.NET Framework], asynchronous
+- events [.NET], asynchronous
 - Asynchronous Pattern
 - AsyncOperationManager class
-- threading [.NET Framework], asynchronous features
+- threading [.NET], asynchronous features
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: f0d3e2e8f1d1f58c9df8026b38fc0264812b092a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5ab3229f71e264bbcd26d3d4c7bb52430b02865a
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555682"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888831"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Asynchroniczny wzorzec oparty na zdarzeniach — przegląd
 Aplikacje, które jednocześnie wykonują wiele zadań, jeszcze nie reagują na interakcję użytkownika, często wymagają projektu, który używa wielu wątków. <xref:System.Threading>Przestrzeń nazw zawiera wszystkie narzędzia niezbędne do tworzenia aplikacji wielowątkowych o wysokiej wydajności, ale używanie tych narzędzi skutecznie wymaga znaczących doświadczeń z obsługą wielowątkowych oprogramowania. W przypadku stosunkowo prostych aplikacji wielowątkowych składnik ten <xref:System.ComponentModel.BackgroundWorker> oferuje proste rozwiązanie. W przypadku bardziej zaawansowanych aplikacji asynchronicznych Rozważ zaimplementowanie klasy zgodnej ze wzorcem asynchronicznym opartym na zdarzeniach.  
@@ -37,7 +37,7 @@ Aplikacje, które jednocześnie wykonują wiele zadań, jeszcze nie reagują na 
   
 - Komunikuj się z oczekującymi operacjami asynchronicznymi przy użyciu znanych modeli Events i delegatów. Aby uzyskać więcej informacji na temat obsługi zdarzeń i delegatów, zobacz [zdarzenia](../events/index.md).  
   
- Klasa, która obsługuje wzorzec asynchroniczny oparty na zdarzeniach, będzie mieć co najmniej jedną metodę o nazwie _MethodName_**Async**. Te metody mogą dublować wersje synchroniczne, które wykonują tę samą operację na bieżącym wątku. Klasa może również mieć _MethodName_**ukończone** zdarzenie i może mieć metodę _MethodName_**AsyncCancel** (lub po prostu **CancelAsync**).  
+ Klasa, która obsługuje wzorzec asynchroniczny oparty na zdarzeniach, będzie mieć co najmniej jedną metodę o nazwie _MethodName_**Async** . Te metody mogą dublować wersje synchroniczne, które wykonują tę samą operację na bieżącym wątku. Klasa może również mieć _MethodName_**ukończone** zdarzenie i może mieć metodę _MethodName_**AsyncCancel** (lub po prostu **CancelAsync** ).  
   
  <xref:System.Windows.Forms.PictureBox> jest typowym składnikiem obsługującym wzorzec asynchroniczny oparty na zdarzeniach. Możesz pobrać obraz synchronicznie, wywołując jego <xref:System.Windows.Forms.PictureBox.Load%2A> metodę, ale jeśli obraz jest duży lub jeśli połączenie sieciowe działa wolno, aplikacja przestanie odpowiadać do momentu ukończenia operacji pobierania i wywołania <xref:System.Windows.Forms.PictureBox.Load%2A> zwrotnego.  
   
@@ -49,7 +49,7 @@ Aplikacje, które jednocześnie wykonują wiele zadań, jeszcze nie reagują na 
 > Możliwe jest, że pobieranie zakończy się tak samo jak <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> żądanie, dlatego <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> może nie odzwierciedlać żądania anulowania. Ta sytuacja jest nazywana *sytuacją wyścigu* i jest typowym problemem w programowaniu wielowątkowym. Aby uzyskać więcej informacji o problemach w programowaniu wielowątkowym, zobacz temat [zarządzane wątki z najlepszymi rozwiązaniami](../threading/managed-threading-best-practices.md).  
   
 ## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>Charakterystyki wzorca asynchronicznego opartego na zdarzeniach  
- Wzorzec asynchroniczny oparty na zdarzeniach może potrwać kilka form, w zależności od złożoności operacji obsługiwanych przez konkretną klasę. Najprostsze klasy mogą mieć pojedynczą metodę _MethodName_**asynchroniczną** MethodName oraz odpowiednie zdarzenie _MethodName_**ukończenia** MethodName. Bardziej złożone klasy mogą mieć kilka metod**asynchronicznych** _MethodName_, z których każda ma odpowiednie zdarzenie _MethodName_**ukończone** , a także synchroniczne wersje tych metod. Klasy mogą opcjonalnie obsługiwać anulowanie, Raportowanie postępu i przyrostowe wyniki dla każdej metody asynchronicznej.  
+ Wzorzec asynchroniczny oparty na zdarzeniach może potrwać kilka form, w zależności od złożoności operacji obsługiwanych przez konkretną klasę. Najprostsze klasy mogą mieć pojedynczą metodę _MethodName_**asynchroniczną** MethodName oraz odpowiednie zdarzenie _MethodName_**ukończenia** MethodName. Bardziej złożone klasy mogą mieć kilka metod **asynchronicznych** _MethodName_ , z których każda ma odpowiednie zdarzenie _MethodName_**ukończone** , a także synchroniczne wersje tych metod. Klasy mogą opcjonalnie obsługiwać anulowanie, Raportowanie postępu i przyrostowe wyniki dla każdej metody asynchronicznej.  
   
  Metoda asynchroniczna może również obsługiwać wiele wywołań oczekujących (wiele współbieżnych połączeń), dzięki czemu kod może wywoływać dowolną liczbę razy, zanim ukończy inne oczekujące operacje. Prawidłowe obsłudze tej sytuacji może wymagać, aby aplikacja mogła śledzić ukończenie każdej operacji.  
   
@@ -126,7 +126,7 @@ public class AsyncExample
  Metody, które obsługują tylko pojedynczą oczekującą operację w danym momencie, na przykład `Method1Async(string param)` nie są anulowane.  
   
 ### <a name="receiving-progress-updates-and-incremental-results"></a>Otrzymywanie aktualizacji postępu i przyrostowych wyników  
- Klasa, która jest zgodna ze wzorcem asynchronicznym opartym na zdarzeniach, może opcjonalnie podać zdarzenie do śledzenia postępu i przyrostowych wyników. Zwykle jest to nazwana `ProgressChanged` lub _MethodName_**ProgressChanged**, a odpowiednia procedura obsługi zdarzeń przyjmuje <xref:System.ComponentModel.ProgressChangedEventArgs> parametr.  
+ Klasa, która jest zgodna ze wzorcem asynchronicznym opartym na zdarzeniach, może opcjonalnie podać zdarzenie do śledzenia postępu i przyrostowych wyników. Zwykle jest to nazwana `ProgressChanged` lub _MethodName_**ProgressChanged** , a odpowiednia procedura obsługi zdarzeń przyjmuje <xref:System.ComponentModel.ProgressChangedEventArgs> parametr.  
   
  Procedura obsługi zdarzeń dla `ProgressChanged` zdarzenia może sprawdzić właściwość, <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A?displayProperty=nameWithType> Aby określić, jaki procent zadania asynchronicznego zostało ukończone. Ta właściwość będzie zawierać zakres od 0 do 100 i może służyć do aktualizowania <xref:System.Windows.Forms.ProgressBar.Value%2A> właściwości <xref:System.Windows.Forms.ProgressBar> . Jeśli oczekuje wiele operacji asynchronicznych, można użyć właściwości, <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A?displayProperty=nameWithType> Aby odróżnić, która operacja zgłasza postęp.  
   

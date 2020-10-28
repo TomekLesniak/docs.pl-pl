@@ -9,14 +9,14 @@ dev_langs:
 helpviewer_keywords:
 - format specifiers, enumeration format strings
 - enumeration format strings
-- formatting [.NET Framework], enumeration
+- formatting [.NET], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-ms.openlocfilehash: 825357cf4a56132dae0870972d316eff89b0c94f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e4d8ca27d99c211653269b2477be8f5632b78229
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84583430"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888662"
 ---
 # <a name="enumeration-format-strings"></a>Wyliczanie ciągów formatujących
 
@@ -69,6 +69,6 @@ Po zdefiniowaniu wyliczenia wystąpienie może być deklarowane w następujący 
 [!code-csharp[Formatting.Enum#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#7)]
 [!code-vb[Formatting.Enum#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#7)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Formatowanie typów](formatting-types.md)

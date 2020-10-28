@@ -9,16 +9,16 @@ dev_langs:
 helpviewer_keywords:
 - DateTime.ToString method
 - displaying date and time data
-- time [.NET Framework], milliseconds
-- dates [.NET Framework], milliseconds
-- milliseconds [.NET Framework]
+- time [.NET], milliseconds
+- dates [.NET], milliseconds
+- milliseconds [.NET]
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
-ms.openlocfilehash: a6dbe6a3bf4f8c08493ec925bea4316d071f4182
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bff458e73d603781155b18160bc7d088d8bd78cb
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447072"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888472"
 ---
 # <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Instrukcje: Wyświetlanie liczby milisekund w wartościach daty i godziny
 Domyślne metody formatowania daty i czasu, takie jak <xref:System.DateTime.ToString?displayProperty=nameWithType>, zawierają godziny, minuty i sekundy wartości czasu, ale wykluczają składnik milisekund. W tym temacie pokazano jak dołączyć datę i składnik czasu w milisekundach w sformatowanym ciągu daty i czasu.  

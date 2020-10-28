@@ -7,18 +7,18 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - regular expressions, behavior
-- .NET Framework regular expressions, behavior
+- .NET regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 802c84bf93b3821459ab652e69a12fcc50280b9e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a93e0e7bac782d9a4ce47c1586796b063563d2b6
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290555"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888675"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Szczegóły zachowania wyrażeń regularnych
 
-Aparat wyrażeń regularnych .NET Framework to wsteczny odpowiednik wyrażenia regularnego, który zawiera tradycyjny, Niedeterministyczny aparat usługi Automation (NFA), taki jak używany przez język Perl, Python, Emacs: i TCL. Odróżnia to od szybszego, ale bardziej ograniczone, czyste wyrażenie regularne deterministycznie skończone usługi Automation (DFA), takie jak te, które znajdują się w AWK, egrep lub Lex. Odróżnia to również od standaryzacji, ale wolniejsze, NFAs POSIX. W poniższej sekcji opisano trzy typy aparatów wyrażeń regularnych i wyjaśniono, dlaczego wyrażenia regularne w .NET Framework są implementowane przy użyciu tradycyjnego aparatu NFA.
+Aparat wyrażeń regularnych programu .NET to wsteczny odpowiednik wyrażenia regularnego, który zawiera tradycyjny, Niedeterministyczny aparat usługi Automation (NFA), taki jak używany przez język Perl, Python, Emacs: i TCL. Odróżnia to od szybszego, ale bardziej ograniczone, czyste wyrażenie regularne deterministycznie skończone usługi Automation (DFA), takie jak te, które znajdują się w AWK, egrep lub Lex. Odróżnia to również od standaryzacji, ale wolniejsze, NFAs POSIX. W poniższej sekcji opisano trzy typy aparatów wyrażeń regularnych i wyjaśniono, dlaczego wyrażenia regularne w programie .NET są implementowane za pomocą tradycyjnego aparatu NFA.
 
 ## <a name="benefits-of-the-nfa-engine"></a>Zalety aparatu NFA
 
@@ -33,11 +33,11 @@ Aparat wyrażeń regularnych .NET Framework to wsteczny odpowiednik wyrażenia r
 > [!NOTE]
 > Aby uzyskać informacje o tym, jak spadek wydajności spowodowany przez nadmierne wycofywanie i sposoby [rozłożenia wyrażenia](backtracking-in-regular-expressions.md)regularnego do obejść, zobacz wycofywanie.
 
-## <a name="net-framework-engine-capabilities"></a>Możliwości aparatu .NET Framework
+## <a name="net-engine-capabilities"></a>Możliwości aparatu .NET
 
- Aby skorzystać z zalet tradycyjnego aparatu NFA, aparat wyrażeń regularnych .NET Framework zawiera kompletny zestaw konstrukcji umożliwiających programistom sterownie aparatem wycofywania. Konstrukcje te mogą służyć do szybszego znajdowania dopasowania lub w celu uzyskania określonych rozszerzeń dla innych.
+ Aby skorzystać z zalet tradycyjnego aparatu NFA, aparat wyrażeń regularnych programu .NET zawiera kompletny zestaw konstrukcji umożliwiających programistom sterownie aparatem wycofywania. Konstrukcje te mogą służyć do szybszego znajdowania dopasowania lub w celu uzyskania określonych rozszerzeń dla innych.
 
- Inne funkcje aparatu wyrażeń regularnych .NET Framework są następujące:
+ Inne funkcje aparatu wyrażeń regularnych programu .NET obejmują następujące elementy:
 
 - Kwantyfikatory opóźnione: `??` , `*?` , `+?` , `{` *n* `,` *m* `}?` . Te konstrukcje informują aparat wycofywania, aby najpierw przeszukać minimalną liczbę powtórzeń. W przeciwieństwie do zwykłych kwantyfikatorów zachłanne spróbuj najpierw dopasować maksymalną liczbę powtórzeń. Poniższy przykład ilustruje różnicę między nimi. Wyrażenie regularne dopasowuje zdanie kończące się na liczbie, a grupa przechwytywania jest przeznaczona do wyodrębnienia tej liczby. Wyrażenie regularne `.+(\d+)\.` zawiera kwantyfikator zachłanne `.+` , które powoduje, że aparat wyrażeń regularnych przechwytuje tylko ostatnią cyfrę liczby. Z kolei wyrażenie regularne `.+?(\d+)\.` zawiera kwantyfikator z opóźnieniem `.+?` , który powoduje, że aparat wyrażeń regularnych przechwytuje całą liczbę.
 
@@ -48,8 +48,8 @@ Aparat wyrażeń regularnych .NET Framework to wsteczny odpowiednik wyrażenia r
 
     |Wzorce|Opis|
     |-------------|-----------------|
-    |`.+`(kwantyfikator zachłanne)|Dopasowuje co najmniej jedno wystąpienie dowolnego znaku. Powoduje to, że aparat wyrażeń regularnych dopasowuje cały ciąg, a następnie do nawrotu w razie potrzeby dopasowania do pozostałej części wzorca.|
-    |`.+?`(kwantyfikator opóźniony)|Dopasowuje co najmniej jedno wystąpienie dowolnego znaku, ale dopasowanie jak najmniejszej liczby.|
+    |`.+` (kwantyfikator zachłanne)|Dopasowuje co najmniej jedno wystąpienie dowolnego znaku. Powoduje to, że aparat wyrażeń regularnych dopasowuje cały ciąg, a następnie do nawrotu w razie potrzeby dopasowania do pozostałej części wzorca.|
+    |`.+?` (kwantyfikator opóźniony)|Dopasowuje co najmniej jedno wystąpienie dowolnego znaku, ale dopasowanie jak najmniejszej liczby.|
     |`(\d+)`|Dopasowuje co najmniej jeden znak liczbowy i przypisuje go do pierwszej grupy przechwytywania.|
     |`\.`|Dopasowuje okres.|
 
@@ -148,8 +148,8 @@ Aparat wyrażeń regularnych .NET Framework to wsteczny odpowiednik wyrażenia r
 |-----------|-----------------|
 |[Nawracanie](backtracking-in-regular-expressions.md)|Zawiera informacje dotyczące sposobu, w jaki rozgałęzienia wyrażenia regularnego do znajdowania alternatywnych dopasowań.|
 |[Kompilacja i ponowne użycie](compilation-and-reuse-in-regular-expressions.md)|Zawiera informacje dotyczące kompilowania i ponownego używania wyrażeń regularnych w celu zwiększenia wydajności.|
-|[Bezpieczeństwo wątkowe](thread-safety-in-regular-expressions.md)|Zawiera informacje na temat bezpieczeństwa wątku wyrażeń regularnych i wyjaśnia, kiedy należy synchronizować dostęp do obiektów wyrażeń regularnych.|
-|[.NET Framework — Wyrażenia regularne](regular-expressions.md)|Zawiera omówienie aspektu języka programowania wyrażeń regularnych.|
+|[Bezpieczeństwo wątków](thread-safety-in-regular-expressions.md)|Zawiera informacje na temat bezpieczeństwa wątku wyrażeń regularnych i wyjaśnia, kiedy należy synchronizować dostęp do obiektów wyrażeń regularnych.|
+|[Wyrażenia regularne .NET](regular-expressions.md)|Zawiera omówienie aspektu języka programowania wyrażeń regularnych.|
 |[Model obiektów wyrażeń regularnych](the-regular-expression-object-model.md)|Zawiera informacje i przykłady kodu ilustrujące sposób użycia klas wyrażeń regularnych.|
 |[Język wyrażeń regularnych — podręczny wykaz](regular-expression-language-quick-reference.md)|Zawiera informacje dotyczące zestawu znaków, operatorów i konstrukcji, których można użyć do definiowania wyrażeń regularnych.|
 

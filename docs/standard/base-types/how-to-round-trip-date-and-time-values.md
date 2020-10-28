@@ -7,17 +7,17 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - round-trip date and time values
-- dates [.NET Framework], round-trip values
-- time zones [.NET Framework], round-trip date and time values
-- time [.NET Framework], round-trip values
-- formatting strings [.NET Framework], round-trip values
+- dates [.NET], round-trip values
+- time zones [.NET], round-trip date and time values
+- time [.NET], round-trip values
+- formatting strings [.NET], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
-ms.openlocfilehash: 60483a6e29c65fc0c5803e8084053d53d9fc3c37
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4dce882e29afd5084dc84d3e176e6121c55f4af8
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290451"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889091"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Instrukcje: Obustronne wartości daty i godziny
 
@@ -85,7 +85,7 @@ Te przykłady wymagają:
 
 - Następujące przestrzenie nazw można zaimportować przy użyciu dyrektyw języka C# `using` lub `Imports` instrukcji Visual Basic:
 
-  - <xref:System>(Tylko w języku C#)
+  - <xref:System> (Tylko w języku C#)
 
   - <xref:System.Globalization?displayProperty=nameWithType>
 

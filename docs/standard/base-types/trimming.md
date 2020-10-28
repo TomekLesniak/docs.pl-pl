@@ -8,7 +8,7 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- strings [.NET Framework], removing characters
+- strings [.NET], removing characters
 - Remove method
 - TrimEnd method
 - Trim method
@@ -16,17 +16,17 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: 630fe6b51d151d1f1384f2e3cde62750c303d883
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d0057d503474f3f6ff886acda3ce1d72fb3ebe21
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446896"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888597"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Przycinanie i usuwanie znaków z ciągów w programie .NET
 Jeśli analizujesz zdanie w poszczególnych słowach, możesz kończyć się wyrazami z pustymi spacjami (nazywanymi również białymi spacjami) na dowolnym końcu słowa. W takiej sytuacji można użyć jednej z metod przycinania w klasie **System. String** , aby usunąć dowolną liczbę spacji lub innych znaków z określonej pozycji w ciągu. W poniższej tabeli opisano dostępne metody przycinania.  
   
-|Nazwa metody|Użycie|  
+|Nazwa metody|Zastosowanie|  
 |-----------------|---------|  
 |<xref:System.String.Trim%2A?displayProperty=nameWithType>|Usuwa spacje lub znaki określone w tablicy znaków od początku i końca ciągu.|  
 |<xref:System.String.TrimEnd%2A?displayProperty=nameWithType>|Usuwa znaki określone w tablicy znaków od końca ciągu.|  
@@ -88,7 +88,7 @@ Jeśli analizujesz zdanie w poszczególnych słowach, możesz kończyć się wyr
  [!code-csharp[Conceptual.String.BasicOps#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#21)]
  [!code-vb[Conceptual.String.BasicOps#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/trimming.vb#21)]  
   
-## <a name="replace"></a>Replace
+## <a name="replace"></a>Zamień
 
  Można również usunąć określony znak lub podciąg z ciągu, wywołując <xref:System.String.Replace%28System.String%2CSystem.String%29?displayProperty=nameWithType> metodę i określając pusty ciąg ( <xref:System.String.Empty?displayProperty=nameWithType> ) jako zamiennik. Poniższy przykład usuwa wszystkie przecinki z ciągu.  
   

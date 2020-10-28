@@ -9,15 +9,15 @@ helpviewer_keywords:
 - converting types, narrowing conversions
 - converting types, widening conversions
 - base types, converting
-- tables [.NET Framework], type conversions
-- data types [.NET Framework], converting
+- tables [.NET], type conversions
+- data types [.NET], converting
 ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
-ms.openlocfilehash: bb696c65078a5dae0b81a48bffc786d2257496c3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 27578d46a80b0372c6ddc2266a751cd0e6e9aa91
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290568"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889455"
 ---
 # <a name="type-conversion-tables-in-net"></a>Tabele konwersji typów na platformie .NET
 Konwersja rozszerzająca występuje, gdy wartość jednego typu jest konwertowana na inny typ o równym lub większym rozmiarze. Konwersja zawęża występuje, gdy wartość jednego typu jest konwertowana na wartość innego typu o mniejszym rozmiarze. Tabele w tym temacie ilustrują zachowania w obu typach konwersji.  
@@ -49,7 +49,7 @@ Konwersja rozszerzająca występuje, gdy wartość jednego typu jest konwertowan
 |<xref:System.Decimal>|<xref:System.Single>, <xref:System.Double>|  
   
 ## <a name="narrowing-conversions"></a>Konwersje zawężające  
- Zawężanie konwersji na <xref:System.Single> lub <xref:System.Double> może spowodować utratę informacji. Jeśli typ docelowy nie może prawidłowo przedstawić wielkości źródła, typ wyniku jest ustawiony na stałą `PositiveInfinity` lub `NegativeInfinity` . `PositiveInfinity`wyniki dzielenia liczby dodatniej przez zero i są zwracane, gdy wartość <xref:System.Single> lub <xref:System.Double> przekracza wartość `MaxValue` pola. `NegativeInfinity`wyniki dzielenia ujemnej liczby przez zero i są zwracane, gdy wartość <xref:System.Single> lub <xref:System.Double> spadnie poniżej wartości `MinValue` pola. Konwersja z do a <xref:System.Double> <xref:System.Single> może skutkować `PositiveInfinity` lub `NegativeInfinity` .  
+ Zawężanie konwersji na <xref:System.Single> lub <xref:System.Double> może spowodować utratę informacji. Jeśli typ docelowy nie może prawidłowo przedstawić wielkości źródła, typ wyniku jest ustawiony na stałą `PositiveInfinity` lub `NegativeInfinity` . `PositiveInfinity` wyniki dzielenia liczby dodatniej przez zero i są zwracane, gdy wartość <xref:System.Single> lub <xref:System.Double> przekracza wartość `MaxValue` pola. `NegativeInfinity` wyniki dzielenia ujemnej liczby przez zero i są zwracane, gdy wartość <xref:System.Single> lub <xref:System.Double> spadnie poniżej wartości `MinValue` pola. Konwersja z do a <xref:System.Double> <xref:System.Single> może skutkować `PositiveInfinity` lub `NegativeInfinity` .  
   
  Zawężanie konwersji może również spowodować utratę informacji dla innych typów danych. Jednak <xref:System.OverflowException> jest zgłaszany, jeśli wartość konwertowanego typu wykracza poza zakres określony przez typ docelowy `MaxValue` i `MinValue` pola, a konwersja jest sprawdzana przez środowisko uruchomieniowe, aby upewnić się, że wartość typu docelowego nie przekracza jego `MaxValue` lub `MinValue` . Konwersje wykonywane z <xref:System.Convert?displayProperty=nameWithType> klasą są zawsze sprawdzane w ten sposób.  
   
