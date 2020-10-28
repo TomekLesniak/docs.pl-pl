@@ -3,19 +3,19 @@ title: Implementacja metody DisposeAsync
 description: Dowiedz się, jak zaimplementować metody DisposeAsync i DisposeAsyncCore, aby przeprowadzić Oczyszczanie zasobów asynchronicznych.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/16/2020
+ms.date: 10/26/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 6ddfd860571d883e20fdb18985fe2bc2d9477dec
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 5aa82c507c22a4795f39267ac8f435599fb9cd92
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720286"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687720"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implementacja metody DisposeAsync
 
@@ -102,11 +102,36 @@ Ponadto można napisać, aby użyć niejawnego zakresu [deklaracji using](../../
 
 ## <a name="stacked-usings"></a>Stos użycia
 
-W sytuacjach, gdy tworzysz i używasz wielu obiektów, które implementują <xref:System.IAsyncDisposable> , możliwe jest, aby `using` instrukcje stosujące w warunkach errant mogły uniemożliwić wywoływanie <xref:System.IAsyncDisposable.DisposeAsync> . Aby zapobiec potencjalnym problemom, należy unikać tworzenia stosów, a zamiast tego postępować zgodnie z poniższym przykładowym wzorcem:
+W sytuacjach, gdy tworzysz i używasz wielu obiektów, które implementują <xref:System.IAsyncDisposable> , istnieje możliwość, że `await using` instrukcje stosujące <xref:System.Threading.Tasks.ValueTask.ConfigureAwait%2A> mogą uniemożliwiać wywołania <xref:System.IAsyncDisposable.DisposeAsync> w warunkach errant. Aby upewnić <xref:System.IAsyncDisposable.DisposeAsync> się, że jest zawsze wywoływana, należy unikać tworzenia stosów. Poniższe trzy przykłady kodu pokazują akceptowalne wzorce do użycia.
 
-:::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+### <a name="acceptable-pattern-one"></a>Akceptowalny wzorzec 1
 
-## <a name="see-also"></a>Zobacz też
+:::code language="csharp" id="one" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+W poprzednim przykładzie każda operacja czyszczenia asynchronicznego została jawnie objęta zakresem w `await using` bloku. Zakres zewnętrzny jest definiowany przez sposób, w jaki `objOne` ustawia swoje nawiasy klamrowe, `objTwo` w związku z czym `objTwo` najpierw jest usuwany, a następnie `objOne` . `IAsyncDisposable`W obu wystąpieniach istnieją <xref:System.IAsyncDisposable.DisposeAsync> metody oczekujące na wykonanie asynchronicznej operacji czyszczenia. Wywołania są zagnieżdżone, a nie ułożone na stosie.
+
+### <a name="acceptable-pattern-two"></a>Akceptowalny wzorzec dwa
+
+:::code language="csharp" id="two" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+W poprzednim przykładzie każda operacja czyszczenia asynchronicznego została jawnie objęta zakresem w `await using` bloku. Na końcu każdego bloku odpowiednie `IAsyncDisposable` wystąpienie ma <xref:System.IAsyncDisposable.DisposeAsync> oczekiwaną metodę, w związku z czym wykonuje operację czyszczenia asynchronicznego. Wywołania są sekwencyjne, nie stosują się. W tym scenariuszu najpierw zostanie usunięty `objOne` `objTwo` .
+
+### <a name="acceptable-pattern-three"></a>Akceptowalny wzorzec trzy
+
+:::code language="csharp" id="three" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+W poprzednim przykładzie każda operacja czyszczenia asynchronicznego jest niejawnie objęta zakresem treści metody zawierającej. Na końcu otaczającego bloku `IAsyncDisposable` wystąpienia wykonują asynchroniczne operacje czyszczenia. Ten przebiega w kolejności odwrotnej, z której zostały zadeklarowane, co oznacza, że `objTwo` jest usuwane przed `objOne` .
+
+### <a name="unacceptable-pattern"></a>Nieakceptowalny wzorzec
+
+Jeśli wystąpi wyjątek z `AnotherAsyncDisposable` konstruktora, program nie zostanie `objOne` prawidłowo usunięty:
+
+:::code language="csharp" id="dontdothis" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+> [!TIP]
+> Należy unikać tego wzorca, ponieważ może to prowadzić do nieoczekiwanego zachowania.
+
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IAsyncDisposable>
 - <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType>

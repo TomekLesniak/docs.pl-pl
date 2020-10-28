@@ -3,24 +3,25 @@ title: Rozwiązywanie załadowań zestawów
 description: W tym artykule opisano zdarzenie .NET AppDomain. AssemblyResolve. Użyj tego zdarzenia dla aplikacji, które wymagają kontroli nad ładowaniem zestawu.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- assemblies [.NET Framework], resolving loads
+- assemblies [.NET], resolving loads
 - application domains, loading assemblies
 - resolving assembly loads
-- assemblies [.NET Framework], loading
+- assemblies [.NET], loading
 - application domains, resolving assembly loads
 ms.assetid: 5099e549-f4fd-49fb-a290-549edd456c6a
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 36f36b60a3a113c6b020cc1042c786c4091e567b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 16f2f61a2a36e4189e98c85b3d3ce706a52e2938
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378667"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687282"
 ---
 # <a name="resolve-assembly-loads"></a>Rozwiązywanie załadowań zestawów
+
 Platforma .NET udostępnia <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> zdarzenie dla aplikacji, które wymagają większej kontroli nad ładowaniem zestawu. Dzięki obsłudze tego zdarzenia aplikacja może załadować zestaw do kontekstu obciążenia spoza normalnej ścieżki sondowania, wybrać kilka wersji zestawu do załadowania, emitować zestaw dynamiczny i zwrócić go i tak dalej. Ten temat zawiera wskazówki dotyczące obsługi <xref:System.AppDomain.AssemblyResolve> zdarzenia.  
   
 > [!NOTE]
@@ -197,7 +198,7 @@ End Class
 'Process is terminated due to StackOverflowException.
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Najlepsze rozwiązania dotyczące ładowania zestawów](../../framework/deployment/best-practices-for-assembly-loading.md)
 - [Korzystanie z domen aplikacji](../../framework/app-domains/use.md)

@@ -1,5 +1,5 @@
 ---
-title: Konwersja typów w programie .NET Framework
+title: Konwersja typów w programie .NET
 description: Przeczytaj informacje na temat konwersji typów w programie .NET, która tworzy wartość w nowym typie, która jest równoważna wartości starego typu, ale nie może zachować oryginalnej tożsamości.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
@@ -23,19 +23,20 @@ helpviewer_keywords:
 - Convert class
 - implicit conversions
 - Implicit operator
-- data types [.NET Framework], converting
+- data types [.NET], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
-ms.openlocfilehash: 11345081610459dbf053d846aa04369301010732
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 4f7e4400aa15532b04fd4e39219775af34068685
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769226"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687536"
 ---
-# <a name="type-conversion-in-the-net-framework"></a>Konwersja typów w programie .NET Framework
+# <a name="type-conversion-in-net"></a>Konwersja typów w programie .NET
+
 Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość miejsca przydzieloną do wartości, zakres możliwych wartości, które może mieć, oraz członków, które udostępnia. Wiele wartości można wyrazić za pomocą co najmniej dwóch typów. Na przykład wartość 4 może być wyrażona jako liczba całkowita lub wartość zmiennoprzecinkowa. Konwersja typu tworzy wartość nowego typu, która jest równoważna wartości starego typu, ale nie zawsze powoduje zachowanie tożsamości (dokładnej wartości) oryginalnego obiektu.  
   
- .NET Framework automatycznie obsługuje następujące konwersje:  
+Platforma .NET automatycznie obsługuje następujące konwersje:  
   
 - Konwersja z klasy pochodnej na klasę bazową. Oznacza to, na przykład, że wystąpienie dowolnej klasy lub struktury można przekonwertować na <xref:System.Object> wystąpienie.  Ta konwersja nie wymaga operatora rzutowania ani konwersji.  
   
@@ -45,20 +46,21 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
   
 - Konwersja z obiektu interfejsu z powrotem do oryginalnego typu, który implementuje ten interfejs.  W języku C# ta konwersja wymaga operatora rzutowania. W Visual Basic wymaga `CType` operatora, jeśli `Option Strict` jest włączony.  
   
- Oprócz tych automatycznych konwersji .NET Framework udostępnia kilka funkcji, które obsługują konwersję typów niestandardowych. Należą do nich między innymi:  
+Oprócz tych automatycznych konwersji platforma .NET udostępnia kilka funkcji, które obsługują konwersję typów niestandardowych. Należą do nich:  
   
 - `Implicit`Operator, który definiuje dostępne rozszerzenia konwersji między typami. Aby uzyskać więcej informacji, zobacz sekcję [niejawna konwersja z niejawnym operatorem](#implicit-conversion-with-the-implicit-operator) .  
   
 - `Explicit`Operator, który definiuje dostępne konwersje wąskie między typami. Aby uzyskać więcej informacji, zobacz [jawna konwersja za pomocą jawnego operatora](#explicit-conversion-with-the-explicit-operator) .  
   
-- <xref:System.IConvertible>Interfejs, który definiuje konwersje do poszczególnych typów danych .NET Framework podstawowych. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [interfejsu obiektem IConvertible](#the-iconvertible-interface) .  
+- <xref:System.IConvertible>Interfejs, który definiuje konwersje do każdego z podstawowych typów danych programu .NET. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [interfejsu obiektem IConvertible](#the-iconvertible-interface) .  
   
 - <xref:System.Convert>Klasa, która dostarcza zestaw metod implementujących metody w <xref:System.IConvertible> interfejsie. Aby uzyskać więcej informacji, zobacz sekcję [konwertowanie klasy](#the-convert-class) .  
   
 - <xref:System.ComponentModel.TypeConverter>Klasa, która jest klasą bazową, która może zostać rozszerzona w celu obsługi konwersji określonego typu do dowolnego innego typu. Aby uzyskać więcej informacji, zobacz sekcję [Klasa TypeConverter](#the-typeconverter-class) .  
 
-## <a name="implicit-conversion-with-the-implicit-operator"></a>Niejawna konwersja za pomocą operatora Implicit  
- Konwersje rozszerzające obejmują utworzenie nowej wartości z wartości istniejącego typu, która ma bardziej ograniczony zakres lub bardziej ograniczoną listę elementów członkowskich niż typ docelowy. Konwersje rozszerzające nie mogą powodować utraty danych (chociaż mogą powodować utratę dokładności). Dane nie mogą być tracone, więc kompilatory mogą obsługiwać konwersję niejawnie (niewidocznie), dzięki czemu użytkownik nie musi używać jawnej metody konwersji ani operatora rzutowania.  
+## <a name="implicit-conversion-with-the-implicit-operator"></a>Niejawna konwersja za pomocą operatora niejawnego
+
+Konwersje rozszerzające obejmują utworzenie nowej wartości z wartości istniejącego typu, która ma bardziej ograniczony zakres lub bardziej ograniczoną listę elementów członkowskich niż typ docelowy. Konwersje rozszerzające nie mogą powodować utraty danych (chociaż mogą powodować utratę dokładności). Dane nie mogą być tracone, więc kompilatory mogą obsługiwać konwersję niejawnie (niewidocznie), dzięki czemu użytkownik nie musi używać jawnej metody konwersji ani operatora rzutowania.  
   
 > [!NOTE]
 > Mimo że kod wywołujący niejawną konwersję może wywołać metodę konwersji lub użyć operatora rzutowania, ich użycie nie jest wymagane przez kompilatory obsługujące konwersje niejawne.  
@@ -78,8 +80,9 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
  [!code-csharp[Conceptual.Conversion#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/implicit1.cs#3)]
  [!code-vb[Conceptual.Conversion#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/implicit1.vb#3)]  
 
-## <a name="explicit-conversion-with-the-explicit-operator"></a>Jawna konwersja za pomocą operatora Explicit  
- Konwersje zawężające obejmują utworzenie nowej wartości z wartości istniejącego typu, która ma większy zakres lub większą listę elementów członkowskich niż typ docelowy. Konwersja zawężająca może spowodować utratę danych, więc kompilatory często wymagają, aby taka konwersja została wykonana jawnie za pomocą wywołania metody konwersji lub operatora rzutowania. Oznacza to, że konwersja musi być jawnie obsługiwana w kodzie dewelopera.  
+## <a name="explicit-conversion-with-the-explicit-operator"></a>Jawna konwersja z operatorem Explicit
+
+Konwersje zawężające obejmują utworzenie nowej wartości z wartości istniejącego typu, która ma większy zakres lub większą listę elementów członkowskich niż typ docelowy. Konwersja zawężająca może spowodować utratę danych, więc kompilatory często wymagają, aby taka konwersja została wykonana jawnie za pomocą wywołania metody konwersji lub operatora rzutowania. Oznacza to, że konwersja musi być jawnie obsługiwana w kodzie dewelopera.  
   
 > [!NOTE]
 > Głównym celem wymagania metody konwersji lub operatora rzutowania dla konwersji zawężania jest umożliwienie deweloperowi świadomości utraty danych lub, <xref:System.OverflowException> Aby można było je obsłużyć w kodzie. Jednak niektóre kompilatory umożliwiają nieprzestrzeganie tego wymagania. Na przykład w Visual Basic, jeśli `Option Strict` jest wyłączony (ustawienie domyślne), kompilator Visual Basic próbuje wykonać konwersje zawęża niejawnie.  
@@ -88,16 +91,16 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
   
 |Typ|Porównanie z zakresem typu Int32|  
 |----------|------------------------------------|  
-|<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType>jest większe niż <xref:System.Int32.MaxValue?displayProperty=nameWithType> i <xref:System.Int64.MinValue?displayProperty=nameWithType> jest mniejsze niż (ma większy zakres ujemny niż) <xref:System.Int32.MinValue?displayProperty=nameWithType> .|  
-|<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType>jest większa niż <xref:System.Int32.MaxValue?displayProperty=nameWithType> .|  
-|<xref:System.UInt64>|<xref:System.UInt64.MaxValue?displayProperty=nameWithType>jest większa niż <xref:System.Int32.MaxValue?displayProperty=nameWithType> .|  
+|<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType> jest większe niż <xref:System.Int32.MaxValue?displayProperty=nameWithType> i <xref:System.Int64.MinValue?displayProperty=nameWithType> jest mniejsze niż (ma większy zakres ujemny niż) <xref:System.Int32.MinValue?displayProperty=nameWithType> .|  
+|<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType> jest większa niż <xref:System.Int32.MaxValue?displayProperty=nameWithType> .|  
+|<xref:System.UInt64>|<xref:System.UInt64.MaxValue?displayProperty=nameWithType> jest większa niż <xref:System.Int32.MaxValue?displayProperty=nameWithType> .|  
   
- Aby obsłużyć takie przekształcenia, .NET Framework zezwala na definiowanie `Explicit` operatora. Kompilatory poszczególnych języków mogą następnie zaimplementować ten operator przy użyciu własnej składni lub <xref:System.Convert> można wywołać element członkowski klasy w celu przeprowadzenia konwersji. (Aby uzyskać więcej informacji na temat <xref:System.Convert> klasy, zobacz [konwertowanie klasy](#the-convert-class) w dalszej części tego tematu). Poniższy przykład ilustruje użycie funkcji języka do obsługi jawnej konwersji tych wartości całkowitych, które potencjalnie poza zakresem, do <xref:System.Int32> wartości.  
+ W celu obsługi takich konwersji zawężających, platforma .NET umożliwia definiowanie `Explicit` operatora. Kompilatory poszczególnych języków mogą następnie zaimplementować ten operator przy użyciu własnej składni lub <xref:System.Convert> można wywołać element członkowski klasy w celu przeprowadzenia konwersji. (Aby uzyskać więcej informacji na temat <xref:System.Convert> klasy, zobacz [konwertowanie klasy](#the-convert-class) w dalszej części tego tematu). Poniższy przykład ilustruje użycie funkcji języka do obsługi jawnej konwersji tych wartości całkowitych, które potencjalnie poza zakresem, do <xref:System.Int32> wartości.  
   
  [!code-csharp[Conceptual.Conversion#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/explicit1.cs#4)]
  [!code-vb[Conceptual.Conversion#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/explicit1.vb#4)]  
   
- Konwersje jawne mogą generować różne wyniki w różnych językach, a wyniki te mogą się różnić od wartości zwracanej przez odpowiednią <xref:System.Convert> metodę. Na przykład jeśli <xref:System.Double> wartość 12,63251 jest konwertowana na obiekt <xref:System.Int32> , zarówno Metoda Visual Basic, `CInt` jak i metoda .NET Framework, <xref:System.Convert.ToInt32%28System.Double%29?displayProperty=nameWithType> <xref:System.Double> aby zwracały wartość 13, ale operator języka C# obcina wartość w `(int)` <xref:System.Double> celu zwrócenia wartości 12. Podobnie operator języka C# nie `(int)` obsługuje konwersji typu Boolean na liczbę całkowitą, ale `CInt` Metoda Visual Basic konwertuje wartość `true` na-1. Z drugiej strony <xref:System.Convert.ToInt32%28System.Boolean%29?displayProperty=nameWithType> Metoda konwertuje wartość `true` na 1.  
+ Konwersje jawne mogą generować różne wyniki w różnych językach, a wyniki te mogą się różnić od wartości zwracanej przez odpowiednią <xref:System.Convert> metodę. Na przykład jeśli <xref:System.Double> wartość 12,63251 jest konwertowana na <xref:System.Int32> , `CInt` Metoda Visual Basic i <xref:System.Convert.ToInt32%28System.Double%29?displayProperty=nameWithType> Metoda .NET Zaokrąglij <xref:System.Double> do wartości 13, ale operator języka C# obcina wartość w `(int)` <xref:System.Double> celu zwrócenia wartości 12. Podobnie operator języka C# nie `(int)` obsługuje konwersji typu Boolean na liczbę całkowitą, ale `CInt` Metoda Visual Basic konwertuje wartość `true` na-1. Z drugiej strony <xref:System.Convert.ToInt32%28System.Boolean%29?displayProperty=nameWithType> Metoda konwertuje wartość `true` na 1.  
   
  Większość kompilatorów zezwala na wykonywanie jawnych konwersji w sposób kontrolowany i niekontrolowany. Gdy sprawdzona konwersja jest wykonywana, <xref:System.OverflowException> jest zgłaszany, gdy wartość typu do przekonwertowania znajduje się poza zakresem typu docelowego. Gdy w tych samych warunkach jest wykonywania konwersja niekontrolowana, konwersja może nie zgłosić wyjątku, ale dokładne zachowanie jest niezdefiniowane i może powstać niepoprawna wartość.  
   
@@ -118,8 +121,9 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
  [!code-csharp[Conceptual.Conversion#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/explicit1.cs#6)]
  [!code-vb[Conceptual.Conversion#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/explicit1.vb#6)]  
 
-## <a name="the-iconvertible-interface"></a>Interfejs IConvertible  
- Aby zapewnić obsługę konwersji dowolnego typu na typ podstawowy środowiska uruchomieniowego języka wspólnego, .NET Framework dostarcza <xref:System.IConvertible> interfejs. Typ implementujący musi dostarczyć następujące elementy:  
+## <a name="the-iconvertible-interface"></a>Interfejs obiektem IConvertible
+
+Aby zapewnić obsługę konwersji dowolnego typu na typ podstawowy środowiska uruchomieniowego języka wspólnego, platforma .NET udostępnia <xref:System.IConvertible> interfejs. Typ implementujący musi dostarczyć następujące elementy:  
   
 - Metoda zwracająca <xref:System.TypeCode> Typ implementujący.  
   
@@ -135,20 +139,22 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
  Wymaganie, aby metoda konwersji była wywoływana w jej interfejsie, a nie w typie implementującym, powoduje, że jawne implementacje interfejsu są relatywnie kosztowne. Zamiast tego zalecamy wywołanie odpowiedniej składowej <xref:System.Convert> klasy w celu konwersji między typami podstawowymi środowiska uruchomieniowego języka wspólnego. Aby uzyskać więcej informacji, zobacz następną sekcję [klasy Convert](#the-convert-class).  
   
 > [!NOTE]
-> Oprócz <xref:System.IConvertible> interfejsu i <xref:System.Convert> klasy dostarczonej przez .NET Framework poszczególne języki mogą również zapewniać sposoby wykonywania konwersji. Na przykład w języku C# są stosowane Operatory rzutowania; Visual Basic używa funkcji konwersji implementowanych przez kompilator, takich jak `CType` , `CInt` , i `DirectCast` .  
+> Oprócz <xref:System.IConvertible> interfejsu i <xref:System.Convert> klasy dostarczonej przez platformę .NET poszczególne języki mogą również zapewniać sposoby wykonywania konwersji. Na przykład w języku C# są stosowane Operatory rzutowania; Visual Basic używa funkcji konwersji implementowanych przez kompilator, takich jak `CType` , `CInt` , i `DirectCast` .  
   
- W większości, <xref:System.IConvertible> interfejs jest przeznaczony do obsługi konwersji między typami podstawowymi w .NET Framework. Jednak ten interfejs może też być implementowany przez typ niestandardowy w celu obsługi konwersji tego typu na inny typ niestandardowy. Aby uzyskać więcej informacji, zobacz sekcję [konwersje niestandardowe przy użyciu metody ChangeType](#custom-conversions-with-the-changetype-method) w dalszej części tego tematu.
+ W większości, <xref:System.IConvertible> interfejs jest przeznaczony do obsługi konwersji między typami podstawowymi w programie .NET. Jednak ten interfejs może też być implementowany przez typ niestandardowy w celu obsługi konwersji tego typu na inny typ niestandardowy. Aby uzyskać więcej informacji, zobacz sekcję [konwersje niestandardowe przy użyciu metody ChangeType](#custom-conversions-with-the-changetype-method) w dalszej części tego tematu.
 
 ## <a name="the-convert-class"></a>Klasa Convert
- Chociaż implementacja interfejsu każdego typu podstawowego <xref:System.IConvertible> może być wywoływana w celu przeprowadzenia konwersji typu, wywoływanie metod <xref:System.Convert?displayProperty=nameWithType> klasy jest zalecanym sposobem konwersji z jednego typu podstawowego na inny. Ponadto <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> Metoda może służyć do konwersji z określonego typu niestandardowego na inny typ.  
+
+Chociaż implementacja interfejsu każdego typu podstawowego <xref:System.IConvertible> może być wywoływana w celu przeprowadzenia konwersji typu, wywoływanie metod <xref:System.Convert?displayProperty=nameWithType> klasy jest zalecanym sposobem konwersji z jednego typu podstawowego na inny. Ponadto <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> Metoda może służyć do konwersji z określonego typu niestandardowego na inny typ.  
   
-### <a name="conversions-between-base-types"></a>Konwersje między typami podstawowymi  
- <xref:System.Convert>Klasa zapewnia neutralny językowo sposób wykonywania konwersji między typami podstawowymi i jest dostępny dla wszystkich języków przeznaczonych dla środowiska uruchomieniowego języka wspólnego. Zawiera kompletny zestaw metod zarówno do rozszerzania, jak i zawężania konwersji, i zgłasza <xref:System.InvalidCastException> dla konwersji, które nie są obsługiwane (na przykład konwersja <xref:System.DateTime> wartości do wartości całkowitej). Konwersje wąskie są wykonywane w sprawdzonym kontekście i <xref:System.OverflowException> są generowane, jeśli konwersja nie powiedzie się.  
+### <a name="conversions-between-base-types"></a>Konwersje między typami podstawowymi
+
+<xref:System.Convert>Klasa zapewnia neutralny językowo sposób wykonywania konwersji między typami podstawowymi i jest dostępny dla wszystkich języków przeznaczonych dla środowiska uruchomieniowego języka wspólnego. Zawiera kompletny zestaw metod zarówno do rozszerzania, jak i zawężania konwersji, i zgłasza <xref:System.InvalidCastException> dla konwersji, które nie są obsługiwane (na przykład konwersja <xref:System.DateTime> wartości do wartości całkowitej). Konwersje wąskie są wykonywane w sprawdzonym kontekście i <xref:System.OverflowException> są generowane, jeśli konwersja nie powiedzie się.  
   
 > [!IMPORTANT]
 > Ponieważ <xref:System.Convert> Klasa obejmuje metody do konwersji do i z każdego typu podstawowego, eliminuje konieczność wywołania <xref:System.IConvertible> jawnej implementacji interfejsu każdego typu podstawowego.  
   
- Poniższy przykład ilustruje użycie <xref:System.Convert?displayProperty=nameWithType> klasy do wykonywania kilku konwersji rozszerzających i zawężających między .NET Framework typami podstawowymi.  
+ Poniższy przykład ilustruje użycie <xref:System.Convert?displayProperty=nameWithType> klasy do wykonywania kilku rozszerzonych i zawężających konwersji między typami podstawowymi programu .NET.  
   
  [!code-csharp[Conceptual.Conversion#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/convert1.cs#8)]
  [!code-vb[Conceptual.Conversion#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/convert1.vb#8)]  
@@ -160,8 +166,9 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
   
  Dla tabeli, która zawiera listę rozszerzonych i wąskich konwersji obsługiwanych przez <xref:System.Convert> klasę, zobacz [tabele konwersji typów](conversion-tables.md).  
 
-### <a name="custom-conversions-with-the-changetype-method"></a>Konwersje niestandardowe z użyciem metody ChangeType  
- Oprócz obsługi konwersji do poszczególnych typów podstawowych, <xref:System.Convert> Klasa może służyć do konwersji typu niestandardowego na jeden lub więcej wstępnie zdefiniowanych typów. Ta konwersja jest wykonywana przez <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metodę, która z kolei zawija wywołanie <xref:System.IConvertible.ToType%2A?displayProperty=nameWithType> metody `value` parametru. Oznacza to, że obiekt reprezentowany przez `value` parametr musi zapewniać implementację <xref:System.IConvertible> interfejsu.  
+### <a name="custom-conversions-with-the-changetype-method"></a>Konwersje niestandardowe przy użyciu metody ChangeType
+
+Oprócz obsługi konwersji do poszczególnych typów podstawowych, <xref:System.Convert> Klasa może służyć do konwersji typu niestandardowego na jeden lub więcej wstępnie zdefiniowanych typów. Ta konwersja jest wykonywana przez <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metodę, która z kolei zawija wywołanie <xref:System.IConvertible.ToType%2A?displayProperty=nameWithType> metody `value` parametru. Oznacza to, że obiekt reprezentowany przez `value` parametr musi zapewniać implementację <xref:System.IConvertible> interfejsu.  
   
 > [!NOTE]
 > Ponieważ <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%29?displayProperty=nameWithType> metody i <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> używają <xref:System.Type> obiektu do określenia typu docelowego, do którego `value` jest konwertowany, mogą służyć do przeprowadzenia dynamicznej konwersji do obiektu, którego typ nie jest znany w czasie kompilacji. Należy jednak pamiętać, że <xref:System.IConvertible> Implementacja programu `value` musi nadal obsługiwać tę konwersję.  
@@ -176,8 +183,9 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
  [!code-csharp[Conceptual.Conversion#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/iconvertible2.cs#11)]
  [!code-vb[Conceptual.Conversion#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/iconvertible2.vb#11)]  
 
-## <a name="the-typeconverter-class"></a>Klasa TypeConverter  
- .NET Framework umożliwia również zdefiniowanie konwertera typów dla typu niestandardowego przez rozszerzenie <xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType> klasy i skojarzenie konwertera typów z typem za pomocą <xref:System.ComponentModel.TypeConverterAttribute?displayProperty=nameWithType> atrybutu. W poniższej tabeli przedstawiono różnice między tym podejściem a implementacją <xref:System.IConvertible> interfejsu dla typu niestandardowego.  
+## <a name="the-typeconverter-class"></a>Klasa TypeConverter
+
+Platforma .NET umożliwia również zdefiniowanie konwertera typów dla typu niestandardowego przez rozszerzenie <xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType> klasy i skojarzenie konwertera typów z typem za pomocą <xref:System.ComponentModel.TypeConverterAttribute?displayProperty=nameWithType> atrybutu. W poniższej tabeli przedstawiono różnice między tym podejściem a implementacją <xref:System.IConvertible> interfejsu dla typu niestandardowego.  
   
 > [!NOTE]
 > Obsługa typu niestandardowego w czasie projektowania jest możliwa tylko wtedy, gdy zdefiniowano dla niego konwerter typów.  
@@ -191,7 +199,7 @@ Każda wartość ma skojarzony typ, który definiuje atrybuty, takie jak ilość
   
  Aby uzyskać więcej informacji o używaniu konwerterów typów do wykonywania konwersji, zobacz <xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType> .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Convert?displayProperty=nameWithType>
 - <xref:System.IConvertible>

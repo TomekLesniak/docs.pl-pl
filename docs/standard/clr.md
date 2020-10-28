@@ -1,7 +1,8 @@
 ---
-title: Omówienie środowiska uruchomieniowego języka wspólnego (CLR) — .NET Framework
-description: Rozpocznij pracę ze środowiskiem uruchomieniowym języka wspólnego (CLR), środowisku środowiska uruchomieniowego platformy .NET. Środowisko CLR uruchamia kod i udostępnia usługi, które ułatwiają tworzenie procesów programistycznych.
-ms.date: 04/02/2019
+title: Środowisko uruchomieniowe języka wspólnego (CLR) — platforma .NET
+titleSuffix: ''
+description: Wprowadzenie do środowiska uruchomieniowego języka wspólnego (CLR),. Środowisko uruchomieniowe w sieci. Środowisko CLR uruchamia kod i udostępnia usługi, które ułatwiają tworzenie procesów programistycznych.
+ms.date: 10/22/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - compiling source code, runtime functionality
@@ -10,32 +11,32 @@ helpviewer_keywords:
 - runtime
 - common language runtime
 - metadata, runtime functionality
-- .NET Framework, common language runtime
+- .NET, common language runtime
 - language compilers
 - managed code
 - source code execution
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 ms.custom: updateeachrelease
-ms.openlocfilehash: ef455ac1c49c1f457d0fa432db91b5375c045840
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 39543a511e8f405d9205df2697bcf4fd1194bd7a
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769213"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687506"
 ---
 # <a name="common-language-runtime-clr-overview"></a>Środowisko uruchomieniowe języka wspólnego (CLR) — Omówienie
 
-.NET Framework zapewnia środowisko uruchomieniowe o nazwie środowisko uruchomieniowe języka wspólnego, które uruchamia kod i udostępnia usługi, które ułatwiają proces tworzenia aplikacji.
+Platforma .NET udostępnia środowisko uruchomieniowe, nazywane aparatem plików wykonywalnych języka wspólnego, który uruchamia kod i udostępnia usługi, które ułatwiają proces tworzenia aplikacji.
 
-Kompilatory i narzędzia udostępniają funkcjonalność środowiska uruchomieniowego języka wspólnego i umożliwiają pisanie kodu, który korzysta z tego środowiska wykonywania zarządzanego. Kod opracowywany przy użyciu kompilatora języka, który jest przeznaczony dla środowiska uruchomieniowego, jest nazywany kodem zarządzanym; korzyści płynące z takich funkcji, jak integracja między językami, obsługa wyjątków między językami, ulepszone zabezpieczenia, obsługa wersji i wdrażanie, uproszczony model interakcji ze składnikami oraz funkcje debugowania i profilowania.
+Kompilatory i narzędzia udostępniają funkcjonalność środowiska uruchomieniowego języka wspólnego i umożliwiają pisanie kodu, który korzysta z tego środowiska wykonywania zarządzanego. Kod opracowywany przy użyciu kompilatora języka, który jest przeznaczony dla środowiska uruchomieniowego, jest nazywany kodem zarządzanym. Zalety kodu zarządzanego z funkcji, takich jak integracja między językami, obsługa wyjątków międzyjęzykowych, ulepszone zabezpieczenia, obsługa wersji i wdrażanie, uproszczony model interakcji między składnikami oraz usługi debugowania i profilowania.
 
 > [!NOTE]
-> Kompilatory i narzędzia są w stanie generować dane wyjściowe, które mogą być używane przez środowisko uruchomieniowe języka wspólnego, ponieważ system typów, format metadanych i środowisko uruchomieniowe (wirtualny system wykonywania) są zdefiniowane przez Standard publiczny, Specyfikacja ECMA Common Language Infrastructure. Aby uzyskać więcej informacji, zobacz [ECMA C# i specyfikacje Common Language Infrastructure](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).
+> Kompilatory i narzędzia umożliwiają tworzenie danych wyjściowych, które mogą być używane przez środowisko uruchomieniowe języka wspólnego, ponieważ system typów, format metadanych i środowisko uruchomieniowe (wirtualny system wykonywania) są zdefiniowane przez Standard publiczny, Specyfikacja Common Language Infrastructure ECMA. Aby uzyskać więcej informacji, zobacz [ECMA C# i specyfikacje Common Language Infrastructure](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).
 
 Aby umożliwić środowisko uruchomieniowe dostarczania usług do kodu zarządzanego, kompilatory języka muszą emitować metadane opisujące typy, elementy członkowskie i odwołania w kodzie. Metadane są przechowywane w kodzie; Każdy załadowany plik wykonywalny (PE) środowiska uruchomieniowego CLR zawiera metadane. Środowisko uruchomieniowe używa metadanych do lokalizowania i ładowania klas, układania wystąpień w pamięci, rozwiązywania wywołań metod, generowania kodu natywnego, wymuszania zabezpieczeń i ustawiania granic kontekstu czasu wykonywania.
 
-Środowisko wykonawcze automatycznie obsługuje układ obiektu i zarządza odwołaniami do obiektów, zwalniając je, gdy nie są już używane. Obiekty, których okresy istnienia są zarządzane w ten sposób, są nazywane danymi zarządzanymi. Wyrzucanie elementów bezużytecznych eliminuje przecieki pamięci, a także inne typowe błędy programistyczne. Jeśli Twój kod jest zarządzany, możesz użyć danych zarządzanych, danych niezarządzanych lub zarówno danych zarządzanych, jak i niezarządzanych w aplikacji .NET Framework. Ponieważ kompilatory języka dostarczają własne typy, takie jak typy pierwotne, może nie zawsze znać (lub koniecznie wiedzieć), czy Twoje dane są zarządzane.
+Środowisko wykonawcze automatycznie obsługuje układ obiektu i zarządza odwołaniami do obiektów, zwalniając je, gdy nie są już używane. Obiekty, których okresy istnienia są zarządzane w ten sposób, są nazywane danymi zarządzanymi. Wyrzucanie elementów bezużytecznych eliminuje przecieki pamięci, a także inne typowe błędy programistyczne. Jeśli Twój kod jest zarządzany, możesz użyć danych zarządzanych, danych niezarządzanych lub zarówno danych zarządzanych, jak i niezarządzanych w aplikacji .NET. Ponieważ kompilatory języka dostarczają własne typy, takie jak typy pierwotne, może nie zawsze znać (lub koniecznie wiedzieć), czy Twoje dane są zarządzane.
 
 Środowisko uruchomieniowe języka wspólnego ułatwia projektowanie składników i aplikacji, których obiekty współdziałają w różnych językach. Obiekty wpisywane w różnych językach mogą komunikować się ze sobą, a ich zachowania mogą być ściśle zintegrowane. Na przykład można zdefiniować klasę, a następnie użyć innego języka do uzyskania klasy z oryginalnej klasy lub wywołać metodę w klasie oryginalnej. Można również przekazać wystąpienie klasy do metody klasy, która jest zapisywana w innym języku. Ta integracja między językami jest możliwa, ponieważ kompilatory i Narzędzia językowe przeznaczone dla środowiska uruchomieniowego korzystają ze wspólnego systemu typów zdefiniowanego przez środowisko uruchomieniowe i stosują reguły środowiska uruchomieniowego do definiowania nowych typów, a także do tworzenia, używania, utrwalania i powiązania z typami.
 
@@ -63,7 +64,9 @@ Kompilatory i narzędzia języka udostępniają funkcjonalność środowiska uru
 
 ## <a name="clr-versions"></a>Wersje środowiska CLR
 
-Numer wersji .NET Framework nie musi odpowiadać numerowi wersji środowiska CLR, który zawiera. Listę wersji .NET Framework i odpowiadających im wersji środowiska CLR można znaleźć w temacie [.NET Framework wersje i zależności](../framework/migration-guide/versions-and-dependencies.md). Wersje .NET Core mają jedną wersję produktu, czyli nie ma oddzielnej wersji środowiska CLR. Aby zapoznać się z listą wersji programu .NET Core, zobacz [pobieranie platformy .NET Core](https://dotnet.microsoft.com/download/dotnet-core).
+Wersje .NET Core i .NET 5 są dostępne w jednej wersji produktu, czyli nie istnieje oddzielna wersja środowiska CLR. Aby zapoznać się z listą wersji programu .NET Core, zobacz [pobieranie platformy .NET Core](https://dotnet.microsoft.com/download/dotnet-core).
+
+Jednak numer wersji .NET Framework nie musi odpowiadać numerowi wersji środowiska CLR, który zawiera. Listę wersji .NET Framework i odpowiadających im wersji środowiska CLR można znaleźć w temacie [.NET Framework wersje i zależności](../framework/migration-guide/versions-and-dependencies.md).
 
 ## <a name="related-topics"></a>Powiązane tematy
 
@@ -71,5 +74,5 @@ Numer wersji .NET Framework nie musi odpowiadać numerowi wersji środowiska CLR
 |-----------|-----------------|
 |[Zarządzany proces wykonywania](managed-execution-process.md)|Opisuje kroki wymagane do skorzystania z środowiska uruchomieniowego języka wspólnego.|
 |[Automatyczne zarządzanie pamięcią](automatic-memory-management.md)|Opisuje, jak moduł wyrzucania elementów bezużytecznych przydziela i zwalnia pamięć.|
-|[Przegląd programu .NET Framework](../framework/get-started/overview.md)|Opisuje kluczowe pojęcia .NET Framework, takie jak wspólny system typów, współdziałanie między językami, wykonywanie zarządzane, domeny aplikacji i zestawy.|
+|[Omówienie platformy .NET Framework](../framework/get-started/overview.md)|Opisuje kluczowe pojęcia .NET Framework, takie jak wspólny system typów, współdziałanie między językami, wykonywanie zarządzane, domeny aplikacji i zestawy.|
 |[Wspólny system typów](./base-types/common-type-system.md)|Opisuje, w jaki sposób typy są zadeklarowane, używane i zarządzane w środowisku uruchomieniowym w celu obsługi integracji wielu języków.|

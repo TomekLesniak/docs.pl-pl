@@ -7,17 +7,18 @@ helpviewer_keywords:
 - dynamic assemblies, assembly manifest
 - metadata, assembly manifest
 - culture, assembly manifest
-- assemblies [.NET Framework], metadata
+- assemblies [.NET], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-ms.openlocfilehash: 4f4d09f559ac66e1f3bc38af0781f7e01e7461d5
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 4b3bf6f7f6b8cf459a13dd0aca45069f82d01130
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380170"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687591"
 ---
 # <a name="assembly-manifest"></a>Manifest zestawu
-Każdy zestaw statyczny i dynamiczny zawiera kolekcję danych, które opisują powiązania między elementami zawartymi w zestawie. Manifest zestawu zawiera metadane zestawu. W manifeście zestawu znajdują się wszystkie metadane potrzebne do określenia wymagań w zakresie wersji zestawu i tożsamości jego zabezpieczeń, a także wszystkie metadane niezbędne do definiowania zakresu zestawu oraz rozpoznawania odwołań do zasobów i klas. Manifest zestawu może być przechowywany w pliku PE ( *exe* lub *. dll*) przy użyciu kodu języka pośredniego (MSIL) firmy Microsoft lub w autonomicznym pliku PE, który zawiera tylko informacje manifestu zestawu.  
+
+Każdy zestaw statyczny i dynamiczny zawiera kolekcję danych, które opisują powiązania między elementami zawartymi w zestawie. Manifest zestawu zawiera metadane zestawu. W manifeście zestawu znajdują się wszystkie metadane potrzebne do określenia wymagań w zakresie wersji zestawu i tożsamości jego zabezpieczeń, a także wszystkie metadane niezbędne do definiowania zakresu zestawu oraz rozpoznawania odwołań do zasobów i klas. Manifest zestawu może być przechowywany w pliku PE ( *exe* lub *. dll* ) przy użyciu kodu języka pośredniego (MSIL) firmy Microsoft lub w autonomicznym pliku PE, który zawiera tylko informacje manifestu zestawu.  
   
  Na ilustracji poniżej widać różne sposoby przechowywania manifestu.  
   
@@ -52,7 +53,7 @@ Każdy zestaw statyczny i dynamiczny zawiera kolekcję danych, które opisują p
   
  Niektóre informacje w manifeście zestawu można dodawać i zmieniać w kodzie za pomocą atrybutów zestawu. M.in. można zmienić informacje o wersji i atrybuty informacyjne, w tym dotyczące znaku towarowego, praw autorskich, produktu, firmy i danych informacyjnych wersji. Aby uzyskać pełną listę atrybutów zestawu, zobacz [Ustawianie atrybutów zestawu](set-attributes.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zawartość zestawu](contents.md)
 - [Przechowywanie wersji zestawu](versioning.md)

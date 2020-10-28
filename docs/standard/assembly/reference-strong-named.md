@@ -5,19 +5,19 @@ ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, compile-time references
 - compile-time assembly referencing
-- assemblies [.NET Framework], strong-named
+- assemblies [.NET], strong-named
 - assembly binding, strong-named
 ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: e42c1b461da16d7000605b9b9321138bbfebd307
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 478f786995cfc4b57f0b18b2159775db104e9cfb
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379874"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687696"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Instrukcje: odwoływanie się do zestawu o silnej nazwie
 Proces odwoływania się do typów lub zasobów w zestawie o silnej nazwie jest zwykle niewidoczny. Odwołanie można wykonać w czasie kompilacji (wczesne wiązanie) lub w czasie wykonywania.  
@@ -31,11 +31,11 @@ Odwołanie w czasie kompilacji odbywa się po wskazaniu kompilatora, który zest
 
 W wierszu polecenia wpisz następujące polecenie:  
 
-\<*kompilator — polecenie* >  **/Reference:** \< *Nazwa zestawu*>  
+\<*compiler command*>**/Reference:**\<*assembly name*>  
 
 W tym poleceniu *kompilator* jest poleceniem kompilatora dla używanego języka, a *Nazwa zestawu* to nazwa zestawu o silnej nazwie. Można również użyć innych opcji kompilatora, takich jak opcja **/t: Library** do tworzenia zestawu biblioteki.  
 
-Poniższy przykład tworzy zestaw o nazwie Moja *Assembly. dll* , który odwołuje się do zestawu o silnej nazwie o nazwie *myLibAssembly. dll* z modułu kodu o nazwie *myAssembly.cs*.  
+Poniższy przykład tworzy zestaw o nazwie *myAssembly.dll* , który odwołuje się do zestawu o silnej nazwie, o nazwie *myLibAssembly.dll* z modułu kodu o nazwie *myAssembly.cs* .  
 
 ```cmd
 csc /t:library myAssembly.cs /reference:myLibAssembly.dll  
@@ -45,9 +45,9 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 Podczas wykonywania odwołania do zestawu o silnej nazwie, na przykład przy użyciu <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> metody lub, należy użyć nazwy wyświetlanej zestawu o silnej nazwie. Składnia nazwy wyświetlanej jest następująca:  
 
-\<*Nazwa zestawu* > **,** \< *numer wersji* > **,** \< *kultura* > **,** \< *token klucza publicznego*>  
+\<*assembly name*>**,** \<*version number*>**,** \<*culture*>**,** \<*public key token*>  
 
-Przykład:  
+Na przykład:  
 
 ```console
 myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33
@@ -72,14 +72,14 @@ Dim myDll As Assembly = _
     Assembly.Load("myDll, Version=1.0.0.1, Culture=neutral, PublicKeyToken=9b35aa32c18d4fb1")
 ```
 
-Można wydrukować format szesnastkowy klucza publicznego i tokenu klucza publicznego dla określonego zestawu za pomocą następującego polecenia [silnej nazwy (SN. exe)](../../framework/tools/sn-exe-strong-name-tool.md) :  
+Można wydrukować format szesnastkowy klucza publicznego i tokenu klucza publicznego dla określonego zestawu za pomocą następującego polecenia [silnej nazwy (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) :  
 
-**SN-TP \< ** *zestaw***>**  
+**SN-TP \<** *assembly* **>**  
 
 Jeśli masz plik klucza publicznego, możesz użyć poniższego polecenia (należy zwrócić uwagę na różnice w przypadku opcji wiersza polecenia):  
 
-**SN-TP \< ** *plik klucza publicznego***>**  
+**SN-TP \<** *public key file* **>**  
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tworzenie i używanie zestawów o silnej nazwie](create-use-strong-named.md)

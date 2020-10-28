@@ -1,30 +1,30 @@
 ---
 title: 'Instrukcje: Znajdowanie w pełni kwalifikowanej nazwy zestawu'
-description: W tym artykule pokazano, jak uzyskać w pełni kwalifikowaną nazwę zestawu .NET Framework lub zestawu .NET Core.
+description: W tym artykule pokazano, jak uzyskać w pełni kwalifikowaną nazwę zestawu platformy .NET.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- names [.NET Framework], fully qualified type names
-- names [.NET Framework], assemblies
-- assemblies [.NET Framework], names
+- names [.NET], fully qualified type names
+- names [.NET], assemblies
+- assemblies [.NET], names
 ms.assetid: 009dae23-e1f6-4a64-9a9a-32e4c34802b0
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 346d50dc7f279ce46c9803ad60479d3111739c25
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 223def7d992f5fae64c95aa6886f20980184eddc
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378947"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687617"
 ---
 # <a name="how-to-find-an-assemblys-fully-qualified-name"></a>Instrukcje: Znajdowanie w pełni kwalifikowanej nazwy zestawu
 
-Aby odnaleźć w pełni kwalifikowaną nazwę zestawu .NET Framework w globalnej pamięci podręcznej zestawów, użyj narzędzia globalnej pamięci podręcznej zestawów ([Gacutil. exe](../../framework/tools/gacutil-exe-gac-tool.md)). Zobacz [jak to zrobić: wyświetlanie zawartości globalnej pamięci podręcznej zestawów](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md).
+Aby odnaleźć w pełni kwalifikowaną nazwę zestawu .NET Framework w globalnej pamięci podręcznej zestawów, użyj narzędzia globalnej pamięci podręcznej zestawów ([Gacutil.exe](../../framework/tools/gacutil-exe-gac-tool.md)). Zobacz [jak to zrobić: wyświetlanie zawartości globalnej pamięci podręcznej zestawów](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md).
 
 W przypadku zestawów .NET Core i dla zestawów .NET Framework, które nie znajdują się w globalnej pamięci podręcznej zestawów, można uzyskać w pełni kwalifikowaną nazwę zestawu na wiele sposobów:
 
-- Można użyć kodu do wyprowadzania informacji do konsoli lub do zmiennej lub użyć [Ildasm. exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) do sprawdzenia metadanych zestawu, który zawiera w pełni kwalifikowaną nazwę.
+- Można użyć kodu do wyprowadzania informacji do konsoli lub do zmiennej. można też użyć [Ildasm.exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) do sprawdzenia metadanych zestawu, który zawiera w pełni kwalifikowaną nazwę.
 
 - Jeśli zestaw jest już załadowany przez aplikację, możesz pobrać wartość <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> właściwości, aby uzyskać w pełni kwalifikowaną nazwę. Możesz użyć <xref:System.Type.Assembly> właściwości <xref:System.Type> zdefiniowanej w tym zestawie, aby pobrać odwołanie do <xref:System.Reflection.Assembly> obiektu. Przykład stanowi ilustrację.
 
@@ -57,7 +57,7 @@ W przypadku zestawów .NET Core i dla zestawów .NET Framework, które nie znajd
   '   UtilityLibrary, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null
   ```
 
-- Do sprawdzenia metadanych zestawu, który zawiera w pełni kwalifikowaną nazwę, można użyć [Ildasm. exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) .
+- Można użyć [Ildasm.exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) do sprawdzenia metadanych zestawu, który zawiera w pełni kwalifikowaną nazwę.
 
 Aby uzyskać więcej informacji na temat ustawiania atrybutów zestawu, takich jak wersja, kultura i nazwa zestawu, zobacz [Ustawianie atrybutów zestawu](set-attributes.md). Aby uzyskać więcej informacji na temat nadawania silnej nazwy zestawu, zobacz [Tworzenie i używanie zestawów o silnej nazwie](create-use-strong-named.md).
 
@@ -119,7 +119,7 @@ Class asmname
 End Class
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Nazwy zestawów](names.md)
 - [Tworzenie zestawów](create.md)

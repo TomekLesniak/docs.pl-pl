@@ -1,28 +1,29 @@
 ---
-title: Konwertowanie ciągów na typy danych programu .NET Framework
+title: Konwertowanie ciągów na typy danych .NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: fda5441c58d14b91a9eca16fff9149c8795f95b9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 28c84b04bde045643158d8d2b9fed44b74334e77
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289229"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688003"
 ---
-# <a name="converting-strings-to-net-framework-data-types"></a>Konwertowanie ciągów na typy danych programu .NET Framework
-Jeśli chcesz przekonwertować ciąg na typ danych .NET Framework, użyj metody **XmlConvert** , która pasuje do wymagań aplikacji. Aby uzyskać listę wszystkich metod konwersji dostępnych w klasie **XmlConvert** , zobacz <xref:System.Xml.XmlConvert> .  
+# <a name="convert-strings-to-net-data-types"></a>Konwertowanie ciągów na typy danych .NET
+
+Jeśli chcesz przekonwertować ciąg na typ danych .NET, użyj metody **XmlConvert** , która pasuje do wymagań aplikacji. Aby uzyskać listę wszystkich metod konwersji dostępnych w klasie **XmlConvert** , zobacz <xref:System.Xml.XmlConvert> .  
   
- Ciąg zwracany przez metodę **ToString** jest ciągiem wersji, która została przekazana. Ponadto istnieje kilka typów .NET Framework, które konwertują się przy użyciu klasy **XmlConvert** , ale nie używają metod w klasie **System. Convert** . Klasa **XmlConvert** jest zgodna ze specyfikacją typu danych schematu XML (XSD) i ma typ danych, na który mapowanie **XmlConvert** może być mapowane.  
+ Ciąg zwracany przez metodę **ToString** jest ciągiem wersji, która została przekazana. Ponadto istnieje kilka typów platformy .NET, które konwertują się przy użyciu klasy **XmlConvert** , ale nie używają metod w klasie **System. Convert** . Klasa **XmlConvert** jest zgodna ze specyfikacją typu danych schematu XML (XSD) i ma typ danych, na który mapowanie **XmlConvert** może być mapowane.  
   
- Poniższa tabela zawiera listę typów danych .NET Framework i typy ciągów, które są zwracane przy użyciu mapowania typu danych schematu XML (XSD). Te typy .NET Framework nie mogą być przetwarzane przy użyciu funkcji **System. Convert**.  
+ Poniższa tabela zawiera listę typów danych .NET i typów ciągów, które są zwracane przy użyciu mapowania typu danych schematu XML (XSD). Te typy .NET nie mogą być przetwarzane przy użyciu **System. Convert** .  
   
-|Typ programu .NET Framework|Zwrócony ciąg|  
+|Typ .NET|Zwrócony ciąg|  
 |-------------------------|---------------------|  
-|Boolean (wartość logiczna)|"true", "false"|  
+|Boolean|"true", "false"|  
 |Single. PositiveInfinity|INF|  
 |Single. NegativeInfinity|"-INF"|  
 |Double. PositiveInfinity|INF|  
@@ -31,7 +32,7 @@ Jeśli chcesz przekonwertować ciąg na typ danych .NET Framework, użyj metody 
 |Zakres czasu|Format to PnYnMnTnHnMnS, czyli `P2Y10M15DT10H30M20S` okres 2 lat, 10 miesięcy, 15 dni, 10 godzin, 30 minut i 20 sekund.|  
   
 > [!NOTE]
-> W przypadku konwertowania dowolnego typu .NET Framework wymienionego w tabeli na ciąg przy użyciu metody **ToString** zwracany ciąg nie jest typem podstawowym, ale typ ciągu schematu XML (XSD).  
+> W przypadku konwertowania dowolnego z typów .NET wymienionych w tabeli do ciągu przy użyciu metody **ToString** zwracany ciąg nie jest typem podstawowym, ale typ ciągu schematu XML (XSD).  
   
  Typ wartości **DateTime** i **TimeSpan** różni się w tym, że element **DateTime** reprezentuje chwilę w czasie, podczas gdy obiekt **TimeSpan** reprezentuje przedział czasu. Formaty **DateTime** i **TimeSpan** są określone w specyfikacji typów danych schematu XML (XSD). Na przykład:  
   
@@ -69,12 +70,12 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
  `<Number>200</Number>`  
   
- Jeśli jednak konwertujesz ciąg na **wartość Boolean**, **Single**lub **Double**, zwracany typ .NET Framework nie jest taki sam jak typ zwracany podczas używania klasy **System. Convert** .  
+ Jeśli jednak konwertujesz ciąg na **wartość Boolean** , **Single** lub **Double** , zwracany typ platformy .NET nie jest taki sam jak typ zwracany podczas używania klasy **System. Convert** .  
   
 ## <a name="string-to-boolean"></a>Ciąg do wartości logicznej  
  W poniższej tabeli przedstawiono typ, który jest generowany dla danego ciągu wejściowego podczas konwertowania ciągu na **wartość logiczną** przy użyciu metody **ToBoolean** .  
   
-|Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych .NET Framework|  
+|Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych platformy .NET|  
 |----------------------------------|--------------------------------|  
 |oznacza|Wartość logiczna. true|  
 |„1”|Wartość logiczna. true|  
@@ -90,7 +91,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
 <Boolean>1</Boolean>
 ```  
   
- Obie te wartości można zrozumieć przy użyciu poniższego kodu, a **bValue** to **System. Boolean. true**:  
+ Obie te wartości można zrozumieć przy użyciu poniższego kodu, a **bValue** to **System. Boolean. true** :  
   
 ```vb  
 Dim bvalue As Boolean = _  
@@ -106,7 +107,7 @@ Console.WriteLine(bvalue);
 ## <a name="string-to-single"></a>Ciąg do jednego  
  W poniższej tabeli przedstawiono typ, który jest generowany dla danych wejściowych ciągów, podczas konwertowania ciągu na **pojedynczy** przy użyciu metody **ToSingle —** .  
   
-|Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych .NET Framework|  
+|Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych platformy .NET|  
 |----------------------------------|--------------------------------|  
 |INF|Single. PositiveInfinity|  
 |"-INF"|Single. NegativeInfinity|  
@@ -114,7 +115,7 @@ Console.WriteLine(bvalue);
 ## <a name="string-to-double"></a>Ciąg na Double  
  W poniższej tabeli przedstawiono typ, który jest generowany dla danych wejściowych ciągów, podczas konwertowania ciągu na **pojedynczy** przy użyciu metody **ToDouble —** .  
   
-|Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych .NET Framework|  
+|Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych platformy .NET|  
 |----------------------------------|--------------------------------|  
 |INF|Double. PositiveInfinity|  
 |"-INF"|Double. NegativeInfinity|  
@@ -134,4 +135,4 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
 ## <a name="see-also"></a>Zobacz także
 
 - [Konwersja typów danych XML](conversion-of-xml-data-types.md)
-- [Konwertowanie typów programu .NET Framework na ciągi](converting-dotnet-types-to-strings.md)
+- [Konwertowanie typów .NET na ciągi](converting-dotnet-types-to-strings.md)

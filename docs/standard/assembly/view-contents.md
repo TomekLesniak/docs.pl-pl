@@ -6,7 +6,7 @@ helpviewer_keywords:
 - assembly manifest, viewing information
 - Ildasm.exe
 - MSIL Disassembler
-- assemblies [.NET Framework], viewing contents
+- assemblies [.NET], viewing contents
 - viewing assembly information
 - MSIL
 - viewing MSIL information
@@ -15,18 +15,18 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: aed490459252466c6da06e5422b83b1bc20fb885
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: be2311c601effbebd519e33b7a5e13d49f44bd05
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380066"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687497"
 ---
 # <a name="how-to-view-assembly-contents"></a>Instrukcje: wyświetlanie zawartości zestawu
 
-Do wyświetlania informacji o języku pośrednim (MSIL) firmy Microsoft w pliku można użyć [Ildasm. exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) . Jeśli rozpatrywany plik jest zestawem, te informacje mogą zawierać atrybuty zestawu i odwołania do innych modułów i zestawów. Te informacje mogą być pomocne w ustaleniu, czy plik jest zestawem lub częścią zestawu oraz czy plik zawiera odwołania do innych modułów lub zestawów.
+Aby wyświetlić informacje o języku pośrednim (MSIL) firmy Microsoft w pliku, można użyć [Ildasm.exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) . Jeśli rozpatrywany plik jest zestawem, te informacje mogą zawierać atrybuty zestawu i odwołania do innych modułów i zestawów. Te informacje mogą być pomocne w ustaleniu, czy plik jest zestawem lub częścią zestawu oraz czy plik zawiera odwołania do innych modułów lub zestawów.
 
-Aby wyświetlić zawartość zestawu przy użyciu programu *Ildasm. exe*, wprowadź ** \< nazwę zestawu Ildasm>** w wierszu polecenia. Na przykład następujące polecenie deasembleruje zestaw *Hello. exe* .
+Aby wyświetlić zawartość zestawu przy użyciu *Ildasm.exe* , w wierszu polecenia **wprowadź \<assembly name> Ildasm** . Na przykład następujące polecenie rozłączy zestaw *Hello.exe* .
 
 ```cmd
 ildasm Hello.exe
@@ -36,7 +36,7 @@ Aby wyświetlić informacje o manifeście zestawu, kliknij dwukrotnie ikonę **m
 
 ## <a name="example"></a>Przykład
 
-Poniższy przykład rozpoczyna się od podstawowego programu "Hello world". Po skompilowaniu programu należy użyć *Ildasm. exe* do rozbudowy zestawu *Hello. exe* i wyświetlić manifest zestawu.
+Poniższy przykład rozpoczyna się od podstawowego programu "Hello world". Po skompilowaniu programu Użyj *Ildasm.exe* do rozbudowy zestawu *Hello.exe* i wyświetlenia manifestu zestawu.
 
 ```cpp
 using namespace System;
@@ -76,7 +76,7 @@ Class MainApp
 End Class
 ```
 
-Uruchomienie polecenia *Ildasm. exe* w zestawie *Hello. exe* i dwukrotne kliknięcie ikony **manifestu** w oknie MSIL dezasembler generuje następujące dane wyjściowe:
+Uruchomienie polecenia *ildasm.exe* w zestawie *Hello.exe* i dwukrotne kliknięcie ikony **manifestu** w oknie MSIL dezasembler generuje następujące dane wyjściowe:
 
 ```output
 // Metadata version: v4.0.30319
@@ -103,18 +103,18 @@ Uruchomienie polecenia *Ildasm. exe* w zestawie *Hello. exe* i dwukrotne klikni�
 // Image base: 0x00600000
 ```
 
-W poniższej tabeli opisano każdą dyrektywę w manifeście zestawu zestawu *Hello. exe* użytego w przykładzie:
+W poniższej tabeli opisano każdą dyrektywę w manifeście zestawu zestawu *Hello.exe* użytego w przykładzie:
 
 |Dyrektywę|Opis|
 |---------------|-----------------|
-|**Nazwa zewnętrznego zestawu. Assembly \<>**|Określa inny zestaw, który zawiera elementy, do których odwołuje się bieżący moduł (w tym przykładzie `mscorlib` ).|
-|**\<>token. PublicKeyToken**|Określa token rzeczywistego klucza przywoływanego zestawu.|
-|**\<numer wersji. ver>**|Określa numer wersji przywoływanego zestawu.|
-|**\<Nazwa zestawu. assembly>**|Określa nazwę zestawu.|
-|**\<wartość Int32 algorytmu hash>**|Określa używany algorytm wyznaczania wartości skrótu.|
-|**\<numer wersji. ver>**|Określa numer wersji zestawu.|
-|**\<Nazwa pliku modułu>**|Określa nazwę modułów, które tworzą zestaw. W tym przykładzie zestaw składa się tylko z jednego pliku.|
-|**wartość. Subsystem \<>**|Określa środowisko aplikacji wymagane dla programu. W tym przykładzie wartość 3 wskazuje, że ten plik wykonywalny jest uruchamiany z konsoli programu.|
+|**. Assembly extern \<assembly name>**|Określa inny zestaw, który zawiera elementy, do których odwołuje się bieżący moduł (w tym przykładzie `mscorlib` ).|
+|**. PublicKeyToken \<token>**|Określa token rzeczywistego klucza przywoływanego zestawu.|
+|**. ver \<version number>**|Określa numer wersji przywoływanego zestawu.|
+|**. zestaw \<assembly name>**|Określa nazwę zestawu.|
+|**. hash — algorytm \<int32 value>**|Określa używany algorytm wyznaczania wartości skrótu.|
+|**. ver \<version number>**|Określa numer wersji zestawu.|
+|**. module \<file name>**|Określa nazwę modułów, które tworzą zestaw. W tym przykładzie zestaw składa się tylko z jednego pliku.|
+|**. podsystem \<value>**|Określa środowisko aplikacji wymagane dla programu. W tym przykładzie wartość 3 wskazuje, że ten plik wykonywalny jest uruchamiany z konsoli programu.|
 |**. CorFlags**|Obecnie zarezerwowane pole w metadanych.|
 
 Manifest zestawu może zawierać wiele różnych dyrektyw, w zależności od zawartości zestawu. Aby uzyskać obszerną listę dyrektyw w manifeście zestawu, zapoznaj się z dokumentacją ECMA, szczególnie "partycja II: definicja metadanych i semantyka" i "Partition III: zestaw instrukcji CIL":
@@ -122,8 +122,8 @@ Manifest zestawu może zawierać wiele różnych dyrektyw, w zależności od zaw
 - [Standardy ECMA C# i Common Language Infrastructure](../components.md#applicable-standards)
 - [Standard ECMA-335-Common Language Infrastructure (interfejs wiersza polecenia)](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Domeny aplikacji i zestawy](../../framework/app-domains/application-domains.md#application-domains-and-assemblies)
 - [Domeny aplikacji i zestawy Tematy porad](../../framework/app-domains/application-domains-and-assemblies-how-to-topics.md)
-- [Ildasm. exe (IL dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md)
+- [Ildasm.exe (IL dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md)

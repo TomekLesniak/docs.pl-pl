@@ -3,7 +3,7 @@ title: Ustawianie atrybutów zestawu
 description: Można ustawić atrybuty zestawu dla zestawu platformy .NET, w tym tożsamość zestawu, informacje, manifest zestawu i atrybuty silnej nazwy.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- assemblies [.NET Framework], attributes
+- assemblies [.NET], attributes
 - assembly binding, attributes
 - assembly manifest, attributes
 ms.assetid: 36a98a81-b5b5-4c19-912a-11f91eff7f4e
@@ -11,12 +11,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: e3a077dcd1b62a4676a3ac6492a90e38c548e41b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 32318d647dee8f3f397e3497e7c2da640bd492d0
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378647"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687680"
 ---
 # <a name="set-assembly-attributes"></a>Ustawianie atrybutów zestawu
 
@@ -32,7 +32,7 @@ Atrybuty zestawu są wartościami, które zawierają informacje o zestawie. Atry
 
 ## <a name="assembly-identity-attributes"></a>Atrybuty tożsamości zestawu
 
-Trzy atrybuty wraz z silną nazwą (jeśli dotyczy) określają tożsamość zestawu: nazwę, wersję i kulturę. Te atrybuty tworzą pełną nazwę zestawu i są wymagane podczas odwoływania się do zestawu w kodzie. Można użyć atrybutów, aby ustawić wersję i kulturę zestawu. Kompilator lub [konsolidator zestawu (Al. exe)](../../framework/tools/al-exe-assembly-linker.md) ustawia wartość nazwy podczas tworzenia zestawu, na podstawie pliku zawierającego manifest zestawu.
+Trzy atrybuty wraz z silną nazwą (jeśli dotyczy) określają tożsamość zestawu: nazwę, wersję i kulturę. Te atrybuty tworzą pełną nazwę zestawu i są wymagane podczas odwoływania się do zestawu w kodzie. Można użyć atrybutów, aby ustawić wersję i kulturę zestawu. Kompilator lub [konsolidator zestawu (Al.exe)](../../framework/tools/al-exe-assembly-linker.md) ustawia wartość nazwy podczas tworzenia zestawu, na podstawie pliku zawierającego manifest zestawu.
 
 W poniższej tabeli opisano atrybuty wersji i kultury.
 
@@ -40,7 +40,7 @@ W poniższej tabeli opisano atrybuty wersji i kultury.
 |---------------------------------|-----------------|
 |<xref:System.Reflection.AssemblyCultureAttribute>|Pole wyliczane wskazujące kulturę obsługiwaną przez zestaw. Zestaw może również określać niezależność kultury, wskazując, że zawiera zasoby dla kultury domyślnej. **Uwaga:**  Środowisko uruchomieniowe traktuje dowolny zestaw, który nie ma atrybutu kultury ustawionego na wartość null jako zestaw satelicki. Takie zestawy podlegają regułom powiązania zestawu satelickiego. Aby uzyskać więcej informacji, zobacz [jak środowisko uruchomieniowe lokalizuje zestawy](../../framework/deployment/how-the-runtime-locates-assemblies.md).|
 |<xref:System.Reflection.AssemblyFlagsAttribute>|Wartość, która ustawia atrybuty zestawu, na przykład czy zestaw może być uruchamiany obok siebie.|
-|<xref:System.Reflection.AssemblyVersionAttribute>|Wartość liczbowa w formacie *głównym*. *pomocnicze*. *kompilacja*. *poprawka* (na przykład 2.4.0.0). Środowisko uruchomieniowe języka wspólnego używa tej wartości do wykonywania operacji powiązań w zestawach o silnej nazwie. **Uwaga:**  Jeśli <xref:System.Reflection.AssemblyInformationalVersionAttribute> atrybut nie jest stosowany do zestawu, numer wersji określony przez <xref:System.Reflection.AssemblyVersionAttribute> atrybut jest używany przez <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> , <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> i <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> właściwości.|
+|<xref:System.Reflection.AssemblyVersionAttribute>|Wartość liczbowa w formacie *głównym* . *pomocnicze* . *kompilacja* . *poprawka* (na przykład 2.4.0.0). Środowisko uruchomieniowe języka wspólnego używa tej wartości do wykonywania operacji powiązań w zestawach o silnej nazwie. **Uwaga:**  Jeśli <xref:System.Reflection.AssemblyInformationalVersionAttribute> atrybut nie jest stosowany do zestawu, numer wersji określony przez <xref:System.Reflection.AssemblyVersionAttribute> atrybut jest używany przez <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> , <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> i <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> właściwości.|
 
 Poniższy przykład kodu pokazuje, jak zastosować wersję i atrybuty kultury do zestawu.
 
@@ -98,10 +98,10 @@ Aby ustawić silną nazwę zestawu, można użyć atrybutów silnej nazwy. W pon
 |Atrybut silnej nazwy|Opis|
 |----------------------------|-----------------|
 |<xref:System.Reflection.AssemblyDelaySignAttribute>|Wartość logiczna wskazująca, że jest używane podpisywanie opóźnienia.|
-|<xref:System.Reflection.AssemblyKeyFileAttribute>|Wartość ciągu wskazująca nazwę pliku, który zawiera klucz publiczny (w przypadku korzystania z opóźnienia podpisywania) lub klucze publiczny i prywatny przekazanie jako parametr do konstruktora tego atrybutu. Należy pamiętać, że nazwa pliku jest względna w stosunku do ścieżki pliku wyjściowego ( *. exe* lub *. dll*), a nie ścieżki pliku źródłowego.|
+|<xref:System.Reflection.AssemblyKeyFileAttribute>|Wartość ciągu wskazująca nazwę pliku, który zawiera klucz publiczny (w przypadku korzystania z opóźnienia podpisywania) lub klucze publiczny i prywatny przekazanie jako parametr do konstruktora tego atrybutu. Należy pamiętać, że nazwa pliku jest względna w stosunku do ścieżki pliku wyjściowego ( *. exe* lub *. dll* ), a nie ścieżki pliku źródłowego.|
 |<xref:System.Reflection.AssemblyKeyNameAttribute>|Wskazuje kontener kluczy, który zawiera parę kluczy przekazaną jako parametr do konstruktora tego atrybutu.|
 
-Poniższy przykład kodu pokazuje atrybuty do zastosowania podczas korzystania z opóźnienia podpisywania w celu utworzenia zestawu o silnej nazwie z plikiem klucza publicznego o nazwie *klucze. snk*.
+Poniższy przykład kodu pokazuje atrybuty do zastosowania podczas korzystania z opóźnienia podpisywania w celu utworzenia zestawu o silnej nazwie z plikiem klucza publicznego o nazwie *klucze. snk* .
 
 ```cpp
 [assembly:AssemblyKeyFileAttribute("myKey.snk")];
@@ -118,6 +118,6 @@ Poniższy przykład kodu pokazuje atrybuty do zastosowania podczas korzystania z
 <Assembly:AssemblyDelaySignAttribute(True)>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tworzenie zestawów](create.md)

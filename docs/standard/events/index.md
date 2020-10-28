@@ -15,26 +15,24 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: 83799b0f4c6d6503825ce271fed4bffa7a9775b9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 47021873956f971709b49c1b224e43e4c7f482d0
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545706"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687295"
 ---
-# <a name="handling-and-raising-events"></a>Obsługa i wywoływanie zdarzeń
+# <a name="handle-and-raising-events"></a>Obsługa i wywoływanie zdarzeń
 
-Zdarzenia w programie .NET są oparte na modelu delegata. Model delegata jest zgodny z [wzorcem projektowym obserwatora](observer-design-pattern.md), co umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy. Nadawca zdarzeń wypychanie powiadomienia o wystąpieniu zdarzenia, a odbiorca zdarzenia odbiera to powiadomienie i definiuje odpowiedź na nie. W tym artykule opisano główne składniki modelu delegata, sposób korzystania ze zdarzeń w aplikacjach oraz sposób implementacji zdarzeń w kodzie.  
-  
- Aby uzyskać informacje na temat obsługi zdarzeń w aplikacjach ze sklepu Windows 8. x, zobacz [Omówienie zdarzeń i zdarzeń kierowanych](/previous-versions/windows/apps/hh758286(v=win.10)).  
+Zdarzenia w programie .NET są oparte na modelu delegata. Model delegata jest zgodny z [wzorcem projektowym obserwatora](observer-design-pattern.md), co umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy. Nadawca zdarzeń wypychanie powiadomienia o wystąpieniu zdarzenia, a odbiorca zdarzenia odbiera to powiadomienie i definiuje odpowiedź na nie. W tym artykule opisano główne składniki modelu delegata, sposób korzystania ze zdarzeń w aplikacjach oraz sposób implementacji zdarzeń w kodzie.
   
 ## <a name="events"></a>Zdarzenia
 
-Zdarzenie jest wiadomością wysłaną przez obiekt, aby sygnalizować wystąpienie akcji. Akcja może być spowodowana przez interakcję użytkownika, taką jak kliknięcie przycisku, lub może wynikać z innej logiki programu, takiej jak zmiana wartości właściwości. Obiekt, który wywołuje zdarzenie, jest nazywany *nadawcą zdarzenia*. Nadawca zdarzenia nie wie, który obiekt lub metoda otrzyma (dojście) zdarzenia, które wywołuje. Zdarzenie jest zwykle członkiem nadawcy zdarzenia; na przykład <xref:System.Web.UI.WebControls.Button.Click> zdarzenie jest członkiem <xref:System.Web.UI.WebControls.Button> klasy, a <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> zdarzenie jest członkiem klasy, która implementuje <xref:System.ComponentModel.INotifyPropertyChanged> interfejs.  
+Zdarzenie jest wiadomością wysłaną przez obiekt, aby sygnalizować wystąpienie akcji. Akcja może być spowodowana przez interakcję użytkownika, taką jak kliknięcie przycisku, lub może wynikać z innej logiki programu, takiej jak zmiana wartości właściwości. Obiekt, który wywołuje zdarzenie, jest nazywany *nadawcą zdarzenia* . Nadawca zdarzenia nie wie, który obiekt lub metoda otrzyma (dojście) zdarzenia, które wywołuje. Zdarzenie jest zwykle członkiem nadawcy zdarzenia; na przykład <xref:System.Web.UI.WebControls.Button.Click> zdarzenie jest członkiem <xref:System.Web.UI.WebControls.Button> klasy, a <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> zdarzenie jest członkiem klasy, która implementuje <xref:System.ComponentModel.INotifyPropertyChanged> interfejs.  
   
 Aby zdefiniować zdarzenie, należy użyć [`event`](../../csharp/language-reference/keywords/event.md) słowa kluczowego C# lub Visual Basic [`Event`](../../visual-basic/language-reference/statements/event-statement.md) w sygnaturze klasy Event i określić typ delegata zdarzenia. Delegaty są opisane w następnej sekcji.  
   
-Zwykle, aby zgłosić zdarzenie, należy dodać metodę, która jest oznaczona jako `protected` i `virtual` (w języku C#) lub `Protected` i `Overridable` (w Visual Basic). Nadaj nazwę tej metodzie `On` *EventName*; na przykład `OnDataReceived` . Metoda powinna przyjmować jeden parametr, który określa obiekt danych zdarzenia, który jest obiektem typu <xref:System.EventArgs> lub typu pochodnego. Ta metoda umożliwia włączenie klas pochodnych w celu zastąpienia logiki w celu podniesienia poziomu zdarzenia. Klasa pochodna zawsze powinna wywołać metodę `On` *EventName* klasy bazowej, aby upewnić się, że zarejestrowani delegowani odbiera zdarzenie.  
+Zwykle, aby zgłosić zdarzenie, należy dodać metodę, która jest oznaczona jako `protected` i `virtual` (w języku C#) lub `Protected` i `Overridable` (w Visual Basic). Nadaj nazwę tej metodzie `On` *EventName* ; na przykład `OnDataReceived` . Metoda powinna przyjmować jeden parametr, który określa obiekt danych zdarzenia, który jest obiektem typu <xref:System.EventArgs> lub typu pochodnego. Ta metoda umożliwia włączenie klas pochodnych w celu zastąpienia logiki w celu podniesienia poziomu zdarzenia. Klasa pochodna zawsze powinna wywołać metodę `On` *EventName* klasy bazowej, aby upewnić się, że zarejestrowani delegowani odbiera zdarzenie.  
 
 Poniższy przykład pokazuje, jak zadeklarować zdarzenie o nazwie `ThresholdReached` . Zdarzenie jest skojarzone z <xref:System.EventHandler> delegatem i wywoływane w metodzie o nazwie `OnThresholdReached` .  
   
@@ -82,19 +80,19 @@ Poniższy przykład pokazuje metodę procedury obsługi zdarzeń o nazwie `c_Thr
 
 Platforma .NET umożliwia subskrybentom rejestrację powiadomień o zdarzeniach statycznie lub dynamicznie. Procedury obsługi zdarzeń statycznych są stosowane dla całego okresu istnienia klasy, której zdarzenia obsługują. Procedury obsługi zdarzeń dynamicznych są jawnie uaktywniane i dezaktywowane podczas wykonywania programu, zazwyczaj w odpowiedzi na niektóre logiki programu warunkowego. Można na przykład użyć ich w przypadku, gdy powiadomienia o zdarzeniach są wymagane tylko w określonych warunkach lub jeśli aplikacja zawiera wiele programów obsługi zdarzeń, a warunki czasu wykonywania definiują odpowiednią wartość do użycia. W przykładzie w poprzedniej sekcji pokazano, jak dynamicznie dodać program obsługi zdarzeń. Aby uzyskać więcej informacji, zobacz [zdarzenia](../../visual-basic/programming-guide/language-features/events/index.md) (w Visual Basic) i [zdarzenia](../../csharp/programming-guide/events/index.md) (w języku C#).  
   
-## <a name="raising-multiple-events"></a>Wywoływanie wielu zdarzeń  
+## <a name="raising-multiple-events"></a>Wywoływanie wielu zdarzeń
+
  Jeśli Klasa wywołuje wiele zdarzeń, kompilator generuje jedno pole na wystąpienie delegata zdarzenia. Jeśli liczba zdarzeń jest duża, koszt magazynowania jednego pola na delegata może nie być akceptowalny. W takich sytuacjach platforma .NET udostępnia właściwości zdarzeń, które mogą być używane z inną strukturą danych, która umożliwia przechowywanie delegatów zdarzeń.  
   
  Właściwości zdarzenia składają się z deklaracji zdarzeń, które towarzyszą metodom dostępu do zdarzeń. Metody dostępu zdarzeń są zdefiniowane w celu dodawania lub usuwania wystąpień delegatów zdarzeń ze struktury danych magazynu. Należy pamiętać, że właściwości zdarzeń są wolniejsze od pól zdarzeń, ponieważ każdy delegat zdarzenia musi zostać pobrany, aby można było go wywołać. Handel jest między pamięcią a szybkością. Jeśli klasa definiuje wiele zdarzeń, które są rzadko zgłaszane, należy zaimplementować właściwości zdarzenia. Aby uzyskać więcej informacji, zobacz [How to: obsługa wielu zdarzeń przy użyciu właściwości zdarzenia](how-to-handle-multiple-events-using-event-properties.md).  
   
-## <a name="related-topics"></a>Powiązane tematy  
+## <a name="related-articles"></a>Pokrewne artykuły:
   
 |Tytuł|Opis|  
 |-----------|-----------------|  
 |[Porady: wywoływanie zdarzeń i korzystanie z nich](how-to-raise-and-consume-events.md)|Zawiera przykłady podnoszenia i zużywania zdarzeń.|  
 |[Instrukcje: Obsługa wielu zdarzeń przy użyciu właściwości zdarzenia](how-to-handle-multiple-events-using-event-properties.md)|Pokazuje, jak używać właściwości zdarzenia do obsługi wielu zdarzeń.|  
-|[Wzorzec projektowy obserwatora](observer-design-pattern.md)|Opisuje Wzorzec projektowy, który umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy.|  
-|[Porady: korzystanie ze zdarzeń w aplikacjach formularzy sieci Web](how-to-consume-events-in-a-web-forms-application.md)|Pokazuje, jak obsłużyć zdarzenie, które jest wywoływane przez formant formularzy sieci Web.|  
+|[Wzorzec projektowy obserwatora](observer-design-pattern.md)|Opisuje Wzorzec projektowy, który umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy.|
   
 ## <a name="see-also"></a>Zobacz także
 
@@ -105,3 +103,4 @@ Platforma .NET umożliwia subskrybentom rejestrację powiadomień o zdarzeniach 
 - [Zdarzenia (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)
 - [Zdarzenia (Przewodnik programowania w języku C#)](../../csharp/programming-guide/events/index.md)
 - [Zdarzenia i zdarzenia kierowane — omówienie (platformy UWP Apps)](/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- [Zdarzenia w Sklepie Windows 8. x aplikacje](/previous-versions/windows/apps/hh758286(v=win.10))

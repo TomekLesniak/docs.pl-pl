@@ -5,16 +5,16 @@ ms.date: 08/20/2019
 helpviewer_keywords:
 - informational versions
 - version numbers, assemblies
-- assemblies [.NET Framework], versioning
+- assemblies [.NET], versioning
 - resolving assembly binding requests
 - versioning, assemblies
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
-ms.openlocfilehash: fdffbcc0bbafed62228cba35e8f85fbec7f7fbab
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: c94e0c74b8beed29537b53d7476715e2cacb7b80
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380085"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687635"
 ---
 # <a name="assembly-versioning"></a>Przechowywanie wersji zestawu
 
@@ -51,7 +51,7 @@ Każdy zestaw może przedstawiać informacje o wersji na dwa odrębne sposoby:
 
 Elementem tożsamości każdego zestawu jest jego numer wersji. W związku z tym dwa zestawy, które różnią się numerem wersji, są przez środowisko uruchomieniowe uznawane za całkowicie różne zestawy. Numer wersji jest fizycznie reprezentowany jako czteroczęściowy ciąg tekstowy o następującym formacie:  
   
-\<*wersja główna*>. \< *wersja pomocnicza*>. \<> *numeru kompilacji* . \< *poprawka*>  
+\<*major version*>.\<*minor version*>.\<*build number*>.\<*revision*>  
   
 Na przykład wersja 1.5.1254.0 określa „1” jako wersję główną, „5” jako wersję pomocniczą, „1254” jako numer kompilacji i „0” jako numer poprawki.  
   
@@ -72,7 +72,7 @@ Informacje o wersji zestawu to ciąg tekstowy, który dołącza do zestawu dodat
   
 Informacje o wersji są reprezentowane za pomocą niestandardowego atrybutu <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Aby uzyskać więcej informacji na temat atrybutu wersji informacyjnej, zobacz [Ustawianie atrybutów zestawu](set-attributes.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Jak środowisko uruchomieniowe lokalizuje zestawy](../../framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Konfigurowanie aplikacji](../../framework/configure-apps/index.md)
