@@ -725,24 +725,20 @@ items:
         href: misc/using-libraries-from-partially-trusted-code.md
       - name: Korzystanie z metody Assert
         href: misc/using-the-assert-method.md
-  - name: Tworzenie aplikacji konsolowych
-    href: ../standard/building-console-apps.md
-  - name: Korzystanie ze zdarzeń w aplikacjach Web Forms
-    href: ../standard/events/how-to-consume-events-in-a-web-forms-application.md
-  - name: Analizator kodu programu .NET Framework
-    href: ../standard/analyzers/framework-analyzer.md
+  - name: Analiza kodu
+    href: code-analyzers.md
   - name: Tworzenie aplikacji dla wielu platform
     items:
       - name: Omówienie
-        href: ../standard/cross-platform/index.md
+        href: cross-platform/index.md
         displayName: cross platform
       - name: Biblioteka klas przenośnych
-        href: ../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md
+        href: cross-platform/portable-class-library.md
       - name: Korzystanie z przenośnej biblioteki klas z modelem MVVM
-        href: ../standard/cross-platform/using-portable-class-library-with-model-view-view-model.md
+        href: cross-platform/using-portable-class-library-with-model-view-view-model.md
       - name: Zasoby aplikacji dla bibliotek przeznaczonych dla wielu platform
-        href: ../standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md
+        href: cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md
       - name: Obsługa programu .NET Framework dla aplikacji ze sklepu Microsoft Store i środowiska wykonawczego systemu Windows
-        href: ../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md
+        href: cross-platform/support-for-windows-store-apps-and-windows-runtime.md
       - name: Przekazywanie identyfikatora URI do środowiska wykonawczego systemu Windows
-        href: ../standard/cross-platform/passing-a-uri-to-the-windows-runtime.md
+        href: cross-platform/passing-a-uri-to-the-windows-runtime.md
