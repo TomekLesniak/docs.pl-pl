@@ -6,20 +6,20 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - parallel programming
 ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
-ms.openlocfilehash: 02087cf58720388c64d8aba5424db0b54828219a
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: edb3d38b0815c6703720292a45e302c62c81650b
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84661968"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925340"
 ---
 # <a name="parallel-programming-in-net"></a>Programowanie równoległe w .NET
 
 Wiele komputerów osobistych i stacji roboczych ma wiele rdzeni procesora, które umożliwiają jednoczesne wykonywanie wielu wątków. Aby skorzystać ze sprzętu, możesz zrównoleglanie swój kod w celu dystrybucji pracy na wielu procesorach.
 
-W przeszłości przetwarzanie równoległe wymagało operowania wątkami i blokadami na niskim poziomie. Program Visual Studio i .NET Framework rozszerzają obsługę programowania równoległego dzięki udostępnieniu środowiska uruchomieniowego, typów bibliotek klas i narzędzi diagnostycznych. Te funkcje, które zostały wprowadzone w .NET Framework 4, upraszczają programowanie równoległe. Można napisać wydajny, szczegółowy i skalowalny kod równoległy w naturalnym idiom bez konieczności bezpośredniej pracy z wątkami lub pulą wątków.
+W przeszłości przetwarzanie równoległe wymagało operowania wątkami i blokadami na niskim poziomie. Programy Visual Studio i .NET rozszerzają obsługę programowania równoległego przez dostarczanie środowiska uruchomieniowego, typów bibliotek klas i narzędzi diagnostycznych. Te funkcje, które zostały wprowadzone w .NET Framework 4, upraszczają programowanie równoległe. Można napisać wydajny, szczegółowy i skalowalny kod równoległy w naturalnym idiom bez konieczności bezpośredniej pracy z wątkami lub pulą wątków.
 
-Poniższa ilustracja przedstawia ogólny przegląd architektury programowania równoległego w .NET Framework:
+Poniższa ilustracja przedstawia ogólny przegląd architektury programowania równoległego w programie .NET.
 
 ![Architektura programowania równoległego .NET](./media/tpl-architecture.png)
 
@@ -36,7 +36,7 @@ Poniższa ilustracja przedstawia ogólny przegląd architektury programowania r�
 |[Wyrażenia lambda w PLINQ i TPL](lambda-expressions-in-plinq-and-tpl.md)|Zawiera krótki przegląd wyrażeń lambda w języku C# i Visual Basic i przedstawia, jak są używane w PLINQ i w bibliotece zadań równoległych.|
 |[Dalsze informacje](for-further-reading-parallel-programming.md)|Zawiera łącza do dodatkowych informacji i przykładowych zasobów na potrzeby programowania równoległego w programie .NET.|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przegląd Async](../async.md)
 - [Zarządzane wątki](../threading/index.md)

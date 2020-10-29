@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, pitfalls
 ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
-ms.openlocfilehash: b4d58734fba4b834d5f5819a6bf19da0b7b7e8db
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 012ac4078c1e2f17d6eef88ee295b11161a0e24a
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285316"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925275"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Potencjalna pułapek z PLINQ
 
@@ -62,7 +62,7 @@ a.AsParallel().Where(...).OrderBy(...).Select(...).ForAll(x => fs.Write(x));
 
 ## <a name="limit-calls-to-thread-safe-methods"></a>Ogranicz wywołania metod bezpiecznych dla wątków
 
-Większość metod statycznych w .NET Framework są bezpieczne dla wątków i może być wywoływana z wielu wątków jednocześnie. Jednak nawet w takich przypadkach Synchronizacja może prowadzić do znacznego spowolnienia w zapytaniu.
+Większość metod statycznych w .NET jest bezpieczna wątkowo i może być wywoływana z wielu wątków jednocześnie. Jednak nawet w takich przypadkach Synchronizacja może prowadzić do znacznego spowolnienia w zapytaniu.
 
 > [!NOTE]
 > Możesz przetestować ten sposób, wstawiając kilka wywołań do <xref:System.Console.WriteLine%2A> zapytania. Mimo że ta metoda jest używana w przykładach dokumentacji w celach demonstracyjnych, nie należy używać jej w zapytaniach PLINQ.
@@ -79,7 +79,7 @@ Ten sam problem odnosi się do <xref:System.Threading.Tasks.Parallel.ForEach%2A?
 
 ## <a name="be-aware-of-thread-affinity-issues"></a>Należy pamiętać o problemach z koligacją wątków
 
-Niektóre technologie, na przykład współdziałanie modelu COM dla składników Single-Threading Apartment (STA), Windows Forms i Windows Presentation Foundation (WPF), nakładają ograniczenia koligacji wątku, które wymagają kodu do uruchomienia w określonym wątku. Na przykład zarówno w Windows Forms, jak i WPF, dostęp do formantu można uzyskać tylko w wątku, w którym został utworzony. Jeśli spróbujesz uzyskać dostęp do udostępnionego stanu formantu Windows Forms w zapytaniu PLINQ, zostanie zgłoszony wyjątek w przypadku uruchamiania programu w debugerze. (To ustawienie może być wyłączone). Jeśli jednak zapytanie jest używane w wątku interfejsu użytkownika, można uzyskać dostęp do formantu z `foreach` pętli, która wylicza wyniki zapytania, ponieważ ten kod jest wykonywany tylko dla jednego wątku.
+Niektóre technologie, na przykład współdziałanie COM dla składników Single-Threaded Apartment (STA), Windows Forms i Windows Presentation Foundation (WPF), nakładają ograniczenia koligacji wątku, które wymagają kodu do uruchomienia w określonym wątku. Na przykład zarówno w Windows Forms, jak i WPF, dostęp do formantu można uzyskać tylko w wątku, w którym został utworzony. Jeśli spróbujesz uzyskać dostęp do udostępnionego stanu formantu Windows Forms w zapytaniu PLINQ, zostanie zgłoszony wyjątek w przypadku uruchamiania programu w debugerze. (To ustawienie może być wyłączone). Jeśli jednak zapytanie jest używane w wątku interfejsu użytkownika, można uzyskać dostęp do formantu z `foreach` pętli, która wylicza wyniki zapytania, ponieważ ten kod jest wykonywany tylko dla jednego wątku.
 
 ## <a name="dont-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Nie zakładaj, że iteracje ForEach, for i ForAll są zawsze wykonywane równolegle
 
@@ -121,6 +121,6 @@ W tym przykładzie Jedna iteracja ustawia zdarzenie, a wszystkie inne iteracje o
 
 W szczególności jedna iteracja pętli równoległej nigdy nie powinna czekać na kolejną iterację pętli, aby wykonać postęp. Jeśli pętla równoległa zdecyduje się na sekwencyjne planowanie iteracji, ale w kolejności odwrotnej, nastąpi zakleszczenie.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Równoległe LINQ (PLINQ)](introduction-to-plinq.md)

@@ -9,16 +9,16 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 968da880fc7e0e811f5e8712ccb43726426a019e
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: d735cb56c5914dd33ba694c95a8e92446ca47088
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720166"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925249"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programowanie asynchroniczne oparte na zadaniach
 
-Biblioteka zadań równoległych (TPL) jest oparta na koncepcji *zadania*, które reprezentuje operację asynchroniczną. Na kilka sposobów zadanie jest podobne do wątku lub <xref:System.Threading.ThreadPool> elementu pracy, ale na wyższym poziomie abstrakcji. Termin *równoległy zadania* odnosi się do co najmniej jednego niezależnego zadania uruchomionego współbieżnie. Zadania zapewniają dwie podstawowe korzyści:
+Biblioteka zadań równoległych (TPL) jest oparta na koncepcji *zadania* , które reprezentuje operację asynchroniczną. Na kilka sposobów zadanie jest podobne do wątku lub <xref:System.Threading.ThreadPool> elementu pracy, ale na wyższym poziomie abstrakcji. Termin *równoległy zadania* odnosi się do co najmniej jednego niezależnego zadania uruchomionego współbieżnie. Zadania zapewniają dwie podstawowe korzyści:
 
 - Efektywniejsze i bardziej skalowalne wykorzystanie zasobów systemowych.
 
@@ -28,7 +28,7 @@ Biblioteka zadań równoległych (TPL) jest oparta na koncepcji *zadania*, któr
 
      Zadania i środowisko zbudowane wokół nich zawierają bogaty zestaw interfejsów API, które obsługują oczekiwanie, anulowanie, kontynuację, niezawodną obsługę wyjątków, szczegółowe informacje o stanie, planowanie niestandardowe i nie tylko.
 
-Dla obu tych powodów w .NET Framework TPL jest preferowanym interfejsem API do pisania kodu wielowątkowego, asynchronicznego i równoległego.
+Z obu powodów TPL jest preferowanym interfejsem API do pisania kodu wielowątkowego, asynchronicznego i równoległego w programie .NET.
 
 ## <a name="creating-and-running-tasks-implicitly"></a>Tworzenie i uruchamianie zadań w sposób niejawny
 
@@ -94,39 +94,27 @@ Każde zadanie otrzymuje identyfikator w postaci liczby całkowitej, który jedn
 
 ## <a name="task-creation-options"></a>Opcje tworzenia zadań
 
-Większość interfejsów API, które tworzą zadania, zapewnia przeciążenia, które akceptują <xref:System.Threading.Tasks.TaskCreationOptions> parametr. Określając jedną z poniższych opcji, możesz wskazać harmonogramowi zadań, jak zaplanować zadanie w puli wątków. Poniższa tabela zawiera różne opcje tworzenia zadania.
+Większość interfejsów API, które tworzą zadania, zapewnia przeciążenia, które akceptują <xref:System.Threading.Tasks.TaskCreationOptions> parametr. Określając co najmniej jedną z tych opcji, można poinformować harmonogram zadań, jak zaplanować zadanie w puli wątków. Opcje można łączyć przy użyciu operacji bitowego **lub** bitowej.
 
-|<xref:System.Threading.Tasks.TaskCreationOptions> wartość parametru|Opis|
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-|<xref:System.Threading.Tasks.TaskCreationOptions.None>|Domyślna, gdy nie określono żadnej opcji. Harmonogram używa domyślnej heurystyki do zaplanowania zadania.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Określa, że zadanie powinno zostać zaplanowane tak, aby zadania utworzone wcześniej były wykonywane wcześniej, a zadania utworzone później były wykonywane później.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.LongRunning>|Określa, że zadanie reprezentuje operację długotrwałą.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|Określa, że zadanie powinno zostać utworzone jako dołączone zadanie podrzędne do bieżącego zadania, jeśli takie istnieje. Aby uzyskać więcej informacji, zobacz [dołączone i odłączone zadania podrzędne](attached-and-detached-child-tasks.md).|
-|<xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach>|Określa, że jeśli zadanie wewnętrzne określa `AttachedToParent` opcję, to zadanie nie stanie się dołączonym zadaniem podrzędnym.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.HideScheduler>|Określa, że harmonogram zadań dla zadań utworzonych przez wywoływanie metod, takich jak <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> lub <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> z konkretnego zadania, jest domyślnym harmonogramem, a nie harmonogramem, na którym uruchomiono to zadanie.|
-
-Opcje mogą być połączone za pomocą operacji bitowej **lub** . Poniższy przykład pokazuje zadanie zawierające <xref:System.Threading.Tasks.TaskCreationOptions.LongRunning> <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness> opcję i.
+Poniższy przykład pokazuje zadanie, które zawiera <xref:System.Threading.Tasks.TaskCreationOptions.LongRunning> <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness> Opcje i.
 
 [!code-csharp[TPL_TaskIntro#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#03)]
 [!code-vb[TPL_TaskIntro#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#03)]
 
 ## <a name="tasks-threads-and-culture"></a>Zadania, wątki i kultura
 
-Każdy wątek ma skojarzoną kulturę i kulturę interfejsu użytkownika, która jest zdefiniowana odpowiednio przy użyciu <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> właściwości i. Kultura wątku jest używana w takich operacjach jak formatowanie, analizowanie, sortowanie i Porównywanie ciągów. Kultura interfejsu użytkownika wątku jest używana podczas wyszukiwania zasobów. Zwykle, o ile nie zostanie określona kultura domyślna dla wszystkich wątków w domenie aplikacji przy użyciu <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> właściwości i, kultura <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> domyślna i kultury interfejsu użytkownika wątku jest definiowana przez kulturę systemu. Jeśli jawnie ustawisz kulturę wątku i uruchomisz nowy wątek, nowy wątek nie dziedziczy kultury wywołującego wątku; Zamiast tego, jego kultura jest domyślną kulturą systemu. Model programowania oparty na zadaniach dla aplikacji przeznaczonych dla wersji .NET Framework przed .NET Framework 4,6 przestrzegać tego rozwiązania.
+Każdy wątek ma skojarzoną kulturę i kulturę interfejsu użytkownika, które są <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> definiowane <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> odpowiednio przez właściwości i. Kultura wątku jest używana w takich operacjach jak formatowanie, analizowanie, sortowanie i Porównywanie ciągów. Kultura interfejsu użytkownika wątku jest używana podczas wyszukiwania zasobów.
 
-> [!IMPORTANT]
-> Należy zauważyć, że kultura wątku wywołującego jako część kontekstu zadania dotyczy aplikacji *przeznaczonych* dla .NET Framework 4,6, a nie aplikacji *uruchamianych w ramach* .NET Framework 4,6. Możesz wybrać określoną wersję .NET Framework podczas tworzenia projektu w programie Visual Studio, wybierając tę wersję z listy rozwijanej w górnej części okna dialogowego **Nowy projekt** lub poza programem Visual Studio, można użyć <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atrybutu. W przypadku aplikacji przeznaczonych dla wersji .NET Framework przed .NET Framework 4,6 lub nie przeznaczonych dla określonej wersji .NET Framework kultura zadania będzie nadal określana przez kulturę wątku, w którym działa.
+O ile nie zostanie określona kultura domyślna dla wszystkich wątków w domenie aplikacji przy użyciu <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> właściwości i, kultura domyślna i kultura interfejsu użytkownika wątku są zdefiniowane przez kulturę systemu. Jeśli jawnie ustawisz kulturę wątku i uruchomisz nowy wątek, nowy wątek nie dziedziczy kultury wywołującego wątku; Zamiast tego, jego kultura jest domyślną kulturą systemu. Jednak w programowaniu opartym na zadaniach zadania korzystają z kultury wywołującej wątku, nawet jeśli zadanie jest uruchamiane asynchronicznie w innym wątku.
 
-Począwszy od aplikacji przeznaczonych dla .NET Framework 4,6, kultura wątku wywołującego jest dziedziczona przez każde zadanie, nawet jeśli zadanie jest uruchamiane asynchronicznie w wątku puli wątków.
+Poniższy przykład przedstawia prostą ilustrację. Zmienia bieżącą kulturę aplikacji na francuski (Francja) (lub, jeśli francuski (Francja) jest już bieżącą kulturą, na angielski (Stany Zjednoczone)). Następnie wywołuje delegata o nazwie `formatDelegate` , która zwraca niektóre liczby sformatowane jako wartości walutowe w nowej kulturze. Czy delegat jest wywoływany przez zadanie synchronicznie, czy asynchronicznie, zadanie używa kultury wywołującego wątku.
 
-Poniższy przykład przedstawia prostą ilustrację. Używa <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atrybutu do .NET Framework 4,6 i zmienia bieżącą kulturę aplikacji na francuski (Francja) lub, jeśli francuski (Francja) jest już bieżącą kulturą, angielską (Stany Zjednoczone). Następnie wywołuje delegata o nazwie `formatDelegate` , która zwraca niektóre liczby sformatowane jako wartości walutowe w nowej kulturze. Należy zauważyć, że delegat jako zadanie synchronicznie lub asynchronicznie zwraca oczekiwany wynik, ponieważ kultura wątku wywołującego jest dziedziczona przez zadanie asynchroniczne.
+:::code language="csharp" source="snippets/cs/asyncculture1.cs" id="1":::
 
-[!code-csharp[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture1.cs#5)]
-[!code-vb[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture1.vb#5)]
+:::code language="vbnet" source="snippets/vb/asyncculture1.vb" id="1":::
 
-Jeśli używasz programu Visual Studio, możesz pominąć <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atrybut i zamiast tego wybrać .NET Framework 4,6 jako obiekt docelowy podczas tworzenia projektu w oknie dialogowym **Nowy projekt** .
-
-W przypadku danych wyjściowych, które odzwierciedlają zachowanie aplikacji, wersje docelowe .NET Framework przed .NET Framework 4,6, Usuń <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atrybut z kodu źródłowego. Dane wyjściowe będą odzwierciedlać konwencje formatowania domyślnej kultury systemowej, a nie kulturę wątku wywołującego.
+> [!NOTE]
+> W wersjach .NET Framework wcześniejszych niż .NET Framework 4,6 kultura zadania jest określana przez kulturę wątku, w którym jest *uruchomiona* , a nie kulturą *wątku wywołującego* . W przypadku zadań asynchronicznych oznacza to, że kultura używana przez zadanie może różnić się od kultury wywołującej wątku.
 
 Aby uzyskać więcej informacji na temat zadań i kultur asynchronicznych, zobacz sekcję "operacje dotyczące kultur i asynchronicznych operacji" w <xref:System.Globalization.CultureInfo> temacie.
 
@@ -150,7 +138,7 @@ Aby uzyskać więcej informacji, zobacz Tworzenie [łańcucha zadań przy użyci
 
 ## <a name="creating-detached-child-tasks"></a>Tworzenie odłączonych zadań podrzędnych
 
-Gdy kod użytkownika, który jest uruchomiony w zadaniu, tworzy nowe zadanie i nie określa <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> opcji, nowe zadanie nie jest zsynchronizowane z zadaniem nadrzędnym w żaden specjalny sposób. Ten typ zadania niezsynchronizowanego jest nazywany *odłączonym zadaniem zagnieżdżonym* lub *odłączonym zadaniem podrzędnym*. Poniższy przykład przedstawia zadanie, które tworzy jedno odłączone zadanie podrzędne.
+Gdy kod użytkownika, który jest uruchomiony w zadaniu, tworzy nowe zadanie i nie określa <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> opcji, nowe zadanie nie jest zsynchronizowane z zadaniem nadrzędnym w żaden specjalny sposób. Ten typ zadania niezsynchronizowanego jest nazywany *odłączonym zadaniem zagnieżdżonym* lub *odłączonym zadaniem podrzędnym* . Poniższy przykład przedstawia zadanie, które tworzy jedno odłączone zadanie podrzędne.
 
 [!code-csharp[TPL_TaskIntro#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#07)]
 [!code-vb[TPL_TaskIntro#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#07)]
@@ -288,7 +276,7 @@ Jeśli musisz dziedziczyć z <xref:System.Threading.Tasks.Task> lub <xref:System
 |[Równoległość danych](data-parallelism-task-parallel-library.md)|Opisuje sposób użycia <xref:System.Threading.Tasks.Parallel.For%2A> i <xref:System.Threading.Tasks.Parallel.ForEach%2A> do tworzenia pętli równoległych nad danymi.|
 |[Programowanie równoległe](index.md)|Węzeł najwyższego poziomu dla .NET Framework programowania równoległego.|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Programowanie równoległe](index.md)
 - [Przykłady programowania równoległego przy użyciu programu .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

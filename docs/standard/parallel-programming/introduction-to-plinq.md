@@ -1,6 +1,6 @@
 ---
 title: Wprowadzenie do PLINQ
-description: Dowiedz się, jak wykonywać zapytania równolegle przy użyciu PLINQ na platformie .NET. PLINQ to oparty na języku Parallel Language-Integrated Query (LINQ).
+description: Dowiedz się, jak wykonywać zapytania równolegle przy użyciu PLINQ na platformie .NET. PLINQ oznacza równoległe zapytanie Language-Integrated (LINQ).
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: 9dbc4fde3f72d01aee91978ed5cb0baf0895de26
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 37414c7963a3803518b41a5c6d262740313e2b37
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662462"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925353"
 ---
 # <a name="introduction-to-plinq"></a>Wprowadzenie do PLINQ
 
@@ -38,7 +38,7 @@ Pozostała część tego artykułu zawiera omówienie głównych klas PLINQ i om
 
 <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>Klasa uwidacznia prawie wszystkie funkcje PLINQ. I reszta <xref:System.Linq?displayProperty=nameWithType> typów przestrzeni nazw są kompilowane do zestawu System.Core.dll. Domyślne projekty C# i Visual Basic w programie Visual Studio odwołują się do zestawu i importują przestrzeń nazw.
 
-<xref:System.Linq.ParallelEnumerable>zawiera implementacje wszystkich standardowych operatorów zapytań, które są obsługiwane przez LINQ to Objects, chociaż nie podejmuje próby zrównoleglanie każdego z nich. Jeśli nie znasz programu LINQ, zobacz [Introduction to LINQ (C#)](../../csharp/programming-guide/concepts/linq/index.md) i [Introduction to LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).
+<xref:System.Linq.ParallelEnumerable> zawiera implementacje wszystkich standardowych operatorów zapytań, które są obsługiwane przez LINQ to Objects, chociaż nie podejmuje próby zrównoleglanie każdego z nich. Jeśli nie znasz programu LINQ, zobacz [Introduction to LINQ (C#)](../../csharp/programming-guide/concepts/linq/index.md) i [Introduction to LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).
 
 Oprócz standardowych operatorów zapytań <xref:System.Linq.ParallelEnumerable> Klasa zawiera zestaw metod, które umożliwiają zachowanie specyficzne dla wykonywania równoległego. Te metody specyficzne dla PLINQ są wymienione w poniższej tabeli.
 
@@ -53,7 +53,7 @@ Oprócz standardowych operatorów zapytań <xref:System.Linq.ParallelEnumerable>
 |<xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A>|Zawiera wskazówkę dotyczącą sposobu, w jaki PLINQ powinna, jeśli jest to możliwe, scalanie równoległych wyników z powrotem do jednej sekwencji w wątku zużywanym.|
 |<xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A>|Określa, czy PLINQ ma zrównoleglanie zapytanie, nawet gdy domyślne zachowanie będzie uruchamiane sekwencyjnie.|
 |<xref:System.Linq.ParallelEnumerable.ForAll%2A>|Metoda wyliczania wielowątkowego, która, w przeciwieństwie do iteracji wyników zapytania, umożliwia równoległe przetwarzanie wyników bez wcześniejszego scalania z powrotem do wątku odbiorcy.|
-|<xref:System.Linq.ParallelEnumerable.Aggregate%2A>występują|Przeciążenie, które jest unikatowe dla PLINQ i włącza agregację pośrednią względem partycji lokalnych wątków, oraz ostateczną funkcję agregacji, aby połączyć wyniki wszystkich partycji.|
+|<xref:System.Linq.ParallelEnumerable.Aggregate%2A> występują|Przeciążenie, które jest unikatowe dla PLINQ i włącza agregację pośrednią względem partycji lokalnych wątków, oraz ostateczną funkcję agregacji, aby połączyć wyniki wszystkich partycji.|
 
 ## <a name="the-opt-in-model"></a>Model zgody
 
@@ -79,7 +79,7 @@ W przypadkach, gdy zapytanie wykonuje znaczną ilość pracy niezwiązanej z obl
 
 ## <a name="ordered-versus-unordered-parallel-queries"></a>Uporządkowane i nieuporządkowane zapytania równoległe
 
-W niektórych zapytaniach operator zapytania musi generować wyniki, które zachowują kolejność sekwencji źródłowej. PLINQ zapewnia <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator do tego celu. <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>różni się od <xref:System.Linq.ParallelEnumerable.AsSequential%2A> . <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>Sekwencja jest nadal przetwarzana równolegle, ale jej wyniki są buforowane i sortowane. Ponieważ zachowanie kolejności zwykle wymaga dodatkowej pracy, <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> sekwencja może być przetwarzana wolniej niż domyślna <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> . Czy określona uporządkowana operacja równoległa jest szybsza niż sekwencyjna wersja operacji, zależy od wielu czynników.
+W niektórych zapytaniach operator zapytania musi generować wyniki, które zachowują kolejność sekwencji źródłowej. PLINQ zapewnia <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator do tego celu. <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> różni się od <xref:System.Linq.ParallelEnumerable.AsSequential%2A> . <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>Sekwencja jest nadal przetwarzana równolegle, ale jej wyniki są buforowane i sortowane. Ponieważ zachowanie kolejności zwykle wymaga dodatkowej pracy, <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> sekwencja może być przetwarzana wolniej niż domyślna <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> . Czy określona uporządkowana operacja równoległa jest szybsza niż sekwencyjna wersja operacji, zależy od wielu czynników.
 
 Poniższy przykład kodu pokazuje, jak zrezygnować z zachowania porządku.
 
@@ -98,7 +98,7 @@ Gdy zapytania PLINQ są wykonywane równolegle, jego wyniki z każdego wątku ro
 
 ## <a name="the-forall-operator"></a>Operator ForAll
 
-W sekwencyjnych zapytaniach LINQ wykonywanie jest odroczone do momentu wyliczenia zapytania w `foreach` `For Each` pętli (w Visual Basic) lub przez wywołanie metody takiej jak <xref:System.Linq.ParallelEnumerable.ToList%2A> , <xref:System.Linq.ParallelEnumerable.ToArray%2A> lub <xref:System.Linq.ParallelEnumerable.ToDictionary%2A> . W programie PLINQ można także użyć `foreach` do wykonania zapytania i iteracji przez wyniki. Jednak `foreach` samo nie działa równolegle i dlatego wymaga, aby dane wyjściowe ze wszystkich zadań równoległych były scalane z powrotem do wątku, w którym jest uruchomiona pętla. W programie PLINQ można użyć, `foreach` gdy należy zachować ostateczne porządkowanie wyników zapytania, a także za każdym razem, gdy przetwarzasz wyniki w sposób szeregowy, na przykład w przypadku wywoływania `Console.WriteLine` dla każdego elementu. Aby przyspieszyć wykonywanie zapytań, gdy zachowywanie kolejności nie jest wymagane i gdy przetwarzanie wyników może być równoległe, użyj metody, <xref:System.Linq.ParallelEnumerable.ForAll%2A> Aby wykonać zapytanie PLINQ. <xref:System.Linq.ParallelEnumerable.ForAll%2A>nie wykonuje tego końcowego kroku scalania. Poniższy przykład kodu pokazuje, jak używać <xref:System.Linq.ParallelEnumerable.ForAll%2A> metody. <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>jest używany w tym miejscu, ponieważ jest zoptymalizowany pod kątem wielu wątków, które dodają współbieżność bez próby usunięcia jakichkolwiek elementów.
+W sekwencyjnych zapytaniach LINQ wykonywanie jest odroczone do momentu wyliczenia zapytania w `foreach` `For Each` pętli (w Visual Basic) lub przez wywołanie metody takiej jak <xref:System.Linq.ParallelEnumerable.ToList%2A> , <xref:System.Linq.ParallelEnumerable.ToArray%2A> lub <xref:System.Linq.ParallelEnumerable.ToDictionary%2A> . W programie PLINQ można także użyć `foreach` do wykonania zapytania i iteracji przez wyniki. Jednak `foreach` samo nie działa równolegle i dlatego wymaga, aby dane wyjściowe ze wszystkich zadań równoległych były scalane z powrotem do wątku, w którym jest uruchomiona pętla. W programie PLINQ można użyć, `foreach` gdy należy zachować ostateczne porządkowanie wyników zapytania, a także za każdym razem, gdy przetwarzasz wyniki w sposób szeregowy, na przykład w przypadku wywoływania `Console.WriteLine` dla każdego elementu. Aby przyspieszyć wykonywanie zapytań, gdy zachowywanie kolejności nie jest wymagane i gdy przetwarzanie wyników może być równoległe, użyj metody, <xref:System.Linq.ParallelEnumerable.ForAll%2A> Aby wykonać zapytanie PLINQ. <xref:System.Linq.ParallelEnumerable.ForAll%2A> nie wykonuje tego końcowego kroku scalania. Poniższy przykład kodu pokazuje, jak używać <xref:System.Linq.ParallelEnumerable.ForAll%2A> metody. <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> jest używany w tym miejscu, ponieważ jest zoptymalizowany pod kątem wielu wątków, które dodają współbieżność bez próby usunięcia jakichkolwiek elementów.
 
 [!code-csharp[PLINQ#4](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinq2_cs.cs#4)]
 [!code-vb[PLINQ#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#4)]
@@ -109,7 +109,7 @@ Na poniższej ilustracji przedstawiono różnicę między `foreach` i <xref:Syst
 
 ## <a name="cancellation"></a>Anulowanie
 
-PLINQ jest zintegrowany z typami anulowania w .NET Framework 4. (Aby uzyskać więcej informacji, zobacz [Anulowanie w zarządzanych wątkach](../threading/cancellation-in-managed-threads.md).) W związku z tym, w przeciwieństwie do sekwencyjnych zapytań LINQ to Objects, można anulować zapytania PLINQ. Aby utworzyć zapytanie PLINQ z możliwością anulowania, użyj <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> operatora w zapytaniu i podaj <xref:System.Threading.CancellationToken> wystąpienie jako argument. Gdy <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> Właściwość w tokenie ma wartość true, PLINQ będzie zauważyć, Zatrzymaj przetwarzanie we wszystkich wątkach i zgłosić <xref:System.OperationCanceledException> .
+PLINQ jest zintegrowany z typami anulowania w programie .NET. (Aby uzyskać więcej informacji, zobacz [Anulowanie w zarządzanych wątkach](../threading/cancellation-in-managed-threads.md).) W związku z tym, w przeciwieństwie do sekwencyjnych zapytań LINQ to Objects, można anulować zapytania PLINQ. Aby utworzyć zapytanie PLINQ z możliwością anulowania, użyj <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> operatora w zapytaniu i podaj <xref:System.Threading.CancellationToken> wystąpienie jako argument. Gdy <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> Właściwość w tokenie ma wartość true, PLINQ będzie zauważyć, Zatrzymaj przetwarzanie we wszystkich wątkach i zgłosić <xref:System.OperationCanceledException> .
 
 Istnieje możliwość, że zapytanie PLINQ może nadal przetwarzać niektóre elementy po ustawieniu tokenu anulowania.
 
@@ -130,13 +130,13 @@ W niektórych przypadkach można poprawić wydajność zapytań, pisząc niestan
 [!code-csharp[PLINQ#2](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinq2_cs.cs#2)]
 [!code-vb[PLINQ#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq3.vb#2)]
 
-PLINQ obsługuje stałą liczbę partycji (mimo że dane mogą być dynamicznie przypisywane do tych partycji w czasie wykonywania równoważenia obciążenia). <xref:System.Threading.Tasks.Parallel.For%2A>i <xref:System.Threading.Tasks.Parallel.ForEach%2A> obsługują tylko partycjonowanie dynamiczne, co oznacza, że liczba partycji zmienia się w czasie wykonywania. Aby uzyskać więcej informacji, zobacz [niestandardowe partycje dla PLINQ i TPL](custom-partitioners-for-plinq-and-tpl.md).
+PLINQ obsługuje stałą liczbę partycji (mimo że dane mogą być dynamicznie przypisywane do tych partycji w czasie wykonywania równoważenia obciążenia). <xref:System.Threading.Tasks.Parallel.For%2A> i <xref:System.Threading.Tasks.Parallel.ForEach%2A> obsługują tylko partycjonowanie dynamiczne, co oznacza, że liczba partycji zmienia się w czasie wykonywania. Aby uzyskać więcej informacji, zobacz [niestandardowe partycje dla PLINQ i TPL](custom-partitioners-for-plinq-and-tpl.md).
 
 ## <a name="measuring-plinq-performance"></a>Mierzenie wydajności PLINQ
 
 W wielu przypadkach zapytanie może być równoległe, ale obciążenie związane z konfigurowaniem zapytania równoległego przewyższa uzyskane korzyści z wydajności. Jeśli zapytanie nie wykonuje dużo obliczeń lub źródło danych jest małe, zapytanie PLINQ może być wolniejsze niż sekwencyjne zapytanie LINQ to Objects. Można użyć analizatora wydajności równoległej w programie Visual Studio Team Server do porównania wydajności różnych zapytań, lokalizowania wąskich gardeł przetwarzania oraz określania, czy zapytanie działa równolegle, czy sekwencyjnie. Aby uzyskać więcej informacji, zobacz temat [Concurrency Visualizer](/visualstudio/profiling/concurrency-visualizer) i [instrukcje: mierzenie wydajności zapytań PLINQ](how-to-measure-plinq-query-performance.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Równoległe LINQ (PLINQ)](introduction-to-plinq.md)
 - [Ogólne informacje o przyspieszeniach w PLINQ](understanding-speedup-in-plinq.md)

@@ -4,12 +4,12 @@ description: Dowiedz się, jak przyciąć aplikacje samodzielne w celu zmniejsze
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 1ebcac51331407069e26b49e40bb6e071cefb752
-ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
+ms.openlocfilehash: bf38ffe4d47986ae78c6cf2b2e5ecb292411ba6c
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90770458"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925288"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Przycinanie samodzielnych wdrożeń i plików wykonywalnych
 
@@ -36,6 +36,39 @@ Gdy kod jest pośrednio odwołujący się do zestawu poprzez odbicie, można zap
 <ItemGroup>
     <TrimmerRootAssembly Include="System.Security" />
 </ItemGroup>
+```
+
+### <a name="support-for-ssl-certificates"></a>Obsługa certyfikatów SSL
+
+Jeśli aplikacja ładuje certyfikaty SSL, na przykład w aplikacji ASP.NET Core, należy się upewnić, że w przypadku przycinania nie można przystąpić do przycinania zestawów, które pomogą w załadowaniu certyfikatów SSL.
+
+Możemy zaktualizować nasz plik projektu, aby uwzględnić następujące ASP.NET Core 3,1:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>...</PropertyGroup>
+  <!--Include the following for .aspnetcore 3.1-->
+  <ItemGroup>
+    <TrimmerRootAssembly Include="System.Net" />
+    <TrimmerRootAssembly Include="System.Net.Security" />
+    <TrimmerRootAssembly Include="System.Security" />
+  </ItemGroup>
+  ...
+</Project>
+```
+
+Jeśli korzystamy z programu .NET 5,0, możemy zaktualizować nasz plik projektu, aby uwzględnić następujące elementy:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+ <PropertyGroup>...</PropertyGroup>
+ <!--Include the following for .net 5.0-->
+ <ItemGroup>
+    <TrimmerRootAssembly Include="System.Net.Security" />
+    <TrimmerRootAssembly Include="System.Security" />
+  </ItemGroup>
+  ...
+</Project>
 ```
 
 ## <a name="trim-your-app---cli"></a>Przytnij aplikację — interfejs wiersza polecenia
@@ -71,25 +104,25 @@ Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pom
 
 Program Visual Studio tworzy Profile publikowania wielokrotnego użytku, które kontrolują sposób publikowania aplikacji.
 
-01. W okienku **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt, który chcesz opublikować. Wybierz pozycję **Publikuj...**.
+01. W okienku **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt, który chcesz opublikować. Wybierz pozycję **Publikuj...** .
 
     :::image type="content" source="media/trim-self-contained/visual-studio-solution-explorer.png" alt-text="Eksplorator rozwiązań z menu po kliknięciu prawym przyciskiem myszy wyróżnianie opcji Publikuj.":::
 
     Jeśli nie masz jeszcze profilu publikowania, postępuj zgodnie z instrukcjami, aby utworzyć jeden, i wybierz typ docelowy **folderu** .
 
-01. Wybierz pozycję **Edytuj**.
+01. Wybierz pozycję **Edytuj** .
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Profil publikacji programu Visual Studio za pomocą przycisku Edytuj.":::
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Eksplorator rozwiązań z menu po kliknięciu prawym przyciskiem myszy wyróżnianie opcji Publikuj.":::
 
 01. W oknie dialogowym **Ustawienia profilu** ustaw następujące opcje:
 
-    - Ustaw **Tryb wdrożenia** na **własny**.
+    - Ustaw **Tryb wdrożenia** na **własny** .
     - Ustaw **docelowy środowisko uruchomieniowe** na platformę, w której chcesz publikować.
-    - Wybierz pozycję **Przytnij nieużywane zestawy (w wersji zapoznawczej)**.
+    - Wybierz pozycję **Przytnij nieużywane zestawy (w wersji zapoznawczej)** .
 
     Wybierz pozycję **Zapisz** , aby zapisać ustawienia i powrócić do okna dialogowego **Publikowanie** .
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Opcje okna dialogowego Ustawienia profilu z trybem wdrożenia, cel środowiska uruchomieniowego i nieużywane Zestawy przycinania.":::
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Eksplorator rozwiązań z menu po kliknięciu prawym przyciskiem myszy wyróżnianie opcji Publikuj.":::
 
 01. Wybierz pozycję **Publikuj** , aby opublikować aplikację przycięty.
 

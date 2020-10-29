@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - PLINQ queries, how to iterate directories
 ms.assetid: 354e8ce3-35c4-431c-99ca-7661d1f3901b
-ms.openlocfilehash: abf31ea69af6a85140efb783959a9a586ef6a59e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5033cc24fce5fc17a950e4797de1ef4071e2b98a
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278002"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925379"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a>Instrukcje: Iteracja katalogów plików przy użyciu technologii PLINQ
 
@@ -35,8 +35,8 @@ Drugie zapytanie używa <xref:System.IO.Directory.EnumerateDirectories%2A> metod
   
  W przypadku korzystania z programu <xref:System.IO.Directory.GetFiles%2A> upewnij się, że masz wystarczające uprawnienia do wszystkich katalogów w drzewie. W przeciwnym razie zostanie zgłoszony wyjątek i nie zostaną zwrócone żadne wyniki. W przypadku korzystania z programu <xref:System.IO.Directory.EnumerateDirectories%2A> w zapytaniu PLINQ problemy są obsługiwane w sposób ciągły, który umożliwia kontynuowanie iteracji. Jeśli kod musi obsługiwać wyjątki we/wy lub dostęp nieautoryzowany, należy wziąć pod uwagę podejście opisane w temacie [How to: Iterowanie katalogów plików z klasą równoległą](how-to-iterate-file-directories-with-the-parallel-class.md).  
   
- Jeśli opóźnienie operacji we/wy jest problemem, na przykład w przypadku wejścia/wyjścia plików przez sieć, należy rozważyć użycie jednej z asynchronicznych technik we/wy opisanych w [TPL i tradycyjnym .NET Framework programowaniu asynchronicznym](tpl-and-traditional-async-programming.md) oraz w tym [wpisie w blogu](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/).  
+ Jeśli opóźnienie operacji we/wy jest problemem, na przykład w przypadku wejścia/wyjścia plików przez sieć, należy rozważyć użycie jednej z asynchronicznych technik we/wy opisanych w [TPL i tradycyjnych programowaniu asynchronicznych platformy .NET](tpl-and-traditional-async-programming.md) i w tym [wpisie w blogu](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Równoległe LINQ (PLINQ)](introduction-to-plinq.md)

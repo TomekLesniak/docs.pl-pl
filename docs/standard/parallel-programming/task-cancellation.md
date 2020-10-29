@@ -10,15 +10,16 @@ helpviewer_keywords:
 - tasks, cancellation
 - asynchronous task cancellation
 ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
-ms.openlocfilehash: 1d9b7b35341961c27107f007e0eafa51ef49e232
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: dba2f2ad9733f8881276bdb2705a6c8457351f9c
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768667"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925301"
 ---
 # <a name="task-cancellation"></a>Anulowanie zadania
-<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>Klasy i <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> obsługują anulowanie przy użyciu tokenów anulowania w .NET Framework. Aby uzyskać więcej informacji, zobacz [Anulowanie w zarządzanych wątkach](../threading/cancellation-in-managed-threads.md). W klasach Task anulowanie pociąga za sobą współpracę pełnomocnika użytkownika, który reprezentuje możliwości anulowania operacji i kodu, który zażądał anulowania.  Pomyślne anulowanie obejmuje żądanie kodu wywołującego <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodę, a delegat użytkownika przerywa operację w odpowiednim czasie. Można zakończyć operację przy użyciu jednej z następujących opcji:  
+
+<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>Klasy i <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> obsługują anulowanie przy użyciu tokenów anulowania. Aby uzyskać więcej informacji, zobacz [Anulowanie w zarządzanych wątkach](../threading/cancellation-in-managed-threads.md). W klasach zadań anulowanie obejmuje współpracę między delegatem użytkownika, który reprezentuje operację do anulowania i kod, który zażądał anulowania. Pomyślne anulowanie obejmuje żądanie kodu wywołującego <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodę i delegata użytkownika kończącego operację w odpowiednim czasie. Można zakończyć operację przy użyciu jednej z następujących opcji:  
   
 - Powracając po prostu od pełnomocnika. W wielu scenariuszach jest to wystarczające. Jednak wystąpienie zadania, które zostało anulowane w ten sposób, przechodzi do <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> stanu, a nie do <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stanu.  
   
