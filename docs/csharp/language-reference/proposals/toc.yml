@@ -116,3 +116,5 @@
           href: ../../../../_csharplang/proposals/csharp-9.0/function-pointers.md
         - name: Pomijanie emitowania flagi localsinit
           href: ../../../../_csharplang/proposals/csharp-9.0/skip-localsinit.md
+        - name: Adnotacje parametrów typu nieograniczonego
+          href: ../../../../_csharplang/proposals/csharp-9.0/unconstrained-type-parameter-annotations.md
