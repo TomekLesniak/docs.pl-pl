@@ -395,7 +395,7 @@ items:
           - name: Omówienie
             href: code-analysis/overview.md
             displayName: 'code analysis, analyzers'
-          - name: Konfigurowanie
+          - name: Konfiguracja
             items:
               - name: Opcje ogólne
                 href: code-analysis/configuration-options.md
@@ -1524,6 +1524,8 @@ items:
             href: ../standard/attributes/retrieving-information-stored-in-attributes.md
       - name: Wybór między typami anonimowymi i krotkami
         href: ../standard/base-types/choosing-between-anonymous-and-tuple.md
+      - name: Pojęcia dotyczące aplikacji konsoli
+        href: ../standard/building-console-apps.md
   - name: Wstrzykiwanie zależności
     items:
       - name: Omówienie
