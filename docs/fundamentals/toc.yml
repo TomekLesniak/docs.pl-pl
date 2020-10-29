@@ -1560,6 +1560,8 @@ items:
         href: ../core/extensions/custom-logging-provider.md
       - name: Rejestrowanie o wysokiej wydajności
         href: ../core/extensions/high-performance-logging.md
+      - name: Formatowanie dziennika konsoli
+        href: ../core/extensions/console-log-formatter.md
   - name: HostBuilder (host ogólny)
     href: ../core/extensions/generic-host.md
   - name: Dostęp do danych
