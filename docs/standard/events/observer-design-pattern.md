@@ -11,18 +11,18 @@ helpviewer_keywords:
 - IObservable<T> interface
 - IObserver<T> interface
 - IObservable(Of T) interface
-- observer design pattern [.NET Framework]
+- observer design pattern [.NET]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 80dac36199dd13abeab295d4b53a52615e7ae625
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e1f8dad2c19d3e11281cda5ef749730c5c6334d7
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559164"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064070"
 ---
 # <a name="observer-design-pattern"></a>Wzorzec projektowy obserwatora
 
-Wzorzec projektowy obserwatora umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy. Jest to odpowiednie dla każdego scenariusza wymagającego powiadomień wypychanych. Wzorzec definiuje *dostawcę* (znanego również jako *temat* lub *zauważalny*) i zero, jeden lub więcej *obserwatorów*. Obserwatorzy rejestrują się u dostawcy i za każdym razem, gdy występuje wstępnie zdefiniowany warunek, zdarzenie lub zmiana stanu, dostawca automatycznie powiadamia o wszystkich Obserwatorach, wywołując jedną z metod. W przypadku tego wywołania metody dostawca może również podać informacje o bieżącym stanie dla obserwatorów. W .NET Framework Wzorzec projektowy obserwatora jest stosowany przez implementację rodzajowego <xref:System.IObservable%601?displayProperty=nameWithType> i <xref:System.IObserver%601?displayProperty=nameWithType> interfejsów. Parametr typu ogólnego reprezentuje typ, który zawiera informacje o powiadomieniach.
+Wzorzec projektowy obserwatora umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy. Jest to odpowiednie dla każdego scenariusza wymagającego powiadomień wypychanych. Wzorzec definiuje *dostawcę* (znanego również jako *temat* lub *zauważalny* ) i zero, jeden lub więcej *obserwatorów* . Obserwatorzy rejestrują się u dostawcy i za każdym razem, gdy występuje wstępnie zdefiniowany warunek, zdarzenie lub zmiana stanu, dostawca automatycznie powiadamia o wszystkich Obserwatorach, wywołując jedną z metod. W przypadku tego wywołania metody dostawca może również podać informacje o bieżącym stanie dla obserwatorów. W programie .NET Wzorzec projektowy obserwatora jest stosowany przez implementację rodzajowego <xref:System.IObservable%601?displayProperty=nameWithType> i <xref:System.IObserver%601?displayProperty=nameWithType> interfejsów. Parametr typu ogólnego reprezentuje typ, który zawiera informacje o powiadomieniach.
 
 ## <a name="applying-the-pattern"></a>Stosowanie wzorca
 

@@ -3,12 +3,12 @@ title: Przenoszenie z programu .NET Framework na platformę .NET Core
 description: Poznaj proces przenoszenia i odnajdywanie narzędzi, które mogą okazać się przydatne podczas przenoszenia projektu .NET Framework do programu .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: c206e56e095d1ca068fa2aa6f60e891895f7f999
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 00d6bb513a6bd8ee511b69c07272f605c39e5619
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888577"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063244"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Przegląd portów z .NET Framework do platformy .NET Core
 
@@ -65,7 +65,7 @@ Zalecamy użycie następującego procesu podczas przenoszenia projektu do progra
 
 1. Użyj [analizatora przenośności platformy .NET](../../standard/analyzers/portability-analyzer.md) do analizowania zestawów i sprawdź, czy są one przenośne do programu .NET Core.
 
-   Narzędzie analizatora przenośności platformy .NET analizuje skompilowane zestawy i generuje raport. Ten raport przedstawia podsumowanie wysokiego poziomu dotyczące przenoszenia i podział wszystkich używanych interfejsów API, które nie są dostępne w systemie NET Core. Korzystając z narzędzia, przesyłaj tylko poszczególne projekty, które są konwertowane, aby skoncentrować się na zmianach interfejsu API, które mogą być potrzebne. Wiele interfejsów API ma równoważną dostępność w programie .NET Core, do której chcesz się przełączyć.
+   Narzędzie analizatora przenośności platformy .NET analizuje skompilowane zestawy i generuje raport. Ten raport przedstawia podsumowanie wysokiego poziomu dotyczące przenoszenia i podział wszystkich używanych interfejsów API, które nie są dostępne w programie .NET Core. Korzystając z narzędzia, przesyłaj tylko poszczególne projekty, które są konwertowane, aby skoncentrować się na zmianach interfejsu API, które mogą być potrzebne. Wiele interfejsów API ma równoważną dostępność w programie .NET Core, do której chcesz się przełączyć.
 
    Podczas odczytywania raportów wygenerowanych przez analizatora ważne informacje to rzeczywiste interfejsy API, które są używane, a nie musi to być procent obsługi platformy docelowej. Wiele interfejsów API ma równoważne opcje w .NET Standard/Core i dlatego zrozumienie scenariuszy, w których biblioteka lub aplikacja potrzebuje interfejsu API, aby pomóc w ustaleniu implikacji przenoszenia.
 
@@ -115,7 +115,7 @@ Zalecamy użycie następującego procesu podczas przenoszenia projektu do progra
 > [Analizowanie zależności](third-party-deps.md) 
 >  [Pakowanie pakietu NuGet](../deploying/creating-nuget-packages.md)
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [ASP.NET Core ASP.NET migracji](/aspnet/core/migration/proper-to-2x)
 - [Migrowanie aplikacji WPF do programu .NET Core](/dotnet/desktop/wpf/migration/convert-project-from-net-framework)

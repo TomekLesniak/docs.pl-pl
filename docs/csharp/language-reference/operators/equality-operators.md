@@ -1,7 +1,7 @@
 ---
 title: Operatory równości — odwołanie w C#
 description: Dowiedz się więcej na temat operatorów porównania równości języka C# i równości typów języka C#.
-ms.date: 06/26/2019
+ms.date: 10/30/2020
 author: pkulikov
 f1_keywords:
 - ==_CSharpKeyword
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 33215e2440b14fb888a6f0df5c220c891ebed0e2
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 39461157c33fea0effb5c8808ded1c9981900e17
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063097"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063218"
 ---
 # <a name="equality-operators-c-reference"></a>Operatory równości (odwołanie w C#)
 
@@ -47,11 +47,19 @@ Począwszy od języka C# 7,3 `==` Operatory i `!=` są obsługiwane przez [krotk
 
 ### <a name="reference-types-equality"></a>Równość typów referencyjnych
 
-Domyślnie dwa operandy typu odwołania są równe, jeśli odwołują się do tego samego obiektu:
+Domyślnie dwa operandy typu odwołania, które nie są rekordami, są równe, jeśli odwołują się do tego samego obiektu:
 
 [!code-csharp[reference type equality](snippets/shared/EqualityOperators.cs#ReferenceTypesEquality)]
 
 Jak pokazano na przykładzie, zdefiniowane przez użytkownika typy odwołań domyślnie obsługują `==` operatora. Jednak typ referencyjny może przeciążać `==` operator. Jeśli typ referencyjny przeciąża `==` operatora, użyj <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> metody, aby sprawdzić, czy dwa odwołania tego typu odwołują się do tego samego obiektu.
+
+### <a name="record-types-equality"></a>Równość typów rekordów
+
+W języku C# 9,0 i nowszych [typy rekordów](../../whats-new/csharp-9.md#record-types) obsługują `==` `!=` Operatory i, które domyślnie udostępniają semantykę równości wartości. Oznacza to, że dwa operandy rekordu są równe, gdy oba z nich są `null` lub odpowiadające wartości wszystkich pól i właściwości zaimplementowane domyślnie są równe.
+
+:::code language="csharp" source="snippets/shared/EqualityOperators.cs" id="RecordTypesEquality":::
+
+Jak pokazano w powyższym przykładzie, w przypadku odwołań nienależących do rekordów, ich wartości odniesienia są porównywane, a nie wystąpienia przywoływane.
 
 ### <a name="string-equality"></a>Równość ciągów
 
@@ -85,11 +93,19 @@ Poniższy przykład ilustruje użycie `!=` operatora:
 
 Typ zdefiniowany przez użytkownika może [przeciążać](operator-overloading.md) `==` `!=` Operatory i. Jeśli typ przeciąża jeden z dwóch operatorów, musi on również przeciążać pozostałe.
 
+Typ rekordu nie może jawnie przeciążać `==` `!=` operatorów i. Jeśli musisz zmienić zachowanie `==` `!=` operatorów i dla typu rekordu `T` , zaimplementuj <xref:System.IEquatable%601.Equals%2A?displayProperty=nameWithType> metodę następującym podpisem:
+
+```csharp
+public virtual bool Equals(T? other);
+```
+
 ## <a name="c-language-specification"></a>specyfikacja języka C#
 
 Aby uzyskać więcej informacji, zobacz sekcję [Operatory relacyjne i testowe typu](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators) w [specyfikacji języka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Zobacz także
+Aby uzyskać więcej informacji na temat równości typów rekordów, zobacz sekcję z [członkami równości](~/_csharplang/proposals/csharp-9.0/records.md#equality-members) w temacie [Records propozycja funkcji](~/_csharplang/proposals/csharp-9.0/records.md).
+
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

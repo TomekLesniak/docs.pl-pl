@@ -6,19 +6,19 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- time zones [.NET Framework], local
+- time zones [.NET], local
 - predefined time zones
 - UTC times, predefined
 - local time zone access
-- time zones [.NET Framework], retrieving
-- time zones [.NET Framework], UTC
+- time zones [.NET], retrieving
+- time zones [.NET], UTC
 ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
-ms.openlocfilehash: ebb07800b2a35f4faf312dc55b8c5679079b4b68
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 598cd631fab1ddc115bc6153580351b1dc14d5bf
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291412"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063888"
 ---
 # <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Instrukcje: Uzyskiwanie dostępu do wstępnie zdefiniowanych obiektów lokalnej strefy czasowej i strefy czasowej UTC
 
@@ -51,7 +51,7 @@ Ten przykład wymaga:
 
 - Że <xref:System> przestrzeń nazw ma zostać zaimportowana przy użyciu `using` instrukcji (wymaganej w kodzie C#).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Daty, godziny i strefy czasowe](index.md)
 - [Znajdowanie stref czasowych zdefiniowanych w systemie lokalnym](finding-the-time-zones-on-local-system.md)

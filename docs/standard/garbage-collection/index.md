@@ -6,7 +6,7 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - memory, garbage collection
 - garbage collection, automatic memory management
-- GC [.NET Framework]
+- GC [.NET]
 - memory, allocating
 - common language runtime, garbage collection
 - garbage collector
@@ -19,12 +19,12 @@ helpviewer_keywords:
 - runtime, garbage collection
 - garbage collection, about
 ms.assetid: 22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9
-ms.openlocfilehash: dde0012ff7233eb7ee13efab1931f129b0eae276
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 39b5bf62935054bd4b9be2d228cc42202aa89144
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662488"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063192"
 ---
 # <a name="garbage-collection"></a>Wyrzucanie elementów bezużytecznych
 
@@ -46,7 +46,7 @@ ms.locfileid: "84662488"
 |[Monitorowanie zasobów domen aplikacji](app-domain-resource-monitoring.md)|Opisuje, jak monitorować wykorzystanie procesora i pamięci przez domenę aplikacji.|  
 |[Słabe odwołania](weak-references.md)|Opisuje funkcje, które pozwalają modułowi zbierającemu elementy bezużyteczne na zbieranie obiektu, wciąż zezwalając aplikacjom na dostęp do tego obiektu.|  
   
-## <a name="reference"></a>Dokumentacja
+## <a name="reference"></a>Odwołanie
 
 - <xref:System.GC?displayProperty=nameWithType>  
 - <xref:System.GCCollectionMode?displayProperty=nameWithType>  
@@ -57,6 +57,6 @@ ms.locfileid: "84662488"
 - <xref:System.Object.Finalize%2A?displayProperty=nameWithType>  
 - <xref:System.IDisposable?displayProperty=nameWithType>  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Oczyszczanie zasobów niezarządzanych](unmanaged.md)

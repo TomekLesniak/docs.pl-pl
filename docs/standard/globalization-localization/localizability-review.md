@@ -7,21 +7,21 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - world-ready applications, localizability
-- application development [.NET Framework], localization
-- localizability [.NET Framework]
-- international applications [.NET Framework], localizability
-- globalization [.NET Framework], localizability
+- application development [.NET], localization
+- localizability [.NET]
+- international applications [.NET], localizability
+- globalization [.NET], localizability
 - culture, localizability
-- localization [.NET Framework], localizability
+- localization [.NET], localizability
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-ms.openlocfilehash: ef23cff2416792f13fda04dbe9beb34cbacfd7ea
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6aa0588ea4baa00be476a05c335cf2abaa22aab4
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288280"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064161"
 ---
 # <a name="localizability-review"></a>Sprawdzenie możliwości lokalizacji
 
@@ -45,7 +45,7 @@ Jeśli aplikacja została zaprojektowana i opracowana z myślą o lokalizacji, a
 
 Platforma .NET nie zapewnia programistycznej pomocy technicznej w wielu obszarach, które różnią się w zależności od kultury. W większości przypadków należy napisać niestandardowy kod do obsługi obszarów funkcji, takich jak następujące:
 
-- Addresses (Adresy)
+- Adresy
 
 - Numery telefonów
 
@@ -77,9 +77,9 @@ Przed zlokalizowaniem aplikacji należy ją przetestować przy użyciu danych mi
 
 Jeśli zastosowano zalecenia dotyczące globalizacji podczas tworzenia aplikacji, obsługiwane są funkcje zależne od kultury i zidentyfikowane i rozwiązane z problemami z lokalizacją, które powstały podczas testowania, można przejść do następnego kroku, [lokalizacji](localization.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Globalizacja i lokalizacja](index.md)
-- [Lokalizacja](localization.md)
+- [Localization](localization.md)
 - [Globalizacja](globalization.md)
 - [Zasoby w aplikacjach klasycznych](../../framework/resources/index.md)

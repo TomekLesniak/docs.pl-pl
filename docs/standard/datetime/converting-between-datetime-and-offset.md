@@ -8,28 +8,28 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - DateTime structure, converting
-- time zones [.NET Framework], conversions
+- time zones [.NET], conversions
 - UTC times, converting
 - DateTimeOffset structure, converting
 - converting DateTimeOffset and DateTime values
-- dates [.NET Framework], converting
+- dates [.NET], converting
 - converting times
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-ms.openlocfilehash: 86f2c982d7f87e83102933d1de73d6e13086dc87
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: cccfa37663e5a046b08f70a89ebb7f3566486139
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924906"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063849"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Konwertowanie pomiędzy DateTime i DateTimeOffset
 
 Chociaż <xref:System.DateTimeOffset> Struktura zapewnia większy stopień świadomości strefy czasowej niż <xref:System.DateTime> Struktura, <xref:System.DateTime> Parametry są najczęściej używane w wywołaniach metod. Z tego powodu możliwość konwersji <xref:System.DateTimeOffset> wartości na <xref:System.DateTime> wartości i na odwrót jest szczególnie ważna. W tym temacie pokazano, jak wykonać te konwersje w taki sposób, że możliwie jak najwięcej informacji o strefie czasowej.
 
 > [!NOTE]
-> Zarówno, <xref:System.DateTime> jak i <xref:System.DateTimeOffset> typy mają pewne ograniczenia w przypadku reprezentowania czasu w strefach czasowych. Wraz z jego <xref:System.DateTime.Kind%2A> właściwością <xref:System.DateTime> może odzwierciedlać tylko uniwersalny czas koordynowany (UTC) i lokalną strefę czasową systemu. <xref:System.DateTimeOffset>odzwierciedla przesunięcie czasu od UTC, ale nie odzwierciedla rzeczywistej strefy czasowej, do której należy to przesunięcie. Aby uzyskać szczegółowe informacje o wartościach czasowych i obsłudze stref czasowych, zobacz [Wybieranie między datami DateTime, DateTimeOffset, TimeSpan i TimeZoneInfo](choosing-between-datetime.md).
+> Zarówno, <xref:System.DateTime> jak i <xref:System.DateTimeOffset> typy mają pewne ograniczenia w przypadku reprezentowania czasu w strefach czasowych. Wraz z jego <xref:System.DateTime.Kind%2A> właściwością <xref:System.DateTime> może odzwierciedlać tylko uniwersalny czas koordynowany (UTC) i lokalną strefę czasową systemu. <xref:System.DateTimeOffset> odzwierciedla przesunięcie czasu od UTC, ale nie odzwierciedla rzeczywistej strefy czasowej, do której należy to przesunięcie. Aby uzyskać szczegółowe informacje o wartościach czasowych i obsłudze stref czasowych, zobacz [Wybieranie między datami DateTime, DateTimeOffset, TimeSpan i TimeZoneInfo](choosing-between-datetime.md).
 
 ## <a name="conversions-from-datetime-to-datetimeoffset"></a>Konwersje od daty/godziny do DateTimeOffset
 
@@ -128,6 +128,6 @@ Należy zauważyć, że ten kod tworzy dwa założenia, które w zależności od
 
 - Przyjęto założenie, że data i godzina, o której przesunięcie jest równe, dla lokalnej strefy czasowej reprezentuje lokalną strefę czasową. Ponieważ wartości daty i godziny są odłączone od oryginalnej strefy czasowej, może to nie być przypadek; Data i godzina mogą pochodzić z innej strefy czasowej z tym samym przesunięciem.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Daty, godziny i strefy czasowe](index.md)

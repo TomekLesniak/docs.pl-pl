@@ -6,20 +6,20 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- times [.NET Framework], arithmetic operations
-- dates [.NET Framework], arithmetic operations
-- time zones [.NET Framework], arithmetic operations
-- arithmetic operations [.NET Framework], dates and times
-- dates [.NET Framework], comparing
+- times [.NET], arithmetic operations
+- dates [.NET], arithmetic operations
+- time zones [.NET], arithmetic operations
+- arithmetic operations [.NET], dates and times
+- dates [.NET], comparing
 - DateTime structure, arithmetic operations
 - DateTimeOffset structure, arithmetic operations
 ms.assetid: 87c7ddf2-f15e-48af-8602-b3642237e6d0
-ms.openlocfilehash: c212397f99bd09195f298d7d704c879705b14f02
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8350454c0570bcf0ba82fa5d83639da0433c785c
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281547"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063563"
 ---
 # <a name="performing-arithmetic-operations-with-dates-and-times"></a>Wykonywanie operacji arytmetycznych na wartościach dat i godzin
 
@@ -34,7 +34,7 @@ Chociaż <xref:System.DateTime> <xref:System.DateTimeOffset> struktury i zapewni
 
 <xref:System.DateTime.CompareTo%28System.DateTime%29>Metoda zgłasza, że czas lokalny jest wcześniejszy niż czas UTC, a operacja odejmowania wskazuje, że różnica między czasem UTC a czasem lokalnym dla systemu w strefie czasowej pacyficznego w Stanach Zjednoczonych w warstwie Standardowa wynosi siedem godzin. Jednak ponieważ te dwie wartości zapewniają różne reprezentacje pojedynczego punktu w czasie, w tym przypadku jest jasne, że przedział czasu jest całkowicie przypisany do przesunięcia lokalnej strefy czasowej z czasu UTC.
 
-Bardziej ogólnie rzecz biorąc, <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Właściwość nie wpływa na wyniki zwracane przez <xref:System.DateTime.Kind> metody porównania i arytmetyczne (w miarę jak porównanie dwóch identycznych punktów w czasie wskazuje), chociaż może to wpływać na interpretację tych wyników. Na przykład:
+Bardziej ogólnie rzecz biorąc, <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Właściwość nie wpływa na wyniki zwracane przez <xref:System.DateTime.Kind> metody porównania i arytmetyczne (w miarę jak porównanie dwóch identycznych punktów w czasie wskazuje), chociaż może to wpływać na interpretację tych wyników. Przykład:
 
 - Wynik operacji arytmetycznych na dwóch wartościach daty i godziny, których <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> właściwości są równe <xref:System.DateTimeKind> , odzwierciedla rzeczywiste przedział czasu między tymi dwiema wartościami. Podobnie porównanie dwóch takich wartości daty i godziny dokładnie odzwierciedla relacje między nimi.
 
@@ -68,7 +68,7 @@ Aby zilustrować, przejście do czasu letniego w środkowej strefie czasowej w s
 
 ## <a name="arithmetic-operations-with-times-in-time-zones"></a>Operacje arytmetyczne z czasami w strefach czasowych
 
-<xref:System.TimeZoneInfo>Klasa zawiera szereg metod konwersji, które automatycznie stosują korekty podczas konwertowania czasu z jednej strefy czasowej na inną. Należą do nich między innymi:
+<xref:System.TimeZoneInfo>Klasa zawiera szereg metod konwersji, które automatycznie stosują korekty podczas konwertowania czasu z jednej strefy czasowej na inną. Należą do nich:
 
 - <xref:System.TimeZoneInfo.ConvertTime%2A>Metody i <xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A> , które konwertują czasy między dowolnymi dwiema strefami czasowymi.
 
@@ -83,7 +83,7 @@ Na przykład poniższy kod jest podobny do poprzedniego kodu, który dodał dwie
 [!code-csharp[System.DateTimeOffset.Conceptual#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual5.cs#5)]
 [!code-vb[System.DateTimeOffset.Conceptual#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual5.vb#5)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Daty, godziny i strefy czasowe](index.md)
 - [Instrukcje: Używanie stref czasowych w arytmetyce wartości daty i godziny](use-time-zones-in-arithmetic.md)

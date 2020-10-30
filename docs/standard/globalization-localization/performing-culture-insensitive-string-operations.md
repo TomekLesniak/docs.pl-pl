@@ -11,17 +11,18 @@ helpviewer_keywords:
 - culture, custom case mappings
 - culture-insensitive string operations, method overloads
 ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
-ms.openlocfilehash: 79ff899e2964ae2c1e90b7178616c612dddf6d86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0f7e8dde395feb548e6808547a223a3fa8855561
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287509"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063914"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Wykonywanie operacji na ciągach niewrażliwych na kulturę
-Większość .NET Framework metod, które wykonują operacje na ciągach zależnych od kultury, domyślnie udostępnia przeciążenia metod, które umożliwiają jawne określenie kultury do użycia przez przekazanie <xref:System.Globalization.CultureInfo> parametru. Te przeciążenia pozwalają wyeliminować wahania kulturowe w odniesieniu do mapowań i reguł sortowania, a następnie zagwarantować wyniki niewrażliwe na kulturę.  
+
+Większość metod .NET, które wykonują operacje na ciągach zależnych od kultury, domyślnie udostępnia przeciążenia metod, które umożliwiają jawne określanie kultury do użycia przez przekazanie <xref:System.Globalization.CultureInfo> parametru. Te przeciążenia pozwalają wyeliminować wahania kulturowe w odniesieniu do mapowań i reguł sortowania, a następnie zagwarantować wyniki niewrażliwe na kulturę.  
   
- Ta sekcja zawiera następujące tematy przedstawiające sposób wykonywania operacji na ciągach niewrażliwych na kulturę przy użyciu metod .NET Framework, które domyślnie są zależne od kultury.  
+ Ta sekcja zawiera następujące artykuły, które przedstawiają sposób wykonywania operacji na ciągach bez uwzględniania kultur przy użyciu metod .NET, które są domyślnie zależne od kultury.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
  [Wykonywanie niezależnych od kultury porównań ciągów](performing-culture-insensitive-string-comparisons.md)  
@@ -40,7 +41,7 @@ Większość .NET Framework metod, które wykonują operacje na ciągach zależn
  [Operacje na ciągach nieuwzględniających kultur](culture-insensitive-string-operations.md)  
  W tym artykule opisano, dlaczego należy pamiętać o kulturze podczas wykonywania operacji na ciągach i przedstawiono wskazówki dotyczące sytuacji, w których należy wykonać operacje zależne od kultury i kiedy wykonywać operacje niewrażliwe na kulturę.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Sortowanie tabel wag (dla platformy .NET w systemach Windows)](https://www.microsoft.com/download/details.aspx?id=10921)
 - [Domyślna tabela elementów sortowania Unicode (dla platformy .NET Core w systemie Linux i macOS)](https://www.unicode.org/Public/UCA/latest/allkeys.txt)

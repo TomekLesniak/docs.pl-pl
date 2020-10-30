@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: dee5a4b54806bdadc18d759c5df7016da060fd75
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 7c4a61c1e5e735313a355bcab348fd6ef58a8686
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662852"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93062974"
 ---
 # <a name="garbage-collection-and-performance"></a>Odzyskiwanie pamięci i wydajność
 
@@ -24,7 +24,7 @@ W poniższych sekcjach opisano narzędzia, które są dostępne do badania probl
 
 ### <a name="memory-performance-counters"></a>Liczniki wydajności pamięci
 
-Liczników wydajności można używać do zbierania danych wydajności. Aby uzyskać instrukcje, zobacz [profilowanie środowiska uruchomieniowego](../../framework/debug-trace-profile/runtime-profiling.md). Kategoria pamięci środowiska CLR platformy .NET liczników wydajności, zgodnie z opisem w [licznikach wydajności w .NET Framework](../../framework/debug-trace-profile/performance-counters.md), zawiera informacje na temat modułu wyrzucania elementów bezużytecznych.
+Liczników wydajności można używać do zbierania danych wydajności. Aby uzyskać instrukcje, zobacz [profilowanie środowiska uruchomieniowego](../../framework/debug-trace-profile/runtime-profiling.md). Kategoria pamięci środowiska CLR platformy .NET liczników wydajności, zgodnie z opisem w [licznikach wydajności w programie .NET](../../framework/debug-trace-profile/performance-counters.md), zawiera informacje dotyczące modułu wyrzucania elementów bezużytecznych.
 
 ### <a name="debugging-with-sos"></a>Debugowanie za pomocą SOS
 
@@ -34,7 +34,7 @@ Aby zainstalować program WinDbg, zainstaluj narzędzia debugowania dla systemu 
 
 ### <a name="garbage-collection-etw-events"></a>Zdarzenia ETW odzyskiwania pamięci
 
-Śledzenie zdarzeń systemu Windows (ETW) to system śledzenia, który uzupełnia profilowanie i obsługę debugowania zapewniane przez .NET Framework. Począwszy od .NET Framework 4, [zdarzenia ETW do wyrzucania elementów bezużytecznych](../../framework/performance/garbage-collection-etw-events.md) przechwytują przydatne informacje na potrzeby analizowania zarządzanego sterty z punktu widzenia statystycznego. Na przykład `GCStart_V1` zdarzenie, które jest zgłaszane, gdy zostanie przeprowadzone wyrzucanie elementów bezużytecznych, zawiera następujące informacje:
+Śledzenie zdarzeń systemu Windows (ETW) to system śledzenia uzupełniający profilowanie i obsługę debugowania udostępniane przez platformę .NET. Począwszy od .NET Framework 4, [zdarzenia ETW do wyrzucania elementów bezużytecznych](../../framework/performance/garbage-collection-etw-events.md) przechwytują przydatne informacje na potrzeby analizowania zarządzanego sterty z punktu widzenia statystycznego. Na przykład `GCStart_V1` zdarzenie, które jest zgłaszane, gdy zostanie przeprowadzone wyrzucanie elementów bezużytecznych, zawiera następujące informacje:
 
 - Które Generowanie obiektów jest zbierane.
 
@@ -182,7 +182,7 @@ Generacja 0 może mieć większą liczbę obiektów w systemie 64-bitowym, szcze
 
 Użycie procesora CPU będzie wysokie podczas wyrzucania elementów bezużytecznych. Jeśli w wyrzucaniu elementów bezużytecznych jest dużo czasu procesu, liczba kolekcji jest zbyt częste lub kolekcja jest zbyt długa. Zwiększona szybkość alokacji obiektów na stercie zarządzanym powoduje częstsze wyrzucanie elementów bezużytecznych. Zmniejszenie szybkości alokacji zmniejsza częstotliwość wyrzucania elementów bezużytecznych.
 
-Stawki przydziału można monitorować przy użyciu `Allocated Bytes/second` licznika wydajności. Aby uzyskać więcej informacji, zobacz [liczniki wydajności w .NET Framework](../../framework/debug-trace-profile/performance-counters.md).
+Stawki przydziału można monitorować przy użyciu `Allocated Bytes/second` licznika wydajności. Aby uzyskać więcej informacji, zobacz [liczniki wydajności w programie .NET](../../framework/debug-trace-profile/performance-counters.md).
 
 Czas trwania kolekcji jest przede wszystkim czynnikiem liczby obiektów, które przeżyły po alokacji. Moduł wyrzucania elementów bezużytecznych musi przekroczyć dużą ilość pamięci, jeśli wiele obiektów pozostanie do zebrania. Prace do kompaktowania pozostałego czasu są czasochłonne. Aby określić liczbę obiektów obsłużonych podczas zbierania, należy ustawić punkt przerwania w debugerze na końcu wyrzucania elementów bezużytecznych dla określonej generacji.
 
@@ -230,7 +230,7 @@ Poniższa procedura opisuje, jak ustawić punkt przerwania, aby można było zmi
 
   To polecenie wymusza przerwanie, jeśli **RestartEE** jest wykonywane po odbraniu obiektów generacji 2 do wyrzucania elementów bezużytecznych.
 
-  W wyrzucaniu elementów bezużytecznych serwera tylko jedno wywołanie wątku **RestartEE**, więc punkt przerwania wystąpi tylko raz podczas wyrzucania elementów bezużytecznych generacji 2.
+  W wyrzucaniu elementów bezużytecznych serwera tylko jedno wywołanie wątku **RestartEE** , więc punkt przerwania wystąpi tylko raz podczas wyrzucania elementów bezużytecznych generacji 2.
 
 ## <a name="performance-check-procedures"></a>Procedury sprawdzania wydajności
 
@@ -272,9 +272,9 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
 - Zapoznaj się z poniższymi dwoma licznikami wydajności pamięci:
 
-  - **Czas (%) w usłudze GC**. Wyświetla procent czasu, który upłynął podczas wykonywania wyrzucania elementów bezużytecznych po ostatnim cyklu wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy moduł wyrzucania elementów bezużytecznych poświęca zbyt dużo czasu na udostępnienie zarządzanej przestrzeni sterty. Jeśli czas spędzony na wyrzucaniu elementów bezużytecznych jest stosunkowo niski, może to wskazywać na problem z zasobem poza zarządzaną stertą. Ten licznik może nie być dokładny, gdy jest wykorzystywane współbieżne lub w tle odzyskiwanie pamięci.
+  - **Czas (%) w usłudze GC** . Wyświetla procent czasu, który upłynął podczas wykonywania wyrzucania elementów bezużytecznych po ostatnim cyklu wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy moduł wyrzucania elementów bezużytecznych poświęca zbyt dużo czasu na udostępnienie zarządzanej przestrzeni sterty. Jeśli czas spędzony na wyrzucaniu elementów bezużytecznych jest stosunkowo niski, może to wskazywać na problem z zasobem poza zarządzaną stertą. Ten licznik może nie być dokładny, gdy jest wykorzystywane współbieżne lub w tle odzyskiwanie pamięci.
 
-  - Liczba **bajtów zadeklarowanych łącznie**. Wyświetla ilość pamięci wirtualnej aktualnie zatwierdzonej przez moduł wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy pamięć wykorzystywana przez moduł wyrzucania elementów bezużytecznych jest nadmierną częścią pamięci używanej przez aplikację.
+  - Liczba **bajtów zadeklarowanych łącznie** . Wyświetla ilość pamięci wirtualnej aktualnie zatwierdzonej przez moduł wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy pamięć wykorzystywana przez moduł wyrzucania elementów bezużytecznych jest nadmierną częścią pamięci używanej przez aplikację.
 
   Większość liczników wydajności pamięci jest aktualizowanych na końcu każdego wyrzucania elementów bezużytecznych. W związku z tym mogą nie odzwierciedlać bieżących warunków, o których chcesz uzyskać informacje.
 
@@ -282,7 +282,7 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
 ### <a name="to-determine-whether-the-out-of-memory-exception-is-managed"></a>Aby określić, czy wyjątek braku pamięci jest zarządzany
 
-1. W debugerze WinDbg lub Visual Studio z załadowanym rozszerzeniem debuggera SOS wpisz polecenie Print Exception (**PE**):
+1. W debugerze WinDbg lub Visual Studio z załadowanym rozszerzeniem debuggera SOS wpisz polecenie Print Exception ( **PE** ):
 
     **! PE**
 
@@ -352,9 +352,9 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
 1. Uruchom Menedżera zadań systemu Windows.
 
-2. Na karcie **wydajność** Przyjrzyj się wartości zatwierdzonej. (W systemie Windows 7 zapoznaj się z tematem **zatwierdzenie (KB)** w **grupie system**.)
+2. Na karcie **wydajność** Przyjrzyj się wartości zatwierdzonej. (W systemie Windows 7 zapoznaj się z tematem **zatwierdzenie (KB)** w **grupie system** .)
 
-    Jeśli **Suma** zbliża się do **limitu**, zaczyna brakować pamięci fizycznej.
+    Jeśli **Suma** zbliża się do **limitu** , zaczyna brakować pamięci fizycznej.
 
 <a name="ManagedHeapCommit"></a>
 
@@ -424,7 +424,7 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
   Jeśli zarządzana sterta jest duża, **DumpHeap** może chwilę potrwać.
 
-  Możesz rozpocząć analizowanie z ostatnich kilku wierszy danych wyjściowych, ponieważ zawierają one listę obiektów, które używają najwięcej miejsca. Na przykład:
+  Możesz rozpocząć analizowanie z ostatnich kilku wierszy danych wyjściowych, ponieważ zawierają one listę obiektów, które używają najwięcej miejsca. Przykład:
 
   ```console
   2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo
@@ -795,6 +795,6 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
   Jeśli `% Time in GC` wartość zostanie nadana w tym samym czasie co czas procesu, wyrzucanie elementów bezużytecznych powoduje wysokie użycie procesora CPU. W przeciwnym razie należy profilować aplikację, aby znaleźć miejsce wystąpienia wysokiego użycia.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odzyskiwanie pamięci](index.md)

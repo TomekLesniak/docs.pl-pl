@@ -1,18 +1,18 @@
 ---
-title: Wskazówki dotyczące iniekcji zależności
+title: Wskazówki dotyczące wstrzykiwania zależności
 description: Poznaj różne wskazówki dotyczące iniekcji zależności oraz najlepsze rozwiązania dotyczące tworzenia aplikacji .NET.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/23/2020
+ms.date: 10/29/2020
 ms.topic: guide
-ms.openlocfilehash: a8d52642b9217c7340db69494624d8ab85ea6c92
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 092fdc70bd5d6bae82c4c1da96db4d5ac08df452
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247912"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063168"
 ---
-# <a name="dependency-injection-guidelines"></a>Wskazówki dotyczące iniekcji zależności
+# <a name="dependency-injection-guidelines"></a>Wskazówki dotyczące wstrzykiwania zależności
 
 Ten artykuł zawiera ogólne wskazówki i najlepsze rozwiązania dotyczące implementowania iniekcji zależności w aplikacjach .NET.
 
@@ -34,11 +34,17 @@ W poniższym przykładzie usługi są tworzone przez kontener usługi i usuwane 
 
 :::code language="csharp" source="snippets/configuration/console-di-disposable/TransientDisposable.cs":::
 
+Wcześniejszy okres istnienia ma być przejściowy.
+
 :::code language="csharp" source="snippets/configuration/console-di-disposable/ScopedDisposable.cs":::
+
+Wcześniejszy zakres jest przeznaczony do posiadania okresu istnienia w zakresie.
 
 :::code language="csharp" source="snippets/configuration/console-di-disposable/SingletonDisposable.cs":::
 
-:::code language="csharp" source="snippets/configuration/console-di-disposable/Program.cs" range="1-21,41-60":::
+Wcześniejszy okres istnienia jest przeznaczony do posiadania pojedynczej ważności.
+
+:::code language="csharp" source="snippets/configuration/console-di-disposable/Program.cs" range="1-21,41-60" highlight="":::
 
 Konsola debugowania wyświetla następujące przykładowe dane wyjściowe po uruchomieniu:
 
@@ -116,7 +122,7 @@ Zarejestruj wystąpienie z okresem istnienia w zakresie. Użyj <xref:Microsoft.E
 - Odebranie <xref:System.IDisposable> zależności za pośrednictwem programu di nie wymaga, aby odbiorca zaimplementował <xref:System.IDisposable> sam siebie. Odbiorca zależności nie <xref:System.IDisposable> powinien wywoływać <xref:System.IDisposable.Dispose%2A> tej zależności.
 - Używanie zakresów do kontrolowania okresów istnienia usług. Zakresy nie są hierarchiczne i nie ma żadnych specjalnych połączeń między zakresami.
 
-Aby uzyskać więcej informacji na temat oczyszczania zasobów, zobacz [implementowanie metody Dispose](../../standard/garbage-collection/implementing-dispose.md)
+Aby uzyskać więcej informacji na temat oczyszczania zasobów, zobacz [Implementuj `Dispose` metodę](../../standard/garbage-collection/implementing-dispose.md)lub [Zaimplementuj `DisposeAsync` metodę](../../standard/garbage-collection/implementing-disposeasync.md). Dodatkowo Rozważ możliwość wypróbowania [usług przejściowych przechwyconych przez scenariusz kontenera](#disposable-transient-services-captured-by-container) w miarę odnoszących się do oczyszczania zasobów.
 
 ## <a name="default-service-container-replacement"></a>Zastępowanie kontenera usług domyślnych
 
@@ -150,17 +156,71 @@ Metoda fabryki pojedynczej usługi, taka jak drugi argument funkcji [AddSingleto
 - `async/await``Task`rozpoznawanie usług opartych na usłudze i nie jest obsługiwane. Ponieważ język C# nie obsługuje konstruktorów asynchronicznych, należy używać metod asynchronicznych po synchronicznym rozpoznaniu usługi.
 - Unikaj przechowywania danych i konfiguracji bezpośrednio w kontenerze usługi. Na przykład koszyk użytkownika nie powinien być zazwyczaj dodawany do kontenera usługi. Konfiguracja powinna używać wzorca opcji. Podobnie należy unikać obiektów "posiadacz danych", które istnieją tylko w celu zezwalania na dostęp do innego obiektu. Lepiej jest zażądać rzeczywistego elementu za pośrednictwem DI.
 - Unikaj statycznego dostępu do usług. Na przykład Unikaj przechwytywania [IApplicationBuilder. ApplicationServices](xref:Microsoft.AspNetCore.Builder.IApplicationBuilder.ApplicationServices) jako statycznego pola lub właściwości do użycia w innym miejscu.
-- Utrzymuj szybkie i synchroniczne operacje.
-- Unikaj używania *wzorca lokalizatora usługi*. Na przykład nie wywołuj, <xref:System.IServiceProvider.GetService%2A> Aby uzyskać wystąpienie usługi, gdy będzie można użyć di zamiast.
+- Utrzymuj [szybkie](#async-di-factories-can-cause-deadlocks) i synchroniczne operacje.
+- Unikaj używania [*wzorca lokalizatora usługi*](#scoped-service-as-singleton). Na przykład nie wywołuj, <xref:System.IServiceProvider.GetService%2A> Aby uzyskać wystąpienie usługi, gdy będzie można użyć di zamiast.
 - Inna odmiana lokalizatora usługi, aby uniknąć, wprowadza fabrykę, która rozwiązuje zależności w czasie wykonywania. Obie te praktyki mieszają się [z niewersjami strategii kontroli](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) .
 - Należy unikać wywołań do <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider%2A> programu `ConfigureServices` . Wywoływanie `BuildServiceProvider` zazwyczaj odbywa się, gdy deweloper chce rozwiązać usługę w programie `ConfigureServices` .
-- Nierozporządzalne usługi przejściowe są przechwytywane przez kontener do usuwania. Może to przeznaczyć przeciek pamięci, jeśli został rozwiązany z kontenera najwyższego poziomu.
+- [Nierozporządzalne usługi przejściowe są przechwytywane](#disposable-transient-services-captured-by-container) przez kontener do usuwania. Może to przeznaczyć przeciek pamięci, jeśli został rozwiązany z kontenera najwyższego poziomu.
 - Włącz weryfikację zakresu, aby upewnić się, że aplikacja nie ma pojedynczych, które przechwytują usługi o określonym zakresie. Aby uzyskać więcej informacji, zobacz [Walidacja zakresu](dependency-injection.md#scope-validation).
 
 Podobnie jak w przypadku wszystkich zestawów zaleceń, mogą wystąpić sytuacje, w których ignorowanie zalecenia jest wymagane. Wyjątki są rzadkimi, głównie szczególnymi przypadkami w ramach samej struktury.
 
 DI jest *alternatywą* dla wzorców dostępu do obiektów static/Global. Możesz nie być w stanie korzystać z zalet programu DI w przypadku jego mieszania z dostępem do obiektów statycznych.
 
+## <a name="example-anti-patterns"></a>Przykładowe antywzorce
+
+Oprócz wytycznych opisanych w tym artykule, istnieje kilka antywzorców, *których **należy** unikać* . Niektóre z tych antywzorców zapoznają się z tworzeniem środowiska uruchomieniowego.
+
+> [!WARNING]
+> Są to przykładowe *wzorce,* *nie Kopiuj kodu, nie używaj* tych wzorców i unikaj tych wzorców we wszystkich kosztach.
+
+### <a name="disposable-transient-services-captured-by-container"></a>Jednorazowe usługi przejściowe przechwycone przez kontener
+
+Po zarejestrowaniu usług *przejściowych* , które implementują <xref:System.IDisposable> , domyślnie do tych odwołań są przechowywane kontenery di, a nie <xref:System.IDisposable.Dispose> ich do momentu zatrzymania aplikacji. Przyczyną może być przeciek pamięci, jeśli został on rozwiązany z poziomu kontenera.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="18-30":::
+
+W poprzednim wzorcu `ExampleDisposable` są tworzone wystąpienia 1 000 obiektów i są one odblokowane. Nie zostaną usunięte, dopóki `serviceProvider` wystąpienie nie zostanie usunięte.
+
+Aby uzyskać więcej informacji na temat debugowania przecieków pamięci, zobacz [debugowanie przecieku pamięci w programie .NET](../diagnostics/debug-memory-leak.md).
+
+### <a name="async-di-factories-can-cause-deadlocks"></a>Asynchroniczne operacje DI mogą spowodować zakleszczenie
+
+Termin "DI Factors" oznacza metody przeciążenia, które istnieją podczas wywoływania `Add{LIFETIME}` . Istnieją przeciążenia akceptujące `Func<IServiceProvider, T>` miejsce `T` , gdzie jest rejestrowana usługa, a parametr ma nazwę `implementationFactory` . `implementationFactory`Można podać jako wyrażenie lambda, funkcję lokalną lub metodę. Jeśli fabryka jest asynchroniczna i używasz <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> , spowoduje to zakleszczenie.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="32-45" highlight="4-8":::
+
+W poprzednim kodzie, `implementationFactory` otrzymuje wyrażenie lambda, gdzie treść wywołuje <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> `Task<Bar>` metodę zwracającą. ***Powoduje to zakleszczenie*** . `GetBarAsync`Metoda po prostu emuluje asynchroniczne operacje pracy z <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> , a następnie wywołuje <xref:Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService%60%601(System.IServiceProvider)> .
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="47-53":::
+
+Aby uzyskać więcej informacji na temat wskazówek asynchronicznych, zobacz [programowanie asynchroniczne: ważne informacje i porady](../../csharp/async.md#important-info-and-advice). Aby uzyskać więcej informacji na temat zakleszczenia debugowania, zobacz [debugowanie zakleszczenia w programie .NET](../diagnostics/debug-deadlock.md).
+
+W przypadku korzystania z tego oprogramowania antywzorca i wystąpienia zakleszczenia można wyświetlić dwa wątki oczekujące w oknie stosów równoległych programu Visual Studio. Aby uzyskać więcej informacji, zobacz [Wyświetlanie wątków i zadań w oknie stosów równoległych](/visualstudio/debugger/using-the-parallel-stacks-window).
+
+### <a name="captive-dependency"></a>Zależność podrzędna
+
+Termin ["zależność podrzędna"](https://blog.ploeh.dk/2014/06/02/captive-dependency) został zastosowany przez [oznaczenie Seeman](https://blog.ploeh.dk/about)i odnosi się do nieprawdziwej konfiguracji okresów istnienia usługi, w przypadku których usługa o dłuższym czasie utrzymuje nieprzerwaną usługę.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="55-65":::
+
+W powyższym kodzie `Foo` jest zarejestrowany jako pojedynczy i `Bar` ma zakres, który na powierzchni jest prawidłowy. Należy jednak wziąć pod uwagę implementację programu `Foo` .
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Foo.cs" highlight="5":::
+
+`Foo`Obiekt wymaga `Bar` obiektu, a ponieważ `Foo` jest elementem pojedynczym i `Bar` ma zakres-nieprawidłową konfigurację. W takim przypadku `Foo` można utworzyć wystąpienie tylko raz, a jego `Bar` okres istnienia będzie dłuższy niż przewidziany okres istnienia w zakresie `Bar` . Należy rozważyć sprawdzenie poprawności zakresów, przekazanie `validateScopes: true` do <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean)> . Podczas sprawdzania poprawności zakresów uzyskasz <xref:System.InvalidOperationException> komunikat podobny do "nie można korzystać z usługi w zakresie" z pojedynczego elementu "foo".
+
+Aby uzyskać więcej informacji, zobacz [Walidacja zakresu](dependency-injection.md#scope-validation).
+
+### <a name="scoped-service-as-singleton"></a>Usługa objęta zakresem jako pojedyncza
+
+W przypadku korzystania z usług objętych zakresem, jeśli nie tworzysz zakresu lub w istniejącym zakresie — usługa zostanie poprzednia.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="68-82" highlight="13-14":::
+
+W powyższym kodzie `Bar` jest pobierany w <xref:Microsoft.Extensions.DependencyInjection.IServiceScope> , który jest prawidłowy. Antywzorzec to pobieranie `Bar` poza zakresem, a zmienna nosi nazwę, `avoid` Aby pokazać, które przykładowe pobieranie jest nieprawidłowe.
+
 ## <a name="see-also"></a>Zobacz też
 
 - [Iniekcja zależności w programie .NET](dependency-injection.md)
+- [Samouczek: używanie iniekcji zależności w programie .NET](dependency-injection-usage.md)

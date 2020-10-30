@@ -8,17 +8,17 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- event properties [.NET Framework]
-- multiple events [.NET Framework]
-- event handling [.NET Framework], with multiple events
-- events [.NET Framework], multiple
+- event properties [.NET]
+- multiple events [.NET]
+- event handling [.NET], with multiple events
+- events [.NET], multiple
 ms.assetid: 30047cba-e2fd-41c6-b9ca-2ad7a49003db
-ms.openlocfilehash: 5b528aa2145ba703ce605ce22ae7d643f1e5b8d0
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: fa0bdc26eba872a62cd5f7a773df0d7a53c83975
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769018"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064239"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>Porady: obsługa wielu zdarzeń przy użyciu właściwości zdarzenia
 Aby użyć właściwości zdarzeń należy zdefiniować właściwości zdarzenia w klasie, która wywołuje zdarzenia, a następnie ustawić delegatów dla właściwości zdarzenia w klasach, które obsługują zdarzenia. Aby zaimplementować w klasie wiele właściwości zdarzeń, klasa musi wewnętrznie przechowywać i zachowywać zdefiniowanego delegata dla każdego zdarzenia. Typowym podejściem jest implementacja kolekcji delegata, która jest indeksowana przy użyciu klucza zdarzenia.  

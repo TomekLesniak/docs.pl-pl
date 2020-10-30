@@ -9,30 +9,30 @@ dev_langs:
 - cpp
 helpviewer_keywords:
 - generic methods, type inference
-- generics [.NET Framework], collections
-- generic interfaces [.NET Framework]
+- generics [.NET], collections
+- generic interfaces [.NET]
 - constructed generic types
 - nested generic types
 - generic type definitions
-- generic classes [.NET Framework]
-- generics [.NET Framework], interfaces
-- generics [.NET Framework], about
-- generics [.NET Framework]
-- generic collections [.NET Framework]
-- generic delegates [.NET Framework]
+- generic classes [.NET]
+- generics [.NET], interfaces
+- generics [.NET], about
+- generics [.NET]
+- generic collections [.NET]
+- generic delegates [.NET]
 - generic type arguments
-- generics [.NET Framework], delegates
-- generics [.NET Framework], features
-- constraints [.NET Framework]
+- generics [.NET], delegates
+- generics [.NET], features
+- constraints [.NET]
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: 91bb96c04c8a5d410f0a88c7e8eedf622fe66c94
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6455de8e6b874547be7838090fc0527a6ce72b71
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599818"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063159"
 ---
 # <a name="generics-in-net"></a>Typy ogólne w .NET
 
@@ -56,15 +56,15 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
   
 - *Definicja typu ogólnego* jest deklaracją klasy, struktury lub interfejsu, która działa jako szablon, z symbolami zastępczymi dla typów, które mogą zawierać lub używać. Na przykład <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> Klasa może zawierać dwa typy: klucze i wartości. Ponieważ definicja typu ogólnego jest tylko szablonem, nie można tworzyć wystąpień klasy, struktury lub interfejsu, który jest definicją typu ogólnego.  
   
-- *Parametry typu ogólnego*lub *parametry typu*są symbolami zastępczymi w definicji typu ogólnego lub metody. <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>Typ ogólny ma dwa parametry typu, `TKey` `TValue` który reprezentuje typy jego kluczy i wartości.  
+- *Parametry typu ogólnego* lub *parametry typu* są symbolami zastępczymi w definicji typu ogólnego lub metody. <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>Typ ogólny ma dwa parametry typu, `TKey` `TValue` który reprezentuje typy jego kluczy i wartości.  
   
-- *Skonstruowany typ ogólny*lub *skonstruowany*jest wynikiem określenia typów dla parametrów typu ogólnego definicji typu ogólnego.  
+- *Skonstruowany typ ogólny* lub *skonstruowany* jest wynikiem określenia typów dla parametrów typu ogólnego definicji typu ogólnego.  
   
 - *Argument typu ogólnego* jest dowolnego typu, który jest zastępowany dla parametru typu ogólnego.  
   
 - Ogólny *Typ* ogólnego terminu obejmuje zarówno typy skonstruowane, jak i definicje typów ogólnych.  
   
-- *Kowariancja* i *kontrawariancja* parametrów typu ogólnego umożliwiają używanie skonstruowanych typów ogólnych, których argumenty typu są bardziej pochodne (Kowariancja) lub mniej pochodne (kontrawariancja) niż docelowy typ skonstruowany. Kowariancja i kontrawariancja są określane zbiorczo jako *WARIANCJA*. Aby uzyskać więcej informacji, zobacz [Kowariancja i kontrawariancja](covariance-and-contravariance.md).  
+- *Kowariancja* i *kontrawariancja* parametrów typu ogólnego umożliwiają używanie skonstruowanych typów ogólnych, których argumenty typu są bardziej pochodne (Kowariancja) lub mniej pochodne (kontrawariancja) niż docelowy typ skonstruowany. Kowariancja i kontrawariancja są określane zbiorczo jako *WARIANCJA* . Aby uzyskać więcej informacji, zobacz [Kowariancja i kontrawariancja](covariance-and-contravariance.md).  
   
 - *Ograniczenia* są ograniczone do parametrów typu ogólnego. Można na przykład ograniczyć parametr typu do typów implementujących <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> interfejs ogólny, aby mieć pewność, że wystąpienia typu mogą być uporządkowane. Można również ograniczyć parametry typu do typów, które mają konkretną klasę bazową, które mają konstruktora bez parametrów lub które są typami referencyjnymi lub typami wartości. Użytkownicy typu ogólnego nie mogą wystawiać argumentów typu, które nie spełniają ograniczeń.  
   
@@ -99,7 +99,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
   
  Poniżej przedstawiono niektóre ograniczenia dotyczące typów ogólnych:  
   
-- Typy ogólne mogą pochodzić z większości klas bazowych, takich jak <xref:System.MarshalByRefObject> (i ograniczenia mogą służyć do wymagania, aby parametry typu ogólnego pochodzą z klas podstawowych, takich jak <xref:System.MarshalByRefObject> ). Jednak .NET Framework nie obsługuje typów ogólnych powiązanych z kontekstem. Typ ogólny może pochodzić od <xref:System.ContextBoundObject> , ale próba utworzenia wystąpienia tego typu powoduje wystąpienie <xref:System.TypeLoadException> .  
+- Typy ogólne mogą pochodzić z większości klas bazowych, takich jak <xref:System.MarshalByRefObject> (i ograniczenia mogą służyć do wymagania, aby parametry typu ogólnego pochodzą z klas podstawowych, takich jak <xref:System.MarshalByRefObject> ). Jednak platforma .NET nie obsługuje typów ogólnych powiązanych z kontekstem. Typ ogólny może pochodzić od <xref:System.ContextBoundObject> , ale próba utworzenia wystąpienia tego typu powoduje wystąpienie <xref:System.TypeLoadException> .  
   
 - Wyliczenia nie mogą mieć parametrów typu ogólnego. Wyliczenie może być ogólne tylko zdarzenia (na przykład ponieważ jest zagnieżdżone w typie ogólnym, który jest definiowany przy użyciu Visual Basic, C# lub C++). Aby uzyskać więcej informacji, zobacz "wyliczenia" w [systemie Common Type System](../base-types/common-type-system.md).  
   
@@ -108,7 +108,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
 - W Visual Basic, C# i C++, zagnieżdżony typ, który jest ujęty w typ ogólny nie może być skonkretyzowany, chyba że typy zostały przypisane do parametrów typu wszystkich typów otaczających. Innym sposobem wymawiania tego jest to, że w odbiciu zagnieżdżony typ, który jest zdefiniowany przy użyciu tych języków, zawiera parametry typu dla wszystkich typów otaczających. Pozwala to na używanie parametrów typu otaczających typów, które mają być używane w definicjach elementów członkowskich typu zagnieżdżonego. Aby uzyskać więcej informacji, zobacz "typy zagnieżdżone" w temacie <xref:System.Type.MakeGenericType%2A> .  
   
     > [!NOTE]
-    > Zagnieżdżony typ, który jest definiowany przez emitowanie kodu w zestawie dynamicznym lub przy użyciu [Ilasm. exe (ASEMBLER Il)](../../framework/tools/ilasm-exe-il-assembler.md) , nie jest wymagany do uwzględnienia parametrów typu otaczających je typów; Jednakże, jeśli nie zawiera ich, parametry typu nie znajdują się w zakresie klasy zagnieżdżonej.  
+    > Zagnieżdżony typ, który jest definiowany przez emitowanie kodu w zestawie dynamicznym lub przy użyciu [Ilasm.exe (asemblera Il)](../../framework/tools/ilasm-exe-il-assembler.md) nie jest wymagany do uwzględnienia parametrów typu otaczających typy. Jednakże, jeśli nie zawiera ich, parametry typu nie znajdują się w zakresie klasy zagnieżdżonej.  
   
      Aby uzyskać więcej informacji, zobacz "typy zagnieżdżone" w temacie <xref:System.Type.MakeGenericType%2A> .  
 

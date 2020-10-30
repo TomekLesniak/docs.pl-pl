@@ -6,19 +6,19 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- globalization [.NET Framework], about globalization
+- globalization [.NET], about globalization
 - global applications, globalization
-- international applications [.NET Framework], globalization
+- international applications [.NET], globalization
 - world-ready applications, globalization
-- application development [.NET Framework], globalization
+- application development [.NET], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: adc617362cf3ba07ff63f1095968e2bd88df88d9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 66ed197f102583553112083e3a21f89e33cd3e3f
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291919"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064174"
 ---
 # <a name="globalization"></a>Globalizacja
 
@@ -102,7 +102,7 @@ Zazwyczaj uporządkowane ciągi, które mają być wyświetlane w interfejsie u�
 
 Porównywanie ciągów zależnych od kultury jest definiowane przez <xref:System.Globalization.CompareInfo> obiekt, który jest zwracany przez właściwość każdej kultury <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> . Porównania ciągów uwzględniających kulturę, które używają <xref:System.String.Compare%2A?displayProperty=nameWithType> przeciążeń metody, również używają <xref:System.Globalization.CompareInfo> obiektu.
 
-Platforma .NET używa tabel do wykonywania sortowania z uwzględnieniem kultury danych w postaci ciągów. Zawartość tych tabel, która zawiera dane dotyczące sortowania i normalizacji ciągów, jest określana na podstawie wersji standardu Unicode zaimplementowanej przez określoną wersję programu .NET. W poniższej tabeli wymieniono wersje standardu Unicode zaimplementowane przez określone wersje .NET Framework i platformy .NET Core. Należy zauważyć, że ta lista obsługiwanych wersji Unicode ma zastosowanie do porównywania znaków i sortowania. nie dotyczy klasyfikacji znaków Unicode według kategorii. Aby uzyskać więcej informacji, zobacz sekcję "ciągi i standard Unicode" w <xref:System.String> artykule.
+Platforma .NET używa tabel do wykonywania sortowania z uwzględnieniem kultury danych w postaci ciągów. Zawartość tych tabel, która zawiera dane dotyczące sortowania i normalizacji ciągów, jest określana na podstawie wersji standardu Unicode zaimplementowanej przez określoną wersję programu .NET. W poniższej tabeli wymieniono wersje standardu Unicode zaimplementowane przez określone wersje platformy .NET. Ta lista obsługiwanych wersji Unicode ma zastosowanie do porównywania znaków i sortowania. nie dotyczy klasyfikacji znaków Unicode według kategorii. Aby uzyskać więcej informacji, zobacz sekcję "ciągi i standard Unicode" w <xref:System.String> artykule.
 
 |Wersja programu .NET Framework|System operacyjny|Wersja Unicode|
 |----------------------------|----------------------|---------------------|
@@ -112,9 +112,9 @@ Platforma .NET używa tabel do wykonywania sortowania z uwzględnieniem kultury 
 |Program .NET Framework 4|Wszystkie systemy operacyjne|Unicode 5,0|
 |.NET Framework 4,5 i nowsze w systemie Windows 7|Unicode 5,0|
 |.NET Framework 4,5 i nowsze w systemach operacyjnych Windows 8 i nowszych|6.3.0 Unicode|
-|.NET Core (wszystkie wersje)|Zależy od wersji standardu Unicode obsługiwanego przez podstawowy system operacyjny.|
+|.NET Core i .NET 5 +|Zależy od wersji standardu Unicode obsługiwanego przez podstawowy system operacyjny.|
 
-Począwszy od .NET Framework 4,5 i we wszystkich wersjach programu .NET Core, Porównywanie ciągów i sortowanie zależy od systemu operacyjnego. .NET Framework 4,5 i późniejsze działania w systemie Windows 7 pobiera dane z własnych tabel, które implementują standard Unicode 5,0. .NET Framework 4,5 i późniejsze uruchomione w systemie Windows 8 i nowszych pobiera dane z tabel systemu operacyjnego, które implementują standard Unicode 6,3. W przypadku platformy .NET Core obsługiwana wersja standardu Unicode zależy od bazowego systemu operacyjnego. W przypadku serializowania posortowanych danych z uwzględnieniem kultury, można użyć <xref:System.Globalization.SortVersion> klasy, aby określić, kiedy serializowane dane muszą być sortowane, aby były spójne z programem .NET i porządkiem sortowania systemu operacyjnego. Aby zapoznać się z przykładem, zobacz <xref:System.Globalization.SortVersion> temat Klasa.
+Począwszy od .NET Framework 4,5 i we wszystkich wersjach .NET Core i .NET 5 +, Porównywanie ciągów i sortowanie zależy od systemu operacyjnego. .NET Framework 4,5 i późniejsze działanie w systemie Windows 7 pobiera dane z własnych tabel, które implementują standard Unicode 5,0. .NET Framework 4,5 i późniejsze działanie w systemie Windows 8 i nowszych pobiera dane z tabel systemu operacyjnego, które implementują standard Unicode 6,3. W przypadku oprogramowania .NET Core i .NET 5 + obsługiwana wersja standardu Unicode zależy od odpowiedniego systemu operacyjnego. W przypadku serializowania posortowanych danych z uwzględnieniem kultury, można użyć <xref:System.Globalization.SortVersion> klasy, aby określić, kiedy serializowane dane muszą być sortowane, aby były spójne z programem .NET i porządkiem sortowania systemu operacyjnego. Aby zapoznać się z przykładem, zobacz <xref:System.Globalization.SortVersion> temat Klasa.
 
 Jeśli aplikacja wykonuje obszerne sortowanie danych ciągu, można współpracować z <xref:System.Globalization.SortKey> klasą w celu porównywania ciągów. Klucz sortowania odzwierciedla wagi sortowania specyficzne dla kultury, łącznie z alfabetyczną, wielkością liter i znakami diakrytycznych określonego ciągu. Ponieważ porównania przy użyciu kluczy sortowania są binarne, są one szybsze niż porównania, które używają <xref:System.Globalization.CompareInfo> obiektu niejawnie lub jawnie. Można utworzyć klucz sortowania specyficzny dla kultury dla określonego ciągu, przekazując ciąg do <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType> metody.
 
@@ -338,7 +338,7 @@ Ogólnie rzecz biorąc nie należy wprowadzać żadnych założeń dotyczących 
 
 - W systemach Windows użytkownik może dostosować ustawienia specyficzne dla kultury przy użyciu aplikacji **region i język** w panelu sterowania. Podczas tworzenia wystąpienia <xref:System.Globalization.CultureInfo> obiektu można określić, czy ma on odzwierciedlać te dostosowania użytkownika przez wywołanie <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> konstruktora. Zazwyczaj w przypadku aplikacji użytkownika końcowego należy przestrzegać preferencji użytkownika, tak aby użytkownik miał dane w oczekiwanym formacie.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Globalizacja i lokalizacja](index.md)
 - [Najlepsze rozwiązania dotyczące używania ciągów](../base-types/best-practices-strings.md)

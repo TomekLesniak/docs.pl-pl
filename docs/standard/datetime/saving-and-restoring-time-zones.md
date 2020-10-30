@@ -7,22 +7,22 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - restoring time zones
-- deserialization [.NET Framework], time zones
-- serialization [.NET Framework], time zones
-- time zone objects [.NET Framework], restoring
+- deserialization [.NET], time zones
+- serialization [.NET], time zones
+- time zone objects [.NET], restoring
 - saving time zones
-- time zone objects [.NET Framework], deserializing
-- time zones [.NET Framework], saving
-- time zones [.NET Framework], restoring
-- time zone objects [.NET Framework], serializing
-- time zone objects [.NET Framework], saving
+- time zone objects [.NET], deserializing
+- time zones [.NET], saving
+- time zones [.NET], restoring
+- time zone objects [.NET], serializing
+- time zone objects [.NET], saving
 ms.assetid: 4028b310-e7ce-49d4-a646-1e83bfaf6f9d
-ms.openlocfilehash: 8da26988d2e141ac704f0d3756cd8a50602cb3fd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6a05bf4ce062a3f4e539e9b89779cb468b9782a6
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281053"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063394"
 ---
 # <a name="saving-and-restoring-time-zones"></a>Zapisywanie i przywracanie stref czasowych
 
@@ -72,6 +72,6 @@ Przechowywanie serializowanego ciągu strefy czasowej również oddziela procedu
 
 Aby zapoznać się z przykładem korzystającym z zasobu osadzonego do przechowywania danych strefy czasowej, zobacz [How to: Save Time](save-time-zones-to-an-embedded-resource.md) Zones to a Embedded Resource (informacje o tym, [jak przywrócić strefy czasowe z zasobu osadzonego](restore-time-zones-from-an-embedded-resource.md)).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Daty, godziny i strefy czasowe](index.md)

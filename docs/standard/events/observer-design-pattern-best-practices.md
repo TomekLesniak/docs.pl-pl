@@ -3,18 +3,19 @@ title: Wzorzec projektowy obserwatora — Najlepsze praktyki
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- observer design pattern [.NET Framework], best practices
-- best practices [.NET Framework], observer design pattern
+- observer design pattern [.NET], best practices
+- best practices [.NET], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-ms.openlocfilehash: b4f8e568dcb6790dac1dc8fc5c969d6fa1367c4e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8e75343e1ca1c7f69306ee45148f2dc0eec3585f
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288462"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064083"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Wzorzec projektowy obserwatora — Najlepsze praktyki
-W .NET Framework Wzorzec projektowy obserwatora jest implementowany jako zestaw interfejsów. <xref:System.IObservable%601?displayProperty=nameWithType>Interfejs reprezentuje dostawcę danych, który jest również odpowiedzialny za dostarczanie <xref:System.IDisposable> implementacji, która umożliwia obserwatorom anulowanie subskrypcji powiadomień. <xref:System.IObserver%601?displayProperty=nameWithType>Interfejs reprezentuje obserwatora. W tym temacie opisano najlepsze rozwiązania, które deweloperzy powinni wykonać podczas wdrażania wzorca projektowego obserwatora przy użyciu tych interfejsów.  
+
+W programie .NET Wzorzec projektowy obserwatora jest implementowany jako zestaw interfejsów. <xref:System.IObservable%601?displayProperty=nameWithType>Interfejs reprezentuje dostawcę danych, który jest również odpowiedzialny za dostarczanie <xref:System.IDisposable> implementacji, która umożliwia obserwatorom anulowanie subskrypcji powiadomień. <xref:System.IObserver%601?displayProperty=nameWithType>Interfejs reprezentuje obserwatora. W tym temacie opisano najlepsze rozwiązania, które deweloperzy powinni wykonać podczas wdrażania wzorca projektowego obserwatora przy użyciu tych interfejsów.  
   
 ## <a name="threading"></a>Wątkowość  
  Zazwyczaj dostawca implementuje <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> metodę przez dodanie określonego obserwatora do listy subskrybentów reprezentowanej przez jakiś obiekt kolekcji i implementuje <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> metodę przez usunięcie określonego obserwatora z listy subskrybentów. Obserwator może wywoływać te metody w dowolnym momencie. Ponadto, ponieważ umowa dostawcy/obserwatora nie określa, kto jest odpowiedzialny za anulowanie subskrypcji po <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> metodzie wywołania zwrotnego, dostawca i obserwator mogą próbować usunąć ten sam element członkowski z listy. Ze względu na tę możliwość obie <xref:System.IObservable%601.Subscribe%2A> <xref:System.IDisposable.Dispose%2A> metody i powinny być bezpieczne wątkowo. Zazwyczaj obejmuje to użycie [współbieżnej kolekcji](../parallel-programming/data-structures-for-parallel-programming.md) lub blokady. Implementacje, które nie są bezpieczne dla wątków, powinny jawnie udokumentować, że nie są.  
@@ -51,7 +52,7 @@ W .NET Framework Wzorzec projektowy obserwatora jest implementowany jako zestaw 
   
  Chociaż istnieje możliwość dołączenia obserwatora do wielu dostawców, zalecany wzorzec polega na dołączeniu <xref:System.IObserver%601> wystąpienia tylko do jednego <xref:System.IObservable%601> wystąpienia.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wzorzec projektowy obserwatora](observer-design-pattern.md)
 - [Instrukcje: implementowanie obserwatora](how-to-implement-an-observer.md)

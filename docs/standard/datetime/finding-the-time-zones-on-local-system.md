@@ -3,20 +3,20 @@ title: Znajdowanie stref czasowych zdefiniowanych w systemie lokalnym
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- time zones [.NET Framework], local
-- time zones [.NET Framework], finding local system time zones
-- time zone identifiers [.NET Framework]
+- time zones [.NET], local
+- time zones [.NET], finding local system time zones
+- time zone identifiers [.NET]
 - local time zone access
-- time zones [.NET Framework], retrieving
+- time zones [.NET], retrieving
 - UTC times, finding local system time zones
-- time zones [.NET Framework], UTC
+- time zones [.NET], UTC
 ms.assetid: 3f63b1bc-9a4b-4bde-84ea-ab028a80d3e1
-ms.openlocfilehash: d313bbed3cc525a74b90537dd4f1742c09c62cd4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c968c7891a4fc9b77ed6224a9fc5f8f6d8f5d80b
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277027"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063693"
 ---
 # <a name="finding-the-time-zones-defined-on-a-local-system"></a>Znajdowanie stref czasowych zdefiniowanych w systemie lokalnym
 
@@ -35,7 +35,7 @@ Można również utworzyć wystąpienie <xref:System.TimeZoneInfo> obiektu, któ
 
 Identyfikator strefy czasowej to pole klucza, które jednoznacznie identyfikuje strefę czasową. Chociaż większość kluczy jest stosunkowo krótka, Identyfikator strefy czasowej jest bardzo długi. W większości przypadków jego wartość odpowiada <xref:System.TimeZoneInfo.StandardName%2A?displayProperty=nameWithType> właściwości, która jest używana do podania nazwy czasu standardowego strefy czasowej. Istnieją jednak wyjątki. Najlepszym sposobem, aby upewnić się, że podano prawidłowy identyfikator, jest Wyliczenie stref czasowych dostępnych w systemie i zanotować ich skojarzone identyfikatory.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Daty, godziny i strefy czasowe](index.md)
 - [Instrukcje: Uzyskiwanie dostępu do wstępnie zdefiniowanych obiektów lokalnej strefy czasowej i strefy czasowej UTC](access-utc-and-local.md)
