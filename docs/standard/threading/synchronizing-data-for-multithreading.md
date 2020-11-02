@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 4d528c54816961caa251ce054abf2c6cf07e9d01
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 63ee85f3d8bab865ce34566ec381d23676b27991
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769109"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188591"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizowanie danych na potrzeby wielowątkowości
 
@@ -25,7 +25,7 @@ Platforma .NET udostępnia kilka strategii do synchronizowania dostępu do wyst�
   
 - Ręczna synchronizacja. Możesz użyć obiektów synchronizacji dostarczonych przez bibliotekę klas .NET. Zobacz [Omówienie elementów pierwotnych synchronizacji](overview-of-synchronization-primitives.md), które obejmują dyskusję <xref:System.Threading.Monitor> klasy.  
   
-- Synchronizowane konteksty. W przypadku aplikacji .NET Framework i Xamarin można użyć programu, <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> Aby włączyć prostą, automatyczną synchronizację <xref:System.ContextBoundObject> obiektów.  
+- Synchronizowane konteksty. Tylko dla aplikacji .NET Framework i Xamarin, można użyć, <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> Aby włączyć prostą, automatyczną synchronizację <xref:System.ContextBoundObject> obiektów.  
   
 - Klasy kolekcji w <xref:System.Collections.Concurrent?displayProperty=nameWithType> przestrzeni nazw. Te klasy zapewniają wbudowaną synchronizację operacji dodawania i usuwania. Aby uzyskać więcej informacji, zobacz [kolekcje bezpieczne dla wątków](../collections/thread-safe/index.md).  
   
@@ -34,7 +34,7 @@ Platforma .NET udostępnia kilka strategii do synchronizowania dostępu do wyst�
 |Kategoria|Pola globalne|Pola statyczne|Metody statyczne|Pola wystąpienia|Metody Instance|Określone bloki kodu|  
 |--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
 |Brak synchronizacji|Nie|Nie|Nie|Nie|Nie|Nie|  
-|Zsynchronizowany kontekst|Nie|Nie|Nie|Yes|Yes|Nie|  
+|Zsynchronizowany kontekst|Nie|Nie|Nie|Tak|Tak|Nie|  
 |Zsynchronizowane regiony kodu|Nie|Nie|Tylko wtedy, gdy oznaczono|Nie|Tylko wtedy, gdy oznaczono|Tylko wtedy, gdy oznaczono|  
 |Synchronizacja ręczna|Ręcznie|Ręcznie|Ręcznie|Ręcznie|Ręcznie|Ręcznie|  
   
@@ -54,7 +54,7 @@ Platforma .NET udostępnia kilka strategii do synchronizowania dostępu do wyst�
   
  Możesz również dekorować metodę z <xref:System.Runtime.CompilerServices.MethodImplAttribute> wartością <xref:System.Runtime.CompilerServices.MethodImplOptions.Synchronized?displayProperty=nameWithType> , która ma taki sam skutek jak użycie <xref:System.Threading.Monitor> lub jeden z słów kluczowych kompilatora, aby zablokować całą treść metody.  
   
- <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>może służyć do przerwania wątku poza operacje blokowania, takie jak oczekiwanie na dostęp do synchronizowanego regionu kodu. **Wątek. Interrupt** jest również używany do przerwania wątków, takich jak <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> .  
+ <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> może służyć do przerwania wątku poza operacje blokowania, takie jak oczekiwanie na dostęp do synchronizowanego regionu kodu. **Wątek. Interrupt** jest również używany do przerwania wątków, takich jak <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> .  
   
 > [!IMPORTANT]
 > Nie blokuj typu — to znaczy, `typeof(MyType)` w języku C#, `GetType(MyType)` w Visual Basic lub `MyType::typeid` w języku C++ — w celu ochrony `static` metod ( `Shared` metod w Visual Basic). Zamiast tego użyj prywatnego obiektu statycznego. Podobnie nie należy używać `this` języka C# ( `Me` w Visual Basic) do blokowania metod wystąpienia. Zamiast tego użyj obiektu prywatnego. Klasę lub wystąpienie można zablokować za pomocą kodu innego niż własny, potencjalnie powodującego zakleszczenie lub problemy z wydajnością.  

@@ -8,20 +8,20 @@ dev_langs:
 helpviewer_keywords:
 - threads, cancellation
 ms.assetid: d2d6d5fd-e263-4fa0-847b-2fc3e0d82337
-ms.openlocfilehash: 1d1433ecf39974bf9e68fe07b9d0818ac16fb544
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36de18e976401dd0cde878852c064aa982b8acde
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138128"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188500"
 ---
 # <a name="canceling-threads-cooperatively"></a>Wspólne anulowanie wątków
 
-Przed .NET Framework 4 .NET Framework pod warunkiem, że nie wbudowany sposób anulowania wątku wspólnie po jego uruchomieniu. Jednak począwszy od .NET Framework 4, <xref:System.Threading.CancellationToken?displayProperty=nameWithType> można użyć do anulowania wątków, <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> tak jak można ich używać do anulowania obiektów lub kwerend PLINQ. Mimo <xref:System.Threading.Thread?displayProperty=nameWithType> że klasa nie oferuje wbudowaną obsługę tokenów anulowania, można przekazać <xref:System.Threading.Thread> token do procedury <xref:System.Threading.ParameterizedThreadStart> wątku przy użyciu konstruktora, który przyjmuje delegata. Poniższy przykład demonstruje, jak to zrobić.  
+Przed rozpoczęciem .NET Framework 4 platforma .NET nie zapewniała wbudowanego sposobu anulowania wątku po jego uruchomieniu. Jednak rozpoczynając od .NET Framework 4, można użyć, <xref:System.Threading.CancellationToken?displayProperty=nameWithType> Aby anulować wątki, tak jak można je użyć do anulowania <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> obiektów lub zapytań PLINQ. Chociaż <xref:System.Threading.Thread?displayProperty=nameWithType> Klasa nie oferuje wbudowanej obsługi tokenów anulowania, można przekazać token do procedury wątku za pomocą <xref:System.Threading.Thread> konstruktora, który przyjmuje <xref:System.Threading.ParameterizedThreadStart> Delegat. Poniższy przykład demonstruje, jak to zrobić.  
   
  [!code-csharp[Cancellation#14](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/CooperativeThreads.cs#14)]
  [!code-vb[Cancellation#14](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/CooperativeThreads.vb#14)]  
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Korzystanie z wątków i wątków](using-threads-and-threading.md)
+- [Używanie wątków i wątkowości](using-threads-and-threading.md)

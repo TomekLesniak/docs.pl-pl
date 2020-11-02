@@ -8,16 +8,16 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- threading [.NET Framework], creating
-- threading [.NET Framework], passing data to threads
-- threading [.NET Framework], retrieving data from threads
+- threading [.NET], creating
+- threading [.NET], passing data to threads
+- threading [.NET], retrieving data from threads
 ms.assetid: 52b32222-e185-4f42-91a7-eaca65c0ab6d
-ms.openlocfilehash: 811028d3c853441ff3a61d3628a44e5c65ba7059
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: a1e8f8f6e017d29f352d79ea08c09b2d97041bba
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84661917"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188383"
 ---
 # <a name="creating-threads-and-passing-data-at-start-time"></a>Tworzenie wątków i przekazywanie danych w czasie rozpoczęcia
 
@@ -40,9 +40,9 @@ Podczas tworzenia procesu systemu operacyjnego system operacyjny wprowadza wąte
   
 ## <a name="passing-data-to-threads"></a>Przekazywanie danych do wątków
 
- W .NET Framework w wersji 2,0 <xref:System.Threading.ParameterizedThreadStart> Delegat zapewnia łatwy sposób przekazywania obiektu zawierającego dane do wątku po wywołaniu <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> przeciążenia metody. Zobacz <xref:System.Threading.ParameterizedThreadStart> , aby zobaczyć przykład kodu.  
+<xref:System.Threading.ParameterizedThreadStart>Delegat zapewnia łatwy sposób przekazywania obiektu zawierającego dane do wątku podczas wywoływania <xref:System.Threading.Thread.Start(System.Object)?displayProperty=nameWithType> . Zobacz <xref:System.Threading.ParameterizedThreadStart> , aby zobaczyć przykład kodu.
   
- Użycie <xref:System.Threading.ParameterizedThreadStart> delegata nie jest bezpiecznym typem sposobu przekazywania danych, ponieważ <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> Przeciążenie metody akceptuje każdy obiekt. Alternatywą jest hermetyzacja procedury wątku i danych w klasie pomocnika i użycie <xref:System.Threading.ThreadStart> delegata do wykonania procedury wątku. Poniższy przykład ilustruje tę technikę:
+ Użycie <xref:System.Threading.ParameterizedThreadStart> delegata nie jest bezpiecznym typem sposobu przekazywania danych, ponieważ <xref:System.Threading.Thread.Start(System.Object)?displayProperty=nameWithType> Metoda akceptuje każdy obiekt. Alternatywą jest hermetyzacja procedury wątku i danych w klasie pomocnika i użycie <xref:System.Threading.ThreadStart> delegata do wykonania procedury wątku. Poniższy przykład ilustruje tę technikę:
 
  [!code-cpp[System.Threading.ThreadStart2#3](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CPP/source3.cpp#3)]
  [!code-csharp[System.Threading.ThreadStart2#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CS/source3.cs#3)]
@@ -58,7 +58,7 @@ Ani <xref:System.Threading.ThreadStart> <xref:System.Threading.ParameterizedThre
  [!code-csharp[System.Threading.ThreadStart2#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CS/source4.cs#4)]
  [!code-vb[System.Threading.ThreadStart2#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadStart2/VB/source4.vb#4)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadStart>

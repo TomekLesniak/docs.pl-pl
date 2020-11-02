@@ -8,20 +8,21 @@ dev_langs:
 helpviewer_keywords:
 - synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
-ms.openlocfilehash: 8ed1414ad377015400d9e126d924bf426fbc753d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: de9b49de86eb6489181afc8d8f5fbb1222bf877d
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277859"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188409"
 ---
 # <a name="countdownevent"></a>CountdownEvent
-<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>jest pierwotną synchronizacją, która odblokowuje oczekujące wątki po zasygnalizowaniu określonej liczby razy. <xref:System.Threading.CountdownEvent>jest przeznaczony do scenariuszy, w których w przeciwnym razie trzeba będzie użyć <xref:System.Threading.ManualResetEvent> lub <xref:System.Threading.ManualResetEventSlim> ręcznie zmniejszyć zmienną przed zasygnalizowaniem zdarzenia. Na przykład w scenariuszu rozwidlenie/łączenie można po prostu utworzyć element <xref:System.Threading.CountdownEvent> , który ma liczbę sygnałów równą 5, a następnie rozpocząć pięć elementów roboczych w puli wątków i mieć każde wywołanie elementu pracy <xref:System.Threading.CountdownEvent.Signal%2A> po jego zakończeniu. Każde wywołanie <xref:System.Threading.CountdownEvent.Signal%2A> zmniejsza liczbę sygnałów o 1. W wątku głównym wywołanie <xref:System.Threading.CountdownEvent.Wait%2A> zostanie zablokowane, dopóki liczba sygnałów nie będzie równa zero.  
+
+<xref:System.Threading.CountdownEvent?displayProperty=nameWithType> jest pierwotną synchronizacją, która odblokowuje oczekujące wątki po zasygnalizowaniu określonej liczby razy. <xref:System.Threading.CountdownEvent> jest przeznaczony do scenariuszy, w których w przeciwnym razie trzeba będzie użyć <xref:System.Threading.ManualResetEvent> lub <xref:System.Threading.ManualResetEventSlim> ręcznie zmniejszyć zmienną przed zasygnalizowaniem zdarzenia. Na przykład w scenariuszu rozwidlenie/łączenie można po prostu utworzyć element <xref:System.Threading.CountdownEvent> , który ma liczbę sygnałów równą 5, a następnie rozpocząć pięć elementów roboczych w puli wątków i mieć każde wywołanie elementu pracy <xref:System.Threading.CountdownEvent.Signal%2A> po jego zakończeniu. Każde wywołanie <xref:System.Threading.CountdownEvent.Signal%2A> zmniejsza liczbę sygnałów o 1. W wątku głównym wywołanie <xref:System.Threading.CountdownEvent.Wait%2A> zostanie zablokowane, dopóki liczba sygnałów nie będzie równa zero.  
   
 > [!NOTE]
 > W przypadku kodu, który nie musi współdziałać ze starszymi interfejsami API synchronizacji .NET Framework, rozważ użycie <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> obiektów lub <xref:System.Threading.Tasks.Parallel.Invoke%2A> metody dla jeszcze łatwiejszego podejścia do wyznaczania równoległości przyłączania do rozwidlenia.  
   
- <xref:System.Threading.CountdownEvent>ma następujące dodatkowe funkcje:  
+ <xref:System.Threading.CountdownEvent> ma następujące dodatkowe funkcje:  
   
 - Operację oczekiwania można anulować przy użyciu tokenów anulowania.  
   
@@ -29,7 +30,7 @@ ms.locfileid: "84277859"
   
 - Wystąpienia mogą być ponownie używane po <xref:System.Threading.CountdownEvent.Wait%2A> zwróceniu przez wywołanie <xref:System.Threading.CountdownEvent.Reset%2A> metody.  
   
-- Wystąpienia uwidaczniają <xref:System.Threading.WaitHandle> integrację z innymi interfejsami API synchronizacji .NET Framework, takimi jak <xref:System.Threading.WaitHandle.WaitAll%2A> .  
+- Wystąpienia uwidaczniają <xref:System.Threading.WaitHandle> integrację z innymi interfejsami API synchronizacji .NET, takimi jak <xref:System.Threading.WaitHandle.WaitAll%2A> .  
   
 ## <a name="basic-usage"></a>Podstawowe użycie  
  Poniższy przykład ilustruje sposób używania elementu z elementem <xref:System.Threading.CountdownEvent> <xref:System.Threading.ThreadPool> roboczym.  
@@ -45,6 +46,6 @@ ms.locfileid: "84277859"
   
  Należy pamiętać, że operacja oczekiwania nie anuluje wątków, które je sygnalizujący. Zazwyczaj anulowanie jest stosowane do operacji logicznej i może obejmować oczekiwanie na zdarzenie, a także wszystkie elementy robocze, które trwają synchronizacja. W tym przykładzie każdy element roboczy otrzymuje kopię tego samego tokenu anulowania, aby mógł on odpowiedzieć na żądanie anulowania.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Threading.Semaphore?displayProperty=nameWithType>

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET]
 - threading [.NET], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-ms.openlocfilehash: b332db80069e18d3b52cd03eef4995eaad3fda7b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f7af6e1e73016e67c097b4fdbfb5f5d2d84e00d3
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84583404"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188136"
 ---
 # <a name="threads-and-threading"></a>Wątki i wątkowość
 
@@ -24,7 +24,7 @@ Wielowątkowość pozwala zwiększyć czas odpowiedzi aplikacji i, jeśli aplika
 *Proces* to program wykonujący. System operacyjny używa procesów do rozdzielania wykonywanych aplikacji. *Wątek* jest jednostką podstawową, do której system operacyjny przydziela czas procesora. Każdy wątek ma [priorytet planowania](scheduling-threads.md) i utrzymuje zestaw struktur, których system używa do zapisywania kontekstu wątku, gdy wykonywanie wątku jest wstrzymane. Kontekst wątku zawiera wszystkie informacje niezbędne do bezproblemowego wznowienia wykonywania wątku, w tym zestaw rejestrów i stosów procesora CPU. W kontekście procesu można uruchomić wiele wątków. Wszystkie wątki procesu współdzielą swoją wirtualną przestrzeń adresową. Wątek może wykonać dowolną część kodu programu, w tym części, które są aktualnie wykonywane przez inny wątek.
 
 > [!NOTE]
-> .NET Framework zapewnia sposób izolowania aplikacji w ramach procesu przy użyciu *domen aplikacji*. (Domeny aplikacji nie są dostępne na platformie .NET Core). Aby uzyskać więcej informacji, zobacz sekcję [domeny aplikacji i wątki](../../framework/app-domains/application-domains.md#application-domains-and-threads) w artykule [domeny aplikacji](../../framework/app-domains/application-domains.md) .
+> .NET Framework zapewnia sposób izolowania aplikacji w ramach procesu przy użyciu *domen aplikacji* . (Domeny aplikacji nie są dostępne na platformie .NET Core). Aby uzyskać więcej informacji, zobacz sekcję [domeny aplikacji i wątki](../../framework/app-domains/application-domains.md#application-domains-and-threads) w artykule [domeny aplikacji](../../framework/app-domains/application-domains.md) .
 
 Domyślnie program .NET jest uruchamiany z pojedynczym wątkiem, często nazywanym wątkiem *podstawowym* . Można jednak utworzyć dodatkowe wątki do wykonywania kodu równolegle lub współbieżnie przy użyciu wątku głównego. Te wątki są często nazywane wątkami *roboczymi* .
 
@@ -38,7 +38,7 @@ Jeśli program wykonuje operacje, które mogą być wykonywane równolegle, łą
 
 ## <a name="how-to-use-multithreading-in-net"></a>Jak używać wielowątkowości w programie .NET
 
-Począwszy od .NET Framework 4, zalecanym sposobem użycia wielowątkowości jest użycie [biblioteki zadań równoległych (TPL)](../parallel-programming/task-parallel-library-tpl.md) i [równoległego LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md). Aby uzyskać więcej informacji, zobacz [programowanie równoległe](../parallel-programming/index.md).
+Począwszy od .NET Framework 4, zalecanym sposobem użycia wielowątkowości jest użycie [biblioteki zadań równoległych (TPL)](../parallel-programming/task-parallel-library-tpl.md) i [Parallel LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md). Aby uzyskać więcej informacji, zobacz [programowanie równoległe](../parallel-programming/index.md).
 
 Zarówno TPL, jak i PLINQ są zależne od <xref:System.Threading.ThreadPool> wątków. <xref:System.Threading.ThreadPool?displayProperty=nameWithType>Klasa udostępnia aplikację .NET z pulą wątków roboczych. Można również użyć wątków puli wątków. Aby uzyskać więcej informacji, zobacz [Zarządzana pula wątków](the-managed-thread-pool.md).
 

@@ -5,24 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 8b54aea1409f2b4c0a3d39d215922ba62c2a3563
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: b9b033f779b083be8bcec195caf8e55607f14d31
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656973"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188318"
 ---
 # <a name="security-considerations-for-data"></a>Zagadnienia związane z zabezpieczeniami danych
 
-Podczas pracy z danymi w Windows Communication Foundation (WCF) należy wziąć pod uwagę wiele kategorii zagrożeń. W poniższej tabeli wymieniono najważniejsze klasy zagrożeń, które odnoszą się do przetwarzania danych. Funkcja WCF oferuje narzędzia pozwalające ograniczyć te zagrożenia.
+Podczas pracy z danymi w Windows Communication Foundation (WCF) należy wziąć pod uwagę wiele kategorii zagrożeń. Na poniższej liście przedstawiono najważniejsze klasy zagrożeń, które odnoszą się do przetwarzania danych. Funkcja WCF oferuje narzędzia pozwalające ograniczyć te zagrożenia.
 
-Odmowa usługi podczas otrzymywania niezaufanych danych może spowodować, że po stronie odbiorczej dostęp do niewspółmiernej ilości różnych zasobów, takich jak pamięć, wątki, dostępne połączenia lub cykle procesora, jest spowodowany długimi obliczeniami. Atak typu "odmowa usługi" na serwer może spowodować awarię i uniemożliwić przetworzenie komunikatów od innych, uprawnionych klientów.
+* Odmowa usługi
 
-Złośliwe wykonanie kodu przychodzące dane niezaufane powodują, że Strona otrzymująca może uruchomić kod, którego nie ma.
+  Podczas otrzymywania niezaufanych danych może dojść do uzyskania dostępu do niewspółmiernej ilości różnych zasobów, takich jak pamięć, wątki, dostępne połączenia lub cykle procesora, powodująca długotrwałe obliczenia. Atak typu "odmowa usługi" na serwer może spowodować awarię i uniemożliwić przetworzenie komunikatów od innych, uprawnionych klientów.
 
-Ujawnienie informacji zdalne osoby atakujące wymuszają reagowanie na żądania w taki sposób, aby ujawnić więcej informacji niż ma to na celu.
+* Wykonywanie złośliwego kodu
 
-## <a name="user-provided-code-and-code-access-security"></a>Kod dostarczony przez użytkownika i zabezpieczenia dostępu kodu
+  Przychodzące dane niezaufane powodują, że po stronie odbiorczej można uruchomić kod, którego nie ma.
+
+* Ujawnienie informacji
+
+  Zdalny atakujący wymusza na stronie otrzymującej odpowiedź na żądania w taki sposób, aby ujawnić więcej informacji niż ma to na celu.
+
+## <a name="user-provided-code-and-code-access-security"></a>User-Provided zabezpieczenia dostępu kodu i kodu
 
 Liczba miejsc w infrastrukturze programu Windows Communication Foundation (WCF), która jest dostarczana przez użytkownika. Na przykład <xref:System.Runtime.Serialization.DataContractSerializer> aparat serializacji może wywoływać metody dostępu do właściwości `set` i metod dostępu dostarczonych przez użytkownika `get` . Infrastruktura kanału WCF może również wywołać klasy pochodne dostarczone przez użytkownika <xref:System.ServiceModel.Channels.Message> klasy.
 
@@ -88,7 +94,7 @@ Platforma WCF osiąga ten element, przekazując `MaxBufferSize` wartość do ró
 
 Koder komunikatu MTOM również ma `MaxBufferSize` ustawienie. W przypadku korzystania z powiązań standardowych jest to automatycznie ustawiane na wartość na poziomie transportu `MaxBufferSize` . Jednak w przypadku użycia elementu powiązania kodera komunikatu MTOM do skonstruowania niestandardowego powiązania należy ustawić `MaxBufferSize` Właściwość na wartość bezpieczną, gdy używane jest przesyłanie strumieniowe.
 
-## <a name="xml-based-streaming-attacks"></a>Ataki strumieniowe oparte na języku XML
+## <a name="xml-based-streaming-attacks"></a>Ataki przesyłania strumieniowego XML-Based
 
 `MaxBufferSize` sama nie jest wystarczająca, aby zapewnić, że nie można wymusić buforowania usługi WCF w przypadku, gdy jest oczekiwany strumień. Na przykład czytelnicy XML programu WCF zawsze buforują cały tag początkowy elementu XML przy rozpoczynaniu odczytywania nowego elementu. Dzięki temu obszary nazw i atrybuty są prawidłowo przetwarzane. Jeśli `MaxReceivedMessageSize` Konfiguracja jest duża (na przykład w celu włączenia scenariusza dużego przesyłania strumieniowego plików), złośliwy komunikat może być skonstruowany, gdzie cała treść komunikatu jest dużym tagiem początkowym elementu XML. Próba odczytu powoduje wystąpienie <xref:System.OutOfMemoryException> . Jest to jeden z wielu możliwych ataków typu "odmowa usługi" opartych na języku XML, które można rozwiązać za pomocą przydziałów czytnika XML, omówione w dalszej części tego tematu. W przypadku przesyłania strumieniowego jest szczególnie ważne, aby ustawić wszystkie te limity przydziału.
 
@@ -155,7 +161,7 @@ Ten limit przydziału ogranicza maksymalną głębokość zagnieżdżenia elemen
 
 #### <a name="maxnametablecharcount"></a>MaxNameTableCharCount
 
-Ten limit przydziału ogranicza rozmiar *NameTable*czytnika. NameTable zawiera pewne ciągi (takie jak przestrzenie nazw i prefiksy), które są napotkane podczas przetwarzania dokumentu XML. Ponieważ te ciągi są buforowane w pamięci, należy ustawić ten limit przydziału, aby zapobiec nadmiernemu buforowaniu, gdy jest oczekiwany strumień.
+Ten limit przydziału ogranicza rozmiar *NameTable* czytnika. NameTable zawiera pewne ciągi (takie jak przestrzenie nazw i prefiksy), które są napotkane podczas przetwarzania dokumentu XML. Ponieważ te ciągi są buforowane w pamięci, należy ustawić ten limit przydziału, aby zapobiec nadmiernemu buforowaniu, gdy jest oczekiwany strumień.
 
 #### <a name="maxstringcontentlength"></a>MaxStringContentLength
 
@@ -169,7 +175,7 @@ Ten limit przydziału ogranicza maksymalny rozmiar tablicy elementów podstawowy
 
 Binarne kodowanie XML obsługiwane przez WCF zawiera funkcję *ciągów słownika* . Duży ciąg może być zakodowany przy użyciu tylko kilku bajtów. Zapewnia to znaczący wzrost wydajności, ale wprowadza nowe zagrożenia typu "odmowa usługi", które należy wyeliminować.
 
-Istnieją dwa rodzaje słowników: *static* i *Dynamic*. Statyczny słownik jest wbudowaną listą długich ciągów, które mogą być reprezentowane przy użyciu krótkiego kodu w kodowaniu binarnym. Ta lista ciągów jest ustalana podczas tworzenia czytnika i nie można jej modyfikować. Żaden z ciągów w słowniku statycznym, który domyślnie nie używa WCF, jest wystarczająco duży, aby postanowić poważne zagrożenie odmowy usługi, chociaż mogą one być nadal używane w ataku do rozbudowy słownika. W zaawansowanych scenariuszach, w których dostarczasz własny słownik statyczny, należy zachować ostrożność podczas wprowadzania dużych ciągów słownika.
+Istnieją dwa rodzaje słowników: *static* i *Dynamic* . Statyczny słownik jest wbudowaną listą długich ciągów, które mogą być reprezentowane przy użyciu krótkiego kodu w kodowaniu binarnym. Ta lista ciągów jest ustalana podczas tworzenia czytnika i nie można jej modyfikować. Żaden z ciągów w słowniku statycznym, który domyślnie nie używa WCF, jest wystarczająco duży, aby postanowić poważne zagrożenie odmowy usługi, chociaż mogą one być nadal używane w ataku do rozbudowy słownika. W zaawansowanych scenariuszach, w których dostarczasz własny słownik statyczny, należy zachować ostrożność podczas wprowadzania dużych ciągów słownika.
 
 Funkcja słowniki dynamiczne umożliwia aplikacjom Definiowanie własnych ciągów i kojarzenie ich z krótkimi kodami. Te mapowania ciągów do kodu są przechowywane w pamięci podczas całej sesji komunikacji, w taki sposób, że kolejne komunikaty nie muszą ponownie wysyłać ciągów i mogą korzystać z kodów, które są już zdefiniowane. Te ciągi mogą mieć dowolną długość i w ten sposób stanowić bardziej poważne zagrożenie niż te w słowniku statycznym.
 
@@ -292,7 +298,7 @@ Ogólnie rzecz biorąc, Jeśli zezwolisz na dostęp częściowo zaufanego kodu d
 
 Innym problemem z bezpieczeństwem `NetDataContractSerializer` jest odmowa usługi, a nie złośliwe zagrożenie wykonania kodu. W przypadku korzystania z programu `NetDataContractSerializer` należy zawsze ustawić <xref:System.Runtime.Serialization.NetDataContractSerializer.MaxItemsInObjectGraph%2A> bezpieczną wartość przydziału. Można łatwo utworzyć małą złośliwą wiadomość, która alokuje tablicę obiektów, których rozmiar jest ograniczony tylko do tego przydziału.
 
-### <a name="xmlserializer-specific-threats"></a>XmlSerializer — zagrożenia specyficzne dla określonych
+### <a name="xmlserializer-specific-threats"></a>XmlSerializer-Specific zagrożenia
 
 <xref:System.Xml.Serialization.XmlSerializer>Model zabezpieczeń jest podobny do tego <xref:System.Runtime.Serialization.DataContractSerializer> . Niektóre zagrożenia są jednak unikatowe dla programu <xref:System.Xml.Serialization.XmlSerializer> .
 
@@ -382,7 +388,7 @@ WCF to elastyczny i dostosowywalny system. Większość zawartości tego tematu 
 
 - Ogólnie rzecz biorąc, w przypadku użycia dowolnego składnika, który akceptuje limit przydziału, należy zapoznać się z jego wpływem na zabezpieczenia i ustawić bezpieczną wartość.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.XmlDictionaryReader>

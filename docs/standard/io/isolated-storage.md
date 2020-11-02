@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 4ad7779b9810954d110af576dd834daf61888d59
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4289b809d9a401de92c74063a42216f3051543f6
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555923"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188565"
 ---
 # <a name="isolated-storage"></a>Wydzielona pamięć masowa
 
@@ -59,7 +59,7 @@ Wydzielona pamięć masowa umożliwia częściowo zaufanym aplikacjom przechowyw
 
 Na podstawie odpowiedniego poziomu zaufania administratorzy mogą określić, ile wydzielonej pamięci masowej jest dostępnej dla aplikacji lub użytkownika. Ponadto administratorzy mogą całkowicie usuwać utrwalone dane użytkownika. Aby utworzyć magazyn izolowany lub uzyskać do niego dostęp, należy przyznać mu odpowiednie <xref:System.Security.Permissions.IsolatedStorageFilePermission> uprawnienia.
 
-Aby uzyskać dostęp do wydzielonej pamięci masowej, kod musi mieć wszystkie niezbędne natywne prawa platformy systemu operacyjnego. Wymagana jest zgodność z listami kontroli dostępu (ACL) określającymi, którzy użytkownicy mają prawa do używania systemu plików. Aplikacje programu .NET Framework mają już prawa systemu operacyjnego dotyczące dostępu do wydzielonej pamięci masowej, chyba że wykonują personifikację (specyficzna dla platformy). W tym przypadku aplikacja jest odpowiedzialna za sprawdzanie, czy tożsamość personifikowanego użytkownika ma prawidłowe prawa systemu operacyjnego do uzyskiwania dostępu do wydzielonej pamięci masowej. Ten dostęp oferuje uruchomionemu lub pobranemu z sieci web kodowi wygodny sposób odczytu lub zapisu w obszarze pamięci masowej związanym z konkretnym użytkownikiem.
+Aby uzyskać dostęp do wydzielonej pamięci masowej, kod musi mieć wszystkie niezbędne natywne prawa platformy systemu operacyjnego. Wymagana jest zgodność z listami kontroli dostępu (ACL) określającymi, którzy użytkownicy mają prawa do używania systemu plików. Aplikacje .NET mają już prawa systemu operacyjnego do uzyskiwania dostępu do wydzielonej pamięci masowej, o ile nie wykonują personifikacji (specyficzne dla platformy). W tym przypadku aplikacja jest odpowiedzialna za sprawdzanie, czy tożsamość personifikowanego użytkownika ma prawidłowe prawa systemu operacyjnego do uzyskiwania dostępu do wydzielonej pamięci masowej. Ten dostęp oferuje uruchomionemu lub pobranemu z sieci web kodowi wygodny sposób odczytu lub zapisu w obszarze pamięci masowej związanym z konkretnym użytkownikiem.
 
 Aby kontrolować dostęp do magazynu izolowanego, środowisko uruchomieniowe języka wspólnego używa <xref:System.Security.Permissions.IsolatedStorageFilePermission> obiektów. Każdy obiekt ma właściwości, które określają następujące wartości:
 
@@ -134,7 +134,7 @@ Trzecia lokalizacja jest udostępniana dla wszystkich kont użytkowników na kom
 
 Powyższe ścieżki mogą się różnić w zależności od używanej wersji systemu Windows.
 
-Teraz Rozważmy system z obsługą dwóch użytkowników z dwoma zarejestrowanymi użytkownikami _Mallory_ i _Roberta_. Mallory ma możliwość uzyskiwania dostępu do katalogu profilu użytkownika `C:\Users\Mallory\` i może uzyskać dostęp do udostępnionej lokalizacji magazynu na całym komputerze `C:\ProgramData\IsolatedStorage\` . Nie może uzyskać dostępu do katalogu profilu użytkownika Roberta `C:\Users\Bob\` .
+Teraz Rozważmy system z obsługą dwóch użytkowników z dwoma zarejestrowanymi użytkownikami _Mallory_ i _Roberta_ . Mallory ma możliwość uzyskiwania dostępu do katalogu profilu użytkownika `C:\Users\Mallory\` i może uzyskać dostęp do udostępnionej lokalizacji magazynu na całym komputerze `C:\ProgramData\IsolatedStorage\` . Nie może uzyskać dostępu do katalogu profilu użytkownika Roberta `C:\Users\Bob\` .
 
 Jeśli Mallory życzy sobie atakującej, może ona zapisywać dane w lokalizacji przechowywania w całej maszynie, a następnie próbować wpływać na odczytanie ze sklepu na całym komputerze. Gdy Robert uruchamia aplikację, która odczytuje z tego magazynu, ta aplikacja będzie działać na Mallory danych umieszczonych w tym miejscu, ale w kontekście konta użytkownika Roberta. W pozostałej części tego dokumentu opisano różne wektory ataków oraz czynności, które można wykonać, aby zminimalizować ryzyko związane z atakami.
 
@@ -150,7 +150,7 @@ Nie są to wektory zagrożeń, które mają zastosowanie w standardowych środow
 
 __Podniesienie poziomu uprawnień__ występuje, gdy aplikacja Roberta odczytuje plik Mallory i automatycznie próbuje wykonać jakąś akcję na podstawie zawartości tego ładunku. Rozważmy aplikację, która odczytuje zawartość skryptu uruchamiania ze sklepu dla całego komputera i przekazuje tę zawartość do programu `Process.Start` . Jeśli Mallory może umieścić złośliwy skrypt w sklepie dla całej maszyny, gdy Robert uruchomi swoją aplikację:
 
-* Aplikacja analizuje i uruchamia złośliwy skrypt Mallory _w kontekście profilu użytkownika Roberta_.
+* Aplikacja analizuje i uruchamia złośliwy skrypt Mallory _w kontekście profilu użytkownika Roberta_ .
 * Mallory uzyskuje dostęp do konta Roberta na komputerze lokalnym.
 
 #### <a name="denial-of-service"></a>Odmowa usługi
@@ -195,7 +195,7 @@ Czasami jest ono pomocne podczas weryfikowania zmiany w wydzielonej pamięci mas
 
 ## <a name="creating-enumerating-and-deleting-isolated-storage"></a>Tworzenia, wyliczania i usuwania izolowanych magazynów
 
-.NET Framework zawiera trzy klasy w <xref:System.IO.IsolatedStorage> przestrzeni nazw, które ułatwiają wykonywanie zadań obejmujących izolowany magazyn:
+Platforma .NET oferuje trzy klasy w <xref:System.IO.IsolatedStorage> przestrzeni nazw, które ułatwiają wykonywanie zadań obejmujących izolowany magazyn:
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>, pochodzi z <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType> i zapewnia podstawowe zarządzanie przechowywanymi plikami zestawu i aplikacji. Wystąpienie <xref:System.IO.IsolatedStorage.IsolatedStorageFile> klasy reprezentuje pojedynczy magazyn znajdujący się w systemie plików.
 

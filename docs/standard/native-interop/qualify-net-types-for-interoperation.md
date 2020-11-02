@@ -3,19 +3,19 @@ title: Kwalifikowanie typów .NET do współdziałania z modelem COM
 description: Ten artykuł zawiera wskazówki ułatwiające uwidocznienie typów w zestawie .NET w aplikacjach COM dla współdziałania z modelem COM.
 ms.date: 03/30/2017
 helpviewer_keywords:
-- exposing .NET Framework components to COM
+- exposing .NET components to COM
 - COM interop, qualifying .NET types
 - qualifying .NET types for interoperation
 - interoperation with unmanaged code, qualifying .NET types
-- interoperation with unmanaged code, exposing .NET Framework components
+- interoperation with unmanaged code, exposing .NET components
 - COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
-ms.openlocfilehash: 5e8d604c8152d37475bf93e3b5687f24cfebfa02
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3fa9f0d5d8dd4d532fc510a1d946eddf32016748
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285966"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93187765"
 ---
 # <a name="qualifying-net-types-for-com-interoperation"></a>Kwalifikowanie typów .NET do współdziałania z modelem COM
 Jeśli zamierzasz uwidocznić typy w zestawie w aplikacjach COM, weź pod uwagę wymagania międzyoperacyjności modelu COM w czasie projektowania. Typy zarządzane (Klasa, interfejs, struktura i Wyliczenie) bezproblemowo integrują się z typami COM w przypadku przestrzegania następujących wytycznych:  
@@ -46,7 +46,7 @@ Jeśli zamierzasz uwidocznić typy w zestawie w aplikacjach COM, weź pod uwagę
   
  Po eksportowaniu do modelu COM Hierarchia dziedziczenia typu zarządzanego jest spłaszczona. Przechowywanie wersji różni się również między środowiskami zarządzanymi i niezarządzanymi. Typy ujawnione dla modelu COM nie mają takich samych cech wersji jak inne typy zarządzane.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.InteropServices.ComVisibleAttribute>
 - [Udostępnianie składników .NET Framework modelowi COM](../../framework/interop/exposing-dotnet-components-to-com.md)

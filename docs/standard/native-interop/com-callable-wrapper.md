@@ -13,12 +13,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-ms.openlocfilehash: c42ea0b5ba4cb01304ceae4ba2d2fc91b629a9b3
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: cc27ba47c88d424a80eb47aaa310bdfd6d18433a
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420529"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93187921"
 ---
 # <a name="com-callable-wrapper"></a>Wywoływana otoka COM
 
@@ -42,7 +42,7 @@ W odróżnieniu od klienta środowiska .NET, którego opakowuje, otoka CCW podle
 
 CCW udostępnia wszystkie publiczne, widoczne dla modelu COM interfejsy, typy danych i zwraca wartości do klientów COM w sposób, który jest zgodny z wymuszeniem interakcji opartej na interfejsie COM. W przypadku klienta COM wywoływanie metod w obiekcie .NET jest identyczne z wywoływaniem metod obiektu COM.
 
-Aby utworzyć to bezproblemowe podejście, CCW produkuje tradycyjne interfejsy COM, takie jak **IUnknown** i **IDispatch**. Jak widać na poniższej ilustracji, CCW zachowuje pojedyncze odwołanie do obiektu platformy .NET, który go otacza. Zarówno klient COM, jak i obiekt .NET współpracują ze sobą za pomocą serwera proxy i klasy zastępczej CCW.
+Aby utworzyć to bezproblemowe podejście, CCW produkuje tradycyjne interfejsy COM, takie jak **IUnknown** i **IDispatch** . Jak widać na poniższej ilustracji, CCW zachowuje pojedyncze odwołanie do obiektu platformy .NET, który go otacza. Zarówno klient COM, jak i obiekt .NET współpracują ze sobą za pomocą serwera proxy i klasy zastępczej CCW.
 
 ![Diagram przedstawiający sposób, w jaki CCW produkuje interfejsy COM.](./media/com-callable-wrapper/com-callable-wrapper-interfaces.gif)
 
@@ -54,17 +54,17 @@ Oprócz ujawniania interfejsów, które są jawnie implementowane przez klasę w
 |**IErrorInfo**|Zawiera tekstowy opis błędu, jego źródło, plik pomocy, kontekst pomocy oraz identyfikator GUID interfejsu, który definiuje błąd (zawsze **GUID_NULL** dla klas .NET).|
 |**IProvideClassInfo**|Umożliwia klientom COM uzyskiwanie dostępu do interfejsu **Metoda ITypeInfo** zaimplementowanego przez klasę zarządzaną. Zwraca `COR_E_NOTSUPPORTED` na platformie .NET Core dla typów, które nie zostały zaimportowane z modelu com. |
 |**ISupportErrorInfo**|Umożliwia klientowi COM określenie, czy zarządzany obiekt obsługuje interfejs **IErrorInfo** . Jeśli tak, program umożliwia klientowi uzyskanie wskaźnika do ostatniego obiektu wyjątku. Wszystkie typy zarządzane obsługują interfejs **IErrorInfo** .|
-|**Metoda ITypeInfo** (tylko .NET Framework)|Zapewnia informacje o typie dla klasy, która jest dokładnie taka sama jak informacje o typie wytwarzane przez Tlbexp. exe.|
+|**Metoda ITypeInfo** (tylko .NET Framework)|Zapewnia informacje o typie dla klasy, która jest dokładnie taka sama jak informacje o typie, które są tworzone przez Tlbexp.exe.|
 |**IUnknown**|Zapewnia standardową implementację interfejsu **IUnknown** , za pomocą którego klient com zarządza okresem istnienia CCW i zapewnia przekształcenie typu.|
 
  Zarządzana Klasa może również udostępniać interfejsy COM opisane w poniższej tabeli.
 
 |Interfejs|Opis|
 |---------------|-----------------|
-|\_Interfejs klasy (*ClassName*)|Interfejs, uwidoczniony przez środowisko uruchomieniowe i niejawnie zdefiniowany, który uwidacznia wszystkie interfejsy publiczne, metody, właściwości i pola, które są jawnie uwidocznione w zarządzanym obiekcie.|
+|\_Interfejs klasy ( *ClassName* )|Interfejs, uwidoczniony przez środowisko uruchomieniowe i niejawnie zdefiniowany, który uwidacznia wszystkie interfejsy publiczne, metody, właściwości i pola, które są jawnie uwidocznione w zarządzanym obiekcie.|
 |**IConnectionPoint** i **IConnectionPointContainer**|Interfejs dla obiektów, które są źródłem zdarzeń opartych na delegatach (interfejs do rejestrowania subskrybentów zdarzeń).|
-|**IDispatchEx** (tylko .NET Framework)|Interfejs dostarczony przez środowisko uruchomieniowe, jeśli klasa implementuje **IExpando**. Interfejs **IDispatchEx** jest rozszerzeniem interfejsu **IDispatch** , który, w przeciwieństwie do **IDispatch**, włącza Wyliczenie, Dodawanie, usuwanie i uwzględnianie wielkości liter dla elementów członkowskich.|
-|**IEnumVARIANT**|Interfejs dla klas typu kolekcji, który wylicza obiekty w kolekcji, jeśli klasa implementuje **interfejs IEnumerable**.|
+|**IDispatchEx** (tylko .NET Framework)|Interfejs dostarczony przez środowisko uruchomieniowe, jeśli klasa implementuje **IExpando** . Interfejs **IDispatchEx** jest rozszerzeniem interfejsu **IDispatch** , który, w przeciwieństwie do **IDispatch** , włącza Wyliczenie, Dodawanie, usuwanie i uwzględnianie wielkości liter dla elementów członkowskich.|
+|**IEnumVARIANT**|Interfejs dla klas typu kolekcji, który wylicza obiekty w kolekcji, jeśli klasa implementuje **interfejs IEnumerable** .|
 
 ## <a name="introducing-the-class-interface"></a>Wprowadzenie do interfejsu klasy
 
@@ -97,7 +97,7 @@ public class Mammal
 }
 ```
 
-Klient COM może uzyskać wskaźnik do interfejsu klasy o nazwie `_Mammal` . Na .NET Framework można użyć narzędzia [eksportu biblioteki typów (Tlbexp. exe)](../../framework/tools/tlbexp-exe-type-library-exporter.md) w celu wygenerowania biblioteki typów zawierającej `_Mammal` definicję interfejsu. Eksporter biblioteki typów nie jest obsługiwany w programie .NET Core. Jeśli `Mammal` Klasa implementuje jeden lub więcej interfejsów, interfejsy pojawią się pod klasą coclass.
+Klient COM może uzyskać wskaźnik do interfejsu klasy o nazwie `_Mammal` . Na .NET Framework można użyć narzędzia [eksportu biblioteki typów (Tlbexp.exe)](../../framework/tools/tlbexp-exe-type-library-exporter.md) do wygenerowania biblioteki typów zawierającej `_Mammal` definicję interfejsu. Eksporter biblioteki typów nie jest obsługiwany w programie .NET Core. Jeśli `Mammal` Klasa implementuje jeden lub więcej interfejsów, interfejsy pojawią się pod klasą coclass.
 
 ```console
 [odl, uuid(…), hidden, dual, nonextensible, oleautomation]
@@ -175,13 +175,13 @@ public class LoanApp
 }
 ```
 
-Aby uzyskać identyfikator DispId elementu członkowskiego interfejsu w czasie wykonywania, klienci COM mogą wywołać metodę **IDispatch. GetIDsOfNames**. Aby wywołać metodę w interfejsie, Przekaż zwracany identyfikator DispId jako argument do elementu **IDispatch. Invoke**.
+Aby uzyskać identyfikator DispId elementu członkowskiego interfejsu w czasie wykonywania, klienci COM mogą wywołać metodę **IDispatch. GetIDsOfNames** . Aby wywołać metodę w interfejsie, Przekaż zwracany identyfikator DispId jako argument do elementu **IDispatch. Invoke** .
 
 ### <a name="restrict-using-the-dual-interface-option-for-the-class-interface"></a>Ogranicz przy użyciu opcji podwójnego interfejsu dla interfejsu klasy.
 
 Podwójne interfejsy umożliwiają wczesne i późne wiązanie do członków interfejsu przez klientów COM. W czasie projektowania i podczas testowania może okazać się przydatne, aby ustawić interfejs klasy na podwójny. W przypadku klasy zarządzanej (i jej klas podstawowych), które nigdy nie będą modyfikowane, ta opcja jest również akceptowalna. We wszystkich innych przypadkach należy unikać ustawiania interfejsu klasy na podwójny.
 
-Automatycznie wygenerowany podwójny interfejs może być odpowiedni w rzadkich przypadkach; jednak często tworzy złożoność związaną z wersją. Na przykład klienci COM korzystający z interfejsu klasy klasy pochodnej mogą łatwo przerwać od zmian w klasie bazowej. Gdy strona trzecia udostępnia klasę bazową, układ interfejsu klasy jest poza formantem. W przeciwieństwie do interfejsu tylko do wysyłania, podwójny interfejs (**ClassInterfaceType. AutoDual**) zawiera opis interfejsu klasy w wyeksportowanej bibliotece typów. Ten opis zachęca klientów z późnym wiązaniem do buforowania identyfikatorów spId w czasie kompilacji.
+Automatycznie wygenerowany podwójny interfejs może być odpowiedni w rzadkich przypadkach; jednak często tworzy złożoność związaną z wersją. Na przykład klienci COM korzystający z interfejsu klasy klasy pochodnej mogą łatwo przerwać od zmian w klasie bazowej. Gdy strona trzecia udostępnia klasę bazową, układ interfejsu klasy jest poza formantem. W przeciwieństwie do interfejsu tylko do wysyłania, podwójny interfejs ( **ClassInterfaceType. AutoDual** ) zawiera opis interfejsu klasy w wyeksportowanej bibliotece typów. Ten opis zachęca klientów z późnym wiązaniem do buforowania identyfikatorów spId w czasie kompilacji.
 
 ### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>Upewnij się, że wszystkie powiadomienia o zdarzeniach COM są opóźnione.
 
@@ -193,7 +193,7 @@ Jeśli aplikacja wymaga wczesnych wywołań metod interfejsu zdarzenia COM, moż
 <EmbedInteropTypes>True</EmbedInteropTypes>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>
 - [Otoki COM](com-wrappers.md)

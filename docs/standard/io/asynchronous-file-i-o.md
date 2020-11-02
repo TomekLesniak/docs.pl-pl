@@ -11,19 +11,19 @@ helpviewer_keywords:
 - asynchronous I/O
 - synchronous I/O
 - streams, asynchronous streams
-- I/O [.NET Framework], asynchronous I/O
+- I/O [.NET], asynchronous I/O
 - Stream class, synchronous I/O
 - data streams, asynchronous streams
 - Stream class, asynchronous I/O
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-ms.openlocfilehash: 9506a366b6f1e363ec13550e5ed68c7176dd4d0a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a148e6e13ec0ee4ee469a0630f150199c5a3af13
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598622"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188604"
 ---
 # <a name="asynchronous-file-io"></a>Asynchroniczne We/Wy pliku
 
@@ -31,7 +31,7 @@ Mechanizm operacji asynchronicznych umożliwia wykonywanie operacji We/Wy mocno 
 
 Począwszy od .NET Framework 4,5, typy we/wy obejmują metody asynchroniczne upraszczające asynchroniczne operacje. Metoda asynchroniczna ma w nazwie element `Async`, np. <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>, <xref:System.IO.TextReader.ReadLineAsync%2A> lub <xref:System.IO.TextReader.ReadToEndAsync%2A>. Te metody asynchroniczne są implementowane w klasach strumieniowych, takich jak <xref:System.IO.Stream>, <xref:System.IO.FileStream> i <xref:System.IO.MemoryStream>, oraz klasach służących do odczytu /zapisu do strumieni, takich jak <xref:System.IO.TextReader> i <xref:System.IO.TextWriter>.
 
-W programie .NET Framework w wersji 4 i starszych do implementowania asynchronicznych operacji We/Wy należy używać metod takich jak <xref:System.IO.Stream.BeginRead%2A> i <xref:System.IO.Stream.EndRead%2A>. Te metody są nadal dostępne w .NET Framework 4,5 do obsługi starszego kodu; jednak metody asynchroniczne umożliwiają łatwiejsze implementowanie asynchronicznych operacji we/wy.
+W .NET Framework 4 i wcześniejszych wersjach musisz użyć metod, takich jak <xref:System.IO.Stream.BeginRead%2A> i, <xref:System.IO.Stream.EndRead%2A> Aby zaimplementować asynchroniczne operacje we/wy. Te metody są nadal dostępne w bieżącej wersji .NET do obsługi starszego kodu; jednak metody asynchroniczne umożliwiają łatwiejsze implementowanie asynchronicznych operacji we/wy.
 
 W języku C# i Visual Basic każdy z nich ma dwa słowa kluczowe do programowania asynchronicznego:
 

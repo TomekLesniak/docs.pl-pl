@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 45f3951b727d3b615d8384541ff169e8840acab0
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bd7112b3052f246a01e4a36d6d425b37cb6174dd
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599805"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188045"
 ---
 # <a name="handling-io-errors-in-net"></a>Obsługa błędów we/wy w programie .NET
 
@@ -46,7 +46,7 @@ Jednak precyzyjne warunki, w których system operacyjny zwraca określone kody b
 
 Ze względu na to, że jest to zależność od systemu operacyjnego, identyczne warunki wyjątków (takie jak błąd nie znaleziono katalogu w naszym przykładzie) mogą spowodować, że metoda we/wy zgłasza jedną z wielu wyjątków we/wy. Oznacza to, że podczas wywoływania interfejsów API we/wy kod powinien zostać przygotowany do obsługi większości lub wszystkich tych wyjątków, jak pokazano w poniższej tabeli:
 
-| Typ wyjątku | .NET Core | .NET Framework |
+| Typ wyjątku | .NET Core/. NET 5 + | .NET Framework |
 |---|---|---|
 | <xref:System.IO.IOException> | Tak | Tak |
 | <xref:System.IO.FileNotFoundException> | Tak | Tak |
@@ -55,8 +55,8 @@ Ze względu na to, że jest to zależność od systemu operacyjnego, identyczne 
 | <xref:System.IO.PathTooLongException> | Tak | Tak |
 | <xref:System.OperationCanceledException> | Tak | Tak |
 | <xref:System.UnauthorizedAccessException> | Tak | Tak |
-| <xref:System.ArgumentException> | .NET Core 2,0 i starsze| Yes |
-| <xref:System.NotSupportedException> | Nie | Yes |
+| <xref:System.ArgumentException> | .NET Core 2,0 i starsze| Tak |
+| <xref:System.NotSupportedException> | Nie | Tak |
 | <xref:System.Security.SecurityException> | Nie | Tylko ograniczone zaufanie |
 
 ## <a name="handling-ioexception"></a>Obsługa IOException
@@ -72,7 +72,7 @@ Należy pamiętać, że w kodzie obsługi wyjątków zawsze należy obsłużyć 
 
 W przypadku elementu <xref:System.IO.IOException> można uzyskać dodatkowe informacje o błędzie z właściwości [IOException. HRESULT](xref:System.Exception.HResult) . Aby przekonwertować wartość HResult na kod błędu Win32, należy rozdzielić górne 16 bitów wartości 32-bitowej. Poniższa tabela zawiera listę kodów błędów, które mogą być opakowane w programie <xref:System.IO.IOException> .
 
-| Wynik | Stały | Opis |
+| Wynik | Stała | Opis |
 | --- | --- | --- |
 | ERROR_SHARING_VIOLATION | 32 | Brak nazwy pliku lub plik lub katalog jest używany. |
 | ERROR_FILE_EXISTS | 80 | Plik już istnieje. |

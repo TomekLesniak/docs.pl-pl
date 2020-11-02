@@ -10,17 +10,18 @@ helpviewer_keywords:
 - log files, opening
 - streams, opening and appending to log file
 - log files, appending to
-- I/O [.NET Framework], log files
+- I/O [.NET], log files
 ms.assetid: 74423362-1721-49cb-aa0a-e04005f72a06
-ms.openlocfilehash: a66dadd24cc327824e91df733f11a23112cd384a
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ed8345901dc5f44e947bd076944d7e61eac561da
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769174"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188175"
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>Instrukcje: otwieranie pliku dziennika i dołączanie do niego
-<xref:System.IO.StreamWriter>i <xref:System.IO.StreamReader> pisać znaki do i odczytywanie znaków ze strumieni. Poniższy przykład kodu otwiera plik *log.txt* dla danych wejściowych lub tworzy go, jeśli nie istnieje, i dołącza informacje dziennika na końcu pliku. Przykład zapisuje zawartość pliku do standardowego wyjścia na potrzeby wyświetlania.
+
+<xref:System.IO.StreamWriter> i <xref:System.IO.StreamReader> pisać znaki do i odczytywanie znaków ze strumieni. Poniższy przykład kodu otwiera plik *log.txt* dla danych wejściowych lub tworzy go, jeśli nie istnieje, i dołącza informacje dziennika na końcu pliku. Przykład zapisuje zawartość pliku do standardowego wyjścia na potrzeby wyświetlania.
 
 Alternatywą dla tego przykładu jest zapisanie informacji jako jednego ciągu lub tablicy ciągów i użycie <xref:System.IO.File.WriteAllText%2A?displayProperty=nameWithType> <xref:System.IO.File.WriteAllLines%2A?displayProperty=nameWithType> metody lub do osiągnięcia tych samych funkcji.  
   
@@ -31,7 +32,7 @@ Alternatywą dla tego przykładu jest zapisanie informacji jako jednego ciągu l
  [!code-csharp[Conceptual.BasicIO.TextFiles#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source2.cs#2)]
  [!code-vb[Conceptual.BasicIO.TextFiles#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source2.vb#2)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IO.StreamWriter>  
 - <xref:System.IO.StreamReader>  

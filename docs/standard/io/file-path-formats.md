@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 36ecbe763ed47e95d9339d1d748b3faab100c15e
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: e24772ee9c9d22786c9cfece43017f8526434601
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679602"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188058"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formaty ścieżek plików w systemie Windows
 
@@ -90,13 +90,13 @@ Oprócz identyfikowania dysku za pomocą jego litery dysku, można zidentyfikowa
 - Specyfikator ścieżki urządzenia ( `\\.\` lub `\\?\` ), który identyfikuje ścieżkę jako ścieżkę urządzenia DOS.
 
    > [!NOTE]
-   > `\\?\`Jest obsługiwane we wszystkich wersjach programu .NET Core i w .NET Framework, począwszy od wersji 4.6.2.
+   > `\\?\`Jest to obsługiwane we wszystkich wersjach oprogramowania .NET Core i .NET 5 + i w .NET Framework począwszy od wersji 4.6.2.
 
 - Symboliczny link do obiektu urządzenia "Real" (C: w przypadku nazwy dysku lub woluminu {b75e2c83-0000-0000-0000-602f00000000} w przypadku identyfikatora GUID woluminu).
 
    Pierwszy segment ścieżki urządzenia DOS po specyfikator ścieżki urządzenia identyfikuje wolumin lub dysk. (Na przykład `\\?\C:\` i `\\.\BootPartition\` .)
 
-   Istnieje konkretne łącze dla UNCs o nazwie, a nie Surprisingly, `UNC` . Na przykład:
+   Istnieje konkretne łącze dla UNCs o nazwie, a nie Surprisingly, `UNC` . Przykład:
 
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
@@ -194,10 +194,10 @@ Dlaczego chcesz pominąć normalizację? Istnieją trzy główne przyczyny:
 
 1. Aby poprawić wydajność dzięki pominięciu normalizacji, jeśli został już znormalizowany.
 
-1. Tylko na .NET Framework, aby pominąć `MAX_PATH` Sprawdzanie długości ścieżki, aby umożliwić używanie ścieżek, które są dłuższe niż 259 znaków. Większość interfejsów API zezwala na to, z pewnymi wyjątkami.
+1. Tylko na .NET Framework, aby pominąć `MAX_PATH` Sprawdzanie długości ścieżki, aby można było zezwolić na ścieżki, które są dłuższe niż 259 znaków. Większość interfejsów API zezwala na to, z pewnymi wyjątkami.
 
 > [!NOTE]
-> Program .NET Core obsługuje długie ścieżki niejawnie i nie `MAX_PATH` sprawdza. `MAX_PATH`Sprawdzanie dotyczy tylko .NET Framework.
+> Programy .NET Core i .NET 5 + obsługują niejawnie długie ścieżki i nie `MAX_PATH` sprawdzają go. `MAX_PATH`Kontrola ma zastosowanie tylko do .NET Framework.
 
 Pomijanie normalizacji i maksymalne sprawdzanie ścieżki jest jedyną różnicą między dwiema składnią ścieżki urządzenia; są one identyczne. Należy zachować ostrożność w przypadku pominięcia normalizacji, ponieważ można łatwo tworzyć ścieżki, które są trudne do rozpatrzenia "normalnych" aplikacji.
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - threading [.NET], thread pool
 - threading [.NET], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
-ms.openlocfilehash: 2671ce7c9721b15de8a3805da27040e973a62804
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 099670f8451e9e2cf78b372d3a4d393882a30407
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223792"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188695"
 ---
 # <a name="the-managed-thread-pool"></a>Zarządzana pula wątków
 
@@ -40,7 +40,7 @@ Aby uzyskać więcej informacji, zobacz [wyjątki w zarządzanych wątkach](exce
   
 ### <a name="maximum-number-of-thread-pool-threads"></a>Maksymalna liczba wątków puli wątków
 
-Liczba operacji, które można umieścić w kolejce do puli wątków, jest ograniczona tylko przez dostępną pamięć. Jednak Pula wątków ogranicza liczbę wątków, które mogą być aktywne w procesie jednocześnie. Jeśli wszystkie wątki puli wątków są zajęte, dodatkowe elementy robocze są umieszczane w kolejce do momentu udostępnienia wątków do ich wykonania. Począwszy od .NET Framework 4, domyślny rozmiar puli wątków dla procesu zależy od kilku czynników, takich jak rozmiar wirtualnej przestrzeni adresowej. Proces może wywołać <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> metodę w celu określenia liczby wątków.  
+Liczba operacji, które można umieścić w kolejce do puli wątków, jest ograniczona tylko przez dostępną pamięć. Jednak Pula wątków ogranicza liczbę wątków, które mogą być aktywne w procesie jednocześnie. Jeśli wszystkie wątki puli wątków są zajęte, dodatkowe elementy robocze są umieszczane w kolejce do momentu udostępnienia wątków do ich wykonania. Domyślny rozmiar puli wątków dla procesu zależy od kilku czynników, takich jak rozmiar wirtualnej przestrzeni adresowej. Proces może wywołać <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> metodę w celu określenia liczby wątków.  
   
 Maksymalną liczbę wątków można kontrolować przy użyciu <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType> metod i.  
 
@@ -54,14 +54,14 @@ Pula wątków udostępnia nowe wątki robocze lub wątki zakończenia operacji w
 > [!NOTE]
 > Gdy zapotrzebowanie jest niskie, rzeczywista liczba wątków puli wątków może spaść poniżej wartości minimalnych.  
   
-Po osiągnięciu minimalnej puli wątków można utworzyć dodatkowe wątki lub poczekać na zakończenie niektórych zadań. Począwszy od .NET Framework 4, Pula wątków tworzy i niszczy wątki robocze w celu zoptymalizowania przepływności, która jest definiowana jako liczba zadań ukończonych na jednostkę czasu. Zbyt mało wątków może nie optymalnie korzystać z dostępnych zasobów, a zbyt wiele wątków może zwiększyć rywalizację o zasoby.  
+Po osiągnięciu minimalnej puli wątków można utworzyć dodatkowe wątki lub poczekać na zakończenie niektórych zadań. Pula wątków tworzy i niszczy wątki robocze w celu zoptymalizowania przepływności, która jest definiowana jako liczba zadań ukończonych na jednostkę czasu. Zbyt mało wątków może nie optymalnie korzystać z dostępnych zasobów, a zbyt wiele wątków może zwiększyć rywalizację o zasoby.  
   
 > [!CAUTION]
 > Możesz użyć metody, <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> Aby zwiększyć minimalną liczbę bezczynnych wątków. Jednak niekonieczne zwiększenie tych wartości może spowodować problemy z wydajnością. Jeśli zbyt wiele zadań rozpocznie się w tym samym czasie, wszystkie z nich mogą wydawać się wolne. W większości przypadków Pula wątków będzie działać lepiej wraz z własnym algorytmem do alokowania wątków.  
 
 ## <a name="using-the-thread-pool"></a>Korzystanie z puli wątków
 
-Począwszy od .NET Framework 4, najprostszym sposobem korzystania z puli wątków jest użycie [biblioteki zadań równoległych (TPL)](../parallel-programming/task-parallel-library-tpl.md). Domyślnie TPL typy takie jak <xref:System.Threading.Tasks.Task> i <xref:System.Threading.Tasks.Task%601> używają wątków puli wątków do uruchamiania zadań.
+Najprostszym sposobem korzystania z puli wątków jest użycie [biblioteki zadań równoległych (TPL)](../parallel-programming/task-parallel-library-tpl.md). Domyślnie TPL typy takie jak <xref:System.Threading.Tasks.Task> i <xref:System.Threading.Tasks.Task%601> używają wątków puli wątków do uruchamiania zadań.
 
 Można również użyć puli wątków, wywołując <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> kod zarządzany (lub [`ICorThreadpool::CorQueueUserWorkItem`](../../framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md) z kodu niezarządzanego) i przekazując <xref:System.Threading.WaitCallback?displayProperty=nameWithType> Delegat reprezentujący metodę wykonującą zadanie.
 
