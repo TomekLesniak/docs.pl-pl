@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d899d43c-335a-433e-a589-cd187192984f
 dev_langs:
 - CSharp
-ms.openlocfilehash: 98ea6f23467b85dc270aa323e72a8a9b0934994a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2b75ba6875b2a4430b6776c27dead72476884fff
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "83378430"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282075"
 ---
 # <a name="basic-serialization"></a>Serializacja podstawowa
 
@@ -59,7 +59,7 @@ Console.WriteLine("n2: {0}", obj.n2);
 Console.WriteLine("str: {0}", obj.str);  
 ```  
   
-<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Użyte powyżej jest bardzo wydajne i tworzy strumień bajtów kompaktowych. Dla wszystkich obiektów z tego programu formatującego również może być zdeserializowany z nim, dzięki czemu idealne narzędzie serializacji obiektów, które zostanie przeprowadzona na programie .NET Framework. Należy pamiętać, że konstruktorów nie są wywoływane, gdy deserializowany jest obiekt. To ograniczenie jest umieszczane na deserializacji ze względu na wydajność. Jednak narusza niektórych zwykłym umów przez środowisko uruchomieniowe z modułu zapisywania obiektu i deweloperów należy upewnić się, że zrozumieć zagadnienia, kiedy oznaczanie jako możliwy do serializacji obiektu.  
+<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Użyte powyżej jest bardzo wydajne i tworzy strumień bajtów kompaktowych. Wszystkie obiekty serializowane za pomocą tego programu formatującego można także zdeserializować z nim, co sprawia, że jest to idealne narzędzie do serializacji obiektów, które zostaną rozszeregowane na platformie .NET. Należy pamiętać, że konstruktorów nie są wywoływane, gdy deserializowany jest obiekt. To ograniczenie jest umieszczane na deserializacji ze względu na wydajność. Jednak narusza niektórych zwykłym umów przez środowisko uruchomieniowe z modułu zapisywania obiektu i deweloperów należy upewnić się, że zrozumieć zagadnienia, kiedy oznaczanie jako możliwy do serializacji obiektu.  
   
 Jeśli przenośność jest wymagana, użyj <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> zamiast niego. Po prostu Zastąp **BinaryFormatter** w powyższym kodzie z **SoapFormatter,** a następnie Wywołaj **Serializacja** i **deserializacja** jako poprzednio. Ten program formatujący tworzy następujące dane wyjściowe dla przykładu użytego powyżej.  
   
