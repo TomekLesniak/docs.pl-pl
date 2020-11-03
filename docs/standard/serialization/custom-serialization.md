@@ -18,23 +18,25 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-ms.openlocfilehash: 1532c4eeb09e7110d0f369ec47f342256889e576
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8e8d8d38ab8170a9bf9fae098e267be1a38f27d0
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289658"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281788"
 ---
 # <a name="custom-serialization"></a>Serializacja niestandardowa
+
 Niestandardowej serializacji to proces sterowania serializacji i deserializacji obiektu określonego typu. Kontrolując serializacji, można zapewnić zgodność serializacji, która jest możliwością serializacji i deserializacji między wersjami typu bez przerywania podstawowej funkcjonalności typu. Na przykład w pierwszej wersji typu mogą istnieć tylko dwa pola. W następnej wersji typu są dodawane kilka więcej pól. Jeszcze druga wersja aplikacji musi mieć możliwość serializacji i deserializacji obu typów. W następujących sekcjach opisano kontrola serializacji.
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   
 > [!IMPORTANT]
-> W wersjach wcześniejszych niż .NET Framework 4,0 Serializacja niestandardowych danych użytkownika w częściowo zaufanym zestawie została zrealizowana przy użyciu GetObjectData. Począwszy od wersji 4.0, metoda jest oznaczona za pomocą <xref:System.Security.SecurityCriticalAttribute> atrybutu, co uniemożliwia wykonanie w częściowo zaufanych zestawów. Aby obejść ten warunek, zaimplementuj <xref:System.Runtime.Serialization.ISafeSerializationData> interfejs.  
+> W wersjach wcześniejszych niż .NET Framework 4,0 Serializacja niestandardowych danych użytkownika w częściowo zaufanym zestawie została zrealizowana przy użyciu `GetObjectData` . Począwszy od wersji 4,0, ta metoda jest oznaczona <xref:System.Security.SecurityCriticalAttribute> atrybutem, co uniemożliwia wykonywanie w częściowo zaufanych zestawach. Aby obejść ten warunek, zaimplementuj <xref:System.Runtime.Serialization.ISafeSerializationData> interfejs.  
   
-## <a name="running-custom-methods-during-and-after-serialization"></a>Uruchamianie metod niestandardowych w trakcie serializacji i po nim  
- Najlepszym rozwiązaniem i najprostszym sposobem (wprowadzonym w wersji 2,0 .NET Framework) jest stosowanie następujących atrybutów do metod, które są używane do poprawiania danych podczas serializacji i po nim:  
+## <a name="running-custom-methods-during-and-after-serialization"></a>Uruchamianie metod niestandardowych w trakcie serializacji i po nim
+
+Zalecanym sposobem uruchamiania metod niestandardowych podczas serializacji i po nim jest zastosowanie następujących atrybutów do metod, które są używane do poprawiania danych podczas serializacji i po nim:  
   
 - <xref:System.Runtime.Serialization.OnDeserializedAttribute>  
   
@@ -184,4 +186,4 @@ End Class
 
 - [Serializacja binarna](binary-serialization.md)
 - [Serializacja XML i SOAP](xml-and-soap-serialization.md)
-- [Zabezpieczenia i serializacja](../../framework/misc/security-and-serialization.md)
+- [Zabezpieczenia i Serializacja](../../framework/misc/security-and-serialization.md)

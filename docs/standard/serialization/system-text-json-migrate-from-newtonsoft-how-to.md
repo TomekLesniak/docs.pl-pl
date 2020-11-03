@@ -11,18 +11,18 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 11de13a6674411bbad52678b59879ed26366e0f1
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 2f287eb7a3a1ace8d8440f860b55429bb3c93691
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811057"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282431"
 ---
 # <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Jak przeprowadzić migrację z Newtonsoft.Json do programu System.Text.Json
 
 W tym artykule przedstawiono sposób migracji programu [Newtonsoft.Json](https://www.newtonsoft.com/json) do programu <xref:System.Text.Json> .
 
-`System.Text.Json`Przestrzeń nazw zawiera funkcje serializacji do i deserializacji z JavaScript Object Notation (JSON). `System.Text.Json`Biblioteka jest zawarta w współdzielonej platformie [.net Core 3,0](https://aka.ms/netcore3download) . W przypadku innych platform docelowych zainstaluj [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) pakiet NuGet. Pakiet obsługuje:
+`System.Text.Json`Przestrzeń nazw zawiera funkcje serializacji do i deserializacji z JavaScript Object Notation (JSON). `System.Text.Json`Biblioteka jest uwzględniona w udostępnionej strukturze dla platformy .NET Core 3,0 i nowszych. W przypadku wcześniejszych wersji platformy zainstaluj [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) pakiet NuGet. Pakiet obsługuje:
 
 * .NET Standard 2,0 i nowsze wersje
 * .NET Framework 4.7.2 i nowsze wersje
@@ -73,13 +73,13 @@ W poniższej tabeli wymieniono `Newtonsoft.Json` funkcje i `System.Text.Json` od
 | Metoda `JsonConvert.PopulateObject`                   | ⚠️[Nieobsługiwane, obejście](#populate-existing-objects) |
 | `ObjectCreationHandling` ustawienie globalne               | ⚠️[Nieobsługiwane, obejście](#reuse-rather-than-replace-properties) |
 | Dodaj do kolekcji bez metod ustawiających                    | ⚠️[Nieobsługiwane, obejście](#add-to-collections-without-setters) |
-| `PreserveReferencesHandling` ustawienie globalne           | ❌[Nieobsługiwane](#preserve-object-references-and-handle-loops) |
-| `ReferenceLoopHandling` ustawienie globalne                | ❌[Nieobsługiwane](#preserve-object-references-and-handle-loops) |
-| Obsługa `System.Runtime.Serialization` atrybutów | ❌[Nieobsługiwane](#systemruntimeserialization-attributes) |
-| `MissingMemberHandling` ustawienie globalne                | ❌[Nieobsługiwane](#missingmemberhandling) |
-| Zezwalaj na nazwy właściwości bez cudzysłowów                   | ❌[Nieobsługiwane](#json-strings-property-names-and-string-values) |
-| Zezwalaj na pojedyncze cudzysłowy wokół wartości ciągu              | ❌[Nieobsługiwane](#json-strings-property-names-and-string-values) |
-| Zezwalaj na wartości niebędące ciągami JSON dla właściwości ciągu    | ❌[Nieobsługiwane](#non-string-values-for-string-properties) |
+| `PreserveReferencesHandling` ustawienie globalne           | ❌ [Nieobsługiwane](#preserve-object-references-and-handle-loops) |
+| `ReferenceLoopHandling` ustawienie globalne                | ❌ [Nieobsługiwane](#preserve-object-references-and-handle-loops) |
+| Obsługa `System.Runtime.Serialization` atrybutów | ❌ [Nieobsługiwane](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling` ustawienie globalne                | ❌ [Nieobsługiwane](#missingmemberhandling) |
+| Zezwalaj na nazwy właściwości bez cudzysłowów                   | ❌ [Nieobsługiwane](#json-strings-property-names-and-string-values) |
+| Zezwalaj na pojedyncze cudzysłowy wokół wartości ciągu              | ❌ [Nieobsługiwane](#json-strings-property-names-and-string-values) |
+| Zezwalaj na wartości niebędące ciągami JSON dla właściwości ciągu    | ❌ [Nieobsługiwane](#non-string-values-for-string-properties) |
 
 Nie jest to pełna lista `Newtonsoft.Json` funkcji. Lista zawiera wiele scenariuszy, które zostały zażądane w przypadku problemów z usługą [GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) lub wpisów [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) . Jeśli zaimplementowano obejście dla jednego z wymienionych poniżej scenariuszy, które nie ma obecnie przykładowego kodu, a jeśli chcesz udostępnić swoje rozwiązanie, wybierz **Tę stronę** w sekcji **opinia** w dolnej części tej strony. Spowoduje to utworzenie problemu w repozytorium GitHub tej dokumentacji i wyświetlenie go w sekcji **opinii** na tej stronie.
 
@@ -492,7 +492,7 @@ public JsonElement LookAndLoad(JsonElement source)
 
 Poprzedzający kod oczekuje `JsonElement` , że zawiera `fileName` Właściwość. Plik JSON zostanie otwarty i zostanie utworzony `JsonDocument` . Metoda zakłada, że obiekt wywołujący chce współpracować z całym dokumentem, dlatego zwraca wartość `Clone` `RootElement` .
 
-Jeśli otrzymasz `JsonElement` i zwrócisz podrzędny element, nie trzeba zwracać `Clone` elementu podrzędnego. Obiekt wywołujący jest odpowiedzialny za utrzymanie aktywności, `JsonDocument` do której należy ten element `JsonElement` . Na przykład:
+Jeśli otrzymasz `JsonElement` i zwrócisz podrzędny element, nie trzeba zwracać `Clone` elementu podrzędnego. Obiekt wywołujący jest odpowiedzialny za utrzymanie aktywności, `JsonDocument` do której należy ten element `JsonElement` . Przykład:
 
 ```csharp
 public JsonElement ReturnFileName(JsonElement source)
@@ -530,7 +530,7 @@ W poniższych sekcjach opisano zalecane wzorce programowania do użycia `Utf8Jso
 
 ### <a name="utf8jsonreader-is-a-ref-struct"></a>Utf8JsonReader jest strukturą ref
 
-Ponieważ `Utf8JsonReader` Typ jest *strukturą ref*, ma [pewne ograniczenia](../../csharp/language-reference/builtin-types/struct.md#ref-struct). Na przykład nie można go zapisać jako pola w klasie lub strukturze innej niż struktura ref. Aby osiągnąć wysoką wydajność, ten typ musi być, `ref struct` ponieważ musi buforować dane wejściowe [ \<byte> ReadOnlySpan](xref:System.ReadOnlySpan%601), który sam jest strukturą ref. Ponadto ten typ jest modyfikowalny, ponieważ zawiera stan. W związku z tym **Przekaż go przez odwołanie** , a nie przez wartość. Przekazanie go przez wartość spowoduje skopiowanie struktury i zmiana stanu nie będzie widoczna dla obiektu wywołującego. Różni się to od `Newtonsoft.Json` od momentu, gdy `Newtonsoft.Json` `JsonTextReader` jest klasą. Aby uzyskać więcej informacji o sposobach korzystania z struktur ref, zobacz [Zapisywanie bezpiecznego i wydajnego kodu w języku C#](../../csharp/write-safe-efficient-code.md).
+Ponieważ `Utf8JsonReader` Typ jest *strukturą ref* , ma [pewne ograniczenia](../../csharp/language-reference/builtin-types/struct.md#ref-struct). Na przykład nie można go zapisać jako pola w klasie lub strukturze innej niż struktura ref. Aby osiągnąć wysoką wydajność, ten typ musi być, `ref struct` ponieważ musi buforować dane wejściowe [ \<byte> ReadOnlySpan](xref:System.ReadOnlySpan%601), który sam jest strukturą ref. Ponadto ten typ jest modyfikowalny, ponieważ zawiera stan. W związku z tym **Przekaż go przez odwołanie** , a nie przez wartość. Przekazanie go przez wartość spowoduje skopiowanie struktury i zmiana stanu nie będzie widoczna dla obiektu wywołującego. Różni się to od `Newtonsoft.Json` od momentu, gdy `Newtonsoft.Json` `JsonTextReader` jest klasą. Aby uzyskać więcej informacji o sposobach korzystania z struktur ref, zobacz [Zapisywanie bezpiecznego i wydajnego kodu w języku C#](../../csharp/write-safe-efficient-code.md).
 
 ### <a name="read-utf-8-text"></a>Odczytaj tekst UTF-8
 
@@ -671,7 +671,7 @@ Jeśli chcesz nadal używać `Newtonsoft.Json` dla określonych platform docelow
 * [UnifiedJsonWriter.JsonTextWriter.cs](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/installer/managed/Microsoft.Extensions.DependencyModel/UnifiedJsonWriter.JsonTextWriter.cs)
 * [UnifiedJsonWriter.Utf8JsonWriter.cs](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/installer/managed/Microsoft.Extensions.DependencyModel/UnifiedJsonWriter.Utf8JsonWriter.cs)
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)[Restore this when the roadmap is updated.]-->
 * [System.Text.Json Podsumowanie](system-text-json-overview.md)

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - decryption
 - data [.NET], encryption
 ms.assetid: 606698b0-cb1a-42ca-beeb-0bea34205d20
-ms.openlocfilehash: 263a07ddf357734e819fffdd41cdff60657adf15
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: d3fe7ef3ddbc6e75a248101829b11a8abcb3c15a
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557063"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282053"
 ---
 # <a name="how-to-use-data-protection"></a>Instrukcje: Stosowanie ochrony danych
 
@@ -35,7 +35,7 @@ Platforma .NET zapewnia dostęp do interfejsu API ochrony danych (DPAPI), który
   
 Użyj <xref:System.Security.Cryptography.ProtectedData> klasy, aby zaszyfrować kopię tablicy bajtów. Ta funkcja jest dostępna w .NET Framework, .NET Core i .NET 5.  Możesz określić, że dane zaszyfrowane przez bieżące konto użytkownika mogą zostać odszyfrowane tylko przez to samo konto użytkownika, lub możesz określić, że dane zaszyfrowane przez bieżące konto użytkownika mogą zostać odszyfrowane za pomocą dowolnego konta na komputerze.  <xref:System.Security.Cryptography.DataProtectionScope>Szczegółowy opis opcji można znaleźć w wyliczeniu <xref:System.Security.Cryptography.ProtectedData> .  
   
-### <a name="to-encrypt-data-to-a-file-or-stream-using-data-protection"></a>Aby zaszyfrować dane do pliku lub strumienia przy użyciu ochrony danych  
+## <a name="encrypt-data-to-a-file-or-stream-using-data-protection"></a>Szyfrowanie danych do pliku lub strumienia przy użyciu ochrony danych  
   
 1. Utwórz entropię losową.  
   
@@ -64,7 +64,7 @@ Ten przykład kompiluje i działa tylko w przypadku .NET Framework i uruchamiani
   
 - Dołącz <xref:System> <xref:System.IO> <xref:System.Security.Cryptography> przestrzeń nazw,,, i <xref:System.Text> .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Model kryptografii](cryptography-model.md)
 - [Usługi kryptograficzne](cryptographic-services.md)

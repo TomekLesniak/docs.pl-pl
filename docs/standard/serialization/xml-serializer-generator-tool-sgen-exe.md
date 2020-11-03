@@ -3,12 +3,12 @@ title: Narzędzie generatora serializatora XML (Sgen.exe)
 description: Generator serializatora XML tworzy zestaw serializacji XML dla typów w zestawie, który zwiększa wydajność uruchamiania XmlSerializer.
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: b6d9406ca6a69f7bdff3129b55c89dd5d1589d3f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 80295a9a54b6f9b1970fb65dacdee43b2e938070
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84288943"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282353"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Narzędzie generatora serializatora XML (Sgen.exe)
 
@@ -23,7 +23,7 @@ sgen [options]
 ```
   
 > [!TIP]
-> Aby narzędzia .NET Framework działały prawidłowo, należy odpowiednio ustawić `Path` `Include` `Lib` zmienne środowiskowe, i. Ustaw te zmienne środowiskowe, uruchamiając SDKVars. bat, który znajduje się w \<SDK> katalogu \v2.0\bin. SDKVars.bat muszą zostać wykonane w każdym powłoki poleceń.
+> Aby narzędzia .NET Framework działały prawidłowo, należy odpowiednio ustawić `Path` `Include` `Lib` zmienne środowiskowe, i. Ustaw te zmienne środowiskowe, uruchamiając SDKVars.bat, który znajduje się w \<SDK> \\ \<version> katalogu \Bin. SDKVars.bat muszą zostać wykonane w każdym powłoki poleceń.
   
 ## <a name="parameters"></a>Parametry  
   
@@ -36,7 +36,7 @@ sgen [options]
 |**/help lub/?**|Wyświetla składnię polecenia i opcje narzędzia.|  
 |**/k \[ achowaj\]**|Pomija usuwanie wygenerowanych PLików źródłowych i innych PLików tymczasowych po zostały skompilowane do zestawu serializacji. To może posłużyć do określenia, czy to narzędzie jest generowania kodu serializacji dla danego typu.|  
 |**/n \[ ologo\]**|Pomija wyświetlanie transparentu startowego firmy Microsoft.|  
-|**/o \[ UT \] :**_ścieżka_|Określa katalog, w którym chcesz zapisać wygenerowanego zestawu. **Uwaga:**  Nazwa wygenerowanego zestawu składa się z nazwy zestawu wejściowego i "XmlSerializers. dll".|  
+|**/o \[ UT \] :**_ścieżka_|Określa katalog, w którym chcesz zapisać wygenerowanego zestawu. **Uwaga:**  Nazwa wygenerowanego zestawu składa się z nazwy zestawu wejściowego i "xmlSerializers.dll".|  
 |**/p \[ roxytypes\]**|Generuje kod serializacji tylko dla typów serwera proxy usług sieci Web XML.|  
 |**/r \[ eference \] :**_assemblyfiles_|Określa zestawy, które są określone przez typy wymagające serializacji XML. Akceptuje wiele plików zestawów rozdzielonych przecinkami.|  
 |**/s \[ ilent\]**|Pomija wyświetlanie komunikatów o sukcesie.|  
@@ -45,7 +45,7 @@ sgen [options]
 |**/?**|Wyświetla składnię polecenia i opcje narzędzia.|  
   
 ## <a name="remarks"></a>Uwagi  
- Gdy generator serializatorów XML nie jest używany, <xref:System.Xml.Serialization.XmlSerializer> generuje kod serializacji i zestaw serializacji dla każdego typu za każdym razem, gdy aplikacja jest uruchamiana. Aby zwiększyć wydajność uruchamiania serializacji XML, należy użyć narzędzia Sgen. exe w celu wygenerowania tych zestawów z góry. Zestawy te można następnie wdrażać za pomocą aplikacji.  
+ Gdy generator serializatorów XML nie jest używany, <xref:System.Xml.Serialization.XmlSerializer> generuje kod serializacji i zestaw serializacji dla każdego typu za każdym razem, gdy aplikacja jest uruchamiana. Aby zwiększyć wydajność uruchamiania serializacji XML, użyj narzędzia Sgen.exe, aby wygenerować te zestawy z wyprzedzeniem. Zestawy te można następnie wdrażać za pomocą aplikacji.  
   
  Generator serializatora XML może również zwiększyć wydajność klientów korzystających z serwerów proxy usług sieci Web XML do komunikowania się z serwerami, ponieważ ten proces serializacji nie będą powodować wydajności trafień, gdy typ jest ładowany po raz pierwszy.  
   

@@ -2,12 +2,12 @@
 title: Instrukcje najwyższego poziomu — samouczek języka C#
 description: W tym samouczku pokazano, jak za pomocą instrukcji najwyższego poziomu można eksperymentować i udowodnić koncepcje podczas eksplorowania pomysłów.
 ms.date: 10/28/2020
-ms.openlocfilehash: 210fbd83bf4677061cab303089d0b27f1a4a7d01
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 5e5dc6cec382baa69ac8cb4625684315bb2cd5e0
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189401"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282256"
 ---
 # <a name="tutorial-explore-ideas-using-top-level-statements-to-build-code-as-you-learn"></a>Samouczek: Eksplorowanie pomysłów przy użyciu instrukcji najwyższego poziomu do kompilowania kodu w trakcie nauki
 
@@ -210,7 +210,7 @@ Instrukcje najwyższego poziomu mogą znajdować się tylko w jednym pliku, a te
 
 Na koniec można wyczyścić kod animacji, aby usunąć pewne duplikacje:
 
-:::code language="csharp" source="snippets/top-level-statements/Utiliities.cs" ID="Animation":::
+:::code language="csharp" source="snippets/top-level-statements/Utilities.cs" ID="Animation":::
 
 Teraz masz kompletną aplikację i można było ponownie obsłużyć składniki wielokrotnego użytku do późniejszego użycia.
 

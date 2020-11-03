@@ -25,12 +25,12 @@ helpviewer_keywords:
 - cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 651231dcc41926307e3a46b67c80ba3df1fb25e9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 463ccec5f60ff10331d501d39144a979d95eff95
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549983"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281723"
 ---
 # <a name="cryptographic-services"></a>Usługi kryptograficzne
 
@@ -63,7 +63,7 @@ Aby osiągnąć te cele, można użyć kombinacji algorytmów i praktyk znanych 
 |Podpisywanie kryptograficzne|Pomaga sprawdzić, czy dane pochodzą od określonej strony przez utworzenie podpisu cyfrowego, który jest unikatowy dla tej strony. Ten proces używa również funkcji skrótu.|
 |Skróty kryptograficzne|Mapuje dane z dowolnej długości na sekwencję bajtów o stałej długości. Skróty są statystycznie unikatowe; inna sekwencja dwubajtowa nie będzie mieszać wartości z tą samą wartością.|
 
-## <a name="secret-key-encryption"></a>Szyfrowanie klucza tajnego
+## <a name="secret-key-encryption"></a>Szyfrowanie Secret-Key
 
 Algorytmy szyfrowania klucza tajnego używają jednego klucza tajnego do szyfrowania i odszyfrowywania danych. Należy zabezpieczyć klucz przed dostępem nieautoryzowanych agentów, ponieważ każda Strona, która ma klucz, może użyć jej do odszyfrowania danych lub zaszyfrowania własnych danych, ponieważ pochodzi od użytkownika.
 
@@ -71,7 +71,7 @@ Szyfrowanie klucza tajnego jest również określane jako szyfrowanie symetryczn
 
 Typ algorytmu tajnego klucza o nazwie szyfr bloku służy do szyfrowania jednego bloku danych w danym momencie. Zablokuj szyfry, takie jak Data Encryption Standard (DES), TripleDES i Advanced Encryption Standard (AES), Przekształć kryptograficznie Blok wejściowy *n* bajtów do bloku wyjściowego zaszyfrowanych bajtów. Aby zaszyfrować lub odszyfrować sekwencję bajtów, należy ją zablokować za pomocą bloku. Ponieważ *n* jest mały (8 bajtów dla des i TripleDES; 16 bajtów [domyślna], 24 bajty lub 32 bajtów dla AES), wartości danych, które są większe niż *n* , muszą być szyfrowane po jednym bloku naraz. Wartości danych, które są mniejsze niż *n* , muszą być rozwinięte do *n* , aby można było je przetworzyć.
 
-Jedna prosta forma szyfrowania bloku jest nazywana trybem elektronicznym trybu (EBC). Tryb EBC nie jest uważany za Bezpieczny, ponieważ nie używa wektora inicjalizacji do inicjowania pierwszego bloku zwykłego tekstu. W przypadku danego klucza tajnego *k*, prosty szyfr bloku, który nie używa wektora inicjalizacji, będzie szyfrować ten sam blok danych wejściowych w tym samym bloku wyjściowym tekstu szyfrowanego. W związku z tym, jeśli masz zduplikowane bloki w strumieniu danych wejściowych w formacie zwykłego tekstu, będziesz mieć zduplikowane bloki w strumieniu danych wyjściowych. Te zduplikowane bloki wyjściowe wyzwalają alert nieautoryzowanych użytkowników do słabego szyfrowania wykorzystujących algorytmy, które mogły zostać zastosowane, oraz możliwe tryby ataków. W związku z tym jest bardzo narażony na analizę, a ostatecznie odnajdywanie kluczy.
+Jedna prosta forma szyfrowania bloku jest nazywana trybem elektronicznym trybu (EBC). Tryb EBC nie jest uważany za Bezpieczny, ponieważ nie używa wektora inicjalizacji do inicjowania pierwszego bloku zwykłego tekstu. W przypadku danego klucza tajnego *k* , prosty szyfr bloku, który nie używa wektora inicjalizacji, będzie szyfrować ten sam blok danych wejściowych w tym samym bloku wyjściowym tekstu szyfrowanego. W związku z tym, jeśli masz zduplikowane bloki w strumieniu danych wejściowych w formacie zwykłego tekstu, będziesz mieć zduplikowane bloki w strumieniu danych wyjściowych. Te zduplikowane bloki wyjściowe wyzwalają alert nieautoryzowanych użytkowników do słabego szyfrowania wykorzystujących algorytmy, które mogły zostać zastosowane, oraz możliwe tryby ataków. W związku z tym jest bardzo narażony na analizę, a ostatecznie odnajdywanie kluczy.
 
 Blokowe klasy szyfrowe, które są dostępne w bibliotece klas bazowych, używają domyślnego trybu łańcucha nazywanego łańcuchem blokowym (CBC), chociaż można zmienić to ustawienie domyślne, jeśli chcesz.
 
@@ -89,7 +89,7 @@ Platforma .NET udostępnia następujące klasy, które implementują algorytmy s
 
 - <xref:System.Security.Cryptography.HMACSHA256><xref:System.Security.Cryptography.HMACSHA384>i <xref:System.Security.Cryptography.HMACSHA512> . (Są to techniczne algorytmy tajne klucza, ponieważ reprezentują kody uwierzytelniania wiadomości, które są obliczane przy użyciu funkcji skrótu kryptograficznego połączonej z kluczem tajnym. Zobacz [wartości skrótu](#hash-values)w dalszej części tego artykułu.)
 
-## <a name="public-key-encryption"></a>Szyfrowanie klucza publicznego
+## <a name="public-key-encryption"></a>Szyfrowanie Public-Key
 
 Szyfrowanie klucza publicznego używa klucza prywatnego, który musi być tajny przez nieautoryzowanych użytkowników i klucz publiczny, który można udostępnić każdemu użytkownikowi. Klucz publiczny i klucz prywatny są powiązane matematycznie; dane zaszyfrowane za pomocą klucza publicznego mogą zostać odszyfrowane tylko przy użyciu klucza prywatnego, a dane podpisane przy użyciu klucza prywatnego mogą być weryfikowane tylko z kluczem publicznym. Klucz publiczny można udostępnić każdemu użytkownikowi; służy do szyfrowania danych wysyłanych do posiadacza klucza prywatnego. Algorytmy kryptograficzne klucza publicznego są również znane jako algorytmy asymetryczne, ponieważ jeden klucz jest wymagany do szyfrowania danych, a do odszyfrowania danych jest wymagany inny klucz. Podstawowa reguła kryptograficzna uniemożliwia ponowne użycie klucza, a oba klucze powinny być unikatowe dla każdej sesji komunikacji. Jednak w przypadku klucze asymetryczne są zwykle długotrwałe.
 
@@ -123,7 +123,7 @@ Platforma .NET udostępnia następujące klasy, które implementują algorytmy k
 
 - <xref:System.Security.Cryptography.DSA>
 
-Klucz RSA umożliwia szyfrowanie i podpisywanie, ale agenta DSA można używać tylko do podpisywania. Agent DSA nie jest zgodny z algorytmem RSA i zalecamy użycie algorytmu RSA. Diffie-Hellmana można używać tylko na potrzeby generowania kluczy. Ogólnie rzecz biorąc, algorytmy klucza publicznego są bardziej ograniczone w porównaniu z algorytmami klucza prywatnego.
+Klucz RSA umożliwia szyfrowanie i podpisywanie, ale agenta DSA można używać tylko do podpisywania. Agent DSA nie jest zgodny z algorytmem RSA i zalecamy użycie algorytmu RSA. Diffie-Hellman można używać tylko na potrzeby generowania kluczy. Ogólnie rzecz biorąc, algorytmy klucza publicznego są bardziej ograniczone w porównaniu z algorytmami klucza prywatnego.
 
 ## <a name="digital-signatures"></a>Podpisy cyfrowe
 
@@ -178,13 +178,13 @@ Platforma .NET udostępnia również <xref:System.Security.Cryptography.MD5> i <
 
 ## <a name="random-number-generation"></a>Generowanie liczb losowych
 
-Generowanie liczb losowych jest integralną częścią wielu operacji kryptograficznych. Na przykład klucze kryptograficzne muszą być tak losowo, jak to możliwe, aby było niemożliwe do odtworzenia. Kryptograficzne generatory liczb losowych muszą generować dane wyjściowe, które nie są obliczeniowe do przewidywania z prawdopodobieństwem, który jest lepszy niż jedna połowa. W związku z tym jakakolwiek metoda przewidywania następnego bitu wyjściowego nie może być większa niż losowe zgadywanie. Klasy w .NET Framework używają losowych generatorów liczbowych do generowania kluczy kryptograficznych.
+Generowanie liczb losowych jest integralną częścią wielu operacji kryptograficznych. Na przykład klucze kryptograficzne muszą być tak losowo, jak to możliwe, aby było niemożliwe do odtworzenia. Kryptograficzne generatory liczb losowych muszą generować dane wyjściowe, które nie są obliczeniowe do przewidywania z prawdopodobieństwem, który jest lepszy niż jedna połowa. W związku z tym jakakolwiek metoda przewidywania następnego bitu wyjściowego nie może być większa niż losowe zgadywanie. Klasy w środowisku .NET używają losowych generatorów liczbowych do generowania kluczy kryptograficznych.
 
 <xref:System.Security.Cryptography.RandomNumberGenerator>Klasa jest implementacją algorytmu generatora liczb losowych.
 
 ## <a name="clickonce-manifests"></a>Manifesty ClickOnce
 
-W .NET Framework 3,5 następujące klasy kryptograficzne umożliwiają uzyskanie i zweryfikowanie informacji o sygnaturach manifestu dla aplikacji, które są wdrażane przy użyciu [technologii ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
+Poniższe klasy kryptograficzne umożliwiają uzyskanie i zweryfikowanie informacji o sygnaturach manifestu dla aplikacji, które są wdrażane przy użyciu [technologii ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
 
 - <xref:System.Security.Cryptography.ManifestSignatureInformation>Klasa uzyskuje informacje o sygnaturze manifestu w przypadku użycia <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A> przeciążeń metody.
 
@@ -192,7 +192,7 @@ W .NET Framework 3,5 następujące klasy kryptograficzne umożliwiają uzyskanie
 
 - <xref:System.Security.Cryptography.ManifestSignatureInformationCollection>Klasa zawiera kolekcję <xref:System.Security.Cryptography.ManifestSignatureInformation> obiektów z zweryfikowanymi sygnaturami tylko do odczytu.
 
- Ponadto następujące klasy zawierają określone informacje o podpisie:
+Ponadto następujące klasy zawierają określone informacje o podpisie:
 
 - <xref:System.Security.Cryptography.StrongNameSignatureInformation> przechowuje informacje o sygnaturze silnej nazwy dla manifestu.
 
@@ -204,11 +204,11 @@ W .NET Framework 3,5 następujące klasy kryptograficzne umożliwiają uzyskanie
 
 ## <a name="cryptography-next-generation-cng-classes"></a>Klasy kryptografii nowej generacji (CNG)
 
-W .NET Framework 3,5 i nowszych wersjach klasy kryptografii nowej generacji (CNG) zapewniają zarządzaną otokę wokół natywnych funkcji CNG. (CNG jest zamiennikiem interfejsu CryptoAPI). Klasy te mają "CNG" jako część swoich nazw. Centralnie do klas otoki CNG jest <xref:System.Security.Cryptography.CngKey> klasą kontenerów kluczy, która stanowi abstrakcyjny magazyn i użycie kluczy CNG. Ta klasa umożliwia bezpieczne przechowywanie pary kluczy lub klucza publicznego i odwoływanie się do niego przy użyciu prostej nazwy ciągu. Klasa podpisu oparta na krzywej eliptycznej <xref:System.Security.Cryptography.ECDsaCng> i <xref:System.Security.Cryptography.ECDiffieHellmanCng> klasie szyfrowania mogą używać <xref:System.Security.Cryptography.CngKey> obiektów.
+Klasy kryptografii nowej generacji (CNG) zapewniają zarządzaną otokę wokół natywnych funkcji CNG. (CNG jest zamiennikiem interfejsu CryptoAPI). Klasy te mają "CNG" jako część swoich nazw. Centralnie do klas otoki CNG jest <xref:System.Security.Cryptography.CngKey> klasą kontenerów kluczy, która stanowi abstrakcyjny magazyn i użycie kluczy CNG. Ta klasa umożliwia bezpieczne przechowywanie pary kluczy lub klucza publicznego i odwoływanie się do niego przy użyciu prostej nazwy ciągu. Klasa podpisu oparta na krzywej eliptycznej <xref:System.Security.Cryptography.ECDsaCng> i <xref:System.Security.Cryptography.ECDiffieHellmanCng> klasie szyfrowania mogą używać <xref:System.Security.Cryptography.CngKey> obiektów.
 
 <xref:System.Security.Cryptography.CngKey>Klasa jest używana dla różnych dodatkowych operacji, w tym otwierania, tworzenia, usuwania i eksportowania kluczy. Zapewnia również dostęp do uchwytu klucza bazowego, który ma być używany podczas bezpośredniego wywoływania funkcji natywnych.
 
-.NET Framework 3,5 zawiera również różne klasy obsługi CNG, takie jak:
+Platforma .NET zawiera również różne klasy obsługi CNG, takie jak:
 
 - <xref:System.Security.Cryptography.CngProvider> obsługuje dostawcę magazynu kluczy.
 

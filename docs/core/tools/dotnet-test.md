@@ -2,12 +2,12 @@
 title: polecenie testu dotnet
 description: Polecenie Test dotnet służy do wykonywania testów jednostkowych w danym projekcie.
 ms.date: 04/29/2020
-ms.openlocfilehash: 5ecfa24905537a663cd967142b765c258495fb22
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6805564ccd8a8b4911c7c687d97a06df2910c015
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537743"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281613"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -77,7 +77,13 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
 - **`--blame-crash`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
-  Uruchamia testy w trybie polecenia Blame i zbiera zrzut awaryjny, gdy host testowy zostanie nieoczekiwanie zamknięty. Ta opcja jest obsługiwana tylko w systemie Windows. Katalog zawierający *procdump.exe* i *procdump64.exe* musi znajdować się w zmiennej środowiskowej PATH lub PROCDUMP_PATH. [Pobierz narzędzia](/sysinternals/downloads/procdump). Oznacza `--blame` .
+  Uruchamia testy w trybie polecenia Blame i zbiera zrzut awaryjny, gdy host testowy zostanie nieoczekiwanie zamknięty. Ta opcja zależy od używanej wersji programu .NET, typu błędu i systemu operacyjnego.
+  
+  W przypadku wyjątków w kodzie zarządzanym zrzut zostanie automatycznie zebrany na platformie .NET 5,0 i w nowszych wersjach. Spowoduje to wygenerowanie zrzutu dla testhost lub dowolnego procesu podrzędnego, który również działał na platformie .NET 5,0 i ulegnie awarii. Awarie w kodzie natywnym nie generują zrzutu. Ta opcja działa w systemach Windows, macOS i Linux.
+  
+  Zrzuty awaryjne w kodzie natywnym lub w przypadku korzystania z programu .NET Core 3,1 lub starszych wersji mogą być zbierane tylko w systemie Windows przy użyciu ProcDump. Katalog zawierający *procdump.exe* i *procdump64.exe* musi znajdować się w zmiennej środowiskowej PATH lub PROCDUMP_PATH. [Pobierz narzędzia](/sysinternals/downloads/procdump). Oznacza `--blame` .
+  
+  Aby zebrać zrzut awaryjny z natywnej aplikacji działającej na platformie .NET 5,0 lub nowszej, użycie ProcDump może być wymuszane przez ustawienie `VSTEST_DUMP_FORCEPROCDUMP` zmiennej środowiskowej na `1` .
 
 - **`--blame-crash-dump-type <DUMP_TYPE>`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
@@ -97,14 +103,14 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
 - **`--blame-hang-timeout <TIMESPAN>`** (Dostępne od wersji .NET 5,0 Preview SDK)
 
-  Limit czasu dla testu, po którym zostanie wyzwolony zrzut zawieszenia i proces hosta testowego zostanie przerwany. Wartość limitu czasu jest określona w jednym z następujących formatów:
+  Limit czasu na test, po którym jest wyzwalany zrzut zawieszenia i proces hosta testowego i wszystkie jego procesy podrzędne są zrzucane i kończone. Wartość limitu czasu jest określona w jednym z następujących formatów:
   
-  - 1,5 h
-  - 90m
-  - 5400
-  - 5400000ms
+  - 1,5 h, 1,5 godz., 1,5 godz.
+  - 90m, 90min, 90minute, 90minutes
+  - 5400s, 5400sec, 5400second, 5400seconds
+  - 5400000ms, 5400000mil, 5400000millisecond, 5400000milliseconds
 
-  Gdy nie jest używana żadna jednostka (na przykład 5400000), przyjmuje się, że wartość jest w milisekundach. W przypadku użycia razem z testami opartymi na danych, zachowanie limitu czasu zależy od używanej karty testowej. Dla xUnit i NUnit limit czasu jest odnawiany po każdym przypadku testowym. W przypadku MSTest limit czasu jest używany dla wszystkich przypadków testowych. Ta opcja jest obsługiwana w systemie Windows z systemem netcoreapp 2.1 lub nowszym oraz w systemie Linux z netcoreapp 3.1 lub nowszym. macOS nie jest obsługiwana.
+  Gdy nie jest używana żadna jednostka (na przykład 5400000), przyjmuje się, że wartość jest w milisekundach. W przypadku użycia razem z testami opartymi na danych, zachowanie limitu czasu zależy od używanej karty testowej. Dla xUnit i NUnit limit czasu jest odnawiany po każdym przypadku testowym. W przypadku MSTest limit czasu jest używany dla wszystkich przypadków testowych. Ta opcja jest obsługiwana w systemie Windows z netcoreapp 2.1 i nowszymi w systemie Linux z netcoreapp 3.1 lub nowszym oraz na macOS z usługą NET 5.0 lub nowszym. Oznacza `--blame` i `--blame-hang` .
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -124,7 +130,7 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Wymusza użycie `dotnet` lub .NET Framework hosta testowego dla plików binarnych testu. Ta opcja określa tylko typ hosta, który ma być używany. Rzeczywista wersja platformy, która ma zostać użyta, jest określana na podstawie *runtimeconfig.jsw* projekcie testowym. Gdy nie zostanie określony, [atrybut zestawu TargetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) jest używany do określenia typu hosta. Gdy ten atrybut jest usuwany z *biblioteki DLL*, używany jest host .NET Framework.
+  Wymusza użycie `dotnet` lub .NET Framework hosta testowego dla plików binarnych testu. Ta opcja określa tylko typ hosta, który ma być używany. Rzeczywista wersja platformy, która ma zostać użyta, jest określana na podstawie *runtimeconfig.jsw* projekcie testowym. Gdy nie zostanie określony, [atrybut zestawu TargetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) jest używany do określenia typu hosta. Gdy ten atrybut jest usuwany z *biblioteki DLL* , używany jest host .NET Framework.
 
 - **`--filter <EXPRESSION>`**
 
@@ -264,7 +270,7 @@ Wyrażenia mogą być dołączane za pomocą operatorów warunkowych:
 
 | Operator            | Funkcja |
 | ------------------- | -------- |
-| <code>&#124;</code> | LUB       |
+| <code>&#124;</code> | LUB       |
 | `&`                 | AND      |
 
 Wyrażenia można ująć w nawiasy, gdy są używane operatory warunkowe (na przykład `(Name~TestMethod1) | (Name~TestMethod2)` ).

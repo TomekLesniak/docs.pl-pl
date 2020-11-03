@@ -6,16 +6,16 @@ helpviewer_keywords:
 - classes, serializing
 - XmlSerializer class, serializing
 - XML serialization, attributes
-- attributes [.NET Framework], XML serialization
+- attributes [.NET], XML serialization
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: fbc42ff696107f4a1b06d3611fc97a09cc4a3542
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 032843728c74799d7ee78257b21243b31cb4f99c
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84276702"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281988"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>Atrybuty kontrolujące serializację XML
 Można zastosować atrybuty w poniższej tabeli do klas i elementów członkowskich klasy, aby kontrolować sposób, w jaki <xref:System.Xml.Serialization.XmlSerializer> Serializacja lub deserializacji wystąpienia klasy. Aby zrozumieć, jak te atrybuty kontrolują serializacji XML, zobacz [Kontrolowanie serializacji XML przy użyciu atrybutów](controlling-xml-serialization-using-attributes.md).  

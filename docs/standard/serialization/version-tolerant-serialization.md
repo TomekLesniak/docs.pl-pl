@@ -1,6 +1,6 @@
 ---
 title: Serializacja odporna na wersje
-description: .NET Framework 2,0 wprowadza serializacji odpornej na wersje, zestaw funkcji, które ułatwiają Modyfikowanie typów możliwych do serializacji.
+description: Dowiedz się więcej o serializacji odpornej na wersje, zestaw funkcji, które ułatwiają Modyfikowanie typów możliwych do serializacji.
 ms.date: 08/08/2017
 dev_langs:
 - csharp
@@ -14,21 +14,21 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-ms.openlocfilehash: afc822e1f8873bac069f6634fdf1d4665d392e69
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e7c4d6ca4c72390c3e0803502aa9c1a675e02345
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "83762594"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282421"
 ---
 # <a name="version-tolerant-serialization"></a>Serializacja odporna na wersje
 
-W wersji 1,0 i 1,1 .NET Framework, tworzenie możliwych do przetworzenia typów, które mogą być wielokrotnego użytku z jednej wersji aplikacji do następnej była problematyczne. Jeśli typ został zmodyfikowany przez dodanie pola dodatkowe, wystąpi następujących problemów:
+W najstarszych wersjach .NET Framework tworzenia typów możliwych do serializacji, które byłyby wielokrotnego użytku z jednej wersji aplikacji na następne było problematyczne. Jeśli typ został zmodyfikowany przez dodanie pola dodatkowe, wystąpi następujących problemów:
 
 - Starsze wersje aplikacji mogą generować wyjątki, gdy zostanie wyświetlony monit o deserializacja nowych wersji starego typu.
 - Nowsze wersje aplikacji spowodują wygenerowanie wyjątków podczas deserializacji starszych wersji typu z brakującymi danymi.
 
-Wersja na uszkodzenia serializacji (SRS) to zestaw funkcje wprowadzone w programie .NET Framework 2.0, który ułatwia, wraz z upływem czasu, aby zmodyfikować typów możliwych do serializacji. W szczególności funkcje SRS są włączone dla klas, do których <xref:System.SerializableAttribute> zastosowano atrybut, w tym typów ogólnych. SRS sprawia, że można dodać nowe pola do tych klas bez przerywania zgodność z innymi wersjami tego typu. Aby uzyskać działającą przykładową aplikację, zobacz [przykład technologii serializacji odpornej na wersje](basic-serialization-technology-sample.md).
+Serializacja odporna na wersje (SRS) to zestaw funkcji, które ułatwiają Modyfikowanie typów możliwych do serializacji. W szczególności funkcje SRS są włączone dla klas, do których <xref:System.SerializableAttribute> zastosowano atrybut, w tym typów ogólnych. SRS sprawia, że można dodać nowe pola do tych klas bez przerywania zgodność z innymi wersjami tego typu. Aby uzyskać działającą przykładową aplikację, zobacz [przykład technologii serializacji odpornej na wersje](basic-serialization-technology-sample.md).
 
 Funkcje SRS są włączone, korzystając z <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Ponadto wszystkie funkcje, z wyjątkiem tolerancja nadmiarowe dane są również włączone podczas korzystania z <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Aby uzyskać więcej informacji o używaniu tych klas do serializacji, zobacz [Serializacja binarna](binary-serialization.md).
 
@@ -129,7 +129,7 @@ Serializacja wywołania zwrotne są mechanizm udostępniająca punkty zaczepieni
 |<xref:System.Runtime.Serialization.OnSerializingAttribute>|Przed serializacji.|Przygotowanie do serializacji. Na przykład utwórz opcjonalne struktury danych.|
 |<xref:System.Runtime.Serialization.OnSerializedAttribute>|Po serializacji.|Rejestrowanie zdarzeń serializacji.|
 
- \*To wywołanie zwrotne jest wywoływane przed konstruktorem deserializacji, jeśli taki istnieje.
+ \* To wywołanie zwrotne jest wywoływane przed konstruktorem deserializacji, jeśli taki istnieje.
 
 #### <a name="using-callbacks"></a>Używanie wywołań zwrotnych
 
@@ -188,9 +188,7 @@ End Class
 
 ## <a name="the-versionadded-property"></a>Właściwość VersionAdded
 
-**OptionalFieldAttribute** ma właściwość **VersionAdded** . W wersji 2,0 .NET Framework nie jest to używane. Należy jednak odpowiednio ustawić tę właściwość, aby upewnić się, że typ będzie zgodny z przyszłymi aparatami serializacji.
-
-Właściwość wskazuje, której wersji dodano pole danego typu. Powinien być zwiększany o dokładnie jeden (od 2) za każdym razem, gdy typ jest modyfikowany, jak pokazano w następującym przykładzie:
+**OptionalFieldAttribute** ma właściwość **VersionAdded** . Właściwość wskazuje, której wersji dodano pole danego typu. Powinien być zwiększany o dokładnie jeden (od 2) za każdym razem, gdy typ jest modyfikowany, jak pokazano w następującym przykładzie:
 
 ```csharp
 // Version 1.0
@@ -263,7 +261,7 @@ End Class
 
 ## <a name="serializationbinder"></a>SerializationBinder
 
-Niektórzy użytkownicy może być konieczne do kontrolowania której klasy do serializacji i deserializacji, ponieważ wymagana jest nieco innej klasy w serwera i klienta. <xref:System.Runtime.Serialization.SerializationBinder>jest klasą abstrakcyjną służącą do kontrolowania rzeczywistych typów używanych podczas serializacji i deserializacji. Aby użyć tej klasy, należy wyprowadzić klasę z <xref:System.Runtime.Serialization.SerializationBinder> i zastąpić <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> i <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Aby uzyskać więcej informacji, zobacz [Kontrolowanie serializacji i deserializacji z pomocą elementu SerializationBinder](../../framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).
+Niektórzy użytkownicy może być konieczne do kontrolowania której klasy do serializacji i deserializacji, ponieważ wymagana jest nieco innej klasy w serwera i klienta. <xref:System.Runtime.Serialization.SerializationBinder> jest klasą abstrakcyjną służącą do kontrolowania rzeczywistych typów używanych podczas serializacji i deserializacji. Aby użyć tej klasy, należy wyprowadzić klasę z <xref:System.Runtime.Serialization.SerializationBinder> i zastąpić <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> i <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Aby uzyskać więcej informacji, zobacz [Kontrolowanie serializacji i deserializacji z pomocą elementu SerializationBinder](../../framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).
 
 ## <a name="best-practices"></a>Najlepsze rozwiązania
 

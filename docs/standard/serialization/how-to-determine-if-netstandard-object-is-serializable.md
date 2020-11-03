@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
-ms.openlocfilehash: a425d44ac3b58a568bd51e638f28a2b76ced9dec
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 9f7ab8a824b9687f68382a5edc342536289c5d09
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223992"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282328"
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>Jak ustalić, czy obiekt .NET Standard jest możliwy do serializacji
 
@@ -31,7 +31,7 @@ Następnie można przekazać dowolny obiekt do metody, aby określić, czy możn
 [!code-csharp[test-is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/csharp/program.cs#1)]
 [!code-vb[test-is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/vb/program.vb#1)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Serializacja binarna](binary-serialization.md)
 - <xref:System.SerializableAttribute?displayProperty=nameWithType>

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
-ms.openlocfilehash: 2ede74dd8a48735a7ded450d1da6d9cda8fc5ae6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bfb504862232345db07bdc92993069fc87afdbeb
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554498"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282093"
 ---
 # <a name="binary-serialization"></a>Serializacja binarna
 
@@ -25,7 +25,7 @@ Serializacja mogą być definiowane jako proces przechowywania stanu obiektu na 
 W przypadku implementowania mechanizmu serializacji w środowisku zorientowanym obiektowo trzeba zwiększyć liczbę kompromisów między łatwośćmi użytkowania i elastyczność. Ten proces można automatycznego w dużym stopniu, pod warunkiem, że podane są wystarczające kontrolę nad procesem. Mogą na przykład wystąpić sytuacje, w których prosta Serializacja binarna nie jest wystarczająca lub może istnieć specyficzny powód, aby określić, które pola w klasie muszą być serializowane. W poniższych sekcjach opisano niezawodny mechanizm serializacji zapewniany z platformą .NET oraz kilka ważnych funkcji, które umożliwiają dostosowanie procesu do własnych potrzeb.
 
 > [!NOTE]
-> Stan UTF-8 lub UTF-7 kodowany obiektu nie jest zachowana, jeśli obiekt jest serializacji i deserializacji za pomocą różnych wersji programu .NET Framework.
+> Stan zakodowanego obiektu UTF-8 lub UTF-7 nie jest zachowywany, jeśli obiekt jest serializowany i deserializowany przy użyciu różnych wersji platformy .NET.
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
@@ -351,7 +351,7 @@ Opisuje mechanizm serializacji XML, który jest dołączony do aparatu PLików w
 Opisuje bezpiecznego wskazówek kodowania, które należy wykonać podczas pisania kodu, który będzie wykonywać serializacji.
 
 - [Komunikacja zdalna .NET](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
-Opisuje różne metody, które są uruchamiane w .NET Framework na potrzeby komunikacji zdalnej.
+Opisuje różne metody w .NET Framework na potrzeby komunikacji zdalnej.
 
 - [Usługi sieci Web XML utworzone za pomocą ASP.NET i klientów usług sieci Web XML](/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))\
 Artykuły opisujące i objaśniające sposób programowania usług sieci Web XML utworzonych za pomocą ASP.NET.

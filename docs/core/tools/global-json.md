@@ -4,12 +4,12 @@ description: Dowiedz się, w jaki sposób używać global.jsw pliku, aby ustawi�
 ms.topic: how-to
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 7e372c75812e79f85bb8965895d5fef694d9af1a
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 714e32ec841cee214f801de65bccf0041af66b0b
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90872393"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281548"
 ---
 # <a name="globaljson-overview"></a>global.json — omówienie
 
@@ -55,7 +55,7 @@ Wskazuje, czy program rozpoznawania SDK powinien wziąć pod uwagę wersje wstę
 Jeśli ta wartość nie zostanie jawnie ustawiona, wartość domyślna zależy od tego, czy korzystasz z programu Visual Studio:
 
 - Jeśli **nie** Jesteś w programie Visual Studio, wartość domyślna to `true` .
-- Jeśli używasz programu Visual Studio, zostanie użyty żądany stan wersji wstępnej. Oznacza to, że jeśli korzystasz z wersji zapoznawczej programu Visual Studio lub ustawisz opcję Użyj podglądu opcji **zestaw .NET Core SDK** (w obszarze **Narzędzia**  >  **Opcje**  >  **środowiska**w  >  **wersji zapoznawczej**), wartość domyślna to `true` ; w przeciwnym razie `false` .
+- Jeśli używasz programu Visual Studio, zostanie użyty żądany stan wersji wstępnej. Oznacza to, że jeśli korzystasz z wersji zapoznawczej programu Visual Studio lub ustawisz opcję Użyj podglądu opcji **zestaw .NET Core SDK** (w obszarze **Narzędzia**  >  **Opcje**  >  **środowiska** w  >  **wersji zapoznawczej** ), wartość domyślna to `true` ; w przeciwnym razie `false` .
 
 #### <a name="rollforward"></a>Przeniesienia
 
@@ -64,6 +64,7 @@ Jeśli ta wartość nie zostanie jawnie ustawiona, wartość domyślna zależy o
 - Dostępne od: .NET Core 3,0 SDK.
 
 Zasady przyciągania do przodu, które mają być używane podczas wybierania wersji zestawu SDK, jako rezerwy w przypadku braku określonej wersji zestawu SDK lub jako dyrektywy do korzystania z nowszej wersji. Należy określić [wersję](#version) o `rollForward` wartości, chyba że jest ona ustawiana na `latestMajor` .
+Domyślne zachowanie funkcji przeszukiwania do przodu jest określane przez [reguły dopasowywania](#matching-rules).
 
 Aby zrozumieć dostępne zasady i ich zachowanie, należy wziąć pod uwagę następujące definicje wersji zestawu SDK w formacie `x.y.znn` :
 
@@ -163,7 +164,7 @@ dotnet new globaljson --sdk-version 3.0.100
 ## <a name="matching-rules"></a>Reguły dopasowania
 
 > [!NOTE]
-> Reguły dopasowania podlegają `dotnet.exe` punktowi wejścia, który jest wspólny dla wszystkich zainstalowanych środowiska uruchomieniowego platformy .NET Core. Reguły dopasowania dla najnowszej zainstalowanej wersji środowiska uruchomieniowego .NET Core są używane w przypadku, gdy wiele programów uruchomieniowych jest zainstalowanych równolegle.
+> Reguły dopasowania podlegają `dotnet.exe` punktowi wejścia, który jest wspólny dla wszystkich zainstalowanych środowiska uruchomieniowego platformy .NET Core. Reguły dopasowania dla najnowszej zainstalowanej wersji środowiska uruchomieniowego platformy .NET Core są używane, gdy istnieje wiele środowisk uruchomieniowych zainstalowanych obok siebie lub jeśli używasz *global.jsw* pliku.
 
 ## <a name="net-core-3x"></a>[.NET Core 3. x](#tab/netcore3x)
 
@@ -171,7 +172,7 @@ Począwszy od platformy .NET Core 3,0, stosowane są następujące reguły podcz
 
 - Jeśli nie zostanie znaleziony *global.jsw* pliku lub funkcja *global.json* nie określi wersji zestawu SDK ani `allowPrerelease` wartości, zostanie użyta najwyższa zainstalowana wersja zestawu SDK (odpowiednik ustawienia `rollForward` do `latestMajor` ). Czy wersje wstępne zestawu SDK są brane pod uwagę, zależy od tego, jak `dotnet` są wywoływane.
   - Jeśli **nie** Jesteś w programie Visual Studio, są brane pod uwagę wersje wstępne.
-  - Jeśli używasz programu Visual Studio, zostanie użyty żądany stan wersji wstępnej. Oznacza to, że jeśli korzystasz z wersji zapoznawczej programu Visual Studio lub ustawisz opcję Użyj podglądu opcji **zestaw .NET Core SDK** (w obszarze **Narzędzia**  >  **Opcje**  >  **środowiska**w  >  **wersji zapoznawczej**), są uwzględniane wersje wstępne. w przeciwnym razie są brane pod uwagę tylko wersje wydań.
+  - Jeśli używasz programu Visual Studio, zostanie użyty żądany stan wersji wstępnej. Oznacza to, że jeśli korzystasz z wersji zapoznawczej programu Visual Studio lub ustawisz opcję Użyj podglądu opcji **zestaw .NET Core SDK** (w obszarze **Narzędzia**  >  **Opcje**  >  **środowiska** w  >  **wersji zapoznawczej** ), są uwzględniane wersje wstępne. w przeciwnym razie są brane pod uwagę tylko wersje wydań.
 - Jeśli zostanie znaleziony *global.jsw* pliku, który nie określa wersji zestawu SDK, ale określa `allowPrerelease` wartość, używana jest najwyższa zainstalowana wersja zestawu SDK (odpowiednik ustawienia `rollForward` do `latestMajor` ). Czy Najnowsza wersja zestawu SDK może być wykorzystana lub wersja wstępna zależy od wartości `allowPrerelease` . `true` wskazuje wersje wstępne są brane pod uwagę; `false` wskazuje, że są brane pod uwagę tylko wersje wydań.
 - Jeśli *global.jsw* pliku zostanie znaleziony i określi wersję zestawu SDK:
 
@@ -214,6 +215,6 @@ Wersje zestaw .NET Core SDK `2.1.100` za pomocą `2.1.201` zostały wydane podcz
 
   Począwszy od zestawu SDK programu .NET Core 2,1 (wersja 2.1.300), `dotnet ef` polecenie znajduje się w zestawie SDK. Aby skompilować projekt, zainstaluj na komputerze zestaw SDK programu .NET Core 2,0 (wersja 2.1.201) lub wcześniejszy i zdefiniuj żądaną wersję zestawu SDK przy użyciu *global.js* pliku. Aby uzyskać więcej informacji na temat tego `dotnet ef` polecenia, zobacz [EF Core narzędzia wiersza polecenia programu .NET](/ef/core/miscellaneous/cli/dotnet).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Jak są rozwiązywane zestawy SDK projektu](/visualstudio/msbuild/how-to-use-project-sdk#how-project-sdks-are-resolved)

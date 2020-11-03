@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: c256c03831ac759bc45467f38e85fd3a2884dda4
-ms.sourcegitcommit: 532b03d5bbab764d63356193b04cd2281bc01239
+ms.openlocfilehash: c65f7220c44e86fac7e8beba28277bf43af95088
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92526594"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282344"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -34,7 +34,7 @@ Język C# 9,0 jest obsługiwany w **programie .NET 5**. Aby uzyskać więcej inf
 
 ## <a name="record-types"></a>Typy rekordów
 
-W języku C# 9,0 wprowadzono **_typy rekordów_*_, które są typu referencyjnego, który dostarcza metody, które umożliwiają syntezę wartości dla równości. Rekordy są domyślnie niezmienne.
+W języku C# 9,0 wprowadzono * *_typy rekordów_* _, które są typu referencyjnego, który dostarcza metody, które umożliwiają syntezę wartości dla równości. Rekordy są domyślnie niezmienne.
 
 Typy rekordów ułatwiają tworzenie niemodyfikowalnych typów referencyjnych w programie .NET. Historycznie typy .NET są w znacznym stopniu klasyfikowane jako typy referencyjne (w tym klasy i typy anonimowe) i typy wartości (w tym struktury i krotki). Chociaż zaleca się niezmienne typy wartości, modyfikowalne typy wartości nie często wprowadzają błędy. Zmienne typu wartości przechowują wartości, więc zmiany są wprowadzane do kopii oryginalnych danych, gdy typy wartości są przekazywane do metod.
 
@@ -106,7 +106,7 @@ Powyższy wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwoś�
 
 ## <a name="init-only-setters"></a>Metody ustawiające tylko do inicjowania
 
-***Tylko metody init**_ mają spójną składnię, aby inicjować elementy członkowskie obiektu. Inicjatory właściwości sprawiają, że wartość jest ustawiana dla właściwości. Minusemem jest to, że te właściwości muszą mieć wartość settable. Począwszy od języka C# 9,0, można tworzyć metody `init` dostępu zamiast `set` metod dostępu do właściwości i indeksatorów. Obiekty wywołujące mogą używać składni inicjatora właściwości do ustawiania tych wartości w wyrażeniach tworzenia, ale te właściwości są tylko do odczytu, gdy konstrukcja została ukończona. Tylko metody init umożliwiają zmianę stanu okna. To okno zostanie zamknięte po zakończeniu fazy budowania. Faza konstruowania skutecznie kończy działanie po wszystkich inicjalizacjach, w tym inicjatorach właściwości i wyrażeniach z.
+***Tylko metody init** _ mają spójną składnię, aby inicjować elementy członkowskie obiektu. Inicjatory właściwości sprawiają, że wartość jest ustawiana dla właściwości. Minusemem jest to, że te właściwości muszą mieć wartość settable. Począwszy od języka C# 9,0, można tworzyć metody `init` dostępu zamiast `set` metod dostępu do właściwości i indeksatorów. Obiekty wywołujące mogą używać składni inicjatora właściwości do ustawiania tych wartości w wyrażeniach tworzenia, ale te właściwości są tylko do odczytu, gdy konstrukcja została ukończona. Tylko metody init umożliwiają zmianę stanu okna. To okno zostanie zamknięte po zakończeniu fazy budowania. Faza konstruowania skutecznie kończy działanie po wszystkich inicjalizacjach, w tym inicjatorach właściwości i wyrażeniach z.
 
 Można zadeklarować `init` tylko metody ustawiające w dowolnym typie, który napiszesz. Na przykład następująca struktura definiuje strukturę obserwacji pogody:
 
@@ -166,9 +166,9 @@ W języku C# 9 wprowadzono nowe ulepszenia dopasowania do wzorca:
 
 - _*_Wzorce typu_*_ zgodne ze zmienną jest typem
 - _*_Wzorce w nawiasach_*_ wymuszają lub podkreślają pierwszeństwo kombinacji wzorców
-- _*_ `and` Wzorce conjunctive_*_ wymagają dopasowania obu wzorców
-- _*_ `or` Wzorce disjunctive_*_ wymagają dopasowania do wzorca
-- _*_ `not` Wzorce negacji_*_ wymagają, aby wzorzec nie był zgodny
+- _*_`and` Wzorce conjunctive_*_ wymagają dopasowania obu wzorców
+- _*_`or` Wzorce disjunctive_*_ wymagają dopasowania do wzorca
+- _*_`not` Wzorce negacji_*_ wymagają, aby wzorzec nie był zgodny
 - _*_Wzorce relacyjne_*_ wymagają, aby dane wejściowe były mniejsze niż, większe niż lub równe lub większe niż lub równe danej stałej.
 
 Wzorce te wzbogacają składnię wzorców. Rozważ następujące przykłady:
@@ -240,9 +240,9 @@ Dwie funkcje końcowe obsługują generatory kodu w języku C#. Generatory kodu 
 
 Generator kodu odczytuje atrybuty lub inne elementy kodu przy użyciu interfejsów API analizy Roslyn. Z tych informacji dodaje nowy kod do kompilacji. Generatory źródła mogą jedynie dodawać kod; nie mogą modyfikować żadnego istniejącego kodu w kompilacji.
 
-Dwie funkcje, które zostały dodane dla generatorów kodu, to rozszerzenia ***Składnia metody częściowej**_ i _*_inicjatory modułów_*_. Najpierw zmiany w metodach częściowych. Przed C# 9,0 metody częściowe są, `private` ale nie można określić modyfikatora dostępu, mają `void` Return i nie mogą mieć `out` parametrów. Te ograniczenia mające na celu, że jeśli nie zostanie podana implementacja metody, kompilator usuwa wszystkie wywołania metody częściowej. Język C# 9,0 usuwa te ograniczenia, ale wymaga, aby częściowa deklaracja metod była implementacją. Generatory kodu mogą zapewnić, że implementacja. Aby uniknąć wprowadzenia zmiany, kompilator traktuje każdą metodę częściową bez modyfikatora dostępu, aby przestrzegać starych reguł. Jeśli metoda częściowa zawiera `private` modyfikator dostępu, nowe reguły regulują tę metodę częściową.
+Dwie funkcje, które zostały dodane dla generatorów kodu, to rozszerzenia * **Składnia metody częściowej** _ i _*_inicjatory modułów_*_. Najpierw zmiany w metodach częściowych. Przed C# 9,0 metody częściowe są, `private` ale nie można określić modyfikatora dostępu, mają `void` Return i nie mogą mieć `out` parametrów. Te ograniczenia mające na celu, że jeśli nie zostanie podana implementacja metody, kompilator usuwa wszystkie wywołania metody częściowej. Język C# 9,0 usuwa te ograniczenia, ale wymaga, aby częściowa deklaracja metod była implementacją. Generatory kodu mogą zapewnić, że implementacja. Aby uniknąć wprowadzenia zmiany, kompilator traktuje każdą metodę częściową bez modyfikatora dostępu, aby przestrzegać starych reguł. Jeśli metoda częściowa zawiera `private` modyfikator dostępu, nowe reguły regulują tę metodę częściową.
 
-Druga Nowa funkcja dla generatorów kodu jest _ *_inicjatorów modułów_* *. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe podczas ładowania zestawu. Metoda inicjatora modułu:
+Druga Nowa funkcja dla generatorów kodu jest _ * _inicjatorów modułów_ * *. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe podczas ładowania zestawu. Metoda inicjatora modułu:
 
 - Musi być statyczna
 - Musi być bez parametrów

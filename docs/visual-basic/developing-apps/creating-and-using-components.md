@@ -4,18 +4,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - components [Visual Basic]
 ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
-ms.openlocfilehash: e4d4fa092363a5e76658f2770c0d655bb225f3f3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 106b8791ee5cb3db95759ccca2fddd799661ef3c
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544586"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282060"
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Tworzenie składników i korzystanie z nich w Visual Basic
 
-*Składnik* jest klasą, która implementuje <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> interfejs lub który dziedziczy bezpośrednio lub pośrednio z klasy implementującej <xref:System.ComponentModel.IComponent> . Składnik .NET Framework jest obiektem, który jest wielokrotnego użytku, może współdziałać z innymi obiektami i zapewnia kontrolę nad zasobami zewnętrznymi i obsługą czasu projektowania.  
+*Składnik* jest klasą, która implementuje <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> interfejs lub który dziedziczy bezpośrednio lub pośrednio z klasy implementującej <xref:System.ComponentModel.IComponent> . Składnik .NET to obiekt, który jest wielokrotnego użytku, może współdziałać z innymi obiektami i zapewnia kontrolę nad zasobami zewnętrznymi i obsługą czasu projektowania.  
   
- Ważną cechą składników jest możliwość projektowania, co oznacza, że Klasa, która jest składnikiem, może być używana w zintegrowanym środowisku programistycznym programu Visual Studio. Składnik może być dodany do przybornika, przeciągany i upuszczany na formularz oraz do manipulowania na powierzchni projektowej. Należy zauważyć, że podstawowa obsługa w czasie projektowania składników jest wbudowana w .NET Framework; deweloper składnika nie musi wykonywać żadnych dodatkowych czynności, aby korzystać z podstawowych funkcji czasu projektowania.  
+ Ważną cechą składników jest możliwość projektowania, co oznacza, że Klasa, która jest składnikiem, może być używana w zintegrowanym środowisku programistycznym programu Visual Studio. Składnik może być dodany do przybornika, przeciągany i upuszczany na formularz oraz do manipulowania na powierzchni projektowej. Podstawowa obsługa czasu projektowania składników jest wbudowana w platformę .NET. Deweloper składnika nie musi wykonywać żadnych dodatkowych czynności, aby korzystać z podstawowych funkcji czasu projektowania.  
   
  *Kontrolka* jest podobna do składnika, zarówno do projektowania. Jednak formant udostępnia interfejs użytkownika, natomiast składnik nie jest. Kontrolka musi być pochodną jednej z klas podstawowych formantów: <xref:System.Windows.Forms.Control> lub <xref:System.Web.UI.Control> .  
   
@@ -68,4 +68,4 @@ ms.locfileid: "90544586"
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Instrukcje: uzyskiwanie dostępu do obsługi czasu projektowania w programie Windows Forms](/dotnet/desktop/winforms/controls/developing-windows-forms-controls-at-design-time)
+- [Instrukcje: dostęp do Design-Time pomocy technicznej w programie Windows Forms](/dotnet/desktop/winforms/controls/developing-windows-forms-controls-at-design-time)

@@ -1,22 +1,23 @@
 ---
 title: <add>, element dla <schemaImporterExtensions>
-description: <add>Element dodaje typy używane przez klasę XmlSchemaImporter do mapowania typów XSD na typy .NET Framework.
+description: <add>Element dodaje typy używane przez klasę XmlSchemaImporter do mapowania typów XSD na typy .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XML serialization, configuration
 - <add> element for <schemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
-ms.openlocfilehash: 6fd8113ad39a22c927035fca574151ae8f002685
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 38d8ebd6e973632b23865ad60e007d9aa21e7da6
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84288332"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282000"
 ---
 # <a name="add-element-for-schemaimporterextensions"></a>\<add>, element dla \<schemaImporterExtensions>
-Dodaje typy używane przez <xref:System.Xml.Serialization.XmlSchemaImporter> do mapowania typów XSD typów programu .NET Framework. Aby uzyskać więcej informacji na temat plików konfiguracji, zobacz [Schemat pliku konfiguracji](../../framework/configure-apps/file-schema/index.md).  
+
+Dodaje typy używane przez program <xref:System.Xml.Serialization.XmlSchemaImporter> do mapowania typów XSD na typy .NET. Aby uzyskać więcej informacji na temat plików konfiguracji, zobacz [Schemat pliku konfiguracji](../../framework/configure-apps/file-schema/index.md).  
   
- \<configuration>  
+\<configuration>  
 \<system.xml.serialization>  
 \<schemaImporterExtensions>  
 \<add>  
@@ -35,7 +36,7 @@ Dodaje typy używane przez <xref:System.Xml.Serialization.XmlSchemaImporter> do 
 |Atrybut|Opis|  
 |---------------|-----------------|  
 |**Nazwij**|Prosta nazwa używana do znajdowania wystąpienia.|  
-|**Wprowadź**|Wymagany. Określa klasę rozszerzenia schematu do dodania. Wartość atrybutu **typu** musi znajdować się w jednym wierszu i zawierać w pełni kwalifikowaną nazwę typu. Gdy zestaw znajduje się w globalnej pamięci podręcznej zestawów (GAC), musi również zawierać wersję, kulturę i token klucza publicznego podpisanego zestawu.|  
+|**Wprowadź**|Wymagane. Określa klasę rozszerzenia schematu do dodania. Wartość atrybutu **typu** musi znajdować się w jednym wierszu i zawierać w pełni kwalifikowaną nazwę typu. Gdy zestaw znajduje się w globalnej pamięci podręcznej zestawów (GAC), musi również zawierać wersję, kulturę i token klucza publicznego podpisanego zestawu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
  Brak.  
@@ -64,5 +65,5 @@ Dodaje typy używane przez <xref:System.Xml.Serialization.XmlSchemaImporter> do 
 ## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
-- [\<system.xml.serialization>Postaci](system-xml-serialization-element.md)
-- [\<schemaImporterExtensions>Postaci](schemaimporterextensions-element.md)
+- [\<system.xml.serialization> Postaci](system-xml-serialization-element.md)
+- [\<schemaImporterExtensions> Postaci](schemaimporterextensions-element.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: a2684ab72c1fb109d711e333e01836d3399caf86
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 90ae911c8942fef7a9e8238921990b0a52a47ca0
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289645"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281768"
 ---
 # <a name="datetimeserialization-element"></a>\<dateTimeSerialization> Element
 Określa tryb serializacji <xref:System.DateTime> obiektów.  
@@ -47,9 +47,10 @@ Określa tryb serializacji <xref:System.DateTime> obiektów.
 |System.XML.serialization|Element najwyższego poziomu do sterowania serializacji XML.|  
   
 ## <a name="remarks"></a>Uwagi  
- W wersji 1,0, 1,1, 2,0 i nowszych wersji .NET Framework, gdy ta właściwość ma wartość **Local**, <xref:System.DateTime> obiekty są zawsze sformatowane jako czas lokalny. Oznacza to, że informacje o strefie czas lokalny zawsze jest zawarte w danych serializacji. Ustaw tę właściwość na wartość **Local** , aby zapewnić zgodność ze starszymi wersjami .NET Framework.  
+
+Gdy ta właściwość jest ustawiona na wartość **Local** , <xref:System.DateTime> obiekty są zawsze sformatowane jako czas lokalny. Oznacza to, że informacje o strefie czas lokalny zawsze jest zawarte w danych serializacji.
   
- W wersji 2,0 i nowszych .NET Framework, dla których ta właściwość ma ustawioną wartość **roundtrip**, <xref:System.DateTime> obiekty są sprawdzane w celu określenia, czy znajdują się w lokalnej, UTC lub nieokreślonej strefie czasowej. <xref:System.DateTime> Obiekty są następnie serializowany w taki sposób, że jest zachowywany tych informacji. Jest to zachowanie domyślne i jest to zalecane zachowanie dla wszystkich nowych aplikacji, które nie komunikują się ze starszymi wersjami platformy.  
+Gdy ta właściwość ma wartość **roundtrip** , <xref:System.DateTime> obiekty są sprawdzane w celu określenia, czy znajdują się one w lokalnej, UTC lub nieokreślonej strefie czasowej. <xref:System.DateTime> Obiekty są następnie serializowany w taki sposób, że jest zachowywany tych informacji. Jest to zachowanie domyślne i jest to zalecane zachowanie dla wszystkich nowych aplikacji, które nie komunikują się ze starszymi wersjami platformy.  
   
 ## <a name="see-also"></a>Zobacz także
 
@@ -57,6 +58,6 @@ Określa tryb serializacji <xref:System.DateTime> obiektów.
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
 - [Schemat pliku konfiguracji](../../framework/configure-apps/file-schema/index.md)
-- [\<schemaImporterExtensions>Postaci](schemaimporterextensions-element.md)
-- [\<add>Element dla\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)
-- [\<system.xml.serialization>Postaci](system-xml-serialization-element.md)
+- [\<schemaImporterExtensions> Postaci](schemaimporterextensions-element.md)
+- [\<add> Element dla \<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)
+- [\<system.xml.serialization> Postaci](system-xml-serialization-element.md)

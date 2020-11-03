@@ -6,17 +6,20 @@ helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-ms.openlocfilehash: f1254f345a8b3bb796217442cbad36d2e942b403
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: ff330691483b56740ee72e280c1471af4282c638
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517207"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282253"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (Narzędzie podpisu)
 Narzędzie podpisywania to narzędzie wiersza polecenia, które cyfrowo podpisuje pliki, weryfikuje podpisy w plikach i oznacza pliki znacznikami czasu.  
   
- To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7). Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).  
+ To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7). Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).
+
+> [!Note]  
+> Zestawy Windows 10 SDK, Windows 10 HLK, Windows 10 WDK i Windows 10 ADK **kompilacja 20236 i nowsze** wymagają określenia algorytmu digest. Polecenie Narzędzia SignTool `sign` wymaga, aby `/fd` **algorytm szyfrowania plików** i `/td` **algorytm skrótu sygnatury czasowej** były określane odpowiednio podczas podpisywania i sygnatury czasowej. Ostrzeżenie (kod błędu 0, początkowo) zostanie zgłoszony `/fd` , jeśli nie zostanie określony podczas podpisywania i jeśli `/td` nie zostanie określony podczas wykonywania sygnatury czasowej. W nowszych wersjach programu narzędzia SignTool ostrzeżenie stanie się błędem. SHA256 jest zalecane i uważane za bezpieczniejsze niż algorytm SHA1 przez branżę.  
   
  W wierszu polecenia wpisz następujące polecenie:  
   
@@ -58,7 +61,7 @@ signtool [command] [options] [file_name | ...]
 |Opcja polecenia Catdb|Opis|  
 |------------------|-----------------|  
 |`/d`|Określa, że domyślna baza danych wykazów jest aktualizowana. Jeśli żadna z tych `/d` `/g` opcji nie zostanie użyta, narzędzie podpisywania aktualizuje składnik systemowy i bazę danych sterowników.|  
-|`/g` *GUID*|Określa, że baza danych wykazu identyfikowana przez globalnie unikatowy identyfikator *GUID* jest aktualizowana.|  
+|`/g`*Identyfikator GUID*|Określa, że baza danych wykazu identyfikowana przez globalnie unikatowy identyfikator *GUID* jest aktualizowana.|  
 |`/r`|Usuwa określone wykazy z bazy danych wykazów. Jeśli ta opcja nie jest określona, narzędzie podpisywania dodaje określone wykazy do bazy danych wykazów.|  
 |`/u`|Określa, że dla dodawanych plików wykazów unikatowe nazwy są generowane automatycznie. W razie potrzeby nazwy plików wykazów są zmieniane, aby zapobiec konfliktom nazw z istniejącymi plikami wykazów. Jeśli ta opcja nie jest określona, narzędzie podpisywania zastępuje wszelkie istniejące wykazy, które mają taką samą nazwę jak wykaz dodawany.|  
   
@@ -76,7 +79,8 @@ signtool [command] [options] [file_name | ...]
 |`/d`  *DESC*|Określa opis podpisanej zawartości.|  
 |`/du`  *Adres URL*|Określa adres URL (Uniform Resource Locator) rozszerzonego opisu podpisanej zawartości.|  
 |`/f`  *SignCertFile*|Określa certyfikat podpisywania w pliku. Jeśli plik znajduje się w formacie wymiany informacji osobistych (PFX) i jest chroniony hasłem, użyj opcji, `/p` Aby określić hasło. Jeśli plik nie zawiera kluczy prywatnych, użyj `/csp` opcji i, `/kc` Aby określić dostawcę CSP i nazwę kontenera klucza prywatnego.|  
-|`/fd`|Określa algorytm tworzenia skrótu pliku na potrzeby tworzenia podpisów plików. Domyślnie jest to algorytm SHA1.|  
+|`/fd`|Określa algorytm tworzenia skrótu pliku na potrzeby tworzenia podpisów plików. </br> **Uwaga:** Ostrzeżenie jest generowane, jeśli `/fd` przełącznik nie zostanie podany podczas podpisywania. Algorytmem domyślnym jest SHA1, ale SHA256 jest zalecane.|
+|`/fd`  *certHash*|Określenie ciągu *certHash* będzie domyślnie algorytmem używanym w certyfikacie podpisywania. </br> **Uwaga:** Dostępne tylko w zestawie Windows 10 Kit builds 20236 i nowszych.|  
 |`/i`  *Wystawca*|Określa nazwę wystawcy certyfikatu podpisywania. Ta wartość może być podciągiem całej nazwy wystawcy.|  
 |`/kc`  *PrivKeyContainerName*|Określa nazwę kontenera kluczy prywatnych.|  
 |`/n`  *SubjectName*|Określa nazwę podmiotu certyfikatu podpisywania. Ta wartość może być podciągiem całej nazwy podmiotu.|  
@@ -91,8 +95,8 @@ signtool [command] [options] [file_name | ...]
 |`/sha1`  *Skrótu*|Określa skrót SHA1 certyfikatu podpisywania. Skrót SHA1 jest zazwyczaj określany, jeśli wiele certyfikatów spełnia kryteria określone przez pozostałe przełączniki.|  
 |`/sm`|Określa, że jest używany magazyn komputera, a nie magazyn użytkownika.|  
 |`/t`  *Adres URL*|Określa adres URL serwera znaczników czasu. Jeśli ta opcja (lub `/tr` ) nie istnieje, podpisany plik nie będzie miał sygnatury czasowej. Jeśli oznaczanie znacznikiem czasu nie powiedzie się, jest generowane ostrzeżenie. Tej opcji nie można używać z `/tr` opcją.|  
-|`/td`  *alg*|Używane z `/tr` opcją żądania algorytmu podsumowania używanego przez serwer sygnatury czasowej RFC 3161.|  
-|`/tr`  *Adres URL*|Określa adres URL serwera znaczników czasu RFC 3161. Jeśli ta opcja (lub `/t` ) nie istnieje, podpisany plik nie będzie miał sygnatury czasowej. Jeśli oznaczanie znacznikiem czasu nie powiedzie się, jest generowane ostrzeżenie. Tej opcji nie można używać z `/t` opcją.|  
+|`/td`  *alg*|Używane z `/tr` opcją żądania algorytmu podsumowania używanego przez serwer sygnatury czasowej RFC 3161. </br> **Uwaga:** Ostrzeżenie jest generowane, jeśli `/td` przełącznik nie zostanie podany podczas sygnatury czasowej. Algorytmem domyślnym jest SHA1, ale zalecane jest SHA256. <br/> `/td`Przełącznik musi być zadeklarowany po `/tr` przełączniku, nie przed. Jeśli `/td` przełącznik jest zadeklarowany przed `/tr` przełącznikiem, zwracana sygnatura czasowa jest z algorytmu SHA1 zamiast zamierzonego algorytmu SHA256. |
+|`/tr`  *Adres URL*|Określa adres URL serwera znaczników czasu RFC 3161. Jeśli ta opcja (lub `/t` ) nie istnieje, podpisany plik nie będzie miał sygnatury czasowej. Jeśli oznaczanie znacznikiem czasu nie powiedzie się, jest generowane ostrzeżenie. Tej opcji nie można używać z `/t` opcją.|
 |`/u`  *Użycie*|Określa rozszerzone użycie klucza (EKU), które musi być obecne w certyfikacie podpisywania. Wartość Usage można określić za pomocą identyfikatora OID lub ciągu. Domyślna wartość Usage to „Code Signing” (1.3.6.1.5.5.7.3.3).|  
 |`/uw`|Określa użycie funkcji weryfikacji składników systemu Windows (1.3.6.1.4.1.311.10.3.6).|  
   
@@ -106,7 +110,7 @@ signtool [command] [options] [file_name | ...]
 |----------------------|-----------------|  
 |`/p7`|Oznacza pliki PKCS #7 znacznikami czasu.|  
 |`/t`  *Adres URL*|Określa adres URL serwera znaczników czasu. Plik oznaczany znacznikiem czasu musi zostać wcześniej podpisany. Albo `/t` `/tr` opcja jest wymagana.|  
-|`/td`  *alg*|Żąda algorytmu tworzenia skrótu używanego przez serwer znaczników czasu RFC 3161. `/td`jest używany z `/tr` opcją.|  
+|`/td`  *alg*|Używane z `/tr` opcją żądania algorytmu podsumowania używanego przez serwer sygnatury czasowej RFC 3161. </br> **Uwaga:** Ostrzeżenie jest generowane, jeśli `/td` przełącznik nie zostanie podany podczas sygnatury czasowej. Algorytmem domyślnym jest SHA1, ale zalecane jest SHA256. <br/> `/td`Przełącznik musi być zadeklarowany po `/tr` przełączniku, nie przed. Jeśli `/td` przełącznik jest zadeklarowany przed `/tr` przełącznikiem, zwracana sygnatura czasowa jest z algorytmu SHA1 zamiast zamierzonego algorytmu SHA256. |
 |`/tp`*indeks*|Sygnatura czasowa sygnatura *.*|  
 |`/tr`  *Adres URL*|Określa adres URL serwera znaczników czasu RFC 3161. Plik oznaczany znacznikiem czasu musi zostać wcześniej podpisany. Albo `/tr` `/t` opcja jest wymagana.|  
   
@@ -125,10 +129,10 @@ signtool [command] [options] [file_name | ...]
 |`/c`*CatFile*|Określa plik wykazu według nazwy.|  
 |`/d`|Określa, że narzędzie podpisywania powinno drukować opis i adres URL opisu.|  
 |`/ds`  *Indeks*|Weryfikuje podpis w określonej pozycji.|  
-|`/hash`( `SHA1`&#124;`SHA256` )|Określa opcjonalny algorytm wyznaczania wartości skrótu, który ma być używany podczas wyszukiwania pliku w wykazie.|  
+|`/hash` ( `SHA1`&#124;`SHA256` )|Określa opcjonalny algorytm wyznaczania wartości skrótu, który ma być używany podczas wyszukiwania pliku w wykazie.|  
 |`/kp`|Określa, że weryfikacja powinna być wykonywana przy użyciu zasad podpisywania sterowników trybu jądra.|  
 |`/ms`|Używa wielu semantyk weryfikacji. Jest to domyślne zachowanie wywołania [WinVerifyTrust](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) w systemie Windows 8 i nowszych.|  
-|`/o` *Wersja*|Weryfikuje plik na podstawie wersji systemu operacyjnego. *Wersja* ma następującą postać: *PlatformID*:*VerMajor*. *Szkodniki*. *BuildNumber*. *PlatformID* reprezentuje wartość podstawową <xref:System.PlatformID> elementu członkowskiego wyliczenia. **Ważne:**  `/o`Zalecane jest użycie przełącznika. Jeśli `/o` nie jest określony, SignTool.exe może zwracać nieoczekiwane wyniki. Jeśli na przykład nie zostanie uwzględniony `/o` przełącznik, wykazy systemowe, które poprawnie weryfikują się w starszym systemie operacyjnym, mogą nie zostać prawidłowo zweryfikowane w nowszej wersji systemu operacyjnego.|  
+|`/o` *Wersja*|Weryfikuje plik na podstawie wersji systemu operacyjnego. *Wersja* ma następującą postać: *PlatformID* : *VerMajor*. *Szkodniki*. *BuildNumber*. *PlatformID* reprezentuje wartość podstawową <xref:System.PlatformID> elementu członkowskiego wyliczenia. **Ważne:**  `/o` Zalecane jest użycie przełącznika. Jeśli `/o` nie jest określony, SignTool.exe może zwracać nieoczekiwane wyniki. Jeśli na przykład nie zostanie uwzględniony `/o` przełącznik, wykazy systemowe, które poprawnie weryfikują się w starszym systemie operacyjnym, mogą nie zostać prawidłowo zweryfikowane w nowszej wersji systemu operacyjnego.|  
 |`/p7`|Weryfikuje pliki PKCS #7. Żadne z istniejących zasad nie są używane do weryfikacji plików PKCS #7. Podpis jest sprawdzany i zostaje utworzony łańcuch dla certyfikatu podpisywania.|  
 |`/pa`|Określa, że mają być używane domyślne zasady weryfikacji Authenticode. Jeśli ta `/pa` opcja nie jest określona, narzędzie podpisywania używa zasad weryfikacji sterowników systemu Windows. Tej opcji nie można używać z `catdb` opcjami.|  
 |`/pg`*PolicyGUID*|Określa zasady weryfikacji według identyfikatora GUID. *PolicyGUID* odnosi się do Identyfikator akcji zasad weryfikacji. Tej opcji nie można używać z `catdb` opcjami.|  
@@ -146,7 +150,7 @@ signtool [command] [options] [file_name | ...]
 |0|Wykonywanie powiodło się.|  
 |1|Wykonywanie nie powiodło się.|  
 |2|Wykonanie zostało ukończone, ale zostały wygenerowane ostrzeżenia.|  
-  
+
 ## <a name="examples"></a>Przykłady  
  Poniższe polecenie dodaje plik wykazu MyCatalogFileName.cat do bazy danych składników systemu i sterowników. `/u`Opcja w razie potrzeby generuje unikatową nazwę, aby zapobiec zastąpieniu istniejącego pliku wykazu o nazwie `MyCatalogFileName.cat` .  
   
@@ -156,38 +160,44 @@ signtool catdb /v /u MyCatalogFileName.cat
   
  Poniższe polecenie podpisuje plik automatycznie przy użyciu najlepszego certyfikatu.  
   
-```console  
-signtool sign /a MyFile.exe  
-```  
-  
+```console
+signtool sign /a /fd SHA256 MyFile.exe
+```
+
  Poniższe polecenie podpisuje cyfrowo plik przy użyciu certyfikatu przechowywanego w chronionym hasłem pliku PFX.  
   
 ```console  
-signtool sign /f MyCert.pfx /p MyPassword MyFile.exe  
+signtool sign /f MyCert.pfx /p MyPassword /fd SHA256 MyFile.exe
 ```  
   
  Poniższe polecenie podpisuje cyfrowo plik i oznacza go sygnaturą czasową. Certyfikat użyty do podpisania pliku jest przechowywany w pliku PFX.  
   
 ```console  
-signtool sign /f MyCert.pfx /t http://timestamp.digicert.com MyFile.exe  
+signtool sign /f MyCert.pfx /t http://timestamp.digicert.com /fd SHA256 MyFile.exe
 ```  
   
  Następujące polecenie podpisuje plik przy użyciu certyfikatu znajdującego się w `My` magazynie, który ma nazwę podmiotu `My Company Certificate` .  
   
 ```console  
-signtool sign /n "My Company Certificate" MyFile.exe  
+signtool sign /n "My Company Certificate" /fd SHA256 MyFile.exe
 ```  
   
  Poniższe polecenie podpisuje formant ActiveX i udostępnia informacje wyświetlane przez program Internet Explorer, gdy użytkownik jest monitowany o zainstalowanie tego formantu.  
   
 ```console  
-Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl/info.html MyControl.exe  
+Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl/info.html /fd SHA256 MyControl.exe
 ```  
   
  Poniższe polecenie oznacza znacznikiem czasu plik, który jest już podpisany cyfrowo.  
   
 ```console  
-signtool timestamp /t http://timestamp.digicert.com MyFile.exe  
+signtool timestamp /t http://timestamp.digicert.com MyFile.exe
+```  
+
+Następujące polecenie umożliwia sygnaturę czasową pliku przy użyciu serwera znacznika czasu RFC 3161.  
+  
+```console  
+signtool timestamp /tr http://timestamp.digicert.com /td SHA256 MyFile.exe
 ```  
   
  Poniższe polecenie sprawdza, czy plik jest podpisany.  

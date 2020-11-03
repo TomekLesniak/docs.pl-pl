@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 4289b809d9a401de92c74063a42216f3051543f6
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 3699edda6cce24adb8e932d6e8b8a0a5bb977142
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188565"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282021"
 ---
 # <a name="isolated-storage"></a>Wydzielona pamięć masowa
 
@@ -37,7 +37,7 @@ W przypadku aplikacji klasycznych magazyn izolowany jest mechanizmem magazynu da
 
 ## <a name="data-compartments-and-stores"></a>Przedziały i magazyny danych
 
-Kiedy aplikacja przechowuje dane w pliku, należy ostrożnie wybierać nazwę pliku i lokalizację w pamięci masowej, aby zminimalizować prawdopodobieństwo, że lokalizacja w pamięci masowej będzie znana innej aplikacji, przez co będzie narażona na uszkodzenia. Bez standardowego systemu do zarządzania wymienionymi problemami projektowanie technik ad hoc, które minimalizują konflikty pamięci podręcznej, może być złożone, a wyniki mogą być zawodne.
+Gdy aplikacja przechowuje dane w pliku, należy starannie wybrać nazwę pliku i lokalizację magazynu, aby zminimalizować prawdopodobieństwo, że lokalizacja przechowywania będzie znana innej aplikacji, w związku z czym jest narażona na uszkodzenie. Bez standardowego systemu do zarządzania tymi problemami, Improvising techniki, które minimalizują konflikty magazynu, mogą być złożone, a wyniki mogą być zawodne.
 
 Dzięki wydzielonej pamięci masowej dane są zawsze izolowane według użytkownika i zestawu. Poświadczenia, takie jak pochodzenie lub silna nazwa zestawu, określają tożsamość zestawu. Użycie podobnych poświadczeń umożliwia też izolowanie danych według domeny aplikacji.
 
@@ -134,23 +134,24 @@ Trzecia lokalizacja jest udostępniana dla wszystkich kont użytkowników na kom
 
 Powyższe ścieżki mogą się różnić w zależności od używanej wersji systemu Windows.
 
-Teraz Rozważmy system z obsługą dwóch użytkowników z dwoma zarejestrowanymi użytkownikami _Mallory_ i _Roberta_ . Mallory ma możliwość uzyskiwania dostępu do katalogu profilu użytkownika `C:\Users\Mallory\` i może uzyskać dostęp do udostępnionej lokalizacji magazynu na całym komputerze `C:\ProgramData\IsolatedStorage\` . Nie może uzyskać dostępu do katalogu profilu użytkownika Roberta `C:\Users\Bob\` .
+Teraz Rozważmy system z obsługą dwóch użytkowników z dwoma zarejestrowanymi użytkownikami _Mallory_ i _Roberta_. Mallory ma możliwość uzyskiwania dostępu do katalogu profilu użytkownika `C:\Users\Mallory\` i może uzyskać dostęp do udostępnionej lokalizacji magazynu na całym komputerze `C:\ProgramData\IsolatedStorage\` . Nie może uzyskać dostępu do katalogu profilu użytkownika Roberta `C:\Users\Bob\` .
 
 Jeśli Mallory życzy sobie atakującej, może ona zapisywać dane w lokalizacji przechowywania w całej maszynie, a następnie próbować wpływać na odczytanie ze sklepu na całym komputerze. Gdy Robert uruchamia aplikację, która odczytuje z tego magazynu, ta aplikacja będzie działać na Mallory danych umieszczonych w tym miejscu, ale w kontekście konta użytkownika Roberta. W pozostałej części tego dokumentu opisano różne wektory ataków oraz czynności, które można wykonać, aby zminimalizować ryzyko związane z atakami.
 
-__Uwaga:__ Aby atak miał miejsce, Mallory wymaga:
-
-* Konto użytkownika na komputerze.
-* Możliwość umieszczenia pliku w znanej lokalizacji w systemie plików.
-* Wiedza o tym, że Robert będzie w pewnym momencie uruchamiać aplikację, która próbuje odczytać te dane.
-
-Nie są to wektory zagrożeń, które mają zastosowanie w standardowych środowiskach klasycznych jednego użytkownika, takich jak komputery domowe lub stacje robocze przedsiębiorstwa z pojedynczym pracownikiem.
+> [!NOTE]
+> Aby atak miał miejsce, Mallory wymaga:
+>
+> * Konto użytkownika na komputerze.
+> * Możliwość umieszczenia pliku w znanej lokalizacji w systemie plików.
+> * Wiedza o tym, że Robert będzie w pewnym momencie uruchamiać aplikację próbującą odczytać te dane.
+>
+> Nie są to wektory zagrożeń, które dotyczą standardowych środowisk klasycznych jednego użytkownika, takich jak komputery domowe lub stacje robocze korporacyjne dla jednego pracownika.
 
 #### <a name="elevation-of-privilege"></a>Podniesienie uprawnień
 
 __Podniesienie poziomu uprawnień__ występuje, gdy aplikacja Roberta odczytuje plik Mallory i automatycznie próbuje wykonać jakąś akcję na podstawie zawartości tego ładunku. Rozważmy aplikację, która odczytuje zawartość skryptu uruchamiania ze sklepu dla całego komputera i przekazuje tę zawartość do programu `Process.Start` . Jeśli Mallory może umieścić złośliwy skrypt w sklepie dla całej maszyny, gdy Robert uruchomi swoją aplikację:
 
-* Aplikacja analizuje i uruchamia złośliwy skrypt Mallory _w kontekście profilu użytkownika Roberta_ .
+* Aplikacja analizuje i uruchamia złośliwy skrypt Mallory _w kontekście profilu użytkownika Roberta_.
 * Mallory uzyskuje dostęp do konta Roberta na komputerze lokalnym.
 
 #### <a name="denial-of-service"></a>Odmowa usługi
@@ -174,7 +175,7 @@ Gdy aplikacja Roberta odczytuje dane ze sklepu na całym komputerze, teraz przyp
 
 __Ważne:__ Jeśli środowisko ma wielu niezaufanych użytkowników, nie wywołuj interfejsu API ani __nie__ `IsolatedStorageFile.GetEnumerator(IsolatedStorageScope.Machine)` Wywołaj tego narzędzia `storeadm.exe /machine /list` . Oba te założono, że działają na zaufanych danych. Jeśli osoba atakująca może obsłużyć złośliwy ładunek w sklepie dla całego komputera, ten ładunek może prowadzić do podniesienia uprawnień w kontekście użytkownika, który uruchamia te polecenia.
 
-Jeśli działa w środowisku z obsługą kilku użytkowników, należy rozważyć użycie izolowanych funkcji magazynu, które są ukierunkowane na zakres _maszyn_ . Jeśli aplikacja musi odczytywać dane z lokalizacji w całej maszynie, wolisz odczytywać dane z lokalizacji, która jest tylko do zapisu na kontach administratorów. `%PROGRAMFILES%`Katalog i `HKLM` gałąź rejestru to przykłady lokalizacji zapisywalnych przez administratorów i odczytywane przez wszystkich użytkowników. Dane odczytane z tych lokalizacji są uważane za wiarygodne.
+Jeśli działa w środowisku z obsługą kilku użytkowników, należy rozważyć użycie izolowanych funkcji magazynu przeznaczonych dla zakresu _maszyn_ . Jeśli aplikacja musi odczytywać dane z lokalizacji całej komputera, wolisz odczytywać dane z lokalizacji tylko do zapisu przez konta administratorów. `%PROGRAMFILES%`Katalog i `HKLM` gałąź rejestru to przykłady lokalizacji zapisywalnych przez administratorów i odczytywane przez wszystkich użytkowników. Dane odczytane z tych lokalizacji są uważane za wiarygodne.
 
 Jeśli aplikacja musi używać zakresu _maszyn_ w środowisku wielu użytkowników, zweryfikuj zawartość dowolnego pliku odczytywanego ze sklepu dla całego komputera. Jeśli aplikacja odserializacja grafów obiektów z tych plików, rozważ użycie bezpieczniejszych serializacji, takich jak `XmlSerializer` zamiast niebezpiecznych serializatorów, takich jak `BinaryFormatter` lub `NetDataContractSerializer` . Należy zachować ostrożność przy użyciu głęboko zagnieżdżonych wykresów obiektów lub grafów obiektów, które wykonują alokację zasobów na podstawie zawartości pliku.
 
@@ -221,7 +222,7 @@ Wydzielona pamięć masowa jest przydatna w wielu sytuacjach, włączając w to 
 
 - Roaming. Aplikacje mogą również używać wydzielonej pamięci masowej z mobilnymi profilami użytkownika. Dzięki temu użytkownik może uzyskiwać mobilny dostęp do swoich izolowanych magazynów, używając profilu.
 
-Wydzielonej pamięci masowej nie należy używać w następujących sytuacjach:
+Nie należy używać wydzielonej pamięci masowej w następujących sytuacjach:
 
 - Do przechowywania tajemnic o wysokiej wartości, takich jak niezaszyfrowane klucze lub hasła, ponieważ wydzielona pamięć masowa nie jest chroniona przed wysoce zaufanym kodem, kodem niezarządzanym oraz zaufanymi użytkownikami komputera.
 

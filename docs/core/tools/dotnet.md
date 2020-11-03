@@ -2,12 +2,12 @@
 title: dotnet — polecenie
 description: Dowiedz się więcej na temat polecenia dotnet (sterownika generycznego dla interfejs wiersza polecenia platformy .NET Core) i jego użycia.
 ms.date: 02/13/2020
-ms.openlocfilehash: 4476dcf36455e0dc1b89712409818cf7e0352f2c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4e182e1b8dff725c479297f7f1587ceaccf2942f
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537668"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281626"
 ---
 # <a name="dotnet-command"></a>dotnet — polecenie
 
@@ -262,7 +262,7 @@ dotnet myapp.dll
 
   Określa lokalizację środowiska uruchomieniowego programu .NET Core, jeśli nie są one zainstalowane w domyślnej lokalizacji. Domyślna lokalizacja w systemie Windows to `C:\Program Files\dotnet` . Domyślną lokalizacją w systemie Linux i macOS jest `/usr/share/dotnet` . Ta zmienna środowiskowa jest używana tylko w przypadku uruchamiania aplikacji za pośrednictwem wygenerowanych plików wykonywalnych (apphosts). `DOTNET_ROOT(x86)` jest używany zamiast w przypadku uruchamiania 32-bitowego pliku wykonywalnego w 64-bitowym systemie operacyjnym.
 
-- `DOTNET_PACKAGES`
+- `NUGET_PACKAGES`
 
   Folder pakiety globalne. Jeśli nie jest ustawiona, zostanie ona domyślnie `~/.nuget/packages` włączona w systemie UNIX lub `%userprofile%\.nuget\packages` w systemie Windows.
 

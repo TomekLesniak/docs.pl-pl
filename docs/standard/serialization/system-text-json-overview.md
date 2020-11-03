@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 909d979d46b30939e304af071de65d230febd92d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d8bd5bcf78db534bd722972db01253cbd13a7a06
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "83380125"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282407"
 ---
 # <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Serializacja i deserializacja kodu JSON (kierowanie i cofanie) w programie .NET — Omówienie
 
@@ -27,18 +27,19 @@ Biblioteka zawiera również klasy umożliwiające pracę z modelem DOM (Documen
 
 ## <a name="how-to-get-the-library"></a>Jak uzyskać bibliotekę
 
-* Biblioteka jest wbudowana w ramach platformy udostępnionej [.NET Core 3,0](https://aka.ms/netcore3download) .
-* W przypadku innych platform docelowych zainstaluj [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) pakiet NuGet. Pakiet obsługuje:
+* Biblioteka jest wbudowana w ramach współdzielonej struktury dla platformy .NET Core 3,0 i nowszych.
+* W przypadku wcześniejszych wersji platformy zainstaluj [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) pakiet NuGet. Pakiet obsługuje:
+
   * .NET Standard 2,0 i nowsze wersje
   * .NET Framework 4.7.2 i nowsze wersje
   * .NET Core 2,0, 2,1 i 2,2
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 * [Jak używać biblioteki](system-text-json-how-to.md)
-* [Jak przeprowadzić migrację zNewtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Jak przeprowadzić migrację z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
 * [Jak pisać konwertery](system-text-json-converters-how-to.md)
-* [System.Text.Jsonkod źródłowy](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json)
-* [System.Text.JsonDokumentacja interfejsu API](xref:System.Text.Json)
+* [System.Text.Json kod źródłowy](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json)
+* [System.Text.Json Dokumentacja interfejsu API](xref:System.Text.Json)
 * [System.Text.Json. Dokumentacja interfejsu API serializacji](xref:System.Text.Json.Serialization)
 <!-- * [Roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

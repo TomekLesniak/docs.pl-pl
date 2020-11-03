@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cryptography [.NET], model
 - encryption [.NET], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: 0b3e07238bf0932572c222f7b947cfa7ae0221a9
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: a157a9a76f87a2a56c616b76c933e6d8d6415b03
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556998"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281587"
 ---
 # <a name="net-cryptography-model"></a>Model kryptografii .NET
 
@@ -25,7 +25,7 @@ Platforma .NET udostępnia implementacje wielu standardowych algorytmów kryptog
 
 System kryptograficzny platformy .NET implementuje rozszerzalny wzorzec dziedziczenia klasy pochodnej. Hierarchia jest następująca:
 
-- Klasa typu algorytmu, taka jak <xref:System.Security.Cryptography.SymmetricAlgorithm> , <xref:System.Security.Cryptography.AsymmetricAlgorithm> , lub <xref:System.Security.Cryptography.HashAlgorithm> . Ten poziom jest abstrakcyjny.
+- Klasa typu algorytmu, taka jak <xref:System.Security.Cryptography.SymmetricAlgorithm> ,  <xref:System.Security.Cryptography.AsymmetricAlgorithm> , lub <xref:System.Security.Cryptography.HashAlgorithm> . Ten poziom jest abstrakcyjny.
 
 - Klasa algorytmu, która dziedziczy z klasy typu algorytmu; na przykład, <xref:System.Security.Cryptography.Aes> , <xref:System.Security.Cryptography.RSA> lub <xref:System.Security.Cryptography.ECDiffieHellman> . Ten poziom jest abstrakcyjny.
 
@@ -37,13 +37,13 @@ Ten wzorzec klas pochodnych pozwala dodać nowy algorytm lub nową implementacj�
 
 Przykładem różnych implementacji dla algorytmu, należy wziąć pod uwagę Algorytmy symetryczne. Podstawą dla wszystkich algorytmów symetrycznych jest <xref:System.Security.Cryptography.SymmetricAlgorithm> , która jest dziedziczona przez <xref:System.Security.Cryptography.Aes> , <xref:System.Security.Cryptography.TripleDES> i inne, które nie są już zalecane.
 
-<xref:System.Security.Cryptography.Aes>jest dziedziczona przez <xref:System.Security.Cryptography.AesCryptoServiceProvider> , <xref:System.Security.Cryptography.AesCng> , i <xref:System.Security.Cryptography.AesManaged> .
+<xref:System.Security.Cryptography.Aes> jest dziedziczona przez <xref:System.Security.Cryptography.AesCryptoServiceProvider> , <xref:System.Security.Cryptography.AesCng> , i <xref:System.Security.Cryptography.AesManaged> .
 
 W .NET Framework w systemie Windows:
 
-* `*CryptoServiceProvider`klasy algorytmu, takie jak <xref:System.Security.Cryptography.AesCryptoServiceProvider> , są otokami wokół implementacji algorytmu Windows CRYPTOGRAPHY API (CAPI).
-* `*Cng`klasy algorytmu, takie jak <xref:System.Security.Cryptography.ECDiffieHellmanCng> są otokami wokół implementacji Windows Cryptography Next Generation (CNG).
-* `*Managed`klasy, takie jak <xref:System.Security.Cryptography.AesManaged> , są zapisywane w całości w kodzie zarządzanym. `*Managed`implementacje nie są certyfikowane przez standardy FIPS (Federal Information Processing Standards) i mogą być wolniejsze niż `*CryptoServiceProvider` `*Cng` klasy otoki i.
+* `*CryptoServiceProvider` klasy algorytmu, takie jak <xref:System.Security.Cryptography.AesCryptoServiceProvider> , są otokami wokół implementacji algorytmu Windows CRYPTOGRAPHY API (CAPI).
+* `*Cng` klasy algorytmu, takie jak <xref:System.Security.Cryptography.ECDiffieHellmanCng> , są otokami wokół implementacji Windows Cryptography Next Generation (CNG).
+* `*Managed` klasy, takie jak <xref:System.Security.Cryptography.AesManaged> , są zapisywane w całości w kodzie zarządzanym. `*Managed` implementacje nie są certyfikowane przez standardy FIPS (Federal Information Processing Standards) i mogą być wolniejsze niż `*CryptoServiceProvider` `*Cng` klasy otoki i.
 
 W przypadku programów .NET Core i .NET 5 i nowszych wersje wszystkie klasy implementacji ( `*CryptoServiceProvider` , `*Managed` i `*Cng` ) są otokami dla algorytmów systemu operacyjnego (OS). Jeśli algorytmy systemu operacyjnego są certyfikowane pod kątem zgodności ze standardem FIPS, .NET używa algorytmów certyfikowanych przez FIPS. Aby uzyskać więcej informacji, zobacz [Kryptografia międzyplatformowa](cross-platform-cryptography.md).
 
@@ -78,7 +78,7 @@ Poniżej znajduje się lista zalecanych algorytmów według aplikacji:
 - Generowanie klucza przy użyciu hasła:
   - <xref:System.Security.Cryptography.Rfc2898DeriveBytes>
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Usługi kryptograficzne](cryptographic-services.md)
 - [Kryptografia międzyplatformowa](cross-platform-cryptography.md)

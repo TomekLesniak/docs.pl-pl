@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 9d061aeccb914cce80e02bb7df44dae2edf25412
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ef02662a5492f117b252e464e92ec46e7484ef66
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557022"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282165"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Podstawy dotyczące aplikacji Windows Forms (Visual Basic)
 
@@ -28,7 +28,7 @@ Możesz tworzyć Windows Forms i aplikacje usług systemu Windows za pomocą pro
 
 ## <a name="building-rich-interactive-user-interfaces"></a>Tworzenie rozbudowanych, interaktywnych interfejsów użytkownika
 
-Windows Forms jest składnikiem inteligentnego klienta .NET Framework, zestawu bibliotek zarządzanych, które umożliwiają wykonywanie typowych zadań aplikacji, takich jak odczytywanie i zapisywanie w systemie plików. Za pomocą środowiska programistycznego, takiego jak Visual Studio, można tworzyć Windows Forms aplikacje, które wyświetlają informacje, żądają danych wejściowych od użytkowników i komunikują się z komputerami zdalnymi za pośrednictwem sieci.
+Windows Forms jest składnikiem inteligentnym klienta .NET Framework i .NET Core (od platformy .NET Core 3,0). Jest to zestaw bibliotek zarządzanych, które umożliwiają wykonywanie typowych zadań aplikacji, takich jak odczytywanie i zapisywanie w systemie plików. Za pomocą środowiska programistycznego, takiego jak Visual Studio, można tworzyć Windows Forms aplikacje, które wyświetlają informacje, żądają danych wejściowych od użytkowników i komunikują się z komputerami zdalnymi za pośrednictwem sieci.
 
 W Windows Forms formularz jest obszarem wizualnym, na którym są wyświetlane informacje dla użytkownika. Często tworzysz Windows Forms aplikacje, umieszczając kontrolki na formularzach i opracowując odpowiedzi do akcji użytkownika, takich jak kliknięcia myszą lub naciśnięcia klawiszy. *Kontrolka* to dyskretny element interfejsu użytkownika, który wyświetla dane lub akceptuje dane wejściowe.
 
@@ -63,7 +63,7 @@ Wiele aplikacji musi wyświetlać dane z bazy danych, pliku XML, usługi sieci W
 
 Łączenie ze źródłami danych za pośrednictwem sieci to proste zadanie z Windows Forms inteligentnymi klientami. <xref:System.Windows.Forms.BindingSource>Składnik, nowy z Windows Forms w programie Visual Studio 2005 i .NET Framework 2,0, reprezentuje połączenie ze źródłem danych i udostępnia metody wiązania danych z kontrolkami, nawigowanie do poprzednich i następnych rekordów, edytowanie rekordów i zapisywanie zmian z powrotem do oryginalnego źródła. <xref:System.Windows.Forms.BindingNavigator>Kontrolka udostępnia prosty interfejs <xref:System.Windows.Forms.BindingSource> dla składnika, dla którego użytkownicy mogą przechodzić między rekordami.
 
-### <a name="data-bound-controls"></a>Formanty powiązane z danymi
+### <a name="data-bound-controls"></a>Kontrolki Data-Bound
 
 Kontrolki powiązane z danymi można łatwo tworzyć przy użyciu okna źródła danych, w którym są wyświetlane źródła danych, takie jak bazy danych, usługi sieci Web i obiekty w projekcie. Formanty powiązane z danymi można tworzyć, przeciągając elementy z tego okna na formularze w projekcie. Dane można także powiązać z danymi istniejącymi kontrolkami, przeciągając obiekty z okna źródła danych do istniejących kontrolek.
 
@@ -97,7 +97,7 @@ Aby zapoznać się z pełnym wprowadzeniem do technologii ClickOnce, zobacz [zab
 
 ## <a name="other-controls-and-features"></a>Inne kontrolki i funkcje
 
-W Windows Forms istnieje wiele innych funkcji, które umożliwiają szybkie i łatwe wdrażanie typowych zadań, takich jak obsługa tworzenia okien dialogowych, drukowanie, Dodawanie pomocy i dokumentacji oraz lokalizowanie aplikacji w wielu językach. Ponadto Windows Forms opiera się na niezawodnym systemie zabezpieczeń .NET Framework, co pozwala na wydawanie klientom bardziej bezpiecznych aplikacji.
+W Windows Forms istnieje wiele innych funkcji, które umożliwiają szybkie i łatwe wdrażanie typowych zadań, takich jak obsługa tworzenia okien dialogowych, drukowanie, Dodawanie dokumentacji i lokalizowanie aplikacji w wielu językach. Ponadto Windows Forms opiera się na niezawodnym systemie zabezpieczeń programu .NET, co pozwala na wydawanie klientom bardziej bezpiecznych aplikacji.
 
 Informacje krok po kroku dotyczące korzystania z tych funkcji można znaleźć w następujących tematach pomocy:
 

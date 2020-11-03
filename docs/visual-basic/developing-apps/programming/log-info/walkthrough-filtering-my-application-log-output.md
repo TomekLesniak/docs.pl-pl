@@ -6,18 +6,18 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: aa63e7d23641ad71b135f15236e29399a535784f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e77a56b2be33555bc02157c8e643ac655b083bc3
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398256"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282212"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Wskazówki: filtrowanie danych wyjściowych My.Application.Log (Visual Basic)
 
 W tym instruktażu pokazano, jak zmienić domyślne filtrowanie dzienników dla `My.Application.Log` obiektu, aby kontrolować, jakie informacje są przesyłane z `Log` obiektu do odbiorników i jakie informacje są zapisywane przez odbiorniki. Zachowanie rejestrowania można zmienić nawet po skompilowaniu aplikacji, ponieważ informacje o konfiguracji są przechowywane w pliku konfiguracji aplikacji.
 
-## <a name="getting-started"></a>Wprowadzenie
+## <a name="getting-started"></a>Getting Started
 
 Każdy komunikat, który `My.Application.Log` zapisuje, ma skojarzony poziom ważności, którego mechanizmy filtrowania używają do kontrolowania danych wyjściowych dziennika. Ta przykładowa aplikacja używa `My.Application.Log` metod do pisania kilku komunikatów dziennika z różnymi poziomami ważności.
 
@@ -60,10 +60,10 @@ W tej tabeli przedstawiono poziom ważności wymagany dla dziennika w celu zapis
 |---|---|
 |`Critical`|`Critical`|
 |`Error`|`Critical` lub `Error`|
-|`Warning`|`Critical`, `Error` lub`Warning`|
-|`Information`|`Critical`, `Error` , `Warning` lub`Information`|
-|`Verbose`|`Critical`, `Error` , `Warning` , `Information` lub`Verbose`|
-|`ActivityTracing`|`Start`, `Stop` , `Suspend` , `Resume` lub`Transfer`|
+|`Warning`|`Critical`, `Error` lub `Warning`|
+|`Information`|`Critical`, `Error` , `Warning` lub `Information`|
+|`Verbose`|`Critical`, `Error` , `Warning` , `Information` lub `Verbose`|
+|`ActivityTracing`|`Start`, `Stop` , `Suspend` , `Resume` lub `Transfer`|
 |`All`|Dozwolone są wszystkie komunikaty.|
 |`Off`|Wszystkie komunikaty są blokowane.|
 
@@ -74,11 +74,11 @@ W tej tabeli objaśniono dane wyjściowe dziennika pokazane w poprzednim przykł
 
 #### <a name="to-log-only-activity-tracing-events"></a>Aby rejestrować tylko zdarzenia śledzenia aktywności
 
-1. Kliknij prawym przyciskiem myszy plik App. config w **Eksplorator rozwiązań** i wybierz polecenie **Otwórz**.
+1. Kliknij prawym przyciskiem myszy app.config w **Eksplorator rozwiązań** i wybierz polecenie **Otwórz**.
 
      -lub-
 
-     Jeśli nie ma pliku App. config:
+     Jeśli nie ma app.config pliku:
 
     1. W menu **projekt** wybierz polecenie **Dodaj nowy element**.
 
@@ -94,7 +94,7 @@ W tej tabeli objaśniono dane wyjściowe dziennika pokazane w poprzednim przykł
 
 4. Zmień wartość `value` atrybutu na "ActivityTracing".
 
-5. Zawartość pliku App. config powinna wyglądać podobnie do następującego kodu XML:
+5. Zawartość pliku app.config powinna wyglądać podobnie do następującego kodu XML:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -138,7 +138,7 @@ W tej tabeli objaśniono dane wyjściowe dziennika pokazane w poprzednim przykł
 9. Zmień wartość `value` atrybutu z powrotem na "informacje".
 
     > [!NOTE]
-    > `DefaultSwitch`Ustawienia przełącznika `My.Application.Log` . Nie zmienia to sposobu <xref:System.Diagnostics.Trace?displayProperty=nameWithType> zachowania .NET Framework i <xref:System.Diagnostics.Debug?displayProperty=nameWithType> klas.
+    > `DefaultSwitch`Ustawienia przełącznika `My.Application.Log` . Nie zmienia to sposobu działania platformy .NET <xref:System.Diagnostics.Trace?displayProperty=nameWithType> i <xref:System.Diagnostics.Debug?displayProperty=nameWithType> klas.
 
 ## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Indywidualne filtrowanie dla odbiorników my. Application. log
 
@@ -150,11 +150,11 @@ W tym przykładzie pokazano, jak skonfigurować filtrowanie dla nowego odbiornik
 
 #### <a name="to-log-only-activity-tracing-events"></a>Aby rejestrować tylko zdarzenia śledzenia działania
 
-1. Kliknij prawym przyciskiem myszy plik App. config w **Eksplorator rozwiązań** i wybierz polecenie **Otwórz**.
+1. Kliknij prawym przyciskiem myszy app.config w **Eksplorator rozwiązań** i wybierz polecenie **Otwórz**.
 
      \-oraz
 
-     Jeśli nie ma pliku App. config:
+     Jeśli nie ma app.config pliku:
 
     1. W menu **projekt** wybierz polecenie **Dodaj nowy element**.
 
@@ -162,7 +162,7 @@ W tym przykładzie pokazano, jak skonfigurować filtrowanie dla nowego odbiornik
 
     3. Kliknij pozycję **Dodaj**.
 
-2. Kliknij prawym przyciskiem myszy plik App. config w **Eksplorator rozwiązań**. Wybierz pozycję **Otwórz**.
+2. Kliknij prawym przyciskiem myszy app.config w **Eksplorator rozwiązań**. Wybierz pozycję **Otwórz**.
 
 3. Znajdź `<listeners>` sekcję w `<source>` sekcji z `name` atrybutem "DefaultSource", który znajduje się poniżej `<sources>` sekcji. `<sources>`Sekcja znajduje się poniżej `<system.diagnostics>` sekcji w sekcji najwyższego poziomu `<configuration>` .
 
@@ -192,7 +192,7 @@ W tym przykładzie pokazano, jak skonfigurować filtrowanie dla nowego odbiornik
 
      <xref:System.Diagnostics.EventTypeFilter>Filtr przyjmuje jedną z <xref:System.Diagnostics.SourceLevels> wartości wyliczenia jako `initializeData` atrybut.
 
-7. Zawartość pliku App. config powinna wyglądać podobnie do następującego kodu XML:
+7. Zawartość pliku app.config powinna wyglądać podobnie do następującego kodu XML:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -251,7 +251,7 @@ W tym przykładzie pokazano, jak skonfigurować filtrowanie dla nowego odbiornik
 
 Aby uzyskać więcej informacji na temat zmiany ustawień dziennika po wdrożeniu, zobacz [Praca z dziennikami aplikacji](working-with-application-logs.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik: ustalanie lokalizacji, w której element My.Application.Log zapisuje informacje](walkthrough-determining-where-my-application-log-writes-information.md)
 - [Przewodnik: zmienianie lokalizacji, w której element My.Application.Log zapisuje informacje](walkthrough-changing-where-my-application-log-writes-information.md)

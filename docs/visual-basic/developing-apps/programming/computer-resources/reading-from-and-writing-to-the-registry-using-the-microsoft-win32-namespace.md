@@ -4,16 +4,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 4a0dcce0-c27b-4199-baa8-ee4528da6a56
-ms.openlocfilehash: 10431b1ad40ed320541a22fb46cc8db6dbb775b0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 58c3a92067cd0be5db02231c5fc1a13b429a60a0
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84360075"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282234"
 ---
 # <a name="reading-from-and-writing-to-the-registry-using-the-microsoftwin32-namespace-visual-basic"></a>Odczytywanie z oraz zapisywanie do rejestru za pomocą przestrzeni nazw Microsoft.Win32 (Visual Basic)
 
-Chociaż `My.Computer.Registry` należy uwzględnić podstawowe potrzeby podczas programowania w rejestrze, można również użyć <xref:Microsoft.Win32.Registry> <xref:Microsoft.Win32.RegistryKey> klas i w <xref:Microsoft.Win32> przestrzeni nazw .NET Framework.  
+Chociaż `My.Computer.Registry` należy uwzględnić podstawowe potrzeby podczas programowania w rejestrze, można również użyć <xref:Microsoft.Win32.Registry> <xref:Microsoft.Win32.RegistryKey> klas i w <xref:Microsoft.Win32> przestrzeni nazw platformy .NET.
   
 ## <a name="keys-in-the-registry-class"></a>Klucze w klasie rejestru  
 
@@ -42,7 +42,7 @@ Chociaż `My.Computer.Registry` należy uwzględnić podstawowe potrzeby podczas
   
  [!code-vb[VbResourceTasks#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#21)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.SystemException>
 - <xref:System.ApplicationException>
