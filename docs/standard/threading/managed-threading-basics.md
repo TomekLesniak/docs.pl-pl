@@ -5,25 +5,25 @@ ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - multiple threads
-- threading [.NET Framework], multiple threads
-- threading [.NET Framework], about threading
+- threading [.NET], multiple threads
+- threading [.NET], about threading
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
-ms.openlocfilehash: d4a4ceabf29bd0f6f537e59ba477f9da686b1ef5
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ca3073cca9887265b4bacb4f8dfeb01203f82621
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769096"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189137"
 ---
 # <a name="managed-threading-basics"></a>Zarządzane wątki — podstawy
 
-Pięć pierwszych tematów tej sekcji zaprojektowano w celu ułatwienia ustalenia, kiedy należy używać zarządzanych wątków i wyjaśnić niektóre podstawowe funkcje. Aby uzyskać informacje na temat klas, które udostępniają dodatkowe funkcje, zobacz temat [wątkowość obiektów i funkcji](threading-objects-and-features.md) oraz [Przegląd elementów pierwotnych synchronizacji](overview-of-synchronization-primitives.md).  
+Pierwsze pięć artykułów tej sekcji zaprojektowano w celu ułatwienia ustalenia, kiedy należy używać zarządzanych wątków i wyjaśnić niektóre podstawowe funkcje. Aby uzyskać informacje na temat klas, które udostępniają dodatkowe funkcje, zobacz temat [wątkowość obiektów i funkcji](threading-objects-and-features.md) oraz [Przegląd elementów pierwotnych synchronizacji](overview-of-synchronization-primitives.md).  
   
- W pozostałych tematach w tej sekcji omówiono zaawansowane tematy, w tym interakcje zarządzanej wątkowości z systemem operacyjnym Windows.  
+ Pozostałe artykuły w tej sekcji dotyczą zaawansowanych tematów, w tym interakcji z zarządzanym wątkiem z systemem operacyjnym Windows.  
   
 > [!NOTE]
-> W .NET Framework 4, Biblioteka zadań równoległych i PLINQ zapewniają interfejsy API do równoległych zadań i danych w programach wielowątkowych. Aby uzyskać więcej informacji, zobacz [programowanie równoległe](../parallel-programming/index.md).  
+> Począwszy od .NET Framework 4, Biblioteka zadań równoległych i PLINQ zapewniają interfejsy API do równoległego wykonywania zadań i danych w programach wielowątkowych. Aby uzyskać więcej informacji, zobacz [programowanie równoległe](../parallel-programming/index.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji
 
@@ -31,7 +31,7 @@ Pięć pierwszych tematów tej sekcji zaprojektowano w celu ułatwienia ustaleni
  W tym artykule omówiono zalety i wady wielu wątków oraz opisano scenariusze, w których można tworzyć wątki lub używać wątków puli wątków.  
   
  [Wyjątki w zarządzanych wątkach](exceptions-in-managed-threads.md)  
- Opisuje zachowanie nieobsłużonych wyjątków w wątkach dla różnych wersji .NET Framework, w szczególności sytuacje, w których powodują zakończenie działania aplikacji.  
+ Opisuje zachowanie nieobsłużonych wyjątków w wątkach dla różnych wersji platformy .NET, w szczególności sytuacje, w których powodują zakończenie działania aplikacji.  
   
  [Synchronizowanie danych na potrzeby wielowątkowości](synchronizing-data-for-multithreading.md)  
  Opisuje strategie synchronizowania danych w klasach, które będą używane z wieloma wątkami.  
@@ -42,7 +42,7 @@ Pięć pierwszych tematów tej sekcji zaprojektowano w celu ułatwienia ustaleni
  [Zarządzana i niezarządzana wątkowość w systemie Windows](managed-and-unmanaged-threading-in-windows.md)  
  W tym artykule omówiono relacje między zarządzaną i niezarządzaną wielowątkowością, listę zarządzanych odpowiedników interfejsów API wątków systemu Windows i omówiono interakcję apartamentach COM i zarządzanych wątków.  
   
- [Pamięć lokalna wątku: powiązane z wątkiem pola statyczne i gniazda danych](thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
+ [Pamięć lokalna wątku: Powiązane z wątkiem pola statyczne i gniazda danych](thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
  Opisuje mechanizmy przechowywania względem wątków.  
   
 ## <a name="reference"></a>Dokumentacja
@@ -62,4 +62,4 @@ Pięć pierwszych tematów tej sekcji zaprojektowano w celu ułatwienia ustaleni
  Opisuje typowe problemy związane z wielowątkowością i strategiami w celu uniknięcia problemów.  
   
  [Programowanie równoległe](../parallel-programming/index.md)  
- Opisuje bibliotekę zadań równoległych i PLINQ, co znacznie upraszcza pracę tworzenia asynchronicznych i wielowątkowych aplikacji .NET Framework.
+ Opisuje bibliotekę zadań równoległych i PLINQ, co znacznie upraszcza pracę tworzenia asynchronicznych i wielowątkowych aplikacji .NET.

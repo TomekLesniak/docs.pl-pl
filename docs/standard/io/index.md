@@ -7,20 +7,20 @@ helpviewer_keywords:
 - IO namespace
 - files, I/O
 - System.IO namespace
-- I/O [.NET Framework]
+- I/O [.NET]
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-ms.openlocfilehash: 2f7da6bd967abce8c2fefdc54a0043b5505e22e3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: aced59995c8d0f478d0565c8fb8faa4f40c32968
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558943"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189202"
 ---
 # <a name="file-and-stream-io"></a>We/Wy plików i strumieni
 
-Termin „We/Wy (wejście/wyjście) plików i strumieni” dotyczy transferu danych do lub z nośnika magazynowania. W .NET Framework `System.IO` przestrzenie nazw zawierają typy umożliwiające odczyt i zapis, zarówno synchronicznie, jak i asynchronicznie, w strumieniach danych i plikach. Te przestrzenie nazw zawierają również typy, które wykonują kompresję i dekompresję plików, oraz typy, które umożliwiają komunikację za pośrednictwem potoków i portów szeregowych.
+Termin „We/Wy (wejście/wyjście) plików i strumieni” dotyczy transferu danych do lub z nośnika magazynowania. W programie .NET `System.IO` przestrzenie nazw zawierają typy umożliwiające odczyt i zapis, zarówno synchronicznie, jak i asynchronicznie, w strumieniach danych i plikach. Te przestrzenie nazw zawierają również typy, które wykonują kompresję i dekompresję plików, oraz typy, które umożliwiają komunikację za pośrednictwem potoków i portów szeregowych.
 
 Plik to uporządkowana i nazwana kolekcja bajtów, która ma stały magazyn. Podczas pracy z plikami użytkownik pracuje ze ścieżkami katalogów, magazynem dysku oraz nazwami plików i katalogów. Natomiast strumień to sekwencja bajtów służąca do odczytu i zapisu w magazynie zapasowym, który może być jednym z kilku nośników magazynu (na przykład dysk lub pamięć). Tak jak istnieje kilka magazynów zapasowych innych niż dyski, tak samo istnieje kilka rodzajów strumieni innych niż strumienie plików, takie jak strumienie sieci, pamięci i potoku.
 
@@ -28,7 +28,7 @@ Plik to uporządkowana i nazwana kolekcja bajtów, która ma stały magazyn. Pod
 
 Możesz użyć typów w <xref:System.IO?displayProperty=nameWithType> przestrzeni nazw do współpracy z plikami i katalogami. Na przykład można pobierać i ustawiać właściwości plików i katalogów oraz pobierać kolekcje plików i katalogów na podstawie kryteriów wyszukiwania.
 
-W przypadku konwencji nazewnictwa ścieżek i sposobów wyrażania ścieżki plików dla systemów Windows, w tym z składnią urządzenia DOS obsługiwaną w programie .NET Core 1,1 lub nowszym oraz .NET Framework 4.6.2 i nowszych, zobacz [formaty ścieżki plików w systemach Windows](file-path-formats.md).
+W przypadku konwencji nazewnictwa ścieżek i sposobów wyrażania ścieżki plików dla systemów Windows, w tym z składnią urządzenia DOS obsługiwaną w programie .NET Core 1,1 i nowszych .NET Framework i nowszych, zobacz [formaty ścieżki plików w systemach Windows](file-path-formats.md).
 
 Poniżej przedstawiono kilka powszechnie używanych klas związanych z plikami i katalogami:
 
@@ -142,7 +142,7 @@ Zobacz [izolowany magazyn](isolated-storage.md).
 
 ## <a name="io-operations-in-windows-store-apps"></a>Operacje we/wy w aplikacjach ze sklepu Windows
 
-Aplikacje ze sklepu .NET dla systemu Windows 8. x zawierają wiele typów do odczytu i zapisu do strumieni; Jednak ten zestaw nie obejmuje wszystkich typów .NET Framework we/wy.
+Aplikacje ze sklepu .NET dla systemu Windows 8. x zawierają wiele typów do odczytu i zapisu do strumieni; Jednak ten zestaw nie obejmuje wszystkich typów we/wy platformy .NET.
 
 Kilka ważnych różnic podczas korzystania z operacji we/wy w aplikacjach ze sklepu Windows 8. x:
 
@@ -162,7 +162,7 @@ Aby uzyskać więcej informacji na temat operacji we/wy w aplikacji ze sklepu Wi
 
 W przypadku używania klas w <xref:System.IO?displayProperty=nameWithType> przestrzeni nazw należy spełnić wymagania dotyczące zabezpieczeń systemu operacyjnego, takie jak listy kontroli dostępu (ACL), aby kontrolować dostęp do plików i katalogów. To wymaganie jest uzupełnieniem jakichkolwiek <xref:System.Security.Permissions.FileIOPermission> wymagań. Listami ACL można zarządzać programowo. Aby uzyskać więcej informacji, zobacz [jak: Dodawanie lub usuwanie wpisów listy Access Control](how-to-add-or-remove-access-control-list-entries.md).
 
-Domyślne zasady zabezpieczeń uniemożliwiają aplikacjom internetowym i intranetowym dostęp do plików na komputerze użytkownika. W związku z tym podczas pisania kodu, który zostanie pobrany przez Internet lub intranet, nie należy używać klas We/Wy, które wymagają ścieżki do pliku fizycznego. Zamiast tego należy używać [wydzielonego magazynu](isolated-storage.md) dla tradycyjnych aplikacji .NET Framework lub użyć [danych aplikacji](/previous-versions/windows/apps/hh464917(v=win.10)) dla aplikacji ze sklepu Windows 8. x.
+Domyślne zasady zabezpieczeń uniemożliwiają aplikacjom internetowym i intranetowym uzyskiwanie dostępu do plików na komputerze użytkownika. W związku z tym nie należy używać klas we/wy, które wymagają ścieżki do pliku fizycznego podczas pisania kodu, który zostanie pobrany za pośrednictwem Internetu lub intranetu. Zamiast tego należy używać [izolowanego magazynu](isolated-storage.md) dla aplikacji platformy .NET.
 
 Sprawdzanie zabezpieczeń jest wykonywane tylko wtedy, gdy jest konstruowany strumień. W związku z tym nie należy otwierać strumienia, a następnie przekazywać go do kodu lub domeny aplikacji o niższym poziomie zaufania.
 
@@ -178,7 +178,7 @@ Opis korzyści związanych z wydajnością oraz podstawowych asynchronicznych op
 Opis mechanizmu pamięci masowej danych, który dostarcza izolację i bezpieczeństwo przez definiowanie ustandaryzowanych opcji kojarzenia kodu z zapisanymi danymi.
 
 - [Rurach](pipe-operations.md)\
-Opis operacji wykonywanych w anonimowych i nazwanych potokach w programie .NET Framework.
+Opisuje operacje anonimowe i nazwane potoki w programie .NET.
 
 - [Pliki mapowane w pamięci](memory-mapped-files.md)\
 Opis plików zamapowanych w pamięci, które zawierają zawartość plików znajdujących się na dysku w pamięci wirtualnej. Zamapowanych w pamięci plików można używać, aby edytować bardzo duże pliki i tworzyć współużytkowaną pamięć służącą do komunikacji między procesami.

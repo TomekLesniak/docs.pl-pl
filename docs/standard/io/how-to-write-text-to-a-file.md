@@ -8,27 +8,28 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - writing text to files
-- I/O [.NET Framework], writing text to files
+- I/O [.NET], writing text to files
 - streams, writing text to files
 - data streams, writing text to files
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
-ms.openlocfilehash: 52d3d07f4ffdbdc6510425a65fc173d36e674d06
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: df057856385c8e9c63140e45512a97e492130396
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447215"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189241"
 ---
 # <a name="how-to-write-text-to-a-file"></a>Instrukcje: wpisywanie tekstu do pliku
+
 W tym temacie przedstawiono różne sposoby zapisywania tekstu do pliku dla aplikacji .NET.
 
 Następujące klasy i metody są zwykle używane do zapisywania tekstu do pliku:  
   
-- <xref:System.IO.StreamWriter>zawiera metody do zapisu w pliku synchronicznie ( <xref:System.IO.StreamWriter.Write%2A> i <xref:System.IO.TextWriter.WriteLine%2A> ) lub asynchronicznie ( <xref:System.IO.StreamWriter.WriteAsync%2A> oraz <xref:System.IO.StreamWriter.WriteLineAsync%2A> ).  
+- <xref:System.IO.StreamWriter> zawiera metody do zapisu w pliku synchronicznie ( <xref:System.IO.StreamWriter.Write%2A> i <xref:System.IO.TextWriter.WriteLine%2A> ) lub asynchronicznie ( <xref:System.IO.StreamWriter.WriteAsync%2A> oraz <xref:System.IO.StreamWriter.WriteLineAsync%2A> ).  
   
-- <xref:System.IO.File>zapewnia statyczne metody zapisywania tekstu do pliku, takie jak <xref:System.IO.File.WriteAllLines%2A> i <xref:System.IO.File.WriteAllText%2A> , lub do dołączania tekstu do pliku, takich jak <xref:System.IO.File.AppendAllLines%2A> , <xref:System.IO.File.AppendAllText%2A> , i <xref:System.IO.File.AppendText%2A> .  
+- <xref:System.IO.File> zapewnia statyczne metody zapisywania tekstu do pliku, takie jak <xref:System.IO.File.WriteAllLines%2A> i <xref:System.IO.File.WriteAllText%2A> , lub do dołączania tekstu do pliku, takich jak <xref:System.IO.File.AppendAllLines%2A> , <xref:System.IO.File.AppendAllText%2A> , i <xref:System.IO.File.AppendText%2A> .  
   
-- <xref:System.IO.Path>jest dla ciągów, które mają informacje o ścieżce pliku lub katalogu. Zawiera ona <xref:System.IO.Path.Combine%2A> metodę i, w programie .NET Core 2,1 i nowszych, <xref:System.IO.Path.Join%2A> metody i <xref:System.IO.Path.TryJoin%2A> , które umożliwiają łączenie ciągów w celu utworzenia ścieżki pliku lub katalogu.
+- <xref:System.IO.Path> jest dla ciągów, które mają informacje o ścieżce pliku lub katalogu. Zawiera ona <xref:System.IO.Path.Combine%2A> metodę i, w programie .NET Core 2,1 i nowszych, <xref:System.IO.Path.Join%2A> metody i <xref:System.IO.Path.TryJoin%2A> , które umożliwiają łączenie ciągów w celu utworzenia ścieżki pliku lub katalogu.
 
 > [!NOTE]
 > W poniższych przykładach przedstawiono tylko minimalną wymaganą ilość kodu. Aplikacja rzeczywista zazwyczaj zapewnia bardziej niezawodne sprawdzanie błędów i obsługę wyjątków.  
@@ -63,7 +64,7 @@ Poniższy przykład pokazuje, jak napisać tekst do nowego pliku i dołączyć n
 [!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/file.cs)]
 [!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/file.vb)]  
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IO.StreamWriter>
 - <xref:System.IO.Path>

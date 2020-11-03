@@ -3,18 +3,18 @@ title: Zarządzana i niezarządzana wątkowość w systemie Windows
 ms.date: 10/24/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- threading [.NET Framework], unmanaged
-- threading [.NET Framework], managed
+- threading [.NET], unmanaged
+- threading [.NET], managed
 - threading [.NET], managed
 - threads and fibers [.NET]
 - managed threading
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
-ms.openlocfilehash: de823297540d5ce3740a26614dbb9a82881decf3
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 7b2eca1275aba5139bd19662674cd76d95e92fd0
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924386"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189163"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Wątki zarządzane i niezarządzane w systemie Windows
 
@@ -30,7 +30,7 @@ Zarządzanie wszystkimi wątkami odbywa się za pomocą <xref:System.Threading.T
   
 |W systemie Win32|W środowisku uruchomieniowym języka wspólnego|  
 |--------------|------------------------------------|  
-|**CreateThread**|Kombinacja **wątku** i<xref:System.Threading.ThreadStart>|  
+|**CreateThread**|Kombinacja **wątku** i <xref:System.Threading.ThreadStart>|  
 |**TerminateThread**|<xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>|  
 |**SuspendThread**|<xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType>|  
 |**ResumeThread**|<xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType>|  
@@ -52,7 +52,7 @@ Wątek zarządzany może być oznaczony, aby wskazać, że będzie hostować Apa
  Jeśli stan apartamentu nie zostanie ustawiony przed uruchomieniem wątku, wątek zostanie zainicjowany jako Apartament wielowątkowy (MTA). Wątek finalizatora i wszystkie wątki kontrolowane przez <xref:System.Threading.ThreadPool> są MTA.  
   
 > [!IMPORTANT]
-> W przypadku kodu uruchamiania aplikacji jedynym sposobem sterowania stanem apartamentu jest zastosowanie <xref:System.MTAThreadAttribute> <xref:System.STAThreadAttribute> procedury lub do punktu wejścia. W .NET Framework 1,0 i 1,1 <xref:System.Threading.Thread.ApartmentState%2A> Właściwość można ustawić jako pierwszy wiersz kodu. Nie jest to dozwolone w .NET Framework 2,0.  
+> W przypadku kodu uruchamiania aplikacji jedynym sposobem sterowania stanem apartamentu jest zastosowanie <xref:System.MTAThreadAttribute> <xref:System.STAThreadAttribute> procedury lub do punktu wejścia.
   
  Zarządzane obiekty, które są widoczne dla modelu COM, zachowują się tak, jakby były zagregowane organizatora wolnych wątków. Innymi słowy, mogą one być wywoływane z dowolnego apartamentu COM w sposób wolny od wątków. Jedynymi obiektami zarządzanymi, które nie wykazują tego zachowania, są te obiekty, które pochodzą z <xref:System.EnterpriseServices.ServicedComponent> lub <xref:System.Runtime.InteropServices.StandardOleMarshalObject> .  
   
@@ -68,7 +68,7 @@ Jeśli wątek wywołuje niezarządzane wywołanie do systemu operacyjnego, któr
 
 Model wątkowości .NET nie obsługuje [włókien](/windows/desktop/procthread/fibers). Nie należy wywoływać żadnej funkcji niezarządzanej, która jest implementowana przy użyciu włókien. Takie wywołania mogą spowodować awarię środowiska uruchomieniowego .NET.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>
 - <xref:System.Threading.ThreadState>

@@ -9,16 +9,17 @@ helpviewer_keywords:
 - data streams, writing characters to string
 - writing characters to strings
 - streams, writing characters to strings
-- I/O [.NET Framework], writing characters to strings
+- I/O [.NET], writing characters to strings
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
-ms.openlocfilehash: 04fc21c452258a88292a886d952353ac55573121
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5b0e20b911237739c143576d9a7be660f5da58c0
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288254"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189228"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Instrukcje: Wpisywanie znaków do ciągu
+
 Poniższe przykłady kodu zapisują znaki synchronicznie lub asynchronicznie z tablicy znaków w ciągu.  
   
 ## <a name="example-write-characters-synchronously-in-a-console-app"></a>Przykład: zapisuj znaki synchronicznie w aplikacji konsolowej  
@@ -33,7 +34,7 @@ Poniższe przykłady kodu zapisują znaki synchronicznie lub asynchronicznie z t
  [!code-csharp[StreamReaderWriter](../../../samples/snippets/csharp/VS_Snippets_Wpf/StringReaderWriter/MainWindow.xaml.cs)]
  [!code-vb[StreamReaderWriter](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/StringReaderWriter/MainWindow.xaml.vb)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IO.StringWriter>  
 - <xref:System.IO.StringWriter.Write%2A?displayProperty=nameWithType>  

@@ -8,22 +8,23 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- message-based communication [.NET Framework], named pipes
-- named pipes [.NET Framework]
-- pipes [.NET Framework]
+- message-based communication [.NET], named pipes
+- named pipes [.NET]
+- pipes [.NET]
 - multiple connections via named pipes
-- network communications [.NET Framework], named pipes
-- impersonation [.NET Framework], named pipes
-- full duplex communication [.NET Framework], named pipes
+- network communications [.NET], named pipes
+- impersonation [.NET], named pipes
+- full duplex communication [.NET], named pipes
 ms.assetid: 4e4d7e64-9f1b-4026-98f7-20488ac7b42b
-ms.openlocfilehash: a529d1d44a903df36099a59e07f4582554d230f2
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 8657597bee5855061bb5529d80d2fa5f0318e817
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662566"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189319"
 ---
 # <a name="how-to-use-named-pipes-for-network-interprocess-communication"></a>Instrukcje: Stosowanie nazwanych potoków do sieciowej komunikacji międzyprocesowej
+
 Nazwane potoki zapewniają komunikację międzyprocesorową pomiędzy serwerem potoku i jednym lub kilkoma klientami potoku. Oferują one więcej funkcji niż potoki anonimowe, które zapewniają komunikację międzyprocesorową na komputerze lokalnym. Nazwane potoki obsługują komunikację pełnodupleksową przez sieć i wiele instancji serwera, komunikację opartą na komunikatach i personifikację klienta, co pozwala łączyć procesy z ich własnymi zestawami uprawnień na serwerach zdalnych.  
   
  Aby zaimplementować nazwane potoki, należy użyć klas <xref:System.IO.Pipes.NamedPipeServerStream> i <xref:System.IO.Pipes.NamedPipeClientStream>.  
@@ -44,7 +45,7 @@ Nazwane potoki zapewniają komunikację międzyprocesorową pomiędzy serwerem p
 ## <a name="robust-programming"></a>Niezawodne programowanie  
  Procesy klienta i serwera w tym przykładzie są przeznaczone do uruchomienia na tym samym komputerze, więc nazwa serwera dostarczona do obiektu <xref:System.IO.Pipes.NamedPipeClientStream> to `"."`. Jeśli procesy klienta i serwera znajdują się na oddzielnych komputerach, `"."` zostanie zamienione na nazwę sieciową komputera, który uruchamia proces serwera.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Security.Principal.TokenImpersonationLevel>
 - <xref:System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName%2A>

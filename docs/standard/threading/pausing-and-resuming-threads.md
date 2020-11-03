@@ -8,15 +8,15 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - interrupting threads
-- threading [.NET Framework], pausing
+- threading [.NET], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
-ms.openlocfilehash: f7f414ec716bac5f1e840c5e8a0946024e059fb6
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 07fe374acb3d2a3de3a1b51861feb5f8551ecc2e
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769122"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188968"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Wstrzymywanie i przerywanie wątków
 
@@ -28,9 +28,9 @@ Najczęstszym sposobem synchronizacji działań wątków jest zablokowanie i wyd
 
  Wywołanie <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> metody powoduje natychmiastowe zablokowanie bieżącego wątku przez liczbę milisekund lub przedział czasu przekazywany do metody, a następnie zwraca resztę z wycinka czasu do innego wątku. Po upływie tego czasu wątek uśpiony wznowi wykonywanie.  
   
- Jeden wątek nie może wywołać <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> w innym wątku.  <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>to metoda statyczna, która zawsze powoduje, że bieżący wątek jest w stanie uśpienia.  
+ Jeden wątek nie może wywołać <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> w innym wątku.  <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> to metoda statyczna, która zawsze powoduje, że bieżący wątek jest w stanie uśpienia.  
   
- Wywoływanie <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> wartości powoduje, <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> że wątek jest uśpiony, dopóki nie zostanie przerwany przez inny wątek, który wywołuje <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> metodę w wątku uśpionym lub dopóki nie zostanie zakończone przez wywołanie <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metody.  Poniższy przykład ilustruje obie metody przerywania uśpienia wątku.  
+ Wywoływanie <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> wartości powoduje, <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> że wątek jest uśpiony, dopóki nie zostanie przerwany przez inny wątek, który wywołuje  <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> metodę w wątku uśpionym lub dopóki nie zostanie zakończone przez wywołanie <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metody.  Poniższy przykład ilustruje obie metody przerywania uśpienia wątku.  
   
  [!code-csharp[Conceptual.Threading.Resuming#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.Threading.Resuming/cs/Sleep1.cs#1)]
  [!code-vb[Conceptual.Threading.Resuming#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.Threading.Resuming/vb/Sleep1.vb#1)]  
@@ -44,9 +44,9 @@ Najczęstszym sposobem synchronizacji działań wątków jest zablokowanie i wyd
   
  Jeśli oczekiwane jest odczekanie zarządzane, <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> a następnie <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> natychmiast Wznów wątek. Jeśli oczekiwanie jest niezarządzanym oczekiwaniem (na przykład wywołaniem platformy w funkcji [WaitForSingleObject](/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobject) Win32) ani nie <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> może przejąć kontroli nad wątkiem do momentu, aż zwróci lub wywoła kod zarządzany. W kodzie zarządzanym zachowanie jest następujące:  
   
-- <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>wznawia wątek z dowolnego oczekiwania, który może znajdować się w wątku docelowym i powoduje jego wygenerowanie <xref:System.Threading.ThreadInterruptedException> .  
+- <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> wznawia wątek z dowolnego oczekiwania, który może znajdować się w wątku docelowym i powoduje jego wygenerowanie <xref:System.Threading.ThreadInterruptedException> .  
   
-- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>wznawia wątek z dowolnego oczekiwania, który może znajdować się w <xref:System.Threading.ThreadAbortException> wątku. Aby uzyskać szczegółowe informacje, zobacz [niszczenie wątków](destroying-threads.md).  
+- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> wznawia wątek z dowolnego oczekiwania, który może znajdować się w <xref:System.Threading.ThreadAbortException> wątku. Aby uzyskać szczegółowe informacje, zobacz [niszczenie wątków](destroying-threads.md).  
   
 ## <a name="see-also"></a>Zobacz też
 

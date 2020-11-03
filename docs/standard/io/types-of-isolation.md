@@ -9,8 +9,8 @@ dev_langs:
 helpviewer_keywords:
 - storing data using isolated storage, accessing isolated storage
 - storing data using isolated storage, isolation types
-- authentication [.NET Framework], isolated storage
-- assemblies [.NET Framework], identity
+- authentication [.NET], isolated storage
+- assemblies [.NET], identity
 - isolated storage, accessing
 - data storage using isolated storage, isolation types
 - data storage using isolated storage, accessing isolated storage
@@ -18,14 +18,15 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: 244bd9c25040b39c9349d28f57981f29d7a32d0a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a1d64f0dfe8a457ae551792a852bd816941f2777
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542037"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189035"
 ---
 # <a name="types-of-isolation"></a>Typy izolacji
+
 Dostęp do wydzielonej pamięci masowej jest zawsze ograniczony do użytkownika, który go utworzył. W celu zaimplementowania tego typu izolacji środowisko uruchomieniowe języka wspólnego używa tego samego pojęcia tożsamości użytkownika, która jest rozpoznawana przez system operacyjny, co jest tożsamością skojarzoną z procesem, w którym uruchomiono kod w momencie otwarcia magazynu. Ta tożsamość jest uwierzytelnianą tożsamością użytkownika, ale personifikacja może spowodować dynamiczną zmianę tożsamości bieżącego użytkownika.  
   
  Dostęp do izolowanego magazynu jest również ograniczany zgodnie z tożsamością skojarzoną z domeną i zestawem aplikacji albo z samym zestawem. Środowisko uruchomieniowe uzyskuje te tożsamości w następujący sposób:  
@@ -103,7 +104,7 @@ Dostęp do wydzielonej pamięci masowej jest zawsze ograniczony do użytkownika,
  [!code-csharp[Conceptual.IsolatedStorage#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source9.cs#12)]
  [!code-vb[Conceptual.IsolatedStorage#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source9.vb#12)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageScope>
 - [Magazyn izolowany](isolated-storage.md)

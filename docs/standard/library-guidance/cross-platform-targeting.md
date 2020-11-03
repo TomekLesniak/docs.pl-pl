@@ -2,12 +2,12 @@
 title: Ukierunkowane na wiele platform dla bibliotek platformy .NET
 description: Zalecenia dotyczące najlepszych rozwiązań dotyczących tworzenia bibliotek platformy .NET dla wielu platform.
 ms.date: 08/12/2019
-ms.openlocfilehash: 6309e300861ab286dcaba3256267b3459e6e0d10
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 038a03904c4cfe49758562b5748fef06ae1afa4b
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223339"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189254"
 ---
 # <a name="cross-platform-targeting"></a>Obsługiwane rozwiązania międzyplatformowe
 
@@ -33,7 +33,7 @@ Kierowanie .NET Standard i pomyślne skompilowanie projektu nie gwarantuje, że 
 
 ❌ Należy unikać uwzględniania `netstandard1.x` celu.
 
-> .NET Standard 1. x jest dystrybuowany jako szczegółowy zestaw pakietów NuGet, co tworzy wykres zależności pakietu i umożliwia deweloperom pobieranie dużej liczby pakietów podczas kompilowania. Nowoczesne platformy .NET, w tym .NET Framework 4.6.1, platformy UWP i Xamarin, obsługują .NET Standard 2,0. Należy określić tylko .NET Standard 1. x, jeśli konieczne jest ukierunkowanie starszej platformy.
+> .NET Standard 1. x jest dystrybuowany jako szczegółowy zestaw pakietów NuGet, co tworzy wykres zależności pakietu i umożliwia deweloperom pobieranie dużej liczby pakietów podczas kompilowania. Nowoczesne implementacje platformy .NET obsługują .NET Standard 2,0. Należy określić tylko .NET Standard 1. x, jeśli konieczne jest ukierunkowanie starszej platformy.
 
 ✔️ Uwzględnij `netstandard2.0` element docelowy, jeśli jest wymagany `netstandard1.x` element docelowy.
 

@@ -7,18 +7,19 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- threading [.NET Framework], design guidelines
-- threading [.NET Framework], best practices
+- threading [.NET], design guidelines
+- threading [.NET], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: 8d5c37bf2ed80e9b6ea071fcd2080c43be8f6247
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 88e1f34388cd58fef59bc4005bcaf630c59a661e
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546370"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189007"
 ---
 # <a name="managed-threading-best-practices"></a>Zarządzane wątki z najlepszymi rozwiązaniami
+
 Wielowątkowość wymaga starannego programowania. W przypadku większości zadań można zmniejszyć złożoność przez kolejkowanie żądań na potrzeby wykonywania przez wątki puli wątków. Ten temat dotyczy trudniejszych sytuacji, takich jak koordynacja pracy wielu wątków lub obsługa wątków, które blokują.  
   
 > [!NOTE]
@@ -61,7 +62,7 @@ else {
 ### <a name="race-conditions"></a>Warunki wyścigu  
  Sytuacja wyścigu jest usterką, która występuje, gdy wynik programu zależy od tego, co dwa lub więcej wątków osiągną określony blok kodu jako pierwszy. Uruchamianie programu wiele razy daje różne wyniki, a wynik danego uruchomienia nie może być przewidywany.  
   
- Prosty przykład warunku wyścigu powoduje zwiększenie pola. Załóżmy, że Klasa ma prywatne pole **statyczne** (**udostępniane** w Visual Basic), które jest zwiększane za każdym razem, gdy tworzone jest wystąpienie klasy, przy użyciu kodu, takiego jak `objCt++;` (C#) lub `objCt += 1` (Visual Basic). Ta operacja wymaga załadowania wartości z `objCt` do rejestru, zwiększenia wartości i zapisania jej w `objCt` .  
+ Prosty przykład warunku wyścigu powoduje zwiększenie pola. Załóżmy, że Klasa ma prywatne pole **statyczne** ( **udostępniane** w Visual Basic), które jest zwiększane za każdym razem, gdy tworzone jest wystąpienie klasy, przy użyciu kodu, takiego jak `objCt++;` (C#) lub `objCt += 1` (Visual Basic). Ta operacja wymaga załadowania wartości z `objCt` do rejestru, zwiększenia wartości i zapisania jej w `objCt` .  
   
  W aplikacji wielowątkowej wątek, który został załadowany i zwiększony wartość może zostać przeniesiona przez inny wątek, który wykonuje wszystkie trzy kroki; gdy pierwszy wątek wznawia wykonywanie i przechowuje jego wartość, zastępuje bez uwzględniania `objCt` faktu, że wartość została zmieniona w tymczasowym.  
   
@@ -95,7 +96,7 @@ Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> wła
   
 - Należy zachować ostrożność podczas blokowania wystąpień, na przykład `lock(this)` w języku C# lub `SyncLock(Me)` w Visual Basic. Jeśli inny kod w aplikacji, zewnętrzny dla tego typu, przyjmuje blokadę obiektu, mogą wystąpić zakleszczenia.  
   
-- Upewnij się, że wątek, który został wprowadzony do monitora, zawsze opuszcza ten monitor, nawet jeśli wystąpi wyjątek, gdy wątek jest w monitorze. Instrukcja [Lock](../../csharp/language-reference/keywords/lock-statement.md) języka C# i instrukcja Visual Basic [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) umożliwiają automatyczne udostępnienie tego zachowania, przy użyciu bloku **finally** , aby upewnić się, że <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> jest wywoływana. Jeśli nie można zagwarantować, że **wyjście** zostanie wywołane, Rozważ zmianę projektu w celu użycia **muteksu**. Element mutex jest automatycznie wydawany, gdy wątek, który jest aktualnie do przerwania.  
+- Upewnij się, że wątek, który został wprowadzony do monitora, zawsze opuszcza ten monitor, nawet jeśli wystąpi wyjątek, gdy wątek jest w monitorze. Instrukcja [Lock](../../csharp/language-reference/keywords/lock-statement.md) języka C# i instrukcja Visual Basic [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) umożliwiają automatyczne udostępnienie tego zachowania, przy użyciu bloku **finally** , aby upewnić się, że <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> jest wywoływana. Jeśli nie można zagwarantować, że **wyjście** zostanie wywołane, Rozważ zmianę projektu w celu użycia **muteksu** . Element mutex jest automatycznie wydawany, gdy wątek, który jest aktualnie do przerwania.  
   
 - Używaj wielu wątków dla zadań, które wymagają różnych zasobów i nie należy przypisywać wielu wątków do pojedynczego zasobu. Na przykład każde zadanie związane z korzyściami we/wy z posiadania własnego wątku, ponieważ ten wątek zostanie zablokowany podczas operacji we/wy i w ten sposób zezwala na wykonywanie innych wątków. Dane wejściowe użytkownika to inne zasoby, które są korzyści z dedykowanego wątku. Na komputerze z jednym procesorem zadanie, które obejmuje intensywne obliczenia, zawiera dane wejściowe użytkownika i zadania, które obejmują operacje we/wy, ale wiele zadań intensywnie korzystających z obliczeń będą konkurować o ze sobą.  
   
@@ -125,7 +126,7 @@ Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> wła
     ```  
   
     > [!NOTE]
-    > W .NET Framework 2,0 i nowszych Użyj <xref:System.Threading.Interlocked.Add%2A> metody dla przyrostów niepodzielnych większych niż 1.  
+    > Użyj <xref:System.Threading.Interlocked.Add%2A> metody dla przyrostów niepodzielnych większych niż 1.  
   
      W drugim przykładzie zmienna typu odwołania jest aktualizowana tylko wtedy, gdy jest to odwołanie o wartości null ( `Nothing` w Visual Basic).  
   
@@ -160,7 +161,7 @@ Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> wła
     ```  
   
     > [!NOTE]
-    > Począwszy od .NET Framework 2,0, <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29> Przeciążenie metody zapewnia bezpieczną alternatywę typu dla typów referencyjnych.
+    > <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29>Przeciążenie metody zapewnia bezpieczną alternatywę typu dla typów referencyjnych.
   
 ## <a name="recommendations-for-class-libraries"></a>Zalecenia dotyczące bibliotek klas  
  Podczas projektowania bibliotek klas dla wielowątkowości należy wziąć pod uwagę następujące wytyczne:  
@@ -169,11 +170,11 @@ Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> wła
   
 - Domyślnie Udostępnij statyczne dane ( `Shared` w Visual Basic).  
   
-- Nie wykonuj domyślnego wątku danych wystąpienia. Dodanie blokad do tworzenia kodu bezpiecznego wątków zmniejsza wydajność, zwiększa rywalizację o blokady i tworzy możliwość wystąpienia zakleszczenia. W przypadku wspólnych modeli aplikacji tylko jeden wątek w danym momencie wykonuje kod użytkownika, co minimalizuje konieczność zapewnienia bezpieczeństwa wątków. Z tego powodu biblioteki klas .NET Framework nie są bezpieczne wątkowo.  
+- Nie wykonuj domyślnego wątku danych wystąpienia. Dodanie blokad do tworzenia kodu bezpiecznego wątków zmniejsza wydajność, zwiększa rywalizację o blokady i tworzy możliwość wystąpienia zakleszczenia. W przypadku wspólnych modeli aplikacji tylko jeden wątek w danym momencie wykonuje kod użytkownika, co minimalizuje konieczność zapewnienia bezpieczeństwa wątków. Z tego powodu biblioteki klas .NET nie są bezpieczne wątkowo.  
   
 - Unikaj udostępniania metod statycznych, które zmieniają stan statyczny. W typowych scenariuszach serwera stan statyczny jest współużytkowany między żądaniami, co oznacza, że wiele wątków może wykonać ten kod w tym samym czasie. Spowoduje to otwarcie możliwości występowania błędów wątków. Rozważ użycie wzorca projektowego, który hermetyzuje dane w wystąpieniach, które nie są współużytkowane przez żądania. Ponadto jeśli dane statyczne są synchronizowane, wywołania między metodami statycznymi, które zmieniają stan, mogą spowodować zakleszczenia lub nadmiarowa synchronizacja, niekorzystnie wpływając na wydajność.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wątkowość](index.md)
 - [Wątki i wątkowość](threads-and-threading.md)

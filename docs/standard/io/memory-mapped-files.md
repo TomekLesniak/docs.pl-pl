@@ -10,17 +10,18 @@ helpviewer_keywords:
 - memory-mapped files
 - inter-process communication
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
-ms.openlocfilehash: 74d821aff8308618f7c0efeb1b453db8214b877e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e6f9a760d7673eecf161b1d84d890cc14d09235e
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555949"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189020"
 ---
 # <a name="memory-mapped-files"></a>Pliki mapowane w pamięci
-Plik mapowany w pamięci zawiera zawartość pliku w pamięci wirtualnej. To mapowanie między plikiem a miejscem pamięci umożliwia aplikacji, w tym wiele procesów, zmodyfikowanie pliku przez odczyt i zapis bezpośrednio do pamięci. Począwszy od .NET Framework 4, można użyć kodu zarządzanego, aby uzyskać dostęp do plików mapowanych w pamięci w taki sam sposób, jak natywne funkcje systemu Windows uzyskują dostęp do plików mapowanych w pamięci, zgodnie z opisem w temacie [Zarządzanie plikami mapowanymi w pamięci](/previous-versions/ms810613(v=msdn.10)).  
+
+Plik mapowany w pamięci zawiera zawartość pliku w pamięci wirtualnej. To mapowanie między plikiem a miejscem pamięci umożliwia aplikacji, w tym wiele procesów, zmodyfikowanie pliku przez odczyt i zapis bezpośrednio do pamięci. Za pomocą kodu zarządzanego można uzyskać dostęp do plików mapowanych w pamięci w taki sam sposób, jak natywne funkcje systemu Windows uzyskują dostęp do plików mapowanych w pamięci, zgodnie z opisem w temacie [Zarządzanie plikami Memory-Mapped](/previous-versions/ms810613(v=msdn.10)).  
   
- Istnieją dwa typy plików mapowanych na pamięć:  
+Istnieją dwa typy plików mapowanych na pamięć:  
   
 - Utrwalone pliki mapowane w pamięci  
   
@@ -47,7 +48,7 @@ Plik mapowany w pamięci zawiera zawartość pliku w pamięci wirtualnej. To map
   
  ![Zrzut ekranu pokazujący widoki w pamięci&#45;mapowany plik.](./media/memory-mapped-files/memory-map-persist-file.png)  
   
-## <a name="programming-with-memory-mapped-files"></a>Programowanie przy użyciu plików mapowanych na pamięć  
+## <a name="programming-with-memory-mapped-files"></a>Programowanie przy użyciu plików Memory-Mapped  
  W poniższej tabeli przedstawiono Przewodnik po użyciu obiektów plików mapowanych na pamięć i ich członków.  
   
 |Zadanie|Metody lub właściwości do użycia|  
@@ -77,7 +78,7 @@ Plik mapowany w pamięci zawiera zawartość pliku w pamięci wirtualnej. To map
   
 ## <a name="examples"></a>Przykłady  
   
-### <a name="persisted-memory-mapped-files"></a>Utrwalone pliki mapowane w pamięci  
+### <a name="persisted-memory-mapped-files"></a>Utrwalone pliki Memory-Mapped  
  <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A>Metody tworzą plik mapowany w pamięci z istniejącego pliku na dysku.  
   
  Poniższy przykład tworzy widok mapowany w pamięci części bardzo dużego pliku i operuje na jego części.  
@@ -92,7 +93,7 @@ Plik mapowany w pamięci zawiera zawartość pliku w pamięci wirtualnej. To map
  [!code-csharp[MemoryMappedFiles.MemoryMappedFile.OpenExisting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.openexisting/cs/program.cs#1)]
  [!code-vb[MemoryMappedFiles.MemoryMappedFile.OpenExisting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.openexisting/vb/program.vb#1)]  
   
-### <a name="non-persisted-memory-mapped-files"></a>Nieutrwalone pliki mapowane w pamięci  
+### <a name="non-persisted-memory-mapped-files"></a>Nieutrwalone pliki Memory-Mapped  
  <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A>Metody i <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A> tworzą plik mapowany w pamięci, który nie jest mapowany na istniejący plik na dysku.  
   
  Poniższy przykład składa się z trzech oddzielnych procesów (aplikacji konsolowych), które zapisują wartości logiczne do pliku mapowanego na pamięć. Występuje następująca sekwencja akcji:  
@@ -146,6 +147,6 @@ Process C says: True
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/vb/program.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [We/wy plików i strumieni](index.md)

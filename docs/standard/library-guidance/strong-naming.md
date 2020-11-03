@@ -2,18 +2,18 @@
 title: Silne nazewnictwo i biblioteki platformy .NET
 description: Zalecenia dotyczące najlepszych rozwiązań dotyczących silnych nazw bibliotek platformy .NET.
 ms.date: 10/16/2018
-ms.openlocfilehash: b72d4a8c320ac857fbcd6abe44f467805f72b5b3
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 6f9533d768331964a8e640243536b12ddde158e5
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654563"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189215"
 ---
 # <a name="strong-naming"></a>Silne nazewnictwo
 
 Silne nazewnictwo odnosi się do podpisywania zestawu przy użyciu klucza, który wytwarza [zestaw o silnej nazwie](../assembly/strong-named.md). Jeśli zestaw ma silną nazwę, tworzy unikatową tożsamość na podstawie nazwy i numeru wersji zestawu i może pomóc zapobiec konfliktom zestawu.
 
-Minusem do silnego nazewnictwa polega na tym, że .NET Framework w systemie Windows umożliwia ścisłe ładowanie zestawów, gdy zestaw ma silną nazwę. Odwołanie do zestawu o silnej nazwie musi być dokładnie zgodne z wersją załadowanego zestawu, wymuszając deweloperom możliwość [konfigurowania przekierowań powiązań](../../framework/configure-apps/redirect-assembly-versions.md) podczas korzystania z zestawu:
+Minusem silne nazewnictwo to, że .NET Framework w systemie Windows umożliwia ścisłe ładowanie zestawów, gdy zestaw ma silną nazwę. Odwołanie do zestawu o silnej nazwie musi być dokładnie zgodne z wersją załadowanego zestawu, wymuszając deweloperom możliwość [konfigurowania przekierowań powiązań](../../framework/configure-apps/redirect-assembly-versions.md) podczas korzystania z zestawu:
 
 ```xml
 <configuration>
@@ -28,7 +28,7 @@ Minusem do silnego nazewnictwa polega na tym, że .NET Framework w systemie Wind
 </configuration>
 ```
 
-Gdy deweloperzy platformy .NET składają się na silne nazewnictwo, to to, czego zwykle są związane z ładowaniem zestawu. Na szczęście ten problem jest odizolowany od .NET Framework. Platformy .NET Core, Xamarin, platformy UWP i większość innych implementacji platformy .NET nie mają ścisłego ładowania zestawu i usuwa główne minusem silnej nazwy.
+Gdy deweloperzy platformy .NET składają się na silne nazewnictwo, to to, czego zwykle są związane z ładowaniem zestawu. Na szczęście ten problem jest izolowany do .NET Framework. .NET 5 +, .NET Core, Xamarin, platformy UWP i większość innych implementacji platformy .NET nie mają ścisłego ładowania zestawu, który jest głównym minusemem silnych nazw.
 
 Jednym ważnym aspektem silnego nazewnictwa jest wirus: silnie nazwany zestaw może odwoływać się tylko do innych silnych nazwanych zestawów. Jeśli biblioteka nie ma silnej nazwy, wykorzystasz deweloperów, którzy tworzą aplikację lub bibliotekę, która wymaga silnego nazewnictwa.
 
@@ -64,7 +64,7 @@ Należy silnej nazwy bibliotek .NET Open Source. Silne nazewnictwo zestawu zapew
 
 > Modyfikacja klucza silnego nazewnictwa zestawu zmienia tożsamość zestawu i dzieli skompilowany kod, który go używa. Aby uzyskać więcej informacji, zobacz [binarne zmiany](./breaking-changes.md#binary-breaking-change).
 
-❌ NIE Publikuj w bibliotece o silnej nazwie i niesilnych nazwach biblioteki. Na przykład `Contoso.Api` i `Contoso.Api.StrongNamed`.
+❌ NIE Publikuj w bibliotece o silnej nazwie i niesilnych nazwach biblioteki. Przykład: `Contoso.Api` i `Contoso.Api.StrongNamed`.
 
 > Publikowanie dwóch pakietów rozwidlenia systemu dla deweloperów. Ponadto, jeśli aplikacja zostanie zakończona w zależności od obu pakietów, deweloper może napotkać konflikty nazw typów. W odniesieniu do platformy .NET są zainteresowane różne typy w różnych zestawach.
 
