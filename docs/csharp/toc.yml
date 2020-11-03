@@ -46,6 +46,8 @@
               href: tutorials/intro-to-csharp/introduction-to-classes.md
             - name: Programowanie obiektowe
               href: tutorials/intro-to-csharp/object-oriented-programming.md
+    - name: Eksplorowanie instrukcji najwyższego poziomu
+      href: tutorials/exploration/top-level-statements.md
     - name: Eksplorowanie języka C# 6
       href: tutorials/exploration/csharp-6.yml
     - name: Eksplorowanie interpolacji ciągów — interakcyjne
