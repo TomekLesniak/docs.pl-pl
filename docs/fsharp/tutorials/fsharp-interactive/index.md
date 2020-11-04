@@ -1,15 +1,15 @@
 ---
 title: Informacje o F# Interactive (dotnet)
 description: 'Dowiedz się, jak F# Interactive (dotnet FSI) służy do interaktywnego uruchamiania kodu F # za pomocą konsoli programu lub wykonywania skryptów języka F #.'
-ms.date: 08/20/2020
+ms.date: 10/31/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: b1020d8ab8f2282c792fb5d00656b6d43c2c6610
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 770ac24feababcfc840ae26196ba8b6180d378a0
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064122"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282010"
 ---
 # <a name="interactive-programming-with-f"></a>Programowanie interaktywne przy użyciu języka F\#
 
@@ -19,7 +19,222 @@ Aby uruchomić F# Interactive z konsoli programu, uruchom polecenie `dotnet fsi`
 
 Aby uzyskać informacje o dostępnych opcjach wiersza polecenia, zobacz [opcje F# Interactive](../../language-reference/fsharp-interactive-options.md).
 
-Aby uruchomić F# Interactive za pomocą programu Visual Studio, można kliknąć odpowiedni przycisk paska narzędzi z etykietą **F# Interactive** lub użyć klawiszy **Ctrl + Alt + F** . Spowoduje to otwarcie okna interaktywnego, okna narzędzia z uruchomioną sesją F# Interactive. Możesz również wybrać kod, który ma być uruchamiany w oknie interaktywnym i nacisnąć kombinację klawiszy **ALT + ENTER** . F# Interactive uruchamia się w oknie narzędzia z etykietą **F# Interactive** . W przypadku korzystania z tej kombinacji klawiszy upewnij się, że okno edytora ma fokus.
+## <a name="executing-code-directly-in-f-interactive"></a>Wykonywanie kodu bezpośrednio w F# Interactive
+
+Ponieważ F# Interactive jest pętlą REPL (Read-eval-Print), można wykonać kod interaktywnie. Oto przykład sesji interaktywnej po wykonaniu `dotnet fsi` z wiersza polecenia:
+
+```console
+Microsoft (R) F# Interactive version 11.0.0.0 for F# 5.0
+Copyright (c) Microsoft Corporation. All Rights Reserved.
+
+For help type #help;;
+
+> let square x = x *  x;;
+val square : x:int -> int
+
+> square 12;;
+val it : int = 144
+
+> printfn "Hello, FSI!"
+- ;;
+Hello, FSI!
+val it : unit = ()
+```
+
+Zauważysz dwa główne elementy:
+
+1. Cały kod musi zostać zakończony przy użyciu podwójnego średnika ( `;;` ), który ma zostać obliczony
+2. Kod jest obliczany i przechowywany w `it` wartości. Możesz odwoływać się `it` interaktywnie.
+
+F# Interactive obsługuje także wielowierszowe dane wejściowe. Wystarczy przerwać przesłane dane przy użyciu podwójnego średnika ( `;;` ). Rozważmy następujący fragment kodu, który został wklejony do i oceniony przez F# Interactive:
+
+```console
+> let getOddSquares xs =
+-     xs
+-     |> List.filter (fun x -> x % 2 <> 0)
+-     |> List.map (fun x -> x * x)
+-
+- printfn "%A" (getOddSquares [1..10]);;
+[1; 9; 25; 49; 81]
+val getOddSquares : xs:int list -> int list
+val it : unit = ()
+
+>
+```
+
+Formatowanie kodu jest zachowywane i występuje podwójny semiclon ( `;;` ) kończący dane wejściowe. F# Interactive następnie ocenił kod i Wydrukowano wyniki.
+
+## <a name="scripting-with-f"></a>Wykonywanie skryptów przy użyciu języka F\#
+
+Interaktywny ocenianie kodu w F# Interactive może być doskonałym narzędziem do uczenia, ale szybko znajdziesz, że nie jest to wydajne w przypadku pisania kodu w normalnym edytorze. Aby obsłużyć normalną edycję kodu, można napisać skrypty języka F #.
+
+Skrypty używają rozszerzenia pliku **FSX**. Zamiast kompilowania kodu źródłowego, a następnie uruchamiania skompilowanego zestawu, można po prostu uruchomić polecenie **dotnet FSI** i określić nazwę pliku skryptu kodu źródłowego języka f #, a program F # Interactive odczytuje kod i wykonuje go w czasie rzeczywistym. Rozważmy na przykład następujący skrypt o nazwie `Script.fsx` :
+
+```fsharp
+let getOddSquares xs =
+    xs
+    |> List.filter (fun x -> x % 2 <> 0)
+    |> List.map (fun x -> x * x)
+
+getOddSquares [1..10]
+```
+
+Po utworzeniu tego pliku na komputerze można uruchomić go z `dotnet fsi` i wyświetlić dane wyjściowe bezpośrednio w oknie terminalu:
+
+```console
+dotnet fsi Script.fsx
+[1; 9; 25; 49; 81]
+```
+
+Obsługa skryptów języka F # jest natywnie obsługiwana w programie [Visual Studio](../../get-started/get-started-visual-studio.md), [Visual Studio Code](../../get-started/get-started-vscode.md)i [Visual Studio dla komputerów Mac](../../get-started/get-started-visual-studio-for-mac.md).
+
+## <a name="referencing-packages-in-f-interactive"></a>Odwoływanie się do pakietów w F# Interactive
+
+> [!NOTE] Zarządzanie pakietami jest funkcją języka F # 5 i jest obecnie dostępna przy użyciu najnowszego zestawu SDK programu .NET 5.
+
+F# Interactive obsługuje odwołania do pakietów NuGet z `#r "nuget:"` składnią i opcjonalną wersją:
+
+```fsharp
+#r "nuget: Newtonsoft.Json"
+open Newtonsoft.Json
+
+let data = {| Name = "Don Syme"; Occupation = "F# Creator" |}
+JsonConvert.SerializeObject(data)
+```
+
+Jeśli wersja nie zostanie określona, zostanie pobrany najwyższy dostępny pakiet niebędący w wersji zapoznawczej. Aby odwołać się do określonej wersji, wprowadź wersję za pomocą przecinka. Może to być przydatne w przypadku odwoływania się do wersji zapoznawczej pakietu. Rozważmy na przykład ten skrypt przy użyciu wersji zapoznawczej [DiffSharp](https://diffsharp.github.io/):
+
+```fsharp
+#r "nuget: DiffSharp-lite,1.0.0-preview-328097867"
+open DiffSharp
+
+// A 1D tensor
+let t1 = dsharp.tensor [ 0.0 .. 0.2 .. 1.0 ]
+
+// A 2x2 tensor
+let t2 = dsharp.tensor [ [ 0; 1 ]; [ 2; 2 ] ]
+
+// Define a scalar-to-scalar function
+let f (x: Tensor) = sin (sqrt x)
+
+printfn "%A" (f (dsharp.tensor 1.2))
+```
+
+Można określić dowolną liczbę odwołań do pakietów w skrypcie.
+
+## <a name="referencing-assemblies-on-disk-with-f-interactive"></a>Odwołujące się do zestawów na dysku przy użyciu języka F # Interactive
+
+Alternatywnie, jeśli masz zestaw na dysku i chcesz odwołać się do niego w skrypcie, możesz użyć `#r` składni do określenia zestawu. Rozważmy następujący kod w projekcie skompilowanym w `MyAssembly.dll` :
+
+```fsharp
+// MyAssembly.fs
+module MyAssembly
+let myFunction x y = x + 2 * y
+```
+
+Jeden skompilowany, można odwoływać się do niego w pliku o nazwie `Script.fsx` podobnej do:
+
+```fsharp
+#r "path/to/MyAssembly.dll"
+
+printfn "%A" (MyAssembly.myFunction 10 40)
+```
+
+Wynik jest następujący:
+
+```console
+dotnet fsi Script.fsx
+90
+```
+
+W skrypcie można określić dowolną liczbę odwołań do zestawów.
+
+## <a name="loading-other-scripts"></a>Ładowanie innych skryptów
+
+Podczas tworzenia skryptów często pomocne może być użycie różnych skryptów dla różnych zadań. Czasami może być konieczne ponowne użycie kodu z poziomu skryptu w innym. Zamiast kopiować zawartość wklejaną do pliku, można je łatwo załadować i oszacować `#load` .
+
+Rozważ następujące kwestie `Script1.fsx` :
+
+```fsharp
+let square x = x * x
+```
+
+I plik zużywany, `Script2.fsx` :
+
+```fsharp
+#load "Script1.fsx"
+open Script1
+
+printfn "%d" (square 12)
+```
+
+Należy pamiętać, że `open Script1` Deklaracja jest wymagana. Wynika to z faktu, że konstrukcje w skrypcie języka F # są kompilowane do modułu najwyższego poziomu, który jest nazwą pliku skryptu, w którym znajduje się.
+
+Można to oszacować `Script2.fsx` w następujący sposób:
+
+```console
+dotnet fsi Script2.fsx
+144
+```
+
+Można określić dowolną liczbę `#load` dyrektyw w skrypcie.
+
+## <a name="using-the-fsi-object-in-f-code"></a>Używanie `fsi` obiektu w kodzie F #
+
+Skrypty języka F # mają dostęp do niestandardowego `fsi` obiektu, który reprezentuje sesję F# Interactive. Umożliwia dostosowanie takich elementów jak formatowanie danych wyjściowych. Istnieje również możliwość uzyskania dostępu do argumentów wiersza polecenia.
+
+Poniższy przykład pokazuje, jak uzyskać i używać argumentów wiersza polecenia:
+
+```fsharp
+let args = fsi.CommandLineArgs
+
+for arg in args do
+    printfn "%s" arg
+```
+
+Gdy jest oceniane, drukuje wszystkie argumenty. Pierwszy argument jest zawsze nazwą obliczanego skryptu:
+
+```dotnet
+dotnet fsi Script1.fsx hello world from fsi
+Script1.fsx
+hello
+world
+from
+fsi
+```
+
+Należy pamiętać, że można również użyć, `System.Environment.GetCommandLineArgs()` Aby uzyskać dostęp do tych samych argumentów.
+
+## <a name="f-interactive-directive-reference"></a>Dokumentacja dyrektywy F# Interactive
+
+`#r`Dyrektywy i `#load` obserwowane wcześniej są dostępne tylko w F# Interactive. Istnieje kilka dyrektyw dostępnych tylko w F# Interactive:
+
+|Dyrektywę|Opis|
+|---------|-----------|
+|`#r "nuget:..."`|Odwołuje się do pakietu z narzędzia NuGet|
+|`#r "assembly-name.dll"`|Odwołuje się do zestawu na dysku|
+|`#load "file-name.fsx"`|Odczytuje plik źródłowy, kompiluje go i uruchamia.|
+|`#help`|Wyświetla informacje dotyczące dostępnych dyrektyw.|
+|`#I`|Określa ścieżkę wyszukiwania zestawu w cudzysłowie.|
+|`#quit`|Kończy sesję F# Interactive.|
+|`#time "on"` lub `#time "off"`|Niezależnie od tego, `#time` czy mają być wyświetlane informacje o wydajności. W takim przypadku `"on"` F# Interactive miary czasu rzeczywistego, czasu procesora oraz informacje o wyrzucaniu elementów bezużytecznych dla każdej sekcji kodu, który jest interpretowany i wykonywany.|
+
+Gdy określisz pliki lub ścieżki w F# Interactive, oczekiwano literału ciągu. W związku z tym pliki i ścieżki muszą być ujęte w znaki cudzysłowu, a normalne znaki ucieczki mają zastosowanie. Można użyć znaku, `@` Aby spowodować, F# Interactive interpretuje ciąg, który zawiera ścieżkę jako ciąg Verbatim. Powoduje to, że F# Interactive ignoruje wszystkie znaki ucieczki.
+
+## <a name="interactive-and-compiled-preprocessor-directives"></a>Interaktywne i skompilowane dyrektywy preprocesora
+
+Podczas kompilowania kodu w F# Interactive, niezależnie od tego, czy uruchamiasz **interaktywnie** , czy uruchamiasz skrypt, jest zdefiniowany symbol Interactive. Podczas kompilowania kodu w kompilatorze jest zdefiniowany symbol **skompilowany** . W tym przypadku, jeśli kod musi być inny w skompilowanych i interaktywnych trybach, można użyć tych dyrektyw preprocesora dla kompilacji warunkowej, aby określić, która z nich ma być używana. Przykład:
+
+```fsharp
+#if INTERACTIVE
+// Some code that executes only in FSI
+// ...
+#endif
+```
+
+## <a name="using-f-interactive-in-visual-studio"></a>Używanie F# Interactive w programie Visual Studio
+
+Aby uruchomić F# Interactive za pomocą programu Visual Studio, można kliknąć odpowiedni przycisk paska narzędzi z etykietą **F# Interactive** lub użyć klawiszy **Ctrl + Alt + F**. Spowoduje to otwarcie okna interaktywnego, okna narzędzia z uruchomioną sesją F# Interactive. Możesz również wybrać kod, który ma być uruchamiany w oknie interaktywnym i nacisnąć kombinację klawiszy **ALT + ENTER**. F# Interactive uruchamia się w oknie narzędzia z etykietą **F# Interactive**. W przypadku korzystania z tej kombinacji klawiszy upewnij się, że okno edytora ma fokus.
 
 Niezależnie od tego, czy używasz konsoli programu, czy programu Visual Studio, zostanie wyświetlony wiersz polecenia, a interpreter czeka na dane wejściowe. Możesz wprowadzić kod tak samo jak w pliku kodu. Aby skompilować i wykonać kod, wprowadź dwa średnika ( **;;** ), aby zakończyć wiersz lub kilka wierszy danych wejściowych.
 
@@ -29,91 +244,7 @@ Kod wprowadzony w tej samej sesji ma dostęp do dowolnych wcześniej wprowadzony
 
 W przypadku uruchamiania w programie Visual Studio F# Interactive uruchamiane niezależnie od projektu, więc na przykład nie można używać konstrukcji zdefiniowanych w projekcie w F# Interactive, chyba że skopiujesz kod funkcji do okna interaktywnego.
 
-Jeśli masz otwarty projekt, który odwołuje się do niektórych bibliotek, możesz odwoływać się do nich w F# Interactive przez **Eksplorator rozwiązań** . Aby odwołać się do biblioteki w F# Interactive, rozwiń węzeł **odwołania** , otwórz menu skrótów dla biblioteki i wybierz polecenie **Wyślij do F# Interactive** .
-
-Można kontrolować F# Interactive argumenty wiersza polecenia (Opcje), dostosowując ustawienia. W menu **Narzędzia** wybierz pozycję **Opcje...** , a następnie rozwiń węzeł **Narzędzia języka F #** . Te dwie ustawienia, które można zmienić, to opcje F# Interactive i ustawienie **F# Interactive 64-bitowe** , które jest istotne tylko w przypadku uruchamiania F# Interactive na komputerze 64-bitowym. To ustawienie określa, czy chcesz uruchomić dedykowaną 64-bitową wersję fsi.exe lub fsianycpu.exe, która korzysta z architektury komputera, aby określić, czy uruchomić program jako proces 32-bitowy czy 64-bitowy.
-
-## <a name="scripting-with-f"></a>Wykonywanie skryptów przy użyciu języka F\#
-
-Skrypty używają rozszerzenia pliku **. FSX** lub **. FSSCRIPT** . Zamiast kompilowania kodu źródłowego, a następnie uruchamiania skompilowanego zestawu, można po prostu uruchomić polecenie **dotnet FSI** i określić nazwę pliku skryptu kodu źródłowego języka f #, a program F # Interactive odczytuje kod i wykonuje go w czasie rzeczywistym.
-
-## <a name="differences-between-the-interactive-scripting-and-compiled-environments"></a>Różnice między środowiskami interaktywnymi, skryptowymi i skompilowanymi
-
-Podczas kompilowania kodu w F# Interactive, niezależnie od tego, czy uruchamiasz **interaktywnie** , czy uruchamiasz skrypt, jest zdefiniowany symbol Interactive. Podczas kompilowania kodu w kompilatorze jest zdefiniowany symbol **skompilowany** . W tym przypadku, jeśli kod musi być inny w skompilowanych i interaktywnych trybach, można użyć dyrektyw preprocesora dla kompilacji warunkowej, aby określić, która z nich ma być używana.
-
-Niektóre dyrektywy są dostępne podczas wykonywania skryptów w F# Interactive, które nie są dostępne podczas wykonywania kompilatora. Poniższa tabela zawiera podsumowanie dyrektyw, które są dostępne podczas korzystania z F# Interactive.
-
-|Dyrektywę|Opis|
-|---------|-----------|
-|**#help**|Wyświetla informacje dotyczące dostępnych dyrektyw.|
-|**#I**|Określa ścieżkę wyszukiwania zestawu w cudzysłowie.|
-|**#load**|Odczytuje plik źródłowy, kompiluje go i uruchamia.|
-|**#quit**|Kończy sesję F# Interactive.|
-|**#r**|Odwołuje się do zestawu.|
-|**#time ["on" &#124; "off"]**|Niezależnie od tego **#time** włącza, czy mają być wyświetlane informacje o wydajności. Gdy jest włączona, F# Interactive miary czasu rzeczywistego, czasu procesora oraz informacje o wyrzucaniu elementów bezużytecznych dla każdej sekcji kodu, który jest interpretowany i wykonywany.|
-
-Gdy określisz pliki lub ścieżki w F# Interactive, oczekiwano literału ciągu. W związku z tym pliki i ścieżki muszą być ujęte w znaki cudzysłowu, a normalne znaki ucieczki mają zastosowanie. Ponadto można użyć znaku @, aby spowodować, że F# Interactive interpretuje ciąg, który zawiera ścieżkę jako ciąg Verbatim. Powoduje to, że F# Interactive ignoruje wszystkie znaki ucieczki.
-
-Jedną z różnic między skompilowanym i interaktywnym trybem jest sposób dostępu do argumentów wiersza polecenia. W trybie skompilowanym Użyj **System. Environment. GetCommandLineArgs** . W skryptach Użyj **FSI. CommandLineArgs —** .
-
-Poniższy kod ilustruje sposób tworzenia funkcji, która odczytuje argumenty wiersza polecenia w skrypcie, a także pokazuje, jak odwoływać się do innego zestawu ze skryptu. Pierwszy plik kodu, **. FS** , jest kodem, do którego odwołuje się zestaw. Skompiluj ten plik przy użyciu wiersza polecenia: **Urząd nadzoru systemu.** , a następnie wykonaj drugi plik jako skrypt z wierszem polecenia: **FSI--exec plik1. FSX** test
-
-```fsharp
-// MyAssembly.fs
-module MyAssembly
-let myFunction x y = x + 2 * y
-```
-
-```fsharp
-// file1.fsx
-#r "MyAssembly.dll"
-
-printfn "Command line arguments: "
-
-for arg in fsi.CommandLineArgs do
-    printfn "%s" arg
-
-printfn "%A" (MyAssembly.myFunction 10 40)
-```
-
-Wynik jest następujący:
-
-```console
-Command line arguments:
-file1.fsx
-test
-90
-```
-
-## <a name="package-management-in-f-interactive"></a>Zarządzanie pakietami w F# Interactive
-
-[!NOTE] Zarządzanie pakietami jest dostępne jako funkcja w wersji zapoznawczej w wersjach `dotnet fsi` dostarczonych w `3.1.300` i nowszych wersjach zestawu .NET SDK, a także wszystkich `5.*` wersjach zestawu .NET SDK. Aby włączyć ją w tej wersji zapoznawczej, uruchom polecenie `dotnet fsi` z `--langversion:preview` argumentem.
-
-`#r`Składnia do odwoływania się do biblioteki DLL w F# Interactive może być również używana do odwoływania się do pakietu NuGet za pomocą następującej składni:
-
-```fsharp
-#r "nuget: <package name>"
-```
-
-Na przykład, aby odwołać się do `FSharp.Data` pakietu, należy użyć następującego `#r` odwołania:
-
-```fsharp
-#r "nuget: FSharp.Data"
-```
-
-Po wykonaniu tego wiersza Najnowsza wersja `FSharp.Data` pakietu zostanie pobrana do pamięci podręcznej NuGet i przywoływana w bieżącej sesji F# Interactive.
-
-Oprócz nazwy pakietu do określonych wersji pakietu można odwoływać się za pomocą krótkiej składni:
-
-```fsharp
-#r "nuget: FSharp.Data, 3.3.2"
-```
-
-lub bardziej jawny sposób:
-
-```fsharp
-#r "nuget: FSharp.Data, Version=3.3.2"
-```
+Można kontrolować F# Interactive argumenty wiersza polecenia (Opcje), dostosowując ustawienia. W menu **Narzędzia** wybierz pozycję **Opcje...** , a następnie rozwiń węzeł **Narzędzia języka F #**. Te dwie ustawienia, które można zmienić, to opcje F# Interactive i ustawienie **F# Interactive 64-bitowe** , które jest istotne tylko w przypadku uruchamiania F# Interactive na komputerze 64-bitowym. To ustawienie określa, czy chcesz uruchomić dedykowaną 64-bitową wersję **fsi.exe** lub **fsianycpu.exe** , która korzysta z architektury komputera, aby określić, czy uruchomić program jako proces 32-bitowy czy 64-bitowy.
 
 ## <a name="related-articles"></a>Pokrewne artykuły:
 
