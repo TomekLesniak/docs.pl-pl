@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: 7c5d8fa462775c6f3a9981693129997dda6c2286
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ee0921c4d3c931e2f677ec0bb8458992afc57d57
+ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324144"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342647"
 ---
 # <a name="how-to-parse-strings-using-stringsplit-in-c"></a>Jak analizować ciągi przy użyciu ciągu. Split w C\#
 
@@ -34,7 +34,7 @@ To zachowanie ułatwia formatowanie, takie jak pliki z wartościami rozdzielanym
 
 Można przekazać opcjonalny parametr, <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> Aby wykluczyć wszelkie puste ciągi w zwróconej tablicy. Aby bardziej skomplikowane przetwarzanie zwróconej kolekcji było możliwe, można użyć [LINQ](../programming-guide/concepts/linq/index.md) do manipulowania sekwencją wyników.
 
-<xref:System.String.Split%2A?displayProperty=nameWithType>może używać wielu znaków separatora.
+<xref:System.String.Split%2A?displayProperty=nameWithType> może używać wielu znaków separatora.
 Poniższy przykład używa spacji, przecinków, kropek, dwukropków i tabulatorów jako separatora znaków, które są przenoszone do <xref:System.String.Split%2A> tablicy.
 Pętla u dołu kodu wyświetla każdy wyraz w zwracanej tablicy.
 
@@ -44,12 +44,13 @@ Kolejne wystąpienia dowolnego separatora tworzą pusty ciąg w tablicy wyjścio
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet4":::
 
-<xref:System.String.Split%2A?displayProperty=nameWithType>może przyjmować tablicę ciągów (sekwencje znaków, które działają jako separatory do analizowania ciągu docelowego, zamiast pojedynczych znaków).
+<xref:System.String.Split%2A?displayProperty=nameWithType> może przyjmować tablicę ciągów (sekwencje znaków, które działają jako separatory do analizowania ciągu docelowego, zamiast pojedynczych znaków).
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet5":::
 
 ## <a name="see-also"></a>Zobacz też
 
+- [Wyodrębnij elementy z ciągu](../../standard/base-types/parse-strings.md)
 - [Przewodnik programowania w języku C#](../programming-guide/index.md)
 - [Ciągi](../programming-guide/strings/index.md)
 - [Wyrażenia regularne .NET](../../standard/base-types/regular-expressions.md)

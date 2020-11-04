@@ -2,33 +2,33 @@
 title: Bloki konstrukcyjne programów C# "
 description: Dowiedz się więcej o elementach członkowskich, wyrażeniach i instrukcjach języka C#. Typy zawierają składowe, które są zapisywane. Te elementy członkowskie są kompilowane z instrukcji i wyrażeń.
 ms.date: 08/06/2020
-ms.openlocfilehash: 3bdc6a4da6ae76148c7d1d5cb8ccb65d91fda61a
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: e4350f2c2b6005fb59dd868f0f7f628bd07b0053
+ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358820"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342699"
 ---
 # <a name="program-building-blocks"></a>Bloki konstrukcyjne programu
 
-Typy opisane w poprzednim artykule są kompilowane przy użyciu następujących bloków konstrukcyjnych: [***składowych***](../programming-guide/classes-and-structs/members.md), [ ***wyrażeń***i ***instrukcji***](../programming-guide/statements-expressions-operators/index.md).
+Typy opisane w poprzednim artykule są kompilowane przy użyciu następujących bloków konstrukcyjnych: [ * **składowych** _](../programming-guide/classes-and-structs/members.md), [ _*_wyrażeń_*_ i _*_instrukcji_*_](../programming-guide/statements-expressions-operators/index.md).
 
 ## <a name="members"></a>Elementy członkowskie
 
-Członkami elementu `class` są ***statyczne elementy członkowskie*** i ***wystąpienia***. Statyczne składowe należą do klas, a elementy członkowskie wystąpienia należą do obiektów (wystąpień klas).
+Członkami elementu `class` są _*_statyczne elementy członkowskie_*_ i _*_wystąpienia_*_. Statyczne składowe należą do klas, a elementy członkowskie wystąpienia należą do obiektów (wystąpień klas).
 
 Poniższa lista zawiera przegląd rodzajów elementów członkowskich, które może zawierać Klasa.
 
-- **Stałe**: wartości stałe skojarzone z klasą
-- **Pola**: zmienne, które są skojarzone z klasą
-- **Metody**: akcje, które mogą być wykonywane przez klasę
-- **Właściwości**: akcje skojarzone z odczytem i pisaniem nazwanych właściwości klasy
-- **Indeksatory**: akcje skojarzone z wystąpieniami indeksowania klasy, takimi jak tablica
-- **Zdarzenia**: powiadomienia, które mogą być generowane przez klasę
-- **Operatory**: konwersje i operatory wyrażeń obsługiwane przez klasę
-- **Konstruktory**: akcje wymagane do zainicjowania wystąpień klasy lub samej klasy
-- **Finalizatory**: akcje wykonywane przed wystąpieniem klasy są trwale odrzucone
-- **Typy**: typy zagnieżdżone zadeklarowane przez klasę
+- _ * Stałe * *: wartości stałe skojarzone z klasą
+- **Pola** : zmienne, które są skojarzone z klasą
+- **Metody** : akcje, które mogą być wykonywane przez klasę
+- **Właściwości** : akcje skojarzone z odczytem i pisaniem nazwanych właściwości klasy
+- **Indeksatory** : akcje skojarzone z wystąpieniami indeksowania klasy, takimi jak tablica
+- **Zdarzenia** : powiadomienia, które mogą być generowane przez klasę
+- **Operatory** : konwersje i operatory wyrażeń obsługiwane przez klasę
+- **Konstruktory** : akcje wymagane do zainicjowania wystąpień klasy lub samej klasy
+- **Finalizatory** : akcje wykonywane przed wystąpieniem klasy są trwale odrzucone
+- **Typy** : typy zagnieżdżone zadeklarowane przez klasę
 
 ## <a name="accessibility"></a>Ułatwienia dostępu
 
@@ -49,7 +49,7 @@ Pole zadeklarowane ze modyfikatorem static definiuje pole statyczne. Pole statyc
 
 Pole zadeklarowane bez modyfikatora static definiuje pole wystąpienia. Każde wystąpienie klasy zawiera oddzielną kopię wszystkich pól wystąpienia tej klasy.
 
-W poniższym przykładzie każde wystąpienie `Color` klasy ma oddzielną kopię `r` `g` pól,, i `b` wystąpienia, ale istnieje tylko jedna kopia `Black` pól,, `White` `Red` , `Green` i `Blue` pola statyczne:
+W poniższym przykładzie każde wystąpienie `Color` klasy ma oddzielną kopię `R` `G` pól,, i `B` wystąpienia, ale istnieje tylko jedna kopia `Black` pól,, `White` `Red` , `Green` i `Blue` pola statyczne:
 
 :::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ColorClassDefinition":::
 
@@ -59,7 +59,7 @@ Jak pokazano w poprzednim przykładzie *pola tylko do odczytu* mogą być zadekl
 
 *Metoda* to element członkowski implementujący obliczenia lub akcję, które mogą być wykonywane przez obiekt lub klasę. *Metody statyczne* są dostępne za pomocą klasy. *Metody wystąpienia* są dostępne za pomocą wystąpień klasy.
 
-Metody mogą mieć listę *parametrów*reprezentujących wartości lub odwołania do zmiennych, które są przenoszone do metody. Metody mają *zwracany typ*, który określa typ wartości obliczanej i zwracanej przez metodę. Zwracany typ metody to `void` Jeśli nie zwraca wartości.
+Metody mogą mieć listę *parametrów* reprezentujących wartości lub odwołania do zmiennych, które są przenoszone do metody. Metody mają *zwracany typ* , który określa typ wartości obliczanej i zwracanej przez metodę. Zwracany typ metody to `void` Jeśli nie zwraca wartości.
 
 Podobnie jak typy, metody mogą także mieć zestaw parametrów typu, dla których argumenty typu muszą być określone, gdy wywoływana jest metoda. W przeciwieństwie do typów, argumenty typu często można wywnioskować na podstawie argumentów wywołania metody i nie muszą być jawnie określone.
 
@@ -68,7 +68,7 @@ Podobnie jak typy, metody mogą także mieć zestaw parametrów typu, dla który
 Gdy treść metody jest pojedynczym wyrażeniem, Metoda może być zdefiniowana przy użyciu formatu wyrażenia kompaktowego, jak pokazano w następującym przykładzie:
 
 ```csharp
-public override ToString() => "This is an object";
+public override string ToString() => "This is an object";
 ```
 
 ### <a name="parameters"></a>Parametry
@@ -189,7 +189,7 @@ W przeciwieństwie do innych elementów członkowskich, konstruktory wystąpień
 
 *Właściwości* są naturalnym rozszerzeniem pól. Oba są nazwanymi członkami ze skojarzonymi typami, a składnia dostępu do pól i właściwości jest taka sama. Jednak w przeciwieństwie do pól właściwości nie oznacza lokalizacji magazynu. Zamiast tego właściwości mają metody *dostępu* określające instrukcje wykonywane, gdy ich wartości są odczytywane lub zapisywane.
 
-Właściwość jest zadeklarowana jako pole, z tą różnicą, że deklaracja kończy się metodą dostępu get lub zestawem akcesora zapisanym między ogranicznikami `{` i `}` zamiast kończyć się średnikiem. Właściwość, która ma zarówno metodę dostępu get, jak i zestaw akcesora zestawu jest *właściwością do odczytu i zapisu*, właściwość, która ma tylko metodę dostępu get, jest *właściwością tylko do odczytu*, a właściwość, która ma tylko metodę dostępu zestawu, jest *właściwością tylko do zapisu*.
+Właściwość jest zadeklarowana jako pole, z tą różnicą, że deklaracja kończy się metodą dostępu get lub zestawem akcesora zapisanym między ogranicznikami `{` i `}` zamiast kończyć się średnikiem. Właściwość, która ma zarówno metodę dostępu get, jak i zestaw akcesora zestawu jest *właściwością do odczytu i zapisu* , właściwość, która ma tylko metodę dostępu get, jest *właściwością tylko do odczytu* , a właściwość, która ma tylko metodę dostępu zestawu, jest *właściwością tylko do zapisu*.
 
 Metoda dostępu get odpowiada metodzie bez parametrów z wartością zwracaną typu właściwości. Metoda dostępu zestawu odpowiada metodzie z pojedynczym parametrem o nazwie Value i bez zwracanego typu. Metoda dostępu get oblicza wartość właściwości. Metoda dostępu set udostępnia nową wartość właściwości. Gdy właściwość jest obiektem docelowym przypisania lub operandem `++` lub `--` , metoda dostępu set jest wywoływana. W innych przypadkach, w których właściwość jest przywoływana, metoda dostępu get jest wywoływana.
 
@@ -201,11 +201,11 @@ Podobnie jak pola i metody, C# obsługuje zarówno właściwości wystąpienia, 
 
 Metody dostępu właściwości mogą być wirtualne. Gdy Deklaracja właściwości zawiera `virtual` `abstract` modyfikator, lub `override` , ma zastosowanie do akcesorów właściwości.
 
-### <a name="indexers"></a>Indexers (Indeksatory)
+### <a name="indexers"></a>Indeksatory
 
 *Indeksator* jest członkiem, który umożliwia indeksowanie obiektów w taki sam sposób jak w przypadku tablicy. Indeksator jest zadeklarowany jak właściwość, z tą różnicą, że po nazwie składowej `this` następuje lista parametrów zapisywana między ogranicznikami `[` i `]` . Parametry są dostępne w metodach dostępu indeksatora. Podobnie jak w przypadku właściwości, indeksatory mogą być tylko do odczytu i zapisu, tylko do odczytu i do zapisu, a Akcesory dla indeksatora mogą być wirtualne.
 
-`MyList<T>`Klasa deklaruje pojedynczy indeksator do odczytu i zapisu, który pobiera `int` parametr. Indeksator umożliwia indeksowanie `MyList<T>` wystąpień z `int` wartościami. Na przykład:
+`MyList<T>`Klasa deklaruje pojedynczy indeksator do odczytu i zapisu, który pobiera `int` parametr. Indeksator umożliwia indeksowanie `MyList<T>` wystąpień z `int` wartościami. Przykład:
 
 :::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAccess":::
 
@@ -251,8 +251,8 @@ Gdy wyrażenie zawiera wiele operatorów, *pierwszeństwo* operatorów kontroluj
 
 Gdy operand występuje między dwoma operatorami o takim samym priorytecie, *łączność* operatorów kontroluje kolejność wykonywania operacji:
 
-* Z wyjątkiem operatorów przypisania i łączenia wartości null wszystkie operatory binarne są z *lewej strony skojarzenia*, co oznacza, że operacje są wykonywane od lewej do prawej. Na przykład, `x + y + z` jest oceniane jako `(x + y) + z` .
-* Operatory przypisania, przeciąganie wartości null `??` i `??=` operatory, a operator warunkowy `?:` są z *prawej strony skojarzenia*, co oznacza, że operacje są wykonywane od prawej do lewej. Na przykład, `x = y = z` jest oceniane jako `x = (y = z)` .
+* Z wyjątkiem operatorów przypisania i łączenia wartości null wszystkie operatory binarne są z *lewej strony skojarzenia* , co oznacza, że operacje są wykonywane od lewej do prawej. Na przykład, `x + y + z` jest oceniane jako `(x + y) + z` .
+* Operatory przypisania, przeciąganie wartości null `??` i `??=` operatory, a operator warunkowy `?:` są z *prawej strony skojarzenia* , co oznacza, że operacje są wykonywane od prawej do lewej. Na przykład, `x = y = z` jest oceniane jako `x = (y = z)` .
 
 Pierwszeństwo i łączność można kontrolować za pomocą nawiasów. Na przykład program `x + y * z` najpierw mnoży `y` przez, `z` a następnie dodaje wynik do `x` , ale `(x + y) * z` najpierw dodaje `x` i `y` i następnie mnoży wynik przez `z` .
 
