@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: 7b367fe694c9dd153372fadfe29461ea8b6a0415
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: e0ca78871d1ddf851148096c8c6cfd10076763ab
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342595"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400882"
 ---
 # <a name="net-globalization-and-icu"></a>Globalizacja i ICU platformy .NET
 
@@ -33,12 +33,12 @@ Począwszy od platformy .NET 5,0, deweloperzy mają większą kontrolę nad uży
 
 ## <a name="icu-on-windows"></a>ICU w systemie Windows
 
-System Windows 10 maja 2019 Update i nowsze wersje zawierają [icu.dll](/windows/win32/intl/international-components-for-unicode--icu-) w ramach systemu operacyjnego, a program .NET 5,0 i nowsze wersje domyślnie używają ICU. W przypadku uruchamiania w systemie Windows program .NET 5,0 i nowsze wersje próbują załadować, `icu.dll` a jeśli jest dostępny, używa go do implementacji globalizacji.  Jeśli ta biblioteka nie może zostać znaleziona lub załadowana, na przykład w przypadku korzystania ze starszych wersji systemu Windows, program .NET 5,0 i jego nowsze wersje powracają do implementacji opartej na witrynie NLS.
+System Windows 10 maja 2019 Update i nowsze wersje zawierają [icu.dll](/windows/win32/intl/international-components-for-unicode--icu-) w ramach systemu operacyjnego, a program .NET 5,0 i nowsze wersje domyślnie używają ICU. W przypadku uruchamiania w systemie Windows program .NET 5,0 i nowsze wersje próbują załadować `icu.dll` i, jeśli jest dostępny, użyć go do wdrożenia globalizacji. Jeśli biblioteka ICU nie może zostać znaleziona lub załadowana, na przykład w przypadku korzystania ze starszych wersji systemu Windows, program .NET 5,0 i jego nowsze wersje powracają do implementacji opartej na witrynie NLS.
 
 > [!NOTE]
 > Nawet w przypadku używania ICU, `CurrentCulture` , `CurrentUICulture` i `CurrentRegion` elementy członkowskie nadal używają interfejsów API systemu operacyjnego Windows do zapamiętania ustawień użytkownika.
 
-### <a name="using-nls-instead-of-icu"></a>Korzystanie z programu NLS zamiast ICU
+### <a name="use-nls-instead-of-icu"></a>Korzystanie z programu NLS zamiast ICU
 
 Użycie ICU zamiast NLS może spowodować różnice w działaniu z pewnymi operacjami związanymi z globalizacją. Aby wrócić do korzystania z usługi NLS, deweloper może zrezygnować z implementacji ICU. Aplikacje mogą włączać tryb NLS w dowolny z następujących sposobów:
 
@@ -71,7 +71,7 @@ Aby uzyskać więcej informacji, zobacz [Ustawienia konfiguracji w czasie wykony
 
 ## <a name="app-local-icu"></a>ICU lokalna aplikacji
 
-Każda wersja programu ICU może nastąpić wraz z poprawkami błędów IT, a także z zaktualizowanymi danymi wspólnego repozytorium danych ustawień regionalnych (CLDR), które opisują języki na całym świecie. Przechodzenie między wersjami ICU może obsłużyć zachowanie aplikacji w przypadku operacji związanych z globalizacją.  Aby pomóc deweloperom aplikacji zapewnić spójność we wszystkich wdrożeniach, .NET 5,0 i nowszych wersjach, Włącz aplikacje w systemach Windows i UNIX do przenoszenia i używania własnych kopii ICU.
+Każda wersja programu ICU może nastąpić wraz z poprawkami błędów IT, a także z zaktualizowanymi danymi wspólnego repozytorium danych ustawień regionalnych (CLDR), które opisują języki na całym świecie. Przechodzenie między wersjami ICU może obsłużyć zachowanie aplikacji w przypadku operacji związanych z globalizacją. Aby pomóc deweloperom aplikacji zapewnić spójność we wszystkich wdrożeniach, .NET 5,0 i nowszych wersjach, Włącz aplikacje w systemach Windows i UNIX do przenoszenia i używania własnych kopii ICU.
 
 Aplikacje mogą zrezygnować z trybu implementacji ICU na poziomie aplikacji w trybie lokalnym na jeden z następujących sposobów:
 
@@ -97,7 +97,7 @@ Aplikacje mogą zrezygnować z trybu implementacji ICU na poziomie aplikacji w t
 
 - Ustawienie zmiennej środowiskowej `DOTNET_SYSTEM_GLOBALIZATION_APPLOCALICU` na wartość `<suffix>:<version>` lub `<version>` .
 
-  `<suffix>`: Opcjonalny sufiks o długości poniżej 36 znaków, zgodnie z konwencjami ICU publicznego pakietu. Podczas kompilowania niestandardowych ICU można dostosować je do tworzenia nazw lib i wyeksportowanych nazw symboli, aby zawierały sufiks, na przykład, `libicuucmyapp` gdzie `myapp` jest sufiksem.
+  `<suffix>`: Opcjonalny sufiks krótszy niż 36 znaków, zgodnie z konwencjami pakietów ICU publicznego. Podczas kompilowania niestandardowych ICU można dostosować je do tworzenia nazw lib i wyeksportowanych nazw symboli, aby zawierały sufiks, na przykład, `libicuucmyapp` gdzie `myapp` jest sufiksem.
 
   `<version>`: Prawidłowa wersja ICU, na przykład 67,1. Ta wersja jest używana do ładowania plików binarnych i uzyskiwania eksportowanych symboli.
 
@@ -107,7 +107,7 @@ W przypadku aplikacji, które nie są wymagane przez użytkownika, nie jest wyma
 
 Jeśli korzystasz z ICU za pośrednictwem pakietu NuGet, działa to w aplikacjach zależnych od platformy. Pakiet NuGet rozwiązuje natywne zasoby i dołącza je do `deps.json` pliku oraz do katalogu wyjściowego dla aplikacji w `runtimes` katalogu. Platforma .NET ładuje ją z tego miejsca.
 
-W przypadku aplikacji zależnych od platformy (nie zawartych w nich), gdzie ICU jest zużywana z lokalnej kompilacji, należy wykonać dodatkowe czynności. Zestaw .NET SDK nie ma jeszcze funkcji "luźnych" natywnych plików binarnych, które mają być włączone `deps.json` (zobacz [ten problem z zestawem SDK](https://github.com/dotnet/sdk/issues/11373)). Zamiast tego można je włączyć przez dodanie dodatkowych informacji do pliku projektu aplikacji. Przykład:
+W przypadku aplikacji zależnych od platformy (nie zawartych w nich), gdzie ICU jest zużywana z lokalnej kompilacji, należy wykonać dodatkowe czynności. Zestaw .NET SDK nie ma jeszcze funkcji "luźnych" natywnych plików binarnych, które mają być włączone `deps.json` (zobacz [ten problem z zestawem SDK](https://github.com/dotnet/sdk/issues/11373)). Zamiast tego można je włączyć przez dodanie dodatkowych informacji do pliku projektu aplikacji. Na przykład:
 
 ```xml
 <ItemGroup>
@@ -120,7 +120,7 @@ Należy to zrobić dla wszystkich plików binarnych ICU dla obsługiwanych środ
 
 ### <a name="macos-behavior"></a>zachowanie macOS
 
-`macOS` Program ma inne zachowanie w zakresie rozpoznawania zależnych bibliotek dynamicznych z poleceń ładowania określonych w `match-o` pliku niż moduł ładujący systemu Linux. W module ładującym systemu Linux .NET może próbować `libicudata` , `libicuuc` i `libicui18n` (w tej kolejności), aby SPEŁNIAŁ wykres zależności ICU. Jednak w macOS nie działa. Podczas kompilowania ICU na macOS, domyślnie Pobierz bibliotekę dynamiczną z tymi poleceniami ładowania w `libicuuc` . Na przykład:
+`macOS` Program ma inne zachowanie w zakresie rozpoznawania zależnych bibliotek dynamicznych z poleceń ładowania określonych w `match-o` pliku niż moduł ładujący systemu Linux. W module ładującym systemu Linux .NET może próbować `libicudata` , `libicuuc` i `libicui18n` (w tej kolejności), aby SPEŁNIAŁ wykres zależności ICU. Jednak w macOS nie działa. Podczas kompilowania ICU na macOS, domyślnie Pobierz bibliotekę dynamiczną z tymi poleceniami ładowania w `libicuuc` . Poniższy fragment kodu przedstawia przykład.
 
 ```sh
 ~/ % otool -L /Users/santifdezm/repos/icu-build/icu/install/lib/libicuuc.67.1.dylib

@@ -2,12 +2,12 @@
 title: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac
 description: Dowiedz się, jak utworzyć aplikację konsolową .NET Core przy użyciu Visual Studio dla komputerów Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: ca933bc9322109ba7d1f808fcc44696a9766a6d4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0248e48865541a7c73b9e219a06a57996c5cf601
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537603"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400529"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Samouczek: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio dla komputerów Mac
 
@@ -16,8 +16,8 @@ W tym samouczku pokazano, jak utworzyć i uruchomić aplikację konsolową .NET 
 > [!NOTE]
 > Opinie są wysoce wyceniane. Istnieją dwa sposoby przekazywania opinii zespołowi programistycznemu na Visual Studio dla komputerów Mac:
 >
-> * W Visual Studio dla komputerów Mac wybierz pozycję **Pomoc**  >  **Zgłoś problem** z menu lub **Zgłoś problem** na ekranie powitalnym, co spowoduje otwarcie okna do zgłoszenia usterki. Swoje opinie możesz śledzić w portalu [Społeczność deweloperów](https://developercommunity.visualstudio.com/spaces/8/index.html).
-> * Aby skorzystać z sugestii, wybierz pozycję **Pomoc**  >  **Podaj sugestię** z menu lub **Podaj sugestię** na ekranie powitalnym, co spowoduje przejście do [strony internetowej społeczność deweloperów Visual Studio dla komputerów Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
+> * W Visual Studio dla komputerów Mac wybierz pozycję **Pomoc**  >  **Zgłoś problem** z menu lub **Zgłoś problem** na ekranie powitalnym, co spowoduje otwarcie okna do zgłoszenia usterki. Swoje opinie możesz śledzić w portalu [Społeczność deweloperów](https://aka.ms/feedback/report?space=41).
+> * Aby skorzystać z sugestii, wybierz pozycję **Pomoc**  >  **Podaj sugestię** z menu lub **Podaj sugestię** na ekranie powitalnym, co spowoduje przejście do [strony internetowej społeczność deweloperów Visual Studio dla komputerów Mac](https://aka.ms/feedback/suggest?space=41).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -41,11 +41,11 @@ Utwórz projekt aplikacji konsolowej .NET Core o nazwie "HelloWorld".
 
    :::image type="content" source="media/with-visual-studio-mac/visual-studio-mac-new-dialog.png" alt-text="Lista nowych szablonów projektu":::
 
-1. Na liście rozwijanej **platforma docelowa** okna dialogowego **Konfigurowanie nowej aplikacji konsoli** wybierz pozycję **.NET Core 3,1**, a następnie wybierz przycisk **dalej**.
+1. Na liście rozwijanej **platforma docelowa** okna dialogowego **Konfigurowanie nowej aplikacji konsoli** wybierz pozycję **.NET Core 3,1** , a następnie wybierz przycisk **dalej**.
 
    :::image type="content" source="media/with-visual-studio-mac/target-framework.png" alt-text="Wybierz platformę docelową":::
 
-1. Wpisz "HelloWorld" jako **nazwę projektu**, a następnie wybierz pozycję **Utwórz**.
+1. Wpisz "HelloWorld" jako **nazwę projektu** , a następnie wybierz pozycję **Utwórz**.
 
    :::image type="content" source="media/with-visual-studio-mac/visual-studio-mac-new-options.png" alt-text="Okno dialogowe Konfigurowanie nowej aplikacji konsolowej":::
 
@@ -82,7 +82,7 @@ namespace HelloWorld
 
 Podnieś poziom aplikacji, aby monitować użytkownika o jego nazwę i wyświetlić go wraz z datą i godziną.
 
-1. W *program.cs*Zastąp zawartość `Main` metody, która jest wierszem, który wywołuje `Console.WriteLine` , przy użyciu następującego kodu:
+1. W *program.cs* Zastąp zawartość `Main` metody, która jest wierszem, który wywołuje `Console.WriteLine` , przy użyciu następującego kodu:
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 

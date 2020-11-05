@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: 824765e1f3ecfd1381f9c5f8b144b7b11aee8f0b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2be9c4e12d6a613e7f1062ec7492b0b99203f39d
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550387"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400699"
 ---
 # <a name="version-compatibility"></a>Zgodność wersji
 
@@ -61,13 +61,13 @@ Jeśli aplikacja lub składnik nie działa zgodnie z oczekiwaniami w .NET Framew
 
 - Jeśli określisz, że zmiana w .NET Framework 4,5 spowodowała uszkodzenie aplikacji, sprawdź [Schemat ustawień środowiska uruchomieniowego](../configure-apps/file-schema/runtime/index.md), a szczególnie [ \<AppContextSwitchOverrides> element](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md), aby określić, czy można użyć ustawienia środowiska uruchomieniowego w pliku konfiguracyjnym aplikacji, aby przywrócić poprzednie zachowanie.
 
-- Jeśli występują problemy, które nie są udokumentowane, Otwórz problem w [witrynie społeczności deweloperów dla platformy .NET](https://developercommunity.visualstudio.com/spaces/61/index.html) lub Otwórz problem w [repozytorium GitHub Microsoft/dotnet](https://github.com/microsoft/dotnet/issues).
+- Jeśli występują problemy, które nie są udokumentowane, Otwórz problem w [witrynie społeczności deweloperów dla platformy .NET](https://aka.ms/feedback/report?space=61) lub Otwórz problem w [repozytorium GitHub Microsoft/dotnet](https://github.com/microsoft/dotnet/issues).
 
 ## <a name="side-by-side-execution"></a>Wykonywanie równoczesne
 
 Jeśli nie możesz znaleźć odpowiedniego obejścia problemu, pamiętaj, że .NET Framework 4,5 (lub jeden z jego wydań punktów) działa równolegle z wersjami 1,1, 2,0 i 3,5, i jest aktualizacją w miejscu, która zastępuje wersję 4. W przypadku aplikacji przeznaczonych dla wersji 1,1, 2,0 i 3,5 można zainstalować odpowiednią wersję .NET Framework na komputerze docelowym, aby uruchomić aplikację w jej najlepszym środowisku. Aby uzyskać więcej informacji na temat wykonywania równoczesnego, zobacz [Wykonywanie równoczesne](../deployment/side-by-side-execution.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Co nowego](../whats-new/index.md)
 - [Przestarzałe elementy w ułatwieniach dostępu](../whats-new/whats-obsolete.md)

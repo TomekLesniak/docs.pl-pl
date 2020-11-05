@@ -2,12 +2,12 @@
 title: Mapowanie aplikacji eShopOnContainers na usługi platformy Azure
 description: Mapowanie eShopOnContainers do usług platformy Azure, takich jak usługa Azure Kubernetes, Brama interfejsu API i Azure Service Bus.
 ms.date: 05/13/2020
-ms.openlocfilehash: e938bf9a8f93f9e375a22ffb94395b9e85b0fe63
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: c4627a4b6d9d8b62737984b507e638019544ab67
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91155266"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400451"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mapowanie aplikacji eShopOnContainers na usługi platformy Azure
 
@@ -24,7 +24,7 @@ Składniki po stronie serwera tej architektury są łatwo mapowane do usług pla
 
 Usługi hostowane w kontenerach aplikacji, z ASP.NET Core aplikacje MVC do poszczególnych katalogów i mikrousług, mogą być hostowane i zarządzane w usłudze Azure Kubernetes Service (AKS). Aplikacja może działać lokalnie na platformie Docker i Kubernetes, a następnie można wdrożyć te same kontenery w środowiskach przejściowych i produkcyjnych hostowanych w AKS. Ten proces może być zautomatyzowany, ponieważ będziemy widzieć w następnej sekcji.
 
-AKS zapewnia usługi zarządzania dla poszczególnych klastrów kontenerów. Aplikacja będzie wdrażać oddzielne klastry AKS dla każdej mikrousługi pokazanej na diagramie architektury powyżej. Takie podejście umożliwia niezależne skalowanie poszczególnych usług zgodnie z wymaganiami zasobów. Każdą mikrousługi można również wdrożyć niezależnie, a w związku z tym takie wdrożenia powinny spowodować zero przestojów systemu.
+AKS zapewnia usługi zarządzania dla poszczególnych klastrów kontenerów. Aplikacja spowoduje wdrożenie oddzielnych kontenerów dla każdej mikrousługi w klastrze AKS, jak pokazano na diagramie architektury powyżej. Takie podejście umożliwia niezależne skalowanie poszczególnych usług zgodnie z wymaganiami zasobów. Każdą mikrousługi można również wdrożyć niezależnie, a w związku z tym takie wdrożenia powinny spowodować zero przestojów systemu.
 
 ## <a name="api-gateway"></a>Brama interfejsu API
 

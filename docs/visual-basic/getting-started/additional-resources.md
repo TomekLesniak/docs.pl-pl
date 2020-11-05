@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual Basic Web sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-ms.openlocfilehash: ea645e33c67bf1d39b477d8e4ce82b7a69a177fd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4b2d671e310763e6ddfa114bd63b031afba83a20
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398236"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400620"
 ---
 # <a name="additional-resources"></a>Zasoby dodatkowe
 
@@ -50,8 +50,8 @@ Poniższe witryny sieci Web oferują wskazówki i mogą pomóc w znalezieniu odp
 
 |Adres URL|Opis|
 |----------|----------------|
-|[Pomoc techniczna firmy Microsoft](https://support.microsoft.com)|Zapewnia dostęp do artykułów bazy wiedzy (KB), plików do pobrania i aktualizacji, obsługi przerzutów internetowych i innych usług.|
-|[Pytania dotyczące programu Visual Studio](https://developercommunity.visualstudio.com)|Umożliwia pliki błędów lub zadawanie sugestii do firmy Microsoft dotyczących platformy .NET i programu Visual Studio. Możesz również zgłosić usterkę, wybierając pozycję **Pomoc**  >  **Wyślij opinię**  >  **Zgłoś problem** w programie Visual Studio.|
+|[pomoc techniczna firmy Microsoft](https://support.microsoft.com)|Zapewnia dostęp do artykułów bazy wiedzy (KB), plików do pobrania i aktualizacji, obsługi przerzutów internetowych i innych usług.|
+|[Pytania dotyczące programu Visual Studio](https://aka.ms/feedback/report?space=61)|Umożliwia pliki błędów lub zadawanie sugestii do firmy Microsoft dotyczących platformy .NET i programu Visual Studio. Możesz również zgłosić usterkę, wybierając pozycję **Pomoc**  >  **Wyślij opinię**  >  **Zgłoś problem** w programie Visual Studio.|
 
 ## <a name="third-party-resources"></a>Zasoby innych firm
 

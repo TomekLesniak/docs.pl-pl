@@ -2,12 +2,12 @@
 title: Samouczek dotyczący głównych obszarów języka C#
 description: Jesteś nowym w języku C#? Poznaj podstawy języka.
 ms.date: 08/06/2020
-ms.openlocfilehash: 9069bb194169a7743f12d998b2842186ed0ef404
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a73399643ada05a4bfb17fadd17bf3267514e99d
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558178"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400751"
 ---
 # <a name="major-language-areas"></a>Główne obszary języka
 
@@ -17,30 +17,30 @@ Języki C# i .NET udostępniają wiele różnych typów kolekcji. Tablice mają 
 
 ### <a name="arrays"></a>Tablice
 
-[***Tablica***](../programming-guide/arrays/index.md) to struktura danych zawierająca wiele zmiennych, do których można uzyskać dostęp za pomocą obliczanych indeksów. Zmienne zawarte w tablicy, nazywane również ***elementami*** tablicy, są tego samego typu. Ten typ jest nazywany ***typem elementu*** tablicy.
+[ * **Tablica** _](../programming-guide/arrays/index.md) to struktura danych zawierająca wiele zmiennych, do których uzyskuje się dostęp za pomocą indeksów obliczanych. Zmienne zawarte w tablicy, nazywane również _*_elementami_*_ tablicy, są tego samego typu. Ten typ jest nazywany _*_typem elementu_*_ tablicy.
 
-Typy tablic są typami odwołań, a deklaracja zmiennej tablicowej po prostu ustawia miejsce na odwołanie do wystąpienia tablicy. Rzeczywiste wystąpienia tablicy są tworzone dynamicznie w czasie wykonywania przy użyciu `new` operatora. `new`Operacja określa ***Długość*** nowego wystąpienia tablicy, które jest następnie naprawione dla okresu istnienia wystąpienia. Indeksy elementów z zakresu tablicy od `0` do `Length - 1` . `new`Operator automatycznie inicjuje elementy tablicy do ich wartości domyślnych, które na przykład są równe zero dla wszystkich typów liczbowych i `null` dla wszystkich typów odwołań.
+Typy tablic są typami odwołań, a deklaracja zmiennej tablicowej po prostu ustawia miejsce na odwołanie do wystąpienia tablicy. Rzeczywiste wystąpienia tablicy są tworzone dynamicznie w czasie wykonywania przy użyciu `new` operatora. `new`Operacja określa _*_Długość_*_ nowego wystąpienia tablicy, które jest następnie naprawione dla okresu istnienia wystąpienia. Indeksy elementów z zakresu tablicy od `0` do `Length - 1` . `new`Operator automatycznie inicjuje elementy tablicy do ich wartości domyślnych, które na przykład są równe zero dla wszystkich typów liczbowych i `null` dla wszystkich typów odwołań.
 
 Poniższy przykład tworzy tablicę `int` elementów, Inicjuje tablicę i drukuje zawartość tablicy.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="ArraysSample":::
 
-Ten przykład tworzy i działa na ***tablicy jednowymiarowej***. Język C# obsługuje również ***tablice***wielowymiarowe. Liczba wymiarów typu tablicy, znana również jako ***ranga*** typu tablicy, jest taka, a liczba przecinkiów zapisywana między nawiasami kwadratowymi typu tablicy. Poniższy przykład przydziela odpowiednio jednowymiarowe, dwuwymiarowe i trójwymiarowe tablice.
+Ten przykład tworzy i działa na _*_tablicy jednowymiarowej_*_. Język C# obsługuje również _*_tablice_*_ wielowymiarowe. Liczba wymiarów typu tablicy, znana również jako _*_ranga_*_ typu tablicy, jest taka, a liczba przecinkiów zapisywana między nawiasami kwadratowymi typu tablicy. Poniższy przykład przydziela odpowiednio jednowymiarowe, dwuwymiarowe i trójwymiarowe tablice.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="DeclareArrays":::
 
 `a1`Tablica zawiera 10 elementów, `a2` tablica zawiera 50 (10 × 5) elementów, a `a3` Tablica zawiera 100 (10 × 5 x 2) elementów.
-Typ elementu tablicy może być dowolnego typu, łącznie z typem tablicy. Tablica z elementami typu tablicy jest czasami nazywana ***tablicą nieregularną*** , ponieważ długości tablic elementów nie wszystkie muszą być takie same. Poniższy przykład alokuje tablicę tablic `int` :
+Typ elementu tablicy może być dowolnego typu, łącznie z typem tablicy. Tablica z elementami typu tablicy jest czasami nazywana _*_tablicą nieregularną_*_ , ponieważ długości tablic elementów nie wszystkie muszą być takie same. Poniższy przykład alokuje tablicę tablic `int` :
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="ArrayOfArrays":::
 
 Pierwszy wiersz tworzy tablicę z trzema elementami, każdy typ `int[]` i każdy z początkową wartością `null` . Kolejne wiersze inicjują następnie trzy elementy z odwołaniami do poszczególnych wystąpień tablicy o różnej długości.
 
-`new`Operator zezwala na określenie wartości początkowych elementów tablicy przy użyciu ***inicjatora tablicy***, który jest listą wyrażeń pisanych ogranicznikami `{` i `}` . Poniższy przykład przydziela i inicjuje `int[]` z trzema elementami.
+`new`Operator zezwala na określenie wartości początkowych elementów tablicy przy użyciu _*_inicjatora tablicy_*_ , który jest listą wyrażeń pisanych ogranicznikami `{` i `}` . Poniższy przykład przydziela i inicjuje `int[]` z trzema elementami.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="InitializeArray":::
 
-Długość tablicy jest wywnioskowana na podstawie liczby wyrażeń między `{` i `}` . Deklaracje zmiennej lokalnej i pola można skrócić w taki sposób, aby nie trzeba było przestawiać tego typu tablicy.
+Długość tablicy jest wywnioskowana na podstawie liczby wyrażeń między `{` i `}` . Inicjalizacja tablicy może być skrócona w taki sposób, aby nie trzeba było przetworzyć typu tablicy.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="InitializeShortened":::
 
@@ -56,19 +56,19 @@ Oba poprzednie przykłady są równoważne następującym kodzie:
 
 ## <a name="string-interpolation"></a>Interpolacja ciągów
 
-[***Interpolacja ciągów***](../language-reference/tokens/interpolated.md) w języku C# umożliwia formatowanie ciągów przez definiowanie wyrażeń, których wyniki są umieszczane w ciągu formatu. Na przykład poniższy przykład drukuje temperaturę w danym dniu z zestawu danych pogody:
+[_*_Interpolacja ciągów_*_](../language-reference/tokens/interpolated.md) w języku C# umożliwia formatowanie ciągów przez definiowanie wyrażeń, których wyniki są umieszczane w ciągu formatu. Na przykład poniższy przykład drukuje temperaturę w danym dniu z zestawu danych pogody:
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="StringInterpolation":::
 
-Ciąg interpolowany jest zadeklarowany przy użyciu `$` tokenu. Interpolacja ciągów oblicza wyrażenia między `{` i `}` , następnie konwertuje wynik na i `string` zastępuje tekst między nawiasami z wynikiem wyrażenia w postaci ciągu. `:`W pierwszym wyrażeniu `{weatherData.Date:MM-DD-YYYY}` określa *ciąg formatu*. W poprzednim przykładzie określa, że data powinna być drukowana w formacie "MM-DD-RRRR".
+Ciąg interpolowany jest zadeklarowany przy użyciu `$` tokenu. Interpolacja ciągów oblicza wyrażenia między `{` i `}` , następnie konwertuje wynik na i `string` zastępuje tekst między nawiasami z wynikiem wyrażenia w postaci ciągu. `:`W pierwszym wyrażeniu `{weatherData.Date:MM-DD-YYYY}` określa ciąg _format *. W poprzednim przykładzie określa, że data powinna być drukowana w formacie "MM-DD-RRRR".
 
 ## <a name="pattern-matching"></a>Dopasowanie do wzorca
 
-Język C# zawiera wyrażenia [***dopasowania wzorców***](../pattern-matching.md) służące do wykonywania zapytań o stan obiektu i wykonywania kodu na podstawie tego stanu. Możesz sprawdzić typy i wartości właściwości i pól, aby określić, która akcja ma zostać podjęta. `switch`Wyrażenie jest wyrażeniem podstawowym dla dopasowania wzorca.
+Język C# zawiera wyrażenia [ * **pasujące do wzorca**](../pattern-matching.md) , aby zbadać stan obiektu i wykonać kod na podstawie tego stanu. Możesz sprawdzić typy i wartości właściwości i pól, aby określić, która akcja ma zostać podjęta. `switch`Wyrażenie jest wyrażeniem podstawowym dla dopasowania wzorca.
 
 ## <a name="delegates-and-lambda-expressions"></a>Delegaty i wyrażenia lambda
 
-[***Typ delegata***](../delegates-overview.md) reprezentuje odwołania do metod z określoną listą parametrów i zwracanym typem. Delegaty umożliwiają traktowanie metod jako jednostek, które mogą być przypisane do zmiennych i przekazane jako parametry. Delegaty są podobne do koncepcji wskaźników funkcji, które znajdują się w innych językach. W przeciwieństwie do wskaźników funkcji Delegaty są zorientowane obiektowo i są bezpieczne dla typów.
+[_*_Typ delegata_*_](../delegates-overview.md) reprezentuje odwołania do metod z określoną listą parametrów i zwracanym typem. Delegaty umożliwiają traktowanie metod jako jednostek, które mogą być przypisane do zmiennych i przekazane jako parametry. Delegaty są podobne do koncepcji wskaźników funkcji, które znajdują się w innych językach. W przeciwieństwie do wskaźników funkcji Delegaty są zorientowane obiektowo i są bezpieczne dla typów.
 
 Poniższy przykład deklaruje i używa typu delegata o nazwie `Function` .
 
@@ -98,7 +98,7 @@ Ten mały przykład pokazuje główne funkcje programowania asynchronicznego:
 
 ## <a name="attributes"></a>Atrybuty
 
-Typy, elementy członkowskie i inne jednostki w programie C# obsługują Modyfikatory kontrolujące pewne aspekty ich zachowania. Na przykład dostępność metody jest kontrolowana za pomocą `public` `protected` `internal` modyfikatorów,, i `private` . Język C# służy do uogólniania tej funkcji w taki sposób, że typy informacji deklaratywnych zdefiniowanych przez użytkownika mogą być dołączane do jednostek programu i pobierane w czasie wykonywania. Programy określają te dodatkowe informacje deklaracyjne przez definiowanie i używanie [***atrybutów***](../programming-guide/concepts/attributes/index.md).
+Typy, elementy członkowskie i inne jednostki w programie C# obsługują Modyfikatory kontrolujące pewne aspekty ich zachowania. Na przykład dostępność metody jest kontrolowana za pomocą `public` `protected` `internal` modyfikatorów,, i `private` . Język C# służy do uogólniania tej funkcji w taki sposób, że typy informacji deklaratywnych zdefiniowanych przez użytkownika mogą być dołączane do jednostek programu i pobierane w czasie wykonywania. Programy określają te dodatkowe informacje deklaracyjne przez definiowanie i używanie [*_atrybutów_* * _](../programming-guide/concepts/attributes/index.md).
 
 Poniższy przykład deklaruje `HelpAttribute` atrybut, który może być umieszczony w jednostkach programu, aby udostępnić linki do powiązanej dokumentacji.
 

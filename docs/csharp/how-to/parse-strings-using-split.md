@@ -1,6 +1,6 @@
 ---
-title: Analizowanie ciągów za pomocą ciągu. Split (Przewodnik C#)
-description: Metoda Split zwraca tablicę ciągów podzieloną z zestawu ograniczników. Jest to prosty sposób, aby przeanalizować ciągi.
+title: Dzielenie ciągów przy użyciu ciągu. Split (Przewodnik C#)
+description: Metoda Split zwraca tablicę ciągów podzieloną z zestawu ograniczników. Jest to prosty sposób wyodrębniania podciągów z ciągu.
 ms.date: 01/03/2018
 helpviewer_keywords:
 - splitting strings [C#]
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: ee0921c4d3c931e2f677ec0bb8458992afc57d57
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: 5361a3c60905edd19b180c5ddb14064a85f64337
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342647"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400503"
 ---
-# <a name="how-to-parse-strings-using-stringsplit-in-c"></a>Jak analizować ciągi przy użyciu ciągu. Split w C\#
+# <a name="how-to-separate-strings-using-stringsplit-in-c"></a>Jak rozdzielić ciągi przy użyciu ciągu. Split w C\#
 
 <xref:System.String.Split%2A?displayProperty=nameWithType>Metoda tworzy tablicę podciągów, dzieląc ciąg wejściowy na podstawie co najmniej jednego ogranicznika. Ta metoda jest często najprostszym sposobem odseparowania ciągu na granicach wyrazów. Jest on również używany do dzielenia ciągów dla innych określonych znaków lub ciągów.
 
@@ -50,7 +50,7 @@ Kolejne wystąpienia dowolnego separatora tworzą pusty ciąg w tablicy wyjścio
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Wyodrębnij elementy z ciągu](../../standard/base-types/parse-strings.md)
+- [Wyodrębnij elementy z ciągu](../../standard/base-types/divide-up-strings.md)
 - [Przewodnik programowania w języku C#](../programming-guide/index.md)
 - [Ciągi](../programming-guide/strings/index.md)
 - [Wyrażenia regularne .NET](../../standard/base-types/regular-expressions.md)

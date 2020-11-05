@@ -2,12 +2,12 @@
 title: Tworzenie biblioteki klas .NET Standard przy użyciu Visual Studio dla komputerów Mac
 description: Dowiedz się, jak utworzyć bibliotekę klas .NET Standard przy użyciu Visual Studio dla komputerów Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 433f6e0e2d784878c9a1616139b39ec56d695bcf
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a78cc68d29095e4fefcaf1d3b2158d673b8892ec
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537642"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400568"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>Samouczek: Tworzenie biblioteki .NET Standard przy użyciu Visual Studio dla komputerów Mac
 
@@ -18,8 +18,8 @@ W tym samouczku utworzysz bibliotekę klas, która zawiera jedną metodę obsłu
 > [!NOTE]
 > Opinie są wysoce wyceniane. Istnieją dwa sposoby przekazywania opinii zespołowi programistycznemu na Visual Studio dla komputerów Mac:
 >
-> - W Visual Studio dla komputerów Mac wybierz pozycję **Pomoc**  >  **Zgłoś problem** z menu lub **Zgłoś problem** na ekranie powitalnym, co spowoduje otwarcie okna umożliwiającego zgłoszenie usterki. Swoje opinie możesz śledzić w portalu [Społeczność deweloperów](https://developercommunity.visualstudio.com/spaces/41/index.html).
-> - Aby dokonać sugestii, wybierz pozycję **Pomoc**  >  **Podaj sugestię** z menu lub **Podaj sugestię** z ekranu powitalnego, który przeprowadzi Cię do [witryny internetowej społeczność deweloperów Visual Studio dla komputerów Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
+> - W Visual Studio dla komputerów Mac wybierz pozycję **Pomoc**  >  **Zgłoś problem** z menu lub **Zgłoś problem** na ekranie powitalnym, co spowoduje otwarcie okna umożliwiającego zgłoszenie usterki. Swoje opinie możesz śledzić w portalu [Społeczność deweloperów](https://aka.ms/feedback/report?space=41).
+> - Aby dokonać sugestii, wybierz pozycję **Pomoc**  >  **Podaj sugestię** z menu lub **Podaj sugestię** z ekranu powitalnego, który przeprowadzi Cię do [witryny internetowej społeczność deweloperów Visual Studio dla komputerów Mac](https://aka.ms/feedback/suggest?space=41).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -37,7 +37,7 @@ Rozwiązanie programu Visual Studio służy jako kontener dla jednego lub wielu 
 
 1. W oknie uruchamiania wybierz pozycję **Nowy projekt**.
 
-1. W oknie dialogowym **Nowy projekt** w węźle **wiele platform** wybierz pozycję **Biblioteka**, a następnie wybierz szablon **Biblioteka .NET Standard** , a następnie wybierz przycisk **dalej**.
+1. W oknie dialogowym **Nowy projekt** w węźle **wiele platform** wybierz pozycję **Biblioteka** , a następnie wybierz szablon **Biblioteka .NET Standard** , a następnie wybierz przycisk **dalej**.
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-new-project.png" alt-text="Okno dialogowe Nowy projekt":::
 
@@ -49,7 +49,7 @@ Rozwiązanie programu Visual Studio służy jako kontener dla jednego lub wielu 
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-new-project-options.png" alt-text="Opcje okna dialogowego Visual Studio dla komputerów Mac nowego projektu":::
 
-1. Z menu głównego wybierz pozycję **Widok**  >  **okienka**  >  **Solution**, a następnie wybierz ikonę dokowania, aby zachować otwartą konsolę.
+1. Z menu głównego wybierz pozycję **Widok**  >  **okienka**  >  **Solution** , a następnie wybierz ikonę dokowania, aby zachować otwartą konsolę.
 
    :::image type="content" source="media/library-with-visual-studio-mac/solution-dock-icon.png" alt-text="Ikona dokowania dla konsoli rozwiązania":::
 
@@ -77,7 +77,7 @@ Dodaj aplikację konsolową, która używa biblioteki klas. Aplikacja wyświetli
 
 1. Wybierz pozycję **.NET Core 3,1** jako **platformę docelową** i wybierz pozycję **dalej**.
 
-1. Nadaj nazwę **pokazowi**projektu. Wybierz pozycję **Utwórz** , aby utworzyć projekt w rozwiązaniu.
+1. Nadaj nazwę **pokazowi** projektu. Wybierz pozycję **Utwórz** , aby utworzyć projekt w rozwiązaniu.
 
    :::image type="content" source="media/library-with-visual-studio-mac/add-showcase-project.png" alt-text="Dodaj projekt pokazu":::
 
@@ -105,7 +105,7 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-console-window.png" alt-text="Visual Studio dla komputerów Mac okno konsoli z uruchomioną aplikacją":::
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 * [Tworzenie bibliotek przy użyciu interfejs wiersza polecenia platformy .NET Core](libraries.md)
 * [Wersje .NET Standard i obsługiwane przez nich platformy](../../standard/net-standard.md).

@@ -4,13 +4,13 @@ description: Polecenie dotnet New umożliwia tworzenie nowych projektów platfor
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 09/01/2020
-ms.openlocfilehash: 4a4c8e2806fee663b5f6aa255a6f24250a072a85
-ms.sourcegitcommit: 532b03d5bbab764d63356193b04cd2281bc01239
+ms.date: 09/04/2020
+ms.openlocfilehash: 2ee06c37cd950f3b9771db2f30fe353435641d67
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92526619"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400594"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -78,7 +78,7 @@ Polecenie wywołuje [aparat szablonu](https://github.com/dotnet/templating) , ab
 | ViewImports MVC                              | [viewimports](#namespace)       | Znajd         | Web/ASP. NET                           | 2,0        |
 | ViewStart MVC                                | `viewstart`                     | Znajd         | Web/ASP. NET                           | 2,0        |
 | Blazor Aplikacja serwera                            | [blazorserver](#blazorserver)   | Znajd         | WitrynęBlazor                            | 3.0        |
-| BlazorWebAssemblyAplikacja                       | `blazorwasm`                    | Znajd         | WitrynęBlazor/WebAssembly                | 3.1.300    |
+| BlazorWebAssemblyAplikacja                       | [blazorwasm](#blazorwasm)       | Znajd         | WitrynęBlazor/WebAssembly                | 3.1.300    |
 | ASP.NET Core puste                           | [witrynę](#web)                     | [C#], F #     | Sieć Web/pusta                             | 1.0        |
 | Aplikacja sieci Web ASP.NET Core (Model-View-Controller) | [Standard](#web-options)             | [C#], F #     | Web/MVC                               | 1.0        |
 | Aplikacja sieci Web ASP.NET Core                         | [webapp, Razor](#web-options)   | Znajd         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
@@ -194,7 +194,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="classlib"></a>określono
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Określa [platformę](../../standard/frameworks.md) docelową. Wartości: `netcoreapp<version>` Aby utworzyć bibliotekę klas platformy .NET Core lub `netstandard<version>` utworzyć bibliotekę klas .NET Standard. Wartość domyślna to `netstandard2.0`.
 
@@ -212,7 +212,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a> WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Określa [platformę](../../standard/frameworks.md) docelową. Wartość domyślna to `netcoreapp3.1`. Dostępne od wersji .NET Core 3,1 SDK.
 
@@ -230,7 +230,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="winforms-winformslib"></a><a name="winforms"></a> WinForms, winformslib
 
-- _*`--langVersion <VERSION_NUMBER>`**
+- _ *`--langVersion <VERSION_NUMBER>`**
 
   Ustawia `LangVersion` Właściwość w utworzonym pliku projektu. Na przykład użyj, `--langVersion 7.3` Aby użyć języka C# 7,3.
 
@@ -244,7 +244,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="worker-grpc"></a><a name="web-others"></a> proces roboczy, GRPC
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Określa [platformę](../../standard/frameworks.md) docelową. Wartość domyślna to `netcoreapp3.1`. Dostępne od wersji .NET Core 3,1 SDK.
 
@@ -260,7 +260,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="mstest-xunit"></a><a name="test"></a> MSTest, xUnit
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Określa [platformę](../../standard/frameworks.md) docelową. Opcja dostępna od wersji .NET Core 3,0 SDK.
 
@@ -283,7 +283,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="nunit"></a>NUnit
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Określa [platformę](../../standard/frameworks.md) docelową.
 
@@ -308,7 +308,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="page"></a>stronic
 
-- _*`-na|--namespace <NAMESPACE_NAME>`**
+- _ *`-na|--namespace <NAMESPACE_NAME>`**
 
   Przestrzeń nazw dla wygenerowanego kodu. Wartość domyślna to `MyApp.Namespace`.
 
@@ -320,7 +320,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="viewimports-proto"></a><a name="namespace"></a> viewimports, proto
 
-- _*`-na|--namespace <NAMESPACE_NAME>`**
+- _ *`-na|--namespace <NAMESPACE_NAME>`**
 
   Przestrzeń nazw dla wygenerowanego kodu. Wartość domyślna to `MyApp.Namespace`.
 
@@ -328,7 +328,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="blazorserver"></a>blazorserver
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Typ uwierzytelniania do użycia. Możliwe wartości są następujące:
 
@@ -397,9 +397,113 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 **_
 
+### <a name="blazorwasm"></a>blazorwasm
+
+- _ *`-f|--framework <FRAMEWORK>`**
+
+  Określa [platformę](../../standard/frameworks.md) docelową.
+
+  W poniższej tabeli wymieniono wartości domyślne zgodnie z używanym numerem wersji zestawu SDK:
+
+  | Wersja zestawu SDK | Wartość domyślna   |
+  |-------------|-----------------|
+  | 5,0         | `net5.0`        |
+  | 3,1         | `netcoreapp3.1` |
+
+- **`--no-restore`**
+
+  Nie wykonuje przywracania niejawnego podczas tworzenia projektu.
+
+- **`-ho|--hosted`**
+
+  Zawiera ASP.NET Core hosta dla Blazor WebAssembly aplikacji.
+
+- **`-au|--auth <AUTHENTICATION_TYPE>`**
+
+  Typ uwierzytelniania do użycia. Możliwe wartości są następujące:
+
+  - `None` -Brak uwierzytelniania (wartość domyślna).
+  - `Individual` -Uwierzytelnianie indywidualne.
+  - `IndividualB2C` -Uwierzytelnianie indywidualne przy użyciu Azure AD B2C.
+  - `SingleOrg` -Organizacja uwierzytelnianie dla pojedynczej dzierżawy.
+
+- **`--authority <AUTHORITY>`**
+
+  Urząd dostawcy OIDC. Użyj z `Individual` uwierzytelnianiem. Wartość domyślna to `https://login.microsoftonline.com/`.
+
+- **`--aad-b2c-instance <INSTANCE>`**
+
+  Wystąpienie Azure Active Directory B2C, z którym ma zostać nawiązane połączenie. Użyj z `IndividualB2C` uwierzytelnianiem. Wartość domyślna to `https://aadB2CInstance.b2clogin.com/`.
+
+- **`-ssp|--susi-policy-id <ID>`**
+
+  Identyfikator zasad logowania i rejestrowania dla tego projektu. Użyj z `IndividualB2C` uwierzytelnianiem.
+
+- **`--aad-instance <INSTANCE>`**
+
+  Wystąpienie Azure Active Directory, z którym ma zostać nawiązane połączenie. Użyj z `SingleOrg` uwierzytelnianiem. Wartość domyślna to `https://login.microsoftonline.com/`.
+
+- **`--client-id <ID>`**
+
+  Identyfikator klienta dla tego projektu. Używanie z `IndividualB2C` , `SingleOrg` lub `Individual` uwierzytelnianie w scenariuszach autonomicznych. Wartość domyślna to `33333333-3333-3333-33333333333333333`.
+
+- **`--domain <DOMAIN>`**
+
+  Domena dzierżawy katalogu. Używanie z usługą `SingleOrg` lub `IndividualB2C` uwierzytelnianiem. Wartość domyślna to `qualified.domain.name`.
+
+- **`--app-id-uri <URI>`**
+
+  Identyfikator URI identyfikatora aplikacji dla interfejsu API serwera, który chcesz wywołać. Używanie z usługą `SingleOrg` lub `IndividualB2C` uwierzytelnianiem. Wartość domyślna to `api.id.uri`.
+
+- **`--api-client-id <ID>`**
+
+  Identyfikator klienta dla interfejsu API, który jest hostem serwera. Używanie z usługą `SingleOrg` lub `IndividualB2C` uwierzytelnianiem. Wartość domyślna to `11111111-1111-1111-11111111111111111`.
+
+- **`-s|--default-scope <SCOPE>`**
+
+  Zakres interfejsu API, do którego klient musi zażądać tokenu dostępu. Używanie z usługą `SingleOrg` lub `IndividualB2C` uwierzytelnianiem. Wartość domyślna to `user_impersonation`.
+
+- **`--tenant-id <ID>`**
+
+  Identyfikator TenantId katalogu, z którym ma zostać nawiązane połączenie. Użyj z `SingleOrg` uwierzytelnianiem. Wartość domyślna to `22222222-2222-2222-2222-222222222222`.
+
+- **`-r|--org-read-access`**
+
+  Zezwala tej aplikacji na dostęp do odczytu do katalogu. Dotyczy tylko `SingleOrg` uwierzytelniania.
+
+- **`--exclude-launch-settings`**
+
+  Wyklucza *launchSettings.js* z wygenerowanego szablonu.
+
+- **`-p|--pwa`**
+
+  tworzy progresywną aplikację sieci Web (PWA), która obsługuje instalację i użycie w trybie offline.
+
+- **`--no-https`**
+
+  Wyłącza protokół HTTPS. Ta opcja ma zastosowanie tylko wtedy `Individual` , gdy `IndividualB2C` lub `SingleOrg` nie są używane dla `--auth` .
+
+- **`-uld|--use-local-db`**
+
+  Należy używać LocalDB zamiast oprogramowania SQLite. Dotyczy tylko `Individual` `IndividualB2C` uwierzytelniania.
+
+- **`--called-api-url <URL>`**
+
+  Adres URL interfejsu API do wywołania z aplikacji sieci Web. Dotyczy tylko `SingleOrg` `IndividualB2C` uwierzytelniania bez określonego hosta ASP.NET Core. Wartość domyślna to `https://graph.microsoft.com/v1.0/me`.
+
+- **`--calls-graph`**
+
+  Określa, czy aplikacja sieci Web wywołuje Microsoft Graph. Dotyczy tylko `SingleOrg` uwierzytelniania.
+
+- **`--called-api-scopes <SCOPES>`**
+
+  Zakresy do żądania wywołania interfejsu API z aplikacji sieci Web. Dotyczy tylko `SingleOrg` `IndividualB2C` uwierzytelniania bez określonego hosta ASP.NET Core. Wartość domyślna to `user.read`.
+
+**_
+
 ### <a name="web"></a>web
 
-- _*`--exclude-launch-settings`**
+- _ *`--exclude-launch-settings`**
 
   Wyklucza *launchSettings.js* z wygenerowanego szablonu.
 
@@ -427,7 +531,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="mvc-webapp"></a><a name="web-options"></a> MVC, webapp
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Typ uwierzytelniania do użycia. Możliwe wartości są następujące:
 
@@ -517,7 +621,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="angular-react"></a><a name="spa"></a> kątowy, reagowanie
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Typ uwierzytelniania do użycia. Dostępne od wersji .NET Core 3,0 SDK.
   
@@ -558,7 +662,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="reactredux"></a>reactredux
 
-- _*`--exclude-launch-settings`**
+- _ *`--exclude-launch-settings`**
 
   Wyklucza *launchSettings.js* z wygenerowanego szablonu.
 
@@ -586,7 +690,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="razorclasslib"></a>razorclasslib
 
-- _*`--no-restore`**
+- _ *`--no-restore`**
 
   Nie wykonuje przywracania niejawnego podczas tworzenia projektu.
 
@@ -598,7 +702,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
   
 ### <a name="webapi"></a>WebApi
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Typ uwierzytelniania do użycia. Możliwe wartości są następujące:
 
@@ -667,7 +771,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 ### <a name="globaljson"></a>globaljson
 
-- _*`--sdk-version <VERSION_NUMBER>`**
+- _ *`--sdk-version <VERSION_NUMBER>`**
 
   Określa wersję zestaw .NET Core SDK, która ma być używana w *global.js* pliku.
 

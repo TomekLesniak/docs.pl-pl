@@ -6,16 +6,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a5b21433-b49d-415c-b00e-bcbfb0d267d7
-ms.openlocfilehash: bc2be4d408385936598d94d34f9b452d950516d3
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 05df7b5348fecebb7504ebb4e2623f688b6549e1
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553544"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400838"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml"></a>Atomowe obiekty XName i XNamespace (LINQ to XML)
 
-<xref:System.Xml.Linq.XName> i <xref:System.Xml.Linq.XNamespace> obiekty są *atomowe*; oznacza to, że jeśli zawierają one taką samą kwalifikowaną nazwę, odwołują się do tego samego obiektu. Zapewnia to korzyści z wydajności dla zapytań: w przypadku porównania dwóch nazw atomowych dla równości, podstawowy język pośredni musi określić, czy te dwa odwołania wskazują na ten sam obiekt. Kod źródłowy nie musi wykonywać porównań ciągów, co może potrwać dłużej.
+<xref:System.Xml.Linq.XName> i <xref:System.Xml.Linq.XNamespace> obiekty są *atomowe* ; oznacza to, że jeśli zawierają one taką samą kwalifikowaną nazwę, odwołują się do tego samego obiektu. Zapewnia to korzyści z wydajności dla zapytań: w przypadku porównania dwóch nazw atomowych dla równości, podstawowy język pośredni musi określić, czy te dwa odwołania wskazują na ten sam obiekt. Kod źródłowy nie musi wykonywać porównań ciągów, co może potrwać dłużej.
 
 ## <a name="atomization-semantics"></a>Semantyka rozproszenie
 
@@ -30,7 +30,7 @@ Aby można było włączyć obiekt Atoms, Konstruktor dla klasy musi być prywat
 Poniższy kod tworzy niektóre <xref:System.Xml.Linq.XElement> obiekty i pokazuje, że identyczne nazwy współużytkują to samo wystąpienie.
 
 ```csharp
-XElement r1 = new XElement("Root", "data1");
+var r1 = new XElement("Root", "data1");
 XElement r2 = XElement.Parse("<Root>data2</Root>");
 
 if ((object)r1.Name == (object)r2.Name)
@@ -77,7 +77,7 @@ Jak wspomniano wcześniej, zaletą obiektów atomowych jest użycie jednej z met
 Poniższy przykład przekazuje <xref:System.Xml.Linq.XName> <xref:System.Xml.Linq.XContainer.Descendants%2A> wywołanie metody, które następnie ma lepszą wydajność ze względu na wzorzec rozproszenie.
 
 ```csharp
-XElement root = new XElement("Root",
+var root = new XElement("Root",
     new XElement("C1", 1),
     new XElement("Z1",
         new XElement("C1", 2),
@@ -96,9 +96,9 @@ foreach (var z in query)
 ```vb
 Dim root As New XElement("Root", New XElement("C1", 1), New XElement("Z1", New XElement("C1", 2), New XElement("C1", 1)))
 
-Dim query = From e In root.Descendants("C1") Where CInt(e) = 1e
+Dim query = From e In root.Descendants("C1") Where CInt(e) = 1
 
-For Each z As var In query
+For Each z In query
     Console.WriteLine(z)
 Next
 ```
