@@ -1442,6 +1442,8 @@ items:
                 href: ../standard/base-types/comparing.md
               - name: Zmiana wielkości liter
                 href: ../standard/base-types/changing-case.md
+              - name: Wyodrębnianie elementów z ciągu
+                href: ../standard/base-types/parse-strings.md
               - name: Używanie klasy StringBuilder
                 href: ../standard/base-types/stringbuilder.md
               - name: 'Instrukcje: Wykonywanie podstawowych działań na ciągach'

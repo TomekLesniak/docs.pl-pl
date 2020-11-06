@@ -4,12 +4,12 @@ description: 'Dowiedz się, jak F# Interactive (dotnet FSI) służy do interakty
 ms.date: 10/31/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: ba9111efccceca03fda43ff11c3f111610541595
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: 89570a54ecebe625a1612e4b97b01c3693e4707c
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342686"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400869"
 ---
 # <a name="interactive-programming-with-f"></a>Programowanie interaktywne przy użyciu języka F\#
 
@@ -62,7 +62,7 @@ val it : unit = ()
 >
 ```
 
-Formatowanie kodu jest zachowywane i występuje podwójny semiclon ( `;;` ) kończący dane wejściowe. F# Interactive następnie ocenił kod i Wydrukowano wyniki.
+Formatowanie kodu jest zachowywane i występuje podwójny średnik ( `;;` ) kończący dane wejściowe. F# Interactive następnie ocenił kod i Wydrukowano wyniki.
 
 ## <a name="scripting-with-f"></a>Wykonywanie skryptów przy użyciu języka F\#
 
@@ -204,7 +204,7 @@ from
 fsi
 ```
 
-Należy pamiętać, że można również użyć, `System.Environment.GetCommandLineArgs()` Aby uzyskać dostęp do tych samych argumentów.
+Można również użyć `System.Environment.GetCommandLineArgs()` , aby uzyskać dostęp do tych samych argumentów.
 
 ## <a name="f-interactive-directive-reference"></a>Dokumentacja dyrektywy F# Interactive
 
@@ -245,7 +245,7 @@ Kod wprowadzony w tej samej sesji ma dostęp do dowolnych wcześniej wprowadzony
 
 W przypadku uruchamiania w programie Visual Studio F# Interactive uruchamiane niezależnie od projektu, więc na przykład nie można używać konstrukcji zdefiniowanych w projekcie w F# Interactive, chyba że skopiujesz kod funkcji do okna interaktywnego.
 
-Można kontrolować F# Interactive argumenty wiersza polecenia (Opcje), dostosowując ustawienia. W menu **Narzędzia** wybierz pozycję **Opcje...** , a następnie rozwiń węzeł **Narzędzia języka F #**. Te dwie ustawienia, które można zmienić, to opcje F# Interactive i ustawienie **F# Interactive 64-bitowe** , które jest istotne tylko w przypadku uruchamiania F# Interactive na komputerze 64-bitowym. To ustawienie określa, czy chcesz uruchomić dedykowaną 64-bitową wersję **fsi.exe** lub **fsianycpu.exe** , która korzysta z architektury komputera, aby określić, czy uruchomić program jako proces 32-bitowy czy 64-bitowy.
+Można kontrolować F# Interactive argumenty wiersza polecenia (Opcje) przez dostosowanie ustawień. W menu **Narzędzia** wybierz pozycję **Opcje...** , a następnie rozwiń węzeł **Narzędzia języka F #**. Te dwie ustawienia, które można zmienić, to opcje F# Interactive i ustawienie **F# Interactive 64-bitowe** , które jest istotne tylko w przypadku uruchamiania F# Interactive na komputerze 64-bitowym. To ustawienie określa, czy chcesz uruchomić dedykowaną 64-bitową wersję **fsi.exe** lub **fsianycpu.exe** , która korzysta z architektury komputera, aby określić, czy uruchomić program jako proces 32-bitowy czy 64-bitowy.
 
 ## <a name="related-articles"></a>Pokrewne artykuły:
 

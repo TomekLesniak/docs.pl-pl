@@ -12,16 +12,15 @@
     - name: Niezależne od kultury operacje na ciągach
       href: culture-insensitive-string-operations.md
       items:
-        - name: Wykonywanie niezależnych od kultury operacji na ciągach
+        - name: Omówienie
           href: performing-culture-insensitive-string-operations.md
-          items:
-            - name: Porównanie ciągów
-              href: performing-culture-insensitive-string-comparisons.md
-            - name: Zmiany wielkości liter
-              href: performing-culture-insensitive-case-changes.md
-            - name: Operacje na ciągach w kolekcjach
-              href: performing-culture-insensitive-string-operations-in-collections.md
-            - name: Operacje na ciągach w tablicach
-              href: performing-culture-insensitive-string-operations-in-arrays.md
+        - name: Porównanie ciągów
+          href: performing-culture-insensitive-string-comparisons.md
+        - name: Zmiany wielkości liter
+          href: performing-culture-insensitive-case-changes.md
+        - name: Operacje na ciągach w kolekcjach
+          href: performing-culture-insensitive-string-operations-in-collections.md
+        - name: Operacje na ciągach w tablicach
+          href: performing-culture-insensitive-string-operations-in-arrays.md
     - name: Najlepsze praktyki dotyczące tworzenia aplikacji gotowych do wydania
       href: best-practices-for-developing-world-ready-apps.md
