@@ -1,7 +1,7 @@
 ---
 title: Standardowe ciągi formatujące datę i godzinę
-description: W tym artykule dowiesz się, jak używać standardowego ciągu formatu daty i godziny w celu zdefiniowania tekstu reprezentacji wartości daty i godziny w programie .NET.
-ms.date: 03/30/2017
+description: Dowiedz się, jak używać standardowego ciągu formatu daty i godziny, aby zdefiniować tekstową reprezentację wartości daty i godziny w programie .NET.
+ms.date: 11/05/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -14,30 +14,30 @@ helpviewer_keywords:
 - custom date and time format strings
 - formatting [.NET], time
 - date and time strings
-ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 36aaef2676383263b2009fd283f1671ef970f20e
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.custom: contperfq2
+ms.openlocfilehash: dc294322317560344a6e3cdba1dbe2cce4f6a3fd
+ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888636"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94329758"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardowe ciągi formatujące datę i godzinę
 
-W ciągu standardowego formatu daty i godziny pojedynczy specyfikator formatu jest używany do definiowania tekstowej reprezentacji wartości daty i godziny. Dowolny ciąg formatu daty i godziny, który zawiera więcej niż jeden znak, w tym znak odstępu, jest interpretowany jako ciąg niestandardowego formatu daty i godziny; Aby uzyskać więcej informacji, zobacz [Niestandardowe ciągi formatujące datę i godzinę](custom-date-and-time-format-strings.md). Ciągu formatu standardowego lub niestandardowego można używać na dwa sposoby:
+Standardowy ciąg formatu daty i godziny używa pojedynczego znaku jako specyfikatora formatu do definiowania tekstowej reprezentacji <xref:System.DateTime> lub <xref:System.DateTimeOffset> wartości. Dowolny ciąg formatu daty i godziny, który zawiera więcej niż jeden znak, w tym znak odstępu, jest interpretowany jako [ciąg niestandardowego formatu daty i godziny](custom-date-and-time-format-strings.md). Ciągu formatu standardowego lub niestandardowego można używać na dwa sposoby:
 
 - Aby zdefiniować ciąg będący wynikiem operacji formatowania.
 
 - Aby zdefiniować tekstową reprezentację wartości daty i godziny, która może zostać przekonwertowana <xref:System.DateTime> na <xref:System.DateTimeOffset> wartość lub przez operację analizowania.
 
 > [!TIP]
-> Możesz pobrać **Narzędzie formatowania** , aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
-
-Standardowe ciągi formatujące datę i godzinę mogą być używane z obu <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości.
+> Możesz pobrać **Narzędzie formatowania** , aplikację platformy .NET Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetlanie ciągu wynikowego. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 [!INCLUDE[C# interactive-note](~/includes/csharp-interactive-with-utc-partial-note.md)]
 
-<a name="table"></a> W poniższej tabeli opisano specyfikatory standardowego formatu daty i godziny. O ile nie zaznaczono inaczej, określony standardowy specyfikator formatu daty i godziny generuje identyczny ciąg reprezentacji, niezależnie od tego, czy jest używany z <xref:System.DateTime> lub <xref:System.DateTimeOffset> wartością. Zobacz sekcję [uwagi](#Notes) , aby uzyskać dodatkowe informacje dotyczące używania ciągów standardowego formatu daty i godziny.
+## <a name="table-of-format-specifiers"></a>Tabela specyfikatorów formatu
+
+<a name="table"></a> W poniższej tabeli opisano specyfikatory standardowego formatu daty i godziny. O ile nie zaznaczono inaczej, określony standardowy specyfikator formatu daty i godziny generuje identyczny ciąg reprezentacji, niezależnie od tego, czy jest używany z <xref:System.DateTime> lub <xref:System.DateTimeOffset> wartością. Zobacz [Ustawienia panelu sterowania](#control-panel-settings) i [właściwości DateTimeFormatInfo](#datetimeformatinfo-properties) , aby uzyskać dodatkowe informacje na temat korzystania z ciągów standardowych formatów daty i godziny.
 
 |Specyfikator formatu|Opis|Przykłady|
 |----------------------|-----------------|--------------|
@@ -48,7 +48,7 @@ Standardowe ciągi formatujące datę i godzinę mogą być używane z obu <xref
 |„g”|Wzorzec ogólnej daty/godziny (godzina krótka).<br /><br /> Więcej informacji: [specyfikator formatu daty ogólnej i godziny krótkiej ("g")](#GeneralDateShortTime).|2009-06-15T13:45:30-> 6/15/2009 1:45 PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 15/06/2009 13:45 (es-ES)<br /><br /> 2009-06-15T13:45:30-> 2009/6/15 13:45 (zh-CN)|
 |„G”|Wzorzec ogólnej daty/godziny (godzina długa).<br /><br /> Więcej informacji: [specyfikator formatu daty ogólnej godziny długiej ("G")](#GeneralDateLongTime).|2009-06-15T13:45:30-> 6/15/2009 1:45:30 PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 15/06/2009 13:45:30 (es-ES)<br /><br /> 2009-06-15T13:45:30-> 2009/6/15 13:45:30 (zh-CN)|
 |„M”, „m”|Wzorzec miesiąc/dzień.<br /><br /> Więcej informacji: [specyfikator formatu miesiąca ("m", "m")](#MonthDay).|2009-06-15T13:45:30 — > Czerwiec 15 (EN-US)<br /><br /> 2009 — 06-15T13:45:30-> 15. Juni (da-DK)<br /><br /> 2009-06-15T13:45:30-> 15 Juni (identyfikator ID)|
-|„O”, „o”|Wzorzec dwustronnej konwersji data/godzina.<br /><br /> Więcej informacji: [specyfikator formatu rundying ("o", "o")](#Roundtrip).|<xref:System.DateTime> wartością<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. UTC)--> 2009-06-15T13:45:30.0000000 Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset> wartością<br /><br /> 2009-06-15T13:45:30-07:00--> 2009-06-15T13:45:30.0000000-07:00|
+|„O”, „o”|wzorzec daty/godziny rundy.<br /><br /> Więcej informacji: [specyfikator formatu rundying ("o", "o")](#Roundtrip).|<xref:System.DateTime> wartością<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. UTC)--> 2009-06-15T13:45:30.0000000 Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset> wartością<br /><br /> 2009-06-15T13:45:30-07:00--> 2009-06-15T13:45:30.0000000-07:00|
 |„R”, „r”|Wzorzec RFC1123.<br /><br /> Więcej informacji: [specyfikator formatu RFC1123 ("r", "r")](#RFC1123).|2009-06-15T13:45:30-> PN, 15 Jun 2009 20:45:30 GMT|
 |„s”|Wzorzec sortowalnej daty/godziny.<br /><br /> Więcej informacji: [specyfikator formatu sortowania ("s")](#Sortable).|2009-06-15T13:45:30 (DateTimeKind. local)-> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind. UTC)-> 2009-06-15T13:45:30|
 |„t”|Wzorzec godziny krótkiej.<br /><br /> Więcej informacji: [specyfikator formatu godziny krótkiej ("t")](#ShortTime).|2009-06-15T13:45:30-> 1:45 PM (pl-US)<br /><br /> 2009-06-15T13:45:30-> 13:45 (HR-HR)<br /><br /> 2009-06-15T13:45:30-> 01:45 م (AR-EG)|
@@ -58,7 +58,7 @@ Standardowe ciągi formatujące datę i godzinę mogą być używane z obu <xref
 |„Y”, „y”|Wzorzec roku i miesiąca.<br /><br /> Więcej informacji: [specyfikator formatu roku miesiąca ("Y")](#YearMonth).|2009-06-15T13:45:30-> czerwiec 2009 (EN-US)<br /><br /> 2009-06-15T13:45:30-> Juni 2009 (da-DK)<br /><br /> 2009-06-15T13:45:30-> Juni 2009 (identyfikator ID)|
 |Jakikolwiek inny pojedynczy znak|Nieznany specyfikator.|Zgłasza czas wykonywania <xref:System.FormatException> .|
 
-## <a name="how-standard-format-strings-work"></a>Sposób działania ciągów formatu standardowego
+## <a name="how-standard-format-strings-work"></a>Jak działają ciągi formatu standardowego
 
 W operacji formatowania ciąg formatu standardowego jest po prostu aliasem ciągu formatu niestandardowego. Zaletą użycia aliasu w celu odwołania się do ciągu formatu niestandardowego jest to, że ciąg formatu niestandardowego może być różny, mimo że alias pozostaje niezmienny. Jest to ważne, ponieważ ciągi reprezentujące wartości daty i godziny są zazwyczaj różne w zależności od kultury. Na przykład ciąg formatu standardowego „d” wskazuje, że wartość daty i godziny zostanie wyświetlona przy użyciu wzorca daty krótkiej. Ten wzorzec dla niezmiennej kultury to „MM/dd/yyyy”. Dla kultury fr-FR jest to „dd/MM/yyyy”. Dla kultury ja-JP jest to „yyyy/MM/dd”.
 
@@ -98,9 +98,16 @@ Ciągi formatu standardowego mogą być również używane podczas analizowania 
 
 W poniższych sekcjach opisano specyfikatory formatu standardowego <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości.
 
+## <a name="date-formats"></a>Formaty dat
+
+Ta grupa zawiera następujące formaty:
+
+- [Specyfikator formatu daty krótkiej ("d")](#the-short-date-d-format-specifier)
+- [Specyfikator formatu daty długiej ("D")](#the-long-date-d-format-specifier)
+
 <a name="ShortDate"></a>
 
-## <a name="the-short-date-d-format-specifier"></a>Specyfikator formatu daty krótkiej („d”)
+### <a name="the-short-date-d-format-specifier"></a>Specyfikator formatu daty krótkiej ("d")
 
 Specyfikator formatu standardowego "d" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez określoną <xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A?displayProperty=nameWithType> Właściwość kultury. Na przykład ciąg formatu niestandardowego, który jest zwracany przez <xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A> Właściwość niezmiennej kultury to "mm/dd/rrrr".
 
@@ -120,7 +127,7 @@ W poniższym przykładzie użyto specyfikatora formatu „d”, aby wyświetlić
 
 <a name="LongDate"></a>
 
-## <a name="the-long-date-d-format-specifier"></a>Specyfikator formatu daty długiej („D”)
+### <a name="the-long-date-d-format-specifier"></a>Specyfikator formatu daty długiej ("D")
 
 Specyfikator formatu standardowego "D" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez bieżącą <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A?displayProperty=nameWithType> Właściwość. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „dddd, dd MMMM yyyy”.
 
@@ -139,9 +146,23 @@ W poniższym przykładzie użyto specyfikatora formatu „D”, aby wyświetlić
 
 [Wróć do tabeli](#table)
 
+## <a name="date-and-time-formats"></a>Formaty daty i godziny
+
+Ta grupa zawiera następujące formaty:
+
+- [Specyfikator formatu pełnej daty i godziny krótkiej ("f")](#the-full-date-short-time-f-format-specifier)
+- [Specyfikator formatu pełnej daty i godziny długiej ("F")](#the-full-date-long-time-f-format-specifier)
+- [Specyfikator formatu daty ogólnej i godziny krótkiej ("g")](#the-general-date-short-time-g-format-specifier)
+- [Specyfikator formatu daty/godziny długiej ("G")](#the-general-date-long-time-g-format-specifier)
+- [Specyfikator formatu rundy ("O", "o")](#the-round-trip-o-o-format-specifier)
+- [Specyfikator formatu RFC1123 ("R", "r")](#the-rfc1123-r-r-format-specifier)
+- [Specyfikator formatu sortowania ("s")](#the-sortable-s-format-specifier)
+- [Specyfikator formatu uniwersalnego sortowania ("u")](#the-universal-sortable-u-format-specifier)
+- [Specyfikator formatu uniwersalnej pełnej ("U")](#the-universal-full-u-format-specifier)
+
 <a name="FullDateShortTime"></a>
 
-## <a name="the-full-date-short-time-f-format-specifier"></a>Specyfikator formatu pełnej daty i godziny krótkiej („f”)
+### <a name="the-full-date-short-time-f-format-specifier"></a>Specyfikator formatu pełnej daty i godziny krótkiej ("f")
 
 Specyfikator formatu standardowego „f” reprezentuje kombinację wzorców daty długiej („D”) i godziny krótkiej („t”), rozdzielonych spacją.
 
@@ -166,7 +187,7 @@ W poniższym przykładzie użyto specyfikatora formatu „f”, aby wyświetlić
 
 <a name="FullDateLongTime"></a>
 
-## <a name="the-full-date-long-time-f-format-specifier"></a>Specyfikator formatu pełnej daty i godziny długiej („F”)
+### <a name="the-full-date-long-time-f-format-specifier"></a>Specyfikator formatu pełnej daty i godziny długiej ("F")
 
 Specyfikator formatu standardowego "F" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez bieżącą <xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A?displayProperty=nameWithType> Właściwość. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „dddd, dd MMMM yyyy HH:mm:ss”.
 
@@ -190,7 +211,7 @@ W poniższym przykładzie użyto specyfikatora formatu „F”, aby wyświetlić
 
 <a name="GeneralDateShortTime"></a>
 
-## <a name="the-general-date-short-time-g-format-specifier"></a>Specyfikator formatu daty ogólnej i godziny krótkiej („g”)
+### <a name="the-general-date-short-time-g-format-specifier"></a>Specyfikator formatu daty ogólnej i godziny krótkiej ("g")
 
 Specyfikator formatu standardowego „g” reprezentuje kombinację wzorców daty krótkiej („g”) i godziny krótkiej („t”), rozdzielonych spacją.
 
@@ -214,7 +235,7 @@ W poniższym przykładzie użyto specyfikatora formatu „g”, aby wyświetlić
 
 <a name="GeneralDateLongTime"></a>
 
-## <a name="the-general-date-long-time-g-format-specifier"></a>Specyfikator formatu daty ogólnej i godziny długiej („G”)
+### <a name="the-general-date-long-time-g-format-specifier"></a>Specyfikator formatu daty/godziny długiej ("G")
 
 Specyfikator formatu standardowego „G” reprezentuje kombinację wzorców daty krótkiej („d”) i godziny długiej („T”), rozdzielonych spacją.
 
@@ -236,29 +257,9 @@ W poniższym przykładzie użyto specyfikatora formatu „G”, aby wyświetlić
 
 [Wróć do tabeli](#table)
 
-<a name="MonthDay"></a>
-
-## <a name="the-month-m-m-format-specifier"></a>Specyfikator formatu miesiąca („M”, „m”)
-
-Specyfikator formatu standardowego "M" lub "m" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest zdefiniowany przez bieżącą <xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A?displayProperty=nameWithType> Właściwość. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „MMMM dd”.
-
-Poniższa tabela zawiera listę <xref:System.Globalization.DateTimeFormatInfo> właściwości obiektu, które sterują formatowaniem zwracanego ciągu.
-
-|Właściwość|Opis|
-|--------------|-----------------|
-|<xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>|Definiuje ogólny format ciągu wynikowego.|
-|<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>|Definiuje zlokalizowane nazwy miesięcy, które mogą być wyświetlane w ciągu wynikowym.|
-
-W poniższym przykładzie użyto specyfikatora formatu „m”, aby wyświetlić wartość daty i godziny.
-
-[!code-csharp[Formatting.DateAndTime.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#7)]
-[!code-vb[Formatting.DateAndTime.Standard#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#7)]
-
-[Wróć do tabeli](#table)
-
 <a name="Roundtrip"></a>
 
-## <a name="the-round-trip-o-o-format-specifier"></a>Specyfikator formatu dwustronnej konwersji („O”, „o”)
+### <a name="the-round-trip-o-o-format-specifier"></a>Specyfikator formatu rundy ("O", "o")
 
 Specyfikator formatu standardowego "O" lub "o" reprezentuje ciąg niestandardowego formatu daty i godziny przy użyciu wzorca, który zachowuje informacje o strefie czasowej i emituje ciąg wynikowy, który jest zgodny z normą ISO 8601. Dla <xref:System.DateTime> wartości, ten specyfikator formatu jest przeznaczony do zachowywania wartości daty i godziny wraz z <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> właściwością w tekście. Sformatowany ciąg może być analizowany z powrotem przy użyciu <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType> metody lub, <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> Jeśli `styles` parametr jest ustawiony na <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType> .
 
@@ -290,7 +291,7 @@ Poniższy przykład używa specyfikatora formatu "o", aby utworzyć sformatowany
 
 <a name="RFC1123"></a>
 
-## <a name="the-rfc1123-r-r-format-specifier"></a>Specyfikator formatu RFC1123 („R”, „r”)
+### <a name="the-rfc1123-r-r-format-specifier"></a>Specyfikator formatu RFC1123 ("R", "r")
 
 Specyfikator formatu standardowego "R" lub "r" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest zdefiniowany przez <xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A?displayProperty=nameWithType> Właściwość. Wzorzec odzwierciedla zdefiniowany standard, a właściwość jest tylko do odczytu. Dlatego też zawsze jest taki sam, niezależnie od używanej kultury oraz dostarczonego dostawcy formatów. Ciąg formatu niestandardowego to „ddd, dd MMM yyyy HH':'mm':'ss 'GMT'”. Gdy jest używany ten specyfikator formatu standardowego, w operacji formatowania lub analizowania zawsze jest używana niezmienna kultura.
 
@@ -313,7 +314,7 @@ W poniższym przykładzie pokazano użycie specyfikatora formatu "r" w celu wyś
 
 <a name="Sortable"></a>
 
-## <a name="the-sortable-s-format-specifier"></a>Specyfikator formatu sortowalnego („s”)
+### <a name="the-sortable-s-format-specifier"></a>Specyfikator formatu sortowania ("s")
 
 Specyfikator formatu standardowego "s" reprezentuje ciąg niestandardowego formatu daty i godziny zdefiniowany przez <xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A?displayProperty=nameWithType> Właściwość. Wzorzec odzwierciedla zdefiniowany standard (ISO 8601), a właściwość jest tylko do odczytu. Dlatego też zawsze jest taki sam, niezależnie od używanej kultury oraz dostarczonego dostawcy formatów. Ciąg formatu niestandardowego to „yyyy'-'MM'-'dd'T'HH':'mm':'ss”.
 
@@ -328,53 +329,9 @@ W poniższym przykładzie pokazano użycie specyfikatora formatu "s", aby wyświ
 
 [Wróć do tabeli](#table)
 
-<a name="ShortTime"></a>
-
-## <a name="the-short-time-t-format-specifier"></a>Specyfikator formatu godziny krótkiej („t”)
-
-Specyfikator formatu standardowego "t" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez bieżącą <xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A?displayProperty=nameWithType> Właściwość. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „HH:mm”.
-
-Informacje o formatowaniu określonego obiektu mają wpływ na ciąg wynikowy <xref:System.Globalization.DateTimeFormatInfo> . Poniższa tabela zawiera listę <xref:System.Globalization.DateTimeFormatInfo> właściwości obiektu, które mogą kontrolować formatowanie zwracanego ciągu. Specyfikator formatu niestandardowego zwracany przez <xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A?displayProperty=nameWithType> Właściwość niektórych kultur może nie używać wszystkich właściwości.
-
-|Właściwość|Opis|
-|--------------|-----------------|
-|<xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>|Definiuje format składnika godziny w ciągu wynikowym.|
-|<xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>|Definiuje ciąg, który rozdziela składniki godziny, minuty i sekundy w ciągu reprezentującym godzinę.|
-|<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>|Określa ciąg, który wskazuje czas od północy do południa (z wyłączeniem południa), w formacie 12-godzinnym.|
-|<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>|Określa ciąg, który wskazuje czas od południa do północy (z wyłączeniem północy), w formacie 12-godzinnym.|
-
-W poniższym przykładzie użyto specyfikatora formatu „t”, aby wyświetlić wartość daty i godziny.
-
-[!code-csharp[Formatting.DateAndTime.Standard#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#11)]
-[!code-vb[Formatting.DateAndTime.Standard#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#11)]
-
-[Wróć do tabeli](#table)
-
-<a name="LongTime"></a>
-
-## <a name="the-long-time-t-format-specifier"></a>Specyfikator formatu godziny długiej („T”)
-
-Specyfikator formatu standardowego "T" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez określoną <xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A?displayProperty=nameWithType> Właściwość kultury. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „HH:mm:ss”.
-
-Poniższa tabela zawiera listę <xref:System.Globalization.DateTimeFormatInfo> właściwości obiektu, które mogą kontrolować formatowanie zwracanego ciągu. Specyfikator formatu niestandardowego zwracany przez <xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A?displayProperty=nameWithType> Właściwość niektórych kultur może nie używać wszystkich właściwości.
-
-|Właściwość|Opis|
-|--------------|-----------------|
-|<xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>|Definiuje format składnika godziny w ciągu wynikowym.|
-|<xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>|Definiuje ciąg, który rozdziela składniki godziny, minuty i sekundy w ciągu reprezentującym godzinę.|
-|<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>|Określa ciąg, który wskazuje czas od północy do południa (z wyłączeniem południa), w formacie 12-godzinnym.|
-|<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>|Określa ciąg, który wskazuje czas od południa do północy (z wyłączeniem północy), w formacie 12-godzinnym.|
-
-W poniższym przykładzie użyto specyfikatora formatu „T”, aby wyświetlić wartość daty i godziny.
-
-[!code-csharp[Formatting.DateAndTime.Standard#12](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#12)]
-[!code-vb[Formatting.DateAndTime.Standard#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#12)]
-
-[Wróć do tabeli](#table)
-
 <a name="UniversalSortable"></a>
 
-## <a name="the-universal-sortable-u-format-specifier"></a>Specyfikator uniwersalnego sortowalnego formatu („u”)
+### <a name="the-universal-sortable-u-format-specifier"></a>Specyfikator formatu uniwersalnego sortowania ("u")
 
 Specyfikator formatu standardowego "u" reprezentuje ciąg niestandardowego formatu daty i godziny zdefiniowany przez <xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A?displayProperty=nameWithType> Właściwość. Wzorzec odzwierciedla zdefiniowany standard, a właściwość jest tylko do odczytu. Dlatego też zawsze jest taki sam, niezależnie od używanej kultury oraz dostarczonego dostawcy formatów. Ciąg formatu niestandardowego to „yyyy'-'MM'-'dd HH':'mm':'ss'Z'”. Gdy jest używany ten specyfikator formatu standardowego, w operacji formatowania lub analizowania zawsze jest używana niezmienna kultura.
 
@@ -389,7 +346,7 @@ W poniższym przykładzie użyto specyfikatora formatu „u”, aby wyświetlić
 
 <a name="UniversalFull"></a>
 
-## <a name="the-universal-full-u-format-specifier"></a>Specyfikator uniwersalnego pełnego formatu („U”)
+### <a name="the-universal-full-u-format-specifier"></a>Specyfikator formatu uniwersalnej pełnej ("U")
 
 Specyfikator formatu standardowego "U" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez określoną <xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A?displayProperty=nameWithType> Właściwość kultury. Wzorzec jest taki sam, jak wzorzec specyfikatora „F”. Jednak <xref:System.DateTime> wartość jest automatycznie konwertowana na czas UTC przed sformatowaniem.
 
@@ -413,9 +370,87 @@ W poniższym przykładzie użyto specyfikatora formatu „U”, aby wyświetlić
 
 [Wróć do tabeli](#table)
 
+## <a name="time-formats"></a>Formaty czasu
+
+Ta grupa zawiera następujące formaty:
+
+- [Specyfikator formatu godziny krótkiej ("t")](#the-short-time-t-format-specifier)
+- [Specyfikator formatu godziny długiej ("T")](#the-long-time-t-format-specifier)
+
+<a name="ShortTime"></a>
+
+### <a name="the-short-time-t-format-specifier"></a>Specyfikator formatu godziny krótkiej ("t")
+
+Specyfikator formatu standardowego "t" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez bieżącą <xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A?displayProperty=nameWithType> Właściwość. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „HH:mm”.
+
+Informacje o formatowaniu określonego obiektu mają wpływ na ciąg wynikowy <xref:System.Globalization.DateTimeFormatInfo> . Poniższa tabela zawiera listę <xref:System.Globalization.DateTimeFormatInfo> właściwości obiektu, które mogą kontrolować formatowanie zwracanego ciągu. Specyfikator formatu niestandardowego zwracany przez <xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A?displayProperty=nameWithType> Właściwość niektórych kultur może nie używać wszystkich właściwości.
+
+|Właściwość|Opis|
+|--------------|-----------------|
+|<xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>|Definiuje format składnika godziny w ciągu wynikowym.|
+|<xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>|Definiuje ciąg, który rozdziela składniki godziny, minuty i sekundy w ciągu reprezentującym godzinę.|
+|<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>|Określa ciąg, który wskazuje czas od północy do południa (z wyłączeniem południa), w formacie 12-godzinnym.|
+|<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>|Określa ciąg, który wskazuje czas od południa do północy (z wyłączeniem północy), w formacie 12-godzinnym.|
+
+W poniższym przykładzie użyto specyfikatora formatu „t”, aby wyświetlić wartość daty i godziny.
+
+[!code-csharp[Formatting.DateAndTime.Standard#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#11)]
+[!code-vb[Formatting.DateAndTime.Standard#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#11)]
+
+[Wróć do tabeli](#table)
+
+<a name="LongTime"></a>
+
+### <a name="the-long-time-t-format-specifier"></a>Specyfikator formatu godziny długiej ("T")
+
+Specyfikator formatu standardowego "T" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest definiowany przez określoną <xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A?displayProperty=nameWithType> Właściwość kultury. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „HH:mm:ss”.
+
+Poniższa tabela zawiera listę <xref:System.Globalization.DateTimeFormatInfo> właściwości obiektu, które mogą kontrolować formatowanie zwracanego ciągu. Specyfikator formatu niestandardowego zwracany przez <xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A?displayProperty=nameWithType> Właściwość niektórych kultur może nie używać wszystkich właściwości.
+
+|Właściwość|Opis|
+|--------------|-----------------|
+|<xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>|Definiuje format składnika godziny w ciągu wynikowym.|
+|<xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>|Definiuje ciąg, który rozdziela składniki godziny, minuty i sekundy w ciągu reprezentującym godzinę.|
+|<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>|Określa ciąg, który wskazuje czas od północy do południa (z wyłączeniem południa), w formacie 12-godzinnym.|
+|<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>|Określa ciąg, który wskazuje czas od południa do północy (z wyłączeniem północy), w formacie 12-godzinnym.|
+
+W poniższym przykładzie użyto specyfikatora formatu „T”, aby wyświetlić wartość daty i godziny.
+
+[!code-csharp[Formatting.DateAndTime.Standard#12](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#12)]
+[!code-vb[Formatting.DateAndTime.Standard#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#12)]
+
+[Wróć do tabeli](#table)
+
+## <a name="partial-date-formats"></a>Częściowe formaty dat
+
+Ta grupa zawiera następujące formaty:
+
+- [Specyfikator formatu miesiąca ("M", "m")](#the-month-m-m-format-specifier)
+- [Specyfikator formatu roku miesiąca ("Y", "y")](#the-year-month-y-y-format-specifier)
+
+<a name="MonthDay"></a>
+
+### <a name="the-month-m-m-format-specifier"></a>Specyfikator formatu miesiąca ("M", "m")
+
+Specyfikator formatu standardowego "M" lub "m" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest zdefiniowany przez bieżącą <xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A?displayProperty=nameWithType> Właściwość. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „MMMM dd”.
+
+Poniższa tabela zawiera listę <xref:System.Globalization.DateTimeFormatInfo> właściwości obiektu, które sterują formatowaniem zwracanego ciągu.
+
+|Właściwość|Opis|
+|--------------|-----------------|
+|<xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>|Definiuje ogólny format ciągu wynikowego.|
+|<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>|Definiuje zlokalizowane nazwy miesięcy, które mogą być wyświetlane w ciągu wynikowym.|
+
+W poniższym przykładzie użyto specyfikatora formatu „m”, aby wyświetlić wartość daty i godziny.
+
+[!code-csharp[Formatting.DateAndTime.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#7)]
+[!code-vb[Formatting.DateAndTime.Standard#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#7)]
+
+[Wróć do tabeli](#table)
+
 <a name="YearMonth"></a>
 
-## <a name="the-year-month-y-y-format-specifier"></a>Specyfikator formatu roku i miesiąca („Y”)
+### <a name="the-year-month-y-y-format-specifier"></a>Specyfikator formatu roku miesiąca ("Y", "y")
 
 Specyfikator formatu standardowego "Y" lub "y" reprezentuje ciąg niestandardowego formatu daty i godziny, który jest zdefiniowany przez <xref:System.Globalization.DateTimeFormatInfo.YearMonthPattern%2A?displayProperty=nameWithType> Właściwość określonej kultury. Na przykład ciąg formatu niestandardowego dla niezmiennej kultury to „yyyy MMMM”.
 
@@ -435,19 +470,17 @@ W poniższym przykładzie użyto specyfikatora formatu „y”, aby wyświetlić
 
 <a name="Notes"></a>
 
-## <a name="notes"></a>Uwagi
+## <a name="control-panel-settings"></a>Ustawienia panelu sterowania
 
-### <a name="control-panel-settings"></a>Ustawienia panelu sterowania
-
-Ustawienia w elemencie **Opcje regionalne i językowe** w panelu sterowania wpływają na ciąg wynikowy generowany przez operację formatowania. Te ustawienia są używane do inicjowania <xref:System.Globalization.DateTimeFormatInfo> obiektu skojarzonego z bieżącą kulturą wątku, która zapewnia wartości używane do zarządzania formatowaniem. Na komputerach, na których są używane różne ustawienia, są generowane różne ciągi wynikowe.
+W systemie Windows ustawienia w pozycji **Opcje regionalne i językowe** w panelu sterowania wpływają na ciąg wynikowy generowany przez operację formatowania. Te ustawienia są używane do inicjowania <xref:System.Globalization.DateTimeFormatInfo> obiektu skojarzonego z bieżącą kulturą wątku, która zapewnia wartości używane do zarządzania formatowaniem. Na komputerach, na których są używane różne ustawienia, są generowane różne ciągi wynikowe.
 
 Ponadto, jeśli używasz <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> konstruktora do utworzenia wystąpienia nowego <xref:System.Globalization.CultureInfo> obiektu, który reprezentuje tę samą kulturę co bieżąca kultura systemu, wszelkie dostosowania ustanowione przez element **Opcje regionalne i językowe** w panelu sterowania zostaną zastosowane do nowego <xref:System.Globalization.CultureInfo> obiektu. Można użyć konstruktora, <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> Aby utworzyć <xref:System.Globalization.CultureInfo> obiekt, który nie odzwierciedla dostosowań systemu.
 
-### <a name="datetimeformatinfo-properties"></a>Właściwości obiektu DateTimeFormatInfo
+## <a name="datetimeformatinfo-properties"></a>Właściwości DateTimeFormatInfo
 
 Na formatowanie mają wpływ właściwości bieżącego <xref:System.Globalization.DateTimeFormatInfo> obiektu, które są dostarczane niejawnie przez bieżącą kulturę wątku lub jawnie przez <xref:System.IFormatProvider> parametr metody, która wywołuje formatowanie. Dla <xref:System.IFormatProvider> parametru, aplikacja powinna określać <xref:System.Globalization.CultureInfo> obiekt, który reprezentuje kulturę, lub <xref:System.Globalization.DateTimeFormatInfo> obiekt, który reprezentuje konwencje formatowania daty i godziny określonej kultury. Wiele specyfikatorów standardowego formatu daty i godziny to aliasy dla wzorców formatowania zdefiniowanych przez właściwości bieżącego <xref:System.Globalization.DateTimeFormatInfo> obiektu. Aplikacja może zmienić wynik wygenerowany przez niektóre standardowe specyfikatory formatu daty i godziny, zmieniając odpowiednie wzorce formatu daty i godziny odpowiedniej <xref:System.Globalization.DateTimeFormatInfo> właściwości.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>

@@ -1,21 +1,23 @@
 ---
 title: Jak pisać konwertery niestandardowe na potrzeby serializacji JSON — .NET
+description: Dowiedz się, jak utworzyć niestandardowe konwertery dla klas serializacji JSON, które są dostępne w System.Text.Json przestrzeni nazw.
 ms.date: 01/10/2020
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
+zone_pivot_groups: dotnet-version
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: e0b769d7bb6b336d226cd48de1932524c4d7e74d
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: ba6b61232ccf7ed493fe5809e5c0b8ba21091d3d
+ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811070"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94329810"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Jak pisać konwertery niestandardowe na potrzeby serializacji JSON (kierowanie) w programie .NET
 
@@ -28,10 +30,20 @@ W tym artykule pokazano, jak utworzyć niestandardowe konwertery dla klas serial
 
 Możesz również napisać niestandardowe konwertery, aby dostosować lub zwiększyć `System.Text.Json` funkcjonalność, która nie jest uwzględniona w bieżącej wersji. Poniższe scenariusze zostały omówione w dalszej części tego artykułu:
 
+::: zone pivot="dotnet-5-0"
+
+* [Deserializacja wywnioskowanych typów do właściwości obiektu](#deserialize-inferred-types-to-object-properties).
+* [Obsługa deserializacji polimorficznej](#support-polymorphic-deserialization).
+* [Obsługa rundy dla stosu \<T> ](#support-round-trip-for-stackt).
+::: zone-end
+
+::: zone pivot="dotnet-core-3-1"
+
 * [Deserializacja wywnioskowanych typów do właściwości obiektu](#deserialize-inferred-types-to-object-properties).
 * [Obsługa słownika z kluczem niebędącym ciągiem](#support-dictionary-with-non-string-key).
 * [Obsługa deserializacji polimorficznej](#support-polymorphic-deserialization).
 * [Obsługa rundy dla stosu \<T> ](#support-round-trip-for-stackt).
+::: zone-end
 
 ## <a name="custom-converter-patterns"></a>Wzorce niestandardowego konwertera
 
@@ -177,10 +189,20 @@ Wbudowany konwerter jest wybierany tylko wtedy, gdy nie zarejestrowano żadnego 
 
 Poniższe sekcje zawierają przykłady konwerterów, które dotyczą niektórych typowych scenariuszy, które nie obsługują funkcji wbudowanych.
 
-* [Deserializacja wywnioskowanych typów do właściwości obiektu](#deserialize-inferred-types-to-object-properties)
-* [Obsługa słownika z kluczem niebędącym ciągiem](#support-dictionary-with-non-string-key)
-* [Obsługa deserializacji polimorficzna](#support-polymorphic-deserialization)
+::: zone pivot="dotnet-5-0"
+
+* [Deserializacja wywnioskowanych typów do właściwości obiektu](#deserialize-inferred-types-to-object-properties).
+* [Obsługa deserializacji polimorficznej](#support-polymorphic-deserialization).
 * [Obsługa rundy dla stosu \<T> ](#support-round-trip-for-stackt).
+::: zone-end
+
+::: zone pivot="dotnet-core-3-1"
+
+* [Deserializacja wywnioskowanych typów do właściwości obiektu](#deserialize-inferred-types-to-object-properties).
+* [Obsługa słownika z kluczem niebędącym ciągiem](#support-dictionary-with-non-string-key).
+* [Obsługa deserializacji polimorficznej](#support-polymorphic-deserialization).
+* [Obsługa rundy dla stosu \<T> ](#support-round-trip-for-stackt).
+::: zone-end
 
 ### <a name="deserialize-inferred-types-to-object-properties"></a>Deserializacja wywnioskowanych typów do właściwości obiektu
 
@@ -221,6 +243,8 @@ Bez niestandardowego konwertera deserializacja umieszcza `JsonElement` w każdej
 
 [Folder testów jednostkowych](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) w `System.Text.Json.Serialization` przestrzeni nazw zawiera więcej przykładów niestandardowych konwerterów, które obsługują deserializacja `object` właściwości.
 
+::: zone pivot="dotnet-core-3-1"
+
 ### <a name="support-dictionary-with-non-string-key"></a>Obsługa słownika z kluczem niebędącym ciągiem
 
 Wbudowana obsługa kolekcji słowników jest dla programu `Dictionary<string, TValue>` . Oznacza to, że klucz musi być ciągiem. Aby zapewnić obsługę słownika z liczbą całkowitą lub innym typem jako klucz, wymagany jest konwerter niestandardowy.
@@ -252,6 +276,7 @@ Dane wyjściowe JSON z serializacji wyglądają podobnie jak w poniższym przyk�
 ```
 
 [Folder testów jednostkowych](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) w `System.Text.Json.Serialization` przestrzeni nazw zawiera więcej przykładów niestandardowych konwerterów, które obsługują słowniki niebędące ciągami.
+::: zone-end
 
 ### <a name="support-polymorphic-deserialization"></a>Obsługa deserializacji polimorficzna
 
@@ -307,6 +332,29 @@ Poniższy kod przedstawia niestandardowy konwerter, który umożliwia wykonywani
 Następujący kod rejestruje konwerter:
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripStackOfT.cs?name=SnippetRegister)]
+
+## <a name="handle-null-values"></a>Obsługa wartości null
+
+Domyślnie serializator obsługuje wartości null w następujący sposób:
+
+* Dla typów i typów referencyjnych `Nullable<T>` :
+
+  * Nie przekazuje `null` do konwerterów niestandardowych podczas serializacji.
+  * Nie przekazuje `JsonTokenType.Null` do konwerterów niestandardowych podczas deserializacji.
+  * Zwraca `null` wystąpienie podczas deserializacji.
+  * Zapisuje `null` bezpośrednio przy użyciu składnika zapisywania przy serializacji.
+
+* Dla typów wartości niedopuszczających wartości null:
+
+  * Przechodzi `JsonTokenType.Null` do konwerterów niestandardowych podczas deserializacji. (Jeśli konwerter niestandardowy nie jest dostępny, `JsonException` wyjątek jest zgłaszany przez wewnętrzny konwerter typu).
+
+To zachowanie obsługi wartości null polega głównie na optymalizowaniu wydajności przez pominięcie dodatkowego wywołania do konwertera. Ponadto pozwala to uniknąć wymuszania konwerterów dla typów dopuszczających wartość null do sprawdzenia na `null` początku każdego `Read` i `Write` przesłonięcia metody.
+
+::: zone pivot="dotnet-5-0"
+Aby włączyć obsługę niestandardowego konwertera `null` dla typu odwołania lub wartości, Przesłoń <xref:System.Text.Json.Serialization.JsonConverter%601.HandleNull%2A?displayProperty=nameWithType> to Return `true` , jak pokazano w następującym przykładzie:
+
+:::code language="csharp" source="snippets/system-text-json-how-to-5-0/csharp/CustomConverterHandleNull.cs" highlight="19":::
+::: zone-end
 
 ## <a name="other-custom-converter-samples"></a>Inne przykłady konwerterów niestandardowych
 

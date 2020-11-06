@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat platformy .NET, bezpłatnej platformy
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: d008fbeabf58a3dddf1ee96fc655b6a685f8edfd
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 5c600ca999089d005f4f8eb2db332e938df7bfcb
+ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223580"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94329797"
 ---
 # <a name="introduction-to-net"></a>Wprowadzenie do platformy .NET
 
@@ -23,7 +23,7 @@ ms.locfileid: "92223580"
   * [WPF systemu Windows](/dotnet/desktop/wpf/)
   * [Windows Forms](/dotnet/desktop/winforms/)
   * [Platforma uniwersalna systemu Windows (UWP)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
-* [Zainstalowane](https://dotnet.microsoft.com/learn/games/unity-tutorial/intro)
+* [Zainstalowane](https://dotnet.microsoft.com/apps/games)
 * [Internet rzeczy (IoT)](https://dotnet.microsoft.com/apps/iot)
 * [Uczenie maszynowe](../machine-learning/index.yml)
 * [Aplikacje konsolowe](tutorials/with-visual-studio-code.md)
@@ -99,7 +99,7 @@ Poniżej przedstawiono niektóre możliwości obsługiwane przez Języki .NET:
 * [Bezpieczeństwo typów](../standard/base-types/common-type-system.md)
 * Wnioskowanie o typie — [C#](../csharp/programming-guide/types/index.md#specifying-types-in-variable-declarations), [F #](../fsharp/language-reference/type-inference.md), [Visual Basic](../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 * [Typy ogólne](../standard/generics.md)
-* [Delegaty](../standard/delegates-lambdas.md)
+* [Delegaci](../standard/delegates-lambdas.md)
 * [Wyrażeń lambda](../standard/delegates-lambdas.md)
 * [Zdarzenia](../standard/events/index.md)
 * [Wyjątki](../standard/exceptions/index.md)
@@ -124,7 +124,7 @@ Zintegrowane środowiska programistyczne dla platformy .NET obejmują:
 
   Działa tylko na macOS. Do tworzenia aplikacji i gier .NET dla systemów iOS, Android i Web.
 
-* [Codespaces GitHub](https://github.com/features/codespaces)
+* [GitHub Codespaces](https://github.com/features/codespaces)
 
   Środowisko Visual Studio Code online, obecnie w wersji beta.
 
@@ -132,7 +132,7 @@ Zintegrowane środowiska programistyczne dla platformy .NET obejmują:
 
 Zestaw [SDK platformy .NET](sdk.md) to zestaw bibliotek i narzędzi służących do tworzenia i uruchamiania aplikacji platformy .NET.
 
-Podczas [pobierania programu .NET](https://dotnet.microsoft.com/download/dotnet-core/)można wybrać zestaw SDK lub *środowisko uruchomieniowe*, takie jak środowisko uruchomieniowe platformy .NET lub środowisko uruchomieniowe ASP.NET Core. Zainstaluj środowisko uruchomieniowe na maszynie, która ma zostać przygotowana do uruchamiania aplikacji .NET. Zainstaluj zestaw SDK na komputerze, który ma być używany do programowania. Pobranie zestawu SDK powoduje automatyczne pobranie środowiska uruchomieniowego.
+Podczas [pobierania programu .NET](https://dotnet.microsoft.com/download/dotnet-core/)można wybrać zestaw SDK lub *środowisko uruchomieniowe* , takie jak środowisko uruchomieniowe platformy .NET lub środowisko uruchomieniowe ASP.NET Core. Zainstaluj środowisko uruchomieniowe na maszynie, która ma zostać przygotowana do uruchamiania aplikacji .NET. Zainstaluj zestaw SDK na komputerze, który ma być używany do programowania. Pobranie zestawu SDK powoduje automatyczne pobranie środowiska uruchomieniowego.
 
 Pobranie zestawu SDK obejmuje następujące składniki:
 
@@ -153,7 +153,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 ### <a name="project-system-and-msbuild"></a>System projektu i MSBuild
 
-Aplikacja platformy .NET została skompilowana z kodu źródłowego przy użyciu programu [MSBuild](/visualstudio/msbuild/msbuild). Plik projektu (*. csproj*, *. fsproj*lub *. vbproj*) określa [elementy docelowe](/visualstudio/msbuild/msbuild-targets) i powiązane [zadania](/visualstudio/msbuild/msbuild-tasks) , które są odpowiedzialne za kompilowanie, pakowanie i publikowanie kodu. Istnieją identyfikatory zestawu SDK odwołujące się do standardowych kolekcji obiektów docelowych i zadań. Użycie tych identyfikatorów ułatwia przechowywanie plików projektów w małych i łatwych działaniach. Na przykład Oto plik projektu dla aplikacji konsolowej:
+Aplikacja platformy .NET została skompilowana z kodu źródłowego przy użyciu programu [MSBuild](/visualstudio/msbuild/msbuild). Plik projektu ( *. csproj* , *. fsproj* lub *. vbproj* ) określa [elementy docelowe](/visualstudio/msbuild/msbuild-targets) i powiązane [zadania](/visualstudio/msbuild/msbuild-tasks) , które są odpowiedzialne za kompilowanie, pakowanie i publikowanie kodu. Istnieją identyfikatory zestawu SDK odwołujące się do standardowych kolekcji obiektów docelowych i zadań. Użycie tych identyfikatorów ułatwia przechowywanie plików projektów w małych i łatwych działaniach. Na przykład Oto plik projektu dla aplikacji konsolowej:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -221,7 +221,7 @@ Języki platformy .NET wyższego poziomu, takie jak C#, Kompiluj w dół do zest
 
 Ponieważ kompilacja JIT odbywa się podczas wykonywania aplikacji, czas kompilacji jest częścią czasu wykonywania. W związku z tym kompilatory JIT muszą zrównoważyć czas spędzony na optymalizowaniu kodu przed oszczędnościami, które może wygenerować ten kod. Jednak kompilator JIT wie rzeczywisty sprzęt i może zwolnić deweloperów, którzy muszą dostarczać różne implementacje dla różnych platform.
 
-Kompilator .NET JIT może przeprowadzić *kompilację warstwową*, co oznacza, że może ponownie kompilować poszczególne metody w czasie wykonywania. Ta funkcja umożliwia szybkie Kompilowanie jej przy jednoczesnym wykorzystaniu wysoce dostrojonej wersji kodu dla często używanych metod.
+Kompilator .NET JIT może przeprowadzić *kompilację warstwową* , co oznacza, że może ponownie kompilować poszczególne metody w czasie wykonywania. Ta funkcja umożliwia szybkie Kompilowanie jej przy jednoczesnym wykorzystaniu wysoce dostrojonej wersji kodu dla często używanych metod.
 
 Aby uzyskać więcej informacji, zobacz [proces wykonywania zarządzanego](../standard/managed-execution-process.md) i [kompilacja warstwowa](whats-new/dotnet-core-3-0.md#tiered-compilation).
 
@@ -254,7 +254,7 @@ Aplikacje .NET można publikować w dwóch różnych trybach:
 
 * Opublikowanie aplikacji jako *samodzielnego* powoduje utworzenie pliku wykonywalnego, który obejmuje [środowisko uruchomieniowe](#sdk-and-runtimes) i [biblioteki](#runtime-libraries)platformy .NET oraz aplikację i jej zależności. Użytkownicy aplikacji mogą uruchomić ją na komputerze, na którym nie zainstalowano środowiska uruchomieniowego .NET. Aplikacje samodzielne są zależne od platformy i opcjonalnie można je opublikować przy użyciu formy kompilacji w [drzewie AOT](#aot-compiler).
 
-* Publikowanie aplikacji jako *zależnej od struktury* powoduje utworzenie pliku wykonywalnego i plików binarnych (plików*dll* ), które zawierają tylko samą aplikację i jej zależności. Użytkownicy aplikacji muszą oddzielnie zainstalować [środowisko uruchomieniowe](#sdk-and-runtimes)platformy .NET. Plik wykonywalny jest specyficzny dla platformy, ale pliki *. dll* aplikacji zależnych od platformy są dla wielu platform.
+* Publikowanie aplikacji jako *zależnej od struktury* powoduje utworzenie pliku wykonywalnego i plików binarnych (plików *dll* ), które zawierają tylko samą aplikację i jej zależności. Użytkownicy aplikacji muszą oddzielnie zainstalować [środowisko uruchomieniowe](#sdk-and-runtimes)platformy .NET. Plik wykonywalny jest specyficzny dla platformy, ale pliki *. dll* aplikacji zależnych od platformy są dla wielu platform.
 
   Możesz zainstalować wiele wersji środowiska uruchomieniowego obok siebie, aby uruchamiać aplikacje zależne od platformy, które są przeznaczone dla różnych wersji środowiska uruchomieniowego. Aby uzyskać więcej informacji, zobacz [Platformy docelowe](../standard/frameworks.md).
 
@@ -336,7 +336,7 @@ Niektóre terminologia dla programu .NET mogą być mylące, ponieważ ten sam w
   | [Środowisko uruchomieniowe .NET na stronie pobierania platformy .NET](https://dotnet.microsoft.com/download/dotnet-core) | Biblioteki [środowiska CLR](#clr) i [środowiska uruchomieniowego](#runtime-libraries), które razem zapewniają obsługę uruchamiania aplikacji [zależnych od platformy](#deployment-models) . Strona ta oferuje również opcje środowiska uruchomieniowego dla aplikacji serwera ASP.NET Core i aplikacji klasycznych systemu Windows. |
   | [Identyfikator środowiska uruchomieniowego (RID)](rid-catalog.md) | Platforma systemu operacyjnego i architektura procesora CPU, na których działa aplikacja platformy .NET. Na przykład: Windows x64, Linux x64. |
 
-* **szablon**
+* **Architektura**
 
   |Kontekst  | "struktura" oznacza |
   |---------|---------------------|
@@ -345,7 +345,7 @@ Niektóre terminologia dla programu .NET mogą być mylące, ponieważ ten sam w
   | Moniker platformy docelowej (TFM)  | TFM to standardowy format tokenu służący do określania docelowej platformy aplikacji lub biblioteki platformy .NET. Przykład: `net462` dla .NET Framework 4.6.2. |
   | aplikacja zależna od struktury | Aplikacja, która może być uruchamiana tylko na komputerze, na którym zainstalowano środowisko uruchomieniowe ze [strony pobierania platformy .NET](https://dotnet.microsoft.com/download/dotnet-core). "Struktura" w tym wykorzystaniu jest taka sama jak "środowisko uruchomieniowe" pobieranej ze strony pobierania platformy .NET. |
 
-* **SDK**
+* **ZESTAWIE**
 
   |Kontekst  | "SDK" znaczenie |
   |---------|---------------|

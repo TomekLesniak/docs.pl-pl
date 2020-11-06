@@ -3,12 +3,12 @@ title: Nieobsługiwane interfejsy API w oprogramowaniu .NET Core i .NET 5 +
 titleSuffix: ''
 description: Dowiedz się, które interfejsy API platformy .NET zawsze zgłaszają wyjątek w oprogramowaniu .NET Core i .NET 5,0 i nowszych wersjach.
 ms.date: 10/13/2020
-ms.openlocfilehash: 0164ebff51de82d548a02f9fde754c1052a9c2b5
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 51d73557a48910d9cb1c4d3cdced34dfe4d849d8
+ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92159342"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94329784"
 ---
 # <a name="apis-that-always-throw-exceptions-on-net-core-and-net-5"></a>Interfejsy API, które zawsze generują wyjątki w oprogramowaniu .NET Core i .NET 5 +
 
@@ -58,7 +58,7 @@ Ten artykuł organizuje interfejsy API, których to dotyczy, według przestrzeni
 | - | - |
 | <xref:System.Configuration.RsaProtectedConfigurationProvider?displayProperty=nameWithType> (wszystkie elementy członkowskie) | Wszystko |
 
-## <a name="systemconsole"></a>System. Console
+## <a name="systemconsole"></a>System.Console
 
 | Członek | Platformy, które generują |
 | - | - |
@@ -223,7 +223,7 @@ Ten artykuł organizuje interfejsy API, których to dotyczy, według przestrzeni
 
 | Członek | Platformy, które generują |
 | - | - |
-| <xref:System.Security.Claims.ClaimsPrincipal.%23ctor> | Wszystko |
+| <xref:System.Security.Claims.ClaimsPrincipal.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> | Wszystko |
 | <xref:System.Security.Claims.ClaimsPrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Wszystko |
 | <xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Runtime.Serialization.SerializationInfo)> | Wszystko |
 | <xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> | Wszystko |
