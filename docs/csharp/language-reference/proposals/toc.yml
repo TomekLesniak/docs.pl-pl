@@ -63,7 +63,7 @@
         - name: Typy referencyjne dopuszczające wartość null — propozycja
           href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md
         - name: Typy referencyjne dopuszczające wartość null — specyfikacja
-          href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md
+          href: ../../../../_csharplang/proposals/csharp-9.0/nullable-reference-types-specification.md
         - name: Cykliczne dopasowywanie wzorca
           href: ../../../../_csharplang/proposals/csharp-8.0/patterns.md
         - name: Domyślne metody interfejsu
@@ -88,6 +88,8 @@
           href: ../../../../_csharplang/proposals/csharp-9.0/records.md
         - name: Instrukcje najwyższego poziomu
           href: ../../../../_csharplang/proposals/csharp-9.0/top-level-statements.md
+        - name: Typy referencyjne dopuszczające wartość null — specyfikacja
+          href: ../../../../_csharplang/proposals/csharp-9.0/nullable-reference-types-specification.md
         - name: Ulepszenia dopasowania wzorców
           href: ../../../../_csharplang/proposals/csharp-9.0/patterns3.md
         - name: Metody ustawiające tylko do inicjowania
