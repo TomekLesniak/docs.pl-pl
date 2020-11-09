@@ -1167,6 +1167,8 @@ items:
                         href: code-analysis/style-rules/ide0081.md
                       - name: IDE0100
                         href: code-analysis/style-rules/ide0100.md
+                      - name: IDE0110
+                        href: code-analysis/style-rules/ide0110.md
                   - name: Reguły różne
                     items:
                       - name: IDE0076
@@ -1419,14 +1421,20 @@ items:
                 href: ../standard/base-types/how-to-display-milliseconds-in-date-and-time-values.md
               - name: Wyświetlanie dat w kalendarzach innych niż gregoriański
                 href: ../standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md
-      - name: Manipulowanie ciągami
+      - name: Ciągi
         items:
           - name: Kodowanie znaków na platformie .NET
             href: ../standard/base-types/character-encoding-introduction.md
           - name: Jak używać klas kodowania znaków
             href: ../standard/base-types/character-encoding.md
-          - name: Najlepsze rozwiązania dotyczące używania ciągów
-            href: ../standard/base-types/best-practices-strings.md
+          - name: Najlepsze rozwiązania
+            items:
+              - name: Porównywanie ciągów
+                href: ../standard/base-types/best-practices-strings.md
+              - name: Wyświetlanie i utrzymywanie sformatowanych danych
+                href: ../standard/base-types/best-practices-display-data.md
+          - name: Zmiany zachowania w programie .NET 5 + (Windows)
+            href: ../standard/base-types/string-comparison-net-5-plus.md
           - name: Podstawowe operacje na ciągach
             items:
               - name: Omówienie
@@ -1438,12 +1446,12 @@ items:
                 href: ../standard/base-types/trimming.md
               - name: Uzupełnianie ciągów
                 href: ../standard/base-types/padding.md
-              - name: Porównywanie ciągów
+              - name: Metody porównywania
                 href: ../standard/base-types/comparing.md
               - name: Zmiana wielkości liter
                 href: ../standard/base-types/changing-case.md
-              - name: Wyodrębnianie elementów z ciągu
-                href: ../standard/base-types/parse-strings.md
+              - name: Oddzielanie części ciągu
+                href: ../standard/base-types/divide-up-strings.md
               - name: Używanie klasy StringBuilder
                 href: ../standard/base-types/stringbuilder.md
               - name: 'Instrukcje: Wykonywanie podstawowych działań na ciągach'
@@ -1503,16 +1511,16 @@ items:
                     href: ../standard/base-types/how-to-strip-invalid-characters-from-a-string.md
                   - name: 'Sprawdzanie, czy ciągi mają prawidłowy format poczty e-mail'
                     href: ../standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md
-      - name: Analizowanie ciągów
-        items:
-          - name: Omówienie
-            href: ../standard/base-types/parsing-strings.md
-          - name: Analizowanie ciągów liczbowych
-            href: ../standard/base-types/parsing-numeric.md
-          - name: Analizowanie ciągów daty i godziny
-            href: ../standard/base-types/parsing-datetime.md
-          - name: Analizowanie innych ciągów
-            href: ../standard/base-types/parsing-other.md
+          - name: Analizowanie (konwertowanie) ciągów
+            items:
+              - name: Omówienie
+                href: ../standard/base-types/parsing-strings.md
+              - name: Analizowanie ciągów liczbowych
+                href: ../standard/base-types/parsing-numeric.md
+              - name: Analizowanie ciągów daty i godziny
+                href: ../standard/base-types/parsing-datetime.md
+              - name: Analizowanie innych ciągów
+                href: ../standard/base-types/parsing-other.md
       - name: Atrybuty
         items:
           - name: Omówienie
