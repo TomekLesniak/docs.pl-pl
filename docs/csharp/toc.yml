@@ -48,6 +48,8 @@
               href: tutorials/intro-to-csharp/object-oriented-programming.md
     - name: Eksplorowanie instrukcji najwyższego poziomu
       href: tutorials/exploration/top-level-statements.md
+    - name: Eksplorowanie wzorców w obiektach
+      href: tutorials/exploration/patterns-objects.md
     - name: Eksplorowanie języka C# 6
       href: tutorials/exploration/csharp-6.yml
     - name: Eksplorowanie interpolacji ciągów — interakcyjne
@@ -224,7 +226,7 @@
     - name: Indeks artykułów
       displayName: how to's
       href: how-to/index.md
-    - name: Analizowanie ciągów za pomocą polecenia `String.Split`
+    - name: Dzielenie ciągów na podciągi
       href: how-to/parse-strings-using-split.md
     - name: Łączenie ciągów
       href: how-to/concatenate-multiple-strings.md
@@ -234,7 +236,7 @@
       href: how-to/modify-string-contents.md
     - name: Porównywanie ciągów
       href: how-to/compare-strings.md
-    - name: 'Bezpieczne rzutowanie za pomocą dopasowywania do wzorca, operatory is i as'
+    - name: Bezpieczne rzutowanie za pomocą dopasowywania do wzorca oraz operatorów is i as
       href: how-to/safely-cast-using-pattern-matching-is-and-as-operators.md
 - name: Zestaw SDK platformy kompilatora .NET (interfejsy API Roslyn)
   items:
