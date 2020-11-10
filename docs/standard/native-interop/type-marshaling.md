@@ -2,12 +2,12 @@
 title: Kierowanie typów — .NET
 description: Dowiedz się, w jaki sposób platforma .NET umożliwia kierowanie typów do natywnej reprezentacji.
 ms.date: 01/18/2019
-ms.openlocfilehash: bedaf49a5f7c5274f5e1bc7774490fec73651259
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 7fc3dfe950ecd3ed0ff5e4eb0e101c1596a831e1
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188396"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441001"
 ---
 # <a name="type-marshaling"></a>Marshaling typów
 
@@ -65,7 +65,7 @@ Poniższa tabela zawiera domyślne reguły organizowania, które są przeznaczon
 | `System.ArgIterator` | `va_list` | Niedozwolone |
 | `System.Collections.IEnumerator` | `IEnumVARIANT*` | Niedozwolone |
 | `System.Collections.IEnumerable` | `IDispatch*` | Niedozwolone |
-| `System.DateTimeOffset` | `int64_t` reprezentująca liczbę taktów od północy 1 stycznia 1601 || `int64_t` reprezentująca liczbę taktów od północy 1 stycznia 1601 |
+| `System.DateTimeOffset` | `int64_t` reprezentująca liczbę taktów od północy 1 stycznia 1601 | `int64_t` reprezentująca liczbę taktów od północy 1 stycznia 1601 |
 
 Niektóre typy mogą być organizowane tylko jako parametry, a nie jako pola. Te typy są wymienione w poniższej tabeli:
 

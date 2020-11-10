@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: 02480641af5ad2c973f7dbbbc233d3d89ff4617e
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: 3ab1c502508dd042940a6c5d2a73a5b71af6a9f4
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471677"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440845"
 ---
 # <a name="get-started-with-net-framework"></a>Wprowadzenie do .NET Framework
 
@@ -40,6 +40,7 @@ ms.locfileid: "92471677"
 - Wielowersyjności kodu. Według [.NET Standard](../../standard/net-standard.md), deweloperzy tworzą biblioteki klas, które działają na wielu platformach .NET Framework obsługiwanych przez tę wersję Standard. Na przykład biblioteki, które są przeznaczone dla .NET Standard 2,0 mogą być używane przez aplikacje przeznaczone dla .NET Framework 4.6.1, .NET Core 2,0 i platformy UWP 10.0.16299.
 
 <a name="ForUsers"></a>
+
 ## <a name="net-framework-for-users"></a>.NET Framework dla użytkowników
 
 Jeśli nie opracowujesz aplikacji .NET Framework, ale ich używasz, nie musisz mieć konkretnej wiedzy na temat .NET Framework lub jego działania. W większości przypadków platforma jest całkowicie niewidoczna dla użytkowników.
@@ -78,13 +79,12 @@ Aby uzyskać więcej informacji na temat tworzenia aplikacji przeznaczonych do .
 | [Przewodnik instalacji](../install/index.md) | Zawiera informacje o instalowaniu .NET Framework. |
 | [.NET Framework i wersje poza pasmem](the-net-framework-and-out-of-band-releases.md) | Opisuje .NET Framework wersje poza pasmem oraz sposób ich używania w aplikacji. |
 | [Wymagania systemowe](system-requirements.md) | Zawiera listę wymagań sprzętowych i programowych dotyczących uruchamiania .NET Framework. |
-| [Oprogramowanie .NET Core i Open-Source](net-core-and-open-source.md) | Opisuje platformę .NET Core w odniesieniu do .NET Framework i sposób uzyskiwania dostępu do projektów platformy .NET Core Open Source. |
 | [Dokumentacja platformy .NET Core](../../core/introduction.md) | Zawiera dokumentację dotyczącą pojęć i interfejsów API dla platformy .NET Core. |
 | [.NET Standard](../../standard/net-standard.md) | W tym artykule omówiono .NET Standard, specyfikacje wersji, które są obsługiwane przez poszczególne implementacje platformy .NET, aby zagwarantować, że na wielu platformach jest dostępny spójny zestaw interfejsów API.
 
 ## <a name="see-also"></a>Zobacz też
 
-- [.NET framework — przewodnik](../index.yml)
+- [Przewodnik .NET Framework](../index.yml)
 - [Co nowego](../whats-new/index.md)
 - [Przeglądarka interfejsów API platformy .NET](../../../api/index.md)
 - [Podręcznik programowania](../development-guide.md)

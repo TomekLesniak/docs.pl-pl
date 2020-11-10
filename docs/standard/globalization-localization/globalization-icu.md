@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: e0ca78871d1ddf851148096c8c6cfd10076763ab
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: ca579e837b801de237859963ede0e5a9a4bfbcbf
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400882"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439472"
 ---
 # <a name="net-globalization-and-icu"></a>Globalizacja i ICU platformy .NET
 
@@ -37,6 +37,29 @@ System Windows 10 maja 2019 Update i nowsze wersje zawierają [icu.dll](/windows
 
 > [!NOTE]
 > Nawet w przypadku używania ICU, `CurrentCulture` , `CurrentUICulture` i `CurrentRegion` elementy członkowskie nadal używają interfejsów API systemu operacyjnego Windows do zapamiętania ustawień użytkownika.
+
+### <a name="behavioral-differences"></a>Różnice w zachowaniu
+
+W przypadku uaktualniania aplikacji do programu .NET 5 można zobaczyć zmiany w aplikacji, nawet jeśli nie jest to konieczne w przypadku korzystania z mechanizmów globalizacji. Ta sekcja zawiera listę zmian w zachowaniu, które mogą zostać wyświetlone, ale również inne.
+
+##### <a name="stringindexof"></a>String. IndexOf
+
+Rozważmy następujący kod, który wywołuje, <xref:System.String.IndexOf(System.String)?displayProperty=nameWithType> Aby znaleźć indeks znaku nowego wiersza w ciągu.
+
+```csharp
+string s = "Hello\r\nworld!";
+int idx = s.IndexOf("\n");
+Console.WriteLine(idx);
+```
+
+- W poprzednich wersjach programu .NET w systemie Windows, fragment kodu drukuje `6` .
+- W programie .NET 5,0 i nowszych wersjach systemu Windows 10 może 2019 zaktualizować i nowsze wersje fragment kodu drukuje `-1` .
+
+Aby naprawić ten kod, przeprowadź wyszukiwanie porządkowe zamiast wyszukiwania z uwzględnieniem kultury, wywołaj <xref:System.String.IndexOf(System.String,System.StringComparison)> Przeciążenie i przekaż <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> jako argument.
+
+Można uruchamiać reguły analizy kodu [CA1307: Określ StringComparison dla przejrzystości](../../../docs/fundamentals/code-analysis/quality-rules/ca1307.md) i [CA1309: Użyj StringComparison porządkowej](../../../docs/fundamentals/code-analysis/quality-rules/ca1309.md) , aby znaleźć te lokacje wywołań w kodzie.
+
+Aby uzyskać więcej informacji, zobacz temat [zachowanie zmian w przypadku porównywania ciągów w programie .NET 5](../base-types/string-comparison-net-5-plus.md)lub nowszym.
 
 ### <a name="use-nls-instead-of-icu"></a>Korzystanie z programu NLS zamiast ICU
 

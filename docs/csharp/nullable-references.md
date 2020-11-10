@@ -3,12 +3,12 @@ title: Typy referencyjne dopuszczające wartość null
 description: Ten artykuł zawiera omówienie typów referencyjnych dopuszczających wartość null, które dodano w języku C# 8,0. Dowiesz się, jak funkcja zapewnia bezpieczeństwo przed wyjątkami odwołania o wartości null dla nowych i istniejących projektów.
 ms.technology: csharp-null-safety
 ms.date: 04/21/2020
-ms.openlocfilehash: 9c253d02c287d7a113536ac148b352486d450cc2
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: cb9438db6364b6dc5d34f3a776d3ed7ec2e9978b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92160883"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440396"
 ---
 # <a name="nullable-reference-types"></a>Typy referencyjne dopuszczające wartość null
 
@@ -23,7 +23,7 @@ W języku C# 8,0 wprowadzono **wartości null typów referencyjnych** i **niedop
 
 Ta nowa funkcja zapewnia znaczne korzyści w porównaniu z obsługą zmiennych referencyjnych we wcześniejszych wersjach języka C#, w których nie można ustalić zamiaru projektowania na podstawie deklaracji zmiennej. Kompilator nie zapewniał bezpieczeństwa przed wyjątkami odwołania o wartości null dla typów referencyjnych:
 
-- **Odwołanie może mieć wartość null**. Kompilator nie wydaje ostrzeżeń, gdy typ odwołania jest zainicjowany do wartości null lub później przypisany do wartości null. Kompilator wystawia ostrzeżenia, gdy te zmienne są wywołujące bez sprawdzania wartości null.
+- **Odwołanie może mieć wartość null**. Kompilator nie wydaje ostrzeżeń, gdy zmienna typu odwołania jest zainicjowana do `null` lub później przypisany `null` . Kompilator wystawia ostrzeżenia, gdy te zmienne są wywołujące bez sprawdzania wartości null.
 - **Przyjęto, że odwołanie nie ma wartości null**. Kompilator nie wystawia żadnych ostrzeżeń, gdy odwołania do typów odwołań. Kompilator wystawia ostrzeżenia, jeśli zmienna jest ustawiona na wyrażenie, które może mieć wartość null.
 
 Te ostrzeżenia są emitowane w czasie kompilacji. Kompilator nie dodaje żadnych kontroli wartości null ani innych konstrukcji środowiska uruchomieniowego w kontekście dopuszczającym wartość null. W czasie wykonywania, odwołanie do wartości null i odwołanie niedopuszczające wartości null są równoważne.
@@ -46,12 +46,12 @@ name!.Length;
 
 ## <a name="nullability-of-types"></a>Wartość zerowa typów
 
-Każdy typ referencyjny może mieć jeden z czterech *nullabilities*, który opisuje, kiedy generowane są ostrzeżenia:
+Każdy typ referencyjny może mieć jeden z czterech *nullabilities* , który opisuje, kiedy generowane są ostrzeżenia:
 
-- *Niedopuszczający wartości null*: nie można przypisać wartości null do zmiennych tego typu. Przed usunięciem odwołania zmienne tego typu nie muszą mieć wartości null.
-- *Nullable*: wartość null może być przypisana do zmiennych tego typu. Odwołujące się do zmiennych tego typu bez uprzedniego sprawdzenia `null` powoduje ostrzeżenie.
-- *Oblivious*: Oblivious jest stanem sprzed C # 8,0. Zmienne tego typu mogą być wywoływane lub przypisane bez ostrzeżeń.
-- *Nieznany*: nieznany jest zazwyczaj dla parametrów typu, w których ograniczenia nie informują kompilatora, że typ musi *dopuszczać wartości null* lub nie *dopuszczać wartości null*.
+- *Niedopuszczający wartości null* : nie można przypisać wartości null do zmiennych tego typu. Przed usunięciem odwołania zmienne tego typu nie muszą mieć wartości null.
+- *Nullable* : wartość null może być przypisana do zmiennych tego typu. Odwołujące się do zmiennych tego typu bez uprzedniego sprawdzenia `null` powoduje ostrzeżenie.
+- *Oblivious* : Oblivious jest stanem sprzed C # 8,0. Zmienne tego typu mogą być wywoływane lub przypisane bez ostrzeżeń.
+- *Nieznany* : nieznany jest zazwyczaj dla parametrów typu, w których ograniczenia nie informują kompilatora, że typ musi *dopuszczać wartości null* lub nie *dopuszczać wartości null*.
 
 Wartość null typu w deklaracji zmiennej jest kontrolowana przez *kontekst dopuszczający wartość* null, w którym zmienna jest zadeklarowana.
 
@@ -70,7 +70,7 @@ Kontekst adnotacji dopuszczający wartość null i kontekst ostrzeżenia dopuszc
 - `disable`: Kontekst adnotacji dopuszczający wartość null jest **wyłączony**. Kontekst ostrzegawczy dopuszczający wartość null jest **wyłączony**.
   - Zmienne typu referencyjnego to Oblivious, podobnie jak w przypadku wcześniejszych wersji języka C#. Wszystkie ostrzeżenia o wartości null są wyłączone.
 
-**Przykład**:
+**Przykład** :
 
 ```xml
 <Nullable>enable</Nullable>
@@ -88,7 +88,7 @@ Możesz również użyć dyrektyw, aby ustawić te same konteksty w dowolnym mie
 - `#nullable enable annotations`: Ustaw dla kontekstu adnotacji nullable wartość **włączone**.
 - `#nullable restore annotations`: Przywraca kontekst ostrzeżenia adnotacji do ustawień projektu.
 
-Domyślnie adnotacja null i konteksty ostrzeżeń są **wyłączone**, w tym nowych projektów. Oznacza to, że istniejący kod kompiluje się bez zmian i nie generuje żadnych nowych ostrzeżeń.
+Domyślnie adnotacja null i konteksty ostrzeżeń są **wyłączone** , w tym nowych projektów. Oznacza to, że istniejący kod kompiluje się bez zmian i nie generuje żadnych nowych ostrzeżeń.
 
 Te opcje zapewniają dwie odrębne strategie [aktualizowania istniejącej bazy kodu](nullable-migration-strategies.md) w celu użycia typów referencyjnych dopuszczających wartość null.
 
@@ -114,12 +114,12 @@ W włączonym kontekście dopuszczającym wartość null, `?` znak dołączony d
 
 ## <a name="nullable-warning-context"></a>Kontekst ostrzegawczy dopuszczający wartość null
 
-Kontekst ostrzeżenia dopuszczający wartość null jest różny od kontekstu adnotacji dopuszczającej wartość null. Ostrzeżenia można włączyć nawet wtedy, gdy nowe adnotacje są wyłączone. Kompilator używa statycznej analizy przepływu do określenia **stanu null** dowolnych odwołań. Stan o wartości null **nie ma wartości null** lub **może mieć wartość null** , jeśli *kontekst ostrzeżenia o wartości null* nie jest **wyłączony**. Jeśli odwołujesz się do odwołania, gdy kompilator ustalił, że **może mieć wartość null**, kompilator wyświetli ostrzeżenie. Stan odwołania może **mieć wartość null** , chyba że kompilator może określić jeden z dwóch warunków:
+Kontekst ostrzeżenia dopuszczający wartość null jest różny od kontekstu adnotacji dopuszczającej wartość null. Ostrzeżenia można włączyć nawet wtedy, gdy nowe adnotacje są wyłączone. Kompilator używa statycznej analizy przepływu do określenia **stanu null** dowolnych odwołań. Stan o wartości null **nie ma wartości null** lub **może mieć wartość null** , jeśli *kontekst ostrzeżenia o wartości null* nie jest **wyłączony**. Jeśli odwołujesz się do odwołania, gdy kompilator ustalił, że **może mieć wartość null** , kompilator wyświetli ostrzeżenie. Stan odwołania może **mieć wartość null** , chyba że kompilator może określić jeden z dwóch warunków:
 
-1. Zmienna została ostatecznie przypisana do wartości innej niż null.
+1. Zmienna ma w nieskończoność przypisaną wartość różną od null.
 1. Zmienna lub wyrażenie zostało sprawdzone pod kątem wartości null przed usunięciem odwołania do niego.
 
-Kompilator generuje ostrzeżenia, gdy zostanie wykorzystana zmienna lub wyrażenie, które **może mieć wartość null** w kontekście ostrzeżenia o wartości null. Ponadto kompilator generuje ostrzeżenia, gdy typ odwołania, który ma wartość null, jest przypisany do zmiennej lub wyrażenia o **wartości null** w włączonym kontekście adnotacji typu null.
+Kompilator generuje ostrzeżenia, gdy zostanie wykorzystana zmienna lub wyrażenie, które **może mieć wartość null** w kontekście ostrzeżenia o wartości null. Co więcej, kompilator generuje ostrzeżenia, gdy zmienna typu odwołania, która nie ma wartości null, **może mieć zmienną null** lub wyrażenie w włączonym kontekście adnotacji nullable.
 
 ## <a name="attributes-describe-apis"></a>Opisy interfejsów API
 

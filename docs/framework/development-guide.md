@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-ms.openlocfilehash: 73b930efa893fd2b481c4c130754154a0d10d5b4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ef3fe36ce0c53821fb79fd7689ec6f7176af3e2f
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547887"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440858"
 ---
 # <a name="net-framework-development-guide"></a>Przewodnik programowania .NET Framework
 
@@ -46,13 +46,13 @@ W tej sekcji opisano sposób tworzenia, konfigurowania, debugowania, zabezpiecza
  [Kompilowanie aplikacji z architekturą .NET Native](./net-native/index.md)  
  Wyjaśnia, jak używać technologii prekompilowania .NET Native do kompilowania i wdrażania aplikacji ze sklepu Windows. .NET Native kompiluje aplikacje, które są zapisywane w kodzie zarządzanym (C#), który jest przeznaczony dla .NET Framework do kodu natywnego.  
   
- [Bezpieczeństwo](../standard/security/index.md)  
+ [Zabezpieczenia](../standard/security/index.md)  
  Zawiera informacje dotyczące klas i usług w .NET Framework, które ułatwiają tworzenie bezpiecznych aplikacji.  
   
  [Debugowanie, śledzenie i profilowanie](./debug-trace-profile/index.md)  
  Wyjaśnia, jak testować, optymalizować i profilować .NET Framework aplikacje oraz środowisko aplikacji. Ta sekcja zawiera informacje dla administratorów i deweloperów.  
   
- [Tworzenie aplikacji dla wielu platform](../standard/cross-platform/index.md)  
+ [Tworzenie aplikacji dla wielu platform](./cross-platform/index.md)  
  Zawiera informacje o sposobach używania .NET Framework do kompilowania zestawów, które mogą być współużytkowane przez wiele platform i na wielu urządzeniach, takich jak telefony, komputery stacjonarne i sieci Web.  
   
  [Wdrożenie](./deployment/index.md)  
@@ -61,11 +61,13 @@ W tej sekcji opisano sposób tworzenia, konfigurowania, debugowania, zabezpiecza
  [Wydajność](./performance/index.md)  
  Zawiera informacje na temat buforowania, inicjowania z opóźnieniem, niezawodności i zdarzeń ETW.  
 
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Odwołanie  
+
  [Biblioteka klas .NET Framework](../../api/index.md?view=netframework-4.7)  
  Dostarcza składnię, przykłady kodu i informacje o użyciu dla każdej klasy, która jest zawarta w przestrzeni nazw .NET Framework.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Wprowadzenie](./get-started/index.md)  
  Wyczerpujące omówienie programu .NET Framework i łącza do dodatkowych zasobów.  
   

@@ -3,12 +3,12 @@ title: Przenoszenie z programu .NET Framework na platformę .NET Core
 description: Poznaj proces przenoszenia i odnajdywanie narzędzi, które mogą okazać się przydatne podczas przenoszenia projektu .NET Framework do programu .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: 00d6bb513a6bd8ee511b69c07272f605c39e5619
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 7719742294c04aadbfd2e5f223040d3b5b485b5b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063244"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439745"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Przegląd portów z .NET Framework do platformy .NET Core
 
@@ -119,4 +119,4 @@ Zalecamy użycie następującego procesu podczas przenoszenia projektu do progra
 
 - [ASP.NET Core ASP.NET migracji](/aspnet/core/migration/proper-to-2x)
 - [Migrowanie aplikacji WPF do programu .NET Core](/dotnet/desktop/wpf/migration/convert-project-from-net-framework)
-- [Migrowanie aplikacji Windows Forms do programu .NET Core](winforms.md)
+- [Migrowanie aplikacji .NET Framework Windows Forms do platformy .NET](/dotnet/desktop/winforms/migration/?view=netdesktop-5.0&preserve-view=true)

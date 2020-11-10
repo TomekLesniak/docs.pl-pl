@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: b0b1f4492d68ff2f2218b7c977f57cad3f582bb0
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: 2488499c1b0e8d12eb3be04b9bb885649b4da974
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050283"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439732"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co nowego w programie .NET Core 3.0
 
@@ -42,7 +42,7 @@ Wprowadzono ulepszenia dotyczące języka w celu obsługi następujących funkcj
 
 ## <a name="net-standard-21"></a>.NET Standard 2,1
 
-Platforma .NET Core 3,0 implementuje **.NET Standard 2,1**. Jednak `dotnet new classlib` szablon domyślny generuje projekt, który nadal jest przeznaczony dla **.NET Standard 2,0**. Aby docelowa **.NET Standard 2,1**, edytuj plik projektu i Zmień `TargetFramework` Właściwość na `netstandard2.1` :
+Platforma .NET Core 3,0 implementuje **.NET Standard 2,1**. Jednak `dotnet new classlib` szablon domyślny generuje projekt, który nadal jest przeznaczony dla **.NET Standard 2,0**. Aby docelowa **.NET Standard 2,1** , edytuj plik projektu i Zmień `TargetFramework` Właściwość na `netstandard2.1` :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -62,7 +62,7 @@ Jeśli używasz programu Visual Studio, potrzebujesz [programu Visual studio 201
 
 Platforma .NET Core teraz domyślnie kompiluje [pliki wykonywalne zależne od platformy](../deploying/index.md#publish-framework-dependent) . To zachowanie jest nowe w przypadku aplikacji korzystających z zainstalowanej globalnie wersji platformy .NET Core. Wcześniej tylko [wstępnie zawarte wdrożenia](../deploying/index.md#publish-self-contained) spowodują utworzenie pliku wykonywalnego.
 
-W trakcie `dotnet build` lub `dotnet publish` , tworzony jest plik wykonywalny (znany jako **appHost**), który odpowiada środowisku i platformie zestawu SDK, którego używasz. Można oczekiwać, że te same elementy wykonywalne są takie same jak w przypadku innych natywnych plików wykonywalnych, takich jak:
+W trakcie `dotnet build` lub `dotnet publish` , tworzony jest plik wykonywalny (znany jako **appHost** ), który odpowiada środowisku i platformie zestawu SDK, którego używasz. Można oczekiwać, że te same elementy wykonywalne są takie same jak w przypadku innych natywnych plików wykonywalnych, takich jak:
 
 - Możesz kliknąć dwukrotnie plik wykonywalny.
 - Aplikację można uruchomić z poziomu wiersza polecenia bezpośrednio, na przykład `myapp.exe` w systemie Windows, w systemie `./myapp` Linux i macOS.
@@ -288,7 +288,7 @@ Moduł wyrzucania elementów bezużytecznych można teraz skonfigurować przy u�
 
 ### <a name="net-core-sdk-windows-installer"></a>Zestaw .NET Core SDK Instalator Windows
 
-Instalator MSI dla systemu Windows został zmieniony począwszy od platformy .NET Core 3,0. Instalatorzy zestawu SDK teraz uaktualniają wersje funkcji zestawu SDK na miejscu. Paski funkcji są zdefiniowane w grupach *setek* w sekcji *poprawka* numeru wersji. Na przykład **3,0._ 101_ ** i **3,0._ 201_ ** są wersje w dwóch różnych warstwach funkcji podczas **3,0._ 101_ ** i **3,0._ 199_ ** znajdują się w tej samej paśmie funkcji. I, w przypadku zestaw .NET Core SDK **3,0._ 101_ ** jest zainstalowana, zestaw .NET Core SDK **3,0._ 100_ ** zostanie usunięta z komputera, jeśli istnieje. Gdy zestaw .NET Core SDK **3,0._ 200_ ** jest zainstalowana na tym samym komputerze, zestaw .NET Core SDK **3,0._ 101_ ** nie zostanie usunięta.
+Instalator MSI dla systemu Windows został zmieniony począwszy od platformy .NET Core 3,0. Instalatorzy zestawu SDK teraz uaktualniają wersje funkcji zestawu SDK na miejscu. Paski funkcji są zdefiniowane w grupach *setek* w sekcji *poprawka* numeru wersji. Na przykład **3,0. _101_** i **3,0. _201_** są wersje w dwóch różnych warstwach funkcji podczas **3,0. _101_** i **3,0. _199_** znajdują się w tej samej paśmie funkcji. I, w przypadku zestaw .NET Core SDK **3,0. _101_** jest zainstalowana, zestaw .NET Core SDK **3,0. _100_** zostanie usunięta z komputera, jeśli istnieje. Gdy zestaw .NET Core SDK **3,0. _200_** jest zainstalowana na tym samym komputerze, zestaw .NET Core SDK **3,0. _101_** nie zostanie usunięta.
 
 Aby uzyskać więcej informacji na temat przechowywania wersji, zobacz [Omówienie wersji platformy .NET Core](../versions/index.md).
 
@@ -307,7 +307,7 @@ dotnet new winforms
 
 Program Visual Studio 2019 dodaje **nowe szablony projektów** dla platformy .net Core 3,0 Windows Forms i WPF.
 
-Aby uzyskać więcej informacji na temat sposobu przenoszenia istniejącej aplikacji .NET Framework, zobacz [port WPF projekty](/dotnet/desktop/wpf/migration/convert-project-from-net-framework) i [projekty Windows Forms portów](../porting/winforms.md).
+Aby uzyskać więcej informacji na temat sposobu przenoszenia istniejącej aplikacji .NET Framework, zobacz [port WPF projekty](/dotnet/desktop/wpf/migration/convert-project-from-net-framework) i [projekty Windows Forms portów](/dotnet/desktop/winforms/migration/?view=netdesktop-5.0&preserve-view=true).
 
 #### <a name="winforms-high-dpi"></a>Bardzo wysokie wartości DPI
 
@@ -333,7 +333,7 @@ Przykład sposobu tworzenia składnika modelu COM i korzystania z niego można z
 
 ### <a name="windows-native-interop"></a>Windows Native Interop
 
-System Windows oferuje bogaty natywny interfejs API w postaci prostych interfejsów API języka C, COM i WinRT. Podczas gdy platforma .NET Core obsługuje funkcję **P/Invoke**, program .net Core 3,0 dodaje możliwość **CoCreate interfejsów API modelu COM** i **aktywowania interfejsów API WinRT**. Aby zapoznać się z przykładem kodu, zobacz [Demonstracja programu Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
+System Windows oferuje bogaty natywny interfejs API w postaci prostych interfejsów API języka C, COM i WinRT. Podczas gdy platforma .NET Core obsługuje funkcję **P/Invoke** , program .net Core 3,0 dodaje możliwość **CoCreate interfejsów API modelu COM** i **aktywowania interfejsów API WinRT**. Aby zapoznać się z przykładem kodu, zobacz [Demonstracja programu Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
 
 ### <a name="msix-deployment"></a>Wdrożenie MSIX
 
@@ -372,7 +372,7 @@ Do programu NuGet zostały wydane dwa pakiety, których można użyć do program
 - [System. Device. GPIO](https://www.nuget.org/packages/System.Device.Gpio)
 - [IoT. Device. bindings](https://www.nuget.org/packages/Iot.Device.Bindings)
 
-Pakiety GPIO obejmują interfejsy API dla urządzeń z interfejsem *GPIO*, *SPI*, *I2C*i *PWM* . Pakiet powiązań IoT obejmuje powiązania urządzeń. Aby uzyskać więcej informacji, zobacz [repozytorium GitHub](https://github.com/dotnet/iot/blob/master/src/devices/).
+Pakiety GPIO obejmują interfejsy API dla urządzeń z interfejsem *GPIO* , *SPI* , *I2C* i *PWM* . Pakiet powiązań IoT obejmuje powiązania urządzeń. Aby uzyskać więcej informacji, zobacz [repozytorium GitHub](https://github.com/dotnet/iot/blob/master/src/devices/).
 
 ### <a name="arm64-linux-support"></a>Obsługa systemu Linux ARM64
 
@@ -392,7 +392,7 @@ Platforma .NET Core wykorzystuje teraz zalety [protokołu TLS 1,3 w OpenSSL 1.1.
 - Czas połączenia jest ulepszony ze zredukowanymi przedziałami rundy między klientem i serwerem.
 - Ulepszone zabezpieczenia spowodowane usuwaniem różnych przestarzałych i niezabezpieczonych algorytmów kryptograficznych.
 
-Jeśli jest dostępny, program .NET Core 3,0 używa **OpenSSL 1.1.1**, **OpenSSL 1.1.0**lub **OpenSSL 1.0.2** w systemie Linux. Gdy **OpenSSL 1.1.1** jest dostępny, oba <xref:System.Net.Security.SslStream?displayProperty=nameWithType> <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> typy i używają **protokołu TLS 1,3** (przy założeniu, że zarówno klient, jak i serwer obsługują **protokół TLS 1,3**).
+Jeśli jest dostępny, program .NET Core 3,0 używa **OpenSSL 1.1.1** , **OpenSSL 1.1.0** lub **OpenSSL 1.0.2** w systemie Linux. Gdy **OpenSSL 1.1.1** jest dostępny, oba <xref:System.Net.Security.SslStream?displayProperty=nameWithType> <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> typy i używają **protokołu TLS 1,3** (przy założeniu, że zarówno klient, jak i serwer obsługują **protokół TLS 1,3** ).
 
 > [!IMPORTANT]
 > Systemy Windows i macOS nie obsługują jeszcze **protokołu TLS 1,3**.
@@ -413,7 +413,7 @@ Poniższy kod ilustruje użycie `AesGcm` szyfru do szyfrowania i odszyfrowywania
 
 Program .NET Core 3,0 obsługuje importowanie i eksportowanie asymetrycznych kluczy publicznych i prywatnych z formatów standardowych. Nie musisz używać certyfikatu X. 509.
 
-Wszystkie typy kluczy, takie jak *RSA*, *DSA*, *ECDSA*i *ECDiffieHellman*, obsługują następujące formaty:
+Wszystkie typy kluczy, takie jak *RSA* , *DSA* , *ECDSA* i *ECDiffieHellman* , obsługują następujące formaty:
 
 - **Klucz publiczny**
   - SubjectPublicKeyInfo X. 509

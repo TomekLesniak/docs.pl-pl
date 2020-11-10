@@ -1,52 +1,50 @@
 ---
 title: Co nowego w wersji .NET 5
 description: Dowiedz się więcej na temat platformy .NET 5 — platformy deweloperskiej obejmującej wiele platform i typu "open source", która jest kolejną ewolucją platformy .NET Core.
-ms.date: 10/13/2020
+ms.date: 11/06/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: cc86784e3fcac7e8a3b6f54c32f66763ae416d99
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: 43d7a2baa75f3d71de8bbbf1d0bff7d1beb3d7cd
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050369"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440535"
 ---
 # <a name="whats-new-in-net-5"></a>Co nowego w wersji .NET 5
 
-.NET 5 to ewolucja platformy .NET Core. W tym artykule przedstawiono szczegółowe informacje zawarte w programie .NET 5, który jest następną wersją programu .NET Core 3,1. Numer wersji to 5,0, aby uniknąć nieporozumień przy użyciu .NET Framework 4. x. I "rdzeń" został porzucony z nazwy, ponieważ jest to główna implementacja platformy .NET do przodu. ASP.NET Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Ponadto Entity Framework Core zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6. Platforma .NET 5 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
+.NET 5,0 to następna wersja główna programu .NET Core, która jest następująca: 3,1. Ta nowa wersja programu .NET 5,0 zamiast programu .NET Core 4,0 została nazywana z dwóch powodów:
 
-Pojawieniu platformy .NET Core rozwinęły ekosystem platformy .NET w atrakcyjny sposób. Zostało ono dojrzałe jako projekt Open Source w witrynie GitHub, świętujemy wkłady społecznościowe i humbly ulepszenie w miarę upływu czasu.
+- Pominięto numery wersji 4. x, aby uniknąć pomyłek w .NET Framework 4. x.
+- Porzucamy "rdzeń" z nazwy, aby podkreślić, że jest to główna implementacja platformy .NET do przodu. Platforma .NET 5,0 obsługuje więcej typów aplikacji i więcej platform niż .NET Core lub .NET Framework.
 
-Platforma .NET Core ma kilka podstawowych cech:
+ASP.NET Core 5,0 jest oparty na platformie .NET 5,0, ale zachowuje nazwę "rdzeń", aby uniknąć pomyłki z ASP.NET MVC 5. Podobnie, Entity Framework Core 5,0 zachowuje nazwę "rdzeń", aby uniknąć pomyłki z Entity Framework 5 i 6.
 
-> [!div class="checklist"]
->
-> - Wiele platform
-> - Open source
-> - Instalacja równoczesna
-> - Małe pliki projektu (zestaw SDK)
-> - Elastyczne wdrażanie
+Program .NET 5,0 zawiera następujące ulepszenia i nowe funkcje w porównaniu z programem .NET Core 3,1:
 
-Platforma .NET 5 rozszerza te charakterystyki, wprowadzając przyrostowe ulepszenia:
-
-- Aplikacje pojedynczego pliku
+- [Aktualizacje w języku C#](#c-updates)
+- [Aktualizacje języka F #](#f-updates)
+- [Aktualizacje Visual Basic](#visual-basic-updates)
+- [System.Text.Jsnowych funkcji](#systemtextjson-new-features)
+- [Aplikacje pojedynczego pliku](deploying/single-file.md)
+- [Przycinanie aplikacji](https://devblogs.microsoft.com/dotnet/app-trimming-in-net-5)
 - Funkcje wewnętrzne ARM64 i ARM64 systemu Windows
-- Udoskonalenia wydajności w celu:
+- Narzędzia obsługujące debugowanie zrzutów
+- Biblioteki środowiska uruchomieniowego są 80% adnotacją dla [typów odwołań dopuszczających wartości null](../csharp/nullable-references.md)
+- Ulepszenia wydajności:
   - [Odzyskiwanie pamięci (GC)](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/#gc)
   - [System.Text.Json](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/#json)
   - [System.Text.RegularExpressions](https://devblogs.microsoft.com/dotnet/regex-performance-improvements-in-net-5)
   - [Asynchroniczne buforowanie ValueTask](https://devblogs.microsoft.com/dotnet/async-valuetask-pooling-in-net-5)
+  - [Optymalizacje rozmiaru kontenera](https://github.com/dotnet/dotnet-docker/issues/1814#issuecomment-625294750)
   - [Wiele więcej obszarów](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5)
-- [Optymalizacje rozmiaru kontenera](https://github.com/dotnet/dotnet-docker/issues/1814#issuecomment-625294750)
-- [Przycinanie aplikacji](https://devblogs.microsoft.com/dotnet/app-trimming-in-net-5)
-- [Udoskonalenia kompilatora języka C#](https://devblogs.microsoft.com/dotnet/automatically-find-latent-bugs-in-your-code-with-net-5)
-- Narzędzia obsługujące debugowanie zrzutów
-- Platforma to 80% adnotacji dla [typów referencyjnych dopuszczających wartości null](../csharp/nullable-references.md)
 
-### <a name="what-net-5-is-not"></a>Co to jest platforma .NET 5
+## <a name="net-50-doesnt-replace-net-framework"></a>.NET 5,0 nie zastępuje .NET Framework
 
-Platforma .NET 5 nie jest kompletną wymianą dla .NET Framework. Nie istnieją plany dotyczące portów następujących technologii z .NET Framework do platformy .NET 5, ale istnieją obsługiwane alternatywy:
+.NET 5,0 to główna implementacja platformy .NET do przodu i .NET Framework 4. x jest nadal obsługiwana.
+
+Nie ma żadnych planów dotyczących portów z .NET Framework do .NET 5,0, ale istnieją alternatywy w programie .NET 5,0:
 
 | Technologia                             | Zalecana alternatywa                                                                         |
 |----------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -54,17 +52,13 @@ Platforma .NET 5 nie jest kompletną wymianą dla .NET Framework. Nie istnieją 
 | Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                                                       |
 | Windows Workflow (WF)                  | [CoreWF "open source"](https://github.com/UiPath-Open/corewf)                                     |
 
-## <a name="net-standard"></a>.NET Standard
+## <a name="net-50-doesnt-replace-net-standard"></a>.NET 5,0 nie zastępuje .NET Standard
 
 Nowe opracowywanie aplikacji może określać `net5.0` moniker platformy docelowej (TFM) dla wszystkich typów projektów, w tym biblioteki klas. Udostępnianie kodu między obciążeniami programu .NET 5 jest uproszczone w tym, że wszystko, co jest potrzebne, to `net5.0` TFM.
 
-`net5.0`TFM łączy i zastępuje `netcoreapp` `netstandard` nazwy i. Ta TFM zazwyczaj obejmuje tylko technologie, które działają na wielu platformach, takich jak .NET Standard. Jeśli jednak planujesz udostępnianie kodu między obciążeniami .NET Framework, .NET Core i .NET 5, możesz to zrobić, określając `netstandard2.0` jako TFM. Aby uzyskać więcej informacji, zobacz [jak określić Platformy docelowe](../standard/frameworks.md#how-to-specify-a-target-framework).
+W przypadku aplikacji i bibliotek programu .NET 5,0, `net5.0` moniker struktury docelowej (TFM) łączy i zastępuje `netcoreapp` `netstandard` TFMs. Jeśli jednak planujesz udostępnianie kodu między obciążeniami .NET Framework, .NET Core i .NET 5, możesz to zrobić, określając `netstandard2.0` jako TFM. Aby uzyskać więcej informacji, zobacz [.NET Standard](../standard/net-standard.md).
 
-## <a name="language-updates"></a>Aktualizacje języka
-
-W przypadku platformy .NET 5 Języki programowania .NET są kontynuowane.
-
-### <a name="c-updates"></a>Aktualizacje w języku C#
+## <a name="c-updates"></a>Aktualizacje w języku C#
 
 Deweloperzy piszący aplikacje .NET 5 będą mieli dostęp do najnowszej wersji i funkcji języka C#. Program .NET 5 jest sparowany z językiem C# 9, który oferuje wiele nowych funkcji w języku. Oto kilka świateł:
 
@@ -80,17 +74,17 @@ Deweloperzy piszący aplikacje .NET 5 będą mieli dostęp do najnowszej wersji 
 
 Aby uzyskać więcej informacji na temat dostępnych funkcji języka C# 9, zobacz [co nowego w języku c# 9](../csharp/whats-new/csharp-9.md).
 
-#### <a name="source-generators"></a>Generatory źródeł
+### <a name="source-generators"></a>Generatory źródeł
 
 Oprócz niektórych wyróżnionych nowych funkcji języka C#, generatory źródeł są gotowe do projektów deweloperskich. Generatory źródła umożliwiają kod, który jest uruchamiany podczas kompilacji w celu sprawdzenia programu i tworzenia dodatkowych plików, które są kompilowane razem z resztą kodu.
 
 Aby uzyskać więcej informacji na temat generatorów źródeł, zobacz [wprowadzenie do źródłowych generatorów języka c#](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators) i [próbek generatora źródła c#](https://devblogs.microsoft.com/dotnet/new-c-source-generator-samples).
 
-### <a name="f-updates"></a>Aktualizacje języka F #
+## <a name="f-updates"></a>Aktualizacje języka F #
 
 F # to język programowania funkcjonalny .NET, a w przypadku platformy .NET 5 deweloperzy mają dostęp do programu F # 5. Oto kilka nowych funkcji języka F # 5:
 
-#### <a name="interpolated-strings"></a>Ciągi interpolowane
+### <a name="interpolated-strings"></a>Ciągi interpolowane
 
 Podobnie jak ciąg interpolowany w języku C#, a nawet JavaScript, język F # obsługuje interpolację ciągów podstawowych.
 
@@ -110,7 +104,7 @@ let message = $"%s{name} is %d{age} years old."
 
 Jest to podobne do [`sprintf`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule.html#sprintf) funkcji, która formatuje ciąg w oparciu o dane wejściowe bezpieczne dla typów. <!-- For more information, see [What's new in F# 5](fsharp/whats-new/fsharp-50.md). -->
 
-### <a name="visual-basic-updates"></a>Aktualizacje Visual Basic
+## <a name="visual-basic-updates"></a>Aktualizacje Visual Basic
 
 Nie ma nowych funkcji języka dla Visual Basic w programie .NET 5. Jednak w przypadku platformy .NET 5 obsługa Visual Basic została rozszerzona o następujące:
 
@@ -130,6 +124,23 @@ Nie ma nowych funkcji języka dla Visual Basic w programie .NET 5. Jednak w przy
 | Projekt testu xUnit                     | `xunit`                |
 
 Aby uzyskać więcej informacji na temat szablonów projektów z interfejsu wiersza polecenia platformy .NET, zobacz [`dotnet new`](tools/dotnet-new.md) .
+
+## <a name="systemtextjson-new-features"></a>System.Text.Jsnowych funkcji
+
+W [ systemach iSystem.Text.Js](../standard/serialization/system-text-json-overview.md)są dostępne nowe funkcje:
+
+- [Zachowaj odwołania i dojścia cykliczne odwołania](../standard/serialization/system-text-json-how-to.md#preserve-references-and-handle-circular-references)
+- [Metody rozszerzenia HttpClient i HttpContent](../standard/serialization/system-text-json-how-to.md#httpclient-and-httpcontent-extension-methods)
+- [Zezwalaj lub zapisuj liczby w cudzysłowach](../standard/serialization/system-text-json-how-to.md#allow-or-write-numbers-in-quotes)
+- [Obsługa niemodyfikowalnych typów i rekordów C# 9](../standard/serialization/system-text-json-how-to.md#immutable-types-and-records)
+- [Obsługa metod dostępu do właściwości niepublicznych](../standard/serialization/system-text-json-how-to.md#non-public-property-accessors)
+- [pola pomocy technicznej](../standard/serialization/system-text-json-how-to.md#include-fields)
+- [Ignoruj warunkowo właściwości](../standard/serialization/system-text-json-how-to.md#ignore-properties)
+- [Obsługa słowników z kluczami niebędącymi ciągami](../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md#dictionary-with-non-string-key)
+- [Obsługa metod dostępu do właściwości niepublicznych](../standard/serialization/system-text-json-how-to.md#non-public-property-accessors)
+- [Zezwalaj na obsługę niestandardowych konwerterów o wartości null](../standard/serialization/system-text-json-converters-how-to.md#handle-null-values)
+- [Kopiuj JsonSerializerOptions](../standard/serialization/system-text-json-how-to.md#copy-jsonserializeroptions)
+- [Tworzenie JsonSerializerOptions przy użyciu ustawień domyślnych sieci Web](../standard/serialization/system-text-json-how-to.md#web-defaults-for-jsonserializeroptions)
 
 ## <a name="net-maui"></a>MAUI .NET
 

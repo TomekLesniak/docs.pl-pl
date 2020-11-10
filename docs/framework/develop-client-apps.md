@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Visual C#, creating applications
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
-ms.openlocfilehash: 33d0ca2918e4e3b00e2b09f7a47c538bbe903dba
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e8d3a95b58cd2cabc41be31b7a4b66b1a79317d6
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547912"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439433"
 ---
 # <a name="develop-client-applications-with-net-framework"></a>Tworzenie aplikacji klienckich za pomocą .NET Framework
 
@@ -39,7 +39,7 @@ Opisuje sposób tworzenia aplikacji platformy UWP, które mogą być dostępne d
 [Interfejs API platformy .NET dla aplikacji platformy UWP](../../api/index.md?view=dotnet-uwp-10.0)\
 Dokumentacja dla typów .NET, które obsługują aplikacje platformy UWP.
   
-[Programowanie dla wielu platform](../standard/cross-platform/index.md)\
+[Programowanie dla wielu platform](./cross-platform/index.md)\
 W tym artykule opisano różne metody, których można użyć .NET Framework do określania wielu typów aplikacji klienckich.
 
 [Wprowadzenie do witryn sieci Web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/web-apps)\
@@ -48,7 +48,7 @@ Opisuje sposoby opracowywania aplikacji sieci Web przy użyciu usługi ASP.NET.
 [Interfejs API platformy .NET dla Windows Phone Silverlight](/previous-versions/windows/apps/jj207211\(v=vs.105\))\
 Wyświetla listę .NET Framework interfejsów API, których można użyć do kompilowania aplikacji przy użyciu Windows Phone Silverlight.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [.NET Standard](../standard/net-standard.md)
 - [Omówienie](./get-started/overview.md)

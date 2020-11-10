@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 322e079a1be556efb536b24e216e480c1950bd8c
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: b70eb44c3d92e03ab4b33f81b87d48c70797cec5
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917024"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441014"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Podstawowe informacje dotyczące wyrzucania elementów bezużytecznych
 
@@ -70,7 +70,7 @@ Przydzielanie pamięci z zarządzanego stosu jest szybsze niż niezarządzane pr
 
 ### <a name="memory-release"></a>Wersja pamięci
 
-Aparat optymalizacji w module odśmiecania pamięci ustala najlepszy moment na wykonanie procesu wyrzucania w oparciu o dokonywane przydziały. Gdy moduł odśmiecania wykonuje ten proces, zwalnia pamięć zajmowaną przez obiekty, które nie są już używane przez aplikację. Określa, które obiekty nie są już używane przez badanie *katalogów głównych*aplikacji. Elementy główne aplikacji obejmują pola statyczne, zmienne lokalne i parametry stosu wątku oraz rejestry procesora. Każdy obiekt główny odwołuje się do obiektu w zarządzanym stosie albo przyjmuje wartość null. Moduł wyrzucania elementów bezużytecznych ma dostęp do listy aktywnych katalogów głównych, które utrzymuje kompilator just-in-Time (JIT) i środowisko uruchomieniowe. Korzystając z tej listy, Moduł wyrzucania elementów bezużytecznych tworzy wykres, który zawiera wszystkie obiekty, które są dostępne z elementów głównych.
+Aparat optymalizacji w module odśmiecania pamięci ustala najlepszy moment na wykonanie procesu wyrzucania w oparciu o dokonywane przydziały. Gdy moduł odśmiecania wykonuje ten proces, zwalnia pamięć zajmowaną przez obiekty, które nie są już używane przez aplikację. Określa, które obiekty nie są już używane przez badanie *katalogów głównych* aplikacji. Elementy główne aplikacji obejmują pola statyczne, zmienne lokalne w stosie wątku, rejestry procesora, uchwyty GC i kolejkę Finalize. Każdy obiekt główny odwołuje się do obiektu w zarządzanym stosie albo przyjmuje wartość null. Moduł wyrzucania elementów bezużytecznych może zażądać reszty środowiska uruchomieniowego dla tych katalogów głównych. Korzystając z tej listy, Moduł wyrzucania elementów bezużytecznych tworzy wykres, który zawiera wszystkie obiekty, które są dostępne z elementów głównych.
 
 Obiekty nieobecne na liście są nieosiągalne z obiektów głównych aplikacji. Moduł wyrzucania elementów bezużytecznych traktuje obiekty nieosiągalne i zwalnia przydzieloną im pamięć. Podczas wyrzucania elementów moduł odśmiecania pamięci analizuje zarządzany stos w poszukiwaniu bloków przestrzeni adresowej zajmowanych przez nieosiągalne obiekty. Po wykryciu niedostępnego obiektu moduł odśmiecania za pomocą funkcji kopiowania pamięci kompaktuje dostępne obiekty wewnątrz pamięci i jednoczenie zwalnia bloki przestrzeni adresowej przydzielone dotychczas nieosiągalnym obiektom. Po skompaktowaniu pamięci osiągalnych obiektów moduł odśmiecania pamięci dokonuje niezbędnych korekt wskaźników, tak aby obiekty główne aplikacji wskazywały obiekty w ich nowych lokalizacjach. Ponadto ustawia wskaźnik zarządzanego stosu za ostatnim dostępnym obiektem.
 
@@ -138,7 +138,7 @@ Wyrzucanie elementów bezużytecznych odbywa się głównie z odzyskiwaniem obie
 
   Obiekty w generacji 2, które przeżyły kolekcję, pozostaną w generacji 2, dopóki nie zostaną uznane za nieosiągalne w przyszłych kolekcjach.
   
-  Obiekty na stosie dużego obiektu (które są czasami określane jako *generacja 3*) są również zbierane w generacji 2.
+  Obiekty na stosie dużego obiektu (które są czasami określane jako *generacja 3* ) są również zbierane w generacji 2.
 
 Wyrzucanie elementów bezużytecznych odbywa się w określonych generacjach, gdy jest to warunki Zbieranie generacji oznacza gromadzenie obiektów w tej generacji i wszystkich jej młodszych generacjach. Wyrzucanie elementów bezużytecznych generacji 2 jest również znane jako pełne wyrzucanie elementów bezużytecznych, ponieważ odzyskuje obiekty we wszystkich generacjach (czyli wszystkie obiekty w stercie zarządzanym).
 
@@ -212,7 +212,7 @@ Należy również udostępnić sposób, aby niezarządzane zasoby były udostęp
 
 Aby uzyskać więcej informacji na temat oczyszczania zasobów niezarządzanych, zobacz [Oczyszczanie zasobów niezarządzanych](unmanaged.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Stacja robocza i odzyskiwanie pamięci serwera](workstation-server-gc.md)
 - [Odzyskiwanie pamięci w tle](background-gc.md)

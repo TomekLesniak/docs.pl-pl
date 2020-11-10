@@ -2,12 +2,12 @@
 title: Kompiluj ASP.NET Core aplikacje wdrożone jako kontenery systemu Linux w klastrach AKS/Kubernetes
 description: Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
 ms.date: 08/06/2020
-ms.openlocfilehash: 8b3141d79eeb252ec3721d57293bed0e335b41d3
-ms.sourcegitcommit: a6bd4cad438fe479cbd112eae10f2cd449f06e40
+ms.openlocfilehash: 831d2372131e20788d0f48190eb8c600aa02485c
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91844566"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440832"
 ---
 # <a name="build-aspnet-core-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Kompiluj ASP.NET Core aplikacje wdrożone jako kontenery systemu Linux w programie Orchestrator AKS/Kubernetes
 
@@ -33,7 +33,7 @@ Ten przykład korzysta z kilku prostych projektów opartych na szablonach progra
 
 **Rysunek 4-35**. Tworzenie aplikacji sieci Web ASP.NET Core w programie Visual Studio 2019.
 
-Aby utworzyć przykładowy projekt w programie Visual Studio, wybierz pozycję **plik**  >  **Nowy**  >  **projekt**, wybierz typ projektu **sieci Web** , a następnie szablon **aplikacji sieci Web ASP.NET Core** . Możesz również wyszukać szablon, jeśli będzie potrzebny.
+Aby utworzyć przykładowy projekt w programie Visual Studio, wybierz pozycję **plik**  >  **Nowy**  >  **projekt** , wybierz typ projektu **sieci Web** , a następnie szablon **aplikacji sieci Web ASP.NET Core** . Możesz również wyszukać szablon, jeśli będzie potrzebny.
 
 Następnie wprowadź nazwę i lokalizację aplikacji, jak pokazano na następnym obrazie.
 
@@ -193,24 +193,24 @@ Można przekazać obrazy do [Azure Container Registry (ACR)](https://azure.micro
 
 ### <a name="create-an-acr-instance"></a>Tworzenie wystąpienia ACR
 
-Uruchom następujące polecenie w **interfejsie AZ CLI**:
+Uruchom następujące polecenie w **interfejsie AZ CLI** :
 
 ```powershell
 az acr create --name exploredocker --resource-group explore-docker-aks-rg --sku basic --admin-enabled
 ```
 
 > [!NOTE]
-> Nazwa rejestru kontenerów (np `exploredocker` .) musi być unikatowa w obrębie platformy Azure i zawierać 5-50 znaków alfanumerycznych. Aby uzyskać więcej informacji, zobacz [Tworzenie rejestru kontenerów](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli#create-a-container-registry)
+> Nazwa rejestru kontenerów (np `exploredocker` .) musi być unikatowa w obrębie platformy Azure i zawierać 5-50 znaków alfanumerycznych. Aby uzyskać więcej informacji, zobacz [Tworzenie rejestru kontenerów](/azure/container-registry/container-registry-get-started-azure-cli#create-a-container-registry)
 
 ### <a name="create-the-image-in-release-mode"></a>Tworzenie obrazu w trybie wydania
 
-Teraz utworzysz obraz w trybie **wersji** (gotowy do produkcji), zmieniając do **wersji**, jak pokazano na rysunku 4-46 i uruchamiając aplikację tak jak wcześniej.
+Teraz utworzysz obraz w trybie **wersji** (gotowy do produkcji), zmieniając do **wersji** , jak pokazano na rysunku 4-46 i uruchamiając aplikację tak jak wcześniej.
 
 ![Opcja paska narzędzi w programie VS do kompilowania w trybie wydania.](media/build-aspnet-core-applications-linux-containers-aks-kubernetes/select-release-mode.png)
 
 **Rysunek 4-46**. Wybieranie trybu wydania
 
-Jeśli wykonasz `docker images` polecenie, zobaczysz oba utworzone obrazy, jedno dla `debug` (**dev**) i inne dla `release` (**Najnowsza**) tryb.
+Jeśli wykonasz `docker images` polecenie, zobaczysz oba utworzone obrazy, jedno dla `debug` ( **dev** ) i inne dla `release` ( **Najnowsza** ) tryb.
 
 ### <a name="create-a-new-tag-for-the-image"></a>Utwórz nowy tag dla obrazu
 
@@ -371,7 +371,7 @@ spec:
 > [!TIP]
 > Aby dowiedzieć się, jak utworzyć klaster AKS dla tego przykładu, w sekcji [**wdrażanie w usłudze Azure Kubernetes Service (AKS)**](deploy-azure-kubernetes-service.md) w tym przewodniku.
 
-Teraz wszystko jest już prawie gotowe do wdrożenia przy użyciu **polecenia kubectl**, ale najpierw należy pobrać poświadczenia z klastra AKS za pomocą tego polecenia:
+Teraz wszystko jest już prawie gotowe do wdrożenia przy użyciu **polecenia kubectl** , ale najpierw należy pobrać poświadczenia z klastra AKS za pomocą tego polecenia:
 
 ```console
 az aks get-credentials --resource-group explore-docker-aks-rg --name explore-docker-aks

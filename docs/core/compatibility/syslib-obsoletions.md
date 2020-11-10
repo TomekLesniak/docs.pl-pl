@@ -2,12 +2,12 @@
 title: Przestarzałe funkcje w programie .NET 5 lub nowszym
 description: Dowiedz się więcej na temat interfejsów API, które są oznaczone jako przestarzałe w programie .NET 5,0 i nowszych wersjach, które generują ostrzeżenia kompilatora SYSLIB.
 ms.date: 10/20/2020
-ms.openlocfilehash: 13f5fb10cfe693ed621b3f45fc22e024875890c8
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: aa5716ba8fe46c7c4ae2faafe7cc963551eecef7
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92333355"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440767"
 ---
 # <a name="obsolete-features-in-net-5"></a>Przestarzałe funkcje w programie .NET 5
 
@@ -19,7 +19,7 @@ Począwszy od platformy .NET 5,0, niektóre interfejsy API, które są nowo ozna
 
 Jeśli występują ostrzeżenia lub błędy kompilacji z powodu użycia przestarzałego interfejsu API, postępuj zgodnie ze szczegółowymi wskazówkami dotyczącymi identyfikatora diagnostyki wymienionymi w sekcji [Reference](#reference) . *Nie* można pominąć ostrzeżeń ani błędów dla tych Obsoletions przy użyciu [standardowego identyfikatora diagnostyki (CS0618)](../../csharp/language-reference/compiler-messages/cs0618.md) dla przestarzałych typów lub członków; `SYSLIBxxxx`zamiast tego użyj niestandardowych identyfikatorów diagnostyki. Aby uzyskać więcej informacji, zobacz [pomijanie ostrzeżeń](#suppress-warnings).
 
-## <a name="reference"></a>Dokumentacja
+## <a name="reference"></a>Odwołanie
 
 Poniższa tabela zawiera indeks `SYSLIBxxxx` Obsoletions w programie .NET 5 lub nowszym.
 
@@ -61,9 +61,14 @@ Plik projektu:
    <TargetFramework>net5.0</TargetFramework>
    <!-- NoWarn below suppresses SYSLIB0001 project-wide -->
    <NoWarn>$(NoWarn);SYSLIB0001</NoWarn>
+   <!-- To suppress multiple warnings, you can use multiple NoWarn elements -->
+   <NoWarn>$(NoWarn);SYSLIB0002</NoWarn>
+   <NoWarn>$(NoWarn);SYSLIB0003</NoWarn>
+   <!-- Alternatively, you can suppress multiple warnings by using a semicolon-delimited list -->
+   <NoWarn>$(NoWarn);SYSLIB0001;SYSLIB0002;SYSLIB0003</NoWarn>
   </PropertyGroup>
 </Project>
 ```
 
 > [!NOTE]
-> Pomijanie ostrzeżenia w ten sposób powoduje wyłączenie tylko określonego ostrzeżenia obsoletion. Nie wyłącza żadnych innych ostrzeżeń, w tym innych ostrzeżeń obsoletion.
+> Pomijanie ostrzeżeń w ten sposób powoduje wyłączenie wyłącznie określonych ostrzeżeń obsoletion. Nie wyłącza żadnych innych ostrzeżeń, w tym ostrzeżeń obsoletion z różnymi identyfikatorami diagnostycznymi.

@@ -4,12 +4,12 @@ description: Dowiedz się, jak dekonstruować krotki i inne typy.
 ms.technology: csharp-fundamentals
 ms.date: 11/23/2017
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 8defd75a7cdff3490d2b0a6097ec2a898576e113
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 96168b729ae3ec11d7a38444b8c100bdbff4efbf
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174169"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439706"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Dekonstrukcja krotek i innych typów
 
@@ -57,7 +57,7 @@ Należy zauważyć, że nie można mieszać deklaracji i przypisań do istnieją
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>Dekonstrukcja elementów krotki z odrzuconymi
 
-Często podczas dekonstruowania krotki interesuje się wartości tylko niektórych elementów. Począwszy od języka C# 7,0, możesz skorzystać z pomocy technicznej języka C# dla *odrzutów*, które są zmiennymi tylko do zapisu, których wartości zostały wybrane do ignorowania. Odrzucanie jest oznaczone znakiem podkreślenia (" \_ ") w przypisaniu. Możesz odrzucić dowolną liczbę wartości. wszystkie są reprezentowane przez pojedyncze odrzucanie, `_` .
+Często podczas dekonstruowania krotki interesuje się wartości tylko niektórych elementów. Począwszy od języka C# 7,0, możesz skorzystać z pomocy technicznej języka C# dla *odrzutów* , które są zmiennymi tylko do zapisu, których wartości zostały wybrane do ignorowania. Odrzucanie jest oznaczone znakiem podkreślenia (" \_ ") w przypisaniu. Możesz odrzucić dowolną liczbę wartości. wszystkie są reprezentowane przez pojedyncze odrzucanie, `_` .
 
 Poniższy przykład ilustruje użycie krotek z odrzutami. `QueryCityDataForYears`Metoda zwraca 6-krotkę z nazwą miasta, jego obszarem, rokiem, populacją miasta dla tego roku, drugi rok i populacją miasta dla tego drugiego roku. W przykładzie pokazano zmianę populacji między tymi dwoma latami. Danych dostępnych w spójnej kolekcji nie ma w tym obszarze miasta i wiemy, że imię i nazwisko miasto oraz dwie daty w czasie projektowania. W związku z tym interesuje tylko dwie wartości populacji przechowywane w spójnej kolekcji i mogą obsługiwać pozostałe wartości jako odrzucenia.  
 
@@ -76,7 +76,7 @@ Następnie można dekonstruować wystąpienie `Person` klasy o nazwie `p` z przy
 Poniższy przykład przeciąża `Deconstruct` metodę, aby zwrócić różne kombinacje właściwości `Person` obiektu. Zwracanie pojedynczych przeciążeń:
 
 - Imię i nazwisko.
-- Nazwa pierwszego, ostatniego i drugiego.
+- Pierwszy, środkowy i nazwisko.
 - Imię i nazwisko, nazwisko, nazwa miasta i Nazwa stanu.
 
 [!code-csharp[Class-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-class2.cs)]

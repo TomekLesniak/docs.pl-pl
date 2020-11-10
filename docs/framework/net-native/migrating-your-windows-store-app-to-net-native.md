@@ -2,12 +2,12 @@
 title: Migrowanie aplikacji ze Sklepu Windows do architektury .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: cef985200efaf2ed7488d5e99394a5f01cc38594
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ee17e50590a80d8973197b46910d5e22296c265f
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556931"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440897"
 ---
 # <a name="migrate-your-windows-store-app-to-net-native"></a>Migrowanie aplikacji ze sklepu Windows do .NET Native
 
@@ -208,7 +208,9 @@ W .NET Native:
 - `SetCookie2`Nagłówek w odpowiedzi jest ignorowany jako przestarzały.
 
 <a name="Interop"></a>
+
 ### <a name="interop-differences"></a>Różnice międzyoperacyjnych
+
  **Przestarzałe interfejsy API**
 
  Wiele rzadko używanych interfejsów API do współdziałania z kodem zarządzanym jest przestarzałe. W przypadku użycia z .NET Native te interfejsy API mogą zgłosić <xref:System.NotImplementedException> wyjątek lub lub <xref:System.PlatformNotSupportedException> spowodować błąd kompilatora. W programie .NET dla aplikacji ze sklepu Windows te interfejsy API są oznaczane jako przestarzałe, chociaż wywołanie ich powoduje wygenerowanie ostrzeżenia kompilatora, a nie błędu kompilatora.
@@ -661,9 +663,9 @@ Użyj narzędzi kompilacji x86, które są używane domyślnie przez program Vis
 
 Włączanie .NET Native w bibliotece testów jednostkowych dla projektu aplikacji ze sklepu Windows nie jest obsługiwane i powoduje, że kompilacja nie powiedzie się.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie](getting-started-with-net-native.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Omówienie programu .NET dla aplikacji do sklepu Windows](/previous-versions/windows/apps/br230302(v=vs.140))
-- [Obsługa programu .NET Framework dla aplikacji ze Sklepu Windows i środowiska wykonawczego systemu Windows](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [Obsługa programu .NET Framework dla aplikacji ze Sklepu Windows i środowiska wykonawczego systemu Windows](../cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

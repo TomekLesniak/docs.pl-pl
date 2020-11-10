@@ -12,12 +12,12 @@ helpviewer_keywords:
 - profiling managed code
 - profiling managed code [Windows Store Apps]
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
-ms.openlocfilehash: 8922f057cb59258e2dd002cec4015af518dc255f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 04b4b529a5a1adaa40e804988dee506942c863c4
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553359"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440083"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR i aplikacje sklepu Windows Store
 
@@ -356,7 +356,7 @@ Biblioteka DLL profilera może rozróżnić pliki WinMD z innych modułów, wywo
 
 ### <a name="reading-metadata-from-winmds"></a>Odczytywanie metadanych z WinMD
 
-Pliki WinMD, takie jak regularne moduły, zawierają metadane, które można odczytać za pośrednictwem [interfejsów API metadanych](../metadata/index.md). Jednak środowisko CLR mapuje typy środowisko wykonawcze systemu Windows na typy .NET Framework podczas odczytywania plików WinMD, dzięki czemu deweloperzy, którzy programu w kodzie zarządzanym i zużywają plik WinMD, mogą mieć bardziej naturalne środowisko programistyczne. Przykłady tych mapowań można znaleźć w temacie [.NET Framework support for Windows Store Apps i środowisko wykonawcze systemu Windows](../../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).
+Pliki WinMD, takie jak regularne moduły, zawierają metadane, które można odczytać za pośrednictwem [interfejsów API metadanych](../metadata/index.md). Jednak środowisko CLR mapuje typy środowisko wykonawcze systemu Windows na typy .NET Framework podczas odczytywania plików WinMD, dzięki czemu deweloperzy, którzy programu w kodzie zarządzanym i zużywają plik WinMD, mogą mieć bardziej naturalne środowisko programistyczne. Przykłady tych mapowań można znaleźć w temacie [.NET Framework support for Windows Store Apps i środowisko wykonawcze systemu Windows](../../cross-platform/support-for-windows-store-apps-and-windows-runtime.md).
 
 Który widok zostanie pobrany przez profiler, gdy używa interfejsów API metadanych: widoku RAW środowisko wykonawcze systemu Windows lub zamapowanego widoku .NET Framework?  Odpowiedź: to wszystko.
 
@@ -396,7 +396,7 @@ Jednak zarządzane aplikacje ze sklepu Windows XAML teraz intensywnie wykorzystu
 
 Można użyć interfejsu API profilowania środowiska CLR do analizy kodu zarządzanego działającego wewnątrz aplikacji ze sklepu Windows. W rzeczywistości można utworzyć istniejący Profiler, który jest opracowywany, i wprowadzić konkretne zmiany, aby można było kierować aplikacje do sklepu Windows. Interfejs użytkownika profilera powinien korzystać z nowych interfejsów API w celu aktywowania aplikacji ze sklepu Windows w trybie debugowania. Upewnij się, że biblioteka DLL profilera wykorzystuje tylko te interfejsy API, które są odpowiednie dla aplikacji ze sklepu Windows. Mechanizm komunikacji między biblioteką DLL i interfejsem użytkownika profilera powinien być zapisany przy użyciu ograniczeń interfejsu API aplikacji ze sklepu Windows i ma świadomość ograniczonych uprawnień dla aplikacji ze sklepu Windows. Biblioteka DLL profilera powinna mieć świadomość, jak środowisko CLR traktuje WinMD i jak zachowanie modułu wyrzucania elementów bezużytecznych jest różne w odniesieniu do zarządzanych wątków.
 
-## <a name="resources"></a>Resources
+## <a name="resources"></a>Zasoby
 
 **Środowisko uruchomieniowe języka wspólnego**
 
@@ -406,9 +406,9 @@ Można użyć interfejsu API profilowania środowiska CLR do analizy kodu zarzą
 
 **Interakcja środowiska CLR z środowisko wykonawcze systemu Windows**
 
-- [Obsługa programu .NET Framework dla aplikacji ze Sklepu Windows i środowiska wykonawczego systemu Windows](../../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [Obsługa programu .NET Framework dla aplikacji ze Sklepu Windows i środowiska wykonawczego systemu Windows](../../cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
 
-**Aplikacje ze sklepu Windows**
+**Aplikacje ze Sklepu Windows**
 
 - [Dostęp do plików i uprawnienia (środowisko wykonawcze systemu Windows aplikacje](/previous-versions/windows/apps/hh967755(v=win.10))
 

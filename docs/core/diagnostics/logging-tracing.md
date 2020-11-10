@@ -2,12 +2,12 @@
 title: Rejestrowanie i śledzenie — .NET Core
 description: Wprowadzenie do rejestrowania i śledzenia w programie .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: 33c78ecc839b552267ad43dd00b7d627e756a939
-ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
+ms.openlocfilehash: e3f809dab64d66d8b4ba16ca55fc426309614715
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997698"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439927"
 ---
 # <a name="net-core-logging-and-tracing"></a>Rejestrowanie i śledzenie w programie .NET Core
 
@@ -15,13 +15,13 @@ Rejestrowanie i śledzenie są bardzo dwie nazwy dla tej samej techniki. Prosta 
 
 ## <a name="reasons-to-use-logging-and-tracing"></a>Przyczyny używania rejestrowania i śledzenia
 
-Ta prosta technika jest Surprisingly zaawansowana. Może być używana w sytuacjach, w których debuger kończy się niepowodzeniem:
+Ta prosta technika jest zaskakująco zaawansowana. Może być używana w sytuacjach, w których debuger kończy się niepowodzeniem:
 
-- Problemy występujące w długim okresie czasu mogą być trudne do debugowania przy użyciu tradycyjnego debugera. Dzienniki pozwalają na szczegółowe przeglądy po dłuższym okresie. Z kolei debugery są ograniczone do analizy w czasie rzeczywistym.
-- Aplikacje wielowątkowe i aplikacje rozproszone często są trudne do debugowania.  Dołączanie debugera powoduje modyfikację zachowań. Szczegółowe dzienniki można analizować w miarę potrzeby, aby zrozumieć złożone systemy.
-- Problemy w aplikacjach rozproszonych mogą powstać w wyniku złożonej interakcji między wieloma składnikami i może nie być uzasadnione, aby podłączyć debuger do każdej części systemu.
-- Nie należy zawiesić wielu usług. Dołączanie debugera często powoduje błędy limitu czasu.
-- Problemy nie są zawsze obsługiwane. Rejestrowanie i śledzenie zostało zaprojektowane z myślą o niskim obciążeniu, dzięki czemu program może zawsze rejestrować się w przypadku wystąpienia problemu.
+- Problemy występujące w długich okresach mogą być trudne do debugowania przy użyciu tradycyjnego debugera. Dzienniki pozwalają na przeprowadzanie szczegółowych przeglądów obejmujących długie okresy po zakończeniu pracy. Z kolei debugery są ograniczone do analizy w czasie rzeczywistym.
+- Aplikacje wielowątkowe i aplikacje rozproszone często są trudne do debugowania.  Dołączenie debugera powoduje modyfikację zachowań. Szczegółowe dzienniki można analizować w miarę potrzeby w celu lepszego zrozumienia złożonych systemów.
+- Problemy w aplikacjach rozproszonych mogą powstać w wyniku złożonej interakcji między wieloma składnikami i dołączanie debugera do każdej części systemu może nie być uzasadnione.
+- Wielu usług nie należy zawieszać. Dołączanie debugera często powoduje błędy polegające na przekroczeniu limitu czasu.
+- Problemy nie zawsze można przewidzieć. Rejestrowanie i śledzenie zostało zaprojektowane z myślą o niskim obciążeniu, dzięki czemu program może zawsze rejestrować w przypadku wystąpienia problemu.
 
 ## <a name="net-core-apis"></a>Interfejsy API platformy .NET Core
 
@@ -29,21 +29,21 @@ Ta prosta technika jest Surprisingly zaawansowana. Może być używana w sytuacj
 
 <xref:System.Console?displayProperty=nameWithType>Klasy, <xref:System.Diagnostics.Trace?displayProperty=nameWithType> i, <xref:System.Diagnostics.Debug?displayProperty=nameWithType> każdy udostępniają podobne interfejsy API stylu drukowania wygodne do rejestrowania.
 
-Wybór interfejsu API drukowania stylu do użycia. Kluczowe różnice są następujące:
+Wybór interfejsu API w stylu wydruku do użycia należy do Ciebie. Kluczowe różnice są następujące:
 
 - <xref:System.Console?displayProperty=nameWithType>
-  - Zawsze włączone i zawsze zapisuje się w konsoli programu.
-  - Przydatne w przypadku informacji, które mogą być wymagane przez klienta w wersji.
-  - Ponieważ jest to najprostszy sposób, często jest używany do tymczasowego debugowania ad hoc. Ten kod debugowania często nigdy nie jest sprawdzany w kontroli źródła.
+  - Zawsze włączony i zawsze zapisuje do konsoli.
+  - Przydatny w przypadku informacji, które mogą być wymagane przez klienta w danym wydaniu.
+  - Ponieważ jest to najprostsze podejście, jest ono często używane podczas tymczasowego debugowania ad hoc. Często zdarza się, że ten kod debugowania nie jest nigdy zaewidencjonowany w ramach kontroli źródła.
 - <xref:System.Diagnostics.Trace?displayProperty=nameWithType>
-  - Włączone tylko wtedy, gdy `TRACE` jest zdefiniowany.
+  - Włączony tylko w przypadku zdefiniowana elementu `TRACE`.
   - Domyślnie zapisy do załączenia <xref:System.Diagnostics.Trace.Listeners> <xref:System.Diagnostics.DefaultTraceListener> .
   - Użyj tego interfejsu API podczas tworzenia dzienników, które będą włączone w większości kompilacji.
 - <xref:System.Diagnostics.Debug?displayProperty=nameWithType>
-  - Włączone tylko wtedy, gdy `DEBUG` jest zdefiniowany.
+  - Włączony tylko w przypadku zdefiniowana elementu `DEBUG`.
   - Zapisuje do dołączonego debugera.
   - Przy `*nix` zapisie do stderr, jeśli `COMPlus_DebugWriteToStdErr` jest ustawiona.
-  - Użyj tego interfejsu API podczas tworzenia dzienników, które będą włączone tylko w kompilacjach debugowania.
+  - Użyj tego interfejsu API w przypadku tworzenia dzienników, które będą włączone tylko w kompilacjach debugowania.
 
 ### <a name="logging-events"></a>Rejestrowanie zdarzeń
 
@@ -53,11 +53,12 @@ Poniższe interfejsy API są bardziej zorientowane na zdarzenia. Zamiast rejestr
   - EventSource jest podstawowym głównym interfejsem API śledzenia programu .NET Core.
   - Dostępne we wszystkich wersjach .NET Standard.
   - Umożliwia tylko śledzenie obiektów, które można serializować.
-  - Zapisuje dane w podłączonych [detektorach zdarzeń](xref:System.Diagnostics.Tracing.EventListener).
-  - Platforma .NET Core udostępnia detektory dla:
+  - Może być używany w procesie za pośrednictwem wszystkich wystąpień [odbiornika](xref:System.Diagnostics.Tracing.EventListener) skonfigurowanych do korzystania z EventSource.
+  - Może być zużyte przez:
     - EventPipe platformy .NET Core na wszystkich platformach
     - [Śledzenie zdarzeń systemu Windows (ETW)](/windows/win32/etw/event-tracing-portal)
     - [LTTng — struktura śledzenia dla systemu Linux](https://lttng.org/)
+      - Przewodnik: [gromadzenie LTTng śledzenia przy użyciu PerfCollect](trace-perfcollect-lttng.md).
 
 - <xref:System.Diagnostics.DiagnosticSource?displayProperty=nameWithType>
   - Zawarte w oprogramowaniu .NET Core i jako [pakiet NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource) dla .NET Framework.

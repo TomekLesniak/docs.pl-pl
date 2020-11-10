@@ -2,12 +2,12 @@
 title: polecenie dotnet publish
 description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
 ms.date: 02/24/2020
-ms.openlocfilehash: 2c33f99ce652dadc6e0c1a4c5e9e78fff9f54254
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: e35a0671cb964e7d9b68ed5bbe261045038229aa
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654897"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440572"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -45,7 +45,7 @@ dotnet publish -h|--help
 
 ### <a name="implicit-restore"></a>Przywracanie niejawne
 
-[!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
+[!INCLUDE[dotnet restore note](../../../includes/dotnet-restore-note.md)]
 
 ### <a name="msbuild"></a>MSBuild
 
@@ -53,13 +53,13 @@ dotnet publish -h|--help
 
 `dotnet publish`Polecenie akceptuje Opcje programu MSBuild, takie jak `-p` Ustawienia właściwości i `-l` definiowania rejestratora. Na przykład można ustawić właściwość programu MSBuild przy użyciu formatu: `-p:<NAME>=<VALUE>` .
 
-Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Przykład:
+Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Na przykład:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
 ```
 
-W poprzednim przykładzie został użyty plik *FolderProfile. pubxml* , który znajduje się w folderze * \<project_folder> /Properties/PublishProfiles* . Jeśli określisz ścieżkę i rozszerzenie pliku podczas ustawiania `PublishProfile` właściwości, zostaną one zignorowane. Program MSBuild domyślnie wyszukuje w folderze *Properties/PublishProfiles* i przyjmuje rozszerzenie pliku *pubxml* . Aby określić ścieżkę i nazwę pliku, łącznie z rozszerzeniem, należy ustawić `PublishProfileFullPath` właściwość zamiast `PublishProfile` właściwości.
+W poprzednim przykładzie został użyty plik *FolderProfile. pubxml* , który znajduje się w folderze *\<project_folder> /Properties/PublishProfiles* . Jeśli określisz ścieżkę i rozszerzenie pliku podczas ustawiania `PublishProfile` właściwości, zostaną one zignorowane. Program MSBuild domyślnie wyszukuje w folderze *Properties/PublishProfiles* i przyjmuje rozszerzenie pliku *pubxml* . Aby określić ścieżkę i nazwę pliku, łącznie z rozszerzeniem, należy ustawić `PublishProfileFullPath` właściwość zamiast `PublishProfile` właściwości.
 
 Więcej informacji można znaleźć w następujących zasobach:
 
@@ -75,7 +75,7 @@ Więcej informacji można znaleźć w następujących zasobach:
   
   * `PROJECT` jest ścieżką i nazwą pliku projektu [c#](csproj.md), f # lub Visual Basic lub ścieżką do katalogu, który zawiera plik projektu C#, f # lub Visual Basic. Jeśli katalog nie jest określony, domyślnie jest bieżącym katalogiem.
 
-  * `SOLUTION` jest ścieżką i nazwą pliku rozwiązania (rozszerzeniem*sln* ) lub ścieżką do katalogu zawierającego plik rozwiązania. Jeśli katalog nie jest określony, domyślnie jest bieżącym katalogiem. Dostępne od wersji .NET Core 3,0 SDK.
+  * `SOLUTION` jest ścieżką i nazwą pliku rozwiązania (rozszerzeniem *sln* ) lub ścieżką do katalogu zawierającego plik rozwiązania. Jeśli katalog nie jest określony, domyślnie jest bieżącym katalogiem. Dostępne od wersji .NET Core 3,0 SDK.
 
 ## <a name="options"></a>Opcje
 
@@ -125,7 +125,7 @@ Więcej informacji można znaleźć w następujących zasobach:
   
   Jeśli nie zostanie określony, domyślna wartość to *[project_file_folder]/bin/[Configuration]/[Framework]/Publish/* dla plików binarnych zależnych od platformy i dla wielu platform. Wartość domyślna to *[project_file_folder]/bin/[Konfiguracja]/[Framework]/[Runtime]/Publish/* dla samodzielnego pliku wykonywalnego.
 
-  W projekcie sieci Web, jeśli folder wyjściowy znajduje się w folderze projektu, kolejne `dotnet publish` polecenia powodują zagnieżdżone foldery wyjściowe. Na przykład, jeśli folder projektu jest typu moje *projekty*, a folder danych wyjściowych publikowanie jest w *projekcie/publikacji*i uruchamiasz `dotnet publish` dwa razy, drugi przebieg umieszcza pliki zawartości, takie jak pliki *config* i *JSON* w programie *WebProject/Publish/Publish*. Aby uniknąć zagnieżdżania folderów publikowania, określ folder publikowania, który nie znajduje się **bezpośrednio** w folderze projektu, lub wyklucz folder publikacji z projektu. Aby wykluczyć folder publikacji o nazwie *publishoutput*, Dodaj następujący element do `PropertyGroup` elementu w pliku *. csproj* :
+  W projekcie sieci Web, jeśli folder wyjściowy znajduje się w folderze projektu, kolejne `dotnet publish` polecenia powodują zagnieżdżone foldery wyjściowe. Na przykład, jeśli folder projektu jest typu moje *projekty* , a folder danych wyjściowych publikowanie jest w *projekcie/publikacji* i uruchamiasz `dotnet publish` dwa razy, drugi przebieg umieszcza pliki zawartości, takie jak pliki *config* i *JSON* w programie *WebProject/Publish/Publish*. Aby uniknąć zagnieżdżania folderów publikowania, określ folder publikowania, który nie znajduje się **bezpośrednio** w folderze projektu, lub wyklucz folder publikacji z projektu. Aby wykluczyć folder publikacji o nazwie *publishoutput* , Dodaj następujący element do `PropertyGroup` elementu w pliku *. csproj* :
 
   ```xml
   <DefaultItemExcludes>$(DefaultItemExcludes);publishoutput**</DefaultItemExcludes>
@@ -179,7 +179,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Ustawia poziom szczegółowości polecenia. Dozwolone wartości to `q[uiet]` , `m[inimal]` , `n[ormal]` , `d[etailed]` i `diag[nostic]` . Wartość domyślna to `minimal` .
+  Ustawia poziom szczegółowości polecenia. Dozwolone wartości to `q[uiet]` , `m[inimal]` , `n[ormal]` , `d[etailed]` i `diag[nostic]` . Wartość domyślna to `minimal`.
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 

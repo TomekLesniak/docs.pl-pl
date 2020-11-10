@@ -10,16 +10,16 @@ helpviewer_keywords:
 - text files produced by MSIL Disassembler
 - disassembling file for MSIL Assembler input
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
-ms.openlocfilehash: 6f2611488e7f653783cab833ad47131978bf74aa
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e94e80d0342f68098a08e184b6bf3f48c14e817b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166831"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440884"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (Dezasembler IL)
 
-Dezasembler IL jest narzędziem towarzyszącym Asemblerowi IL (*Ilasm.exe*). *Ildasm.exe* pobiera przenośny plik wykonywalny (PE), który zawiera kod języka pośredniego (IL) i tworzy plik tekstowy odpowiedni jako dane wejściowe do *Ilasm.exe*.
+Dezasembler IL jest narzędziem towarzyszącym Asemblerowi IL ( *Ilasm.exe* ). *Ildasm.exe* pobiera przenośny plik wykonywalny (PE), który zawiera kod języka pośredniego (IL) i tworzy plik tekstowy odpowiedni jako dane wejściowe do *Ilasm.exe*.
 
 To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7). Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).
 
@@ -33,7 +33,7 @@ ildasm [options] [PEfilename] [options]
 
 ## <a name="parameters"></a>Parametry
 
-Dostępne są następujące opcje dla plików *exe*, *dll*, *obj*, *lib*i *winmd* .
+Dostępne są następujące opcje dla plików *exe* , *dll* , *obj* , *lib* i *winmd* .
 
 | Opcja | Opis |
 | ------ | ----------- |
@@ -43,7 +43,7 @@ Dostępne są następujące opcje dla plików *exe*, *dll*, *obj*, *lib*i *winmd
 |**/html**|Generuje wyjście w formacie HTML. Prawidłowy tylko z opcją **/Output** .|
 |**/?**|Wyświetla składnię polecenia i opcje narzędzia.|
 
-Następujące dodatkowe opcje są dostępne dla plików *exe*, *dll*i *winmd* .
+Następujące dodatkowe opcje są dostępne dla plików *exe* , *dll* i *winmd* .
 
 | Opcja | Opis |
 | ------ | ----------- |
@@ -52,7 +52,7 @@ Następujące dodatkowe opcje są dostępne dla plików *exe*, *dll*i *winmd* .
 |**/linenum**|Dołącza odwołania do oryginalnych wierszy źródłowych.|
 |**/nobar**|Pomija wyskakujące okienko ze wskaźnikiem postępu dezasemblera.|
 |**/noca**|Pomija wyjście niestandardowych atrybutów.|
-|**/Project**|Wyświetla metadane, tak jak pojawiają się one w kodzie zarządzanym, a nie w sposób pojawiający się w środowisko wykonawcze systemu Windows macierzystym. Jeśli `PEfilename` nie jest plikiem metadanych systemu Windows (*winmd*), ta opcja nie ma żadnego wpływu. Zobacz [.NET Framework obsługa aplikacji do sklepu Windows i środowisko wykonawcze systemu Windows](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/Project**|Wyświetla metadane, tak jak pojawiają się one w kodzie zarządzanym, a nie w sposób pojawiający się w środowisko wykonawcze systemu Windows macierzystym. Jeśli `PEfilename` nie jest plikiem metadanych systemu Windows ( *winmd* ), ta opcja nie ma żadnego wpływu. Zobacz [.NET Framework obsługa aplikacji do sklepu Windows i środowisko wykonawcze systemu Windows](../cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Dezasembluje tylko typy publiczne i elementy członkowskie. Odpowiednik **/Visibility: pub**.|
 |**/quoteallnames**|Umieszcza wszystkie nazwy w pojedynczym cudzysłowie.|
 |**/raweh**|Wyświetla klauzule obsługi błędów w pierwotnej formie.|
@@ -60,26 +60,26 @@ Następujące dodatkowe opcje są dostępne dla plików *exe*, *dll*i *winmd* .
 |**/tokens**|Wyświetla tokeny metadanych klas i składowych.|
 |**/Visibility:** `vis` [+`vis`...]|Dezasembluje tylko typy lub elementy członkowskie o określonej widoczności. Poniżej przedstawiono prawidłowe wartości dla `vis` :<br /><br /> **Pub** — publiczny<br /><br /> **Pri** — prywatny<br /><br /> **Farma** — rodzina<br /><br /> **ASM** — zestaw<br /><br /> **FAA** — rodzina i zestaw<br /><br /> **FOA** — rodzina lub zestaw<br /><br /> **PSC** — zakres prywatny<br /><br /> Definicje tych modyfikatorów widoczności można znaleźć w tematach <xref:System.Reflection.MethodAttributes> i <xref:System.Reflection.TypeAttributes> .|
 
-Następujące opcje są prawidłowe dla plików *exe*, *dll*i *winmd* tylko dla plików wyjściowych w pliku lub konsoli.
+Następujące opcje są prawidłowe dla plików *exe* , *dll* i *winmd* tylko dla plików wyjściowych w pliku lub konsoli.
 
 | Opcja | Opis |
 | ------ | ----------- |
-|**/All**|Określa kombinację opcji **/header**, **/Bytes**, **/stats**, **/classlist**i **/Tokens** .|
+|**/All**|Określa kombinację opcji **/header** , **/Bytes** , **/stats** , **/classlist** i **/Tokens** .|
 |**/classlist**|Dołącza listę klas zdefiniowanych w module.|
 |**/forward**|Używa deklaracji przekazującej klasy.|
 |**/Headers**|Dołącza informacje nagłówka pliku do wyjścia.|
-|**/Item:** `class` [**::** `member` [`(sig`]]|W zależności od określonego argumentu dezasembluje następujące obiekty:<br /><br /> — Rozkłada określony `class` .<br />— Rozkłada określony `member` z `class` .<br />— Rozkłada z z `member` `class` określoną sygnaturą `sig` . Format `sig` jest:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Uwaga** W .NET Framework wersje 1,0 i 1,1 `sig` muszą następować nawiasy zamykające: `(sig)` . Począwszy od platformy NET Framework 2,0 nawias zamykający musi zostać pominięty: `(sig` .|
+|**/Item:** `class` [ **::** `member` [`(sig`]]|W zależności od określonego argumentu dezasembluje następujące obiekty:<br /><br /> — Rozkłada określony `class` .<br />— Rozkłada określony `member` z `class` .<br />— Rozkłada z z `member` `class` określoną sygnaturą `sig` . Format `sig` jest:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Uwaga** W .NET Framework wersje 1,0 i 1,1 `sig` muszą następować nawiasy zamykające: `(sig)` . Począwszy od platformy NET Framework 2,0 nawias zamykający musi zostać pominięty: `(sig` .|
 |**/noil**|Wyłącza wyjście kodu zestawu IL.|
 |**/stats**|Zawiera dane statystyczne dotyczące obrazu.|
 |**/typelist**|Generuje pełną listę typów, aby zachować kolejność typów w rundzie.|
 |**/unicode**|Używa kodowania Unicode danych wyjściowych.|
 |**/utf8**|Używa kodowania UTF-8 danych wyjściowych. Domyślne jest ANSI.|
 
-Następujące opcje są prawidłowe dla plików *exe*, *dll*, *obj*, *lib*i *winmd* tylko w przypadku plików wyjściowych w pliku lub konsoli.
+Następujące opcje są prawidłowe dla plików *exe* , *dll* , *obj* , *lib* i *winmd* tylko w przypadku plików wyjściowych w pliku lub konsoli.
 
 | Opcja | Opis |
 | ------ | ----------- |
-|**/Metadata**[= `specifier` ]|Pokazuje metadane, gdzie `specifier` :<br /><br /> **MDHEADER** — wyświetla informacje i rozmiary nagłówka metadanych.<br /><br /> **HEX** — Pokaż informacje w postaci szesnastkowej, a także słowa.<br /><br /> **CSV** — pokazuje liczbę rekordów i rozmiary sterty.<br /><br /> **UNREX** — Pokaż nierozpoznane zewnętrzne.<br /><br /> **Schemat** — pokazuje nagłówek metadanych i informacje o schemacie.<br /><br /> **RAW** — wyświetlanie nieprzetworzonych tabel metadanych.<br /><br /> **Sterty** — Pokaż nieprzetworzone sterty.<br /><br /> **Sprawdź** poprawność — Sprawdź spójność metadanych.<br /><br /> Można określić **/Metadata** wiele razy, z różnymi wartościami dla `specifier` .|
+|**/Metadata** [= `specifier` ]|Pokazuje metadane, gdzie `specifier` :<br /><br /> **MDHEADER** — wyświetla informacje i rozmiary nagłówka metadanych.<br /><br /> **HEX** — Pokaż informacje w postaci szesnastkowej, a także słowa.<br /><br /> **CSV** — pokazuje liczbę rekordów i rozmiary sterty.<br /><br /> **UNREX** — Pokaż nierozpoznane zewnętrzne.<br /><br /> **Schemat** — pokazuje nagłówek metadanych i informacje o schemacie.<br /><br /> **RAW** — wyświetlanie nieprzetworzonych tabel metadanych.<br /><br /> **Sterty** — Pokaż nieprzetworzone sterty.<br /><br /> **Sprawdź** poprawność — Sprawdź spójność metadanych.<br /><br /> Można określić **/Metadata** wiele razy, z różnymi wartościami dla `specifier` .|
 
 Poniższe opcje są prawidłowe dla plików *lib* tylko dla plików wyjściowych w pliku lub konsoli.
 
@@ -94,14 +94,14 @@ Poniższe opcje są prawidłowe dla plików *lib* tylko dla plików wyjściowych
 
 *Ildasm.exe* działa tylko na plikach PE na dysku. Nie wykonuje operacji na plikach zainstalowanych w globalnej pamięci podręcznej zestawów.
 
-Plik tekstowy utworzony przez *Ildasm.exe* może być używany jako dane wejściowe do asemblera IL (*Ilasm.exe*). Jest to przydatne na przykład podczas kompilowania kodu w języku programowania, który nie obsługuje wszystkich atrybutów metadanych środowiska uruchomieniowego. Po skompilowaniu kodu i uruchomieniu jego danych wyjściowych za pomocą *Ildasm.exe*, wynikowy plik tekstowy Il może być edytowany ręcznie w celu dodania brakujących atrybutów. Następnie można przetworzyć ten plik tekstowym Asemblerem IL, aby wygenerować ostateczny plik wykonywalny.
+Plik tekstowy utworzony przez *Ildasm.exe* może być używany jako dane wejściowe do asemblera IL ( *Ilasm.exe* ). Jest to przydatne na przykład podczas kompilowania kodu w języku programowania, który nie obsługuje wszystkich atrybutów metadanych środowiska uruchomieniowego. Po skompilowaniu kodu i uruchomieniu jego danych wyjściowych za pomocą *Ildasm.exe* , wynikowy plik tekstowy Il może być edytowany ręcznie w celu dodania brakujących atrybutów. Następnie można przetworzyć ten plik tekstowym Asemblerem IL, aby wygenerować ostateczny plik wykonywalny.
 
 > [!NOTE]
 > Obecnie nie można używać tej techniki w połączeniu z plikami PE zawierającymi osadzony kod natywny (na przykład pliki PE generowane przez program Visual C++).  
 
 Można użyć domyślnego graficznego interfejsu użytkownika dezasemblera IL, aby wyświetlić metadane i zdezasemblowany kod jakiegokolwiek istniejącego pliku PE w hierarchicznym widoku drzewa. Aby użyć graficznego interfejsu użytkownika, wpisz **Ildasm** w wierszu polecenia bez podawania argumentu *PEfilename* ani żadnych opcji. Z menu **plik** można przejść do pliku PE, który ma zostać załadowany do *Ildasm.exe*. Aby zapisać metadane i rozłożony kod wyświetlany dla wybranego środowiska PE, wybierz polecenie **Zrzuć** z menu **plik** . Aby zapisać hierarchiczny widok drzewa, wybierz polecenie **Zrzuć TreeView** z menu **plik** . Aby uzyskać szczegółowy przewodnik po załadowaniu pliku do *Ildasm.exe* i interpretacji danych wyjściowych, zobacz samouczek *Ildasm.exe* znajdujący się w folderze Samples, który jest dostarczany z Windows SDK.
 
-W przypadku podania *Ildasm.exe* z argumentem *PEfilename* zawierającym osadzone zasoby narzędzie tworzy wiele plików wyjściowych: plik tekstowy zawierający kod IL oraz, dla każdego osadzonego zasobu zarządzanego, plik resources utworzony przy użyciu nazwy zasobu z metadanych. Jeśli zasób niezarządzany jest osadzony w *PEfilename*, plik. res jest tworzony przy użyciu nazwy pliku określonej dla danych wyjściowych Il przez opcję **/Output** .
+W przypadku podania *Ildasm.exe* z argumentem *PEfilename* zawierającym osadzone zasoby narzędzie tworzy wiele plików wyjściowych: plik tekstowy zawierający kod IL oraz, dla każdego osadzonego zasobu zarządzanego, plik resources utworzony przy użyciu nazwy zasobu z metadanych. Jeśli zasób niezarządzany jest osadzony w *PEfilename* , plik. res jest tworzony przy użyciu nazwy pliku określonej dla danych wyjściowych Il przez opcję **/Output** .
 
 > [!NOTE]
 > *Ildasm.exe* wyświetla tylko opisy metadanych dla plików wejściowych *. obj* i *. lib* . Kod IL dla tych typów plików nie jest dezasemblowany.
@@ -154,7 +154,7 @@ Następujące polecenie odłączy plik `MyFile.exe` i wyświetla otrzymany tekst
 ildasm MyFile.exe /text
 ```
 
-Jeśli plik `MyApp.exe` zawiera osadzone zasoby zarządzane i niezarządzane, następujące polecenie generuje cztery pliki: *MyApp.Il*, *MojaApl. res*, *ikon. resources*i *Message. resources*:
+Jeśli plik `MyApp.exe` zawiera osadzone zasoby zarządzane i niezarządzane, następujące polecenie generuje cztery pliki: *MyApp.Il* , *MojaApl. res* , *ikon. resources* i *Message. resources* :
 
 ```console
 ildasm MyApp.exe /output:MyApp.il
@@ -183,7 +183,7 @@ ildasm /item:"MyClass::MyMethod(class [mscorlib]System.AppDomain(class [mscorlib
 
 Typ zagnieżdżony musi być poprzedzony klasą zawierającą i oddzielony od niej ukośnikiem. Na przykład, jeśli `MyNamespace.MyClass` Klasa zawiera zagnieżdżoną klasę o nazwie `NestedClass` , Klasa zagnieżdżona jest identyfikowana w następujący sposób: `class MyNamespace.MyClass/NestedClass` .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Narzędzia](index.md)
 - [Ilasm.exe (Asembler IL)](ilasm-exe-il-assembler.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 854d7c1278319869104e1758ba91eb3594741126
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 9e7ca2087938317f7369043e21fd455dbad7f07b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063188"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439665"
 ---
 # <a name="c-operators-and-expressions-c-reference"></a>Operatory i wyrażenia języka c# (odwołanie w C#)
 
@@ -80,7 +80,8 @@ W poniższej tabeli wymieniono operatory języka C# zaczynające się od najwyż
 | [x. y](member-access-operators.md#member-access-expression-), [f (x)](member-access-operators.md#invocation-expression-), [&#91;i&#93;](member-access-operators.md#indexer-operator-), [`x?.y`](member-access-operators.md#null-conditional-operators--and-) , [`x?[y]`](member-access-operators.md#null-conditional-operators--and-) , [x + +](arithmetic-operators.md#increment-operator-), [x--](arithmetic-operators.md#decrement-operator---), [x!](null-forgiving.md), [New](new-operator.md), [typeof](type-testing-and-cast.md#typeof-operator), [Checked](../keywords/checked.md), [unchecked](../keywords/unchecked.md), [default](default.md), [nameof](nameof.md), [Delegate](delegate-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [x->y](pointer-related-operators.md#pointer-member-access-operator--) | Podstawowe |
 | [+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [ \! x](boolean-logical-operators.md#logical-negation-operator-), [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [+ + x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [^ x](member-access-operators.md#index-from-end-operator-), [(T) x](type-testing-and-cast.md#cast-expression), [await](await.md), [&x](pointer-related-operators.md#address-of-operator-), [* x](pointer-related-operators.md#pointer-indirection-operator-), [true i false](true-false-operators.md) | Jednoargumentowy |
 | [x.. t](member-access-operators.md#range-operator-) | Zakres |
-| [switch](switch-expression.md) | `switch`wyrażenia |
+| [switch](switch-expression.md) | `switch` wyrażenia |
+| [się](with-expression.md) | `with` wyrażenia |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x/y](arithmetic-operators.md#division-operator-), [x% y](arithmetic-operators.md#remainder-operator-) | Mnożenie|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Dodawanie |
 | [x \<\<  y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Przesunięcia |
@@ -93,7 +94,7 @@ W poniższej tabeli wymieniono operatory języka C# zaczynające się od najwyż
 | [x &#124;&#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) | OR warunkowe |
 | [x? t](null-coalescing-operator.md) | Operator łączenia wartości null |
 | [s? t: f](conditional-operator.md) | Operator warunkowy |
-| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x &=](boolean-logical-operators.md#compound-assignment)y, x [&#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ =](boolean-logical-operators.md#compound-assignment)y, x [ <<= y](bitwise-and-shift-operators.md#compound-assignment), [x >>=](bitwise-and-shift-operators.md#compound-assignment)y, [x?? = y](null-coalescing-operator.md),[=>](lambda-operator.md) | Przypisanie i Deklaracja lambda |
+| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x &=](boolean-logical-operators.md#compound-assignment)y, x [&#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ =](boolean-logical-operators.md#compound-assignment)y, x [ <<= y](bitwise-and-shift-operators.md#compound-assignment), [x >>=](bitwise-and-shift-operators.md#compound-assignment)y, [x?? = y](null-coalescing-operator.md), [=>](lambda-operator.md) | Przypisanie i Deklaracja lambda |
 
 ## <a name="operator-associativity"></a>Łączność operatora
 
@@ -130,7 +131,7 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje [specyfikacji języ
 - [Wyrażenia](~/_csharplang/spec/expressions.md)
 - [Operatory](~/_csharplang/spec/expressions.md#operators)
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka C#](../index.md)
 - [Przeładowanie operatora](operator-overloading.md)

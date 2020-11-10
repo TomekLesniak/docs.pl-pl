@@ -3,12 +3,12 @@ title: Ostrzeżenie SYSLIB0011
 description: Dowiedz się więcej o Obsoletions, które generują ostrzeżenie SYSLIB0011 w czasie kompilacji.
 ms.topic: reference
 ms.date: 10/20/2020
-ms.openlocfilehash: 2b363e565ce1143c162679c6b74621885378d7ff
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: 1b4f4c24c64148319f659b78573a4d80fd5b98a7
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92333328"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440018"
 ---
 # <a name="syslib0011-binaryformatter-serialization-is-obsolete"></a>SYSLIB0011: serializacja BinaryFormatter jest przestarzała
 
@@ -21,11 +21,13 @@ Ze względu na [luki w zabezpieczeniach](../../standard/serialization/binaryform
 - <xref:System.Runtime.Serialization.IFormatter.Serialize(System.IO.Stream,System.Object)?displayProperty=nameWithType>
 - <xref:System.Runtime.Serialization.IFormatter.Deserialize(System.IO.Stream)?displayProperty=nameWithType>
 
-## <a name="workaround"></a>Obejście
+## <a name="workarounds"></a>Obejścia
 
 Rozważ użycie <xref:System.Text.Json.JsonSerializer> lub <xref:System.Xml.Serialization.XmlSerializer> zamiast <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> .
 
 Aby uzyskać więcej informacji na temat zalecanych akcji, zobacz [Rozwiązywanie problemów z BinaryFormatter obsoletion i wyłączanie](https://aka.ms/binaryformatter).
+
+[!INCLUDE [suppress-syslib-warning](../../../includes/suppress-syslib-warning.md)]
 
 ## <a name="see-also"></a>Zobacz też
 

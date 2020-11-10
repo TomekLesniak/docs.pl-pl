@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 2c1358b2b63a92cb50b853043adbfaae23ccd897
-ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
+ms.openlocfilehash: aba45a99562b67df17e1ff33ecc3c8bbad63ec30
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94329875"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440819"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializować i deserializować (Marshaling and unmarshaling) JSON w programie .NET
 
@@ -493,7 +493,7 @@ Oto przykład obiektu do serializacji i danych wyjściowych JSON:
 
 |Właściwość |Wartość  |
 |---------|---------|
-| Date    | 8/1/2019 12:00:00 AM – 07:00|
+| Data    | 8/1/2019 12:00:00 AM – 07:00|
 | TemperatureCelsius| 25 |
 | Podsumowanie| wartość null|
 
@@ -763,7 +763,7 @@ Podczas deserializacji kodu JSON pokazanego wcześniej w tym typie próbkowania 
 
 |Właściwość |Wartość  |Uwagi  |
 |---------|---------|---------|
-| Date    | 8/1/2019 12:00:00 AM – 07:00||
+| Data    | 8/1/2019 12:00:00 AM – 07:00||
 | TemperatureCelsius| 0 | Niezgodność z rozróżnianiem wielkości liter ( `temperatureCelsius` w formacie JSON), więc właściwość nie jest ustawiona. |
 | Podsumowanie | Gorąca ||
 | ExtensionData — | temperatureCelsius: 25 |Ponieważ przypadek nie jest zgodny, ta właściwość JSON jest dodatkową i jest parą klucz-wartość w słowniku.|
@@ -990,9 +990,11 @@ Poprzedni kod założono, że `jsonUtf8` zmienna jest tablicą bajtową, która 
 
 ### <a name="filter-data-using-utf8jsonreader"></a>Filtrowanie danych za pomocą Utf8JsonReader
 
-Poniższy przykład pokazuje, jak odczytywać plik synchronicznie i wyszukiwać wartość:
+Poniższy przykład pokazuje, jak odczytywać plik synchronicznie i wyszukać wartość.
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderFromFile.cs)]
+
+(Dostępna jest [wersja asynchroniczna tego przykładu](https://github.com/dotnet/samples/blob/18e31a5f1abd4f347bf96bfdc3e40e2cfb36e319/core/json/Program.cs) ).
 
 Powyższy kod ma następujące działanie:
 
@@ -1028,7 +1030,7 @@ Przykładowy kod rozpoczyna się od buforu 4 KB i podwaja rozmiar buforu za każ
 
 W powyższym przykładzie nie ustawiono limitu rozmiaru buforu. Jeśli rozmiar tokenu jest zbyt duży, kod może zakończyć się niepowodzeniem z <xref:System.OutOfMemoryException> wyjątkiem. Taka sytuacja może wystąpić, jeśli kod JSON zawiera token o rozmiarze około 1 GB lub więcej, ponieważ Podwajanie rozmiaru 1 GB spowoduje, że rozmiar jest zbyt duży, aby zmieścił się w `int32` buforze.
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 * [System.Text.Json Podsumowanie](system-text-json-overview.md)
 * [Jak pisać konwertery niestandardowe](system-text-json-converters-how-to.md)

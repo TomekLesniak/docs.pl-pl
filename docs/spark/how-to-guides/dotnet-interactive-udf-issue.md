@@ -6,12 +6,12 @@ author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: d07d757f9e47a84c75f46b190bdb613b8d2db7c1
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 8fb729a0b8220d15af641f916383bbd6146e2e33
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224135"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441079"
 ---
 # <a name="write-and-call-udfs-in-net-for-apache-spark-interactive-environments"></a>Pisz i Wywołaj UDF w programie .NET dla środowisk interaktywnych Apache Spark
 
@@ -49,7 +49,7 @@ Teraz zobaczmy, co się stanie, jeśli wywołamy funkcję UDF w tej samej komór
 
 Powyższym wyróżnionym błędem jest fakt, że zestawy UDF muszą zostać najpierw skompilowane i wysłane do procesów roboczych, zanim będzie można je wywołać w ramce Dataframe.
 
-Poniżej przedstawiono kilka istotnych kwestii, które należy wziąć pod uwagę podczas wdrażania UDF na platformie .NET dla Apache Spark interaktywnego środowiska (na przykład [notesów Azure Synapse](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)).
+Poniżej przedstawiono kilka istotnych kwestii, które należy wziąć pod uwagę podczas wdrażania UDF na platformie .NET dla Apache Spark interaktywnego środowiska (na przykład [notesów Azure Synapse](/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)).
 
 ## <a name="faqs"></a>Często zadawane pytania
 

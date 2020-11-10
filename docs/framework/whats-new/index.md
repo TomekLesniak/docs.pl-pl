@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 13346836b6cc1c9db4a1b6fd93a11615c2a843c0
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: da0e92f394507a37b0b6c163b41a575abc1c1a2b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687567"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441112"
 ---
 # <a name="whats-new-in-net-framework"></a>Co nowego w .NET Framework
 
@@ -71,7 +71,7 @@ Ulepszony ułatwienia dostępu, dzięki czemu aplikacja zapewnia odpowiednie śr
 
 #### <a name="base-classes"></a>Klas podstawowych
 
-**Zredukowany wpływ na Szyfrowanie FIPS** . W poprzednich wersjach .NET Framework zarządzane klasy dostawcy usług kryptograficznych, takie jak <xref:System.Security.Cryptography.SHA256Managed> throw, <xref:System.Security.Cryptography.CryptographicException> gdy systemowe biblioteki kryptograficzne są skonfigurowane w trybie FIPS. Te wyjątki są zgłaszane, ponieważ zarządzane wersje klas dostawcy usług kryptograficznych, w przeciwieństwie do bibliotek kryptograficznych systemu, nie zostały poddane FIPS (Federal Information Processing Standards) 140-2 certyfikacji. Ponieważ kilku deweloperów ma swoje komputery deweloperskie w trybie FIPS, wyjątki są często zgłaszane w systemach produkcyjnych.
+**Zredukowany wpływ na Szyfrowanie FIPS**. W poprzednich wersjach .NET Framework zarządzane klasy dostawcy usług kryptograficznych, takie jak <xref:System.Security.Cryptography.SHA256Managed> throw, <xref:System.Security.Cryptography.CryptographicException> gdy systemowe biblioteki kryptograficzne są skonfigurowane w trybie FIPS. Te wyjątki są zgłaszane, ponieważ zarządzane wersje klas dostawcy usług kryptograficznych, w przeciwieństwie do bibliotek kryptograficznych systemu, nie zostały poddane FIPS (Federal Information Processing Standards) 140-2 certyfikacji. Ponieważ kilku deweloperów ma swoje komputery deweloperskie w trybie FIPS, wyjątki są często zgłaszane w systemach produkcyjnych.
 
 Domyślnie w aplikacjach, które są przeznaczone .NET Framework 4,8, następujące zarządzane klasy kryptograficzne nie zgłaszają już <xref:System.Security.Cryptography.CryptographicException> w tym przypadku:
 
@@ -190,11 +190,11 @@ Aby włączyć obsługę skalowania w Mixed-Mode o wysokiej rozdzielczości DPI,
 
 Środowisko uruchomieniowe w .NET Framework 4,8 obejmuje następujące zmiany i usprawnienia:
 
-**Ulepszenia kompilatora JIT** . Kompilator just-in-Time (JIT) w .NET Framework 4,8 jest oparty na kompilatorze JIT w programie .NET Core 2,1. Wiele optymalizacji i wszystkie poprawki błędów kompilatora JIT programu .NET Core 2,1 są zawarte w kompilatorze JIT .NET Framework 4,8.
+**Ulepszenia kompilatora JIT**. Kompilator just-in-Time (JIT) w .NET Framework 4,8 jest oparty na kompilatorze JIT w programie .NET Core 2,1. Wiele optymalizacji i wszystkie poprawki błędów kompilatora JIT programu .NET Core 2,1 są zawarte w kompilatorze JIT .NET Framework 4,8.
 
-**Ulepszenia programu Ngen** . Środowisko uruchomieniowe poprawiło zarządzanie pamięcią dla obrazów [natywnego generatora obrazów](../tools/ngen-exe-native-image-generator.md) (Ngen), dzięki czemu dane mapowane z obrazów NGen nie są rezydentem pamięci. Pozwala to zmniejszyć ilość miejsca dostępnego na ataki próbujące wykonać dowolny kod, modyfikując pamięć, która zostanie wykonana.
+**Ulepszenia programu Ngen**. Środowisko uruchomieniowe poprawiło zarządzanie pamięcią dla obrazów [natywnego generatora obrazów](../tools/ngen-exe-native-image-generator.md) (Ngen), dzięki czemu dane mapowane z obrazów NGen nie są rezydentem pamięci. Pozwala to zmniejszyć ilość miejsca dostępnego na ataki próbujące wykonać dowolny kod, modyfikując pamięć, która zostanie wykonana.
 
-**Skanowanie w poszukiwaniu złośliwego oprogramowania dla wszystkich zestawów** . W poprzednich wersjach .NET Framework środowisko uruchomieniowe skanuje wszystkie zestawy ładowane z dysku przy użyciu programu Windows Defender lub oprogramowania chroniącego przed złośliwym kodem. Jednak zestawy załadowane z innych źródeł, na przykład przez <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType> metodę, nie są skanowane i mogą potencjalnie zawierać niewykryte złośliwe oprogramowanie. Począwszy od .NET Framework 4,8 uruchomionego w systemie Windows 10 środowisko uruchomieniowe wyzwala skanowanie przez rozwiązania chroniące przed złośliwym kodem [(AMSI)](/windows/desktop/AMSI/antimalware-scan-interface-portal).
+**Skanowanie w poszukiwaniu złośliwego oprogramowania dla wszystkich zestawów**. W poprzednich wersjach .NET Framework środowisko uruchomieniowe skanuje wszystkie zestawy ładowane z dysku przy użyciu programu Windows Defender lub oprogramowania chroniącego przed złośliwym kodem. Jednak zestawy załadowane z innych źródeł, na przykład przez <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType> metodę, nie są skanowane i mogą potencjalnie zawierać niewykryte złośliwe oprogramowanie. Począwszy od .NET Framework 4,8 uruchomionego w systemie Windows 10 środowisko uruchomieniowe wyzwala skanowanie przez rozwiązania chroniące przed złośliwym kodem [(AMSI)](/windows/desktop/AMSI/antimalware-scan-interface-portal).
 
 <a name="v472"></a>
 
@@ -437,7 +437,7 @@ Możesz dodać SameSite dla <xref:System.Web.Security.FormsAuthentication> <xref
 
 <a name="net472"></a>
 
-#### <a name="networking"></a>Networking
+#### <a name="networking"></a>Sieć
 
 **Implementacja właściwości HttpClientHandler**
 
@@ -633,7 +633,7 @@ Zmiany w wyrzucaniu elementów bezużytecznych (GC) w .NET Framework 4.7.1 popra
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Networking
+#### <a name="networking"></a>Sieć
 
 **Obsługa algorytmu SHA-2 dla komunikatu. algorytm**
 
@@ -702,7 +702,7 @@ W .NET Framework 4,7 <xref:System.Runtime.Serialization.Json.DataContractJsonSer
 
 <a name="net47"></a>
 
-#### <a name="networking"></a>Networking
+#### <a name="networking"></a>Sieć
 
 .NET Framework 4,7 dodaje następującą funkcję powiązaną z siecią:
 
@@ -720,11 +720,11 @@ _ *Rozszerzalność pamięci podręcznej obiektów**
 
 Począwszy od .NET Framework 4,7, ASP.NET dodaje nowy zestaw interfejsów API, które umożliwiają deweloperom zastąpienie domyślnych implementacji ASP.NET dla pamięci podręcznej obiektów i pamięci. Deweloperzy mogą teraz zastąpić dowolne z następujących trzech składników, jeśli implementacja ASP.NET nie jest odpowiednia:
 
-- **Magazyn pamięci podręcznej obiektów** . Za pomocą nowej sekcji Konfiguracja dostawców pamięci podręcznej deweloperzy mogą podłączyć nowe implementacje pamięci podręcznej obiektów dla aplikacji ASP.NET przy użyciu nowego interfejsu **ICacheStoreProvider** .
+- **Magazyn pamięci podręcznej obiektów**. Za pomocą nowej sekcji Konfiguracja dostawców pamięci podręcznej deweloperzy mogą podłączyć nowe implementacje pamięci podręcznej obiektów dla aplikacji ASP.NET przy użyciu nowego interfejsu **ICacheStoreProvider** .
 
-- **Monitorowanie pamięci** . Domyślny monitor pamięci w programie ASP.NET powiadamia aplikacje, gdy działają w pobliżu skonfigurowanego limitu bajtów prywatnych dla tego procesu lub gdy na komputerze jest mało dostępnej fizycznej pamięci RAM. Gdy te limity zbliżają się, powiadomienia są wywoływane. W przypadku niektórych aplikacji powiadomienia są wywoływane zbyt blisko skonfigurowanych limitów, aby umożliwić korzystanie z przydatnych reakcji. Deweloperzy mogą teraz pisać własne monitory pamięci, aby zamienić wartość domyślną przy użyciu <xref:System.Web.Hosting.ApplicationMonitors.MemoryMonitor%2A?displayProperty=nameWithType> właściwości.
+- **Monitorowanie pamięci**. Domyślny monitor pamięci w programie ASP.NET powiadamia aplikacje, gdy działają w pobliżu skonfigurowanego limitu bajtów prywatnych dla tego procesu lub gdy na komputerze jest mało dostępnej fizycznej pamięci RAM. Gdy te limity zbliżają się, powiadomienia są wywoływane. W przypadku niektórych aplikacji powiadomienia są wywoływane zbyt blisko skonfigurowanych limitów, aby umożliwić korzystanie z przydatnych reakcji. Deweloperzy mogą teraz pisać własne monitory pamięci, aby zamienić wartość domyślną przy użyciu <xref:System.Web.Hosting.ApplicationMonitors.MemoryMonitor%2A?displayProperty=nameWithType> właściwości.
 
-- **Reakcje z limitem pamięci** . Domyślnie ASP.NET próbuje przyciąć pamięć podręczną obiektów i okresowo wywoływać, <xref:System.GC.Collect%2A?displayProperty=nameWithType> gdy limit procesu prywatnego bajtów jest bliski. W przypadku niektórych aplikacji częstotliwość wywołań <xref:System.GC.Collect%2A?displayProperty=nameWithType> lub ilość pamięci podręcznej, która jest przycinana, jest nieskuteczna. Deweloperzy mogą teraz zastąpić lub uzupełnić zachowanie domyślne, subskrybując implementacje **IObserver** do monitora pamięci aplikacji.
+- **Reakcje z limitem pamięci**. Domyślnie ASP.NET próbuje przyciąć pamięć podręczną obiektów i okresowo wywoływać, <xref:System.GC.Collect%2A?displayProperty=nameWithType> gdy limit procesu prywatnego bajtów jest bliski. W przypadku niektórych aplikacji częstotliwość wywołań <xref:System.GC.Collect%2A?displayProperty=nameWithType> lub ilość pamięci podręcznej, która jest przycinana, jest nieskuteczna. Deweloperzy mogą teraz zastąpić lub uzupełnić zachowanie domyślne, subskrybując implementacje **IObserver** do monitora pamięci aplikacji.
 
 <a name="wcf47"></a>
 
@@ -746,8 +746,8 @@ Począwszy od .NET Framework 4,7, usługa WCF umożliwia skonfigurowanie protoko
 
 Program WCF zawiera szereg zmian w kodzie, które eliminują sytuacje wyścigu, co poprawia wydajność i niezawodność opcji serializacji. Należą do nich:
 
-- Lepsza obsługa mieszania kodu asynchronicznego i synchronicznego w wywołaniach **SocketConnection. BeginRead** i **SocketConnection. Read** .
-- Zwiększona niezawodność podczas przerywania połączenia z **SharedConnectionListener** i **DuplexChannelBinder** .
+- Lepsza obsługa mieszania kodu asynchronicznego i synchronicznego w wywołaniach **SocketConnection. BeginRead** i **SocketConnection. Read**.
+- Zwiększona niezawodność podczas przerywania połączenia z **SharedConnectionListener** i **DuplexChannelBinder**.
 - Ulepszona niezawodność operacji serializacji podczas wywoływania <xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%28System.Type%29?displayProperty=nameWithType> metody.
 - Zwiększona niezawodność podczas usuwania oczekiwania przez wywołanie metody **ChannelSynchronizer. RemoveWaiter** .
 
@@ -819,7 +819,7 @@ Moduły sprawdzania poprawności adnotacji danych umożliwiają wykonanie walida
 
 2. Plik zasobów jest przechowywany w folderze App_LocalResources.
 
-3. Nazwa zlokalizowanego pliku zasobów ma `DataAnnotation.Localization.{` *nazwę* formularza `}.resx` , gdzie *name* jest nazwą kultury w formacie *languageCode* `-` *Country/regionCode* lub *languageCode* .
+3. Nazwa zlokalizowanego pliku zasobów ma `DataAnnotation.Localization.{` *nazwę* formularza `}.resx` , gdzie *name* jest nazwą kultury w formacie *languageCode* `-` *Country/regionCode* lub *languageCode*.
 
 4. Nazwa klucza zasobu jest ciągiem przypisanym do <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> atrybutu, a jego wartość jest zlokalizowanym komunikatem o błędzie.
 
@@ -1585,9 +1585,9 @@ W programie .NET 2015 wprowadzono .NET Framework 4,6 i .NET Core. Niektóre nowe
 
     Korzystne jest użycie spójnego formatu dla przełączników, ponieważ są one formalnym kontraktem udostępnianym przez bibliotekę. Poniżej przedstawiono dwa oczywiste formaty.
 
-    - *Przełącznik* . *przestrzeń nazw* . *przełącznikname*
+    - *Przełącznik*. *przestrzeń nazw*. *przełącznikname*
 
-    - *Przełącznik* . *Biblioteka* . *przełącznikname*
+    - *Przełącznik*. *Biblioteka*. *przełącznikname*
 
   - **Zmiany wzorca asynchronicznego opartego na zadaniach (TAP)**
 
@@ -1758,7 +1758,7 @@ W programie .NET 2015 wprowadzono .NET Framework 4,6 i .NET Core. Niektóre nowe
 
 - **Pakiety .NET Framework Open Source**
 
-  Pakiety .NET Core, takie jak Niezmienne kolekcje, [interfejsy API SIMD](https://www.nuget.org/packages/Microsoft.Bcl.Simd)i interfejsy API sieci, takie jak te, które znajdują się w <xref:System.Net.Http> przestrzeni nazw, są teraz dostępne jako pakiety typu open source w witrynie [GitHub](https://github.com/). Aby uzyskać dostęp do kodu, zobacz [.NET w witrynie GitHub](https://github.com/dotnet/runtime). Aby uzyskać więcej informacji i dowiedzieć się, jak współtworzyć te pakiety, zobacz stronę główną platformy .NET [Core i Open Source](../get-started/net-core-and-open-source.md) [w witrynie GitHub](https://github.com/dotnet/home).
+  Pakiety .NET Core, takie jak Niezmienne kolekcje, [interfejsy API SIMD](https://www.nuget.org/packages/Microsoft.Bcl.Simd)i interfejsy API sieci, takie jak te, które znajdują się w <xref:System.Net.Http> przestrzeni nazw, są teraz dostępne jako pakiety typu open source w witrynie [GitHub](https://github.com/). Aby uzyskać dostęp do kodu, zobacz [.NET w witrynie GitHub](https://github.com/dotnet/runtime). Aby uzyskać więcej informacji i dowiedzieć się, jak współtworzyć te pakiety, zobacz [wprowadzenie do platformy .NET](../../core/introduction.md), [Strona główna platformy .NET w witrynie GitHub](https://github.com/dotnet/home).
 
 <a name="v452"></a>
 
@@ -1971,7 +1971,7 @@ Optymalizacja z przewodnikiem zarządzanym profilem (Mpgo.exe) umożliwia skróc
 
 <a name="web"></a>
 
-### <a name="web"></a>Sieć Web
+### <a name="web"></a>Internet
 
 ASP.NET 4,5 i 4.5.1 Dodawanie powiązania modelu dla formularzy sieci Web, obsługi protokołu WebSocket, obsługi asynchronicznych, ulepszeń wydajności i wielu innych funkcji. Więcej informacji można znaleźć w następujących zasobach:
 
@@ -2081,7 +2081,7 @@ W .NET Framework 4,5 dodano kilka nowych funkcji do Windows Workflow Foundation 
 
 - Ulepszone Projektant przepływu pracy funkcje, takie jak następujące:
 
-  - Ulepszone możliwości wyszukiwania przepływu pracy w programie Visual Studio, w tym **szybkie znajdowanie** i **Znajdowanie plików** .
+  - Ulepszone możliwości wyszukiwania przepływu pracy w programie Visual Studio, w tym **szybkie znajdowanie** i **Znajdowanie plików**.
 
   - Możliwość automatycznego tworzenia działania sekwencji po dodaniu drugiego działania podrzędnego do działania kontenera oraz w celu uwzględnienia obu działań w działaniu sekwencji.
 
@@ -2127,7 +2127,7 @@ Aplikacje ze sklepu Windows 8. x są przeznaczone do określonych współczynnik
 
 Przenośna biblioteka klas w programie Visual Studio 2012 (i nowszych wersjach) umożliwia pisanie i kompilowanie zestawów zarządzanych, które działają na wielu platformach .NET Framework. Korzystając z projektu biblioteki klas przenośnych, należy wybrać platformy (takie jak Windows Phone i .NET dla systemu Windows 8. x aplikacji do sklepu). Dostępne typy i elementy członkowskie w projekcie są automatycznie ograniczone do wspólnych typów i elementów członkowskich na tych platformach. Aby uzyskać więcej informacji, zobacz [Przenośna biblioteka klas](../cross-platform/portable-class-library.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Program .NET Framework i wydania poza harmonogramem (OOB)](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co nowego w ułatwieniach dostępu w .NET Framework](whats-new-in-accessibility.md)

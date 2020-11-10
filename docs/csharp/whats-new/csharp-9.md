@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: c65f7220c44e86fac7e8beba28277bf43af95088
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: e1c297cd0ff75d6a6fb4a9d38c9a241e216f500b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282344"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440871"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -66,7 +66,7 @@ Kompilator syntezuje różne wersje powyższych metod. Sygnatury metod są zale�
 
 Oprócz znanych `Equals` przeciążeń, i kompilator umożliwia wypróbowanie `operator ==` `operator !=` nowej `EqualityContract` właściwości. Właściwość zwraca `Type` obiekt, który jest zgodny z typem rekordu. Jeśli typem podstawowym jest `object` , właściwość jest `virtual` . Jeśli typ podstawowy jest innym typem rekordu, właściwość jest `override` . Jeśli typem rekordu jest `sealed` , właściwość jest `sealed` . W syntezie są `GetHashCode` stosowane `GetHashCode` wszystkie właściwości i pola zadeklarowane w typie podstawowym oraz typ rekordu. Te metody, które zostały opisane w tej metodzie, wymuszają równość opartych na wartościach w hierarchii dziedziczenia Oznacza to, że `Student` nigdy nie będzie traktowane jako równe a `Person` o tej samej nazwie. Typy dwóch rekordów muszą być zgodne oraz wszystkie właściwości, które są współużytkowane przez typy rekordów równe.
 
-Rekordy mają również konstruktory z syntezą i metodę "Clone" służącą do tworzenia kopii. Konstruktor z syntezą ma jeden argument typu rekordu. Tworzy nowy rekord z tymi samymi wartościami dla wszystkich właściwości rekordu. Ten konstruktor jest prywatny, jeśli rekord jest zapieczętowany, w przeciwnym razie jest chroniony. Synteza "klonowanie" obsługuje konstrukcję kopiowania dla hierarchii rekordów. Termin "klon" jest w cudzysłowie, ponieważ rzeczywista nazwa jest generowana przez kompilator. Nie można utworzyć metody o nazwie `Clone` w typie rekordu. Synteza "klon" zwraca typ rekordu, który jest kopiowany przy użyciu wysyłki wirtualnej. Kompilator dodaje różne Modyfikatory dla metody "Clone" w zależności od modyfikatorów dostępu w `record` :
+Rekordy mają również konstruktory z syntezą i metodę "Clone" służącą do tworzenia kopii. Konstruktor z syntezą ma jeden parametr typu rekordu. Tworzy nowy rekord z tymi samymi wartościami dla wszystkich właściwości rekordu. Ten konstruktor jest prywatny, jeśli rekord jest zapieczętowany, w przeciwnym razie jest chroniony. Synteza "klonowanie" obsługuje konstrukcję kopiowania dla hierarchii rekordów. Termin "klon" jest w cudzysłowie, ponieważ rzeczywista nazwa jest generowana przez kompilator. Nie można utworzyć metody o nazwie `Clone` w typie rekordu. Synteza "klon" zwraca typ rekordu, który jest kopiowany przy użyciu wysyłki wirtualnej. Kompilator dodaje różne Modyfikatory dla metody "Clone" w zależności od modyfikatorów dostępu w `record` :
 
 - Jeśli typem rekordu jest `abstract` , Metoda "klonowanie" jest również `abstract` . Jeśli typ podstawowy nie jest `object` , metoda jest również `override` .
 - Dla typów rekordów, które nie są, `abstract` gdy typem podstawowym jest `object` :
@@ -98,11 +98,13 @@ Kompilator tworzy `Deconstruct` metodę dla rekordów pozycyjnych. `Deconstruct`
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="DeconstructRecord":::
 
-Na koniec rejestruje obsługę _*_wyrażeń z wyrażeniami_*_. _*_Wyrażenie with_*_ powoduje, że kompilator tworzy kopię rekordu, ale _with * określone właściwości są modyfikowane:
+Wreszcie rejestruje [ `with` wyrażenia](../language-reference/operators/with-expression.md)obsługi. _*_ `with` Expression_ *_ instruuje kompilator, aby utworzył kopię rekordu, ale _with* określone właściwości zmodyfikowano:
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="Wither":::
 
-Powyższy wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwość jest kopią `person` , a `FirstName` jest "Paul". W wyrażeniu można ustawić dowolną liczbę właściwości.  Każdy z tych elementów członkowskich, z wyjątkiem metody "Clone", może zostać przez Ciebie zapisany. Jeśli typ rekordu ma metodę, która pasuje do sygnatury dowolnej metody, kompilator nie wykonuje syntezy tej metody. W przykładzie wcześniejszego `Dog` rekordu znajduje się <xref:System.String.ToString> Przykładowa Metoda ze znakiem.
+Powyższy wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwość jest kopią `person` , a ma wartość `FirstName` `"Paul"` . W wyrażeniu można ustawić dowolną liczbę właściwości `with` .
+
+Każdy z tych elementów członkowskich, z wyjątkiem metody "Clone", może zostać przez Ciebie zapisany. Jeśli typ rekordu ma metodę, która pasuje do sygnatury dowolnej metody, kompilator nie wykonuje syntezy tej metody. W przykładzie wcześniejszego `Dog` rekordu znajduje się <xref:System.String.ToString> Przykładowa Metoda ze znakiem.
 
 ## <a name="init-only-setters"></a>Metody ustawiające tylko do inicjowania
 
@@ -242,7 +244,7 @@ Generator kodu odczytuje atrybuty lub inne elementy kodu przy użyciu interfejs�
 
 Dwie funkcje, które zostały dodane dla generatorów kodu, to rozszerzenia * **Składnia metody częściowej** _ i _*_inicjatory modułów_*_. Najpierw zmiany w metodach częściowych. Przed C# 9,0 metody częściowe są, `private` ale nie można określić modyfikatora dostępu, mają `void` Return i nie mogą mieć `out` parametrów. Te ograniczenia mające na celu, że jeśli nie zostanie podana implementacja metody, kompilator usuwa wszystkie wywołania metody częściowej. Język C# 9,0 usuwa te ograniczenia, ale wymaga, aby częściowa deklaracja metod była implementacją. Generatory kodu mogą zapewnić, że implementacja. Aby uniknąć wprowadzenia zmiany, kompilator traktuje każdą metodę częściową bez modyfikatora dostępu, aby przestrzegać starych reguł. Jeśli metoda częściowa zawiera `private` modyfikator dostępu, nowe reguły regulują tę metodę częściową.
 
-Druga Nowa funkcja dla generatorów kodu jest _ * _inicjatorów modułów_ * *. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe podczas ładowania zestawu. Metoda inicjatora modułu:
+Druga Nowa funkcja dla generatorów kodu jest _ * _inicjatorów modułów_ * *. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe przed jakimkolwiek innym dostępem do pola lub wywołaniem metody w całym module. Metoda inicjatora modułu:
 
 - Musi być statyczna
 - Musi być bez parametrów

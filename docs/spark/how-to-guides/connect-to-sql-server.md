@@ -6,12 +6,12 @@ author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: b20710000d8717b5df238aa9a782371fbe586037
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 1fecd796aeefd6c5681c4c2ea623e89f3a5a3c1d
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224025"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439537"
 ---
 # <a name="connect-net-for-apache-spark-to-sql-server"></a>Połącz platformę .NET dla Apache Spark z SQL Server
 
@@ -37,17 +37,17 @@ W tym artykule dowiesz się, jak nawiązać połączenie z wystąpieniem program
 
 ## <a name="connect-to-sql-server-from-your-application"></a>Nawiązywanie połączenia z SQL Server aplikacji
 
-1. Użyj sterownika JDBC firmy Microsoft SQL Server w celu zapewnienia łączności z bazą danych za pośrednictwem aplikacji (Pobierz z [tej oficjalnej witryny sieci Web](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15)).
+1. Użyj sterownika JDBC firmy Microsoft SQL Server w celu zapewnienia łączności z bazą danych za pośrednictwem aplikacji (Pobierz z [tej oficjalnej witryny sieci Web](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15)).
 2. Ustaw następujące konfiguracje, aby nawiązać połączenie z wystąpieniem programu SQL Server i bazą danych z aplikacji:
-    1. **connection_url**: jest to adres URL służący do nawiązywania połączenia z wystąpieniem lub bazą danych programu SQL Server i ma następujący format:
+    1. **connection_url** : jest to adres URL służący do nawiązywania połączenia z wystąpieniem lub bazą danych programu SQL Server i ma następujący format:
 
         ```
         jdbc:sqlserver://<SQL_server_IP_address>:1433;instanceName=<instance_name>;databaseName=<database_name>;
         ```
 
-    2. **DbTable**: Nazwa tabeli, do której uzyskuje się dostęp.
-    3. **użytkownik**: Zaloguj użytkownika w kroku 1 konfigurowania programu SQL Server.
-    4. **hasło**: Hasło skonfigurowane w kroku 1 konfigurowania programu SQL Server.
+    2. **DbTable** : Nazwa tabeli, do której uzyskuje się dostęp.
+    3. **użytkownik** : Zaloguj użytkownika w kroku 1 konfigurowania programu SQL Server.
+    4. **hasło** : Hasło skonfigurowane w kroku 1 konfigurowania programu SQL Server.
 3. Użyj powyższej konfiguracji w kodzie aplikacji, aby odczytać dane z tabeli, jak pokazano poniżej:
 
     ```csharp

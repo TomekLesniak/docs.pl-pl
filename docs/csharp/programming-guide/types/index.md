@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: ad14c3367809c16268abedc99596089514986e3f
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: aba59f6626661145c10d23d4a2c167b8337ec559
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91205116"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440383"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Przewodnik programowania w języku C#)
 
@@ -34,6 +34,8 @@ Informacje przechowywane w typie mogą obejmować następujące elementy:
 - Elementy członkowskie (metody, pola, zdarzenia itd.), które zawiera.
 
 - Typ podstawowy, z którego dziedziczy.
+
+- Interfejsy, które implementuje.
 
 - Lokalizacja, w której zostanie przypisana pamięć dla zmiennych w czasie wykonywania.
 
@@ -108,7 +110,7 @@ int i = 5;
 char c = 'Z';
 ```
 
-Typy wartości są *zapieczętowane*, co oznacza, że na przykład nie można utworzyć typu z i nie można <xref:System.Int32?displayProperty=nameWithType> zdefiniować struktury do dziedziczenia z żadnej klasy lub struktury zdefiniowanej przez użytkownika, ponieważ struktura może dziedziczyć tylko z <xref:System.ValueType?displayProperty=nameWithType> . Jednak struktura może zaimplementować jeden lub więcej interfejsów. Typ struktury można rzutować na dowolny typ interfejsu, który implementuje; powoduje *to, że operacja opakowywania* otacza strukturę wewnątrz obiektu typu odwołania na zarządzanym stosie. Operacje pakowania są wykonywane w przypadku przekazania typu wartości do metody, która przyjmuje <xref:System.Object?displayProperty=nameWithType> lub dowolny typ interfejsu jako parametr wejściowy. Aby uzyskać więcej informacji, zobacz [opakowanie i rozpakowywanie](./boxing-and-unboxing.md).
+Typy wartości są *zapieczętowane* , co oznacza, że na przykład nie można utworzyć typu z i nie można <xref:System.Int32?displayProperty=nameWithType> zdefiniować struktury do dziedziczenia z żadnej klasy lub struktury zdefiniowanej przez użytkownika, ponieważ struktura może dziedziczyć tylko z <xref:System.ValueType?displayProperty=nameWithType> . Jednak struktura może zaimplementować jeden lub więcej interfejsów. Typ struktury można rzutować na dowolny typ interfejsu, który implementuje; powoduje *to, że operacja opakowywania* otacza strukturę wewnątrz obiektu typu odwołania na zarządzanym stosie. Operacje pakowania są wykonywane w przypadku przekazania typu wartości do metody, która przyjmuje <xref:System.Object?displayProperty=nameWithType> lub dowolny typ interfejsu jako parametr wejściowy. Aby uzyskać więcej informacji, zobacz [opakowanie i rozpakowywanie](./boxing-and-unboxing.md).
 
 Za pomocą słowa kluczowego [struct](../../language-reference/builtin-types/struct.md) można tworzyć własne niestandardowe typy wartości. Zazwyczaj struktura jest używana jako kontener dla małego zestawu powiązanych zmiennych, jak pokazano w następującym przykładzie:
 
@@ -157,7 +159,7 @@ Ponieważ wpisywane są literały, a wszystkie typy ostatecznie pochodzą z <xre
 
 ## <a name="generic-types"></a>Typy ogólne
 
-Typ może być zadeklarowany z co najmniej jednym *parametrem typu* , który służy jako symbol zastępczy dla rzeczywistego typu ( *konkretny typ*), który będzie używany przez kod klienta podczas tworzenia wystąpienia typu. Takie typy są nazywane *typami ogólnymi*. Na przykład typ .NET <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> ma jeden parametr typu, który zgodnie z Konwencją otrzymuje nazwę *T*. Podczas tworzenia wystąpienia typu należy określić typ obiektów, które będzie zawierać lista, na przykład ciąg:
+Typ może być zadeklarowany z co najmniej jednym *parametrem typu* , który służy jako symbol zastępczy dla rzeczywistego typu ( *konkretny typ* ), który będzie używany przez kod klienta podczas tworzenia wystąpienia typu. Takie typy są nazywane *typami ogólnymi*. Na przykład typ .NET <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> ma jeden parametr typu, który zgodnie z Konwencją otrzymuje nazwę *T*. Podczas tworzenia wystąpienia typu należy określić typ obiektów, które będzie zawierać lista, na przykład ciąg:
 
 ```csharp
 List<string> stringList = new List<string>();

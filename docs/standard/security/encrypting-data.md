@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cryptography [.NET], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 8a8b5988a13ab571284b08c7aaece3542467aa71
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 75bb0fa52b8002efe0027f026de8c0910735e55e
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556972"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440975"
 ---
 # <a name="encrypting-data"></a>Szyfrowanie danych
 
@@ -41,23 +41,23 @@ CryptoStream cryptStream = new CryptoStream(myStream, aes.CreateEncryptor(key, i
   
 Po wykonaniu tego kodu wszystkie dane zapisywane w obiekcie **CryptoStream** są szyfrowane przy użyciu algorytmu AES.  
   
-Poniższy przykład pokazuje cały proces tworzenia strumienia, szyfrowania strumienia, zapisywania do strumienia i zamykania strumienia. W tym przykładzie tworzony jest strumień plików zaszyfrowany przy użyciu klasy **CryptoStream** i klasy **AES** . Wiadomość jest zapisywana w zaszyfrowanym strumieniu z <xref:System.IO.StreamWriter> klasą.
+Poniższy przykład pokazuje cały proces tworzenia strumienia, szyfrowania strumienia, zapisywania do strumienia i zamykania strumienia. W tym przykładzie tworzony jest strumień plików zaszyfrowany przy użyciu klasy **CryptoStream** i klasy **AES** . Wygenerowany plik IV jest zapisywana na początku <xref:System.IO.FileStream> , dlatego może być odczytywany i używany do odszyfrowywania. Następnie w zaszyfrowanym strumieniu zostanie zapisany komunikat z <xref:System.IO.StreamWriter> klasą. Ten sam klucz może być wielokrotnie używany do szyfrowania i odszyfrowywania danych, dlatego zaleca się wygenerowanie nowej losowego kodu w języku IV za każdym razem. W ten sposób zaszyfrowane dane są zawsze różne, nawet jeśli zwykły tekst jest taki sam.
   
 :::code language="csharp" source="snippets/encrypting-data/csharp/aes-encrypt.cs":::
 :::code language="vb" source="snippets/encrypting-data/vb/aes-encrypt.vb":::
 
-Kod szyfruje strumień przy użyciu algorytmu symetrycznego AES i zapisuje "Hello world!" do strumienia. Jeśli kod zakończy się pomyślnie, tworzy zaszyfrowany plik o nazwie *TestData.txt* i wyświetla następujący tekst w konsoli programu:  
+Kod szyfruje strumień przy użyciu algorytmu symetrycznego AES i zapisuje IV, a następnie szyfruje "Hello world!" do strumienia. Jeśli kod zakończy się pomyślnie, tworzy zaszyfrowany plik o nazwie *TestData.txt* i wyświetla następujący tekst w konsoli programu:
   
 ```console  
-The text was encrypted.  
+The text was encrypted.
 ```  
 
-Plik można odszyfrować przy użyciu przykładu szyfrowania symetrycznego w [odszyfrowaniu danych](decrypting-data.md). Ten przykład i ten przykład określa ten sam klucz i IV.
+Plik można odszyfrować przy użyciu przykładu szyfrowania symetrycznego w [odszyfrowaniu danych](decrypting-data.md). Ten przykład i ten przykład określa ten sam klucz.
 
-Jeśli jednak występuje wyjątek, kod wyświetla następujący tekst w konsoli programu:  
+Jeśli jednak występuje wyjątek, kod wyświetla następujący tekst w konsoli programu:
   
 ```console  
-The encryption failed.  
+The encryption failed.
 ```
 
 ## <a name="asymmetric-encryption"></a>Szyfrowanie asymetryczne

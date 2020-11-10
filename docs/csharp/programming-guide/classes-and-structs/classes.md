@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 68b41eef0b604b80a9659eddf45d6512eac44fd6
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 8fa8d33ce9ece20a18c5c1542bc44cf569e9fa2e
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91607736"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440409"
 ---
 # <a name="classes-c-programming-guide"></a>Klasy (Przewodnik programowania w języku C#)
 
@@ -70,9 +70,9 @@ Chociaż są czasami używane zamiennie, Klasa i obiekt są różne. Klasa defin
   
 ## <a name="class-inheritance"></a>Dziedziczenie klas  
 
-Klasy w pełni obsługują *dziedziczenie*, podstawową cechą programowania zorientowanego obiektowo. Podczas tworzenia klasy można dziedziczyć z dowolnego innego interfejsu lub klasy, która nie jest zdefiniowana jako [Sealed](../../language-reference/keywords/sealed.md), a inne klasy mogą dziedziczyć z klasy i zastępować metody wirtualne klas.
+Klasy w pełni obsługują *dziedziczenie* , podstawową cechą programowania zorientowanego obiektowo. Podczas tworzenia klasy można dziedziczyć z dowolnej klasy, która nie jest zdefiniowana jako [zapieczętowana](../../language-reference/keywords/sealed.md), a inne klasy mogą dziedziczyć z klasy i zastępować metody wirtualne klas. Ponadto można zaimplementować jeden lub więcej interfejsów.
 
-Dziedziczenie jest realizowane przy użyciu wartości *pochodnych*, co oznacza, że Klasa jest zadeklarowana przy użyciu *klasy bazowej* , z której dziedziczy dane i zachowanie. Klasa bazowa jest określana przez dołączenie dwukropka i nazwy klasy bazowej następującej po nazwie klasy pochodnej, w następujący sposób:  
+Dziedziczenie jest realizowane przy użyciu wartości *pochodnych* , co oznacza, że Klasa jest zadeklarowana przy użyciu *klasy bazowej* , z której dziedziczy dane i zachowanie. Klasa bazowa jest określana przez dołączenie dwukropka i nazwy klasy bazowej następującej po nazwie klasy pochodnej, w następujący sposób:  
 
  ```csharp
  public class Manager : Employee
@@ -84,7 +84,7 @@ Dziedziczenie jest realizowane przy użyciu wartości *pochodnych*, co oznacza, 
 
 Gdy Klasa deklaruje klasę bazową, dziedziczy wszystkich elementów członkowskich klasy podstawowej, z wyjątkiem konstruktorów. Aby uzyskać więcej informacji, zobacz [dziedziczenie](inheritance.md).
   
-W przeciwieństwie do języka C++, Klasa w języku C# może dziedziczyć bezpośrednio z jednej klasy bazowej. Jednak ponieważ klasa bazowa może sama dziedziczyć z innej klasy, Klasa może pośrednio dziedziczyć wiele klas bazowych. Ponadto Klasa może bezpośrednio zaimplementować więcej niż jeden interfejs. Aby uzyskać więcej informacji, zobacz [interfejsy](../interfaces/index.md).  
+W przeciwieństwie do języka C++, Klasa w języku C# może dziedziczyć bezpośrednio z jednej klasy bazowej. Jednak ponieważ klasa bazowa może sama dziedziczyć z innej klasy, Klasa może pośrednio dziedziczyć wiele klas bazowych. Ponadto Klasa może bezpośrednio zaimplementować jeden lub więcej interfejsów. Aby uzyskać więcej informacji, zobacz [interfejsy](../interfaces/index.md).  
   
 Klasa może być zadeklarowana jako [abstract](../../language-reference/keywords/abstract.md). Klasa abstrakcyjna zawiera metody abstrakcyjne z definicją podpisu, ale bez implementacji. Nie można utworzyć wystąpienia klas abstrakcyjnych. Mogą one być używane tylko przez klasy pochodne, które implementują metody abstrakcyjne. Z kolei Klasa [zapieczętowana](../../language-reference/keywords/sealed.md) nie zezwala innym klasom na ich wyprowadzanie. Aby uzyskać więcej informacji, zobacz [klasy abstrakcyjne i zapieczętowane oraz składowe klas](abstract-and-sealed-classes-and-class-members.md).  
   
@@ -100,7 +100,7 @@ W poniższym przykładzie zdefiniowano klasę publiczną, która zawiera [Właś
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Programowanie zorientowane obiektowo](../../tutorials/intro-to-csharp/object-oriented-programming.md)
@@ -108,6 +108,6 @@ W poniższym przykładzie zdefiniowano klasę publiczną, która zawiera [Właś
 - [Nazwy identyfikatorów](../inside-a-program/identifier-names.md)
 - [Elementy członkowskie](members.md)
 - [Metody](methods.md)
-- [Konstruktorów](constructors.md)
+- [Konstruktory](constructors.md)
 - [Finalizatory](destructors.md)
 - [Obiekty](objects.md)

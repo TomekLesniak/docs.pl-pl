@@ -4,12 +4,12 @@ description: Informacje o typach podstawowych (liczbowych, ciągach i obiektach)
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 18a73e62bf45cdc4a4eaa0985c3fe036ac3b55a8
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 1ddc6b51e48758d203fa570a664fe06d0a5b52c5
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465263"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439719"
 ---
 # <a name="types-variables-and-values"></a>Typy, zmienne i wartości
 
@@ -23,8 +23,10 @@ Informacje przechowywane w typie mogą obejmować następujące elementy:
   
 - Elementy członkowskie (metody, pola, zdarzenia itd.), które zawiera.  
   
-- Typ podstawowy, z którego dziedziczy.  
-  
+- Typ podstawowy, z którego dziedziczy.
+
+- Interfejsy, które implementuje.
+
 - Lokalizacja, w której zostanie przypisana pamięć dla zmiennych w czasie wykonywania.  
   
 - Rodzaje operacji, które są dozwolone.  
@@ -62,7 +64,7 @@ Do tworzenia własnych typów niestandardowych służy konstrukcja [struct](lang
   
 ## <a name="generic-types"></a>Typy ogólne
 
-Typ może być zadeklarowany z co najmniej jednym *parametrem typu* , który służy jako symbol zastępczy dla rzeczywistego typu ( *konkretny typ*), który będzie używany przez kod klienta podczas tworzenia wystąpienia typu. Takie typy są nazywane *typami ogólnymi*. Na przykład <xref:System.Collections.Generic.List%601> ma jeden parametr typu, który zgodnie z Konwencją otrzymuje nazwę *T*. Podczas tworzenia wystąpienia typu należy określić typ obiektów, które będzie zawierać lista, na przykład ciąg:  
+Typ może być zadeklarowany z co najmniej jednym *parametrem typu* , który służy jako symbol zastępczy dla rzeczywistego typu ( *konkretny typ* ), który będzie używany przez kod klienta podczas tworzenia wystąpienia typu. Takie typy są nazywane *typami ogólnymi*. Na przykład <xref:System.Collections.Generic.List%601> ma jeden parametr typu, który zgodnie z Konwencją otrzymuje nazwę *T*. Podczas tworzenia wystąpienia typu należy określić typ obiektów, które będzie zawierać lista, na przykład ciąg:  
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
@@ -84,7 +86,7 @@ Ważne jest, aby zrozumieć dwa podstawowe punkty o systemie typów w programie 
   
 - Każdy typ w CTS jest zdefiniowany jako *Typ wartości* lub *typ referencyjny*. Obejmuje to wszystkie niestandardowe typy w bibliotece klas .NET, a także własne typy zdefiniowane przez użytkownika. Typy, które definiujesz za pomocą `struct` `enum` słowa kluczowego or, są typami wartości. Aby uzyskać więcej informacji na temat typów wartości, zobacz [typy wartości](language-reference/builtin-types/value-types.md). Typy zdefiniowane za pomocą słowa kluczowego [Class](language-reference/keywords/class.md) to typy odwołań. Aby uzyskać więcej informacji na temat typów referencyjnych, zobacz [klasy](programming-guide/classes-and-structs/classes.md). Typy odwołań i typy wartości mają różne reguły czasu kompilacji i inne zachowanie w czasie wykonywania.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Typy struktur](language-reference/builtin-types/struct.md)
 - [Typów wyliczeniowych](language-reference/builtin-types/enum.md)
