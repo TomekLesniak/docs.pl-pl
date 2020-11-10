@@ -12,22 +12,22 @@ helpviewer_keywords:
 - asymmetric decryption
 - decryption
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
-ms.openlocfilehash: 2ba4c3ba43d688aeb66c67ec3f94f4a503d47892
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 7e8fe5a8b7ed7c217a31a8ee91a5d111257fed45
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556985"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440988"
 ---
-# <a name="decrypting-data"></a><span data-ttu-id="7183e-103">Odszyfrowywanie danych</span><span class="sxs-lookup"><span data-stu-id="7183e-103">Decrypting Data</span></span>
+# <a name="decrypting-data"></a><span data-ttu-id="ea5e8-103">Odszyfrowywanie danych</span><span class="sxs-lookup"><span data-stu-id="ea5e8-103">Decrypting Data</span></span>
 
-<span data-ttu-id="7183e-104">Odszyfrowywanie jest odwrotną operacją szyfrowania.</span><span class="sxs-lookup"><span data-stu-id="7183e-104">Decryption is the reverse operation of encryption.</span></span> <span data-ttu-id="7183e-105">W przypadku szyfrowania klucza tajnego należy znać zarówno klucz, jak i IV, które były używane do szyfrowania danych.</span><span class="sxs-lookup"><span data-stu-id="7183e-105">For secret-key encryption, you must know both the key and IV that were used to encrypt the data.</span></span> <span data-ttu-id="7183e-106">W przypadku szyfrowania klucza publicznego należy znać klucz publiczny (Jeśli dane zostały zaszyfrowane przy użyciu klucza prywatnego) lub klucza prywatnego (Jeśli dane zostały zaszyfrowane przy użyciu klucza publicznego).</span><span class="sxs-lookup"><span data-stu-id="7183e-106">For public-key encryption, you must know either the public key (if the data was encrypted using the private key) or the private key (if the data was encrypted using the public key).</span></span>
+<span data-ttu-id="ea5e8-104">Odszyfrowywanie jest odwrotną operacją szyfrowania.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-104">Decryption is the reverse operation of encryption.</span></span> <span data-ttu-id="ea5e8-105">W przypadku szyfrowania klucza tajnego należy znać zarówno klucz, jak i IV, które były używane do szyfrowania danych.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-105">For secret-key encryption, you must know both the key and IV that were used to encrypt the data.</span></span> <span data-ttu-id="ea5e8-106">W przypadku szyfrowania klucza publicznego należy znać klucz publiczny (Jeśli dane zostały zaszyfrowane przy użyciu klucza prywatnego) lub klucza prywatnego (Jeśli dane zostały zaszyfrowane przy użyciu klucza publicznego).</span><span class="sxs-lookup"><span data-stu-id="ea5e8-106">For public-key encryption, you must know either the public key (if the data was encrypted using the private key) or the private key (if the data was encrypted using the public key).</span></span>
 
-## <a name="symmetric-decryption"></a><span data-ttu-id="7183e-107">Odszyfrowywanie symetryczne</span><span class="sxs-lookup"><span data-stu-id="7183e-107">Symmetric Decryption</span></span>
+## <a name="symmetric-decryption"></a><span data-ttu-id="ea5e8-107">Odszyfrowywanie symetryczne</span><span class="sxs-lookup"><span data-stu-id="ea5e8-107">Symmetric Decryption</span></span>
 
-<span data-ttu-id="7183e-108">Odszyfrowywanie danych szyfrowanych za pomocą algorytmów symetrycznych jest podobne do procesu używanego do szyfrowania danych za pomocą algorytmów symetrycznych.</span><span class="sxs-lookup"><span data-stu-id="7183e-108">The decryption of data encrypted with symmetric algorithms is similar to the process used to encrypt data with symmetric algorithms.</span></span> <span data-ttu-id="7183e-109"><xref:System.Security.Cryptography.CryptoStream>Klasa jest używana z symetrycznymi klasami kryptografii udostępnianymi przez platformę .NET do odszyfrowywania danych odczytanych z dowolnego zarządzanego obiektu strumienia.</span><span class="sxs-lookup"><span data-stu-id="7183e-109">The <xref:System.Security.Cryptography.CryptoStream> class is used with symmetric cryptography classes provided by .NET to decrypt data read from any managed stream object.</span></span>
+<span data-ttu-id="ea5e8-108">Odszyfrowywanie danych szyfrowanych za pomocą algorytmów symetrycznych jest podobne do procesu używanego do szyfrowania danych za pomocą algorytmów symetrycznych.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-108">The decryption of data encrypted with symmetric algorithms is similar to the process used to encrypt data with symmetric algorithms.</span></span> <span data-ttu-id="ea5e8-109"><xref:System.Security.Cryptography.CryptoStream>Klasa jest używana z symetrycznymi klasami kryptografii udostępnianymi przez platformę .NET do odszyfrowywania danych odczytanych z dowolnego zarządzanego obiektu strumienia.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-109">The <xref:System.Security.Cryptography.CryptoStream> class is used with symmetric cryptography classes provided by .NET to decrypt data read from any managed stream object.</span></span>
 
-<span data-ttu-id="7183e-110">Poniższy przykład ilustruje sposób tworzenia nowego wystąpienia domyślnej klasy implementacji dla <xref:System.Security.Cryptography.Aes> algorytmu.</span><span class="sxs-lookup"><span data-stu-id="7183e-110">The following example illustrates how to create a new instance of the default implementation class for the <xref:System.Security.Cryptography.Aes> algorithm.</span></span> <span data-ttu-id="7183e-111">To wystąpienie jest używane do wykonania odszyfrowywania w <xref:System.Security.Cryptography.CryptoStream> obiekcie.</span><span class="sxs-lookup"><span data-stu-id="7183e-111">The instance is used to perform decryption on a <xref:System.Security.Cryptography.CryptoStream> object.</span></span> <span data-ttu-id="7183e-112">Ten przykład najpierw tworzy nowe wystąpienie klasy implementacji **AES** .</span><span class="sxs-lookup"><span data-stu-id="7183e-112">This example first creates a new instance of the **Aes** implementation class.</span></span> <span data-ttu-id="7183e-113">Następnie tworzy obiekt **CryptoStream** i inicjuje go do wartości strumienia zarządzanego o nazwie `myStream` .</span><span class="sxs-lookup"><span data-stu-id="7183e-113">Next it creates a **CryptoStream** object and initializes it to the value of a managed stream called `myStream`.</span></span> <span data-ttu-id="7183e-114">Następnie Metoda CryptoStream **z klasy** **AES** jest przenoszona z tego samego klucza i IV, który był używany do szyfrowania, a następnie jest przenoszona do konstruktora **CryptoStream** programu.</span><span class="sxs-lookup"><span data-stu-id="7183e-114">Next, the **CreateDecryptor** method from the **Aes** class is passed the same key and IV that was used for encryption and is then passed to the **CryptoStream** constructor.</span></span>
+<span data-ttu-id="ea5e8-110">Poniższy przykład ilustruje sposób tworzenia nowego wystąpienia domyślnej klasy implementacji dla <xref:System.Security.Cryptography.Aes> algorytmu.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-110">The following example illustrates how to create a new instance of the default implementation class for the <xref:System.Security.Cryptography.Aes> algorithm.</span></span> <span data-ttu-id="ea5e8-111">To wystąpienie jest używane do wykonania odszyfrowywania w <xref:System.Security.Cryptography.CryptoStream> obiekcie.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-111">The instance is used to perform decryption on a <xref:System.Security.Cryptography.CryptoStream> object.</span></span> <span data-ttu-id="ea5e8-112">Ten przykład najpierw tworzy nowe wystąpienie <xref:System.Security.Cryptography.Aes> klasy implementacji.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-112">This example first creates a new instance of the <xref:System.Security.Cryptography.Aes> implementation class.</span></span> <span data-ttu-id="ea5e8-113">Odczytuje wartość Vector inicjującą (IV) z zarządzanej zmiennej strumienia `myStream` .</span><span class="sxs-lookup"><span data-stu-id="ea5e8-113">It reads the initialization vector (IV) value from a managed stream variable, `myStream`.</span></span> <span data-ttu-id="ea5e8-114">Następnie tworzy wystąpienie <xref:System.Security.Cryptography.CryptoStream> obiektu i inicjuje go dla wartości `myStream` wystąpienia.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-114">Next it instantiates a <xref:System.Security.Cryptography.CryptoStream> object and initializes it to the value of the `myStream` instance.</span></span> <span data-ttu-id="ea5e8-115"><xref:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor%2A?displayProperty=nameWithType>Metoda z <xref:System.Security.Cryptography.Aes> wystąpienia jest przenoszona wartość IV i ten sam klucz, który był używany do szyfrowania.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-115">The <xref:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor%2A?displayProperty=nameWithType> method from the <xref:System.Security.Cryptography.Aes> instance is passed the IV value and the same key that was used for encryption.</span></span>
 
 ```vb
 Dim aes As Aes = Aes.Create()
@@ -39,106 +39,20 @@ Aes aes = Aes.Create();
 CryptoStream cryptStream = new CryptoStream(myStream, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read);
 ```
 
-<span data-ttu-id="7183e-115">Poniższy przykład pokazuje cały proces tworzenia strumienia, odszyfrowywania strumienia, odczytywania ze strumienia i zamykania strumieni.</span><span class="sxs-lookup"><span data-stu-id="7183e-115">The following example shows the entire process of creating a stream, decrypting the stream, reading from the stream, and closing the streams.</span></span> <span data-ttu-id="7183e-116">Tworzony jest obiekt strumienia pliku, który odczytuje plik o nazwie *TestData.txt*.</span><span class="sxs-lookup"><span data-stu-id="7183e-116">A file stream object is created that reads a file named *TestData.txt*.</span></span> <span data-ttu-id="7183e-117">Strumień pliku jest następnie odszyfrowywany przy użyciu klasy **CryptoStream** i **AES** .</span><span class="sxs-lookup"><span data-stu-id="7183e-117">The file stream is then decrypted using the **CryptoStream** class and the **Aes** class.</span></span> <span data-ttu-id="7183e-118">W tym przykładzie określono wartości key i IV, które są używane w przykładowym szyfrowaniu szyfrowanym do [szyfrowania danych](encrypting-data.md).</span><span class="sxs-lookup"><span data-stu-id="7183e-118">This example specifies key and IV values that are used in the symmetric encryption example for [Encrypting Data](encrypting-data.md).</span></span> <span data-ttu-id="7183e-119">Nie jest wyświetlany kod wymagany do szyfrowania i transferu tych wartości.</span><span class="sxs-lookup"><span data-stu-id="7183e-119">It does not show the code needed to encrypt and transfer these values.</span></span>
+<span data-ttu-id="ea5e8-116">Poniższy przykład pokazuje cały proces tworzenia strumienia, odszyfrowywania strumienia, odczytywania ze strumienia i zamykania strumieni.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-116">The following example shows the entire process of creating a stream, decrypting the stream, reading from the stream, and closing the streams.</span></span> <span data-ttu-id="ea5e8-117">Tworzony jest obiekt strumienia pliku, który odczytuje plik o nazwie *TestData.txt*.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-117">A file stream object is created that reads a file named *TestData.txt*.</span></span> <span data-ttu-id="ea5e8-118">Strumień pliku jest następnie odszyfrowywany przy użyciu klasy **CryptoStream** i **AES** .</span><span class="sxs-lookup"><span data-stu-id="ea5e8-118">The file stream is then decrypted using the **CryptoStream** class and the **Aes** class.</span></span> <span data-ttu-id="ea5e8-119">Ten przykład określa wartość klucza, która jest używana w przykładzie szyfrowania symetrycznego do [szyfrowania danych](encrypting-data.md).</span><span class="sxs-lookup"><span data-stu-id="ea5e8-119">This example specifies key value that is used in the symmetric encryption example for [Encrypting Data](encrypting-data.md).</span></span> <span data-ttu-id="ea5e8-120">Nie jest wyświetlany kod wymagany do szyfrowania i transferu tych wartości.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-120">It does not show the code needed to encrypt and transfer these values.</span></span>
 
-```vb
-Imports System
-Imports System.IO
-Imports System.Security.Cryptography
+:::code language="csharp" source="snippets/decrypting-data/csharp/aes-decrypt.cs":::
+:::code language="vb" source="snippets/decrypting-data/vb/aes-decrypt.vb":::
 
-Module Module1
-    Sub Main()
-            'The key and IV must be the same values that were used
-            'to encrypt the stream.
-            Dim key As Byte() = {&H1, &H2, &H3, &H4, &H5, &H6, &H7, &H8, &H9, &H10, &H11, &H12, &H13, &H14, &H15, &H16}
-            Dim iv As Byte() = {&H1, &H2, &H3, &H4, &H5, &H6, &H7, &H8, &H9, &H10, &H11, &H12, &H13, &H14, &H15, &H16}
-        Try
-            'Create a file stream.
-            Dim myStream As FileStream = new FileStream("TestData.txt", FileMode.Open)
+<span data-ttu-id="ea5e8-121">W poprzednim przykładzie użyto tego samego klucza, a algorytm używany w przykładzie szyfrowania symetrycznego do [szyfrowania danych](encrypting-data.md).</span><span class="sxs-lookup"><span data-stu-id="ea5e8-121">The preceding example uses the same key, and algorithm used in the symmetric encryption example for [Encrypting Data](encrypting-data.md).</span></span> <span data-ttu-id="ea5e8-122">Odszyfrowuje plik *TestData.txt* , który jest tworzony przez ten przykład, i wyświetla oryginalny tekst w konsoli programu.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-122">It decrypts the *TestData.txt* file that is created by that example and displays the original text on the console.</span></span>
 
-            'Create a new instance of the default Aes implementation class
-            'and decrypt the stream.
-            Dim aes As Aes = Aes.Create()
+## <a name="asymmetric-decryption"></a><span data-ttu-id="ea5e8-123">Odszyfrowywanie asymetryczne</span><span class="sxs-lookup"><span data-stu-id="ea5e8-123">Asymmetric Decryption</span></span>
 
-            'Create an instance of the CryptoStream class, pass it the file stream, and decrypt
-            'it with the Rijndael class using the key and IV.
-            Dim cryptStream As New CryptoStream(myStream, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read)
+<span data-ttu-id="ea5e8-124">Zazwyczaj strona (Strona A) generuje zarówno klucz publiczny, jak i prywatny, a klucz jest przechowywany w pamięci lub w kontenerze kluczy kryptograficznych.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-124">Typically, a party (party A) generates both a public and private key and stores the key either in memory or in a cryptographic key container.</span></span> <span data-ttu-id="ea5e8-125">Następnie firma A następnie wysyła klucz publiczny do innej strony (strona B).</span><span class="sxs-lookup"><span data-stu-id="ea5e8-125">Party A then sends the public key to another party (party B).</span></span> <span data-ttu-id="ea5e8-126">Przy użyciu klucza publicznego Strona B szyfruje dane i wysyła je z powrotem do strony A. Po odebraniu danych firma odszyfruje je przy użyciu klucza prywatnego, który odpowiada.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-126">Using the public key, party B encrypts data and sends the data back to party A. After receiving the data, party A decrypts it using the private key that corresponds.</span></span> <span data-ttu-id="ea5e8-127">Odszyfrowywanie powiedzie się tylko wtedy, gdy strona A używa klucza prywatnego, który odpowiada stronie klucza publicznego, który jest używany do szyfrowania danych.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-127">Decryption will be successful only if party A uses the private key that corresponds to the public key Party B used to encrypt the data.</span></span>
 
-            'Read the stream.
-            Dim sReader As New StreamReader(cryptStream)
+<span data-ttu-id="ea5e8-128">Aby uzyskać informacje na temat sposobu przechowywania klucza asymetrycznego w bezpiecznym kontenerze kluczy kryptograficznych i sposobie późniejszego pobierania klucza asymetrycznego, zobacz [How to: Store asymetryczne klucze w kontenerze kluczy](how-to-store-asymmetric-keys-in-a-key-container.md).</span><span class="sxs-lookup"><span data-stu-id="ea5e8-128">For information on how to store an asymmetric key in secure cryptographic key container and how to later retrieve the asymmetric key, see [How to: Store Asymmetric Keys in a Key Container](how-to-store-asymmetric-keys-in-a-key-container.md).</span></span>
 
-            'Display the message.
-            Console.WriteLine("The decrypted original message: {0}", sReader.ReadToEnd())
-
-            'Close the streams.
-            sReader.Close()
-            myStream.Close()
-            'Catch any exceptions.
-        Catch
-            Console.WriteLine("The decryption Failed.")
-            Throw
-        End Try
-    End Sub
-End Module
-```
-
-```csharp
-using System;
-using System.IO;
-using System.Security.Cryptography;
-
-class Class1
-{
-    static void Main(string[] args)
-    {
-        //The key and IV must be the same values that were used
-        //to encrypt the stream.
-        byte[] key = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
-        byte[] iv = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
-        try
-        {
-            //Create a file stream.
-            FileStream myStream = new FileStream("TestData.txt", FileMode.Open);
-
-            //Create a new instance of the default Aes implementation class
-            Aes aes = Aes.Create();
-
-            //Create a CryptoStream, pass it the file stream, and decrypt
-            //it with the Aes class using the key and IV.
-            CryptoStream cryptStream = new CryptoStream(
-               myStream,
-               aes.CreateDecryptor(key, iv),
-               CryptoStreamMode.Read);
-
-            //Read the stream.
-            StreamReader sReader = new StreamReader(cryptStream);
-
-            //Display the message.
-            Console.WriteLine("The decrypted original message: {0}", sReader.ReadToEnd());
-
-            //Close the streams.
-            sReader.Close();
-            myStream.Close();
-        }
-        //Catch any exceptions.
-        catch
-        {
-            Console.WriteLine("The decryption failed.");
-            throw;
-        }
-    }
-}
-```
-
-<span data-ttu-id="7183e-120">W powyższym przykładzie użyto tego samego klucza, IV i algorytmu użytego w przykładzie szyfrowania symetrycznego do [szyfrowania danych](encrypting-data.md).</span><span class="sxs-lookup"><span data-stu-id="7183e-120">The preceding example uses the same key, IV, and algorithm used in the symmetric encryption example for [Encrypting Data](encrypting-data.md).</span></span> <span data-ttu-id="7183e-121">Odszyfrowuje plik *TestData.txt* , który jest tworzony przez ten przykład, i wyświetla oryginalny tekst w konsoli programu.</span><span class="sxs-lookup"><span data-stu-id="7183e-121">It decrypts the *TestData.txt* file that is created by that example and displays the original text on the console.</span></span>
-
-## <a name="asymmetric-decryption"></a><span data-ttu-id="7183e-122">Odszyfrowywanie asymetryczne</span><span class="sxs-lookup"><span data-stu-id="7183e-122">Asymmetric Decryption</span></span>
-
-<span data-ttu-id="7183e-123">Zazwyczaj strona (Strona A) generuje zarówno klucz publiczny, jak i prywatny, a klucz jest przechowywany w pamięci lub w kontenerze kluczy kryptograficznych.</span><span class="sxs-lookup"><span data-stu-id="7183e-123">Typically, a party (party A) generates both a public and private key and stores the key either in memory or in a cryptographic key container.</span></span> <span data-ttu-id="7183e-124">Następnie firma A następnie wysyła klucz publiczny do innej strony (strona B).</span><span class="sxs-lookup"><span data-stu-id="7183e-124">Party A then sends the public key to another party (party B).</span></span> <span data-ttu-id="7183e-125">Przy użyciu klucza publicznego Strona B szyfruje dane i wysyła je z powrotem do strony A. Po odebraniu danych firma odszyfruje je przy użyciu klucza prywatnego, który odpowiada.</span><span class="sxs-lookup"><span data-stu-id="7183e-125">Using the public key, party B encrypts data and sends the data back to party A. After receiving the data, party A decrypts it using the private key that corresponds.</span></span> <span data-ttu-id="7183e-126">Odszyfrowywanie powiedzie się tylko wtedy, gdy strona A używa klucza prywatnego, który odpowiada stronie klucza publicznego, który jest używany do szyfrowania danych.</span><span class="sxs-lookup"><span data-stu-id="7183e-126">Decryption will be successful only if party A uses the private key that corresponds to the public key Party B used to encrypt the data.</span></span>
-
-<span data-ttu-id="7183e-127">Aby uzyskać informacje na temat sposobu przechowywania klucza asymetrycznego w bezpiecznym kontenerze kluczy kryptograficznych i sposobie późniejszego pobierania klucza asymetrycznego, zobacz [How to: Store asymetryczne klucze w kontenerze kluczy](how-to-store-asymmetric-keys-in-a-key-container.md).</span><span class="sxs-lookup"><span data-stu-id="7183e-127">For information on how to store an asymmetric key in secure cryptographic key container and how to later retrieve the asymmetric key, see [How to: Store Asymmetric Keys in a Key Container](how-to-store-asymmetric-keys-in-a-key-container.md).</span></span>
-
-<span data-ttu-id="7183e-128">Poniższy przykład ilustruje odszyfrowywanie dwóch tablic bajtów reprezentujących klucz symetryczny i IV.</span><span class="sxs-lookup"><span data-stu-id="7183e-128">The following example illustrates the decryption of two arrays of bytes that represent a symmetric key and IV.</span></span> <span data-ttu-id="7183e-129">Aby uzyskać informacje na temat sposobu wyodrębniania asymetrycznego klucza publicznego z <xref:System.Security.Cryptography.RSA> obiektu w formacie, który można łatwo przesłać do innej firmy, zobacz [szyfrowanie danych](encrypting-data.md).</span><span class="sxs-lookup"><span data-stu-id="7183e-129">For information on how to extract the asymmetric public key from the <xref:System.Security.Cryptography.RSA> object in a format that you can easily send to a third party, see [Encrypting Data](encrypting-data.md).</span></span>
+<span data-ttu-id="ea5e8-129">Poniższy przykład ilustruje odszyfrowywanie dwóch tablic bajtów reprezentujących klucz symetryczny i IV.</span><span class="sxs-lookup"><span data-stu-id="ea5e8-129">The following example illustrates the decryption of two arrays of bytes that represent a symmetric key and IV.</span></span> <span data-ttu-id="ea5e8-130">Aby uzyskać informacje na temat sposobu wyodrębniania asymetrycznego klucza publicznego z <xref:System.Security.Cryptography.RSA> obiektu w formacie, który można łatwo przesłać do innej firmy, zobacz [szyfrowanie danych](encrypting-data.md).</span><span class="sxs-lookup"><span data-stu-id="ea5e8-130">For information on how to extract the asymmetric public key from the <xref:System.Security.Cryptography.RSA> object in a format that you can easily send to a third party, see [Encrypting Data](encrypting-data.md).</span></span>
 
 ```vb
 'Create a new instance of the RSA class.
@@ -164,12 +78,12 @@ symmetricKey = rsa.Decrypt(encryptedSymmetricKey, RSAEncryptionPadding.Pkcs1);
 symmetricIV = rsa.Decrypt(encryptedSymmetricIV , RSAEncryptionPadding.Pkcs1);
 ```
 
-## <a name="see-also"></a><span data-ttu-id="7183e-130">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="7183e-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ea5e8-131">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="ea5e8-131">See also</span></span>
 
-- [<span data-ttu-id="7183e-131">Generowanie kluczy szyfrowania i odszyfrowywania</span><span class="sxs-lookup"><span data-stu-id="7183e-131">Generating Keys for Encryption and Decryption</span></span>](generating-keys-for-encryption-and-decryption.md)
-- [<span data-ttu-id="7183e-132">Szyfrowanie danych</span><span class="sxs-lookup"><span data-stu-id="7183e-132">Encrypting Data</span></span>](encrypting-data.md)
-- [<span data-ttu-id="7183e-133">Usługi kryptograficzne</span><span class="sxs-lookup"><span data-stu-id="7183e-133">Cryptographic Services</span></span>](cryptographic-services.md)
-- [<span data-ttu-id="7183e-134">Model kryptografii</span><span class="sxs-lookup"><span data-stu-id="7183e-134">Cryptography Model</span></span>](cryptography-model.md)
-- [<span data-ttu-id="7183e-135">Kryptografia międzyplatformowa</span><span class="sxs-lookup"><span data-stu-id="7183e-135">Cross-Platform Cryptography</span></span>](cross-platform-cryptography.md)
-- [<span data-ttu-id="7183e-136">Luki w zabezpieczeniach chronometrażu z odszyfrowywaniem symetrycznym w trybie CBC przy użyciu uzupełnienia</span><span class="sxs-lookup"><span data-stu-id="7183e-136">Timing vulnerabilities with CBC-mode symmetric decryption using padding</span></span>](vulnerabilities-cbc-mode.md)
-- [<span data-ttu-id="7183e-137">Ochrona danych ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7183e-137">ASP.NET Core Data Protection</span></span>](/aspnet/core/security/data-protection/introduction)
+- [<span data-ttu-id="ea5e8-132">Generowanie kluczy szyfrowania i odszyfrowywania</span><span class="sxs-lookup"><span data-stu-id="ea5e8-132">Generating Keys for Encryption and Decryption</span></span>](generating-keys-for-encryption-and-decryption.md)
+- [<span data-ttu-id="ea5e8-133">Szyfrowanie danych</span><span class="sxs-lookup"><span data-stu-id="ea5e8-133">Encrypting Data</span></span>](encrypting-data.md)
+- [<span data-ttu-id="ea5e8-134">Usługi kryptograficzne</span><span class="sxs-lookup"><span data-stu-id="ea5e8-134">Cryptographic Services</span></span>](cryptographic-services.md)
+- [<span data-ttu-id="ea5e8-135">Model kryptografii</span><span class="sxs-lookup"><span data-stu-id="ea5e8-135">Cryptography Model</span></span>](cryptography-model.md)
+- [<span data-ttu-id="ea5e8-136">Kryptografia międzyplatformowa</span><span class="sxs-lookup"><span data-stu-id="ea5e8-136">Cross-Platform Cryptography</span></span>](cross-platform-cryptography.md)
+- [<span data-ttu-id="ea5e8-137">Luki w zabezpieczeniach chronometrażu z odszyfrowywaniem symetrycznym w trybie CBC przy użyciu uzupełnienia</span><span class="sxs-lookup"><span data-stu-id="ea5e8-137">Timing vulnerabilities with CBC-mode symmetric decryption using padding</span></span>](vulnerabilities-cbc-mode.md)
+- [<span data-ttu-id="ea5e8-138">Ochrona danych ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="ea5e8-138">ASP.NET Core Data Protection</span></span>](/aspnet/core/security/data-protection/introduction)
