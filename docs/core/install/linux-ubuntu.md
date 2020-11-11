@@ -1,19 +1,19 @@
 ---
-title: Instalowanie programu .NET Core w systemie Ubuntu — .NET Core
-description: Ilustruje różne sposoby instalowania zestaw .NET Core SDK i środowiska uruchomieniowego .NET Core w systemie Ubuntu.
+title: Instalowanie platformy .NET w systemie Ubuntu — .NET
+description: Przedstawiono różne sposoby instalowania zestawu .NET SDK i środowiska uruchomieniowego .NET w systemie Ubuntu.
 author: adegeo
 ms.author: adegeo
-ms.date: 06/04/2020
-ms.openlocfilehash: 5c07de20110a1aecf2ec5cb9de88f204625e548d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 11/10/2020
+ms.openlocfilehash: 419bcf3ccd011cadba8f8c64e195d7dbdbf7e241
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538462"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507029"
 ---
-# <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>Zainstaluj zestaw .NET Core SDK lub środowisko uruchomieniowe platformy .NET Core w systemie Ubuntu
+# <a name="install-the-net-sdk-or-the-net-runtime-on-ubuntu"></a>Zainstaluj zestaw .NET SDK lub środowisko uruchomieniowe .NET w systemie Ubuntu
 
-Platforma .NET Core jest obsługiwana w systemie Ubuntu. W tym artykule opisano sposób instalowania programu .NET Core w systemie Ubuntu. Gdy wersja Ubuntu nie jest objęta wsparciem, platforma .NET Core nie jest już obsługiwana w tej wersji. Te instrukcje mogą jednak ułatwić uzyskanie programu .NET Core działającego w tych wersjach, chociaż nie jest to obsługiwane.
+Platforma .NET jest obsługiwana w systemie Ubuntu. W tym artykule opisano sposób instalowania programu .NET w systemie Ubuntu. Gdy wersja Ubuntu nie jest objęta wsparciem, platforma .NET nie jest już obsługiwana w tej wersji. Jednak te instrukcje mogą pomóc w uzyskaniu środowiska .NET działającego w tych wersjach, nawet jeśli nie jest to obsługiwane.
 
 [!INCLUDE [linux-intro-sdk-vs-runtime](includes/linux-intro-sdk-vs-runtime.md)]
 
@@ -21,33 +21,40 @@ Platforma .NET Core jest obsługiwana w systemie Ubuntu. W tym artykule opisano 
 
 ## <a name="supported-distributions"></a>Obsługiwane dystrybucje
 
-Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core oraz wersji Ubuntu, na których są obsługiwane. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET Core osiągnie koniec okresu obsłudze](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja [Ubuntu osiągnie koniec cyklu życia](https://wiki.ubuntu.com/Releases).
+Poniższa tabela zawiera listę obecnie obsługiwanych wersji platformy .NET i wersje Ubuntu, w których są obsługiwane. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET nie osiągnie końca wsparcia](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja [Ubuntu osiągnie koniec cyklu życia](https://wiki.ubuntu.com/Releases).
 
-- ✔️ wskazuje, że wersja programu Ubuntu lub .NET Core jest nadal obsługiwana.
-- ❌Wskazuje, że wersja Ubuntu lub .NET Core nie jest obsługiwana w tej wersji Ubuntu.
-- Gdy wersja Ubuntu i wersja platformy .NET Core mają ✔️, obsługiwane są kombinacje systemów operacyjnych i .NET.
+- ✔️ wskazuje, że wersja programu Ubuntu lub .NET jest nadal obsługiwana.
+- ❌Wskazuje, że wersja programu Ubuntu lub .NET nie jest obsługiwana w tej wersji Ubuntu.
+- Gdy wersja programu Ubuntu i wersja platformy .NET mają ✔️, obsługiwane są kombinacje systemów operacyjnych i .NET.
 
-| Ubuntu                   | .NET Core 2.1 | .NET Core 3,1 | .NET 5 (wersja zapoznawcza) (tylko instalacja ręczna) |
+| Ubuntu                   | .NET Core 2.1 | .NET Core 3,1 | .NET 5,0 |
 |--------------------------|---------------|---------------|----------------|
-| ✔️ [20,04 (LTS)](#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌[19,10](#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌[19,04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌[18,10](#1810-)       | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ✔️ [18,04 (LTS)](#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌[17,04](#1704-)       | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌[16,10](#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ✔️ [16,04 (LTS)](#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
+| ✔️ [20,10](#2010-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ✔️ [20,04 (LTS)](#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌[19,10](#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌[19,04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌[18,10](#1810-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ✔️ [18,04 (LTS)](#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌[17,04](#1704-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌[16,10](#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ✔️ [16,04 (LTS)](#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 
-Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
+Następujące wersje platformy .NET nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
-- 3,0
+- 3.0
 - 2.2
 - 2,0
 
 ## <a name="how-to-install-other-versions"></a>Jak zainstalować inne wersje
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
+
+## <a name="2010-"></a>20,10 ✔️
+
+W programie .NET 5 i źródłach danych pakietu .NET Core 3,1 dla Ubuntu 20,10 obecnie występuje problem. Aby uzyskać więcej informacji o tym problemie, zobacz sekcję dotyczącą usługi [GitHub wydaj/Core # 5549](https://github.com/dotnet/core/issues/5549). Ten artykuł zostanie zaktualizowany po rozwiązaniu problemu.
+
+Aby zainstalować platformę .NET 5 lub .NET Core 3,1 w systemie Ubuntu 20,10, postępuj zgodnie z instrukcjami dotyczącymi [20,04](#2004-).
 
 ## <a name="2004-"></a>20,04 ✔️
 
@@ -58,7 +65,7 @@ wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-[!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
+[!INCLUDE [linux-apt-install-50](includes/linux-install-50-apt.md)]
 
 ## <a name="1910-"></a>19,10 ❌
 
@@ -108,7 +115,7 @@ wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-[!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
+[!INCLUDE [linux-apt-install-50](includes/linux-install-50-apt.md)]
 
 ## <a name="1710-"></a>17,10 ❌
 
@@ -158,11 +165,11 @@ wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-[!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
+[!INCLUDE [linux-apt-install-50](includes/linux-install-50-apt.md)]
 
 ## <a name="apt-update-sdk-or-runtime"></a>APT Update — zestaw SDK lub środowisko uruchomieniowe
 
-Gdy dostępna jest nowa wersja poprawek dla programu .NET Core, można po prostu uaktualnić ją za pomocą APT za pomocą następujących poleceń:
+Gdy jest dostępna nowa wersja poprawek dla programu .NET, można po prostu uaktualnić ją za pomocą APT przy użyciu następujących poleceń:
 
 ```bash
 sudo apt-get update
@@ -171,7 +178,7 @@ sudo apt-get upgrade
 
 ## <a name="apt-troubleshooting"></a>Rozwiązywanie problemów z APT
 
-Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podczas instalowania programu .NET Core przy użyciu programu APT.
+Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podczas korzystania z programu APT w celu zainstalowania platformy .NET.
 
 ### <a name="unable-to-find-package"></a>Nie można znaleźć pakietu
 
@@ -205,7 +212,7 @@ sudo apt-get update; \
 
 ## <a name="dependencies"></a>Zależności
 
-Po zainstalowaniu programu przy użyciu Menedżera pakietów te biblioteki są instalowane dla Ciebie. Jeśli jednak ręcznie zainstalujesz platformę .NET Core lub opublikujesz aplikację, musisz upewnić się, że te biblioteki są zainstalowane:
+Po zainstalowaniu programu przy użyciu Menedżera pakietów te biblioteki są instalowane dla Ciebie. Jeśli jednak ręcznie zainstalujesz program .NET lub opublikujesz aplikację, należy upewnić się, że te biblioteki są zainstalowane:
 
 - libc6
 - libgcc1
@@ -219,7 +226,7 @@ Po zainstalowaniu programu przy użyciu Menedżera pakietów te biblioteki są i
 - libstdc + + 6
 - zlib1g
 
-W przypadku aplikacji .NET Core, które używają zestawu *System. Drawing. Common* , wymagana jest również następująca zależność:
+W przypadku aplikacji .NET, które używają zestawu *System. Drawing. Common* , wymagana jest również następująca zależność:
 
 - libgdiplus (wersja 6.0.1 lub nowsza)
 
@@ -236,4 +243,4 @@ W przypadku aplikacji .NET Core, które używają zestawu *System. Drawing. Comm
 
 ## <a name="next-steps"></a>Następne kroki
 
-- [Samouczek: Tworzenie aplikacji konsolowej z zestaw .NET Core SDK przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md)
+- [Samouczek: Tworzenie aplikacji konsolowej za pomocą zestawu .NET SDK przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md)

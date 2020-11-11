@@ -1,19 +1,19 @@
 ---
-title: Instalowanie programu .NET Core w systemie openSUSE — .NET Core
-description: Ilustruje różne sposoby instalowania zestaw .NET Core SDK i środowiska uruchomieniowego .NET Core w systemie openSUSE.
+title: Instalowanie platformy .NET w systemie openSUSE — .NET
+description: Przedstawiono różne sposoby instalowania zestawu .NET SDK i środowiska uruchomieniowego .NET w systemie openSUSE.
 author: adegeo
 ms.author: adegeo
-ms.date: 06/04/2020
-ms.openlocfilehash: ccdb23ca1838d2c15c9a95b45c8505efe7a6df0e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 11/10/2020
+ms.openlocfilehash: 17012f3689e5834fd1629946767e931cb22a2c1b
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539233"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506912"
 ---
-# <a name="install-net-core-sdk-or-net-core-runtime-on-opensuse"></a>Zainstaluj zestaw .NET Core SDK lub środowisko uruchomieniowe platformy .NET Core w systemie openSUSE
+# <a name="install-the-net-sdk-or-the-net-runtime-on-opensuse"></a>Zainstaluj zestaw .NET SDK lub środowisko uruchomieniowe .NET w systemie openSUSE
 
-Platforma .NET Core jest obsługiwana w systemie openSUSE. W tym artykule opisano sposób instalowania programu .NET Core w systemie openSUSE.
+Platforma .NET jest obsługiwana w systemie openSUSE. W tym artykule opisano sposób instalowania programu .NET w systemie openSUSE.
 
 [!INCLUDE [linux-intro-sdk-vs-runtime](includes/linux-intro-sdk-vs-runtime.md)]
 
@@ -21,19 +21,19 @@ Platforma .NET Core jest obsługiwana w systemie openSUSE. W tym artykule opisan
 
 ## <a name="supported-distributions"></a>Obsługiwane dystrybucje
 
-Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core w systemie openSUSE 15. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET Core osiągnie koniec obsługi](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja programu openSUSE nie jest już obsługiwana.
+Poniższa tabela zawiera listę obecnie obsługiwanych wersji platformy .NET w systemie openSUSE 15. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET nie osiągnie końca obsługi](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja openSUSE nie jest już obsługiwana.
 
-- ✔️ wskazuje, że wersja programu openSUSE lub .NET Core jest nadal obsługiwana.
-- ❌Wskazuje, że wersja openSUSE lub .NET Core nie jest obsługiwana w tej wersji openSUSE.
-- Gdy wersja openSUSE i wersja platformy .NET Core mają ✔️, obsługiwane są kombinacje systemów operacyjnych i .NET.
+- ✔️ wskazuje, że wersja programu openSUSE lub .NET jest nadal obsługiwana.
+- ❌Wskazuje, że wersja programu openSUSE lub .NET nie jest obsługiwana w tej wersji openSUSE.
+- Gdy wersja programu openSUSE i wersja platformy .NET mają ✔️, obsługiwane są kombinacje systemów operacyjnych i .NET.
 
-| openSUSE                   | .NET Core 2.1 | .NET Core 3,1 | .NET 5 (wersja zapoznawcza) (tylko instalacja ręczna) |
+| openSUSE                   | .NET Core 2.1 | .NET Core 3,1 | .NET 5,0 |
 |----------------------------|---------------|---------------|----------------|
-| ✔️ [15](#opensuse-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
+| ✔️ [15](#opensuse-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 
-Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
+Następujące wersje platformy .NET nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
-- 3,0
+- 3.0
 - 2.2
 - 2,0
 
@@ -53,11 +53,11 @@ sudo mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
 sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
 ```
 
-[!INCLUDE [linux-zyp-install-31](includes/linux-install-31-zyp.md)]
+[!INCLUDE [linux-zyp-install-50](includes/linux-install-50-zyp.md)]
 
 ## <a name="troubleshoot-the-package-manager"></a>Rozwiązywanie problemów z menedżerem pakietów
 
-Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podczas korzystania z Menedżera pakietów w celu zainstalowania platformy .NET Core.
+Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podczas instalowania programu .NET przy użyciu Menedżera pakietów.
 
 ### <a name="unable-to-find-package"></a>Nie można znaleźć pakietu
 
@@ -73,7 +73,7 @@ Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podcz
 
 ## <a name="dependencies"></a>Zależności
 
-Po zainstalowaniu programu przy użyciu Menedżera pakietów te biblioteki są instalowane dla Ciebie. Jeśli jednak ręcznie zainstalujesz platformę .NET Core lub opublikujesz aplikację, musisz upewnić się, że te biblioteki są zainstalowane:
+Po zainstalowaniu programu przy użyciu Menedżera pakietów te biblioteki są instalowane dla Ciebie. Jeśli jednak ręcznie zainstalujesz program .NET lub opublikujesz aplikację, należy upewnić się, że te biblioteki są zainstalowane:
 
 - krb5
 - libicu
@@ -83,7 +83,7 @@ Jeśli docelowa wersja OpenSSL środowiska uruchomieniowego to 1,1 lub nowsza, n
 
 Aby uzyskać więcej informacji o zależnościach, zobacz [samodzielne aplikacje systemu Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
 
-W przypadku aplikacji .NET Core, które używają zestawu *System. Drawing. Common* , konieczne będzie również użycie następujących zależności:
+W przypadku aplikacji .NET, które używają zestawu *System. Drawing. Common* , wymagana jest również następująca zależność:
 
 - [libgdiplus (wersja 6.0.1 lub nowsza)](https://www.mono-project.com/docs/gui/libgdiplus/)
 
@@ -100,4 +100,4 @@ W przypadku aplikacji .NET Core, które używają zestawu *System. Drawing. Comm
 
 ## <a name="next-steps"></a>Następne kroki
 
-- [Samouczek: Tworzenie aplikacji konsolowej z zestaw .NET Core SDK przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md)
+- [Samouczek: Tworzenie aplikacji konsolowej za pomocą zestawu .NET SDK przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md)

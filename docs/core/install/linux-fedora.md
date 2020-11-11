@@ -1,19 +1,19 @@
 ---
-title: Instalowanie programu .NET Core w systemie Fedora — .NET Core
-description: Ilustruje różne sposoby instalowania zestaw .NET Core SDK i środowiska uruchomieniowego .NET Core w systemie Fedora.
+title: Instalowanie platformy .NET w systemie Fedora — .NET
+description: Przedstawiono różne sposoby instalowania zestawu .NET SDK i środowiska uruchomieniowego .NET w systemie Fedora.
 author: adegeo
 ms.author: adegeo
-ms.date: 06/04/2020
-ms.openlocfilehash: 89a55ad2e9fd66d277d0c3eb6a07bd402574bd0a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 11/10/2020
+ms.openlocfilehash: d5b5886f8b29e0f8e935850686cc84f78c55be02
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538517"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507083"
 ---
-# <a name="install-net-core-sdk-or-net-core-runtime-on-fedora"></a>Zainstaluj zestaw .NET Core SDK lub środowisko uruchomieniowe platformy .NET Core w systemie Fedora
+# <a name="install-the-net-sdk-or-the-net-runtime-on-fedora"></a>Zainstaluj zestaw .NET SDK lub środowisko uruchomieniowe .NET w systemie Fedora
 
-Platforma .NET Core jest obsługiwana w systemie Fedora. W tym artykule opisano sposób instalowania programu .NET Core w systemie Fedora. Gdy wersja Fedora nie jest objęta wsparciem, platforma .NET Core nie jest już obsługiwana w tej wersji. Te instrukcje mogą jednak ułatwić uzyskanie programu .NET Core działającego w tych wersjach, chociaż nie jest to obsługiwane.
+Platforma .NET jest obsługiwana w systemie Fedora. W tym artykule opisano sposób instalowania programu .NET w systemie Fedora. Gdy wersja Fedora nie jest obsługiwana, program .NET nie jest już obsługiwany w tej wersji. Jednak te instrukcje mogą pomóc w uzyskaniu środowiska .NET działającego w tych wersjach, nawet jeśli nie jest to obsługiwane.
 
 [!INCLUDE [linux-intro-sdk-vs-runtime](includes/linux-intro-sdk-vs-runtime.md)]
 
@@ -21,24 +21,25 @@ Platforma .NET Core jest obsługiwana w systemie Fedora. W tym artykule opisano 
 
 ## <a name="supported-distributions"></a>Obsługiwane dystrybucje
 
-Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core oraz wersji Fedora, na których są obsługiwane. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET Core osiągnie koniec okresu obsłudze](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja [Fedora osiągnie koniec cyklu życia](https://fedoraproject.org/wiki/End_of_life).
+Poniższa tabela zawiera listę obecnie obsługiwanych wersji platformy .NET i wersje Fedora, w których są obsługiwane. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET nie osiągnie końca wsparcia](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja [Fedora osiągnie koniec cyklu życia](https://fedoraproject.org/wiki/End_of_life).
 
-- ✔️ wskazuje, że wersja programu Fedora lub .NET Core jest nadal obsługiwana.
-- ❌Wskazuje, że wersja Fedora lub .NET Core nie jest obsługiwana w tej wersji Fedora.
-- Gdy wersja Fedora i wersja platformy .NET Core mają ✔️, obsługiwane są kombinacje systemów operacyjnych i .NET.
+- ✔️ wskazuje, że wersja programu Fedora lub .NET jest nadal obsługiwana.
+- ❌Wskazuje, że wersja programu Fedora lub .NET nie jest obsługiwana w tej wersji Fedora.
+- Gdy wersja programu Fedora i wersja platformy .NET mają ✔️, obsługiwane są kombinacje systemów operacyjnych i .NET.
 
-| Fedora                   | .NET Core 2.1 | .NET Core 3,1 | .NET 5 (wersja zapoznawcza) (tylko instalacja ręczna) |
-|--------------------------|---------------|---------------|----------------|
-| ✔️ [32](linux-fedora.md#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ✔️ [31](linux-fedora.md#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌ [30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌[29](linux-fedora.md#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌[28](linux-fedora.md#fedora-28-) | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌[27](linux-fedora.md#fedora-27-) | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| Fedora               | .NET Core 2.1 | .NET Core 3,1 | .NET 5,0 |
+|----------------------|---------------|---------------|----------|
+| ✔️ [33](#fedora-33-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ✔️ [32](#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌[31](#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌ [30](#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌[29](#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌[28](#fedora-28-) | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌[27](#fedora-27-) | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 
-Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
+Następujące wersje platformy .NET nie są już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
-- 3,0
+- 3.0
 - 2.2
 - 2,0
 
@@ -46,13 +47,21 @@ Następujące wersje programu .NET Core nie są już obsługiwane. Pliki do pobr
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
 
+## <a name="fedora-33-"></a>Fedora 33 ✔️
+
+.NET 5 i .NET Core 3,1 są dostępne w domyślnych repozytoriach pakietów dla Fedora 33.
+
+[!INCLUDE [linux-dnf-install-31](includes/linux-install-50-dnf.md)]
+
 ## <a name="fedora-32-"></a>Fedora 32 ✔️
 
 Program .NET Core 3,1 jest dostępny w repozytoriach pakietów domyślnych dla Fedora 32.
 
 [!INCLUDE [linux-dnf-install-31](includes/linux-install-31-dnf.md)]
 
-## <a name="fedora-31-"></a>Fedora 31 ✔️
+## <a name="fedora-31-"></a>Fedora 31 ❌
+
+[!INCLUDE [linux-not-supported](includes/linux-not-supported-fedora.md)]
 
 [!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
 
@@ -145,4 +154,4 @@ Ta sekcja zawiera informacje o typowych błędach, które mogą wystąpić podcz
 
 ## <a name="next-steps"></a>Następne kroki
 
-- [Samouczek: Tworzenie aplikacji konsolowej z zestaw .NET Core SDK przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md)
+- [Samouczek: Tworzenie aplikacji konsolowej za pomocą zestawu .NET SDK przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md)

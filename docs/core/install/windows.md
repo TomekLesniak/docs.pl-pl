@@ -1,17 +1,17 @@
 ---
-title: Zainstaluj platformę .NET Core w systemie Windows
-description: Dowiedz się więcej na temat wersji systemu Windows, na których można zainstalować program .NET Core.
+title: Instalowanie programu .NET w systemie Windows
+description: Dowiedz się więcej na temat wersji systemu Windows, na których można zainstalować platformę .NET.
 author: adegeo
 ms.author: adegeo
-ms.date: 06/22/2020
-ms.openlocfilehash: 12cffb78de803845a4b18adc70289993e67f64f1
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 11/10/2020
+ms.openlocfilehash: 1b1f2e383e270e646436f8aa1ce19edd8da262b3
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538292"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506756"
 ---
-# <a name="install-net-core-on-windows"></a>Zainstaluj platformę .NET Core w systemie Windows
+# <a name="install-net-on-windows"></a>Instalowanie programu .NET w systemie Windows
 
 > [!div class="op_single_selector"]
 >
@@ -19,73 +19,87 @@ ms.locfileid: "90538292"
 > - [Instalowanie w systemie macOS](macos.md)
 > - [Instalowanie w systemie Linux](linux.md)
 
-W tym artykule dowiesz się, jak zainstalować platformę .NET Core w systemie Windows. Program .NET Core składa się z środowiska uruchomieniowego i zestawu SDK. Środowisko uruchomieniowe służy do uruchamiania aplikacji platformy .NET Core i może być dołączane do aplikacji. Zestaw SDK służy do tworzenia aplikacji i bibliotek platformy .NET Core. Środowisko uruchomieniowe platformy .NET Core jest zawsze instalowane z zestawem SDK.
+W tym artykule dowiesz się, jak zainstalować platformę .NET w systemie Windows. Platforma .NET składa się z środowiska uruchomieniowego i zestawu SDK. Środowisko uruchomieniowe służy do uruchamiania aplikacji .NET i może nie być dołączone do aplikacji. Zestaw SDK służy do tworzenia aplikacji i bibliotek platformy .NET. Środowisko uruchomieniowe .NET jest zawsze instalowane z zestawem SDK.
 
-Najnowsza wersja platformy .NET Core to 3,1.
+Najnowsza wersja platformy .NET to 5,0.
 
 > [!div class="button"]
-> [Pobierz program .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
+> [Pobierz platformę .NET](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="supported-releases"></a>Obsługiwane wersje
 
-Poniższa tabela zawiera listę obecnie obsługiwanych wersji programu .NET Core i wersje systemu Windows, w których są obsługiwane. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET Core osiągnie koniec okresu obsłudze](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja [systemu Windows osiągnie koniec cyklu życia](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+Poniższa tabela zawiera listę obecnie obsługiwanych wersji platformy .NET i wersje systemu Windows, w których są obsługiwane. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET nie osiągnie końca wsparcia](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja [systemu Windows osiągnie koniec cyklu życia](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
-Daty końca usługi systemu Windows 10 są poddane segmentacji według wersji. W poniższej tabeli są brane pod uwagę tylko wersje **Home**, **Pro**, **Pro Education**i **Pro for Workstations** . Szczegółowe informacje znajdują się w [arkuszu faktów cyklu życia systemu Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) .
+Daty końca usługi systemu Windows 10 są poddane segmentacji według wersji. W poniższej tabeli są brane pod uwagę tylko wersje **Home** , **Pro** , **Pro Education** i **Pro for Workstations** . Szczegółowe informacje znajdują się w [arkuszu faktów cyklu życia systemu Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) .
 
 - ✔️ wskazuje, że wersja systemu Windows lub .NET Core jest nadal obsługiwana.
 - ❌Wskazuje, że wersja systemu Windows lub .NET Core nie jest obsługiwana w tej wersji systemu Windows.
 - Gdy zarówno wersja systemu Windows, jak i wersja programu .NET Core mają ✔️, obsługiwane są kombinacje systemów operacyjnych i .NET.
 
-| System operacyjny                      | .NET Core 2.1 | .NET Core 3,1 | .NET 5 (wersja zapoznawcza) |
+| System operacyjny                      | .NET Core 2.1 | .NET Core 3,1 | .NET 5 |
 |-----------------------------|---------------|---------------|----------------|
-| ✔️ Windows 10, wersja 2004 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ✔️ Windows 10, wersja 1909 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ✔️ Windows 10, wersja 1903 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ✔️ Windows 10, wersja 1809 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 — wersja zapoznawcza |
-| ❌ Windows 10, wersja 1803 | ✔️ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌ Windows 10, wersja 1709 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌ Windows 10, wersja 1703 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌ Windows 10, wersja 1607 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌ Windows 10, wersja 1511 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
-| ❌ Windows 10, wersja 1507 | ❌ 2,1        | ❌ 3,1        | ❌ wersja zapoznawcza 5,0 |
+| ✔️ Windows 10, wersja 2004 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ✔️ Windows 10, wersja 1909 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ✔️ Windows 10, wersja 1903 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ✔️ Windows 10, wersja 1809 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌ Windows 10, wersja 1803 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌ Windows 10, wersja 1709 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌ Windows 10, wersja 1703 | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌ Windows 10, wersja 1607 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ❌ Windows 10, wersja 1511 | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌ Windows 10, wersja 1507 | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
 
 ## <a name="unsupported-releases"></a>Nieobsługiwane wersje
 
-Następujące wersje programu .NET Core nie są ❌ już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
+Następujące wersje platformy .NET nie są ❌ już obsługiwane. Pliki do pobrania dla tych nadal są publikowane:
 
-- 3,0
+- 3.0
 - 2.2
 - 2,0
 
 ## <a name="runtime-information"></a>Informacje o środowisku uruchomieniowym
 
-Środowisko uruchomieniowe służy do uruchamiania aplikacji utworzonych za pomocą platformy .NET Core. Gdy autor aplikacji publikuje aplikację, może ona obejmować środowisko uruchomieniowe wraz z ich aplikacjami. Jeśli nie obejmują środowiska uruchomieniowego, można zainstalować środowisko uruchomieniowe.
+Środowisko uruchomieniowe służy do uruchamiania aplikacji utworzonych przy użyciu platformy .NET. Gdy autor aplikacji publikuje aplikację, może ona obejmować środowisko uruchomieniowe wraz z ich aplikacjami. Jeśli nie obejmują środowiska uruchomieniowego, można zainstalować środowisko uruchomieniowe.
 
 Istnieją trzy różne środowiska uruchomieniowe, które można zainstalować w systemie Windows:
 
 *Środowisko uruchomieniowe ASP.NET Core*\
-Uruchamia ASP.NET Core aplikacje. Zawiera środowisko uruchomieniowe platformy .NET Core.
+Uruchamia ASP.NET Core aplikacje. Obejmuje środowisko uruchomieniowe platformy .NET.
 
 *Środowisko uruchomieniowe pulpitu*\
-Uruchamia platformy .NET Core WPF i .NET Core Windows Forms aplikacje klasyczne dla systemu Windows. Zawiera środowisko uruchomieniowe platformy .NET Core.
+Uruchamia program .NET WPF i Windows Forms aplikacje klasyczne dla systemu Windows. Obejmuje środowisko uruchomieniowe platformy .NET.
 
-*Środowisko uruchomieniowe platformy .NET Core*\
-To środowisko uruchomieniowe jest najprostszym środowiskiem uruchomieniowym i nie zawiera żadnego innego środowiska uruchomieniowego. Zdecydowanie zaleca się zainstalowanie środowiska *uruchomieniowego ASP.NET Core* i środowiska *uruchomieniowego Desktop* w celu uzyskania najlepszej zgodności z aplikacjami .NET Core.
+*Środowisko uruchomieniowe platformy .NET*\
+To środowisko uruchomieniowe jest najprostszym środowiskiem uruchomieniowym i nie zawiera żadnego innego środowiska uruchomieniowego. Zdecydowanie zaleca się zainstalowanie *środowiska uruchomieniowego ASP.NET Core* i środowiska *uruchomieniowego Desktop* w celu uzyskania najlepszej zgodności z aplikacjami platformy .NET.
 
 > [!div class="button"]
-> [Pobierz środowisko uruchomieniowe platformy .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
+> [Pobierz środowisko uruchomieniowe platformy .NET](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="sdk-information"></a>Informacje o zestawie SDK
 
-Zestaw SDK służy do kompilowania i publikowania aplikacji i bibliotek platformy .NET Core. Instalowanie zestawu SDK obejmuje wszystkie trzy [środowiska uruchomieniowe](#runtime-information): ASP.NET Core, Desktop i .NET Core.
-
-> [!div class="button"]
-> [Pobierz zestaw .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core)
+Zestaw SDK służy do kompilowania i publikowania aplikacji i bibliotek platformy .NET. Instalowanie zestawu SDK obejmuje wszystkie trzy [środowiska uruchomieniowe](#runtime-information): ASP.NET Core, Desktop i .NET.
 
 ## <a name="dependencies"></a>Zależności
 
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
+
+# <a name="net-50"></a>[.NET 5,0](#tab/net50)
+
+W przypadku programu .NET 5,0 obsługiwane są następujące wersje systemu Windows:
+
+> [!NOTE]
+> `+`Symbol reprezentuje wersję minimalną.
+
+| System operacyjny                  | Wersja       | Architektury   |
+|---------------------|---------------|-----------------|
+| Klient systemu Windows 10   | Wersja 1607 + | x64, x86, ARM64 |
+| Klient systemu Windows      | 7 Z DODATKIEM SP1 +, 8,1   | x64, x86        |
+| Windows Server      | 2012 R2 +      | x64, x86        |
+| Windows Server Core | 2012 R2 +      | x64, x86        |
+| Nano Server         | Wersja 1809 + | x64             |
+
+Aby uzyskać więcej informacji na temat obsługiwanych systemów operacyjnych, dystrybucji i zasad cyklu życia programu .NET 5,0, zobacz [.net 5,0 obsługiwane wersje systemu operacyjnego](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md).
 
 # <a name="net-core-31"></a>[.NET Core 3,1](#tab/netcore31)
 
@@ -174,7 +188,7 @@ Zainstaluj następujące elementy:
 - [Microsoft Visual C++ 2015 redystrybucyjnej aktualizacji 3](https://www.microsoft.com/download/details.aspx?id=52685).
 - [POPRAWKI KB2533623](https://support.microsoft.com/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot)
 
-Powyższe wymagania są również wymagane w przypadku wystąpienia jednego z następujących błędów:
+Poprzednie wymagania są również wymagane w przypadku wystąpienia jednego z następujących błędów:
 
 > Nie można uruchomić programu, ponieważ na komputerze nie ma *api-ms-win-crt-runtime-l1-1-0.dll* . Spróbuj zainstalować ponownie program, aby rozwiązać ten problem.
 >
@@ -190,10 +204,10 @@ Powyższe wymagania są również wymagane w przypadku wystąpienia jednego z na
 
 [Skrypty dotnet-Install](../tools/dotnet-install-script.md) są używane na potrzeby automatyzacji ci i instalacji niezwiązanych z administratorami środowiska uruchomieniowego. Skrypt można pobrać ze [strony odniesienia do skryptu dotnet-Install](../tools/dotnet-install-script.md).
 
-Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest platformą .net Core 3,1. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje zestaw SDK.
+Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest w wersji .NET 5,0. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje zestaw SDK.
 
 ```powershell
-dotnet-install.ps1 -Channel 3.1 -Runtime aspnetcore
+dotnet-install.ps1 -Channel 5.0 -Runtime aspnetcore
 ```
 
 Zainstaluj zestaw SDK, pomijając `-Runtime` przełącznik. `-Channel`Przełącznik jest ustawiany w tym przykładzie do `Current` , który instaluje najnowszą obsługiwaną wersję.
@@ -204,22 +218,23 @@ dotnet-install.ps1 -Channel Current
 
 ## <a name="install-with-visual-studio"></a>Instalowanie za pomocą programu Visual Studio
 
-Jeśli używasz programu Visual Studio do tworzenia aplikacji platformy .NET Core, w poniższej tabeli opisano minimalną wymaganą wersję programu Visual Studio opartą na docelowej wersji zestaw .NET Core SDK.
+Jeśli używasz programu Visual Studio do tworzenia aplikacji platformy .NET, w poniższej tabeli opisano minimalną wymaganą wersję programu Visual Studio opartą na docelowej wersji zestawu SDK platformy .NET.
 
-| Wersja zestaw .NET Core SDK | Wersja programu Visual Studio                      |
+| Wersja zestawu SDK platformy .NET      | Wersja programu Visual Studio                      |
 | --------------------- | ------------------------------------------ |
+| 5,0                   | Program Visual Studio 2019 w wersji 16,8 lub nowszej. |
 | 3,1                   | Program Visual Studio 2019 w wersji 16,4 lub nowszej. |
-| 3,0                   | Program Visual Studio 2019 w wersji 16,3 lub nowszej. |
+| 3.0                   | Program Visual Studio 2019 w wersji 16,3 lub nowszej. |
 | 2.2                   | Program Visual Studio 2017 w wersji 15,9 lub nowszej. |
 | 2.1                   | Program Visual Studio 2017 w wersji 15,7 lub nowszej. |
 
 Jeśli masz już zainstalowany program Visual Studio, możesz sprawdzić swoją wersję, wykonując poniższe kroki.
 
 01. Otwórz program Visual Studio.
-01. Wybierz **Pomoc**dotyczącą  >  **Microsoft Visual Studio**.
+01. Wybierz **Pomoc** dotyczącą  >  **Microsoft Visual Studio**.
 01. Odczytaj numer wersji z okna dialogowego **informacje** .
 
-Program Visual Studio może zainstalować najnowsze zestaw .NET Core SDK i środowisko uruchomieniowe.
+Program Visual Studio może zainstalować najnowszy zestaw SDK i środowisko uruchomieniowe platformy .NET.
 
 > [!div class="button"]
 > [Pobierz program Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019).
@@ -247,18 +262,18 @@ Mimo że Visual Studio Code nie jest dołączony do zautomatyzowanego Instalator
 
 ## <a name="download-and-manually-install"></a>Pobierz i ręcznie zainstaluj
 
-Alternatywnie w przypadku instalatorów systemu Windows dla platformy .NET Core można pobrać i ręcznie zainstalować zestaw SDK lub środowisko uruchomieniowe. Instalacja ręczna jest zwykle wykonywana w ramach testowania ciągłej integracji. Dla deweloperów lub użytkowników zazwyczaj lepiej jest użyć [Instalatora](https://dotnet.microsoft.com/download/dotnet-core).
+Alternatywnie w przypadku instalatorów systemu Windows dla platformy .NET można pobrać i ręcznie zainstalować zestaw SDK lub środowisko uruchomieniowe. Instalacja ręczna jest zwykle wykonywana w ramach testowania ciągłej integracji. Dla deweloperów lub użytkowników zazwyczaj lepiej jest użyć [Instalatora](https://dotnet.microsoft.com/download/dotnet-core).
 
-Zarówno zestaw .NET Core SDK, jak i środowisko uruchomieniowe platformy .NET Core można zainstalować ręcznie po pobraniu. W przypadku zainstalowania zestaw .NET Core SDK nie trzeba instalować odpowiedniego środowiska uruchomieniowego. Najpierw pobierz wydanie binarne dla zestawu SDK lub środowiska uruchomieniowego z jednej z następujących lokacji:
+Zarówno zestaw .NET SDK, jak i środowisko uruchomieniowe platformy .NET można zainstalować ręcznie po pobraniu. W przypadku instalowania zestawu .NET SDK nie trzeba instalować odpowiedniego środowiska uruchomieniowego. Najpierw pobierz wydanie binarne dla zestawu SDK lub środowiska uruchomieniowego z jednej z następujących lokacji:
 
-- ✔️ [pobierania wersji zapoznawczej programu .net 5,0](https://dotnet.microsoft.com/download/dotnet/5.0)
+- ✔️ [pliki do pobrania w programie .net 5,0](https://dotnet.microsoft.com/download/dotnet/5.0)
 - [pliki do pobrania ✔️ .NET Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 - [pliki do pobrania ✔️ .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 - [Wszystkie pliki do pobrania z platformy .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 Utwórz katalog, aby wyodrębnić platformę .NET do programu, na przykład `%USERPROFILE%\dotnet` . Następnie wyodrębnij pobrany plik zip do tego katalogu.
 
-Domyślnie interfejs wiersza polecenia platformy .NET Core polecenia i aplikacje nie będą używać platformy .NET Core w ten sposób i musisz jawnie wybrać jej użycie. W tym celu Zmień zmienne środowiskowe, z którymi aplikacja jest uruchomiona:
+Domyślnie polecenie i aplikacje interfejsu wiersza polecenia platformy .NET nie będą używać platformy .NET w ten sposób i należy je jawnie wybrać. W tym celu Zmień zmienne środowiskowe, z którymi aplikacja jest uruchomiona:
 
 ```console
 set DOTNET_ROOT=%USERPROFILE%\dotnet
@@ -268,21 +283,21 @@ set DOTNET_MULTILEVEL_LOOKUP=0
 
 Takie podejście umożliwia zainstalowanie wielu wersji w oddzielnych lokalizacjach, a następnie jawne wybranie lokalizacji instalacji, która ma być używana przez aplikację, uruchamiając aplikację ze zmiennymi środowiskowymi wskazującymi w tej lokalizacji.
 
-Gdy `DOTNET_MULTILEVEL_LOOKUP` jest ustawiona na `0` , .NET Core ignoruje wszystkie globalnie zainstalowane wersje .NET Core. Usuń to ustawienie środowiska, aby umożliwić programowi .NET Core uwzględnienie domyślnej globalnej lokalizacji instalacji podczas wybierania najlepszej platformy do uruchamiania aplikacji. Wartość domyślna to zwykle `C:\Program Files\dotnet` , czyli miejsce, w którym instalatorzy instalują platformę .NET Core.
+Gdy `DOTNET_MULTILEVEL_LOOKUP` jest ustawiona na `0` , platforma .NET ignoruje wszystkie globalnie zainstalowane wersje platformy .NET. Usuń to ustawienie środowiska, aby umożliwić programowi .NET uwzględnienie domyślnej globalnej lokalizacji instalacji podczas wybierania najlepszej platformy do uruchamiania aplikacji. Ustawieniem domyślnym jest zwykle `C:\Program Files\dotnet` , gdzie Instalatory instalują platformę .NET.
 
 ## <a name="docker"></a>Docker
 
 Kontenery zapewniają lekki sposób izolowania aplikacji od pozostałej części systemu hosta. Kontenery na tym samym komputerze udostępniają tylko jądro i używają zasobów przyznanych aplikacji.
 
-Środowisko .NET Core można uruchomić w kontenerze platformy Docker. Oficjalne obrazy .NET Core Docker są publikowane w Container Registry firmy Microsoft (MCR) i można je odnajdywać w [repozytorium Microsoft .NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/). Każde repozytorium zawiera obrazy różnych kombinacji platformy .NET (zestawu SDK lub środowiska uruchomieniowego) i systemu operacyjnego, których można użyć.
+Środowisko .NET można uruchomić w kontenerze platformy Docker. Oficjalne obrazy platformy .NET Docker są publikowane w Container Registry firmy Microsoft (MCR) i są wykrywalne w [repozytorium Microsoft .NET Docker Hub](https://hub.docker.com/_/microsoft-dotnet). Każde repozytorium zawiera obrazy różnych kombinacji platformy .NET (zestawu SDK lub środowiska uruchomieniowego) i systemu operacyjnego, których można użyć.
 
-Firma Microsoft udostępnia obrazy dostosowane do konkretnych scenariuszy. Na przykład [repozytorium ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) zawiera obrazy skompilowane do uruchamiania aplikacji ASP.NET Core w środowisku produkcyjnym.
+Firma Microsoft udostępnia obrazy dostosowane do konkretnych scenariuszy. Na przykład [repozytorium ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-aspnet) zawiera obrazy skompilowane do uruchamiania aplikacji ASP.NET Core w środowisku produkcyjnym.
 
-Aby uzyskać więcej informacji na temat korzystania z platformy .NET Core w kontenerze platformy Docker, zobacz [wprowadzenie do oprogramowania .NET i platformy Docker](../docker/introduction.md) i [przykładów](https://github.com/dotnet/dotnet-docker/blob/master/samples/README.md).
+Aby uzyskać więcej informacji na temat korzystania z platformy .NET w kontenerze platformy Docker, zobacz [wprowadzenie do oprogramowania .NET i platformy Docker](../docker/introduction.md) i [przykładów](https://github.com/dotnet/dotnet-docker/blob/master/samples/README.md).
 
 ## <a name="next-steps"></a>Następne kroki
 
-- [Jak sprawdzić, czy program .NET Core jest już zainstalowany](how-to-detect-installed-versions.md?pivots=os-windows).
+- [Jak sprawdzić, czy program .NET jest już zainstalowany](how-to-detect-installed-versions.md?pivots=os-windows).
 - [Samouczek: samouczek Hello World](../tutorials/with-visual-studio.md).
 - [Samouczek: Tworzenie nowej aplikacji przy użyciu Visual Studio Code](../tutorials/with-visual-studio-code.md).
 - [Samouczek: konteneryzowanie aplikacji .NET Core](../docker/build-container.md).

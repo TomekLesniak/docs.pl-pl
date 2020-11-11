@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat platformy .NET, bezpłatnej platformy
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 5c600ca999089d005f4f8eb2db332e938df7bfcb
-ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
+ms.openlocfilehash: c3626ed223f66622b65cca888b1b043de275f950
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94329797"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506743"
 ---
 # <a name="introduction-to-net"></a>Wprowadzenie do platformy .NET
 
@@ -24,7 +24,7 @@ ms.locfileid: "94329797"
   * [Windows Forms](/dotnet/desktop/winforms/)
   * [Platforma uniwersalna systemu Windows (UWP)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * [Zainstalowane](https://dotnet.microsoft.com/apps/games)
-* [Internet rzeczy (IoT)](https://dotnet.microsoft.com/apps/iot)
+* [Internet rzeczy (IoT)](/dotnet/iot)
 * [Uczenie maszynowe](../machine-learning/index.yml)
 * [Aplikacje konsolowe](tutorials/with-visual-studio-code.md)
 * [Usługi systemu Windows](/aspnet/core/host-and-deploy/windows-service)
@@ -345,7 +345,7 @@ Niektóre terminologia dla programu .NET mogą być mylące, ponieważ ten sam w
   | Moniker platformy docelowej (TFM)  | TFM to standardowy format tokenu służący do określania docelowej platformy aplikacji lub biblioteki platformy .NET. Przykład: `net462` dla .NET Framework 4.6.2. |
   | aplikacja zależna od struktury | Aplikacja, która może być uruchamiana tylko na komputerze, na którym zainstalowano środowisko uruchomieniowe ze [strony pobierania platformy .NET](https://dotnet.microsoft.com/download/dotnet-core). "Struktura" w tym wykorzystaniu jest taka sama jak "środowisko uruchomieniowe" pobieranej ze strony pobierania platformy .NET. |
 
-* **ZESTAWIE**
+* **SDK**
 
   |Kontekst  | "SDK" znaczenie |
   |---------|---------------|

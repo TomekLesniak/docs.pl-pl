@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5e77b7bd73c09e061a94a29703cf5286814d1ebb
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4ab2fc0645f76870dead99b5f45eef763643fb27
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602916"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506904"
 ---
 
 [Program .NET Core jest dostępny w magazynie Snap.](https://snapcraft.io/dotnet-sdk)
@@ -15,18 +15,18 @@ Tylko obsługiwane wersje programu .NET Core są dostępne za poorednictwem przy
 
 ### <a name="install-the-sdk"></a>Instalacja zestawu SDK
 
-Pakiety przyciągania dla zestaw .NET Core SDK są publikowane w ramach tego samego identyfikatora: `dotnet-sdk` . Określoną wersję zestawu SDK można zainstalować, określając kanał. Zestaw SDK obejmuje środowisko uruchomieniowe współreagujące. W poniższej tabeli wymieniono kanały:
+Pakiety przyciągania dla zestawu .NET SDK są publikowane w ramach tego samego identyfikatora: `dotnet-sdk` . Określoną wersję zestawu SDK można zainstalować, określając kanał. Zestaw SDK obejmuje środowisko uruchomieniowe współreagujące. W poniższej tabeli wymieniono kanały:
 
-| Wersja platformy .NET Core | Pakiet przyciągania             |
-|-------------------|--------------------------|
-| 3,1 (LTS)         | `3.1` lub `latest/stable` |
-| 2,1 (LTS)         | `2.1`                    |
-| .NET 5,0 — wersja zapoznawcza  | `5.0/beta`               |
+| Wersja platformy .NET | Pakiet przyciągania             |
+|--------------|--------------------------|
+| 5,0          | `5.0` lub `latest/stable` |
+| 3,1 (LTS)    | `3.1` lub `lts/stable`    |
+| 2,1 (LTS)    | `2.1`                    |
 
-Użyj `snap install` polecenia, aby zainstalować pakiet przyciągania zestaw .NET Core SDK. Użyj `--channel` parametru, aby wskazać wersję do zainstalowania. Jeśli ten parametr zostanie pominięty, `latest/stable` jest używany. W tym przykładzie `3.1` określono:
+Użyj `snap install` polecenia, aby zainstalować pakiet przyciągania zestawu .NET SDK. Użyj `--channel` parametru, aby wskazać wersję do zainstalowania. Jeśli ten parametr zostanie pominięty, `latest/stable` jest używany. W tym przykładzie `5.0` określono:
 
 ```bash
-sudo snap install dotnet-sdk --classic --channel=3.1
+sudo snap install dotnet-sdk --classic --channel=5.0
 ```
 
 Następnie zarejestruj `dotnet` polecenie dla systemu przy użyciu `snap alias` polecenia:
@@ -35,32 +35,33 @@ Następnie zarejestruj `dotnet` polecenie dla systemu przy użyciu `snap alias` 
 sudo snap alias dotnet-sdk.dotnet dotnet
 ```
 
-To polecenie jest sformatowane jako: `sudo snap alias {package}.{command} {alias}` . Możesz wybrać dowolną `{alias}` nazwę. Można na przykład nazwać polecenie po zainstalowaniu określonej wersji przez przyciąganie: `sudo snap alias dotnet-sdk.dotnet dotnet31` . Korzystając z polecenia `dotnet31` , należy wywołać tę konkretną wersję platformy .NET. Ale jest to niezgodne z większością samouczków i przykładów, ponieważ oczekuje, że `dotnet` polecenie jest dostępne.
+To polecenie jest sformatowane jako: `sudo snap alias {package}.{command} {alias}` . Możesz wybrać dowolną `{alias}` nazwę. Można na przykład nazwać polecenie po zainstalowaniu określonej wersji przez przyciąganie: `sudo snap alias dotnet-sdk.dotnet dotnet50` . Korzystając z polecenia `dotnet50` , należy wywołać tę konkretną wersję platformy .NET. Ale jest to niezgodne z większością samouczków i przykładów, ponieważ oczekuje, że `dotnet` polecenie jest dostępne.
 
 ### <a name="install-the-runtime"></a>Instalowanie środowiska uruchomieniowego
 
 Pakiety przyciągania dla środowiska uruchomieniowego .NET Core są publikowane w ramach własnego identyfikatora pakietu. W poniższej tabeli wymieniono identyfikatory pakietów:
 
-| Wersja platformy .NET Core | Pakiet przyciągania        |
+| Wersja platformy .NET      | Pakiet przyciągania        |
 |-------------------|---------------------|
+| 5,0               | `dotnet-runtime-50` |
 | 3,1 (LTS)         | `dotnet-runtime-31` |
-| 3,0               | `dotnet-runtime-30` |
+| 3.0               | `dotnet-runtime-30` |
 | 2.2               | `dotnet-runtime-22` |
 | 2,1 (LTS)         | `dotnet-runtime-21` |
 
-Użyj `snap install` polecenia, aby zainstalować pakiet przyciągania środowiska uruchomieniowego platformy .NET Core. W tym przykładzie jest zainstalowany program .NET Core 3,1:
+Użyj `snap install` polecenia, aby zainstalować pakiet przyciągania środowiska uruchomieniowego platformy .NET. W tym przykładzie jest zainstalowany program .NET 5,0:
 
 ```bash
-sudo snap install dotnet-runtime-31 --classic
+sudo snap install dotnet-runtime-50 --classic
 ```
 
 Następnie zarejestruj `dotnet` polecenie dla systemu przy użyciu `snap alias` polecenia:
 
 ```bash
-sudo snap alias dotnet-runtime-31.dotnet dotnet
+sudo snap alias dotnet-runtime-50.dotnet dotnet
 ```
 
-To polecenie jest sformatowane jako: `sudo snap alias {package}.{command} {alias}` . Możesz wybrać dowolną `{alias}` nazwę. Można na przykład nazwać polecenie po zainstalowaniu określonej wersji przez przyciąganie: `sudo snap alias dotnet-runtime-31.dotnet dotnet31` . Korzystając z polecenia `dotnet31` , należy wywołać tę konkretną wersję platformy .NET. Ale jest to niezgodne z większością samouczków i przykładów, ponieważ oczekuje, że `dotnet` polecenie jest dostępne.
+To polecenie jest sformatowane jako: `sudo snap alias {package}.{command} {alias}` . Możesz wybrać dowolną `{alias}` nazwę. Można na przykład nazwać polecenie po zainstalowaniu określonej wersji przez przyciąganie: `sudo snap alias dotnet-runtime-50.dotnet dotnet50` . Korzystając z polecenia `dotnet50` , należy wywołać tę konkretną wersję platformy .NET. Ale jest to niezgodne z większością samouczków i przykładów, ponieważ oczekuje, że `dotnet` polecenie jest dostępne.
 
 ### <a name="ssl-certificate-errors"></a>Błędy certyfikatów SSL
 

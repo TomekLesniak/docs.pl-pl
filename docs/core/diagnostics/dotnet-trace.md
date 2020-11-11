@@ -2,12 +2,12 @@
 title: dotnet-Trace Tool-.NET Core
 description: Instalowanie i używanie narzędzia wiersza polecenia do śledzenia dotnet.
 ms.date: 11/21/2019
-ms.openlocfilehash: 25178a0e59ce9edb69d15ee761c1b9e56aa5eb3a
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: d4175ccad785b21f860044a4fd5d691624ec495e
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517311"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507231"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>Narzędzie do analizy wydajności śledzenia dotnet
 
@@ -66,6 +66,7 @@ dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--
     [--format <Chromium|NetTrace|Speedscope>] [-h|--help]
     [-n, --name <name>]  [-o|--output <trace-file-path>] [-p|--process-id <pid>]
     [--profile <profile-name>] [--providers <list-of-comma-separated-providers>]
+    [-- <command>] (for target applications running .NET 5.0 or later)
 ```
 
 ### <a name="options"></a>Opcje
@@ -109,8 +110,15 @@ dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--
   Ta lista dostawców ma postać:
 
   - `Provider[,Provider]`
-  - `Provider`ma postać: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]` .
-  - `KeyValueArgs`ma postać: `[key1=value1][;key2=value2]` .
+  - `Provider` ma postać: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]` .
+  - `KeyValueArgs` ma postać: `[key1=value1][;key2=value2]` .
+
+- **`-- <command>` (tylko w przypadku aplikacji docelowych z programem .NET 5,0)**
+
+  Po określeniu parametrów konfiguracji kolekcji użytkownik może dołączyć `--` po nim polecenie, aby uruchomić aplikację .NET z co najmniej 5,0 środowiskiem uruchomieniowym. Może to być przydatne podczas diagnozowania problemów, które występują na wczesnym etapie procesu, takich jak problemy z wydajnością uruchamiania lub moduł ładujący zestawu i błędy spinacza.
+
+  > [!NOTE]
+  > Użycie tej opcji monitoruje pierwszy proces programu .NET 5,0, który komunikuje się z powrotem z narzędziem, co oznacza, że polecenie uruchamia wiele aplikacji .NET będzie zbierać tylko pierwszą aplikację. W związku z tym zaleca się używanie tej opcji w aplikacjach samodzielnych lub przy użyciu `dotnet exec <app.dll>` opcji.
 
 ## <a name="dotnet-trace-convert"></a>Konwersja dotnet-Trace
 
@@ -186,18 +194,54 @@ Aby zebrać ślady przy użyciu `dotnet-trace` :
 
 - Zatrzymaj zbieranie przez naciśnięcie `<Enter>` klawisza. `dotnet-trace`spowoduje zakończenie rejestrowania zdarzeń w pliku *śledzenia.*
 
+## <a name="launch-a-child-application-and-collect-a-trace-from-its-startup-using-dotnet-trace"></a>Uruchamianie aplikacji podrzędnej i zbieranie śladów z uruchamiania przy użyciu programu dotnet-Trace
+
+Uwaga: działa to w przypadku aplikacji z uruchomionym programem .NET 5,0 lub nowszym.
+
+Czasami przydatne może być zebranie śladu procesu od jego uruchomienia. W przypadku aplikacji, na których działa program .NET 5,0 lub nowszy, można to zrobić za pomocą funkcji śledzenia dotnet.
+
+Spowoduje to uruchomienie `hello.exe` z `arg1` i `arg2` jako argumentów wiersza polecenia i zebranie śladu w czasie jego uruchamiania:
+
+```console
+dotnet-trace collect -- hello.exe arg1 arg2
+```
+
+Poprzednie polecenie generuje dane wyjściowe podobne do następujących:
+
+```console
+No profile or providers specified, defaulting to trace profile 'cpu-sampling'
+
+Provider Name                           Keywords            Level               Enabled By
+Microsoft-DotNETCore-SampleProfiler     0x0000F00000000000  Informational(4)    --profile
+Microsoft-Windows-DotNETRuntime         0x00000014C14FCCBD  Informational(4)    --profile
+
+Process        : E:\temp\gcperfsim\bin\Debug\net5.0\gcperfsim.exe
+Output File    : E:\temp\gcperfsim\trace.nettrace
+
+
+[00:00:00:05]   Recording trace 122.244  (KB)
+Press <Enter> or <Ctrl+C> to exit...
+```
+
+Można zatrzymać zbieranie śladów przez naciśnięcie klawisza `<Enter>` lub `<Ctrl + C>` klawisza. To spowoduje również wyjście `hello.exe` .
+
+> [!NOTE]
+> Uruchamianie `hello.exe` za pomocą programu dotnet-Trace spowoduje przekierowanie danych wejściowych/wyjściowych i nie będzie możliwe interakcje z jego stdin/stdout.
+> Zamknięcie narzędzia za pośrednictwem kombinacji klawiszy CTRL + C lub SIGTERM spowoduje bezpieczne zakończenie zarówno narzędzia, jak i procesu podrzędnego.
+> Jeśli proces podrzędny zostanie zakończony przed narzędziem, narzędzie zostanie również zakończone, a śledzenie powinno być bezpiecznie widoczne.
+
 ## <a name="view-the-trace-captured-from-dotnet-trace"></a>Wyświetl śledzenie przechwycone przez śledzenie dotnet
 
 W systemie Windows można przeglądać pliki *śledzenia* w usłudze [Narzędzia PerfView](https://github.com/microsoft/perfview) for Analysis: w przypadku śladów zebranych na innych platformach plik śledzenia można przenieść na komputer z systemem Windows, który ma być wyświetlany na narzędzia PerfView.
 
-W systemie Linux śledzenie można wyświetlić, zmieniając format danych wyjściowych `dotnet-trace` na `speedscope` . Format pliku wyjściowego można zmienić przy użyciu `-f|--format` opcji — `-f speedscope` spowoduje `dotnet-trace` to utworzenie `speedscope` pliku. Można wybrać opcję `nettrace` (opcja domyślna) i `speedscope` . `Speedscope`Pliki można otwierać w lokalizacji <https://www.speedscope.app> .
+W systemie Linux śledzenie można wyświetlić, zmieniając format danych wyjściowych `dotnet-trace` na `speedscope` . Format pliku wyjściowego można zmienić przy użyciu `-f|--format` opcji — `-f speedscope` spowoduje `dotnet-trace` to utworzenie `speedscope` pliku. Można wybrać opcję `nettrace` (opcja domyślna) i `speedscope` . `Speedscope` Pliki można otwierać w lokalizacji <https://www.speedscope.app> .
 
 > [!NOTE]
 > Środowisko uruchomieniowe programu .NET Core generuje ślady w `nettrace` formacie. Ślady są konwertowane na speedscope (jeśli zostaną określone) po zakończeniu śledzenia. Ponieważ niektóre Konwersje mogą spowodować utratę danych, oryginalny `nettrace` plik zostanie zachowany obok skonwertowanego pliku.
 
 ## <a name="use-dotnet-trace-to-collect-counter-values-over-time"></a>Używanie funkcji monitorowania dotnet do zbierania wartości licznika w czasie
 
-`dotnet-trace`może
+`dotnet-trace` może
 
 * Służy `EventCounter` do podstawowego monitorowania kondycji w środowiskach z uwzględnieniem wydajności. Na przykład w środowisku produkcyjnym.
 * Zbieraj ślady, aby nie trzeba było ich wyświetlać w czasie rzeczywistym.

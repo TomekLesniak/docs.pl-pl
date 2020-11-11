@@ -1,19 +1,21 @@
 ---
 title: Mikrousługi platformy .NET. architektura konteneryzowanych aplikacji .NET
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Mikrousługi są modularne i niezależnie do wdrożenia usługi. Kontenery platformy Docker (dla systemów Linux i Windows) upraszczają wdrażanie i testowanie poprzez zgrupowanie usługi i jej zależności w pojedynczą jednostkę, która jest uruchamiana w środowisku izolowanym.
-ms.date: 09/02/2020
-ms.openlocfilehash: aea5012fee102f388827d146043e69592e14f22b
-ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
+ms.date: 11/10/2020
+ms.openlocfilehash: 2055dacd46f90ba3714edb1437bcacad4c175e65
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379138"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507270"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikrousługi .NET: architektura konteneryzowanych aplikacji .NET
 
 ![Pokrycie książki](./media/cover-small.png)
 
-**Wersja 3.1.2** — zaktualizowane do ASP.NET Core 3,1
+**Edition w wersji 3.1** — zaktualizowany do ASP.NET Core 3,1
+
+Odwołaj się do [dziennika zmian](https://aka.ms/MicroservicesEbookChangelog) dotyczących aktualizacji książki i wkładów społecznościowych.
 
 Ten przewodnik stanowi wprowadzenie do tworzenia aplikacji opartych na mikrousługach i zarządzania nimi przy użyciu kontenerów. Omówiono podejścia projektowania i implementacji architektury przy użyciu programu .NET Core i kontenerów platformy Docker.
 
@@ -53,7 +55,7 @@ Ten przewodnik został zmieniony w celu uwzględnienia wersji **programu .NET Co
 
 Ten przewodnik nie koncentruje się na potoku cyklu życia aplikacji, DevOps, ciągłej integracji/ciągłego wdrażania lub pracy zespołu. Przewodnik uzupełniający [zadokowany cykl życia aplikacji platformy Docker z platformą i narzędziami firmy Microsoft](https://aka.ms/dockerlifecycleebook) koncentrują się na tym temacie. Bieżący przewodnik nie zawiera również szczegółowych informacji dotyczących implementacji infrastruktury platformy Azure, takich jak informacje dotyczące określonych koordynatorów.
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Cykl życia aplikacji platformy Docker w kontenerze z platformą i narzędziami firmy Microsoft (do** pobrania książek elektronicznych)  
     <https://aka.ms/dockerlifecycleebook>
@@ -84,11 +86,11 @@ Utworzyliśmy ten przewodnik, aby ułatwić zrozumienie architektury aplikacji i
 
 Współautorzy:
 
-> **Cesar de La Torre**, SR. PM, zespół produktu .NET, Microsoft Corp.
+> **Cesar de La Torre** , SR. PM, zespół produktu .NET, Microsoft Corp.
 >
-> **Bill Wagner**, SR. Content Developer, C + E, Microsoft Corp.
+> **Bill Wagner** , SR. Content Developer, C + E, Microsoft Corp.
 >
-> **Jan Rousos**, główny inżynier ds. oprogramowania, DevDiv kot, firma Microsoft
+> **Jan Rousos** , główny inżynier ds. oprogramowania, DevDiv kot, firma Microsoft
 
 Edytory
 
@@ -98,55 +100,55 @@ Edytory
 
 Uczestnicy i recenzenci:
 
-> **Jeffrey Richter**, partner Software aparatu, Azure Team, Microsoft
+> **Jeffrey Richter** , partner Software aparatu, Azure Team, Microsoft
 >
-> **Jimmy Bogard**, główny architekt w headspring
+> **Jimmy Bogard** , główny architekt w headspring
 >
-> **UDI Dahan**, założyciel & dyrektor naczelny, szczególne oprogramowanie
+> **UDI Dahan** , założyciel & dyrektor naczelny, szczególne oprogramowanie
 >
-> **Jimmy Nilsson**, współzałożyciel i dyrektor naczelny Factor10
+> **Jimmy Nilsson** , współzałożyciel i dyrektor naczelny Factor10
 >
-> **Glenn Condron**, SR. Program Manager, zespół ASP.NET
+> **Glenn Condron** , SR. Program Manager, zespół ASP.NET
 >
-> **Mark Fussell**, podmiotu z potencjalnym klientem PM, Azure Service Fabric Team, Microsoft
+> **Mark Fussell** , podmiotu z potencjalnym klientem PM, Azure Service Fabric Team, Microsoft
 >
-> **Diego Vega**, klient PM, Entity Framework zespół, Microsoft
+> **Diego Vega** , klient PM, Entity Framework zespół, Microsoft
 >
-> **Marcin Dorrans**, SR. Security — Menedżer programów
+> **Marcin Dorrans** , SR. Security — Menedżer programów
 >
-> **Rowan Miller**, SR. Program Manager, Microsoft
+> **Rowan Miller** , SR. Program Manager, Microsoft
 >
-> **Autor Ankit Asthana**, kierownik ds. platformy PM, zespół .NET, Microsoft
+> **Autor Ankit Asthana** , kierownik ds. platformy PM, zespół .NET, Microsoft
 >
-> **Scott myśliwy**, dyrektor ds. partnerów, .NET Team, Microsoft
+> **Scott myśliwy** , dyrektor ds. partnerów, .NET Team, Microsoft
 >
-> **Nish Anil**, SR. Program Manager, .NET Team, Microsoft
+> **Nish Anil** , SR. Program Manager, .NET Team, Microsoft
 >
-> **Dylan Reisenberger**, architekt i dev ołów w Polly
+> **Dylan Reisenberger** , architekt i dev ołów w Polly
 >
 > **Steve "ardalis" Smith** — architekt oprogramowania i Trainer- [Ardalis.com](https://ardalis.com)
 >
-> **Ian Cooper**, architekt programowania na jaśniejszy
+> **Ian Cooper** , architekt programowania na jaśniejszy
 >
-> **Unai Zorrilla**, architekt i dev ołów z zwykłymi pojęciami
+> **Unai Zorrilla** , architekt i dev ołów z zwykłymi pojęciami
 >
-> **Eduard Tomas**, dev ołów z zwykłymi pojęciami
+> **Eduard Tomas** , dev ołów z zwykłymi pojęciami
 >
-> **Ramon Tomas**, deweloper z zwykłymi pojęciami
+> **Ramon Tomas** , deweloper z zwykłymi pojęciami
 >
-> **David Sanz**, deweloper z zwykłymi pojęciami
+> **David Sanz** , deweloper z zwykłymi pojęciami
 >
-> **Javier Valero**, dyrektor ds. operacyjnych w Grupo Solutio
+> **Javier Valero** , dyrektor ds. operacyjnych w Grupo Solutio
 >
-> **Pierre Millet**, SR. konsultant, Microsoft
+> **Pierre Millet** , SR. konsultant, Microsoft
 >
-> **Michael Friis**, menedżer produktu, Docker Inc
+> **Michael Friis** , menedżer produktu, Docker Inc
 >
-> **Charles Lowell**, inżynier ds. oprogramowania, zespół programu vs Cat, Microsoft
+> **Charles Lowell** , inżynier ds. oprogramowania, zespół programu vs Cat, Microsoft
 >
-> **Miguel Veloso**, inżynier ds. opracowywania oprogramowania z zwykłymi pojęciami
+> **Miguel Veloso** , inżynier ds. opracowywania oprogramowania z zwykłymi pojęciami
 >
-> **Sumit Ghosh**, główny konsultant w firmie Neudesic
+> **Sumit Ghosh** , główny konsultant w firmie Neudesic
 
 ## <a name="copyright"></a>Prawa autorskie
 

@@ -1,19 +1,21 @@
 ---
 title: Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
 description: Zapoznaj się z ogólnym omówieniem procesu opracowywania i wdrażania na potrzeby tworzenia i wdrażania aplikacji kontenerowych przy użyciu platformy Docker i platform i narzędzi firmy Microsoft.
-ms.date: 07/30/2020
-ms.openlocfilehash: c506a3423ac4511f23452192e361e88dce6efec4
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 11/10/2020
+ms.openlocfilehash: cf20ea97ec252649cdb14add40ead67b6319520a
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91160700"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506665"
 ---
 # <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a>Cykl życia konteneryzowanych aplikacji platformy Docker korzystających z platformy i narzędzi firmy Microsoft
 
 ![Pokrycie książki](./media/devops-book-cover-large-we.png)
 
 **Edition w wersji 3.1** — zaktualizowany do ASP.NET Core 3,1
+
+Odwołaj się do [dziennika zmian](https://aka.ms/DockerLifecycleEbookChangelog) dotyczących aktualizacji książki i wkładów społecznościowych.
 
 Ten przewodnik jest ogólnym omówieniem tworzenia i wdrażania kontenerów ASP.NET Core aplikacji z platformą Docker przy użyciu platformy i narzędzi firmy Microsoft. Przewodnik zawiera ogólne wprowadzenie do usługi Azure DevOps w celu zaimplementowania potoków ciągłej integracji/ciągłego wdrażania, a także Azure Container Registry (ACR) i Azure Kubernetes Services AKS do wdrożenia.
 
@@ -27,7 +29,7 @@ Utworzyliśmy ten przewodnik, aby ułatwić zrozumienie architektury aplikacji i
 
 Autor:
 
-> **Cesar de La Torre**, SR. PM, zespół produktu .NET, Microsoft Corp.
+> **Cesar de La Torre** , SR. PM, zespół produktu .NET, Microsoft Corp.
 
 Edytor pozyskiwania:
 
@@ -35,7 +37,7 @@ Edytor pozyskiwania:
 
 Edytor programistyczny:
 
-> **Robert Russell**, Solutions Professional w firmie Microsoft
+> **Robert Russell** , Solutions Professional w firmie Microsoft
 >
 > [**Publikacja ósemkowa, Inc.**](http://www.octalpub.com/)
 
@@ -47,15 +49,15 @@ Produkcja redakcyjna:
 
 Copyeditor:
 
-> **Robert Russell**, Solutions Professional w firmie Microsoft
+> **Robert Russell** , Solutions Professional w firmie Microsoft
 
 Uczestnicy i recenzenci:
 
-> **Nish Anil**, SR. Program Manager, .NET Team, Microsoft
+> **Nish Anil** , SR. Program Manager, .NET Team, Microsoft
 >
-> **Miguel Veloso**, inżynier ds. opracowywania oprogramowania z zwykłymi pojęciami
+> **Miguel Veloso** , inżynier ds. opracowywania oprogramowania z zwykłymi pojęciami
 >
-> **Sumit Ghosh**, główny konsultant w firmie Neudesic
+> **Sumit Ghosh** , główny konsultant w firmie Neudesic
 
 ## <a name="copyright"></a>Prawa autorskie
 

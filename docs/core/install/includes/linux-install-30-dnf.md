@@ -1,15 +1,15 @@
 ---
-ms.openlocfilehash: 68b55eb40d86ac3c92853acbb17ad622704b1336
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 8315b4f86dddfbb68534bc9ad3ad74907daa03d0
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93136136"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507066"
 ---
 
 ### <a name="install-the-sdk"></a>Instalacja zestawu SDK
 
-Zestaw .NET Core SDK umożliwia tworzenie aplikacji przy użyciu platformy .NET Core. W przypadku zainstalowania zestaw .NET Core SDK nie trzeba instalować odpowiedniego środowiska uruchomieniowego. Aby zainstalować zestaw .NET Core SDK, uruchom następujące polecenia:
+Zestaw .NET Core SDK pozwala na tworzenie aplikacji przy użyciu platformy .NET Core. W przypadku zainstalowania zestaw .NET Core SDK nie trzeba instalować odpowiedniego środowiska uruchomieniowego. Aby zainstalować zestaw .NET Core SDK, uruchom następujące polecenia:
 
 ```bash
 sudo dnf install dotnet-sdk-3.0

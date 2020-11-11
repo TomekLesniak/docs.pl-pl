@@ -1,17 +1,17 @@
 ### YamlMime:Landing
-title: Instalowanie platformy .NET Core w systemach Windows, Linux i macOS
-summary: Dowiedz się więcej na temat instalowania platformy .NET w wersjach systemu Windows, Linux i macOS. Odkryj zależności wymagane do tworzenia, wdrażania i uruchamiania aplikacji platformy .NET Core.
+title: Instalowanie programu .NET w systemach Windows, Linux i macOS
+summary: Dowiedz się więcej na temat instalowania platformy .NET w wersjach systemu Windows, Linux i macOS. Odkryj zależności wymagane do tworzenia, wdrażania i uruchamiania aplikacji platformy .NET.
 metadata:
-  title: Instalowanie platformy .NET Core w systemach Windows, Linux i macOS
-  description: Dowiedz się, gdzie pobrać i zainstalować platformę .NET Core w wersjach systemów Windows, Linux i macOS. Odkryj zależności wymagane do tworzenia, wdrażania i uruchamiania aplikacji platformy .NET Core.
+  title: Instalowanie programu .NET w systemach Windows, Linux i macOS
+  description: Dowiedz się, gdzie pobrać i zainstalować platformę .NET w wersjach systemu Windows, Linux i macOS. Odkryj zależności wymagane do tworzenia, wdrażania i uruchamiania aplikacji platformy .NET.
   ms.topic: landing-page
   ms.date: 06/29/2020
-  ms.openlocfilehash: dbc159bc4ff2d10bf55bd0c0b4d4e07a8fc04a4a
-  ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+  ms.openlocfilehash: 53c4485b986abf58bdff45d78342c110b15d7824
+  ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 07/01/2020
-  ms.locfileid: "85804501"
+  ms.lasthandoff: 11/11/2020
+  ms.locfileid: "94507205"
 landingContent:
 - title: Windows
   linkLists:

@@ -3,14 +3,14 @@ title: Śledzenie aplikacji .NET za pomocą PerfCollect.
 description: Samouczek, który przeprowadzi Cię przez zbieranie śladów z perfcollect na platformie .NET.
 ms.topic: tutorial
 ms.date: 10/23/2020
-ms.openlocfilehash: 7bf058869f0b9f76204d775b12febe7c58b78877
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 376c957833924a9991e574557671ea3c8503d7c2
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445799"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507244"
 ---
-# <a name="tracing-net-applications-with-perfcollect"></a>Śledzenie aplikacji .NET za pomocą PerfCollect
+# <a name="trace-net-applications-with-perfcollect"></a>Śledzenie aplikacji .NET za pomocą PerfCollect
 
 **Ten artykuł ma zastosowanie do: ✔️** .net Core 2,1 SDK i nowszych wersjach
 
@@ -18,17 +18,17 @@ W przypadku wystąpienia problemów z wydajnością w systemie Linux zbieranie d
 
 `perfcollect` to skrypt bash, który wykorzystuje [generowanie śledzenia Tookit-Next systemu Linux (LTTng)](https://lttng.org) do zbierania zdarzeń utworzonych na podstawie środowiska uruchomieniowego lub dowolnego elementu [EventSource](xref:System.Diagnostics.Tracing.EventListener), a także [wydajności](https://perf.wiki.kernel.org/) do zbierania próbek procesora CPU procesu docelowego.
 
-## <a name="preparing-your-machine"></a>Przygotowywanie maszyny
+## <a name="prepare-your-machine"></a>Przygotuj maszynę
 
 Wykonaj następujące kroki, aby przygotować komputer do zbierania danych śledzenia wydajności za pomocą programu `perfcollect` .
 
 > [!NOTE]
-> Jeśli jesteś w środowisku kontenera, kontener musi mieć `SYS_ADMIN` możliwość. Aby uzyskać więcej informacji na temat śledzenia aplikacji wewnątrz kontenera za pomocą PerfCollect, zobacz [zbieranie danych diagnostycznych w kontenerach](./diagnostics-in-containers.md) .
+> Jeśli jesteś w środowisku kontenera, kontener musi mieć `SYS_ADMIN` możliwość. Aby uzyskać więcej informacji na temat śledzenia aplikacji wewnątrz kontenerów za pomocą PerfCollect, zobacz [zbieranie danych diagnostycznych w kontenerach](./diagnostics-in-containers.md).
 
 1. Pobierz `perfcollect` .
 
     > ```bash
-    > curl -OL http://aka.ms/perfcollect
+    > curl -OL https://aka.ms/perfcollect
     > ```
 
 2. Utwórz plik wykonywalny skryptu.
@@ -45,15 +45,15 @@ Wykonaj następujące kroki, aby przygotować komputer do zbierania danych śled
 
     Spowoduje to zainstalowanie następujących warunków wstępnych na maszynie:
 
-    1. `perf`: podsystem zdarzeń wydajności systemu Linux oraz aplikacja do zbierania/przeglądania w trybie użytkownika towarzyszącego. `perf` jest częścią źródła jądra systemu Linux, ale zazwyczaj nie jest instalowany domyślnie.
+    1. `perf`: podsystem zdarzeń wydajności systemu Linux oraz aplikacja do zbierania/przeglądania w trybie użytkownika. `perf` jest częścią źródła jądra systemu Linux, ale zazwyczaj nie jest instalowany domyślnie.
 
-    2. `LTTng`: Służy do przechwytywania danych zdarzeń emitowanych w czasie wykonywania przez CoreCLR. Te dane są następnie używane do analizowania zachowania różnych składników środowiska uruchomieniowego, takich jak GC, JIT i Pool wątku.
+    2. `LTTng`: Służy do przechwytywania danych zdarzeń emitowanych w czasie wykonywania przez CoreCLR. Te dane są następnie używane do analizowania zachowania różnych składników środowiska uruchomieniowego, takich jak GC, JIT i Pula wątków.
 
-Najnowsze wersje programu .NET Core i narzędzie wydajności systemu Linux obsługują automatyczne rozpoznawanie nazw metod dla kodu struktury. Jeśli pracujesz z platformą .NET Core w wersji 3,1 lub mniejszej, konieczny jest dodatkowy krok. Aby uzyskać szczegółowe informacje, zobacz [Rozpoznawanie symboli struktury](#resolving-framework-symbols) .
+Najnowsze wersje programu .NET Core i narzędzie wydajności systemu Linux obsługują automatyczne rozpoznawanie nazw metod dla kodu struktury. Jeśli pracujesz z platformą .NET Core w wersji 3,1 lub mniejszej, konieczny jest dodatkowy krok. Aby uzyskać szczegółowe informacje, zobacz [Rozpoznawanie symboli struktury](#resolve-framework-symbols) .
 
-W przypadku rozpoznawania nazw metod natywnych bibliotek DLL środowiska uruchomieniowego (takich jak libcoreclr.so) program `perfcollect` rozpozna symbole dla nich podczas konwertowania danych, ale tylko wtedy, gdy są obecne symbole dla tych plików binarnych. Aby uzyskać szczegółowe informacje, zobacz sekcję [pobieranie symboli dla natywnego środowiska uruchomieniowego](#getting-symbols-for-the-native-runtime) .
+W przypadku rozpoznawania nazw metod natywnych bibliotek DLL środowiska uruchomieniowego (takich jak libcoreclr.so) program `perfcollect` rozpozna symbole dla nich podczas konwertowania danych, ale tylko wtedy, gdy są obecne symbole dla tych plików binarnych. Aby uzyskać szczegółowe informacje, zobacz sekcję [pobieranie symboli dla natywnego środowiska uruchomieniowego](#get-symbols-for-the-native-runtime) .
 
-## <a name="collecting-a-trace"></a>Zbieranie śladu
+## <a name="collect-a-trace"></a>Zbieranie śladu
 
 1. Dostępne są dwie powłoki — jeden do sterowania śledzeniem, zwany jako **[Trace]** , i jeden do uruchamiania aplikacji, zwany jako **[app]**.
 
@@ -106,11 +106,11 @@ W przypadku rozpoznawania nazw metod natywnych bibliotek DLL środowiska uruchom
 
     Skompresowany plik śledzenia jest teraz przechowywany w bieżącym katalogu roboczym.
 
-## <a name="viewing-a-trace"></a>Wyświetlanie śladu
+## <a name="view-a-trace"></a>Wyświetlanie śladu
 
-Istnieje wiele opcji wyświetlania śladu, który został zebrany. Ślady są najlepiej oglądane przy użyciu [Narzędzia PerfView](http://aka.ms/perfview>) w systemie Windows, ale mogą być wyświetlane bezpośrednio w systemie Linux przy użyciu `PerfCollect` samego siebie lub `TraceCompass` .
+Istnieje kilka opcji wyświetlania śladu, który został zebrany. Ślady są najlepiej oglądane przy użyciu [Narzędzia PerfView](https://aka.ms/perfview) w systemie Windows, ale mogą być wyświetlane bezpośrednio w systemie Linux przy użyciu `PerfCollect` samego siebie lub `TraceCompass` .
 
-### <a name="using-perfcollect-to-view-the-trace-file"></a>Wyświetlanie pliku śledzenia za pomocą PerfCollect
+### <a name="use-perfcollect-to-view-the-trace-file"></a>Użyj PerfCollect, aby wyświetlić plik śledzenia
 
 Możesz użyć perfcollect, aby wyświetlić zebrany ślad. Aby to zrobić, użyj następującego polecenia:
 
@@ -133,13 +133,13 @@ Spowoduje to `babeltrace` wydrukowanie ładunku zdarzeń przy użyciu przegląda
 # [01:02:18.189250227] (+0.020165171) ubuntu-xenial DotNETRuntime:ExceptionCatchStart: { cpu_id = 0 }, { EntryEIP = 139873639728404, MethodID = 139873626968120, MethodName = "void [helloworld] helloworld.Program::Main(string[])", ClrInstanceID = 0 }
 ```
 
-### <a name="using-perfview-to-open-the-trace-file"></a>Otwieranie pliku śledzenia za pomocą narzędzia PerfView
+### <a name="use-perfview-to-open-the-trace-file"></a>Użyj narzędzia PerfView, aby otworzyć plik śledzenia
 
 Aby wyświetlić Zagregowany widok zarówno przykładowego procesora, jak i zdarzeń, można użyć `PerfView` na komputerze z systemem Windows.
 
 1. Skopiuj plik trace.zip z systemu Linux na komputer z systemem Windows.
 
-2. Pobierz narzędzia PerfView z <http://aka.ms/perfview> .
+2. Pobierz narzędzia PerfView z <https://aka.ms/perfview> .
 
 3. Uruchom PerfView.exe
 
@@ -151,17 +151,17 @@ Narzędzia PerfView wyświetli listę widoków, które są obsługiwane w oparci
 
 - W obszarze badania procesora wybierz **stosy procesora**.
 
-- Aby uzyskać informacje na temat szczegółowych informacji o GC, wybierz **GCStats**.
+- Aby uzyskać szczegółowe informacje dotyczące GC, wybierz **GCStats**.
 
 - Dla informacji JIT dla poszczególnych procesów/modułów/metod, wybierz **JITStats**.
 
 - Jeśli nie ma widoku dla potrzebnych informacji, możesz spróbować wyszukać zdarzenia w widoku nieprzetworzone zdarzenia.  Wybierz pozycję **zdarzenia**.
 
-Aby uzyskać więcej informacji na temat interpretowania widoków w programie narzędzia PerfView, zobacz linki pomocy w samym widoku lub w oknie głównym w narzędzia PerfView wybierz **Pomoc->użytkowników przewodnika**.
+Aby uzyskać więcej informacji na temat interpretowania widoków w programie narzędzia PerfView, zobacz linki pomocy w samym widoku lub w oknie głównym w narzędzia PerfView, wybierz opcję **Pomoc->użytkownicy przewodnika**.
 
-### <a name="using-tracecompass-to-open-the-trace-file"></a>Otwieranie pliku śledzenia za pomocą TraceCompass
+### <a name="use-tracecompass-to-open-the-trace-file"></a>Użyj TraceCompass, aby otworzyć plik śledzenia
 
-W celu wyświetlenia śladów można użyć opcji [zaćmienie TraceCompass](https://www.eclipse.org/tracecompass/) . `TraceCompass` działa również na maszynach z systemem Linux, dzięki czemu nie musisz przenosić śladu do komputera z systemem Windows. Aby można było `TraceCompass` otworzyć plik śledzenia przy użyciu programu, należy rozpakować plik.
+Aby wyświetlić dane śledzenia, można użyć opcji [zaćmienie TraceCompass](https://www.eclipse.org/tracecompass/) . `TraceCompass` działa również na maszynach z systemem Linux, dzięki czemu nie musisz przenosić śladu do komputera z systemem Windows. Aby można było `TraceCompass` otworzyć plik śledzenia przy użyciu programu, należy rozpakować plik.
 
 ```bash
 unzip myTrace.trace.zip
@@ -173,15 +173,15 @@ Plik śledzenia COLLABORATIVE można otworzyć w programie `TraceCompass` , zazn
 
 Aby uzyskać więcej informacji, zapoznaj się z [ `TraceCompass` dokumentacją](https://www.eclipse.org/tracecompass/).
 
-## <a name="resolving-framework-symbols"></a>Rozpoznawanie symboli struktury
+## <a name="resolve-framework-symbols"></a>Rozpoznawanie symboli struktury
 
 Symbole struktury muszą być generowane ręcznie podczas zbierania śladu. Różnią się one od symboli poziomu aplikacji, ponieważ struktura jest wstępnie skompilowana, podczas gdy kod aplikacji jest kompilowany dokładnie na czas. W przypadku kodu struktury, który został wstępnie skompilowany do kodu natywnego, należy wywołać `crossgen` , który wie, jak generować mapowanie z kodu natywnego do nazwy metod.
 
-`perfcollect` może obsłużyć większość szczegółowych informacji, ale muszą być `crossgen` dostępne. Domyślnie nie jest on instalowany z dystrybucją programu .NET. Jeśli `crossgen` go nie ma, `perfcollect` ostrzega użytkownika i odwołuje się do tych instrukcji. Aby rozwiązać problemy, musisz pobrać dokładnie odpowiednią wersję crossgen dla używanego środowiska uruchomieniowego. Jeśli umieścisz narzędzie crossgen w tym samym katalogu, co biblioteki DLL środowiska uruchomieniowego .NET (np. libcoreclr.so), `perfcollect` można je znaleźć i dodać do pliku śledzenia symbole struktury.
+`perfcollect` może obsłużyć większość szczegółowych informacji, ale muszą być `crossgen` dostępne. Domyślnie nie jest on instalowany z dystrybucją programu .NET. Jeśli `crossgen` go nie ma, `perfcollect` ostrzega użytkownika i odwołuje się do tych instrukcji. Aby rozwiązać problemy, musisz pobrać dokładnie odpowiednią wersję crossgen dla używanego środowiska uruchomieniowego. Jeśli umieścisz narzędzie crossgen w tym samym katalogu, co biblioteki DLL środowiska uruchomieniowego .NET (na przykład libcoreclr.so), `perfcollect` można je znaleźć i dodać do pliku śledzenia symbole struktury.
 
 Zwykle podczas tworzenia aplikacji platformy .NET po prostu jest generowana Biblioteka DLL dla napisanego kodu, przy użyciu udostępnionej kopii środowiska uruchomieniowego dla pozostałych.   Można jednak również generować informacje o nazwie "samodzielne" aplikacji i zawiera wszystkie biblioteki DLL środowiska uruchomieniowego. `crossgen` jest częścią pakietu NuGet, który jest używany do tworzenia samodzielnych aplikacji, więc jednym ze sposobów uzyskania odpowiedniej wersji programu `crossgen` jest utworzenie samodzielnego pakietu aplikacji.
 
-Na przykład:
+Przykład:
 
    >```bash
    > mkdir helloWorld
@@ -192,7 +192,7 @@ Na przykład:
 
 Spowoduje to utworzenie nowej aplikacji Hello world i utworzenie jej jako aplikacji samodzielnej.
 
-Jako efekt po stronie tworzenia samodzielnej aplikacji Narzędzie dotnet pobierze pakiet NuGet o nazwie Runtime. linux-x64. Microsoft. WebCore. app i umieści go w katalogu ~/.nuget/packages/runtime.linux-x64.microsoft.netcore.app/VERSION, gdzie wersja jest numerem wersji środowiska uruchomieniowego platformy .NET Core (np. 2.1.0). W obszarze, który jest katalogiem narzędzi i w tym miejscu jest potrzebne narzędzie crossgen. Począwszy od platformy .NET Core 3,0, lokalizacja pakietu to ~/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/VERSION.
+Jako efekt po stronie tworzenia samodzielnej aplikacji Narzędzie dotnet pobierze pakiet NuGet o nazwie Runtime. linux-x64. Microsoft. WebCore. app i umieści go w katalogu ~/.nuget/packages/runtime.linux-x64.microsoft.netcore.app/VERSION, gdzie wersja jest numerem wersji środowiska uruchomieniowego platformy .NET Core (na przykład 2.1.0). W obszarze, który jest katalogiem narzędzi i w tym miejscu jest potrzebne narzędzie crossgen. Począwszy od platformy .NET Core 3,0, lokalizacja pakietu to ~/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/VERSION.
 
 `crossgen`Narzędzie należy umieścić obok środowiska uruchomieniowego, które jest aktualnie używane przez aplikację. Zazwyczaj aplikacja używa udostępnionej wersji platformy .NET Core, która jest zainstalowana w/usr/share/dotnet/shared/Microsoft.NETCore.App/VERSION, gdzie wersja jest numerem wersji środowiska uruchomieniowego .NET. Jest to lokalizacja udostępniona, dlatego musisz być administratorem. Jeśli wersja jest 2.1.0, polecenia do zaktualizowania `crossgen` byłyby następujące:
 
@@ -218,9 +218,9 @@ export COMPlus_ZapDisable=1
 
 Po wprowadzeniu tej zmiany należy uzyskać symbole dla całego kodu platformy .NET.
 
-## <a name="getting-symbols-for-the-native-runtime"></a>Pobieranie symboli dla natywnego środowiska uruchomieniowego
+## <a name="get-symbols-for-the-native-runtime"></a>Pobierz symbole dla natywnego środowiska uruchomieniowego
 
-Większość czasu interesujący Twój własny kod, który jest `perfcollect` rozpoznawany domyślnie. Czasami jest bardzo przydatne, aby zobaczyć, co się dzieje w bibliotekach DLL platformy .NET (co to jest Ostatnia sekcja), ale czasami co się dzieje w natywnych bibliotekach DLL środowiska uruchomieniowego (zazwyczaj libcoreclr.so).  `perfcollect` program rozpozna symbole dla tych, gdy konwertuje swoje dane, ale tylko wtedy, gdy są obecne symbole dla tych natywnych bibliotek DLL (i znajdują się obok biblioteki, do której się odnoszą).
+Większość czasu interesujący Twój własny kod, który jest `perfcollect` rozpoznawany domyślnie. Czasami warto zobaczyć, co się dzieje w bibliotekach DLL platformy .NET (co to jest Ostatnia sekcja), ale czasami co się dzieje w natywnych bibliotekach DLL środowiska uruchomieniowego (zazwyczaj libcoreclr.so).  `perfcollect` program rozpozna symbole dla tych, gdy konwertuje swoje dane, ale tylko wtedy, gdy są obecne symbole dla tych natywnych bibliotek DLL (i znajdują się obok biblioteki, do której się odnoszą).
 
 Istnieje polecenie globalne zwane [symbolem dotnet](https://github.com/dotnet/symstore/blob/master/src/dotnet-symbol/README.md#symbol-downloader-dotnet-cli-extension) . Aby użyć symbolu dotnet-symbol w celu uzyskania natywnych symboli środowiska uruchomieniowego:
 
@@ -230,14 +230,14 @@ Istnieje polecenie globalne zwane [symbolem dotnet](https://github.com/dotnet/sy
     dotnet tool install -g dotnet-symbol
     ```
 
-2. Pobierz symbole. Jeśli zainstalowana wersja środowiska uruchomieniowego .NET Core jest 2.1.0 polecenie, aby to zrobić
+2. Pobierz symbole. Jeśli zainstalowana wersja środowiska uruchomieniowego .NET Core to 2.1.0, polecenie to jest następujące:
 
     ```bash
     mkdir mySymbols
     dotnet symbol --symbols --output mySymbols  /usr/share/dotnet/shared/Microsoft.NETCore.App/2.1.0/lib*.so
     ```
 
-3. Kopiuj symbole do poprawnego miejsca
+3. Skopiuj symbole do poprawnego miejsca.
 
     ```bash
     sudo cp mySymbols/* /usr/share/dotnet/shared/Microsoft.NETCore.App/2.1.0
@@ -247,6 +247,6 @@ Istnieje polecenie globalne zwane [symbolem dotnet](https://github.com/dotnet/sy
 
 Następnie należy uzyskać nazwy symboliczne natywnych bibliotek DLL podczas uruchamiania `perfcollect` .
 
-## <a name="collecting-in-a-docker-container"></a>Zbieranie w kontenerze platformy Docker
+## <a name="collect-in-a-docker-container"></a>Zbieranie danych w kontenerze platformy Docker
 
-Aby uzyskać więcej informacji o sposobach korzystania z `perfcollect` programu w środowiskach kontenerów, zobacz [zbieranie danych diagnostycznych w kontenerach](./diagnostics-in-containers.md) .
+Aby uzyskać więcej informacji na temat używania `perfcollect` w środowiskach kontenerów, zobacz [zbieranie danych diagnostycznych w kontenerach](./diagnostics-in-containers.md).

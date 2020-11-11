@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 96f3ef0160144322f77413995c842b745bb5bb1e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c05af045d2d9666b20f36e36c68cc853f906eae
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920741"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506878"
 ---
 
-Podczas instalowania pakietu .NET Core może zostać `signature verification failed for file 'repomd.xml' from repository 'packages-microsoft-com-prod'`wyświetlony błąd podobny do . Ogólnie rzecz biorąc ten błąd oznacza, że kanał informacyjny pakietu dla .NET Core jest uaktualniany z nowszych wersji pakietu i że należy spróbować ponownie później. Podczas uaktualniania kanał informacyjny pakietu nie powinien być niedostępny dłużej niż 2 godziny. Jeśli ten błąd jest stale wyświetlany przez ponad 2 <https://github.com/dotnet/core/issues>godziny, zgłać problem w .
+Podczas instalowania pakietu .NET może zostać wyświetlony komunikat o błędzie podobny do `signature verification failed for file 'repomd.xml' from repository 'packages-microsoft-com-prod'` . Ogólnie mówiąc, ten błąd oznacza, że źródło danych pakietu dla platformy .NET jest uaktualniane z nowszymi wersjami pakietów i należy spróbować ponownie później. Podczas uaktualniania kanał informacyjny pakietu nie powinien być dostępny przez więcej niż 2 godziny. Jeśli ten błąd będzie ciągle wyświetlany przez ponad 2 godziny, należy rozwiązać problem o <https://github.com/dotnet/core/issues> .

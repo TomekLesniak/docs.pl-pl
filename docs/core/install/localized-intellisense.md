@@ -2,12 +2,12 @@
 title: Instalowanie zlokalizowanych plików IntelliSense
 description: Dowiedz się, jak skonfigurować komputer deweloperski do korzystania z zlokalizowanych plików IntelliSense dla projektów .NET 5 + (w tym .NET Core) w programie Visual Studio.
 ms.date: 11/06/2020
-ms.openlocfilehash: 121439199f0de6d29a18ea55031976680fc1f833
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 45eeae12ca79179cacb3d48fca28118de70e0a4f
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94439823"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506769"
 ---
 # <a name="how-to-install-localized-intellisense-files-for-net"></a>Jak zainstalować zlokalizowane pliki IntelliSense dla platformy .NET
 
@@ -35,7 +35,7 @@ ms.locfileid: "94439823"
 1. Przejdź do folderu IntelliSense platformy .NET.
 
    1. Przejdź do folderu instalacji programu .NET. Domyślnie jest to w obszarze *%ProgramFiles%\dotnet\packs*.
-   1. Wybierz zestaw SDK, dla którego chcesz zainstalować funkcję IntelliSense, i przejdź do skojarzonej ścieżki. Możesz wybrać następujące opcje:
+   1. Wybierz zestaw SDK, dla którego chcesz zainstalować funkcję IntelliSense, i przejdź do skojarzonej ścieżki. Do wyboru są następujące opcje:
 
       | Typ zestawu SDK              | Ścieżka                               |
       |-----------------------|------------------------------------|
@@ -43,7 +43,7 @@ ms.locfileid: "94439823"
       | Pulpit systemu Windows       | *Microsoft. WindowsDesktop. app. ref* |
       | .NET Standard         | *Standard. Library. ref*          |
 
-   1. Przejdź do wersji, w której chcesz zainstalować zlokalizowaną funkcję IntelliSense. Na przykład *3.1.0*.
+   1. Przejdź do wersji, w której chcesz zainstalować zlokalizowaną funkcję IntelliSense. Na przykład *5.0.0*.
    1. Otwórz folder *ref* .
    1. Otwórz folder moniker. Na przykład *NET 5.0*.
 
@@ -124,6 +124,6 @@ Po zainstalowaniu żądanych pakietów językowych zmodyfikuj ustawienia program
 
 Po wykonaniu tej czynności funkcja IntelliSense powinna działać zgodnie z oczekiwaniami w przypadku otwarcia projektu .NET, który jest przeznaczony dla zainstalowanej wersji plików IntelliSense.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Technologia IntelliSense w programie Visual Studio](/visualstudio/ide/using-intellisense)

@@ -2,18 +2,21 @@
 title: Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure
 description: Przewodnik tworzenia aplikacji natywnych w chmurze wykorzystujących kontenery, mikrousługi i funkcje bezserwerowe platformy Azure.
 author: ardalis
-ms.date: 05/13/2020
-ms.openlocfilehash: 172097b4915deb2d6f0b06441d7c4ca389bbca25
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.date: 11/10/2020
+ms.openlocfilehash: 673bfef27c3767f68b1c30d4383cee010ba377f0
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051509"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506652"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Tworzenie architektury natywnych aplikacji .NET w chmurze dla platformy Azure
 
 ![obraz okładki](./media/cover.png)
 
 **Wersja 1.0**
+
+Odwołaj się do [dziennika zmian](https://aka.ms/cn-ebook-changelog) dotyczących aktualizacji książki i wkładów społecznościowych.
 
 OPUBLIKOWANA PRZEZ
 
@@ -27,7 +30,7 @@ Redmond, Waszyngton 98052-6399
 
 Copyright &copy; 2020 od firmy Microsoft Corporation
 
-Wszelkie prawa zastrzeżone. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
+All rights reserved. Żadna część zawartości tej księgi nie może być odtwarzana ani przekazywana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
 
 Ta książka jest świadczona w postaci "AS-IS" i zawiera widoki i opinie autora. Widoki, opinie i informacje wyrażone w tej książce, w tym adresy URL i inne odwołania do witryn internetowych, mogą ulec zmianie bez powiadomienia.
 
@@ -43,23 +46,23 @@ Wszystkie inne znaczniki i logo są własnością odpowiednich właścicieli.
 
 Autorów
 
-> **Rob Vettor**, główny architekt systemu w chmurze/IP architekt- [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft
+> **Rob Vettor** , główny architekt systemu w chmurze/IP architekt- [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft
 >
-> **Steve "ardalis" Smith**, architekt oprogramowania i Trainer- [Ardalis.com](https://ardalis.com)
+> **Steve "ardalis" Smith** , architekt oprogramowania i Trainer- [Ardalis.com](https://ardalis.com)
 
 Uczestnicy i recenzenci:
 
-> **Cesar de La Torre**, główny Menedżer programu, zespół .NET, Microsoft
+> **Cesar de La Torre** , główny Menedżer programu, zespół .NET, Microsoft
 >
-> **Nish Anil**, starszy kierownik ds. programów, .NET Team, Microsoft
+> **Nish Anil** , starszy kierownik ds. programów, .NET Team, Microsoft
 >
-> **Jeremy Likness**, starszy kierownik ds. programów, .NET Team, Microsoft
+> **Jeremy Likness** , starszy kierownik ds. programów, .NET Team, Microsoft
 >
-> **Cecil Phillip**, starszy ambasador w chmurze, Microsoft
+> **Cecil Phillip** , starszy ambasador w chmurze, Microsoft
 
 Edytory
 
-> **Maira Wenzel**, Menedżer programów, .NET Team, Microsoft
+> **Maira Wenzel** , Menedżer programów, .NET Team, Microsoft
 
 ## <a name="version"></a>Wersja
 
