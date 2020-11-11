@@ -1,26 +1,25 @@
 ---
 title: Co to jest F#
-description: Dowiedz się więcej F# na temat tego, co F# to jest język programowania i jaki jest sposób programowania. Dowiedz się więcej o zaawansowanych typach danych, funkcjach i sposobach ich dopasowania.
+description: 'Dowiedz się, co to jest język programowania F # i jakie jest programowanie w języku F #. Dowiedz się więcej o zaawansowanych typach danych, funkcjach i sposobach ich dopasowania.'
 ms.date: 08/03/2018
-ms.openlocfilehash: 3cba509f59a8e81e1a0264de7451e9d80304d768
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 37dc2f472d65a046e4bf67e672e2a96f4d4afded
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332733"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439658"
 ---
 # <a name="what-is-f"></a>Co to jest F\#
 
-F#to funkcjonalny język programowania, dzięki któremu można łatwo pisać kod poprawny i łatwiejszy w obsłudze.
+F # to funkcjonalny język programowania, dzięki któremu można łatwo pisać kod poprawny i łatwiejszy w obsłudze.
 
-F#Programowanie przede wszystkim obejmuje Definiowanie typów i funkcji, które są automatycznie wywnioskowane i uogólnione. Pozwala to skupić się na domenie problemu i manipulowaniu swoimi danymi, a nie szczegółami programowania.
+Programowanie języka F # polega głównie na definiowaniu typów i funkcji, które są automatycznie wywnioskowane i uogólnione. Pozwala to skupić się na domenie problemu i manipulowaniu swoimi danymi, a nie szczegółami programowania.
 
 ```fsharp
 open System // Gets access to functionality in System namespace.
 
 // Defines a function that takes a name and produces a greeting.
-let getGreeting name =
-    sprintf "Hello, %s! Isn't F# great?" name
+let getGreeting name = $"Hello, {name}! Isn't F# great?"
 
 [<EntryPoint>]
 let main args =
@@ -35,7 +34,7 @@ let main args =
     0
 ```
 
-F#ma wiele funkcji, w tym:
+Język F # ma wiele funkcji, w tym:
 
 * Składnia uproszczona
 * Domyślnie niezmienne
@@ -45,7 +44,7 @@ F#ma wiele funkcji, w tym:
 * Dopasowanie do wzorca
 * Programowanie asynchroniczne
 
-Pełny zestaw funkcji jest udokumentowany w [ F# dokumentacji języka](./language-reference/index.md).
+Pełny zestaw funkcji opisano w dokumentacji [języka F #](./language-reference/index.md).
 
 ## <a name="rich-data-types"></a>Zaawansowane typy danych
 
@@ -72,11 +71,11 @@ type WithdrawalResult =
     | UndisclosedFailure
 ```
 
-F#rekordy i unie rozłączne mają domyślnie wartości inne niż null, niezmienne i porównywalne, co ułatwia ich używanie.
+Rekordy F # i unie rozłączne mają domyślnie wartości inne niż null, niemodyfikowalne i porównywalne, co ułatwia ich używanie.
 
 ## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Wymuszone poprawność przy użyciu funkcji i dopasowania do wzorca
 
-F#funkcje są łatwe do zadeklarować i zaawansowania. W połączeniu z [dopasowywaniem do wzorca](./language-reference/pattern-matching.md)pozwala na definiowanie zachowania, którego poprawność jest wymuszana przez kompilator.
+Funkcje języka F # są łatwe do zadeklarować i zaawansowane w ramach ćwiczeń. W połączeniu z [dopasowywaniem do wzorca](./language-reference/pattern-matching.md)pozwala na definiowanie zachowania, którego poprawność jest wymuszana przez kompilator.
 
 ```fsharp
 // Returns a WithdrawalResult
@@ -93,11 +92,11 @@ let handleWithdrawal amount =
     | UndisclosedFailure -> printfn "Failed: unknown :("
 ```
 
-F#funkcje są również pierwszą klasą, co oznacza, że mogą być przesyłane jako parametry i zwracane z innych funkcji.
+Funkcje języka F # są również pierwszym klasą, co oznacza, że mogą być przesyłane jako parametry i zwracane z innych funkcji.
 
 ## <a name="functions-to-define-operations-on-objects"></a>Funkcje do definiowania operacji na obiektach
 
-F#ma pełną obsługę obiektów, które są przydatnymi typami danych w przypadku konieczności mieszania danych i funkcjonalności. F#funkcje są używane do manipulowania obiektami.
+Język F # ma pełną obsługę obiektów, które są przydatnymi typami danych w przypadku konieczności mieszania danych i funkcjonalności. Funkcje języka F # są używane do manipulowania obiektami.
 
 ```fsharp
 type Set<'T when 'T: comparison>(elements: seq<'T>) =
@@ -118,8 +117,8 @@ module Set =
     let add value (set: Set<'T>) = set.Add(value)
 ```
 
-Zamiast pisać kod, który jest zorientowany obiektowo, w programie F#często piszesz kod, który traktuje obiekty jako inny typ danych dla funkcji do manipulowania. Funkcje takie jak [interfejsy ogólne](./language-reference/interfaces.md), [wyrażenia obiektów](./language-reference/object-expressions.md)i rozsądne użycie [elementów członkowskich](./language-reference/members/index.md) są wspólne w większych F# programach.
+Zamiast pisać kod, który jest zorientowany obiektowo w języku F #, często piszesz kod, który traktuje obiekty jako inny typ danych do manipulowania. Funkcje, takie jak [interfejsy rodzajowe](./language-reference/interfaces.md), [wyrażenia obiektów](./language-reference/object-expressions.md)i rozsądne użycie [elementów członkowskich](./language-reference/members/index.md) , są wspólne w większych programach w języku F #.
 
 ## <a name="next-steps"></a>Następne kroki
 
-Aby dowiedzieć się więcej na temat większego F# zestawu funkcji, zapoznaj się z [ F# przewodnikiem](tour.md).
+Aby dowiedzieć się więcej na temat większego zestawu funkcji języka F #, zapoznaj się z [samouczkiem dotyczącym języka f #](tour.md).
