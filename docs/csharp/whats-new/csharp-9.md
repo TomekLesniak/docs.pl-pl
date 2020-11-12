@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: e1c297cd0ff75d6a6fb4a9d38c9a241e216f500b
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 5b3695dee8fc26f69e713d1d6811acdf0cfa9764
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440871"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557223"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -31,6 +31,8 @@ W języku c# 9,0 dodano następujące funkcje i ulepszenia języka C#:
 - Nowe funkcje dla metod częściowych
 
 Język C# 9,0 jest obsługiwany w **programie .NET 5**. Aby uzyskać więcej informacji, zobacz [wersja języka C#](../language-reference/configure-language-version.md).
+
+Najnowszą wersję zestawu SDK platformy .NET można pobrać ze [strony plików do pobrania platformy .NET](https://dotnet.microsoft.com/download).
 
 ## <a name="record-types"></a>Typy rekordów
 
@@ -158,7 +160,7 @@ System.Console.WriteLine("Hello World!");
 
 Tylko jeden plik w aplikacji może używać instrukcji najwyższego poziomu. Jeśli kompilator odnajdzie instrukcje najwyższego poziomu w wielu plikach źródłowych, jest to błąd. Jest również błędem, jeśli łączysz instrukcje najwyższego poziomu z zadeklarowaną metodą punktu wejścia programu, zwykle `Main` metodę. W tym sensie można wziąć pod uwagę, że jeden plik zawiera instrukcje, które zwykle są w `Main` metodzie `Program` klasy.  
 
-Jednym z najpopularniejszych zastosowania tej funkcji jest tworzenie materiałów edukacyjnych. Początkująci deweloperzy języka C# mogą pisać kanoniczny "Hello world!" w jednym lub dwóch wierszach kodu. Żadna z dodatkowych procedury nie jest wymagana. Niemniej deweloperzy mogą również znaleźć wiele użycia tej funkcji. W instrukcjach najwyższego poziomu można korzystać ze środowiska podobnego do skryptu na potrzeby eksperymentowania podobnego do tego, co zapewnia notesy Jupyter. Instrukcje najwyższego poziomu są doskonałe dla małych programów konsolowych i narzędzi. Usługa Azure Functions jest idealnym przypadkiem użycia dla instrukcji najwyższego poziomu.
+Jednym z najpopularniejszych zastosowania tej funkcji jest tworzenie materiałów edukacyjnych. Początkująci deweloperzy języka C# mogą pisać kanoniczny "Hello world!" w jednym lub dwóch wierszach kodu. Żadna z dodatkowych procedury nie jest wymagana. Niemniej deweloperzy mogą również znaleźć wiele użycia tej funkcji. W instrukcjach najwyższego poziomu można korzystać ze środowiska podobnego do skryptu na potrzeby eksperymentowania podobnego do tego, co zapewnia notesy Jupyter. Instrukcje najwyższego poziomu są doskonałe dla małych programów konsolowych i narzędzi. Azure Functions są idealnym przypadkiem użycia dla instrukcji najwyższego poziomu.
 
 Co najważniejsze, instrukcje najwyższego poziomu nie ograniczają zakresu lub złożoności aplikacji. Te instrukcje mogą uzyskać dostęp do dowolnej klasy .NET lub korzystać z niej. Nie ograniczają one również użycia argumentów wiersza polecenia ani zwracanych wartości. Instrukcje najwyższego poziomu mogą uzyskać dostęp do tablicy ciągów o nazwach argumentów. Jeśli instrukcje najwyższego poziomu zwracają wartość całkowitą, ta wartość zostanie zwróconym kodem zwrotnym z metody z syntezą `Main` . Instrukcje najwyższego poziomu mogą zawierać wyrażenia asynchroniczne. W takim przypadku syntezny punkt wejścia zwraca `Task` lub `Task<int>` .
 

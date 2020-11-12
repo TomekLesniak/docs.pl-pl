@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: e9ab745a60cd9eb646bee57a9a6838c30add77c5
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: ada336ee5fce317315bb5f3974e0366f7bca3985
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495848"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557106"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co nowego w Visual Basic
 
@@ -23,6 +23,8 @@ Ten temat zawiera listę najważniejszych nazw funkcji dla każdej wersji Visual
 
 Visual Basic 16,0/Visual Studio 2019 wersja 16,0 \
 Aby poznać nowe funkcje, zobacz [Visual Basic 16,0](#visual-basic-160).
+
+Najnowszą wersję zestawu SDK platformy .NET można pobrać ze [strony plików do pobrania platformy .NET](https://dotnet.microsoft.com/download).
 
 ## <a name="previous-versions"></a>Poprzednie wersje
 
@@ -289,7 +291,7 @@ End Interface
 
 Teraz kompilator będzie używać normalnych reguł rozpoznawania przeciążenia, aby wybrać najbardziej odpowiednie `GetDetails` do wywołania i można zadeklarować relacje interfejsu w Visual Basic jak te, które przedstawiono w przykładzie.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Co nowego w programie Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
 - [Co nowego w programie Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)

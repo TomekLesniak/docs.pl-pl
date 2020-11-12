@@ -1,13 +1,13 @@
 ---
 title: dotnet — polecenie
-description: Dowiedz się więcej na temat polecenia dotnet (sterownika generycznego dla interfejs wiersza polecenia platformy .NET Core) i jego użycia.
-ms.date: 02/13/2020
-ms.openlocfilehash: 4e182e1b8dff725c479297f7f1587ceaccf2942f
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+description: Dowiedz się więcej na temat polecenia dotnet (sterownika generycznego dla interfejsu wiersza polecenia platformy .NET) i jego użycia.
+ms.date: 11/11/2020
+ms.openlocfilehash: a2b4b026e7c89536a6a7eaf69b31e3f62bf5adfc
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281626"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556830"
 ---
 # <a name="dotnet-command"></a>dotnet — polecenie
 
@@ -15,7 +15,7 @@ ms.locfileid: "93281626"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet` — Sterownik generyczny dla interfejs wiersza polecenia platformy .NET Core.
+`dotnet` — Sterownik generyczny dla interfejsu wiersza polecenia platformy .NET.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -52,13 +52,13 @@ dotnet exec [--additionalprobingpath] [--additional-deps <PATH>]
 
 `dotnet`Polecenie ma dwie funkcje:
 
-- Zawiera polecenia umożliwiające pracę z projektami .NET Core.
+- Udostępnia polecenia do pracy z projektami .NET.
 
   Na przykład [`dotnet build`](dotnet-build.md) kompiluje projekt. Każde polecenie definiuje własne opcje i argumenty. Wszystkie polecenia obsługują `--help` opcję drukowania krótkiej dokumentacji dotyczącej sposobu korzystania z polecenia.
 
-- Uruchamia aplikacje platformy .NET Core.
+- Uruchamia aplikacje platformy .NET.
 
-  Należy określić ścieżkę do pliku aplikacji, `.dll` Aby uruchomić aplikację.  Aby uruchomić aplikację, należy znaleźć i wykonać punkt wejścia, który w przypadku aplikacji konsolowych jest `Main` metodą. Na przykład `dotnet myapp.dll` uruchamia `myapp` aplikację. Zobacz [wdrażanie aplikacji .NET Core](../deploying/index.md) , aby dowiedzieć się więcej na temat opcji wdrażania.
+  Należy określić ścieżkę do pliku aplikacji, `.dll` Aby uruchomić aplikację.  Aby uruchomić aplikację, należy znaleźć i wykonać punkt wejścia, który w przypadku aplikacji konsolowych jest `Main` metodą. Na przykład `dotnet myapp.dll` uruchamia `myapp` aplikację. Zobacz [wdrażanie aplikacji .NET](../deploying/index.md) , aby dowiedzieć się więcej na temat opcji wdrażania.
 
 ## <a name="options"></a>Opcje
 
@@ -70,19 +70,19 @@ Poniższe opcje są odpowiednie dla `dotnet` siebie. Na przykład `dotnet --info
 
 - **`--info`**
 
-  Drukuje szczegółowe informacje na temat instalacji programu .NET Core i środowiska maszynowego, takiego jak bieżący system operacyjny, i zatwierdzania SHA dla wersji .NET Core.
+  Wyświetla szczegółowe informacje na temat instalacji programu .NET i środowiska maszynowego, takiego jak bieżący system operacyjny, i zatwierdzania SHA programu .NET w wersji.
 
 - **`--version`**
 
-  Drukuje używaną wersję zestaw .NET Core SDK.
+  Drukuje wersję zestawu SDK platformy .NET w użyciu.
 
 - **`--list-runtimes`**
 
-  Drukuje listę zainstalowanych środowiska uruchomieniowego platformy .NET Core. Wersja x86 zestawu SDK zawiera tylko środowiska uruchomieniowe x86, a wersja x64 zestawu SDK zawiera tylko środowiska uruchomieniowe x64.
+  Drukuje listę zainstalowanych środowisk uruchomieniowych platformy .NET. Wersja x86 zestawu SDK zawiera tylko środowiska uruchomieniowe x86, a wersja x64 zestawu SDK zawiera tylko środowiska uruchomieniowe x64.
 
 - **`--list-sdks`**
 
-  Drukuje listę zainstalowanych zestawów SDK platformy .NET Core.
+  Drukuje listę zainstalowanych zestawów SDK platformy .NET.
 
 - **`-h|--help`**
 
@@ -122,11 +122,11 @@ Poniższe opcje są dostępne podczas `dotnet` uruchamiania aplikacji. Na przyk�
 
 - **`--depsfile <PATH_TO_DEPSFILE>`**
 
-  Ścieżka do *deps.js* pliku. *deps.jsw* pliku to plik konfiguracji, który zawiera informacje o zależnościach niezbędnych do uruchomienia aplikacji. Ten plik jest generowany przez zestaw .NET Core SDK.
+  Ścieżka do *deps.js* pliku. *deps.jsw* pliku to plik konfiguracji, który zawiera informacje o zależnościach niezbędnych do uruchomienia aplikacji. Ten plik jest generowany przez zestaw SDK dla platformy .NET.
 
 - **`--runtimeconfig`**
 
-  Ścieżka do *runtimeconfig.js* pliku. *runtimeconfig.jsw* pliku to plik konfiguracji, który zawiera ustawienia czasu wykonywania. Aby uzyskać więcej informacji, zobacz [Ustawienia konfiguracji środowiska uruchomieniowego .NET Core](../run-time-config/index.md#runtimeconfigjson).
+  Ścieżka do *runtimeconfig.js* pliku. *runtimeconfig.jsw* pliku to plik konfiguracji, który zawiera ustawienia czasu wykonywania. Aby uzyskać więcej informacji, zobacz [Ustawienia konfiguracji środowiska uruchomieniowego .NET](../run-time-config/index.md#runtimeconfigjson).
 
 - **`--roll-forward <SETTING>`****Dostępne począwszy od zestaw .NET Core SDK 3,0.**
 
@@ -157,7 +157,7 @@ Poniższe opcje są dostępne podczas `dotnet` uruchamiania aplikacji. Na przyk�
 
 - **`--fx-version <VERSION>`**
 
-  Wersja środowiska uruchomieniowego platformy .NET Core do użycia w celu uruchomienia aplikacji.
+  Wersja środowiska uruchomieniowego platformy .NET do użycia w celu uruchomienia aplikacji.
 
   Ta opcja zastępuje wersję pierwszego odniesienia struktury w `.runtimeconfig.json` pliku aplikacji. Oznacza to, że działa tylko zgodnie z oczekiwaniami, jeśli istnieje tylko jedno odwołanie do struktury. Jeśli aplikacja ma więcej niż jedno odwołanie do platformy, użycie tej opcji może spowodować błędy.
 
@@ -165,9 +165,9 @@ Poniższe opcje są dostępne podczas `dotnet` uruchamiania aplikacji. Na przyk�
 
 ### <a name="general"></a>Ogólne
 
-| Polecenie                                       | Funkcja                                                            |
+| Polecenie                                       | Function                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
-| [dotnet build](dotnet-build.md)               | Kompiluje aplikację platformy .NET Core.                                     |
+| [dotnet build](dotnet-build.md)               | Kompiluje aplikację platformy .NET.                                     |
 | [dotnet build-server](dotnet-build-server.md) | Współdziała z serwerami uruchomionymi przez kompilację.                          |
 | [dotnet clean](dotnet-clean.md)               | Czyste dane wyjściowe kompilacji.                                                |
 | [dotnet help](dotnet-help.md)                 | Przedstawia bardziej szczegółową dokumentację dla polecenia w trybie online.           |
@@ -184,7 +184,7 @@ Poniższe opcje są dostępne podczas `dotnet` uruchamiania aplikacji. Na przyk�
 
 ### <a name="project-references"></a>Odwołania projektu
 
-Polecenie | Funkcja
+Polecenie | Function
 --- | ---
 [dotnet add reference](dotnet-add-reference.md) | Dodaje odwołanie do projektu.
 [dotnet list reference](dotnet-list-reference.md) | Wyświetla listę odwołań do projektu.
@@ -192,14 +192,14 @@ Polecenie | Funkcja
 
 ### <a name="nuget-packages"></a>Pakiety NuGet
 
-Polecenie | Funkcja
+Polecenie | Function
 --- | ---
 [dotnet add package](dotnet-add-package.md) | Dodaje pakiet NuGet.
 [dotnet remove package](dotnet-remove-package.md) | Usuwa pakiet NuGet.
 
 ### <a name="nuget-commands"></a>Polecenia NuGet
 
-Polecenie | Funkcja
+Polecenie | Function
 --- | ---
 [dotnet nuget delete](dotnet-nuget-delete.md) | Usuwa pakiet z serwera lub go wystawia.
 [dotnet nuget push](dotnet-nuget-push.md) | Wypchnij pakiet na serwer i opublikuje go.
@@ -213,20 +213,21 @@ Polecenie | Funkcja
 
 ### <a name="global-tool-path-and-local-tools-commands"></a>Globalne, ścieżki narzędziowe i polecenia narzędzi lokalnych
 
-Narzędzia są aplikacjami konsolowymi, które są instalowane z pakietów NuGet i są wywoływane z wiersza polecenia. Narzędzia można pisać samodzielnie lub instalować Narzędzia zapisane przez inne firmy. Narzędzia są również nazywane narzędziami globalnymi, narzędziami ścieżki narzędzi i narzędziami lokalnymi. Aby uzyskać więcej informacji, zobacz [Narzędzia platformy .NET Core — Omówienie](global-tools.md). Narzędzia globalne i ścieżki narzędzi są dostępne począwszy od zestaw .NET Core SDK 2,1. Narzędzia lokalne są dostępne począwszy od zestaw .NET Core SDK 3,0.
+Narzędzia są aplikacjami konsolowymi, które są instalowane z pakietów NuGet i są wywoływane z wiersza polecenia. Narzędzia można pisać samodzielnie lub instalować Narzędzia zapisane przez inne firmy. Narzędzia są również nazywane narzędziami globalnymi, narzędziami ścieżki narzędzi i narzędziami lokalnymi. Aby uzyskać więcej informacji, zobacz [Omówienie narzędzi platformy .NET](global-tools.md). Narzędzia globalne i ścieżki narzędzi są dostępne począwszy od zestaw .NET Core SDK 2,1. Narzędzia lokalne są dostępne począwszy od zestaw .NET Core SDK 3,0.
 
-Polecenie | Funkcja
+Polecenie | Function
 --- | ---
 [dotnet tool install](dotnet-tool-install.md) | Instaluje narzędzie na komputerze.
 [dotnet tool list](dotnet-tool-list.md) | Wyświetla listę wszystkich globalnych narzędzi, ścieżek narzędziowych lub lokalnych zainstalowanych obecnie na komputerze.
+[Wyszukiwanie narzędzia dotnet](dotnet-tool-list.md) | Wyszukuje NuGet.org dla narzędzi, które mają określony termin wyszukiwania w swojej nazwie lub metadanych.
 [dotnet tool uninstall](dotnet-tool-uninstall.md) | Odinstalowuje narzędzie z komputera.
 [dotnet tool update](dotnet-tool-update.md) | Aktualizuje narzędzie zainstalowane na komputerze.
 
 ### <a name="additional-tools"></a>Dodatkowe narzędzia
 
-Począwszy od zestaw .NET Core SDK 2.1.300, wiele narzędzi, które były dostępne tylko dla każdego projektu, przy użyciu, `DotnetCliToolReference` jest teraz dostępne jako część zestaw .NET Core SDK. Te narzędzia są wymienione w poniższej tabeli:
+Począwszy od zestaw .NET Core SDK 2.1.300, wiele narzędzi, które były dostępne tylko dla każdego projektu, przy użyciu, `DotnetCliToolReference` jest teraz dostępne jako część zestawu .NET SDK. Te narzędzia są wymienione w poniższej tabeli:
 
-| Narzędzie                                              | Funkcja                                                     |
+| Narzędzie                                              | Function                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
 | dev-certs                                         | Tworzy i zarządza certyfikatami deweloperskimi.                |
 | [bieżąco](/ef/core/miscellaneous/cli/dotnet)           | Entity Framework Core narzędzia wiersza polecenia.                    |
@@ -260,7 +261,7 @@ dotnet myapp.dll
 
 - `DOTNET_ROOT`, `DOTNET_ROOT(x86)`
 
-  Określa lokalizację środowiska uruchomieniowego programu .NET Core, jeśli nie są one zainstalowane w domyślnej lokalizacji. Domyślna lokalizacja w systemie Windows to `C:\Program Files\dotnet` . Domyślną lokalizacją w systemie Linux i macOS jest `/usr/share/dotnet` . Ta zmienna środowiskowa jest używana tylko w przypadku uruchamiania aplikacji za pośrednictwem wygenerowanych plików wykonywalnych (apphosts). `DOTNET_ROOT(x86)` jest używany zamiast w przypadku uruchamiania 32-bitowego pliku wykonywalnego w 64-bitowym systemie operacyjnym.
+  Określa lokalizację środowiska uruchomieniowego platformy .NET, jeśli nie są one zainstalowane w domyślnej lokalizacji. Domyślna lokalizacja w systemie Windows to `C:\Program Files\dotnet` . Domyślną lokalizacją w systemie Linux i macOS jest `/usr/share/dotnet` . Ta zmienna środowiskowa jest używana tylko w przypadku uruchamiania aplikacji za pośrednictwem wygenerowanych plików wykonywalnych (apphosts). `DOTNET_ROOT(x86)` jest używany zamiast w przypadku uruchamiania 32-bitowego pliku wykonywalnego w 64-bitowym systemie operacyjnym.
 
 - `NUGET_PACKAGES`
 
@@ -272,15 +273,15 @@ dotnet myapp.dll
 
 - `DOTNET_NOLOGO`
 
-  Określa, czy podczas pierwszego uruchomienia są wyświetlane komunikaty telemetryczne programu .NET Core i telemetrii. Ustaw, aby `true` wyciszyć te komunikaty (wartości `true` , `1` lub `yes` zaakceptować) lub ustawić na wartość `false` Zezwalaj (wartości `false` , `0` lub `no` zaakceptować). Jeśli nie zostanie ustawiona, wartość domyślna to, `false` a komunikaty będą wyświetlane po pierwszym uruchomieniu. Ta flaga nie ma wpływu na dane telemetryczne (Zobacz, `DOTNET_CLI_TELEMETRY_OPTOUT` Aby zrezygnować z wysyłania danych telemetrycznych).
+  Określa, czy podczas pierwszego uruchomienia są wyświetlane komunikaty programu .NET Welcome i telemetrii. Ustaw, aby `true` wyciszyć te komunikaty (wartości `true` , `1` lub `yes` zaakceptować) lub ustawić na wartość `false` Zezwalaj (wartości `false` , `0` lub `no` zaakceptować). Jeśli nie zostanie ustawiona, wartość domyślna to, `false` a komunikaty będą wyświetlane po pierwszym uruchomieniu. Ta flaga nie ma wpływu na dane telemetryczne (Zobacz, `DOTNET_CLI_TELEMETRY_OPTOUT` Aby zrezygnować z wysyłania danych telemetrycznych).
 
 - `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-  Określa, czy dane dotyczące użycia narzędzi .NET Core są zbierane i wysyłane do firmy Microsoft. Ustaw `true` , aby zrezygnować z funkcji telemetrii (wartości `true` , `1` lub `yes` zaakceptować). W przeciwnym razie ustaw opcję, aby `false` można było wybrać funkcje telemetrii (wartości `false` , `0` lub `no` zaakceptowane). Jeśli nie zostanie ustawiona, wartość domyślna to `false` i aktywna funkcja telemetrii.
+  Określa, czy dane dotyczące użycia narzędzi .NET są zbierane i wysyłane do firmy Microsoft. Ustaw `true` , aby zrezygnować z funkcji telemetrii (wartości `true` , `1` lub `yes` zaakceptować). W przeciwnym razie ustaw opcję, aby `false` można było wybrać funkcje telemetrii (wartości `false` , `0` lub `no` zaakceptowane). Jeśli nie zostanie ustawiona, wartość domyślna to `false` i aktywna funkcja telemetrii.
 
 - `DOTNET_MULTILEVEL_LOOKUP`
 
-  Określa, czy środowisko uruchomieniowe programu .NET Core, udostępnione środowisko lub zestaw SDK są rozpoznawane z lokalizacji globalnej. Jeśli nie zostanie ustawiona, wartość domyślna to 1 (logiczna `true` ). Ustawienie wartości 0 (logiczne `false` ) nie jest rozpoznawane z lokalizacji globalnej i ma wyizolowane instalacje .NET Core. Aby uzyskać więcej informacji o wyszukiwaniu wielu poziomów, zobacz [SharedFX wyszukiwanie na wielu poziomach](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+  Określa, czy środowisko uruchomieniowe platformy .NET, udostępnione środowisko lub zestaw SDK są rozpoznawane z lokalizacji globalnej. Jeśli nie zostanie ustawiona, wartość domyślna to 1 (logiczna `true` ). Ustaw wartość 0 (logiczne `false` ), aby nie rozwiązany z lokalizacji globalnej i mieć izolowane instalacje platformy .NET. Aby uzyskać więcej informacji o wyszukiwaniu wielu poziomów, zobacz [SharedFX wyszukiwanie na wielu poziomach](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
 - `DOTNET_ROLL_FORWARD`**Dostępne począwszy od platformy .NET Core 3. x.**
 
@@ -288,7 +289,7 @@ dotnet myapp.dll
 
 - `DOTNET_ROLL_FORWARD_TO_PRERELEASE`**Dostępne począwszy od platformy .NET Core 3. x.**
 
-  Jeśli jest ustawiona na `1` (Enabled), umożliwia przewracanie do wersji wstępnej z wersji Release. Domyślnie ( `0` -Disabled), gdy wymagana jest wydana wersja środowiska uruchomieniowego programu .NET Core, przewinięcie do przodu spowoduje uwzględnienie tylko zainstalowanych wersji.
+  Jeśli jest ustawiona na `1` (Enabled), umożliwia przewracanie do wersji wstępnej z wersji Release. Domyślnie ( `0` -Disabled), gdy wymagana jest wydana wersja środowiska uruchomieniowego platformy .NET, przewinięcie do przodu spowoduje uwzględnienie tylko zainstalowanych wersji.
 
   Aby uzyskać więcej informacji, zobacz [przewinięcie do przodu](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward).
 
@@ -300,7 +301,7 @@ dotnet myapp.dll
 
 - `DOTNET_CLI_UI_LANGUAGE`
 
-  Ustawia język interfejsu użytkownika CLI przy użyciu wartości ustawień regionalnych, takich jak `en-us` . Obsługiwane wartości są takie same jak w przypadku programu Visual Studio. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą zmiany języka Instalatora w [dokumentacji instalacyjnej programu Visual Studio](/visualstudio/install/install-visual-studio?view=vs-2019). Reguły Menedżera zasobów platformy .NET mają zastosowanie, więc nie trzeba wybierać dokładnego dopasowania, &mdash; które można również wybrać w `CultureInfo` drzewie. Jeśli na przykład ustawisz ją na `fr-CA` , interfejs wiersza polecenia znajdzie i użyje `fr` tłumaczeń. Jeśli ustawisz go na język, który nie jest obsługiwany, interfejs wiersza polecenia powróci do języka angielskiego.
+  Ustawia język interfejsu użytkownika CLI przy użyciu wartości ustawień regionalnych, takich jak `en-us` . Obsługiwane wartości są takie same jak w przypadku programu Visual Studio. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą zmiany języka Instalatora w [dokumentacji instalacyjnej programu Visual Studio](/visualstudio/install/install-visual-studio). Reguły Menedżera zasobów platformy .NET mają zastosowanie, więc nie trzeba wybierać dokładnego dopasowania, &mdash; które można również wybrać w `CultureInfo` drzewie. Jeśli na przykład ustawisz ją na `fr-CA` , interfejs wiersza polecenia znajdzie i użyje `fr` tłumaczeń. Jeśli ustawisz go na język, który nie jest obsługiwany, interfejs wiersza polecenia powróci do języka angielskiego.
 
 - `DOTNET_DISABLE_GUI_ERRORS`
 
@@ -342,7 +343,7 @@ dotnet myapp.dll
 
   Typowym sposobem uzyskania szczegółowych informacji śledzenia dotyczących uruchamiania aplikacji jest ustawienie `COREHOST_TRACE=1` i `COREHOST_TRACEFILE=host_trace.txt` uruchomienie aplikacji. Nowy plik `host_trace.txt` zostanie utworzony w bieżącym katalogu ze szczegółowymi informacjami.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Pliki konfiguracji środowiska uruchomieniowego](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
-- [Ustawienia konfiguracji środowiska uruchomieniowego .NET Core](../run-time-config/index.md)
+- [Ustawienia konfiguracji środowiska uruchomieniowego .NET](../run-time-config/index.md)

@@ -4,12 +4,12 @@ description: Ten artykuł zawiera podsumowanie nowych funkcji i ulepszeń znalez
 ms.custom: updateeachrelease
 ms.date: 04/12/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: 419988901923b890aaf0a540d155775214e62c52
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 36bd1f9a0dad06d11110b35e9a66f22140cee5ca
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282108"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557275"
 ---
 # <a name="whats-new-in-net-standard"></a>Co nowego na platformie .NET Standard
 
@@ -91,7 +91,8 @@ dotnet new classlib -lang vb
 
 ---
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [.NET Standard](../net-standard.md)
 - [Wprowadzenie .NET Standard](https://devblogs.microsoft.com/dotnet/introducing-net-standard/)
+- [Pobierz zestaw .NET SDK](https://dotnet.microsoft.com/download)

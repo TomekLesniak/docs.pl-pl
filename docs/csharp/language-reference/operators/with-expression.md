@@ -1,18 +1,18 @@
 ---
 title: with Expression-C# — odwołanie
 description: Dowiedz się więcej na temat wyrażenia with, które wykonuje nieniszczącą mutację rekordów C#
-ms.date: 11/10/2020
+ms.date: 11/12/2020
 f1_keywords:
 - with_CSharpKeyword
 helpviewer_keywords:
 - with expression [C#]
 - with operator [C#]
-ms.openlocfilehash: 7948df3c6260e297cdb2fa380f1790a55e0abb58
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 8412dfe8663703d3b201fe98b5f4752da1b344cf
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445819"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556715"
 ---
 # <a name="with-expression-c-reference"></a>with — wyrażenie (odwołanie w C#)
 
@@ -21,6 +21,10 @@ W języku C# 9,0 i nowszych, `with` wyrażenie tworzy kopię operandu [rekordu](
 :::code language="csharp" source="snippets/with-expression/BasicExample.cs" :::
 
 Jak pokazano w powyższym przykładzie, użyj składni [inicjatora obiektów](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) , aby określić, które elementy członkowskie modyfikować i ich nowe wartości. W `with` wyrażeniu argument operacji po lewej stronie musi być typem rekordu.
+
+Wynik `with` wyrażenia ma ten sam typ środowiska uruchomieniowego co operand wyrażenia, jak pokazano w poniższym przykładzie:
+
+:::code language="csharp" source="snippets/with-expression/InheritanceExample.cs" :::
 
 W przypadku elementu członkowskiego typu odwołania tylko odwołanie do wystąpienia jest kopiowane, gdy rekord jest kopiowany. Zarówno kopia, jak i rekord oryginalny mają dostęp do tego samego wystąpienia typu odwołania. Poniższy przykład ilustruje takie zachowanie:
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: a3a753ccea45193c57f31453d7318c14f4898864
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 51bf44af5ec3478f2b2557b047df270c0c22990d
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247712"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556845"
 ---
 # <a name="lambda-expressions-c-reference"></a>Wyrażenia lambda (odwołanie w C#)
 
@@ -56,7 +56,7 @@ Wyrażenie lambda z wyrażeniem po prawej stronie `=>` operatora jest nazywane *
 (input-parameters) => expression
 ```
 
-Treść wyrażenia lambda może składać się z wywołania metody. Jeśli jednak tworzysz [drzewa wyrażeń](../../programming-guide/concepts/expression-trees/index.md) , które są oceniane poza kontekstem środowiska uruchomieniowego języka wspólnego .NET, na przykład w SQL Server, nie należy używać wywołań metod w wyrażeniach lambda. Te metody nie będą zrozumiałe poza kontekstem środowiska uruchomieniowego języka wspólnego platformy .NET.
+Treść wyrażenia lambda może składać się z wywołania metody. Jednakże w przypadku tworzenia [drzew wyrażeń](../../programming-guide/concepts/expression-trees/index.md) , które są oceniane poza kontekstem środowiska uruchomieniowego języka wspólnego (CLR) platformy .NET, takich jak w SQL Server, nie należy używać wywołań metod w wyrażeniach lambda. Metody nie będą miały znaczenia poza kontekstem środowiska uruchomieniowego języka wspólnego (CLR) platformy .NET.
 
 ## <a name="statement-lambdas"></a>Instrukcja lambda
 

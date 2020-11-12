@@ -4,16 +4,16 @@ description: Usługa Azure Functions zapewnia bezserwerowe funkcje w wielu języ
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/06/2020
-ms.openlocfilehash: 7625b2a0dafb90dc1bf2fb7fe680d53b20764c09
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 08e1aaecdee753dc25cca0d6356caaafae1ad510
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91171809"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557119"
 ---
 # <a name="azure-functions"></a>Azure Functions
 
-Usługa Azure Functions zapewnia środowisko obliczeniowe bezserwerowe. Funkcja jest wywoływana przez *wyzwalacz* (taki jak dostęp do punktu końcowego http lub Timer) i wykonuje blok kodu lub logiki biznesowej. Funkcje obsługują także wyspecjalizowane *powiązania* , które łączą się z zasobami, takimi jak magazyn i kolejki.
+Azure Functions zapewnić środowisko obliczeniowe bezserwerowe. Funkcja jest wywoływana przez *wyzwalacz* (taki jak dostęp do punktu końcowego http lub Timer) i wykonuje blok kodu lub logiki biznesowej. Funkcje obsługują także wyspecjalizowane *powiązania* , które łączą się z zasobami, takimi jak magazyn i kolejki.
 
 ![Logo usługi Azure Functions](./media/azure-functions-logo.png)
 
@@ -35,7 +35,7 @@ Poniższe języki są obsługiwane ogólnie dostępnym.
 |**TypeScript**|Node 10 & 12 (za pośrednictwem języka JavaScript)|
 |**Program PowerShell**|Program PowerShell Core 6|
 
-Aby uzyskać więcej informacji, zobacz [obsługiwane języki](/azure/azure-functions/supported-languages).
+Aby uzyskać więcej informacji, zobacz listę [obsługiwanych języków](/azure/azure-functions/supported-languages).
 
 ## <a name="app-service-plans"></a>Plany usługi App Service
 

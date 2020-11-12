@@ -1,17 +1,17 @@
 ---
-title: Trwałe funkcje platformy Azure — aplikacje bezserwerowe
-description: Trwałe funkcje platformy Azure zwiększają środowisko uruchomieniowe Azure Functions, aby umożliwić stanowe przepływy pracy w kodzie.
+title: Trwałe Azure Functions — aplikacje bezserwerowe
+description: Trwałe Azure Functions Zwiększ Azure Functions środowiska uruchomieniowego, aby włączyć stanowe przepływy pracy w kodzie.
 author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
-ms.openlocfilehash: 1498b5a19bc92b7db16f7422a35ac3afffb82b60
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: c3ee628b5c2239cd13395fda7714b38b06efa058
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91171796"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557158"
 ---
-# <a name="durable-azure-functions"></a>Trwałe funkcje platformy Azure
+# <a name="durable-azure-functions"></a>Trwałe Azure Functions
 
 Podczas tworzenia aplikacji bezserwerowych z Azure Functions operacje są zwykle przeznaczone do uruchamiania w sposób bezstanowy. Przyczyną tego wyboru jest to, że w miarę skalowania platformy trudno jest wiedzieć, na których serwerach jest uruchomiony kod. Trudno jest również wiedzieć, ile wystąpień jest aktywnych w danym punkcie. Istnieją jednak klasy aplikacji, które wymagają znanego stanu procesu. Weź pod uwagę proces przesyłania zamówienia do sklepu online. Operacja wyewidencjonowywania może być przepływem pracy, który składa się z wielu operacji, które muszą znać stan procesu. Takie informacje mogą obejmować spis produktów, jeśli klient ma jakiekolwiek środki na swoje konto, a także wyniki przetwarzania karty kredytowej. Te operacje mogą łatwo być własnymi wewnętrznymi przepływami pracy lub nawet usługami z systemów innych firm.
 
@@ -96,7 +96,7 @@ public static bool CheckAndReserveInventory([ActivityTrigger] DurableActivityCon
 
 ## <a name="recommended-resources"></a>Zalecane zasoby
 
-- [Trwałe funkcje](/azure/azure-functions/durable-functions-overview)
+- [Durable Functions](/azure/azure-functions/durable-functions-overview)
 - [Powiązania dla Durable Functions](/azure/azure-functions/durable-functions-bindings)
 - [Zarządzanie wystąpieniami w Durable Functions](/azure/azure-functions/durable-functions-instance-management)
 

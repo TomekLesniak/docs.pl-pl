@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: da0e92f394507a37b0b6c163b41a575abc1c1a2b
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: c99f7c0778b1160c926d5ed62a6a2d295f5c50c5
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441112"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557249"
 ---
 # <a name="whats-new-in-net-framework"></a>Co nowego w .NET Framework
 
@@ -104,7 +104,7 @@ Punkty końcowe kondycji są szeroko używane przez narzędzia aranżacji do zar
 
 Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania informacji o kondycji usługi WCF:
 
-- Za poorednictwem kodu. Na przykład:
+- Za poorednictwem kodu. Przykład:
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
@@ -126,7 +126,7 @@ Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania in
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- Przy użyciu pliku konfiguracji. Na przykład:
+- Przy użyciu pliku konfiguracji. Przykład:
 
   ```xml
   <behaviors>
@@ -138,7 +138,7 @@ Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania in
   </behaviors>
   ```
 
-Za pomocą parametrów zapytania, takich jak,,,) można zbadać stan kondycji usługi `OnServiceFailure` `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` , a dla każdego parametru zapytania można określić kod odpowiedzi HTTP. Jeśli kod odpowiedzi HTTP zostanie pominięty dla parametru zapytania, domyślnie używany jest kod odpowiedzi HTTP 503. Na przykład:
+Za pomocą parametrów zapytania, takich jak,,,) można zbadać stan kondycji usługi `OnServiceFailure` `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` , a dla każdego parametru zapytania można określić kod odpowiedzi HTTP. Jeśli kod odpowiedzi HTTP zostanie pominięty dla parametru zapytania, domyślnie używany jest kod odpowiedzi HTTP 503. Przykład:
 
 - OnServiceFailure: `https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -255,7 +255,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-<xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType>Metody i <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> pozwalają generować nowe <xref:System.Security.Cryptography.DSA> lub <xref:System.Security.Cryptography.RSA> klucze o określonym rozmiarze klucza. Na przykład:
+<xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType>Metody i <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> pozwalają generować nowe <xref:System.Security.Cryptography.DSA> lub <xref:System.Security.Cryptography.RSA> klucze o określonym rozmiarze klucza. Przykład:
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -437,7 +437,7 @@ Możesz dodać SameSite dla <xref:System.Web.Security.FormsAuthentication> <xref
 
 <a name="net472"></a>
 
-#### <a name="networking"></a>Sieć
+#### <a name="networking"></a>Networking
 
 **Implementacja właściwości HttpClientHandler**
 
@@ -470,7 +470,7 @@ Program NET Framework 4.7.2 dodaje obsługę dla Always Encrypted opartych na en
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, która zapewnia parametry zaświadczania używane przez SQL Server do uzyskiwania informacji wymaganych do wykonania określonego protokołu zaświadczania.
 
-Następnie plik konfiguracji aplikacji określa konkretną implementację klasy abstrakcyjnej <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> , która udostępnia funkcje dostawcy enklawy. Na przykład:
+Następnie plik konfiguracji aplikacji określa konkretną implementację klasy abstrakcyjnej <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> , która udostępnia funkcje dostawcy enklawy. Przykład:
 
 ```xml
 <configuration>
@@ -633,7 +633,7 @@ Zmiany w wyrzucaniu elementów bezużytecznych (GC) w .NET Framework 4.7.1 popra
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Sieć
+#### <a name="networking"></a>Networking
 
 **Obsługa algorytmu SHA-2 dla komunikatu. algorytm**
 
@@ -653,7 +653,7 @@ ASP.NET przetwarza żądania we wstępnie zdefiniowanym potoku zawierającym 23 
 
 **Opcje wyznaczania wartości skrótu SHA-2 dla poświadczeń uwierzytelniania ASP.NET Forms**
 
-W .NET Framework 4,7 i wcześniejszych wersjach ASP.NET zezwolenie deweloperom na przechowywanie poświadczeń użytkownika z użyciem skrótów haseł w plikach konfiguracji przy użyciu algorytmu MD5 lub SHA1. Począwszy od .NET Framework 4.7.1, ASP.NET obsługuje również nowe bezpieczne opcje skrótu SHA-2, takie jak SHA256, SHA384 i SHA512. Algorytm SHA1 pozostaje domyślny, a w pliku konfiguracyjnym sieci Web można zdefiniować niedomyślnego algorytmu wyznaczania wartości skrótu. Na przykład:
+W .NET Framework 4,7 i wcześniejszych wersjach ASP.NET zezwolenie deweloperom na przechowywanie poświadczeń użytkownika z użyciem skrótów haseł w plikach konfiguracji przy użyciu algorytmu MD5 lub SHA1. Począwszy od .NET Framework 4.7.1, ASP.NET obsługuje również nowe bezpieczne opcje skrótu SHA-2, takie jak SHA256, SHA384 i SHA512. Algorytm SHA1 pozostaje domyślny, a w pliku konfiguracyjnym sieci Web można zdefiniować niedomyślnego algorytmu wyznaczania wartości skrótu. Przykład:
 
 ```xml
 <system.web>
@@ -702,7 +702,7 @@ W .NET Framework 4,7 <xref:System.Runtime.Serialization.Json.DataContractJsonSer
 
 <a name="net47"></a>
 
-#### <a name="networking"></a>Sieć
+#### <a name="networking"></a>Networking
 
 .NET Framework 4,7 dodaje następującą funkcję powiązaną z siecią:
 
@@ -968,7 +968,7 @@ Aby rozwiązać ten wpływ na .NET Framework 4.6.2, do klasy bazowej dodano nast
 
 Biblioteka kryptografii systemu Windows (CNG) dodaliśmy obsługę przechowywania utrwalonych kluczy symetrycznych i używania kluczy symetrycznych przechowywanych sprzętowo, a .NET Framework 4.6.2, że deweloperzy mogą korzystać z tej funkcji.  Ponieważ pojęcie nazw kluczy i dostawców kluczy jest specyficzne dla implementacji, użycie tej funkcji wymaga użycia konstruktora konkretnych typów implementacji zamiast preferowanego podejścia do fabryki (na przykład wywoływanie `Aes.Create` ).
 
-Obsługa szyfrowania symetrycznego klucza istnieje dla algorytmów AES ( <xref:System.Security.Cryptography.AesCng> ) i 3DES ( <xref:System.Security.Cryptography.TripleDESCng> ). Na przykład:
+Obsługa szyfrowania symetrycznego klucza istnieje dla algorytmów AES ( <xref:System.Security.Cryptography.AesCng> ) i 3DES ( <xref:System.Security.Cryptography.TripleDESCng> ). Przykład:
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1346,7 +1346,7 @@ We wcześniejszych wersjach programu WPF Słowniki niestandardowe nie rozpoznaj�
 > [!NOTE]
 > Te nowe formaty plików nie są bezpośrednio obsługiwane przez interfejsy API sprawdzania pisowni WPF, a Słowniki niestandardowe dostarczane do WPF w aplikacjach powinny nadal używać plików. lex.
 
-**Samples**
+**Przykłady**
 
 Istnieje kilka przykładów WPF w repozytorium GitHub [Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples) . Pomóż nam ulepszyć nasze przykłady, wysyłając do nas żądanie ściągnięcia lub otwierając [problem usługi GitHub](https://github.com/Microsoft/WPF-Samples/issues).
 
@@ -1971,7 +1971,7 @@ Optymalizacja z przewodnikiem zarządzanym profilem (Mpgo.exe) umożliwia skróc
 
 <a name="web"></a>
 
-### <a name="web"></a>Internet
+### <a name="web"></a>sieć Web
 
 ASP.NET 4,5 i 4.5.1 Dodawanie powiązania modelu dla formularzy sieci Web, obsługi protokołu WebSocket, obsługi asynchronicznych, ulepszeń wydajności i wielu innych funkcji. Więcej informacji można znaleźć w następujących zasobach:
 
@@ -2134,3 +2134,4 @@ Przenośna biblioteka klas w programie Visual Studio 2012 (i nowszych wersjach) 
 - [Co nowego w programie Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Co nowego w języku C++ w programie Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)
+- [Pobierz zestaw .NET SDK](https://dotnet.microsoft.com/download)

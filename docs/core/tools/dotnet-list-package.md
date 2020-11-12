@@ -1,13 +1,13 @@
 ---
 title: polecenie pakietu list dotnet
 description: Polecenie "pakiet listy dotnet" udostępnia wygodną opcję wyświetlania odwołań do pakietów dla projektu lub rozwiązania.
-ms.date: 02/14/2020
-ms.openlocfilehash: 7157e56860936d10aa322854a589ae89e2bc0826
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.date: 11/11/2020
+ms.openlocfilehash: ecb83e5485c9fb49a454a35091e1a7b753b1f291
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164757"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556891"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
@@ -15,7 +15,7 @@ ms.locfileid: "87164757"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet list package`-Wyświetla listę odwołań do pakietu dla projektu lub rozwiązania.
+`dotnet list package` -Wyświetla listę odwołań do pakietu dla projektu lub rozwiązania.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -24,7 +24,7 @@ dotnet list [<PROJECT>|<SOLUTION>] package [--config <SOURCE>]
     [--deprecated]
     [--framework <FRAMEWORK>] [--highest-minor] [--highest-patch]
     [--include-prerelease] [--include-transitive] [--interactive]
-    [--outdated] [--source <SOURCE>]
+    [--outdated] [--source <SOURCE>] [-v|--verbosity <LEVEL>]
 
 dotnet list package -h|--help
 ```
@@ -85,7 +85,7 @@ Plik projektu lub rozwiązania do działania. Jeśli nie zostanie określony, po
 
 - **`--framework <FRAMEWORK>`**
 
-  Wyświetla tylko pakiety mające zastosowanie do określonej [platformy docelowej](../../standard/frameworks.md). Aby określić wiele struktur, Powtarzaj tę opcję wiele razy. Przykład: `--framework netcoreapp2.2 --framework netstandard2.0`.
+  Wyświetla tylko pakiety mające zastosowanie do określonej [platformy docelowej](../../standard/frameworks.md). Aby określić wiele struktur, Powtarzaj tę opcję wiele razy. Na przykład: `--framework netcoreapp2.2 --framework netstandard2.0`.
 
 - **`-h|--help`**
 
@@ -118,6 +118,10 @@ Plik projektu lub rozwiązania do działania. Jeśli nie zostanie określony, po
 - **`-s|--source <SOURCE>`**
 
   Źródła NuGet do użycia podczas wyszukiwania nowszych pakietów. Wymaga `--outdated` opcji lub `--deprecated` .
+
+- **`-v|--verbosity <LEVEL>`**
+
+  Ustawia poziom szczegółowości programu MSBuild. Dozwolone wartości to `q[uiet]` , `m[inimal]` , `n[ormal]` , `d[etailed]` i `diag[nostic]` . Wartość domyślna to `minimal`.
 
 ## <a name="examples"></a>Przykłady
 
