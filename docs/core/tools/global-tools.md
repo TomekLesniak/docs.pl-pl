@@ -1,21 +1,21 @@
 ---
-title: " Narzędzia programu .NET Core"
-description: Jak instalować, używać, aktualizować i usuwać narzędzia .NET Core. Obejmuje narzędzia globalne, narzędzia ścieżki narzędzi i narzędzia lokalne.
+title: Narzędzia platformy .NET
+description: Jak instalować, używać, aktualizować i usuwać narzędzia platformy .NET. Obejmuje narzędzia globalne, narzędzia ścieżki narzędzi i narzędzia lokalne.
 author: KathleenDollard
 ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 08277ed791036201d1dfa30c21799db1c21a924e
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 3669ed17d58542aab0435ccea22700c82ba8ea26
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598125"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556904"
 ---
-# <a name="how-to-manage-net-core-tools"></a>Jak zarządzać narzędziami programu .NET Core
+# <a name="how-to-manage-net-tools"></a>Jak zarządzać narzędziami .NET
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 2,1 SDK i nowszych wersjach
 
-Narzędzie .NET Core jest specjalnym pakietem NuGet, który zawiera aplikację konsolową. Narzędzie można zainstalować na maszynie w następujący sposób:
+Narzędzie .NET jest specjalnym pakietem NuGet, który zawiera aplikację konsolową. Narzędzie można zainstalować na maszynie w następujący sposób:
 
 * Jako narzędzie globalne.
 
@@ -29,24 +29,25 @@ Narzędzie .NET Core jest specjalnym pakietem NuGet, który zawiera aplikację k
 
   Pliki binarne narzędzia są instalowane w katalogu domyślnym. Należy wywołać narzędzie z katalogu instalacyjnego lub któregokolwiek z jego podkatalogów. Różne katalogi mogą korzystać z różnych wersji tego samego narzędzia.
   
-  Interfejs wiersza polecenia platformy .NET używa plików manifestu do śledzenia, które narzędzia są instalowane jako lokalne w katalogu. Gdy plik manifestu jest zapisywany w katalogu głównym repozytorium kodu źródłowego, współautor może sklonować repozytorium i wywoływać pojedyncze interfejs wiersza polecenia platformy .NET Core polecenie, które instaluje wszystkie narzędzia wymienione w plikach manifestu.
+  Interfejs wiersza polecenia platformy .NET używa plików manifestu do śledzenia, które narzędzia są instalowane jako lokalne w katalogu. Gdy plik manifestu jest zapisywany w katalogu głównym repozytorium kodu źródłowego, współautor może sklonować repozytorium i wywoływać pojedyncze polecenie interfejsu wiersza polecenia platformy .NET, które instaluje wszystkie narzędzia wymienione w plikach manifestu.
 
 > [!IMPORTANT]
-> Narzędzia .NET Core Tools działają w trybie pełnego zaufania. Nie instaluj narzędzia .NET Core, chyba że ufasz autorowi.
+> Narzędzia platformy .NET działają w trybie pełnego zaufania. Nie instaluj narzędzia platformy .NET, chyba że ufasz autorowi.
 
 ## <a name="find-a-tool"></a>Znajdź narzędzie
 
-Obecnie platforma .NET Core nie ma funkcji wyszukiwania w narzędziu. Oto kilka sposobów znajdowania narzędzi:
+Oto kilka sposobów znajdowania narzędzi:
 
+* Użyj polecenia [Search narzędzia dotnet](dotnet-tool-search.md) , aby znaleźć narzędzie, które jest publikowane w usłudze NuGet.org.
 * Przeszukaj witrynę sieci Web [NuGet](https://www.nuget.org) przy użyciu filtru typu pakietu "narzędzie .NET". Aby uzyskać więcej informacji, zobacz [Znajdowanie i wybieranie pakietów](/nuget/consume-packages/finding-and-choosing-packages).
 * Zobacz listę narzędzi w repozytorium GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
 * Użyj [ToolGet](https://www.toolget.net/) , aby wyszukać narzędzia platformy .NET.
 * Zobacz kod źródłowy narzędzi utworzonych przez zespół ASP.NET Core w [katalogu Tools w repozytorium GitHub/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
-* Informacje o narzędziach diagnostycznych w [programie .NET Core dotnet Diagnostic Tools](../diagnostics/index.md#net-core-diagnostic-global-tools).
+* Informacje o narzędziach diagnostycznych w [narzędziach diagnostycznych platformy .NET](../diagnostics/index.md#net-core-diagnostic-global-tools).
 
 ## <a name="check-the-author-and-statistics"></a>Sprawdź autora i statystyki
 
-Ponieważ narzędzia platformy .NET Core działają w trybie pełnego zaufania, a narzędzia globalne są dodawane do zmiennej środowiskowej PATH, mogą być bardzo wydajne. Nie pobieraj narzędzi z osób, które nie są zaufane.
+Ponieważ narzędzia platformy .NET działają w trybie pełnego zaufania, a narzędzia globalne są dodawane do zmiennej środowiskowej PATH, mogą być bardzo wydajne. Nie pobieraj narzędzi z osób, które nie są zaufane.
 
 Jeśli narzędzie jest hostowane w usłudze NuGet, można sprawdzić autora i statystyk, wyszukując narzędzie.
 
@@ -92,7 +93,7 @@ W systemie Linux lub macOS:
 dotnet tool install dotnetsay --tool-path ~/bin
 ```
 
-Zestaw .NET Core SDK nie dodaje automatycznie tej lokalizacji do zmiennej środowiskowej PATH. Aby [wywołać narzędzie ścieżki narzędzi](#invoke-a-tool-path-tool), należy upewnić się, że polecenie jest dostępne za pomocą jednej z następujących metod:
+Zestaw SDK platformy .NET nie dodaje automatycznie tej lokalizacji do zmiennej środowiskowej PATH. Aby [wywołać narzędzie ścieżki narzędzi](#invoke-a-tool-path-tool), należy upewnić się, że polecenie jest dostępne za pomocą jednej z następujących metod:
 
 * Dodaj katalog instalacyjny do zmiennej środowiskowej PATH.
 * Określ pełną ścieżkę do narzędzia podczas jego wywoływania.
@@ -273,10 +274,10 @@ Aby uzyskać instrukcje dotyczące użycia narzędzia, wprowadź jedno z następ
 dotnet <command> --help
 ```
 
-Jeśli instalacja lub uruchomienie narzędzia nie powiedzie się, zobacz [Rozwiązywanie problemów z użyciem narzędzia .NET Core](troubleshoot-usage-issues.md).
+Jeśli instalacja lub uruchomienie narzędzia nie powiedzie się, zobacz [Rozwiązywanie problemów z użyciem narzędzia platformy .NET](troubleshoot-usage-issues.md).
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Samouczek: Tworzenie narzędzia platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core](global-tools-how-to-create.md)
-- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core](global-tools-how-to-use.md)
-- [Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core](local-tools-how-to-use.md)
+- [Samouczek: Tworzenie narzędzia platformy .NET przy użyciu interfejsu wiersza polecenia platformy .NET](global-tools-how-to-create.md)
+- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET przy użyciu interfejsu wiersza polecenia platformy .NET](global-tools-how-to-use.md)
+- [Samouczek: Instalowanie i używanie lokalnego narzędzia .NET przy użyciu interfejsu wiersza polecenia platformy .NET](local-tools-how-to-use.md)
