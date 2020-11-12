@@ -578,3 +578,6 @@ items:
               - name: Platforma Azure dla deweloperów platformy .NET
                 tocHref: /dotnet/azure/
                 topicHref: /dotnet/azure/index
+          - name: Biblioteki IoT platformy .NET
+            tocHref: /dotnet/iot/
+            topicHref: /dotnet/iot/index

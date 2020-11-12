@@ -1,0 +1,26 @@
+- name: Dokumentacja bibliotek IoT platformy .NET
+  href: index.yml
+- name: Omówienie
+  href: intro.md
+- name: Szybki start (Sense HAT)
+  href: quickstarts/sensehat.md
+- name: Samouczki
+  expanded: true
+  items:
+    - name: Miganie diodą LED
+      href: tutorials/blink-led.md
+    - name: Odczytywanie warunków środowiska z czujnika
+      href: tutorials/temp-sensor.md
+    - name: Wyświetlanie tekstu na wyświetlaczu LCD
+      href: tutorials/lcd-display.md
+    - name: Odczytywanie wartości z przetwornika analogowo-cyfrowego
+      href: tutorials/adc.md
+- name: Przewodniki z instrukcjami
+  expanded: true
+  items:
+    - name: Wdrożenie
+      href: deployment.md
+    - name: Debugowanie
+      href: debugging.md
+- name: Odwołanie do biblioteki API
+  href: /dotnet/api?view=iot-dotnet-1.1
