@@ -2,12 +2,12 @@
 title: 'Deklaracje importowania: open — Słowo kluczowe'
 description: 'Dowiedz się więcej o deklaracjach importu F # i sposobach określania modułu lub przestrzeni nazw, których elementy można odwołać bez użycia w pełni kwalifikowanej nazwy.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 6420df071f86159c44606c2710331d5f587023cc
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: ab208c53809e120bc216c8f8b4d04a322d67cf2f
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557610"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557184"
 ---
 # <a name="import-declarations-the-open-keyword"></a>Deklaracje importu: `open` słowo kluczowe
 
@@ -17,6 +17,7 @@ ms.locfileid: "88557610"
 
 ```fsharp
 open module-or-namespace-name
+open type type-name
 ```
 
 ## <a name="remarks"></a>Uwagi
@@ -43,6 +44,31 @@ printfn "%A" empty
 
 W związku z tym należy zachować ostrożność podczas otwierania modułów lub przestrzeni nazw, takich jak `List` lub zawierających `Seq` składowe o identycznych nazwach. zamiast tego należy rozważyć użycie kwalifikowanych nazw. Należy unikać każdej sytuacji, w której kod jest zależny od kolejności deklaracji importu.
 
+## <a name="open-type-declarations"></a>Otwieranie deklaracji typu
+
+Język F # obsługuje `open` Typ podobny do tego:
+
+```fsharp
+open type System.Math
+PI
+```
+
+Spowoduje to udostępnienie wszystkich dostępnych pól statycznych i elementów członkowskich w typie.
+
+Można również `open` określić typ [rekordu](records.md) i [Unii rozłącznych](discriminated-unions.md) , aby udostępnić statyczne elementy członkowskie. W przypadku związków rozłącznych można również uwidocznić przypadki Unii. Może to być przydatne w przypadku uzyskiwania dostępu do przypadków Unii w typie zadeklarowanym wewnątrz modułu, który może nie być otwarty, tak więc:
+
+```fsharp
+module M =
+    type DU = A | B | C
+
+    let someOtherFunction x = x + 1
+
+// Open only the type inside the module
+open type M.DU
+
+printfn "%A" A
+```
+
 ## <a name="namespaces-that-are-open-by-default"></a>Obszary nazw, które są domyślnie otwarte
 
 Niektóre przestrzenie nazw są często używane w kodzie języka F #, które są otwierane niejawnie bez potrzeby jawnej deklaracji importu. W poniższej tabeli przedstawiono obszary nazw, które są domyślnie otwarte.
@@ -66,5 +92,5 @@ Niektóre moduły, rekordy lub typy Unii mogą określać `RequireQualifiedAcces
 ## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja języka F #](index.md)
-- [Przestrzenie nazw](namespaces.md)
+- [Namespaces](namespaces.md)
 - [Moduły](modules.md)

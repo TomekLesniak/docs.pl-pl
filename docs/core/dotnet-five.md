@@ -5,12 +5,12 @@ ms.date: 11/06/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: efce75159cd631ad64ba03d4b65aaeb64ccdc809
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 10c1345f4a0a37e04377250da9a7b6df7df3a105
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557030"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594541"
 ---
 # <a name="whats-new-in-net-5"></a>Co nowego w wersji .NET 5
 
@@ -137,7 +137,6 @@ W [ systemach iSystem.Text.Js](../standard/serialization/system-text-json-overvi
 - [pola pomocy technicznej](../standard/serialization/system-text-json-how-to.md#include-fields)
 - [Ignoruj warunkowo właściwości](../standard/serialization/system-text-json-how-to.md#ignore-properties)
 - [Obsługa słowników z kluczami niebędącymi ciągami](../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md#dictionary-with-non-string-key)
-- [Obsługa metod dostępu do właściwości niepublicznych](../standard/serialization/system-text-json-how-to.md#non-public-property-accessors)
 - [Zezwalaj na obsługę niestandardowych konwerterów o wartości null](../standard/serialization/system-text-json-converters-how-to.md#handle-null-values)
 - [Kopiuj JsonSerializerOptions](../standard/serialization/system-text-json-how-to.md#copy-jsonserializeroptions)
 - [Tworzenie JsonSerializerOptions przy użyciu ustawień domyślnych sieci Web](../standard/serialization/system-text-json-how-to.md#web-defaults-for-jsonserializeroptions)

@@ -2,12 +2,12 @@
 title: Wycinki
 description: 'Dowiedz się, jak używać wycinków dla istniejących typów danych F # i jak definiować własne wycinki dla innych typów danych.'
 ms.date: 12/23/2019
-ms.openlocfilehash: d3ddb2c247c36a85842f565f051372c5f2c9a9e9
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: a3920ad9e1b205b506aaee92c4606bcebf94feba
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559014"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557080"
 ---
 # <a name="slices"></a>Wycinki
 
@@ -148,6 +148,62 @@ let xs = [1 .. 10]
 
 printfn "%A" xs.[2..5] // Includes the 5th index
 ```
+
+## <a name="built-in-f-empty-slices"></a>Wbudowane puste wycinki języka F #
+
+Listy F #, tablice, sekwencje, ciągi, tablice 2D, tablice 3W i 4D tablice będą generować pusty plasterek, Jeśli składnia może utworzyć wycinek, który nie istnieje.
+
+Rozważ następujące źródła:
+
+```fsharp
+let l = [ 1..10 ]
+let a = [| 1..10 |]
+let s = "hello!"
+
+let emptyList = l.[-2..(-1)]
+let emptyArray = a.[-2..(-1)]
+let emptyString = s.[-2..(-1)]
+```
+
+Deweloperzy języka C# mogą oczekiwać, że nie generują pustego wycinka. Jest to podjęcie decyzji dotyczącej projektu w przypadku, gdy puste kolekcje tworzą w języku F #. Pusta lista języka F # może być złożona z inną listą języka F #, pusty ciąg może zostać dodany do istniejącego ciągu i tak dalej. Może ona często przyjmować plasterki na podstawie wartości przeprowadzonych jako parametry i polegających na odporności poza granice przez produkowanie pustej kolekcji, która pasuje do charakteru składowego kodu F #.
+
+## <a name="fixed-index-slices-for-3d-and-4d-arrays"></a>Wycinków o stałym indeksie dla tablic 3W i 4D
+
+W przypadku tablic języka F # 3D i 4D można poprawić określony indeks i wydzielić Inne wymiary przy użyciu tego indeksu.
+
+Aby to zilustrować, weź pod uwagę następującą tablicę 3W:
+
+*z = 0*
+| x\y   | 0 | 1 |
+|-------|---|---|
+| **0** | 0 | 1 |
+| **1** | 2 | 3 |
+
+*z = 1*
+| x\y   | 0 | 1 |
+|-------|---|---|
+| **0** | 4 | 5 |
+| **1** | 6 | 7 |
+
+Jeśli chcesz wyodrębnić wycinek `[| 4; 5 |]` z tablicy, użyj wycinka o stałym indeksie.
+
+```fsharp
+let dim = 2
+let m = Array3D.zeroCreate<int> dim dim dim
+
+let mutable count = 0
+
+for z in 0..dim-1 do
+    for y in 0..dim-1 do
+        for x in 0..dim-1 do
+            m.[x,y,z] <- count
+            count <- count + 1
+
+// Now let's get the [4;5] slice!
+m.[*, 0, 1]
+```
+
+Ostatni wiersz naprawia `y` i `z` indyjskich macierzy 3W i pobiera resztę `x` wartości, które odpowiadają macierzy.
 
 ## <a name="see-also"></a>Zobacz też
 

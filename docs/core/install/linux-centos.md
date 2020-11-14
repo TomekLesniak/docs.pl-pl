@@ -4,12 +4,12 @@ description: Przedstawiono różne sposoby instalowania zestawu .NET SDK i środ
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: d0f5d38de0f505d62f2a35c5d1c3f7161c91a96b
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: b2ed62d024c6f0d78a4ec64693f1dafeabd8f47b
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507099"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594635"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-centos"></a>Zainstaluj zestaw .NET SDK lub środowisko uruchomieniowe .NET w systemie CentOS
 
@@ -46,7 +46,14 @@ Następujące wersje platformy .NET nie są już obsługiwane. Pliki do pobrania
 
 ## <a name="centos-8-"></a>CentOS 8 ✔️
 
-Program .NET 5,0 jest dostępny w domyślnych repozytoriach pakietów dla CentOS 8.
+> [!TIP]
+> Program .NET 5,0 nie jest jeszcze dostępny w repozytoriach pakietów domyślnych, ale .NET Core 3,1 to. Aby zainstalować program .NET Core 3,1, użyj `dnf install` polecenia z odpowiednim pakietem, takim jak `aspnetcore-runtime-3.1` lub `dotnet-sdk-3.1` . Poniższe instrukcje dotyczą programu .NET 5,0.
+
+[!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
+
+```bash
+sudo rpm -Uvh https://packages.microsoft.com/config/centos/8/packages-microsoft-prod.rpm
+```
 
 [!INCLUDE [linux-dnf-install-50](includes/linux-install-50-dnf.md)]
 

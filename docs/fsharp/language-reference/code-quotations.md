@@ -2,16 +2,16 @@
 title: Cytaty kodu
 description: 'Dowiedz się więcej o cytatach kodu języka F # — funkcja języka, która umożliwia programowe generowanie i Używanie wyrażeń kodu w języku F #.'
 ms.date: 08/13/2020
-ms.openlocfilehash: 070e127397a5da7d70281d08ef7cafdb9b4f4fe5
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: dc37fdbd6cd29e5ee94e5c0186dfe2bfeb666f32
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558338"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557197"
 ---
 # <a name="code-quotations"></a>Cytaty kodu
 
-W tym artykule opisano *notowania kodu*, funkcję języka, która umożliwia programowe generowanie i Używanie wyrażeń kodu w języku F #. Ta funkcja umożliwia wygenerowanie drzewa składni abstrakcyjnej, które reprezentuje kod F #. Drzewo składni abstrakcyjnej można następnie przetworzyć i przetwarzać w zależności od potrzeb aplikacji. Można na przykład użyć drzewa do wygenerowania kodu F # lub wygenerowania kodu w innym języku.
+W tym artykule opisano *notowania kodu* , funkcję języka, która umożliwia programowe generowanie i Używanie wyrażeń kodu w języku F #. Ta funkcja umożliwia wygenerowanie drzewa składni abstrakcyjnej, które reprezentuje kod F #. Drzewo składni abstrakcyjnej można następnie przetworzyć i przetwarzać w zależności od potrzeb aplikacji. Można na przykład użyć drzewa do wygenerowania kodu F # lub wygenerowania kodu w innym języku.
 
 ## <a name="quoted-expressions"></a>Wyrażenia cytowane
 
@@ -37,6 +37,21 @@ Ale poniższe wyrażenia są prawidłowe.
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet502.fs)]
 
 Aby oszacować Cytaty w języku F #, należy użyć [ewaluatora oferty f #](https://github.com/fsprojects/FSharp.Quotations.Evaluator). Zapewnia obsługę oceniania i wykonywania obiektów wyrażeń języka F #.
+
+Cytaty języka F # zachowują również informacje dotyczące ograniczenia typu. Rozpatrzmy następujący przykład:
+
+```fsharp
+open FSharp.Linq.RuntimeHelpers
+
+let eval q = LeafExpressionConverter.EvaluateQuotation q
+
+let inline negate x = -x
+// val inline negate: x: ^a ->  ^a when  ^a : (static member ( ~- ) :  ^a ->  ^a)
+
+<@ negate 1.0 @>  |> eval
+```
+
+Ograniczenie generowane przez `inline` funkcję jest zachowywane w kodzie qutoation. `negate`Można teraz ocenić formularz quotated funkcji.
 
 ## <a name="expr-type"></a>Typ wyrażenia
 

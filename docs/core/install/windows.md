@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat wersji systemu Windows, na których m
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 1b1f2e383e270e646436f8aa1ce19edd8da262b3
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: fe18cda64e0c9986884486298adf4a83b604f323
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506756"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594543"
 ---
 # <a name="install-net-on-windows"></a>Instalowanie programu .NET w systemie Windows
 
@@ -204,7 +204,7 @@ Poprzednie wymagania są również wymagane w przypadku wystąpienia jednego z n
 
 [Skrypty dotnet-Install](../tools/dotnet-install-script.md) są używane na potrzeby automatyzacji ci i instalacji niezwiązanych z administratorami środowiska uruchomieniowego. Skrypt można pobrać ze [strony odniesienia do skryptu dotnet-Install](../tools/dotnet-install-script.md).
 
-Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest w wersji .NET 5,0. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje zestaw SDK.
+Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest w wersji .NET 3,1. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje zestaw SDK.
 
 ```powershell
 dotnet-install.ps1 -Channel 5.0 -Runtime aspnetcore

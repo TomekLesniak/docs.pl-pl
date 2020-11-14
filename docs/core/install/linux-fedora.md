@@ -4,12 +4,12 @@ description: Przedstawiono różne sposoby instalowania zestawu .NET SDK i środ
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: d5b5886f8b29e0f8e935850686cc84f78c55be02
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 9e96773e30fb8ee395e37dca7a4794cd42359bb2
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507083"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594622"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-fedora"></a>Zainstaluj zestaw .NET SDK lub środowisko uruchomieniowe .NET w systemie Fedora
 
@@ -49,15 +49,31 @@ Następujące wersje platformy .NET nie są już obsługiwane. Pliki do pobrania
 
 ## <a name="fedora-33-"></a>Fedora 33 ✔️
 
-.NET 5 i .NET Core 3,1 są dostępne w domyślnych repozytoriach pakietów dla Fedora 33.
+> [!TIP]
+> Program .NET Core 3,1 jest dostępny w repozytoriach pakietów domyślnych dla Fedora 33. Aby zainstalować program .NET Core 3,1, użyj `dnf install` polecenia z odpowiednim pakietem, takim jak `aspnetcore-runtime-3.1` lub `dotnet-sdk-3.1` . Program .NET 5,0 nie jest jeszcze dostępny w repozytoriach pakietów domyślnych.
 
-[!INCLUDE [linux-dnf-install-31](includes/linux-install-50-dnf.md)]
+[!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
+
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/fedora/33/prod.repo
+```
+
+[!INCLUDE [linux-dnf-install-50](includes/linux-install-50-dnf.md)]
 
 ## <a name="fedora-32-"></a>Fedora 32 ✔️
 
-Program .NET Core 3,1 jest dostępny w repozytoriach pakietów domyślnych dla Fedora 32.
+> [!TIP]
+> Program .NET Core 3,1 jest dostępny w repozytoriach pakietów domyślnych dla Fedora 32. Aby zainstalować program .NET Core 3,1, użyj `dnf install` polecenia z odpowiednim pakietem, takim jak `aspnetcore-runtime-3.1` lub `dotnet-sdk-3.1` . Program .NET 5,0 nie jest jeszcze dostępny w repozytoriach pakietów domyślnych.
 
-[!INCLUDE [linux-dnf-install-31](includes/linux-install-31-dnf.md)]
+[!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
+
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/fedora/32/prod.repo
+```
+
+[!INCLUDE [linux-dnf-install-50](includes/linux-install-50-dnf.md)]
 
 ## <a name="fedora-31-"></a>Fedora 31 ❌
 

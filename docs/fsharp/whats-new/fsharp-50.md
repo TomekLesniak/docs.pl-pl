@@ -2,16 +2,18 @@
 title: 'Co nowego w języku F # 5,0 — Przewodnik po języku f #'
 description: 'Zapoznaj się z omówieniem nowych funkcji dostępnych w języku F # 5,0.'
 ms.date: 11/06/2020
-ms.openlocfilehash: 0c4c9f42c63a1dc8c90213c43edbadd4061c132d
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 51d6dd2457ee9966a86d0d9ac686f2af15772999
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445833"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557145"
 ---
 # <a name="whats-new-in-f-50"></a>Co nowego w języku F # 5,0
 
 F # 5,0 dodaje kilka ulepszeń języka F # i F# Interactive. Jest on publikowany z **platformą .NET 5**.
+
+Najnowszą wersję zestawu SDK platformy .NET można pobrać ze [strony plików do pobrania platformy .NET](https://dotnet.microsoft.com/download).
 
 ## <a name="get-started"></a>Wprowadzenie
 
@@ -149,7 +151,6 @@ nameof op_Addition // "op_Addition"
 Pobranie nazwy parametru typu wymaga nieco innej składni:
 
 ```fsharp
-
 type C<'TType> =
     member _.TypeName = nameof<'TType>
 ```
@@ -228,16 +229,16 @@ Język F # 5,0 zapewnia obsługę tworzenia wycinków ze stałym indeksem w wbud
 Aby to zilustrować, weź pod uwagę następującą tablicę 3W:
 
 *z = 0*
-|x\y|0|1|
-|---|-|-|
-|**0**|0|1|
-|**1**|2|3|
+| x\y   | 0 | 1 |
+|-------|---|---|
+| **0** | 0 | 1 |
+| **1** | 2 | 3 |
 
 *z = 1*
-|x\y|0|1|
-|---|-|-|
-|**0**|4|5|
-|**1**|6|7|
+| x\y   | 0 | 1 |
+|-------|---|---|
+| **0** | 4 | 5 |
+| **1** | 6 | 7 |
 
 Co zrobić, jeśli chcesz wyodrębnić wycinek `[| 4; 5 |]` z tablicy? Jest to teraz bardzo proste!
 
@@ -258,6 +259,23 @@ for z in 0..dim-1 do
 // Now let's get the [4;5] slice!
 m.[*, 0, 1]
 ```
+
+## <a name="f-quotations-improvements"></a>Udoskonalenia cytatów języka F #
+
+[Cytaty kodu](../language-reference/code-quotations.md) języka F # mają teraz możliwość zachowania informacji o ograniczeniach typu. Rozpatrzmy następujący przykład:
+
+```fsharp
+open FSharp.Linq.RuntimeHelpers
+
+let eval q = LeafExpressionConverter.EvaluateQuotation q
+
+let inline negate x = -x
+// val inline negate: x: ^a ->  ^a when  ^a : (static member ( ~- ) :  ^a ->  ^a)
+
+<@ negate 1.0 @>  |> eval
+```
+
+Ograniczenie generowane przez `inline` funkcję jest zachowywane w kodzie qutoation. `negate`Można teraz ocenić formularz quotated funkcji.
 
 ## <a name="applicative-computation-expressions"></a>Wyrażenia obliczeń Applicative
 
