@@ -2,12 +2,12 @@
 title: dotnet sln — polecenie
 description: Polecenie dotnet-sln udostępnia wygodną opcję dodawania, usuwania i wyświetlania listy projektów w pliku rozwiązania.
 ms.date: 02/14/2020
-ms.openlocfilehash: efe52f64a29c8825070bae9ee96b430b32176ffa
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 898c53772a28b8cc3b65532dfc3d9bd6e73d467c
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053034"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634373"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
@@ -15,7 +15,7 @@ ms.locfileid: "89053034"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet sln` -Wyświetla lub modyfikuje projekty w pliku rozwiązania .NET Core.
+`dotnet sln` -Wyświetla lub modyfikuje projekty w pliku rozwiązania platformy .NET.
 
 ## <a name="synopsis"></a>Streszczenie
 

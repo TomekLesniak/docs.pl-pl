@@ -2,12 +2,12 @@
 title: dotnet — polecenie
 description: Dowiedz się więcej na temat polecenia dotnet (sterownika generycznego dla interfejsu wiersza polecenia platformy .NET) i jego użycia.
 ms.date: 11/11/2020
-ms.openlocfilehash: a2b4b026e7c89536a6a7eaf69b31e3f62bf5adfc
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 7a0c8f2eb7ab407bd725db56cbf31da4689970e4
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556830"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634028"
 ---
 # <a name="dotnet-command"></a>dotnet — polecenie
 
@@ -239,7 +239,7 @@ Aby uzyskać więcej informacji na temat każdego narzędzia, wpisz `dotnet <too
 
 ## <a name="examples"></a>Przykłady
 
-Utwórz nową aplikację konsolową platformy .NET Core:
+Utwórz nową aplikację konsolową .NET:
 
 ```dotnetcli
 dotnet new console

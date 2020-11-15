@@ -1,21 +1,21 @@
 ---
-title: polecenie uruchamiania narzędzia dotnet
-description: Polecenie uruchamiania narzędzia dotnet wywołuje narzędzie lokalne.
+title: Uruchom polecenie Narzędzia dotnet
+description: Polecenie Uruchom narzędzie dotnet wywołuje narzędzie lokalne.
 ms.date: 02/14/2020
-ms.openlocfilehash: f79c239363e8b3abbd55c54dd1912443e6777fb7
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 116ecb61748a0ca70ed385b279b11b939748f4a8
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463323"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634158"
 ---
 # <a name="dotnet-tool-run"></a>dotnet tool run
 
-**Ten artykuł dotyczy:** ✔️.NET Core 3.0 SDK i nowszych wersjach
+**Ten artykuł ma zastosowanie do:** ✔️ .net Core 3,0 SDK i nowszych wersjach
 
 ## <a name="name"></a>Nazwa
 
-`dotnet tool run`- Wywołuje narzędzie lokalne.
+`dotnet tool run` -Wywołuje narzędzie lokalne.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -27,7 +27,7 @@ dotnet tool run -h|--help
 
 ## <a name="description"></a>Opis
 
-Polecenie `dotnet tool run` przeszukuje pliki manifestu narzędzia, które znajdują się w zakresie bieżącego katalogu. Po znalezieniu odwołania do określonego narzędzia, uruchamia narzędzie. Aby uzyskać więcej informacji, zobacz [Wywoływanie narzędzia lokalnego](global-tools.md#invoke-a-local-tool).
+`dotnet tool run`Polecenie przeszukuje pliki manifestu narzędzia, które znajdują się w zakresie dla bieżącego katalogu. Po znalezieniu odwołania do określonego narzędzia zostanie uruchomione narzędzie. Aby uzyskać więcej informacji, zobacz [wywoływanie narzędzia lokalnego](global-tools.md#invoke-a-local-tool).
 
 ## <a name="arguments"></a>Argumenty
 
@@ -45,9 +45,9 @@ Polecenie `dotnet tool run` przeszukuje pliki manifestu narzędzia, które znajd
 
 - **`dotnet tool run dotnetsay`**
 
-  Uruchamia `dotnetsay` narzędzie lokalne.
+  Uruchamia `dotnetsay` Narzędzie lokalne.
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Narzędzia .NET Core](global-tools.md)
-- [Samouczek: Instalowanie i używanie narzędzia lokalnego .NET Core przy użyciu interfejsu wiersza polecenia .NET Core](local-tools-how-to-use.md)
+- [Narzędzia .NET](global-tools.md)
+- [Samouczek: Instalowanie i używanie lokalnego narzędzia .NET przy użyciu interfejsu wiersza polecenia platformy .NET](local-tools-how-to-use.md)

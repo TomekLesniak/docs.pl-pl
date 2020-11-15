@@ -1,13 +1,13 @@
 ---
 title: polecenie Narzędzia dotnet
-description: Polecenie programu dotnet narzędzie do przywracania instaluje na komputerze środowisko .NET Core Local Tools znajdujące się w zakresie dla bieżącego katalogu.
+description: Polecenie Narzędzia dotnet jest instalowane na komputerze jako lokalne narzędzia .NET, które znajdują się w zakresie dla bieżącego katalogu.
 ms.date: 02/14/2020
-ms.openlocfilehash: ceef3274ec9d337f8c51009d5a8c27e808b14035
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 1b7fd10102f2c957b3eb235f6897b60bc8ca9c07
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302675"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634275"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
@@ -15,7 +15,7 @@ ms.locfileid: "87302675"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet tool restore`-Instaluje na komputerze lokalne narzędzia platformy .NET Core, które znajdują się w zakresie dla bieżącego katalogu.
+`dotnet tool restore` -Instaluje na komputerze lokalne narzędzia .NET, które znajdują się w zakresie dla bieżącego katalogu.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -37,7 +37,7 @@ dotnet tool restore -h|--help
 
 - **`--configfile <FILE>`**
 
-  Plik konfiguracji NuGet (*nuget.config*) do użycia.
+  Plik konfiguracji NuGet ( *nuget.config* ) do użycia.
 
 - **`--add-source <SOURCE>`**
 
@@ -79,5 +79,5 @@ dotnet tool restore -h|--help
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Narzędzia .NET Core](global-tools.md)
-- [Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core](local-tools-how-to-use.md)
+- [Narzędzia .NET](global-tools.md)
+- [Samouczek: Instalowanie i używanie lokalnego narzędzia .NET przy użyciu interfejsu wiersza polecenia platformy .NET](local-tools-how-to-use.md)

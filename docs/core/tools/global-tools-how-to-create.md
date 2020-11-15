@@ -1,20 +1,20 @@
 ---
-title: 'Samouczek: Tworzenie narzędzia platformy .NET Core'
-description: Dowiedz się, jak utworzyć narzędzie .NET Core. Narzędzie jest aplikacją konsolową, która jest instalowana przy użyciu interfejs wiersza polecenia platformy .NET Core.
+title: 'Samouczek: Tworzenie narzędzia platformy .NET'
+description: Dowiedz się, jak utworzyć narzędzie platformy .NET. Narzędzie jest aplikacją konsolową, która jest instalowana przy użyciu interfejsu wiersza polecenia platformy .NET.
 ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: c1c17368d8efdece73f5312899553bacf884cfb3
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 93d0567f3d73707f828f84fad6128804debf6579
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062785"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633781"
 ---
-# <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>Samouczek: Tworzenie narzędzia platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core
+# <a name="tutorial-create-a-net-tool-using-the-net-cli"></a>Samouczek: Tworzenie narzędzia platformy .NET przy użyciu interfejsu wiersza polecenia platformy .NET
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 2,1 SDK i nowszych wersjach
 
-W tym samouczku przedstawiono sposób tworzenia i pakowania narzędzia platformy .NET Core. Interfejs wiersza polecenia platformy .NET Core pozwala utworzyć aplikację konsolową jako narzędzie, którą mogą instalować i uruchamiać inne osoby. Narzędzia .NET Core są pakietami NuGet, które są instalowane z interfejs wiersza polecenia platformy .NET Core. Aby uzyskać więcej informacji na temat narzędzi, zobacz [Narzędzia .NET Core Tools — Omówienie](global-tools.md).
+W tym samouczku przedstawiono sposób tworzenia i pakowania narzędzia platformy .NET. Interfejs wiersza polecenia platformy .NET umożliwia tworzenie aplikacji konsolowej jako narzędzia, które mogą być instalowane i uruchamiane przez inne osoby. Narzędzia .NET Tools są pakietami NuGet, które są instalowane z interfejsu wiersza polecenia platformy .NET. Aby uzyskać więcej informacji na temat narzędzi, zobacz temat [Narzędzia .NET — Omówienie](global-tools.md).
 
 Tworzone narzędzie jest aplikacją konsolową, która przyjmuje komunikat jako dane wejściowe i wyświetla komunikat wraz z wierszami tekstu, które tworzą obraz robota.
 
@@ -156,9 +156,9 @@ Przed spakowaniem i dystrybucją aplikacji jako narzędzia należy zmodyfikować
    <PackageOutputPath>./nupkg</PackageOutputPath>
    ```
 
-   `<ToolCommandName>`to opcjonalny element określający polecenie, które spowoduje wywołanie narzędzia po jego zainstalowaniu. Jeśli ten element nie zostanie podany, nazwa polecenia dla narzędzia jest nazwą pliku projektu bez rozszerzenia *. csproj* .
+   `<ToolCommandName>` to opcjonalny element określający polecenie, które spowoduje wywołanie narzędzia po jego zainstalowaniu. Jeśli ten element nie zostanie podany, nazwa polecenia dla narzędzia jest nazwą pliku projektu bez rozszerzenia *. csproj* .
 
-   `<PackageOutputPath>`to opcjonalny element określający, gdzie zostanie utworzony pakiet NuGet. Pakiet NuGet jest używany przez interfejs wiersza polecenia platformy .NET Core do instalowania narzędzia.
+   `<PackageOutputPath>` to opcjonalny element określający, gdzie zostanie utworzony pakiet NuGet. Pakiet NuGet jest używany przez interfejs wiersza polecenia platformy .NET Core do instalowania narzędzia.
 
    Plik projektu wygląda teraz tak, jak w poniższym przykładzie:
 
@@ -191,7 +191,7 @@ Przed spakowaniem i dystrybucją aplikacji jako narzędzia należy zmodyfikować
 
 ## <a name="troubleshoot"></a>Rozwiązywanie problemów
 
-Jeśli podczas wykonywania samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z użyciem narzędzia .NET Core](troubleshoot-usage-issues.md).
+Jeśli podczas wykonywania samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z użyciem narzędzia platformy .NET](troubleshoot-usage-issues.md).
 
 ## <a name="next-steps"></a>Następne kroki
 

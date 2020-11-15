@@ -1,13 +1,13 @@
 ---
 title: polecenie dotnet Pack
-description: Polecenie programu dotnet Pack tworzy pakiety NuGet dla projektu .NET Core.
+description: Polecenie programu dotnet Pack tworzy pakiety NuGet dla projektu .NET.
 ms.date: 04/28/2020
-ms.openlocfilehash: 409b946d93cf73fec38941740a446c3ee3402490
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4312ea64a75fa89eae58cdb41a6dc3463cdd215c
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537835"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634236"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -46,7 +46,7 @@ Domyślnie program `dotnet pack` kompiluje projekt. Jeśli chcesz uniknąć tego
 > [!NOTE]
 > W niektórych przypadkach nie można wykonać niejawnej kompilacji. Taka sytuacja może wystąpić `GeneratePackageOnBuild` , gdy jest ustawiona, aby uniknąć cyklicznej zależności między obiektami docelowymi kompilacji i pakietów. Kompilacja może również zakończyć się niepowodzeniem, jeśli istnieje zablokowany plik lub inny problem.
 
-Można podać właściwości programu MSBuild do `dotnet pack` polecenia dla procesu pakowania. Aby uzyskać więcej informacji, zobacz [właściwości metadanych NuGet](csproj.md#nuget-metadata-properties) i [Dokumentacja wiersza polecenia programu MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). W sekcji [przykłady](#examples) pokazano, jak używać przełącznika MSBuild-p w przypadku kilku różnych scenariuszy.
+Można podać właściwości programu MSBuild do `dotnet pack` polecenia dla procesu pakowania. Aby uzyskać więcej informacji, zobacz [właściwości metadanych narzędzia NuGet](csproj.md#nuget-metadata-properties) i informacje o programie [MSBuild Command-Line](/visualstudio/msbuild/msbuild-command-line-reference). W sekcji [przykłady](#examples) pokazano, jak używać przełącznika MSBuild-p w przypadku kilku różnych scenariuszy.
 
 Projekty sieci Web nie są domyślnie objęte pakietem. Aby zastąpić zachowanie domyślne, Dodaj następującą właściwość do pliku *. csproj* :
 
@@ -188,4 +188,4 @@ Projekty sieci Web nie są domyślnie objęte pakietem. Aby zastąpić zachowani
   
   - [Pakowanie przy użyciu elementu. nuspec](/nuget/reference/msbuild-targets#packing-using-a-nuspec)
   - [Zaawansowane punkty rozszerzenia do tworzenia dostosowanego pakietu](/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
-  - [Właściwości globalne](/visualstudio/msbuild/msbuild-properties?view=vs-2019#global-properties)
+  - [Właściwości globalne](/visualstudio/msbuild/msbuild-properties#global-properties)

@@ -2,12 +2,12 @@
 title: polecenie dotnet restore
 description: Informacje o sposobie przywracania zależności i narzędzi specyficznych dla projektu przy użyciu polecenia dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: 7b456e28505a07c03936c9006c8631848fd4672c
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: dcb68d6c690f2e12b61cfdfa6dc288bd474721c1
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925479"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634406"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -15,7 +15,7 @@ ms.locfileid: "86925479"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet restore`— Przywraca zależności i narzędzia projektu.
+`dotnet restore` — Przywraca zależności i narzędzia projektu.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -46,7 +46,7 @@ Czasami może być niewygodne uruchamianie niejawnego przywracania NuGet przy u�
 
 ### <a name="specify-feeds"></a>Określ źródła danych
 
-Aby przywrócić zależności, program NuGet potrzebuje kanałów informacyjnych, w których znajdują się pakiety. Kanały informacyjne są zazwyczaj udostępniane za pośrednictwem pliku konfiguracji *nuget.config* . Domyślny plik konfiguracji jest dostarczany, gdy zainstalowano zestaw .NET Core SDK. Aby określić dodatkowe źródła danych, wykonaj jedną z następujących czynności:
+Aby przywrócić zależności, program NuGet potrzebuje kanałów informacyjnych, w których znajdują się pakiety. Kanały informacyjne są zazwyczaj udostępniane za pośrednictwem pliku konfiguracji *nuget.config* . Domyślny plik konfiguracji jest dostarczany podczas instalacji zestawu .NET SDK. Aby określić dodatkowe źródła danych, wykonaj jedną z następujących czynności:
 
 - Utwórz własny plik *nuget.config* w katalogu projektu. Aby uzyskać więcej informacji, zobacz [typowe konfiguracje NuGet](/nuget/consume-packages/configuring-nuget-behavior) i [nuget.config różnice](#nugetconfig-differences) w dalszej części tego artykułu.
 - Użyj `dotnet nuget` poleceń, takich jak [`dotnet nuget add source`](dotnet-nuget-add-source.md) .
@@ -65,17 +65,17 @@ W przypadku narzędzi specyficznych dla projektu program `dotnet restore` najpie
 
 ### <a name="nugetconfig-differences"></a>Różnice nuget.config
 
-Na zachowanie `dotnet restore` polecenia są zależne od ustawień w pliku *nuget.config* , jeśli istnieją. Na przykład ustawienie `globalPackagesFolder` w *nuget.config* powoduje umieszczenie przywróconych pakietów NuGet w określonym folderze. Jest to alternatywa dla określenia `--packages` opcji `dotnet restore` polecenia. Aby uzyskać więcej informacji, zobacz [informacje dotyczącenuget.config](/nuget/schema/nuget-config-file).
+Na zachowanie `dotnet restore` polecenia są zależne od ustawień w pliku *nuget.config* , jeśli istnieją. Na przykład ustawienie `globalPackagesFolder` w *nuget.config* powoduje umieszczenie przywróconych pakietów NuGet w określonym folderze. Jest to alternatywa dla określenia `--packages` opcji `dotnet restore` polecenia. Aby uzyskać więcej informacji, zobacz [ informacje dotyczącenuget.config](/nuget/schema/nuget-config-file).
 
 Istnieją trzy określone ustawienia, które `dotnet restore` ignorują:
 
 - [bindingRedirects](/nuget/schema/nuget-config-file#bindingredirects-section)
 
-  Przekierowania powiązań nie działają z `<PackageReference>` elementami i .NET Core obsługuje tylko `<PackageReference>` elementy dla pakietów NuGet.
+  Przekierowania powiązań nie działają z `<PackageReference>` elementami, a platforma .NET obsługuje tylko `<PackageReference>` elementy dla pakietów NuGet.
 
 - [Narzędzie](/nuget/schema/nuget-config-file#solution-section)
 
-  To ustawienie dotyczy programu Visual Studio i nie ma zastosowania do programu .NET Core. Platforma .NET Core nie używa `packages.config` pliku, a zamiast tego używa `<PackageReference>` elementów dla pakietów NuGet.
+  To ustawienie dotyczy programu Visual Studio i nie ma zastosowania do platformy .NET. Platforma .NET nie używa `packages.config` pliku, a zamiast tego używa `<PackageReference>` elementów dla pakietów NuGet.
 
 - [trustedSigners](/nuget/schema/nuget-config-file#trustedsigners-section)
 
@@ -91,7 +91,7 @@ Istnieją trzy określone ustawienia, które `dotnet restore` ignorują:
 
 - **`--configfile <FILE>`**
 
-  Plik konfiguracji NuGet (*nuget.config*) do użycia podczas operacji przywracania.
+  Plik konfiguracji NuGet ( *nuget.config* ) do użycia podczas operacji przywracania.
 
 - **`--disable-parallel`**
 
@@ -151,7 +151,7 @@ Istnieją trzy określone ustawienia, które `dotnet restore` ignorują:
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Ustawia poziom szczegółowości polecenia. Dozwolone wartości to `q[uiet]` , `m[inimal]` , `n[ormal]` , `d[etailed]` i `diag[nostic]` . Wartość domyślna to `minimal` .
+  Ustawia poziom szczegółowości polecenia. Dozwolone wartości to `q[uiet]` , `m[inimal]` , `n[ormal]` , `d[etailed]` i `diag[nostic]` . Wartość domyślna to `minimal`.
 
 ## <a name="examples"></a>Przykłady
 

@@ -1,13 +1,13 @@
 ---
 title: polecenie wyszukiwania narzędzia dotnet
-description: Polecenie wyszukiwania narzędzia dotnet przeszukuje narzędzia .NET Core, które są publikowane w NuGet.org.
+description: Polecenie wyszukiwania narzędzia dotnet przeszukuje narzędzia .NET, które są publikowane w NuGet.org.
 ms.date: 11/11/2020
-ms.openlocfilehash: 4357ce4864cad386968e4a76466066fbf2ce4060
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: e0289e651ec4a439c791c8c948bef2d85d9c3794
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94558075"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634145"
 ---
 # <a name="dotnet-tool-search"></a>Wyszukiwanie narzędzia dotnet
 
@@ -15,7 +15,7 @@ ms.locfileid: "94558075"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet tool search` — Przeszukuje wszystkie [Narzędzia .NET Core](global-tools.md) , które są publikowane w programie NuGet.
+`dotnet tool search` — Przeszukuje wszystkie [Narzędzia .NET](global-tools.md) , które są publikowane w programie NuGet.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -100,6 +100,6 @@ Polecenie używa [interfejsu API wyszukiwania NuGet](/nuget/api/search-query-ser
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Narzędzia .NET Core](global-tools.md)
-- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core](global-tools-how-to-use.md)
-- [Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core](local-tools-how-to-use.md)
+- [Narzędzia .NET](global-tools.md)
+- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET przy użyciu interfejsu wiersza polecenia platformy .NET](global-tools-how-to-use.md)
+- [Samouczek: Instalowanie i używanie lokalnego narzędzia .NET przy użyciu interfejsu wiersza polecenia platformy .NET](local-tools-how-to-use.md)

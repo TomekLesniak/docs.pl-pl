@@ -1,13 +1,13 @@
 ---
 title: polecenie aktualizacji narzędzia dotnet
-description: Polecenie aktualizacji narzędzia dotnet umożliwia zaktualizowanie określonego narzędzia .NET Core na komputerze.
+description: Polecenie aktualizacji narzędzia dotnet umożliwia zaktualizowanie określonego narzędzia platformy .NET na komputerze.
 ms.date: 07/08/2020
-ms.openlocfilehash: a212fbb40af68019c1bc9a63963d960292be6b08
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 18b153e53a6dbcb32e50ae4a7d06a1c2f53d1eb5
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308874"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634080"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
@@ -15,7 +15,7 @@ ms.locfileid: "86308874"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet tool update`-Aktualizuje określone [Narzędzie .NET Core](global-tools.md) na komputerze.
+`dotnet tool update` -Aktualizuje określone [Narzędzie .NET](global-tools.md) na komputerze.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -44,7 +44,7 @@ dotnet tool update -h|--help
 
 ## <a name="description"></a>Opis
 
-`dotnet tool update`Polecenie umożliwia zaktualizowanie narzędzi platformy .NET Core na komputerze do najnowszej stabilnej wersji pakietu. Polecenie Odinstalowuje i ponownie instaluje narzędzie, co skutecznie aktualizuje go. Aby użyć polecenia, należy określić jedną z następujących opcji:
+`dotnet tool update`Polecenie umożliwia zaktualizowanie narzędzi .NET Tools na komputerze do najnowszej stabilnej wersji pakietu. Polecenie Odinstalowuje i ponownie instaluje narzędzie, co skutecznie aktualizuje go. Aby użyć polecenia, należy określić jedną z następujących opcji:
 
 * Aby zaktualizować narzędzie globalne, które zostało zainstalowane w lokalizacji domyślnej, użyj `--global` opcji
 * Aby zaktualizować narzędzie globalne, które zostało zainstalowane w niestandardowej lokalizacji, użyj `--tool-path` opcji.
@@ -56,7 +56,7 @@ dotnet tool update -h|--help
 
 - **`PACKAGE_ID`**
 
-  Nazwa/identyfikator pakietu NuGet zawierającego narzędzie globalne programu .NET Core do zaktualizowania. Nazwę pakietu można znaleźć przy użyciu polecenia [listy narzędzi dotnet](dotnet-tool-list.md) .
+  Nazwa/identyfikator pakietu NuGet zawierającego narzędzie globalne platformy .NET do zaktualizowania. Nazwę pakietu można znaleźć przy użyciu polecenia [listy narzędzi dotnet](dotnet-tool-list.md) .
 
 ## <a name="options"></a>Opcje
 
@@ -66,7 +66,7 @@ dotnet tool update -h|--help
 
 - **`--configfile <FILE>`**
 
-  Plik konfiguracji NuGet (*nuget.config*) do użycia.
+  Plik konfiguracji NuGet ( *nuget.config* ) do użycia.
 
 - **`--disable-parallel`**
 
@@ -144,7 +144,7 @@ dotnet tool update -h|--help
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Narzędzia .NET Core](global-tools.md)
-- [Wersja semantyczna](https://semver.org)
-- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core](global-tools-how-to-use.md)
-- [Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core](local-tools-how-to-use.md)
+- [Narzędzia .NET](global-tools.md)
+- [Semantyczna obsługa wersji](https://semver.org)
+- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET przy użyciu interfejsu wiersza polecenia platformy .NET](global-tools-how-to-use.md)
+- [Samouczek: Instalowanie i używanie lokalnego narzędzia .NET przy użyciu interfejsu wiersza polecenia platformy .NET](local-tools-how-to-use.md)

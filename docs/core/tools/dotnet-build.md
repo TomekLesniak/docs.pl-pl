@@ -2,12 +2,12 @@
 title: polecenie kompilacji dotnet
 description: Polecenie kompilacji dotnet kompiluje projekt i wszystkie jego zależności.
 ms.date: 02/14/2020
-ms.openlocfilehash: 6f33b449301f40949ff5dfe4077564344a9de8ec
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: ea0291129aeaed3bebef5c454ff003131bd3562b
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251169"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634484"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -15,7 +15,7 @@ ms.locfileid: "87251169"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet build`-Kompiluje projekt i wszystkie jego zależności.
+`dotnet build` -Kompiluje projekt i wszystkie jego zależności.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -39,7 +39,7 @@ dotnet build -h|--help
 - *.runtimeconfig.jsw* pliku, który określa udostępnione środowisko uruchomieniowe i jego wersję dla aplikacji.
 - Inne biblioteki, od których zależy projekt (za pośrednictwem odwołań projektu lub pakietów NuGet).
 
-W przypadku projektów wykonywalnych przeznaczonych dla wersji wcześniejszej niż .NET Core 3,0, zależności biblioteki z NuGet nie są zwykle kopiowane do folderu wyjściowego.  Są one rozpoznawane z folderu pakietów globalnych NuGet w czasie wykonywania. Z tego względu produkt `dotnet build` nie jest gotowy do przeniesienia na inną maszynę do uruchomienia. Aby utworzyć wersję aplikacji, którą można wdrożyć, należy ją opublikować (na przykład przy użyciu polecenia [dotnet Publish](dotnet-publish.md) ). Aby uzyskać więcej informacji, zobacz [wdrażanie aplikacji .NET Core](../deploying/index.md).
+W przypadku projektów wykonywalnych przeznaczonych dla wersji wcześniejszej niż .NET Core 3,0, zależności biblioteki z NuGet nie są zwykle kopiowane do folderu wyjściowego.  Są one rozpoznawane z folderu pakietów globalnych NuGet w czasie wykonywania. Z tego względu produkt `dotnet build` nie jest gotowy do przeniesienia na inną maszynę do uruchomienia. Aby utworzyć wersję aplikacji, którą można wdrożyć, należy ją opublikować (na przykład przy użyciu polecenia [dotnet Publish](dotnet-publish.md) ). Aby uzyskać więcej informacji, zobacz [wdrażanie aplikacji .NET](../deploying/index.md).
 
 W przypadku projektów wykonywalnych przeznaczonych dla platformy .NET Core 3,0 i nowszych zależności biblioteki są kopiowane do folderu wyjściowego. Oznacza to, że jeśli nie ma żadnej innej logiki specyficznej dla publikacji (takiej jak projekty sieci Web), dane wyjściowe kompilacji powinny być możliwe do wdrożenia.
 
@@ -63,9 +63,9 @@ Aby utworzyć bibliotekę, Pomiń `<OutputType>` Właściwość lub zmień jej w
 
 ### <a name="msbuild"></a>MSBuild
 
-`dotnet build`używa programu MSBuild do skompilowania projektu, aby obsługiwał kompilacje równoległe i przyrostowe. Aby uzyskać więcej informacji, zobacz [Kompilacje przyrostowe](/visualstudio/msbuild/incremental-builds).
+`dotnet build` używa programu MSBuild do skompilowania projektu, aby obsługiwał kompilacje równoległe i przyrostowe. Aby uzyskać więcej informacji, zobacz [Kompilacje przyrostowe](/visualstudio/msbuild/incremental-builds).
 
-Oprócz opcji, `dotnet build` polecenie akceptuje Opcje programu MSBuild, takie jak `-p` właściwości ustawienia lub `-l` definiowania rejestratora. Aby uzyskać więcej informacji na temat tych opcji, zobacz [informacje dotyczące wiersza polecenia programu MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). Lub można również użyć polecenia programu [dotnet MSBuild](dotnet-msbuild.md) .
+Oprócz opcji, `dotnet build` polecenie akceptuje Opcje programu MSBuild, takie jak `-p` właściwości ustawienia lub `-l` definiowania rejestratora. Aby uzyskać więcej informacji na temat tych opcji, zobacz informacje o programie [MSBuild Command-Line](/visualstudio/msbuild/msbuild-command-line-reference). Lub można również użyć polecenia programu [dotnet MSBuild](dotnet-msbuild.md) .
 
 Uruchomienie `dotnet build` jest równoważne działaniu `dotnet msbuild -restore` , jednak domyślna szczegółowość danych wyjściowych jest inna.
 
@@ -153,7 +153,7 @@ Plik projektu lub rozwiązania do skompilowania. Jeśli plik projektu lub rozwi�
   dotnet build --runtime ubuntu.18.04-x64
   ```
 
-- Kompiluj projekt i Użyj określonego źródła pakietu NuGet podczas operacji przywracania (zestaw .NET Core 2,0 SDK i nowsze wersje):
+- Kompiluj projekt i Użyj określonego źródła pakietu NuGet podczas operacji przywracania:
 
   ```dotnetcli
   dotnet build --source c:\packages\mypackages

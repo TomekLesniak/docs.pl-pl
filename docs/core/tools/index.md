@@ -1,23 +1,23 @@
 ---
-title: Interfejs wiersza polecenia platformy .NET Core
+title: INTERFEJS WIERSZA POLECENIA PLATFORMY .NET
 titleSuffix: ''
-description: Przegląd interfejs wiersza polecenia platformy .NET Core i jego funkcji.
+description: Przegląd interfejsu wiersza polecenia platformy .NET i jego funkcji.
 ms.topic: overview
 ms.date: 02/13/2020
-ms.openlocfilehash: 18dde384058206f437b53572b2f8331d65324482
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 6a12e2d16afe36092c10e14a7465fa3bdbb23f32
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062694"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633859"
 ---
-# <a name="net-core-cli-overview"></a>Omówienie interfejsu wiersza polecenia platformy .NET Core
+# <a name="net-cli-overview"></a>Interfejs wiersza polecenia platformy .NET — Omówienie
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 2,1 SDK i nowszych wersjach
 
-Interfejs wiersza polecenia (CLI) platformy .NET Core to Międzyplatformowy łańcucha narzędzi służący do tworzenia, kompilowania, uruchamiania i publikowania aplikacji platformy .NET Core.
+Interfejs wiersza polecenia (CLI) platformy .NET to Międzyplatformowy łańcucha narzędzi służący do tworzenia, tworzenia, uruchamiania i publikowania aplikacji platformy .NET.
 
-Interfejs wiersza polecenia platformy .NET Core jest dołączona do [zestaw .NET Core SDK](../sdk.md). Aby dowiedzieć się, jak zainstalować zestaw .NET Core SDK, zobacz [Instalowanie programu .NET Core](../install/windows.md).
+Interfejs wiersza polecenia platformy .NET jest dołączony do [zestawu .NET SDK](../sdk.md). Aby dowiedzieć się, jak zainstalować zestaw SDK dla platformy .NET, zobacz [Instalowanie programu .NET Core](../install/windows.md).
 
 ## <a name="cli-commands"></a>Polecenia interfejsu wiersza polecenia
 
@@ -60,15 +60,15 @@ Następujące polecenia są instalowane domyślnie:
 - [`tool install`](dotnet-tool-install.md)
 - [`tool list`](dotnet-tool-list.md)
 - [`tool update`](dotnet-tool-update.md)
-- [`tool restore`](global-tools.md#install-a-local-tool)Dostępne od zestaw .NET Core SDK 3,0.
-- [`tool run`](global-tools.md#invoke-a-local-tool)Dostępne od zestaw .NET Core SDK 3,0.
+- [`tool restore`](global-tools.md#install-a-local-tool) Dostępne od zestaw .NET Core SDK 3,0.
+- [`tool run`](global-tools.md#invoke-a-local-tool) Dostępne od zestaw .NET Core SDK 3,0.
 - [`tool uninstall`](dotnet-tool-uninstall.md)
 
-Narzędzia są aplikacjami konsolowymi, które są instalowane z pakietów NuGet i są wywoływane z wiersza polecenia. Narzędzia można pisać samodzielnie lub instalować Narzędzia zapisane przez inne firmy. Narzędzia są również nazywane narzędziami globalnymi, narzędziami ścieżki narzędzi i narzędziami lokalnymi. Aby uzyskać więcej informacji, zobacz [Narzędzia platformy .NET Core — Omówienie](global-tools.md).
+Narzędzia są aplikacjami konsolowymi, które są instalowane z pakietów NuGet i są wywoływane z wiersza polecenia. Narzędzia można pisać samodzielnie lub instalować Narzędzia zapisane przez inne firmy. Narzędzia są również nazywane narzędziami globalnymi, narzędziami ścieżki narzędzi i narzędziami lokalnymi. Aby uzyskać więcej informacji, zobacz [Omówienie narzędzi platformy .NET](global-tools.md).
 
 ## <a name="command-structure"></a>Struktura poleceń
 
-Struktura poleceń interfejsu wiersza polecenia składa się ze [sterownika ("dotnet")](#driver), [polecenia](#command)oraz możliwych [argumentów](#arguments) i [opcji](#options)polecenia. Ten wzorzec jest widoczny w większości operacji interfejsu wiersza polecenia, takich jak tworzenie nowej aplikacji konsolowej i uruchamianie jej z poziomu wiersza poleceń, ponieważ następujące polecenia pokazują, że są wykonywane z katalogu o nazwie *my_app*:
+Struktura poleceń interfejsu wiersza polecenia składa się ze [sterownika ("dotnet")](#driver), [polecenia](#command)oraz możliwych [argumentów](#arguments) i [opcji](#options)polecenia. Ten wzorzec jest widoczny w większości operacji interfejsu wiersza polecenia, takich jak tworzenie nowej aplikacji konsolowej i uruchamianie jej z poziomu wiersza poleceń, ponieważ następujące polecenia pokazują, że są wykonywane z katalogu o nazwie *my_app* :
 
 ```dotnetcli
 dotnet new console
@@ -80,9 +80,9 @@ dotnet /build_output/my_app.dll
 
 Sterownik nosi nazwę [dotnet](dotnet.md) i ma dwie obowiązki, uruchamiają [aplikację zależną od platformy](../deploying/index.md) lub wykonując polecenie.
 
-Aby uruchomić aplikację zależną od platformy, należy określić aplikację po stronie sterownika, na przykład `dotnet /path/to/my_app.dll` . Gdy wykonujesz polecenie z folderu, w którym znajduje się biblioteka DLL aplikacji, po prostu wykonaj `dotnet my_app.dll` . Jeśli chcesz użyć określonej wersji środowiska uruchomieniowego platformy .NET Core, użyj `--fx-version <VERSION>` opcji (zobacz informacje dotyczące [polecenia dotnet](dotnet.md) ).
+Aby uruchomić aplikację zależną od platformy, należy określić aplikację po stronie sterownika, na przykład `dotnet /path/to/my_app.dll` . Gdy wykonujesz polecenie z folderu, w którym znajduje się biblioteka DLL aplikacji, po prostu wykonaj `dotnet my_app.dll` . Jeśli chcesz użyć określonej wersji środowiska uruchomieniowego .NET, użyj `--fx-version <VERSION>` opcji (zobacz informacje dotyczące [polecenia dotnet](dotnet.md) ).
 
-Po podaniu polecenia do sterownika program `dotnet.exe` uruchamia proces wykonywania poleceń interfejsu wiersza polecenia. Na przykład:
+Po podaniu polecenia do sterownika program `dotnet.exe` uruchamia proces wykonywania poleceń interfejsu wiersza polecenia. Przykład:
 
 ```dotnetcli
 dotnet build
@@ -92,7 +92,7 @@ Najpierw sterownik Określa wersję zestawu SDK do użycia. Jeśli nie ma [globa
 
 ### <a name="command"></a>Polecenie
 
-Polecenie wykonuje akcję. Na przykład `dotnet build` kompiluje kod. `dotnet publish`publikuje kod. Polecenia są implementowane jako Aplikacja konsolowa przy użyciu `dotnet {command}` Konwencji.
+Polecenie wykonuje akcję. Na przykład `dotnet build` kompiluje kod. `dotnet publish` publikuje kod. Polecenia są implementowane jako Aplikacja konsolowa przy użyciu `dotnet {command}` Konwencji.
 
 ### <a name="arguments"></a>Argumenty
 
@@ -102,7 +102,7 @@ Argumenty przekazywane do wiersza polecenia są argumentami wywoływanego polece
 
 Opcje, które są przekazywane w wierszu polecenia są opcje wywoływanego polecenia. Na przykład po wykonaniu `dotnet publish --output /build_output` `--output` opcji i jej wartości są przesyłane do `publish` polecenia.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [repozytorium usługi dotnet/zestawu SDK usługi GitHub](https://github.com/dotnet/sdk/)
-- [Przewodnik instalacji programu .NET Core](../install/windows.md)
+- [Przewodnik instalacji platformy .NET](../install/windows.md)

@@ -1,17 +1,18 @@
 ---
 ms.custom: updateeachrelease
-ms.openlocfilehash: d30d6ee2dae332895697b2fd1b931b7ec47d14bc
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 20d4434bc25fbd55cf2bbb309558395dd980d398
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656214"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634504"
 ---
 | Wartość                     | Znaczenie                                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
 | `preview`                 | Kompilator akceptuje całą poprawną składnię języka od najnowszej wersji zapoznawczej.                         |
 | `latest`                  | Kompilator akceptuje składnię z najnowszej wydanej wersji kompilatora (w tym wersji pomocniczej). |
 | `latestMajor` (`default`) | Kompilator akceptuje składnię z najnowszej wydanej wersji głównej kompilatora.                     |
+| `9.0`                     | Kompilator akceptuje tylko składnię zawartą w języku C# 9,0 lub niższym.                                   |
 | `8.0`                     | Kompilator akceptuje tylko składnię zawartą w języku C# 8,0 lub niższym.                                   |
 | `7.3`                     | Kompilator akceptuje tylko składnię zawartą w języku C# 7,3 lub niższym.                                   |
 | `7.2`                     | Kompilator akceptuje tylko składnię zawartą w języku C# 7,2 lub niższym.                                   |

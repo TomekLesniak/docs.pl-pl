@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - SpinLock, how to use
 ms.assetid: a9ed3e4e-4f29-4207-b730-ed0a51ecbc19
-ms.openlocfilehash: 3fb19c2b36d97710685cac4ecd10f47a119814ce
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 8f81df527f83183804132ce09ae713fbbcf6f3ce
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189189"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634249"
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>Instrukcje: korzystanie z struktury spinlock w przypadku synchronizacji niskiego poziomu
 
@@ -26,7 +26,7 @@ Poniższy przykład ilustruje sposób użycia <xref:System.Threading.SpinLock> .
   
  Ten przykład używa <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> klasy, która wymaga synchronizacji użytkowników w przypadku dostępu wielowątkowego. Innym rozwiązaniem jest użycie <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> , które nie wymaga żadnych blokad użytkownika.  
   
- Zwróć uwagę na użycie `false` w wywołaniu metody <xref:System.Threading.SpinLock.Exit%2A?displayProperty=nameWithType> . Zapewnia to najlepszą wydajność. Określ `true` w architekturze ia64 używanie ogranicznika pamięci, który opróżnia bufory zapisu, aby upewnić się, że blokada jest teraz dostępna dla innych wątków do zakończenia.  
+ Zwróć uwagę na użycie `false` w wywołaniu metody <xref:System.Threading.SpinLock.Exit%2A?displayProperty=nameWithType> . Zapewnia to najlepszą wydajność. Określ `true` w architekturach IA64, aby użyć ogrodzenia pamięci, która opróżnia bufory zapisu, aby upewnić się, że blokada jest teraz dostępna dla innych wątków do wprowadzenia.
   
 ## <a name="see-also"></a>Zobacz też
 

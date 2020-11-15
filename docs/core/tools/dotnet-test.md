@@ -2,12 +2,12 @@
 title: polecenie testu dotnet
 description: Polecenie Test dotnet służy do wykonywania testów jednostkowych w danym projekcie.
 ms.date: 04/29/2020
-ms.openlocfilehash: 6805564ccd8a8b4911c7c687d97a06df2910c015
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: a5666cfe4c09b2b88d77b256fac922154c7d6bd7
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281613"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634386"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -255,7 +255,7 @@ Gdzie `Microsoft.NET.Test.Sdk` jest hostem testowym, `xunit` jest to Platforma t
 
 `<operator>`Opisuje relację między właściwością a wartością:
 
-| Operator | Funkcja        |
+| Operator | Function        |
 | :------: | --------------- |
 | `=`      | Pełna zgodność     |
 | `!=`     | Niedokładne dopasowanie |
@@ -268,7 +268,7 @@ Wyrażenie bez elementu `<operator>` jest automatycznie uznawane za `contains` W
 
 Wyrażenia mogą być dołączane za pomocą operatorów warunkowych:
 
-| Operator            | Funkcja |
+| Operator            | Function |
 | ------------------- | -------- |
 | <code>&#124;</code> | LUB       |
 | `&`                 | AND      |
@@ -277,8 +277,8 @@ Wyrażenia można ująć w nawiasy, gdy są używane operatory warunkowe (na prz
 
 Aby uzyskać więcej informacji i zapoznać się z przykładami dotyczącymi używania selektywnego filtrowania testów jednostkowych, zobacz [Uruchamianie selektywnych testów jednostkowych](../testing/selective-unit-tests.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Struktury i elementy docelowe](../../standard/frameworks.md)
-- [Wykaz identyfikatorów środowiska uruchomieniowego platformy .NET Core (RID)](../rid-catalog.md)
+- [Wykaz identyfikatorów środowiska uruchomieniowego .NET (RID)](../rid-catalog.md)
 - [Przekazywanie argumentów runsettings za poorednictwem wiersza polecenia](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md)

@@ -1,16 +1,16 @@
 ---
-title: 'Samouczek: Instalowanie i używanie lokalnych narzędzi platformy .NET Core'
+title: 'Samouczek: Instalowanie i używanie lokalnych narzędzi .NET'
 description: Dowiedz się, jak zainstalować narzędzie .NET i korzystać z niego jako narzędzia lokalnego.
 ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: 555497a71d54713e62e54f8f293afdf74ead1743
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 2cb25443706293b66325d43136afcd3fd886294d
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062680"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633884"
 ---
-# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core
+# <a name="tutorial-install-and-use-a-net-local-tool-using-the-net-cli"></a>Samouczek: Instalowanie i używanie lokalnego narzędzia .NET przy użyciu interfejsu wiersza polecenia platformy .NET
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 3,0 SDK i nowszych wersjach
 
@@ -201,8 +201,8 @@ dotnet tool uninstall dotnetsay
 
 ## <a name="troubleshoot"></a>Rozwiązywanie problemów
 
-Jeśli podczas wykonywania samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z użyciem narzędzia .NET Core](troubleshoot-usage-issues.md).
+Jeśli podczas wykonywania samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z użyciem narzędzia platformy .NET](troubleshoot-usage-issues.md).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 Aby uzyskać więcej informacji, zobacz [Narzędzia platformy .NET Core](global-tools.md)

@@ -3,12 +3,12 @@ title: Obsługa wersji języka c# — Przewodnik C#
 description: Dowiedz się, w jaki sposób wersja języka C# jest określana na podstawie projektu i przyczyn związanych z tym wyborem. Dowiedz się, jak ręcznie przesłonić wartość domyślną.
 ms.custom: updateeachrelease
 ms.date: 08/11/2020
-ms.openlocfilehash: 327a98da37b97830ac7f752a3621a92d8cb161e0
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: a06aa8812dad6f4b9a9254eef9f7c678c22af860
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495463"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634512"
 ---
 # <a name="c-language-versioning"></a>Przechowywanie wersji języka C#
 
@@ -29,9 +29,9 @@ Język C# 9,0 jest obsługiwany tylko w programie .NET 5 i nowszych wersjach.
 
 Kompilator określa wartość domyślną na podstawie następujących reguł:
 
-| Platforma docelowa | version | Domyślna wersja języka C# |
+| Platforma docelowa | Wersja | Domyślna wersja języka C# |
 |------------------|---------|-----------------------------|
-| .NET             | eksportowa     | C# 9,0                      |
+| .NET             | eksportowa     | C# 9.0                      |
 | .NET Core        | wersji     | C# 8.0                      |
 | .NET Core        | 2.x     | C# 7.3                      |
 | .NET Standard    | 2.1     | C# 8.0                      |
@@ -80,7 +80,7 @@ Kompilacje we wszystkich podkatalogach katalogu zawierającego ten plik będą k
 
 ## <a name="c-language-version-reference"></a>Dokumentacja wersji języka C#
 
-W poniższej tabeli przedstawiono wszystkie bieżące wersje języka C#. Kompilator może niekoniecznie zrozumieć każdą wartość, jeśli jest starszy. Jeśli zainstalujesz program .NET Core 3,0 lub nowszy, masz dostęp do wszystkich elementów na liście.
+W poniższej tabeli przedstawiono wszystkie bieżące wersje języka C#. Kompilator może niekoniecznie zrozumieć każdą wartość, jeśli jest starszy. W przypadku zainstalowania najnowszego zestawu SDK platformy .NET masz dostęp do wszystkich elementów na liście.
 
 [!INCLUDE [langversion-table](includes/langversion-table.md)]
 
@@ -106,7 +106,8 @@ W poniższej tabeli przedstawiono wszystkie bieżące wersje języka C#. Kompila
 > 7.1
 > 7.2
 > 7.3
-> 8.0 (default)
+> 8.0
+> 9.0 (default)
 > latestmajor
 > preview
 > latest

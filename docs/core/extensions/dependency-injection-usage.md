@@ -3,19 +3,19 @@ title: Używanie iniekcji zależności w programie .NET
 description: Dowiedz się, jak używać iniekcji zależności w aplikacjach .NET.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/23/2020
+ms.date: 11/13/2020
 ms.topic: tutorial
 no-loc:
 - Transient
 - Scoped
 - Singleton
 - Example
-ms.openlocfilehash: 589e15736c07b465fda308b04c91384a2502755c
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: b1e84685ad95372c4b2038e913199f7283135b71
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888586"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634519"
 ---
 # <a name="tutorial-use-dependency-injection-in-net"></a>Samouczek: używanie iniekcji zależności w programie .NET
 
@@ -37,7 +37,7 @@ Ten samouczek zawiera informacje na temat wykonywania następujących czynności
 
 ## <a name="create-a-new-console-application"></a>Utwórz nową aplikację konsolową
 
-Za pomocą [nowego polecenia dotnet](../tools/dotnet-new.md) lub Kreatora nowego projektu środowiska IDE Utwórz nową aplikację konsolową .NET o nazwie **ConsoleDI. Example** . Dodaj pakiet NuGet [Microsoft. Extensions. host](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) do projektu.
+Za pomocą [nowego polecenia dotnet](../tools/dotnet-new.md) lub Kreatora nowego projektu środowiska IDE Utwórz nową aplikację konsolową .NET o nazwie **ConsoleDI. Example**. Dodaj pakiet NuGet [Microsoft. Extensions. host](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) do projektu.
 
 ## <a name="add-interfaces"></a>Dodaj interfejsy
 
@@ -89,6 +89,11 @@ Zaktualizuj *program.cs* przy użyciu następującego kodu:
 
 :::code language="csharp" source="snippets/configuration/console-di/Program.cs" range="1-18,35-60" highlight="22-26":::
 
+> Każda `services.Add{SERVICE_NAME}` Metoda rozszerzania dodaje i potencjalnie konfiguruje usługi. Zalecamy, aby aplikacje były zgodne z tą konwencją. Umieść metody rozszerzające w <xref:Microsoft.Extensions.DependencyInjection?displayProperty=fullName> przestrzeni nazw, aby hermetyzować grupy rejestracji usług. Łącznie z częścią przestrzeni nazw `Microsoft.Extensions.DependencyInjection` dla metod rozszerzenia di:
+>
+> - Umożliwia wyświetlanie ich w [technologii IntelliSense](/visualstudio/ide/using-intellisense) bez dodawania dodatkowych `using` bloków.
+> - Zapobiega nadmiernym `using` instrukcjom `Program` w `Startup` klasach lub, w których te metody rozszerzające są zwykle wywoływane.
+
 Aplikacja:
 
 - Tworzy <xref:Microsoft.Extensions.Hosting.IHostBuilder> wystąpienie z [domyślnymi ustawieniami spinacza](generic-host.md#default-builder-settings).
@@ -124,7 +129,7 @@ W danych wyjściowych aplikacji można zobaczyć, że:
 - Scoped operacje zmieniają się tylko z nowym zakresem, ale są tego samego wystąpienia w zakresie.
 - Singleton operacje są zawsze takie same. nowe wystąpienie jest tworzone tylko raz.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 * [Wskazówki dotyczące wstrzykiwania zależności](dependency-injection-guidelines.md)
 * [Wstrzykiwanie zależności w ASP.NET Core](/aspnet/core/fundamentals/dependency-injection)

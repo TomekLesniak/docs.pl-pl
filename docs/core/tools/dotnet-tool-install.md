@@ -1,13 +1,13 @@
 ---
 title: polecenie instalacji narzędzia dotnet
-description: Polecenie instalacji narzędzia dotnet służy do instalowania określonego narzędzia platformy .NET Core na komputerze.
+description: Polecenie instalacji narzędzia dotnet służy do instalowania określonego narzędzia platformy .NET na komputerze.
 ms.date: 02/14/2020
-ms.openlocfilehash: 067f90124833da537370a36934ff212aba7577f3
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 1dd870a8f91e557a2f59919682616aa8817fc070
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702815"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634327"
 ---
 # <a name="dotnet-tool-install"></a>dotnet tool install
 
@@ -15,7 +15,7 @@ ms.locfileid: "83702815"
 
 ## <a name="name"></a>Nazwa
 
-`dotnet tool install`-Instaluje określone [Narzędzie .NET Core](global-tools.md) na komputerze.
+`dotnet tool install` -Instaluje określone [Narzędzie .NET](global-tools.md) na komputerze.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -40,7 +40,7 @@ dotnet tool install -h|--help
 
 ## <a name="description"></a>Opis
 
-`dotnet tool install`Polecenie umożliwia Instalowanie narzędzi platformy .NET Core na komputerze. Aby użyć polecenia, należy określić jedną z następujących opcji instalacji:
+`dotnet tool install`Polecenie zapewnia sposób instalacji narzędzi .NET na komputerze. Aby użyć polecenia, należy określić jedną z następujących opcji instalacji:
 
 * Aby zainstalować narzędzie globalne w lokalizacji domyślnej, użyj `--global` opcji.
 * Aby zainstalować narzędzie globalne w niestandardowej lokalizacji, użyj `--tool-path` opcji.
@@ -55,7 +55,7 @@ Narzędzia globalne są instalowane domyślnie w następujących katalogach po o
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-Narzędzia lokalne są dodawane do pliku *dotnet-Tools. JSON* w katalogu *. config* w bieżącym katalogu. Jeśli plik manifestu jeszcze nie istnieje, utwórz go, uruchamiając następujące polecenie:
+Narzędzia lokalne są dodawane do *dotnet-tools.jsw* pliku w katalogu *. config* w bieżącym katalogu. Jeśli plik manifestu jeszcze nie istnieje, utwórz go, uruchamiając następujące polecenie:
 
 ```dotnetcli
 dotnet new tool-manifest
@@ -67,7 +67,7 @@ Aby uzyskać więcej informacji, zobacz [Instalowanie narzędzia lokalnego](glob
 
 - **`PACKAGE_NAME`**
 
-  Nazwa/identyfikator pakietu NuGet zawierającego narzędzie .NET Core do zainstalowania.
+  Nazwa/identyfikator pakietu NuGet zawierającego narzędzie .NET do zainstalowania.
 
 ## <a name="options"></a>Opcje
 
@@ -77,11 +77,11 @@ Aby uzyskać więcej informacji, zobacz [Instalowanie narzędzia lokalnego](glob
 
 - **`configfile <FILE>`**
 
-  Plik konfiguracji NuGet (*NuGet. config*) do użycia.
+  Plik konfiguracji NuGet ( *nuget.config* ) do użycia.
 
 - **`framework <FRAMEWORK>`**
 
-  Określa [platformę docelową](../../standard/frameworks.md) do zainstalowania narzędzia dla programu. Domyślnie zestaw .NET Core SDK próbuje wybrać najbardziej odpowiednią platformę docelową.
+  Określa [platformę docelową](../../standard/frameworks.md) do zainstalowania narzędzia dla programu. Domyślnie zestaw .NET SDK próbuje wybrać najbardziej odpowiednią platformę docelową.
 
 - **`-g|--global`**
 
@@ -125,8 +125,8 @@ Aby uzyskać więcej informacji, zobacz [Instalowanie narzędzia lokalnego](glob
 
   Instaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako narzędzie lokalne dla bieżącego katalogu.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Narzędzia .NET Core](global-tools.md)
-- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core](global-tools-how-to-use.md)
-- [Samouczek: Instalowanie lokalnego narzędzia .NET Core i używanie go przy użyciu interfejs wiersza polecenia platformy .NET Core](local-tools-how-to-use.md)
+- [Narzędzia .NET](global-tools.md)
+- [Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET przy użyciu interfejsu wiersza polecenia platformy .NET](global-tools-how-to-use.md)
+- [Samouczek: Instalowanie i używanie lokalnego narzędzia .NET przy użyciu interfejsu wiersza polecenia platformy .NET](local-tools-how-to-use.md)

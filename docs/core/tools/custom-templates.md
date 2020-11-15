@@ -3,16 +3,16 @@ title: Szablony niestandardowe dla nowego dotnet
 description: Dowiedz się więcej na temat szablonów niestandardowych dla dowolnego typu projektu lub plików platformy .NET.
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 62d98adab0122936957301ee737c366541b0cfe6
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: 3995fad864b80d024209c723a0197281e1b0f523
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471553"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634184"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Szablony niestandardowe dla nowego dotnet
 
-[Zestaw .NET Core SDK](https://dotnet.microsoft.com/download) zawiera wiele szablonów, które są już zainstalowane i gotowe do użycia. [ `dotnet new` Polecenie](dotnet-new.md) nie jest tylko sposobem korzystania z szablonu, ale także instalowania i odinstalowywania szablonów. Począwszy od platformy .NET Core 2,0, można tworzyć własne szablony niestandardowe dla dowolnego typu projektu, takie jak aplikacja, usługa, narzędzie lub Biblioteka klas. Można nawet utworzyć szablon, który wyprowadza jeden lub więcej niezależnych plików, na przykład plik konfiguracji.
+[Zestaw SDK platformy .NET](https://dotnet.microsoft.com/download) zawiera wiele szablonów, które są już zainstalowane i gotowe do użycia. [ `dotnet new` Polecenie](dotnet-new.md) nie jest tylko sposobem korzystania z szablonu, ale także instalowania i odinstalowywania szablonów. Możesz tworzyć własne szablony niestandardowe dla dowolnego typu projektu, takie jak aplikacja, usługa, narzędzie lub Biblioteka klas. Można nawet utworzyć szablon, który wyprowadza jeden lub więcej niezależnych plików, na przykład plik konfiguracji.
 
 Szablony niestandardowe można instalować z pakietu NuGet na dowolnym kanale informacyjnym NuGet, odwołując się bezpośrednio do pliku NuGet *. nupkg* lub określając katalog systemu plików zawierający szablon. Aparat szablonów oferuje funkcje, które umożliwiają zamianę wartości, uwzględnianie i wykluczanie plików oraz wykonywanie niestandardowych operacji przetwarzania, gdy szablon jest używany.
 
@@ -25,18 +25,18 @@ Aby postępować zgodnie z przewodnikiem i utworzyć szablon, zobacz temat [Twor
 
 ### <a name="net-default-templates"></a>Szablony domyślne .NET
 
-Po zainstalowaniu [zestaw .NET Core SDK](https://dotnet.microsoft.com/download)otrzymujesz wiele wbudowanych szablonów służących do tworzenia projektów i plików, takich jak aplikacje konsolowe, biblioteki klas, projekty testów jednostkowych, aplikacje ASP.NET Core (w tym projekty [kątowe](https://angular.io/) i [reagowanie](https://reactjs.org/) ) oraz pliki konfiguracyjne. Aby wyświetlić listę wbudowanych szablonów, uruchom `dotnet new` polecenie z `-l|--list` opcją:
+Po zainstalowaniu [zestawu .NET SDK](https://dotnet.microsoft.com/download)otrzymujesz wiele wbudowanych szablonów służących do tworzenia projektów i plików, w tym aplikacji konsolowych, bibliotek klas, projektów testów jednostkowych, ASP.NET Core aplikacji (w tym projektów [kątowych](https://angular.io/) i [reagowania](https://reactjs.org/) ) oraz plików konfiguracyjnych. Aby wyświetlić listę wbudowanych szablonów, uruchom `dotnet new` polecenie z `-l|--list` opcją:
 
 ```dotnetcli
 dotnet new --list
 ```
 
-## <a name="configuration"></a>Konfiguracja
+## <a name="configuration"></a>Konfigurowanie
 
 Szablon składa się z następujących części:
 
 - Pliki źródłowe i foldery.
-- Plik konfiguracji (*template.json*).
+- Plik konfiguracji ( *template.json* ).
 
 ### <a name="source-files-and-folders"></a>Pliki źródłowe i foldery
 
@@ -206,7 +206,7 @@ dotnet new -u
 To polecenie zwraca coś podobnego do następującego:
 
 ```console
-Template Instantiation Commands for .NET Core CLI
+Template Instantiation Commands for .NET CLI
 
 Currently installed items:
   Microsoft.DotNet.Common.ItemTemplates

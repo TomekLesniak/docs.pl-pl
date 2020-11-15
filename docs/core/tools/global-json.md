@@ -1,27 +1,27 @@
 ---
 title: global.json — omówienie
-description: Dowiedz się, w jaki sposób używać global.jsw pliku, aby ustawić wersję zestaw .NET Core SDK podczas uruchamiania poleceń interfejs wiersza polecenia platformy .NET Core.
+description: Dowiedz się, w jaki sposób używać global.jsw pliku, aby ustawić wersję zestawu .NET SDK podczas uruchamiania poleceń interfejsu wiersza polecenia platformy .NET.
 ms.topic: how-to
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 714e32ec841cee214f801de65bccf0041af66b0b
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 02a0ab478a23f7df55a8cc2e872e480b311304fe
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281548"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634002"
 ---
 # <a name="globaljson-overview"></a>global.json — omówienie
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 2,0 SDK i nowszych wersjach
 
-*global.jsw* pliku umożliwia określenie, która wersja zestaw .NET Core SDK jest używana podczas uruchamiania poleceń interfejs wiersza polecenia platformy .NET Core. Wybór zestaw .NET Core SDK jest niezależny od określania środowiska uruchomieniowego projektu. Wersja zestaw .NET Core SDK wskazuje, które wersje interfejs wiersza polecenia platformy .NET Core są używane.
+*global.jsw* pliku umożliwia określenie, która wersja zestawu SDK platformy .NET jest używana podczas uruchamiania poleceń interfejsu wiersza polecenia platformy .NET. Wybór zestawu .NET SDK jest niezależny od określania środowiska uruchomieniowego projektu. Wersja zestawu .NET SDK wskazuje, które wersje interfejsu wiersza polecenia platformy .NET są używane.
 
 Ogólnie rzecz biorąc, chcesz użyć najnowszej wersji narzędzi zestawu SDK, więc nie jest wymagane *global.js* pliku. W niektórych zaawansowanych scenariuszach możesz chcieć kontrolować wersję narzędzi zestawu SDK, a w tym artykule wyjaśniono, jak to zrobić.
 
 Aby uzyskać więcej informacji na temat określania środowiska uruchomieniowego, zobacz [platforme docelowe](../../standard/frameworks.md).
 
-Zestaw .NET Core SDK szuka *global.js* pliku w bieżącym katalogu roboczym (który nie jest taki sam jak katalog projektu) lub jeden z jego katalogów nadrzędnych.
+Zestaw .NET SDK szuka *global.js* w pliku w bieżącym katalogu roboczym (który nie jest taki sam jak katalog projektu) lub jeden z jego katalogów nadrzędnych.
 
 ## <a name="globaljson-schema"></a>global.jsw schemacie
 
@@ -29,7 +29,7 @@ Zestaw .NET Core SDK szuka *global.js* pliku w bieżącym katalogu roboczym (kt�
 
 Wprowadź `object`
 
-Określa informacje o zestaw .NET Core SDK do wybrania.
+Określa informacje o zestawie SDK platformy .NET do wybrania.
 
 #### <a name="version"></a>Wersja
 
@@ -37,7 +37,7 @@ Określa informacje o zestaw .NET Core SDK do wybrania.
 
 - Dostępne od: .NET Core 1,0 SDK.
 
-Wersja zestaw .NET Core SDK do użycia.
+Wersja zestawu SDK platformy .NET do użycia.
 
 To pole:
 
@@ -84,7 +84,7 @@ W poniższej tabeli przedstawiono możliwe wartości `rollForward` klucza:
 | `latestPatch` | Używa najnowszego zainstalowanego poziomu poprawek, który jest zgodny z żądanym głównym, pomocniczym i grupą funkcji z poziomem poprawek, który jest większy lub równy określonej wartości. <br> Jeśli nie zostanie znaleziony, kończy się niepowodzeniem. |
 | `latestFeature` | Używa najwyższej zainstalowanej grupy funkcji i poziomu poprawek, które pasują do żądanego elementu głównego i pomocniczego z pasmem funkcji i poziomem poprawek, który jest większy lub równy określonej wartości. <br> Jeśli nie zostanie znaleziony, kończy się niepowodzeniem. |
 | `latestMinor` | Używa najwyższej zainstalowanej pomocniczej, pasma funkcji i poziomu poprawek, który jest zgodny z żądanym elementem głównym z pomocniczą, pasmem funkcji i poziomem poprawek, który jest większy lub równy określonej wartości. <br> Jeśli nie zostanie znaleziony, kończy się niepowodzeniem. |
-| `latestMajor` | Używa najwyższej zainstalowanej zestaw .NET Core SDK z wersją, która jest większa lub równa określonej wartości. <br> Jeśli nie zostanie znaleziona, kończy się niepowodzeniem. |
+| `latestMajor` | Używa najwyższego zainstalowanego zestawu .NET SDK z wersją, która jest większa lub równa określonej wartości. <br> Jeśli nie zostanie znaleziona, kończy się niepowodzeniem. |
 | `disable`     | Nie jest rzutowany do przodu. Dokładne dopasowanie jest wymagane. |
 
 ### <a name="msbuild-sdks"></a>MSBuild — zestawy SDK
@@ -149,11 +149,11 @@ Poniższy przykład pokazuje, jak używać najnowszej wersji poprawki zainstalow
 }
 ```
 
-## <a name="globaljson-and-the-net-core-cli"></a>global.jsna i interfejs wiersza polecenia platformy .NET Core
+## <a name="globaljson-and-the-net-cli"></a>global.jsw interfejsie wiersza polecenia platformy .NET i
 
-Warto wiedzieć, które wersje zestawu SDK są zainstalowane na maszynie, aby ustawić je w *global.js* pliku. Aby uzyskać więcej informacji o tym, jak to zrobić, zobacz [Jak sprawdzić, czy program .NET Core jest już zainstalowany](../install/how-to-detect-installed-versions.md#check-sdk-versions).
+Warto wiedzieć, które wersje zestawu SDK są zainstalowane na maszynie, aby ustawić je w *global.js* pliku. Aby uzyskać więcej informacji o tym, jak to zrobić, zobacz [Jak sprawdzić, czy program .NET jest już zainstalowany](../install/how-to-detect-installed-versions.md#check-sdk-versions).
 
-Aby zainstalować dodatkowe zestaw .NET Core SDK wersje na komputerze, odwiedź stronę [pobieranie platformy .NET Core](https://dotnet.microsoft.com/download/dotnet-core) .
+Aby zainstalować dodatkowe wersje zestawu SDK platformy .NET na maszynie, odwiedź stronę [pobieranie platformy .NET Core](https://dotnet.microsoft.com/download/dotnet-core) .
 
 Możesz utworzyć nowy *global.jsw* pliku w bieżącym katalogu, wykonując polecenie [dotnet New](dotnet-new.md) , podobne do poniższego przykładu:
 
@@ -164,7 +164,7 @@ dotnet new globaljson --sdk-version 3.0.100
 ## <a name="matching-rules"></a>Reguły dopasowania
 
 > [!NOTE]
-> Reguły dopasowania podlegają `dotnet.exe` punktowi wejścia, który jest wspólny dla wszystkich zainstalowanych środowiska uruchomieniowego platformy .NET Core. Reguły dopasowania dla najnowszej zainstalowanej wersji środowiska uruchomieniowego platformy .NET Core są używane, gdy istnieje wiele środowisk uruchomieniowych zainstalowanych obok siebie lub jeśli używasz *global.jsw* pliku.
+> Reguły dopasowywania podlegają `dotnet.exe` punktowi wejścia, który jest wspólny dla wszystkich zainstalowanych środowiska uruchomieniowego platformy .NET. Reguły dopasowania dla najnowszej zainstalowanej wersji środowiska uruchomieniowego .NET są używane, gdy istnieje wiele środowisk uruchomieniowych zainstalowanych obok siebie lub w przypadku korzystania z *global.js* pliku.
 
 ## <a name="net-core-3x"></a>[.NET Core 3. x](#tab/netcore3x)
 
@@ -215,6 +215,6 @@ Wersje zestaw .NET Core SDK `2.1.100` za pomocą `2.1.201` zostały wydane podcz
 
   Począwszy od zestawu SDK programu .NET Core 2,1 (wersja 2.1.300), `dotnet ef` polecenie znajduje się w zestawie SDK. Aby skompilować projekt, zainstaluj na komputerze zestaw SDK programu .NET Core 2,0 (wersja 2.1.201) lub wcześniejszy i zdefiniuj żądaną wersję zestawu SDK przy użyciu *global.js* pliku. Aby uzyskać więcej informacji na temat tego `dotnet ef` polecenia, zobacz [EF Core narzędzia wiersza polecenia programu .NET](/ef/core/miscellaneous/cli/dotnet).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Jak są rozwiązywane zestawy SDK projektu](/visualstudio/msbuild/how-to-use-project-sdk#how-project-sdks-are-resolved)

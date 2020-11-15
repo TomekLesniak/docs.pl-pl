@@ -1,21 +1,21 @@
 ---
-title: Polecenie dotnet store
-description: Polecenie "dotnet store" przechowuje określone zestawy w magazynie pakietów środowiska wykonawczego.
+title: polecenie magazynu dotnet
+description: Polecenie "Sklep dotnet" przechowuje określone zestawy w magazynie pakietów środowiska uruchomieniowego.
 ms.date: 02/14/2020
-ms.openlocfilehash: 2f28a9bc287a87f600bda385c579e8070cbaa5ab
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 8efb11c6bf648bc7787d5627e02b180abb8a0afd
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463386"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634340"
 ---
 # <a name="dotnet-store"></a>dotnet store
 
-**Ten artykuł dotyczy:** ✔️ .NET Core 2.x SDK i nowszych wersjach
+**Ten artykuł ma zastosowanie do:** ✔️ .NET Core 2. x SDK i nowszych wersji
 
 ## <a name="name"></a>Nazwa
 
-`dotnet store`- Przechowuje określone zestawy w [magazynie pakietów środowiska wykonawczego](../deploying/runtime-store.md).
+`dotnet store` -Przechowuje określone zestawy w [magazynie pakietów środowiska uruchomieniowego](../deploying/runtime-store.md).
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -31,35 +31,35 @@ dotnet store -h|--help
 
 ## <a name="description"></a>Opis
 
-`dotnet store`przechowuje określone zestawy w [magazynie pakietów środowiska wykonawczego](../deploying/runtime-store.md). Domyślnie zestawy są zoptymalizowane pod kątem docelowego środowiska uruchomieniowego i struktury. Aby uzyskać więcej informacji, zobacz temat [magazynu pakietów środowiska wykonawczego.](../deploying/runtime-store.md)
+`dotnet store` przechowuje określone zestawy w [magazynie pakietów środowiska uruchomieniowego](../deploying/runtime-store.md). Domyślnie zestawy są zoptymalizowane pod kątem docelowego środowiska uruchomieniowego i struktury. Aby uzyskać więcej informacji, zobacz temat [Magazyn pakietów środowiska uruchomieniowego](../deploying/runtime-store.md) .
 
 ## <a name="required-options"></a>Wymagane opcje
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Określa [platformę docelową](../../standard/frameworks.md). Struktura docelowa musi być określona w pliku projektu.
+  Określa [platformę docelową](../../standard/frameworks.md). W pliku projektu należy określić platformę docelową.
 
 - **`-m|--manifest <PATH_TO_MANIFEST_FILE>`**
 
-  *Plik manifestu magazynu pakietów* jest plikiem XML, który zawiera listę pakietów do przechowywania. Format pliku manifestu jest zgodny z formatem projektu w stylu SDK. Tak więc plik projektu, który odwołuje się do `-m|--manifest` żądanych pakietów może służyć z opcją do przechowywania zestawów w magazynie pakietów środowiska wykonawczego. Aby określić wiele plików manifestu, powtórz opcję i ścieżkę dla każdego pliku. Na przykład: `--manifest packages1.csproj --manifest packages2.csproj`.
+  *Plik manifestu magazynu pakietów* to plik XML zawierający listę pakietów do przechowywania. Format pliku manifestu jest zgodny z formatem projektu w stylu zestawu SDK. W związku z tym plik projektu, który odwołuje się do żądanych pakietów, może być używany z `-m|--manifest` opcją przechowywania zestawów w magazynie pakietów środowiska uruchomieniowego. Aby określić wiele plików manifestu, powtórz opcję i ścieżkę dla każdego pliku. Na przykład: `--manifest packages1.csproj --manifest packages2.csproj`.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  [Identyfikator środowiska wykonawczego](../rid-catalog.md) do docelowego.
+  [Identyfikator środowiska uruchomieniowego](../rid-catalog.md) dla elementu docelowego.
 
 ## <a name="optional-options"></a>Opcje opcjonalne
 
 - **`--framework-version <FRAMEWORK_VERSION>`**
 
-  Określa wersję SDK rdzenia .NET. Ta opcja umożliwia wybranie określonej wersji framework `-f|--framework` poza strukturą określoną przez tę opcję.
+  Określa wersję zestawu SDK platformy .NET. Ta opcja umożliwia wybranie określonej wersji struktury poza strukturą określoną przez `-f|--framework` opcję.
 
 - **`-h|--help`**
 
-  Pokazuje informacje o pomocy.
+  Wyświetla informacje pomocy.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Określa ścieżkę do magazynu pakietów środowiska wykonawczego. Jeśli nie zostanie określony, domyślnie jest to podkatalog *magazynu* katalogu instalacyjnego profilu użytkownika .NET Core.
+  Określa ścieżkę do magazynu pakietów środowiska uruchomieniowego. Jeśli nie zostanie określony, domyślnie jest to podkatalog *sklepu* katalogu instalacji .NET profilu użytkownika.
 
 - **`--skip-optimization`**
 
@@ -67,25 +67,25 @@ dotnet store -h|--help
 
 - **`--skip-symbols`**
 
-  Pomija generowanie symboli. Obecnie symbole można generować tylko w systemach Windows i Linux.
+  Pomija generowanie symboli. Obecnie można generować tylko symbole w systemach Windows i Linux.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Ustawia poziom szczegółowości polecenia. Dozwolone wartości `q[uiet]`to `m[inimal]` `n[ormal]`, `d[etailed]`, `diag[nostic]`, i .
+  Ustawia poziom szczegółowości polecenia. Dozwolone wartości to `q[uiet]` , `m[inimal]` , `n[ormal]` , `d[etailed]` i `diag[nostic]` .
 
 - **`-w|--working-dir <WORKING_DIRECTORY>`**
 
-  Katalog roboczy używany przez polecenie. Jeśli nie zostanie określony, używa podkatalogu *obj* bieżącego katalogu.
+  Katalog roboczy używany przez polecenie. Jeśli nie zostanie określony, używa podkatalogu *obj* w bieżącym katalogu.
 
 ## <a name="examples"></a>Przykłady
 
-- Przechowuj pakiety określone w pliku projektu *packages.csproj* dla .NET Core 2.0.0:
+- Przechowuj pakiety określone w pliku projektu *Packages. csproj* dla programu .NET Core 2.0.0:
 
   ```dotnetcli
   dotnet store --manifest packages.csproj --framework-version 2.0.0
   ```
 
-- Przechowuj pakiety określone w *pliku packages.csproj* bez optymalizacji:
+- Przechowuj pakiety określone w *Packages. csproj* bez optymalizacji:
 
   ```dotnetcli
   dotnet store --manifest packages.csproj --skip-optimization

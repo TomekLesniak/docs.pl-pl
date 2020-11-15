@@ -1,16 +1,16 @@
 ---
 title: polecenie dotnet New
-description: Polecenie dotnet New umożliwia tworzenie nowych projektów platformy .NET Core na podstawie określonego szablonu.
+description: Polecenie dotnet New umożliwia tworzenie nowych projektów platformy .NET na podstawie określonego szablonu.
 no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/04/2020
-ms.openlocfilehash: 2ee06c37cd950f3b9771db2f30fe353435641d67
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: 3ee644f05ea5929ffc7b11054ef1d974b811f418
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400594"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634458"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -35,7 +35,7 @@ dotnet new -h|--help
 
 ## <a name="description"></a>Opis
 
-`dotnet new`Polecenie tworzy projekt .NET Core lub inne artefakty na podstawie szablonu.
+`dotnet new`Polecenie tworzy projekt .NET lub inne artefakty na podstawie szablonu.
 
 Polecenie wywołuje [aparat szablonu](https://github.com/dotnet/templating) , aby utworzyć artefakty na dysku na podstawie określonego szablonu i opcji.
 
@@ -56,12 +56,12 @@ Polecenie wywołuje [aparat szablonu](https://github.com/dotnet/templating) , ab
   - Jeśli interfejs wiersza polecenia nie może znaleźć dopasowania szablonu podczas wywoływania `dotnet new` , nie nawet częściowej.
   - Jeśli jest dostępna nowsza wersja szablonu. W takim przypadku projekt lub artefakt jest tworzony, ale interfejs wiersza polecenia ostrzega użytkownika o zaktualizowanej wersji szablonu.
 
-  W poniższej tabeli przedstawiono szablony, które są wstępnie zainstalowane wraz z zestaw .NET Core SDK. Język domyślny dla szablonu jest pokazywany w nawiasach. Kliknij link krótkiej nazwy, aby wyświetlić opcje konkretnego szablonu.
+  W poniższej tabeli przedstawiono szablony, które są wstępnie zainstalowane przy użyciu zestawu .NET SDK. Język domyślny dla szablonu jest pokazywany w nawiasach. Kliknij link krótkiej nazwy, aby wyświetlić opcje konkretnego szablonu.
 
 | Szablony                                    | Krótka nazwa                      | Język     | Tagi                                  | Wprowadzono |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
-| Aplikacja konsoli                          | [konsoli](#console)             | [C#], F #, VB | Wspólna/konsola                        | 1.0        |
-| Biblioteka klas                                | [określono](#classlib)           | [C#], F #, VB | Wspólna/Biblioteka                        | 1.0        |
+| Aplikacja konsoli                          | [konsoli](#console)             | [C#], F #, VB | Wspólna/konsola                        | 1,0        |
+| Biblioteka klas                                | [określono](#classlib)           | [C#], F #, VB | Wspólna/Biblioteka                        | 1,0        |
 | Aplikacja WPF                              | [kodow](#wpf)                     | [C#], VB     | Common/WPF                            | 3,0 (5,0 dla VB)|
 | Biblioteka klas WPF                            | [wpflib](#wpf)                  | [C#], VB     | Common/WPF                            | 3,0 (5,0 dla VB)|
 | Biblioteka kontrolek niestandardowych WPF                   | [wpfcustomcontrollib](#wpf)     | [C#], VB     | Common/WPF                            | 3,0 (5,0 dla VB)|
@@ -69,31 +69,31 @@ Polecenie wywołuje [aparat szablonu](https://github.com/dotnet/templating) , ab
 | Aplikacja Windows Forms (WinForms)         | [WinForms](#winforms)           | [C#], VB     | Typowe/WinForms                       | 3,0 (5,0 dla VB)|
 | Biblioteka klas Windows Forms (WinForms)       | [winformslib](#winforms)        | [C#], VB     | Typowe/WinForms                       | 3,0 (5,0 dla VB)|
 | Usługa procesu roboczego                               | [odpowiedzialn](#web-others)           | Znajd         | Common/Worker/sieć Web                     | 3.0        |
-| Projekt testu jednostkowego                            | [MSTest](#test)                 | [C#], F #, VB | Test/MSTest                           | 1.0        |
+| Projekt testu jednostkowego                            | [MSTest](#test)                 | [C#], F #, VB | Test/MSTest                           | 1,0        |
 | Projekt testowy NUnit 3                         | [NUnit](#nunit)                 | [C#], F #, VB | Test/NUnit                            | 2.1.400    |
 | Element testowy NUnit 3                            | `nunit-test`                    | [C#], F #, VB | Test/NUnit                            | 2.2        |
-| Projekt testu xUnit                           | [xUnit](#test)                  | [C#], F #, VB | Test/xUnit                            | 1.0        |
+| Projekt testu xUnit                           | [xUnit](#test)                  | [C#], F #, VB | Test/xUnit                            | 1,0        |
 | Składnik Razor                              | `razorcomponent`                | Znajd         | Web/ASP. NET                           | 3.0        |
-| Strona Razor                                   | [stronic](#page)                   | Znajd         | Web/ASP. NET                           | 2,0        |
+| Strona Razor                                   | [strona](#page)                   | Znajd         | Web/ASP. NET                           | 2,0        |
 | ViewImports MVC                              | [viewimports](#namespace)       | Znajd         | Web/ASP. NET                           | 2,0        |
 | ViewStart MVC                                | `viewstart`                     | Znajd         | Web/ASP. NET                           | 2,0        |
 | Blazor Aplikacja serwera                            | [blazorserver](#blazorserver)   | Znajd         | WitrynęBlazor                            | 3.0        |
 | BlazorWebAssemblyAplikacja                       | [blazorwasm](#blazorwasm)       | Znajd         | WitrynęBlazor/WebAssembly                | 3.1.300    |
-| ASP.NET Core puste                           | [witrynę](#web)                     | [C#], F #     | Sieć Web/pusta                             | 1.0        |
-| Aplikacja sieci Web ASP.NET Core (Model-View-Controller) | [Standard](#web-options)             | [C#], F #     | Web/MVC                               | 1.0        |
+| ASP.NET Core puste                           | [witrynę](#web)                     | [C#], F #     | Sieć Web/pusta                             | 1,0        |
+| Aplikacja sieci Web ASP.NET Core (Model-View-Controller) | [Standard](#web-options)             | [C#], F #     | Web/MVC                               | 1,0        |
 | Aplikacja sieci Web ASP.NET Core                         | [webapp, Razor](#web-options)   | Znajd         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
 | ASP.NET Core ze Skośnością                    | [kątow](#spa)                 | Znajd         | Web/MVC/SPA                           | 2,0        |
 | ASP.NET Core z React.js                   | [biern](#spa)                   | Znajd         | Web/MVC/SPA                           | 2,0        |
 | ASP.NET Core z React.js i Redux         | [reactredux](#reactredux)       | Znajd         | Web/MVC/SPA                           | 2,0        |
 | Biblioteka klas Razor                          | [razorclasslib](#razorclasslib) | Znajd         | Biblioteka klas sieci Web/Razor/Biblioteka/Razor | 2.1        |
-| Internetowy interfejs API platformy ASP.NET Core                         | [WebApi](#webapi)               | [C#], F #     | Sieć Web/WebAPI                            | 1.0        |
+| Internetowy interfejs API platformy ASP.NET Core                         | [WebApi](#webapi)               | [C#], F #     | Sieć Web/WebAPI                            | 1,0        |
 | ASP.NET Core usługi gRPC                    | [grpc](#web-others)             | Znajd         | Sieć Web/gRPC                              | 3.0        |
 | plik GITIGNORE dotnet                        | `gitignore`                     |              | Config                                | 3.0        |
 | global.jspliku                             | [globaljson](#globaljson)       |              | Config                                | 2,0        |
-| Konfiguracja narzędzia NuGet                                 | `nugetconfig`                   |              | Config                                | 1.0        |
+| Konfiguracja narzędzia NuGet                                 | `nugetconfig`                   |              | Config                                | 1,0        |
 | Plik manifestu narzędzia lokalnego dotnet              | `tool-manifest`                 |              | Config                                | 3.0        |
-| Konfiguracja sieci Web                                   | `webconfig`                     |              | Config                                | 1.0        |
-| Plik rozwiązania                                | `sln`                           |              | Rozwiązanie                              | 1.0        |
+| Konfiguracja sieci Web                                   | `webconfig`                     |              | Config                                | 1,0        |
+| Plik rozwiązania                                | `sln`                           |              | Rozwiązanie                              | 1,0        |
 | Plik buforu protokołu                         | [proto](#namespace)             |              | Sieć Web/gRPC                              | 3.0        |
 
 ## <a name="options"></a>Opcje
@@ -135,7 +135,7 @@ Polecenie wywołuje [aparat szablonu](https://github.com/dotnet/templating) , ab
 
 - **`--nuget-source <SOURCE>`**
 
-  Określa źródło NuGet do użycia podczas instalacji. Dostępne od wersji .NET Core 2,1 SDK.
+  Określa źródło NuGet do użycia podczas instalacji.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -177,6 +177,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
 
@@ -196,7 +197,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 - _ *`-f|--framework <FRAMEWORK>`**
 
-  Określa [platformę](../../standard/frameworks.md) docelową. Wartości: `netcoreapp<version>` Aby utworzyć bibliotekę klas platformy .NET Core lub `netstandard<version>` utworzyć bibliotekę klas .NET Standard. Wartość domyślna to `netstandard2.0`.
+  Określa [platformę](../../standard/frameworks.md) docelową. Wartości: `net5.0` lub `netcoreapp<version>` do tworzenia biblioteki klas .NET lub `netstandard<version>` do tworzenia biblioteki klas .NET Standard. Wartość domyślna dla zestawu .NET 5,0 SDK to `net5.0` .
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -214,7 +215,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 - _ *`-f|--framework <FRAMEWORK>`**
 
-  Określa [platformę](../../standard/frameworks.md) docelową. Wartość domyślna to `netcoreapp3.1`. Dostępne od wersji .NET Core 3,1 SDK.
+  Określa [platformę](../../standard/frameworks.md) docelową. Wartość domyślna to `net5.0`. Dostępne od wersji .NET Core 3,1 SDK.
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -268,6 +269,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
 
@@ -291,6 +293,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.2         | `netcoreapp2.2` |
@@ -306,7 +309,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 **_
 
-### <a name="page"></a>stronic
+### <a name="page"></a>strona
 
 - _ *`-na|--namespace <NAMESPACE_NAME>`**
 
@@ -515,6 +518,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.1` |
@@ -602,6 +606,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
 
@@ -654,6 +659,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.0` |
@@ -674,6 +680,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.0` |
@@ -759,6 +766,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
   | Wersja zestawu SDK | Wartość domyślna   |
   |-------------|-----------------|
+  | 5,0         | `net5.0`        |
   | 3,1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.1` |
@@ -773,7 +781,7 @@ Każdy szablon projektu może mieć dodatkowe opcje dostępne. Szablony podstawo
 
 - _ *`--sdk-version <VERSION_NUMBER>`**
 
-  Określa wersję zestaw .NET Core SDK, która ma być używana w *global.js* pliku.
+  Określa wersję zestawu SDK platformy .NET do użycia w *global.js* pliku.
 
 ***
 

@@ -1,16 +1,16 @@
 ---
-title: 'Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET Core'
+title: 'Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET'
 description: Dowiedz się, jak zainstalować narzędzie .NET i korzystać z niego jako narzędzia globalnego.
 ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: 28e34a4e5a0344e314c5d23228c1af5839db991c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 01b773516da92fb16fb0f67fc6617e0c70d17c9d
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062772"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633898"
 ---
-# <a name="tutorial-install-and-use-a-net-core-global-tool-using-the-net-core-cli"></a>Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET Core przy użyciu interfejs wiersza polecenia platformy .NET Core
+# <a name="tutorial-install-and-use-a-net-global-tool-using-the-net-cli"></a>Samouczek: Instalowanie i używanie narzędzia globalnego platformy .NET przy użyciu interfejsu wiersza polecenia platformy .NET
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 2,1 SDK i nowszych wersjach
 
@@ -28,9 +28,9 @@ W tym samouczku przedstawiono sposób instalowania i używania narzędzia global
    dotnet tool install --global --add-source ./nupkg microsoft.botsay
    ```
 
-   `--global`Parametr nakazuje interfejs wiersza polecenia platformy .NET Core instalowania plików binarnych narzędzia w domyślnej lokalizacji, która jest automatycznie dodawana do zmiennej środowiskowej PATH.
+   `--global`Parametr nakazuje interfejsowi wiersza polecenia platformy .NET zainstalowanie plików binarnych narzędzia w domyślnej lokalizacji, która jest automatycznie dodawana do zmiennej środowiskowej PATH.
 
-   `--add-source`Parametr nakazuje interfejs wiersza polecenia platformy .NET Core tymczasowego używania katalogu *./nupkg* jako dodatkowego źródła strumieniowego dla pakietów NuGet. Pakiet ma unikatową nazwę, aby upewnić się, że zostanie on znaleziony tylko w katalogu *./nupkg* , a nie w witrynie NuGet.org.
+   `--add-source`Parametr informuje interfejs wiersza polecenia platformy .NET, aby tymczasowo używać katalogu *./nupkg* jako dodatkowego źródła strumieniowego dla pakietów NuGet. Pakiet ma unikatową nazwę, aby upewnić się, że zostanie on znaleziony tylko w katalogu *./nupkg* , a nie w witrynie NuGet.org.
 
    Dane wyjściowe przedstawiają polecenie używane do wywoływania narzędzia i zainstalowanej wersji:
 
@@ -70,7 +70,7 @@ W tym samouczku przedstawiono sposób instalowania i używania narzędzia global
    dotnet tool install --tool-path ~/bin --add-source ./nupkg microsoft.botsay
    ```
 
-   `--tool-path`Parametr nakazuje interfejs wiersza polecenia platformy .NET Core instalacji plików binarnych narzędzia w określonej lokalizacji. Jeśli katalog nie istnieje, zostanie utworzony. Ten katalog nie jest automatycznie dodawany do zmiennej środowiskowej PATH.
+   `--tool-path`Parametr nakazuje interfejsowi wiersza polecenia platformy .NET zainstalowanie plików binarnych narzędzia w określonej lokalizacji. Jeśli katalog nie istnieje, zostanie utworzony. Ten katalog nie jest automatycznie dodawany do zmiennej środowiskowej PATH.
 
    Dane wyjściowe przedstawiają polecenie używane do wywoływania narzędzia i zainstalowanej wersji:
 
@@ -109,7 +109,7 @@ W tym samouczku przedstawiono sposób instalowania i używania narzędzia global
 
 ## <a name="troubleshoot"></a>Rozwiązywanie problemów
 
-Jeśli podczas wykonywania samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z użyciem narzędzia .NET Core](troubleshoot-usage-issues.md).
+Jeśli podczas wykonywania samouczka zostanie wyświetlony komunikat o błędzie, zobacz [Rozwiązywanie problemów z użyciem narzędzia platformy .NET](troubleshoot-usage-issues.md).
 
 ## <a name="next-steps"></a>Następne kroki
 

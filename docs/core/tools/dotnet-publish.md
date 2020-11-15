@@ -1,13 +1,13 @@
 ---
 title: polecenie dotnet publish
-description: Dotnet publish polecenie publikuje projekt .NET Core lub rozwiązanie w katalogu.
-ms.date: 02/24/2020
-ms.openlocfilehash: e35a0671cb964e7d9b68ed5bbe261045038229aa
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+description: Dotnet publish polecenie publikuje projekt .NET lub rozwiązanie w katalogu.
+ms.date: 11/11/2020
+ms.openlocfilehash: 9b5d00816e2f4f9557280175e4b016fe79af0673
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440572"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634432"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -41,7 +41,7 @@ dotnet publish -h|--help
 - *.runtimeconfig.jsw* pliku, który określa udostępnione środowisko uruchomieniowe oczekiwane przez aplikację, a także inne opcje konfiguracji środowiska uruchomieniowego (na przykład typ wyrzucania elementów bezużytecznych).
 - Zależności aplikacji, które są kopiowane z pamięci podręcznej NuGet do folderu danych wyjściowych.
 
-`dotnet publish`Dane wyjściowe polecenia są gotowe do wdrożenia w systemie hostingu (na przykład na serwerze, komputerze, Mac, laptopie) do wykonania. Jest to jedyna oficjalnie obsługiwana metoda przygotowania aplikacji do wdrożenia. W zależności od typu wdrożenia, który jest określany przez projekt, system hostingu może lub nie ma zainstalowanego udostępnionego środowiska uruchomieniowego platformy .NET Core. Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](../deploying/deploy-with-cli.md).
+`dotnet publish`Dane wyjściowe polecenia są gotowe do wdrożenia w systemie hostingu (na przykład na serwerze, komputerze, Mac, laptopie) do wykonania. Jest to jedyna oficjalnie obsługiwana metoda przygotowania aplikacji do wdrożenia. W zależności od typu wdrożenia, który jest określany przez projekt, system hostingu może lub nie ma zainstalowanego udostępnionego środowiska uruchomieniowego platformy .NET. Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji .NET za pomocą interfejsu wiersza polecenia platformy .NET](../deploying/deploy-with-cli.md).
 
 ### <a name="implicit-restore"></a>Przywracanie niejawne
 
@@ -53,7 +53,7 @@ dotnet publish -h|--help
 
 `dotnet publish`Polecenie akceptuje Opcje programu MSBuild, takie jak `-p` Ustawienia właściwości i `-l` definiowania rejestratora. Na przykład można ustawić właściwość programu MSBuild przy użyciu formatu: `-p:<NAME>=<VALUE>` .
 
-Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Na przykład:
+Można również ustawić właściwości związane z publikowaniem, odwołując się do pliku *. pubxml* (dostępnego od zestawu SDK platformy .net Core 3,1). Przykład:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -165,7 +165,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 - **`--self-contained [true|false]`**
 
-  Publikuje środowisko uruchomieniowe platformy .NET Core przy użyciu aplikacji, aby nie trzeba było instalować środowiska uruchomieniowego na komputerze docelowym. Wartość domyślna to `true` Jeśli określono identyfikator środowiska uruchomieniowego, a projekt jest projektem wykonywalnym (a nie projektem biblioteki). Aby uzyskać więcej informacji, zobacz Aplikacje [.NET Core](../deploying/index.md) i publikowanie aplikacji [platformy .net core za pomocą interfejs wiersza polecenia platformy .NET Core](../deploying/deploy-with-cli.md).
+  Publikuje środowisko uruchomieniowe platformy .NET przy użyciu aplikacji, aby nie trzeba było instalować środowiska uruchomieniowego na komputerze docelowym. Wartość domyślna to `true` Jeśli określono identyfikator środowiska uruchomieniowego, a projekt jest projektem wykonywalnym (a nie projektem biblioteki). Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji](../deploying/index.md) .NET i [publikowanie aplikacji .NET za pomocą interfejsu wiersza polecenia platformy .NET](../deploying/deploy-with-cli.md).
 
   Jeśli ta opcja jest używana bez określenia `true` lub `false` , wartość domyślna to `true` . W takim przypadku nie należy umieszczać rozwiązania ani argumentu projektu bezpośrednio po `--self-contained` , ponieważ `true` lub `false` jest oczekiwany w tym miejscu.
 
@@ -175,7 +175,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Publikuje aplikację dla danego środowiska uruchomieniowego. Aby uzyskać listę identyfikatorów środowiska uruchomieniowego (RID), zobacz [wykaz identyfikatorów RID](../rid-catalog.md). Aby uzyskać więcej informacji, zobacz Aplikacje [.NET Core](../deploying/index.md) i publikowanie aplikacji [platformy .net core za pomocą interfejs wiersza polecenia platformy .NET Core](../deploying/deploy-with-cli.md).
+  Publikuje aplikację dla danego środowiska uruchomieniowego. Aby uzyskać listę identyfikatorów środowiska uruchomieniowego (RID), zobacz [wykaz identyfikatorów RID](../rid-catalog.md). Aby uzyskać więcej informacji, zobacz [publikowanie aplikacji](../deploying/index.md) .NET i [publikowanie aplikacji .NET za pomocą interfejsu wiersza polecenia platformy .NET](../deploying/deploy-with-cli.md).
 
 - **`-v|--verbosity <LEVEL>`**
 
@@ -231,8 +231,8 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Omówienie publikowania aplikacji .NET Core](../deploying/index.md)
-- [Publikowanie aplikacji platformy .NET Core za pomocą interfejs wiersza polecenia platformy .NET Core](../deploying/deploy-with-cli.md)
+- [Publikowanie aplikacji .NET — Omówienie](../deploying/index.md)
+- [Publikowanie aplikacji .NET za pomocą interfejsu wiersza polecenia platformy .NET](../deploying/deploy-with-cli.md)
 - [Platformy docelowe](../../standard/frameworks.md)
 - [Wykaz identyfikatorów środowisk uruchomieniowych (RID)](../rid-catalog.md)
 - [Praca z macOS Catalina Notarization](../install/macos-notarization-issues.md)

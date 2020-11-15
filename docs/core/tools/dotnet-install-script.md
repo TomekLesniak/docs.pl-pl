@@ -1,19 +1,19 @@
 ---
 title: dotnet-install scripts
-description: Więcej informacji na temat skryptów programu dotnet-Install w celu zainstalowania zestaw .NET Core SDK i udostępnionego środowiska uruchomieniowego.
+description: Dowiedz się więcej na temat skryptów instalacji dotnet w celu zainstalowania zestawu .NET SDK i udostępnionego środowiska uruchomieniowego.
 ms.date: 09/22/2020
-ms.openlocfilehash: 35161edd2a4862e064373d75f1e19396983f3a64
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: a1598a84aa31aeac970f0493d1481651164d733e
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91078206"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634445"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet — informacje o skryptach instalacji
 
 ## <a name="name"></a>Nazwa
 
-`dotnet-install.ps1` | `dotnet-install.sh` -Skrypt służący do instalowania zestaw .NET Core SDK i udostępnionego środowiska uruchomieniowego.
+`dotnet-install.ps1` | `dotnet-install.sh` -Skrypt służący do instalowania zestawu .NET SDK i udostępnionego środowiska uruchomieniowego.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -48,7 +48,7 @@ Skrypt bash odczytuje również przełączniki programu PowerShell, dzięki czem
 
 ## <a name="description"></a>Opis
 
-`dotnet-install`Skrypty przeprowadzili instalację niebędącą administratorem zestaw .NET Core SDK, która obejmuje interfejs wiersza polecenia platformy .NET Core i udostępnione środowisko uruchomieniowe. Istnieją dwa skrypty:
+`dotnet-install`Skrypty wykonują instalację niebędącą administratorem zestawu .NET SDK, który obejmuje interfejs wiersza polecenia platformy .NET i udostępnione środowisko uruchomieniowe. Istnieją dwa skrypty:
 
 * Skrypt programu PowerShell, który działa w systemie Windows.
 * Skrypt bash, który działa w systemie Linux/macOS.
@@ -86,13 +86,13 @@ Przed uruchomieniem skryptu Zainstaluj wymagane [zależności](../install/window
 
 Można zainstalować określoną wersję przy użyciu `-Version|--version` argumentu. Wersja musi być określona jako numer wersji trzech części, np `2.1.0` .. Jeśli wersja nie jest określona, skrypt instaluje `latest` wersję.
 
-Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobieramy spakowane pliki binarne i skopiują je do folderu. Jeśli chcesz, aby wartości klucza rejestru były aktualizowane, użyj instalatorów platformy .NET Core.
+Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobieramy spakowane pliki binarne i skopiują je do folderu. Jeśli chcesz, aby wartości klucza rejestru były aktualizowane, użyj instalatorów platformy .NET.
 
 ## <a name="options"></a>Opcje
 
 - **`-Architecture|--architecture <ARCHITECTURE>`**
 
-  Architektura plików binarnych platformy .NET Core do zainstalowania. Możliwe wartości to `<auto>` , `amd64` , `x64` , `x86` , `arm64` i `arm` . Wartość domyślna to `<auto>` , która reprezentuje aktualnie uruchomioną architekturę systemu operacyjnego.
+  Architektura plików binarnych platformy .NET do zainstalowania. Możliwe wartości to `<auto>` , `amd64` , `x64` , `x86` , `arm64` i `arm` . Wartość domyślna to `<auto>` , która reprezentuje aktualnie uruchomioną architekturę systemu operacyjnego.
 
 - **`-AzureFeed|--azure-feed`**
 
@@ -103,7 +103,7 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
   Określa kanał źródłowy instalacji. Możliwe wartości są następujące:
 
   - `Current` -Najnowsza wersja.
-  - `LTS` -Długoterminowy kanał pomocy technicznej (większość aktualnie obsługiwanych wersji).
+  - `LTS` -Long-Term kanału pomocy technicznej (większość aktualnie obsługiwanych wersji).
   - Dwuczęściowa wersja w formacie X. Y reprezentującym określoną wersję (na przykład `2.1` lub `3.0` ).
   - Nazwa gałęzi: na przykład `release/3.1.1xx` lub `master` (dla nocnych wydań). Użyj tej opcji, aby zainstalować wersję z kanału w wersji zapoznawczej. Użyj nazwy kanału wymienionej w [instalatorze i plikach binarnych](https://github.com/dotnet/core-sdk#installers-and-binaries).
 
@@ -111,7 +111,7 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
 
 - **`-DryRun|--dry-run`**
 
-  W przypadku ustawienia skrypt nie wykona instalacji. Zamiast tego Wyświetla on wiersz polecenia, który służy do spójnej instalacji aktualnie żądanej wersji interfejs wiersza polecenia platformy .NET Core. Jeśli na przykład zostanie określona wersja `latest` , zostanie wyświetlony link z określoną wersją, aby można było użyć tego polecenia w sposób jednoznaczny w skrypcie kompilacji. Wyświetla również lokalizację pliku binarnego, jeśli wolisz zainstalować lub pobrać ją samodzielnie.
+  W przypadku ustawienia skrypt nie wykona instalacji. Zamiast tego Wyświetla on wiersz polecenia, który ma być używany do spójnej instalacji aktualnie żądanej wersji interfejsu CLI platformy .NET. Jeśli na przykład zostanie określona wersja `latest` , zostanie wyświetlony link z określoną wersją, aby można było użyć tego polecenia w sposób jednoznaczny w skrypcie kompilacji. Wyświetla również lokalizację pliku binarnego, jeśli wolisz zainstalować lub pobrać ją samodzielnie.
 
 - **`-FeedCredential|--feed-credential`**
 
@@ -135,7 +135,7 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
 
 - **`-NoPath|--no-path`**
 
-  W przypadku ustawienia folder instalacyjny nie zostanie wyeksportowany do ścieżki bieżącej sesji. Domyślnie skrypt modyfikuje ścieżkę, co sprawia, że interfejs wiersza polecenia platformy .NET Core dostępne natychmiast po instalacji.
+  W przypadku ustawienia folder instalacyjny nie zostanie wyeksportowany do ścieżki bieżącej sesji. Domyślnie skrypt modyfikuje ścieżkę, co sprawia, że interfejs wiersza polecenia platformy .NET jest dostępny natychmiast po instalacji.
 
 - **`-ProxyAddress`**
 
@@ -170,7 +170,7 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
 
 - **`-SkipNonVersionedFiles|--skip-non-versioned-files`**
 
-  Pomija Instalowanie plików nienależących do wersji, takich jak *dotnet.exe*, jeśli już istnieją.
+  Pomija Instalowanie plików nienależących do wersji, takich jak *dotnet.exe* , jeśli już istnieją.
 
 - **`-UncachedFeed|--uncached-feed`**
 
@@ -240,7 +240,7 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
   ./dotnet-install.ps1 -InstallDir '~/.dotnet' -Version '2.1.2' -ProxyAddress $env:HTTP_PROXY -ProxyUseDefaultCredentials;
   ```
 
-- Uzyskaj skrypt i zainstaluj interfejs wiersza polecenia platformy .NET Core przykłady jednoliniowe:
+- Uzyskaj skrypt i zainstaluj przykłady jednoliniowe interfejsu wiersza polecenia platformy .NET:
 
   W systemie Windows:
 
@@ -255,7 +255,7 @@ Skrypty instalacji nie aktualizują rejestru w systemie Windows. Po prostu pobie
   curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin <additional install-script args>
   ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Wersje platformy .NET Core](https://github.com/dotnet/core/releases)
-- [Środowisko uruchomieniowe programu .NET Core i archiwum pobierania zestawu SDK](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)
+- [Wersje platformy .NET](https://github.com/dotnet/core/releases)
+- [Archiwum pobierania środowiska uruchomieniowego .NET i zestawu SDK](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)
