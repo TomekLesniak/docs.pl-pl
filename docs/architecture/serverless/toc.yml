@@ -24,7 +24,7 @@
           href: logic-apps.md
         - name: Azure Event Grid
           href: event-grid.md
-    - name: Trwałe funkcje platformy Azure
+    - name: Trwałe funkcje Azure Functions
       href: durable-azure-functions.md
       items:
         - name: Wzorce orkiestracji
