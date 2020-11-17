@@ -2,12 +2,12 @@
 title: EventCounters na platformie .NET Core
 description: W tym artykule dowiesz się, co EventCounters, jak je wdrożyć i jak je wykorzystać.
 ms.date: 08/07/2020
-ms.openlocfilehash: be273776b888f13893fc694a111093cca1fa8a5e
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 212cd6b495785dcd091187f97a1b5e44e5597a4a
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955320"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687645"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters na platformie .NET Core
 
@@ -17,7 +17,7 @@ EventCounters to interfejsy API platformy .NET Core używane dla lekkiej, międz
 
 Środowisko uruchomieniowe platformy .NET Core i kilka bibliotek .NET publikują podstawowe informacje diagnostyczne przy użyciu EventCounters, począwszy od platformy .NET Core 3,0. Oprócz EventCounters, które są dostarczane przez środowisko uruchomieniowe platformy .NET, można zaimplementować swój własny EventCounters. EventCounters może służyć do śledzenia różnych metryk.
 
-EventCounters na żywo jako część <xref:System.Diagnostics.Tracing.EventSource> i są automatycznie wypychane do narzędzi odbiornika. Podobnie jak w przypadku wszystkich innych zdarzeń w <xref:System.Diagnostics.Tracing.EventSource> , mogą one być używane zarówno w procesie, jak i na zewnątrz w procesie za pośrednictwem <xref:System.Diagnostics.Tracing.EventListener> i EventPipe. Ten artykuł koncentruje się na funkcjach EventCounters i celowo wyklucza narzędzia PerfView i funkcję ETW (śledzenie zdarzeń dla systemu Windows), chociaż oba mogą być używane z EventCounters.
+EventCounters na żywo jako część <xref:System.Diagnostics.Tracing.EventSource> i są automatycznie wypychane do narzędzi odbiornika. Podobnie jak w przypadku wszystkich innych zdarzeń w <xref:System.Diagnostics.Tracing.EventSource> , mogą one być używane zarówno w procesie, jak i na zewnątrz w procesie za pośrednictwem <xref:System.Diagnostics.Tracing.EventListener> i [EventPipe](./eventpipe.md). Ten artykuł koncentruje się na funkcjach EventCounters i celowo wyklucza narzędzia PerfView i funkcję ETW (śledzenie zdarzeń dla systemu Windows), chociaż oba mogą być używane z EventCounters.
 
 ![Obraz przedstawiający diagram w procesie EventCounters i out-of-proc](media/event-counters.svg)
 
@@ -207,7 +207,7 @@ Poniżej znajduje się przykładowa <xref:System.Diagnostics.Tracing.EventListen
 
 Jak pokazano powyżej, _należy_ upewnić się, że `"EventCounterIntervalSec"` argument jest ustawiony w `filterPayload` argumencie podczas wywoływania <xref:System.Diagnostics.Tracing.EventListener.EnableEvents%2A> . W przeciwnym razie liczniki nie będą mogły opróżniać wartości, ponieważ nie wie, z jakim interwałem należy uzyskać opróżnianie.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [dotnet-counters](dotnet-counters.md)
 - [dotnet-trace](dotnet-trace.md)

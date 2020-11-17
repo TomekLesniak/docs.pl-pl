@@ -4,12 +4,12 @@ description: Odwołanie do właściwości i elementów programu MSBuild, które 
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: 463e2a163e6a20f5631b0ab82462614834156ae3
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: ecd1cf405f661d0025553974f92fa1401b13220d
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063231"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687474"
 ---
 # <a name="msbuild-reference-for-net-sdk-projects"></a>Dokumentacja programu MSBuild dla projektów zestawu .NET SDK
 
@@ -123,7 +123,7 @@ Poniższy kod XML wyklucza `System.Security` zestaw z przycinania.
 
 ### <a name="useapphost"></a>UseAppHost
 
-`UseAppHost`Właściwość została wprowadzona w wersji 2.1.400 zestawu .NET SDK. Określa, czy dla wdrożenia jest tworzony natywny plik wykonywalny. Natywny plik wykonywalny jest wymagany w przypadku wdrożeń samodzielnych.
+`UseAppHost`Właściwość określa, czy dla wdrożenia jest tworzony natywny plik wykonywalny. Natywny plik wykonywalny jest wymagany w przypadku wdrożeń samodzielnych.
 
 W programie .NET Core 3,0 i jego nowszych wersjach domyślnie tworzony jest plik wykonywalny zależny od platformy. Ustaw `UseAppHost` Właściwość na `false` , aby wyłączyć generowanie pliku wykonywalnego.
 
@@ -142,7 +142,7 @@ Aby uzyskać więcej informacji o wdrażaniu, zobacz [wdrażanie aplikacji .NET]
 
 ### <a name="embeddedresourceusedependentuponconvention"></a>EmbeddedResourceUseDependentUponConvention
 
-`EmbeddedResourceUseDependentUponConvention`Właściwość określa, czy nazwy plików manifestu zasobów są generowane na podstawie informacji o typie w plikach źródłowych, które znajdują się w plikach zasobów. Na przykład jeśli *Form1. resx* znajduje się w tym samym folderze co *Form1.cs* i `EmbeddedResourceUseDependentUponConvention` jest ustawiona na `true` , wygenerowany plik *resources* przyjmuje swoją nazwę z pierwszego typu zdefiniowanego w *Form1.cs* . Na przykład, jeśli `MyNamespace.Form1` jest pierwszym typem zdefiniowanym w *Form1.cs* , wygenerowana nazwa pliku ma *nazwę. Form1. resources* .
+`EmbeddedResourceUseDependentUponConvention`Właściwość określa, czy nazwy plików manifestu zasobów są generowane na podstawie informacji o typie w plikach źródłowych, które znajdują się w plikach zasobów. Na przykład jeśli *Form1. resx* znajduje się w tym samym folderze co *Form1.cs* i `EmbeddedResourceUseDependentUponConvention` jest ustawiona na `true` , wygenerowany plik *resources* przyjmuje swoją nazwę z pierwszego typu zdefiniowanego w *Form1.cs*. Na przykład, jeśli `MyNamespace.Form1` jest pierwszym typem zdefiniowanym w *Form1.cs*, wygenerowana nazwa pliku ma *nazwę. Form1. resources*.
 
 > [!NOTE]
 > Jeśli `LogicalName` `ManifestResourceName` `DependentUpon` dla elementu określono wartość, lub lub metadanych `EmbeddedResource` , wygenerowana nazwa pliku manifestu dla tego pliku zasobów jest oparta na tym metadanych.
@@ -354,7 +354,7 @@ Niektóre zachowania w czasie wykonywania można skonfigurować, określając w�
 - [PackageReference](#packagereference)
 - [Elementu ProjectReference](#projectreference)
 - [Odwołanie](#reference)
-- [Właściwości przywracania](#restore-properties)
+- [Właściwości związane z przywracaniem](#restore-related-properties)
 
 ### <a name="assettargetfallback"></a>AssetTargetFallback
 
@@ -398,7 +398,7 @@ Fragment pliku projektu w poniższym przykładzie odwołuje się do projektu o n
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Odwołanie
+### <a name="reference"></a>Dokumentacja
 
 `Reference`Element definiuje odwołanie do pliku zestawu.
 
@@ -412,7 +412,7 @@ Fragment pliku projektu w poniższym przykładzie odwołuje się do projektu o n
 </ItemGroup>
 ```
 
-### <a name="restore-properties"></a>Właściwości przywracania
+### <a name="restore-related-properties"></a>Właściwości związane z przywracaniem
 
 Przywracanie przywoływanego pakietu instaluje wszystkie jego bezpośrednie zależności i wszystkie zależności tych zależności. Przywracanie pakietu można dostosować, określając właściwości, takie jak `RestorePackagesPath` i `RestoreIgnoreFailedSources` . Aby uzyskać więcej informacji na temat tych i innych właściwości, zobacz [Restore Target](/nuget/reference/msbuild-targets#restore-target).
 
@@ -422,7 +422,38 @@ Przywracanie przywoływanego pakietu instaluje wszystkie jego bezpośrednie zale
 </PropertyGroup>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="hosting-properties-and-items"></a>Hostowanie właściwości i elementów
+
+- [EnableComHosting](#enablecomhosting)
+- [EnableDynamicLoading](#enabledynamicloading)
+
+### <a name="enablecomhosting"></a>EnableComHosting
+
+`EnableComHosting`Właściwość wskazuje, że zestaw udostępnia serwer com. Ustawienie to `EnableComHosting` `true` oznacza również, że [EnableDynamicLoading](#enabledynamicloading) ma wartość `true` .
+
+```xml
+<PropertyGroup>
+  <EnableComHosting>True</EnableComHosting>
+</PropertyGroup>
+```
+
+Aby uzyskać więcej informacji, zobacz [Udostępnianie składników .NET do modelu COM](../native-interop/expose-components-to-com.md).
+
+### <a name="enabledynamicloading"></a>EnableDynamicLoading
+
+`EnableDynamicLoading`Właściwość wskazuje, że zestaw jest składnikiem ładowanym dynamicznie. Składnik może być [biblioteką com](/windows/win32/com/the-component-object-model) lub biblioteką niebędącą modelem COM, która może być [używana z macierzystego hosta](../tutorials/netcore-hosting.md). Ustawienie tej właściwości na `true` ma następujące skutki:
+
+- Generowany jest *.runtimeconfig.js* pliku.
+- [Przewinięcie do przodu](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward) jest ustawione na `LatestMinor` .
+- Odwołania NuGet są kopiowane lokalnie.
+
+```xml
+<PropertyGroup>
+  <EnableDynamicLoading>true</EnableDynamicLoading>
+</PropertyGroup>
+```
+
+## <a name="see-also"></a>Zobacz także
 
 - [Odwołanie do schematu programu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference)
 - [Typowe właściwości programu MSBuild](/visualstudio/msbuild/common-msbuild-project-properties)

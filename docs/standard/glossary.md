@@ -1,14 +1,13 @@
 ---
 title: Słownik platformy .NET
 description: Sprawdź znaczenie wybranych terminów używanych w dokumentacji programu .NET.
-ms.date: 10/13/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: 3de9e0aea253b42d65199dc3d66f026dd023f4c7
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.date: 11/16/2020
+ms.openlocfilehash: 143657b4ec360640c0a43099ca5c1c0d9c863453
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224401"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687782"
 ---
 # <a name="net-glossary"></a>Słownik platformy .NET
 
@@ -56,11 +55,18 @@ Zestaw może zawierać typy, takie jak interfejsy, klasy, struktury, wyliczenia 
 
 ## <a name="bcl"></a>BCL
 
-Biblioteka klas bazowych. Znane również jako *biblioteki struktury*.
+Biblioteka klas bazowych.
 
 Zestaw bibliotek, które składają się na system. \* (i do ograniczonego zakresu firmy Microsoft \* ). przestrzeni. BCL jest ogólnym celem, na niższym poziomie, które platformy aplikacji wyższego poziomu, takie jak ASP.NET Core, Kompiluj na.
 
-Kod źródłowy BCL dla [programu .NET 5 (i .NET Core) i nowszych wersji](#net-5-and-later-versions) znajduje się w [repozytorium środowiska uruchomieniowego platformy .NET](https://github.com/dotnet/runtime). Większość interfejsów API BCL dla tej nowszej implementacji platformy .NET jest również dostępna w .NET Framework, więc możesz traktować ten kod źródłowy jako rozwidlenie kodu źródłowego .NET Framework BCL.
+Kod źródłowy BCL dla [programu .NET 5 (i .NET Core) i nowszych wersji](#net-5-and-later-versions) znajduje się w [repozytorium środowiska uruchomieniowego platformy .NET](https://github.com/dotnet/runtime). Większość tych interfejsów API BCL są również dostępne w .NET Framework, więc można traktować ten kod źródłowy jako rozwidlenie kodu źródłowego .NET Framework BCL.
+
+Poniższe terminy często odnoszą się do tej samej kolekcji interfejsów API, do których odnosi się BCL:
+
+- [podstawowe biblioteki .NET](../core/compatibility/3.1-5.0.md#core-net-libraries)
+- [biblioteki struktury](#framework-libraries)
+- [biblioteki środowiska uruchomieniowego](#runtime)
+- [współdzielona architektura](#shared-framework)
 
 ## <a name="clr"></a>CLR
 
@@ -106,12 +112,18 @@ Ogólnie kompleksowe zbieranie interfejsów API, które ułatwiają tworzenie i 
 
 Słowo "Framework" ma inne znaczenie w następujących warunkach:
 
+- [biblioteki struktury](#framework-libraries)
 - [.NET Framework](#net-framework)
+- [współdzielona architektura](#shared-framework)
 - [Platforma docelowa](#target-framework)
 - [TFM (moniker struktury docelowej)](#tfm)
 - [aplikacja zależna od struktury](../core/deploying/index.md#publish-framework-dependent)
 
-W starszej dokumentacji programu .NET "struktura" czasami odnosi się do [implementacji platformy .NET](#implementation-of-net). Na przykład artykuł może wywoływać platformę .NET 5 a.
+Czasami "Framework" odnosi się do [implementacji platformy .NET](#implementation-of-net). Na przykład artykuł może wywoływać platformę .NET 5 a.
+
+## <a name="framework-libraries"></a>biblioteki struktury
+
+Znaczenie zależy od kontekstu. Może odwoływać się do bibliotek platformy [.NET 5 (i .NET Core) i nowszych](#net-5-and-later-versions), w takim przypadku odwołują się do tych samych bibliotek, do których odwołuje się [BCL](#bcl) . Może on również odnosić się do bibliotek ASP.NET Core Framework, które kompilują się w BCL i zapewniają dodatkowe interfejsy API dla aplikacji sieci Web.
 
 ## <a name="gc"></a>GC
 
@@ -145,7 +157,7 @@ Implementacja programu .NET obejmuje:
 Przykłady implementacji platformy .NET:
 
 - [.NET Framework](#net-framework)
-- [.NET 5 i nowsze wersje (w tym .NET Core 2.1-3.1](#net-5-and-later-versions)
+- [.NET 5 i nowsze wersje (w tym .NET Core 2.1-3.1)](#net-5-and-later-versions)
 - [Platforma uniwersalna systemu Windows (UWP)](#uwp)
 - [Mono](#mono)
 
@@ -258,21 +270,34 @@ Ogólnie rzecz biorąc, środowisko wykonawcze dla programu zarządzanego. Syste
 - .NET Native (dla platformy UWP)
 - Środowisko uruchomieniowe mono
 
-Słowo "środowisko uruchomieniowe" ma inne znaczenie w następujących kontekstach:
+Słowo "środowisko uruchomieniowe" ma inne znaczenie w niektórych kontekstach:
 
-* [Strona pobierania platformy .NET](https://dotnet.microsoft.com/download).
+* *Środowisko uruchomieniowe .NET* na [stronie pobierania programu .NET 5,0](https://dotnet.microsoft.com/download/dotnet/5.0).
 
-  "Środowisko uruchomieniowe" oznacza [środowisko CLR](#clr) wraz z [BCL](#bcl) (bibliotekami struktury), które można pobrać i zainstalować na komputerze, aby można było uruchamiać aplikacje [zależne od platformy](../core/deploying/index.md#publish-framework-dependent) na komputerze.
+  Możesz pobrać *środowisko uruchomieniowe platformy .NET* lub inne środowiska uruchomieniowe, takie jak *środowisko uruchomieniowe ASP.NET Core*. *Środowisko uruchomieniowe* w tym wykorzystaniu to zestaw składników, które muszą być zainstalowane na komputerze, aby uruchomić aplikację [zależną od platformy](../core/deploying/index.md#publish-framework-dependent) na komputerze. Środowisko uruchomieniowe platformy .NET zawiera [środowisko CLR](#clr) i [współdzielone](#shared-framework)środowisko .NET, które udostępnia [BCL](#bcl).
 
-* [Identyfikator środowiska uruchomieniowego (RID)](../core/rid-catalog.md) dla [programu .NET 5 (oraz platformy .NET Core) i nowszych wersji](#net-5-and-later-versions).
+* *Biblioteki środowiska uruchomieniowego platformy .NET*
 
-  "Środowisko uruchomieniowe" oznacza platformę systemu operacyjnego i architekturę procesora CPU, na których działa aplikacja .NET, na przykład: `linux-x64` .
+  Odwołuje się do tych samych bibliotek, do których odwołuje się [BCL](#bcl) . Jednak inne środowiska uruchomieniowe, takie jak środowisko uruchomieniowe ASP.NET Core, mają różne [platformy udostępnione](#shared-framework), z dodatkowymi bibliotekami, które kompilują się na BCL.
 
-Starsza dokumentacja platformy .NET czasami używa "środowiska uruchomieniowego" w sensie [implementacji platformy .NET](#implementation-of-net), jak w następujących przykładach:
+* [Identyfikator środowiska uruchomieniowego (RID)](../core/rid-catalog.md).
 
-- "Różne środowiska uruchomieniowe platformy .NET implementują określone wersje .NET Standard".
-- "Biblioteki, które są przeznaczone do uruchamiania w wielu środowiskach uruchomieniowych, powinny być ukierunkowane na tę platformę". (odwołujące się do .NET Standard)
-- "Różne środowiska uruchomieniowe platformy .NET implementują określone wersje .NET Standard. … Każda wersja środowiska uruchomieniowego .NET anonsuje najwyższą wersję .NET Standard obsługiwaną przez program... "
+  *Środowisko uruchomieniowe* to oznacza platformę systemu operacyjnego i architekturę procesora CPU, na której działa aplikacja .NET, na przykład: `linux-x64` .
+
+* Czasami "środowisko uruchomieniowe" jest używane w sensie [implementacji platformy .NET](#implementation-of-net), jak w następujących przykładach:
+
+  - "Różne środowiska uruchomieniowe platformy .NET implementują określone wersje .NET Standard. … Każda wersja środowiska uruchomieniowego .NET anonsuje najwyższą wersję .NET Standard obsługiwaną przez program... "
+  - "Biblioteki, które są przeznaczone do uruchamiania w wielu środowiskach uruchomieniowych, powinny być ukierunkowane na tę platformę". (odwołujące się do .NET Standard)
+
+## <a name="shared-framework"></a>współdzielona architektura
+
+Znaczenie zależy od kontekstu. Platforma *udostępniona platformy .NET* odnosi się do bibliotek zawartych w [środowisku uruchomieniowym .NET](#runtime). W takim przypadku *współdzielona struktura* dla [platformy .NET 5 (i .NET Core) i nowszych wersji](#net-5-and-later-versions) odwołuje się do tych samych bibliotek, do których odwołuje się [BCL](#bcl) .
+
+Istnieją inne struktury udostępnione. *ASP.NET Core Shared Framework* odnosi się do bibliotek zawartych w [środowisku uruchomieniowym ASP.NET Core](#runtime), które obejmują BCL oraz dodatkowe interfejsy API do użycia przez aplikacje sieci Web.
+
+W przypadku [aplikacji zależnych od platformy](../core/deploying/index.md#publish-framework-dependent)współdzielona platforma składa się z bibliotek znajdujących się w zestawach zainstalowanych w folderze na komputerze, na którym jest uruchomiona aplikacja. W przypadku [aplikacji samodzielnych](../core/deploying/index.md#publish-self-contained)zestawy wspólnych struktur są dołączone do aplikacji.
+
+Aby uzyskać więcej informacji, zobacz [głębokie szczegółowe w programie .NET Core — elementy podstawowe, część 2: współdzielona struktura](https://natemcmaster.com/blog/2018/08/29/netcore-primitives-2/).
 
 ## <a name="stack"></a>stack
 
@@ -306,11 +331,11 @@ Implementacja platformy .NET, która jest używana do tworzenia nowoczesnych apl
 
 ## <a name="workload"></a>workload
 
-Typ kogoś, kto kompiluje aplikację. Bardziej ogólny niż [model aplikacji](#app-model). Na przykład w górnej części każdej strony z dokumentacją platformy .NET, w tym ten, jest listą rozwijaną dla **obciążeń**, która umożliwia przełączenie do dokumentacji dotyczącej **sieci Web**, **urządzeń przenośnych**, **chmury**, **pulpitu**i **Machine Learning \& danych**.
+Typ kogoś, kto kompiluje aplikację. Bardziej ogólny niż [model aplikacji](#app-model). Na przykład w górnej części każdej strony z dokumentacją platformy .NET, w tym ten, jest listą rozwijaną dla **obciążeń**, która umożliwia przełączenie do dokumentacji dotyczącej **sieci Web**, **urządzeń przenośnych**, **chmury**, **pulpitu** i **Machine Learning \& danych**.
 
 W niektórych kontekstach *obciążenie* dotyczy kolekcji funkcji programu Visual Studio, które można zainstalować w celu obsługi określonego typu aplikacji. Aby zapoznać się z przykładem, zobacz [Wybieranie obciążenia](../core/install/windows.md#select-a-workload).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podstawy programu .NET](../fundamentals/index.yml)
 - [Przewodnik programu .NET Framework](../framework/index.yml)

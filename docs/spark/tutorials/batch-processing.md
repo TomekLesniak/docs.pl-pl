@@ -5,12 +5,12 @@ author: mamccrea
 ms.author: mamccrea
 ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 666292fa2e9cecbd4e0aacd291f1008810eb257e
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: c161a0420de9e99478768926e5385dcfda1f9ee7
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955398"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688231"
 ---
 # <a name="tutorial-do-batch-processing-with-net-for-apache-spark"></a>Samouczek: wykonywanie przetwarzania wsadowego za pomocą platformy .NET dla Apache Spark
 
@@ -158,7 +158,7 @@ Celem tej aplikacji jest uzyskanie szczegółowych informacji o danych projektó
 1. Uruchom aplikację za pomocą programu `spark-submit` . Pamiętaj, aby zaktualizować następujące polecenie z rzeczywistymi ścieżkami do pliku JAR Microsoft Spark.
 
    ```console
-   spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /<path>/to/microsoft-spark-<version>.jar dotnet /<path>/to/netcoreapp<version>/GitHubProjects.dll
+   spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /<path>/to/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar dotnet /<path>/to/netcoreapp<version>/mySparkBatchApp.dll
    ```
 
 ## <a name="get-the-code"></a>Uzyskiwanie kodu

@@ -4,12 +4,12 @@ description: Przegląd metod, parametrów metody i wartości zwracanych metody
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: d5ca96ab3a07b85fa525dd06c975f8e3221c82e8
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: ea07553d20ea6c18bac048a2e8d697f665bfb949
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223667"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687461"
 ---
 # <a name="methods-in-c"></a>Metody w (C#)
 
@@ -47,7 +47,7 @@ Należy zauważyć, że `Motorcycle` Klasa zawiera przeciążoną metodę, `Driv
 
 Metody mogą być *wystąpieniami* lub *statycznymi*. Wywoływanie metody wystąpienia wymaga utworzenia wystąpienia obiektu i wywołania metody dla tego obiektu; Metoda wystąpienia działa na tym wystąpieniu i jego danych. Należy wywołać metodę statyczną, odwołując się do nazwy typu, do którego należy Metoda; metody statyczne nie działają na danych wystąpienia. Próba wywołania metody statycznej za pomocą wystąpienia obiektu generuje błąd kompilatora.
 
-Wywołanie metody jest podobne do uzyskiwania dostępu do pola. Po nazwie obiektu (jeśli wywoływana jest metoda wystąpienia) lub nazwa typu (jeśli wywołujesz `static` metodę), Dodaj kropkę, nazwę metody i nawiasów. Argumenty są wyświetlane w nawiasach i są oddzielone przecinkami.
+Wywołanie metody jest podobne do uzyskiwania dostępu do pola. Po nazwie obiektu (jeśli wywoływana jest metoda wystąpienia) lub nazwa typu (jeśli wywołujesz `static` metodę), Dodaj kropkę, nazwę metody i nawiasów. Argumenty są wyświetlane w nawiasach i oddzielane przecinkami.
 
 Definicja metody Określa nazwy i typy wymaganych parametrów. Gdy wywołujący wywołuje metodę, dostarcza konkretnych wartości, nazywanych argumentami, dla każdego parametru. Argumenty muszą być zgodne z typem parametru, ale nazwa argumentu, jeśli jest używana w wywoływanym kodzie, nie musi być taka sama jak parametr o nazwie zdefiniowanej w metodzie. W poniższym przykładzie `Square` Metoda zawiera pojedynczy parametr typu `int` o nazwie *i*. Pierwsze wywołanie metody przekazuje `Square` metodę zmienną typu `int` o nazwie *NUM*; sekundową, stałą liczbową i trzecim wyrażeniem.
 
@@ -158,7 +158,7 @@ Poniższy przykład wywołuje `ExampleMethod` metodę trzykrotnie.  Pierwsze dwa
 
 [!code-csharp[csSnippets.Methods#22](../../samples/snippets/csharp/concepts/methods/optional1.cs#22)]
 
-Użycie parametrów opcjonalnych wpływa na *rozdzielczość przeciążenia*lub sposób, w jaki kompilator języka C# określa, które określone Przeciążenie powinno być wywoływane przez wywołanie metody w następujący sposób:
+Użycie parametrów opcjonalnych wpływa na *rozdzielczość przeciążenia* lub sposób, w jaki kompilator języka C# określa, które określone Przeciążenie powinno być wywoływane przez wywołanie metody w następujący sposób:
 
 - Metoda, indeksator lub Konstruktor jest kandydatem do wykonania, jeśli każdy z jego parametrów jest opcjonalny lub odpowiada według nazwy lub według pozycji, do pojedynczego argumentu w instrukcji wywołującej i ten argument można przekonwertować na typ parametru.
 - W przypadku znalezienia więcej niż jednego kandydata reguły rozpoznawania przeciążenia dla preferowanych konwersji są stosowane do argumentów, które są jawnie określone. Pominięte argumenty dla parametrów opcjonalnych są ignorowane.
@@ -283,7 +283,7 @@ Zwracany typ iteratora może mieć wartość <xref:System.Collections.IEnumerabl
 
 Aby uzyskać więcej informacji, zobacz [Iteratory](programming-guide/concepts/iterators.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Modyfikatory dostępu](language-reference/keywords/access-modifiers.md)
 - [Klasy statyczne i statyczni członkowie klas](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)

@@ -5,12 +5,12 @@ author: mamccrea
 ms.author: mamccrea
 ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 16b4d34e4c581da2cd0ba798d87e53ccfc49f0e9
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 1c2c966a4ff50a9d2f6951e20d909c5c20c75bfb
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91954896"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688244"
 ---
 # <a name="tutorial-sentiment-analysis-with-net-for-apache-spark-and-mlnet"></a>Samouczek: Analiza tonacji z platformą .NET dla Apache Spark i ML.NET
 
@@ -50,7 +50,7 @@ Poniższa tabela zawiera przykładowe dane:
 
 1. Otwórz program Visual Studio i Utwórz nową aplikację konsolową w języku C# (.NET Core). Nazwij projekt *MLSparkModel*.
 
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt *MLSparkModel* . Następnie wybierz pozycję **dodaj > Machine Learning**.
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt *MLSparkModel* . Następnie wybierz pozycję **dodaj > Machine Learning**.
 
 1. Z konstruktora modelu ML.NET wybierz kafelek scenariusz **Analiza tonacji** .
 
@@ -126,7 +126,7 @@ df.Show();
 
 ### <a name="register-a-user-defined-function"></a>Rejestrowanie funkcji zdefiniowanej przez użytkownika
 
-W aplikacjach platformy Spark można używać funkcji UDF, *zdefiniowanych przez użytkownika*w celu wykonywania obliczeń i analizy danych. W tym samouczku użyjesz ML.NET z UDF, aby oszacować każdy Yelp przegląd.
+W aplikacjach platformy Spark można używać funkcji UDF, *zdefiniowanych przez użytkownika* w celu wykonywania obliczeń i analizy danych. W tym samouczku użyjesz ML.NET z UDF, aby oszacować każdy Yelp przegląd.
 
 Dodaj następujący kod do `Main` metody, aby zarejestrować funkcję UDF o nazwie `MLudf` .
 
@@ -198,7 +198,7 @@ dotnet publish
 Następnie przejdź do folderu publikowania aplikacji konsoli i uruchom następujące `spark-submit` polecenie. Pamiętaj, aby zaktualizować polecenie za pomocą rzeczywistej ścieżki pliku JAR Microsoft Spark.
 
 ```dotnetcli
-%SPARK_HOME%\bin\spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local microsoft-spark-2.4.x-0.10.0.jar dotnet MLSparkModelML.ConsoleApp.dll
+%SPARK_HOME%\bin\spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local microsoft-spark-2-4_2.11-1.0.0.jar dotnet MLSparkModelML.ConsoleApp.dll
 ```
 
 ## <a name="get-the-code"></a>Uzyskiwanie kodu

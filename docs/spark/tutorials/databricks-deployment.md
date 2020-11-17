@@ -4,12 +4,12 @@ description: Dowiedz się, jak wdrożyć aplikację platformy .NET dla Apache Sp
 ms.date: 10/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 1f705878a577a7fa375346cae18010d8c8cc77e1
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: d17fd5002d47dcde804cb43fc27edb2c2c9be595
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955450"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688153"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Samouczek: wdrażanie aplikacji .NET dla Apache Spark w kostkach
 
@@ -36,11 +36,11 @@ Przed rozpoczęciem wykonaj następujące zadania:
 
 > [!Note]
 > Tego samouczka nie można przeprowadzić za pomocą **subskrypcji bezpłatnej wersji próbnej platformy Azure**.
-> Jeśli masz bezpłatne konto, przejdź do swojego profilu i Zmień subskrypcję na **płatność zgodnie z rzeczywistym**użyciem. Aby uzyskać więcej informacji, zobacz [Bezpłatne konto platformy Azure](https://azure.microsoft.com/free/dotnet/). Następnie [Usuń limit wydatków](/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)i [Poproś o zwiększenie limitu przydziału](/azure/azure-supportability/resource-manager-core-quotas-request) dla procesorów wirtualnych vCPU w Twoim regionie. Podczas tworzenia obszaru roboczego Azure Databricks możesz wybrać warstwę cenową **wersji próbnej (Premium-14-Days Free dBu)** , aby umożliwić dostęp do obszaru roboczego bezpłatnie Azure Databricks DBU przez 14 dni.
+> Jeśli masz bezpłatne konto, przejdź do swojego profilu i Zmień subskrypcję na **płatność zgodnie z rzeczywistym** użyciem. Aby uzyskać więcej informacji, zobacz [Bezpłatne konto platformy Azure](https://azure.microsoft.com/free/dotnet/). Następnie [Usuń limit wydatków](/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)i [Poproś o zwiększenie limitu przydziału](/azure/azure-supportability/resource-manager-core-quotas-request) dla procesorów wirtualnych vCPU w Twoim regionie. Podczas tworzenia obszaru roboczego Azure Databricks możesz wybrać warstwę cenową **wersji próbnej (Premium-14-Days Free dBu)** , aby umożliwić dostęp do obszaru roboczego bezpłatnie Azure Databricks DBU przez 14 dni.
 
 W tej sekcji utworzysz obszar roboczy usługi Azure Databricks przy użyciu witryny Azure Portal.
 
-1. W Azure Portal wybierz pozycję **Utwórz**  >  **Analytics**  >  **Azure Databricks**analizy zasobów.
+1. W Azure Portal wybierz pozycję **Utwórz**  >  **Analytics**  >  **Azure Databricks** analizy zasobów.
 
    ![Tworzenie zasobu Azure Databricks w Azure Portal](./media/databricks-deployment/create-databricks-resource.png)
 
@@ -52,7 +52,7 @@ W tej sekcji utworzysz obszar roboczy usługi Azure Databricks przy użyciu witr
     |**Subskrypcja**     | Z listy rozwijanej wybierz subskrypcję platformy Azure.        |
     |**Grupa zasobów**     | Określ, czy chcesz utworzyć nową grupę zasobów, czy użyć istniejącej grupy. Grupa zasobów to kontener zawierający powiązane zasoby dla rozwiązania platformy Azure. Aby uzyskać więcej informacji, zobacz [Omówienie usługi Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview). |
     |**Lokalizacja**     | Wybierz preferowany region. Aby uzyskać informacje na temat dostępnych regionów, zobacz [usługi platformy Azure dostępne według regionów](https://azure.microsoft.com/regions/services/).        |
-    |**Warstwa cenowa**     |  Wybierz warstwę **standardowa**, **Premium**lub **wersja próbna**. Aby uzyskać więcej informacji o tych warstwach, zobacz [stronę usługi Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
+    |**Warstwa cenowa**     |  Wybierz warstwę **standardowa**, **Premium** lub **wersja próbna**. Aby uzyskać więcej informacji o tych warstwach, zobacz [stronę usługi Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
     |**Virtual Network**     |   Nie       |
 
 3. Wybierz pozycję **Utwórz**. Tworzenie obszaru roboczego trwa kilka minut. Podczas tworzenia obszaru roboczego można wyświetlić stan wdrożenia w obszarze **powiadomienia**.
@@ -85,7 +85,7 @@ Korzystając z **interfejsu wiersza polecenia datacegłs** , można nawiązać p
 
 Teraz, gdy masz zainstalowany interfejs wiersza polecenia datakosteks, musisz skonfigurować szczegóły uwierzytelniania.
 
-1. Uruchom polecenie CLI w interfejsie wiersza polecenia `databricks configure --token` .
+1. Uruchom polecenie CLI w interfejsie wiersza polecenia `databricks configure --token` .
 
 2. Po uruchomieniu polecenia Konfiguruj zostanie wyświetlony monit o wprowadzenie hosta. Adres URL hosta używa formatu: `https://<Location>.azuredatabricks.net` . Na przykład jeśli podczas tworzenia usługi Azure Databricks wybrano opcję **eastus2** , host będzie miał wartość `https://eastus2.azuredatabricks.net` .
 
@@ -105,7 +105,10 @@ Teraz powinno być możliwe uzyskanie dostępu do dowolnych klastrów Azure Data
 
 ## <a name="download-worker-dependencies"></a>Pobierz zależności procesów roboczych
 
-1. Aplikacja Microsoft. Spark. Worker ułatwia Apache Spark wykonywanie aplikacji, na przykład dowolnych funkcji zdefiniowanych przez użytkownika (UDF). Pobierz [pakiet Microsoft. Spark. Worker](https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz).
+> [!Note]
+> Platformy Azure i AWS datakostki są oparte na systemie Linux. W związku z tym, Jeśli interesuje Cię wdrażanie aplikacji w kostkach, upewnij się, że aplikacja jest .NET Standard zgodna i że używasz kompilatora .NET Core do kompilowania aplikacji.
+
+1. Aplikacja Microsoft. Spark. Worker ułatwia Apache Spark wykonywanie aplikacji, na przykład dowolnych funkcji zdefiniowanych przez użytkownika (UDF). Pobierz [pakiet Microsoft. Spark. Worker](https://github.com/dotnet/spark/releases/download/v1.0.0/Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-1.0.0.tar.gz).
 
 2. *Install-Worker.sh* to skrypt, który umożliwia skopiowanie programu .net dla Apache Spark plików zależnych do węzłów klastra.
 
@@ -115,7 +118,7 @@ Teraz powinno być możliwe uzyskanie dostępu do dowolnych klastrów Azure Data
 
    Utwórz nowy plik o nazwie **DB-init.sh** na komputerze lokalnym i wklej [zawartość DB-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) znajdującą się w witrynie GitHub.
 
-   W właśnie utworzonym pliku Ustaw `DOTNET_SPARK_RELEASE` zmienną na `https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz` . Pozostaw resztę pliku *DB-init.sh* .
+   W właśnie utworzonym pliku Ustaw `DOTNET_SPARK_RELEASE` zmienną na `https://github.com/dotnet/spark/releases/download/v1.0.0/Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-1.0.0.tar.gz` . Pozostaw resztę pliku *DB-init.sh* .
 
 > [!Note]
 > Jeśli używasz systemu Windows, upewnij się, że końce wiersza w skryptach *Install-Worker.sh* i *DB-init.sh* są w stylu systemu UNIX (LF). Końce wierszy można zmienić za pomocą edytorów tekstu, takich jak Notatnik + + i Atom.
@@ -147,15 +150,15 @@ Następnie opublikujesz *mySparkApp* utworzoną w programie [.net for Apache Spa
 
 W tej sekcji przekazano kilka plików do DBFS, aby klaster miał wszystko, czego potrzebuje do uruchomienia aplikacji w chmurze. Za każdym razem, gdy przekażesz plik do DBFS, upewnij się, że znajduje się w katalogu, w którym znajduje się ten plik na komputerze.
 
-1. Uruchom następujące polecenia, aby przekazać *DB-init.sh*, *Install-Worker.sh*i *Microsoft. Spark. Worker* do DBFS:
+1. Uruchom następujące polecenia, aby przekazać *DB-init.sh*, *Install-Worker.sh* i *Microsoft. Spark. Worker* do DBFS:
 
    ```console
    databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
    databricks fs cp install-worker.sh dbfs:/spark-dotnet/install-worker.sh
-   databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
+   databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-1.0.0.tar.gz dbfs:/spark-dotnet/Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-1.0.0.tar.gz
    ```
 
-2. Uruchom następujące polecenia, aby przekazać pozostałe pliki, do których klaster będzie musiał uruchomić aplikację: spakowanego folderu publikowania, *input.txt*i *Microsoft-Spark-2.4. x-0.3.1. jar*.
+2. Uruchom następujące polecenia, aby przekazać pozostałe pliki, do których klaster będzie musiał uruchomić aplikację: spakowany folder publikowania, *input.txt* i *Microsoft-Spark-2-4_ 2.11 — 1.0.0. jar*.
 
    ```console
    cd mySparkApp
@@ -163,7 +166,7 @@ W tej sekcji przekazano kilka plików do DBFS, aby klaster miał wszystko, czego
 
    cd mySparkApp\bin\Release\netcoreapp3.1\ubuntu.16.04-x64 directory
    databricks fs cp publish.zip dbfs:/spark-dotnet/publish.zip
-   databricks fs cp microsoft-spark-2.4.x-0.6.0.jar dbfs:/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar
+   databricks fs cp microsoft-spark-2-4_2.11-1.0.0.jar dbfs:/spark-dotnet/microsoft-spark-2-4_2.11-1.0.0.jar
    ```
 
 ## <a name="create-a-job"></a>Tworzenie zadania
@@ -181,7 +184,7 @@ Aplikacja jest uruchamiana na Azure Databricks za pomocą zadania uruchamiające
 3. Wklej następujące parametry w konfiguracji zadania. Następnie wybierz pozycję **Potwierdź**.
 
    ```
-   ["--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar","/dbfs/spark-dotnet/publish.zip","mySparkApp"]
+   ["--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/spark-dotnet/microsoft-spark-2-4_2.11-1.0.0.jar","/dbfs/spark-dotnet/publish.zip","mySparkApp"]
    ```
 
 ## <a name="create-a-cluster"></a>Tworzenie klastra
@@ -206,7 +209,7 @@ Aplikacja jest uruchamiana na Azure Databricks za pomocą zadania uruchamiające
 
    ![Azure Databricks tabeli wyjściowej zadania](./media/databricks-deployment/table-output.png)
 
-   Gratulacje, uruchomiono pierwszą aplikację platformy .NET dla Apache Spark w chmurze!
+   Gratulacje, uruchomiono pierwszą aplikację .NET dla Apache Spark w Azure Databricks.
 
 ## <a name="clean-up-resources"></a>Czyszczenie zasobów
 

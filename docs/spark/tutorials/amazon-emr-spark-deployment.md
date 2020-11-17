@@ -4,16 +4,16 @@ description: Dowiedz się, jak wdrożyć aplikację .NET for Apache Spark w usł
 ms.date: 10/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 0232896254e93525f2a6f0be05417107cf7f5432
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: dd1cfdf12266b55d9dbc0210479b89ba68c59a38
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955476"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688075"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-amazon-emr-spark"></a>Wdrażanie aplikacji .NET dla Apache Spark w usłudze Amazon EMR Spark
 
-W tym samouczku przedstawiono sposób wdrażania aplikacji .NET for Apache Spark w usłudze Amazon EMR Spark.
+W tym samouczku przedstawiono sposób wdrażania aplikacji .NET for Apache Spark w usłudze Amazon EMR Spark. [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html) to zarządzana platforma klastra, która upraszcza uruchamianie platform danych Big Data w systemie AWS.
 
 Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 
@@ -23,6 +23,9 @@ Z tego samouczka dowiesz się, jak wykonywać następujące czynności:
 > * Publikowanie aplikacji platformy .NET Spark
 > * Wdrażanie aplikacji w usłudze Amazon EMR Spark
 > * Uruchamianie aplikacji
+
+> [!Note]
+> AWS EMR Spark jest oparty na systemie Linux. W związku z tym, Jeśli interesuje Cię wdrażanie aplikacji w programie AWS EMR Spark, upewnij się, że aplikacja jest zgodna .NET Standard i że używasz kompilatora .NET Core do kompilowania aplikacji.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -37,7 +40,7 @@ Przed rozpoczęciem wykonaj następujące czynności:
 
 1. Wybierz wersję [Microsoft. Spark. Worker](https://github.com/dotnet/spark/releases) Linux netcoreapp, która ma zostać wdrożona w klastrze.
 
-   Jeśli na przykład chcesz `.NET for Apache Spark v0.1.0` użyć `netcoreapp2.1` , Pobierz [pakiet Microsoft. Spark. Worker. netcoreapp 2.1. linux-x64-0.1.0. tar. gz](https://github.com/dotnet/spark/releases/download/v0.1.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.1.0.tar.gz).
+   Jeśli na przykład chcesz `.NET for Apache Spark v1.0.0` użyć `netcoreapp3.1` , Pobierz [pakiet Microsoft. Spark. Worker. netcoreapp 3.1. linux-x64-1.0.0. tar. gz](https://github.com/dotnet/spark/releases/download/v1.0.0/Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-1.0.0.tar.gz).
 
 2. Przekazuj `Microsoft.Spark.Worker.<release>.tar.gz` i [Install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) do rozproszonego systemu plików (np. S3), do którego ma dostęp klaster.
 
@@ -50,7 +53,7 @@ Przed rozpoczęciem wykonaj następujące czynności:
    Uruchom następujące polecenie w systemie Linux.
 
    ```dotnetcli
-   dotnet publish -c Release -f netcoreapp2.1 -r ubuntu.16.04-x64
+   dotnet publish -c Release -f netcoreapp3.1 -r ubuntu.16.04-x64
    ```
 
 3. Twórz `<your app>.zip` pliki do opublikowania.
@@ -63,7 +66,7 @@ Przed rozpoczęciem wykonaj następujące czynności:
 
 4. Przekaż następujące elementy do rozproszonego systemu plików (np. S3), do którego klaster ma dostęp:
 
-   * `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Ten plik JAR jest dołączony jako część pakietu NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) i znajduje się w katalogu danych wyjściowych kompilacji aplikacji.
+   * `microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar`: Ten plik JAR jest dołączony jako część pakietu NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) i znajduje się w katalogu danych wyjściowych kompilacji aplikacji.
    * `<your app>.zip`
    * Pliki (takie jak pliki zależności lub typowe dane dostępne dla każdego pracownika) lub zestawy (takie jak biblioteki DLL, które zawierają zdefiniowane przez użytkownika funkcje lub biblioteki, od których zależy aplikacja), zostaną umieszczone w katalogu roboczym każdego wykonawcy.
 
@@ -111,7 +114,7 @@ Za pomocą polecenia [Spark-Submit](https://spark.apache.org/docs/latest/submitt
    --master yarn \
    --class org.apache.spark.deploy.dotnet.DotnetRunner \
    --files <comma-separated list of assemblies that contain UDF definitions, if any> \
-   s3://mybucket/<some dir>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar \
+   s3://mybucket/<some dir>/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar \
    s3://mybucket/<some dir>/<your app>.zip <your app> <app args>
    ```
 
@@ -124,7 +127,7 @@ Uruchom następujące polecenie w systemie Linux przy użyciu interfejsu wiersza
 ```bash
 aws emr add-steps \
 --cluster-id j-xxxxxxxxxxxxx \
---steps Type=spark,Name="Spark Program",Args=[--master,yarn,--files,s3://mybucket/<some dir>/<udf assembly>,--class,org.apache.spark.deploy.dotnet.DotnetRunner,s3://mybucket/<some dir>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar,s3://mybucket/<some dir>/<your app>.zip,<your app>,<app arg 1>,<app arg 2>,...,<app arg n>],ActionOnFailure=CONTINUE
+--steps Type=spark,Name="Spark Program",Args=[--master,yarn,--files,s3://mybucket/<some dir>/<udf assembly>,--class,org.apache.spark.deploy.dotnet.DotnetRunner,s3://mybucket/<some dir>/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar,s3://mybucket/<some dir>/<your app>.zip,<your app>,<app arg 1>,<app arg 2>,...,<app arg n>],ActionOnFailure=CONTINUE
 ```
 
 ## <a name="next-steps"></a>Następne kroki

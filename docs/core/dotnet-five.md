@@ -1,16 +1,16 @@
 ---
 title: Co nowego w wersji .NET 5
 description: Dowiedz się więcej na temat platformy .NET 5 — platformy deweloperskiej obejmującej wiele platform i typu "open source", która jest kolejną ewolucją platformy .NET Core.
-ms.date: 11/06/2020
+ms.date: 11/16/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 10c1345f4a0a37e04377250da9a7b6df7df3a105
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: 04f72675744426f7dbc99e5978a9ea4bbb8015b1
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594541"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687595"
 ---
 # <a name="whats-new-in-net-5"></a>Co nowego w wersji .NET 5
 
@@ -62,7 +62,7 @@ W przypadku aplikacji i bibliotek programu .NET 5,0, `net5.0` moniker struktury 
 
 Deweloperzy piszący aplikacje .NET 5 będą mieli dostęp do najnowszej wersji i funkcji języka C#. Program .NET 5 jest sparowany z językiem C# 9, który oferuje wiele nowych funkcji w języku. Oto kilka świateł:
 
-- Rekordy: niezmienne typy odwołań, które zachowują się jak typy wartości, i wprowadzają nowe `with` słowo kluczowe do języka.
+- Rekordy: typy referencyjne z semantyką równości opartej na wartościach i mutacją nieniszczącą obsługiwaną przez nowe `with` wyrażenie.
 - Dopasowywanie do wzorca relacyjnego: rozszerza możliwości dopasowania wzorców do operatorów relacyjnych dla obliczeń porównawczych i wyrażeń, w tym wzorców logicznych — nowe słowa kluczowe `and` , `or` i `not` .
 - Instrukcje najwyższego poziomu: jako metody przyspieszania wdrażania i uczenia się języka C#, `Main` Metoda może zostać pominięta, a aplikacja jako prosta jest prawidłowa:
 
@@ -141,36 +141,7 @@ W [ systemach iSystem.Text.Js](../standard/serialization/system-text-json-overvi
 - [Kopiuj JsonSerializerOptions](../standard/serialization/system-text-json-how-to.md#copy-jsonserializeroptions)
 - [Tworzenie JsonSerializerOptions przy użyciu ustawień domyślnych sieci Web](../standard/serialization/system-text-json-how-to.md#web-defaults-for-jsonserializeroptions)
 
-## <a name="net-maui"></a>MAUI .NET
-
-.NET MAUI to ewolucja coraz większego popularnego zestawu narzędzi Xamarin. Forms i jest typu open source w witrynie GitHub na platformie [dotnet/Maui](https://github.com/dotnet/maui). W przypadku programu .NET MAUI wybór dla deweloperów platformy .NET jest uproszczony, zapewniając pojedynczy stos obsługujący wszystkie nowoczesne obciążenia: Android, iOS, macOS i Windows. Za pomocą programu .NET MAUI uzyskasz jeden środowisko dewelopera projektu, które jest przeznaczone dla wielu platform i urządzeń.
-
-> [!IMPORTANT]
-> Program .NET MAUI jest w wczesnej wersji zapoznawczej. Przykładowy kod źródłowy można znaleźć na platformie [Xamarin/net6-Samples](https://github.com/xamarin/net6-samples).
-
-### <a name="model-view-update-pattern"></a>Model-View-Update — wzorzec
-
-Deweloperzy lubią nowoczesne wzorce projektowania. Podejście do tworzenia interfejsu użytkownika, które jest inspirowane "architekturą Elm", jest wzorcem [Model-View-Update](https://elmprogramming.com/model-view-update-part-1.html) lub MVU. MVU promuje jednokierunkową przepływ zarządzania danymi i Stanami, a także środowisko programistyczne, które szybko aktualizuje interfejs użytkownika, stosując tylko te zmiany.
-
-Na przykład rozważmy następujący licznik zapisany w programie .NET MAUI przy użyciu wzorca MVU:
-
-```csharp
-readonly State<int> _count = 0;
-
-[Body]
-View body() => new StackLayout
-{
-    new Label("Welcome to .NET MAUI!"),
-    new Button(
-        () => $"You clicked {_count} times.",
-        () => ++ _count.Value)
-    )
-};
-```
-
-Aby uzyskać więcej informacji, zobacz [plan .NET Maui](https://github.com/dotnet/maui/wiki/Roadmap)i wprowadzenie do artykułu [.NET Maui](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui) .
-
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podróż do jednego programu .NET](https://channel9.msdn.com/Events/Build/2020/BOD106)
 - [Ulepszenia wydajności w programie .NET 5](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5)

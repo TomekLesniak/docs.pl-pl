@@ -4,12 +4,12 @@ description: Dowiedz się, jak przesłać zadanie platformy .NET dla Apache Spar
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: fd04f78c47b34ca07042a4e60e2214f5f1ecac55
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 4d37383ccb3c9b311e0fbd0ada195ac20113e505
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955000"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688205"
 ---
 # <a name="submit-a-net-for-apache-spark-job-to-databricks"></a>Przesyłanie zadania platformy .NET dla Apache Spark do kostek
 
@@ -22,13 +22,13 @@ Można użyć polecenia [Spark-Submit](https://spark.apache.org/docs/latest/subm
 1. Przejdź do obszaru roboczego datakostki i Utwórz zadanie. Wybierz tytuł zadania, a następnie wybierz pozycję Skonfiguruj platformę **Spark-Submit**. Wklej następujące parametry w konfiguracji zadania, a następnie wybierz pozycję **Potwierdź**.
 
     ```
-    ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
+    ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
     ```
 
     > [!NOTE]
     > Zaktualizuj zawartość powyższego parametru w oparciu o określone pliki i konfigurację. Na przykład należy odwołać się do wersji pliku JAR Microsoft. Spark przekazanego do DBFS i użyć odpowiedniej nazwy aplikacji i pliku zip opublikowanej aplikacji.
 
-2. Przejdź do zadania i wybierz pozycję **Edytuj** , aby skonfigurować klaster zadania. Ustaw wersję Databricks Runtime na podstawie wersji Apache Spark, która ma być używana we wdrożeniu. Następnie wybierz **Opcje zaawansowane > init scripts**i Ustaw ścieżkę skryptu init jako `dbfs:/spark-dotnet/db-init.sh` . Wybierz pozycję **Potwierdź** , aby potwierdzić ustawienia klastra.
+2. Przejdź do zadania i wybierz pozycję **Edytuj** , aby skonfigurować klaster zadania. Ustaw wersję Databricks Runtime na podstawie wersji Apache Spark, która ma być używana we wdrożeniu. Następnie wybierz **Opcje zaawansowane > init scripts** i Ustaw ścieżkę skryptu init jako `dbfs:/spark-dotnet/db-init.sh` . Wybierz pozycję **Potwierdź** , aby potwierdzić ustawienia klastra.
 
 3. Przejdź do zadania i wybierz pozycję **Uruchom teraz** , aby uruchomić zadanie w nowo skonfigurowanym klastrze Spark. Utworzenie klastra zadania może potrwać kilka minut. Po jego utworzeniu zadanie zostanie przesłane. Możesz wyświetlić dane wyjściowe, wybierając pozycję **klastry** z menu po lewej stronie obszaru roboczego dane, a następnie wybierz polecenie **dzienniki sterowników**.
 
@@ -40,7 +40,7 @@ Alternatywnie możesz użyć [Ustawienia jar](/azure/databricks/jobs#--create-a-
 
 1. Przejdź do klastra datakosteks i wybierz pozycję **Jobs (zadania** ) z menu po lewej stronie, a następnie **Ustaw jar**.
 
-2. Przekaż odpowiednie `microsoft-spark-<spark-version>-<spark-dotnet-version>.jar` .
+2. Przekaż odpowiednie `microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar` .
 
 3. Zmodyfikuj następujące parametry, aby uwzględnić poprawną nazwę pliku wykonywalnego, który został opublikowany zamiast `<your-app-name>` :
 

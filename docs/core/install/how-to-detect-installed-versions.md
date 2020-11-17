@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 11/10/2020
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: d924e5bc58052cd760f367e906666d68ab79b764
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 39020a32cdea9b82dc9d30e62e663ebc4ee39ebb
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507218"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687445"
 ---
 # <a name="how-to-check-that-net-is-already-installed"></a>Jak sprawdzić, czy platforma .NET jest już zainstalowana
 
@@ -189,5 +189,5 @@ Można wyświetlić zarówno wersje zestawu SDK, jak i wersje środowiska urucho
 ## <a name="next-steps"></a>Następne kroki
 
 - [Zainstaluj środowisko uruchomieniowe platformy .NET i zestaw SDK dla systemu Windows](windows.md).
-- [Zainstaluj środowisko uruchomieniowe platformy .NET i zestaw SDK dla MacOS](linux.md).
-- [Zainstaluj środowisko uruchomieniowe platformy .NET i zestaw SDK dla systemu Linux](macos.md).
+- [Zainstaluj środowisko uruchomieniowe platformy .NET i zestaw SDK dla macOS](macos.md).
+- [Zainstaluj środowisko uruchomieniowe platformy .NET i zestaw SDK dla systemu Linux](linux.md).

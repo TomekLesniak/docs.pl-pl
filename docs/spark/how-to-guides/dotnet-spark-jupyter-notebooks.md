@@ -7,12 +7,12 @@ author: luisquintanilla
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc, how-to
-ms.openlocfilehash: eb285465fcacc3e7d4ee60765c30497dcefbc737
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: efebaf0a66863eae0f71fbf1158b80260d7469cf
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441066"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688179"
 ---
 # <a name="use-net-for-apache-spark-in-jupyter-notebooks"></a>Korzystanie z platformy .NET dla Apache Spark w notesach Jupyter
 
@@ -48,7 +48,7 @@ Aby pracować z notesami Jupyter, musisz mieć dwie rzeczy.
 
 ## <a name="start-net-for-apache-spark"></a>Uruchom platformę .NET dla Apache Spark
 
-Uruchom następujące polecenie, aby uruchomić platformę .NET dla Apache Spark w trybie debugowania. To `spark-submit` polecenie uruchamia proces i czeka na połączenia z [SparkSession](xref:Microsoft.Spark.Sql.SparkSession). Upewnij się, że ścieżka do `microsoft-spark-<version>.jar` odpowiedniej wersji platformy .NET dla Apache Spark jest używana.
+Uruchom następujące polecenie, aby uruchomić platformę .NET dla Apache Spark w trybie debugowania. To `spark-submit` polecenie uruchamia proces i czeka na połączenia z [SparkSession](xref:Microsoft.Spark.Sql.SparkSession). Upewnij się, że ścieżka do `microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar` odpowiedniej wersji platformy .NET dla Apache Spark jest używana.
 
 **Ubuntu**
 

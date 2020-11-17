@@ -2,14 +2,14 @@
 title: Wprowadzenie i Omówienie platformy .NET
 description: Dowiedz się więcej na temat platformy .NET, bezpłatnej platformy deweloperskiej typu open source do tworzenia wielu rodzajów aplikacji.
 author: tdykstra
-ms.date: 09/28/2020
+ms.date: 11/16/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: c3626ed223f66622b65cca888b1b043de275f950
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 1fd452ac9b7740c428e92cc6a510bab5f4d2d7d0
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506743"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687520"
 ---
 # <a name="introduction-to-net"></a>Wprowadzenie do platformy .NET
 
@@ -112,7 +112,7 @@ Poniżej przedstawiono niektóre możliwości obsługiwane przez Języki .NET:
 
 Zintegrowane środowiska programistyczne dla platformy .NET obejmują:
 
-* [Program Visual Studio](https://visualstudio.microsoft.com/vs/)
+* [Visual Studio](https://visualstudio.microsoft.com/vs/)
 
   Działa tylko w systemie Windows. Program udostępnia wiele wbudowanych funkcji przeznaczonych do pracy z platformą .NET. Wersja Community jest bezpłatna dla studentów, współtwórców oprogramowania Open-Source i użytkowników indywidualnych.
 
@@ -132,7 +132,7 @@ Zintegrowane środowiska programistyczne dla platformy .NET obejmują:
 
 Zestaw [SDK platformy .NET](sdk.md) to zestaw bibliotek i narzędzi służących do tworzenia i uruchamiania aplikacji platformy .NET.
 
-Podczas [pobierania programu .NET](https://dotnet.microsoft.com/download/dotnet-core/)można wybrać zestaw SDK lub *środowisko uruchomieniowe* , takie jak środowisko uruchomieniowe platformy .NET lub środowisko uruchomieniowe ASP.NET Core. Zainstaluj środowisko uruchomieniowe na maszynie, która ma zostać przygotowana do uruchamiania aplikacji .NET. Zainstaluj zestaw SDK na komputerze, który ma być używany do programowania. Pobranie zestawu SDK powoduje automatyczne pobranie środowiska uruchomieniowego.
+Podczas [pobierania programu .NET](https://dotnet.microsoft.com/download/dotnet-core/)można wybrać zestaw SDK lub *środowisko uruchomieniowe*, takie jak środowisko uruchomieniowe platformy .NET lub środowisko uruchomieniowe ASP.NET Core. Zainstaluj środowisko uruchomieniowe na maszynie, która ma zostać przygotowana do uruchamiania aplikacji .NET. Zainstaluj zestaw SDK na komputerze, który ma być używany do programowania. Pobranie zestawu SDK powoduje automatyczne pobranie środowiska uruchomieniowego.
 
 Pobranie zestawu SDK obejmuje następujące składniki:
 
@@ -153,7 +153,7 @@ Więcej informacji można znaleźć w następujących zasobach:
 
 ### <a name="project-system-and-msbuild"></a>System projektu i MSBuild
 
-Aplikacja platformy .NET została skompilowana z kodu źródłowego przy użyciu programu [MSBuild](/visualstudio/msbuild/msbuild). Plik projektu ( *. csproj* , *. fsproj* lub *. vbproj* ) określa [elementy docelowe](/visualstudio/msbuild/msbuild-targets) i powiązane [zadania](/visualstudio/msbuild/msbuild-tasks) , które są odpowiedzialne za kompilowanie, pakowanie i publikowanie kodu. Istnieją identyfikatory zestawu SDK odwołujące się do standardowych kolekcji obiektów docelowych i zadań. Użycie tych identyfikatorów ułatwia przechowywanie plików projektów w małych i łatwych działaniach. Na przykład Oto plik projektu dla aplikacji konsolowej:
+Aplikacja platformy .NET została skompilowana z kodu źródłowego przy użyciu programu [MSBuild](/visualstudio/msbuild/msbuild). Plik projektu (*. csproj*, *. fsproj* lub *. vbproj*) określa [elementy docelowe](/visualstudio/msbuild/msbuild-targets) i powiązane [zadania](/visualstudio/msbuild/msbuild-tasks) , które są odpowiedzialne za kompilowanie, pakowanie i publikowanie kodu. Istnieją identyfikatory zestawu SDK odwołujące się do standardowych kolekcji obiektów docelowych i zadań. Użycie tych identyfikatorów ułatwia przechowywanie plików projektów w małych i łatwych działaniach. Na przykład Oto plik projektu dla aplikacji konsolowej:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -221,7 +221,7 @@ Języki platformy .NET wyższego poziomu, takie jak C#, Kompiluj w dół do zest
 
 Ponieważ kompilacja JIT odbywa się podczas wykonywania aplikacji, czas kompilacji jest częścią czasu wykonywania. W związku z tym kompilatory JIT muszą zrównoważyć czas spędzony na optymalizowaniu kodu przed oszczędnościami, które może wygenerować ten kod. Jednak kompilator JIT wie rzeczywisty sprzęt i może zwolnić deweloperów, którzy muszą dostarczać różne implementacje dla różnych platform.
 
-Kompilator .NET JIT może przeprowadzić *kompilację warstwową* , co oznacza, że może ponownie kompilować poszczególne metody w czasie wykonywania. Ta funkcja umożliwia szybkie Kompilowanie jej przy jednoczesnym wykorzystaniu wysoce dostrojonej wersji kodu dla często używanych metod.
+Kompilator .NET JIT może przeprowadzić *kompilację warstwową*, co oznacza, że może ponownie kompilować poszczególne metody w czasie wykonywania. Ta funkcja umożliwia szybkie Kompilowanie jej przy jednoczesnym wykorzystaniu wysoce dostrojonej wersji kodu dla często używanych metod.
 
 Aby uzyskać więcej informacji, zobacz [proces wykonywania zarządzanego](../standard/managed-execution-process.md) i [kompilacja warstwowa](whats-new/dotnet-core-3-0.md#tiered-compilation).
 
@@ -264,9 +264,9 @@ Aby uzyskać więcej informacji, zobacz [Omówienie publikowania aplikacji .NET]
 
 ## <a name="runtime-libraries"></a>Biblioteki środowiska uruchomieniowego
 
-Platforma .NET ma standardowy zestaw klas rozległych. Zestaw podstawowy jest określany mianem biblioteki klas bazowych (BCL). Kompletny zestaw jest określany jako biblioteki środowiska uruchomieniowego lub biblioteki struktury. Te biblioteki zapewniają implementacje dla wielu typów i funkcji związanych z ogólnym obciążeniem.
+Platforma .NET ma standardowy zestaw klas rozległych, znane jako [biblioteki środowiska uruchomieniowego](../standard/glossary.md#runtime), [biblioteki struktury](../standard/glossary.md#framework-libraries)lub [Biblioteka klas bazowych (BCL)](../standard/glossary.md#bcl). Te biblioteki zapewniają implementacje dla wielu typów i funkcji związanych z ogólnym obciążeniem.
 
-Poniżej przedstawiono kilka przykładów typów zdefiniowanych w bibliotekach środowiska uruchomieniowego:
+Poniżej przedstawiono kilka przykładów typów zdefiniowanych w bibliotekach środowiska uruchomieniowego platformy .NET:
 
 * Typy pierwotne, takie jak <xref:System.Boolean?displayProperty=nameWithType> i <xref:System.Int32?displayProperty=nameWithType> .
 * Kolekcje, takie jak <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> i <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> .
@@ -276,9 +276,9 @@ Poniżej przedstawiono kilka przykładów typów zdefiniowanych w bibliotekach �
 * Typy narzędzi [serializacji](../standard/serialization/index.md) , takie jak <xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> i <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> .
 * Typy wysokiej wydajności, takie jak <xref:System.Span%601?displayProperty=nameWithType> , <xref:System.Numerics.Vector?displayProperty=nameWithType> i [potoki](../standard/io/pipelines.md).
 
-Aby uzyskać więcej informacji, zobacz [biblioteki struktury](../standard/framework-libraries.md) i [kod źródłowy dla bibliotek](https://github.com/dotnet/runtime/tree/master/src/libraries).
+Aby uzyskać więcej informacji, zobacz [Omówienie bibliotek środowiska uruchomieniowego](../standard/runtime-libraries-overview.md). Kod źródłowy bibliotek znajduje się w [repozytorium dotnet/środowisko uruchomieniowe usługi GitHub](https://github.com/dotnet/runtime/tree/master/src/libraries).
 
-## <a name="microsoftextensions-libraries"></a>Biblioteki Microsoft. Extensions
+### <a name="extensions-to-the-runtime-libraries"></a>Rozszerzenia bibliotek środowiska uruchomieniowego
 
 Biblioteki niektórych najczęściej używanych funkcji aplikacji nie są uwzględnione w bibliotekach środowiska uruchomieniowego, ale są udostępniane w pakietach NuGet, takich jak:
 
@@ -287,7 +287,7 @@ Biblioteki niektórych najczęściej używanych funkcji aplikacji nie są uwzgl�
 | [Microsoft. Extensions. hosting](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) | [Zarządzanie okresem istnienia aplikacji (host ogólny)](extensions/generic-host.md) |
 | [Microsoft. Extensions. DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) | [Iniekcja zależności (DI)](extensions/dependency-injection.md)
 | [Microsoft.Extensions.Configwersja](https://www.nuget.org/packages/Microsoft.Extensions.Configuration) | [Konfiguracja](extensions/configuration.md) |
-| [Microsoft. Extensions. Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) | [Rejestrowanie](extensions/logging.md) |
+| [Microsoft.Extensions.Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) | [Rejestrowanie](extensions/logging.md) |
 | [Microsoft. Extensions. Opcje](https://www.nuget.org/packages/Microsoft.Extensions.Options) | [Wzorzec opcji](extensions/options.md) |
 
 Aby uzyskać więcej informacji, zobacz [repozytorium dotnet/Extensions w serwisie GitHub](https://github.com/dotnet/extensions).
@@ -344,6 +344,7 @@ Niektóre terminologia dla programu .NET mogą być mylące, ponieważ ten sam w
   | Platforma docelowa | Kolekcja interfejsów API, na których opiera się aplikacja lub biblioteka platformy .NET. Przykłady: .NET Core 3,1, .NET Standard 2,0 |
   | Moniker platformy docelowej (TFM)  | TFM to standardowy format tokenu służący do określania docelowej platformy aplikacji lub biblioteki platformy .NET. Przykład: `net462` dla .NET Framework 4.6.2. |
   | aplikacja zależna od struktury | Aplikacja, która może być uruchamiana tylko na komputerze, na którym zainstalowano środowisko uruchomieniowe ze [strony pobierania platformy .NET](https://dotnet.microsoft.com/download/dotnet-core). "Struktura" w tym wykorzystaniu jest taka sama jak "środowisko uruchomieniowe" pobieranej ze strony pobierania platformy .NET. |
+  | biblioteki struktury | Czasami używany jako synonim dla [bibliotek środowiska uruchomieniowego](#runtime-libraries). |
 
 * **SDK**
 

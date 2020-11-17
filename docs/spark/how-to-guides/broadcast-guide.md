@@ -6,12 +6,12 @@ author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 55a52754439020bd2a925aa3e987fb4ad99c9c3d
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: ca6dab01cbd639594da0b51f145272a9a150e93c
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224005"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687756"
 ---
 # <a name="use-broadcast-variables-in-net-for-apache-spark"></a>Używanie zmiennych emisji w programie .NET dla Apache Spark
 
@@ -96,6 +96,11 @@ Func<Column, Column> udf2 = Udf<string, string>(
 // Calling udf2 works fine as expected
 df.Select(udf2(df["_1"])).Show();
 ```
+
+## <a name="faqs"></a>Często zadawane pytania
+
+**Dlaczego zmienne nie są emitowane w programie .NET Interactive?**  
+Zmienne emisji nie współpracują ze scenariuszami interaktywnymi ze względu na projekt środowiska .NET Interactive, który jest dołączany do każdego obiektu zdefiniowanego w komórce przy użyciu jego klasy przesłaniania komórki, która nie jest oznaczona jako możliwa do serializacji, kończy się niepowodzeniem Aby uzyskać więcej informacji, zapoznaj się z [tym artykułem](dotnet-interactive-udf-issue.md).
 
 ## <a name="next-steps"></a>Następne kroki
 

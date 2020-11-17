@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: d4f44d095fffdfa05b82516cfe79700f9e239110
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 16ccc8f40f290c4bc10f03d1f4d1b296b17f6b11
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955411"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687828"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Samouczek: Rozpoczynanie pracy z platformą .NET dla Apache Spark
 
@@ -53,40 +53,40 @@ Apache Spark jest pobierany jako skompresowany plik TGZ. Użyj programu wyodręb
 
 ### <a name="4-install-apache-spark"></a>4. Zainstaluj Apache Spark
 
-[Pobierz i zainstaluj Apache Spark](https://spark.apache.org/downloads.html). Należy wybrać jedną z wersji 2,3. * lub 2.4.0, 2.4.1, 2.4.3 lub 2.4.4 (.NET dla Apache Spark nie jest zgodna z innymi wersjami Apache Spark).
+[Pobierz i zainstaluj Apache Spark](https://spark.apache.org/downloads.html). Należy wybrać jedną z wersji 2,3. * lub 2.4.0, 2.4.1, 2.4.3, 2.4.4, 2.4.5, 2.4.6, 2.4.7, 3.0.0 lub 3.0.1 (.NET dla Apache Spark nie jest zgodna z innymi wersjami Apache Spark).
 
-W poniższych krokach przyjęto założenie, że [pobrano i zainstalowano Apache Spark 2.4.1](https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz). Jeśli chcesz użyć innej wersji, Zastąp wartość **2.4.1** odpowiednim numerem wersji. Następnie wyodrębnij plik **. tar** i pliki Apache Spark.
+Polecenia używane w poniższych krokach założono, że zostały [pobrane i zainstalowane Apache Spark 3.0.1](https://spark.apache.org/downloads.html). Jeśli chcesz użyć innej wersji, Zamień **3.0.1** na odpowiedni numer wersji. Następnie wyodrębnij plik **. tar** i pliki Apache Spark.
 
 Aby wyodrębnić zagnieżdżony plik **tar** :
 
-* Znajdź pobrany plik **Spark-2.4.1-bin-Hadoop 2.7. tgz** .
+* Znajdź pobrany plik **Spark-3.0.1-bin-Hadoop 2.7. tgz** .
 * Kliknij prawym przyciskiem myszy plik i wybierz **7-zip-> Wyodrębnij tutaj**.
-* **Spark-2.4.1-bin-Hadoop 2.7. tar** jest tworzony obok pobranego pliku **. tgz** .
+* **Spark-3.0.1-bin-Hadoop 2.7. tar** jest tworzony obok pobranego pliku **. tgz** .
 
 Aby wyodrębnić pliki Apache Spark:
 
-* Kliknij prawym przyciskiem myszy pozycję **Spark-2.4.1-bin-Hadoop 2.7. tar** i wybierz pozycję **7-zip-> Wyodrębnianie plików...**
+* Kliknij prawym przyciskiem myszy pozycję **Spark-3.0.1-bin-Hadoop 2.7. tar** i wybierz pozycję **7-zip-> Wyodrębnianie plików...**
 * Wprowadź **C:\Bin** w polu **Wyodrębnij do** .
 * Usuń zaznaczenie pola wyboru pod polem **Wyodrębnij do** .
 * Wybierz przycisk **OK**.
-* Pliki Apache Spark są wyodrębniane do C:\bin\spark-2.4.1-bin-hadoop2.7\
+* Pliki Apache Spark są wyodrębniane do C:\bin\spark-3.0.1-bin-hadoop2.7\
 
-![Zainstaluj platformę Spark](https://dotnet.microsoft.com/static/images/spark-extract-with-7-zip.png?v=YvjUv54LIxI9FbALPC3h8zSQdyMtK2-NKbFOliG-f8M)
+![Zainstaluj platformę Spark](./media/spark-extract-with-7-zip.png)
 
 Uruchom następujące polecenia, aby ustawić zmienne środowiskowe używane do lokalizowania Apache Spark. W systemie Windows pamiętaj, aby uruchomić wiersz polecenia w trybie administratora.
 
 #### <a name="windows"></a>[Windows](#tab/windows)
 
 ```console
-setx /M HADOOP_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
-setx /M SPARK_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
+setx /M HADOOP_HOME C:\bin\spark-3.0.1-bin-hadoop2.7\
+setx /M SPARK_HOME C:\bin\spark-3.0.1-bin-hadoop2.7\
 setx /M PATH "%PATH%;%HADOOP_HOME%;%SPARK_HOME%\bin"
 ```
 
 #### <a name="maclinux"></a>[System Mac/Linux](#tab/linux)
 
 ```bash
-export SPARK_HOME=~/bin/spark-2.4.1-bin-hadoop2.7/
+export SPARK_HOME=~/bin/spark-3.0.1-bin-hadoop2.7/
 export PATH="$SPARK_HOME/bin:$PATH"
 source ~/.bashrc
 ```
@@ -109,24 +109,22 @@ Pobierz wydanie [Microsoft. Spark. Worker](https://github.com/dotnet/spark/relea
 
 Aby wyodrębnić pakiet Microsoft. Spark. Worker:
 
-* Znajdź pobrany plik **Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.8.0.zip** .
+* Znajdź pobrany plik **Microsoft.Spark.Worker.netcoreapp3.1.win-x64-1.0.0.zip** .
 * Kliknij prawym przyciskiem myszy i wybierz **7-zip-> Wyodrębnianie plików.**...
 * Wprowadź **C:\Bin** w polu **Wyodrębnij do** .
 * Usuń zaznaczenie pola wyboru pod polem **Wyodrębnij do** .
 * Wybierz przycisk **OK**.
 
-![Zainstaluj platformę .NET Spark](https://dotnet.microsoft.com/static/images/dotnet-for-spark-extract-with-7-zip.png?v=jwCyum9mL0mGIi4V5zC7yuvLfcj1_nL-QFFD8TClhZk)
-
 ### <a name="6-install-winutils-windows-only"></a>6. Zainstaluj WinUtils (tylko system Windows)
 
-Platforma .NET dla Apache Spark wymaga zainstalowania WinUtils razem z Apache Spark. [Pobierz winutils.exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe). Następnie skopiuj WinUtils do **C:\bin\spark-2.4.1-bin-hadoop2.7\bin**.
+Platforma .NET dla Apache Spark wymaga zainstalowania WinUtils razem z Apache Spark. [Pobierz winutils.exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe). Następnie skopiuj WinUtils do **C:\bin\spark-3.0.1-bin-hadoop2.7\bin**.
 
 > [!NOTE]
 > Jeśli używasz innej wersji usługi Hadoop, która ma adnotację na końcu nazwy folderu instalacji platformy Spark, [Wybierz wersję WinUtils](https://github.com/steveloughran/winutils) zgodną z wersją usługi Hadoop.
 
 ### <a name="7-set-dotnet_worker_dir-and-check-dependencies"></a>7. Ustaw DOTNET_WORKER_DIR i sprawdź zależności
 
-Uruchom jedno z następujących poleceń, aby ustawić `DOTNET_WORKER_DIR` zmienną środowiskową, która jest używana przez aplikacje platformy .NET do lokalizowania programu .NET dla Apache Spark. Upewnij się, że zastąpisz do katalogu, do którego `<PATH-DOTNET_WORKER_DIR>` został pobrany i wyodrębniony `Microsoft.Spark.Worker` . W systemie Windows pamiętaj, aby uruchomić wiersz polecenia w trybie administratora.
+Uruchom jedno z następujących poleceń, aby ustawić `DOTNET_WORKER_DIR` zmienną środowiskową, która jest używana przez aplikacje platformy .NET do lokalizowania danych binarnych programu .NET dla Apache Spark. Upewnij się, że zastąpisz do katalogu, do którego `<PATH-DOTNET_WORKER_DIR>` został pobrany i wyodrębniony `Microsoft.Spark.Worker` . W systemie Windows pamiętaj, aby uruchomić wiersz polecenia w trybie administratora.
 
 #### <a name="windows"></a>[Windows](#tab/windows)
 
@@ -242,7 +240,7 @@ Przejdź do katalogu wyjściowego kompilacji i użyj polecenia, `spark-submit` A
 spark-submit ^
 --class org.apache.spark.deploy.dotnet.DotnetRunner ^
 --master local ^
-microsoft-spark-2.4.x-<version>.jar ^
+microsoft-spark-3-0_2.12-<version>.jar ^
 dotnet MySparkApp.dll <path-of-input.txt>
 ```
 
@@ -252,7 +250,7 @@ dotnet MySparkApp.dll <path-of-input.txt>
 spark-submit \
 --class org.apache.spark.deploy.dotnet.DotnetRunner \
 --master local \
-microsoft-spark-2.4.x-<version>.jar \
+microsoft-spark-3-0_2.12-<version>.jar \
 dotnet MySparkApp.dll <path-of-input.txt>
 ```
 

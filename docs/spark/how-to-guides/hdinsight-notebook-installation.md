@@ -4,12 +4,12 @@ description: Dowiedz się, jak zainstalować platformę .NET dla Apache Spark w 
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: b5689c9ccdd13209fec33674ad8fc80dcc369660
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: e2319fec833147ce50c7b94dd8ccc84f552f20d2
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955052"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688283"
 ---
 # <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a>Zainstaluj platformę .NET dla Apache Spark w notesach Jupyter w klastrach Azure HDInsight Spark
 
@@ -73,7 +73,7 @@ W Azure Portal wybierz **klaster HDInsight Spark** utworzony w poprzednim kroku.
    | Nazwa | *Zainstaluj program .NET dla Apache Spark interaktywnego środowiska notesu* |
    | Identyfikator URI skryptu bash | Identyfikator URI, do którego został przekazany `install-interactive-notebook.sh` . |
    | Typy węzłów| Kierownik i proces roboczy |
-   | Parametry | Wersja platformy .NET dla Apache Spark. Możesz sprawdzić, czy program [.net ma Apache Spark wydania](https://github.com/dotnet/spark/releases). Na przykład jeśli chcesz zainstalować program Sparkdotnet w wersji 0.6.0, może to być `0.6.0` .
+   | Parametry | Wersja platformy .NET dla Apache Spark. Możesz sprawdzić, czy program [.net ma Apache Spark wydania](https://github.com/dotnet/spark/releases). Na przykład jeśli chcesz zainstalować program Sparkdotnet w wersji 1.0.0, może to być `1.0.0` .
 
    Przejdź do następnego kroku, gdy zielony znacznik wyboru pojawia się obok stanu akcji skryptu.
 
@@ -101,7 +101,7 @@ Postępuj zgodnie z instrukcjami w sekcji [Zatrzymaj usługi Livy Server](#stop-
 
    * **Właściwość 2** Użyj wersji platformy .NET dla Apache Spark, która została uwzględniona w poprzedniej akcji skryptu.
        * Głównych&ensp;&ensp;`spark.dotnet.packages`
-       * Wartość: `["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`
+       * Wartość: `["nuget: Microsoft.Spark, 1.0.0", "nuget: Microsoft.Spark.Extensions.Delta, 1.0.0"]`
 
    * **Właściwość 3**
        * Głównych&ensp;&ensp;`spark.dotnet.interpreter`

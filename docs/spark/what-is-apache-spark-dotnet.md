@@ -4,16 +4,16 @@ description: Dowiedz się więcej na temat platformy .NET dla Apache Spark, bezp
 author: mamccrea
 ms.topic: overview
 ms.date: 10/09/2020
-ms.openlocfilehash: 2c743cf7f88d857fb87aed123bd687c353fd8b84
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 533a4d3b497ad499edcf3accf250477c03f98714
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955359"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688036"
 ---
 # <a name="what-is-net-for-apache-spark"></a>Co to jest platforma .NET dla platformy Apache Spark?
 
-[Apache Spark](what-is-spark.md) to aparat przetwarzania rozproszonego ogólnego przeznaczenia na potrzeby analiz przez duże zbiory danych — zazwyczaj terabajty lub petabajtów danych. Za pomocą platformy .NET dla Apache Spark, bezpłatna, typu open source i międzyplatformowego wsparcia platformy .NET dla popularnej struktury analizy danych Big Data dla typu open source, możesz teraz dodawać możliwości Apache Spark do aplikacji do obsługi danych Big Data przy użyciu języków, które już znasz.
+[Apache Spark](what-is-spark.md) to aparat przetwarzania rozproszonego ogólnego przeznaczenia na potrzeby analiz przez duże zbiory danych — zazwyczaj terabajty lub petabajtów danych. Za pomocą platformy .NET dla Apache Spark, bezpłatna, typu [Open Source](https://github.com/dotnet/spark)i międzyplatformowego wsparcia platformy .NET dla popularnej struktury analizy danych Big Data dla typu open source, możesz teraz dodawać możliwości Apache Spark do aplikacji do obsługi danych Big Data przy użyciu języków, które już znasz.
 
 ## <a name="why-choose-net-for-apache-spark"></a>Dlaczego warto wybrać platformę .NET dla Apache Spark?
 

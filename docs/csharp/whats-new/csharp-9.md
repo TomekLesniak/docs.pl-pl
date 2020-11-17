@@ -2,12 +2,12 @@
 title: Co nowego w języku C# 9,0 — przewodnik w języku C#
 description: Zapoznaj się z omówieniem nowych funkcji dostępnych w języku C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 5b3695dee8fc26f69e713d1d6811acdf0cfa9764
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: dbc104cb0bbfc965b0cc055429713538f62ed0e8
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557223"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687363"
 ---
 # <a name="whats-new-in-c-90"></a>Co nowego w języku C# 9.0
 
@@ -36,7 +36,7 @@ Najnowszą wersję zestawu SDK platformy .NET można pobrać ze [strony plików 
 
 ## <a name="record-types"></a>Typy rekordów
 
-W języku C# 9,0 wprowadzono * *_typy rekordów_* _, które są typu referencyjnego, który dostarcza metody, które umożliwiają syntezę wartości dla równości. Rekordy są domyślnie niezmienne.
+W języku C# 9,0 wprowadzono **_typy rekordów_* _, które są typu referencyjnego, który dostarcza metody, które umożliwiają syntezę wartości dla równości. Rekordy są domyślnie niezmienne.
 
 Typy rekordów ułatwiają tworzenie niemodyfikowalnych typów referencyjnych w programie .NET. Historycznie typy .NET są w znacznym stopniu klasyfikowane jako typy referencyjne (w tym klasy i typy anonimowe) i typy wartości (w tym struktury i krotki). Chociaż zaleca się niezmienne typy wartości, modyfikowalne typy wartości nie często wprowadzają błędy. Zmienne typu wartości przechowują wartości, więc zmiany są wprowadzane do kopii oryginalnych danych, gdy typy wartości są przekazywane do metod.
 
@@ -104,9 +104,13 @@ Wreszcie rejestruje [ `with` wyrażenia](../language-reference/operators/with-ex
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="Wither":::
 
-Powyższy wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwość jest kopią `person` , a ma wartość `FirstName` `"Paul"` . W wyrażeniu można ustawić dowolną liczbę właściwości `with` .
+Poprzedni wiersz tworzy nowy `Person` rekord, w którym `LastName` Właściwość jest kopią `person` , a `FirstName` ma wartość `"Paul"` . W wyrażeniu można ustawić dowolną liczbę właściwości `with` . Możesz również użyć `with` wyrażeń, aby utworzyć dokładną kopię. Należy określić pusty zestaw właściwości do zmodyfikowania:
+
+:::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="WithCopy":::
 
 Każdy z tych elementów członkowskich, z wyjątkiem metody "Clone", może zostać przez Ciebie zapisany. Jeśli typ rekordu ma metodę, która pasuje do sygnatury dowolnej metody, kompilator nie wykonuje syntezy tej metody. W przykładzie wcześniejszego `Dog` rekordu znajduje się <xref:System.String.ToString> Przykładowa Metoda ze znakiem.
+
+Dowiedz się więcej na temat typów rekordów w tym samouczku [eksploracji rekordów](../tutorials/exploration/records.md) .
 
 ## <a name="init-only-setters"></a>Metody ustawiające tylko do inicjowania
 
@@ -244,9 +248,9 @@ Dwie funkcje końcowe obsługują generatory kodu w języku C#. Generatory kodu 
 
 Generator kodu odczytuje atrybuty lub inne elementy kodu przy użyciu interfejsów API analizy Roslyn. Z tych informacji dodaje nowy kod do kompilacji. Generatory źródła mogą jedynie dodawać kod; nie mogą modyfikować żadnego istniejącego kodu w kompilacji.
 
-Dwie funkcje, które zostały dodane dla generatorów kodu, to rozszerzenia * **Składnia metody częściowej** _ i _*_inicjatory modułów_*_. Najpierw zmiany w metodach częściowych. Przed C# 9,0 metody częściowe są, `private` ale nie można określić modyfikatora dostępu, mają `void` Return i nie mogą mieć `out` parametrów. Te ograniczenia mające na celu, że jeśli nie zostanie podana implementacja metody, kompilator usuwa wszystkie wywołania metody częściowej. Język C# 9,0 usuwa te ograniczenia, ale wymaga, aby częściowa deklaracja metod była implementacją. Generatory kodu mogą zapewnić, że implementacja. Aby uniknąć wprowadzenia zmiany, kompilator traktuje każdą metodę częściową bez modyfikatora dostępu, aby przestrzegać starych reguł. Jeśli metoda częściowa zawiera `private` modyfikator dostępu, nowe reguły regulują tę metodę częściową.
+Dwie funkcje, które zostały dodane dla generatorów kodu, to rozszerzenia ***Składnia metody częściowej** _ i _*_inicjatory modułów_*_. Najpierw zmiany w metodach częściowych. Przed C# 9,0 metody częściowe są, `private` ale nie można określić modyfikatora dostępu, mają `void` Return i nie mogą mieć `out` parametrów. Te ograniczenia mające na celu, że jeśli nie zostanie podana implementacja metody, kompilator usuwa wszystkie wywołania metody częściowej. Język C# 9,0 usuwa te ograniczenia, ale wymaga, aby częściowa deklaracja metod była implementacją. Generatory kodu mogą zapewnić, że implementacja. Aby uniknąć wprowadzenia zmiany, kompilator traktuje każdą metodę częściową bez modyfikatora dostępu, aby przestrzegać starych reguł. Jeśli metoda częściowa zawiera `private` modyfikator dostępu, nowe reguły regulują tę metodę częściową.
 
-Druga Nowa funkcja dla generatorów kodu jest _ * _inicjatorów modułów_ * *. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe przed jakimkolwiek innym dostępem do pola lub wywołaniem metody w całym module. Metoda inicjatora modułu:
+Druga Nowa funkcja dla generatorów kodu jest _ *_inicjatorów modułów_* *. Inicjatory modułów to metody, które mają <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> dołączony atrybut. Te metody będą wywoływane przez środowisko uruchomieniowe przed jakimkolwiek innym dostępem do pola lub wywołaniem metody w całym module. Metoda inicjatora modułu:
 
 - Musi być statyczna
 - Musi być bez parametrów

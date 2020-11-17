@@ -2,12 +2,12 @@
 title: dotnet-Trace Tool-.NET Core
 description: Instalowanie i używanie narzędzia wiersza polecenia do śledzenia dotnet.
 ms.date: 11/21/2019
-ms.openlocfilehash: d4175ccad785b21f860044a4fd5d691624ec495e
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 4a3694f6ed748779809ee4c4bfd941bb6f1ac490
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507231"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687632"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>Narzędzie do analizy wydajności śledzenia dotnet
 
@@ -33,7 +33,7 @@ dotnet-trace [-h, --help] [--version] <command>
 
 * Program to międzyplatformowe narzędzie .NET Core.
 * Włącza zbieranie śladów .NET Core działającego procesu bez natywnego profilera.
-* Program jest oparty na technologii międzyplatformowej `EventPipe` środowiska uruchomieniowego platformy .NET Core.
+* Jest wbudowana w [`EventPipe`](./eventpipe.md) środowisko uruchomieniowe platformy .NET Core.
 * Zapewnia takie samo środowisko w systemach Windows, Linux lub macOS.
 
 ## <a name="options"></a>Opcje

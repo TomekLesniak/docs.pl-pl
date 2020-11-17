@@ -2,12 +2,12 @@
 title: dotnet-gcdump-.NET Core
 description: Instalowanie i używanie narzędzia wiersza polecenia dotnet-gcdump.
 ms.date: 07/26/2020
-ms.openlocfilehash: a7b19f4d7487677b975621e7267a17894dae2e3a
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: c73afae9ecdfa907e9655634a0ac355cab4ef558
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656654"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687619"
 ---
 # <a name="heap-analysis-tool-dotnet-gcdump"></a>Narzędzie do analizy sterty (dotnet-gcdump)
 
@@ -29,7 +29,7 @@ dotnet-gcdump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Opis
 
-`dotnet-gcdump`Globalnym narzędziem jest sposób zbierania zrzutów GC (Moduł wyrzucania elementów bezużytecznych) procesów .NET na żywo. Używa technologii EventPipe, która jest wieloplatformową alternatywą dla funkcji ETW w systemie Windows. Zrzuty GC są tworzone przez wyzwolenie GC w procesie docelowym, włączenie zdarzeń specjalnych i ponowne wygenerowanie grafu obiektów głównych obiektu ze strumienia zdarzeń. Ten proces umożliwia zbieranie zrzutów GC, gdy proces jest uruchomiony i z minimalnymi kosztami. Te zrzuty są przydatne w kilku scenariuszach:
+`dotnet-gcdump`Narzędzie globalne zbiera zrzuty procesów .NET na żywo (Moduł wyrzucania elementów bezużytecznych) za pomocą [EventPipe](./eventpipe.md). Zrzuty GC są tworzone przez wyzwolenie GC w procesie docelowym, włączenie zdarzeń specjalnych i ponowne wygenerowanie grafu obiektów głównych obiektu ze strumienia zdarzeń. Ten proces umożliwia zbieranie zrzutów GC, gdy proces jest uruchomiony i z minimalnymi kosztami. Te zrzuty są przydatne w kilku scenariuszach:
 
 - Porównanie liczby obiektów w stercie w kilku punktach w czasie.
 - Analizowanie katalogów głównych obiektów (odpowiedzi na pytania, takie jak nadal ma odwołanie do tego typu?).

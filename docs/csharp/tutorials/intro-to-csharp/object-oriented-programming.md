@@ -2,12 +2,12 @@
 title: Programowanie Object-Oriented (C#)
 description: Język C# zapewnia pełną obsługę programowania zorientowanego obiektowo, w tym abstrakcję, hermetyzację, dziedziczenie i polimorfizm.
 ms.date: 09/30/2020
-ms.openlocfilehash: 353edf8fc68f495f3d875fa678aaaf91f1fd6406
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: 4ae31e18fcd88870f511e77bb0c555f35394fd1b
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471598"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687997"
 ---
 # <a name="object-oriented-programming-c"></a>Programowanie Object-Oriented (C#)
 
@@ -50,7 +50,7 @@ public class GiftCardAccount : BankAccount
 
 Każda z tych klas *dziedziczy* zachowanie udostępnione ze swojej udostępnionej *klasy bazowej*, `BankAccount` klasy. Napisz implementacje dla nowych i różnych funkcji w każdej *klasie pochodnej*.  Te klasy pochodne mają już wszystkie zachowania zdefiniowane w `BankAccount` klasie.
 
-Dobrym sposobem jest utworzenie każdej nowej klasy w innym pliku źródłowym. W programie [Visual Studio](https://visualstudio.com)kliknij prawym przyciskiem myszy projekt, a następnie wybierz polecenie *Dodaj klasę* , aby dodać nową klasę do nowego pliku. W [Visual Studio Code](https://code.visualstudio.com)wybierz opcję *plik* , a następnie pozycję *Nowy* , aby utworzyć nowy plik źródłowy. W każdym z tych narzędzi Nazwij plik, aby odpowiadał klasie: *InterestEarningAccount.cs*, *LineOfCreditAccount.cs*i *GiftCardAccount.cs*.
+Dobrym sposobem jest utworzenie każdej nowej klasy w innym pliku źródłowym. W programie [Visual Studio](https://visualstudio.com)kliknij prawym przyciskiem myszy projekt, a następnie wybierz polecenie *Dodaj klasę* , aby dodać nową klasę do nowego pliku. W [Visual Studio Code](https://code.visualstudio.com)wybierz opcję *plik* , a następnie pozycję *Nowy* , aby utworzyć nowy plik źródłowy. W każdym z tych narzędzi Nazwij plik, aby odpowiadał klasie: *InterestEarningAccount.cs*, *LineOfCreditAccount.cs* i *GiftCardAccount.cs*.
 
 Podczas tworzenia klas, jak pokazano w poprzednim przykładzie, zobaczysz, że żadna z klas pochodnych nie zostanie skompilowana. Konstruktor jest odpowiedzialny za inicjowanie obiektu. Konstruktor klasy pochodnej musi inicjować klasę pochodną i dostarczać instrukcje dotyczące inicjowania obiektu klasy bazowej zawartego w klasie pochodnej. Odpowiednie inicjowanie zwykle odbywa się bez żadnych dodatkowych kodów. `BankAccount`Klasa deklaruje jeden konstruktor publiczny z następującym podpisem:
 
@@ -173,6 +173,8 @@ Zastąpienie zwraca transakcję opłaty po narysowaniu konta. Jeśli wycofanie n
 Uruchom program i sprawdź wyniki.
 
 ## <a name="summary"></a>Podsumowanie
+
+Jeśli zawiesz, że możesz zobaczyć źródło tego samouczka [w naszym repozytorium GitHub](https://github.com/dotnet/docs/tree/master/docs/csharp/tutorials/intro-to-csharp/snippets/object-oriented-programming).
 
 W tym samouczku przedstawiono wiele technik używanych w programowaniu Object-Oriented:
 

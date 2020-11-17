@@ -2,12 +2,12 @@
 title: Rejestrowanie i śledzenie — .NET Core
 description: Wprowadzenie do rejestrowania i śledzenia w programie .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: e3f809dab64d66d8b4ba16ca55fc426309614715
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 9af04cceeef3fbfb8392eb91667c21374511548a
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94439927"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687586"
 ---
 # <a name="net-core-logging-and-tracing"></a>Rejestrowanie i śledzenie w programie .NET Core
 
@@ -55,7 +55,7 @@ Poniższe interfejsy API są bardziej zorientowane na zdarzenia. Zamiast rejestr
   - Umożliwia tylko śledzenie obiektów, które można serializować.
   - Może być używany w procesie za pośrednictwem wszystkich wystąpień [odbiornika](xref:System.Diagnostics.Tracing.EventListener) skonfigurowanych do korzystania z EventSource.
   - Może być zużyte przez:
-    - EventPipe platformy .NET Core na wszystkich platformach
+    - [EventPipe platformy .NET Core](./eventpipe.md) na wszystkich platformach
     - [Śledzenie zdarzeń systemu Windows (ETW)](/windows/win32/etw/event-tracing-portal)
     - [LTTng — struktura śledzenia dla systemu Linux](https://lttng.org/)
       - Przewodnik: [gromadzenie LTTng śledzenia przy użyciu PerfCollect](trace-perfcollect-lttng.md).

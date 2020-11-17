@@ -5,12 +5,12 @@ author: mamccrea
 ms.author: mamccrea
 ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 47c716db931dc912b80844fe69283b12d030c238
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 3a02ac52155971f480c7f0c338d4a2a9a7d1d81c
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955580"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688023"
 ---
 # <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>Samouczek: strukturalne przesyłanie strumieniowe za pomocą platformy .NET dla Apache Spark
 
@@ -106,7 +106,7 @@ DataFrame lines = spark
 
 ## <a name="register-a-user-defined-function"></a>Rejestrowanie funkcji zdefiniowanej przez użytkownika
 
-W aplikacjach platformy Spark można używać funkcji UDF, *zdefiniowanych przez użytkownika*w celu wykonywania obliczeń i analizy danych.
+W aplikacjach platformy Spark można używać funkcji UDF, *zdefiniowanych przez użytkownika* w celu wykonywania obliczeń i analizy danych.
 
 Dodaj następujący kod do `Main` metody, aby zarejestrować funkcję UDF o nazwie `udfArray` .
 
@@ -152,7 +152,7 @@ Strukturalne przesyłanie strumieniowe w usłudze Spark przetwarza dane przez se
 Po uruchomieniu nowej sesji netcat Otwórz nowy terminal i uruchom `spark-submit` polecenie, podobnie jak następujące polecenie:
 
 ```powershell
-spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /path/to/microsoft-spark-<version>.jar Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredNetworkCharacterCount localhost 9999
+spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /path/to/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredNetworkCharacterCount localhost 9999
 ```
 
 > [!NOTE]
