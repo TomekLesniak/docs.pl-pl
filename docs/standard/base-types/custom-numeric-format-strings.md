@@ -2,7 +2,6 @@
 title: Niestandardowe ciągi formatujące liczby
 description: Dowiedz się, jak utworzyć niestandardowy ciąg formatu liczbowego do formatowania danych liczbowych w programie .NET. Niestandardowy ciąg formatu liczbowego zawiera jeden lub więcej niestandardowych specyfikatorów liczbowych.
 ms.date: 06/25/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,12 +16,12 @@ helpviewer_keywords:
 - formatting numbers [.NET]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: 6e99191ecfb59e73656b98b8fb5185114194ab09
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 7665c0980d631069728bcce8178763eb934e054b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888701"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824392"
 ---
 # <a name="custom-numeric-format-strings"></a>Niestandardowe ciągi formatujące liczby
 
@@ -31,7 +30,7 @@ Można utworzyć ciąg niestandardowego formatu liczb, który składa się z jed
 Niestandardowe ciągi formatujące liczb są obsługiwane przez niektóre przeciążenia `ToString` metody wszystkich typów liczbowych. Na przykład można podać ciąg formatu liczbowego do <xref:System.Int32.ToString%28System.String%29> <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metod i <xref:System.Int32> typu. Niestandardowe ciągi formatujące są również obsługiwane przez [funkcję formatowania złożonego](composite-formatting.md).NET, która jest używana przez niektóre `Write` i `WriteLine` metody <xref:System.Console> <xref:System.IO.StreamWriter> klasy i, <xref:System.String.Format%2A?displayProperty=nameWithType> metody i <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metody. Funkcja [interpolacji ciągów](../../csharp/language-reference/tokens/interpolated.md) obsługuje również niestandardowe ciągi formatujące liczby.
 
 > [!TIP]
-> Możesz pobrać **Narzędzie formatowania** , aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 <a name="table"></a> W poniższej tabeli opisano niestandardowe specyfikatory formatu liczbowego i przedstawiono przykładowe dane wyjściowe generowane przez każdy specyfikator formatu. Zapoznaj się z sekcją [uwagi](#NotesCustomFormatting) , aby uzyskać dodatkowe informacje na temat używania ciągów niestandardowego formatu liczb, oraz sekcję [przykładową](#example) dla obszernej ilustracji dotyczącej ich używania.
 
@@ -45,7 +44,7 @@ Niestandardowe ciągi formatujące liczb są obsługiwane przez niektóre przeci
 |"‰"|Symbol zastępczy promil|Mnoży liczbę przez 1000 i wstawia zlokalizowany symbol promila do ciągu wynikowego.<br /><br /> Więcej informacji: [specyfikator niestandardowy "‰"](#SpecifierPerMille).|0,03697 ("#0.00‰", en-US)-> 36,97‰<br /><br /> 0,03697 ("#0 .00‰", ru-RU)-> 36, 97‰|
 |„E0”<br /><br /> „E+0”<br /><br /> „E-0”<br /><br /> „e0”<br /><br /> „e+0”<br /><br /> „e-0”|Notacja wykładnicza|Jeżeli występuje po nim przynajmniej jedno 0 (zero), formatuje wynik za pomocą notacji wykładniczej. Wielkość litery „E” lub „e” wskazuje wielkość symbolu wykładnika w ciągu wynikowym. Liczba zer po znaku „E” lub „e” określa minimalną liczbę cyfr wykładnika. Znak plus (+) wskazuje, że znak zawsze poprzedza wykładnik potęgi. Znak minus (-) wskazuje, że znak poprzedza tylko ujemny wykładnik potęgi.<br /><br /> Więcej informacji: [niestandardowe specyfikatory "e" i "e"](#SpecifierExponent).|987654 ("#0.0e0")-> 98.8 E4<br /><br /> 1503,92311 ("0.0 # #e + 00") — > 1.504 e + 03<br /><br /> 1.8901385 e-16 ("0.0 e + 00") — > 1.9 e-16|
 |"\\"|Znak ucieczki|Powoduje, że następny znak należy interpretować jako literał, a nie jako specyfikator formatu niestandardowego.<br /><br /> Więcej informacji: [ \\ znak ucieczki ""](#SpecifierEscape).|987654 (" \\ # # #00 \\ #") — > #987654 #|
-|" *String* "<br /><br /> " *String* "|Ogranicznik ciągu literału|Wskazuje, że znaki w cudzysłowie powinny zostać skopiowane do ciągu wynikowego bez zmian.<br/><br/>Więcej informacji: [literały znakowe](#character-literals).|68 ("#" stopni "") — > 68 stopni<br /><br /> 68 ("#" stopni "") — > 68 stopni|
+|"*String*"<br /><br /> "*String*"|Ogranicznik ciągu literału|Wskazuje, że znaki w cudzysłowie powinny zostać skopiowane do ciągu wynikowego bez zmian.<br/><br/>Więcej informacji: [literały znakowe](#character-literals).|68 ("#" stopni "") — > 68 stopni<br /><br /> 68 ("#" stopni "") — > 68 stopni|
 |;|Separator sekcji|Definiuje sekcje z oddzielnymi ciągami formatu dla liczb dodatnich, ujemnych i dla zera.<br /><br /> Więcej informacji: [";" Separator sekcji](#SectionSeparator).|12,345 ("#0 0 #;(#0.0 #);-\ 0-")-> 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #);-\ 0-")->-0-<br /><br /> -12,345 ("#0 0 #;(#0.0 #);-\ 0-")-> (12,35)<br /><br /> 12,345 ("#0 0 #;(#0.0 #)")-> 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #)") — > 0,0<br /><br /> -12,345 ("#0 0 #;(#0.0 #)")-> (12,35)|
 |Inne|Wszystkie inne znaki|Znak jest kopiowany do ciągu wynikowego bez zmian.<br/><br/>Więcej informacji: [literały znakowe](#character-literals).|68 ("# °")-> 68 °|
 

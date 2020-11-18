@@ -1,19 +1,18 @@
 ---
 title: Opcje scalania w PLINQ
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-ms.openlocfilehash: a2c238cb66c5018cd1dd4085c6541ef3c9371beb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e6690a600b7b00272471362bc087633d52a98f25
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290645"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824847"
 ---
 # <a name="merge-options-in-plinq"></a>Opcje scalania w PLINQ
 Gdy zapytanie jest wykonywane jako Parallel, PLINQ tworzy sekwencję źródłową, dzięki czemu wiele wątków może współdziałać z różnymi częściami, zwykle w oddzielnych wątkach. Jeśli wyniki mają być używane w jednym wątku, na przykład w `foreach` `For Each` pętli (w Visual Basic), wyniki z każdego wątku muszą zostać scalone z powrotem w jedną sekwencję. Rodzaj scalania, który PLINQ wykonuje, zależy od operatorów, które znajdują się w zapytaniu. Na przykład operatory, które nakładają nowe zamówienie na wyniki, muszą buforować wszystkie elementy ze wszystkich wątków. Z punktu widzenia wątku zużywanego (który również użytkownik aplikacji) w pełni buforowane zapytanie może być uruchamiane przez zauważalny okres czasu, zanim wygeneruje swój pierwszy wynik. Inne operatory domyślnie są częściowo buforowane; dają one wyniki w partiach. Jeden operator <xref:System.Linq.ParallelEnumerable.ForAll%2A> nie jest domyślnie buforowany. Powoduje natychmiastowe zwrócenie wszystkich elementów ze wszystkich wątków.  
@@ -36,7 +35,7 @@ Gdy zapytanie jest wykonywane jako Parallel, PLINQ tworzy sekwencję źródłow�
   
 - `Auto Buffered`  
   
-     <xref:System.Linq.ParallelMergeOptions.AutoBuffered>Opcja powoduje, że zapytanie zbiera elementy do bufora, a następnie okresowo przesyła zawartość bufora wszystkie jednocześnie do wątku zużywanego. Jest to analogiczne do wypełniania danych źródłowych w "fragmentach" zamiast używania zachowania "streaming" `NotBuffered` . `AutoBuffered`może trwać dłużej niż w `NotBuffered` celu udostępnienia pierwszego elementu w wątku zużywanym. Rozmiar buforu i dokładne zachowanie nie są konfigurowane i mogą się różnić w zależności od różnych czynników odnoszących się do zapytania.  
+     <xref:System.Linq.ParallelMergeOptions.AutoBuffered>Opcja powoduje, że zapytanie zbiera elementy do bufora, a następnie okresowo przesyła zawartość bufora wszystkie jednocześnie do wątku zużywanego. Jest to analogiczne do wypełniania danych źródłowych w "fragmentach" zamiast używania zachowania "streaming" `NotBuffered` . `AutoBuffered` może trwać dłużej niż w `NotBuffered` celu udostępnienia pierwszego elementu w wątku zużywanym. Rozmiar buforu i dokładne zachowanie nie są konfigurowane i mogą się różnić w zależności od różnych czynników odnoszących się do zapytania.  
   
 - `FullyBuffered`  
   
@@ -61,9 +60,9 @@ Gdy zapytanie jest wykonywane jako Parallel, PLINQ tworzy sekwencję źródłow�
   
  Wszystkie inne operatory zapytań PLINQ mogą ignorować opcje scalania udostępniane przez użytkownika. Niektóre operatory zapytań, na przykład <xref:System.Linq.ParallelEnumerable.Reverse%2A> i <xref:System.Linq.ParallelEnumerable.OrderBy%2A> , nie mogą dać żadnych elementów do momentu wygenerowania i zmiany kolejności. W związku z tym, gdy <xref:System.Linq.ParallelMergeOptions> jest używany w zapytaniu, które również zawiera operator, taki jak <xref:System.Linq.ParallelEnumerable.Reverse%2A> , zachowanie scalania nie zostanie zastosowane w zapytaniu, dopóki ten operator nie wygenerował swoich wyników.  
   
- Niektóre operatory obsługujące opcje scalania są zależne od typu sekwencji źródłowej, a także od tego, czy <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator został wcześniej użyty w zapytaniu. <xref:System.Linq.ParallelEnumerable.ForAll%2A>jest zawsze <xref:System.Linq.ParallelMergeOptions.NotBuffered> ; natychmiast zwraca swoje elementy. <xref:System.Linq.ParallelEnumerable.OrderBy%2A>jest zawsze <xref:System.Linq.ParallelMergeOptions.FullyBuffered> ; należy posortować całą listę przed jej zwróceniem.  
+ Niektóre operatory obsługujące opcje scalania są zależne od typu sekwencji źródłowej, a także od tego, czy <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator został wcześniej użyty w zapytaniu. <xref:System.Linq.ParallelEnumerable.ForAll%2A> jest zawsze <xref:System.Linq.ParallelMergeOptions.NotBuffered> ; natychmiast zwraca swoje elementy. <xref:System.Linq.ParallelEnumerable.OrderBy%2A> jest zawsze <xref:System.Linq.ParallelMergeOptions.FullyBuffered> ; należy posortować całą listę przed jej zwróceniem.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Równoległe LINQ (PLINQ)](introduction-to-plinq.md)
 - [Instrukcje: Określanie opcji scalania w PLINQ](how-to-specify-merge-options-in-plinq.md)

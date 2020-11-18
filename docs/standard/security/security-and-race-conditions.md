@@ -2,7 +2,6 @@
 title: Zabezpieczenia i sytuacja wyścigu
 'description:': Describes pitfalls to avoid around security holes exploited by race conditions, including dispose methods, constructors, cached objects, and finalizers.
 ms.date: 07/15/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - secure coding, race conditions
 - code security, race conditions
 ms.assetid: ea3edb80-b2e8-4e85-bfed-311b20cb59b6
-ms.openlocfilehash: a667bf69ba72cbe203bd2603c4c6b7a1e58a6d43
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 870dc0ac956bad045cb87b9c0968b4a8e9733812
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555113"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824125"
 ---
 # <a name="security-and-race-conditions"></a>Zabezpieczenia i sytuacja wyścigu
 
@@ -108,7 +107,7 @@ Jeśli kod buforuje informacje o zabezpieczeniach, należy zapoznać się z info
 
 Sytuacje wyścigu mogą również wystąpić w obiekcie, który odwołuje się do zasobu statycznego lub niezarządzanego, który następnie zwolni w jego finalizatorie. Jeśli wiele obiektów współużytkuje zasób, który jest manipulowany przez finalizator klasy, obiekty muszą zsynchronizować wszystkie dostęp do tego zasobu.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wytyczne dotyczące bezpiecznego programowania](secure-coding-guidelines.md)
 - [Zabezpieczenia ASP.NET Core](/aspnet/core/security/)

@@ -4,12 +4,12 @@ description: Ten artykuł zawiera krótkie omówienie pojęć związanych z test
 author: IEvangelist
 ms.author: dapine
 ms.date: 10/19/2020
-ms.openlocfilehash: 36e88cc059447a98931593e0535c70cbc92a2cf4
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 137a8f4e3bc9e3be529d5034c233d283cf158b31
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223474"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824860"
 ---
 # <a name="testing-in-net"></a>Testowanie w programie .NET
 
@@ -43,7 +43,7 @@ Należy pamiętać o [najlepszych rozwiązaniach](unit-testing-best-practices.md
 
 ### <a name="xunit"></a>xUnit
 
-[xUnit](https://xunit.net) to bezpłatne narzędzie do testowania jednostkowego dla platformy .NET przeznaczone dla społeczności typu open source. Zapisanie przez oryginalny spis NUnit v2, xUnit.net to najnowsza technologia do testowania jednostkowego aplikacji .NET. xUnit.net współpracuje z reostrer, CodeRush, TestDriven.NET i [Xamarin](/apps/xamarin). Jest to projekt [platformy .NET Foundation](https://dotnetfoundation.org) i działa w ramach ich Kodeksu postępowania.
+[xUnit](https://xunit.net) to bezpłatne narzędzie do testowania jednostkowego dla platformy .NET przeznaczone dla społeczności typu open source. Zapisanie przez oryginalny spis NUnit v2, xUnit.net to najnowsza technologia do testowania jednostkowego aplikacji .NET. xUnit.net współpracuje z reostrer, CodeRush, TestDriven.NET i [Xamarin](https://dotnet.microsoft.com/apps/xamarin). Jest to projekt [platformy .NET Foundation](https://dotnetfoundation.org) i działa w ramach ich Kodeksu postępowania.
 
 Więcej informacji można znaleźć w następujących zasobach:
 
@@ -77,7 +77,7 @@ Testy jednostkowe rozwiązań można uruchomić z poziomu [interfejsu wiersza po
 
 Niezależnie od tego, czy używasz programu Visual Studio, Visual Studio dla komputerów Mac czy Visual Studio Code, istnieją graficzne interfejsy użytkownika do testowania funkcji. Dostępne są więcej funkcji środowisk IDE niż interfejs wiersza polecenia, na przykład [Live Unit Testing](/visualstudio/test/live-unit-testing). Aby uzyskać więcej informacji, zobacz [dołączanie i wykluczanie testów w programie Visual Studio](/visualstudio/test/live-unit-testing#include-and-exclude-test-projects-and-test-methods).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 Aby uzyskać więcej informacji, zobacz następujące artykuły:
 

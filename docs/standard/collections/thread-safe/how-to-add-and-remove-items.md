@@ -2,25 +2,24 @@
 title: Dodawanie elementów do kolekcji ConcurrentDictionary i ich usuwanie
 description: Zapoznaj się z przykładem dodawania, pobierania, aktualizowania i usuwania elementów z klasy ConcurrentDictionary<TKey, TValue> kolekcji w programie .NET.
 ms.date: 05/04/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-ms.openlocfilehash: 0bfc17d93ea3088a7b2e4209e25003856770b9e7
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 17d820aba564d467152c52c7a0352bbc860f548b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325964"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823813"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Jak dodawać i usuwać elementy z ConcurrentDictionary
 
 Ten przykład pokazuje, jak dodawać, pobierać, aktualizować i usuwać elementy z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> . Ta klasa kolekcji jest bezpieczną implementacją wątku. Zalecamy używanie go zawsze, gdy wiele wątków może próbować uzyskać dostęp do elementów współbieżnie.
 
-<xref:System.Collections.Concurrent.ConcurrentDictionary%602>Program udostępnia kilka wygodnych metod, które nie są potrzebne, aby kod mógł najpierw sprawdzić, czy klucz istnieje przed próbą dodania lub usunięcia danych. Poniższa tabela zawiera listę tych wygodnych metod i opisuje, kiedy ich używać.
+<xref:System.Collections.Concurrent.ConcurrentDictionary%602> Program udostępnia kilka wygodnych metod, które nie są potrzebne, aby kod mógł najpierw sprawdzić, czy klucz istnieje przed próbą dodania lub usunięcia danych. Poniższa tabela zawiera listę tych wygodnych metod i opisuje, kiedy ich używać.
 
 | Metoda | Użyj, gdy... |
 |--|--|
@@ -35,7 +34,7 @@ W poniższym przykładzie użyto dwóch <xref:System.Threading.Tasks.Task> wyst�
 [!code-csharp[CDS#16](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds_dictionaryhowto.cs#16)]
 [!code-vb[CDS#16](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/cds_concdict.vb#16)]
 
-<xref:System.Collections.Concurrent.ConcurrentDictionary%602>jest przeznaczony do scenariuszy wielowątkowych. Nie trzeba używać blokad w kodzie, aby dodawać lub usuwać elementy z kolekcji. Jest jednak zawsze możliwe, aby jeden wątek pobierał wartość, a drugi wątek natychmiast zaktualizować kolekcję, dając ten sam klucz nowej wartości.
+<xref:System.Collections.Concurrent.ConcurrentDictionary%602> jest przeznaczony do scenariuszy wielowątkowych. Nie trzeba używać blokad w kodzie, aby dodawać lub usuwać elementy z kolekcji. Jest jednak zawsze możliwe, aby jeden wątek pobierał wartość, a drugi wątek natychmiast zaktualizować kolekcję, dając ten sam klucz nowej wartości.
 
 Ponadto mimo że wszystkie metody <xref:System.Collections.Concurrent.ConcurrentDictionary%602> są bezpieczne wątkowo, nie wszystkie metody są niepodzielne, w odróżnieniu od siebie <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> i <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> . Aby zapobiec zablokowaniu wszystkich wątków przez nieznany kod, delegat użytkownika, który został przesłany do tych metod, jest wywoływany poza wewnętrzną blokadą słownika. W związku z tym, istnieje możliwość, że ta sekwencja zdarzeń ma być wykonywana:
 
@@ -49,7 +48,7 @@ Ponadto mimo że wszystkie metody <xref:System.Collections.Concurrent.Concurrent
 
 W związku z tym nie ma gwarancji, że dane zwracane przez <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> są tymi samymi danymi, które zostały utworzone przez wątek `valueFactory` . Podobna sekwencja zdarzeń może wystąpić, gdy <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> jest wywoływana.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekcje bezpieczne dla wątków](index.md)

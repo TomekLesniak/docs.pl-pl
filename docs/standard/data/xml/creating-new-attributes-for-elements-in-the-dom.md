@@ -1,17 +1,16 @@
 ---
 title: Tworzenie nowych atrybutów dla elementów w modelu DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: dd6dc920-b011-418a-b3db-f1580a7d9251
-ms.openlocfilehash: 79a3390933256ed862d35c90db0aab2177cdfc41
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1cb37e47bedf955ea2c6f9faad628df2175fb703
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711015"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826030"
 ---
 # <a name="creating-new-attributes-for-elements-in-the-dom"></a>Tworzenie nowych atrybutów dla elementów w modelu DOM
 
@@ -110,7 +109,7 @@ doc.DocumentElement.SetAttributeNode(attr);
 </book>
 ```
 
-Pełny przykładowy kod można znaleźć pod adresem <xref:System.Xml.XmlDocument.CreateAttribute%2A>.
+Pełny przykładowy kod można znaleźć pod adresem <xref:System.Xml.XmlDocument.CreateAttribute%2A> .
 
 Można również utworzyć węzeł **XmlAttribute** i użyć metod **InsertBefore** lub **InsertAfter** , aby umieścić go w odpowiedniej pozycji w kolekcji. Jeśli atrybut o tej samej nazwie już istnieje w kolekcji atrybutów, istniejący węzeł **XmlAttribute** zostanie usunięty z kolekcji, a nowy węzeł **XmlAttribute** zostanie wstawiony. Jest to tak samo samo jak Metoda **SetAttribute** . Metody te przyjmują jako parametr, istniejący węzeł jako punkt odniesienia do wykonania **InsertBefore** i **InsertAfter**. Jeśli nie podasz węzła referencyjnego wskazującego, gdzie wstawić nowy węzeł, wartość domyślna dla metody **InsertAfter** polega na wstawieniu nowego węzła na początku kolekcji. Domyślna pozycja **InsertBefore**, jeśli nie podano węzła odwołania, znajduje się na końcu kolekcji.
 
@@ -124,6 +123,6 @@ Jeśli utworzysz element, który jest zadeklarowany jako mający atrybut domyśl
 
 Wartość węzła atrybutu staną się węzłami podrzędnymi. Istnieją tylko dwa typy prawidłowych węzłów podrzędnych: węzły **XmlText** i **XmlEntityReference** . Są to węzły podrzędne w sensie, że metody, takie jak **FirstChild** i **LastChild** , przetwarzają je jako węzły podrzędne. Takie rozróżnienie atrybutu z węzłami podrzędnymi jest ważne przy próbie usunięcia atrybutów lub węzłów podrzędnych atrybutu. Aby uzyskać więcej informacji, zobacz [usuwanie atrybutów z węzła elementu w modelu dom](removing-attributes-from-an-element-node-in-the-dom.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [XML Document Object Model (DOM)](xml-document-object-model-dom.md)

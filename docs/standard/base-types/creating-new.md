@@ -2,7 +2,6 @@
 title: Tworzenie nowych ciągów w programie .NET
 description: Dowiedz się, jak tworzyć ciągi przy użyciu przypisań, konstruktorów klas lub metod system. String, które łączą kilka ciągów, tablic ciągów lub obiektów w programie .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - strings [.NET], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: 7dedaf61f56f19343299c841bb4cee70fb9c767a
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: a00274b7b6b7e7a54d8546f2176109688a4c4678
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889442"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824886"
 ---
 # <a name="creating-new-strings-in-net"></a>Tworzenie nowych ciągów w programie .NET
 
@@ -53,7 +52,7 @@ Platforma .NET umożliwia tworzenie ciągów przy użyciu prostego przypisywania
  W tym przykładzie <xref:System.DateTime.Now%2A?displayProperty=nameWithType> wyświetla bieżącą datę i godzinę w sposób określony przez kulturę skojarzoną z bieżącym wątkiem.  
   
 ### <a name="concat"></a>Concat  
- Metoda **String. Concat** może służyć do łatwego tworzenia nowego obiektu ciągu z dwóch lub więcej istniejących obiektów. Zapewnia on niezależny od języka sposób łączenia ciągów. Ta metoda akceptuje wszelkie klasy, które pochodzą z **obiektu System. Object** . Poniższy przykład tworzy ciąg z dwóch istniejących obiektów String i oddzielający znak.  
+ Metoda **String. Concat** może służyć do łatwego tworzenia nowego obiektu ciągu z dwóch lub więcej istniejących obiektów. Zapewnia on niezależny od języka sposób łączenia ciągów. Ta metoda akceptuje wszelkie klasy, które pochodzą z **obiektu System. Object**. Poniższy przykład tworzy ciąg z dwóch istniejących obiektów String i oddzielający znak.  
   
  [!code-csharp[Strings.Creating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#2)]
  [!code-vb[Strings.Creating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#2)]  

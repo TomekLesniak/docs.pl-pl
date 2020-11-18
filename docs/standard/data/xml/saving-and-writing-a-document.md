@@ -1,17 +1,16 @@
 ---
 title: Zapisywanie dokumentu
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 097b0cb1-5743-4c3a-86ef-caf5cbe6750d
-ms.openlocfilehash: 40d031c06f0b76668a634fac46b8defccce62f01
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0cb83935b4175060a04f4be48e6b4eee2f44ed7d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289047"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823501"
 ---
 # <a name="saving-and-writing-a-document"></a>Zapisywanie dokumentu
 Podczas ładowania i zapisywania <xref:System.Xml.XmlDocument> , zapisany dokument może różnić się od oryginału w następujący sposób:  
@@ -56,7 +55,7 @@ doc.Save(tw);
  W przypadku <xref:System.Xml.XmlDeclaration> elementów członkowskich <xref:System.Xml.XmlNode.OuterXml%2A> , <xref:System.Xml.XmlDeclaration.WriteTo%2A> , i <xref:System.Xml.XmlNode.InnerXml%2A> , jeśli <xref:System.Xml.XmlDeclaration.Encoding%2A> Właściwość nie jest ustawiona, kodowanie nie jest zapisywana. W przeciwnym razie kodowanie wpisane w deklaracji XML jest takie samo jak kodowanie znalezione we <xref:System.Xml.XmlDeclaration.Encoding%2A> właściwości.  
   
 ## <a name="writing-document-content-using-the-outerxml-property"></a>Zapisywanie zawartości dokumentu przy użyciu właściwości OuterXml  
- <xref:System.Xml.XmlNode.OuterXml%2A>Właściwość jest rozszerzeniem Microsoft dla standardów Document Object Model XML (organizacja World Wide Web Consortium W3C). <xref:System.Xml.XmlNode.OuterXml%2A>Właściwość służy do uzyskiwania adiustacji całego dokumentu XML lub tylko znaczników jednego węzła i jego węzłów podrzędnych. <xref:System.Xml.XmlNode.OuterXml%2A>zwraca znacznik reprezentujący dany węzeł i wszystkie jego węzły podrzędne.  
+ <xref:System.Xml.XmlNode.OuterXml%2A>Właściwość jest rozszerzeniem Microsoft dla standardów Document Object Model XML (organizacja World Wide Web Consortium W3C). <xref:System.Xml.XmlNode.OuterXml%2A>Właściwość służy do uzyskiwania adiustacji całego dokumentu XML lub tylko znaczników jednego węzła i jego węzłów podrzędnych. <xref:System.Xml.XmlNode.OuterXml%2A> zwraca znacznik reprezentujący dany węzeł i wszystkie jego węzły podrzędne.  
   
  Poniższy przykład kodu pokazuje, jak zapisać dokument w całości jako ciąg.  
   

@@ -1,18 +1,17 @@
 ---
 title: Przechodzenie schematów XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: cce69574-5861-4a30-b730-2e18d915d8ee
-ms.openlocfilehash: 0951e83c3035de751801d194696eb64993260ef8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6371d7e16af45eebf09f95bce2864be3bf44321e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289840"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824678"
 ---
 # <a name="traversing-xml-schemas"></a>Przechodzenie schematów XML
 
@@ -28,11 +27,11 @@ Następujące właściwości <xref:System.Xml.Schema.XmlSchema> klasy zapewniaj�
 |<xref:System.Xml.Schema.XmlSchema.Attributes%2A>|<xref:System.Xml.Schema.XmlSchemaAttribute>|
 |<xref:System.Xml.Schema.XmlSchema.AttributeGroups%2A>|<xref:System.Xml.Schema.XmlSchemaAttributeGroup>|
 |<xref:System.Xml.Schema.XmlSchema.Groups%2A>|<xref:System.Xml.Schema.XmlSchemaGroup>|
-|<xref:System.Xml.Schema.XmlSchema.Includes%2A>|<xref:System.Xml.Schema.XmlSchemaExternal>, <xref:System.Xml.Schema.XmlSchemaInclude> , <xref:System.Xml.Schema.XmlSchemaImport> lub<xref:System.Xml.Schema.XmlSchemaRedefine>|
-|<xref:System.Xml.Schema.XmlSchema.Items%2A>|<xref:System.Xml.Schema.XmlSchemaObject>(zapewnia dostęp do wszystkich elementów poziomu globalnego, atrybutów i typów).|
+|<xref:System.Xml.Schema.XmlSchema.Includes%2A>|<xref:System.Xml.Schema.XmlSchemaExternal>, <xref:System.Xml.Schema.XmlSchemaInclude> , <xref:System.Xml.Schema.XmlSchemaImport> lub <xref:System.Xml.Schema.XmlSchemaRedefine>|
+|<xref:System.Xml.Schema.XmlSchema.Items%2A>|<xref:System.Xml.Schema.XmlSchemaObject> (zapewnia dostęp do wszystkich elementów poziomu globalnego, atrybutów i typów).|
 |<xref:System.Xml.Schema.XmlSchema.Notations%2A>|<xref:System.Xml.Schema.XmlSchemaNotation>|
 |<xref:System.Xml.Schema.XmlSchema.SchemaTypes%2A>|<xref:System.Xml.Schema.XmlSchemaType>, <xref:System.Xml.Schema.XmlSchemaSimpleType>, <xref:System.Xml.Schema.XmlSchemaComplexType>|
-|<xref:System.Xml.Schema.XmlSchema.UnhandledAttributes%2A>|<xref:System.Xml.XmlAttribute>(zapewnia dostęp do atrybutów, które nie należą do przestrzeni nazw schematu)|
+|<xref:System.Xml.Schema.XmlSchema.UnhandledAttributes%2A>|<xref:System.Xml.XmlAttribute> (zapewnia dostęp do atrybutów, które nie należą do przestrzeni nazw schematu)|
 
 > [!NOTE]
 > Wszystkie właściwości wymienione w powyższej tabeli, z wyjątkiem właściwości <xref:System.Xml.Schema.XmlSchema.Items%2A> , są właściwościami po schemacie kompilacja-sprawdzonych (PSCI), które nie są dostępne, dopóki schemat nie zostanie skompilowany. <xref:System.Xml.Schema.XmlSchema.Items%2A>Właściwość jest właściwością prekompilowania schematu, której można użyć przed skompilowaniem schematu w celu uzyskania dostępu do wszystkich elementów poziomu globalnego, atrybutów i typów oraz edytowania ich.

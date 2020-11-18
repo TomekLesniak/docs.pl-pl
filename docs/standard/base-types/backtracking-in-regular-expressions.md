@@ -2,7 +2,6 @@
 title: Wycofywanie w wyrażeniach regularnych programu .NET
 description: Dowiedz się, jak kontrolować wycofywanie we wzorcu wyrażenia regularnego.
 ms.date: 11/12/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,12 +16,12 @@ helpviewer_keywords:
 - strings [.NET], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-ms.openlocfilehash: b8bd8308b91c2c358f4a462967424f55fa316504
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: a15ef27f71eac9ed12889054283f8ac41d85922f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889143"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825250"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Śledzenie wsteczne w wyrażeniach regularnych
 Wycofywanie występuje, gdy wzorzec wyrażenia regularnego zawiera opcjonalne [Kwantyfikatory](quantifiers-in-regular-expressions.md) lub [konstrukcje warunkowe](alternation-constructs-in-regular-expressions.md), a aparat wyrażeń regularnych powraca do poprzedniego zapisanego stanu, aby kontynuować wyszukiwanie zgodności. Wycofywanie stanowi podstawę dużych możliwości wyrażeń regularnych, ponieważ dzięki niemu wyrażenia oferują duże możliwości i są elastyczne, a także umożliwiają dopasowywanie bardzo złożonych wzorców. Jednocześnie te możliwości są obciążone kosztami. Wycofywanie często jest najważniejszym czynnikiem wpływającym na wydajność aparatu wyrażeń regularnych. Na szczęście deweloper ma kontrolę nad zachowaniem aparatu wyrażeń regularnych i sposobem użycia wycofywania. W tym temacie opisano zasadę działania wycofywania i możliwości sterowania nim.  
@@ -127,9 +126,9 @@ Wycofywanie występuje, gdy wzorzec wyrażenia regularnego zawiera opcjonalne [K
  [!code-vb[Conceptual.RegularExpressions.Backtracking#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/vb/backtracking4.vb#4)]  
 
 ### <a name="lookbehind-assertions"></a>Asercje wsteczne  
- Platforma .NET zawiera dwa elementy języka, `(?<=` *Podwyrażenie* `)` i `(?<!` *Podwyrażenie* `)` , które pasują do poprzedniego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki bezpośrednio poprzedzające bieżący znak mogą być dopasowane przez *Podwyrażenie* , bez przeciągania lub wycofywania.  
+ Platforma .NET zawiera dwa elementy języka, `(?<=` *Podwyrażenie* `)` i `(?<!` *Podwyrażenie* `)` , które pasują do poprzedniego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki bezpośrednio poprzedzające bieżący znak mogą być dopasowane przez *Podwyrażenie*, bez przeciągania lub wycofywania.  
   
- `(?<=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem asercja wsteczna; oznacza to, że znak lub znaki przed bieżącą pozycją muszą pasować do *podwyrażenia* . `(?<!`*Podwyrażenie* `)` jest ujemną asercja wstecznaą; oznacza to, że znak lub znaki przed bieżącą pozycją nie mogą pasować do *podwyrażenia* . Pozytywne i negatywne potwierdzenia asercja wsteczna są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem poprzedniego podwyrażenia.  
+ `(?<=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem asercja wsteczna; oznacza to, że znak lub znaki przed bieżącą pozycją muszą pasować do *podwyrażenia*. `(?<!`*Podwyrażenie* `)` jest ujemną asercja wstecznaą; oznacza to, że znak lub znaki przed bieżącą pozycją nie mogą pasować do *podwyrażenia*. Pozytywne i negatywne potwierdzenia asercja wsteczna są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem poprzedniego podwyrażenia.  
   
  W poniższym przykładzie są używane dwa równoważne wzorce wyrażeń regularnych, które weryfikują nazwę użytkownika w adresie e-mail. Pierwszy wzorzec działa z niską wydajnością z powodu nadmiernego wycofywania. Drugi wzorzec modyfikuje pierwsze wyrażenie regularne, zastępując zagnieżdżony kwantyfikator pozytywną asercją wsteczną. Dane wyjściowe z przykładu wyświetlają czas wykonywania <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody.  
   
@@ -158,9 +157,9 @@ Wycofywanie występuje, gdy wzorzec wyrażenia regularnego zawiera opcjonalne [K
 |`@`|Dopasowuje znak (" \@ ").|  
 
 ### <a name="lookahead-assertions"></a>Asercje wyprzedzające  
- Platforma .NET zawiera dwa elementy języka, `(?=` *Podwyrażenie* `)` i `(?!` *Podwyrażenie* `)` , które pasują do następnego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki znajdujące się bezpośrednio po bieżącym znaku mogą być dopasowane przez *Podwyrażenie* , bez przeciągania lub wycofywania.  
+ Platforma .NET zawiera dwa elementy języka, `(?=` *Podwyrażenie* `)` i `(?!` *Podwyrażenie* `)` , które pasują do następnego znaku lub znaków w ciągu wejściowym. Oba elementy języka są potwierdzeniami o zerowej szerokości; oznacza to, że określają, czy znak lub znaki znajdujące się bezpośrednio po bieżącym znaku mogą być dopasowane przez *Podwyrażenie*, bez przeciągania lub wycofywania.  
   
- `(?=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji muszą pasować do *podwyrażenia* . `(?!`*Podwyrażenie* `)` jest negatywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji nie mogą pasować do *podwyrażenia* . Pozytywne i negatywne potwierdzenia naprzód są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem następnego podwyrażenia.  
+ `(?=`*Podwyrażenie* `)` jest pozytywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji muszą pasować do *podwyrażenia*. `(?!`*Podwyrażenie* `)` jest negatywnym potwierdzeniem naprzód; oznacza to, że znak lub znaki po bieżącej pozycji nie mogą pasować do *podwyrażenia*. Pozytywne i negatywne potwierdzenia naprzód są najbardziej przydatne, gdy *Podwyrażenie* jest podzbiorem następnego podwyrażenia.  
   
  W poniższym przykładzie są używane dwa równoważne wzorce wyrażenia regularnego sprawdzające w pełni kwalifikowaną nazwę typu. Pierwszy wzorzec działa z niską wydajnością z powodu nadmiernego wycofywania. Drugi wzorzec modyfikuje pierwsze wyrażenie regularne, zastępując zagnieżdżony kwantyfikator pozytywną asercją wyprzedzającą. Dane wyjściowe z przykładu wyświetlają czas wykonywania <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody.  
   

@@ -1,17 +1,16 @@
 ---
 title: Uzyskiwanie dostępu do atrybutów w modelu DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
-ms.openlocfilehash: a77780621032e2ce59b9db04a179c7086588219b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b7a1e64c8661e97966b8d0bb84e2d330c1e06b86
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291646"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822870"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Uzyskiwanie dostępu do atrybutów w modelu DOM
 
@@ -21,7 +20,7 @@ Gdy bieżącym węzłem jest element, użyj metody **HasAttribute** , aby sprawd
 
 ## <a name="retrieving-all-attributes-into-a-collection"></a>Pobieranie wszystkich atrybutów do kolekcji
 
-Jeśli chcesz, aby wszystkie atrybuty węzła elementu zostały umieszczone w kolekcji, wywołaj Właściwość **XmlElement. Attributes** . Spowoduje to pobranie **XmlAttributeCollection** , który zawiera wszystkie atrybuty elementu. Klasa **XmlAttributeCollection** dziedziczy z mapy **XmlNamedNode** . W związku z tym metody i właściwości dostępne w kolekcji obejmują te, które są dostępne na mapie nazwanych węzłów, a także metody i właściwości specyficzne dla klasy **XmlAttributeCollection** , takie jak Właściwość **ItemOf** lub metoda **append** . Każdy element w kolekcji atrybutów reprezentuje węzeł **XmlAttribute** . Aby znaleźć liczbę atrybutów dla elementu, należy pobrać **XmlAttributeCollection**i użyć właściwości **Count** , aby zobaczyć, ile węzłów **XmlAttribute** znajduje się w kolekcji.
+Jeśli chcesz, aby wszystkie atrybuty węzła elementu zostały umieszczone w kolekcji, wywołaj Właściwość **XmlElement. Attributes** . Spowoduje to pobranie **XmlAttributeCollection** , który zawiera wszystkie atrybuty elementu. Klasa **XmlAttributeCollection** dziedziczy z mapy **XmlNamedNode** . W związku z tym metody i właściwości dostępne w kolekcji obejmują te, które są dostępne na mapie nazwanych węzłów, a także metody i właściwości specyficzne dla klasy **XmlAttributeCollection** , takie jak Właściwość **ItemOf** lub metoda **append** . Każdy element w kolekcji atrybutów reprezentuje węzeł **XmlAttribute** . Aby znaleźć liczbę atrybutów dla elementu, należy pobrać **XmlAttributeCollection** i użyć właściwości **Count** , aby zobaczyć, ile węzłów **XmlAttribute** znajduje się w kolekcji.
 
 Poniższy przykład kodu przedstawia sposób pobierania kolekcji atrybutów i, przy użyciu metody **Count** dla indeksu pętli, iteracji nad nim. Następnie kod pokazuje, jak pobrać pojedynczy atrybut z kolekcji i wyświetlić jego wartość.
 
@@ -129,7 +128,7 @@ sale item
 
 Informacje w kolekcji atrybutów można pobrać według nazwy lub numeru indeksu. Powyższy przykład pokazuje, jak pobrać dane według nazwy. W następnym przykładzie pokazano, jak pobrać dane według numeru indeksu.
 
-Ponieważ **XmlAttributeCollection** jest kolekcją i można ją powtórzyć według nazwy lub indeksu, w tym przykładzie pokazano, jak wybrać pierwszy atrybut z kolekcji przy użyciu indeksu opartego na zero i przy użyciu następującego pliku, **baseUri. XML**, jako dane wejściowe.
+Ponieważ **XmlAttributeCollection** jest kolekcją i można ją powtórzyć według nazwy lub indeksu, w tym przykładzie pokazano, jak wybrać pierwszy atrybut z kolekcji przy użyciu indeksu na podstawie zera i przy użyciu następującego pliku, **baseuri.xml** jako dane wejściowe.
 
 ### <a name="input"></a>Dane wejściowe
 
@@ -190,7 +189,7 @@ public class Sample
 
 ## <a name="retrieving-an-individual-attribute-node"></a>Pobieranie pojedynczego węzła atrybutu
 
-Aby pobrać pojedynczy węzeł atrybutu z elementu, <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> używana jest metoda. Zwraca obiekt typu **XmlAttribute**. Po utworzeniu elementu **XmlAttribute**wszystkie metody i właściwości dostępne w <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> klasie są dostępne dla tego obiektu, takich jak znalezienie elementu **OwnerElement**.
+Aby pobrać pojedynczy węzeł atrybutu z elementu, <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> używana jest metoda. Zwraca obiekt typu **XmlAttribute**. Po utworzeniu elementu **XmlAttribute** wszystkie metody i właściwości dostępne w <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> klasie są dostępne dla tego obiektu, takich jak znalezienie elementu **OwnerElement**.
 
 ```vb
 Imports System.IO

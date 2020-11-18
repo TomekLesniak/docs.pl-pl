@@ -1,14 +1,13 @@
 ---
 title: Rozpoznawanie zewnętrznych arkuszy stylów i dokumentów XSLT
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 920cfe3b-d525-4bb2-abf6-9431651f9cf9
-ms.openlocfilehash: 8e7f66d67f2520b47c30307a98ed2f3fb08455df
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 370d1df296666e5b5c162db34bd7fb35ae8a2e0e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291477"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823592"
 ---
 # <a name="resolving-external-xslt-style-sheets-and-documents"></a>Rozpoznawanie zewnętrznych arkuszy stylów i dokumentów XSLT
 Podczas transformacji może wystąpić kilka razy, gdy konieczne jest rozwiązanie zasobów zewnętrznych.  
@@ -48,7 +47,7 @@ Podczas transformacji może wystąpić kilka razy, gdy konieczne jest rozwiązan
 - [Dane wyjściowe klasy XslTransform](outputs-from-an-xsltransform.md)
 - [Przekształcenia XSLT w różnych magazynach](xslt-transformations-over-different-stores.md)
 - [Klasa XsltArgumentList — parametry arkusza stylów i obiekty rozszerzeń](xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)
-- [Obsługa skryptów arkusza stylów XSLT przy użyciu\<msxsl:script>](xslt-stylesheet-scripting-using-msxsl-script.md)
+- [Obsługa skryptów arkusza stylów XSLT przy użyciu \<msxsl:script>](xslt-stylesheet-scripting-using-msxsl-script.md)
 - [Obsługa funkcji msxsl:node-set()](support-for-the-msxsl-node-set-function.md)
 - [Klasa XPathNavigator w przekształceniach](xpathnavigator-in-transformations.md)
 - [Klasa XPathNodeIterator w przekształceniach](xpathnodeiterator-in-transformations.md)

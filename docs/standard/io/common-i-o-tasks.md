@@ -2,16 +2,15 @@
 title: Typowe zadania We/Wy
 description: Dowiedz się, jak wykonywać typowe zadania dotyczące plików & wspólnych zadań związanych z katalogiem przy użyciu klas & metod w przestrzeni nazw System.IO w programie .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - I/O, common tasks
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
-ms.openlocfilehash: 4b97b4e464622e482a9ef45e143865ee82e6b5d4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: baabfc477ff8df30c9cac4db1b6d47e0e12f2f37
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598609"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823397"
 ---
 # <a name="common-io-tasks"></a>Typowe zadania We/Wy
 <xref:System.IO>Przestrzeń nazw zawiera kilka klas, które umożliwiają wykonywanie różnych akcji, takich jak odczytywanie i zapisywanie, w przypadku plików, katalogów i strumieni. Aby uzyskać więcej informacji, zobacz [we/wy plików i strumienia](index.md).  
@@ -27,7 +26,7 @@ ms.locfileid: "84598609"
 |Zmienianie nazwy lub przenoszenie pliku|Metoda <xref:System.IO.File.Move%2A?displayProperty=nameWithType><br /><br /> Metoda <xref:System.IO.FileInfo.MoveTo%2A?displayProperty=nameWithType>|  
 |Usuwanie pliku|Metoda <xref:System.IO.File.Delete%2A?displayProperty=nameWithType><br /><br /> Metoda <xref:System.IO.FileInfo.Delete%2A?displayProperty=nameWithType>|  
 |Kopiowanie pliku|Metoda <xref:System.IO.File.Copy%2A?displayProperty=nameWithType><br /><br /> Metoda <xref:System.IO.FileInfo.CopyTo%2A?displayProperty=nameWithType>|  
-|Pobieranie rozmiaru pliku|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>wartość|  
+|Pobieranie rozmiaru pliku|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType> wartość|  
 |Pobieranie atrybutów pliku|Metoda <xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
 |Ustawianie atrybutów pliku|Metoda <xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
 |Ustalanie, czy plik istnieje|Metoda <xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
@@ -43,7 +42,7 @@ ms.locfileid: "84598609"
 |Aby wykonać tę czynność...|Zobacz przykład w tym temacie...|  
 |-------------------|--------------------------------------|  
 |Dostęp do pliku w folderze specjalnym, takim jak Moje dokumenty|[Instrukcje: Zapisywanie tekstu w pliku](how-to-write-text-to-a-file.md)|  
-|Tworzenie katalogu|Metoda <xref:System.IO.Directory.CreateDirectory%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.Directory%2A?displayProperty=nameWithType>wartość|  
+|Tworzenie katalogu|Metoda <xref:System.IO.Directory.CreateDirectory%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.Directory%2A?displayProperty=nameWithType> wartość|  
 |Tworzenie podkatalogu|Metoda <xref:System.IO.DirectoryInfo.CreateSubdirectory%2A?displayProperty=nameWithType>|  
 |Zmienianie nazwy lub przenoszenie katalogu|Metoda <xref:System.IO.Directory.Move%2A?displayProperty=nameWithType><br /><br /> Metoda <xref:System.IO.DirectoryInfo.MoveTo%2A?displayProperty=nameWithType>|  
 |Kopiowanie katalogu|[Instrukcje: Kopiowanie katalogów](how-to-copy-directories.md)|  
@@ -52,7 +51,7 @@ ms.locfileid: "84598609"
 |Znajdowanie rozmiaru katalogu|Klasa <xref:System.IO.Directory?displayProperty=nameWithType>|  
 |Ustalanie, czy katalog istnieje|Metoda <xref:System.IO.Directory.Exists%2A?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [We/wy plików i strumieni](index.md)
 - [Tworzenie strumieni](composing-streams.md)

@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Wykonywanie akcji w przypadku odebrania danych przez blok przepływu danych'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, receiving data
 ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
-ms.openlocfilehash: 647e77f0c5e182cea90f6e90063826b705de354b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3a709e40908afcbd1a228aab00fe36be43097826
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288176"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825731"
 ---
 # <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Instrukcje: Wykonywanie akcji w przypadku odebrania danych przez blok przepływu danych
 Typy *bloku wykonywania przepływu danych* wywołują delegata dostarczony przez użytkownika po odebraniu danych. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>Klasy, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType> i <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> są typu przepływu danych wykonywania. Możesz użyć `delegate` słowa kluczowego ( `Sub` w Visual Basic), <xref:System.Action%601> , <xref:System.Func%602> lub wyrażenia lambda, gdy podajesz funkcję służbową do bloku przepływu danych wykonywania. W tym dokumencie opisano sposób użycia <xref:System.Func%602> i wyrażenia lambda do wykonania akcji w blokach wykonywania.  

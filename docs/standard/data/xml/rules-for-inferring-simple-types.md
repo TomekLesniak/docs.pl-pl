@@ -1,14 +1,13 @@
 ---
 title: Zasady wnioskowania typów prostych
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-ms.openlocfilehash: 571019d13433312a5d31f581c3527aae901bbba7
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 817a35c607f810da0a3e2dc681d27ea997c5fcc7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289073"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823553"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Zasady wnioskowania typów prostych
 Opisuje sposób, w jaki <xref:System.Xml.Schema.XmlSchemaInference> Klasa wnioskuje typ danych dla atrybutów i elementów.  
@@ -24,7 +23,7 @@ Opisuje sposób, w jaki <xref:System.Xml.Schema.XmlSchemaInference> Klasa wniosk
   
 |Typ prosty|Opis|  
 |-----------------|-----------------|  
-|wartość logiczna|Prawda, FAŁSZ, 0, 1.|  
+|boolean|Prawda, FAŁSZ, 0, 1.|  
 |byte|Liczby całkowite z zakresu od – 128 do 127.|  
 |unsignedByte|Liczby całkowite z zakresu od 0 do 255.|  
 |short|Liczby całkowite z zakresu od – 32768 do 32767.|  

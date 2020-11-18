@@ -2,7 +2,6 @@
 title: Wzorzec asynchroniczny oparty na zadaniach (TAP)
 description: Dowiedz się więcej na temat wzorca asynchronicznego opartego na zadaniach (TAP). Naciśnij pozycję to zalecany asynchroniczny wzorzec projektowy na potrzeby programowania w programie .NET.
 ms.date: 02/26/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET support for
 - .NET, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-ms.openlocfilehash: 2987e7baa52f627d1da41af21d05bfa22a247fbb
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: f194a0bafa0ab7b9606d72f091dbb12e94f31099
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889247"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824021"
 ---
 # <a name="task-based-asynchronous-pattern"></a>Wzorzec asynchroniczny oparty na zadaniach
 
@@ -31,7 +30,7 @@ We wzorcu TAP do tworzenia wystąpienia i wykonywania operacji asynchronicznej j
   
  Parametry metody TAP powinny odpowiadać parametrom synchronicznego odpowiednika i powinny być podane w tej samej kolejności.  Jednak `out` Parametry i `ref` są wykluczone z tej reguły i należy je całkowicie uniknąć. Wszelkie dane, które zostałyby zwrócone przez `out` parametr lub, `ref` powinny być zwracane jako część `TResult` zwrócone przez <xref:System.Threading.Tasks.Task%601> , i powinny używać spójnej struktury danych w celu podzielenia wielu wartości. Rozważ również dodanie parametru, <xref:System.Threading.CancellationToken> nawet jeśli synchroniczny odpowiednik metody TAP nie oferuje tego elementu.
 
- Metody, które są przeznaczone wyłącznie do tworzenia, manipulowania lub łączenia zadań (w przypadku których zamiar asynchroniczny metody jest jasne w nazwie metody lub w nazwie typu, do którego należy Metoda) nie muszą być zgodne z tym wzorcem nazewnictwa; takie metody są często określane jako *kombinatorów* . Przykłady kombinatorów obejmują <xref:System.Threading.Tasks.Task.WhenAll%2A> i <xref:System.Threading.Tasks.Task.WhenAny%2A> i zostały omówione w sekcji [using wbudowanej kombinatorów opartej na zadaniach artykułu wykorzystującego](consuming-the-task-based-asynchronous-pattern.md#combinators) [wzorzec asynchroniczny oparty na zadaniach](consuming-the-task-based-asynchronous-pattern.md).  
+ Metody, które są przeznaczone wyłącznie do tworzenia, manipulowania lub łączenia zadań (w przypadku których zamiar asynchroniczny metody jest jasne w nazwie metody lub w nazwie typu, do którego należy Metoda) nie muszą być zgodne z tym wzorcem nazewnictwa; takie metody są często określane jako *kombinatorów*. Przykłady kombinatorów obejmują <xref:System.Threading.Tasks.Task.WhenAll%2A> i <xref:System.Threading.Tasks.Task.WhenAny%2A> i zostały omówione w sekcji [using wbudowanej kombinatorów opartej na zadaniach artykułu wykorzystującego](consuming-the-task-based-asynchronous-pattern.md#combinators) [wzorzec asynchroniczny oparty na zadaniach](consuming-the-task-based-asynchronous-pattern.md).  
   
  Aby zapoznać się z przykładami sposobu, w jaki składnia TAP różni się od składni używanej w starszych asynchronicznych wzorcach programowania, takich jak asynchroniczny model programowania (APM) i asynchroniczny wzorzec oparty na zdarzeniach (EAP), zobacz [wzorce programowania asynchronicznego](index.md).  
   
@@ -53,7 +52,7 @@ We wzorcu TAP do tworzenia wystąpienia i wykonywania operacji asynchronicznej j
  Obiekt wywołujący metody TAP może blokować oczekiwanie na ukończenie metody TAP przez synchronicznie czeka na wyniki zadania lub może uruchamiać dodatkowy kod (kontynuacja) po zakończeniu operacji asynchronicznej. Twórca kodu kontynuacji ma kontrolę nad tym, gdzie ten kod jest wykonywany. Kod kontynuacji można utworzyć jawnie, za pomocą metod <xref:System.Threading.Tasks.Task> klasy (na przykład <xref:System.Threading.Tasks.Task.ContinueWith%2A> ) lub niejawnie, przy użyciu obsługi języka wbudowanej w górę (na przykład `await` w języku C#, `Await` w Visual Basic `AwaitValue` w języku F #).  
   
 ## <a name="task-status"></a>Stan zadania  
- <xref:System.Threading.Tasks.Task>Klasa zawiera cykl życia operacji asynchronicznych i ten cykl jest reprezentowany przez <xref:System.Threading.Tasks.TaskStatus> Wyliczenie. Aby obsługiwać przypadki narożne typów, które pochodzą z <xref:System.Threading.Tasks.Task> i i <xref:System.Threading.Tasks.Task%601> Aby obsługiwać separację konstrukcji z planowania, <xref:System.Threading.Tasks.Task> Klasa uwidacznia <xref:System.Threading.Tasks.Task.Start%2A> metodę. Zadania, które są tworzone przez <xref:System.Threading.Tasks.Task> konstruktory publiczne, są określane jako *zimne zadania* , ponieważ zaczynają cykl życia w stanie zaplanowanym <xref:System.Threading.Tasks.TaskStatus.Created> i są zaplanowane tylko wtedy, gdy <xref:System.Threading.Tasks.Task.Start%2A> jest wywoływana w tych wystąpieniach.
+ <xref:System.Threading.Tasks.Task>Klasa zawiera cykl życia operacji asynchronicznych i ten cykl jest reprezentowany przez <xref:System.Threading.Tasks.TaskStatus> Wyliczenie. Aby obsługiwać przypadki narożne typów, które pochodzą z <xref:System.Threading.Tasks.Task> i i <xref:System.Threading.Tasks.Task%601> Aby obsługiwać separację konstrukcji z planowania, <xref:System.Threading.Tasks.Task> Klasa uwidacznia <xref:System.Threading.Tasks.Task.Start%2A> metodę. Zadania, które są tworzone przez <xref:System.Threading.Tasks.Task> konstruktory publiczne, są określane jako *zimne zadania*, ponieważ zaczynają cykl życia w stanie zaplanowanym <xref:System.Threading.Tasks.TaskStatus.Created> i są zaplanowane tylko wtedy, gdy <xref:System.Threading.Tasks.Task.Start%2A> jest wywoływana w tych wystąpieniach.
 
  Wszystkie inne zadania rozpoczynają cykl życia w stanie gorąca, co oznacza, że operacje asynchroniczne, które reprezentują, zostały już zainicjowane, a ich stan zadania jest wartością wyliczenia inną niż <xref:System.Threading.Tasks.TaskStatus.Created?displayProperty=nameWithType> . Wszystkie zadania, które są zwracane z metod wzorca TAP, muszą być aktywowane. **Jeśli metoda TAP wewnętrznie używa konstruktora zadania do utworzenia wystąpienia zadania do zwrócenia, Metoda TAP musi wywołać <xref:System.Threading.Tasks.Task.Start%2A> <xref:System.Threading.Tasks.Task> obiekt przed jego zwróceniem.** Konsumenci metody TAP mogą bezpiecznie założyć, że zwrócone zadanie jest aktywne i nie powinna próbować wywołać <xref:System.Threading.Tasks.Task.Start%2A> <xref:System.Threading.Tasks.Task> metody, która jest zwracana przez metodę TAP. Wywołanie <xref:System.Threading.Tasks.Task.Start%2A> aktywnego zadania spowoduje <xref:System.InvalidOperationException> wyjątek.  
   

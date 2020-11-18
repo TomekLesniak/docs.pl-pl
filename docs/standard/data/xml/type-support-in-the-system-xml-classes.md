@@ -1,14 +1,13 @@
 ---
 title: Obsługa typu w ramach klas zestawu System.Xml
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 63570538-06e3-4401-ad4d-ac50be90c7bf
-ms.openlocfilehash: 8ceda15cb8463db3e81260529ebb1e3a67a0c1af
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8e4ef15980f488c473129f4f7c02be1778bcafea
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283302"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824626"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>Obsługa typu w ramach klas zestawu System.Xml
 W .NET Framework w wersji 2,0 podstawowe klasy XML zostały ulepszone w celu uwzględnienia funkcji obsługi typu. <xref:System.Xml.XmlReader>Klasy, <xref:System.Xml.XmlWriter> i <xref:System.Xml.XPath.XPathNavigator> zawierają funkcje obsługi typu, w tym możliwość konwersji między typami schematu XML i typami środowiska uruchomieniowego języka wspólnego (CLR).  

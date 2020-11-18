@@ -2,7 +2,6 @@
 title: Jak używać klas kodowania znaków w programie .NET
 description: Dowiedz się, jak używać klas kodowania znaków w programie .NET.
 ms.date: 12/22/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.openlocfilehash: c626e79e7bbcd71c90775df8ee8c4d6570c29125
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 520316c0733d5c56b5ab77fbec7d4dd838af6338
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290581"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823293"
 ---
 # <a name="how-to-use-character-encoding-classes-in-net"></a>Jak używać klas kodowania znaków w programie .NET
 
@@ -125,7 +124,7 @@ Gdy metoda próbuje zakodować lub zdekodować znak, ale nie istnieje żadne map
 
 <a name="BestFit"></a>
 
-### <a name="best-fit-fallback"></a>Dopasowanie najlepszego dopasowania
+### <a name="best-fit-fallback"></a>Best-Fit rezerwowy
 
 Gdy znak nie ma dokładnego dopasowania w kodowaniu docelowym, koder może próbować zmapować go do podobnego znaku. (Najlepszym dopasowaniem jest raczej kodowanie, a nie problem z dekodowaniem. Istnieje kilka stron kodowych, które zawierają znaki, których nie można pomyślnie zmapować na Unicode.) Najlepszym dopasowaniem jest wartość domyślna dla kodowania strony kodowej i dwubajtowego zestawu znaków, które są pobierane przez <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> przeciążenia i <xref:System.Text.Encoding.GetEncoding%28System.String%29?displayProperty=nameWithType> .
 
@@ -135,7 +134,7 @@ Gdy znak nie ma dokładnego dopasowania w kodowaniu docelowym, koder może prób
 Najlepiej dopasowane strategie różnią się w zależności od stron kodowych. Na przykład w przypadku niektórych stron kodowych znaki łacińskie o pełnej szerokości są mapowane na bardziej popularne znaki łacińskie połówkowej szerokości. W przypadku innych stron kodowych mapowanie nie jest wykonywane. Nawet w ramach agresywnej strategii najlepiej dopasowanej nie ma żadnych znaków w przypadku niektórych kodowań. Na przykład, ideograph chiński nie ma uzasadnionego mapowania na stronę kodową 1252. W takim przypadku używany jest ciąg zastępczy. Domyślnie ten ciąg jest tylko pojedynczym ZNAKiem zapytania (U + 003F).
 
 > [!NOTE]
-> Strategie najlepiej dopasowane nie są udokumentowane szczegółowo. Jednak kilka stron kodowych są udokumentowane w witrynie sieci Web [konsorcjum Unicode](https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/) . Aby uzyskać opis sposobu interpretacji plików mapowania, zapoznaj się z plikiem **README. txt** w tym folderze.
+> Strategie najlepiej dopasowane nie są udokumentowane szczegółowo. Jednak kilka stron kodowych są udokumentowane w witrynie sieci Web [konsorcjum Unicode](https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/) . Zapoznaj się z plikiem **readme.txt** w tym folderze, aby uzyskać opis sposobu interpretacji plików mapowania.
 
 Poniższy przykład używa strony kodowej 1252 (strona kodowa systemu Windows dla języków zachodnich Europy) do zilustrowania najlepszego mapowania i jego wad. <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType>Metoda jest używana do pobierania obiektu kodowania dla strony kodowej 1252. Domyślnie używa mapowania najlepszego dopasowania dla znaków Unicode, które nie są obsługiwane. Przykład tworzy wystąpienie ciągu, który zawiera trzy znaki inne niż ASCII — WYRÓŻNIONe Wielka litera S (U + 24C8), indeks GÓRNy 5 (U + 2075) i NIESKOŃCZONość (U + 221E) — rozdzielone spacjami. Jako dane wyjściowe z przykładu pokazują, gdy ciąg jest zakodowany, trzy oryginalne znaki niebędące znakami spacji są zastępowane na podstawie znaku zapytania (U + 003F), cyfry pięć (U + 0035) i cyfry osiem (U + 0038). CYFRa osiem to szczególnie słabe zastąpienie dla nieobsługiwanego znaku NIESKOŃCZONości, a znak zapytania wskazuje, że dla oryginalnego znaku nie jest dostępne żadne mapowanie.
 
@@ -229,7 +228,7 @@ Aby zaimplementować niestandardowe rozwiązanie alternatywne, należy również
 
 W przypadku tworzenia niestandardowego rozwiązania alternatywnego dla kodera lub dekodera należy zaimplementować następujące elementy członkowskie:
 
-- <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType>Metoda or <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> . <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType>jest wywoływany przez koder w celu dostarczenia bufora rezerwowego informacjami o znaku, którego nie może zakodować. Ponieważ znak, który ma być zakodowany, może być parą zastępczą, ta metoda jest przeciążona. Jedno Przeciążenie jest przekazanie znaku, który ma zostać zakodowany i jego indeks w ciągu. Drugie Przeciążenie jest przenoszone z górnego i niskiego surogatu wraz z jego indeksem w ciągu. <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType>Metoda jest wywoływana przez dekoder w celu dostarczenia bufora rezerwowego informacjami o bajtach, których nie można zdekodować. Ta metoda jest przenoszona tablicą bajtów, której nie można zdekodować, wraz z indeksem pierwszego bajtu. Metoda rezerwowa powinna zwracać, `true` Jeśli bufor rezerwowy może dostarczyć najlepszego lub zastępczego znaku lub znaków; w przeciwnym razie powinien zwrócić `false` . W przypadku powrotu wyjątku Metoda rezerwowa powinna zgłosić wyjątek.
+- <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType>Metoda or <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> . <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> jest wywoływany przez koder w celu dostarczenia bufora rezerwowego informacjami o znaku, którego nie może zakodować. Ponieważ znak, który ma być zakodowany, może być parą zastępczą, ta metoda jest przeciążona. Jedno Przeciążenie jest przekazanie znaku, który ma zostać zakodowany i jego indeks w ciągu. Drugie Przeciążenie jest przenoszone z górnego i niskiego surogatu wraz z jego indeksem w ciągu. <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType>Metoda jest wywoływana przez dekoder w celu dostarczenia bufora rezerwowego informacjami o bajtach, których nie można zdekodować. Ta metoda jest przenoszona tablicą bajtów, której nie można zdekodować, wraz z indeksem pierwszego bajtu. Metoda rezerwowa powinna zwracać, `true` Jeśli bufor rezerwowy może dostarczyć najlepszego lub zastępczego znaku lub znaków; w przeciwnym razie powinien zwrócić `false` . W przypadku powrotu wyjątku Metoda rezerwowa powinna zgłosić wyjątek.
 
 - <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType>Metoda or <xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> , która jest wywoływana wielokrotnie przez koder lub dekoder w celu uzyskania następnego znaku z buforu rezerwowego. Gdy wszystkie znaki powrotu zostały zwrócone, metoda powinna zwrócić U + 0000.
 

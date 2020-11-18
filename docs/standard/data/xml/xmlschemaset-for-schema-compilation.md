@@ -1,17 +1,16 @@
 ---
 title: Klasa XmlSchemaSet na potrzeby kompilacji schematu
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
-ms.openlocfilehash: 44850755c41b212e88e0b90dd3b016f96a0af96d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5916511187741c703cb39a5c168e542e124ab26b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290230"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825926"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>Klasa XmlSchemaSet na potrzeby kompilacji schematu
 Opisuje <xref:System.Xml.Schema.XmlSchemaSet> pamięć podręczną, w której można przechowywać i sprawdzać schematy języka definicji schematu XML (XSD).  
@@ -21,7 +20,7 @@ Opisuje <xref:System.Xml.Schema.XmlSchemaSet> pamięć podręczną, w której mo
   
  W <xref:System.Xml?displayProperty=nameWithType> wersji 1,0 schematy XML zostały załadowane do <xref:System.Xml.Schema.XmlSchemaCollection> klasy jako biblioteka schematów. W <xref:System.Xml?displayProperty=nameWithType> wersji 2,0, <xref:System.Xml.XmlValidatingReader> i <xref:System.Xml.Schema.XmlSchemaCollection> klasy są przestarzałe i zostały zastąpione <xref:System.Xml.XmlReader.Create%2A> metodami oraz <xref:System.Xml.Schema.XmlSchemaSet> klasą.  
   
- Wprowadzono <xref:System.Xml.Schema.XmlSchemaSet> rozwiązanie do rozwiązywania problemów, takich jak zgodność ze standardami, wydajność i przestarzały format schematu Microsoft XML — zmniejszone (XDR).  
+ Wprowadzono <xref:System.Xml.Schema.XmlSchemaSet> rozwiązanie do rozwiązywania problemów, w tym zgodność ze standardami, wydajność i przestarzały format schematu programu Microsoft XML-Data zmniejszony (XDR).  
   
  Poniżej znajduje się porównanie <xref:System.Xml.Schema.XmlSchemaCollection> klasy i <xref:System.Xml.Schema.XmlSchemaSet> klasy.  
   

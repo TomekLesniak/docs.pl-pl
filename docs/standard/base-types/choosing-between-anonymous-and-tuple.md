@@ -4,13 +4,12 @@ description: Dowiedz się, kiedy należy wybrać typy anonimowe i typ krotki.
 author: IEvangelist
 ms.author: dapine
 ms.date: 07/01/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: 9c186133a639faf187c89d872856d860a20f5a2d
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: f8465b2f22ecfafd739355ddd35635e2eee49232
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174221"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823202"
 ---
 # <a name="choosing-between-anonymous-and-tuple-types"></a>Wybór między typami anonimowymi a kolekcjami
 
@@ -18,7 +17,7 @@ Wybór odpowiedniego typu polega na uwzględnieniu jego użyteczności, wydajno�
 
 ## <a name="usability-and-functionality"></a>Użyteczność i funkcje
 
-Typy anonimowe zostały wprowadzone w języku C# 3,0 z wyrażeniami programu Query-Integrated Language (LINQ). LINQ, deweloperzy często projektują wyniki zapytań w typach anonimowych, które zawierają kilka właściwości Select z obiektów, z którymi pracują. Rozważmy poniższy przykład, który tworzy wystąpienie tablicy <xref:System.DateTime> obiektów i wykonuje iteracje w celu przechodzenia do typu anonimowego z dwiema właściwościami.
+Typy anonimowe zostały wprowadzone w języku C# 3,0 z wyrażeniami Language-Integrated Query (LINQ). LINQ, deweloperzy często projektują wyniki zapytań w typach anonimowych, które zawierają kilka właściwości Select z obiektów, z którymi pracują. Rozważmy poniższy przykład, który tworzy wystąpienie tablicy <xref:System.DateTime> obiektów i wykonuje iteracje w celu przechodzenia do typu anonimowego z dwiema właściwościami.
 
 ```csharp-interactive
 var dates = new[]
@@ -114,11 +113,11 @@ Jednym ważnym zagadnieniem podczas wybierania typu jest to, czy należy go seri
 
 Wydajność między tymi typami zależy od scenariusza. Istotny wpływ obejmuje kompromis między przydziałami i kopiowaniem. W większości scenariuszy wpływ jest mały. W przypadku wystąpienia poważnych wpływów należy podjąć pomiary w celu poinformowania o decyzji.
 
-## <a name="conclusion"></a>Podsumowanie
+## <a name="conclusion"></a>Wniosek
 
 Jako deweloper wybierający między krotki a typami anonimowymi, istnieje kilka czynników, które należy wziąć pod uwagę. Ogólnie mówiąc, jeśli nie pracujesz z [drzewami wyrażeń](../../csharp/expression-trees.md)i masz doświadczenie ze składnią krotek, wybierz <xref:System.ValueTuple> jako wartość typ wartości z elastycznością do nazwy właściwości. Jeśli pracujesz z drzewami wyrażeń i wolisz nazwać właściwości, wybierz typy anonimowe. W przeciwnym razie użyj <xref:System.Tuple> .
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy anonimowe](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
 - [Drzewa wyrażeń](../../csharp/expression-trees.md)

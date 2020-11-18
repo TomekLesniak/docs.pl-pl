@@ -2,21 +2,20 @@
 title: Używanie wątków i wątkowości
 description: Dowiedz się więcej o używaniu wątków i wątkowości w programie .NET, dzięki czemu możesz pisać aplikacje do wykonywania wielu operacji w tym samym czasie (wielowątkowość).
 ms.date: 08/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], about threading
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
-ms.openlocfilehash: 127ea9e28d9ce303270512bf86bf4eecf2f86437
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 85968cfb1a228826429876e525f0c8452f97cfc4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188708"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826095"
 ---
 # <a name="using-threads-and-threading"></a>Używanie wątków i wątkowości
 
-Za pomocą platformy .NET można pisać aplikacje, które wykonują wiele operacji w tym samym czasie. Operacje z możliwością utrzymywania innych operacji można wykonać w oddzielnych wątkach, procesie znanym *jako* wielowątkowość lub *bezpłatne wątki* .  
+Za pomocą platformy .NET można pisać aplikacje, które wykonują wiele operacji w tym samym czasie. Operacje z możliwością utrzymywania innych operacji można wykonać w oddzielnych wątkach, procesie znanym *jako* wielowątkowość lub *bezpłatne wątki*.  
   
 Aplikacje używające wielowątkowości są wydajniejsze do wprowadzania danych przez użytkownika, ponieważ interfejs użytkownika pozostaje aktywny jako zadania intensywnie korzystające z procesora wykonywane w oddzielnym wątku. Wielowątkowość jest również przydatna podczas tworzenia skalowalnych aplikacji, ponieważ można dodać wątki w miarę wzrostu obciążenia.
 
@@ -53,7 +52,7 @@ W poniższej tabeli przedstawiono niektóre z tych <xref:System.Threading.Thread
 |<xref:System.Threading.Thread.Priority%2A>|Pobiera lub ustawia <xref:System.Threading.ThreadPriority> wartość używaną przez system operacyjny do określania priorytetów planowania wątków. Aby uzyskać więcej informacji, zobacz [Planowanie wątków](scheduling-threads.md) i <xref:System.Threading.ThreadPriority> odwołanie.|  
 |<xref:System.Threading.Thread.ThreadState%2A>|Pobiera <xref:System.Threading.ThreadState> wartość zawierającą bieżące Stany wątku.|  
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Threading.Thread?displayProperty=nameWithType>
 - [Wątki i wątkowość](threads-and-threading.md)

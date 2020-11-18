@@ -2,7 +2,6 @@
 title: Obiekty główne i obiekty tożsamości
 description: Przeczytaj informacje o obiektach tożsamości, które reprezentują użytkowników w programie .NET. Zapoznaj się również z obiektami podmiotu zabezpieczeń, które hermetyzują zarówno obiekt tożsamości & rolę.
 ms.date: 07/15/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - WindowsIdentity objects
 - GenericIdentity objects
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - security [.NET], principals
 - WindowsPrincipal objects
 ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
-ms.openlocfilehash: 79caeed6ed64a07238e398af1e12f51640b88b62
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: cfda506fc29e9a86e97b3c99faf2d4155c894f03
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555257"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824242"
 ---
 # <a name="principal-and-identity-objects"></a>Obiekty główne i obiekty tożsamości
 
@@ -41,7 +40,7 @@ Obiekt Principal reprezentuje kontekst zabezpieczeń, w którym jest uruchomiony
   
 <xref:System.Security.Principal.IPrincipal>Interfejs definiuje Właściwość uzyskiwania dostępu do skojarzonego obiektu **tożsamości** , a także metodę określania, czy użytkownik identyfikowany przez obiekt **Principal** jest członkiem danej roli. Wszystkie klasy **Główne** implementują interfejs **IPrincipal** oraz wszelkie dodatkowe właściwości i metody, które są niezbędne. Na przykład środowisko uruchomieniowe języka wspólnego udostępnia klasę **WindowsPrincipal** , która implementuje dodatkowe funkcje mapowania członkostwa grupy systemu Windows NT lub Windows 2000 do ról.  
   
-Obiekt **Principal** jest powiązany z obiektem kontekstu wywołania ( <xref:System.Runtime.Remoting.Messaging.CallContext> ) w domenie aplikacji ( <xref:System.AppDomain> ). Domyślny kontekst wywołania jest zawsze tworzony z każdą nową **domeną aplikacji**, więc zawsze jest dostępny kontekst wywołania do akceptowania obiektu **głównego** . Po utworzeniu nowego wątku tworzony jest również obiekt **CallContext** dla wątku. Odwołanie do obiektu **głównego** jest automatycznie kopiowane z wątku tworzenia do **CallContext**nowego wątku. Jeśli środowisko wykonawcze nie może ustalić, który obiekt **główny** należy do twórcy wątku, następuje po zasadach domyślnych dla tworzenia obiektów **podmiotu zabezpieczeń** i **tożsamości** .  
+Obiekt **Principal** jest powiązany z obiektem kontekstu wywołania ( <xref:System.Runtime.Remoting.Messaging.CallContext> ) w domenie aplikacji ( <xref:System.AppDomain> ). Domyślny kontekst wywołania jest zawsze tworzony z każdą nową **domeną aplikacji**, więc zawsze jest dostępny kontekst wywołania do akceptowania obiektu **głównego** . Po utworzeniu nowego wątku tworzony jest również obiekt **CallContext** dla wątku. Odwołanie do obiektu **głównego** jest automatycznie kopiowane z wątku tworzenia do **CallContext** nowego wątku. Jeśli środowisko wykonawcze nie może ustalić, który obiekt **główny** należy do twórcy wątku, następuje po zasadach domyślnych dla tworzenia obiektów **podmiotu zabezpieczeń** i **tożsamości** .  
   
 Konfigurowalne zasady specyficzne dla domeny aplikacji definiują reguły decydujące o typie obiektu **podmiotu zabezpieczeń** , który ma zostać skojarzony z nową domeną aplikacji. W przypadku, gdy zasady zabezpieczeń pozwalają, środowisko uruchomieniowe może utworzyć obiekty **Principal** i **Identity** , które odzwierciedlają token systemu operacyjnego skojarzony z bieżącym wątkiem wykonywania. Domyślnie środowisko uruchomieniowe używa obiektów **Principal** i **Identity** , które reprezentują nieuwierzytelnionych użytkowników. Środowisko uruchomieniowe nie tworzy tych domyślnych obiektów **głównych** i **tożsamości** , dopóki kod nie spróbuje uzyskać do nich dostępu.  
   
@@ -49,7 +48,7 @@ Zaufany kod, który tworzy domenę aplikacji, może ustawić zasady domeny aplik
   
 Podczas przesyłania obiektu **podmiotu zabezpieczeń** między domenami aplikacji, ale w ramach tego samego procesu (i w związku z tym na tym samym komputerze) infrastruktura zdalna kopiuje odwołanie do obiektu **podmiotu zabezpieczeń** skojarzonego z kontekstem obiektu wywołującego do kontekstu wywoływanego.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Instrukcje: Tworzenie obiektu WindowsPrincipal](how-to-create-a-windowsprincipal-object.md)
 - [Instrukcje: Tworzenie obiektów GenericPrincipal i GenericIdentity](how-to-create-genericprincipal-and-genericidentity-objects.md)

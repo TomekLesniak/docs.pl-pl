@@ -1,17 +1,16 @@
 ---
 title: Pobieranie uporządkowanych węzłów na podstawie indeksu
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5412c90f-2703-4aa8-a9c4-1b8a35183c37
-ms.openlocfilehash: 8ff02a81ab579cc0041074990a76166fcafe6eb5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 73c31c5249262fe9b6624201bc5b9bd6b1374d1e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288722"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823748"
 ---
 # <a name="ordered-node-retrieval-by-index"></a>Pobieranie uporządkowanych węzłów na podstawie indeksu
 Organizacja World Wide Web Consortium (W3C) XML Document Object Model (DOM) również opisuje powstanie, który ma możliwość obsługi uporządkowanej listy węzłów, w przeciwieństwie do zestawu nieuporządkowanego obsługiwanego przez **XmlNamedNodeMap**. Powstanie w strukturze Microsoft .NET jest nazywana **XmlNodeList**. Metody i właściwości, które zwracają **XmlNodeList** są następujące:  

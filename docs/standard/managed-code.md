@@ -2,14 +2,13 @@
 title: Co to jest kod zarządzany?
 description: Dowiedz się, w jaki sposób kod zarządzany jest kodem, którego wykonywanie jest zarządzane przez środowisko uruchomieniowe, środowisko uruchomieniowe języka wspólnego (CLR).
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.openlocfilehash: 950dd5c32663b0716247c2a31a2f729fcf85f97b
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 3e2a6576f84890afd35d74b2f0f5fb352a90236a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92163106"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825900"
 ---
 # <a name="what-is-managed-code"></a>Co to jest „kod zarządzany”?
 

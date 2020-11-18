@@ -2,7 +2,6 @@
 title: Kolekcje i struktury danych
 description: Dowiedz się, jak używać kolekcji i struktur danych w programie .NET. Użyj ogólnych i nieogólnych kolekcji w operacjach bezpiecznych wątków.
 ms.date: 04/30/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - grouping data in collections
 - objects [.NET], grouping in collections
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 4ed4197ecdffad9579424957bf3f1f7ac6a782d7
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 3b92f3aa8c21cc3d171e14100db190d88f2c0284
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889351"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823852"
 ---
 # <a name="collections-and-data-structures"></a>Kolekcje i struktury danych
 

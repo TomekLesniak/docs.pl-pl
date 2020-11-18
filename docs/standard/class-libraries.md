@@ -3,14 +3,13 @@ title: Biblioteki klas .NET
 description: Dowiedz się, jak biblioteki klas .NET umożliwiają grupowanie przydatnych funkcji w moduły, które mogą być używane przez wiele aplikacji.
 author: richlander
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: 35e408ed3552550f19879409128784b2513e56c8
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: bbf8d5fa44af931e39f2bf1344c13f9d9d9bfe05
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224267"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823956"
 ---
 # <a name="net-class-libraries"></a>Biblioteki klas .NET
 
@@ -42,7 +41,7 @@ Wielu deweloperów biblioteki przełączyli się od tworzenia wielu bibliotek sp
 
 Biblioteki .NET Standard są zastępowane pojęcia dotyczące bibliotek i elementów przenośnych specyficznych dla platformy. Są one specyficzne dla platformy w tym sensie, że uwidaczniają wszystkie funkcje z poziomu podstawowej platformy (nie zawiera żadnych platform syntetycznych lub przecięć platform). Są one przenośne w tym sensie, że działają na wszystkich platformach pomocniczych.
 
-.NET Standard uwidacznia zestaw _kontraktów_biblioteki. Implementacje platformy .NET muszą obsługiwać wszystkie umowy w całości lub wcale. W związku z tym każda implementacja obsługuje zestaw kontraktów .NET Standard. Współrzuty polega na tym, że każda biblioteka klas .NET Standard jest obsługiwana na platformach, które obsługują jej zależności kontraktu.
+.NET Standard uwidacznia zestaw _kontraktów_ biblioteki. Implementacje platformy .NET muszą obsługiwać wszystkie umowy w całości lub wcale. W związku z tym każda implementacja obsługuje zestaw kontraktów .NET Standard. Współrzuty polega na tym, że każda biblioteka klas .NET Standard jest obsługiwana na platformach, które obsługują jej zależności kontraktu.
 
 .NET Standard nie uwidacznia całej funkcjonalności .NET Framework (nie jest to cel), ale udostępnia wiele innych interfejsów API niż przenośne biblioteki klas. Więcej interfejsów API zostanie dodanych w czasie.
 

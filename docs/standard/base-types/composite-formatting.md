@@ -2,7 +2,6 @@
 title: Złożone formatowanie
 description: Dowiedz się więcej na temat formatowania złożonego .NET, które przyjmuje jako dane wejściowe listę obiektów i ciąg formatu złożonego, zawierający stały tekst z indeksowanymi symbolami zastępczymi.
 ms.date: 10/26/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,19 +13,19 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: e15452016aa61cf44950e8b9e7fca58f23471ae7
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 588efff637359586630554decf57072597365d32
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889468"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823098"
 ---
 # <a name="composite-formatting"></a>Złożone formatowanie
 
 Funkcja formatowania złożonego .NET przyjmuje listę obiektów i ciąg formatu złożonego jako dane wejściowe. Ciąg formatu złożonego składa się ze stałego tekstu zmieszanego z indeksowanymi symbolami zastępczymi (nazywanymi też elementami formatu), które odpowiadają obiektom na liście. Operacja formatowania zwraca ciąg wynikowy, który składa się z oryginalnego stałego tekstu zmieszanego z ciągiem reprezentującym obiekty na liście.  
   
 > [!IMPORTANT]
-> Zamiast korzystać z ciągów formatu złożonego, można użyć *interpolowanych ciągów* , jeśli używany język i wersja językowa są obsługiwane. Ciąg interpolowany jest ciągiem, który zawiera *interpolowane wyrażenia* . Każde wyrażenie interpolowane jest rozpoznawane za pomocą wartości wyrażenia i uwzględniane w ciągu wynikowym, gdy ciąg jest przypisany. Aby uzyskać więcej informacji, zobacz [Interpolacja ciągów (odwołanie w C#)](../../csharp/language-reference/tokens/interpolated.md) i [ciągi interpolowane (odwołanie Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+> Zamiast korzystać z ciągów formatu złożonego, można użyć *interpolowanych ciągów* , jeśli używany język i wersja językowa są obsługiwane. Ciąg interpolowany jest ciągiem, który zawiera *interpolowane wyrażenia*. Każde wyrażenie interpolowane jest rozpoznawane za pomocą wartości wyrażenia i uwzględniane w ciągu wynikowym, gdy ciąg jest przypisany. Aby uzyskać więcej informacji, zobacz [Interpolacja ciągów (odwołanie w C#)](../../csharp/language-reference/tokens/interpolated.md) i [ciągi interpolowane (odwołanie Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
 
 Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:  
   
@@ -56,7 +55,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
 ## <a name="format-item-syntax"></a>Formatuj element składni  
  Każdy element formatu ma następującą postać i składa się z następujących składników:  
   
- `{`*indeks* [ `,` *wyrównanie* ] [ `:` *FormatString* ]`}`  
+ `{`*indeks*[ `,` *wyrównanie*] [ `:` *FormatString*]`}`  
   
  Dopasowujące nawiasy klamrowe („{” i „}”) są wymagane.  
   

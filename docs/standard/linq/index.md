@@ -1,23 +1,22 @@
 ---
 title: LINQ — Omówienie — .NET
-description: Funkcja Query-Integrated Language (LINQ) udostępnia funkcje obsługi zapytań na poziomie języka i interfejs API funkcji wyższej kolejności dla języków C# i Visual Basic, które umożliwiają pisanie kodu deklaratywnego.
+description: Language-Integrated Query (LINQ) zapewnia możliwości zapytań na poziomie języka i interfejs API funkcji wyższej kolejności do języka C# i Visual Basic, które umożliwiają pisanie kodu deklaratywnego.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 65370a2bd21e2474af4cb070bb8d82a167f10070
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ed78082c97511a8dbcc48d413a75a46c9da906a9
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554999"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825835"
 ---
 # <a name="linq-overview"></a>LINQ — przegląd
 
-Funkcja Query-Integrated Language (LINQ) udostępnia funkcje obsługi zapytań na poziomie języka i interfejs API [funkcji wyższej kolejności](https://en.wikipedia.org/wiki/Higher-order_function) dla języków C# i Visual Basic, które umożliwiają pisanie kodu deklaratywnego.
+Language-Integrated Query (LINQ) zapewnia możliwości zapytań na poziomie języka i interfejs API [funkcji wyższej kolejności](https://en.wikipedia.org/wiki/Higher-order_function) do języka C# i Visual Basic, które umożliwiają pisanie kodu deklaratywnego.
 
 ## <a name="language-level-query-syntax"></a>Składnia zapytania na poziomie języka
 
@@ -111,7 +110,7 @@ End Function
 
 Pisanie kodu do ręcznego przechodzenia dokumentu XML, aby to zadanie było znacznie trudniejsze.
 
-Korzystanie z języka XML nie jest jedynym elementem, który można wykonywać za pomocą dostawców LINQ. [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md) to stosunkowo jednoskładnikowo-relacyjny obiekt mapowania (ORM) dla bazy danych serwera MSSQL. Biblioteka [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) zapewnia wydajną przechodzenie dokumentów JSON za pośrednictwem LINQ. Ponadto jeśli nie ma biblioteki, która robi to potrzebne, możesz również [napisać własnego dostawcę LINQ](/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110)).
+Korzystanie z języka XML nie jest jedynym elementem, który można wykonywać za pomocą dostawców LINQ. [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md) to dość bez systemu operacyjnego, Object-Relational MAPER (ORM) dla bazy danych serwera MSSQL. Biblioteka [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) zapewnia wydajną przechodzenie dokumentów JSON za pośrednictwem LINQ. Ponadto jeśli nie ma biblioteki, która robi to potrzebne, możesz również [napisać własnego dostawcę LINQ](/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110)).
 
 ## <a name="reasons-to-use-the-query-syntax"></a>Przyczyny użycia składni zapytania
 

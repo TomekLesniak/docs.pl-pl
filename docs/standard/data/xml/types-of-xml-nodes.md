@@ -1,14 +1,13 @@
 ---
 title: Typy węzłów XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 71d03b78-6898-4ce7-b0fc-1282573f31f7
-ms.openlocfilehash: 5e11d61e16659ac1a8ca1b0b2c0d493ffdad5621
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 97458fc26b3c63dd6d7882c180192aef63109e1a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282067"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824600"
 ---
 # <a name="types-of-xml-nodes"></a>Typy węzłów XML
 Gdy dokument XML jest odczytywany do pamięci jako drzewo węzłów, podczas tworzenia węzłów są podejmowane decyzje dotyczące typów węzłów. Document Object Model XML (DOM) zawiera kilka rodzajów typów węzłów, określonych przez organizacja World Wide Web Consortium (W3C) i wymienionych w sekcji 1.1.1 model struktury DOM. Poniższa tabela zawiera listę typów węzłów, obiekt przypisany do tego typu węzła i Krótki opis każdego z nich.  
@@ -37,7 +36,7 @@ Gdy dokument XML jest odczytywany do pamięci jako drzewo węzłów, podczas two
 |<xref:System.Xml.XmlDeclaration>|Reprezentuje węzeł deklaracji `<?xml version="1.0"…>` .|  
 |<xref:System.Xml.XmlSignificantWhitespace>|Reprezentuje znaczący biały znak, który jest białym znakiem w zawartości mieszanej.|  
 |<xref:System.Xml.XmlWhitespace>|Reprezentuje biały znak w zawartości elementu.|  
-|EndElement|Zwracany, gdy element **XmlReader** otrzymuje koniec elementu.<br /><br /> Przykładowy kod XML:**\</item>**<br /><br /> Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNodeType>.|  
+|EndElement|Zwracany, gdy element **XmlReader** otrzymuje koniec elementu.<br /><br /> Przykładowy kod XML: **\</item>**<br /><br /> Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNodeType>.|  
 |EndEntity|Zwracany, gdy element **XmlReader** jest pobierany na koniec zamiany jednostki w wyniku wywołania metody <xref:System.Xml.XmlReader.ResolveEntity%2A> . Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNodeType>.|  
   
  Aby wyświetlić przykład kodu, który odczytuje w języku XML i używa konstrukcji case w typach węzłów do drukowania informacji o węźle i jego zawartości, zobacz <xref:System.Xml.XmlSignificantWhitespace.NodeType%2A> .  

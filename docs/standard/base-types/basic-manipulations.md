@@ -2,19 +2,18 @@
 title: Podstawowe operacje na ciągach w programie .NET
 description: Zobacz przykład, który wywołuje wiele metod String.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - strings [.NET], examples
 ms.assetid: 121d1eae-251b-44c0-8818-57da04b8215e
-ms.openlocfilehash: 659f01cc1d7ae03e12e83329e4fd2446b7512475
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: e3e969520e068bde234c13d45ad790b76ecf8fdb
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342621"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825160"
 ---
 # <a name="how-to-perform-basic-string-manipulations-in-net"></a>Instrukcje: wykonywanie podstawowych operacji na ciągach w programie .NET
 
@@ -29,6 +28,6 @@ Dla uproszczenia w tym przykładzie użyto aplikacji konsolowej z interfejsem wi
 
 Gdy poprzedni kod jest wykonywany, użytkownik zostanie poproszony o wprowadzenie nazwy i adresu. Aplikacja umieszcza informacje w odpowiednich właściwościach i wyświetla informacje z powrotem do użytkownika, tworząc pojedynczy ciąg, który wyświetla miasto, Województwo i informacje o kodzie pocztowym.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podstawowe operacje na ciągach](basic-string-operations.md)

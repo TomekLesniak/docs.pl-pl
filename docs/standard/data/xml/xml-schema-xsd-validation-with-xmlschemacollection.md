@@ -1,17 +1,16 @@
 ---
 title: Weryfikacja schematu XML (XSD) przy użyciu klasy XmlSchemaCollection
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
-ms.openlocfilehash: 2ff8a8b85c3bfa594bd958a9a3688380885e0426
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 08eeb8440f89e488685e474bed607002f8ab6386
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290308"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824587"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Weryfikacja schematu XML (XSD) przy użyciu klasy XmlSchemaCollection
 Za pomocą programu można <xref:System.Xml.Schema.XmlSchemaCollection> sprawdzić poprawność dokumentu XML względem schematów języka definicji schematu XML (XSD). <xref:System.Xml.Schema.XmlSchemaCollection>Zwiększa wydajność dzięki przechowywaniu schematów w kolekcji, tak aby nie były ładowane do pamięci po każdym wystąpieniu walidacji. Jeśli schemat istnieje w kolekcji schematów, ten `schemaLocation` atrybut jest używany do wyszukania schematu w kolekcji.  
@@ -52,7 +51,7 @@ vreader.Schemas.Add(xsc);
   
  Ten `targetNamespace` atrybut jest zazwyczaj używany podczas dodawania `namespaceURI` właściwości <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metody dla <xref:System.Xml.Schema.XmlSchemaCollection> . Można określić odwołanie o wartości null przed dodaniem schematu do elementu <xref:System.Xml.Schema.XmlSchemaCollection> . Pusty ciąg ("") powinien być używany w schematach bez przestrzeni nazw. <xref:System.Xml.Schema.XmlSchemaCollection>Może mieć tylko jeden schemat bez przestrzeni nazw.  
   
- Poniższy przykład kodu dodaje schemat XML, wartość osobowy. xsd, do <xref:System.Xml.Schema.XmlSchemaCollection> i sprawdza poprawność. XML.  
+ Poniższy przykład kodu dodaje schemat XML, wartość osobowy. xsd, do <xref:System.Xml.Schema.XmlSchemaCollection> i sprawdza poprawność HeadCount.xml.  
   
 ```vb  
 Imports System  
@@ -123,7 +122,7 @@ namespace ValidationSample
 }  
 ```  
   
- Poniżej przedstawiono zawartość pliku wejściowego, np. XML, do zweryfikowania.  
+ Poniżej przedstawiono zawartość pliku wejściowego, HeadCount.xml, aby sprawdzić poprawność.  
   
 ```xml  
 <!--Load HeadCount.xsd in SchemaCollection for Validation-->  
@@ -147,7 +146,7 @@ namespace ValidationSample
 </xs:schema>  
 ```  
   
- Poniższy przykład kodu tworzy obiekt <xref:System.Xml.XmlValidatingReader> , który przyjmuje <xref:System.Xml.XmlTextReader> . Plik wejściowy sample4. XML jest sprawdzany pod kątem schematu XML sample4. xsd.  
+ Poniższy przykład kodu tworzy obiekt <xref:System.Xml.XmlValidatingReader> , który przyjmuje <xref:System.Xml.XmlTextReader> . Plik wejściowy, sample4.xml, jest sprawdzany pod kątem schematu XML, sample4. xsd.  
   
 ```vb  
 Dim tr As New XmlTextReader("sample4.xml")  
@@ -171,7 +170,7 @@ while(vr.Read()) {
     }  
 ```  
   
- Poniżej przedstawiono zawartość pliku wejściowego (sample4. xml) do zweryfikowania.  
+ Poniżej przedstawiono zawartość pliku wejściowego, sample4.xml, aby sprawdzić poprawność.  
   
 ```xml  
 <datatypes xmlns="datatypesTest">  

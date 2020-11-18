@@ -2,7 +2,6 @@
 title: Konstrukcje odwołań wstecznych w wyrażeniach regularnych programu .NET
 description: Dowiedz się, jak identyfikować powtarzające się elementy tekstowe przy użyciu konstrukcji odwołań wstecznych w wyrażeniu regularnym.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - .NET regular expressions, backreference constructs
 - regular expressions, backreference constructs
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-ms.openlocfilehash: bc0c6d3dcaa084c168a9c3fc0239116ec8899aae
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 79702f266e7233c96fef6b6aa32a7e756589f49c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889156"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825263"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Konstrukcje dopasowań w wyrażeniach regularnych
 
@@ -87,7 +86,7 @@ W nazwie odwołanie wsteczne z `\k` , *Nazwa* może być również ciągiem repr
 [!code-csharp[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference3.cs#3)]
 [!code-vb[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference3.vb#3)]
 
-Jeśli *Nazwa* jest reprezentacją liczby, a żadna grupa przechwytywania nie ma tej nazwy, `\k<` *Nazwa* `>` jest taka sama jak numer odwołania wstecznego `\` *number* , gdzie *Number* jest pozycją porządkową przechwytywania. W poniższym przykładzie istnieje Pojedyncza grupa przechwytywania o nazwie `char` . Konstrukcja odwołania wstecznego odwołuje się do niego jako `\k<1>` . Jak wynika z przykładu, wywołanie do <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> powiedzie się, ponieważ jest to `char` Pierwsza grupa przechwytywania.
+Jeśli *Nazwa* jest reprezentacją liczby, a żadna grupa przechwytywania nie ma tej nazwy, `\k<` *Nazwa* `>` jest taka sama jak numer odwołania wstecznego `\` *number*, gdzie *Number* jest pozycją porządkową przechwytywania. W poniższym przykładzie istnieje Pojedyncza grupa przechwytywania o nazwie `char` . Konstrukcja odwołania wstecznego odwołuje się do niego jako `\k<1>` . Jak wynika z przykładu, wywołanie do <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> powiedzie się, ponieważ jest to `char` Pierwsza grupa przechwytywania.
 
 [!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference6.cs)]
 [!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference6.vb)]

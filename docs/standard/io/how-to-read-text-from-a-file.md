@@ -2,7 +2,6 @@
 title: 'Instrukcje: odczytywanie tekstu z pliku'
 description: W tym artykule przedstawiono przykłady synchronicznego lub asynchronicznego odczytywania tekstu z pliku tekstowego przy użyciu klasy StreamReader w programie .NET dla aplikacji klasycznych.
 ms.date: 01/03/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - data streams, reading text from files
 - I/O [.NET], reading text from files
 ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
-ms.openlocfilehash: 0e90887c2cc4a54355c51facf91c9cc3da7e4320
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 7c772ec1de41d0ba2b4ef0d924a252326ee6909e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189332"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823371"
 ---
 # <a name="how-to-read-text-from-a-file"></a>Instrukcje: odczytywanie tekstu z pliku
 
@@ -45,7 +44,7 @@ W poniższym przykładzie pokazano synchroniczną operację odczytu w aplikacji 
 :::code language="csharp" source="snippets/how-to-read-text-from-a-file/csharp/async-wpf/MainWindow.xaml.cs":::
 :::code language="vb" source="snippets/how-to-read-text-from-a-file/vb/async-wpf/MainWindow.xaml.vb":::
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IO.StreamReader>  
 - <xref:System.IO.File.OpenText%2A?displayProperty=nameWithType>  

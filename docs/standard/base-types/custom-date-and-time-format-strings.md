@@ -2,7 +2,6 @@
 title: Niestandardowe ciągi formatujące datę i godzinę
 description: Dowiedz się, jak używać niestandardowych ciągów formatu daty i godziny w celu przeprowadzenia konwersji wartości DateTime lub DateTimeOffset na reprezentacje tekstowe lub do analizowania ciągów dat & razy.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.topic: reference
 dev_langs:
 - csharp
@@ -16,19 +15,19 @@ helpviewer_keywords:
 - formatting [.NET], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: d58bcc4008c706395aaeee3b5dc9ea3fa96cce9b
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 804a72f865fc491d6fc991e78c53ceb62d20cd1c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888714"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824457"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Niestandardowe ciągi formatujące datę i godzinę
 
 Ciąg formatu daty i godziny definiuje reprezentację tekstową <xref:System.DateTime> lub <xref:System.DateTimeOffset> wartości będącej wynikiem operacji formatowania. Może także definiować reprezentację wartości daty i godziny, która jest wymagana w operacji analizowania składni w celu pomyślnego przekonwertowania ciągu na datę i godzinę. Ciąg formatu niestandardowego składa się z co najmniej jednego specyfikatora niestandardowego formatu daty i godziny. Dowolny ciąg, który nie jest [ciągiem standardowego formatu daty i godziny](standard-date-and-time-format-strings.md) , jest interpretowany jako ciąg niestandardowego formatu daty i godziny.
 
 > [!TIP]
-> Możesz pobrać **Narzędzie formatowania** , aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 Niestandardowe ciągi formatujące datę i godzinę mogą być używane z obu <xref:System.DateTime> i <xref:System.DateTimeOffset> wartości.
 
@@ -92,7 +91,7 @@ W poniższej tabeli opisano specyfikatory niestandardowego formatu daty i godzin
 | „zzz” | Godzinowe i minutowe przesunięcie względem czasu UTC.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "ZZZ"](#zzzSpecifier). | 2009-06-15T13:45:30-07:00->-07:00 |
 | ":" | Separator godziny.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego ":"](#timeSeparator). | 2009-06-15T13:45:30->: (EN-US)<br /><br /> 2009-06-15T13:45:30->. (it-IT)<br /><br /> 2009-06-15T13:45:30->: (ja-JP) |
 | "/" | Separator daty.<br /><br /> Więcej informacji: [specyfikator formatu niestandardowego "/"](#dateSeparator). | 2009-06-15T13:45:30->/(EN-US)<br /><br /> 2009-06-15T13:45:30->-(AR-DZ)<br /><br /> 2009-06-15T13:45:30->. (tr-TR) |
-| " *String* "<br /><br /> " *String* " | Ogranicznik ciągu literału.<br /><br /> Więcej informacji: [literały znakowe](#Literals). | 2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P<br /><br /> 2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P |
+| "*String*"<br /><br /> "*String*" | Ogranicznik ciągu literału.<br /><br /> Więcej informacji: [literały znakowe](#Literals). | 2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P<br /><br /> 2009-06-15T13:45:30 ("ARR:" g:m t)-> ARR: 1:45 P |
 | % | Definiuje następujący znak jako specyfikator formatu niestandardowego.<br /><br /> Więcej informacji:[Używanie pojedynczego specyfikatora formatu niestandardowego](#UsingSingleSpecifiers). | 2009-06-15T13:45:30 (% h) — > 1 |
 | &#92; | Znak ucieczki.<br /><br /> Więcej informacji: [literały znakowe](#Literals) i [Używanie znaku ucieczki](#escape). | 2009-06-15T13:45:30 (h \h) — > 1 h |
 | Jakikolwiek inny znak | Znak jest kopiowany do ciągu wynikowego bez zmian.<br /><br /> Więcej informacji: [literały znakowe](#Literals). | 2009-06-15T01:45:30 (ARR hh: mm t)-> ARR 01:45 A |

@@ -1,17 +1,16 @@
 ---
 title: Bloki skryptów i element msxsl:script
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-ms.openlocfilehash: e65308f097e81d844cb04b1ebd5cbcdd8a3aadad
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3cb65142243d1f910ffd0fb85750ba62786d79f0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291997"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824703"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Bloki skryptów i element msxsl:script
 <xref:System.Xml.Xsl.XslCompiledTransform>Klasa obsługuje skrypty osadzone przy użyciu `msxsl:script` elementu. Po załadowaniu arkusza stylów wszystkie zdefiniowane funkcje są kompilowane do języka pośredniego firmy Microsoft (MSIL) przez Code Document Object Model (CodeDOM) i są wykonywane w czasie wykonywania. Zestaw wygenerowany z osadzonego bloku skryptu jest oddzielony od zestawu wygenerowanego dla arkusza stylów.  
@@ -31,7 +30,7 @@ ms.locfileid: "84291997"
   
  `msxsl`Prefiks jest powiązany z `urn:schemas-microsoft-com:xslt` identyfikatorem URI przestrzeni nazw. Arkusz stylów musi zawierać `xmlns:msxsl=urn:schemas-microsoft-com:xslt` deklarację przestrzeni nazw.  
   
- `language`Atrybut jest opcjonalny. Jego wartością jest język kodu osadzonego bloku kodu. Język jest mapowany do odpowiedniego kompilatora CodeDOM przy użyciu <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A?displayProperty=nameWithType> metody. <xref:System.Xml.Xsl.XslCompiledTransform>Klasa może obsługiwać dowolny język Microsoft .NET, przy założeniu, że odpowiedni Dostawca jest zainstalowany na maszynie i jest zarejestrowany w sekcji System. CodeDom pliku Machine. config. Jeśli `language` atrybut nie jest określony, język domyślny języka JScript. W nazwie języka nie jest rozróżniana wielkość liter, dlatego "JavaScript" i "JavaScript" są równoważne.  
+ `language`Atrybut jest opcjonalny. Jego wartością jest język kodu osadzonego bloku kodu. Język jest mapowany do odpowiedniego kompilatora CodeDOM przy użyciu <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A?displayProperty=nameWithType> metody. <xref:System.Xml.Xsl.XslCompiledTransform>Klasa może obsługiwać dowolny język Microsoft .NET, przy założeniu, że odpowiedni Dostawca jest zainstalowany na maszynie i jest zarejestrowany w sekcji System. CodeDom pliku machine.config. Jeśli `language` atrybut nie jest określony, język domyślny języka JScript. W nazwie języka nie jest rozróżniana wielkość liter, dlatego "JavaScript" i "JavaScript" są równoważne.  
   
  Ten `implements-prefix` atrybut jest obowiązkowy. Ten atrybut służy do deklarowania przestrzeni nazw i kojarzenia jej z blokiem skryptu. Wartość tego atrybutu jest prefiks, który reprezentuje obszar nazw. Ten prefiks można zdefiniować w arkuszu stylów.  
   
@@ -59,7 +58,7 @@ ms.locfileid: "84291997"
 |`Result Tree Fragment`|<xref:System.Xml.XPath.XPathNavigator>|  
 |`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator>|  
   
- Typy liczbowe CLR są konwertowane na <xref:System.Double> . <xref:System.DateTime>Typ jest konwertowany na <xref:System.String> . <xref:System.Xml.XPath.IXPathNavigable>typy są konwertowane na <xref:System.Xml.XPath.XPathNavigator> . Element **XPathNavigator []** jest konwertowany na <xref:System.Xml.XPath.XPathNodeIterator> .  
+ Typy liczbowe CLR są konwertowane na <xref:System.Double> . <xref:System.DateTime>Typ jest konwertowany na <xref:System.String> . <xref:System.Xml.XPath.IXPathNavigable> typy są konwertowane na <xref:System.Xml.XPath.XPathNavigator> . Element **XPathNavigator []** jest konwertowany na <xref:System.Xml.XPath.XPathNodeIterator> .  
   
  Wszystkie inne typy zgłaszają błąd.  
   
@@ -73,7 +72,7 @@ ms.locfileid: "84291997"
   
 - System.Xml.dll  
   
-- Microsoft. VisualBasic. dll (gdy skrypt skryptów jest w języku VB)  
+- Microsoft.VisualBasic.dll (gdy język skryptu to VB)  
   
  Dodatkowe zestawy można zaimportować przy użyciu `msxsl:assembly` elementu. Obejmuje to zestaw, gdy arkusz stylów jest kompilowany. `msxsl:assembly`Element ma następującą definicję:  
   
@@ -102,7 +101,7 @@ ms.locfileid: "84291997"
   
 - System.Xml  
   
-- System. XML. xsl  
+- System.Xml. Kodzie  
   
 - System.Xml.XPath  
   
@@ -125,7 +124,7 @@ ms.locfileid: "84291997"
  [!code-csharp[XSLT_Script#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Script/CS/xslt_script.cs#1)]
  [!code-vb[XSLT_Script#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_Script/VB/xslt_script.vb#1)]  
   
-#### <a name="numberxml"></a>Number. XML  
+#### <a name="numberxml"></a>number.xml  
  [!code-xml[XSLT_Script#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/number.xml#2)]  
   
 #### <a name="calcxsl"></a>calc. xsl  

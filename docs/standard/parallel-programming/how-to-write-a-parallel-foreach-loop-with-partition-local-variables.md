@@ -2,25 +2,24 @@
 title: 'Instrukcje: zapisywanie pętli Parallel. ForEach ze zmiennymi lokalnymi partycji'
 description: Zobacz przykład sposobu pisania równoległej pętli ForEach, która używa zmiennych lokalnych partycji w programie .NET.
 ms.date: 06/26/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-ms.openlocfilehash: f598955fb2d6800f81bce050bdf474fc63bfb554
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f8cb7f465d4594c5b9405e8152c6c4a3f3e1ff7b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599779"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825432"
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>Instrukcje: zapisywanie pętli Parallel. ForEach ze zmiennymi lokalnymi partycji
 
 Poniższy przykład pokazuje, jak napisać <xref:System.Threading.Tasks.Parallel.ForEach%2A> metodę, która używa zmiennych lokalnych partycji. Gdy wykonywana jest pętla <xref:System.Threading.Tasks.Parallel.ForEach%2A>, kolekcja źródłowa jest dzielona na wiele partycji. Każda partycja ma własną kopię zmiennej lokalnej partycji. Zmienna lokalna partycji jest podobna do [zmiennej lokalnej wątku](xref:System.Threading.ThreadLocal%601), z tą różnicą, że wiele partycji może działać w jednym wątku.
 
-Kod i parametry w przykładzie przypominają zbliżone w odpowiadającej metodzie <xref:System.Threading.Tasks.Parallel.For%2A>. Aby uzyskać więcej informacji, zobacz [jak: napisać pętlę Parallel. for ze zmiennymi lokalnymi wątku](how-to-write-a-parallel-for-loop-with-thread-local-variables.md).
+Kod i parametry w przykładzie przypominają zbliżone w odpowiadającej metodzie <xref:System.Threading.Tasks.Parallel.For%2A>. Aby uzyskać więcej informacji, zobacz [jak: napisać pętlę Parallel. for przy użyciu zmiennych Thread-Local](how-to-write-a-parallel-for-loop-with-thread-local-variables.md).
 
 Aby użyć zmiennej lokalnej partycji w <xref:System.Threading.Tasks.Parallel.ForEach%2A> pętli, należy wywołać jedno z przeciążeń metody, które pobiera dwa parametry typu. Pierwszy parametr typu, `TSource` , określa typ elementu źródłowego, a drugi parametr typu, `TLocal` , określa typ zmiennej lokalnej partycji.
 
@@ -49,7 +48,7 @@ Poniższy przykład wywołuje Przeciążenie, <xref:System.Threading.Tasks.Paral
 [!code-csharp[TPL_Parallel#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/foreachthreadlocal.cs#04)]
 [!code-vb[TPL_Parallel#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/foreachthreadlocal.vb#04)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Równoległość danych](data-parallelism-task-parallel-library.md)
 - [Instrukcje: Zapisywanie pętli Parallel.For ze zmiennymi lokalnymi wątku](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)

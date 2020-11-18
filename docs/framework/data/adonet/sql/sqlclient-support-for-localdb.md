@@ -2,20 +2,18 @@
 title: Obsługa SqlClient w bazie danych LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-ms.openlocfilehash: 841c455605b0b32668d26cab16a6207dc1c0f716
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 55ab1346de6f5c14f15d01344a984c18edf30e02
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91203426"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824483"
 ---
 # <a name="sqlclient-support-for-localdb"></a>Obsługa SqlClient w bazie danych LocalDB
 
-Począwszy od SQL Server nazwy Denali, zostanie udostępniona uproszczona wersja SQL Server o nazwie LocalDB. W tym temacie omówiono sposób nawiązywania połączenia z bazą danych LocalDB.  
+W tym artykule omówiono sposób nawiązywania połączenia z bazą danych LocalDB. LocalDB to uproszczona wersja SQL Server.
   
-## <a name="remarks"></a>Uwagi  
-
- Aby uzyskać więcej informacji na temat LocalDB, w tym sposobu instalowania LocalDB i konfigurowania wystąpienia LocalDB, zobacz SQL Server Books Online.  
+## <a name="remarks"></a>Uwagi
   
  Aby podsumować, co możesz zrobić z LocalDB:  
   
@@ -31,7 +29,7 @@ Począwszy od SQL Server nazwy Denali, zostanie udostępniona uproszczona wersja
   
  `User Instance=True` nie jest dozwolone podczas nawiązywania połączenia z bazą danych LocalDB.  
   
- Możesz pobrać LocalDB z [pakietu Feature Pack Microsoft SQL Server 2012](https://www.microsoft.com/download/en/details.aspx?id=29065). Jeśli będziesz używać sqlcmd.exe do modyfikowania danych w wystąpieniu usługi LocalDB, będziesz potrzebować narzędzia sqlcmd z SQL Server 2012, które można także pobrać z pakietu funkcji SQL Server 2012.  
+Informacje o instalowaniu LocalDB można znaleźć w temacie [SQL Server Express LocalDB](/sql/database-engine/configure-windows/sql-server-express-localdb).
   
 ## <a name="programmatically-create-a-named-instance"></a>Programowe tworzenie nazwanego wystąpienia  
 
@@ -59,7 +57,7 @@ Począwszy od SQL Server nazwy Denali, zostanie udostępniona uproszczona wersja
   
 - Użyj `AttachDBFilename` słowa kluczowego Connection, aby określić. Plik MDF.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Funkcje Serwera SQL i ADO.NET](sql-server-features-and-adonet.md)
 - [Omówienie ADO.NET](../ado-net-overview.md)

@@ -1,17 +1,16 @@
 ---
 title: Integracja XML z danymi relacyjnymi i sterownikiem ADO.NET
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
-ms.openlocfilehash: f54c7a890ada01f2cffdd54c024cfbc98777200d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1f2ad78df3bb1a8c8b02a771c69152e785bec88f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289021"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824320"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Integracja XML z danymi relacyjnymi i sterownikiem ADO.NET
-Klasa **XmlDataDocument** jest klasą pochodną elementu **XmlDocument**i zawiera dane XML. Zaletą **XmlDataDocument** jest to, że zapewnia ona Most między danymi relacyjnymi i hierarchicznymi. Jest to **dokument XmlDocument** , który może być powiązany z **zestawem danych** , a obie klasy mogą synchronizować zmiany wprowadzone w danych znajdujących się w dwóch klasach. Element **XmlDocument** , który jest powiązany z **zestawem danych** , umożliwia integrację XML z danymi relacyjnymi, a dane nie muszą być reprezentowane jako XML lub w formacie relacyjnym. Można jednocześnie i nie ograniczyć się do pojedynczej reprezentacji danych.  
+Klasa **XmlDataDocument** jest klasą pochodną elementu **XmlDocument** i zawiera dane XML. Zaletą **XmlDataDocument** jest to, że zapewnia ona Most między danymi relacyjnymi i hierarchicznymi. Jest to **dokument XmlDocument** , który może być powiązany z **zestawem danych** , a obie klasy mogą synchronizować zmiany wprowadzone w danych znajdujących się w dwóch klasach. Element **XmlDocument** , który jest powiązany z **zestawem danych** , umożliwia integrację XML z danymi relacyjnymi, a dane nie muszą być reprezentowane jako XML lub w formacie relacyjnym. Można jednocześnie i nie ograniczyć się do pojedynczej reprezentacji danych.  
   
  Dostępne są następujące korzyści z używania danych w dwóch widokach:  
   
@@ -37,7 +36,7 @@ Klasa **XmlDataDocument** jest klasą pochodną elementu **XmlDocument**i zawier
   
 |Kiedy ładować XML bezpośrednio do zestawu danych|Kiedy synchronizować XmlDataDocument z zestawem danych|  
 |----------------------------------------------|-----------------------------------------------------------|  
-|Zapytania dotyczące danych w **zestawie danych** są łatwiejsze przy użyciu języka SQL niż XPath.|Zapytania XPath są niezbędne dla danych w **zestawie**danych.|  
+|Zapytania dotyczące danych w **zestawie danych** są łatwiejsze przy użyciu języka SQL niż XPath.|Zapytania XPath są niezbędne dla danych w **zestawie** danych.|  
 |Zachowywanie kolejności elementów w źródłowym kodzie XML nie jest krytyczne.|Zachowywanie kolejności elementów w źródłowym kodzie XML jest krytyczne.|  
 |Między elementami i formatowaniem nie trzeba zachować odstępu w źródłowym kodzie XML.|Białe miejsce i zachowywanie formatowania w źródłowym kodzie XML są krytyczne.|  
   

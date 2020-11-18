@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Anulowanie bloku przepływu danych'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - dataflow blocks, canceling in TPL
 - TPL dataflow library,canceling dataflow blocks
 ms.assetid: fbddda0d-da3b-4ec8-a1d6-67ab8573fcd7
-ms.openlocfilehash: 530c231deeaba007975849ab6dc41f4da6a859ea
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3dbe0675b73f902a7da0fb4f7881c1ee15022b36
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285550"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825861"
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a>Instrukcje: Anulowanie bloku przepływu danych
 W tym dokumencie przedstawiono sposób włączania anulowania w aplikacji. Ten przykład używa Windows Forms, aby pokazać, gdzie elementy robocze są aktywne w potoku przepływu danych, a także wpływ anulowania.  
@@ -30,7 +29,7 @@ W tym dokumencie przedstawiono sposób włączania anulowania w aplikacji. Ten p
   
 3. Dodaj <xref:System.Windows.Forms.ToolStripButton> kontrolkę do <xref:System.Windows.Forms.ToolStrip> kontrolki. Ustaw <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> Właściwość na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> i właściwość, <xref:System.Windows.Forms.ToolStripItem.Text%2A> Aby **dodać elementy robocze**.  
   
-4. Dodaj drugą <xref:System.Windows.Forms.ToolStripButton> kontrolkę do <xref:System.Windows.Forms.ToolStrip> kontrolki. Ustaw właściwość <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> , <xref:System.Windows.Forms.ToolStripItem.Text%2A> Właściwość do **anulowania**i <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> Właściwość na `False` .  
+4. Dodaj drugą <xref:System.Windows.Forms.ToolStripButton> kontrolkę do <xref:System.Windows.Forms.ToolStrip> kontrolki. Ustaw właściwość <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> , <xref:System.Windows.Forms.ToolStripItem.Text%2A> Właściwość do **anulowania** i <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> Właściwość na `False` .  
   
 5. Dodaj cztery <xref:System.Windows.Forms.ToolStripProgressBar> obiekty do <xref:System.Windows.Forms.ToolStrip> kontrolki.  
   
@@ -39,7 +38,7 @@ W tym dokumencie przedstawiono sposób włączania anulowania w aplikacji. Ten p
   
 ### <a name="to-create-the-dataflow-pipeline"></a>Aby utworzyć potok przepływu danych  
   
-1. W projekcie Dodaj odwołanie do elementu System. Threading. Tasks. przepływu danych. dll.  
+1. W projekcie Dodaj odwołanie do System.Threading.Tasks.Dataflow.dll.  
   
 2. Upewnij się, że Form1.cs (Form1. vb dla Visual Basic) zawiera następujące `using` instrukcje ( `Imports` w Visual Basic).  
   

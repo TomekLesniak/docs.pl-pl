@@ -1,23 +1,22 @@
 ---
 title: SpinWait
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - synchronization primitives, SpinWait
 ms.assetid: 36012f42-34e5-4f86-adf4-973f433ed6c6
-ms.openlocfilehash: fb70697fd14f9f8734ca1a7896fc06c6bca5a71d
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 2031ebc30d0789181786053d401e69da782a619f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188929"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826212"
 ---
 # <a name="spinwait"></a>SpinWait
 
-<xref:System.Threading.SpinWait?displayProperty=nameWithType> jest lekkim typem synchronizacji, którego można użyć w scenariuszach niskiego poziomu, aby uniknąć kosztownych przełączeń kontekstu i przejść jądra, które są wymagane dla zdarzeń jądra. W przypadku komputerów z wieloma rdzeniami, gdy nie jest oczekiwany czas przechowywania zasobu przez długi okres, może być bardziej wydajny w przypadku wątku oczekującego na przejście w tryb użytkownika dla kilku dziesiątek lub kilku setek cykli, a następnie ponowienie próby pobrania zasobu. Jeśli zasób jest dostępny po nawirowaniu, zapisano kilka tysięcy cykli. Jeśli zasób nadal nie jest dostępny, nastąpiło tylko kilka cykli i nadal można wprowadzić oczekiwania na jądro. Ta kombinacja obracająca się po tej operacji jest czasami nazywana *operacją oczekiwania dwufazowego* .  
+<xref:System.Threading.SpinWait?displayProperty=nameWithType> jest lekkim typem synchronizacji, którego można użyć w scenariuszach niskiego poziomu, aby uniknąć kosztownych przełączeń kontekstu i przejść jądra, które są wymagane dla zdarzeń jądra. W przypadku komputerów z wieloma rdzeniami, gdy nie jest oczekiwany czas przechowywania zasobu przez długi okres, może być bardziej wydajny w przypadku wątku oczekującego na przejście w tryb użytkownika dla kilku dziesiątek lub kilku setek cykli, a następnie ponowienie próby pobrania zasobu. Jeśli zasób jest dostępny po nawirowaniu, zapisano kilka tysięcy cykli. Jeśli zasób nadal nie jest dostępny, nastąpiło tylko kilka cykli i nadal można wprowadzić oczekiwania na jądro. Ta kombinacja obracająca się po tej operacji jest czasami nazywana *operacją oczekiwania dwufazowego*.  
   
  <xref:System.Threading.SpinWait> jest przeznaczony do użycia w połączeniu z typami .NET, które zawijają zdarzenia jądra, takie jak <xref:System.Threading.ManualResetEvent> . <xref:System.Threading.SpinWait> może być również używana dla podstawowych funkcji obracających się tylko w jednym programie.  
   
@@ -28,7 +27,7 @@ ms.locfileid: "93188929"
  [!code-csharp[CDS_SpinWait#05](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_spinwait/cs/spinwait.cs#05)]
  [!code-vb[CDS_SpinWait#05](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_spinwait/vb/cds_spinwait1.vb#05)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Threading.Thread.SpinWait%2A>
 - [Wątkowość obiektów i funkcji](threading-objects-and-features.md)
