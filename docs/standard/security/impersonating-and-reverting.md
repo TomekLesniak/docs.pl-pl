@@ -1,7 +1,6 @@
 ---
 title: Personifikacja i przywracanie
 ms.date: 07/15/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - security [.NET], impersonating Windows accounts
 - impersonating Windows accounts
 ms.assetid: b93d402c-6c28-4f50-b2bc-d9607dc3e470
-ms.openlocfilehash: 7eecc7d6cb3fa4cc1c1bd971d36f9d3ca47a7144
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 90f43510eb0e71fb324012fa00ac08f9ee3292ac
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555682"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820062"
 ---
 # <a name="impersonating-and-reverting"></a>Personifikacja i przywracanie
 
@@ -60,11 +59,11 @@ Czasami może być konieczne uzyskanie tokenu konta systemu Windows w celu perso
     myImpersonation.Undo()  
     ```  
   
- Jeśli zaufany kod przyłączył już <xref:System.Security.Principal.WindowsPrincipal> obiekt do wątku, można wywołać metodę **personifikacji**metody wystąpienia, która nie przyjmuje tokenu konta. Należy zauważyć, że jest to przydatne tylko wtedy, gdy obiekt **WindowsPrincipal** na wątku reprezentuje użytkownika innego niż ten, w którym proces jest aktualnie wykonywany. Na przykład może wystąpić taka sytuacja przy użyciu ASP.NET z włączonym uwierzytelnianiem systemu Windows, a Personifikacja jest wyłączona. W takim przypadku proces jest uruchamiany na koncie skonfigurowanym w Internet Information Services (IIS), podczas gdy bieżący podmiot zabezpieczeń reprezentuje użytkownika systemu Windows, który uzyskuje dostęp do strony.  
+ Jeśli zaufany kod przyłączył już <xref:System.Security.Principal.WindowsPrincipal> obiekt do wątku, można wywołać metodę **personifikacji** metody wystąpienia, która nie przyjmuje tokenu konta. Należy zauważyć, że jest to przydatne tylko wtedy, gdy obiekt **WindowsPrincipal** na wątku reprezentuje użytkownika innego niż ten, w którym proces jest aktualnie wykonywany. Na przykład może wystąpić taka sytuacja przy użyciu ASP.NET z włączonym uwierzytelnianiem systemu Windows, a Personifikacja jest wyłączona. W takim przypadku proces jest uruchamiany na koncie skonfigurowanym w Internet Information Services (IIS), podczas gdy bieżący podmiot zabezpieczeń reprezentuje użytkownika systemu Windows, który uzyskuje dostęp do strony.  
   
  Należy pamiętać, że nie **Personifikuj** ani **Cofaj** zmiany obiektu **podmiotu zabezpieczeń** ( <xref:System.Security.Principal.IPrincipal> ) skojarzonego z bieżącym kontekstem wywołania. Zamiast tego personifikacja i wycofywanie zmienia token skojarzony z bieżącym procesem systemu operacyjnego.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Security.Principal.WindowsIdentity>
 - <xref:System.Security.Principal.WindowsImpersonationContext>

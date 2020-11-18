@@ -3,18 +3,19 @@ title: Analizator zgodności platformy
 description: Analizator Roslyn, który może pomóc w wykrywaniu problemów ze zgodnością platformy w aplikacjach i bibliotekach dla wielu platform.
 author: buyaa-n
 ms.date: 09/17/2020
-ms.openlocfilehash: 44c2c2d9674b13f314a057f847df2d4d474cc2be
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 808e89df49a82e091862a052e62a367e6860fe47
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805301"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819490"
 ---
 # <a name="platform-compatibility-analyzer"></a>Analizator zgodności platformy
 
 Prawdopodobnie przesłuchasz motto "jeden .NET": pojedynczej, ujednoliconej platformy do tworzenia aplikacji dowolnego typu. Zestaw SDK programu .NET 5,0 zawiera ASP.NET Core, Entity Framework Core, WinForms, WPF, Xamarin i ML.NET, a także doda obsługę większej liczby platform w czasie. Program .NET 5,0 dokłada starań, aby zapewnić środowisko, w którym nie trzeba mieć powodów dotyczących różnych wersji platformy .NET, ale nie próbuje w pełni abstrakcji bazowego systemu operacyjnego. Nadal będziesz mieć możliwość wywoływania interfejsów API specyficznych dla platformy, na przykład P/Invoke, WinRT lub powiązań Xamarin dla systemów iOS i Android.
 
-Jednak używanie interfejsów API specyficznych dla platformy na składniku oznacza, że kod nie działa już na wszystkich platformach. Potrzebujemy sposobu na wykrycie tego rozwiązania w czasie projektowania, aby deweloperzy mogli uzyskać diagnostykę, gdy przypadkowo używają interfejsów API specyficznych dla platformy. Aby osiągnąć ten cel, w programie .NET 5,0 wprowadzono [analizatora zgodności platformy](/visualstudio/code-quality/ca1416) i uzupełniające się interfejsy API, które ułatwiają deweloperom identyfikowanie i Używanie interfejsów API specyficznych dla platformy w miarę potrzeb.
+Jednak używanie interfejsów API specyficznych dla platformy na składniku oznacza, że kod nie działa już na wszystkich platformach. Potrzebujemy sposobu na wykrycie tego rozwiązania w czasie projektowania, aby deweloperzy mogli uzyskać diagnostykę, gdy przypadkowo używają interfejsów API specyficznych dla platformy. Aby osiągnąć ten cel, w programie .NET 5,0 wprowadzono [analizatora zgodności platformy](../../fundamentals/code-analysis/quality-rules/ca1416.md) i uzupełniające się interfejsy API, które ułatwiają deweloperom identyfikowanie i Używanie interfejsów API specyficznych dla platformy w miarę potrzeb.
+
 Nowe interfejsy API obejmują:
 
 - <xref:System.Runtime.Versioning.SupportedOSPlatformAttribute> Dodawanie adnotacji do interfejsów API jako specyficznych dla platformy i <xref:System.Runtime.Versioning.UnsupportedOSPlatformAttribute> Dodawanie adnotacji do interfejsów API jako nieobsługiwanych w określonym systemie operacyjnym. Te atrybuty mogą opcjonalnie zawierać numer wersji i zostały już zastosowane do niektórych interfejsów API specyficznych dla platformy w podstawowych bibliotekach platformy .NET.
@@ -25,7 +26,7 @@ Nowe interfejsy API obejmują:
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Analizator zgodności platformy jest jednym z Roslynjących analiz jakości kodu. Począwszy od platformy .NET 5,0, analizatory te są [dołączone do zestawu .NET SDK](../../fundamentals/code-analysis/overview.md). Analizator zgodności platformy jest domyślnie włączony tylko w przypadku projektów docelowych `net5.0` lub nowszych. Można go jednak [włączyć](/visualstudio/code-quality/ca1416.md#configurability) dla projektów przeznaczonych dla innych platform.
+Analizator zgodności platformy jest jednym z Roslynjących analiz jakości kodu. Począwszy od wersji .NET 5.0 te analizatory są [uwzględnione w zestawie .NET SDK](../../fundamentals/code-analysis/overview.md). Analizator zgodności platformy jest domyślnie włączony tylko w przypadku projektów docelowych `net5.0` lub nowszych. Można [go jednak włączyć](../../fundamentals/code-analysis/quality-rules/ca1416.md#configurability) dla projektów przeznaczonych dla innych platform.
 
 ## <a name="how-the-analyzer-determines-platform-dependency"></a>Jak Analizator określa zależność platformy
 
@@ -50,7 +51,7 @@ Analizator zgodności platformy jest jednym z Roslynjących analiz jakości kodu
       </ItemGroup>
       ```
 
-    - **Nie ostrzega** w przypadku kompilowania aplikacji, która nie jest przeznaczona dla nieobsługiwanej platformy lub ma wiele obiektów docelowych, a platforma nie jest uwzględniona w domyślnej grupie elementów programu [MSBuild `<SupportedPlatform>` ](https://github.com/dotnet/sdk/blob/master/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.SupportedPlatforms.props) .
+    - **Nie ostrzega** w przypadku kompilowania aplikacji, która nie jest przeznaczona dla nieobsługiwanej platformy lub ma wiele obiektów docelowych, a platforma nie jest uwzględniona w domyślnej grupie elementów programu [MSBuild `<SupportedPlatform>`](https://github.com/dotnet/sdk/blob/master/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.SupportedPlatforms.props) .
 - Oba atrybuty mogą być tworzone z numerami wersji lub bez nich w ramach nazwy platformy.
   - Numery wersji są `major.minor[.build[.revision]]` `major.minor` wymagane, a `build` `revision` części i są opcjonalne. Na przykład "system Windows 7.0" wskazuje system Windows w wersji 7,0, ale "Windows" jest interpretowany jako Windows 0,0.
 
@@ -376,7 +377,7 @@ Jako warunek dla programu można również użyć wszystkich testów warunkowych
   }
   ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Nazwy platformy docelowej w programie .NET 5](https://github.com/dotnet/designs/blob/master/accepted/2020/net5/net5.md)
 - [Dodawanie adnotacji do interfejsów API specyficznych dla platformy i wykrywanie ich użycia](https://github.com/dotnet/designs/blob/master/accepted/2020/platform-checks/platform-checks.md)

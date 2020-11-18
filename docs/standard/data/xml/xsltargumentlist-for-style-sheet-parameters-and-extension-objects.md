@@ -1,17 +1,16 @@
 ---
 title: Klasa XsltArgumentList — parametry arkusza stylów i obiekty rozszerzeń
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
-ms.openlocfilehash: 1c69a6e78207e146c8dbd6cdc252f27f36ab37a2
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6f0be433abcebed7f9da70225563a04170426314
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281703"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818209"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>Klasa XsltArgumentList — parametry arkusza stylów i obiekty rozszerzeń
 <xref:System.Xml.Xsl.XsltArgumentList>Klasa zawiera Extensible Stylesheet Language dla parametrów Transformations (XSLT) i obiektów rozszerzeń XSLT. Po przekazaniu do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody te parametry i obiekty rozszerzeń mogą być wywoływane z arkuszy stylów.  
@@ -38,11 +37,11 @@ ms.locfileid: "84281703"
   
 |Typ W3C|Równoważna Klasa .NET Framework (typ)|Typ XPath lub typ XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  
-|String (ciąg)|System. String|XPath|  
-|Boolean (wartość logiczna)|System. Boolean|XPath|  
+|String|System. String|XPath|  
+|Boolean|System. Boolean|XPath|  
 |Liczba|System. Double|XPath|  
-|Fragment drzewa wyników|System. XML. XPath. XPathNavigator|XSL|  
-|Zestaw węzłów|System. XML. XPath. XPathNodeIterator|XPath|  
+|Fragment drzewa wyników|System.Xml. XPath. XPathNavigator|XSL|  
+|Zestaw węzłów|System.Xml. XPath. XPathNodeIterator|XPath|  
   
  Jeśli obiekt parametru nie jest jedną z powyższych klas, wymuszony jest podwójny lub ciąg, zgodnie z potrzebami. Wartości Int16, UInt16, Int32, UInt32, Int64, UInt64, Single i Decimal są wymuszane jako Double. Wszystkie inne typy są wymuszane jako ciąg za pomocą `ToString` metody.  
   
@@ -138,7 +137,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Dane wejściowe  
- Order. XML  
+ order.xml  
   
 ```xml  
 <!--Represents a customer order-->  
@@ -306,7 +305,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Dane wejściowe  
- Number. XML  
+ number.xml  
   
 ```xml  
 <?xml version='1.0'?>  

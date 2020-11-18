@@ -2,7 +2,6 @@
 title: Konwertowanie czasów między strefami czasowymi
 description: Dowiedz się, jak konwertować czasy między z jednej strefy czasowej na inną w programie .NET. Dowiedz się również, jak przekonwertować wartości DateTimeOffset, które mają ograniczoną świadomość strefy czasowej.
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - converting times
 - local time conversions
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
-ms.openlocfilehash: 3539b3c2b71be331bdea3161b7e8ba6da407cbab
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: b42b4c07b9b5f376c34a70d7400218c50296f324
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063836"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818033"
 ---
 # <a name="converting-times-between-time-zones"></a>Konwertowanie czasów między strefami czasowymi
 
@@ -119,7 +118,7 @@ Jeśli metoda jest przenoszona jako ciąg "9/1/2007 5:32:07 -05:00", który repr
 [!code-csharp[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/cs/timeconversions2.cs#2)]
 [!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions2.vb#2)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.TimeZoneInfo>
 - [Daty, godziny i strefy czasowe](index.md)

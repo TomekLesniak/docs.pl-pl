@@ -1,17 +1,16 @@
 ---
 title: Parametry XSLT
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: fe60aaa0-ae43-4b1c-9be1-426af66ba757
-ms.openlocfilehash: 7651360b375071c48ba0d23b64881ac794e51e86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c203e17e327cf64690c2748c7f3a4e74b5306501
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282535"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818300"
 ---
 # <a name="xslt-parameters"></a>Parametry XSLT
 Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody using. Kwalifikowana nazwa i identyfikator URI przestrzeni nazw są skojarzone z obiektem parametru w tym czasie.  
@@ -38,7 +37,7 @@ Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:Syst
   
  * Jest to odpowiednik zestawu węzłów, który zawiera pojedynczy węzeł.  
   
- Jeśli obiekt parametru nie jest jedną z powyższych klas, jest konwertowany zgodnie z poniższymi regułami. Typy liczbowe środowiska uruchomieniowego języka wspólnego (CLR) są konwertowane na <xref:System.Double> . <xref:System.DateTime>Typ jest konwertowany na <xref:System.String> . <xref:System.Xml.XPath.IXPathNavigable>typy są konwertowane na <xref:System.Xml.XPath.XPathNavigator> . Element **XPathNavigator []** jest konwertowany na <xref:System.Xml.XPath.XPathNodeIterator> .  
+ Jeśli obiekt parametru nie jest jedną z powyższych klas, jest konwertowany zgodnie z poniższymi regułami. Typy liczbowe środowiska uruchomieniowego języka wspólnego (CLR) są konwertowane na <xref:System.Double> . <xref:System.DateTime>Typ jest konwertowany na <xref:System.String> . <xref:System.Xml.XPath.IXPathNavigable> typy są konwertowane na <xref:System.Xml.XPath.XPathNavigator> . Element **XPathNavigator []** jest konwertowany na <xref:System.Xml.XPath.XPathNodeIterator> .  
   
  Wszystkie inne typy zgłaszają błąd.  
   
@@ -50,7 +49,7 @@ Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:Syst
   
 ### <a name="input"></a>Dane wejściowe  
   
-##### <a name="orderxml"></a>Order. XML  
+##### <a name="orderxml"></a>order.xml  
  [!code-xml[XSLT_Param#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Param/XML/order.xml#2)]  
   
 ##### <a name="discountxsl"></a>Discount. xsl  

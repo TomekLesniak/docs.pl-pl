@@ -1,21 +1,20 @@
 ---
-title: 'Porady: nasłuchiwanie żądań anulowania za pomocą sondowania'
+title: 'Instrukcje: Nasłuchiwanie żądań anulowania za pomocą sondowania'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - cancellation, how to poll for requests
 ms.assetid: c7f2f022-d08e-4e00-b4eb-ae84844cb1bc
-ms.openlocfilehash: 6f70ce75b1d6a3d4d7e8a38d739005a261b07241
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ae7a2e0269c0c12c4dabe5e561e9bef53100aac1
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279559"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819867"
 ---
-# <a name="how-to-listen-for-cancellation-requests-by-polling"></a>Porady: nasłuchiwanie żądań anulowania za pomocą sondowania
+# <a name="how-to-listen-for-cancellation-requests-by-polling"></a>Instrukcje: Nasłuchiwanie żądań anulowania za pomocą sondowania
 W poniższym przykładzie pokazano jeden ze sposobów, w jaki kod użytkownika może sondować token anulowania w regularnych odstępach czasu, aby sprawdzić, czy żądanie anulowania zostało zażądane z wątku wywołującego. Ten przykład używa <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typu, ale ten sam wzorzec dotyczy operacji asynchronicznych utworzonych bezpośrednio przez <xref:System.Threading.ThreadPool?displayProperty=nameWithType> Typ lub <xref:System.Threading.Thread?displayProperty=nameWithType> Typ.  
   
 ## <a name="example"></a>Przykład  

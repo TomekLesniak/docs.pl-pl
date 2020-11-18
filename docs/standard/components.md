@@ -3,13 +3,12 @@ title: Składniki architektury .NET
 description: Opisuje składniki architektury .NET, takie jak .NET Standard, implementacje platformy .NET, środowiska uruchomieniowe platformy .NET i narzędzia.
 author: cartermp
 ms.date: 10/05/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: 316063dbcfba5c92b4a9c6a17051e0a7fc178a3a
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 00d05ee328087042f7603779438436656c45be48
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224394"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819425"
 ---
 # <a name="net-architectural-components"></a>Składniki architektury .NET
 
@@ -89,7 +88,7 @@ Aby uzyskać więcej informacji, zobacz [wprowadzenie do platforma uniwersalna s
 Masz dostęp do obszernego zestawu narzędzi i składników infrastruktury, które współpracują z każdą implementacją platformy .NET. Te narzędzia i składniki obejmują:
 
 - Języki .NET i ich kompilatory
-- System projektu .NET (oparty na plikach *. csproj*, *. vbproj*i *. fsproj* )
+- System projektu .NET (oparty na plikach *. csproj*, *. vbproj* i *. fsproj* )
 - [MSBuild](/visualstudio/msbuild/msbuild), aparat kompilacji używany do kompilowania projektów
 - Pakiet [NuGet](/nuget/), Menedżer pakietów firmy Microsoft dla platformy .NET
 - Narzędzia aranżacji kompilacji typu open source, takie jak [ciastka](https://cakebuild.net/) i [fałszywe](https://fake.build/)
@@ -116,7 +115,7 @@ Oficjalne dokumenty ISO/IEC są dostępne na stronie [standardy dostępne public
 - **Technologia informacyjna — Common Language Infrastructure (CLI) partycje I do VI**: [ISO/IEC 23271:2012](https://standards.iso.org/ittf/PubliclyAvailableStandards/c058046_ISO_IEC_23271_2012(E).zip)
 - **Technologia informacyjna — Common Language Infrastructure (CLI) — raport techniczny dotyczący informacji pochodnych z pliku XML partycji IV**: [ISO/IEC TR 23272:2011](https://standards.iso.org/ittf/PubliclyAvailableStandards/c057955_ISO_IEC_TR_23272_2011.zip)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wprowadzenie do platformy .NET](../core/introduction.md)
 - [.NET Standard wprowadzenie](net-standard.md)

@@ -1,14 +1,13 @@
 ---
 title: Obsługa białych znaków i istotnych białych znaków podczas ładowania modelu DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 1b141a0a-50d8-4ebd-83cd-a84449bb22b2
-ms.openlocfilehash: 520d965737b82fda082aa44029f2a4042d948deb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: dbb0962dc47ff5847ac78ed4f6252bf8ab9674aa
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281779"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818482"
 ---
 # <a name="white-space-and-significant-white-space-handling-when-loading-the-dom"></a>Obsługa białych znaków i istotnych białych znaków podczas ładowania modelu DOM
 Podczas ładowania dokumentu można ustawić opcję zachowania **białych znaków i utworzyć węzły** XmlSpace w drzewie dokumentu. Aby utworzyć białe węzły, ustaw właściwość **PreserveWhitespace** na true. Jeśli właściwość jest ustawiona na **wartość false**, co oznacza, że domyślnie nie są tworzone węzły białych znaków. Wszystkie węzły białych miejsc są zawsze zachowywane, a węzły **XmlSignificantWhitespace** są zawsze tworzone w pamięci, aby reprezentować te dane, niezależnie od ustawienia flagi **PreserveWhitespace** .  

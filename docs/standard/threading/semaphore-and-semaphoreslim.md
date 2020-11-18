@@ -2,7 +2,6 @@
 title: Semafor i klasa SemaphoreSlim
 description: Więcej informacji na temat semafora & SemaphoreSlim. Semafor klasy to cienka otoka wokół obiektu semafora Win32. Klasa SemaphoreSlim jest lekkim semaforem.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - counting semaphores
 - semaphores
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - SemaphoreSlim class, about SemaphoreSlim class
 - threading [.NET], Semaphore class
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
-ms.openlocfilehash: b9c13ace086b4df08108a844aea78e5d550e6958
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: bda88012fde60481d8870f701e98924acdeeb5a2
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188942"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817148"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semafor i klasa SemaphoreSlim
 
@@ -46,7 +45,7 @@ ms.locfileid: "93188942"
   
  Użyj zabezpieczeń kontroli dostępu, aby chronić <xref:System.Threading.Semaphore> obiekt, który reprezentuje nazwany semafor, najlepiej przy użyciu konstruktora, który określa <xref:System.Security.AccessControl.SemaphoreSecurity?displayProperty=nameWithType> obiekt. Można również zastosować zabezpieczenia kontroli dostępu przy użyciu <xref:System.Threading.Semaphore.SetAccessControl%2A?displayProperty=nameWithType> metody, ale powoduje to pozostawienie okna luk w zabezpieczeniach między momentem utworzenia semafora a czasem jego ochrony. Ochrona semaforów z zabezpieczeniami kontroli dostępu pomaga zapobiegać złośliwym atakom, ale nie rozwiązuje problemu przypadkowych kolizji nazw.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Threading.Semaphore>
 - <xref:System.Threading.SemaphoreSlim>

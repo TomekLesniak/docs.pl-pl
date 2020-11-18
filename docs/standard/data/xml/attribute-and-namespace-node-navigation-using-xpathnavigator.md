@@ -1,14 +1,13 @@
 ---
 title: Nawigacja po atrybutach i przestrzeni nazw węzła przy użyciu klasy XPathNavigator
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 23975f88-e0af-4b88-93de-9e20e11880ad
-ms.openlocfilehash: 90c8fe7450a6ca853aaea452e30a292dbdcd9d98
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cf29c15463030774b488beed776c9cfe623072d1
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291620"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819412"
 ---
 # <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>Nawigacja po atrybutach i przestrzeni nazw węzła przy użyciu klasy XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera dwa zestawy metod nawigacji, pierwszy zestaw, który znajduje się w obszarze [nawigacji zestawu węzłów za pomocą elementu XPathNavigator](node-set-navigation-using-xpathnavigator.md) , służy do nawigowania po *zestawach węzłów* w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub. Drugi zestaw, opisany w tym temacie, służy do nawigowania po *węzłach atrybutów i przestrzeni nazw* w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie or.  
@@ -68,7 +67,7 @@ ms.locfileid: "84291620"
   
 - Po ustawieniu `element1` : `xmlns:books="http://www.contoso.com/books"` , `xmlns="http://www.contoso.com"` , i `xmlns:xml="http://www.w3.org/XML/1998/namespace"` .  
   
-- Po ustawieniu `root` :`xmlns:xml="http://www.w3.org/XML/1998/namespace".`  
+- Po ustawieniu `root` : `xmlns:xml="http://www.w3.org/XML/1998/namespace".`  
   
 > [!NOTE]
 > <xref:System.Xml.XPath.XPathNavigator>Klasa zwraca węzły przestrzeni nazw w kolejności odwrotnego dokumentu. W związku z tym, <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> zasadniczo przenoszone do ostatniego węzła przestrzeni nazw w bieżącym zakresie.  

@@ -1,14 +1,13 @@
 ---
 title: Hierarchia modelu DOM (XML Document Object Model)
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 9d187d4f-c76e-4223-a670-cc290783ce47
-ms.openlocfilehash: a6099b6c5e30fbf2e4d5d4ed046369bc8f884845
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2a8bbd4f7cb3feb2a555af9862632a2fa493be32
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291438"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819256"
 ---
 # <a name="xml-document-object-model-dom-hierarchy"></a>Hierarchia modelu DOM (XML Document Object Model)
 Na poniższej ilustracji przedstawiono hierarchię klas dla Document Object Model XML (DOM), z nazwą organizacja World Wide Web Consortium (W3C) w nawiasie wraz z nazwą klasy, w której ma zastosowanie.  
@@ -34,7 +33,7 @@ Hierarchia XML Document Object Model (DOM)
   
  Klasa **XmlNodeChangedEventArgs** obsługuje programy obsługi zdarzeń zarejestrowane w **dokumencie XmlDocument**. Aby uzyskać więcej informacji, zobacz [Obsługa zdarzeń w dokumencie XML przy użyciu XmlNodeChangedEventArgs](event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md).  
   
- Klasa **XmlLinkedNode** dziedziczy z klasy **XmlNode**. Celem jest przesłonięcie dwóch metod z klasy **XmlNode**: metod **PreviousSibling** i **NextSibling** . Te zastąpione metody są następnie dziedziczone i używane przez **XmlCharacterData**, **xmldeklaracji**, **XmlDocumentType**, **XmlElement**, **XmlEntityReference**i **XmlProcessingInstruction**, które są klasami, które mają poprzednie i następne elementy równorzędne.  
+ Klasa **XmlLinkedNode** dziedziczy z klasy **XmlNode**. Celem jest przesłonięcie dwóch metod z klasy **XmlNode**: metod **PreviousSibling** i **NextSibling** . Te zastąpione metody są następnie dziedziczone i używane przez **XmlCharacterData**, **xmldeklaracji**, **XmlDocumentType**, **XmlElement**, **XmlEntityReference** i **XmlProcessingInstruction**, które są klasami, które mają poprzednie i następne elementy równorzędne.  
   
 ## <a name="see-also"></a>Zobacz także
 

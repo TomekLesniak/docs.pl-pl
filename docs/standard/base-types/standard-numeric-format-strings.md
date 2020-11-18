@@ -2,7 +2,6 @@
 title: Standardowe ciągi formatujące liczby
 description: W tym artykule dowiesz się, jak używać standardowych ciągów formatu liczbowego do formatowania wspólnych typów liczbowych w reprezentacjach tekstowych w programie .NET.
 ms.date: 06/10/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,20 +16,20 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: e5e1aa16d8df3d0cfce6dac00c91ca8e99e16e3d
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: b8537e8dcfdd45ed8da18b8b82aae5e9fc0cd96e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888974"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818768"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardowe ciągi formatujące liczby
 
 Ciągi standardowych formatów liczb służą do formatowania popularnych typów liczbowych. Standardowy ciąg formatu liczbowego przyjmuje formę `Axx` , gdzie:
 
-- `A` jest pojedynczym znakiem alfabetycznym o nazwie *specyfikator formatu* . Dowolny ciąg formatu liczb, który zawiera więcej niż jeden znak alfabetyczny, w tym znak odstępu, jest interpretowany jako ciąg niestandardowego formatu liczb. Aby uzyskać więcej informacji, zobacz [Niestandardowe ciągi formatujące](custom-numeric-format-strings.md).
+- `A` jest pojedynczym znakiem alfabetycznym o nazwie *specyfikator formatu*. Dowolny ciąg formatu liczb, który zawiera więcej niż jeden znak alfabetyczny, w tym znak odstępu, jest interpretowany jako ciąg niestandardowego formatu liczb. Aby uzyskać więcej informacji, zobacz [Niestandardowe ciągi formatujące](custom-numeric-format-strings.md).
 
-- `xx` jest opcjonalną liczbą całkowitą o nazwie *specyfikator dokładności* . Specyfikator dokładności ma zakres od 0 do 99 i wpływa na liczbę cyfr w wyniku. Należy zauważyć, że specyfikator dokładności określa liczbę cyfr w ciągu reprezentującym liczbę. Nie zaokrągla samej liczby. Aby wykonać operację zaokrąglania, należy użyć <xref:System.Math.Ceiling%2A?displayProperty=nameWithType> metody, <xref:System.Math.Floor%2A?displayProperty=nameWithType> , lub <xref:System.Math.Round%2A?displayProperty=nameWithType> .
+- `xx` jest opcjonalną liczbą całkowitą o nazwie *specyfikator dokładności*. Specyfikator dokładności ma zakres od 0 do 99 i wpływa na liczbę cyfr w wyniku. Należy zauważyć, że specyfikator dokładności określa liczbę cyfr w ciągu reprezentującym liczbę. Nie zaokrągla samej liczby. Aby wykonać operację zaokrąglania, należy użyć <xref:System.Math.Ceiling%2A?displayProperty=nameWithType> metody, <xref:System.Math.Floor%2A?displayProperty=nameWithType> , lub <xref:System.Math.Round%2A?displayProperty=nameWithType> .
 
   Gdy *specyfikator dokładności* kontroluje liczbę ułamków w ciągu wynikowym, ciąg wynikowy odzwierciedla liczbę, która jest zaokrąglana do wyniku, który zostanie zaprezentowany najbliżej nieskończonie precyzyjnego wyniku. Jeśli istnieją dwa równie zbliżone wyniki:
   - **W systemach .NET Framework i .NET Core do programu .net core 2,0** środowisko uruchomieniowe wybiera wynik z bardziej mniejszą cyfrą (to jest użycie <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType> ).
@@ -48,7 +47,7 @@ Ciągi standardowego formatu liczbowego są obsługiwane przez:
 - [Ciągi interpolowane](../../csharp/language-reference/tokens/interpolated.md) w języku C# i Visual Basic, które zapewniają uproszczoną składnię w porównaniu z ciągami formatu złożonego.
 
 > [!TIP]
-> Możesz pobrać **Narzędzie formatowania** , aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Możesz pobrać **Narzędzie formatowania**, aplikację .net Core Windows Forms, która umożliwia stosowanie ciągów formatowania do wartości liczbowych lub daty i godziny i wyświetla ciąg wynikowy. Kod źródłowy jest dostępny dla [języków C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) i [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 <a name="table"></a> W poniższej tabeli opisano standardowe specyfikatory formatu liczbowego i przedstawiono przykładowe dane wyjściowe generowane przez każdy specyfikator formatu. Zapoznaj się z sekcją [uwagi](#NotesStandardFormatting) , aby uzyskać dodatkowe informacje dotyczące używania ciągów standardowego formatu liczb, oraz sekcję [przykładową](#example) dla obszernej ilustracji dotyczącej ich używania.
 

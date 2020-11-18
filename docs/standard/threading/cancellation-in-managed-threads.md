@@ -2,19 +2,18 @@
 title: Anulowanie w zarządzanych wątkach
 description: Zrozumienie anulowania w zarządzanych wątkach. Poznaj tokeny anulowania w ramach spółdzielni anulowania asynchronicznych lub długotrwałych operacji synchronicznych.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-ms.openlocfilehash: 09c39202f1564ac544fdf30a07952990b309b661
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 578db725458ad5c4a90256a06744a58a6d1918da
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188474"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819958"
 ---
 # <a name="cancellation-in-managed-threads"></a>Anulowanie w zarządzanych wątkach
 
@@ -45,7 +44,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
   
 - Obiekt żądający wysyła żądanie anulowania do wszystkich kopii tokenu przy użyciu tylko jednego wywołania metody.  
   
-- Odbiornik może nasłuchiwać wielu tokenów jednocześnie, łącząc je w jeden *połączony token* .  
+- Odbiornik może nasłuchiwać wielu tokenów jednocześnie, łącząc je w jeden *połączony token*.  
   
 - Kod użytkownika może zauważyć i odpowiadać na żądania anulowania z kodu biblioteki, a kod biblioteki może zauważyć żądania anulowania od kodu użytkownika i odpowiadać na nie.  
   
@@ -148,6 +147,6 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
   
  <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> i <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> są przykładami klas, które są zgodne z tymi wskazówkami. Aby uzyskać więcej informacji, zobacz [Anulowanie zadania](../parallel-programming/task-cancellation.md) i [instrukcje: anulowanie zapytania PLINQ](../parallel-programming/how-to-cancel-a-plinq-query.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zarządzana wątkowość — podstawy](managed-threading-basics.md)

@@ -1,7 +1,6 @@
 ---
 title: Strefy czasowe — omówienie
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - time zones [.NET], about time zones
 - transition time [.NET]
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - adjustment rule [.NET]
 - time zones [.NET], terminology
 ms.assetid: c4b7ed01-5e38-4959-a3b6-ef9765d6ccf1
-ms.openlocfilehash: 0f0fdbe4b63ddc9d55f7397fa71198d72e60e669
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 1e876fd608b088b02385467367948440549e96e8
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064109"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817513"
 ---
 # <a name="time-zone-overview"></a>Strefy czasowe — omówienie
 
@@ -71,6 +70,6 @@ Ponieważ każda strefa czasowa jest określana przez przesunięcie bazowe od cz
 
 Aby uzyskać szczegółowe informacje o konwertowaniu czasu między strefami czasowymi, zobacz [konwertowanie czasów między strefami czasowymi](converting-between-time-zones.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Daty, godziny i strefy czasowe](index.md)

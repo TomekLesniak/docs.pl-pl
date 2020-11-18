@@ -1,14 +1,13 @@
 ---
 title: Model SOM (XML Schema Object Model)
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: a897a599-ffd1-43f9-8807-e58c8a7194cd
-ms.openlocfilehash: 1de9fdf9950ba3ae356779ca802afb71f24a345e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b64e5bb88d5754447d8f75577f3c51f2aa467bb5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290321"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818404"
 ---
 # <a name="xml-schema-object-model-som"></a>Model SOM (XML Schema Object Model)
 Schemat XML to zaawansowane i złożone narzędzie do tworzenia i weryfikowania struktury w zgodnych dokumentach XML. Podobnie jak w przypadku modelowania danych w relacyjnej bazie danych, schemat zapewnia sposób definiowania struktury dokumentów XML, określając elementy, które mogą być używane w dokumentach, a także strukturę i typy, które muszą wykonać te elementy, aby były prawidłowe dla tego konkretnego schematu.  

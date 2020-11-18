@@ -1,17 +1,16 @@
 ---
 title: Klasa XPathNavigator w przekształceniach
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
-ms.openlocfilehash: 59fb399d80e1d4d33d1a3c659d2ff74a37fd367d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b28a2d4991e2e4b14027460c0f3c97145862da2a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282821"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818378"
 ---
 # <a name="xpathnavigator-in-transformations"></a>Klasa XPathNavigator w przekształceniach
 <xref:System.Xml.XPath.XPathNavigator>Klasa zapewnia dostęp losowy tylko do odczytu do danych i jest przeznaczona do użycia jako dane wejściowe do Extensible Stylesheet Language for Transformations (XSLT). Jest ona zaimplementowana w <xref:System.Xml.XPath.XPathDocument> , <xref:System.Xml.XmlDataDocument> , i <xref:System.Xml.XmlDocument> . <xref:System.Xml.XPath.XPathNavigator>Jest oparty na modelu danych organizacja World Wide Web Consortium (W3C) zgodnie z opisem w sekcji 5 zalecenia XML Path Language (XPath).  
@@ -55,13 +54,13 @@ ms.locfileid: "84282821"
 </xsl:stylesheet>  
 ```  
   
-## <a name="testxml"></a>Test. XML  
+## <a name="testxml"></a>test.xml  
   
 ```xml  
 <root>Some text</root>  
 ```  
   
- Poniższy kod używa arkusza stylów **test. xsl** i danych wejściowych **test. XML** .  
+ Poniższy kod używa arkusza stylów **test. xsl** i **test.xml** danych wejściowych.  
   
 ```vb  
 Imports System  
@@ -108,7 +107,7 @@ public class sample
 ```  
   
 ## <a name="output"></a>Dane wyjściowe  
- Wynik transformacji zostanie znaleziony w pliku **out. XML**:  
+ Wynik transformacji zostanie znaleziony w pliku **out.xml**:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>Joe  

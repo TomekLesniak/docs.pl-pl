@@ -1,14 +1,13 @@
 ---
 title: Zagadnienia dotyczące bezpieczeństwa danych XSLT
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: fea695be-617c-4977-9567-140e820436fc
-ms.openlocfilehash: 81db764016607ebe6facfc530dbb2bac8e6b8cfe
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ad96ebb6048e8a397e0761a2217fec89e0d206b0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282514"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818287"
 ---
 # <a name="xslt-security-considerations"></a>Zagadnienia dotyczące bezpieczeństwa danych XSLT
 Język XSLT oferuje bogaty zestaw funkcji, które zapewniają doskonałą wydajność i elastyczność. Zawiera ona wiele funkcji, które mogą być również wykorzystywane przez źródła zewnętrzne. Aby bezpiecznie używać XSLT, należy zrozumieć typy problemów z zabezpieczeniami, które powstają podczas korzystania z języka XSLT, oraz podstawowe strategie, których można użyć w celu ograniczenia tych zagrożeń.  

@@ -1,7 +1,6 @@
 ---
 title: Znajdowanie stref czasowych zdefiniowanych w systemie lokalnym
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - time zones [.NET], local
 - time zones [.NET], finding local system time zones
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - UTC times, finding local system time zones
 - time zones [.NET], UTC
 ms.assetid: 3f63b1bc-9a4b-4bde-84ea-ab028a80d3e1
-ms.openlocfilehash: c968c7891a4fc9b77ed6224a9fc5f8f6d8f5d80b
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 02467e10494e72c83ad9521228f6c4151c4a6bd1
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063693"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817942"
 ---
 # <a name="finding-the-time-zones-defined-on-a-local-system"></a>Znajdowanie stref czasowych zdefiniowanych w systemie lokalnym
 
@@ -35,7 +34,7 @@ Można również utworzyć wystąpienie <xref:System.TimeZoneInfo> obiektu, któ
 
 Identyfikator strefy czasowej to pole klucza, które jednoznacznie identyfikuje strefę czasową. Chociaż większość kluczy jest stosunkowo krótka, Identyfikator strefy czasowej jest bardzo długi. W większości przypadków jego wartość odpowiada <xref:System.TimeZoneInfo.StandardName%2A?displayProperty=nameWithType> właściwości, która jest używana do podania nazwy czasu standardowego strefy czasowej. Istnieją jednak wyjątki. Najlepszym sposobem, aby upewnić się, że podano prawidłowy identyfikator, jest Wyliczenie stref czasowych dostępnych w systemie i zanotować ich skojarzone identyfikatory.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Daty, godziny i strefy czasowe](index.md)
 - [Instrukcje: Uzyskiwanie dostępu do wstępnie zdefiniowanych obiektów lokalnej strefy czasowej i strefy czasowej UTC](access-utc-and-local.md)

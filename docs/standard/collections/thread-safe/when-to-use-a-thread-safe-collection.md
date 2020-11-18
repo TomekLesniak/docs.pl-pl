@@ -2,16 +2,15 @@
 title: Kiedy należy używać kolekcji bezpiecznych wątkowo
 description: Dowiedz się, kiedy używać kolekcji bezpiecznej dla wątków w programie .NET. Istnieją 5 typów kolekcji, które są specjalnie przeznaczone do obsługi wielowątkowych Dodaj & operacji usuwania.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-ms.openlocfilehash: 499af6d7b8de1decbcffefe0a3b1420cc548488a
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 92fb912cdd2030f87bee1109b9944e1fa857dddd
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326043"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819464"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kiedy używać kolekcji bezpiecznej dla wątków
 
@@ -36,7 +35,7 @@ ms.locfileid: "85326043"
 ## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue (T) a kolejka (T)  
  W czystych scenariuszach dla producentów, w których czas przetwarzania dla każdego elementu jest bardzo mały (kilka instrukcji), a następnie <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> może oferować niewielkie korzyści z wydajności w porównaniu z <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> zewnętrznym zablokowaniem. W tym scenariuszu <xref:System.Collections.Concurrent.ConcurrentQueue%601> najlepiej sprawdza się w przypadku, gdy jeden dedykowany wątek jest kolejką, a jeden dedykowany wątek zostaje cofnięty. Jeśli ta reguła nie jest wymuszana, <xref:System.Collections.Generic.Queue%601> może to być nawet nieco szybsze niż <xref:System.Collections.Concurrent.ConcurrentQueue%601> na komputerach z wieloma rdzeniami.  
   
- Gdy czas przetwarzania ma około 500 FLOPS (operacji zmiennoprzecinkowych) lub więcej, to reguła dwuwątkowa nie ma zastosowania do <xref:System.Collections.Concurrent.ConcurrentQueue%601> , który następnie ma bardzo dobrą skalowalność. <xref:System.Collections.Generic.Queue%601>nie skaluje się dobrze w tym scenariuszu.  
+ Gdy czas przetwarzania ma około 500 FLOPS (operacji zmiennoprzecinkowych) lub więcej, to reguła dwuwątkowa nie ma zastosowania do <xref:System.Collections.Concurrent.ConcurrentQueue%601> , który następnie ma bardzo dobrą skalowalność. <xref:System.Collections.Generic.Queue%601> nie skaluje się dobrze w tym scenariuszu.  
   
  W mieszanych scenariuszach konsumenckich klientów, gdy czas przetwarzania jest bardzo mały, a, <xref:System.Collections.Generic.Queue%601> który ma blokadę zewnętrzną skalowalność <xref:System.Collections.Concurrent.ConcurrentQueue%601> . Jeśli jednak czas przetwarzania ma około 500 FLOPS lub więcej, wówczas <xref:System.Collections.Concurrent.ConcurrentQueue%601> skalowanie jest lepsze.  
   
@@ -62,7 +61,7 @@ ms.locfileid: "85326043"
 ## <a name="blockingcollection"></a>BlockingCollection  
  Gdy wymagane są semantyki ograniczania i blokowania, <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> prawdopodobnie będą wykonywane szybciej niż Każda implementacja niestandardowa. Obsługuje ona również rozbudowane anulowanie, Wyliczanie i obsługę wyjątków.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekcje bezpieczne dla wątków](index.md)

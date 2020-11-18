@@ -1,18 +1,17 @@
 ---
 title: Niezależność od języka i składniki niezależne od języka
 description: 'Dowiedz się, jak można opracowywać w jednym z wielu obsługiwanych języków w programie .NET, takich jak C#, C++/CLI, F #, IronPython, VB, Visual COBOL i PowerShell.'
-ms.date: 07/22/2016
 dev_langs:
 - csharp
 - vb
-ms.technology: dotnet-standard
+ms.date: 07/22/2016
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 524f8dc9838d7c438e8155da683c4fa5b01f36a3
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 259db1b9d33dd3b068f4d4fa18d2118db34bf0b0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92162989"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819087"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Niezależność od języka i składniki niezależne od języka
 
@@ -303,7 +302,7 @@ Typ zgodny ze specyfikacją CLS | Opis
 [Int64](xref:System.Int64) | 64-bitowa liczba całkowita ze znakiem
 [Pojedynczy](xref:System.Single) | Wartość zmiennoprzecinkowa o pojedynczej precyzji
 [Double](xref:System.Double) | Wartość zmiennoprzecinkowa o podwójnej precyzji
-[Wartość logiczna](xref:System.Boolean) | Typ wartości true lub false
+[Boolean](xref:System.Boolean) | Typ wartości true lub false
 [Delikatn](xref:System.Char) | Jednostka kodu zakodowana w formacie UTF-16
 [Dokładności](xref:System.Decimal) | Liczba dziesiętna liczb zmiennoprzecinkowych
 [IntPtr](xref:System.IntPtr) | Wskaźnik lub uchwyt rozmiaru zdefiniowanego przez platformę
@@ -2042,9 +2041,9 @@ Właściwości typów zgodnych ze specyfikacją CLS muszą być zgodne z następ
 
 Zdarzenie jest definiowane przy użyciu jego nazwy i typu. Typ zdarzenia jest delegatem, który jest używany do wskazania zdarzenia. Na przykład `DbConnection.StateChange` zdarzenie jest typu `StateChangeEventHandler` . Oprócz samego zdarzenia trzy metody z nazwami na podstawie nazwy zdarzenia dostarczają implementację zdarzenia i są oznaczone jako `SpecialName` w metadanych zestawu:
 
-* Metoda dodawania obsługi zdarzeń o nazwie `add` _*EventName*. Na przykład Metoda subskrypcji zdarzeń dla `DbConnection.StateChange` zdarzenia ma nazwę `add_StateChange` .
+* Metoda dodawania obsługi zdarzeń o nazwie `add` _ *EventName*. Na przykład Metoda subskrypcji zdarzeń dla `DbConnection.StateChange` zdarzenia ma nazwę `add_StateChange` .
 
-* Metoda usuwania programu obsługi zdarzeń o nazwie `remove` _*EventName*. Na przykład metoda usuwania dla `DbConnection.StateChange` zdarzenia ma nazwę `remove_StateChange` .
+* Metoda usuwania programu obsługi zdarzeń o nazwie `remove` _ *EventName*. Na przykład metoda usuwania dla `DbConnection.StateChange` zdarzenia ma nazwę `remove_StateChange` .
 
 * Metoda wskazująca, że zdarzenie wystąpiło o nazwie `raise` \_ *EventName*.
 
@@ -2544,7 +2543,7 @@ End Structure
 
 Konstruktor lub właściwości atrybutu zgodnego ze specyfikacją CLS mogą uwidaczniać tylko następujące typy:
 
-* [Wartość logiczna](xref:System.Boolean)
+* [Boolean](xref:System.Boolean)
 
 * [Bajc](xref:System.Byte)
 

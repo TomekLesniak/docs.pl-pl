@@ -2,7 +2,6 @@
 title: Tworzenie wątków i przekazywanie danych w czasie rozpoczęcia
 description: Zapoznaj się z tematem tworzenia wątków i przekazywania danych w czasie rozpoczęcia procesu systemu operacyjnego w programie .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - threading [.NET], passing data to threads
 - threading [.NET], retrieving data from threads
 ms.assetid: 52b32222-e185-4f42-91a7-eaca65c0ab6d
-ms.openlocfilehash: a1e8f8f6e017d29f352d79ea08c09b2d97041bba
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 3f44eb9dabc9145cd0e6ec9bfd3d484c9079e803
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188383"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819932"
 ---
 # <a name="creating-threads-and-passing-data-at-start-time"></a>Tworzenie wątków i przekazywanie danych w czasie rozpoczęcia
 
@@ -58,7 +57,7 @@ Ani <xref:System.Threading.ThreadStart> <xref:System.Threading.ParameterizedThre
  [!code-csharp[System.Threading.ThreadStart2#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CS/source4.cs#4)]
  [!code-vb[System.Threading.ThreadStart2#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadStart2/VB/source4.vb#4)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadStart>

@@ -1,14 +1,13 @@
 ---
 title: Model SOM (XML Schema Object Model) ― omówienie
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 896a1e12-5655-42c6-8cdd-89c12862b34b
-ms.openlocfilehash: 0358efdcc2e8b86f589eea312d791610da5238db
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c54f92ede64e59478a0e9bfd919666caa9481137
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290334"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819217"
 ---
 # <a name="xml-schema-object-model-overview"></a>Model SOM (XML Schema Object Model) ― omówienie
 Model obiektów schematu (SOM) w Microsoft .NET Framework to bogaty interfejs API, który umożliwia Programistyczne tworzenie, edytowanie i sprawdzanie poprawności schematów. Model SOM działa na dokumentach schematu XML podobnie do sposobu działania Document Object Model (DOM) w dokumentach XML. Dokumenty schematu XML są prawidłowymi plikami XML, które po załadowaniu do modelu SOM, przekazując znaczenie dotyczące struktury i ważności innych dokumentów XML, które są zgodne ze schematem.  
@@ -32,7 +31,7 @@ Model obiektów schematu (SOM) w Microsoft .NET Framework to bogaty interfejs AP
 ## <a name="the-schema-object-model"></a>Model obiektu schematu  
  Model SOM zawiera rozbudowany zestaw klas w <xref:System.Xml.Schema?displayProperty=nameWithType> przestrzeni nazw odpowiadający elementom w schemacie XML. Na przykład element jest `<xsd:schema>...</xsd:schema>` mapowany do <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> klasy, a wszystkie informacje, które mogą być zawarte w `<xsd:schema/>` elemencie mogą być reprezentowane za pomocą <xref:System.Xml.Schema.XmlSchema> klasy. Podobnie `<xsd:element>...</xsd:element>` elementy i są `<xsd:attribute>...</xsd:attribute>` mapowane <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> odpowiednio do klas i <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType> . To mapowanie będzie kontynuowane dla wszystkich elementów schematu XML tworzących model obiektów schematu XML w <xref:System.Xml.Schema> przestrzeni nazw przedstawiony na poniższym diagramie.  
   
- ![System. XML. Schema — model obiektów](./media/xml-schema-object-model-overview/xml-schema-object-model.gif)  
+ ![System.Xml. Model obiektów schematu](./media/xml-schema-object-model-overview/xml-schema-object-model.gif)  
   
  Aby uzyskać więcej informacji na temat każdej klasy w <xref:System.Xml.Schema> przestrzeni nazw, zobacz <xref:System.Xml.Schema> dokumentację odwołań do przestrzeni nazw w bibliotece klas .NET Framework.  
   

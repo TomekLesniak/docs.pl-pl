@@ -1,7 +1,6 @@
 ---
 title: Zapisywanie i przywracanie stref czasowych
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,12 +16,12 @@ helpviewer_keywords:
 - time zone objects [.NET], serializing
 - time zone objects [.NET], saving
 ms.assetid: 4028b310-e7ce-49d4-a646-1e83bfaf6f9d
-ms.openlocfilehash: 6a05bf4ce062a3f4e539e9b89779cb468b9782a6
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 0658bad6da078b6e44695a92b6cb2b22576f6424
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063394"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817578"
 ---
 # <a name="saving-and-restoring-time-zones"></a>Zapisywanie i przywracanie stref czasowych
 
@@ -72,6 +71,6 @@ Przechowywanie serializowanego ciągu strefy czasowej również oddziela procedu
 
 Aby zapoznać się z przykładem korzystającym z zasobu osadzonego do przechowywania danych strefy czasowej, zobacz [How to: Save Time](save-time-zones-to-an-embedded-resource.md) Zones to a Embedded Resource (informacje o tym, [jak przywrócić strefy czasowe z zasobu osadzonego](restore-time-zones-from-an-embedded-resource.md)).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Daty, godziny i strefy czasowe](index.md)

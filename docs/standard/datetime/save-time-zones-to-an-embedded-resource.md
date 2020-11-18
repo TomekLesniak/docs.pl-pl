@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Zapisywanie stref czasowych w zasobie osadzonym'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - time zone objects [.NET], serializing
 - time zone objects [.NET], saving
 ms.assetid: 3c96d83a-a057-4496-abb0-8f4b12712558
-ms.openlocfilehash: 3d355003b3e6309644fa1ccaf779b2e63b0523d2
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 23f86076b2858404f3dbc900d8c40a6509abe8db
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063407"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817604"
 ---
 # <a name="how-to-save-time-zones-to-an-embedded-resource"></a>Instrukcje: Zapisywanie stref czasowych w zasobie osadzonym
 
@@ -55,7 +54,7 @@ Oprócz pliku zasobów, który jest kompilowany z aplikacją, można użyć kilk
 
 9. Dodaj wygenerowany plik resx do projektu programu Visual Studio aplikacji.
 
-10. Korzystając z okna **Właściwości** w programie Visual Studio, upewnij się, że właściwość **Akcja kompilacji** pliku resx jest ustawiona na **zasób osadzony** .
+10. Korzystając z okna **Właściwości** w programie Visual Studio, upewnij się, że właściwość **Akcja kompilacji** pliku resx jest ustawiona na **zasób osadzony**.
 
 ## <a name="example"></a>Przykład
 
@@ -68,7 +67,7 @@ Ten przykład serializacji <xref:System.TimeZoneInfo> obiektów, aby były dost�
 
 Ponieważ <xref:System.Resources.ResXResourceWriter.Generate%2A?displayProperty=nameWithType> Metoda dodaje kompletne informacje nagłówka do pliku zasobów XML programu .NET, nie można go użyć do dodania zasobów do istniejącego pliku. Przykład obsługuje to poprzez sprawdzenie pliku SerializedTimeZones. resx i, jeśli istnieje, przechowywanie wszystkich zasobów innych niż dwie serializowane strefy czasowe do <xref:System.Collections.Generic.Dictionary%602> obiektu ogólnego. Istniejący plik zostanie usunięty, a istniejące zasoby zostaną dodane do nowego pliku SerializedTimeZones. resx. Do tego pliku dodawane są również dane serializowanej strefy czasowej.
 
-Pola klucza (lub **nazwy** ) zasobów nie mogą zawierać spacji osadzonych. <xref:System.String.Replace%28System.String%2CSystem.String%29>Metoda jest wywoływana, aby usunąć wszystkie osadzone spacje w identyfikatorach strefy czasowej przed ich przypisaniem do pliku zasobów.
+Pola klucza (lub **nazwy**) zasobów nie mogą zawierać spacji osadzonych. <xref:System.String.Replace%28System.String%2CSystem.String%29>Metoda jest wywoływana, aby usunąć wszystkie osadzone spacje w identyfikatorach strefy czasowej przed ich przypisaniem do pliku zasobów.
 
 ## <a name="compiling-the-code"></a>Kompilowanie kodu
 
@@ -81,7 +80,7 @@ Ten przykład wymaga:
   [!code-csharp[TimeZone2.Serialization#2](../../../samples/snippets/csharp/VS_Snippets_CLR/TimeZone2.Serialization/cs/SerializeTimeZoneData.cs#2)]
   [!code-vb[TimeZone2.Serialization#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/TimeZone2.Serialization/vb/SerializeTimeZoneData.vb#2)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Daty, godziny i strefy czasowe](index.md)
 - [Strefy czasowe — omówienie](time-zone-overview.md)

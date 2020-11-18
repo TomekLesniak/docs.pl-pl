@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework, deploying
 - .NET Framework application deployment
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
-ms.openlocfilehash: cce888c962c9ab83c13cce4040eb9ba50270972d
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 9948d5313c5168965f3ff991b26a4bc913f7d7ee
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803505"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817032"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Wdrażanie programu .NET Framework i aplikacji
 
@@ -59,7 +59,7 @@ Skorzystaj z poniższych linków do innych tematów MSDN, aby uzyskać szczegó�
 
 - Wdrażanie .NET Framework (dla producentów OEM i administratorów):
 
-  - [Zestaw Windows Assessment and Deployment Kit (ADK)](https://go.microsoft.com/fwlink/p/?LinkId=254976)
+  - [Zestaw Windows Assessment and Deployment Kit (ADK)](/windows-hardware/get-started/adk-install)
 
   - [Podręcznik administratora](guide-for-administrators.md)
 
@@ -119,7 +119,7 @@ Skorzystaj z poniższych linków do innych tematów MSDN, aby uzyskać szczegó�
 
 Niektóre informacje dotyczące pakowania i wdrażania dla .NET Framework są opisane w innych sekcjach dokumentacji. Te sekcje zawierają informacje o samoopisywanych jednostkach nazywanych [zestawami](../../standard/assembly/index.md), które nie wymagają żadnych wpisów rejestru, [zestawów o silnych nazwach](../../standard/assembly/strong-named.md), które zapewniają unikatowość nazw i uniemożliwiają fałszowanie nazw oraz [przechowywanie wersji zestawu](../../standard/assembly/versioning.md), który dotyczy wielu problemów związanych z konfliktami dll. Poniższe sekcje zawierają informacje o pakowaniu i dystrybucji aplikacji .NET Framework.
 
-### <a name="packaging"></a>Packaging
+### <a name="packaging"></a>Tworzenie pakietów
 
 .NET Framework udostępnia następujące opcje dla aplikacji pakietów:
 
@@ -170,7 +170,7 @@ Zagadnienia dotyczące zabezpieczeń mogą również mieć wpływ na sposób wdr
 |[Publikowanie aplikacji ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Opisuje sposób tworzenia pakietów aplikacji Windows Forms i wdrażania jej przy użyciu technologii ClickOnce na komputerach klienckich w sieci.|
 |[Opakowanie i wdrażanie zasobów](../resources/packaging-and-deploying-resources-in-desktop-apps.md)|Opisuje model gwiazdy, którego .NET Framework używa do pakowania i wdrażania zasobów; obejmuje konwencje nazewnictwa zasobów, proces rezerwowy i alternatywy pakietów.|
 |[Wdrażanie aplikacji międzyoperacyjnych](../interop/deploying-an-interop-application.md)|Wyjaśnia sposób dostarczania i instalowania aplikacji międzyoperacyjnych, które zwykle zawierają zestaw .NET Framework klienta, co najmniej jeden zestaw międzyoperacyjny reprezentujący różne biblioteki typów modelu COM oraz co najmniej jeden zarejestrowany składnik COM.|
-|[Porady: pobieranie danych o postępie z Instalatora .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)|Opisuje sposób dyskretnego uruchamiania i śledzenia procesu instalacji .NET Framework podczas wyświetlania własnego widoku postępu instalacji.|
+|[Instrukcje: pobieranie danych o postępie z Instalatora .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)|Opisuje sposób dyskretnego uruchamiania i śledzenia procesu instalacji .NET Framework podczas wyświetlania własnego widoku postępu instalacji.|
 
 ## <a name="see-also"></a>Zobacz także
 

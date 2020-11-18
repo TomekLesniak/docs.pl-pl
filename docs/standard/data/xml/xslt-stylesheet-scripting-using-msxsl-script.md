@@ -1,17 +1,16 @@
 ---
 title: Wykonywanie skryptów arkusza stylów XSLT przy użyciu elementu <msxsl:script>
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: b2fd5ac6f03c0c66c05117a882d53af37e3f8665
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 61538656580878da775d4a42dac40165c7941eee
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555936"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818274"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Obsługa skryptów arkusza stylów XSLT przy użyciu \<msxsl:script>
 <xref:System.Xml.Xsl.XslTransform>Klasa obsługuje osadzone skrypty przy użyciu `script` elementu.  
@@ -64,8 +63,8 @@ ms.locfileid: "90555936"
   
 |Typ|Równoważna Klasa .NET Framework (typ)|Typ XPath lub typ XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
-|Ciąg|System. String|XPath|  
-|Wartość logiczna|System. Boolean|XPath|  
+|String|System. String|XPath|  
+|Boolean|System. Boolean|XPath|  
 |Liczba|System. Double|XPath|  
 |Fragment drzewa wyników|System.Xml. XPath. XPathNavigator|XSL|  
 |Zestaw węzłów|System.Xml. XPath. XPathNodeIterator|XPath|  

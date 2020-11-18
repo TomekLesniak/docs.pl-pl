@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Tworzenie wystąpień obiektów TimeZoneInfo'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - instantiating time zone objects
 - time zone objects [.NET], instantiation
 ms.assetid: 8cb620e5-c6a6-4267-a52e-beeb73cd1a34
-ms.openlocfilehash: 34606c0e227d7826cd6188f42fc2fb23f17105ca
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: c4e441e793244dfe368fb86c3e77fcf67a685558
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063654"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817825"
 ---
 # <a name="how-to-instantiate-a-timezoneinfo-object"></a>Instrukcje: Tworzenie wystąpień obiektów TimeZoneInfo
 
@@ -41,7 +40,7 @@ W przypadku znalezienia strefy czasowej Metoda zwraca jej <xref:System.TimeZoneI
 
 Jeśli aplikacja jest zależna od strefy czasowej, która musi być obecna, należy najpierw wywołać <xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A> metodę, aby pobrać informacje o strefie czasowej z rejestru. Jeśli wywołanie metody nie powiedzie się, program obsługi wyjątków powinien następnie utworzyć nowe wystąpienie strefy czasowej lub utworzyć je ponownie poprzez deserializacji serializowanego <xref:System.TimeZoneInfo> obiektu. Zobacz [jak: przywracanie stref czasowych z zasobu osadzonego](restore-time-zones-from-an-embedded-resource.md) na przykład.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Daty, godziny i strefy czasowe](index.md)
 - [Znajdowanie stref czasowych zdefiniowanych w systemie lokalnym](finding-the-time-zones-on-local-system.md)

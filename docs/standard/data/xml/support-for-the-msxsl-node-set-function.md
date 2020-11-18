@@ -1,14 +1,13 @@
 ---
 title: Obsługa funkcji msxsl:node-set()
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: d0cbf517-d9f6-4097-9851-4fa62903decd
-ms.openlocfilehash: 30652d8cbaac333cc1cb35954742b16dc7c4764b
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 26ae3014af93377dc106b5638ba194bd38e3dc9e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91071992"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818547"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a>Obsługa funkcji msxsl:node-set()
 `msxsl:node-set`Funkcja umożliwia konwertowanie fragmentu drzewa wynikowego na zestaw węzłów. Zestaw węzłów powstających zawsze zawiera pojedynczy węzeł i jest węzłem głównym drzewa.  

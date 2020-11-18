@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 10/28/2020
 ms.topic: overview
-ms.openlocfilehash: 3692b9e779d450f07d47599417349bb57f72ac36
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: cc030e32846690b6544b99030800b50055a3113e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687575"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818829"
 ---
 # <a name="dependency-injection-in-net"></a>Iniekcja zależności w programie .NET
 
@@ -66,7 +66,7 @@ Ten interfejs jest implementowany przez konkretny typ `MessageWriter` :
 
 :::code language="csharp" source="snippets/configuration/dependency-injection/MessageWriter.cs":::
 
-Przykładowy kod rejestruje `IMessageWriter` usługę w konkretnym typie `MessageWriter` . <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped%2A>Metoda rejestruje usługę z okresem istnienia w określonym zakresie, okresem istnienia pojedynczego żądania. [Okresy istnienia usługi](#service-lifetimes) zostały opisane w dalszej części tego tematu.
+Przykładowy kod rejestruje `IMessageWriter` usługę w konkretnym typie `MessageWriter` . <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped%2A>Metoda rejestruje usługę z okresem istnienia w określonym zakresie, okresem istnienia pojedynczego żądania. [Okresy istnienia usługi](#service-lifetimes) zostały opisane w dalszej części tego artykułu.
 
 :::code language="csharp" source="snippets/configuration/dependency-injection/Program.cs" highlight="16":::
 
@@ -220,7 +220,7 @@ Poprzedni przykładowy kod źródłowy rejestruje dwie implementacje programu `I
 
 :::code language="csharp" source="snippets/configuration/console-di-ienumerable/ExampleService.cs" highlight="9-18":::
 
-`ExampleService`Definiuje dwa parametry konstruktora; pojedyncze `IMessageWriter` i `IEnumerable<IMessageWriter>` . Pojedynczy `IMessageWriter` to ostatni implementacji, który został zarejestrowany, podczas gdy `IEnumerable<IMessageWriter>` reprezentuje wszystkie zarejestrowane implementacje.
+`ExampleService`Definiuje dwa parametry konstruktora; pojedyncze `IMessageWriter` i `IEnumerable<IMessageWriter>` . Pojedynczy `IMessageWriter` jest ostatnią implementacją, która została zarejestrowana, podczas gdy `IEnumerable<IMessageWriter>` reprezentuje wszystkie zarejestrowane implementacje.
 
 Struktura zawiera również `TryAdd{LIFETIME}` metody rozszerzające, które rejestrują usługę tylko wtedy, gdy nie zarejestrowano jeszcze implementacji.
 

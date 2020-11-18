@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Sprawdzanie podpisów cyfrowych w dokumentach XML'
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - XML digital signatures
 - digital signatures, verifying
 ms.assetid: a4d5ceb1-b9f5-47e8-9e4a-a2b39110002f
-ms.openlocfilehash: b9b2dc6a558d1fd6acd2922a7c8ad82ce8776c26
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 9cbebd34866b66c00bf4aca708d75e315b067b0d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557050"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820075"
 ---
 # <a name="how-to-verify-the-digital-signatures-of-xml-documents"></a>Instrukcje: Sprawdzanie podpisów cyfrowych w dokumentach XML
 
@@ -90,7 +89,7 @@ Nigdy nie przechowuj ani nie przesyłaj klucza prywatnego pary kluczy asymetrycz
   
 Nie osadzaj klucza prywatnego bezpośrednio w kodzie źródłowym.  Klucze osadzone można łatwo odczytywać z zestawu przy użyciu [Ildasm.exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md) lub otwierając zestaw w edytorze tekstu, takim jak Notatnik.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Model kryptografii](cryptography-model.md)
 - [Usługi kryptograficzne](cryptographic-services.md)

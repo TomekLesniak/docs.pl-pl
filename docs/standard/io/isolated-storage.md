@@ -2,7 +2,6 @@
 title: Izolowany magazyn
 description: Poznaj izolowany magazyn, który jest mechanizmem magazynu danych, który zapewnia izolację & bezpieczeństwa przez definiowanie standardowych metod kojarzenia kodu z zapisanymi danymi.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - data storage using isolated storage
 - stores
@@ -19,12 +18,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 3699edda6cce24adb8e932d6e8b8a0a5bb977142
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 1b123b231a7b6856ca527d00b5927c1a8d0e08b6
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282021"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819139"
 ---
 # <a name="isolated-storage"></a>Wydzielona pamięć masowa
 

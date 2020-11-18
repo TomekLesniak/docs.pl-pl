@@ -1,26 +1,25 @@
 ---
 title: Weryfikacja XDR przy użyciu klasy XmlSchemaCollection
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
-ms.openlocfilehash: c1383dbb5419eadbfb7c07f288ee46b1ca11cf5c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9edde2fc0da97b570162775a33c95d472cda974b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710001"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819282"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Weryfikacja XDR przy użyciu klasy XmlSchemaCollection
 
-Jeśli sprawdzany schemat danych XML (XDR) jest przechowywany w elemencie **XmlSchemaCollection**, jest on SKOJARZONY z identyfikatorem URI przestrzeni nazw określonym podczas dodawania schematu do kolekcji. **XmlValidatingReader** MAPUJE identyfikator URI przestrzeni nazw w dokumencie XML do schematu, który odnosi się do tego identyfikatora URI w kolekcji.
+W przypadku, gdy sprawdzany jest XML-Data schemat z ograniczeniami (XDR) jest przechowywany w elemencie **XmlSchemaCollection**, jest on SKOJARZONY z identyfikatorem URI przestrzeni nazw określonym podczas dodawania schematu do kolekcji. **XmlValidatingReader** MAPUJE identyfikator URI przestrzeni nazw w dokumencie XML do schematu, który odnosi się do tego identyfikatora URI w kolekcji.
 
 > [!IMPORTANT]
-> <xref:System.Xml.Schema.XmlSchemaCollection> Klasa jest obecnie przestarzała i została zastąpiona <xref:System.Xml.Schema.XmlSchemaSet> klasą. Aby uzyskać więcej informacji na <xref:System.Xml.Schema.XmlSchemaSet> temat klasy, zobacz zestaw [XmlSchemaSet dla kompilacji schematu](xmlschemaset-for-schema-compilation.md).
+> <xref:System.Xml.Schema.XmlSchemaCollection>Klasa jest obecnie przestarzała i została zastąpiona <xref:System.Xml.Schema.XmlSchemaSet> klasą. Aby uzyskać więcej informacji na temat <xref:System.Xml.Schema.XmlSchemaSet> klasy, zobacz zestaw [XmlSchemaSet dla kompilacji schematu](xmlschemaset-for-schema-compilation.md).
 
-Na przykład, jeśli element główny dokumentu XML to `<bookstore xmlns="urn:newbooks-schema">`, gdy schemat zostanie dodany do obiektu **XmlSchemaCollection** , odwołuje się do tej samej przestrzeni nazw, co następuje:
+Na przykład, jeśli element główny dokumentu XML to `<bookstore xmlns="urn:newbooks-schema">` , gdy schemat zostanie dodany do obiektu **XmlSchemaCollection** , odwołuje się do tej samej przestrzeni nazw, co następuje:
 
 ```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
@@ -70,7 +69,7 @@ Namespace ValidationSample
         End Sub
 
         Public Shared Sub ValidationHandler(sender As Object, args As ValidationEventArgs)
-            Console.WriteLine("***Validation error")
+            Console.WriteLine("**_Validation error")
             Console.WriteLine($"Severity:{args.Severity}")
             Console.WriteLine($"Message:{args.Message}")
         End Sub
@@ -123,7 +122,7 @@ namespace ValidationSample
 
         public static void ValidationHandler(object sender, ValidationEventArgs args)
         {
-            Console.WriteLine("***Validation error");
+            Console.WriteLine("_*_Validation error");
             Console.WriteLine($"\tSeverity:{args.Severity}");
             Console.WriteLine($"\tMessage:{args.Message}");
         }
@@ -131,7 +130,7 @@ namespace ValidationSample
 }
 ```
 
-Poniżej przedstawiono zawartość pliku wejściowego, np *. XML*, do zweryfikowania:
+Poniżej przedstawiono zawartość pliku wejściowego, _HeadCount.xml *, aby sprawdzić poprawność:
 
 ```xml
 <!--Load HeadCount.xdr in SchemaCollection for Validation-->
@@ -154,7 +153,7 @@ Poniżej przedstawiono zawartość pliku schematu XDR, np *. XDR*, do zweryfikow
 </Schema>
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Xml.XmlValidatingReader.ValidationType%2A>
 - [Kompilacja schematu a klasa XmlSchemaCollection](xmlschemacollection-schema-compilation.md)

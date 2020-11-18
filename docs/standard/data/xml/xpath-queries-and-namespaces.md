@@ -2,17 +2,16 @@
 title: Zapytania XPath i przestrzenie nazw
 description: Dowiedz się więcej na temat zapytań XPath & przestrzenie nazw. Zapytania XPath znane z przestrzeni nazw w dokumencie XML & mogą używać prefiksów przestrzeni nazw do kwalifikowania nazw atrybutów &.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: ef6402be-2f8e-4be2-8d3e-a80891cdef8b
-ms.openlocfilehash: e8533d372a747432201dfbc4d879ecd3fbceaf8e
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: a97ff5afef23c361b1f675d2f07f43b3bc5df299
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769252"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818391"
 ---
 # <a name="xpath-queries-and-namespaces"></a>Zapytania XPath i przestrzenie nazw
 Zapytania XPath są świadome przestrzeni nazw w dokumencie XML i mogą używać prefiksów przestrzeni nazw do kwalifikowania nazw elementów i atrybutów. Kwalifikujące się nazwy elementów i atrybutów z prefiksem przestrzeni nazw ograniczają węzły zwracane przez zapytanie XPath tylko do tych węzłów, które należą do określonej przestrzeni nazw.  
@@ -77,7 +76,7 @@ query.SetContext(manager);
 XPathNodeIterator nodes = navigator.Select(query);  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>

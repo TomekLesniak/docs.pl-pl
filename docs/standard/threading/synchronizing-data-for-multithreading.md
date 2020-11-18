@@ -2,18 +2,17 @@
 title: Synchronizowanie danych na potrzeby wielowątkowości
 description: Dowiedz się, jak synchronizować dane dla wielowątkowości w programie .NET. Wybierz strategie, takie jak regiony kodu zsynchronizowanego, synchronizacja ręczna lub synchronizowane konteksty.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - synchronization, threads
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 63ee85f3d8bab865ce34566ec381d23676b27991
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 188090a968b49bd77279d35dc41f00e808299938
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188591"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819646"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizowanie danych na potrzeby wielowątkowości
 
@@ -68,7 +67,7 @@ Platforma .NET udostępnia kilka strategii do synchronizowania dostępu do wyst�
 
 Tylko w aplikacjach .NET Framework i Xamarin, można użyć <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> na dowolnym, <xref:System.ContextBoundObject> Aby zsynchronizować wszystkie metody wystąpień i pola. Wszystkie obiekty w tej samej domenie kontekstu mają tę samą blokadę. Wiele wątków może uzyskać dostęp do metod i pól, ale tylko jeden wątek jest dozwolony w dowolnym momencie.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>
 - [Wątki i wątkowość](threads-and-threading.md)

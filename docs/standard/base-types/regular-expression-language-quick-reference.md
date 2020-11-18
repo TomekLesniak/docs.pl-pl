@@ -2,7 +2,6 @@
 title: Język wyrażeń regularnych — podręczny wykaz
 description: W tym przewodniku szybkim dowiesz się, jak używać wzorców wyrażeń regularnych w celu dopasowania tekstu wejściowego. Wzorzec zawiera jeden lub więcej literałów znakowych, operatorów lub konstrukcji.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 f1_keywords:
 - VS.RegularExpressionBuilder
 helpviewer_keywords:
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: 986e7417d85655acc66a5c308aa79477c96fd629
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 1b261211997837e8664ea60e9210a7f0517f7a9f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889312"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818807"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Język wyrażeń regularnych — podręczny wykaz
 
@@ -47,10 +46,10 @@ Znak ukośnika odwrotnego ( \\ ) w wyrażeniu regularnym wskazuje, że znak, kt�
 |`\f`|Dopasowuje znak wysuwu strony, \u000C.|`[\f]{2,}`|`"\f\f\f"` w elemencie `"\f\f\f"`|
 |`\n`|Dopasowuje znak nowego wiersza, \u000A.|`\r\n(\w+)`|`"\r\nThese"` w elemencie `"\r\nThese are\ntwo lines."`|
 |`\e`|Dopasowuje znak escape, \u001B.|`\e`|`"\x001B"` w elemencie `"\x001B"`|
-|`\`*nnn*|Używa reprezentacji ósemkowej do określenia znaku ( *nnn* składa się z dwóch lub trzech cyfr).|`\w\040\w`|`"a b"`, `"c d"` w `"a bc d"`|
-|`\x` *nn*|Używa reprezentacji szesnastkowej w celu określenia znaku ( *NN* składa się z dokładnie dwóch cyfr).|`\w\x20\w`|`"a b"`, `"c d"` w `"a bc d"`|
-|`\c`*X*<br /><br /> `\c` *x*|Dopasowuje znak kontrolny ASCII, który jest określony przez *x* lub *x* , gdzie *x* lub *x* jest literą znaku kontrolnego.|`\cC`|`"\x0003"` w `"\x0003"` (Ctrl-C)|
-|`\u`*nnnn*|Dopasowuje znak Unicode przy użyciu reprezentacji szesnastkowej (dokładnie cztery cyfry, reprezentowane przez *nnnn* ).|`\w\u0020\w`|`"a b"`, `"c d"` w `"a bc d"`|
+|`\`*nnn*|Używa reprezentacji ósemkowej do określenia znaku (*nnn* składa się z dwóch lub trzech cyfr).|`\w\040\w`|`"a b"`, `"c d"` w `"a bc d"`|
+|`\x` *nn*|Używa reprezentacji szesnastkowej w celu określenia znaku (*NN* składa się z dokładnie dwóch cyfr).|`\w\x20\w`|`"a b"`, `"c d"` w `"a bc d"`|
+|`\c`*X*<br /><br /> `\c` *x*|Dopasowuje znak kontrolny ASCII, który jest określony przez *x* lub *x*, gdzie *x* lub *x* jest literą znaku kontrolnego.|`\cC`|`"\x0003"` w `"\x0003"` (Ctrl-C)|
+|`\u`*nnnn*|Dopasowuje znak Unicode przy użyciu reprezentacji szesnastkowej (dokładnie cztery cyfry, reprezentowane przez *nnnn*).|`\w\u0020\w`|`"a b"`, `"c d"` w `"a bc d"`|
 |`\`|Kiedy następuje po nim znak, który nie jest rozpoznawany jako znak ucieczki w tej lub innej tabeli zawartej w tym temacie, dopasowuje ten znak. Na przykład `\*` jest taka sama jak `\x2A` , i jest taka `\.` sama jak `\x2E` . Dzięki temu aparat wyrażeń regularnych może odróżnić elementy języka (takie jak \* lub?) i literały znakowe (reprezentowane przez `\*` lub `\?` ).|`\d+[\+-x\*]\d+`|`"2+2"` i `"3*9"` w elemencie `"(2+2) * 3*9"`|
 
 ## <a name="character-classes"></a>Klasy znaku
@@ -59,12 +58,12 @@ Klasa znaków dopasowuje dowolny zestaw znaków. Klasy znaków obejmują element
 
 |Klasa znaków|Opis|Wzorce|Jest zgodny z|
 |---------------------|-----------------|-------------|-------------|
-|`[`*character_group*`]`|Dopasowuje dowolny pojedynczy znak w *character_group* . Domyślnie w dopasowaniu jest uwzględniana wielkość liter.|`[ae]`|`"a"` w elemencie `"gray"`<br /><br /> `"a"`, `"e"` w `"lane"`|
-|`[^`*character_group*`]`|Negacja: dopasowuje dowolny pojedynczy znak, który nie znajduje się w *character_group* . Domyślnie znaki w *character_group* są rozróżniane wielkości liter.|`[^aei]`|`"r"`, `"g"` , `"n"` w `"reign"`|
-|`[`*najpierw* `-` *ostatnie*`]`|Zakres znaków: dopasowuje dowolny pojedynczy znak z zakresu od *pierwszego* do *ostatniego* .|`[A-Z]`|`"A"`, `"B"` w `"AB123"`|
+|`[`*character_group*`]`|Dopasowuje dowolny pojedynczy znak w *character_group*. Domyślnie w dopasowaniu jest uwzględniana wielkość liter.|`[ae]`|`"a"` w elemencie `"gray"`<br /><br /> `"a"`, `"e"` w `"lane"`|
+|`[^`*character_group*`]`|Negacja: dopasowuje dowolny pojedynczy znak, który nie znajduje się w *character_group*. Domyślnie znaki w *character_group* są rozróżniane wielkości liter.|`[^aei]`|`"r"`, `"g"` , `"n"` w `"reign"`|
+|`[`*najpierw* `-` *ostatnie*`]`|Zakres znaków: dopasowuje dowolny pojedynczy znak z zakresu od *pierwszego* do *ostatniego*.|`[A-Z]`|`"A"`, `"B"` w `"AB123"`|
 |`.`|Symbol wieloznaczny: Dopasowuje każdy pojedynczy znak, oprócz znaku \n.<br /><br /> Aby dopasować znak kropki literału (. lub `\u002E` ), musisz poprzedzać znak ucieczki ( `\.` ).|`a.e`|`"ave"` w elemencie `"nave"`<br /><br /> `"ate"` w elemencie `"water"`|
-|`\p{`*Nazwa*`}`|Dopasowuje dowolny pojedynczy znak z ogólnej kategorii Unicode lub nazwanego bloku określonego przez *nazwę* .|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|`"C"`, `"L"` w `"City Lights"`<br /><br /> `"Д"`, `"Ж"` w `"ДЖem"`|
-|`\P{`*Nazwa*`}`|Dopasowuje dowolny pojedynczy znak, który nie należy do ogólnej kategorii Unicode lub bloku o nazwie określonej przez *nazwę* .|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|`"i"`, `"t"` , `"y"` w `"City"`<br /><br /> `"e"`, `"m"` w `"ДЖem"`|
+|`\p{`*Nazwa*`}`|Dopasowuje dowolny pojedynczy znak z ogólnej kategorii Unicode lub nazwanego bloku określonego przez *nazwę*.|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|`"C"`, `"L"` w `"City Lights"`<br /><br /> `"Д"`, `"Ж"` w `"ДЖem"`|
+|`\P{`*Nazwa*`}`|Dopasowuje dowolny pojedynczy znak, który nie należy do ogólnej kategorii Unicode lub bloku o nazwie określonej przez *nazwę*.|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|`"i"`, `"t"` , `"y"` w `"City"`<br /><br /> `"e"`, `"m"` w `"ДЖem"`|
 |`\w`|Dopasowuje dowolny znak słowa.|`\w`|`"I"`, `"D"` ,,, `"A"` `"1"` `"3"` w `"ID A1.3"`|
 |`\W`|Dopasowuje dowolny znak niebędący znakiem słowa.|`\W`|`" "`, `"."` w `"ID A1.3"`|
 |`\s`|Dopasowuje dowolny znak odstępu.|`\w\s`|`"D "` w elemencie `"ID A1.3"`|
@@ -97,7 +96,7 @@ Konstrukcje grupujące wyznaczają podwyrażenia wyrażeń regularnych i często
 |`(?<`*Nazwa* `>` *Podwyrażenie*`)`<br /> lub <br />`(?'`*Nazwa* `'` *Podwyrażenie*`)`|Przechwytuje dopasowane podwyrażenie do nazwanej grupy.|`(?<double>\w)\k<double>`|`"ee"` w elemencie `"deep"`|
 |`(?<`*Name1* `-` *NAME2* `>` *Podwyrażenie*`)` <br /> lub <br /> `(?'`*Name1* `-` *NAME2* `'` *Podwyrażenie*`)`|Określa definicję grupy równoważącej. Aby uzyskać więcej informacji, zobacz sekcję "Definicja grupy równoważenia" w temacie [grupowanie konstrukcji](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` w elemencie `"3+2^((1-3)*(3-1))"`|
 |`(?:`*Podwyrażenie*`)`|Definiuje nieprzechwytywaną grupę.|`Write(?:Line)?`|`"WriteLine"` w elemencie `"Console.WriteLine()"`<br /><br /> `"Write"` w elemencie `"Console.Write(value)"`|
-|`(?imnsx-imnsx:`*Podwyrażenie*`)`|Stosuje lub wyłącza określone opcje w ramach *podwyrażenia* . Aby uzyskać więcej informacji, zobacz [Opcje wyrażenia regularnego](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` w `"A12xl A12XL a12xl"`|
+|`(?imnsx-imnsx:`*Podwyrażenie*`)`|Stosuje lub wyłącza określone opcje w ramach *podwyrażenia*. Aby uzyskać więcej informacji, zobacz [Opcje wyrażenia regularnego](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` w `"A12xl A12XL a12xl"`|
 |`(?=`*Podwyrażenie*`)`|Pozytywna asercja wyprzedzająca o zerowej szerokości.|`\w+(?=\.)`|`"is"`, `"ran"` i `"out"` w `"He is. The dog ran. The sun is out."`|
 |`(?!`*Podwyrażenie*`)`|Negatywna asercja wyprzedzająca o zerowej szerokości.|`\b(?!un)\w+\b`|`"sure"`, `"used"` w `"unsure sure unity used"`|
 |`(?<=`*Podwyrażenie*`)`|Pozytywna asercja wsteczna o zerowej szerokości.|`(?<=19)\d{2}\b`|`"99"`, `"50"` , `"05"` w `"1851 1999 1950 1905 2003"`|
@@ -140,7 +139,7 @@ Konstrukcje zmiany modyfikują wyrażenie regularne, aby umożliwić dopasowanie
 |---------------------------|-----------------|-------------|-------------|
 |<code>&#124;</code>|Dopasowuje dowolny jeden element oddzielony znakiem kreski pionowej ( <code>&#124;</code> ).|<code>th(e&#124;is&#124;at)</code>|`"the"`, `"this"` w `"this is the day."`|
 |`(?(`*wyrażenie* `)` *tak* <code>&#124;</code> *nie*`)`|Dopasowuje *wartość Yes (tak* ), Jeśli wzorzec wyrażenia regularnego wyznaczono przez *wyrażenie* pasuje; w przeciwnym razie dopasowuje *opcjonalną* część. *wyrażenie* jest interpretowane jako potwierdzenie o zerowej szerokości.|<code>(?(A)A\d{2}\b&#124;\b\d{3}\b)</code>|`"A10"`, `"910"` w `"A10 C103 910"`|
-|`(?(`*Nazwa* `)` *tak* <code>&#124;</code> *nie*`)`|Dopasowuje *wartość tak* , jeśli *Nazwa* , nazwana lub numerowana grupa przechwytywania, ma dopasowanie; w przeciwnym razie dopasowuje opcjonalny *Nr* .|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|`"Dogs.jpg "`, `"\"Yiska playing.jpg\""` w `"Dogs.jpg \"Yiska playing.jpg\""`|
+|`(?(`*Nazwa* `)` *tak* <code>&#124;</code> *nie*`)`|Dopasowuje *wartość tak* , jeśli *Nazwa*, nazwana lub numerowana grupa przechwytywania, ma dopasowanie; w przeciwnym razie dopasowuje opcjonalny *Nr*.|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|`"Dogs.jpg "`, `"\"Yiska playing.jpg\""` w `"Dogs.jpg \"Yiska playing.jpg\""`|
 
 ## <a name="substitutions"></a>Zastępstwa
 
@@ -149,7 +148,7 @@ Podstawienia są elementami języka wyrażeń regularnych, które są obsługiwa
 |Znak|Opis|Wzorce|Wzorzec zamieniania|Ciąg wejściowy|Ciąg wynikowy|
 |---------------|-----------------|-------------|-------------------------|------------------|-------------------|
 |`$`*Liczba*|Zastępuje podciąg dopasowany przez *numer* grupy.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
-|`${`*Nazwa*`}`|Podstawia podciąg dopasowany przez *nazwę grupy nazwanej* .|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
+|`${`*Nazwa*`}`|Podstawia podciąg dopasowany przez *nazwę grupy nazwanej*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
 |`$$`|Podstawia literał „$”.|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|
 |`$&`|Podstawia kopię całego dopasowania.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|
 |``$` ``|Podstawia cały tekst ciągu wejściowego przed dopasowaniem.|`B+`|``$` ``|`"AABBCC"`|`"AAAACC"`|

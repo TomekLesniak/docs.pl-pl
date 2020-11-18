@@ -3,13 +3,12 @@ title: Analizator interfejsów API platformy .NET
 description: Dowiedz się, jak Analizator interfejsu API platformy .NET może pomóc w wykrywaniu przestarzałych interfejsów API i problemów ze zgodnością platformy.
 author: oliag
 ms.date: 02/20/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: a689ae347efbc8c2dd933b2f6920ac6cc06cda7d
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 47ef2368692aee56ebd3db7803cbde7368d38049
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756198"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819607"
 ---
 # <a name="net-api-analyzer"></a>Analizator interfejsów API platformy .NET
 
@@ -40,7 +39,7 @@ Analizator interfejsu API korzysta z kodów błędów specyficznych dla interfej
 
 1. Otwórz program Visual Studio.
 2. Otwórz projekt, w którym chcesz uruchomić Analizator.
-3. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zarządzaj pakietami NuGet**. (Ta opcja jest również dostępna w menu **projekt** ).
+3. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zarządzaj pakietami NuGet**. (Ta opcja jest również dostępna w menu **projekt** ).
 4. Na karcie Menedżer pakietów NuGet:
    1. Wybierz pozycję "nuget.org" jako źródło pakietu.
    2. Przejdź do karty **przeglądanie** .
@@ -62,18 +61,18 @@ Okno **Lista błędów** zawiera ostrzeżenia o UNIKATOWYm identyfikatorze na pr
 
 Klikając identyfikator, przejdź do strony sieci Web ze szczegółowymi informacjami o tym, dlaczego interfejs API był przestarzały i sugestie dotyczące alternatywnych interfejsów API, których można użyć.
 
-Wszystkie ostrzeżenia można pominąć przez kliknięcie prawym przyciskiem myszy wyróżnionego elementu członkowskiego i wybranie polecenia **Pomiń \<diagnostic ID> **. Istnieją dwa sposoby pomijania ostrzeżeń:
+Wszystkie ostrzeżenia można pominąć przez kliknięcie prawym przyciskiem myszy wyróżnionego elementu członkowskiego i wybranie polecenia **Pomiń \<diagnostic ID>**. Istnieją dwa sposoby pomijania ostrzeżeń:
 
 - [lokalnie (w źródle)](#suppress-warnings-locally)
 - [globalnie (w pliku pominięć)](#suppress-warnings-globally) — zalecane
 
 ### <a name="suppress-warnings-locally"></a>Pomijaj ostrzeżenia lokalnie
 
-Aby pominąć ostrzeżenia lokalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **szybkie akcje i refaktoryzacje**  >  ** \<diagnostic ID> Pomijaj *Identyfikator diagnostyczny***  >  **w źródle**. Dyrektywa preprocesora ostrzegawczego [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) jest dodawana do kodu źródłowego w zdefiniowanym zakresie: ![ zrzut ekranu przedstawiający kod z funkcją #pragma warning Disable.](media/api-analyzer/suppress-in-source.jpg)
+Aby pominąć ostrzeżenia lokalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **szybkie akcje i refaktoryzacje**  >  **\<diagnostic ID> Pomijaj *Identyfikator diagnostyczny***  >  **w źródle**. Dyrektywa preprocesora ostrzegawczego [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) jest dodawana do kodu źródłowego w zdefiniowanym zakresie: ![ zrzut ekranu przedstawiający kod z funkcją #pragma warning Disable.](media/api-analyzer/suppress-in-source.jpg)
 
 ### <a name="suppress-warnings-globally"></a>Pomijaj ostrzeżenia globalnie
 
-Aby pominąć ostrzeżenia globalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **szybkie akcje i refaktoryzacje**  >  ** \<diagnostic ID> Pomiń *Identyfikator diagnostyczny***  >  **w pliku pomijania**.
+Aby pominąć ostrzeżenia globalnie, kliknij prawym przyciskiem myszy element członkowski, dla którego chcesz pominąć ostrzeżenia, a następnie wybierz polecenie **szybkie akcje i refaktoryzacje**  >  **\<diagnostic ID> Pomiń *Identyfikator diagnostyczny***  >  **w pliku pomijania**.
 
 ![Zrzut ekranu przedstawiający menu dostępne po kliknięciu prawym przyciskiem myszy z opcjami, które umożliwiają pominięcie ostrzeżenia w programie Visual Studio.](media/api-analyzer/suppress-in-sup-file.jpg)
 
@@ -122,13 +121,13 @@ Obecnie Analizator obsługuje następujące przypadki:
 
 Wszystkie te diagnostyki są dostępne nie tylko w środowisku IDE, ale również w wierszu polecenia w ramach konstruowania projektu, który obejmuje serwer CI.
 
-## <a name="configuration"></a>Konfigurowanie
+## <a name="configuration"></a>Konfiguracja
 
-Użytkownik decyduje o sposobie traktowania diagnostyki: w postaci ostrzeżeń, błędów, sugestii lub wyłączania. Na przykład jako architekt można zdecydować, że problemy ze zgodnością powinny być traktowane jako błędy, wywołania niektórych przestarzałych interfejsów API generują ostrzeżenia, podczas gdy inne tylko generują sugestie. Można ją skonfigurować osobno według identyfikatora diagnostyki i projektu. W tym celu w **Eksplorator rozwiązań**przejdź do węzła **zależności** w ramach projektu. Rozwiń węzeł **Dependencies**  >  **analizatory**zależności węzłów  >  **Microsoft. dotnet. analizatory. zgodność**. Kliknij prawym przyciskiem myszy identyfikator diagnostyczny, wybierz pozycję **Ustaw ważność zestawu reguł**, a następnie wybierz odpowiednią opcję.
+Użytkownik decyduje o sposobie traktowania diagnostyki: w postaci ostrzeżeń, błędów, sugestii lub wyłączania. Na przykład jako architekt można zdecydować, że problemy ze zgodnością powinny być traktowane jako błędy, wywołania niektórych przestarzałych interfejsów API generują ostrzeżenia, podczas gdy inne tylko generują sugestie. Można ją skonfigurować osobno według identyfikatora diagnostyki i projektu. W tym celu w **Eksplorator rozwiązań** przejdź do węzła **zależności** w ramach projektu. Rozwiń węzeł **Dependencies**  >  **analizatory** zależności węzłów  >  **Microsoft. dotnet. analizatory. zgodność**. Kliknij prawym przyciskiem myszy identyfikator diagnostyczny, wybierz pozycję **Ustaw ważność zestawu reguł**, a następnie wybierz odpowiednią opcję.
 
 ![Zrzut ekranu przedstawiający Eksplorator rozwiązań wyświetlania diagnostyki i wyskakujących okienek z ważnością zestawu reguł.](media/api-analyzer/disable-notifications.jpg)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - Wprowadzenie do wpisu w blogu [analizatora interfejsu API](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) .
 - Wideo z pokazem [interfejsu API Analyzer](https://youtu.be/eeBEahYXGd0) w serwisie YouTube.

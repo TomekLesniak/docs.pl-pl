@@ -2,24 +2,23 @@
 title: BlockingCollection — Przegląd
 description: Przeczytaj informacje na temat BlockingCollection <T> , klasy kolekcji z bezpieczną wątkiem w programie .NET. Ta klasa oferuje funkcje, takie jak współbieżne Dodawanie & wykonywania elementów z wielu wątków.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - BlockingCollection, overview
 ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
-ms.openlocfilehash: fc11f6c28a551e56d3bac4c5be9c08a396c0c6b1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0378d038d6081c7ad04fc233ac151ab2bb223fa5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600805"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818665"
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection — Przegląd
-<xref:System.Collections.Concurrent.BlockingCollection%601>to Klasa kolekcji z bezpieczną wątkiem, która udostępnia następujące funkcje:  
+<xref:System.Collections.Concurrent.BlockingCollection%601> to Klasa kolekcji z bezpieczną wątkiem, która udostępnia następujące funkcje:  
   
-- Implementacja wzorca producent-odbiorca.  
+- Implementacja wzorca Producer-Consumer.  
   
 - Jednoczesne Dodawanie i pobieranie elementów z wielu wątków.  
   
@@ -29,7 +28,7 @@ ms.locfileid: "84600805"
   
 - Wstawianie i usuwanie operacji "try", które nie blokują ani nie blokują w określonym przedziale czasu.  
   
-- Hermetyzuje wszystkie typy kolekcji implementujące<xref:System.Collections.Concurrent.IProducerConsumerCollection%601>  
+- Hermetyzuje wszystkie typy kolekcji implementujące <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>  
   
 - Anulowanie z tokenami anulowania.  
   
@@ -40,7 +39,7 @@ ms.locfileid: "84600805"
     2. Wyliczenie, które usuwa elementy po ich wyliczeniu.  
   
 ## <a name="bounding-and-blocking-support"></a>Obsługa ograniczenia i blokowanie  
- <xref:System.Collections.Concurrent.BlockingCollection%601>obsługuje ograniczenia i blokowanie. Ograniczenia — można ustawić maksymalną pojemność kolekcji. Ograniczenia są istotne w niektórych scenariuszach, ponieważ umożliwiają kontrolowanie maksymalnego rozmiaru kolekcji w pamięci i uniemożliwia przechodzenie przez nie wątki do zużywanych wątków.  
+ <xref:System.Collections.Concurrent.BlockingCollection%601> obsługuje ograniczenia i blokowanie. Ograniczenia — można ustawić maksymalną pojemność kolekcji. Ograniczenia są istotne w niektórych scenariuszach, ponieważ umożliwiają kontrolowanie maksymalnego rozmiaru kolekcji w pamięci i uniemożliwia przechodzenie przez nie wątki do zużywanych wątków.  
   
  Wiele wątków lub zadań może jednocześnie dodawać elementy do kolekcji, a jeśli kolekcja osiągnie swoją określoną maksymalną pojemność, wątki wytwarzające będą blokować do momentu usunięcia elementu. Wielu odbiorców może usuwać elementy współbieżnie, a jeśli kolekcja stanie się pusta, zużywające wątki będą blokować do momentu dodania elementu do producenta. Wątek produkcji może wywoływać <xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A> , aby wskazać, że nie zostaną dodane żadne dodatkowe elementy. Odbiorcy monitorują <xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A> Właściwość, aby wiedzieć, kiedy kolekcja jest pusta i nie zostaną dodane żadne elementy. W poniższym przykładzie przedstawiono prostą BlockingCollection o ograniczonej pojemności 100. Zadanie producenta dodaje elementy do kolekcji, o ile warunek zewnętrzny ma wartość true, a następnie wywołuje <xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A> . Zadanie odbiorcy Pobiera elementy do momentu, gdy <xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A> Właściwość ma wartość true.  
   
@@ -74,12 +73,12 @@ BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag
  Aby uzyskać więcej informacji, zobacz [jak: Dodawanie funkcji ograniczania i blokowania do kolekcji](how-to-add-bounding-and-blocking.md).  
   
 ## <a name="ienumerable-support"></a>Obsługa interfejsu IEnumerable  
- <xref:System.Collections.Concurrent.BlockingCollection%601>zapewnia <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> metodę, która umożliwia użytkownikom używanie `foreach` ( `For Each` w Visual Basic) do usuwania elementów do momentu ukończenia kolekcji, co oznacza, że jest pusta i nie zostaną dodane żadne dodatkowe elementy. Aby uzyskać więcej informacji, zobacz [How to: use foreach to Remove Items in BlockingCollection](how-to-use-foreach-to-remove.md).  
+ <xref:System.Collections.Concurrent.BlockingCollection%601> zapewnia <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> metodę, która umożliwia użytkownikom używanie `foreach` ( `For Each` w Visual Basic) do usuwania elementów do momentu ukończenia kolekcji, co oznacza, że jest pusta i nie zostaną dodane żadne dodatkowe elementy. Aby uzyskać więcej informacji, zobacz [How to: use foreach to Remove Items in BlockingCollection](how-to-use-foreach-to-remove.md).  
   
 ## <a name="using-many-blockingcollections-as-one"></a>Używanie wielu BlockingCollections jako jednej  
  W przypadku scenariuszy, w których odbiorca musi przeszukiwać elementy z wielu kolekcji jednocześnie, można tworzyć tablice <xref:System.Collections.Concurrent.BlockingCollection%601> i używać metod statycznych, takich jak <xref:System.Collections.Concurrent.BlockingCollection%601.TakeFromAny%2A> i <xref:System.Collections.Concurrent.BlockingCollection%601.AddToAny%2A> , które będą dodawać lub przyjmować dowolne kolekcje w tablicy. Jeśli jedna kolekcja blokuje, Metoda natychmiast podejmie próbę, aż znajdzie ją, która może wykonać operację. Aby uzyskać więcej informacji, zobacz [How to: use Arrays of blocked Collections w potoku](how-to-use-arrays-of-blockingcollections.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekcje i struktury danych](../index.md)

@@ -2,18 +2,17 @@
 title: Wątki i wątkowość
 description: Informacje o wątkach, takich jak procesy & wątki, kiedy używać wielu wątków, &, jak używać wielowątkowości, aby zwiększyć czas odpowiedzi lub przepływność na platformie .NET.
 ms.date: 11/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - multiple threads
 - threading [.NET]
 - threading [.NET], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-ms.openlocfilehash: f7af6e1e73016e67c097b4fdbfb5f5d2d84e00d3
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 20550b597e27c75f00d16528871007988dd6b885
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188136"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819542"
 ---
 # <a name="threads-and-threading"></a>Wątki i wątkowość
 
@@ -24,7 +23,7 @@ Wielowątkowość pozwala zwiększyć czas odpowiedzi aplikacji i, jeśli aplika
 *Proces* to program wykonujący. System operacyjny używa procesów do rozdzielania wykonywanych aplikacji. *Wątek* jest jednostką podstawową, do której system operacyjny przydziela czas procesora. Każdy wątek ma [priorytet planowania](scheduling-threads.md) i utrzymuje zestaw struktur, których system używa do zapisywania kontekstu wątku, gdy wykonywanie wątku jest wstrzymane. Kontekst wątku zawiera wszystkie informacje niezbędne do bezproblemowego wznowienia wykonywania wątku, w tym zestaw rejestrów i stosów procesora CPU. W kontekście procesu można uruchomić wiele wątków. Wszystkie wątki procesu współdzielą swoją wirtualną przestrzeń adresową. Wątek może wykonać dowolną część kodu programu, w tym części, które są aktualnie wykonywane przez inny wątek.
 
 > [!NOTE]
-> .NET Framework zapewnia sposób izolowania aplikacji w ramach procesu przy użyciu *domen aplikacji* . (Domeny aplikacji nie są dostępne na platformie .NET Core). Aby uzyskać więcej informacji, zobacz sekcję [domeny aplikacji i wątki](../../framework/app-domains/application-domains.md#application-domains-and-threads) w artykule [domeny aplikacji](../../framework/app-domains/application-domains.md) .
+> .NET Framework zapewnia sposób izolowania aplikacji w ramach procesu przy użyciu *domen aplikacji*. (Domeny aplikacji nie są dostępne na platformie .NET Core). Aby uzyskać więcej informacji, zobacz sekcję [domeny aplikacji i wątki](../../framework/app-domains/application-domains.md#application-domains-and-threads) w artykule [domeny aplikacji](../../framework/app-domains/application-domains.md) .
 
 Domyślnie program .NET jest uruchamiany z pojedynczym wątkiem, często nazywanym wątkiem *podstawowym* . Można jednak utworzyć dodatkowe wątki do wykonywania kodu równolegle lub współbieżnie przy użyciu wątku głównego. Te wątki są często nazywane wątkami *roboczymi* .
 
@@ -48,7 +47,7 @@ Wiele wątków może potrzebować dostępu do zasobu udostępnionego. Aby zachow
 
 Obsługa wyjątków w wątkach. Nieobsłużone wyjątki w wątkach zwykle przerywają proces. Aby uzyskać więcej informacji, zobacz [wyjątki w zarządzanych wątkach](exceptions-in-managed-threads.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wątkowość obiektów i funkcji](threading-objects-and-features.md)
 - [Zarządzane wątki z najlepszymi rozwiązaniami](managed-threading-best-practices.md)

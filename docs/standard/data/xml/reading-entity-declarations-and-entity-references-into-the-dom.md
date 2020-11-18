@@ -1,14 +1,13 @@
 ---
 title: Wczytywanie deklaracji jednostek i odwołań do jednostek do modelu DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 86dba977-5cc4-4567-964f-027ffabc47b2
-ms.openlocfilehash: 41d88de9ee988a29c54c6e2c6c437963b9f79cf8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 01a90ac467bec5576005c16355617c03b6d38389
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289879"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818716"
 ---
 # <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Wczytywanie deklaracji jednostek i odwołań do jednostek do modelu DOM
 Jednostka jest deklaracją, która określa nazwę, która ma być używana w kodzie XML zamiast zawartości lub znaczników. Istnieją dwie części do jednostek. Najpierw należy powiązać nazwę z zastępowaniem zawartości za pomocą deklaracji jednostki. Deklaracja jednostki jest tworzona przy użyciu `<!ENTITY name "value">` składni w definicji typu dokumentu (DTD) lub schematu XML. Po drugie, Nazwa zdefiniowana w deklaracji jednostki jest następnie używana w kodzie XML. Gdy jest używana w kodzie XML, jest nazywana odwołaniem do jednostki. Na przykład następująca deklaracja jednostki deklaruje jednostkę nazwy `publisher` skojarzonej z zawartością "Microsoft Press".  

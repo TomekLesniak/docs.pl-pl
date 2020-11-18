@@ -2,18 +2,17 @@
 title: Równoległe przetwarzanie, współbieżność i programowanie asynchroniczne w programie .NET
 description: Dowiedz się, jak zwiększyć wydajność i szybkość działania aplikacji dzięki możliwościom platformy .NET do przetwarzania równoległego i asynchronicznego programowania
 ms.date: 04/06/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - parallel processing [.NET]
 - concurrency [.NET]
 - asynchronous programming [.NET]
 ms.assetid: e573faa8-0212-44b1-a850-ce85dc54f47f
-ms.openlocfilehash: 2f65d7ec317a12c933eda41c5fd957d21c332b42
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7ac888ed877adf3652f5de243a046f3c5117dc61
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285875"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817500"
 ---
 # <a name="parallel-processing-concurrency-and-async-programming-in-net"></a>Równoległe przetwarzanie, współbieżność i programowanie asynchroniczne w programie .NET
 Platforma .NET oferuje kilka sposobów pisania kodu asynchronicznego, aby aplikacja mogła szybciej odpowiadać użytkownikowi i pisać kod równoległy, który używa wielu wątków wykonywania w celu zmaksymalizowania wydajności komputera użytkownika.  

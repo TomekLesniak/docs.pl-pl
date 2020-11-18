@@ -1,19 +1,18 @@
 ---
 title: 'Pamięć lokalna wątku: Powiązane z wątkiem pola statyczne i gniazda danych'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], local storage
 - threading [.NET], thread-relative static fields
 - local thread storage
 - TLS
 ms.assetid: c633a4dc-a790-4ed1-96b5-f72bd968b284
-ms.openlocfilehash: f80cc09d87116d3daff8047c1d1398c5e6104178
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: c9ea2939dcff321a1d4e24e7a97c056c016e5fdc
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188162"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819633"
 ---
 # <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Pamięć lokalna wątku: Powiązane z wątkiem pola statyczne i gniazda danych
 
@@ -57,7 +56,7 @@ Platforma .NET zapewnia dynamiczne miejsca danych, które są unikatowe dla komb
   
  Nazwane gniazda mogą być wygodne, ponieważ można pobrać miejsce, gdy jest ono potrzebne, przekazując jego nazwę do <xref:System.Threading.Thread.GetNamedDataSlot%2A> metody, zamiast utrzymywać odwołanie do nienazwanego gniazda. Jeśli jednak inny składnik używa tej samej nazwy do przechowywania względem wątku, a wątek wykonuje kod zarówno ze składnika, jak i drugiego składnika, te dwa składniki mogą uszkodzić dane. (W tym scenariuszu przyjęto założenie, że oba składniki są uruchomione w tej samej domenie aplikacji i nie są przeznaczone do udostępniania tych samych danych).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.ContextStaticAttribute>
 - <xref:System.Threading.Thread.GetNamedDataSlot%2A?displayProperty=nameWithType>

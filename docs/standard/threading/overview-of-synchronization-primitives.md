@@ -2,18 +2,17 @@
 title: Przegląd elementów podstawowych synchronizacji
 description: Informacje o elementach podstawowych synchronizacji wątków .NET służących do synchronizowania dostępu do współużytkowanego zasobu lub interakcji wątku kontroli
 ms.date: 10/01/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - synchronization, threads
 - threading [.NET],synchronizing threads
 - managed threading
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
-ms.openlocfilehash: d5ae0fe5813952742950582a4282cd1c6ab6a870
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 9dfaaa6050cc6e9a6b86f991aa6d2ce2a815959a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188981"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819659"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Przegląd elementów podstawowych synchronizacji
 
@@ -140,7 +139,7 @@ Aby uzyskać więcej informacji, zobacz <xref:System.Threading.Interlocked> Info
 
 Aby uzyskać więcej informacji, zobacz artykuł [metody SpinWait](spinwait.md) i <xref:System.Threading.SpinWait> Informacje o interfejsie API.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekcje bezpieczne wątkowo](../collections/thread-safe/index.md)
