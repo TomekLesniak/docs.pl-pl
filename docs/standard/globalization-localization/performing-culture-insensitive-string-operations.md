@@ -1,7 +1,6 @@
 ---
 title: Wykonywanie niezależnych od kultury operacji na ciągach
 ms.date: 08/22/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - case mappings
 - custom case mappings
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - culture, custom case mappings
 - culture-insensitive string operations, method overloads
 ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
-ms.openlocfilehash: 0f7e8dde395feb548e6808547a223a3fa8855561
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 868f36a1025f0b121a8765edf50bb42679736240
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063914"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829768"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Wykonywanie operacji na ciągach niewrażliwych na kulturę
 
@@ -41,7 +40,7 @@ Większość metod .NET, które wykonują operacje na ciągach zależnych od kul
  [Operacje na ciągach nieuwzględniających kultur](culture-insensitive-string-operations.md)  
  W tym artykule opisano, dlaczego należy pamiętać o kulturze podczas wykonywania operacji na ciągach i przedstawiono wskazówki dotyczące sytuacji, w których należy wykonać operacje zależne od kultury i kiedy wykonywać operacje niewrażliwe na kulturę.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Sortowanie tabel wag (dla platformy .NET w systemach Windows)](https://www.microsoft.com/download/details.aspx?id=10921)
 - [Domyślna tabela elementów sortowania Unicode (dla platformy .NET Core w systemie Linux i macOS)](https://www.unicode.org/Public/UCA/latest/allkeys.txt)

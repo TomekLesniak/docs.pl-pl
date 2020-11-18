@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Używanie składników obsługujących wzorzec asynchroniczny oparty na zdarzeniach'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-ms.openlocfilehash: 51394a49f12e8611ac6dba7eb93a6c9a9fae0cd0
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 94bd79bab1e7982ea39b5aa5872a6674033f9ccf
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888805"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830366"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Instrukcje: Używanie składników obsługujących wzorzec asynchroniczny oparty na zdarzeniach
 Wiele składników oferuje możliwość wykonywania pracy asynchronicznie. <xref:System.Media.SoundPlayer>Składniki i <xref:System.Windows.Forms.PictureBox> umożliwiają na przykład ładowanie dźwięków i obrazów "w tle", podczas gdy główny wątek nadal działa bez przeszkód.  

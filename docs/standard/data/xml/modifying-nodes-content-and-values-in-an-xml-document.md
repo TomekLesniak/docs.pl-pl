@@ -1,17 +1,16 @@
 ---
 title: Modyfikowanie węzłów, zawartości i wartości w dokumencie XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 761773e0-db72-4986-b9f5-a522213d8397
-ms.openlocfilehash: f544b7d8472285095af9a71b1c24f94f61f93bc6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 13fb18208831356e34301bc22715b68fda1f671f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288826"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830184"
 ---
 # <a name="modifying-nodes-content-and-values-in-an-xml-document"></a>Modyfikowanie węzłów, zawartości i wartości w dokumencie XML
-Istnieje wiele sposobów modyfikowania węzłów i zawartości w dokumencie. Dostępne możliwości:  
+Istnieje wiele sposobów modyfikowania węzłów i zawartości w dokumencie. Możesz:  
   
 - Zmień wartość węzłów za pomocą <xref:System.Xml.XmlNode.Value%2A> właściwości.  
   
@@ -33,7 +32,7 @@ Istnieje wiele sposobów modyfikowania węzłów i zawartości w dokumencie. Dos
 |ProcessingInstruction|Zawartość, z wyłączeniem celu.|  
 |Tekst|Zawartość tekstu.|  
 |XmlDeclaration|Zawartość deklaracji, z wyłączeniem `<?xml` `?>` znaczników i.|  
-|Białe znaki|Wartość odstępu. Można ustawić wartość jako jedną z czterech rozpoznanych białych znaków XML: Space, TAB, CR lub LF.|  
+|Odstępy|Wartość odstępu. Można ustawić wartość jako jedną z czterech rozpoznanych białych znaków XML: Space, TAB, CR lub LF.|  
 |SignificantWhitespace|Wartość znaczącego odstępu. Można ustawić wartość jako jedną z czterech rozpoznanych białych znaków XML: Space, TAB, CR lub LF.|  
   
  Każdy typ węzła niewymieniony w tabeli nie jest prawidłowym typem węzła, aby ustawić wartość. Ustawienie wartości na dowolnym innym typie węzła zgłasza <xref:System.InvalidOperationException> .  

@@ -1,7 +1,6 @@
 ---
 title: Globalizacja
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: 66ed197f102583553112083e3a21f89e33cd3e3f
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 055bdfa82ea0e1721a6125ba14d7b6340dc254b9
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064174"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829872"
 ---
 # <a name="globalization"></a>Globalizacja
 
@@ -338,7 +337,7 @@ Ogólnie rzecz biorąc nie należy wprowadzać żadnych założeń dotyczących 
 
 - W systemach Windows użytkownik może dostosować ustawienia specyficzne dla kultury przy użyciu aplikacji **region i język** w panelu sterowania. Podczas tworzenia wystąpienia <xref:System.Globalization.CultureInfo> obiektu można określić, czy ma on odzwierciedlać te dostosowania użytkownika przez wywołanie <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> konstruktora. Zazwyczaj w przypadku aplikacji użytkownika końcowego należy przestrzegać preferencji użytkownika, tak aby użytkownik miał dane w oczekiwanym formacie.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Globalizacja i lokalizacja](index.md)
 - [Najlepsze rozwiązania dotyczące używania ciągów](../base-types/best-practices-strings.md)

@@ -2,7 +2,6 @@
 title: Przycinanie i usuwanie znaków z ciągów w programie .NET
 description: Dowiedz się, jak przyciąć spacje puste od początku lub końca ciągu lub usunąć dowolną liczbę spacji lub znaków z określonej pozycji w ciągu w programie .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -16,12 +15,12 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: d0057d503474f3f6ff886acda3ce1d72fb3ebe21
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 8bc2980aa887dc652485e135058b9f6f718e7b45
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888597"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831276"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Przycinanie i usuwanie znaków z ciągów w programie .NET
 Jeśli analizujesz zdanie w poszczególnych słowach, możesz kończyć się wyrazami z pustymi spacjami (nazywanymi również białymi spacjami) na dowolnym końcu słowa. W takiej sytuacji można użyć jednej z metod przycinania w klasie **System. String** , aby usunąć dowolną liczbę spacji lub innych znaków z określonej pozycji w ciągu. W poniższej tabeli opisano dostępne metody przycinania.  

@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Usuwanie plików i katalogów w izolowanym magazynie'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,12 +16,12 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting files and directories
 - deleting directories within isolated stage file
 ms.assetid: 8fcc0dea-435b-4d40-ba4d-ba056265c202
-ms.openlocfilehash: 7797f319ca3b143bac6a4e68eaf820e966f1560e
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 9340796c835d91fe5401e467edd82cab80b2e653
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93187947"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830795"
 ---
 # <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>Instrukcje: Usuwanie plików i katalogów w izolowanym magazynie
 Można usunąć katalogi i pliki w izolowanym pliku magazynu. W magazynie nazwy plików i katalogów są zależne od systemu operacyjnego i są określane jako względne dla katalogu głównego wirtualnego systemu plików. W systemach operacyjnych Windows nie jest rozróżniana wielkość liter.  
@@ -38,7 +37,7 @@ Można usunąć katalogi i pliki w izolowanym pliku magazynu. W magazynie nazwy 
  [!code-csharp[Conceptual.IsolatedStorage#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source4.cs#4)]
  [!code-vb[Conceptual.IsolatedStorage#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source4.vb#4)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>
 - [Magazyn izolowany](isolated-storage.md)

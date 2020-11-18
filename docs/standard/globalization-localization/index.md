@@ -2,7 +2,6 @@
 title: Globalizacja i lokalizowanie aplikacji platformy .NET
 description: Dowiedz się, jak tworzyć aplikacje gotowe do użycia na całym świecie. Zapoznaj się z globalizacją, przeglądem lokalizacji i lokalizacją platformy .NET.
 ms.date: 06/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - international applications [.NET]
 - globalization [.NET], encoding
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-ms.openlocfilehash: a3894b7bf9b8aa013b346c169d21c6db270fe987
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 670a159844cfeb475b26c1d1aa85e7f09a95c21f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600792"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829859"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Globalizacja i lokalizowanie aplikacji platformy .NET
 
@@ -73,22 +72,22 @@ Opis najlepszych rozwiązań w zakresie globalizacji, lokalizacji i projektowani
 
 ## <a name="reference"></a>Dokumentacja
 
-- <xref:System.Globalization?displayProperty=nameWithType>obszaru
+- <xref:System.Globalization?displayProperty=nameWithType> obszaru
 
    Zawiera klasy, które definiują informacje związane z kulturą, w tym język, kraj/region, używane kalendarze, wzorce formatu daty, waluty i liczb oraz kolejność sortowania dla ciągów.
 
-- <xref:System.Resources>obszaru
+- <xref:System.Resources> obszaru
 
    Udostępnia klasy służące do tworzenia i używania zasobów oraz wykonywania na nich operacji.
 
-- <xref:System.Text>obszaru
+- <xref:System.Text> obszaru
 
    Zawiera klasy reprezentujące kodowania znaków ASCII, ANSI, Unicode i inne.
 
-- [Resgen. exe (Generator plików zasobów)](../../framework/tools/resgen-exe-resource-file-generator.md)
+- [Resgen.exe (Generator plików zasobów)](../../framework/tools/resgen-exe-resource-file-generator.md)
 
    Opis sposobu używania programu Resgen.exe w celu konwertowania plików z rozszerzeniem txt i zasobów opartych na formacie języka XML (resx) na pliki binarne resources środowiska uruchomieniowego języka wspólnego.
 
-- [Winres. exe (Edytor zasobów Windows Forms)](../../framework/tools/winres-exe-windows-forms-resource-editor.md)
+- [Winres.exe (Windows Forms Edytor zasobów)](../../framework/tools/winres-exe-windows-forms-resource-editor.md)
 
    Opis sposobu używania programu Winres.exe w celu lokalizowania formularzy programu Windows Forms.

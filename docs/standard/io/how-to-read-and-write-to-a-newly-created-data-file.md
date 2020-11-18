@@ -2,7 +2,6 @@
 title: 'Instrukcje: Odczyt i zapis w nowo utworzonym pliku danych'
 description: Dowiedz się, jak odczytywać i zapisywać dane w nowo utworzonym pliku danych w programie .NET przy użyciu klas System. IO. BinaryReader i system. IO. BinaryWriter.
 ms.date: 01/21/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,18 +13,18 @@ helpviewer_keywords:
 - I/O [.NET], writing data
 - BinaryWriter class, examples
 ms.assetid: e209d949-31e8-44ea-8e38-87f9093f3093
-ms.openlocfilehash: 236d50260efa66f21db6d0abba6cc5c258a74d8d
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 940d720edfde93f8707a4fd7040e5dd3618a2680
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188734"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830717"
 ---
 # <a name="how-to-read-and-write-to-a-newly-created-data-file"></a>Instrukcje: Odczyt i zapis w nowo utworzonym pliku danych
 
 <xref:System.IO.BinaryWriter?displayProperty=nameWithType>Klasy i <xref:System.IO.BinaryReader?displayProperty=nameWithType> są używane do zapisywania i odczytywania danych innych niż ciągi znaków. Poniższy przykład pokazuje, jak utworzyć pusty strumień plików, zapisać w nim dane i odczytać z niego dane.
 
-Przykład tworzy plik danych o nazwie *test. Data* w bieżącym katalogu, tworzy skojarzone <xref:System.IO.BinaryWriter> <xref:System.IO.BinaryReader> obiekty i używa <xref:System.IO.BinaryWriter> obiektu, aby napisać liczbę całkowitą od 0 do 10 w celu *przetestowania. dane* , co pozostawia wskaźnik pliku na końcu pliku. <xref:System.IO.BinaryReader>Następnie obiekt ustawia wskaźnik pliku z powrotem do źródła i odczytuje określoną zawartość.  
+Przykład tworzy plik danych o nazwie *test. Data* w bieżącym katalogu, tworzy skojarzone <xref:System.IO.BinaryWriter> <xref:System.IO.BinaryReader> obiekty i używa <xref:System.IO.BinaryWriter> obiektu, aby napisać liczbę całkowitą od 0 do 10 w celu *przetestowania. dane*, co pozostawia wskaźnik pliku na końcu pliku. <xref:System.IO.BinaryReader>Następnie obiekt ustawia wskaźnik pliku z powrotem do źródła i odczytuje określoną zawartość.  
   
 > [!NOTE]
 > Jeśli *test. Data* już istnieje w bieżącym katalogu, <xref:System.IO.IOException> zgłaszany jest wyjątek. Użyj opcji Tryb plików <xref:System.IO.FileMode.Create?displayProperty=nameWithType> zamiast tego, <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> Aby zawsze tworzyć nowy plik bez zgłaszania wyjątku.  

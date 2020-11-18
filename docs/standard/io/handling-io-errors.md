@@ -2,7 +2,6 @@
 title: Obsługa błędów we/wy w programie .NET
 description: Dowiedz się, jak obsłużyć błędy we/wy w programie .NET. Mapuj kody błędów na wyjątki, obsługuj wyjątki w operacjach we/wy i obsłuż IOException.
 ms.date: 08/27/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bd7112b3052f246a01e4a36d6d425b37cb6174dd
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: fe6796be91d31e3f7bf69605f39a39f3db6b3e83
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188045"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830873"
 ---
 # <a name="handling-io-errors-in-net"></a>Obsługa błędów we/wy w programie .NET
 
@@ -84,7 +83,7 @@ Można je obsłużyć za pomocą `When` klauzuli w instrukcji catch, jak pokazan
 [!code-csharp[io-exception-handling](~/samples/snippets/standard/io/io-exceptions/cs/io-exceptions.cs)]
 [!code-vb[io-exception-handling](~/samples/snippets/standard/io/io-exceptions/vb/io-exceptions.vb)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Obsługa i zgłaszanie wyjątków w programie .NET](../exceptions/index.md)
 - [Obsługa wyjątków (Biblioteka zadań równoległych)](../parallel-programming/exception-handling-task-parallel-library.md)

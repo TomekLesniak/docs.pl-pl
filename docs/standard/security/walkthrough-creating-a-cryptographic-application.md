@@ -2,7 +2,6 @@
 title: 'Przewodnik: Tworzenie aplikacji kryptograficznej'
 description: Zapoznaj się z tworzeniem aplikacji kryptograficznej. Dowiedz się, jak szyfrować i odszyfrowywać zawartość w aplikacji Windows Forms.
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - cryptography [NET], cryptographic application example
 - cryptography [NET], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-ms.openlocfilehash: 16a887f23c584daa83106ae61c497bcae8dc4dd2
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 70218d60abb336cdb35fc2e89e62a50b6bd79c67
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557193"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830561"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Przewodnik: Tworzenie aplikacji kryptograficznej
 
@@ -225,7 +224,7 @@ Po skompilowaniu aplikacji wykonaj następujące scenariusze testowania.
   
 2. Kliknij `Decrypt File` przycisk i wybierz plik, który został zaszyfrowany. Ta operacja zakończy się pomyślnie, ponieważ masz pełną parę kluczy do odszyfrowania.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Model kryptografii](cryptography-model.md) — opis sposobu implementacji kryptografii w bibliotece klas bazowych.
 - [Usługi kryptograficzne](cryptographic-services.md)

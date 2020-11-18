@@ -2,7 +2,6 @@
 title: Omówienie biblioteki klas .NET
 description: Dowiedz się więcej o bibliotece klas .NET. Interfejsy API platformy .NET zawierają klasy, interfejsy, Delegaty i typy wartości, aby zapewnić dostęp do funkcji systemu.
 ms.date: 02/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - classes [.NET], library overview
 - .NET, library overview
@@ -36,12 +35,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-ms.openlocfilehash: 95dcbea6e0b3f2cd91bd6955a11ede7c9731caca
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 44a46db4fa7ebf6dd5802cc07e7d18744c72ad68
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687530"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831263"
 ---
 # <a name="net-class-library-overview"></a>Omówienie biblioteki klas .NET
 
@@ -69,7 +68,7 @@ Platforma .NET oferuje bogaty zestaw interfejsów, a także abstrakcyjne i specy
   
  Ten schemat nazewnictwa ułatwia deweloperom biblioteki rozszerzanie platformy .NET o tworzenie hierarchicznych grup typów i nazywanie ich w spójny, informacyjny sposób. Umożliwia także jednoznaczne zidentyfikowanie typów według ich pełnej nazwy (czyli według ich przestrzeni nazw i nazwy typu), co zapobiega kolizji nazw typów. Deweloperzy biblioteki powinni używać następującej konwencji podczas tworzenia nazw dla ich przestrzeni nazw:  
   
- *NazwaFirmy* . Nr *technologii*  
+ *NazwaFirmy*. Nr *technologii*  
   
  Na przykład przestrzeń nazw jest `Microsoft.Word` zgodna z tymi wskazówkami.  
   
@@ -85,23 +84,23 @@ Platforma .NET oferuje bogaty zestaw interfejsów, a także abstrakcyjne i specy
   
 |Kategoria|Nazwa klasy|Opis|Typ danych Visual Basic|Typ danych C#|C++/CLI — typ danych|Typ danych języka F #|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
-|Liczba całkowita|<xref:System.Byte>|8-bitowa liczba całkowita bez znaku.|**Bajc**|**Bajc**|**unsigned char**|**Bajc**|  
+|Integer|<xref:System.Byte>|8-bitowa liczba całkowita bez znaku.|**Bajc**|**Bajc**|**unsigned char**|**Bajc**|  
 ||<xref:System.SByte>|8-bitowa liczba całkowita ze znakiem.<br /><br /> Niezgodny ze specyfikacją CLS.|**SByte**|**SByte**|**char**<br /> -lub-<br /> **signed** **znak** ze znakiem|**SByte**|  
 ||<xref:System.Int16>|16-bitowa liczba całkowita ze znakiem.|**Wybierak**|**short**|**short**|**Int16**|  
-||<xref:System.Int32>|32-bitowa liczba całkowita ze znakiem.|**Liczba całkowita**|**int**|**int**<br /><br /> -lub-<br /><br /> **liczba długa**|**int**|  
+||<xref:System.Int32>|32-bitowa liczba całkowita ze znakiem.|**Całkowitą**|**int**|**int**<br /><br /> -lub-<br /><br /> **liczba długa**|**int**|  
 ||<xref:System.Int64>|64-bitowa liczba całkowita ze znakiem.|**Długo**|**liczba długa**|**__int64**|**Int64**|  
 ||<xref:System.UInt16>|16-bitowa liczba całkowita bez znaku.<br /><br /> Niezgodny ze specyfikacją CLS.|**UShort**|**ushort**|**unsigned short**|**UInt16**|  
 ||<xref:System.UInt32>|32-bitowa liczba całkowita bez znaku.<br /><br /> Niezgodny ze specyfikacją CLS.|**UInteger —**|**uint**|**unsigned int**<br /> -lub-<br /> **unsigned long**|**równ**|  
 ||<xref:System.UInt64>|64-bitowa liczba całkowita bez znaku.<br /><br /> Niezgodny ze specyfikacją CLS.|**ULong**|**ulong**|**__int64 bez znaku**|**UInt64**|  
 |Liczba zmiennoprzecinkowa|<xref:System.Single>|Liczba zmiennoprzecinkowa o pojedynczej precyzji (32-bitowej).|**Pojedynczy**|**liczba zmiennoprzecinkowa**|**liczba zmiennoprzecinkowa**|**float32**<br> lub<br>**wiersz**|  
 ||<xref:System.Double>|Liczba zmiennoprzecinkowa o podwójnej precyzji (64-bitowej).|**Double**|**liczba o podwójnej precyzji**|**liczba o podwójnej precyzji**|**liczba zmiennoprzecinkowa**<br> lub <br> **liczba o podwójnej precyzji**|  
-|Logiczny|<xref:System.Boolean>|Wartość logiczna (true lub false).|**Typu**|**bool**|**bool**|**bool**|  
+|Logiczny|<xref:System.Boolean>|Wartość logiczna (true lub false).|**Boolean**|**bool**|**bool**|**bool**|  
 |Inne|<xref:System.Char>|Znak Unicode (16-bitowy).|**Delikatn**|**char**|**wchar_t**|**char**|  
 ||<xref:System.Decimal>|Wartość dziesiętna (128-bitowa).|**Dokładności**|**liczba dziesiętna**|**Dokładności**|**liczba dziesiętna**|  
 ||<xref:System.IntPtr>|Liczba całkowita ze znakiem, której rozmiar zależy od podstawowej platformy (wartość 32-bitowa na platformie 32-bitowej i 64-bitowej na platformie 64-bitowej).|**IntPtr**<br /><br /> Brak typu wbudowanego.|**IntPtr**<br /><br /> Brak typu wbudowanego.|**IntPtr**<br /><br /> Brak typu wbudowanego.|**unativeint —**|  
 ||<xref:System.UIntPtr>|Liczba całkowita bez znaku, której rozmiar zależy od podstawowej platformy (wartość 32-bitowa na platformie 32-bitowej i 64-bitowej wartości na platformie 64-bitowej).<br /><br /> Niezgodny ze specyfikacją CLS.|**UIntPtr**<br /><br /> Brak typu wbudowanego.|**UIntPtr**<br /><br /> Brak typu wbudowanego.|**UIntPtr**<br /><br /> Brak typu wbudowanego.|**unativeint —**|  
 ||<xref:System.Object>|Katalog główny hierarchii obiektów.|**Stream**|**object**|**Obiekt ^**|**obiektów**|  
-||<xref:System.String>|Niezmienny ciąg o stałej długości znaków Unicode.|**Ciąg**|**string**|**Ciąg ^**|**string**|  
+||<xref:System.String>|Niezmienny ciąg o stałej długości znaków Unicode.|**Ciąg**|**parametry**|**Ciąg ^**|**parametry**|  
   
  Poza podstawowymi typami danych, <xref:System> przestrzeń nazw zawiera ponad 100 klas, od klas, które obsługują wyjątki dla klas, które obejmują podstawowe koncepcje środowiska uruchomieniowego, takie jak domeny aplikacji i moduł wyrzucania elementów bezużytecznych. <xref:System>Przestrzeń nazw zawiera również wiele przestrzeni nazw drugiego poziomu.  
   
@@ -110,5 +109,5 @@ Platforma .NET oferuje bogaty zestaw interfejsów, a także abstrakcyjne i specy
 ## <a name="see-also"></a>Zobacz także
 
 - [Wspólny system typów](base-types/common-type-system.md)
-- [Przeglądarka interfejsów API na platformie .NET](../../api/index.md)
+- [Przeglądarka interfejsów API platformy .NET](../../api/index.md)
 - [Omówienie](../framework/get-started/overview.md)

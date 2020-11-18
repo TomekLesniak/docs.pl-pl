@@ -1,7 +1,6 @@
 ---
 title: Niezależność od języka i elementy niezależne od języka
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: 1097d156aad06b7a17141e4d6786e5411cbaa571
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: aeaf58276537fab72fdcde81b0465acbbdb23140
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92160844"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831159"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Niezależność od języka i elementy niezależne od języka
 
@@ -614,12 +613,12 @@ Aby skompilować kod Visual Basic, użyj tego polecenia:
 vbc example.vb /r:UtilityLib.dll
 ```
 
-Aby skompilować przy użyciu języka C#, Zmień nazwę kompilatora z **VBC** na **CSC**i Zmień rozszerzenie pliku z. vb na. cs:
+Aby skompilować przy użyciu języka C#, Zmień nazwę kompilatora z **VBC** na **CSC** i Zmień rozszerzenie pliku z. vb na. cs:
 
 ```console
 csc example.cs /r:UtilityLib.dll
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.CLSCompliantAttribute>

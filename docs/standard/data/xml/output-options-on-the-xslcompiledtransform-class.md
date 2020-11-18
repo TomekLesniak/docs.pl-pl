@@ -1,14 +1,13 @@
 ---
 title: Opcje danych wyjściowych klasy XslCompiledTransform
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 91ce8cba-386c-411e-bb38-0891a0393c0a
-ms.openlocfilehash: e9ffdc1377dbf124f042802279e7e7a275222eff
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 777324e81ac809866dab68259dceca89c6091a3c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288709"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830093"
 ---
 # <a name="output-options-on-the-xslcompiledtransform-class"></a>Opcje danych wyjściowych klasy XslCompiledTransform
 W tym temacie omówiono dostępne opcje danych wyjściowych XSLT. Możesz określić opcje danych wyjściowych w arkuszu stylów lub w <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metodzie.  
@@ -21,7 +20,7 @@ W tym temacie omówiono dostępne opcje danych wyjściowych XSLT. Możesz okreś
 |Nazwa atrybutu|Zachowanie|  
 |--------------------|--------------|  
 |method|Obsługiwane.|  
-|version|Ignorowane. Wersja jest zawsze 1,0 dla plików XML i 4,0 dla języka HTML.|  
+|Wersja|Ignorowane. Wersja jest zawsze 1,0 dla plików XML i 4,0 dla języka HTML.|  
 |encoding|Ignorowane podczas umieszczania w <xref:System.IO.TextWriter> . <xref:System.IO.TextWriter.Encoding%2A?displayProperty=nameWithType>Zamiast tego zostanie użyta właściwość.|  
 |Pomiń deklarację XML|Obsługiwane.|  
 |niezależne|Obsługiwane.|  
@@ -40,7 +39,7 @@ W tym temacie omówiono dostępne opcje danych wyjściowych XSLT. Możesz okreś
 #### <a name="xmlwriter"></a>Element  
  <xref:System.Xml.XmlWriter>Klasa zapisuje strumienie lub pliki XML. Można określić funkcje do obsługi dla <xref:System.Xml.XmlWriter> obiektu, w tym opcje wyjściowe, przy użyciu <xref:System.Xml.XmlWriterSettings> klasy. <xref:System.Xml.XmlWriter>Klasa jest integralną częścią <xref:System.Xml> struktury. Użyj tego typu danych wyjściowych, aby przetworzyć wyniki wyjściowe w innym procesie XML.  
   
-#### <a name="string"></a>String (ciąg)  
+#### <a name="string"></a>String  
  Użyj tego typu danych wyjściowych, aby określić identyfikator URI pliku wyjściowego.  
   
 #### <a name="stream"></a>Strumień  

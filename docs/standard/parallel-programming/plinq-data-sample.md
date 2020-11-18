@@ -1,19 +1,18 @@
 ---
 title: Próbka danych PLINQ
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-ms.openlocfilehash: 44d3463f23269ceec6372b007ca8ba9684da8c02
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0ecdea3fa56ee2d8902b24006351c6d43e370c97
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291711"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830574"
 ---
 # <a name="plinq-data-sample"></a>Próbka danych PLINQ
 Ten przykład zawiera przykładowe dane w formacie CSV, a także metody, które przekształcają je na kolekcje klientów, produkty, zamówienia i szczegóły zamówienia. Aby dodatkowo eksperymentować z PLINQ, możesz wkleić przykłady kodu z niektórych innych tematów do kodu w tym temacie i wywoływać go z `Main` metody. Możesz również używać tych danych przy użyciu własnych zapytań PLINQ.  
@@ -29,7 +28,7 @@ Ten przykład zawiera przykładowe dane w formacie CSV, a także metody, które 
   
 2. Zastąp zawartość Module1. vb lub Program.cs przy użyciu kodu, który następuje po wykonaniu tych kroków.  
   
-3. W menu **projekt** kliknij polecenie **Dodaj nowy element**. Wybierz pozycję **plik tekstowy** , a następnie kliknij przycisk **OK**. Skopiuj dane z tego tematu, a następnie wklej je w nowym pliku tekstowym. W menu **plik** kliknij polecenie **Zapisz**, Nazwij plik Plinqdata. csv, a następnie zapisz go w folderze zawierającym pliki kodu źródłowego.  
+3. W menu **projekt** kliknij polecenie **Dodaj nowy element**. Wybierz pozycję **plik tekstowy** , a następnie kliknij przycisk **OK**. Skopiuj dane z tego tematu, a następnie wklej je w nowym pliku tekstowym. W menu **plik** kliknij polecenie **Zapisz**, Nazwij plik Plinqdata.csv, a następnie zapisz go w folderze zawierającym pliki kodu źródłowego.  
   
 4. Naciśnij klawisz F5, aby sprawdzić, czy projekt jest poprawnie kompilowany i uruchamiany. Poniższe dane wyjściowe powinny być wyświetlane w oknie konsoli.  
   

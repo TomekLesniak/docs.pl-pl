@@ -2,18 +2,17 @@
 title: Biblioteka zadań równoległych (TPL)
 description: Poznaj bibliotekę zadań równoległych (TPL), zestaw typów publicznych i interfejsów API, aby uprościć proces dodawania równoległości & współbieżności do aplikacji w środowisku .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - .NET, concurrency in
 - .NET, parallel programming in
 - Parallel Programming
 ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
-ms.openlocfilehash: 596671b267484561a8697546caa5a4764242ebd3
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: 5c26799338b46f5f0420c3b082e7d84fade27a26
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925236"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830002"
 ---
 # <a name="task-parallel-library-tpl"></a>Biblioteka zadań równoległych (TPL)
 
@@ -32,6 +31,6 @@ Biblioteka zadań równoległych (TPL) to zestaw typów publicznych i interfejs�
 |[Równoległe LINQ (PLINQ)](introduction-to-plinq.md)|Opisuje sposób osiągnięcia równoległości danych za pomocą zapytań LINQ.|  
 |[Programowanie równoległe](index.md)|Węzeł najwyższego poziomu dla równoległego programowania .NET.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przykłady programowania równoległego przy użyciu programu .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

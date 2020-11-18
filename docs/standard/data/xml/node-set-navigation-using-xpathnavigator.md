@@ -1,14 +1,13 @@
 ---
 title: Nawigacja po zestawie węzłów przy użyciu klasy XPathNavigator
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 1a954b41-7173-40bc-8544-d430f209b1e5
-ms.openlocfilehash: 132154afdfd3e5bd6769bfcce338e598136e7515
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cf0058f553488e453d0227291110d9edc96638f6
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288761"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830132"
 ---
 # <a name="node-set-navigation-using-xpathnavigator"></a>Nawigacja po zestawie węzłów przy użyciu klasy XPathNavigator
 Można przechodzić między węzłami w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub przy użyciu metod nawigacji zestawu węzłów <xref:System.Xml.XPath.XPathNavigator> klasy. Można poruszać się we wszystkich węzłach lub na wybranym zestawie węzłów zwróconym przez jedną z metod zaznaczania <xref:System.Xml.XPath.XPathNavigator> klasy.  

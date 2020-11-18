@@ -2,7 +2,6 @@
 title: Szyfrowanie danych
 description: Dowiedz się, jak szyfrować dane w programie .NET przy użyciu algorytmu symetrycznego lub algorytmu asymetrycznego.
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - cryptography [.NET], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 75bb0fa52b8002efe0027f026de8c0910735e55e
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 574ef3f829406d661e19f004e9a7d150954fd9e5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440975"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830600"
 ---
 # <a name="encrypting-data"></a>Szyfrowanie danych
 
@@ -153,7 +152,7 @@ class Class1
 }
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Generowanie kluczy szyfrowania i odszyfrowywania](generating-keys-for-encryption-and-decryption.md)
 - [Odszyfrowywanie danych](decrypting-data.md)

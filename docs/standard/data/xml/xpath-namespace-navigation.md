@@ -1,14 +1,13 @@
 ---
 title: Nawigacja po przestrzeni nazw XPath
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 06cc7abb-7416-415c-9dd6-67751b8cabd5
-ms.openlocfilehash: bad5e1245c7f48c114bd2a1809822cc131dad75a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4d2ef71a41d19fd5bb573afab66dc8a15e19c393
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551962"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831211"
 ---
 # <a name="xpath-namespace-navigation"></a>Nawigacja po przestrzeni nazw XPath
 Aby używać zapytań XPath z dokumentami XML, należy poprawnie adresować przestrzenie nazw XML i elementy zawarte w przestrzeni nazw. Przestrzenie nazw uniemożliwiają niejasności, które mogą wystąpić, gdy nazwy są używane w więcej niż jednym kontekście; na przykład nazwa `ID` może odnosić się do więcej niż jednego identyfikatora skojarzonego z różnymi elementami dokumentu XML. Składnia przestrzeni nazw Określa identyfikatory URI, nazwy i prefiksy odróżniające elementy dokumentu XML.  

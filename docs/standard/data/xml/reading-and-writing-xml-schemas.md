@@ -2,18 +2,17 @@
 title: Odczytywanie i zapisywanie schematów XML
 description: Odczytuj i zapisuj schematy języka definicji schematu XML (XSD) z plików lub innych źródeł w programie .NET przy użyciu interfejsu API modelu obiektów schematu (SOM).
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-ms.openlocfilehash: 874b0bdb0e13d545cfff4c813881f1398a8f9487
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ae951efafd68d0ddf4f74876edd4c12564d68dde
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767666"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830886"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Odczytywanie i zapisywanie schematów XML
 Za pomocą interfejsu API modelu Object Model (SOM) można odczytywać i zapisywać schematy języka definicji schematu XML (XSD) z plików lub innych źródeł oraz tworzyć schematy XML w pamięci przy użyciu klas w <xref:System.Xml.Schema?displayProperty=nameWithType> przestrzeni nazw, które są mapowane na struktury zdefiniowane w zaleceniu schematu xml organizacja World Wide Web Consortium (W3C).  
@@ -46,7 +45,7 @@ Za pomocą interfejsu API modelu Object Model (SOM) można odczytywać i zapisyw
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Model SOM (XML Schema Object Model) ― omówienie](xml-schema-object-model-overview.md)
 - [Tworzenie schematów XML](building-xml-schemas.md)

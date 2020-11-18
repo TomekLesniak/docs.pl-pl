@@ -2,19 +2,18 @@
 title: Nazwy zestawów i bibliotek DLL
 description: Poznaj wskazówki dotyczące nazewnictwa zestawów i bibliotek dołączanych dynamicznie (dll). Zestaw może obejmować jeden lub więcej plików, ale zwykle mapuje jeden do jednego z biblioteką DLL.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - names [.NET Framework], DLLs
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 - DLLs, names
 ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
-ms.openlocfilehash: de7ce3ee774d4598521d7156d0d660c3fe30154c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2d1484889eb7db537de970c31109f26a6d61ad8d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594481"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830054"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>Nazwy zestawów i bibliotek DLL
 Zestaw jest jednostką wdrożenia i tożsamością dla programów kodu zarządzanego. Chociaż zestawy mogą obejmować jeden lub więcej plików, zazwyczaj zestaw mapuje jeden do jednego z biblioteką DLL. W związku z tym, w tej sekcji opisano tylko konwencje nazewnictwa bibliotek DLL, które następnie można mapować na konwencje nazewnictwa zestawów.
@@ -35,7 +34,7 @@ Zestaw jest jednostką wdrożenia i tożsamością dla programów kodu zarządza
 
  *Ponownie Wydrukowano przez uprawnienie Pearson Education, Inc. z [wytycznych dotyczących projektowania platformy: konwencje, idiomy i wzorce dla bibliotek .NET do wielokrotnego użytku, 2. wydanie](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) przez Krzysztof Cwalina i Brad Abrams, opublikowane 22, 2008 przez Addison-Wesley Professional w ramach serii Microsoft Windows Development.*
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wskazówki dotyczące projektowania struktury](index.md)
 - [Wskazówki dotyczące nazewnictwa](naming-guidelines.md)

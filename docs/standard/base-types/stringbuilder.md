@@ -2,7 +2,6 @@
 title: Korzystanie z klasy StringBuilder w środowisku .NET
 description: Dowiedz się, jak używać klasy StringBuilder w środowisku .NET. Użyj tej klasy, aby zmodyfikować ciąg bez tworzenia nowego obiektu.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,12 +16,12 @@ helpviewer_keywords:
 - Insert method
 - strings [.NET], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-ms.openlocfilehash: 1005da650c624b2b8f6616c163082ff95d7dc007
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: c9337df864a01ec0fbdf7068051efea60b6c59aa
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888961"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831302"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Korzystanie z klasy StringBuilder w środowisku .NET
 <xref:System.String>Obiekt jest niezmienny. Za każdym razem, gdy używasz jednej z metod w <xref:System.String?displayProperty=nameWithType> klasie, tworzysz nowy obiekt ciągu w pamięci, co wymaga nowego przydziału miejsca dla nowego obiektu. W sytuacjach, gdy trzeba wykonać powtórzone modyfikacje ciągu, obciążenie związane z tworzeniem nowego <xref:System.String> obiektu może być kosztowne. <xref:System.Text.StringBuilder?displayProperty=nameWithType>Klasy można użyć, jeśli chcesz zmodyfikować ciąg bez tworzenia nowego obiektu. Na przykład użycie <xref:System.Text.StringBuilder> klasy może zwiększyć wydajność podczas łączenia wielu ciągów razem w pętli.  
@@ -54,23 +53,23 @@ ms.locfileid: "92888961"
  [!code-csharp[Conceptual.StringBuilder#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#3)]
  [!code-vb[Conceptual.StringBuilder#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#3)]  
   
- <xref:System.Text.StringBuilder.EnsureCapacity%2A>Metoda może służyć do sprawdzenia pojemności bieżącego elementu **StringBuilder** . Jeśli pojemność jest większa niż wartość przeniesiona, nie wprowadzono żadnych zmian. Jeśli jednak pojemność jest mniejsza niż wartość przeniesiona, bieżąca pojemność jest zmieniana, aby odpowiadała wartości z przekazaną.  
+ <xref:System.Text.StringBuilder.EnsureCapacity%2A>Metoda może służyć do sprawdzenia pojemności bieżącego elementu **StringBuilder**. Jeśli pojemność jest większa niż wartość przeniesiona, nie wprowadzono żadnych zmian. Jeśli jednak pojemność jest mniejsza niż wartość przeniesiona, bieżąca pojemność jest zmieniana, aby odpowiadała wartości z przekazaną.  
   
  <xref:System.Text.StringBuilder.Length%2A>Właściwość może być również wyświetlana lub ustawiona. Jeśli właściwość **Length** zostanie ustawiona na wartość większą niż Właściwość **pojemności** , właściwość **pojemności** zostanie automatycznie zmieniona na taką samą wartość jak Właściwość **Length** . Ustawienie właściwości **Length** na wartość, która jest mniejsza niż długość ciągu w bieżącym **StringBuilder** , skraca ciąg.  
   
 ## <a name="modifying-the-stringbuilder-string"></a>Modyfikowanie ciągu StringBuilder  
- Poniższa tabela zawiera listę metod, których można użyć w celu zmodyfikowania zawartości **StringBuilder** .  
+ Poniższa tabela zawiera listę metod, których można użyć w celu zmodyfikowania zawartości **StringBuilder**.  
   
 |Nazwa metody|Zastosowanie|  
 |-----------------|---------|  
-|<xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType>|Dołącza informacje na końcu bieżącego elementu **StringBuilder** .|  
+|<xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType>|Dołącza informacje na końcu bieżącego elementu **StringBuilder**.|  
 |<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>|Zastępuje specyfikator formatu przekazaną w ciągu sformatowanym tekstem.|  
-|<xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType>|Wstawia ciąg lub obiekt do określonego indeksu bieżącego elementu **StringBuilder** .|  
-|<xref:System.Text.StringBuilder.Remove%2A?displayProperty=nameWithType>|Usuwa określoną liczbę znaków z bieżącego elementu **StringBuilder** .|  
+|<xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType>|Wstawia ciąg lub obiekt do określonego indeksu bieżącego elementu **StringBuilder**.|  
+|<xref:System.Text.StringBuilder.Remove%2A?displayProperty=nameWithType>|Usuwa określoną liczbę znaków z bieżącego elementu **StringBuilder**.|  
 |<xref:System.Text.StringBuilder.Replace%2A?displayProperty=nameWithType>|Zamienia wszystkie wystąpienia określonego znaku lub ciągu w bieżącym elemencie **StringBuilder** na inny określony znak lub ciąg.|  
   
-### <a name="append"></a>Dołączanie  
- Metoda **append** może służyć do dodawania tekstu lub reprezentowania ciągu obiektu na końcu ciągu reprezentowanego przez bieżący element **StringBuilder** . Poniższy przykład Inicjuje element **StringBuilder** do "Hello World", a następnie dołącza jakiś tekst na końcu obiektu. Miejsce jest przypisywany automatycznie, zgodnie z wymaganiami.  
+### <a name="append"></a>Append  
+ Metoda **append** może służyć do dodawania tekstu lub reprezentowania ciągu obiektu na końcu ciągu reprezentowanego przez bieżący element **StringBuilder**. Poniższy przykład Inicjuje element **StringBuilder** do "Hello World", a następnie dołącza jakiś tekst na końcu obiektu. Miejsce jest przypisywany automatycznie, zgodnie z wymaganiami.  
   
  [!code-cpp[Conceptual.StringBuilder#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#4)]
  [!code-csharp[Conceptual.StringBuilder#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#4)]

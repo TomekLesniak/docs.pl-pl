@@ -1,17 +1,16 @@
 ---
 title: Tryby opóźnienia
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, intrusiveness
 - garbage collection, latency modes
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
-ms.openlocfilehash: ee45fe5e8016c7507bc3a873e615fd8379810a8e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2e7b30a50e2513c567abf2116ab5495e717a8e22
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286018"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831198"
 ---
 # <a name="latency-modes"></a>Tryby opóźnienia
 
@@ -41,7 +40,7 @@ W poniższej tabeli wymieniono scenariusze aplikacji dotyczące używania <xref:
 
 |Tryb opóźnień|Scenariusze aplikacji|
 |------------------|---------------------------|
-|<xref:System.Runtime.GCLatencyMode.Batch>|W przypadku aplikacji, które nie mają interfejsu użytkownika lub operacji po stronie serwera.<br /><br />Gdy wyrzucanie elementów bezużytecznych w tle jest wyłączone, jest to domyślny tryb dla stacji roboczej i odzyskiwania pamięci serwera. <xref:System.Runtime.GCLatencyMode.Batch>tryb zastępuje również ustawienie [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) , czyli uniemożliwia wykonywanie w tle lub współbieżnych kolekcji.|
+|<xref:System.Runtime.GCLatencyMode.Batch>|W przypadku aplikacji, które nie mają interfejsu użytkownika lub operacji po stronie serwera.<br /><br />Gdy wyrzucanie elementów bezużytecznych w tle jest wyłączone, jest to domyślny tryb dla stacji roboczej i odzyskiwania pamięci serwera. <xref:System.Runtime.GCLatencyMode.Batch> tryb zastępuje również ustawienie [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) , czyli uniemożliwia wykonywanie w tle lub współbieżnych kolekcji.|
 |<xref:System.Runtime.GCLatencyMode.Interactive>|Dla większości aplikacji, które mają interfejs użytkownika.<br /><br />Jest to domyślny tryb dla stacji roboczej i wyrzucania elementów bezużytecznych serwera. Jednak jeśli aplikacja jest hostowana, ustawienia modułu zbierającego elementy bezużyteczne procesu hostingu mają pierwszeństwo.|
 |<xref:System.Runtime.GCLatencyMode.LowLatency>|W przypadku aplikacji, które mają krótkoterminowe, zależne od czasu operacje, w których przerwy między modułem wyrzucania elementów bezużytecznych mogą powodować zakłócenia. Na przykład aplikacje, które renderują animacje lub funkcje pozyskiwania danych.|
 |<xref:System.Runtime.GCLatencyMode.SustainedLowLatency>|W przypadku aplikacji, które mają dane zależne od czasu, ale dłuższy czas, w którym przerwy z modułu wyrzucania elementów bezużytecznych mogą być zakłócone. Na przykład aplikacje, które wymagają krótkich czasów odpowiedzi jako zmiany danych rynkowych w godzinach pracy.<br /><br />Ten tryb powoduje zwiększenie rozmiaru zarządzanego sterty niż inne tryby. Ponieważ nie kompaktuje sterty zarządzanej, możliwe jest zwiększenie fragmentacji. Upewnij się, że dostępna jest wystarczająca ilość pamięci.|

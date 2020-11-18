@@ -1,14 +1,13 @@
 ---
 title: Obsługa przestrzeni nazw w modelu DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: f0548ead-0fed-41ee-b33e-117ba900d3bc
-ms.openlocfilehash: 6fefce961c2ff91530a9110f5563fd921a7838a3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b71817bf8a1b2eb585ccb3b21fb361c651c2bfe9
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288800"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830158"
 ---
 # <a name="namespace-support-in-the-dom"></a>Obsługa przestrzeni nazw w modelu DOM
 Document Object Model XML (DOM) jest całkowicie oparty na przestrzeni nazw. Obsługiwane są tylko dokumenty XML obsługujące przestrzeń nazw. Organizacja World Wide Web Consortium (W3C) określa, że aplikacje DOM, które implementują poziom 1 mogą być niezgodne z przestrzenią nazw, a funkcje poziomu DOM 2 są oparte na przestrzeni nazw. Jednak wszystkie funkcje w modelu XML DOM są oparte na przestrzeni nazw, niezależnie od tego, czy metoda pochodzi z rekomendacji DOM poziomu 1 lub 2.  

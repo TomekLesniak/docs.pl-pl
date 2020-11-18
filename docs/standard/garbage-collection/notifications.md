@@ -1,7 +1,6 @@
 ---
 title: Powiadomienia dotyczące odzyskiwania pamięci
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - garbage collection, notifications
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
-ms.openlocfilehash: 389e851782edb82578c216951be440070b92723c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c91712b9d25221f1ffd9e9e980c420be32e2379a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286005"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831185"
 ---
 # <a name="garbage-collection-notifications"></a>Powiadomienia dotyczące odzyskiwania pamięci
 Istnieją sytuacje, w których pełne odzyskiwanie pamięci (czyli kolekcja generacji 2) przez środowisko uruchomieniowe języka wspólnego może niekorzystnie wpłynąć na wydajność. Może to być problem szczególnie w przypadku serwerów, które przetwarzają duże ilości żądań; w takim przypadku długotrwałe wyrzucanie elementów bezużytecznych może spowodować przekroczenie limitu czasu żądania. Aby zapobiec występowaniu pełnej kolekcji w okresie krytycznym, można powiadomić o tym, że pełne odzyskiwanie pamięci zbliża się, a następnie podejmuje działania w celu przekierowania obciążenia do innego wystąpienia serwera. Istnieje również możliwość wywołania kolekcji samodzielnie, pod warunkiem, że bieżące wystąpienie serwera nie musi przetwarzać żądań.  
@@ -94,7 +93,7 @@ Istnieją sytuacje, w których pełne odzyskiwanie pamięci (czyli kolekcja gene
   
  Poniższy kod zawiera `OnFullGCApproachNotify` metodę wywoływaną z  
   
- `WaitForFullGCProc`Method.  
+ `WaitForFullGCProc` Method.  
   
  [!code-cpp[GCNotification#5](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#5)]
  [!code-csharp[GCNotification#5](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#5)]
@@ -102,7 +101,7 @@ Istnieją sytuacje, w których pełne odzyskiwanie pamięci (czyli kolekcja gene
   
  Poniższy kod zawiera `OnFullGCApproachComplete` metodę wywoływaną z  
   
- `WaitForFullGCProc`Method.  
+ `WaitForFullGCProc` Method.  
   
  [!code-cpp[GCNotification#6](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#6)]
  [!code-csharp[GCNotification#6](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#6)]

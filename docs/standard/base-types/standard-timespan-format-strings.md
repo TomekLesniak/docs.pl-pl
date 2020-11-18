@@ -2,7 +2,6 @@
 title: Standardowe ciągi formatujące TimeSpan
 description: Przejrzyj Standardowe ciągi formatujące TimeSpan, które używają pojedynczego specyfikatora formatu do definiowania tekstowej reprezentacji wartości TimeSpan w programie .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: 99529d480ca32cb8be1e2013ca4551534e10026b
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: ab64b2ef0a87cbad3b3c036d74f4690ff7fdb1f4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888948"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831315"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardowe ciągi formatujące TimeSpan
 
@@ -50,7 +49,7 @@ Poniższa tabela zawiera listę specyfikatorów formatu standardowego interwału
 ## <a name="the-constant-c-format-specifier"></a>Specyfikator formatu stałej ("c")  
  Specyfikator formatu "c" zwraca reprezentację ciągu <xref:System.TimeSpan> wartości w następującej postaci:  
   
- [-] [ *d* .] *hh* : *mm* : *SS* [. *fffffff* ]  
+ [-] [*d*.] *hh*:*mm*:*SS*[.*fffffff*]  
   
  Elementy w nawiasach kwadratowych ([ i ]) są opcjonalne. Kropka (.) i dwukropek (:) są symbolami literału. W poniższej tabeli opisano pozostałe elementy.  
   
@@ -76,7 +75,7 @@ Poniższa tabela zawiera listę specyfikatorów formatu standardowego interwału
 ## <a name="the-general-short-g-format-specifier"></a>Specyfikator formatu ogólnego ("g")  
  Specyfikator formatu "g" <xref:System.TimeSpan> zwraca reprezentację ciągu <xref:System.TimeSpan> wartości w postaci kompaktowej przez uwzględnienie tylko tych elementów, które są niezbędne. Ma następującą postać:  
   
- [-] [ *d* :] *h* : *mm* : *SS* [. *FFFFFFF* ]  
+ [-] [*d*:] *h*:*mm*:*SS*[.*FFFFFFF*]  
   
  Elementy w nawiasach kwadratowych ([ i ]) są opcjonalne. Dwukropek (:) jest symbolem literału. W poniższej tabeli opisano pozostałe elementy.  
   
@@ -100,7 +99,7 @@ Poniższa tabela zawiera listę specyfikatorów formatu standardowego interwału
 ## <a name="the-general-long-g-format-specifier"></a>Specyfikator formatu ogólnego ("G")  
  Specyfikator formatu "G" <xref:System.TimeSpan> zwraca reprezentację ciągu <xref:System.TimeSpan> wartości w postaci długiej, która zawsze zawiera dni i ułamki sekund. Ciąg, który jest wynikiem specyfikatora formatu standardowego "G", ma następującą postać:  
   
- [-] *d* : *hh* : *mm* : *SS* . *fffffff*  
+ [-] *d*:*hh*:*mm*:*SS*. *fffffff*  
   
  Elementy w nawiasach kwadratowych ([ i ]) są opcjonalne. Dwukropek (:) jest symbolem literału. W poniższej tabeli opisano pozostałe elementy.  
   

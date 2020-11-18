@@ -1,22 +1,21 @@
 ---
 title: Pamięć i zakresy
 ms.date: 10/03/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - Memory<T>
 - Span<T>
 - buffers"
 - pipeline processing
-ms.openlocfilehash: c60c08d27c0e41228a15e8acdf01a9af28a23762
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 4b0464cc81cf0908a907f8305ea4e35b716c18fb
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201969"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830665"
 ---
 # <a name="memory--and-span-related-types"></a>Typy związane z pamięcią i zakresem
 
-Począwszy od platformy .NET Core 2,1, .NET zawiera wiele powiązanych typów, które reprezentują ciągły, silnie określony region dowolnej pamięci. Należą do nich:
+Począwszy od platformy .NET Core 2,1, .NET zawiera wiele powiązanych typów, które reprezentują ciągły, silnie określony region dowolnej pamięci. Są one następujące:
 
 - <xref:System.Span%601?displayProperty=nameWithType>, typ, który jest używany w celu uzyskania dostępu do ciągłego regionu pamięci. <xref:System.Span%601>Wystąpienie może być obsługiwane przez tablicę typu `T` , a <xref:System.String> , bufor alokowany z [stackalloc](../../csharp/language-reference/operators/stackalloc.md)lub wskaźnik do pamięci niezarządzanej. Ponieważ musi być przypisana na stosie, ma wiele ograniczeń. Na przykład pole w klasie nie może być typu <xref:System.Span%601> , ani nie może być używane w operacjach asynchronicznych.
 
@@ -26,11 +25,11 @@ Począwszy od platformy .NET Core 2,1, .NET zawiera wiele powiązanych typów, k
 
 - <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>, niezmienna wersja <xref:System.Memory%601> struktury.
 
-- <xref:System.Buffers.MemoryPool%601?displayProperty=nameWithType>, która przydziela jednoznacznie wpisane bloki pamięci z puli pamięci do właściciela. <xref:System.Buffers.IMemoryOwner%601>wystąpienia mogą być wydzierżawione z puli, wywołując i wywołując z <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType> powrotem do puli przez wywołanie <xref:System.Buffers.MemoryPool%601.Dispose?displayProperty=nameWithType> .
+- <xref:System.Buffers.MemoryPool%601?displayProperty=nameWithType>, która przydziela jednoznacznie wpisane bloki pamięci z puli pamięci do właściciela. <xref:System.Buffers.IMemoryOwner%601> wystąpienia mogą być wydzierżawione z puli, wywołując i wywołując z <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType> powrotem do puli przez wywołanie <xref:System.Buffers.MemoryPool%601.Dispose?displayProperty=nameWithType> .
 
 - <xref:System.Buffers.IMemoryOwner%601?displayProperty=nameWithType>, który reprezentuje właściciela bloku pamięci i kontroluje jego okres istnienia.
 
-- <xref:System.Buffers.MemoryManager%601>abstrakcyjna klasa bazowa, która może służyć do zastępowania implementacji, <xref:System.Memory%601> która <xref:System.Memory%601> może być wykonywana przez dodatkowe typy, takie jak bezpieczne dojścia. <xref:System.Buffers.MemoryManager%601>jest przeznaczony dla zaawansowanych scenariuszy.
+- <xref:System.Buffers.MemoryManager%601>abstrakcyjna klasa bazowa, która może służyć do zastępowania implementacji, <xref:System.Memory%601> która <xref:System.Memory%601> może być wykonywana przez dodatkowe typy, takie jak bezpieczne dojścia. <xref:System.Buffers.MemoryManager%601> jest przeznaczony dla zaawansowanych scenariuszy.
 
 - <xref:System.ArraySegment%601>, otoka dla określonej liczby elementów tablicy, zaczynając od określonego indeksu.
 

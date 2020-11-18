@@ -1,14 +1,13 @@
 ---
 title: Wpływ przestrzeni nazw na rozwijanie odwołań do jednostek w przypadku nowych węzłów zawierających elementy i atrybuty
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 64359aee-aab0-4042-9a32-d19789af6ca7
-ms.openlocfilehash: 05ec622f09106978281cd3e6f0a82f13703c2097
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8ef86f05d2b39639ad5faae792eb9b2854ff0673
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288813"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830171"
 ---
 # <a name="namespace-affect-on-entity-reference-expansion-for-new-nodes-containing-elements-and-attributes"></a>Wpływ przestrzeni nazw na rozwijanie odwołań do jednostek w przypadku nowych węzłów zawierających elementy i atrybuty
 Ponieważ zawartość deklaracji jednostki może zawierać niemal wszystko, istnieje możliwość, że zawartość może zawierać element, taki jak `<!ENTITY aname "<elem>test</elem>">` .  

@@ -1,26 +1,25 @@
 ---
 title: Przeciążenia operatorów
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - operators [.NET Framework], overloads
 - names [.NET Framework], overloaded operators
 - member design guidelines, operators
 - overloaded operators
 ms.assetid: 37585bf2-4c27-4dee-849a-af70e3338cc1
-ms.openlocfilehash: 893b7d1f76dfb059a0ddca77dfd8654812e9ae12
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 40e1c6a4a65bfc20c94223e4012e34928b25a2ab
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289736"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830041"
 ---
 # <a name="operator-overloads"></a>Przeciążenia operatorów
 Przeciążenia operatorów pozwalają na wyświetlanie typów struktur, tak jakby były wbudowane jako elementy pierwotne języka.
 
  Chociaż dozwolone i przydatne w niektórych sytuacjach, przeciążenia operatorów powinny być stosowane ostrożnie. Istnieje wiele przypadków, w których przeciążanie operatora zostało nadmiarowe, na przykład gdy projektanci struktury zaczynali używać operatorów dla operacji, które powinny być prostymi metodami. Poniższe wskazówki powinny pomóc określić, kiedy i jak należy używać przeciążania operatora.
 
- ❌Należy unikać definiowania przeciążeń operatora, z wyjątkiem typów, które powinny być takie jak typy pierwotne (wbudowane).
+ ❌ Należy unikać definiowania przeciążeń operatora, z wyjątkiem typów, które powinny być takie jak typy pierwotne (wbudowane).
 
  ✔️ ROZWAŻYĆ Definiowanie przeciążeń operatora w typie, który powinien być taki sam jak typ pierwotny.
 
@@ -28,11 +27,11 @@ Przeciążenia operatorów pozwalają na wyświetlanie typów struktur, tak jakb
 
  ✔️ DO definiowania przeciążeń operatora w strukturach, które reprezentują liczby (na przykład <xref:System.Decimal?displayProperty=nameWithType> ).
 
- ❌NIE należy urocze podczas definiowania przeciążeń operatora.
+ ❌ NIE należy urocze podczas definiowania przeciążeń operatora.
 
  Przeciążanie operatora jest przydatne w przypadkach, w których jest od razu oczywisty, co jest wynikiem operacji. Na przykład warto być w stanie odjąć jeden <xref:System.DateTime> od drugiego `DateTime` i uzyskać <xref:System.TimeSpan> . Nie jest jednak konieczne użycie operatora Union Logical do złożenia dwóch zapytań bazy danych lub użycie operatora przesunięcia do zapisu w strumieniu.
 
- ❌Nie dostarczaj przeciążeń operatora, chyba że co najmniej jeden z operandów ma typ definiujący Przeciążenie.
+ ❌ Nie dostarczaj przeciążeń operatora, chyba że co najmniej jeden z operandów ma typ definiujący Przeciążenie.
 
  ✔️ przeciążać operatory w sposób symetryczny.
 
@@ -91,17 +90,17 @@ Przeciążenia operatorów pozwalają na wyświetlanie typów struktur, tak jakb
 ### <a name="conversion-operators"></a>Operatory konwersji
  Operatory konwersji to operatory jednoargumentowe, które umożliwiają konwersję z jednego typu na drugi. Operatory muszą być zdefiniowane jako statyczne elementy członkowskie dla operandu lub typu zwracanego. Istnieją dwa typy operatorów konwersji: niejawne i jawne.
 
- ❌NIE należy podawać operatora konwersji, jeśli taka konwersja nie jest wyraźnie oczekiwana przez użytkowników końcowych.
+ ❌ NIE należy podawać operatora konwersji, jeśli taka konwersja nie jest wyraźnie oczekiwana przez użytkowników końcowych.
 
- ❌NIE należy definiować operatorów konwersji poza domeną typu.
+ ❌ NIE należy definiować operatorów konwersji poza domeną typu.
 
  Na przykład, <xref:System.Int32> , <xref:System.Double> i <xref:System.Decimal> są wszystkie typy liczbowe, natomiast <xref:System.DateTime> nie jest. W związku z tym nie powinien istnieć operator konwersji do konwersji `Double(long)` do `DateTime` . Konstruktor jest preferowany w takich przypadkach.
 
- ❌NIE należy podawać operatora niejawnej konwersji, jeśli konwersja jest potencjalnie stratna.
+ ❌ NIE należy podawać operatora niejawnej konwersji, jeśli konwersja jest potencjalnie stratna.
 
  Na przykład nie powinna być niejawna konwersja z `Double` do na, `Int32` ponieważ `Double` ma szerszy zakres niż `Int32` . Jawny Operator konwersji można podać, nawet jeśli konwersja jest potencjalnie stratna.
 
- ❌NIE zgłaszaj wyjątków z niejawnych rzutowania.
+ ❌ NIE zgłaszaj wyjątków z niejawnych rzutowania.
 
  Bardzo trudne jest, aby użytkownicy końcowi wiedzieli, co się dzieje, ponieważ mogą nie wiedzieć, że odbywa się konwersja.
 

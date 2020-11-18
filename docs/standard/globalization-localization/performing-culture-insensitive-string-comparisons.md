@@ -1,7 +1,6 @@
 ---
 title: Wykonywanie niezależnych od kultury porównań ciągów
 ms.date: 08/22/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - culture-insensitive string operations, comparisons
 - culture parameter
 ms.assetid: abae50ef-32f7-4a50-a540-fd256fd1aed0
-ms.openlocfilehash: 1d8dc3f1bf686550eb94d7fb3003d4c21741739e
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 81520f603041693ba97e4ad74764a64627ee7147
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064148"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829794"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>Wykonywanie niezależnych od kultury porównań ciągów
 Domyślnie <xref:System.String.Compare%2A?displayProperty=nameWithType> Metoda wykonuje porównania uwzględniające kulturę i wielkość liter. Ta metoda zawiera również kilka przeciążeń, które udostępniają `culture` parametr, który pozwala określić kulturę, która ma być używana, oraz `comparisonType` parametr, który umożliwia określenie reguł porównania do użycia. Wywoływanie tych metod zamiast przeciążenia domyślnego usuwa wszelkie niejednoznaczności dotyczące reguł używanych w wywołaniu określonej metody i jednoznacznie wskazuje, czy w danym porównaniu jest uwzględniana kultura, czy nie.  
@@ -39,7 +38,7 @@ Domyślnie <xref:System.String.Compare%2A?displayProperty=nameWithType> Metoda w
 
 Można pobrać [tabele wagi sortowania](https://www.microsoft.com/download/details.aspx?id=10921), zestaw plików tekstowych, które zawierają informacje o wagach znaków używanych w operacjach sortowania i porównywania dla systemów operacyjnych Windows, a także [domyślną tabelę elementów sortowania Unicode](https://www.unicode.org/Public/UCA/latest/allkeys.txt), tabelę wagi sortowania dla systemu Linux i macOS.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.String.Compare%2A?displayProperty=nameWithType>
 - <xref:System.String.CompareTo%2A?displayProperty=nameWithType>

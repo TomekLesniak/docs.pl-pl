@@ -1,7 +1,6 @@
 ---
 title: Wykonywanie niezależnych od kultury zmian wielkości liter
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - String.ToUpper method
 - culture parameter
 ms.assetid: 822d551c-c69a-4191-82f4-183d82c9179c
-ms.openlocfilehash: 6baef7b0a5bbdacd33d84df01b1aa943897a9e3d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 777904654eceb0c6b0a7ca0a82cea98dd81b3010
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276819"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829820"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>Wykonywanie niezależnych od kultury zmian wielkości liter
 <xref:System.String.ToUpper%2A?displayProperty=nameWithType>Metody, <xref:System.String.ToLower%2A?displayProperty=nameWithType> , <xref:System.Char.ToUpper%2A?displayProperty=nameWithType> i <xref:System.Char.ToLower%2A?displayProperty=nameWithType> zapewniają przeciążenia, które nie akceptują żadnych parametrów. Domyślnie te przeciążenia bez parametrów wykonują zmiany wielkości liter na podstawie wartości <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> . Powoduje to generowanie wyników z uwzględnieniem wielkości liter, które mogą się różnić w zależności od kultury. Aby określić, czy chcesz, aby zmiany wielkości liter były zależne od kultury lub niewrażliwe na kulturę, należy użyć przeciążenia tych metod, które wymagają jawnego określenia `culture` parametru. W przypadku zmian wielkości liter z uwzględnieniem kultury należy określić `CultureInfo.CurrentCulture` dla `culture` parametru. W przypadku zmian wielkości liter bez uwzględniania kultur Określ `CultureInfo.InvariantCulture` wartość `culture` parametru.  

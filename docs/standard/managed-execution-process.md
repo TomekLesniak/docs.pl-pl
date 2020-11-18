@@ -1,7 +1,6 @@
 ---
 title: Proces zarządzanego wykonania
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - source code language
 - code, managed execution process
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-ms.openlocfilehash: bc455817d29d2427f3051e79145b535e3eeaccbb
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 17494c3b5620ac649aeb3e6ef73085097517d1f5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92161104"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830678"
 ---
 # <a name="managed-execution-process"></a>Proces zarządzanego wykonania
 <a name="introduction"></a> Zarządzany proces wykonywania obejmuje następujące kroki, które opisano szczegółowo w dalszej części tego tematu:
@@ -105,7 +104,7 @@ ms.locfileid: "92161104"
 
  [Powrót do początku](#introduction)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Omówienie](../framework/get-started/overview.md)
 - [Niezależność od języka i składniki niezależne od języka](language-independence-and-language-independent-components.md)

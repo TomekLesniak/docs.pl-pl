@@ -2,7 +2,6 @@
 title: 'Instrukcje: kompresowanie i wyodrębnianie plików'
 description: Kompresuj & Wyodrębnianie plików przy użyciu metody System. IO. Compression. Zobacz przykłady użycia ZipFile, ZipArchive, ZipArchiveEntry, DeflateStream, & GZipStream.
 ms.date: 01/14/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - compression
 - compress files
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
-ms.openlocfilehash: ea078099aba3161818844d14af221eb582e7f11b
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: a1077c7277e0aa54e3c8883cfc27d93926485b8e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188292"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830860"
 ---
 # <a name="how-to-compress-and-extract-files"></a>Instrukcje: kompresowanie i wyodrębnianie plików
 
@@ -73,7 +72,7 @@ Można również użyć <xref:System.IO.Compression.GZipStream> <xref:System.IO.
 [!code-csharp[IO.Compression.GZip1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.Compression.GZip1/CS/gziptest.cs#1)]
 [!code-vb[IO.Compression.GZip1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/IO.Compression.GZip1/VB/gziptest.vb#1)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.IO.Compression.ZipArchive>  
 - <xref:System.IO.Compression.ZipFile>  

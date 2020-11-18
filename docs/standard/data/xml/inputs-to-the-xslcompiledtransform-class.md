@@ -1,17 +1,16 @@
 ---
 title: Dane wejściowe klasy XslCompiledTransform
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 834049f1-ab41-449e-9f10-4a1d0701bc48
-ms.openlocfilehash: 1452bc19940a33aeebaccf3041857a07c976964d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 06427097e1e242171abe84ea557cdbb108d98a9d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287652"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830223"
 ---
 # <a name="inputs-to-the-xslcompiledtransform-class"></a>Dane wejściowe klasy XslCompiledTransform
 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>Metoda akceptuje trzy typy danych wejściowych dla dokumentu źródłowego: obiekt implementujący <xref:System.Xml.XPath.IXPathNavigable> interfejs, <xref:System.Xml.XmlReader> obiekt, który odczytuje dokument źródłowy lub ciąg URI.  
@@ -24,12 +23,12 @@ ms.locfileid: "84287652"
   
 - <xref:System.Xml.XmlNode>Klasa jest oparta na Document Object Model W3C (dom) i oferuje możliwości edycji.  
   
-- <xref:System.Xml.XPath.XPathDocument>Klasa to magazyn danych tylko do odczytu oparty na modelu danych XPath. <xref:System.Xml.XPath.XPathDocument>jest zalecaną klasą przetwarzania XSLT. Zapewnia większą wydajność w porównaniu z <xref:System.Xml.XmlNode> klasą.  
+- <xref:System.Xml.XPath.XPathDocument>Klasa to magazyn danych tylko do odczytu oparty na modelu danych XPath. <xref:System.Xml.XPath.XPathDocument> jest zalecaną klasą przetwarzania XSLT. Zapewnia większą wydajność w porównaniu z <xref:System.Xml.XmlNode> klasą.  
   
 > [!NOTE]
 > Przekształcenia są stosowane do dokumentu jako całości. Innymi słowy, jeśli przejdziesz do węzła innego niż węzeł główny dokumentu, nie uniemożliwi to proces przekształcania uzyskuje dostęp do wszystkich węzłów w załadowanym dokumencie. Aby przekształcić fragment węzła, należy utworzyć obiekt zawierający tylko fragment węzła i przekazać go do <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Aby uzyskać więcej informacji, zobacz [jak: przekształcanie fragmentu węzła](how-to-transform-a-node-fragment.md).  
   
- W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku Books. XML do pliku Books. html przy użyciu arkusza stylów Transform. xsl. Pliki Books. XML i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
+ W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku books.xml do pliku books.html przy użyciu arkusza stylów Transform. xsl. Pliki books.xml i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
   
  [!code-csharp[XslCompiledTransform.Transform2#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform2/CS/Program.cs#1)]
  [!code-vb[XslCompiledTransform.Transform2#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#1)]  
@@ -37,7 +36,7 @@ ms.locfileid: "84287652"
 ## <a name="xmlreader-object"></a>XmlReader — obiekt  
  <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>Metoda jest ładowana z bieżącego węzła przez <xref:System.Xml.XmlReader> wszystkie jego elementy podrzędne. Dzięki temu można użyć części dokumentu jako dokumentu kontekstowego. Po <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> powrocie metody element <xref:System.Xml.XmlReader> jest ustawiany w następnym węźle po zakończeniu dokumentu kontekstowego. Jeśli koniec dokumentu zostanie osiągnięty, <xref:System.Xml.XmlReader> zostanie umieszczony na końcu pliku (EOF).  
   
- W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku Books. XML do pliku Books. html przy użyciu arkusza stylów Transform. xsl. Pliki Books. XML i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
+ W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku books.xml do pliku books.html przy użyciu arkusza stylów Transform. xsl. Pliki books.xml i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
   
  [!code-csharp[XslCompiledTransform.Transform2#2](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform2/CS/Program.cs#2)]
  [!code-vb[XslCompiledTransform.Transform2#2](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#2)]  
@@ -45,7 +44,7 @@ ms.locfileid: "84287652"
 ## <a name="string-uri"></a>Identyfikator URI ciągu  
  Możesz również określić identyfikator URI dokumentu źródłowego jako dane wejściowe XSLT. <xref:System.Xml.XmlResolver>Służy do rozpoznawania identyfikatora URI. Możesz określić, <xref:System.Xml.XmlResolver> Aby użyć, przechodząc do <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Jeśli <xref:System.Xml.XmlResolver> nie jest określony, <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> Metoda używa domyślnego ustawienia <xref:System.Xml.XmlUrlResolver> bez poświadczeń.  
   
- W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku Books. XML do pliku Books. html przy użyciu arkusza stylów Transform. xsl. Pliki Books. XML i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
+ W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku books.xml do pliku books.html przy użyciu arkusza stylów Transform. xsl. Pliki books.xml i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
   
  [!code-csharp[XslCompiledTransform.Transform2#3](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform2/CS/Program.cs#3)]
  [!code-vb[XslCompiledTransform.Transform2#3](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#3)]  

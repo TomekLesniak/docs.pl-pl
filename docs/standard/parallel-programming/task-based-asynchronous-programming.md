@@ -2,23 +2,22 @@
 title: Programowanie asynchroniczne oparte na zadaniach — .NET
 description: Ten artykuł zawiera informacje na temat programowania asynchronicznego opartego na zadaniach za pośrednictwem biblioteki zadań równoległych (TPL) w programie .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: d735cb56c5914dd33ba694c95a8e92446ca47088
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: a1abe474628cd88e0c24f4152d83bd8ed7ad7950
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925249"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830028"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programowanie asynchroniczne oparte na zadaniach
 
-Biblioteka zadań równoległych (TPL) jest oparta na koncepcji *zadania* , które reprezentuje operację asynchroniczną. Na kilka sposobów zadanie jest podobne do wątku lub <xref:System.Threading.ThreadPool> elementu pracy, ale na wyższym poziomie abstrakcji. Termin *równoległy zadania* odnosi się do co najmniej jednego niezależnego zadania uruchomionego współbieżnie. Zadania zapewniają dwie podstawowe korzyści:
+Biblioteka zadań równoległych (TPL) jest oparta na koncepcji *zadania*, które reprezentuje operację asynchroniczną. Na kilka sposobów zadanie jest podobne do wątku lub <xref:System.Threading.ThreadPool> elementu pracy, ale na wyższym poziomie abstrakcji. Termin *równoległy zadania* odnosi się do co najmniej jednego niezależnego zadania uruchomionego współbieżnie. Zadania zapewniają dwie podstawowe korzyści:
 
 - Efektywniejsze i bardziej skalowalne wykorzystanie zasobów systemowych.
 
@@ -114,7 +113,7 @@ Poniższy przykład przedstawia prostą ilustrację. Zmienia bieżącą kulturę
 :::code language="vbnet" source="snippets/vb/asyncculture1.vb" id="1":::
 
 > [!NOTE]
-> W wersjach .NET Framework wcześniejszych niż .NET Framework 4,6 kultura zadania jest określana przez kulturę wątku, w którym jest *uruchomiona* , a nie kulturą *wątku wywołującego* . W przypadku zadań asynchronicznych oznacza to, że kultura używana przez zadanie może różnić się od kultury wywołującej wątku.
+> W wersjach .NET Framework wcześniejszych niż .NET Framework 4,6 kultura zadania jest określana przez kulturę wątku, w którym jest *uruchomiona*, a nie kulturą *wątku wywołującego*. W przypadku zadań asynchronicznych oznacza to, że kultura używana przez zadanie może różnić się od kultury wywołującej wątku.
 
 Aby uzyskać więcej informacji na temat zadań i kultur asynchronicznych, zobacz sekcję "operacje dotyczące kultur i asynchronicznych operacji" w <xref:System.Globalization.CultureInfo> temacie.
 
@@ -138,7 +137,7 @@ Aby uzyskać więcej informacji, zobacz Tworzenie [łańcucha zadań przy użyci
 
 ## <a name="creating-detached-child-tasks"></a>Tworzenie odłączonych zadań podrzędnych
 
-Gdy kod użytkownika, który jest uruchomiony w zadaniu, tworzy nowe zadanie i nie określa <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> opcji, nowe zadanie nie jest zsynchronizowane z zadaniem nadrzędnym w żaden specjalny sposób. Ten typ zadania niezsynchronizowanego jest nazywany *odłączonym zadaniem zagnieżdżonym* lub *odłączonym zadaniem podrzędnym* . Poniższy przykład przedstawia zadanie, które tworzy jedno odłączone zadanie podrzędne.
+Gdy kod użytkownika, który jest uruchomiony w zadaniu, tworzy nowe zadanie i nie określa <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> opcji, nowe zadanie nie jest zsynchronizowane z zadaniem nadrzędnym w żaden specjalny sposób. Ten typ zadania niezsynchronizowanego jest nazywany *odłączonym zadaniem zagnieżdżonym* lub *odłączonym zadaniem podrzędnym*. Poniższy przykład przedstawia zadanie, które tworzy jedno odłączone zadanie podrzędne.
 
 [!code-csharp[TPL_TaskIntro#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#07)]
 [!code-vb[TPL_TaskIntro#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#07)]
@@ -276,7 +275,7 @@ Jeśli musisz dziedziczyć z <xref:System.Threading.Tasks.Task> lub <xref:System
 |[Równoległość danych](data-parallelism-task-parallel-library.md)|Opisuje sposób użycia <xref:System.Threading.Tasks.Parallel.For%2A> i <xref:System.Threading.Tasks.Parallel.ForEach%2A> do tworzenia pętli równoległych nad danymi.|
 |[Programowanie równoległe](index.md)|Węzeł najwyższego poziomu dla .NET Framework programowania równoległego.|
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Programowanie równoległe](index.md)
 - [Przykłady programowania równoległego przy użyciu programu .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

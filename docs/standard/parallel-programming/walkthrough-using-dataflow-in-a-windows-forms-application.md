@@ -1,18 +1,17 @@
 ---
 title: 'Przewodnik: Korzystanie z przepływu danych w aplikacji Windows Forms'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - TPL dataflow library, in Windows Forms
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-ms.openlocfilehash: 7cd82ffde5fccf938027a6ab6ea15fef226fef6f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c09259afdc5ede32791ba895ca012cdc2a0a1c18
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288436"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829950"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Przewodnik: Korzystanie z przepływu danych w aplikacji Windows Forms
 W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych, które wykonują przetwarzanie obrazów w aplikacji Windows Forms.  
@@ -47,7 +46,7 @@ W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych
   
 3. Dodaj <xref:System.Windows.Forms.ToolStripButton> kontrolkę do <xref:System.Windows.Forms.ToolStrip> kontrolki. Ustaw <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> Właściwość na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> i właściwość, <xref:System.Windows.Forms.ToolStripItem.Text%2A> Aby **wybrać folder**.  
   
-4. Dodaj drugą <xref:System.Windows.Forms.ToolStripButton> kontrolkę do <xref:System.Windows.Forms.ToolStrip> kontrolki. Ustaw właściwość <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> , <xref:System.Windows.Forms.ToolStripItem.Text%2A> Właściwość do **anulowania**i <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> Właściwość na `False` .  
+4. Dodaj drugą <xref:System.Windows.Forms.ToolStripButton> kontrolkę do <xref:System.Windows.Forms.ToolStrip> kontrolki. Ustaw właściwość <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> , <xref:System.Windows.Forms.ToolStripItem.Text%2A> Właściwość do **anulowania** i <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> Właściwość na `False` .  
   
 5. Dodaj <xref:System.Windows.Forms.PictureBox> obiekt do formularza głównego. Ustaw <xref:System.Windows.Forms.Control.Dock%2A> Właściwość na wartość <xref:System.Windows.Forms.DockStyle.Fill> .  
   
@@ -57,7 +56,7 @@ W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych
   
 ### <a name="to-create-the-dataflow-network"></a>Aby utworzyć sieć przepływu danych  
   
-1. Dodaj odwołanie do elementu System. Threading. Tasks. przepływu danych. dll do projektu.  
+1. Dodaj odwołanie do System.Threading.Tasks.Dataflow.dll do projektu.  
   
 2. Upewnij się, że Form1.cs (Form1. vb dla Visual Basic) zawiera `using` następujące `Using` instrukcje (w Visual Basic):  
   

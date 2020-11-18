@@ -2,7 +2,6 @@
 title: Usługi kryptograficzne
 description: Omówienie metod i praktyk szyfrowania obsługiwanych przez platformę .NET.
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography [.NET]
 - pattern of derived class inheritance
@@ -25,12 +24,12 @@ helpviewer_keywords:
 - cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 463ccec5f60ff10331d501d39144a979d95eff95
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 5558c60768b992984c3800b482961128d3bf5d0b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281723"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829911"
 ---
 # <a name="cryptographic-services"></a>Usługi kryptograficzne
 
@@ -71,7 +70,7 @@ Szyfrowanie klucza tajnego jest również określane jako szyfrowanie symetryczn
 
 Typ algorytmu tajnego klucza o nazwie szyfr bloku służy do szyfrowania jednego bloku danych w danym momencie. Zablokuj szyfry, takie jak Data Encryption Standard (DES), TripleDES i Advanced Encryption Standard (AES), Przekształć kryptograficznie Blok wejściowy *n* bajtów do bloku wyjściowego zaszyfrowanych bajtów. Aby zaszyfrować lub odszyfrować sekwencję bajtów, należy ją zablokować za pomocą bloku. Ponieważ *n* jest mały (8 bajtów dla des i TripleDES; 16 bajtów [domyślna], 24 bajty lub 32 bajtów dla AES), wartości danych, które są większe niż *n* , muszą być szyfrowane po jednym bloku naraz. Wartości danych, które są mniejsze niż *n* , muszą być rozwinięte do *n* , aby można było je przetworzyć.
 
-Jedna prosta forma szyfrowania bloku jest nazywana trybem elektronicznym trybu (EBC). Tryb EBC nie jest uważany za Bezpieczny, ponieważ nie używa wektora inicjalizacji do inicjowania pierwszego bloku zwykłego tekstu. W przypadku danego klucza tajnego *k* , prosty szyfr bloku, który nie używa wektora inicjalizacji, będzie szyfrować ten sam blok danych wejściowych w tym samym bloku wyjściowym tekstu szyfrowanego. W związku z tym, jeśli masz zduplikowane bloki w strumieniu danych wejściowych w formacie zwykłego tekstu, będziesz mieć zduplikowane bloki w strumieniu danych wyjściowych. Te zduplikowane bloki wyjściowe wyzwalają alert nieautoryzowanych użytkowników do słabego szyfrowania wykorzystujących algorytmy, które mogły zostać zastosowane, oraz możliwe tryby ataków. W związku z tym jest bardzo narażony na analizę, a ostatecznie odnajdywanie kluczy.
+Jedna prosta forma szyfrowania bloku jest nazywana trybem elektronicznym trybu (EBC). Tryb EBC nie jest uważany za Bezpieczny, ponieważ nie używa wektora inicjalizacji do inicjowania pierwszego bloku zwykłego tekstu. W przypadku danego klucza tajnego *k*, prosty szyfr bloku, który nie używa wektora inicjalizacji, będzie szyfrować ten sam blok danych wejściowych w tym samym bloku wyjściowym tekstu szyfrowanego. W związku z tym, jeśli masz zduplikowane bloki w strumieniu danych wejściowych w formacie zwykłego tekstu, będziesz mieć zduplikowane bloki w strumieniu danych wyjściowych. Te zduplikowane bloki wyjściowe wyzwalają alert nieautoryzowanych użytkowników do słabego szyfrowania wykorzystujących algorytmy, które mogły zostać zastosowane, oraz możliwe tryby ataków. W związku z tym jest bardzo narażony na analizę, a ostatecznie odnajdywanie kluczy.
 
 Blokowe klasy szyfrowe, które są dostępne w bibliotece klas bazowych, używają domyślnego trybu łańcucha nazywanego łańcuchem blokowym (CBC), chociaż można zmienić to ustawienie domyślne, jeśli chcesz.
 

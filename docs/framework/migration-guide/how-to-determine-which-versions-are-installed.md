@@ -9,12 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 79c60c8dbc29d8985f3cfb2ffc2436539155c555
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: fe28a4bf4a5432d6e33b7ad3238c1d7c0d4e7a84
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440148"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831367"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Instrukcje: Określanie, które wersje .NET Framework są zainstalowane
 
@@ -60,7 +60,7 @@ Wartość REG_DWORD **wydania** w rejestrze reprezentuje wersję zainstalowanej 
 |  .NET Framework 4.7     | Aktualizacja systemu Windows 10 dla twórców: 460798<br />Wszystkie inne systemy operacyjne Windows (w tym inne systemy operacyjne Windows 10): 460805 |
 | .NET Framework 4.7.1   | W przypadku aktualizacji systemu Windows 10 dla twórców i systemu Windows Server w wersji 1709:461308<br/>Wszystkie inne systemy operacyjne Windows (w tym inne systemy operacyjne Windows 10): 461310 |
 |  .NET Framework 4.7.2   | W systemie Windows 10 kwiecień 2018 Update i Windows Server w wersji 1803:461808<br/>We wszystkich systemach operacyjnych Windows innych niż Windows 10 kwiecień 2018 Update i Windows Server w wersji 1803:461814 |
-|  .NET Framework 4.8     | W systemie Windows 10 maja 2019 Update i aktualizacja Windows 10 listopad 2019:528040<br/>Aktualizacja systemu Windows 10 maja 2020:528372<br/>Wszystkie inne systemy operacyjne Windows (w tym inne systemy operacyjne Windows 10): 528049 |
+|  .NET Framework 4.8     | W systemie Windows 10 maja 2019 Update i aktualizacja Windows 10 listopad 2019:528040<br/>Aktualizacje systemu Windows 10 maja 2020 Update i Windows 10 października 2020:528372<br/>Wszystkie inne systemy operacyjne Windows (w tym inne systemy operacyjne Windows 10): 528049 |
 
 ### <a name="minimum-version"></a>Minimalna wersja
 
@@ -81,7 +81,7 @@ Aby określić, czy jest dostępna *minimalna* wersja .NET Framework, sprawdź, 
 
 ### <a name="use-registry-editor"></a>Korzystanie z edytora rejestru
 
-01. Z menu **Start** wybierz polecenie **Uruchom** , wpisz polecenie *regedit* , a następnie wybierz przycisk **OK**.
+01. Z menu **Start** wybierz polecenie **Uruchom**, wpisz polecenie *regedit*, a następnie wybierz przycisk **OK**.
 
    (Musisz mieć poświadczenia administracyjne, aby uruchomić regedit).
 
@@ -151,7 +151,7 @@ Zwróć uwagę, że ścieżka rejestru do podklucza .NET Framework 1,0 różni s
 
 ### <a name="use-registry-editor-older-framework-versions"></a>Użyj edytora rejestru (starsze wersje Framework)
 
-01. Z menu **Start** wybierz polecenie **Uruchom** , wpisz polecenie *regedit* , a następnie wybierz przycisk **OK**.
+01. Z menu **Start** wybierz polecenie **Uruchom**, wpisz polecenie *regedit*, a następnie wybierz przycisk **OK**.
 
     Musisz mieć poświadczenia administracyjne, aby uruchomić regedit.
 
@@ -209,7 +209,7 @@ v4.0
 
      Zwrócony `System.Version` obiekt identyfikuje wersję środowiska uruchomieniowego, które aktualnie wykonuje kod. Nie zwraca wersji zestawu ani innych wersji środowiska uruchomieniowego, które mogły zostać zainstalowane na komputerze.
 
-     W przypadku .NET Framework w wersji 4, 4,5, 4.5.1 i 4.5.2 ciąg reprezentujący zwracanego <xref:System.Version> obiektu ma postać 4.0.30319. *XXXXX* , gdzie *XXXXX* jest mniejszy niż 42000. W przypadku .NET Framework 4,6 i nowszych wersje ma postać 4.0.30319.42000.
+     W przypadku .NET Framework w wersji 4, 4,5, 4.5.1 i 4.5.2 ciąg reprezentujący zwracanego <xref:System.Version> obiektu ma postać 4.0.30319.*XXXXX*, gdzie *XXXXX* jest mniejszy niż 42000. W przypadku .NET Framework 4,6 i nowszych wersje ma postać 4.0.30319.42000.
 
   1. Po utworzeniu obiektu **wersji** wykonaj zapytanie w następujący sposób:
 
@@ -217,7 +217,7 @@ v4.0
 
      - W przypadku pomocniczego identyfikatora wydania (na przykład *0* w przypadku wersji 4,0) należy użyć <xref:System.Version.Minor%2A?displayProperty=nameWithType> właściwości.
 
-     - Dla całego ciągu wersji (na przykład *4.0.30319.18010* ) Użyj <xref:System.Version.ToString%2A?displayProperty=nameWithType> metody. Ta metoda zwraca pojedynczą wartość odzwierciedlającą wersję środowiska uruchomieniowego, które wykonuje kod. Nie zwraca wersji zestawu ani innych wersji środowiska uruchomieniowego, które mogą być zainstalowane na komputerze.
+     - Dla całego ciągu wersji (na przykład *4.0.30319.18010*) Użyj <xref:System.Version.ToString%2A?displayProperty=nameWithType> metody. Ta metoda zwraca pojedynczą wartość odzwierciedlającą wersję środowiska uruchomieniowego, które wykonuje kod. Nie zwraca wersji zestawu ani innych wersji środowiska uruchomieniowego, które mogą być zainstalowane na komputerze.
 
   W poniższym przykładzie zastosowano <xref:System.Environment.Version%2A?displayProperty=nameWithType> Właściwość w celu pobrania informacji o wersji środowiska CLR:
 
@@ -235,7 +235,7 @@ v4.0
   Version: 4.0.30319.18010
   ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Instrukcje: Określanie, które aktualizacje .NET Framework są zainstalowane](how-to-determine-which-net-framework-updates-are-installed.md)
 - [Zainstaluj .NET Framework dla deweloperów](../install/guide-for-developers.md)

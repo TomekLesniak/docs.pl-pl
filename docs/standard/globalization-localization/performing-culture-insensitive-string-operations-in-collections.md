@@ -1,7 +1,6 @@
 ---
 title: Wykonywanie niezależnych od kultury operacji na ciągach w kolekcjach
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - SortedList class, culture-insensitive string operations
 - culture parameter
 ms.assetid: 5cdc9396-a64b-4615-a1cd-b605db4c5983
-ms.openlocfilehash: 0a55a41b7cd2a2d245d0fb7722dddee794777422
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: f0d932dcbb07253e3ea52238a81b416af148cf98
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063966"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829781"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-collections"></a>Wykonywanie niezależnych od kultury operacji na ciągach w kolekcjach
 
@@ -137,7 +136,7 @@ Ogólnie rzecz biorąc, jeśli używasz `SortedList` w ciągach bez określania 
 
 Przeciążenia `ArrayList.Sort` metody domyślnie wykonują sortowanie zależne od kultury przy użyciu `Thread.CurrentCulture` właściwości. Wyniki mogą się różnić w zależności od różnych kolejności sortowania. Aby wyeliminować zachowanie wrażliwe na kulturę, Użyj przeciążenia tej metody, która akceptuje `IComparer` implementację. Dla `comparer` parametru należy określić niestandardową klasę niezmiennej porównującej, która używa `CultureInfo.InvariantCulture` . Przykład niestandardowej klasy niezmiennej porównującej znajduje się w temacie [using klasy SortedList](#cpconperformingculture-insensitivestringoperationsincollectionsanchor1) .
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.CaseInsensitiveComparer>
 - <xref:System.Collections.CaseInsensitiveHashCodeProvider>

@@ -1,17 +1,16 @@
 ---
 title: Zmienianie właściwości prefiksu przestrzeni nazw
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: d5c87cbe-4d69-429f-aad5-3103c2ca2770
-ms.openlocfilehash: b817a68ff9789be414118ff4c1a3d88ca3ea9f01
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 14a59a9fdc602e63822a62c102cbffa32d6ba850
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290918"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830275"
 ---
 # <a name="changing-namespace-prefix-properties"></a>Zmienianie właściwości prefiksu przestrzeni nazw
 Klasa **XmlNode** pozwala zmienić prefiks przestrzeni nazw skojarzony z danym węzłem. Na przykład poniższy kod ilustruje prefiks elementu, który jest zmieniany.  

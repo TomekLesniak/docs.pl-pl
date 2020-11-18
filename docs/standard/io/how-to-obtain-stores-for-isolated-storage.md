@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Uzyskiwanie magazynów dla izolowanego magazynu'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,19 +12,19 @@ helpviewer_keywords:
 - data stores, obtaining
 - data storage using isolated storage, obtaining stores
 ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
-ms.openlocfilehash: a08563b67239c679e3bc88876781508fd78bea75
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a3803f50c99b8c31030c6afe756e209c9350137f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291841"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830743"
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a>Instrukcje: Uzyskiwanie magazynów dla izolowanego magazynu
 Izolowany magazyn uwidacznia wirtualny system plików w przedziale danych. <xref:System.IO.IsolatedStorage.IsolatedStorageFile>Klasa dostarcza wiele metod współpracy z izolowanym magazynem. Aby utworzyć i pobrać magazyny, program <xref:System.IO.IsolatedStorage.IsolatedStorageFile> udostępnia trzy metody statyczne:  
   
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>zwraca magazyn izolowany przez użytkownika i zestaw.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> zwraca magazyn izolowany przez użytkownika i zestaw.  
   
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>zwraca magazyn izolowany przez domenę i zestaw.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> zwraca magazyn izolowany przez domenę i zestaw.  
   
      Obie metody pobierają magazyn, który należy do kodu, z którego są wywoływane.  
   
@@ -48,7 +47,7 @@ Izolowany magazyn uwidacznia wirtualny system plików w przedziale danych. <xref
 ## <a name="example"></a>Przykład  
  Poniższy kod zawiera prosty przykład klasy pobierającej magazyn izolowany przez użytkownika i zestaw. Kod można zmienić, aby pobrać magazyn izolowany według użytkownika, domeny i zestawu przez dodanie <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType> do argumentów, które są <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> przekazywane przez metodę.  
   
- Po uruchomieniu kodu można potwierdzić, że magazyn został utworzony, wpisując **Storeadm/list** w wierszu polecenia. Spowoduje to uruchomienie [Narzędzia izolowanego magazynu (Storeadm. exe)](../../framework/tools/storeadm-exe-isolated-storage-tool.md) i wyświetlenie listy wszystkich aktualnie wyizolowanych magazynów dla danego użytkownika.  
+ Po uruchomieniu kodu można potwierdzić, że magazyn został utworzony, wpisując **Storeadm/list** w wierszu polecenia. Spowoduje to uruchomienie [Narzędzia izolowanego magazynu (Storeadm.exe)](../../framework/tools/storeadm-exe-isolated-storage-tool.md) i wyświetlenie listy wszystkich aktualnie wyizolowanych magazynów dla danego użytkownika.  
   
  [!code-cpp[Conceptual.IsolatedStorage#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source6.cpp#7)]
  [!code-csharp[Conceptual.IsolatedStorage#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source6.cs#7)]

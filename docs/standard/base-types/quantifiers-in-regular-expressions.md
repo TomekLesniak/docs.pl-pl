@@ -2,7 +2,6 @@
 title: Kwantyfikatory w wyrażeniach regularnych
 description: Dowiedz się więcej na temat kwantyfikatorów wyrażeń regularnych, które określają, ile wystąpień znaku, grupy lub klasy znaków musi być obecne w danych wejściowych do dopasowania.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 361286b992180e1d7fdf18d88022780cc3aa53fc
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 46f780dff948d290ee7906f8de7e74b03a404cc5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889429"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831042"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kwantyfikatory w wyrażeniach regularnych
 Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi być obecne w danych wejściowych, aby można było znaleźć dopasowanie.  W poniższej tabeli wymieniono Kwantyfikatory obsługiwane przez platformę .NET.  

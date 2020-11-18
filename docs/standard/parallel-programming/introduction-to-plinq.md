@@ -2,19 +2,18 @@
 title: Wprowadzenie do PLINQ
 description: Dowiedz się, jak wykonywać zapytania równolegle przy użyciu PLINQ na platformie .NET. PLINQ oznacza równoległe zapytanie Language-Integrated (LINQ).
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: 37414c7963a3803518b41a5c6d262740313e2b37
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: 9a6401e8955c51ea72db3ca203365147b00db64f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925353"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830652"
 ---
 # <a name="introduction-to-plinq"></a>Wprowadzenie do PLINQ
 
@@ -136,7 +135,7 @@ PLINQ obsługuje stałą liczbę partycji (mimo że dane mogą być dynamicznie 
 
 W wielu przypadkach zapytanie może być równoległe, ale obciążenie związane z konfigurowaniem zapytania równoległego przewyższa uzyskane korzyści z wydajności. Jeśli zapytanie nie wykonuje dużo obliczeń lub źródło danych jest małe, zapytanie PLINQ może być wolniejsze niż sekwencyjne zapytanie LINQ to Objects. Można użyć analizatora wydajności równoległej w programie Visual Studio Team Server do porównania wydajności różnych zapytań, lokalizowania wąskich gardeł przetwarzania oraz określania, czy zapytanie działa równolegle, czy sekwencyjnie. Aby uzyskać więcej informacji, zobacz temat [Concurrency Visualizer](/visualstudio/profiling/concurrency-visualizer) i [instrukcje: mierzenie wydajności zapytań PLINQ](how-to-measure-plinq-query-performance.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Równoległe LINQ (PLINQ)](introduction-to-plinq.md)
 - [Ogólne informacje o przyspieszeniach w PLINQ](understanding-speedup-in-plinq.md)

@@ -1,14 +1,13 @@
 ---
 title: Przetwarzanie danych XML przy użyciu modelu DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 56b6e9c7-ed82-4a65-a647-7be32c83bcc8
-ms.openlocfilehash: 242554cc948ef16972ffd26d5464dae2727ed339
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2608008f33eb8bc0dd0a9b5fe96e619df6138b51
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290840"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830912"
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>Przetwarzanie danych XML przy użyciu modelu DOM
 Document Object Model XML (DOM) traktuje dane XML jako standardowy zestaw obiektów i służy do przetwarzania danych XML w pamięci. `System.Xml`Przestrzeń nazw zapewnia programistyczną reprezentację dokumentów XML, fragmentów, węzłów lub zestawów węzłów. Jest on oparty na organizacja World Wide Web Consortium (W3C) modelu DOM 1 rdzeń i na poziomie modelu DOM 2 rdzeni.  

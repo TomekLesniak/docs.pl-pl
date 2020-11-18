@@ -1,19 +1,18 @@
 ---
 title: Ogólne informacje o przyspieszeniach w PLINQ
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, performance tuning
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
-ms.openlocfilehash: 627f1327a9fe87fc226dfbb40df50ec4855edfb9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 247ebb868a9256deaf59c1369e6143e15af4d6b0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284900"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829976"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Ogólne informacje o przyspieszeniach w PLINQ
 Głównym celem PLINQ jest przyspieszenie wykonywania zapytań LINQ to Objects przez wykonywanie delegatów zapytań równolegle na komputerach wielordzeniowych. PLINQ sprawdza się najlepiej, gdy przetwarzanie każdego elementu w kolekcji źródłowej jest niezależne, bez współużytkowanego stanu wśród poszczególnych delegatów. Takie operacje są typowe w LINQ to Objects i PLINQ i często nazywa się "*delightfully Parallel*", ponieważ ułatwiają one planowanie na wielu wątkach. Jednak nie wszystkie zapytania składają się wyłącznie z delightfully operacji równoległych; w większości przypadków zapytanie obejmuje niektóre operatory, które nie mogą być równoległe lub spowalniają wykonywanie równoległe. Mimo że zapytania, które są całkowicie delightfully równolegle, PLINQ muszą nadal dzielić źródło danych i zaplanować pracę w wątkach, a zazwyczaj scalać wyniki po zakończeniu zapytania. Wszystkie te operacje są dodawane do kosztów obliczeniowych przetwarzanie równoległe; koszty dodawania przetwarzanie równoległe są nazywane *obciążeniem*. Aby osiągnąć optymalną wydajność zapytania PLINQ, celem jest maksymalizacja części, które są delightfully równoległe i zminimalizowanie części, które wymagają narzutu. Ten artykuł zawiera informacje, które pomogą w pisaniu PLINQ zapytań, które są tak wydajne, jak to możliwe, przy zachowaniu prawidłowych wyników.  
@@ -82,6 +81,6 @@ Głównym celem PLINQ jest przyspieszenie wykonywania zapytań LINQ to Objects p
   
 - Zapytania, które zawierają zwrot, chyba że zostaną zastosowane do źródła danych z indeksem.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Równoległe LINQ (PLINQ)](introduction-to-plinq.md)

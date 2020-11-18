@@ -2,19 +2,18 @@
 title: Potoki we/wy — .NET
 description: Dowiedz się, jak efektywnie korzystać z potoków we/wy w programie .NET i uniknąć problemów w kodzie.
 ms.date: 08/27/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - Pipelines
 - Pipelines I/O
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: a24d7f5c22c936cd3fd3fdc51f0f3ace56386574
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 508ae0e2b854f81ee639a63063a8f6d73ae84863
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271987"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830639"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. potoki w środowisku .NET
 
@@ -239,7 +238,7 @@ Poniższy kod odczytuje wszystkie komunikaty z `PipeReader` wywołań i `Process
 
 #### <a name="problematic-code"></a>Problematyczny kod
 
-❌**Utrata danych**
+❌ **Utrata danych**
 
 `ReadResult`Może zwrócić końcowy segment danych, gdy `IsCompleted` jest ustawiony na `true` . Nie można odczytać tych danych przed wyjściem z pętli odczytu spowoduje utratę danych.
 

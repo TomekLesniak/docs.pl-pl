@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Implementacja klienta wzorca asynchronicznego opartego na zdarzeniach'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,17 +17,17 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 21a858c1-3c99-4904-86ee-0d17b49804fa
-ms.openlocfilehash: 95997f219a08c131905cfc86b78e94c36f3ec851
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 14d515ba84a9437499f4d5a75b1112990df05de6
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888818"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830379"
 ---
 # <a name="how-to-implement-a-client-of-the-event-based-asynchronous-pattern"></a>Instrukcje: Implementacja klienta wzorca asynchronicznego opartego na zdarzeniach
 Poniższy przykład kodu ilustruje sposób użycia składnika, który jest zgodny z [omówieniem asynchronicznego wzorca opartego na zdarzeniach](event-based-asynchronous-pattern-overview.md). Formularz do tego przykładu używa `PrimeNumberCalculator` składnika opisanego w temacie [How to: Implementuj składnik, który obsługuje wzorzec asynchroniczny oparty na zdarzeniach](component-that-supports-the-event-based-asynchronous-pattern.md).  
   
- Po uruchomieniu projektu, który używa tego przykładu, zobaczysz formularz "Kalkulator numeru początkowego" z siatką i dwoma przyciskami: **Uruchom nowe zadanie** i **Anuluj** . Możesz kliknąć przycisk **Rozpocznij nowe zadanie** kilka razy, a dla każdego kliknięcia, operacja asynchroniczna rozpocznie obliczenia, aby określić, czy losowo wygenerowany numer testu jest podstawowy. Formularz będzie okresowo wyświetlał postęp i wyniki przyrostowe. Każda operacja ma przypisany unikatowy identyfikator zadania. Wynik obliczeń jest wyświetlany w kolumnie **wynik** ; Jeśli numer testu nie jest znakiem, jest oznaczony jako **kompozytowy** i zostanie wyświetlony pierwszy dzielnik.  
+ Po uruchomieniu projektu, który używa tego przykładu, zobaczysz formularz "Kalkulator numeru początkowego" z siatką i dwoma przyciskami: **Uruchom nowe zadanie** i **Anuluj**. Możesz kliknąć przycisk **Rozpocznij nowe zadanie** kilka razy, a dla każdego kliknięcia, operacja asynchroniczna rozpocznie obliczenia, aby określić, czy losowo wygenerowany numer testu jest podstawowy. Formularz będzie okresowo wyświetlał postęp i wyniki przyrostowe. Każda operacja ma przypisany unikatowy identyfikator zadania. Wynik obliczeń jest wyświetlany w kolumnie **wynik** ; Jeśli numer testu nie jest znakiem, jest oznaczony jako **kompozytowy** i zostanie wyświetlony pierwszy dzielnik.  
   
  Wszystkie oczekujące operacje można anulować przy użyciu przycisku **Anuluj** . Można wprowadzić wiele zaznaczeń.  
   

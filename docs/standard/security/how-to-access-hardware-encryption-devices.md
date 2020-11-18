@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Dostęp do sprzętowych urządzeń szyfrujących'
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - hardware encryption
 - CspParameters
 ms.assetid: b0e734df-6eb4-4b16-b48c-6f0fe82d5f17
-ms.openlocfilehash: 7cd3aab80a8388c1d4ce08e4ae94aae84cfff239
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: c4f0b77985dea1818729af41b69a4a7d30427415
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557141"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829898"
 ---
 # <a name="how-to-access-hardware-encryption-devices"></a>Instrukcje: Dostęp do sprzętowych urządzeń szyfrujących
 
@@ -27,7 +26,7 @@ ms.locfileid: "87557141"
 
 <xref:System.Security.Cryptography.CspParameters>Aby uzyskać dostęp do urządzeń do szyfrowania sprzętu, można użyć klasy. Na przykład można użyć tej klasy do zintegrowania aplikacji z kartą inteligentną, generatorem losowych liczb sprzętowych lub sprzętową implementacją określonego algorytmu kryptograficznego.  
 
-<xref:System.Security.Cryptography.CspParameters>Klasa tworzy dostawcę usług kryptograficznych (CSP), który uzyskuje dostęp do prawidłowo zainstalowanego urządzenia szyfrującego sprzęt.  Dostępność dostawcy CSP można sprawdzić, sprawdzając następujący klucz rejestru przy użyciu Edytora rejestru (Regedit.exe): HKEY_LOCAL_MACHINE \Software\Microsoft\Cryptography\Defaults\Provider.  
+<xref:System.Security.Cryptography.CspParameters>Klasa tworzy dostawcę usług kryptograficznych (CSP), który uzyskuje dostęp do prawidłowo zainstalowanego urządzenia szyfrującego sprzęt.  Dostępność dostawcy CSP można sprawdzić, sprawdzając następujący klucz rejestru przy użyciu Edytora rejestru (Regedit.exe): HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Defaults\Provider.  
   
 ### <a name="to-sign-data-using-a-key-card"></a>Aby podpisać dane przy użyciu karty klucza  
   
@@ -65,7 +64,7 @@ Ze względu na kolizje problemów z algorytmem SHA1 zalecamy SHA256 lub lepszą.
   
 - Należy zainicjować <xref:System.Security.Cryptography.CspParameters> Obiekt przy użyciu informacji specyficznych dla czytnika kart.  Aby uzyskać więcej informacji, zobacz dokumentację czytnika kart.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Model kryptografii](cryptography-model.md)
 - [Usługi kryptograficzne](cryptographic-services.md)

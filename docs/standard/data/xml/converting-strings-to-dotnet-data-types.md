@@ -1,17 +1,16 @@
 ---
 title: Konwertowanie ciągów na typy danych .NET
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: 28c84b04bde045643158d8d2b9fed44b74334e77
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 2eee3ff905473d8fd520929c0fe5abfb5d5c42da
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688003"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830964"
 ---
 # <a name="convert-strings-to-net-data-types"></a>Konwertowanie ciągów na typy danych .NET
 
@@ -19,7 +18,7 @@ Jeśli chcesz przekonwertować ciąg na typ danych .NET, użyj metody **XmlConve
   
  Ciąg zwracany przez metodę **ToString** jest ciągiem wersji, która została przekazana. Ponadto istnieje kilka typów platformy .NET, które konwertują się przy użyciu klasy **XmlConvert** , ale nie używają metod w klasie **System. Convert** . Klasa **XmlConvert** jest zgodna ze specyfikacją typu danych schematu XML (XSD) i ma typ danych, na który mapowanie **XmlConvert** może być mapowane.  
   
- Poniższa tabela zawiera listę typów danych .NET i typów ciągów, które są zwracane przy użyciu mapowania typu danych schematu XML (XSD). Te typy .NET nie mogą być przetwarzane przy użyciu **System. Convert** .  
+ Poniższa tabela zawiera listę typów danych .NET i typów ciągów, które są zwracane przy użyciu mapowania typu danych schematu XML (XSD). Te typy .NET nie mogą być przetwarzane przy użyciu **System. Convert**.  
   
 |Typ .NET|Zwrócony ciąg|  
 |-------------------------|---------------------|  
@@ -34,7 +33,7 @@ Jeśli chcesz przekonwertować ciąg na typ danych .NET, użyj metody **XmlConve
 > [!NOTE]
 > W przypadku konwertowania dowolnego z typów .NET wymienionych w tabeli do ciągu przy użyciu metody **ToString** zwracany ciąg nie jest typem podstawowym, ale typ ciągu schematu XML (XSD).  
   
- Typ wartości **DateTime** i **TimeSpan** różni się w tym, że element **DateTime** reprezentuje chwilę w czasie, podczas gdy obiekt **TimeSpan** reprezentuje przedział czasu. Formaty **DateTime** i **TimeSpan** są określone w specyfikacji typów danych schematu XML (XSD). Na przykład:  
+ Typ wartości **DateTime** i **TimeSpan** różni się w tym, że element **DateTime** reprezentuje chwilę w czasie, podczas gdy obiekt **TimeSpan** reprezentuje przedział czasu. Formaty **DateTime** i **TimeSpan** są określone w specyfikacji typów danych schematu XML (XSD). Przykład:  
   
 ```vb  
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
@@ -70,7 +69,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
  `<Number>200</Number>`  
   
- Jeśli jednak konwertujesz ciąg na **wartość Boolean** , **Single** lub **Double** , zwracany typ platformy .NET nie jest taki sam jak typ zwracany podczas używania klasy **System. Convert** .  
+ Jeśli jednak konwertujesz ciąg na **wartość Boolean**, **Single** lub **Double**, zwracany typ platformy .NET nie jest taki sam jak typ zwracany podczas używania klasy **System. Convert** .  
   
 ## <a name="string-to-boolean"></a>Ciąg do wartości logicznej  
  W poniższej tabeli przedstawiono typ, który jest generowany dla danego ciągu wejściowego podczas konwertowania ciągu na **wartość logiczną** przy użyciu metody **ToBoolean** .  
@@ -91,7 +90,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
 <Boolean>1</Boolean>
 ```  
   
- Obie te wartości można zrozumieć przy użyciu poniższego kodu, a **bValue** to **System. Boolean. true** :  
+ Obie te wartości można zrozumieć przy użyciu poniższego kodu, a **bValue** to **System. Boolean. true**:  
   
 ```vb  
 Dim bvalue As Boolean = _  

@@ -1,23 +1,22 @@
 ---
 title: Modyfikowanie danych XML przy użyciu klasy XPathNavigator
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-ms.openlocfilehash: 3b64bc8666274798ebaefc87ef3883fcec1ef6b1
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 79bb23b77557a5a10f021e2167c9fa8ae3ee044a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288839"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830197"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Modyfikowanie danych XML przy użyciu klasy XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera zestaw metod służących do modyfikowania węzłów i wartości w dokumencie XML. Aby można było korzystać z tych metod, <xref:System.Xml.XPath.XPathNavigator> obiekt musi być edytowalny, oznacza to, że jego <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> Właściwość musi być `true` .  
   
- <xref:System.Xml.XPath.XPathNavigator>obiekty, które mogą edytować dokument XML, są tworzone przy użyciu <xref:System.Xml.XmlDocument.CreateNavigator%2A> metody <xref:System.Xml.XmlDocument> klasy. <xref:System.Xml.XPath.XPathNavigator>obiekty utworzone przez <xref:System.Xml.XPath.XPathDocument> klasę są tylko do odczytu, a wszystkie próby użycia metod edycji <xref:System.Xml.XPath.XPathNavigator> obiektu utworzonego przez <xref:System.Xml.XPath.XPathDocument> obiekt powodują <xref:System.NotSupportedException> .  
+ <xref:System.Xml.XPath.XPathNavigator> obiekty, które mogą edytować dokument XML, są tworzone przy użyciu <xref:System.Xml.XmlDocument.CreateNavigator%2A> metody <xref:System.Xml.XmlDocument> klasy. <xref:System.Xml.XPath.XPathNavigator> obiekty utworzone przez <xref:System.Xml.XPath.XPathDocument> klasę są tylko do odczytu, a wszystkie próby użycia metod edycji <xref:System.Xml.XPath.XPathNavigator> obiektu utworzonego przez <xref:System.Xml.XPath.XPathDocument> obiekt powodują <xref:System.NotSupportedException> .  
   
  Aby uzyskać więcej informacji na temat tworzenia edytowalnych <xref:System.Xml.XPath.XPathNavigator> obiektów, zobacz [odczytywanie danych XML przy użyciu XPathDocument i XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   

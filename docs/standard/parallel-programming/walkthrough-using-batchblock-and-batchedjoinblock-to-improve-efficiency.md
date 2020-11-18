@@ -1,7 +1,6 @@
 ---
 title: 'Przewodnik: Poprawa wydajności przy użyciu klas BatchBlock i BatchedJoinBlock'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, improving efficiency
 ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
-ms.openlocfilehash: e572c5a14958ccc069ae7649af8c8ed4eb967dc1
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d9c4b2d5cfab28f10be82724f46660e4b42ce410
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284588"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829924"
 ---
 # <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Przewodnik: Poprawa wydajności przy użyciu klas BatchBlock i BatchedJoinBlock
 
@@ -53,7 +52,7 @@ Ten Instruktaż zawiera następujące sekcje:
 
 1. W programie Visual Studio Utwórz projekt **aplikacji konsolowej** Visual C# lub Visual Basic. W tym dokumencie projekt ma nazwę `DataflowBatchDatabase` .
 
-2. W projekcie Dodaj odwołanie do System. Data. SqlServerCe. dll i odwołanie do System. Threading. Tasks. przepływu danych. dll.
+2. W projekcie Dodaj odwołanie do System.Data.SqlServerCe.dll i odwołanie do System.Threading.Tasks.Dataflow.dll.
 
 3. Upewnij się, że Form1.cs (Form1. vb dla Visual Basic) zawiera `using` następujące `Imports` instrukcje (w Visual Basic).
 

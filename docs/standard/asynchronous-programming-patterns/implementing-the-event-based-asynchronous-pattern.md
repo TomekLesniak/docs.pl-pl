@@ -2,7 +2,6 @@
 title: Implementacja wzorca asynchronicznego opartego na zdarzeniach
 description: Dowiedz się, jak zaimplementować wzorzec asynchroniczny oparty na zdarzeniach (EAP) w programie .NET. Protokół EAP jest standardowym sposobem spakowania klasy, która ma funkcje asynchroniczne.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: ca4b1b3ff1fb7180250de7436db9a4d642e8118c
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 3f48f5d4f03928f8c9a2db2724e542be2b38fc63
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888792"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830353"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implementacja wzorca asynchronicznego opartego na zdarzeniach
 
@@ -75,9 +74,9 @@ Zdefiniuj metodę _MethodName_**asynchroniczną** MethodName, która:
 
 - Akceptuje wiele wywołań.
 
-Opcjonalnie można zdefiniować Przeciążenie **Async** _MethodName_ , identyczne z _MethodName_**Async** , ale z dodatkowym parametrem zwracającym obiekt `userState` . Zrób to, jeśli przygotowano się do zarządzania wieloma współbieżnymi wywołaniami metody, w tym przypadku `userState` wartość zostanie dostarczona do wszystkich programów obsługi zdarzeń w celu odróżnienia wywołań metody. Możesz również wybrać tę opcję po prostu w miejscu przechowywania stanu użytkownika w celu późniejszego pobrania.
+Opcjonalnie można zdefiniować Przeciążenie **Async** _MethodName_, identyczne z _MethodName_**Async**, ale z dodatkowym parametrem zwracającym obiekt `userState` . Zrób to, jeśli przygotowano się do zarządzania wieloma współbieżnymi wywołaniami metody, w tym przypadku `userState` wartość zostanie dostarczona do wszystkich programów obsługi zdarzeń w celu odróżnienia wywołań metody. Możesz również wybrać tę opcję po prostu w miejscu przechowywania stanu użytkownika w celu późniejszego pobrania.
 
-Dla każdej oddzielnej sygnatury metody **asynchronicznej** _MethodName_ :
+Dla każdej oddzielnej sygnatury metody **asynchronicznej** _MethodName_:
 
 1. Zdefiniuj następujące zdarzenie w tej samej klasie co Metoda:
 
@@ -175,9 +174,9 @@ Jest on często pożądany w przypadku operacji asynchronicznej do raportowania 
 
 To zdarzenie powinno używać <xref:System.ComponentModel.ProgressChangedEventHandler> podpisu delegata i <xref:System.ComponentModel.ProgressChangedEventArgs> klasy. Alternatywnie, jeśli można podać bardziej szczegółowy wskaźnik postępu dla domeny (na przykład odczytane bajty i całkowita liczba bajtów dla operacji pobierania), należy zdefiniować klasę pochodną <xref:System.ComponentModel.ProgressChangedEventArgs> .
 
-Należy zauważyć, że dla klasy istnieje tylko jedno `ProgressChanged` lub _MethodName_ zdarzenie **ProgressChanged** , niezależnie od liczby obsługiwanych przez nią metod asynchronicznych. Klienci powinni używać `userState` obiektu, który jest przesyłany do metod **asynchronicznych** _MethodName_ , aby rozróżnić aktualizacje postępu dla wielu współbieżnych operacji.
+Należy zauważyć, że dla klasy istnieje tylko jedno `ProgressChanged` lub _MethodName_ zdarzenie **ProgressChanged** , niezależnie od liczby obsługiwanych przez nią metod asynchronicznych. Klienci powinni używać `userState` obiektu, który jest przesyłany do metod **asynchronicznych** _MethodName_, aby rozróżnić aktualizacje postępu dla wielu współbieżnych operacji.
 
-Mogą wystąpić sytuacje, w których wiele operacji obsługuje postęp, a każdy z nich zwraca inny wskaźnik na potrzeby postępu. W takim przypadku pojedyncze `ProgressChanged` zdarzenie nie jest odpowiednie i można rozważyć obsługę wielu `ProgressChanged` zdarzeń. W takim przypadku należy użyć wzorca nazewnictwa _MethodName_**ProgressChanged** dla każdej metody **asynchronicznej** _MethodName_ .
+Mogą wystąpić sytuacje, w których wiele operacji obsługuje postęp, a każdy z nich zwraca inny wskaźnik na potrzeby postępu. W takim przypadku pojedyncze `ProgressChanged` zdarzenie nie jest odpowiednie i można rozważyć obsługę wielu `ProgressChanged` zdarzeń. W takim przypadku należy użyć wzorca nazewnictwa _MethodName_**ProgressChanged** dla każdej metody **asynchronicznej** _MethodName_.
 
 Przestrzegaj analizy postępu — opisane są [najlepsze rozwiązania dotyczące implementacji wzorca asynchronicznego opartego na zdarzeniach](best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
@@ -215,9 +214,9 @@ Wywołaj ten program obsługi zdarzeń w odpowiednim wątku zgodnie z opisem w [
 
 Chociaż używanie `out` i `ref` jest ogólnie odradzane w programie .NET, poniżej przedstawiono reguły, które należy wykonać, gdy są obecne:
 
-Nadana metoda synchroniczna *MethodName* :
+Nadana metoda synchroniczna *MethodName*:
 
-- `out` parametry do *MethodName* nie powinny być częścią _MethodName_**Async** . Zamiast tego powinny one być częścią _MethodName_**CompletedEventArgs** o tej samej nazwie, co odpowiedni parametr w *MethodName* (chyba że istnieje bardziej odpowiednia nazwa).
+- `out` parametry do *MethodName* nie powinny być częścią _MethodName_**Async**. Zamiast tego powinny one być częścią _MethodName_**CompletedEventArgs** o tej samej nazwie, co odpowiedni parametr w *MethodName* (chyba że istnieje bardziej odpowiednia nazwa).
 
 - `ref`parametry do *MethodName* powinny być wyświetlane jako część _MethodName_**Async** MethodName, a jako część CompletedEventArgs _MethodName_**CompletedEventArgs** o takiej samej nazwie jak jej parametr odpowiedni w *MethodName* (chyba że istnieje bardziej odpowiednia nazwa).
 

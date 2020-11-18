@@ -3,13 +3,12 @@ title: 'Instrukcje: inspekcja zawartości zestawu przy użyciu MetadataLoadConte
 description: Dowiedz się, jak używać MetadataLoadContext, który jest interfejsem API, który umożliwia ładowanie zestawów .NET na potrzeby inspekcji.
 author: MSDN-WhiteKnight
 ms.date: 03/10/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: 7f90149a98632ea57e8d241a0ccdf4b50264ac5c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7205230986aa852813a651d2fcb7c5ef88ab18fe
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552027"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831354"
 ---
 # <a name="how-to-inspect-assembly-contents-using-metadataloadcontext"></a>Instrukcje: inspekcja zawartości zestawu przy użyciu MetadataLoadContext
 
