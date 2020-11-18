@@ -1,13 +1,13 @@
 ---
 title: Dopasowanie wzorca
 description: 'Dowiedz się, w jaki sposób wzorce są używane w języku F # do porównywania danych ze strukturami logicznymi, rozkładania danych na części składowych lub wyodrębniania informacji z danych.'
-ms.date: 08/15/2020
-ms.openlocfilehash: 6d284b941824bc15a8e872a4e28e22c0e159191d
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.date: 11/12/2020
+ms.openlocfilehash: e167712b082b7f587e41a78edcaf0a0db9c7294b
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811512"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687808"
 ---
 # <a name="pattern-matching"></a>Dopasowanie wzorca
 
@@ -47,6 +47,7 @@ Obsługiwane wzorce przedstawiono w poniższej tabeli. W czasie wykonywania, dan
 |Wzorzec wraz z adnotacją typu|*wzorzec* : *Typ*|`a : int`|
 |Typ wzorca testu|:? *Typ* [ *Identyfikator* as]|`:? System.DateTime as dt`|
 |Wzorzec o wartości null|wartość null|`null`|
+|Wzorzec nameof|*wyrażenie nameof*|`nameof str`|
 
 ## <a name="constant-patterns"></a>Wzorce stałe
 
@@ -139,7 +140,7 @@ Poniższy przykład jest podobny do `detectZeroTuple` przedstawionego w sekcji w
 
 ## <a name="cons-pattern"></a>Wzorzec wad
 
-Wzorzec wad służy do rozdzielania listy na pierwszy element, *nagłówek*i listę zawierającą pozostałe elementy, *ogon*.
+Wzorzec wad służy do rozdzielania listy na pierwszy element, *nagłówek* i listę zawierającą pozostałe elementy, *ogon*.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4809.fs)]
 
@@ -215,7 +216,23 @@ Poniższy przykład używa wzorca o wartości null i wzorca zmiennej.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4817.fs)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="nameof-pattern"></a>Wzorzec nameof
+
+`nameof`Wzorzec jest zgodny z ciągiem, gdy jego wartość jest równa wyrażeniu, które następuje po `nameof` słowie kluczowym. na przykład:
+
+```fsharp
+let f (str: string) =
+    match str with
+    | nameof str -> "It's 'str'!"
+    | _ -> "It is not 'str'!"
+
+f "str" // matches
+f "asdf" // does not match
+```
+
+Zapoznaj się z [`nameof`](nameof.md) operatorem, aby uzyskać informacje o tym, co można zrobić z nazwą.
+
+## <a name="see-also"></a>Zobacz także
 
 - [Wyrażenia dopasowania](match-expressions.md)
 - [Wzorce aktywne](active-patterns.md)

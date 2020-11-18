@@ -2,12 +2,12 @@
 title: Wskazówki dotyczące formatowania kodu F#
 description: 'Poznaj wskazówki dotyczące formatowania kodu F #.'
 ms.date: 08/31/2020
-ms.openlocfilehash: 401c0688cd7d0a945dc469f1ab5841b21e1d4ab4
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: af98be75f21cbc594ff9cf779561d49e4965845a
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359288"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688257"
 ---
 # <a name="f-code-formatting-guidelines"></a>Wskazówki dotyczące formatowania kodu F#
 
@@ -642,21 +642,17 @@ W niektórych przypadkach `do...yield` może pomóc w czytelności. Te przypadki
 
 ## <a name="formatting-if-expressions"></a>Formatowanie wyrażeń if
 
-Wcięcia warunkowe są zależne od rozmiarów wyrażeń, które je tworzą. Jeśli `cond` `e1` i `e2` są krótkie, wystarczy napisać je w jednym wierszu:
+Wcięcia warunkowe są zależne od wielkości i złożoności wyrażeń, które je tworzą.
+Po prostu zapisuj je w jednym wierszu, gdy:
+
+- `cond``e1`i `e2` są krótkie
+- `e1` i `e2` nie są `if/then/else` wyrażeniami.
 
 ```fsharp
 if cond then e1 else e2
 ```
 
-Jeśli jeden `cond` `e1` lub `e2` więcej, ale nie wiele wierszy:
-
-```fsharp
-if cond
-then e1
-else e2
-```
-
-Jeśli dowolne wyrażenie ma wiele wierszy:
+Jeśli dowolne wyrażenie ma wiele wierszy lub `if/then/else` wyrażeń.
 
 ```fsharp
 if cond then
@@ -665,13 +661,26 @@ else
     e2
 ```
 
-Wiele warunkowych z `elif` i `else` ma wcięcia w tym samym zakresie co `if` :
+Wiele warunkowych z `elif` i `else` jest wciętym w tym samym zakresie co `if` gdy są one zgodne z regułami jednego wiersza `if/then/else` wyrażeń.
 
 ```fsharp
 if cond1 then e1
 elif cond2 then e2
 elif cond3 then e3
 else e4
+```
+
+Jeśli którykolwiek z warunków lub wyrażeń ma wiele wierszy, całe `if/then/else` wyrażenie jest wielowierszowe:
+
+```fsharp
+if cond1 then
+    e1
+elif cond2 then
+    e2
+elif cond3 then
+    e3
+else
+    e4
 ```
 
 ### <a name="pattern-matching-constructs"></a>Konstrukcje dopasowania wzorca
@@ -879,6 +888,41 @@ let makeStreamReader x = new System.IO.StreamReader(path=x)
 
 // Not OK
 let makeStreamReader x = new System.IO.StreamReader(path = x)
+```
+
+### <a name="formatting-constructors-static-members-and-member-invocations"></a>Konstruktory formatowania, statyczne składowe i wywołania elementów członkowskich
+
+Jeśli wyrażenie jest krótkie, należy oddzielić argumenty spacjami i zachować je w jednym wierszu.
+
+```fsharp
+let person = new Person(a1, a2)
+
+let myRegexMatch = Regex.Match(input, regex)
+
+let untypedRes = checker.ParseFile(file, source, opts)
+```
+
+Jeśli wyrażenie jest długie, Użyj nowego wiersza i wcięcie jednego zakresu, a nie wcięcia w nawiasie.
+
+```fsharp
+let person =
+    new Person(
+        argument1,
+        argument2
+    )
+
+let myRegexMatch =
+    Regex.Match(
+        "my longer input string with some interesting content in it",
+        "myRegexPattern"
+    )
+
+let untypedRes =
+    checker.ParseFile(
+        fileName,
+        sourceText,
+        parsingOptionsWithDefines
+    )
 ```
 
 ## <a name="formatting-attributes"></a>Formatowanie atrybutów

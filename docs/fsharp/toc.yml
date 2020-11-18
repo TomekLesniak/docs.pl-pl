@@ -99,6 +99,8 @@
       href: language-reference/unit-type.md
     - name: Ciągi
       href: language-reference/strings.md
+    - name: Ciągi interpolowane
+      href: language-reference/interpolated-strings.md
     - name: Krotki
       href: language-reference/tuples.md
     - name: Typy kolekcji F#
@@ -248,6 +250,8 @@
       href: language-reference/byrefs.md
     - name: Komórki odwołań
       href: language-reference/reference-cells.md
+    - name: nameof
+      href: language-reference/nameof.md
     - name: Dyrektywy kompilatora
       href: language-reference/compiler-directives.md
     - name: Opcje kompilatora
