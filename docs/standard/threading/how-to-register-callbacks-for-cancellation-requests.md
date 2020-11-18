@@ -1,19 +1,18 @@
 ---
 title: Rejestrowanie wywołań zwrotnych żądań anulowania
 ms.date: 08/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - cancellation, how to register callbacks
 ms.assetid: 8838dd75-18ed-4b8b-b322-cd4531faac64
-ms.openlocfilehash: faa8dada5779f6eaee7a60e6210ec604f5fb4680
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: f551055fc6e5e4565329201e9e0be6e4a83487a1
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608451"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826407"
 ---
 # <a name="register-callbacks-for-cancellation-requests"></a>Rejestrowanie wywołań zwrotnych żądań anulowania
 
@@ -31,7 +30,7 @@ W poniższym przykładzie <xref:System.Net.WebClient.CancelAsync%2A> Metoda jest
 
 Jeśli po zarejestrowaniu wywołania zwrotnego zostało już zgłoszone żądanie anulowania, wywołanie zwrotne jest nadal gwarantowane. W tym konkretnym przypadku <xref:System.Net.WebClient.CancelAsync%2A> Metoda nie będzie niczego robić, jeśli żadna operacja asynchroniczna nie jest w toku, więc zawsze jest bezpieczna do wywołania metody.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Anulowanie w zarządzanych wątkach](cancellation-in-managed-threads.md)
 - <xref:System.Net.WebClient.DownloadStringTaskAsync(System.String)?displayProperty=nameWithType>

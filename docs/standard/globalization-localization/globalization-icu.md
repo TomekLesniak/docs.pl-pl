@@ -1,7 +1,6 @@
 ---
 title: Globalizacja i ICU
 ms.date: 05/21/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - globalization [.NET], about globalization
 - global applications, globalization
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: ca579e837b801de237859963ede0e5a9a4bfbcbf
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: d0361ba41b3a10d6a316341fcdacb869e7a35d26
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94439472"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827116"
 ---
 # <a name="net-globalization-and-icu"></a>Globalizacja i ICU platformy .NET
 
@@ -130,7 +129,7 @@ W przypadku aplikacji, które nie są wymagane przez użytkownika, nie jest wyma
 
 Jeśli korzystasz z ICU za pośrednictwem pakietu NuGet, działa to w aplikacjach zależnych od platformy. Pakiet NuGet rozwiązuje natywne zasoby i dołącza je do `deps.json` pliku oraz do katalogu wyjściowego dla aplikacji w `runtimes` katalogu. Platforma .NET ładuje ją z tego miejsca.
 
-W przypadku aplikacji zależnych od platformy (nie zawartych w nich), gdzie ICU jest zużywana z lokalnej kompilacji, należy wykonać dodatkowe czynności. Zestaw .NET SDK nie ma jeszcze funkcji "luźnych" natywnych plików binarnych, które mają być włączone `deps.json` (zobacz [ten problem z zestawem SDK](https://github.com/dotnet/sdk/issues/11373)). Zamiast tego można je włączyć przez dodanie dodatkowych informacji do pliku projektu aplikacji. Na przykład:
+W przypadku aplikacji zależnych od platformy (nie zawartych w nich), gdzie ICU jest zużywana z lokalnej kompilacji, należy wykonać dodatkowe czynności. Zestaw .NET SDK nie ma jeszcze funkcji "luźnych" natywnych plików binarnych, które mają być włączone `deps.json` (zobacz [ten problem z zestawem SDK](https://github.com/dotnet/sdk/issues/11373)). Zamiast tego można je włączyć przez dodanie dodatkowych informacji do pliku projektu aplikacji. Przykład:
 
 ```xml
 <ItemGroup>

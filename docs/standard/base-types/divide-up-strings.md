@@ -2,18 +2,17 @@
 title: Oddziel ciągi na podciągi
 description: Dowiedz się więcej na temat różnych technik wyodrębniania części ciągu, takich jak String. Split, wyrażeń regularnych i String. substring.
 ms.date: 10/30/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - strings [.NET], breaking up
-ms.openlocfilehash: 88947c4576b0496e4b4e45042d665e3ca5857c53
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: b753476b7d8e5808fdcacc6f28bd1de5f8b232bb
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93403631"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829652"
 ---
 # <a name="extract-substrings-from-a-string"></a>Wyodrębnij podciągi z ciągu
 
@@ -117,7 +116,7 @@ W poniższym przykładzie zastosowano <xref:System.String.IndexOf%2A> metodę, a
 :::code language="csharp" source="snippets/parse-strings/csharp/indexof.cs" id="1" interactive="try-dotnet":::
 :::code language="vb" source="snippets/parse-strings/vb/indexof.vb" id="1":::
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Podstawowe operacje na ciągach w programie .NET](basic-string-operations.md)
 - [Wyrażenia regularne .NET](regular-expressions.md)

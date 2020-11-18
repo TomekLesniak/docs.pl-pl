@@ -1,16 +1,15 @@
 ---
 title: Struktury danych dla Programowania równoległego
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - data structures, multi-threading
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
-ms.openlocfilehash: cea9264a30469881e3ec54fc378af3ddb70bff8e
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: c7f974c5626cf1efc6bf62c423043089d5c32e7c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925327"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829534"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Struktury danych dla Programowania równoległego
 
@@ -67,7 +66,7 @@ Platforma .NET udostępnia kilka typów, które są przydatne w programowaniu r�
 ## <a name="aggregate-exceptions"></a>Wyjątki agregujące  
  <xref:System.AggregateException?displayProperty=nameWithType>Typ może służyć do przechwytywania wielu wyjątków, które są zgłaszane współbieżnie w oddzielnych wątkach i zwracają je do wątku przyłączania jako pojedynczy wyjątek. W <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> tym celu typy i PLINQ są używane <xref:System.AggregateException> w szerokim zakresie. Aby uzyskać więcej informacji, zobacz [Obsługa wyjątków](exception-handling-task-parallel-library.md) i [instrukcje: obsługa wyjątków w zapytaniu PLINQ](how-to-handle-exceptions-in-a-plinq-query.md).  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - <xref:System.Threading?displayProperty=nameWithType>

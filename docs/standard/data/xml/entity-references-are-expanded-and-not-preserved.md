@@ -1,14 +1,13 @@
 ---
 title: Rozwinięte odwołania do jednostek, które nie zostały zachowane
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
-ms.openlocfilehash: 1d26e9a35497bb0d5293e8a5b630bf4356325401
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a446ef35cc9e22660e66d71a9c9332f80117d1ae
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292049"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827675"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>Rozwinięte odwołania do jednostek, które nie zostały zachowane
 Gdy odwołanie do jednostki zostanie rozwinięte i zastąpione tekstem, który reprezentuje, węzeł **XmlEntityReference** nie zostanie utworzony. Zamiast tego, deklaracja jednostki jest analizowana, a węzły utworzone na podstawie zawartości deklaracji są kopiowane w miejscu **XmlEntityReference**. W związku z tym, w tym `&publisher;` przykładzie, `&publisher;` nie jest zapisany, ale zamiast tego jest tworzony węzeł **XmlText** .  
@@ -24,7 +23,7 @@ Struktura drzewa dla rozszerzonych odwołań do jednostek
   
  XmlElement: Wydawca  
   
- XmlEntityReference:`&publisher;`  
+ XmlEntityReference: `&publisher;`  
   
  XmlText: Microsoft Press  
   

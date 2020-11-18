@@ -1,17 +1,16 @@
 ---
 title: Projekt właściwości
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-ms.openlocfilehash: c49b42ab369ace582c76d7f326da309415e8c45b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1cf41a08c641e9251084e5dcac6c46bc54857717
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291945"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828741"
 ---
 # <a name="property-design"></a>Projekt właściwości
 Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo odmienne pod względem scenariuszy użycia. Powinny być one widoczne jako pola inteligentne. Mają one składnię wywołującą pól i elastyczność metod.
@@ -20,7 +19,7 @@ Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo 
 
  Należy pamiętać, że jeśli typ właściwości jest modyfikowalnym typem odwołania, wartość właściwości można zmienić, nawet jeśli właściwość jest tylko do odczytu.
 
- ❌Nie udostępniaj właściwości "Set-Only" ani właściwości z Setter, która ma szerszy dostęp niż metoda pobierająca.
+ ❌ Nie udostępniaj właściwości "Set-Only" ani właściwości z Setter, która ma szerszy dostęp niż metoda pobierająca.
 
  Na przykład nie należy używać właściwości z publiczną setter i chronioną metodę pobierającą.
 
@@ -34,7 +33,7 @@ Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo 
 
  ✔️ zachować poprzedniej wartości, jeśli Metoda ustawiająca Właściwość zgłosi wyjątek.
 
- ❌UNIKAj zgłaszania wyjątków z metod pobierających właściwości.
+ ❌ UNIKAj zgłaszania wyjątków z metod pobierających właściwości.
 
  Metody pobierające właściwości powinny być prostymi operacjami i nie powinny mieć żadnych warunków wstępnych. Jeśli metoda pobierająca może zgłosić wyjątek, prawdopodobnie powinna zostać przeprojektowana tak, aby była metodą. Należy zauważyć, że ta zasada nie ma zastosowania do indeksatorów, w przypadku których oczekujemy wyjątków w wyniku walidacji argumentów.
 
@@ -47,11 +46,11 @@ Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo 
 
  ✔️ Rozważ dostarczenie indeksatorów dla typów reprezentujących kolekcje elementów.
 
- ❌Należy unikać używania właściwości indeksowanych z więcej niż jednym parametrem.
+ ❌ Należy unikać używania właściwości indeksowanych z więcej niż jednym parametrem.
 
  Jeśli projekt wymaga wielu parametrów, należy rozważyć, czy właściwość naprawdę reprezentuje metodę dostępu do kolekcji logicznej. Jeśli tak nie jest, zamiast tego użyj metod. Rozważ uruchomienie nazwy metody z `Get` lub `Set` .
 
- ❌Unikaj indeksatorów z typami parametrów innymi niż <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Int64?displayProperty=nameWithType> , <xref:System.String?displayProperty=nameWithType> , <xref:System.Object?displayProperty=nameWithType> lub wyliczeniem.
+ ❌ Unikaj indeksatorów z typami parametrów innymi niż <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Int64?displayProperty=nameWithType> , <xref:System.String?displayProperty=nameWithType> , <xref:System.Object?displayProperty=nameWithType> lub wyliczeniem.
 
  Jeśli projekt wymaga innych typów parametrów, należy silnie oszacować, czy interfejs API naprawdę reprezentuje metodę dostępu do logicznej kolekcji. Jeśli tak nie jest, użyj metody. Rozważ uruchomienie nazwy metody z `Get` lub `Set` .
 
@@ -59,13 +58,13 @@ Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo 
 
  W języku C# Indeksatory są domyślnie nazwanymi elementami. <xref:System.Runtime.CompilerServices.IndexerNameAttribute>Można użyć, aby dostosować tę nazwę.
 
- ❌NIE należy podawać zarówno indeksatora, jak i metod, które są semantycznie równoważne.
+ ❌ NIE należy podawać zarówno indeksatora, jak i metod, które są semantycznie równoważne.
 
- ❌Nie udostępniaj więcej niż jednej rodziny przeciążonych indeksatorów w jednym typie.
+ ❌ Nie udostępniaj więcej niż jednej rodziny przeciążonych indeksatorów w jednym typie.
 
  Jest to wymuszane przez kompilator języka C#.
 
- ❌NIE używaj właściwości indeksowanych innych niż domyślne.
+ ❌ NIE używaj właściwości indeksowanych innych niż domyślne.
 
  Jest to wymuszane przez kompilator języka C#.
 

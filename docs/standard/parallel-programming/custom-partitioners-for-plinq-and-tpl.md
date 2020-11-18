@@ -1,19 +1,18 @@
 ---
 title: Niestandardowe partycjonery dla PLINQ i TPL
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, partitioners
 ms.assetid: 96153688-9a01-47c4-8430-909cee9a2887
-ms.openlocfilehash: 50553aab30d5a1bc5880ae0fe39c34508e57d0e5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2268df2eb5cae4dcd7adde491b42c86c546aa1fc
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276728"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829235"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Niestandardowe partycjonery dla PLINQ i TPL
 
@@ -44,7 +43,7 @@ Poniższa tabela zawiera listę dostępnych przeciążeń <xref:System.Collectio
 
 |Występują|Używa równoważenia obciążenia|
 |--------------|-------------------------|
-|<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>|Zawsze|
+|<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>|Always (Zawsze)|
 |<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28%60%600%5B%5D%2CSystem.Boolean%29>|Gdy argument logiczny jest określony jako true|
 |<xref:System.Collections.Concurrent.Partitioner.Create%60%601%28System.Collections.Generic.IList%7B%60%600%7D%2CSystem.Boolean%29>|Gdy argument logiczny jest określony jako true|
 |<xref:System.Collections.Concurrent.Partitioner.Create%28System.Int32%2CSystem.Int32%29>|Nigdy|
@@ -90,10 +89,10 @@ W poniższej tabeli znajdują się dodatkowe szczegółowe informacje o tym, jak
 |----------------------|-------------------------------------------|----------------------------------------|-----------------|
 |<xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A>|Używa partycjonowania zakresu|Używa partycjonowania fragmentów zoptymalizowanego dla list dla partitionCount określonych|Używa partycjonowania fragmentów przez utworzenie statycznej liczby partycji.|
 |<xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A?displayProperty=nameWithType>|Zgłasza wyjątek nieobsługiwany|Używa partycjonowania fragmentów zoptymalizowanego pod kątem list i partycji dynamicznych|Używa partycjonowania fragmentów przez utworzenie dynamicznej liczby partycji.|
-|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedInEachPartition%2A>|Typu`true`|Typu`true`|Typu`true`|
-|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedAcrossPartitions%2A>|Typu`true`|Typu`false`|Typu`false`|
-|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysNormalized%2A>|Typu`true`|Typu`true`|Typu`true`|
-|<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>|Typu`false`|Typu`true`|Typu`true`|
+|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedInEachPartition%2A>|Typu `true`|Typu `true`|Typu `true`|
+|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedAcrossPartitions%2A>|Typu `true`|Typu `false`|Typu `false`|
+|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysNormalized%2A>|Typu `true`|Typu `true`|Typu `true`|
+|<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>|Typu `false`|Typu `true`|Typu `true`|
 
 ### <a name="dynamic-partitions"></a>Partycje dynamiczne
 
@@ -107,7 +106,7 @@ Podczas implementowania niestandardowego programu Partitioner postępuj zgodnie 
 
 - Jeśli <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> jest wywoływana z argumentem równym zero lub less dla `partitionsCount` , throw <xref:System.ArgumentOutOfRangeException> . Mimo że PLINQ i TPL nigdy nie przekażą `partitionCount` wartości równej 0, jednak zalecamy ochronę przed możliwością.
 
-- <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A>i <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A> zawsze powinna zwracać `partitionsCount` liczbę partycji. Jeśli program partitioner nie może utworzyć tylu partycji zgodnie z żądaniem, metoda powinna zwrócić pusty moduł wyliczający dla każdej z pozostałych partycji. W przeciwnym razie zarówno PLINQ, jak i TPL będą zgłaszać <xref:System.InvalidOperationException> .
+- <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> i <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A> zawsze powinna zwracać `partitionsCount` liczbę partycji. Jeśli program partitioner nie może utworzyć tylu partycji zgodnie z żądaniem, metoda powinna zwrócić pusty moduł wyliczający dla każdej z pozostałych partycji. W przeciwnym razie zarówno PLINQ, jak i TPL będą zgłaszać <xref:System.InvalidOperationException> .
 
 - <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A>, <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A> , <xref:System.Collections.Concurrent.Partitioner%601.GetDynamicPartitions%2A> i <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A> nigdy nie powinny zwracać `null` ( `Nothing` w Visual Basic). W takim przypadku PLINQ/TPL zgłosi <xref:System.InvalidOperationException> .
 

@@ -1,7 +1,6 @@
 ---
 title: Delegaty ogólne do manipulowania tablicami i listami
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - delegates [.NET], generic delegates
 - chaining delegates
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - lists [.NET], generic delegates
 - generics [.NET], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-ms.openlocfilehash: 2ee80acb51ab3c394a3c0b12fface93a9d541f30
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: b3b18a2efc4dba432ee241d764c1a81101796baf
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063205"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827285"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Delegaty ogólne do manipulowania tablicami i listami
 Ten temat zawiera przegląd ogólnych delegatów dla konwersji, predykatów wyszukiwania i akcji, które mają być podejmowane w elementach tablicy lub kolekcji.  
@@ -39,7 +38,7 @@ Ten temat zawiera przegląd ogólnych delegatów dla konwersji, predykatów wysz
 ### <a name="chaining-delegates"></a>Tworzenie łańcuchów obiektów delegowanych  
  Wiele metod, które używają tych delegatów, zwraca tablicę lub listę, które mogą być przesyłane do innej metody. Na przykład jeśli chcesz wybrać niektóre elementy tablicy, przekonwertuj te elementy na nowy typ i Zapisz je w nowej tablicy, możesz przekazać tablicę zwracaną przez <xref:System.Array.FindAll%2A> metodę rodzajową do <xref:System.Array.ConvertAll%2A> metody ogólnej. Jeśli typ nowego elementu nie ma naturalnej kolejności sortowania, można przekazać tablicę zwracaną przez <xref:System.Array.ConvertAll%2A> metodę rodzajową do <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29> metody ogólnej.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Generic?displayProperty=nameWithType>
 - <xref:System.Collections.ObjectModel?displayProperty=nameWithType>

@@ -2,7 +2,6 @@
 title: Kowariancja i kontrawariancja w typach ogólnych
 description: Dowiedz się więcej o kowariancji, która umożliwia użycie bardziej pochodnego typu, i kontrawariancja, co pozwala na użycie mniej pochodnego typu w przypadku typów ogólnych platformy .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: 1606238b22bd355b997b54cf94e0c28d16ec5cac
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 1ad8f72f80e88971e2bbf672bd92d9c607134783
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063179"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827415"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kowariancja i kontrawariancja w typach ogólnych
 
@@ -59,7 +58,7 @@ Gdy odwołujesz się do systemu typu, Kowariancja, kontrawariancja i niewariancj
   
  Ogólnie, kowariantnego parametru typu można użyć jako typu zwracanego delegata, a kontrawariantnych parametrów typu można używać jako typów parametrów. Na przykład kowariantnych parametrów typu można używać jako typów zwracanych metod interfejsu, a kontrawariantnych parametrów typu można używać jako typów parametrów metod interfejsu.  
   
- Kowariancja i kontrawariancja są określane zbiorczo jako *WARIANCJA* . Parametr typu generycznego, który nie jest oznaczony jako kontrawariantne, jest określany jako *niezmienny* . Krótkie podsumowanie faktów na temat wariancji w środowisku uruchomieniowym języka wspólnego:  
+ Kowariancja i kontrawariancja są określane zbiorczo jako *WARIANCJA*. Parametr typu generycznego, który nie jest oznaczony jako kontrawariantne, jest określany jako *niezmienny*. Krótkie podsumowanie faktów na temat wariancji w środowisku uruchomieniowym języka wspólnego:  
   
 - Parametry typu Variant są ograniczone do typów ogólnych i rodzajowych delegatów.  
   
@@ -171,7 +170,7 @@ Następujące typy interfejsów i delegatów mają parametry typu współvariant
 |<xref:System.Linq.IOrderedQueryable%601>|Tak||  
 |<xref:System.Linq.IQueryable%601>|Tak||  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Kowariancja i kontrawariancja (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/index.md)
 - [Kowariancja i kontrawariancja (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)

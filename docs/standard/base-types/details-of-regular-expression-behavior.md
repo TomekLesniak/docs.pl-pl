@@ -1,7 +1,6 @@
 ---
 title: Zachowanie wyrażenia regularnego
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: a93e0e7bac782d9a4ce47c1586796b063563d2b6
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 1e5d2d40f52220a8fff40eb19a24d8b2efd3cab5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888675"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829703"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Szczegóły zachowania wyrażeń regularnych
 

@@ -1,7 +1,6 @@
 ---
 title: Projekt struktury
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], structures
 - deallocating structures
@@ -11,21 +10,21 @@ helpviewer_keywords:
 - type design guidelines, structures
 - structures [.NET Framework], design guidelines
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
-ms.openlocfilehash: c6ac53014e048da3a90dd7b8e961176f61e90355
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: da831d1477b451131bb27372d65ad7229fcf3f77
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290814"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828624"
 ---
 # <a name="struct-design"></a>Projekt struktury
 Typ wartości ogólnego przeznaczenia jest najczęściej określany jako struktura, jego słowo kluczowe języka C#. Ta sekcja zawiera wskazówki dotyczące ogólnego projektowania struktury.
 
- ❌Nie udostępniaj konstruktora bez parametrów dla struktury.
+ ❌ Nie udostępniaj konstruktora bez parametrów dla struktury.
 
  Poniższe wytyczne umożliwiają tworzenie tablic struktur bez konieczności uruchamiania konstruktora dla każdego elementu tablicy. Należy zauważyć, że w języku C# nie jest dozwolone, aby struktury miały konstruktory bez parametrów.
 
- ❌NIE Definiuj modyfikowalnych typów wartościowych.
+ ❌ NIE Definiuj modyfikowalnych typów wartościowych.
 
  Modyfikowalne typy wartości mają kilka problemów. Na przykład, gdy metoda pobierająca Właściwość zwraca typ wartości, wywołujący otrzymuje kopię. Ponieważ kopia jest tworzona niejawnie, deweloperzy mogą nie wiedzieć, że są one mutacją, a nie pierwotną wartością. Ponadto w niektórych językach (w szczególności Języki dynamiczne) występują problemy z użyciem modyfikowalnych typów wartości, ponieważ nawet zmienne lokalne, gdy jest używana, powoduje, że kopia zostanie wykonana.
 
@@ -35,9 +34,9 @@ Typ wartości ogólnego przeznaczenia jest najczęściej określany jako struktu
 
  ✔️ Implementowanie <xref:System.IEquatable%601> w typach wartości.
 
- <xref:System.Object.Equals%2A?displayProperty=nameWithType>Metoda w typach wartości powoduje opakowanie, a jej domyślna implementacja nie jest bardzo wydajna, ponieważ używa odbicia. <xref:System.IEquatable%601.Equals%2A>może mieć znacznie lepszą wydajność i można go zaimplementować, aby nie powodowały opakowywania opakowania.
+ <xref:System.Object.Equals%2A?displayProperty=nameWithType>Metoda w typach wartości powoduje opakowanie, a jej domyślna implementacja nie jest bardzo wydajna, ponieważ używa odbicia. <xref:System.IEquatable%601.Equals%2A> może mieć znacznie lepszą wydajność i można go zaimplementować, aby nie powodowały opakowywania opakowania.
 
- ❌NIE należy jawnie zwiększać <xref:System.ValueType> . W rzeczywistości większość języków zapobiega tym.
+ ❌ NIE należy jawnie zwiększać <xref:System.ValueType> . W rzeczywistości większość języków zapobiega tym.
 
  Ogólnie rzecz biorąc, struktury mogą być bardzo przydatne, ale powinny być używane tylko w przypadku małych, pojedynczych, niezmiennych wartości, które nie będą często opakowane.
 

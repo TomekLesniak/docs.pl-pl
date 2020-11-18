@@ -2,7 +2,6 @@
 title: Najlepsze rozwiązania dotyczące wyjątków — .NET
 description: Poznaj najlepsze rozwiązania dotyczące wyjątków, takich jak korzystanie z try/catch/finally, obsługa typowych warunków bez wyjątków i używanie wstępnie zdefiniowanych typów wyjątków platformy .NET.
 ms.date: 12/05/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 90dda00acd32852b032fc383580c5f34022ec9b4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 815dcc81cf41465bffd1515d366a66ff558304fa
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447098"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828234"
 ---
 # <a name="best-practices-for-exceptions"></a>Najlepsze rozwiązania dotyczące wyjątków
 
@@ -71,7 +70,7 @@ Wprowadź nową klasę wyjątku tylko wtedy, gdy wstępnie zdefiniowany element 
 
 - Zgłoś <xref:System.ArgumentException> wyjątek lub jedną ze wstępnie zdefiniowanych klas, które pochodzą z, <xref:System.ArgumentException> Jeśli są spełnione nieprawidłowe parametry.
 
-## <a name="end-exception-class-names-with-the-word-exception"></a>Koniec nazw klas wyjątków z słowem`Exception`
+## <a name="end-exception-class-names-with-the-word-exception"></a>Koniec nazw klas wyjątków z słowem `Exception`
 
 Gdy niestandardowa jest konieczna, nadaj jej odpowiednią nazwę i utwórz ją z <xref:System.Exception> klasy. Przykład:
 
@@ -99,7 +98,7 @@ Na przykład w przypadku implementacji platformy .NET obsługujących domeny apl
 
 - Umieszczając zestaw we wspólnej podstawie aplikacji współużytkowanej przez obie domeny aplikacji.
 
-    \-oraz
+    \- oraz
 
 - Jeśli domeny nie współużytkują podstawy aplikacji, można podpisać zestaw zawierający informacje o wyjątku, używając silnej nazwy, i wdrożyć ten zestaw w globalnej pamięci podręcznej zestawów.
 
@@ -109,7 +108,7 @@ Napisz jasne zdania i Dołącz kończące znaki interpunkcyjne. Każde zdanie w 
 
 ## <a name="include-a-localized-string-message-in-every-exception"></a>Dołącz zlokalizowany komunikat ciągu w każdym wyjątku
 
-Komunikat o błędzie, który użytkownik widzi, pochodzi od <xref:System.Exception.Message?displayProperty=nameWithType> Właściwości zgłoszonego wyjątku, a nie z nazwy klasy wyjątku. Zwykle przypisujesz wartość do <xref:System.Exception.Message?displayProperty=nameWithType> Właściwości przez przekazanie ciągu komunikatu do `message` argumentu [konstruktora wyjątków](xref:System.Exception.%23ctor%2A).
+Komunikat o błędzie, który użytkownik widzi, pochodzi od <xref:System.Exception.Message?displayProperty=nameWithType> Właściwości zgłoszonego wyjątku, a nie z nazwy klasy wyjątku. Zwykle przypisujesz wartość do <xref:System.Exception.Message?displayProperty=nameWithType>  Właściwości przez przekazanie ciągu komunikatu do `message` argumentu [konstruktora wyjątków](xref:System.Exception.%23ctor%2A).
 
 W przypadku zlokalizowanych aplikacji należy podać zlokalizowany ciąg komunikatu dla każdego wyjątku, który aplikacja może zgłosić. Pliki zasobów są używane do udostępniania zlokalizowanych komunikatów o błędach. Aby uzyskać informacje na temat lokalizowania aplikacji i pobierania zlokalizowanych ciągów, zobacz następujące artykuły:
 

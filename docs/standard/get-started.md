@@ -3,13 +3,12 @@ title: Samouczki dotyczące rozpoczynania pracy z platformą .NET
 description: Wybierz samouczek dotyczący programowania aplikacji .NET lub jednego z języków programowania .NET.
 author: tdykstra
 ms.date: 09/30/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: da98bda4a6a2d637a8a899c9d7315d5cbfcb18fa
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 3002b23dcae44b38c9e4dbc2679a2919f1a8d1ce
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755879"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827181"
 ---
 # <a name="tutorials-for-getting-started-with-net"></a>Samouczki dotyczące rozpoczynania pracy z platformą .NET
 

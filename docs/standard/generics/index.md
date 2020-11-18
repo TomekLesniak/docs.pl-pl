@@ -2,7 +2,6 @@
 title: Typy ogólne w .NET
 description: Dowiedz się więcej o typach ogólnych w programie .NET. Definiuj & używaj typów ogólnych, Poznaj zalety & z wadą, Poznaj bibliotekę klas & obsługę języka i nie tylko.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -27,12 +26,12 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: 6455de8e6b874547be7838090fc0527a6ce72b71
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 40a789d9eaa835b1c464f25b5a33a7c1d766d2f8
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063159"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827259"
 ---
 # <a name="generics-in-net"></a>Typy ogólne w .NET
 
@@ -64,7 +63,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
   
 - Ogólny *Typ* ogólnego terminu obejmuje zarówno typy skonstruowane, jak i definicje typów ogólnych.  
   
-- *Kowariancja* i *kontrawariancja* parametrów typu ogólnego umożliwiają używanie skonstruowanych typów ogólnych, których argumenty typu są bardziej pochodne (Kowariancja) lub mniej pochodne (kontrawariancja) niż docelowy typ skonstruowany. Kowariancja i kontrawariancja są określane zbiorczo jako *WARIANCJA* . Aby uzyskać więcej informacji, zobacz [Kowariancja i kontrawariancja](covariance-and-contravariance.md).  
+- *Kowariancja* i *kontrawariancja* parametrów typu ogólnego umożliwiają używanie skonstruowanych typów ogólnych, których argumenty typu są bardziej pochodne (Kowariancja) lub mniej pochodne (kontrawariancja) niż docelowy typ skonstruowany. Kowariancja i kontrawariancja są określane zbiorczo jako *WARIANCJA*. Aby uzyskać więcej informacji, zobacz [Kowariancja i kontrawariancja](covariance-and-contravariance.md).  
   
 - *Ograniczenia* są ograniczone do parametrów typu ogólnego. Można na przykład ograniczyć parametr typu do typów implementujących <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> interfejs ogólny, aby mieć pewność, że wystąpienia typu mogą być uporządkowane. Można również ograniczyć parametry typu do typów, które mają konkretną klasę bazową, które mają konstruktora bez parametrów lub które są typami referencyjnymi lub typami wartości. Użytkownicy typu ogólnego nie mogą wystawiać argumentów typu, które nie spełniają ograniczeń.  
   

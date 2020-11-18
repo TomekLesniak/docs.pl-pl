@@ -2,7 +2,6 @@
 title: 'Instrukcje: Zapisywanie prostej pętli Parallel.For'
 description: Dowiedz się, jak pisać równolegle. pętle w programie .NET, w których nie trzeba anulować pętli, przerwać iteracje pętli lub zachować dowolny stan wątku — lokalnie.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - for loop, parallel construction in .NET
 - parallel for loops, how to use
 ms.assetid: 9029ba7f-a9d1-4526-8c84-c88716dba5d4
-ms.openlocfilehash: 8307f2205653fbd213d824acffc405ee97580166
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 506d6dd725f5d42c6c445a14c5f450c815bfdde1
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662696"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826637"
 ---
 # <a name="how-to-write-a-simple-parallelfor-loop"></a>Instrukcje: Zapisywanie prostej pętli Parallel.For
 
@@ -55,7 +54,7 @@ Jeśli potrzebujesz większej kontroli nad poziomem współbieżności, użyj je
 
 ## <a name="return-value-and-exception-handling"></a>Wartość zwracana i obsługa wyjątków
 
-<xref:System.Threading.Tasks.Parallel.For%2A>zwraca <xref:System.Threading.Tasks.ParallelLoopResult?displayProperty=nameWithType> obiekt po zakończeniu wszystkich wątków. Ta wartość zwracana jest przydatna podczas ręcznego zatrzymywania lub przerywania iteracji pętli, ponieważ <xref:System.Threading.Tasks.ParallelLoopResult> zawiera informacje, takie jak Ostatnia iteracja, która została uruchomiona. Jeśli co najmniej jeden wyjątek występuje w jednym z wątków, <xref:System.AggregateException?displayProperty=nameWithType> zostanie zgłoszony.
+<xref:System.Threading.Tasks.Parallel.For%2A> zwraca <xref:System.Threading.Tasks.ParallelLoopResult?displayProperty=nameWithType> obiekt po zakończeniu wszystkich wątków. Ta wartość zwracana jest przydatna podczas ręcznego zatrzymywania lub przerywania iteracji pętli, ponieważ <xref:System.Threading.Tasks.ParallelLoopResult> zawiera informacje, takie jak Ostatnia iteracja, która została uruchomiona. Jeśli co najmniej jeden wyjątek występuje w jednym z wątków, <xref:System.AggregateException?displayProperty=nameWithType> zostanie zgłoszony.
 
 W kodzie w tym przykładzie zwracana wartość <xref:System.Threading.Tasks.Parallel.For%2A> nie jest używana.
 

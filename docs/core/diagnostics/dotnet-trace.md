@@ -1,25 +1,39 @@
 ---
-title: dotnet-Trace Tool-.NET Core
-description: Instalowanie i używanie narzędzia wiersza polecenia do śledzenia dotnet.
-ms.date: 11/21/2019
-ms.openlocfilehash: 4a3694f6ed748779809ee4c4bfd941bb6f1ac490
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+title: dotnet-Trace — narzędzie diagnostyczne — interfejs wiersza polecenia platformy .NET
+description: Dowiedz się, jak zainstalować i użyć narzędzia interfejsu wiersza polecenia śledzenia dotnet, aby zebrać ślady środowiska .NET działającego procesu bez natywnego profilera przy użyciu programu .NET EventPipe.
+ms.date: 11/17/2020
+ms.openlocfilehash: d0798e4f703c18c48db47193ac24ec0d13b66ae5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687632"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829313"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>Narzędzie do analizy wydajności śledzenia dotnet
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 3,0 SDK i nowszych wersjach
 
-## <a name="install-dotnet-trace"></a>Zainstaluj program dotnet-Trace
+## <a name="install"></a>Instalowanie
 
-Zainstaluj `dotnet-trace` [pakiet NuGet](https://www.nuget.org/packages/dotnet-trace) za pomocą polecenia [instalacji narzędzia dotnet](../tools/dotnet-tool-install.md) :
+Istnieją dwa sposoby na pobranie i zainstalowanie `dotnet-trace` :
 
-```dotnetcli
-dotnet tool install --global dotnet-trace
-```
+- **Narzędzie globalne dotnet:**
+
+  Aby zainstalować najnowszą wersję `dotnet-trace` [pakietu NuGet](https://www.nuget.org/packages/dotnet-trace), użyj polecenia [Narzędzia dotnet Install](../tools/dotnet-tool-install.md) :
+
+  ```dotnetcli
+  dotnet tool install --global dotnet-trace
+  ```
+
+- **Pobieranie bezpośrednie:**
+
+  Pobierz plik wykonywalny narzędzia, który jest zgodny z platformą:
+
+  | System operacyjny  | Platforma |
+  | --- | -------- |
+  | Windows | [x86](https://aka.ms/dotnet-trace/win-x86) \| [x64](https://aka.ms/dotnet-trace/win-x64) \| [ARM](https://aka.ms/dotnet-trace/win-arm) \| [ARM — x64](https://aka.ms/dotnet-trace/win-arm64) |
+  | macOS   | [x64](https://aka.ms/dotnet-trace/osx-x64) |
+  | Linux   | [x64](https://aka.ms/dotnet-trace/linux-x64) \| [ARM](https://aka.ms/dotnet-trace/linux-arm) \| [arm64](https://aka.ms/dotnet-trace/linux-arm64) \| [MUSL — x64](https://aka.ms/dotnet-trace/linux-musl-x64) \| [MUSL — arm64](https://aka.ms/dotnet-trace/linux-musl-arm64) |
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -196,7 +210,8 @@ Aby zebrać ślady przy użyciu `dotnet-trace` :
 
 ## <a name="launch-a-child-application-and-collect-a-trace-from-its-startup-using-dotnet-trace"></a>Uruchamianie aplikacji podrzędnej i zbieranie śladów z uruchamiania przy użyciu programu dotnet-Trace
 
-Uwaga: działa to w przypadku aplikacji z uruchomionym programem .NET 5,0 lub nowszym.
+> [!IMPORTANT]
+> Działa to w przypadku aplikacji z uruchomionym programem .NET 5,0 lub nowszym.
 
 Czasami przydatne może być zebranie śladu procesu od jego uruchomienia. W przypadku aplikacji, na których działa program .NET 5,0 lub nowszy, można to zrobić za pomocą funkcji śledzenia dotnet.
 

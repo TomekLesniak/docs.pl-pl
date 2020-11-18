@@ -1,17 +1,16 @@
 ---
 title: Wzorzec projektowy obserwatora — Najlepsze praktyki
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - observer design pattern [.NET], best practices
 - best practices [.NET], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-ms.openlocfilehash: 8e75343e1ca1c7f69306ee45148f2dc0eec3585f
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 48a9bb49be20bbedbaa19d622aabfd18affe39bd
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064083"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828260"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Wzorzec projektowy obserwatora — Najlepsze praktyki
 
@@ -52,7 +51,7 @@ W programie .NET Wzorzec projektowy obserwatora jest implementowany jako zestaw 
   
  Chociaż istnieje możliwość dołączenia obserwatora do wielu dostawców, zalecany wzorzec polega na dołączeniu <xref:System.IObserver%601> wystąpienia tylko do jednego <xref:System.IObservable%601> wystąpienia.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wzorzec projektowy obserwatora](observer-design-pattern.md)
 - [Instrukcje: implementowanie obserwatora](how-to-implement-an-observer.md)

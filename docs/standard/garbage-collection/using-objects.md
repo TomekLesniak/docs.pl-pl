@@ -2,7 +2,6 @@
 title: Używanie obiektów implementujących interfejs IDisposable
 description: Dowiedz się, jak używać obiektów implementujących interfejs IDisposable w programie .NET. Typy korzystające z zasobów niezarządzanych implementują interfejs IDisposable, aby zezwalać na odzyskiwanie zasobów.
 ms.date: 05/13/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - try/finally block
 - garbage collection, encapsulating resources
 ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
-ms.openlocfilehash: 7d5d4080f22aab6870a230d495b4a4b9ebcb3b96
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 50769bdf684f6eb3a51dc2bd00c6a774a02976b7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599857"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827454"
 ---
 # <a name="using-objects-that-implement-idisposable"></a>Używanie obiektów implementujących interfejs IDisposable
 
@@ -62,7 +61,7 @@ Możesz użyć tego podstawowego wzorca, jeśli zdecydujesz się zaimplementowa�
 
 Jeśli klasa przechowuje <xref:System.IDisposable> implementację jako element członkowski wystąpienia, pole lub właściwość, należy również zaimplementować klasę <xref:System.IDisposable> . Aby uzyskać więcej informacji, zobacz [implementacja kaskadowego usuwania](implementing-dispose.md#cascade-dispose-calls).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Oczyszczanie zasobów niezarządzanych](unmanaged.md)
 - [using — Instrukcja (odwołanie w C#)](../../csharp/language-reference/keywords/using-statement.md)

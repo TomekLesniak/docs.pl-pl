@@ -1,7 +1,6 @@
 ---
 title: 'Instrukcje: Określanie harmonogramu zadań w bloku przepływu danych'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - task scheduler, linking from TPL
 ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
-ms.openlocfilehash: 76c9e75f787c28657af143b46bb22d08039e2dc4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 716892940bf8387cbe3d39fd36258c5ede02ee8b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288137"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826908"
 ---
 # <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Instrukcje: Określanie harmonogramu zadań w bloku przepływu danych
 W tym dokumencie przedstawiono sposób kojarzenia określonego harmonogramu zadań w przypadku korzystania z przepływu danych w aplikacji. W przykładzie używa <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> klasy w aplikacji Windows Forms, aby pokazać, kiedy zadania czytnika są aktywne, a zadanie składnika zapisywania jest aktywne. Używa również metody, <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> Aby umożliwić uruchamianie bloku przepływu danych w wątku interfejsu użytkownika.
@@ -35,7 +34,7 @@ W tym dokumencie przedstawiono sposób kojarzenia określonego harmonogramu zada
   
 ### <a name="to-add-dataflow-functionality-to-the-application"></a>Aby dodać funkcję przepływu danych do aplikacji  
   
-1. W projekcie Dodaj odwołanie do elementu System. Threading. Tasks. przepływu danych. dll.  
+1. W projekcie Dodaj odwołanie do System.Threading.Tasks.Dataflow.dll.  
   
 2. Upewnij się, że Form1.cs (Form1. vb dla Visual Basic) zawiera następujące `using` instrukcje ( `Imports` w Visual Basic).  
   

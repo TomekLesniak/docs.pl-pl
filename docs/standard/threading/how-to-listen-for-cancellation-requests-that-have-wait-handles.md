@@ -1,21 +1,20 @@
 ---
-title: 'Porady: nasłuchiwanie żądań anulowania z dojściami oczekiwania'
+title: 'Instrukcje: Nasłuchiwanie żądań anulowania z dojściami oczekiwania'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - cancellation, waiting with wait handles
 ms.assetid: 6e2aa49b-fc84-4bcf-962b-17db98b7edcb
-ms.openlocfilehash: e44b10b88bef61edcf3f547f56b4020740530e26
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec5bc796532381b3e21e4dddc037a927b7e68833
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279546"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826446"
 ---
-# <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Porady: nasłuchiwanie żądań anulowania z dojściami oczekiwania
+# <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Instrukcje: Nasłuchiwanie żądań anulowania z dojściami oczekiwania
 Jeśli metoda jest blokowana, gdy oczekuje na zasygnalizowanie zdarzenia, nie może sprawdzić wartości tokenu anulowania i odpowiedzieć w odpowiednim czasie. W pierwszym przykładzie pokazano, jak rozwiązać ten problem podczas pracy ze zdarzeniami, takimi jak <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> , które nie obsługują natywnie ujednoliconej platformy anulowania. Drugi przykład przedstawia bardziej usprawnione podejście, które używa <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> , które obsługuje ujednolicone anulowanie.  
   
 > [!NOTE]

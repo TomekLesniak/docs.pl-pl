@@ -2,7 +2,6 @@
 title: Niszczenie wątków
 description: Należy znać opcje, gdy trzeba zniszczyć wątek w programie .NET, na przykład w przypadku odwołania do spółdzielni lub metody Thread. Abort. Dowiedz się, jak obsłużyć ThreadAbortException.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - destroying threads
 - threading [.NET], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
-ms.openlocfilehash: caf7e29742bd7c0481badeeace91b7851520ad12
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: be31b0232889227fa5d4990c9481305eea343f11
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188370"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826485"
 ---
 # <a name="destroying-threads"></a>Niszczenie wątków
 
@@ -66,7 +65,7 @@ catch (ThreadAbortException ex)
   
  Można uniemożliwić ponowne zgłoszenie wyjątku przez system, wywołując <xref:System.Threading.Thread.ResetAbort%2A?displayProperty=nameWithType> metodę. Jednak należy to zrobić tylko wtedy, gdy własny kod spowodował <xref:System.Threading.ThreadAbortException> .  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Threading.ThreadAbortException>
 - <xref:System.Threading.Thread>

@@ -2,7 +2,6 @@
 title: Rozszerzanie metadanych za pomocą atrybutów
 description: Dowiedz się, jak zwiększyć liczbę metadanych przy użyciu atrybutów w programie .NET. Atrybuty są opisowymi deklaracjami słów kluczowych, aby dodawać adnotacje do elementów programowania, takich jak typy i pola.
 ms.date: 10/14/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - metadata, extending
 - attributes [.NET], metadata
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - runtime, attributes
 - extending metadata
 ms.assetid: 30386922-1e00-4602-9ebf-526b271a8b87
-ms.openlocfilehash: 9a83c0e8ee3476f43ccc2e88c21ccbbc0661bd19
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: e41299b83ae451117ab6829eee928b0d2306be19
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889221"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829079"
 ---
 # <a name="extend-metadata-using-attributes"></a>Rozszerzanie metadanych przy użyciu atrybutów
 

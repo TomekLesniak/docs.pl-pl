@@ -2,17 +2,16 @@
 title: Zarządzana wątkowość
 description: Zobacz linki do artykułów na temat zarządzanych wątków w programie .NET obejmujących podstawowe, najlepsze rozwiązania, obiekty wątkowe & funkcje, strony referencyjne & więcej.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-ms.openlocfilehash: 15af6268c8e5de853ead0817c85f4261c7fc9692
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 568b93fbfb6f757719d44a07b99ac18375ed539a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189176"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826342"
 ---
 # <a name="managed-threading"></a>Zarządzana wątkowość
 

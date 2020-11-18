@@ -1,16 +1,15 @@
 ---
 title: Zalecenia dotyczące użycia
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], usage guidelines
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-ms.openlocfilehash: 03eaba3e52cb25619f65637efb4f414c22770440
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d6ea7c7b9ada95e3d0c425aaea18be6cdbb4ce35
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291347"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828507"
 ---
 # <a name="usage-guidelines"></a>Zalecenia dotyczące użycia
 
@@ -27,7 +26,7 @@ Ta sekcja zawiera wskazówki dotyczące używania typów wspólnych w publicznie
 [Atrybuty](attributes.md)  
 [Kolekcje](guidelines-for-collections.md)  
 [Serializacja](serialization.md)  
-[Użycie metody System. XML](system-xml-usage.md)  
+[ UżycieSystem.Xml](system-xml-usage.md)  
 [Operatory równości](equality-operators.md)  
 
 *Fragmenty © 2005, 2009 Microsoft Corporation. Wszelkie prawa zastrzeżone.*

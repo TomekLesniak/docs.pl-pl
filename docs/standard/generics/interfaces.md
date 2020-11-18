@@ -1,19 +1,18 @@
 ---
 title: Interfejsy ogólne
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - generic interfaces [.NET]
 - equality comparisons [.NET]
 - generics [.NET], interfaces
 - ordering comparisons [.NET]
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
-ms.openlocfilehash: 6e107250cef38d532310cd193c9324d1d39c096a
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 429aa3c4d48fa6805b498206bcb699b56f522409
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064057"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827194"
 ---
 # <a name="generic-interfaces"></a>Interfejsy ogólne
 
@@ -40,7 +39,7 @@ Interfejsy generyczne zapewniają bezpieczne dla typu interfejsy nieogólne do s
   
  <xref:System.Collections.Generic.IEnumerable%601>Ogólny interfejs zawiera ogólną strukturę modułu wyliczającego. <xref:System.Collections.Generic.IEnumerator%601>Ogólny interfejs implementowany przez moduł wyliczający generyczne dziedziczy interfejs nieogólny <xref:System.Collections.IEnumerator> ; <xref:System.Collections.IEnumerator.MoveNext%2A> i <xref:System.Collections.IEnumerator.Reset%2A> składowe, które nie są zależne od parametru typu `T` , są wyświetlane tylko w nieogólnym interfejsie. Oznacza to, że każdy użytkownik niegenerycznego interfejsu może również korzystać z interfejsu ogólnego.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Collections.Generic?displayProperty=nameWithType>
 - <xref:System.Collections.ObjectModel?displayProperty=nameWithType>

@@ -1,18 +1,17 @@
 ---
 title: Wirtualne składowe
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - overridable members
 - virtual members
 - members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-ms.openlocfilehash: 918208bb44f84988b7fe903c589e82c7bf1f59e3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 22eb71ccfc1b9a3d359b0453e4ff47f3f41827f5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620771"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828403"
 ---
 # <a name="virtual-members"></a>Wirtualne składowe
 Wirtualne elementy członkowskie można przesłonić, zmieniając zachowanie podklasy. Są one bardzo podobne do wywołania zwrotnego pod względem rozszerzalności, które zapewnia, ale są lepsze pod względem wydajności i zużycia pamięci. Ponadto wirtualne elementy członkowskie działają bardziej naturalnie w scenariuszach, które wymagają utworzenia specjalnego rodzaju istniejącego typu (specjalizacji).
@@ -23,7 +22,7 @@ Wirtualne elementy członkowskie można przesłonić, zmieniając zachowanie pod
 
  Wirtualne elementy członkowskie, takie jak wywołania zwrotne (i mogą być większe niż wywołania zwrotne), są kosztowne do projektowania, testowania i konserwowania, ponieważ każde wywołanie elementu wirtualnego można przesłonić w sposób nieprzewidywalny i można wykonać dowolny kod. Ponadto zwykle wymagane jest wyraźne określenie kontraktu wirtualnych elementów członkowskich, dzięki czemu koszt projektowania i dokumentowania jest wyższy.
 
- ❌NIE należy tworzyć elementów członkowskich wirtualnych, chyba że jest to dobry powód i masz świadomość wszystkich kosztów związanych z projektowaniem, testowaniem i utrzymywaniem wirtualnych elementów członkowskich.
+ ❌ NIE należy tworzyć elementów członkowskich wirtualnych, chyba że jest to dobry powód i masz świadomość wszystkich kosztów związanych z projektowaniem, testowaniem i utrzymywaniem wirtualnych elementów członkowskich.
 
  Wirtualne elementy członkowskie są mniej łagodniejszej pod względem zmian, które mogą być w nich przeznaczone bez przerywania zgodności. Ponadto są one wolniejsze niż wirtualne elementy członkowskie, głównie ponieważ wywołania wirtualnych elementów członkowskich nie są wbudowane.
 

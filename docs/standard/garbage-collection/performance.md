@@ -2,17 +2,16 @@
 title: Odzyskiwanie pamięci i wydajność
 description: Przeczytaj informacje o problemach związanych z wyrzucaniem elementów bezużytecznych i użyciem pamięci. Dowiedz się, jak zminimalizować efekt wyrzucania elementów bezużytecznych w aplikacjach.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 7c4a61c1e5e735313a355bcab348fd6ef58a8686
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 15ca3fd06bb607a4f0257b4c5cd62f9c935c6913
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93062974"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827545"
 ---
 # <a name="garbage-collection-and-performance"></a>Odzyskiwanie pamięci i wydajność
 
@@ -230,7 +229,7 @@ Poniższa procedura opisuje, jak ustawić punkt przerwania, aby można było zmi
 
   To polecenie wymusza przerwanie, jeśli **RestartEE** jest wykonywane po odbraniu obiektów generacji 2 do wyrzucania elementów bezużytecznych.
 
-  W wyrzucaniu elementów bezużytecznych serwera tylko jedno wywołanie wątku **RestartEE** , więc punkt przerwania wystąpi tylko raz podczas wyrzucania elementów bezużytecznych generacji 2.
+  W wyrzucaniu elementów bezużytecznych serwera tylko jedno wywołanie wątku **RestartEE**, więc punkt przerwania wystąpi tylko raz podczas wyrzucania elementów bezużytecznych generacji 2.
 
 ## <a name="performance-check-procedures"></a>Procedury sprawdzania wydajności
 
@@ -272,9 +271,9 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
 - Zapoznaj się z poniższymi dwoma licznikami wydajności pamięci:
 
-  - **Czas (%) w usłudze GC** . Wyświetla procent czasu, który upłynął podczas wykonywania wyrzucania elementów bezużytecznych po ostatnim cyklu wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy moduł wyrzucania elementów bezużytecznych poświęca zbyt dużo czasu na udostępnienie zarządzanej przestrzeni sterty. Jeśli czas spędzony na wyrzucaniu elementów bezużytecznych jest stosunkowo niski, może to wskazywać na problem z zasobem poza zarządzaną stertą. Ten licznik może nie być dokładny, gdy jest wykorzystywane współbieżne lub w tle odzyskiwanie pamięci.
+  - **Czas (%) w usłudze GC**. Wyświetla procent czasu, który upłynął podczas wykonywania wyrzucania elementów bezużytecznych po ostatnim cyklu wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy moduł wyrzucania elementów bezużytecznych poświęca zbyt dużo czasu na udostępnienie zarządzanej przestrzeni sterty. Jeśli czas spędzony na wyrzucaniu elementów bezużytecznych jest stosunkowo niski, może to wskazywać na problem z zasobem poza zarządzaną stertą. Ten licznik może nie być dokładny, gdy jest wykorzystywane współbieżne lub w tle odzyskiwanie pamięci.
 
-  - Liczba **bajtów zadeklarowanych łącznie** . Wyświetla ilość pamięci wirtualnej aktualnie zatwierdzonej przez moduł wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy pamięć wykorzystywana przez moduł wyrzucania elementów bezużytecznych jest nadmierną częścią pamięci używanej przez aplikację.
+  - Liczba **bajtów zadeklarowanych łącznie**. Wyświetla ilość pamięci wirtualnej aktualnie zatwierdzonej przez moduł wyrzucania elementów bezużytecznych. Użyj tego licznika, aby określić, czy pamięć wykorzystywana przez moduł wyrzucania elementów bezużytecznych jest nadmierną częścią pamięci używanej przez aplikację.
 
   Większość liczników wydajności pamięci jest aktualizowanych na końcu każdego wyrzucania elementów bezużytecznych. W związku z tym mogą nie odzwierciedlać bieżących warunków, o których chcesz uzyskać informacje.
 
@@ -282,7 +281,7 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
 ### <a name="to-determine-whether-the-out-of-memory-exception-is-managed"></a>Aby określić, czy wyjątek braku pamięci jest zarządzany
 
-1. W debugerze WinDbg lub Visual Studio z załadowanym rozszerzeniem debuggera SOS wpisz polecenie Print Exception ( **PE** ):
+1. W debugerze WinDbg lub Visual Studio z załadowanym rozszerzeniem debuggera SOS wpisz polecenie Print Exception (**PE**):
 
     **! PE**
 
@@ -352,9 +351,9 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
 1. Uruchom Menedżera zadań systemu Windows.
 
-2. Na karcie **wydajność** Przyjrzyj się wartości zatwierdzonej. (W systemie Windows 7 zapoznaj się z tematem **zatwierdzenie (KB)** w **grupie system** .)
+2. Na karcie **wydajność** Przyjrzyj się wartości zatwierdzonej. (W systemie Windows 7 zapoznaj się z tematem **zatwierdzenie (KB)** w **grupie system**.)
 
-    Jeśli **Suma** zbliża się do **limitu** , zaczyna brakować pamięci fizycznej.
+    Jeśli **Suma** zbliża się do **limitu**, zaczyna brakować pamięci fizycznej.
 
 <a name="ManagedHeapCommit"></a>
 
@@ -795,6 +794,6 @@ W tej sekcji opisano następujące procedury umożliwiające odizolowanie przycz
 
   Jeśli `% Time in GC` wartość zostanie nadana w tym samym czasie co czas procesu, wyrzucanie elementów bezużytecznych powoduje wysokie użycie procesora CPU. W przeciwnym razie należy profilować aplikację, aby znaleźć miejsce wystąpienia wysokiego użycia.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Odzyskiwanie pamięci](index.md)

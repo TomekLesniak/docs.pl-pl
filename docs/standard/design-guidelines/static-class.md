@@ -1,7 +1,6 @@
 ---
 title: Projekt klasy statycznej
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - type design guidelines, static classes
 - class library design guidelines [.NET Framework], classes
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d67c14d8-c4dd-443f-affb-4ccae677c9b6
-ms.openlocfilehash: c906502ed071e8515f101996ec42a04772f72b12
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: efa5ca6e7b5e7b7d03cbe1d55471a388f3faab37
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291932"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828663"
 ---
 # <a name="static-class-design"></a>Projekt klasy statycznej
 Klasa statyczna jest definiowana jako Klasa, która zawiera tylko statyczne elementy członkowskie (oczywiście oprócz członków wystąpienia dziedziczonych z <xref:System.Object?displayProperty=nameWithType> i prawdopodobnie konstruktora prywatnego). Niektóre języki zapewniają wbudowaną obsługę klas statycznych. W języku C# 2,0 i nowszych, gdy Klasa jest zadeklarowana jako statyczna, jest zapieczętowana, abstrakcyjna i nie można zastąpić jej elementów członkowskich wystąpienia.
@@ -26,9 +25,9 @@ Klasa statyczna jest definiowana jako Klasa, która zawiera tylko statyczne elem
 
  Klasy statyczne powinny być używane tylko jako klasy pomocnicze dla rdzenia zorientowanego obiektowo struktury.
 
- ❌NIE Traktuj klas statycznych jako zasobników dodatkowych.
+ ❌ NIE Traktuj klas statycznych jako zasobników dodatkowych.
 
- ❌Nie deklaruj ani nie Przesłoń składowych wystąpienia w klasach statycznych.
+ ❌ Nie deklaruj ani nie Przesłoń składowych wystąpienia w klasach statycznych.
 
  ✔️ NALEŻY zadeklarować klasy statyczne jako zapieczętowane, abstrakcyjne i dodać konstruktora wystąpienia prywatnego, jeśli język programowania nie ma wbudowanej obsługi dla klas statycznych.
 

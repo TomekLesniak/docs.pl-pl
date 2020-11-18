@@ -1,26 +1,25 @@
 ---
 title: Pieczętowanie
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - limiting extensibility
 - classes [.NET Framework], sealing
 - preventing customization
 - sealed classes
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
-ms.openlocfilehash: a54c68efb4ac114fe0e5a5712eca877bef35c103
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 29023ad431f9d05caf44e59f66eccee24bfa0433
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290113"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828689"
 ---
 # <a name="sealing"></a>Pieczętowanie
 Jedną z funkcji platform zorientowanych na obiektach jest to, że deweloperzy mogą je rozwijać i dostosowywać w sposób nieoczekiwany przez projektantów struktury. Jest to zarówno moc, jak i niebezpieczeństwo rozszerzalnego projektu. Podczas projektowania platformy, dlatego bardzo ważne jest staranne projektowanie pod kątem rozszerzalności, gdy jest to potrzebne, i ograniczanie rozszerzalności, gdy jest to niebezpieczne.
 
  Zaawansowany mechanizm, który uniemożliwia rozszerzanie rozszerzalności. Możesz zapieczętować klasę lub poszczególnych członków. Opieczętowanie klasy uniemożliwia użytkownikom dziedziczenie z klasy. Zapieczętowania elementu członkowskiego uniemożliwia użytkownikom zastępowanie określonego elementu członkowskiego.
 
- ❌NIE należy zapieczętować klas bez dobrego powodu.
+ ❌ NIE należy zapieczętować klas bez dobrego powodu.
 
  Pieczętowanie klasy, ponieważ nie można myśleć, że scenariusz rozszerzalności nie jest dobrym powodem. Użytkownicy platformy, którzy mają dziedziczyć z klas z różnych nieoczywistych powodów, takich jak dodawanie wygodnych członków. Zobacz [niezapieczętowane klasy](unsealed-classes.md) , aby poznać przykłady nieoczywistych przyczyn, które użytkownicy chcą dziedziczyć z typu.
 
@@ -34,7 +33,7 @@ Jedną z funkcji platform zorientowanych na obiektach jest to, że deweloperzy m
 
 - Klasa jest atrybutem, który wymaga bardzo szybkiego wyszukiwania w środowisku uruchomieniowym. Zapieczętowane atrybuty mają nieco wyższy poziom wydajności niż niezapieczętowany. Zobacz [atrybuty](attributes.md).
 
- ❌Nie deklaruj chronionych ani wirtualnych elementów członkowskich w typach zapieczętowanych.
+ ❌ Nie deklaruj chronionych ani wirtualnych elementów członkowskich w typach zapieczętowanych.
 
  Z definicji typy zapieczętowane nie mogą być dziedziczone z. Oznacza to, że nie można wywoływać chronionych elementów członkowskich w typach zapieczętowanych, a metody wirtualne w typach zapieczętowanych nie mogą zostać zastąpione.
 

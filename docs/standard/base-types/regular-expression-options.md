@@ -2,7 +2,6 @@
 title: Opcje wyrażeń regularnych
 description: Dowiedz się, jak używać opcji wyrażenia regularnego w programie .NET, takich jak Dopasowywanie bez uwzględniania wielkości liter, tryb wielowierszowy i tryb od prawej do lewej.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: 5687d1e5a11e69cc9ecf2bd34067329cc52955d2
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: a77409476c8b2c1b32429118edbe6ad6542a7b09
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889000"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828949"
 ---
 # <a name="regular-expression-options"></a>Opcje wyrażeń regularnych
 
@@ -265,9 +264,9 @@ Jednak w następujących przypadkach znaki odstępu w wyrażeniu regularnym nie 
 
 - Biały znak nie jest dozwolony w obrębie kwantyfikatora w nawiasach klamrowych, takich jak `{` *n* `}` , `{` *n* `,}` i `{` *n* `,` *m* `}` . Na przykład wzorzec wyrażenia regularnego `\d{1, 3}` nie jest zgodny z żadną sekwencją cyfr z jednej do trzech cyfr, ponieważ zawiera znak odstępu.
 
-- Biały znak jest niedozwolony w sekwencji znaków, która wprowadza element języka. Na przykład:
+- Biały znak jest niedozwolony w sekwencji znaków, która wprowadza element języka. Przykład:
 
-  - Podwyrażenie elementu języka `(?:` *subexpression* `)` reprezentuje grupę nieprzechwytującą, a `(?:` część elementu nie może mieć osadzonych spacji. Podwyrażenie wzorca `(? :` *subexpression* `)` zgłasza <xref:System.ArgumentException> w czasie wykonywania, ponieważ aparat wyrażeń regularnych nie może przeanalizować wzorca, a `( ?:` *Podwyrażenie* wzorca `)` nie będzie pasować do *podwyrażenia* .
+  - Podwyrażenie elementu języka `(?:` *subexpression* `)` reprezentuje grupę nieprzechwytującą, a `(?:` część elementu nie może mieć osadzonych spacji. Podwyrażenie wzorca `(? :` *subexpression* `)` zgłasza <xref:System.ArgumentException> w czasie wykonywania, ponieważ aparat wyrażeń regularnych nie może przeanalizować wzorca, a `( ?:` *Podwyrażenie* wzorca `)` nie będzie pasować do *podwyrażenia*.
 
   - Nazwa elementu języka `\p{` *name* `}` , która reprezentuje kategorię Unicode lub nazwany blok, nie może zawierać osadzonych spacji w `\p{` części elementu. Jeśli zostanie uwzględniony biały znak, element zgłasza <xref:System.ArgumentException> czas wykonywania.
 
@@ -358,7 +357,7 @@ Zachowanie ECMAScript i kanoniczne wyrażenia regularne różnią się w trzech 
 
 Domyślnie, gdy aparat wyrażeń regularnych wykonuje porównania bez uwzględniania wielkości liter, używa konwencji osłony dla bieżącej kultury, aby określić równoważne wielkie i małe litery.
 
-Jednak takie zachowanie jest niepożądane w przypadku niektórych typów porównań, szczególnie w przypadku porównywania danych wejściowych użytkownika z nazwami zasobów systemowych, takich jak hasła, pliki lub adresy URL. Poniższy przykład ilustruje przykład scenariusza. Kod jest przeznaczony do blokowania dostępu do dowolnego zasobu, którego adres URL jest poprzedzony **File://** . Wyrażenie regularne próbuje dopasować wielkość liter do ciągu przy użyciu wyrażenia regularnego `$FILE://` . Jednakże gdy bieżącą kulturą systemu jest TR-TR (turecki-Turcja), "I" nie jest odpowiednikiem litery "i". W związku z tym wywołanie <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody zwraca `false` i dostęp do pliku jest dozwolone.
+Jednak takie zachowanie jest niepożądane w przypadku niektórych typów porównań, szczególnie w przypadku porównywania danych wejściowych użytkownika z nazwami zasobów systemowych, takich jak hasła, pliki lub adresy URL. Poniższy przykład ilustruje przykład scenariusza. Kod jest przeznaczony do blokowania dostępu do dowolnego zasobu, którego adres URL jest poprzedzony **File://**. Wyrażenie regularne próbuje dopasować wielkość liter do ciągu przy użyciu wyrażenia regularnego `$FILE://` . Jednakże gdy bieżącą kulturą systemu jest TR-TR (turecki-Turcja), "I" nie jest odpowiednikiem litery "i". W związku z tym wywołanie <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metody zwraca `false` i dostęp do pliku jest dozwolone.
 
 [!code-csharp[Conceptual.Regex.Language.Options#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/culture1.cs#14)]
 [!code-vb[Conceptual.Regex.Language.Options#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#14)]

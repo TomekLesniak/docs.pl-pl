@@ -2,14 +2,15 @@
 title: Platformy docelowe w projektach w stylu zestawu SDK — .NET
 description: Dowiedz się więcej na temat platform docelowych dla aplikacji i bibliotek platformy .NET.
 ms.date: 11/06/2020
+ms.prod: dotnet
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: a37634bc9f4cbee5f7901fcb085d3801a7452573
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 1a0d6ef9d31b85fd6c083604dd11b9ca9ff09c79
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441048"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827922"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Platformy docelowe w projektach w stylu zestawu SDK
 
@@ -188,7 +189,7 @@ Poniższe Platformy docelowe są przestarzałe. Pakiety, które są przeznaczone
 | Win10                                                                                      | UAP 10.0     |
 | środowiska                                                                                      | netcore45   |
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Nazwy platformy docelowej w programie .NET 5](https://github.com/dotnet/designs/blob/master/accepted/2020/net5/net5.md)
 - [Tworzenie bibliotek za pomocą narzędzi międzyplatformowych](../core/tutorials/libraries.md)

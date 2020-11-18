@@ -2,7 +2,6 @@
 title: Wyliczanie ciągów formatujących
 description: Utwórz ciągi formatujące Wyliczenie przy użyciu metody enum. ToString w programie .NET. Formatowanie wartości liczbowych, szesnastkowych lub ciągów elementów członkowskich wyliczenia.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - enumeration format strings
 - formatting [.NET], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-ms.openlocfilehash: e4d8ca27d99c211653269b2477be8f5632b78229
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 02a12c36e47a82c15c01e578333e1c4465bab142
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888662"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829625"
 ---
 # <a name="enumeration-format-strings"></a>Wyliczanie ciągów formatujących
 

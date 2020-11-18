@@ -2,17 +2,16 @@
 title: Wybieranie węzłów za pomocą nawigacji XPath
 description: Dowiedz się, jak wybrać węzły XML w programie .NET. Użyj metod Document Object Model (DOM), aby móc używać nawigacji języka ścieżki XML (XPath) do wykonywania zapytań dotyczących informacji DOM.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-ms.openlocfilehash: aa8b6d93e25d974a0e1b53ae8be9868f6bf64be6
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: b8a67d1fd508d0674d9230d4b934071a15669599
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662514"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829248"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>Wybieranie węzłów za pomocą nawigacji XPath
 Document Object Model XML (DOM) zawiera metody umożliwiające użycie nawigacji języka ścieżki XML (XPath) do wykonywania zapytań dotyczących informacji w modelu DOM. Możesz użyć XPath, aby znaleźć pojedynczy, konkretny węzeł lub znaleźć wszystkie węzły, które pasują do niektórych kryteriów.  

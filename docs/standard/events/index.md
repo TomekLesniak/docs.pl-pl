@@ -2,7 +2,6 @@
 title: Obsługa i wywoływanie zdarzeń
 description: Dowiedz się, jak obsługiwać i zgłaszać zdarzenia platformy .NET, które są oparte na modelu delegata. Ten model umożliwia subskrybentom rejestrowanie się z dostawcami lub otrzymywanie z nich powiadomień.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: a2bfbe9a411d3099d02df7a43a42baaad2bb32da
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: e0b8de574475490cd3b15383b6ebc2ace4b74663
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064096"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828273"
 ---
 # <a name="handle-and-raising-events"></a>Obsługa i wywoływanie zdarzeń
 
@@ -28,11 +27,11 @@ Zdarzenia w programie .NET są oparte na modelu delegata. Model delegata jest zg
   
 ## <a name="events"></a>Zdarzenia
 
-Zdarzenie jest wiadomością wysłaną przez obiekt, aby sygnalizować wystąpienie akcji. Akcja może być spowodowana przez interakcję użytkownika, taką jak kliknięcie przycisku, lub może wynikać z innej logiki programu, takiej jak zmiana wartości właściwości. Obiekt, który wywołuje zdarzenie, jest nazywany *nadawcą zdarzenia* . Nadawca zdarzenia nie wie, który obiekt lub metoda otrzyma (dojście) zdarzenia, które wywołuje. Zdarzenie jest zwykle członkiem nadawcy zdarzenia; na przykład <xref:System.Web.UI.WebControls.Button.Click> zdarzenie jest członkiem <xref:System.Web.UI.WebControls.Button> klasy, a <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> zdarzenie jest członkiem klasy, która implementuje <xref:System.ComponentModel.INotifyPropertyChanged> interfejs.  
+Zdarzenie jest wiadomością wysłaną przez obiekt, aby sygnalizować wystąpienie akcji. Akcja może być spowodowana przez interakcję użytkownika, taką jak kliknięcie przycisku, lub może wynikać z innej logiki programu, takiej jak zmiana wartości właściwości. Obiekt, który wywołuje zdarzenie, jest nazywany *nadawcą zdarzenia*. Nadawca zdarzenia nie wie, który obiekt lub metoda otrzyma (dojście) zdarzenia, które wywołuje. Zdarzenie jest zwykle członkiem nadawcy zdarzenia; na przykład <xref:System.Web.UI.WebControls.Button.Click> zdarzenie jest członkiem <xref:System.Web.UI.WebControls.Button> klasy, a <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> zdarzenie jest członkiem klasy, która implementuje <xref:System.ComponentModel.INotifyPropertyChanged> interfejs.  
   
 Aby zdefiniować zdarzenie, należy użyć [`event`](../../csharp/language-reference/keywords/event.md) słowa kluczowego C# lub Visual Basic [`Event`](../../visual-basic/language-reference/statements/event-statement.md) w sygnaturze klasy Event i określić typ delegata zdarzenia. Delegaty są opisane w następnej sekcji.  
   
-Zwykle, aby zgłosić zdarzenie, należy dodać metodę, która jest oznaczona jako `protected` i `virtual` (w języku C#) lub `Protected` i `Overridable` (w Visual Basic). Nadaj nazwę tej metodzie `On` *EventName* ; na przykład `OnDataReceived` . Metoda powinna przyjmować jeden parametr, który określa obiekt danych zdarzenia, który jest obiektem typu <xref:System.EventArgs> lub typu pochodnego. Ta metoda umożliwia włączenie klas pochodnych w celu zastąpienia logiki w celu podniesienia poziomu zdarzenia. Klasa pochodna zawsze powinna wywołać metodę `On` *EventName* klasy bazowej, aby upewnić się, że zarejestrowani delegowani odbiera zdarzenie.  
+Zwykle, aby zgłosić zdarzenie, należy dodać metodę, która jest oznaczona jako `protected` i `virtual` (w języku C#) lub `Protected` i `Overridable` (w Visual Basic). Nadaj nazwę tej metodzie `On` *EventName*; na przykład `OnDataReceived` . Metoda powinna przyjmować jeden parametr, który określa obiekt danych zdarzenia, który jest obiektem typu <xref:System.EventArgs> lub typu pochodnego. Ta metoda umożliwia włączenie klas pochodnych w celu zastąpienia logiki w celu podniesienia poziomu zdarzenia. Klasa pochodna zawsze powinna wywołać metodę `On` *EventName* klasy bazowej, aby upewnić się, że zarejestrowani delegowani odbiera zdarzenie.  
 
 Poniższy przykład pokazuje, jak zadeklarować zdarzenie o nazwie `ThresholdReached` . Zdarzenie jest skojarzone z <xref:System.EventHandler> delegatem i wywoływane w metodzie o nazwie `OnThresholdReached` .  
   
@@ -94,7 +93,7 @@ Platforma .NET umożliwia subskrybentom rejestrację powiadomień o zdarzeniach 
 |[Instrukcje: Obsługa wielu zdarzeń przy użyciu właściwości zdarzenia](how-to-handle-multiple-events-using-event-properties.md)|Pokazuje, jak używać właściwości zdarzenia do obsługi wielu zdarzeń.|  
 |[Wzorzec projektowy obserwatora](observer-design-pattern.md)|Opisuje Wzorzec projektowy, który umożliwia subskrybentowi zarejestrowanie się w usłudze i otrzymywanie powiadomień od dostawcy.|
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.EventHandler>
 - <xref:System.EventHandler%601>

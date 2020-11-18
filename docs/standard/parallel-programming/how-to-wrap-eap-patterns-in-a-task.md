@@ -1,19 +1,18 @@
 ---
 title: 'Instrukcje: Opakowywanie wzorców EAP w zadaniu'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, how to wrap EAP patterns
 ms.assetid: f11ed467-af2f-4504-8a2e-299a6c36d44e
-ms.openlocfilehash: 339544ce9f0ee44097d1a60e0d2c2035d81f674d
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: 2d6788634fe03bed7a380184c0e954954e224aec
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925366"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826687"
 ---
 # <a name="how-to-wrap-eap-patterns-in-a-task"></a>Instrukcje: Opakowywanie wzorców EAP w zadaniu
 Poniższy przykład pokazuje, jak uwidocznić dowolną sekwencję operacji Event-Based asynchronicznego wzorca (EAP) jako jedno zadanie przy użyciu <xref:System.Threading.Tasks.TaskCompletionSource%601> . W przykładzie pokazano również, jak użyć elementu <xref:System.Threading.CancellationToken> do wywołania wbudowanych metod anulowania dla <xref:System.Net.WebClient> obiektów.  
@@ -24,4 +23,4 @@ Poniższy przykład pokazuje, jak uwidocznić dowolną sekwencję operacji Event
   
 ## <a name="see-also"></a>Zobacz także
 
-- [TPL i tradycyjne programowanie asynchroniczne platformy .NET](tpl-and-traditional-async-programming.md)
+- [Model TPL i tradycyjne programowanie asynchroniczne na platformie .NET](tpl-and-traditional-async-programming.md)
