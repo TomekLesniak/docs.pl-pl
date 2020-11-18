@@ -1,18 +1,17 @@
 ---
 title: Zestaw informacji po kompilacji schematu
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
-ms.openlocfilehash: 3bd0c6063fee1fa1a9f046a8be2ebfde07aea9ee
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2b91a74f7dbb31ee47535dbed7cf5fa5243e364c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291516"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820445"
 ---
 # <a name="post-schema-compilation-infoset"></a>Zestaw informacji po kompilacji schematu
 [Zalecenie dotyczące schematu XML organizacja World Wide Web Consortium (W3C)](https://www.w3.org/XML/Schema) omawia zestaw informacji (sprawdzonych), który musi być narażony na weryfikację przed schematem i kompilację po schemacie. Model obiektów schematu XML (SOM) przegląda to narażenie przed i po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> <xref:System.Xml.Schema.XmlSchemaSet> wywołaniu metody.  
@@ -30,7 +29,7 @@ ms.locfileid: "84291516"
 |<xref:System.Xml.Schema.XmlSchemaParticle>|<xref:System.Xml.Schema.XmlSchemaParticle.MaxOccurs%2A>, <xref:System.Xml.Schema.XmlSchemaParticle.MinOccurs%2A>|  
 |<xref:System.Xml.Schema.XmlSchemaComplexType>|<xref:System.Xml.Schema.XmlSchemaComplexType.AnyAttribute%2A>|  
   
- Na przykład <xref:System.Xml.Schema.XmlSchemaElement> <xref:System.Xml.Schema.XmlSchemaComplexType> klasy i mają `BlockResolved` właściwości i `FinalResolved` . Te właściwości są używane do przechowywania wartości `Block` `Final` właściwości i po skompilowaniu i sprawdzeniu schematu. `BlockResolved`i `FinalResolved` są właściwościami tylko do odczytu, które są częścią kompilacji po schemacie sprawdzonych.  
+ Na przykład <xref:System.Xml.Schema.XmlSchemaElement> <xref:System.Xml.Schema.XmlSchemaComplexType> klasy i mają `BlockResolved` właściwości i `FinalResolved` . Te właściwości są używane do przechowywania wartości `Block` `Final` właściwości i po skompilowaniu i sprawdzeniu schematu. `BlockResolved` i `FinalResolved` są właściwościami tylko do odczytu, które są częścią kompilacji po schemacie sprawdzonych.  
   
  Poniższy przykład pokazuje <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> Właściwość <xref:System.Xml.Schema.XmlSchemaElement> zestawu klasy po walidacji schematu. Przed walidacją Właściwość zawiera `null` odwołanie i <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> jest ustawiana na nazwę danego typu. Po walidacji, <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> jest rozpoznawany jako prawidłowy typ, a obiekt Type jest dostępny za pomocą <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> właściwości.  
   

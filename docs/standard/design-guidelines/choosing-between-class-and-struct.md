@@ -2,7 +2,6 @@
 title: Wybieranie między klasą i strukturą
 description: Dowiedz się, jak zdecydować, czy projektować typ jako klasę, czy też projektować typ jako strukturę. Dowiedz się, jak typy odwołań i typy wartości różnią się w zależności od platformy .NET.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], structures
 - class library design guidelines [.NET Framework], classes
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-ms.openlocfilehash: 9d757e77292c1226fbe2328cce082033ae8f7003
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: b1f3d36f4a9b6e44451a8534ca79fb674071a955
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662605"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821479"
 ---
 # <a name="choosing-between-class-and-struct"></a>Wybieranie między klasą i strukturą
 Jedną z podstawowych decyzji projektowych każdej twarzy projektanta platformy jest to, czy projekt typu ma być klasą (typem referencyjnym) czy jako struktura (typ wartości). Dobre zrozumienie różnic w zachowaniu typów referencyjnych i typów wartości jest decydujące w przypadku dokonania tego wyboru.
@@ -37,7 +36,7 @@ Jedną z podstawowych decyzji projektowych każdej twarzy projektanta platformy 
 
  ✔️ ROZWAŻYĆ zdefiniowanie struktury zamiast klasy, jeśli wystąpienia typu są małe i często krótkotrwałe lub są często osadzone w innych obiektach.
 
- ❌Należy unikać definiowania struktury, chyba że typ ma wszystkie następujące właściwości:
+ ❌ Należy unikać definiowania struktury, chyba że typ ma wszystkie następujące właściwości:
 
 - Logicznie reprezentuje pojedynczą wartość, podobną do typów pierwotnych ( `int` , `double` itp.).
 

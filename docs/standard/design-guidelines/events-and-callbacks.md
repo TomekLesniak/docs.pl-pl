@@ -1,19 +1,18 @@
 ---
 title: Zdarzenia i wywołania zwrotne
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - events [.NET Framework], extensibility
 - methods [.NET Framework], callback
 - callback methods
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-ms.openlocfilehash: 4000944c3b913f71bc18462cea9062e9237ae53f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 82c1df01197e04d14436b6e5b3b2c6aaa249add2
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619536"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821232"
 ---
 # <a name="events-and-callbacks"></a>Zdarzenia i wywołania zwrotne
 Wywołania zwrotne to punkty rozszerzalności, które umożliwiają platformie wywołanie z powrotem do kodu użytkownika przez delegata. Te Delegaty są zwykle przesyłane do struktury za pomocą parametru metody.
@@ -26,15 +25,15 @@ Wywołania zwrotne to punkty rozszerzalności, które umożliwiają platformie w
 
  ✔️ Preferuj zdarzenia przez zwykłe wywołania zwrotne, ponieważ są one bardziej znane dla szerszego zakresu deweloperów i są zintegrowane z uzupełnianiem instrukcji programu Visual Studio.
 
- ❌UNIKAj używania wywołań zwrotnych w interfejsach API z uwzględnieniem wydajności.
+ ❌ UNIKAj używania wywołań zwrotnych w interfejsach API z uwzględnieniem wydajności.
 
  `Func<...>` `Action<...>` `Expression<...>` podczas definiowania interfejsów API z wywołaniami zwrotnymi ✔️ używać nowych typów zamiast niestandardowych delegatów.
 
- `Func<...>`i `Action<...>` reprezentuje delegatów ogólnych. `Expression<...>`reprezentuje definicje funkcji, które mogą być kompilowane i następnie wywoływane w czasie wykonywania, ale mogą być również serializowane i przesyłane do procesów zdalnych.
+ `Func<...>` i `Action<...>` reprezentuje delegatów ogólnych. `Expression<...>` reprezentuje definicje funkcji, które mogą być kompilowane i następnie wywoływane w czasie wykonywania, ale mogą być również serializowane i przesyłane do procesów zdalnych.
 
  ✔️ DO mierzenia i zrozumienia implikacji wydajności przy użyciu `Expression<...>` , zamiast używać `Func<...>` i `Action<...>` delegatów.
 
- `Expression<...>`typy są w większości przypadków logicznie równoważne z `Func<...>` i `Action<...>` delegatów. Główna różnica polega na tym, że Delegaty mają być używane w scenariuszach procesu lokalnego; wyrażenia są przeznaczone do przypadków, gdy są korzystne i możliwe do obliczenia wyrażenia w procesie lub na komputerze zdalnym.
+ `Expression<...>` typy są w większości przypadków logicznie równoważne z `Func<...>` i `Action<...>` delegatów. Główna różnica polega na tym, że Delegaty mają być używane w scenariuszach procesu lokalnego; wyrażenia są przeznaczone do przypadków, gdy są korzystne i możliwe do obliczenia wyrażenia w procesie lub na komputerze zdalnym.
 
  ✔️ zrozumieć, że wywołując delegata, wykonujesz dowolny kod, który może mieć wpływ na bezpieczeństwo, prawidłowość i zgodność.
 

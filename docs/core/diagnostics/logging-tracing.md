@@ -2,12 +2,12 @@
 title: Rejestrowanie i śledzenie — .NET Core
 description: Wprowadzenie do rejestrowania i śledzenia w programie .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: 9af04cceeef3fbfb8392eb91667c21374511548a
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 86444f2451079e54050f6698f3e45ddff0700acf
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687586"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820582"
 ---
 # <a name="net-core-logging-and-tracing"></a>Rejestrowanie i śledzenie w programie .NET Core
 
@@ -93,6 +93,8 @@ Na przykład, aby umożliwić wybranie najlepszego wyboru dla aplikacji .NET, za
 - [Rejestrowanie w programie .NET](../extensions/logging.md) zawiera omówienie technik rejestrowania, które obsługuje.
 
 - [Interpolacja ciągów języka C#](../../csharp/language-reference/tokens/interpolated.md) może uprościć pisanie kodu rejestrowania.
+
+- [Lista zdarzeń dostawcy środowiska uruchomieniowego](../../fundamentals/diagnostics/runtime-events.md)
 
 - <xref:System.Exception.Message?displayProperty=nameWithType>Właściwość jest przydatna do rejestrowania wyjątków.
 

@@ -1,19 +1,18 @@
 ---
 title: Abstrakcje (typy abstrakcyjne i interfejsy)
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - interfaces [.NET Framework], abstract
 - abstract interfaces [.NET Framework]
 - abstract types [.NET Framework]
 - types [.NET Framework], abstract
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
-ms.openlocfilehash: fd5b8fe10d0dcca5da3a2093f7be37f6d88b382a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6acefa2d4a2aed8fca5d0b7db634d393baac6b58
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280617"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821635"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstrakcje (typy abstrakcyjne i interfejsy)
 Streszczenie to typ, który opisuje kontrakt, ale nie zapewnia pełnej implementacji kontraktu. Streszczenia są zwykle implementowane jako klasy abstrakcyjne lub interfejsy i są one ze dobrze zdefiniowanym zestawem dokumentacji referencyjnej opisującym wymaganą semantykę typów implementujących kontrakt. Niektóre z najważniejszych streszczeń w .NET Framework obejmują <xref:System.IO.Stream> , <xref:System.Collections.Generic.IEnumerable%601> , i <xref:System.Object> .
@@ -26,7 +25,7 @@ Streszczenie to typ, który opisuje kontrakt, ale nie zapewnia pełnej implement
 
  Jednakże abstrakcje zapewniają wyjątkowo zaawansowane rozszerzalność, która nie jest często zgodna z innymi mechanizmami rozszerzalności. Są one podstawą wielu wzorców architektonicznych, takich jak wtyczki, niewersja kontroli (IoC), potoki itd. Są one również niezwykle ważne do testowania struktur. Dobre abstrakcje sprawiają, że istnieje możliwość wypróbowania dużych zależności na potrzeby testowania jednostkowego. Podsumowując, abstrakcje są odpowiedzialne za pomyślne zamiar — po rozbudowaniu nowoczesnych platform zorientowanych obiektowo.
 
- ❌NIE należy podawać abstrakcji, chyba że są one testowane przez opracowywanie kilku konkretnych implementacji i interfejsów API korzystających z abstrakcji.
+ ❌ NIE należy podawać abstrakcji, chyba że są one testowane przez opracowywanie kilku konkretnych implementacji i interfejsów API korzystających z abstrakcji.
 
  ✔️ NALEŻY uważnie wybierać między klasą abstrakcyjną i interfejsem podczas projektowania abstrakcji.
 

@@ -3,12 +3,12 @@ title: EventPipe — Omówienie
 description: Dowiedz się więcej o EventPipe i sposobach ich używania do śledzenia aplikacji .NET w celu diagnozowania problemów z wydajnością.
 ms.date: 11/09/2020
 ms.topic: overview
-ms.openlocfilehash: d30cdf02c3ae300401febe2078dfd3431269c73e
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 00378c4f409b307afa9183e40de6078cdafd3ae7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688574"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820621"
 ---
 # <a name="eventpipe"></a>EventPipe
 
@@ -36,7 +36,7 @@ Kolejną istotną różnicą między EventPipe i ETW/LTTng jest wymagania dotycz
 
 Poniższa tabela zawiera podsumowanie różnic między EventPipe i ETW/LTTng.
 
-|Obiekt feature|EventPipe|ETW|LTTng|
+|Cechy|EventPipe|ETW|LTTng|
 |-------|---------|---|-----------|
 |Wiele platform|Tak|Nie (tylko w systemie Windows)|Nie (tylko w przypadku obsługiwanego dystrybucje systemu Linux)|
 |Wymagaj uprawnienia administratora/elementu głównego|Nie|Tak|Tak|
@@ -47,7 +47,7 @@ Poniższa tabela zawiera podsumowanie różnic między EventPipe i ETW/LTTng.
 
 Możesz użyć EventPipe do śledzenia aplikacji .NET na wiele sposobów:
 
-* Użyj jednego z [narzędzi diagnostycznych](#tools-using-eventpipe) , które są oparte na EventPipe.
+* Użyj jednego z [narzędzi diagnostycznych](#tools-that-use-eventpipe) , które są oparte na EventPipe.
 
 * Za pomocą biblioteki [Microsoft. Diagnostics. servicecore. Client](https://github.com/dotnet/diagnostics/blob/master/documentation/diagnostics-client-library-instructions.md) można napisać własne narzędzie do samodzielnego konfigurowania i uruchamiania sesji EventPipe.
 

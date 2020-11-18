@@ -1,17 +1,16 @@
 ---
 title: Klasy bazowe na potrzeby implementowania abstrakcji
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - abstractions [.NET Framework]
 - base classes, abstractions
 ms.assetid: 37a2d9a4-9721-482a-a40f-eee2c1d97875
-ms.openlocfilehash: 6af63373b7cbb571265f14ac36028953525fcc7f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 314fcd0e1e91d1fc869453dd442ecaa72f91955d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280572"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821596"
 ---
 # <a name="base-classes-for-implementing-abstractions"></a>Klasy bazowe na potrzeby implementowania abstrakcji
 Ściśle mówiąc, Klasa jest klasą bazową, gdy tworzona jest inna Klasa. Jednak na potrzeby tej sekcji Klasa bazowa jest klasą zaprojektowaną głównie w celu zapewnienia wspólnego abstrakcji lub innych klas do wielokrotnego użycia implementacji domyślnej, chociaż dziedziczenia. Klasy bazowe zwykle znajdują się w środku hierarchii dziedziczenia, między abstrakcją w katalogu głównym hierarchii a kilkoma implementacjami niestandardowymi w dolnej części.
@@ -26,7 +25,7 @@ ms.locfileid: "84280572"
 
  ✔️ Rozważ umieszczenie klas bazowych w oddzielnym obszarze nazw z typów scenariuszy linii głównej. Według definicji klasy bazowe są przeznaczone dla zaawansowanych scenariuszy rozszerzalności, dlatego nie są one interesujące dla większości użytkowników.
 
- ❌Należy unikać nazywania klas bazowych sufiksem "Base", jeśli klasa jest przeznaczona do użycia w publicznych interfejsach API.
+ ❌ Należy unikać nazywania klas bazowych sufiksem "Base", jeśli klasa jest przeznaczona do użycia w publicznych interfejsach API.
 
  *Fragmenty © 2005, 2009 Microsoft Corporation. Wszelkie prawa zastrzeżone.*
 

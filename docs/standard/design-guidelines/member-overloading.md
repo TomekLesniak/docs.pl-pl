@@ -1,7 +1,6 @@
 ---
 title: Przeciążanie składowej
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - default arguments
 - members [.NET Framework], overloaded
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - overloaded members
 - signatures, members
 ms.assetid: 964ba19e-8b94-4b5b-b1e3-5a0b531a0bb1
-ms.openlocfilehash: 6a2cd6d4dd293a7f4a408e1ee97a125c9454be41
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 16e84f06ec388fe7e3c221f35c3e970b9b483ba5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289008"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820972"
 ---
 # <a name="member-overloading"></a>Przeciążanie składowej
 Przeciążenie elementu członkowskiego oznacza utworzenie dwóch lub większej liczby elementów członkowskich tego samego typu, które różnią się tylko liczbą lub typem parametrów, ale mają tę samą nazwę. Na przykład w poniższym przykładzie `WriteLine` Metoda jest przeciążona:
@@ -34,17 +33,17 @@ public static class Console {
 
  ✔️ Spróbuj użyć opisowych nazw parametrów, aby wskazać wartość domyślną używaną przez krótsze przeciążenia.
 
- ❌UNIKAj arbitralnie różnych nazw parametrów w przeciążeniach. Jeśli parametr w jednym przeciążeniu reprezentuje takie samo dane wejściowe jak parametr w innym przeciążeniu, parametry powinny mieć taką samą nazwę.
+ ❌ UNIKAj arbitralnie różnych nazw parametrów w przeciążeniach. Jeśli parametr w jednym przeciążeniu reprezentuje takie samo dane wejściowe jak parametr w innym przeciążeniu, parametry powinny mieć taką samą nazwę.
 
- ❌UNIKAj niespójności w kolejności parametrów w przeciążonych elementach członkowskich. Parametry o tej samej nazwie powinny znajdować się w tej samej pozycji we wszystkich przeciążeń.
+ ❌ UNIKAj niespójności w kolejności parametrów w przeciążonych elementach członkowskich. Parametry o tej samej nazwie powinny znajdować się w tej samej pozycji we wszystkich przeciążeń.
 
  ✔️ WYKONAĆ tylko najdłuższym wirtualnym przeciążeniem (jeśli jest wymagana rozszerzalność). Krótsze przeciążenia powinny po prostu wywołać do dłuższego przeciążenia.
 
- ❌NIE należy używać `ref` `out` modyfikatorów ani do przeciążania elementów członkowskich.
+ ❌ NIE należy używać `ref` `out` modyfikatorów ani do przeciążania elementów członkowskich.
 
  Niektóre języki nie mogą rozpoznawać wywołań do przeciążenia, takich jak ten. Ponadto takie przeciążenia zwykle mają całkowicie inną semantykę i prawdopodobnie nie powinny być przeciążeniami, ale zamiast nich należy użyć dwóch oddzielnych metod.
 
- ❌NIE należy przeciążać z parametrami w tym samym położeniu i podobnych typach z inną semantyką.
+ ❌ NIE należy przeciążać z parametrami w tym samym położeniu i podobnych typach z inną semantyką.
 
  ✔️ zezwalać na `null` przekazywanie argumentów opcjonalnych.
 

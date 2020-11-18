@@ -4,14 +4,13 @@ description: Dowiedz się, w jaki sposób Delegaty definiujące typ określając
 author: richlander
 ms.author: wiwagn
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 1307599a3832be5f48cd62a7b8c1be7f76a3d4a5
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 9be4fcdc29eac433dc7416578acbc664ac2e431c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063747"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821687"
 ---
 # <a name="delegates-and-lambdas"></a>Delegaci i wyrażenia lambda
 
@@ -46,9 +45,9 @@ public class Program
 
 Aby usprawnić proces opracowywania, platforma .NET zawiera zestaw typów delegatów, które programiści mogą ponownie wykorzystać i nie muszą tworzyć nowych typów. Te typy są `Func<>` , `Action<>` i `Predicate<>` i mogą być używane bez konieczności definiowania nowych typów delegatów. Istnieją pewne różnice między trzema typami, które należy wykonać w celu zamierzonego użycia:
 
-* `Action<>`jest używany, gdy istnieje potrzeba wykonania akcji przy użyciu argumentów delegata. Metoda, która jest hermetyzowana, nie zwraca wartości.
-* `Func<>`jest używany zwykle w przypadku, gdy istnieje transformacja, to jest konieczne przekształcenie argumentów delegata w inny wynik. Projekcje są dobrym przykładem. Metoda, która jest hermetyzowana, zwraca określoną wartość.
-* `Predicate<>`jest używany, gdy należy określić, czy argument spełnia warunek delegata. Można go również napisać jako `Func<T, bool>` , co oznacza, że metoda zwraca wartość logiczną.
+* `Action<>` jest używany, gdy istnieje potrzeba wykonania akcji przy użyciu argumentów delegata. Metoda, która jest hermetyzowana, nie zwraca wartości.
+* `Func<>` jest używany zwykle w przypadku, gdy istnieje transformacja, to jest konieczne przekształcenie argumentów delegata w inny wynik. Projekcje są dobrym przykładem. Metoda, która jest hermetyzowana, zwraca określoną wartość.
+* `Predicate<>` jest używany, gdy należy określić, czy argument spełnia warunek delegata. Można go również napisać jako `Func<T, bool>` , co oznacza, że metoda zwraca wartość logiczną.
 
 Teraz możemy skorzystać z naszego powyższego przykładu i napisać go ponownie przy użyciu `Func<>` delegata zamiast typu niestandardowego. Program będzie działał dokładnie tak samo.
 
@@ -157,6 +156,6 @@ public MainWindow()
 
 ## <a name="further-reading-and-resources"></a>Dalsze odczytywanie i zasoby
 
-* [Delegaty](../csharp/programming-guide/delegates/index.md)
+* [Delegaci](../csharp/programming-guide/delegates/index.md)
 * [Funkcje anonimowe](../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
 * [Wyrażenia lambda](../csharp/language-reference/operators/lambda-expressions.md)

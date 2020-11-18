@@ -1,14 +1,13 @@
 ---
 title: Wybieranie, obliczanie i dopasowywanie danych XML przy użyciu klasy XPathNavigator
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 46e059f8-4dc8-4185-9236-784be95228ed
-ms.openlocfilehash: 1418e768db2f5f860ec40cf4e1351b4ec4a14a08
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 249b99a627f3bbcc1723f104a80cb61552404877
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282210"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822467"
 ---
 # <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a>Wybieranie, obliczanie i dopasowywanie danych XML przy użyciu klasy XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator>Klasa dostarcza metody do wybierania węzłów w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub przy użyciu kwerendy XPath, ocenia i bada wyniki wyrażenia XPath i określa, czy węzeł w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub odpowiada danemu wyrażeniu XPath. Te i inne pojęcia, które odnoszą się do wybierania, oceniania i dopasowywania węzłów w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub są opisane w poniższych tematach.  

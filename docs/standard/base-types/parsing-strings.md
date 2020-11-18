@@ -2,7 +2,6 @@
 title: Konwertowanie ciągów na typy
 description: Zrozumienie analizy ciągów w programie .NET. Analizowanie konwertuje ciąg reprezentujący typ podstawowy platformy .NET na ten typ podstawowy. Analizowanie jest operacją wsteczną do formatowania.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - parsing strings, about parsing strings
 - IFormatProvider interface, parsing strings
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - Parse method
 - parsing strings
 ms.assetid: 5e758b41-db93-456b-8999-99b7304b090d
-ms.openlocfilehash: 3d23fa9c7ecc3593f03f70dbd5ea7bda841e8f4f
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: 8fbfe8596e49ed101ea7d6bb65298e432a6fac13
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400856"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821908"
 ---
 # <a name="parse-strings-in-net"></a>Analizowanie ciągów w programie .NET
 
@@ -29,7 +28,7 @@ Operacja *analizowania* konwertuje ciąg, który reprezentuje typ podstawowy pla
  Opisuje sposób konwertowania ciągów na typy **datetimes** platformy .NET.
 
  [Analizowanie innych ciągów](parsing-other.md)\
- Opisuje sposób konwersji ciągów na typy **znaków** , **wartości logicznych** i typów **wyliczeniowych** .
+ Opisuje sposób konwersji ciągów na typy **znaków**, **wartości logicznych** i typów **wyliczeniowych** .
 
 ## <a name="related-sections"></a>Sekcje pokrewne
  [Formatowanie typów](formatting-types.md)\

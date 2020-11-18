@@ -1,18 +1,17 @@
 ---
 title: Projekt interfejsu
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - interfaces [.NET Framework], design guidelines
 - type design guidelines, interfaces
 - class library design guidelines [.NET Framework], interfaces
 ms.assetid: a016bd18-6710-4358-9438-9f190a295392
-ms.openlocfilehash: f589d47d5b945179430275598996b2fb77e92848
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9f8ff38d5825091d4d5d3716ed6025a8d04c592d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289034"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821011"
 ---
 # <a name="interface-design"></a>Projekt interfejsu
 Chociaż większość interfejsów API jest najlepszym modelem przy użyciu klas i struktur, istnieją przypadki, w których interfejsy są bardziej odpowiednie lub są jedyną opcją.
@@ -25,7 +24,7 @@ Chociaż większość interfejsów API jest najlepszym modelem przy użyciu klas
 
  ✔️ ROZWAŻYĆ zdefiniowanie interfejsu, jeśli musisz obsługiwać jego funkcje na typach, które już dziedziczą z innego typu.
 
- ❌UNIKAj używania interfejsów znaczników (interfejsy bez elementów członkowskich).
+ ❌ UNIKAj używania interfejsów znaczników (interfejsy bez elementów członkowskich).
 
  Jeśli konieczne jest oznaczenie klasy jako posiadającej konkretną charakterystykę (znacznik), w ogólności należy użyć atrybutu niestandardowego, a nie interfejsu.
 
@@ -37,7 +36,7 @@ Chociaż większość interfejsów API jest najlepszym modelem przy użyciu klas
 
  Dzięki temu można sprawdzić poprawność projektu interfejsu. Na przykład <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> korzysta z <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> interfejsu.
 
- ❌NIE należy dodawać członków do interfejsu, który został wcześniej dostarczony.
+ ❌ NIE należy dodawać członków do interfejsu, który został wcześniej dostarczony.
 
  Wykonanie tej operacji spowodowałoby uszkodzenie implementacji interfejsu. Należy utworzyć nowy interfejs, aby uniknąć problemów z wersją.
 

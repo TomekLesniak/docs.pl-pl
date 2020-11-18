@@ -2,7 +2,6 @@
 title: Nazwy składowych typu
 description: Zapoznaj się z wytycznymi dotyczącymi nazewnictwa elementów członkowskich typu w programie .NET, takich jak metody, właściwości, zdarzenia i pola.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - events [.NET Framework], names
 - methods [.NET Framework], names
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-ms.openlocfilehash: de613673989bd174ac80adda566d04600059642d
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 85f3137b4a8d75de92b12d6535415743395db890
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662501"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820916"
 ---
 # <a name="names-of-type-members"></a>Nazwy składowych typu
 Typy składowe są elementami członkowskimi: metodami, właściwościami, zdarzeniami, konstruktorami i polami. W poniższych sekcjach opisano wskazówki dotyczące nazewnictwa elementów członkowskich typu.
@@ -41,7 +40,7 @@ public class String {
 
  ✔️ Właściwości nazwy przy użyciu rzeczownika, frazy rzeczowników lub przymiotniku.
 
- ❌NIE mają właściwości, które pasują do nazwy metod "Get", tak jak w poniższym przykładzie:
+ ❌ NIE mają właściwości, które pasują do nazwy metod "Get", tak jak w poniższym przykładzie:
 
  `public string TextWriter { get {...} set {...} }` `public string GetTextWriter(int value) { ... }`
 
@@ -73,7 +72,7 @@ public class Control {
 
  Na przykład zdarzenie zamknięcia, które jest wywoływane przed zamknięciem okna, zostanie wywołane `Closing` , a jeden, który jest wywoływany po zamknięciu okna, zostanie wywołany `Closed` .
 
- ❌NIE używaj "Before" lub "After" prefiksów ani przyrostków, aby wskazać zdarzenia poprzedzające i końcowe. Użyj obecnych i ostatnich dziesiątek tak samo, jak zostało to opisane.
+ ❌ NIE używaj "Before" lub "After" prefiksów ani przyrostków, aby wskazać zdarzenia poprzedzające i końcowe. Użyj obecnych i ostatnich dziesiątek tak samo, jak zostało to opisane.
 
  ✔️ obsługi zdarzeń nazw (delegatów używanych jako typy zdarzeń) przy użyciu sufiksu "EventHandler", jak pokazano w następującym przykładzie:
 
@@ -92,7 +91,7 @@ public class Control {
 
  ✔️ nazwy pól przy użyciu rzeczownika, frazy rzeczowników lub przymiotniku.
 
- ❌NIE należy używać prefiksu dla nazw pól.
+ ❌ NIE należy używać prefiksu dla nazw pól.
 
  Na przykład nie należy używać "g_" lub "s_" do wskazania pól statycznych.
 

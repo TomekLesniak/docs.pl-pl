@@ -1,7 +1,6 @@
 ---
 title: Projekt konstruktora
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - member design guidelines, constructors
 - constructors, design guidelines
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - parameterless constructors
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
-ms.openlocfilehash: a258bebac57258cc1e8fbe2d6b5ccce88cb28872
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 27fb73aa01adf31117d1b82724873db3a03fd269
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280351"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821401"
 ---
 # <a name="constructor-design"></a>Projekt konstruktora
 
@@ -55,11 +54,11 @@ Jeśli nie deklarujesz jawnie żadnych konstruktorów w typie, wiele języków (
 
 Dodanie konstruktora sparametryzowanego do klasy uniemożliwi kompilatorowi dodanie konstruktora bez parametrów. Często powoduje to przypadkowe krytyczne zmiany.
 
-❌UNIKAj jawnego definiowania konstruktorów bez parametrów w strukturach.
+❌ UNIKAj jawnego definiowania konstruktorów bez parametrów w strukturach.
 
 Dzięki temu tworzenie macierzy jest szybsze, ponieważ jeśli Konstruktor bez parametrów nie jest zdefiniowany, nie musi być uruchamiany w każdym gnieździe tablicy. Należy zauważyć, że wiele kompilatorów, w tym C#, nie zezwala strukturom na używanie konstruktorów bez parametrów z tego powodu.
 
-❌Należy unikać wywoływania wirtualnych elementów członkowskich w obiekcie wewnątrz jego konstruktora.
+❌ Należy unikać wywoływania wirtualnych elementów członkowskich w obiekcie wewnątrz jego konstruktora.
 
 Wywołanie wirtualnej składowej spowoduje wywołanie najbardziej pochodnego przesłonięcia, nawet jeśli Konstruktor najbardziej pochodnego nie został jeszcze w pełni uruchomiony.
 
@@ -69,7 +68,7 @@ Wywołanie wirtualnej składowej spowoduje wywołanie najbardziej pochodnego prz
 
 Konstruktor statyczny nazywany również konstruktorem klasy jest używany do inicjowania typu. CLR wywołuje konstruktora statycznego przed utworzeniem pierwszego wystąpienia typu lub wszystkie statyczne elementy członkowskie tego typu są wywoływane. Użytkownik nie ma kontroli nad tym, kiedy Konstruktor statyczny jest wywoływany. Jeśli Konstruktor statyczny nie jest prywatny, może być wywoływany przez kod inny niż CLR. W zależności od operacji wykonywanych w konstruktorze może to spowodować nieoczekiwane zachowanie. Kompilator języka C# wymusza, aby konstruktory statyczne były prywatne.
 
-❌NIE zgłaszaj wyjątków od konstruktorów statycznych.
+❌ NIE zgłaszaj wyjątków od konstruktorów statycznych.
 
 Jeśli wyjątek jest zgłaszany z konstruktora typów, typ nie jest użyteczny w bieżącej domenie aplikacji.
 

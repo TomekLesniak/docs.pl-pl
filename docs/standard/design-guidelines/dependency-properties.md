@@ -1,14 +1,13 @@
 ---
 title: Właściwości zależności
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-ms.openlocfilehash: 476ef1bb1ac5ec1f551979c64a41cbae55c554bc
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c6cebd7c6c630af6a1a439b48faccad2aea74a91
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280260"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821375"
 ---
 # <a name="dependency-properties"></a>Właściwości zależności
 Właściwość zależności (DP) to zwykła właściwość, która przechowuje jej wartość w magazynie właściwości, zamiast przechowywać ją w zmiennej typu (pole), na przykład.
@@ -26,15 +25,15 @@ Właściwość zależności (DP) to zwykła właściwość, która przechowuje j
 
  ✔️ Nadaj nazwę statycznemu polu właściwości zależności za pomocą sufiksu nazwy właściwości z "Property".
 
- ❌NIE ustawiaj domyślnych wartości właściwości zależności jawnie w kodzie; Zamiast tego należy je ustawić w metadanych.
+ ❌ NIE ustawiaj domyślnych wartości właściwości zależności jawnie w kodzie; Zamiast tego należy je ustawić w metadanych.
 
  Jeśli jawnie ustawisz właściwość domyślną, można zapobiec ustawianiu tej właściwości przez niejawne środki, takie jak style.
 
- ❌NIE należy umieszczać kodu w odniesieniu do właściwości, innym niż standardowy kod, aby uzyskać dostęp do pola statycznego.
+ ❌ NIE należy umieszczać kodu w odniesieniu do właściwości, innym niż standardowy kod, aby uzyskać dostęp do pola statycznego.
 
  Ten kod nie zostanie wykonany, jeśli właściwość jest ustawiona w sposób niejawny, na przykład w stylu, ponieważ style używa pola statycznego bezpośrednio.
 
- ❌NIE należy używać właściwości zależności do przechowywania zabezpieczonych danych. Nawet prywatne właściwości zależności są dostępne publicznie.
+ ❌ NIE należy używać właściwości zależności do przechowywania zabezpieczonych danych. Nawet prywatne właściwości zależności są dostępne publicznie.
 
 ## <a name="attached-dependency-property-design"></a>Projekt właściwości dołączonej zależności
  Właściwości zależności opisane w poprzedniej sekcji reprezentują właściwości wewnętrzne typu deklarującego; na przykład `Text` Właściwość jest właściwością `TextButton` , która deklaruje ją. Szczególnym rodzajem właściwości zależności jest dołączona właściwość zależności.
@@ -80,15 +79,15 @@ public class Grid {
 
  Metody dostępu właściwości zależności nie mogą zawierać dowolnego kodu weryfikacyjnego. Zamiast tego należy określić logikę walidacji właściwości zależności podczas rejestracji właściwości.
 
- ❌NIE należy umieszczać logiki walidacji właściwości zależności we właściwościach dostępu. Zamiast tego należy przekazać wywołanie zwrotne walidacji do `DependencyProperty.Register` metody.
+ ❌ NIE należy umieszczać logiki walidacji właściwości zależności we właściwościach dostępu. Zamiast tego należy przekazać wywołanie zwrotne walidacji do `DependencyProperty.Register` metody.
 
 ## <a name="dependency-property-change-notifications"></a>Powiadomienia o zmianie właściwości zależności
- ❌NIE implementuje logiki powiadomień o zmianach we właściwościach dostępu zależności. Właściwości zależności mają wbudowaną funkcję powiadomień o zmianach, która musi być używana przez dostarczenie wywołania zwrotnego powiadomienia o zmianie <xref:System.Windows.PropertyMetadata> .
+ ❌ NIE implementuje logiki powiadomień o zmianach we właściwościach dostępu zależności. Właściwości zależności mają wbudowaną funkcję powiadomień o zmianach, która musi być używana przez dostarczenie wywołania zwrotnego powiadomienia o zmianie <xref:System.Windows.PropertyMetadata> .
 
 ## <a name="dependency-property-value-coercion"></a>Wymuszone przekształcenie wartości właściwości zależności
  Wymuszanie właściwości odbywa się, gdy wartość określona dla metody ustawiającej właściwość jest modyfikowana przez metodę ustawiającą przed faktycznym zmodyfikowaniem magazynu właściwości.
 
- ❌NIE Wdrażaj logiki przekształcenia we właściwościach dostępu zależności.
+ ❌ NIE Wdrażaj logiki przekształcenia we właściwościach dostępu zależności.
 
  Właściwości zależności mają wbudowaną funkcję przymusu i mogą być używane przez dostarczenie wywołania zwrotnego przekształcenia do elementu `PropertyMetadata` .
 

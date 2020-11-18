@@ -1,18 +1,17 @@
 ---
 title: Projekt pola
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - fields, design guidelines
 - read-only fields
 - member design guidelines, fields
 ms.assetid: 7cb4b0f3-7a10-4c93-b84d-733f7134fcf8
-ms.openlocfilehash: 3a5ae985ab161899fbb5e96f9b0ef0cfa90b957c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6e58274f32ea129d3271c11e321bdbd454d2406a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289749"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821115"
 ---
 # <a name="field-design"></a>Projekt pola
 Zasada hermetyzacji jest jednym z najważniejszych koncepcji w projekcie zorientowanym na obiekty. Ta zasada Określa, że dane przechowywane wewnątrz obiektu powinny być dostępne tylko dla tego obiektu.
@@ -21,7 +20,7 @@ Zasada hermetyzacji jest jednym z najważniejszych koncepcji w projekcie zorient
 
  Wykluczamy stałe i statyczne pola tylko do odczytu z tego rygorystycznego ograniczenia, ponieważ takie pola, prawie według definicji, nigdy nie są wymagane do zmiany.
 
- ❌Nie udostępniaj publicznych lub chronionych pól wystąpień.
+ ❌ Nie udostępniaj publicznych lub chronionych pól wystąpień.
 
  Należy podać właściwości dostępu do pól zamiast udostępniać je publicznie lub chronionym.
 
@@ -33,7 +32,7 @@ Zasada hermetyzacji jest jednym z najważniejszych koncepcji w projekcie zorient
 
  Jeśli istnieją wstępnie zdefiniowane wystąpienia typu, zadeklaruj je jako publiczne pola statyczne tylko do odczytu samego typu.
 
- ❌Nie przypisuj wystąpień modyfikowalnych typów do `readonly` pól.
+ ❌ Nie przypisuj wystąpień modyfikowalnych typów do `readonly` pól.
 
  Typ modyfikowalny jest typem z wystąpieniami, które można zmodyfikować po utworzeniu wystąpienia. Na przykład tablice, większość kolekcji i strumienie są modyfikowalnymi typami, ale <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Uri?displayProperty=nameWithType> i <xref:System.String?displayProperty=nameWithType> są zmienne. Modyfikator tylko do odczytu w polu Typ odwołania zapobiega zastąpieniu wystąpienia w polu, ale nie zapobiega modyfikowaniu danych wystąpienia pola przez wywoływanie elementów członkowskich, które zmieniają wystąpienie.
 

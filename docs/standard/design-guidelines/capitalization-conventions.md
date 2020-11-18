@@ -2,7 +2,6 @@
 title: Konwencje dotyczące wielkości liter
 description: Stosowanie Konwencji kapitalizacji dla identyfikatorów, słów złożonych i typowych warunków. Dowiedz się, jak działa czułość wielkości liter w programie .NET.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - camel-case names [.NET Framework]
 - class library design guidelines [.NET Framework], capitalization
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - case sensitivity, capitalization conventions
 - names [.NET Framework], capitalization
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
-ms.openlocfilehash: 4903dc587d84ef36bfaa641cfbda59484266c23c
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 8df136fb57ad61ddfd87f4dec1f6490c63c3d977
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767796"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821531"
 ---
 # <a name="capitalization-conventions"></a>Konwencje dotyczące wielkości liter
 Wytyczne w tym rozdziale określają prostą metodę używania przypadku, która jest stosowana spójnie, dzięki czemu identyfikatory typów, elementów członkowskich i parametrów łatwo odczytać.
@@ -63,7 +62,7 @@ Wytyczne w tym rozdziale określają prostą metodę używania przypadku, która
 ## <a name="capitalizing-compound-words-and-common-terms"></a>Wielkie litery słów i typowe terminy
  Większość postanowień złożonych jest traktowanych jako pojedyncze słowa do celów wielkich liter.
 
- ❌NIE używaj wielkich liter w każdym słowie, tak jak w przypadku wyrazów złożonych.
+ ❌ NIE używaj wielkich liter w każdym słowie, tak jak w przypadku wyrazów złożonych.
 
  Są to wyrazy złożone zapisywane jako pojedyncze słowo, takie jak punkt końcowy. Aby zapoznać się z wytycznymi dotyczącymi wielkości liter, Traktuj zamknięty wyraz złożony jako pojedynczy wyraz. Użyj bieżącego słownika, aby określić, czy złożone słowo jest zapisywana w zamkniętym formularzu.
 
@@ -98,13 +97,13 @@ Wytyczne w tym rozdziale określają prostą metodę używania przypadku, która
 ## <a name="case-sensitivity"></a>Rozróżnianie wielkości liter
  Języki, które mogą być uruchamiane w środowisku CLR, nie są wymagane do obsługi rozróżniania wielkości liter, chociaż niektóre z nich wykonują. Nawet jeśli język obsługuje tę funkcję, inne języki, które mogą uzyskać dostęp do platformy, nie. Wszystkie interfejsy API, które są dostępne z zewnątrz, w związku z tym nie mogą polegać na przypadku odróżnienia dwóch nazw w tym samym kontekście.
 
- ❌NIE należy zakładać, że wszystkie języki programowania uwzględniają wielkość liter. Nie są. Nazwy nie mogą różnić się w zależności od wielkości liter.
+ ❌ NIE należy zakładać, że wszystkie języki programowania uwzględniają wielkość liter. Nie są. Nazwy nie mogą różnić się w zależności od wielkości liter.
 
  *Fragmenty © 2005, 2009 Microsoft Corporation. Wszelkie prawa zastrzeżone.*
 
  *Ponownie Wydrukowano przez uprawnienie Pearson Education, Inc. z [wytycznych dotyczących projektowania platformy: konwencje, idiomy i wzorce dla bibliotek .NET do wielokrotnego użytku, 2. wydanie](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) przez Krzysztof Cwalina i Brad Abrams, opublikowane 22, 2008 przez Addison-Wesley Professional w ramach serii Microsoft Windows Development.*
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wskazówki dotyczące projektowania struktury](index.md)
 - [Wskazówki dotyczące nazewnictwa](naming-guidelines.md)

@@ -2,7 +2,6 @@
 title: Zmiana wielkości liter w programie .NET
 description: Dowiedz się, jak zmienić w przypadku ciągów w programie .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - uppercase
 - lowercase
 ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
-ms.openlocfilehash: 424219c8f660b7592996436160f2667f70be654f
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 77b879bcc36886a8f457610e6c406bcd121dcfe7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889533"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820556"
 ---
 # <a name="change-case-in-net"></a>Zmień wielkość liter w programie .NET
 

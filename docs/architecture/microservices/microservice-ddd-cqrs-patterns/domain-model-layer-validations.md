@@ -2,12 +2,12 @@
 title: Projektowanie reguł weryfikacji w warstwie modelu domeny
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Poznaj kluczowe pojęcia związane z walidacją modelu domeny.
 ms.date: 10/08/2018
-ms.openlocfilehash: f1e2d7430c642ad47f79cdd34d3a65e2cc70e239
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 18c8350d0bf514a8a01a210a2a2a6d8f73317580
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164270"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820634"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Walidacje projektu w warstwie modelu domeny
 
@@ -15,7 +15,7 @@ W DDD reguły walidacji mogą być traktowane jako nieposiadające wariantów. G
 
 Jednostki domeny powinny być zawsze prawidłowymi jednostkami. Istnieje pewna liczba nieodmian dla obiektu, który powinien mieć zawsze wartość true. Na przykład obiekt elementu Order zawsze musi mieć ilość, która musi być dodatnią liczbą całkowitą oraz nazwę artykułu i cenę. Z tego względu wymuszanie nieistniejące jest odpowiedzialne za jednostki domeny (zwłaszcza w przypadku agregacji głównej), a obiekt jednostki nie powinien być w stanie istnieć. Niezmienne reguły są po prostu wyrażone jako kontrakty, a wyjątki lub powiadomienia są zgłaszane, gdy są naruszane.
 
-Przyczyną tego jest fakt, że występuje wiele usterek, ponieważ obiekty są w stanie, w którym nigdy nie powinny. Ta [dyskusja online](http://codebetter.com/gregyoung/2009/05/22/always-valid/) jest dobrym wyjaśnieniem z witryny Greg Young.
+Przyczyną tego jest fakt, że występuje wiele usterek, ponieważ obiekty są w stanie, w którym nigdy nie powinny.
 
 Zaproponujemy teraz SendUserCreationEmailService, który zajmuje profil użytkownika... Jak możemy usprawnić działanie tej usługi, która nie ma wartości null? Czy sprawdzimy ją ponownie? Lub najkorzystniej... nie bother do sprawdzenia i "Mam nadzieję, że masz nadzieję, że ktoś bothered go przed wysłaniem do Ciebie. Oczywiście przy użyciu usługi TDD jednym z pierwszych testów, które powinny być napisane, jest to, że jeśli wysyłam klientowi nazwę o wartości null, która powinna zgłosić błąd. Jednak po rozpoczęciu pisania tych rodzajów testów w tym czasie zostanie to zrealizowane... "Zaczekaj, jeśli nigdy nie zezwolisz na przełączenie nazwy do wartości null, nie będziemy mieć wszystkich tych testów".
 
@@ -75,7 +75,7 @@ Warto zauważyć, że można również użyć tylko jednego z tych wzorców — 
 
 ### <a name="use-deferred-validation-in-the-domain"></a>Korzystanie z odroczonego sprawdzania poprawności w domenie
 
-Istnieją różne podejścia do postępowania z odroczonymi walidacjami w domenie. W swojej książce [implementującej Projektowanie oparte na domenie](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577)Vaughn Vernon omawia te w sekcji dotyczącej weryfikacji.
+Istnieją różne podejścia do postępowania z odroczonymi walidacjami w domenie. W swojej książce [implementującej projekt Domain-Driven](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577)Vaughn Vernon omawia te w sekcji dotyczącej weryfikacji.
 
 ### <a name="two-step-validation"></a>Weryfikacja dwuetapowa
 
@@ -83,7 +83,7 @@ Należy również rozważyć weryfikację dwuetapową. Przy użyciu walidacji na
 
 Używanie weryfikacji pola z adnotacjami danych, na przykład, nie duplikuje definicji walidacji. Wykonanie, chociaż, może być zarówno po stronie serwera, jak i po stronie klienta w przypadku DTO (polecenia i modele widoków, na przykład).
 
-## <a name="additional-resources"></a>Zasoby dodatkowe
+## <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Rachel Appel. Wprowadzenie do walidacji modelu w ASP.NET Core MVC** \
   <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
@@ -97,7 +97,7 @@ Używanie weryfikacji pola z adnotacjami danych, na przykład, nie duplikuje def
 - **Wzorce specyfikacji i powiadomień** \
   <https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns>
 
-- **Lew Gorodinski. Walidacja w projekcie opartym na domenie (DDD)** \
+- **Lew Gorodinski. Sprawdzanie poprawności w projekcie Domain-Driven (DDD)** \
   <http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/>
 
 - **Wtyczka Colin. Walidacja modelu domeny** \

@@ -2,7 +2,6 @@
 title: Projekt wyliczeń
 description: Projekt dla typów wyliczeniowych, które są specjalnym rodzajem typu wartości. Proste wyliczenia zawierają małe, zamknięte zestawy wyborów. Flagi enum obsługują operacje bitowe na wartościach wyliczeniowych.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - type design guidelines, enumerations
 - simple enumerations
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], enumerations
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
-ms.openlocfilehash: 40a9faf53dc8a03674cd59074244c15cd304bdd2
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: a2e19197b114daa2a0956a6fc87231a6a81de916
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768540"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821362"
 ---
 # <a name="enum-design"></a>Projekt wyliczeń
 
@@ -29,17 +28,17 @@ Typy wyliczeniowe flag są przeznaczone do obsługi operacji bitowych na wartoś
 
 ✔️ za pomocą wyliczenia zamiast stałych statycznych.
 
-❌NIE należy używać wyliczenia dla zestawów otwartych (takich jak wersja systemu operacyjnego, nazwiska znajomych itp.).
+❌ NIE należy używać wyliczenia dla zestawów otwartych (takich jak wersja systemu operacyjnego, nazwiska znajomych itp.).
 
-❌Nie dostarczaj zarezerwowanych wartości wyliczenia, które są przeznaczone do użytku w przyszłości.
+❌ Nie dostarczaj zarezerwowanych wartości wyliczenia, które są przeznaczone do użytku w przyszłości.
 
 Zawsze możesz po prostu dodać wartości do istniejącego wyliczenia na późniejszym etapie. Aby uzyskać więcej informacji na temat dodawania wartości do typów wyliczeniowych, zobacz [Dodawanie wartości do wyliczeń](#add_value) . Wartości zarezerwowane powodują zanieczyszczenie zestawu rzeczywistych wartości i umożliwiają osiągnięcie błędów użytkownika.
 
-❌UNIKAj publicznego ujawniania wyliczeń tylko z jedną wartością.
+❌ UNIKAj publicznego ujawniania wyliczeń tylko z jedną wartością.
 
 Typowym sposobem zapewnienia przyszłej rozszerzalności interfejsów API języka C jest dodanie zarezerwowanych parametrów do sygnatur metod. Takie zastrzeżone parametry można wyrazić jako wyliczenia z pojedynczą wartością domyślną. Nie należy tego robić w zarządzanych interfejsach API. Przeciążanie metod pozwala dodawać parametry w przyszłych wersjach.
 
-❌Nie uwzględniaj wartości wskaźnikowych w wyliczeniach.
+❌ Nie uwzględniaj wartości wskaźnikowych w wyliczeniach.
 
 Chociaż są czasami pomocne dla deweloperów platformy, wartości wskaźnikowe są mylące dla użytkowników struktury. Są one używane do śledzenia stanu wyliczenia, a nie jako jedna z wartości z zestawu reprezentowanego przez wyliczenie.
 
@@ -65,9 +64,9 @@ W przypadku użycia w pamięci należy pamiętać, że obiekty zarządzane są z
 
 ✔️ DO flagi nazwy wyliczenia z rzeczownikami w liczbie mnogiej lub rzeczownikami i prostymi wyliczeniami z pojedynczą rzeczownikami lub oznaczeniami rzeczowników.
 
-❌NIE należy bezpośrednio przełączać <xref:System.Enum?displayProperty=nameWithType> .
+❌ NIE należy bezpośrednio przełączać <xref:System.Enum?displayProperty=nameWithType> .
 
-<xref:System.Enum?displayProperty=nameWithType>jest specjalnym typem używanym przez środowisko CLR do tworzenia wyliczeń zdefiniowanych przez użytkownika. Większość języków programowania udostępnia element programistyczny, który zapewnia dostęp do tej funkcji. Na przykład w języku C# `enum` słowo kluczowe jest używane do definiowania wyliczenia.
+<xref:System.Enum?displayProperty=nameWithType> jest specjalnym typem używanym przez środowisko CLR do tworzenia wyliczeń zdefiniowanych przez użytkownika. Większość języków programowania udostępnia element programistyczny, który zapewnia dostęp do tej funkcji. Na przykład w języku C# `enum` słowo kluczowe jest używane do definiowania wyliczenia.
 
 <a name="design"></a>
 
@@ -79,11 +78,11 @@ W przypadku użycia w pamięci należy pamiętać, że obiekty zarządzane są z
 
 ✔️ ROZWAŻYĆ dostarczenie specjalnych wartości wyliczenia dla często używanych kombinacji flag.
 
-Operacje bitowe są zaawansowaną koncepcją i nie powinny być wymagane w przypadku prostych zadań. <xref:System.IO.FileAccess.ReadWrite>to przykład specjalnej wartości.
+Operacje bitowe są zaawansowaną koncepcją i nie powinny być wymagane w przypadku prostych zadań. <xref:System.IO.FileAccess.ReadWrite> to przykład specjalnej wartości.
 
-❌UNIKAj tworzenia wyliczeń flag, w których niektóre kombinacje wartości są nieprawidłowe.
+❌ UNIKAj tworzenia wyliczeń flag, w których niektóre kombinacje wartości są nieprawidłowe.
 
-❌UNIKAj używania wartości wyliczeniowych flag zero, chyba że wartość reprezentuje "wszystkie flagi są wyczyszczone" i jest odpowiednio określona, zgodnie z opisem w następnej wytycznej.
+❌ UNIKAj używania wartości wyliczeniowych flag zero, chyba że wartość reprezentuje "wszystkie flagi są wyczyszczone" i jest odpowiednio określona, zgodnie z opisem w następnej wytycznej.
 
 ✔️ NALEŻY nazwać wartość zerową dla wyliczeń flag `None` . W przypadku wyliczenia flag wartość musi zawsze oznaczać, że wszystkie flagi są wyczyszczone.
 
@@ -101,7 +100,7 @@ Jeśli masz prawdziwe dane dotyczące niezgodności aplikacji spowodowanych prze
 
 *Ponownie Wydrukowano przez uprawnienie Pearson Education, Inc. z [wytycznych dotyczących projektowania platformy: konwencje, idiomy i wzorce dla bibliotek .NET do wielokrotnego użytku, 2. wydanie](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) przez Krzysztof Cwalina i Brad Abrams, opublikowane 22, 2008 przez Addison-Wesley Professional w ramach serii Microsoft Windows Development.*
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wskazówki dotyczące projektowania typów](type.md)
 - [Wskazówki dotyczące projektowania struktury](index.md)

@@ -1,28 +1,42 @@
 ---
-title: dotnet-dump-.NET Core
-description: Instalowanie i używanie narzędzia wiersza polecenia dotnet-dump.
-ms.date: 10/14/2019
-ms.openlocfilehash: e008dcfc734a8742c495ea32a7a149c9a55c54c6
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+title: dotnet-Zrzuć narzędzie diagnostyczne — interfejs wiersza polecenia platformy .NET
+description: Informacje o instalowaniu i używaniu narzędzia dotnet-dump interfejsu wiersza polecenia do zbierania i analizowania zrzutów systemu Windows i Linux bez żadnego natywnego debugera.
+ms.date: 11/17/2020
+ms.openlocfilehash: ea9a70c4dc47b5006339e9a197712092eb66b241
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598113"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822207"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Narzędzie do zbierania i analizowania zrzutów (dotnet-dump)
 
 **Ten artykuł ma zastosowanie do:** ✔️ .net Core 3,0 SDK i nowszych wersjach
 
 > [!NOTE]
-> `dotnet-dump` nie jest obsługiwane w macOS.
+> `dotnet-dump` Program macOS jest obsługiwany tylko z platformą .NET 5,0 i nowszymi wersjami.
 
-## <a name="install-dotnet-dump"></a>Zainstaluj program dotnet-dump
+## <a name="install"></a>Instalowanie
 
-Aby zainstalować najnowszą wersję `dotnet-dump` [pakietu NuGet](https://www.nuget.org/packages/dotnet-dump), użyj polecenia [Narzędzia dotnet Install](../tools/dotnet-tool-install.md) :
+Istnieją dwa sposoby na pobranie i zainstalowanie `dotnet-dump` :
 
-```dotnetcli
-dotnet tool install -g dotnet-dump
-```
+- **Narzędzie globalne dotnet:**
+
+  Aby zainstalować najnowszą wersję `dotnet-dump` [pakietu NuGet](https://www.nuget.org/packages/dotnet-dump), użyj polecenia [Narzędzia dotnet Install](../tools/dotnet-tool-install.md) :
+
+  ```dotnetcli
+  dotnet tool install --global dotnet-dump
+  ```
+
+- **Pobieranie bezpośrednie:**
+
+  Pobierz plik wykonywalny narzędzia, który jest zgodny z platformą:
+
+  | System operacyjny  | Platforma |
+  | --- | -------- |
+  | Windows | [x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [ARM](https://aka.ms/dotnet-dump/win-arm) \| [ARM — x64](https://aka.ms/dotnet-dump/win-arm64) |
+  | macOS   | [x64](https://aka.ms/dotnet-dump/osx-x64) |
+  | Linux   | [x64](https://aka.ms/dotnet-dump/linux-x64) \| [ARM](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [MUSL — x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [MUSL — arm64](https://aka.ms/dotnet-dump/linux-musl-arm64) |
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -58,7 +72,7 @@ Przechwytuje Zrzut z procesu.
 ### <a name="synopsis"></a>Streszczenie
 
 ```console
-dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag]
+dotnet-dump collect [-h|--help] [-p|--process-id] [-n|--name] [--type] [-o|--output] [--diag]
 ```
 
 ### <a name="options"></a>Opcje
@@ -69,7 +83,11 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`-p|--process-id <PID>`**
 
-  Określa numer identyfikatora procesu, z którego ma zostać zebrany zrzut pamięci.
+  Określa numer identyfikatora procesu, z którego ma zostać zebrany zrzut.
+
+- **`-n|--name <name>`**
+
+  Określa nazwę procesu, z którego ma zostać zebrany zrzut.
 
 - **`--type <Full|Heap|Mini>`**
 
@@ -225,7 +243,7 @@ W przypadku obrazów platformy Docker w systemie Microsoft .NET Core SDK Linux n
 
 Aby obejść ten problem, zainstaluj pakiet "libc6-dev".
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zbieranie i analizowanie blogów zrzutów pamięci](https://devblogs.microsoft.com/dotnet/collecting-and-analyzing-memory-dumps/)
 - [Narzędzie do analizy sterty (dotnet-gcdump)](dotnet-gcdump.md)

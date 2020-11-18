@@ -2,12 +2,12 @@
 title: Typy odwołań do wartości null — odwołanie w C#
 description: Dowiedz się więcej o typach referencyjnych języka C# do dopuszczających wartość null
 ms.date: 04/06/2020
-ms.openlocfilehash: 274a613a8381a2b7718c9025f51aadb2eb32af36
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: d961af9ba3b4776e6b4ec3eeea5392fb0d0394ce
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471866"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822428"
 ---
 # <a name="nullable-reference-types-c-reference"></a>Typy odwołań dopuszczających wartość null (odwołanie w C#)
 
@@ -72,9 +72,9 @@ Istnieją dwa sposoby sterowania kontekstem dopuszczania wartości null. Na pozi
 Aby uzyskać więcej informacji, zobacz następujące propozycje dotyczące [specyfikacji języka C#](~/_csharplang/spec/introduction.md):
 
 - [Typy referencyjne dopuszczające wartość null](~/_csharplang/proposals/csharp-8.0/nullable-reference-types.md)
-- [Specyfikacja typu referencyjnego dopuszczająca wartość null](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
+- [Specyfikacja typu referencyjnego dopuszczająca wartość null](~/_csharplang/proposals/csharp-9.0/nullable-reference-types-specification.md)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
-- [Typy wartości null](nullable-value-types.md)
+- [Typy wartości dopuszczające wartość null](nullable-value-types.md)

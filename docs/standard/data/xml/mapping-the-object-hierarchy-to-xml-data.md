@@ -1,17 +1,16 @@
 ---
 title: Mapowanie hierarchii obiektów na dane XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
-ms.openlocfilehash: 8507c4b323f97279c3054b76aaf8d52f14f0d4ad
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 97cc7558f51b7bcbdb5201ef0f0c463da8f2c070
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289138"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822610"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapowanie hierarchii obiektów na dane XML
 Gdy dokument XML znajduje się w pamięci, reprezentacja koncepcyjna jest drzewem. W przypadku programowania istnieje hierarchia obiektów do uzyskiwania dostępu do węzłów drzewa. W poniższym przykładzie pokazano, jak zawartość XML staną się węzłami.  
@@ -35,7 +34,7 @@ Reprezentacja drzewa w drzewie i tytule węzła
   
  `book`Element stanie się obiektem **XmlElement** , następny element, `title` , również stanie się **XmlElement**, podczas gdy zawartość elementu stanie się obiektem **XmlText** . W przypadku metod i właściwości **elementu XmlElement** metody i właściwości są inne niż metody i właściwości dostępne w obiekcie **XmlText** . Należy więc znać typ węzła, który ma stać się znacznikiem XML, ponieważ jego typ węzła Określa akcje, które można wykonać.  
   
- Poniższy przykład odczytuje dane XML i zapisuje inny tekst w zależności od typu węzła. Używanie następującego pliku danych XML jako danych wejściowych, **Items. XML**:  
+ Poniższy przykład odczytuje dane XML i zapisuje inny tekst w zależności od typu węzła. Korzystając z następującego pliku danych XML jako dane wejściowe, **items.xml**:  
   
  **Dane wejściowe**  
   
@@ -53,7 +52,7 @@ Reprezentacja drzewa w drzewie i tytule węzła
 </Items>  
 ```  
   
- Poniższy przykład kodu odczytuje plik **Items. XML** i wyświetla informacje dla każdego typu węzła.  
+ Poniższy przykład kodu odczytuje plik **items.xml** i wyświetla informacje dla każdego typu węzła.  
   
 ```vb  
 Imports System  
@@ -186,12 +185,12 @@ public class Sample
   
 |Dane wejściowe|Dane wyjściowe|Test typu węzła|  
 |-----------|------------|--------------------|  
-|\<?xml version="1.0"?>|\<?xml version='1.0'?>|XmlNodeType. xmldeklaracji|  
+|\<?xml version="1.0"?>|\<?xml version='1.0'?>|Deklaracja XmlNodeType.Xml|  
 |\<!-- This is a sample XML document -->|\<!--This is a sample XML document -->|XmlNodeType. Comment|  
-|\<!DOCTYPE Items [\<!ENTITY number "123">] >|\<!DOCTYPE Items [\<!ENTITY number "123">]|XmlNodeType. DocumentType|  
+|\<!DOCTYPE Items [\<!ENTITY number "123">] >|\<!DOCTYPE Items [\<!ENTITY number "123">]|XmlNodeType.DocumentType|  
 |\<Items>|\<Items>|XmlNodeType. element|  
 |\<Item>|\<Item>|XmlNodeType. element|  
-|Testowanie przy użyciu jednostki:&number;|Testowanie przy użyciu jednostki: 123|XmlNodeType. Text|  
+|Testowanie przy użyciu jednostki: &number;|Testowanie przy użyciu jednostki: 123|XmlNodeType. Text|  
 |\</Item>|\</Item>|XmlNodeType. EndElement|  
 |\<Item>|\<Item>|XmNodeType. element|  
 |Testowanie przy użyciu elementu podrzędnego|Testowanie przy użyciu elementu podrzędnego|XmlNodeType. Text|  
@@ -201,7 +200,7 @@ public class Sample
 |\<Item>|\<Item>|XmlNodeType. element|  
 |Testowanie za pomocą sekcji CDATA|Testowanie za pomocą sekcji CDATA|Xmltest. Text|  
 |<! [CDATA [ \<456> ]]\>|<! [CDATA [ \<456> ]]\>|Xmltest. CDATA|  
-|DEF|DEF|XmlNodeType. Text|  
+|def|def|XmlNodeType. Text|  
 |\</Item>|\</Item>|XmlNodeType. EndElement|  
 |\<Item>|\<Item>|XmlNodeType. element|  
 |Testowanie za pomocą jednostki char: &\# 65;|Testowanie za pomocą jednostki char:|XmlNodeType. Text|  

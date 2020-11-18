@@ -1,7 +1,6 @@
 ---
 title: Składniki samoopisujące się i metadane
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-ms.openlocfilehash: 2ed09882ba722ace0b7f7be2a35fffc362af2742
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: c597c1ae6153050f08ed2976f7ee6102cdd3c797
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92159355"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822350"
 ---
 # <a name="metadata-and-self-describing-components"></a>Składniki samoopisujące się i metadane
 
@@ -159,9 +158,9 @@ W poniższej tabeli przedstawiono część tabeli **MethodDef** , do której odw
 
 |Wiersz|Względny adres wirtualny (RVA)|ImplFlags|Flagi|Nazwa<br /><br /> (Punkty do sterty ciągu).|Podpis (punkty do sterty obiektów BLOB).|
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|
-|1|0x00002050|IL<br /><br /> Zarządzani|Public<br /><br /> ReuseSlot<br /><br /> Jako SpecialName<br /><br /> Oznaczone<br /><br /> . ctor|. ctor (Konstruktor)||
-|2|0x00002058|IL<br /><br /> Zarządzani|Public<br /><br /> Static<br /><br /> ReuseSlot|Główną|Ciąg|
-|3|0x0000208c|IL<br /><br /> Zarządzani|Public<br /><br /> Static<br /><br /> ReuseSlot|Dodaj|int, int, int|
+|1|0x00002050|IL<br /><br /> Zarządzany|Publiczne<br /><br /> ReuseSlot<br /><br /> Jako SpecialName<br /><br /> Oznaczone<br /><br /> . ctor|. ctor (Konstruktor)||
+|2|0x00002058|IL<br /><br /> Zarządzany|Publiczne<br /><br /> Static<br /><br /> ReuseSlot|Główną|String|
+|3|0x0000208c|IL<br /><br /> Zarządzany|Publiczne<br /><br /> Static<br /><br /> ReuseSlot|Dodaj|int, int, int|
 
 Każda kolumna tabeli zawiera ważne informacje o kodzie. Kolumna **RVA** umożliwia środowisko uruchomieniowe Obliczanie adresu pamięci początkowej, który definiuje tę metodę. Kolumny **ImplFlags** i **flag** zawierają masek bitowych opisujące metodę (na przykład czy metoda jest publiczna lub prywatna). Kolumna **name** indeksuje nazwę metody z sterty ciągu. Kolumna **Signature** indeksuje definicję sygnatury metody w stercie obiektów BLOB.
 

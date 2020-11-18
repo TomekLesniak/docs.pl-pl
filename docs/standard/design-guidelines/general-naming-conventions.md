@@ -2,7 +2,6 @@
 title: Ogólne konwencje nazewnictwa
 description: Użyj ogólnych konwencji nazewnictwa dotyczących wyboru wyrazów, wytycznych dotyczących używania skrótów i akronimów oraz wskazówki dotyczące unikania nazw specyficznych dla języka.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - names [.NET Framework], conflicts
 - type names, conflicts
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
-ms.openlocfilehash: b7f06a57c57800afcfa7febf9452094b4ad5ddc1
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ff9efd40b630e8e25963b3d69b026feea2823ece
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769083"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821102"
 ---
 # <a name="general-naming-conventions"></a>Ogólne konwencje nazewnictwa
 
@@ -35,22 +34,22 @@ W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wybo
 
  Nazwa właściwości `CanScrollHorizontally` jest lepsza niż `ScrollableX` (przesłonięcie odwołania do osi X).
 
- ❌NIE używaj podkreśleń, łączników ani żadnych innych znaków niealfanumerycznych.
+ ❌ NIE używaj podkreśleń, łączników ani żadnych innych znaków niealfanumerycznych.
 
- ❌NIE używaj notacji węgierskiej.
+ ❌ NIE używaj notacji węgierskiej.
 
- ❌UNIKAj używania identyfikatorów, które powodują konflikt z słowami kluczowymi powszechnie używanych języków programowania.
+ ❌ UNIKAj używania identyfikatorów, które powodują konflikt z słowami kluczowymi powszechnie używanych języków programowania.
 
  Zgodnie z regułą 4 Common Language Specification (CLS) wszystkie zgodne Języki muszą zapewniać mechanizm, który umożliwia dostęp do nazwanych elementów, które używają słowa kluczowego tego języka jako identyfikatora. Na przykład w języku C# w tym przypadku używa znaku @. Jednak nadal dobrym pomysłem jest uniknięcie typowych słów kluczowych, ponieważ jest znacznie trudniejsze użycie metody z sekwencją ucieczki od jednej.
 
 ## <a name="using-abbreviations-and-acronyms"></a>Używanie skrótów i akronimów
- ❌NIE używaj skrótów ani kontraktów jako części nazw identyfikatorów.
+ ❌ NIE używaj skrótów ani kontraktów jako części nazw identyfikatorów.
 
  Na przykład użyj `GetWindow` zamiast `GetWin` .
 
- ❌Nie używaj żadnych akronimów, które nie są powszechnie akceptowane, a nawet jeśli są, tylko w razie potrzeby.
+ ❌ Nie używaj żadnych akronimów, które nie są powszechnie akceptowane, a nawet jeśli są, tylko w razie potrzeby.
 
-## <a name="avoiding-language-specific-names"></a>Unikanie nazw specyficznych dla języka
+## <a name="avoiding-language-specific-names"></a>Unikanie nazw Language-Specific
  ✔️ należy używać semantycznie interesujących nazw, a nie słów kluczowych charakterystycznych dla języka dla nazw typów.
 
  Na przykład `GetLength` to lepsza nazwa niż `GetInt` .
@@ -65,16 +64,16 @@ W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wybo
 |**Bajc**|**Bajc**|**unsigned char**|**Bajc**|
 |**short**|**Wybierak**|**short**|**Int16**|
 |**ushort**|**UInt16**|**unsigned short**|**UInt16**|
-|**int**|**Liczba całkowita**|**int**|**Int32**|
+|**int**|**Całkowitą**|**int**|**Int32**|
 |**uint**|**UInt32**|**unsigned int**|**UInt32**|
-|**długi**|**Długo**|**__int64**|**Int64**|
+|**liczba długa**|**Długo**|**__int64**|**Int64**|
 |**ulong**|**UInt64**|**__int64 bez znaku**|**UInt64**|
-|**float**|**Single**|**float**|**Single**|
-|**double**|**Double**|**double**|**Double**|
-|**bool**|**Wartość logiczna**|**bool**|**Wartość logiczna**|
+|**liczba zmiennoprzecinkowa**|**Pojedynczy**|**liczba zmiennoprzecinkowa**|**Pojedynczy**|
+|**liczba o podwójnej precyzji**|**Double**|**liczba o podwójnej precyzji**|**Double**|
+|**bool**|**Boolean**|**bool**|**Boolean**|
 |**char**|**Delikatn**|**wchar_t**|**Delikatn**|
 |**parametry**|**Ciąg**|**Ciąg**|**Ciąg**|
-|**Stream**|**Obiekt**|**Obiekt**|**Obiekt**|
+|**object**|**Stream**|**Stream**|**Stream**|
 
  ✔️ używać nazwy pospolitej, takiej jak `value` lub `item` , zamiast powtarzania nazwy typu, w rzadkich przypadkach, gdy identyfikator nie ma znaczenia semantycznego i typ parametru jest nieważny.
 
@@ -91,7 +90,7 @@ W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wybo
 
  ✔️ Użyj sufiksu liczbowego, aby wskazać nową wersję istniejącego interfejsu API, szczególnie jeśli istniejąca nazwa interfejsu API jest jedyną nazwą, która ma sens (tj. Jeśli jest standardem branżowym) i jeśli dodanie dowolnego znaczącego sufiksu (lub zmiana nazwy) nie jest odpowiednią opcją.
 
- ❌NIE używaj sufiksu "ex" (lub podobnego) dla identyfikatora, aby odróżnić go od wcześniejszej wersji tego samego interfejsu API.
+ ❌ NIE używaj sufiksu "ex" (lub podobnego) dla identyfikatora, aby odróżnić go od wcześniejszej wersji tego samego interfejsu API.
 
  ✔️ Użyj sufiksu "64", wprowadzając wersje interfejsów API, które działają na 64-bitowej liczbie całkowitej (Long Integer) zamiast 32-bit Integer. To podejście należy wykonać tylko wtedy, gdy istnieje istniejący 32-bitowy interfejs API; nie należy tego robić w przypadku nowych interfejsów API z tylko 64-bitową wersją.
 
@@ -99,7 +98,7 @@ W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wybo
 
  *Ponownie Wydrukowano przez uprawnienie Pearson Education, Inc. z [wytycznych dotyczących projektowania platformy: konwencje, idiomy i wzorce dla bibliotek .NET do wielokrotnego użytku, 2. wydanie](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) przez Krzysztof Cwalina i Brad Abrams, opublikowane 22, 2008 przez Addison-Wesley Professional w ramach serii Microsoft Windows Development.*
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Framework — zalecenia dotyczące projektowania](index.md)
 - [Wskazówki dotyczące nazewnictwa](naming-guidelines.md)

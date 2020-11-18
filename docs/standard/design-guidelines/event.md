@@ -1,7 +1,6 @@
 ---
 title: Projekt zdarzenia
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - pre-events
 - events [.NET Framework], design guidelines
@@ -10,15 +9,15 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-ms.openlocfilehash: 852c99b1a41691911f7ae82d3b8104526811757d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: eee4b1a9e72c167b9b1e48a73dbb3f0528744bdc
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289827"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821336"
 ---
 # <a name="event-design"></a>Projekt zdarzenia
-Zdarzenia są najczęściej używane w formie wywołań zwrotnych (konstrukcje, które umożliwiają platformie Wywoływanie kodu użytkownika). Inne mechanizmy wywołania zwrotnego obejmują członków, którzy korzystają z delegatów, wirtualnych elementów członkowskich i wtyczek opartych na interfejsie. dane z badań użyteczności wskazują, że większość deweloperów jest bardziej wygodna przy użyciu zdarzeń, niż korzystają z innych mechanizmów wywołania zwrotnego. Zdarzenia są dobrze zintegrowane z programem Visual Studio i wieloma językami.
+Zdarzenia są najczęściej używane w formie wywołań zwrotnych (konstrukcje, które umożliwiają platformie Wywoływanie kodu użytkownika). Inne mechanizmy wywołania zwrotnego obejmują członków, którzy mają delegatów, wirtualne elementy członkowskie i wtyczki oparte na interfejsie. Dane z badań użyteczności wskazują, że większość deweloperów jest bardziej wygodna przy użyciu zdarzeń, niż korzystają z innych mechanizmów wywołania zwrotnego. Zdarzenia są dobrze zintegrowane z programem Visual Studio i wieloma językami.
 
  Należy pamiętać, że istnieją dwie grupy zdarzeń: zdarzenia wywoływane przed zmianą systemu, zwane przed zdarzeniami i zdarzenia zgłoszone po zmianie stanu, nazywanego po wprowadzeniu zdarzeń. Przykładem przed zdarzeniem jest `Form.Closing` , który jest wywoływany przed zamknięciem formularza. Przykładem zdarzenia po zdarzeniu może być `Form.Closed` , które jest wywoływane po zamknięciu formularza.
 
@@ -40,11 +39,11 @@ Zdarzenia są najczęściej używane w formie wywołań zwrotnych (konstrukcje, 
 
  Parametr powinien mieć nazwę `e` i powinien być typem klasy argumentu zdarzenia.
 
- ❌NIE przekazuj wartości null jako nadawcy podczas podnoszenia niestatycznego zdarzenia.
+ ❌ NIE przekazuj wartości null jako nadawcy podczas podnoszenia niestatycznego zdarzenia.
 
  ✔️ przekazywać wartości null jako nadawcy podczas podnoszenia zdarzenia statycznego.
 
- ❌NIE przekazuj wartości null jako parametru danych zdarzenia podczas podnoszenia zdarzenia.
+ ❌ NIE przekazuj wartości null jako parametru danych zdarzenia podczas podnoszenia zdarzenia.
 
  Należy przekazać, `EventArgs.Empty` Jeśli nie chcesz przekazać żadnych danych do metody obsługi zdarzeń. Deweloperzy oczekują, że ten parametr nie ma wartości null.
 
@@ -63,7 +62,7 @@ Zdarzenia są najczęściej używane w formie wywołań zwrotnych (konstrukcje, 
 
  ✔️ używać <xref:System.EventArgs?displayProperty=nameWithType> lub jej podklasy jako typu drugiego parametru programu obsługi zdarzeń i wywoływać `e` .
 
- ❌W obsłudze zdarzeń nie ma więcej niż dwa parametry.
+ ❌ W obsłudze zdarzeń nie ma więcej niż dwa parametry.
 
  *Fragmenty © 2005, 2009 Microsoft Corporation. Wszelkie prawa zastrzeżone.*
 

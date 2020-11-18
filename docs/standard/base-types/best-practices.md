@@ -2,7 +2,6 @@
 title: Najlepsze rozwiązania dotyczące wyrażeń regularnych w programie .NET
 description: Dowiedz się, jak tworzyć wydajne, efektywne wyrażenia regularne w programie .NET.
 ms.date: 06/30/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - .NET regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 727c3f2b8465c5d69244abe0f441d2a24e84dc5f
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: ae74d263034de4d402520d751fe97af9e33a2a48
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92162924"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820595"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Najlepsze rozwiązania dotyczące wyrażeń regularnych w programie .NET
 
@@ -236,7 +235,7 @@ W poniższym przykładzie zdefiniowano `GetWordData` metodę, która tworzy wyst
 
 ## <a name="capture-only-when-necessary"></a>Przechwyć tylko w razie potrzeby
 
-Wyrażenia regularne w programie .NET obsługują szereg konstrukcji grupujących, które pozwalają grupować wzorzec wyrażenia regularnego w jedno lub więcej podwyrażeń. Najczęściej używane konstrukcje grupujące w języku wyrażeń regularnych programu .NET to `(` *Podwyrażenie* `)` , które definiuje numerowaną grupę przechwytywania i `(?<` *name* `>` *Podwyrażenie*nazwy `)` , które definiuje nazwaną grupę przechwytywania. Konstrukcje grupujące są niezbędne do tworzenia odwołań wstecznych i do definiowania podwyrażeń, do których jest stosowany kwantyfikator.
+Wyrażenia regularne w programie .NET obsługują szereg konstrukcji grupujących, które pozwalają grupować wzorzec wyrażenia regularnego w jedno lub więcej podwyrażeń. Najczęściej używane konstrukcje grupujące w języku wyrażeń regularnych programu .NET to `(` *Podwyrażenie* `)` , które definiuje numerowaną grupę przechwytywania i `(?<` *name* `>` *Podwyrażenie* nazwy `)` , które definiuje nazwaną grupę przechwytywania. Konstrukcje grupujące są niezbędne do tworzenia odwołań wstecznych i do definiowania podwyrażeń, do których jest stosowany kwantyfikator.
 
 Jednak zastosowanie tych elementów języka jest kosztowne. Powodują, że <xref:System.Text.RegularExpressions.GroupCollection> obiekt zwracany przez <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> Właściwość jest wypełniany najnowszymi nienazwanymi lub nazwanymi przechwycenimi, a jeśli jedna konstrukcja grupowania przechwyciła wiele podciągów w ciągu wejściowym, wypełnia również <xref:System.Text.RegularExpressions.CaptureCollection> obiekt zwrócony przez <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> Właściwość określonej grupy przechwytywania z wieloma <xref:System.Text.RegularExpressions.Capture> obiektami.
 

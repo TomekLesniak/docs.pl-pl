@@ -2,7 +2,6 @@
 title: Analizowanie ciągów liczbowych w programie .NET
 description: Dowiedz się więcej na temat analizowania ciągów liczbowych w programie .NET. Dowiedz się, jak analizować przy użyciu dostawców formatów, wyliczenia NumberStyles wartości wyliczenia i cyfry Unicode.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - enumerations [.NET], parsing strings
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
-ms.openlocfilehash: 2ddefde4c9dceffb6adf7e17a965a2b15ff60ed2
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 6054456b50c48ecee61e95851aee095a4227b176
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889026"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821933"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analizowanie ciągów liczbowych w sieci
 Wszystkie typy liczbowe mają dwie metody statycznej analizy `Parse` i `TryParse` , których można użyć do przekonwertowania ciągu reprezentującego liczbę do typu liczbowego. Te metody umożliwiają analizowanie ciągów, które zostały utworzone za pomocą ciągów formatu udokumentowanych w [standardowych ciągach formatu liczbowego](standard-numeric-format-strings.md) i [niestandardowych ciągów formatu liczbowego](custom-numeric-format-strings.md). Domyślnie `Parse` `TryParse` metody i mogą pomyślnie konwertować ciągi, które zawierają cyfry dziesiętne tylko do wartości całkowitych. Mogą pomyślnie konwertować ciągi, które zawierają cyfry całkowite i ułamkowe dziesiętne, separatory grup i separator dziesiętny do wartości zmiennoprzecinkowych. `Parse`Metoda zgłasza wyjątek, jeśli operacja nie powiedzie się, a `TryParse` Metoda zwraca `false` .  

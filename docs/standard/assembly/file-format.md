@@ -3,18 +3,17 @@ title: Format pliku zestawu .NET
 description: Dowiedz się więcej o formacie pliku zestawu platformy .NET, który jest używany do opisywania i zawierania aplikacji i bibliotek platformy .NET.
 author: richlander
 ms.date: 08/20/2019
-ms.technology: dotnet-standard
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
-ms.openlocfilehash: b4aa961c3a6f2d4fa1580ff608aaf2a40d462fa0
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1e98f0beb6756c9a02b2839eb88d6a5b13375786
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288514"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822194"
 ---
 # <a name="net-assembly-file-format"></a>Format pliku zestawu .NET
 
-Platforma .NET definiuje binarny format pliku *, który*jest używany do pełnego opisywania i zawiera programy .NET. Zestawy są używane na potrzeby programów, a także do wszystkich bibliotek zależnych. Program .NET można wykonać jako jeden lub więcej zestawów bez żadnych innych wymaganych artefaktów, poza odpowiednią implementacją platformy .NET. Natywne zależności, w tym interfejsy API systemu operacyjnego, są oddzielnymi problemami i nie są zawarte w formacie zestawu .NET, chociaż są czasami opisane w tym formacie (na przykład WinRT).
+Platforma .NET definiuje binarny format pliku *, który* jest używany do pełnego opisywania i zawiera programy .NET. Zestawy są używane na potrzeby programów, a także do wszystkich bibliotek zależnych. Program .NET można wykonać jako jeden lub więcej zestawów bez żadnych innych wymaganych artefaktów, poza odpowiednią implementacją platformy .NET. Natywne zależności, w tym interfejsy API systemu operacyjnego, są oddzielnymi problemami i nie są zawarte w formacie zestawu .NET, chociaż są czasami opisane w tym formacie (na przykład WinRT).
 
 > Każdy składnik interfejsu wiersza polecenia przenosi metadane dla deklaracji, implementacji i odwołań specyficznych dla tego składnika. W związku z tym metadane specyficzne dla składnika są określane jako metadane składników, a składnik uzyskany jest uważany za własny opis — od ECMA 335 I. 9.1 składników i zestawów.
 

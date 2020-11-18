@@ -1,20 +1,19 @@
 ---
 title: Rozpoznawanie zasobów zewnętrznych
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
-ms.openlocfilehash: 82e9231be8a3619f59313460f0d5e0b246eb9436
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 460fee3464c7de9a6ad0ca97bf5341fe5078fb47
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291490"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820374"
 ---
 # <a name="resolving-external-resources"></a>Rozpoznawanie zasobów zewnętrznych
 Właściwość **XmlResolver** obiektu **XmlDocument** jest używana przez klasę **XmlDocument** do lokalizowania zasobów, które nie są wbudowane w dane XML, takie jak definicje typu dokumentu zewnętrznego (DTD), jednostki i schematy. Elementy te mogą znajdować się w sieci lub na dysku lokalnym i są identyfikowane za pomocą Uniform Resource Identifier (URI). Dzięki temu element **XmlDocument** może rozpoznać węzły **EntityReference** , które znajdują się w dokumencie i sprawdzać poprawność dokumentu zgodnie z zewnętrznym DTD lub schematem.  
   
-## <a name="fully-trusted-xmldocument"></a>W pełni zaufany dokument XmlDocument  
- Właściwość **XmlResolver** ma wpływ na funkcjonalność metody **XmlDocument. Load** . W poniższej tabeli pokazano, jak działa Właściwość **XmlDocument. XmlResolver** , gdy obiekt **XmlDocument** jest w pełni zaufany. W poniższej tabeli przedstawiono metody **XmlDocument. Load** , gdy dane wejściowe do obciążenia to **TextReader**, **ciąg**, **strumień**lub **Identyfikator URI**. Ta tabela nie ma zastosowania do metody **Load** , jeśli element **XmlDocument** jest ładowany z elementu **XmlReader**.  
+## <a name="fully-trusted-xmldocument"></a>Fully-Trusted XmlDocument  
+ Właściwość **XmlResolver** ma wpływ na funkcjonalność metody **XmlDocument. Load** . W poniższej tabeli pokazano, jak działa Właściwość programu **rozpoznawaniaXmlDocument.Xml** , gdy obiekt **XmlDocument** jest w pełni zaufany. W poniższej tabeli przedstawiono metody **XmlDocument. Load** , gdy dane wejściowe do obciążenia to **TextReader**, **ciąg**, **strumień** lub **Identyfikator URI**. Ta tabela nie ma zastosowania do metody **Load** , jeśli element **XmlDocument** jest ładowany z elementu **XmlReader**.  
   
 |XmlResolver — właściwość|Funkcja|Uwagi|  
 |--------------------------|--------------|-----------|  
@@ -26,10 +25,10 @@ Właściwość **XmlResolver** obiektu **XmlDocument** jest używana przez klas�
   
 |XmlResolver — właściwość|Funkcja|Uwagi|  
 |--------------------------|--------------|-----------|  
-|Klasa **XmlResolver** używana przez **XmlDocument** jest tą samą klasą, która jest używana przez element **XmlReader**.|**XmlDocument** używa elementu **XmlResolver** , który został przypisany do elementu **XmlReader**.<br /><br /> Nie można ustawić właściwości **XmlDocument. resolver** , niezależnie od poziomu zaufania **XmlDocument** , ponieważ jest ona pobierana z elementu **XmlReader** **XmlResolver** . Nie można podjąć próby przesłonięcia ustawień **Xmlresolvera** **XmlReader**, ustawiając właściwość **XmlResolver** obiektu **XmlDocument**.|Element **XmlReader** może być **XmlTextReader**, **XmlValidatingReader**lub czytnikiem niestandardowym. Jeśli używany czytnik obsługuje rozpoznawanie jednostek, jednostki zewnętrzne są rozwiązane. Jeśli czytnik nie obsługuje odwołań do jednostek, odwołania do jednostek nie są rozwiązywane.|  
+|Klasa **XmlResolver** używana przez **XmlDocument** jest tą samą klasą, która jest używana przez element **XmlReader**.|**XmlDocument** używa elementu **XmlResolver** , który został przypisany do elementu **XmlReader**.<br /><br /> Nie można ustawić właściwości **XmlDocument. resolver** , niezależnie od poziomu zaufania **XmlDocument** , ponieważ jest ona pobierana z elementu **XmlReader** **XmlResolver** . Nie można podjąć próby przesłonięcia ustawień **Xmlresolvera** **XmlReader**, ustawiając właściwość **XmlResolver** obiektu **XmlDocument**.|Element **XmlReader** może być **XmlTextReader**, **XmlValidatingReader** lub czytnikiem niestandardowym. Jeśli używany czytnik obsługuje rozpoznawanie jednostek, jednostki zewnętrzne są rozwiązane. Jeśli czytnik nie obsługuje odwołań do jednostek, odwołania do jednostek nie są rozwiązywane.|  
   
-## <a name="semi-trusted-xmldocument"></a>Częściowo zaufany dokument XmlDocument  
- W poniższej tabeli pokazano, jak działa Właściwość **XmlDocument. XmlResolver** , gdy obiekt jest częściowo zaufany. Ta tabela ma zastosowanie do metod **XmlDocument. Load** , gdy dane wejściowe ładowania to **TextReader**, **String**, **Stream**lub **URI**. Ta tabela nie ma zastosowania do metody **Load** , jeśli element **XmlDocument** jest ładowany z elementu **XmlReader**.  
+## <a name="semi-trusted-xmldocument"></a>Semi-Trusted XmlDocument  
+ W poniższej tabeli przedstawiono sposób działania właściwości programu **rozpoznawaniaXmlDocument.Xml** , gdy obiekt jest częściowo zaufany. Ta tabela ma zastosowanie do metod **XmlDocument. Load** , gdy dane wejściowe ładowania to **TextReader**, **String**, **Stream** lub **URI**. Ta tabela nie ma zastosowania do metody **Load** , jeśli element **XmlDocument** jest ładowany z elementu **XmlReader**.  
   
 |XmlResolver — właściwość|Funkcja|Uwagi|  
 |--------------------------|--------------|-----------|  

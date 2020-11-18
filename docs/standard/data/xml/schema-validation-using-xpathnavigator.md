@@ -1,17 +1,16 @@
 ---
 title: Weryfikacja schematu przy użyciu klasy XPathNavigator
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
-ms.openlocfilehash: f6e56616543bf7d2ad2e6be4d7bf7cbc50ba3a23
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 304177ed4cb600aa27142e3b1c3690a3d7053c5d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292010"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822480"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>Weryfikacja schematu przy użyciu klasy XPathNavigator
 Korzystając z <xref:System.Xml.XmlDocument> klasy, można sprawdzić poprawność zawartości XML zawartej w <xref:System.Xml.XmlDocument> obiekcie na dwa sposoby. Pierwszym sposobem jest zweryfikowanie zawartości XML przy użyciu obiektu sprawdzającego poprawność, <xref:System.Xml.XmlReader> a drugi — użycie <xref:System.Xml.XmlDocument.Validate%2A> metody <xref:System.Xml.XmlDocument> klasy. Można również wykonać walidację zawartości XML tylko do odczytu przy użyciu <xref:System.Xml.XPath.XPathDocument> klasy.  
@@ -350,7 +349,7 @@ class ValidatingReaderExample
   
  Aby uzyskać więcej informacji na temat modyfikowania wartości przy użyciu <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metody, zobacz temat [modyfikowanie danych XML przy użyciu klasy XPathNavigator](modify-xml-data-using-xpathnavigator.md) .  
   
-### <a name="read-only-validation"></a>Walidacja tylko do odczytu  
+### <a name="read-only-validation"></a>Read-Only walidacji  
  <xref:System.Xml.XPath.XPathDocument>Klasa jest reprezentacją w pamięci dokumentu XML tylko do odczytu. <xref:System.Xml.XPath.XPathDocument>Klasy i <xref:System.Xml.XmlDocument> klasy tworzą <xref:System.Xml.XPath.XPathNavigator> obiekty do nawigowania i edytowania dokumentów XML. Ponieważ <xref:System.Xml.XPath.XPathDocument> Klasa jest klasą tylko do odczytu, <xref:System.Xml.XPath.XPathNavigator> obiekt zwrócony z <xref:System.Xml.XPath.XPathDocument> obiektów nie może edytować dokumentu XML zawartego w <xref:System.Xml.XPath.XPathDocument> obiekcie.  
   
  W przypadku weryfikacji można utworzyć <xref:System.Xml.XPath.XPathDocument> obiekt tak samo jak w przypadku tworzenia <xref:System.Xml.XmlDocument> obiektu za pomocą walidacji <xref:System.Xml.XmlReader> obiektu, jak opisano wcześniej w tym temacie. <xref:System.Xml.XPath.XPathDocument>Obiekt sprawdza poprawność dokumentu XML w trakcie jego ładowania, ale ponieważ nie można edytować danych XML w <xref:System.Xml.XPath.XPathDocument> obiekcie, nie można ponownie sprawdzić poprawności dokumentu XML.  
