@@ -2,12 +2,12 @@
 title: Wskazówki dotyczące formatowania kodu F#
 description: 'Poznaj wskazówki dotyczące formatowania kodu F #.'
 ms.date: 08/31/2020
-ms.openlocfilehash: af98be75f21cbc594ff9cf779561d49e4965845a
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 8f5e333c015f30ae8449c76a3075763370a98e4d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688257"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830522"
 ---
 # <a name="f-code-formatting-guidelines"></a>Wskazówki dotyczące formatowania kodu F#
 
@@ -102,7 +102,7 @@ let myFunBad (a:decimal)(b)c = a + b + c
 
 ### <a name="place-parameters-on-a-new-line-for-long-definitions"></a>Umieść parametry w nowym wierszu dla długich definicji
 
-Jeśli masz bardzo długą definicję funkcji, umieść parametry w nowych wierszach i Zwiększ wcięcie w celu dopasowania do poziomu wcięcia kolejnego parametru.
+Jeśli masz długą definicję funkcji, umieść parametry w nowych wierszach i Zwiększ wcięcie w celu dopasowania do poziomu wcięcia kolejnego parametru.
 
 ```fsharp
 module M =
@@ -308,7 +308,7 @@ Przestrzenie nazw, wyjątki, zdarzenia i projekty/ `.dll` nazwy powinny równie�
 
 ### <a name="avoid-underscores-in-names"></a>Unikaj podkreśleń w nazwach
 
-Historycznie Niektóre biblioteki języka F # używały podkreśleń w nazwach. Nie jest to jednak już powszechnie akceptowane, częściowo ponieważ koliduje z konwencjami nazewnictwa platformy .NET. Tak samo, niektórzy programiści F # używają podkreśleń silnie, częściowo z przyczyn historycznych, a tolerancja i istotność są ważne. Należy jednak pamiętać, że styl często nie jest używany przez inne osoby, które mają możliwość wyboru, czy należy z niego korzystać.
+Historycznie Niektóre biblioteki języka F # używały podkreśleń w nazwach. Nie jest to jednak już powszechnie akceptowane, częściowo ponieważ koliduje z konwencjami nazewnictwa platformy .NET. Tak samo, niektórzy programiści F # używają podkreśleń silnie, częściowo z przyczyn historycznych, a tolerancja i istotność są ważne. Jednak styl jest często odstosowany przez inne osoby, które mają możliwość wyboru, czy mają być używane.
 
 Jeden wyjątek obejmuje współdziałanie ze składnikami macierzystymi, w których znaki podkreślenia są wspólne.
 
@@ -643,9 +643,9 @@ W niektórych przypadkach `do...yield` może pomóc w czytelności. Te przypadki
 ## <a name="formatting-if-expressions"></a>Formatowanie wyrażeń if
 
 Wcięcia warunkowe są zależne od wielkości i złożoności wyrażeń, które je tworzą.
-Po prostu zapisuj je w jednym wierszu, gdy:
+Zapisz je w jednym wierszu, gdy:
 
-- `cond``e1`i `e2` są krótkie
+- `cond`, `e1` , i `e2` są krótkie
 - `e1` i `e2` nie są `if/then/else` wyrażeniami.
 
 ```fsharp
@@ -890,7 +890,7 @@ let makeStreamReader x = new System.IO.StreamReader(path=x)
 let makeStreamReader x = new System.IO.StreamReader(path = x)
 ```
 
-### <a name="formatting-constructors-static-members-and-member-invocations"></a>Konstruktory formatowania, statyczne składowe i wywołania elementów członkowskich
+### <a name="formatting-constructors-static-members-and-member-invocations"></a>Konstruktory formatowania, statyczne elementy członkowskie i wywołania elementów członkowskich
 
 Jeśli wyrażenie jest krótkie, należy oddzielić argumenty spacjami i zachować je w jednym wierszu.
 
@@ -992,7 +992,7 @@ Należy unikać umieszczania atrybutu w tym samym wierszu, w którym znajduje si
 
 ## <a name="formatting-computation-expression-operations"></a>Formatowanie operacji wyrażenia obliczeń
 
-Podczas tworzenia niestandardowych operacji dla [wyrażeń obliczeniowych](../language-reference/computation-expressions.md) zaleca się używanie nazw CamelCase:
+Podczas tworzenia niestandardowych operacji dla [wyrażeń obliczeniowych](../language-reference/computation-expressions.md)zaleca się używanie nazw CamelCase:
 
 ```fsharp
 type MathBuilder () =
@@ -1031,5 +1031,5 @@ let myNumber =
     }
 ```
 
-Używana Konwencja nazewnictwa powinna ostatecznie być oparta na modelu domeny.
+Domena, która jest modelowana powinna ostatecznie określać konwencję nazewnictwa.
 Jeśli idiomatyczne użyć innej konwencji, należy zamiast niej użyć tej Konwencji.

@@ -2,12 +2,12 @@
 title: Ciągi interpolowane
 description: 'Dowiedz się więcej o ciągach interpolowanych, specjalnej formie ciągu, która umożliwia osadzanie wyrażeń F # bezpośrednio wewnątrz nich.'
 ms.date: 11/12/2020
-ms.openlocfilehash: a49d4e743306fd9bdabb1e019ec4e6c77e0e1f5a
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 8c552b44cea7d6c51ec333b6bdd4d407c6f10da7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688609"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829690"
 ---
 # <a name="interpolated-strings"></a>Ciągi interpolowane
 
@@ -44,7 +44,7 @@ let str = $"A pair of braces: {{}}"
 
 ## <a name="typed-interpolated-strings"></a>Wpisane ciągi interpolowane
 
-Ciągi interpolowane mogą także mieć specyfikatory formatu języka F #, aby wymusić bezpieczny typ.
+Ciągi interpolowane mogą także mieć specyfikatory formatu języka F #, aby wymusić bezpieczeństwo typu.
 
 ```fsharp
 let name = "Phillip"
@@ -72,7 +72,7 @@ printfn $"""Name: {"Phillip"}, Age: %d{age}"""
 
 ## <a name="aligning-expressions-in-interpolated-strings"></a>Wyrównywanie wyrażeń w ciągach interpolowanych
 
-Wyrażenia można wyrównać lub wyrównać do lewej w ciągach interpolowanych z `|` i specyfikacją liczby spacji. Następujący ciąg interpolowany wyrównuje lewe i prawe wyrażenie do lewej i prawej, odpowiednio, o 7 spacji.
+Wyrażenia można wyrównać lub wyrównać do lewej w ciągach interpolowanych z `|` i specyfikacją liczby spacji. Następujący ciąg interpolowany wyrównuje lewe i prawe wyrażenie do lewej i prawej, odpowiednio o siedem spacji.
 
 ```fsharp
 printfn $"""|{"Left",-7}|{"Right",7}|"""
@@ -89,7 +89,7 @@ printfn $"The speed of light is {speedOfLight:N3} km/s."
 // "The speed of light is 299,792.458 km/s."
 ```
 
-Dodatkowo ciąg interpolowany może być również typechecked jako <xref:System.FormattableString> za pośrednictwem adnotacji typu:
+Dodatkowo ciąg interpolowany może być również typem sprawdzonym jako <xref:System.FormattableString> za pośrednictwem adnotacji typu:
 
 ```fsharp
 let frmtStr = $"The speed of light is {speedOfLight:N3} km/s." : FormattableString
