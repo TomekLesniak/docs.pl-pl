@@ -1,24 +1,26 @@
 ---
-title: Tworzenie biblioteki klas .NET Standard przy użyciu Visual Studio Code
-description: Dowiedz się, jak utworzyć bibliotekę klas .NET Standard przy użyciu Visual Studio Code.
-ms.date: 06/08/2020
-ms.openlocfilehash: 966b9b0b48f67809e82d9133c523995cd97b6015
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+title: Tworzenie biblioteki klas .NET przy użyciu Visual Studio Code
+description: Dowiedz się, jak utworzyć bibliotekę klas .NET przy użyciu Visual Studio Code.
+ms.date: 11/18/2020
+ms.openlocfilehash: 4daa077fc54da3de2f808d831e06ee5f9bb3bde7
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495515"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916094"
 ---
-# <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Samouczek: Tworzenie biblioteki .NET Standard przy użyciu Visual Studio Code
+# <a name="tutorial-create-a-net-class-library-using-visual-studio-code"></a>Samouczek: Tworzenie biblioteki klas .NET przy użyciu Visual Studio Code
 
-W tym samouczku utworzysz prostą bibliotekę narzędzi, która zawiera pojedynczą metodę obsługi ciągów. Implementuje ją jako [metodę rozszerzenia](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , aby można było wywołać ją tak, jakby była elementem członkowskim <xref:System.String> klasy.
+W tym samouczku utworzysz prostą bibliotekę narzędzi, która zawiera pojedynczą metodę obsługi ciągów.
 
-*Biblioteka klas* definiuje typy i metody, które są wywoływane przez aplikację. Biblioteka klas, która jest przeznaczona dla .NET Standard 2,0 umożliwia wywoływanie biblioteki przez dowolną implementację platformy .NET, która obsługuje tę wersję .NET Standard. Po zakończeniu biblioteki klas można ją rozpowszechnić jako składnik innej firmy lub jako składnik pakietu z jedną lub wieloma aplikacjami.
+*Biblioteka klas* definiuje typy i metody, które są wywoływane przez aplikację. Jeśli biblioteka jest przeznaczona .NET Standard 2,0, może być wywoływana przez dowolną implementację platformy .NET (w tym .NET Framework), która obsługuje .NET Standard 2,0. Jeśli biblioteka jest przeznaczona dla platformy .NET 5, może być wywoływana przez dowolną aplikację, która jest przeznaczona dla platformy .NET 5. W tym samouczku przedstawiono sposób ukierunkowania platformy .NET 5.
+
+Podczas tworzenia biblioteki klas można ją rozpowszechnić jako składnik innej firmy lub jako składnik pakietu z jedną lub wieloma aplikacjami.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 1. [Visual Studio Code](https://code.visualstudio.com/) z zainstalowanym [rozszerzeniem języka C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) . Aby uzyskać informacje na temat sposobu instalowania rozszerzeń na Visual Studio Code, zobacz [vs Code rozszerzenia Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery).
-2. [Zestaw SDK platformy .NET Core 3,1 lub nowszy](https://dotnet.microsoft.com/download)
+2. [Zestaw .net 5,0 SDK lub nowszy](https://dotnet.microsoft.com/download)
 
 ## <a name="create-a-solution"></a>Tworzenie rozwiązania
 
@@ -34,7 +36,7 @@ Zacznij od utworzenia pustego rozwiązania, aby umieścić projekt biblioteki kl
 
    Zostanie otwarty **Terminal** z wierszem polecenia w folderze *ClassLibraryProjects* .
 
-1. W **terminalu**wprowadź następujące polecenie:
+1. W **terminalu** wprowadź następujące polecenie:
 
    ```dotnetcli
    dotnet new sln
@@ -48,7 +50,7 @@ Zacznij od utworzenia pustego rozwiązania, aby umieścić projekt biblioteki kl
 
 ## <a name="create-a-class-library-project"></a>Tworzenie projektu biblioteki klas
 
-Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do rozwiązania.
+Dodaj nowy projekt biblioteki klas .NET o nazwie "StringLibrary" do rozwiązania.
 
 1. W terminalu uruchom następujące polecenie, aby utworzyć projekt biblioteki:
 
@@ -81,15 +83,15 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
    Project `StringLibrary\StringLibrary.csproj` added to the solution.
    ```
 
-1. Upewnij się, że biblioteka jest ukierunkowana na poprawną wersję .NET Standard. W **Eksploratorze**Otwórz *StringLibrary/StringLibrary. csproj*.
+1. Upewnij się, że biblioteka jest przeznaczona dla platformy .NET 5. W **Eksploratorze** Otwórz *StringLibrary/StringLibrary. csproj*.
 
-   `TargetFramework`Element pokazuje, że projekt jest docelowy .NET Standard 2,0.
+   `TargetFramework`Element pokazuje, że projekt jest przeznaczony dla programu .net 5,0.
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
 
      <PropertyGroup>
-       <TargetFramework>netstandard2.0</TargetFramework>
+       <TargetFramework>net5.0</TargetFramework>
      </PropertyGroup>
 
    </Project>
@@ -116,7 +118,7 @@ Dodaj nowy projekt biblioteki klas .NET Standard o nazwie "StringLibrary" do roz
    Copyright (C) Microsoft Corporation. All rights reserved.
      Determining projects to restore...
      All projects are up-to-date for restore.
-     StringLibrary -> C:\Projects\ClassLibraryProjects\StringLibrary\bin\Debug\netstandard2.0\StringLibrary.dll
+     StringLibrary -> C:\Projects\ClassLibraryProjects\StringLibrary\bin\Debug\net5.0\StringLibrary.dll
    Build succeeded.
        0 Warning(s)
        0 Error(s)
@@ -208,12 +210,11 @@ Początkowo nowy projekt aplikacji konsolowej nie ma dostępu do biblioteki klas
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 
-* [Tworzenie bibliotek przy użyciu interfejs wiersza polecenia platformy .NET Core](libraries.md)
-* [Wersje .NET Standard i obsługiwane przez nich platformy](../../standard/net-standard.md).
+* [Tworzenie bibliotek przy użyciu interfejsu wiersza polecenia platformy .NET](libraries.md)
 
 ## <a name="next-steps"></a>Następne kroki
 
 W tym samouczku utworzono rozwiązanie, dodano projekt biblioteki i dodano projekt aplikacji konsolowej, który używa biblioteki. W następnym samouczku dodasz projekt testu jednostkowego do rozwiązania.
 
 > [!div class="nextstepaction"]
-> [Testowanie biblioteki .NET Standard za pomocą platformy .NET Core przy użyciu Visual Studio Code](testing-library-with-visual-studio-code.md)
+> [Testowanie biblioteki klas .NET za pomocą platformy .NET przy użyciu Visual Studio Code](testing-library-with-visual-studio-code.md)

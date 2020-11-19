@@ -4,12 +4,12 @@ author: IEvangelist
 description: Dowiedz się więcej na temat hosta ogólnego platformy .NET, który jest odpowiedzialny za uruchamianie aplikacji i zarządzanie okresem istnienia.
 ms.author: dapine
 ms.date: 09/18/2020
-ms.openlocfilehash: a1f82f6c6b5d250d6e81351aa02e50e23636280b
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: d00a8aeae8b4de2cbcb091992fa739c47da6dafc
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91608274"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916175"
 ---
 # <a name="net-generic-host"></a>Host ogólny .NET
 
@@ -19,7 +19,7 @@ Szablony usługi procesu roboczego tworzą hosta ogólnego platformy .NET <xref:
 
 - Iniekcja zależności (DI)
 - Rejestrowanie
-- Konfiguracja
+- Konfigurowanie
 - `IHostedService` metod
 
 Po uruchomieniu hosta jest on wywoływany <xref:Microsoft.Extensions.Hosting.IHostedService.StartAsync%2A?displayProperty=nameWithType> dla każdej implementacji <xref:Microsoft.Extensions.Hosting.IHostedService> zarejestrowanej w kolekcji kontenera usługi hostowanej usług. W aplikacji usługi procesu roboczego wszystkie `IHostedService` implementacje, które zawierają <xref:Microsoft.Extensions.Hosting.BackgroundService> wystąpienia, mają <xref:Microsoft.Extensions.Hosting.BackgroundService.ExecuteAsync%2A?displayProperty=nameWithType> metody wywoływane.
@@ -74,7 +74,7 @@ public class Program
   - EventLog (tylko w przypadku uruchamiania w systemie Windows)
 - Umożliwia weryfikację zakresu i [Sprawdzanie poprawności zależności](xref:Microsoft.Extensions.DependencyInjection.ServiceProviderOptions.ValidateOnBuild) , gdy środowisko jest `Development` .
 
-Metoda ta umożliwia `ConfigureServices` Dodawanie usług do <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection?displayProperty=nameWithType> wystąpienia. Później te usługi mogą być udostępniane z iniekcji zależności.
+Metoda ta umożliwia `ConfigureServices` Dodawanie usług do <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection?displayProperty=nameWithType> wystąpienia. Później te usługi mogą być realizowane z iniekcji zależności.
 
 ## <a name="framework-provided-services"></a>Usługi udostępniane przez platformę
 

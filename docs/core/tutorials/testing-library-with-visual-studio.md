@@ -1,25 +1,25 @@
 ---
-title: Testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu programu Visual Studio
-description: Utwórz projekt testu jednostkowego dla biblioteki klas .NET Core. Sprawdź, czy biblioteka klas .NET Core działa prawidłowo z testami jednostkowymi.
-ms.date: 06/08/2020
+title: Testowanie biblioteki klas .NET przy użyciu programu Visual Studio
+description: Dowiedz się, jak utworzyć i uruchomić projekt testu jednostkowego dla biblioteki klas .NET przy użyciu programu Visual Studio.
+ms.date: 11/18/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 04d0120622697d1e0c84fc169dfc50951cb8aa3c
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 3d56627b937fa0ad5f8002f396ce617e09ce9d2c
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91177296"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916129"
 ---
-# <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Samouczek: testowanie biblioteki klas .NET Standard za pomocą platformy .NET Core przy użyciu programu Visual Studio
+# <a name="tutorial-test-a-net-class-library-with-net-using-visual-studio"></a>Samouczek: testowanie biblioteki klas .NET w programie .NET przy użyciu programu Visual Studio
 
 W tym samouczku pokazano, jak zautomatyzować testy jednostkowe przez dodanie projektu testowego do rozwiązania.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współdziała z rozwiązaniem tworzonym w temacie [Tworzenie biblioteki .NET standard przy użyciu programu Visual Studio](library-with-visual-studio.md).
+- Ten samouczek współdziała z rozwiązaniem tworzonym w temacie [Tworzenie biblioteki klas platformy .NET przy użyciu programu Visual Studio](library-with-visual-studio.md).
 
 ## <a name="create-a-unit-test-project"></a>Tworzenie projektu testu jednostkowego
 
@@ -27,7 +27,7 @@ Testy jednostkowe zapewniają zautomatyzowane testowanie oprogramowania podczas 
 
 1. Uruchom program Visual Studio.
 
-1. Otwórz `ClassLibraryProjects` rozwiązanie utworzone w temacie [Tworzenie .NET Standard biblioteki przy użyciu programu Visual Studio](library-with-visual-studio.md).
+1. Otwórz `ClassLibraryProjects` rozwiązanie utworzone w temacie [Tworzenie biblioteki klas .NET przy użyciu programu Visual Studio](library-with-visual-studio.md).
 
 1. Dodaj nowy projekt testu jednostkowego o nazwie "StringLibraryTest" do rozwiązania.
 
@@ -35,9 +35,11 @@ Testy jednostkowe zapewniają zautomatyzowane testowanie oprogramowania podczas 
 
    1. Na stronie **Dodawanie nowego projektu** wprowadź **MSTest** w polu wyszukiwania. Wybierz pozycję **C#** lub **Visual Basic** z listy język, a następnie wybierz pozycję **wszystkie platformy** z listy platform.
 
-   1. Wybierz szablon **projekt testu MSTest (.NET Core)** , a następnie wybierz przycisk **dalej**.
+   1. Wybierz szablon **projektu test jednostkowy** , a następnie wybierz przycisk **dalej**.
 
-   1. Na stronie **Konfiguruj nowy projekt** wprowadź **StringLibraryTest** w polu **Nazwa projektu** . Następnie wybierz pozycję **Utwórz**.
+   1. Na stronie **Konfiguruj nowy projekt** wprowadź **StringLibraryTest** w polu **Nazwa projektu** . Następnie wybierz przycisk **dalej**.
+
+   1. Na stronie **Informacje dodatkowe** wybierz pozycję **.NET 5,0 (Current)** w polu **platforma docelowa** . Następnie wybierz pozycję **Utwórz**.
 
 1. Program Visual Studio tworzy projekt i otwiera plik klasy w oknie kodu przy użyciu następującego kodu. Jeśli język, którego chcesz użyć, nie jest wyświetlany, Zmień selektor języka w górnej części strony.
 
@@ -83,7 +85,7 @@ Testy jednostkowe zapewniają zautomatyzowane testowanie oprogramowania podczas 
 
 Aby projekt testowy mógł współpracował z `StringLibrary` klasą, Dodaj odwołanie w projekcie **StringLibraryTest** do `StringLibrary` projektu.
 
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy węzeł **zależności** projektu **StringLibraryTest** i wybierz polecenie **Dodaj odwołanie do projektu** z menu kontekstowego.
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy węzeł **zależności** projektu **StringLibraryTest** i wybierz polecenie **Dodaj odwołanie do projektu** z menu kontekstowego.
 
 1. W oknie dialogowym **Menedżer odwołań** rozwiń węzeł **projekty** , a następnie zaznacz pole wyboru obok pozycji **StringLibrary**. Dodanie odwołania do `StringLibrary` zestawu umożliwia kompilatorowi znalezienie metod **StringLibrary** podczas kompilowania projektu **StringLibraryTest** .
 
@@ -122,21 +124,21 @@ Aby utworzyć metody testowe:
 1. Na pasku menu wybierz pozycję **plik**  >  **Zapisz UnitTest1.cs jako** lub Zapisz **plik**  >  **UnitTest1. vb jako**. W oknie dialogowym **Zapisz plik jako** wybierz strzałkę obok przycisku **Zapisz** , a następnie wybierz pozycję **Zapisz z kodowaniem**.
 
    > [!div class="mx-imgBorder"]
-   > ![Okno dialogowe zapisywania pliku w programie Visual Studio](./media/testing-library-with-visual-studio/save-file-as-dialog.png)
+   > :::image type="content" source="./media/testing-library-with-visual-studio/save-file-as-dialog.png" alt-text="Okno dialogowe zapisywania pliku w programie Visual Studio":::
 
 1. W oknie dialogowym **Potwierdzanie zapisywania jako** wybierz przycisk **tak** , aby zapisać plik.
 
 1. W oknie dialogowym **Zaawansowane opcje zapisywania** wybierz pozycję **Unicode (UTF-8 z podpisem)-strona kodowa 65001** z listy rozwijanej **kodowanie** i wybierz **przycisk OK**.
 
    > [!div class="mx-imgBorder"]
-   > ![Zaawansowane opcje zapisywania programu Visual Studio — okno dialogowe](./media/testing-library-with-visual-studio/advanced-save-options.png)
+   > :::image type="content" source="./media/testing-library-with-visual-studio/advanced-save-options.png" alt-text="Zaawansowane opcje zapisywania programu Visual Studio — okno dialogowe":::
 
    Jeśli kod źródłowy nie zostanie zapisany jako plik zakodowany w formacie UTF8, program Visual Studio może go zapisać jako plik ASCII. Gdy tak się stanie, środowisko uruchomieniowe nie dekoduje znaków UTF8 poza zakresem ASCII, a wyniki testu nie będą poprawne.
 
 1. Na pasku menu wybierz kolejno opcje **test**  >  **Uruchom wszystkie testy**. Jeśli okno **Eksplorator testów** nie jest otwarte, otwórz je, wybierając **Testuj**  >  **Eksploratora testów**. Trzy testy są wymienione w sekcji **testy zakończone** , a sekcja **podsumowania** raportuje wynik przebiegu testu.
 
    > [!div class="mx-imgBorder"]
-   > ![Okno Eksploratora testów z przekazaniem testów](./media/testing-library-with-visual-studio/test-explorer-window.png)
+   > :::image type="content" source="./media/testing-library-with-visual-studio/test-explorer-window.png" alt-text="Okno Eksploratora testów z przekazaniem testów":::
 
 ## <a name="handle-test-failures"></a>Obsługa niepowodzeń testów
 
@@ -158,14 +160,14 @@ Jeśli wykonujesz programowanie sterowane testami (TDD), najpierw napiszesz test
 1. Uruchom test, wybierając pozycję **test**  >  **Uruchom wszystkie testy** z paska menu. Okno **Eksplorator testów** wskazuje, że dwa testy zostały wykonane pomyślnie i jeden z nich zakończył się niepowodzeniem.
 
    > [!div class="mx-imgBorder"]
-   > ![Okno Eksploratora testów z niepowodzeniem testami](./media/testing-library-with-visual-studio/failed-test-window.png)
+   > :::image type="content" source="./media/testing-library-with-visual-studio/failed-test-window.png" alt-text="Okno Eksploratora testów z niepowodzeniem testami":::
 
 1. Wybierz test zakończony niepowodzeniem `TestDoesNotStartWith` .
 
    W oknie **Eksplorator testów** zostanie wyświetlony komunikat utworzony przez potwierdzenie: "Assert. IsFalse nie powiodło się. Oczekiwano dla elementu "Error": false; rzeczywista: true ". Z powodu błędu nie przetestowano ciągów w tablicy po "błędzie".
 
    > [!div class="mx-imgBorder"]
-   > ![Okno Eksploratora testów przedstawiające błąd potwierdzenia IsFalse](./media/testing-library-with-visual-studio/failed-test-detail.png)
+   > :::image type="content" source="./media/testing-library-with-visual-studio/failed-test-detail.png" alt-text="Okno Eksploratora testów przedstawiające błąd potwierdzenia IsFalse":::
 
 1. Usuń ciąg "Error", który został dodany w kroku 1. Uruchom ponownie test i testy zakończone powodzeniem.
 
@@ -178,25 +180,25 @@ Aby przetestować kompilację wydania:
 1. Na pasku narzędzi programu Visual Studio Zmień konfigurację kompilacji z **Debuguj** do **Release**.
 
    > [!div class="mx-imgBorder"]
-   > ![Pasek narzędzi programu Visual Studio z wyróżnioną kompilacją wydania](./media/testing-library-with-visual-studio/visual-studio-toolbar-release.png)
+   > :::image type="content" source="./media/testing-library-with-visual-studio/visual-studio-toolbar-release.png" alt-text="Pasek narzędzi programu Visual Studio z wyróżnioną kompilacją wydania":::
 
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt **StringLibrary** i wybierz polecenie **Kompiluj** z menu kontekstowego, aby ponownie skompilować bibliotekę.
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt **StringLibrary** i wybierz polecenie **Kompiluj** z menu kontekstowego, aby ponownie skompilować bibliotekę.
 
    > [!div class="mx-imgBorder"]
-   > ![Menu kontekstowe StringLibrary z poleceniem Build](./media/testing-library-with-visual-studio/build-library-context-menu.png)
+   > :::image type="content" source="./media/testing-library-with-visual-studio/build-library-context-menu.png" alt-text="Menu kontekstowe StringLibrary z poleceniem Build":::
 
 1. Uruchom testy jednostkowe, wybierając pozycję **test Uruchom**  >  **wszystkie testy** z paska menu. Testy zostały zakończone pomyślnie.
 
 ## <a name="debug-tests"></a>Debuguj testy
 
-Jeśli używasz programu Visual Studio jako środowiska IDE, możesz użyć tego samego procesu, który został przedstawiony w [samouczku: debugowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio](debugging-with-visual-studio.md) do debugowania kodu przy użyciu projektu testów jednostkowych. Zamiast rozpoczynać projekt aplikacji *Prezentacja* , kliknij prawym przyciskiem myszy projekt **StringLibraryTests** , a następnie wybierz polecenie **Debuguj testy** z menu kontekstowego.
+Jeśli używasz programu Visual Studio jako środowiska IDE, możesz użyć tego samego procesu, który został przedstawiony w [samouczku: debugowanie aplikacji konsolowej .NET za pomocą programu Visual Studio](debugging-with-visual-studio.md) do debugowania kodu przy użyciu projektu testów jednostkowych. Zamiast rozpoczynać projekt aplikacji *Prezentacja* , kliknij prawym przyciskiem myszy projekt **StringLibraryTests** , a następnie wybierz polecenie **Debuguj testy** z menu kontekstowego.
 
 Program Visual Studio uruchamia projekt testowy z dołączonym debugerem. Wykonanie zostanie zatrzymane na dowolnym punkcie przerwania, który został dodany do projektu testowego lub kodu biblioteki źródłowej.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 
 * [Podstawowe informacje o teście jednostkowym — Visual Studio](/visualstudio/test/unit-test-basics)
-* [Testy jednostkowe w .NET Core i .NET Standard](../testing/index.md)
+* [Testy jednostkowe w programie .NET](../testing/index.md)
 
 ## <a name="next-steps"></a>Następne kroki
 
@@ -213,4 +215,4 @@ W przypadku opublikowania biblioteki jako pakietu NuGet inne osoby mogą ją zai
 Biblioteka nie musi być dystrybuowana jako pakiet. Można go powiązać z aplikacją konsolową, która go używa. Aby dowiedzieć się, jak opublikować aplikację konsolową, zobacz wcześniejszy samouczek w tej serii:
 
 > [!div class="nextstepaction"]
-> [Publikowanie aplikacji konsolowej .NET Core przy użyciu programu Visual Studio](publishing-with-visual-studio.md)
+> [Publikowanie aplikacji konsolowej .NET przy użyciu programu Visual Studio](publishing-with-visual-studio.md)

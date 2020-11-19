@@ -1,30 +1,30 @@
 ---
-title: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code
-description: Dowiedz się, jak utworzyć aplikację konsolową .NET Core przy użyciu Visual Studio Code i interfejs wiersza polecenia platformy .NET Core.
-ms.date: 05/22/2020
-ms.openlocfilehash: e936c23d8525e42a9d2781cc680067c9da2ce42f
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+title: Tworzenie aplikacji konsolowej .NET przy użyciu Visual Studio Code
+description: Dowiedz się, jak utworzyć aplikację konsolową .NET przy użyciu Visual Studio Code i interfejsu wiersza polecenia platformy .NET.
+ms.date: 11/17/2020
+ms.openlocfilehash: dbbdf88b0c84089249eb7e446c25eddc11543c1a
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811929"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915872"
 ---
-# <a name="tutorial-create-a-net-core-console-application-using-visual-studio-code"></a>Samouczek: Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code
+# <a name="tutorial-create-a-net-console-application-using-visual-studio-code"></a>Samouczek: Tworzenie aplikacji konsolowej .NET przy użyciu Visual Studio Code
 
-W tym samouczku pokazano, jak utworzyć i uruchomić aplikację konsolową .NET Core przy użyciu Visual Studio Code i interfejs wiersza polecenia platformy .NET Core. Zadania projektu, takie jak tworzenie, kompilowanie i uruchamianie projektu, są wykonywane przy użyciu interfejs wiersza polecenia platformy .NET Core. Możesz wykonać czynności opisane w tym samouczku z innym edytorem kodu i uruchamiać polecenia w terminalu, jeśli wolisz.
+W tym samouczku pokazano, jak utworzyć i uruchomić aplikację konsolową .NET przy użyciu Visual Studio Code i interfejsu wiersza polecenia platformy .NET. Zadania projektu, takie jak tworzenie, kompilowanie i uruchamianie projektu, są wykonywane przy użyciu interfejsu wiersza polecenia platformy .NET. Możesz wykonać czynności opisane w tym samouczku z innym edytorem kodu i uruchamiać polecenia w terminalu, jeśli wolisz.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 1. [Visual Studio Code](https://code.visualstudio.com/) z zainstalowanym [rozszerzeniem języka C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) . Aby uzyskać informacje na temat sposobu instalowania rozszerzeń na Visual Studio Code, zobacz [vs Code rozszerzenia Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery).
-2. [Zestaw SDK platformy .NET Core 3,1 lub nowszy](https://dotnet.microsoft.com/download)
+2. [Zestaw .net 5,0 SDK lub nowszy](https://dotnet.microsoft.com/download)
 
 ## <a name="create-the-app"></a>Tworzenie aplikacji
 
-Utwórz projekt aplikacji konsolowej .NET Core o nazwie "HelloWorld".
+Utwórz projekt aplikacji konsolowej platformy .NET o nazwie "HelloWorld".
 
 1. Uruchom program Visual Studio Code.
 
-1. Wybierz pozycję **plik**  >  **Otwórz folder** (Otwórz**plik**  >  **...** na macOS) z menu głównego.
+1. Wybierz pozycję **plik**  >  **Otwórz folder** (Otwórz **plik**  >  **...** na macOS) z menu głównego.
 
 1. W oknie dialogowym **Otwieranie folderu** Utwórz folder *HelloWorld* i kliknij pozycję **Wybierz folder** (**Otwórz** w macOS).
 
@@ -34,7 +34,7 @@ Utwórz projekt aplikacji konsolowej .NET Core o nazwie "HelloWorld".
 
    Zostanie otwarty **Terminal** z wierszem polecenia w folderze *HelloWorld* .
 
-1. W **terminalu**wprowadź następujące polecenie:
+1. W **terminalu** wprowadź następujące polecenie:
 
    ```dotnetcli
    dotnet new console
@@ -77,7 +77,7 @@ Program wyświetla "Hello world!" i zakończenia.
 
 Podnieś poziom aplikacji, aby monitować użytkownika o jego nazwę i wyświetlić go wraz z datą i godziną.
 
-1. Otwórz *program.cs* , klikając go.
+1. Otwórz plik *Program.cs*, klikając go.
 
    Przy pierwszym otwarciu pliku C# w Visual Studio Code [OmniSharp](https://www.omnisharp.net/) ładuje się w edytorze.
 
@@ -110,9 +110,9 @@ Podnieś poziom aplikacji, aby monitować użytkownika o jego nazwę i wyświetl
 
 1. Odpowiedz na monit, wprowadzając nazwę i naciskając klawisz <kbd>Enter</kbd> .
 
-   :::image type="content" source="media/debugging-with-visual-studio-code/run-modified-program.png" alt-text="Okno terminalu ze zmodyfikowanym wyjściem programu":::
+   :::image type="content" source="media/debugging-with-visual-studio-code/run-modified-program.png" alt-text="Okno terminalu ze zmodyfikowanymi danymi wyjściowymi programu":::
 
-1. Naciśnij dowolny klawisz, aby wyjść z programu.
+1. Naciśnij dowolny klawisz, aby zakończyć program.
 
 ## <a name="additional-resources"></a>Zasoby dodatkowe
 
@@ -120,7 +120,7 @@ Podnieś poziom aplikacji, aby monitować użytkownika o jego nazwę i wyświetl
 
 ## <a name="next-steps"></a>Następne kroki
 
-W tym samouczku utworzono aplikację konsolową .NET Core. W następnym samouczku debugujesz aplikację.
+W tym samouczku utworzono aplikację konsolową .NET. W następnym samouczku debugujesz aplikację.
 
 > [!div class="nextstepaction"]
-> [Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code](debugging-with-visual-studio-code.md)
+> [Debugowanie aplikacji konsolowej .NET przy użyciu Visual Studio Code](debugging-with-visual-studio-code.md)

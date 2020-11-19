@@ -8,25 +8,23 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 3508f08857f88fd34478f968a71bae0121d54d1c
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: f5c67392705156d6ff05e6f140c7187f41b1d033
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89134513"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915833"
 ---
 # <a name="is-c-reference"></a>is (odwołanie w C#)
 
-`is`Operator sprawdza, czy wynik wyrażenia jest zgodny z danym typem, lub (począwszy od języka C# 7,0) testuje wyrażenie względem wzorca. Aby uzyskać informacje o operatorze testowania typu, `is` Zobacz sekcję [operator is](../operators/type-testing-and-cast.md#is-operator) w artykule operatorion [-Test and Cast](../operators/type-testing-and-cast.md) .
+`is`Operator sprawdza, czy wynik wyrażenia jest zgodny z danym typem, lub (począwszy od języka C# 7,0) testuje wyrażenie względem wzorca. Aby uzyskać informacje na temat operatora testowania typu `is` , zobacz sekcję [is operatora](../operators/type-testing-and-cast.md#is-operator) w artykule operatorion [-Test and Cast](../operators/type-testing-and-cast.md) .
 
 ## <a name="pattern-matching-with-is"></a>Dopasowanie wzorca z `is`
 
 Począwszy od języka C# 7,0 `is` instrukcje i [przełącznik](switch.md) obsługują Dopasowywanie wzorców. `is`Słowo kluczowe obsługuje następujące wzorce:
 
-- [Wzorzec typu](#type-pattern), który sprawdza, czy wyrażenie może być konwertowane do określonego typu i, jeśli może, przerzutuje go do zmiennej tego typu.
-
+- [Wzorzec typu](#type-pattern), który sprawdza, czy wyrażenie może być konwertowane na określony typ i, jeśli to możliwe, rzutuje zmienną do zmiennej tego typu.
 - [Wzorzec stałej](#constant-pattern), który sprawdza, czy wyrażenie daje w wyniku określoną wartość stałą.
-
 - [wzorzec var](#var-pattern), dopasowanie, które zawsze powiedzie się i wiąże wartość wyrażenia z nową zmienną lokalną.
 
 ### <a name="type-pattern"></a>Wzorzec typu
@@ -39,19 +37,16 @@ W przypadku używania wzorca typu do dopasowania do wzorca, `is` sprawdza, czy w
 
 Gdzie *Expr* jest wyrażeniem, którego wynikiem jest wystąpienie pewnego typu, *Type* jest nazwą typu, do którego zostanie przekonwertowany wynik *wyrażenia* , a *nazwa_zmiennej* jest obiektem, do którego wynik *wyrażenia* jest konwertowany, jeśli `is` test jest `true` .
 
-`is`Wyrażenie jest `true` Jeśli *wyrażenie* jest nieobsługiwane `null` , a którykolwiek z następujących warunków jest spełniony:
+`is`Wyrażenie jest `true` , jeśli *wyrażenie* nie jest `null` , i spełniony jest dowolny z następujących warunków:
 
 - *wyrażenie* jest wystąpieniem tego samego typu co *Typ*.
-
 - *wyrażenie* jest wystąpieniem typu, który pochodzi od *typu*. Innymi słowy, wynik *wyrażenia* może być rzutowany na wystąpienie *typu*.
-
 - *wyrażenie* ma typ czasu kompilacji, który jest klasą bazową *typu*, a *wyrażenie* ma typ środowiska uruchomieniowego, który jest *typem* lub pochodzi od *typu*. *Typ czasu kompilacji* zmiennej to typ zmiennej, zgodnie z definicją w swojej deklaracji. *Typ środowiska uruchomieniowego* zmiennej to typ wystąpienia, które jest przypisane do tej zmiennej.
-
 - *wyrażenie* jest wystąpieniem typu, który implementuje interfejs *typu* .
 
 Począwszy od języka C# 7,1, *wyrażenie* może mieć typ czasu kompilacji zdefiniowany przez parametr typu ogólnego i jego ograniczenia.
 
-Jeśli *wyrażenie* jest `true` i `is` jest używane z `if` instrukcją, *nazwa_zmiennej* jest przypisywana `if` tylko wewnątrz instrukcji. Zakres elementu *nazwa_zmiennej* pochodzi z `is` wyrażenia na końcu bloku otaczającego `if` instrukcję. Użycie elementu *nazwa_zmiennej* w dowolnej innej lokalizacji generuje błąd czasu kompilacji do użycia zmiennej, która nie została przypisana.
+Jeśli *wyrażenie* jest `true` i `is` jest używane z `if` instrukcją, *nazwa_zmiennej* jest przypisywana `if` tylko wewnątrz instrukcji. Zakres elementu *nazwa_zmiennej* pochodzi z `is` wyrażenia na końcu bloku otaczającego `if` instrukcję. Użycie elementu *nazwa_zmiennej* w innej lokalizacji powoduje wygenerowanie błędu czasu kompilacji w celu użycia zmiennej, która nie została przypisana.
 
 Poniższy przykład używa `is` wzorca typu, aby zapewnić implementację <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> metody typu.
 
@@ -105,6 +100,8 @@ W poniższym przykładzie przedstawiono porównanie `null` kontroli:
 
 [!code-csharp[is#11](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern11.cs#11)]
 
+Wyrażenie `x is null` jest obliczane inaczej dla typów referencyjnych i wartości null. W przypadku typów wartości null, używa <xref:System.Nullable%601.HasValue?displayProperty=nameWithType> . W przypadku typów referencyjnych używa `x == null` .
+
 ### <a name="var-pattern"></a>wzorzec wariancji
 
 Dopasowanie wzorca do `var` wzorca zawsze powiedzie się. Jego składnia to:
@@ -113,7 +110,7 @@ Dopasowanie wzorca do `var` wzorca zawsze powiedzie się. Jego składnia to:
    expr is var varname
 ```
 
-Gdzie wartość *wyrażenia* jest zawsze przypisana do zmiennej lokalnej o nazwie *nazwa_zmiennej*. *nazwa_zmiennej* jest zmienną tego samego typu co typ *wyrażenia*w czasie kompilacji.
+Gdzie wartość *wyrażenia* jest zawsze przypisana do zmiennej lokalnej o nazwie *nazwa_zmiennej*. *nazwa_zmiennej* jest zmienną tego samego typu co typ *wyrażenia* w czasie kompilacji.
 
 Jeśli *wyrażenie* zwróci wartość `null` , `is` wyrażenie generuje `true` i przypisuje `null` do wartości *nazwa_zmiennej*. Wzorzec var jest jednym z kilku zastosowania `is` , które tworzy `true` dla `null` wartości.
 
@@ -127,10 +124,10 @@ W poprzednim przykładzie zmienna tymczasowa jest używana do przechowywania wyn
   
 Aby uzyskać więcej informacji, zobacz sekcję [operator is](~/_csharplang/spec/expressions.md#the-is-operator) w [specyfikacji języka c#](~/_csharplang/spec/introduction.md) oraz następujące propozycje dotyczące języka c#:
 
-- [Dopasowanie do wzorca](~/_csharplang/proposals/csharp-7.0/pattern-matching.md)
+- [Dopasowanie wzorca](~/_csharplang/proposals/csharp-7.0/pattern-matching.md)
 - [Dopasowywanie wzorca do typów ogólnych](~/_csharplang/proposals/csharp-7.1/generics-pattern-match.md)
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Słowa kluczowe języka C#](index.md)

@@ -1,16 +1,16 @@
 ---
 title: Co nowego w wersji .NET 5
 description: Dowiedz się więcej na temat platformy .NET 5 — platformy deweloperskiej obejmującej wiele platform i typu "open source", która jest kolejną ewolucją platformy .NET Core.
-ms.date: 11/16/2020
+ms.date: 11/18/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 04f72675744426f7dbc99e5978a9ea4bbb8015b1
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 077fb06db40519af2bf8ac2f659488acdf525aec
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687595"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916221"
 ---
 # <a name="whats-new-in-net-5"></a>Co nowego w wersji .NET 5
 
@@ -46,11 +46,23 @@ Program .NET 5,0 zawiera następujące ulepszenia i nowe funkcje w porównaniu z
 
 Nie ma żadnych planów dotyczących portów z .NET Framework do .NET 5,0, ale istnieją alternatywy w programie .NET 5,0:
 
-| Technologia                             | Zalecana alternatywa                                                                         |
-|----------------------------------------|-------------------------------------------------------------------------------------------------|
-| Formularze sieci Web                              | ASP.NET Core [Blazor](/aspnet/core/blazor) lub [Razor Pages](/aspnet/core/tutorials/razor-pages) |
-| Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                                                       |
-| Windows Workflow (WF)                  | [CoreWF "open source"](https://github.com/UiPath-Open/corewf)                                     |
+| Technologia            | Zalecana alternatywa                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------|
+| Formularze sieci Web             | ASP.NET Core [Blazor](/aspnet/core/blazor) lub [Razor Pages](/aspnet/core/tutorials/razor-pages) |
+| Windows Workflow (WF) | [CoreWF "open source"](https://github.com/UiPath-Open/corewf)                                     |
+
+### <a name="windows-communication-foundation"></a>Windows Communication Foundation
+
+Oryginalna implementacja [Windows Communication Foundation (WCF)](../framework/wcf/index.md) była jednak obsługiwana tylko w systemie Windows. istnieje port klienta dostępny w programie .NET Foundation. Jest to całkowicie [Open Source](https://github.com/dotnet/wcf), cross platform i obsługiwane przez firmę Microsoft. Poniżej wymieniono podstawowe pakiety NuGet:
+
+- [System. ServiceModel. Duplex](https://www.nuget.org/packages/System.ServiceModel.Duplex)
+- [System. ServiceModel. Federation](https://www.nuget.org/packages/System.ServiceModel.Federation)
+- [System. ServiceModel. http](https://www.nuget.org/packages/System.ServiceModel.Http)
+- [System. ServiceModel. NetTcp](https://www.nuget.org/packages/System.ServiceModel.NetTcp)
+- [System. ServiceModel. Prymityws](https://www.nuget.org/packages/System.ServiceModel.Primitives)
+- [System. ServiceModel. Security](https://www.nuget.org/packages/System.ServiceModel.Security)
+
+W społeczności są przechowywane składniki serwera, które uzupełniają powyższe biblioteki klienta. Repozytorium GitHub można znaleźć pod adresem [CoreWCF](https://github.com/CoreWCF/CoreWCF). Składniki serwera _nie_ są oficjalnie obsługiwane przez firmę Microsoft. Aby zapoznać się z alternatywą dla WCF, należy rozważyć [gRPC](/aspnet/core/grpc).
 
 ## <a name="net-50-doesnt-replace-net-standard"></a>.NET 5,0 nie zastępuje .NET Standard
 

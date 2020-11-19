@@ -1,21 +1,21 @@
 ---
-title: Debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
-description: Dowiedz się, jak debugować aplikację konsolową .NET Core przy użyciu Visual Studio Code.
+title: Debugowanie aplikacji konsolowej .NET przy użyciu Visual Studio Code
+description: Dowiedz się, jak debugować aplikację konsolową .NET przy użyciu Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 8e84747256551b633a5bf74b72723ba8d2840d52
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 85095a9e70ee3ff846716ef91239b240d8c42410
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118302"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916232"
 ---
-# <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Samouczek: debugowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code
+# <a name="tutorial-debug-a-net-console-application-using-visual-studio-code"></a>Samouczek: debugowanie aplikacji konsolowej .NET przy użyciu Visual Studio Code
 
-W tym samouczku przedstawiono narzędzia debugowania dostępne w Visual Studio Code do pracy z aplikacjami .NET Core.
+W tym samouczku przedstawiono narzędzia debugowania dostępne w Visual Studio Code do pracy z aplikacjami .NET.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code](with-visual-studio-code.md).
+- Ten samouczek współpracuje z aplikacją konsolową utworzoną w temacie [Tworzenie aplikacji konsolowej platformy .NET przy użyciu Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="use-debug-build-configuration"></a>Użyj konfiguracji kompilacji debugowania
 
@@ -27,7 +27,7 @@ Domyślnie ustawienia uruchamiania Visual Studio Code używają konfiguracji kom
 
 1. Uruchom program Visual Studio Code.
 
-1. Otwórz folder projektu, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET Core przy użyciu Visual Studio Code](with-visual-studio-code.md).
+1. Otwórz folder projektu, który został utworzony w temacie [Tworzenie aplikacji konsolowej platformy .NET przy użyciu Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="set-a-breakpoint"></a>Ustawianie punktu przerwania
 
@@ -43,9 +43,9 @@ Domyślnie ustawienia uruchamiania Visual Studio Code używają konfiguracji kom
 
 ## <a name="set-up-for-terminal-input"></a>Konfiguracja dla danych wejściowych terminalu
 
-Punkt przerwania znajduje się po `Console.ReadLine` wywołaniu metody. **Konsola debugowania** nie akceptuje danych wejściowych terminalu dla uruchomionego programu. Aby obsłużyć dane wejściowe terminalu podczas debugowania, można użyć zintegrowanego terminalu (jednego z Visual Studio Code systemu Windows) lub terminalu zewnętrznego. W tym samouczku użyjesz zintegrowanego terminalu.
+Punkt przerwania znajduje się po `Console.ReadLine` wywołaniu metody. **Konsola debugowania** nie akceptuje danych wejściowych terminalu dla uruchomionego programu. Aby obsługiwać dane wejściowe terminalu podczas debugowania, można użyć terminalu zintegrowanego (jednego z okien programu Visual Studio Code) lub terminalu zewnętrznego. W tym samouczku użyjesz zintegrowanego terminalu.
 
-1. Otwórz *. programu vscode/launch.jsw systemie*.
+1. Otwórz plik *.vscode/launch.json*.
 
 1. Zmień `console` ustawienie na `integratedTerminal` .
 
@@ -167,13 +167,13 @@ Visual Studio Code umożliwia również krok po kroku w wierszu przez program i 
 
 1. Wybierz pozycję **Uruchom**  >  **krok do** lub naciśnij klawisz <kbd>F11</kbd>.
 
-   :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="Przycisk krok po kroku":::
+   :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="Przycisk &quot;krok po kroku&quot;":::
 
    Visual Studio Code podświetla następny wiersz.
 
 1. Wybierz pozycję **Uruchom**  >  **krok do** lub naciśnij klawisz <kbd>F11</kbd>.
 
-   Visual Studio Code wykonuje `Console.WriteLine` monit o podanie nazwy i wyróżnia następny wiersz wykonania. Następnym wierszem jest `Console.ReadLine` `name` . Okno **zmiennych** jest niezmienione, a na karcie **terminala** zostanie wyświetlona wartość "co to jest Twoja nazwa?" .
+   Visual Studio Code wykonuje `Console.WriteLine` monit o podanie nazwy i wyróżnia następny wiersz wykonania. Następnym wierszem jest `Console.ReadLine` `name` . Okno **zmiennych** jest niezmienione, a na karcie **terminala** zostanie wyświetlona wartość "co to jest Twoja nazwa?" pytać.
 
 1. Wybierz pozycję **Uruchom**  >  **krok do** lub naciśnij klawisz <kbd>F11</kbd>.
 
@@ -203,7 +203,7 @@ Visual Studio Code umożliwia również krok po kroku w wierszu przez program i 
 
    W terminalu zostanie wyświetlony komunikat "naciśnij dowolny klawisz, aby wyjść..."
 
-1. Naciśnij dowolny klawisz, aby wyjść z programu.
+1. Naciśnij dowolny klawisz, aby zakończyć program.
 
 ## <a name="use-release-build-configuration"></a>Użyj konfiguracji kompilacji wydania
 
@@ -215,7 +215,7 @@ Aby skompilować i przetestować wydaną wersję aplikacji konsolowej, Otwórz *
 dotnet run --configuration Release
 ```
 
-## <a name="additional-resources"></a>Dodatkowe zasoby
+## <a name="additional-resources"></a>Zasoby dodatkowe
 
 * [Debugowanie w Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 
@@ -224,4 +224,4 @@ dotnet run --configuration Release
 W tym samouczku użyto narzędzi debugowania Visual Studio Code. W następnym samouczku zostanie opublikowana wersja aplikacji, którą można wdrożyć.
 
 > [!div class="nextstepaction"]
-> [Publikowanie aplikacji konsolowej .NET Core przy użyciu Visual Studio Code](publishing-with-visual-studio-code.md)
+> [Publikowanie aplikacji konsolowej .NET przy użyciu Visual Studio Code](publishing-with-visual-studio-code.md)
