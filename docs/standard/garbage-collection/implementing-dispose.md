@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: c9b13b2aa77449809f149ea26681d75fea629b61
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ec731ff4c1020100c2b7ff5041d42291141a5209
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827792"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982410"
 ---
 # <a name="implement-a-dispose-method"></a>Implementacja metody Dispose
 
@@ -78,7 +78,7 @@ Treść metody składa się z dwóch bloków kodu:
 
   - **Zarządzane obiekty, które zużywają duże ilości pamięci lub zużywają niewystarczające zasoby.** Przypisz do nich duże odwołania do obiektów zarządzanych, aby `null` zwiększyć ich dostępność. Te wersje są szybsze niż w przypadku, gdy były odzyskiwane w sposób Niedeterministyczny i zwykle są wykonywane poza blokiem warunkowym.
 
-Jeśli wywołanie metody pochodzi od finalizatora, należy wykonać tylko kod, który zwolni niezarządzane zasoby. Realizator jest odpowiedzialny za zapewnienie, że ścieżka fałszywa nie współdziała z zarządzanymi obiektami, które mogły zostać ododzyskiwane. Jest to ważne, ponieważ kolejność, w której moduł zbierający elementy bezużyteczne niszczy obiekty zarządzane podczas finalizowania, nie jest deterministyczna.
+Jeśli wywołanie metody pochodzi od finalizatora, należy wykonać tylko kod, który zwolni niezarządzane zasoby. Realizator jest odpowiedzialny za zapewnienie, że fałszywa ścieżka nie współdziała z zarządzanymi obiektami, które mogły zostać ododzyskiwane. Jest to ważne, ponieważ kolejność, w której moduł zbierający elementy bezużyteczne niszczy obiekty zarządzane podczas finalizowania, nie jest deterministyczna.
 
 ## <a name="cascade-dispose-calls"></a>Kaskadowe wywołania Dispose
 

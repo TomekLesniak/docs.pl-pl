@@ -3,12 +3,12 @@ title: Omówienie narzędzi diagnostycznych — .NET Core
 description: Przegląd narzędzi i technik dostępnych do diagnozowania aplikacji .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: d78b73e53637927ecb877dd69054f75a1f5ac91f
-ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
+ms.openlocfilehash: 3274b72363a3df1dbe1bb29492eedcb134a4f9f2
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91438000"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982312"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Jakie narzędzia diagnostyczne są dostępne w środowisku .NET Core?
 
@@ -62,6 +62,10 @@ polecenie [dotnet-symbol](dotnet-symbol.md) umożliwia pobieranie plików (symbo
 
 [dotnet-sos](dotnet-sos.md) służy do instalowania [rozszerzenia debugowania SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) w systemie Linux lub MacOS (lub w systemie Windows, jeśli są używane starsze narzędzia debugowania).
 
+### <a name="perfcollect"></a>PerfCollect
+
+[PerfCollect](trace-perfcollect-lttng.md) to skrypt bash, którego można użyć do zbierania śladów z `perf` i `LTTng` bardziej szczegółowej analizy wydajności aplikacji .NET działających w ramach dystrybucji systemu Linux.
+
 ## <a name="net-core-diagnostics-tutorials"></a>Samouczki dotyczące diagnostyki platformy .NET Core
 
 ### <a name="debug-a-memory-leak"></a>Debugowanie przecieku pamięci
@@ -75,3 +79,7 @@ polecenie [dotnet-symbol](dotnet-symbol.md) umożliwia pobieranie plików (symbo
 ### <a name="debug-deadlock"></a>Debugowanie zakleszczenia
 
 [Samouczek: zakleszczenie debugowania](debug-deadlock.md) pokazuje, w jaki sposób używać narzędzia [dotnet-dump](dotnet-dump.md) do badania wątków i blokad.
+
+### <a name="measure-performance-using-eventcounters"></a>Mierzenie wydajności przy użyciu EventCounters
+
+[Samouczek: pomiar wydajności za pomocą EventCounters w programie .NET](event-counter-perf.md) pokazuje, jak używać <xref:System.Diagnostics.Tracing.EventCounter> interfejsu API do mierzenia wydajności aplikacji .NET.

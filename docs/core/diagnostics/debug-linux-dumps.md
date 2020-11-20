@@ -1,15 +1,15 @@
 ---
-title: Debuguj zrzuty systemu Linux
+title: Debugowanie zrzutów systemu Linux
 description: W tym artykule dowiesz się, jak zbierać i analizować zrzuty ze środowisk systemu Linux.
 ms.date: 08/27/2020
-ms.openlocfilehash: d62295e165f56e32ef73ab628ca9ebd77a4435d1
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 692d6228fae31de015412c23c4ec5317024faaab
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598356"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982265"
 ---
-# <a name="debug-linux-dumps"></a>Debuguj zrzuty systemu Linux
+# <a name="debug-linux-dumps"></a>Debugowanie zrzutów systemu Linux
 
 **Ten artykuł ma zastosowanie do: ✔️** .net Core 3,0 SDK i nowszych wersjach
 
@@ -25,7 +25,7 @@ Dwa zalecane sposoby zbierania zrzutów w systemie Linux to [`dotnet-dump`](dotn
 
 Alternatywnym rozwiązaniem `dotnet-dump` jest utworzenie zrzutów, które [`createdump`](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) są przeznaczone tylko do zarządzania, jest zalecanym narzędziem do tworzenia podstawowych zrzutów w systemie Linux zawierających zarówno dane natywne, jak i zarządzane. Można również użyć innych narzędzi, takich jak GDB lub gcore, w celu utworzenia zrzutów podstawowych, ale może brakować stanu wymaganego do debugowania zarządzanego, co powoduje "Nieznane" nazwy typu lub funkcji podczas analizy.
 
-`createdump`Narzędzia są instalowane przy użyciu środowiska uruchomieniowego .NET Core i można je znaleźć obok libcoreclr.so (zazwyczaj w "/usr/share/dotnet/Shared/Microsoft.NETCore.App/[wersja]"). Narzędzie Pobiera identyfikator procesu w celu zebrania zrzutu z jako argumentu podstawowego i może również przyjmować parametry opcjonalne określające rodzaj zrzutu do zebrania (wartość domyślna to minizrzutu z stertą). Dostępne są następujące opcje:
+`createdump`Narzędzia są instalowane przy użyciu środowiska uruchomieniowego .NET Core i można je znaleźć obok libcoreclr.so (zazwyczaj w "/usr/share/dotnet/Shared/Microsoft.NETCore.App/[wersja]"). Narzędzie Pobiera identyfikator procesu w celu zebrania zrzutu z jako argumentu podstawowego i może również przyjmować parametry opcjonalne określające rodzaj zrzutu do zebrania (wartość domyślna to minizrzutu z stertą). Dostępne opcje:
 
 - **`<input-filename>`**
 
@@ -81,7 +81,7 @@ W powyższym wierszu polecenia `<dump-file>` jest ścieżką do analizy zrzutu i
 
 Po rozpoczęciu LLDB może być konieczne użycie polecenia, `setsymbolserver` Aby wskazać prawidłową lokalizację symboli ( `setsymbolserver -ms` do użycia serwera symboli firmy Microsoft lub `setsymbolserver -directory <path>` określić ścieżkę lokalną). Symbole natywne mogą być ładowane przez uruchomienie `loadsymbols` . W tym momencie [polecenia sos](https://github.com/dotnet/diagnostics/blob/master/documentation/sos-debugging-extension.md) mogą służyć do analizowania zrzutu.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [dotnet-sos](dotnet-sos.md) , aby uzyskać więcej informacji na temat instalowania rozszerzenia sos.
 - Program [dotnet — symbol](dotnet-symbol.md) , aby uzyskać więcej informacji na temat instalowania i używania narzędzia do pobierania symboli.

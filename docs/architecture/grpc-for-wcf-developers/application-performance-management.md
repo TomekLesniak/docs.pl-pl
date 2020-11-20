@@ -2,12 +2,12 @@
 title: Zarządzanie wydajnością aplikacji — gRPC dla deweloperów WCF
 description: Rejestrowanie, metryki i śledzenie dla ASP.NET Core aplikacji gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: bccb5ba92e2dc8fa2def4dc192b0ca58b332861a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 8a13d1c4df95768e55c90ac491150bfc78ec2bab
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91165913"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982345"
 ---
 # <a name="application-performance-management"></a>Zarządzanie wydajnością aplikacji
 
@@ -108,11 +108,11 @@ Obecne rozwiązanie do wizualizacji danych metryk to [Grafana](https://grafana.c
 
 Liczbowy charakter danych metryk oznacza, że jest to idealne rozwiązanie w przypadku systemów ostrzegających o alertach, które są przeznaczone dla deweloperów lub inżynierów pomocy technicznej, gdy wartość wykracza poza pewną określoną tolerancję. Już wspomniane platformy zapewniają obsługę alertów za pośrednictwem różnych opcji, w tym wiadomości e-mail, wiadomości SMS lub wizualizacji w pulpicie nawigacyjnym.
 
-## <a name="distributed-tracing"></a>Śledzenie rozproszone
+## <a name="distributed-tracing"></a>Rozproszone śledzenie
 
 Śledzenie rozproszone to stosunkowo niedawne programowanie w zakresie monitorowania, które powstało na podstawie zwiększenia użycia mikrousług i rozproszonych architektur. Pojedyncze żądanie z przeglądarki klienta, aplikacji lub urządzenia można podzielić na wiele kroków i żądań podrzędnych oraz korzystać z wielu usług w sieci. Utrudnia to skorelowanie komunikatów dziennika i metryk z konkretnym żądaniem, które je wywołało. Śledzenie rozproszone stosuje identyfikatory do żądań i umożliwia skorelowanie dzienników i metryk z określoną operacją. Jest to podobne do [kompleksowego śledzenia usługi WCF](../../framework/wcf/diagnostics/tracing/end-to-end-tracing.md), ale jest ono stosowane na wielu platformach.
 
-Śledzenie rozproszone jest szybko uprawiane w popularności i zaczyna się od normalizacji. Natywna platforma obliczeniowa w chmurze stworzyła [model śledzenia Open](https://opentracing.io), próbując udostępnić niezależnym od dostawcy biblioteki do pracy z zapleczem, np. [Jaeger](https://www.jaegertracing.io/) i [elastyczny system APM](https://www.elastic.co/products/apm). W tym samym czasie, firma Google utworzyła [projekt OpenCensus](https://opencensus.io/) w celu rozwiązania tego samego zestawu problemów. Te dwa projekty są scalane do nowego projektu, [OpenTelemetry](https://opentelemetry.io), który ma być standardem branżowym w przyszłości.
+Śledzenie rozproszone jest szybko uprawiane w popularności i zaczyna się od normalizacji. Natywna platforma obliczeniowa w chmurze stworzyła [Standard śledzenia](https://opentracing.io), próbując udostępnić nieneutralne dla dostawcy biblioteki do pracy z zapleczem, np. [Jaeger](https://www.jaegertracing.io/) i [elastyczny system APM](https://www.elastic.co/products/apm). W tym samym czasie, firma Google utworzyła [projekt OpenCensus](https://opencensus.io/) w celu rozwiązania tego samego zestawu problemów. Te dwa projekty są scalane do nowego projektu, [OpenTelemetry](https://opentelemetry.io), który ma być standardem branżowym w przyszłości.
 
 ### <a name="how-distributed-tracing-works"></a>Jak działa śledzenie rozproszone
 

@@ -5,12 +5,12 @@ ms.date: 10/07/2020
 ms.topic: overview
 ms.author: tdykstra
 author: tdykstra
-ms.openlocfilehash: 45286e18c41da7eb6717729360077b64539c3db5
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: 896b88cbf1f7f31d2d26d69ec7d219da6b27ceff
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877730"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982294"
 ---
 # <a name="releases-and-support-for-net-core-and-net-5"></a>Wersje i pomoc techniczna dla platformy .NET Core i .NET 5
 
@@ -20,7 +20,7 @@ Firma Microsoft dostarcza główne wersje, drobne wersje i aktualizacje obsługi
 
 Informacje o typie każdej wersji są zakodowane w numerze wersji w postaci *główna. pomocnicza. poprawka*.
 
-Na przykład:
+Przykład:
 
 * .NET Core 3,0 i NET 5,0 są wersjami głównymi.
 * .NET Core 3,1 to pierwsza wersja pomocnicza po wersji głównej programu .NET Core 3,0.
@@ -42,7 +42,7 @@ Obsługa aktualizacji (poprawek) jest wysyłana niemal co miesiąc, a te aktuali
 
 Obsługa wersji zestawu .NET SDK działa nieco inaczej niż środowisko uruchomieniowe platformy .NET. Aby można było wyrównać nowe wersje programu Visual Studio, aktualizacje zestawu SDK platformy .NET czasami obejmują nowe funkcje lub nowe wersje składników, takich jak MSBuild i NuGet. Te nowe funkcje lub składniki mogą być niezgodne z wersjami dostarczanymi w poprzednich aktualizacjach zestawu SDK dla tej samej wersji głównej lub pomocniczej.
 
-Aby odróżnić te aktualizacje, zestaw SDK platformy .NET używa koncepcji grup funkcji. Na przykład pierwszy zestaw SDK programu .NET Core 3,1 został 3.1.100. Ta wersja odnosi się do  *grupy funkcji*3.1.1 XX. Paski funkcji są zdefiniowane w grupach setek w trzeciej sekcji numeru wersji. Na przykład 3.1.101 i 3.1.201 są wersjami w dwóch różnych funkcjach, a 3.1.101 i 3.1.199 znajdują się w tej samej funkcji. Gdy zestaw .NET Core SDK 3.1.101 jest zainstalowana, zestaw .NET Core SDK 3.1.100 jest usuwana z komputera, jeśli istnieje. Gdy zestaw .NET Core SDK 3.1.200 jest zainstalowana na tym samym komputerze, zestaw .NET Core SDK 3.1.101 nie zostanie usunięta.
+Aby odróżnić te aktualizacje, zestaw SDK platformy .NET używa koncepcji grup funkcji. Na przykład pierwszy zestaw SDK programu .NET Core 3,1 został 3.1.100. Ta wersja odnosi się do  *grupy funkcji* 3.1.1 XX. Paski funkcji są zdefiniowane w grupach setek w trzeciej sekcji numeru wersji. Na przykład 3.1.101 i 3.1.201 są wersjami w dwóch różnych funkcjach, a 3.1.101 i 3.1.199 znajdują się w tej samej funkcji. Gdy zestaw .NET Core SDK 3.1.101 jest zainstalowana, zestaw .NET Core SDK 3.1.100 jest usuwana z komputera, jeśli istnieje. Gdy zestaw .NET Core SDK 3.1.200 jest zainstalowana na tym samym komputerze, zestaw .NET Core SDK 3.1.101 nie zostanie usunięta.
 
 ### <a name="runtime-roll-forward-and-compatibility"></a>Przekazanie do przodu i zgodność środowiska uruchomieniowego
 
@@ -121,6 +121,6 @@ Musisz mieć obsługiwany poziom obsługi (najnowsza dostępna aktualizacja obs�
 
 Aby uzyskać pomoc techniczną, zobacz [stronę społeczności](https://dotnet.microsoft.com/platform/community).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 Aby uzyskać więcej informacji, w tym obsługiwane zakresy dat dla każdej wersji platformy .NET Core i programu .NET 5, zobacz [zasady pomocy technicznej](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).

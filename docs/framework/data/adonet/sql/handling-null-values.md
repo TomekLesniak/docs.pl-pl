@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: 2ed2a88b91f06bb02c72d3e310ae09d58637205f
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 2dda65f605ea9de616f01d6e52eb4e0e5def4db7
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91197472"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982521"
 ---
 # <a name="handling-null-values"></a>Obsługa wartości Null
 
@@ -20,7 +20,7 @@ Wartość null w relacyjnej bazie danych jest używana, gdy wartość w kolumnie
 > [!NOTE]
 > W .NET Framework w wersji 2,0 wprowadzono obsługę typów wartości dopuszczających wartość null, dzięki czemu programiści mogą rozwijać typ wartości reprezentujący wszystkie wartości typu podstawowego. Te typy wartości null CLR reprezentują wystąpienie <xref:System.Nullable> struktury. Ta funkcja jest szczególnie przydatna, gdy typy wartości są opakowane i rozpakowane, zapewniając zwiększoną zgodność z typami obiektów. Typy wartości null CLR nie są przeznaczone do przechowywania wartości null bazy danych, ponieważ wartość null w formacie ANSI nie zachowuje się tak samo jak `null` w przypadku odwołania (lub `Nothing` w Visual Basic). W przypadku pracy z bazami danych ANSI SQL o wartości null Użyj <xref:System.Data.SqlTypes> wartości null zamiast <xref:System.Nullable> . Aby uzyskać więcej informacji na temat pracy z typami CLR wartości null w Visual Basic zobacz [dopuszczanie typów wartości null](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md), a dla języka C# zobacz [dopuszczanie typów wartości](../../../../csharp/language-reference/builtin-types/nullable-value-types.md).  
   
-## <a name="nulls-and-three-valued-logic"></a>Wartości null i logika trzech wartości  
+## <a name="nulls-and-three-valued-logic"></a>Wartości null i logika Three-Valued  
 
  Zezwalanie na wartości null w definicjach kolumn wprowadza do aplikacji logiczną trzy wartości. Porównanie może wynikać z jednego z trzech warunków:  
   
@@ -28,7 +28,7 @@ Wartość null w relacyjnej bazie danych jest używana, gdy wartość w kolumnie
   
 - Fałsz  
   
-- Nieznane  
+- Nieznany  
   
  Ponieważ wartość null jest uznawana za nieznaną, dwie wartości null w porównaniu do siebie nie są traktowane jako równe. W wyrażeniach wykorzystujących operatory arytmetyczne, jeśli którykolwiek z operandów ma wartość null, wynik jest również równy null.  
   
@@ -94,7 +94,7 @@ WHERE TerritoryID IN (1, 2, 3)
   
  Ponadto dla wystąpienia `DataRow.["columnName"]` przypisań o wartości null są stosowane następujące reguły:  
   
-1. Domyślna wartość *Domyślna* to `DbNull.Value` dla wszystkich, z wyjątkiem kolumn o jednoznacznie określonym typie, w których jest to odpowiednia silnie wpisana wartość null.  
+1. Wartość *Domyślna* to `DbNull.Value` dla wszystkich, z wyjątkiem silnie wpisanych kolumn o wartości null, w których jest to odpowiednia silnie wpisana wartość null.  
   
 2. Wartości null nigdy nie są zapisywane podczas serializacji do plików XML (podobnie jak w przypadku elementu "xsi: nil").  
   
@@ -151,7 +151,7 @@ String.Equals instance method:
   Two empty strings=True
 ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy danych programu SQL Server i ADO.NET](sql-server-data-types.md)
 - [Omówienie ADO.NET](../ado-net-overview.md)

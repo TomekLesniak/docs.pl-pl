@@ -5,12 +5,12 @@ ms.date: 11/18/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 077fb06db40519af2bf8ac2f659488acdf525aec
-ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
+ms.openlocfilehash: 1101e218f225eed2a2013ed9e19b60f4ece57738
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916221"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982301"
 ---
 # <a name="whats-new-in-net-5"></a>Co nowego w wersji .NET 5
 
@@ -53,7 +53,7 @@ Nie ma żadnych planów dotyczących portów z .NET Framework do .NET 5,0, ale i
 
 ### <a name="windows-communication-foundation"></a>Windows Communication Foundation
 
-Oryginalna implementacja [Windows Communication Foundation (WCF)](../framework/wcf/index.md) była jednak obsługiwana tylko w systemie Windows. istnieje port klienta dostępny w programie .NET Foundation. Jest to całkowicie [Open Source](https://github.com/dotnet/wcf), cross platform i obsługiwane przez firmę Microsoft. Poniżej wymieniono podstawowe pakiety NuGet:
+Oryginalna implementacja programu [Windows Communication Foundation (WCF)](../framework/wcf/index.md) była obsługiwana tylko w systemie Windows. Istnieje jednak Port klienta dostępny w programie .NET Foundation. Jest to całkowicie [Open Source](https://github.com/dotnet/wcf), cross platform i obsługiwane przez firmę Microsoft. Poniżej wymieniono podstawowe pakiety NuGet:
 
 - [System. ServiceModel. Duplex](https://www.nuget.org/packages/System.ServiceModel.Duplex)
 - [System. ServiceModel. Federation](https://www.nuget.org/packages/System.ServiceModel.Federation)
@@ -62,7 +62,7 @@ Oryginalna implementacja [Windows Communication Foundation (WCF)](../framework/w
 - [System. ServiceModel. Prymityws](https://www.nuget.org/packages/System.ServiceModel.Primitives)
 - [System. ServiceModel. Security](https://www.nuget.org/packages/System.ServiceModel.Security)
 
-W społeczności są przechowywane składniki serwera, które uzupełniają powyższe biblioteki klienta. Repozytorium GitHub można znaleźć pod adresem [CoreWCF](https://github.com/CoreWCF/CoreWCF). Składniki serwera _nie_ są oficjalnie obsługiwane przez firmę Microsoft. Aby zapoznać się z alternatywą dla WCF, należy rozważyć [gRPC](/aspnet/core/grpc).
+Społeczność zachowuje składniki serwera, które uzupełniają wymienione wyżej biblioteki klienta. Repozytorium GitHub można znaleźć pod adresem [CoreWCF](https://github.com/CoreWCF/CoreWCF). Składniki serwera _nie_ są oficjalnie obsługiwane przez firmę Microsoft. Aby zapoznać się z alternatywą dla WCF, należy rozważyć [gRPC](/aspnet/core/grpc).
 
 ## <a name="net-50-doesnt-replace-net-standard"></a>.NET 5,0 nie zastępuje .NET Standard
 

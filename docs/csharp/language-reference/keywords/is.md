@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: f5c67392705156d6ff05e6f140c7187f41b1d033
-ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
+ms.openlocfilehash: d30ebfa2dc47265185a96514efbddc3e4937438c
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94915833"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982397"
 ---
 # <a name="is-c-reference"></a>is (odwołanie w C#)
 
@@ -100,7 +100,7 @@ W poniższym przykładzie przedstawiono porównanie `null` kontroli:
 
 [!code-csharp[is#11](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern11.cs#11)]
 
-Wyrażenie `x is null` jest obliczane inaczej dla typów referencyjnych i wartości null. W przypadku typów wartości null, używa <xref:System.Nullable%601.HasValue?displayProperty=nameWithType> . W przypadku typów referencyjnych używa `x == null` .
+Wyrażenie `x is null` jest obliczane inaczej dla typów referencyjnych i wartości null. W przypadku typów wartości null, używa <xref:System.Nullable%601.HasValue?displayProperty=nameWithType> . W przypadku typów referencyjnych używa `(object)x == null` .
 
 ### <a name="var-pattern"></a>wzorzec wariancji
 

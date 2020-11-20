@@ -4,12 +4,12 @@ author: IEvangelist
 description: Dowiedz się, jak używać struktury rejestrowania dostarczonej przez pakiet NuGet Microsoft. Extensions. Logging.
 ms.author: dapine
 ms.date: 09/30/2020
-ms.openlocfilehash: d409d78698e4e85eaf9f2894ee1ed00cea0c0583
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 5a4d333368082389c4dfc134bb6a9a2e618d47e9
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888559"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982321"
 ---
 # <a name="logging-in-net"></a>Rejestrowanie w programie .NET
 
@@ -30,7 +30,7 @@ Poniższy przykład:
 
 ## <a name="configure-logging"></a>Konfigurowanie rejestrowania
 
-Konfiguracja rejestrowania jest zwykle udostępniana w `Logging` sekcji *AppSettings* . `{Environment}` pliki *. JSON* . Następujące *appsettings.Development.js* pliku są generowane przez szablony usługi procesu roboczego platformy .NET:
+Konfiguracja rejestrowania jest zwykle udostępniana w `Logging` sekcji *AppSettings*. `{Environment}` pliki *. JSON* . Następujące *appsettings.Development.js* pliku są generowane przez szablony usługi procesu roboczego platformy .NET:
 
 :::code language="json" source="snippets/configuration/worker-service/appsettings.Development.json":::
 
@@ -64,7 +64,7 @@ Minimalny poziom dziennika można określić dla dowolnego z:
 - Określone kategorie: na przykład `Logging:LogLevel:Microsoft:Warning`
 - Wszyscy dostawcy i wszystkie kategorie: `Logging:LogLevel:Default:Warning`
 
-Wszystkie dzienniki poniżej minimalnego poziomu są * **not** _:
+Wszystkie dzienniki poniżej minimalnego poziomu są ***not** _:
 
 - Przeszedł do dostawcy.
 - Zarejestrowane lub wyświetlone.
@@ -180,9 +180,9 @@ W poniższej tabeli wymieniono <xref:Microsoft.Extensions.Logging.LogLevel> wart
 | LogLevel | Wartość | Metoda | Opis |
 |--|--|--|--|
 | [Ślad](xref:Microsoft.Extensions.Logging.LogLevel) | 0 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogTrace%2A> | Zawierają najwięcej szczegółowych komunikatów. Te komunikaty mogą zawierać poufne dane aplikacji. Te komunikaty są domyślnie wyłączone i **nie** powinny być włączone w środowisku produkcyjnym. |
-| [Debugowanie](xref:Microsoft.Extensions.Logging.LogLevel) | 1 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogDebug%2A> | Na potrzeby debugowania i programowania. W środowisku produkcyjnym należy używać ostrożnie z powodu dużego wolumenu. |
+| [Rozpocząć](xref:Microsoft.Extensions.Logging.LogLevel) | 1 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogDebug%2A> | Na potrzeby debugowania i programowania. W środowisku produkcyjnym należy używać ostrożnie z powodu dużego wolumenu. |
 | [Informacje](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Śledzi ogólny przepływ aplikacji. Może mieć wartość długoterminową. |
-| [Ostrzeżenie](xref:Microsoft.Extensions.Logging.LogLevel) | 3 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogWarning%2A> | Dla nietypowych lub nieoczekiwanych zdarzeń. Zwykle zawiera błędy lub warunki, które nie powodują błędu aplikacji. |
+| [Wyświetlania](xref:Microsoft.Extensions.Logging.LogLevel) | 3 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogWarning%2A> | Dla nietypowych lub nieoczekiwanych zdarzeń. Zwykle zawiera błędy lub warunki, które nie powodują błędu aplikacji. |
 | [Błąd](xref:Microsoft.Extensions.Logging.LogLevel) | 4 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogError%2A> | W przypadku błędów i wyjątków, których nie można obsłużyć. Te komunikaty wskazują na niepowodzenie podczas bieżącej operacji lub żądania, a nie awarię całej aplikacji. |
 | [Krytyczne](xref:Microsoft.Extensions.Logging.LogLevel) | 5 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogCritical%2A> | Dla niepowodzeń, które wymagają natychmiastowej uwagi. Przykłady: scenariusze utraty danych, brak miejsca na dysku. |
 | [Brak](xref:Microsoft.Extensions.Logging.LogLevel) | 6 |  | Określa, że nie należy zapisywać żadnych komunikatów. |
@@ -222,7 +222,7 @@ public async Task<T> GetAsync<T>(string id)
 
 W poprzednim kodzie pierwszy `Log{LogLevel}` parametr, `AppLogEvents.Read` , jest [Identyfikator zdarzenia dziennika](#log-event-id). Drugi parametr jest szablonem wiadomości z symbolami zastępczymi dla wartości argumentów dostarczonych przez pozostałe parametry metody. Parametry metody zostały wyjaśnione w sekcji [szablon komunikatu](#log-message-template) w dalszej części tego artykułu.
 
-Skonfiguruj odpowiedni poziom dziennika i Wywołaj odpowiednie metody, `Log{LogLevel}` Aby kontrolować, ile danych wyjściowych dziennika jest zapisywana w określonym nośniku magazynowania. Na przykład:
+Skonfiguruj odpowiedni poziom dziennika i Wywołaj odpowiednie `Log{LogLevel}` metody, aby kontrolować, ile danych wyjściowych dziennika jest zapisywana w określonym nośniku magazynowania. Przykład:
 
 - W środowisku produkcyjnym:
   - Rejestrowanie na poziomie `Trace` lub `Information` powoduje utworzenie dużej ilości szczegółowych komunikatów dziennika. Aby kontrolować koszty i nie przekraczać limitów magazynowania danych `Trace` , `Information` komunikaty dzienników i na poziomie magazynu o dużej ilości danych. Rozważ ograniczenie `Trace` i `Information` do określonych kategorii.

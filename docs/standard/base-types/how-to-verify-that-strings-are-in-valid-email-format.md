@@ -18,12 +18,12 @@ helpviewer_keywords:
 - email [.NET], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-ms.openlocfilehash: 0f6b8b19ae6047bc419ce949ab76288a24e00f74
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 88ff326e16ede6a422e9403b71905845014c4c25
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821986"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982495"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Sprawdzanie, czy format poczty e-mail ciągów jest prawidłowy
 
@@ -56,7 +56,7 @@ Aby sprawdzić, czy adres e-mail jest prawidłowy, `IsValidEmail` Metoda wywołu
 Nazwa domeny wraz ze znakiem @ jest przenoszona do `DomainMapper` metody, która używa <xref:System.Globalization.IdnMapping> klasy do translacji znaków Unicode, które są spoza zakresu znaków US-ASCII do formacie Punycode. Metoda ustawia również `invalid` flagę na, `True` Jeśli <xref:System.Globalization.IdnMapping.GetAscii%2A?displayProperty=nameWithType> Metoda wykryje nieprawidłowe znaki w nazwie domeny. Metoda zwraca nazwę domeny formacie Punycode poprzedzoną symbolem @ do `IsValidEmail` metody.
 
 > [!TIP]
-> Zaleca się, `(@)(.+)$` Aby użyć wzorca prostego wyrażenia regularnego do normalizacji domeny, a następnie zwrócić wartość wskazującą, że została przeniesiona lub niepowodzenie. Jednak w przykładzie w tym artykule opisano sposób dalszej weryfikacji wiadomości e-mail przy użyciu wyrażenia regularnego. Bez względu na to, jak sprawdzasz poprawność wiadomości e-mail, należy zawsze wysyłać testową wiadomość e-mail na adres, aby upewnić się, że istnieje.
+> Zaleca się użycie prostego `(@)(.+)$` wzorca wyrażenia regularnego, aby znormalizować domenę, a następnie zwrócić wartość wskazującą, że została zakończona lub nie powiodła się. Jednak w przykładzie w tym artykule opisano sposób dalszej weryfikacji wiadomości e-mail przy użyciu wyrażenia regularnego. Bez względu na to, jak sprawdzasz poprawność wiadomości e-mail, należy zawsze wysyłać testową wiadomość e-mail na adres, aby upewnić się, że istnieje.
 
 `IsValidEmail`Metoda następnie wywołuje metodę, <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%29?displayProperty=nameWithType> Aby sprawdzić, czy adres jest zgodny ze wzorcem wyrażenia regularnego.
 

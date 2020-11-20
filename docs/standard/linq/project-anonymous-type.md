@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5cb9be13-5ac4-4373-a034-b3520a5b2dec
-ms.openlocfilehash: 5851492f075068337c60316664138dd09c97443b
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: ef0b1c642db055c8c5d4f2275b02119d8ebee8f0
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553272"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982419"
 ---
 # <a name="how-to-project-an-anonymous-type-linq-to-xml"></a>Tworzenie projektu typu anonimowego (LINQ to XML)
 
 W niektórych przypadkach można zaprojektować zapytanie do nowego typu, ale zapytanie byłoby używane tylko dla nowego typu. Zamiast tworzyć typ, można projektować do typu anonimowego. Typy anonimowe zapewniają wygodny sposób hermetyzowania zestawu właściwości tylko do odczytu w obiekcie bez konieczności jawnego definiowania typu. Jeśli napiszesz zapytanie, które tworzy obiekt typu anonimowego w `select` klauzuli, zapytanie zwraca <xref:System.Collections.IEnumerable> Typ.
 
-Poniższy przykład pokazuje, jak utworzyć obiekt typu anonimowego, który jest zainicjowany z dwiema właściwościami `Amount` i `Message` .
+W poniższym przykładzie pokazano Tworzenie obiektu typu anonimowego, który został zainicjowany z dwiema właściwościami `Amount` i `Message` .
 
 ```csharp
 var v = new { Amount = 108, Message = "Hello" };
@@ -76,7 +76,7 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Typy anonimowe (Przewodnik programowania w języku C#)](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
 - [Typy anonimowe (Visual Basic)](../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)

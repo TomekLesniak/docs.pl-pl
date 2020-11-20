@@ -1,13 +1,13 @@
 ---
 title: Podsumowanie
-description: Podsumowanie najważniejszych konkluzji z aplikacji platformy .NET natywnej w chmurze dla przewodnika/książki elektronicznej platformy Azure.
+description: Podsumowanie najważniejszych wniosków z architekta Cloud-Native aplikacje .NET dla przewodnika/książki online platformy Azure.
 ms.date: 05/13/2020
-ms.openlocfilehash: b1a195c0c081565c57f5aac2e234411bb904ca08
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e0325b1bb6961c865e904779496950031db8db0b
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613658"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982358"
 ---
 # <a name="summary"></a>Podsumowanie
 
@@ -15,7 +15,7 @@ Podsumowując, poniżej przedstawiono ważne wnioski z tego przewodnika:
 
 - **Chmura oparta na chmurze** polega na projektowaniu nowoczesnych aplikacji, które uwzględniają szybką zmianę, dużą skalę i odporność, w nowoczesnych, dynamicznych środowiskach, takich jak chmury publiczne, prywatne i hybrydowe.
 
-- ** [Natywna platforma obliczeniowa w chmurze](https://www.cncf.io/) (CNCF)** to wpływ konsorcjum typu "open source" o ponad 300 głównych korporacji. Jest on odpowiedzialny za wspieranie wdrażania natywnych danych w chmurze w różnych technologiach i stosach w chmurze.
+- **[Natywna platforma obliczeniowa w chmurze](https://www.cncf.io/) (CNCF)** to wpływ konsorcjum typu "open source" o ponad 300 głównych korporacji. Jest on odpowiedzialny za wspieranie wdrażania natywnych danych w chmurze w różnych technologiach i stosach w chmurze.
 
 - **Wytyczne CNCF** zaleca się, aby aplikacje natywne w chmurze miały sześć ważnych filarów, jak pokazano na rysunku 11-1:
 
@@ -54,4 +54,4 @@ Podsumowując, poniżej przedstawiono ważne wnioski z tego przewodnika:
 - **Automatyzacja kodu** jest wymagana w przypadku aplikacji natywnych w chmurze. Nowoczesne systemy ciągłej integracji/ciągłego wdrażania pomagają spełnić tę zasadę. Zapewniają one oddzielne kroki kompilacji i wdrażania, które pomagają zapewnić spójny i jakościowy kod. Etap kompilacji przekształca kod w artefakt binarny. Etap wydania pobiera artefakt binarny, stosuje konfigurację środowiska zewnętrznego i wdraża ją w określonym środowisku. Usługa Azure DevOps i GitHub to w pełni funkcjonalne środowiska DevOps.
 
 >[!div class="step-by-step"]
->[Poprzednie](application-bundles.md)
+>[Poprzednio](application-bundles.md)
