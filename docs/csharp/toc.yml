@@ -46,6 +46,8 @@
               href: tutorials/intro-to-csharp/introduction-to-classes.md
             - name: Programowanie obiektowe
               href: tutorials/intro-to-csharp/object-oriented-programming.md
+    - name: Eksplorowanie typów rekordów
+      href: tutorials/exploration/records.md
     - name: Eksplorowanie instrukcji najwyższego poziomu
       href: tutorials/exploration/top-level-statements.md
     - name: Eksplorowanie wzorców w obiektach

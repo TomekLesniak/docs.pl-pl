@@ -312,7 +312,7 @@ items:
             items:
               - name: Omówienie
                 href: ../core/project-sdk/overview.md
-              - name: Tematy pomocy
+              - name: Dokumentacja
                 items:
                   - name: Microsoft.NET.Sdk
                     href: ../core/project-sdk/msbuild-props.md
@@ -372,8 +372,30 @@ items:
             href: ../core/diagnostics/debug-linux-dumps.md
           - name: EventCounters
             href: ../core/diagnostics/event-counters.md
+          - name: EventPipe
+            href: ../core/diagnostics/eventpipe.md
           - name: Rejestrowanie i śledzenie
             href: ../core/diagnostics/logging-tracing.md
+          - name: Zdarzenia środowiska uruchomieniowego
+            items:
+              - name: Omówienie
+                href: ../fundamentals/diagnostics/runtime-events.md
+              - name: Zdarzenia rywalizacji
+                href: ../fundamentals/diagnostics/runtime-contention-events.md
+              - name: Zdarzenia wyjątków
+                href: ../fundamentals/diagnostics/runtime-exception-events.md
+              - name: Zdarzenia odzyskiwania pamięci
+                href: ../fundamentals/diagnostics/runtime-garbage-collection-events.md
+              - name: Zdarzenia międzyoperacyjności
+                href: ../fundamentals/diagnostics/runtime-interop-events.md
+              - name: Zdarzenia modułu ładującego i integratora
+                href: ../fundamentals/diagnostics/runtime-loader-binder-events.md
+              - name: Zdarzenia metod
+                href: ../fundamentals/diagnostics/runtime-method-events.md
+              - name: Zdarzenia puli ThreadPool
+                href: ../fundamentals/diagnostics/runtime-thread-events.md
+              - name: Zdarzenia systemu typów
+                href: ../fundamentals/diagnostics/runtime-type-events.md
           - name: Zbieranie danych diagnostycznych w kontenerach
             href: ../core/diagnostics/diagnostics-in-containers.md
           - name: Narzędzia globalne interfejsu wiersza polecenia platformy .NET Core
@@ -1590,8 +1612,6 @@ items:
                 href: ../standard/serialization/how-to-chunk-serialized-data.md
               - name: 'Instrukcje: ustalanie, czy obiekt standardowy .NET można poddać serializacji'
                 href: ../standard/serialization/how-to-determine-if-netstandard-object-is-serializable.md
-              - name: Przykład
-                href: ../standard/serialization/basic-serialization-technology-sample.md
           - name: Serializacja XML i SOAP
             items:
               - name: Omówienie
