@@ -2,12 +2,12 @@
 title: Dokumentacja XML
 description: 'Dowiedz się więcej o pomocy technicznej w języku F # w celu wygenerowania dokumentacji z komentarzy.'
 ms.date: 09/15/2020
-ms.openlocfilehash: a5bec20f27c23caee951cda2dc5d17808f69d384
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 8720d66204333eb21dc998655467f9a5745a33f3
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679406"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982482"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Dokumentowanie kodu za pomocą komentarzy XML
 
@@ -21,7 +21,7 @@ Komentarze dokumentacji XML, podobnie jak wszystkie inne komentarze, są ignorow
 
 Plik XML można wygenerować w czasie kompilacji, wykonując jedną z następujących czynności:
 
-- Można dodać `GenerateDocumentationFile` element do `<PropertyGroup>` sekcji `.fsproj` pliku projektu, który generuje plik XML w katalogu projektu o tej samej nazwie pliku głównego co zestaw. Na przykład:
+- Można dodać `GenerateDocumentationFile` element do `<PropertyGroup>` sekcji `.fsproj` pliku projektu, który generuje plik XML w katalogu projektu o tej samej nazwie pliku głównego co zestaw. Przykład:
 
    ```xml
    <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -57,10 +57,10 @@ Jeśli używasz tagów XML, w poniższej tabeli opisano Tagi zewnętrzne rozpozn
 |---------------------------------------------|-----------|
 | `<summary>`**_Opis_**`</summary>`           | Określa, że *tekst* jest krótkim opisem elementu programu. Opis jest zwykle jednym lub dwoma zdaniami.|
 | `<remarks>`**_Opis_**`</remarks>`           | Określa, że *tekst* zawiera dodatkowe informacje o elemencie program.|
-| `<param name="`**_Nazwa_** `">` ** _Opis_**`</param>` | Określa nazwę i opis parametru funkcji lub metody.|
-| `<typeparam name="`**_Nazwa_** `">` ** _Opis_**`</typeparam>` | Określa nazwę i opis parametru typu.|
+| `<param name="`**_Nazwa_** `">` **_Opis_**`</param>` | Określa nazwę i opis parametru funkcji lub metody.|
+| `<typeparam name="`**_Nazwa_** `">` **_Opis_**`</typeparam>` | Określa nazwę i opis parametru typu.|
 | `<returns>`**_Opis_**`</returns>`           | Określa, że *tekst* opisuje wartość zwracaną przez funkcję lub metodę.|
-| `<exception cref="`**_Typ_** `">` ** _Opis_**`</exception>` |Określa typ wyjątku, który może być wygenerowany i okoliczności, w których jest generowany.|
+| `<exception cref="`**_Typ_** `">` **_Opis_**`</exception>` |Określa typ wyjątku, który może być wygenerowany i okoliczności, w których jest generowany.|
 | `<seealso cref="`**_odwoła_**`"/>`      | Określa również link do dokumentacji dla innego typu. *Odwołanie* jest nazwą wyświetlaną w pliku dokumentacji XML. Zobacz także linki zwykle wyświetlane w dolnej części strony dokumentacji.|
 
 W poniższej tabeli opisano Tagi do użycia wewnątrz sekcji opisu:
@@ -72,7 +72,7 @@ W poniższej tabeli opisano Tagi do użycia wewnątrz sekcji opisu:
 | `<paramref name="`**_Nazwij_**`"/>`         | Określa odwołanie do parametru w tym samym komentarzu do dokumentacji.|
 | `<typeparamref name="`**_Nazwij_**`"/>`     | Określa odwołanie do parametru typu w tym samym komentarzu do dokumentacji.|
 | `<c>`**_Opis_**`</c>`                     | Określa, że *tekst* jest kodem wbudowanym. Ten tag może być używany przez generatory dokumentacji do wyświetlania tekstu w czcionce, która jest odpowiednia dla kodu.|
-| `<see cref="`**_Dokumentacja_** `">` ** _tekst_**`</see>` | Określa link wbudowany do innego elementu programu. *Odwołanie* jest nazwą wyświetlaną w pliku dokumentacji XML. *Tekst* jest tekstem wyświetlanym w łączu.|
+| `<see cref="`**_Dokumentacja_** `">` **_tekst_**`</see>` | Określa link wbudowany do innego elementu programu. *Odwołanie* jest nazwą wyświetlaną w pliku dokumentacji XML. *Tekst* jest tekstem wyświetlanym w łączu.|
 
 ### <a name="user-defined-tags"></a>Tagi zdefiniowane przez użytkownika
 
@@ -87,7 +87,7 @@ Gdy `--warnon:3390` jest włączona, kompilator weryfikuje składnię XML i para
 ## <a name="documenting-f-constructs"></a>Dokumentowanie konstrukcji języka F #
 
 Konstrukcje języka F #, takie jak moduły, elementy członkowskie, przypadki Unii i pola rekordów, są udokumentowane `///` bezpośrednio przed ich deklaracją.
-W razie potrzeby niejawne konstruktory klas są udokumentowane przez złożenie `///` komentarza przed listą argumentów. Na przykład:
+W razie potrzeby niejawne konstruktory klas są udokumentowane przez złożenie `///` komentarza przed listą argumentów. Przykład:
 
 ```fsharp
 /// This is the type
@@ -128,7 +128,7 @@ Dokumentowanie kodu jest zalecane z wielu powodów. Poniżej przedstawiono niekt
 
 - Tekst dokumentacji należy napisać przy użyciu kompletnych zdań kończących się pełnym zatrzymywaniem.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Komentarze dokumentacji XML języka C# &#40;C&#35; Przewodnik programowania&#41;](../../csharp/programming-guide/xmldoc/index.md).
 - [Dokumentacja języka F #](index.md)

@@ -4,12 +4,12 @@ description: 'Dowiedz się, jak F# Interactive (dotnet FSI) służy do interakty
 ms.date: 10/31/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: 89570a54ecebe625a1612e4b97b01c3693e4707c
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: 6f865483762e92964c8baa51498f07974c109691
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400869"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982508"
 ---
 # <a name="interactive-programming-with-f"></a>Programowanie interaktywne przy użyciu języka F\#
 
@@ -76,7 +76,7 @@ let getOddSquares xs =
     |> List.filter (fun x -> x % 2 <> 0)
     |> List.map (fun x -> x * x)
 
-getOddSquares [1..10]
+printfn "%A" (getOddSquares [1..10])
 ```
 
 Po utworzeniu tego pliku na komputerze można uruchomić go z `dotnet fsi` i wyświetlić dane wyjściowe bezpośrednio w oknie terminalu:
@@ -224,7 +224,7 @@ Gdy określisz pliki lub ścieżki w F# Interactive, oczekiwano literału ciągu
 
 ## <a name="interactive-and-compiled-preprocessor-directives"></a>Interaktywne i skompilowane dyrektywy preprocesora
 
-Podczas kompilowania kodu w F# Interactive, niezależnie od tego, czy uruchamiasz **interaktywnie** , czy uruchamiasz skrypt, jest zdefiniowany symbol Interactive. Podczas kompilowania kodu w kompilatorze jest zdefiniowany symbol **skompilowany** . W tym przypadku, jeśli kod musi być inny w skompilowanych i interaktywnych trybach, można użyć tych dyrektyw preprocesora dla kompilacji warunkowej, aby określić, która z nich ma być używana. Na przykład:
+Podczas kompilowania kodu w F# Interactive, niezależnie od tego, czy uruchamiasz **interaktywnie** , czy uruchamiasz skrypt, jest zdefiniowany symbol Interactive. Podczas kompilowania kodu w kompilatorze jest zdefiniowany symbol **skompilowany** . W tym przypadku, jeśli kod musi być inny w skompilowanych i interaktywnych trybach, można użyć tych dyrektyw preprocesora dla kompilacji warunkowej, aby określić, która z nich ma być używana. Przykład:
 
 ```fsharp
 #if INTERACTIVE
@@ -237,7 +237,7 @@ Podczas kompilowania kodu w F# Interactive, niezależnie od tego, czy uruchamias
 
 Aby uruchomić F# Interactive za pomocą programu Visual Studio, można kliknąć odpowiedni przycisk paska narzędzi z etykietą **F# Interactive** lub użyć klawiszy **Ctrl + Alt + F**. Spowoduje to otwarcie okna interaktywnego, okna narzędzia z uruchomioną sesją F# Interactive. Możesz również wybrać kod, który ma być uruchamiany w oknie interaktywnym i nacisnąć kombinację klawiszy **ALT + ENTER**. F# Interactive uruchamia się w oknie narzędzia z etykietą **F# Interactive**. W przypadku korzystania z tej kombinacji klawiszy upewnij się, że okno edytora ma fokus.
 
-Niezależnie od tego, czy używasz konsoli programu, czy programu Visual Studio, zostanie wyświetlony wiersz polecenia, a interpreter czeka na dane wejściowe. Możesz wprowadzić kod tak samo jak w pliku kodu. Aby skompilować i wykonać kod, wprowadź dwa średnika ( **;;** ), aby zakończyć wiersz lub kilka wierszy danych wejściowych.
+Niezależnie od tego, czy używasz konsoli programu, czy programu Visual Studio, zostanie wyświetlony wiersz polecenia, a interpreter czeka na dane wejściowe. Możesz wprowadzić kod tak samo jak w pliku kodu. Aby skompilować i wykonać kod, wprowadź dwa średnika (**;;**), aby zakończyć wiersz lub kilka wierszy danych wejściowych.
 
 F# Interactive próbuje skompilować kod i, jeśli to się powiedzie, wykonuje kod i drukuje sygnaturę typów i wartości, które zostały skompilowane. Jeśli wystąpią błędy, interpreter wyświetla komunikaty o błędach.
 
@@ -245,7 +245,7 @@ Kod wprowadzony w tej samej sesji ma dostęp do dowolnych wcześniej wprowadzony
 
 W przypadku uruchamiania w programie Visual Studio F# Interactive uruchamiane niezależnie od projektu, więc na przykład nie można używać konstrukcji zdefiniowanych w projekcie w F# Interactive, chyba że skopiujesz kod funkcji do okna interaktywnego.
 
-Można kontrolować F# Interactive argumenty wiersza polecenia (Opcje) przez dostosowanie ustawień. W menu **Narzędzia** wybierz pozycję **Opcje...** , a następnie rozwiń węzeł **Narzędzia języka F #**. Te dwie ustawienia, które można zmienić, to opcje F# Interactive i ustawienie **F# Interactive 64-bitowe** , które jest istotne tylko w przypadku uruchamiania F# Interactive na komputerze 64-bitowym. To ustawienie określa, czy chcesz uruchomić dedykowaną 64-bitową wersję **fsi.exe** lub **fsianycpu.exe** , która korzysta z architektury komputera, aby określić, czy uruchomić program jako proces 32-bitowy czy 64-bitowy.
+Można kontrolować F# Interactive argumenty wiersza polecenia (Opcje) przez dostosowanie ustawień. W menu **Narzędzia** wybierz pozycję **Opcje...**, a następnie rozwiń węzeł **Narzędzia języka F #**. Te dwie ustawienia, które można zmienić, to opcje F# Interactive i ustawienie **F# Interactive 64-bitowe** , które jest istotne tylko w przypadku uruchamiania F# Interactive na komputerze 64-bitowym. To ustawienie określa, czy chcesz uruchomić dedykowaną 64-bitową wersję **fsi.exe** lub **fsianycpu.exe**, która korzysta z architektury komputera, aby określić, czy uruchomić program jako proces 32-bitowy czy 64-bitowy.
 
 ## <a name="related-articles"></a>Pokrewne artykuły:
 
