@@ -4,13 +4,15 @@ description: Dowiedz się, jak używać typu anonimowego w wyrażeniu zapytania 
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 0ef68921b9d45e58024b37d559ee8291d8744af8
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 3e30793ed16204943e2398984ed200b93db7f86f
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91204024"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098857"
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Jak zwrócić podzbiory właściwości elementu w zapytaniu (Przewodnik programowania w języku C#)
 
@@ -48,7 +50,7 @@ Console.WriteLine(student.First + " " + student.Last);
   
 Aby uruchomić ten kod, skopiuj i wklej klasę do aplikacji konsolowej C# z `using` dyrektywą dla System. LINQ.
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik programowania w języku C#](../index.md)
 - [Typy anonimowe](./anonymous-types.md)

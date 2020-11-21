@@ -4,13 +4,15 @@ description: Użyj niejawnie wpisanych zmiennych lokalnych w języku C#, aby kom
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#], how to use
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
-ms.openlocfilehash: fcfb154f6abd90033ae57bb1543d0c891f6c5999
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 0379cf7a172b989a9c686fd2da20ca8bf8da4997
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91174202"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098868"
 ---
 # <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Jak używać niejawnie wpisanych zmiennych lokalnych i tablic w wyrażeniu zapytania (Przewodnik programowania w języku C#)
 
@@ -30,10 +32,10 @@ Możesz użyć niejawnie wpisanych zmiennych lokalnych, ilekroć kompilator ma o
   
  [!code-csharp[csProgGuideLINQ#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#33)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik programowania w języku C#](../index.md)
-- [Metody rozszerzające](./extension-methods.md)
+- [Metody rozszerzeń](./extension-methods.md)
 - [LINQ (zapytanie zintegrowane z językiem)](../../linq/index.md)
-- [funkcję](../../language-reference/keywords/var.md)
+- [var](../../language-reference/keywords/var.md)
 - [LINQ w C#](../../linq/index.md)

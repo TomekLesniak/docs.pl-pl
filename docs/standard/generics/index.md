@@ -26,16 +26,16 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: 40a789d9eaa835b1c464f25b5a33a7c1d766d2f8
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: eae1b52f5462cdc395504da877e40e62e5417b76
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827259"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098817"
 ---
 # <a name="generics-in-net"></a>Typy ogólne w .NET
 
-Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu do precyzyjnego typu danych, na którym działa. Na przykład zamiast używać <xref:System.Collections.Hashtable> klasy, która umożliwia określenie kluczy i wartości dowolnego typu, można użyć <xref:System.Collections.Generic.Dictionary%602> klasy generycznej i określić typ dozwolony dla klucza i typ dozwolony dla tej wartości. Korzyści płynące z typów ogólnych to zwiększone wykorzystanie kodu i bezpieczeństwo typów.  
+Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu do precyzyjnego typu danych, na którym działa. Na przykład zamiast używać <xref:System.Collections.Hashtable> klasy, która umożliwia określenie kluczy i wartości dowolnego typu, można użyć <xref:System.Collections.Generic.Dictionary%602> klasy generycznej i określić typy dozwolone dla klucza i wartości. Korzyści płynące z typów ogólnych to zwiększone wykorzystanie kodu i bezpieczeństwo typów.  
 
 ## <a name="defining-and-using-generics"></a>Definiowanie i używanie typów ogólnych
  Typy ogólne to klasy, struktury, interfejsy i metody, które mają symbole zastępcze (parametry typu) dla jednego lub kilku typów, które są przez nie przechowywane lub używane. Klasa kolekcji generycznej może używać parametru typu jako symbolu zastępczego dla typu obiektów, które przechowuje; parametry typu są wyświetlane jako typy pól i typy parametrów jego metod. Metoda generyczna może używać swojego parametru typu jako typu wartości zwracanej lub jako typ jednego z jego parametrów formalnych. Poniższy kod ilustruje prostą definicję klasy ogólnej.  

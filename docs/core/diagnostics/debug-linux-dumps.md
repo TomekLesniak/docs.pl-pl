@@ -2,12 +2,12 @@
 title: Debugowanie zrzutów systemu Linux
 description: W tym artykule dowiesz się, jak zbierać i analizować zrzuty ze środowisk systemu Linux.
 ms.date: 08/27/2020
-ms.openlocfilehash: 692d6228fae31de015412c23c4ec5317024faaab
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: 94f923f2ec7b5fa20c2ebc9b83540094348dff03
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982265"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099149"
 ---
 # <a name="debug-linux-dumps"></a>Debugowanie zrzutów systemu Linux
 
@@ -23,9 +23,9 @@ Dwa zalecane sposoby zbierania zrzutów w systemie Linux to [`dotnet-dump`](dotn
 
 ### <a name="core-dumps-with-createdump"></a>Zrzuty rdzeniowe z `createdump`
 
-Alternatywnym rozwiązaniem `dotnet-dump` jest utworzenie zrzutów, które [`createdump`](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) są przeznaczone tylko do zarządzania, jest zalecanym narzędziem do tworzenia podstawowych zrzutów w systemie Linux zawierających zarówno dane natywne, jak i zarządzane. Można również użyć innych narzędzi, takich jak GDB lub gcore, w celu utworzenia zrzutów podstawowych, ale może brakować stanu wymaganego do debugowania zarządzanego, co powoduje "Nieznane" nazwy typu lub funkcji podczas analizy.
+Zamiast programu `dotnet-dump` , który tworzy zrzuty wyłącznie zarządzane, [`createdump`](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) jest zalecanym narzędziem do tworzenia podstawowych zrzutów w systemie Linux zawierających zarówno dane natywne, jak i zarządzane. Można również użyć innych narzędzi, takich jak GDB lub gcore, w celu utworzenia zrzutów podstawowych, ale może brakować stanu wymaganego do debugowania zarządzanego, co powoduje "Nieznane" nazwy typu lub funkcji podczas analizy.
 
-`createdump`Narzędzia są instalowane przy użyciu środowiska uruchomieniowego .NET Core i można je znaleźć obok libcoreclr.so (zazwyczaj w "/usr/share/dotnet/Shared/Microsoft.NETCore.App/[wersja]"). Narzędzie Pobiera identyfikator procesu w celu zebrania zrzutu z jako argumentu podstawowego i może również przyjmować parametry opcjonalne określające rodzaj zrzutu do zebrania (wartość domyślna to minizrzutu z stertą). Dostępne opcje:
+`createdump`Narzędzie jest instalowane przy użyciu środowiska uruchomieniowego .NET Core i można je znaleźć obok libcoreclr.so (zazwyczaj w "/usr/share/dotnet/Shared/Microsoft.NETCore.App/[wersja]"). Narzędzie Pobiera identyfikator procesu w celu zebrania zrzutu z jako argumentu podstawowego i może również przyjmować parametry opcjonalne określające rodzaj zrzutu do zebrania (wartość domyślna to minizrzutu z stertą). Dostępne opcje:
 
 - **`<input-filename>`**
 
@@ -57,7 +57,7 @@ Alternatywnym rozwiązaniem `dotnet-dump` jest utworzenie zrzutów, które [`cre
 
   Włącz komunikaty diagnostyczne.
 
-Należy pamiętać, że zbieranie podstawowych zrzutów wymaga `SYS_PTRACE` możliwości lub `createdump` uruchomienia z sudo lub su.
+Zbieranie zrzutów podstawowych wymaga `SYS_PTRACE` możliwości lub `createdump` uruchomienia z sudo lub su.
 
 ## <a name="analyze-dumps-on-linux"></a>Analizowanie zrzutów w systemie Linux
 

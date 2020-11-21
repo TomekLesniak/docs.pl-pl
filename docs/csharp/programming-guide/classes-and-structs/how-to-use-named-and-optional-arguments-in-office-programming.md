@@ -6,13 +6,15 @@ helpviewer_keywords:
 - named and optional arguments [C#], Office programming
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: 7e24331d37e8fdbe2bc66a2d9f73a5f6a7242af9
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 9960ba2c39d58734a04cb7ca892ed321fd09822b
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864348"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099051"
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Jak używać argumentów nazwanych i opcjonalnych w programowaniu pakietu Office (Przewodnik programowania w języku C#)
 
@@ -44,7 +46,7 @@ Aby wykonać te procedury, na komputerze musi być zainstalowany program Microso
 
 ## <a name="to-add-a-reference"></a>Aby dodać odwołanie
 
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy nazwę projektu, a następnie kliknij pozycję **Dodaj odwołanie**. Zostanie wyświetlone okno dialogowe **Dodawanie odwołania** .
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy nazwę projektu, a następnie kliknij pozycję **Dodaj odwołanie**. Zostanie wyświetlone okno dialogowe **Dodawanie odwołania** .
 
 2. Na stronie **.NET** wybierz pozycję **Microsoft. Office. Interop. Word** na liście **Nazwa składnika** .
 
@@ -52,7 +54,7 @@ Aby wykonać te procedury, na komputerze musi być zainstalowany program Microso
 
 ## <a name="to-add-necessary-using-directives"></a>Aby dodać wymagane dyrektywy using
 
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy plik *program.cs* , a następnie kliknij polecenie **Wyświetl kod**.
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy plik *program.cs* , a następnie kliknij polecenie **Wyświetl kod**.
 
 2. Dodaj następujące `using` dyrektywy na początku pliku kodu:
 
@@ -60,7 +62,7 @@ Aby wykonać te procedury, na komputerze musi być zainstalowany program Microso
 
 ## <a name="to-display-text-in-a-word-document"></a>Aby wyświetlić tekst w dokumencie programu Word
 
-1. W `Program` klasie w *program.cs*Dodaj następującą metodę w celu utworzenia aplikacji programu Word i dokumentu programu Word. Metoda [Add](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) ma cztery parametry opcjonalne. W tym przykładzie używane są wartości domyślne. W związku z tym nie są wymagane żadne argumenty w instrukcji wywołującej.
+1. W `Program` klasie w *program.cs* Dodaj następującą metodę w celu utworzenia aplikacji programu Word i dokumentu programu Word. Metoda [Add](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) ma cztery parametry opcjonalne. W tym przykładzie używane są wartości domyślne. W związku z tym nie są wymagane żadne argumenty w instrukcji wywołującej.
 
      [!code-csharp[csProgGuideNamedAndOptional#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#6)]
 

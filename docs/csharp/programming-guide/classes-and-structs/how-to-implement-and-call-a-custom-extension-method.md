@@ -4,13 +4,15 @@ description: Dowiedz się, jak zaimplementować metody rozszerzenia dla dowolneg
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: de4cc423e1823351305a23f331b082aa66add1a6
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: d344489e88ddc2c8cac51afeb5bbc76bc7b42913
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91190439"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099077"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Implementowanie i wywoływanie niestandardowej metody rozszerzenia (Przewodnik programowania w języku C#)
 
@@ -42,14 +44,14 @@ W tym temacie przedstawiono sposób implementacji własnych metod rozszerzenia d
 
  Metody rozszerzające nie stwarzają określonych luk w zabezpieczeniach. Nigdy nie mogą być używane do personifikacji istniejących metod dla typu, ponieważ wszystkie kolizje nazw są rozwiązywane na korzyść wystąpienia lub statycznej metody zdefiniowanej przez sam typ. Metody rozszerzające nie mogą uzyskać dostępu do żadnych prywatnych danych w klasie rozszerzonej.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik programowania w języku C#](../index.md)
-- [Metody rozszerzające](./extension-methods.md)
+- [Metody rozszerzeń](./extension-methods.md)
 - [LINQ (zapytanie zintegrowane z językiem)](../../linq/linq-in-csharp.md)
 - [Klasy statyczne i statyczni członkowie klas](./static-classes-and-static-class-members.md)
 - [protected](../../language-reference/keywords/protected.md)
 - [internal](../../language-reference/keywords/internal.md)
 - [public](../../language-reference/keywords/public.md)
-- [Ta](../../language-reference/keywords/this.md)
-- [obszaru](../../language-reference/keywords/namespace.md)
+- [this](../../language-reference/keywords/this.md)
+- [namespace](../../language-reference/keywords/namespace.md)
