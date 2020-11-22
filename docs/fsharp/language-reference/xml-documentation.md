@@ -2,12 +2,12 @@
 title: Dokumentacja XML
 description: 'Dowiedz się więcej o pomocy technicznej w języku F # w celu wygenerowania dokumentacji z komentarzy.'
 ms.date: 09/15/2020
-ms.openlocfilehash: 8720d66204333eb21dc998655467f9a5745a33f3
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: 24d9dbfb5e28d39e224ef9428f025298464fc7f4
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982482"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099012"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Dokumentowanie kodu za pomocą komentarzy XML
 
@@ -33,9 +33,9 @@ Istnieją dwa sposoby zapisywania komentarzy do dokumentacji XML: z tagami XML i
 
 ## <a name="comments-without-xml-tags"></a>Komentarze bez tagów XML
 
-Jeśli `///` komentarz nie zaczyna się od `<` Then, cały tekst komentarza jest traktowany jako dokumentacja podsumowania dla konstrukcji kodu, która jest bezpośrednio następująca. Użyj tej metody, jeśli chcesz napisać tylko krótkie podsumowanie dla każdej konstrukcji.
+Jeśli `///` komentarz nie zaczyna się od a `<` , cały tekst komentarza jest traktowany jako dokumentacja podsumowania dla konstrukcji kodu, która jest bezpośrednio następująca. Użyj tej metody, jeśli chcesz napisać tylko krótkie podsumowanie dla każdej konstrukcji.
 
-Komentarz jest zakodowany w formacie XML podczas przygotowywania dokumentacji, dlatego znaki takie jak `<` `>` i `&` nie muszą być zmienione. Jeśli nie określisz jawnie tagu podsumowującego, nie należy określać innych tagów, takich jak **param** lub **zwracających** Tagi.
+Komentarz jest zakodowany w formacie XML podczas przygotowywania dokumentacji, dlatego znaki takie jak `<` , `>` i `&` nie muszą być wyprowadzane. Jeśli nie określisz jawnie tagu podsumowującego, nie należy określać innych tagów, takich jak **param** lub **zwracających** Tagi.
 
 Poniższy przykład pokazuje alternatywną metodę bez tagów XML. W tym przykładzie cały tekst w komentarzu jest traktowany jako podsumowanie.
 
@@ -43,7 +43,7 @@ Poniższy przykład pokazuje alternatywną metodę bez tagów XML. W tym przykł
 
 ## <a name="comments-with-xml-tags"></a>Komentarze ze znacznikami XML
 
-Jeśli treść komentarza zaczyna się od `<` (normalnie `<summary>` ), jest traktowana jako treść komentarza w formacie XML przy użyciu tagów XML. Ta sekunda pozwala określić oddzielne notatki dla krótkiego podsumowania, dodatkowe uwagi, dokumentację dla każdego parametru i parametru typu oraz zgłoszone wyjątki oraz opis wartości zwracanej.
+Jeśli treść komentarza zaczyna się od `<` (zwykle `<summary>` ), to jest traktowana jako treść komentarza w formacie XML przy użyciu tagów XML. Ta sekunda pozwala określić oddzielne notatki dla krótkiego podsumowania, dodatkowe uwagi, dokumentację dla każdego parametru i parametru typu oraz zgłoszone wyjątki oraz opis wartości zwracanej.
 
 Poniżej znajduje się typowy komentarz dokumentacji XML w pliku sygnatury:
 
@@ -105,7 +105,7 @@ Niektóre funkcje dokumentacji XML w języku C# i innych językach .NET nie są 
 
 - W języku F # odwołania krzyżowe muszą używać pełnej sygnatury XML odpowiadającego symbolu, na przykład `cref="T:System.Console"` .
   Proste odsyłacze w stylu C#, takie jak `cref="Console"` nie są rozbudowane do pełnych podpisów XML i te elementy nie są sprawdzane przez kompilator F #. Niektóre narzędzia dokumentacji mogą zezwalać na użycie tych odsyłaczy przez kolejne przetwarzanie, ale należy używać pełnych podpisów.
-  
+
 - Tagi `<include>` `<inheritdoc>` nie są obsługiwane przez kompilator F #. Nie podano żadnego błędu, jeśli są one używane, ale są po prostu kopiowane do wygenerowanego pliku dokumentacji bez wpływu na wytworzoną dokumentację.
 
 - Odwołania krzyżowe nie są sprawdzane przez kompilator F #, nawet gdy `-warnon:3390` jest używany.
@@ -124,7 +124,7 @@ Dokumentowanie kodu jest zalecane z wielu powodów. Poniżej przedstawiono niekt
 
 - Ze względu na spójność wszystkich publicznie widocznych typów i ich członków należy udokumentować. Jeśli to konieczne, zrób wszystko.
 
-- W przypadku systemu operacyjnego minimum moduły, typy i ich elementy członkowskie powinny mieć zwykły `///` komentarz lub `<summary>` tag. Spowoduje to wyświetlenie okna etykietki narzędzia autouzupełniania w narzędziach do edycji w języku F #.
+- Co najmniej na poziomie systemu, moduły, typy i ich składowe powinny mieć zwykły `///` komentarz lub `<summary>` tag. Spowoduje to wyświetlenie okna etykietki narzędzia autouzupełniania w narzędziach do edycji w języku F #.
 
 - Tekst dokumentacji należy napisać przy użyciu kompletnych zdań kończących się pełnym zatrzymywaniem.
 

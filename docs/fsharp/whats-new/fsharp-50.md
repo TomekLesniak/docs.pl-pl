@@ -2,12 +2,12 @@
 title: 'Co nowego w języku F # 5,0 — Przewodnik po języku f #'
 description: 'Zapoznaj się z omówieniem nowych funkcji dostępnych w języku F # 5,0.'
 ms.date: 11/06/2020
-ms.openlocfilehash: 0b25d48a97792e780515226170151f3bbf2f2301
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: 29b5b110379dec476d7c0aa51540984acb25f26e
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982469"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098700"
 ---
 # <a name="whats-new-in-f-50"></a>Co nowego w języku F # 5,0
 
@@ -285,7 +285,7 @@ let inline negate x = -x
 <@ negate 1.0 @>  |> eval
 ```
 
-Ograniczenie generowane przez `inline` funkcję jest zachowywane w kodzie qutoation. `negate`Można teraz ocenić formularz quotated funkcji.
+Ograniczenie generowane przez `inline` funkcję jest zachowywane w cudzysłowie kodu. `negate`Można teraz ocenić w formie cudzysłowu funkcji.
 
 Ta funkcja implementuje [Język F # RFC FS-1071](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1071-witness-passing-quotations.md).
 
@@ -293,7 +293,7 @@ Ta funkcja implementuje [Język F # RFC FS-1071](https://github.com/fsharp/fslan
 
 [Wyrażenia obliczeń (CE)](../language-reference/computation-expressions.md) są używane dzisiaj do modelowania "obliczeń kontekstowych" lub w bardziej funkcjonalnej terminologii programowania, monadic obliczeń.
 
-W języku F # 5 wprowadzono applicative CE, który oferuje inny model obliczeniowy. Applicative ce zezwala na bardziej wydajne obliczenia pod warunkiem, że każde obliczenie jest niezależne, a ich wyniki są gromadzone na końcu. Gdy obliczenia są niezależne od siebie, są one również proste działania równoległego, co umożliwia autorom CE pisanie bardziej wydajnych bibliotek. Ta korzyść ma ograniczenie, chociaż: obliczenia zależne od wcześniej obliczonych wartości są niedozwolone.
+W języku F # 5 wprowadzono applicative CE, który oferuje inny model obliczeniowy. Applicative ce zezwala na bardziej wydajne obliczenia pod warunkiem, że każde obliczenie jest niezależne, a ich wyniki są gromadzone na końcu. Gdy obliczenia są niezależne od siebie, są one również proste działania równoległego, co umożliwia autorom CE pisanie bardziej wydajnych bibliotek. Ta korzyść obejmuje ograniczenie, chociaż: obliczenia zależne od wcześniej obliczonych wartości są niedozwolone.
 
 W poniższym przykładzie przedstawiono podstawowe applicative CE dla `Result` typu.
 
@@ -340,7 +340,7 @@ Jeśli jesteś autorem biblioteki, który obecnie udostępnia w swojej bibliotec
 
 Ta funkcja implementuje [Język F # RFC FS-1063](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1063-support-letbang-andbang-for-applicative-functors.md).
 
-## <a name="interfaces-can-be-implemeneted-at-different-generic-instantiations"></a>Interfejsy mogą być implemeneted w różnych ogólnych wystąpieniach
+## <a name="interfaces-can-be-implemented-at-different-generic-instantiations"></a>Interfejsy można zaimplementować w różnych ogólnych wystąpieniach
 
 Teraz można zaimplementować ten sam interfejs w różnych wystąpieniach ogólnych:
 
@@ -490,7 +490,7 @@ Ta funkcja implementuje [Język F # RFC FS-1076](https://github.com/fsharp/fslan
 
 Wyrażenia obliczeń to zaawansowana funkcja dla autorów bibliotek i struktur. Pozwalają one znacząco ulepszyć wyrazistości składników, umożliwiając zdefiniowanie dobrze znanych elementów członkowskich i tworzą DSL dla domeny, w której pracujesz.
 
-F # 5 dodaje obsługę w wersji zapoznawczej w celu przeładowania niestandardowych operacji w wyrażeniach obliczeniowych. Umożliwia WRITEN i użycie następującego kodu:
+F # 5 dodaje obsługę w wersji zapoznawczej w celu przeładowania niestandardowych operacji w wyrażeniach obliczeniowych. Umożliwia zapisanie i użycie następującego kodu:
 
 ```fsharp
 open System

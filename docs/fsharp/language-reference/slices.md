@@ -1,25 +1,25 @@
 ---
 title: Wycinki
 description: 'Dowiedz się, jak używać wycinków dla istniejących typów danych F # i jak definiować własne wycinki dla innych typów danych.'
-ms.date: 12/23/2019
-ms.openlocfilehash: a3920ad9e1b205b506aaee92c4606bcebf94feba
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.date: 11/20/2020
+ms.openlocfilehash: 9c072648ed46ae29871f2be5cc64b493f6a9b857
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557080"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098960"
 ---
 # <a name="slices"></a>Wycinki
 
-W języku F # wycinek jest podzbiorem dowolnego typu danych, który ma `GetSlice` metodę w definicji lub w [rozszerzeniu typu](type-extensions.md)w zakresie. Jest najczęściej używany z tablicami i listami języka F #. W tym artykule wyjaśniono, jak korzystać z wycinków z istniejących typów języka F # i jak definiować własne wycinki.
+W tym artykule wyjaśniono, jak korzystać z wycinków z istniejących typów języka F # i jak definiować własne wycinki.
 
-Wycinki są podobne do [indeksatorów](./members/indexed-properties.md), ale zamiast zwracać jedną wartość z bazowej struktury danych, uzyskują wiele z nich.
+W języku F # wycinek jest podzbiorem dowolnego typu danych.  Wycinki są podobne do [indeksatorów](./members/indexed-properties.md), ale zamiast zwracać jedną wartość z bazowej struktury danych, uzyskują wiele z nich. Wycinki używają `..` składni operatora do wybierania zakresu określonych indeksów w typie danych. Aby uzyskać więcej informacji, zobacz [artykuł odwołanie do wyrażenia zapętlenia](./loops-for-in-expression.md).
 
-W języku F # jest obecnie obsługiwana wewnętrzna obsługa ciągów, list, tablic i tablic 2D.
+Język F # jest obecnie obsługiwany wewnętrznie w przypadku ciągów wycinków, list, tablic i wielowymiarowych (2D, 3W, 4D) tablic. Cięcie jest najczęściej używane z tablicami i listami języka F #. Można dodać wycięcie do niestandardowych typów danych przy użyciu `GetSlice` metody w definicji typu lub w [rozszerzeniu typu](type-extensions.md)w zakresie.
 
-## <a name="basic-slicing-with-f-lists-and-arrays"></a>Podstawowe cięcie z listami i tablicami języka F #
+## <a name="slicing-f-lists-and-arrays"></a>Cięcie list i tablic języka F #
 
-Najpopularniejsze typy danych, które są pofragmentowane, to listy i tablice języka F #. Poniższy przykład ilustruje, jak to zrobić za pomocą list:
+Najpopularniejsze typy danych, które są pofragmentowane, to listy i tablice języka F #.  Poniższy przykład ilustruje sposób wycinania list:
 
 ```fsharp
 // Generate a list of 100 integers
@@ -89,8 +89,6 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-Biblioteka podstawowa F # nie definiuje obecnie `GetSlice` dla tablic 3W. Jeśli chcesz wycinków macierzy 3D lub innych tablic o większej liczbie wymiarów, zdefiniuj `GetSlice` element członkowski samodzielnie.
-
 ## <a name="defining-slices-for-other-data-structures"></a>Definiowanie wycinków dla innych struktur danych
 
 Biblioteka podstawowa F # definiuje wycinki dla ograniczonego zestawu typów. Jeśli chcesz zdefiniować wycinki dla większej liczby typów danych, możesz to zrobić w samej definicji typu lub w rozszerzeniu typu.
@@ -151,9 +149,9 @@ printfn "%A" xs.[2..5] // Includes the 5th index
 
 ## <a name="built-in-f-empty-slices"></a>Wbudowane puste wycinki języka F #
 
-Listy F #, tablice, sekwencje, ciągi, tablice 2D, tablice 3W i 4D tablice będą generować pusty plasterek, Jeśli składnia może utworzyć wycinek, który nie istnieje.
+Listy języka F #, tablice, sekwencje, ciągi, wielowymiarowe (2D, 3D, 4D) będą generować pusty plasterek, Jeśli składnia może utworzyć wycinek, który nie istnieje.
 
-Rozważ następujące źródła:
+Rozpatrzmy następujący przykład:
 
 ```fsharp
 let l = [ 1..10 ]
@@ -165,7 +163,8 @@ let emptyArray = a.[-2..(-1)]
 let emptyString = s.[-2..(-1)]
 ```
 
-Deweloperzy języka C# mogą oczekiwać, że nie generują pustego wycinka. Jest to podjęcie decyzji dotyczącej projektu w przypadku, gdy puste kolekcje tworzą w języku F #. Pusta lista języka F # może być złożona z inną listą języka F #, pusty ciąg może zostać dodany do istniejącego ciągu i tak dalej. Może ona często przyjmować plasterki na podstawie wartości przeprowadzonych jako parametry i polegających na odporności poza granice przez produkowanie pustej kolekcji, która pasuje do charakteru składowego kodu F #.
+> [!IMPORTANT]
+> Deweloperzy języka C# mogą oczekiwać, że nie generują pustego wycinka. Jest to podjęcie decyzji dotyczącej projektu w przypadku, gdy puste kolekcje tworzą w języku F #. Pusta lista języka F # może być złożona z inną listą języka F #, pusty ciąg może zostać dodany do istniejącego ciągu i tak dalej. Może to być typowe dla wycinków na podstawie wartości przeprowadzonych jako parametry i odporności poza granice > przez wygenerowanie pustej kolekcji dopasowuje się do charakteru składowej kodu F #.
 
 ## <a name="fixed-index-slices-for-3d-and-4d-arrays"></a>Wycinków o stałym indeksie dla tablic 3W i 4D
 
@@ -174,12 +173,14 @@ W przypadku tablic języka F # 3D i 4D można poprawić określony indeks i wydz
 Aby to zilustrować, weź pod uwagę następującą tablicę 3W:
 
 *z = 0*
+
 | x\y   | 0 | 1 |
 |-------|---|---|
 | **0** | 0 | 1 |
 | **1** | 2 | 3 |
 
 *z = 1*
+
 | x\y   | 0 | 1 |
 |-------|---|---|
 | **0** | 4 | 5 |
@@ -203,8 +204,8 @@ for z in 0..dim-1 do
 m.[*, 0, 1]
 ```
 
-Ostatni wiersz naprawia `y` i `z` indyjskich macierzy 3W i pobiera resztę `x` wartości, które odpowiadają macierzy.
+Ostatni wiersz naprawia `y` i `z` indeksuje tablicę 3W i pobiera resztę `x` wartości, które odpowiadają macierzy.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Właściwości indeksowane](./members/indexed-properties.md)
