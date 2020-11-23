@@ -414,6 +414,8 @@ items:
                 href: ../core/diagnostics/dotnet-sos.md
           - name: Samouczki dotyczące diagnostyki platformy .NET Core
             items:
+              - name: Gromadzenie śladu wydajności w systemie Linux przy użyciu skryptu PerfCollect
+                href: ../core/diagnostics/trace-perfcollect-lttng.md
               - name: Pobieranie metryk wydajności za pomocą obiektów EventCounter
                 href: ../core/diagnostics/event-counter-perf.md
               - name: Debugowanie przecieku pamięci
@@ -427,7 +429,7 @@ items:
           - name: Omówienie
             href: code-analysis/overview.md
             displayName: 'code analysis, analyzers'
-          - name: Konfiguracja
+          - name: Konfigurowanie
             items:
               - name: Opcje ogólne
                 href: code-analysis/configuration-options.md
