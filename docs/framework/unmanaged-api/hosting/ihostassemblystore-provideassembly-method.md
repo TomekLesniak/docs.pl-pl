@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 625c3dd5-a3f0-442c-adde-310dadbb5054
 topic_type:
 - apiref
-ms.openlocfilehash: 162def0d703ea81efc3df3ea5ee08b58e34822e6
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: db65519579104dd01816bb6d7cacaec947f24f53
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501576"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680871"
 ---
 # <a name="ihostassemblystoreprovideassembly-method"></a>IHostAssemblyStore::ProvideAssembly — Metoda
+
 Pobiera odwołanie do zestawu, który nie jest przywoływany przez [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) , który jest zwracany z [IHostAssemblyManager:: GetNonHostStoreAssemblies —](ihostassemblymanager-getnonhoststoreassemblies-method.md). Wywołania środowiska uruchomieniowego języka wspólnego (CLR) `ProvideAssembly` dla każdego zestawu, który nie znajduje się na liście.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT ProvideAssembly (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pBindInfo`  
  podczas Wskaźnik do wystąpienia [AssemblyBindInfo —](assemblybindinfo-structure.md) , który jest używany przez hosta w celu określenia niektórych charakterystyk powiązań, w tym obecności lub braku jakichkolwiek zasad dotyczących wersji oraz zestawu, z którym ma zostać utworzone powiązanie.  
   
@@ -45,7 +47,7 @@ HRESULT ProvideAssembly (
  określoną Wskaźnik do unikatowego identyfikatora żądanego zestawu `IStream` .  
   
  `pHostContext`  
- określoną Wskaźnik do danych specyficznych dla hosta, który jest używany do określenia dowodu żądanego zestawu bez konieczności wywołania wywołania platformy. `pHostContext`odpowiada <xref:System.Reflection.Assembly.HostContext%2A> właściwości zarządzanej <xref:System.Reflection.Assembly> klasy.  
+ określoną Wskaźnik do danych specyficznych dla hosta, który jest używany do określenia dowodu żądanego zestawu bez konieczności wywołania wywołania platformy. `pHostContext` odpowiada <xref:System.Reflection.Assembly.HostContext%2A> właściwości zarządzanej <xref:System.Reflection.Assembly> klasy.  
   
  `ppStmAssemblyImage`  
  określoną Wskaźnik do adresu zawierającego `IStream` obraz przenośnego pliku wykonywalnego (PE), który ma zostać załadowany lub ma wartość null, jeśli nie można znaleźć zestawu.  
@@ -57,7 +59,7 @@ HRESULT ProvideAssembly (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`ProvideAssembly`pomyślnie zwrócono.|  
+|S_OK|`ProvideAssembly` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -67,19 +69,21 @@ HRESULT ProvideAssembly (
 |E_NOT_SUFFICIENT_BUFFER|Rozmiar buforu określony przez `pAssemblyId` nie jest wystarczająco duży, aby pomieścić identyfikator, który chce zwrócić host.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zwracana wartość tożsamości `pAssemblyId` jest określana przez hosta. Identyfikatory muszą być unikatowe w okresie istnienia procesu. Środowisko CLR używa tej wartości jako unikatowego identyfikatora strumienia. Sprawdza każdą wartość dla wartości `pAssemblyId` zwracanych przez inne wywołania do `ProvideAssembly` . Jeśli host zwraca tę samą `pAssemblyId` wartość dla innego `IStream` , środowisko CLR sprawdza, czy zawartość tego strumienia została już zamapowana. Jeśli tak, środowisko uruchomieniowe ładuje istniejącą kopię obrazu zamiast mapowania nowej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRAssemblyReferenceList — Interfejs](iclrassemblyreferencelist-interface.md)
-- [IHostAssemblyManager, interfejs](ihostassemblymanager-interface.md)
-- [IHostAssemblyStore, interfejs](ihostassemblystore-interface.md)
+- [IHostAssemblyManager — Interfejs](ihostassemblymanager-interface.md)
+- [IHostAssemblyStore — Interfejs](ihostassemblystore-interface.md)

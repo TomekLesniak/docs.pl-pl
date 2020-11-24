@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ac298ebd-0815-47e4-a823-30b31baab903
 topic_type:
 - apiref
-ms.openlocfilehash: e8cb1486ccea11ba6edcf7bbb781a9bf210b496d
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 350af708456914c73929d2b8887173cf784d4294
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804903"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680563"
 ---
 # <a name="ihostcrst-interface"></a>IHostCrst — Interfejs
+
 Służy jako reprezentacja hosta sekcji krytycznej dla wątków.  
   
 ## <a name="methods"></a>Metody  
@@ -34,19 +35,21 @@ Służy jako reprezentacja hosta sekcji krytycznej dla wątków.
 |[TryEnter, metoda](ihostcrst-tryenter-method.md)|Próbuje wprowadzić sekcję krytyczną i natychmiast raportuje powodzenie lub niepowodzenie.|  
   
 ## <a name="remarks"></a>Uwagi  
- `IHostCrst`zezwala, aby środowisko uruchomieniowe języka wspólnego (CLR) komunikować się bezpośrednio z reprezentacją w sekcji krytycznej hosta, a nie przy użyciu funkcji Win32, takich jak `EnterCriticalSection` lub `LeaveCriticalSection` .  
+
+ `IHostCrst` zezwala, aby środowisko uruchomieniowe języka wspólnego (CLR) komunikować się bezpośrednio z reprezentacją w sekcji krytycznej hosta, a nie przy użyciu funkcji Win32, takich jak `EnterCriticalSection` lub `LeaveCriticalSection` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

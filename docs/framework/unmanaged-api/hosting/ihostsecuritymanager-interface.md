@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c3be2cbd-2d93-438b-9888-9a0251b63c03
 topic_type:
 - apiref
-ms.openlocfilehash: 237fe23493460df77a79ba3aed9f0a809cd8aa23
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 37f606a67bef79936c81b2a36f12a00d24bd82f1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501472"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680537"
 ---
 # <a name="ihostsecuritymanager-interface"></a>IHostSecurityManager — Interfejs
+
 Zapewnia metody, które umożliwiają dostęp do i kontrolę nad kontekstem zabezpieczeń aktualnie wykonywanego wątku.  
   
 ## <a name="methods"></a>Metody  
@@ -36,7 +37,8 @@ Zapewnia metody, które umożliwiają dostęp do i kontrolę nad kontekstem zabe
 |[SetThreadToken, metoda](ihostsecuritymanager-setthreadtoken-method.md)|Ustawia dojście dla aktualnie wykonywanego wątku.|  
   
 ## <a name="remarks"></a>Uwagi  
- Host może kontrolować cały dostęp kodu do tokenów wątków przez środowisko uruchomieniowe języka wspólnego (CLR) i kod użytkownika. Może także zapewnić, że pełne informacje kontekstu zabezpieczeń są przesyłane przez operacje asynchroniczne lub punkty kodowe z ograniczonym dostępem do kodu. `IHostSecurityContext`hermetyzuje te informacje kontekstu zabezpieczeń, które nie są nieprzezroczyste dla środowiska CLR.  
+
+ Host może kontrolować cały dostęp kodu do tokenów wątków przez środowisko uruchomieniowe języka wspólnego (CLR) i kod użytkownika. Może także zapewnić, że pełne informacje kontekstu zabezpieczeń są przesyłane przez operacje asynchroniczne lub punkty kodowe z ograniczonym dostępem do kodu. `IHostSecurityContext` hermetyzuje te informacje kontekstu zabezpieczeń, które nie są nieprzezroczyste dla środowiska CLR.  
   
  Środowisko CLR obsługuje wewnętrznie zarządzane kontekstu wątku. Wysyła zapytanie do określonego procesu `IHostSecurityManager` w następujących sytuacjach:  
   
@@ -49,15 +51,16 @@ Zapewnia metody, które umożliwiają dostęp do i kontrolę nad kontekstem zabe
 - W trakcie obsługi portów zakończenia we/wy.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IHostSecurityContext — Interfejs](ihostsecuritycontext-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

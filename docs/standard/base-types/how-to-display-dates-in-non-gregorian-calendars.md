@@ -10,14 +10,15 @@ helpviewer_keywords:
 - calendars [.NET], displaying dates
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
-ms.openlocfilehash: 6263ac2b6ce18399fa4fa56c9e2ab662a1a367b9
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9e8d628f3e15b080b4a5509726ece9da26523269
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820569"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95681395"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Instrukcje: Wyświetlanie dat w kalendarzach innych niż gregoriański
+
 <xref:System.DateTime>Typy i <xref:System.DateTimeOffset> używają kalendarza gregoriańskiego jako kalendarza domyślnego. Oznacza to, że wywołanie metody daty i godziny `ToString` powoduje wyświetlenie ciągu reprezentującego datę i godzinę w kalendarzu gregoriańskim, nawet jeśli ta data i godzina zostały utworzone przy użyciu innego kalendarza. Jest to zilustrowane w poniższym przykładzie, który używa dwóch różnych sposobów tworzenia wartości daty i godziny w kalendarzu perski, ale nadal wyświetla te wartości daty i godziny w kalendarzu gregoriańskim, gdy wywołuje <xref:System.DateTime.ToString%2A> metodę. W tym przykładzie przedstawiono dwa często używane, ale nieprawidłowe techniki wyświetlania daty w określonym kalendarzu.  
   
  [!code-csharp[Formatting.HowTo.Calendar#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Calendar/cs/Calendar1.cs#1)]
@@ -63,6 +64,7 @@ ms.locfileid: "94820569"
     - <xref:System.Globalization.Calendar.GetMilliseconds%2A> , aby wyświetlić milisekundy w drugim w odpowiednim kalendarzu.  
   
 ## <a name="example"></a>Przykład  
+
  Przykład wyświetla datę przy użyciu dwóch różnych kalendarzy. Wyświetla datę po zdefiniowaniu kalendarza Hidżry jako kalendarz domyślny dla kultury AR-JO i wyświetla datę przy użyciu kalendarza perskiego, który nie jest obsługiwany jako opcjonalny Kalendarz przez kulturę FA-IR.  
   
  [!code-csharp[Formatting.HowTo.Calendar#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Calendar/cs/Calendar1.cs#2)]

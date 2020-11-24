@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7a3c97c3-1e31-47b1-bf23-386785c509c4
 topic_type:
 - apiref
-ms.openlocfilehash: 41083b2fcd61a9a726e835c3d5710308aa634600
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ff81da15b17ab0a7fbe62b08e358f65eed3edb71
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498651"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680279"
 ---
 # <a name="icorprofilerinfogetassemblyinfo-method"></a>ICorProfilerInfo::GetAssemblyInfo — Metoda
+
 Akceptuje identyfikator zestawu i zwraca nazwę zestawu oraz identyfikator modułu manifestu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT GetAssemblyInfo(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `assemblyId`  
  podczas Identyfikator zestawu.  
   
@@ -58,11 +60,13 @@ HRESULT GetAssemblyInfo(
  określoną Wskaźnik do identyfikatora modułu manifestu zestawu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Po powrocie tej metody należy sprawdzić, czy `szName` bufor jest wystarczająco duży, aby pomieścić pełną nazwę zestawu. W tym celu należy porównać wartość wskazującą wartość `pcchName` `cchName` parametru. Jeśli `pcchName` wskazuje wartość, która jest większa niż `cchName` , Przydziel większy `szName` bufor, zaktualizuj `cchName` przy użyciu nowego, większego rozmiaru i ponownie wywołaj `GetAssemblyInfo` .  
   
  Alternatywnie, można najpierw wywołać `GetAssemblyInfo` z buforem o zerowej długości, `szName` Aby uzyskać prawidłowy rozmiar buforu. Następnie można dostosować rozmiar buforu na podstawie wartości zwróconej w `pcchName` i `GetAssemblyInfo` ponownie wywołać.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -73,6 +77,6 @@ HRESULT GetAssemblyInfo(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

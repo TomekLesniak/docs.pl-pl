@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0fa34bca-ed18-4626-9e78-d33684d18edb
 topic_type:
 - apiref
-ms.openlocfilehash: 25e931ec17cad3508d548fb4ca7e53b0ade3f119
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: e340dcb5dc093f965e6c08a24a3d65ed0aa6e07a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804953"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680835"
 ---
 # <a name="ihostcontrolgethostmanager-method"></a>IHostControl::GetHostManager — Metoda
+
 Pobiera wskaźnik interfejsu do implementacji hosta interfejsu z określonym `IID` .  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,8 +36,9 @@ HRESULT GetHostManager (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `riid`  
- podczas `IID`Interfejs, który jest wysyłany przez środowisko uruchomieniowe języka wspólnego (CLR).  
+ podczas `IID` Interfejs, który jest wysyłany przez środowisko uruchomieniowe języka wspólnego (CLR).  
   
  `ppObject`  
  określoną Wskaźnik do interfejsu zaimplementowanego przez hosta lub wartość null, Jeśli host nie obsługuje tego interfejsu.  
@@ -45,7 +47,7 @@ HRESULT GetHostManager (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`GetHostManager`pomyślnie zwrócono.|  
+|S_OK|`GetHostManager` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -55,6 +57,7 @@ HRESULT GetHostManager (
 |E_NOINTERFACE|Żądany interfejs nie jest obsługiwany.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR wysyła zapytanie do hosta, aby określić, czy obsługuje jeden lub więcej z następujących interfejsów:  
   
 - [IHostMemoryManager](ihostmemorymanager-interface.md)  
@@ -80,14 +83,15 @@ HRESULT GetHostManager (
  Środowisko CLR nie wywołuje `Release` menedżerów hostów nawet po jego zamknięciu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IHostControl, interfejs](ihostcontrol-interface.md)
+- [IHostControl — Interfejs](ihostcontrol-interface.md)
