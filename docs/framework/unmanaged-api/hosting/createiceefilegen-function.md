@@ -16,19 +16,20 @@ helpviewer_keywords:
 ms.assetid: e36e1fd8-8456-4359-bdc3-3ec1765f041f
 topic_type:
 - apiref
-ms.openlocfilehash: 294b82efd66704014aab1b73171afe9165f17664
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 454cfa2dd1b676f32649050625b1074fbd776d54
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616453"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673335"
 ---
-# <a name="createiceefilegen-function"></a><span data-ttu-id="b76d4-102">CreateICeeFileGen — Funkcja</span><span class="sxs-lookup"><span data-stu-id="b76d4-102">CreateICeeFileGen Function</span></span>
-<span data-ttu-id="b76d4-103">Tworzy obiekt [ICeeFileGen](iceefilegen-class.md) .</span><span class="sxs-lookup"><span data-stu-id="b76d4-103">Creates an [ICeeFileGen](iceefilegen-class.md) object.</span></span>  
+# <a name="createiceefilegen-function"></a><span data-ttu-id="49f9c-102">CreateICeeFileGen — Funkcja</span><span class="sxs-lookup"><span data-stu-id="49f9c-102">CreateICeeFileGen Function</span></span>
+
+<span data-ttu-id="49f9c-103">Tworzy obiekt [ICeeFileGen](iceefilegen-class.md) .</span><span class="sxs-lookup"><span data-stu-id="49f9c-103">Creates an [ICeeFileGen](iceefilegen-class.md) object.</span></span>  
   
- <span data-ttu-id="b76d4-104">Ta funkcja jest przestarzała w .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="b76d4-104">This function has been deprecated in the .NET Framework 4.</span></span>  
+ <span data-ttu-id="49f9c-104">Ta funkcja jest przestarzała w .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="49f9c-104">This function has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b76d4-105">Składnia</span><span class="sxs-lookup"><span data-stu-id="b76d4-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="49f9c-105">Składnia</span><span class="sxs-lookup"><span data-stu-id="49f9c-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT CreateICeeFileGen (  
@@ -36,27 +37,31 @@ HRESULT CreateICeeFileGen (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b76d4-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="b76d4-106">Parameters</span></span>  
- `ceeFileGen`  
- <span data-ttu-id="b76d4-107">określoną Wskaźnik do adresu nowego `ICeeFileGen` obiektu.</span><span class="sxs-lookup"><span data-stu-id="b76d4-107">[out] A pointer to the address of a new `ICeeFileGen` object.</span></span>  
-  
-## <a name="return-value"></a><span data-ttu-id="b76d4-108">Wartość zwracana</span><span class="sxs-lookup"><span data-stu-id="b76d4-108">Return Value</span></span>  
- <span data-ttu-id="b76d4-109">Ta metoda zwraca standardowe kody błędów COM.</span><span class="sxs-lookup"><span data-stu-id="b76d4-109">This method returns standard COM error codes.</span></span>  
-  
-## <a name="remarks"></a><span data-ttu-id="b76d4-110">Uwagi</span><span class="sxs-lookup"><span data-stu-id="b76d4-110">Remarks</span></span>  
- <span data-ttu-id="b76d4-111">`ICeeFileGen`Obiekt jest używany do tworzenia przenośnych plików wykonywalnych (PE) środowiska uruchomieniowego języka wspólnego (CLR).</span><span class="sxs-lookup"><span data-stu-id="b76d4-111">The `ICeeFileGen` object is used to create common language runtime (CLR) portable executable (PE) files.</span></span>  
-  
- <span data-ttu-id="b76d4-112">Wywołaj funkcję [DestroyICeeFileGen —](destroyiceefilegen-function.md) , aby zniszczyć `ICeeFileGen` obiekt po zakończeniu.</span><span class="sxs-lookup"><span data-stu-id="b76d4-112">Call the [DestroyICeeFileGen](destroyiceefilegen-function.md) function to destroy the `ICeeFileGen` object when finished.</span></span>  
-  
-## <a name="requirements"></a><span data-ttu-id="b76d4-113">Wymagania</span><span class="sxs-lookup"><span data-stu-id="b76d4-113">Requirements</span></span>  
- <span data-ttu-id="b76d4-114">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b76d4-114">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="b76d4-115">**Nagłówek:** ICeeFileGen. h</span><span class="sxs-lookup"><span data-stu-id="b76d4-115">**Header:** ICeeFileGen.h</span></span>  
-  
- <span data-ttu-id="b76d4-116">**Biblioteka:** MSCorPE. dll</span><span class="sxs-lookup"><span data-stu-id="b76d4-116">**Library:** MSCorPE.dll</span></span>  
-  
- <span data-ttu-id="b76d4-117">**.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b76d4-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="b76d4-118">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="b76d4-118">See also</span></span>
+## <a name="parameters"></a><span data-ttu-id="49f9c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="49f9c-106">Parameters</span></span>  
 
-- [<span data-ttu-id="b76d4-119">Przestarzałe funkcje hostingu środowiska CLR</span><span class="sxs-lookup"><span data-stu-id="b76d4-119">Deprecated CLR Hosting Functions</span></span>](deprecated-clr-hosting-functions.md)
+ `ceeFileGen`  
+ <span data-ttu-id="49f9c-107">określoną Wskaźnik do adresu nowego `ICeeFileGen` obiektu.</span><span class="sxs-lookup"><span data-stu-id="49f9c-107">[out] A pointer to the address of a new `ICeeFileGen` object.</span></span>  
+  
+## <a name="return-value"></a><span data-ttu-id="49f9c-108">Wartość zwracana</span><span class="sxs-lookup"><span data-stu-id="49f9c-108">Return Value</span></span>  
+
+ <span data-ttu-id="49f9c-109">Ta metoda zwraca standardowe kody błędów COM.</span><span class="sxs-lookup"><span data-stu-id="49f9c-109">This method returns standard COM error codes.</span></span>  
+  
+## <a name="remarks"></a><span data-ttu-id="49f9c-110">Uwagi</span><span class="sxs-lookup"><span data-stu-id="49f9c-110">Remarks</span></span>  
+
+ <span data-ttu-id="49f9c-111">`ICeeFileGen`Obiekt jest używany do tworzenia przenośnych plików wykonywalnych (PE) środowiska uruchomieniowego języka wspólnego (CLR).</span><span class="sxs-lookup"><span data-stu-id="49f9c-111">The `ICeeFileGen` object is used to create common language runtime (CLR) portable executable (PE) files.</span></span>  
+  
+ <span data-ttu-id="49f9c-112">Wywołaj funkcję [DestroyICeeFileGen —](destroyiceefilegen-function.md) , aby zniszczyć `ICeeFileGen` obiekt po zakończeniu.</span><span class="sxs-lookup"><span data-stu-id="49f9c-112">Call the [DestroyICeeFileGen](destroyiceefilegen-function.md) function to destroy the `ICeeFileGen` object when finished.</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="49f9c-113">Wymagania</span><span class="sxs-lookup"><span data-stu-id="49f9c-113">Requirements</span></span>  
+
+ <span data-ttu-id="49f9c-114">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="49f9c-114">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="49f9c-115">**Nagłówek:** ICeeFileGen. h</span><span class="sxs-lookup"><span data-stu-id="49f9c-115">**Header:** ICeeFileGen.h</span></span>  
+  
+ <span data-ttu-id="49f9c-116">**Biblioteka:** MSCorPE.dll</span><span class="sxs-lookup"><span data-stu-id="49f9c-116">**Library:** MSCorPE.dll</span></span>  
+  
+ <span data-ttu-id="49f9c-117">**.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="49f9c-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="49f9c-118">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="49f9c-118">See also</span></span>
+
+- [<span data-ttu-id="49f9c-119">Przestarzałe funkcje hostingu środowiska CLR</span><span class="sxs-lookup"><span data-stu-id="49f9c-119">Deprecated CLR Hosting Functions</span></span>](deprecated-clr-hosting-functions.md)
