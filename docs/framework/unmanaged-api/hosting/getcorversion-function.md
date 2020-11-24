@@ -15,19 +15,20 @@ helpviewer_keywords:
 ms.assetid: 2f09cd37-bf3a-4cc5-87b0-adc42a7eed31
 topic_type:
 - apiref
-ms.openlocfilehash: 23d68e8e4bbd87779e3b49f0c40f5a5ab9f5124f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e7ef3f300c8cfa0c275d15913e171abe09385eea
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617220"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95681213"
 ---
-# <a name="getcorversion-function"></a><span data-ttu-id="672a9-102">GetCORVersion — Funkcja</span><span class="sxs-lookup"><span data-stu-id="672a9-102">GetCORVersion Function</span></span>
-<span data-ttu-id="672a9-103">Zwraca numer wersji środowiska uruchomieniowego języka wspólnego (CLR), który jest uruchomiony w bieżącym procesie.</span><span class="sxs-lookup"><span data-stu-id="672a9-103">Returns the version number of the common language runtime (CLR) that is running in the current process.</span></span>  
+# <a name="getcorversion-function"></a><span data-ttu-id="c21f2-102">GetCORVersion — Funkcja</span><span class="sxs-lookup"><span data-stu-id="c21f2-102">GetCORVersion Function</span></span>
+
+<span data-ttu-id="c21f2-103">Zwraca numer wersji środowiska uruchomieniowego języka wspólnego (CLR), który jest uruchomiony w bieżącym procesie.</span><span class="sxs-lookup"><span data-stu-id="c21f2-103">Returns the version number of the common language runtime (CLR) that is running in the current process.</span></span>  
   
- <span data-ttu-id="672a9-104">Ta funkcja jest przestarzała w .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="672a9-104">This function has been deprecated in the .NET Framework 4.</span></span>  
+ <span data-ttu-id="c21f2-104">Ta funkcja jest przestarzała w .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="c21f2-104">This function has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="672a9-105">Składnia</span><span class="sxs-lookup"><span data-stu-id="672a9-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c21f2-105">Składnia</span><span class="sxs-lookup"><span data-stu-id="c21f2-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetCORVersion (  
@@ -37,25 +38,27 @@ HRESULT GetCORVersion (
 );
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="672a9-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="672a9-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c21f2-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="c21f2-106">Parameters</span></span>  
+
  `pbuffer`  
- <span data-ttu-id="672a9-107">Wskaźnik do buforu, w którym środowisko CLR zwraca ciąg określający wersję środowiska uruchomieniowego, która jest aktualnie załadowana do procesu.</span><span class="sxs-lookup"><span data-stu-id="672a9-107">A pointer to a buffer in which the CLR returns a string specifying the version of the runtime that is currently loaded into the process.</span></span> <span data-ttu-id="672a9-108">Zwrócony ciąg przyjmuje ten sam formularz, co ciągi przesłane do [CorBindToRuntimeEx](corbindtoruntimeex-function.md), na przykład "v 1.0.1216".</span><span class="sxs-lookup"><span data-stu-id="672a9-108">The returned string takes the same form as strings passed to [CorBindToRuntimeEx](corbindtoruntimeex-function.md), for example, "v1.0.1216".</span></span> <span data-ttu-id="672a9-109">Jeśli środowisko uruchomieniowe nie zostało jeszcze załadowane do procesu, funkcja zwróci odpowiednie informacje dotyczące katalogu dla najnowszej wersji środowiska uruchomieniowego zainstalowanej na komputerze.</span><span class="sxs-lookup"><span data-stu-id="672a9-109">If the runtime has not yet been loaded into the process, the function returns the appropriate directory information for the latest version of the runtime installed on the computer.</span></span>  
+ <span data-ttu-id="c21f2-107">Wskaźnik do buforu, w którym środowisko CLR zwraca ciąg określający wersję środowiska uruchomieniowego, która jest aktualnie załadowana do procesu.</span><span class="sxs-lookup"><span data-stu-id="c21f2-107">A pointer to a buffer in which the CLR returns a string specifying the version of the runtime that is currently loaded into the process.</span></span> <span data-ttu-id="c21f2-108">Zwrócony ciąg przyjmuje ten sam formularz, co ciągi przesłane do [CorBindToRuntimeEx](corbindtoruntimeex-function.md), na przykład "v 1.0.1216".</span><span class="sxs-lookup"><span data-stu-id="c21f2-108">The returned string takes the same form as strings passed to [CorBindToRuntimeEx](corbindtoruntimeex-function.md), for example, "v1.0.1216".</span></span> <span data-ttu-id="c21f2-109">Jeśli środowisko uruchomieniowe nie zostało jeszcze załadowane do procesu, funkcja zwróci odpowiednie informacje dotyczące katalogu dla najnowszej wersji środowiska uruchomieniowego zainstalowanej na komputerze.</span><span class="sxs-lookup"><span data-stu-id="c21f2-109">If the runtime has not yet been loaded into the process, the function returns the appropriate directory information for the latest version of the runtime installed on the computer.</span></span>  
   
  `cchBuffer`  
- <span data-ttu-id="672a9-110">Liczba znaków `WCHAR` , które mogą być przechowywane w `pbuffer` .</span><span class="sxs-lookup"><span data-stu-id="672a9-110">The number of characters (`WCHAR`s) that can be held in `pbuffer`.</span></span>  
+ <span data-ttu-id="c21f2-110">Liczba znaków `WCHAR` , które mogą być przechowywane w `pbuffer` .</span><span class="sxs-lookup"><span data-stu-id="c21f2-110">The number of characters (`WCHAR`s) that can be held in `pbuffer`.</span></span>  
   
  `dwLength`  
- <span data-ttu-id="672a9-111">Wskaźnik do liczby znaków faktycznie zwracanych przez `pbuffer` .</span><span class="sxs-lookup"><span data-stu-id="672a9-111">A pointer to the number of characters actually returned in `pbuffer`.</span></span> <span data-ttu-id="672a9-112">Jeśli `pbuffer` jest wskaźnikiem typu null, środowisko uruchomieniowe zwraca E_POINTER.</span><span class="sxs-lookup"><span data-stu-id="672a9-112">If `pbuffer` is a null pointer, the runtime returns E_POINTER.</span></span> <span data-ttu-id="672a9-113">Jeśli liczba znaków jest większa niż długość `pbuffer` , środowisko uruchomieniowe zwraca ERROR_INSUFFICIENT_BUFFER.</span><span class="sxs-lookup"><span data-stu-id="672a9-113">If the number of characters is greater then the length of `pbuffer` , the runtime returns ERROR_INSUFFICIENT_BUFFER.</span></span>  
+ <span data-ttu-id="c21f2-111">Wskaźnik do liczby znaków faktycznie zwracanych przez `pbuffer` .</span><span class="sxs-lookup"><span data-stu-id="c21f2-111">A pointer to the number of characters actually returned in `pbuffer`.</span></span> <span data-ttu-id="c21f2-112">Jeśli `pbuffer` jest wskaźnikiem typu null, środowisko uruchomieniowe zwraca E_POINTER.</span><span class="sxs-lookup"><span data-stu-id="c21f2-112">If `pbuffer` is a null pointer, the runtime returns E_POINTER.</span></span> <span data-ttu-id="c21f2-113">Jeśli liczba znaków jest większa niż długość `pbuffer` , środowisko uruchomieniowe zwraca ERROR_INSUFFICIENT_BUFFER.</span><span class="sxs-lookup"><span data-stu-id="c21f2-113">If the number of characters is greater then the length of `pbuffer` , the runtime returns ERROR_INSUFFICIENT_BUFFER.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="672a9-114">Wymagania</span><span class="sxs-lookup"><span data-stu-id="672a9-114">Requirements</span></span>  
- <span data-ttu-id="672a9-115">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="672a9-115">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="672a9-116">**Nagłówek:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="672a9-116">**Header:** MSCorEE.h</span></span>  
-  
- <span data-ttu-id="672a9-117">**Biblioteka:** MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="672a9-117">**Library:** MSCorEE.dll</span></span>  
-  
- <span data-ttu-id="672a9-118">**.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="672a9-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="672a9-119">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="672a9-119">See also</span></span>
+## <a name="requirements"></a><span data-ttu-id="c21f2-114">Wymagania</span><span class="sxs-lookup"><span data-stu-id="c21f2-114">Requirements</span></span>  
 
-- [<span data-ttu-id="672a9-120">Przestarzałe funkcje hostingu środowiska CLR</span><span class="sxs-lookup"><span data-stu-id="672a9-120">Deprecated CLR Hosting Functions</span></span>](deprecated-clr-hosting-functions.md)
+ <span data-ttu-id="c21f2-115">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c21f2-115">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="c21f2-116">**Nagłówek:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="c21f2-116">**Header:** MSCorEE.h</span></span>  
+  
+ <span data-ttu-id="c21f2-117">**Biblioteka:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c21f2-117">**Library:** MSCorEE.dll</span></span>  
+  
+ <span data-ttu-id="c21f2-118">**.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c21f2-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="c21f2-119">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="c21f2-119">See also</span></span>
+
+- [<span data-ttu-id="c21f2-120">Przestarzałe funkcje hostingu środowiska CLR</span><span class="sxs-lookup"><span data-stu-id="c21f2-120">Deprecated CLR Hosting Functions</span></span>](deprecated-clr-hosting-functions.md)
