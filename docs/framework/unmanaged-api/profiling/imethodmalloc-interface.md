@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8c8ab5dc-557c-473a-82f2-6e403eca7dac
 topic_type:
 - apiref
-ms.openlocfilehash: 12b97b28383eb7c39f20ee0e88f55d48e60ad956
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8eccdba75b59df505ae72d74cfcd2bc83de2b45a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494114"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688175"
 ---
 # <a name="imethodmalloc-interface"></a>IMethodMalloc — Interfejs
+
 Udostępnia metodę przydzielania pamięci dla nowej treści funkcji języka pośredniego (MSIL) firmy Microsoft.  
   
 > [!NOTE]
@@ -34,9 +35,11 @@ Udostępnia metodę przydzielania pamięci dla nowej treści funkcji języka po�
 |[Alloc, metoda](imethodmalloc-alloc-method.md)|Próbuje przydzielić określoną ilość pamięci dla nowej treści funkcji MSIL.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Każdy Alokator jest specyficzny dla modułu i gwarantuje, że treść funkcji będzie naliczona pozytywnie od podstawy modułu. Pamięć powyżej podstawy modułu może być cenna, więc Alokator powinien być używany do przydzielania pamięci tylko dla treści funkcji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

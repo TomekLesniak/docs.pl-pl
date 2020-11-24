@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5833740b-7d67-44b4-865c-b5bf45e291e3
 topic_type:
 - apiref
-ms.openlocfilehash: fe378307ce2bda6e1a267e46433ead70a0e2299e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: cd4e675b4ba50b47146428d204c28cc943c23c69
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616525"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688006"
 ---
 # <a name="corruntimehost-coclass"></a>CorRuntimeHost — Klasa coclass
+
 Udostępnia interfejsy do zarządzania aplikacjami, które są wykonywane przez środowisko uruchomieniowe języka wspólnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,18 +41,19 @@ coclass CorRuntimeHost {
   
 |Interfejs|Opis|  
 |---------------|-----------------|  
-|[ICorConfiguration, interfejs](icorconfiguration-interface.md)|Zapewnia metody konfigurowania środowiska uruchomieniowego języka wspólnego (CLR).|  
-|[ICorRuntimeHost, interfejs](icorruntimehost-interface.md)|Zapewnia metody umożliwiające uruchamianie hosta i zatrzymywanie jawnie środowiska uruchomieniowego języka wspólnego, tworzenie i Konfigurowanie domen aplikacji, dostęp do domeny domyślnej oraz wyliczanie wszystkich domen uruchomionych w procesie.|  
-|[IDebuggerInfo, interfejs](idebuggerinfo-interface.md)|Zapewnia metody uzyskiwania informacji o stanie usług debugowania.|  
-|[IGCHost, interfejs](igchost-interface.md)|Zapewnia metody uzyskiwania informacji o systemie odzyskiwania pamięci i kontrolowania niektórych aspektów wyrzucania elementów bezużytecznych.|  
+|[ICorConfiguration — Interfejs](icorconfiguration-interface.md)|Zapewnia metody konfigurowania środowiska uruchomieniowego języka wspólnego (CLR).|  
+|[ICorRuntimeHost — Interfejs](icorruntimehost-interface.md)|Zapewnia metody umożliwiające uruchamianie hosta i zatrzymywanie jawnie środowiska uruchomieniowego języka wspólnego, tworzenie i Konfigurowanie domen aplikacji, dostęp do domeny domyślnej oraz wyliczanie wszystkich domen uruchomionych w procesie.|  
+|[IDebuggerInfo — Interfejs](idebuggerinfo-interface.md)|Zapewnia metody uzyskiwania informacji o stanie usług debugowania.|  
+|[IGCHost — Interfejs](igchost-interface.md)|Zapewnia metody uzyskiwania informacji o systemie odzyskiwania pamięci i kontrolowania niektórych aspektów wyrzucania elementów bezużytecznych.|  
 |IValidator|Zapewnia metody weryfikacji przenośnych obrazów wykonywalnych i szczegółowe raportowanie błędów walidacji.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. idl  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

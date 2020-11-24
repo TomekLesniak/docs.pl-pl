@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: cae53926-82ac-4d1d-b297-0bde0bd1bebb
 topic_type:
 - apiref
-ms.openlocfilehash: 3b0c11ac9d827bd252018172e2337df653054a7b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 0eea9dba57886edfef13c31948a9cff94c6c1bfd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805201"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687889"
 ---
 # <a name="igchostsetgcstartuplimits-method"></a>IGCHost::SetGCStartupLimits — Metoda
+
 Ustawia rozmiar segmentu i maksymalny rozmiar generacji 0.  
   
 > [!IMPORTANT]
@@ -38,6 +39,7 @@ HRESULT SetGCStartupLimits (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `SegmentSize`  
  podczas Rozmiar segmentu używany przez system odzyskiwania pamięci.  
   
@@ -45,17 +47,19 @@ HRESULT SetGCStartupLimits (
  podczas Maksymalny rozmiar generacji 0.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `SetGCStartupLimits`Metoda może być wywoływana tylko raz. Tych wartości nie można później zmienić.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** GCHost. idl, GCHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IGCHost, interfejs](igchost-interface.md)
+- [IGCHost — Interfejs](igchost-interface.md)

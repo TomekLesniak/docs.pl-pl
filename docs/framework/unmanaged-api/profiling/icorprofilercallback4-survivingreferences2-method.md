@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 02b51888-5d89-4e50-a915-45b7e329aad9
 topic_type:
 - apiref
-ms.openlocfilehash: 208ce1d7ef8a1eab4f18a6d488f0cc480b5713d8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: fb10057a406bd2192e0da61f916f81697dfa4a7d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499340"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689319"
 ---
 # <a name="icorprofilercallback4survivingreferences2-method"></a>ICorProfilerCallback4::SurvivingReferences2 — Metoda
+
 Raportuje układ obiektów w stercie w wyniku niekompaktowego wyrzucania elementów bezużytecznych. Ta metoda jest wywoływana, jeśli Profiler zaimplementuje Interfejs [ICorProfilerCallback4](icorprofilercallback4-interface.md) . To wywołanie zwrotne zastępuje metodę [ICorProfilerCallback2:: SurvivingReferences —](icorprofilercallback2-survivingreferences-method.md) , ponieważ umożliwia raportowanie większych zakresów obiektów, których długość przekracza, co może być wyrażone w ulong.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT SurvivingReferences2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cSurvivingObjectIDRanges`  
  podczas Liczba bloków ciągłych obiektów, które przeżyły jako wynik niekompaktowego wyrzucania elementów bezużytecznych. Oznacza to, że wartość `cSurvivingObjectIDRanges` jest rozmiarem `objectIDRangeStart` `cObjectIDRangeLength` tablic i, które przechowują `ObjectID` odpowiednio długość i dla każdego bloku obiektów.  
   
@@ -51,13 +53,14 @@ HRESULT SurvivingReferences2(
  Dla każdego bloku, do którego odwołuje się tablica, jest określony rozmiar `objectIDRangeStart` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Elementy `objectIDRangeStart` `cObjectIDRangeLength` tablic i powinny być interpretowane w następujący sposób, aby określić, czy obiekt przeżyje odzyskiwanie pamięci. Załóżmy, że `ObjectID` wartość ( `ObjectID` ) znajduje się w następującym zakresie:  
   
  `ObjectIDRangeStart[i]` <= `ObjectID` < `ObjectIDRangeStart[i]` + `cObjectIDRangeLength[i]`  
   
  Dla każdej wartości `i` , która znajduje się w następującym zakresie, obiekt przeżyły odzyskiwanie pamięci:  
   
- 0 <=`i` < `cSurvivingObjectIDRanges`  
+ 0 <= `i` < `cSurvivingObjectIDRanges`  
   
  Niekompaktowe wyrzucanie elementów bezużytecznych przejmuje pamięć zajmowaną przez obiekty "martwe", ale nie kompaktuje ilości wolnego miejsca. W efekcie do sterty jest zwracana pamięć, ale nie są przenoszone żadne obiekty "na żywo".  
   
@@ -68,6 +71,7 @@ HRESULT SurvivingReferences2(
  Jeśli profiler implementuje zarówno interfejsy [ICorProfilerCallback](icorprofilercallback-interface.md) , jak i [ICorProfilerCallback4](icorprofilercallback4-interface.md) , `SurvivingReferences2` Metoda jest wywoływana przed metodą [ICorProfilerCallback2:: SurvivingReferences —](icorprofilercallback2-survivingreferences-method.md) , ale tylko wtedy, gdy `SurvivingReferences2` zwróci wartość pomyślnie. Obiekt profilowający może zwracać wynik HRESULT, który wskazuje niepowodzenie z `SurvivingReferences2` metody, aby uniknąć wywoływania drugiej metody.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -80,4 +84,4 @@ HRESULT SurvivingReferences2(
 
 - [ICorProfilerCallback — Interfejs](icorprofilercallback-interface.md)
 - [ICorProfilerCallback2 — Interfejs](icorprofilercallback2-interface.md)
-- [ICorProfilerCallback4, interfejs](icorprofilercallback4-interface.md)
+- [ICorProfilerCallback4 — Interfejs](icorprofilercallback4-interface.md)

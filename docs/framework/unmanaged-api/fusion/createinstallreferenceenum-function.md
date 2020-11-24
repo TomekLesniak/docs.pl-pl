@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 80dbbbf8-54fc-4894-b74a-0179d3201083
 topic_type:
 - apiref
-ms.openlocfilehash: f089769f854bad5d3e572e0307734e06e72ca89c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0f62b05ebbd8b27dba160c8281c1d40748c90fc9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108564"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688838"
 ---
 # <a name="createinstallreferenceenum-function"></a>CreateInstallReferenceEnum — Funkcja
+
 Pobiera wskaźnik do wystąpienia [IInstallReferenceEnum](iinstallreferenceenum-interface.md) , które reprezentuje listę odwołań aplikacji do określonego zestawu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,8 +39,9 @@ HRESULT CreateInstallReferenceEnum (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppRefEnum`  
- określoną Zwrócony wskaźnik `IInstallReferenceEnum`.  
+ określoną Zwrócony `IInstallReferenceEnum` wskaźnik.  
   
  `pName`  
  podczas [IAssemblyName](iassemblyname-interface.md) , który identyfikuje zestaw, dla którego mają zostać wyliczone odwołania.  
@@ -51,16 +53,17 @@ HRESULT CreateInstallReferenceEnum (
  podczas Zarezerwowane do użytku w przyszłości. `pvReserved` musi być odwołaniem o wartości null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Biblioteka:** Fusion. dll i mscorwks. dll. Aby upewnić się, że docelowa wersja .NET Framework, należy użyć pliku Fusion. dll zamiast Mscorwks. dll.  
+ **Biblioteka:** Fusion.dll i Mscorwks.dll. Użyj Fusion.dll zamiast Mscorwks.dll, aby upewnić się, że docelowa jest poprawna wersja .NET Framework.  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IInstallReferenceEnum, interfejs](iinstallreferenceenum-interface.md)
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+- [IInstallReferenceEnum — Interfejs](iinstallreferenceenum-interface.md)
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)
 - [Łączenie statycznych funkcji globalnych](fusion-global-static-functions.md)

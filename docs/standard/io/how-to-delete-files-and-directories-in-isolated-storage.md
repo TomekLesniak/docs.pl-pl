@@ -16,14 +16,15 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting files and directories
 - deleting directories within isolated stage file
 ms.assetid: 8fcc0dea-435b-4d40-ba4d-ba056265c202
-ms.openlocfilehash: 9340796c835d91fe5401e467edd82cab80b2e653
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ea1d7a460a8867f069aa4b4d915e03d6948e23b2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830795"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688513"
 ---
 # <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>Instrukcje: Usuwanie plików i katalogów w izolowanym magazynie
+
 Można usunąć katalogi i pliki w izolowanym pliku magazynu. W magazynie nazwy plików i katalogów są zależne od systemu operacyjnego i są określane jako względne dla katalogu głównego wirtualnego systemu plików. W systemach operacyjnych Windows nie jest rozróżniana wielkość liter.  
   
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>Klasa oferuje dwie metody usuwania katalogów i plików: <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> i <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> . <xref:System.IO.IsolatedStorage.IsolatedStorageException>Wyjątek jest zgłaszany w przypadku próby usunięcia pliku lub katalogu, który nie istnieje. Jeśli w nazwie zostanie uwzględniony symbol wieloznaczny, program <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> zgłosi <xref:System.IO.IsolatedStorage.IsolatedStorageException> wyjątek i <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> zgłosi <xref:System.ArgumentException> wyjątek.  
@@ -31,6 +32,7 @@ Można usunąć katalogi i pliki w izolowanym pliku magazynu. W magazynie nazwy 
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A>Metoda kończy się niepowodzeniem, jeśli katalog zawiera jakiekolwiek pliki lub podkatalogi. Przy użyciu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> metod i można <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> pobrać istniejące pliki i katalogi. Aby uzyskać więcej informacji o przeszukiwaniu wirtualnego systemu plików w sklepie, zobacz [How to: find Existing Files i directorys in the izolowany magazyn](how-to-find-existing-files-and-directories-in-isolated-storage.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu tworzy, a następnie usuwa kilka katalogów i plików.  
   
  [!code-cpp[Conceptual.IsolatedStorage#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source4.cpp#4)]

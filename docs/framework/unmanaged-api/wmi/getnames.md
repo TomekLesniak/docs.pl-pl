@@ -1,5 +1,5 @@
 ---
-title: GetNames, funkcja (odwołanie do niezarządzanego interfejsu API)
+title: GetNames — funkcja (niezarządzana dokumentacja interfejsu API)
 description: Funkcja GetNames pobiera nazwy właściwości obiektu.
 ms.date: 11/06/2017
 api_name:
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - GetNames function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 449f0ce9c291d4bbcad4947214e56ff46f55beed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd889158e61b86f42d88bcf86eda7d816277e6ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174956"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687661"
 ---
 # <a name="getnames-function"></a>GetNames, funkcja
-Pobiera podzbiór lub wszystkie nazwy właściwości obiektu.
+
+Pobiera podzestaw lub wszystkie nazwy właściwości obiektu.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -42,71 +43,72 @@ HRESULT GetNames (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[w] Ten parametr jest nieużywane.
+podczas Ten parametr jest nieużywany.
 
 `ptr`  
-[w] Wskaźnik do wystąpienia [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
+podczas Wskaźnik do wystąpienia [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszQualifierName`  
-[w] Wskaźnik do prawidłowego, `LPCWSTR` który określa nazwę kwalifikatora, który działa jako część filtru. Aby uzyskać więcej informacji, zobacz [uwagi](#remarks) sekcji. Ten parametr `null`może być .
+podczas Wskaźnik do prawidłowego `LPCWSTR` , który określa nazwę kwalifikatora, który działa jako część filtra. Aby uzyskać więcej informacji, zobacz sekcję [uwagi](#remarks) . Ten parametr może być `null` .
 
 `lFlags`  
-[w] Kombinacja pól bitowych. Aby uzyskać więcej informacji, zobacz [uwagi](#remarks) sekcji.
+podczas Kombinacja pól bitowych. Aby uzyskać więcej informacji, zobacz sekcję [uwagi](#remarks) .
 
-`pQualifierValue`[w] Wskaźnik do prawidłowej `VARIANT` struktury zainicjowany do wartości filtru. Ten parametr `null`może być .
+`pQualifierValue` podczas Zainicjowano wskaźnik do prawidłowej `VARIANT` struktury na wartość filtru. Ten parametr może być `null` .
 
 `pstrNames`  
-[na zewnątrz] Struktura `SAFEARRAY` zawierająca nazwy właściwości. Przy wprowadzaniu ten parametr musi `null`być zawsze wskaźnikiem do . Zobacz [uwagi](#remarks) sekcji, aby uzyskać więcej informacji.
+określoną `SAFEARRAY` Struktura, która zawiera nazwy właściwości. We wpisie, ten parametr musi być zawsze wskaźnikiem do `null` . Zobacz sekcję [uwagi](#remarks) , aby uzyskać więcej informacji.
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówka *WbemCli.h* lub można zdefiniować je jako stałe w kodzie:
+Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówkowym *WbemCli. h* lub można je definiować jako stałe w kodzie:
 
-|Stały  |Wartość  |Opis  |
+|Stała  |Wartość  |Opis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Wystąpiła ogólna porażka. |
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden lub więcej parametrów jest nieprawidłowych lub określono niepoprawną kombinację flag i parametrów. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Za mało pamięci jest dostępna do ukończenia operacji. |
+|`WBEM_E_FAILED` | 0x80041001 | Wystąpił błąd ogólny. |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Co najmniej jeden parametr jest nieprawidłowy lub określono niepoprawną kombinację flag i parametrów. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Za mało dostępnej pamięci, aby ukończyć tę operację. |
 |`WBEM_S_NO_ERROR` | 0 | Wywołanie funkcji zakończyło się pomyślnie.  |
   
 ## <a name="remarks"></a>Uwagi
 
-Ta funkcja zawija wywołanie [metody IWbemClassObject::GetNames.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getnames)
+Ta funkcja otacza wywołanie metody [IWbemClassObject:: GetNames](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getnames) .
 
-Zwracane nazwy są kontrolowane przez kombinację flag i parametrów. Na przykład funkcja może zwracać nazwy wszystkich właściwości lub tylko nazwy właściwości klucza.  Filtr podstawowy jest określony `lFlags` w parametrze, a inne parametry różnią się w zależności od niego.
+Nazwane zwracane są kontrolowane przez kombinację flag i parametrów. Na przykład funkcja może zwracać nazwy wszystkich właściwości lub tylko nazwy właściwości klucza.  Filtr podstawowy jest określony w `lFlags` parametrze, a inne parametry różnią się w zależności od tego.
 
-Wartości flagi `lFlags` są polami bitowymi
+Wartości flag w programie `lFlags` są polami bitowymi
 
-Flagi, które mogą być `lEnumFlags` przekazywane jako argument są pola bitowe, które są zdefiniowane w pliku nagłówka *WbemCli.h* lub można zdefiniować je jako stałe w kodzie.  Można połączyć jedną flagę z każdej grupy z dowolną flagą z dowolnej innej grupy. Jednak flagi z tej samej grupy wzajemnie się wykluczają.
+Flagi, które mogą być przesyłane jako `lEnumFlags` argument są polami bitowymi, które są zdefiniowane w pliku nagłówkowym *WbemCli. h* lub można je definiować jako stałe w kodzie.  Można połączyć jedną flagę z każdej grupy z dowolną flagą z dowolnej innej grupy. Jednak flagi z tej samej grupy wykluczają się wzajemnie.
 
 | Flagi grupy 1 |Wartość  |Opis  |
 |---------|---------|---------|
-| `WBEM_FLAG_ALWAYS` | 0 | Zwraca wszystkie nazwy właściwości. `strQualifierName`i `pQualifierVal` są nieużywane. |
-| `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Zwraca tylko właściwości, które mają kwalifikator nazwy określonej `strQualifierName` przez parametr. Jeśli ta flaga jest `strQualifierName`używana, należy określić . |
-|`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Zwraca tylko właściwości, które nie mają kwalifikator nazwy określonej przez `strQualifierName` parametr. Jeśli ta flaga jest `strQualifierName`używana, należy określić . |
-|`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Zwraca tylko właściwości, które mają kwalifikator nazwy określonej przez `wszQualifierName` parametr, `pQualifierVal` a także mają wartość identyczną z określoną przez strukturę. Jeśli ta flaga jest używana, `wszQualifierName` należy `pQualifierValue`określić zarówno a, jak i . |
+| `WBEM_FLAG_ALWAYS` | 0 | Zwróć wszystkie nazwy właściwości. `strQualifierName` i nie `pQualifierVal` są używane. |
+| `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Zwraca tylko właściwości, które mają kwalifikator o nazwie określonej przez `strQualifierName` parametr. Jeśli ta flaga jest używana, należy określić `strQualifierName` . |
+|`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Zwraca tylko właściwości, które nie mają kwalifikatora nazwy określonej przez `strQualifierName` parametr. Jeśli ta flaga jest używana, należy określić `strQualifierName` . |
+|`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Zwróć tylko właściwości, które mają kwalifikator o nazwie określonej przez `wszQualifierName` parametr, a także mają wartość identyczną z określoną przez `pQualifierVal` strukturę. Jeśli ta flaga jest używana, należy określić zarówno, `wszQualifierName` jak i `pQualifierValue` . |
 
 | Flagi grupy 2 |Wartość  |Opis  |
 |---------|---------|---------|
-|`WBEM_FLAG_KEYS_ONLY` | 0x4 | Zwraca tylko nazwy właściwości, które definiują klucze. |
-|`WBEM_FLAG_REFS_ONLY` | 0x8 | Zwracanie tylko nazw właściwości, które są odwołaniami do obiektów. |
+|`WBEM_FLAG_KEYS_ONLY` | 0x4 | Zwróć tylko nazwy właściwości, które definiują klucze. |
+|`WBEM_FLAG_REFS_ONLY` | 0x8 | Zwraca tylko nazwy właściwości, które są odwołaniami do obiektów. |
 
 | Flagi grupy 3 |Wartość  |Opis  |
 |---------|---------|---------|
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Zwraca tylko nazwy właściwości, które należą do najbardziej pochodnej klasy. Wyklucz właściwości z klas nadrzędnych. |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Zwracanie tylko nazw właściwości, które należą do klas nadrzędnych. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Zwracaj tylko nazwy właściwości, które należą do klasy najbardziej pochodnej. Wyklucz właściwości z klas nadrzędnych. |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Zwraca tylko nazwy właściwości należące do klas nadrzędnych. |
 |`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Zwraca tylko nazwy właściwości systemu. |
-|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Zwraca tylko nazwy właściwości niesystemowych. |
+|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Zwróć tylko nazwy właściwości niesystemowych. |
 
-Funkcja zawsze przydziela nowy, `SAFEARRAY` jeśli `WBEM_S_NO_ERROR`zwraca `pstrNames` , i jest zawsze ustawiony, aby wskazać na niego. Zwrócona tablica może mieć 0 elementów, jeśli żadne właściwości nie pasują do określonych filtrów. Jeśli funkcja zwraca wartość `WBM_S_NO_ERROR`inną niż `SAFEARRAY` , nowa struktura nie jest zwracana.
+Funkcja zawsze przydziela nowe `SAFEARRAY` , jeśli zwraca `WBEM_S_NO_ERROR` , i `pstrNames` zawsze jest ustawione na wartość. Zwracana tablica może zawierać 0 elementów, jeśli żadne właściwości nie pasują do określonych filtrów. Jeśli funkcja zwraca wartość inną niż `WBM_S_NO_ERROR` , Nowa `SAFEARRAY` Struktura nie jest zwracana.
 
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** WMINet_Utils.idl  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** WMINet_Utils. idl  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

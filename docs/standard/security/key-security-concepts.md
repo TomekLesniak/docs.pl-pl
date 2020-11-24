@@ -10,12 +10,12 @@ helpviewer_keywords:
 - permissions [.NET]
 - security [.NET], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
-ms.openlocfilehash: a9f0703217b55c90c4e98503402d3fbf60a45ea7
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 73e4d0474810d097c5eee8b99ae30b6096ee1695
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831068"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687550"
 ---
 # <a name="key-security-concepts"></a>Główne pojęcia dotyczące zabezpieczeń
 
@@ -49,6 +49,7 @@ Podmiot zabezpieczeń reprezentuje tożsamość i rolę użytkownika oraz dział
 Aby uzyskać więcej informacji, zobacz [obiekty główne i tożsamości](principal-and-identity-objects.md).  
   
 ## <a name="authentication"></a>Authentication  
+
 Uwierzytelnianie to proces odnajdywania i weryfikowania tożsamości podmiotu zabezpieczeń, sprawdzając poświadczenia użytkownika i sprawdzając poświadczenia dla niektórych urzędów. Informacje uzyskane podczas uwierzytelniania są bezpośrednio użyteczne w kodzie. Za pomocą zabezpieczeń opartych na rolach platformy .NET można także uwierzytelniać bieżącego użytkownika i określić, czy zezwolić temu podmiotowi dostępu do kodu. Zobacz przeciążania metody, aby zapoznać się z <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType> przykładami sposobu uwierzytelniania podmiotu zabezpieczeń dla określonych ról. Można na przykład użyć <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> przeciążenia, aby określić, czy bieżący użytkownik jest członkiem grupy Administratorzy.  
   
 Obecnie używane są różne mechanizmy uwierzytelniania, wiele z nich może być używane z zabezpieczeniami opartymi na rolach platformy .NET. Najczęściej używanymi mechanizmami są podstawowe, szyfrowane, paszporty, system operacyjny (na przykład NTLM lub Kerberos) lub mechanizmy zdefiniowane przez aplikację.  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e5323fa4-18ac-424d-859d-a65a550d08d9
 topic_type:
 - apiref
-ms.openlocfilehash: 976673a0caab4e041cc80e5536544c195fcf692a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 7529ecd215d74eb0eedbec8b90eba367ed20d56f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805179"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687746"
 ---
 # <a name="igchost2-interface"></a>IGCHost2 — Interfejs
+
 Zapewnia metody uzyskiwania informacji o systemie odzyskiwania pamięci i kontrolowania niektórych aspektów wyrzucania elementów bezużytecznych.  
   
 > [!NOTE]
@@ -31,19 +32,20 @@ Zapewnia metody uzyskiwania informacji o systemie odzyskiwania pamięci i kontro
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[SetGCStartupLimitsEx, metoda](igchost2-setgcstartuplimitsex-method.md)|Ustawia rozmiar segmentu i maksymalny rozmiar generacji 0. Włącza wartość generacji 0 i rozmiary segmentów większe niż `DWORD` .|  
+|[SetGCStartupLimitsEx — Metoda](igchost2-setgcstartuplimitsex-method.md)|Ustawia rozmiar segmentu i maksymalny rozmiar generacji 0. Włącza wartość generacji 0 i rozmiary segmentów większe niż `DWORD` .|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** GCHost. idl, GCHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)
 - [Interfejsy hostingu środowiska CLR](clr-hosting-interfaces.md)
-- [CorRuntimeHost, klasa coclass](corruntimehost-coclass.md)
+- [CorRuntimeHost — Klasa coclass](corruntimehost-coclass.md)

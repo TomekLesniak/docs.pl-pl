@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e47a72f1-9609-48ed-bb34-97170d7f6890
 topic_type:
 - apiref
-ms.openlocfilehash: dd97c479f12e7bdb015b39a802b398ca2b0bcd3f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 95bbb0cc2f223cfa96e1314ed28f46016c81a2fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007640"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687700"
 ---
 # <a name="cornativetype-enumeration"></a>CorNativeType — Wyliczenie
+
 Zawiera wartości opisujące natywne typy niezarządzane.  
   
 ## <a name="syntax"></a>Składnia  
@@ -138,13 +139,14 @@ typedef enum CorNativeType {
 |`NATIVE_TYPE_MAX`|Nieprawidłowa wartość.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Runtime.InteropServices.UnmanagedType>
 - [Wyliczenia metadanych](metadata-enumerations.md)

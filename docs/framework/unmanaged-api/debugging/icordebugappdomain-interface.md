@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: be7ae711-1217-4a44-be40-166e29641b77
 topic_type:
 - apiref
-ms.openlocfilehash: 140e67417f4fad552f972a93bc8c620b440b2370
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 98273a5d4602c023863758045bdb2a6a502ba7a7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895173"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687232"
 ---
 # <a name="icordebugappdomain-interface"></a>ICorDebugAppDomain, interfejs
 
@@ -46,6 +46,7 @@ Dostarcza metody do debugowania domen aplikacji. Ten interfejs jest podklasą el
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -54,6 +55,6 @@ Dostarcza metody do debugowania domen aplikacji. Ten interfejs jest podklasą el
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

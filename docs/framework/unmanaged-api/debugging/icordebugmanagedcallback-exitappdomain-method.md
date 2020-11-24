@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d815486e-b3bd-4fe8-ba28-02abdb4d67ba
 topic_type:
 - apiref
-ms.openlocfilehash: 786582c7118fbed394de7c414a10243616cf4ee1
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 51beed47e7187d6fa22e60baed16598a8ad73adb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209802"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688994"
 ---
 # <a name="icordebugmanagedcallbackexitappdomain-method"></a>ICorDebugManagedCallback::ExitAppDomain — Metoda
+
 Powiadamia debuger o zakończeniu domeny aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT ExitAppDomain (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pProcess`  
  podczas Wskaźnik do obiektu ICorDebugProcess, który reprezentuje proces, który zawiera daną domenę aplikacji.  
   
@@ -42,6 +44,7 @@ HRESULT ExitAppDomain (
  podczas Wskaźnik do obiektu ICorDebugAppDomain, który reprezentuje domenę aplikacji, która została zakończona.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -50,6 +53,6 @@ HRESULT ExitAppDomain (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)
