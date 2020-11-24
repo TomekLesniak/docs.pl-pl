@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
-ms.openlocfilehash: 6f0be433abcebed7f9da70225563a04170426314
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: fe227a2d3efc5c36b818b7f4431896e6f62b1f26
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818209"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685048"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>Klasa XsltArgumentList — parametry arkusza stylów i obiekty rozszerzeń
+
 <xref:System.Xml.Xsl.XsltArgumentList>Klasa zawiera Extensible Stylesheet Language dla parametrów Transformations (XSLT) i obiektów rozszerzeń XSLT. Po przekazaniu do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody te parametry i obiekty rozszerzeń mogą być wywoływane z arkuszy stylów.  
   
 > [!NOTE]
@@ -31,14 +32,15 @@ ms.locfileid: "94818209"
 - Obsługuje przekazywanie fragmentów drzewa wyników do arkusza stylów przy użyciu <xref:System.Xml.XPath.XPathNodeIterator> .  
   
 ## <a name="xslt-style-sheet-parameters"></a>Parametry arkusza stylów XSLT  
+
  Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody using. Kwalifikowana nazwa i przestrzeń nazw Uniform Resource Identifier (URI) są skojarzone z obiektem parametru w tym czasie.  
   
  Obiekt parametru powinien odpowiadać typowi organizacja World Wide Web Consortium (W3C). W poniższej tabeli przedstawiono odpowiednie typy W3C, równoważne klasy .NET Framework (typ) i określające, czy typem W3C jest typ języka ścieżki XML (XPath) czy typ XSLT.  
   
 |Typ W3C|Równoważna Klasa .NET Framework (typ)|Typ XPath lub typ XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  
-|String|System. String|XPath|  
-|Boolean|System. Boolean|XPath|  
+|Ciąg|System. String|XPath|  
+|Wartość logiczna|System. Boolean|XPath|  
 |Liczba|System. Double|XPath|  
 |Fragment drzewa wyników|System.Xml. XPath. XPathNavigator|XSL|  
 |Zestaw węzłów|System.Xml. XPath. XPathNodeIterator|XPath|  
@@ -54,6 +56,7 @@ ms.locfileid: "94818209"
 3. Przekaż <xref:System.Xml.Xsl.XsltArgumentList> do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodę, aby utworzyć parametr do przechowywania obliczonej daty rabatu. Data rabatu jest obliczana na 20 dni od daty zamówienia.  
   
 ```vb  
@@ -137,6 +140,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Dane wejściowe  
+
  order.xml  
   
 ```xml  
@@ -178,6 +182,7 @@ public class Sample
 ```  
   
 ## <a name="xslt-extension-objects"></a>Obiekty rozszerzeń XSLT  
+
  Obiekty rozszerzeń XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody using. Kwalifikowana nazwa i identyfikator URI przestrzeni nazw są skojarzone z obiektem rozszerzenia w tym czasie.  
   
  Po dodaniu obiektu obiekt wywołujący <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> musi być w pełni zaufany w zasadach zabezpieczeń. Jeśli obiekt wywołujący jest częściowo zaufany, dodanie nie powiedzie się.  
@@ -195,6 +200,7 @@ public class Sample
 3. Przekaż <xref:System.Xml.Xsl.XsltArgumentList> do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
   
 ### <a name="example"></a>Przykład  
+
  Poniższy przykład oblicza obwód okręgu, w którym znajduje się jego promień.  
   
 ```vb  
@@ -305,6 +311,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Dane wejściowe  
+
  number.xml  
   
 ```xml  
@@ -341,6 +348,7 @@ public class Sample
 ```  
   
 ### <a name="output"></a>Dane wyjściowe  
+
  `<circles xmlns:myObj="urn:myObj">`  
   
  `<circle>`  

@@ -2,17 +2,19 @@
 title: Odwracalne błędy XSLT
 ms.date: 03/30/2017
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
-ms.openlocfilehash: 8a77600c8cc1baf61ed21cc7a480b75dd2fde2dc
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2123ead435fe389693f3b141a26873700ba5647f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827584"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686777"
 ---
 # <a name="recoverable-xslt-errors"></a>Odwracalne błędy XSLT
+
 Zalecenie dotyczące formatu W3C XSL Transformations (XSLT) w wersji 1,0 zawiera obszary, w których dostawca implementacji może zdecydować, jak obsługiwać sytuację. Te obszary są uważane za zachowanie uznaniowe. Na przykład w sekcji 7,3 Tworzenie instrukcji przetwarzania, zalecenie XSLT 1,0 stwierdza, że występuje błąd w przypadku tworzenia wystąpienia zawartości `xsl:processing-instruction` tworzonych węzłów innych niż węzły tekstowe. W przypadku niektórych problemów zalecenie XSLT 1,0 wskazuje, jakie decyzje należy podjąć, jeśli procesor zdecyduje się na odzyskanie po błędzie. W przypadku problemu podanym w sekcji 7,3 w tym przypadku W3C ma wpływ na to, że implementacja może zostać odzyskana po wystąpieniu tego błędu, ignorując węzły i ich zawartość.  
   
 ## <a name="discretionary-behaviors"></a>Zachowania własne  
+
  Poniższa tabela zawiera listę wszystkich zachowań uznania dozwolonych przez zalecenie XSLT 1,0 i sposób obsługi tych zachowań przez <xref:System.Xml.Xsl.XslCompiledTransform> klasę.  
   
 - Odzyskiwanie wskazuje, że <xref:System.Xml.Xsl.XslCompiledTransform> Klasa odzyska z tego błędu. <xref:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered?displayProperty=nameWithType>Zdarzenie może służyć do raportowania wszelkich zdarzeń z procesora XSLT.  

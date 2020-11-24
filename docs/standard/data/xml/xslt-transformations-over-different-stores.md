@@ -2,14 +2,15 @@
 title: Przekształcenia XSLT w różnych magazynach
 ms.date: 03/30/2017
 ms.assetid: 369850e9-004a-45d2-b5c3-5060d9135adb
-ms.openlocfilehash: 7ed5c938b3c6995fb1315931a8d1fa21b57c1d9d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 15fcf7f3dcf3165b7b88ad01d63aa27873bf5d8d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818248"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685100"
 ---
 # <a name="xslt-transformations-over-different-stores"></a>Przekształcenia XSLT w różnych magazynach
+
 > [!NOTE]
 > <xref:System.Xml.Xsl.XslTransform>Klasa jest przestarzała w .NET Framework 2,0. Można wykonać przekształcenia Extensible Stylesheet Language for Transformations (XSLT) przy użyciu <xref:System.Xml.Xsl.XslCompiledTransform> klasy. Aby uzyskać więcej informacji, zobacz [Używanie klasy XslCompiledTransform](using-the-xslcompiledtransform-class.md) i [Migrowanie z klasy XslTransform](migrating-from-the-xsltransform-class.md) .  
   

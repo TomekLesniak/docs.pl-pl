@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ced9c82e-d7b0-4806-a151-98b6611d3097
 topic_type:
 - apiref
-ms.openlocfilehash: 826736d2db7aa1e618a2e5fe0655cedad9556b17
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ef8dbd5253c02355f85fba626fa7e68ed62df4bd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213442"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686460"
 ---
 # <a name="icordebugprocess3-interface"></a>ICorDebugProcess3 — Interfejs
+
 Steruje niestandardowymi powiadomieniami debugera.  
   
 ## <a name="methods"></a>Metody  
@@ -31,12 +32,14 @@ Steruje niestandardowymi powiadomieniami debugera.
 |[SetEnableCustomNotification, metoda](icordebugprocess3-setenablecustomnotification-method.md)|Włącza i wyłącza niestandardowe powiadomienia debugera określonego typu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten interfejs logicznie rozszerza interfejsy ICorDebugProcess i ICorDebugProcess2.  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -45,7 +48,7 @@ Steruje niestandardowymi powiadomieniami debugera.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
 - [Debugowanie](index.md)

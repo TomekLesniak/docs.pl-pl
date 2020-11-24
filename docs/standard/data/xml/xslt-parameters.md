@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe60aaa0-ae43-4b1c-9be1-426af66ba757
-ms.openlocfilehash: c203e17e327cf64690c2748c7f3a4e74b5306501
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 64a62840594773270a658738120812c59b4896cb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818300"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685217"
 ---
 # <a name="xslt-parameters"></a>Parametry XSLT
+
 Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody using. Kwalifikowana nazwa i identyfikator URI przestrzeni nazw są skojarzone z obiektem parametru w tym czasie.  
   
 ### <a name="to-use-an-xslt-parameter"></a>Aby użyć parametru XSLT  
@@ -24,6 +25,7 @@ Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:Syst
 3. Przekaż <xref:System.Xml.Xsl.XsltArgumentList> obiekt do <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
 ## <a name="parameter-types"></a>Typy parametrów  
+
  Obiekt parametru powinien odpowiadać typowi W3C. W poniższej tabeli przedstawiono odpowiednie typy W3C, równoważne klasy Microsoft .NET (typ) i określające, czy typ W3C jest typem XPath czy XSLT.  
   
 |Typ W3C|Równoważna Klasa platformy .NET (typ)|XPath lub typ XSLT|  
@@ -42,6 +44,7 @@ Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:Syst
  Wszystkie inne typy zgłaszają błąd.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodę, aby utworzyć parametr służący do przechowywania obliczonej daty rabatu. Data rabatu jest obliczana na 20 dni od daty zamówienia.  
   
  [!code-csharp[XSLT_Param#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Param/CS/xsltparam.cs#1)]
@@ -50,9 +53,11 @@ Parametry XSLT są dodawane do <xref:System.Xml.Xsl.XsltArgumentList> <xref:Syst
 ### <a name="input"></a>Dane wejściowe  
   
 ##### <a name="orderxml"></a>order.xml  
+
  [!code-xml[XSLT_Param#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Param/XML/order.xml#2)]  
   
 ##### <a name="discountxsl"></a>Discount. xsl  
+
  [!code-xml[XSLT_Param#3](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Param/XML/discount.xsl#3)]  
   
 ### <a name="output"></a>Dane wyjściowe  

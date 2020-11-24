@@ -15,12 +15,12 @@ helpviewer_keywords:
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-ms.openlocfilehash: 30cde57a5c837d9dc324e9cd263d2a1011641af4
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ecfba7b6b5908a16bb23860704a35035f58e3ed4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829846"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686023"
 ---
 # <a name="localizability-review"></a>Sprawdzenie możliwości lokalizacji
 
@@ -35,11 +35,13 @@ Przegląd możliwości zlokalizowania składa się z trzech następujących test
 - [Czy aplikacja została przetestowana z danymi międzynarodowymi?](#test)
 
 <a name="global"></a>
+
 ## <a name="implement-globalization-recommendations"></a>Implementowanie zaleceń globalizacji
 
 Jeśli aplikacja została zaprojektowana i opracowana z myślą o lokalizacji, a po wykonaniu zaleceń omówionych w artykule [globalizacja](globalization.md) , przegląd możliwości zlokalizowania będzie miał duże gwarancje jakości. W przeciwnym razie na tym etapie należy przejrzeć i zaimplementować zalecenia dotyczące [globalizacji](globalization.md) oraz usunąć błędy w kodzie źródłowym, które uniemożliwiają lokalizację.
 
 <a name="culture"></a>
+
 ## <a name="handle-culture-sensitive-features"></a>Obsługa funkcji zależnych od kultury
 
 Platforma .NET nie zapewnia programistycznej pomocy technicznej w wielu obszarach, które różnią się w zależności od kultury. W większości przypadków należy napisać niestandardowy kod do obsługi obszarów funkcji, takich jak następujące:
@@ -58,6 +60,7 @@ Platforma .NET nie zapewnia programistycznej pomocy technicznej w wielu obszarac
    [!code-vb[Conceptual.Localizability#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.localizability/vb/ismetric1.vb#1)]
 
 <a name="test"></a>
+
 ## <a name="test-your-application"></a>Testowanie aplikacji
 
 Przed zlokalizowaniem aplikacji należy ją przetestować przy użyciu danych międzynarodowych w międzynarodowych wersjach systemu operacyjnego. Chociaż większość interfejsu użytkownika nie zostanie zlokalizowana w tym momencie, będzie można wykryć następujące problemy:
@@ -79,6 +82,6 @@ Jeśli zastosowano zalecenia dotyczące globalizacji podczas tworzenia aplikacji
 ## <a name="see-also"></a>Zobacz także
 
 - [Globalizacja i lokalizacja](index.md)
-- [Lokalizacja](localization.md)
+- [Localization](localization.md)
 - [Globalizacja](globalization.md)
 - [Zasoby w aplikacjach klasycznych](../../framework/resources/index.md)

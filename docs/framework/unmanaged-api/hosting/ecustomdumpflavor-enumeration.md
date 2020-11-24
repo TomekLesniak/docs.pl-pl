@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b39b3320-fac7-41f1-9a03-ab6fb0cd89c7
 topic_type:
 - apiref
-ms.openlocfilehash: 9b4c1187945b4c243375a3096c3a8a3b22599aef
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 1b8440ed6e878aac3dd08d9f8ed528c93739a724
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616284"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686322"
 ---
 # <a name="ecustomdumpflavor-enumeration"></a>ECustomDumpFlavor — Wyliczenie
+
 Zawiera wartości wskazujące, które elementy mają być uwzględnione w niestandardowym podzestawie zrzutu sterty podczas raportowania błędów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,19 +42,21 @@ typedef enum {
 |`DUMP_FLAVOR_NonHeapCLRState`|Określa, że zrzut sterty niestandardowej ma zbierać wszystkie dane stanu czasu wykonywania, które nie były przydzielane dynamicznie.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Parametr typu `ECustomDumpFlavor` jest przesyłany do metody [ICLRErrorReportingManager:: BeginCustomDump —](iclrerrorreportingmanager-begincustomdump-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ECustomDumpItemKind, wyliczenie](ecustomdumpitemkind-enumeration.md)
-- [ICLRErrorReportingManager, interfejs](iclrerrorreportingmanager-interface.md)
+- [ECustomDumpItemKind — Wyliczenie](ecustomdumpitemkind-enumeration.md)
+- [ICLRErrorReportingManager — Interfejs](iclrerrorreportingmanager-interface.md)
 - [Hosting — Wyliczenia](hosting-enumerations.md)

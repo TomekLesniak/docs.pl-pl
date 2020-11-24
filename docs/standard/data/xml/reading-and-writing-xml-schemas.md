@@ -7,17 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-ms.openlocfilehash: ae951efafd68d0ddf4f74876edd4c12564d68dde
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7ba736272579451cf30c5e78026ffaa4186e03c9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830886"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686855"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Odczytywanie i zapisywanie schematów XML
+
 Za pomocą interfejsu API modelu Object Model (SOM) można odczytywać i zapisywać schematy języka definicji schematu XML (XSD) z plików lub innych źródeł oraz tworzyć schematy XML w pamięci przy użyciu klas w <xref:System.Xml.Schema?displayProperty=nameWithType> przestrzeni nazw, które są mapowane na struktury zdefiniowane w zaleceniu schematu xml organizacja World Wide Web Consortium (W3C).  
   
 ## <a name="reading-and-writing-xml-schemas"></a>Odczytywanie i zapisywanie schematów XML  
+
  <xref:System.Xml.Schema.XmlSchema>Klasa zawiera <xref:System.Xml.Schema.XmlSchema.Read%2A> <xref:System.Xml.Schema.XmlSchema.Write%2A> metody i do odczytywania i zapisywania schematów XML. <xref:System.Xml.Schema.XmlSchema.Read%2A>Metoda zwraca <xref:System.Xml.Schema.XmlSchema> obiekt reprezentujący schemat XML i przyjmuje opcjonalnie <xref:System.Xml.Schema.ValidationEventHandler> jako parametr obsługujący ostrzeżenia i błędy walidacji schematu podczas odczytywania schematu XML.  
   
  <xref:System.Xml.Schema.XmlSchema.Write%2A>Metoda zapisuje schematy XML do <xref:System.IO.Stream> <xref:System.IO.TextWriter> i <xref:System.Xml.XmlWriter> obiektów i może przyjmować opcjonalny <xref:System.Xml.XmlNamespaceManager> obiekt jako parametr. Służy <xref:System.Xml.XmlNamespaceManager> do obsługi przestrzeni nazw napotkanych w schemacie XML. Aby uzyskać więcej informacji na temat <xref:System.Xml.XmlNamespaceManager> klasy, zobacz [Zarządzanie przestrzeniami nazw w dokumencie XML](managing-namespaces-in-an-xml-document.md).  

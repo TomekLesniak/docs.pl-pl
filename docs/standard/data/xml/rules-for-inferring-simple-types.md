@@ -2,19 +2,21 @@
 title: Zasady wnioskowania typów prostych
 ms.date: 03/30/2017
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-ms.openlocfilehash: 817a35c607f810da0a3e2dc681d27ea997c5fcc7
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b8fa3037d9ad5af057f477733ffdea74681f5549
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823553"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686543"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Zasady wnioskowania typów prostych
+
 Opisuje sposób, w jaki <xref:System.Xml.Schema.XmlSchemaInference> Klasa wnioskuje typ danych dla atrybutów i elementów.  
   
  <xref:System.Xml.Schema.XmlSchemaInference>Klasa wnioskuje typ danych dla atrybutów i elementów jako typy proste. W tej sekcji opisano potencjalne wywnioskowane typy, sposób uzgadniania wielu różnych wartości z pojedynczym typem oraz sposób obsługi atrybutów definiujących schemat `xsi` .  
   
 ## <a name="inferred-types"></a>Typy wywnioskowane  
+
  <xref:System.Xml.Schema.XmlSchemaInference>Klasa wnioskuje wartości elementów i atrybutów jako typy proste i zawiera atrybut typu w efekcie schemat. Wszystkie typy wywnioskowane to typy proste. Żadne typy podstawowe ani zestawy reguł nie są dołączone jako część wyniku schematu.  
   
  Wartości są badane pojedynczo w miarę ich napotkania w dokumencie XML. Typ jest wnioskowany dla wartości podczas badania. Jeśli typ został wywnioskowany dla atrybutu lub elementu, a napotkasz wartość atrybutu lub elementu, który jest niezgodny z aktualnie wywnioskowanym typem, <xref:System.Xml.Schema.XmlSchemaInference> Klasa promuje typ dla każdego zestawu reguł. Te reguły zostały omówione w sekcji Promocja typu w dalszej części tego tematu.  
@@ -44,6 +46,7 @@ Opisuje sposób, w jaki <xref:System.Xml.Schema.XmlSchemaInference> Klasa wniosk
 |ciąg|Co najmniej jeden znak Unicode.|  
   
 ## <a name="type-promotion"></a>Promocja typu  
+
  <xref:System.Xml.Schema.XmlSchemaInference>Klasa bada wartości atrybutów i elementów po jednym naraz. Po napotkaniu wartości jest wywnioskowany najbardziej restrykcyjny, niepodpisany typ. Jeśli typ został wywnioskowany dla atrybutu lub elementu, a napotkana zostanie nowa wartość, która nie jest zgodna z aktualnie wywnioskowanym typem, wywnioskowany typ zostanie podwyższony do nowego typu, który odnosi się zarówno do aktualnie wywnioskowanego typu, jak i nowej wartości. <xref:System.Xml.Schema.XmlSchemaInference>Klasa uwzględnia poprzednie wartości podczas podwyższania poziomu wywnioskowanego.  
   
  Rozważmy na przykład następujące fragmenty kodu XML z dwóch dokumentów XML:  

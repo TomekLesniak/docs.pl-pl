@@ -13,12 +13,12 @@ helpviewer_keywords:
 - uppercase
 - lowercase
 ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
-ms.openlocfilehash: 77b879bcc36886a8f457610e6c406bcd121dcfe7
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 157ad1e2cc626c508afbcd1b7822e7c64fdf30c2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820556"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686036"
 ---
 # <a name="change-case-in-net"></a>Zmień wielkość liter w programie .NET
 
@@ -34,6 +34,7 @@ Jeśli napiszesz aplikację, która akceptuje dane wejściowe od użytkownika, n
 > Należy zauważyć, <xref:System.String.ToUpper%2A?displayProperty=nameWithType> że <xref:System.String.ToLower%2A?displayProperty=nameWithType> metody i nie powinny być używane do konwersji ciągów w celu ich porównania lub przetestowania pod kątem równości. Aby uzyskać więcej informacji, zobacz [Porównywanie ciągów w przypadku mieszanego przypadku](#Comparing) .  
   
 <a name="Comparing"></a>
+
 ## <a name="compare-strings-of-mixed-case"></a>Porównanie ciągów z przypadku mieszanego  
 
  Aby porównać ciągi o mieszanym przypadku w celu określenia ich kolejności, wywołaj jedno z przeciążeń <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody z `comparisonType` parametrem i podaj wartość albo <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> lub <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> dla `comparisonType` argumentu. W celu porównania przy użyciu określonej kultury innej niż bieżąca kultura należy wywołać Przeciążenie <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody z `culture` `options` parametrem i i podać wartość <xref:System.Globalization.CompareOptions.IgnoreCase?displayProperty=nameWithType> jako `options` argument.  
@@ -43,6 +44,7 @@ Jeśli napiszesz aplikację, która akceptuje dane wejściowe od użytkownika, n
  Aby uzyskać więcej informacji, zobacz [najlepsze rozwiązania dotyczące używania ciągów](best-practices-strings.md).  
   
 ## <a name="toupper"></a>ToUpper  
+
  <xref:System.String.ToUpper%2A?displayProperty=nameWithType>Metoda zmienia wszystkie znaki w ciągu na wielkie litery. Poniższy przykład konwertuje ciąg "Hello world!" od mieszanego przypadku na wielkie litery.  
   
  [!code-csharp[Strings.ChangingCase#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.ChangingCase/cs/Example.cs#1)]
@@ -51,6 +53,7 @@ Jeśli napiszesz aplikację, która akceptuje dane wejściowe od użytkownika, n
  Poprzedni przykład jest domyślnie uwzględniany w kulturze; stosuje konwencje wielkości liter bieżącej kultury. Aby wykonać niezależną od kultury zmianę wielkości liter lub zastosować konwencje wielkości liter w danej kulturze, użyj <xref:System.String.ToUpper%28System.Globalization.CultureInfo%29?displayProperty=nameWithType> przeciążenia metody i podaj wartość <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> lub <xref:System.Globalization.CultureInfo?displayProperty=nameWithType> obiekt, który reprezentuje określoną kulturę do parametru *kultury* . Aby zapoznać się z przykładem, który ilustruje sposób użycia <xref:System.String.ToUpper%2A> metody w celu przeprowadzenia zmiany wielkości liter niewrażliwych na kulturę, zobacz [wykonywanie zmian wielkości liter Culture-Insensitive](../globalization-localization/performing-culture-insensitive-case-changes.md).  
   
 ## <a name="tolower"></a>ToLower  
+
  <xref:System.String.ToLower%2A?displayProperty=nameWithType>Metoda jest podobna do poprzedniej metody, ale zamiast tego konwertuje wszystkie znaki w ciągu na małe litery. Poniższy przykład konwertuje ciąg "Hello world!" na małe litery.  
   
  [!code-csharp[Strings.ChangingCase#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.ChangingCase/cs/Example.cs#2)]
@@ -59,6 +62,7 @@ Jeśli napiszesz aplikację, która akceptuje dane wejściowe od użytkownika, n
  Poprzedni przykład jest domyślnie uwzględniany w kulturze; stosuje konwencje wielkości liter bieżącej kultury. Aby wykonać niezależną od kultury zmianę wielkości liter lub zastosować konwencje wielkości liter w danej kulturze, użyj <xref:System.String.ToLower%28System.Globalization.CultureInfo%29?displayProperty=nameWithType> przeciążenia metody i podaj wartość <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> lub <xref:System.Globalization.CultureInfo?displayProperty=nameWithType> obiekt, który reprezentuje określoną kulturę do parametru *kultury* . Aby zapoznać się z przykładem, który ilustruje sposób użycia <xref:System.String.ToLower%28System.Globalization.CultureInfo%29> metody w celu przeprowadzenia zmiany wielkości liter niewrażliwych na kulturę, zobacz [wykonywanie zmian wielkości liter Culture-Insensitive](../globalization-localization/performing-culture-insensitive-case-changes.md).  
   
 ## <a name="totitlecase"></a>ToTitleCase  
+
  <xref:System.Globalization.TextInfo.ToTitleCase%2A?displayProperty=nameWithType>Konwertuje pierwszy znak każdego wyrazu na wielkie litery i pozostałe znaki na małe litery. Jednak wyrazy, które są całkowicie pisane wielkimi literami, założono, że są akronimami i nie są konwertowane.  
   
  <xref:System.Globalization.TextInfo.ToTitleCase%2A?displayProperty=nameWithType>Metoda jest wrażliwa na kulturę, czyli używa konwencji wielkości liter w określonej kulturze. Aby wywołać metodę, należy najpierw pobrać <xref:System.Globalization.TextInfo> obiekt, który reprezentuje konwencje wielkości liter danej kultury z <xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType> właściwości określonej kultury.  

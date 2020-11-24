@@ -14,14 +14,15 @@ helpviewer_keywords:
 - String.ToUpper method
 - culture parameter
 ms.assetid: 822d551c-c69a-4191-82f4-183d82c9179c
-ms.openlocfilehash: 777904654eceb0c6b0a7ca0a82cea98dd81b3010
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d4e714e9b81ffc3e495f4ddaa8cf7eeedeb71261
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829820"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685997"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>Wykonywanie niezależnych od kultury zmian wielkości liter
+
 <xref:System.String.ToUpper%2A?displayProperty=nameWithType>Metody, <xref:System.String.ToLower%2A?displayProperty=nameWithType> , <xref:System.Char.ToUpper%2A?displayProperty=nameWithType> i <xref:System.Char.ToLower%2A?displayProperty=nameWithType> zapewniają przeciążenia, które nie akceptują żadnych parametrów. Domyślnie te przeciążenia bez parametrów wykonują zmiany wielkości liter na podstawie wartości <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> . Powoduje to generowanie wyników z uwzględnieniem wielkości liter, które mogą się różnić w zależności od kultury. Aby określić, czy chcesz, aby zmiany wielkości liter były zależne od kultury lub niewrażliwe na kulturę, należy użyć przeciążenia tych metod, które wymagają jawnego określenia `culture` parametru. W przypadku zmian wielkości liter z uwzględnieniem kultury należy określić `CultureInfo.CurrentCulture` dla `culture` parametru. W przypadku zmian wielkości liter bez uwzględniania kultur Określ `CultureInfo.InvariantCulture` wartość `culture` parametru.  
   
  Często ciągi są konwertowane do standardowej wielkości liter, aby ułatwić późniejsze wyszukiwanie. Gdy ciągi są używane w ten sposób, należy określić `CultureInfo.InvariantCulture` dla `culture` parametru, ponieważ wartość <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> może ulec zmianie między czasem zmiany wielkości liter i czasem wystąpienia wyszukiwania.  
@@ -29,6 +30,7 @@ ms.locfileid: "94829820"
  Jeśli decyzja dotycząca zabezpieczeń jest oparta na operacji zmiany wielkości liter, operacja powinna być niezależna od kultury, aby zapewnić, że wynik nie będzie miał wpływ na wartość `CultureInfo.CurrentCulture` . Zapoznaj się z sekcją "porównania ciągów, które wykorzystują bieżącą kulturę" w artykule [najlepsze rozwiązania dotyczące korzystania z ciągów](../base-types/best-practices-strings.md) , aby zapoznać się z przykładem, w jaki sposób operacje na ciągach zależnych od kultury mogą generować niespójne wyniki.  
   
 ## <a name="using-the-stringtoupper-and-stringtolower-methods"></a>Korzystając z metod String.ToUpper i String.ToLower  
+
  W przypadku przejrzystości kodu zaleca się, aby zawsze używać przeciążeń `String.ToUpper` i `String.ToLower` metod, które pozwalają określić `culture` parametr jawnie. Na przykład poniższy kod wykonuje wyszukiwanie identyfikatorów. `key.ToLower`Operacja jest zależna od kultury, ale to zachowanie nie jest jasne w przypadku odczytywania kodu.  
   
 ### <a name="example"></a>Przykład  
@@ -62,6 +64,7 @@ static object LookupKey(string key)
 ```  
   
 ## <a name="using-the-chartoupper-and-chartolower-methods"></a>Korzystając z metod Char.ToUpper i Char.ToLower  
+
  Chociaż `Char.ToUpper` metody i `Char.ToLower` mają takie same cechy jak `String.ToUpper` `String.ToLower` metody i, jedynymi kulturami, których dotyczy, są turecki (Turcja) i azerbejdżański (łaciński, Azerbejdżan). Są to jedyne dwie kultury, w których występują różnice dotyczące wielkości liter. Aby uzyskać więcej informacji o tym unikatowym mapowaniu przypadku, zobacz sekcję "wielkość liter" w temacie dotyczącym <xref:System.String> klas. W przypadku przejrzystości kodu i zapewnienia spójnych wyników zaleca się, aby zawsze używać przeciążeń tych metod, które umożliwiają jawne określenie `culture` parametru.  
   
 ## <a name="see-also"></a>Zobacz także

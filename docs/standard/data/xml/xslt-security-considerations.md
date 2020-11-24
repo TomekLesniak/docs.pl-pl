@@ -2,17 +2,19 @@
 title: Zagadnienia dotyczące bezpieczeństwa danych XSLT
 ms.date: 03/30/2017
 ms.assetid: fea695be-617c-4977-9567-140e820436fc
-ms.openlocfilehash: ad96ebb6048e8a397e0761a2217fec89e0d206b0
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a8d077cf35da56795cc0b0c22e9bab26ce99f3a2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818287"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685204"
 ---
 # <a name="xslt-security-considerations"></a>Zagadnienia dotyczące bezpieczeństwa danych XSLT
+
 Język XSLT oferuje bogaty zestaw funkcji, które zapewniają doskonałą wydajność i elastyczność. Zawiera ona wiele funkcji, które mogą być również wykorzystywane przez źródła zewnętrzne. Aby bezpiecznie używać XSLT, należy zrozumieć typy problemów z zabezpieczeniami, które powstają podczas korzystania z języka XSLT, oraz podstawowe strategie, których można użyć w celu ograniczenia tych zagrożeń.  
   
 ## <a name="xslt-extensions"></a>Rozszerzenia XSLT  
+
  Dwa popularne rozszerzenia XSLT to skrypty arkusza stylów i obiekty rozszerzeń. Te rozszerzenia umożliwiają procesorowi XSLT wykonywanie kodu.  
   
 - Obiekty rozszerzeń dodają funkcje programistyczne do transformacji XSL.  
@@ -20,15 +22,19 @@ Język XSLT oferuje bogaty zestaw funkcji, które zapewniają doskonałą wydajn
 - Skrypty można osadzić w arkuszu stylów przy użyciu `msxsl:script` elementu rozszerzenia.  
   
 ### <a name="extension-objects"></a>Obiekty rozszerzeń  
+
  Obiekty rozszerzeń są dodawane przy użyciu <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody. Zestaw uprawnień FullTrust jest wymagany do obsługi obiektów rozszerzeń. Dzięki temu podniesienie uprawnień nie następuje, gdy zostanie wykonany kod obiektu rozszerzenia. Próba wywołania <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody bez uprawnień FullTrust powoduje zgłoszenie wyjątku zabezpieczeń.  
   
 ### <a name="style-sheet-scripts"></a>Skrypty arkusza stylów  
+
  Skrypty można osadzić w arkuszu stylów przy użyciu `msxsl:script` elementu rozszerzenia. Obsługa skryptów jest opcjonalną funkcją w <xref:System.Xml.Xsl.XslCompiledTransform> klasie, która jest domyślnie wyłączona. Obsługę skryptów można włączyć przez ustawienie <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A?displayProperty=nameWithType> właściwości na `true` i przekazanie <xref:System.Xml.Xsl.XsltSettings> obiektu do <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody.  
   
 #### <a name="guidelines"></a>Wytyczne  
+
  Włącz obsługę skryptów tylko wtedy, gdy arkusz stylów pochodzi z zaufanego źródła. Jeśli nie możesz zweryfikować źródła arkusza stylów lub jeśli arkusz stylów nie pochodzi z zaufanego źródła, Przekaż `null` go do argumentu ustawienia XSLT.  
   
 ## <a name="external-resources"></a>Zasoby zewnętrzne  
+
  Język XSLT zawiera funkcje, takie jak `xsl:import` , `xsl:include` , lub `document()` Funkcja, gdzie procesor wymaga rozpoznania odwołań do identyfikatorów URI. <xref:System.Xml.XmlResolver>Klasa jest używana do rozpoznawania zasobów zewnętrznych. Zasoby zewnętrzne mogą wymagać rozwiązania w następujących dwóch przypadkach:  
   
 - Podczas kompilowania arkusza stylów, <xref:System.Xml.XmlResolver> jest używany do `xsl:import` rozpoznawania i `xsl:include` rozwiązywania.  
@@ -41,6 +47,7 @@ Język XSLT oferuje bogaty zestaw funkcji, które zapewniają doskonałą wydajn
  Każdy z tych <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metod obejmuje przeciążenia, które akceptują <xref:System.Xml.XmlResolver> jako jeden z argumentów. Jeśli <xref:System.Xml.XmlResolver> nie jest określony, <xref:System.Xml.XmlUrlResolver> zostanie użyta wartość domyślna bez poświadczeń.  
   
 #### <a name="guidelines"></a>Wytyczne  
+
  Włącz `document()` funkcję tylko wtedy, gdy arkusz stylów pochodzi z zaufanego źródła.  
   
  Na poniższej liście opisano, kiedy warto określić <xref:System.Xml.XmlResolver> obiekt:  

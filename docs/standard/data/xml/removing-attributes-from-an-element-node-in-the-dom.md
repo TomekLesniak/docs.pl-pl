@@ -2,14 +2,15 @@
 title: Usuwanie atrybutów z węzła elementu w ramach modelu DOM
 ms.date: 03/30/2017
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
-ms.openlocfilehash: bd0e07f9587567de9f3023cdeda9dafde8ce7b26
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 53922c55295e852a1aa62d847313fbd657a42541
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823722"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686764"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Usuwanie atrybutów z węzła elementu w ramach modelu DOM
+
 Istnieje wiele sposobów usuwania atrybutów. Jedną z technik jest usunięcie ich z kolekcji atrybutów. W tym celu należy wykonać następujące czynności:  
   
 1. Pobierz kolekcję atrybutów z elementu przy użyciu `XmlAttributeCollection attrs = elem.Attributes;` .  

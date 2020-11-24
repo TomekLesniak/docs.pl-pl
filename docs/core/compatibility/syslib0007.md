@@ -3,16 +3,16 @@ title: Ostrzeżenie SYSLIB0007
 description: Dowiedz się więcej o Obsoletions, które generują ostrzeżenie SYSLIB0007 w czasie kompilacji.
 ms.topic: reference
 ms.date: 10/20/2020
-ms.openlocfilehash: 4c0feac1d673e3462a4f2db470825b15cf1b1706
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: db7150fa3e3c566adf110034734e068fac079c6d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94439945"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685022"
 ---
 # <a name="syslib0007-default-implementations-of-cryptography-algorithms-not-supported"></a>SYSLIB0007: domyślne implementacje algorytmów kryptograficznych nie są obsługiwane
 
-System konfiguracji kryptograficznej w .NET Framework nie pozwala na prawidłową elastyczność kryptograficzną i nie jest obecny w oprogramowaniu .NET Core i .NET 5 +. . Wymagania dotyczące zgodności z poprzednimi wersjami w sieci również uniemożliwiają platformie aktualizowanie niektórych kryptograficznych interfejsów API, aby zachować z wyprzedzeniem kryptografii. W związku z tym następujące interfejsy API są oznaczone jako przestarzałe, począwszy od platformy .NET 5,0. Użycie tych interfejsów API generuje ostrzeżenie `SYSLIB0007` w czasie kompilacji.
+System konfiguracji kryptograficznej w .NET Framework nie pozwala na prawidłową elastyczność kryptograficzną i nie jest obecny w oprogramowaniu .NET Core i .NET 5 +. Wymagania dotyczące zgodności z poprzednimi wersjami platformy .NET uniemożliwiają platformie aktualizowanie niektórych kryptograficznych interfejsów API, aby zachować z wyprzedzeniem kryptografii. W związku z tym następujące interfejsy API są oznaczone jako przestarzałe, począwszy od platformy .NET 5,0. Użycie tych interfejsów API generuje ostrzeżenie `SYSLIB0007` w czasie kompilacji.
 
 - <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create?displayProperty=fullName>
 - <xref:System.Security.Cryptography.HashAlgorithm.Create?displayProperty=fullName>
@@ -36,6 +36,6 @@ System konfiguracji kryptograficznej w .NET Framework nie pozwala na prawidłow�
 
 [!INCLUDE [suppress-syslib-warning](../../../includes/suppress-syslib-warning.md)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Krytyczne zmiany kryptografii](cryptography.md#instantiating-default-implementations-of-cryptographic-abstractions-is-not-supported)
+- [Tworzenie wystąpienia domyślnych metod abstrakcyjnych nie jest obsługiwane](cryptography/5.0/instantiating-default-implementations-of-cryptographic-abstractions-not-supported.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
 topic_type:
 - apiref
-ms.openlocfilehash: 48ac09e1862ae58e79707235e891f72920de1251
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 94495ca0ea75bd41996d430159474c707a3e68b2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500562"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685425"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler — Metoda
+
 Dołącza określony Profiler do określonego procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -64,6 +65,7 @@ HRESULT AttachProfiler(
   \[w] rozmiar, w bajtach, danych, które `pvClientData` wskazują.
 
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące HRESULTs.  
   
 |HRESULT|Opis|  
@@ -84,9 +86,11 @@ HRESULT AttachProfiler(
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="memory-management"></a>Zarządzanie pamięcią  
+
  W zakresie utrzymywania z konwencjami COM obiekt wywołujący `AttachProfiler` (na przykład kod wyzwalacza utworzony przez twórcę profilera) jest odpowiedzialny za przydzielanie i cofanie przydziału pamięci dla danych, `pvClientData` do których wskazuje parametr. Gdy środowisko CLR wykonuje `AttachProfiler` wywołanie, tworzy kopię pamięci, która `pvClientData` wskazuje na i przesyła ją do procesu docelowego. Gdy środowisko CLR wewnątrz procesu docelowego otrzymuje własną kopię `pvClientData` bloku, przekazuje blok do profilera za pośrednictwem `InitializeForAttach` metody, a następnie cofa alokację kopii `pvClientData` bloku z procesu docelowego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -98,6 +102,6 @@ HRESULT AttachProfiler(
 ## <a name="see-also"></a>Zobacz także
 
 - [ICorProfilerCallback — Interfejs](icorprofilercallback-interface.md)
-- [ICorProfilerInfo3, interfejs](icorprofilerinfo3-interface.md)
+- [ICorProfilerInfo3 — Interfejs](icorprofilerinfo3-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

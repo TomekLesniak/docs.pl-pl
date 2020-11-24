@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 28c8b00d-2c14-40b4-aed5-a1db0e2428eb
 topic_type:
 - apiref
-ms.openlocfilehash: d4b7064b0339825c29e4001bc35c4a604098468a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: faf1438f56cd49b235ffbb18a0154e3e20c202b9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446500"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684970"
 ---
 # <a name="emitinternalexportedtypes-method"></a>EmitInternalExportedTypes — Metoda
+
 Emituje typy dodane do zestawu. Wywołaj tę metodę po dodaniu znanych typów wewnętrznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,17 +35,20 @@ HRESULT EmitInternalExportedTypes(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `AssemblyID`  
  Identyfikator zestawu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Zwraca S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  Wymaga Alink. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IALink2, interfejs](ialink2-interface.md)
-- [IALink, interfejs](ialink-interface.md)
-- [ALink, interfejs API](index.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [IALink — Interfejs](ialink-interface.md)
+- [ALink — interfejs API](index.md)

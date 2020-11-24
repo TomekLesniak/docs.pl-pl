@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: 61538656580878da775d4a42dac40165c7941eee
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 206a659656f1019af1540b9b2476ae7fe9ba93eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818274"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685113"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Obsługa skryptów arkusza stylów XSLT przy użyciu \<msxsl:script>
+
 <xref:System.Xml.Xsl.XslTransform>Klasa obsługuje osadzone skrypty przy użyciu `script` elementu.  
   
 > [!NOTE]
@@ -63,8 +64,8 @@ ms.locfileid: "94818274"
   
 |Typ|Równoważna Klasa .NET Framework (typ)|Typ XPath lub typ XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
-|String|System. String|XPath|  
-|Boolean|System. Boolean|XPath|  
+|Ciąg|System. String|XPath|  
+|Wartość logiczna|System. Boolean|XPath|  
 |Liczba|System. Double|XPath|  
 |Fragment drzewa wyników|System.Xml. XPath. XPathNavigator|XSL|  
 |Zestaw węzłów|System.Xml. XPath. XPathNodeIterator|XPath|  
@@ -98,6 +99,7 @@ ms.locfileid: "94818274"
  Zgłasza wyjątek, ponieważ znaki handlowe nie są wyprowadzane. Dokument jest ładowany jako XML i nie jest stosowane żadne specjalne traktowanie do tekstu między `msxsl:script` tagami elementów.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano osadzony skrypt do obliczenia obwodu okręgu, który ma swój promień.  
   
 ```vb  
@@ -165,6 +167,7 @@ public class Sample
 ```  
   
 ## <a name="input"></a>Dane wejściowe  
+
  number.xml  
   
 ```xml  
