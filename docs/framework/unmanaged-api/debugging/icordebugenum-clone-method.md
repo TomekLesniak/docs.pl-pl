@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 57eefaf3-75cf-4496-bc94-88c0706861b7
 topic_type:
 - apiref
-ms.openlocfilehash: 9f0fda803ba3a1ce35017d85e84b3bf6f567eda0
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 28e0cded33b49e3aadc0564bae3a60bee76c4396
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976380"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677391"
 ---
 # <a name="icordebugenumclone-method"></a>ICorDebugEnum::Clone — Metoda
+
 Tworzy kopię tego obiektu ICorDebugEnum.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT Clone (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppEnum`  
  określoną Wskaźnik do adresu `ICorDebugEnum` obiektu, który jest kopią tego `ICorDebugEnum` obiektu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

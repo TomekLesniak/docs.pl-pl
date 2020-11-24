@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-ms.openlocfilehash: 578db725458ad5c4a90256a06744a58a6d1918da
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9e73be220f3f04ec6bd05b1193d4188825f1b8e8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819958"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676507"
 ---
 # <a name="cancellation-in-managed-threads"></a>Anulowanie w zarządzanych wątkach
 
@@ -51,6 +51,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
 - Odbiorniki mogą otrzymywać powiadomienia o żądaniach anulowania przez sondowanie, rejestrację wywołania zwrotnego lub oczekiwanie na uchwyty oczekiwania.  
   
 ## <a name="cancellation-types"></a>Typy anulowania  
+
  Platforma anulowania jest zaimplementowana jako zestaw powiązanych typów, które są wymienione w poniższej tabeli.  
   
 |Nazwa typu|Opis|  
@@ -62,6 +63,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  Model anulowania jest zintegrowany z platformą .NET w kilku typach. Najważniejsze są <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> , <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> i <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> . Zalecamy korzystanie z tego wspólnego modelu anulowania dla wszystkich nowych bibliotek i kodu aplikacji.  
   
 ## <a name="code-example"></a>Przykład kodu  
+
  W poniższym przykładzie obiekt żądający tworzy <xref:System.Threading.CancellationTokenSource> obiekt, a następnie przekazuje jego <xref:System.Threading.CancellationTokenSource.Token%2A> Właściwość do operacji do anulowania. Operacja, która odbiera żądanie, monitoruje wartość <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> właściwości tokenu przez sondowanie. Gdy wartość stanie się `true` , odbiornik może zakończyć się w dowolny sposób. W tym przykładzie metoda tylko opuszcza, która jest wymagana w wielu przypadkach.  
   
 > [!NOTE]
@@ -71,6 +73,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  [!code-vb[Cancellation#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex1.vb#1)]  
   
 ## <a name="operation-cancellation-versus-object-cancellation"></a>Anulowanie operacji względem anulowania obiektu  
+
  W przypadku współpracy w ramach spółdzielni anulowania odwołanie dotyczy operacji, a nie obiektów. Żądanie anulowania oznacza, że operacja powinna zostać zatrzymana tak szybko, jak to możliwe po przeprowadzeniu wymaganego oczyszczenia. Jeden token anulowania powinien odwoływać się do jednej "operacji możliwej do anulowania", jednak może być zaimplementowana w programie. Po <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> ustawieniu właściwości tokenu na wartość `true` nie można jej resetować do `false` . W związku z tym tokeny anulowania nie mogą być ponownie używane po anulowaniu.  
   
  Jeśli wymagany jest mechanizm anulowania obiektu, można oprzeć go na mechanizmie anulowania operacji, wywołując <xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType> metodę, jak pokazano w poniższym przykładzie.  
@@ -81,6 +84,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  Jeśli obiekt obsługuje więcej niż jedną współbieżną operację, należy przekazać oddzielny token jako dane wejściowe do każdej unikatowej operacji anulowania. Dzięki temu można anulować jedną operację bez wpływu na inne osoby.  
   
 ## <a name="listening-and-responding-to-cancellation-requests"></a>Nasłuchiwanie żądań anulowania i reagowanie na nie  
+
  W delegatze użytkownika, realizator operacji anulowania określa sposób kończenia operacji w odpowiedzi na żądanie anulowania. W wielu przypadkach delegat użytkownika może po prostu wykonać wymagane czyszczenie, a następnie natychmiast zwrócić.  
   
  Jednak w bardziej złożonych przypadkach może być konieczne, aby delegat użytkownika powiadamiał kod biblioteki, że wystąpiło anulowanie. W takich przypadkach poprawny sposób zakończenia operacji jest przeznaczony dla delegata do wywołania <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metody, co spowoduje, że zostanie <xref:System.OperationCanceledException> zgłoszony. Kod biblioteki może przechwytywać ten wyjątek w wątku delegata użytkownika i sprawdzać token wyjątku, aby określić, czy wyjątek wskazuje na wcześniejsze anulowanie lub inne wyjątkowe sytuacje.  
@@ -88,6 +92,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  <xref:System.Threading.Tasks.Task>Klasa obsługuje <xref:System.OperationCanceledException> w ten sposób. Aby uzyskać więcej informacji, zobacz [Anulowanie zadania](../parallel-programming/task-cancellation.md).  
   
 ### <a name="listening-by-polling"></a>Nasłuchiwanie przez sondowanie  
+
  W przypadku długotrwałych obliczeń, które są wykonywane w pętli lub rekursywnie, można nasłuchiwać żądania anulowania przez okresowe sondowanie wartości <xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType> właściwości. Jeśli wartość to `true` , metoda powinna czyścić i kończyć się tak szybko, jak to możliwe. Optymalna częstotliwość sondowania zależy od typu aplikacji. Deweloper może określić najlepszą częstotliwość sondowania dla danego programu. Sondowanie nie ma znaczącego wpływu na wydajność. Poniższy przykład pokazuje jeden możliwy sposób sondowania.  
   
  [!code-csharp[Cancellation#3](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#3)]
@@ -96,6 +101,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  Aby zapoznać się z bardziej kompletnym przykładem, zobacz [jak: nasłuchiwanie żądań anulowania przez sondowanie](how-to-listen-for-cancellation-requests-by-polling.md).  
   
 ### <a name="listening-by-registering-a-callback"></a>Nasłuchiwanie przez zarejestrowanie wywołania zwrotnego  
+
  Niektóre operacje mogą zostać zablokowane w taki sposób, że nie mogą sprawdzić wartości tokenu anulowania w odpowiednim czasie. W takich przypadkach można zarejestrować metodę wywołania zwrotnego, która odblokowuje metodę po odebraniu żądania anulowania.  
   
  <xref:System.Threading.CancellationToken.Register%2A>Metoda zwraca <xref:System.Threading.CancellationTokenRegistration> obiekt, który jest używany specjalnie do tego celu. W poniższym przykładzie pokazano, jak za pomocą <xref:System.Threading.CancellationToken.Register%2A> metody anulować asynchroniczne żądanie sieci Web.  
@@ -116,6 +122,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  Aby zapoznać się z bardziej kompletnym przykładem, zobacz [jak: rejestrowanie wywołań zwrotnych żądań anulowania](how-to-register-callbacks-for-cancellation-requests.md).  
   
 ### <a name="listening-by-using-a-wait-handle"></a>Nasłuchiwanie przy użyciu dojścia oczekiwania  
+
  Gdy operacja, którą można anulować, może blokować, gdy oczekuje na element pierwotny synchronizacji, taki jak <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> lub <xref:System.Threading.Semaphore?displayProperty=nameWithType> , można użyć <xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType> właściwości, aby umożliwić operacji oczekiwania na zdarzenie i żądanie anulowania. Dojście oczekiwania tokenu anulowania zostanie sygnalizowane w odpowiedzi na żądanie anulowania, a metoda może użyć wartości zwracanej przez <xref:System.Threading.WaitHandle.WaitAny%2A> metodę, aby określić, czy był to token anulowania, który zasygnalizuje. Operacja może po prostu zakończyć lub zgłosić <xref:System.OperationCanceledException> , zgodnie z potrzebami.  
   
  [!code-csharp[Cancellation#5](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#5)]
@@ -129,6 +136,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  Aby zapoznać się z bardziej kompletnym przykładem, zobacz [jak: nasłuchiwanie żądań anulowania z dojściami oczekiwania](how-to-listen-for-cancellation-requests-that-have-wait-handles.md).  
   
 ### <a name="listening-to-multiple-tokens-simultaneously"></a>Jednoczesne nasłuchiwanie wielu tokenów  
+
  W niektórych przypadkach odbiornik może chcieć nasłuchiwać wielu tokenów anulowania jednocześnie. Na przykład operacja anulowania może być konieczne do monitorowania wewnętrznego tokenu anulowania oprócz tokenu przesyłanego zewnętrznie jako argumentu do parametru metody. Aby to osiągnąć, Utwórz źródło połączonego tokenu, które może dołączyć dwa lub więcej tokenów do jednego tokenu, jak pokazano w poniższym przykładzie.  
   
  [!code-csharp[Cancellation#7](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#7)]
@@ -137,6 +145,7 @@ Ogólny wzorzec dla implementacji spółdzielczego modelu anulowania to:
  Zwróć uwagę, że `Dispose` po wykonaniu tej czynności należy wywołać Źródło połączonego tokenu. Aby zapoznać się z bardziej kompletnym przykładem, zobacz [jak: nasłuchiwanie wielu żądań anulowania](how-to-listen-for-multiple-cancellation-requests.md).  
   
 ## <a name="cooperation-between-library-code-and-user-code"></a>Współpraca między kodem biblioteki i kodem użytkownika  
+
  Ujednolicona platforma anulowania pozwala na kod biblioteki, aby anulować kod użytkownika, a kod użytkownika w celu anulowania kodu biblioteki w sposób współpracy. Bezproblemowa współpraca zależy od następujących wskazówek:  
   
 - Jeśli kod biblioteki zapewnia operacje, które można anulować, powinien również dostarczyć metody publiczne, które akceptują Zewnętrzny token anulowania, aby kod użytkownika mógł żądać anulowania.  

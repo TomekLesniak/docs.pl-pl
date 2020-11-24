@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: aba45a99562b67df17e1ff33ecc3c8bbad63ec30
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 1e8c46e11d3a82ca0bce29f9cb7bbc749c219198
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440819"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676728"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializować i deserializować (Marshaling and unmarshaling) JSON w programie .NET
 
@@ -30,7 +30,7 @@ Przykłady kodu odnoszą się do następującej klasy i wariantów:
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
-## <a name="namespaces"></a>Przestrzenie nazw
+## <a name="namespaces"></a>Namespaces
 
 <xref:System.Text.Json>Przestrzeń nazw zawiera wszystkie punkty wejścia i typy główne. <xref:System.Text.Json.Serialization>Przestrzeń nazw zawiera atrybuty i interfejsy API dla zaawansowanych scenariuszy i dostosowań specyficznych dla serializacji i deserializacji. Przykłady kodu przedstawione w tym artykule wymagają `using` dyrektyw dla jednej lub obu tych przestrzeni nazw:
 
@@ -116,6 +116,7 @@ Aby serializować do UTF-8, wywołaj <xref:System.Text.Json.JsonSerializer.Seria
 Serializacja do UTF-8 jest szybsza o 5-10% niż przy użyciu metod opartych na ciągach. Różnica polega na tym, że bajty (w formacie UTF-8) nie muszą być konwertowane na ciągi (UTF-16).
 
 ## <a name="serialization-behavior"></a>Zachowanie serializacji
+
 ::: zone pivot="dotnet-5-0"
 
 * Domyślnie wszystkie właściwości publiczne są serializowane. Można [określić właściwości do ignorowania](#ignore-properties).
@@ -693,7 +694,7 @@ Poniższy przykład pokazuje kod JSON, który wynika z poprzedniego kodu:
 }
 ```
 
-Aby uzyskać więcej informacji na temat **serializacji** polimorficznej i informacje o **deserializacji** , zobacz [Jak przeprowadzić migrację z Newtonsoft.Json do System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
+Aby uzyskać więcej informacji na temat **serializacji** polimorficznej i informacje o **deserializacji**, zobacz [Jak przeprowadzić migrację z Newtonsoft.Json do System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
 
 ## <a name="allow-comments-and-trailing-commas"></a>Zezwalaj na komentarze i końcowe przecinki
 

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78232e6f-ae18-4cfa-a6cd-e79471cf9d76
 topic_type:
 - apiref
-ms.openlocfilehash: a21f3b36e418bbde5dcb90f25a39dae03fde77c9
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: a163667ea7eca1ed817d642efdb8fc4efa2a0651
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895212"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676065"
 ---
 # <a name="icordebugappdomaingetobject-method"></a>ICorDebugAppDomain::GetObject — Metoda
+
 Pobiera wskaźnik interfejsu do domeny aplikacji środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,16 +35,20 @@ HRESULT GetObject (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppObject`  
  określoną Wskaźnik do adresu obiektu interfejsu ICorDebugValue, który reprezentuje domenę aplikacji CLR.  
   
 ## <a name="return-value"></a>Wartość zwracana  
- Jeśli obiekt zarządzany <xref:System.AppDomain?displayProperty=nameWithType> nie został skonstruowany dla tej domeny aplikacji, metoda zwraca `S_FALSE` i umieszcza `NULL` w. `*ppObject`  
+
+ Jeśli obiekt zarządzany <xref:System.AppDomain?displayProperty=nameWithType> nie został skonstruowany dla tej domeny aplikacji, metoda zwraca `S_FALSE` i umieszcza `NULL` w `*ppObject` .  
   
 ## <a name="remarks"></a>Uwagi  
- Każda domena aplikacji w procesie może mieć obiekt zarządzany <xref:System.AppDomain?displayProperty=nameWithType> w czasie wykonywania, który go reprezentuje. Ta funkcja pobiera obiekt interfejsu ICorDebugValue, który odpowiada obiektowi zarządzanemu <xref:System.AppDomain?displayProperty=nameWithType> .  
+
+ Każda domena aplikacji w procesie może mieć <xref:System.AppDomain?displayProperty=nameWithType> obiekt zarządzany w czasie wykonywania, który go reprezentuje. Ta funkcja pobiera obiekt interfejsu ICorDebugValue, który odpowiada obiektowi zarządzanemu <xref:System.AppDomain?displayProperty=nameWithType> .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

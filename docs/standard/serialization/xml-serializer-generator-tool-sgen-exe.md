@@ -3,12 +3,12 @@ title: Narzędzie generatora serializatora XML (Sgen.exe)
 description: Generator serializatora XML tworzy zestaw serializacji XML dla typów w zestawie, który zwiększa wydajność uruchamiania XmlSerializer.
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: 80295a9a54b6f9b1970fb65dacdee43b2e938070
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: c2f33236e39f61638118f45f0d5ab5385df27ac3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282353"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676520"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Narzędzie generatora serializatora XML (Sgen.exe)
 
@@ -45,6 +45,7 @@ sgen [options]
 |**/?**|Wyświetla składnię polecenia i opcje narzędzia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Gdy generator serializatorów XML nie jest używany, <xref:System.Xml.Serialization.XmlSerializer> generuje kod serializacji i zestaw serializacji dla każdego typu za każdym razem, gdy aplikacja jest uruchamiana. Aby zwiększyć wydajność uruchamiania serializacji XML, użyj narzędzia Sgen.exe, aby wygenerować te zestawy z wyprzedzeniem. Zestawy te można następnie wdrażać za pomocą aplikacji.  
   
  Generator serializatora XML może również zwiększyć wydajność klientów korzystających z serwerów proxy usług sieci Web XML do komunikowania się z serwerami, ponieważ ten proces serializacji nie będą powodować wydajności trafień, gdy typ jest ładowany po raz pierwszy.  
@@ -54,6 +55,7 @@ sgen [options]
  Jeśli zestawu zawierającego typ do serializacji nosi MyType.dll, następnie zestawu skojarzonego serializacji będzie miał nazwę MyType.XmlSerializers.dll.  
   
 ## <a name="examples"></a>Przykłady  
+
  Następujące polecenie tworzy zestaw o nazwie Data.XmlSerializers.dll dla wszystkich typów, które są zawarte w zestawie o nazwie Data.dll serializacji.  
   
 ```console  

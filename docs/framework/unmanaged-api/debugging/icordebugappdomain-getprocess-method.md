@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9d0b9628-a91c-40d0-b9bc-00b34a396b8f
 topic_type:
 - apiref
-ms.openlocfilehash: 90ac981f9b5ee71ca59f76823e7b796471571e4e
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 6521341499df52c1851401f3f2f5c48a3b68ccd3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895201"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675961"
 ---
 # <a name="icordebugappdomaingetprocess-method"></a>ICorDebugAppDomain::GetProcess — Metoda
+
 Pobiera proces zawierający domenę aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetProcess (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppProcess`  
  określoną Wskaźnik do adresu obiektu ICorDebugProcess, który reprezentuje proces.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

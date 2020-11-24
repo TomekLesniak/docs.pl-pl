@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4a17d723-86b9-4f27-bd0d-b70c3259011c
 topic_type:
 - apiref
-ms.openlocfilehash: ccc787aa1c820a486d9a513055c9c9834b90bd1a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6670d985eed4c55550b23d3f4110ee20f3b75661
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615439"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675831"
 ---
 # <a name="isymunmanagedreaderupdatesymbolstore-method"></a>ISymUnmanagedReader::UpdateSymbolStore — Metoda
+
 Aktualizuje istniejący magazyn symboli przy użyciu magazynu symboli różnicowych. Ta metoda jest używana w scenariuszach Edytuj i Kontynuuj, aby zaktualizować magazyn symboli tak, aby pasował do różnic w oryginalnym przenośnym pliku wykonywalnym (PE).  
   
 > [!NOTE]
@@ -37,6 +38,7 @@ HRESULT UpdateSymbolStore (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `filename`  
  podczas Nazwa pliku, który zawiera magazyn symboli.  
   
@@ -44,9 +46,11 @@ HRESULT UpdateSymbolStore (
  podczas Strumień pliku używany jako alternatywa dla `filename` parametru.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

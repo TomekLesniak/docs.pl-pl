@@ -6,14 +6,15 @@ helpviewer_keywords:
 - unsealed classes
 - inheritance, classes
 ms.assetid: 9a3bd505-90f5-4053-9f0d-3cf5fa3d3ebf
-ms.openlocfilehash: b2e14b435aa567f231230da34307014210d46ccb
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9e380f533cfc290e952281c6a04f19978fa92aa3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828520"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677508"
 ---
 # <a name="unsealed-classes"></a>Niezapieczętowane klasy
+
 Klasy zapieczętowane nie mogą być dziedziczone z i uniemożliwiają rozszerzanie. Z kolei klasy, które mogą być dziedziczone z, są nazywane niezapieczętowanymi klasami.
 
  ✔️ ROZWAŻYĆ użycie niezapieczętowanych klas bez dodanych wirtualnych lub chronionych elementów członkowskich jako doskonały sposób zapewnienia niedrogiej jeszcze bardziej łatwiejszej rozszerzalności na platformę.

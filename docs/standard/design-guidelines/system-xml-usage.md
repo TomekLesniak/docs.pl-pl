@@ -2,14 +2,15 @@
 title: Używanie zestawu System.Xml
 ms.date: 10/22/2008
 ms.assetid: 82302f0d-a621-4c6f-b57d-999bd61f21a6
-ms.openlocfilehash: a01799bd130de0222d4d66dee4955375c1a1911f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 46282afa6548c731b04c40d8de91a1fed997c57c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828598"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677573"
 ---
 # <a name="systemxml-usage"></a>Używanie zestawu System.Xml
+
 W tej sekcji omówiono użycie kilku typów znajdujących się w <xref:System.Xml?displayProperty=nameWithType> przestrzeniach nazw, które mogą być używane do reprezentowania danych XML.
 
  ❌ NIE używaj <xref:System.Xml.XmlNode> ani <xref:System.Xml.XmlDocument> do reprezentowania danych XML. Preferuj użycie wystąpień <xref:System.Xml.XPath.IXPathNavigable> , <xref:System.Xml.XmlReader> , <xref:System.Xml.XmlWriter> , lub podtypów <xref:System.Xml.Linq.XNode> zamiast. `XmlNode` i `XmlDocument` nie są przeznaczone do uwidaczniania w publicznych interfejsach API.

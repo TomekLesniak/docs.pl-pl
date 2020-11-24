@@ -2,14 +2,15 @@
 title: Obsługa typu w ramach klas zestawu System.Xml
 ms.date: 03/30/2017
 ms.assetid: 63570538-06e3-4401-ad4d-ac50be90c7bf
-ms.openlocfilehash: 8e4ef15980f488c473129f4f7c02be1778bcafea
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6fe55c64bc9bd17d5416eebf77060f2be27b81bb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824626"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675662"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>Obsługa typu w ramach klas zestawu System.Xml
+
 W .NET Framework w wersji 2,0 podstawowe klasy XML zostały ulepszone w celu uwzględnienia funkcji obsługi typu. <xref:System.Xml.XmlReader>Klasy, <xref:System.Xml.XmlWriter> i <xref:System.Xml.XPath.XPathNavigator> zawierają funkcje obsługi typu, w tym możliwość konwersji między typami schematu XML i typami środowiska uruchomieniowego języka wspólnego (CLR).  
   
  W .NET Framework w wersji 2,0, <xref:System.Xml.XmlReader> klasy, <xref:System.Xml.XmlWriter> i zostały <xref:System.Xml.XPath.XPathNavigator> ulepszone w celu uwzględnienia funkcji obsługi typu.  
@@ -26,6 +27,7 @@ W .NET Framework w wersji 2,0 podstawowe klasy XML zostały ulepszone w celu uwz
 > W .NET Framework w wersji 1,0 <xref:System.Xml.XmlConvert> Klasa była wymagana do konwersji między schematem XML i TYPAMI CLR.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Mapowanie typów danych XML na typy CLR](mapping-xml-data-types-to-clr-types.md)  
  Opisuje domyślne mapowania typów danych XML na typy CLR.  
   
@@ -36,4 +38,5 @@ W .NET Framework w wersji 2,0 podstawowe klasy XML zostały ulepszone w celu uwz
  Opisuje sposób użycia <xref:System.Xml.XmlConvert> klasy do konwersji między schematem XML i TYPAMI CLR.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Uzyskiwanie dostępu do silnie typizowanych danych XML przy użyciu klasy XPathNavigator](accessing-strongly-typed-xml-data-using-xpathnavigator.md)

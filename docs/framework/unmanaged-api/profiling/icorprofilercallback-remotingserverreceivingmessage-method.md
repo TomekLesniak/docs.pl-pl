@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5604d21f-e6b7-490e-b469-42122a7568e1
 topic_type:
 - apiref
-ms.openlocfilehash: 157e6bc6cb9603fa9558ad6d39f0b086849fc7b0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0fc84a15d3250d5103c1dbc6486960f0ea780a2b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499899"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676819"
 ---
 # <a name="icorprofilercallbackremotingserverreceivingmessage-method"></a>ICorProfilerCallback::RemotingServerReceivingMessage — Metoda
+
 Powiadamia program profilujący, że proces otrzymał zdalne wywołanie metody lub żądanie aktywacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT RemotingClientSendingMessage(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pCookie`  
  podczas Wartość, która będzie odpowiadała wartości podanej w [ICorProfilerCallback:: RemotingClientSendingMessage —](icorprofilercallback-remotingclientsendingmessage-method.md) w następujących warunkach:  
   
@@ -49,9 +51,11 @@ HRESULT RemotingClientSendingMessage(
  podczas Wartość, która jest, `true` Jeśli wywołanie jest asynchroniczne; w przeciwnym razie `false` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli żądanie komunikatu jest asynchroniczne, żądanie może być serwisowane przez dowolny wątek.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

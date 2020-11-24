@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ffbb3caf-20da-4a4b-8983-77376e72b990
 topic_type:
 - apiref
-ms.openlocfilehash: b32e8f0b03ef6d550c384f3d932cc295a7270028
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 40e82997e58292a10f5e960cc9d9785d9ea8946a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007666"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676975"
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl — Wyliczenie
+
 Zawiera wartości opisujące funkcje implementacji metody.  
   
 ## <a name="syntax"></a>Składnia  
@@ -74,12 +75,13 @@ typedef enum CorMethodImpl {
 |`miMaxMethodImplVal`|Maksymalna prawidłowa wartość elementu `CorMethodImpl` .|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

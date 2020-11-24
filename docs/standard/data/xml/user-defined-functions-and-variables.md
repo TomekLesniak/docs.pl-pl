@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4772f20e-1e7f-496e-93c2-1484473be555
-ms.openlocfilehash: d4936ec32d54a465803d493048cba2b70ed50db6
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c1f519dd539a266d61945ad221bccceaa1361779
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818508"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675623"
 ---
 # <a name="user-defined-functions-and-variables"></a>Funkcje i zmienne zdefiniowane przez użytkownika
+
 <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera zestaw metod, które są używane do współpracy z <xref:System.Xml.XPath.XPathDocument> danymi. Można uzupełnić standardowe funkcje XPath przez implementację funkcji i zmiennych rozszerzeń do użycia przez wyrażenia zapytań XPath. <xref:System.Xml.XPath.XPathExpression.SetContext%2A>Metoda może akceptować kontekst zdefiniowany przez użytkownika, który pochodzi od <xref:System.Xml.Xsl.XsltContext> . Funkcje zdefiniowane przez użytkownika są rozwiązywane przez kontekst niestandardowy.  
   
  Funkcje i zmienne rozszerzeń mogą być przydatne w zapobieganiu atakom przy iniekcji kodu XML. W tych scenariuszach dane wejściowe użytkownika są przypisywane do zmiennych niestandardowych i przetwarzane przez funkcje rozszerzenia, nie jako pierwotne dane wejściowe połączone z instrukcjami przetwarzania. Funkcje rozszerzenia i zmienne zawierają dane wejściowe użytkownika, dzięki czemu działają tylko na danych XML, które są przewidziane przez projektanta.  

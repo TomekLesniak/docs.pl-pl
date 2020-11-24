@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3b93bcff-62a4-47b2-babc-6bcf4216119a
 topic_type:
 - apiref
-ms.openlocfilehash: 42f7020212dd2db793b7c7d20a15c129157e7261
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 4c088b7e1096f8b4cad11a3e27b4045e233989ae
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860769"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676221"
 ---
-# <a name="_efn_getmanagedobjectfieldinfo-function"></a>\_Funkcja\_EFN GetManagedObjectFieldInfo
+# <a name="_efn_getmanagedobjectfieldinfo-function"></a>\_\_Funkcja EFN GetManagedObjectFieldInfo
+
 Pobiera przesunięcie od początku obiektu do pola i wartości pola przy użyciu podanego wskaźnika obiektu i nazwy pola.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT _EFN_GetManagedObjectFieldInfo(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `Client`  
  podczas Wskaźnik do klienta debugowania.  
   
@@ -53,17 +55,19 @@ HRESULT _EFN_GetManagedObjectFieldInfo(
  określoną Przesunięcie od `objAddr` do pola. Ten parametr może mieć wartość null.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli przesunięcie ma wartość 0, przesunięcie nie jest zapisywane.  
   
  W przypadku braku kodu zarządzanego w wątku, który jest obecnie w kontekście, funkcja zwraca wartość HRESULT SOS_E_NOMANAGEDCODE z wartością instrumentu 0xa0 i kodem błędu 0x1000.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** SOS_Stacktrace. h  
   
  **Wersja .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie statycznych funkcji globalnych](debugging-global-static-functions.md)

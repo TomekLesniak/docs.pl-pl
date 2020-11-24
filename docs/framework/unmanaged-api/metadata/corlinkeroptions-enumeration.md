@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a656aad6-cc7e-4994-8251-004a6a45e18f
 topic_type:
 - apiref
-ms.openlocfilehash: fe5ffbab93df7168015e2a31d6e32ec45dce0960
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 188301d31b2fcfaf7b1c6139111e8f1296ccf7e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007692"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677248"
 ---
 # <a name="corlinkeroptions-enumeration"></a>CorLinkerOptions — Wyliczenie
+
 Określa flagi do wybierania opcji konsolidatora metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,12 +42,13 @@ typedef enum CorLinkerOptions {
 |`MDNetModule`|Prywatne typy i funkcje globalne są zachowywane.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

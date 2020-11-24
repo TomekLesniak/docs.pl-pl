@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 54d9a5a5-3877-49c1-a503-ce7c7943bc2a
 topic_type:
 - apiref
-ms.openlocfilehash: 820a37c8ca16f4962bf1d72b1f0f404cffd92a1a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2ef8f066831df1437bd0b6a6f155dd459cae1eb2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499964"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676845"
 ---
 # <a name="icorprofilercallbackremotingclientsendingmessage-method"></a>ICorProfilerCallback::RemotingClientSendingMessage — Metoda
+
 Powiadamia program profilujący, że klient wysyła żądanie do serwera.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT RemotingClientSendingMessage(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pCookie`  
  podczas Wartość, która odpowiada wartości podanej w [ICorProfilerCallback:: RemotingServerReceivingMessage —](icorprofilercallback-remotingserverreceivingmessage-method.md) w następujących warunkach:  
   
@@ -49,6 +51,7 @@ HRESULT RemotingClientSendingMessage(
  podczas Wartość, która jest, `true` Jeśli wywołanie jest asynchroniczne; w przeciwnym razie `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

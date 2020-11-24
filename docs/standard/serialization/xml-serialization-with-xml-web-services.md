@@ -18,21 +18,23 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: 5c986162de19c2cb27edf19ff8e9e80798f36117
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 64b5911ca110ae4ef08f9003898bb817d8b8dd79
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282362"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676546"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializacja XML z usługami internetowymi XML
 
 Serializacji XML jest źródłowego transportu mechanizm używany w architekturze usług sieci Web XML przez <xref:System.Xml.Serialization.XmlSerializer> klasy. Aby sterować XML wygenerowanym przez usługę sieci Web XML, można zastosować atrybuty wymienione w obu [atrybutach, które kontrolują serializacji XML](attributes-that-control-xml-serialization.md) i atrybuty kontrolujące [ZAKODOWANĄ serializację protokołu SOAP](attributes-that-control-encoded-soap-serialization.md) do klas, wartości zwracanych, parametrów i pól pliku używanego do tworzenia usługi sieci Web XML (. asmx). Aby uzyskać więcej informacji na temat tworzenia usługi sieci Web XML, zobacz [usługi sieci Web XML przy użyciu ASP.NET](/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
   
 ## <a name="literal-and-encoded-styles"></a>Literał i zakodowany stylów  
+
  KOD XML wygenerowany przez usługę sieci Web XML można sformatować na jeden z dwóch sposobów, albo literał lub zakodowany, zgodnie z opisem w temacie [Dostosowywanie formatowania komunikatów protokołu SOAP](/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Dlatego są dwóch zestawów atrybutów, które kontrolują serializacji XML. Atrybuty wymienione w [atrybutach, które kontrolują serializacji XML,](attributes-that-control-xml-serialization.md) są przeznaczone do sterowania XML stylu literału. Atrybuty wymienione w [atrybutach kontrolujących kodowanie zakodowanej serializacji protokołu SOAP](attributes-that-control-encoded-soap-serialization.md) w stylu kodowanym. Wybiórczo stosując te atrybuty, można dostosować aplikację w celu zwrócenia obu tych stylów lub obu. Ponadto te atrybuty mogą być stosowane (odpowiednio) do zwracania wartości i parametrów.  
   
 ### <a name="example-of-using-both-styles"></a>Przykład użycia obu stylów  
+
  Podczas tworzenia usługi sieci Web XML, można użyć obu zestawów atrybutów na metody. W poniższym przykładzie kodu Klasa o nazwie `MyService` zawiera dwie metody usługi sieci Web XML `MyLiteralMethod` i `MyEncodedMethod` . Obie metody wykonywania tej samej funkcji: zwrócenia wystąpienia `Order` klasy. W `Order` klasie, <xref:System.Xml.Serialization.XmlTypeAttribute> i <xref:System.Xml.Serialization.SoapTypeAttribute> atrybuty są stosowane do `OrderID` pola, a oba atrybuty mają `ElementName` ustawioną inną wartość.  
   
  Aby uruchomić przykład, wklej kod do pliku z rozszerzeniem. asmx i umieść plik w katalogu wirtualnym zarządzanym przez Internet Information Services (IIS). W przeglądarce HTML, takiej jak Internet Explorer, wpisz nazwę komputera, katalogu wirtualnego i pliku.  
@@ -124,6 +126,7 @@ public class MyService {
 ```  
   
 ### <a name="applying-attributes-to-return-values"></a>Stosowanie atrybutów do zwracanych wartości  
+
  Można również zastosować atrybuty do zwracanych wartości, aby kontrolować przestrzeń nazw, nazwę elementu i tak dalej. Poniższy przykład kodu stosuje `XmlElementAttribute` atrybut do wartości zwracanej przez `MyLiteralMethod` metodę. Ten sposób pozwala na kontrolowanie nazwa przestrzeni nazw i elementu.  
   
 ```vb  
@@ -163,6 +166,7 @@ public Order MyLiteralMethod(){
 ```  
   
 ### <a name="attributes-applied-to-parameters"></a>Atrybuty zastosowane do parametrów  
+
  Można również zastosować atrybuty do parametrów, aby określić przestrzeń nazw, nazwę elementu i tak dalej. Poniższy przykład kodu dodaje parametr do `MyLiteralMethodResponse` metody i stosuje `XmlAttributeAttribute` atrybut do parametru. Nazwa elementu i przestrzeni nazw są ustawione dla parametru.  
   
 ```vb  
@@ -204,6 +208,7 @@ Namespace="http://www.microsoft.com")] string ID){
 ```  
   
 ### <a name="applying-attributes-to-classes"></a>Stosowanie atrybutów do klas  
+
  Jeśli potrzebujesz kontrolować przestrzeń nazw elementów, które są skorelowane z klasami, możesz zastosować `XmlTypeAttribute` , `XmlRootAttribute` i `SoapTypeAttribute` , zgodnie z potrzebami. Poniższy przykład kodu stosuje wszystkie trzy do `Order` klasy.  
   
 ```vb  

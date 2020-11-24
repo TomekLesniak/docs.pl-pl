@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 37b95cce-9bfb-4ecf-a00b-33dcba782c67
 topic_type:
 - apiref
-ms.openlocfilehash: fa2b5052a1d569487f0c6c72699ff9ab571beefc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d2794b53ed17640413928b3af0d1ed3656e25f22
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504397"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675766"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure — Wyliczenie
+
 Opisuje zestaw błędów, dla których host może ustawiać akcje zasad.  
   
 ## <a name="syntax"></a>Składnia  
@@ -51,20 +52,22 @@ typedef enum {
 |`FAIL_CodeContract`|Wystąpił błąd kontraktu kodu. Zobacz [kontrakty kodu](../../debug-trace-profile/code-contracts.md).|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zobacz metodę [ICLRPolicyManager:: SetActionOnFailure —](iclrpolicymanager-setactiononfailure-method.md) , aby uzyskać listę wartości [EPolicyAction —](epolicyaction-enumeration.md) , których host może użyć do określenia akcji zasad dla warunków niepowodzeń. Aby uzyskać więcej informacji na temat krytycznych i niekrytycznych regionów kodu, zobacz [EClrOperation —](eclroperation-enumeration.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRPolicyManager, interfejs](iclrpolicymanager-interface.md)
+- [ICLRPolicyManager — Interfejs](iclrpolicymanager-interface.md)
 - [SetActionOnFailure, metoda](iclrpolicymanager-setactiononfailure-method.md)
-- [IHostPolicyManager, interfejs](ihostpolicymanager-interface.md)
+- [IHostPolicyManager — Interfejs](ihostpolicymanager-interface.md)
 - [Hosting — Wyliczenia](hosting-enumerations.md)

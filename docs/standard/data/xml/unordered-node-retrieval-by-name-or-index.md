@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-ms.openlocfilehash: e0b3b167dc43710e97a5f67fb0eb54c4742e1572
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c3358f6cca27fbe61ba2b59fe6f2eb5df81c91ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819334"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675649"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Pobieranie nieuporządkowanych węzłów na podstawie nazwy lub indeksu
+
 **XmlNamedNodeMap** jest opisany w specyfikacji organizacja World Wide Web Consortium (W3C) jako NamedNodeMap i jest wymagany do obsługi nieuporządkowanego zestawu węzłów z możliwością odwoływania się do węzłów według ich nazwy lub indeksu. Jedynym sposobem, w jaki masz dostęp do elementu **XmlNamedNodeMap** , jest to, że **XmlNamedNodeMap** jest zwracany przez metodę lub właściwość. Istnieją trzy metody lub właściwości, które zwracają **XmlNamedNodeMap**:  
   
 - XmlElement. Attributes  

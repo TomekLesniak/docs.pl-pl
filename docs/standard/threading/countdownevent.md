@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
-ms.openlocfilehash: 82fe4844728702e91190b55a833848c1c9ece40c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 15ff3ee8f4ea18b243f5c3070f1c59df4646a1a4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826576"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676481"
 ---
 # <a name="countdownevent"></a>CountdownEvent
 
@@ -32,12 +32,14 @@ ms.locfileid: "94826576"
 - Wystąpienia uwidaczniają <xref:System.Threading.WaitHandle> integrację z innymi interfejsami API synchronizacji .NET, takimi jak <xref:System.Threading.WaitHandle.WaitAll%2A> .  
   
 ## <a name="basic-usage"></a>Podstawowe użycie  
+
  Poniższy przykład ilustruje sposób używania elementu z elementem <xref:System.Threading.CountdownEvent> <xref:System.Threading.ThreadPool> roboczym.  
   
  [!code-csharp[CDS_CountdownEvent#01](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#01)]
  [!code-vb[CDS_CountdownEvent#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/module1.vb#01)]  
   
 ## <a name="countdownevent-with-cancellation"></a>CountdownEvent z anulowaniem  
+
  Poniższy przykład pokazuje, jak anulować operację oczekiwania przy <xref:System.Threading.CountdownEvent> użyciu tokenu anulowania. Wzorzec podstawowy jest zgodny z modelem dla ujednoliconego anulowania, który został wprowadzony w .NET Framework 4. Aby uzyskać więcej informacji, zobacz [Anulowanie w zarządzanych wątkach](cancellation-in-managed-threads.md).  
   
  [!code-csharp[CDS_CountdownEvent#02](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#02)]

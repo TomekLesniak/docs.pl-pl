@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa3cc15d-058e-4e6f-b03e-39569646ba47
 topic_type:
 - apiref
-ms.openlocfilehash: b372021fcda39d9973d96a9c39e93e38617887a6
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: bca84fdba575ed9bfe572b9fd7a5869620962de6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615465"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675870"
 ---
 # <a name="isymunmanagedreader-interface"></a>ISymUnmanagedReader — Interfejs
+
 Reprezentuje czytnik symboli, który zapewnia dostęp do dokumentów, metod i zmiennych w magazynie symboli.  
   
 ## <a name="methods"></a>Metody  
@@ -47,6 +48,7 @@ Reprezentuje czytnik symboli, który zapewnia dostęp do dokumentów, metod i zm
 |[UpdateSymbolStore, metoda](isymunmanagedreader-updatesymbolstore-method.md)|Aktualizuje istniejący magazyn symboli przy użyciu magazynu symboli różnicowych.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: caea7754-867c-4360-a65c-5ced4408fd9d
 topic_type:
 - apiref
-ms.openlocfilehash: a725aa2c0f1fdea523bbf7cba880bc805f855782
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 9b7624c2902d17e437cda9a0a84ddf288323b577
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860733"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676195"
 ---
-# <a name="_efn_stacktrace-function"></a>\_Funkcja\_EFN ślad stosu
+# <a name="_efn_stacktrace-function"></a>\_\_Funkcja EFN ślad stosu
+
 Przedstawia tekstową reprezentację zarządzanego śledzenia stosu i tablicę `CONTEXT` rekordów, jeden dla każdego przejścia między niezarządzanym i zarządzanym kodem.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT CALLBACK _EFN_StackTrace(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `Client`  
  podczas Debugowany klient.  
   
@@ -46,7 +48,7 @@ HRESULT CALLBACK _EFN_StackTrace(
  określoną Tekstowa reprezentacja śladu stosu.  
   
  `puiTextLength`  
- określoną Wskaźnik do liczby znaków w `wszTextOut`.  
+ określoną Wskaźnik do liczby znaków w `wszTextOut` .  
   
  `pTransitionContexts`  
  określoną Tablica kontekstów przejścia.  
@@ -61,19 +63,20 @@ HRESULT CALLBACK _EFN_StackTrace(
  podczas Ustaw wartość 0 lub SOS_STACKTRACE_SHOWADDRESSES (0x01), aby pokazać rejestr EBP i wskaźnik wprowadzania stosu (ESP) przed każdym `module!functionname` wierszem.  
   
 ## <a name="remarks"></a>Uwagi  
- `_EFN_StackTrace` Strukturę można wywołać z interfejsu programistycznego WinDbg. Parametry są używane w następujący sposób:  
+
+ `_EFN_StackTrace`Strukturę można wywołać z interfejsu programistycznego WinDbg. Parametry są używane w następujący sposób:  
   
-- Jeśli `wszTextOut` ma wartość null `puiTextLength` i nie ma wartości null, funkcja zwraca długość ciągu w `puiTextLength`.  
+- Jeśli `wszTextOut` ma wartość null i `puiTextLength` nie ma wartości null, funkcja zwraca długość ciągu w `puiTextLength` .  
   
-- Jeśli `wszTextOut` wartość nie jest równa null, funkcja przechowuje `wszTextOut` tekst w do lokalizacji wskazanej `puiTextLength`przez. Pomyślnie zwraca wartość, jeśli w buforze było wystarczająco dużo miejsca E_OUTOFMEMORY lub jeśli bufor nie był wystarczająco długi.  
+- Jeśli `wszTextOut` wartość nie jest równa null, funkcja przechowuje tekst w `wszTextOut` do lokalizacji wskazanej przez `puiTextLength` . Pomyślnie zwraca wartość, jeśli w buforze było wystarczająco dużo miejsca E_OUTOFMEMORY lub jeśli bufor nie był wystarczająco długi.  
   
-- Część przejścia funkcji jest ignorowana, jeśli `pTransitionContexts` i `puiTransitionContextCount` ma wartość null. W takim przypadku funkcja udostępnia obiekty wywołujące z tekstem wyjściowym tylko nazw funkcji.  
+- Część przejścia funkcji jest ignorowana `pTransitionContexts` , jeśli i `puiTransitionContextCount` ma wartość null. W takim przypadku funkcja udostępnia obiekty wywołujące z tekstem wyjściowym tylko nazw funkcji.  
   
-- Jeśli `pTransitionContexts` ma wartość null `puiTransitionContextCount` i nie ma wartości null, funkcja zwraca wymaganą liczbę wpisów kontekstu w `puiTransitionContextCount`.  
+- Jeśli `pTransitionContexts` ma wartość null i `puiTransitionContextCount` nie ma wartości null, funkcja zwraca wymaganą liczbę wpisów kontekstu w `puiTransitionContextCount` .  
   
-- Jeśli `pTransitionContexts` wartość nie jest równa null, funkcja traktuje ją jako tablicę struktur `puiTransitionContextCount`długości. Rozmiar struktury jest określony przez `uiSizeOfContext`i musi być rozmiarem [SimpleContext](stacktrace-simplecontext-structure.md) lub `CONTEXT` architekturą.  
+- Jeśli `pTransitionContexts` wartość nie jest równa null, funkcja traktuje ją jako tablicę struktur długości `puiTransitionContextCount` . Rozmiar struktury jest określony przez `uiSizeOfContext` i musi być rozmiarem [SimpleContext](stacktrace-simplecontext-structure.md) lub `CONTEXT` architekturą.  
   
-- `wszTextOut`jest zapisywana w następującym formacie:  
+- `wszTextOut` jest zapisywana w następującym formacie:  
   
     ```output  
     "<ModuleName>!<Function Name>[+<offset in hex>]  
@@ -86,19 +89,20 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 - W przypadku braku kodu zarządzanego w wątku, który jest obecnie w kontekście, funkcja zwraca SOS_E_NOMANAGEDCODE.  
   
-- `Flags` Parametr ma wartość 0 lub SOS_STACKTRACE_SHOWADDRESSES, aby zobaczyć EBP i ESP przed każdym `module!functionname` wierszem. Domyślnie jest to 0.  
+- `Flags`Parametr ma wartość 0 lub SOS_STACKTRACE_SHOWADDRESSES, aby zobaczyć EBP i ESP przed każdym `module!functionname` wierszem. Domyślnie jest to 0.  
   
     ```cpp  
     #define SOS_STACKTRACE_SHOWADDRESSES   0x00000001  
     ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** SOS_Stacktrace. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie statycznych funkcji globalnych](debugging-global-static-functions.md)

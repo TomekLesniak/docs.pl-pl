@@ -3,12 +3,12 @@ title: Narzędzie definicji schematu XML (Xsd.exe)
 description: Generator serializatora XML tworzy zestaw serializacji XML dla typów w określonym zestawie, co zwiększa wydajność uruchamiania elementu XmlSerializer.
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: c8ae3e05f2d775cbc4c44ce27e7474d1fcfc06a3
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: a66ebfee3a461bb800e61e4f1d789f497da2f9d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281749"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676611"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Narzędzie definicji schematu XML (Xsd.exe)
 
@@ -50,6 +50,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 |**/p \[ arameters \] :** _file.xml_|Opcje dla różnych trybach operacji odczytu z PLiku .xml określony. Krótka forma to `/p:` . Aby uzyskać więcej informacji, zobacz sekcję [uwagi](#remarks) .|
 
 ## <a name="xsd-file-options"></a>Opcje PLiku XSD
+
  Należy określić tylko jedną z poniższych opcji dotyczących XSD PLików.
 
 |Opcja|Opis|
@@ -105,7 +106,7 @@ Za pomocą `/parameters` przełącznika można określić pojedynczy plik XML, k
 </xsd>
 ```
 
-Jeśli poprzedni kod XML jest zawarty w pliku o nazwie GenerateSchemas.xml, użyj przełącznika, `/parameters` wpisując następujące polecenie w wierszu polecenia i naciskając klawisz **Enter** :
+Jeśli poprzedni kod XML jest zawarty w pliku o nazwie GenerateSchemas.xml, użyj przełącznika, `/parameters` wpisując następujące polecenie w wierszu polecenia i naciskając klawisz **Enter**:
 
 ```console
  xsd /p:GenerateSchemas.xml
@@ -205,6 +206,7 @@ Poniższa tabela zawiera atrybuty, które umożliwia także z `<xsd>` elementu.
 |Pomoc|Wyświetla składnię polecenia i opcje narzędzia. Ustaw `true` lub `false`.|
 
 ## <a name="examples"></a>Przykłady
+
  Następujące polecenie generuje schematu XML z `myFile.xdr` i zapisuje go w bieżącym katalogu.
 
 ```console

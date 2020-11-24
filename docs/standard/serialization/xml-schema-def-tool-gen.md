@@ -8,17 +8,18 @@ helpviewer_keywords:
 - XML Schema Definition tool, using to generate classes that conform to specific schema
 - XML Schema Definition tool, using to generate XML Schema Document
 ms.assetid: 51f0edc3-993d-4051-b7f2-77753694d3d1
-ms.openlocfilehash: 0e4e84ea7e11b2e7a00c852d4a2075747c71267e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9d94ed7c2558b1d60efb8b3cdbaac1ea1f0087b5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84288969"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676663"
 ---
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Instrukcje: Generowanie klas i dokumentów schematu XML przy użyciu narzędzia definicji schematu XML
+
 Narzędzie definicji schematu XML (Xsd.exe) służy do generowania schematu XML, która opisuje klasę lub do generowania klasy zdefiniowane przez schemat XML. Poniższe procedury pokazują, jak wykonywać te operacje.
 
-Narzędzie definicji schematu XML (XSD. exe) zwykle można znaleźć w następującej ścieżce: \
+Narzędzie definicji schematu XML (Xsd.exe) zwykle można znaleźć w następującej ścieżce: \
 _C: \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {Version} \\ bin \\ NETFX {Version} Tools\\_
 
 ### <a name="to-generate-classes-that-conform-to-a-specific-schema"></a>Do generowania klasy, które są zgodne z określonego schematu  
@@ -48,7 +49,7 @@ _C: \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {Version} \\ bin \\ NE
   
 2. Otwórz wiersz polecenia.  
   
-3. Przekaż plik DLL jako argument do pliku XSD. exe, na przykład:  
+3. Przekaż plik DLL jako argument do Xsd.exe, na przykład:  
   
     ```console  
     xsd MyFile.dll  
@@ -61,7 +62,7 @@ _C: \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {Version} \\ bin \\ NE
 - <xref:System.Data.DataSet>
 - [Narzędzie definicji schematu XML i serializacja XML](the-xml-schema-definition-tool-and-xml-serialization.md)
 - [Wprowadzenie do serializacji XML](introducing-xml-serialization.md)
-- [Narzędzie definicji schematu XML (XSD. exe)](xml-schema-definition-tool-xsd-exe.md)
+- [Narzędzie definicji schematu XML (Xsd.exe)](xml-schema-definition-tool-xsd-exe.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Instrukcje: Serializacja obiektu](how-to-serialize-an-object.md)
 - [Instrukcje: Deserializacja obiektu](how-to-deserialize-an-object.md)

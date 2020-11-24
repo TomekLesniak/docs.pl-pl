@@ -6,18 +6,19 @@ helpviewer_keywords:
 - debugging structures [.NET Framework]
 - structures [.NET Framework debugging]
 ms.assetid: 173ba2c2-ab34-49ae-b6a8-e5c49882bf05
-ms.openlocfilehash: a18094fb2621478dbdb4bbf672df436234112ed0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: bf84f8ddb1e86da3b9d0e4326584e61304640558
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793759"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676273"
 ---
 # <a name="debugging-structures"></a>Struktury debugowania
 
 W tej sekcji opisano niezarządzane struktury używane przez interfejs API debugowania.
 
 ## <a name="in-this-section"></a>W tej sekcji
+
  [Struktura CLRDATA_ADDRESS_RANGE](clrdata-address-range-structure.md) Definiuje zakres adresów.
 
  [Struktura CLRDATA_IL_ADDRESS_MAP](clrdata-il-address-map-structure.md) Definiuje mapowanie IL to Address
@@ -68,16 +69,16 @@ W tej sekcji opisano niezarządzane struktury używane przez interfejs API debug
 
  [DacpReJitData, struktura](dacprejitdata-structure.md) Definiuje podstawowe informacje o danej metodzie Instrumentacji.
 
- [Struktura StackTrace_SimpleContext](stacktrace-simplecontext-structure.md) Udostępnia prosty kontekst, który może być używany zamiast pełnej struktury `CONTEXT`.
+ [Struktura StackTrace_SimpleContext](stacktrace-simplecontext-structure.md) Udostępnia prosty kontekst, który może być używany zamiast pełnej `CONTEXT` struktury.
 
 ## <a name="related-sections"></a>Sekcje pokrewne
 
  [Klasy coclass debugowania](debugging-coclasses.md)
 
- [Debugowanie, interfejsy](debugging-interfaces.md)
+ [Debugowanie — Interfejsy](debugging-interfaces.md)
 
  [Debugowanie statycznych funkcji globalnych](debugging-global-static-functions.md)
 
- [Debugowanie, wyliczenia](debugging-enumerations.md)
+ [Debugowanie — wyliczenia](debugging-enumerations.md)
 
  [Debugowanie](index.md)
