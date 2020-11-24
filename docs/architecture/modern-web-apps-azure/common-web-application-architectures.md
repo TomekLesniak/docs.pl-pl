@@ -4,12 +4,12 @@ description: Tworzenie architektury nowoczesnych aplikacji sieci Web przy użyci
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: dd9cdf3cdda0605d9454fe096be01655e67a0d0a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 86d2e931e6462fb9f6ff5e3cd31b8d3fd188dd5a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91169300"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682045"
 ---
 # <a name="common-web-application-architectures"></a>Typowe architektury aplikacji internetowych
 
@@ -97,7 +97,7 @@ Najprostszym podejściem do skalowania aplikacji sieci Web na platformie Azure j
 
 ## <a name="clean-architecture"></a>Czysta architektura
 
-Aplikacje, które są zgodne z zasadą niezależności zależności, a także zasady projektowania opartego na domenie (DDD), mają do nich zastosowanie w podobnej architekturze. Ta architektura została przełączona przez wiele nazw w latach. Jedna z pierwszych nazw była architekturą sześciokątną, a po niej porty i karty. Niedawno jest to zacytowane jako [Architektura cebuli](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) lub [czysta architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Ta druga nazwa, czysta architektura, jest używana jako nazwa tej architektury w tej książce elektronicznej.
+Aplikacje, które są zgodne z zasadą niezależności zależności, a także zasady projektowania Domain-Driven (DDD), które mają zostać przydzielone do podobnej architektury. Ta architektura została przełączona przez wiele nazw w latach. Jedna z pierwszych nazw była architekturą sześciokątną, a po niej porty i karty. Niedawno jest to zacytowane jako [Architektura cebuli](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) lub [czysta architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Ta druga nazwa, czysta architektura, jest używana jako nazwa tej architektury w tej książce elektronicznej.
 
 Aplikacja referencyjna eShopOnWeb korzysta z metody czystego architektury w organizowaniu kodu do projektów. Możesz znaleźć szablon rozwiązania, którego można użyć jako punktu wyjścia dla własnego ASP.NET Core w repozytorium GitHub [ardalis/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) .
 
@@ -268,7 +268,7 @@ networks:
 `docker-compose.yml`Plik odwołuje się do `Dockerfile` `Web` projektu. Służy `Dockerfile` do określenia, który kontener bazowy będzie używany, oraz sposobu ich konfiguracji. `Web`" `Dockerfile` :
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /app
 
 COPY *.sln .
@@ -278,7 +278,7 @@ RUN dotnet restore
 
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/src/Web/out ./
 

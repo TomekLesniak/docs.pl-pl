@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 619bb5de-e309-48b6-a3af-32d935a0ff46
 topic_type:
 - apiref
-ms.openlocfilehash: 7b8f2845589a8372f62c95ef1a82eae3ed602c1f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5a3c820b52ae9376d769ea9956edc0b8553a1f88
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500835"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682175"
 ---
 # <a name="cor_prf_misc-enumeration"></a>COR_PRF_MISC — Wyliczenie
+
 Zawiera wartości stałe, które określają identyfikatory specjalne.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,6 +44,7 @@ typedef enum {
 |`PROFILER_GLOBAL_MODULE`|Domyślny identyfikator modułu dla obiektów globalnych, które nie należą do modułu.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -53,4 +55,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profilowanie — wyliczenia](profiling-enumerations.md)
+- [Profilowanie — Wyliczenia](profiling-enumerations.md)

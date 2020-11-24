@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f24e1af9-c220-4f79-ae62-4153ec17ea81
 topic_type:
 - apiref
-ms.openlocfilehash: fc406f6e87e5b2be48c6fe7d5fc988774ac5cd11
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 967f8f25e240f484ae86852c740be12cd3a6409e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379989"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95681824"
 ---
 # <a name="icordebugtypegetbase-method"></a>ICorDebugType::GetBase — Metoda
+
 Pobiera wskaźnik interfejsu do ICorDebugType, który reprezentuje typ podstawowy, jeśli taki istnieje, typu reprezentowanego przez ten element `ICorDebugType` .  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT GetBase (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pBase`  
  określoną Wskaźnik do adresu `ICorDebugType` obiektu, który reprezentuje typ podstawowy.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wyszukiwanie typu podstawowego dla typu jest przydatne, aby zaimplementować typowe funkcje debugera, takie jak drukowanie wszystkich pól obiektu lub jego klas nadrzędnych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

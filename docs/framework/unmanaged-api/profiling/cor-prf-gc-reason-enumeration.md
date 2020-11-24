@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72822b95-a7fb-485e-9d55-1cb016d9a458
 topic_type:
 - apiref
-ms.openlocfilehash: 409a21238f172e5ecdaa8d5bfa237a9f3fe46345
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f41f00a9699d6fc135ca3b9c0b4b470ca0359279
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500913"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682388"
 ---
 # <a name="cor_prf_gc_reason-enumeration"></a>COR_PRF_GC_REASON — Wyliczenie
+
 Wskazuje przyczynę wyrzucania elementów bezużytecznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ typedef enum {
 |`COR_PRF_GC_OTHER`|Przyczyna nie została określona.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -51,4 +53,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profilowanie — wyliczenia](profiling-enumerations.md)
+- [Profilowanie — Wyliczenia](profiling-enumerations.md)

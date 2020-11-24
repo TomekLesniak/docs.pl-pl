@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 91bd49b6-4d12-494f-a8f1-2f251e8c65e3
 topic_type:
 - apiref
-ms.openlocfilehash: 4480fefa51eec2f2751bd71910db87b72a1c32cf
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6c146f3deed31601411bef39ab12b52dfec8cd39
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496731"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95681586"
 ---
 # <a name="icorprofilerinfo2-interface"></a>ICorProfilerInfo2 — Interfejs
+
 Zapewnia metody, które są używane przez program codeer do komunikowania się ze środowiskiem uruchomieniowym języka wspólnego (CLR) w celu kontrolowania informacji o monitorowaniu zdarzeń i żądaniach. `ICorProfilerInfo2`Interfejs jest rozszerzeniem interfejsu [ICorProfilerInfo](icorprofilerinfo-interface.md) . Oznacza to, że udostępnia nowe metody obsługiwane w .NET Framework wersji 2,0 i nowszych.  
   
 ## <a name="methods"></a>Metody  
@@ -35,7 +36,7 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
 |[GetBoxClassLayout, metoda](icorprofilerinfo2-getboxclasslayout-method.md)|Pobiera informacje o układzie klasy dla określonego typu wartości, który jest opakowany.|  
 |[GetClassFromTokenAndTypeArgs, metoda](icorprofilerinfo2-getclassfromtokenandtypeargs-method.md)|Pobiera `ClassID` Typ przy użyciu określonego tokenu metadanych i `ClassID` wartości dowolnego argumentu typu.|  
 |[GetClassIDInfo2, metoda](icorprofilerinfo2-getclassidinfo2-method.md)|Pobiera moduł nadrzędny określonej klasy generycznej, token metadanych klasy, `ClassID` klasy nadrzędnej i `ClassID` dla każdego argumentu typu, jeśli istnieje, klasy.|  
-|[GetClassLayout — Metoda](icorprofilerinfo2-getclasslayout-method.md)|Pobiera informacje o układzie, w pamięci, pól zdefiniowanych przez określoną klasę. Oznacza to, że ta metoda pobiera przesunięcia pól klasy.|  
+|[GetClassLayout, metoda](icorprofilerinfo2-getclasslayout-method.md)|Pobiera informacje o układzie, w pamięci, pól zdefiniowanych przez określoną klasę. Oznacza to, że ta metoda pobiera przesunięcia pól klasy.|  
 |[GetCodeInfo2, metoda](icorprofilerinfo2-getcodeinfo2-method.md)|Pobiera zakresy kodu natywnego skojarzonego z określonym `FunctionID` .|  
 |[GetContextStaticAddress, metoda](icorprofilerinfo2-getcontextstaticaddress-method.md)|Pobiera adres określonego pola statycznego kontekstu, które znajduje się w zakresie określonego kontekstu.|  
 |[GetFunctionFromTokenAndTypeArgs, metoda](icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md)|Pobiera `FunctionID` funkcję przy użyciu określonego tokenu metadanych, zawierającego klasę i `ClassID` wartości dowolnego argumentu typu.|  
@@ -51,6 +52,7 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
 |[SetEnterLeaveFunctionHooks2, metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)|Określa funkcje zaimplementowane przez profiler, które mają być wywoływane w podpunktach "Enter", "urlop" i "tailcall" punktów zarządzanych funkcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Profiler wywołuje metodę w `ICorProfilerInfo2` interfejsie, aby komunikować się z środowiskiem CLR w celu sterowania monitorowaniem zdarzeń i informacjami o żądaniu.  
   
  Metody `ICorProfilerInfo2` interfejsu są implementowane przez środowisko CLR przy użyciu modelu dowolnego wątku. Każda metoda zwraca wynik HRESULT wskazujący powodzenie lub niepowodzenie. Aby uzyskać listę możliwych kodów powrotu, zobacz plik CorError. h.  
@@ -58,6 +60,7 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
  Środowisko CLR przekazuje `ICorProfilerInfo2` interfejs do każdego profilera kodu podczas inicjowania przy użyciu implementacji profilera [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md). Profiler kodu może następnie wywołać metody `ICorProfilerInfo2` interfejsu, aby uzyskać informacje o kodzie zarządzanym wykonywanym pod kontrolą środowiska CLR.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -69,4 +72,4 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
 ## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy profilowania](profiling-interfaces.md)
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)

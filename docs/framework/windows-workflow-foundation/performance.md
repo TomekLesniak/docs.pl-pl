@@ -3,12 +3,12 @@ title: Wydajność programu Windows Workflow Foundation 4
 description: W tym artykule wyjaśniono charakterystykę wydajności głównej wersji Windows Workflow Foundation, która jest częścią .NET Framework 4.
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 1ad12d9fd69205bde726fe650a2ec28ba6c750ef
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f0a68548a8b5e521fccdb544e318c3091315814f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558345"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682344"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Wydajność programu Windows Workflow Foundation 4
 
@@ -20,7 +20,7 @@ ms.locfileid: "90558345"
 
  Wersja [!INCLUDE[wf1](../../../includes/wf1-md.md)] wprowadzona w .NET Framework 4 będzie określana jako WF4 w pozostałej części tego tematu. [!INCLUDE[wf1](../../../includes/wf1-md.md)] wprowadzono w .NET Framework 3,0 i wprowadzono kilka drobnych poprawek za pomocą .NET Framework 3,5 z dodatkiem SP1. Wersja .NET Framework 3,5 programu Workflow Foundation będzie określana jako WF3 w pozostałej części tego tematu. WF3 jest dostarczany w .NET Framework 4 obok WF4. Aby uzyskać więcej informacji na temat migrowania artefaktów WF3 do WF4, zobacz: [Przewodnik migracji Windows Workflow Foundation 4](migration-guidance.md).
 
- Windows Communication Foundation (WCF) to ujednolicony model programowania firmy Microsoft służący do tworzenia aplikacji zorientowanych na usługę. Najpierw została wprowadzona jako część programu .NET 3,0 wraz z WF3 i teraz jest jednym z najważniejszych składników .NET Framework.
+ Windows Communication Foundation (WCF) to ujednolicony model programowania firmy Microsoft służący do tworzenia aplikacji zorientowanych na usługę. Najpierw została wprowadzona jako część .NET Framework 3,0 wraz z WF3 i teraz jest jednym ze najważniejszych składników .NET Framework.
 
  Windows Server AppFabric to zestaw zintegrowanych technologii, które ułatwiają tworzenie, skalowanie i zarządzanie aplikacjami sieci Web i złożonymi, które działają w usługach IIS. Zapewnia narzędzia do monitorowania usług i przepływów pracy oraz zarządzania nimi. Aby uzyskać więcej informacji, zobacz [Windows Server AppFabric 1,0](/previous-versions/appfabric/ff384253(v=azure.10)).
 
@@ -51,7 +51,7 @@ ms.locfileid: "90558345"
  Aplikacje mają zwykle lepszą wydajność i skalowalność dzięki programowaniu asynchronicznym na długotrwałe operacje blokowania, takie jak operacje we/wy lub rozproszone procesy obliczeniowe. WF4 zapewnia obsługę asynchroniczną za pomocą podstawowych typów działań <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity%601> . Środowisko uruchomieniowe natywnie rozumie działania asynchroniczne i w związku z tym może automatycznie umieścić wystąpienie w strefie no-utrwalania, gdy Praca asynchroniczna jest zaległa. Działania niestandardowe mogą pochodzić od tych typów w celu wykonywania operacji asynchronicznych bez przytrzymywania wątku harmonogramu przepływu pracy i blokowania działań, które mogą być uruchamiane równolegle.
 
 ### <a name="messaging"></a>Obsługa komunikatów
- Początkowo WF3 bardzo ograniczoną obsługę komunikatów przez zewnętrzne zdarzenia lub wywołania usług sieci Web. W programie .NET 3,5 przepływy pracy mogą być implementowane jako klienci WCF lub udostępniane jako usługi WCF za poorednictwem systemów <xref:System.Workflow.Activities.SendActivity> i <xref:System.Workflow.Activities.ReceiveActivity> . W WF4 koncepcji programowania komunikatów opartych na przepływach pracy został jeszcze bardziej wzmocniony przez ścisłą integrację logiki obsługi komunikatów WCF z WF.
+ Początkowo WF3 bardzo ograniczoną obsługę komunikatów przez zewnętrzne zdarzenia lub wywołania usług sieci Web. W .NET Framework 3,5 przepływy pracy mogą być implementowane jako klienci WCF lub uwidaczniane jako usługi WCF za poorednictwem <xref:System.Workflow.Activities.SendActivity> i <xref:System.Workflow.Activities.ReceiveActivity> . W WF4 koncepcji programowania komunikatów opartych na przepływach pracy został jeszcze bardziej wzmocniony przez ścisłą integrację logiki obsługi komunikatów WCF z WF.
 
  Potok przetwarzania ujednoliconych komunikatów zapewniany w programie WCF w programie .NET 4 pomaga WF4 usługom w znacznie lepszą wydajność i skalowalność niż WF3. WF4 zapewnia także bogatszą obsługę programowania komunikatów, która może modelować złożone wzorce wymiany komunikatów (MEPs). Deweloperzy mogą korzystać z umów usług z systemem, aby w łatwy sposób programistyczny lub nieokreślony z nieokreślonymi typami umów uzyskać lepszą wydajność bez płacenia kosztów serializacji. Obsługa buforowania kanału po stronie klienta za pośrednictwem <xref:System.ServiceModel.Activities.SendMessageChannelCache> klasy w WF4 ułatwia deweloperom tworzenie szybkich aplikacji z minimalnym nakładem pracy. Aby uzyskać więcej informacji, zobacz [Zmienianie poziomów udostępniania pamięci podręcznej dla działań wysyłania](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).
 
@@ -69,7 +69,7 @@ ms.locfileid: "90558345"
 ### <a name="environment-setup"></a>Konfigurowanie środowiska
  ![Konfiguracja środowiska dla pomiaru wydajności przepływu pracy](./media/performance/performance-test-environment.gif)
 
- Powyższy rysunek przedstawia konfigurację komputera używaną do pomiaru wydajności na poziomie składnika. Jeden serwer i pięć klientów połączonych za pośrednictwem jednego interfejsu sieciowego Ethernet 1 GB/s. W celu ułatwienia pomiarów serwer jest skonfigurowany do korzystania z jednego rdzenia serwera dwuprocesowego/Quad-Core z systemem Windows Server 2008 x86. Użycie procesora CPU systemu jest utrzymywane o niemal 100%.
+ Powyższy rysunek przedstawia konfigurację komputera używaną do pomiaru wydajności na poziomie składnika. Jeden serwer i pięć klientów podłączonych za pośrednictwem interfejsu sieciowego Ethernet 1 1 GB. W celu ułatwienia pomiarów serwer jest skonfigurowany do korzystania z jednego rdzenia serwera dwuprocesowego/Quad-Core z systemem Windows Server 2008 x86. Użycie procesora CPU systemu jest utrzymywane o niemal 100%.
 
 ### <a name="test-details"></a>Szczegóły testu
  WF3 <xref:System.Workflow.Activities.CodeActivity> jest prawdopodobnie najprostszym działaniem, które może być używane w przepływie pracy WF3.  Działanie wywołuje metodę w kodzie, za pomocą którego programista przepływu pracy może umieścić kod niestandardowy.  W programie WF4 nie ma bezpośredniego analogu do WF3, <xref:System.Workflow.Activities.CodeActivity> który zapewnia te same funkcje.  Należy zauważyć, że istnieje <xref:System.Activities.CodeActivity> Klasa bazowa w WF4, która nie jest powiązana z WF3 <xref:System.Workflow.Activities.CodeActivity> .  Autorzy przepływu pracy zachęca się do tworzenia działań niestandardowych i tworzenia przepływów pracy tylko w języku XAML.  W poniższych testach użyto wywoływanego działania `Comment` zamiast pustego <xref:System.Workflow.Activities.CodeActivity> w przepływie pracy WF4.  Kod w `Comment` działaniu jest następujący:
