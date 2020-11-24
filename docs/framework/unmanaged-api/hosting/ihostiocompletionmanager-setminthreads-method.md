@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dea34b81-8d2b-4cc3-8696-0ad4291d8a92
 topic_type:
 - apiref
-ms.openlocfilehash: 29a2fc5652badcc00378192debccba0356f5339e
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 64ea9fdd477ec005b089f451101b742278ab4266
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804656"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672412"
 ---
 # <a name="ihostiocompletionmanagersetminthreads-method"></a>IHostIoCompletionManager::SetMinThreads — Metoda
+
 Ustawia minimalną liczbę wątków, które host powinien przydzielić do zakończenia operacji we/wy.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT SetMinThreads (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwMinIoCompletionThreads`  
  podczas Minimalna liczba wątków zakończenia we/wy, które powinien utworzyć host.  
   
@@ -41,7 +43,7 @@ HRESULT SetMinThreads (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`SetMinThreads`pomyślnie zwrócono.|  
+|S_OK|`SetMinThreads` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,19 +52,21 @@ HRESULT SetMinThreads (
 |E_NOTIMPL|Host nie oferuje implementacji programu `SetMinThreads` .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Host może potrzebować wyłącznej kontroli nad liczbą wątków, które mogą być przydzielone do przetwarzania żądań we/wy, z przyczyn takich jak implementacja, wydajność lub skalowalność. Z tego powodu host nie musi być zaimplementowany `SetMinThreads` . W takim przypadku host powinien zwrócić E_NOTIMPL z tej metody.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [ICLRIoCompletionManager, interfejs](iclriocompletionmanager-interface.md)
+- [ICLRIoCompletionManager — Interfejs](iclriocompletionmanager-interface.md)
 - [SetMaxThreads, metoda](ihostiocompletionmanager-setmaxthreads-method.md)
-- [IHostIoCompletionManager, interfejs](ihostiocompletionmanager-interface.md)
+- [IHostIoCompletionManager — Interfejs](ihostiocompletionmanager-interface.md)

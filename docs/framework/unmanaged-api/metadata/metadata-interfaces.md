@@ -6,24 +6,26 @@ helpviewer_keywords:
 - metadata interfaces [.NET Framework]
 - interfaces (.NET Framework metadata]
 ms.assetid: f5cdac93-a28c-48ef-8a19-5773376e9e7c
-ms.openlocfilehash: 4d947388afb8d7f8f935ae3b8e8aff81efaf2ee4
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5d9b48df740668797a7c901219401e9ea304a8f8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84489600"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672884"
 ---
 # <a name="metadata-interfaces"></a>Interfejsy metadanych
+
 W tej sekcji opisano niezarządzane interfejsy, które zapewniają dostęp do metadanych uwidocznionych przez typy .NET Framework, metody, pola itd.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [ICeeGen — Interfejs](iceegen-interface.md)  
  Zapewnia metody dynamicznego kompilowania kodu.  
   
  [IHostFilter — Interfejs](ihostfilter-interface.md)  
  Zapewnia metodę dla hosta czasu wykonywania, aby oznaczyć tokeny metadanych do przetwarzania.  
   
- [IMapToken, interfejs](imaptoken-interface.md)  
+ [IMapToken — Interfejs](imaptoken-interface.md)  
  Oferuje możliwości mapowania między zaimportowanymi i emitowanymi sygnaturami metadanych.  
   
  [IMetaDataAssemblyEmit — Interfejs](imetadataassemblyemit-interface.md)  
@@ -36,15 +38,15 @@ W tej sekcji opisano niezarządzane interfejsy, które zapewniają dostęp do me
  Zapewnia metody mapowania bibliotek typów na ich sygnatury metadanych oraz do konwersji między nimi.  
   
  [IMetaDataDispenser — Interfejs](imetadatadispenser-interface.md)  
- `IMetaDataDispenser`jest przestarzały. Zamiast tego użyj polecenia cmdlet `IMetaDataDispenserEx`.  
+ `IMetaDataDispenser` jest przestarzały. Zamiast tego użyj polecenia cmdlet `IMetaDataDispenserEx`.  
   
- [IMetaDataDispenserEx, interfejs](imetadatadispenserex-interface.md)  
+ [IMetaDataDispenserEx — Interfejs](imetadatadispenserex-interface.md)  
  Dostarcza metody, które mapują obszary pamięci do tworzenia lub modyfikowania metadanych.  
   
  [IMetaDataEmit — Interfejs](imetadataemit-interface.md)  
  Zapewnia metody tworzenia, modyfikowania i przechowywania metadanych dotyczących zestawu w aktualnie zdefiniowanym zakresie.  
   
- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)  
+ [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)  
  Zapewnia metody definiowania i modyfikowania sygnatur metadanych metod i konstruktorów z parametrami typu <xref:System.Type?displayProperty=nameWithType> .  
   
  [IMetaDataError — Interfejs](imetadataerror-interface.md)  
@@ -56,13 +58,13 @@ W tej sekcji opisano niezarządzane interfejsy, które zapewniają dostęp do me
  [IMetaDataImport — Interfejs](imetadataimport-interface.md)  
  Zapewnia metody importowania typów z innych zestawów i manipulowania nimi.  
   
- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)  
+ [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)  
  Rozszerza, `IMetaDataImport` Aby zapewnić możliwość pracy z typami ogólnymi.  
   
- [IMetaDataInfo, interfejs](imetadatainfo-interface.md)  
+ [IMetaDataInfo — Interfejs](imetadatainfo-interface.md)  
  Zapewnia metodę, która pobiera informacje o mapowaniu metadanych z pliku na dysku do pamięci.  
   
- [IMetaDataTables, interfejs](imetadatatables-interface.md)  
+ [IMetaDataTables — Interfejs](imetadatatables-interface.md)  
  Zapewnia metody przechowywania i pobierania informacji o metadanych w tabelach.  
   
  [IMetaDataTables2 — Interfejs](imetadatatables2-interface.md)  
@@ -72,10 +74,11 @@ W tej sekcji opisano niezarządzane interfejsy, które zapewniają dostęp do me
  Zapewnia metody do użycia w celu walidacji sygnatur metadanych.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Statyczne funkcje globalne metadanych](metadata-global-static-functions.md)  
   
  [Wyliczenia metadanych](metadata-enumerations.md)  
   
- [Struktury metadanych](metadata-structures.md)  
+ [Metadane — Struktury](metadata-structures.md)  
   
  [Unie metadanych](metadata-unions.md)

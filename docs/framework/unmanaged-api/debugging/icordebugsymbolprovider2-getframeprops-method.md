@@ -2,14 +2,15 @@
 title: 'ICorDebugSymbolProvider2:: GetFrameProps, Metoda'
 ms.date: 03/30/2017
 ms.assetid: f07b73f3-188d-43a9-8f7d-44dce2f1ddb7
-ms.openlocfilehash: ad44c5a7b2d901967ae354f3c30218a8c7f2c2de
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: ba1fd104c35b6e6dfdfd771f71eb19f8d532a1d6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379335"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672014"
 ---
 # <a name="icordebugsymbolprovider2getframeprops-method"></a>ICorDebugSymbolProvider2:: GetFrameProps, Metoda
+
 Zwraca metodę rozpoczynającą względny adres wirtualny metody i ramkę nadrzędną, w której znajduje się adres wirtualny względem kodu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -23,6 +24,7 @@ HRESULT GetFrameProps(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `codeRva`  
  podczas Względny adres wirtualny.  
   
@@ -38,6 +40,7 @@ HRESULT GetFrameProps(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,7 +49,7 @@ HRESULT GetFrameProps(
   
  **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugSymbolProvider2, interfejs](icordebugsymbolprovider2-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00c64533-15dd-47f4-bb97-fe80a1ebadef
 topic_type:
 - apiref
-ms.openlocfilehash: e45b180ac6d943d89740ad7ae10500ea4ad1aa9c
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 101151469e2eece20afe289c9d95387ce6dc7c6a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975969"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672126"
 ---
 # <a name="icordebugexceptionobjectvalueenumerateexceptioncallstack-method"></a>ICorDebugExceptionObjectValue::EnumerateExceptionCallStack — Metoda
+
 Pobiera moduł wyliczający w stosie wywołań osadzonym w obiekcie wyjątku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,15 +35,18 @@ HRESULT EnumerateExceptionCallStack(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  ppCallStackEnum  
  określoną Wskaźnik do adresu obiektu interfejsu [ICorDebugExceptionObjectCallStackEnum](icordebugexceptionobjectcallstackenum-interface.md) , który jest modułem wyliczania śladu stosu dla obiektu wyjątku zarządzanego.  
   
 ## <a name="remarks"></a>Uwagi  
- Jeśli żadne informacje stosu wywołań nie są dostępne, metoda zwraca `S_OK`wartość, a [ICorDebugExceptionObjectCallStackEnum](icordebugexceptionobjectcallstackenum-interface.md) jest prawidłowym modułem wyliczającym o długości 0. Jeśli metoda nie może pobrać informacji o śledzeniu stosu, zwracana wartość jest `E_FAIL` i nie jest zwracany żaden moduł wyliczający.  
+
+ Jeśli żadne informacje stosu wywołań nie są dostępne, metoda zwraca wartość `S_OK` , a [ICorDebugExceptionObjectCallStackEnum](icordebugexceptionobjectcallstackenum-interface.md) jest prawidłowym modułem wyliczającym o długości 0. Jeśli metoda nie może pobrać informacji o śledzeniu stosu, zwracana wartość jest `E_FAIL` i nie jest zwracany żaden moduł wyliczający.  
   
  Obiekt [ICorDebugExceptionObjectCallStackEnum](icordebugexceptionobjectcallstackenum-interface.md) jest odpowiedzialny za dekodowanie danych śledzenia stosu z `_stackTrace` pola obiektu Exception.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -51,7 +55,7 @@ HRESULT EnumerateExceptionCallStack(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugExceptionObjectValue — Interfejs](icordebugexceptionobjectvalue-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5c66ac57-d751-4de5-af9f-26ceb949af8b
 topic_type:
 - apiref
-ms.openlocfilehash: 34aae3cd913465bc3167d6c5eee9873d212fa4ac
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 68a5b8bb1568f10699653479357b02b2e847cc02
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420695"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671970"
 ---
 # <a name="pfn_clrdatacreateinstance-function-pointer"></a>PFN_CLRDataCreateInstance — Wskaźnik funkcji
+
 Wskazuje funkcję, która tworzy obiekt interfejsu dla określonego elementu docelowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `iid`  
  podczas Identyfikator interfejsu, który ma zostać utworzony.  
   
@@ -45,9 +47,11 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
  określoną Wskaźnik do adresu zwróconego obiektu interfejsu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICLRDataTarget`Obiekt jest implementowany przez moduł zapisujący aplikacji debugowania. Implementacja zależy od typu reprezentowanego elementu docelowego. Element docelowy może być procesem, zrzutem pamięci, maszyną zdalną i tak dalej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** ClrData. idl  

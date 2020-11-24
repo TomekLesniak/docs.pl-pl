@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Mutex class, about Mutex class
 - threading [.NET], cross-process synchronization
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
-ms.openlocfilehash: 811ee0d2d1068fc1fe8e44aa17f01e2dc243fb98
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: aa5a13b5b1cfcd7305df39c1ff5005deb45eb4ed
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826238"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672178"
 ---
 # <a name="mutexes"></a>Muteksy
 
@@ -21,6 +21,7 @@ ms.locfileid: "94826238"
  Aby zapoznać się z przykładami kodu, zobacz dokumentację referencyjną dla <xref:System.Threading.Mutex.%23ctor%2A> konstruktorów.  
   
 ## <a name="using-mutexes"></a>Używanie muteksów  
+
  Wątek wywołuje <xref:System.Threading.WaitHandle.WaitOne%2A> metodę obiektu mutex, aby zażądać własności. Bloki wywołań do momentu, gdy mutex jest dostępny, lub do momentu, gdy upłynie opcjonalny interwał limitu czasu. Stan obiektu mutex jest sygnalizowane, jeśli żaden z nich nie należy do niego.  
   
  Wątek zwalnia element mutex, wywołując jego <xref:System.Threading.Mutex.ReleaseMutex%2A> metodę. Muteksy mają koligację wątku; oznacza to, że mutex można wydać tylko przez wątek, który jest właścicielem tego elementu. Jeśli wątek zwalnia element mutex, który nie jest właścicielem, <xref:System.ApplicationException> zostanie zgłoszony w wątku.  
@@ -30,11 +31,13 @@ ms.locfileid: "94826238"
  Jeśli wątek jest właścicielem <xref:System.Threading.Mutex> , ten wątek może określić te same <xref:System.Threading.Mutex> w powtarzanych wywołaniach oczekiwania na żądanie bez blokowania jego wykonywania, jednak musi wydać <xref:System.Threading.Mutex> dowolną liczbę razy, aby zwolnić własność.  
   
 ## <a name="abandoned-mutexes"></a>Porzucone muteksy  
+
  Jeśli wątek kończy się bez zwalniania <xref:System.Threading.Mutex> , element mutex zostanie wskazany jako porzucony. Często oznacza to, że ten błąd programistyczny jest niespójny, ponieważ zasób, który jest chroniony przez mutex, może pozostać w stanie niespójności. <xref:System.Threading.AbandonedMutexException>Jest zgłaszany w następnym wątku, który uzyskuje mutex.
   
  W przypadku obiektu mutex w całym systemie porzucony obiekt mutex może wskazywać, że aplikacja została zakończona nieoczekiwanie (na przykład za pomocą Menedżera zadań systemu Windows).  
   
 ## <a name="local-and-system-mutexes"></a>Lokalne i systemowe muteksy  
+
  Muteksy są dwa typy: lokalne muteksy i nazwane muteksy systemowe. Jeśli utworzysz <xref:System.Threading.Mutex> Obiekt przy użyciu konstruktora, który akceptuje nazwę, zostanie on skojarzony z obiektem systemu operacyjnego o tej nazwie. Nazwane muteksy systemu są widoczne w całym systemie operacyjnym i mogą służyć do synchronizowania działań procesów. Można utworzyć wiele <xref:System.Threading.Mutex> obiektów, które reprezentują ten sam nazwany obiekt mutex, i można użyć metody, <xref:System.Threading.Mutex.OpenExisting%2A> Aby otworzyć istniejący nazwany element mutex systemu.  
   
  Lokalny element mutex istnieje tylko w ramach procesu. Może być używany przez dowolny wątek w procesie, który ma odwołanie do <xref:System.Threading.Mutex> obiektu lokalnego. Każdy <xref:System.Threading.Mutex> obiekt jest osobnym lokalnym elementem mutex.  

@@ -6,24 +6,26 @@ helpviewer_keywords:
 - metadata enumerations [.NET Framework]
 - unmanaged enumerations [.NET Framework], metadata
 ms.assetid: 711ab251-cfdb-4280-aaa6-9bc1b341cdc3
-ms.openlocfilehash: 2409998c53aee8cb76e66cbc9a6cd92ad9fb6cd2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d0a146ff5b6887e6678ee69d7e39731bd109c6d5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84489624"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672906"
 ---
 # <a name="metadata-enumerations"></a>Wyliczenia metadanych
+
 W tej sekcji opisano niezarządzane wyliczenia używane przez interfejs API metadanych.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [AssemblyFlags — Wyliczenie](assemblyflags-enumeration.md)  
  Zawiera wartości opisujące funkcje czasu wykonywania zestawu.  
   
  [AssemblyRefFlags — Wyliczenie](assemblyrefflags-enumeration.md)  
  Zawiera wartości opisujące funkcje odwołania do zestawu.  
   
- [CeeSectionAttr, wyliczenie](ceesectionattr-enumeration.md)  
+ [CeeSectionAttr — Wyliczenie](ceesectionattr-enumeration.md)  
  Zawiera wartości określające atrybuty sekcji, która ma być używana przez interfejs [ICeeGen](iceegen-interface.md) .  
   
  [CeeSectionRelocType — Wyliczenie](ceesectionreloctype-enumeration.md)  
@@ -32,22 +34,22 @@ W tej sekcji opisano niezarządzane wyliczenia używane przez interfejs API meta
  [COINITICOR — Wyliczenie](coiniticor-enumeration.md)  
  Określa stałe używane przez [CoInitializeCor —](../hosting/coinitializecor-function.md) podczas inicjowania środowiska uruchomieniowego języka wspólnego.  
   
- [COINITIEE, wyliczenie](coinitiee-enumeration.md)  
+ [COINITIEE — Wyliczenie](coinitiee-enumeration.md)  
  Określa stałe używane przez [CoInitializeEE —](../hosting/coinitializeee-function.md) podczas inicjowania środowiska uruchomieniowego języka wspólnego.  
   
- [CorArgType, wyliczenie](corargtype-enumeration.md)  
+ [CorArgType — Wyliczenie](corargtype-enumeration.md)  
  Zawiera wartości opisujące typ natywny dojścia środowiska uruchomieniowego.  
   
- [CorAssemblyFlags, wyliczenie](corassemblyflags-enumeration.md)  
+ [CorAssemblyFlags — Wyliczenie](corassemblyflags-enumeration.md)  
  Zawiera wartości opisujące metadane zastosowane do kompilacji zestawu.  
   
- [CorAttributeTargets, wyliczenie](corattributetargets-enumeration.md)  
+ [CorAttributeTargets — Wyliczenie](corattributetargets-enumeration.md)  
  Określa elementy aplikacji, na których jest prawidłowy, aby zastosować atrybut.  
   
  [CorCallingConvention — Wyliczenie](corcallingconvention-enumeration.md)  
  Zawiera wartości opisujące typy konwencji wywoływania, które są wykonywane w kodzie zarządzanym.  
   
- [CorCheckDuplicatesFor, wyliczenie](corcheckduplicatesfor-enumeration.md)  
+ [CorCheckDuplicatesFor — Wyliczenie](corcheckduplicatesfor-enumeration.md)  
  Zawiera wartości używane podczas sprawdzania dla duplikacji.  
   
  [CorDeclSecurity — Wyliczenie](cordeclsecurity-enumeration.md)  
@@ -68,7 +70,7 @@ W tej sekcji opisano niezarządzane wyliczenia używane przez interfejs API meta
  [CorFileFlags — Wyliczenie](corfileflags-enumeration.md)  
  Zawiera wartości opisujące typ pliku zdefiniowanego w wywołaniu metody [IMetaDataAssemblyEmit::D efinefile](imetadataassemblyemit-definefile-method.md) .  
   
- [CorFileMapping, wyliczenie](corfilemapping-enumeration.md)  
+ [CorFileMapping — Wyliczenie](corfilemapping-enumeration.md)  
  Zawiera wartości opisujące typ mapowania plików zwracanego z wywołania metody [IMetaDataInfo:: GetFileMapping —](imetadatainfo-getfilemapping-method.md) .  
   
  [CorGenericParamAttr — Wyliczenie](corgenericparamattr-enumeration.md)  
@@ -95,7 +97,7 @@ W tej sekcji opisano niezarządzane wyliczenia używane przez interfejs API meta
  [CorMethodSemanticsAttr — Wyliczenie](cormethodsemanticsattr-enumeration.md)  
  Zawiera wartości opisujące relacje między metodą a skojarzoną właściwością lub zdarzeniem.  
   
- [CorNativeLinkFlags, wyliczenie](cornativelinkflags-enumeration.md)  
+ [CorNativeLinkFlags — Wyliczenie](cornativelinkflags-enumeration.md)  
  Dostarcza wartości flag używanych przez konsolidatora podczas łączenia kodu natywnego.  
   
  [CorNativeLinkType — Wyliczenie](cornativelinktype-enumeration.md)  
@@ -128,22 +130,22 @@ W tej sekcji opisano niezarządzane wyliczenia używane przez interfejs API meta
  [CorRegFlags — Wyliczenie](corregflags-enumeration.md)  
  Dostarcza wartości flag używanych do rejestracji podczas instalacji modułu lub złożonego.  
   
- [CorSaveSize, wyliczenie](corsavesize-enumeration.md)  
+ [CorSaveSize — Wyliczenie](corsavesize-enumeration.md)  
  Zawiera wartości wskazujące poziom dokładności wymagany podczas wykonywania zapytania o rozmiar operacji zapisywania.  
   
  [CorSerializationType — Wyliczenie](corserializationtype-enumeration.md)  
  Zawiera wartości opisujące, jak obiekt jest serializowany przez środowisko uruchomieniowe języka wspólnego. Te wartości zwykle odpowiadają wartościom CorElementType —.  
   
- [CorSetENC, wyliczenie](corsetenc-enumeration.md)  
+ [CorSetENC — Wyliczenie](corsetenc-enumeration.md)  
  Zawiera wartości używane do wpływania na zachowanie podczas generowania metadanych.  
   
  [CorThreadSafetyOptions — Wyliczenie](corthreadsafetyoptions-enumeration.md)  
  Określa flagi, aby wybrać opcje bezpieczeństwa wątku.  
   
- [CorTokenType, wyliczenie](cortokentype-enumeration.md)  
+ [CorTokenType — Wyliczenie](cortokentype-enumeration.md)  
  Zawiera wartości wskazujące rodzaj obiektu, do którego odwołuje się token metadanych.  
   
- [CorTypeAttr, wyliczenie](cortypeattr-enumeration.md)  
+ [CorTypeAttr — Wyliczenie](cortypeattr-enumeration.md)  
  Zawiera wartości wskazujące metadane typu.  
   
  [CorUnmanagedCallingConvention — Wyliczenie](corunmanagedcallingconvention-enumeration.md)  
@@ -152,14 +154,15 @@ W tej sekcji opisano niezarządzane wyliczenia używane przez interfejs API meta
  [CorValidatorModuleType — Wyliczenie](corvalidatormoduletype-enumeration.md)  
  Dostarcza wartości używane przez interfejs [IMetaDataValidate](imetadatavalidate-interface.md) do określenia typu modułu (plik PE a. obj).  
   
- [COUNINITIEE, wyliczenie](couninitiee-enumeration.md)  
+ [COUNINITIEE — Wyliczenie](couninitiee-enumeration.md)  
  Określa stałe używane przez [CoUninitializeEE —](../hosting/couninitializeee-function.md) podczas inicjowania środowiska uruchomieniowego języka wspólnego.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Interfejsy metadanych](metadata-interfaces.md)  
   
  [Statyczne funkcje globalne metadanych](metadata-global-static-functions.md)  
   
- [Struktury metadanych](metadata-structures.md)  
+ [Metadane — Struktury](metadata-structures.md)  
   
  [Unie metadanych](metadata-unions.md)

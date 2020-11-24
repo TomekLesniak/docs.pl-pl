@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4f86ff37-2dab-4e64-819a-76b3bfe828ff
 topic_type:
 - apiref
-ms.openlocfilehash: 29f2401e2e3faccae05ca5249fcd7d9e89aacb46
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c155373f7da47e904c94a44efa2fba42309d4218
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671359"
 ---
 # <a name="cornativelinktype-enumeration"></a>CorNativeLinkType — Wyliczenie
+
 Dostarcza wartości, które wskazują typ połączony w kodzie natywnym.  
   
 ## <a name="syntax"></a>Składnia  
@@ -50,14 +51,15 @@ typedef enum
 |`nltMaxValue`|Nie używany.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

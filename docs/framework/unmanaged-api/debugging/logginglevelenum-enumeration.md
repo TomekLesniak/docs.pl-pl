@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 09daac08-005a-46b2-beab-408d0820c5e5
 topic_type:
 - apiref
-ms.openlocfilehash: 62ea982f30a6a73648d9bf36722c0b5a49a68896
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 389edbeb746fbeaf60d88bf9ee2a3a0731822e55
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420750"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672022"
 ---
 # <a name="logginglevelenum-enumeration"></a>LoggingLevelEnum — Wyliczenie
+
 Wskazuje poziom ważności komunikatu opisowego, który jest zapisywana w dzienniku zdarzeń, gdy zarządzany wątek rejestruje zdarzenie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -63,9 +64,11 @@ typedef enum LoggingLevelEnum {
 |`LPanicLevel`|Komunikat jest poziomem awaryjnego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko uruchomieniowe języka wspólnego (CLR) wywołuje metodę [ICorDebugManagedCallback:: LogMessage](icordebugmanagedcallback-logmessage-method.md) w celu powiadomienia debugera o zarejestrowaniu zdarzenia przez wątek zarządzany. Środowisko CLR przekazuje wartość `LoggingLevelEnum` wyliczenia, aby wskazać poziom ważności komunikatu, który został zapisany przez wątek zarządzany w dzienniku zdarzeń.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -74,7 +77,7 @@ typedef enum LoggingLevelEnum {
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Diagnostics.EventLog>
 - [Debugowanie — wyliczenia](debugging-enumerations.md)

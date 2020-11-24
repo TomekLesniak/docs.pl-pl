@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fac7b480-7adb-4450-a5e9-690fed81ffae
 topic_type:
 - apiref
-ms.openlocfilehash: ab9d7eb6f5760b43fe805443bbe1ea4a95c72069
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 49e29cc0367d5162dffcd641b163fd7b9a56ffd0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501069"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672893"
 ---
 # <a name="osinfo-structure"></a>OSINFO — Struktura
+
 Zawiera szczegółowe informacje o systemie operacyjnym dla zestawu lub modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,18 +44,20 @@ typedef struct {
 |`dwOSMinorVersion`|Wersja pomocnicza systemu operacyjnego lub wartość zerowa wskazująca dowolną wersję.|  
   
 ## <a name="remarks"></a>Uwagi  
- `OSINFO`jest oparty na `OSVERSIONINFOEX` strukturze, która jest używana w wywołaniach funkcji platformy Microsoft Windows `GetVersionEx` . Ta struktura jest używana przez strukturę ASSEMBLYMETADATA, aby wskazać jej obsługę systemu operacyjnego.  
+
+ `OSINFO` jest oparty na `OSVERSIONINFOEX` strukturze, która jest używana w wywołaniach funkcji platformy Microsoft Windows `GetVersionEx` . Ta struktura jest używana przez strukturę ASSEMBLYMETADATA, aby wskazać jej obsługę systemu operacyjnego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Struktury metadanych](metadata-structures.md)
+- [Metadane — Struktury](metadata-structures.md)
 - [IMetaDataAssemblyEmit — Interfejs](imetadataassemblyemit-interface.md)

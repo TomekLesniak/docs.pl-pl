@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4a0b05b9-3ef1-4607-b7c8-bd4dd43647a0
 topic_type:
 - apiref
-ms.openlocfilehash: 190908c675b96b8ea2d81fb0203aa16a80d6a8b4
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: deb14d291bfd511e8f3534f3c5e32787c259c5e8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501407"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673114"
 ---
 # <a name="ihosttaskmanager-interface"></a>IHostTaskManager — Interfejs
+
 Zapewnia metody, które umożliwiają środowisko uruchomieniowe języka wspólnego (CLR) do pracy z zadaniami za pośrednictwem hosta zamiast korzystania ze standardowego wątku lub funkcji światłowodowych systemu operacyjnego.  
   
 ## <a name="methods"></a>Metody  
@@ -31,7 +32,7 @@ Zapewnia metody, które umożliwiają środowisko uruchomieniowe języka wspóln
 |[BeginDelayAbort, metoda](ihosttaskmanager-begindelayabort-method.md)|Powiadamia hosta, że kod zarządzany wprowadza okres, w którym bieżące zadanie nie może zostać przerwane.|  
 |[BeginThreadAffinity, metoda](ihosttaskmanager-beginthreadaffinity-method.md)|Powiadamia hosta, że kod zarządzany wprowadza okres, w którym bieżące zadanie nie może zostać przeniesione do innego wątku systemu operacyjnego.|  
 |[CallNeedsHostHook, metoda](ihosttaskmanager-callneedshosthook-method.md)|Umożliwia hostowi określenie, czy środowisko uruchomieniowe języka wspólnego może być wbudowane w określone wywołanie do niezarządzanej funkcji.|  
-|[CreateTask, metoda](ihosttaskmanager-createtask-method.md)|Żąda utworzenia nowego zadania przez hosta.|  
+|[CreateTask — Metoda](ihosttaskmanager-createtask-method.md)|Żąda utworzenia nowego zadania przez hosta.|  
 |[EndDelayAbort, metoda](ihosttaskmanager-enddelayabort-method.md)|Powiadamia hosta, że kod zarządzany kończy okres, w którym bieżące zadanie nie może zostać przerwane, po wcześniejszym wywołaniu `BeginDelayAbort` .|  
 |[EndThreadAffinity, metoda](ihosttaskmanager-endthreadaffinity-method.md)|Powiadamia hosta, że kod zarządzany kończy okres, w którym bieżące zadanie nie może zostać przeniesione do innego wątku systemu operacyjnego, po wcześniejszym wywołaniu `BeginThreadAffinity` .|  
 |[EnterRuntime, metoda](ihosttaskmanager-enterruntime-method.md)|Powiadamia hosta, że wywołanie metody niezarządzanej, takie jak metoda Invoke platformy, zwraca sterowanie wykonywaniem do środowiska CLR.|  
@@ -48,20 +49,22 @@ Zapewnia metody, które umożliwiają środowisko uruchomieniowe języka wspóln
 |[SwitchToTask, metoda](ihosttaskmanager-switchtotask-method.md)|Powiadamia hosta o konieczności przełączenia bieżącego zadania.|  
   
 ## <a name="remarks"></a>Uwagi  
- `IHostTaskManager`umożliwia środowisku CLR tworzenie zadań i zarządzanie nimi, w celu zapewnienia podpunktów dla hosta do podjęcia działania podczas kontroli transferu z zarządzanego do kodu niezarządzanego i na odwrót oraz do określania pewnych akcji, które host może i nie może wykonać podczas wykonywania kodu.  
+
+ `IHostTaskManager` umożliwia środowisku CLR tworzenie zadań i zarządzanie nimi, w celu zapewnienia podpunktów dla hosta do podjęcia działania podczas kontroli transferu z zarządzanego do kodu niezarządzanego i na odwrót oraz do określania pewnych akcji, które host może i nie może wykonać podczas wykonywania kodu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

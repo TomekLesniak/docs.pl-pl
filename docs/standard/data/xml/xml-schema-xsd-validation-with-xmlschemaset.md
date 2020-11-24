@@ -7,18 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 359b10eb-ec05-4cc6-ac96-c2b060afc4de
-ms.openlocfilehash: 9e1d4b7e8c805436c32d2ae7b340ee251741f4a1
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 82944fd3fb97c3086ffd47fbd2ba1f3192e6deb4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824574"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672256"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemaset"></a>Walidacja schematu XML (XSD) z zestawem XmlSchemaSet
 
 Dokumenty XML można sprawdzić pod kątem schematu języka definicji schematu XML (XSD) w <xref:System.Xml.Schema.XmlSchemaSet> .  
   
 ## <a name="validate-xml-documents"></a>Sprawdzanie poprawności dokumentów XML  
+
  Dokumenty XML są sprawdzane za pomocą <xref:System.Xml.XmlReader.Create%2A> metody <xref:System.Xml.XmlReader> klasy. Aby sprawdzić poprawność dokumentu XML, Utwórz <xref:System.Xml.XmlReaderSettings> obiekt, który zawiera schemat języka definicji schematu XML (XSD), za pomocą którego można sprawdzić poprawność dokumentu XML.  
   
 > [!NOTE]
