@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6a81c6fe-cc22-4062-ae27-d6eeee03a7b9
 topic_type:
 - apiref
-ms.openlocfilehash: 3611de471001d31c40984e71d49ce376bb3e4607
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 41d049c931091d2cc0b41bd1e9d74b3c15d7878d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504293"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679263"
 ---
 # <a name="iclrassemblyidentitymanager-interface"></a>ICLRAssemblyIdentityManager — Interfejs
+
 Zapewnia metody obsługujące komunikację między hostem i środowiskiem uruchomieniowym języka wspólnego (CLR) dotyczące zestawów.  
   
 ## <a name="methods"></a>Metody  
@@ -37,19 +38,21 @@ Zapewnia metody obsługujące komunikację między hostem i środowiskiem urucho
 |[IsStronglyNamed, metoda](iclrassemblyidentitymanager-isstronglynamed-method.md)|Pobiera wartość wskazującą, czy określony zestaw ma silną nazwę.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Służy `ICLRAssemblyIdentityManager` do pobierania wystąpień `ICLRAssemblyReferenceList` i wyliczania tożsamości zestawu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRAssemblyReferenceList — Interfejs](iclrassemblyreferencelist-interface.md)
-- [ICLRProbingAssemblyEnum, interfejs](iclrprobingassemblyenum-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [ICLRProbingAssemblyEnum — Interfejs](iclrprobingassemblyenum-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

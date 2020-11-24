@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET support for
 - .NET, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: 2a24c06e55a5f07f4831b32cf52ea2b5b389d5cc
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 312a86f38335f1c16a4286795f04b9a80a9ea03f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830548"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678132"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Wykorzystywanie wzorca asynchronicznego opartego na zadaniach
 
@@ -33,6 +33,7 @@ Można użyć słowa kluczowego [await](../../csharp/language-reference/operator
  Istnieje kilka ważnych różnic między tym zachowaniem.  Ze względu na wydajność, jeśli zadanie zostało już zakończone przez czas oczekiwania na zadanie, kontrola nie zostanie osiągnięta, a funkcja nadal będzie wykonywana.  Ponadto powrót do oryginalnego kontekstu nie zawsze jest pożądanym zachowaniem i można go zmienić. opisano to szczegółowo w następnej sekcji.
 
 ### <a name="configuring-suspension-and-resumption-with-yield-and-configureawait"></a>Konfigurowanie zawieszenia i wznawiania przy użyciu programu Yield i ConfigureAwait
+
  Kilka metod zapewnia większą kontrolę nad wykonywaniem metody asynchronicznej. Na przykład można użyć <xref:System.Threading.Tasks.Task.Yield%2A?displayProperty=nameWithType> metody, aby wprowadzić punkt Yield do metody asynchronicznej:
 
 ```csharp
@@ -110,6 +111,7 @@ var cts = new CancellationTokenSource();
 - Kod korzystający z interfejsu API może selektywnie określić wywołania asynchroniczne, do których będą propagowane żądania anulowania.
 
 ## <a name="monitoring-progress"></a>Postęp monitorowania
+
  Niektóre metody asynchroniczne uwidaczniają postęp przez interfejs postępu przesłany do metody asynchronicznej.  Rozważmy na przykład funkcję, która asynchronicznie Pobiera ciąg tekstowy, i w sposób wzbudza aktualizacje postępu, które obejmują procent pobierania, który został dotąd zakończony.  Taka metoda może być używana w aplikacji Windows Presentation Foundation (WPF) w następujący sposób:
 
 ```csharp
@@ -126,10 +128,13 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
 ```
 
 <a name="combinators"></a>
+
 ## <a name="using-the-built-in-task-based-combinators"></a>Używanie wbudowanych kombinatorów opartych na zadaniach
+
  <xref:System.Threading.Tasks>Przestrzeń nazw zawiera kilka metod tworzenia i pracy z zadaniami.
 
 ### <a name="taskrun"></a>Zadanie. Run
+
  <xref:System.Threading.Tasks.Task>Klasa zawiera kilka <xref:System.Threading.Tasks.Task.Run%2A> metod, które pozwalają łatwo odciążać zadania jako <xref:System.Threading.Tasks.Task> lub <xref:System.Threading.Tasks.Task%601> do puli wątków, na przykład:
 
 ```csharp
@@ -160,6 +165,7 @@ public async void button1_Click(object sender, EventArgs e)
  Takie przeciążenia są logicznie równoważne z użyciem <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metody w połączeniu z <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> metodą rozszerzającą w bibliotece zadań równoległych.
 
 ### <a name="taskfromresult"></a>Task. FromResult
+
  Użyj <xref:System.Threading.Tasks.Task.FromResult%2A> metody w scenariuszach, w których dane mogą być już dostępne i wystarczy zwrócić z metody zwracającej zadania do <xref:System.Threading.Tasks.Task%601> :
 
 ```csharp
@@ -178,6 +184,7 @@ private async Task<int> GetValueAsyncInternal(string key)
 ```
 
 ### <a name="taskwhenall"></a>Task.WhenAll
+
  Użyj <xref:System.Threading.Tasks.Task.WhenAll%2A> metody, aby asynchronicznie oczekiwać na wiele operacji asynchronicznych, które są reprezentowane jako zadania.  Metoda ma wiele przeciążeń, które obsługują zestaw zadań nieogólnych lub niejednorodnego zestawu zadań ogólnych (na przykład asynchronicznie czeka na wiele operacji typu void lub asynchronicznie oczekuje na wiele metod zwracających wartość, gdzie każda wartość może mieć inny typ) i aby zapewnić obsługę jednolitego zestawu zadań ogólnych (takich jak asynchroniczne oczekiwanie na metody wielokrotnego `TResult` powrotu).
 
  Załóżmy, że chcesz wysyłać wiadomości e-mail do kilku klientów. Możesz nakładać się na wysyłanie komunikatów, aby nie czekać na ukończenie jednego komunikatu przed wysłaniem następnego. Możesz również dowiedzieć się, kiedy operacje wysyłania zostały zakończone i czy wystąpiły jakieś błędy:
@@ -245,6 +252,7 @@ catch(Exception exc)
 ```
 
 ### <a name="taskwhenany"></a>Task.WhenAny
+
  Możesz użyć metody, <xref:System.Threading.Tasks.Task.WhenAny%2A> Aby asynchronicznie zaczekać tylko jedną z wielu operacji asynchronicznych reprezentowanych jako zadania do wykonania.  Ta metoda służy cztery główne przypadki użycia:
 
 - Nadmiarowość: wielokrotne wykonywanie operacji i wybieranie tej, która kończy się pierwszym (na przykład kontaktowanie się z wieloma usługami sieci Web notowań giełdowych, które spowodują wygenerowanie pojedynczego wyniku i wybranie tego, który zakończy najszybszy).
@@ -256,6 +264,7 @@ catch(Exception exc)
 - Wczesna bailout: na przykład operacja reprezentowana przez zadanie T1 może być pogrupowana w <xref:System.Threading.Tasks.Task.WhenAny%2A> zadaniu z innym zadaniem T2 i można ją oczekiwać na <xref:System.Threading.Tasks.Task.WhenAny%2A> zadanie. Zadanie T2 może reprezentować limit czasu lub anulowanie lub inny sygnał, który powoduje <xref:System.Threading.Tasks.Task.WhenAny%2A> ukończenie zadania przed zakończeniem T1.
 
 #### <a name="redundancy"></a>Nadmiarowość
+
  Rozważ przypadek, w którym chcesz podjąć decyzję o tym, czy kupić magazyn.  Istnieje kilka zaufanych usług sieci Web, które są zaufane, ale w zależności od dziennego obciążenia każda usługa może zakończyć się wolno w różnym czasie.  Możesz użyć metody, <xref:System.Threading.Tasks.Task.WhenAny%2A> Aby otrzymać powiadomienie po zakończeniu dowolnej operacji:
 
 ```csharp
@@ -342,6 +351,7 @@ if (await recommendation) BuyStock(symbol);
 ```
 
 #### <a name="interleaving"></a>Przeplatanie
+
  Rozważ przypadek, w którym pobierasz obrazy z sieci Web i przetwarzasz każdy obraz (na przykład dodając obraz do kontrolki interfejsu użytkownika). Możesz przetwarzać obrazy sekwencyjnie w wątku interfejsu użytkownika, ale chcesz pobrać obrazy jako współbieżnie, jak to możliwe. Ponadto nie chcesz, aby do interfejsu użytkownika były dodawane obrazy, dopóki nie zostaną pobrane. Zamiast tego należy dodać je w miarę ich ukończenia.
 
 ```csharp
@@ -382,6 +392,7 @@ while(imageTasks.Count > 0)
 ```
 
 #### <a name="throttling"></a>Ograniczanie przepływności
+
  Rozważmy przykład przeplotu, z tą różnicą, że użytkownik pobiera wiele obrazów, które muszą być ograniczone. na przykład potrzebna jest tylko określona liczba pobrań jednocześnie. Aby to osiągnąć, można uruchomić podzestaw operacji asynchronicznych.  Po zakończeniu operacji można uruchomić dodatkowe operacje, aby wykonać ich miejsce:
 
 ```csharp
@@ -416,6 +427,7 @@ while(imageTasks.Count > 0)
 ```
 
 #### <a name="early-bailout"></a>Wczesna bailout
+
  Należy wziąć pod uwagę, że oczekujesz, że operacja zostanie ukończona asynchronicznie, gdy jednocześnie odpowie na żądanie anulowania użytkownika (na przykład użytkownik kliknął przycisk Anuluj). Poniższy kod ilustruje ten scenariusz:
 
 ```csharp
@@ -479,6 +491,7 @@ public async void btnRun_Click(object sender, EventArgs e)
  Inny przykład wczesnej bailout obejmuje użycie <xref:System.Threading.Tasks.Task.WhenAny%2A> metody w połączeniu z <xref:System.Threading.Tasks.Task.Delay%2A> metodą, zgodnie z opisem w następnej sekcji.
 
 ### <a name="taskdelay"></a>Task.Delay
+
  Możesz użyć metody, <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> Aby wprowadzić pauzy do wykonania metody asynchronicznej.  Jest to przydatne w przypadku wielu rodzajów funkcjonalności, w tym tworzenia pętli sondowania i opóźnieniu obsługi danych wejściowych użytkownika przez określony czas.  <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType>Metoda ta może być również przydatna w połączeniu z <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> implementacją limitów czasu dla oczekiwania.
 
  Jeśli zadanie, które jest częścią większej liczby operacji asynchronicznej (na przykład usługa sieci Web ASP.NET) trwa zbyt długo, ogólna operacja może pogorszyć się, zwłaszcza jeśli nie zostanie ukończona.  Z tego powodu ważne jest, aby mieć możliwość przekroczenia limitu czasu podczas oczekiwania na operację asynchroniczną.  Metody synchroniczne <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> , <xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType> i i <xref:System.Threading.Tasks.Task.WaitAny%2A?displayProperty=nameWithType> akceptują wartości limitu czasu, ale odpowiadające im <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> i wyżej wymienione <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> metody nie są.  Zamiast tego można użyć <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> kombinacji i <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> w połączeniu, aby zaimplementować limit czasu.
@@ -536,9 +549,11 @@ public async void btnDownload_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="building-task-based-combinators"></a>Tworzenie kombinatorów opartych na zadaniach
+
  Ponieważ zadanie jest w stanie całkowicie reprezentować operację asynchroniczną i zapewnić funkcje synchroniczne i asynchroniczne do dołączania do operacji, pobierając wyniki i tak dalej, można utworzyć przydatne biblioteki kombinatorów, które tworzą zadania do kompilowania większych wzorców. Zgodnie z opisem w poprzedniej sekcji, .NET zawiera kilka wbudowanych kombinatorów, ale można również utworzyć własne. Poniższe sekcje zawierają kilka przykładów potencjalnych metod i typów Combinator.
 
 ### <a name="retryonfault"></a>RetryOnFault
+
  W wielu sytuacjach można ponowić próbę wykonania operacji, jeśli poprzednia próba zakończy się niepowodzeniem.  W przypadku kodu synchronicznego można utworzyć metodę pomocnika, taką jak `RetryOnFault` w poniższym przykładzie, aby to zrobić:
 
 ```csharp
@@ -603,6 +618,7 @@ string pageContents = await RetryOnFault(
 ```
 
 ### <a name="needonlyone"></a>NeedOnlyOne
+
  Czasami możesz skorzystać z nadmiarowości, aby poprawić opóźnienia operacji i szanse na sukces.  Należy wziąć pod uwagę wiele usług sieci Web, które zapewniają notowanie giełdowe, ale w różnych porach dnia każda usługa może zapewnić różne poziomy jakości i czasu odpowiedzi.  Aby obsłużyć te wahania, możesz wydać żądania do wszystkich usług sieci Web i zaraz po otrzymaniu odpowiedzi z jednej z nich anulować pozostałe żądania.  Można zaimplementować funkcję pomocnika, aby ułatwić implementowanie tego wspólnego wzorca uruchamiania wielu operacji, oczekiwanie na dowolny, a następnie anulowanie reszty. `NeedOnlyOne`Funkcja w poniższym przykładzie ilustruje ten scenariusz:
 
 ```csharp
@@ -633,6 +649,7 @@ double currentPrice = await NeedOnlyOne(
 ```
 
 ### <a name="interleaved-operations"></a>Operacje z przeplotem
+
  Istnieje potencjalny problem z wydajnością przy użyciu <xref:System.Threading.Tasks.Task.WhenAny%2A> metody do obsługi scenariusza pochodzącego podczas pracy z dużymi zestawami zadań. Każde wywołanie powoduje <xref:System.Threading.Tasks.Task.WhenAny%2A> , że kontynuacja jest rejestrowana przy każdym zadaniu. W przypadku N liczba zadań w wyniku operacji z przeplotem zostanie (N<sup>2</sup>) kontynuowane. Jeśli pracujesz z dużym zestawem zadań, możesz użyć Combinator ( `Interleaved` w poniższym przykładzie), aby rozwiązać problem z wydajnością:
 
 ```csharp
@@ -674,6 +691,7 @@ foreach(var task in Interleaved(tasks))
 ```
 
 ### <a name="whenallorfirstexception"></a>WhenAllOrFirstException
+
  W niektórych scenariuszach punktowania/zbierania możesz oczekiwać na wszystkie zadania w zestawie, chyba że wystąpił błąd jednego z nich, w takim przypadku chcesz przerwać oczekiwanie od razu po wystąpieniu wyjątku.  Można to zrobić za pomocą metody Combinator, takiej jak `WhenAllOrFirstException` w poniższym przykładzie:
 
 ```csharp
@@ -697,9 +715,11 @@ public static Task<T[]> WhenAllOrFirstException<T>(IEnumerable<Task<T>> tasks)
 ```
 
 ## <a name="building-task-based-data-structures"></a>Tworzenie struktur danych opartych na zadaniach
+
  Oprócz możliwości tworzenia niestandardowych kombinatorów opartych na zadaniach, mających strukturę danych w <xref:System.Threading.Tasks.Task> i <xref:System.Threading.Tasks.Task%601> , która reprezentuje zarówno wyniki operacji asynchronicznej, jak i konieczna synchronizacja do dołączenia, sprawia, że jest to zaawansowany typ tworzenia niestandardowych struktur danych, które mają być używane w scenariuszach asynchronicznych.
 
 ### <a name="asynccache"></a>AsyncCache
+
  Jednym z ważnych aspektów zadania jest to, że może on zostać przekazany do wielu odbiorców, wszyscy z nich mogą go oczekiwać, zarejestrować kontynuację, uzyskać wynik lub wyjątki (w przypadku <xref:System.Threading.Tasks.Task%601> ) i tak dalej.  Zapewnia to <xref:System.Threading.Tasks.Task> i <xref:System.Threading.Tasks.Task%601> idealnie nadaje się do użycia w asynchronicznej infrastrukturze buforowania.  Oto przykład małej, ale zaawansowanej asynchronicznej pamięci podręcznej utworzonej w oparciu o <xref:System.Threading.Tasks.Task%601> :
 
 ```csharp
@@ -751,6 +771,7 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
 ```
 
 ### <a name="asyncproducerconsumercollection"></a>AsyncProducerConsumerCollection
+
  Można również użyć zadań do kompilowania struktur danych do koordynowania działań asynchronicznych.  Rozważmy jeden z klasycznych wzorców projektów równoległych: producent/konsument.  W tym wzorcu producenci generują dane, które są używane przez konsumentów, a producenci i konsumenci mogą działać równolegle. Na przykład Odbiorca przetwarza element 1, który został wcześniej wygenerowany przez producenta, który teraz produkuje element 2.  W przypadku wzorca producent/odbiorca niezmiennie potrzeba pewnej struktury danych do przechowywania pracy utworzonej przez producentów, aby konsumenci mogli otrzymywać powiadomienia o nowych danych i znajdować je, jeśli są dostępne.
 
  Poniżej przedstawiono prostą strukturę danych utworzoną na podstawie zadań, która umożliwia korzystanie z metod asynchronicznych jako producentów i konsumentów:

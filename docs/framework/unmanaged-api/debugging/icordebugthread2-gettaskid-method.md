@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ba3c6ee-4ba1-4c98-bf1e-8531acd3da09
 topic_type:
 - apiref
-ms.openlocfilehash: 841af546cc3586529fe290c69e686438f634b90d
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 9b17a179745af65bde05527bd0157f3ce06c12c6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83377784"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678678"
 ---
 # <a name="icordebugthread2gettaskid-method"></a>ICorDebugThread2::GetTaskID — Metoda
+
 Pobiera identyfikator zadania uruchomionego w tym wątku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT GetTaskID (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pTaskId`  
  określoną Wskaźnik do identyfikatora zadania uruchomionego w wątku reprezentowanego przez ten obiekt ICorDebugThread2.  
   
 ## <a name="remarks"></a>Uwagi  
- Zadanie może być uruchomione tylko w wątku, jeśli wątek jest skojarzony z połączeniem. `GetTaskID`zwraca zero w `pTaskId` przypadku, gdy wątek nie jest skojarzony z połączeniem.  
+
+ Zadanie może być uruchomione tylko w wątku, jeśli wątek jest skojarzony z połączeniem. `GetTaskID` zwraca zero w `pTaskId` przypadku, gdy wątek nie jest skojarzony z połączeniem.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

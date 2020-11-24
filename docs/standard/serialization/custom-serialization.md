@@ -18,12 +18,12 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-ms.openlocfilehash: 8e8d8d38ab8170a9bf9fae098e267be1a38f27d0
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 4ca78c71f464a914c07583825d4a7027ebb11bf6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281788"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679042"
 ---
 # <a name="custom-serialization"></a>Serializacja niestandardowa
 
@@ -51,6 +51,7 @@ Zalecanym sposobem uruchamiania metod niestandardowych podczas serializacji i po
  Ponadto podczas dodawania nowego pola do istniejącego typu możliwego do serializacji należy zastosować <xref:System.Runtime.Serialization.OptionalFieldAttribute> atrybut do pola. <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> i <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> ignoruje braku pola podczas przetwarzania strumienia, w którym brakuje nowe pole.  
   
 ## <a name="implementing-the-iserializable-interface"></a>Implementowanie interfejsu ISerializable  
+
  Innym sposobem na kontrolowanie serializacji jest osiągnięcie przez implementację <xref:System.Runtime.Serialization.ISerializable> interfejsu w obiekcie. Należy jednak pamiętać, że metoda w poprzedniej sekcji zastępuje tę metodę w celu sterowania serializacji.  
   
  Ponadto nie należy używać serializacji domyślnej dla klasy, która jest oznaczona atrybutem [Serializable](xref:System.SerializableAttribute) i ma deklaratywne lub bezwzględne zabezpieczenia na poziomie klasy lub w konstruktorach. Zamiast tego te klasy powinny zawsze implementować <xref:System.Runtime.Serialization.ISerializable> interfejs.  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fe9849c1-c3fc-477b-a31f-e8619f5516f5
 topic_type:
 - apiref
-ms.openlocfilehash: 4f06dd7b85446eec986055418d2cf558b9b5bd7a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a5e71d6ca90c8d0aa489176eb5a90bfe6896b1cb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615933"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679326"
 ---
 # <a name="iclrassemblyidentitymanagergetreferencedassembliesfromstream-method"></a>ICLRAssemblyIdentityManager::GetReferencedAssembliesFromStream — Metoda
+
 Pobiera wskaźnik do obiektu [ICLRReferenceAssemblyEnum](iclrreferenceassemblyenum-interface.md) , który zawiera dane tożsamości zestawu dla zestawów, do których odwołuje się zestaw w określonym strumieniu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetReferencedAssembliesFromStream (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pStream`  
  podczas Wskaźnik interfejsu do `IStream` zawierającego zestaw, który ma zostać obliczony.  
   
@@ -61,19 +63,21 @@ HRESULT GetReferencedAssembliesFromStream (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Jeśli metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Obiekt wywołujący może zdecydować się na wykluczenie zestawu znanych odwołań do zestawu ze zwracanej listy. Ten zestaw jest definiowany przez `pExcludeAssembliesList` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRAssemblyIdentityManager, interfejs](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyIdentityManager — Interfejs](iclrassemblyidentitymanager-interface.md)
 - [ICLRAssemblyReferenceList — Interfejs](iclrassemblyreferencelist-interface.md)
-- [ICLRReferenceAssemblyEnum, interfejs](iclrreferenceassemblyenum-interface.md)
+- [ICLRReferenceAssemblyEnum — Interfejs](iclrreferenceassemblyenum-interface.md)

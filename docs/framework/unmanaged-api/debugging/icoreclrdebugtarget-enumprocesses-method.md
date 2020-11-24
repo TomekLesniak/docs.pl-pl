@@ -17,14 +17,15 @@ helpviewer_keywords:
 ms.assetid: e00fd477-4f49-43d3-bd0e-3094824b1136
 topic_type:
 - apiref
-ms.openlocfilehash: 0c1b18f24fd30b5f6d5e85633fc0c25839aba6df
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 7e0219ae0d7d474812865f01e4e2fcfe2e4da991
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396410"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679367"
 ---
 # <a name="icoreclrdebugtargetenumprocesses-method"></a>ICoreClrDebugTarget::EnumProcesses — Metoda
+
 Wylicza procesy, które są uruchomione na komputerze zdalnym.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT EnumProcesses (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pcProcs`  
  określoną Liczba procesów zwróconych w `ppProcs` . Ta wartość może być równa 0 (zero).  
   
@@ -44,6 +46,7 @@ HRESULT EnumProcesses (
  określoną Tablica struktur [CoreClrDebugProcInfo —](coreclrdebugprocinfo-structure.md) , które reprezentują procesy uruchomione na komputerze zdalnym.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK  
  Powodzenie.  
   
@@ -54,14 +57,16 @@ HRESULT EnumProcesses (
  Inne błędy.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby zwolnić pamięć, która została przypisana przez tę metodę, wywołaj metodę [ICoreClrDebugTarget:: freememory —](icoreclrdebugtarget-freememory-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Biblioteka:** mscordbi_macx86. dll  
+ **Biblioteka:** mscordbi_macx86.dll  
   
  **.NET Framework wersje:** 3,5 SP1  
   

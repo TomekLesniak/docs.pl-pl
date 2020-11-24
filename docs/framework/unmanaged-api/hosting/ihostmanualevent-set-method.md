@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e930c174-f71d-4faa-bb59-f0fb3df4d77b
 topic_type:
 - apiref
-ms.openlocfilehash: b5cd02f54a930942e1892f88fb3d8e926a6f3e1b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: bc2b178c6c26a6de62982c35d5aeb9ea5359c2bf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804570"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679133"
 ---
 # <a name="ihostmanualeventset-method"></a>IHostManualEvent::Set — Metoda
+
 Ustawia bieżące wystąpienie [IHostManualEvent](ihostmanualevent-interface.md) na sygnał.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,7 +36,7 @@ HRESULT Set ();
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`Set`pomyślnie zwrócono.|  
+|S_OK|`Set` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -43,18 +44,19 @@ HRESULT Set ();
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
 - [IHostAutoEvent — Interfejs](ihostautoevent-interface.md)
-- [IHostManualEvent, interfejs](ihostmanualevent-interface.md)
-- [IHostSemaphore, interfejs](ihostsemaphore-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
+- [IHostManualEvent — Interfejs](ihostmanualevent-interface.md)
+- [IHostSemaphore — Interfejs](ihostsemaphore-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)

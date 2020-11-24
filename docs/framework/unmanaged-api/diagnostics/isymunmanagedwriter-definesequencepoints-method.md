@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 64202baf-be6b-40ba-8162-8cc6c0c9b8e1
 topic_type:
 - apiref
-ms.openlocfilehash: 8889c412f414f38d1d18d33ec297e82fd052280d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: af8beb1ec627b93faeb7329a03579319ca3880ed
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614802"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678327"
 ---
 # <a name="isymunmanagedwriterdefinesequencepoints-method"></a>ISymUnmanagedWriter::DefineSequencePoints — Metoda
+
 Definiuje grupę punktów sekwencji w bieżącej metodzie. Każda linia początkowa i początkowa kolumna definiują początek instrukcji w ramach metody. Każdy wiersz końcowy i kolumna końcowa definiują koniec instrukcji w ramach metody. Tablice powinny być sortowane w kolejności rosnącej. Przesunięcie jest zawsze mierzone od początku metody, w bajtach.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT DefineSequencePoints(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `document`  
  podczas Obiekt dokumentu, dla którego są definiowane punkty sekwencji.  
   
@@ -61,9 +63,11 @@ HRESULT DefineSequencePoints(
  podczas Numery kolumn końcowych punktów sekwencji. Ten parametr jest opcjonalny.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

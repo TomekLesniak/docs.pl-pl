@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fde7e21d-1169-4bed-a34d-792e69652bf9
 topic_type:
 - apiref
-ms.openlocfilehash: 3f6cea68a4379f8769ccbdbc6911cc5c425d3369
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: af4124aed823a0a2475a181efe3fa68e1fae0bfe
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614880"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678392"
 ---
 # <a name="isymunmanagedreadersymbolsearchinfo-interface"></a>ISymUnmanagedReaderSymbolSearchInfo — Interfejs
+
 Dostarcza metody, które pobierają informacje o wyszukiwaniu symboli. Uzyskaj ten interfejs, wywołując `QueryInterface` obiekt, który implementuje interfejs [ISymUnmanagedReader](isymunmanagedreader-interface.md) .  
   
 ## <a name="methods"></a>Metody  
@@ -32,6 +33,7 @@ Dostarcza metody, które pobierają informacje o wyszukiwaniu symboli. Uzyskaj t
 |[GetSymbolSearchInfoCount, metoda](isymunmanagedreadersymbolsearchinfo-getsymbolsearchinfocount-method.md)|Pobiera liczbę informacji o wyszukiwaniu symboli.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

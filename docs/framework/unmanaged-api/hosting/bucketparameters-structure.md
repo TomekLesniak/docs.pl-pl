@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9432487e-f276-45d6-9a13-9a68024dbd46
 topic_type:
 - apiref
-ms.openlocfilehash: 7037065be138c369b847e7f86de7b46fc5ae601a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8b54cb30ec96ad0fb7851af6f2d465fe771886ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616882"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677859"
 ---
 # <a name="bucketparameters-structure"></a>BucketParameters — Struktura
+
 Przechowuje nazwę typu zdarzenia i parametry bieżącego wyjątku, który jest skojarzony ze zdarzeniem.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,6 +44,7 @@ typedef struct _BucketParameters {
 |`pszParams`|Tablica ciągów, z których każdy określa parametr dla bieżącego wyjątku skojarzonego ze zdarzeniem.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. idl  
@@ -51,4 +53,4 @@ typedef struct _BucketParameters {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Hosting, struktury](hosting-structures.md)
+- [Hosting — Struktury](hosting-structures.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dd31c210-6829-45eb-927e-cc53932638b7
 topic_type:
 - apiref
-ms.openlocfilehash: f8eb4cb6bad95295e10a72812fa8dbb0adfcc898
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: dcab63b603d4a9a8e1430228043d2a5e597bbf4f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614789"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678295"
 ---
 # <a name="isymunmanagedwritergetdebuginfo-method"></a>ISymUnmanagedWriter::GetDebugInfo — Metoda
+
 Zwraca informacje niezbędne do zapisania przez kompilator wpisu katalogu debugowania w nagłówku przenośnego pliku wykonywalnego (PE). Moduł zapisywania symboli wypełnia wszystkie pola z wyjątkiem `TimeDateStamp` i `PointerToRawData` . (Kompilator jest odpowiedzialny za odpowiednie ustawienie tych dwóch pól).  
   
  Kompilator powinien wywołać tę metodę, emitować obiekt BLOB danych do pliku PE, ustawić `PointerToRawData` pole w IMAGE_DEBUG_DIRECTORY, aby wskazywało emitowane dane, i zapisać IMAGE_DEBUG_DIRECTORY do pliku PE. Kompilator powinien również ustawić pole tak `TimeDateStamp` , aby było równe `TimeDateStamp` wygenerowanego pliku PE.  
@@ -39,6 +40,7 @@ HRESULT GetDebugInfo(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pIDD`  
  [in. out] Wskaźnik do IMAGE_DEBUG_DIRECTORY wypełniania przez moduł zapisujący symboli.  
   
@@ -52,9 +54,11 @@ HRESULT GetDebugInfo(
  określoną Wskaźnik do buforu, który jest wystarczająco duży, aby pomieścić dane debugowania dla magazynu symboli.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

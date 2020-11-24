@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1c8d9959-95b5-4131-be4a-556d97774014
 topic_type:
 - apiref
-ms.openlocfilehash: 0dce86a12ed3e93983ee62620fa0ddf7dfbc48f5
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 169d344975762b97f89e8dc32d72f2b9c95fea11
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616947"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678184"
 ---
 # <a name="iclrgcmanagersetgcstartuplimits-method"></a>ICLRGCManager::SetGCStartupLimits — Metoda
+
 Ustawia rozmiar segmentu wyrzucania elementów bezużytecznych i maksymalny rozmiar generacji 0 systemu odzyskiwania pamięci.  
   
 > [!IMPORTANT]
@@ -38,6 +39,7 @@ HRESULT SetGCStartupLimits (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `SegmentSize`  
  podczas Określony rozmiar segmentu odzyskiwania pamięci.  
   
@@ -52,7 +54,7 @@ HRESULT SetGCStartupLimits (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`SetGCStartupLimits`pomyślnie zwrócono.|  
+|S_OK|`SetGCStartupLimits` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -60,14 +62,16 @@ HRESULT SetGCStartupLimits (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Po powrocie metody E_FAIL nie będzie można używać środowiska CLR w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wartości, które `SetGCStartupLimits` ustawia się, można określić tylko raz. Późniejsze wywołania `SetGCStartupLimits` są ignorowane.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -76,4 +80,4 @@ HRESULT SetGCStartupLimits (
 - [Automatyczne zarządzanie pamięcią](../../../standard/automatic-memory-management.md)
 - [Odzyskiwanie pamięci](../../../standard/garbage-collection/index.md)
 - [ICLRControl — Interfejs](iclrcontrol-interface.md)
-- [ICLRGCManager, interfejs](iclrgcmanager-interface.md)
+- [ICLRGCManager — Interfejs](iclrgcmanager-interface.md)

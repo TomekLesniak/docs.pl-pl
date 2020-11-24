@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b47f1d61-c7dc-4196-b926-0b08c94f7041
 topic_type:
 - apiref
-ms.openlocfilehash: cb2b69c5e6dfed4e0cb4e4e324c4ec6ad664f3e7
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 6eebabc3a08027eab4ac55c1e46dd75b1f75bd21
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212753"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679705"
 ---
 # <a name="icordebugmanagedcallback-interface"></a>ICorDebugManagedCallback — Interfejs
+
 Dostarcza metody do przetwarzania wywołań zwrotnych debugera.  
   
 ## <a name="methods"></a>Metody  
@@ -41,7 +42,7 @@ Dostarcza metody do przetwarzania wywołań zwrotnych debugera.
 |[EvalException, metoda](icordebugmanagedcallback-evalexception-method.md)|Powiadamia debuger o przerwaniu oceny z nieobsługiwanym wyjątkem.|  
 |[Exception, metoda](icordebugmanagedcallback-exception-method.md)|Powiadamia debugera o wygenerowanym wyjątku z kodu zarządzanego.|  
 |[ExitAppDomain, metoda](icordebugmanagedcallback-exitappdomain-method.md)|Powiadamia debuger o zakończeniu domeny aplikacji.|  
-|[ExitProcess — Metoda](icordebugmanagedcallback-exitprocess-method.md)|Powiadamia debugera o zakończeniu procesu.|  
+|[ExitProcess, metoda](icordebugmanagedcallback-exitprocess-method.md)|Powiadamia debugera o zakończeniu procesu.|  
 |[ExitThread, metoda](icordebugmanagedcallback-exitthread-method.md)|Powiadamia debuger, że wątek wykonujący kod zarządzany został zakończony.|  
 |[LoadAssembly, metoda](icordebugmanagedcallback-loadassembly-method.md)|Powiadamia debuger o pomyślnym załadowaniu zestawu CLR.|  
 |[LoadClass, metoda](icordebugmanagedcallback-loadclass-method.md)|Powiadamia debuger o załadowaniu klasy.|  
@@ -56,6 +57,7 @@ Dostarcza metody do przetwarzania wywołań zwrotnych debugera.
 |[UpdateModuleSymbols, metoda](icordebugmanagedcallback-updatemodulesymbols-method.md)|Powiadamia debuger o zmianie symboli dla modułu CLR.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wszystkie wywołania zwrotne są serializowane, wywoływane w tym samym wątku i wywoływane z procesem w stanie zsynchronizowanym.  
   
  Każda implementacja wywołania zwrotnego musi wywołać [ICorDebugController:: Kontynuuj](icordebugcontroller-continue-method.md) , aby wznowić wykonywanie. Jeśli `ICorDebugController::Continue` polecenie nie zostanie wywołane przed wywołaniem zwrotnym, proces pozostanie zatrzymany, a kolejne wywołania zwrotne zdarzenia nie będą wykonywane do momentu wywołania `ICorDebugController::Continue` .  
@@ -66,6 +68,7 @@ Dostarcza metody do przetwarzania wywołań zwrotnych debugera.
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -74,7 +77,7 @@ Dostarcza metody do przetwarzania wywołań zwrotnych debugera.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebug — Interfejs](icordebug-interface.md)
 - [ICorDebugManagedCallback2 — Interfejs](icordebugmanagedcallback2-interface.md)

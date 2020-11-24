@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55cb673a-e240-43a6-a406-6912e7c0fe66
 topic_type:
 - apiref
-ms.openlocfilehash: 8cb8699c103f48b42694449a2bb2bbd25c42d3c6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 243a1661ce2910cf1713ef8884bb6ae5422e8013
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212734"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679692"
 ---
 # <a name="icordebugmanagedcallbackloadassembly-method"></a>ICorDebugManagedCallback::LoadAssembly — Metoda
+
 Powiadamia debuger o pomyślnym załadowaniu zestawu środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT LoadAssembly (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pAppDomain`  
  podczas Wskaźnik do obiektu ICorDebugAppDomain, który reprezentuje domenę aplikacji, do której zestaw został załadowany.  
   
@@ -42,6 +44,7 @@ HRESULT LoadAssembly (
  podczas Wskaźnik do obiektu ICorDebugAssembly, który reprezentuje zestaw.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -50,7 +53,7 @@ HRESULT LoadAssembly (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [UnloadAssembly, metoda](icordebugmanagedcallback-unloadassembly-method.md)
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)

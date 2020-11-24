@@ -15,18 +15,19 @@ helpviewer_keywords:
 ms.assetid: 4275af0c-b5a7-4e4c-97c9-7e41f36b2dd8
 topic_type:
 - apiref
-ms.openlocfilehash: eade3fd5d946c44ae4a77c571f762709de3cef40
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 460aeeca9d62ce91a11a24d774c8e681ed4f00ca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976567"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679809"
 ---
 # <a name="icordebugcontrollerterminate-method"></a>ICorDebugController::Terminate — Metoda
+
 Kończy proces z określonym kodem zakończenia.  
   
 > [!NOTE]
-> Ta metoda jest otoką dla funkcji Win32 `TerminateProcess` . W tym `Terminate` celu program używa kodu zakończenia w taki sam sposób, w `TerminateProcess` jaki używa go funkcja Win32.  
+> Ta metoda jest otoką dla funkcji Win32 `TerminateProcess` . W tym celu program `Terminate` używa kodu zakończenia w taki sam sposób, w jaki `TerminateProcess` używa go funkcja Win32.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -37,16 +38,19 @@ HRESULT Terminate (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `exitCode`  
  podczas Wartość liczbowa, która jest kodem zakończenia. Prawidłowe wartości liczbowe są zdefiniowane w Winbase. h.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli proces zostanie zatrzymany po `Terminate` wywołaniu, proces powinien być kontynuowany przy użyciu metody [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) , aby debuger otrzymał potwierdzenie zakończenia za pośrednictwem wywołania zwrotnego [ICorDebugManagedCallback:: ExitProcess —](icordebugmanagedcallback-exitprocess-method.md) lub [ICorDebugManagedCallback:: ExitAppDomain —](icordebugmanagedcallback-exitappdomain-method.md) .  
   
 > [!NOTE]
-> Ta metoda nie jest implementowana przez domenę aplikacji. Oznacza to, że nie jest zaimplementowana <xref:System.AppDomain> na poziomie.  
+> Ta metoda nie jest implementowana przez domenę aplikacji. Oznacza to, że nie jest zaimplementowana na <xref:System.AppDomain> poziomie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -55,4 +59,4 @@ HRESULT Terminate (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także

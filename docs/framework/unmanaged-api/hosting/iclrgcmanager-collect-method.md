@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0c6cbbea-c27c-4695-bda3-17c1910d8ddb
 topic_type:
 - apiref
-ms.openlocfilehash: aa906e314c408b7653e611b07d7ad21d4519b715
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 90ce4e888ddb3a10dd0dfd7e68463311db86742f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616986"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677768"
 ---
 # <a name="iclrgcmanagercollect-method"></a>ICLRGCManager::Collect — Metoda
+
 Wymusza wyrzucanie elementów bezużytecznych dla określonej generacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT Collect (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `Generation`  
  podczas Generacja do zebrania. Wartość-1 wymusza zbieranie wszystkich generacji.  
   
@@ -41,7 +43,7 @@ HRESULT Collect (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`Collect`pomyślnie zwrócono.|  
+|S_OK|`Collect` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -49,14 +51,16 @@ HRESULT Collect (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Po powrocie metody E_FAIL nie będzie można używać środowiska CLR w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Collect`Metoda wymusza wyrzucanie elementów bezużytecznych środowiska CLR w celu przeprowadzenia kolekcji niezależnie od jej bieżącego stanu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -65,7 +69,7 @@ HRESULT Collect (
 - [Automatyczne zarządzanie pamięcią](../../../standard/automatic-memory-management.md)
 - [Odzyskiwanie pamięci](../../../standard/garbage-collection/index.md)
 - [ICLRControl — Interfejs](iclrcontrol-interface.md)
-- [ICLRGCManager, interfejs](iclrgcmanager-interface.md)
+- [ICLRGCManager — Interfejs](iclrgcmanager-interface.md)
 - [Interfejsy hostingu środowiska CLR](clr-hosting-interfaces.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)
 - [Hosting](index.md)

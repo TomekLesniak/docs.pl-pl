@@ -7,14 +7,15 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: 90ae911c8942fef7a9e8238921990b0a52a47ca0
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 1623517e66955c14b7e738c860ec16086fe30429
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281768"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678977"
 ---
 # <a name="datetimeserialization-element"></a>\<dateTimeSerialization> Element
+
 Określa tryb serializacji <xref:System.DateTime> obiektów.  
   
  \<configuration>  
@@ -29,6 +30,7 @@ Określa tryb serializacji <xref:System.DateTime> obiektów.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -38,6 +40,7 @@ Określa tryb serializacji <xref:System.DateTime> obiektów.
 |`mode`|Opcjonalny. Określa tryb serializacji. Jedną z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> wartości. Wartość domyślna to **roundtrip**.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -48,9 +51,9 @@ Określa tryb serializacji <xref:System.DateTime> obiektów.
   
 ## <a name="remarks"></a>Uwagi  
 
-Gdy ta właściwość jest ustawiona na wartość **Local** , <xref:System.DateTime> obiekty są zawsze sformatowane jako czas lokalny. Oznacza to, że informacje o strefie czas lokalny zawsze jest zawarte w danych serializacji.
+Gdy ta właściwość jest ustawiona na wartość **Local**, <xref:System.DateTime> obiekty są zawsze sformatowane jako czas lokalny. Oznacza to, że informacje o strefie czas lokalny zawsze jest zawarte w danych serializacji.
   
-Gdy ta właściwość ma wartość **roundtrip** , <xref:System.DateTime> obiekty są sprawdzane w celu określenia, czy znajdują się one w lokalnej, UTC lub nieokreślonej strefie czasowej. <xref:System.DateTime> Obiekty są następnie serializowany w taki sposób, że jest zachowywany tych informacji. Jest to zachowanie domyślne i jest to zalecane zachowanie dla wszystkich nowych aplikacji, które nie komunikują się ze starszymi wersjami platformy.  
+Gdy ta właściwość ma wartość **roundtrip**, <xref:System.DateTime> obiekty są sprawdzane w celu określenia, czy znajdują się one w lokalnej, UTC lub nieokreślonej strefie czasowej. <xref:System.DateTime> Obiekty są następnie serializowany w taki sposób, że jest zachowywany tych informacji. Jest to zachowanie domyślne i jest to zalecane zachowanie dla wszystkich nowych aplikacji, które nie komunikują się ze starszymi wersjami platformy.  
   
 ## <a name="see-also"></a>Zobacz także
 

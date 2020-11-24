@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b33ff059-40c4-4dfe-9cb2-21bfed2de0b0
 topic_type:
 - apiref
-ms.openlocfilehash: 89ea9f221ad55063e4186cc27cc8038334d800d4
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 73ed86ee12b02d292dc6dfc1d652459a679f81ca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82892878"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679940"
 ---
 # <a name="icordebugcontrollerisrunning-method"></a>ICorDebugController::IsRunning — Metoda
+
 Pobiera wartość wskazującą, czy wątki w procesie są obecnie uruchomione swobodnie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT IsRunning (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbRunning`  
- określoną Wskaźnik do wartości, która jest `true` , jeśli wątki w procesie działają swobodnie; w przeciwnym `false`razie.  
+ określoną Wskaźnik do wartości, która jest, `true` Jeśli wątki w procesie działają swobodnie; w przeciwnym razie `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,4 +49,4 @@ HRESULT IsRunning (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także

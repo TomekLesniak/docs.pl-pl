@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a8e3dd32-6a44-4371-9a74-f417b11998c8
 topic_type:
 - apiref
-ms.openlocfilehash: c695aa80ea3bf90a29ce7c5d11eda7fae5fe7b2d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: c5e36443295395997303cb94202f534a83d086f4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614815"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677872"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter — Metoda
+
 Definiuje pojedynczy parametr w bieżącej metodzie. Typ parametru jest pobierany z pozycji parametru (Sequence) w podpisie metody.  
   
  Jeśli parametry są zdefiniowane w metadanych dla danej metody, nie trzeba ich definiować ponownie przy użyciu tej metody. Czytelnicy symboli muszą sprawdzić normalne metadane parametrów przed sprawdzeniem magazynu symboli.  
@@ -41,6 +42,7 @@ HRESULT DefineParameter(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `name`  
  podczas Nazwa parametru.  
   
@@ -63,9 +65,11 @@ HRESULT DefineParameter(
  podczas Trzeci adres dla specyfikacji parametru.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

@@ -3,12 +3,12 @@ title: Programowanie asynchroniczne
 description: Dowiedz się więcej o programowaniu asynchronicznym w .NET Framework Dostawca danych dla SQL Server, w tym ulepszeń wprowadzonych w .NET Framework 4,5.
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: b8f718e0def2ab0b6953ed121eb916f282562d32
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9065aea02dc3f021ed485a4eb6e56cfcece44fac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558475"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677950"
 ---
 # <a name="asynchronous-programming"></a>Programowanie asynchroniczne
 
@@ -39,9 +39,9 @@ Aby uzyskać więcej informacji na temat funkcji programowania asynchronicznego,
 
 - [Programowanie asynchroniczne z Async i Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
 
-- [Używanie nowych metod asynchronicznych elementu SqlDataReader w programie .NET 4,5 (część 1)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
+- [Używanie nowych metod asynchronicznych elementu SqlDataReader w .NET Framework 4,5 (część 1)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
 
-- [Używanie nowych metod asynchronicznych elementu SqlDataReader w programie .NET 4,5 (część 2)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
+- [Korzystanie z nowych metod asynchronicznych elementu SqlDataReader w .NET Framework 4,5 (część 2)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
 
 Gdy interfejs użytkownika nie odpowiada lub serwer nie skaluje się, prawdopodobnie potrzebny jest większy kod, który będzie bardziej asynchroniczny. Pisanie kodu asynchronicznego polega tradycyjnie na instalowaniu wywołania zwrotnego (nazywanego również kontynuacją) do wyrażenia logiki, która występuje po zakończeniu operacji asynchronicznej. To komplikuje strukturę kodu asynchronicznego w porównaniu z kodem synchronicznym.
 
@@ -451,7 +451,7 @@ namespace SqlBulkCopyAsyncCodeSample {
          AsyncSqlBulkCopyMARS().Wait();
       }
 
-      // 3.1.1 Synchronous bulk copy in .NET 4.5
+      // 3.1.1 Synchronous bulk copy in .NET Framework 4.5
       private static void SynchronousSqlBulkCopy() {
          using (SqlConnection conn = new SqlConnection(connectionString)) {
             conn.Open();
@@ -473,7 +473,7 @@ namespace SqlBulkCopyAsyncCodeSample {
 
       }
 
-      // 3.1.2 Asynchronous bulk copy in .NET 4.5
+      // 3.1.2 Asynchronous bulk copy in .NET Framework 4.5
       private static async Task AsyncSqlBulkCopy() {
          using (SqlConnection conn = new SqlConnection(connectionString)) {
             await conn.OpenAsync();
@@ -564,7 +564,7 @@ namespace SqlBulkCopyAsyncCodeSample {
          }
       }
 
-      // 3.5 Copying data from SQL Server to SQL Azure in .NET 4.5
+      // 3.5 Copying data from SQL Server to SQL Azure in .NET Framework 4.5
       //private static async Task AsyncSqlBulkCopySqlServerToSqlAzure() {
       //   using (SqlConnection srcConn = new SqlConnection(connectionString))
       //   using (SqlConnection destConn = new SqlConnection(azureConnectionString)) {

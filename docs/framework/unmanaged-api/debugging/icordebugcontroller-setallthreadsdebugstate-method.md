@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: bdda4bd7-4743-4d58-a22b-8067e967db95
 topic_type:
 - apiref
-ms.openlocfilehash: c2e8aaa2774e3e2699a73c40804391ca245047b1
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: d8375948be5820aaf6e879b82bcfde6471cccf3f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976593"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679900"
 ---
 # <a name="icordebugcontrollersetallthreadsdebugstate-method"></a>ICorDebugController::SetAllThreadsDebugState — Metoda
+
 Ustawia stan debugowania wszystkich zarządzanych wątków w procesie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT SetAllThreadsDebugState (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `state`  
  podczas Wartość wyliczenia "CorDebugThreadState —", która określa stan wątku na potrzeby debugowania.  
   
@@ -42,9 +44,11 @@ HRESULT SetAllThreadsDebugState (
  podczas Wskaźnik do obiektu "ICorDebugThread", który reprezentuje wątek, który ma zostać wykluczony z ustawienia stanu debugowania. Jeśli ta wartość jest równa null, żaden wątek nie jest wykluczony.  
   
 ## <a name="remarks"></a>Uwagi  
- Metoda może mieć wpływ na wątki, które nie są widoczne za pośrednictwem [metody EnumerateThreads —](icordebugcontroller-enumeratethreads-method.md), więc wątki, `SetAllThreadsDebugState` które zostały zawieszone przy użyciu metody, muszą `SetAllThreadsDebugState` zostać wznowione przy użyciu metody. `SetAllThreadsDebugState`  
+
+ `SetAllThreadsDebugState`Metoda może mieć wpływ na wątki, które nie są widoczne za pośrednictwem [metody EnumerateThreads —](icordebugcontroller-enumeratethreads-method.md), więc wątki, które zostały zawieszone przy użyciu `SetAllThreadsDebugState` metody, muszą zostać wznowione przy użyciu `SetAllThreadsDebugState` metody.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -53,4 +57,4 @@ HRESULT SetAllThreadsDebugState (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
