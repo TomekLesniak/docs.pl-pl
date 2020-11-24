@@ -14,26 +14,29 @@ helpviewer_keywords:
 ms.assetid: bb798c56-042e-475d-a245-b6fac36d0c07
 topic_type:
 - apiref
-ms.openlocfilehash: a48e20413f466e25a9145e9dbf1ba93d90155770
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 5b5a901bef779948467cfcc3d71a1fcd057c1aeb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397032"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95693713"
 ---
 # <a name="icorpublishappdomainenum-interface"></a>ICorPublishAppDomainEnum — Interfejs
+
 Podklasa interfejsu [ICorPublishEnum](icorpublishenum-interface.md) , która dostarcza metody umożliwiające przechodzenie kolekcji obiektów [ICorPublishAppDomain](icorpublishappdomain-interface.md) , które aktualnie istnieją w ramach procesu.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Next — Metoda](icorpublishappdomainenum-next-method.md)|Pobiera określoną liczbę `ICorPublishAppDomain` wystąpień z kolekcji, rozpoczynając od bieżącego położenia.|  
+|[Next, metoda](icorpublishappdomainenum-next-method.md)|Pobiera określoną liczbę `ICorPublishAppDomain` wystąpień z kolekcji, rozpoczynając od bieżącego położenia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorPublishAppDomainEnum`Interfejs implementuje metody interfejsu abstrakcyjnego, [ICorPublishEnum](icorpublishenum-interface.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorPub. idl, CorPub. h  
