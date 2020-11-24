@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 20fefee7-1040-41ba-93dc-bd42f68b90c2
 topic_type:
 - apiref
-ms.openlocfilehash: 841379702e24428a8092cfd1d2cbd3c5b4e17ba4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f5d7df60a7b9c728b73fe6592226a8b6734b1e66
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615608"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95692153"
 ---
 # <a name="isymunmanageddocumentgetsourcerange-method"></a>ISymUnmanagedDocument::GetSourceRange — Metoda
+
 Zwraca określony zakres osadzonego źródła do podanego buforu. Bufor musi być wystarczająco duży, aby pomieścić źródło.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ HRESULT GetSourceRange(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `startLine`  
  podczas Wiersz początkowy w bieżącym dokumencie.  
   
@@ -62,8 +64,9 @@ HRESULT GetSourceRange(
  określoną Rozmiar i długość określonego zakresu dokumentu źródłowego w bajtach.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ISymUnmanagedDocument, interfejs](isymunmanageddocument-interface.md)
+- [ISymUnmanagedDocument — Interfejs](isymunmanageddocument-interface.md)

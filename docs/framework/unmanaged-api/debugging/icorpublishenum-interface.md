@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 76a136b5-e444-417a-8ade-f1596d597dc7
 topic_type:
 - apiref
-ms.openlocfilehash: acbc37d0f49af21c60ff6989932c5d341673512b
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 492d4b727ce507340fec47d30a791aa49d0cecb6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421179"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95693349"
 ---
 # <a name="icorpublishenum-interface"></a>ICorPublishEnum — Interfejs
+
 Służy jako abstrakcyjny interfejs podstawowy dla modułów wyliczających, które są używane w publikowaniu informacji o procesach i domenach aplikacji.  
   
 ## <a name="methods"></a>Metody  
@@ -29,11 +30,12 @@ Służy jako abstrakcyjny interfejs podstawowy dla modułów wyliczających, kt�
 |Metoda|Opis|  
 |------------|-----------------|  
 |[Clone — Metoda](icorpublishenum-clone-method.md)|Tworzy kopię tego `ICorPublishEnum` obiektu.|  
-|[GetCount — Metoda](icorpublishenum-getcount-method.md)|Pobiera liczbę elementów w wyliczeniu.|  
+|[GetCount, metoda](icorpublishenum-getcount-method.md)|Pobiera liczbę elementów w wyliczeniu.|  
 |[Reset — Metoda](icorpublishenum-reset-method.md)|Przenosi kursor do początku wyliczenia.|  
 |[Skip — Metoda](icorpublishenum-skip-method.md)|Przenosi kursor do przodu w wyliczeniu o określoną liczbę elementów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Następujące moduły wyliczające pochodzą z `ICorPublishEnum` :  
   
 - [ICorPublishAppDomainEnum](icorpublishappdomainenum-interface.md)  
@@ -41,6 +43,7 @@ Służy jako abstrakcyjny interfejs podstawowy dla modułów wyliczających, kt�
 - [ICorPublishProcessEnum](icorpublishprocessenum-interface.md)  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorPub. idl, CorPub. h  

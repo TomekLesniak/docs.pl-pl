@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a49f9d80-1c76-4ddd-8c49-34f913a5c596
 topic_type:
 - apiref
-ms.openlocfilehash: b0b9c0b7d178557806a9ab2893bff2d34dc408ff
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5bfab21a36becf943b1813f266cf70c4b5e5b1d2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557739"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690996"
 ---
 # <a name="iclrsyncmanager-interface"></a>ICLRSyncManager — Interfejs
+
 Definiuje metody, które pozwalają hostowi uzyskać informacje o żądanych zadaniach i wykryć zakleszczenie w swojej implementacji synchronizacji.  
   
 ## <a name="methods"></a>Metody  
@@ -34,6 +35,7 @@ Definiuje metody, które pozwalają hostowi uzyskać informacje o żądanych zad
 |[GetRWLockOwnerNext, metoda](iclrsyncmanager-getrwlockownernext-method.md)|Pobiera następne zadanie czekające na bieżącą blokadę modułu odczytującego.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  

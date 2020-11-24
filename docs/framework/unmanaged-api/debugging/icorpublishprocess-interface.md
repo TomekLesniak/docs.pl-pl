@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6d1dc41b-8aa2-4889-bb00-1cbccc00c123
 topic_type:
 - apiref
-ms.openlocfilehash: 8d958e949612b502ab218f5c6b75779174d34e19
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 8ee59e9d416d1c53312e4fccb6953f20b03b29b3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421088"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95693089"
 ---
 # <a name="icorpublishprocess-interface"></a>ICorPublishProcess — Interfejs
+
 Dostarcza metody, które mają dostęp do informacji o procesie.  
   
 ## <a name="methods"></a>Metody  
@@ -34,6 +35,7 @@ Dostarcza metody, które mają dostęp do informacji o procesie.
 |[IsManaged, metoda](icorpublishprocess-ismanaged-method.md)|Pobiera wartość wskazującą, czy proces, do którego się odwołuje, `ICorPublishProcess` jest znany jako uruchomiony kod zarządzany.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorPub. idl, CorPub. h  

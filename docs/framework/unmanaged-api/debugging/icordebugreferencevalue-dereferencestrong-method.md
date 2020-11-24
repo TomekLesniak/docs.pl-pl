@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: 723482d1-d1a1-410a-a405-677eeb04e2bf
 topic_type:
 - apiref
-ms.openlocfilehash: e96d7c6fcb25a05deb7301e36b76b528a7982760
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: a492c444eecbbf9b4b669741ec6a30197bd1f5fd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83376010"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95691217"
 ---
 # <a name="icordebugreferencevaluedereferencestrong-method"></a>ICorDebugReferenceValue::DereferenceStrong — Metoda
-`DereferenceStrong`nie została zaimplementowana. Nie wywołuj tej metody.  
+
+`DereferenceStrong` nie została zaimplementowana. Nie wywołuj tej metody.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -34,6 +35,7 @@ HRESULT DereferenceStrong (
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

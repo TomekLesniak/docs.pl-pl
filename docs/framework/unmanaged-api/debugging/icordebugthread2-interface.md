@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 678f89f9-cce7-46d1-af87-5e989abaa93c
 topic_type:
 - apiref
-ms.openlocfilehash: a7a8d96548704f223f05826af79a4e227bdfab06
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: fd4ad536d7d3df2b8f91f206459122cf083c8b9c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379829"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95691139"
 ---
 # <a name="icordebugthread2-interface"></a>ICorDebugThread2, interfejs
+
 Służy jako logiczne rozszerzenie interfejsu ICorDebugThread.  
   
 ## <a name="methods"></a>Metody  
@@ -40,6 +41,7 @@ Służy jako logiczne rozszerzenie interfejsu ICorDebugThread.
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -48,6 +50,6 @@ Służy jako logiczne rozszerzenie interfejsu ICorDebugThread.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1680ec06-4ab0-447e-93ad-cdb8693fde5c
 topic_type:
 - apiref
-ms.openlocfilehash: b68a9ec1e8fee4fdecd2114af28c75c4a236cb3a
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 888cc40c194cb86b0f898f5556ea14b8897e08c7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421153"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95693310"
 ---
 # <a name="icorpublishenumskip-method"></a>ICorPublishEnum::Skip — Metoda
+
 Przenosi kursor do przodu w wyliczeniu o określoną liczbę elementów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT Skip (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba elementów, przez którą ma zostać przesunięty kursor do przodu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorPub. idl, CorPub. h  

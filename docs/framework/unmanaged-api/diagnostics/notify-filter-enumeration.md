@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4789d08f-8683-45d3-ac30-73d48c61e470
 topic_type:
 - apiref
-ms.openlocfilehash: b20e18d5f4314a0ab1442ac7bd5c6514e4db85d5
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 365bc0dc73b04d3afd171c40f336432f77552b6d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609485"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690957"
 ---
 # <a name="notify_filter-enumeration"></a>NOTIFY_FILTER — Wyliczenie
+
 Identyfikuje wywołania zwrotne dla funkcji debugera. Aby uzyskać więcej informacji, zobacz metodę [INotifySource2:: SetNotifyFilter —](inotifysource2-setnotifyfilter-method.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -52,6 +53,7 @@ enum tagNOTIFY_FILTER
 |`NOTIFY_FILTER_NONE`|Wskazuje, że nie powinny być wywoływane żadne metody powiadamiania.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Zobacz także

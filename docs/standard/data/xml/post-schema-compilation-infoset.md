@@ -6,14 +6,15 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
-ms.openlocfilehash: 2b91a74f7dbb31ee47535dbed7cf5fa5243e364c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 79ffea3831d5f56d73c6974fdf7265c9b00ab8ec
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820445"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95691269"
 ---
 # <a name="post-schema-compilation-infoset"></a>Zestaw informacji po kompilacji schematu
+
 [Zalecenie dotyczące schematu XML organizacja World Wide Web Consortium (W3C)](https://www.w3.org/XML/Schema) omawia zestaw informacji (sprawdzonych), który musi być narażony na weryfikację przed schematem i kompilację po schemacie. Model obiektów schematu XML (SOM) przegląda to narażenie przed i po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> <xref:System.Xml.Schema.XmlSchemaSet> wywołaniu metody.  
   
  Sprawdzonych weryfikacji przed schematem jest tworzony podczas edytowania schematu. Kompilacja po schemacie sprawdzonych jest generowana po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> <xref:System.Xml.Schema.XmlSchemaSet> wywołaniu metody, podczas kompilowania schematu i jest udostępniana jako właściwości.  

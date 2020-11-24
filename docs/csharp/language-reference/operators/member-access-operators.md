@@ -1,7 +1,7 @@
 ---
 title: Operatory dostępu do elementów członkowskich i wyrażenia — odwołanie w C#
 description: Informacje na temat operatorów języka C#, których można użyć w celu uzyskania dostępu do elementów członkowskich typu.
-ms.date: 04/17/2020
+ms.date: 11/13/2020
 author: pkulikov
 f1_keywords:
 - ._CSharpKeyword
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 688a1fcff84a6e8f2fa31533a2bc459bf8c8717a
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 28d3d9c3261f1a852d16f2637309b21412611c10
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916788"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95691243"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Operatory i wyrażenia dostępu do składowych (odwołanie w C#)
 
@@ -138,9 +138,6 @@ W powyższym przykładzie, jeśli nie używasz `??` operatora, program `numbers?
 
 Operator dostępu warunkowego o wartości null `?.` jest również znany jako operator Elvis.
 
-> [!NOTE]
-> W języku C# 8 [operator łagodniejszej o wartości](null-forgiving.md) null kończy listę poprzednich operacji warunkowych o wartości null. Na przykład wyrażenie `x?.y!.z` jest analizowane jako `(x?.y)!.z` . Ze względu na tę interpretację, `z` jest oceniane, nawet jeśli `x` jest `null` , co może skutkować <xref:System.NullReferenceException> .
-
 ### <a name="thread-safe-delegate-invocation"></a>Wywołanie delegowania bezpiecznego wątku
 
 Użyj `?.` operatora, aby sprawdzić, czy delegat ma wartość różną od null i wywołać go w sposób bezpieczny dla wątków (na przykład po [podniesieniu zdarzenia](../../../standard/events/how-to-raise-and-consume-events.md)), jak poniższy kod ilustruje:
@@ -197,9 +194,9 @@ Jak pokazano w powyższym przykładzie, wyrażenie `a..b` jest <xref:System.Rang
 
 Możesz pominąć dowolny operand `..` operatora, aby uzyskać otwarty zakres:
 
-- `a..`jest równoważne`a..^0`
-- `..b`jest równoważne`0..b`
-- `..`jest równoważne`0..^0`
+- `a..` jest równoważne `a..^0`
+- `..b` jest równoważne `0..b`
+- `..` jest równoważne `0..^0`
 
 [!code-csharp[ranges with omitted operands](snippets/shared/MemberAccessOperators.cs#RangesOptional)]
 

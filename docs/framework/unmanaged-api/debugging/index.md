@@ -6,28 +6,30 @@ helpviewer_keywords:
 - debugging [.NET Framework], using the unmanaged API
 - native API reference [.NET Framework], debugging
 ms.assetid: f0bf70be-42ef-4c46-8709-1694b5f99018
-ms.openlocfilehash: 2fc2e3aceae81f3ba976f03bee06993dc98d3b8d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e15472d096102d55464e95b332307a4186d96b8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76790470"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95692192"
 ---
 # <a name="debugging-unmanaged-api-reference"></a>Debugowanie (Niezarządzany wykaz interfejsów API)
-Debugowanie interfejsu API umożliwia debugera do debugowania kodu, który działa w środowisku środowiska wykonawczego języka wspólnego (CLR). Kod do debugowania może być dowolny typ kodu, który obsługuje CLR.  
+
+Interfejs API debugowania umożliwia debugerowi Debugowanie kodu, który jest uruchamiany w środowisku środowiska uruchomieniowego języka wspólnego (CLR). Kod, który ma być debugowany, może być dowolnym typem kodu obsługiwanym przez środowisko CLR.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Klasy coclass debugowania](debugging-coclasses.md)  
- W tym artykule opisano niezarządzane coclasses, który używa debugowania interfejsu API.  
+ Opisuje niezarządzane klasy coclass używane przez interfejs API debugowania.  
   
  [Debugowanie — Interfejsy](debugging-interfaces.md)  
- W tym artykule opisano interfejsy niezarządzane, które umożliwiają debugowanie programu, który jest wykonywany przez program CLR.  
+ Opisuje interfejsy niezarządzane, które umożliwiają debugowanie programu wykonywanego przez środowisko CLR.  
   
  [Debugowanie statycznych funkcji globalnych](debugging-global-static-functions.md)  
- W tym artykule opisano niezarządzane globalne funkcje statyczne używane przez debugowanie interfejsu API.  
+ Opisuje niezarządzane globalne funkcje statyczne używane przez interfejs API debugowania.  
   
- [Debugowanie, wyliczenia](debugging-enumerations.md)  
- W tym artykule opisano niezarządzane wyliczenia używane przez debugowanie interfejsu API.  
+ [Debugowanie — wyliczenia](debugging-enumerations.md)  
+ Opisuje niezarządzane wyliczenia używane przez interfejs API debugowania.  
   
  [Struktury debugowania](debugging-structures.md)  
- W tym artykule opisano struktury niezarządzane, które używa interfejsu API debugowania.
+ Opisuje struktury niezarządzane używane przez interfejs API debugowania.
