@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0a1d4a38-cd0b-4231-91df-13646218ae72
 topic_type:
 - apiref
-ms.openlocfilehash: b69afa7676ad174725f13c1113ff3bd9972995f8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 84c3b504dff8a04172dde903c1681c9f3fb2fcd2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503084"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95669238"
 ---
 # <a name="icorprofilerfunctionenum-interface"></a>ICorProfilerFunctionEnum — Interfejs
+
 Zapewnia metody sekwencyjnej iteracji przez kolekcję funkcji w środowisku uruchomieniowym języka wspólnego.  
   
 ## <a name="methods"></a>Metody  
@@ -29,17 +30,19 @@ Zapewnia metody sekwencyjnej iteracji przez kolekcję funkcji w środowisku uruc
 |Metoda|Opis|  
 |------------|-----------------|  
 |[Clone — Metoda](icorprofilerfunctionenum-clone-method.md)|Pobiera wskaźnik interfejsu do kopii tego `ICorProfilerFunctionEnum` interfejsu.|  
-|[GetCount — Metoda](icorprofilerfunctionenum-getcount-method.md)|Pobiera liczbę funkcji, które zostały załadowane przez aplikację lub wymuszanie załadowane przez profiler.|  
-|[Next — Metoda](icorprofilerfunctionenum-next-method.md)|Pobiera określoną liczbę funkcji ciągłych z sekwencyjnego zbioru funkcji, rozpoczynając od bieżącej pozycji modułu wyliczającego w sekwencji.|  
+|[GetCount, metoda](icorprofilerfunctionenum-getcount-method.md)|Pobiera liczbę funkcji, które zostały załadowane przez aplikację lub wymuszanie załadowane przez profiler.|  
+|[Next, metoda](icorprofilerfunctionenum-next-method.md)|Pobiera określoną liczbę funkcji ciągłych z sekwencyjnego zbioru funkcji, rozpoczynając od bieżącej pozycji modułu wyliczającego w sekwencji.|  
 |[Reset — Metoda](icorprofilerfunctionenum-reset-method.md)|Przenosi kursor modułu wyliczającego do początkowego położenia sekwencji.|  
 |[Skip — Metoda](icorprofilerfunctionenum-skip-method.md)|Przesuwa kursor modułu wyliczającego z jego bieżącej pozycji, tak aby określona liczba elementów została pominięta.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorProfilerFunctionEnum`Interfejs jest modułem wyliczającym. Umożliwia odbiorcom tablicy ściąganie elementów od nadawcy według stawki, która jest odpowiednia dla odbiornika. Innymi słowy, odbiorca może jawnie kontrolować przepływ elementów tablicy, co pozwala uniknąć problemów związanych z przekazywaniem dużych tablic jako parametrów metody.  
   
- `ICorProfilerFunctionEnum`wylicza funkcje, które zostały już skompilowane JIT, ale nie zawierają funkcji ładowanych z obrazów natywnych generowanych za pomocą programu Ngen. exe.  
+ `ICorProfilerFunctionEnum` wylicza funkcje, które zostały już skompilowane JIT, ale nie zawierają funkcji ładowanych z obrazów natywnych generowanych za pomocą Ngen.exe.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -50,6 +53,6 @@ Zapewnia metody sekwencyjnej iteracji przez kolekcję funkcji w środowisku uruc
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [EnumJITedFunctions, metoda](icorprofilerinfo3-enumjitedfunctions-method.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fc7d9448-3186-494d-9f0d-ea39717e9a82
 topic_type:
 - apiref
-ms.openlocfilehash: ac73c462aa210927f0665cae161fd7f3e17a0cdb
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: f32b91f0d47449f80c38542162035999d616813b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805310"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95670147"
 ---
 # <a name="igchostcollect-method"></a>IGCHost::Collect — Metoda
+
 Wymusza, aby kolekcja była wykonywana dla danej generacji, niezależnie od stanu bieżącej wyrzucania elementów bezużytecznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,18 +35,20 @@ HRESULT Collect (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `Generation`  
  podczas Generacja, na której ma zostać wykonane odzyskiwanie pamięci. Wartość-1 oznacza, że wszystkie generacji zostaną poddane wyrzucania elementów bezużytecznych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** GCHost. idl, GCHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IGCHost, interfejs](igchost-interface.md)
+- [IGCHost — Interfejs](igchost-interface.md)

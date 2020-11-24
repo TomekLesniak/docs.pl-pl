@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: c2321f17-f46f-4815-ae41-b28678753613
 topic_type:
 - apiref
-ms.openlocfilehash: f840438e175790a2b4c97302963b910f98dffb7d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b7c10e82aca2b2ece7ea4d7209c1f3c9a456434
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176568"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95670410"
 ---
 # <a name="iassemblycacheitemcommit-method"></a>IAssemblyCacheItem::Commit — Metoda
-Zatwierdza odwołanie do zestawu w pamięci.  
+
+Zatwierdza odwołanie do pamięci podręcznej.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -35,19 +36,21 @@ HRESULT Commit (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwFlags`  
- [w] Flagi zdefiniowane w Fusion.idl.  
+ podczas Flagi zdefiniowane w pliku Fusion. idl.  
   
  `pulDisposition`  
- [out, opcjonalnie] Wartość, która wskazuje wynik operacji.  
+ [out, opcjonalne] Wartość, która wskazuje wynik operacji.  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** Fuzja.h  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [IAssemblyCacheItem, interfejs](iassemblycacheitem-interface.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** Fusion. h  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [IAssemblyCacheItem — Interfejs](iassemblycacheitem-interface.md)
