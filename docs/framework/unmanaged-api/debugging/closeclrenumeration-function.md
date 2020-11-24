@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 5e3c3958-80bb-43b1-a96b-dd3e6dbd9cd7
 topic_type:
 - apiref
-ms.openlocfilehash: 1d42292705dae03e9bf1a1555508dfb69cebde82
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 575e194cf952f02a3fe4fce9e955e45e1bc3653d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132437"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673916"
 ---
 # <a name="closeclrenumeration-function"></a>CloseCLREnumeration — Funkcja
+
 Zamyka wszystkie prawidłowe zdarzenia uruchamiania środowiska uruchomieniowego języka wspólnego (CLR), które znajdują się w tablicy dojść zwracanych przez [funkcję EnumerateCLRs —](enumerateclrs-function.md), i zwalnia pamięć dla tablic uchwytów i ścieżek ciągów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT CloseCLREnumeration (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pHandleArray`  
  podczas Wskaźnik do tablicy dojść do zdarzeń zwróconych z [funkcji EnumerateCLRs —](enumerateclrs-function.md).  
   
@@ -44,23 +46,25 @@ HRESULT CloseCLREnumeration (
  podczas Wskaźnik do tablicy ścieżek ciągów CLR zwracanych z [funkcji EnumerateCLRs —](enumerateclrs-function.md).  
   
  `dwArrayLength`  
- podczas Wartość DWORD, która zawiera rozmiar (długość) `pHandleArray` lub `pStringArray` (są takie same).  
+ podczas Wartość DWORD, która zawiera rozmiar (długość) `pHandleArray` lub `pStringArray` (jest taka sama).  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK  
  Uchwyty otwarte przez [funkcję EnumerateCLRs —](enumerateclrs-function.md) są zamknięte, a pamięć przydzieloną dla dojścia i tablic ciągów jest zwalniana.  
   
  E_INVALIDARG  
- Długość `pHandleArray` nie jest zgodna z długością przekazaną w `dwArrayLength`.  
+ Długość `pHandleArray` nie pasuje do długości, która została przeniesiona `dwArrayLength` .  
   
  E_FAIL (lub inne kody powrotne E_)  
- Funkcja nie może zwolnić pamięci dla `pHandleArray` i `pStringArray`.  
+ Funkcja nie może zwolnić pamięci dla `pHandleArray` i `pStringArray` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** dbgshim. h  
   
- **Biblioteka:** dbgshim. dll  
+ **Biblioteka:** dbgshim.dll  
   
  **.NET Framework wersje:** 3,5 SP1

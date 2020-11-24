@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93424a87-ba13-4fa1-b4dc-69d44437b7ae
 topic_type:
 - apiref
-ms.openlocfilehash: 4c83ffaf920abe005ba987e0a744e13aa0d3c016
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 199c130d70cfbf0d383c2e0dc148ffe3dc1242d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615673"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673566"
 ---
 # <a name="iclrerrorreportingmanagerbegincustomdump-method"></a>ICLRErrorReportingManager::BeginCustomDump — Metoda
+
 Określa konfigurację niestandardowych zrzutów sterty dla raportowania błędów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT BeginCustomDump (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwFlavor`  
  podczas Wartość [ECustomDumpFlavor —](ecustomdumpflavor-enumeration.md) , która wskazuje rodzaj zrzutu sterty, na którym ma zostać skompilowany zrzut sterty niestandardowej.  
   
@@ -61,22 +63,24 @@ HRESULT BeginCustomDump (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Po powrocie metody E_FAIL nie będzie można używać środowiska CLR w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `BeginCustomDump`Metoda ustawia niestandardową konfigurację zrzutu sterty. Metoda [EndCustomDump —](iclrerrorreportingmanager-endcustomdump-method.md) czyści konfigurację zrzutu sterty niestandardowej i zwalnia wszystkie skojarzone Stany. Powinien być wywoływany po zakończeniu niestandardowego zrzutu sterty.  
   
 > [!IMPORTANT]
 > Niepowodzenie wywołania `EndCustomDump` powoduje przeciek pamięci.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [CustomDumpItem, struktura](customdumpitem-structure.md)
+- [CustomDumpItem — Struktura](customdumpitem-structure.md)
 - [ECustomDumpFlavor — Wyliczenie](ecustomdumpflavor-enumeration.md)
-- [ICLRErrorReportingManager, interfejs](iclrerrorreportingmanager-interface.md)
+- [ICLRErrorReportingManager — Interfejs](iclrerrorreportingmanager-interface.md)

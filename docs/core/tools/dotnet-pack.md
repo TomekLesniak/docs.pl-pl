@@ -2,12 +2,12 @@
 title: polecenie dotnet Pack
 description: Polecenie programu dotnet Pack tworzy pakiety NuGet dla projektu .NET.
 ms.date: 04/28/2020
-ms.openlocfilehash: 4312ea64a75fa89eae58cdb41a6dc3463cdd215c
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 3ca7947b4ed9902b163f09a7b57696f304610cce
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634236"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674804"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -118,7 +118,7 @@ Projekty sieci Web nie są domyślnie objęte pakietem. Aby zastąpić zachowani
 
 - **`-s|--serviceable`**
 
-  Ustawia flagę obsługi w pakiecie. Aby uzyskać więcej informacji, zobacz [blog platformy .NET: .NET 4.5.1 obsługuje aktualizacje zabezpieczeń firmy Microsoft dla bibliotek NuGet programu .NET](https://aka.ms/nupkgservicing).
+  Ustawia flagę obsługi w pakiecie. Aby uzyskać więcej informacji, zobacz [blog platformy .NET: .NET Framework 4.5.1 obsługuje aktualizacje zabezpieczeń firmy Microsoft dla bibliotek NuGet programu .NET](https://aka.ms/nupkgservicing).
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 
@@ -185,7 +185,7 @@ Projekty sieci Web nie są domyślnie objęte pakietem. Aby zastąpić zachowani
   ```
 
   Informacje o sposobach korzystania z `NuspecFile` programu, `NuspecBasePath` i `NuspecProperties` można znaleźć w następujących zasobach:
-  
+
   - [Pakowanie przy użyciu elementu. nuspec](/nuget/reference/msbuild-targets#packing-using-a-nuspec)
   - [Zaawansowane punkty rozszerzenia do tworzenia dostosowanego pakietu](/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
   - [Właściwości globalne](/visualstudio/msbuild/msbuild-properties#global-properties)

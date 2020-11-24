@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c15cf3b-164c-49d1-8e57-e42949d55acf
 topic_type:
 - apiref
-ms.openlocfilehash: e0c60d6e74c48531a223f6dbb35125b5a2017cbb
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 7e0c689dad0c288e3af3a3d64ee1bba1c44053c1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763046"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674531"
 ---
 # <a name="iclrstrongnamestrongnamekeyinstall-method"></a>ICLRStrongName::StrongNameKeyInstall — Metoda
+
 Importuje parę kluczy publiczny/prywatny do kontenera.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT StrongNameKeyInstall (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `wszKeyContainer`  
- podczas Nazwa kontenera kluczy. `wszKeyContainer`nie może być pustym ciągiem.  
+ podczas Nazwa kontenera kluczy. `wszKeyContainer` nie może być pustym ciągiem.  
   
  `pbKeyBlob`  
  podczas Para kluczy binarnych.  
@@ -46,21 +48,24 @@ HRESULT StrongNameKeyInstall (
  podczas Rozmiar, w bajtach, z `pbKeyBlob` .  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `S_OK`Jeśli metoda została ukończona pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
+
+ `S_OK` Jeśli metoda została ukończona pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby usunąć kontener kluczy, użyj metody [ICLRStrongName:: StrongNameKeyDelete —](iclrstrongname-strongnamekeydelete-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [StrongNameKeyDelete, metoda](iclrstrongname-strongnamekeydelete-method.md)
-- [ICLRStrongName, interfejs](iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](iclrstrongname-interface.md)

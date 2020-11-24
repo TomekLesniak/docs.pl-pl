@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: eb412622-77cc-4abd-a2cd-c910fe8edd54
 topic_type:
 - apiref
-ms.openlocfilehash: 9a402b7dfc3ece9d38994ed897162fe0d81ff0b9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: fda234a6a280aeea1f497ad195d6d41efb6aa951
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503305"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674349"
 ---
 # <a name="icorprofilercallbackobjectallocated-method"></a>ICorProfilerCallback::ObjectAllocated — Metoda
+
 Powiadamia program profilujący, że pamięć w stercie została przypisana dla obiektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT ObjectAllocated(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `objectId`  
  podczas Identyfikator obiektu, dla którego przydzielono pamięć.  
   
@@ -41,9 +43,11 @@ HRESULT ObjectAllocated(
  podczas Identyfikator klasy, której obiekt jest wystąpieniem.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ObjectedAllocated`Metoda nie jest wywoływana dla alokacji z pamięci stosu lub niezarządzanej. `classId`Parametr może odwoływać się do klasy w zarządzanym kodzie, który nie został jeszcze załadowany. Profiler otrzyma wywołanie zwrotne ładowania klasy dla tej klasy bezpośrednio po `ObjectAllocated` wywołaniu zwrotnym.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

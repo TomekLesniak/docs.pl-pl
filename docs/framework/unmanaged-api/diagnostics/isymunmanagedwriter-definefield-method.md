@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6a1f797-dbf4-40f5-ab99-d9b4bfb26148
 topic_type:
 - apiref
-ms.openlocfilehash: aba551a1973a41a909869316cda07e8d655e9882
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 5683c10938873821cbe998dbf13937a6a7d24d7c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614841"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675090"
 ---
 # <a name="isymunmanagedwriterdefinefield-method"></a>ISymUnmanagedWriter::DefineField — Metoda
+
 Definiuje pojedynczą zmienną, która nie znajduje się w metodzie. Ta metoda jest używana w przypadku niektórych pól klas, pól bitowych i tak dalej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ HRESULT DefineField(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `parent`  
  podczas Typ metadanych lub token metody.  
   
@@ -51,7 +53,7 @@ HRESULT DefineField(
  podczas Atrybuty pola.  
   
  `cSig`  
- podczas `ULONG32`Jest to rozmiar (w znakach) bufora, który musi zawierać sygnaturę pola.  
+ podczas `ULONG32` Jest to rozmiar (w znakach) bufora, który musi zawierać sygnaturę pola.  
   
  `signature`  
  podczas Tablica sygnatur pól.  
@@ -69,9 +71,11 @@ HRESULT DefineField(
  podczas Trzeci adres dla specyfikacji pola.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

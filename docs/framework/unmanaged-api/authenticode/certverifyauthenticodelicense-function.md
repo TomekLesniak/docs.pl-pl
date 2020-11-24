@@ -8,14 +8,15 @@ api_location:
 api_type:
 - DLLExport
 ms.assetid: 00118de7-33c6-41c4-8e1f-5d5e35e0da83
-ms.openlocfilehash: 7cd25a24533b04dc45ee734f9e9639391311405a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 388814d1c63f048c0aa231a1d0058a390cba9493
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099742"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674063"
 ---
 # <a name="certverifyauthenticodelicense-function"></a>Funkcja CertVerifyAuthenticodeLicense
+
 Weryfikuje ważność licencji XrML Authenticode.  
   
 ## <a name="syntax"></a>Składnia  
@@ -30,6 +31,7 @@ HRESULT CertVerifyAuthenticodeLicense (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pLicenseBlob`  
  podczas Licencja na umowę XrML Authenticode do zweryfikowania.  
   
@@ -61,10 +63,11 @@ HRESULT CertVerifyAuthenticodeLicense (
  Zobacz [strukturę AXL_AUTHENTICODE_TIMESTAMPER_INFO](axl-authenticode-timestamper-info-structure.md).  
   
 ## <a name="return-value"></a>Wartość zwracana  
- Zwraca `S_OK`, jeśli się powiedzie. W przeciwnym razie zwraca kod błędu.  
+
+ Zwraca w `S_OK` przypadku powodzenia. W przeciwnym razie zwraca kod błędu.  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [Authenticode](index.md)
 - [GetHashFromHandle, metoda](../hosting/iclrstrongname-gethashfromhandle-method.md)
-- [ICLRStrongName, interfejs](../hosting/iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](../hosting/iclrstrongname-interface.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72dd76ba-239e-45ac-9ded-318fb07d6c6d
 topic_type:
 - apiref
-ms.openlocfilehash: 901c62e6f2519fc4f9251f348c77b11bbe0992be
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 72b371d72b2f055f2840da5595d9022ffd7e2507
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504348"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674752"
 ---
 # <a name="epolicyaction-enumeration"></a>EPolicyAction — Wyliczenie
+
 Opisuje akcje zasad, które host może ustawić dla operacji opisanych przez [EClrOperation —](eclroperation-enumeration.md) i błędy opisane przez [EClrFailure —](eclrfailure-enumeration.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -57,20 +58,22 @@ typedef enum {
 |`eUnloadAppDomain`|Określa, że <xref:System.AppDomain> powinny być zwolnione. Środowisko CLR próbuje uruchomić finalizatorów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Host ustawia akcje zasad przez wywołanie metod interfejsu [ICLRPolicyManager](iclrpolicymanager-interface.md) . Aby uzyskać informacje na temat prosta i łagodnego przerwania, zobacz Wyliczenie [EClrOperation —](eclroperation-enumeration.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [EClrFailure — Wyliczenie](eclrfailure-enumeration.md)
-- [ICLRPolicyManager, interfejs](iclrpolicymanager-interface.md)
-- [IHostPolicyManager, interfejs](ihostpolicymanager-interface.md)
+- [ICLRPolicyManager — Interfejs](iclrpolicymanager-interface.md)
+- [IHostPolicyManager — Interfejs](ihostpolicymanager-interface.md)
 - [Hosting — Wyliczenia](hosting-enumerations.md)

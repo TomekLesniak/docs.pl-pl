@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8bb5acf5-cf4b-4ccb-93f1-46db1f3f8bf3
 topic_type:
 - apiref
-ms.openlocfilehash: 856e01c7934709a17556aa53851204bf6a917de8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 1da8f414ccf0c1eed3ec7dde842dd381440a3fa9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500939"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674960"
 ---
 # <a name="cor_prf_function-structure"></a>COR_PRF_FUNCTION — Struktura
+
 Zapewnia unikatową reprezentację funkcji przez połączenie jej identyfikatora z IDENTYFIKATORem jego ponownie skompilowanej wersji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJit
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -50,4 +52,4 @@ typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJit
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profiling — struktury](profiling-structures.md)
+- [Profiling — Struktury](profiling-structures.md)

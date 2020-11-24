@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7d0d6fb7-bc9d-40f0-8163-c0d162eaba7d
 topic_type:
 - apiref
-ms.openlocfilehash: 5c764031f709eefe61022d0662f37bc5d3f3e281
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e8dd9f21803021975f4651ba3e6e5f4d3da0ea82
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501004"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674999"
 ---
 # <a name="cor_prf_ex_clause_info-structure"></a>COR_PRF_EX_CLAUSE_INFO — Struktura
+
 Przechowuje informacje o konkretnym wystąpieniu klauzuli wyjątku i skojarzonej z nią ramce.  
   
 ## <a name="syntax"></a>Składnia  
@@ -45,6 +46,7 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
 |`shadowStackPointer`|Wskaźnik do stosu cienia. Ta wartość jest zawartością rejestru zestawu Winsock i ma zastosowanie tylko do IA64.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Po otrzymaniu powiadomienia o wyjątku [ICorProfilerInfo2:: GetNotifiedExceptionClauseInfo —](icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) może służyć do uzyskania natywnego adresu i ramki dla klauzuli wyjątku ( `catch` / `finally` /Filter), która ma zostać uruchomiona lub właśnie została uruchomiona.  
   
  Wykonanie klauzuli wyjątku obejmuje te wywołania zwrotne z aparatu plików wykonywalnych języka wspólnego (CLR):  
@@ -62,6 +64,7 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
 - [ICorProfilerCallback:: ExceptionSearchFilterLeave —](icorprofilercallback-exceptionsearchfilterleave-method.md)  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -72,4 +75,4 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profiling — struktury](profiling-structures.md)
+- [Profiling — Struktury](profiling-structures.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d5c07d86-045d-4391-893b-0bcd2959f90e
 topic_type:
 - apiref
-ms.openlocfilehash: 0a433ccb81ef62ac92a4553a838a2c98a04fc7c1
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 18416954517c3cac09d013b8075bd097305a1dca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212818"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673972"
 ---
 # <a name="icordebugprocesswritememory-method"></a>ICorDebugProcess::WriteMemory — Metoda
+
 Zapisuje dane w obszarze pamięci w tym procesie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT WriteMemory(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `address`  
- podczas `CORDB_ADDRESS`Wartość, która jest adresem podstawowym obszaru pamięci, do którego zapisywane są dane. Przed przeprowadzeniem transferu danych system weryfikuje, czy obszar pamięci o określonym rozmiarze, zaczynając od adresu podstawowego, jest dostępny do zapisu. Jeśli nie jest dostępny, Metoda kończy się niepowodzeniem.  
+ podczas `CORDB_ADDRESS` Wartość, która jest adresem podstawowym obszaru pamięci, do którego zapisywane są dane. Przed przeprowadzeniem transferu danych system weryfikuje, czy obszar pamięci o określonym rozmiarze, zaczynając od adresu podstawowego, jest dostępny do zapisu. Jeśli nie jest dostępny, Metoda kończy się niepowodzeniem.  
   
  `size`  
  podczas Liczba bajtów do zapisania w obszarze pamięci.  
@@ -49,11 +51,13 @@ HRESULT WriteMemory(
  określoną Wskaźnik do zmiennej, która odbiera liczbę bajtów zapisywanych w obszarze pamięci w tym procesie. Jeśli `written` ma wartość null, ten parametr jest ignorowany.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dane są automatycznie zapisywane za dowolnymi punktami przerwania. W .NET Framework w wersji 2,0 debugery natywne nie powinny używać tej metody do dodawania punktów przerwania do strumienia instrukcji. Zamiast tego użyj [ICorDebugProcess2:: SetUnmanagedBreakpoint —](icordebugprocess2-setunmanagedbreakpoint-method.md) .  
   
  `WriteMemory`Metoda powinna być używana tylko poza kodem zarządzanym. Ta metoda może uszkodzić środowisko uruchomieniowe, jeśli jest używane nieprawidłowo.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a13ec8a6-8e18-4acb-8054-77f5b1a0e0b9
 topic_type:
 - apiref
-ms.openlocfilehash: 969d74933e908674225684a2e77d5c4804b86122
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 33927cc0e3a3cdaad70d437f9dd5ca5dfdcdc46b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615647"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673565"
 ---
 # <a name="iclrerrorreportingmanagergetbucketparametersforcurrentexception-method"></a>ICLRErrorReportingManager::GetBucketParametersForCurrentException — Metoda
+
 Pobiera pakiet programu Watson dla bieżącego wyjątku w wątku wywołującym.  
   
  *Zasobnik* to kolekcja danych błędów, która jest powiązana z tą samą wadą kodu. Program *Watson* odwołuje się do zestawu technologii służących do zbierania i analizowania danych, które są skojarzone z wyjątkiem.  
@@ -36,18 +37,20 @@ HRESULT GetBucketParametersForCurrentException(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pParams`  
  określoną Wskaźnik do struktury [BucketParameters —](bucketparameters-structure.md) , która zawiera dane błędów dla wyjątku.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRErrorReportingManager, interfejs](iclrerrorreportingmanager-interface.md)
+- [ICLRErrorReportingManager — Interfejs](iclrerrorreportingmanager-interface.md)

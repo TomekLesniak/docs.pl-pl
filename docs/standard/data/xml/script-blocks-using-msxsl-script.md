@@ -5,23 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-ms.openlocfilehash: 3cb65142243d1f910ffd0fb85750ba62786d79f0
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 57608ef143e6efd7f59d12d808274fa17961c483
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824703"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673478"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Bloki skryptów i element msxsl:script
+
 <xref:System.Xml.Xsl.XslCompiledTransform>Klasa obsługuje skrypty osadzone przy użyciu `msxsl:script` elementu. Po załadowaniu arkusza stylów wszystkie zdefiniowane funkcje są kompilowane do języka pośredniego firmy Microsoft (MSIL) przez Code Document Object Model (CodeDOM) i są wykonywane w czasie wykonywania. Zestaw wygenerowany z osadzonego bloku skryptu jest oddzielony od zestawu wygenerowanego dla arkusza stylów.  
   
 ## <a name="enable-xslt-script"></a>Włącz skrypt XSLT  
+
  Obsługa skryptów osadzonych jest opcjonalnym ustawieniem XSLT dla <xref:System.Xml.Xsl.XslCompiledTransform> klasy. Obsługa skryptów jest domyślnie wyłączona. Aby włączyć obsługę skryptów, należy utworzyć <xref:System.Xml.Xsl.XsltSettings> obiekt z <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A> właściwością ustawioną na `true` i przekazać obiekt do <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody.  
   
 > [!NOTE]
 > Obsługa skryptów XSLT powinna być włączona tylko wtedy, gdy wymagana jest obsługa skryptów i Pracujesz w w pełni zaufanym środowisku.  
   
 ## <a name="msxslscript-element-definition"></a>msxsl: definicja elementu skryptu  
+
  `msxsl:script`Element to rozszerzenie Microsoft do zalecenia XSLT 1,0 i ma następującą definicję:  
   
 ```xml  
@@ -46,6 +49,7 @@ ms.locfileid: "94824703"
 ```  
   
 ## <a name="script-functions"></a>Funkcje skryptu  
+
  Funkcje mogą być deklarowane w obrębie `msxsl:script` elementu. Gdy funkcja jest zadeklarowana, jest zawarta w bloku skryptu. Arkusze stylów mogą zawierać wiele bloków skryptu, z których każda działa niezależnie od siebie. Oznacza to, że jeśli wykonujesz wewnątrz bloku skryptu, nie można wywołać funkcji, która została zdefiniowana w innym bloku skryptu, chyba że jest zadeklarowana jako ma tę samą przestrzeń nazw i ten sam język skryptowy. Ponieważ każdy blok skryptu może znajdować się w własnym języku, a blok jest analizowany zgodnie z regułami gramatyki tego analizatora języka, zalecamy użycie odpowiedniej składni dla używanego języka. Na przykład jeśli jesteś w bloku skryptu w języku Microsoft C#, użyj składni komentarza języka C#.  
   
  Podane argumenty i zwracane wartości do funkcji mogą być dowolnego typu. Ponieważ typy W3C XPath są podzbiorem typów środowiska uruchomieniowego języka wspólnego (CLR), konwersja typu odbywa się na typach, które nie są uważane za typ XPath. W poniższej tabeli przedstawiono odpowiednie typy W3C i odpowiedni typ środowiska CLR.  
@@ -63,9 +67,11 @@ ms.locfileid: "94824703"
  Wszystkie inne typy zgłaszają błąd.  
   
 ### <a name="importing-namespaces-and-assemblies"></a>Importowanie przestrzeni nazw i zestawów  
+
  <xref:System.Xml.Xsl.XslCompiledTransform>Klasa wstępnie definiuje zestaw zestawów i przestrzeni nazw, które są obsługiwane domyślnie przez `msxsl:script` element. Można jednak użyć klas i elementów członkowskich należących do przestrzeni nazw, która nie znajduje się na wstępnie zdefiniowanej liście przez zaimportowanie zestawu i przestrzeni nazw w `msxsl:script` bloku.  
   
 #### <a name="assemblies"></a>Zestawy  
+
  Następujące dwa zestawy są domyślnie przywoływane:  
   
 - PLik System.dll  
@@ -88,7 +94,8 @@ ms.locfileid: "94824703"
   
  Ten `name` atrybut zawiera nazwę zestawu, a `href` atrybut zawiera ścieżkę do zestawu. Nazwa zestawu może być pełną nazwą, taką jak "System. Data, Version = 2.0.3600.0, Culture = neutral, PublicKeyToken = b77a5c561934e089" lub krótką nazwą, taką jak "System. Web".  
   
-#### <a name="namespaces"></a>Przestrzenie nazw  
+#### <a name="namespaces"></a>Namespaces  
+
  Domyślnie są uwzględniane następujące przestrzenie nazw:  
   
 - System  
@@ -119,15 +126,18 @@ ms.locfileid: "94824703"
 ```  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano osadzony skrypt do obliczenia obwodu okręgu, który ma swój promień.  
   
  [!code-csharp[XSLT_Script#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Script/CS/xslt_script.cs#1)]
  [!code-vb[XSLT_Script#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_Script/VB/xslt_script.vb#1)]  
   
 #### <a name="numberxml"></a>number.xml  
+
  [!code-xml[XSLT_Script#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/number.xml#2)]  
   
 #### <a name="calcxsl"></a>calc. xsl  
+
  [!code-xml[XSLT_Script#3](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/calc.xsl#3)]  
   
 ### <a name="output"></a>Dane wyjściowe  

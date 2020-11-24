@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 22dc6dea-b1b9-4982-a730-a022d586b117
 topic_type:
 - apiref
-ms.openlocfilehash: 8b6eab8156f72847eb6dd3369950f9b46a3fc877
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 001be0c5e8897bacf76d2a044fb9400768473052
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007562"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673536"
 ---
 # <a name="corpekind-enumeration"></a>CorPEKind — Wyliczenie
+
 Zawiera wartości opisujące przenośny plik wykonywalny (PE), który jest zwracany przez wywołanie [IMetaDataImport2:: GetPEKind —](imetadataimport2-getpekind-method.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -51,15 +52,17 @@ typedef enum CorPEKind {
 |pe32BitPreferred|Wskazuje, że ten plik PE jest niezależny od platformy i preferowany do załadowania w środowisku 32-bitowym.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Te wartości mogą być używane w kombinacjach bitowych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

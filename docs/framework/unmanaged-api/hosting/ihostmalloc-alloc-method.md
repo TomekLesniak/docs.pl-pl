@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a3007f5e-d75d-4b37-842b-704e9edced5e
 topic_type:
 - apiref
-ms.openlocfilehash: 6f58e2290afa166d48306c0bbb50edd1df36888b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 5858b03676db0839621b121131ded4da9950ce88
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804646"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675129"
 ---
 # <a name="ihostmallocalloc-method"></a>IHostMAlloc::Alloc — Metoda
+
 Żąda od sterty przydzielenia przez hosta określonej ilości pamięci.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT Alloc (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cbSize`  
  podczas Rozmiar (w bajtach) bieżącego żądania alokacji pamięci.  
   
@@ -49,7 +51,7 @@ HRESULT Alloc (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`Alloc`pomyślnie zwrócono.|  
+|S_OK|`Alloc` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -58,18 +60,20 @@ HRESULT Alloc (
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby ukończyć żądanie alokacji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR Pobiera wskaźnik interfejsu do `IHostMalloc` wystąpienia, wywołując metodę [IHostMemoryManager::](ihostmemorymanager-createmalloc-method.md) CreateInstance.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IHostMemoryManager, interfejs](ihostmemorymanager-interface.md)
-- [IHostMalloc, interfejs](ihostmalloc-interface.md)
+- [IHostMemoryManager — Interfejs](ihostmemorymanager-interface.md)
+- [IHostMalloc — Interfejs](ihostmalloc-interface.md)

@@ -8,19 +8,21 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, receiving data
 ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
-ms.openlocfilehash: 3a709e40908afcbd1a228aab00fe36be43097826
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c0fe9d1aa0e907ab28cf53cc97488a15e6434cda
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825731"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674843"
 ---
 # <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Instrukcje: Wykonywanie akcji w przypadku odebrania danych przez blok przepływu danych
+
 Typy *bloku wykonywania przepływu danych* wywołują delegata dostarczony przez użytkownika po odebraniu danych. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>Klasy, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType> i <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> są typu przepływu danych wykonywania. Możesz użyć `delegate` słowa kluczowego ( `Sub` w Visual Basic), <xref:System.Action%601> , <xref:System.Func%602> lub wyrażenia lambda, gdy podajesz funkcję służbową do bloku przepływu danych wykonywania. W tym dokumencie opisano sposób użycia <xref:System.Func%602> i wyrażenia lambda do wykonania akcji w blokach wykonywania.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie za pomocą przepływu danych można odczytać plik z dysku i oblicza liczbę bajtów w tym pliku, które są równe zero. Służy on <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> do odczytywania pliku i obliczania liczby bajtów zero oraz <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> do drukowania liczby 0 bajtów do konsoli. <xref:System.Threading.Tasks.Dataflow.TransformBlock%602>Obiekt Określa <xref:System.Func%602> obiekt, który ma być wykonywany, gdy bloki odbierają dane. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>Obiekt używa wyrażenia lambda do drukowania do konsoli o liczbie bajtów, które są odczytywane.  
   
  [!code-csharp[TPLDataflow_ExecutionBlocks#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#1)]
@@ -31,6 +33,7 @@ Typy *bloku wykonywania przepływu danych* wywołują delegata dostarczony przez
  Podsumowanie sekcji typów delegatów w dokumencie [przepływu danych](dataflow-task-parallel-library.md) podsumowuje typy delegatów, które można dostarczyć <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> , <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> i <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> obiektów. W tabeli określono również, czy typ delegata działa synchronicznie, czy asynchronicznie.  
   
 ## <a name="robust-programming"></a>Niezawodne programowanie  
+
  Ten przykład udostępnia delegata typu <xref:System.Func%602> do obiektu, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> Aby wykonać zadanie synchronicznie bloku przepływu danych. Aby włączyć blok przepływu danych, aby zachowywać się asynchronicznie, podaj delegata typu <xref:System.Func%601> do bloku przepływu danych. Gdy blok przepływu danych zachowuje się asynchronicznie, zadanie bloku przepływu danych jest wykonywane tylko wtedy, gdy zwracany obiekt zostaje zakończony <xref:System.Threading.Tasks.Task%601> . Poniższy przykład modyfikuje `CountBytes` metodę i używa operatorów [asynchronicznych](../../csharp/language-reference/keywords/async.md) i [oczekujących](../../csharp/language-reference/operators/await.md) ([asynchronicznych](../../visual-basic/language-reference/modifiers/async.md) i [oczekujących](../../visual-basic/language-reference/operators/await-operator.md) w Visual Basic), aby asynchronicznie obliczyć łączną liczbę bajtów, które są równe zero w podanym pliku. <xref:System.IO.FileStream.ReadAsync%2A>Metoda wykonuje operacje odczytu pliku asynchronicznie.  
   
  [!code-csharp[TPLDataflow_ExecutionBlocks#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#2)]

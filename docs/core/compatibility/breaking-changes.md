@@ -1,55 +1,23 @@
 ---
-title: Zmiany powodujące niezgodność
-description: Dowiedz się więcej o istotnych zmianach w każdej wersji platformy .NET Core.
-ms.date: 11/27/2019
-ms.openlocfilehash: eea6542acb9fa659af764bfd3a2af00fd9740191
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+title: Przegląd informacji o dzieleniu zmian
+description: Dowiedz się, jak nawigować w dokumentacji dotyczącej podziału zmian platformy .NET.
+ms.date: 11/16/2020
+ms.openlocfilehash: df3a35954ce819c8a3d19eba1a0e9b4692d667e7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656278"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675376"
 ---
-# <a name="breaking-change-selectors"></a>Selektory zmiany przerywania
+# <a name="breaking-changes-reference-overview"></a>Przegląd informacji o dzieleniu zmian
 
-Poniższe wersje i selektory obszarów zapewniają przefiltrowaną listę mających zastosowanie istotnych zmian między różnymi wersjami programu .NET Core, ASP.NET Core i EF Core. Możesz również przejrzeć artykuły z wersjami lub technologiami obszarowymi w spisie treści.
-
-## <a name="by-version"></a>Według wersji
-
-Wybierz aktualnie docelową wersję platformy .NET, a następnie wersję platformy .NET Core, do której chcesz przeprowadzić migrację:
-
-> [!div class="op_multi_selector" title1="Z wersji docelowej" title2="Do zmigrowanej wersji"]
->
-> - [(3,1 | 5,0)](3.1-5.0.md)
-> - [(3,0 | 3,1)](3.0-3.1.md)
-> - [(2,2 | 3,1)](2.2-3.1.md)
-> - [(2,2 | 3,0)](2.2-3.0.md)
-> - [(2,0 | 2,1)](2.0-2.1.md)
-> - [(.NET Framework | .NET Core)](fx-core.md)
-
-## <a name="by-technology-area"></a>Według obszaru technologii
-
-Wybierz obszar technologii .NET Core, który Cię interesuje. Indywidualne zmiany są uporządkowane według wersji platformy .NET Core.
-
-> [!div class="op_single_selector"]
->
-> - [ASP.NET Core](aspnetcore.md)
-> - [Analiza kodu](code-analysis.md)
-> - [Podstawowe biblioteki platformy .NET](corefx.md)
-> - [Kryptografia](cryptography.md)
-> - [EF Core](/ef/core/what-is-new/ef-core-3.0/breaking-changes)
-> - [Globalizacja](globalization.md)
-> - [Interop](interop.md)
-> - [Sieć](networking.md)
-> - [Serializacja](serialization.md)
-> - [Visual Basic](visualbasic.md)
-> - [Windows Forms](winforms.md)
-> - [WPF](wpf.md)
+Ta sekcja referencyjna umożliwia znalezienie istotnych zmian, które mogą być stosowane w przypadku uaktualniania aplikacji do nowszej wersji platformy .NET. Możesz nawigować po spisie treści przez platformę .NET lub przez obszar technologii.
 
 ## <a name="github-issues-and-announcements"></a>Problemy i anonse w usłudze GitHub
 
-Można również wyświetlić poszczególne problemy, które opisują istotne zmiany wprowadzone w programie .NET Core w następujących repozytoriach usługi GitHub:
+Możesz również wyświetlić poszczególne problemy, które szczegółowo opisują istotne zmiany wprowadzone w programie .NET w następujących repozytoriach usługi GitHub:
 
-- W przypadku platformy .NET Core, repozytorium [dotnet/docs](https://github.com/dotnet/docs/issues?q=is%3Aissue+label%3Abreaking-change) .
+- W przypadku oprogramowania .NET Core i .NET 5 lub repozytorium [dotnet/docs](https://github.com/dotnet/docs/issues?q=is%3Aissue+label%3Abreaking-change) .
 - Dla ASP.NET Core, repozytorium [ASPNET/anonsów](https://github.com/aspnet/Announcements/issues?q=is%3Aissue+is%3Aopen+label%3A%22Breaking+change%22+label%3A3.0.0) .
 - W przypadku Entity Framework Core, repozytorium [dotnet/efcore](https://github.com/dotnet/efcore/issues?q=is%3Aopen+is%3Aissue+label%3Abreaking-change) .
 

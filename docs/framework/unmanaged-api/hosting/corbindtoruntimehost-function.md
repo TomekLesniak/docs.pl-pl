@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5c826ba3-8258-49bc-a417-78807915fcaf
 topic_type:
 - apiref
-ms.openlocfilehash: 9d1c7f4f5b881f7f55539602c152b557a7950472
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 7ba35823ccb670ad0201d1950687dc83cc9ba64a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504410"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673749"
 ---
 # <a name="corbindtoruntimehost-function"></a>CorBindToRuntimeHost — Funkcja
+
 Włącza hosty do załadowania określonej wersji środowiska uruchomieniowego języka wspólnego (CLR) do procesu.  
   
  Ta funkcja jest przestarzała w .NET Framework 4.  
@@ -42,6 +43,7 @@ HRESULT CorBindToRuntimeHost (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pwszVersion`  
  podczas Ciąg opisujący wersję środowiska CLR, które chcesz załadować.  
   
@@ -69,7 +71,7 @@ HRESULT CorBindToRuntimeHost (
  podczas Zestaw flag kontrolujących współbieżne odzyskiwanie pamięci, kod neutralny przez domenę i zachowanie `pwszVersion` parametru. Wartość domyślna to pojedyncza domena, jeśli flaga nie jest ustawiona. Aby uzyskać listę obsługiwanych wartości, zobacz [wyliczenie STARTUP_FLAGS](startup-flags-enumeration.md).  
   
  `rclsid`  
- podczas `CLSID`Klasy coclass implementującej interfejs [ICorRuntimeHost](icorruntimehost-interface.md) lub [ICLRRuntimeHost](iclrruntimehost-interface.md) . Obsługiwane wartości to CLSID_CorRuntimeHost lub CLSID_CLRRuntimeHost.  
+ podczas `CLSID` Klasy coclass implementującej interfejs [ICorRuntimeHost](icorruntimehost-interface.md) lub [ICLRRuntimeHost](iclrruntimehost-interface.md) . Obsługiwane wartości to CLSID_CorRuntimeHost lub CLSID_CLRRuntimeHost.  
   
  `riid`  
  podczas Żądanego `IID` interfejsu. Obsługiwane wartości to IID_ICorRuntimeHost lub IID_ICLRRuntimeHost.  
@@ -78,19 +80,20 @@ HRESULT CorBindToRuntimeHost (
  określoną Wskaźnik interfejsu do wersji środowiska uruchomieniowego, która została załadowana.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. idl  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [CorBindToCurrentRuntime, funkcja](corbindtocurrentruntime-function.md)
-- [CorBindToRuntime, funkcja](corbindtoruntime-function.md)
+- [CorBindToCurrentRuntime — Funkcja](corbindtocurrentruntime-function.md)
+- [CorBindToRuntime — Funkcja](corbindtoruntime-function.md)
 - [CorBindToRuntimeByCfg — Funkcja](corbindtoruntimebycfg-function.md)
-- [CorBindToRuntimeEx, funkcja](corbindtoruntimeex-function.md)
-- [ICorRuntimeHost, interfejs](icorruntimehost-interface.md)
+- [CorBindToRuntimeEx — Funkcja](corbindtoruntimeex-function.md)
+- [ICorRuntimeHost — Interfejs](icorruntimehost-interface.md)
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

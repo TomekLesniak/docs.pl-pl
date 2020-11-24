@@ -2,14 +2,15 @@
 title: Obsługa funkcji msxsl:node-set()
 ms.date: 03/30/2017
 ms.assetid: d0cbf517-d9f6-4097-9851-4fa62903decd
-ms.openlocfilehash: 26ae3014af93377dc106b5638ba194bd38e3dc9e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6c84e3789916e8d842e51e8417cb27505cb5cba6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818547"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673400"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a>Obsługa funkcji msxsl:node-set()
+
 `msxsl:node-set`Funkcja umożliwia konwertowanie fragmentu drzewa wynikowego na zestaw węzłów. Zestaw węzłów powstających zawsze zawiera pojedynczy węzeł i jest węzłem głównym drzewa.  
   
 > [!NOTE]
@@ -18,6 +19,7 @@ ms.locfileid: "94818547"
  `msxsl:node-set`Funkcja umożliwia konwertowanie fragmentu drzewa wynikowego na zestaw węzłów. Zestaw węzłów powstających zawsze zawiera pojedynczy węzeł i jest węzłem głównym drzewa.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie `$books` jest to zmienna, która jest drzewem węzła w arkuszu stylów. Instrukcja for-each łączona z `node-set` funkcją pozwala użytkownikowi na iterację tego drzewa węzłów jako zestawu węzłów.  
   
 ## <a name="nodesetxsl"></a>NodeSet. xsl  
@@ -43,6 +45,7 @@ ms.locfileid: "94818547"
 ```  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Dane wyjściowe transformacji to  
   
 ```xml  

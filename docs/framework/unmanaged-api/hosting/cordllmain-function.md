@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc7b51cf-39d3-48ec-a5cb-2f179fbefff8
 topic_type:
 - apiref
-ms.openlocfilehash: 3b2322f708afed08172f87e843c225aa9c60d9d3
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 1b3ebcabc66ee7ca29245bb02d958be311bc65fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616609"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673699"
 ---
 # <a name="_cordllmain-function"></a>\_CorDllMain, funkcja
 
@@ -36,6 +36,7 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hInst`  
  podczas Dojście wystąpienia załadowanego modułu.  
   
@@ -46,9 +47,11 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
  podczas Przestrzeń.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca `true` sukces i w `false` przypadku wystąpienia błędu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta funkcja jest wywoływana przez program ładujący systemu operacyjnego dla zestawów bibliotek DLL. W przypadku zestawów wykonywalnych moduł ładujący wywołuje funkcję [ \_ CorExeMain](corexemain-function.md) .  
   
  Moduł ładujący systemu operacyjnego wywołuje tę metodę niezależnie od punktu wejścia określonego w pliku DLL.  
@@ -63,7 +66,7 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ded1e492-a782-4185-9c66-709e421c1782
 topic_type:
 - apiref
-ms.openlocfilehash: 8b7dcdcc6d9d0106af1bb83ee591cff76239b416
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d319382b577844a804c3e4562676491a15de5f63
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504439"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673790"
 ---
 # <a name="corbindtoruntimebycfg-function"></a>CorBindToRuntimeByCfg — Funkcja
+
 Ładuje środowisko uruchomieniowe języka wspólnego (CLR) do procesu przy użyciu informacji o wersji, które są odczytywane z pliku XML.  
   
  Ta funkcja jest przestarzała w .NET Framework 4.  
@@ -40,6 +41,7 @@ HRESULT CorBindToRuntimeByCfg (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pCfgStream`  
  podczas Wskaźnik do `IStream` obiektu, który odczytuje plik XML.  
   
@@ -50,7 +52,7 @@ HRESULT CorBindToRuntimeByCfg (
  podczas Wartość wyliczenia [STARTUP_FLAGS](startup-flags-enumeration.md) , która określa zachowanie uruchamiania środowiska CLR.  
   
  `rclsid`  
- podczas `CLSID`Klasy coclass implementującej interfejs [ICorRuntimeHost](icorruntimehost-interface.md) lub [ICLRRuntimeHost](iclrruntimehost-interface.md) . Obsługiwane wartości to CLSID_CorRuntimeHost lub CLSID_CLRRuntimeHost.  
+ podczas `CLSID` Klasy coclass implementującej interfejs [ICorRuntimeHost](icorruntimehost-interface.md) lub [ICLRRuntimeHost](iclrruntimehost-interface.md) . Obsługiwane wartości to CLSID_CorRuntimeHost lub CLSID_CLRRuntimeHost.  
   
  `riid`  
  podczas `IID` `ICorRuntimeHost` `ICLRRuntimeHost` Interfejs lub. Obsługiwane wartości to IID_ICorRuntimeHost lub IID_ICLRRuntimeHost.  
@@ -59,22 +61,24 @@ HRESULT CorBindToRuntimeByCfg (
  określoną Wskaźnik do adresu zwracanego interfejsu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Format pliku XML jest modelowany po standardowym pliku konfiguracji aplikacji. Aby uzyskać więcej informacji na temat plików XML, zobacz [Schemat pliku konfiguracji](../../configure-apps/file-schema/index.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [CorBindToCurrentRuntime, funkcja](corbindtocurrentruntime-function.md)
-- [CorBindToRuntime, funkcja](corbindtoruntime-function.md)
-- [CorBindToRuntimeEx, funkcja](corbindtoruntimeex-function.md)
+- [CorBindToCurrentRuntime — Funkcja](corbindtocurrentruntime-function.md)
+- [CorBindToRuntime — Funkcja](corbindtoruntime-function.md)
+- [CorBindToRuntimeEx — Funkcja](corbindtoruntimeex-function.md)
 - [CorBindToRuntimeHost — Funkcja](corbindtoruntimehost-function.md)
-- [ICorRuntimeHost, interfejs](icorruntimehost-interface.md)
+- [ICorRuntimeHost — Interfejs](icorruntimehost-interface.md)
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

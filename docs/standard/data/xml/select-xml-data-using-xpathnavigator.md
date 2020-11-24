@@ -5,20 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c268c49e-32b9-4171-b782-dcb7b065fa73
-ms.openlocfilehash: 791c1d16db6a2079ccccebf4dc33d5a0eb12d3c5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9b12e60fcfac8c8fc4c2f2c80aac7400dfc8d6f2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824977"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673465"
 ---
 # <a name="select-xml-data-using-xpathnavigator"></a>Wybieranie danych XML przy użyciu klasy XPathNavigator
+
 <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera zestaw metod służących do wybierania zestawu węzłów w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub przy użyciu wyrażenia XPath. Po wybraniu można wykonać iterację w wybranym zestawie węzłów.  
   
 ## <a name="xpathnavigator-selection-methods"></a>Metody wyboru XPathNavigator  
+
  <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera zestaw metod służących do wybierania zestawu węzłów w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub przy użyciu wyrażenia XPath. <xref:System.Xml.XPath.XPathNavigator>Klasa udostępnia również zestaw zoptymalizowanych metod do wybierania obiektów nadrzędnych, podrzędnych i podrzędnych szybciej niż przy użyciu wyrażenia XPath. Wybrany zestaw węzłów jest zwracany w <xref:System.Xml.XPath.XPathNodeIterator> obiekcie lub <xref:System.Xml.XPath.XPathNavigator> obiekcie w przypadku pojedynczego wybranego węzła.  
   
 ### <a name="selecting-nodes-using-xpath-expressions"></a>Wybieranie węzłów przy użyciu wyrażeń XPath  
+
  Aby wybrać zestaw węzłów za pomocą wyrażenia XPath, należy użyć jednej z następujących metod wyboru.  
   
 - <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
@@ -57,6 +60,7 @@ while(nodes.MoveNext())
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
 ### <a name="optimized-selection-methods"></a>Zoptymalizowane metody zaznaczania  
+
  <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>Metody, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A> , i <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> <xref:System.Xml.XPath.XPathNavigator> klasy reprezentują wyrażenia XPath często używane do pobierania węzłów podrzędnych, podrzędnych i nadrzędnych. Te metody są zoptymalizowane pod kątem wydajności i są szybsze niż odpowiednie wyrażenia XPath. <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>Metody, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A> , i <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> wybierają węzły nadrzędne, podrzędne i podrzędne na podstawie <xref:System.Xml.XPath.XPathNodeType> wartości lub nazwy lokalnej i identyfikatora URI przestrzeni nazw węzłów do wybrania. Wybrane węzły nadrzędne, podrzędne i podrzędne są zwracane w <xref:System.Xml.XPath.XPathNodeIterator> obiekcie.  
   
 ## <a name="see-also"></a>Zobacz także
