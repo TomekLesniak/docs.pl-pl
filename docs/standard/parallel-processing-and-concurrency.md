@@ -7,17 +7,19 @@ helpviewer_keywords:
 - concurrency [.NET]
 - asynchronous programming [.NET]
 ms.assetid: e573faa8-0212-44b1-a850-ce85dc54f47f
-ms.openlocfilehash: 7ac888ed877adf3652f5de243a046f3c5117dc61
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 3cdb5c2ecd23635d8faf0eb4bc93d201869039b0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94817500"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682682"
 ---
 # <a name="parallel-processing-concurrency-and-async-programming-in-net"></a>Równoległe przetwarzanie, współbieżność i programowanie asynchroniczne w programie .NET
+
 Platforma .NET oferuje kilka sposobów pisania kodu asynchronicznego, aby aplikacja mogła szybciej odpowiadać użytkownikowi i pisać kod równoległy, który używa wielu wątków wykonywania w celu zmaksymalizowania wydajności komputera użytkownika.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Programowanie asynchroniczne](async.md)  
  Opisuje mechanizmy programowania asynchronicznego zapewniane przez platformę .NET.  
   

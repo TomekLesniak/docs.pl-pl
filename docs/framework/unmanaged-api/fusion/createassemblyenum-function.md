@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 3506df38-6cea-42f6-946e-4287863bcfb3
 topic_type:
 - apiref
-ms.openlocfilehash: 0e54027806cef07fad4740c3bf5226fd26c72570
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b7e3696121475885f5061bd96eb6905d7ccae734
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108778"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683176"
 ---
 # <a name="createassemblyenum-function"></a>CreateAssemblyEnum — Funkcja
+
 Pobiera wskaźnik do wystąpienia [IAssemblyEnum](iassemblyenum-interface.md) , które może wyliczyć obiekty w zestawie przy użyciu określonego [IAssemblyName](iassemblyname-interface.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,14 +40,15 @@ HRESULT CreateAssemblyEnum (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pEnum`  
- określoną Wskaźnik do lokalizacji pamięci zawierającej żądany `IAssemblyEnum` wskaźnik.  
+ określoną Wskaźnik do lokalizacji pamięci, która zawiera żądany `IAssemblyEnum` wskaźnik.  
   
  `pUnkReserved`  
  podczas Zarezerwowane do użytku w przyszłości. `pUnkReserved` musi być odwołaniem o wartości null.  
   
  `pName`  
- podczas `IAssemblyName` żądanego zestawu. Ta nazwa jest używana do filtrowania wyliczania. Może ona mieć wartość null, aby wyliczyć wszystkie zestawy w globalnej pamięci podręcznej zestawów.  
+ podczas `IAssemblyName` Żądanego zestawu. Ta nazwa jest używana do filtrowania wyliczania. Może ona mieć wartość null, aby wyliczyć wszystkie zestawy w globalnej pamięci podręcznej zestawów.  
   
  `dwFlags`  
  podczas Flagi modyfikujące zachowanie modułu wyliczającego. Ten parametr zawiera dokładnie jeden bit z wyliczenia [ASM_CACHE_FLAGS](asm-cache-flags-enumeration.md) .  
@@ -55,19 +57,21 @@ HRESULT CreateAssemblyEnum (
  podczas Zarezerwowane do użytku w przyszłości. `pvReserved` musi być odwołaniem o wartości null.  
   
 ## <a name="remarks"></a>Uwagi  
- Parametr `dwFlags` zawiera dokładnie jeden bit z wyliczenia `ASM_CACHE_FLAGS`.  
+
+ `dwFlags`Parametr zawiera dokładnie jeden bit z `ASM_CACHE_FLAGS` wyliczenia.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IAssemblyEnum, interfejs](iassemblyenum-interface.md)
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+- [IAssemblyEnum — Interfejs](iassemblyenum-interface.md)
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)
 - [Łączenie statycznych funkcji globalnych](fusion-global-static-functions.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f5ef94dd-dfee-49d3-a398-b110f8906dd8
 topic_type:
 - apiref
-ms.openlocfilehash: db1721fed6414310556ceac493275e069a781ac8
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: e1c8d94a90092b1497267c78d5fadf5a6e6de707
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397141"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684333"
 ---
 # <a name="icordebugvalueenumnext-method"></a>ICorDebugValueEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień "ICorDebugValue" z wyliczenia, rozpoczynając od bieżącego położenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT Next (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba `ICorDebugValue` wystąpień do pobrania.  
   
@@ -47,6 +49,7 @@ HRESULT Next (
  określoną Wskaźnik do liczby `ICorDebugValue` faktycznie zwróconych wystąpień. Ta wartość może być równa null, jeśli `celt` jest taka.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -13,24 +13,27 @@ helpviewer_keywords:
 - strings [.NET], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: a00274b7b6b7e7a54d8546f2176109688a4c4678
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a8fec6c08d44212d1b7cdd5a34c9a27b0fc19746
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824886"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683878"
 ---
 # <a name="creating-new-strings-in-net"></a>Tworzenie nowych ciągów w programie .NET
 
 Platforma .NET umożliwia tworzenie ciągów przy użyciu prostego przypisywania, a także przeciążenie konstruktora klasy w celu obsługi ciągów przy użyciu wielu różnych parametrów. Platforma .NET udostępnia również kilka metod <xref:System.String?displayProperty=nameWithType> klasy, które tworzą nowe obiekty ciągu przez połączenie kilku ciągów, tablic ciągów lub obiektów.  
   
 ## <a name="creating-strings-using-assignment"></a>Tworzenie ciągów przy użyciu przypisania  
+
  Najprostszym sposobem utworzenia nowego <xref:System.String> obiektu jest przypisanie literału ciągu do <xref:System.String> obiektu.  
   
 ## <a name="creating-strings-using-a-class-constructor"></a>Tworzenie ciągów przy użyciu konstruktora klasy  
+
  Można użyć przeciążenia <xref:System.String> konstruktora klasy do tworzenia ciągów z tablic znaków. Możesz również utworzyć nowy ciąg, duplikując określony znak określoną liczbę razy.  
   
 ## <a name="methods-that-return-strings"></a>Metody, które zwracają ciągi  
+
  Poniższa tabela zawiera kilka przydatnych metod, które zwracają nowe obiekty ciągu.  
   
 |Nazwa metody|Zastosowanie|  
@@ -42,6 +45,7 @@ Platforma .NET umożliwia tworzenie ciągów przy użyciu prostego przypisywania
 |<xref:System.String.CopyTo%2A?displayProperty=nameWithType>|Kopiuje określone znaki w ciągu do określonej pozycji w tablicy znaków.|  
   
 ### <a name="format"></a>Format  
+
  Za pomocą metody **String. format** można tworzyć sformatowane ciągi i łączyć ciągi reprezentujące wiele obiektów. Ta metoda automatycznie konwertuje każdy zakończony obiekt na ciąg. Na przykład, jeśli w aplikacji musi być wyświetlana wartość **Int32** i wartość **DateTime** dla użytkownika, można łatwo skonstruować ciąg do reprezentowania tych wartości przy użyciu metody **Format** . Aby uzyskać informacje na temat Konwencji formatowania używanych z tą metodą, zobacz sekcję dotyczącą [formatowania złożonego](composite-formatting.md).  
   
  W poniższym przykładzie zastosowano metodę **Format** , aby utworzyć ciąg, który używa zmiennej typu Integer.  
@@ -52,12 +56,14 @@ Platforma .NET umożliwia tworzenie ciągów przy użyciu prostego przypisywania
  W tym przykładzie <xref:System.DateTime.Now%2A?displayProperty=nameWithType> wyświetla bieżącą datę i godzinę w sposób określony przez kulturę skojarzoną z bieżącym wątkiem.  
   
 ### <a name="concat"></a>Concat  
+
  Metoda **String. Concat** może służyć do łatwego tworzenia nowego obiektu ciągu z dwóch lub więcej istniejących obiektów. Zapewnia on niezależny od języka sposób łączenia ciągów. Ta metoda akceptuje wszelkie klasy, które pochodzą z **obiektu System. Object**. Poniższy przykład tworzy ciąg z dwóch istniejących obiektów String i oddzielający znak.  
   
  [!code-csharp[Strings.Creating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#2)]
  [!code-vb[Strings.Creating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#2)]  
   
 ### <a name="join"></a>Join  
+
  Metoda **String. Join** tworzy nowy ciąg z tablicy ciągów i ciągu separatora. Ta metoda jest przydatna, jeśli chcesz połączyć wiele ciągów ze sobą, tworząc listę, która może być oddzielona przecinkami.  
   
  Poniższy przykład używa spacji, aby powiązać tablicę ciągów.  
@@ -66,12 +72,14 @@ Platforma .NET umożliwia tworzenie ciągów przy użyciu prostego przypisywania
  [!code-vb[Strings.Creating#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#3)]  
   
 ### <a name="insert"></a>Insert  
+
  Metoda **String. Insert** tworzy nowy ciąg przez wstawienie ciągu do określonej pozycji w innym ciągu. Ta metoda używa indeksu na podstawie zera. Poniższy przykład wstawia ciąg do piątej pozycji indeksu `MyString` i tworzy nowy ciąg z tą wartością.  
   
  [!code-csharp[Strings.Creating#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#4)]
  [!code-vb[Strings.Creating#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#4)]  
   
 ### <a name="copyto"></a>CopyTo  
+
  Metoda **String. CopyTo** kopiuje fragmenty ciągu do tablicy znaków. Można określić zarówno początkowy indeks ciągu, jak i liczbę znaków, które mają zostać skopiowane. Ta metoda przyjmuje indeks źródłowy, tablicę znaków, indeks docelowy oraz liczbę znaków do skopiowania. Wszystkie indeksy są zależne od zera.  
   
  W poniższym przykładzie zastosowano metodę **CopyTo** , aby skopiować znaki wyrazu "Hello" z obiektu String do pierwszej pozycji indeksu tablicy znaków.  

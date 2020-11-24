@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b2f7007f-c446-4b18-aed1-a25cff8aee31
 topic_type:
 - apiref
-ms.openlocfilehash: b8d2e49031e59db0527de3c848d7d390095797bf
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 7d3c35ed6cda637e3b885afe089ddfa590d51076
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396793"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683618"
 ---
 # <a name="icordebugvalue-interface"></a>ICorDebugValue, interfejs
+
 Reprezentuje wartość w debugowanym procesie. Wartość może być wartością odczytu lub zapisu.  
   
 ## <a name="methods"></a>Metody  
@@ -34,6 +35,7 @@ Reprezentuje wartość w debugowanym procesie. Wartość może być wartością 
 |[GetType, metoda](icordebugvalue-gettype-method.md)|Pobiera typ pierwotny tego `ICorDebugValue` obiektu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ogólnie rzecz biorąc, własność obiektu wartości jest przenoszona, gdy jest zwracany. Odbiorca jest odpowiedzialny za usunięcie odwołania z obiektu po zakończeniu z obiektem.  
   
  W zależności od tego, skąd została pobrana wartość, wartość może nie być ważna po wznowieniu procesu. Dlatego ogólnie rzecz biorąc wartość nie powinna być utrzymywana przez wywołanie metody [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) .  
@@ -42,6 +44,7 @@ Reprezentuje wartość w debugowanym procesie. Wartość może być wartością 
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

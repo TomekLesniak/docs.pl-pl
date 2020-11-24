@@ -2,12 +2,12 @@
 title: Definiowanie aplikacji z wieloma kontenerami za pomocą pliku docker-compose.yml
 description: Jak określić kompozycję mikrousług dla aplikacji wielokontenera z Docker-Compose. yml.
 ms.date: 01/30/2020
-ms.openlocfilehash: 47f2bf9bcdbf021ec4232ff9e25f6b2b228aaeaa
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c375d328ab9064315682fab91cb5e49e9a384b56
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539310"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682669"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definiowanie aplikacji z wieloma kontenerami za pomocą pliku docker-compose.yml
 
@@ -388,7 +388,7 @@ services:
 
 W tym przykładzie konfiguracja przesłonięcia rozwoju uwidacznia niektóre porty hosta, definiuje zmienne środowiskowe z adresami URL przekierowania i określa parametry połączenia dla środowiska deweloperskiego. Te ustawienia są przeznaczone tylko dla środowiska deweloperskiego.
 
-Gdy uruchamiasz `docker-compose up` (lub uruchamiasz ją z programu Visual Studio), polecenie odczytuje przesłonięcia automatycznie tak, jakby były scalane oba pliki.
+Gdy uruchamiasz `docker-compose up` (lub uruchamiasz ją z programu Visual Studio), polecenie odczytuje przesłonięcia automatycznie tak, jakby były scalane oba pliki.
 
 Załóżmy, że chcesz, aby inny plik redagowania był używany w środowisku produkcyjnym, z innymi wartościami konfiguracji, portami lub parametrami połączenia. Można utworzyć inny plik przesłonięcia, taki jak plik o `docker-compose.prod.yml` różnych ustawieniach i zmiennych środowiskowych. Ten plik może być przechowywany w innym repozytorium Git lub zarządzany i zabezpieczony przez inny zespół.
 
@@ -437,7 +437,7 @@ Wartości ustawione w środowisku wykonawczym zawsze przesłonią wartości zdef
 Jeśli eksplorujesz platformę Docker i platformę .NET Core w źródłach internetowych, znajdziesz wieloetapowe dockerfile, który pokazuje prostotę tworzenia obrazu platformy Docker przez skopiowanie źródła do kontenera. Te przykłady sugerują, że przy użyciu prostej konfiguracji możesz mieć obraz platformy Docker ze środowiskiem spakowanym z aplikacją. Poniższy przykład pokazuje prostą pliku dockerfile w tej szyjce.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM mcr.microsoft.com/dotnet/sdk:3.1
 WORKDIR /app
 ENV ASPNETCORE_URLS http://+:80
 EXPOSE 80
@@ -458,7 +458,7 @@ Zespół platformy .NET wykonuje ważne prace w celu udostępnienia platformy .N
 
 3. **Produkcja**: fokus jest szybkim wdrożeniem i początkiem kontenerów, dzięki czemu obrazy te są ograniczone do plików binarnych i zawartości wymaganych do uruchomienia aplikacji.
 
-Zespół .NET oferuje cztery podstawowe warianty w programie [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet-core/) (w usłudze Docker Hub):
+Zespół .NET oferuje cztery podstawowe warianty w programie [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet/) (w usłudze Docker Hub):
 
 1. **zestaw SDK**: na potrzeby scenariuszy tworzenia i kompilowania
 1. **ASPNET**: for ASP.NET — scenariusze produkcji

@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: 9afd0e04-a403-41e2-9528-a6dcbcdcbd4d
 topic_type:
 - apiref
-ms.openlocfilehash: e5fd1730bbe5b6f2905691dce41a7f503227534a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e0df443e691292817ff37900fbc87204a8325ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179071"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684502"
 ---
 # <a name="icordebugappdomain3getcachedwinrttypes-method"></a>ICorDebugAppDomain3::GetCachedWinRTTypes — Metoda
-Pobiera wyliczenia dla wszystkich typów środowiska wykonawczego systemu Windows w pamięci podręcznej.  
+
+Pobiera moduł wyliczający dla wszystkich typów środowisko wykonawcze systemu Windows w pamięci podręcznej.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -34,18 +35,20 @@ HRESULT GetCachedWinRTTypes (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppGuidToTypeEnum`  
- [na zewnątrz] Wskaźnik do obiektu interfejsu [ICorDebugGuidToTypeEnum,](icordebugguidtotypeenum-interface.md) który może wyliczyć zarządzane reprezentacje typów środowiska wykonawczego systemu Windows aktualnie ładowanych w domenie aplikacji.  
+ określoną Wskaźnik do obiektu interfejsu [ICorDebugGuidToTypeEnum](icordebugguidtotypeenum-interface.md) , który może wyliczyć zarządzane reprezentacje typów środowisko wykonawcze systemu Windows aktualnie załadowanych w domenie aplikacji.  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Środowisko wykonawcze systemu Windows  
-  
- **Nagłówek:** CorDebug.idl, CorDebug.h  
-  
- **Biblioteka:** CorGuids.lib  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [ICorDebugAppDomain3, interfejs](icordebugappdomain3-interface.md)
+ **Platformy:** środowisko wykonawcze systemu Windows  
+  
+ **Nagłówek:** CorDebug. idl, CorDebug. h  
+  
+ **Biblioteka:** CorGuids. lib  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [ICorDebugAppDomain3 — Interfejs](icordebugappdomain3-interface.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5bb12f9a-0612-434b-b4ed-2db636a20bec
 topic_type:
 - apiref
-ms.openlocfilehash: 899d6e74902e47f1f41b849bd5c25048baa175f7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 3afb89a42d7e26c5e89e6f9458ef3406cc0102ca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617142"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684190"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID — Funkcja
+
 Pobiera odpowiednie informacje o wersji środowiska uruchomieniowego języka wspólnego (CLR) dla klasy z określonym `CLSID` .  
   
  Ta funkcja jest przestarzała w .NET Framework 4.  
@@ -39,8 +40,9 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `rclsid`  
- podczas  `CLSID`Składnika.  
+ podczas  `CLSID` Składnika.  
   
  `pVersion`  
  określoną  Bufor zawierający ciąg numeru wersji po pomyślnym zakończeniu.  
@@ -66,9 +68,10 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
 |E_INVALIDARG|Jeden z parametrów ma nieprawidłowy typ lub format.|  
 |ERROR_INSUFFICIENT_BUFFER|`pVersion`Bufor nie jest wystarczająco duży, aby pomieścić cały ciąg wersji.|  
 |REGDB_E_CLASSNOTREG|Nie ma żadnej klasy zarejestrowanej dla określonej `CLSID` .|  
-|E_POINTER|`dwLength`ma wartość null lub `cchBuffer` jest wystarczająco duży, aby pomieścić ciąg wersji, ale `pVersion` ma wartość null.|  
+|E_POINTER|`dwLength` ma wartość null lub `cchBuffer` jest wystarczająco duży, aby pomieścić ciąg wersji, ale `pVersion` ma wartość null.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  

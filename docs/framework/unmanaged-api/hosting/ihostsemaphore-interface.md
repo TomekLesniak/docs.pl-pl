@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c0765321-656c-441e-bab5-58176292be1e
 topic_type:
 - apiref
-ms.openlocfilehash: 8345d85502087568cb05dd262cccf181e3ca07ac
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: cccbf9a28b16ffee14b3fd3ec43c376109d6ccec
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803695"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683059"
 ---
 # <a name="ihostsemaphore-interface"></a>IHostSemaphore — Interfejs
+
 Reprezentuje implementację semafora na hoście dla wątków.  
   
 ## <a name="methods"></a>Metody  
@@ -29,21 +30,22 @@ Reprezentuje implementację semafora na hoście dla wątków.
 |Metoda|Opis|  
 |------------|-----------------|  
 |[ReleaseSemaphore, metoda](ihostsemaphore-releasesemaphore-method.md)|Zwiększa liczbę `IHostSemaphore` wystąpień bieżącego wystąpienia o określoną liczbę.|  
-|[Wait, metoda](ihostsemaphore-wait-method.md)|Powoduje, że bieżące `IHostSemaphore` wystąpienie zaczeka, aż będzie własnością lub określony czas upłynął.|  
+|[Wait — Metoda](ihostsemaphore-wait-method.md)|Powoduje, że bieżące `IHostSemaphore` wystąpienie zaczeka, aż będzie własnością lub określony czas upłynął.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
 - [IHostAutoEvent — Interfejs](ihostautoevent-interface.md)
-- [IHostManualEvent, interfejs](ihostmanualevent-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [IHostManualEvent — Interfejs](ihostmanualevent-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

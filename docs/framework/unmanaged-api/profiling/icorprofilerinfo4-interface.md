@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 80a5308e-c22f-4201-ba89-31cc8562515b
 topic_type:
 - apiref
-ms.openlocfilehash: 58d11e9084f53c69f2656b4f0ee6bc7d2cc4ae21
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c3e623b0b5f8b49e043fe3a1aa8311558e573573
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84495869"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682838"
 ---
 # <a name="icorprofilerinfo4-interface"></a>ICorProfilerInfo4 — Interfejs
+
 Zapewnia metody, które są używane przez program codeer do komunikowania się ze środowiskiem uruchomieniowym języka wspólnego (CLR) w celu kontrolowania informacji o monitorowaniu zdarzeń i żądaniach. . `ICorProfilerInfo4`Interfejs jest rozszerzeniem innych `ICorProfilerInfo` interfejsów. Udostępnia nowe metody obsługi ponownej kompilacji just-in-Time (JIT), dodane w .NET Framework 4,5.  
   
 ## <a name="methods"></a>Metody  
@@ -40,9 +41,11 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
 |[RequestRevert, metoda](icorprofilerinfo4-requestrevert-method.md)|Przywraca oryginalne wersje wszystkich wystąpień określonych funkcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR implementuje metody `ICorProfilerInfo4` interfejsu przy użyciu modelu typu "wolny-wątek". Każda metoda zwraca wynik HRESULT wskazujący powodzenie lub niepowodzenie. Aby uzyskać listę możliwych kodów powrotu, zobacz plik CorError. h.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -54,4 +57,4 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
 ## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy profilowania](profiling-interfaces.md)
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3480bbdb-c442-44a0-b7c6-333354503c52
 topic_type:
 - apiref
-ms.openlocfilehash: 8e119093800ea0a0119ba25ba38cf2eaf9afe96b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6056a64b354f69ce39692173da01892870fba9e1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540865"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682851"
 ---
 # <a name="imetadatadispenserexopenscopeonitypeinfo-method"></a>IMetaDataDispenserEx::OpenScopeOnITypeInfo — Metoda
+
 Ta metoda nie jest zaimplementowana. Jeśli zostanie wywołana, zwraca E_NOTIMPL.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT OpenScopeOnITypeInfo (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pITI`  
  podczas Wskaźnik do interfejsu [Metoda ITypeInfo](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) , który zawiera informacje o typie, na którym należy otworzyć zakres.  
   
@@ -50,6 +52,7 @@ HRESULT OpenScopeOnITypeInfo (
  określoną Wskaźnik na wskaźnik do zwracanego interfejsu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platforma:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  

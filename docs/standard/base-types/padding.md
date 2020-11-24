@@ -13,12 +13,12 @@ helpviewer_keywords:
 - PadLeft method
 - padding strings
 ms.assetid: 84a9f142-3244-4c90-ba02-21af9bbaff71
-ms.openlocfilehash: 9931db1e76e3737ab3803400928169b30c3ecbda
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b8dbea862acb87c1db2d23b11bac597eaa27d6b6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822948"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683787"
 ---
 # <a name="padding-strings-in-net"></a>Uzupełnianie ciągów w programie .NET
 
@@ -30,6 +30,7 @@ Użyj jednej z następujących <xref:System.String> metod, aby utworzyć nowy ci
 |<xref:System.String.PadRight%2A?displayProperty=nameWithType>|Tworzy w postaci ciągu znaki końcowe z określoną całkowitą długością.|  
   
 ## <a name="padleft"></a>PadLeft  
+
  <xref:System.String.PadLeft%2A?displayProperty=nameWithType>Metoda tworzy nowy ciąg przez złączenie wystarczającej liczby wiodących znaków pad do oryginalnego ciągu, aby osiągnąć określoną łączną długość. <xref:System.String.PadLeft%28System.Int32%29?displayProperty=nameWithType>Metoda używa odstępu jako znaku uzupełniania, a <xref:System.String.PadLeft%28System.Int32%2CSystem.Char%29?displayProperty=nameWithType> Metoda umożliwia określenie własnego znaku uzupełniania.  
   
  Poniższy przykład kodu używa metody, <xref:System.String.PadLeft%2A> Aby utworzyć nowy ciąg o długości dwudziestu znaków. W przykładzie zostanie wyświetlony komunikat " `--------Hello World!` " w konsoli programu.  
@@ -39,6 +40,7 @@ Użyj jednej z następujących <xref:System.String> metod, aby utworzyć nowy ci
  [!code-vb[Conceptual.String.BasicOps#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/padding.vb#3)]  
   
 ## <a name="padright"></a>PadRight  
+
  <xref:System.String.PadRight%2A?displayProperty=nameWithType>Metoda tworzy nowy ciąg, łącząc wystarczającą liczbę końcową znaków uzupełniających do oryginalnego ciągu, aby osiągnąć określoną łączną długość. <xref:System.String.PadRight%28System.Int32%29?displayProperty=nameWithType>Metoda używa odstępu jako znaku uzupełniania, a <xref:System.String.PadRight%28System.Int32%2CSystem.Char%29?displayProperty=nameWithType> Metoda umożliwia określenie własnego znaku uzupełniania.  
   
  Poniższy przykład kodu używa metody, <xref:System.String.PadRight%2A> Aby utworzyć nowy ciąg o długości dwudziestu znaków. W przykładzie zostanie wyświetlony komunikat " `Hello World!--------` " w konsoli programu.  

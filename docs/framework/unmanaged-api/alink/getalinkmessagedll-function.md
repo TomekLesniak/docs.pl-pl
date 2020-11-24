@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 67985a22-88a2-4c54-8d99-4bcde9d6213e
 topic_type:
 - apiref
-ms.openlocfilehash: 63719d0c6e13768e9dc7ed80e52e2a293e32a8a1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 554bd32ae965b21a88a09577749bbd7975f5ec7e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449345"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684749"
 ---
 # <a name="getalinkmessagedll-function"></a>GetALinkMessageDll — Funkcja
+
 Umożliwia znalezienie i załadowanie biblioteki DLL komunikatów. Zwraca wartość 0, jeśli nie można odnaleźć lub załadować biblioteki DLL komunikatu. Biblioteka DLL komunikatów powinna znajdować się w podkatalogu, którego nazwa jest IDENTYFIKATORem języka lub w bieżącym katalogu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,10 +33,11 @@ HINSTANCE WINAPI GetALinkMessageDll();
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** Alink. h  
   
- **Biblioteka**: Alink. dll  
+ **Biblioteka**: alink.dll  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Al.exe (konsolidator zestawów)](../../tools/al-exe-assembly-linker.md)
+- [Al.exe (Konsolidator zestawu)](../../tools/al-exe-assembly-linker.md)

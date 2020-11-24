@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0a270c42-a7d1-45f1-a64d-fa3e84d14532
 topic_type:
 - apiref
-ms.openlocfilehash: 82c6113f4df3334500128df22f7e9ce8d4bf151f
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 2268fce5d3ca732d852edfdb6f0edf63117df363
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805280"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684216"
 ---
 # <a name="idebuggerthreadcontrol-interface"></a>IDebuggerThreadControl — Interfejs
+
 Zapewnia metody powiadamiania hosta o blokowaniu i odblokowywaniu wątków przez usługi debugowania.  
   
 ## <a name="methods"></a>Metody  
@@ -33,14 +34,15 @@ Zapewnia metody powiadamiania hosta o blokowaniu i odblokowywaniu wątków przez
 |[StartBlockingForDebugger, metoda](idebuggerthreadcontrol-startblockingfordebugger-method.md)|Powiadamia hosta o konieczności rozpoczęcia blokowania wszystkich wątków przez usługi debugowania.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

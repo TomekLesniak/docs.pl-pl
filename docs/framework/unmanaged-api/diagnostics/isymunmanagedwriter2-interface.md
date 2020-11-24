@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8e78faa4-cf43-44fb-a91d-94d6df692a25
 topic_type:
 - apiref
-ms.openlocfilehash: 1fe6055d930c6d30e947d6bc774d0520a9e175ae
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6feb48b7c78dda64ba372e470b83ffb14f21f2f9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614685"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683332"
 ---
 # <a name="isymunmanagedwriter2-interface"></a>ISymUnmanagedWriter2 — Interfejs
+
 Reprezentuje moduł zapisujący symboli i zawiera metody definiowania dokumentów, punktów sekwencji, zakresów leksykalnych i zmiennych. Ten interfejs rozszerza interfejs [ISymUnmanagedWriter](isymunmanagedwriter-interface.md) .  
   
 ## <a name="methods"></a>Metody  
@@ -33,6 +34,7 @@ Reprezentuje moduł zapisujący symboli i zawiera metody definiowania dokumentó
 |[DefineLocalVariable2, metoda](isymunmanagedwriter2-definelocalvariable2-method.md)|Definiuje pojedynczą zmienną w bieżącym zakresie leksykalnym.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

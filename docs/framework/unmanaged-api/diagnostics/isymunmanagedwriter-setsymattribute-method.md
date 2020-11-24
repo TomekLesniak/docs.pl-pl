@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 64d9b80e-b883-4539-89c7-03573185a1eb
 topic_type:
 - apiref
-ms.openlocfilehash: 39b0c065a324f2b3939467901739f995bc9abbad
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 484affb2ca87ca50a805d1bb46b7749d294d09f2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614763"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683514"
 ---
 # <a name="isymunmanagedwritersetsymattribute-method"></a>ISymUnmanagedWriter::SetSymAttribute — Metoda
+
 Definiuje atrybut niestandardowy na podstawie jego nazwy. Te atrybuty są przechowywane w magazynie symboli, w przeciwieństwie do atrybutów niestandardowych metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT SetSymAttribute(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `parent`  
  podczas Token metadanych, dla którego atrybut jest definiowany.  
   
@@ -43,15 +45,17 @@ HRESULT SetSymAttribute(
  podczas Wskaźnik do elementu `WCHAR` , który zawiera nazwę atrybutu.  
   
  `cData`  
- podczas `ULONG32`Wskazuje rozmiar `data` tablicy.  
+ podczas `ULONG32` Wskazuje rozmiar `data` tablicy.  
   
  `data`  
  podczas Wartość atrybutu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

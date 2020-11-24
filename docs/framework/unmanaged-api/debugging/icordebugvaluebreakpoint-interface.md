@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c02338fe-da6c-467f-9567-70ebb387e901
 topic_type:
 - apiref
-ms.openlocfilehash: 1183f9f6d1ac221b20767f0a1bab15b3e9665a61
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: cf0a87afd1c0057c054205432fea7aa5844afb53
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396610"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684416"
 ---
 # <a name="icordebugvaluebreakpoint-interface"></a>ICorDebugValueBreakpoint, interfejs
+
 Rozszerza interfejs ICorDebugBreakpoint w celu zapewnienia dostępu do określonych wartości.  
   
 ## <a name="methods"></a>Metody  
@@ -36,6 +37,7 @@ Rozszerza interfejs ICorDebugBreakpoint w celu zapewnienia dostępu do określon
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

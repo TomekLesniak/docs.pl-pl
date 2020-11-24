@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 08dff60c-f01b-4050-8865-ea3f95361c9f
 topic_type:
 - apiref
-ms.openlocfilehash: 6a5b3f1e9bf1444feb73949ef7133fbd9ae35134
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 445c833d10631341ef7ad579eaff8ddd96be3428
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446473"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684853"
 ---
 # <a name="enumcustomattributes-method"></a>EnumCustomAttributes — Metoda
+
 Pobiera niestandardowe atrybuty na poziomie zestawu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,29 +39,32 @@ HRESULT EnumCustomAttributes(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hEnum`  
  Uchwyt modułu wyliczającego.  
   
  `tkType`  
- Typ atrybutów do wyliczenia. Użyj `mdTokenNill` dla wszystkich atrybutów.  
+ Typ atrybutów do wyliczenia. Używać `mdTokenNill` dla wszystkich atrybutów.  
   
  `rCustomValues`  
  Odbiera tokeny atrybutów niestandardowych.  
   
  `cMax`  
- Określa rozmiar tablicy `rCustomValues`.  
+ Określa rozmiar `rCustomValues` tablicy.  
   
  `pcCustomValues`  
  Opcjonalnie otrzymuje liczbę wartości tokenu.  
   
-## <a name="return-value"></a>Wartość zwrócona  
+## <a name="return-value"></a>Wartość zwracana  
+
  Zwraca S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  Wymaga Alink. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IALink, interfejs](ialink-interface.md)
-- [IALink2, interfejs](ialink2-interface.md)
-- [ALink, interfejs API](index.md)
+- [IALink — Interfejs](ialink-interface.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [ALink — interfejs API](index.md)

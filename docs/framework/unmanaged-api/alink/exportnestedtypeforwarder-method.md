@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 886ea6c5-6b26-4b88-8bf6-448d6d191950
 topic_type:
 - apiref
-ms.openlocfilehash: cc81ccd1c754e3d34c54737f4560b4f81d5cc916
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 45adda6551e1cec994f59acbb0e8d2b5c56c4df6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438412"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684814"
 ---
 # <a name="exportnestedtypeforwarder-method"></a>ExportNestedTypeForwarder — Metoda
+
 Dodaje funkcję przesyłania dalej typu dla typu zagnieżdżonego do tabeli typów danego zestawu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT ExportNestedTypeForwarder(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `AssemblyID`  
  Identyfikator zestawu do wyeksportowania.  
   
@@ -55,19 +57,21 @@ HRESULT ExportNestedTypeForwarder(
  W pełni kwalifikowana nazwa typu do eksportowania.  
   
  `dwFlags`  
- `ComType` flagi, takie jak `tdPublic` lub `tdNested`.  
+ `ComType` flagi takie jak `tdPublic` lub `tdNested` .  
   
  `pType`  
  Odbiera token typu eksportu. Jest to konieczne tylko w przypadku emitowania typów zagnieżdżonych.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Zwraca S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  Wymaga Alink. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IALink, interfejs](ialink-interface.md)
-- [IALink2, interfejs](ialink2-interface.md)
-- [ALink, interfejs API](index.md)
+- [IALink — Interfejs](ialink-interface.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [ALink — interfejs API](index.md)

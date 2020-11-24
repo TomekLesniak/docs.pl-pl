@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: a5ed2fd0-c7d2-4603-aaca-5d0caad92675
 topic_type:
 - apiref
-ms.openlocfilehash: ee856dbd398d0fa5e3eee7d9b2b2cfc7c7a57ecf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 52d5ad3a18c102422e90621c7d1e23b2692c0000
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176594"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683238"
 ---
 # <a name="create_asm_name_obj_flags-enumeration"></a>CREATE_ASM_NAME_OBJ_FLAGS — Wyliczenie
-Określa atrybuty obiektu [interfejsu IAssemblyName,](iassemblyname-interface.md) gdy jest on konstruowany przez funkcję [CreateAssemblyNameObject.](createassemblynameobject-function.md)  
+
+Określa atrybuty obiektu [interfejsu IAssemblyName](iassemblyname-interface.md) , gdy jest konstruowany [przez funkcję](createassemblynameobject-function.md) myfunctionobject.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -42,20 +43,21 @@ typedef enum {
   
 |Członek|Opis|  
 |------------|-----------------|  
-|`CANOF_PARSE_DISPLAY_NAME`|Wskazuje, że parametr przekazany jest tożsamością tekstową.|  
+|`CANOF_PARSE_DISPLAY_NAME`|Wskazuje, że przesłany parametr jest tożsamością tekstową.|  
 |`CANOF_SET_DEFAULT_VALUES`|Ustawia kilka wartości domyślnych.|  
-|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Weryfikuje regułę zestawu znajomego (tylko imię i nazwisko oraz klucz publiczny). Ten element członkowski jest przeznaczony wyłącznie do użytku wewnętrznego.|  
-|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Kombinacja `CANOF_PARSE_DISPLAY_NAME` i `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` flagi. Ten element członkowski jest przeznaczony wyłącznie do użytku wewnętrznego.|  
+|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Weryfikuje regułę zaprzyjaźnionego zestawu (tylko nazwę i klucz publiczny). Ten element członkowski jest przeznaczony wyłącznie do użytku wewnętrznego.|  
+|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Kombinacja `CANOF_PARSE_DISPLAY_NAME` `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` flag i. Ten element członkowski jest przeznaczony wyłącznie do użytku wewnętrznego.|  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** Fuzja.h  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
-- [CreateAssemblyNameObject, funkcja](createassemblynameobject-function.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** Fusion. h  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)
+- [CreateAssemblyNameObject — Funkcja](createassemblynameobject-function.md)
 - [Wyliczenia łączenia](fusion-enumerations.md)

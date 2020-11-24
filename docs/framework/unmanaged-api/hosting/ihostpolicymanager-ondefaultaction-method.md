@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 071e73bd-4795-470f-9373-cfaef553b7f2
 topic_type:
 - apiref
-ms.openlocfilehash: e6aa8cb814e509d310c2f5b5524e0fd6727fc43f
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: a22f16c14514b90ce888fafc0ea554bd9f90cb11
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804287"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684086"
 ---
 # <a name="ihostpolicymanagerondefaultaction-method"></a>IHostPolicyManager::OnDefaultAction — Metoda
+
 Powiadamia hosta, że środowisko uruchomieniowe języka wspólnego (CLR) ma wykonać akcję domyślną ustawioną przez wywołanie metody [ICLRPolicyManager:: SetDefaultAction —](iclrpolicymanager-setdefaultaction-method.md) w odpowiedzi na przerwanie wątku lub jego <xref:System.AppDomain> zwolnienie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT OnDefaultAction (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `operation`  
  podczas Jedna z wartości [EClrOperation —](eclroperation-enumeration.md) , wskazując rodzaj zdarzenia, do którego odpowiada środowisko CLR.  
   
@@ -45,7 +47,7 @@ HRESULT OnDefaultAction (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`OnDefaultAction`pomyślnie zwrócono.|  
+|S_OK|`OnDefaultAction` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania. została|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -53,17 +55,18 @@ HRESULT OnDefaultAction (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [EClrOperation — Wyliczenie](eclroperation-enumeration.md)
 - [EPolicyAction — Wyliczenie](epolicyaction-enumeration.md)
-- [ICLRPolicyManager, interfejs](iclrpolicymanager-interface.md)
-- [IHostPolicyManager, interfejs](ihostpolicymanager-interface.md)
+- [ICLRPolicyManager — Interfejs](iclrpolicymanager-interface.md)
+- [IHostPolicyManager — Interfejs](ihostpolicymanager-interface.md)

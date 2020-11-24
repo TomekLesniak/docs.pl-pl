@@ -13,12 +13,12 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: 588efff637359586630554decf57072597365d32
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a0252d013ee6cf7cba7f953fc8a1e2c66c510ca7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823098"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683956"
 ---
 # <a name="composite-formatting"></a>Złożone formatowanie
 
@@ -43,6 +43,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
 - <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>Metoda, która zapisuje metodę informacyjną do śledzenia odbiorników.  
   
 ## <a name="composite-format-string"></a>Złożony ciąg formatujący  
+
  Ciąg formatu złożonego i lista obiektów są używane jako argumenty metod, które obsługują funkcję formatowania złożonego. Ciąg formatu złożonego składa się z zera lub większej liczby serii stałego tekstu zmieszanego z co najmniej jednym elementem formatu. Stały tekst to dowolnie wybrany ciąg, a każdy element formatu odpowiada obiektowi lub strukturze opakowanej na liście. Funkcja formatowania złożonego zwraca nowy ciąg wynikowy, w którym każdy element formatu jest zamieniany na ciąg reprezentujący odpowiadający mu obiekt na liście.  
   
  Rozważmy następujący <xref:System.String.Format%2A> fragment kodu.  
@@ -53,6 +54,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
  Stały tekst to " `Name =` " i " `, hours =` ". Elementy formatu są " `{0}` ", których indeks jest równy 0, który odnosi się do obiektu `name` i " `{1:hh}` ", którego indeks wynosi 1, co odpowiada obiektowi `DateTime.Now` .  
   
 ## <a name="format-item-syntax"></a>Formatuj element składni  
+
  Każdy element formatu ma następującą postać i składa się z następujących składników:  
   
  `{`*indeks*[ `,` *wyrównanie*] [ `:` *FormatString*]`}`  
@@ -60,6 +62,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
  Dopasowujące nawiasy klamrowe („{” i „}”) są wymagane.  
   
 ### <a name="index-component"></a>Składnik indeksu  
+
  Obowiązkowy składnik *indeksu* , nazywany także specyfikatorem parametru, jest liczbą rozpoczynającą się od 0, która identyfikuje odpowiadający element na liście obiektów. Oznacza to, że element formatu, którego specyfikator parametru to 0, formatuje pierwszy obiekt na liście, element formatu, którego specyfikator parametru to 1, formatuje drugi obiekt na liście itd. Poniższy przykład zawiera cztery specyfikatory parametrów, numerowane od zera do trzech, aby reprezentować liczby podstawowe mniejsze niż dziesięć:  
   
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
@@ -73,6 +76,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
  Każdy element formatu może odwoływać się do dowolnego obiektu na liście. Na przykład jeśli istnieją trzy obiekty, można sformatować drugi, pierwszy i trzeci obiekt przez określenie ciągu formatu złożonego, takiego jak: " {1} {0} {2} ". Obiekt, do którego nie odwołuje się element formatu, zostanie zignorowany. <xref:System.FormatException>Jest generowany w czasie wykonywania, jeśli specyfikator parametru wyznacza element poza granicami listy obiektów.  
   
 ### <a name="alignment-component"></a>Składnik wyrównania  
+
  Opcjonalny składnik *wyrównania* jest ze znakiem liczby całkowitej wskazującej preferowaną szerokość pola sformatowanego. Jeśli wartość *wyrównania* jest mniejsza niż długość sformatowanego ciągu, *wyrównanie* jest ignorowane i długość sformatowanego ciągu jest używana jako szerokość pola. Sformatowane dane w polu są wyrównane do prawej, jeśli *wyrównanie* jest dodatnie i wyrównane do lewej, jeśli *wyrównanie* jest ujemne. Jeśli potrzebne jest dopełnienie, będą używane znaki odstępu. Przecinek jest wymagany w przypadku określenia *wyrównania*  .  
   
  W poniższym przykładzie zdefiniowano dwie tablice, z których jedna zawiera nazwy pracowników i drugi zawierający godziny, w których pracują w okresie dwóch tygodni. Ciąg formatu złożonego w lewo — wyrównuje nazwy w polu 20 znaków, a następnie w polu 5-znakowym wyrównanym do prawej godziny. Należy zauważyć, że ciąg formatu standardowego "N1" służy również do formatowania godzin przy użyciu jednej cyfry ułamkowej.  
@@ -81,6 +85,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
  [!code-vb[Formatting.Composite#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/alignment1.vb#8)]  
   
 ### <a name="format-string-component"></a>Element ciągu formatującego  
+
  Opcjonalny składnik *FormatString* jest ciągiem formatu, który jest odpowiedni dla typu formatowanego obiektu. Określ standardowy lub niestandardowy ciąg formatu liczbowego, jeśli odpowiedni obiekt jest wartością liczbową, standardowym lub niestandardowym ciągiem formatu daty i godziny, jeśli odpowiedni obiekt jest <xref:System.DateTime> obiektem lub [ciągiem formatu wyliczenia](enumeration-format-strings.md) , jeśli odpowiedni obiekt jest wartością wyliczenia. Jeśli element *FormatString* nie zostanie określony, używany jest specyfikator formatu ogólnego ("G") dla typu liczbowego, daty i godziny lub wyliczenia. Dwukropek jest wymagany, jeśli jest określony parametr *FormatString* .  
   
  Poniższa tabela zawiera listę typów lub kategorii typów w bibliotece klas .NET, która obsługuje wstępnie zdefiniowany zestaw ciągów formatujących, oraz zawiera linki do tematów, które zawierają listę obsługiwanych ciągów formatu. Należy zauważyć, że formatowanie ciągów jest rozszerzalnym mechanizmem, który umożliwia definiowanie nowych ciągów formatu dla każdego istniejącego typu, podobnie jak definiowanie zestawu ciągów formatu obsługiwanych przez typ zdefiniowany przez aplikację. Aby uzyskać więcej informacji, zobacz <xref:System.IFormattable> <xref:System.ICustomFormatter> Tematy dotyczące interfejsu i.  
@@ -94,6 +99,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
 |<xref:System.TimeSpan>|[Standardowe ciągi formatujące TimeSpan](standard-timespan-format-strings.md)<br /><br /> [Niestandardowe ciągi formatujące TimeSpan](custom-timespan-format-strings.md)|  
   
 ### <a name="escaping-braces"></a>Unikanie nawiasów klamrowych  
+
  Klamrowe nawiasy otwierający i zamykający są interpretowane jako rozpoczęcie i zakończenie elementu formatu. W związku z tym należy użyć sekwencji ucieczki, aby wyświetlić literał otwierającego nawiasu klamrowego lub zamykającego nawiasu klamrowego. Należy określić dwa otwierające nawiasy klamrowe („{{”) w stałym tekście, aby wyświetlić jeden otwierający nawias klamrowy („{”), bądź dwa zamykające nawiasy klamrowe („}}”), aby wyświetlić jeden zamykający nawias klamrowy („}”). Nawiasy klamrowe w elemencie formatu są interpretowane sekwencyjnie w kolejności, w jakiej są napotykane. Interpretowanie zagnieżdżonych nawiasów klamrowych nie jest obsługiwane.  
   
  Sposób interpretowania nawiasów klamrowych poprzedzonych znakiem ucieczki może prowadzić do nieoczekiwanych rezultatów. Rozważmy na przykład element formatu "{{ {0:D} }}", który jest przeznaczony do wyświetlania nawiasu otwierającego, wartości liczbowej sformatowanej jako liczba dziesiętna i zamykającego nawiasu klamrowego. Jednak element formatu jest w rzeczywistości interpretowany w następujący sposób:  
@@ -114,6 +120,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
  [!code-vb[Formatting.Composite#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Escaping1.vb#2)]  
   
 ### <a name="processing-order"></a>Kolejność przetwarzania  
+
  Jeśli wywołanie metody formatowania złożonego zawiera <xref:System.IFormatProvider> argument, którego wartość nie jest `null` , środowisko uruchomieniowe wywołuje metodę, <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> Aby zażądać <xref:System.ICustomFormatter> implementacji. Jeśli metoda może zwrócić <xref:System.ICustomFormatter> implementację, jest buforowana na czas trwania wywołania metody formatowania złożonego.
   
  Każda wartość na liście parametrów, która odnosi się do elementu formatu, jest konwertowana na ciąg w następujący sposób:  
@@ -135,6 +142,7 @@ Funkcja formatowania złożonego jest obsługiwana przez metody, takie jak:
  Wyrównanie zostanie zastosowane po wykonaniu poprzednich kroków.  
   
 ## <a name="code-examples"></a>Przykłady kodu  
+
  W poniższym przykładzie pokazano jeden ciąg utworzony przy użyciu formatowania złożonego i inny utworzony przy użyciu `ToString` metody obiektu. Oba typy formatowania dają równoważne wyniki.  
   
  [!code-csharp[Formatting.Composite#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#3)]

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e774eefe-858c-4362-8d2d-28ebf2ba1a24
 topic_type:
 - apiref
-ms.openlocfilehash: ac7559bd5431f45b266602404ddde9081aa2944d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: cdbb09d25f51e479a8a8ddfc23348305ba7c0a71
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614698"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683423"
 ---
 # <a name="isymunmanagedwriter2definelocalvariable2-method"></a>ISymUnmanagedWriter2::DefineLocalVariable2 — Metoda
+
 Definiuje pojedynczą zmienną w bieżącym zakresie leksykalnym. Tę metodę można wywołać wiele razy dla zmiennej o tej samej nazwie, która ma wiele domów w całym zakresie. Jednak w takim przypadku wartości `startOffset` `endOffset` parametrów i nie mogą nakładać się na siebie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ HRESULT DefineLocalVariable2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `name`  
  podczas Nazwa zmiennej lokalnej.  
   
@@ -69,9 +71,11 @@ HRESULT DefineLocalVariable2(
  podczas Przesunięcie końcowe dla zmiennej. Ten parametr jest opcjonalny. Jeśli wartość jest równa 0, ten parametr jest ignorowany, a zmienna jest zdefiniowana w całym zakresie. Jeśli jest to wartość różna od zera, zmienna znajduje się w przesunięciach bieżącego zakresu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl  
   
 ## <a name="see-also"></a>Zobacz także

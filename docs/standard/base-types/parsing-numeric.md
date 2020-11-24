@@ -11,17 +11,19 @@ helpviewer_keywords:
 - enumerations [.NET], parsing strings
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
-ms.openlocfilehash: 6054456b50c48ecee61e95851aee095a4227b176
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 1339301786ed0f7ddd41565ca3fc64c2a859b3f4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821933"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683761"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analizowanie ciągów liczbowych w sieci
+
 Wszystkie typy liczbowe mają dwie metody statycznej analizy `Parse` i `TryParse` , których można użyć do przekonwertowania ciągu reprezentującego liczbę do typu liczbowego. Te metody umożliwiają analizowanie ciągów, które zostały utworzone za pomocą ciągów formatu udokumentowanych w [standardowych ciągach formatu liczbowego](standard-numeric-format-strings.md) i [niestandardowych ciągów formatu liczbowego](custom-numeric-format-strings.md). Domyślnie `Parse` `TryParse` metody i mogą pomyślnie konwertować ciągi, które zawierają cyfry dziesiętne tylko do wartości całkowitych. Mogą pomyślnie konwertować ciągi, które zawierają cyfry całkowite i ułamkowe dziesiętne, separatory grup i separator dziesiętny do wartości zmiennoprzecinkowych. `Parse`Metoda zgłasza wyjątek, jeśli operacja nie powiedzie się, a `TryParse` Metoda zwraca `false` .  
   
 ## <a name="parsing-and-format-providers"></a>Analiza składniowa i format dostawców  
+
  Zazwyczaj reprezentacje ciągów wartości liczbowych różnią się w zależności od kultury. Elementy ciągów liczbowych, takich jak symbole walut, separatory grup (lub tysięcy) i Separatory dziesiętne różnią się w zależności od kultury. Metody analizy niejawnie lub jawnie używają dostawcy formatu, który rozpoznaje te Wariacje specyficzne dla kultury. Jeśli w wywołaniu metody lub nie określono dostawcy formatu `Parse` `TryParse` , jest używany dostawca formatu skojarzony z bieżącą kulturą wątku ( <xref:System.Globalization.NumberFormatInfo> obiekt zwracany przez <xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType> Właściwość).  
   
  Dostawca formatu jest reprezentowany przez <xref:System.IFormatProvider> implementację. Ten interfejs ma jeden element członkowski, <xref:System.IFormatProvider.GetFormat%2A> Metoda, której pojedynczy parametr jest <xref:System.Type> obiektem, który reprezentuje typ do sformatowania. Ta metoda zwraca obiekt, który dostarcza informacje o formatowaniu. Platforma .NET obsługuje następujące dwie <xref:System.IFormatProvider> implementacje analizy ciągów liczbowych:  
@@ -36,6 +38,7 @@ Wszystkie typy liczbowe mają dwie metody statycznej analizy `Parse` i `TryParse
  [!code-vb[Parsing.Numbers#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/parsing.numbers/vb/formatproviders1.vb#1)]  
   
 ## <a name="parsing-and-numberstyles-values"></a>Analiza składniowa i wartości NumberStyles  
+
  Elementy stylu (takie jak odstępy, separatory grup i separator dziesiętny), które może obsłużyć operacja analizy, są definiowane przez <xref:System.Globalization.NumberStyles> wartość wyliczenia. Domyślnie ciągi reprezentujące wartości całkowite są analizowane przy użyciu <xref:System.Globalization.NumberStyles.Integer?displayProperty=nameWithType> wartości, która zezwala na tylko cyfry liczbowe, wiodące i końcowe białe znaki oraz znak wiodący. Ciągi reprezentujące wartości zmiennoprzecinkowe są analizowane przy użyciu kombinacji <xref:System.Globalization.NumberStyles.Float?displayProperty=nameWithType> i <xref:System.Globalization.NumberStyles.AllowThousands?displayProperty=nameWithType> wartości; ten styl złożony dopuszcza cyfry dziesiętne oraz wiodące i końcowe białe znaki, znak wiodący, separator dziesiętny, separator grupy i wykładnik. Wywołując Przeciążenie `Parse` `TryParse` metody lub, która zawiera parametr typu <xref:System.Globalization.NumberStyles> i ustawiając jedną lub więcej <xref:System.Globalization.NumberStyles> flag, można kontrolować elementy stylu, które mogą być obecne w ciągu, aby operacja analizy powiodła się.  
   
  Na przykład ciąg zawierający separator grupy nie może zostać skonwertowany na <xref:System.Int32> wartość za pomocą <xref:System.Int32.Parse%28System.String%29?displayProperty=nameWithType> metody. Jednak konwersja powiedzie się, jeśli używasz <xref:System.Globalization.NumberStyles.AllowThousands?displayProperty=nameWithType> flagi, jak pokazano w poniższym przykładzie.  
@@ -74,6 +77,7 @@ Wszystkie typy liczbowe mają dwie metody statycznej analizy `Parse` i `TryParse
 |<xref:System.Globalization.NumberStyles.HexNumber?displayProperty=nameWithType>|Zawiera <xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType> Style, <xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType> i <xref:System.Globalization.NumberStyles.AllowHexSpecifier?displayProperty=nameWithType> .|  
   
 ## <a name="parsing-and-unicode-digits"></a>Analiza składniowa i cyfry Unicode  
+
  Standard Unicode definiuje punkty kodów dla cyfr w różnych systemach pisania. Na przykład punkty kodów z U + 0030 do U + 0039 reprezentują podstawowe cyfry łacińskie od 0 do 9, punkty kodów z U + 09E6 do U + 09EF reprezentują cyfry bengalskie od 0 do 9, a punkty kodu z U + FF10 do U + FF19 reprezentują cyfry pełnej od 0 do 9. Jednak jedynymi cyframi, które są rozpoznawane przez metody analizy, są podstawowe cyfry łacińskie 0-9 z punktami kodu od U + 0030 do U + 0039. Jeśli metoda analizy liczbowej została przeniesiona jako ciąg, który zawiera inne cyfry, metoda zgłasza <xref:System.FormatException> .  
   
  Poniższy przykład używa <xref:System.Int32.Parse%2A?displayProperty=nameWithType> metody do analizowania ciągów, które składają się z cyfr w różnych systemach pisania. Jak wynika z przykładu, próba przeanalizowania podstawowych cyfr szesnastkowych powiedzie się, ale próba przeanalizowania cyfr pełnej, arabskiej-indyjskich i bengalskich kończy się niepowodzeniem.  

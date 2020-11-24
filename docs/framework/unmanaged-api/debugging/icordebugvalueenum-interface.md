@@ -14,21 +14,22 @@ helpviewer_keywords:
 ms.assetid: 88989482-a09f-4bd0-9adb-16f47b0291fd
 topic_type:
 - apiref
-ms.openlocfilehash: 5f95202bd0c8c5045c10378068ae83cad3d93fdd
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: e3934cbce76df3997fa07d8fa3a99bd8ddab09a2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396466"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684346"
 ---
 # <a name="icordebugvalueenum-interface"></a>ICorDebugValueEnum, interfejs
+
 Implementuje metody "ICorDebugEnum" i wylicza tablice "ICorDebugValue".  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Next — Metoda](icordebugvalueenum-next-method.md)|Pobiera określoną liczbę `ICorDebugValue` wystąpień z wyliczenia, rozpoczynając od bieżącego położenia.|  
+|[Next, metoda](icordebugvalueenum-next-method.md)|Pobiera określoną liczbę `ICorDebugValue` wystąpień z wyliczenia, rozpoczynając od bieżącego położenia.|  
   
 ## <a name="remarks"></a>Uwagi  
   
@@ -36,6 +37,7 @@ Implementuje metody "ICorDebugEnum" i wylicza tablice "ICorDebugValue".
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

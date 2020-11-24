@@ -9,17 +9,19 @@ helpviewer_keywords:
 - .NET regular expressions, miscellaneous constructs
 - regular expressions, miscellaneous constructs
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
-ms.openlocfilehash: c9abccd6c93bad89cc737822fce3990c77b1b96e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ef8f126559b51aa9b918f04e27f5599fba519b43
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821947"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683800"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Inne konstrukcje w wyrażeniach regularnych
+
 Wyrażenia regularne w programie .NET zawierają trzy różne konstrukcje językowe. Jeden umożliwia włączenie lub wyłączenie określonych opcji dopasowania w środku wzorca wyrażenia regularnego. Pozostałe dwa umożliwiają uwzględnienie komentarzy w wyrażeniu regularnym.  
   
 ## <a name="inline-options"></a>Opcje wbudowane  
+
  Można ustawić lub wyłączyć konkretne opcje dopasowania do wzorca dla części wyrażenia regularnego przy użyciu składni  
   
 `(?imnsx-imnsx)`  
@@ -56,6 +58,7 @@ Wyrażenia regularne w programie .NET zawierają trzy różne konstrukcje język
 |`\b`|Dopasowuje granicę wyrazu.|  
   
 ## <a name="inline-comment"></a>Komentarz w tekście  
+
  Konstrukcja `(?#` *komentarza* `)` umożliwia dołączenie komentarza wbudowanego w wyrażeniu regularnym. Aparat wyrażeń regularnych nie używa żadnej części komentarza w dopasowaniu do wzorca, chociaż komentarz jest zawarty w ciągu, który jest zwracany przez <xref:System.Text.RegularExpressions.Regex.ToString%2A?displayProperty=nameWithType> metodę. Komentarz kończy się przy pierwszym nawiasie zamykającym.  
   
  Poniższy przykład powtarza pierwszy wzorzec wyrażenia regularnego z przykładu w poprzedniej sekcji. Dodaje dwa wbudowane Komentarze do wyrażenia regularnego, aby wskazać, czy w porównaniu jest rozróżniana wielkość liter. Wzorzec wyrażenia regularnego `\b((?# case-sensitive comparison)D\w+)\s(?ixn)((?#case-insensitive comparison)d\w+)\b` jest zdefiniowany w następujący sposób.  
@@ -75,6 +78,7 @@ Wyrażenia regularne w programie .NET zawierają trzy różne konstrukcje język
  [!code-vb[RegularExpressions.Language.Miscellaneous#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.miscellaneous/vb/miscellaneous2.vb#2)]  
   
 ## <a name="end-of-line-comment"></a>Komentarz końca wiersza  
+
  Znak numeru ( `#` ) oznacza komentarz w trybie x, który zaczyna się od znaku nieoznaczonego znakiem # na końcu wzorca wyrażenia regularnego i kontynuuje do końca wiersza. Aby użyć tej konstrukcji, należy włączyć `x` opcję (za pomocą opcji wbudowanych) lub podać <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> wartość do `option` parametru podczas tworzenia wystąpienia <xref:System.Text.RegularExpressions.Regex> obiektu lub wywoływania metody statycznej <xref:System.Text.RegularExpressions.Regex> .  
   
  Poniższy przykład ilustruje zakończenie konstruowania komentarza do końca wiersza. Określa, czy ciąg jest ciągiem formatu złożonego, który zawiera co najmniej jeden element formatu. W poniższej tabeli opisano konstrukcje we wzorcu wyrażenia regularnego:  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ef002890-4a7b-4a5d-abbf-16c60083f794
 topic_type:
 - apiref
-ms.openlocfilehash: 87d611a7b6e12a9238b00131326e8205778769e6
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 6f5d99e6dc4290ef69c0a0748fe15ae538e83558
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396590"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684229"
 ---
 # <a name="icordebugvariablehomegetcode-method"></a>ICorDebugVariableHome:: GetCode — Metoda
+
 Pobiera wystąpienie "ICorDebugCode", które zawiera ten obiekt [ICorDebugVariableHome](icordebugvariablehome-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetCode(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppCode`  
  określoną Wskaźnik do adresu wystąpienia "ICorDebugCode", które zawiera ten obiekt [ICorDebugVariableHome](icordebugvariablehome-interface.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
