@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e7a6cadc-2433-4472-a701-58891abcde45
 topic_type:
 - apiref
-ms.openlocfilehash: a97a7abf4f561a5aba41d8019f2ba5bd8e879acd
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 0b16305bc88854f1ab2ab89ab6b0d4d3e6881cf1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804736"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689474"
 ---
 # <a name="ihostiocompletionmanagergetmaxthreads-method"></a>IHostIoCompletionManager::GetMaxThreads — Metoda
+
 Pobiera maksymalną liczbę wątków, które host może przydzielić do żądań we/wy usługi.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetMaxThreads (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pdwMaxIoCompletionThreads`  
  określoną Wskaźnik do maksymalnej liczby wątków w puli wątków, które host może przydzielić do obsługi żądań we/wy usługi.  
   
@@ -41,7 +43,7 @@ HRESULT GetMaxThreads (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`GetMaxThreads`pomyślnie zwrócono.|  
+|S_OK|`GetMaxThreads` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,18 +52,20 @@ HRESULT GetMaxThreads (
 |E_NOTIMPL|Host nie oferuje implementacji programu `GetMaxThreads` .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Host może potrzebować wyłącznej kontroli nad liczbą wątków, które mogą być przydzielone do przetwarzania żądań we/wy, z przyczyn takich jak implementacja, wydajność lub skalowalność. Z tego powodu host nie musi być zaimplementowany `GetMaxThreads` . W takim przypadku host powinien zwrócić E_NOTIMPL z tej metody.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [ICLRIoCompletionManager, interfejs](iclriocompletionmanager-interface.md)
-- [IHostIoCompletionManager, interfejs](ihostiocompletionmanager-interface.md)
+- [ICLRIoCompletionManager — Interfejs](iclriocompletionmanager-interface.md)
+- [IHostIoCompletionManager — Interfejs](ihostiocompletionmanager-interface.md)

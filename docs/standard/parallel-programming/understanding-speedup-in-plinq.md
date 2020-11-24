@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, performance tuning
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
-ms.openlocfilehash: 247ebb868a9256deaf59c1369e6143e15af4d6b0
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 64eb346ba57e9af9f5be0cc1b42398c4f539d4d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829976"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689904"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Ogólne informacje o przyspieszeniach w PLINQ
+
 Głównym celem PLINQ jest przyspieszenie wykonywania zapytań LINQ to Objects przez wykonywanie delegatów zapytań równolegle na komputerach wielordzeniowych. PLINQ sprawdza się najlepiej, gdy przetwarzanie każdego elementu w kolekcji źródłowej jest niezależne, bez współużytkowanego stanu wśród poszczególnych delegatów. Takie operacje są typowe w LINQ to Objects i PLINQ i często nazywa się "*delightfully Parallel*", ponieważ ułatwiają one planowanie na wielu wątkach. Jednak nie wszystkie zapytania składają się wyłącznie z delightfully operacji równoległych; w większości przypadków zapytanie obejmuje niektóre operatory, które nie mogą być równoległe lub spowalniają wykonywanie równoległe. Mimo że zapytania, które są całkowicie delightfully równolegle, PLINQ muszą nadal dzielić źródło danych i zaplanować pracę w wątkach, a zazwyczaj scalać wyniki po zakończeniu zapytania. Wszystkie te operacje są dodawane do kosztów obliczeniowych przetwarzanie równoległe; koszty dodawania przetwarzanie równoległe są nazywane *obciążeniem*. Aby osiągnąć optymalną wydajność zapytania PLINQ, celem jest maksymalizacja części, które są delightfully równoległe i zminimalizowanie części, które wymagają narzutu. Ten artykuł zawiera informacje, które pomogą w pisaniu PLINQ zapytań, które są tak wydajne, jak to możliwe, przy zachowaniu prawidłowych wyników.  
   
 ## <a name="factors-that-impact-plinq-query-performance"></a>Czynniki wpływające na wydajność zapytań PLINQ  
+
  W poniższych sekcjach wymieniono najważniejsze czynniki wpływające na wydajność zapytań równoległych. Są to ogólne instrukcje, które same nie są wystarczające do przewidywania wydajności zapytań we wszystkich przypadkach. Tak samo ważne jest, aby mierzyć rzeczywistą wydajność konkretnych zapytań na komputerach z różnymi konfiguracjami i obciążeniami reprezentatywnymi.  
   
 1. Koszt obliczeniowy całościowej pracy.  
@@ -65,6 +67,7 @@ Głównym celem PLINQ jest przyspieszenie wykonywania zapytań LINQ to Objects p
      W niektórych przypadkach zapytanie PLINQ w kolekcji źródłowej z indeksem może spowodować niezrównoważone obciążenie pracą. W takim przypadku może być możliwe zwiększenie wydajności zapytania przez utworzenie niestandardowego programu Partitioner. Aby uzyskać więcej informacji, zobacz [niestandardowe partycje dla PLINQ i TPL](custom-partitioners-for-plinq-and-tpl.md).  
   
 ## <a name="when-plinq-chooses-sequential-mode"></a>Gdy PLINQ wybiera tryb sekwencyjny  
+
  PLINQ zawsze podejmie próbę wykonania zapytania co najmniej tak szybko, jak zapytanie zostanie uruchomione sekwencyjnie. Mimo że PLINQ nie sprawdza, w jaki sposób wyliczane są Delegaty użytkowników, lub jak duże jest źródło danych wejściowych, szuka określonych zapytań "Shapes". W odniesieniu do tego szuka operatorów zapytań lub kombinacji operatorów, które zwykle powodują spowolnienie wykonywania zapytania w trybie równoległym. Po znalezieniu takich kształtów PLINQ domyślnie wraca do trybu sekwencyjnego.  
   
  Jednak po pomiarze wydajności określonego zapytania można określić, że faktycznie działa szybciej w trybie równoległym. W takich przypadkach można użyć <xref:System.Linq.ParallelExecutionMode.ForceParallelism?displayProperty=nameWithType> flagi za pośrednictwem <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metody, aby poinstruować PLINQ o zrównoleglanie zapytania. Aby uzyskać więcej informacji, zobacz [How to: Określanie trybu wykonywania w PLINQ](how-to-specify-the-execution-mode-in-plinq.md).  

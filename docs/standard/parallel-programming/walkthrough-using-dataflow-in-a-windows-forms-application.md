@@ -6,24 +6,27 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-ms.openlocfilehash: c09259afdc5ede32791ba895ca012cdc2a0a1c18
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: da42358007b887f6bab05c35e0f7542f1069abd4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829950"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689813"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Przewodnik: Korzystanie z przepływu danych w aplikacji Windows Forms
+
 W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych, które wykonują przetwarzanie obrazów w aplikacji Windows Forms.  
   
  Ten przykład służy do ładowania plików obrazów z określonego folderu, tworzenia obrazu złożonego i wyświetlania wyniku. W przykładzie zastosowano model przepływu danych do rozsyłania obrazów za pośrednictwem sieci. W modelu przepływu danych niezależne składniki programu komunikują się ze sobą przez wysyłanie komunikatów. Gdy składnik odbiera komunikat, wykonuje pewne działania, a następnie przekazuje wynik do innego składnika. Porównaj ten element z modelem przepływu sterowania, w którym aplikacja używa struktur kontroli, na przykład instrukcji warunkowych, pętli i tak dalej, aby kontrolować kolejność operacji w programie.  
   
 ## <a name="prerequisites"></a>Wymagania wstępne  
+
  Przeczytaj [przepływu danych](dataflow-task-parallel-library.md) przed rozpoczęciem tego instruktażu.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="sections"></a>Sekcje  
+
  Ten Instruktaż zawiera następujące sekcje:  
   
 - [Tworzenie aplikacji Windows Forms](#winforms)  
@@ -35,7 +38,9 @@ W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych
 - [Kompletny przykład](#complete)  
   
 <a name="winforms"></a>
+
 ## <a name="creating-the-windows-forms-application"></a>Tworzenie aplikacji Windows Forms  
+
  W tej sekcji opisano, jak utworzyć podstawową aplikację Windows Forms i dodać kontrolki do formularza głównego.  
   
 ### <a name="to-create-the-windows-forms-application"></a>Aby utworzyć aplikację Windows Forms  
@@ -51,7 +56,9 @@ W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych
 5. Dodaj <xref:System.Windows.Forms.PictureBox> obiekt do formularza głównego. Ustaw <xref:System.Windows.Forms.Control.Dock%2A> Właściwość na wartość <xref:System.Windows.Forms.DockStyle.Fill> .  
   
 <a name="network"></a>
+
 ## <a name="creating-the-dataflow-network"></a>Tworzenie sieci przepływu danych  
+
  W tej sekcji opisano sposób tworzenia sieci przepływu danych, która wykonuje przetwarzanie obrazu.  
   
 ### <a name="to-create-the-dataflow-network"></a>Aby utworzyć sieć przepływu danych  
@@ -101,7 +108,9 @@ W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych
  W tym przykładzie używa udostępnionego tokenu anulowania zamiast ustawiania właściwości, <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> ponieważ <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> Właściwość trwale anuluje wykonywanie bloku przepływu danych. Token anulowania umożliwia korzystanie z tej samej sieci przepływu danych wiele razy, nawet jeśli użytkownik anuluje jedną lub więcej operacji. Przykład, który używa <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> do trwałego anulowania wykonywania bloku przepływu danych, można znaleźć w temacie [How to: Cancel a przepływu danych Block](how-to-cancel-a-dataflow-block.md).  
   
 <a name="ui"></a>
+
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Łączenie sieci przepływu danych z interfejsem użytkownika  
+
  W tej sekcji opisano sposób łączenia sieci przepływu danych z interfejsem użytkownika. Tworzenie obrazu złożonego i anulowanie operacji są inicjowane z przycisków **Wybierz folder** i **Anuluj** . Gdy użytkownik wybierze jeden z tych przycisków, odpowiednia akcja zostanie zainicjowana w sposób asynchroniczny.  
   
 ### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>Aby połączyć sieć przepływu danych z interfejsem użytkownika  
@@ -119,7 +128,9 @@ W tym dokumencie przedstawiono sposób tworzenia sieci bloków przepływu danych
      [!code-csharp[TPLDataflow_CompositeImages#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#7)]  
   
 <a name="complete"></a>
+
 ## <a name="the-complete-example"></a>Kompletny przykład  
+
  Poniższy przykład pokazuje kompletny kod dla tego przewodnika.  
   
  [!code-csharp[TPLDataflow_CompositeImages#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#100)]  

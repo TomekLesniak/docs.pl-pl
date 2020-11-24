@@ -2,14 +2,15 @@
 title: Metoda ICorDebugProcess6::EnableVirtualModuleSplitting
 ms.date: 03/30/2017
 ms.assetid: e7733bd3-68da-47f9-82ef-477db5f2e32d
-ms.openlocfilehash: ac61ffc553191aa70bdf5c04822a25b1074c2099
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 56795c6879d95253383c26c92e060f252a018914
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209372"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690216"
 ---
 # <a name="icordebugprocess6enablevirtualmodulesplitting-method"></a>Metoda ICorDebugProcess6::EnableVirtualModuleSplitting
+
 Włącza lub wyłącza dzielenie modułu wirtualnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -21,10 +22,12 @@ HRESULT EnableVirtualModuleSplitting(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `enableSplitting`  
- `true`Aby włączyć dzielenie modułu wirtualnego; `false`Aby go wyłączyć.  
+ `true` Aby włączyć dzielenie modułu wirtualnego; `false` Aby go wyłączyć.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dzielenie modułu wirtualnego powoduje, że [ICorDebug](icordebug-interface.md) rozpoznaje moduły, które zostały scalone podczas procesu kompilacji i są prezentowane jako Grupa oddzielnych modułów, a nie do pojedynczego dużego modułu. Spowoduje to zmianę zachowania różnych metod [ICorDebug](icordebug-interface.md) opisanych poniżej.  
   
 > [!NOTE]
@@ -33,6 +36,7 @@ HRESULT EnableVirtualModuleSplitting(
  Tę metodę można wywołać, a wartość `enableSplitting` można zmienić w dowolnym momencie. Nie powoduje żadnych zmian w działaniu stanowym w obiekcie [ICorDebug](icordebug-interface.md) , innych niż zmiana zachowania metod wymienionych w sekcji [dzielenie modułu wirtualnego i niezarządzane interfejsy API debugowania](#APIs) w momencie ich wywołania. Użycie modułów wirtualnych powoduje spadek wydajności podczas wywoływania tych metod. Ponadto w celu prawidłowego zaimplementowania interfejsów API [IMetaDataImport](../metadata/imetadataimport-interface.md) może być wymagane znaczne buforowanie w pamięci, a te pamięci podręczne mogą być przechowywane nawet po wyłączeniu dzielenia modułu wirtualnego.  
   
 ## <a name="terminology"></a>Terminologia  
+
  Poniższe terminy są używane podczas opisywania podziału modułu wirtualnego:  
   
  Moduły kontenera lub kontenery  
@@ -44,12 +48,14 @@ HRESULT EnableVirtualModuleSplitting(
  regularne moduły  
  Moduły, które nie zostały scalone w czasie kompilacji. Nie są to moduły kontenera ani moduły podrzędne.  
   
- Moduły kontenera i moduły podrzędne są reprezentowane przez obiekty interfejsu ICorDebugModule. Jednak zachowanie interfejsu jest nieco inne w każdym przypadku, zgodnie z opisem w \< sekcji x-ref do sekcji>.  
+ Moduły kontenera i moduły podrzędne są reprezentowane przez obiekty interfejsu ICorDebugModule. Jednak zachowanie interfejsu jest nieco inne w każdym przypadku, zgodnie z \<x-ref to section> opisem w sekcji.  
   
 ## <a name="modules-and-assemblies"></a>Moduły i zestawy  
+
  Zestawy obejmujące wiele modułów nie są obsługiwane w scenariuszach scalania zestawów, dlatego istnieje relacja jeden do jednego między modułem a zestawem. Każdy obiekt ICorDebugModule, niezależnie od tego, czy reprezentuje on moduł kontenera lub moduł podrzędny, ma odpowiedni obiekt ICorDebugAssembly. Metoda [ICorDebugModule:: GetAssembly](icordebugmodule-getassembly-method.md) konwertuje moduł do zestawu. Aby zamapować w innym kierunku, Metoda [ICorDebugAssembly:: EnumerateModules —](icordebugassembly-enumeratemodules-method.md) wylicza tylko jeden moduł. Ponieważ zestaw i moduł tworzą ściśle sprzężoną parę w tym przypadku, zestaw terminów i moduł stają się w dużym stopniu zamienne.  
   
 ## <a name="behavioral-differences"></a>Różnice w zachowaniu  
+
  Moduły kontenera mają następujące zachowania i cechy:  
   
 - Ich metadane dla wszystkich modułów podrzędnych są scalane ze sobą.  
@@ -81,6 +87,7 @@ HRESULT EnableVirtualModuleSplitting(
 - Metoda ICorDebugAssembly3. GetContainerAssembly zwraca moduł zawierający.  
   
 ## <a name="interfaces-retrieved-from-modules"></a>Interfejsy pobrane z modułów  
+
  Różne interfejsy mogą być tworzone lub pobierane z modułów. Oto niektóre poprawki:  
   
 - Obiekt ICorDebugClass, który jest zwracany przez metodę [ICorDebugModule:: GetClassFromToken —](icordebugmodule-getclassfromtoken-method.md) .  
@@ -90,7 +97,9 @@ HRESULT EnableVirtualModuleSplitting(
  Te obiekty są zawsze buforowane przez [ICorDebug](icordebug-interface.md)i będą miały taką samą tożsamość wskaźnika, niezależnie od tego, czy zostały utworzone, czy zapytania z modułu kontenera lub modułu podrzędnego. Moduł podrzędny zapewnia przefiltrowany widok tych obiektów w pamięci podręcznej, a nie osobną pamięć podręczną ze swoimi kopiami.  
   
 <a name="APIs"></a>
+
 ## <a name="virtual-module-splitting-and-the-unmanaged-debugging-apis"></a>Dzielenie modułu wirtualnego i niezarządzane interfejsy API debugowania  
+
  W poniższej tabeli przedstawiono sposób dzielenia modułu wirtualnego na zachowanie innych metod w niezarządzanym interfejsie API debugowania.  
   
 |Metoda|`enableSplitting` = `true`|`enableSplitting` = `false`|  
@@ -102,6 +111,7 @@ HRESULT EnableVirtualModuleSplitting(
 |[ICorDebugCode:: GetCode](icordebugcode-getcode-method.md) (tylko w przypadku odwoływania się do kodu Il)|Zwraca IL, który byłby prawidłowy w obrazie zestawu poprzedzającego scalenie. W każdym przypadku tokeny wbudowanej metadanych będą poprawnie mieć tokeny TypeRef lub MemberRef, gdy typy, do których się odwołuje, nie są zdefiniowane w module wirtualnym zawierającym IL. Te tokeny TypeRef lub MemberRef mogą być wyszukiwane w obiekcie [IMetaDataImport](../metadata/imetadataimport-interface.md) dla odpowiadającego wirtualnego obiektu ICorDebugModule.|Zwraca IL w obrazie zestawu po scaleniu.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -110,7 +120,7 @@ HRESULT EnableVirtualModuleSplitting(
   
  **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Interfejs ICorDebugProcess6](icordebugprocess6-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

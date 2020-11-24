@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2d381ab1-7e7c-4281-af2b-e54d879b3ef8
 topic_type:
 - apiref
-ms.openlocfilehash: 5ec69aa06816b117fb05853001e59532629504c4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d30ee9318d76aaf3ad2cde789ae292aed54f457e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614607"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689683"
 ---
 # <a name="isymunmanageddocumentgetdocumenttype-method"></a>ISymUnmanagedDocument::GetDocumentType — Metoda
+
 Pobiera typ dokumentu tego dokumentu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,12 +34,14 @@ HRESULT GetDocumentType(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pRetVal`  
  określoną Wskaźnik do zmiennej, która otrzymuje typ dokumentu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ISymUnmanagedDocument, interfejs](isymunmanageddocument-interface.md)
+- [ISymUnmanagedDocument — Interfejs](isymunmanageddocument-interface.md)

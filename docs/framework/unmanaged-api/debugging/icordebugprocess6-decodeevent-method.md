@@ -2,14 +2,15 @@
 title: Metoda ICorDebugProcess6::DecodeEvent
 ms.date: 03/30/2017
 ms.assetid: 1453bc0c-6e0d-4d5a-b176-22607f8a3e6c
-ms.openlocfilehash: 7c163311f9ce8f3d98ce72f45165a5e517c6c0aa
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ed75b3c5657fed805f187285a576b81598be331c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205515"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690281"
 ---
 # <a name="icordebugprocess6decodeevent-method"></a>Metoda ICorDebugProcess6::DecodeEvent
+
 Dekoduje zarządzane zdarzenia debugowania, które zostały hermetyzowane w ładunku specjalnie spreparowanych zdarzeń debugowania wyjątku natywnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,6 +27,7 @@ HRESULT DecodeEvent(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pRecord`  
  podczas Wskaźnik do tablicy bajtów z natywnego zdarzenia debugowania wyjątku, który zawiera informacje o zarządzanym zdarzeniu debugowania.  
   
@@ -50,6 +52,7 @@ HRESULT DecodeEvent(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -58,7 +61,7 @@ HRESULT DecodeEvent(
   
  **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Interfejs ICorDebugProcess6](icordebugprocess6-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

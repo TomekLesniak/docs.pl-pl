@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ddb0631-4569-41b3-93e4-50fdfaa486dc
 topic_type:
 - apiref
-ms.openlocfilehash: 60fbccabd21fb8bee118689a524efa9031bb2124
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 64e6b9a1942e9a69e43de3d2f09564814328ec08
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614997"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689618"
 ---
 # <a name="isymunmanagedreadergetmethodbyversion-method"></a>ISymUnmanagedReader::GetMethodByVersion — Metoda
+
 Pobiera metodę czytnika symboli, uwzględniając token metody i numer wersji do edycji i kopiowania. Numery wersji zaczynają się od 1 i zwiększają się za każdym razem, gdy metoda zostanie zmieniona w wyniku operacji edycji i kopiowania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetMethodByVersion (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `token`  
  podczas Token metody.  
   
@@ -45,9 +47,11 @@ HRESULT GetMethodByVersion (
  określoną Wskaźnik do zwracanego interfejsu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

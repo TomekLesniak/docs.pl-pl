@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fbaa0794-a031-4015-8beb-2749e47ac340
 topic_type:
 - apiref
-ms.openlocfilehash: c8914ba1090ec5fd6540e9ead302675cb44f37e6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 29dc87bf465fc9751b5af795f7640b095e535e63
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208606"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690398"
 ---
 # <a name="icordebugframegetcode-method"></a>ICorDebugFrame::GetCode — Metoda
+
 Pobiera wskaźnik do kodu skojarzonego z tą ramką stosu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetCode (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppCode`  
  określoną Wskaźnik do adresu obiektu ICorDebugCode, który reprezentuje kod skojarzony z tą ramką.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

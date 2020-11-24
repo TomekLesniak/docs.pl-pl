@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b284b18-0084-4b3a-912a-5ebe9f29c88b
 topic_type:
 - apiref
-ms.openlocfilehash: 612463bca18c23fac0b086adde2d208a0fbc5ae5
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: ba53ff30f0b6d0ae7fed7db422b7c0a242204a2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008173"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689436"
 ---
 # <a name="imetadataassemblyemitdefineassemblyref-method"></a>IMetaDataAssemblyEmit::DefineAssemblyRef — Metoda
+
 Tworzy `AssemblyRef` strukturę zawierającą metadane zestawu, do którego odwołuje się ten zestaw, i zwraca skojarzony token metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ HRESULT DefineAssemblyRef (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbPublicKeyOrToken`  
  podczas Klucz publiczny wydawcy przywoływanego zestawu. Funkcja pomocnika [StrongNameTokenFromAssembly —](../strong-naming/strongnametokenfromassembly-function.md) może służyć do uzyskania skrótu klucza publicznego do przekazania jako ten parametr.  
   
@@ -66,19 +68,21 @@ HRESULT DefineAssemblyRef (
  określoną Wskaźnik do zwracanego `AssemblyRef` tokenu metadanych.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `AssemblyRef`Dla każdego zestawu, do którego odwołuje się ten zestaw, musi być zdefiniowana jedna struktura metadanych.  
   
  W czasie wykonywania szczegóły przywoływanego zestawu są przenoszone do programu rozpoznawania zestawu ze wskazaniem, że reprezentują informacje "jako skompilowane". Program rozpoznawania zestawu stosuje zasady.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataAssemblyEmit — Interfejs](imetadataassemblyemit-interface.md)
