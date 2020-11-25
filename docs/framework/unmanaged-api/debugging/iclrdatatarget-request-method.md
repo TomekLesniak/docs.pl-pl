@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
 topic_type:
 - apiref
-ms.openlocfilehash: b913affb4728dc80ba67438384cbeac87265f76d
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 4d0cf22b4b0644d6b25d6b3ef884718cb9ca1e42
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860541"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723795"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request — Metoda
+
 Wywoływane przez usługi dostępu do danych środowiska uruchomieniowego języka wspólnego (CLR) do żądania operacji zgodnie z definicją w implementacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ HRESULT Request (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `reqCode`  
  podczas Zdefiniowane przez użytkownika.  
   
@@ -56,11 +58,13 @@ HRESULT Request (
  określoną Bufor zawierający odpowiedź.  
   
 ## <a name="remarks"></a>Uwagi  
- `Request` Metoda ułatwia dodanie nieokreślonych operacji niestandardowych. Oznacza to, że ta metoda zapewnia rozszerzalność bez konieczności zmiany definicji interfejsu.  
+
+ `Request`Metoda ułatwia dodanie nieokreślonych operacji niestandardowych. Oznacza to, że ta metoda zapewnia rozszerzalność bez konieczności zmiany definicji interfejsu.  
   
  Ta metoda jest implementowana przez moduł zapisujący aplikacji debugowania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** ClrData. idl, ClrData. h  
@@ -69,6 +73,6 @@ HRESULT Request (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRDataTarget — Interfejs](iclrdatatarget-interface.md)

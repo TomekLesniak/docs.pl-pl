@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5fd30875-555e-4e96-877b-5dd266cde7c4
 topic_type:
 - apiref
-ms.openlocfilehash: c9375854b45432eafb6cc706a1a62f5424e0fee8
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 3ac1b3606131f534195df9b6b59bf72b1bff27fb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210491"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724536"
 ---
 # <a name="icordebugprocessmodifylogswitch-method"></a>ICorDebugProcess::ModifyLogSwitch — Metoda
+
 Ustawia poziom ważności określonego przełącznika dziennika.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT ModifyLogSwitch(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pLogSwitchName`  
  podczas Wskaźnik do ciągu, który określa nazwę przełącznika dziennika.  
   
@@ -41,9 +43,11 @@ HRESULT ModifyLogSwitch(
  podczas Poziom ważności, który ma zostać ustawiony dla określonego przełączenia dziennika.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda jest prawidłowa tylko po wystąpieniu wywołania zwrotnego [ICorDebugManagedCallback:: CreateProcess](icordebugmanagedcallback-createprocess-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

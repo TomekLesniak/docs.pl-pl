@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 10093e3d-26b6-4ad7-8ef3-bbf66243fc02
 topic_type:
 - apiref
-ms.openlocfilehash: 70514464f27d6123a4de1d5800ed016a39541287
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 8e188f304908a8029a57bb059046205c35346f3d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207553"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724692"
 ---
 # <a name="icordebugobjectenumnext-method"></a>ICorDebugObjectEnum::Next — Metoda
+
 Pobiera względne adresy wirtualne (RVA) określonej liczby obiektów z wyliczenia, rozpoczynając od bieżącego położenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT Next (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba obiektów do pobrania.  
   
@@ -47,6 +49,7 @@ HRESULT Next (
  określoną Wskaźnik na liczbę obiektów faktycznie zwróconych. Ta wartość może być równa null, jeśli `celt` jest taka.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -55,4 +58,4 @@ HRESULT Next (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także

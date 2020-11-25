@@ -3,12 +3,12 @@ title: Wprowadzenie do platformy Docker
 description: Ten artykuł zawiera wprowadzenie i Omówienie platformy Docker w kontekście aplikacji .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc
-ms.openlocfilehash: 16ad49c39d588aac8f8a7a918eb4d799f37823ac
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 6303c16e914c86f3a431a9e5367e6feb8ff88c9e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654825"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724745"
 ---
 # <a name="introduction-to-net-and-docker"></a>Wprowadzenie do platform .NET i Docker
 
@@ -26,7 +26,7 @@ Obraz to uporządkowana kolekcja zmian systemu plików, która stanowi podstawę
 
 Ponieważ kontenery są tworzone na podstawie obrazów, obrazy mają zestaw parametrów uruchomieniowych (takich jak uruchamianie pliku wykonywalnego), które są uruchamiane podczas uruchamiania kontenera.
 
-### <a name="containers"></a>Kontenery
+### <a name="containers"></a>Containers
 
 Kontener jest wystąpieniem możliwy do uruchomienia obrazu. Podczas kompilowania obrazu należy wdrożyć swoją aplikację i zależności. Następnie można utworzyć wystąpienie wielu kontenerów, każdy odizolowany od siebie nawzajem. Każde wystąpienie kontenera ma własny interfejs systemu plików, pamięci i interfejsu sieciowego.
 
@@ -34,9 +34,9 @@ Kontener jest wystąpieniem możliwy do uruchomienia obrazu. Podczas kompilowani
 
 Rejestry kontenerów to kolekcja repozytoriów obrazów. Obrazy można oprzeć na obrazie rejestru. Kontenery można tworzyć bezpośrednio z obrazu w rejestrze. [Relacja między kontenerami platformy Docker, obrazami i rejestrami](../../architecture/microservices/container-docker-introduction/docker-containers-images-registries.md) jest ważnym pojęciem podczas [tworzenia i kompilowania kontenerów aplikacji lub mikrousług](../../architecture/microservices/architect-microservice-container-applications/index.md). Takie podejście znacznie skraca czas między programowaniem i wdrażaniem.
 
-Platforma Docker ma publiczny rejestr hostowany w [centrum Docker](https://hub.docker.com/) , którego można użyć. [Obrazy powiązane z programem .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) są wymienione w centrum platformy Docker.
+Platforma Docker ma publiczny rejestr hostowany w [centrum Docker](https://hub.docker.com/) , którego można użyć. [Obrazy powiązane z programem .NET Core](https://hub.docker.com/_/microsoft-dotnet/) są wymienione w centrum platformy Docker.
 
-[Microsoft Container Registry (MCR)](/azure/container-registry) jest oficjalnym źródłem obrazów kontenerów dostarczonych przez firmę Microsoft. MCR jest oparta na Azure CDN, aby zapewnić globalnie zreplikowane obrazy. MCR nie ma jednak publicznej witryny sieci Web i głównym sposobem uczenia się obrazów kontenerów dostarczonych przez firmę Microsoft odbywa się za pomocą [stron centrum platformy Docker firmy Microsoft](https://hub.docker.com/_/microsoft-dotnet-core/).
+[Microsoft Container Registry (MCR)](/azure/container-registry) jest oficjalnym źródłem obrazów kontenerów dostarczonych przez firmę Microsoft. MCR jest oparta na Azure CDN, aby zapewnić globalnie zreplikowane obrazy. MCR nie ma jednak publicznej witryny sieci Web i głównym sposobem uczenia się obrazów kontenerów dostarczonych przez firmę Microsoft odbywa się za pomocą [stron centrum platformy Docker firmy Microsoft](https://hub.docker.com/_/microsoft-dotnet/).
 
 ### <a name="dockerfile"></a>Dockerfile
 
@@ -44,11 +44,11 @@ Platforma Docker ma publiczny rejestr hostowany w [centrum Docker](https://hub.d
 
 ## <a name="net-core-images"></a>Obrazy .NET Core
 
-Oficjalne obrazy .NET Core Docker są publikowane w Container Registry firmy Microsoft (MCR) i można je odnajdywać w [repozytorium Microsoft .NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/). Każde repozytorium zawiera obrazy różnych kombinacji platformy .NET (zestawu SDK lub środowiska uruchomieniowego) i systemu operacyjnego, których można użyć.
+Oficjalne obrazy .NET Core Docker są publikowane w Container Registry firmy Microsoft (MCR) i można je odnajdywać w [repozytorium Microsoft .NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet/). Każde repozytorium zawiera obrazy różnych kombinacji platformy .NET (zestawu SDK lub środowiska uruchomieniowego) i systemu operacyjnego, których można użyć.
 
-Firma Microsoft udostępnia obrazy dostosowane do konkretnych scenariuszy. Na przykład [repozytorium ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) zawiera obrazy skompilowane do uruchamiania aplikacji ASP.NET Core w środowisku produkcyjnym.
+Firma Microsoft udostępnia obrazy dostosowane do konkretnych scenariuszy. Na przykład [repozytorium ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-aspnet/) zawiera obrazy skompilowane do uruchamiania aplikacji ASP.NET Core w środowisku produkcyjnym.
 
-## <a name="azure-services"></a>Usługi Azure
+## <a name="azure-services"></a>Usługi platformy Azure
 
 Różne kontenery obsługują usługi platformy Azure. Tworzysz obraz platformy Docker dla aplikacji i Wdróż go w jednej z następujących usług:
 

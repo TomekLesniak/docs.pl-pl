@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78c1ba28-a410-4360-805c-23a95408964a
 topic_type:
 - apiref
-ms.openlocfilehash: a3ec0af33f3f1201ce2f6b62291dfc67696fecab
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 791b92c30fc2bf3d506113620b59ba20015e077e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610447"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725823"
 ---
 # <a name="isymunmanagedvariablegetsignature-method"></a>ISymUnmanagedVariable::GetSignature — Metoda
+
 Pobiera sygnaturę tej zmiennej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetSignature(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cSig`  
  podczas Długość buforu wskazywanego przez `sig` parametr.  
   
@@ -46,11 +48,13 @@ HRESULT GetSignature(
  określoną Bufor przechowujący podpis.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ISymUnmanagedVariable, interfejs](isymunmanagedvariable-interface.md)
+- [ISymUnmanagedVariable — Interfejs](isymunmanagedvariable-interface.md)

@@ -4,12 +4,12 @@ description: W tym samouczku dowiesz się, jak konteneryzowanie aplikację .NET 
 ms.date: 04/27/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: b6775c760ef3f5bf1c9519430b038f149c9cf30f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7605f847a76907f4f9d0a451ba69332d6d174615
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538504"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724731"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Samouczek: Konteneryzowanie aplikacji .NET Core
 
@@ -182,13 +182,13 @@ Plik *pliku dockerfile* jest używany przez `docker build` polecenie do tworzeni
 Utwórz plik o nazwie *pliku dockerfile* w katalogu zawierającym element *. csproj* i otwórz go w edytorze tekstu. W tym samouczku zostanie użyty obraz środowiska uruchomieniowego ASP.NET Core (zawierający obraz środowiska uruchomieniowego programu .NET Core), który odpowiada aplikacji konsolowej programu .NET Core.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+FROM mcr.microsoft.com/dotnet/aspnet:3.1
 ```
 
 > [!NOTE]
-> Obraz środowiska uruchomieniowego ASP.NET Core jest używany w sposób celowy, chociaż `mcr.microsoft.com/dotnet/core/runtime:3.1` można było użyć obrazu.
+> Obraz środowiska uruchomieniowego ASP.NET Core jest używany w sposób celowy, chociaż `mcr.microsoft.com/dotnet/runtime:3.1` można było użyć obrazu.
 
-`FROM`Słowo kluczowe wymaga w pełni kwalifikowanej nazwy obrazu kontenera Docker. Microsoft Container Registry (MCR, mcr.microsoft.com) to zespolone centrum Docker, które hostuje dostępne publicznie kontenery. `dotnet/core`Segment jest repozytorium kontenera, gdzie jako `aspnet` segment jest nazwą obrazu kontenera. Obraz jest otagowany przy użyciu `3.1` , który jest używany do przechowywania wersji. W tym przypadku `mcr.microsoft.com/dotnet/core/aspnet:3.1` środowisko uruchomieniowe programu .NET Core 3,1. Upewnij się, że korzystasz z wersji środowiska uruchomieniowego, która pasuje do środowiska uruchomieniowego wskazywanego przez zestaw SDK. Na przykład aplikacja utworzona w poprzedniej sekcji używa zestawu .NET Core 3,1 SDK i obrazu podstawowego, do którego odwołuje się w *pliku dockerfile* , jest oznaczona jako **3,1**.
+`FROM`Słowo kluczowe wymaga w pełni kwalifikowanej nazwy obrazu kontenera Docker. Microsoft Container Registry (MCR, mcr.microsoft.com) to zespolone centrum Docker, które hostuje dostępne publicznie kontenery. `dotnet/core`Segment jest repozytorium kontenera, gdzie jako `aspnet` segment jest nazwą obrazu kontenera. Obraz jest otagowany przy użyciu `3.1` , który jest używany do przechowywania wersji. W tym przypadku `mcr.microsoft.com/dotnet/aspnet:3.1` środowisko uruchomieniowe programu .NET Core 3,1. Upewnij się, że korzystasz z wersji środowiska uruchomieniowego, która pasuje do środowiska uruchomieniowego wskazywanego przez zestaw SDK. Na przykład aplikacja utworzona w poprzedniej sekcji używa zestawu .NET Core 3,1 SDK i obrazu podstawowego, do którego odwołuje się w *pliku dockerfile* , jest oznaczona jako **3,1**.
 
 Zapisz plik *pliku dockerfile* . Struktura katalogów folderu roboczego powinna wyglądać następująco. Niektóre pliki i foldery bardziej szczegółowe zostały pominięte w celu zaoszczędzenia miejsca w artykule:
 
@@ -223,7 +223,7 @@ Platforma Docker będzie przetwarzać każdy wiersz w *pliku dockerfile*. `.`W `
 docker images
 REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
 counter-image                           latest              e6780479db63        4 days ago          190MB
-mcr.microsoft.com/dotnet/core/aspnet    3.1                 e6780479db63        4 days ago          190MB
+mcr.microsoft.com/dotnet/aspnet         3.1                 e6780479db63        4 days ago          190MB
 ```
 
 Zwróć uwagę, że te dwa obrazy mają tę samą wartość **identyfikatora obrazu** . Wartość jest taka sama między obu obrazów, ponieważ jedyne polecenie w *pliku dockerfile* było podstawą nowego obrazu na istniejącym obrazie. Dodajmy trzy polecenia do *pliku dockerfile*. Każde polecenie tworzy nową warstwę obrazu z końcowym poleceniem reprezentującym punkty wejścia repozytorium **obrazu licznika** do.
@@ -245,7 +245,7 @@ W terminalu uruchom polecenie `docker build -t counter-image -f Dockerfile .` i 
 ```console
 docker build -t counter-image -f Dockerfile .
 Sending build context to Docker daemon  1.117MB
-Step 1/4 : FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+Step 1/4 : FROM mcr.microsoft.com/dotnet/aspnet:3.1
  ---> e6780479db63
 Step 2/4 : COPY bin/Release/netcoreapp3.1/publish/ App/
  ---> d1732740eed2
@@ -263,7 +263,7 @@ Successfully tagged counter-image:latest
 docker images
 REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
 counter-image                           latest              cd11c3df9b19        41 seconds ago      190MB
-mcr.microsoft.com/dotnet/core/aspnet    3.1                 e6780479db63        4 days ago          190MB
+mcr.microsoft.com/dotnet/aspnet         3.1                 e6780479db63        4 days ago          190MB
 ```
 
 Każde polecenie w *pliku dockerfile* wygenerowało warstwę i utworzyła **Identyfikator obrazu**. Końcowy **Identyfikator obrazu** (będzie inny) to **cd11c3df9b19** , a następnie utworzysz kontener oparty na tym obrazie.
@@ -470,7 +470,7 @@ Następnie usuń wszystkie obrazy, które nie są już potrzebne na komputerze. 
 
 ```console
 docker rmi counter-image:latest
-docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1
+docker rmi mcr.microsoft.com/dotnet/aspnet:3.1
 ```
 
 Użyj `docker images` polecenia, aby wyświetlić listę zainstalowanych obrazów.

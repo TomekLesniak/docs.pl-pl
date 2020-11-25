@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1bfb5d3a-0ffd-4bb4-9bf6-aec00cb675b7
 topic_type:
 - apiref
-ms.openlocfilehash: 15004238ee296e44ae77cd8739b7f62ea2a7a100
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: b87bc026a2cac2d0b913128c43142d56aee03025
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762971"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725199"
 ---
 # <a name="iclrtaskreset-method"></a>ICLRTask::Reset — Metoda
+
 Informuje środowisko uruchomieniowe języka wspólnego (CLR), że host ukończył zadanie, i włącza środowisko CLR do ponownego użycia bieżącego wystąpienia [ICLRTask](iclrtask-interface.md) , aby reprezentować inne zadanie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT Reset (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `fFull`  
  [in] `true` , jeśli środowisko uruchomieniowe powinno zresetować wszystkie wartości statyczne powiązane z wątkiem oprócz informacji o zabezpieczeniach i ustawieniach regionalnych związanych z bieżącym `ICLRTask` wystąpieniem; w przeciwnym razie `false` .  
   
@@ -43,7 +45,7 @@ HRESULT Reset (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`Reset`pomyślnie zwrócono.|  
+|S_OK|`Reset` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania. została|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -51,6 +53,7 @@ HRESULT Reset (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR może odtworzyć wcześniej utworzone `ICLRTask` wystąpienia, aby uniknąć narzutu wielokrotnego tworzenia nowych wystąpień za każdym razem, gdy potrzebne jest nowe zadanie. Host włącza tę funkcję, wywołując `ICLRTask::Reset` zamiast [ICLRTask:: ExitTask —](iclrtask-exittask-method.md) , gdy ukończył zadanie. Poniższa lista podsumowuje normalny cykl życia `ICLRTask` wystąpienia:  
   
 1. Środowisko uruchomieniowe tworzy nowe `ICLRTask` wystąpienie.  
@@ -63,22 +66,23 @@ HRESULT Reset (
   
 5. Host niszczy zadanie, wywołując metodę `ICLRTask::ExitTask` .  
   
- `Reset`zmienia ten scenariusz na dwa sposoby. W kroku 5 powyżej, Host wywołuje `Reset` w celu zresetowania zadania do stanu czystego, a następnie oddziela `ICLRTask` wystąpienie od skojarzonego z nim wystąpienia [IHostTask](ihosttask-interface.md) . Jeśli to konieczne, host może również buforować `IHostTask` wystąpienie do ponownego użycia. W kroku 1 środowisko uruchomieniowe pobierze ponownie `ICLRTask` z pamięci podręcznej, zamiast tworzyć nowe wystąpienie.  
+ `Reset` zmienia ten scenariusz na dwa sposoby. W kroku 5 powyżej, Host wywołuje `Reset` w celu zresetowania zadania do stanu czystego, a następnie oddziela `ICLRTask` wystąpienie od skojarzonego z nim wystąpienia [IHostTask](ihosttask-interface.md) . Jeśli to konieczne, host może również buforować `IHostTask` wystąpienie do ponownego użycia. W kroku 1 środowisko uruchomieniowe pobierze ponownie `ICLRTask` z pamięci podręcznej, zamiast tworzyć nowe wystąpienie.  
   
  Takie podejście działa prawidłowo, gdy host ma również pulę zadań wielokrotnego użytku. Gdy host niszczy jedno z jego `IHostTask` wystąpień, niszczy odpowiednie `ICLRTask` wywołanie `ExitTask` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)

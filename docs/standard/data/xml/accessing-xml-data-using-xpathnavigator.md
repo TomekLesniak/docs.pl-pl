@@ -2,17 +2,19 @@
 title: Uzyskiwanie dostępu do danych XML przy użyciu klasy XPathNavigator
 ms.date: 03/30/2017
 ms.assetid: c57b46e6-5c77-408f-bc4e-67a5dcc9cc05
-ms.openlocfilehash: a3911230598a282d66fa50bf1d82c4b4083a30e4
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f87e2e12b7ebc740809dc8db902f2ece92e8f127
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821895"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725407"
 ---
 # <a name="accessing-xml-data-using-xpathnavigator"></a>Uzyskiwanie dostępu do danych XML przy użyciu klasy XPathNavigator
+
 <xref:System.Xml.XPath.XPathNavigator>Klasa udostępnia metody do nawigowania po węzłach, wyodrębniania danych XML i uzyskiwania dostępu do jednoznacznie wpisanych danych XML w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Nawigacja po zestawie węzłów przy użyciu klasy XPathNavigator](node-set-navigation-using-xpathnavigator.md)  
  Opisuje metody nawigacji zestawu węzłów <xref:System.Xml.XPath.XPathNavigator> używane do nawigowania w węzłach <xref:System.Xml.XPath.XPathDocument> lub <xref:System.Xml.XmlDocument> obiektach.  
   

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: bfd46324-afec-4782-9c18-586d81fb4740
 topic_type:
 - apiref
-ms.openlocfilehash: 1c795ee536483a7def9c0339efae66a013898a77
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 3f41dd969e25f7a42308ff0b7b2d617344284b38
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420633"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725251"
 ---
 # <a name="call_id-structure"></a>CALL_ID — Struktura
+
 Dostarcza informacje do debugera dotyczące funkcji, która jest wywoływana. Aby uzyskać więcej informacji, zobacz Interfejs [INotifySink2](inotifysink2-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -50,6 +51,7 @@ typedef struct tagCALL_ID
 |`szDestinationMachine`|Identyfikuje maszynę, która będzie wykonywać wywołanie.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Zobacz także

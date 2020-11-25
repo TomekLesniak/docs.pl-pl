@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2657d45d-26d2-4d0a-8473-32b652e3321d
 topic_type:
 - apiref
-ms.openlocfilehash: 0417a4acc0f4f39d8254eb5d5df3b3e690921a8a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 9120085f6a241bcda04946a843799987bf82bb84
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804827"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723886"
 ---
 # <a name="ihostgcmanagerthreadisblockingforsuspension-method"></a>IHostGCManager::ThreadIsBlockingForSuspension — Metoda
+
 Powiadamia hosta, że wątek, z którego wykonano wywołanie metody, ma zablokować na wyrzucanie elementów bezużytecznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,7 +36,7 @@ HRESULT ThreadIsBlockingForSuspension ();
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`ThreadIsBlockingForSuspension`pomyślnie zwrócono.|  
+|S_OK|`ThreadIsBlockingForSuspension` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -43,24 +44,26 @@ HRESULT ThreadIsBlockingForSuspension ();
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR zazwyczaj wywołuje `ThreadIsBlockForSuspension` metodę w przygotowaniu do wyrzucania elementów bezużytecznych, aby umożliwić hostowi ponowne zaplanowanie wątku dla niezarządzanych zadań.  
   
 > [!IMPORTANT]
 > Host może zmienić harmonogram zadań dopiero po wywołaniu `ThreadIsBlockingForSuspension` . Po [SuspensionStarting —](ihostgcmanager-suspensionstarting-method.md)wywołań środowiska uruchomieniowego hosta nie może ponownie zaplanować zadania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)
 - [IHostGCManager — Interfejs](ihostgcmanager-interface.md)

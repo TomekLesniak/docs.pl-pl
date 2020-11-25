@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9f968dad-0d09-47fb-bebc-94c39a0d16ad
 topic_type:
 - apiref
-ms.openlocfilehash: 22a6af61251942f068676daaee2bdfa868e32a97
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e731ac1c652b8b4505073a3a10463ae0ce21ac0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134556"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724497"
 ---
 # <a name="getappidauthority-function"></a>GetAppIdAuthority — Funkcja
+
 Pobiera wskaźnik do wystąpienia [IAppIdAuthority —](iappidauthority-interface.md) , które zarządza kluczami dla tożsamości i odwołań aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,17 +35,19 @@ HRESULT GetAppIdAuthority (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppIAppIdAuthority`  
- określoną Zwrócony wskaźnik `IAppIdAuthority`.  
+ określoną Zwrócony `IAppIdAuthority` wskaźnik.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Izolacja. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IAppIdAuthority, interfejs](iappidauthority-interface.md)
+- [IAppIdAuthority — Interfejs](iappidauthority-interface.md)
 - [Łączenie statycznych funkcji globalnych](fusion-global-static-functions.md)

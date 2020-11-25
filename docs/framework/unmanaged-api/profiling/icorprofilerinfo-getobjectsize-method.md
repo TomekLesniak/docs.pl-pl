@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9f02e763-73f7-42cb-a41c-f78499d9482c
 topic_type:
 - apiref
-ms.openlocfilehash: 15c843fe138be55a3480f46e0ef8b37bcb445ad0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4abcf9f4575b32dd125fd8a00783043900993c3e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497975"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724107"
 ---
 # <a name="icorprofilerinfogetobjectsize-method"></a>ICorProfilerInfo::GetObjectSize — Metoda
+
 Pobiera rozmiar określonego obiektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetObjectSize(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `objectId`  
  podczas Identyfikator obiektu.  
   
@@ -43,7 +45,7 @@ HRESULT GetObjectSize(
 ## <a name="remarks"></a>Uwagi  
   
 > [!IMPORTANT]
-> Ta metoda jest przestarzała. Zwraca COR_E_OVERFLOW dla obiektów większych niż 4 GB na platformach 64-bitowych. Zamiast tego użyj metody [ICorProfilerInfo4:: GetObjectSize2 —](icorprofilerinfo4-getobjectsize2-method.md) .  
+> Ta metoda jest przestarzała. Zwraca COR_E_OVERFLOW dla obiektów większych niż 4 GB na platformach 64-bitowych. Zamiast tego użyj metody  [ICorProfilerInfo4:: GetObjectSize2 —](icorprofilerinfo4-getobjectsize2-method.md) .  
   
  Różne obiekty tego samego typu często mają ten sam rozmiar. Jednak niektóre typy, takie jak tablice lub ciągi, mogą mieć różne rozmiary dla każdego obiektu.  
   
@@ -54,6 +56,7 @@ HRESULT GetObjectSize(
 - W 64-bitowym systemie Windows wyrównanie ma zawsze 8 bajtów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -64,4 +67,4 @@ HRESULT GetObjectSize(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)

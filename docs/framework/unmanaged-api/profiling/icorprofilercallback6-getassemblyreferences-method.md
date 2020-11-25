@@ -13,14 +13,15 @@ api_type:
 ms.assetid: 8b391afb-d79f-41bd-94ce-43ce62c6b5fc
 topic_type:
 - apiref
-ms.openlocfilehash: 5deacbff740ebb1dcc8cb8d1fb7e4eb0d4bdcc30
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c9e973009f46ef7e554ee2df63493464f4956342
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499223"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725485"
 ---
 # <a name="icorprofilercallback6getassemblyreferences-method"></a>Metoda ICorProfilerCallback6::GetAssemblyReferences
+
 [Obsługiwane w .NET Framework 4.5.2 i nowszych wersjach]  
   
  Powiadamia program profilujący, że zestaw jest w bardzo wczesnym etapie ładowania, gdy środowisko uruchomieniowe języka wspólnego wykonuje przegląd zamknięcia odwołania do zestawu.  
@@ -34,6 +35,7 @@ HRESULT GetAssemblyReferences(        [in, string] const WCHAR* wszAssemblyPath,
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `wszAssemblyPath`  
  podczas Ścieżka i nazwa zestawu, którego metadane zostaną zmodyfikowane.  
   
@@ -41,9 +43,11 @@ HRESULT GetAssemblyReferences(        [in, string] const WCHAR* wszAssemblyPath,
  podczas Wskaźnik do adresu interfejsu [ICorProfilerAssemblyReferenceProvider](icorprofilerassemblyreferenceprovider-interface.md) , który określa odwołania do zestawu do dodania.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Zwracane wartości z tego wywołania zwrotnego są ignorowane.  
   
 ## <a name="remarks"></a>Uwagi  
+
  To wywołanie zwrotne jest kontrolowane przez ustawienie flagi maski zdarzeń [COR_PRF_HIGH_ADD_ASSEMBLY_REFERENCES](cor-prf-high-monitor-enumeration.md) podczas wywoływania metody [ICorProfilerCallback5:: SetEventMask2](icorprofilerinfo5-seteventmask2-method.md) . Jeśli Profiler rejestruje metodę wywołania zwrotnego [ICorProfilerCallback6:: GetAssemblyReferences](icorprofilercallback6-getassemblyreferences-method.md) , środowisko uruchomieniowe przekazuje ścieżkę i nazwę zestawu, który ma być załadowany, wraz ze wskaźnikiem do obiektu interfejsu [ICorProfilerAssemblyReferenceProvider](icorprofilerassemblyreferenceprovider-interface.md) do tej metody. Profiler może następnie wywołać metodę [ICorProfilerAssemblyReferenceProvider:: AddAssemblyReference](icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) z `COR_PRF_ASSEMBLY_REFERENCE_INFO` obiektem dla każdego zestawu docelowego, który planuje się do odwołania z zestawu określonego w `GetAssemblyReferences` wywołaniu zwrotnym.  
   
  Użyj `GetAssemblyReferences` wywołania zwrotnego, tylko jeśli profiler musi zmodyfikować metadane zestawu, aby dodać odwołania do zestawu. (Należy zauważyć, że rzeczywista modyfikacja metadanych zestawu jest wykonywana w metodzie wywołania zwrotnego [ICorProfilerCallback:: ModuleLoadFinished —](icorprofilercallback-moduleloadfinished-method.md)). Profiler powinien zaimplementować `GetAssemblyReferences` metodę wywołania zwrotnego, aby poinformować środowisko uruchomieniowe języka wspólnego (CLR), że odwołania do zestawu zostaną dodane po załadowaniu modułu.  Pozwala to zagwarantować, że decyzje dotyczące udostępniania zestawu wykonane przez środowisko CLR w trakcie tego wczesnego etapu pozostają prawidłowe, mimo że program profilujący planuje później zmodyfikować odwołania do zestawu metadanych.  Może to uniknąć niektórych wystąpień, w których modyfikacje metadanych profilera powodują wystąpienie `SECURITY_E_INCOMPATIBLE_SHARE` błędu.  
@@ -53,6 +57,7 @@ HRESULT GetAssemblyReferences(        [in, string] const WCHAR* wszAssemblyPath,
  Profiler powinien zostać przygotowany do odbierania zduplikowanych wywołań tego wywołania zwrotnego dla tego samego zestawu i powinien odpowiadać identycznie dla każdego takiego duplikatu wywołania (przez nadanie tego samego zestawu [ICorProfilerAssemblyReferenceProvider:: AddAssemblyReference](icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) ).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -63,7 +68,7 @@ HRESULT GetAssemblyReferences(        [in, string] const WCHAR* wszAssemblyPath,
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerCallback6, interfejs](icorprofilercallback6-interface.md)
+- [Interfejs ICorProfilerCallback6](icorprofilercallback6-interface.md)
 - [ModuleLoadFinished, metoda](icorprofilercallback-moduleloadfinished-method.md)
-- [COR_PRF_ASSEMBLY_REFERENCE_INFO, struktura](cor-prf-assembly-reference-info-structure.md)
+- [Struktura COR_PRF_ASSEMBLY_REFERENCE_INFO](cor-prf-assembly-reference-info-structure.md)
 - [Interfejs ICorProfilerAssemblyReferenceProvider](icorprofilerassemblyreferenceprovider-interface.md)

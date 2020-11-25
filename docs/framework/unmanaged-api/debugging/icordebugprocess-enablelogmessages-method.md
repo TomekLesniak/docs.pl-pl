@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 14a4e5a3-3eaf-4f53-9dd1-762726963a23
 topic_type:
 - apiref
-ms.openlocfilehash: 3b850a462ce354b81f4406fce7fd9d8d9b6013d8
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 86cb1a2eb18840419d2a4e8ee4f6475edafe8397
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207899"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724627"
 ---
 # <a name="icordebugprocessenablelogmessages-method"></a>ICorDebugProcess::EnableLogMessages — Metoda
+
 Włącza i wyłącza przekazywanie komunikatów dziennika do debugera.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,13 +33,16 @@ HRESULT EnableLogMessages([in]BOOL fOnOff);
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `fOnOff`  
- [w] `true` Włącza transmisję komunikatów dziennika; `false`wyłącza przesyłanie.  
+ [w] `true` Włącza transmisję komunikatów dziennika; `false` wyłącza przesyłanie.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda jest prawidłowa tylko po wywołaniu wywołania zwrotnego [ICorDebugManagedCallback:: CreateProcess](icordebugmanagedcallback-createprocess-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

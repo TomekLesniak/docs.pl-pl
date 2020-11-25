@@ -13,14 +13,15 @@ api_type:
 ms.assetid: 06522727-5f64-4391-9331-11386883c352
 topic_type:
 - apiref
-ms.openlocfilehash: f6a54ab9efa7ca97bcdb64afcde8812f2b5e44e9
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 11207298b071527151535144330790df767c2101
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210075"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725004"
 ---
 # <a name="icordebugilframe3getreturnvalueforiloffset-method"></a>ICorDebugILFrame3::GetReturnValueForILOffset — Metoda
+
 Pobiera obiekt "ICorDebugValue", który hermetyzuje zwracaną wartość funkcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,6 +34,7 @@ HRESULT GetReturnValueForILOffset(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ILOffset`  
  Przesunięcie IL. Zobacz sekcję Uwagi.  
   
@@ -40,6 +42,7 @@ HRESULT GetReturnValueForILOffset(
  Wskaźnik do adresu obiektu interfejsu "ICorDebugValue", który zawiera informacje o zwracanej wartości wywołania funkcji.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda jest używana razem z metodą [ICorDebugCode3:: GetReturnValueLiveOffset](icordebugcode3-getreturnvalueliveoffset-method.md) w celu uzyskania wartości zwracanej przez metodę. Jest to szczególnie przydatne w przypadku metod, których wartości zwracane są ignorowane, jak w poniższych dwóch przykładach kodu. Pierwszy przykład wywołuje <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> metodę, ale ignoruje wartość zwracaną metody.  
   
  [!code-csharp[Unmanaged.Debugging.MRV#1](../../../../samples/snippets/csharp/VS_Snippets_CLR/unmanaged.debugging.mrv/cs/mrv1.cs#1)]
@@ -62,6 +65,7 @@ HRESULT GetReturnValueForILOffset(
  Ta `ICorDebugILFrame3::GetReturnValueForILOffset` Metoda jest dostępna tylko w systemach opartych na architekturze x86 i amd64.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -70,7 +74,7 @@ HRESULT GetReturnValueForILOffset(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [GetReturnValueLiveOffset, metoda](icordebugcode3-getreturnvalueliveoffset-method.md)
 - [ICorDebugILFrame3 — Interfejs](icordebugilframe3-interface.md)

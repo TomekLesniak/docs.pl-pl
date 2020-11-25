@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f671f519-1cb3-4ae5-b9f1-abc5e783459f
 topic_type:
 - apiref
-ms.openlocfilehash: 6ae0fec0f8de2bbe3862f9f70ed9cf3d32af34c4
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: a0285970a8a42c078aa663579e1d5998d0d1c037
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894216"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724458"
 ---
 # <a name="icordebugchain-interface"></a>ICorDebugChain, interfejs
 
@@ -43,12 +43,14 @@ Reprezentuje segment stosu wywołań fizycznych lub logicznych.
 |[IsManaged, metoda](icordebugchain-ismanaged-method.md)|Pobiera wartość wskazującą, czy w tym łańcuchu działa kod zarządzany.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ramki stosu w łańcuchu zajmują ciągły obszar stosu i korzystają z tego samego wątku i kontekstu. Łańcuch może reprezentować zarządzane lub niezarządzane łańcuchy kodu. Puste `ICorDebugChain` wystąpienie reprezentuje łańcuch kodu niezarządzanego.  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -57,6 +59,6 @@ Reprezentuje segment stosu wywołań fizycznych lub logicznych.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

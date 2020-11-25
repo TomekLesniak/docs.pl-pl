@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7a439d92-348a-44dd-b60f-cad7cba56379
 topic_type:
 - apiref
-ms.openlocfilehash: 62b34128be99ce7750d45e6c19e26bef7fcc98c5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 74df0fb412e7fb3d9f779391ec84f07a0379a2cc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502954"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724120"
 ---
 # <a name="icorprofilerinfogetmodulemetadata-method"></a>ICorProfilerInfo::GetModuleMetaData — Metoda
+
 Pobiera wystąpienie interfejsu metadanych, które mapuje do określonego modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetModuleMetaData(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleId`  
  podczas Identyfikator modułu, do którego zostanie zamapowana wystąpienie interfejsu.  
   
@@ -49,11 +51,13 @@ HRESULT GetModuleMetaData(
  określoną Wskaźnik do adresu wystąpienia interfejsu metadanych.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Możesz poproszenie o otwarcie metadanych w trybie odczytu/zapisu, ale spowoduje to wolniejsze wykonanie tego programu, ponieważ nie można zoptymalizować zmian wprowadzonych w metadanych, ponieważ znajdowały się one w kompilatorze.  
   
  Niektóre moduły (takie jak moduły zasobów) nie mają metadanych. W takich przypadkach zwróci `GetModuleMetaData` wartość HRESULT o wartości S_FALSE i wartość null w * `ppOut` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -64,4 +68,4 @@ HRESULT GetModuleMetaData(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)

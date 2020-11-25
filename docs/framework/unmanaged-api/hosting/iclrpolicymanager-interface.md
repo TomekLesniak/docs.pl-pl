@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5c834aa1-f2db-408a-b230-c7bec093d364
 topic_type:
 - apiref
-ms.openlocfilehash: 631301a10aee96bb00aeda6b0b8695f0aea186a8
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 7092a1c792fee7f6173dcde211b8e807f6ab02a3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703475"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725589"
 ---
 # <a name="iclrpolicymanager-interface"></a>ICLRPolicyManager — Interfejs
+
 Dostarcza metody, które pozwalają hostowi określić akcje zasad, które mają być podejmowane w przypadku awarii i przekroczeń limitu czasu.  
   
 ## <a name="methods"></a>Metody  
@@ -36,11 +37,12 @@ Dostarcza metody, które pozwalają hostowi określić akcje zasad, które mają
 |[SetUnhandledExceptionPolicy, metoda](iclrpolicymanager-setunhandledexceptionpolicy-method.md)|Określa zachowanie środowiska CLR w przypadku wystąpienia nieobsługiwanego wyjątku.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

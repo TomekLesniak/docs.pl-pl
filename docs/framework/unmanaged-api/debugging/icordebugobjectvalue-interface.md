@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 937de6a0-6fbf-4ddc-80ea-a6217b73e62b
 topic_type:
 - apiref
-ms.openlocfilehash: 603ab20b57dc4ba736b0342797d0be649a5bebc4
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 2a5a618491bf2c624669728d97a690cca315bff8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207481"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724679"
 ---
 # <a name="icordebugobjectvalue-interface"></a>ICorDebugObjectValue, interfejs
 
@@ -38,12 +38,14 @@ Podklasa elementu "ICorDebugValue" reprezentująca wartość, która zawiera obi
 |[SetFromManagedCopy, metoda](icordebugobjectvalue-setfrommanagedcopy-method.md)|Nieaktualne. Nie wywołuj tej metody.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorDebugObjectValue`Pozostanie on ważny do momentu, gdy debugowany proces jest kontynuowany.  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -52,6 +54,6 @@ Podklasa elementu "ICorDebugValue" reprezentująca wartość, która zawiera obi
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

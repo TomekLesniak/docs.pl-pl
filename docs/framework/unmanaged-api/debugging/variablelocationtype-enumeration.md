@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8635ee3a-c84b-4626-876c-416bee54f787
 topic_type:
 - apiref
-ms.openlocfilehash: 455fd06dbdbfd5d9753f3d7270647a742751d804
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1c65efa006a8b2f4fb4db257b4ad2cde99c4e75e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420659"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725264"
 ---
 # <a name="variablelocationtype-enumeration"></a>VariableLocationType, wyliczenie
+
 Wskazuje typ lokalizacji natywnej zmiennej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -44,9 +45,11 @@ typedef enum VariableLocationType
 |`VLT_INVALID`|Zmienna nie jest przechowywana w rejestrze ani w lokalizacji pamięci względnej dla rejestru.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Element członkowski `VariableLocationType` wyliczenia jest zwracany przez metodę [ICorDebugVariableHome:: getlocationtype](icordebugvariablehome-getlocationtype-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

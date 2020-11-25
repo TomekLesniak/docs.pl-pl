@@ -9,12 +9,12 @@ helpviewer_keywords:
 - destroying threads
 - threading [.NET], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
-ms.openlocfilehash: be31b0232889227fa5d4990c9481305eea343f11
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: bdba09f5709cf99bc0d076e3875a914cc7c5a11e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826485"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723769"
 ---
 # <a name="destroying-threads"></a>Niszczenie wątków
 
@@ -30,6 +30,7 @@ Aby zakończyć wykonywanie wątku, zazwyczaj używany jest [wspólny model anul
  Wątki, które oczekują na wywołanie <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> metody mogą zostać przerwane przez inne wątki, które wywołują <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> .  
   
 ## <a name="handling-threadabortexception"></a>Obsługa ThreadAbortException  
+
  Jeśli oczekujesz, że wątek zostanie przerwany, w wyniku wywołania <xref:System.Threading.Thread.Abort%2A> z własnego kodu lub w wyniku rozładowania domeny aplikacji, w której działa wątek ( <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> używany <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> do kończenia wątków), wątek musi obsłużyć <xref:System.Threading.ThreadAbortException> i wykonać dowolne końcowe przetwarzanie w `finally` klauzuli, jak pokazano w poniższym kodzie.  
   
 ```vb  

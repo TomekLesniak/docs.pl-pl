@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: bd285233-a4a2-4b52-bbca-0025a60e4864
 topic_type:
 - apiref
-ms.openlocfilehash: db3ba3380d1fc30a8f34683618b5cc326d7d1906
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a729249f7b0681941a0b1a478dbe2c0d9d6cd01c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123058"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723964"
 ---
 # <a name="prebindassemblyex-function"></a>PreBindAssemblyEx — Funkcja
+
 Pobiera nazwę wyświetlaną dla zestawu.  
   
  Ta funkcja obsługuje infrastrukturę .NET Framework i nie jest przeznaczona do użycia bezpośrednio w kodzie.  
@@ -40,6 +41,7 @@ HRESULT PreBindAssemblyEx (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pAppCtx`  
  podczas Identyfikuje kontekst aplikacji.  
   
@@ -59,16 +61,18 @@ HRESULT PreBindAssemblyEx (
  podczas Zarezerwowane do użytku w przyszłości. `pvReserved` musi być odwołaniem o wartości null.  
   
 ## <a name="remarks"></a>Uwagi  
- Parametr danych wyjściowych `ppNamePostPolicy` jest ustawiany tylko wtedy, gdy funkcja zwraca wartość HRESULT FUSION_E_REF_DEF_MISMATCH. W przeciwnym razie ma wartość null.  
+
+ `ppNamePostPolicy`Parametr Output jest ustawiany tylko wtedy, gdy funkcja zwraca wartość HRESULT FUSION_E_REF_DEF_MISMATCH. W przeciwnym razie ma wartość null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 

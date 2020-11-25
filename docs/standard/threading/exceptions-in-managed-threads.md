@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: e5acda4137d020d35d3144e9cc61e174024e165a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 740cd1b78b96c2fcaecf39a725973d738037f403
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826472"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723756"
 ---
 # <a name="exceptions-in-managed-threads"></a>Wyjątki w zarządzanych wątkach
 
@@ -35,6 +35,7 @@ ms.locfileid: "94826472"
 > Jest możliwe, aby środowisko uruchomieniowe zgłosiło nieobsłużony wyjątek, zanim kod zarządzany miał szansę na zainstalowanie programu obsługi wyjątków. Chociaż kod zarządzany nie był w stanie obsłużyć takiego wyjątku, wyjątek można przeprowadzić w naturalny sposób.  
   
 ## <a name="exposing-threading-problems-during-development"></a>Uwidacznianie problemów wielowątkowości podczas opracowywania  
+
  Gdy wątki mogą kończyć się niepowodzeniem w trybie dyskretnym, bez przerywania działania aplikacji, nie wykryto poważnych problemów programistycznych. Jest to konkretny problem dotyczący usług i innych aplikacji uruchamianych przez Rozszerzone okresy. Gdy wątki zakończą się niepowodzeniem, stan programu stopniowo ulega uszkodzeniu. Wydajność aplikacji może być gorsza lub aplikacja może przestać odpowiadać.  
   
  Zezwalanie na Nieobsłużone wyjątki w wątkach w sposób naturalny, dopóki system operacyjny nie zakończy działania programu, ujawnia takie problemy podczas tworzenia i testowania. Raporty o błędach programu obsługują debugowanie.  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: acc49ba0-f1d9-45ad-871f-9d053a89dcbe
 topic_type:
 - apiref
-ms.openlocfilehash: ada12a35691e0897a44f4f00e2e439fc08ef18af
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: dd1d1af8072ac11e37bd2eb1a47d76b12685cb31
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803906"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724783"
 ---
 # <a name="ihostsecuritymanagerimpersonateloggedonuser-method"></a>IHostSecurityManager::ImpersonateLoggedOnUser — Metoda
+
 Żąda wykonania kodu przy użyciu poświadczeń bieżącego użytkownika.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT ImpersonateLoggedOnUser (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hToken`  
  podczas Token reprezentujący poświadczenia użytkownika do personifikacji.  
   
@@ -41,7 +43,7 @@ HRESULT ImpersonateLoggedOnUser (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`ImpersonateLoggedOnUser`pomyślnie zwrócono.|  
+|S_OK|`ImpersonateLoggedOnUser` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -49,21 +51,23 @@ HRESULT ImpersonateLoggedOnUser (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wywołanie `LogonUser` lub powiązana funkcja Win32 w celu uzyskania dojścia do poświadczeń bieżącej tożsamości użytkownika.  
   
  `HANDLE`Typ nie jest zgodny z modelem COM, oznacza to, że jego rozmiar jest specyficzny dla systemu operacyjnego i wymaga organizowania niestandardowego. W ten sposób token jest używany tylko w ramach procesu, między środowiskiem CLR a hostem.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IHostSecurityContext — Interfejs](ihostsecuritycontext-interface.md)
-- [IHostSecurityManager, interfejs](ihostsecuritymanager-interface.md)
+- [IHostSecurityManager — Interfejs](ihostsecuritymanager-interface.md)
 - [RevertToSelf, metoda](ihostsecuritymanager-reverttoself-method.md)

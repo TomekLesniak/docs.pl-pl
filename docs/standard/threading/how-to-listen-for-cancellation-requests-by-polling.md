@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - cancellation, how to poll for requests
 ms.assetid: c7f2f022-d08e-4e00-b4eb-ae84844cb1bc
-ms.openlocfilehash: ae7a2e0269c0c12c4dabe5e561e9bef53100aac1
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a527fb7f0f9e3c78b3161fdfed0f1d9f3d52798b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819867"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723730"
 ---
 # <a name="how-to-listen-for-cancellation-requests-by-polling"></a>Instrukcje: Nasłuchiwanie żądań anulowania za pomocą sondowania
+
 W poniższym przykładzie pokazano jeden ze sposobów, w jaki kod użytkownika może sondować token anulowania w regularnych odstępach czasu, aby sprawdzić, czy żądanie anulowania zostało zażądane z wątku wywołującego. Ten przykład używa <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typu, ale ten sam wzorzec dotyczy operacji asynchronicznych utworzonych bezpośrednio przez <xref:System.Threading.ThreadPool?displayProperty=nameWithType> Typ lub <xref:System.Threading.Thread?displayProperty=nameWithType> Typ.  
   
 ## <a name="example"></a>Przykład  
+
  Sondowanie wymaga pewnego rodzaju pętli lub cyklicznego kodu, który może okresowo odczytać wartość właściwości logicznej <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> . Jeśli używasz <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typu i czekasz na ukończenie zadania w wątku wywołującym, możesz użyć <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metody, aby sprawdzić Właściwość i zgłosić wyjątek. Korzystając z tej metody, należy się upewnić, że w odpowiedzi na żądanie zostanie zgłoszony poprawny wyjątek. W przypadku korzystania z programu <xref:System.Threading.Tasks.Task> , wywołanie tej metody jest lepsze niż ręczne wyrzucanie <xref:System.OperationCanceledException> . Jeśli nie trzeba zgłosić wyjątku, można po prostu sprawdzić Właściwość i zwrócić z metody, jeśli właściwość jest `true` .  
   
  [!code-csharp[Cancellation#11](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#11)]

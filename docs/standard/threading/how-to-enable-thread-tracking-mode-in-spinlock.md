@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - SpinLock, how to enable thread-tracking
 ms.assetid: 62ee2e68-0bdd-4869-afc9-f0a57a11ae01
-ms.openlocfilehash: 83aebc45cdeaa2330c49ef6e90dcbedcd36de6b5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c33978226a02f65fdc495762af9286ba2daf9454
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826459"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723743"
 ---
 # <a name="how-to-enable-thread-tracking-mode-in-spinlock"></a>Porady: włączanie śledzenia wątków w strukturze SpinLock
+
 <xref:System.Threading.SpinLock?displayProperty=nameWithType> jest blokadą wzajemnego wykluczania niskiego poziomu, która może być używana w scenariuszach, które mają bardzo krótkie czasy oczekiwania. <xref:System.Threading.SpinLock> nie jest przetworzony. Po przejściu przez wątek na blokadę należy prawidłowo zamknąć blokadę, aby można było wprowadzić ją ponownie. Zwykle każda próba ponownego wprowadzenia blokady spowodowałaby zakleszczenie i zakleszczenie może być bardzo trudne do debugowania. Jako pomoc dla rozwoju, <xref:System.Threading.SpinLock?displayProperty=nameWithType> obsługuje tryb śledzenia wątków, który powoduje, że wyjątek jest zgłaszany, gdy wątek próbuje ponownie wprowadzić blokadę, która już mieści. Umożliwia to łatwiejsze lokalizowanie punktu, w którym blokada nie została prawidłowo zakończona. Tryb śledzenia wątków można włączyć <xref:System.Threading.SpinLock> , używając konstruktora, który przyjmuje parametr wejściowy Boolean i przekazując argument `true` . Po zakończeniu etapów tworzenia i testowania Wyłącz tryb śledzenia wątków, aby uzyskać lepszą wydajność.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje tryb śledzenia wątków. Wiersze, które prawidłowo zamykają blokadę, są oznaczone jako komentarze, aby symulować błąd kodowania, który powoduje wystąpienie jednego z następujących wyników:  
   
 - Wyjątek jest generowany, jeśli <xref:System.Threading.SpinLock> został utworzony przy użyciu argumentu `true` ( `True` w Visual Basic).  

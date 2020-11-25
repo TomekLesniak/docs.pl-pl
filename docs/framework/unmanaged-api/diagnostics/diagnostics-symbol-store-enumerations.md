@@ -7,21 +7,23 @@ helpviewer_keywords:
 - diagnostics symbol store enumerations [.NET Framework]
 - enumerations [.NET Framework debugging]
 ms.assetid: 57d68c70-aba1-4bad-a13f-6d0c55f43746
-ms.openlocfilehash: c1715341726c0ee33bfcaecc7e02b452db6a1fd7
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: b2a30bdb4af2dc9f4e9ed8741805bf3bc0495b65
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420568"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725212"
 ---
 # <a name="diagnostics-symbol-store-enumerations"></a>Wyliczenia magazynu symboli diagnostycznych
+
 W tym temacie opisano niezarządzane wyliczenia, które są używane przez interfejs API magazynu symboli diagnostyki.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [CorSymAddrKind — Wyliczenie](corsymaddrkind-enumeration.md)  
  Wskazuje typ adresu pamięci.  
   
- [CorSymSearchPolicyAttributes, wyliczenie](corsymsearchpolicyattributes-enumeration.md)  
+ [CorSymSearchPolicyAttributes — Wyliczenie](corsymsearchpolicyattributes-enumeration.md)  
  Określa zasady, które mają być używane podczas wyszukiwania czytnika symboli.  
   
  [CorSymVarFlag — Wyliczenie](corsymvarflag-enumeration.md)  
@@ -31,6 +33,7 @@ W tym temacie opisano niezarządzane wyliczenia, które są używane przez inter
  Identyfikuje wywołania zwrotne dla funkcji debugera.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Interfejsy magazynu symboli diagnostycznych](diagnostics-symbol-store-interfaces.md)  
   
  [Struktury magazynu symboli diagnostycznych](diagnostics-symbol-store-structures.md)  

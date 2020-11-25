@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3367166f-31fe-43d0-8107-2e786f984e50
 topic_type:
 - apiref
-ms.openlocfilehash: e1b8cf3e8d78c8ef4715467760805cc50975d014
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: d3bbdea3b2f23ddd2207ff2a036f32978cd837e8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442140"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725134"
 ---
 # <a name="ibindingdisplay-interface"></a>IBindingDisplay — Interfejs
+
 Dostarcza metody, które wyświetlają bieżące informacje o powiązaniu dla działającej aplikacji.  
   
 ## <a name="methods"></a>Metody  
@@ -32,6 +33,7 @@ Dostarcza metody, które wyświetlają bieżące informacje o powiązaniu dla dz
 |[InitializeForProcess, metoda](ibindingdisplay-initializeforprocess-method.md)|Inicjuje `IBindingDisplay` obiekt.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** BindingDisplay. h  

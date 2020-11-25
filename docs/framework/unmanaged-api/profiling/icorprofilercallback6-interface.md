@@ -11,14 +11,15 @@ api_type:
 ms.assetid: edc420b7-96d1-4dec-ace0-36d907f644bc
 topic_type:
 - apiref
-ms.openlocfilehash: 0156a7dfa2a67ce9e62b502df00fc6bc5fccf925
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2176b624a427994b9d2af4b5eba31a64c9288a0e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499184"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725472"
 ---
 # <a name="icorprofilercallback6-interface"></a>Interfejs ICorProfilerCallback6
+
 [Obsługiwane w .NET Framework 4.5.2 i nowszych wersjach]  
   
  Podklasa elementu [ICorProfilerCallback5](icorprofilercallback5-interface.md) , która zapewnia metodę wywołania zwrotnego używaną przez środowisko uruchomieniowe języka wspólnego do powiadamiania profilera o ładowaniu zestawu.  
@@ -32,6 +33,7 @@ ms.locfileid: "84499184"
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

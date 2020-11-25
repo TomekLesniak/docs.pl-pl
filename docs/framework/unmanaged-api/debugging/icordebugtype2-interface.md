@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 376fb03f-f1ef-4107-baa4-4d9d55884862
 topic_type:
 - apiref
-ms.openlocfilehash: 0e480db953131d7771e493a8f367154a7d17dada
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 0d5fffe4350cc1f58acf588f288db3bdb7e213d0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396630"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725671"
 ---
 # <a name="icordebugtype2-interface"></a>ICorDebugType2, interfejs
+
 Rozszerza interfejs ICorDebugType w celu pobrania identyfikatora typu podstawowego lub złożonego (zdefiniowanego przez użytkownika).  
   
 ## <a name="methods"></a>Metody  
@@ -31,12 +32,14 @@ Rozszerza interfejs ICorDebugType w celu pobrania identyfikatora typu podstawowe
 |[GetTypeID, metoda](icordebugtype2-gettypeid-method.md)|Pobiera [COR_TYPEID](cor-typeid-structure.md) dla tego typu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten interfejs jest logicznym rozszerzeniem interfejsu ICorDebugType.  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy fragment kodu ilustruje użycie metody [ICorDebugType2:: GetTypeId](icordebugtype2-gettypeid-method.md) .  
   
 ```cpp  
@@ -53,6 +56,7 @@ pType2->GetTypeID(&id);
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

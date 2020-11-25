@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4c02ec37-cdf0-46b2-890e-235092741236
 topic_type:
 - apiref
-ms.openlocfilehash: a3018d8477d5abd7d03ad8675503624d2e44e8f4
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ca3c7fe813f22d3beab3087414100b3d8e5814ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504137"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725602"
 ---
 # <a name="iclroneventmanagerunregisteractiononevent-method"></a>ICLROnEventManager::UnregisterActionOnEvent — Metoda
+
 Wyrejestrowuje wcześniej zarejestrowany wskaźnik wywołania zwrotnego dla określonego zdarzenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT UnregisterActionOnEvent (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `event`  
  podczas Jedna z wartości [EClrEvent —](eclrevent-enumeration.md) , wskazująca na zdarzenie, dla którego ma zostać wyrejestrowany wskaźnik wywołania zwrotnego opisany przez `pAction` .  
   
@@ -45,7 +47,7 @@ HRESULT UnregisterActionOnEvent (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`UnregisterActionOnEvent`pomyślnie zwrócono.|  
+|S_OK|`UnregisterActionOnEvent` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -53,17 +55,18 @@ HRESULT UnregisterActionOnEvent (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Po powrocie metody E_FAIL nie będzie można używać środowiska CLR w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [EClrEvent, wyliczenie](eclrevent-enumeration.md)
+- [EClrEvent — Wyliczenie](eclrevent-enumeration.md)
 - [IActionOnCLREvent — Interfejs](iactiononclrevent-interface.md)
 - [ICLRControl — Interfejs](iclrcontrol-interface.md)
-- [ICLROnEventManager, interfejs](iclroneventmanager-interface.md)
+- [ICLROnEventManager — Interfejs](iclroneventmanager-interface.md)

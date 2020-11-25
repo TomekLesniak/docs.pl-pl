@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 93232222-926e-42ac-b85d-8a6d33977672
 topic_type:
 - apiref
-ms.openlocfilehash: 1aabfad14ee2eb35916bbf115631602276cd1fc3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 484adf288356b9955fe0cac0bb30002ec1f012d3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73109893"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724441"
 ---
 # <a name="gethistoryfiledirectory-function"></a>GetHistoryFileDirectory — Funkcja
+
 Pobiera ścieżkę katalogu historii aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetHistoryFileDirectory (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `wzDir`  
  określoną Bufor służący do przechowywania ścieżki do katalogu historii aplikacji.  
   
@@ -41,6 +43,7 @@ HRESULT GetHistoryFileDirectory (
  [in. out] Długość buforu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca kody błędów standardowego modelu COM, jak zdefiniowano w pliku WinError. h oprócz następujących wartości.  
   
 |Kod powrotu|Opis|  
@@ -49,19 +52,21 @@ HRESULT GetHistoryFileDirectory (
 |E_INVALIDARG|`wzDir` lub `pdwSize` ma wartość null lub ciąg wersji jest niepoprawny.|  
   
 ## <a name="remarks"></a>Uwagi  
- Po pomyślnym zakończeniu wartość argumentu `pdwSize` jest ustawiana na długość ciągu ścieżki.  
+
+ Po pomyślnym zakończeniu `pdwSize` argument ma ustawioną długość ciągu ścieżki.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Biblioteka:** Fusion. dll i mscorwks. dll. Aby upewnić się, że docelowa wersja .NET Framework, należy użyć pliku Fusion. dll zamiast Mscorwks. dll.  
+ **Biblioteka:** Fusion.dll i Mscorwks.dll. Użyj Fusion.dll zamiast Mscorwks.dll, aby upewnić się, że docelowa jest poprawna wersja .NET Framework.  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [CreateHistoryReader, funkcja](createhistoryreader-function.md)
-- [NukeDownloadedCache, funkcja](nukedownloadedcache-function.md)
+- [CreateHistoryReader — Funkcja](createhistoryreader-function.md)
+- [NukeDownloadedCache — Funkcja](nukedownloadedcache-function.md)
 - [Łączenie statycznych funkcji globalnych](fusion-global-static-functions.md)

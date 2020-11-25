@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b12bfcd9-1e29-48bf-9a3d-44bfae5df5e8
 topic_type:
 - apiref
-ms.openlocfilehash: 4b44a16d143c1daea1ea6c36eb096ab9a937b272
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: f24d49189ee81a80397b94ee4113c9514c083dbc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210049"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723990"
 ---
 # <a name="icordebugmanagedcallbackunloadmodule-method"></a>ICorDebugManagedCallback::UnloadModule — Metoda
+
 Powiadamia debuger, że moduł środowiska uruchomieniowego języka wspólnego (DLL) został zwolniony.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT UnloadModule (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pAppDomain`  
  podczas Wskaźnik do obiektu ICorDebugAppDomain, który reprezentuje domenę aplikacji, która zawiera moduł.  
   
@@ -42,9 +44,11 @@ HRESULT UnloadModule (
  podczas Wskaźnik do obiektu ICorDebugModule, który reprezentuje moduł.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Modułu nie należy używać po tym wywołaniu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -53,7 +57,7 @@ HRESULT UnloadModule (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LoadModule, metoda](icordebugmanagedcallback-loadmodule-method.md)
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)

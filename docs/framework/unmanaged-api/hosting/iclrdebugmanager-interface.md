@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e835062c-c7d6-4945-8a44-2de7ebf3928e
 topic_type:
 - apiref
-ms.openlocfilehash: 653c8d1d3edd38e646b4e90c0e48dbe15bed102a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3836bd349423670a19a19dda67eba75419507a29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504267"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724293"
 ---
 # <a name="iclrdebugmanager-interface"></a>ICLRDebugManager — Interfejs
+
 Dostarcza metody, które umożliwiają hostowi kojarzenie zestawu zadań z identyfikatorem i przyjazną nazwą.  
   
 ## <a name="methods"></a>Metody  
@@ -37,7 +38,8 @@ Dostarcza metody, które umożliwiają hostowi kojarzenie zestawu zadań z ident
 |[SetSymbolReadingPolicy, metoda](iclrdebugmanager-setsymbolreadingpolicy-method.md)|Ustawia zasady odczytywania plików bazy danych programu (PDB). Zasady określają, czy informacje o numerach wierszy i plikach są zawarte w stosach wywołań.|  
   
 ## <a name="remarks"></a>Uwagi  
- W scenariuszach debugowania host może chcieć grupować zadania zgodnie z własną logiką programowania. Na przykład zgrupowanie zezwoli deweloperowi na wyświetlanie tylko zadań wymaganych przez interfejsy API dewelopera, a nie oglądanie wszystkich zadań uruchomionych w procesie. `ICLRDebugManager`zezwala hostowi na wdrożenie tego rodzaju grupowania.  
+
+ W scenariuszach debugowania host może chcieć grupować zadania zgodnie z własną logiką programowania. Na przykład zgrupowanie zezwoli deweloperowi na wyświetlanie tylko zadań wymaganych przez interfejsy API dewelopera, a nie oglądanie wszystkich zadań uruchomionych w procesie. `ICLRDebugManager` zezwala hostowi na wdrożenie tego rodzaju grupowania.  
   
 > [!IMPORTANT]
 > Trzy `ICLRDebugManager` metody, `BeginConnection` , `SetConnectionTasks` i `EndConnection` , są zależne od siebie. Muszą być wywoływane w danej kolejności, aby działały zgodnie z oczekiwaniami.  
@@ -45,14 +47,15 @@ Dostarcza metody, które umożliwiają hostowi kojarzenie zestawu zadań z ident
  Grupowanie i identyfikatory oraz przyjazne nazwy przypisywane przez hosta do grupy nie mają znaczenia dla środowiska uruchomieniowego języka wspólnego (CLR). Środowisko CLR jedynie przekazuje informacje wraz z debugerem.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

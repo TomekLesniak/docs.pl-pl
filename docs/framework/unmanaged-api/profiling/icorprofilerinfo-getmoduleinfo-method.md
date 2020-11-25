@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5a90d16f-7929-4987-8f83-a631becf564d
 topic_type:
 - apiref
-ms.openlocfilehash: 751f2ac44e543fed76c7031791bb57d75ed0fd48
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 863fa1bf50830bb46e5c2939c99fe1e15897ac3d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498105"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724133"
 ---
 # <a name="icorprofilerinfogetmoduleinfo-method"></a>ICorProfilerInfo::GetModuleInfo — Metoda
+
 Podanym IDENTYFIKATORem modułu zwraca nazwę pliku modułu i identyfikator zestawu nadrzędnego modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT GetModuleInfo(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleId`  
  podczas Identyfikator modułu, dla którego będą pobierane informacje.  
   
@@ -58,6 +60,7 @@ HRESULT GetModuleInfo(
  określoną Wskaźnik do identyfikatora zestawu nadrzędnego modułu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dla modułów dynamicznych `szName` parametr jest pustym ciągiem, a adres podstawowy to 0 (zero).  
   
  Mimo że `GetModuleInfo` Metoda może być wywoływana, gdy tylko identyfikator modułu już istnieje, identyfikator zestawu nadrzędnego nie będzie dostępny do momentu otrzymania przez profiler wywołania zwrotnego [ICorProfilerCallback:: ModuleAttachedToAssembly —](icorprofilercallback-moduleattachedtoassembly-method.md) .  
@@ -67,6 +70,7 @@ HRESULT GetModuleInfo(
  Alternatywnie, można najpierw wywołać `GetModuleInfo` z buforem o zerowej długości, `szName` Aby uzyskać prawidłowy rozmiar buforu. Następnie można ustawić rozmiar buforu na wartość zwracaną w `pcchName` i `GetModuleInfo` ponownie wywołać.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -77,7 +81,7 @@ HRESULT GetModuleInfo(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)
 - [GetModuleInfo2, metoda](icorprofilerinfo3-getmoduleinfo2-method.md)

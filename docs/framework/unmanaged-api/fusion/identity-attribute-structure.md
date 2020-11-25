@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1ee7c434-9681-4fa8-badd-652cb1a9742b
 topic_type:
 - apiref
-ms.openlocfilehash: 8b7edf1cc642228c4a79c855b51727264f31741c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: da4b1d6f2a7079ef33859fce29c9555ac06fcfc2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107987"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725654"
 ---
 # <a name="identity_attribute-structure"></a>IDENTITY_ATTRIBUTE — Struktura
+
 Zawiera informacje o atrybucie metadanych dotyczące wystąpienia [IDefinitionIdentity —](idefinitionidentity-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,26 +37,28 @@ typedef struct _IDENTITY_ATTRIBUTE {
   
 ## <a name="members"></a>Elementy członkowskie  
   
-|Element członkowski|Opis|  
+|Członek|Opis|  
 |------------|-----------------|  
 |`pszNamespace`|Wskaźnik do ciągu znaków zakończonych znakiem null, który zawiera przestrzeń nazw, w której znajduje się atrybut.|  
 |`pszName`|Wskaźnik do ciągu znaków zakończonych znakiem null, który zawiera nazwę atrybutu.|  
 |`pszValue`|Wskaźnik do ciągu znaków zakończonych znakiem null, który zawiera wartość atrybutu.|  
   
 ## <a name="remarks"></a>Uwagi  
- Struktura `IDENTITY_ATTRIBUTE` zawiera trzy wskaźniki do ciągów znaków zakończonych znakiem null. Te trzy ciągi opisują jeden atrybut.  
+
+ `IDENTITY_ATTRIBUTE`Struktura zawiera trzy wskaźniki do ciągów znaków zakończonych znakiem null. Te trzy ciągi opisują jeden atrybut.  
   
- Wystąpienie struktury `IDENTITY_ATTRIBUTE` jest skojarzone z wystąpieniem struktury [IDENTITY_ATTRIBUTE_BLOB](identity-attribute-blob-structure.md) . Struktura `IDENTITY_ATTRIBUTE` zawiera rzeczywiste ciągi, a odpowiednia struktura `IDENTITY_ATTRIBUTE_BLOB` wyświetla przesunięcia na trzy ciągi wymienione w strukturze `IDENTITY_ATTRIBUTE`.  
+ Wystąpienie `IDENTITY_ATTRIBUTE` struktury jest skojarzone z wystąpieniem struktury [IDENTITY_ATTRIBUTE_BLOB](identity-attribute-blob-structure.md) . `IDENTITY_ATTRIBUTE`Struktura zawiera rzeczywiste ciągi, a odpowiednia `IDENTITY_ATTRIBUTE_BLOB` Struktura zawiera listę przesunięć do trzech ciągów wymienionych w `IDENTITY_ATTRIBUTE` strukturze.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Izolacja. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IDefinitionIdentity, interfejs](idefinitionidentity-interface.md)
-- [IDENTITY_ATTRIBUTE_BLOB, struktura](identity-attribute-blob-structure.md)
-- [Łączenie — struktury](fusion-structures.md)
+- [IDefinitionIdentity — Interfejs](idefinitionidentity-interface.md)
+- [IDENTITY_ATTRIBUTE_BLOB — Struktura](identity-attribute-blob-structure.md)
+- [Łączenie — Struktury](fusion-structures.md)

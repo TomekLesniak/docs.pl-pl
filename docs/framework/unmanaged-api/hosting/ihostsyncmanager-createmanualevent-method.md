@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 68661fbd-09cf-46dc-890b-e694f8a3880a
 topic_type:
 - apiref
-ms.openlocfilehash: 334520df749ba428e6480188cd0655bb734725a6
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 67af8f125b2be39138bac5d51148215f3a3acf86
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803310"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723873"
 ---
 # <a name="ihostsyncmanagercreatemanualevent-method"></a>IHostSyncManager::CreateManualEvent — Metoda
+
 Tworzy obiekt zdarzenia resetowania ręcznego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT CreateManualEvent (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `bInitialState`  
  [in] `true` , jeśli obiekt jest zasygnalizowani; w przeciwnym razie, `false` .  
   
@@ -45,7 +47,7 @@ HRESULT CreateManualEvent (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`CreateManualEvent`pomyślnie zwrócono.|  
+|S_OK|`CreateManualEvent` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -54,19 +56,21 @@ HRESULT CreateManualEvent (
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby utworzyć żądany obiekt zdarzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
- `CreateManualEvent`tworzy `IHostManualEvent` obiekt zdarzenia resetowania ręcznego, który wymaga wywołania metody [IHostManualEvent:: Reset](ihostmanualevent-reset-method.md) , aby ustawić ją na stan niesygnalizujący. `CreateManualEvent`odzwierciedla funkcję Win32 `CreateEvent` o wartości `true` określonej dla `bManualReset` parametru.  
+
+ `CreateManualEvent` tworzy `IHostManualEvent` obiekt zdarzenia resetowania ręcznego, który wymaga wywołania metody [IHostManualEvent:: Reset](ihostmanualevent-reset-method.md) , aby ustawić ją na stan niesygnalizujący. `CreateManualEvent` odzwierciedla funkcję Win32 `CreateEvent` o wartości `true` określonej dla `bManualReset` parametru.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
-- [IHostManualEvent, interfejs](ihostmanualevent-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
+- [IHostManualEvent — Interfejs](ihostmanualevent-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)

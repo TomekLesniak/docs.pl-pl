@@ -2,14 +2,15 @@
 title: ISymUnmanagedWriter5 — Interfejs
 ms.date: 03/30/2017
 ms.assetid: 15b8526e-4f5d-475c-a1e3-d8b2d145c879
-ms.openlocfilehash: d9204457b71b670e1c96ed228ad11116bdf41fe6
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 894f3b0e45df2c681cbdec1f154703be64f32fc5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493581"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725797"
 ---
 # <a name="isymunmanagedwriter5-interface"></a>ISymUnmanagedWriter5 — Interfejs
+
 Interfejs ISymUnmanagedWriter5.  
   
 ## <a name="syntax"></a>Składnia  
@@ -19,6 +20,7 @@ Interfejs ISymUnmanagedWriter5.
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Ten interfejs zawiera następujące metody:  
   
 |Metoda|Opis|  
@@ -28,6 +30,7 @@ Interfejs ISymUnmanagedWriter5.
 |[OpenMapTokensToSourceSpans, metoda](isymunmanagedwriter5-openmaptokenstosourcespans-method.md)|Otwórz specjalną sekcję z danymi niestandardowymi, aby emitować informacje o mapowaniu między tokenami i źródłami do programu. Otwarcie tej sekcji, gdy metoda jest już otwarta lub na odwrót, jest błędem.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

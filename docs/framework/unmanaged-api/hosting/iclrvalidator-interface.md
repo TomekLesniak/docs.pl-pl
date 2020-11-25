@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 2edd0a10-77fb-4173-91eb-f2970cc364d0
 topic_type:
 - apiref
-ms.openlocfilehash: e071f9cba7e991c59bf697647e0e4badea57573a
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: d9ccd5c6c91b1ab2166ff40a0fb2048e15927d3a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762048"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723951"
 ---
 # <a name="iclrvalidator-interface"></a>ICLRValidator — Interfejs
+
 Zapewnia metody sprawdzania poprawności przenośnych obrazów wykonywalnych (PE) i raportowania błędów walidacji.  
   
 ## <a name="methods"></a>Metody  
@@ -32,16 +33,17 @@ Zapewnia metody sprawdzania poprawności przenośnych obrazów wykonywalnych (PE
 |[Validate, metoda](iclrvalidator-validate-method.md)|Sprawdza poprawność przenośnego pliku wykonywalnego lub języka pośredniego firmy Microsoft (MSIL) w określonym pliku.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** IValidator. idl, IValidator. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [ICLRErrorReportingManager, interfejs](iclrerrorreportingmanager-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
-- [CLRRuntimeHost, klasa coclass](clrruntimehost-coclass.md)
+- [ICLRErrorReportingManager — Interfejs](iclrerrorreportingmanager-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)
+- [CLRRuntimeHost — Klasa coclass](clrruntimehost-coclass.md)

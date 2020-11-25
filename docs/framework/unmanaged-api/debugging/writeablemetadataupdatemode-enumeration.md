@@ -12,14 +12,15 @@ api_type:
 ms.assetid: 6758f4d3-6bc7-4c99-8582-e9be00566784
 topic_type:
 - apiref
-ms.openlocfilehash: 0793dcbe4d080da83cf507e04303d66fbbb56b85
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1553e18da10844da28bbaf84ba76bc5c34ca49b2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420646"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725303"
 ---
 # <a name="writeablemetadataupdatemode-enumeration"></a>Wyliczenie WriteableMetadataUpdateMode
+
 [Obsługiwane w .NET Framework 4.5.2 i nowszych wersjach]  
   
  Zawiera wartości, które określają, czy aktualizacje w pamięci mają być widoczne dla debugera.  
@@ -41,11 +42,13 @@ typedef enum WriteableMetadataUpdateMode {
 |`AlwaysShowUpdates`|Wprowadź aktualizacje w pamięci do metadanych widocznych dla debugera.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Element członkowski `WriteableMetadataUpdateMode` wyliczenia można przesłać do metody [SetWriteableMetadataUpdateMode](icordebugprocess7-setwriteablemetadataupdatemode-method.md) w celu określenia, czy aktualizacje w pamięci w procesie docelowym są widoczne dla debugera.  
   
  `LegacyCompatPolicy`Opcja wymusza takie samo zachowanie jak w wersjach .NET Framework przed 4.5.2. Często oznacza to, że metadane z aktualizacji nie są widoczne. Jednak wywołania do wielu metod debugowania niejawnie przekształcenie debugera w celu udostępnienia aktualizacji. Jeśli na przykład debuger przekaże [ICorDebugILFrame:: GetLocalVariable —](icordebugilframe-getlocalvariable-method.md) indeks zmiennej nie został znaleziony w oryginalnych metadanych metody, wszystkie metadane modułu zostaną zaktualizowane do migawki zgodnej z bieżącym stanem procesu. Innymi słowy, z `LegacyCompatPolicy` opcją debuger może zobaczyć Brak, niektóre lub wszystkie dostępne aktualizacje metadanych w zależności od tego, w jaki sposób używa innych części niezarządzanego interfejsu API debugowania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6b5be4fc-2e86-499c-8b09-833160bca767
 topic_type:
 - apiref
-ms.openlocfilehash: ccc4843864f375c167acdb12575c282dbe3a49e1
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2bc2b983171dc41d5ac37eda0359f1aaee4ebd6e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004819"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725758"
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField — Metoda
+
 Tworzy definicję dla pola z określonym podpisem metadanych i pobiera token do tej definicji pola.  
   
 ## <a name="syntax"></a>Składnia  
@@ -42,8 +43,9 @@ HRESULT DefineField (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `td`  
- podczas `mdTypeDef`Token dla otaczającej klasy lub interfejsu.  
+ podczas `mdTypeDef` Token dla otaczającej klasy lub interfejsu.  
   
  `szName`  
  podczas Nazwa pola w formacie Unicode.  
@@ -67,18 +69,19 @@ HRESULT DefineField (
  podczas Znaki w formacie (Unicode) `pValue` .  
   
  `pmd`  
- określoną `mdFieldDef`Przypisany token.  
+ określoną `mdFieldDef` Przypisany token.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

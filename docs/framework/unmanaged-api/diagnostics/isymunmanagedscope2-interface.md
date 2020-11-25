@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 2ed6a387-ba45-483e-9a1e-b0c69f67998b
 topic_type:
 - apiref
-ms.openlocfilehash: 886ba693183a6b99eb03635e95a9661d105de40e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 40c437e109eaa4352a83c5566185593cbc6b0eba
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610863"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725836"
 ---
 # <a name="isymunmanagedscope2-interface"></a>ISymUnmanagedScope2 — Interfejs
+
 Reprezentuje zakres leksykalny w ramach metody. Ten interfejs rozszerza interfejs [ISymUnmanagedScope](isymunmanagedscope-interface.md) z metodami, które pobierają informacje o stałych zdefiniowanych w zakresie.  
   
 ## <a name="methods"></a>Metody  
@@ -32,6 +33,7 @@ Reprezentuje zakres leksykalny w ramach metody. Ten interfejs rozszerza interfej
 |[GetConstants, metoda](isymunmanagedscope2-getconstants-method.md)|Pobiera stałe lokalne zdefiniowane w tym zakresie.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

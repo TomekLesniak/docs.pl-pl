@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2221fd06-9e27-4113-972e-2530db8c3594
 topic_type:
 - apiref
-ms.openlocfilehash: 5d0b231b4014e60a9e8778c6b9d6ed7758b2d8c5
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 320b3ca55a60ec7751c88a246ab6ee90b6b6c4cc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208476"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724354"
 ---
 # <a name="icordebugheapenumnext-method"></a>ICorDebugHeapEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień [COR_HEAPOBJECT](cor-heapobject-structure.md) , które zawierają informacje o obiektach na zarządzanym stosie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT Next(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  celt  
  podczas Liczba obiektów do pobrania.  
   
@@ -45,9 +47,11 @@ HRESULT Next(
  określoną Wskaźnik do liczby obiektów [COR_HEAPOBJECT](cor-heapobject-structure.md) faktycznie zwróconych w `objects` . Ta wartość może być równa `null` `celt` 1.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `COR_HEAPOBJECT.type`To pole jest identyfikatorem zagnieżdżonego, odwołującego się interfejsu com. To odwołanie musi zostać wydane przez wywołującego `ICorDebugHeapEnum::Next` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -56,7 +60,7 @@ HRESULT Next(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugHeapEnum — Interfejs](icordebugheapenum-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

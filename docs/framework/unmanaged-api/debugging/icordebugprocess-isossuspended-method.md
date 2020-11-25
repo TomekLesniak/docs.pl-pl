@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 83406cb2-5797-4402-872d-89c9516aefec
 topic_type:
 - apiref
-ms.openlocfilehash: 9452f238bd84c9c185ca8e007acac563474d29df
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: fffa61d8e406162251b0934a9846e5a813422798
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212064"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724588"
 ---
 # <a name="icordebugprocessisossuspended-method"></a>ICorDebugProcess::IsOSSuspended — Metoda
+
 Pobiera wartość wskazującą, czy określony wątek został wstrzymany w wyniku debugera zatrzymywania tego procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT IsOSSuspended(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `threadID`  
  podczas Identyfikator wątku.  
   
@@ -41,11 +43,13 @@ HRESULT IsOSSuspended(
  określoną Wskaźnik do wartości logicznej, która jest w `true` przypadku zawieszenia określonego wątku; w przeciwnym razie * `pbSuspended` jest `false` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Gdy określony wątek zostanie zawieszony z powodu zatrzymywania tego procesu przez debuger, licznik zawieszania Win32 określonego wątku jest zwiększany o jeden. Interfejs użytkownika debugera (UI) może chcieć zastosować te informacje w przypadku wyświetlenia przez użytkownika liczby wstrzymania wątku dla tego systemu operacyjnego.  
   
  `IsOSSuspended`Metoda ma sens tylko w kontekście debugowania niezarządzanego. Podczas debugowania zarządzanego wątki są zawieszone w trybie spółdzielni, a nie zawieszone w systemie operacyjnym.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

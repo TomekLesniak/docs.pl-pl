@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
-ms.openlocfilehash: fcf46a0716d79fd27cb06924bf74c119b8435147
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7051aeb8cdc25518f99fe093045e7e769ae7f6f5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822831"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725420"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Uzyskiwanie dostępu do silnie typizowanych danych XML przy użyciu klasy XPathNavigator
+
 Jako wystąpienie modelu danych XPath 2,0, <xref:System.Xml.XPath.XPathNavigator> Klasa może zawierać dane silnie wpisane, które są mapowane na typy środowiska uruchomieniowego języka wspólnego (CLR). Zgodnie z modelem danych XPath 2,0, tylko elementy i atrybuty mogą zawierać dane o jednoznacznie określonym typie. <xref:System.Xml.XPath.XPathNavigator>Klasa udostępnia mechanizmy do uzyskiwania dostępu do danych w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub jako dane silnie wpisane oraz mechanizmy konwersji z jednego typu danych na inny.  
   
 ## <a name="type-information-exposed-by-xpathnavigator"></a>Informacje o typie uwidocznione przez element XPathNavigator  
+
  Dane XML 1,0 są technicznie bez typu, chyba że są przetwarzane ze schematem DTD, językiem definicji schematu XML (XSD) lub innym mechanizmem. Istnieje wiele kategorii informacji o typie, które mogą być skojarzone z elementem lub atrybutem XML.  
   
 - Proste typy CLR: żaden z języków schematu XML nie obsługuje bezpośrednio typów środowiska uruchomieniowego języka wspólnego (CLR). Ponieważ warto mieć możliwość wyświetlania prostej zawartości elementu i atrybutu jako najbardziej odpowiedniego typu CLR, cała prosta zawartość może zostać wpisana jako <xref:System.String> nieobecność informacji o schemacie z dowolnymi dodatkowymi informacjami o schemacie, które mogłyby spowodować, że ta zawartość jest bardziej odpowiedni. Najlepiej pasujący typ CLR elementu prostego i zawartości atrybutu można znaleźć za pomocą <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> właściwości. Aby uzyskać więcej informacji na temat mapowania ze schematów wbudowanych typów do typów CLR, zobacz [Obsługa typów w klasach System.Xml](type-support-in-the-system-xml-classes.md).  
@@ -29,6 +31,7 @@ Jako wystąpienie modelu danych XPath 2,0, <xref:System.Xml.XPath.XPathNavigator
 - Odbicie Schema-Language określonego typu: w innych przypadkach możesz chcieć uzyskać dalsze szczegóły dotyczące typu określonego dla schematu zastosowanego do dokumentu XML. Na przykład podczas odczytywania pliku XML może być konieczne wyodrębnienie `maxOccurs` atrybutu dla każdego prawidłowego węzła w dokumencie XML w celu wykonania niektórych obliczeń niestandardowych. Ponieważ te informacje są ustawiane tylko za pomocą walidacji schematu, są dostępne za pomocą <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> właściwości <xref:System.Xml.XPath.XPathNavigator> klasy. Aby uzyskać więcej informacji, zobacz poniższą sekcję po sprawdzeniu poprawności schematu sprawdzonych (PSVI).  
   
 ## <a name="xpathnavigator-typed-accessors"></a>Metody dostępu typu XPathNavigator  
+
  W poniższej tabeli przedstawiono różne właściwości i metody <xref:System.Xml.XPath.XPathNavigator> klasy, których można użyć w celu uzyskania dostępu do informacji o typie węzła.  
   
 |Właściwość|Opis|  
@@ -47,6 +50,7 @@ Jako wystąpienie modelu danych XPath 2,0, <xref:System.Xml.XPath.XPathNavigator
  Aby uzyskać więcej informacji na temat mapowania ze schematów wbudowanych typów do typów CLR, zobacz [Obsługa typów w klasach System.Xml](type-support-in-the-system-xml-classes.md).  
   
 ## <a name="the-post-schema-validation-infoset-psvi"></a>Sprawdzanie poprawności po stronie sprawdzonych (PSVI)  
+
  Procesor schematu XML akceptuje sprawdzonych XML jako dane wejściowe i konwertuje ją na wpis weryfikacji schematu sprawdzonych (PSVI). PSVI to oryginalny wejściowy kod XML sprawdzonych z nowymi dodawanymi elementami informacji i nowymi właściwościami dodawanymi do istniejących elementów informacji. Istnieją trzy szerokie klasy informacji dodanych do sprawdzonych XML w PSVI, które są udostępniane przez <xref:System.Xml.XPath.XPathNavigator> .  
   
 1. Wyniki walidacji: informacje o tym, czy element lub atrybut został pomyślnie zweryfikowany. Jest to uwidaczniane przez <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> Właściwość <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> właściwości <xref:System.Xml.XPath.XPathNavigator> klasy.  
@@ -137,6 +141,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema">
 ```  
   
 ## <a name="obtain-typed-values-using-valueas-properties"></a>Uzyskiwanie wpisanych wartości przy użyciu właściwości ValueAs  
+
  Wartość wpisana w węźle można pobrać, uzyskując dostęp do <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> właściwości <xref:System.Xml.XPath.XPathNavigator> . W niektórych przypadkach możesz chcieć przekonwertować wpisaną wartość węzła na inny typ. Typowym przykładem jest uzyskanie wartości liczbowej z węzła XML. Rozważmy na przykład następujący niesprawdzony i niewpisany dokument XML.  
   
 ```xml  

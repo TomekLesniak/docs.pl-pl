@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 97e493f5-3a62-4ec7-b42f-4af57bf71f57
 topic_type:
 - apiref
-ms.openlocfilehash: bbf43f3936823b9a8e562cb32cfa2eef08840033
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 8b3f6ae92e39f5385bf29f8b29abbb1726136088
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895187"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724770"
 ---
 # <a name="icordebugappdomain2getarrayorpointertype-method"></a>ICorDebugAppDomain2::GetArrayOrPointerType — Metoda
+
 Pobiera tablicę określonego typu lub wskaźnik lub odwołanie do określonego typu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,11 +38,12 @@ HRESULT GetArrayOrPointerType (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `elementType`  
  podczas Wartość wyliczenia CorElementType —, która określa odpowiedni typ natywny (tablicę, wskaźnik lub odwołanie), który ma zostać utworzony.  
   
  `nRank`  
- podczas Ranga (czyli liczba wymiarów) tablicy. Ta wartość musi być równa `elementType` 0, jeśli określa wskaźnik lub typ referencyjny.  
+ podczas Ranga (czyli liczba wymiarów) tablicy. Ta wartość musi być równa 0, jeśli `elementType` określa wskaźnik lub typ referencyjny.  
   
  `pTypeArg`  
  podczas Wskaźnik do obiektu ICorDebugType, który reprezentuje typ tablicy, wskaźnika lub odwołania, które mają zostać utworzone.  
@@ -50,6 +52,7 @@ HRESULT GetArrayOrPointerType (
  określoną Wskaźnik do adresu `ICorDebugType` obiektu, który reprezentuje skonstruowaną tablicę, typ wskaźnika lub typ referencyjny.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wartość *elementu ElementType* musi być jedną z następujących wartości:  
   
 - ELEMENT_TYPE_PTR  
@@ -61,6 +64,7 @@ HRESULT GetArrayOrPointerType (
  Jeśli wartość *elementu ElementType* jest ELEMENT_TYPE_PTR lub ELEMENT_TYPE_BYREF, *nRank* musi mieć wartość zero.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

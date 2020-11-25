@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dd639ba0-f77b-426d-9ff6-f92706840348
 topic_type:
 - apiref
-ms.openlocfilehash: 43f585417ed52b92c23087c0f02fd188ee09ea7e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 5eb6299526d69624056961cfb7f0387ff8f873cf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210218"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725030"
 ---
 # <a name="icordebugilframe2remapfunction-method"></a>ICorDebugILFrame2::RemapFunction — Metoda
+
 Ponownie mapuje edytowaną funkcję poprzez określenie nowego przesunięcia języka pośredniego firmy Microsoft (MSIL)  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,12 +35,14 @@ HRESULT RemapFunction (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `newILOffset`  
  podczas Nowe przesunięcie MSIL ramki stosu, w którym należy umieścić wskaźnik instrukcji. Ta wartość musi być punktem sekwencji.  
   
  Jest on odpowiedzialny za zagwarantowanie ważności tej wartości. Na przykład przesunięcie MSIL jest nieprawidłowe, jeśli znajduje się poza granicami funkcji.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Po edytowaniu funkcji ramki debuger może wywołać `RemapFunction` metodę, aby dokonać zamiany w najnowszej wersji funkcji ramki, aby można ją było wykonać. Wykonanie kodu rozpocznie się w danym przesunięciu MSIL.  
   
 > [!NOTE]
@@ -52,6 +55,7 @@ HRESULT RemapFunction (
 - Mimo że wykonywanie kodu zostało zatrzymane z powodu zdarzenia [ICorDebugManagedCallback:: EditAndContinueRemap —](icordebugmanagedcallback-editandcontinueremap-method.md) dla tej ramki.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

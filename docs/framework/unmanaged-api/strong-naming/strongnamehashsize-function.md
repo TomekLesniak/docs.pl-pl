@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 738c98d7-a60c-45fe-a296-220af05e6991
 topic_type:
 - apiref
-ms.openlocfilehash: c656f73748faf8be7124be65f3ed455f2d5fd07a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1116fcde754f966a783f4fdca85df8bd3ca1b0ba
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73105189"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724445"
 ---
 # <a name="strongnamehashsize-function"></a>StrongNameHashSize — Funkcja
+
 Pobiera rozmiar buforu wymagany dla skrótu przy użyciu określonego algorytmu wyznaczania wartości skrótu.  
   
  Ta funkcja jest przestarzała. Zamiast tego użyj metody [ICLRStrongName:: StrongNameHashSize —](../hosting/iclrstrongname-strongnamehashsize-method.md) .  
@@ -36,6 +37,7 @@ BOOLEAN StrongNameHashSize (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ulHashAlg`  
  podczas Algorytm wyznaczania wartości skrótu używany do obliczania rozmiaru buforu.  
   
@@ -43,21 +45,24 @@ BOOLEAN StrongNameHashSize (
  określoną Zwrócony rozmiar buforu w bajtach.  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `true` po pomyślnym zakończeniu; w przeciwnym razie `false`.  
+
+ `true` Po pomyślnym zakończeniu; w przeciwnym razie `false` .  
   
 ## <a name="remarks"></a>Uwagi  
- Jeśli funkcja `StrongNameHashSize` nie zakończy się pomyślnie, wywołaj funkcję [StrongNameErrorInfo —](strongnameerrorinfo-function.md) w celu pobrania ostatniego wygenerowanego błędu.  
+
+ Jeśli `StrongNameHashSize` Funkcja nie zakończy się pomyślnie, wywołaj funkcję [StrongNameErrorInfo —](strongnameerrorinfo-function.md) w celu pobrania ostatniego wygenerowanego błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** StrongName. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [StrongNameHashSize, metoda](../hosting/iclrstrongname-strongnamehashsize-method.md)
-- [ICLRStrongName, interfejs](../hosting/iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](../hosting/iclrstrongname-interface.md)

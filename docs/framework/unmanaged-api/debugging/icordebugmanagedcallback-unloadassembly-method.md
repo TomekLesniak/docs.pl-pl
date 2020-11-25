@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6734321c-c8a9-401f-a558-cad715ec4a77
 topic_type:
 - apiref
-ms.openlocfilehash: 07996a78d7f559de587c8a3eb2babfc06675169d
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: e89b425afb63de8ef496fe545873ce33e5ff828c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212649"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724016"
 ---
 # <a name="icordebugmanagedcallbackunloadassembly-method"></a>ICorDebugManagedCallback::UnloadAssembly — Metoda
+
 Powiadamia debuger, że zestaw środowiska uruchomieniowego języka wspólnego został zwolniony.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT UnloadAssembly (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pAppDomain`  
  podczas Wskaźnik do obiektu ICorDebugAppDomain, który reprezentuje domenę aplikacji, która zawiera zestaw.  
   
@@ -42,9 +44,11 @@ HRESULT UnloadAssembly (
  podczas Wskaźnik do obiektu ICorDebugAssembly, który reprezentuje zestaw.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zestawu nie należy używać po tym wywołaniu zwrotnym.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -53,7 +57,7 @@ HRESULT UnloadAssembly (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [LoadAssembly, metoda](icordebugmanagedcallback-loadassembly-method.md)
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)

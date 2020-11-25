@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: e460264e2393858c028ba51aec4a4f2c01649994
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: a65fa9974165fa36e59a7fb83dca6dd902f7d8dc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860829"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724398"
 ---
 # <a name="dacpgetmoduleaddress-structure"></a>DacpGetModuleAddress, struktura
 
@@ -54,12 +54,13 @@ struct DacpGetModuleAddress
 Ta struktura jest w czasie wykonywania i nie jest udostępniana za pomocą żadnych plików nagłówkowych ani bibliotek. Aby go użyć, Zdefiniuj strukturę jak określono powyżej, gdzie `CLRDATA_ADDRESS` jest 64-bitową liczbą całkowitą bez znaku.
 
 ## <a name="requirements"></a>Wymagania
+
 **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
 **Nagłówek:** Dawaj  
 **Biblioteka:** Dawaj  
 **.NET Framework wersje:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie](index.md)
 - [Struktury debugowania](debugging-structures.md)

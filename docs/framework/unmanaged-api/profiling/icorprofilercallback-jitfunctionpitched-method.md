@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 116085df-7a77-404a-afac-d0557a12b986
 topic_type:
 - apiref
-ms.openlocfilehash: 2715a5b6b03a5ad33a6f18fb736fce3911bfbef0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 51fec26837b3c7f0a0328a7b64ff4a02148283da
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500029"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725517"
 ---
 # <a name="icorprofilercallbackjitfunctionpitched-method"></a>ICorProfilerCallback::JITFunctionPitched — Metoda
+
 Powiadamia program profilujący, że funkcja, która została skompilowana just-in-Time (JIT), została usunięta z pamięci.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,15 +34,18 @@ HRESULT JITFunctionPitched(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `functionId`  
  podczas Identyfikator funkcji, która została usunięta.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli usunięta funkcja zostanie wywołana, profiler otrzyma nowe zdarzenia JIT-kompilacja po ponownym skompilowaniu funkcji. Obecnie kompilator JIT środowiska uruchomieniowego języka wspólnego (CLR) nie usuwa funkcji z pamięci, więc to wywołanie zwrotne nie jest obecnie używane i nie zostanie odebrane przez profiler.  
   
  Wartość `functionId` jest nieprawidłowa, dopóki funkcja nie zostanie ponownie skompilowana. Po ponownym skompilowaniu funkcji `functionId` zostanie użyta ta sama wartość.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

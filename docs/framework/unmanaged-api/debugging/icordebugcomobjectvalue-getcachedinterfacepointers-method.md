@@ -13,14 +13,15 @@ helpviewer_keywords:
 ms.assetid: 08dbd558-bd39-4263-94c2-71e70687aaf0
 topic_type:
 - apiref
-ms.openlocfilehash: fa22c17ed7d5bcd689f21d2d855d9be7a6a8e164
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: c3120a0dd859f581e6356fc260043cb83250ae9e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82892809"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724835"
 ---
 # <a name="icordebugcomobjectvaluegetcachedinterfacepointers-method"></a>ICorDebugComObjectValue::GetCachedInterfacePointers — Metoda
+
 Pobiera pierwotne wskaźniki interfejsu w pamięci podręcznej dla bieżącej otoki (RCW) w czasie wykonywania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,14 +35,15 @@ HRESULT GetCachedInterfacePointers(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `bIInspectableOnly`  
- podczas Wartość wskazująca, czy metoda zwróci tylko środowisko wykonawcze systemu Windows interfejsy (`IInspectable` interfejsy) czy wszystkie interfejsy com, które są buforowane przez otokę wywoływaną przez środowisko uruchomieniowe (otoka).  
+ podczas Wartość wskazująca, czy metoda zwróci tylko środowisko wykonawcze systemu Windows interfejsy ( `IInspectable` interfejsy) czy wszystkie interfejsy com, które są buforowane przez otokę wywoływaną przez środowisko uruchomieniowe (otoka).  
   
  `celt`  
  podczas Liczba obiektów, których adresy mają zostać pobrane.  
   
  `pceltFetched`  
- określoną Wskaźnik do liczby `CORDB_ADDRESS` wartości faktycznie zwracanych w `ptrs`.  
+ określoną Wskaźnik do liczby `CORDB_ADDRESS` wartości faktycznie zwracanych w `ptrs` .  
   
  `ptrs`  
  Wskaźnik na adres początkowy tablicy `CORDB_ADDRESS` wartości zawierającej adresy buforowanych obiektów interfejsu.  
@@ -49,6 +51,7 @@ HRESULT GetCachedInterfacePointers(
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -57,7 +60,7 @@ HRESULT GetCachedInterfacePointers(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugComObjectValue — Interfejs](icordebugcomobjectvalue-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

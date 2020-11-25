@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f93cc2ec-0a12-4499-9bf6-405dc58c9a81
 topic_type:
 - apiref
-ms.openlocfilehash: a338116f6eae670cad785807ed580039fbd7fb78
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a166648252215e49b206aae1c3ab1e08985fde2d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207407"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724640"
 ---
 # <a name="icordebugobjectvalue2-interface"></a>ICorDebugObjectValue2, interfejs
 
@@ -29,7 +29,7 @@ Rozszerza interfejs "ICorDebugObjectValue" w celu obsługi dziedziczenia i zast�
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[GetVirtualMethodAndType, metoda](icordebugobjectvalue2-getvirtualmethodandtype-method.md)|`GetVirtualMethodAndType`nie została jeszcze zaimplementowana.|  
+|[GetVirtualMethodAndType, metoda](icordebugobjectvalue2-getvirtualmethodandtype-method.md)|`GetVirtualMethodAndType` nie została jeszcze zaimplementowana.|  
   
 ## <a name="remarks"></a>Uwagi  
   
@@ -37,6 +37,7 @@ Rozszerza interfejs "ICorDebugObjectValue" w celu obsługi dziedziczenia i zast�
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -45,6 +46,6 @@ Rozszerza interfejs "ICorDebugObjectValue" w celu obsługi dziedziczenia i zast�
   
  **Wersje programu .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

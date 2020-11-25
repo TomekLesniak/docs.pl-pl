@@ -2,14 +2,15 @@
 title: 'ICorDebugVariableSymbol:: GetValue — Metoda'
 ms.date: 03/30/2017
 ms.assetid: 90abece1-392e-4ade-94a1-30c75b0f7074
-ms.openlocfilehash: f217f7226d53a27363f66eb90a340fd3604a0217
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 0a57b1a31e1ef4b0db317012b25bc65ecbbaf011
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396515"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725966"
 ---
 # <a name="icordebugvariablesymbolgetvalue-method"></a>ICorDebugVariableSymbol:: GetValue — Metoda
+
 Pobiera wartość zmiennej jako tablicę bajtów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,6 +27,7 @@ HRESULT GetValue(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `offset`  
  podczas Przesunięcie początkowe w zmiennej, z której ma zostać odczytana wartość. Ten parametr jest używany podczas odczytywania pól elementu członkowskiego w obiekcie.  
   
@@ -50,6 +52,7 @@ HRESULT GetValue(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

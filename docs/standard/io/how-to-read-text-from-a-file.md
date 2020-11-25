@@ -12,12 +12,12 @@ helpviewer_keywords:
 - data streams, reading text from files
 - I/O [.NET], reading text from files
 ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
-ms.openlocfilehash: 7c772ec1de41d0ba2b4ef0d924a252326ee6909e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 48b862ff77bf4ace48a5481fe9bedcf354b5654b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823371"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725342"
 ---
 # <a name="how-to-read-text-from-a-file"></a>Instrukcje: odczytywanie tekstu z pliku
 
@@ -27,6 +27,7 @@ W poniższych przykładach pokazano, jak odczytać tekst synchronicznie i asynch
 > Te przykłady kodu nie dotyczą aplikacji uniwersalnych systemu Windows (platformy UWP), ponieważ środowisko wykonawcze systemu Windows udostępnia różne typy strumieni do odczytu i zapisu w plikach. Przykład pokazujący, jak odczytać tekst z pliku w aplikacji platformy UWP, zobacz [Szybki Start: odczytywanie i zapisywanie plików](/previous-versions/windows/apps/hh758325(v=win.10)). Przykłady pokazujące sposób konwersji między strumieniami .NET Framework i strumieniami środowisko wykonawcze systemu Windows można znaleźć w temacie [How to: converting in .NET Framework Streams and środowisko wykonawcze systemu Windows](how-to-convert-between-dotnet-streams-and-winrt-streams.md)Streams.  
   
 ## <a name="example-synchronous-read-in-a-console-app"></a>Przykład: Synchroniczne odczyty w aplikacji konsolowej  
+
 W poniższym przykładzie pokazano synchroniczną operację odczytu w aplikacji konsolowej. Ten przykład otwiera plik tekstowy przy użyciu czytnika strumienia, kopiuje zawartość do ciągu i wyprowadza ciąg do konsoli.  
   
 > [!IMPORTANT]
@@ -36,6 +37,7 @@ W poniższym przykładzie pokazano synchroniczną operację odczytu w aplikacji 
 :::code language="vb" source="snippets/how-to-read-text-from-a-file/vb/sync-console/Program.vb":::
   
 ## <a name="example-asynchronous-read-in-a-wpf-app"></a>Przykład: asynchroniczny odczyt w aplikacji WPF
+
  W poniższym przykładzie pokazano asynchroniczne operacje odczytu w aplikacji Windows Presentation Foundation (WPF).  
   
 > [!IMPORTANT]

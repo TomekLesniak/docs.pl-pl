@@ -12,14 +12,15 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 478f786995cfc4b57f0b18b2159775db104e9cfb
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 919e4f4cf467e8fc28c3d007963393dad134ab57
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687696"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724055"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Instrukcje: odwoływanie się do zestawu o silnej nazwie
+
 Proces odwoływania się do typów lub zasobów w zestawie o silnej nazwie jest zwykle niewidoczny. Odwołanie można wykonać w czasie kompilacji (wczesne wiązanie) lub w czasie wykonywania.  
   
 Odwołanie w czasie kompilacji odbywa się po wskazaniu kompilatora, który zestaw ma zostać skompilowany jawnie odwołuje się do innego zestawu. W przypadku korzystania z odwołania w czasie kompilacji kompilator automatycznie pobiera klucz publiczny do określonego zestawu o silnej nazwie i umieszcza go w odwołaniu do zestawu, który jest kompilowany.
@@ -35,7 +36,7 @@ W wierszu polecenia wpisz następujące polecenie:
 
 W tym poleceniu *kompilator* jest poleceniem kompilatora dla używanego języka, a *Nazwa zestawu* to nazwa zestawu o silnej nazwie. Można również użyć innych opcji kompilatora, takich jak opcja **/t: Library** do tworzenia zestawu biblioteki.  
 
-Poniższy przykład tworzy zestaw o nazwie *myAssembly.dll* , który odwołuje się do zestawu o silnej nazwie, o nazwie *myLibAssembly.dll* z modułu kodu o nazwie *myAssembly.cs* .  
+Poniższy przykład tworzy zestaw o nazwie *myAssembly.dll* , który odwołuje się do zestawu o silnej nazwie, o nazwie *myLibAssembly.dll* z modułu kodu o nazwie *myAssembly.cs*.  
 
 ```cmd
 csc /t:library myAssembly.cs /reference:myLibAssembly.dll  

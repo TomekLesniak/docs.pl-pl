@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00be4789-ac63-4397-b2ec-1629a5c5a585
 topic_type:
 - apiref
-ms.openlocfilehash: c0b6d53ce3be3aed6a577bf6e38a281928499848
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 585a9e39f529294841cd11389f03d763968a0f5e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009031"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723821"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a>IMetaDataAssemblyImport::GetManifestResourceProps — Metoda
+
 Pobiera zestaw właściwości zasobu manifestu z określonym podpisem metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,8 +41,9 @@ HRESULT GetManifestResourceProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `mdmr`  
- podczas `mdManifestResource`Token reprezentujący zasób, dla którego mają zostać pobrane właściwości.  
+ podczas `mdManifestResource` Token reprezentujący zasób, dla którego mają zostać pobrane właściwości.  
   
  `szName`  
  określoną Nazwa zasobu.  
@@ -62,14 +64,15 @@ HRESULT GetManifestResourceProps (
  określoną Wskaźnik do flag, które opisują metadane zastosowane do zasobu. Wartość flags jest kombinacją co najmniej jednej wartości [CorManifestResourceFlags —](cormanifestresourceflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataAssemblyImport — Interfejs](imetadataassemblyimport-interface.md)
