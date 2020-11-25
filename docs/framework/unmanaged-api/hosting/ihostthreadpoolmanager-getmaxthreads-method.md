@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: db268876-6178-4a81-aca3-318ee7f96001
 topic_type:
 - apiref
-ms.openlocfilehash: efbfa310c90f48c99219cb185f090a1b854949a2
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 3aecebe2803d3a795db801491d0f60a5eb7c00ce
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842286"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730789"
 ---
 # <a name="ihostthreadpoolmanagergetmaxthreads-method"></a>IHostThreadPoolManager::GetMaxThreads — Metoda
+
 Pobiera maksymalną liczbę wątków, które Host przechowuje współbieżnie w puli wątków.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetMaxThreads (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pdwMaxWorkerThreads`  
  określoną Wskaźnik do maksymalnej liczby wątków, które Host przechowuje w puli wątków.  
   
@@ -41,7 +43,7 @@ HRESULT GetMaxThreads (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`GetMaxThreads`pomyślnie zwrócono.|  
+|S_OK|`GetMaxThreads` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR (nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,16 +52,18 @@ HRESULT GetMaxThreads (
 |E_NOTIMPL|Host nie oferuje implementacji programu `GetMaxThreads` .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  CLR wywołuje, `GetMaxThreads` Aby określić łączną liczbę wątków w puli wątków. Metoda [GetAvailableThreads —](ihostthreadpoolmanager-getavailablethreads-method.md) Pobiera liczbę wątków, które aktualnie nie przetwarzają elementów roboczych. Wszystkie żądania powyżej zwracanej wartości `pdwMaxWorkerThreads` parametru pozostają w kolejce, dopóki wątki staną się niedostępne.  
   
  Jeśli host nie dostarcza implementacji `GetMaxThreads` , powinien zwrócić wartość HRESULT E_NOTIMPL.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -69,4 +73,4 @@ HRESULT GetMaxThreads (
 - <xref:System.Threading.ThreadPool>
 - [GetMinThreads, metoda](ihostthreadpoolmanager-getminthreads-method.md)
 - [SetMaxThreads, metoda](ihostthreadpoolmanager-setmaxthreads-method.md)
-- [IHostThreadPoolManager, interfejs](ihostthreadpoolmanager-interface.md)
+- [IHostThreadPoolManager — Interfejs](ihostthreadpoolmanager-interface.md)

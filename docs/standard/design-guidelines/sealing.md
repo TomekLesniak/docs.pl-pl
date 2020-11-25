@@ -7,14 +7,15 @@ helpviewer_keywords:
 - preventing customization
 - sealed classes
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
-ms.openlocfilehash: 29023ad431f9d05caf44e59f66eccee24bfa0433
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: bf8aad5d79e659ad9a767c2b0992eb9ee05fd531
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828689"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730945"
 ---
 # <a name="sealing"></a>Pieczętowanie
+
 Jedną z funkcji platform zorientowanych na obiektach jest to, że deweloperzy mogą je rozwijać i dostosowywać w sposób nieoczekiwany przez projektantów struktury. Jest to zarówno moc, jak i niebezpieczeństwo rozszerzalnego projektu. Podczas projektowania platformy, dlatego bardzo ważne jest staranne projektowanie pod kątem rozszerzalności, gdy jest to potrzebne, i ograniczanie rozszerzalności, gdy jest to niebezpieczne.
 
  Zaawansowany mechanizm, który uniemożliwia rozszerzanie rozszerzalności. Możesz zapieczętować klasę lub poszczególnych członków. Opieczętowanie klasy uniemożliwia użytkownikom dziedziczenie z klasy. Zapieczętowania elementu członkowskiego uniemożliwia użytkownikom zastępowanie określonego elementu członkowskiego.

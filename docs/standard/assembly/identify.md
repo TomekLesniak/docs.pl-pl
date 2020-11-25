@@ -6,12 +6,12 @@ ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: fb1bcfa50ec380f10ab67cc47331f91dc3e4b32d
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: b78acaad31996f8fc2b965f51f541e99aeceb111
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380146"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731504"
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly"></a>Instrukcje: ustalanie, czy plik jest zestawem
 
@@ -19,7 +19,7 @@ Plik jest zestawem, jeśli i tylko wtedy, gdy jest zarządzany, i zawiera wpis z
   
 ## <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>Jak ręcznie określić, czy plik jest zestawem  
   
-1. Uruchom [Ildasm. exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md).  
+1. Uruchom [Ildasm.exe (Il dezasembler)](../../framework/tools/ildasm-exe-il-disassembler.md).  
   
 2. Załaduj plik, który chcesz przetestować.  
   
@@ -32,6 +32,7 @@ Plik jest zestawem, jeśli i tylko wtedy, gdy jest zarządzany, i zawiera wpis z
 2. Jeśli <xref:System.BadImageFormatException> wystąpi wyjątek, plik nie jest zestawem.  
   
 ## <a name="example"></a>Przykład  
+
 Ten przykład testuje DLL, aby sprawdzić, czy jest to zestaw.  
 
 ```csharp
@@ -92,7 +93,7 @@ End Module
 
 <xref:System.Reflection.AssemblyName.GetAssemblyName%2A>Metoda ładuje plik testowy, a następnie zwalnia go po odczytaniu informacji.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Reflection.AssemblyName>
 - [Przewodnik programowania w języku C#](../../csharp/programming-guide/index.md)

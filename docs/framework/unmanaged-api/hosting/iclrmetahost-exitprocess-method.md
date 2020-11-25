@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b4df98cc-4e4e-407b-b8f4-e0076afef3a4
 topic_type:
 - apiref
-ms.openlocfilehash: 83cbfa097541681305ff285f21c2b6c9c6391ef8
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 6d601ac3ece801353b630c74ed852c2657f25d7f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703746"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730467"
 ---
 # <a name="iclrmetahostexitprocess-method"></a>ICLRMetaHost::ExitProcess — Metoda
+
 Próbuje bezpiecznie zamknąć wszystkie ładowane środowiska uruchomieniowe, a następnie kończy proces. Zastępuje funkcję [CorExitProcess —](corexitprocess-function.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,24 +34,27 @@ HRESULT ExitProcess (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `iExitCode`  
  podczas Kod zakończenia procesu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda nigdy nie zwraca, więc jej wartość zwracana jest niezdefiniowana.  
   
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRMetaHost, interfejs](iclrmetahost-interface.md)
+- [ICLRMetaHost — Interfejs](iclrmetahost-interface.md)
 - [Hosting](index.md)

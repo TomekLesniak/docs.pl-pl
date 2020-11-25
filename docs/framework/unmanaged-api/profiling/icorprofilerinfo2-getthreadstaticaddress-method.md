@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8e7dbf14-98a2-4384-a950-58a7640e59df
 topic_type:
 - apiref
-ms.openlocfilehash: 3df6e4decf1c4641116dee5fab3ca83189b427c0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8b9b76fd58d8b3ec5c2d98156b7935051aff074b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496766"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731231"
 ---
 # <a name="icorprofilerinfo2getthreadstaticaddress-method"></a>ICorProfilerInfo2::GetThreadStaticAddress — Metoda
+
 Pobiera adres określonego wątku-static pola, które znajduje się w zakresie określonego wątku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetThreadStaticAddress(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `classId`  
  podczas Identyfikator klasy zawierającej żądane pole statyczne wątku.  
   
@@ -49,6 +51,7 @@ HRESULT GetThreadStaticAddress(
  określoną Wskaźnik do adresu pola statycznego znajdującego się w określonym wątku.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetThreadStaticAddress`Metoda może zwracać jedną z następujących wartości:  
   
 - CORPROF_E_DATAINCOMPLETE HRESULT, jeśli podane pole statyczne nie ma przypisanego adresu w określonym kontekście.  
@@ -58,6 +61,7 @@ HRESULT GetThreadStaticAddress(
  Przed ukończeniem konstruktora klasy klasy `GetThreadStaticAddress` zwraca CORPROF_E_DATAINCOMPLETE dla wszystkich pól statycznych, chociaż niektóre pola statyczne mogą już być zainicjowane i główne obiekty wyrzucania elementów bezużytecznych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -68,5 +72,5 @@ HRESULT GetThreadStaticAddress(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)

@@ -6,19 +6,21 @@ helpviewer_keywords:
 - strong-named assemblies
 - strong naming [.NET Framework], enhanced
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
-ms.openlocfilehash: f0160f033760582c914a0d64c21415e5e921d907
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: b9c690c77dafc247f7282c3f56384481efe53399
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811083"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731530"
 ---
 # <a name="enhanced-strong-naming"></a>Poprawa silnego nazywania
+
 Sygnatura silnej nazwy jest mechanizmem tożsamości w .NET Framework do identyfikowania zestawów. Jest to podpis cyfrowy klucza publicznego, który zwykle jest używany do weryfikacji integralności danych, które są przesyłane z nadawcy (osoby podpisującej) do adresata (weryfikatora). Ta sygnatura jest używana jako unikatowa tożsamość zestawu i zapewnia, że odwołania do zestawu nie są niejednoznaczne. Zestaw jest podpisany jako część procesu kompilacji, a następnie weryfikowany po jego załadowaniu.  
   
  Podpisy silnej nazwy uniemożliwiają złośliwym stronom manipulowanie zestawem, a następnie ponowne podpisywanie zestawu przy użyciu oryginalnego klucza osoby podpisującej. Jednak klucze o silnych nazwach nie zawierają żadnych wiarygodnych informacji o wydawcy ani nie zawierają hierarchii certyfikatów. Podpis silnej nazwy nie gwarantuje wiarygodności osoby, która podpisała zestaw lub wskazuje, czy osoba była uprawnionym właścicielem klucza; wskazuje tylko, że właściciel klucza podpisuje zestaw. W związku z tym nie zaleca się używania podpisu silnej nazwy jako modułu sprawdzania zabezpieczeń w celu zaufania kodu innej firmy. Microsoft Authenticode jest zalecanym sposobem uwierzytelniania kodu.  
   
 ## <a name="limitations-of-conventional-strong-names"></a>Ograniczenia konwencjonalnych silnych nazw  
+
  Technologia silnego nazewnictwa używana w wersjach przed .NET Framework 4,5 ma następujące braki:  
   
 - Klucze są stale objęte atakami, a udoskonalone techniki i sprzęt ułatwiają wywnioskowanie klucza prywatnego z klucza publicznego. Aby chronić przed atakami, potrzebne są większe klucze. Wersje .NET Framework przed .NET Framework 4,5 zapewniają możliwość podpisania przy użyciu dowolnego klucza rozmiaru (domyślny rozmiar to 1024 bitów), ale podpisywanie zestawu z nowym kluczem spowoduje przerwanie wszystkich plików binarnych, które odwołują się do starszej tożsamości zestawu. W związku z tym jest niezwykle trudne do uaktualnienia rozmiaru klucza podpisywania, jeśli chcesz zachować zgodność.  
@@ -26,6 +28,7 @@ Sygnatura silnej nazwy jest mechanizmem tożsamości w .NET Framework do identyf
 - Podpisywanie silnej nazwy obsługuje tylko algorytm SHA-1. Wcześniej stwierdzono, że algorytm SHA-1 jest nieodpowiedni dla bezpiecznych aplikacji do tworzenia skrótów. W związku z tym konieczny jest silniejszy algorytm (SHA-256 lub nowszy). Istnieje możliwość, że algorytm SHA-1 utraci swoją pozycję zgodną ze standardem FIPS, co może spowodować problemy dla tych, którzy zdecydują się używać tylko oprogramowania zgodnego ze standardem FIPS.  
   
 ## <a name="advantages-of-enhanced-strong-names"></a>Zalety ulepszonych silnych nazw  
+
  Główne zalety ulepszonych silnych nazw są zgodne ze wstępnie istniejącymi silnymi nazwami i możliwość stwierdzenia, że jedna tożsamość jest równoważna z inną:  
   
 - Deweloperzy, którzy posiadają istniejące podpisane zestawy, mogą migrować swoje tożsamości do algorytmów SHA-2 przy zachowaniu zgodności z zestawami, które odwołują się do starych tożsamości.  
@@ -33,11 +36,13 @@ Sygnatura silnej nazwy jest mechanizmem tożsamości w .NET Framework do identyf
 - Deweloperzy, którzy tworzą nowe zestawy i nie są zainteresowani istniejącymi sygnaturami silnej nazwy, mogą korzystać z bezpieczniejszych algorytmów SHA-2 i podpisywać zestawy w taki sam sposób, jak zawsze.  
   
 ## <a name="use-enhanced-strong-names"></a>Użyj ulepszonych silnych nazw  
+
  Klucze silnej nazwy składają się z klucza podpisu i klucza tożsamości. Zestaw jest podpisany przy użyciu klucza podpisu i jest identyfikowany przez klucz tożsamości. Przed .NET Framework 4,5 te dwa klucze były takie same. Począwszy od .NET Framework 4,5, klucz tożsamości pozostaje taki sam jak w starszych wersjach .NET Framework, ale klucz podpisu zostanie rozszerzony przy użyciu silniejszego algorytmu wyznaczania wartości skrótu. Ponadto klucz podpisu jest podpisany przy użyciu klucza tożsamości w celu utworzenia podpisu licznika.  
   
  Ten <xref:System.Reflection.AssemblySignatureKeyAttribute> atrybut umożliwia metadanych zestawu użycie istniejącego klucza publicznego dla tożsamości zestawu, co pozwala na kontynuowanie pracy przez stare odwołania do zestawu.  Ten <xref:System.Reflection.AssemblySignatureKeyAttribute> atrybut używa sygnatury licznika, aby upewnić się, że właściciel nowego klucza podpisu jest również właścicielem starego klucza tożsamości.  
   
 ### <a name="sign-with-sha-2-without-key-migration"></a>Podpisz przy użyciu algorytmu SHA-2 bez migracji klucza  
+
  Uruchom następujące polecenia z wiersza polecenia, aby podpisać zestaw bez migrowania sygnatury silnej nazwy:  
   
 1. Generuj nowy klucz tożsamości (w razie potrzeby).  
@@ -65,6 +70,7 @@ Sygnatura silnej nazwy jest mechanizmem tożsamości w .NET Framework do identyf
     ```  
   
 ### <a name="sign-with-sha-2-with-key-migration"></a>Logowanie przy użyciu algorytmu SHA-2 z migracją klucza  
+
  Uruchom następujące polecenia z wiersza polecenia, aby podpisać zestaw za pomocą zmigrowanego podpisu silnej nazwy.  
   
 1. Wygeneruj parę kluczy tożsamości i sygnatury (w razie potrzeby).  
@@ -132,6 +138,6 @@ Sygnatura silnej nazwy jest mechanizmem tożsamości w .NET Framework do identyf
     sn -Ra MyAssembly.exe SignatureKey.snk  
     ```  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Tworzenie i używanie zestawów o silnej nazwie](create-use-strong-named.md)

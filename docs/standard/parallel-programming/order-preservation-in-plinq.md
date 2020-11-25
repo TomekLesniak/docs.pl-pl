@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-ms.openlocfilehash: 59d32f8801a1429718f39ab912f55cfcc5788a0e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 997bb80b6e30d4769613c4a1df647e6cd475a8ed
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820777"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730607"
 ---
 # <a name="order-preservation-in-plinq"></a>Zamawianie zachowywania w PLINQ
+
 W PLINQ celem jest maksymalizacja wydajności przy zachowaniu poprawności. Zapytanie powinno działać tak szybko, jak to możliwe, ale nadal daje poprawne wyniki. W niektórych przypadkach poprawność wymaga zachowania kolejności sekwencji źródłowej; Określanie kolejności może być jednak kosztowne w praktyce. W związku z tym domyślnie PLINQ nie zachowuje kolejności sekwencji źródłowej. W tym względzie PLINQ przypomina [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] , ale w przeciwieństwie do LINQ to Objects, która zachowuje porządkowanie.  
   
  Aby zastąpić domyślne zachowanie, można włączyć opcję zachowywania kolejności przy użyciu <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operatora na sekwencji źródłowej. Następnie można wyłączyć zachowanie w kolejności późniejszej w zapytaniu przy użyciu <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> metody. W obu metodach zapytanie jest przetwarzane w oparciu o algorytmy heurystyczne określające, czy wykonać zapytanie jako równoległe, czy sekwencyjne. Aby uzyskać więcej informacji, zobacz temat [Omówienie przyspieszenie w PLINQ](understanding-speedup-in-plinq.md).  
@@ -39,6 +40,7 @@ W PLINQ celem jest maksymalizacja wydajności przy zachowaniu poprawności. Zapy
  Należy zauważyć, że PLINQ zachowuje kolejność sekwencji wygenerowanej przez operatory nakładające się w kolejności dla reszty zapytania. Innymi słowy operatory takie jak <xref:System.Linq.ParallelEnumerable.OrderBy%2A> i <xref:System.Linq.ParallelEnumerable.ThenBy%2A> są traktowane tak, jakby były wykonane przez wywołanie metody <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> .  
   
 ## <a name="query-operators-and-ordering"></a>Operatory zapytań i porządkowanie  
+
  Następujące operatory zapytań wprowadzają zachowywanie kolejności do wszystkich kolejnych operacji w zapytaniu lub do momentu <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> wywołania:  
   
 - <xref:System.Linq.ParallelEnumerable.OrderBy%2A>  

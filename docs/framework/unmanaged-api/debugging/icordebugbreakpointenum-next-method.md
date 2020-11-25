@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2e6bbaea-79ba-448c-a0e3-7c90fc7c2939
 topic_type:
 - apiref
-ms.openlocfilehash: af90886390b59932d3ae146a70fc2901ec1c378d
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 14c89e808ea8e41bbee46a59a60bc1876f3800d2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894669"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730191"
 ---
 # <a name="icordebugbreakpointenumnext-method"></a>ICorDebugBreakpointEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień ICorDebugBreakpoint z wyliczenia, rozpoczynając od bieżącego położenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT Next (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba `ICorDebugBreakpoint` wystąpień do pobrania.  
   
@@ -44,9 +46,10 @@ HRESULT Next (
  określoną Tablica wskaźników, z których każdy wskazuje `ICorDebugBreakpoint` obiekt, który reprezentuje punkt przerwania.  
   
  `pceltFetched`  
- określoną Wskaźnik do liczby faktycznie zwróconych `ICorDebugBreakpoint` wystąpień. Ta wartość może być równa `celt` null, jeśli jest taka.  
+ określoną Wskaźnik do liczby `ICorDebugBreakpoint` faktycznie zwróconych wystąpień. Ta wartość może być równa null, jeśli `celt` jest taka.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

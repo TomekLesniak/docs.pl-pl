@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: d1b2b172-5353-42af-a877-cf653c68ece0
 topic_type:
 - apiref
-ms.openlocfilehash: cf7667f0f2a0f77cd793e00a5de8b030b0c53ec8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b895c77850c0457fd2a152c1128c016093599f76
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140698"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730984"
 ---
 # <a name="gethashfromassemblyfilew-function"></a>GetHashFromAssemblyFileW — Funkcja
+
 Pobiera skrót określonego pliku zestawu przy użyciu określonego algorytmu wyznaczania wartości skrótu. Ścieżka do pliku zestawu musi być określona jako ciąg Unicode.  
   
  Ta funkcja jest przestarzała. Zamiast tego użyj metody [ICLRStrongName:: GetHashFromAssemblyFileW —](../hosting/iclrstrongname-gethashfromassemblyfilew-method.md) .  
@@ -39,6 +40,7 @@ HRESULT GetHashFromAssemblyFileW (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `wszFilePath`  
  podczas Ścieżka do pliku, który ma zostać poddany skrótowi. Ten parametr musi być ciągiem Unicode.  
   
@@ -49,22 +51,23 @@ HRESULT GetHashFromAssemblyFileW (
  określoną Zwrócony bufor wyznaczania wartości skrótu.  
   
  `cchHash`  
- podczas Żądany maksymalny rozmiar `pbHash`.  
+ podczas Żądany maksymalny rozmiar `pbHash` .  
   
  `pchHash`  
- określoną Zwrócony rozmiar w bajtach `pbHash`.  
+ określoną Zwrócony rozmiar, w bajtach, z `pbHash` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** StrongName. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [GetHashFromAssemblyFileW, metoda](../hosting/iclrstrongname-gethashfromassemblyfilew-method.md)
 - [GetHashFromAssemblyFile, metoda](../hosting/iclrstrongname-gethashfromassemblyfile-method.md)
-- [ICLRStrongName, interfejs](../hosting/iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](../hosting/iclrstrongname-interface.md)

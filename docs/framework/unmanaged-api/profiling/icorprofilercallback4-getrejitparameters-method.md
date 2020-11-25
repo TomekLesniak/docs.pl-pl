@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0e9bfe07-9f20-498c-b568-9017c8f6056c
 topic_type:
 - apiref
-ms.openlocfilehash: 527e48d02d5267d6ae41214686c2e8c997d85dca
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2cee763674da7472ca48355e7eaba3b7dfb7adbe
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499548"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730308"
 ---
 # <a name="icorprofilercallback4getrejitparameters-method"></a>ICorProfilerCallback4::GetReJITParameters — Metoda
+
 Umożliwia programowi Code Profiler Ustawianie alternatywnych flag generowania kodu dla nowej rekompilowanej treści metody.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,19 +33,22 @@ HRESULT GetReJITParameters(     [in] ModuleID moduleId,     [in] mdMethodDef met
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleID`  
  podczas Moduł, który zawiera metodę, dla której środowisko CLR wymaga parametrów ponownej kompilacji JIT.  
   
  `methodId`  
- podczas `MethodDef`Metoda, dla której środowisko CLR wymaga parametrów ponownej kompilacji JIT.  
+ podczas `MethodDef` Metoda, dla której środowisko CLR wymaga parametrów ponownej kompilacji JIT.  
   
  `pFunctionControl`  
  podczas Wskaźnik do interfejsu [ICorProfilerFunctionControl](icorprofilerfunctioncontrol-interface.md) , który profiler może wykorzystać, aby dostarczyć informacje o ponownej kompilacji JIT dla metody, która jest ponownie kompilowana.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR wystawia `GetReJITParameters` wywołanie zwrotne, aby Profiler mógł określić parametry ponownego kompilowania danej metody. `GetReJITParameters`Wywołanie zwrotne jest wydawane tylko raz na funkcję; parametry dostarczone przez profiler stosują się do wszystkich wystąpień tej funkcji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -56,6 +60,6 @@ HRESULT GetReJITParameters(     [in] ModuleID moduleId,     [in] mdMethodDef met
 ## <a name="see-also"></a>Zobacz także
 
 - [ICorProfilerCallback — Interfejs](icorprofilercallback-interface.md)
-- [ICorProfilerCallback4, interfejs](icorprofilercallback4-interface.md)
+- [ICorProfilerCallback4 — Interfejs](icorprofilercallback4-interface.md)
 - [JITCompilationStarted, metoda](icorprofilercallback-jitcompilationstarted-method.md)
 - [ReJITCompilationStarted, metoda](icorprofilercallback4-rejitcompilationstarted-method.md)

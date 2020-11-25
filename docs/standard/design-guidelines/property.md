@@ -5,14 +5,15 @@ helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-ms.openlocfilehash: 1cf41a08c641e9251084e5dcac6c46bc54857717
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ed287b98c012622caa5f8f1cc90fced90dda3e62
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828741"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730971"
 ---
 # <a name="property-design"></a>Projekt właściwości
+
 Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo odmienne pod względem scenariuszy użycia. Powinny być one widoczne jako pola inteligentne. Mają one składnię wywołującą pól i elastyczność metod.
 
  ✔️ utworzyć właściwości tylko DO pobrania, jeśli obiekt wywołujący nie powinien mieć możliwości zmiany wartości właściwości.
@@ -38,6 +39,7 @@ Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo 
  Metody pobierające właściwości powinny być prostymi operacjami i nie powinny mieć żadnych warunków wstępnych. Jeśli metoda pobierająca może zgłosić wyjątek, prawdopodobnie powinna zostać przeprojektowana tak, aby była metodą. Należy zauważyć, że ta zasada nie ma zastosowania do indeksatorów, w przypadku których oczekujemy wyjątków w wyniku walidacji argumentów.
 
 ### <a name="indexed-property-design"></a>Projekt właściwości indeksowanej
+
  Indeksowana właściwość jest właściwością specjalną, która może mieć parametry i może być wywoływana przy użyciu specjalnej składni podobnej do indeksowania tablicy.
 
  Właściwości indeksowane są często określane jako indeksatory. Indeksatory powinny być używane tylko w interfejsach API, które zapewniają dostęp do elementów w kolekcji logicznej. Na przykład ciąg jest kolekcją znaków, a indeksator <xref:System.String?displayProperty=nameWithType> został dodany w celu uzyskania dostępu do jego znaków.
@@ -69,6 +71,7 @@ Chociaż właściwości są technicznie bardzo podobne do metod, są one bardzo 
  Jest to wymuszane przez kompilator języka C#.
 
 ### <a name="property-change-notification-events"></a>Zdarzenia powiadamiania o zmianie właściwości
+
  Czasami warto podać zdarzenie powiadamiające użytkownika o zmianach w wartości właściwości. Na przykład `System.Windows.Forms.Control` wywołuje `TextChanged` zdarzenie po zmianie wartości jego `Text` właściwości.
 
  ✔️ ROZWAŻYĆ podnoszenie poziomu powiadomień o zmianach, gdy wartości właściwości w interfejsach API wysokiego poziomu (zazwyczaj składniki projektanta) są modyfikowane.

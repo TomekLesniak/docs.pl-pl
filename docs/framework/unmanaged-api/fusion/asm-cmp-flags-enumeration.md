@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: 4d1e6700-d4be-4fbd-8796-bfb4c07abbc8
 topic_type:
 - apiref
-ms.openlocfilehash: 7ca4d7fe32b71401c16e64314bd8b4a9eb0f7766
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fea06a3e6d06aeff56ba7e20e8e64f0a6feb5e69
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178331"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731062"
 ---
 # <a name="asm_cmp_flags-enumeration"></a>ASM_CMP_FLAGS — Wyliczenie
-Wskazuje wersję, kompilację, kulturę, podpis i tak dalej, dwóch zestawów, które mają być porównywane przez [metodę IAssemblyName::IsEqual.](iassemblyname-isequal-method.md)  
+
+Wskazuje wersję, kompilację, kulturę, sygnaturę i tak dalej, dwóch zestawów, które mają być porównane przez metodę [IAssemblyName:: IsEqual](iassemblyname-isequal-method.md) .  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -66,15 +67,16 @@ typedef enum {
 ```  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** Fuzja.h  
-  
- **Biblioteka:** Uwzględnione jako zasób w pliku MsCorEE.dll  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** Fusion. h  
+  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)
 - [Wyliczenia łączenia](fusion-enumerations.md)

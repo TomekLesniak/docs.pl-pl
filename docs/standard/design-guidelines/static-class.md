@@ -9,14 +9,15 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d67c14d8-c4dd-443f-affb-4ccae677c9b6
-ms.openlocfilehash: efa5ca6e7b5e7b7d03cbe1d55471a388f3faab37
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2ae541898435773ca51dbc425c09a533dbef4e9e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828663"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730919"
 ---
 # <a name="static-class-design"></a>Projekt klasy statycznej
+
 Klasa statyczna jest definiowana jako Klasa, która zawiera tylko statyczne elementy członkowskie (oczywiście oprócz członków wystąpienia dziedziczonych z <xref:System.Object?displayProperty=nameWithType> i prawdopodobnie konstruktora prywatnego). Niektóre języki zapewniają wbudowaną obsługę klas statycznych. W języku C# 2,0 i nowszych, gdy Klasa jest zadeklarowana jako statyczna, jest zapieczętowana, abstrakcyjna i nie można zastąpić jej elementów członkowskich wystąpienia.
 
  Klasy statyczne są kompromisem między czystym i prostotą zorientowanym na obiektem. Są one często używane do udostępniania skrótów do innych operacji (takich jak <xref:System.IO.File?displayProperty=nameWithType> ), posiadaczy metod rozszerzających lub funkcji, dla których pełna otoka zorientowana obiektowo jest nieuzasadniona (na przykład <xref:System.Environment?displayProperty=nameWithType> ).

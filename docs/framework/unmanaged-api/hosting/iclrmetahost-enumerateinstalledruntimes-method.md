@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e359384-0d3d-451c-807e-5d7fcebf2be7
 topic_type:
 - apiref
-ms.openlocfilehash: c99607bfe5fda01eb1abfd7771cb3907ddabeec5
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: f8f67edde7f99878429ca0bbd89aaf52336aa79c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703776"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730451"
 ---
 # <a name="iclrmetahostenumerateinstalledruntimes-method"></a>ICLRMetaHost::EnumerateInstalledRuntimes — Metoda
+
 Zwraca Wyliczenie zawierające prawidłowy Interfejs [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) dla każdej wersji środowiska uruchomieniowego języka wspólnego (CLR), która jest zainstalowana na komputerze.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,27 +34,30 @@ HRESULT EnumerateInstalledRuntimes (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppEnumerator`  
  określoną Wyliczenie interfejsów [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) odpowiadających każdej wersji środowiska CLR zainstalowanej na komputerze.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
 |S_OK|Metoda została ukończona pomyślnie.|  
-|E_POINTER|`ppEnumerator`ma wartość null.|  
+|E_POINTER|`ppEnumerator` ma wartość null.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRMetaHost, interfejs](iclrmetahost-interface.md)
+- [ICLRMetaHost — Interfejs](iclrmetahost-interface.md)
 - [Hosting](index.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 2adb5827-2268-4914-a1c6-f62b61880a45
 topic_type:
 - apiref
-ms.openlocfilehash: 939acc0ad47021d5fdffe7b7b71ea6a4a1635a6d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 90bcf4f37631e0246e58cc14bfcd331d981e4713
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616739"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731725"
 ---
 # <a name="comcallunmarshal-coclass"></a>ComCallUnmarshal — Klasa coclass
+
 Udostępnia interfejsy służące do zarządzania kierowaniem wskaźników interfejsu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,11 +40,12 @@ coclass ComCallUnmarshal {
 |`IMarshal`|Zapewnia metody tworzenia, inicjowania i zarządzania serwerem proxy w procesie klienta.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. idl  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

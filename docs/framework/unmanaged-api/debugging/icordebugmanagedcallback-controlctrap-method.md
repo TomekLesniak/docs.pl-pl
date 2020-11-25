@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0500854e-2121-43d9-a028-64312da35258
 topic_type:
 - apiref
-ms.openlocfilehash: 33a68d11a8d17e46533b4f83bbf87aafe171e612
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 0c38269ea4d730d8f3f9ba5d2c5d8f0edf6d7d45
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212402"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731842"
 ---
 # <a name="icordebugmanagedcallbackcontrolctrap-method"></a>ICorDebugManagedCallback::ControlCTrap — Metoda
+
 Powiadamia debuger, że w debugowanym procesie jest zalewkowany skrót CTRL + C.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT ControlCTrap (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pProcess`  
  podczas Wskaźnik do obiektu ICorDebugProcess, który reprezentuje proces, w którym jest zalewkowany CTRL + C.  
   
@@ -45,9 +47,11 @@ HRESULT ControlCTrap (
 |S_FALSE|Debuger nie będzie obsługiwał pułapki CTRL + C.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wszystkie domeny aplikacji w ramach procesu są zatrzymane dla tego wywołania zwrotnego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -56,6 +60,6 @@ HRESULT ControlCTrap (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)

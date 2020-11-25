@@ -4,12 +4,12 @@ description: Dowiedz się więcej o formacie pliku zestawu platformy .NET, któr
 author: richlander
 ms.date: 08/20/2019
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
-ms.openlocfilehash: 1e98f0beb6756c9a02b2839eb88d6a5b13375786
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b1de3f46f04f24dd4bbb2f695de8741feb29f226
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822194"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731543"
 ---
 # <a name="net-assembly-file-format"></a>Format pliku zestawu .NET
 
@@ -17,7 +17,7 @@ Platforma .NET definiuje binarny format pliku *, który* jest używany do pełne
 
 > Każdy składnik interfejsu wiersza polecenia przenosi metadane dla deklaracji, implementacji i odwołań specyficznych dla tego składnika. W związku z tym metadane specyficzne dla składnika są określane jako metadane składników, a składnik uzyskany jest uważany za własny opis — od ECMA 335 I. 9.1 składników i zestawów.
 
-Format jest w pełni określony i znormalizowany jako [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Wszystkie kompilatory i środowiska uruchomieniowe platformy .NET używają tego formatu. Obecność udokumentowanego i rzadko aktualizowanego formatu binarnego jest ważnym korzyścią (raczej wymaganie) dla współdziałania. Format został ostatnio zaktualizowany w sposób istotny w 2005 (.NET 2,0) w celu uwzględnienia ogólnych i architektury procesora.
+Format jest w pełni określony i znormalizowany jako [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Wszystkie kompilatory i środowiska uruchomieniowe platformy .NET używają tego formatu. Obecność udokumentowanego i rzadko aktualizowanego formatu binarnego jest ważnym korzyścią (raczej wymaganie) dla współdziałania. Format został ostatnio zaktualizowany w sposób istotny w 2005 (.NET Framework 2,0) w celu uwzględnienia typów ogólnych i architektury procesora.
 
 Format to procesor CPU i OS-niezależny od. Jest ona używana jako część implementacji platformy .NET, które są przeznaczone dla wielu układów i procesorów. Chociaż sam format ma dziedzictwo systemu Windows, można go zaimplementować w dowolnym systemie operacyjnym. Raczej najbardziej znaczący wybór dla interoperacyjności systemu operacyjnego polega na tym, że większość wartości jest przechowywanych w formacie little-endian. Nie ma konkretnej koligacji z rozmiarem wskaźnika maszyny (na przykład 32-bitowym, 64-bitowym).
 

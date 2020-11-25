@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8c4aa124-5e00-46d9-b1e8-57ba6574bb0d
 topic_type:
 - apiref
-ms.openlocfilehash: d6b34403a45cc40863d79b59396041e496989045
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3c85bcbe8aee453b19217ebd1f48feea113e3bb1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503942"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731224"
 ---
 # <a name="ihostpolicymanager-interface"></a>IHostPolicyManager — Interfejs
+
 Dostarcza metody, które powiadamiają hosta o akcjach wykonywanych przez środowisko uruchomieniowe języka wspólnego (CLR) w przypadku przerwań, limitów czasu lub niepowodzeń.  
   
 ## <a name="methods"></a>Metody  
@@ -33,11 +34,12 @@ Dostarcza metody, które powiadamiają hosta o akcjach wykonywanych przez środo
 |[OnTimeout, metoda](ihostpolicymanager-ontimeout-method.md)|Powiadamia hosta, że środowisko CLR ma wykonać akcję określoną przez wywołanie [ICLRPolicyManager:: SetActionOnTimeout —](iclrpolicymanager-setactionontimeout-method.md) w odpowiedzi na limit czasu.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -46,5 +48,5 @@ Dostarcza metody, które powiadamiają hosta o akcjach wykonywanych przez środo
 - [EClrFailure — Wyliczenie](eclrfailure-enumeration.md)
 - [EClrOperation — Wyliczenie](eclroperation-enumeration.md)
 - [EPolicyAction — Wyliczenie](epolicyaction-enumeration.md)
-- [ICLRPolicyManager, interfejs](iclrpolicymanager-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [ICLRPolicyManager — Interfejs](iclrpolicymanager-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

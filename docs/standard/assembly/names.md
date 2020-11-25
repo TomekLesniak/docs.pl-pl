@@ -6,12 +6,12 @@ helpviewer_keywords:
 - names [.NET], assemblies
 - assemblies [.NET], names
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
-ms.openlocfilehash: 136c3b7a06ce72be02e00bcc4d2354160178468c
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 9aa94b4ee54c0a663c9f38392d37369af9f27e48
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687578"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731452"
 ---
 # <a name="assembly-names"></a>Nazwy zestawów
 
@@ -48,14 +48,15 @@ Wersja odpowiada numerowi wersji wszystkich zestawów .NET Framework, które zos
 > Środowisko uruchomieniowe traktuje nazwy zestawów jako nieuwzględniające wielkości liter podczas tworzenia powiązania z zestawem, ale zachowuje wszelkie przypadki użycia w nazwie zestawu. Kilka narzędzi w Windows SDK obsługują nazwy zestawów jako uwzględniające wielkość liter. Aby uzyskać najlepsze wyniki, Zarządzaj nazwami zestawów, tak jakby były rozróżniane wielkości liter.
 
 ## <a name="name-application-components"></a>Nazwa składników aplikacji
+
  Środowisko uruchomieniowe nie uwzględnia nazwy pliku podczas określania tożsamości zestawu. Tożsamość zestawu, która składa się z nazwy zestawu, wersji, kultury i silnej nazwy, musi być jasne dla środowiska uruchomieniowego.
 
- Na przykład jeśli masz zestaw o nazwie *myAssembly.exe* , który odwołuje się do zestawu o nazwie *myAssembly.dll* , powiązanie jest wykonywane prawidłowo w przypadku wykonywania *myAssembly.exe* . Jeśli jednak inna aplikacja wykonuje *myAssembly.exe* przy użyciu metody <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> , środowisko uruchomieniowe określa, że `myAssembly` jest już załadowany, gdy *myAssembly.exe* żąda powiązania z `myAssembly` . W takim przypadku *myAssembly.dll* nigdy nie są ładowane. Ponieważ *myAssembly.exe* nie zawiera żądanego typu, <xref:System.TypeLoadException> występuje.
+ Na przykład jeśli masz zestaw o nazwie *myAssembly.exe* , który odwołuje się do zestawu o nazwie *myAssembly.dll*, powiązanie jest wykonywane prawidłowo w przypadku wykonywania *myAssembly.exe*. Jeśli jednak inna aplikacja wykonuje *myAssembly.exe* przy użyciu metody <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> , środowisko uruchomieniowe określa, że `myAssembly` jest już załadowany, gdy *myAssembly.exe* żąda powiązania z `myAssembly` . W takim przypadku *myAssembly.dll* nigdy nie są ładowane. Ponieważ *myAssembly.exe* nie zawiera żądanego typu, <xref:System.TypeLoadException> występuje.
 
  Aby uniknąć tego problemu, upewnij się, że zestawy, które tworzą aplikację, nie mają tej samej nazwy zestawu lub Umieść zestawy o tej samej nazwie w różnych katalogach.
 
 > [!NOTE]
-> W .NET Framework, jeśli zestaw o silnej nazwie zostanie umieszczony w globalnej pamięci podręcznej zestawów, nazwa pliku zestawu musi być zgodna z nazwą zestawu, a nie z rozszerzeniem nazwy pliku, takim jak *exe* lub *dll* . Na przykład, jeśli nazwa pliku zestawu jest *myAssembly.dll* , nazwa zestawu musi być `myAssembly` . Zestawy prywatne wdrożone tylko w katalogu głównym aplikacji mogą mieć nazwę zestawu inną niż nazwa pliku.
+> W .NET Framework, jeśli zestaw o silnej nazwie zostanie umieszczony w globalnej pamięci podręcznej zestawów, nazwa pliku zestawu musi być zgodna z nazwą zestawu, a nie z rozszerzeniem nazwy pliku, takim jak *exe* lub *dll*. Na przykład, jeśli nazwa pliku zestawu jest *myAssembly.dll*, nazwa zestawu musi być `myAssembly` . Zestawy prywatne wdrożone tylko w katalogu głównym aplikacji mogą mieć nazwę zestawu inną niż nazwa pliku.
 
 ## <a name="see-also"></a>Zobacz także
 

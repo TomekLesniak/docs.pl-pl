@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b862ff3e-e480-4cdf-84e2-e1013334a467
 topic_type:
 - apiref
-ms.openlocfilehash: 1b40ed8e107d30c22b4ade25d29376b1b74583d1
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: fc74b84bccceb1772bf3642e51ec88c562ce5dce
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842416"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730720"
 ---
 # <a name="imanagedobjectgetobjectidentity-method"></a>IManagedObject::GetObjectIdentity — Metoda
+
 Pobiera tożsamość tego obiektu zarządzanego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetObjectIdentity (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pBSTRGUID`  
  określoną Wskaźnik do identyfikatora GUID procesu, w którym znajduje się obiekt.  
   
@@ -46,17 +48,19 @@ HRESULT GetObjectIdentity (
  określoną Wskaźnik do indeksu obiektu w klasycznej tabeli COM.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Tożsamość obiektu zarządzanego obejmuje identyfikator GUID procesu, identyfikator domeny aplikacji i indeks obiektu w klasycznej tabeli COM.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IManagedObject, interfejs](imanagedobject-interface.md)
+- [IManagedObject — Interfejs](imanagedobject-interface.md)

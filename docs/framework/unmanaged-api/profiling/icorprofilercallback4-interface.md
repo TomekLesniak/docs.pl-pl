@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 665f3cfc-cd6f-4880-906c-ea65ad384783
 topic_type:
 - apiref
-ms.openlocfilehash: 295d3d440529623f4569fd6c5f4debe7e4558990
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 942ee8234b79c6579acc009960f4571801fc3185
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499444"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730295"
 ---
 # <a name="icorprofilercallback4-interface"></a>ICorProfilerCallback4 — Interfejs
+
 Zapewnia metody wywołania zwrotnego, które są używane przez środowisko uruchomieniowe języka wspólnego (CLR) do przekazywania informacji do profilera.  
   
 ## <a name="methods"></a>Metody  
@@ -38,6 +39,7 @@ Zapewnia metody wywołania zwrotnego, które są używane przez środowisko uruc
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -50,4 +52,4 @@ Zapewnia metody wywołania zwrotnego, które są używane przez środowisko uruc
 
 - [ICorProfilerCallback2 — Interfejs](icorprofilercallback2-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)

@@ -2,14 +2,15 @@
 title: Serializacja
 ms.date: 10/22/2008
 ms.assetid: bebb27ac-9712-4196-9931-de19fc04dbac
-ms.openlocfilehash: 85481e9d759a71346d83c66f67d9623fc32e76ec
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 58ed937df5b60daf9fcbcb7610d6026c5e9805fc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828676"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730932"
 ---
 # <a name="serialization"></a>Serializacja
+
 Serializacja jest procesem konwersji obiektu do formatu, który może być łatwo utrwalany lub transportowany. Na przykład można serializować obiekt, transportować go za pośrednictwem Internetu przy użyciu protokołu HTTP i deserializacji go na maszynie docelowej.
 
  .NET Framework oferuje trzy podstawowe technologie serializacji zoptymalizowane pod kątem różnych scenariuszy serializacji. W poniższej tabeli przedstawiono te technologie i typy struktury związane z tych technologii.
@@ -23,6 +24,7 @@ Serializacja jest procesem konwersji obiektu do formatu, który może być łatw
  ✔️ NALEŻY myśleć o serializacji podczas projektowania nowych typów.
 
 ## <a name="choosing-the-right-serialization-technology-to-support"></a>Wybranie opcji technologii serializacji prawo do pomocy technicznej
+
  ✔️ ROZWAŻYĆ obsługę serializacji kontraktu danych, jeśli wystąpienia typu mogą wymagać utrwalenia lub użycia w usługach sieci Web.
 
  ✔️ ROZWAŻYĆ obsługę serializacji XML zamiast lub oprócz serializacji kontraktu danych, jeśli potrzebna jest większa kontrola nad formatem XML, który jest generowany, gdy typ jest serializowany.
@@ -34,6 +36,7 @@ Serializacja jest procesem konwersji obiektu do formatu, który może być łatw
  ❌ UNIKAj obsługi serializacji w czasie wykonywania lub serializacji XML tylko w przypadku ogólnych przyczyn trwałości. Zamiast tego Preferuj metodę serializacji kontraktu danych.
 
 ## <a name="supporting-data-contract-serialization"></a>Pomocniczych serializacji kontrakt danych
+
  Typy mogą obsługiwać serializacji kontraktu danych przez zastosowanie <xref:System.Runtime.Serialization.DataContractAttribute> do typu i <xref:System.Runtime.Serialization.DataMemberAttribute> do elementów członkowskich (pól i właściwości) typu.
 
  ✔️ NALEŻY rozważyć oznaczenie składowych danych typu Public, jeśli typ może być używany w częściowej relacji zaufania.
@@ -63,6 +66,7 @@ Serializacja jest procesem konwersji obiektu do formatu, który może być łatw
  Interfejs umożliwia serializator upewnić się, że nie są żadne dane utracone podczas Pełna zgodnooć wersji. <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A?displayProperty=nameWithType>Właściwość służy do przechowywania wszelkich danych z przyszłej wersji typu, która jest nieznana w bieżącej wersji i dlatego nie może być przechowywana w jego elementach członkowskich danych. Gdy bieżąca wersja jest następnie serializowana i deserializowana w przyszłej wersji, dodatkowe dane będą dostępne w strumieniu serializowanym.
 
 ## <a name="supporting-xml-serialization"></a>Obsługa serializacji XML
+
  Serializacja kontraktu danych jest główną (domyślną) technologią serializacji w .NET Framework, ale istnieją scenariusze serializacji, które nie obsługują serializacji kontraktu danych. Na przykład nie zapewnia pełnej kontroli nad kształtem XML produkowanym lub zużywanym przez serializator. Jeśli wymagana jest taka kontrola, serializacja XML musi być używana i musisz zaprojektować typy do obsługi tej technologii serializacji.
 
  ❌ UNIKAj projektowania typów przeznaczonych do serializacji XML, chyba że masz bardzo silny powód, aby kontrolować kształt utworzonego kodu XML. Ta technologia serializacji została zastąpiona przez serializacji kontrakt danych opisanych w poprzedniej sekcji.
@@ -70,6 +74,7 @@ Serializacja jest procesem konwersji obiektu do formatu, który może być łatw
  ✔️ ROZWAŻYĆ zaimplementowanie <xref:System.Xml.Serialization.IXmlSerializable> interfejsu, jeśli chcesz jeszcze bardziej kontrolować kształt serializowanego kodu XML niż to, co jest oferowane przez zastosowanie atrybutów serializacji XML. Dwie metody interfejsu <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> i <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> umożliwiają pełną kontrolę serializowanego strumienia XML. Można również kontrolować schemat XML, który jest generowany dla typu przez zastosowanie `XmlSchemaProviderAttribute` .
 
 ## <a name="supporting-runtime-serialization"></a>Obsługa czasu wykonywania serializacji
+
  Serializacja środowiska uruchomieniowego jest technologią używaną przez funkcję komunikacji zdalnej platformy .NET. Jeśli uważasz, że Twoje typy będą transportowane przy użyciu komunikacji zdalnej .NET, musisz upewnić się, że obsługują one serializacji środowiska uruchomieniowego.
 
  Podstawowe wsparcie dla serializacji środowiska uruchomieniowego może być zapewnione przez zastosowanie <xref:System.SerializableAttribute> , a bardziej zaawansowane scenariusze obejmują wdrożenie prostego wzorca serializacji środowiska uruchomieniowego (implementacja <xref:System.Runtime.Serialization.ISerializable> i dostarczenie konstruktora serializacji).

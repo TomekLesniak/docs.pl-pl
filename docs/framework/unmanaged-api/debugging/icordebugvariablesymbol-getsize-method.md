@@ -2,14 +2,15 @@
 title: 'ICorDebugVariableSymbol:: GetSize — metoda'
 ms.date: 03/30/2017
 ms.assetid: add0cd9d-9a29-49b1-ae07-d9d3786b4ccd
-ms.openlocfilehash: d924de33c8ec49501be0ee7700b2eee8c79bb950
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 1079351e75ec9c48a9657f514ee56e2e6a4b0920
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397115"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731374"
 ---
 # <a name="icordebugvariablesymbolgetsize-method"></a>ICorDebugVariableSymbol:: GetSize — metoda
+
 Pobiera rozmiar zmiennej w bajtach.  
   
 ## <a name="syntax"></a>Składnia  
@@ -21,6 +22,7 @@ HRESULT GetSize(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pcbValue`  
  Wskaźnik do 32-bitowej liczby całkowitej bez znaku zawierającego rozmiar zmiennej.  
   
@@ -30,6 +32,7 @@ HRESULT GetSize(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

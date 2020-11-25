@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a6f8ad36-61e1-42b0-9db2-add575646d18
 topic_type:
 - apiref
-ms.openlocfilehash: 4037ffe63d8ebfca67cbd0b3293d36be7481b1bd
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 7fdf25d44bdf630e306cf0f5dcb3387a3b0f7c76
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501420"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731686"
 ---
 # <a name="ihosttaskmanagercreatetask-method"></a>IHostTaskManager::CreateTask — Metoda
+
 Żąda utworzenia nowego zadania przez hosta.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT CreateTask (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `stacksize`  
  podczas Żądany rozmiar (w bajtach) żądanego stosu lub 0 (zero) dla rozmiaru domyślnego.  
   
@@ -53,7 +55,7 @@ HRESULT CreateTask (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`CreateTask`pomyślnie zwrócono.|  
+|S_OK|`CreateTask` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -62,20 +64,22 @@ HRESULT CreateTask (
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby utworzyć żądane zadanie.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR wywołuje `CreateTask` żądanie utworzenia nowego zadania przez hosta. Host zwraca wskaźnik interfejsu do `IHostTask` wystąpienia. Zwrócone zadanie musi pozostać zawieszone, dopóki nie zostanie jawnie uruchomione przez wywołanie `IHostTask::Start` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)

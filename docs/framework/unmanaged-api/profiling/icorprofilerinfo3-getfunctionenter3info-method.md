@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 542c7c65-dd56-4651-b76f-5db2465e4a15
 topic_type:
 - apiref
-ms.openlocfilehash: 876ae07a432bfa36a7d9f43ae6c32ec03d7d3289
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4e240743894e0a7076e593b55966307d304ebd28
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496597"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731192"
 ---
 # <a name="icorprofilerinfo3getfunctionenter3info-method"></a>ICorProfilerInfo3::GetFunctionEnter3Info — Metoda
+
 Dostarcza ramkę stosu i informacje o argumentach funkcji raportowanej do profilera przez funkcję [FunctionEnter3WithInfo](functionenter3withinfo-function.md) . Tę metodę można wywołać tylko w trakcie `FunctionEnter3WithInfo` wywołania zwrotnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,8 +39,9 @@ HRESULT GetFunctionEnter3Info(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `functionId`  
- podczas `FunctionID`Funkcja, która jest wprowadzana.  
+ podczas `FunctionID` Funkcja, która jest wprowadzana.  
   
  `eltInfo`  
  podczas Nieprzezroczyste dojście, które reprezentuje informacje o danej klatce stosu. Profiler powinien zapewnić taki sam `eltInfo` , który został podany przez funkcję [FunctionEnter3WithInfo](functionenter3withinfo-function.md) .  
@@ -54,9 +56,11 @@ HRESULT GetFunctionEnter3Info(
  określoną Wskaźnik do struktury [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) , który opisuje lokalizacje argumentów funkcji w pamięci, w kolejności od lewej do prawej.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Profiler musi przydzielić wystarczającą ilość miejsca dla `COR_PRF_FUNCTION_ARGUMENT_INFO` struktury funkcji, która jest sprawdzana, i musi wskazywać rozmiar w `pcbArgumentInfo` parametrze.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -70,6 +74,6 @@ HRESULT GetFunctionEnter3Info(
 - [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
 - [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
 - [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)
-- [ICorProfilerInfo3, interfejs](icorprofilerinfo3-interface.md)
+- [ICorProfilerInfo3 — Interfejs](icorprofilerinfo3-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

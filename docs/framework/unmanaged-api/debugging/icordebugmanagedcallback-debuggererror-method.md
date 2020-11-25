@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e983d11-eaf3-4741-b936-29ec456384a3
 topic_type:
 - apiref
-ms.openlocfilehash: 8f3697f8b193319ebb7b155ad79b8ec25a0a2266
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: eb95bf779e54742cd2cc4b688c24a49e6d85a40d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205277"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731907"
 ---
 # <a name="icordebugmanagedcallbackdebuggererror-method"></a>ICorDebugManagedCallback::DebuggerError — Metoda
+
 Powiadamia debuger, że wystąpił błąd podczas próby obsłużenia zdarzenia z aparatu plików wykonywalnych języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT DebuggerError (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pProcess`  
  podczas Wskaźnik do obiektu "ICorDebugProcess", który reprezentuje proces, w którym wystąpiło zdarzenie.  
   
@@ -46,11 +48,13 @@ HRESULT DebuggerError (
  podczas Liczba całkowita, która określa błąd CLR.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Proces może być umieszczony w trybie przekazywania, w zależności od charakteru błędu.  
   
  `DebugError`Wywołanie zwrotne wskazuje, że usługi debugowania zostały wyłączone z powodu błędu, dlatego debugery powinny udostępnić komunikat o błędzie dla użytkownika. [ICorDebugProcess:: GetId —](icordebugprocess-getid-method.md) będzie bezpieczne do wywołania, ale wszystkie inne metody, w tym [ICorDebug:: terminate](icordebug-terminate-method.md), nie powinny być wywoływane. Debuger powinien używać obiektów systemu operacyjnego do kończenia procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -59,6 +63,6 @@ HRESULT DebuggerError (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)

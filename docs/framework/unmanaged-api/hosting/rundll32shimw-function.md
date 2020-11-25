@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9ea07b57-96e2-44df-8711-8fe6c119087f
 topic_type:
 - apiref
-ms.openlocfilehash: 90304eb94e6f53d3132c97f5ababdc45f6053d7c
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: dd053134792b80a006849e465bc0025cf77a9ad8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006574"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729957"
 ---
 # <a name="rundll32shimw-function"></a>RunDll32ShimW — Funkcja
+
 Wykonuje określone polecenie.  
   
  Ta funkcja jest przestarzała w .NET Framework 4.  
@@ -38,6 +39,7 @@ HRESULT RunDll32ShimW (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hwnd`  
  podczas Dojście do okna, w którym będą wyświetlane dane wyjściowe polecenia.  
   
@@ -51,14 +53,15 @@ HRESULT RunDll32ShimW (
  podczas Liczba całkowita, która określa tryb wyświetlania okna danych wyjściowych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - runtime callable wrappers
 - interoperation with unmanaged code, COM wrappers
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
-ms.openlocfilehash: 9c218fe7a08bd7181d66aa849bcca4cac00dc6fa
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 985f6e5057a06ac9dcadc0e2c1e4d7743d96f035
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535862"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730230"
 ---
 # <a name="runtime-callable-wrapper"></a>Wywoływana otoka środowiska uruchomieniowego
+
 Środowisko uruchomieniowe języka wspólnego udostępnia obiekty COM za pomocą serwera proxy zwanego otoką (otoka) środowiska uruchomieniowego. Chociaż Otoka RCW wydaje się być zwykłym obiektem dla klientów platformy .NET, jej podstawową funkcją jest kierowanie wywołań między klientem .NET a obiektem COM.  
   
  Środowisko uruchomieniowe tworzy dokładnie jedną otokę RCW dla każdego obiektu COM, niezależnie od liczby odwołań istniejących w tym obiekcie. Środowisko uruchomieniowe utrzymuje pojedynczą OTOKę na każdy proces dla każdego obiektu.  Jeśli utworzysz otokę RCW w jednej domenie lub apartamentu aplikacji, a następnie przekażesz odwołanie do innej domeny lub apartamentu aplikacji, zostanie użyty serwer proxy do pierwszego obiektu.  Jak widać na poniższej ilustracji, każda liczba zarządzanych klientów może przechowywać odwołanie do obiektów COM, które uwidaczniają interfejsy INew i INewer.  
@@ -32,6 +33,7 @@ Na poniższej ilustracji przedstawiono proces uzyskiwania dostępu do obiektów 
  Otoka standardowa wymusza wbudowane reguły organizowania. Na przykład gdy klient platformy .NET przekazuje typ ciągu jako część argumentu do niezarządzanego obiektu, otoka konwertuje ciąg na typ BSTR. Jeśli obiekt COM zwraca element BSTR do zarządzanego obiektu wywołującego, obiekt wywołujący otrzymuje ciąg. Zarówno klient, jak i serwer wysyłają i odbierają dane, które są dla nich znane. Inne typy nie wymagają konwersji. Na przykład, otoka standardowa zawsze przekaże 4-bajtową liczbę całkowitą między zarządzanym i niezarządzanym kodem bez konwertowania typu.  
   
 ## <a name="marshaling-selected-interfaces"></a>Kierowanie wybranych interfejsów  
+
  Głównym celem [otoki wywoływanej środowiska uruchomieniowego](runtime-callable-wrapper.md) (RCW) jest ukrywanie różnic między zarządzanymi i niezarządzanymi modelami programowania. W celu zapewnienia bezproblemowego przejścia Otoka RCW wykorzystuje wybrane interfejsy COM bez udostępniania ich klientom platformy .NET, jak pokazano na poniższej ilustracji.
 
  Na poniższej ilustracji przedstawiono interfejsy COM i otokę, która umożliwia wywoływanie środowiska uruchomieniowego:

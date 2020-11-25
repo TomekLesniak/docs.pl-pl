@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 10409db9-9fd2-4e4d-b8cd-cf6fec0afaa2
 topic_type:
 - apiref
-ms.openlocfilehash: c5b150b161acba3820ced367049f08153dd091aa
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: d6f56f689a35fa025a924be0db67c893f160fc7f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842442"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730737"
 ---
 # <a name="ihostthreadpoolmanagersetminthreads-method"></a>IHostThreadPoolManager::SetMinThreads — Metoda
+
 Określa minimalną liczbę bezczynnych wątków, które host musi zachować w oczekiwaniu na żądania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT SetMinThreads (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `MinThreads`  
  podczas Nowa minimalna liczba wątków, które host musi zachować.  
   
@@ -41,7 +43,7 @@ HRESULT SetMinThreads (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`SetMinThreads`pomyślnie zwrócono.|  
+|S_OK|`SetMinThreads` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,14 +52,16 @@ HRESULT SetMinThreads (
 |E_NOTIMPL|Host nie oferuje implementacji programu `SetMinThreads` .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Host nie jest wymagany do zapewnienia implementacji programu `SetMinThreads` . W takim przypadku powinna zwrócić wartość HRESULT E_NOTIMPL.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -67,4 +71,4 @@ HRESULT SetMinThreads (
 - <xref:System.Threading.ThreadPool>
 - [GetMinThreads, metoda](ihostthreadpoolmanager-getminthreads-method.md)
 - [SetMaxThreads, metoda](ihostthreadpoolmanager-setmaxthreads-method.md)
-- [IHostThreadPoolManager, interfejs](ihostthreadpoolmanager-interface.md)
+- [IHostThreadPoolManager — Interfejs](ihostthreadpoolmanager-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 77d3f31e-9a53-4349-9c02-610a71736d42
 topic_type:
 - apiref
-ms.openlocfilehash: 8ad4943aa9bf1b66b34bcd83a5422a977b16518d
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: efa7b9d49ea9807af2164bb6ee54422dd72b14e2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804229"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730425"
 ---
 # <a name="ihostpolicymanageronfailure-method"></a>IHostPolicyManager::OnFailure — Metoda
+
 Powiadamia hosta, że środowisko uruchomieniowe języka wspólnego (CLR) ma wykonać akcję określoną przez wywołanie metody [ICLRPolicyManager:: SetActionOnFailure —](iclrpolicymanager-setactiononfailure-method.md) w odpowiedzi na błąd alokacji zasobów lub operacji odzyskiwania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT OnFailure(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `failure`  
  podczas Jedno z wartości [EClrFailure —](eclrfailure-enumeration.md) , wskazujące rodzaj niepowodzenia, do którego odpowiada środowisko CLR.  
   
@@ -45,7 +47,7 @@ HRESULT OnFailure(
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`OnFailure`pomyślnie zwrócono.|  
+|S_OK|`OnFailure` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -53,17 +55,18 @@ HRESULT OnFailure(
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [EClrFailure — Wyliczenie](eclrfailure-enumeration.md)
 - [EPolicyAction — Wyliczenie](epolicyaction-enumeration.md)
-- [ICLRPolicyManager, interfejs](iclrpolicymanager-interface.md)
-- [IHostPolicyManager, interfejs](ihostpolicymanager-interface.md)
+- [ICLRPolicyManager — Interfejs](iclrpolicymanager-interface.md)
+- [IHostPolicyManager — Interfejs](ihostpolicymanager-interface.md)

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - unsealed classes
 - customizing class behavior
 ms.assetid: aa0b58ee-3956-494d-ab48-471ae5db8740
-ms.openlocfilehash: 3cc2ab3e605cfb5382f107dead0c95495858fc6b
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a6f36ac4f994fdc3211cac619cc0b20f7b0335b1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828728"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730958"
 ---
 # <a name="protected-members"></a>Chronione składowe
+
 Chronione elementy członkowskie nie zapewniają żadnych rozszerzalności, ale mogą zwiększyć możliwości rozszerzania za pomocą podklas. Mogą one służyć do udostępnienia zaawansowanych opcji dostosowania bez niepotrzebnego skomplikowania głównego interfejsu publicznego.
 
  Projektantom struktury należy zachować ostrożność z chronionymi elementami członkowskimi, ponieważ nazwa "Protected" może mieć fałszywe znaczenie dla zabezpieczeń. Każda osoba może poddawać podklasie niezapieczętowanej klasie i uzyskać dostęp do chronionych elementów członkowskich, dzięki czemu wszystkie takie same praktyki dotyczące kodowania, które są używane dla publicznych członków, mają zastosowanie do chronionych elementów członkowskich.

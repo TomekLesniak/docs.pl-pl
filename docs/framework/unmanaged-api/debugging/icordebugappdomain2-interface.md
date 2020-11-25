@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 314d29f3-feb0-4a92-9530-b569c280cc31
 topic_type:
 - apiref
-ms.openlocfilehash: 1643d91f373ff233540026440ee21aa4c146f3e3
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: f20ae6977504f958b7bfa8e2f073b7db6e8b822b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895132"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731478"
 ---
 # <a name="icordebugappdomain2-interface"></a>ICorDebugAppDomain2, interfejs
 
@@ -38,6 +38,7 @@ Dostarcza metody do pracy z tablicami, wskaźnikami, wskaźnikami funkcji i typa
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,6 +47,6 @@ Dostarcza metody do pracy z tablicami, wskaźnikami, wskaźnikami funkcji i typa
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

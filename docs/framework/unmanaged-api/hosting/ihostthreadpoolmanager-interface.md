@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c3a2cd90-7c4e-4374-bb87-b41befb8344f
 topic_type:
 - apiref
-ms.openlocfilehash: bac29b5950f1547c5c60ac716d40d2ef4b1a2cc2
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: b6625b0ef4dc3de4067514a0b39849c7a958d5c4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842484"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730763"
 ---
 # <a name="ihostthreadpoolmanager-interface"></a>IHostThreadPoolManager — Interfejs
+
 Dostarcza metody, które umożliwiają środowisko uruchomieniowe języka wspólnego (CLR) do konfigurowania puli wątków i umieszczania elementów roboczych w kolejce w puli wątków.  
   
 ## <a name="methods"></a>Metody  
@@ -36,14 +37,16 @@ Dostarcza metody, które umożliwiają środowisko uruchomieniowe języka wspól
 |[SetMinThreads, metoda](ihostthreadpoolmanager-setminthreads-method.md)|Określa minimalną liczbę bezczynnych wątków, które host musi zachować w oczekiwaniu na żądania.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Host nie jest wymagany do skonfigurowania puli wątków przy użyciu wartości określonych w wywołaniach `SetMaxThreads` `SetMinThreads` metod i. W takim przypadku host powinien zwrócić wartość HRESULT E_NOTIMPL z tych metod.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -51,4 +54,4 @@ Dostarcza metody, które umożliwiają środowisko uruchomieniowe języka wspól
 
 - <xref:System.Threading>
 - <xref:System.Threading.ThreadPool>
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

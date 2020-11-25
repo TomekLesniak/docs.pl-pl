@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 794c6f8e-ed58-416b-b756-e864f2c958f7
 topic_type:
 - apiref
-ms.openlocfilehash: 0ff088731514b2da0d8b1fa51ef48d8b71d16528
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 32b6d2c05a96658ab2b8ec1df288d2be05bb947f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842234"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730672"
 ---
 # <a name="iobjecthandleunwrap-method"></a>IObjectHandle::Unwrap — Metoda
+
 Odpakuje obiekt zorganizowany przez wartość z pośredniego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,14 +35,16 @@ HRESULT Unwrap (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppv`  
  określoną Wskaźnik do obiektu, który ma zostać rozpakowany.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

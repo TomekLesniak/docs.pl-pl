@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 87af9661-b59d-4077-aabf-d59fb8673602
 topic_type:
 - apiref
-ms.openlocfilehash: cae8ae374186e4bb9a022c11f7edab3c07ff3fa7
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 5944d7f39d327c2787c517aeebdb302834551b59
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395867"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731153"
 ---
 # <a name="icordebugvaluecreatebreakpoint-method"></a>ICorDebugValue::CreateBreakpoint — Metoda
+
 `CreateBreakpoint`Metoda nie jest obecnie zaimplementowana.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT CreateBreakpoint (
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c8461cac-e31b-4efa-ad2c-26598173eb96
 topic_type:
 - apiref
-ms.openlocfilehash: cc01254d9604ce39c964c7d78059ef4087483c77
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b778088f53a3c49def95d715f5fefcb26af81489
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503227"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731985"
 ---
 # <a name="icorprofilercallbackruntimesuspendstarted-method"></a>ICorProfilerCallback::RuntimeSuspendStarted — Metoda
+
 Powiadamia profiler, że środowisko uruchomieniowe ma wstrzymać wszystkie wątki środowiska uruchomieniowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,13 +34,16 @@ HRESULT RuntimeSuspendStarted(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `suspendReason`  
  podczas Wartość wyliczenia [COR_PRF_SUSPEND_REASON](cor-prf-suspend-reason-enumeration.md) , która wskazuje przyczynę zawieszenia.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wszystkie wątki środowiska uruchomieniowego, które znajdują się w kodzie niezarządzanym, mogą kontynuować działanie, dopóki nie spróbują ponownie wprowadzić środowiska uruchomieniowego. W tym momencie zostaną one również zawieszone do momentu wznowienia działania środowiska uruchomieniowego. Dotyczy to również nowych wątków, które wprowadzają środowisko uruchomieniowe. Wszystkie wątki w środowisku uruchomieniowym są zawieszane natychmiast, jeśli znajdują się już w kodzie przerywania lub są proszeni o zawieszenie, gdy osiągną kod przerywania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

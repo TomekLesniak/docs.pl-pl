@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 519389f2-0217-436c-99d4-93a76ebce5b5
 topic_type:
 - apiref
-ms.openlocfilehash: 941093b9a0856c2b716ba359c854473f3c9ea26a
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: a8a57cfcaf36949d4d10c6ec267a5f55a2aee5eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006522"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729931"
 ---
 # <a name="stackoverflowinfo-structure"></a>StackOverflowInfo — Struktura
+
 Przechowuje typ przepełnienia, który wystąpił, i informacje o wyjątku, który został zgłoszony z powodu przepełnienia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,17 +42,19 @@ typedef struct _StackOverflowInfo {
 |`pExceptionInfo`|Wskaźnik do `EXCEPTION_POINTERS` obiektu Win32, który zawiera rekord wyjątku z niezależnym od maszyny opisem wyjątku i rekordu kontekstu z opisem zależnym od maszyny w momencie wystąpienia wyjątku.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `StackOverflowInfo`Obiekt jest przesyłany do metody [IActionOnCLREvent:: OnEvent](iactiononclrevent-onevent-method.md) dla `Event_StackOverflow` zdarzeń.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. idl  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Hosting, struktury](hosting-structures.md)
+- [Hosting — Struktury](hosting-structures.md)

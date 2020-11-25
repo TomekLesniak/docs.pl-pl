@@ -10,14 +10,15 @@ helpviewer_keywords:
 - type design guidelines, structures
 - structures [.NET Framework], design guidelines
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
-ms.openlocfilehash: da831d1477b451131bb27372d65ad7229fcf3f77
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7bb7e63004df2eb7541ba8d4f1118ea2272db126
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828624"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730906"
 ---
 # <a name="struct-design"></a>Projekt struktury
+
 Typ wartości ogólnego przeznaczenia jest najczęściej określany jako struktura, jego słowo kluczowe języka C#. Ta sekcja zawiera wskazówki dotyczące ogólnego projektowania struktury.
 
  ❌ Nie udostępniaj konstruktora bez parametrów dla struktury.

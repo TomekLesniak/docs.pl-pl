@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 61d26dfd-7f24-4e7d-a63e-b30a463f08e1
 topic_type:
 - apiref
-ms.openlocfilehash: cc03960c2d45a6cf8aed58eaf048a0531decb08f
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 64d5ba9ad5557f99b175c277d48003529d77861c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842338"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730815"
 ---
 # <a name="ihostthreadpoolmanagergetavailablethreads-method"></a>IHostThreadPoolManager::GetAvailableThreads — Metoda
+
 Pobiera liczbę wątków w puli wątków, które nie przetwarzają obecnie elementów roboczych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetAvailableThreads (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pdwAvailableWorkerThreads`  
  określoną Wskaźnik do liczby wątków w puli wątków, które nie przetwarzają obecnie elementów roboczych.  
   
@@ -41,7 +43,7 @@ HRESULT GetAvailableThreads (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`GetAvailableThreads`pomyślnie zwrócono.|  
+|S_OK|`GetAvailableThreads` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,14 +52,16 @@ HRESULT GetAvailableThreads (
 |E_NOTIMPL|Host nie oferuje implementacji programu `GetAvailableThreads` .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli host nie dostarcza implementacji `GetAvailableThreads` , powinien zwrócić wartość HRESULT E_NOTIMPL.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -65,4 +69,4 @@ HRESULT GetAvailableThreads (
 
 - <xref:System.Threading.ThreadPool.GetAvailableThreads%2A>
 - <xref:System.Threading.ThreadPool>
-- [IHostThreadPoolManager, interfejs](ihostthreadpoolmanager-interface.md)
+- [IHostThreadPoolManager — Interfejs](ihostthreadpoolmanager-interface.md)

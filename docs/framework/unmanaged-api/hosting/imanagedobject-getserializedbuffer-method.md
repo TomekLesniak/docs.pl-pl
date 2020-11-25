@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c17105bb-b49f-434e-8f9b-77f8c85b9220
 topic_type:
 - apiref
-ms.openlocfilehash: c68ec0b41bb38afc7cefaf47df718fffcf42d250
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 159ece09ae0b6a67780639da8aae8c0e4b412bb8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842433"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730698"
 ---
 # <a name="imanagedobjectgetserializedbuffer-method"></a>IManagedObject::GetSerializedBuffer — Metoda
+
 Pobiera ciąg reprezentujący ten obiekt zarządzany.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,21 +35,24 @@ HRESULT GetSerializedBuffer (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pBSTR`  
  określoną Wskaźnik do ciągu, który jest serializowanym obiektem.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetSerializedBuffer`Metoda serializować obiekt, aby można go było zorganizować dla klienta.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IManagedObject, interfejs](imanagedobject-interface.md)
+- [IManagedObject — Interfejs](imanagedobject-interface.md)

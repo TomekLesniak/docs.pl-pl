@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1aa7a4b1-636a-4f5e-b834-b406d72f7120
 topic_type:
 - apiref
-ms.openlocfilehash: 1591a055200618f3e4951b5f6cf860dd3e71b44b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 11515bbb5717222a0030c1953b4eab4eb1b83bb2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554361"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731647"
 ---
 # <a name="ihosttaskmanagerenterruntime-method"></a>IHostTaskManager::EnterRuntime — Metoda
+
 Powiadamia hosta, że wywołanie metody niezarządzanej, takie jak metoda Invoke platformy, zwraca sterowanie wykonywaniem do środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -44,12 +45,14 @@ HRESULT EnterRuntime ();
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby zakończyć żądaną alokację.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `EnterRuntime` wywołuje się, by powiadomić hosta, że funkcja niezarządzana, dla której wykonano wcześniejsze wywołanie metody [LeaveRuntime —](ihosttaskmanager-leaveruntime-method.md) , zakończyła wykonywanie i zwraca sterowanie wykonywaniem do środowiska uruchomieniowego.  
   
 > [!NOTE]
 > [ReverseEnterRuntime —](ihosttaskmanager-reverseenterruntime-method.md) jest wywoływana w celu powiadomienia hosta, że niezarządzana funkcja, dla którego `LeaveRuntime` zostało wykonane wcześniejsze wywołanie, wywołuje kod zarządzany.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  

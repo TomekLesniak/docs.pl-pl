@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06e583d6-d88a-4ff5-bb95-5c48618a461c
 topic_type:
 - apiref
-ms.openlocfilehash: 64a30ca85a75ebd11918ff630daffbb85c97f6dc
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 064f9727b221dd64a58f8cd5e103271e37020786
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894721"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730178"
 ---
 # <a name="icordebugbreakpointisactive-method"></a>ICorDebugBreakpoint::IsActive — Metoda
+
 Pobiera wartość wskazującą, czy jest ona `ICorDebugBreakpoint` aktywna.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT IsActive (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbActive`  
- określoną `true` Jeśli ten punkt przerwania jest aktywny; w przeciwnym `false`razie.  
+ [out] `true` Jeśli ten punkt przerwania jest aktywny; w przeciwnym razie `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

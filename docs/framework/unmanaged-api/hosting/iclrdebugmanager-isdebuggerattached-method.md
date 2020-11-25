@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2f105fe0-f52d-49c5-bda5-583fb27e3aa6
 topic_type:
 - apiref
-ms.openlocfilehash: a21391f52a27e7f7a3abe533499c6b2581ec4a73
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 71e11d7db3bd679e7972fb2f6ce098edc3399885
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615758"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731023"
 ---
 # <a name="iclrdebugmanagerisdebuggerattached-method"></a>ICLRDebugManager::IsDebuggerAttached — Metoda
+
 Pobiera wartość wskazującą, czy debuger jest dołączony do procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT IsDebuggerAttached (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbAttached`  
  [out] `true` w przypadku dołączenia debugera do procesu; w przeciwnym razie `false` .  
   
@@ -41,7 +43,7 @@ HRESULT IsDebuggerAttached (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`IsDebuggerAttached`pomyślnie zwrócono.|  
+|S_OK|`IsDebuggerAttached` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -49,19 +51,21 @@ HRESULT IsDebuggerAttached (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Po powrocie metody E_FAIL nie będzie można używać środowiska CLR w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
- `IsDebuggerAttached`umożliwia hostowi zapytanie do środowiska CLR w celu określenia, czy debuger jest dołączony do procesu.  
+
+ `IsDebuggerAttached` umożliwia hostowi zapytanie do środowiska CLR w celu określenia, czy debuger jest dołączony do procesu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRControl — Interfejs](iclrcontrol-interface.md)
-- [ICLRDebugManager, interfejs](iclrdebugmanager-interface.md)
-- [IHostControl, interfejs](ihostcontrol-interface.md)
+- [ICLRDebugManager — Interfejs](iclrdebugmanager-interface.md)
+- [IHostControl — Interfejs](ihostcontrol-interface.md)

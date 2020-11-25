@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 63a9ef45-01a6-46da-b958-5c6dc2dc232c
 topic_type:
 - apiref
-ms.openlocfilehash: 1986d5f91a3dcfa31a43f729ee1f50129e083f5f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5e3c2ecd1bdd5c1181223c7500eb7473e20fa5d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501745"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731348"
 ---
 # <a name="isymunmanagedencupdate-interface"></a>ISymUnmanagedENCUpdate — Interfejs
+
 Udostępnia funkcje funkcji Edytuj i Kontynuuj.  
   
 ## <a name="methods"></a>Metody  
@@ -35,6 +36,7 @@ Udostępnia funkcje funkcji Edytuj i Kontynuuj.
 |[UpdateSymbolStore2, metoda](isymunmanagedencupdate-updatesymbolstore2-method.md)|Pozwala kompilatorowi pominąć funkcje, które nie zostały zmodyfikowane ze strumienia bazy danych programu (PDB), pod warunkiem, że informacje o wierszu spełniają wymagania. Informacje o prawidłowych wierszach można określić ze starymi informacjami o wierszu PDB i jedną różnicą dla wszystkich wierszy w funkcji.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

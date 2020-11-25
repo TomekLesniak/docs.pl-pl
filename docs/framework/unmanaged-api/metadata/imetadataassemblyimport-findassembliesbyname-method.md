@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4db97cf9-e4c1-4233-8efa-cbdc0e14a8e4
 topic_type:
 - apiref
-ms.openlocfilehash: d2693a94f02214df6d7265b26e3d70d91adcf8a7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a2bf0335f8d75c7dbd1a651afdb54da8c7be2460
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503838"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731631"
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName — Metoda
+
 Pobiera tablicę zestawów z określonym `szAssemblyName` parametrem przy użyciu standardowych reguł używanych przez środowisko uruchomieniowe języka wspólnego (CLR) do rozpoznawania odwołań.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT FindAssembliesByName (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szAppBase`  
  podczas Katalog główny, w którym ma zostać wyszukany dany zestaw. Jeśli ta wartość jest ustawiona na `null` , `FindAssembliesByName` będzie wyglądać tylko w globalnej pamięci podręcznej zestawów dla zestawu.  
   
@@ -61,24 +63,26 @@ HRESULT FindAssembliesByName (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|`S_OK`|`FindAssembliesByName`pomyślnie zwrócono.|  
+|`S_OK`|`FindAssembliesByName` pomyślnie zwrócono.|  
 |`S_FALSE`|Brak zestawów.|  
   
 ## <a name="remarks"></a>Uwagi  
- Dana nazwa zestawu, `FindAssembliesByName` Metoda znajduje się w zestawie, zgodnie ze standardowymi regułami dotyczącymi rozpoznawania odwołań do zestawów. (Aby uzyskać więcej informacji, zobacz [jak środowisko uruchomieniowe lokalizuje zestawy](../../deployment/how-the-runtime-locates-assemblies.md).) `FindAssembliesByName`umożliwia wywołującemu skonfigurowanie różnych aspektów kontekstu programu rozpoznawania nazw, takich jak ścieżka do bazy aplikacji i wyszukiwania prywatnego.  
+
+ Dana nazwa zestawu, `FindAssembliesByName` Metoda znajduje się w zestawie, zgodnie ze standardowymi regułami dotyczącymi rozpoznawania odwołań do zestawów. (Aby uzyskać więcej informacji, zobacz [jak środowisko uruchomieniowe lokalizuje zestawy](../../deployment/how-the-runtime-locates-assemblies.md).) `FindAssembliesByName` umożliwia wywołującemu skonfigurowanie różnych aspektów kontekstu programu rozpoznawania nazw, takich jak ścieżka do bazy aplikacji i wyszukiwania prywatnego.  
   
  `FindAssembliesByName`Metoda wymaga zainicjowania środowiska CLR w procesie w celu wywołania logiki rozpoznawania zestawu. W związku z tym należy wywołać [CoInitializeEE —](../hosting/coinitializeee-function.md) (przekazywanie COINITEE_DEFAULT) przed wywołaniem `FindAssembliesByName` , a następnie wykonać wywołanie [CoUninitializeCor —](../hosting/couninitializecor-function.md).  
   
- `FindAssembliesByName`Zwraca wskaźnik [IMetaDataImport](imetadataimport-interface.md) do pliku zawierającego manifest zestawu dla nazwy zestawu, która została przeniesiona. Jeśli podana nazwa zestawu nie jest w pełni określona (na przykład jeśli nie zawiera wersji), można zwrócić wiele zestawów.  
+ `FindAssembliesByName` Zwraca wskaźnik [IMetaDataImport](imetadataimport-interface.md) do pliku zawierającego manifest zestawu dla nazwy zestawu, która została przeniesiona. Jeśli podana nazwa zestawu nie jest w pełni określona (na przykład jeśli nie zawiera wersji), można zwrócić wiele zestawów.  
   
- `FindAssembliesByName`jest często używany przez kompilator, który próbuje znaleźć przywoływany zestaw w czasie kompilacji.  
+ `FindAssembliesByName` jest często używany przez kompilator, który próbuje znaleźć przywoływany zestaw w czasie kompilacji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

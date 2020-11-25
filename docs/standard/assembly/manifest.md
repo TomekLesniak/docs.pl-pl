@@ -9,16 +9,16 @@ helpviewer_keywords:
 - culture, assembly manifest
 - assemblies [.NET], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-ms.openlocfilehash: 4b3bf6f7f6b8cf459a13dd0aca45069f82d01130
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 365c21c6ea35683d7d3fad777cab3527103903c3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687591"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731517"
 ---
 # <a name="assembly-manifest"></a>Manifest zestawu
 
-Każdy zestaw statyczny i dynamiczny zawiera kolekcję danych, które opisują powiązania między elementami zawartymi w zestawie. Manifest zestawu zawiera metadane zestawu. W manifeście zestawu znajdują się wszystkie metadane potrzebne do określenia wymagań w zakresie wersji zestawu i tożsamości jego zabezpieczeń, a także wszystkie metadane niezbędne do definiowania zakresu zestawu oraz rozpoznawania odwołań do zasobów i klas. Manifest zestawu może być przechowywany w pliku PE ( *exe* lub *. dll* ) przy użyciu kodu języka pośredniego (MSIL) firmy Microsoft lub w autonomicznym pliku PE, który zawiera tylko informacje manifestu zestawu.  
+Każdy zestaw statyczny i dynamiczny zawiera kolekcję danych, które opisują powiązania między elementami zawartymi w zestawie. Manifest zestawu zawiera metadane zestawu. W manifeście zestawu znajdują się wszystkie metadane potrzebne do określenia wymagań w zakresie wersji zestawu i tożsamości jego zabezpieczeń, a także wszystkie metadane niezbędne do definiowania zakresu zestawu oraz rozpoznawania odwołań do zasobów i klas. Manifest zestawu może być przechowywany w pliku PE ( *exe* lub *. dll*) przy użyciu kodu języka pośredniego (MSIL) firmy Microsoft lub w autonomicznym pliku PE, który zawiera tylko informacje manifestu zestawu.  
   
  Na ilustracji poniżej widać różne sposoby przechowywania manifestu.  
   
@@ -39,6 +39,7 @@ Każdy zestaw statyczny i dynamiczny zawiera kolekcję danych, które opisują p
 - Sprawia, że zestaw sam siebie opisuje.  
   
 ## <a name="assembly-manifest-contents"></a>Zawartość manifestu zestawu  
+
  Poniższa tabela pokazuje informacje zawarte w manifeście zestawu. Pierwsze cztery elementy: Nazwa zestawu, numer wersji, kultura i informacje o silnej nazwie składają się na tożsamość zestawu.  
   
 |Informacje|Opis|  

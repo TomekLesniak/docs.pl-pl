@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a945d439-3b34-4aa4-b575-8413dd7806ce
 topic_type:
 - apiref
-ms.openlocfilehash: 09b4a06892cdc450eed9dead503a990b6f19804e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0f71e4c45e43c2027b12998532f2b04401a51951
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501511"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731335"
 ---
 # <a name="ihostmemorymanager-interface"></a>IHostMemoryManager — Interfejs
+
 Zapewnia metody, które umożliwiają środowisko uruchomieniowe języka wspólnego (CLR) do udostępniania żądań pamięci wirtualnej za pośrednictwem hosta, zamiast używać standardowych funkcji pamięci wirtualnej Win32.  
   
 ## <a name="methods"></a>Metody  
@@ -40,18 +41,20 @@ Zapewnia metody, które umożliwiają środowisko uruchomieniowe języka wspóln
 |[VirtualQuery, metoda](ihostmemorymanager-virtualquery-method.md)|Służy jako otoka logiczna dla odpowiedniej funkcji Win32, która pobiera informacje o zakresie stron w wirtualnej przestrzeni adresowej procesu wywołującego.|  
   
 ## <a name="remarks"></a>Uwagi  
- `IHostMemoryManager`Program udostępnia również metody dla środowiska CLR, w których można uzyskać wskaźnik, za pomocą którego należy wykonać żądania pamięci na stercie i uzyskać poziom ciśnienia pamięci w procesie, zgodnie z raportem hosta.  
+
+ `IHostMemoryManager` Program udostępnia również metody dla środowiska CLR, w których można uzyskać wskaźnik, za pomocą którego należy wykonać żądania pamięci na stercie i uzyskać poziom ciśnienia pamięci w procesie, zgodnie z raportem hosta.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IHostMalloc, interfejs](ihostmalloc-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [IHostMalloc — Interfejs](ihostmalloc-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

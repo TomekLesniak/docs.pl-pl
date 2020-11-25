@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: adba37be-f775-4cdb-8919-5746ce694f33
 topic_type:
 - apiref
-ms.openlocfilehash: da830aaaced179fed642340c33e7b7c37b350aa3
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 6f4fbb40053628d60ba7f094fcb5d50a94d63e1a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006561"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729944"
 ---
 # <a name="runtime_info_flags-enumeration"></a>RUNTIME_INFO_FLAGS — Wyliczenie
+
 Zawiera wartości wskazujące, które informacje o środowisku uruchomieniowym języka wspólnego (CLR) powinny zostać zwrócone.  
   
 ## <a name="syntax"></a>Składnia  
@@ -55,6 +56,7 @@ typedef enum {
 |`RUNTIME_INFO_UPGRADE_VERSION`|Wskazuje, że należy uwzględnić informacje o uaktualnianiu wersji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Poniższe flagi architektury platformy można określić tylko po jednej naraz i nie można ich łączyć:  
   
 - RUNTIME_INFO_REQUEST_IA64  
@@ -64,14 +66,15 @@ typedef enum {
 - RUNTIME_INFO_REQUEST_X86  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Hosting — Wyliczenia](hosting-enumerations.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: b6ce7fe19a8d7cc00823502e322ee53a1bd0a931
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 76b52cedd1e2e64805e2ad47e582d07ca70415cc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245625"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731556"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Co nowego w wersji 4.5 programu WCF (Windows Communication Foundation)?
 
@@ -31,7 +31,7 @@ Po dodaniu odwołania do usługi w programie Visual Studio lub użyciu narzędzi
 
 Aby uzyskać więcej informacji, zobacz [funkcje uproszczenia WCF](wcf-simplification-features.md).
 
-### <a name="contract-first-development"></a>Kontrakt — pierwsze programowanie
+### <a name="contract-first-development"></a>Opracowywanie Contract-First
 
 Usługa WCF obsługuje teraz programowanie w pierwszej kolejności. svcutil.exe ma przełącznik/serviceContract, który umożliwia generowanie kontraktów usługi i danych z dokumentu WSDL.
 
@@ -49,7 +49,7 @@ W celu uproszczenia konfiguracji zmieniono wiele wartości domyślnych właściw
 
 ### <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 
-<xref:System.Xml.XmlDictionaryReaderQuotas>zawiera konfigurowalne wartości przydziału dla czytników słownika XML, które ograniczają ilość pamięci używaną przez koder podczas tworzenia komunikatu. Podczas konfigurowania tych przydziałów wartości domyślne uległy zmianie, aby zmniejszyć prawdopodobieństwo, że deweloper będzie musiał je jawnie ustawić. Aby uzyskać więcej informacji, zobacz [funkcje uproszczenia WCF](wcf-simplification-features.md).
+<xref:System.Xml.XmlDictionaryReaderQuotas> zawiera konfigurowalne wartości przydziału dla czytników słownika XML, które ograniczają ilość pamięci używaną przez koder podczas tworzenia komunikatu. Podczas konfigurowania tych przydziałów wartości domyślne uległy zmianie, aby zmniejszyć prawdopodobieństwo, że deweloper będzie musiał je jawnie ustawić. Aby uzyskać więcej informacji, zobacz [funkcje uproszczenia WCF](wcf-simplification-features.md).
 
 ### <a name="wcf-configuration-validation"></a>Sprawdzanie poprawności konfiguracji WCF
 
@@ -73,7 +73,7 @@ Niektóre stosy przetwarzania WSDL innych firm nie mogą przetwarzać dokumentó
 
 ## <a name="websocket-support"></a>Obsługa protokołu WebSocket
 
-WebSockets to technologia, która zapewnia prawdziwą komunikację dwukierunkową za pośrednictwem portów 80 i 443 z charakterystykami wydajności podobnymi do protokołu TCP. Dodano dwa nowe powiązania do obsługi komunikacji za pośrednictwem transportu protokołu WebSocket. <xref:System.ServiceModel.NetHttpBinding>i <xref:System.ServiceModel.NetHttpsBinding> . Aby uzyskać więcej informacji, zobacz: [powiązania dostarczone przez system](system-provided-bindings.md).
+WebSockets to technologia, która zapewnia prawdziwą komunikację dwukierunkową za pośrednictwem portów 80 i 443 z charakterystykami wydajności podobnymi do protokołu TCP. Dodano dwa nowe powiązania do obsługi komunikacji za pośrednictwem transportu protokołu WebSocket. <xref:System.ServiceModel.NetHttpBinding> i <xref:System.ServiceModel.NetHttpsBinding> . Aby uzyskać więcej informacji, zobacz: [powiązania dostarczone przez system](system-provided-bindings.md).
 
 ## <a name="new-transport-default-values"></a>Nowe wartości domyślne transportu
 
@@ -83,7 +83,7 @@ W poniższej tabeli opisano ustawienia, które zostały zmienione i gdzie można
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * liczba procesorów|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * Liczba procesorów do transportu<br /><br /> 4 \* Liczba procesorów dla SMSvcHost.exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A>[Konfigurowanie usługi udostępniania portów Net. TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * Liczba procesorów do transportu<br /><br /> 4 \* Liczba procesorów dla SMSvcHost.exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [Konfigurowanie usługi współużytkowania portów Net.TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * liczba procesorów|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
 |receiveTimeout|SMSvcHost.exe|30 sekund|[Konfigurowanie usługi współużytkowania portów Net.TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 
@@ -93,7 +93,7 @@ Aby ułatwić nowym i istniejącym deweloperom usług WCF Konfigurowanie swoich 
 
 ## <a name="configuring-wcf-services-in-code"></a>Konfigurowanie usług WCF w kodzie
 
-Windows Communication Foundation (WCF) umożliwia deweloperom Konfigurowanie usług przy użyciu plików konfiguracyjnych lub kodu. Pliki konfiguracji są przydatne, gdy usługa musi zostać skonfigurowana po wdrożeniu. W przypadku korzystania z plików konfiguracji Specjalista IT musi tylko zaktualizować plik konfiguracji, nie jest wymagana ponowna kompilacja. Pliki konfiguracji mogą jednak być skomplikowane i trudne do utrzymania. Nie ma obsługi debugowania plików konfiguracji i elementów konfiguracji, do których odwołują się nazwy, co sprawia, że pliki konfiguracji tworzenia są podatne na błędy i trudne. Funkcja WCF umożliwia również Konfigurowanie usług w kodzie. We wcześniejszych wersjach programu WCF (4,0 i starszych) Konfigurowanie usług w kodzie było łatwe w scenariuszach samoobsługowych, <xref:System.ServiceModel.ServiceHost> Klasa może skonfigurować punkty końcowe i zachowania przed wywołaniem ServiceHost. Open. Jednak w scenariuszach hostowanych w sieci Web nie masz dostępu do <xref:System.ServiceModel.ServiceHost> klasy. Aby skonfigurować usługę hostowaną w sieci Web, należy utworzyć utworzoną przez siebie `System.ServiceModel.ServiceHostFactory` <xref:System.ServiceModel.Activation.ServiceHostFactory> i wykonać dowolną wymaganą konfigurację. Począwszy od platformy .NET 4,5, WCF oferuje łatwiejszy sposób konfigurowania usług samodzielnych i hostowanych w sieci Web w kodzie. Aby uzyskać więcej informacji, zobacz [Konfigurowanie usług WCF w kodzie](configuring-wcf-services-in-code.md).
+Windows Communication Foundation (WCF) umożliwia deweloperom Konfigurowanie usług przy użyciu plików konfiguracyjnych lub kodu. Pliki konfiguracji są przydatne, gdy usługa musi zostać skonfigurowana po wdrożeniu. W przypadku korzystania z plików konfiguracji Specjalista IT musi tylko zaktualizować plik konfiguracji, nie jest wymagana ponowna kompilacja. Pliki konfiguracji mogą jednak być skomplikowane i trudne do utrzymania. Nie ma obsługi debugowania plików konfiguracji i elementów konfiguracji, do których odwołują się nazwy, co sprawia, że pliki konfiguracji tworzenia są podatne na błędy i trudne. Funkcja WCF umożliwia również Konfigurowanie usług w kodzie. We wcześniejszych wersjach programu WCF (4,0 i starszych) Konfigurowanie usług w kodzie było łatwe w scenariuszach samoobsługowych, <xref:System.ServiceModel.ServiceHost> Klasa może skonfigurować punkty końcowe i zachowania przed wywołaniem ServiceHost. Open. Jednak w scenariuszach hostowanych w sieci Web nie masz dostępu do <xref:System.ServiceModel.ServiceHost> klasy. Aby skonfigurować usługę hostowaną w sieci Web, należy utworzyć utworzoną przez siebie `System.ServiceModel.ServiceHostFactory` <xref:System.ServiceModel.Activation.ServiceHostFactory> i wykonać dowolną wymaganą konfigurację. Począwszy od .NET Framework 4,5, WCF oferuje łatwiejszy sposób konfigurowania zarówno samodzielnych, jak i hostowanych usług w sieci Web w kodzie. Aby uzyskać więcej informacji, zobacz [Konfigurowanie usług WCF w kodzie](configuring-wcf-services-in-code.md).
 
 ## <a name="channelfactory-caching"></a>Buforowanie elementu ChannelFactory
 

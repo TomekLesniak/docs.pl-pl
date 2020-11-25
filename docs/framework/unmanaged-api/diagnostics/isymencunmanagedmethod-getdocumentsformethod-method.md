@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: bd6ccde5-d578-48d8-abed-b474fbd48d13
 topic_type:
 - apiref
-ms.openlocfilehash: 89be772ee3d8a6fc5acb74d5ebe6d3c691764f89
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: d9fe18225dc27e93d4e97940cba878e4d73b4ed2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441958"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730529"
 ---
 # <a name="isymencunmanagedmethodgetdocumentsformethod-method"></a>ISymENCUnmanagedMethod::GetDocumentsForMethod — Metoda
+
 Pobiera dokumenty, w których ta metoda zawiera wiersze.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetDocumentsForMethod(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cDocs`  
  podczas Długość buforu wskazywanego przez `pcDocs` .  
   
@@ -45,9 +47,11 @@ HRESULT GetDocumentsForMethod(
  podczas Bufor, który zawiera dokumenty.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

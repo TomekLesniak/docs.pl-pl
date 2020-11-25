@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d7888aa9-dfaa-420f-9f99-e06ab35ca482
 topic_type:
 - apiref
-ms.openlocfilehash: 488069f3ea16352cb7bb5e81b9a726637a7a65f8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 46312aaf530e69f0e6a90e35515f1373d01b4340
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499366"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730243"
 ---
 # <a name="icorprofilercallback4rejiterror-method"></a>ICorProfilerCallback4::ReJITError — Metoda
+
 Powiadamia profiler, że kompilator just in Time (JIT) napotkał błąd w procesie ponownej kompilacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,11 +37,12 @@ HRESULT ReJITError(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleID`  
  podczas , `ModuleID` W którym wykonano próbę ponownej kompilacji.  
   
  `methodId`  
- podczas `MethodDef`Metoda, dla której podjęto próbę ponownej kompilacji.  
+ podczas `MethodDef` Metoda, dla której podjęto próbę ponownej kompilacji.  
   
  `functionId`  
  podczas Wystąpienie funkcji, które jest ponownie kompilowane lub oznaczone do ponownej kompilacji. Ta wartość może być taka `NULL` , jeśli wystąpił błąd w poszczególnych metodach, a nie na poszczególnych wystąpieniach (na przykład jeśli Profiler określił nieprawidłowy token metadanych dla metody do ponownego skompilowania).  
@@ -49,6 +51,7 @@ HRESULT ReJITError(
  podczas WYNIK HRESULT wskazujący charakter błędu. Zapoznaj się z sekcją stan HRESULTs, aby zapoznać się z listą wartości.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Zwracane wartości z tego wywołania zwrotnego są ignorowane.  
   
 ## <a name="status-hresults"></a>Stan HRESULT  
@@ -63,6 +66,7 @@ HRESULT ReJITError(
 |Inne|System operacyjny zwrócił błąd poza kontrolą środowiska CLR. Na przykład, jeśli wywołanie systemowe w celu zmiany ochrony dostępu strony pamięci nie powiedzie się, zostanie wyświetlony komunikat o błędzie systemu operacyjnego.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -74,4 +78,4 @@ HRESULT ReJITError(
 ## <a name="see-also"></a>Zobacz także
 
 - [ICorProfilerCallback — Interfejs](icorprofilercallback-interface.md)
-- [ICorProfilerCallback4, interfejs](icorprofilercallback4-interface.md)
+- [ICorProfilerCallback4 — Interfejs](icorprofilercallback4-interface.md)

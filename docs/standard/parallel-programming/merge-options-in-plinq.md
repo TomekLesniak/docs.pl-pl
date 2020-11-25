@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-ms.openlocfilehash: e6690a600b7b00272471362bc087633d52a98f25
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e6212abbc0d9f64765b03c3dd2e9132e9ca96ab7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824847"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730620"
 ---
 # <a name="merge-options-in-plinq"></a>Opcje scalania w PLINQ
+
 Gdy zapytanie jest wykonywane jako Parallel, PLINQ tworzy sekwencję źródłową, dzięki czemu wiele wątków może współdziałać z różnymi częściami, zwykle w oddzielnych wątkach. Jeśli wyniki mają być używane w jednym wątku, na przykład w `foreach` `For Each` pętli (w Visual Basic), wyniki z każdego wątku muszą zostać scalone z powrotem w jedną sekwencję. Rodzaj scalania, który PLINQ wykonuje, zależy od operatorów, które znajdują się w zapytaniu. Na przykład operatory, które nakładają nowe zamówienie na wyniki, muszą buforować wszystkie elementy ze wszystkich wątków. Z punktu widzenia wątku zużywanego (który również użytkownik aplikacji) w pełni buforowane zapytanie może być uruchamiane przez zauważalny okres czasu, zanim wygeneruje swój pierwszy wynik. Inne operatory domyślnie są częściowo buforowane; dają one wyniki w partiach. Jeden operator <xref:System.Linq.ParallelEnumerable.ForAll%2A> nie jest domyślnie buforowany. Powoduje natychmiastowe zwrócenie wszystkich elementów ze wszystkich wątków.  
   
  Za pomocą <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> metody, jak pokazano w poniższym przykładzie, można podać wskazówkę PLINQ, która wskazuje, jaki rodzaj scalania ma być wykonywany.  
@@ -27,6 +28,7 @@ Gdy zapytanie jest wykonywane jako Parallel, PLINQ tworzy sekwencję źródłow�
  Jeśli określone zapytanie nie może obsługiwać żądanych opcji, ta opcja zostanie po prostu zignorowana. W większości przypadków nie trzeba określać opcji scalania dla zapytania PLINQ. Jednak w niektórych przypadkach może się okazać, że testy i pomiary są wykonywane najlepiej w trybie innym niż domyślny. Typowym zastosowaniem tej opcji jest wymuszenie przesyłania strumieniowego przez operator scalania fragmentów w celu zapewnienia bardziej reagującego interfejsu użytkownika.  
   
 ## <a name="parallelmergeoptions"></a>ParallelMergeOptions  
+
  <xref:System.Linq.ParallelMergeOptions>Wyliczenie obejmuje następujące opcje, które określają, dla obsługiwanych kształtów zapytań, w jaki sposób końcowe dane wyjściowe zapytania są dostarczane, gdy wyniki są używane w jednym wątku:  
   
 - `Not Buffered`  
@@ -42,6 +44,7 @@ Gdy zapytanie jest wykonywane jako Parallel, PLINQ tworzy sekwencję źródłow�
      <xref:System.Linq.ParallelMergeOptions.FullyBuffered>Opcja powoduje, że dane wyjściowe całego zapytania mają być buforowane przed zwróceniem dowolnego elementu. W przypadku korzystania z tej opcji może upłynąć więcej czasu przed udostępnieniem pierwszego elementu w wątku zużywanym, ale kompletne wyniki mogą być nadal tworzone szybciej niż przy użyciu innych opcji.  
   
 ## <a name="query-operators-that-support-merge-options"></a>Operatory zapytań, które obsługują opcje scalania  
+
  W poniższej tabeli wymieniono operatory obsługujące wszystkie tryby opcji scalania, z uwzględnieniem określonych ograniczeń.  
   
 |Operator|Ograniczenia|  
